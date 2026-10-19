@@ -1,0 +1,614 @@
+
+## NEW direct progress on global SAT-owner pruning: exact owner CYCLES and FARKAS boxes
+
+This is the latest current milestone and a **sound full-eight-square
+structural exclusion**, rather than a small cap-constant
+improvement. Detailed proofs in
+[HUMAN_GLOBAL_SAT_OWNER_CYCLE_CONE_EXCLUSION.md](HUMAN_GLOBAL_SAT_OWNER_CYCLE_CONE_EXCLUSION.md),
+[HUMAN_RATIONAL_TWELVE_CONE_OWNER_DAGS.md](HUMAN_RATIONAL_TWELVE_CONE_OWNER_DAGS.md)
+and
+[HUMAN_RATIONAL_SECTOR_PROJECTION_FARKAS.md](HUMAN_RATIONAL_SECTOR_PROJECTION_FARKAS.md).
+
+**Every complete genuine 28-pair SAT-owner word
+must now satisfy:**
+
+* No directed three-edge owner cycle with all
+  actual signed side-normal directions in one
+  arc of width ≤π/3.
+* No directed owner cycle of any length in
+  each of twelve **fixed rational cones**
+  narrower than 2/3 radians. The corresponding
+  twelve owner graphs each have a common
+  **rational projected center ordering**.
+* Every oriented owner edge in rational sector k
+  forces the true-center projection
+  \[
+  (r_k+r_{k+1})\cdot(p_j-p_i)>289/2700.
+  \]
+  Hence **any positive exact cross-sector
+  Farkas balance on these fixed rational
+  direction vectors rejects the entire
+  owner word**, without frame/center
+  numerical optimization.
+
+**Complete exact checked example, stronger
+than the former cone DAG rules:** a rational
+eight-frame owner word with all 28 chosen
+pair SAT directions passes the former
+60-degree and twelve-DAG tests, yet
+8 owner edges with strictly positive
+integer coefficients **44,51,28**
+cancel all sixteen center coordinate
+coefficients, giving the impossible
+\(0>31501/900>35\).
+[verify_rational_sector_farkas.py](verify_rational_sector_farkas.py)
+checks the exact rational owner angles,
+sector membership, positive weights and
+zero force result. A second certificate
+[global_sat_balanced_sector_eight_angle_box_certificate.json](global_sat_balanced_sector_eight_angle_box_certificate.json)
+extends this contradiction to an entire
+strictly positive-width **eight-dimensional
+orientation product box**, verified by
+[verify_interval_rational_sector_farkas.py](verify_interval_rational_sector_farkas.py)
+with outward exact Fraction interval bounds.
+The all-eight-angle 60-degree triangle box
+is separately certified.
+
+**ONE remaining exit gate:** integrate the new
+cheap *center-free* owner rejections with
+[GLOBAL_SAT_ANGLE_FIBER_DUALITY.md](GLOBAL_SAT_ANGLE_FIBER_DUALITY.md)
+and the exterior-marker/central-packing facts
+in a sound FINITE EXHAUSTIVE eight-angle/owner
+cover. Surviving owner words must be discharged
+by exact dual inequalities or other global
+whole-square geometry. The current checkers
+certify individual classes and boxes only,
+NOT the entire union; unrestricted global
+sharpness and equality classification
+remain OPEN.
+
+---
+
+# LATEST DECISION GATE — exact all-eight SAT owner/angle fibers
+
+**Status: proven global DIMENSION REDUCTION and first exact
+nonzero angular certificate, but unrestricted sharpness OPEN.**
+
+[GLOBAL_SAT_ANGLE_FIBER_DUALITY.md](GLOBAL_SAT_ANGLE_FIBER_DUALITY.md)
+now provides an exact computational-geometric framework,
+independent of the candidate contact pattern:
+choose the eight true square orientations and one
+genuine signed side-normal SAT owner for each of
+28 unordered pairs. With these fixed, all **16 center
+coordinates** and radius form a convex SOCP.
+Every feasible fiber admits a strictly feasible
+outward-center dilation and hence an **exact**
+nonnegative-multiplier center-free dual inequality.
+The complete unrestricted eight-square optimization
+is the infimum of those exact fiber values over
+**eight angles and finite signed owner words**.
+
+[HUMAN_SEVEN_PARALLEL_EXACT_DUAL.md](HUMAN_SEVEN_PARALLEL_EXACT_DUAL.md)
+is a complete rational SOS certificate of
+\(q\ge2257/576\) in the aligned zero-tilt
+seven-directed-support fiber, with an actual
+seven-square equality packing.
+
+The **first genuine POSITIVE-WIDTH angle-box
+certificate** has been executed:
+[verify_interval_angle_fiber_dual.py](verify_interval_angle_fiber_dual.py)
+and
+[seven_parallel_positive_angle_box_certificate.json](seven_parallel_positive_angle_box_certificate.json)
+prove for **all seven independently varying**
+rational half-tangent angles
+\(z_i\in[-1/15000,1/15000]\)
+in that one specified true SAT-owner class,
+and ALL centers,
+\[
+q\ge3.915747909432255\ldots
+>3.915535>\widehat q.
+\]
+Every operation is an exact Fraction
+interval bound; it is **one** cell,
+not an exhaustive global cover.
+
+**The next decisive issue is NOT finding more
+narrow angle boxes in isolation.** It is
+deriving a disk-specific exterior-marker/
+central-square reduction that soundly discards
+most of the astronomical \(8^{28}\) raw owner
+words, then proving termination of the
+remaining angle-box dual cover.
+The historical low-dimensional pair-marker
+certificate proves only \(q>19/5\);
+it has not established this necessary
+complete owner selection.
+
+A numerical seven-fiber SOCP-style oracle
+with analytic Jacobians was also committed.
+Hundreds of sampled angle fibers and one
+3456-evaluation differential-evolution
+scan found no certified below-candidate
+solution for the **seven directed**
+support system. These are **noncertifying
+diagnostics**, not an unrestricted proof.
+
+**No claim of global capture, sharp
+\(R_8\ge\widehat R\), equality
+classification or Lean completion.**
+
+---
+
+## CURRENT DECISION GATE: exhibit a REAL global certificate, not a capture restatement (2026-10-13)
+
+[GLOBAL_CAPTURE_EQUIVALENCE_AND_DUAL_NO_GO.md](GLOBAL_CAPTURE_EQUIVALENCE_AND_DUAL_NO_GO.md)
+is the latest precise audit. The bare assertion
+"all hypothetical smaller-radius packings lie
+inside the locally sharp neighborhood" is, given
+the proved local lower bound, **LOGICALLY
+EQUIVALENT TO** \(R_8\ge\widehat R\).
+It is therefore not an independent easier proof
+bridge unless accompanied by an actual sound,
+terminating geometric capture/exclusion certificate.
+
+The existing adaptive dual is **not angle-global**:
+for a true E-frame angle change +1/10, its
+radius lower-bound expression strictly decreases
+by more than \(4189/3000000\) (exact root-box
+rational proof). This is a negative result
+about that dual, NOT a packing counterexample.
+
+An independent complete eight-square numerical
+SLSQP search with 32 true vertex constraints and
+28 genuine SAT pair constraints did not yield a
+feasible below-candidate packing or an exact
+exclusion; it provides no mathematical evidence.
+
+**One meaningful remaining global deliverable:**
+produce a *checkable exhaustive* interval/geometry
+certificate excluding every pose outside the
+already proved local sharp neighborhood at
+\(R^2<q_*\), or prove a universal
+orientation-independent sharp support inequality
+there. Disk marker ownership, exact SAT owner
+disjunctions and certified subproblem decomposition
+are potential components, but no full n8
+finite certificate currently exists.
+Unrestricted sharpness and equality/Lean are OPEN.
+
+---
+
+## LATEST FOCUSED RESULT: TRUE-SAT LOCAL SHARPNESS IS CLOSED (October 13)
+
+**The global proof is still OPEN; the local candidate
+neighborhood is now a complete all-orientation theorem.**
+
+* [HUMAN_ADAPTIVE_DUAL_SEVEN_SQUARE_SHARPNESS.md](HUMAN_ADAPTIVE_DUAL_SEVEN_SQUARE_SHARPNESS.md)
+  establishes a **finite** (not just first-order)
+  sharp \(R\ge\widehat R\) theorem for the seven
+  candidate directed separator inequalities with
+  **all seven square frames allowed to rotate
+  independently**. The positive dual multipliers
+  ADAPT to the common tilted-frame parameter,
+  and exact intervals certify
+  \(\Gamma_i-|B_i|>1/40\), \(|A_i|<2\)
+  for every independent angular variable.
+* [HUMAN_LOCAL_TRUE_SAT_SEVEN_SQUARE_SHARPNESS.md](HUMAN_LOCAL_TRUE_SAT_SEVEN_SQUARE_SHARPNESS.md)
+  upgrades this to **ACTUAL pairwise SAT nonoverlap**
+  in an open candidate pose neighborhood:
+  all 11 incorrect owner axes have reference
+  gap \(<-1/20\); the 32 allowable true owner
+  branches each have positive angular
+  stiffness \(>1/40\) along the five
+  independent frame-edge differences.
+  An exact nonlinear Taylor/Young argument
+  uses the five positive circle-anchor
+  weights to absorb center/frame cross terms.
+  Thus every nearby genuine seven-square
+  packing—and consequently every full
+  eight-square packing near the known sharp
+  construction—has \(R\ge\widehat R\),
+  with the actual T/G slider freedoms intact.
+  The arithmetic is reproduced by
+  [verify_adaptive_seven_square_dual.py](verify_adaptive_seven_square_dual.py)
+  and [verify_sat_seven_local_dual.py](verify_sat_seven_local_dual.py).
+* **The old FROZEN candidate dual is not
+  globally or finitely sufficient**:
+  after completing the center squares its
+  aligned common-tilt bound has strict
+  negative curvature
+  \(K(\cos(t-t_*)-1)\), \(K\approx13.109>0\).
+  The adaptive weights restore the positive
+  conditional five-corner scalar defect.
+
+**Only remaining global task in this focused
+program:** prove a **SOUND COMPLETE POSE/CAPTURE
+THEOREM** for all hypothetical smaller-radius
+eight-square packings, reducing them (after
+symmetries) to the now-proved local true-SAT
+candidate neighborhood, or prove an alternative
+sharp obstruction for the cases outside it.
+The 11SquaresOptimal manuscript's *global marker
+cover* is methodological inspiration, not
+a ready-made disk theorem. No global capture
+certificate has been constructed.
+
+Stop new local threshold/branch-count work unless
+it directly produces this global capture.
+The unrestricted \(R_8\ge\widehat R\),
+global equality classification and
+Lean 4 remain OPEN.
+
+---
+
+# CURRENT PRIMARY TARGET — one global bridge, not more subcases
+
+**The authoritative next theorem is now**
+[PRIMARY_GLOBAL_BRIDGE.md](PRIMARY_GLOBAL_BRIDGE.md).
+All detailed branch tables below are retained as historical
+research inputs, **not** the current work queue.
+
+* Proven: the five-corner directed chain is sharp, and the
+  seven-genuine-square separator theorem establishes
+  \(R\ge\widehat R\) when its **seven actual directed
+  support inequalities** and aligned A/E end frames hold.
+* **Unproved candidate B:** extract **those exact
+  inequalities and that A/E frame alignment from every
+  attained global minimum-radius eight-square packing**
+  with \(R\le\widehat R\). If false, derive a different
+  universal orientation-free sharp support inequality.
+* Newly **disproved as a potential shortcut:** no actual
+  contact graph, two parallel frames or any prescribed
+  contact edge is forced for **all** packings under
+  \(R^2\le9789/2500\).
+  [NO_NEAR_SHARP_CONTACT_OR_FRAME_RIGIDITY.md](NO_NEAR_SHARP_CONTACT_OR_FRAME_RIGIDITY.md)
+  constructs a full **rational eight-square** witness
+  with no square contacts and eight distinct frames;
+  its exact script checks all 32 vertices and 28 pair SAT
+  inequalities. Thus B **must** be minimizer-level.
+* Numerical attempts to extend the directed separator
+  theorem to freely oriented A/E ends have not produced
+  a certified counterexample or theorem. Infeasible
+  local optimizer outputs have no status as evidence.
+
+**Stop rule:** no new branch-specific lemmas should be
+committed unless they directly establish or falsify B
+or yield a global sharp inequality spanning its failure.
+The true seven-outer equality contact-ring construction
+must remain admitted. **Unrestricted sharpness is OPEN.**
+
+---
+
+# Current global proof roadmap
+
+Reorientation: 2026-10-13. Baseline audited: `605af6c522c0928d3fd1ab7b1765ed20d3e7dc1f`.
+
+## Latest completed structural reduction: the minimal B3 branching core (October 13)
+
+The smallest **seven-outer central-branching** positive-stress
+component has exactly the triangle C-X-Y-C and positive
+radial bridge C-Z. The previous graph theorem gives seven
+choices of X-Y consecutive ray pair and three nonadjacent Z
+ray placements (**21 labeled positive graph templates**),
+all still subject to genuine eight-square geometry.
+
+**New complete hand deductions, not a finished B3 radius bound:**
+
+1. [HUMAN_POSITIVE_TRIANGLE_FORCES_CIRCLE_WEIGHTS.md](HUMAN_POSITIVE_TRIANGLE_FORCES_CIRCLE_WEIGHTS.md)
+   forces **all three outer labels X,Y,Z** to have
+   strictly positive **physical circle multipliers**.
+   Otherwise the two forces through X or Y transmit
+   straight through a unit square and separate
+   its two other *contacting* neighbors, impossible.
+2. [HUMAN_RADIAL_STRESS_LEAF_TWO_MODES.md](HUMAN_RADIAL_STRESS_LEAF_TWO_MODES.md)
+   proves the positive radial bridge square Z has
+   only two true disk-circle shapes: **side mode**
+   \[
+   b=\sqrt{R^2-1/4}-1,\quad p_Z=(\sqrt{R^2-1/4}-1/2)n
+   \]
+   with two **equal positively weighted circle vertices**,
+   or **diagonal mode**
+   \[
+   b=R-\sqrt2,\quad p_Z=(R-1/\sqrt2)n
+   \]
+   with one positively weighted vertex at \(Rn\).
+3. The genuine SAT-owner condition eliminates the
+   false C-corner/Z-diagonal combination.
+   [HUMAN_RADIAL_BRIDGE_THREE_SAT_INTERFACES.md](HUMAN_RADIAL_BRIDGE_THREE_SAT_INTERFACES.md)
+   gives **exactly three** true interfaces:
+   **SS** (C side/Z side, frames parallel),
+   **CS** (C radial corner/Z side), and
+   **SD** (C side/Z inward diagonal corner,
+   frames differing by 45 degrees).
+4. [HUMAN_B3_RADIAL_LEAF_ANTIPODAL_FORCE_CONE.md](HUMAN_B3_RADIAL_LEAF_ANTIPODAL_FORCE_CONE.md)
+   constrains the genuine radial center ray n of Z
+   to the antipodal cone of X,Y's two positively
+   circle-stressed square center rays:
+   \[
+   \theta_X+\pi-31/80<\arg n
+   <\theta_Y+\pi+31/80\pmod{2\pi}.
+   \]
+   The cone's width is strictly below pi.
+5. In a **contact-minimal** radius minimizer,
+   [HUMAN_B3_RADIAL_STRESS_LEAF_BRACING.md](HUMAN_B3_RADIAL_STRESS_LEAF_BRACING.md)
+   rules out **unbraced CS and SD**. Those
+   nonparallel bridges require a further **actual
+   zero-positive-weight contact** to one of
+   Z's two angularly adjacent spectator squares;
+   that spectator may not end as a noncentral
+   actual leaf.
+6. In the further **all-positive-C-side-normal,
+   side-mode** subcase, [HUMAN_B3_ALL_SIDE_STRESS_SCAFFOLD.md](HUMAN_B3_ALL_SIDE_STRESS_SCAFFOLD.md)
+   proves X,Y must both contact the *opposite* C side,
+   their actual C contact points must straddle
+   the radial origin line in tangent sign, and
+   X-Y has a transverse positive contact normal.
+   The conjectured **three-distinct-C-side**
+   branching case is **fully excluded under those
+   explicit hypotheses**, but the opposite-side
+   triangle remains.
+
+**Next B3 handproof target:** handle complete **SS actual
+leaf** versus **CS/SD externally braced** configurations,
+with all four remaining full spectator squares.
+Try force-cone + exact true-square triangle contacts,
+not cap-cutoff tuning or incomplete stress-core optimization.
+The global root A (genuine equality ring), B2 m=4..6,
+B3 larger components, X and k<=6 remain open.
+
+This is a *structural reduction*, not a claim of global
+\(R_8\ge\widehat R\), equality classification or Lean completion.
+
+---
+
+## New B3 structural closures: opposite-face SS impossible and only complete spectator arcs (October 13)
+
+**This section is the newest authoritative B3-small-core status.**
+The positive-stress component remains the four-square
+contact graph \(C-X-Y-C\) plus radial positive leaf C-Z,
+with X,Y outer-ray neighbors, Z in one of three
+nonneighboring ray positions, **all X,Y,Z with positive
+physical circle multipliers**.
+
+**Exact true-SAT radial bridge modes:** SS (C side/Z side),
+CS (C radial corner/Z side), and SD (C side/Z diagonal).
+The former fourth C-corner/Z-diagonal pair is impossible
+because no genuine square side owns its separating axis.
+
+**A complete global SS subcase is now CLOSED.**
+[HUMAN_B3_SS_OPPOSITE_SIDE_EXCLUDED.md](HUMAN_B3_SS_OPPOSITE_SIDE_EXCLUDED.md)
+proves the entire **SS with both X and Y
+positively contacting C along true C side normals**
+impossible. Central force balance puts both on
+the opposite C side, and torque makes their contact
+points straddle the radial origin line. One of
+the true contacts is at \(z=(-k,\tau)\) with
+\(k=2-\sqrt{R^2-1/4}\in(0,1/2)\),
+\(|\tau|\le1/2\), and the corresponding
+unit square lies wholly in \(x\le-k\).
+The **new arbitrary-frame contact-vertex lemma**
+bounds every one of its true vertex norms by
+\[
+|v|^2\le(k+1)^2+9/4
+=R^2-(6\sqrt{R^2-1/4}-11)<R^2.
+\]
+It consequently has no circle vertex and no
+positive circle multiplier, contradicting the
+rigorous positive circle force already required
+at both triangle labels X,Y. This closes that
+**whole SS contact-normal subcase**, not just
+another parameter interval.
+
+**Surviving SS geometry is corner-forced.**
+[HUMAN_B3_SS_TRANSVERSE_CORNER_FORCING.md](HUMAN_B3_SS_TRANSVERSE_CORNER_FORCING.md)
+shows the X/Y positive C contact normals
+must have **strictly opposite nonzero transverse
+components**, touch the *top and bottom* C side
+supports, and at least one positive contact
+is a genuine corner of C on its side opposite Z.
+[HUMAN_B3_CS_TRANSVERSE_FORCE_REQUIRED.md](HUMAN_B3_CS_TRANSVERSE_FORCE_REQUIRED.md)
+independently proves the same strict opposed
+transverse normal signs for the C-corner/Z-side
+(CS) radial bridge, using radial torque and
+nonzero stress moment circulation. The SD
+radial bridge is **not** included in these results.
+
+**Complete spectator arc classification in the
+C-actual-degree-three representative.**
+If C actually contacts **only** its three positive
+neighbors X,Y,Z, then
+[HUMAN_B3_COMPLETE_SPECTATOR_ARCS.md](HUMAN_B3_COMPLETE_SPECTATOR_ARCS.md)
+shows every complementary outer-ray spectator
+arc is either completely present or completely
+absent as an *actual contact path*. A partial
+arc creates a spectator actual-degree-one leaf
+whose neighbor is not C, impossible in the
+contact-minimal minimizer. Both arcs complete
+would form the excluded full seven-outer ring.
+Therefore the entire outer actual graph is
+one of **three** patterns per positive stress
+label triple: no spectator edges, the full Y-Z
+spectator path, or the full Z-X spectator path.
+There are **63** graph-only templates
+(\(21\times3\)), cross-checked against all
+\(21\times64=1,344\) optional-edge assignments.
+For genuine **CS/SD**, a further zero-weight
+spectator contact is mandatory by the
+actual-leaf rigidity theorem, so **the empty
+spectator path is excluded**. SS may have an
+actual leaf Z in the empty-arc case.
+
+**Remaining meaningful proof obligations:**
+derive a full eight-square sharp radius inequality
+for the **corner-forced SS** triangle, for the
+**CS side-leaf** with a complete bracing spectator
+arc, and for the **SD diagonal leaf** with
+mandatory spectator bracing. If C has extra actual
+zero-weight spectator neighbors, the 63-template
+arc classification **does not apply**; keep those
+separate actual-contact modes. B2 m4..6, the full
+equality ring A, larger B3, k<=6 and exterior root X
+also remain OPEN. Preserve the genuine S4/k7 equality.
+
+The supporting hand proofs have exact symbolic
+vertex identities and exhaustive finite graph
+audits; neither the graph count nor any optimizer
+is a global packing feasibility certificate.
+
+---
+
+## Latest B3 auxiliary-arc geometry (October 13)
+
+In the **smallest k=7 B3 central-branching core** with
+positive contact graph \(C-X-Y-C\) plus radial bridge C-Z,
+the current geometric status is:
+
+* **Radial SS:** the all-C-side-normal triangle subcase
+  is **completely impossible**. Any surviving SS triangle
+  must use C contacts on opposing transverse support sides,
+  with **nonzero opposite tangential normal components**
+  and at least one genuine C corner contact opposite Z.
+  Proven in [HUMAN_B3_SS_OPPOSITE_SIDE_EXCLUDED.md](HUMAN_B3_SS_OPPOSITE_SIDE_EXCLUDED.md)
+  and [HUMAN_B3_SS_TRANSVERSE_CORNER_FORCING.md](HUMAN_B3_SS_TRANSVERSE_CORNER_FORCING.md).
+* **Radial CS:** the opposite C-corner bridge allows only
+  triangle C contact normals with **nonzero opposite
+  tangential signs**, by
+  [HUMAN_B3_CS_TRANSVERSE_FORCE_REQUIRED.md](HUMAN_B3_CS_TRANSVERSE_FORCE_REQUIRED.md).
+  Pure collinear C triangle forces would make every
+  contact moment zero, contradicting the nonradial
+  physical-stress cycle theorem.
+* **Radial SD:** the C-side/Z-inward-corner interface
+  remains open. Do **not** apply the SS/CS high-cap
+  exclusivity to its lower bridge offset \(R-\sqrt2\).
+
+If C has **exactly its three actual positive-stress
+neighbors** X,Y,Z, the entire outer actual contact graph
+is constrained to **three patterns** per
+positive ray triple: all spectators isolated,
+the full Y-Z auxiliary spectator arc, or the
+full Z-X arc. Partial zero-weight spectator
+paths create forbidden **noncentral actual leaves**.
+There are 21 positive ray-label triples,
+thus **63 graph-only actual contact templates**.
+The independent exact finite enumeration tested
+all \(21\times64=1{,}344\) optional-edge masks:
+63 admitted, 1,260 excluded by a noncentral spectator
+leaf and 21 by a full outer seven-ring.
+
+In contact-minimal **CS/SD** radial modes,
+a genuine extra zero-weight Z-to-spectator actual
+contact is forced. Therefore the **isolated-spectator
+arc mode is impossible** when C has only these three
+actual neighbors: a *complete* Y-Z or Z-X auxiliary
+path is required. The new
+[HUMAN_B3_AUXILIARY_ARC_BOUNDARY_COVER.md](HUMAN_B3_AUXILIARY_ARC_BOUNDARY_COVER.md)
+shows its s=1,2,3 actual-degree-two
+spectators require **at least \(\lfloor s/2\rfloor\)
+different true disk-circle contacts**; for s=1,
+the alternative is an **actual circle-free aligned
+transmitter** with its two core endpoints at
+exact closed-square distance one.
+The eligible Z ray positions i+3,i+4,i+5 give
+spectator arc sizes (1,3),(2,2),(3,1).
+
+This is an exact *whole-contact* structural
+reduction, not a claim that one of the 63 graph
+templates is feasible or that the global sharp
+\(R_8\ge\widehat R\) has been proved.
+
+**Immediate next complete-case target:** prove a
+sharp radius obstruction for a CS/SD complete
+auxiliary actual path (retaining its zero-weight
+circle-contact spectator), or for the corner-forced
+SS triangle plus four full spectators. If C has
+additional zero-weight actual contacts to spectators,
+these three-arc conclusions do not automatically
+apply; that is a separate actual-contact-degree
+case in the global ledger.
+
+---
+
+## 1. The actual objective
+
+Let R8 be the least radius containing eight interior-disjoint genuine unit squares, with independent orientations. The candidate construction supplies R8 <= Rhat. The remaining theorem is **R8 >= Rhat**, not impossibility at the inclusive candidate radius. The known equality packing must remain admissible.
+
+`HUMAN_FAMILY_CLOSURE.md` proves optimality **within its specified five-corner family**. It is not a theorem that an arbitrary packing belongs to that family. Completion requires either an exact structural bridge into the family or separate sharp inequalities for every global root below. Equality classification and Lean formalization are subsequent, distinct obligations.
+
+No additional cap-threshold improvement is a primary milestone in this roadmap.
+
+## 2. Dependencies and what has actually been checked
+
+The reorientation reread the physical multiplier construction in `HUMAN_CONTACT_EQUILIBRIUM.md`, the component argument in `HUMAN_CONTACT_COMPONENTS.md`, the full-domain outer graph reduction in `HUMAN_OUTER_GRAPH_REDUCTION.md`, and the scope of `HUMAN_FAMILY_CLOSURE.md`.
+
+The physical model uses one selected genuine separating normal per actual contacting pair, nonnegative forces at actual common contact points, and nonnegative multipliers on actual disk-circle vertices. It includes force and torque balance and normalization of total circle weight to one. Additional actual contacts may have zero weight. These distinctions must survive every reduction.
+
+These are research hand arguments, not a completed independent audit of every ancestor lemma. In particular, radius/central-square, outer angular separation, radial escape, and contact-minimal leaf/transmitter lemmas remain named dependencies. Fraction checks verify arithmetic, not those geometric implications.
+
+For the lower bound one may select a minimizer with the fewest actual contacts, but results requiring that representative may not be applied to arbitrary minimizers. They also do not, by themselves, classify every equality packing.
+
+## 3. The global case ledger
+
+Fix a normalized physical stress. Test the rows in this order. They are an exhaustive organization of minimizers under the established radius ceiling, not independent lists to multiply together.
+
+| Root | Exact remaining case | Already available | Missing decisive result |
+| --- | --- | --- | --- |
+| A | Full seven-outer **actual contact ring**, with central unit inside its pocket | Actual ring/winding reduction; genuine candidate in this root | Sharp bound for ring **and central unit together**, preserving equality |
+| B2-7 | Seven outer centers; proper outer actual forest; central positive degree two | One positive cycle C-S1-...-Sm-C; **m=3 and m=7 excluded**; only m=4,5,6 remain | Sharp full-packing bound for each remaining stressed path **with all spectators** |
+| B2-low | At least one noncentral inner center; central positive degree two | Opposite central forces; side/diagonal force axes; inner units strictly circle-free | A valid normal form that retains inner attachments; the k=7 consecutive-path classification cannot be imported |
+| B3-7-small | Seven outer centers; branching central positive degree; positive component C plus exactly three exterior labels | Triangle C-X-Y-C plus radial positive bridge C-Z; 21 eligible cyclic label choices | Eliminate or sharply bound this genuine triangle/radial-leaf configuration, retaining four spectators |
+| B3-7-large | Seven outer centers; central positive degree >=3; at least four exterior labels in the positive component | Central force polygon; outer-forest visibility; global circle-force angular spread | A structural bridge or sharp inequality for branching support with four through seven exterior labels |
+| B3-low | Noncentral inner centers and branching central positive stress | Inner-circle clearance and actual force/torque conditions | Joint inner/outer contact structure; no k=7 forest simplification beyond its proved domain |
+| X | Central unit outside the positive component; proper outer forest | Directed exterior moment cycle of 5--7 labels, at least one noncentral inner-center witness; k<=6 | Sharp bound including C and unused squares; distinguish actual-degree-two transmitters from actual-degree>=3 witnesses |
+
+Root A takes precedence even if its chosen stress has central degree two or three. A zero-weight missing positive edge is not a missing **actual** edge.
+
+### B2-7 in detail
+
+Each remaining positive path has seven cyclic placements. Thus m=4,5,6 gives **21 positive graph templates**, not 21 feasible packings and not the whole remaining problem.
+
+* **Pure central actual degree two:** the complete actual graph is the positive C-rooted cycle plus 7-m isolated spectators. Both endpoints have positive circle weights; the positive-circle support covers each internal path edge. At least 3,3,4 stressed outer labels carry positive circle weight for m=4,5,6. Isolated spectators may be chosen circle-free but remain full unit squares in every occupancy argument.
+* **Side-force mode with extra actual C contacts:** retain every zero-weight central spoke/chord. The pure-contact leaf argument no longer applies automatically.
+* **Diagonal-force mode:** in the contact-minimal representative, at least two auxiliary actual C contacts must brace opposite tangent directions. Neither may be omitted just because its stress weight is zero.
+* **m=6 spectator:** it is isolated, a central leaf, or a circle-contacting C-T-endpoint triangle. These are necessary contact forms; none is presently a full sharp-radius proof.
+
+The m=3 semicircle argument is recorded in `HUMAN_SEVEN_OUTER_M3_SEMICIRCLE_EXCLUDED.md`. Earlier m=3 parallel-scaffold and circle-weight notes are intermediate conditional results, not additional open branches.
+
+### Geometric side-status filters, not a second global partition
+
+The exclusive all-seven-single-side ledger remains:
+
+| Type | Counts not globally excluded |
+| --- | --- |
+| S1 | k=3,4,5,6 |
+| S2 | k=4,5,6; the nearer 2+2 pair cannot both be inner |
+| S3 | k=4,5,6,7 |
+| S4 | k=4,5,6,7; includes genuine equality |
+
+D0 corner-only exceptions and D1/D2 double-side cases remain. Apply their established inequalities **inside** the global roots, with distinct-label hypotheses checked. Do not confuse S2's geometric cells A/B/C with the global stress roots A/B2/B3/X.
+
+## 4. Work order and stopping criteria for an attempted lemma
+
+### First: improve a complete structural support class
+
+Use exact physical force support, actual polygon contact geometry, and the radial-bridge classification. The small branching core is particularly concrete: three stressed exterior labels, a genuine triangle, and one radial stress leaf. Search for a structural contradiction before adding more coordinate subdivisions.
+
+For B2, seek one inequality that handles an entire m=4,5,6 class or several of them together. Every calculation must include the spectator squares when invoking eight-square occupancy. A stressed core alone is not an eight-square packing.
+
+### Second: use computation to falsify proposed bridges
+
+A useful diagnostic models true vertices and genuine signed SAT support inequalities. Any fixed geometric candidate must then pass a separate nonnegative force/torque feasibility check. Failure to locate a candidate proves nothing. A strict rational counterexample ends that proposed bridge and is retained as a regression test.
+
+Promote a computer clue only after replacing it with an explicit hand argument: a finite support identity, convexity/monotonicity proof, exact polynomial positivity identity, or an exhaustive geometric contact classification. Do not present sampled minima, unsuccessful optimizer outputs, or graph-only counts as geometric exclusions.
+
+### Third: close the equality-bearing ring and low-k roots
+
+The full outer ring requires a central-pocket inequality. The existing outer-ring counterexamples show that omitting the central unit is invalid. The low-k roots require additional inner squares and cannot be covered by a seven-outer theorem. These tasks do not disappear even after B2-7 is closed.
+
+## 5. Completion gates
+
+1. Every global root above has an exact R >= Rhat inequality, or is reduced by a proved map to another root already covered.
+2. Such a reduction preserves the radius, all eight genuine squares, and every hypothesis used at its destination. Moving to a contact-maximal representative does not preserve contact-minimal lemmas automatically.
+3. The candidate supplies equality, and any proposed uniqueness/classification statement handles all equality freedoms rather than only a specially selected representative.
+4. The resulting proof is formalized and checked in Lean without changing the mathematical statement or adding unproved axioms.
+
+**Current status:** the unrestricted lower bound, global equality classification, and Lean proof remain open. This file replaces scattered chronological threshold summaries as the current case inventory. Subsequent progress should record the exact parent root closed and any new dependencies, rather than append another incompatible enumeration.

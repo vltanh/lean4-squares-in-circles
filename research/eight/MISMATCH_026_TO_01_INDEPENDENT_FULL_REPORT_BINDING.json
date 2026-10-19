@@ -1,0 +1,25 @@
+{
+  "status": "PASS_INDEPENDENT_EXPLICIT_COEFFICIENT_RECORD_BINDING",
+  "scope": "Exact minima and positivity scan of completed frozen kernel output, including every ordered result index; no second polynomial derivation and no substitute for the independent geometric union audit.",
+  "arcs": 401,
+  "rows": 131255,
+  "angle_chains": 123168,
+  "polynomials": 354398,
+  "coefficient_lower_bounds": 2903573,
+  "least_strict_cost_coefficient": "76173/20000000000000",
+  "least_strict_cost_by_edge": [
+    "24203583/100000000000000",
+    "76173/20000000000000",
+    "120237031/100000000000000",
+    "21036133/100000000000000",
+    "129331743/100000000000000",
+    "139176157/100000000000000",
+    "109336769/100000000000000"
+  ],
+  "sha256": {
+    "MISMATCH_026_TO_01_AFFINE_HAND_DATA.json": "3230d71cdb3f1aa513aa74de04dc49429bb6ff2759a115cd55d98b160e1fedf4",
+    "verify_mismatch_026_to_01_affine_hand.js": "6af3d41fe7d404da7dd286c46644160f5444edd3028d864701266e9a4cd18697",
+    "MISMATCH_026_TO_01_AFFINE_HAND_ARITHMETIC.json": "13a7dc18a78aaa4bbdeef9dc0d83b8f0098ba6c0e6e68ba55401d41849ef0f24"
+  },
+  "unchanged_inputs": true
+}

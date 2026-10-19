@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "scope": "Continuous actual-to-nominal owner reduction plus independently reconstructed rational circle-dual quartics",
+  "owner_patterns": 48,
+  "closed_cells_per_pattern": 30,
+  "quartics": 1440,
+  "independently_recomputed_bernstein_coefficients": 7200,
+  "independent_extra_identity_points": 1440,
+  "minimum_printed_coefficient": "985133633/500000000000",
+  "author_replay_byte_identical": true,
+  "independent_method": "Direct rational evaluation of explicit nominal inequalities at five points and inversion of a fixed Bernstein evaluation matrix",
+  "sha256": {
+    "HAND_CANDIDATE_QUARTER_OWNER_CAPTURE.md": "4a5097c43fcac10aac93401b2946f7dc35f4ff4a23ed952d9243bca22957da26",
+    "verify_candidate_quarter_owner_circle_duals.py": "1813b8d049f9c8a8dffa2d8f6f4f772e2056abb1fa8cedfa84a9ad346fd5d342",
+    "candidate_quarter_owner_circle_dual_hand_data.json": "bcafd38fc19e78e0352d436b1f0c11d931a4a7436d2b9d320a2c3eae2edb52d2",
+    "candidate_quarter_owner_circle_dual_hand_arithmetic.json": "600f331c78e7c72fe1bab862801658918310327f2d969d5242b9f069b2cd3e64"
+  }
+}

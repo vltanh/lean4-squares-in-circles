@@ -1,0 +1,12 @@
+{
+  "branches": 8,
+  "initial_rectangles": 512,
+  "nodes": 754058,
+  "leaves": 377285,
+  "max_depth": 22,
+  "manifest_sha256": "a7f6d7a17b903cf19dbde1e0b4f798189608347a7d8b35a5a2e203e8f094c1f5",
+  "source_sha256": "cf0cdabdabaf22b3d07b6f7b80e934b94281025b5fa80c41cad74b79d3dc6757",
+  "data_header_sha256": "1528e6d4a65f3ed56266aa673d8ff6f474683a1762333e220c183ca536a8c497",
+  "data_json_sha256": "df1991147a8c2b93e6db9d55d673c3c6db1ae7ca7859384483ce272e3de11035",
+  "sum_branch_seconds": 78.61344317899784
+}

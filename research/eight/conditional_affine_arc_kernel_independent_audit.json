@@ -1,0 +1,349 @@
+{
+  "status": "PASS_CONDITIONAL_INTERFACE",
+  "base_sha256": "1bd04b7b8890f7008108489da6fdf24b947e472eb4873f7523994ce4b81b85ee",
+  "conditional_sha256": "6af3d41fe7d404da7dd286c46644160f5444edd3028d864701266e9a4cd18697",
+  "base_source": "verify_affine_arc_hand.js",
+  "conditional_source": "verify_conditional_affine_arc_hand.js",
+  "scope": "Independent difference-range/original-axis coverage audit on valid positive-length state domains. No analytic pair table is claimed by the deliberately empty-row fixture.",
+  "required_angle_chains": 56,
+  "independent_outward_endpoint_comparisons": 112,
+  "isolated_zero_angle_chains_retained": 16,
+  "empty_row_fixture_correctly_incomplete": true,
+  "default_full_domain_matches_base": true,
+  "invalid_declarations_rejected": [
+    {
+      "case": "unknown_range_edge",
+      "rejected": true
+    },
+    {
+      "case": "reversed_range",
+      "rejected": true
+    },
+    {
+      "case": "outside_frame_range",
+      "rejected": true
+    },
+    {
+      "case": "empty_axis_list",
+      "rejected": true
+    },
+    {
+      "case": "duplicate_axis",
+      "rejected": true
+    },
+    {
+      "case": "unknown_axis",
+      "rejected": true
+    }
+  ],
+  "fixture": {
+    "Q": "9789/2500",
+    "word": [
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      1
+    ],
+    "cuts": {
+      "0": [
+        "-.5",
+        "-.1"
+      ],
+      "1": [
+        "-.3",
+        ".4"
+      ],
+      "2": [
+        ".2",
+        ".5"
+      ],
+      "3": [
+        "-.6",
+        "-.2"
+      ],
+      "4": [
+        "-.2",
+        ".2"
+      ],
+      "5": [
+        ".1",
+        ".3"
+      ],
+      "6": [
+        "-.7",
+        "-.4"
+      ]
+    },
+    "arcs": [
+      {
+        "id": "r0_C_-1",
+        "role": 0,
+        "kind": "C",
+        "sign": -1,
+        "lo": "1/10",
+        "hi": "1/2",
+        "c": "0",
+        "p": "0",
+        "q": "0"
+      },
+      {
+        "id": "r0_O_-1",
+        "role": 0,
+        "kind": "O",
+        "sign": -1,
+        "lo": "1/10",
+        "hi": "1/2",
+        "c": "0",
+        "p": "0",
+        "q": "0"
+      },
+      {
+        "id": "r1_C_-1",
+        "role": 1,
+        "kind": "C",
+        "sign": -1,
+        "lo": "0",
+        "hi": "3/10",
+        "c": "0",
+        "p": "0",
+        "q": "0"
+      },
+      {
+        "id": "r1_C_1",
+        "role": 1,
+        "kind": "C",
+        "sign": 1,
+        "lo": "0",
+        "hi": "2/5",
+        "c": "0",
+        "p": "0",
+        "q": "0"
+      },
+      {
+        "id": "r1_O_-1",
+        "role": 1,
+        "kind": "O",
+        "sign": -1,
+        "lo": "0",
+        "hi": "3/10",
+        "c": "0",
+        "p": "0",
+        "q": "0"
+      },
+      {
+        "id": "r1_O_1",
+        "role": 1,
+        "kind": "O",
+        "sign": 1,
+        "lo": "0",
+        "hi": "2/5",
+        "c": "0",
+        "p": "0",
+        "q": "0"
+      },
+      {
+        "id": "r2_C_1",
+        "role": 2,
+        "kind": "C",
+        "sign": 1,
+        "lo": "1/5",
+        "hi": "1/2",
+        "c": "0",
+        "p": "0",
+        "q": "0"
+      },
+      {
+        "id": "r2_O_1",
+        "role": 2,
+        "kind": "O",
+        "sign": 1,
+        "lo": "1/5",
+        "hi": "1/2",
+        "c": "0",
+        "p": "0",
+        "q": "0"
+      },
+      {
+        "id": "r3_C_-1",
+        "role": 3,
+        "kind": "C",
+        "sign": -1,
+        "lo": "1/5",
+        "hi": "3/5",
+        "c": "0",
+        "p": "0",
+        "q": "0"
+      },
+      {
+        "id": "r3_O_-1",
+        "role": 3,
+        "kind": "O",
+        "sign": -1,
+        "lo": "1/5",
+        "hi": "3/5",
+        "c": "0",
+        "p": "0",
+        "q": "0"
+      },
+      {
+        "id": "r4_C_-1",
+        "role": 4,
+        "kind": "C",
+        "sign": -1,
+        "lo": "0",
+        "hi": "1/5",
+        "c": "0",
+        "p": "0",
+        "q": "0"
+      },
+      {
+        "id": "r4_C_1",
+        "role": 4,
+        "kind": "C",
+        "sign": 1,
+        "lo": "0",
+        "hi": "1/5",
+        "c": "0",
+        "p": "0",
+        "q": "0"
+      },
+      {
+        "id": "r4_O_-1",
+        "role": 4,
+        "kind": "O",
+        "sign": -1,
+        "lo": "0",
+        "hi": "1/5",
+        "c": "0",
+        "p": "0",
+        "q": "0"
+      },
+      {
+        "id": "r4_O_1",
+        "role": 4,
+        "kind": "O",
+        "sign": 1,
+        "lo": "0",
+        "hi": "1/5",
+        "c": "0",
+        "p": "0",
+        "q": "0"
+      },
+      {
+        "id": "r5_C_1",
+        "role": 5,
+        "kind": "C",
+        "sign": 1,
+        "lo": "1/10",
+        "hi": "3/10",
+        "c": "0",
+        "p": "0",
+        "q": "0"
+      },
+      {
+        "id": "r5_O_1",
+        "role": 5,
+        "kind": "O",
+        "sign": 1,
+        "lo": "1/10",
+        "hi": "3/10",
+        "c": "0",
+        "p": "0",
+        "q": "0"
+      },
+      {
+        "id": "r6_C_-1",
+        "role": 6,
+        "kind": "C",
+        "sign": -1,
+        "lo": "2/5",
+        "hi": "7/10",
+        "c": "0",
+        "p": "0",
+        "q": "0"
+      },
+      {
+        "id": "r6_O_-1",
+        "role": 6,
+        "kind": "O",
+        "sign": -1,
+        "lo": "2/5",
+        "hi": "7/10",
+        "c": "0",
+        "p": "0",
+        "q": "0"
+      }
+    ],
+    "gamma": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "rows": [],
+    "difference_ranges": {
+      "0": [
+        "-.4",
+        "-.2"
+      ],
+      "1": [
+        ".15",
+        ".35"
+      ],
+      "2": [
+        "-.1",
+        ".6"
+      ],
+      "3": [
+        "0",
+        "0"
+      ],
+      "4": [
+        "-.7",
+        ".7"
+      ],
+      "5": [
+        "-.3",
+        ".1"
+      ],
+      "6": [
+        "-.65",
+        "-.45"
+      ]
+    },
+    "axis_domains": {
+      "0": [
+        1
+      ],
+      "1": [
+        2
+      ],
+      "2": [
+        3
+      ],
+      "3": [
+        4
+      ],
+      "4": [
+        1,
+        3
+      ],
+      "5": [
+        2,
+        4
+      ],
+      "6": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  }
+}

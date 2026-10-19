@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "scope": "Isolated absent-file reconstruction followed by idempotent existing-file verification; every raw byte matched the independently bound full inputs",
+  "parts": 11,
+  "restored_inputs": [
+    {
+      "name": "MISMATCH_015_TO_001_AFFINE_HAND_DATA.json",
+      "bytes": 17792662,
+      "sha256": "da456f7eb49a2e0dc702054c684afc14da52a5e55c042add695ef862d7a6c1a2"
+    },
+    {
+      "name": "MISMATCH_015_TO_001_AFFINE_HAND_COMPACT_REPORT.json",
+      "bytes": 34730514,
+      "sha256": "2818421ab2e711ae586fd88722676f0690cbc21c9f7ccc648de7f92f5fee9a45"
+    }
+  ],
+  "sha256": {
+    "MISMATCH_015_TO_001_HAND_INPUT_PARTS.json": "e51b2d106520ab1fef0a84d23a447833d0ad6dde677647f3cd1aedc0ec9ad9d2",
+    "restore_mismatch_015_to_001_hand_inputs.py": "e3c9f535a9657a5557b9eccb868d21ece8bd55f7216da599f37e4d7f2ea27c1f"
+  }
+}

@@ -1,0 +1,621 @@
+{
+  "status": "PASS",
+  "comparison_count": 111,
+  "polynomial_rows": [
+    {
+      "id": "MMf++",
+      "degree": 16,
+      "lo": ".6",
+      "hi": "1.09",
+      "bern_lower_numerators": [
+        97837,
+        100029,
+        101671,
+        102928,
+        103966,
+        104945,
+        106025,
+        107361,
+        109106,
+        111414,
+        114433,
+        118313,
+        123199,
+        129239,
+        136578,
+        145361,
+        155733
+      ],
+      "denominator": 1000000,
+      "T_degree": 8,
+      "T_lower": 4
+    },
+    {
+      "id": "MMprimary+",
+      "degree": 18,
+      "lo": "1.57",
+      "hi": "1.85",
+      "bern_lower_numerators": [
+        248977,
+        257702,
+        265257,
+        271671,
+        276972,
+        281190,
+        284354,
+        286491,
+        287630,
+        287799,
+        287024,
+        285333,
+        282752,
+        279306,
+        275022,
+        269924,
+        264037,
+        257385,
+        249991
+      ],
+      "denominator": 1000000,
+      "T_degree": 9,
+      "T_lower": 3
+    }
+  ],
+  "checks": [
+    {
+      "name": "root low lower",
+      "pass": true,
+      "gap": "62968656847/16000000000000000000"
+    },
+    {
+      "name": "root low upper",
+      "pass": true,
+      "gap": "65346156017/16000000000000000000"
+    },
+    {
+      "name": "root high lower",
+      "pass": true,
+      "gap": "185112539/61250000000000000"
+    },
+    {
+      "name": "root high upper",
+      "pass": true,
+      "gap": "33767171869/6125000000000000000"
+    },
+    {
+      "name": "M lower label>.3046",
+      "pass": true,
+      "gap": "24307508977/4000000000000000"
+    },
+    {
+      "name": "M lower label<.30461",
+      "pass": true,
+      "gap": "15677413841/4000000000000000"
+    },
+    {
+      "name": "M high label>.4555",
+      "pass": true,
+      "gap": "47391341/5468750000000"
+    },
+    {
+      "name": "M high label<.455511",
+      "pass": true,
+      "gap": "127412093/54687500000000"
+    },
+    {
+      "name": "r>.458",
+      "pass": true,
+      "gap": "215142927/250000000000"
+    },
+    {
+      "name": "r<.597",
+      "pass": true,
+      "gap": "171144437/350000000000"
+    },
+    {
+      "name": "lower-cut r<.459",
+      "pass": true,
+      "gap": "938174123/1000000000000"
+    },
+    {
+      "name": "M derivative>.69",
+      "pass": true,
+      "gap": "931979/1000000000"
+    },
+    {
+      "name": "M derivative<.898",
+      "pass": true,
+      "gap": "7297/500000000"
+    },
+    {
+      "name": "r derivative<.8",
+      "pass": true,
+      "gap": "1506607795819900555627/156250000000000000000000"
+    },
+    {
+      "name": "high b<.513966884",
+      "pass": true,
+      "gap": "1/3500000000"
+    },
+    {
+      "name": "a+.5>1.699",
+      "pass": true,
+      "gap": "12803/50000000"
+    },
+    {
+      "name": "a-.5<.799",
+      "pass": true,
+      "gap": "252751/1000000000"
+    },
+    {
+      "name": ".5-low b<.176",
+      "pass": true,
+      "gap": "2747247/4000000000"
+    },
+    {
+      "name": "low b>.3246",
+      "pass": true,
+      "gap": "347247/4000000000"
+    },
+    {
+      "name": "high b<.514",
+      "pass": true,
+      "gap": "115907/3500000000"
+    },
+    {
+      "name": "one minus high b>.486",
+      "pass": true,
+      "gap": "115907/3500000000"
+    },
+    {
+      "name": "one minus high b>low b",
+      "pass": true,
+      "gap": "4517696513/28000000000"
+    },
+    {
+      "name": "one minus high b<high b",
+      "pass": true,
+      "gap": "4888409/175000000"
+    },
+    {
+      "name": "angle width<.16",
+      "pass": true,
+      "gap": "3938232581/49586512281600"
+    },
+    {
+      "name": "upper angle<.405",
+      "pass": true,
+      "gap": "816447/8070721400"
+    },
+    {
+      "name": "lower angle>.24",
+      "pass": true,
+      "gap": "23/4800"
+    },
+    {
+      "name": "pi>3.14",
+      "pass": true,
+      "gap": "1248221/784218750"
+    },
+    {
+      "name": "pi<3.16",
+      "pass": true,
+      "gap": "30921090146347/1679825970703125"
+    },
+    {
+      "name": "sqrt2<1.42",
+      "pass": true,
+      "gap": "41/2500"
+    },
+    {
+      "name": "same-sign direct tail",
+      "pass": true,
+      "gap": "10089/1000000"
+    },
+    {
+      "name": "positive-negative direct tail",
+      "pass": true,
+      "gap": "1/5000"
+    },
+    {
+      "name": "negative-positive direct tail",
+      "pass": true,
+      "gap": "4989/500000"
+    },
+    {
+      "name": "parallel contact projection derivative>.75",
+      "pass": true,
+      "gap": "97/12500"
+    },
+    {
+      "name": "lower-left contact impossible, positive phi",
+      "pass": true,
+      "gap": "1067/12500"
+    },
+    {
+      "name": "lower-left contact impossible, negative phi",
+      "pass": true,
+      "gap": "701252751/2000000000"
+    },
+    {
+      "name": "contact concavity factor p>M' sin",
+      "pass": true,
+      "gap": "591593/1000000"
+    },
+    {
+      "name": "parallel complementary radical lower",
+      "pass": true,
+      "gap": "10670909443/1531250000000000000"
+    },
+    {
+      "name": "parallel endpoint cost>.89124",
+      "pass": true,
+      "gap": "712647639/125000000000000"
+    },
+    {
+      "name": "negative contact derivative numerator positive",
+      "pass": true,
+      "gap": "1356941/800000"
+    },
+    {
+      "name": "negative phi fixed-target cost derivative",
+      "pass": true,
+      "gap": "6428929/80000000"
+    },
+    {
+      "name": "negative phi fixed-source cost derivative",
+      "pass": true,
+      "gap": "3826009/82388000"
+    },
+    {
+      "name": "positive contact normal numerator",
+      "pass": true,
+      "gap": "411707/625000"
+    },
+    {
+      "name": "positive fixed-target cost derivative",
+      "pass": true,
+      "gap": "1774033/12500000"
+    },
+    {
+      "name": "tan(.32)<.332",
+      "pass": true,
+      "gap": "195880038810150893/337958335876464843750"
+    },
+    {
+      "name": "positive normalized D>.801",
+      "pass": true,
+      "gap": "199/250000"
+    },
+    {
+      "name": "positive normalized N<.858",
+      "pass": true,
+      "gap": "71/125000"
+    },
+    {
+      "name": "J derivative negative",
+      "pass": true,
+      "gap": "347433/2500000"
+    },
+    {
+      "name": "positive fixed-source cost factor<.91",
+      "pass": true,
+      "gap": "169123/125000000"
+    },
+    {
+      "name": "negative source-f impossible",
+      "pass": true,
+      "gap": "258551/6250000"
+    },
+    {
+      "name": "M+.87f selects high endpoint",
+      "pass": true,
+      "gap": "77117981508891/5600000000000000"
+    },
+    {
+      "name": "negative primary source selects high endpoint",
+      "pass": true,
+      "gap": "93931979/1000000000"
+    },
+    {
+      "name": "primary negative target, negative angle impossible",
+      "pass": true,
+      "gap": "718301/800000"
+    },
+    {
+      "name": "primary negative target impossible to1.05",
+      "pass": true,
+      "gap": "2121610299744036403/65536000000000000000"
+    },
+    {
+      "name": "primary positive target impossible in quadrant I",
+      "pass": true,
+      "gap": "16/625"
+    },
+    {
+      "name": "short primary negative-target endpoint low",
+      "pass": true,
+      "gap": "3666367318012065513800425754072953/362880000000000000000000000000000000"
+    },
+    {
+      "name": "short primary negative-target endpoint high",
+      "pass": true,
+      "gap": "200009008740237997211542801546997/18144000000000000000000000000000000"
+    },
+    {
+      "name": "MMf++ P Bernstein 0",
+      "pass": true,
+      "gap": "178999615952032899/382812500000000000000000"
+    },
+    {
+      "name": "MMf++ P Bernstein 1",
+      "pass": true,
+      "gap": "1037856729104444457/1225000000000000000000000"
+    },
+    {
+      "name": "MMf++ P Bernstein 2",
+      "pass": true,
+      "gap": "264436878667895904529/3675000000000000000000000000"
+    },
+    {
+      "name": "MMf++ P Bernstein 3",
+      "pass": true,
+      "gap": "2647732003069638970467/6125000000000000000000000000"
+    },
+    {
+      "name": "MMf++ P Bernstein 4",
+      "pass": true,
+      "gap": "243885604562334936680657/1592500000000000000000000000000"
+    },
+    {
+      "name": "MMf++ P Bernstein 5",
+      "pass": true,
+      "gap": "51771197887426147130681119/95550000000000000000000000000000"
+    },
+    {
+      "name": "MMf++ P Bernstein 6",
+      "pass": true,
+      "gap": "469117637094525466233984107/2802800000000000000000000000000000"
+    },
+    {
+      "name": "MMf++ P Bernstein 7",
+      "pass": true,
+      "gap": "14299343408459318039351629811/210210000000000000000000000000000000"
+    },
+    {
+      "name": "MMf++ P Bernstein 8",
+      "pass": true,
+      "gap": "5719406379658300817794282159531/5821200000000000000000000000000000000"
+    },
+    {
+      "name": "MMf++ P Bernstein 9",
+      "pass": true,
+      "gap": "202194433060835619860635340701013/336336000000000000000000000000000000000"
+    },
+    {
+      "name": "MMf++ P Bernstein 10",
+      "pass": true,
+      "gap": "33584899177750350470793929613347587/40360320000000000000000000000000000000000"
+    },
+    {
+      "name": "MMf++ P Bernstein 11",
+      "pass": true,
+      "gap": "3973437679710885064271790316481/50960000000000000000000000000000000000"
+    },
+    {
+      "name": "MMf++ P Bernstein 12",
+      "pass": true,
+      "gap": "101334099923472072422078177058307/195686400000000000000000000000000000000"
+    },
+    {
+      "name": "MMf++ P Bernstein 13",
+      "pass": true,
+      "gap": "8805520824152450172401558915208307/22579200000000000000000000000000000000000"
+    },
+    {
+      "name": "MMf++ P Bernstein 14",
+      "pass": true,
+      "gap": "365413259643844056948758244503757553/1354752000000000000000000000000000000000000"
+    },
+    {
+      "name": "MMf++ P Bernstein 15",
+      "pass": true,
+      "gap": "3050347677209408050912625954084580133/9031680000000000000000000000000000000000000"
+    },
+    {
+      "name": "MMf++ P Bernstein 16",
+      "pass": true,
+      "gap": "12717840540813734375371468510120783041/20070400000000000000000000000000000000000000"
+    },
+    {
+      "name": "MMf++ T Bernstein 0",
+      "pass": true,
+      "gap": "5009737479/17500000000"
+    },
+    {
+      "name": "MMf++ T Bernstein 1",
+      "pass": true,
+      "gap": "1365222928117/3500000000000"
+    },
+    {
+      "name": "MMf++ T Bernstein 2",
+      "pass": true,
+      "gap": "34460077858921/70000000000000"
+    },
+    {
+      "name": "MMf++ T Bernstein 3",
+      "pass": true,
+      "gap": "829775645437703/1400000000000000"
+    },
+    {
+      "name": "MMf++ T Bernstein 4",
+      "pass": true,
+      "gap": "19349769808157979/28000000000000000"
+    },
+    {
+      "name": "MMf++ T Bernstein 5",
+      "pass": true,
+      "gap": "440815509693173397/560000000000000000"
+    },
+    {
+      "name": "MMf++ T Bernstein 6",
+      "pass": true,
+      "gap": "9865203924899516621/11200000000000000000"
+    },
+    {
+      "name": "MMf++ T Bernstein 7",
+      "pass": true,
+      "gap": "653076505578937810409/672000000000000000000"
+    },
+    {
+      "name": "MMf++ T Bernstein 8",
+      "pass": true,
+      "gap": "14247346775456527459037/13440000000000000000000"
+    },
+    {
+      "name": "MMprimary+ P Bernstein 0",
+      "pass": true,
+      "gap": "110122775181469666751418674946541094694787/602112000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "MMprimary+ P Bernstein 1",
+      "pass": true,
+      "gap": "9655066419496929171565680913886207287734907/9754214400000000000000000000000000000000000000000"
+    },
+    {
+      "name": "MMprimary+ P Bernstein 2",
+      "pass": true,
+      "gap": "85305003529670635328087958996253501529097817/99492986880000000000000000000000000000000000000000"
+    },
+    {
+      "name": "MMprimary+ P Bernstein 3",
+      "pass": true,
+      "gap": "2051978409855906761716049097079159120251259/6632865792000000000000000000000000000000000000000"
+    },
+    {
+      "name": "MMprimary+ P Bernstein 4",
+      "pass": true,
+      "gap": "141427057719933789515815540868818974274361/234101145600000000000000000000000000000000000000"
+    },
+    {
+      "name": "MMprimary+ P Bernstein 5",
+      "pass": true,
+      "gap": "63056811417641799390683150150878071969433/88438210560000000000000000000000000000000000000"
+    },
+    {
+      "name": "MMprimary+ P Bernstein 6",
+      "pass": true,
+      "gap": "206337270041198255253896556859561756672247/689818042368000000000000000000000000000000000000"
+    },
+    {
+      "name": "MMprimary+ P Bernstein 7",
+      "pass": true,
+      "gap": "22185186896581643704220806753850295585617/31837755801600000000000000000000000000000000000"
+    },
+    {
+      "name": "MMprimary+ P Bernstein 8",
+      "pass": true,
+      "gap": "62453128721186685084908079504651641806147/70043062763520000000000000000000000000000000000"
+    },
+    {
+      "name": "MMprimary+ P Bernstein 9",
+      "pass": true,
+      "gap": "10132900014950077031952880922382564014999/20234662576128000000000000000000000000000000000"
+    },
+    {
+      "name": "MMprimary+ P Bernstein 10",
+      "pass": true,
+      "gap": "277423896631392604162575058484768859229/367902955929600000000000000000000000000000000"
+    },
+    {
+      "name": "MMprimary+ P Bernstein 11",
+      "pass": true,
+      "gap": "314923338052544875749079286912698198141/662225320673280000000000000000000000000000000"
+    },
+    {
+      "name": "MMprimary+ P Bernstein 12",
+      "pass": true,
+      "gap": "2886516885971411017449105455675536807/44148354711552000000000000000000000000000000"
+    },
+    {
+      "name": "MMprimary+ P Bernstein 13",
+      "pass": true,
+      "gap": "982723230463577147168025522592370977/2037616371302400000000000000000000000000000"
+    },
+    {
+      "name": "MMprimary+ P Bernstein 14",
+      "pass": true,
+      "gap": "30762960768771246439431051116426579/135841091420160000000000000000000000000000"
+    },
+    {
+      "name": "MMprimary+ P Bernstein 15",
+      "pass": true,
+      "gap": "8770180147951760563575420723985499/27168218284032000000000000000000000000000"
+    },
+    {
+      "name": "MMprimary+ P Bernstein 16",
+      "pass": true,
+      "gap": "4965647299566903903692274377303657/16300930970419200000000000000000000000000"
+    },
+    {
+      "name": "MMprimary+ P Bernstein 17",
+      "pass": true,
+      "gap": "37888326324935719816643487951601/191775658475520000000000000000000000000"
+    },
+    {
+      "name": "MMprimary+ P Bernstein 18",
+      "pass": true,
+      "gap": "2147760176015780856774767769409/4261681299456000000000000000000000000"
+    },
+    {
+      "name": "MMprimary+ T Bernstein 0",
+      "pass": true,
+      "gap": "270502303254896153681981/1344000000000000000000000"
+    },
+    {
+      "name": "MMprimary+ T Bernstein 1",
+      "pass": true,
+      "gap": "1891926317890917721837847/7257600000000000000000000"
+    },
+    {
+      "name": "MMprimary+ T Bernstein 2",
+      "pass": true,
+      "gap": "464770130276663819873407/1451520000000000000000000"
+    },
+    {
+      "name": "MMprimary+ T Bernstein 3",
+      "pass": true,
+      "gap": "36749286391966866965389/96768000000000000000000"
+    },
+    {
+      "name": "MMprimary+ T Bernstein 4",
+      "pass": true,
+      "gap": "25509385853456183242127/58060800000000000000000"
+    },
+    {
+      "name": "MMprimary+ T Bernstein 5",
+      "pass": true,
+      "gap": "5793583072370707007287/11612160000000000000000"
+    },
+    {
+      "name": "MMprimary+ T Bernstein 6",
+      "pass": true,
+      "gap": "432304354742558282549/774144000000000000000"
+    },
+    {
+      "name": "MMprimary+ T Bernstein 7",
+      "pass": true,
+      "gap": "286974314792863979207/464486400000000000000"
+    },
+    {
+      "name": "MMprimary+ T Bernstein 8",
+      "pass": true,
+      "gap": "62899971285811617967/92897280000000000000"
+    },
+    {
+      "name": "MMprimary+ T Bernstein 9",
+      "pass": true,
+      "gap": "1519736774770923103/2064384000000000000"
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "admissible_quarter_words_before_dihedral_quotient": 70,
+  "four_type_minimizer_example": [
+    0,
+    2,
+    3,
+    0,
+    3,
+    0,
+    3
+  ],
+  "four_type_minimum": "3881/625",
+  "four_type_walks": 16384,
+  "rational_comparisons": [
+    {
+      "name": "Machin upper below the eight-decimal bound",
+      "positive_reserve": "345223895269830324696001/125404151846376124909687500000000"
+    },
+    {
+      "name": "eight-decimal bound below 710/113",
+      "positive_reserve": "5997/11300000000"
+    },
+    {
+      "name": "qminus above 5/2",
+      "positive_reserve": "2831/2000"
+    },
+    {
+      "name": "Q1 above qminus",
+      "positive_reserve": "17069/500000000"
+    },
+    {
+      "name": "Q0 above Q1",
+      "positive_reserve": "32931/500000000"
+    },
+    {
+      "name": "Q0 below four",
+      "positive_reserve": "211/2500"
+    },
+    {
+      "name": "central-depth radius buffer",
+      "positive_reserve": "399/1000000"
+    },
+    {
+      "name": "central first angular contradiction",
+      "positive_reserve": "13/1400"
+    },
+    {
+      "name": "central second angular contradiction",
+      "positive_reserve": "13/8750"
+    },
+    {
+      "name": "initial gap cosine comparison",
+      "positive_reserve": "23/21300"
+    },
+    {
+      "name": "initial maximum radius comparison",
+      "positive_reserve": "13/625"
+    },
+    {
+      "exact_value": "3881/625",
+      "name": "four-type seven-walk floor"
+    },
+    {
+      "exact_value": "10394/25425",
+      "name": "frame width-cost upper bound"
+    },
+    {
+      "name": "frame U below sqrt2 minus one by squaring",
+      "positive_reserve": "9860489/646430625"
+    },
+    {
+      "name": "explicit Taylor lower bound at .7",
+      "positive_reserve": "7371533393/5184000000000000"
+    },
+    {
+      "exact_value": "201866893/813600000000",
+      "name": "frame concentration strict reserve"
+    },
+    {
+      "name": "no three consecutive zero increments",
+      "positive_reserve": "3/350"
+    },
+    {
+      "exact_value": "1259/200",
+      "name": "four jump-two words"
+    },
+    {
+      "exact_value": "121/565000",
+      "name": "wrong 0010111 reserve"
+    },
+    {
+      "exact_value": "823/2260000",
+      "name": "wrong 0011011 reserve"
+    },
+    {
+      "exact_value": "807/1130000",
+      "name": "G and upper-T and H cut reserve"
+    },
+    {
+      "exact_value": "1/70625",
+      "name": "lower-T cut reserve"
+    },
+    {
+      "exact_value": "271/282500000",
+      "name": "coarse .4 reserve"
+    },
+    {
+      "name": "retained coarse edge 0 reserve",
+      "positive_reserve": "1243637/3125000000000"
+    },
+    {
+      "name": "retained coarse edge 1 reserve",
+      "positive_reserve": "4373153/5000000000000"
+    },
+    {
+      "name": "retained coarse edge 2 reserve",
+      "positive_reserve": "21477251/25000000000000"
+    },
+    {
+      "name": "retained coarse edge 3 reserve",
+      "positive_reserve": "51076023/100000000000000"
+    },
+    {
+      "name": "retained coarse edge 4 reserve",
+      "positive_reserve": "9797283/25000000000000"
+    },
+    {
+      "name": "retained coarse edge 5 reserve",
+      "positive_reserve": "47069107/100000000000000"
+    },
+    {
+      "name": "retained coarse edge 6 reserve",
+      "positive_reserve": "42432521/100000000000000"
+    },
+    {
+      "exact_value": "51/500000",
+      "name": "coarse increases sum"
+    },
+    {
+      "exact_value": "9154605884982919/494375000000000000000",
+      "name": "coarse .26 contradiction"
+    },
+    {
+      "exact_value": "-711/20000",
+      "name": "zero-quarter primary margin"
+    },
+    {
+      "exact_value": "-17/2000",
+      "name": "zero-quarter first sign margin"
+    },
+    {
+      "exact_value": "-3/500",
+      "name": "zero-quarter second sign margin"
+    },
+    {
+      "exact_value": "18173/2712000000",
+      "name": "M1 scalar contraction, conditional on its pair theorem"
+    },
+    {
+      "exact_value": "125662969/20000000",
+      "name": "narrow gamma sum"
+    },
+    {
+      "exact_value": "238191/32000000",
+      "name": "narrow cubic Taylor value"
+    },
+    {
+      "exact_value": "2287/6400000000",
+      "name": "narrow contraction"
+    },
+    {
+      "exact_value": "502653/80000",
+      "name": "M2 gamma sum"
+    },
+    {
+      "exact_value": "5996999/12000000000",
+      "name": "M2 cubic Taylor value"
+    },
+    {
+      "exact_value": "522599/240000000000",
+      "name": "M2 scalar contraction, conditional on its pair theorem"
+    },
+    {
+      "exact_value": "10293/5000000",
+      "name": "terminal angular reserve"
+    },
+    {
+      "name": "central containment from core",
+      "positive_reserve": "40229/18000"
+    }
+  ],
+  "scope": "This report verifies only displayed scalar and finite word steps; all continuous pair theorems and complete domain covers are separate dependencies.",
+  "seven_quarter_words": [
+    "0010012",
+    "0010102",
+    "0010111",
+    "0010201",
+    "0011002",
+    "0011011",
+    "0101011"
+  ],
+  "status": "PASS_FIXED_ARITHMETIC_AND_COMBINATORIAL_INTERFACES"
+}

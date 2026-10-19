@@ -1,0 +1,76 @@
+{
+  "status": "PASS: whole edge-3 positive-negative outer quarter row",
+  "Q": "9789/2500",
+  "target": "17953/20000",
+  "comparison_count": 17,
+  "checks": [
+    {
+      "name": "Machin lower pi/2",
+      "strict_reserve": "231935182607385227486733940094740456837600289/35039594690954215884057173256866683959960937500000000000000"
+    },
+    {
+      "name": "Machin upper pi/2",
+      "strict_reserve": "1337971959919715113675846254362898473/395759705243190215722675556945800781250000000000000"
+    },
+    {
+      "name": "outer radius slope lower",
+      "strict_reserve": "2957498679821/19145756710039000"
+    },
+    {
+      "name": "R global concavity",
+      "strict_reserve": "1806818618503611386188469933070346297871683157/5707044368064884394182242976223457372050000000"
+    },
+    {
+      "name": "R derivative at diagonal",
+      "strict_reserve": "16696118399998967375714983978560295544285932393/97890000000000012335763527400000000000000000000"
+    },
+    {
+      "name": "R derivative at .2",
+      "strict_reserve": "3712234714005077252026884288879838937962892317/21410000000000024694094726282500000000000000000"
+    },
+    {
+      "name": "K global concavity",
+      "strict_reserve": "192938870970862735138822811121773798082658807/951174061344147399030373829370576228675000000"
+    },
+    {
+      "name": "K derivative at diagonal",
+      "strict_reserve": "15271818899999628227906808621202887827095612729/48945000000000006167881763700000000000000000000"
+    },
+    {
+      "name": "K derivative at .2",
+      "strict_reserve": "243220568558802535494590483070320043411389967/3568333333333337449015787713750000000000000000"
+    },
+    {
+      "name": "late angle direct cost",
+      "strict_reserve": "24761200607657/1000000000000000000"
+    },
+    {
+      "name": "large transverse sum direct cost",
+      "strict_reserve": "236076043067139042578213999900809384681373683943923088999/560633515055267454144914772109866943359375000000000000000000"
+    },
+    {
+      "name": "small-sum secondary scalar derivative norm",
+      "strict_reserve": "47605134200776606876618479/156250000000000000000000000"
+    },
+    {
+      "name": "small-sum secondary endpoint",
+      "strict_reserve": "27739098256814086714649991002315785897690685762341102659652571/55112517063993011812261701757488360000000000000000000000000000000"
+    },
+    {
+      "name": "small-sum primary radial bound",
+      "strict_reserve": "20941205037/25000000000000"
+    },
+    {
+      "name": "small-sum primary cosine bound",
+      "strict_reserve": "31619594093669798416842503005060331654107674462751/87178291200000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "small-sum primary projection bound",
+      "strict_reserve": "3549/20000"
+    },
+    {
+      "name": "whole row strict target reserve",
+      "strict_reserve": "19/20000"
+    }
+  ]
+}

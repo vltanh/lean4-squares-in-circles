@@ -1,0 +1,77 @@
+{
+  "status": "PASS",
+  "scope": "Independent continuous interface review with exact scalar and labeling checks; preceding geometric and finite-table theorems are explicit imports",
+  "fixed_strict_comparisons": 13,
+  "checks": [
+    {
+      "comparison": "qminus above5/2",
+      "positive_difference": "2831/2000"
+    },
+    {
+      "comparison": "Q1 aboveqminus",
+      "positive_difference": "17069/500000000"
+    },
+    {
+      "comparison": "coarseQ0 aboveQ1",
+      "positive_difference": "32931/500000000"
+    },
+    {
+      "comparison": "4 abovecoarseQ0",
+      "positive_difference": "211/2500"
+    },
+    {
+      "comparison": "outer radius4/5 test",
+      "positive_difference": "4/25"
+    },
+    {
+      "comparison": "outer radius3/2 test",
+      "positive_difference": "1/4"
+    },
+    {
+      "comparison": "B less than3/2 by squared comparison",
+      "positive_difference": "1/4"
+    },
+    {
+      "comparison": "core bodyradiusbelow4/5",
+      "positive_difference": "49/900"
+    },
+    {
+      "comparison": "mixed-signOOmonotonicity",
+      "positive_difference": "1/24"
+    },
+    {
+      "comparison": "coreoutermonotonicity",
+      "positive_difference": "1/30"
+    },
+    {
+      "comparison": "quarter threshold dominatesfinalmismatch",
+      "positive_difference": "7/500"
+    },
+    {
+      "comparison": "zero-axis threshold dominatesquarter",
+      "positive_difference": "77/200"
+    },
+    {
+      "comparison": "automaticterminalremainingangularcoefficient",
+      "positive_difference": "10293/5000000"
+    }
+  ],
+  "quarter_word": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1
+  ],
+  "allowed_owner_assignments": 32,
+  "final_mismatch": "1/1000",
+  "fixed_capture_package_sha256": "dd0146dd4262476704293ad8928921d15e5184212490d7eb8c9406e7b7bf8bf6",
+  "sha256": {
+    "HAND_FIXED_CEILING_TRANSFER_WITH_AUTOMATIC_TERMINAL.md": "09c574dbcad7353057ef247341424e2f6bc158c2ed1329bd7a125223ab062265",
+    "HAND_CANDIDATE_CAPTURE_AT_ONE_THOUSANDTH.md": "7ee1a11292c08b979d9ba22296bbd4e849ff61ec90ab1af65c5de717d0ec0a4b",
+    "HAND_TERMINAL_WITH_AUTOMATIC_SLIDERS.md": "624fb9ffc0b819ae0aa5e891a4ca2f541b5b7562df789e5617a4e8c3d03d5d90",
+    "CANDIDATE_CAPTURE_AT_ONE_THOUSANDTH_HAND_MANIFEST.json": "dd0146dd4262476704293ad8928921d15e5184212490d7eb8c9406e7b7bf8bf6"
+  }
+}

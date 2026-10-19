@@ -1,0 +1,165 @@
+{
+  "schema_version": 2,
+  "status": "PREPARED_AND_REVIEWED_CONSOLIDATED_HANDOFF",
+  "prepared_at_utc": "2026-10-18 01:43:47 UTC",
+  "repository": "vltanh/lean4-squares-in-circles",
+  "pull_request": 9,
+  "scope": "Consolidate the completed hand proof and preserve progress history; prepare a staged Lean formalization. No Lean source or build configuration is changed.",
+  "source_snapshot": {
+    "head": "2dfee8a55617ebd4b96a57f5167603dda2f1e54d",
+    "tree": "9a10bbf3e79a6d6dc81303bf70538ac6a9ab1ea6",
+    "base": "35c72e0aa740b17f012584e625bd13367c9726ff",
+    "base_tree": "e5e87f96b15b8d56f9390dcf45601162a1e28093",
+    "archived_commit_count": 650,
+    "backup_ref": "refs/heads/archive/eight-proof-before-squash-2026-10-18",
+    "backup_verified_at_utc": "2026-10-18 01:24:25 UTC"
+  },
+  "history_verification": {
+    "result": "PASS",
+    "complete_sole_parent_chain": true,
+    "unique_commit_count": 650,
+    "chain_first_commit": "8fcb687fda570283840990798a1bd23b8b71ce73",
+    "chain_last_commit": "2dfee8a55617ebd4b96a57f5167603dda2f1e54d",
+    "first_author_api_timestamp": "2026-10-01T02:18:58Z",
+    "first_committer_api_timestamp": "2026-10-01T02:18:58Z",
+    "last_author_api_timestamp": "2026-10-18T00:41:59Z",
+    "last_committer_api_timestamp": "2026-10-18T00:41:59Z",
+    "markdown_rows_independently_compared": 650,
+    "display_timezone": "America/Chicago",
+    "timestamp_note": "The JSON preserves both timestamp strings exactly as returned by GitHub. Local display times are conversions. The archive reference preserves the original Git objects and raw timezone metadata.",
+    "packaging_checkpoints": 1,
+    "packaging_record_independently_verified": true
+  },
+  "tree_verification": {
+    "result": "PASS",
+    "historical_original_file_entries": 1530,
+    "historical_base_file_entries": 545,
+    "original_research_eight_entries_to_preserve": 985,
+    "current_publication_base_file_entries": 491,
+    "current_publication_base_contains_research_eight": false,
+    "original_historical_base_and_publication_base_tree_hashes_independently_reconstructed": true,
+    "preservation_rule": "Preserve every original research/eight object identity and mode against the archived proof head; preserve every outside-prefix object identity and mode against current publication main. Historical outside-prefix files are retained in the archive, not restored over newer main.",
+    "new_document_links_resolve_in_published_flat_layout": true,
+    "final_remote_tree_comparison_required": true
+  },
+  "hand_proof": {
+    "status": "PASS_UNRESTRICTED_HAND_PROOF_AND_COMPLETE_EQUALITY_CLASSIFICATION",
+    "pending_mathematical_gates": [],
+    "direct_manifest_files": 84,
+    "completed_child_manifests": 15,
+    "all_84_direct_source_sizes_and_sha256_independently_verified": true,
+    "preserve_existing_files_byte_for_byte": true,
+    "frozen_sources": {
+      "UNRESTRICTED_EIGHT_SQUARE_HAND_PROOF.md": {
+        "bytes": 64955,
+        "sha256": "a69a1d897fad1c144fd1931a09bb1e464cbaed9054d273151d37645225e277fc"
+      },
+      "UNRESTRICTED_EIGHT_SQUARE_HAND_MANIFEST.json": {
+        "bytes": 25107,
+        "sha256": "19f3992f5ade2de3b5962e920997277a98b95194f818739e6ee55ea42dfb7833"
+      }
+    },
+    "trust_note": "This source binding is provenance, not a proof oracle. The consolidated continuous arguments and their fixed mathematical appendices supply the hand proof."
+  },
+  "formalization_preparation": {
+    "status": "PLANNED_NOT_IMPLEMENTED",
+    "stages": [
+      "F0",
+      "F1",
+      "F2",
+      "F3",
+      "F4",
+      "F5",
+      "F6",
+      "F7",
+      "F8",
+      "F9",
+      "F10",
+      "F11",
+      "F12"
+    ],
+    "toolchain": "leanprover/lean4:v4.35.0-rc3",
+    "mathlib_requested_tag": "v4.35.0-rc3",
+    "mathlib_locked_revision": "c55e6e786f49471c72fbddbec5415808896aec1e",
+    "inspected_existing_eight_lean_module_count": 0,
+    "lean_files_written": 0,
+    "lean_compiler_runs": 0,
+    "ci_invoked": false,
+    "required_trust_boundary": "Kernel-checked terms with the project's ordinary logical axioms; no new geometry, certificate, native-evaluation, or external-result axiom.",
+    "implementation_baseline_commit": "089a1cb83aeb40eea802375c1f35d3301fda06a3",
+    "implementation_baseline_tree": "af4976ff0b9f7b3cf471d44e9a41d4354cdaad54"
+  },
+  "package_files": {
+    "README.md": {
+      "bytes": 7231,
+      "sha256": "b6a2f3cb5921a994b6b92de00c48e0697c320c2d85e0646bec558d16b1c9b809",
+      "git_blob": "32a758dc17e5ba8d230eae69dfd6edb8a005f140"
+    },
+    "HANDOFF.md": {
+      "bytes": 17199,
+      "sha256": "36198a938fa49196aec4998a4846d7b280207d3ae4279680055d82489f1395f9",
+      "git_blob": "dd0e57cf2559097aef7af00b79ab49d9cbce8a3e"
+    },
+    "HANDOFF_REVIEW.md": {
+      "bytes": 20296,
+      "sha256": "87f0413eac57d98e091e67ab8cb5a0655ab9abd4279fc2f867baec5cf729bf7d",
+      "git_blob": "daad94c4f8529883c903b32c4a8f54d8a0a95ad2"
+    },
+    "LEAN_FORMALIZATION_ROADMAP.md": {
+      "bytes": 44805,
+      "sha256": "9ab0012845ca8c2ff2c3fcd77fe7b013003f9190acfaf5b76d485c63c78c410d",
+      "git_blob": "e8c9132d4bfede63581b52e43073f7ab813237cf"
+    },
+    "PRE_SQUASH_COMMITS.json": {
+      "bytes": 510121,
+      "sha256": "21c744dece5777eac74109ca15353b4beb9c76f7ec88b6ae9524e9cfc2085b44",
+      "git_blob": "676a630ebd04fdb83028670d9bd0d25a230a7b4a"
+    },
+    "PRE_SQUASH_TREE.json": {
+      "bytes": 519014,
+      "sha256": "cf9811daefc0fb9653683431e2d6d1db49667542f9f6bb4adb535073c705daff",
+      "git_blob": "a8c86009659a72f7a9a78995200bb7dc5759917c"
+    },
+    "PROGRESS_HISTORY.md": {
+      "bytes": 201308,
+      "sha256": "322b71b7aa28e7c2a4b7bfed2a9d85da26fd3e44b99d0f1345f6d228536abb4b",
+      "git_blob": "f06c8d501f288defb6a8fd9b1d9a54ac59e16b55"
+    }
+  },
+  "planned_squash": {
+    "branch": "research/eight-proof",
+    "sole_parent": "089a1cb83aeb40eea802375c1f35d3301fda06a3",
+    "expected_old_head": "cafe1823c0aa5c51424c0376a47bacf74d83dbaa",
+    "force_update_with_expected_sha": true,
+    "allowed_change_prefix": "research/eight/",
+    "added_paths": [
+      "research/eight/HANDOFF.md",
+      "research/eight/HANDOFF_PACKAGE_MANIFEST.json",
+      "research/eight/HANDOFF_REVIEW.md",
+      "research/eight/LEAN_FORMALIZATION_ROADMAP.md",
+      "research/eight/PRE_SQUASH_COMMITS.json",
+      "research/eight/PRE_SQUASH_TREE.json",
+      "research/eight/PROGRESS_HISTORY.md",
+      "research/eight/README.md"
+    ],
+    "commit_message_skip_ci": true,
+    "note": "This manifest is prepared before final publication. The commit containing it supplies the final squash identity and its own author/committer timestamps. Final publication must verify the PR has only that commit, with current main as sole parent, all original research objects and modes preserved, all outside-prefix files identical to publication main, and both archive references retained. The Git object and PR publication report record the final commit time without a self-referential commit hash.",
+    "original_research_entries_to_preserve": 985,
+    "publication_base_entries_to_preserve_outside_research": 491
+  },
+  "publication_baseline": {
+    "commit": "089a1cb83aeb40eea802375c1f35d3301fda06a3",
+    "tree": "af4976ff0b9f7b3cf471d44e9a41d4354cdaad54",
+    "ref": "refs/heads/main",
+    "commits_after_historical_base": 34,
+    "source": "Direct Git reference and immutable commit/tree read-back; refreshed production interfaces inspected in 24 source/configuration files."
+  },
+  "packaging_checkpoint": {
+    "sha": "cafe1823c0aa5c51424c0376a47bacf74d83dbaa",
+    "author_timestamp": "2026-10-18T01:31:48Z",
+    "committer_timestamp": "2026-10-18T01:31:48Z",
+    "archive_ref": "refs/heads/archive/eight-proof-initial-squash-2026-10-18",
+    "archive_verified_at_utc": "2026-10-18 01:38:20 UTC",
+    "reason_for_replacement": "Align the sole parent and production tree with current main after the PR base metadata refresh."
+  }
+}

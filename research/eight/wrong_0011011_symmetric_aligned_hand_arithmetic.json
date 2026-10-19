@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "scope": "Symmetric aligned outer contact only",
+  "coefficient_identities": 6,
+  "strict_comparisons": 16,
+  "checks": [
+    {
+      "name": "diagonal above .5",
+      "positive_reserve": "4789/5000"
+    },
+    {
+      "name": "diagonal below .9",
+      "positive_reserve": "11/5000"
+    },
+    {
+      "name": "first endpoint radical above 1.398",
+      "positive_reserve": "299/250000"
+    },
+    {
+      "name": "second endpoint radical above 1.885",
+      "positive_reserve": "19/8000"
+    },
+    {
+      "name": "radical sum above 3.28",
+      "positive_reserve": "3/1000"
+    },
+    {
+      "name": "radical sum below 3.42",
+      "positive_reserve": "17/500"
+    },
+    {
+      "name": "quartic third derivative positive",
+      "positive_reserve": "52363791/1250000"
+    },
+    {
+      "name": "quartic second derivative above 29",
+      "positive_reserve": "2330887/3125000"
+    },
+    {
+      "name": "reference lies above lower endpoint",
+      "positive_reserve": "587/5000"
+    },
+    {
+      "name": "reference lies below upper endpoint",
+      "positive_reserve": "113/5000"
+    },
+    {
+      "name": "reference value above .001948",
+      "positive_reserve": "24314060283657/31250000000000000000"
+    },
+    {
+      "name": "reference derivative greater than -.0015",
+      "positive_reserve": "2270175516643/781250000000000"
+    },
+    {
+      "name": "reference derivative less than .0015",
+      "positive_reserve": "73574483357/781250000000000"
+    },
+    {
+      "name": "completed-square quartic reserve",
+      "positive_reserve": "11127/232000000"
+    },
+    {
+      "name": "strict cost surplus above .00012",
+      "positive_reserve": "1027/981025000"
+    },
+    {
+      "name": "self-contained whole-angle curvature floor",
+      "positive_reserve": "253/400"
+    }
+  ]
+}

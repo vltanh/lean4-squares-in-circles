@@ -1,0 +1,14 @@
+{
+  "branches": 40,
+  "affine_piece_rectangles": 2560,
+  "nodes": 3746056,
+  "leaves": 1874308,
+  "max_depth": 24,
+  "least_negative_margin_numerator": -53128,
+  "scale": 281474976710656,
+  "sum_branch_seconds": 384.18892231799964,
+  "source_sha256": "052cd5fd9830f7a4f6a5ac2b0b5ca066241c8a209a5f63ef61820e78a75a651a",
+  "arithmetic_source_sha256": "9d5b6b46496140ede1a5ccda50118a215a118f788f8f87c687d3457fa4b7619f",
+  "executable_sha256": "253319cca7c160bca47d2493f9f9036c96121a7975766a5b9ceb3223c571a0be",
+  "manifest_sha256": "6608f5e8ce9c482a73392b27cb714311fc38d760a13ecbdfae455fc5855d6565"
+}

@@ -1,0 +1,64 @@
+{
+  "status": "PASS",
+  "scope": "Exact state and conditional angle domain union, rational input binding and mismatch contraction; polynomial arithmetic comes from the separately reviewed kernel",
+  "Q": "3.915534138",
+  "word": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1
+  ],
+  "cuts": {
+    "0": [
+      "0",
+      "1"
+    ],
+    "1": [
+      "-4/5",
+      "-1/20"
+    ],
+    "2": [
+      "0",
+      "1"
+    ],
+    "3": [
+      "-1",
+      "0"
+    ],
+    "4": [
+      "1/20",
+      "4/5"
+    ],
+    "5": [
+      "-1",
+      "0"
+    ],
+    "6": [
+      "-1",
+      "0"
+    ]
+  },
+  "arcs": 335,
+  "state_unions": 14,
+  "angle_chains": 101280,
+  "rows": 107196,
+  "polynomials": 292119,
+  "printed_nonnegative_coefficients": 2468184,
+  "least_strict_cost_coefficient": "576987/25000000000000",
+  "gamma_sum": "125662969/20000000",
+  "mismatch_input_bound": "1/10",
+  "mismatch_output_strict_bound": "3/200",
+  "beta": "1/200",
+  "pi_upper": "628318531/100000000",
+  "h_lower_at_output": "238191/32000000",
+  "strict_contraction_reserve": "2287/6400000000",
+  "full_coefficient_replay_sha256": "014c06a9373077acb965a78690669b863214eb42dc650f30619eb63553e60df3",
+  "sha256": {
+    "MISMATCH_01_TO_015_AFFINE_HAND_DATA.json": "03bf9931b294d29cb9ef34bb0b9455e7ce12a0d173756d12ec6a915a5ead5fb3",
+    "MISMATCH_01_TO_015_AFFINE_HAND_COMPACT_REPORT.json": "7646a100a7f0ac79b41634d8e26ffd89cfd710e2d553e5fb2267f482df433cdf",
+    "verify_mismatch_01_to_015_affine_hand.js": "6af3d41fe7d404da7dd286c46644160f5444edd3028d864701266e9a4cd18697"
+  }
+}

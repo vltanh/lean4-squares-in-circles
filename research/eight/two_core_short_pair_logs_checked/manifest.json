@@ -1,0 +1,405 @@
+{
+  "status": "ALL REQUIRED BRANCHES PASSED",
+  "required_pairs": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      6,
+      0
+    ]
+  ],
+  "K": 8,
+  "executable_sha256": "738046bf929e21a3d507d40e64d9bcd86a784e0d7cf3b22d1db035380f1ac0b6",
+  "source_sha256": "cf0cdabdabaf22b3d07b6f7b80e934b94281025b5fa80c41cad74b79d3dc6757",
+  "arithmetic_source_sha256": "9d5b6b46496140ede1a5ccda50118a215a118f788f8f87c687d3457fa4b7619f",
+  "data_header_sha256": "ee49492b6c640d35e3d98ca62399d6d7241cd7ed8313f0bd6c40023738249a4c",
+  "data_json_sha256": "9b20d5185ce194017521dd7c9c252dc278a216258c6539677c3a6521a9459f6b",
+  "results": [
+    {
+      "branch": [
+        0,
+        1,
+        -1,
+        -1
+      ],
+      "returncode": 0,
+      "complete": true,
+      "seconds": 4.049135606999698,
+      "summary": "VERIFIED 0 1 -1 -1 nodes=48508 leaves=24286 depth=21 margin_upper=-11466627/281474976710656 seconds=4.04537",
+      "sha256": "20725cdbed66c5ead5d40d8d7b9ce25e22f14c77f6180e6372b13f7e5344cfd2"
+    },
+    {
+      "branch": [
+        0,
+        1,
+        -1,
+        1
+      ],
+      "returncode": 0,
+      "complete": true,
+      "seconds": 39.66171683600078,
+      "summary": "VERIFIED 0 1 -1 1 nodes=375736 leaves=187900 depth=22 margin_upper=-1759418/281474976710656 seconds=39.6573",
+      "sha256": "7fbdb65fd771288ed832a380527d9c9a7ef57fdc7484e61e3b7bc6c9136d6ef0"
+    },
+    {
+      "branch": [
+        0,
+        1,
+        1,
+        -1
+      ],
+      "returncode": 0,
+      "complete": true,
+      "seconds": 34.84499093799968,
+      "summary": "VERIFIED 0 1 1 -1 nodes=349184 leaves=174624 depth=21 margin_upper=-578062/281474976710656 seconds=34.8391",
+      "sha256": "6895d74b0be385ded2870102cbecd732b6766fae50c5824caefd86f059e849b1"
+    },
+    {
+      "branch": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "returncode": 0,
+      "complete": true,
+      "seconds": 2.9895463789998757,
+      "summary": "VERIFIED 0 1 1 1 nodes=33072 leaves=16568 depth=22 margin_upper=-16047998/281474976710656 seconds=2.98681",
+      "sha256": "c4f8ffbd5ddc883c9e352c6e7990f1a6203de67183b4162709ea6f8a18b5ac26"
+    },
+    {
+      "branch": [
+        1,
+        2,
+        -1,
+        -1
+      ],
+      "returncode": 0,
+      "complete": true,
+      "seconds": 3.051974922000227,
+      "summary": "VERIFIED 1 2 -1 -1 nodes=31868 leaves=15966 depth=22 margin_upper=-10964988/281474976710656 seconds=3.04883",
+      "sha256": "1256ad0a3dfbc48b3a264fc45e1e7a30eed842ce22e4469065f0c3da38033bd7"
+    },
+    {
+      "branch": [
+        1,
+        2,
+        -1,
+        1
+      ],
+      "returncode": 0,
+      "complete": true,
+      "seconds": 3.6451771590000135,
+      "summary": "VERIFIED 1 2 -1 1 nodes=34926 leaves=17495 depth=21 margin_upper=-42452468/281474976710656 seconds=3.63688",
+      "sha256": "cddf9a8b8c758ae1e0004cd915c454458470ac3cb81f9280d207bccd6e6ad543"
+    },
+    {
+      "branch": [
+        1,
+        2,
+        1,
+        -1
+      ],
+      "returncode": 0,
+      "complete": true,
+      "seconds": 12.52219848599998,
+      "summary": "VERIFIED 1 2 1 -1 nodes=126192 leaves=63128 depth=21 margin_upper=-2112778/281474976710656 seconds=12.5187",
+      "sha256": "ca82888eb8f05855f891667e4ec6609b77a1624ae47d9f6b99467725348b4114"
+    },
+    {
+      "branch": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "returncode": 0,
+      "complete": true,
+      "seconds": 0.032819076001032954,
+      "summary": "VERIFIED 1 2 1 1 nodes=538 leaves=301 depth=6 margin_upper=-335846154619/281474976710656 seconds=0.0293563",
+      "sha256": "7305080ea08134923ae608bc2456221381b3d024a9b1c0bf36a7317f8846ec4e"
+    },
+    {
+      "branch": [
+        2,
+        3,
+        -1,
+        -1
+      ],
+      "returncode": 0,
+      "complete": true,
+      "seconds": 0.5254029480001918,
+      "summary": "VERIFIED 2 3 -1 -1 nodes=6188 leaves=3126 depth=23 margin_upper=-63350775/281474976710656 seconds=0.521047",
+      "sha256": "9751ffb1528ce145dc35add58296f6b06452ec9288250a9781337095dff8bc26"
+    },
+    {
+      "branch": [
+        2,
+        3,
+        -1,
+        1
+      ],
+      "returncode": 0,
+      "complete": true,
+      "seconds": 533.8616196250005,
+      "summary": "VERIFIED 2 3 -1 1 nodes=2190912 leaves=1095488 depth=29 margin_upper=-7079/281474976710656 seconds=533.856",
+      "sha256": "20cc173c693facec23c66802c237487d8c1331002f71c82b09d63f767f0d4987"
+    },
+    {
+      "branch": [
+        2,
+        3,
+        1,
+        -1
+      ],
+      "returncode": 0,
+      "complete": true,
+      "seconds": 158.4982518960005,
+      "summary": "VERIFIED 2 3 1 -1 nodes=1485548 leaves=742806 depth=23 margin_upper=-407148/281474976710656 seconds=158.493",
+      "sha256": "67834335873a9d2a151f2fb684dfc9d0ef758f78b4044a883945b2c9bdf773f3"
+    },
+    {
+      "branch": [
+        2,
+        3,
+        1,
+        1
+      ],
+      "returncode": 0,
+      "complete": true,
+      "seconds": 90.81801912900119,
+      "summary": "VERIFIED 2 3 1 1 nodes=875232 leaves=437648 depth=27 margin_upper=-61547/281474976710656 seconds=90.8124",
+      "sha256": "7a5a71f1c3bbde95823b86955350b40903bc8a5cd2d3c23c136fad6c75c2e617"
+    },
+    {
+      "branch": [
+        3,
+        4,
+        -1,
+        -1
+      ],
+      "returncode": 0,
+      "complete": true,
+      "seconds": 1.3647543600000063,
+      "summary": "VERIFIED 3 4 -1 -1 nodes=19040 leaves=9552 depth=22 margin_upper=-26913706/281474976710656 seconds=1.36057",
+      "sha256": "18f1e7b197591438723039c4edbdccb83844d02db7d0e1511851c489755a752f"
+    },
+    {
+      "branch": [
+        3,
+        4,
+        -1,
+        1
+      ],
+      "returncode": 0,
+      "complete": true,
+      "seconds": 19.25290898899948,
+      "summary": "VERIFIED 3 4 -1 1 nodes=184770 leaves=92417 depth=22 margin_upper=-3623823/281474976710656 seconds=19.2491",
+      "sha256": "31657c144bc35637572ce0936bb12b8271a5085c2d8fa52483c746aaaba64e3c"
+    },
+    {
+      "branch": [
+        3,
+        4,
+        1,
+        -1
+      ],
+      "returncode": 0,
+      "complete": true,
+      "seconds": 76.9126454849993,
+      "summary": "VERIFIED 3 4 1 -1 nodes=742486 leaves=371275 depth=23 margin_upper=-45694/281474976710656 seconds=76.9094",
+      "sha256": "edfd8ec4320013e96741eb39097a7b14137f69277b0ef4b9ee621101d134be5a"
+    },
+    {
+      "branch": [
+        3,
+        4,
+        1,
+        1
+      ],
+      "returncode": 0,
+      "complete": true,
+      "seconds": 12.093900578000103,
+      "summary": "VERIFIED 3 4 1 1 nodes=129346 leaves=64705 depth=22 margin_upper=-4011304/281474976710656 seconds=12.0908",
+      "sha256": "42189a320a4f3cfd34f0a0930ba1c7fdee0e9989f8871a4a8482eb70afd9f618"
+    },
+    {
+      "branch": [
+        4,
+        5,
+        -1,
+        -1
+      ],
+      "returncode": 0,
+      "complete": true,
+      "seconds": 3.096442379999644,
+      "summary": "VERIFIED 4 5 -1 -1 nodes=42142 leaves=21103 depth=22 margin_upper=-48955722/281474976710656 seconds=3.09377",
+      "sha256": "906d28fbbe59cc190b4f718061892f2c4b964ff2d8b27e79e46a08e4f5252389"
+    },
+    {
+      "branch": [
+        4,
+        5,
+        -1,
+        1
+      ],
+      "returncode": 0,
+      "complete": true,
+      "seconds": 123.03621320599996,
+      "summary": "VERIFIED 4 5 -1 1 nodes=1171186 leaves=585625 depth=23 margin_upper=-422674/281474976710656 seconds=123.031",
+      "sha256": "1f8b3ac3d0f0419a3e5d7c5e4d5550fbf71b68aa3cba6e1d6391aed64f9a0ffe"
+    },
+    {
+      "branch": [
+        4,
+        5,
+        1,
+        -1
+      ],
+      "returncode": 0,
+      "complete": true,
+      "seconds": 26.67584717200043,
+      "summary": "VERIFIED 4 5 1 -1 nodes=263308 leaves=131686 depth=22 margin_upper=-3226822/281474976710656 seconds=26.6715",
+      "sha256": "164e7ed32d4e28f7315b1ef188475e8eeb17973385bc13534252182fd95f49a2"
+    },
+    {
+      "branch": [
+        4,
+        5,
+        1,
+        1
+      ],
+      "returncode": 0,
+      "complete": true,
+      "seconds": 14.22924185500051,
+      "summary": "VERIFIED 4 5 1 1 nodes=153822 leaves=76943 depth=22 margin_upper=-8188036/281474976710656 seconds=14.2235",
+      "sha256": "0912ed87e36a49a4132bb590a2719d86609cc97ed8d8e18e5b088ee4e909ee51"
+    },
+    {
+      "branch": [
+        5,
+        6,
+        -1,
+        -1
+      ],
+      "returncode": 0,
+      "complete": true,
+      "seconds": 5.40455827400001,
+      "summary": "VERIFIED 5 6 -1 -1 nodes=70872 leaves=35468 depth=21 margin_upper=-30686714/281474976710656 seconds=5.39937",
+      "sha256": "ba777ab3446c286b73e42ef541b751536eabf8e2fc5dc05ed3e1e3afda9efe24"
+    },
+    {
+      "branch": [
+        5,
+        6,
+        -1,
+        1
+      ],
+      "returncode": 0,
+      "complete": true,
+      "seconds": 9.077784691000488,
+      "summary": "VERIFIED 5 6 -1 1 nodes=88296 leaves=44180 depth=22 margin_upper=-2650838/281474976710656 seconds=9.07415",
+      "sha256": "ca678316fe81cdd887df23f8e5b0c41d9fe5997de19a5de571756ba26a438e7e"
+    },
+    {
+      "branch": [
+        5,
+        6,
+        1,
+        -1
+      ],
+      "returncode": 0,
+      "complete": true,
+      "seconds": 50.81332269599989,
+      "summary": "VERIFIED 5 6 1 -1 nodes=506724 leaves=253394 depth=23 margin_upper=-651997/281474976710656 seconds=50.8099",
+      "sha256": "7d13a5e1a04267e8529d43f4d7af31b1343150bf2ce0cc0561d2b54244eb0f1d"
+    },
+    {
+      "branch": [
+        5,
+        6,
+        1,
+        1
+      ],
+      "returncode": 0,
+      "complete": true,
+      "seconds": 3.280249146000642,
+      "summary": "VERIFIED 5 6 1 1 nodes=33276 leaves=16670 depth=22 margin_upper=-8681168/281474976710656 seconds=3.27644",
+      "sha256": "4be70ed27a71d8ba1a735fc062312b9d85841e98c60ab3907af833eecd5c88e5"
+    },
+    {
+      "branch": [
+        6,
+        0,
+        -1,
+        -1
+      ],
+      "returncode": 0,
+      "complete": true,
+      "seconds": 5.618665029998738,
+      "summary": "VERIFIED 6 0 -1 -1 nodes=55334 leaves=27699 depth=22 margin_upper=-6101040/281474976710656 seconds=5.61589",
+      "sha256": "c8ff45f3f7bb9ce086ed5a1c70d573b362d325ae20b7a4d80211033c56a05da7"
+    },
+    {
+      "branch": [
+        6,
+        0,
+        -1,
+        1
+      ],
+      "returncode": 0,
+      "complete": true,
+      "seconds": 36.23928890999923,
+      "summary": "VERIFIED 6 0 -1 1 nodes=349096 leaves=174580 depth=21 margin_upper=-1532910/281474976710656 seconds=36.2343",
+      "sha256": "0c3be4f1b94bcd699e1f619b595a7e5c05d9c498ae6b2e5af96cc810453bba0b"
+    },
+    {
+      "branch": [
+        6,
+        0,
+        1,
+        -1
+      ],
+      "returncode": 0,
+      "complete": true,
+      "seconds": 13.737858372000119,
+      "summary": "VERIFIED 6 0 1 -1 nodes=145562 leaves=72813 depth=22 margin_upper=-8508611/281474976710656 seconds=13.7349",
+      "sha256": "7173b5f87aad0f60cdcfa4ce165c6964dae56af072820e54c662d211fbf1512c"
+    },
+    {
+      "branch": [
+        6,
+        0,
+        1,
+        1
+      ],
+      "returncode": 0,
+      "complete": true,
+      "seconds": 1.9150122179999016,
+      "summary": "VERIFIED 6 0 1 1 nodes=22076 leaves=11070 depth=20 margin_upper=-2117491/281474976710656 seconds=1.91084",
+      "sha256": "d89cac5f8b4d10ae079b1c2d8a8cdec8d990106b72129195c19db9521eaa4b67"
+    }
+  ]
+}

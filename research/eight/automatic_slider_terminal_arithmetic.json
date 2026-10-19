@@ -1,0 +1,100 @@
+{
+  "status": "PASS",
+  "scope": "fixed exact arithmetic; continuous derivation in HAND_TERMINAL_WITH_AUTOMATIC_SLIDERS.md",
+  "comparisons": 20,
+  "owner_reserves": [
+    "1869/100000",
+    "1083/3125",
+    "124503/400000",
+    "159399/400000",
+    "498319/10000000",
+    "56793/5000000",
+    "4357/200000",
+    "160229/10000000",
+    "79121/2000000"
+  ],
+  "rho": "56793/5000000",
+  "terminal_S_coefficient": "10293/5000000",
+  "rows": [
+    {
+      "name": "sqrt2 exceeds 1.41 by squaring",
+      "positive_reserve": "119/10000"
+    },
+    {
+      "name": "outer primary below 1.415",
+      "positive_reserve": "13/8000"
+    },
+    {
+      "name": "T lower projection reserve",
+      "positive_reserve": "1/4000"
+    },
+    {
+      "name": "T upper projection reserve",
+      "positive_reserve": "1/2000"
+    },
+    {
+      "name": "G upper projection reserve",
+      "positive_reserve": "3/4000"
+    },
+    {
+      "name": "owner reserve V1",
+      "positive_reserve": "1869/100000"
+    },
+    {
+      "name": "owner reserve V2",
+      "positive_reserve": "1083/3125"
+    },
+    {
+      "name": "owner reserve V3",
+      "positive_reserve": "124503/400000"
+    },
+    {
+      "name": "owner reserve V4",
+      "positive_reserve": "159399/400000"
+    },
+    {
+      "name": "owner reserve V5",
+      "positive_reserve": "498319/10000000"
+    },
+    {
+      "name": "owner reserve V6",
+      "positive_reserve": "56793/5000000"
+    },
+    {
+      "name": "owner reserve V7",
+      "positive_reserve": "4357/200000"
+    },
+    {
+      "name": "owner reserve V8",
+      "positive_reserve": "160229/10000000"
+    },
+    {
+      "name": "owner reserve V9",
+      "positive_reserve": "79121/2000000"
+    },
+    {
+      "name": "quadratic constant below 9.28",
+      "positive_reserve": "3148402569799787/2850910772000000000"
+    },
+    {
+      "name": "enlarged cubic constant below 1.5",
+      "positive_reserve": "6430197/3455440000"
+    },
+    {
+      "name": "remainder below 9.3 S squared",
+      "positive_reserve": "37/2000"
+    },
+    {
+      "name": "positive terminal linear coefficient",
+      "positive_reserve": "10293/5000000"
+    },
+    {
+      "name": "initial budget mismatch below .004",
+      "positive_reserve": "21/10000"
+    },
+    {
+      "name": "final budget mismatch below .001",
+      "positive_reserve": "3/98000"
+    }
+  ]
+}

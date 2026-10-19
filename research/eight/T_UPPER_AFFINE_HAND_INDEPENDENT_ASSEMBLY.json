@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "scope": "Independent exact state and angle domain union, rational input binding and cyclic contradiction; polynomial arithmetic comes from the separately reviewed kernel",
+  "Q": "3.915534138",
+  "word": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1
+  ],
+  "cuts": {
+    "1": [
+      "-4/5",
+      "-1/20"
+    ],
+    "4": [
+      "4/5",
+      "1"
+    ],
+    "6": [
+      "-1",
+      "0"
+    ]
+  },
+  "arcs": 102,
+  "state_unions": 22,
+  "angle_chains": 6452,
+  "rows": 7078,
+  "polynomials": 19711,
+  "printed_nonnegative_coefficients": 147771,
+  "least_strict_cost_coefficient": "768927349/50000000000000",
+  "gamma_sum": "62839/10000",
+  "reserve_above_710_over_113": "807/1130000",
+  "full_coefficient_replay_sha256": "f43ecf10d0543acb7417c881dd4068b850caa2399de40397082265f00f3ac186",
+  "sha256": {
+    "T_UPPER_AFFINE_HAND_DATA.json": "bf670d4828b6045906e55b07e95d452f555eb4e986505f6f7c8ad9308476b2f8",
+    "T_UPPER_AFFINE_HAND_COMPACT_REPORT.json": "091eaa23e58811220ef4711e16963638c9c6524998615957d33c6c763ea98208",
+    "verify_T_upper_affine_hand.js": "1bd04b7b8890f7008108489da6fdf24b947e472eb4873f7523994ce4b81b85ee"
+  }
+}

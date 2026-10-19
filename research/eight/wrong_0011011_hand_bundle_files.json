@@ -1,0 +1,781 @@
+{
+  "status": "COMPLETE_HAND_SOURCE_BUNDLE",
+  "scope": "0011011 hand components, exact arithmetic, independent reviews and whole-word assembly; discovery inputs excluded.",
+  "file_count": 129,
+  "files": [
+    {
+      "workspace_path": "proof_integration/WRONG_0011011_ALL_CORE_CORE_HAND_PROOF.md",
+      "repository_path": "research/eight/WRONG_0011011_ALL_CORE_CORE_HAND_PROOF.md",
+      "sha256": "f723f07f8534a25c54f847602680457b9c6af2cc0f5c68dd6e9590ed36078b94",
+      "bytes": 6602
+    },
+    {
+      "workspace_path": "proof_integration/WRONG_0011011_ALL_CORE_CORE_INDEPENDENT_AUDIT.md",
+      "repository_path": "research/eight/WRONG_0011011_ALL_CORE_CORE_INDEPENDENT_AUDIT.md",
+      "sha256": "1d5de0365144c3a08e056d85baf021c268d44aa9b4ab605db599664f85326b2e",
+      "bytes": 3043
+    },
+    {
+      "workspace_path": "proof_integration/WRONG_0011011_ASYMMETRIC_OPPOSITE_OUTER_ZERO_HAND_PROOF.md",
+      "repository_path": "research/eight/WRONG_0011011_ASYMMETRIC_OPPOSITE_OUTER_ZERO_HAND_PROOF.md",
+      "sha256": "fbbd2da52f34c98507c2ea9a6c1756c2e14f73f588a1da75fd5a939223a5451a",
+      "bytes": 13246
+    },
+    {
+      "workspace_path": "proof_integration/WRONG_0011011_EARLIER_MIXED_INDEPENDENT_AUDIT.md",
+      "repository_path": "research/eight/WRONG_0011011_EARLIER_MIXED_INDEPENDENT_AUDIT.md",
+      "sha256": "d157a72f28ff358787b04a9900b6ce367e0776be783c63384c1f8230c631d5f2",
+      "bytes": 14542
+    },
+    {
+      "workspace_path": "proof_integration/WRONG_0011011_EDGE3_NEGATIVE_OUTER_QUARTER_HAND_PROOF.md",
+      "repository_path": "research/eight/WRONG_0011011_EDGE3_NEGATIVE_OUTER_QUARTER_HAND_PROOF.md",
+      "sha256": "664122d1a4872dabc4d40b51e7009ae9c910708e4cbe40b2330c51b024a95686",
+      "bytes": 19695
+    },
+    {
+      "workspace_path": "proof_integration/WRONG_0011011_EDGE3_OPPOSITE_AXES12_HAND_PROOF.md",
+      "repository_path": "research/eight/WRONG_0011011_EDGE3_OPPOSITE_AXES12_HAND_PROOF.md",
+      "sha256": "0759a975966a5bda41a8144aa7e7a9e99e08c54135cc31d848a25d5897c397bf",
+      "bytes": 12908
+    },
+    {
+      "workspace_path": "proof_integration/WRONG_0011011_EDGE3_OPPOSITE_AXES34_HAND_PROOF.md",
+      "repository_path": "research/eight/WRONG_0011011_EDGE3_OPPOSITE_AXES34_HAND_PROOF.md",
+      "sha256": "6078d06293eb9dba710d62e7968b117568f2c0b1e8d5b67744e8d60c5f16babe",
+      "bytes": 12150
+    },
+    {
+      "workspace_path": "proof_integration/WRONG_0011011_FINAL_MIXED_EDGE3_INDEPENDENT_AUDIT.md",
+      "repository_path": "research/eight/WRONG_0011011_FINAL_MIXED_EDGE3_INDEPENDENT_AUDIT.md",
+      "sha256": "cf0c37ca6f3df530c38be0682165b1fd8a297b7210998e0abb6550f3c3c3584b",
+      "bytes": 6187
+    },
+    {
+      "workspace_path": "proof_integration/WRONG_0011011_NEGATIVE_OUTER_QUARTER_HAND_PROOF.md",
+      "repository_path": "research/eight/WRONG_0011011_NEGATIVE_OUTER_QUARTER_HAND_PROOF.md",
+      "sha256": "313f4d93c388669ed1d1210399808bbf267bad7f9f0fb2994ae3813bf0655552",
+      "bytes": 15115
+    },
+    {
+      "workspace_path": "proof_integration/WRONG_0011011_OPPOSITE_MIXED_ZERO_HAND_PROOF.md",
+      "repository_path": "research/eight/WRONG_0011011_OPPOSITE_MIXED_ZERO_HAND_PROOF.md",
+      "sha256": "8d474cce619253791d16c68eb0eda8cf5a6405aa5947b46383f11359b8bf6e40",
+      "bytes": 22034
+    },
+    {
+      "workspace_path": "proof_integration/WRONG_0011011_OPPOSITE_OUTER_EDGE2_QUARTER_HAND_PROOF.md",
+      "repository_path": "research/eight/WRONG_0011011_OPPOSITE_OUTER_EDGE2_QUARTER_HAND_PROOF.md",
+      "sha256": "01b38e6215c2d9cf7ff78bab6e0cfd2c4071de8b84e51b48a517da7779df5461",
+      "bytes": 17155
+    },
+    {
+      "workspace_path": "proof_integration/WRONG_0011011_POSITIVE_NEGATIVE_OUTER_QUARTER_HAND_PROOF.md",
+      "repository_path": "research/eight/WRONG_0011011_POSITIVE_NEGATIVE_OUTER_QUARTER_HAND_PROOF.md",
+      "sha256": "908e34c74247102a5ac487af03a96bb0865d9c183028ac186623abaa721a00fc",
+      "bytes": 3374
+    },
+    {
+      "workspace_path": "proof_integration/WRONG_0011011_SAME_OUTER_ZERO_HAND_PROOF.md",
+      "repository_path": "research/eight/WRONG_0011011_SAME_OUTER_ZERO_HAND_PROOF.md",
+      "sha256": "a070318c7bea40c706d3a471938d9a0c1fcc9a057806976d34bc1583bfbd255c",
+      "bytes": 17067
+    },
+    {
+      "workspace_path": "proof_integration/WRONG_0011011_SAME_SIGN_MIXED_ZERO_HAND_PROOF.md",
+      "repository_path": "research/eight/WRONG_0011011_SAME_SIGN_MIXED_ZERO_HAND_PROOF.md",
+      "sha256": "f95575cadcefe37e3035365c9c672d9f1ba72e393f062e112a5963f3ea74b587",
+      "bytes": 17321
+    },
+    {
+      "workspace_path": "proof_integration/WRONG_0011011_SYMMETRIC_ALIGNED_OUTER_HAND_PROOF.md",
+      "repository_path": "research/eight/WRONG_0011011_SYMMETRIC_ALIGNED_OUTER_HAND_PROOF.md",
+      "sha256": "306b4740afbc4395dbc62f5db1aab3117c0d4f5033d376653fa402ab422a4076",
+      "bytes": 4127
+    },
+    {
+      "workspace_path": "proof_integration/WRONG_0011011_SYMMETRIC_OUTER_WHOLE_ANGLE_HAND_PROOF.md",
+      "repository_path": "research/eight/WRONG_0011011_SYMMETRIC_OUTER_WHOLE_ANGLE_HAND_PROOF.md",
+      "sha256": "d0866ce36e92b1aa304df33296d59855a42bc64010f74624c0c2fc27dce1ada1",
+      "bytes": 13115
+    },
+    {
+      "workspace_path": "proof_integration/WRONG_0011011_WHOLE_WORD_HAND_PROOF.md",
+      "repository_path": "research/eight/WRONG_0011011_WHOLE_WORD_HAND_PROOF.md",
+      "sha256": "cc279d0273715d20af8201d49f89d0ff2cb41d564103b9f1b29a6f3c6cb104b2",
+      "bytes": 13652
+    },
+    {
+      "workspace_path": "proof_integration/audit_wrong_0011011_all_core_hand.py",
+      "repository_path": "research/eight/audit_wrong_0011011_all_core_hand.py",
+      "sha256": "2833233277f5fea981ae8c80c9c151eaf3d714248c0aba70f46661868faa99b1",
+      "bytes": 4369
+    },
+    {
+      "workspace_path": "proof_integration/audit_wrong_0011011_earlier_mixed_hand.py",
+      "repository_path": "research/eight/audit_wrong_0011011_earlier_mixed_hand.py",
+      "sha256": "f810ea9f2dcac90c18114a1b1b1a8afab6d3e7edd82306470b457eb4ffd5a84c",
+      "bytes": 21627
+    },
+    {
+      "workspace_path": "proof_integration/audit_wrong_0011011_edge3_final_mixed_hand.py",
+      "repository_path": "research/eight/audit_wrong_0011011_edge3_final_mixed_hand.py",
+      "sha256": "1dbb246b2862e2db068755623aacfb7d0e42ed4d927003deaee46c68a195c615",
+      "bytes": 12265
+    },
+    {
+      "workspace_path": "proof_integration/verify_wrong_0011011_asymmetric_opposite_outer_zero_hand.py",
+      "repository_path": "research/eight/verify_wrong_0011011_asymmetric_opposite_outer_zero_hand.py",
+      "sha256": "8e02ca7d3c920a31007d66ed170efc74890f112b4eabba53d20f7b2fdd276cec",
+      "bytes": 7295
+    },
+    {
+      "workspace_path": "proof_integration/verify_wrong_0011011_core_core_hand.py",
+      "repository_path": "research/eight/verify_wrong_0011011_core_core_hand.py",
+      "sha256": "e34f01ad0d65c7f04243d5ec8643aa5d916132c7fe6a19355d9cf29410a3599e",
+      "bytes": 3586
+    },
+    {
+      "workspace_path": "proof_integration/verify_wrong_0011011_edge3_negative_outer_quarter_hand.py",
+      "repository_path": "research/eight/verify_wrong_0011011_edge3_negative_outer_quarter_hand.py",
+      "sha256": "c23cefadd389753bb05db4e6a796f35ebe7fb4cbc3a8e1ffcd01612cc278a2c4",
+      "bytes": 14121
+    },
+    {
+      "workspace_path": "proof_integration/verify_wrong_0011011_edge3_opposite_axes12_hand.py",
+      "repository_path": "research/eight/verify_wrong_0011011_edge3_opposite_axes12_hand.py",
+      "sha256": "6d0972ce9f60f8f1318d7a82e0d1fb17e20ee9677d3c7c7fb37f616159a2f1c0",
+      "bytes": 13308
+    },
+    {
+      "workspace_path": "proof_integration/verify_wrong_0011011_edge3_opposite_axes34_hand.py",
+      "repository_path": "research/eight/verify_wrong_0011011_edge3_opposite_axes34_hand.py",
+      "sha256": "9d217be82e5430f894099ec10e911eb15e720e19dd3c4dad5c00fd55d07446e0",
+      "bytes": 10115
+    },
+    {
+      "workspace_path": "proof_integration/verify_wrong_0011011_hand_word_closure.py",
+      "repository_path": "research/eight/verify_wrong_0011011_hand_word_closure.py",
+      "sha256": "ef344691e6cb44e83e1196d85f6864b731646a5f4e3b969281d937b522db7530",
+      "bytes": 7418
+    },
+    {
+      "workspace_path": "proof_integration/verify_wrong_0011011_negative_outer_quarter_hand.py",
+      "repository_path": "research/eight/verify_wrong_0011011_negative_outer_quarter_hand.py",
+      "sha256": "e9f3caff2c01e3d997cd807e33e84b1a20aa53352e53bd88f2548b91f2a0462a",
+      "bytes": 12570
+    },
+    {
+      "workspace_path": "proof_integration/verify_wrong_0011011_opposite_mixed_zero_hand.py",
+      "repository_path": "research/eight/verify_wrong_0011011_opposite_mixed_zero_hand.py",
+      "sha256": "566b58bcca92d57479f8d4d70e665f3c0983d276660afc844a77c32e6467253a",
+      "bytes": 12788
+    },
+    {
+      "workspace_path": "proof_integration/verify_wrong_0011011_opposite_outer_edge2_quarter_hand.py",
+      "repository_path": "research/eight/verify_wrong_0011011_opposite_outer_edge2_quarter_hand.py",
+      "sha256": "00c22e866ffabc3da1112f91e1c8cc31e64a44ef890f7f2b3f3ddf0617b8c27c",
+      "bytes": 12232
+    },
+    {
+      "workspace_path": "proof_integration/verify_wrong_0011011_positive_negative_outer_quarter_hand.py",
+      "repository_path": "research/eight/verify_wrong_0011011_positive_negative_outer_quarter_hand.py",
+      "sha256": "6e459d52e005ea9ec1a2339dc38bc37345050a2698d01888452b712e40a658f0",
+      "bytes": 4439
+    },
+    {
+      "workspace_path": "proof_integration/verify_wrong_0011011_same_outer_zero_hand.py",
+      "repository_path": "research/eight/verify_wrong_0011011_same_outer_zero_hand.py",
+      "sha256": "d8c0f90ebd6f44576053fe47aa5875a435f23ae4f62394511094851bd5dd9705",
+      "bytes": 12587
+    },
+    {
+      "workspace_path": "proof_integration/verify_wrong_0011011_same_sign_mixed_zero_hand.py",
+      "repository_path": "research/eight/verify_wrong_0011011_same_sign_mixed_zero_hand.py",
+      "sha256": "9aab2def1b3f514ee3f84588395dbf143034e51d65d20f02c182b991d5d07b79",
+      "bytes": 10462
+    },
+    {
+      "workspace_path": "proof_integration/verify_wrong_0011011_symmetric_aligned_hand.py",
+      "repository_path": "research/eight/verify_wrong_0011011_symmetric_aligned_hand.py",
+      "sha256": "d65f3b534f82498b3fed790b3234ced823d7e70eff4c98cfc835fcc4857f9f64",
+      "bytes": 2296
+    },
+    {
+      "workspace_path": "proof_integration/verify_wrong_0011011_symmetric_outer_whole_angle.js",
+      "repository_path": "research/eight/verify_wrong_0011011_symmetric_outer_whole_angle.js",
+      "sha256": "7437e106f49664fb202b084f72b55d47eb746ac94fcd6ba26085415ef0e60f1a",
+      "bytes": 7746
+    },
+    {
+      "workspace_path": "proof_integration/wrong_0011011_all_core_independent_audit.json",
+      "repository_path": "research/eight/wrong_0011011_all_core_independent_audit.json",
+      "sha256": "52fd9787c97f7d5078c38cf2148d313de1a1ddd5bd4742fefa2d8f70e5802239",
+      "bytes": 4367
+    },
+    {
+      "workspace_path": "proof_integration/wrong_0011011_asymmetric_opposite_outer_zero_hand_arithmetic.json",
+      "repository_path": "research/eight/wrong_0011011_asymmetric_opposite_outer_zero_hand_arithmetic.json",
+      "sha256": "564fea8ba97271035d15be3fe76010fc05b891295431523f83be046d7d58bd82",
+      "bytes": 9436
+    },
+    {
+      "workspace_path": "proof_integration/wrong_0011011_core_core_hand_arithmetic.json",
+      "repository_path": "research/eight/wrong_0011011_core_core_hand_arithmetic.json",
+      "sha256": "fd477da49b5b12344c575a3616cb4572bf93333fbd38a920d2084c68e3184f15",
+      "bytes": 5635
+    },
+    {
+      "workspace_path": "proof_integration/wrong_0011011_earlier_mixed_independent_audit.json",
+      "repository_path": "research/eight/wrong_0011011_earlier_mixed_independent_audit.json",
+      "sha256": "338ef682fa87fc125017b52094533ae7e15de375eeea7f17827ce56ce63ed810",
+      "bytes": 81233
+    },
+    {
+      "workspace_path": "proof_integration/wrong_0011011_edge3_final_mixed_independent_audit.json",
+      "repository_path": "research/eight/wrong_0011011_edge3_final_mixed_independent_audit.json",
+      "sha256": "0147cee886355b6e891097b850b8762fb46a7028bca029a6cfa46dd838a0337d",
+      "bytes": 84364
+    },
+    {
+      "workspace_path": "proof_integration/wrong_0011011_edge3_negative_outer_quarter_hand_arithmetic.json",
+      "repository_path": "research/eight/wrong_0011011_edge3_negative_outer_quarter_hand_arithmetic.json",
+      "sha256": "4811021a7d047d6dffa18743abedb5745834d77d319cc26d259a8bc70626cc55",
+      "bytes": 30300
+    },
+    {
+      "workspace_path": "proof_integration/wrong_0011011_edge3_opposite_axes12_hand_arithmetic.json",
+      "repository_path": "research/eight/wrong_0011011_edge3_opposite_axes12_hand_arithmetic.json",
+      "sha256": "ab7c4f7b4365fb8ae8370f42c5145ce2e8875c0544ab34fdbc3c86ba7a4c33ea",
+      "bytes": 39109
+    },
+    {
+      "workspace_path": "proof_integration/wrong_0011011_edge3_opposite_axes34_hand_arithmetic.json",
+      "repository_path": "research/eight/wrong_0011011_edge3_opposite_axes34_hand_arithmetic.json",
+      "sha256": "ef505857e9f1fa76455ddee2c052443d79bde6f1a1b6436c3880b92977798cf9",
+      "bytes": 39612
+    },
+    {
+      "workspace_path": "proof_integration/wrong_0011011_hand_word_closure_manifest.json",
+      "repository_path": "research/eight/wrong_0011011_hand_word_closure_manifest.json",
+      "sha256": "89620b01091366f9a85522de591a62277333ea5afb3a220b70b0904d3d2e1e62",
+      "bytes": 44139
+    },
+    {
+      "workspace_path": "proof_integration/wrong_0011011_labels.json",
+      "repository_path": "research/eight/wrong_0011011_labels.json",
+      "sha256": "a4349b3d463bf9e67ecbb86f575c4d15df059d12c195b84eddceab85463eef6d",
+      "bytes": 1016
+    },
+    {
+      "workspace_path": "proof_integration/wrong_0011011_negative_outer_quarter_hand_arithmetic.json",
+      "repository_path": "research/eight/wrong_0011011_negative_outer_quarter_hand_arithmetic.json",
+      "sha256": "8ba29abdf9ad3ccaa8eabe36a05ae4f99b9b9754a0064b9747836e03719c4f61",
+      "bytes": 20746
+    },
+    {
+      "workspace_path": "proof_integration/wrong_0011011_opposite_mixed_zero_hand_arithmetic.json",
+      "repository_path": "research/eight/wrong_0011011_opposite_mixed_zero_hand_arithmetic.json",
+      "sha256": "08a40040217d3a4576fc6349092cde41072bbbe0a9e28bf32c893c6a1dbf6ca2",
+      "bytes": 24169
+    },
+    {
+      "workspace_path": "proof_integration/wrong_0011011_opposite_outer_edge2_quarter_hand_arithmetic.json",
+      "repository_path": "research/eight/wrong_0011011_opposite_outer_edge2_quarter_hand_arithmetic.json",
+      "sha256": "a838a6d036d181e34c6d94b242514e85ba72c2196084d9a3a59faa0b0d231226",
+      "bytes": 23835
+    },
+    {
+      "workspace_path": "proof_integration/wrong_0011011_positive_negative_outer_quarter_hand_arithmetic.json",
+      "repository_path": "research/eight/wrong_0011011_positive_negative_outer_quarter_hand_arithmetic.json",
+      "sha256": "ce41a801a59ee6ddc07bddc21a8bdea6b7d6d074eb55859d5a916762e77d856f",
+      "bytes": 2844
+    },
+    {
+      "workspace_path": "proof_integration/wrong_0011011_same_outer_zero_hand_arithmetic.json",
+      "repository_path": "research/eight/wrong_0011011_same_outer_zero_hand_arithmetic.json",
+      "sha256": "87abc9bae610bec320659e79b69b727c05b4ab34bda34d4af2366725b552e6ba",
+      "bytes": 26114
+    },
+    {
+      "workspace_path": "proof_integration/wrong_0011011_same_sign_mixed_zero_hand_arithmetic.json",
+      "repository_path": "research/eight/wrong_0011011_same_sign_mixed_zero_hand_arithmetic.json",
+      "sha256": "1e87fd82ebd83700704dbdc6a776371a6df1f8e91eb3505ae489c06be6e25ce2",
+      "bytes": 29544
+    },
+    {
+      "workspace_path": "proof_integration/wrong_0011011_symmetric_aligned_hand_arithmetic.json",
+      "repository_path": "research/eight/wrong_0011011_symmetric_aligned_hand_arithmetic.json",
+      "sha256": "5305f732c5025fadf5e75d7a8c10685b7e81792abacc551b2f7a7d0967568c3c",
+      "bytes": 1825
+    },
+    {
+      "workspace_path": "proof_integration/wrong_0011011_symmetric_outer_whole_angle_arithmetic.json",
+      "repository_path": "research/eight/wrong_0011011_symmetric_outer_whole_angle_arithmetic.json",
+      "sha256": "32eee43bb85cdb46322cdd99bfcf1dfb58c85115b2dd63245eb81a44e0a04935",
+      "bytes": 5498
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/WRONG_0011011_ALIGNED_AND_EDGE2_STRIP_INDEPENDENT_AUDIT.md",
+      "repository_path": "research/eight/WRONG_0011011_ALIGNED_AND_EDGE2_STRIP_INDEPENDENT_AUDIT.md",
+      "sha256": "f8ae114c870e1a453dfadf99da1709312dde85cafaf3b27661d99cbce5631c4b",
+      "bytes": 2255
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/WRONG_0011011_ALIGNED_MIXED_QUARTER_HAND_PROOF.md",
+      "repository_path": "research/eight/WRONG_0011011_ALIGNED_MIXED_QUARTER_HAND_PROOF.md",
+      "sha256": "52a89ca440dd06f96f9ba3fe7ac7d0775a4c2f2ad2dcfc24f9be79c63177048d",
+      "bytes": 10947
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/WRONG_0011011_ASYMMETRIC_OPPOSITE_OUTER_ZERO_INDEPENDENT_AUDIT.md",
+      "repository_path": "research/eight/WRONG_0011011_ASYMMETRIC_OPPOSITE_OUTER_ZERO_INDEPENDENT_AUDIT.md",
+      "sha256": "8ebc4ebbf59882f37a4e1bb89b59e4c5e0b69c23932e8675e36848f5393b9f72",
+      "bytes": 3281
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/WRONG_0011011_EDGE2_CORE_TO_POSITIVE_OUTER_HAND_PROOF.md",
+      "repository_path": "research/eight/WRONG_0011011_EDGE2_CORE_TO_POSITIVE_OUTER_HAND_PROOF.md",
+      "sha256": "1bc307ab6384accd2a1ce0b51b2dbd60459446131f521a11c9d7b0ccb00b5138",
+      "bytes": 10724
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/WRONG_0011011_EDGE2_MIXED_QUARTER_STRIP_HAND_PROOF.md",
+      "repository_path": "research/eight/WRONG_0011011_EDGE2_MIXED_QUARTER_STRIP_HAND_PROOF.md",
+      "sha256": "a79ab9bc25cd0b62a7636fa14051068f92a16dafee4af326df1fedd930aa87d7",
+      "bytes": 10537
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/WRONG_0011011_EDGE2_NEGATIVE_CORE_CORNER_HAND_PROOF.md",
+      "repository_path": "research/eight/WRONG_0011011_EDGE2_NEGATIVE_CORE_CORNER_HAND_PROOF.md",
+      "sha256": "a1dcd3e651924719a721fdb58e2de5d078a73ef11bbf579f94f601bf1805901a",
+      "bytes": 10082
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/WRONG_0011011_EDGE2_NEGATIVE_CORE_SIDE_HAND_PROOF.md",
+      "repository_path": "research/eight/WRONG_0011011_EDGE2_NEGATIVE_CORE_SIDE_HAND_PROOF.md",
+      "sha256": "8fc06d371357ceffe1194b2954f0c580768213c67af02456395093249b61e771",
+      "bytes": 12982
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/WRONG_0011011_EDGE2_NEGATIVE_CORE_TO_OUTER_HAND_PROOF.md",
+      "repository_path": "research/eight/WRONG_0011011_EDGE2_NEGATIVE_CORE_TO_OUTER_HAND_PROOF.md",
+      "sha256": "036854ca26f62693803c2f8abb5dec55b39a06c7ed45719ff30ee30a128c697c",
+      "bytes": 6264
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/WRONG_0011011_EDGE2_NEGATIVE_CORE_TO_OUTER_INDEPENDENT_AUDIT.md",
+      "repository_path": "research/eight/WRONG_0011011_EDGE2_NEGATIVE_CORE_TO_OUTER_INDEPENDENT_AUDIT.md",
+      "sha256": "82734e719a2c9cb7a3a710d820271ced3046043d58edd9363e882db3088f5939",
+      "bytes": 2589
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/WRONG_0011011_EDGE2_OUTER_TO_POSITIVE_CORE_HAND_PROOF.md",
+      "repository_path": "research/eight/WRONG_0011011_EDGE2_OUTER_TO_POSITIVE_CORE_HAND_PROOF.md",
+      "sha256": "decd2daec9c748540ebc6c580ad22b01304b974b57675a0cc81b9ddd7ce69843",
+      "bytes": 11284
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/WRONG_0011011_EDGE3_FOUR_WHOLE_MIXED_FAMILIES_HAND_PROOF.md",
+      "repository_path": "research/eight/WRONG_0011011_EDGE3_FOUR_WHOLE_MIXED_FAMILIES_HAND_PROOF.md",
+      "sha256": "81b77f6f443ce9b963363ec3524f82be17f1cf8057f86065851de32ef79c9a8a",
+      "bytes": 9296
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/WRONG_0011011_EDGE3_NEGATIVE_CORE_TO_POSITIVE_OUTER_HAND_PROOF.md",
+      "repository_path": "research/eight/WRONG_0011011_EDGE3_NEGATIVE_CORE_TO_POSITIVE_OUTER_HAND_PROOF.md",
+      "sha256": "82f8681b84775f395079192b4d4ca23a39b863b65efe5640466776e9496bbba3",
+      "bytes": 17167
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/WRONG_0011011_EDGE3_OUTER_TO_NEGATIVE_CORE_HAND_PROOF.md",
+      "repository_path": "research/eight/WRONG_0011011_EDGE3_OUTER_TO_NEGATIVE_CORE_HAND_PROOF.md",
+      "sha256": "207165df31ee62bdbb1068cfaf06bbfd63a229d70296323ba849b34868ccd4ea",
+      "bytes": 9703
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/WRONG_0011011_EDGE3_OUTER_TO_POSITIVE_CORE_HAND_PROOF.md",
+      "repository_path": "research/eight/WRONG_0011011_EDGE3_OUTER_TO_POSITIVE_CORE_HAND_PROOF.md",
+      "sha256": "abf41af9f488953b6d2864ab222372e68169da8d72f4d81fddba40d5cd8784d5",
+      "bytes": 14804
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/WRONG_0011011_EDGE3_POSITIVE_CORE_TO_POSITIVE_OUTER_HAND_PROOF.md",
+      "repository_path": "research/eight/WRONG_0011011_EDGE3_POSITIVE_CORE_TO_POSITIVE_OUTER_HAND_PROOF.md",
+      "sha256": "ab289916a84b770614f16bbd10b28345e94d79fc661e64e59f944539a019cc07",
+      "bytes": 16982
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/WRONG_0011011_EDGE3_POSITIVE_OUTER_PAIR_HAND_PROOF.md",
+      "repository_path": "research/eight/WRONG_0011011_EDGE3_POSITIVE_OUTER_PAIR_HAND_PROOF.md",
+      "sha256": "c0ca11ec36df4b9592b22b2ef274356be44b188d14a639d56108220b5f9c40bb",
+      "bytes": 17714
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/WRONG_0011011_NEGATIVE_OUTER_QUARTER_INDEPENDENT_AUDIT.md",
+      "repository_path": "research/eight/WRONG_0011011_NEGATIVE_OUTER_QUARTER_INDEPENDENT_AUDIT.md",
+      "sha256": "d6be81f5b0543f002058cea086d3e28348edd238bde49de8df4b83ab98570483",
+      "bytes": 4402
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/WRONG_0011011_OPPOSITE_MIXED_ZERO_INDEPENDENT_AUDIT.md",
+      "repository_path": "research/eight/WRONG_0011011_OPPOSITE_MIXED_ZERO_INDEPENDENT_AUDIT.md",
+      "sha256": "7947d203f43ef345f258703517b7d9aeb71a9a1793227b9972a130a55fd97c2f",
+      "bytes": 6566
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/WRONG_0011011_PAIR_COVERAGE_INDEPENDENT_AUDIT.md",
+      "repository_path": "research/eight/WRONG_0011011_PAIR_COVERAGE_INDEPENDENT_AUDIT.md",
+      "sha256": "57219272bd38de533c747e337856ad587aecc517f298f2872c8460dc14b8f268",
+      "bytes": 9467
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/WRONG_0011011_SYMMETRIC_OUTER_INDEPENDENT_AUDIT.md",
+      "repository_path": "research/eight/WRONG_0011011_SYMMETRIC_OUTER_INDEPENDENT_AUDIT.md",
+      "sha256": "46d4f64183317d47bca696c25c6c4d31b5731a725a30fa80a34f1fdff0032cf4",
+      "bytes": 5874
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/audit_wrong_0011011_negative_outer_quarter_independently.js",
+      "repository_path": "research/eight/audit_wrong_0011011_negative_outer_quarter_independently.js",
+      "sha256": "c4adbb2a3d406a8b1943b0b4b6a90247215f72563df31a1c303d6d801c114dc8",
+      "bytes": 8560
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/audit_wrong_0011011_opposite_mixed_zero_polynomial.py",
+      "repository_path": "research/eight/audit_wrong_0011011_opposite_mixed_zero_polynomial.py",
+      "sha256": "9fdacd834cc44a308d85ef30d7ae94694830113a5b7012449ad4411e4a6ec09f",
+      "bytes": 4335
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/audit_wrong_0011011_pair_coverage.py",
+      "repository_path": "research/eight/audit_wrong_0011011_pair_coverage.py",
+      "sha256": "64ca68faa1c0322cd4c05915d09ecb00608cfca9fac9c1091e4e1a6fd548f724",
+      "bytes": 8872
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/audit_wrong_0011011_symmetric_outer_hand.py",
+      "repository_path": "research/eight/audit_wrong_0011011_symmetric_outer_hand.py",
+      "sha256": "9d7c8f3ebad0092d1c8adf69add3f04866b55ade01a11c28f88155d4823c45db",
+      "bytes": 9140
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/verify_wrong_0011011_aligned_mixed_quarter.js",
+      "repository_path": "research/eight/verify_wrong_0011011_aligned_mixed_quarter.js",
+      "sha256": "3d3e75b47db1e4151decfdd126aa75f5bf056a0cd91f11ef84f8125c2cac2735",
+      "bytes": 10661
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/verify_wrong_0011011_edge2_core_to_positive_outer.js",
+      "repository_path": "research/eight/verify_wrong_0011011_edge2_core_to_positive_outer.js",
+      "sha256": "ca101cf16de385cd719e6d3121697c39553aabb74e615841659baa209ad3e180",
+      "bytes": 10001
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/verify_wrong_0011011_edge2_mixed_quarter_strip.js",
+      "repository_path": "research/eight/verify_wrong_0011011_edge2_mixed_quarter_strip.js",
+      "sha256": "dbe6ccfb0ad4c66ec6e2b50c1c1a598665b7c316e573733d6470342469dc8662",
+      "bytes": 15307
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/verify_wrong_0011011_edge2_negative_core_corner.js",
+      "repository_path": "research/eight/verify_wrong_0011011_edge2_negative_core_corner.js",
+      "sha256": "7fb312affbfe640d0e8c6ca9795006201bcaf7423a96c9d4ba469e1f62a80a8b",
+      "bytes": 11092
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/verify_wrong_0011011_edge2_negative_core_side.js",
+      "repository_path": "research/eight/verify_wrong_0011011_edge2_negative_core_side.js",
+      "sha256": "6b74aa4e45913c9677371ca05fd358ceba5d05731ef629ae971f9772adf0971f",
+      "bytes": 11602
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/verify_wrong_0011011_edge2_negative_core_to_outer.js",
+      "repository_path": "research/eight/verify_wrong_0011011_edge2_negative_core_to_outer.js",
+      "sha256": "09a8fbc2842a7203de0ec2f391bd0851cdfa82abb464b4f725e9127ab5430b7c",
+      "bytes": 8146
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/verify_wrong_0011011_edge2_outer_to_positive_core.js",
+      "repository_path": "research/eight/verify_wrong_0011011_edge2_outer_to_positive_core.js",
+      "sha256": "ce3a9a45931e99a3fcb8e582dbebf578839fa8bfd3739ebdf8c79767321dfe9f",
+      "bytes": 9461
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/verify_wrong_0011011_edge3_four_whole_mixed_families.js",
+      "repository_path": "research/eight/verify_wrong_0011011_edge3_four_whole_mixed_families.js",
+      "sha256": "26265f77c04809b9a43ce3c182be4e202031b3f5db87f60613f82780a831c323",
+      "bytes": 9293
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/verify_wrong_0011011_edge3_negative_core_to_positive_outer.js",
+      "repository_path": "research/eight/verify_wrong_0011011_edge3_negative_core_to_positive_outer.js",
+      "sha256": "f3b8c0f32159637e4c0570a0e2f6085617574232ddca1f6a5c29adbc6e836511",
+      "bytes": 14640
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/verify_wrong_0011011_edge3_outer_to_negative_core.js",
+      "repository_path": "research/eight/verify_wrong_0011011_edge3_outer_to_negative_core.js",
+      "sha256": "94022abfa9a7c0dbf31d73e0bc6dfca076f38b7e9b48a928982832378e442bf1",
+      "bytes": 10360
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/verify_wrong_0011011_edge3_outer_to_positive_core.js",
+      "repository_path": "research/eight/verify_wrong_0011011_edge3_outer_to_positive_core.js",
+      "sha256": "47179759f5d01c8e750c2ed19fe60014a8c5bdc9bf635b7c0c9cdb51202db3f0",
+      "bytes": 12718
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/verify_wrong_0011011_edge3_positive_core_to_positive_outer.js",
+      "repository_path": "research/eight/verify_wrong_0011011_edge3_positive_core_to_positive_outer.js",
+      "sha256": "e303e278db554dbfd8e34bf9009bc37bbef7b05e9cb0c8db2e9138997f0e59d9",
+      "bytes": 15855
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/verify_wrong_0011011_edge3_positive_outer_pair.js",
+      "repository_path": "research/eight/verify_wrong_0011011_edge3_positive_outer_pair.js",
+      "sha256": "67dff31182961ed8e2d7b84fc3037ba84b5d3c4eaf8713f6c46c5e837363d687",
+      "bytes": 16435
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/wrong_0011011_aligned_mixed_quarter_arithmetic.json",
+      "repository_path": "research/eight/wrong_0011011_aligned_mixed_quarter_arithmetic.json",
+      "sha256": "ab3fa22ef1c504bd50d7128b2861dbd7cd8d2e80edc83308f85ad38bba9929a1",
+      "bytes": 10191
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/wrong_0011011_asymmetric_opposite_outer_zero_independent_audit.json",
+      "repository_path": "research/eight/wrong_0011011_asymmetric_opposite_outer_zero_independent_audit.json",
+      "sha256": "0224f2edac8833cc73a0322eb03cd44be5e34c2076d2545beb0a154f542f088e",
+      "bytes": 627
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/wrong_0011011_edge2_core_to_positive_outer_arithmetic.json",
+      "repository_path": "research/eight/wrong_0011011_edge2_core_to_positive_outer_arithmetic.json",
+      "sha256": "a80a095c28aa7c508bb07511cc0787a073de0401976ea1bf4c562354f029dfe1",
+      "bytes": 26679
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/wrong_0011011_edge2_mixed_quarter_strip_arithmetic.json",
+      "repository_path": "research/eight/wrong_0011011_edge2_mixed_quarter_strip_arithmetic.json",
+      "sha256": "252d444ed90416bdee7ffd462fce410aee3cced926658b3023d0e5d4a13bf717",
+      "bytes": 17162
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/wrong_0011011_edge2_negative_core_corner_arithmetic.json",
+      "repository_path": "research/eight/wrong_0011011_edge2_negative_core_corner_arithmetic.json",
+      "sha256": "d91a724fb1d5ea3c1f1302f6a02d730c8493d0ee124afcf1088a8dfb388efa78",
+      "bytes": 65297
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/wrong_0011011_edge2_negative_core_side_arithmetic.json",
+      "repository_path": "research/eight/wrong_0011011_edge2_negative_core_side_arithmetic.json",
+      "sha256": "9c5ac3796ad01c770434b5ae74a81ef5b0133deef4260f806203dbee0148ffcb",
+      "bytes": 24312
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/wrong_0011011_edge2_negative_core_to_outer_arithmetic.json",
+      "repository_path": "research/eight/wrong_0011011_edge2_negative_core_to_outer_arithmetic.json",
+      "sha256": "8ae3d6a36fcd4e58d96705d5bf8b2136feec6654d1165250a1fd2d4d980ae2b7",
+      "bytes": 17278
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/wrong_0011011_edge2_outer_to_positive_core_arithmetic.json",
+      "repository_path": "research/eight/wrong_0011011_edge2_outer_to_positive_core_arithmetic.json",
+      "sha256": "d46f9c7cde1eeb36b80b10bc809c29b5e84a98ab719ba77ffe9c60d635ae26db",
+      "bytes": 31518
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/wrong_0011011_edge3_four_whole_mixed_families_arithmetic.json",
+      "repository_path": "research/eight/wrong_0011011_edge3_four_whole_mixed_families_arithmetic.json",
+      "sha256": "eb26e9fb010c83e81e9707a9ed45c2f83b381901a29e58f00af734b1c21afe10",
+      "bytes": 55306
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/wrong_0011011_edge3_negative_core_to_positive_outer_arithmetic.json",
+      "repository_path": "research/eight/wrong_0011011_edge3_negative_core_to_positive_outer_arithmetic.json",
+      "sha256": "52d25f13d4281115c1d1f34266831f9519a9b8140ede222f3137daa586704c37",
+      "bytes": 93781
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/wrong_0011011_edge3_outer_to_negative_core_arithmetic.json",
+      "repository_path": "research/eight/wrong_0011011_edge3_outer_to_negative_core_arithmetic.json",
+      "sha256": "1e8d0a085ac8022d3e9326cdd5bed3e2e01b26fff98fcc967e74e18ff2c1afd2",
+      "bytes": 69670
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/wrong_0011011_edge3_outer_to_positive_core_arithmetic.json",
+      "repository_path": "research/eight/wrong_0011011_edge3_outer_to_positive_core_arithmetic.json",
+      "sha256": "209627a7bb45eecd29e1d67fc87ab91939589e8da8debdaa760460bdd415aba8",
+      "bytes": 58121
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/wrong_0011011_edge3_positive_core_to_positive_outer_arithmetic.json",
+      "repository_path": "research/eight/wrong_0011011_edge3_positive_core_to_positive_outer_arithmetic.json",
+      "sha256": "9324181309dcd99f77b9dc192c103d11146b16492365c48a06a8f14d960ccfaf",
+      "bytes": 111637
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/wrong_0011011_edge3_positive_outer_pair_arithmetic.json",
+      "repository_path": "research/eight/wrong_0011011_edge3_positive_outer_pair_arithmetic.json",
+      "sha256": "e36deddf5f62765ecf90c25bb1477307896b70b90a2f803f932e2a337a5b3658",
+      "bytes": 110995
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/wrong_0011011_negative_outer_quarter_independent_arithmetic.json",
+      "repository_path": "research/eight/wrong_0011011_negative_outer_quarter_independent_arithmetic.json",
+      "sha256": "e39b3777fbba4bb3a2769028b17784cea0d5d6556f0511274b99710ac1705f7d",
+      "bytes": 13092
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/wrong_0011011_opposite_mixed_zero_independent_polynomial_audit.json",
+      "repository_path": "research/eight/wrong_0011011_opposite_mixed_zero_independent_polynomial_audit.json",
+      "sha256": "92fe70ba9529f4f570d02a4413aad24d8395e9a8f603fa9e842bc68b0747bdf7",
+      "bytes": 1767
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/wrong_0011011_pair_coverage_audit.json",
+      "repository_path": "research/eight/wrong_0011011_pair_coverage_audit.json",
+      "sha256": "ead5f6ed4f7df87647a108dc95fc7ee9ebf4871f427a9a6e1180f72b5d4b4022",
+      "bytes": 34566
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/wrong_0011011_symmetric_outer_independent_audit.json",
+      "repository_path": "research/eight/wrong_0011011_symmetric_outer_independent_audit.json",
+      "sha256": "f16cabcb94661b9f3b6d4b80b96a7203767b74deeaab802bdaf11b0ac39e851c",
+      "bytes": 15572
+    },
+    {
+      "workspace_path": "global_attack/hand_conversion/WRONG_0011011_NEGATIVE_OUTER_EDGE3_INDEPENDENT_AUDIT.md",
+      "repository_path": "research/eight/WRONG_0011011_NEGATIVE_OUTER_EDGE3_INDEPENDENT_AUDIT.md",
+      "sha256": "821237fbc87699548a2c32025d930069eadd9229be66ea6a685368c3b6e8ddf4",
+      "bytes": 4839
+    },
+    {
+      "workspace_path": "global_attack/hand_conversion/WRONG_0011011_OPPOSITE_OUTER_EDGE2_INDEPENDENT_AUDIT.md",
+      "repository_path": "research/eight/WRONG_0011011_OPPOSITE_OUTER_EDGE2_INDEPENDENT_AUDIT.md",
+      "sha256": "8f203690384464b6f074f1f629772a0897046d9e5af29aea623f81e7d35a5146",
+      "bytes": 6011
+    },
+    {
+      "workspace_path": "global_attack/hand_conversion/WRONG_0011011_OPPOSITE_OUTER_EDGE3_INDEPENDENT_AUDIT.md",
+      "repository_path": "research/eight/WRONG_0011011_OPPOSITE_OUTER_EDGE3_INDEPENDENT_AUDIT.md",
+      "sha256": "e4821878816f0a6eacb54f1cfdd5bf675c0b43d3c3c9a5e70d7fbb6860a706c2",
+      "bytes": 8007
+    },
+    {
+      "workspace_path": "global_attack/hand_conversion/WRONG_0011011_POSITIVE_CORE_OUTER_EDGE3_INDEPENDENT_AUDIT.md",
+      "repository_path": "research/eight/WRONG_0011011_POSITIVE_CORE_OUTER_EDGE3_INDEPENDENT_AUDIT.md",
+      "sha256": "6f26f92f19d38c1e60368d1761a189652873fea4a971630ab80d864468aae12e",
+      "bytes": 4666
+    },
+    {
+      "workspace_path": "global_attack/hand_conversion/WRONG_0011011_POSITIVE_NEGATIVE_OUTER_QUARTER_INDEPENDENT_AUDIT.md",
+      "repository_path": "research/eight/WRONG_0011011_POSITIVE_NEGATIVE_OUTER_QUARTER_INDEPENDENT_AUDIT.md",
+      "sha256": "8625cac679a3bc5ce864f82370ceca632ee4fbc48bd21fecbb16c4f734f031ae",
+      "bytes": 1925
+    },
+    {
+      "workspace_path": "global_attack/hand_conversion/WRONG_0011011_POSITIVE_OUTER_EDGE3_INDEPENDENT_AUDIT.md",
+      "repository_path": "research/eight/WRONG_0011011_POSITIVE_OUTER_EDGE3_INDEPENDENT_AUDIT.md",
+      "sha256": "7f1297ff1060ff845dbfbbcb50fa54ecad55eba8d8992a1e4869a4453750f7d4",
+      "bytes": 9396
+    },
+    {
+      "workspace_path": "global_attack/hand_conversion/WRONG_0011011_SAME_OUTER_ZERO_INDEPENDENT_AUDIT.md",
+      "repository_path": "research/eight/WRONG_0011011_SAME_OUTER_ZERO_INDEPENDENT_AUDIT.md",
+      "sha256": "049a135605995647098e8f98ce3ac466f1bd7716bf046bfca6ecbfad98f3e8eb",
+      "bytes": 3586
+    },
+    {
+      "workspace_path": "global_attack/hand_conversion/WRONG_0011011_SAME_SIGN_MIXED_ZERO_INDEPENDENT_AUDIT.md",
+      "repository_path": "research/eight/WRONG_0011011_SAME_SIGN_MIXED_ZERO_INDEPENDENT_AUDIT.md",
+      "sha256": "dcddb9494235c74f6eb6341d6effa8955a4b85d63da5bc71f7d18d40941e628a",
+      "bytes": 2518
+    },
+    {
+      "workspace_path": "global_attack/hand_conversion/audit_wrong_0011011_negative_outer_edge3.py",
+      "repository_path": "research/eight/audit_wrong_0011011_negative_outer_edge3.py",
+      "sha256": "d32fd35367678586c6a67c1823db6bf5cce88e3d33f207b0eba94e47e6caa672",
+      "bytes": 3765
+    },
+    {
+      "workspace_path": "global_attack/hand_conversion/audit_wrong_0011011_opposite_outer_edge2.py",
+      "repository_path": "research/eight/audit_wrong_0011011_opposite_outer_edge2.py",
+      "sha256": "b55d0908061dca5c3ff2d624a6c1f37f0f0af68c557ccc518632a1d034473948",
+      "bytes": 6125
+    },
+    {
+      "workspace_path": "global_attack/hand_conversion/audit_wrong_0011011_opposite_outer_edge3.py",
+      "repository_path": "research/eight/audit_wrong_0011011_opposite_outer_edge3.py",
+      "sha256": "c8e045216bcfd5145ee365b07962484b4e8dc6e11367a85de0e3477ad83c8ff5",
+      "bytes": 8248
+    },
+    {
+      "workspace_path": "global_attack/hand_conversion/audit_wrong_0011011_positive_core_outer_edge3.py",
+      "repository_path": "research/eight/audit_wrong_0011011_positive_core_outer_edge3.py",
+      "sha256": "55522e142c380ac3be64d08439b90b5e02658ba56712127193030bf8552b9030",
+      "bytes": 3547
+    },
+    {
+      "workspace_path": "global_attack/hand_conversion/audit_wrong_0011011_positive_outer_edge3.py",
+      "repository_path": "research/eight/audit_wrong_0011011_positive_outer_edge3.py",
+      "sha256": "3d442eeb4d55b887f0b2a19129a111555c8745d50cd489e40ddb9722f35b1381",
+      "bytes": 6771
+    },
+    {
+      "workspace_path": "global_attack/hand_conversion/audit_wrong_0011011_two_outer_components.py",
+      "repository_path": "research/eight/audit_wrong_0011011_two_outer_components.py",
+      "sha256": "72c7d16a8f07ffb1be98f9856c6dce0e61e3ea295077290e8b6ec4d42d978b89",
+      "bytes": 4361
+    },
+    {
+      "workspace_path": "global_attack/hand_conversion/wrong_0011011_negative_outer_edge3_independent_audit.json",
+      "repository_path": "research/eight/wrong_0011011_negative_outer_edge3_independent_audit.json",
+      "sha256": "d12fb73ae97a7bef6d550098b712c573493e72bcdbee7d7b12ef08cdc66462e0",
+      "bytes": 2530
+    },
+    {
+      "workspace_path": "global_attack/hand_conversion/wrong_0011011_opposite_outer_edge2_independent_audit.json",
+      "repository_path": "research/eight/wrong_0011011_opposite_outer_edge2_independent_audit.json",
+      "sha256": "4e85d71cc6a3d2c95b950f109107070c3e86ad98bbb464f3313766455c01c7fe",
+      "bytes": 18344
+    },
+    {
+      "workspace_path": "global_attack/hand_conversion/wrong_0011011_opposite_outer_edge3_independent_audit.json",
+      "repository_path": "research/eight/wrong_0011011_opposite_outer_edge3_independent_audit.json",
+      "sha256": "28bee9f609eade73f554c22d20864c6ce22b27bd9b71e905c6724cb2e24ec1c9",
+      "bytes": 5892
+    },
+    {
+      "workspace_path": "global_attack/hand_conversion/wrong_0011011_positive_core_outer_edge3_independent_audit.json",
+      "repository_path": "research/eight/wrong_0011011_positive_core_outer_edge3_independent_audit.json",
+      "sha256": "c5b9c304dc7cd5057017506d8a04ef57afa9dba392e42ddf4aa0d8b5fadbd052",
+      "bytes": 770
+    },
+    {
+      "workspace_path": "global_attack/hand_conversion/wrong_0011011_positive_outer_edge3_independent_audit.json",
+      "repository_path": "research/eight/wrong_0011011_positive_outer_edge3_independent_audit.json",
+      "sha256": "c9e70e1e1c6b763e054cb371eb5c2345e4692614d111f3bb69cea791c182e194",
+      "bytes": 7482
+    },
+    {
+      "workspace_path": "global_attack/hand_conversion/wrong_0011011_same_sign_mixed_zero_independent_audit.json",
+      "repository_path": "research/eight/wrong_0011011_same_sign_mixed_zero_independent_audit.json",
+      "sha256": "8606fa2620e4b9275cac95cc043b39ee361a9ed8b1bb89a2a49c98189b71e62e",
+      "bytes": 2381
+    },
+    {
+      "workspace_path": "global_attack/hand_conversion/wrong_0011011_two_outer_components_independent_arithmetic.json",
+      "repository_path": "research/eight/wrong_0011011_two_outer_components_independent_arithmetic.json",
+      "sha256": "3e0d1bb8ae01eca22eb824bd88118ac41ee70ba2a545d2d5da7defce4abc4cbd",
+      "bytes": 4375
+    },
+    {
+      "workspace_path": "m5_agent/hand_conversion/negative_outer_quarter_author_replay_audit.json",
+      "repository_path": "research/eight/negative_outer_quarter_author_replay_audit.json",
+      "sha256": "f049bcaf4587c9662627e88c4bd1428c76ae37d8007d41b2f2882b32fbe6d330",
+      "bytes": 534
+    }
+  ]
+}

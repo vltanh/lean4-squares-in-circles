@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "scope": "fixed arithmetic and exact indexing only; whole-domain candidate pair premises remain open",
+  "comparisons": 12,
+  "reflection_permutation": [
+    5,
+    4,
+    3,
+    2,
+    1,
+    0,
+    6
+  ],
+  "quarter_word": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1
+  ],
+  "allowed_owner_assignments": 32,
+  "rows": [
+    {
+      "name": "outer upper endpoint above Q",
+      "positive_reserve": "97201/25000000"
+    },
+    {
+      "name": "outer lower endpoint below 39/10",
+      "positive_reserve": "6451/3600"
+    },
+    {
+      "name": "coarse tangent on core side",
+      "positive_reserve": "2/35"
+    },
+    {
+      "name": "T projected lower reserve",
+      "positive_reserve": "1/3000"
+    },
+    {
+      "name": "T projected upper reserve",
+      "positive_reserve": "1/1000"
+    },
+    {
+      "name": "G projected lower reserve",
+      "positive_reserve": "1/250"
+    },
+    {
+      "name": "G projected upper reserve",
+      "positive_reserve": "1/300"
+    },
+    {
+      "name": "sqrt2 exceeds 7/5 by squared comparison",
+      "positive_reserve": "1/25"
+    },
+    {
+      "name": "16/5 exceeds 22/7",
+      "positive_reserve": "2/35"
+    },
+    {
+      "name": "initial mismatch below 1/250",
+      "positive_reserve": "1/5000"
+    },
+    {
+      "name": "Taylor mismatch slope exceeds .49",
+      "positive_reserve": "6749/750000"
+    },
+    {
+      "name": "final mismatch below 1/500",
+      "positive_reserve": "3/49000"
+    }
+  ]
+}

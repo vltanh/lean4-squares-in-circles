@@ -1,0 +1,75 @@
+{
+  "status": "PASS",
+  "scope": "Fixed constants for the hand mismatch contraction, primary-axis elimination and strict-sign implications; no unproved pair theorem is asserted.",
+  "checks": [
+    {
+      "name": "chord slope 7/10",
+      "positive_reserve": "15861815453393/10368000000000000"
+    },
+    {
+      "name": "chord slope 2/5",
+      "positive_reserve": "448459873/138427734375"
+    },
+    {
+      "name": "chord slope 3/10",
+      "positive_reserve": "2175799688271/896000000000000"
+    },
+    {
+      "name": "chord slope 1/4",
+      "positive_reserve": "5008925087/7610145177600"
+    },
+    {
+      "name": "chord slope 1/5",
+      "positive_reserve": "96953762249/70875000000000"
+    },
+    {
+      "name": "chord slope 1/8",
+      "positive_reserve": "7295611139711/7792788661862400"
+    },
+    {
+      "name": "chord slope 1/10",
+      "positive_reserve": "30394172888999/72576000000000000"
+    },
+    {
+      "name": "chord slope 1/20",
+      "positive_reserve": "27104812755875999/74317824000000000000"
+    },
+    {
+      "name": "chord slope 1/40",
+      "positive_reserve": "7036043070827663999/76101451776000000000000"
+    },
+    {
+      "name": "chord slope 1/250",
+      "positive_reserve": "249133044756074051255624999/6921386718750000000000000000000"
+    },
+    {
+      "name": "sqrt2 exceeds 141/100",
+      "positive_reserve": "119/10000"
+    },
+    {
+      "name": "a upper from farthest corner",
+      "positive_reserve": "13/8000"
+    },
+    {
+      "name": "b upper from farthest corner",
+      "positive_reserve": "11/2500"
+    },
+    {
+      "name": "both primary margins negative",
+      "positive_reserve": "711/20000"
+    },
+    {
+      "name": "source sign margin",
+      "positive_reserve": "17/2000"
+    },
+    {
+      "name": "target sign margin",
+      "positive_reserve": "3/500"
+    },
+    {
+      "name": "conditional example contraction reserve",
+      "positive_reserve": "47/11300000"
+    }
+  ],
+  "comparison_count": 17
+}

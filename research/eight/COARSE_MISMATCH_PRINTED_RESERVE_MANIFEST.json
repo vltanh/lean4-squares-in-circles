@@ -1,0 +1,25 @@
+{
+  "status": "PASS_HAND_COROLLARY",
+  "conclusion": "S<13/50",
+  "scope": "Same complete coarse pair table and original G/T/E scope; no additional pair row or geometric premise.",
+  "reviewed_pair_inputs": {
+    "CANDIDATE_COARSE_MISMATCH_HAND_DATA.json": "ffa48df0d02e18880314907a72a70fcc6aaceea4ee1060ea76b4fdb04c23a5fa",
+    "CANDIDATE_COARSE_MISMATCH_HAND_COMPACT_REPORT.json": "995c1c652957c00ac0aa40e0a3dede26db689e15e281e78dac2b5ae8091f963f"
+  },
+  "retained_cyclic_increase": "51/500000",
+  "exact_positive_reserve": "9154605884982919/494375000000000000000",
+  "files": {
+    "COARSE_MISMATCH_PRINTED_RESERVE_STRENGTHENING.md": {
+      "sha256": "adadaa3b1b3da9370db5e4df846d4b6917103caf6fb078028b8aa3e9a6306493",
+      "bytes": 3440
+    },
+    "verify_coarse_mismatch_printed_reserves.py": {
+      "sha256": "6652ea6b1f2b66cd77a8fa65e8f07262cf1538b1dc500eeaae6e91280668a9e4",
+      "bytes": 3012
+    },
+    "coarse_mismatch_printed_reserves_arithmetic.json": {
+      "sha256": "2948696287cd865374166fbc14a23ad8a757eacf7443ad1b12a697035bd90ad7",
+      "bytes": 1093
+    }
+  }
+}

@@ -1,0 +1,471 @@
+{
+  "status": "PASS",
+  "scope": "Six aligned same-sign OO quarter-one branches: source+f near x in[-.3,.1], source-e near x in[-.03,.06]",
+  "cost_lower": "17953/20000",
+  "checks": [
+    {
+      "name": "d+.5>1.399",
+      "lower": "1.39921406510940",
+      "threshold": "1.399"
+    },
+    {
+      "name": "d+.5<1.4",
+      "lower": "-1.39921406510941",
+      "threshold": "-7/5"
+    },
+    {
+      "name": "a0+.5<1.915",
+      "lower": "-1.91457567100390",
+      "threshold": "-383/200"
+    },
+    {
+      "name": "b0>.1",
+      "lower": "0.10078593489059",
+      "threshold": ".1"
+    },
+    {
+      "name": "b0<.101",
+      "lower": "-0.10078593489060",
+      "threshold": "-101/1000"
+    },
+    {
+      "name": "a(b0)+.5>1.885",
+      "lower": "1.88537960645532",
+      "threshold": "1.885"
+    },
+    {
+      "name": "aligned H second derivative >1",
+      "lower": "1.06300794309610",
+      "threshold": "1"
+    },
+    {
+      "name": "aligned edge2 quadratic completion",
+      "lower": "0.89811766924389",
+      "threshold": ".8981"
+    },
+    {
+      "name": "aligned edge2 derivative at1/80",
+      "lower": "0.05054513982552",
+      "threshold": "0"
+    },
+    {
+      "name": "aligned low-B allowance 0",
+      "lower": "0.89788928346521",
+      "threshold": "17953/20000"
+    },
+    {
+      "name": "aligned endpoint derivative negative 1",
+      "lower": "0.13031000000000",
+      "threshold": "0"
+    },
+    {
+      "name": "aligned endpoint bound 1",
+      "lower": "0.89811976944964",
+      "threshold": ".8981"
+    },
+    {
+      "name": "aligned low-B allowance 1",
+      "lower": "0.91842561551356",
+      "threshold": "17953/20000"
+    },
+    {
+      "name": "aligned endpoint derivative negative 2",
+      "lower": "0.11294000000000",
+      "threshold": "0"
+    },
+    {
+      "name": "aligned endpoint bound 2",
+      "lower": "0.89810811433011",
+      "threshold": ".8981"
+    },
+    {
+      "name": "aligned low-B allowance 2",
+      "lower": "0.91817678936184",
+      "threshold": "17953/20000"
+    },
+    {
+      "name": "f contact .35,.3 is negative",
+      "lower": "0.00058573559204",
+      "threshold": "0"
+    },
+    {
+      "name": "critical product negative half",
+      "lower": "1.00606709663223",
+      "threshold": "1"
+    },
+    {
+      "name": "f contact at B=d and u0 positive",
+      "lower": "0.10078593489058",
+      "threshold": "0"
+    },
+    {
+      "name": "f contact at B=d and u=.3 below d",
+      "lower": "-0.53211226631342",
+      "threshold": "-4496070325547/5000000000000"
+    },
+    {
+      "name": "f source derivative positive 0",
+      "lower": "0.80213000000000",
+      "threshold": "0"
+    },
+    {
+      "name": "target linear diagonal minimum 0",
+      "lower": "0.37177436020906",
+      "threshold": "0"
+    },
+    {
+      "name": "target linear diagonal coefficient 0",
+      "lower": "0.97207000000000",
+      "threshold": ".94765"
+    },
+    {
+      "name": "f diagonal derivative 0 0 .15 left",
+      "lower": "1.37671630072551",
+      "threshold": "1"
+    },
+    {
+      "name": "f diagonal derivative 0 0 .15 right",
+      "lower": "1.41995583565785",
+      "threshold": "1"
+    },
+    {
+      "name": "f diagonal derivative 0 .15 .3 left",
+      "lower": "1.34352621984212",
+      "threshold": "1"
+    },
+    {
+      "name": "f diagonal derivative 0 .15 .3 right",
+      "lower": "1.35426566936841",
+      "threshold": "1"
+    },
+    {
+      "name": "f positive critical target weight 0",
+      "lower": "-1.81447910000000",
+      "threshold": "-91/50"
+    },
+    {
+      "name": "f derivative q<1.2 0",
+      "lower": "-1.13360000000000",
+      "threshold": "-6/5"
+    },
+    {
+      "name": "f source derivative positive 1",
+      "lower": "0.62081000000000",
+      "threshold": "0"
+    },
+    {
+      "name": "target linear diagonal minimum 1",
+      "lower": "0.22164607133875",
+      "threshold": "0"
+    },
+    {
+      "name": "target linear diagonal coefficient 1",
+      "lower": "0.96079000000000",
+      "threshold": ".94765"
+    },
+    {
+      "name": "f diagonal derivative 1 0 .15 left",
+      "lower": "1.02954345427425",
+      "threshold": "1"
+    },
+    {
+      "name": "f diagonal derivative 1 0 .15 right",
+      "lower": "1.06187907791144",
+      "threshold": "1"
+    },
+    {
+      "name": "f diagonal derivative 1 .15 .3 left",
+      "lower": "1.01353383536134",
+      "threshold": "1"
+    },
+    {
+      "name": "f diagonal derivative 1 .15 .3 right",
+      "lower": "1.02163549747057",
+      "threshold": "1"
+    },
+    {
+      "name": "f positive critical target weight 1",
+      "lower": "-1.74033760000000",
+      "threshold": "-91/50"
+    },
+    {
+      "name": "f derivative q<1.2 1",
+      "lower": "-0.83048000000000",
+      "threshold": "-6/5"
+    },
+    {
+      "name": "f source derivative positive 2",
+      "lower": "0.61646000000000",
+      "threshold": "0"
+    },
+    {
+      "name": "target linear diagonal minimum 2",
+      "lower": "0.48838757944196",
+      "threshold": "0"
+    },
+    {
+      "name": "target linear diagonal coefficient 2",
+      "lower": "0.94766000000000",
+      "threshold": ".94765"
+    },
+    {
+      "name": "f diagonal derivative 2 0 .15 left",
+      "lower": "1.03004870030861",
+      "threshold": "1"
+    },
+    {
+      "name": "f diagonal derivative 2 0 .15 right",
+      "lower": "1.06240019257723",
+      "threshold": "1"
+    },
+    {
+      "name": "f diagonal derivative 2 .15 .3 left",
+      "lower": "1.01207428692079",
+      "threshold": "1"
+    },
+    {
+      "name": "f diagonal derivative 2 .15 .3 right",
+      "lower": "1.02016428215923",
+      "threshold": "1"
+    },
+    {
+      "name": "f positive critical target weight 2",
+      "lower": "-1.81476890000000",
+      "threshold": "-91/50"
+    },
+    {
+      "name": "f derivative q<1.2 2",
+      "lower": "-0.83472000000000",
+      "threshold": "-6/5"
+    },
+    {
+      "name": "positive f D",
+      "lower": "0.30632108976033",
+      "threshold": "0"
+    },
+    {
+      "name": "positive f cos-sin>.895",
+      "lower": "0.89517074863119",
+      "threshold": ".895"
+    },
+    {
+      "name": "positive f interior derivative",
+      "lower": "0.34350000000000",
+      "threshold": "0"
+    },
+    {
+      "name": "positive f diagonal derivative",
+      "lower": "0.52000000000000",
+      "threshold": "0"
+    },
+    {
+      "name": "positive f contact at B0 remains negative",
+      "lower": "0.36008989378740",
+      "threshold": "0"
+    },
+    {
+      "name": "positive f contact at diagonal remains positive",
+      "lower": "0.06292543828521",
+      "threshold": "0"
+    },
+    {
+      "name": "positive f diagonal contact less d",
+      "lower": "-0.10078593489060",
+      "threshold": "-4496070325547/5000000000000"
+    },
+    {
+      "name": "negative e direct derivative",
+      "lower": "1.31096701752966",
+      "threshold": "1"
+    },
+    {
+      "name": "negative e source diagonal target B<.16",
+      "lower": "-0.15806072868591",
+      "threshold": "-4/25"
+    },
+    {
+      "name": "a(.16)+.5>1.86",
+      "lower": "1.86547581061776",
+      "threshold": "1.86"
+    },
+    {
+      "name": "negative e diagonal derivative",
+      "lower": "1.30453033354787",
+      "threshold": "1"
+    },
+    {
+      "name": "positive e v>1.29",
+      "lower": "1.29058126439213",
+      "threshold": "1.29"
+    },
+    {
+      "name": "positive e contact h>.88",
+      "lower": "0.88378640121131",
+      "threshold": ".88"
+    },
+    {
+      "name": "positive e L_a<1.3",
+      "lower": "-1.29528023255814",
+      "threshold": "-13/10"
+    },
+    {
+      "name": "positive e derivative of L_a h negative",
+      "lower": "0.19419195335276",
+      "threshold": "0"
+    },
+    {
+      "name": "e p+q>.94765 0",
+      "lower": "0.97207000000000",
+      "threshold": ".94765"
+    },
+    {
+      "name": "e q>.767 0",
+      "lower": "0.88074000000000",
+      "threshold": ".767"
+    },
+    {
+      "name": "e p<=.19335 allowance 0",
+      "lower": "-0.09133000000000",
+      "threshold": "-2417/12500"
+    },
+    {
+      "name": "e t>=.83048 bound 0",
+      "lower": "1.13360000000000",
+      "threshold": "83047/100000"
+    },
+    {
+      "name": "positive e derivative at B0>-.02 0",
+      "lower": "-0.01973817990316",
+      "threshold": "-.02"
+    },
+    {
+      "name": "positive e derivative at B1/80 positive 0",
+      "lower": "0.00192273246233",
+      "threshold": "0"
+    },
+    {
+      "name": "e p+q>.94765 1",
+      "lower": "0.96079000000000",
+      "threshold": ".94765"
+    },
+    {
+      "name": "e q>.767 1",
+      "lower": "0.76744000000000",
+      "threshold": ".767"
+    },
+    {
+      "name": "e p<=.19335 allowance 1",
+      "lower": "-0.19335000000000",
+      "threshold": "-2417/12500"
+    },
+    {
+      "name": "e t>=.83048 bound 1",
+      "lower": "0.83048000000000",
+      "threshold": "83047/100000"
+    },
+    {
+      "name": "positive e derivative at B0>-.02 1",
+      "lower": "0.00739257003896",
+      "threshold": "-.02"
+    },
+    {
+      "name": "positive e derivative at B1/80 positive 1",
+      "lower": "0.02664334123275",
+      "threshold": "0"
+    },
+    {
+      "name": "e p+q>.94765 2",
+      "lower": "0.94766000000000",
+      "threshold": ".94765"
+    },
+    {
+      "name": "e q>.767 2",
+      "lower": "0.94766000000000",
+      "threshold": ".767"
+    },
+    {
+      "name": "e p<=.19335 allowance 2",
+      "lower": "0.00000000000000",
+      "threshold": "-2417/12500"
+    },
+    {
+      "name": "e t>=.83048 bound 2",
+      "lower": "0.83472000000000",
+      "threshold": "83047/100000"
+    },
+    {
+      "name": "positive e derivative at B0>-.02 2",
+      "lower": "-0.00734467983128",
+      "threshold": "-.02"
+    },
+    {
+      "name": "positive e derivative at B1/80 positive 2",
+      "lower": "0.01563697804510",
+      "threshold": "0"
+    }
+  ],
+  "normalized_f": [
+    {
+      "e": 2,
+      "s": -1,
+      "ax": 3,
+      "c": "-53489/100000",
+      "p": "33147/100000",
+      "q": "1417/1250",
+      "P": "-9133/100000",
+      "t": "44037/50000"
+    },
+    {
+      "e": 4,
+      "s": -1,
+      "ax": 3,
+      "c": "-26531/50000",
+      "p": "20967/100000",
+      "q": "10381/12500",
+      "P": "-3867/20000",
+      "t": "9593/12500"
+    },
+    {
+      "e": 6,
+      "s": 1,
+      "ax": 1,
+      "c": "-647/3125",
+      "p": "10913/50000",
+      "q": "5217/6250",
+      "P": "0",
+      "t": "47383/50000"
+    }
+  ],
+  "normalized_e": [
+    {
+      "e": 2,
+      "s": -1,
+      "ax": 4,
+      "c": "-53489/100000",
+      "p": "9133/100000",
+      "q": "44037/50000",
+      "P": "-33147/100000",
+      "t": "1417/1250"
+    },
+    {
+      "e": 4,
+      "s": -1,
+      "ax": 4,
+      "c": "-26531/50000",
+      "p": "3867/20000",
+      "q": "9593/12500",
+      "P": "-20967/100000",
+      "t": "10381/12500"
+    },
+    {
+      "e": 6,
+      "s": 1,
+      "ax": 2,
+      "c": "-647/3125",
+      "p": "0",
+      "q": "47383/50000",
+      "P": "-10913/50000",
+      "t": "5217/6250"
+    }
+  ]
+}

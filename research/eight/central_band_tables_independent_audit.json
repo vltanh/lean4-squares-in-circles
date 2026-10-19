@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "fixed_rows_independently_checked": 23,
+  "central_band_rows": 19,
+  "strong_exterior_rows": 4,
+  "positive_Bernstein_coefficients": 139,
+  "note_sha256": "54c6a35ac1d2bdd0c558bea8b006c6225eed0fc67e276631231c81084c78db7f",
+  "word_note_sha256": "74315cd11da49943e9bfada0b0dafda48d55e7c8217431be31c05269e6236c9b",
+  "data_sha256": "c2da9e4fb13a478997890d6887b8db141a7a08cf2d626b855b15062ac33e0d34",
+  "method": "Exact polynomial identity evaluation; direct Bernstein basis evaluation; note/table transcription match."
+}

@@ -1,0 +1,162 @@
+{
+  "status": "PASS_INDEPENDENT_CONDITIONAL_DOMAIN_AND_MISMATCH_ASSEMBLY",
+  "scope": "Candidate boundary cycle with explicit H/G/A/B/T/D/E tangent cuts, previously proved zero/quarter owner sets, all four mixed-edge axes, and input S<=3/200. The claimed S<1/1000 contraction requires the complete fixed pair table.",
+  "exact_pair_table_bound_and_reviewed": true,
+  "Q": "3.915534138",
+  "word": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1
+  ],
+  "cuts": {
+    "0": [
+      "1/2",
+      "1"
+    ],
+    "1": [
+      "-4/5",
+      "-1/20"
+    ],
+    "2": [
+      "0",
+      "1"
+    ],
+    "3": [
+      "-1",
+      "0"
+    ],
+    "4": [
+      "1/20",
+      "4/5"
+    ],
+    "5": [
+      "-1",
+      "-1/2"
+    ],
+    "6": [
+      "-1",
+      "0"
+    ]
+  },
+  "difference_ranges": {
+    "0": [
+      "-3/200",
+      "3/200"
+    ],
+    "1": [
+      "-7/10",
+      "7/10"
+    ],
+    "2": [
+      "-3/200",
+      "3/200"
+    ],
+    "3": [
+      "-3/200",
+      "3/200"
+    ],
+    "4": [
+      "-3/200",
+      "3/200"
+    ],
+    "5": [
+      "-3/200",
+      "3/200"
+    ],
+    "6": [
+      "-7/10",
+      "7/10"
+    ]
+  },
+  "original_axis_domains": [
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      1,
+      2,
+      3,
+      4
+    ]
+  ],
+  "arcs": 456,
+  "state_domains": 14,
+  "angle_chains": 129368,
+  "angle_chains_by_edge": [
+    16034,
+    38944,
+    11644,
+    16704,
+    16312,
+    11670,
+    18060
+  ],
+  "nonempty_point_angle_chains": 0,
+  "complete_geometric_cover": true,
+  "uncovered_angle_chains": [],
+  "fixed_rows": 144709,
+  "charged_edges": [
+    0,
+    2,
+    3,
+    4,
+    5
+  ],
+  "beta": "1/20",
+  "gamma": [
+    "179519/200000",
+    "179519/200000",
+    "179519/200000",
+    "179519/200000",
+    "179519/200000",
+    "179519/200000",
+    "359037/400000"
+  ],
+  "gamma_sum": "502653/80000",
+  "input_S_upper": "3/200",
+  "conditional_strict_output_S_upper": "1/1000",
+  "h_lower_at_output": "5996999/12000000000",
+  "twice_pi_upper": "628318531/100000000",
+  "contraction_reserve": "522599/240000000000",
+  "atan_method": "atan(t)=atan(1/2)+atan((2t-1)/(t+2)); independent alternating terms0..60/61, outward denominator10^26; no square-root mesh or author imports",
+  "sha256": {
+    "MISMATCH_015_TO_001_AFFINE_HAND_DATA.json": "da456f7eb49a2e0dc702054c684afc14da52a5e55c042add695ef862d7a6c1a2",
+    "MISMATCH_015_TO_001_AFFINE_HAND_COMPACT_REPORT.json": "2818421ab2e711ae586fd88722676f0690cbc21c9f7ccc648de7f92f5fee9a45",
+    "verify_mismatch_015_to_001_affine_hand.js": "6af3d41fe7d404da7dd286c46644160f5444edd3028d864701266e9a4cd18697",
+    "MISMATCH_015_TO_001_AFFINE_HAND_THEOREM.md": "17d713fd344de5877fa79d4ad1f0f228036434476e86825d12b61d7a8f54da28"
+  },
+  "independent_checker_sha256": "149d75b4c5efccf5bf90b4282ccf4660452d5e833b0118335d37fee6b82cbb6a",
+  "unchanged_inputs": true,
+  "polynomials": 399773,
+  "coefficient_bounds": 3183184,
+  "least_strict_cost_coefficient": "3986139/100000000000000",
+  "coefficient_replay_scope": "Completed frozen full replay and previously independently reviewed identical kernel; this audit independently reconstructs state/range/axis unions and contraction, not a second full coefficient expansion.",
+  "full_coefficient_output_sha256": "ba5e037e9d9da8369526f546275fa7037477c6d0225c33c82a5df317f8a25924"
+}

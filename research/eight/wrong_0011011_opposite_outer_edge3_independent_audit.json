@@ -1,0 +1,173 @@
+{
+  "status": "PASS",
+  "scope": "Whole 0011011 edge3 OO(-,+), all four retained axes and both angle halves; reflected edge5 follows from the stated role symmetry",
+  "author_replays": [
+    {
+      "axes": "12",
+      "fixed_comparisons": 108,
+      "byte_identical": true
+    },
+    {
+      "axes": "34",
+      "fixed_comparisons": 83,
+      "byte_identical": true
+    }
+  ],
+  "independent_fixed_comparisons": 36,
+  "independent_checks": [
+    {
+      "name": "critical lower bracket 0",
+      "strict_reserve": "21382638045593553259/1000000000000000000000000"
+    },
+    {
+      "name": "critical upper bracket .1",
+      "strict_reserve": "98502710674527828949/500000000000000000000000"
+    },
+    {
+      "name": "reduced third derivative negative 0:.1",
+      "strict_reserve": "233547084499081365906059/250000000000000000000000"
+    },
+    {
+      "name": "critical lower bracket .1",
+      "strict_reserve": "201633876892766839619/1000000000000000000000000"
+    },
+    {
+      "name": "critical upper bracket .2",
+      "strict_reserve": "109510761534977664143/1000000000000000000000000"
+    },
+    {
+      "name": "reduced third derivative negative .1:.2",
+      "strict_reserve": "78843732242522118183099/100000000000000000000000"
+    },
+    {
+      "name": "critical lower bracket .2",
+      "strict_reserve": "154716805667303843907/500000000000000000000000"
+    },
+    {
+      "name": "critical upper bracket .3",
+      "strict_reserve": "414978576627436672767/1000000000000000000000000"
+    },
+    {
+      "name": "reduced third derivative negative .2:.3",
+      "strict_reserve": "6591355229631818615061/10000000000000000000000"
+    },
+    {
+      "name": "critical lower bracket .3",
+      "strict_reserve": "427808918228128149/15625000000000000000000"
+    },
+    {
+      "name": "critical upper bracket .4",
+      "strict_reserve": "106641449233630521247/250000000000000000000000"
+    },
+    {
+      "name": "reduced third derivative negative .3:.4",
+      "strict_reserve": "576135082632449703952479/1000000000000000000000000"
+    },
+    {
+      "name": "critical lower bracket .4",
+      "strict_reserve": "20981625311569544883/500000000000000000000000"
+    },
+    {
+      "name": "critical upper bracket .5",
+      "strict_reserve": "22323323225943338109/500000000000000000000000"
+    },
+    {
+      "name": "reduced third derivative negative .4:.5",
+      "strict_reserve": "542837749676405746890127/1000000000000000000000000"
+    },
+    {
+      "name": "critical lower bracket .5",
+      "strict_reserve": "7070620802695997391/15625000000000000000000"
+    },
+    {
+      "name": "critical upper bracket .6",
+      "strict_reserve": "75743461274474404097/200000000000000000000000"
+    },
+    {
+      "name": "reduced third derivative negative .5:.6",
+      "strict_reserve": "111415474298762740498619/200000000000000000000000"
+    },
+    {
+      "name": "shifted Hessian determinant 1.16",
+      "strict_reserve": "57931/40000"
+    },
+    {
+      "name": "shifted Hessian determinant .85",
+      "strict_reserve": "38183/40000"
+    },
+    {
+      "name": "shifted Hessian determinant .51",
+      "strict_reserve": "430279/1000000"
+    },
+    {
+      "name": "shifted Hessian determinant .40",
+      "strict_reserve": "38053/125000"
+    },
+    {
+      "name": "shifted Hessian determinant .21",
+      "strict_reserve": "5331/250000"
+    },
+    {
+      "name": "axis1 low reference cost",
+      "strict_reserve": "71637812525855731/1000000000000000000000000"
+    },
+    {
+      "name": "axis2 diagonal reference cost",
+      "strict_reserve": "2472440492410801/200000000000000000000000"
+    },
+    {
+      "name": "axis3 critical reference cost",
+      "strict_reserve": "744854026645939499/250000000000000000000000"
+    },
+    {
+      "name": "axis1 rectangle completion",
+      "strict_reserve": "63999/10000000000"
+    },
+    {
+      "name": "axis2 diagonal completion",
+      "strict_reserve": "6999999/2000000000000"
+    },
+    {
+      "name": "axis3 reduced completion",
+      "strict_reserve": "9958333333333333333/500000000000000000000000"
+    },
+    {
+      "name": "primary slope convexity numerator",
+      "strict_reserve": "19/31250"
+    },
+    {
+      "name": "primary slope square completion",
+      "strict_reserve": "7077142857142857142857/1000000000000000000000000"
+    },
+    {
+      "name": "axis2 lower angular product",
+      "strict_reserve": "123380922434411004139907/200000000000000000000000"
+    },
+    {
+      "name": "axis4 lower angular product",
+      "strict_reserve": "3890347/5000000"
+    },
+    {
+      "name": "axis4 upper low-primary product",
+      "strict_reserve": "238085577568046960045351/1000000000000000000000000"
+    },
+    {
+      "name": "axis4 upper high-primary product",
+      "strict_reserve": "56753918482014706935257/1000000000000000000000000"
+    },
+    {
+      "name": "strict table reserve",
+      "strict_reserve": "3/25000"
+    }
+  ],
+  "label_binding": "Exact role3 O- and role4 O+ coefficients match the shared rational table",
+  "sha256": {
+    "verify_wrong_0011011_edge3_opposite_axes12_hand.py": "6d0972ce9f60f8f1318d7a82e0d1fb17e20ee9677d3c7c7fb37f616159a2f1c0",
+    "wrong_0011011_edge3_opposite_axes12_hand_arithmetic.json": "ab7c4f7b4365fb8ae8370f42c5145ce2e8875c0544ab34fdbc3c86ba7a4c33ea",
+    "WRONG_0011011_EDGE3_OPPOSITE_AXES12_HAND_PROOF.md": "0759a975966a5bda41a8144aa7e7a9e99e08c54135cc31d848a25d5897c397bf",
+    "verify_wrong_0011011_edge3_opposite_axes34_hand.py": "9d217be82e5430f894099ec10e911eb15e720e19dd3c4dad5c00fd55d07446e0",
+    "wrong_0011011_edge3_opposite_axes34_hand_arithmetic.json": "ef505857e9f1fa76455ddee2c052443d79bde6f1a1b6436c3880b92977798cf9",
+    "WRONG_0011011_EDGE3_OPPOSITE_AXES34_HAND_PROOF.md": "6078d06293eb9dba710d62e7968b117568f2c0b1e8d5b67744e8d60c5f16babe",
+    "wrong_0011011_labels.json": "a4349b3d463bf9e67ecbb86f575c4d15df059d12c195b84eddceab85463eef6d"
+  }
+}

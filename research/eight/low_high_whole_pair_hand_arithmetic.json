@@ -1,0 +1,1382 @@
+{
+  "proof": "LOW_HIGH_WHOLE_PAIR_HAND_PROOF.md",
+  "status": "PASS",
+  "scope": "Whole L/H table entry .8833; sixteen ordered source-axis sign branches; reflected target axes included",
+  "comparison_count": 232,
+  "geometry": {
+    "status": "PASS",
+    "checks": [
+      {
+        "name": "radius lower",
+        "margin": "2140724951/1000000000000000000"
+      },
+      {
+        "name": "radius upper",
+        "margin": "113553129/62500000000000000"
+      },
+      {
+        "name": "diagonal lower",
+        "margin": "12247031/40000000000000000"
+      },
+      {
+        "name": "diagonal upper",
+        "margin": "623063089/250000000000000000"
+      },
+      {
+        "name": "low axial endpoint lower",
+        "margin": "38440511/10000000000000000"
+      },
+      {
+        "name": "low axial endpoint upper",
+        "margin": "59597681/15625000000000000"
+      },
+      {
+        "name": "low cut lower",
+        "margin": "62968656847/16000000000000000000"
+      },
+      {
+        "name": "low cut upper",
+        "margin": "65346156017/16000000000000000000"
+      },
+      {
+        "name": "high cut lower",
+        "margin": "185112539/61250000000000000"
+      },
+      {
+        "name": "high cut upper",
+        "margin": "33767171869/6125000000000000000"
+      },
+      {
+        "name": "low marker maximum",
+        "margin": "4128278663/800000000000000"
+      },
+      {
+        "name": "high marker minimum",
+        "margin": "14888458631/3500000000000000"
+      },
+      {
+        "name": "low marker positive derivative",
+        "margin": "68519/100000"
+      },
+      {
+        "name": "low slope upper",
+        "margin": "273692137/179874724700"
+      },
+      {
+        "name": "low slope lower",
+        "margin": "13814533/11966097950"
+      },
+      {
+        "name": "high slope lower",
+        "margin": "1058986167/1486849054250"
+      },
+      {
+        "name": "epsilon source support",
+        "margin": "4639932311/800000000000000"
+      },
+      {
+        "name": "low negative source first for lambda 1",
+        "margin": "6377/400000"
+      },
+      {
+        "name": "low negative source first for lambda 1.02",
+        "margin": "14377/400000"
+      },
+      {
+        "name": "low primary source cut lambda .9",
+        "margin": "195713/400000"
+      },
+      {
+        "name": "low primary source cut lambda .7",
+        "margin": "232513/400000"
+      },
+      {
+        "name": "low tangent angle .246",
+        "margin": "389/384000"
+      },
+      {
+        "name": "quarter angle .786",
+        "margin": "17/28250"
+      },
+      {
+        "name": "high negative source secondary impossible",
+        "margin": "49/500"
+      },
+      {
+        "name": "whole negative primary angle impossible",
+        "margin": "3756189/3906250"
+      },
+      {
+        "name": "high primary first quadrant barrier at1.2",
+        "margin": "30639074654685957/267295837402343750"
+      },
+      {
+        "name": "high primary first quadrant barrier at0",
+        "margin": "549/500"
+      },
+      {
+        "name": "negative lower-high contact derivative",
+        "margin": "58364469/781250000"
+      },
+      {
+        "name": "lower-high label derivative floor",
+        "margin": "18207/62500000"
+      },
+      {
+        "name": "negative upper-high opposite-target contact derivative",
+        "margin": "1915713683/6250000000"
+      },
+      {
+        "name": "negative upper-high diagonal continuation",
+        "margin": "114786401/5920000000"
+      },
+      {
+        "name": "negative upper-high positive-target contact derivative",
+        "margin": "141927851/781250000"
+      },
+      {
+        "name": "upper-high axial label derivative at1",
+        "margin": "105652116583/134435548375000"
+      },
+      {
+        "name": "low axial derivative upper",
+        "margin": "377/400000"
+      },
+      {
+        "name": "upper-high opposite-target direct tail",
+        "margin": "151/400000"
+      },
+      {
+        "name": "upper-high positive-target direct tail",
+        "margin": "6987/400000"
+      },
+      {
+        "name": "lower-high opposite-target direct tail",
+        "margin": "71/25000"
+      },
+      {
+        "name": "lower-high positive-target direct tail",
+        "margin": "601/100000"
+      },
+      {
+        "name": "low-high two-negative direct tail",
+        "margin": "3601/100000"
+      },
+      {
+        "name": "low-high primary positive-target direct tail",
+        "margin": "75391/11300000"
+      },
+      {
+        "name": "low arc rprime upper",
+        "margin": "39462873/5000000000"
+      },
+      {
+        "name": "normal high Gsecond lower",
+        "margin": "2647227/625000000"
+      },
+      {
+        "name": "lower-high contact transverse convexity",
+        "margin": "4594807/1000000000"
+      },
+      {
+        "name": "lower-high transverse derivative after .2",
+        "margin": "487575186743484888449/41765625000000000000000"
+      },
+      {
+        "name": "lower-high axial transverse derivative",
+        "margin": "494242119541/21273063000000"
+      },
+      {
+        "name": "normal-high axial starts below diagonal",
+        "margin": "28702854292634618261044737752507699/10886400000000000000000000000000000000"
+      },
+      {
+        "name": "normal-high axial ends above high cut",
+        "margin": "621557404766439885169341840154138707307/22170585937500000000000000000000000000000"
+      },
+      {
+        "name": "axial P above .96",
+        "margin": "31203604178634177972136405610874745372264123/7925299200000000000000000000000000000000000000"
+      },
+      {
+        "name": "axial Pprime below .398",
+        "margin": "15486057076634618261044737752507699/10886400000000000000000000000000000000"
+      },
+      {
+        "name": "axial P increasing through .46",
+        "margin": "931211400433080510169341840154138707307/22170585937500000000000000000000000000000"
+      },
+      {
+        "name": "normal-high axial strong convexity",
+        "margin": "1315579/250000000"
+      },
+      {
+        "name": "normal axial reference value",
+        "margin": "1397936711859269765038981187264209013794829020751/743921418240000000000000000000000000000000000000000000"
+      },
+      {
+        "name": "normal axial reference derivative lower",
+        "margin": "16913201441966098651323871171073738905664264710066773823827657997891042888648808558953/136391817363761598465835008000000000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "name": "normal axial reference derivative upper",
+        "margin": "14603839794756496797119053793133658158050788679865601838761798294136652464458161243076690633343249207/7784590256060423214305865262694400000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "name": "normal axial completed-square cost",
+        "margin": "259/1200000"
+      },
+      {
+        "name": "diagonal root lower at .11",
+        "margin": "5267331146370923802914128206716052593/11321856000000000000000000000000000000000000000"
+      },
+      {
+        "name": "diagonal root upper at .11",
+        "margin": "202209762457352266767264650983423/141523200000000000000000000000000000000000"
+      },
+      {
+        "name": "diagonal root stays above -.003",
+        "margin": "128566354163814002309800737112477609740043/495331200000000000000000000000000000000000000"
+      },
+      {
+        "name": "diagonal root stays below .101",
+        "margin": "42813/200000000"
+      },
+      {
+        "name": "diagonal low primary lower",
+        "margin": "3113801/10000000000"
+      },
+      {
+        "name": "diagonal low primary upper",
+        "margin": "804219/1250000000"
+      },
+      {
+        "name": "diagonal low slope lower",
+        "margin": "1153292721/2394195781000"
+      },
+      {
+        "name": "diagonal low slope upper",
+        "margin": "4143302519/18853113801000"
+      },
+      {
+        "name": "diagonal low rprime upper",
+        "margin": "28895347/800000000"
+      },
+      {
+        "name": "diagonal P lower",
+        "margin": "38583/4000000"
+      },
+      {
+        "name": "diagonal P upper",
+        "margin": "67/100000"
+      },
+      {
+        "name": "diagonal Bprime upper magnitude",
+        "margin": "1677/266350"
+      },
+      {
+        "name": "diagonal Bsecond less than -.77",
+        "margin": "9411547/1000000000"
+      },
+      {
+        "name": "diagonal low marker derivative floor",
+        "margin": "81831/8000000"
+      },
+      {
+        "name": "diagonal contact concavity",
+        "margin": "1579/2500"
+      },
+      {
+        "name": "diagonal contact at .11",
+        "margin": "884619727530883438126844462993/209664000000000000000000000000000000"
+      },
+      {
+        "name": "upper axial primary at .11 below .903",
+        "margin": "11543143/10000000000"
+      },
+      {
+        "name": "upper axial primary at0 above .79",
+        "margin": "5812643/10000000000"
+      },
+      {
+        "name": "upper axial Gsecond lower",
+        "margin": "46521667/4000000000"
+      },
+      {
+        "name": "upper axial Gprime upper",
+        "margin": "10851/10750000"
+      },
+      {
+        "name": "upper axial curvature positive",
+        "margin": "2997651/80000000"
+      },
+      {
+        "name": "upper axial right derivative negative",
+        "margin": "82226096021067084192686035509639414007860523865631516537887642697632635572840961795948366831/21165971771699133242572800000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "name": "upper axial right value",
+        "margin": "165389644661819868705837294802656875449241/128992500000000000000000000000000000000000000000"
+      },
+      {
+        "name": "low r0 below .262",
+        "margin": "80941277/95728783500"
+      },
+      {
+        "name": "upper positive-target D0 increasing",
+        "margin": "1092764793078579315376399367/6099091842770576477050781250"
+      },
+      {
+        "name": "upper positive-target F_B(0) decreases",
+        "margin": "9377/40000"
+      },
+      {
+        "name": "upper positive-target axial transverse derivative at .08",
+        "margin": "13530735501993638368756592865179198130462635717463991682043167704095602977/1501920552178592951314229056856974775513435815810225903987884521484375000000"
+      },
+      {
+        "name": "Hessian high primary above .79",
+        "margin": "5812643/10000000000"
+      },
+      {
+        "name": "Hessian Gsecond upper",
+        "margin": "5456811/2500000000"
+      },
+      {
+        "name": "Hessian Gsecond lower",
+        "margin": "26691527/1250000000"
+      },
+      {
+        "name": "Hessian low rprime lower",
+        "margin": "8495243/160000000"
+      },
+      {
+        "name": "Hessian P lower",
+        "margin": "20967/25000000"
+      },
+      {
+        "name": "Hessian P upper",
+        "margin": "53041/125000000"
+      },
+      {
+        "name": "Hessian D lower",
+        "margin": "179/250000"
+      },
+      {
+        "name": "Hessian E lower",
+        "margin": "3023/6250000"
+      },
+      {
+        "name": "Hessian Fxx upper .4",
+        "margin": "815293/62500000"
+      },
+      {
+        "name": "Hessian Fbb upper .6",
+        "margin": "171273/4000000"
+      },
+      {
+        "name": "Hessian Fbb positive",
+        "margin": "75383/10000000"
+      },
+      {
+        "name": "Hessian Fxb lower .7",
+        "margin": "5700457/500000000"
+      },
+      {
+        "name": "Hessian determinant negative",
+        "margin": "1/4"
+      }
+    ],
+    "values": [
+      {
+        "name": "normal axial reference .115",
+        "lower": "657270849380116659269765038981187264209013794829020751/743921418240000000000000000000000000000000000000000000",
+        "derivative": [
+          "-119478615921795499814511136828926261094335735289933226176172342002108957111351191441047/136391817363761598465835008000000000000000000000000000000000000000000000000000000000000000",
+          "-6819249538696073582813188530439258158050788679865601838761798294136652464458161243076690633343249207/7784590256060423214305865262694400000000000000000000000000000000000000000000000000000000000000000000000"
+        ]
+      },
+      {
+        "name": "diagonal contact at .11",
+        "lower": "185211772299727530883438126844462993/209664000000000000000000000000000000"
+      },
+      {
+        "name": "upper axial at .11",
+        "lower": "113968908914644661819868705837294802656875449241/128992500000000000000000000000000000000000000000",
+        "derivative_upper": "-82226096021067084192686035509639414007860523865631516537887642697632635572840961795948366831/21165971771699133242572800000000000000000000000000000000000000000000000000000000000000000000000"
+      }
+    ]
+  },
+  "support": {
+    "status": "PASS",
+    "checks": [
+      {
+        "name": "LH primary negative target endpoint .6",
+        "margin": "284898003776654533607/1251250000000000000000"
+      },
+      {
+        "name": "LH primary positive target a endpoint q",
+        "margin": "349377883378444821/3164000000000000000"
+      },
+      {
+        "name": "LH primary positive target a endpoint q+.45",
+        "margin": "38508713736379889306152846334737905789/232470851092480000000000000000000000000"
+      },
+      {
+        "name": "LH primary positive target b endpoint q",
+        "margin": "61332813145523723/452000000000000000"
+      },
+      {
+        "name": "LH primary positive target b endpoint q+.45",
+        "margin": "36379532321492910603685940783462302993/132840486338560000000000000000000000000"
+      },
+      {
+        "name": "LH negative-positive secondary endpoint 1.35",
+        "margin": "457693888035445284102132231851/33210121584640000000000000000000"
+      },
+      {
+        "name": "LH negative-positive secondary endpoint q",
+        "margin": "274655553803948013/141250000000000000000"
+      },
+      {
+        "name": "LH negative-positive secondary endpoint 2.02",
+        "margin": "30885564566949153985935034037291442761/200422096875000000000000000000000000000"
+      },
+      {
+        "name": "LH positive-positive cut endpoint 1.1",
+        "margin": "1324789747855113362116586182735799/33168844800000000000000000000000000"
+      },
+      {
+        "name": "LH positive-positive cut endpoint 1.35",
+        "margin": "151545649042957737964428979518039856651/6642024316928000000000000000000000000000"
+      },
+      {
+        "name": "LH positive-positive circle endpoint 1.35",
+        "margin": "3268609477042941962898449831/151817698672640000000000000000"
+      },
+      {
+        "name": "LH positive-positive circle endpoint q-.02",
+        "margin": "4360318231406186465391817311490379/2120868750000000000000000000000000000"
+      },
+      {
+        "name": "LH positive-positive after quarter endpoint q+.02",
+        "margin": "85666154166768822783130999842806691996649/10604343750000000000000000000000000000000000"
+      },
+      {
+        "name": "LH opposite signs negative frame endpoint -.02",
+        "margin": "298445915700765437736814457843530723/144375000000000000000000000000000000000"
+      },
+      {
+        "name": "LH opposite signs positive frame endpoint .02",
+        "margin": "413998028363593212356538903411599/56306250000000000000000000000000000"
+      },
+      {
+        "name": "LH opposite signs positive frame endpoint .46",
+        "margin": "27911459817077683225019389329708973/168918750000000000000000000000000000"
+      },
+      {
+        "name": "HL positive target initial barrier",
+        "margin": "75248106450094273689559537199369/2883207052946090698242187500000000"
+      },
+      {
+        "name": "LH negative negative initial barrier",
+        "margin": "11722110245667612450085351/18304000000000000000000000000"
+      },
+      {
+        "name": "LH negative positive initial barrier",
+        "margin": "8184836808601382782764001506270089/205726416896000000000000000000000000"
+      },
+      {
+        "name": "LH positive positive initial barrier",
+        "margin": "3345957829915860209541315776423/277385472000000000000000000000000"
+      },
+      {
+        "name": "LH primary negative target initial barrier",
+        "margin": "499663479733762995494139/33687500000000000000000000"
+      },
+      {
+        "name": "LH primary positive target first quadrant impossible",
+        "margin": "12303041/125000000"
+      },
+      {
+        "name": "LH primary all negative frames impossible",
+        "margin": "1608939/7812500"
+      },
+      {
+        "name": "LH primary negative-target scalar increasing",
+        "margin": "602980030630027158623/6651175781250000000000"
+      },
+      {
+        "name": "LH primary positive-target radial coefficient",
+        "margin": "3736726873187396073161973/20992491520000000000000000"
+      },
+      {
+        "name": "LH primary positive-target concavity first",
+        "margin": "67699340291858134835680671320077797/158251089920000000000000000000000000"
+      },
+      {
+        "name": "LH primary positive-target concavity last",
+        "margin": "1008011672623132001169600029589480249/1175579525120000000000000000000000000"
+      },
+      {
+        "name": "LH positive-positive target convex",
+        "margin": "104724078619066399/384000000000000000"
+      },
+      {
+        "name": "LH positive-positive target first derivative",
+        "margin": "88057329988602519807811187/3358798643200000000000000000"
+      },
+      {
+        "name": "LH positive-positive scalar cos coefficient",
+        "margin": "8681987043/10000000000"
+      },
+      {
+        "name": "LH positive-positive scalar sin coefficient",
+        "margin": "7507969767/10000000000"
+      },
+      {
+        "name": "LH positive-positive scalar right derivative negative",
+        "margin": "6172490760895923752295711031107889/534354329600000000000000000000000000"
+      },
+      {
+        "name": "LH negative frame target diagonal derivative",
+        "margin": "188724266518549295358674577454999/56306250000000000000000000000000000"
+      },
+      {
+        "name": "LH negative frame cost increasing in absolute angle",
+        "margin": "116671018562879/625000000000000"
+      },
+      {
+        "name": "LH after-quarter target decreases",
+        "margin": "7679/500000"
+      },
+      {
+        "name": "LH after-quarter scalar increases",
+        "margin": "53274270763/100000000000"
+      },
+      {
+        "name": "positive target norm increases after 1.35",
+        "margin": "64763456400332010231316743/252313600000000000000000000"
+      },
+      {
+        "name": "negative source H norm quarter bound",
+        "margin": "32082811/50000000000"
+      },
+      {
+        "name": "negative source first quadrant circle concavity",
+        "margin": "478288145330623243468557/807403520000000000000000"
+      },
+      {
+        "name": "positive source H norm quarter bound",
+        "margin": "51792811/50000000000"
+      },
+      {
+        "name": "positive source first quadrant circle concavity",
+        "margin": "440771640273820369758357/807403520000000000000000"
+      },
+      {
+        "name": "negative source second quadrant norm bound",
+        "margin": "104897982061646971639673371368080211545598274673766987138697248242347/60496600715332031250000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "name": "negative source second quadrant concavity",
+        "margin": "96459865263/200000000000"
+      },
+      {
+        "name": "opposite signs positive frame norm bound",
+        "margin": "1643708627377719663075442912448452485450095951701717301964288811/6470191406250000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "name": "opposite signs positive frame concavity",
+        "margin": "653409369/2500000000"
+      }
+    ],
+    "endpoints": [
+      {
+        "name": "LH primary negative target",
+        "x": ".6",
+        "lower_numerator_over_1e8": "111099071"
+      },
+      {
+        "name": "LH primary positive target a",
+        "x": "q",
+        "lower_numerator_over_1e8": "99372284"
+      },
+      {
+        "name": "LH primary positive target a",
+        "x": "q+.45",
+        "lower_numerator_over_1e8": "104894964"
+      },
+      {
+        "name": "LH primary positive target b",
+        "x": "q",
+        "lower_numerator_over_1e8": "101899206"
+      },
+      {
+        "name": "LH primary positive target b",
+        "x": "q+.45",
+        "lower_numerator_over_1e8": "115715877"
+      },
+      {
+        "name": "LH negative-positive secondary",
+        "x": "1.35",
+        "lower_numerator_over_1e8": "89708175"
+      },
+      {
+        "name": "LH negative-positive secondary",
+        "x": "q",
+        "lower_numerator_over_1e8": "88524446"
+      },
+      {
+        "name": "LH negative-positive secondary",
+        "x": "2.02",
+        "lower_numerator_over_1e8": "103740259"
+      },
+      {
+        "name": "LH positive-positive cut",
+        "x": "1.1",
+        "lower_numerator_over_1e8": "92324078"
+      },
+      {
+        "name": "LH positive-positive cut",
+        "x": "1.35",
+        "lower_numerator_over_1e8": "90611618"
+      },
+      {
+        "name": "LH positive-positive circle",
+        "x": "1.35",
+        "lower_numerator_over_1e8": "90482983"
+      },
+      {
+        "name": "LH positive-positive circle",
+        "x": "q-.02",
+        "lower_numerator_over_1e8": "88535591"
+      },
+      {
+        "name": "LH positive-positive after quarter",
+        "x": "q+.02",
+        "lower_numerator_over_1e8": "89137840"
+      },
+      {
+        "name": "LH opposite signs negative frame",
+        "x": "-.02",
+        "lower_numerator_over_1e8": "88536715"
+      },
+      {
+        "name": "LH opposite signs positive frame",
+        "x": ".02",
+        "lower_numerator_over_1e8": "89065261"
+      },
+      {
+        "name": "LH opposite signs positive frame",
+        "x": ".46",
+        "lower_numerator_over_1e8": "104853600"
+      }
+    ]
+  },
+  "polynomial": {
+    "status": "PASS",
+    "checks": [
+      {
+        "name": "upper H positive L bridge coefficient 0",
+        "margin": "1209264137280826841505296289151081/242248535156250000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L bridge coefficient 1",
+        "margin": "141371171073086720073260410175813/48449707031250000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L bridge coefficient 2",
+        "margin": "5285924298423689101552863351472469/1211242675781250000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L bridge coefficient 3",
+        "margin": "16655803949046037078245710950757443/2422485351562500000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L bridge coefficient 4",
+        "margin": "38277047931769141469752550366187719/4844970703125000000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L bridge coefficient 5",
+        "margin": "1930674822942455463650558167546104419/403101562500000000000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L bridge coefficient 6",
+        "margin": "42537547903665421056559636751291620961/8868234375000000000000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L bridge coefficient 7",
+        "margin": "3602417610710343684533407346873724504379/709458750000000000000000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L bridge coefficient 8",
+        "margin": "954697488747703505690823513753326170607/354729375000000000000000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L bridge coefficient 9",
+        "margin": "6524784373088512791838419368172704750897/1418917500000000000000000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L bridge coefficient 10",
+        "margin": "1739489461886613113847749836001995027181/227026800000000000000000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L bridge coefficient 11",
+        "margin": "892360762457201456377864848076483499237/103194000000000000000000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L bridge coefficient 12",
+        "margin": "1089145004228103272419649601909849619907/257985000000000000000000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L bridge coefficient 13",
+        "margin": "151483010191429923308646631807475132377/158760000000000000000000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L bridge coefficient 14",
+        "margin": "13502580997400556554690423708912905466983/2540160000000000000000000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L bridge coefficient 15",
+        "margin": "7475911216095581256430703203888299541853/2032128000000000000000000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L bridge coefficient 16",
+        "margin": "2355381284233370638222011923775046240921/1016064000000000000000000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L bridge lambda positive",
+        "margin": "480179/500000"
+      },
+      {
+        "name": "upper H positive L bridge T positive",
+        "margin": "458245413362811/500000000000000"
+      },
+      {
+        "name": "upper H positive L main coefficient 0",
+        "margin": "239422933076245897806616345952988160129/40642560000000000000000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L main coefficient 1",
+        "margin": "46033321725880504609723736986132741843/5080320000000000000000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L main coefficient 2",
+        "margin": "48162433944820951925852413803008900471/10160640000000000000000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L main coefficient 3",
+        "margin": "21989754168508987540810836362807668589/2540160000000000000000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L main coefficient 4",
+        "margin": "89600100624213200390688456023729763577/33022080000000000000000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L main coefficient 5",
+        "margin": "73380091233815415115155829978710786893/8255520000000000000000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L main coefficient 6",
+        "margin": "727791255419359723762171429605619038953/90810720000000000000000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L main coefficient 7",
+        "margin": "20038661697031745844608649458547192251/11351340000000000000000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L main coefficient 8",
+        "margin": "143117312695083724742769002237358355247/22702680000000000000000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L main coefficient 9",
+        "margin": "2174924924190033768262217255940659503/354729375000000000000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L main coefficient 10",
+        "margin": "38676995844230598546458821775510605553/5675670000000000000000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L main coefficient 11",
+        "margin": "696366121737821005254745454298091207/128992500000000000000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L main coefficient 12",
+        "margin": "959797097627426589592220070864842377/128992500000000000000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L main coefficient 13",
+        "margin": "24214133784192010765323445521329411/2480625000000000000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L main coefficient 14",
+        "margin": "20201105859082711933027830713699071/2480625000000000000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L main coefficient 15",
+        "margin": "726647366705666369010435553423483/77519531250000000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L main coefficient 16",
+        "margin": "4439612769406488893116150419095329/620156250000000000000000000000000000000000"
+      },
+      {
+        "name": "upper H positive L main lambda positive",
+        "margin": "40889/50000"
+      },
+      {
+        "name": "upper H positive L main lambda below diagonal derivative",
+        "margin": "2/15625"
+      },
+      {
+        "name": "upper H positive L main T positive",
+        "margin": "94654192612607/100000000000000"
+      },
+      {
+        "name": "L negative H negative secondary coefficient 0",
+        "margin": "615775326747246101767/70000000000000000000000000000"
+      },
+      {
+        "name": "L negative H negative secondary coefficient 1",
+        "margin": "3554808503402479068619/490000000000000000000000000000"
+      },
+      {
+        "name": "L negative H negative secondary coefficient 2",
+        "margin": "31180563848776110648297/6370000000000000000000000000000"
+      },
+      {
+        "name": "L negative H negative secondary coefficient 3",
+        "margin": "16020696548618049694461/3185000000000000000000000000000"
+      },
+      {
+        "name": "L negative H negative secondary coefficient 4",
+        "margin": "232714702806929077243801/210210000000000000000000000000000"
+      },
+      {
+        "name": "L negative H negative secondary coefficient 5",
+        "margin": "82875602971970912958931/10010000000000000000000000000000"
+      },
+      {
+        "name": "L negative H negative secondary coefficient 6",
+        "margin": "17247853605737925604469209/1891890000000000000000000000000000"
+      },
+      {
+        "name": "L negative H negative secondary coefficient 7",
+        "margin": "142954898482325677258487/20020000000000000000000000000000"
+      },
+      {
+        "name": "L negative H negative secondary coefficient 8",
+        "margin": "883531525707959155516519/171990000000000000000000000000000"
+      },
+      {
+        "name": "L negative H negative secondary coefficient 9",
+        "margin": "17866457689439279707756709/1891890000000000000000000000000000"
+      },
+      {
+        "name": "L negative H negative secondary coefficient 10",
+        "margin": "12325462143828785048206709/1891890000000000000000000000000000"
+      },
+      {
+        "name": "L negative H negative secondary coefficient 11",
+        "margin": "675482408599769801491519/171990000000000000000000000000000"
+      },
+      {
+        "name": "L negative H negative secondary coefficient 12",
+        "margin": "324069982786719840010651/73710000000000000000000000000000"
+      },
+      {
+        "name": "L negative H negative secondary coefficient 13",
+        "margin": "107551127745165849683963/13230000000000000000000000000000"
+      },
+      {
+        "name": "L negative H negative secondary coefficient 14",
+        "margin": "1198454356858800255301/210000000000000000000000000000"
+      },
+      {
+        "name": "negative-negative scalar T positive",
+        "margin": "104197754301209/100000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension norm1 coefficient 0",
+        "margin": "69028924711150000779211089/1000000000000000000000000000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension norm1 coefficient 1",
+        "margin": "30679379833454156594681217/1000000000000000000000000000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension norm1 coefficient 2",
+        "margin": "143911592498001951772355783/1750000000000000000000000000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension norm1 coefficient 3",
+        "margin": "78606469833373812618613499/1750000000000000000000000000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension norm1 coefficient 4",
+        "margin": "14550960276259986589153643/437500000000000000000000000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension norm1 coefficient 5",
+        "margin": "35289988147227893564065079/437500000000000000000000000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension norm1 coefficient 6",
+        "margin": "1452172537487205207035029/15625000000000000000000000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension norm1 coefficient 7",
+        "margin": "1161340235723202389385037/15625000000000000000000000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension norm1 coefficient 8",
+        "margin": "155335931052116675869209/3906250000000000000000000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension norm2 coefficient 0",
+        "margin": "60819582833283219697640049/1000000000000000000000000000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension norm2 coefficient 1",
+        "margin": "90179201613786032125016737/5000000000000000000000000000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension norm2 coefficient 2",
+        "margin": "4089140472553405473388142849/45000000000000000000000000000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension norm2 coefficient 3",
+        "margin": "3275167131342523534911881/46875000000000000000000000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension norm2 coefficient 4",
+        "margin": "515935573856934978410679619/13125000000000000000000000000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension norm2 coefficient 5",
+        "margin": "36331897420456511127995093/1181250000000000000000000000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension norm2 coefficient 6",
+        "margin": "1816282289751089798868460933/19687500000000000000000000000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension norm2 coefficient 7",
+        "margin": "698386496484633483114027389/33750000000000000000000000000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension norm2 coefficient 8",
+        "margin": "552987081821384096093309029/6750000000000000000000000000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension norm2 coefficient 9",
+        "margin": "4038851819842848115108458569/45000000000000000000000000000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension norm2 coefficient 10",
+        "margin": "265092812118725051724729563/4500000000000000000000000000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension cost coefficient 0",
+        "margin": "5834854692883/87500000000000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension cost coefficient 1",
+        "margin": "316502759928471/3500000000000000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension cost coefficient 2",
+        "margin": "763836956250937/15750000000000000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension cost coefficient 3",
+        "margin": "827509366957173/14000000000000000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension cost coefficient 4",
+        "margin": "3994862063386333/126000000000000000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension cost coefficient 5",
+        "margin": "1430355023116237/33600000000000000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension cost coefficient 6",
+        "margin": "1090539484771531/126000000000000000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension cost coefficient 7",
+        "margin": "1601742259887491/32000000000000000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension cost coefficient 8",
+        "margin": "549442460169222337/12960000000000000000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension cost coefficient 9",
+        "margin": "7785891106850828251/86400000000000000000000000000"
+      },
+      {
+        "name": "high-low nonaligned extension cost coefficient 10",
+        "margin": "2441237793606893023/25920000000000000000000000000"
+      },
+      {
+        "name": "extension cosine remainder",
+        "margin": "508531361059114193/51840000000000000000000000"
+      },
+      {
+        "name": "extension sine remainder",
+        "margin": "148193319527413799351/5184000000000000000000000000"
+      },
+      {
+        "name": "extension norm squared remainder factor",
+        "margin": "353/25000"
+      },
+      {
+        "name": "extension U1 positive",
+        "margin": "169254847117/250000000000"
+      },
+      {
+        "name": "extension U2 positive",
+        "margin": "327455817524371/625000000000000"
+      },
+      {
+        "name": "extension lambda positive",
+        "margin": "342653/500000"
+      }
+    ],
+    "rows": [
+      {
+        "name": "upper H positive L bridge",
+        "interval": [
+          ".08",
+          ".11"
+        ],
+        "degree": 16,
+        "denominator": 100000000,
+        "lower_numerators": [
+          36350,
+          39352,
+          42034,
+          44398,
+          46446,
+          48180,
+          49601,
+          50711,
+          51512,
+          52005,
+          52192,
+          52075,
+          51656,
+          50936,
+          49916,
+          48599,
+          46986
+        ],
+        "P": [
+          "-960022967269957796482178279/250000000000000000000000000000",
+          "11453682964195228169/125000000000000000000",
+          "-26088630481695301/50000000000000000",
+          "323918188717210271831/750000000000000000000",
+          "-123360626742904699/600000000000000000",
+          "-603914848717210271831/15000000000000000000000",
+          "660050255641304699/18000000000000000000",
+          "1588901488717210271831/630000000000000000000000",
+          "-282855707914989411/112000000000000000000",
+          "-2753510947881/22400000000000000",
+          "1668424759408711/16800000000000000000",
+          "12620191/3360000000000",
+          "-186933887041/75600000000000000",
+          "-435179/5760000000000",
+          "185837012041/6350400000000000000",
+          "435179/564480000000000",
+          "1/200704000000"
+        ],
+        "exact_bernstein": [
+          "88058551793434155826841505296289151081/242248535156250000000000000000000000000000",
+          "19066070082108573086720073260410175813/48449707031250000000000000000000000000000",
+          "509139032262189048689101552863351472469/1211242675781250000000000000000000000000000",
+          "1075551702190667796037078245710950757443/2422485351562500000000000000000000000000000",
+          "2250333369821369269141469752550366187719/4844970703125000000000000000000000000000000",
+          "194216263487322942455463650558167546104419/403101562500000000000000000000000000000000000",
+          "4398775469891653665421056559636751291620961/8868234375000000000000000000000000000000000000",
+          "359777229130110710343684533407346873724504379/709458750000000000000000000000000000000000000000",
+          "182729150347488747703505690823513753326170607/354729375000000000000000000000000000000000000000",
+          "737914570659373088512791838419368172704750897/1418917500000000000000000000000000000000000000000",
+          "118491566945461886613113847749836001995027181/227026800000000000000000000000000000000000000000",
+          "53739167860762457201456377864848076483499237/103194000000000000000000000000000000000000000000",
+          "133265820745004228103272419649601909849619907/257985000000000000000000000000000000000000000000",
+          "80866145083010191429923308646631807475132377/158760000000000000000000000000000000000000000000",
+          "1267959768180997400556554690423708912905466983/2540160000000000000000000000000000000000000000000",
+          "987601362631216095581256430703203888299541853/2032128000000000000000000000000000000000000000000",
+          "477410186421284233370638222011923775046240921/1016064000000000000000000000000000000000000000000"
+        ]
+      },
+      {
+        "name": "upper H positive L main",
+        "interval": [
+          ".11",
+          ".46"
+        ],
+        "degree": 16,
+        "denominator": 100000000,
+        "lower_numerators": [
+          46907,
+          23046,
+          22603,
+          48835,
+          104890,
+          193825,
+          318639,
+          482291,
+          687724,
+          937892,
+          1235776,
+          1584407,
+          1986883,
+          2446388,
+          2966207,
+          3549739,
+          4200512
+        ],
+        "P": [
+          "2467015620362959547569/640000000000000000000000",
+          "-9008529966705295441497/200000000000000000000000",
+          "19049380038841527629761/250000000000000000000000",
+          "2046284858274323/4000000000000000",
+          "-1224324726466871/4800000000000000",
+          "3488599080876473/16000000000000000",
+          "1007738789553/500000000000000",
+          "-112507189382439949/3360000000000000000",
+          "28042807983684343/8064000000000000000",
+          "1308411761015697/560000000000000000",
+          "-808258276447/2240000000000000",
+          "-29053870405667/302400000000000000",
+          "10866073/604800000000",
+          "192211/80640000000",
+          "-4064677/8467200000000",
+          "-96563/3386880000000",
+          "2505889/406425600000000"
+        ],
+        "exact_bernstein": [
+          "19064445042133076245897806616345952988160129/40642560000000000000000000000000000000000000000",
+          "1170856580521725880504609723736986132741843/5080320000000000000000000000000000000000000000",
+          "2296657621633944820951925852413803008900471/10160640000000000000000000000000000000000000000",
+          "1240509125754168508987540810836362807668589/2540160000000000000000000000000000000000000000",
+          "34636949312100624213200390688456023729763577/33022080000000000000000000000000000000000000000",
+          "16001335020091233815415115155829978710786893/8255520000000000000000000000000000000000000000",
+          "289359097892055419359723762171429605619038953/90810720000000000000000000000000000000000000000",
+          "54746511238061697031745844608649458547192251/11351340000000000000000000000000000000000000000",
+          "156131922120512695083724742769002237358355247/22702680000000000000000000000000000000000000000",
+          "3326980604699924190033768262217255940659503/354729375000000000000000000000000000000000000",
+          "70138606376195844230598546458821775510605553/5675670000000000000000000000000000000000000000",
+          "2043766895841121737821005254745454298091207/128992500000000000000000000000000000000000000",
+          "2562931013572097627426589592220070864842377/128992500000000000000000000000000000000000000",
+          "60685736539133784192010765323445521329411/2480625000000000000000000000000000000000000",
+          "73580492594855859082711933027830713699071/2480625000000000000000000000000000000000000",
+          "2751741760045804205666369010435553423483/77519531250000000000000000000000000000000",
+          "26049742139612769406488893116150419095329/620156250000000000000000000000000000000000"
+        ]
+      },
+      {
+        "name": "L negative H negative secondary",
+        "interval": [
+          ".3",
+          ".8"
+        ],
+        "degree": 14,
+        "denominator": 100000000,
+        "lower_numerators": [
+          57629693,
+          64106927,
+          70385371,
+          76417041,
+          82155685,
+          87557161,
+          92579804,
+          97184758,
+          101336287,
+          105002051,
+          108153349,
+          110765317,
+          112817092,
+          114291931,
+          115177288
+        ],
+        "P": [
+          "64417655832936659898861681/10000000000000000000000000000",
+          "9254525439530919/5000000000000000",
+          "6142472142589981/10000000000000000",
+          "-14959250003136673/10000000000000000",
+          "-14342472142589981/120000000000000000",
+          "162449750009410019/600000000000000000",
+          "32542472142589981/3600000000000000000",
+          "-578137750009410019/25200000000000000000",
+          "-1287/3200000",
+          "5246947277/4725000000000",
+          "1183/72000000",
+          "-1183/36000000",
+          "-1183/1036800000",
+          "1183/2592000000",
+          "169/5184000000"
+        ],
+        "exact_bernstein": [
+          "40340785715775326747246101767/70000000000000000000000000000",
+          "314123945854808503402479068619/490000000000000000000000000000",
+          "4483548163880563848776110648297/6370000000000000000000000000000",
+          "2433882771870696548618049694461/3185000000000000000000000000000",
+          "172699465671214702806929077243801/210210000000000000000000000000000",
+          "8764471898975602971970912958931/10010000000000000000000000000000",
+          "1751508071143453605737925604469209/1891890000000000000000000000000000",
+          "19456388694554898482325677258487/20020000000000000000000000000000",
+          "174288280894831525707959155516519/171990000000000000000000000000000",
+          "1986523320530357689439279707756709/1891890000000000000000000000000000",
+          "2046142406721562143828785048206709/1891890000000000000000000000000000",
+          "190505269383782408599769801491519/171990000000000000000000000000000",
+          "83157478837269982786719840010651/73710000000000000000000000000000",
+          "15120822578851127745165849683963/13230000000000000000000000000000",
+          "241872305998454356858800255301/210000000000000000000000000000"
+        ]
+      },
+      {
+        "name": "high-low nonaligned extension norm1",
+        "interval": [
+          ".3",
+          ".77"
+        ],
+        "degree": 8,
+        "denominator": 10000000000,
+        "lower_numerators": [
+          46107,
+          45428,
+          44692,
+          43715,
+          41998,
+          38553,
+          32151,
+          22091,
+          9625
+        ],
+        "P": [
+          "4984327556077748414527857744129/1000000000000000000000000000000000000",
+          "-1182448997037567322846725883/625000000000000000000000000000000",
+          "212678537168980902200947073/25000000000000000000000000000000",
+          "-793496664828324197422349/15625000000000000000000000000",
+          "155509576869235544024043/1000000000000000000000000000",
+          "-1342596131817136000211/6250000000000000000000000",
+          "20268359547228671813/250000000000000000000000",
+          "3891161574108741/312500000000000000000",
+          "128899396371769/100000000000000000000"
+        ],
+        "exact_bernstein": [
+          "4610769028924711150000779211089/1000000000000000000000000000000000000",
+          "4542830679379833454156594681217/1000000000000000000000000000000000000",
+          "7821243911592498001951772355783/1750000000000000000000000000000000000",
+          "7650203606469833373812618613499/1750000000000000000000000000000000000",
+          "1837427050960276259986589153643/437500000000000000000000000000000000",
+          "1686729039988147227893564065079/437500000000000000000000000000000000",
+          "50237389672537487205207035029/15625000000000000000000000000000000",
+          "34518348840235723202389385037/15625000000000000000000000000000000",
+          "3759920960931052116675869209/3906250000000000000000000000000000"
+        ]
+      },
+      {
+        "name": "high-low nonaligned extension norm2",
+        "interval": [
+          ".3",
+          ".77"
+        ],
+        "degree": 10,
+        "denominator": 10000000000,
+        "lower_numerators": [
+          14892,
+          26291,
+          72150,
+          224495,
+          650842,
+          1676221,
+          3836335,
+          7920705,
+          15005681,
+          26478271,
+          44052700
+        ],
+        "P": [
+          "-11944582668458188856405980675311/1000000000000000000000000000000000000",
+          "508137662310309257550791825719/1250000000000000000000000000000000",
+          "-122875400995446525633321893557/25000000000000000000000000000000",
+          "3577006390886144901249836053/125000000000000000000000000000",
+          "-80710695555964041453767137/1000000000000000000000000000",
+          "3413493770056051606522619/37500000000000000000000000",
+          "-4855771453775385747751/750000000000000000000000",
+          "-84969997340837814509/11250000000000000000000",
+          "608456554369270187/300000000000000000000",
+          "-199660061/11520000000000",
+          "359/576000000"
+        ],
+        "exact_bernstein": [
+          "1489260819582833283219697640049/1000000000000000000000000000000000000",
+          "13145590179201613786032125016737/5000000000000000000000000000000000000",
+          "324679089140472553405473388142849/45000000000000000000000000000000000000",
+          "1052323587667131342523534911881/46875000000000000000000000000000000",
+          "854230640935573856934978410679619/13125000000000000000000000000000000000",
+          "198003641956897420456511127995093/1181250000000000000000000000000000000",
+          "7552786347532289751089798868460933/19687500000000000000000000000000000000",
+          "26732380073386496484633483114027389/33750000000000000000000000000000000000",
+          "10128835227987081821384096093309029/6750000000000000000000000000000000000",
+          "119152223538851819842848115108458569/45000000000000000000000000000000000000",
+          "19823715265092812118725051724729563/4500000000000000000000000000000000000"
+        ]
+      },
+      {
+        "name": "high-low nonaligned extension cost",
+        "interval": [
+          ".3",
+          ".77"
+        ],
+        "degree": 10,
+        "denominator": 10000000000,
+        "lower_numerators": [
+          7887247,
+          13045323,
+          20098966,
+          28832262,
+          38936090,
+          50011101,
+          61569449,
+          73035241,
+          83743732,
+          92939289,
+          99772210
+        ],
+        "P": [
+          "32770824468352204953/25000000000000000000000",
+          "-1804008992482649379/125000000000000000000",
+          "2987136635763769/78125000000000000",
+          "342870615820651/12500000000000000",
+          "-36191341309051/750000000000000",
+          "150151/20000000",
+          "-53/24000",
+          "-150151/840000000",
+          "43/806400",
+          "150151/60480000000",
+          "-1/1296000"
+        ],
+        "exact_bernstein": [
+          "69013417084854692883/87500000000000000000000",
+          "4565863366502759928471/3500000000000000000000000",
+          "31655872213836956250937/15750000000000000000000000",
+          "40365167627509366957173/14000000000000000000000000",
+          "490594737994862063386333/126000000000000000000000000",
+          "168037300790355023116237/33600000000000000000000000",
+          "775775058490539484771531/126000000000000000000000000",
+          "233712772801742259887491/32000000000000000000000000",
+          "108531877221442460169222337/12960000000000000000000000000",
+          "802995464745891106850828251/86400000000000000000000000000",
+          "258609570761237793606893023/25920000000000000000000000000"
+        ]
+      }
+    ]
+  }
+}
