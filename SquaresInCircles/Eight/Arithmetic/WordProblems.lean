@@ -1,6 +1,7 @@
 module
 
-public import SquaresInCircles.Eight.BoundaryGeometry
+public import SquaresInCircles.Eight.Arithmetic.PairCover
+public import SquaresInCircles.Eight.QuarterWords
 
 /-!
 # The labels and targets of the six wrong quarter words
@@ -114,3 +115,93 @@ theorem all_original_case_count (w : WrongWord) :
   cases w <;> decide
 
 end SquaresInCircles.Eight.WordProblems
+
+/-! ### The problems of the word pair tables
+
+The pair problem of an edge (`commonPairProblem`, `wrongPairProblem`) carries the actual radial
+charts, signs and labels of its ends. The pair tables of `WordGeometry` (`Generated/Pairs`) define
+their problems as the images of their cases (`commonCases`, `wrongCases`) under these functions,
+so `WordGeometry` finds each problem in its table without comparing rationals. -/
+
+namespace SquaresInCircles.Eight.WordGeometry
+open Arithmetic Arithmetic.PairCover WordProblems
+
+/-- The tangent range of a radial kind. -/
+def kindRange : RadialKind → QInterval
+  | .outer => ⟨0, 1⟩
+  | .coreSide => ⟨0, 6/7⟩
+  | .coreCorner => ⟨6/7, 1⟩
+
+/-- The end of a pair at a vertex of radial kind `kind`, sign `σ` and label `L`. -/
+def kindEnd (kind : RadialKind) (σ : Bool) (L : QuadLabel) : PairEnd :=
+  ⟨decide (kind = .outer), decide (kind = .coreSide), σ, kindRange kind, L⟩
+
+/-- The common label of a radial kind with the sign `σ`. -/
+def commonQuad (kind : RadialKind) (σ : Bool) : QuadLabel :=
+  (if kind = .outer then (⟨-9/100, -9/100, 13/200, 203/200, 0, 0⟩ : QuadLabel)
+    else ⟨73/10*(7/12), 73/10*(7/12), -(73/10), 291/250, 0, 0⟩).signed σ
+
+/-- The label of a wrong word at a role, for a radial kind and the sign `σ`. -/
+def wrongQuad (w : WrongWord) (i : Vertex) (kind : RadialKind) (σ : Bool) : QuadLabel :=
+  match w with
+  | .short =>
+      let v := shortCoefficients i (radialIndex kind) (signIndex σ)
+      ⟨v 0/100000, v 0/100000, v 1/100000, sign σ*v 2/100000, 0, 0⟩
+  | .second =>
+      let v := secondCoefficients i (radialIndex kind) (signIndex σ)
+      (⟨v 0/100000, v 0/100000, v 1/100000, v 2/100000, v 3/100000, v 4/100000⟩ : QuadLabel).signed σ
+
+/-- The two halves `(k, ±, 7/10)` of the frame difference, with `u⁺` over `10⁸`. -/
+def wordHalves (k : ℕ) : List (ℕ × Bool × ℕ) := [(k, true, 70000000), (k, false, 70000000)]
+
+/-- The pair problem of a common increment `k`. -/
+def commonPairProblem (k : Fin 3) (ks kt : RadialKind) (σ τ : Bool) (j : Fin 4) : PairProblem :=
+  ⟨kindEnd ks σ (commonQuad ks σ), kindEnd kt τ (commonQuad kt τ), axisOf (j.val + 1), 0,
+    commonGamma k, wordHalves k.val⟩
+
+/-- The pair problem of the edge `i` of a wrong word. -/
+def wrongPairProblem (w : WrongWord) (i : Vertex) (ks kt : RadialKind) (σ τ : Bool) (j : Fin 4) :
+    PairProblem :=
+  ⟨kindEnd ks σ (wrongQuad w i ks σ), kindEnd kt τ (wrongQuad w (next i) kt τ),
+    axisOf (j.val + 1), 0, wrongGamma w i, wordHalves (wrongWord w i).val⟩
+
+/-- The source kind, target kind, signs and original axis `j` of a word pair problem, in the
+order of the tables. -/
+def wordCases : List (RadialKind × RadialKind × Bool × Bool × Fin 4) :=
+  [.outer, .coreSide, .coreCorner] ×ˢ [.outer, .coreSide, .coreCorner] ×ˢ [false, true] ×ˢ
+    [false, true] ×ˢ [0, 1, 2, 3]
+
+theorem mem_wordCases (c : RadialKind × RadialKind × Bool × Bool × Fin 4) : c ∈ wordCases := by
+  obtain ⟨ks, kt, σ, τ, j⟩ := c
+  simp only [wordCases, List.mem_product]
+  refine ⟨?_, ?_, ?_, ?_, ?_⟩
+  · cases ks <;> decide
+  · cases kt <;> decide
+  · cases σ <;> decide
+  · cases τ <;> decide
+  · fin_cases j <;> decide
+
+/-- The cases of the common table of the increment `k`: an outer end, and an axis that a feasible
+separator can have (`CoreSeparatorExcluded`). -/
+def commonCases (k : Fin 3) : List (RadialKind × RadialKind × Bool × Bool × Fin 4) :=
+  wordCases.filter fun c => decide ((c.1 = .outer ∨ c.2.1 = .outer) ∧
+    ¬ CoreSeparatorExcluded k c.1 c.2.1 c.2.2.1 c.2.2.2.1 c.2.2.2.2)
+
+/-- The cases of the table of the edge `i` of the wrong word `w`: allowed signs, and an axis that
+a feasible separator can have. -/
+def wrongCases (w : WrongWord) (i : Vertex) :
+    List (RadialKind × RadialKind × Bool × Bool × Fin 4) :=
+  wordCases.filter fun c => decide (allowed w i c.2.2.1 c.2.2.2.1 ∧
+    ¬ CoreSeparatorExcluded (wrongWord w i) c.1 c.2.1 c.2.2.1 c.2.2.2.1 c.2.2.2.2)
+
+theorem mem_commonCases {k : Fin 3} {ks kt : RadialKind} {σ τ : Bool} {j : Fin 4}
+    (h : ks = .outer ∨ kt = .outer) (h' : ¬ CoreSeparatorExcluded k ks kt σ τ j) :
+    (ks, kt, σ, τ, j) ∈ commonCases k :=
+  List.mem_filter.mpr ⟨mem_wordCases _, decide_eq_true ⟨h, h'⟩⟩
+
+theorem mem_wrongCases {w : WrongWord} {i : Vertex} {ks kt : RadialKind} {σ τ : Bool}
+    {j : Fin 4} (h : allowed w i σ τ) (h' : ¬ CoreSeparatorExcluded (wrongWord w i) ks kt σ τ j) :
+    (ks, kt, σ, τ, j) ∈ wrongCases w i :=
+  List.mem_filter.mpr ⟨mem_wordCases _, decide_eq_true ⟨h, h'⟩⟩
+
+end SquaresInCircles.Eight.WordGeometry

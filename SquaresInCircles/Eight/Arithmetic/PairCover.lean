@@ -276,6 +276,29 @@ def arcFits (a : ArcData) (E : PairEnd) (S : QInterval) : Bool :=
   (a.outer == E.outer) && (a.side == E.side) && (a.positive == E.positive) &&
     decide (a.tangent.lo ≤ S.lo) && decide (S.hi ≤ a.tangent.hi)
 
+/-- Equality of rationals as a Boolean, by numerator and denominator. The leaves compare the
+labels of the problems, which are computed, with those of the arcs, which are fractions: this
+comparison evaluates both sides, while the derived `DecidableEq` casts along the equality of each
+field and so makes the kernel unify the two terms. -/
+def ratEq (a b : ℚ) : Bool := a.num == b.num && a.den == b.den
+
+theorem eq_of_ratEq {a b : ℚ} (h : ratEq a b = true) : a = b := by
+  simp only [ratEq, Bool.and_eq_true, beq_iff_eq] at h
+  exact Rat.ext h.1 h.2
+
+/-- Equality of labels as a Boolean, coefficient by coefficient. -/
+def labelEq (L L' : QuadLabel) : Bool :=
+  ratEq L.cLo L'.cLo && ratEq L.cHi L'.cHi && ratEq L.p L'.p && ratEq L.q L'.q &&
+    ratEq L.r L'.r && ratEq L.s L'.s
+
+theorem eq_of_labelEq {L L' : QuadLabel} (h : labelEq L L' = true) : L = L' := by
+  obtain ⟨cLo, cHi, p, q, r, s⟩ := L
+  obtain ⟨cLo', cHi', p', q', r', s'⟩ := L'
+  simp only [labelEq, Bool.and_eq_true] at h
+  obtain ⟨⟨⟨⟨⟨h1, h2⟩, h3⟩, h4⟩, h5⟩, h6⟩ := h
+  rw [eq_of_ratEq h1, eq_of_ratEq h2, eq_of_ratEq h3, eq_of_ratEq h4, eq_of_ratEq h5,
+    eq_of_ratEq h6]
+
 /-- The row `x` covers the cell `S × T × [l, h]` of the half `(k, r)` of `P`. -/
 def leafCheck (M : AffineTableMeta) (C : TableCtx) (specs : List (QuadLabel × Bool))
     (P : PairProblem) (k : ℕ) (r : Bool) (S T : QInterval) (l h : ℕ) (x : AffineRow) : Bool :=
@@ -283,10 +306,10 @@ def leafCheck (M : AffineTableMeta) (C : TableCtx) (specs : List (QuadLabel × B
     (x.quarter == k) && (x.positive == r) && decide (x.lo ≤ l) && decide (h ≤ x.hi) &&
     arcFits (nth default M.arcs x.source) P.src S &&
     arcFits (nth default M.arcs x.target) P.tgt T &&
-    (nth default specs x.source == (P.src.label, true)) &&
-    (nth default specs x.target == (P.tgt.label, false)) &&
+    labelEq (nth default specs x.source).1 P.src.label && (nth default specs x.source).2 &&
+    labelEq (nth default specs x.target).1 P.tgt.label && !(nth default specs x.target).2 &&
     decide (P.target ≤ M.target (Fin.ofNat 7 x.edge)) &&
-    (M.charge (Fin.ofNat 7 x.edge) == P.charge)
+    ratEq (M.charge (Fin.ofNat 7 x.edge)) P.charge
 
 /-- The check of a tree on a cell. It returns the rows that follow the rows of its leaves. -/
 def treeCheck (M : AffineTableMeta) (C : TableCtx) (specs : List (QuadLabel × Bool))
@@ -353,8 +376,11 @@ theorem leafCheck_sound (hC : C.Valid M) (hspecs : SpecsHold M C specs) {P : Pai
     (hx : leafCheck M C specs P k r S T l h x = true) (hclaim : (x.toTableRow M C.den).Claim M) :
     P.Cell M.radius C.den k r S T l h := by
   intro cs ct hcs hct a b A B u hsrc htgt hl hh _ _ hmargin
-  simp only [leafCheck, Bool.and_eq_true, beq_iff_eq, decide_eq_true_eq] at hx
-  obtain ⟨⟨⟨⟨⟨⟨⟨⟨⟨⟨⟨⟨hs, ht⟩, hax⟩, hk⟩, hr⟩, hlo⟩, hhi⟩, hfs⟩, hft⟩, hss⟩, hst⟩, hγ⟩, hβ⟩ := hx
+  simp only [leafCheck, Bool.and_eq_true, beq_iff_eq, decide_eq_true_eq, Bool.not_eq_true'] at hx
+  obtain ⟨⟨⟨⟨⟨⟨⟨⟨⟨⟨⟨⟨⟨⟨hs, ht⟩, hax⟩, hk⟩, hr⟩, hlo⟩, hhi⟩, hfs⟩, hft⟩, hsl⟩, hsb⟩, htl⟩, htb⟩,
+    hγ⟩, hβ⟩ := hx
+  have hss : nth default specs x.source = (P.src.label, true) := Prod.ext (eq_of_labelEq hsl) hsb
+  have hst : nth default specs x.target = (P.tgt.label, false) := Prod.ext (eq_of_labelEq htl) htb
   obtain ⟨hcs', hsσ⟩ := arcFits_contains hfs hsrc
   obtain ⟨hct', htτ⟩ := arcFits_contains hft htgt
   have hsa : (x.toTableRow M C.den).sourceArc M = nth default M.arcs x.source := by
@@ -393,7 +419,7 @@ theorem leafCheck_sound (hC : C.Valid M) (hspecs : SpecsHold M C specs) {P : Pai
     exact_mod_cast hγ
   have hcharge : (M.charge (x.toTableRow M C.den).edge : ℝ) = P.charge := by
     simp only [AffineRow.toTableRow]
-    exact_mod_cast hβ
+    exact_mod_cast eq_of_ratEq hβ
   rw [hsa, hta, hphi, hcharge] at hc
   simp only [chargedCost] at hc
   linarith

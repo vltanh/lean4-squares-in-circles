@@ -1203,8 +1203,8 @@ markers are, provided each square uses one marker on both of its edges.
 [`Eight.frameCost`](../../SquaresInCircles/Eight/Frames.lean#L168),
 [`Eight.periodicFrameCost`](../../SquaresInCircles/Eight/Frames.lean#L170),
 [`Eight.cyclic_markers_cancel`](../../SquaresInCircles/Eight/Frames.lean#L53),
-[`Eight.Arithmetic.FourType.label`](../../SquaresInCircles/Eight/Arithmetic/FourTypePairs.lean#L68),
-[`Eight.Arithmetic.FourType.TypeMem`](../../SquaresInCircles/Eight/Arithmetic/FourTypePairs.lean#L77).*
+[`Eight.Arithmetic.FourType.label`](../../SquaresInCircles/Eight/Arithmetic/FourTypePairs.lean#L57),
+[`Eight.Arithmetic.FourType.TypeMem`](../../SquaresInCircles/Eight/Arithmetic/FourTypePairs.lean#L66).*
 
 ### Proposition 11.21 (pair costs of the four types; a finite table)
 
@@ -1233,9 +1233,9 @@ violates the gap of (11.4) or is covered by an affine row that proves the cost
 greater than $\Gamma_{XY}$; 1,069 rows in all.
 
 *Lean:
-[`Eight.Arithmetic.FourType.fourTypeProblem`](../../SquaresInCircles/Eight/Arithmetic/FourTypePairs.lean#L219),
-[`Eight.Arithmetic.FourType.fourTypeTable_holds`](../../SquaresInCircles/Eight/Arithmetic/FourTypePairs.lean#L248),
-[`Eight.Arithmetic.FourType.source_pair`](../../SquaresInCircles/Eight/Arithmetic/FourTypePairs.lean#L368),
+[`Eight.Arithmetic.FourType.fourTypeProblem`](../../SquaresInCircles/Eight/Arithmetic/FourTypeProblems.lean#L83),
+[`Eight.Arithmetic.FourType.fourTypeTable_holds`](../../SquaresInCircles/Eight/Arithmetic/FourTypePairs.lean#L188),
+[`Eight.Arithmetic.FourType.source_pair`](../../SquaresInCircles/Eight/Arithmetic/FourTypePairs.lean#L313),
 [`Eight.four_type_cycle_budget`](../../SquaresInCircles/Eight/Frames.lean#L147).*
 
 ### Lemma 11.22 (closed walks)
@@ -1472,15 +1472,15 @@ $\frac{125671}{20000}$, which exceeds $\frac{710}{113}$ by
 $\frac{823}{2260000}$. $\square$
 
 *Lean:
-[`Eight.WordGeometry.no_double`](../../SquaresInCircles/Eight/WordGeometry.lean#L491),
-[`Eight.WordGeometry.wrong_word_impossible`](../../SquaresInCircles/Eight/WordGeometry.lean#L578),
-[`Eight.WordGeometry.six_exclusions`](../../SquaresInCircles/Eight/WordGeometry.lean#L630),
-[`Eight.quarter_word_candidate`](../../SquaresInCircles/Eight/WordGeometry.lean#L659),
+[`Eight.WordGeometry.no_double`](../../SquaresInCircles/Eight/WordGeometry.lean#L464),
+[`Eight.WordGeometry.wrong_word_impossible`](../../SquaresInCircles/Eight/WordGeometry.lean#L551),
+[`Eight.WordGeometry.six_exclusions`](../../SquaresInCircles/Eight/WordGeometry.lean#L603),
+[`Eight.quarter_word_candidate`](../../SquaresInCircles/Eight/WordGeometry.lean#L632),
 [`Eight.candidate_word_after_six_exclusions`](../../SquaresInCircles/Eight/QuarterWords.lean#L393),
-[`Eight.WordGeometry.commonPairProblem`](../../SquaresInCircles/Eight/WordGeometry.lean#L279),
-[`Eight.WordGeometry.wrongPairProblem`](../../SquaresInCircles/Eight/WordGeometry.lean#L284),
-[`Eight.WordGeometry.word_pair`](../../SquaresInCircles/Eight/WordGeometry.lean#L381),
-[`Eight.WordProblems.all_original_case_count`](../../SquaresInCircles/Eight/Arithmetic/WordProblems.lean#L112).*
+[`Eight.WordGeometry.commonPairProblem`](../../SquaresInCircles/Eight/Arithmetic/WordProblems.lean#L158),
+[`Eight.WordGeometry.wrongPairProblem`](../../SquaresInCircles/Eight/Arithmetic/WordProblems.lean#L163),
+[`Eight.WordGeometry.word_pair`](../../SquaresInCircles/Eight/WordGeometry.lean#L354),
+[`Eight.WordProblems.all_original_case_count`](../../SquaresInCircles/Eight/Arithmetic/WordProblems.lean#L113).*
 
 The three cost bounds are finite tables of continuous inequalities, one for
 each digit or edge, each pair of radial curves, each pair of signs and each

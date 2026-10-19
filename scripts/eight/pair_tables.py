@@ -15,7 +15,11 @@ coverage trees of Arithmetic/PairCover.lean:
   kinds, signs and axes that no feasible separator has (`CoreSeparatorExcluded`) are left out.
 
 A problem fixes the source and target ends (chart, tangent range, sign, label), the original
-axis, the charge β and the target γ. The labels are read from the Lean sources. A label constant
+axis, the charge β and the target γ. A table module does not write its problems out: it maps the
+statement's own problem function (`fourTypeProblem`, `commonPairProblem`, `wrongPairProblem`)
+over the cases of the table (`fourTypeCases`, `commonCases k`, `wrongCases w i`), in the order
+and with the filters of `tables()` below, so that the proofs find each problem in its table
+without comparing rationals. The labels are read from the Lean sources. A label constant
 with √(Q - 1/4), √(Q/2) or π carries a rational bracket; the quadratic labels of the word
 0011011 are bounded on each arc by an affine label (Arithmetic/LabelRelax.lean): below for a
 source arc, above for a target arc.
@@ -100,8 +104,24 @@ SECOND = parse_array(WORDS, "secondCoefficients")
 require(WORDS, "def commonGamma (k : Fin 3) : ℚ := ![391/400,157/200,163/200] k",
         "if w=.short ∧ i=2 then 359/400 else 17953/20000",
         "| .short => ![0,0,1,0,1,1,1]", "| .second => ![0,0,1,1,0,1,1]")
+require(WORDS, "(k=0 ∧ ((j=1 ∧ kt≠.outer) ∨ (j=3 ∧ ks≠.outer))) ∨",
+        "(j=0 ∧ σ=false ∧ kt≠.outer) ∨ (j=2 ∧ τ=true ∧ ks≠.outer) ∨",
+        "(k=1 ∧ ks≠.outer ∧ kt≠.outer ∧ σ=true ∧ τ=false)",
+        "(i=0→σ=true) ∧ (i=2→σ=false) ∧", "(next i=0→τ=true) ∧ (next i=2→τ=false) ∧",
+        "(wrongWord w i=0→¬(σ=false ∧ τ=true))",
+        "def wordCases : List (RadialKind × RadialKind × Bool × Bool × Fin 4) :=\n"
+        "  [.outer, .coreSide, .coreCorner] ×ˢ [.outer, .coreSide, .coreCorner] ×ˢ [false, true] ×ˢ\n"
+        "    [false, true] ×ˢ [0, 1, 2, 3]",
+        "wordCases.filter fun c => decide ((c.1 = .outer ∨ c.2.1 = .outer) ∧\n"
+        "    ¬ CoreSeparatorExcluded k c.1 c.2.1 c.2.2.1 c.2.2.2.1 c.2.2.2.2)",
+        "wordCases.filter fun c => decide (allowed w i c.2.2.1 c.2.2.2.1 ∧\n"
+        "    ¬ CoreSeparatorExcluded (wrongWord w i) c.1 c.2.1 c.2.2.1 c.2.2.2.1 c.2.2.2.2)")
 COMMON_GAMMA = [F(391, 400), F(157, 200), F(163, 200)]
 WORD = {"short": [0, 0, 1, 0, 1, 1, 1], "second": [0, 0, 1, 1, 0, 1, 1]}
+
+FOUR_PROBLEMS = lean_text("Arithmetic/FourTypeProblems.lean")
+require(FOUR_PROBLEMS, "def fourTypeCases : List (Bool × Bool × Bool) :=\n"
+        "  [false, true] ×ˢ [false, true] ×ˢ [false, true]")
 
 GEOM = lean_text("WordGeometry.lean")
 require(GEOM, "(if kind=.outer then -9/100+(13/200)*a+(203/200)*b",
@@ -219,13 +239,24 @@ class Problem:
 
 
 class Table:
-    def __init__(self, name, module, edge, beta, gamma, problems):
+    """A table; `lean` = (the module of its problem function, the docstring and the Lean term of
+    its problems: the problem function mapped over its cases, in the order of `problems`)."""
+
+    def __init__(self, name, module, edge, beta, gamma, problems, lean):
         self.name, self.module, self.edge = name, module, edge
         self.beta, self.gamma, self.problems = F(beta), F(gamma), problems
+        self.lean = lean
 
 
 def camel(s):
     return s[0].upper() + s[1:]
+
+
+# The modules of the problem functions and case lists, and the fields (ks, kt, σ, τ, j) of a case
+# of a word table (FourTypeProblems.lean, WordProblems.lean).
+FOUR_MODULE = "SquaresInCircles.Eight.Arithmetic.FourTypeProblems"
+WORDS_MODULE = "SquaresInCircles.Eight.Arithmetic.WordProblems"
+CASE_FIELDS = "c.1 c.2.1 c.2.2.1 c.2.2.2.1 c.2.2.2.2"
 
 
 def core_separator_excluded(k, sk, tk, p, r, ax):
@@ -255,8 +286,13 @@ def tables():
                                              FOUR_HALVES))
             name = "four_type_%s_%s" % (re.sub(r"([A-Z])", r"_\1", s).lower(),
                                          re.sub(r"([A-Z])", r"_\1", t).lower())
+            lean = (FOUR_MODULE,
+                    "`fourTypeProblem .%s .%s σ τ four` for the cases\n`(σ, τ, four)` of "
+                    "`fourTypeCases`" % (s, t),
+                    "FourType.fourTypeCases.map fun c =>\n"
+                    "    FourType.fourTypeProblem .%s .%s c.1 c.2.1 c.2.2" % (s, t))
             out.append(Table(name, "FourType" + camel(s) + camel(t), 0, F(9, 50), probs[0].gamma,
-                             probs))
+                             probs, lean))
     seven = 7 * DEN // 10
     for k in range(3):
         probs = []
@@ -275,7 +311,12 @@ def tables():
                             probs.append(Problem("common_%d_%s_%s_%d%d_%d" % (k, sk, tk, p, r, ax),
                                                  src, tgt, ax, 0, COMMON_GAMMA[k],
                                                  [(k, True, seven), (k, False, seven)]))
-        out.append(Table("common_%d" % k, "Common%d" % k, 0, 0, COMMON_GAMMA[k], probs))
+        lean = (WORDS_MODULE,
+                "`commonPairProblem %d ks kt σ τ j` for the cases\n`(ks, kt, σ, τ, j)` of "
+                "`commonCases %d`" % (k, k),
+                "(WordGeometry.commonCases %d).map fun c =>\n"
+                "    WordGeometry.commonPairProblem %d %s" % (k, k, CASE_FIELDS))
+        out.append(Table("common_%d" % k, "Common%d" % k, 0, 0, COMMON_GAMMA[k], probs, lean))
     for w in ("short", "second"):
         for i in range(7):
             nx = (i + 1) % 7
@@ -298,7 +339,12 @@ def tables():
                                 probs.append(Problem("%s_%d_%s_%s_%d%d_%d" % (w, i, sk, tk, p, r, ax),
                                                      src, tgt, ax, 0, gamma,
                                                      [(k, True, seven), (k, False, seven)]))
-            out.append(Table("%s_%d" % (w, i), camel(w) + str(i), i, 0, gamma, probs))
+            lean = (WORDS_MODULE,
+                    "`wrongPairProblem .%s %d ks kt σ τ j` for the cases\n`(ks, kt, σ, τ, j)` of "
+                    "`wrongCases .%s %d`" % (w, i, w, i),
+                    "(WordGeometry.wrongCases .%s %d).map fun c =>\n"
+                    "    WordGeometry.wrongPairProblem .%s %d %s" % (w, i, w, i, CASE_FIELDS))
+            out.append(Table("%s_%d" % (w, i), camel(w) + str(i), i, 0, gamma, probs, lean))
     return out
 
 
@@ -1008,17 +1054,8 @@ FOOTER = """
 end SquaresInCircles.Eight.Generated.Pairs.{module}
 """
 
-AXES = {1: ".one", 2: ".two", 3: ".three", 4: ".four"}
-
-
 def lean_quad(L):
     return "⟨%s⟩" % ", ".join(lean_q(x) for x in L.key())
-
-
-def lean_end(e):
-    return "⟨%s, %s, %s, ⟨%s, %s⟩, %s⟩" % (
-        "true" if e.chart == "outer" else "false", "true" if e.chart == "side" else "false",
-        "true" if e.positive else "false", lean_q(e.lo), lean_q(e.hi), lean_quad(e.label))
 
 
 def write_lean(root, tab, arcs, rows, trees, chunk=2000, part=100):
@@ -1037,11 +1074,7 @@ def write_lean(root, tab, arcs, rows, trees, chunk=2000, part=100):
             *(lean_q(x) for x in a["label"])) for i, a in enumerate(arcs))
     spec_lines = ",\n".join("  (%s, %s)" % (lean_quad(a["spec"]), "true" if a["lower"] else "false")
                             for a in arcs)
-    prob_lines = ",\n".join(
-        "  ⟨%s,\n    %s,\n    %s, %s, %s, [%s]⟩" % (
-            lean_end(p.src), lean_end(p.tgt), AXES[p.axis], lean_q(p.beta), lean_q(p.gamma),
-            ", ".join("(%d, %s, %d)" % (k, "true" if r else "false", u) for (k, r, u) in p.halves))
-        for p in tab.problems)
+    problem_module, problem_doc, problem_term = tab.lean
     groups = ",\n     ".join(
         f'int_rows% "{rel5}.arcs" {8 + g} {8 + min(g + ar.BOX_GROUP, len(arcs))} ↦\n'
         '        ArcBox.ofData'
@@ -1052,8 +1085,8 @@ theorem ctx_boxes_{j} : boxesRange table.radius table.arcs ctx.boxes {a} {c} = t
   decide +kernel
 """ for j, (a, c) in enumerate(boxes))
     text = HEADER.format(
-        imports="public import SquaresInCircles.Eight.Arithmetic.PairCover\n"
-                "public meta import SquaresInCircles.Eight.IntRows",
+        imports="public import %s\n"
+                "public meta import SquaresInCircles.Eight.IntRows" % problem_module,
         doc="The data of the pair table `%s`: its arcs, the quadratic label of each arc with its\n"
             "side, its problems and its fixed-point context, checked once." % mod, module=mod)
     text += f"""
@@ -1075,9 +1108,9 @@ above (`false`, a target arc). -/
 def specs : List (QuadLabel × Bool) := [
 {spec_lines}]
 
-/-- The problems of the table. -/
-def problems : List PairProblem := [
-{prob_lines}]
+/-- The problems of the table: {problem_doc}, in order. -/
+def problems : List PairProblem :=
+  {problem_term}
 
 def ctx : TableCtx :=
   ⟨{DEN}, {len(arcs)},

@@ -19,8 +19,10 @@ one edge is exactly the source value on the next edge.
 Each pair inequality is a problem of a pair table (`Generated/Pairs`): its
 ends carry the actual radial charts, signs and labels, and the table proves
 it for every state pair and frame difference `|d| ≤ 7/10` with the physical
-gap and the original separating-axis margin. The tables leave out the kinds,
-signs and axes that no feasible separator has (`original_not_core_excluded`).
+gap and the original separating-axis margin. The tables define their problems
+from `commonPairProblem` and `wrongPairProblem` (`WordProblems`), and leave out
+the kinds, signs and axes that no feasible separator has
+(`original_not_core_excluded`).
 The nineteen allowed sign cases follow from the two initial zero increments and
 the impossibility of a negative-to-positive zero edge.
 
@@ -247,45 +249,6 @@ def wrongMarker (C : BoundaryCycle Q0) (w : WrongWord) (i : Vertex) : ℝ :=
 
 /-! ### The pair tables -/
 
-/-- The tangent range of a radial kind. -/
-def kindRange : RadialKind → QInterval
-  | .outer => ⟨0, 1⟩
-  | .coreSide => ⟨0, 6/7⟩
-  | .coreCorner => ⟨6/7, 1⟩
-
-/-- The end of a pair at a vertex of radial kind `kind`, sign `σ` and label `L`. -/
-def kindEnd (kind : RadialKind) (σ : Bool) (L : QuadLabel) : PairEnd :=
-  ⟨decide (kind = .outer), decide (kind = .coreSide), σ, kindRange kind, L⟩
-
-/-- The common label of a radial kind with the sign `σ`. -/
-def commonQuad (kind : RadialKind) (σ : Bool) : QuadLabel :=
-  (if kind = .outer then (⟨-9/100, -9/100, 13/200, 203/200, 0, 0⟩ : QuadLabel)
-    else ⟨73/10*(7/12), 73/10*(7/12), -(73/10), 291/250, 0, 0⟩).signed σ
-
-/-- The label of a wrong word at a role, for a radial kind and the sign `σ`. -/
-def wrongQuad (w : WrongWord) (i : Vertex) (kind : RadialKind) (σ : Bool) : QuadLabel :=
-  match w with
-  | .short =>
-      let v := shortCoefficients i (radialIndex kind) (signIndex σ)
-      ⟨v 0/100000, v 0/100000, v 1/100000, sign σ*v 2/100000, 0, 0⟩
-  | .second =>
-      let v := secondCoefficients i (radialIndex kind) (signIndex σ)
-      (⟨v 0/100000, v 0/100000, v 1/100000, v 2/100000, v 3/100000, v 4/100000⟩ : QuadLabel).signed σ
-
-/-- The two halves `(k, ±, 7/10)` of the frame difference, with `u⁺` over `10⁸`. -/
-def wordHalves (k : ℕ) : List (ℕ × Bool × ℕ) := [(k, true, 70000000), (k, false, 70000000)]
-
-/-- The pair problem of a common increment `k`. -/
-def commonPairProblem (k : Fin 3) (ks kt : RadialKind) (σ τ : Bool) (j : Fin 4) : PairProblem :=
-  ⟨kindEnd ks σ (commonQuad ks σ), kindEnd kt τ (commonQuad kt τ), axisOf (j.val + 1), 0,
-    commonGamma k, wordHalves k.val⟩
-
-/-- The pair problem of the edge `i` of a wrong word. -/
-def wrongPairProblem (w : WrongWord) (i : Vertex) (ks kt : RadialKind) (σ τ : Bool) (j : Fin 4) :
-    PairProblem :=
-  ⟨kindEnd ks σ (wrongQuad w i ks σ), kindEnd kt τ (wrongQuad w (next i) kt τ),
-    axisOf (j.val + 1), 0, wrongGamma w i, wordHalves (wrongWord w i).val⟩
-
 /-- The common tables. -/
 def commonTable : Fin 3 → List PairProblem :=
   ![Generated.Pairs.Common0.problems, Generated.Pairs.Common1.problems,
@@ -327,16 +290,26 @@ theorem wrongTable_holds (w : WrongWord) (i : Vertex) :
   · exact Generated.Pairs.Second5.sound
   · exact Generated.Pairs.Second6.sound
 
+/-- Each common problem is in its table, as the image of its case: the table is
+`commonPairProblem k` mapped over `commonCases k`. -/
 theorem commonPairProblem_mem : ∀ (k : Fin 3) (ks kt : RadialKind) (σ τ : Bool) (j : Fin 4),
     (ks = .outer ∨ kt = .outer) → ¬ CoreSeparatorExcluded k ks kt σ τ j →
       commonPairProblem k ks kt σ τ j ∈ commonTable k := by
-  decide +kernel
+  intro k ks kt σ τ j h h'
+  have hc := List.mem_map_of_mem (f := fun c : RadialKind × RadialKind × Bool × Bool × Fin 4 =>
+    commonPairProblem k c.1 c.2.1 c.2.2.1 c.2.2.2.1 c.2.2.2.2) (mem_commonCases h h')
+  fin_cases k <;> exact hc
 
+/-- Each wrong-word problem is in its table, as the image of its case: the table is
+`wrongPairProblem w i` mapped over `wrongCases w i`. -/
 theorem wrongPairProblem_mem : ∀ (w : WrongWord) (i : Vertex) (ks kt : RadialKind)
     (σ τ : Bool) (j : Fin 4), allowed w i σ τ →
       ¬ CoreSeparatorExcluded (wrongWord w i) ks kt σ τ j →
       wrongPairProblem w i ks kt σ τ j ∈ wrongTable w i := by
-  decide +kernel
+  intro w i ks kt σ τ j h h'
+  have hc := List.mem_map_of_mem (f := fun c : RadialKind × RadialKind × Bool × Bool × Fin 4 =>
+    wrongPairProblem w i c.1 c.2.1 c.2.2.1 c.2.2.2.1 c.2.2.2.2) (mem_wrongCases h h')
+  cases w <;> fin_cases i <;> exact hc
 
 lemma sign_cast (σ : Bool) : ((WordProblems.sign σ : ℚ) : ℝ) = sgnR σ := by
   cases σ <;> simp [WordProblems.sign, sgnR]
