@@ -303,6 +303,21 @@ feasible whole-cycle counterexample refutes that proposed inequality.
 **Exit.** The two strict bounds follow with visible positive margins
 and no retained affine row or 462-piece marker lookup.
 
+**Auxiliary charge theorem, proved.**
+`HAND_CLOSED_TOUR_CHARGE_COMPRESSION.md` gives the sharp width bound
+from signed closure and arbitrary nonnegative edge weights. In
+particular, with \(J=I^c\),
+\[
+ S\ge.4\Longrightarrow U_I+\frac{19}{125}U_J>
+ \frac{1117}{6250},\qquad
+ S\ge.26\Longrightarrow U_I+\frac{17}{200}U_J>
+ \frac{12119}{100000}.
+\]
+This keeps the compulsory return charge. It follows by mass matching
+and concavity, with only two nonzero increments at the extremum.
+The required geometric seven-cycle cost inequality is still open;
+these consequences of a bad mismatch do not by themselves close G4.
+
 ### G5 — Middle contraction and sign rigidity
 
 **Replaces.** The \(0.26\to0.1\) and \(0.1\to0.015\) affine tables.
@@ -415,6 +430,16 @@ critical-point theorem gives broad uniqueness. The same rational trial is
 an unconditional eight-square packing at the upper ceiling. No local root
 box or five-interval family enclosure is used. The narrower coordinate
 brackets, adaptive terminal reserve, and equality components remain open.
+
+**Whole-terminal stationary position and slider coefficient, proved.**
+`HAND_STATIONARY_POSITION_AND_SLIDER_BOUNDS.md` proves
+\(.895<u(q,t)<1-.6\tan t\) and \(-1.029<J(q,t)<-.98\)
+on the entire strip \(3.9154\le q\le3.9156\),
+\(.1\le\tan t\le.164\). The position bound follows by strict
+convexity and one affine comparison curve; stationarity simplifies the
+slider coefficient exactly and makes its whole-domain monotonicity
+available. No local cover is used. These are components of the terminal
+reserve theorem, not additional global capture assumptions.
 
 **Replaces.** The 49 stationary existence/bracket comparisons; the
 5,376 adaptive fixed-box scalar checks; the short central-core
