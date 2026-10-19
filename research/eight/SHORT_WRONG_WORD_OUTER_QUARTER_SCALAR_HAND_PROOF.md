@@ -27,6 +27,13 @@ search, minimization, or selection of angle intervals.
 
 All terminating decimals here and in the table denote exact rationals.
 
+**Complete table-free component.**
+[`formalization/HAND_SHORT_WORD_OPPOSITE_EDGE_FIVE_WITHOUT_TABLES.md`](formalization/HAND_SHORT_WORD_OPPOSITE_EDGE_FIVE_WITHOUT_TABLES.md)
+now proves the entire outer/outer role-5 opposite-sign family, all four
+original axes and both angle halves, with strict cost greater than
+42643/47500. None of that component's scalar angle rows is needed.
+The remaining role/sign families are separate obligations.
+
 ## 1. State coordinates and normalization
 
 Use

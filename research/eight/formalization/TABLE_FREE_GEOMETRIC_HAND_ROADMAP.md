@@ -293,6 +293,15 @@ endpoint derivative rows, and the full contact surface is strictly
 concave in its eliminated source coordinate. The other components of
 this residual word are still required.
 
+`HAND_WRONG_0011011_EDGE3_NEGATIVE_WITHOUT_TABLES.md` adds the complete
+negative outer edge-3 component and its reflected edge-5 component: a
+strongly convex speed product and a linear contact-angle bound remove
+all of their speed and scalar interval rows.
+`HAND_SHORT_WORD_OPPOSITE_EDGE_FIVE_WITHOUT_TABLES.md` proves the entire
+0010111 outer role-5 opposite-sign family, all original axes and both
+angle halves, with cost greater than 42643/47500. The two whole-word
+exclusions still require their other components.
+
 ### G3 — Tangent cuts as a single structural theorem
 
 **Replaces.** The six large G/T/H/D tail tables (the H/D part may use
