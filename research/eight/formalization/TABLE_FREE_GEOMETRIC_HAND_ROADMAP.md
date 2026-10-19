@@ -310,6 +310,14 @@ concave, and a uniform inverse-contact derivative bound handles both
 the full axial minimum and the final target-ratio lemma. This leaves
 no derivative-range table in that eight-half-axis component.
 
+`HAND_WRONG_0011011_OPPOSITE_EDGE3_WITHOUT_TABLES.md` closes the
+remaining opposite-sign outer quarter family, on edge 3 and its
+reflection. It proves both aligned minima, both contact surfaces, and
+the full implicit stationary envelope with uniform derivative signs.
+All four original axes and both angle halves have cost greater than
+.89777. The proof retains the original contact exits and uses no
+critical-curve bracket sequence or derivative-range table.
+
 `HAND_WRONG_0011011_MIXED_COMPONENTS_WITHOUT_TABLES.md`, Sections
 1--6, now proves every mixed zero-quarter component and the stated
 complete quarter-turn components. Its common actual-circle support

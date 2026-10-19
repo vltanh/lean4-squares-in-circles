@@ -1,5 +1,12 @@
 # Wrong word 0011011: opposite-sign edge 3, axes 3 and 4
 
+**Table-free completion.**
+[HAND_WRONG_0011011_OPPOSITE_EDGE3_WITHOUT_TABLES.md](formalization/HAND_WRONG_0011011_OPPOSITE_EDGE3_WITHOUT_TABLES.md)
+replaces this note's critical-curve brackets and derivative ranges by
+one global implicit-envelope argument and whole-domain curvature.
+Together with the unchanged contact reductions below, it proves the
+complete opposite-sign edge-3 family.
+
 ## 1. Statement and dependence
 
 Use exactly the constants, labels, and signed-axis convention of

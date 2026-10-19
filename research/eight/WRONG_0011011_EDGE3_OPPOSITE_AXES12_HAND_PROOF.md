@@ -1,5 +1,12 @@
 # Wrong word 0011011: opposite-sign edge 3, axes 1 and 2
 
+**Table-free completion.**
+[HAND_WRONG_0011011_OPPOSITE_EDGE3_WITHOUT_TABLES.md](formalization/HAND_WRONG_0011011_OPPOSITE_EDGE3_WITHOUT_TABLES.md)
+replaces this note's derivative-range premises by whole-domain
+curvature and contact-envelope arguments. Together with the unchanged
+geometric reductions below, it proves all four original axes and both
+angle halves, including aligned and zero-coordinate boundaries.
+
 ## 1. Statement and exact data
 
 This note proves the full-angle outer/outer edge-3 \((-,+)\) row whenever
