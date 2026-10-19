@@ -1,5 +1,14 @@
 # A complete hand exclusion of the word 0011011
 
+**Complete table-free successor.**
+[HAND_WRONG_0011011_COMPLETE_WITHOUT_TABLES.md](formalization/HAND_WRONG_0011011_COMPLETE_WITHOUT_TABLES.md)
+now supplies the complete analytic dependency assembly. It retains the
+exact role potentials and cyclic cancellation, replaces every mixed
+and outer continuous scalar table, and covers all radial assignments,
+original axes, reflections, and ties. Its actual-cycle theorem uses
+frame concentration and the prior zero-primary cyclic exclusion, with
+no candidate capture or mismatch assumption.
+
 ## Theorem
 
 At squared containing radius

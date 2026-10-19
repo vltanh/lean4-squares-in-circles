@@ -1,5 +1,14 @@
 # Wrong word 0011011: the whole positive outer edge-3 quarter row
 
+**Table-free completion.**
+[HAND_WRONG_0011011_POSITIVE_EDGE3_WITHOUT_TABLES.md](formalization/HAND_WRONG_0011011_POSITIVE_EDGE3_WITHOUT_TABLES.md)
+replaces the early angle tangents and moving-contact derivative ranges
+by one quadratic support and whole-domain curvature. It also binds
+the later mixed zero-contact import to its table-free successor and
+proves both remaining source/angle estimates on their full domains.
+Together with the unchanged geometric reductions below, it proves
+all four original axes and both angle halves.
+
 ## Theorem
 
 For edge 3 with two positive outer states, every retained separating axis

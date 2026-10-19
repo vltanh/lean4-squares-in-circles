@@ -44,7 +44,7 @@ unrestricted theorem is still missing its global capture proof.
 | Gate | Current mathematical status |
 |---|---|
 | G0--G1 | Central core, physical gaps, boundary reduction, and all ten frame-pair inequalities are proved; the real frame spread is strictly below .7. |
-| G2 | The four words with a double increment are excluded. The two residual words 0010111 and 0011011 remain open. |
+| G2 | The four words with a double increment and the complete word 0011011 are excluded. The remaining word is 0010111. |
 | G3 | The structural tangent-cut proof remains open. |
 | G4--G5 | The coarse and middle mismatch contractions remain open. |
 | G6 | Quarter-owner rigidity is proved under its stated cuts and \(S\le.015\). |
@@ -281,7 +281,24 @@ less than \(46/25\). It cannot pay the remaining five edges at
 their universal G1 minimum. A whole-word argument must retain more
 of the complementary path or use a different proved stress.
 
-**Additional complete component.**
+**Complete 0011011 exclusion.**
+`HAND_WRONG_0011011_COMPLETE_WITHOUT_TABLES.md` assembles all ten
+core/core, nineteen mixed, and ten outer/outer reflection classes.
+These give all 76 directed radial/sign cases and all 304 original
+axis branches, including the prior actual-cycle zero-primary exclusion.
+Every physically possible edge has corrected cost greater than
+\(\gamma=.89765\). The signed role potentials and frame differences
+telescope, so their seven-edge sum is exactly \(2\pi\), whereas
+\[
+ 7\gamma-\frac{710}{113}=\frac{823}{2260000}>0,
+ \qquad 2\pi<\frac{710}{113}.
+\]
+This is the complete word contradiction, with no candidate capture,
+tangent cut, or mismatch threshold as a premise. Every former mixed
+or outer scalar table is replaced in the explicit dependency map.
+Only 0010111 remains to finish G2.
+
+The principal component replacements are retained here for navigation.
 `HAND_WRONG_0011011_SAME_SIGN_OUTER_WITHOUT_TABLES.md` proves all
 sixteen same-sign outer/outer zero-quarter branches of 0011011 without
 the former critical-curve or angle-curvature rows. Its contact Hessian
@@ -290,8 +307,7 @@ whole-interval curvature greater than 1/30. `HAND_WRONG_0011011_NEGATIVE_QUARTER
 the complete negative outer edge-2 quarter component and its reflected
 edge-6 component. One global fourth-derivative sign replaces its five
 endpoint derivative rows, and the full contact surface is strictly
-concave in its eliminated source coordinate. The other components of
-this residual word are still required.
+concave in its eliminated source coordinate.
 
 `HAND_WRONG_0011011_EDGE3_NEGATIVE_WITHOUT_TABLES.md` adds the complete
 negative outer edge-3 component and its reflected edge-5 component: a
@@ -299,8 +315,8 @@ strongly convex speed product and a linear contact-angle bound remove
 all of their speed and scalar interval rows.
 `HAND_SHORT_WORD_OPPOSITE_EDGE_FIVE_WITHOUT_TABLES.md` proves the entire
 0010111 outer role-5 opposite-sign family, all original axes and both
-angle halves, with cost greater than 42643/47500. The two whole-word
-exclusions still require their other components.
+angle halves, with cost greater than 42643/47500. The short-word
+exclusion still requires its other components.
 
 `HAND_WRONG_0011011_OPPOSITE_EDGE2_WITHOUT_TABLES.md` now also closes
 the complete opposite-sign outer edge-2 quarter family and its
@@ -317,6 +333,12 @@ the full implicit stationary envelope with uniform derivative signs.
 All four original axes and both angle halves have cost greater than
 .89777. The proof retains the original contact exits and uses no
 critical-curve bracket sequence or derivative-range table.
+
+`HAND_WRONG_0011011_POSITIVE_EDGE3_WITHOUT_TABLES.md` completes the
+last positive outer family. A single target-coordinate quadratic and
+one whole-angle harmonic bound replace the four early tangents;
+uniform curvature replaces all moving-contact derivative rectangles.
+Its mixed zero-contact import uses the new mixed proof directly.
 
 `HAND_WRONG_0011011_MIXED_COMPONENTS_WITHOUT_TABLES.md` now proves
 the complete mixed component: all nineteen reflection classes,
