@@ -281,6 +281,14 @@ less than \(46/25\). It cannot pay the remaining five edges at
 their universal G1 minimum. A whole-word argument must retain more
 of the complementary path or use a different proved stress.
 
+**Additional complete component.**
+`HAND_WRONG_0011011_SAME_SIGN_OUTER_WITHOUT_TABLES.md` proves all
+sixteen same-sign outer/outer zero-quarter branches of 0011011 without
+the former critical-curve or angle-curvature rows. Its contact Hessian
+has a uniformly negative determinant, and its diagonal boundary has
+whole-interval curvature greater than 1/30. The other components of
+this residual word are still required.
+
 ### G3 — Tangent cuts as a single structural theorem
 
 **Replaces.** The six large G/T/H/D tail tables (the H/D part may use
