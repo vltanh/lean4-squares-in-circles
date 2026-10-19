@@ -302,6 +302,14 @@ all of their speed and scalar interval rows.
 angle halves, with cost greater than 42643/47500. The two whole-word
 exclusions still require their other components.
 
+`HAND_WRONG_0011011_OPPOSITE_EDGE2_WITHOUT_TABLES.md` now also closes
+the complete opposite-sign outer edge-2 quarter family and its
+reflected edge-6 family. Two circle support inequalities replace its
+source-ratio ranges, one quintic proves the entire support function
+concave, and a uniform inverse-contact derivative bound handles both
+the full axial minimum and the final target-ratio lemma. This leaves
+no derivative-range table in that eight-half-axis component.
+
 ### G3 — Tangent cuts as a single structural theorem
 
 **Replaces.** The six large G/T/H/D tail tables (the H/D part may use
