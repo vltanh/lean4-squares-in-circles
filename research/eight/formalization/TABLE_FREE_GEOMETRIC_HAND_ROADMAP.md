@@ -16,6 +16,9 @@ preferred mixed owner. A second route now closes the entire aligned
 hard-quarter class, without any mismatch hypothesis, by explicit
 radius-preserving reductions. Its signed three-zero bridge also closes
 the original ordered class with HG2/TD0 and the stated remaining owners.
+The nonnegative outer-error extension now admits all four outer
+owner combinations, with its explicit G/T signs and frame order,
+and retains the complete original-center equality conclusion.
 The missing global step must supply either complete route's entry
 hypotheses; neither is asserted for arbitrary candidates.
 
@@ -32,12 +35,12 @@ ED-owner/H frame; no unjustified conversion to the old A/G tilt is used.
 | G2 | Closed on paper | All six wrong words excluded; only 0101011 survives. Reflection gives the weak E sign. |
 | G3 | All six cuts closed conditionally at S<=3/200 | Cut-free quarter owners first give four cuts at S<=1/32; complete H-low exclusions then give H>1/2, followed by G>-4/5. No tangent cut is an independent missing input after small mismatch. |
 | G4 | Global capture open; signed three-zero bridge proved | The original ordered HG2/TD0 class reduces at the same radius to five anchors, with strict anchor loss for every nonzero zero-edge error. Coarse mismatch bounds S<2/5 and S<13/50 remain open. |
-| G5 | Entire aligned hard class sharp; global contractions open | Two endpoint reductions and explicit stresses give q>=q_* and stationary equality for every nonnegative hard-quarter split. D is globally negative; each zero owner globally forces its adjacent sign. The complete six-sign tuple and both mismatch contractions remain conditional. |
+| G5 | Aligned and ordered nonnegative-outer-error classes sharp; global contractions open | The G/T-zero endpoint is excluded by two affine stress formulas. This completes all outer-owner combinations with nonnegative outer errors, the stated signs and frame order, including original equality. Negative noncanceling errors and global entry remain open. |
 | G6 | DE closed globally; BT closed conditionally at S<=1/32 | Every original DE witness is in {2,3} without any mismatch or tangent input. The complete BT theorem still uses S<=1/32. |
 | G7 | Closed conditionally at S<=3/200; old contraction retired | Every original mixed owner is G0/E1, without an S<=1/1000 premise. |
 | G8 | Closed conditionally at S<=3/200 | t>S and 1/10<tau<4/25, where tau is the actual ED-owner/H frame difference. |
 | G9 | Closed conditionally at S<=3/200 | Sharp owner-frame inequality with S/5000, all five completed anchors, and the full equality family. |
-| G10 | Open pending global entry into a completed route | The original-center transfer at S<=3/200 and the ordered canceling-owner hard-class corollary are proved, including equality. Arbitrary candidates are not yet captured by either route. |
+| G10 | Open pending global entry into a completed route | The original-center transfer at S<=3/200, the ordered canceling-owner corollary and its nonnegative-outer-error extension are proved, including equality. Arbitrary candidates are not yet captured by either route. |
 
 These are mathematical hand-proof statuses, not Lean verification claims.
 Historical certificate files and the uncompiled Lean draft remain unchanged.
@@ -337,10 +340,23 @@ compatible with the A/B alignment argument. Once the adjacent
 middle tangent is at least one half it aligns with strict slack;
 after the opposite side aligns, the other positive side reduces
 on its entire feasible error interval to alignment or to a G/T
-zero-transverse endpoint. The latter endpoint remains to be
-excluded. The note retains its required signs and frame order,
-and does not assume that an enlarged intermediate-frame span
-remains below its original bound after the reduction.
+zero-transverse endpoint. That endpoint is now excluded:
+[the active-circle geometry](HAND_G5_G_ZERO_ENDPOINT_EXCLUSION.md)
+forces `h>.107` and `alpha+h<.311`, and
+[two explicit affine stress formulas](HAND_G5_G_ZERO_TWO_AFFINE_STRESS_SCALARS.md)
+give a strict reserve greater than `13/50000` throughout the
+resulting domain. The scalar theorem allows either sign of E,
+so reflection also covers T-zero. No enlarged intermediate-frame
+span is assumed to remain below its original bound.
+
+[The nonnegative outer-error assembly](HAND_G5_NONNEGATIVE_OUTER_OWNERS_SHARP_REDUCTION.md)
+therefore closes all four HG0/2 and TD0/2 combinations on the
+entire ordered class with nonnegative outer errors and the
+stated signs. Every nonzero original zero difference leaves
+strict A/B circle loss through the reductions. Separate A/B
+ceilings and positive terminal circle masses recover equality
+for the original centers, and hence the full five-parameter
+family for an original packing in this class.
 
 For negative HG0 and reflected TD2,
 [the exact-core transport](HAND_G4_NEGATIVE_NONCANCELING_ZERO_CORE_TRANSPORT.md)
@@ -348,10 +364,15 @@ proves same-anchor alignment when the adjacent middle tangent is
 at most one half. It also restores a crossed quarter frame at an
 actual core G/T state. For the remaining ordered negative class,
 the shared chain still forces `alpha<.27` and retains the E
-boundary minimization. Its large-tangent negative errors and its
-unaligned E-zero/epsilon-zero endpoints remain open.
+boundary minimization. The
+[endpoint with only the negative outer error remaining](HAND_G5_NEGATIVE_HG_ONLY_ERROR_ENDPOINT_EXCLUSION.md)
+is impossible for every E split and either E sign: two retained
+circle concavities reduce it to an explicit positive concave
+quartic. This does not assert that an arbitrary negative-error
+chain reaches that endpoint. Its general large-tangent negative
+errors and unaligned E endpoints remain open.
 
-These reductions have not yet closed all HG0/TD2 cases, the other
+These reductions have not yet closed all negative HG0/TD2 cases, the other
 frame orders, the remaining global sign alternatives or the
 remaining original quarter/mixed witnesses. Those are entry
 obligations for this route. The complete theorem for the hard
