@@ -22,10 +22,10 @@ ED-owner/H frame; no unjustified conversion to the old A/G tilt is used.
 | G0 | Closed on paper | Central core, physical gaps, fixed-axis boundary reduction and documented radius transfer. |
 | G1 | Closed on paper | Complete four-type frame concentration; real frame spread below 7/10. |
 | G2 | Closed on paper | All six wrong words excluded; only 0101011 survives. Reflection gives the weak E sign. |
-| G3 | Open, except E normalization | Six structural tangent cuts on G,T,H,D are still required globally. |
+| G3 | Global capture open; four cuts automatic after small mismatch | At S<=1/32, G<-1/20, 1/20<T<4/5 and D<-1/2 follow without prior cuts. High-G and H cuts remain open. |
 | G4 | Open | Coarse mismatch bounds S<2/5 and S<13/50. |
 | G5 | Contractions open; sign subgates closed conditionally | A positive and D negative already follow from S<=13/50; all six zero-edge signs follow from S<=1/10. Both contractions remain open. |
-| G6 | Closed conditionally at S<=3/200 | Intended quarter owners, with the stated earlier cuts and zero owners. |
+| G6 | Closed conditionally at S<=1/32, without tangent cuts | Every original BT/DE witness is in {2,3}, from G0--G2, E normalization and the mismatch bound. |
 | G7 | Closed conditionally at S<=3/200; old contraction retired | Every original mixed owner is G0/E1, without an S<=1/1000 premise. |
 | G8 | Closed conditionally at S<=3/200 | t>S and 1/10<tau<4/25, where tau is the actual ED-owner/H frame difference. |
 | G9 | Closed conditionally at S<=3/200 | Sharp owner-frame inequality with S/5000, all five completed anchors, and the full equality family. |
@@ -96,6 +96,20 @@ witness and spends the shared HG error only once. This permits a
 forward reordering of that owner step, but does not supply the global
 bound on S or any still-missing tangent cut.
 
+[The complete BT-owner theorem without tangent cuts](HAND_G3_B_OWNER_WITHOUT_TANGENT_CUTS_AT_ONE_THIRTY_SECOND.md)
+now supplies the other quarter edge from exactly those same inputs,
+using DE first. It covers every original GA/EH witness and both tilt
+signs with explicit circle stresses. Thus the whole G6 owner conclusion
+is available before any G3 tangent cut once `S<=1/32` is known.
+
+[The four-cut theorem](HAND_G3_FOUR_CUTS_AT_ONE_THIRTY_SECOND.md) then
+proves, in forward order, `u_G<-1/20`, `1/20<u_T<4/5`, and `u_D<-1/2`
+at `S<=1/32`, without any earlier cut. The first three conclusions use
+the original zero edges and AB--BT path; D uses the newly proved BT
+owner. The remaining tangent conclusions in this reordered route are
+`u_G>-4/5` and `u_H>1/2`. None of these conditional theorems supplies
+the unrestricted bound on S.
+
 ### G4: the missing coarse mismatch bounds
 
 Under only the cuts actually established at that point, prove
@@ -162,6 +176,15 @@ zero owners. It preserves the signed d term for a later cyclic sum.
 The quarter/mixed estimates compatible with this linear potential
 remain missing, so neither G5 contraction is marked closed.
 
+[The exact ED scalar obstruction](HAND_G5_ED_SCALAR_OBSTRUCTION.md)
+rules out extending the unchanged stationary scalar to `S<=1/10`
+merely by sharpening Taylor bounds. With only a positive D-owned ED
+error `x=1/10`, its exact correction is negative throughout the
+stationary tilt interval. This is a failure of that eliminated-scalar
+proof, not a feasible packing or a counterexample. A larger-range
+argument must retain additional original-center constraints or adapt
+the stress.
+
 ## 3. Completed entry and word dependencies
 
 [Central-band identities](HAND_CENTRAL_BANDS_WITHOUT_TABLES.md), with their
@@ -195,7 +218,10 @@ squared radius at most `Q1=1957767069/500000000`, because the stationary
 construction proves `q_*<Q1`. The owner lemmas use the weaker ceiling
 `Q0=9789/2500`.
 
-First apply [quarter-owner rigidity](HAND_QUARTER_OWNER_CLOSURE.md).
+First apply [quarter-owner rigidity without tangent cuts](HAND_G3_B_OWNER_WITHOUT_TANGENT_CUTS_AT_ONE_THIRTY_SECOND.md),
+which is valid on the larger `S<=1/32` range. Its earlier proof in
+`HAND_QUARTER_OWNER_CLOSURE.md` remains available but its tangent-cut
+prerequisites are unnecessary for this owner step.
 The complete mixed-owner extension is then assembled by
 
 - [E2/E3 exclusion](HAND_E_OWNER_CHAIN_AT_THREE_TWO_HUNDREDTHS.md);
