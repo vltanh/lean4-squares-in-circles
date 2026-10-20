@@ -70,7 +70,10 @@ remove the A-total restriction whenever E's total is nonnegative.
 A separate complete region permits **every A/E total and both E radial
 kinds whenever the selected T total is nonpositive**. Coupled
 negative core-E totals with positive T total remain open, at
-the two precise endpoints recorded below.
+the precise endpoints recorded below. The positive-BT endpoint
+with nonnegative A total and a genuine negative EH1 is now
+excluded for arbitrary TD0 error; its negative DE3 counterpart
+remains separate.
 At an actual diagonal D, an exact change of
 nearest-axis representative recodes the high-GA/low-EH branch
 into the normal quarter classes. No global transport to that
@@ -458,17 +461,30 @@ secondary witness feasible; that actual reselection makes
 the selected E total nonnegative. Thus the entire outer-E
 high-GA branch is now excluded, including BT3.
 
+[The negative-EH positive-BT theorem](HAND_G3_NEGATIVE_EH1_POSITIVE_BT3_WITH_NONNEGATIVE_A_TOTAL_EXCLUSION.md)
+now excludes every genuine sole negative EH1 with nonnegative
+A total, positive BT3 and arbitrary TD0. Its four continuous
+coefficient families retain the actual TD0/DE2 D block; both
+the small sorted-D range and the far full-circle range are
+covered. Scalar concentration leaves 34 intrinsic endpoints,
+all proved by compact exact whole-interval polynomials.
+[The secant-D single-angle comparison](HAND_G3_SECANT_D_SINGLE_ANGLE_COMPARISON.md)
+also supplies an all-sign actual-support bound and an increasing
+pure-positive secant endpoint for the negative-DE counterpart.
+That analytic ingredient alone does not exclude the latter.
+
 The remaining high-GA work has core E, negative selected E
 total and strictly positive selected T total. Its positive
-paired-T transports reduce it to exactly two endpoint domains:
+paired-T transports and the new EH theorem leave these domains:
 
 | Remaining high-GA endpoint | Required additional data |
 |---|---|
 | BT2 and positive TD2 | Negative A total and negative core-E total. |
-| Positive BT3 and arbitrary TD0 | Negative core-E total; A total arbitrary. |
+| Positive BT3 and arbitrary TD0, nonnegative A total | A genuine negative DE3 after the complete E transport. |
+| Positive BT3 and arbitrary TD0, negative A total | Negative core-E total. |
 
 The separate A/E transports can reduce the negative totals to
-one genuine primary each but do not exclude these two endpoints.
+one genuine primary each but do not exclude these endpoints.
 These are genuine global obligations, distinct from the complete
 paired-E and paired-T transports. Normal-primary entry into the
 sharp GA0/BT2 class remains an independent global obligation.
