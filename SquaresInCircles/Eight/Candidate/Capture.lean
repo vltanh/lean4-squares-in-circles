@@ -1,6 +1,7 @@
 module
 
 public import SquaresInCircles.Eight.Candidate.DualApplication
+public import SquaresInCircles.Eight.Candidate.FramePullback
 public import SquaresInCircles.Eight.Generated.AffineBudgets
 
 /-!
@@ -50,23 +51,6 @@ def capture {C : BoundaryCycle Q1} (F : Frame C) (hE : EHalf C) : Captured C F :
   have hOwners := mixed_owners F (by norm_num [Q1,Q0]) hc hZero hQuarter hS001.le
   obtain ⟨z,hzl,hzu,ht,htl,htu⟩ := tilt_window F le_rfl hc hOwners hS001.le
   exact ⟨hc,hS001,hZero,hQuarter,hOwners,z,hzl,hzu,ht,htl,htu⟩
-
-def Frame.pullback {q r : ℝ} {C : BoundaryCycle q} {D : BoundaryCycle r}
-    (F : Frame D) (hR : RadiusExpansion C D) : Frame C where
-  theta := F.theta
-  theta_A := F.theta_A
-  canonical_eq i := by
-    have he : C.canonicalAngle i=D.canonicalAngle i := by
-      simp [BoundaryCycle.canonicalAngle,BoundaryCycle.alpha,← hR.same_rays,← hR.same_tangents]
-    rw [he]
-    exact F.canonical_eq i
-  spread := F.spread
-  gap_lower i := by simpa only [hR.same_rays] using F.gap_lower i
-  gap_upper i := by simpa only [hR.same_rays] using F.gap_upper i
-  forward_complete i axis hi := F.forward_complete i axis (hR.preserves_all_axes i axis hi)
-
-@[simp] theorem Frame.pullback_theta {q r : ℝ} {C : BoundaryCycle q} {D : BoundaryCycle r}
-    (F : Frame D) (hR : RadiusExpansion C D) : (F.pullback hR).theta=F.theta := rfl
 
 def Captured.pullback {q r : ℝ} {C : BoundaryCycle q} {D : BoundaryCycle r}
     {F : Frame D} (K : Captured D F) (hR : RadiusExpansion C D) :
