@@ -472,4 +472,3 @@ assembly once its original boundary capture has supplied the
 domain of Section 1. No new local coordinate enclosure,
 numerical equality test, or identification of old and new G/T
 coordinates is used.
-
