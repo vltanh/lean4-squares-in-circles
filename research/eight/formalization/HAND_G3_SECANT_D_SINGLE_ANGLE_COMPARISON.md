@@ -26,7 +26,7 @@ Write
 \]
 Assume throughout
 \[
- 1\le q\le\sec h<1.308,\qquad .862\le c\le1.2,
+ 1\le q\le\sec h<1.308,\qquad .7\le c\le1.4,
  \qquad 1/2\le k\le\min(c,.85).
 \tag{3}
 \]
@@ -51,7 +51,7 @@ This estimate is for one actual angle, with its original sign.
 It makes no assertion that a geometric angle can be changed.
 
 For the positive case with \(c\le q\), the zero-angle support
-is the interior branch: \(c/q>.659>1/[2(a_0+1/2)]\).
+is the interior branch: \(c/q>.535>1/[2(a_0+1/2)]\).
 Replacing only the final support in (4) by the full-circle
 upper bound gives
 \[
@@ -75,11 +75,11 @@ Thus (6) is at least \(U_{1,1}(t)\), proving the other positive case.
 
 For \(t=-n\le0\), first vary q while holding c,n fixed.
 The final force has positive first coordinate, since
-\(q-c\sin n\ge1-1.2(.645)>0\). Also
+\(q-c\sin n\ge1-1.4(.645)>0\). Also
 \[
  \frac{c\cos n}{q-c\sin n}\ge\frac cq,
  \qquad
- \frac cq\ge\frac{.862}{1.308}>\tan(h/2).
+ \frac cq\ge\frac{.7}{1.308}>\tan(h/2).
 \tag{7}
 \]
 The selected a coordinate of a sorted support point decreases
@@ -122,7 +122,8 @@ weak support ties.
 
 ## 2. The pure positive secant endpoint is increasing
 
-For fixed c satisfying (3), define the exact negative-DE
+For fixed c satisfying (3) and the additional lower bound
+\(c\ge.862\), define the exact negative-DE
 secant gain
 \[
  F_c(s)=\frac{\sec s-1}{2}+K\tan s
@@ -150,7 +151,7 @@ positive minimum because
  4(1.045)(K-1.045)-.4^2=7/30000>0.
 \]
 The derivative of the subtracted term in (13) is at most
-\(.545c\le.654\), so (13) increases on this branch.
+\(.545c\le.763\), so (13) increases on this branch.
 
 On the interior branch, \(q=\sec s\ge c\), direct
 differentiation gives

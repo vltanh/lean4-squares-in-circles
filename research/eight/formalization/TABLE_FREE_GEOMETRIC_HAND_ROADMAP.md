@@ -69,8 +69,13 @@ negative-A positive-BT endpoint and both E-total transfers
 remove the A-total restriction whenever E's total is nonnegative.
 A separate complete region permits **every A/E total and both E radial
 kinds whenever the selected T total is nonpositive**. Coupled
-negative core-E totals with positive T total remain open, at
-the precise endpoints recorded below. The positive-BT endpoint
+negative A/core-E totals with BT2 and positive TD2 are now
+excluded by a common secant-gain comparison and a complete
+two-negative-angle allocation argument. Consequently **every
+high-GA cycle retaining BT2 is excluded**, for either TD owner
+and every A/E owner, radial kind and signed total. The remaining
+high-GA work has positive BT3 with TD0, at the precise endpoints
+recorded below. The positive-BT endpoint
 with nonnegative A total and a genuine negative EH1 is now
 excluded for arbitrary TD0 error; its negative DE3 counterpart
 remains separate.
@@ -473,13 +478,28 @@ also supplies an all-sign actual-support bound and an increasing
 pure-positive secant endpoint for the negative-DE counterpart.
 That analytic ingredient alone does not exclude the latter.
 
+[The joint-negative BT2 theorem](HAND_G3_JOINT_NEGATIVE_A_CORE_E_POSITIVE_TD2_EXCLUSION.md)
+closes the last BT2 domain: positive TD2 with negative A total
+and negative core-E total. Its two independent A/E transports
+reduce to four genuine one-primary systems. A common secant
+gain is paid by every affected circle; the
+[allocation lemma](HAND_G3_JOINT_NEGATIVE_A_CORE_E_COMMON_GAIN.md)
+merges the two negative angles using strict concavity, including
+the secant-weighted ordinary negative block. Every pure,
+same-block and separated angular alternative then reduces to
+[two complete scalar inequalities](HAND_G3_JOINT_NEGATIVE_A_CORE_E_SCALAR_CERTIFICATES.md).
+Their compact polynomial proofs cover both actual D support
+branches and all stress-family joins. Thus high GA is impossible
+whenever BT2 is retained, with no remaining sign or frame-order
+hypothesis in that owner class.
+
 The remaining high-GA work has core E, negative selected E
 total and strictly positive selected T total. Its positive
-paired-T transports and the new EH theorem leave these domains:
+paired-T transports, the complete BT2 exclusion and the new EH
+theorem leave these domains:
 
 | Remaining high-GA endpoint | Required additional data |
 |---|---|
-| BT2 and positive TD2 | Negative A total and negative core-E total. |
 | Positive BT3 and arbitrary TD0, nonnegative A total | A genuine negative DE3 after the complete E transport. |
 | Positive BT3 and arbitrary TD0, negative A total | Negative core-E total. |
 
@@ -488,6 +508,15 @@ one genuine primary each but do not exclude these endpoints.
 These are genuine global obligations, distinct from the complete
 paired-E and paired-T transports. Normal-primary entry into the
 sharp GA0/BT2 class remains an independent global obligation.
+
+[The aligned positive-GA entry theorem](HAND_G5_GLOBAL_PRIMARY_ENTRY_ALIGNED_POSITIVE_GA_NONPOSITIVE_SPAN.md)
+excludes a normal GA1/BT2 chain with aligned HG, AB and TD,
+paired DE3/EH1, and nonpositive H/D span. Its negative-primary
+pair charge holds over the entire frame interval, including
+opposite individual E-error signs. Four intrinsic endpoint
+functions have compact exact polynomial proofs. The three
+alignments and the paired E witnesses are explicit inputs;
+this component does not assert unrestricted primary entry.
 
 ### Earlier global marker consequences
 
