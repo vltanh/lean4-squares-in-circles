@@ -32,7 +32,7 @@ ED-owner/H frame; no unjustified conversion to the old A/G tilt is used.
 | G2 | Closed on paper | All six wrong words excluded; only 0101011 survives. Reflection gives the weak E sign. |
 | G3 | All six cuts closed conditionally at S<=3/200 | Cut-free quarter owners first give four cuts at S<=1/32; complete H-low exclusions then give H>1/2, followed by G>-4/5. No tangent cut is an independent missing input after small mismatch. |
 | G4 | Global capture open; signed three-zero bridge proved | The original ordered HG2/TD0 class reduces at the same radius to five anchors, with strict anchor loss for every nonzero zero-edge error. Coarse mismatch bounds S<2/5 and S<13/50 remain open. |
-| G5 | Entire aligned hard class sharp; global contractions open | Two endpoint reductions and explicit stresses give q>=q_* and stationary equality for every nonnegative hard-quarter split. The global D sign is proved; the other signs and both mismatch contractions remain conditional. |
+| G5 | Entire aligned hard class sharp; global contractions open | Two endpoint reductions and explicit stresses give q>=q_* and stationary equality for every nonnegative hard-quarter split. D is globally negative; each zero owner globally forces its adjacent sign. The complete six-sign tuple and both mismatch contractions remain conditional. |
 | G6 | DE closed globally; BT closed conditionally at S<=1/32 | Every original DE witness is in {2,3} without any mismatch or tangent input. The complete BT theorem still uses S<=1/32. |
 | G7 | Closed conditionally at S<=3/200; old contraction retired | Every original mixed owner is G0/E1, without an S<=1/1000 premise. |
 | G8 | Closed conditionally at S<=3/200 | t>S and 1/10<tau<4/25, where tau is the actual ED-owner/H frame difference. |
@@ -106,6 +106,17 @@ interval. The six-edge G1 return path then exceeds the full cyclic
 angular budget. The same estimates exclude both intended axes when
 D has nonnegative sign. The witness-preserving boundary transfer
 keeps the conclusion valid for original centers and tied axes.
+
+[The global zero-owner sign theorem](HAND_G3_GLOBAL_ZERO_OWNER_SIGN_RIGIDITY.md)
+also proves `axis0=>y_source>0` and `axis2=>y_target<0` on every
+original zero edge. It needs no mismatch bound, tangent cut, E
+normalization, or quarter/mixed owner input. A putative offending
+sign forces a positive increment in `(29/100,7/10)`; one actual
+circle support and one strictly concave scalar give a boosted common
+marker charge above one on that entire interval. The six-edge
+return path excludes it. If both transverse owners are feasible,
+both signs follow. A single owner supplies only its stated one-sided
+sign; the full six-sign tuple has not been proved globally.
 
 [The earlier DE-owner theorem at S<=1/32](HAND_G3_D_OWNER_WITHOUT_TANGENT_CUTS_AT_ONE_THIRTY_SECOND.md)
 remains valid and is used in the already completed conditional
