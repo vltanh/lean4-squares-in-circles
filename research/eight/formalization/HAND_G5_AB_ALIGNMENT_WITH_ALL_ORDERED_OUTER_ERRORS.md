@@ -134,7 +134,7 @@ For every `0<=e<=7/10`,
 \begin{aligned}
  D_H'(e)-1
  &=\frac{K+(1/2-b_H)\sin e-\cos^2e}{\cos^2e}\\
- &>\frac{(\sin e-1/5)^2+13/300}{\cos^2e}>0,
+ &\ge\frac{(\sin e-1/5)^2+13/300}{\cos^2e}>0,
  \qquad K=\frac{13}{12}.
 \end{aligned}
 \tag{11}

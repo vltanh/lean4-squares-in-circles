@@ -16,9 +16,11 @@ preferred mixed owner. A second route now closes the entire aligned
 hard-quarter class, without any mismatch hypothesis, by explicit
 radius-preserving reductions. Its signed three-zero bridge also closes
 the original ordered class with HG2/TD0 and the stated remaining owners.
-The nonnegative outer-error extension now admits all four outer
-owner combinations, with its explicit G/T signs and frame order,
-and retains the complete original-center equality conclusion.
+The nonnegative and nonpositive outer-error extensions now each
+admit all four outer owner combinations, with their explicit G/T
+signs and frame order, and retain the complete original-center
+equality conclusion. Mixed outer-error signs remain a separate
+entry case at this checkpoint.
 The missing global step must supply either complete route's entry
 hypotheses; neither is asserted for arbitrary candidates.
 
@@ -35,12 +37,12 @@ ED-owner/H frame; no unjustified conversion to the old A/G tilt is used.
 | G2 | Closed on paper | All six wrong words excluded; only 0101011 survives. Reflection gives the weak E sign. |
 | G3 | All six cuts closed conditionally at S<=3/200 | Cut-free quarter owners first give four cuts at S<=1/32; complete H-low exclusions then give H>1/2, followed by G>-4/5. No tangent cut is an independent missing input after small mismatch. |
 | G4 | Global capture open; ordered AB alignment covers all outer errors | The original ordered HG2/TD0 class reduces to five anchors with strict loss off zero. AB alignment now also covers every outer-owner/error pattern under the stated normal signs and frame order. Coarse mismatch bounds S<2/5 and S<13/50 remain open. |
-| G5 | Aligned and ordered nonnegative-outer-error classes sharp; global contractions open | The G/T-zero endpoint is excluded by two affine stress formulas. This completes all outer-owner combinations with nonnegative outer errors, the stated signs and frame order, including original equality. Negative noncanceling errors and global entry remain open. |
+| G5 | Aligned and both same-sign ordered outer-error classes sharp; global contractions open | The G/T-zero endpoint closes the nonnegative class. The full canonical negative boundary now enters the sharp terminal, closing the nonpositive class. Both include all outer owners and original equality under the stated signs and order. Mixed outer signs and global entry remain open. |
 | G6 | DE closed globally; forbidden BT forces A positive globally | Every original DE witness is in {2,3} without any mismatch or tangent input. A feasible BT0/1 also forces A positive by a shared two-edge charge. Excluding that remaining sign branch still uses S<=1/32. |
 | G7 | Closed conditionally at S<=3/200; old contraction retired | Every original mixed owner is G0/E1, without an S<=1/1000 premise. |
 | G8 | Closed conditionally at S<=3/200 | t>S and 1/10<tau<4/25, where tau is the actual ED-owner/H frame difference. |
 | G9 | Closed conditionally at S<=3/200 | Sharp owner-frame inequality with S/5000, all five completed anchors, and the full equality family. |
-| G10 | Open pending global entry into a completed route | The original-center transfer at S<=3/200, the ordered canceling-owner corollary and its nonnegative-outer-error extension are proved, including equality. Arbitrary candidates are not yet captured by either route. |
+| G10 | Open pending global entry into a completed route | The original-center transfer at S<=3/200 and the ordered hard-owner classes with either common outer-error sign are proved, including equality. Arbitrary candidates are not yet captured by either route. |
 
 These are mathematical hand-proof statuses, not Lean verification claims.
 Historical certificate files and the uncompiled Lean draft remain unchanged.
@@ -144,6 +146,13 @@ followed by a quarter axis 0/1 forces both outer endpoints
 positive; the reflected quarter axis 2/3 followed by a zero edge
 forces both outer endpoints negative. The A-positive forbidden-BT
 branch itself remains open globally.
+
+[The whole-chart marker and negative-AB comparison](HAND_G3_BT_PATH_MARKER_AND_NEGATIVE_AB_COMPARISON.md)
+supplies the global bounds `F>=.86b` and
+`F_O<=3(a-a_0)/8+1.091b`. Its exact negative-AB dual comparison
+also retains a positive reserve under the stated source-weight
+and complementary-charge hypotheses. These are analytic helpers
+for that remaining branch, not an assertion that it is excluded.
 
 [The earlier DE-owner theorem at S<=1/32](HAND_G3_D_OWNER_WITHOUT_TANGENT_CUTS_AT_ONE_THIRTY_SECOND.md)
 remains valid and is used in the already completed conditional
@@ -381,9 +390,9 @@ boundary minimization. The
 [endpoint with only the negative outer error remaining](HAND_G5_NEGATIVE_HG_ONLY_ERROR_ENDPOINT_EXCLUSION.md)
 is impossible for every E split and either E sign: two retained
 circle concavities reduce it to an explicit positive concave
-quartic. This does not assert that an arbitrary negative-error
-chain reaches that endpoint. Its general large-tangent negative
-errors require further work.
+quartic. The complete nonpositive-error assembly below handles
+the remaining large-tangent alternatives without asserting that
+an arbitrary chain reaches this one-error endpoint.
 
 [AB alignment with all ordered outer errors](HAND_G5_AB_ALIGNMENT_WITH_ALL_ORDERED_OUTER_ERRORS.md)
 now supplies the common A/B frame before these reductions.
@@ -411,22 +420,39 @@ whole-interval derivative bounds cover the simplex with a
 single common stress at each alpha. This theorem allows either
 E sign. The separate `epsilon=0` exclusion uses nonnegative
 E magnitude; after reflection its sign hypothesis must still
-be checked. The boundary with a negative error on the large-B
-side near the canonical equality configuration is not yet
-closed, nor is the general mixed positive/negative outer case.
+be checked. After both other E endpoints are excluded on the
+large-B branch, the surviving canonical boundary is now closed
+by the following capture and terminal.
 
 On that canonical negative boundary, the
 [small-error terminal](HAND_G5_CANONICAL_NEGATIVE_BOUNDARY_SMALL_ERROR_TERMINAL.md)
-already proves the sharp lower bound and five-anchor equality
+proves the sharp lower bound and five-anchor equality
 when its two errors total at most `3/200`. It reconstructs both
 discarded intermediates on the true core while keeping all five
 anchors fixed, then applies the exact circle identity and its
 proved analytic estimates directly. It does not assume that
 the auxiliary system has new physical gaps or G1 membership.
-Forcing the two-error bound on the full boundary remains an
-additional entry obligation at this checkpoint.
+[The full canonical negative capture](HAND_G5_NEGATIVE_CANONICAL_SMALL_ERROR_CAPTURE.md)
+now proves that two-error bound on the entire boundary. Two
+continuous cubic stress families, each common to the complete
+fixed-span simplex, reduce its truncation to four intrinsic
+vertices. Explicit rational polynomial inequalities make every
+vertex stress positive. The fixed `3/200` sine and cosine are
+enclosed independently; no extra circle identity is imposed on
+their rational approximants.
 
-These reductions have not yet closed all negative HG0/TD2 cases, the other
+[The nonpositive outer-error assembly](HAND_G5_NONPOSITIVE_OUTER_OWNERS_SHARP_REDUCTION.md)
+therefore proves the sharp bound and original-center equality
+for all four outer-owner combinations when both original outer
+differences are nonpositive. Negative canceling errors, crossed
+intermediate frames, AB movement and the small-transverse
+transport all retain strict middle-circle loss. The only
+remaining large-B error reaches the direct canonical terminal,
+which forces it to vanish at equality. Reapplying the aligned
+theorem to the original anchors then supplies their unique
+stationary values and the complete original equality family.
+
+These reductions have not yet closed mixed outer-error signs, the other
 frame orders, the remaining global sign alternatives or the
 remaining original quarter/mixed witnesses. Those are entry
 obligations for this route. The complete theorem for the hard
