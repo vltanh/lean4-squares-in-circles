@@ -319,4 +319,115 @@ theorem compose_primary_pair_outputs {q : ℝ} {C : SignedCycle}
   have hzD := OT'.zero_signs wG (OG.zero_signs w hz)
   exact ⟨hnT,hrT,hsT,ha,hp,hm,wD,hzD⟩
 
+namespace SignedCycle.BoundaryInput
+
+/-- An already available hard GA axis requires no change to G and no
+assumption that the alternative primary axis is also feasible. -/
+def hardG {q : ℝ} (I : SignedCycle.BoundaryInput q)
+    (hGA : I.cycle.Feasible G 0) :
+    GPairOutput q (I.cycle.point H) (I.cycle.point A)
+      (I.cycle.theta H) (I.cycle.theta G) (I.cycle.theta A) where
+  point := I.cycle.point G
+  theta := I.cycle.theta G
+  hgOwner := I.witnesses.owner H
+  gaOwner := 0
+  hg_allowed := by simpa [SignedCycle.normalOwners,H] using I.witnesses.allowed H
+  ga_allowed := Or.inl rfl
+  sorted := I.necessary.sorted G
+  contained := I.necessary.contained G
+  avoids := I.necessary.core G
+  boundary := I.radial G
+  HG := by
+    have h := I.witnesses.feasible H
+    change 0≤I.cycle.slack H (I.witnesses.owner H) at h
+    simpa [SignedCycle.slack,SignedCycle.edge,word,delta,next,H,G,zeroFeasible]
+      using sub_nonneg.mp h
+  GA := by
+    change 0≤I.cycle.slack G 0 at hGA
+    simpa [SignedCycle.slack,SignedCycle.edge,word,delta,next,G,A,quarterFeasible]
+      using sub_nonneg.mp hGA
+  canceling_normal := I.zero_signs.HG_canceling
+  frame_range := Or.inl rfl
+  terminal := Or.inl rfl
+
+/-- The analogous T endpoint keeps the complete original point and frame. -/
+def hardT {q : ℝ} (I : SignedCycle.BoundaryInput q)
+    (hBT : I.cycle.Feasible B 2) :
+    TPairOutput q (I.cycle.point B) (I.cycle.point D)
+      (I.cycle.theta B) (I.cycle.theta T) (I.cycle.theta D) where
+  point := I.cycle.point T
+  theta := I.cycle.theta T
+  btOwner := 2
+  tdOwner := I.witnesses.owner T
+  bt_allowed := Or.inl rfl
+  td_allowed := by simpa [SignedCycle.normalOwners,T] using I.witnesses.allowed T
+  sorted := I.necessary.sorted T
+  contained := I.necessary.contained T
+  avoids := I.necessary.core T
+  boundary := I.radial T
+  BT := by
+    change 0≤I.cycle.slack B 2 at hBT
+    simpa [SignedCycle.slack,SignedCycle.edge,word,delta,next,B,T,quarterFeasible]
+      using sub_nonneg.mp hBT
+  TD := by
+    have h := I.witnesses.feasible T
+    change 0≤I.cycle.slack T (I.witnesses.owner T) at h
+    simpa [SignedCycle.slack,SignedCycle.edge,word,delta,next,T,D,zeroFeasible]
+      using sub_nonneg.mp h
+  canceling_normal := I.zero_signs.TD_canceling
+  frame_range := Or.inl rfl
+  terminal := Or.inl rfl
+
+theorem g_output {q : ℝ} (I : SignedCycle.BoundaryInput q)
+    (hqL : qLow≤q) (hqU : q≤qCap) :
+    Nonempty (GPairOutput q (I.cycle.point H) (I.cycle.point A)
+      (I.cycle.theta H) (I.cycle.theta G) (I.cycle.theta A)) := by
+  by_cases hhard : I.cycle.Feasible G 0
+  · exact ⟨I.hardG hhard⟩
+  have hprimary : I.cycle.Feasible G 1 := by
+    have howner : I.witnesses.owner G=0 ∨ I.witnesses.owner G=1 := by
+      simpa [SignedCycle.normalOwners,G] using I.witnesses.allowed G
+    rcases howner with he | he
+    · exact (hhard (by simpa [he] using I.witnesses.feasible G)).elim
+    · simpa [he] using I.witnesses.feasible G
+  exact preprocess_G_pair hqL hqU (I.gPair hprimary)
+
+theorem t_output {q : ℝ} (I : SignedCycle.BoundaryInput q)
+    (hqL : qLow≤q) (hqU : q≤qCap) :
+    Nonempty (TPairOutput q (I.cycle.point B) (I.cycle.point D)
+      (I.cycle.theta B) (I.cycle.theta T) (I.cycle.theta D)) := by
+  by_cases hhard : I.cycle.Feasible B 2
+  · exact ⟨I.hardT hhard⟩
+  have hprimary : I.cycle.Feasible B 3 := by
+    have howner : I.witnesses.owner B=2 ∨ I.witnesses.owner B=3 := by
+      simpa [SignedCycle.normalOwners,B] using I.witnesses.allowed B
+    rcases howner with he | he
+    · exact (hhard (by simpa [he] using I.witnesses.feasible B)).elim
+    · simpa [he] using I.witnesses.feasible B
+  exact preprocess_T_pair hqL hqU (I.tPair hprimary)
+
+/-- Exhaustive first-stage entry for an actual boundary input. The four
+explicit local alternatives are carried in OG.terminal and OT.terminal.
+The returned geometry has one unchanged actual q throughout. -/
+theorem pair_preprocessing {q : ℝ} (I : SignedCycle.BoundaryInput q)
+    (hqL : qLow≤q) (hqU : q≤qCap) :
+    ∃ (OG : GPairOutput q (I.cycle.point H) (I.cycle.point A)
+        (I.cycle.theta H) (I.cycle.theta G) (I.cycle.theta A))
+      (OT : TPairOutput q (I.cycle.point B) (I.cycle.point D)
+        (I.cycle.theta B) (I.cycle.theta T) (I.cycle.theta D)),
+    let D := replacePoint (replacePoint I.cycle G OG.point OG.theta) T OT.point OT.theta
+    D.Necessary q ∧ (∀ i,(D.point i).Boundary q) ∧
+      D.StrictSpread ∧ AnchorsUnchanged I.cycle D ∧
+      positiveVariation D.theta<frameCap ∧
+      negativeVariation D.theta<frameCap ∧
+      ∃ wD : D.Witnesses, D.ZeroSignImplications wD := by
+  obtain ⟨OG⟩ := I.g_output hqL hqU
+  obtain ⟨OT⟩ := I.t_output hqL hqU
+  have h := compose_primary_pair_outputs I.necessary I.radial I.witnesses
+    I.zero_signs I.strict_spread OG OT
+  exact ⟨OG,OT,h.1,h.2.1,h.2.2.1,h.2.2.2.1,
+    h.2.2.2.2.1.trans_lt I.positive_variation,
+    h.2.2.2.2.2.1.trans_lt I.negative_variation,h.2.2.2.2.2.2⟩
+
+end SignedCycle.BoundaryInput
 end SquaresInCircles.Eight.TableFree
