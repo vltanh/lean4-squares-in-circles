@@ -1,4 +1,4 @@
-# Table-free hand proof: the hard class is sharp; global capture remains
+# Table-free hand proof: normal hard owners are sharp for arbitrary frames
 
 **PR #10:** `formalize/eight-uncompiled-draft`.
 **Mode:** hand mathematics only; no Lean changes, compilation, or CI.
@@ -9,31 +9,33 @@ table in the mathematical dependency chain.
 ## 1. Current mathematical status — 19–20 October 2026 UTC
 
 The unrestricted table-free proof is **not complete**. Its remaining
-substantive work is global candidate capture. After G0--G2 and the E-sign
-normalization, `S<=3/200` suffices for one complete downstream chain.
-All six tangent cuts follow from that bound without any prior cut or
-preferred mixed owner. A second route now closes the entire aligned
-hard-quarter class, without any mismatch hypothesis, by explicit
-radius-preserving reductions. Its signed three-zero bridge also closes
-the original ordered class with HG2/TD0 and the stated remaining owners.
-The full ordered outer-error extension now admits all signs of
-both outer errors and all four outer owner combinations, and
-no longer assumes the G/T transverse signs. Its frame order
-and specified hard/mixed owners remain explicit. It retains
-the complete original-center equality conclusion. For the already aligned
-three-zero class, every frame-order assumption has now been
-removed: the H/D span is necessarily positive, a common A/B
-frame outside D--H clamps to the nearer endpoint with strict
-circle loss, and the E-frame reduction retains that loss.
-A direct middle-edge alignment now also needs only the
-intermediate order `theta_G>=theta_T`, with normal G/T signs
-and GA0/BT2: it keeps G/T fixed and puts A/B at a common
-frame between them, without H/D/E frame-order assumptions.
-Once AB has a common frame and transverse sum one, the
-intermediate order itself can now be obtained by consuming
-negative outer errors; the opposite residual order is excluded
-analytically. Aligning arbitrary original AB frames in the
-reverse G/T case remains a separate input.
+substantive work is global owner and sign capture into a completed
+sharp route. The normal GA0/BT2 hard-owner class is now complete
+for **arbitrary original frame order**, every surviving zero owner,
+both signs of every outer error, both mixed-owner choices, and
+arbitrary E placement. It proves the sharp radius and recovers the
+original five-parameter equality family. Its explicit remaining
+inputs are the normal signs and the E radial alternative
+`a_E<=7/12` or `a_E>=max(b_H,b_D)`; original core/outer boundary
+representatives satisfy that alternative.
+
+The proof first derives `theta_G>theta_T` from the original
+neighboring inequalities, then aligns AB. A finite procedure
+processes the side with the larger middle tangent first, using
+strict crossed-frame clamps where needed. It retains any large
+negative noncanceling error until the all-mixed, arbitrary-E
+terminal resolves it. Every original nonzero zero-edge error
+or crossed frame creates strict middle-circle loss, which the
+terminal's positive masses exclude at equality. No original
+frame order, E order, or small mismatch is imported into this
+normal hard-class theorem.
+
+The older ordered hard-class theorem remains useful because it
+allows arbitrary G/T signs under its stated frame order. That
+sign extension has not yet been combined with the new arbitrary-
+frame theorem. Separately, after G0--G2 and E normalization,
+`S<=3/200` still supplies another complete downstream proof,
+including all six cuts, original-center transfer, and equality.
 Three quarter-owner conclusions are now global: every original
 BT and DE witness has owner 2 or 3, and every original EH
 witness has owner 0 or 1. H is positive and B,D are negative;
@@ -47,7 +49,7 @@ signed target cut `y_A<1/2`. At an actual diagonal D, an exact change of
 nearest-axis representative recodes the high-GA/low-EH branch
 into the normal quarter classes. No global transport to that
 diagonal has been assumed. The remaining global steps must still supply
-the mixed-owner and alignment hypotheses
+the remaining owner, sign, and radial entry hypotheses
 of a completed sharp route; arbitrary candidates are not yet
 asserted to satisfy those entry conditions.
 
@@ -63,13 +65,13 @@ ED-owner/H frame; no unjustified conversion to the old A/G tilt is used.
 | G1 | Closed on paper | Complete four-type frame concentration; real frame spread below 7/10. |
 | G2 | Closed on paper | All six wrong words excluded; only 0101011 survives. Reflection gives the weak E sign. |
 | G3 | Global EH-owner and quarter-anchor rigidity; all six cuts at S<=3/200 | Every EH witness is low; H is positive outer. B,D are negative outer. Every low quarter has outer target and every high quarter has outer source. High GA forces G outer and y_A<1/2, but that branch is not yet excluded. The conditional six tangent cuts remain closed at S<=3/200. |
-| G4 | Global capture open; ordered AB alignment covers all outer errors and G/T signs | The original ordered HG2/TD0 class reduces to five anchors with strict loss off zero. AB alignment now covers every outer-owner/error pattern, including both wrong intermediate signs simultaneously, under the retained H/A/B/D signs and frame order. Coarse mismatch bounds S<2/5 and S<13/50 remain open. |
-| G5 | Entire ordered hard-owner class sharp without G/T sign assumptions | Both outer errors and both intermediate transverse coordinates may have either sign. Wrong intermediate signs reach a zero endpoint with strict middle-circle loss; the existing complete reduction then applies. The already aligned-three-zero class needs no frame-order hypothesis. Global owner capture and alignment without frame order remain open. |
+| G4 | Global capture open; normal hard-class frame order is derived | With normal signs and GA0/BT2, the arbitrary-frame middle bound and all-mixed endpoint charge force G>T. AB then aligns with strict loss, without H/D/E order. Coarse mismatch bounds remain an optional alternative route, not a missing input to this hard-class proof. |
+| G5 | Normal hard-owner class sharp for arbitrary original frames | All surviving zero owners, both outer-error signs, both DE/EH choices and arbitrary E placement are covered. The normal signs and stated E radial alternative remain inputs. The older ordered theorem separately allows arbitrary G/T signs. |
 | G6 | Closed globally without mismatch or tangent cuts | Every original BT and DE witness has owner 2 or 3; B and D have strictly negative signed tangents. The all-owner return charge and complete four-edge bound exclude every BT0/1 branch, including core E with negative DE3 and every negative-BT1/AB sign combination. |
 | G7 | Closed conditionally at S<=3/200; old contraction retired | Every original mixed owner is G0/E1, without an S<=1/1000 premise. |
 | G8 | Closed conditionally at S<=3/200 | t>S and 1/10<tau<4/25, where tau is the actual ED-owner/H frame difference. |
 | G9 | Closed conditionally at S<=3/200 | Sharp owner-frame inequality with S/5000, all five completed anchors, and the full equality family. |
-| G10 | Open pending global entry into a completed route | The original-center transfer at S<=3/200, the ordered hard-owner class without G/T sign assumptions, and the aligned-three-zero class without frame order are proved, including equality. Arbitrary candidates are not yet captured by a completed route. |
+| G10 | Open pending unrestricted owner/sign entry | Original-center sharpness and equality are proved at S<=3/200 and for the normal GA0/BT2 class with arbitrary original frames and the stated E radial alternative. Arbitrary candidates are not yet captured by either route. |
 
 These are mathematical hand-proof statuses, not Lean verification claims.
 Historical certificate files and the uncompiled Lean draft remain unchanged.
@@ -418,7 +420,64 @@ retained, the additional boundary `S=s0` must also be retained. This is
 a continuous boundary reduction, not an assertion that E can always be
 set to zero or that a bad-mismatch condition survives the deformation.
 
-### G5: the two missing middle contractions
+### G5: the completed normal hard class and earlier conditional routes
+
+[The arbitrary-frame normal hard-owner assembly](HAND_G5_NORMAL_HARD_OWNERS_ARBITRARY_FRAMES_SHARP_REDUCTION.md)
+is now the complete sharp route for normal signs, GA0/BT2,
+HG/AB/TD0-or-2, DE2-or-3, EH0-or-1, and the explicit E radial
+alternative. It imposes no original frame order or zero-error
+hypothesis. The following are its new entry and terminal joins.
+
+[The arbitrary-frame reversed middle-path bound](HAND_G5_REVERSED_INTERMEDIATE_MIDDLE_PATH_BOUND.md)
+keeps the actual A/B circles and proves
+`b_G+b_T<=2sqrt(Q-1)-3+(149/240)(theta_T-theta_G)` when G<=T,
+with either AB owner and arbitrary A/B frames. Combining the
+original zero-edge charges with the E endpoint inequalities
+gives [strict intermediate order](HAND_G5_GLOBAL_INTERMEDIATE_FRAME_ORDER.md).
+[Its all-mixed-owner extension](HAND_G5_GLOBAL_INTERMEDIATE_ORDER_WITH_ALL_MIXED_OWNERS.md)
+removes the DE3/EH1 prerequisite by direct circle stresses.
+These are necessary-system inequalities, so later uses on
+constructed neighboring systems require no new G1 assertion.
+
+The original crossed-frame sectors are closed by the
+[large HG0 alignment](HAND_G5_CROSSED_NONCANCELING_LARGE_TANGENT_GA_ALIGNMENT.md),
+[large HG2 conversion](HAND_G5_CROSSED_CANCELING_OUTER_TO_GA_ALIGNED_NONCANCELING.md),
+[small HG0 alignment](HAND_G5_CROSSED_SMALL_TANGENT_NONCANCELING_GA_ALIGNMENT.md),
+and [small HG2 conversion](HAND_G5_CROSSED_SMALL_TANGENT_CANCELING_TO_NONCANCELING.md).
+They all enter the [common-frame clamp](HAND_G5_CROSSED_COMMON_FRAME_CLAMP.md),
+whose [upper-tangent cap comparison](HAND_G5_CROSSED_UPPER_TANGENT_CAP_RATE.md)
+and two lower ranges give strict middle-circle loss. Its
+G>T barrier prevents crossing the opposite endpoint. The
+[all-mixed G-zero exclusion](HAND_G5_SMALL_TANGENT_G_ZERO_WITH_ALL_MIXED_OWNERS.md)
+closes the remaining positive small-tangent endpoint without
+an E-order or opposite outer-error-sign assumption.
+
+[The nonpositive-composite terminal](HAND_G5_NONPOSITIVE_COMPOSITES_ALL_MIXED_E_FRAMES_SHARP_REDUCTION.md)
+then handles retained negative outer composites, both mixed
+owners, and arbitrary E placement. Its radial input is exactly
+the weaker alternative stated in the final assembly; H,D,E
+remain fixed until this terminal. The separate
+[aligned all-mixed theorem](HAND_G5_ALIGNED_CHAIN_ALL_MIXED_OWNERS_SHARP_REDUCTION.md)
+is its earlier boundary-state specialization. Strict losses
+are retained independently at A and B, and the final assembly
+reapplies the terminal to the original anchors after proving
+all original zero differences vanish at equality.
+
+There is also audited progress on the remaining primary GA1
+entry: the exceptional negative-error flat-core case has local
+reductions for [HG0](HAND_G5_CORE_NEGATIVE_GA1_WITH_NONCANCELING_HG.md)
+and [HG2](HAND_G5_CORE_NEGATIVE_GA1_WITH_CANCELING_HG.md).
+Each keeps A,H and the remaining states fixed and reaches
+an actual GA0 witness or HG alignment. The
+[aligned negative-GA1 transport](HAND_G5_ALIGNED_NEGATIVE_GA1_TO_HARD_OWNER.md)
+closes the aligned ordered GA1/BT2 class with both mixed-owner
+choices and arbitrary E placement. Positive GA1, simultaneous
+BT3, arbitrary-frame primary entry, and the remaining wrong
+G/T signs are not asserted to follow from these local results.
+
+The earlier contraction targets and intermediate milestones
+below retain their stated scopes; they are not additional
+unproved requirements of the new normal hard-class assembly.
 
 In forward order, prove
 
@@ -865,9 +924,12 @@ Here `Q1=1957767069/500000000`. The historical G4/G5 contractions are
 one possible route to this implication; they are not mandatory intermediate
 theorems. A proved global reduction into the hard class of Section 3 would
 also supply the lower bound, with every original equality consequence
-retained. That route is now complete for the stated ordered
-normal-sign hard-owner class, with every outer-error sign and
-outer owner; entry from arbitrary candidates remains open.
+retained. That route is now complete for the normal GA0/BT2
+hard-owner class with arbitrary original frames, all zero and mixed
+owners, both outer-error signs, and the stated E radial alternative.
+The older ordered theorem separately permits arbitrary G/T signs.
+The remaining high-GA, primary-axis, and arbitrary-frame sign entry
+cases must still be reduced to a completed route.
 
 Once the displayed implication is proved, the completed original-center transfer
 and Section 5 close G10 and the unrestricted theorem. The transfer is no
