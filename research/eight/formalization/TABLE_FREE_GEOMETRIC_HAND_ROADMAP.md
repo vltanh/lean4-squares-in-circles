@@ -27,8 +27,8 @@ ED-owner/H frame; no unjustified conversion to the old A/G tilt is used.
 | G2 | Closed on paper | All six wrong words excluded; only 0101011 survives. Reflection gives the weak E sign. |
 | G3 | All six cuts closed conditionally at S<=3/200 | Cut-free quarter owners first give four cuts at S<=1/32; complete H-low exclusions then give H>1/2, followed by G>-4/5. No tangent cut is an independent missing input after small mismatch. |
 | G4 | Open | Coarse mismatch bounds S<2/5 and S<13/50. |
-| G5 | Contractions open; sign subgates closed conditionally | A positive and D negative already follow from S<=13/50; all six zero-edge signs follow from S<=1/10. Both contractions remain open. |
-| G6 | Closed conditionally at S<=1/32, without tangent cuts | Every original BT/DE witness is in {2,3}, from G0--G2, E normalization and the mismatch bound. |
+| G5 | Contractions open; D sign now global | D is negative from the global cyclic-marker theorem; A positive follows from S<=13/50, and all six zero-edge signs follow from S<=1/10. Both contractions remain open. |
+| G6 | DE closed globally; BT closed conditionally at S<=1/32 | Every original DE witness is in {2,3} without any mismatch or tangent input. The complete BT theorem still uses S<=1/32. |
 | G7 | Closed conditionally at S<=3/200; old contraction retired | Every original mixed owner is G0/E1, without an S<=1/1000 premise. |
 | G8 | Closed conditionally at S<=3/200 | t>S and 1/10<tau<4/25, where tau is the actual ED-owner/H frame difference. |
 | G9 | Closed conditionally at S<=3/200 | Sharp owner-frame inequality with S/5000, all five completed anchors, and the full equality family. |
@@ -92,12 +92,22 @@ full high-G tail and forces that tail to have negative A/G tilt once
 the earlier A sign is available. The remaining negative-tilt tail is
 not excluded by those implications.
 
-[The complete DE-owner theorem without tangent cuts](HAND_G3_D_OWNER_WITHOUT_TANGENT_CUTS_AT_ONE_THIRTY_SECOND.md)
-proves all original DE owners belong to `{2,3}` already from
-`G0--G2`, `u_E<=0`, and `S<=1/32`. It retains every original GA/EH
-witness and spends the shared HG error only once. This permits a
-forward reordering of that owner step, but does not supply the global
-bound on S or any still-missing tangent cut.
+[The global DE cyclic-marker theorem](HAND_G3_GLOBAL_D_OWNER_BY_CYCLIC_MARKER.md)
+now proves every original DE owner belongs to `{2,3}` and `u_D<0`
+from G0--G2 and `u_E<=0`, with no mismatch bound, tangent cut,
+zero-owner input or preferred mixed owner. Each forbidden axis forces
+a common-marker edge charge greater than one on the entire frame
+interval. The six-edge G1 return path then exceeds the full cyclic
+angular budget. The same estimates exclude both intended axes when
+D has nonnegative sign. The witness-preserving boundary transfer
+keeps the conclusion valid for original centers and tied axes.
+
+[The earlier DE-owner theorem at S<=1/32](HAND_G3_D_OWNER_WITHOUT_TANGENT_CUTS_AT_ONE_THIRTY_SECOND.md)
+remains valid and is used in the already completed conditional
+downstream proofs, but its mismatch input is no longer needed for
+the DE conclusion itself. The new global result does not supply
+the bound on S, the other quarter owner, or the stronger D tangent
+cut `u_D<-1/2`.
 
 [The complete BT-owner theorem without tangent cuts](HAND_G3_B_OWNER_WITHOUT_TANGENT_CUTS_AT_ONE_THIRTY_SECOND.md)
 now supplies the other quarter edge from exactly those same inputs,
@@ -204,7 +214,9 @@ gives `u_A>0` and `u_D<0` from `S<=13/50`, without any candidate tangent
 cut, quarter/mixed owner or later sign theorem. Its actual proof uses only
 `|d_A|+|d_B|+|d_T|<=13/50`, retaining the shared error budget and all
 original BT witnesses. This is a conditional sign result; it does not
-establish the bound on S or either contraction.
+establish the bound on S or either contraction. Its D-sign conclusion
+is now also available without that mismatch input from the global
+DE cyclic-marker theorem above.
 
 Between the two contraction steps,
 [the zero-edge sign theorem](HAND_ZERO_EDGE_SIGN_RIGIDITY_AT_ONE_TENTH.md)
