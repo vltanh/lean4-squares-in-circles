@@ -54,22 +54,23 @@ every quarter owner 2/3 has an outer source, independently of
 E normalization. Thus low GA forces A outer, while high GA
 forces G outer. A retained high GA witness also forces the
 signed target cut `y_A<1/2`. The high-GA branch is now excluded
-for every A-owner/error alternative when BT2, DE2 and EH0 are
-retained. With BT2, the entire outer-E branch is now excluded
-for every A/E owner, every error allocation and either TD owner.
-For either E radial kind, all A/TD alternatives are excluded
-when the designated E-primary total is nonnegative; all A/E
-alternatives are also excluded when TD2 is nonpositive.
+for **every outer E** and for **every nonnegative selected
+E-primary total**, with all A/T owners and signed totals.
+This includes arbitrary BT3 and TD0 errors and every signed
+BT3/TD2 pair.
 The simultaneous-negative core-E pair now has a complete
 actual-state transport to a single negative E primary; its
 old low-angle concentration obligation is retired. With BT2,
 a nonnegative selected A-primary total therefore excludes
 every E and TD alternative. Allowing BT3, all T-owner choices
 and signed error allocations are now excluded when the
-selected A- and E-primary totals are nonnegative. A second
-complete region now permits **every A/E total and both E radial
+selected A- and E-primary totals are nonnegative. The new
+negative-A positive-BT endpoint and both E-total transfers
+remove the A-total restriction whenever E's total is nonnegative.
+A separate complete region permits **every A/E total and both E radial
 kinds whenever the selected T total is nonpositive**. Coupled
-negative totals outside these regions remain open.
+negative core-E totals with positive T total remain open, at
+the two precise endpoints recorded below.
 At an actual diagonal D, an exact change of
 nearest-axis representative recodes the high-GA/low-EH branch
 into the normal quarter classes. No global transport to that
@@ -291,7 +292,7 @@ without excluding it.
 The following theorems all retain the globally forced outer
 anchors H,G,B,D with signs `+,-,-,-`, the high GA owners 2/3,
 and both zero owners. The first six rows retain **BT2**;
-the last two allow **both BT2 and BT3**. No row assumes a frame order.
+the last four allow **both BT2 and BT3**. No row assumes a frame order.
 Here the A-primary owners are GA3 and AB2, and the E-primary
 owners are DE3 and EH1; the T-primary owners are BT3 and TD2.
 A designated primary total is the
@@ -308,6 +309,8 @@ primary owners are selected; it is zero when neither is selected.
 | [Arbitrary TD0, every A/E alternative](HAND_G3_PAIRED_NEGATIVE_CORE_E_COMPLETE_TRANSPORT.md) | BT2 and TD0 at any error; every A/E owner and signed total; the joint-negative case joins independent A/E transports with the fixed flat-core-E stress. |
 | [Nonpositive T-primary total, every A/E alternative](HAND_G3_HIGH_GA_ALL_E_NONPOSITIVE_T_TOTAL_EXCLUSION.md) | BT2/3 and TD0/2; every A/E owner and signed total, either E radial kind. Only the selected T-primary total is required to be nonpositive. |
 | [Nonnegative A/E totals, every T alternative](HAND_G3_POSITIVE_T_PRIMARY_TOTAL_SIGNED_CANCELLATION_TRANSPORT.md) | Either E radial kind; every BT2/3 and TD0/2 selection and every signed T allocation, including opposite signs in a primary pair. |
+| [Nonnegative E total, every A/T alternative](HAND_G3_HIGH_GA_NONNEGATIVE_E_TOTAL_ALL_T_EXCLUSION.md) | Either E radial kind; every A and T owner, signed primary total and individual error allocation. |
+| [Outer E, every A/E/T alternative](HAND_G3_HIGH_GA_NONNEGATIVE_E_TOTAL_ALL_T_EXCLUSION.md) | Every original surviving owner and error sign; no selected-total hypothesis remains. |
 
 The first assembly retains the four actual outer circles in
 one positive weighted sum. Secondary cases use a
@@ -431,20 +434,44 @@ handles opposite individual signs, and
 [the same-sign endpoint reduction](HAND_G3_POSITIVE_PAIRED_T_PRIMARY_ENDPOINT_REDUCTION.md)
 handles two nonnegative errors. Both preserve all A/E states,
 owners and errors and use actual neighboring separators. Their
-combination proves the final row of the table. The transports
-themselves impose no A/E-total hypothesis; only the endpoint
-exclusion currently needs those signs.
+combination first proves the nonnegative-A/E row of the table.
+The transports themselves impose no A/E-total hypothesis.
 
-The remaining high-GA work has strictly positive selected T
-total and requires coupled negative-total capture
-outside the displayed complete domains. In particular, positive
-BT3 with TD0 and a negative A or core-E total is not covered by
-the nonnegative-A/E endpoint theorem. With BT2 the residual is
-positive TD2 with both a negative A total and a negative core-E
-total; arbitrary TD0 is now excluded by the separate finite join
-in the paired-negative E note. These are genuine
-global obligations, distinct from the now-complete paired-E and
-paired-T transports.
+[The complete negative-A positive-BT endpoint](HAND_G3_NEGATIVE_A_POSITIVE_BT3_WITH_NONNEGATIVE_E_TOTAL_EXCLUSION.md)
+now handles arbitrary TD0 and every nonnegative E total.
+Its one-negative-A reduction uses actual flat-core entry data;
+two continuous stresses give fourteen complete reference
+scalar certificates. A whole signed D-support lemma includes
+the necessary low-angle TD0/DE errors. The shorter-E gain
+comparison and twelve longer-E scalar certificates then retain
+every nonnegative signed E allocation. All coefficient bounds
+are on whole continuous domains, with no row inventory or
+angle subdivision. The independent review supplied an explicit
+ratio-monotonicity step before applying a curvature envelope.
+
+[The all-T nonnegative-E assembly](HAND_G3_HIGH_GA_NONNEGATIVE_E_TOTAL_ALL_T_EXCLUSION.md)
+joins both A-total signs at the positive-BT endpoint with the
+paired-T transports and the nonpositive-T theorem. It excludes
+every high-GA cycle with nonnegative E total. At outer E,
+every nonpositive primary error already has its same-state
+secondary witness feasible; that actual reselection makes
+the selected E total nonnegative. Thus the entire outer-E
+high-GA branch is now excluded, including BT3.
+
+The remaining high-GA work has core E, negative selected E
+total and strictly positive selected T total. Its positive
+paired-T transports reduce it to exactly two endpoint domains:
+
+| Remaining high-GA endpoint | Required additional data |
+|---|---|
+| BT2 and positive TD2 | Negative A total and negative core-E total. |
+| Positive BT3 and arbitrary TD0 | Negative core-E total; A total arbitrary. |
+
+The separate A/E transports can reduce the negative totals to
+one genuine primary each but do not exclude these two endpoints.
+These are genuine global obligations, distinct from the complete
+paired-E and paired-T transports. Normal-primary entry into the
+sharp GA0/BT2 class remains an independent global obligation.
 
 ### Earlier global marker consequences
 
