@@ -25,6 +25,10 @@ three-zero class, every frame-order assumption has now been
 removed: the H/D span is necessarily positive, a common A/B
 frame outside D--H clamps to the nearer endpoint with strict
 circle loss, and the E-frame reduction retains that loss.
+A direct middle-edge alignment now also needs only the
+intermediate order `theta_G>=theta_T`, with normal G/T signs
+and GA0/BT2: it keeps G/T fixed and puts A/B at a common
+frame between them, without H/D/E frame-order assumptions.
 Both ordinary quarter-owner conclusions are now global:
 every original BT and DE witness has owner 2 or 3, and B,D
 have strictly negative signed tangents. The full BT proof
@@ -427,6 +431,19 @@ nonzero original zero difference leaves strict A/B circle slack.
 Section 8 of the sharp assembly consequently proves the complete
 lower bound and equality classification for this original ordered
 class, without a mismatch premise.
+
+[The direct A/B alignment between ordered intermediate frames](HAND_G5_AB_ALIGNMENT_BETWEEN_ORDERED_INTERMEDIATE_FRAMES.md)
+removes all H/D/E order assumptions from the middle-edge step.
+With normal G/A/B/T signs, original GA0/BT2 and either AB owner,
+it needs only `theta_G>=theta_T`. A/B move to a common frame
+in `[theta_T,theta_G]`, with transverse sum one, while every
+actual G/T datum and every constraint outside A/B stays fixed.
+Negative hard-quarter portions use an exact two-contact norm
+descent; the positive portion uses the direct hard cap. A
+common frame outside the G/T interval clamps inward because
+the positive-cap slope exceeds the opposite negative-cap slope.
+The argument retains separate strict A/B circle losses. It
+does not yet exclude reverse intermediate order or align HG/TD.
 
 For positive HG0 and reflected TD2,
 [the noncanceling positive-owner reduction](HAND_G5_POSITIVE_HG_ZERO_OWNER_BOUNDARY_REDUCTION.md)
