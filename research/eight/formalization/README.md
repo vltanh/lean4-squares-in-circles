@@ -10,6 +10,16 @@ radius, attainment, and equality for the original eight squares. Start with
 [exhaustive same-radius owner entry](HAND_G5_GLOBAL_PRIMARY_OWNER_ENTRY_COMPLETE.md)
 and [original-center equality](HAND_G5_GLOBAL_PRIMARY_ENTRY_ORIGINAL_EQUALITY_PULLBACK.md).
 
+The current presentation starts from the
+[five-corner geometric minimum](EIGHT_SQUARE_FIVE_CORNER_MODEL.md) and the
+[geometric equality family](EIGHT_SQUARE_GEOMETRIC_EQUALITY_MODEL.md).
+The [global selection proof](HAND_FIVE_CORNER_MODEL_SELECTION.md) identifies
+that minimum with the exact stationary constant. The
+[sharp-radius assembly](HAND_SHARP_RADIUS_BOUNDARY_ASSEMBLY.md) proves the
+lower bound and original equality at one exact working radius; the
+[auxiliary-bound catalog](HAND_AUXILIARY_RADIUS_BOUNDS.md) records the
+internal arithmetic domains separately.
+
 That mathematical completion does not change the verification status of the
 historical Lean source described below. No Lean files were changed in this
 final hand-proof pass, and no compilation or CI was run.

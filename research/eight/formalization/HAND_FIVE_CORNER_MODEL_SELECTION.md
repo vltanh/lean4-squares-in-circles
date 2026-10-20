@@ -12,7 +12,7 @@ The proof below uses one constant-weight support on the entire large
 tilt arc, the already proved single polynomial nominal stress on the
 remaining arc, and the actual-envelope stationary uniqueness theorem.
 It does not use the five interval-dependent stresses in
-\(\texttt{HUMAN_FAMILY_ENCLOSURE.md}\), a local root box, or a numerical
+[the historical five-interval enclosure](../HUMAN_FAMILY_ENCLOSURE.md), a local root box, or a numerical
 optimizer. The rational constants in Sections 3 and 4 are estimates
 inside the proof, rather than conditions selecting the model.
 
@@ -529,8 +529,8 @@ whole analytic strip. Its proof uses full-domain position convexity
 and strict positivity of the envelope curvature at every critical
 tilt, including critical points of positive defect. Its dependencies
 are the circle and Hessian estimates in
-\(\texttt{STATIONARY_GEOMETRY.md}\) and Section 4 of
-\(\texttt{HUMAN_FAMILY_CLOSURE.md}\); the earlier global
+[stationary geometry](STATIONARY_GEOMETRY.md) and Section 4 of
+[the stationary-family proof](../HUMAN_FAMILY_CLOSURE.md); the earlier global
 interval-enclosure section of the latter is not used.
 The unique stationary zero supplied there is
 \((q_*,u_*,t_*)\). Thus (35) gives
@@ -659,9 +659,9 @@ No numerical enclosure is used to define or select it.
 The proof uses only the following established analytic statements:
 
 1. The finite rational trial and the position derivative signs in
-   \(\texttt{HAND_STATIONARY_EXISTENCE_WITHOUT_LOCAL_BOXES.md}\).
+   [stationary existence](HAND_STATIONARY_EXISTENCE_WITHOUT_LOCAL_BOXES.md).
 2. The one polynomial stress on its entire small-tilt arc in
-   \(\texttt{HAND_POSITIVE_TILT_NOMINAL_GAP.md}\), with the explicit
+   [the nominal stress](HAND_POSITIVE_TILT_NOMINAL_GAP.md), with the explicit
    arbitrary-coordinate adapter (25).
 3. The actual-envelope critical-point theorem summarized in Section 6
    of the stationary-existence note.

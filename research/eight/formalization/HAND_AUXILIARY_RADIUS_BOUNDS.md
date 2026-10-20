@@ -20,13 +20,18 @@ equality packing. In particular the number denoted r in
 is a corner coordinate in the stationary chain; it is not the
 containing radius R.
 
-The main theorem can name the stationary triple constructed in
-[stationary existence](HAND_STATIONARY_EXISTENCE_WITHOUT_LOCAL_BOXES.md)
-and use its exact equations without displaying these arithmetic
-bounds. This appendix supplies its certified branch and the
-domain checks for downstream theorems. That presentation does
-not claim uniqueness of the stationary equations on unspecified
-radical or angle branches.
+The public constant is defined by
+[the global five-point minimum](EIGHT_SQUARE_FIVE_CORNER_MODEL.md),
+with no radius bracket or coordinate window in that definition.
+[Model selection](HAND_FIVE_CORNER_MODEL_SELECTION.md) proves
+that its unique minimizing configuration is the stationary
+triple constructed in
+[stationary existence](HAND_STATIONARY_EXISTENCE_WITHOUT_LOCAL_BOXES.md).
+The stationary equations remain an exact computation adapter.
+This appendix records the bounds used inside that selection
+proof and the domain checks for the geometric theorems. It
+does not claim uniqueness of stationary equations on arbitrary
+larger-radius or unspecified radical branches.
 
 ## 2. Exact catalog and existing aliases
 
@@ -76,6 +81,40 @@ There are two historical notational traps.
 
 These are an alias map, not instructions to replace numbers
 inside established certificates.
+
+The newer five-corner selection proof uses one additional
+**radius**, rather than a squared-radius ceiling:
+\[
+ R_{\mathrm{support}}=\frac{4947}{2500}=1.9788,
+ \qquad
+ R_{\mathrm{support}}^2
+   =\frac{24472809}{6250000}
+   =q_{\mathrm{cap}}+\frac{309}{6250000}.
+\tag{2a}
+\]
+Thus \(\sqrt{q_{\mathrm{cap}}}<R_{\mathrm{support}}<2\).
+Section 3 of
+[five-corner model selection](HAND_FIVE_CORNER_MODEL_SELECTION.md)
+uses it as a rational upper support radius in a single
+high-tilt norm inequality. That local proof calls it rho;
+it is different from the core radius in Section 4 below.
+It does not replace the actual circle or introduce an
+additional admissibility condition in the public model.
+
+The five-point minimization also uses the elementary compactness
+trial
+\[
+ R_{\mathrm{compact}}=\frac{\sqrt{2257}}{24},\qquad
+ R_{\mathrm{compact}}^2=\frac{2257}{576}<4.
+\tag{2b}
+\]
+The five explicit points at zero tilt in Section 1 of model
+selection provide a nonempty compact sublevel at this radius.
+This trial is for the five-point problem; it is not asserted
+to be a sharp eight-square packing. The same squared value
+occurs as the aligned four-circle equilibrium in the nominal
+stress. The finer rational trial then gives a model minimum
+strictly below \(q_{\mathrm{trial}}\).
 
 ## 3. What each bound proves
 
@@ -335,26 +374,32 @@ This removes the lower-floor operation
 case from the unrestricted proof. The internal lower estimate
 still certifies that q* belongs to the established entry domains.
 
-The remaining simplifications are presentation choices with
-precise scope.
+The model proofs also establish the following simplifications.
 
-* The main constant can be the unique stationary triple
-  constructed on the certified branch (3). Its arithmetic
-  isolation belongs here. The stationary equations need not
-  be accompanied by a long rational radius interval in the
-  theorem statement.
+* [The five-corner model](EIGHT_SQUARE_FIVE_CORNER_MODEL.md)
+  defines \(R_*\) by a global minimum over arbitrary five
+  points satisfying five projected spans and the whole
+  interval \(0\le t\le\pi/4\). Its
+  [selection theorem](HAND_FIVE_CORNER_MODEL_SELECTION.md)
+  proves a unique minimizing angle and five points, with
+  \(R_*^2=q_*\). No radius bracket or coordinate window
+  selects the public constant. The stationary equations are
+  an exact algebraic and differential adapter for computing
+  this independently defined geometric minimum.
 * A simple descriptive consequence is \(79/40<R_*<2\).
   It is not, by itself, a replacement isolating domain for the
   stationary equations. No uniqueness statement on every
   branch with \(R<2\) has been proved here.
-* The core-generated slider cutoffs in an economical equality
-  chart can be omitted from a public model that instead imposes
-  actual disk containment and all pairwise separating-axis
-  constraints on the displayed five-parameter family. Such a
-  fully geometric domain is exactly feasible by definition.
-  It must retain all those constraints; deleting the core
-  cutoffs from a reduced domain without restoring its omitted
-  exterior-pair checks would require a separate proof.
+* [The geometric equality model](EIGHT_SQUARE_GEOMETRIC_EQUALITY_MODEL.md)
+  removes the core-generated slider cutoffs from the public
+  five-parameter domain. It uses slider disk containment,
+  T above the horizontal axis, G below it, central origin
+  interiority, and seven central separating-axis inequalities.
+  Its proof checks all 21 exterior pairs on these wider rails,
+  so those pairs require no extra conditions in the model.
+  It also proves equivalence with the earlier complete equality
+  chart. This is a geometric domain theorem, not merely the
+  deletion of numerical endpoints from a reduced system.
 * For squares of common side length \(\ell>0\), rescaling gives
   optimal radius \(\ell\sqrt{q_*}\). Every squared proof ceiling
   scales by \(\ell^2\), every core length by \(\ell\), and angles
@@ -393,4 +438,3 @@ caps. The numerical audit needed to instantiate it at q* is
 precisely the map above. Enlarging that instantiated domain
 would require checking the affected certificate hypotheses;
 the cleaner public interface makes no such enlargement.
-

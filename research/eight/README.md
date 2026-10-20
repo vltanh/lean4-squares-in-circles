@@ -8,7 +8,12 @@ It proves the sharp radius, attainment, and the complete equality family
 for the original centers through continuous geometric and scalar arguments.
 Use [its dependency roadmap](formalization/TABLE_FREE_GEOMETRIC_HAND_ROADMAP.md)
 and [current handoff](formalization/HANDOFF_2026_10_20.md) to follow this
-completed route. Its exact stationary constant and equality family agree
+completed route. The
+[five-corner model](formalization/EIGHT_SQUARE_FIVE_CORNER_MODEL.md)
+defines the radius by a geometric minimum without a numerical bracket.
+The [equality model](formalization/EIGHT_SQUARE_GEOMETRIC_EQUALITY_MODEL.md)
+uses five fixed squares, two contact-line sliders, and the actual central
+angle. Its exact constant and equality family agree
 with the earlier proof below; its mathematical chain does not import the
 old numerical lookup tables. Lean source verification remains deferred.
 

@@ -1,373 +1,263 @@
-# The unrestricted eight-square theorem without numerical lookup tables
+# The eight-square theorem in geometric form
 
-## 1. The theorem and its exact constant
+Eight closed unit squares with pairwise disjoint open interiors require
+a containing disk of radius at least \(R_*\). The bound is attained.
+Every equality packing, up to an isometry and relabeling, consists of
+five fixed exterior squares, two exterior sliders, and a central square
+with a free center and angle. Sections 1--2 define the constant and the
+complete family using only geometric constraints.
 
-Let eight closed unit squares, with arbitrary centers and orientations
-and pairwise disjoint open interiors, lie in a closed disk of radius R.
-Then
+The proof is the completed table-free hand argument. Its exact arithmetic
+certificates support the geometry; their radius enclosures are not part
+of the model definition. The historical n=8 Lean source remains an
+[uncompiled draft](STATUS.md).
+
+![Five fixed exterior squares in blue, two contact-line sliders in orange, and a central square in green. The five selected corner contacts lie on the circle.](figures/eight-square-contact-model.svg)
+
+## 1. The optimal radius is a five-corner minimum
+
+For an angle t write
 \[
-                              R^2\ge q_*.
+ e_t=(\cos t,\sin t),\qquad f_t=(-\sin t,\cos t).
 \tag{1}
 \]
-The bound is attained. Up to an isometry of the plane and relabeling,
-every equality packing is exactly a member of the five-parameter family
-in Section 5, and every member of that domain is an equality packing.
-Reflection is included in the allowed isometries.
-
-Here q* is an exact stationary constant, not a decimal input. Set
+Consider five points \(X_A,X_B,X_D,X_E,X_H\) and
+\(0\le t\le\pi/4\), subject to the five projection constraints
 \[
- q_L=\frac{19577}{5000},\qquad
- Q_1=\frac{1957767069}{500000000},\qquad
- Q=\frac{9789}{2500}.
+\begin{aligned}
+ (X_B-X_A)_y&\ge2, & (X_B-X_D)_x&\ge3,\\
+ (X_D-X_E)_y&\ge2,\\
+ e_t\cdot(X_A-X_H)&\ge2+\cos t, &
+ f_t\cdot(X_E-X_H)&\ge1+\sin t.
+\end{aligned}
 \tag{2}
 \]
-For positive radicals define
+Define
 \[
-\begin{aligned}
- r&=\sqrt{q-u^2},& U&=\sqrt{q-(2-u)^2},&V&=3-U,\\
- Y&=\sqrt{q-V^2},&v&=2-Y,&w&=\sqrt{q-v^2},\\
- k_1&=2-\cos t\,(r-1)+\sin t\,u,&&&
- k_2&=1+\cos t\,v-\sin t\,(w-1),\\
- F(q,u,t)&=k_1^2+k_2^2-q.
-\end{aligned}
+ \boxed{\quad
+ R_* = \min_{\substack{0\le t\le\pi/4,\ X_A,X_B,X_D,X_E,X_H\in\mathbb R^2\\
+                       \text{the five constraints (2) hold}}}
+                     \max_{i\in\{A,B,D,E,H\}}\|X_i\|.
+ \quad}
 \tag{3}
 \]
-The unique admissible stationary zero satisfies
+Thus the radius is the smallest centered disk containing a five-point
+chain with prescribed projection gaps. At any fixed tilt, the point
+problem is convex: its constraints are halfplanes and disks. The
+integers in (2) come from the unit-square contact widths.
+
+The [five-corner model](EIGHT_SQUARE_FIVE_CORNER_MODEL.md) and its
+[global selection proof](HAND_FIVE_CORNER_MODEL_SELECTION.md) establish
+that (3) has a unique minimizing tilt and five-point configuration.
+Denote them by \(t_*\) and \(X_i^*\). All five points lie on the
+optimal circle and all five inequalities (2) are equalities. This
+minimum agrees exactly with the previously constructed stationary
+constant: \(R_*^2=q_*\). No radius bracket or small coordinate box is
+needed to specify which solution the model means.
+
+The model note also gives symmetric circle equations and a two-height
+coordinate formula for algebraic evaluation. Those describe the fixed
+minimizer; they do not add parameters to the packing family.
+
+## 2. The complete geometric equality family
+
+### 2.1 One containment function and one separation function
+
+The unit square with center p and angle alpha is
 \[
- F(q_*,u_*,t_*)=F_u(q_*,u_*,t_*)=F_t(q_*,u_*,t_*)=0,
+ S(p,\alpha)=p+[-1/2,1/2]e_\alpha+[-1/2,1/2]f_\alpha.
 \tag{4}
 \]
+Its exact squared containment cost is
 \[
- q_L<q_*<Q_1<Q,\qquad .87<u_*<1.1,
-                   \qquad0<t_*<\arctan(1/5).
+ \mathcal C(p,\alpha)=
+ (|p\cdot e_\alpha|+1/2)^2+(|p\cdot f_\alpha|+1/2)^2.
 \tag{5}
 \]
-[Stationary existence](HAND_STATIONARY_EXISTENCE_WITHOUT_LOCAL_BOXES.md)
-constructs this zero by compact minimization and the intermediate
-value theorem. Its actual-envelope uniqueness input identifies it
-uniquely. The refined bounds and exact radicals used for the family
-are proved in
-[the table-free equality-family theorem](HAND_EQUALITY_FAMILY_WITHOUT_BRACKET_TABLES.md).
-No narrow numerical root box is a premise of the present theorem.
-
-This document assembles the completed continuous hand proofs. It makes
-no Lean elaboration, kernel-verification, source-table-removal, or build
-claim. The historical uncompiled Lean draft is a separate artifact.
-
-## 2. From an arbitrary packing to the original-radius boundary domain
-
-Translate the containing disk's center to the origin. If its squared
-radius q is greater than q*, (1) is immediate. Thus suppose q<=q* and
-choose the working ceiling
+For two square angles, put
 \[
-                            \bar q=\max(q,q_L).
+ \operatorname{Sep}_{\alpha,\beta}(d)=
+ \max_{n\in\{e_\alpha,f_\alpha,e_\beta,f_\beta\}}|d\cdot n|
+ -\frac{1+|\cos(\alpha-\beta)|+|\sin(\alpha-\beta)|}{2}.
 \tag{6}
 \]
-The original squares are unchanged and qL<=qbar<=q*<Q.
+Containment in the centered radius-R disk means \(\mathcal C\le R^2\).
+Two squares have disjoint open interiors exactly when their separation
+margin is nonnegative. Both statements include boundary contacts.
 
-### 2.1. Central core and the two distinct boundary operations
+### 2.2 Five fixed squares and two contact lines
 
-The central-core input of
-[the exterior-frame theorem](../HAND_EXTERIOR_FRAME_CONCENTRATION.md)
-gives a unique central square whose open interior contains the closed
-radius-1/12 disk. Its table-free dependencies are the
-[central-band identities](HAND_CENTRAL_BANDS_WITHOUT_TABLES.md),
-the analytic central-existence argument in
-[the global geometry proof](../HUMAN_GLOBAL_GEOMETRY_CLOSURE.md), and
-[the transverse-segment forbidden-width proof](../HUMAN_CENTRAL_CORE_FROM_TRANSVERSE_SEGMENT.md).
-The other seven squares avoid the open central disk. Put their centers
-in cyclic polar order and choose one actual signed separating axis
-on each neighboring pair. Weak contacts and simultaneous-axis ties
-are permitted; make one choice and retain it.
+Write \(e=e_{t_*}\), \(f=f_{t_*}\). Recover the fixed square
+centers from the minimizing corner points:
 
-Apply
-[the cyclic boundary reduction](../CYCLIC_RADIAL_BOUNDARY_REDUCTION.md)
-at qbar, as justified for a variable actual ceiling in Section 3 of
-[the fixed-ceiling transfer theorem](../HAND_FIXED_CEILING_TRANSFER_WITH_AUTOMATIC_TERMINAL.md).
-At each step the two previously selected incident inequalities define
-fixed halfplanes. A common recession direction moves that center to
-its first true-core or containing-circle boundary. This preserves
-the physical frames, all seven selected signed witnesses, core
-avoidance, and cyclic order. It need not preserve individual center
-rays or nonneighbor separation. After seven steps every exterior
-square is core or outer at the actual ceiling qbar.
+| Square | Fixed center | Angle |
+|---|---|---|
+| A | \(P_A=X_A^*+(-1/2,1/2)\) | 0 |
+| B | \(P_B=X_B^*+(-1/2,-1/2)\) | 0 |
+| D | \(P_D=X_D^*+(1/2,-1/2)\) | 0 |
+| E | \(P_E=X_E^*+(1/2,1/2)\) | 0 |
+| H | \(P_H=X_H^*+(e+f)/2\) | \(t_*\) |
 
-For the fixed-Q geometric classifications, expand just the outer
-centers of this boundary cycle along their fixed rays from qbar to Q;
-leave core centers fixed. Section 2 of the fixed-ceiling transfer
-theorem proves this operation unconditionally for boundary radii in
-[5/2,4]. It preserves every initially feasible signed axis, not merely
-the selected seven, and preserves frames, rays, signed tangent ratios,
-radial kinds, and cyclic gaps. It is a different operation from the
-preceding recession translation. In particular, it is the valid bridge
-when an auxiliary Q argument must retain a diagonal or a nearest-axis
-representative.
-
-### 2.2. Apply the global classification, then return to the known cycle
-
-First apply the whole-pair inequalities, odd-walk budget, and orientation
-lift argument of the
-[exterior-frame theorem](../HAND_EXTERIOR_FRAME_CONCENTRATION.md)
-to the expanded Q-boundary cycle. These arguments use only core avoidance,
-containment and consecutive nonoverlap, as verified in Section 2 of
-[the boundary-neighbor bridge](HAND_G3_BOUNDARY_NEIGHBOR_TRANSPORT_AND_E_ZERO_EXCLUSION.md).
-They give real frame spread less than 7/10 before any word or owner
-selection. No completion of the relaxed cycle to an eight-square packing
-is assumed.
-
-Next the
-[quarter-word theorem](HAND_QUARTER_WORD_SELECTION_WITHOUT_TABLES.md)
-leaves precisely the word 0101011. Choose cyclic roles
-(H,G,A,B,T,D,E), and use its remaining physical reflection to normalize
-E's signed tangent nonpositive.
-
-The cycle now satisfies the full stated domain of the boundary-neighbor
-bridge. Its variation argument gives
+The two sliders are
 \[
- \sum_i d_i=0,\qquad
- \sum_i(d_i)_+=\sum_i(-d_i)_+<7/10.
+ P_T(z)=((P_B)_x-1,z),\quad \alpha_T=0,
+ \qquad
+ P_G(\eta)=P_H+e+\eta f,\quad \alpha_G=t_*.
 \tag{7}
 \]
-The completed
-[global owner theorem](HAND_G3_GLOBAL_GA_OWNER_RIGIDITY.md), together
-with the zero-, BT-, DE-, and EH-owner conclusions it records, gives
+T moves vertically between the two upright columns; G moves parallel to
+f along its contact line with H. The central square is \(S(p,\theta)\),
+where theta is its actual angle modulo \(\pi/2\).
+
+### 2.3 The exact five-parameter domain
+
+Choose
 \[
- HG,AB,TD\in\{0,2\},\qquad
- GA,EH\in\{0,1\},\qquad BT,DE\in\{2,3\}.
+ (p,\theta,z,\eta)\in
+ \mathbb R^2\times\bigl(\mathbb R/(\pi/2)\mathbb Z\bigr)\times\mathbb R^2
 \tag{8}
 \]
-These restrictions quantify every feasible actual witness, including
-ties. H,A are positive outer anchors and B,D negative outer anchors.
-The zero-owner implications include
+subject to these geometric requirements:
+
+* **The sliders lie in the sharp disk:**
+  \(\mathcal C(P_T(z),0)\le R_*^2\) and
+  \(\mathcal C(P_G(\eta),t_*)\le R_*^2\).
+* **The whole T square lies above the horizontal axis, and the whole
+  G square lies below it:**
+  \[
+    z\ge1/2,\qquad
+    (P_G(\eta))_y+\frac{\cos t_*+\sin t_*}{2}\le0.
+  \tag{9}
+  \]
+* **The origin is in the central square's interior:**
+  \[
+    \max\{|p\cdot e_\theta|,|p\cdot f_\theta|\}<1/2.
+  \tag{10}
+  \]
+* **The central square separates from each exterior square:**
+  \[
+    \operatorname{Sep}_{\theta,\alpha_i}(P_i-p)\ge0
+       \qquad(i\in\{H,G,A,B,T,D,E\}).
+  \tag{11}
+  \]
+
+**Equality classification.** Every point of this domain gives an
+eight-square packing with least enclosing radius \(R_*\). Conversely,
+every equality packing has this form after an isometry and relabeling.
+The exterior cyclic order is H,G,A,B,T,D,E.
+
+The [geometric equality proof](EIGHT_SQUARE_GEOMETRIC_EQUALITY_MODEL.md)
+shows that all 21 exterior pair separations follow automatically from
+the fixed anchors and the two rails. Only the seven central pairs need
+to be listed. Central containment is automatic as well: (10) gives
+\(\mathcal C(p,\theta)<2\), whereas the horizontal gap three in
+(2) gives \(R_*^2\ge9/4>2\).
+
+This domain is exactly equivalent to the earlier core-based parameter
+domain, including its weak contacts. It has five independent freedoms:
+two central translations, one central rotation, and two exterior
+translations. A whole five-dimensional set of pairwise noncongruent
+packings is proved in the
+[equality-family certificate](HAND_EQUALITY_FAMILY_WITHOUT_BRACKET_TABLES.md).
+Four fixed circle contacts already force the displayed enclosing
+circle to be the unique least one.
+
+## 3. The lower bound and original equality use one working radius
+
+Take any disk of radius R containing an original eight-square packing,
+and translate its center to zero. If \(R>R_*\), the lower bound
+already holds. Otherwise the unchanged packing is contained in the
+radius-\(R_*\) disk. Perform the entire sharp boundary argument at
+this exact ceiling.
+
+### 3.1 Construct and classify a fresh boundary representative
+
+The central-core theorem selects one central square and seven exterior
+squares. Select one actual signed separating axis on every neighboring
+exterior pair. The recession boundary construction preserves these
+seven physical witnesses, the original square frames, core avoidance,
+and cyclic order while producing core or outer states at \(R_*\).
+It does not need to preserve individual center rays.
+
+For the established global classifications, expand just those outer
+states along their rays to the auxiliary fixed ceiling. This distinct
+operation preserves every feasible signed axis, physical frame,
+ray, signed tangent ratio, radial kind, and cyclic gap. The continuous
+frame, word, and owner theorems give the canonical roles and all
+feasible owner restrictions. Return to the already known feasible
+\(R_*\) boundary states, carrying these classification facts.
+
+At this exact radius, the
+[complete primary-owner entry theorem](HAND_G5_GLOBAL_PRIMARY_OWNER_ENTRY_COMPLETE.md)
+excludes every positive terminal and every genuine negative terminal.
+The latter would cause a strict circle loss at a rigid H or D anchor.
+The remaining hard class has stationary equality data. The
+[original-owner pullback](HAND_G5_GLOBAL_PRIMARY_ENTRY_ORIGINAL_EQUALITY_PULLBACK.md)
+shows that its hard witnesses were already valid at the untouched
+boundary source and that all seven initially selected physical axes
+have the stationary directions. In particular, the original squares
+have the required physical frames.
+
+These statements concern a necessary boundary system at the known
+ceiling. They do not assume that the original containing radius R is
+optimal. The detailed argument and its noncircular dependency order are
+in [the sharp-radius assembly](HAND_SHARP_RADIUS_BOUNDARY_ASSEMBLY.md).
+
+### 3.2 Apply the stationary identity to the original centers
+
+Let \(p_i\) be the original centers of the five anchors, let
+\(o_i\) be their selected actual corner offsets, and let
+\(g_j\ge0\) be the seven original selected contact gaps. The
+[stationary force theorem](HAND_TERMINAL_RESERVES_AND_SQUARE_COMPLETION_WITHOUT_TABLES.md)
+provides positive masses and contact weights with
+\(\sum_i\mu_i=1\). Its exact completion of squares is
 \[
-                        HG2\Rightarrow y_G<0,
-               \qquad  TD0\Rightarrow y_T>0.
-\tag{9}
-\]
-There is no G/T sign or frame-order assumption beyond these implications.
-
-Now return to the qbar-boundary cycle constructed in Section 2.1.
-This is recovery of known feasible states, not an inward-monotonicity
-claim. All its initially selected witnesses survived the expansion,
-so each belongs to (8). All its frames, directed nearest-axis choices,
-signed ratios, quarter word, and errors are the same as those at Q.
-Consequently (7), (9), the signs, and the four outer radial kinds
-hold at qbar. The actual outer coordinates are those on qbar, not
-those on Q. All hypotheses of the complete same-radius entry theorem
-are now present.
-
-## 3. Exhaustive same-radius primary-owner entry and the lower bound
-
-Apply
-[complete global primary-owner entry](HAND_G5_GLOBAL_PRIMARY_OWNER_ENTRY_COMPLETE.md)
-to the qbar-boundary cycle. Its proof has the following finite order.
-
-1. G-only and T-only pair reductions retain all five anchors and the
-   actual radius. Each side ends with a hard owner, a positive primary,
-   or a genuine negative primary with its adjacent transverse edge
-   aligned. Both signs, both radial kinds, all signed pair totals,
-   and weak zero-angle ties are covered.
-2. Every positive-GA terminal is excluded with either E sign, every
-   DE/EH owner and signed error, and all four terminal T regimes.
-   Core E, both secondaries, either sole primary, and paired primaries
-   have complete proofs. The arbitrary-angle EH0 contact extensions
-   cover the positive-E sole-DE endpoint without changing its original
-   circle. Physical reflection then excludes every positive-BT terminal.
-3. The four remaining hard/negative terminal cells are exhaustive.
-   Hard/hard enters the sharp theorem directly. A genuine negative
-   GA primary produces a strict H-anchor circle loss, and a genuine
-   negative BT primary a strict D-anchor loss. With both genuine
-   negatives, the first loss is retained through the second conversion.
-   The equality statement of the hard theorem excludes every such loss
-   at q<=q*.
-
-The only surviving route reaches the hard GA0/BT2 class at the same
-qbar by changing G and T alone. Its five original boundary anchors
-and their frames are identical. E still has the required radial
-alternative
-\[
- a_E\le7/12\quad\hbox{or}\quad
- a_E\ge\sqrt{\bar q/2}-1/2\ge\max\{b_H,b_D\}.
-\tag{10}
-\]
-The
-[arbitrary-sign, arbitrary-frame hard-owner theorem](HAND_G5_ARBITRARY_SIGNS_AND_FRAMES_HARD_OWNERS_SHARP_REDUCTION.md)
-therefore gives qbar>=q*. Thus qbar=q*.
-
-If the original q were below qL, this would contradict qL<q*.
-Otherwise qbar=q, and hence q=q*. This proves (1) for every original
-packing. At no point is an outer state at one ceiling merely relabeled
-as outer at another. The auxiliary Q states are used only to transfer
-classification facts; every sharp transport uses qbar itself.
-
-## 4. Equality for the original squares
-
-Assume the original packing has q=q*. Use the construction above with
-qbar=q*, retaining the initially selected physical signed witnesses
-through its recession translations and fixed-ray expansion.
-
-The
-[complete original-equality pullback](HAND_G5_GLOBAL_PRIMARY_ENTRY_ORIGINAL_EQUALITY_PULLBACK.md)
-handles the two necessary interfaces separately.
-
-First it examines the source of every G/T preprocessing alternative.
-If a hard owner was originally unavailable, the construction retains
-either a positive invariant pair total incompatible with the stationary
-frames, a strict actual HG/TD slack, or a genuine positive/negative
-terminal already excluded in Section 3. The
-[retained-contact rigidity lemma](HAND_G5_HARD_EQUALITY_RETAINED_CONTACT_RIGIDITY.md)
-makes the strict-slack test exact. It follows that the untouched
-q*-boundary source itself has actual GA0 and BT2. Reapply the hard
-theorem to that source; do not identify transported G/T coordinates
-with their ancestors.
-
-Second, at this stationary boundary source the pullback proves that
-the originally selected GA1 and EH0 quarter witnesses are infeasible.
-All other allowed selected alternatives coincide with the stationary
-physical normals at their zero frame errors. Hence the selected axes
-retained from the original packing have exactly the directions needed
-by the stationary positive dual.
-
-Reapply that dual directly to the untouched original centers, as in
-[the original-center equality identity](../EQUALITY_PULLBACK_TO_ORIGINAL_SQUARES.md).
-Containment bounds each selected anchor vertex by q*. The seven
-original separating inequalities have nonnegative gaps. The dual
-identity has strictly positive anchor masses and contact weights,
-proved without tables in Section 3 of
-[the stationary force-weight and square-completion proof](HAND_TERMINAL_RESERVES_AND_SQUARE_COMPLETION_WITHOUT_TABLES.md):
-\[
- \sum_i\mu_i|p_i+o_i|^2-\sum_j\lambda_j g_j
-       =q_*+\sum_i\mu_i|p_i-P_i|^2,
- \qquad\mu_i>0,\quad\sum_i\mu_i=1,\quad\lambda_j>0.
-\tag{11}
-\]
-Here i runs over H,A,B,D,E and j over the seven cycle contacts.
-Its left side is at most q*, so all five original anchor centers
-are P_i and every original contact gap is zero. The forces on the
-two intermediate squares vanish, leaving their actual translation
-sliders free. The original central square remains subject to its
-actual containment and seven original nonoverlap constraints.
-
-Thus equality is recovered for the original eight squares. Strict
-circle loss at a free intermediate was never treated as an anchor
-loss, and no preservation of omitted nonneighbor constraints was
-assumed during the necessary-system transports.
-
-## 5. Complete explicit equality family and attainment
-
-Evaluate (3) at the unique triple (q*,u*,t*), and put
-\[
- c=\cos t_*,\qquad s=\sin t_*,\qquad
-                    e=(c,s),\quad f=(-s,c).
+ \underbrace{\sum_i\mu_i\|p_i+o_i\|^2
+                -\sum_j\lambda_jg_j}_{\mathcal D}
+   =R_*^2+\sum_i\mu_i\|p_i-P_i\|^2,
+ \qquad \mu_i>0,\quad\lambda_j>0.
 \tag{12}
 \]
-After a common isometry the five fixed exterior centers are
+Every \(p_i+o_i\) is an actual original vertex, so its squared
+norm is at most \(R^2\). Every original gap is nonnegative. Hence
 \[
-\begin{aligned}
- P_A&=(r-1/2,\;1/2-u_*),&
- P_B&=(U-1/2,\;3/2-u_*),\\
- P_D&=(U-5/2,\;Y-1/2),&
- P_E&=(1/2-w,\;1/2-v),\\
- P_H&=(1/2-k_1)e+(1/2-k_2)f.
-\end{aligned}
+ \boxed{\qquad R_*^2\le\mathcal D\le R^2\le R_*^2.\qquad}
 \tag{13}
 \]
-The remaining exterior centers are
-\[
-                 P_T=(U-3/2,z),\qquad
-                 P_G=P_H+e+\eta f.
-\tag{14}
-\]
-The frames of A,B,T,D,E are zero, and those of H,G are t*.
-Set
-\[
- z_+=\sqrt{q_*-(U-1)^2}-1/2,\qquad
- \eta_-=k_2-\sqrt{q_*-(2-k_1)^2},\qquad
- \eta_+=k_2-13/12.
-\tag{15}
-\]
+This proves the lower bound and equality together. All five original
+anchor displacements vanish, and every original selected gap is zero.
+The zero-force G and T centers retain precisely their contact-line
+freedoms. The original central square retains its actual center, angle,
+and seven nonoverlap constraints. The geometric domain in Section 2
+therefore gives exactly the original equality family.
 
-Let the central center be (x,y) and its frame be
-theta=2 arctan kappa, with
-\[
- 1-\sqrt2\le\kappa<\sqrt2-1,\qquad
- C=\frac{1-\kappa^2}{1+\kappa^2},\qquad
- \Sigma=\frac{2\kappa}{1+\kappa^2}.
-\tag{16}
-\]
-For d=(d_x,d_y), define the explicit support maxima
-\[
-\begin{aligned}
- M_0(d)&=\max\{|d_x|,|d_y|,|Cd_x+\Sigma d_y|,
-                                    |-\Sigma d_x+Cd_y|\},\\
- M_t(d)&=\max\{|cd_x+sd_y|,|-sd_x+cd_y|,
-                       |Cd_x+\Sigma d_y|,|-\Sigma d_x+Cd_y|\},\\
- W_0&=(1+C+|\Sigma|)/2,\\
- W_t&=(1+cC+s\Sigma+|c\Sigma-sC|)/2.
-\end{aligned}
-\tag{17}
-\]
-The complete parameter domain is
-\[
-\boxed{\begin{gathered}
- 1-\sqrt2\le\kappa<\sqrt2-1,\qquad
- 7/12\le z\le z_+,\qquad\eta_-\le\eta\le\eta_+,\\
- |Cx+\Sigma y|<5/12,\qquad|-\Sigma x+Cy|<5/12,\\
- M_0(P_i-(x,y))\ge W_0\quad(i=A,B,D,E,T),\\
- M_t(P_i-(x,y))\ge W_t\quad(i=H,G).
-\end{gathered}}
-\tag{18}
-\]
-Every quantity is an explicit radical, rational expression, absolute
-value, or maximum. In particular the domain contains no unchosen
-separating-axis witness.
+There is no lower working cutoff, no \(\max(q,q_L)\), and no
+separate small-radius case. The auxiliary ceiling is used for
+classification only. All sharp entry transports use the single actual
+containing ceiling \(R_*\), and (12) is reapplied to
+the untouched original centers.
 
-Sections 3--4 of the
-[table-free equality-family proof](HAND_EQUALITY_FAMILY_WITHOUT_BRACKET_TABLES.md)
-prove all 21 exterior pair separations and exterior containment over
-the full slider ranges in (18). The last two lines of (18) are exactly
-the seven central/exterior separating-axis conditions. The strict core
-conditions also imply central containment, since its farthest squared
-vertex norm is less than 121/72<q*. Thus (18) is sufficient. Section 4
-of the present theorem and the same pair geometry prove necessity.
+## 4. Supporting proofs and exact arithmetic
 
-The domain is nonempty and has five independent freedoms. Section 5
-of the equality-family proof gives the entire closed box
-\[
-\begin{gathered}
- .139\le x\le.141,\qquad -.001\le y\le.001,
-                 \qquad .099\le\kappa\le.101,\\
- 1.349\le z\le1.351,\qquad -.321\le\eta\le-.319,
-\end{gathered}
-\tag{19}
-\]
-with direct geometric reserves on its whole domain. This proves
-attainment as well as the full family, rather than an isolated
-stationary picture.
+| Mathematical task | Proof |
+|---|---|
+| Define the radius without an enclosing numerical bracket | [Five-corner geometric model](EIGHT_SQUARE_FIVE_CORNER_MODEL.md) |
+| Identify its global minimum with the stationary construction | [Global five-corner selection](HAND_FIVE_CORNER_MODEL_SELECTION.md) |
+| State and verify every equality packing in physical coordinates | [Geometric equality model](EIGHT_SQUARE_GEOMETRIC_EQUALITY_MODEL.md) |
+| Assemble the arbitrary-packing proof directly at the exact radius | [Sharp-radius boundary assembly](HAND_SHARP_RADIUS_BOUNDARY_ASSEMBLY.md) |
+| Check each internal radius, core, and angle domain | [Auxiliary bounds and aliases](HAND_AUXILIARY_RADIUS_BOUNDS.md) |
+| Follow the complete owner and scalar dependency chain | [Hand-proof roadmap](TABLE_FREE_GEOMETRIC_HAND_ROADMAP.md) |
 
-## 6. Dependency boundary and proof status
+The auxiliary rational bounds still certify derivative signs, positive
+force weights, and the domains of the geometric transports. They are
+proof constants, not extra model parameters. Their catalog distinguishes
+physical radii, squared radii, corner coordinates, and the auxiliary
+core and frame bounds.
 
-The dependency order is central core and actual boundary reduction;
-continuous frame and word classification; every-witness owner
-rigidity; same-radius exhaustive primary entry; the hard sharp
-theorem; original-center equality; and the explicit family converse.
-Each global implication is supplied above. No coarse mismatch
-capture, S<=3/200 assumption, or unproved primary-conversion premise
-remains in this route.
-
-The scalar proofs used in these dependencies are symbolic inequalities
-on whole intervals or rectangles, with explicit rational Taylor and
-polynomial bounds. Exact arithmetic audits check those displayed
-constructions. Sampled minima, angle/state meshes, optimizer output,
-large retained numerical lookup tables, and historical generated
-certificate imports are not acceptance premises of this hand proof.
-The finite owner matrix and intrinsic contact cases enumerate
-geometric alternatives; they are not a numerical cover of the state
-space.
-
-The unrestricted lower bound, attainment, necessity of (18), and its
-converse are therefore complete on the stated hand-proof dependency
-chain. The current reading map is
-[the table-free roadmap](TABLE_FREE_GEOMETRIC_HAND_ROADMAP.md); the
-[handoff](HANDOFF_2026_10_20.md) records the delivered scope and the
-unchanged deferred Lean-verification boundary.
+The scalar certificates are symbolic inequalities on whole intervals
+or rectangles. Their exact arithmetic does not replace the geometric
+argument. No sampled minimum, angle mesh, numerical optimizer output,
+large lookup table, or unproved small-mismatch premise is an acceptance
+input to this hand proof. Its mathematical completion does not assert
+Lean elaboration or kernel verification; see the
+[current handoff](HANDOFF_2026_10_20.md) for that separate work boundary.

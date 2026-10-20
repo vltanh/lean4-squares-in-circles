@@ -7,12 +7,18 @@ five-parameter equality family. This pass changes hand-proof documentation;
 Lean compilation, CI, kernel verification, and further Lean source replacement
 remain outside the authorized work.
 
-## 1. Start with the complete theorem
+## 1. Start with the geometric model and complete theorem
 
 [HAND_UNRESTRICTED_EIGHT_SQUARE_THEOREM_WITHOUT_TABLES.md](HAND_UNRESTRICTED_EIGHT_SQUARE_THEOREM_WITHOUT_TABLES.md)
-contains the unrestricted statement, exact stationary definition of q*,
-packing-to-boundary reduction, exhaustive primary-owner entry, original-center
-equality, and the complete explicit parameter domain with its converse.
+contains the unrestricted statement, geometric definition of the radius,
+the complete equality family, and the lower-bound argument at one exact
+working radius. The supporting model notes are
+
+* [Five-corner geometric minimum](EIGHT_SQUARE_FIVE_CORNER_MODEL.md): five projection constraints define the exact radius and fixed anchor geometry.
+* [Global five-corner selection](HAND_FIVE_CORNER_MODEL_SELECTION.md): one continuous high-tilt support and the existing nominal stress identify that minimum with the stationary construction.
+* [Geometric equality family](EIGHT_SQUARE_GEOMETRIC_EQUALITY_MODEL.md): five anchors, two contact-line sliders, and an actual central angle, with one containment and separation formula.
+* [Sharp-radius boundary assembly](HAND_SHARP_RADIUS_BOUNDARY_ASSEMBLY.md): a fresh boundary cycle at the exact radius and a dual on the original centers prove the lower bound and equality together.
+* [Auxiliary arithmetic domains](HAND_AUXILIARY_RADIUS_BOUNDS.md): the radius, core, and frame bounds used only in the supporting estimates.
 
 The final two joins are
 
@@ -25,12 +31,9 @@ one-negative-BT branch, or original-equality gate. No bound of the form
 an independently proved conditional route and is not needed for this assembly.
 
 Every packing of eight unit squares with disjoint open interiors satisfies
-`R^2>=q*`. The exact q* is the unique admissible stationary zero of the actual
-five-circle defect. The table-free bracket used here is
-
-\[
- 19577/5000<q_*<1957767069/500000000<9789/2500.
-\]
+`R>=R*`. The radius R* is the global minimum of the five-corner model;
+its square agrees with the unique admissible stationary zero q*. Rational
+enclosures certify internal domains and do not define the model.
 
 At equality five exterior anchors and two orientation groups are fixed, while
 two exterior translation sliders and the central square's two translations
@@ -49,16 +52,17 @@ box proves attainment and the independent freedoms.
 | G3: every-witness owner rigidity | Zero owners are 0/2; GA/EH owners are 0/1 and BT/DE owners 2/3. H,A are positive outer anchors and B,D negative outer anchors. G/T remain arbitrary except for the actual zero-owner implications. | [Global GA-owner rigidity and its completed dependencies](HAND_G3_GLOBAL_GA_OWNER_RIGIDITY.md) |
 | Complete normal-primary entry | Independent G/T preprocessing, sign-free positive-primary exclusion, and all four remaining hard/negative cells reach the hard class at the original radius or give a strict contradiction. | [Complete owner entry](HAND_G5_GLOBAL_PRIMARY_OWNER_ENTRY_COMPLETE.md) |
 | Sharp hard class | GA0/BT2 is sharp with arbitrary G/T signs, frame orders, zero owners, E position and mixed owners, under the explicit core/outer E radial alternative. | [Arbitrary-sign, arbitrary-frame hard theorem](HAND_G5_ARBITRARY_SIGNS_AND_FRAMES_HARD_OWNERS_SHARP_REDUCTION.md) |
-| Exact constant | Actual circle convexity and continuous minimization give existence and uniqueness of the stationary zero, without a local root-cover premise. | [Stationary existence](HAND_STATIONARY_EXISTENCE_WITHOUT_LOCAL_BOXES.md) |
+| Exact constant | The global five-corner minimum exists and is unique; one support argument on the entire high-tilt arc joins it to the stationary construction. | [Five-corner selection](HAND_FIVE_CORNER_MODEL_SELECTION.md), [stationary existence](HAND_STATIONARY_EXISTENCE_WITHOUT_LOCAL_BOXES.md) |
 | Original-center equality | Exhaust every preprocessing source, reapply the hard theorem to untouched boundary states, identify the originally selected physical axes, then apply the positive stationary dual to the original centers. | [Complete original equality pullback](HAND_G5_GLOBAL_PRIMARY_ENTRY_ORIGINAL_EQUALITY_PULLBACK.md) |
-| Converse and five freedoms | Explicit anchors, both full slider intervals, seven central SAT conditions, all 21 exterior separations, and an admissible five-dimensional box. | [Equality family without bracket tables](HAND_EQUALITY_FAMILY_WITHOUT_BRACKET_TABLES.md) |
+| Converse and five freedoms | Fixed anchors, two geometric rails, seven central SAT conditions, all 21 exterior separations, and an admissible five-dimensional box. | [Geometric equality model](EIGHT_SQUARE_GEOMETRIC_EQUALITY_MODEL.md), [equality-family certificate](HAND_EQUALITY_FAMILY_WITHOUT_BRACKET_TABLES.md) |
 
 These are hand-proof statuses. They do not certify that the historical Lean
 import graph now follows this mathematical chain.
 
 ## 3. Exact exhaustive normal-entry matrix
 
-Work at one actual ceiling `qL<=q<=q*`. The boundary input has normal H,A,B,D
+The component theorem works at one actual ceiling `qL<=q<=q*`; the main
+assembly uses only `q=q*`. The boundary input has normal H,A,B,D
 outer anchors, normalized nonpositive E, arbitrary G/T signs, all original
 weak owners, frame spread and both variations below .7, and core or actual
 q-outer representatives.
@@ -137,11 +141,13 @@ The two boundary operations must remain distinct:
   initially feasible signed witness, rays, ratios, signs and radial kinds.
   Its unconditional monotonicity is the bridge to the auxiliary Q theorems.
 
-For an original radius below qL, first choose the containing ceiling qL
-and construct the boundary representative there from the original
-witnesses. The resulting anchors are actually outer at qL. Do not merely
-relabel earlier outer coordinates as qL-outer. Sharp transports, contact
-circles and equality losses always use the actual working q.
+For every original containing squared radius q<=q*, construct the boundary
+representative freshly at q* from the original witnesses. The dual then
+gives `q*<=D<=q`, proving sharpness and equality simultaneously. This
+[exact-radius assembly](HAND_SHARP_RADIUS_BOUNDARY_ASSEMBLY.md) eliminates
+the former `max(q,qL)` floor and separate low-radius case. Sharp transports,
+contact circles and equality losses all use the actual containing ceiling q*; the final
+dual uses the untouched original centers and their original ceiling q.
 
 ## 5. What was completed in the final entry pass
 
@@ -165,6 +171,22 @@ preservation to the general boundary translation. The fixed-ray expansion
 supplies every needed auxiliary-Q transfer. Stronger pre-boundary diagonal
 claims are not assumed by this proof.
 
+### The subsequent geometric-model simplification
+
+The radius is now defined by the global five-corner minimum. A new single
+constant-weight support excludes the entire high-tilt arc; the existing
+single polynomial stress handles the remaining arc and identifies the
+minimum with the exact stationary construction. Positive contact forces
+prove uniqueness of all five minimizing points, including arbitrary
+noncanonical realizations.
+
+The equality model uses the actual central angle, disk containment,
+geometric slider halfplanes, and one SAT formula. Its wider rails still
+give all 21 exterior separations automatically. The old central-core
+constraints follow afterward from the actual packing, proving exact
+equivalence of the parameter domains. The main proof now works directly
+at q* and bounds its final dual by the original containing radius.
+
 ## 6. Validation and the separate source-verification boundary
 
 The continuous arguments retain actual weak witnesses, either allowed sign,
@@ -179,6 +201,13 @@ Independent reviews checked the new exceptional-contact H blocks, all sixteen
 additional positive-T scalar constructions, the terminal-owner matrix, the
 radius-transfer interface, and the final unrestricted/equality assembly.
 Documentation checks verify referenced local files and mathematical delimiters.
+
+The model pass independently checks the arbitrary-point reduction, global
+minimum selection, all exterior pair groups, and exact-radius source
+pullback. Nineteen displayed rational identities in the new support proof
+and its radius join, the tilt-interval inclusion, and the two-height
+polynomial radius identity were reproduced exactly. The geometric figure
+uses approximate coordinates for illustration only.
 
 The historical Lean draft, its generated files, and its remaining import
 counts are described separately in [STATUS.md](STATUS.md). No Lean file was

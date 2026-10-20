@@ -318,4 +318,3 @@ The supporting existence, owner, transport and scalar proofs
 retain their original exact rational bounds. Those constants
 certify that the single actual working ceiling q* lies in their
 proved domains.
-

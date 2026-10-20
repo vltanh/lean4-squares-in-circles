@@ -3,7 +3,11 @@
 **Current hand-mathematics result, 20 October 2026:**
 [the unrestricted table-free theorem](HAND_UNRESTRICTED_EIGHT_SQUARE_THEOREM_WITHOUT_TABLES.md)
 is complete, including original-center equality and the full five-parameter
-converse. Its current dependencies are in
+converse. Its model now defines the exact radius as a
+[five-corner minimum](EIGHT_SQUARE_FIVE_CORNER_MODEL.md) and describes the
+[equality family geometrically](EIGHT_SQUARE_GEOMETRIC_EQUALITY_MODEL.md),
+without auxiliary radius or core constants in either definition.
+The sharp argument works directly at that radius. Its current dependencies are in
 [the hand-proof roadmap](TABLE_FREE_GEOMETRIC_HAND_ROADMAP.md).
 This final mathematical pass changes no Lean files and runs no compilation
 or CI. The source counts, implementation history, and deferred verification
