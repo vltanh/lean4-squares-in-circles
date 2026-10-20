@@ -252,10 +252,8 @@ For clarity, the elementary coefficient estimate used to verify
 `P(m+x)=sum_j p_j x^j`, define
 \[
  \mathsf L(P;m,r)=p_0-
-   \sum_{j\ {
-m odd}}|p_j|r^j+
-   \sum_{j\ge2\ {
-m even}}\min\{p_j,0\}r^j.
+   \sum_{j\ {\rm odd}}|p_j|r^j+
+   \sum_{j\ge2\ {\rm even}}\min\{p_j,0\}r^j.
 \tag{22}
 \]
 Then `P(s)>=L(P;m,r)` on `|s-m|<=r`; also
