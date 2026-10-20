@@ -660,4 +660,3 @@ All circle supports, masses, derivative signs and endpoint
 comparisons are explicit above. No state cover, angle mesh,
 sampled minimum, generated acceptance result, Lean compilation
 or CI result is a premise.
-

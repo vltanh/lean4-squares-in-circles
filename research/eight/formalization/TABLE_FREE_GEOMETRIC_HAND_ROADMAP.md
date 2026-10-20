@@ -34,7 +34,7 @@ ED-owner/H frame; no unjustified conversion to the old A/G tilt is used.
 | G1 | Closed on paper | Complete four-type frame concentration; real frame spread below 7/10. |
 | G2 | Closed on paper | All six wrong words excluded; only 0101011 survives. Reflection gives the weak E sign. |
 | G3 | All six cuts closed conditionally at S<=3/200 | Cut-free quarter owners first give four cuts at S<=1/32; complete H-low exclusions then give H>1/2, followed by G>-4/5. No tangent cut is an independent missing input after small mismatch. |
-| G4 | Global capture open; signed three-zero bridge proved | The original ordered HG2/TD0 class reduces at the same radius to five anchors, with strict anchor loss for every nonzero zero-edge error. Coarse mismatch bounds S<2/5 and S<13/50 remain open. |
+| G4 | Global capture open; ordered AB alignment covers all outer errors | The original ordered HG2/TD0 class reduces to five anchors with strict loss off zero. AB alignment now also covers every outer-owner/error pattern under the stated normal signs and frame order. Coarse mismatch bounds S<2/5 and S<13/50 remain open. |
 | G5 | Aligned and ordered nonnegative-outer-error classes sharp; global contractions open | The G/T-zero endpoint is excluded by two affine stress formulas. This completes all outer-owner combinations with nonnegative outer errors, the stated signs and frame order, including original equality. Negative noncanceling errors and global entry remain open. |
 | G6 | DE closed globally; forbidden BT forces A positive globally | Every original DE witness is in {2,3} without any mismatch or tangent input. A feasible BT0/1 also forces A positive by a shared two-edge charge. Excluding that remaining sign branch still uses S<=1/32. |
 | G7 | Closed conditionally at S<=3/200; old contraction retired | Every original mixed owner is G0/E1, without an S<=1/1000 premise. |
@@ -385,6 +385,17 @@ quartic. This does not assert that an arbitrary negative-error
 chain reaches that endpoint. Its general large-tangent negative
 errors require further work.
 
+[AB alignment with all ordered outer errors](HAND_G5_AB_ALIGNMENT_WITH_ALL_ORDERED_OUTER_ERRORS.md)
+now supplies the common A/B frame before these reductions.
+A negative intermediate frame has a continuous cap through the
+crossing with A or B; its crossing derivative exceeds `320/233`.
+The same two original AB owner comparisons therefore remain
+valid. Normalizing the transverse sum to one leaves at most
+one middle tangent above one half. All constructions retain the
+actual radius and preserve or recreate strict A/B circle loss.
+This theorem retains the original normal-sign, frame-order and
+hard-quarter-owner hypotheses.
+
 [The two-sided E-zero deletion theorem](HAND_G5_NEGATIVE_OUTER_E_ZERO_ERROR_DELETION.md)
 now excludes E-zero throughout the AB-aligned class with either
 or both negative noncanceling outer errors. Small transverse
@@ -403,6 +414,17 @@ E magnitude; after reflection its sign hypothesis must still
 be checked. The boundary with a negative error on the large-B
 side near the canonical equality configuration is not yet
 closed, nor is the general mixed positive/negative outer case.
+
+On that canonical negative boundary, the
+[small-error terminal](HAND_G5_CANONICAL_NEGATIVE_BOUNDARY_SMALL_ERROR_TERMINAL.md)
+already proves the sharp lower bound and five-anchor equality
+when its two errors total at most `3/200`. It reconstructs both
+discarded intermediates on the true core while keeping all five
+anchors fixed, then applies the exact circle identity and its
+proved analytic estimates directly. It does not assume that
+the auxiliary system has new physical gaps or G1 membership.
+Forcing the two-error bound on the full boundary remains an
+additional entry obligation at this checkpoint.
 
 These reductions have not yet closed all negative HG0/TD2 cases, the other
 frame orders, the remaining global sign alternatives or the
