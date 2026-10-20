@@ -1,5 +1,21 @@
 # Eight squares: Lean source draft
 
+## Completed mathematical hand proof
+
+The unrestricted table-free hand proof is now complete, including the sharp
+radius, attainment, and equality for the original eight squares. Start with
+[the complete theorem](HAND_UNRESTRICTED_EIGHT_SQUARE_THEOREM_WITHOUT_TABLES.md),
+[the current dependency roadmap](TABLE_FREE_GEOMETRIC_HAND_ROADMAP.md), and
+[the handoff](HANDOFF_2026_10_20.md). The final joins are
+[exhaustive same-radius owner entry](HAND_G5_GLOBAL_PRIMARY_OWNER_ENTRY_COMPLETE.md)
+and [original-center equality](HAND_G5_GLOBAL_PRIMARY_ENTRY_ORIGINAL_EQUALITY_PULLBACK.md).
+
+That mathematical completion does not change the verification status of the
+historical Lean source described below. No Lean files were changed in this
+final hand-proof pass, and no compilation or CI was run.
+
+## Historical uncompiled source
+
 This directory carries the transferred formalization roadmap and the completion
 record for the uncompiled n=8 Lean draft. The implementation follows the
 unrestricted hand proof through the exact optimal radius and the complete

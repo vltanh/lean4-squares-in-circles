@@ -2,10 +2,22 @@
 
 ## Start here
 
+The current table-free hand proof is
+[the unrestricted eight-square theorem](formalization/HAND_UNRESTRICTED_EIGHT_SQUARE_THEOREM_WITHOUT_TABLES.md).
+It proves the sharp radius, attainment, and the complete equality family
+for the original centers through continuous geometric and scalar arguments.
+Use [its dependency roadmap](formalization/TABLE_FREE_GEOMETRIC_HAND_ROADMAP.md)
+and [current handoff](formalization/HANDOFF_2026_10_20.md) to follow this
+completed route. Its exact stationary constant and equality family agree
+with the earlier proof below; its mathematical chain does not import the
+old numerical lookup tables. Lean source verification remains deferred.
+
+## Earlier tabular manuscript and provenance
+
 The sharp-radius hand proof and the complete equality classification are
 assembled in
 [UNRESTRICTED_EIGHT_SQUARE_HAND_PROOF.md](UNRESTRICTED_EIGHT_SQUARE_HAND_PROOF.md).
-That manuscript is the canonical consolidated proof. Sections 1–12 join
+That manuscript is the earlier consolidated tabular proof. Sections 1–12 join
 the continuous geometric arguments to the necessary fixed rational tables
 and include both directions of the equality classification. Section 13
 records the complete gate ledger.

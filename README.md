@@ -10,6 +10,11 @@ up to rotation about the disk centre and relabelling: exactly one for `n ≤ 6`,
 and for `n = 7` a family in which each of the three middle squares slides along
 the middle column.
 
+The separate [eight-square hand theorem](research/eight/formalization/HAND_UNRESTRICTED_EIGHT_SQUARE_THEOREM_WITHOUT_TABLES.md)
+now gives a complete table-free mathematical proof of the sharp radius and
+the full five-parameter equality family. The n=8 Lean source remains an
+[uncompiled draft](research/eight/formalization/STATUS.md).
+
 ![The optimal packings of one to seven unit squares, each in its dashed circle of radius R_n at a common scale, with n and the exact radius under each: one square; two squares side by side; the T; the 2 by 2 block; the plus; six squares, one of them turned by 45 degrees; and seven squares in columns of two, three and two](docs/proof/figures/01-introduction/optimal.svg)
 
 ## Definitions

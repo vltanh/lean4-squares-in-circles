@@ -1,5 +1,14 @@
 # n=8 formalization: source draft status
 
+**Current hand-mathematics result, 20 October 2026:**
+[the unrestricted table-free theorem](HAND_UNRESTRICTED_EIGHT_SQUARE_THEOREM_WITHOUT_TABLES.md)
+is complete, including original-center equality and the full five-parameter
+converse. Its current dependencies are in
+[the hand-proof roadmap](TABLE_FREE_GEOMETRIC_HAND_ROADMAP.md).
+This final mathematical pass changes no Lean files and runs no compilation
+or CI. The source counts, implementation history, and deferred verification
+gates below describe the separate historical uncompiled draft.
+
 **Deliverable: an uncompiled Lean source draft of the unrestricted eight-square
 argument, including the exact optimum and the five-parameter equality family.**
 The F0–F11 source stages, pure statement integration, and public assembly are
