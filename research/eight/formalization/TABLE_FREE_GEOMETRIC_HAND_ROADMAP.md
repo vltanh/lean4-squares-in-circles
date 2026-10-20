@@ -24,12 +24,12 @@ ED-owner/H frame; no unjustified conversion to the old A/G tilt is used.
 | G2 | Closed on paper | All six wrong words excluded; only 0101011 survives. Reflection gives the weak E sign. |
 | G3 | Open, except E normalization | Six structural tangent cuts on G,T,H,D are still required globally. |
 | G4 | Open | Coarse mismatch bounds S<2/5 and S<13/50. |
-| G5 | Contractions open; sign subgate closed conditionally | 13/50 to 1/10 and 1/10 to 3/200 remain open; signs follow from S<=1/10. |
+| G5 | Contractions open; sign subgates closed conditionally | A positive and D negative already follow from S<=13/50; all six zero-edge signs follow from S<=1/10. Both contractions remain open. |
 | G6 | Closed conditionally at S<=3/200 | Intended quarter owners, with the stated earlier cuts and zero owners. |
 | G7 | Closed conditionally at S<=3/200; old contraction retired | Every original mixed owner is G0/E1, without an S<=1/1000 premise. |
 | G8 | Closed conditionally at S<=3/200 | t>S and 1/10<tau<4/25, where tau is the actual ED-owner/H frame difference. |
 | G9 | Closed conditionally at S<=3/200 | Sharp owner-frame inequality with S/5000, all five completed anchors, and the full equality family. |
-| G10 | Open | Unrestricted assembly after global G3--G5 capture and the stated original-center transfers. |
+| G10 | Open pending G3--G5 | The fixed-ceiling/original-center transfer is proved for the new S<=3/200 owner-frame terminal. Global capture is still missing. |
 
 These are mathematical hand-proof statuses, not Lean verification claims.
 Historical certificate files and the uncompiled Lean draft remain unchanged.
@@ -118,7 +118,15 @@ In forward order, prove
  \qquad S\le1/10\Longrightarrow S<3/200.
 \]
 
-Between these steps,
+Already at the first input threshold,
+[the three-edge endpoint-sign theorem](HAND_COARSE_AD_SIGN_RIGIDITY.md)
+gives `u_A>0` and `u_D<0` from `S<=13/50`, without any candidate tangent
+cut, quarter/mixed owner or later sign theorem. Its actual proof uses only
+`|d_A|+|d_B|+|d_T|<=13/50`, retaining the shared error budget and all
+original BT witnesses. This is a conditional sign result; it does not
+establish the bound on S or either contraction.
+
+Between the two contraction steps,
 [the zero-edge sign theorem](HAND_ZERO_EDGE_SIGN_RIGIDITY_AT_ONE_TENTH.md)
 already gives `(sigma_H,sigma_G,sigma_A,sigma_B,sigma_T,sigma_D)
 =(+,-,+,-,+,-)` from `S<=1/10`, without G/T/H/D cuts or a preferred
@@ -220,11 +228,15 @@ coincide as required.
 and terminal estimates are not premises of this route. The earlier
 direct-E support theorem remains valid but is not needed for this assembly.
 
-The global caller must still supply the stated actual candidate
-hypotheses through the documented boundary/radius transfers. A boundary
-representative cannot be substituted for the original centers in the
-sharpness or equality step; no preservation of a tangent is assumed
-unless the relevant transfer theorem establishes it.
+The [updated fixed-ceiling transfer](HAND_FIXED_CEILING_TRANSFER_AT_THREE_TWO_HUNDREDTHS.md)
+proves the complete boundary/radius and original-center implication for
+this new terminal. It preserves initially selected signed witnesses
+through the boundary deformation, preserves rays and tau during the
+outer-radius expansion, and restores the already feasible lower-radius
+boundary cycle before applying the terminal. At equality it reapplies
+the zero-error stationary identity to the original centers. It requires
+only the table-free broad radius bounds `3.9154<q_*<Q1` and no final
+contraction. Global G3--G5 capture remains its explicit missing input.
 
 ## 5. Proof discipline and exact global stopping condition
 
@@ -256,8 +268,9 @@ The remaining unrestricted implication is
  \Longrightarrow\text{G3 cuts and G4--G5 }S<3/200.
 \]
 
-Only after that implication and its original-center transfers are
-established may Section 4 close G10 and the unrestricted theorem.
+Once that implication is proved, the completed original-center transfer
+and Section 4 close G10 and the unrestricted theorem. The transfer is no
+longer a separate open estimate; it does not discharge global capture.
 
 ## 6. Published milestones and retained history
 
@@ -280,3 +293,4 @@ roadmap and component inventories remain in its versions at
 `ca9567729c0839a68e439a91ab63b29e7419b0d4` and
 `bbe15f74b3406647b89eb26710629c0bb3a54f11`.
 Historical table counts are not new compilation measurements.
+
