@@ -87,24 +87,24 @@ for a boundary-neighbor cycle at q. Here is a precise way
 to use the already proved Q-boundary theorem without
 identifying the two radial boundaries.
 
-Suppose such a q-cycle had a T diagonal. Regard its actual
-squares as contained at Q, choose its already retained weak
-axis on every neighboring pair, and apply the fixed-axis
-radial-boundary reduction from Section 1 of
-[the exterior-frame theorem](../HAND_EXTERIOR_FRAME_CONCENTRATION.md).
-That reduction needs only the seven neighboring inequalities;
-it preserves all actual frames, center rays, cyclic order
-and the chosen weak witnesses. Radial rays also preserve
-the signed ratio \(|y_i|/a_i\), including a diagonal tie.
-The resulting core-or-Q-boundary cycle is therefore in the
-domain of the boundary bridge, with the same quarter word
-and a T diagonal. The
+Suppose such a q-cycle had a T diagonal. Apply the fixed-ray
+outer-radius expansion from Section 2 of
+[the fixed-ceiling transfer theorem](../HAND_FIXED_CEILING_TRANSFER_WITH_AUTOMATIC_TERMINAL.md)
+to this already constructed boundary cycle, increasing its
+outer radii from q to Q and leaving its core centers fixed.
+The unconditional monotonicity lemma applies because
+\(5/2<q_L\le q<Q<4\). It preserves every initially feasible
+signed SAT axis, all actual frames, center rays and cyclic gaps.
+Consequently it preserves the signed ratio \(|y_i|/a_i\),
+including a diagonal tie, and the quarter word. The resulting
+core-or-Q-boundary cycle is therefore in the domain of the
+boundary bridge, with the same T diagonal. The
 [nearest-axis tie theorem](HAND_G3_GLOBAL_NEAREST_AXIS_TIE_LOCATIONS.md)
 excludes it. This proves the required diagonal restriction
 for the original q-cycle as well.
 
 This is only an auxiliary contradiction. None of the actual
-comparison states in (5) is taken from that Q reduction,
+comparison states in (5) is taken from that Q expansion,
 and no anchor of the same-radius construction is enlarged.
 Nor is a Q-boundary marker evaluated as though it were a
 marker on the outer q circle. The variation bounds needed

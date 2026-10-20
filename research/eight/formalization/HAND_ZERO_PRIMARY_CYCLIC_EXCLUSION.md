@@ -511,12 +511,19 @@ constraint. It applies to any normalized seven-cycle at Q satisfying the
 common frame spread and actual G1 pair inequalities. All chart junctions,
 original signs, and original feasible axis ties were kept.
 
-It can be applied before the candidate coarse mismatch stage: a chosen
-bad original witness can be preserved when the boundary reduction and
-radius expansion to Q are made. The frame differences and quarter
-increment do not change under that radial process. The common G1 marker
-must be selected on this Q-boundary cycle; it must not be silently reused
-as a different radial or candidate arc label after changing the ceiling.
+It can be applied before the candidate coarse mismatch stage. For an
+actual core-or-outer boundary cycle at \(5/2\le q<Q\), retain a
+putative forbidden witness and use the unconditional fixed-ray
+expansion in Section 2 of
+[the fixed-ceiling transfer theorem](../HAND_FIXED_CEILING_TRANSFER_WITH_AUTOMATIC_TERMINAL.md).
+It expands outer centers to Q while fixing core centers, and preserves
+every previously feasible signed axis, physical frame, center ray,
+and quarter increment. The common G1 marker is selected only on this
+Q-boundary cycle; it is not reused at a different ceiling. For an
+original packing, first perform the recession-direction boundary
+construction and then assign the canonical roles and quarter word to
+its boundary descendant. That first construction need preserve only
+the selected physical signed witnesses, frames, and cyclic order.
 
 The complete mathematical result is the primary-edge estimate (17)
 and the cyclic exclusion (30), with its G1 prerequisite now independently

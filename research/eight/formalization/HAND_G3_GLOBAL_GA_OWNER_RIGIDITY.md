@@ -6,16 +6,17 @@ Put
 \[
  Q=9789/2500,\qquad h=7/10.
 \]
-Start with the original G0--G2 necessary cycle at a squared
-radius \(q\le Q\), in the established orientation
+Start with the actual G0--G2 boundary-neighbor cycle at a squared
+radius \(5/2\le q\le Q\), in the established orientation
 \(y_E\le0\). The surviving quarter word is 0101011, with
-cyclic roles H,G,A,B,T,D,E. Then
+cyclic roles H,G,A,B,T,D,E. Every center is on its true-core
+boundary or its actual outer q boundary. Then
 \[
  \boxed{\text{Every original GA witness has owner 0 or 1.}}
 \tag{1}
 \]
-This includes every original weak tie. In the fixed-witness
-boundary reduction, A is therefore positive outer. Combined
+This includes every original weak tie. On this actual
+boundary cycle, A is therefore positive outer. Combined
 with the previous global owner conclusions, the four quarter
 edges have the classes
 \[
@@ -37,9 +38,13 @@ been retained.
 ## 2. The complete high-GA necessary domain
 
 Suppose that a chosen original GA witness has owner 2 or 3.
-Apply the established G0 fixed-witness radial reduction at
-the working ceiling Q. It preserves the chosen weak witness
-and every other selected original neighboring witness.
+If q<Q, apply the unconditional fixed-ray expansion in Section 2 of
+[the fixed-ceiling transfer theorem](../HAND_FIXED_CEILING_TRANSFER_WITH_AUTOMATIC_TERMINAL.md).
+It expands each outer center to Q and fixes every core center,
+preserving every initially feasible signed witness, each physical
+frame, center ray, quarter increment and signed tangent ratio.
+The selected high GA witness and the E normalization therefore
+survive on the Q-boundary cycle used below.
 The global owner, sign and outer-anchor theorems give
 \[
  \begin{gathered}
@@ -186,15 +191,20 @@ Thus both signs of a in (6) are impossible. Sections 3--5
 exhaust all owners and signed totals in (3), proving the
 complete high-GA exclusion.
 
-## 6. Transfer back to original witnesses and remaining global work
+## 6. Transfer back to the original boundary witnesses
 
 The contradiction is strict at Q. An original feasible high
-GA witness at any \(q\le Q\), including a weak tie with a
-low witness, would survive the fixed-witness boundary
-reduction used in Section 2 and produce an excluded cycle.
-Therefore every original witness is low, proving (1).
+GA witness on a boundary cycle at \(5/2\le q\le Q\), including
+a weak tie with a low witness, survives the fixed-ray expansion
+of Section 2 and produces an excluded Q-boundary cycle.
+Therefore every original boundary witness is low, proving (1).
 The global low-quarter sign and outer-anchor theorems give
-the A conclusion and (2).
+the A conclusion and (2). Their signs and radial kinds transfer
+back through this same fixed-ray expansion. For an original
+packing, first perform its recession-direction boundary
+construction and then assign the canonical roles and signs;
+no ray or owner classification is transferred through that
+initial construction.
 
 This exclusion uses the larger ceiling only to derive a
 strict impossibility. It does not transport an equality

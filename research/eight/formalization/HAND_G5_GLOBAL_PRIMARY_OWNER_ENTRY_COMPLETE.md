@@ -384,14 +384,26 @@ strictly positive remaining primary; their sharp exceptional
 zero is therefore never discarded. The finite matrix contains
 no unstated generic-position exception.
 
-For an original packing below qL, run its original fixed-witness
-radial-boundary reduction at the working ceiling qL before
-applying this theorem. The resulting actual outer anchors then
-lie at qL, and the conclusion contradicts qL<q*. Merely changing
-the ceiling label of pre-existing outer representatives would
-not supply these hypotheses.
+For an original packing below qL, use the
+[fixed-witness recession-direction boundary reduction](../CYCLIC_RADIAL_BOUNDARY_REDUCTION.md)
+at the working ceiling qL. This first construction preserves
+the physical frames, cyclic order and chosen weak neighboring
+witnesses. Derive its canonical roles, signs and outer-anchor
+kinds after that construction, using an auxiliary fixed-ray
+expansion of the resulting boundary cycle to Q as in Section 2 of
+[the fixed-ceiling transfer theorem](../HAND_FIXED_CEILING_TRANSFER_WITH_AUTOMATIC_TERMINAL.md).
+That separate expansion preserves all signed rays and feasible
+axes, so the Q-boundary restrictions apply to the constructed
+qL-boundary cycle. Its actual outer anchors lie at qL, and this
+theorem contradicts qL<q*. Merely changing the ceiling label
+of pre-existing outer representatives would not supply these
+hypotheses.
 
 ## 8. Precise data retained for the original equality pullback
+
+The
+[complete original-equality pullback](HAND_G5_GLOBAL_PRIMARY_ENTRY_ORIGINAL_EQUALITY_PULLBACK.md)
+uses the following unchanged data and strictness conclusions.
 
 At q=q*, every route using a positive terminal is impossible,
 and every genuine aligned negative terminal is impossible by

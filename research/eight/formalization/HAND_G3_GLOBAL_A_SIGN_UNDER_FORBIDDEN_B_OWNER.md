@@ -2,11 +2,12 @@
 
 ## 1. The global statement
 
-Assume the actual G0--G2 seven-cycle at squared radius
+Assume the actual G0--G2 boundary-neighbor seven-cycle at squared radius
 \[
-q\le Q=\frac{9789}{2500},
+5/2\le q\le Q=\frac{9789}{2500},
 \]
 with its common real frame interval of length less than \(7/10\).
+Each center is on its true-core boundary or its actual outer q boundary.
 Then
 \[
 \boxed{\text{an original BT axis 0 or 1 feasible}
@@ -614,15 +615,19 @@ This is impossible, because
 \]
 No separate return metric estimate is needed for this two-edge proof.
 
-For original contained centers, retain the putative original BT
-witness and the offending weak A sign, then apply G0's fixed-witness
-boundary reduction and expansion to Q. These operations preserve
-the original weak witness, the real frames, and the signed radial
-ray. The global zero-primary and sign theorems then supply the AB2
-witness and the B/T signs used above. Choose the common G1 marker
-once on the resulting boundary cycle and apply the contradiction.
-Thus (1) holds for original centers, including weak ties and
-\(y_A=0\).
+For a boundary cycle at q<Q, retain the putative BT witness and
+offending weak A sign. Apply the unconditional fixed-ray expansion
+in Section 2 of
+[the fixed-ceiling transfer theorem](../HAND_FIXED_CEILING_TRANSFER_WITH_AUTOMATIC_TERMINAL.md):
+expand each outer center to its Q boundary and fix each core center.
+Every initially feasible signed witness, real frame, quarter
+increment and signed ray survives, including the offending A sign.
+The global zero-primary and sign theorems then supply the AB2
+witness and B/T signs used above. Choose the common G1 marker
+once on that Q-boundary cycle and apply the contradiction.
+Thus (1) holds for the original q-boundary states, including weak
+ties and \(y_A=0\). When starting from a packing, assign these
+roles and signs after its initial recession boundary construction.
 
 ## 9. Generic propagation through a zero--quarter pair
 

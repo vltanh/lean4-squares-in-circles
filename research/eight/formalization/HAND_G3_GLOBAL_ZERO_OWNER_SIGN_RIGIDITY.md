@@ -2,9 +2,10 @@
 
 ## 1. The theorem
 
-Assume the G0--G2 neighbor geometry at squared radius
-\(q\le Q=9789/2500\), with the common real frame spread less than
-\(7/10\). On a zero-quarter edge, write the signed own-frame centers
+Assume the G0--G2 boundary-neighbor geometry at squared radius
+\(5/2\le q\le Q=9789/2500\), with the common real frame spread less than
+\(7/10\). Each center is on its true-core boundary or its actual
+outer q boundary. On a zero-quarter edge, write the signed own-frame centers
 as \((a,-y)\), \((A,-Y)\), and its actual frame increment as d.
 Then
 \[
@@ -273,14 +274,17 @@ But
 \]
 The contradiction proves both statements in (1).
 
-For original contained centers, first retain the putative offending
-original witness and apply the G0 fixed-witness boundary reduction
-and expansion to Q. These operations preserve its weak SAT inequality,
-the frames and quarter increment, and the signed radial ray, hence
-the offending weak transverse sign. Choose the common G1 marker on
-the resulting Q-boundary cycle and apply the argument above. This
-is the same radial transfer used in the published zero-primary
-and global DE-owner proofs.
+For a boundary cycle at q<Q, retain the putative offending witness
+and apply the unconditional fixed-ray expansion in Section 2 of
+[the fixed-ceiling transfer theorem](../HAND_FIXED_CEILING_TRANSFER_WITH_AUTOMATIC_TERMINAL.md).
+It expands each outer center to its Q boundary and fixes each core
+center. Every previously feasible signed axis, frame, quarter
+increment and signed center ray is preserved, hence so is the
+offending weak transverse sign. Choose the common G1 marker on
+the resulting Q-boundary cycle and apply the argument above.
+For an original packing the recession-direction boundary construction
+comes first; these sign conclusions apply to the resulting boundary
+states, without a claim that the first construction preserves rays.
 
 The only new scalar calculation is the concavity of (11) on one
 entire interval and the two displayed rational endpoint comparisons.

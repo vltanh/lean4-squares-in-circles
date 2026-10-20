@@ -214,8 +214,11 @@ retained. The transformation is an isometry and a relabeling, not a
 motion or a new contact hypothesis.
 
 The same word conclusion applies to a boundary cycle at a smaller
-radius ceiling when the fixed-axis expansion to \(Q\) is used: that
-expansion preserves center rays, physical frames, and quarter increments.
+ceiling \(5/2\le q<Q\) by the unconditional fixed-ray expansion
+in Section 2 of
+[the fixed-ceiling transfer theorem](../HAND_FIXED_CEILING_TRANSFER_WITH_AUTOMATIC_TERMINAL.md).
+That expansion fixes core centers and preserves every initially feasible
+signed axis, center ray, physical frame, and quarter increment.
 The sign normalization likewise depends only on the preserved own-frame
 center direction.
 

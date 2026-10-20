@@ -173,11 +173,15 @@ or of the final E state.
 
 The theorem concerns the same-radius domain (1). If this
 lemma is used for an original packing with smaller ceiling,
-its original fixed-axis radial-boundary construction must
-first be performed at a chosen working ceiling at least qL;
-merely relabeling pre-existing outer states as outer at qL
+first perform the fixed-witness recession-direction boundary
+construction at a chosen working ceiling at least qL. Derive
+the roles, signs and outer-anchor kinds on that boundary cycle;
+the separate fixed-ray expansion of
+[the fixed-ceiling transfer theorem](../HAND_FIXED_CEILING_TRANSFER_WITH_AUTOMATIC_TERMINAL.md),
+Section 2, transfers the Q-boundary restrictions back to it.
+Merely relabeling pre-existing outer states as outer at qL
 would not satisfy the hypotheses. This is the same radius
-bookkeeping used by the other global-entry reductions.
+bookkeeping used by the complete primary-owner entry theorem.
 
 At a putative sharp packing q=q*, all x>0 cases are excluded
 by this theorem. An x=0 primary is an actual secondary tie

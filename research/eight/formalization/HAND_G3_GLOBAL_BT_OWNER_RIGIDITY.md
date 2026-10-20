@@ -248,11 +248,15 @@ can be feasible. All remaining BT witnesses have owner
 The generic quarter-owner sign theorem in
 HAND_G3_GLOBAL_D_OWNER_BY_CYCLIC_MARKER.md then forces
 the source B to have strictly negative signed tangent.
-This proves (2). The conclusion is obtained on the
-actual fixed-witness boundary cycle used by G0--G2;
-its fixed-axis transfer retains the selected original
-witness, so an original lower-radius candidate cannot
-avoid the exclusion by changing its witness later.
+This proves (2). For an actual boundary cycle at
+\(5/2\le q<Q\), the unconditional fixed-ray expansion in
+[the fixed-ceiling transfer theorem](../HAND_FIXED_CEILING_TRANSFER_WITH_AUTOMATIC_TERMINAL.md),
+Section 2, preserves every initially feasible signed axis,
+frame, center ray, quarter increment and radial kind while
+expanding outer centers to Q and fixing core centers. Thus
+each original lower-radius boundary witness and the B sign
+are subject to the same exclusion. This transfer is applied
+after any initial recession boundary construction.
 
 This is a global quarter-owner theorem. It does not yet
 choose the GA/EH mixed owners, prove the needed ordering

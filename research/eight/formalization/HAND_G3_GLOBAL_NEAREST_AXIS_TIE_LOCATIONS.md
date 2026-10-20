@@ -2,10 +2,12 @@
 
 ## 1. Statement
 
-Use the actual G0--G2 seven-cycle, with role order
+Use the actual G0--G2 boundary-neighbor seven-cycle at a ceiling
+\(5/2\le q\le Q=9789/2500\), with role order
 \((H,G,A,B,T,D,E)\), quarter word
 \(k=(0,1,0,1,0,1,1)\), common real frame spread below
-7/10, and physical center gaps greater than 19/25.
+7/10, and physical center gaps greater than 19/25. Every center
+is on its true-core boundary or its actual outer q boundary.
 Write a canonical own-frame center as \((a,-y)\), with
 \(a\ge b=|y|\).
 
@@ -115,9 +117,14 @@ only the exhaustive location restriction on actual
 nearest-axis ties; it does not supply a deformation to one
 of the two remaining diagonals.
 
-For original centers before radial boundary reduction,
-the same conclusion follows because that reduction and
-the expansion to Q preserve each signed radial ray and
-physical frame. A tie or strict transverse sign is thus
-preserved. No mesh, numerical acceptance result, scalar
-case table, Lean compilation or CI is used here.
+For a boundary cycle at q<Q, Section 2 of
+[the fixed-ceiling transfer theorem](../HAND_FIXED_CEILING_TRANSFER_WITH_AUTOMATIC_TERMINAL.md)
+expands its outer centers along their own rays to Q and fixes
+its core centers. Its unconditional monotonicity lemma preserves
+every initially feasible signed axis, every ray and physical frame,
+and hence every diagonal, signed tangent ratio and quarter increment.
+The Q-boundary wrong-word proofs therefore exclude precisely the
+same ties at q. This application follows the initial recession
+boundary construction; no center-ray preservation is required of
+that first construction. No mesh, numerical acceptance result,
+scalar case table, Lean compilation or CI is used here.

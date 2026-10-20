@@ -2,9 +2,10 @@
 
 ## 1. Result and dependency order
 
-Assume the actual G0--G2 seven-cycle geometry, its common real frame
+Assume the actual G0--G2 boundary-neighbor seven-cycle geometry, its common real frame
 spread less than \(7/10\), the containing squared radius
-\(q\le Q=9789/2500\), and the reflection normalization \(u_E\le0\).
+\(5/2\le q\le Q=9789/2500\), and the reflection normalization \(u_E\le0\).
+Each center is on its true-core boundary or its actual outer q boundary.
 Then
 \[
 \boxed{\text{every feasible original DE axis belongs to }\{2,3\}.}
@@ -553,24 +554,28 @@ But
 This contradiction excludes every forbidden original DE witness.
 By Section 8 it also excludes \(u_D\ge0\), proving \(u_D<0\).
 
-## 10. Original centers, ties, and verification boundary
+## 10. Boundary cycles at smaller ceilings, ties, and verification
 
-To apply the theorem to the original G0--G2 candidate at \(q\le Q\),
-retain the putative forbidden DE witness first, and retain any feasible
-original witness on each other edge. The G0 fixed-witness boundary
-reduction and radius expansion to Q preserve these chosen weak SAT
-inequalities, each square's real frame, and the quarter increments.
-Radial changes preserve the signed center ray, so they also preserve
-the weak normalization \(u_E\le0\). This is precisely the application
-boundary documented for the earlier global zero-primary exclusion in
-[its Section 7](HAND_ZERO_PRIMARY_CYCLIC_EXCLUSION.md).
+To apply the theorem to an actual boundary-neighbor cycle at
+\(5/2\le q<Q\), retain the putative forbidden DE witness first.
+Use Section 2 of
+[the fixed-ceiling transfer theorem](../HAND_FIXED_CEILING_TRANSFER_WITH_AUTOMATIC_TERMINAL.md)
+to expand each outer center along its own ray from q to Q while
+fixing every core center. This unconditional expansion preserves
+every initially feasible signed SAT inequality, each physical frame,
+the quarter increments and every signed center ray. In particular
+it preserves the weak normalization \(u_E\le0\). This is the same
+boundary-cycle application as in
+[the zero-primary exclusion, Section 7](HAND_ZERO_PRIMARY_CYCLIC_EXCLUSION.md).
 
-For the sign conclusion, the same reduction also preserves the
-putative weak sign \(u_D\ge0\); retain any original DE witness.
-Choose the common G1 marker on that Q-boundary cycle only after the
-radial reduction. Sections 2--9 then give a contradiction. No marker
-is transferred to another ceiling, and no actual contained center is
-silently replaced inside a proof that assumes the original center.
+For the sign conclusion, the same fixed-ray expansion preserves a
+putative weak sign \(u_D\ge0\); retain any actual DE witness.
+Evaluate the common G1 marker on the resulting Q-boundary cycle,
+and apply Sections 2--9 there. The marker is not transferred to q.
+For an original packing, the recession-direction boundary construction
+is performed first; the roles and signs in this theorem are assigned
+to that boundary cycle afterward. The present argument needs no
+preservation of pre-boundary center rays.
 
 Because the original forbidden witness was retained throughout, a tie
 with any other axis does not escape the argument. If a transverse
@@ -660,7 +665,7 @@ retained original edge and contradicts its original six-edge return
 path. A new global cycle is neither constructed nor required.
 This proves \(y<0\) in (40).
 
-The same fixed-witness radial transfer as in Section 10 applies to
+The same fixed-ray boundary-cycle expansion as in Section 10 applies to
 both implications: it preserves the offending weak endpoint sign.
 Weak sign-zero cases and every original tied axis have therefore been
 included.

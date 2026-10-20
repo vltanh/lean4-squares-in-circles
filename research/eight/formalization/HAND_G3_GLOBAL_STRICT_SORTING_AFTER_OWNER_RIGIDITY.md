@@ -1,13 +1,15 @@
-# Every exterior nearest-axis representative is strictly sorted
+# Every boundary-cycle nearest-axis representative is strictly sorted
 
 ## 1. Statement and dependency order
 
-Put \(Q=9789/2500\). Retain an actual G0--G2 seven-cycle
-at a common squared circle ceiling \(q\le Q\), with cyclic roles
+Put \(Q=9789/2500\). Retain an actual boundary-neighbor seven-cycle
+at a common squared circle ceiling \(5/2\le q\le Q\), with cyclic roles
 \((H,G,A,B,T,D,E)\), word \(0101011\), true-core avoidance,
 the captured real frames, and actual weak neighboring witnesses.
-The same statement holds on the boundary-neighbor domain of
-[the boundary bridge](HAND_G3_BOUNDARY_NEIGHBOR_TRANSPORT_AND_E_ZERO_EXCLUSION.md).
+Each center is on the true-core boundary or its outer q boundary,
+as in the domain of
+[the boundary bridge](HAND_G3_BOUNDARY_NEIGHBOR_TRANSPORT_AND_E_ZERO_EXCLUSION.md),
+with q in place of Q.
 Write each sorted own-frame center as \((a_i,-y_i)\), with
 \(a_i\ge |y_i|\).
 
@@ -31,9 +33,10 @@ used as an input to either of those proofs. The earlier
 left positive H and negative D as possible locations; the
 argument below removes exactly those two locations.
 
-All operations used in the proof are physical reflections or
-changes of representative at an actual diagonal. They preserve
-the original centers, circles, core distances and weak contacts.
+Physical reflections and changes of representative at an actual
+diagonal preserve the centers, circles, core distances and weak
+contacts. Section 2 uses a separate fixed-ray expansion only for
+an auxiliary contradiction at the coarse ceiling Q.
 
 ## 2. Normalize E and state the owner information precisely
 
@@ -63,12 +66,18 @@ original cycle as well. Thus (2) is available for either E
 sign, provided it is interpreted with the same cyclic roles.
 
 For a boundary-neighbor cycle at an actual \(q<Q\), the global
-owner exclusions are still valid. If needed in their proof,
-apply the fixed-witness radial-boundary reduction at Q, as in
-the global GA theorem. It preserves the selected forbidden
-witness and the center rays. This is an auxiliary impossibility
-argument; it is not a same-radius transport used in the sharp
-or equality proof.
+owner exclusions follow by the fixed-ray expansion in Section 2 of
+[the fixed-ceiling transfer theorem](../HAND_FIXED_CEILING_TRANSFER_WITH_AUTOMATIC_TERMINAL.md).
+Its unconditional monotonicity lemma applies on \([5/2,4]\).
+Expand each outer center from its q boundary to its Q boundary
+along its own ray, and leave each core center fixed. Every
+initially feasible signed SAT witness, each center ray and signed
+tangent ratio, the physical frames, and the cyclic gaps remain
+unchanged. Thus the quarter word and any putative forbidden
+owner survive on an actual Q-boundary cycle, where the completed
+global owner exclusions apply. This is an auxiliary impossibility
+argument; the expanded centers are not substituted into a
+same-radius transport or an equality proof.
 
 ## 3. An actual negative D diagonal would create a forbidden owner
 
@@ -103,11 +112,13 @@ There are exactly two normalization cases:
 | \(y_{\widetilde E}=y_T>0\) | Apply (3)--(4) to the recoded cycle. Its low BT witness becomes an actual GA2/GA3 witness in an E-nonpositive cycle, contradicting global GA-owner rigidity. |
 
 All hypotheses of those owner theorems are retained: the actual
-squares, core avoidance, cyclic physical gaps, word, real lifts,
-and weak separators. They do not require the old names of the
-four outer anchors to remain fixed. Their own fixed-witness
-boundary reduction supplies any boundary-anchor hypotheses.
-No unsupported sorted extension away from the diagonal is used.
+squares, boundary radial kinds, core avoidance, cyclic physical
+gaps, word, real lifts, and weak separators. They do not require
+the old names of the four outer anchors to remain fixed. If q<Q,
+the fixed-ray expansion just proved supplies the corresponding
+Q-boundary cycle after the recoding and E-sign normalization;
+the Q-boundary owner theorems then supply their own anchor
+consequences. No sorted extension away from the diagonal is used.
 
 The zero value \(y_T=0\) is in the first row. A tie between
 several actual GA witnesses does not avoid the contradiction:
@@ -127,12 +138,6 @@ diagonals at G,A,B,T,E, the negative H diagonal and the positive
 D diagonal, using the original wrong-word exclusions and the
 physical gap bound. Together with Sections 3--4, this proves
 (1) for all seven roles.
-
-For an original packing before boundary reduction, a diagonal
-would survive that reduction because each original center ray
-and physical square frame are retained. Its boundary descendant
-would contradict (1). Thus the conclusion also applies to the
-original exterior centers.
 
 ## 5. Use in the remaining entry problem
 

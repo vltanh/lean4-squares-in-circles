@@ -3,12 +3,15 @@
 ## 1. Statement and original witnesses
 
 Work on the original G0--G2 boundary cycle at
-\(q\le Q=9789/2500\), with its established orientation
+\(5/2\le q\le Q=9789/2500\), with its established orientation
 \(y_E\le0\). Keep every original feasible separating-axis
-witness, including ties. Apply the established G0 boundary
-reduction once at the working ceiling Q, preserving each
-chosen original weak witness; the outer states below are
-the resulting Q-boundary representatives. Then
+witness, including ties. Use the unconditional fixed-ray expansion
+in Section 2 of
+[the fixed-ceiling transfer theorem](../HAND_FIXED_CEILING_TRANSFER_WITH_AUTOMATIC_TERMINAL.md)
+to expand outer centers from q to Q and fix core centers. It
+preserves every initially feasible signed axis, each frame and
+center ray, the quarter word, signs and radial kinds. The outer
+states below are the resulting Q-boundary representatives. Then
 \[
 \boxed{\qquad
 \text{Every original EH witness has index 0 or 1.}
