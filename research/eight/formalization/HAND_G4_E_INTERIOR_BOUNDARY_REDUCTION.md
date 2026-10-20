@@ -28,6 +28,29 @@ Retain original transverse witnesses on HG, AB and TD, original
 axis 0 on GA, axis 2 on BT, axis 3 on DE and axis 1 on EH.
 These signs, alignments and owners are hypotheses of this note.
 
+The theorem has the same conclusion for the weaker five-anchor
+system in which G and T are omitted. Keep only H, A, B, D and E,
+their stated signs, sorting, circles and frames, and assume
+\[
+\begin{split}
+ b_H+a_A\cos t-b_A\sin t&\ge1+W(t),\\
+ a_B\cos u-b_B\sin u+b_D&\ge1+W(u),\\
+ b_A+b_B&\ge1,
+\end{split}
+\]
+together with the two mixed inequalities in (2). These are the
+composites of HG with GA and BT with TD at aligned outer zero
+edges. Every estimate below uses precisely these composites and
+the five retained circles; it never needs replacement G or T
+centers. In this formulation only the four non-E anchors are fixed.
+
+One may also replace each containing-circle ceiling Q by any
+common actual ceiling \(q\le Q\) throughout the hypotheses and
+the E relaxation. All uniform estimates below continue to use Q.
+The minimizing E state then remains within q, while every fixed
+A/B corner value, including a strict loss below q inherited from
+a previous reduction, is retained without alteration.
+
 Fix all six non-E vertices and their frames. Their original values
 are never changed in the estimates below. Form the auxiliary E
 relaxation consisting of \((a,b,\delta,\epsilon)\) with

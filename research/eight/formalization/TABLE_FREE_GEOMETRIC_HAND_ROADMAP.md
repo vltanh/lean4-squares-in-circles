@@ -1,4 +1,4 @@
-# Table-free hand proof: all cuts follow from small mismatch; global capture remains
+# Table-free hand proof: the hard class is sharp; global capture remains
 
 **PR #10:** `formalize/eight-uncompiled-draft`.
 **Mode:** hand mathematics only; no Lean changes, compilation, or CI.
@@ -10,9 +10,14 @@ table in the mathematical dependency chain.
 
 The unrestricted table-free proof is **not complete**. Its remaining
 substantive work is global candidate capture. After G0--G2 and the E-sign
-normalization, the only extra input now needed by the complete downstream
-chain is `S<=3/200`. All six tangent cuts follow from that bound without
-any prior cut or preferred mixed owner.
+normalization, `S<=3/200` suffices for one complete downstream chain.
+All six tangent cuts follow from that bound without any prior cut or
+preferred mixed owner. A second route now closes the entire aligned
+hard-quarter class, without any mismatch hypothesis, by explicit
+radius-preserving reductions. Its signed three-zero bridge also closes
+the original ordered class with HG2/TD0 and the stated remaining owners.
+The missing global step must supply either complete route's entry
+hypotheses; neither is asserted for arbitrary candidates.
 
 The old final contraction `S<=3/200 => S<1/1000` is now **unnecessary**.
 Mixed-owner rigidity, both tilt signs, the complete positive tilt tails,
@@ -26,13 +31,13 @@ ED-owner/H frame; no unjustified conversion to the old A/G tilt is used.
 | G1 | Closed on paper | Complete four-type frame concentration; real frame spread below 7/10. |
 | G2 | Closed on paper | All six wrong words excluded; only 0101011 survives. Reflection gives the weak E sign. |
 | G3 | All six cuts closed conditionally at S<=3/200 | Cut-free quarter owners first give four cuts at S<=1/32; complete H-low exclusions then give H>1/2, followed by G>-4/5. No tangent cut is an independent missing input after small mismatch. |
-| G4 | Open | Coarse mismatch bounds S<2/5 and S<13/50. |
-| G5 | Contractions open; D sign now global | D is negative from the global cyclic-marker theorem; A positive follows from S<=13/50, and all six zero-edge signs follow from S<=1/10. Both contractions remain open. |
+| G4 | Global capture open; signed three-zero bridge proved | The original ordered HG2/TD0 class reduces at the same radius to five anchors, with strict anchor loss for every nonzero zero-edge error. Coarse mismatch bounds S<2/5 and S<13/50 remain open. |
+| G5 | Entire aligned hard class sharp; global contractions open | Two endpoint reductions and explicit stresses give q>=q_* and stationary equality for every nonnegative hard-quarter split. The global D sign is proved; the other signs and both mismatch contractions remain conditional. |
 | G6 | DE closed globally; BT closed conditionally at S<=1/32 | Every original DE witness is in {2,3} without any mismatch or tangent input. The complete BT theorem still uses S<=1/32. |
 | G7 | Closed conditionally at S<=3/200; old contraction retired | Every original mixed owner is G0/E1, without an S<=1/1000 premise. |
 | G8 | Closed conditionally at S<=3/200 | t>S and 1/10<tau<4/25, where tau is the actual ED-owner/H frame difference. |
 | G9 | Closed conditionally at S<=3/200 | Sharp owner-frame inequality with S/5000, all five completed anchors, and the full equality family. |
-| G10 | Open pending global mismatch capture | The fixed-ceiling/original-center transfer is proved for the new S<=3/200 owner-frame terminal. It now needs only the remaining mismatch input beyond the entry geometry. |
+| G10 | Open pending global entry into a completed route | The original-center transfer at S<=3/200 and the ordered canceling-owner hard-class corollary are proved, including equality. Arbitrary candidates are not yet captured by either route. |
 
 These are mathematical hand-proof statuses, not Lean verification claims.
 Historical certificate files and the uncompiled Lean draft remain unchanged.
@@ -260,7 +265,55 @@ original quarter/mixed witnesses. Negative E coordinates, nonzero
 zero-edge errors and the remaining original owner alternatives are
 not covered by this branch result.
 
-## 3. Completed entry and word dependencies
+## 3. A completed alternative: the entire hard-quarter class
+
+[The sharp hard-class assembly](HAND_G5_ALIGNED_HARD_CLASS_SHARP_REDUCTION.md)
+proves `q>=q_*` for the full five-anchor system obtained by canceling
+G/T from the three aligned zero edges, with GA0, BT2, DE3 and EH1,
+the intended transverse signs, and every nonnegative split
+`t+u=delta+epsilon=alpha<=7/10`. No bound on `u+delta` or on an
+earlier mismatch is used. Its equality theorem fixes the original
+five anchors and forces `u=delta=0`, `t=epsilon=t_*`.
+
+The first three shared-anchor inequalities force `0<alpha<11/50`.
+The E-zero theorem above and
+[the complete epsilon-zero exclusion](HAND_G5_ALIGNED_HARD_EPSILON_ZERO_EXCLUSION.md)
+exclude both sign/outer-orientation endpoints. The E-interior
+reduction therefore moves only E to `delta=0`, preserving the
+other anchors and the actual circle ceiling. Any positive original
+delta leaves a strictly smaller E corner value.
+
+[The full feasible-cap convexity theorem](HAND_G5_HARD_SPLIT_CONVEXITY_FULL_FEASIBLE_CAP_RANGE.md)
+then moves the A/B common frame to a split endpoint. Its two cap
+functions use the separate actual A and B corner ceilings, so
+inherited strict corner slack is retained. The whole-arc
+[GA/DE endpoint exclusion](HAND_G5_ALIGNED_GA_DE_ENDPOINT_EXCLUSION.md)
+rules out `t=delta=0`; the surviving endpoint has `u=delta=0`.
+The existing nominal tails give its tilt window, after which a
+five-circle stationary identity proves the sharp bound directly.
+Every positive circle mass forces equality in each original anchor,
+so the strict slack retained by either reduction also proves the
+original-orientation equality statement.
+
+[The shared-center A/B alignment comparison](HAND_G5_AB_SHARED_CENTER_ALIGNMENT_COMPARISON.md)
+and [the signed three-zero reduction](HAND_G4_SIGNED_THREE_ZERO_REDUCTION_FOR_CANCELING_OUTER_OWNERS.md)
+provide an original-candidate bridge. With the stated signs,
+`theta_D<=theta_A,theta_B<=theta_H`, `theta_D<=theta_E<=theta_H`,
+and original axes HG2, GA0, AB0/2, BT2, TD0, DE3, EH1, the bridge
+aligns all three zero differences in the necessary five-anchor
+system at the actual radius. H, D and E remain fixed. Every
+nonzero original zero difference leaves strict A/B circle slack.
+Section 8 of the sharp assembly consequently proves the complete
+lower bound and equality classification for this original ordered
+class, without a mismatch premise.
+
+The bridge does not yet cover HG0, TD2, other frame orders, the
+remaining global sign alternatives or the remaining original
+quarter/mixed witnesses. These are entry obligations for this
+route. The complete theorem for the hard class must not be used
+to assume them for the unrestricted problem.
+
+## 4. Completed entry and word dependencies
 
 [Central-band identities](HAND_CENTRAL_BANDS_WITHOUT_TABLES.md), with their
 specified analytic central-existence and forbidden-width arguments,
@@ -283,7 +336,7 @@ Its two residual component assemblies are
 The only surviving word is 0101011. Its reflection changes E's sign and
 preserves the whole word, giving `u_E<=0`.
 
-## 4. The completed downstream chain at S<=3/200
+## 5. The completed downstream chain at S<=3/200
 
 This section is a **conditional theorem**, not a claim that an arbitrary
 packing satisfies its inputs. Work with an actual G0--G2 candidate,
@@ -373,7 +426,7 @@ only the table-free broad radius bounds `3.9154<q_*<Q1` and no final
 contraction. Global mismatch capture remains its explicit missing input;
 the tangent cuts are now consequences of that one input.
 
-## 5. Proof discipline and exact global stopping condition
+## 6. Proof discipline and exact global stopping condition
 
 A gate closes only on its entire continuous domain: both signs, all
 original feasible axes, chart joins, outer endpoints and weak ties.
@@ -389,14 +442,15 @@ A state or angle mesh, generated Bernstein row inventory, recursive owner
 table, sampled minimum or numerical PASS is not a proof premise.
 An uncomputed potential defined by an infimum is not its own proof.
 
-The next work is **global mismatch capture**, not further treatment of the
-now-completed small-mismatch cuts, owners, tilt, or terminal stages. If a proposed
+The next work is **global entry into a completed route**. The small-mismatch
+cuts, owners, tilt and terminal, and the entire hard-class reduction in
+Section 3, are already proved on their stated domains. If a proposed
 one-vertex potential is false, record the obstruction and retain coupled
 vertices in a two-edge or whole-cycle argument; do not conceal it by
 refining a grid. Later-stage signs, cuts and owners cannot be used in
 reverse to justify an earlier stage.
 
-The remaining unrestricted implication is
+One sufficient remaining unrestricted implication is
 
 \[
  \boxed{\text{G0--G2 actual candidate at }q\le Q_1,
@@ -405,15 +459,16 @@ The remaining unrestricted implication is
 
 Here `Q1=1957767069/500000000`. The historical G4/G5 contractions are
 one possible route to this implication; they are not mandatory intermediate
-theorems. A proved radius-preserving reduction to the completed regime
-could also supply the lower-bound argument, with its equality consequences
-checked separately. Neither route is asserted here as complete.
+theorems. A proved global reduction into the hard class of Section 3 would
+also supply the lower bound, with every original equality consequence
+retained. That route is now complete for the stated ordered canceling-owner
+class; entry from arbitrary candidates remains open.
 
 Once the displayed implication is proved, the completed original-center transfer
-and Section 4 close G10 and the unrestricted theorem. The transfer is no
+and Section 5 close G10 and the unrestricted theorem. The transfer is no
 longer a separate open estimate; it does not discharge global capture.
 
-## 6. Published milestones and retained history
+## 7. Published milestones and retained history
 
 The new downstream proofs were pushed on 19 October 2026:
 
