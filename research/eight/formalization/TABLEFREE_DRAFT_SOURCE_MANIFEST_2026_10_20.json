@@ -1,0 +1,162 @@
+{
+  "date": "2026-10-20",
+  "source_commit": "a6a7d840fba709ad9ab8d20f7c698737bfc25a7f",
+  "compiled": false,
+  "files": [
+    {
+      "path": "SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean",
+      "sha256": "8294d2a5e4891418f428f5f0971bda1a1a56c4261aa1c3b0a03a67060e2a10e6",
+      "bytes": 12644
+    },
+    {
+      "path": "SquaresInCircles/Eight/CentralForbidden.lean",
+      "sha256": "38b34774fdce620e8703270221059e5ef0ede9cef5142510b35f640bcc49f2b6",
+      "bytes": 659
+    },
+    {
+      "path": "SquaresInCircles/Eight/TableFree/AffineCircleEntry.lean",
+      "sha256": "4e322b9df9a3e684571bd80abf5e04908acee9de9ee43b9dc0f8b2d57990633f",
+      "bytes": 7727
+    },
+    {
+      "path": "SquaresInCircles/Eight/TableFree/CancelingSupport.lean",
+      "sha256": "9e95a7c66b521c55d80e0c6a70f0a0f2245188743767d3e7d86311a21f0d6e98",
+      "bytes": 10424
+    },
+    {
+      "path": "SquaresInCircles/Eight/TableFree/CentralAngleCalculus.lean",
+      "sha256": "bfc2bca2200d01ab4084e94fa2e7dc0a15c46fd5f494df14cbe875d9ad74fcf2",
+      "bytes": 11402
+    },
+    {
+      "path": "SquaresInCircles/Eight/TableFree/CentralForbiddenWidths.lean",
+      "sha256": "b7f7cf165446a142d37f803a3bf66238fd773b970a3a080eb3b1435bf609f48d",
+      "bytes": 15649
+    },
+    {
+      "path": "SquaresInCircles/Eight/TableFree/CentralScalarArithmetic.lean",
+      "sha256": "d63a1d04c53d924e04810080792f125ccb3c9829ced80b452d5e5770667ce8da",
+      "bytes": 8245
+    },
+    {
+      "path": "SquaresInCircles/Eight/TableFree/CentralSegment.lean",
+      "sha256": "0f370bbec480cf85da10f5f44341c7902fa22663c5a55eecd86957d4bab867f7",
+      "bytes": 17599
+    },
+    {
+      "path": "SquaresInCircles/Eight/TableFree/CircleGeometry.lean",
+      "sha256": "7f9c2010335669dc095ae8c1f4f2886467eaf1d89da0fcefcc7b6185daee6517",
+      "bytes": 8989
+    },
+    {
+      "path": "SquaresInCircles/Eight/TableFree/ContactArcMinimum.lean",
+      "sha256": "99495dea34fb78a2916b289e91d6db43e67c3875458aded36eef3b2b8b50a258",
+      "bytes": 5428
+    },
+    {
+      "path": "SquaresInCircles/Eight/TableFree/ContactContinuation.lean",
+      "sha256": "2dc6a7eeddc770df67360df75a62636ac4ef9903f6654adaadbaed77a43a9ae5",
+      "bytes": 5554
+    },
+    {
+      "path": "SquaresInCircles/Eight/TableFree/EndpointPrinciples.lean",
+      "sha256": "2966a6972b15fafd502caf671a5b42926e75e3eaf73d5f03aed63403c643efdd",
+      "bytes": 5002
+    },
+    {
+      "path": "SquaresInCircles/Eight/TableFree/FlatCoreCancelingPrimary.lean",
+      "sha256": "b5603fb70c3c8d592bcf72c21764667e103ffa98a9f63e83a8ddbdde135f1b85",
+      "bytes": 12897
+    },
+    {
+      "path": "SquaresInCircles/Eight/TableFree/FlatCoreNegativePrimary.lean",
+      "sha256": "a424fd29155726cf11a184ebc27daa90d852109ef3b5cf9a1442d98a722a49fd",
+      "bytes": 17385
+    },
+    {
+      "path": "SquaresInCircles/Eight/TableFree/LossLedger.lean",
+      "sha256": "fd71d7523ec684500a1c30704f5f5802c8d50c4435e13cf5d91912bbda24e1a3",
+      "bytes": 5977
+    },
+    {
+      "path": "SquaresInCircles/Eight/TableFree/NecessaryCycle.lean",
+      "sha256": "30bbca8acf44e76133c34703f67a868b7a0d8a75368132048632be679fd8af97",
+      "bytes": 10387
+    },
+    {
+      "path": "SquaresInCircles/Eight/TableFree/NegativeContactGeometry.lean",
+      "sha256": "dc02a51d58ea2b859e5ac904c1821f99b0e1efc94a918fe61f4f0548f30e9a4f",
+      "bytes": 18947
+    },
+    {
+      "path": "SquaresInCircles/Eight/TableFree/NegativeContactScalars.lean",
+      "sha256": "8c324232d065d01a20970c2404dc02b5e50b457ea6a85cd1296464aa6afeb5bb",
+      "bytes": 10403
+    },
+    {
+      "path": "SquaresInCircles/Eight/TableFree/NegativePrimaryEntry.lean",
+      "sha256": "43794540e0c2713729db5b54336b04e620790f208afbe2f5d1d3cc41b90a943a",
+      "bytes": 10131
+    },
+    {
+      "path": "SquaresInCircles/Eight/TableFree/OriginalFiveCorner.lean",
+      "sha256": "d41e9c6b51d99b5b72eeacbc5be77372a9f248fcde3e41725bf66c86a70cc4e9",
+      "bytes": 9257
+    },
+    {
+      "path": "SquaresInCircles/Eight/TableFree/PairedPrimaryGeometry.lean",
+      "sha256": "e365409b858356c8112dcc41a9f9ef55303550e5ec420963535ecedc7ec1da53",
+      "bytes": 18582
+    },
+    {
+      "path": "SquaresInCircles/Eight/TableFree/PairedPrimaryScalars.lean",
+      "sha256": "4a6036906b0780c0f36f551d5cb712ecdb5af323d0eb38df8e68ca57820315b9",
+      "bytes": 14997
+    },
+    {
+      "path": "SquaresInCircles/Eight/TableFree/PositivePairEndpoints.lean",
+      "sha256": "31129680c4a1c4d80d6010249f236d278a258fa8d92c707e4808d74d088ba9a7",
+      "bytes": 4948
+    },
+    {
+      "path": "SquaresInCircles/Eight/TableFree/PositivePrimaryNonpositiveTotal.lean",
+      "sha256": "061617570ff7d50621eee0f970d03569229fe03fc5df95bb08b6d6bee8541d6d",
+      "bytes": 11480
+    },
+    {
+      "path": "SquaresInCircles/Eight/TableFree/PrimaryCap.lean",
+      "sha256": "1571a118d8f432c3ee26b4a36add9d8e60c9938dabcd1f6244d4291df3e1c1c3",
+      "bytes": 8632
+    },
+    {
+      "path": "SquaresInCircles/Eight/TableFree/PrimaryPairReduction.lean",
+      "sha256": "eba0c54ba4d40d2e015e8a9103245d173406f095b24c292b9dcb64965ff383c5",
+      "bytes": 8773
+    },
+    {
+      "path": "SquaresInCircles/Eight/TableFree/SignedCoordinates.lean",
+      "sha256": "11454662591ec5ff266cb1a822ce952606077ca83c13657dc159d81c5b297b77",
+      "bytes": 12268
+    },
+    {
+      "path": "SquaresInCircles/Eight/TableFree/TrigonometricReserves.lean",
+      "sha256": "3ad042c9b5052f4095bc1e104403449410e34f62bbc1c778c5329ce2d4fcda8e",
+      "bytes": 3349
+    },
+    {
+      "path": "SquaresInCircles/Eight/TableFree/Variation.lean",
+      "sha256": "ebe8c99b503448d27452dc203621d9c61eebe465901ecb7b980e9991a84c89e1",
+      "bytes": 7945
+    },
+    {
+      "path": "SquaresInCircles/Eight/TableFree/WrongSignNonpositiveTotal.lean",
+      "sha256": "d76a856b1cd06c1f65177a27f65fcf3b90ec4080247cd929ee5859e0636b3c58",
+      "bytes": 18322
+    },
+    {
+      "path": "SquaresInCircles/Eight/TableFree/ZeroTangentPrimary.lean",
+      "sha256": "39d8570d159686420f8f7073a15f42fda016dab70a24a643f939d2260896b41f",
+      "bytes": 12176
+    }
+  ]
+}

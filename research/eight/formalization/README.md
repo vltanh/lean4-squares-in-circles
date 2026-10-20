@@ -1,5 +1,9 @@
 # Eight squares: Lean source draft
 
+## Table-free source handoff — 20 October 2026
+
+The new [31-module table-free Lean draft and handoff](HANDOFF_2026_10_20_TABLEFREE_LEAN_SOURCE.md) is pushed, with [source hashes](TABLEFREE_DRAFT_SOURCE_MANIFEST_2026_10_20.json). **This local replacement is not a completed/compiled unrestricted table-free proof:** the global signed G/T owner-entry assembly and original-source axis recovery remain to be integrated, and the public n=8 theorem still uses compatibility capture and generated dependencies. The source was not compiled or checked by CI.
+
 ## Current geometric source delivery
 
 [LEAN_GEOMETRIC_MODEL_DRAFT.md](LEAN_GEOMETRIC_MODEL_DRAFT.md) describes the
