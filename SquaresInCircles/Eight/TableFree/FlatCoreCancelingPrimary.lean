@@ -200,17 +200,17 @@ theorem flat_core_negative_ga1_hg2_transport
       G'.Sorted ∧ G'.Core ∧ G'.AvoidsCore ∧ G'.circle<q ∧
       zeroFeasible H G' (x-Θ) j ∧ quarterFeasible G' A (-x) 1 ∧
       (x=0 → quarterFeasible G' A (-x) 0) ∧
-      (z≠Θ → edgeWidth (x-Θ)<zeroProjection H G' (x-Θ) j) := by
+      (z≠Θ → edgeWidth (x-Θ)<zeroProjection H G' (x-Θ) j) ∧ G'.y<0 := by
   obtain ⟨hGa,hgsmall,hzsmall,hAb,hPupper⟩ := exceptional_negative_primary_cuts
     hGs hAs hGb hAc hq hGy hAy hz hGA hnotGA0
   rcases lt_trichotomy z Θ with hnegative | haligned | hpositive
   · have hstrict := canceling_negative_error_reselection hHs hGs hHy hGy
       hGa hgsmall ⟨(abs_le.mp hgap).1,sub_neg.mpr hnegative⟩ hHG
-    obtain ⟨G',x,ha,hend,hframe,hs,hc,havoid,hcircle,hHG',hGA',hhard,hstrict'⟩ :=
+    obtain ⟨G',x,ha,hend,hframe,hs,hc,havoid,hcircle,hHG',hGA',hhard,hstrict',hy'⟩ :=
       flat_core_negative_ga1_hg0_transport hq hHs hGs hAs hHc hGc hAc
         hHcore hGcore hAcore hGa hGy hz hΘ hgap hstrict.le hGA
     exact ⟨G',x,0,Or.inl rfl,ha,hend,hframe,hs,hc,havoid,hcircle,
-      hHG',hGA',hhard,hstrict'⟩
+      hHG',hGA',hhard,hstrict',hy'⟩
   all_goals
     let P : ℝ := A.a-1/2
     have hzwide : z∈Icc 0 (7/10 : ℝ) := ⟨hz.1.le,hz.2⟩
@@ -254,12 +254,17 @@ theorem flat_core_negative_ga1_hg2_transport
         abs_of_nonpos hGy] at hslack ⊢
       linarith
     refine ⟨G',z,2,Or.inr rfl,by simp [G',PrimaryCap.point,hGa],
-      Or.inr haligned,?_,hs,hc,havoid,hinside,htransverse,hprimary.ge,?_,?_⟩
+      Or.inr haligned,?_,hs,hc,havoid,hinside,htransverse,hprimary.ge,?_,?_,?_⟩
     · exact ⟨(min_le_left 0 Θ).trans hz.1.le,le_max_left _ _⟩
     · intro hz0
       exact False.elim (ne_of_gt hz.1 hz0)
     · intro hne
       exact False.elim (hne haligned)
+    · have hHb := (H.coordinate_bounds hHs hHcore hHc hq).2.2
+      have hHyupper : H.y<9/10 := (le_abs_self _).trans_lt hHb
+      have hy : 1≤H.y-G'.y := by
+        simpa [haligned,zeroFeasible,zeroProjection] using htransverse
+      linarith
   · have hstart : 1≤CancelingSupport.composite P H.a H.y Θ z := by
       have hh := hHG
       rw [zeroFeasible,edgeWidth_positive_formula
@@ -275,9 +280,17 @@ theorem flat_core_negative_ga1_hg2_transport
     have hprimary := PrimaryCap.actual_primary_contact (A := A)
       (P := P) (x := x) (by dsimp [P]; ring) hxwide
     refine ⟨G',x,2,Or.inr rfl,by simp [G',PrimaryCap.point,hGa],
-      hend,hframe,hs,hc,havoid,hinside,hstrict.le,hprimary.ge,?_,fun _ => hstrict⟩
-    intro hx0
-    subst x
-    exact (quarter_low_tie _ _).2 (by simpa using hprimary.ge)
+      hend,hframe,hs,hc,havoid,hinside,hstrict.le,hprimary.ge,?_,(fun _ => hstrict),?_⟩
+    · intro hx0
+      subst x
+      exact (quarter_low_tie _ _).2 (by simpa using hprimary.ge)
+    · rcases hend with hx0 | hxΘ
+      · simp [G',PrimaryCap.point,hx0,PrimaryCap.value]
+        linarith [hP.1]
+      · have hHb := (H.coordinate_bounds hHs hHcore hHc hq).2.2
+        have hHyupper : H.y<9/10 := (le_abs_self _).trans_lt hHb
+        have hslack : 1<H.y-G'.y := by
+          simpa [hxΘ,zeroProjection] using hstrict
+        linarith
 
 end SquaresInCircles.Eight.TableFree

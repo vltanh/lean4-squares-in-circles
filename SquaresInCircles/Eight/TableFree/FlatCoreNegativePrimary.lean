@@ -359,7 +359,7 @@ theorem flat_core_negative_ga1_hg0_transport
       G'.Sorted ∧ G'.Core ∧ G'.AvoidsCore ∧ G'.circle<q ∧
       zeroFeasible H G' (x-Θ) 0 ∧ quarterFeasible G' A (-x) 1 ∧
       (x=0 → quarterFeasible G' A (-x) 0) ∧
-      (z≠Θ → edgeWidth (x-Θ)<zeroProjection H G' (x-Θ) 0) := by
+      (z≠Θ → edgeWidth (x-Θ)<zeroProjection H G' (x-Θ) 0) ∧ G'.y<0 := by
   let P := A.a-1/2
   let g := -G.y
   have hg0 : 0≤g := neg_nonneg.mpr hGy
@@ -404,11 +404,19 @@ theorem flat_core_negative_ga1_hg0_transport
     (P := P) (x := x) (by dsimp [P]; ring) hxwide
   refine ⟨G',x,by simp [G',PrimaryCap.point,hGa],hend,hframe,
     hs',hc',havoid,hcircle,(PrimaryCap.demand_iff_actual H).1 hxcontact,
-    hcontact.ge,?_,?_⟩
+    hcontact.ge,?_,?_,?_⟩
   · intro hx0
     subst x
     exact (quarter_low_tie _ _).2 (by simpa using hcontact.ge)
   · intro hne
     exact (PrimaryCap.demand_strict_iff_actual H).1 (hstrict hne)
+  · rcases hend with hx0 | hxΘ
+    · simp [G',PrimaryCap.point,hx0,PrimaryCap.value]
+      linarith [hP.1]
+    · have haligned := (PrimaryCap.demand_iff_actual H).1 hxcontact
+      rw [hxΘ,sub_self] at haligned
+      have hy : 1≤H.y-G'.y := by
+        simpa [G',zeroFeasible,zeroProjection] using haligned
+      linarith
 
 end SquaresInCircles.Eight.TableFree
