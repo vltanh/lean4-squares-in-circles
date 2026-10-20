@@ -93,10 +93,17 @@ theorem top_core_rail_recovered {p : Parameters}
   obtain ⟨hAB,hABu,hTx,hTxu,hGx,hGxu,hED,hBbot,hDbot,hHtop,hGtop,hGleft⟩ :=
     sharp_exterior_bounds
   have hclosed : closedSquare (p.toOld.model sharpData 5) (0,p.top-1/2) := by
-    norm_num [EqualityParameters.model,toOld,axisSquare,Coordinates.pT,
-      closedSquare,localX,localY]
-    rw [abs_of_neg (by linarith : -(sharpData.x₂-3/2)<0)]
-    linarith
+    change closedSquare (axisSquare (sharpData.pT p.top)) (0,p.top-1/2)
+    have hx : localX (axisSquare (sharpData.pT p.top)) (0,p.top-1/2)=
+        -(sharpData.x₂-3/2) := by
+      dsimp [localX,axisSquare,Coordinates.pT]
+      ring
+    have hy : localY (axisSquare (sharpData.pT p.top)) (0,p.top-1/2)=
+        -(1/2:ℝ) := by
+      dsimp [localY,axisSquare,Coordinates.pT]
+      ring
+    rw [closedSquare,hx,hy,abs_neg,abs_of_pos hTx]
+    exact ⟨hTxu.le,by norm_num⟩
   have hh := hclear (0,p.top-1/2) hclosed
   dsimp [coreRadius,normSq] at hh
   have hz := hp.top_above_axis

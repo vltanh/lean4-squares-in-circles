@@ -8,7 +8,8 @@
 # con-ron.
 #
 # Challenge.lean restates the pure definition bodies of Geometry.lean,
-# StatementEight.lean, and Optimal.lean in that order. The source-only helper
+# StatementEight.lean, StatementEightGeometric.lean, and Optimal.lean in that
+# order. The source-only helper
 # scripts/sync-challenge.py performs this synchronization; --write copies the
 # definitions before the comparator check. The Challenge header and theorem
 # region are left as they are. To materialize source without any build, run

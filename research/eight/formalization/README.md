@@ -6,9 +6,10 @@
 new authorized Lean pass: the pure five-corner minimum, exact two-height
 formula, actual-angle equality domain, unique least circle, and original
 packing assembly at the sharp radius. The public registries now use these
-geometric definitions. All proof bodies are uncompiled. Audit work is
-deferred until the whole draft is written, as requested; no Lean, lake, or
-CI is run. The report also identifies the retained capture dependencies
+geometric definitions. All proof bodies are uncompiled. The static audit
+was performed only after the whole draft was written, as requested; no
+Lean, lake, or CI was run. The report also identifies the retained capture
+dependencies
 and the alternative hand-entry transcription still to be substituted.
 
 ## Completed mathematical hand proof

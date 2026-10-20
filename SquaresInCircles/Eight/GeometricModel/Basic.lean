@@ -82,8 +82,7 @@ theorem projection_e_quarter_turn (p : Point) (t : ℝ) :
 
 theorem projection_f_quarter_turn (p : Point) (t : ℝ) :
     projection (f (t + Real.pi / 2)) p = -projection (e t) p := by
-  simp [projection, e, f, Real.cos_add, Real.sin_add]
-  ring
+  simp [projection, e, f, Real.cos_add, Real.sin_add] <;> ring
 
 theorem openSquare_quarter_turn (p x : Point) (t : ℝ) :
     openSquare (square p (t + Real.pi / 2)) x ↔ openSquare (square p t) x := by

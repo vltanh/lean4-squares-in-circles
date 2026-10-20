@@ -30,8 +30,7 @@ theorem square_sqContained_iff (p : Point) (t q : ℝ) :
 theorem square_relativeC (p q : Point) (a b : ℝ) :
     relativeC (square p a) (square q b) = Real.cos (a - b) := by
   dsimp [relativeC, square]
-  rw [Real.cos_sub]
-  ring
+  exact (Real.cos_sub a b).symm
 
 theorem square_relativeS (p q : Point) (a b : ℝ) :
     relativeS (square p a) (square q b) = -Real.sin (a - b) := by
@@ -53,7 +52,7 @@ theorem disjoint_iff_max (K L : UnitSquare) :
                  |frameY L (sub L.center K.center)|) := by
   constructor
   · intro h
-    simpa only [le_max_iff] using SAT.separating_axes K L h
+    simpa only [le_max_iff, or_assoc] using SAT.separating_axes K L h
   · intro h
     simp only [le_max_iff] at h
     rcases h with (h | h) | (h | h)
@@ -69,8 +68,10 @@ theorem disjoint_iff_max (K L : UnitSquare) :
 theorem square_disjoint_iff (p q : Point) (a b : ℝ) :
     (∀ x, ¬ (openSquare (square p a) x ∧ openSquare (square q b) x)) ↔
       0 ≤ separationMargin a b (sub q p) := by
-  rw [disjoint_iff_max, square_threshold, sub_nonneg]
-  rfl
+  have h := disjoint_iff_max (square p a) (square q b)
+  rw [square_threshold] at h
+  simpa only [separationMargin, sub_nonneg, frameX, frameY, square,
+    projection, e, f] using h
 
 theorem square_supportWidth (p : Point) (t : ℝ) (n : Point) :
     width (square p t) n = supportWidth t n := rfl

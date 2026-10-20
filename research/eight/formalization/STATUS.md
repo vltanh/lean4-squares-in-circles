@@ -6,9 +6,10 @@ five-corner minimum, the equivalent two-height model, the actual-angle
 equality family, the unique least circle, and the original-center assembly
 at the exact sharp radius. `optimalRadius 8` and `optimalPackings 8` now use
 the pure geometric statement, and the root `optimum` uses its new proof
-record. The source is uncompiled. A static audit is reserved for the end of
-the complete drafting pass; Lean, lake, CI and certificate replay remain
-unrun. The concrete global-entry proof retains conditional capture and its
+record. The source is uncompiled. The end-only static audit is complete;
+its source findings and fixes are recorded in the report. Lean, lake, CI
+and certificate replay remain unrun. The concrete global-entry proof retains
+conditional capture and its
 generated dependencies; the report makes that boundary explicit.
 
 The following hand-result and F0–F12 ledger describe the earlier snapshots.

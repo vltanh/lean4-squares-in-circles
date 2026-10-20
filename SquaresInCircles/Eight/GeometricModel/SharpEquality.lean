@@ -57,7 +57,7 @@ theorem origin_sharp_uniqueness {S : Fin 8 → UnitSquare}
   have hpadmissible : p.Admissible sharpData :=
     admissible_of_original_geometry hpmodel hpcore hframe
       (by simpa [hpz] using hZ) (by simpa [hpη] using hη)
-  refine ⟨reflectedModel N.reflected p,
+  refine ⟨Eight.reflectedModel N.reflected p,
     ⟨N.reflected,p,hpadmissible,rfl⟩,?_⟩
   obtain ⟨φ,σ,hφ⟩ := N.congruent
   refine ⟨φ,σ,?_⟩
@@ -65,13 +65,13 @@ theorem origin_sharp_uniqueness {S : Fin 8 → UnitSquare}
   have hm :
       (openSquare
         (if N.reflected then reflectDiagonalSquare (N.squares i) else N.squares i) x ↔
-        openSquare (reflectedModel N.reflected p i) x) ∧
+        openSquare (Eight.reflectedModel N.reflected p i) x) ∧
       (closedSquare
         (if N.reflected then reflectDiagonalSquare (N.squares i) else N.squares i) x ↔
-        closedSquare (reflectedModel N.reflected p i) x) := by
+        closedSquare (Eight.reflectedModel N.reflected p i) x) := by
     cases hb : N.reflected
-    · simpa [reflectedModel,hb] using ⟨(hmodel i).1 x,(hmodel i).2 x⟩
-    · simpa [reflectedModel,hb,reflectDiagonal_open,reflectDiagonal_closed] using
+    · simpa [Eight.reflectedModel,hb] using ⟨(hmodel i).1 x,(hmodel i).2 x⟩
+    · simpa [Eight.reflectedModel,hb,reflectDiagonal_open,reflectDiagonal_closed] using
         ⟨(hmodel i).1 (diagonalPoint x),(hmodel i).2 (diagonalPoint x)⟩
   exact ⟨(hφ i x).1.trans hm.1,(hφ i x).2.trans hm.2⟩
 

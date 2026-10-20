@@ -186,19 +186,28 @@ theorem wide_exterior_separator {z η : ℝ} (hz : 1/2≤z)
   have hGA := sharpData.GA_contact η
   have hHE := sharpData.HE_contact
   have hst := sharpData.standard_contacts z
+  have he : sharpData.e≠(0,0) := by
+    intro h
+    have hc₀ := congrArg Prod.fst h
+    dsimp [Coordinates.e] at hc₀
+    linarith
+  have hf : sharpData.f≠(0,0) := by
+    intro h
+    have hc₀ := congrArg Prod.snd h
+    dsimp [Coordinates.f] at hc₀
+    linarith
   fin_cases i <;> fin_cases j <;> norm_num at hij
   all_goals
     constructor
-    · simp [exteriorNormal,Coordinates.e,Coordinates.f]
-      first | norm_num | intro h; nlinarith [hc,hs]
+    · simp [exteriorNormal,he,hf]
     · norm_num [exteriorNormal,Coordinates.exteriorSquares,
-        Coordinates.exteriorCenters]
+        Coordinates.exteriorCenters] <;>
       simp only [width_tilted_e,width_tilted_f,width_axis_e,width_axis_f,
-        width_tilted_horizontal,width_tilted_vertical]
+        width_tilted_horizontal,width_tilted_vertical] <;>
       simp [width,frameX,frameY,axisSquare,dot,sub,Coordinates.e,Coordinates.f,
         Coordinates.pA,Coordinates.pB,Coordinates.pD,Coordinates.pE,
         Coordinates.pH,Coordinates.pT,Coordinates.pG,Coordinates.inFrame,
-        Coordinates.x₃,Coordinates.y₄] at hHG hHA hGA hHE hst ⊢
+        Coordinates.x₃,Coordinates.y₄] at hHG hHA hGA hHE hst ⊢ <;>
       first | linarith | nlinarith
 
 theorem wide_exterior_disjoint {z η : ℝ} (hz : 1/2≤z)

@@ -92,7 +92,7 @@ theorem gap_eq (t : ℝ) :
 theorem root₁_pos (t : ℝ) : 0 < harmonicArg P₁ 0 (-2*a) t := by
   exact harmonic_arg_positive (a := 1) (b := a)
     (by norm_num) (by norm_num [a]) (by norm_num [a])
-    (by rfl) (by ring)
+    (by norm_num [P₁]) (by ring)
 
 theorem root₄_pos (t : ℝ) : 0 < harmonicArg P₄ (-2*d*η) 0 t := by
   exact harmonic_arg_positive (a := d) (b := η)

@@ -175,6 +175,10 @@ theorem chain_spans {p : TwoHeights} (h : p.InDomain) : p.chain.spans := by
   have hsum := p.upper_circles.2.2
   have he := framePoint_e p.angle (-p.K₁) (-p.K₂)
   have hf := framePoint_f p.angle (-p.K₁) (-p.K₂)
+  have hsub (n x y : Point) :
+      projection n (sub x y)=projection n x-projection n y := by
+    dsimp [projection, sub]
+    ring
   refine ⟨h.angle_lower, h.angle_upper, ?_, ?_, ?_, ?_, ?_⟩
   · change 2 ≤ (2-p.u)-(-p.u)
     linarith
@@ -185,15 +189,15 @@ theorem chain_spans {p : TwoHeights} (h : p.InDomain) : p.chain.spans := by
   · change 1+Real.sin p.angle ≤
       projection (f p.angle)
         (sub (-p.w,-p.v) (framePoint p.angle (-p.K₁) (-p.K₂)))
-    dsimp [projection, f, sub] at hf ⊢
-    dsimp only [K₂] at hf
-    nlinarith
+    rw [hsub, hf]
+    dsimp [projection, f, K₂]
+    exact le_of_eq (by ring)
   · change 2+Real.cos p.angle ≤
       projection (e p.angle)
         (sub (p.r,-p.u) (framePoint p.angle (-p.K₁) (-p.K₂)))
-    dsimp [projection, e, sub] at he ⊢
-    dsimp only [K₁] at he
-    nlinarith
+    rw [hsub, he]
+    dsimp [projection, e, K₁]
+    exact le_of_eq (by ring)
 
 theorem chain_first_four_on_circle {p : TwoHeights} (h : p.InDomain)
     (i : Fin 4) : normSq (p.chain.point i.castSucc)=p.radiusSq := by

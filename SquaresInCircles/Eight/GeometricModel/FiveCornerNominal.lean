@@ -26,12 +26,15 @@ open Set
 theorem dot_le_completed_circle {m q : ℝ} {p F : Point}
     (hm : 0 < m) (hp : normSq p ≤ q) :
     dot F p ≤ m*q+normSq F/(4*m) := by
-  rw [le_add_iff_sub_le, le_div_iff₀ (by positivity : 0 < 4*m)]
   have hbound := mul_le_mul_of_nonneg_left hp (show 0 ≤ 4*m^2 by positivity)
   have hx := sq_nonneg (F.1-2*m*p.1)
   have hy := sq_nonneg (F.2-2*m*p.2)
-  dsimp [normSq, dot] at *
-  nlinarith
+  have hmul : (dot F p-m*q)*(4*m) ≤ normSq F := by
+    dsimp [normSq, dot] at *
+    nlinarith
+  have hdiv : dot F p-m*q ≤ normSq F/(4*m) :=
+    (le_div_iff₀ (by positivity : 0 < 4*m)).mpr hmul
+  linarith
 
 theorem dot_le_completed_circle_or_zero {m q : ℝ} {p F : Point}
     (hm : 0 ≤ m) (hz : m=0 → F=(0,0)) (hp : normSq p ≤ q) :
@@ -322,7 +325,10 @@ theorem polynomial_bound {s : ℝ} (hs : s ∈ Icc 0 (3/10)) :
     positivity
   have hs₂ : s^2 ≤ 9/100 := by
     nlinarith [mul_nonneg hs.1 (sub_nonneg.mpr hs.2)]
-  have hs₄ : s^4 ≤ 81/10000 := by nlinarith [sq_nonneg (s^2)]
+  have hs₄ : s^4 ≤ 81/10000 := by
+    have hproduct := mul_nonneg (sub_nonneg.mpr hs₂)
+      (show 0 ≤ (9/100:ℝ)+s^2 by positivity)
+    nlinarith
   have hb : 0 ≤ 56-132*s-86*s^2-77*s^4 := by nlinarith [hs.2]
   have h₁ : 0 ≤ s*(26-9*s)/1000000 := by
     apply div_nonneg (mul_nonneg hs.1 (by linarith [hs.2])) (by norm_num)

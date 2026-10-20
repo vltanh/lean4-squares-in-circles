@@ -9,14 +9,15 @@ public import Mathlib.Tactic
 The primitive definitions used by the main theorems (`SquaresInCircles.lean`):
 unit squares, each with its own position and rotation; packings in a closed
 disk; congruence to a model given about the origin; and the explicit radius
-and models for the first seven cases. `StatementEight.lean` supplies the
-pure eighth-case stationary root and equality domain; `Optimal.lean` supplies
-the public registries through eight.
+and models for the first seven cases. `StatementEightGeometric.lean` supplies
+the pure eighth-case five-corner minimum and geometric equality domain;
+`StatementEight.lean` retains the stationary chart for compatibility.
+`Optimal.lean` supplies the public registries through eight.
 `Packing` asks only that the closed squares lie in the disk and that no point
 lie in two open squares (`openSquare`, with strict inequalities).
 
-`Challenge.lean` restates the three pure modules in their dependency order:
-Geometry, StatementEight, Optimal. The standalone
+`Challenge.lean` restates the four pure modules in their dependency order:
+Geometry, StatementEight, StatementEightGeometric, Optimal. The standalone
 `python3 scripts/sync-challenge.py --write` command copies only source text;
 it does not compile or run the comparator. The later comparator procedure
 checks that the definitions and public theorem statements elaborate

@@ -111,8 +111,8 @@ theorem anchor_offsets_closed {d : Coordinates} {K : Vertex → UnitSquare}
         (d.anchorOffsets i)) := by
   have hc (j : Vertex) := (hf j).1
   have hs (j : Vertex) := (hf j).2
-  fin_cases i <;>
-    simp [closedSquare,localX,localY,OriginalDual.ofCycle,
+  fin_cases i <;> constructor <;> apply abs_le.mpr <;> constructor <;>
+    simp [localX,localY,OriginalDual.ofCycle,
       OriginalDual.cycleIndex,anchorOffsets,inFrame,add,hc,hs,
       canonicalCos,canonicalSin] <;>
     nlinarith [d.unit]
@@ -137,6 +137,7 @@ theorem reduction_retains_initial_normal {q : ℝ} {C : NeighborCycle q}
       (C.selected i).normal (C.square i) (C.square (next i)) := by
   rw [R.axis_transport,R.raw_selected]
   exact signed_normal_same_frames (R.raw_frames i) (R.raw_frames (next i))
+    (C.selected i)
 
 /-- Transfer a known physical normal between equal-frame records. The
 centers of those records need not coincide. -/

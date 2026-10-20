@@ -27,6 +27,7 @@ theorem halfToAngle_frame (w : ℝ) :
       Real.sin (halfToAngle w)=halfAngleSin w := by
   have hp := halfAngle_den_pos w
   have hs := Real.sq_sqrt hp.le
+  have hws := congrArg (fun x : ℝ => w*x) hs
   have hn : Real.sqrt (1+w^2)≠0 := ne_of_gt (Real.sqrt_pos.mpr hp)
   constructor
   · rw [halfToAngle,Real.cos_two_mul,Real.cos_arctan]

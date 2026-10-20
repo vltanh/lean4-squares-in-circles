@@ -59,11 +59,13 @@ def fourAnchorWeight : Fin 4 → ℝ :=
     rightCrossing*sharpData.y₃/(2*(rightCrossing-leftCrossing))]
 
 theorem fourAnchorWeight_pos (i : Fin 4) : 0<fourAnchorWeight i := by
-  have hs := crossing_signs
+  have hright : 0<rightCrossing := crossing_signs.1
+  have hleft : 0< -leftCrossing := neg_pos.mpr crossing_signs.2
   have hd := sharpData_stationary
   have hden : 0<2*(rightCrossing-leftCrossing) := by linarith
   have hy : 0<sharpData.y+2 := by linarith [hd.y_lower]
   have hny : 0< -sharpData.y := by linarith [hd.y_upper]
+  have hy₃pos : 0<sharpData.y₃ := hd.y₃_pos
   have hy₃ : 0<2-sharpData.y₃ := by
     have h := hd.y₄_upper
     dsimp [Coordinates.y₄] at h

@@ -157,7 +157,7 @@ theorem source_retained_normal {S : Fin 8 → UnitSquare}
         (N.expanded.square (next i)) := by
   rw [N.source_selected]
   exact signed_normal_same_frames
-    (N.source_frames i) (N.source_frames (next i))
+    (N.source_frames i) (N.source_frames (next i)) (N.expanded.selected i)
 
 theorem source_retained_feasible {S : Fin 8 → UnitSquare}
     (N : GlobalNormalization S qStar) (i : Vertex) :
@@ -183,6 +183,7 @@ theorem source_retained_recovered_normal {S : Fin 8 → UnitSquare}
   rw [hselected]
   exact signed_normal_same_frames
     (source_recovered_frames N i) (source_recovered_frames N (next i))
+    (N.recovered.selected i)
 
 theorem source_selected_feasible_on_recovered {S : Fin 8 → UnitSquare}
     (N : GlobalNormalization S qStar)

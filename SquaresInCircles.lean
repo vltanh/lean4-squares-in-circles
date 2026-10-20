@@ -35,8 +35,8 @@ theorem names remain available for compatibility.
 
 The n=8 extension is delivered as uncompiled draft Lean source. Its proof
 scripts and generated rational certificates have not been compiled. The
-geometric draft is written before its final static source audit; no Lean,
-lake, kernel axiom inspection, certificate replay, or CI is run in this pass.
+geometric draft receives static source review only in this pass; no Lean,
+lake, kernel axiom inspection, certificate replay, or CI is run.
 
 Every case proves the same statement, an `Optimum` (`Common/Optimum.lean`): its
 models pack the disk and reach its circle, and every packing of that radius is

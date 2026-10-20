@@ -5,8 +5,10 @@
 This is the Lean source pass requested on 20 October 2026, after completion
 of the geometric hand model. The user requested a draft of the complete
 model and theorem, with **no compilation and no audit until the end**.
-The implementation is written first. The final section records the limited
-static audit performed only after the complete draft exists.
+The implementation was written first. The final section records the limited
+static audit performed only after the complete draft existed. The delivery
+adds 26 Lean modules containing 5,561 lines, with public integration and
+documentation alongside them.
 
 No Lean command, lake command, CI job, generated certificate replay, or
 kernel dependency/axiom inspection is part of this delivery. Proof bodies
@@ -143,7 +145,7 @@ centered at `o`. Thus the least containing circle has the stated center
 and radius; its center is not a free choice hidden in the normalization.
 
 The main exports are `Parameters.enclosing_radius_sq_bound`,
-`Parameters.least_containing_radius`, and `Parameters.unique_least_circle`.
+`Parameters.least_enclosing_radius`, and `Parameters.unique_least_circle`.
 
 ## 5. Exact-radius assembly uses the original packing
 
@@ -265,7 +267,45 @@ definitions directly.
 
 ## 9. End-only static audit
 
-Pending until all source modules and public integration have been written.
-The audit will inspect source-level imports, interface use, mathematical
-identities, admissions, and statement-mirror drift. It will not compile
-or evaluate Lean, replay certificates, or inspect elaborated axioms.
+The audit began after all source modules, public integration, and this report
+had been drafted. Independent source reviews covered the five-corner and
+two-height arguments, the complete equality family, and the pure/public
+interfaces. The original-center and source-witness modules were checked
+against the existing normalization, dual, and central-parameter APIs.
+
+| Source-only check | Result |
+|---|---|
+| Repository imports | 351 project modules; no missing project import and no import cycle. |
+| Pure geometric statement | Its repository import closure consists only of itself and `Geometry`. |
+| New geometric theorem assembly | 246 project modules in its closure; the old unrestricted `Eight.Theorem` is absent. |
+| Retained generated inputs | 108 modules with `.Generated.` in their names remain in that closure. This is a source inventory, not an elaborated dependency or execution report. |
+| New proof-source admissions | No `sorry`, `admit`, `axiom`, or `unsafe` declaration token found outside comments in the 26 new Lean modules. The two pre-existing intentional Challenge theorem placeholders remain. |
+| Independent statement mirror | The source-only `sync-challenge.py` comparison passes. |
+| Documentation links | All 125 local links in the five edited documentation files resolve. |
+| Whitespace | Tracked diff check passes; no trailing whitespace in the new Lean modules. |
+
+The exact rational checks confirmed the nominal residual's zero constant
+coefficient and ten positive nonconstant coefficients, both high-tilt
+endpoint reserves, all five rational trial-circle reserves, and the GA/core
+comparison reserves and radius-level relations used in the source adapters.
+These were small rational calculations, not executions of the generated
+certificate machinery or Lean proof bodies.
+
+The review checked all 21 exterior separator orientations, both admissibility
+directions, the half-open angle endpoints, the four-anchor barycenter and
+second-moment identity, the absence of a lower cutoff for the original radius,
+and preservation of the original weak signed witnesses. No mathematical gap
+was identified by that review.
+
+Concrete source repairs included the association of the four SAT alternatives,
+explicit signed-axis arguments in physical-normal transport, the square-root
+identity in the half-angle sine calculation, positivity hypotheses for the
+four convex weights, exact projection-subtraction proofs for the tilted
+spans, and robust handling of simplification that had already closed a goal.
+No mathematical statement, admissible domain, or constant was weakened.
+
+This remains an **uncompiled draft**. Source review does not establish
+elaboration, tactic termination, kernel acceptance, certificate evaluation,
+or the elaborated axiom/dependency closure. No Lean, lake, comparator, CI,
+large certificate replay, or kernel inspection was run. Those checks remain
+deferred exactly as requested.
