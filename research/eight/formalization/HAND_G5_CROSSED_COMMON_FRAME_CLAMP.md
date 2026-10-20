@@ -513,4 +513,3 @@ The proof uses two exact cap derivatives, the unchanged
 endpoint budget, analytic monotonicity, and fixed rational
 Taylor comparisons. No angular grid, numerical acceptance
 premise, Lean compilation, or CI result is used.
-

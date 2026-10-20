@@ -45,7 +45,12 @@ assumption. Every quarter owner 0/1 has an outer target, and
 every quarter owner 2/3 has an outer source, independently of
 E normalization. Thus low GA forces A outer, while high GA
 forces G outer. A retained high GA witness also forces the
-signed target cut `y_A<1/2`. At an actual diagonal D, an exact change of
+signed target cut `y_A<1/2`. The high-GA branch is now excluded
+for every A-owner/error alternative when BT2, DE2 and EH0 are
+retained. With core E, every A/E alternative is also excluded
+when TD2 is nonpositive, and every A/TD alternative is excluded
+when the designated E-primary total is nonnegative. Other
+high-GA primary cases remain open. At an actual diagonal D, an exact change of
 nearest-axis representative recodes the high-GA/low-EH branch
 into the normal quarter classes. No global transport to that
 diagonal has been assumed. The remaining global steps must still supply
@@ -260,6 +265,70 @@ also proves `y_A<1/2` for a retained high GA witness. A
 three-edge charge and one strongly convex whole-interval scalar
 exclude the other signed-tangent range. This narrows the branch
 without excluding it.
+
+### Completed parts of the high-GA branch
+
+The following theorems all retain the globally forced outer
+anchors H,G,B,D with signs `+,-,-,-`, the high GA owners 2/3,
+both zero owners, and **BT2**. They do not assume a frame order.
+Here the A-primary owners are GA3 and AB2, and the E-primary
+owners are DE3 and EH1. A designated primary total is the
+single selected primary error, or the signed sum when both
+primary owners are selected; it is zero when neither is selected.
+
+| Completed high-GA domain | Exact scope |
+|---|---|
+| [Secondary E owners, every A alternative](HAND_G3_HIGH_GA_ALL_A_PRIMARY_ALTERNATIVES_EXCLUDED.md) | DE2/EH0; every GA2/3, AB0/2, TD0/2 alternative and every error sign; either sign and radial kind at A,T,E. |
+| [Core E with nonnegative primary total](HAND_G3_CORE_E_NONNEGATIVE_PRIMARY_TOTAL_ALL_A_EXCLUSION.md) | Nonpositive true-core E; designated E-primary total nonnegative; every A and TD owner/error alternative. |
+| [Core E with nonpositive TD2](HAND_G3_CORE_E_NONPOSITIVE_TD2_ALL_A_EXCLUSION.md) | Nonpositive true-core E; TD2 error at most zero; every A and E owner/error alternative. |
+
+The first assembly retains the four actual outer circles in
+one positive weighted sum. Secondary cases use a
+[four-circle inequality](HAND_G3_HIGH_GA_LOW_EH_SECONDARY_OWNER_FOUR_CIRCLE_EXCLUSION.md)
+and [TD2 angle concentration](HAND_G3_HIGH_GA_LOW_EH_TD2_ANGLE_CONCENTRATION.md)
+with [whole-interval scalar bounds](HAND_G3_HIGH_GA_LOW_EH_TD2_COMPLETE_SCALAR_EXCLUSION.md).
+Positive A errors use
+[a two-angle split](HAND_G3_TWO_POSITIVE_INTERMEDIATE_ERRORS_SPLIT_CONCAVITY.md),
+[its scalar endpoints](HAND_G3_TWO_POSITIVE_INTERMEDIATE_ERRORS_COMPLETE_SCALAR_EXCLUSION.md),
+and the separate [TD0](HAND_G3_POSITIVE_INTERMEDIATE_TD0_FOUR_CIRCLE_EXCLUSION.md)
+and [nonpositive-TD2](HAND_G3_POSITIVE_INTERMEDIATE_NEGATIVE_TD2_EXCLUSION.md)
+comparisons. Two A-primary errors have an
+[exact signed combination](HAND_G3_COMBINING_THE_TWO_A_PRIMARY_ERRORS.md).
+A genuinely negative alternative either has an already feasible
+secondary projection or enters
+[the actual flat core](HAND_G3_NEGATIVE_A_PRIMARY_ERRORS_REDUCE_TO_FLAT_CORE.md).
+[The negative-sum A transport](HAND_G3_MIXED_NEGATIVE_A_PRIMARY_ERRORS_REDUCE_TO_ONE.md)
+then preserves the necessary adjacent inequalities and both
+variation bounds. Its remaining positive-TD2 case is closed by
+[concentration](HAND_G3_NEGATIVE_FLAT_CORE_A_POSITIVE_TD2_ANGLE_CONCENTRATION.md)
+and [a complete scalar exclusion](HAND_G3_NEGATIVE_FLAT_CORE_A_POSITIVE_TD2_COMPLETE_SCALAR_EXCLUSION.md).
+No marker estimate is reapplied to a moved state.
+
+At E, [signed primary combination](HAND_G3_COMBINING_THE_TWO_E_PRIMARY_ERRORS.md)
+and the smaller actual core support give the second row above.
+The third row joins
+[the nonnegative-A comparison](HAND_G3_CORE_E_NONNEGATIVE_A_NONPOSITIVE_TD2_EXCLUSION.md)
+with the [fixed negative-primary stress](HAND_G3_NEGATIVE_FLAT_CORE_E_FIXED_STRESS_EXCLUSION.md)
+and [mixed negative-E reduction](HAND_G3_MIXED_NEGATIVE_E_PRIMARY_ERRORS_REDUCTION.md).
+The A-only transport keeps E and TD unchanged and retains the
+original `y_A<1/2` cut directly along its flat-core path.
+
+Additional proved single-negative-E branches use
+[secant D support](HAND_G3_CORE_E_NEGATIVE_DE3_SECANT_D_SUPPORT.md),
+[secant H support](HAND_G3_CORE_E_NEGATIVE_EH1_SECANT_H_SUPPORT.md),
+and [the sharp EH1 entry cut](HAND_G3_CORE_E_NEGATIVE_EH1_SHARP_ENTRY_CUT.md).
+Their continuous angle and support estimates are recorded in
+the linked component notes. An
+[outer E with negative primary error](HAND_G3_OUTER_E_NEGATIVE_PRIMARY_WITNESS_COMPARISON.md)
+already has its actual secondary witness feasible. These local
+facts do not assert a universal E-only conversion with H,D fixed.
+
+The remaining high-GA work includes BT3, the uncovered simultaneous
+negative core-E alternatives, and outer-E positive-primary regimes.
+In particular none of the three complete domains in the table is
+silently extended to all high-GA candidates.
+
+### Earlier global marker consequences
 
 [The nearest-axis tie theorem](HAND_G3_GLOBAL_NEAREST_AXIS_TIE_LOCATIONS.md)
 proves strict sorting at G,A,B,T,E. Only positive H and
@@ -956,4 +1025,3 @@ roadmap and component inventories remain in its versions at
 `ca9567729c0839a68e439a91ab63b29e7419b0d4` and
 `bbe15f74b3406647b89eb26710629c0bb3a54f11`.
 Historical table counts are not new compilation measurements.
-

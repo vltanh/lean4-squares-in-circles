@@ -483,4 +483,3 @@ endpoint comparisons, and the positive circle masses
 of the sharp terminal. No state enumeration, angular
 mesh, numerical acceptance premise, Lean run, or CI
 result is used.
-

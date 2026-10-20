@@ -407,4 +407,3 @@ are established, the movement itself uses the explicit
 GA1 cap and the actual H-circle support. It does not
 silently reuse a radial-boundary hypothesis on a
 constructed G.
-
