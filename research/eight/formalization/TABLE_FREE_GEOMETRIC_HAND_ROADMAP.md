@@ -19,7 +19,11 @@ the original ordered class with HG2/TD0 and the stated remaining owners.
 The full ordered outer-error extension now admits all signs of
 both outer errors and all four outer owner combinations, with
 its explicit G/T signs and frame order, and retains the complete
-original-center equality conclusion.
+original-center equality conclusion. For the already aligned
+three-zero class, every frame-order assumption has now been
+removed: the H/D span is necessarily positive, a common A/B
+frame outside D--H clamps to the nearer endpoint with strict
+circle loss, and the E-frame reduction retains that loss.
 The missing global step must supply either complete route's entry
 hypotheses; neither is asserted for arbitrary candidates.
 
@@ -494,11 +498,26 @@ circle loss survives, and equality is recovered for the
 original centers. No sign of either outer frame difference is
 an entry assumption for this complete ordered-class theorem.
 
-These reductions have not yet closed the other
-frame orders, the remaining global sign alternatives or the
-remaining original quarter/mixed witnesses. Those are entry
-obligations for this route. The complete theorem for the hard
-class must not be used to assume them for the unrestricted problem.
+[The common A/B-frame clamp](HAND_G5_COMMON_AB_FRAME_CLAMP.md)
+removes the A/B placement assumption once the three zeros
+are aligned and the H/D span is positive. Its signed-quarter
+cap comparison has a uniform derivative gap `129/1864`;
+moving an outside common frame to the nearer endpoint
+strictly lowers both middle circle values.
+[The angle-free outer-primary bound](HAND_G5_POSITIVE_HD_SPAN_WITH_ALIGNED_ZEROS.md)
+then proves `a_H+a_D<2` for every signed pair of hard-quarter
+angles. The mixed constraints force the reverse inequality
+if `theta_H<=theta_D`, so the positive span is automatic.
+Combined with the existing E-frame reduction, these lemmas
+prove sharpness and original-anchor equality for the entire
+aligned-three-zero normal-sign hard-owner class, with no
+frame-order entry assumption.
+
+Alignment of arbitrary original zero frames without an
+order hypothesis, the remaining global sign alternatives,
+and the remaining original quarter/mixed witnesses are still
+entry obligations. The completed conditional theorems must
+not be used to assume them for the unrestricted problem.
 
 ## 4. Completed entry and word dependencies
 
