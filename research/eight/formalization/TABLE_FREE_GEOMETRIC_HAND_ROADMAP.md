@@ -37,7 +37,7 @@ ED-owner/H frame; no unjustified conversion to the old A/G tilt is used.
 | G3 | All six cuts closed conditionally at S<=3/200 | Cut-free quarter owners first give four cuts at S<=1/32; complete H-low exclusions then give H>1/2, followed by G>-4/5. No tangent cut is an independent missing input after small mismatch. |
 | G4 | Global capture open; ordered AB alignment covers all outer errors | The original ordered HG2/TD0 class reduces to five anchors with strict loss off zero. AB alignment now also covers every outer-owner/error pattern under the stated normal signs and frame order. Coarse mismatch bounds S<2/5 and S<13/50 remain open. |
 | G5 | Entire ordered normal-sign hard-owner class sharp; global contractions open | Both outer errors may have either sign, with every allowed outer owner. The mixed G/T-zero endpoint is excluded by an explicit derivative comparison in the existing affine stress. Original-center equality is retained. Global signs, owner capture and frame order remain entry obligations. |
-| G6 | DE closed globally; forbidden BT forces A positive globally | Every original DE witness is in {2,3} without any mismatch or tangent input. A feasible BT0/1 also forces A positive by a shared two-edge charge. Excluding that remaining sign branch still uses S<=1/32. |
+| G6 | DE closed globally; forbidden BT has a global three-edge return bound | Every original DE witness is in {2,3}. A feasible BT0/1 forces A positive; its complete E--H--G--A return now has linear-A charge greater than 103/40, covering every return owner and radial kind. The complementary four-edge lower bound remains open. |
 | G7 | Closed conditionally at S<=3/200; old contraction retired | Every original mixed owner is G0/E1, without an S<=1/1000 premise. |
 | G8 | Closed conditionally at S<=3/200 | t>S and 1/10<tau<4/25, where tau is the actual ED-owner/H frame difference. |
 | G9 | Closed conditionally at S<=3/200 | Sharp owner-frame inequality with S/5000, all five completed anchors, and the full equality family. |
@@ -152,6 +152,19 @@ supplies the global bounds `F>=.86b` and
 also retains a positive reserve under the stated source-weight
 and complementary-charge hypotheses. These are analytic helpers
 for that remaining branch, not an assertion that it is excluded.
+
+[The global linear-A return theorem](HAND_G3_GLOBAL_RETURN_WITH_LINEAR_A_CHARGE.md)
+now proves `pi+r+v+t-(49/50)b_A-F_E>103/40` on E--H--G--A,
+using only the weak E-negative and A-positive endpoint signs.
+It includes every original quarter owner, both zero owners,
+all intermediate signs and both radial kinds. When the three
+absolute errors total at most `.3`, their actual nominal
+projections give `b_A<=4c_0-3+R`; the unchanged G1 charge
+retains a gain in R. One strongly convex high-chart scalar
+and one rational reference point give the full return bound.
+Thus a complementary AB--BT--TD--DE charge at least
+`16761/4520` would close the remaining forbidden-BT branch.
+That complementary inequality is still an explicit open task.
 
 [The earlier DE-owner theorem at S<=1/32](HAND_G3_D_OWNER_WITHOUT_TANGENT_CUTS_AT_ONE_THIRTY_SECOND.md)
 remains valid and is used in the already completed conditional
@@ -340,6 +353,16 @@ five-circle stationary identity proves the sharp bound directly.
 Every positive circle mass forces equality in each original anchor,
 so the strict slack retained by either reduction also proves the
 original-orientation equality statement.
+
+[The E-order descent theorem](HAND_G5_E_ORDER_FROM_ALIGNED_NON_E_CHAIN.md)
+removes E's order assumption once the three zero edges and the
+non-E order are established. The shared chain forces an outside
+E primary above one; its exact two-contact corner derivative
+then excludes E above H and moves E below D strictly to D.
+The zero-transverse obstruction is handled by reflection only
+at zero, where E's sign is preserved. The strict E-circle loss
+retains original equality. This does not yet order an arbitrary
+non-E chain or align its original zero edges.
 
 [The shared-center A/B alignment comparison](HAND_G5_AB_SHARED_CENTER_ALIGNMENT_COMPARISON.md)
 and [the signed three-zero reduction](HAND_G4_SIGNED_THREE_ZERO_REDUCTION_FOR_CANCELING_OUTER_OWNERS.md)
