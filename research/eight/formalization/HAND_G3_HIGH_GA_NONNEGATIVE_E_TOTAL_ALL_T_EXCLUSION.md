@@ -98,7 +98,7 @@ zero if no E primary remains. The theorem applies to this
 same actual cycle. This proves the outer-E corollary for
 every original selection and weak tie.
 
-## 5. Exact remaining high-GA endpoints
+## 5. Residual endpoints and their completed global join
 
 Combining this theorem with the complete nonpositive-T
 theorem, any remaining high-GA candidate must have core E,
@@ -118,12 +118,16 @@ joins. For the second row, the present positive-BT endpoint
 proofs require a nonnegative E total and supply no conclusion
 about the displayed negative core-E region.
 
-The independent negative-A and negative-E transports may
-further reduce a negative total to one genuine primary, but
-do not themselves exclude these two residual endpoints.
-Consequently this note does not close high GA or the
-unrestricted eight-square theorem. The normal-primary
-GA1/BT3 entry problem is a separate remaining obligation.
+The independent negative-A and negative-E transports further
+reduce a negative total to one genuine primary. The endpoints
+displayed above are now excluded by the later
+[joint-negative BT2 theorem](HAND_G3_JOINT_NEGATIVE_A_CORE_E_POSITIVE_TD2_EXCLUSION.md),
+the two single-negative positive-BT theorems, and the
+[joint-negative positive-BT theorem](HAND_G3_JOINT_NEGATIVE_A_CORE_E_POSITIVE_BT3_EXCLUSION.md).
+Their complete finite join is the
+[global GA-owner theorem](HAND_G3_GLOBAL_GA_OWNER_RIGIDITY.md).
+Thus high GA is now closed. The unrestricted theorem still
+requires normal-primary GA1/BT3 entry into a sharp route.
 
 All arguments are hand geometry and exact inequalities.
 No Lean compilation, CI, sampled angle premise or generated

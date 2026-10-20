@@ -44,41 +44,26 @@ its frame-order assumptions are no longer inputs to the new
 arbitrary-sign assembly. Separately, after G0--G2 and E normalization,
 `S<=3/200` still supplies another complete downstream proof,
 including all six cuts, original-center transfer, and equality.
-Three quarter-owner conclusions are now global: every original
-BT and DE witness has owner 2 or 3, and every original EH
-witness has owner 0 or 1. H is positive and B,D are negative;
-all three are outer in the fixed-witness boundary reduction.
+All four quarter-owner classes are now global: every original
+GA and EH witness has owner 0 or 1, and every original BT
+and DE witness has owner 2 or 3. H,A are positive and B,D
+are negative; all four are outer in the fixed-witness
+boundary reduction.
 The new all-high cycle contradiction closes EH without a GA
 assumption. Every quarter owner 0/1 has an outer target, and
 every quarter owner 2/3 has an outer source, independently of
 E normalization. Thus low GA forces A outer, while high GA
-forces G outer. A retained high GA witness also forces the
-signed target cut `y_A<1/2`. The high-GA branch is now excluded
-for **every outer E** and for **every nonnegative selected
-E-primary total**, with all A/T owners and signed totals.
-This includes arbitrary BT3 and TD0 errors and every signed
-BT3/TD2 pair.
-The simultaneous-negative core-E pair now has a complete
-actual-state transport to a single negative E primary; its
-old low-angle concentration obligation is retired. With BT2,
-a nonnegative selected A-primary total therefore excludes
-every E and TD alternative. Allowing BT3, all T-owner choices
-and signed error allocations are now excluded when the
-selected A- and E-primary totals are nonnegative. The new
-negative-A positive-BT endpoint and both E-total transfers
-remove the A-total restriction whenever E's total is nonnegative.
-A separate complete region permits **every A/E total and both E radial
-kinds whenever the selected T total is nonpositive**. Coupled
-negative A/core-E totals with BT2 and positive TD2 are now
-excluded by a common secant-gain comparison and a complete
-two-negative-angle allocation argument. Consequently **every
-high-GA cycle retaining BT2 is excluded**, for either TD owner
-and every A/E owner, radial kind and signed total. The remaining
-high-GA work has positive BT3 with TD0, at the precise endpoints
-recorded below. The positive-BT endpoint
-with nonnegative A total and a genuine negative EH1 is now
-excluded for arbitrary TD0 error; its negative DE3 counterpart
-remains separate.
+forces G outer. The complete
+[high-GA exclusion](HAND_G3_GLOBAL_GA_OWNER_RIGIDITY.md)
+now rules out every original GA2/3 witness, including weak
+ties, for all A/E/T owners, signed totals and radial kinds.
+Actual E transports and positive paired-T endpoint reductions
+join the complete BT2 domain to both sole positive-BT3 domains:
+nonnegative A with either genuine negative E primary, and joint
+negative A/core E. Their continuous stress proofs retain the
+actual D support and every error sign. Thus no high-GA branch
+remains open. The conclusion applies at every original
+`q<=9789/2500` by a strict fixed-witness boundary contradiction.
 At an actual diagonal D, an exact change of
 nearest-axis representative recodes the high-GA/low-EH branch
 into the normal quarter classes. No global transport to that
@@ -98,7 +83,7 @@ ED-owner/H frame; no unjustified conversion to the old A/G tilt is used.
 | G0 | Closed on paper | Central core, physical gaps, fixed-axis boundary reduction and documented radius transfer. |
 | G1 | Closed on paper | Complete four-type frame concentration; real frame spread below 7/10. |
 | G2 | Closed on paper | All six wrong words excluded; only 0101011 survives. Reflection gives the weak E sign. |
-| G3 | Global EH-owner and quarter-anchor rigidity; all six cuts at S<=3/200 | Every EH witness is low; H is positive outer. B,D are negative outer. Every low quarter has outer target and every high quarter has outer source. High GA forces G outer and y_A<1/2, but that branch is not yet excluded. The conditional six tangent cuts remain closed at S<=3/200. |
+| G3 | All four quarter classes and anchor signs global; all six cuts at S<=3/200 | Every GA/EH witness is low and every BT/DE witness is high, including weak ties. H,A are positive outer and B,D negative outer in the boundary reduction. The full high-GA exclusion covers every surviving owner, radial kind and signed total. The conditional six tangent cuts remain closed at S<=3/200. |
 | G4 | Hard-class entry signs captured; unrestricted quarter-owner entry open | With GA0/BT2, the signed middle bound gives G>T, and an unequal positive stress captures y_G<1/10 and y_T>-1/10. AB alignment and signed local transports then remove the remaining wrong sign. Coarse mismatch capture remains an optional alternative route. |
 | G5 | Hard-owner class sharp for arbitrary original signs and frames | All surviving zero owners, arbitrary G/T signs, both outer-error signs, both DE/EH choices and arbitrary E placement are covered. GA0/BT2 and the stated E radial alternative remain inputs; original boundary representatives satisfy the latter. |
 | G6 | Closed globally without mismatch or tangent cuts | Every original BT and DE witness has owner 2 or 3; B and D have strictly negative signed tangents. The all-owner return charge and complete four-edge bound exclude every BT0/1 branch, including core E with negative DE3 and every negative-BT1/AB sign combination. |
@@ -297,10 +282,14 @@ without excluding it.
 
 ### Completed parts of the high-GA branch
 
-The following theorems all retain the globally forced outer
+The complete [global GA-owner theorem](HAND_G3_GLOBAL_GA_OWNER_RIGIDITY.md)
+joins the following components and excludes high GA without
+any selected-total restriction. The individual components
+retain the globally forced outer
 anchors H,G,B,D with signs `+,-,-,-`, the high GA owners 2/3,
 and both zero owners. The first six rows retain **BT2**;
-the last four allow **both BT2 and BT3**. No row assumes a frame order.
+the following rows state their T-owner scope explicitly.
+No row assumes a frame order.
 Here the A-primary owners are GA3 and AB2, and the E-primary
 owners are DE3 and EH1; the T-primary owners are BT3 and TD2.
 A designated primary total is the
@@ -319,6 +308,7 @@ primary owners are selected; it is zero when neither is selected.
 | [Nonnegative A/E totals, every T alternative](HAND_G3_POSITIVE_T_PRIMARY_TOTAL_SIGNED_CANCELLATION_TRANSPORT.md) | Either E radial kind; every BT2/3 and TD0/2 selection and every signed T allocation, including opposite signs in a primary pair. |
 | [Nonnegative E total, every A/T alternative](HAND_G3_HIGH_GA_NONNEGATIVE_E_TOTAL_ALL_T_EXCLUSION.md) | Either E radial kind; every A and T owner, signed primary total and individual error allocation. |
 | [Outer E, every A/E/T alternative](HAND_G3_HIGH_GA_NONNEGATIVE_E_TOTAL_ALL_T_EXCLUSION.md) | Every original surviving owner and error sign; no selected-total hypothesis remains. |
+| [Every high-GA cycle](HAND_G3_GLOBAL_GA_OWNER_RIGIDITY.md) | Every surviving owner, all signed A/E/T totals and individual error allocations, either E radial kind, arbitrary A/T signs and kinds, all weak ties. |
 
 The first assembly retains the four actual outer circles in
 one positive weighted sum. Secondary cases use a
@@ -475,8 +465,14 @@ covered. Scalar concentration leaves 34 intrinsic endpoints,
 all proved by compact exact whole-interval polynomials.
 [The secant-D single-angle comparison](HAND_G3_SECANT_D_SINGLE_ANGLE_COMPARISON.md)
 also supplies an all-sign actual-support bound and an increasing
-pure-positive secant endpoint for the negative-DE counterpart.
-That analytic ingredient alone does not exclude the latter.
+pure-positive secant endpoint. The
+[complete negative-DE positive-BT theorem](HAND_G3_NEGATIVE_DE3_POSITIVE_BT3_WITH_NONNEGATIVE_A_TOTAL_EXCLUSION.md)
+now uses these ingredients to close the other E primary with
+nonnegative A total. It retains arbitrary TD0 and EH0 errors.
+An adaptive positive-BT tilt preserves the required coefficient
+range; splitting A/T before the E angle retains the exact
+sorted D support. Six new scalar certificates and two endpoint
+derivative certificates close both whole-total intervals.
 
 [The joint-negative BT2 theorem](HAND_G3_JOINT_NEGATIVE_A_CORE_E_POSITIVE_TD2_EXCLUSION.md)
 closes the last BT2 domain: positive TD2 with negative A total
@@ -493,21 +489,24 @@ branches and all stress-family joins. Thus high GA is impossible
 whenever BT2 is retained, with no remaining sign or frame-order
 hypothesis in that owner class.
 
-The remaining high-GA work has core E, negative selected E
-total and strictly positive selected T total. Its positive
-paired-T transports, the complete BT2 exclusion and the new EH
-theorem leave these domains:
+[The joint-negative positive-BT theorem](HAND_G3_JOINT_NEGATIVE_A_CORE_E_POSITIVE_BT3_EXCLUSION.md)
+closes the complementary negative A/core-E endpoint with
+arbitrary TD0. The common negative-angle allocation is retained
+with the increasing convex D-secant penalty. The
+[two-angle sorted-D extension](HAND_G3_SORTED_D_TWO_ANGLE_ENVELOPE_TO_SEVEN_FIFTHS.md)
+and [six whole-interval scalar certificates](HAND_G3_JOINT_NEGATIVE_A_CORE_E_POSITIVE_BT3_SCALAR_CERTIFICATES.md)
+cover its complete coefficient ranges and intrinsic endpoints.
+Every secondary-reselection escape is explicitly joined to a
+nonnegative-total theorem.
 
-| Remaining high-GA endpoint | Required additional data |
-|---|---|
-| Positive BT3 and arbitrary TD0, nonnegative A total | A genuine negative DE3 after the complete E transport. |
-| Positive BT3 and arbitrary TD0, negative A total | Negative core-E total. |
-
-The separate A/E transports can reduce the negative totals to
-one genuine primary each but do not exclude these endpoints.
-These are genuine global obligations, distinct from the complete
-paired-E and paired-T transports. Normal-primary entry into the
-sharp GA0/BT2 class remains an independent global obligation.
+The [global GA-owner assembly](HAND_G3_GLOBAL_GA_OWNER_RIGIDITY.md)
+now exhausts the finite owner/total case split. Nonpositive T,
+nonnegative E, outer E and every BT2 region are excluded first.
+Positive paired T reaches BT2 or sole positive BT3; both signs
+of A and both negative E primaries are then excluded. Every
+original GA witness is therefore 0/1, including weak ties.
+**High GA is closed.** Normal-primary GA1/BT3 entry into the
+sharp GA0/BT2 class remains the global obligation.
 
 [The aligned positive-GA entry theorem](HAND_G5_GLOBAL_PRIMARY_ENTRY_ALIGNED_POSITIVE_GA_NONPOSITIVE_SPAN.md)
 excludes a normal GA1/BT2 chain with aligned HG, AB and TD,
@@ -783,6 +782,26 @@ choices and arbitrary E placement. Positive GA1, simultaneous
 BT3 and arbitrary-frame primary entry are not asserted to follow
 from these local results. The new arbitrary-sign theorem removes
 the G/T-sign obligation after the hard owners have been supplied.
+
+Two additional local entry theorems now cover the previously
+missing nonpositive HG0/GA1 totals. The
+[wrong-sign pair theorem](HAND_G5_GLOBAL_PRIMARY_ENTRY_WRONG_SIGN_PAIR_REDUCTION.md)
+constructs an actual flat-core G at A's frame, with GA0 exact
+and HG0 slack greater than 1/25. The
+[normal positive-GA theorem](HAND_G5_GLOBAL_PRIMARY_ENTRY_POSITIVE_GA_NONPOSITIVE_TOTAL.md)
+does the same for positive GA1 and nonpositive paired total.
+Both keep the other six states fixed, stay strictly inside the
+original q-circle, and reduce both error variations. Their
+boundary-neighbor order is proved directly. Together with the
+existing positive-total transports and negative-primary lemmas,
+they give complete **HG0/GA1 two-endpoint entry at Q**: actual
+GA0 or HG alignment. Reflection gives the BT3/TD2 statement.
+The complete join is stated at Q because some cited
+positive-total transports use the outer Q boundary; an
+equality-preserving join at the original q still needs its
+own radius argument. Sole positive GA1/HG2 and the remaining
+HG-aligned primary endpoints with arbitrary other zero errors
+are not excluded by these local constructions.
 
 The earlier contraction targets and intermediate milestones
 below retain their stated scopes; they are not additional
@@ -1241,8 +1260,9 @@ also supply the lower bound, with every original equality consequence
 retained. That route is now complete for the GA0/BT2 hard-owner
 class with arbitrary G/T signs and original frames, all zero
 and mixed owners, both outer-error signs, and the stated E radial
-alternative. The remaining high-GA and primary-axis entry cases
-must still be reduced to a completed route. No separate G/T-sign
+alternative. High GA is now completely excluded. The remaining
+normal-primary GA1/BT3 entry cases must still be reduced to a
+completed route. No separate G/T-sign
 or frame-order capture remains within the hard-owner class.
 
 Once the displayed implication is proved, the completed original-center transfer
