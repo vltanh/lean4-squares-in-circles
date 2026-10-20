@@ -33,8 +33,13 @@ Both ordinary quarter-owner conclusions are now global:
 every original BT and DE witness has owner 2 or 3, and B,D
 have strictly negative signed tangents. The full BT proof
 includes both signs of every error, all radial kinds, and
-all original return-path owners. The remaining global steps
-must still supply the mixed-owner and alignment hypotheses
+all original return-path owners. Further global restrictions
+now show that a low GA owner forces A outer,
+a high GA owner forces G outer, and B is outer globally in
+the fixed-witness boundary reduction. A low GA owner also
+excludes every high EH owner, without a mismatch or frame-order
+hypothesis. The remaining global steps must still supply
+the mixed-owner and alignment hypotheses
 of a completed sharp route; arbitrary candidates are not yet
 asserted to satisfy those entry conditions.
 
@@ -49,7 +54,7 @@ ED-owner/H frame; no unjustified conversion to the old A/G tilt is used.
 | G0 | Closed on paper | Central core, physical gaps, fixed-axis boundary reduction and documented radius transfer. |
 | G1 | Closed on paper | Complete four-type frame concentration; real frame spread below 7/10. |
 | G2 | Closed on paper | All six wrong words excluded; only 0101011 survives. Reflection gives the weak E sign. |
-| G3 | All six cuts closed conditionally at S<=3/200 | Cut-free quarter owners first give four cuts at S<=1/32; complete H-low exclusions then give H>1/2, followed by G>-4/5. No tangent cut is an independent missing input after small mismatch. |
+| G3 | Global radial and conditional EH-owner restrictions; all six cuts at S<=3/200 | Low GA forces A outer and EH low; high GA forces G outer; B is outer globally in the boundary reduction. The high-GA branch and preferred mixed owners remain open. Cut-free quarter owners give four cuts at S<=1/32; complete H-low exclusions and the H cone give all six cuts at S<=3/200. |
 | G4 | Global capture open; ordered AB alignment covers all outer errors and G/T signs | The original ordered HG2/TD0 class reduces to five anchors with strict loss off zero. AB alignment now covers every outer-owner/error pattern, including both wrong intermediate signs simultaneously, under the retained H/A/B/D signs and frame order. Coarse mismatch bounds S<2/5 and S<13/50 remain open. |
 | G5 | Entire ordered hard-owner class sharp without G/T sign assumptions | Both outer errors and both intermediate transverse coordinates may have either sign. Wrong intermediate signs reach a zero endpoint with strict middle-circle loss; the existing complete reduction then applies. The already aligned-three-zero class needs no frame-order hypothesis. Global owner capture and alignment without frame order remain open. |
 | G6 | Closed globally without mismatch or tangent cuts | Every original BT and DE witness has owner 2 or 3; B and D have strictly negative signed tangents. The all-owner return charge and complete four-edge bound exclude every BT0/1 branch, including core E with negative DE3 and every negative-BT1/AB sign combination. |
@@ -168,6 +173,32 @@ supplies the global bounds `F>=.86b` and
 also retains a positive reserve under the stated source-weight
 and complementary-charge hypotheses. These analytic helpers
 are used in the completed global branch exclusion below.
+
+[The global primary-GA outer-target theorem](HAND_G3_GLOBAL_PRIMARY_GA_TARGET_IS_OUTER.md)
+and [its low-GA and reflected extension](HAND_G3_GLOBAL_LOW_GA_TARGET_IS_OUTER.md)
+now force a low quarter's target outer when that quarter follows
+a zero edge. The reflected statement forces a high quarter's
+source outer when a zero edge follows it. The two-edge charge
+retains an arbitrary signed intermediate tangent; a putative
+core endpoint exceeds the available five-edge G1 return budget.
+Consequently GA0/1 forces A outer, GA2/3 forces G outer, and
+the proved BT2/3 restriction makes B outer globally. EH2/3
+would similarly force E outer. These assertions concern the
+fixed-witness radial boundary representatives, not a claim that
+the untranslated original centers touch the containing circle.
+
+[The global high-EH exclusion under low GA](HAND_G3_HIGH_EH_EXCLUSION_UNDER_LOW_GA.md)
+now proves that any original GA0/1 witness excludes every
+original EH2/3 witness, including weak ties. The E--H--G--A
+path has augmented common-marker charge greater than `11/4`.
+A single exact outer support handles every rotated-quarter
+error; negative primary errors either have an actually feasible
+rotated witness or force their intermediate state onto the
+core. Concavity and a shared-circle cancellation handle all
+remaining error signs. The four unchanged G1 return edges
+then exceed the cyclic angular budget. No mismatch, frame order,
+other quarter owner, or later tangent cut is assumed. The
+separate high-GA branch is not covered by this implication.
 
 [The global linear-A return theorem](HAND_G3_GLOBAL_RETURN_WITH_LINEAR_A_CHARGE.md)
 now proves `pi+r+v+t-(49/50)b_A-F_E>103/40` on E--H--G--A,
