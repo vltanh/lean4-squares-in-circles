@@ -17,9 +17,10 @@ hard-quarter class, without any mismatch hypothesis, by explicit
 radius-preserving reductions. Its signed three-zero bridge also closes
 the original ordered class with HG2/TD0 and the stated remaining owners.
 The full ordered outer-error extension now admits all signs of
-both outer errors and all four outer owner combinations, with
-its explicit G/T signs and frame order, and retains the complete
-original-center equality conclusion. For the already aligned
+both outer errors and all four outer owner combinations, and
+no longer assumes the G/T transverse signs. Its frame order
+and specified hard/mixed owners remain explicit. It retains
+the complete original-center equality conclusion. For the already aligned
 three-zero class, every frame-order assumption has now been
 removed: the H/D span is necessarily positive, a common A/B
 frame outside D--H clamps to the nearer endpoint with strict
@@ -39,13 +40,13 @@ ED-owner/H frame; no unjustified conversion to the old A/G tilt is used.
 | G1 | Closed on paper | Complete four-type frame concentration; real frame spread below 7/10. |
 | G2 | Closed on paper | All six wrong words excluded; only 0101011 survives. Reflection gives the weak E sign. |
 | G3 | All six cuts closed conditionally at S<=3/200 | Cut-free quarter owners first give four cuts at S<=1/32; complete H-low exclusions then give H>1/2, followed by G>-4/5. No tangent cut is an independent missing input after small mismatch. |
-| G4 | Global capture open; ordered AB alignment covers all outer errors | The original ordered HG2/TD0 class reduces to five anchors with strict loss off zero. AB alignment now also covers every outer-owner/error pattern under the stated normal signs and frame order. Coarse mismatch bounds S<2/5 and S<13/50 remain open. |
-| G5 | Entire ordered normal-sign hard-owner class sharp; global contractions open | Both outer errors may have either sign, with every allowed outer owner. The mixed G/T-zero endpoint is excluded by an explicit derivative comparison in the existing affine stress. Original-center equality is retained. Global signs, owner capture and frame order remain entry obligations. |
+| G4 | Global capture open; ordered AB alignment covers all outer errors and G/T signs | The original ordered HG2/TD0 class reduces to five anchors with strict loss off zero. AB alignment now covers every outer-owner/error pattern, including both wrong intermediate signs simultaneously, under the retained H/A/B/D signs and frame order. Coarse mismatch bounds S<2/5 and S<13/50 remain open. |
+| G5 | Entire ordered hard-owner class sharp without G/T sign assumptions | Both outer errors and both intermediate transverse coordinates may have either sign. Wrong intermediate signs reach a zero endpoint with strict middle-circle loss; the existing complete reduction then applies. The already aligned-three-zero class needs no frame-order hypothesis. Global owner capture and alignment without frame order remain open. |
 | G6 | DE closed globally; forbidden BT has a global three-edge return bound | Every original DE witness is in {2,3}. A feasible BT0/1 forces A positive; its complete E--H--G--A return now has linear-A charge greater than 103/40, covering every return owner and radial kind. The complementary four-edge lower bound remains open. |
 | G7 | Closed conditionally at S<=3/200; old contraction retired | Every original mixed owner is G0/E1, without an S<=1/1000 premise. |
 | G8 | Closed conditionally at S<=3/200 | t>S and 1/10<tau<4/25, where tau is the actual ED-owner/H frame difference. |
 | G9 | Closed conditionally at S<=3/200 | Sharp owner-frame inequality with S/5000, all five completed anchors, and the full equality family. |
-| G10 | Open pending global entry into a completed route | The original-center transfer at S<=3/200 and the entire ordered normal-sign hard-owner class are proved, including equality. Arbitrary candidates are not yet captured by either route. |
+| G10 | Open pending global entry into a completed route | The original-center transfer at S<=3/200, the ordered hard-owner class without G/T sign assumptions, and the aligned-three-zero class without frame order are proved, including equality. Arbitrary candidates are not yet captured by a completed route. |
 
 These are mathematical hand-proof statuses, not Lean verification claims.
 Historical certificate files and the uncompiled Lean draft remain unchanged.
@@ -497,6 +498,20 @@ single large-tangent negative error can remain. Every strict
 circle loss survives, and equality is recovered for the
 original centers. No sign of either outer frame difference is
 an entry assumption for this complete ordered-class theorem.
+
+[The arbitrary-intermediate-sign AB extension](HAND_G5_AB_ALIGNMENT_WITH_ARBITRARY_INTERMEDIATE_SIGNS.md)
+now permits both wrong G/T signs before AB alignment. Its
+exact correlated cap has a uniform slope above `11/10`, and
+the reflected construction retains the actual E constraints.
+[The intermediate-sign removal](HAND_G5_INTERMEDIATE_SIGN_REMOVAL_IN_ORDERED_HARD_CLASS.md)
+then moves either wrong sign to transverse zero along a
+strictly monotone continuous path. It creates a strict loss
+at the corresponding middle circle, even if both signs were
+initially wrong. The large-middle-first reduction then joins
+the preceding complete ordered theorem. Its positive circle
+masses force both original intermediate signs to be normal
+at equality, after which reapplication to the original
+centers gives the full stationary equality classification.
 
 [The common A/B-frame clamp](HAND_G5_COMMON_AB_FRAME_CLAMP.md)
 removes the A/B placement assumption once the three zeros
