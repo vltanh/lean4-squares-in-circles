@@ -55,8 +55,12 @@ signed target cut `y_A<1/2`. The high-GA branch is now excluded
 for every A-owner/error alternative when BT2, DE2 and EH0 are
 retained. With core E, every A/E alternative is also excluded
 when TD2 is nonpositive, and every A/TD alternative is excluded
-when the designated E-primary total is nonnegative. Other
-high-GA primary cases remain open. At an actual diagonal D, an exact change of
+when the designated E-primary total is nonnegative. For either
+radial kind of E, the branch is now also excluded when both
+designated A/E totals are nonnegative and TD is either arbitrary
+TD0 or nonnegative TD2. Each primary pair may have opposite
+individual error signs. Other high-GA primary cases remain open.
+At an actual diagonal D, an exact change of
 nearest-axis representative recodes the high-GA/low-EH branch
 into the normal quarter classes. No global transport to that
 diagonal has been assumed. The remaining global steps must still supply
@@ -287,6 +291,7 @@ primary owners are selected; it is zero when neither is selected.
 | [Secondary E owners, every A alternative](HAND_G3_HIGH_GA_ALL_A_PRIMARY_ALTERNATIVES_EXCLUDED.md) | DE2/EH0; every GA2/3, AB0/2, TD0/2 alternative and every error sign; either sign and radial kind at A,T,E. |
 | [Core E with nonnegative primary total](HAND_G3_CORE_E_NONNEGATIVE_PRIMARY_TOTAL_ALL_A_EXCLUSION.md) | Nonpositive true-core E; designated E-primary total nonnegative; every A and TD owner/error alternative. |
 | [Core E with nonpositive TD2](HAND_G3_CORE_E_NONPOSITIVE_TD2_ALL_A_EXCLUSION.md) | Nonpositive true-core E; TD2 error at most zero; every A and E owner/error alternative. |
+| [Nonnegative A/E totals, either E radial kind](HAND_G3_NONNEGATIVE_A_E_TOTALS_TD0_OR_POSITIVE_TD2_EXCLUSION.md) | Nonpositive E, outer or true core; both designated primary totals nonnegative, including opposite individual signs within either pair; arbitrary TD0 or nonnegative TD2. |
 
 The first assembly retains the four actual outer circles in
 one positive weighted sum. Secondary cases use a
@@ -319,6 +324,18 @@ and [mixed negative-E reduction](HAND_G3_MIXED_NEGATIVE_E_PRIMARY_ERRORS_REDUCTI
 The A-only transport keeps E and TD unchanged and retains the
 original `y_A<1/2` cut directly along its flat-core path.
 
+The fourth row retains the actual A/E charges with equal weights
+within each primary pair. The ratio `j(t)/t` is strictly decreasing,
+which combines small nonnegative totals without assuming global
+concavity of j. At larger totals, balanced circle concentration
+and concavity in the A/TD split leave six intrinsic endpoints.
+Two explicit weight families cover one whole triangle and one
+whole rectangle. Positive polynomial masses and exact Chebyshev
+coefficient sums certify all twelve formulas without subdivision.
+The arbitrary TD0 case retains its full fourth circle block and
+uses the proved dominance of its negative curve. The proof does
+not require E to be core or alter an original witness.
+
 Additional proved single-negative-E branches use
 [secant D support](HAND_G3_CORE_E_NEGATIVE_DE3_SECANT_D_SUPPORT.md),
 [secant H support](HAND_G3_CORE_E_NEGATIVE_EH1_SECANT_H_SUPPORT.md),
@@ -348,8 +365,9 @@ paired-E scalar bounds are still required before these helpers
 can be assembled into a branch exclusion.
 
 The remaining high-GA work includes BT3, the uncovered simultaneous
-negative core-E alternatives, and outer-E positive-primary regimes.
-In particular none of the three complete domains in the table is
+negative core-E alternatives, and the remaining outer-E regimes
+with a negative A total or negative TD2 error.
+In particular none of the four complete domains in the table is
 silently extended to all high-GA candidates.
 
 ### Earlier global marker consequences
