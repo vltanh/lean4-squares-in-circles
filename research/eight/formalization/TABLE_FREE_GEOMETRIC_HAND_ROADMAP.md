@@ -42,7 +42,7 @@ ED-owner/H frame; no unjustified conversion to the old A/G tilt is used.
 | G3 | All six cuts closed conditionally at S<=3/200 | Cut-free quarter owners first give four cuts at S<=1/32; complete H-low exclusions then give H>1/2, followed by G>-4/5. No tangent cut is an independent missing input after small mismatch. |
 | G4 | Global capture open; ordered AB alignment covers all outer errors and G/T signs | The original ordered HG2/TD0 class reduces to five anchors with strict loss off zero. AB alignment now covers every outer-owner/error pattern, including both wrong intermediate signs simultaneously, under the retained H/A/B/D signs and frame order. Coarse mismatch bounds S<2/5 and S<13/50 remain open. |
 | G5 | Entire ordered hard-owner class sharp without G/T sign assumptions | Both outer errors and both intermediate transverse coordinates may have either sign. Wrong intermediate signs reach a zero endpoint with strict middle-circle loss; the existing complete reduction then applies. The already aligned-three-zero class needs no frame-order hypothesis. Global owner capture and alignment without frame order remain open. |
-| G6 | DE closed globally; forbidden BT has a global three-edge return bound | Every original DE witness is in {2,3}. A feasible BT0/1 forces A positive; its complete E--H--G--A return now has linear-A charge greater than 103/40, covering every return owner and radial kind. The complementary four-edge lower bound remains open. |
+| G6 | DE closed globally; most forbidden BT0 cases excluded globally | The all-owner return charge exceeds 103/40. Its complementary four-edge bound is now proved for BT0 with DE2, or with outer E, using six whole-interval polynomial comparisons. The same cases with nonnegative BT1 error reduce to it. Core E with negative DE3, and the remaining negative-BT1 branches, are still open. |
 | G7 | Closed conditionally at S<=3/200; old contraction retired | Every original mixed owner is G0/E1, without an S<=1/1000 premise. |
 | G8 | Closed conditionally at S<=3/200 | t>S and 1/10<tau<4/25, where tau is the actual ED-owner/H frame difference. |
 | G9 | Closed conditionally at S<=3/200 | Sharp owner-frame inequality with S/5000, all five completed anchors, and the full equality family. |
@@ -167,9 +167,23 @@ absolute errors total at most `.3`, their actual nominal
 projections give `b_A<=4c_0-3+R`; the unchanged G1 charge
 retains a gain in R. One strongly convex high-chart scalar
 and one rational reference point give the full return bound.
-Thus a complementary AB--BT--TD--DE charge at least
-`16761/4520` would close the remaining forbidden-BT branch.
-That complementary inequality is still an explicit open task.
+The [complementary BT0 path theorem](HAND_G3_GLOBAL_BT0_DE2_PATH_EXCLUSION.md)
+now proves its charge greater than `16761/4520` for every
+original DE2 witness, and for either DE owner when E is outer.
+It first derives a global total-negative-error bound below
+`.7`, removes positive errors by exact dual comparisons,
+and concentrates the retained negative errors onto one of
+two intrinsic endpoints by circle-norm concavity. Three
+whole E-chart weight families then give six explicit
+degree-ten polynomials, each positive on its entire interval
+by a single quadratic or derivative bound. Thus the stated
+BT0 branches are excluded globally.
+[The positive-BT1 support comparison](HAND_G3_POSITIVE_BT1_DUAL_COMPARISON.md)
+reduces every nonnegative BT1 error to the same aligned-BT
+dual, independently of the original AB owner or B sign.
+It closes those same DE/E cases for nonnegative BT1 as well.
+The remaining complementary-path tasks are core E with
+negative DE3 error, and the other negative-BT1 branches.
 
 [The earlier DE-owner theorem at S<=1/32](HAND_G3_D_OWNER_WITHOUT_TANGENT_CUTS_AT_ONE_THIRTY_SECOND.md)
 remains valid and is used in the already completed conditional
