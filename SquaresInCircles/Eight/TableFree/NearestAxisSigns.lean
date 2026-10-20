@@ -42,6 +42,7 @@ theorem zero_source_negative_diagonal_impossible {C : SignedCycle}
       delta C.theta i+C.localAngle i-C.localAngle (next i) := by
     simp [physicalGap,hw]
   rw [hgap,hsource] at hg
+  dsimp [delta] at hg
   dsimp [delta,frameCap] at hdelta
   linarith
 
@@ -57,6 +58,7 @@ theorem zero_target_positive_diagonal_impossible {C : SignedCycle}
       delta C.theta i+C.localAngle i-C.localAngle (next i) := by
     simp [physicalGap,hw]
   rw [hgap,htarget] at hg
+  dsimp [delta] at hg
   dsimp [delta,frameCap] at hdelta
   linarith
 
