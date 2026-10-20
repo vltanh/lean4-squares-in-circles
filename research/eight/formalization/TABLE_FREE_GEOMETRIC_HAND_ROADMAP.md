@@ -16,11 +16,10 @@ preferred mixed owner. A second route now closes the entire aligned
 hard-quarter class, without any mismatch hypothesis, by explicit
 radius-preserving reductions. Its signed three-zero bridge also closes
 the original ordered class with HG2/TD0 and the stated remaining owners.
-The nonnegative and nonpositive outer-error extensions now each
-admit all four outer owner combinations, with their explicit G/T
-signs and frame order, and retain the complete original-center
-equality conclusion. Mixed outer-error signs remain a separate
-entry case at this checkpoint.
+The full ordered outer-error extension now admits all signs of
+both outer errors and all four outer owner combinations, with
+its explicit G/T signs and frame order, and retains the complete
+original-center equality conclusion.
 The missing global step must supply either complete route's entry
 hypotheses; neither is asserted for arbitrary candidates.
 
@@ -37,12 +36,12 @@ ED-owner/H frame; no unjustified conversion to the old A/G tilt is used.
 | G2 | Closed on paper | All six wrong words excluded; only 0101011 survives. Reflection gives the weak E sign. |
 | G3 | All six cuts closed conditionally at S<=3/200 | Cut-free quarter owners first give four cuts at S<=1/32; complete H-low exclusions then give H>1/2, followed by G>-4/5. No tangent cut is an independent missing input after small mismatch. |
 | G4 | Global capture open; ordered AB alignment covers all outer errors | The original ordered HG2/TD0 class reduces to five anchors with strict loss off zero. AB alignment now also covers every outer-owner/error pattern under the stated normal signs and frame order. Coarse mismatch bounds S<2/5 and S<13/50 remain open. |
-| G5 | Aligned and both same-sign ordered outer-error classes sharp; global contractions open | The G/T-zero endpoint closes the nonnegative class. The full canonical negative boundary now enters the sharp terminal, closing the nonpositive class. Both include all outer owners and original equality under the stated signs and order. Mixed outer signs and global entry remain open. |
+| G5 | Entire ordered normal-sign hard-owner class sharp; global contractions open | Both outer errors may have either sign, with every allowed outer owner. The mixed G/T-zero endpoint is excluded by an explicit derivative comparison in the existing affine stress. Original-center equality is retained. Global signs, owner capture and frame order remain entry obligations. |
 | G6 | DE closed globally; forbidden BT forces A positive globally | Every original DE witness is in {2,3} without any mismatch or tangent input. A feasible BT0/1 also forces A positive by a shared two-edge charge. Excluding that remaining sign branch still uses S<=1/32. |
 | G7 | Closed conditionally at S<=3/200; old contraction retired | Every original mixed owner is G0/E1, without an S<=1/1000 premise. |
 | G8 | Closed conditionally at S<=3/200 | t>S and 1/10<tau<4/25, where tau is the actual ED-owner/H frame difference. |
 | G9 | Closed conditionally at S<=3/200 | Sharp owner-frame inequality with S/5000, all five completed anchors, and the full equality family. |
-| G10 | Open pending global entry into a completed route | The original-center transfer at S<=3/200 and the ordered hard-owner classes with either common outer-error sign are proved, including equality. Arbitrary candidates are not yet captured by either route. |
+| G10 | Open pending global entry into a completed route | The original-center transfer at S<=3/200 and the entire ordered normal-sign hard-owner class are proved, including equality. Arbitrary candidates are not yet captured by either route. |
 
 These are mathematical hand-proof statuses, not Lean verification claims.
 Historical certificate files and the uncompiled Lean draft remain unchanged.
@@ -452,7 +451,27 @@ which forces it to vanish at equality. Reapplying the aligned
 theorem to the original anchors then supplies their unique
 stationary values and the complete original equality family.
 
-These reductions have not yet closed mixed outer-error signs, the other
+[The mixed G/T-zero domain theorem](HAND_G5_MIXED_G_ZERO_NEGATIVE_DOMAIN.md)
+now proves the same endpoint domain opposite a large-transverse
+negative error: `h>.107`, `alpha+h<.311`, and opposite total
+error below `.12`. Its two convex cap endpoints retain the
+same B circle and the exact true-core comparison. The
+[mixed stress extension](HAND_G5_MIXED_G_ZERO_NEGATIVE_STRESS_EXTENSION.md)
+then uses the unchanged affine weights and proves that the
+negative error adds more than `3e/1000` to their positive
+scalar margin. Its full derivative bounds allow either E sign.
+
+[The all-outer-sign ordered assembly](HAND_G5_ALL_OUTER_SIGNS_ORDERED_SHARP_REDUCTION.md)
+therefore closes both mixed sign possibilities as well. After
+AB alignment, it processes the larger tangent first, then
+aligns the smaller tangent by excluding either zero-transverse
+endpoint. Only an aligned system or the already resolved
+single large-tangent negative error can remain. Every strict
+circle loss survives, and equality is recovered for the
+original centers. No sign of either outer frame difference is
+an entry assumption for this complete ordered-class theorem.
+
+These reductions have not yet closed the other
 frame orders, the remaining global sign alternatives or the
 remaining original quarter/mixed witnesses. Those are entry
 obligations for this route. The complete theorem for the hard
@@ -606,8 +625,9 @@ Here `Q1=1957767069/500000000`. The historical G4/G5 contractions are
 one possible route to this implication; they are not mandatory intermediate
 theorems. A proved global reduction into the hard class of Section 3 would
 also supply the lower bound, with every original equality consequence
-retained. That route is now complete for the stated ordered canceling-owner
-class; entry from arbitrary candidates remains open.
+retained. That route is now complete for the stated ordered
+normal-sign hard-owner class, with every outer-error sign and
+outer owner; entry from arbitrary candidates remains open.
 
 Once the displayed implication is proved, the completed original-center transfer
 and Section 5 close G10 and the unrestricted theorem. The transfer is no
