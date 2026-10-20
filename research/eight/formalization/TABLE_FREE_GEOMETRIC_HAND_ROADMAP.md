@@ -36,7 +36,7 @@ ED-owner/H frame; no unjustified conversion to the old A/G tilt is used.
 | G3 | All six cuts closed conditionally at S<=3/200 | Cut-free quarter owners first give four cuts at S<=1/32; complete H-low exclusions then give H>1/2, followed by G>-4/5. No tangent cut is an independent missing input after small mismatch. |
 | G4 | Global capture open; signed three-zero bridge proved | The original ordered HG2/TD0 class reduces at the same radius to five anchors, with strict anchor loss for every nonzero zero-edge error. Coarse mismatch bounds S<2/5 and S<13/50 remain open. |
 | G5 | Aligned and ordered nonnegative-outer-error classes sharp; global contractions open | The G/T-zero endpoint is excluded by two affine stress formulas. This completes all outer-owner combinations with nonnegative outer errors, the stated signs and frame order, including original equality. Negative noncanceling errors and global entry remain open. |
-| G6 | DE closed globally; BT closed conditionally at S<=1/32 | Every original DE witness is in {2,3} without any mismatch or tangent input. The complete BT theorem still uses S<=1/32. |
+| G6 | DE closed globally; forbidden BT forces A positive globally | Every original DE witness is in {2,3} without any mismatch or tangent input. A feasible BT0/1 also forces A positive by a shared two-edge charge. Excluding that remaining sign branch still uses S<=1/32. |
 | G7 | Closed conditionally at S<=3/200; old contraction retired | Every original mixed owner is G0/E1, without an S<=1/1000 premise. |
 | G8 | Closed conditionally at S<=3/200 | t>S and 1/10<tau<4/25, where tau is the actual ED-owner/H frame difference. |
 | G9 | Closed conditionally at S<=3/200 | Sharp owner-frame inequality with S/5000, all five completed anchors, and the full equality family. |
@@ -131,6 +131,19 @@ these implications supply all six signs for the hard original
 HG2/GA0/AB0-or-2/BT2/TD0/DE3/EH1 class before any mismatch
 bound. Its six signs are therefore no longer separate entry
 assumptions once those original owners are supplied.
+
+[The global zero--quarter propagation theorem](HAND_G3_GLOBAL_A_SIGN_UNDER_FORBIDDEN_B_OWNER.md)
+now also proves that an original BT0/1 witness forces `y_A>0`,
+without a mismatch, E sign, tangent cut, or other quarter owner.
+Under the contrary weak A sign, the actual AB2 and BT path has
+common-marker charge greater than `19/10`; the original five-edge
+return exceeds the full cyclic budget. Its BT1 positive-error case
+retains both the B and T circles and reduces a complete angle
+triangle to one harmonic boundary. Generically, a zero edge
+followed by a quarter axis 0/1 forces both outer endpoints
+positive; the reflected quarter axis 2/3 followed by a zero edge
+forces both outer endpoints negative. The A-positive forbidden-BT
+branch itself remains open globally.
 
 [The earlier DE-owner theorem at S<=1/32](HAND_G3_D_OWNER_WITHOUT_TANGENT_CUTS_AT_ONE_THIRTY_SECOND.md)
 remains valid and is used in the already completed conditional
@@ -370,7 +383,26 @@ is impossible for every E split and either E sign: two retained
 circle concavities reduce it to an explicit positive concave
 quartic. This does not assert that an arbitrary negative-error
 chain reaches that endpoint. Its general large-tangent negative
-errors and unaligned E endpoints remain open.
+errors require further work.
+
+[The two-sided E-zero deletion theorem](HAND_G5_NEGATIVE_OUTER_E_ZERO_ERROR_DELETION.md)
+now excludes E-zero throughout the AB-aligned class with either
+or both negative noncanceling outer errors. Small transverse
+coordinates absorb their errors into the adjacent hard tilt;
+large transverse coordinates delete their errors from the
+corresponding E angles. Both operations retain the same A/B
+circles and give the already excluded aligned E-zero split.
+
+[The large-transverse DE-alignment theorem](HAND_G5_NEGATIVE_HG_LARGE_TRANSVERSE_DE_ALIGNMENT_EXCLUSION.md)
+excludes the entire `t+u+e=alpha<=.27` simplex when `b_A>=.5`
+and `delta=0`, at `Q1`. Two explicit cubic weight formulas and
+whole-interval derivative bounds cover the simplex with a
+single common stress at each alpha. This theorem allows either
+E sign. The separate `epsilon=0` exclusion uses nonnegative
+E magnitude; after reflection its sign hypothesis must still
+be checked. The boundary with a negative error on the large-B
+side near the canonical equality configuration is not yet
+closed, nor is the general mixed positive/negative outer case.
 
 These reductions have not yet closed all negative HG0/TD2 cases, the other
 frame orders, the remaining global sign alternatives or the
