@@ -416,7 +416,7 @@ theorem flat_core_negative_ga1_hg0_transport
     · have haligned := (PrimaryCap.demand_iff_actual H).1 hxcontact
       rw [hxΘ,sub_self] at haligned
       have hy : 1≤H.y-G'.y := by
-        simpa [G',zeroFeasible,zeroProjection] using haligned
+        simpa [G',hxΘ,zeroFeasible,zeroProjection] using haligned
       linarith
 
 end SquaresInCircles.Eight.TableFree

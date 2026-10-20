@@ -290,7 +290,7 @@ theorem flat_core_negative_ga1_hg2_transport
       · have hHb := (H.coordinate_bounds hHs hHcore hHc hq).2.2
         have hHyupper : H.y<9/10 := (le_abs_self _).trans_lt hHb
         have hslack : 1<H.y-G'.y := by
-          simpa [hxΘ,zeroProjection] using hstrict
+          simpa [G',hxΘ,zeroProjection] using hstrict
         linarith
 
 end SquaresInCircles.Eight.TableFree

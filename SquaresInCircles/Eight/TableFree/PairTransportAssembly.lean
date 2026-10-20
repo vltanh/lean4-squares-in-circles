@@ -58,21 +58,29 @@ theorem clamped_pair_variations {a b t x : ℝ}
   · simp only [min_eq_left hab,max_eq_right hab,mem_Icc] at ht
     have h₁ : 0≤t-a := by linarith
     have h₂ : 0≤b-t := by linarith
-    have h₃ : 0≤b-a := by linarith
-    simp only [positivePart,negativePart,max_eq_left h₁,max_eq_left h₂,
-      max_eq_right (neg_nonpos.mpr h₁),max_eq_right (neg_nonpos.mpr h₂)]
-    constructor
-    · simpa [positivePart,max_eq_left h₃] using hp
-    · exact add_nonneg (negativePart_nonneg _) (negativePart_nonneg _)
+    have he : positivePart (t-a)+positivePart (b-t)=positivePart (b-a) := by
+      simp only [positivePart,max_eq_left h₁,max_eq_left h₂,
+        max_eq_left (by linarith : 0≤b-a)]
+      ring
+    have hn0 : negativePart (t-a)+negativePart (b-t)=0 := by
+      simp [negativePart,max_eq_right (neg_nonpos.mpr h₁),
+        max_eq_right (neg_nonpos.mpr h₂)]
+    exact ⟨he.trans_le hp,by
+      rw [hn0]
+      exact add_nonneg (negativePart_nonneg _) (negativePart_nonneg _)⟩
   · simp only [min_eq_right hab,max_eq_left hab,mem_Icc] at ht
     have h₁ : t-a≤0 := by linarith
     have h₂ : b-t≤0 := by linarith
-    have h₃ : b-a≤0 := by linarith
-    simp only [positivePart,negativePart,max_eq_right h₁,max_eq_right h₂,
-      max_eq_left (neg_nonneg.mpr h₁),max_eq_left (neg_nonneg.mpr h₂)]
-    constructor
-    · exact add_nonneg (positivePart_nonneg _) (positivePart_nonneg _)
-    · simpa [negativePart,max_eq_left (neg_nonneg.mpr h₃)] using hn
+    have hp0 : positivePart (t-a)+positivePart (b-t)=0 := by
+      simp [positivePart,max_eq_right h₁,max_eq_right h₂]
+    have he : negativePart (t-a)+negativePart (b-t)=negativePart (b-a) := by
+      simp only [negativePart,max_eq_left (neg_nonneg.mpr h₁),
+        max_eq_left (neg_nonneg.mpr h₂),
+        max_eq_left (by linarith : 0≤ -(b-a))]
+      ring
+    exact ⟨by
+      rw [hp0]
+      exact add_nonneg (positivePart_nonneg _) (positivePart_nonneg _),he.trans_le hn⟩
 
 namespace SignedCycle
 
