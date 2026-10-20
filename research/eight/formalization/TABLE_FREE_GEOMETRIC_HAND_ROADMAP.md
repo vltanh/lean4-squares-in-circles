@@ -25,8 +25,14 @@ three-zero class, every frame-order assumption has now been
 removed: the H/D span is necessarily positive, a common A/B
 frame outside D--H clamps to the nearer endpoint with strict
 circle loss, and the E-frame reduction retains that loss.
-The missing global step must supply either complete route's entry
-hypotheses; neither is asserted for arbitrary candidates.
+Both ordinary quarter-owner conclusions are now global:
+every original BT and DE witness has owner 2 or 3, and B,D
+have strictly negative signed tangents. The full BT proof
+includes both signs of every error, all radial kinds, and
+all original return-path owners. The remaining global steps
+must still supply the mixed-owner and alignment hypotheses
+of a completed sharp route; arbitrary candidates are not yet
+asserted to satisfy those entry conditions.
 
 The old final contraction `S<=3/200 => S<1/1000` is now **unnecessary**.
 Mixed-owner rigidity, both tilt signs, the complete positive tilt tails,
@@ -42,7 +48,7 @@ ED-owner/H frame; no unjustified conversion to the old A/G tilt is used.
 | G3 | All six cuts closed conditionally at S<=3/200 | Cut-free quarter owners first give four cuts at S<=1/32; complete H-low exclusions then give H>1/2, followed by G>-4/5. No tangent cut is an independent missing input after small mismatch. |
 | G4 | Global capture open; ordered AB alignment covers all outer errors and G/T signs | The original ordered HG2/TD0 class reduces to five anchors with strict loss off zero. AB alignment now covers every outer-owner/error pattern, including both wrong intermediate signs simultaneously, under the retained H/A/B/D signs and frame order. Coarse mismatch bounds S<2/5 and S<13/50 remain open. |
 | G5 | Entire ordered hard-owner class sharp without G/T sign assumptions | Both outer errors and both intermediate transverse coordinates may have either sign. Wrong intermediate signs reach a zero endpoint with strict middle-circle loss; the existing complete reduction then applies. The already aligned-three-zero class needs no frame-order hypothesis. Global owner capture and alignment without frame order remain open. |
-| G6 | DE closed globally; most forbidden BT0 cases excluded globally | The all-owner return charge exceeds 103/40. Its complementary four-edge bound is now proved for BT0 with DE2, or with outer E, using six whole-interval polynomial comparisons. The same cases with nonnegative BT1 error reduce to it. Core E with negative DE3, and the remaining negative-BT1 branches, are still open. |
+| G6 | Closed globally without mismatch or tangent cuts | Every original BT and DE witness has owner 2 or 3; B and D have strictly negative signed tangents. The all-owner return charge and complete four-edge bound exclude every BT0/1 branch, including core E with negative DE3 and every negative-BT1/AB sign combination. |
 | G7 | Closed conditionally at S<=3/200; old contraction retired | Every original mixed owner is G0/E1, without an S<=1/1000 premise. |
 | G8 | Closed conditionally at S<=3/200 | t>S and 1/10<tau<4/25, where tau is the actual ED-owner/H frame difference. |
 | G9 | Closed conditionally at S<=3/200 | Sharp owner-frame inequality with S/5000, all five completed anchors, and the full equality family. |
@@ -148,15 +154,16 @@ retains both the B and T circles and reduces a complete angle
 triangle to one harmonic boundary. Generically, a zero edge
 followed by a quarter axis 0/1 forces both outer endpoints
 positive; the reflected quarter axis 2/3 followed by a zero edge
-forces both outer endpoints negative. The A-positive forbidden-BT
-branch itself remains open globally.
+forces both outer endpoints negative. That propagation theorem
+alone did not exclude the positive-A branch; the complete global
+BT theorem below now does so.
 
 [The whole-chart marker and negative-AB comparison](HAND_G3_BT_PATH_MARKER_AND_NEGATIVE_AB_COMPARISON.md)
 supplies the global bounds `F>=.86b` and
 `F_O<=3(a-a_0)/8+1.091b`. Its exact negative-AB dual comparison
 also retains a positive reserve under the stated source-weight
-and complementary-charge hypotheses. These are analytic helpers
-for that remaining branch, not an assertion that it is excluded.
+and complementary-charge hypotheses. These analytic helpers
+are used in the completed global branch exclusion below.
 
 [The global linear-A return theorem](HAND_G3_GLOBAL_RETURN_WITH_LINEAR_A_CHARGE.md)
 now proves `pi+r+v+t-(49/50)b_A-F_E>103/40` on E--H--G--A,
@@ -182,8 +189,33 @@ BT0 branches are excluded globally.
 reduces every nonnegative BT1 error to the same aligned-BT
 dual, independently of the original AB owner or B sign.
 It closes those same DE/E cases for nonnegative BT1 as well.
-The remaining complementary-path tasks are core E with
-negative DE3 error, and the other negative-BT1 branches.
+[The complete core-E/negative-DE3 tail](HAND_G3_GLOBAL_BT0_CORE_E_DE3_PATH_EXCLUSION.md)
+now closes that remaining BT0 case. Its small-DE-error
+choice reduces to one continuous prefix scalar; its larger
+DE-error choice uses [saturated-prefix monotonicity](HAND_G3_CORE_E_DE3_SATURATED_PREFIX_MONOTONICITY.md)
+to reach the [aligned core-E base scalar](HAND_G3_CORE_E_DE3_BASE_SCALAR.md).
+The proof retains the actual core marker and both T/D circles.
+
+[The exact negative-BT1 prefix comparisons](HAND_G3_NEGATIVE_BT1_PREFIX_COMPARISONS.md)
+separate necessary coordinate caps from weaker charge
+comparisons. [The high-primary transport](HAND_G3_NEGATIVE_BT1_HIGH_PRIMARY_DUAL_TRANSPORT.md)
+uses those caps only where actually derived. The last
+positive-AB2 branch is handled by a [two-slope charge bound](HAND_G3_POSITIVE_AB2_NEGATIVE_BT1_SOFT_CAP.md):
+an additional positive charge replaces the unavailable upper
+bound on its auxiliary tangent. One intrinsic support split
+and a positive envelope derivative then reach the same tail.
+
+[The complete global BT-owner assembly](HAND_G3_GLOBAL_BT_OWNER_RIGIDITY.md)
+joins every branch, including all original owners, signs,
+radial kinds and weak ties. It also raises the DE2 TD weights
+to at least `.6` by a constant-weight concavity comparison,
+so the negative-prefix transports and tail bounds have
+exactly matching hypotheses. The complementary charges
+sum to more than `710/113`, contradicting `2 pi<710/113`.
+Thus every original BT witness has owner 2 or 3, and the
+global quarter-sign theorem supplies `y_B<0`. This closes
+G6 globally; no mismatch bound or preferred mixed owner
+was used.
 
 [The earlier DE-owner theorem at S<=1/32](HAND_G3_D_OWNER_WITHOUT_TANGENT_CUTS_AT_ONE_THIRTY_SECOND.md)
 remains valid and is used in the already completed conditional

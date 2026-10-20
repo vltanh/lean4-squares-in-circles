@@ -23,7 +23,8 @@ errors as
 \]
 
 **Theorem.** If original BT owner 0 is a witness, and either original
-DE owner 2 is a witness or E is outer, then
+DE owner 2 is a witness, E is outer, or the selected original DE3
+witness has nonnegative error, then
 
 \[
  \boxed{\pi+v+x+w+y+\kappa b_A+F_E>

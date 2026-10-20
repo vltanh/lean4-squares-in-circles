@@ -18,10 +18,12 @@ less than `7/10`.
 
 Give TD any multiplier `0<c<=kappa` and give AB any fixed positive
 multiplier. Give BT the multiplier `kappa cos x`. Relax each unsigned
-T state to the full sorted shifted disk, and each signed B state to
-the full signed sorted shifted disk. These relaxations include every
-actual core and outer state. Keep the other centers, errors, and
-terms unchanged.
+T state to the full sorted shifted disk. For signed B use that disk
+with its global primary lower bound `a_B>=447/800` retained. These
+relaxations include every actual core and outer state. The B cut is
+needed if the subsequent negative-AB0 comparison uses that primary
+bound; no step below removes it. Keep the other centers, errors,
+and terms unchanged.
 
 **Dual comparison.** The resulting lower-bound expression is at
 least its value with `x=0` and BT multiplier `kappa`. The comparison
