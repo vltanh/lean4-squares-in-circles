@@ -60,8 +60,17 @@ for every A/E owner, every error allocation and either TD owner.
 For either E radial kind, all A/TD alternatives are excluded
 when the designated E-primary total is nonnegative; all A/E
 alternatives are also excluded when TD2 is nonpositive.
-The negative core-E total with TD0 or positive TD2, and the
-independent BT3 alternative, remain open high-GA regimes.
+The simultaneous-negative core-E pair now has a complete
+actual-state transport to a single negative E primary; its
+old low-angle concentration obligation is retired. With BT2,
+a nonnegative selected A-primary total therefore excludes
+every E and TD alternative. Allowing BT3, all T-owner choices
+and signed error allocations are now excluded when the
+selected A- and E-primary totals are nonnegative. A second
+complete region permits arbitrary A totals when the selected
+T total is nonpositive and the E total is nonnegative; outer
+E needs no sign condition on its selected E total. Coupled
+negative totals outside these regions remain open.
 At an actual diagonal D, an exact change of
 nearest-axis representative recodes the high-GA/low-EH branch
 into the normal quarter classes. No global transport to that
@@ -282,9 +291,11 @@ without excluding it.
 
 The following theorems all retain the globally forced outer
 anchors H,G,B,D with signs `+,-,-,-`, the high GA owners 2/3,
-both zero owners, and **BT2**. They do not assume a frame order.
+and both zero owners. The first six rows retain **BT2**;
+the last two allow **both BT2 and BT3**. No row assumes a frame order.
 Here the A-primary owners are GA3 and AB2, and the E-primary
-owners are DE3 and EH1. A designated primary total is the
+owners are DE3 and EH1; the T-primary owners are BT3 and TD2.
+A designated primary total is the
 single selected primary error, or the signed sum when both
 primary owners are selected; it is zero when neither is selected.
 
@@ -294,6 +305,10 @@ primary owners are selected; it is zero when neither is selected.
 | [Nonnegative E-primary total, every A alternative](HAND_G3_OUTER_E_HIGH_GA_COMPLETE_WITH_BT2.md) | Nonpositive E of either radial kind; designated E-primary total nonnegative; every A and TD owner/error alternative. |
 | [Every A/E owner with nonpositive TD2](HAND_G3_ALL_A_E_OWNERS_WITH_NONPOSITIVE_TD2_EXCLUSION.md) | Nonpositive E of either radial kind; TD2 error at most zero; every A and E owner/error alternative. |
 | [Outer E, every A/E alternative](HAND_G3_OUTER_E_HIGH_GA_COMPLETE_WITH_BT2.md) | Nonpositive outer E; every A/E primary or secondary owner and error allocation, both TD owners and every TD error sign. |
+| [Nonnegative A-primary total, every E alternative](HAND_G3_PAIRED_NEGATIVE_CORE_E_COMPLETE_TRANSPORT.md) | BT2; either E radial kind; every E owner/error allocation, both TD owners and every TD error sign. |
+| [Arbitrary TD0, every A/E alternative](HAND_G3_PAIRED_NEGATIVE_CORE_E_COMPLETE_TRANSPORT.md) | BT2 and TD0 at any error; every A/E owner and signed total; the joint-negative case joins independent A/E transports with the fixed flat-core-E stress. |
+| [Nonpositive T-primary total, every A alternative](HAND_G3_HIGH_GA_NONPOSITIVE_T_PRIMARY_TOTAL_EXCLUSION.md) | BT2/3 and TD0/2; nonnegative selected E-primary total; every A owner/error allocation. For outer E the E-total sign condition is unnecessary. |
+| [Nonnegative A/E totals, every T alternative](HAND_G3_POSITIVE_T_PRIMARY_TOTAL_SIGNED_CANCELLATION_TRANSPORT.md) | Either E radial kind; every BT2/3 and TD0/2 selection and every signed T allocation, including opposite signs in a primary pair. |
 
 The first assembly retains the four actual outer circles in
 one positive weighted sum. Secondary cases use a
@@ -368,28 +383,60 @@ the linked component notes. An
 already has its actual secondary witness feasible. These local
 facts do not assert a universal E-only conversion with H,D fixed.
 
-[The adaptive EH gain](HAND_G3_CORE_E_ADAPTIVE_EH_QUADRATIC_GAIN.md)
-supplies a smooth multiplier `p(t)=1+t^2/2+50t^4` for a genuine
-negative core-E EH1 error. Its exact lower bound retains a
-positive quadratic remainder on the full stated interval. The
-accompanying H support remains an explicit input to the later
-paired-E angle reduction; this helper alone does not exclude
-the simultaneous-negative E branch.
+[The complete paired-negative core-E transport](HAND_G3_PAIRED_NEGATIVE_CORE_E_COMPLETE_TRANSPORT.md)
+now replaces the unfinished adaptive-gain route. It retains both
+actual E inequalities and moves only the flat-core E state.
+Strict concavity of its D-coordinate demand gives a feasible
+aligned secondary endpoint, or E=0. The latter contradicts
+high GA by reflection of the global BT theorem. Thus no separate
+paired-E low-angle concentration or scalar bound remains.
+The earlier [adaptive gain](HAND_G3_CORE_E_ADAPTIVE_EH_QUADRATIC_GAIN.md),
+[high-angle domination](HAND_G3_PAIRED_NEGATIVE_CORE_E_HIGH_ANGLE_DOMINATION.md)
+and [short-positive-excess lemma](HAND_G3_PAIRED_NEGATIVE_CORE_E_SHORT_POSITIVE_EXCESS.md)
+remain valid helpers, but are unnecessary for this transport.
+Joining its actual endpoints with the complete single-E estimates
+proves the nonnegative-A row of the table.
 
-Two further audited angle lemmas retain that actual modified
-H support. [High-angle domination](HAND_G3_PAIRED_NEGATIVE_CORE_E_HIGH_ANGLE_DOMINATION.md)
-restores the required negative-support comparison and removes
-the high saturated alternatives. The
-[short-positive-excess theorem](HAND_G3_PAIRED_NEGATIVE_CORE_E_SHORT_POSITIVE_EXCESS.md)
-handles `t>=theta` with the changing H coefficient included
-in its derivative. The remaining low-angle concentration and
-paired-E scalar bounds are still required before these helpers
-can be assembled into a branch exclusion.
+[The boundary-neighbor bridge](HAND_G3_BOUNDARY_NEIGHBOR_TRANSPORT_AND_E_ZERO_EXCLUSION.md)
+justifies every new invocation of G1--G3 after a local motion.
+It proves the common depth and physical-gap bounds on the actual
+neighbor cycle, recomputes consistent labels at moved states,
+and retains the wrong-word and nearest-axis exclusions. It does
+not require unproved nonneighbor separation along a motion or a
+feasible connecting path for a directly verified endpoint.
 
-The remaining high-GA work includes BT3, the uncovered simultaneous
-negative core-E alternatives with TD0 or positive TD2.
-In particular none of the four complete domains in the table is
-silently extended to all high-GA candidates.
+For T, [the nonpositive signed-total theorem](HAND_G3_HIGH_GA_NONPOSITIVE_T_PRIMARY_TOTAL_EXCLUSION.md)
+keeps arbitrary A alternatives and covers the whole stated
+T/E-total region. A genuinely negative single BT3 either has an
+actual BT2 witness or admits a flat-core transport; any larger
+angle at its descendant is bounded again using that descendant's
+actual paired inequalities. A positive BT3 with arbitrary TD0 is
+excluded for nonnegative A/E totals by
+[an unequal T stress](HAND_G3_POSITIVE_BT3_WITH_TD0_AND_NONNEGATIVE_A_E_TOTALS.md),
+with [the full signed sorted-D envelope](HAND_G3_POSITIVE_BT3_SORTED_D_LOW_ANGLE_ENVELOPE.md)
+and [three exact endpoint certificates](HAND_G3_POSITIVE_BT3_SORTED_D_ENDPOINT_CERTIFICATES.md).
+Its eight scalar inequalities hold on their entire continuous
+triangle or rectangle, without subdivision.
+
+The remaining positive T-primary pairs reduce to those endpoints.
+[Signed cancellation](HAND_G3_POSITIVE_T_PRIMARY_TOTAL_SIGNED_CANCELLATION_TRANSPORT.md)
+handles opposite individual signs, and
+[the same-sign endpoint reduction](HAND_G3_POSITIVE_PAIRED_T_PRIMARY_ENDPOINT_REDUCTION.md)
+handles two nonnegative errors. Both preserve all A/E states,
+owners and errors and use actual neighboring separators. Their
+combination proves the final row of the table. The transports
+themselves impose no A/E-total hypothesis; only the endpoint
+exclusion currently needs those signs.
+
+The remaining high-GA work is coupled negative-total capture
+outside the displayed complete domains. In particular, positive
+BT3 with TD0 and a negative A or core-E total is not covered by
+the nonnegative-A/E endpoint theorem. With BT2 the residual is
+positive TD2 with both a negative A total and a negative core-E
+total; arbitrary TD0 is now excluded by the separate finite join
+in the paired-negative E note. These are genuine
+global obligations, distinct from the now-complete paired-E and
+paired-T transports.
 
 ### Earlier global marker consequences
 
@@ -1143,3 +1190,11 @@ roadmap and component inventories remain in its versions at
 `ca9567729c0839a68e439a91ab63b29e7419b0d4` and
 `bbe15f74b3406647b89eb26710629c0bb3a54f11`.
 Historical table counts are not new compilation measurements.
+
+The 20 October checkpoint `5ac4209b123951df23c730d32ad1a06efef29426`
+restored the independently checked arbitrary-sign hard-owner proof
+and the complete BT2/outer-E assembly from earlier local commits.
+The next checkpoint adds the boundary-neighbor transport bridge,
+the complete paired-E and paired-T transports, and the enlarged
+high-GA domains above. All of these are hand mathematics; no Lean
+source or CI state is changed by these checkpoints.
