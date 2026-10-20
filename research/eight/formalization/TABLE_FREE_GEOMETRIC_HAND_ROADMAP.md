@@ -67,9 +67,8 @@ a nonnegative selected A-primary total therefore excludes
 every E and TD alternative. Allowing BT3, all T-owner choices
 and signed error allocations are now excluded when the
 selected A- and E-primary totals are nonnegative. A second
-complete region permits arbitrary A totals when the selected
-T total is nonpositive and the E total is nonnegative; outer
-E needs no sign condition on its selected E total. Coupled
+complete region now permits **every A/E total and both E radial
+kinds whenever the selected T total is nonpositive**. Coupled
 negative totals outside these regions remain open.
 At an actual diagonal D, an exact change of
 nearest-axis representative recodes the high-GA/low-EH branch
@@ -307,7 +306,7 @@ primary owners are selected; it is zero when neither is selected.
 | [Outer E, every A/E alternative](HAND_G3_OUTER_E_HIGH_GA_COMPLETE_WITH_BT2.md) | Nonpositive outer E; every A/E primary or secondary owner and error allocation, both TD owners and every TD error sign. |
 | [Nonnegative A-primary total, every E alternative](HAND_G3_PAIRED_NEGATIVE_CORE_E_COMPLETE_TRANSPORT.md) | BT2; either E radial kind; every E owner/error allocation, both TD owners and every TD error sign. |
 | [Arbitrary TD0, every A/E alternative](HAND_G3_PAIRED_NEGATIVE_CORE_E_COMPLETE_TRANSPORT.md) | BT2 and TD0 at any error; every A/E owner and signed total; the joint-negative case joins independent A/E transports with the fixed flat-core-E stress. |
-| [Nonpositive T-primary total, every A alternative](HAND_G3_HIGH_GA_NONPOSITIVE_T_PRIMARY_TOTAL_EXCLUSION.md) | BT2/3 and TD0/2; nonnegative selected E-primary total; every A owner/error allocation. For outer E the E-total sign condition is unnecessary. |
+| [Nonpositive T-primary total, every A/E alternative](HAND_G3_HIGH_GA_ALL_E_NONPOSITIVE_T_TOTAL_EXCLUSION.md) | BT2/3 and TD0/2; every A/E owner and signed total, either E radial kind. Only the selected T-primary total is required to be nonpositive. |
 | [Nonnegative A/E totals, every T alternative](HAND_G3_POSITIVE_T_PRIMARY_TOTAL_SIGNED_CANCELLATION_TRANSPORT.md) | Either E radial kind; every BT2/3 and TD0/2 selection and every signed T allocation, including opposite signs in a primary pair. |
 
 The first assembly retains the four actual outer circles in
@@ -405,9 +404,17 @@ and retains the wrong-word and nearest-axis exclusions. It does
 not require unproved nonneighbor separation along a motion or a
 feasible connecting path for a directly verified endpoint.
 
-For T, [the nonpositive signed-total theorem](HAND_G3_HIGH_GA_NONPOSITIVE_T_PRIMARY_TOTAL_EXCLUSION.md)
-keeps arbitrary A alternatives and covers the whole stated
-T/E-total region. A genuinely negative single BT3 either has an
+For T, [the earlier nonpositive signed-total theorem](HAND_G3_HIGH_GA_NONPOSITIVE_T_PRIMARY_TOTAL_EXCLUSION.md)
+handles nonnegative E totals and outer E. Its
+[complete all-E extension](HAND_G3_HIGH_GA_ALL_E_NONPOSITIVE_T_TOTAL_EXCLUSION.md)
+now includes negative core-E totals with every A alternative.
+An actual nonpositive T-primary pair has short total magnitude;
+when needed, its unavailable BT2 alternative forces a charge
+at least `.9` times that magnitude. This supplies the exact
+gain used by the existing negative-E scalar proof, with both
+T arguments deleted and no enlarged sorted-D angular scope.
+Nonpositive A totals use a separate fixed stress and their
+actual paired-angle bound. A genuinely negative single BT3 either has an
 actual BT2 witness or admits a flat-core transport; any larger
 angle at its descendant is bounded again using that descendant's
 actual paired inequalities. A positive BT3 with arbitrary TD0 is
@@ -428,7 +435,8 @@ combination proves the final row of the table. The transports
 themselves impose no A/E-total hypothesis; only the endpoint
 exclusion currently needs those signs.
 
-The remaining high-GA work is coupled negative-total capture
+The remaining high-GA work has strictly positive selected T
+total and requires coupled negative-total capture
 outside the displayed complete domains. In particular, positive
 BT3 with TD0 and a negative A or core-E total is not covered by
 the nonnegative-A/E endpoint theorem. With BT2 the residual is
