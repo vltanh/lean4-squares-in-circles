@@ -29,6 +29,11 @@ A direct middle-edge alignment now also needs only the
 intermediate order `theta_G>=theta_T`, with normal G/T signs
 and GA0/BT2: it keeps G/T fixed and puts A/B at a common
 frame between them, without H/D/E frame-order assumptions.
+Once AB has a common frame and transverse sum one, the
+intermediate order itself can now be obtained by consuming
+negative outer errors; the opposite residual order is excluded
+analytically. Aligning arbitrary original AB frames in the
+reverse G/T case remains a separate input.
 Both ordinary quarter-owner conclusions are now global:
 every original BT and DE witness has owner 2 or 3, and B,D
 have strictly negative signed tangents. The full BT proof
@@ -38,7 +43,11 @@ now show that a low GA owner forces A outer,
 a high GA owner forces G outer, and B is outer globally in
 the fixed-witness boundary reduction. A low GA owner also
 excludes every high EH owner, without a mismatch or frame-order
-hypothesis. The remaining global steps must still supply
+hypothesis. Every low EH owner forces H outer after the E-sign
+normalization. At an actual diagonal D, an exact change of
+nearest-axis representative recodes the high-GA/low-EH branch
+into the normal quarter classes. No global transport to that
+diagonal has been assumed. The remaining global steps must still supply
 the mixed-owner and alignment hypotheses
 of a completed sharp route; arbitrary candidates are not yet
 asserted to satisfy those entry conditions.
@@ -199,6 +208,26 @@ remaining error signs. The four unchanged G1 return edges
 then exceed the cyclic angular budget. No mismatch, frame order,
 other quarter owner, or later tangent cut is assumed. The
 separate high-GA branch is not covered by this implication.
+
+[The global low-EH outer-target theorem](HAND_G3_GLOBAL_LOW_EH_TARGET_IS_OUTER.md)
+adds that EH0/1 forces H outer under the established E-negative
+normalization, with no GA or other owner assumption. A putative
+core H leaves only EH1 with positive error and outer E. One
+actual E-circle support and a whole-interval norm bound give
+an augmented charge greater than `23459/20000`, contradicting
+the six unchanged G1 return edges. Thus the remaining
+high-GA/low-EH branch has H, G, and B outer.
+
+[The diagonal-D nearest-axis recoding](HAND_G3_DIAGONAL_D_NEAREST_AXIS_RECODING.md)
+also gives an exact boundary reduction for that branch. At
+`a_D=b_D=-y_D`, choosing D's other nearest axis and the cyclic
+role list `(D,E,H,G,A,B,T)` preserves every actual square and
+retained weak separator while giving the normal quarter classes.
+They remain normal under the new E-sign reflection. The note
+lists every changed original owner and also reduces the
+all-high diagonal boundary. Away from the diagonal, its new H
+is unsorted; no canonical chart bound or downstream sorted-cone
+theorem is asserted there. Transport to the diagonal remains open.
 
 [The global linear-A return theorem](HAND_G3_GLOBAL_RETURN_WITH_LINEAR_A_CHARGE.md)
 now proves `pi+r+v+t-(49/50)b_A-F_E>103/40` on E--H--G--A,
@@ -475,6 +504,26 @@ common frame outside the G/T interval clamps inward because
 the positive-cap slope exceeds the opposite negative-cap slope.
 The argument retains separate strict A/B circle losses. It
 does not yet exclude reverse intermediate order or align HG/TD.
+
+[The reversed-span exclusion](HAND_G5_REVERSED_INTERMEDIATE_SPAN_WITH_NONNEGATIVE_OUTER_ERRORS.md)
+now rules out `theta_H<=theta_G<=theta_T<=theta_D` once AB
+has an exact common frame and transverse sum one. The middle
+pair bounds the G/T transverse sum, both original outer owners
+give one combined sine cost, and the E pair forces an incompatible
+H/D primary sum. Two continuous scalar comparisons close the
+whole frame interval, allowing arbitrary AB and E frame locations
+and either E sign.
+[The intermediate-order reduction after exact AB alignment](HAND_G5_INTERMEDIATE_ORDER_AFTER_EXACT_AB_ALIGNMENT.md)
+then consumes each negative outer error until G/T become ordered
+or that outer error disappears. The latter residual is excluded
+by the preceding theorem. H, D, and E stay fixed; changing G/T
+have explicit sorted core realizations. A decreasing lower cap
+root and a strict cap-slope comparison provide actual feasible
+A/B arcs with transverse sum one. Every inherited strict-below-q
+middle-circle assertion survives separately, and an initially
+reversed intermediate order creates such a strict loss. This
+removes G/T order after exact AB alignment, but still requires
+that alignment as an input in the original reversed-order case.
 
 For positive HG0 and reflected TD2,
 [the noncanceling positive-owner reduction](HAND_G5_POSITIVE_HG_ZERO_OWNER_BOUNDARY_REDUCTION.md)
