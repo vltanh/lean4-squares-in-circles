@@ -834,10 +834,59 @@ unverified A movement. A separate
 provides monotonicity uniformly at the original radius for use
 in the remaining continuous stresses.
 
-Sole positive GA1/HG2 and the coupled both-primary GA1/BT3
-entry still require their complete global implications. None
-of the preceding local constructions is being asserted to
-supply those missing hypotheses automatically.
+The [complete core-E positive-GA theorem](HAND_G5_POSITIVE_GA_HG2_CORE_E_COMPLETE_EXCLUSION.md)
+now excludes actual HG2/GA1 with nonnegative GA error, every
+AB owner/error and every core-E owner/error allocation. It permits
+either G/T sign and covers BT2 with either TD owner at any error,
+positive BT3 with arbitrary TD0, and negative BT3 with aligned TD.
+Its [angular envelope](HAND_G5_POSITIVE_GA_CORE_E_ANGULAR_ENVELOPE.md)
+keeps both signs of the ordinary angles, including all saturated
+same-block and separated cases. The final
+[seven scalar inequalities](HAND_G5_POSITIVE_GA_CORE_E_SCALAR_CERTIFICATES.md)
+are proved by explicit whole-interval polynomials. The original-q
+E preprocessing and the actual secant force coefficients are retained.
+The seven final polynomial builders were independently reconstructed
+from their printed rational definitions, with every mass positive.
+
+For outer E there is also a complete
+[positive EH1/DE2 endpoint with TD0](HAND_G5_POSITIVE_GA1_POSITIVE_EH1_WITH_TD0_EXCLUSION.md):
+HG2/GA1 and EH1 have nonnegative errors, AB and every other
+ordinary error are arbitrary, and BT2/TD0 are actual. It uses
+three continuous positive stresses at q<=Q1, strict concavity
+of the GA/EH split, and all actual ordinary-angle allocations.
+Its proof in fact requires only sorted containment at G,T,E,
+so the stated endpoint includes either radial kind. It does not
+yet supply the paired-E join or the other T-primary regimes.
+
+The both-genuine aligned negative-primary branch is now complete.
+The original-data [two-negative span theorem](HAND_G5_GLOBAL_PRIMARY_ENTRY_BOTH_NEGATIVE_ALIGNED_SPAN.md)
+and its [stronger .21 bound](HAND_G5_GLOBAL_PRIMARY_ENTRY_BOTH_NEGATIVE_ALIGNED_SHORT_SPAN.md)
+use either original AB owner, no E input, and change no state.
+They let the first H/G conversion reach GA0 while retaining BT3.
+The [direct D/T/E second conversion](HAND_G5_GLOBAL_PRIMARY_ENTRY_BOTH_NEGATIVE_DIRECT_SECOND_TRANSPORT.md)
+then reaches BT2 at the same q, keeps E nonpositive, preserves
+the first strict H-circle loss, and records a strict D-circle
+loss. Thus two genuine aligned negative primaries satisfy q>q_*.
+Its near-H hypotheses are supplied by the first conversion; they
+are not asserted for an arbitrary GA0/negative-BT input.
+
+The [retained-contact rigidity lemma](HAND_G5_HARD_EQUALITY_RETAINED_CONTACT_RIGIDITY.md)
+supplies an additional exact equality test: in a hard-owner input
+at q_*, each HG and TD separating slack is zero because its
+nonnegative sum with the adjacent hard-quarter slack is a tight
+stationary composite. A retained strict transverse slack therefore
+excludes equality, even when the only circle loss is at G or T.
+The invariant positive-pair-total and G=A endpoint obstructions
+are recorded separately. These are tests for a completed entry
+join, not an assertion that the remaining join already holds.
+
+The remaining normal entry is outer-E positive-primary capture,
+including the remaining T regimes and paired-E endpoints; the
+positive-BT orientation with E's actual normalized sign; and the
+one-negative-BT endpoint with arbitrary GA0 data. Reflection of a
+complete E-negative GA theorem changes E's sign, so that opposite
+endpoint cannot silently be declared complete. The final finite
+join and original-center equality pullback remain to be assembled.
 
 The earlier contraction targets and intermediate milestones
 below retain their stated scopes; they are not additional
