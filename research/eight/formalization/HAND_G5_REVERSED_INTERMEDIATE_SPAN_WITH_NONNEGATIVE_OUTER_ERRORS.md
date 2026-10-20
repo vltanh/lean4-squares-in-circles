@@ -110,7 +110,7 @@ and its sine is at most \(\sin r\). If \(z\ge0\), then
 \[
 \begin{aligned}
  \mathcal S
- &= (\tfrac12-b_A)\sin(r+z)-(\tfrac12+b_A)\sin z. 
+ &= (\tfrac12-b_A)\sin(r+z)-(\tfrac12+b_A)\sin z.
 \end{aligned}
 \]
 For \(b_A\ge1/2\) this is nonpositive. Otherwise expanding

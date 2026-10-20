@@ -34,17 +34,16 @@ intermediate order itself can now be obtained by consuming
 negative outer errors; the opposite residual order is excluded
 analytically. Aligning arbitrary original AB frames in the
 reverse G/T case remains a separate input.
-Both ordinary quarter-owner conclusions are now global:
-every original BT and DE witness has owner 2 or 3, and B,D
-have strictly negative signed tangents. The full BT proof
-includes both signs of every error, all radial kinds, and
-all original return-path owners. Further global restrictions
-now show that a low GA owner forces A outer,
-a high GA owner forces G outer, and B is outer globally in
-the fixed-witness boundary reduction. A low GA owner also
-excludes every high EH owner, without a mismatch or frame-order
-hypothesis. Every low EH owner forces H outer after the E-sign
-normalization. At an actual diagonal D, an exact change of
+Three quarter-owner conclusions are now global: every original
+BT and DE witness has owner 2 or 3, and every original EH
+witness has owner 0 or 1. H is positive and B,D are negative;
+all three are outer in the fixed-witness boundary reduction.
+The new all-high cycle contradiction closes EH without a GA
+assumption. Every quarter owner 0/1 has an outer target, and
+every quarter owner 2/3 has an outer source, independently of
+E normalization. Thus low GA forces A outer, while high GA
+forces G outer. A retained high GA witness also forces the
+signed target cut `y_A<1/2`. At an actual diagonal D, an exact change of
 nearest-axis representative recodes the high-GA/low-EH branch
 into the normal quarter classes. No global transport to that
 diagonal has been assumed. The remaining global steps must still supply
@@ -63,7 +62,7 @@ ED-owner/H frame; no unjustified conversion to the old A/G tilt is used.
 | G0 | Closed on paper | Central core, physical gaps, fixed-axis boundary reduction and documented radius transfer. |
 | G1 | Closed on paper | Complete four-type frame concentration; real frame spread below 7/10. |
 | G2 | Closed on paper | All six wrong words excluded; only 0101011 survives. Reflection gives the weak E sign. |
-| G3 | Global radial and conditional EH-owner restrictions; all six cuts at S<=3/200 | Low GA forces A outer and EH low; high GA forces G outer; B is outer globally in the boundary reduction. The high-GA branch and preferred mixed owners remain open. Cut-free quarter owners give four cuts at S<=1/32; complete H-low exclusions and the H cone give all six cuts at S<=3/200. |
+| G3 | Global EH-owner and quarter-anchor rigidity; all six cuts at S<=3/200 | Every EH witness is low; H is positive outer. B,D are negative outer. Every low quarter has outer target and every high quarter has outer source. High GA forces G outer and y_A<1/2, but that branch is not yet excluded. The conditional six tangent cuts remain closed at S<=3/200. |
 | G4 | Global capture open; ordered AB alignment covers all outer errors and G/T signs | The original ordered HG2/TD0 class reduces to five anchors with strict loss off zero. AB alignment now covers every outer-owner/error pattern, including both wrong intermediate signs simultaneously, under the retained H/A/B/D signs and frame order. Coarse mismatch bounds S<2/5 and S<13/50 remain open. |
 | G5 | Entire ordered hard-owner class sharp without G/T sign assumptions | Both outer errors and both intermediate transverse coordinates may have either sign. Wrong intermediate signs reach a zero endpoint with strict middle-circle loss; the existing complete reduction then applies. The already aligned-three-zero class needs no frame-order hypothesis. Global owner capture and alignment without frame order remain open. |
 | G6 | Closed globally without mismatch or tangent cuts | Every original BT and DE witness has owner 2 or 3; B and D have strictly negative signed tangents. The all-owner return charge and complete four-edge bound exclude every BT0/1 branch, including core E with negative DE3 and every negative-BT1/AB sign combination. |
@@ -228,6 +227,47 @@ lists every changed original owner and also reduces the
 all-high diagonal boundary. Away from the diagonal, its new H
 is unsorted; no canonical chart bound or downstream sorted-cone
 theorem is asserted there. Transport to the diagonal remains open.
+
+[The global D-outer theorem](HAND_G3_GLOBAL_D_IS_OUTER.md)
+excludes core D by a TD--DE charge greater than two for both
+T signs and every original TD/DE owner. Its
+[generic quarter-anchor extension](HAND_G3_EVERY_QUARTER_HAS_AN_OUTER_ANCHOR.md)
+then removes the E-sign prerequisite: every original low quarter
+has an outer target and every original high quarter has an outer
+source. A complementary
+[nonpositive zero-source theorem](HAND_G3_NONPOSITIVE_ZERO_SOURCE_IS_OUTER.md)
+shows that any core H/A/T must have positive tangent. These
+statements use the original G1 return path and apply before
+any frame order or mismatch bound.
+
+[The global EH-owner assembly](HAND_G3_GLOBAL_EH_OWNER_RIGIDITY.md)
+now excludes every original high EH witness. Its new all-high
+contradiction uses one potential per actual vertex, with the
+[high-quarter charge](HAND_G3_HIGH_QUARTER_AUGMENTED_PRIMARY_CHARGE.md),
+[three-zero charge](HAND_G3_THREE_ZERO_AUGMENTED_PRIMARY_CHARGE.md),
+and [outer-negative bridge charge](HAND_G3_ALL_HIGH_OUTER_BRIDGE_CHARGE.md).
+The three zeros lose at most .007 in total, and the final exact
+cyclic reserve is `571763/282500000`. All original signs,
+radial kinds, owner ties, and chart junctions are covered.
+Combining this with low-GA implies low-EH proves global EH0/1;
+H is therefore positive outer. It leaves high-GA/low-EH as
+the remaining high-quarter branch.
+
+[The high-GA target cut](HAND_G3_HIGH_GA_TARGET_HAS_SMALL_TANGENT.md)
+also proves `y_A<1/2` for a retained high GA witness. A
+three-edge charge and one strongly convex whole-interval scalar
+exclude the other signed-tangent range. This narrows the branch
+without excluding it.
+
+[The nearest-axis tie theorem](HAND_G3_GLOBAL_NEAREST_AXIS_TIE_LOCATIONS.md)
+proves strict sorting at G,A,B,T,E. Only positive H and
+negative D can be diagonal, because every other alternate
+nearest-axis representative creates a forbidden quarter word
+or a negative increment. The earlier
+[all-nonpositive radial capture](HAND_G3_ALL_NONPOSITIVE_ZERO_SOURCES_ARE_OUTER.md)
+and [its strict cycle exclusion](HAND_G3_ALL_NONPOSITIVE_ZERO_SOURCES_EXCLUDED.md)
+remain valid intermediate results; global H positivity now
+supersedes that subcase restriction.
 
 [The global linear-A return theorem](HAND_G3_GLOBAL_RETURN_WITH_LINEAR_A_CHARGE.md)
 now proves `pi+r+v+t-(49/50)b_A-F_E>103/40` on E--H--G--A,
