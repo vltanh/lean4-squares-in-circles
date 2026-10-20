@@ -395,6 +395,16 @@ normalized E sign, real-frame order and retained original axes has
 `q>=q_*`, without any mismatch hypothesis and without assuming its
 three zero edges were aligned originally.
 
+For an original G0--G2 candidate, those six signs are already
+consequences of the retained owners. Section 11 of
+`HAND_G3_GLOBAL_D_OWNER_BY_CYCLIC_MARKER.md` gives A and H
+positive from GA0/EH1, and B and D negative from BT2/DE3.
+`HAND_G3_GLOBAL_ZERO_OWNER_SIGN_RIGIDITY.md` gives G negative
+from HG2 and T positive from TD0. Thus this original-candidate
+corollary needs no additional six-sign capture premise beyond
+its stated original owners; the E normalization and frame order
+are still retained.
+
 Indeed, if necessary first enlarge a ceiling below `q_L=19577/5000`
 to q_L, without moving any square. Since `q_L<q_*`, a lower-bound
 counterexample would still be a counterexample at this ceiling.

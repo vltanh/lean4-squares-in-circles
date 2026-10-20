@@ -118,6 +118,17 @@ return path excludes it. If both transverse owners are feasible,
 both signs follow. A single owner supplies only its stated one-sided
 sign; the full six-sign tuple has not been proved globally.
 
+Section 11 of the global DE note now makes the generic quarter
+consequences explicit: every original quarter axis 0 or 1 forces
+its target sign positive, and every original quarter axis 2 or 3
+forces its source sign negative. The local reflected reversal maps
+the original indices `0<->2`, `1<->3` and preserves the actual
+marker charge and error. Together with the zero-owner theorem,
+these implications supply all six signs for the hard original
+HG2/GA0/AB0-or-2/BT2/TD0/DE3/EH1 class before any mismatch
+bound. Its six signs are therefore no longer separate entry
+assumptions once those original owners are supplied.
+
 [The earlier DE-owner theorem at S<=1/32](HAND_G3_D_OWNER_WITHOUT_TANGENT_CUTS_AT_ONE_THIRTY_SECOND.md)
 remains valid and is used in the already completed conditional
 downstream proofs, but its mismatch input is no longer needed for
@@ -308,7 +319,8 @@ original-orientation equality statement.
 
 [The shared-center A/B alignment comparison](HAND_G5_AB_SHARED_CENTER_ALIGNMENT_COMPARISON.md)
 and [the signed three-zero reduction](HAND_G4_SIGNED_THREE_ZERO_REDUCTION_FOR_CANCELING_OUTER_OWNERS.md)
-provide an original-candidate bridge. With the stated signs,
+provide an original-candidate bridge. With the stated signs
+(now automatic from G0--G2 and this original-owner class),
 `theta_D<=theta_A,theta_B<=theta_H`, `theta_D<=theta_E<=theta_H`,
 and original axes HG2, GA0, AB0/2, BT2, TD0, DE3, EH1, the bridge
 aligns all three zero differences in the necessary five-anchor
@@ -318,11 +330,32 @@ Section 8 of the sharp assembly consequently proves the complete
 lower bound and equality classification for this original ordered
 class, without a mismatch premise.
 
-The bridge does not yet cover HG0, TD2, other frame orders, the
-remaining global sign alternatives or the remaining original
-quarter/mixed witnesses. These are entry obligations for this
-route. The complete theorem for the hard class must not be used
-to assume them for the unrestricted problem.
+For positive HG0 and reflected TD2,
+[the noncanceling positive-owner reduction](HAND_G5_POSITIVE_HG_ZERO_OWNER_BOUNDARY_REDUCTION.md)
+retains the exact intermediate circle and supplies a constant cap
+compatible with the A/B alignment argument. Once the adjacent
+middle tangent is at least one half it aligns with strict slack;
+after the opposite side aligns, the other positive side reduces
+on its entire feasible error interval to alignment or to a G/T
+zero-transverse endpoint. The latter endpoint remains to be
+excluded. The note retains its required signs and frame order,
+and does not assume that an enlarged intermediate-frame span
+remains below its original bound after the reduction.
+
+For negative HG0 and reflected TD2,
+[the exact-core transport](HAND_G4_NEGATIVE_NONCANCELING_ZERO_CORE_TRANSPORT.md)
+proves same-anchor alignment when the adjacent middle tangent is
+at most one half. It also restores a crossed quarter frame at an
+actual core G/T state. For the remaining ordered negative class,
+the shared chain still forces `alpha<.27` and retains the E
+boundary minimization. Its large-tangent negative errors and its
+unaligned E-zero/epsilon-zero endpoints remain open.
+
+These reductions have not yet closed all HG0/TD2 cases, the other
+frame orders, the remaining global sign alternatives or the
+remaining original quarter/mixed witnesses. Those are entry
+obligations for this route. The complete theorem for the hard
+class must not be used to assume them for the unrestricted problem.
 
 ## 4. Completed entry and word dependencies
 

@@ -11,6 +11,8 @@ Then
 \tag{1}
 \]
 Moreover, the same argument proves the strict sign \(u_D<0\).
+Section 11 gives the corresponding generic sign implication for every
+original quarter owner, with its exact reflected-reversal index map.
 Original axes are numbered from zero. The conclusion excludes an
 original axis 0 or 1 even when it is tied with another feasible axis.
 
@@ -582,3 +584,117 @@ one complete-cycle return inequality. Exact rational arithmetic checks
 verify the displayed endpoint reserves and polynomial coefficients;
 no state table, angle mesh, numerical decision certificate, Lean
 compilation, or CI is part of this proof.
+
+## 11. Generic quarter-owner sign implications
+
+Let any quarter edge in the same seven-cycle have signed own-frame
+centers \((a,-y)\), \((A,-Y)\), actual increment
+\(\phi=\pi/2+d\), and \(c=\cos d\), \(s=\sin d\).
+Then
+\[
+\boxed{
+\begin{aligned}
+\text{any original axis in }\{0,1\}\text{ feasible}
+   &\ \Longrightarrow\ Y>0,\\
+\text{any original axis in }\{2,3\}\text{ feasible}
+   &\ \Longrightarrow\ y<0.
+\end{aligned}}
+\tag{40}
+\]
+There is no sign hypothesis on either endpoint in (40), and the result
+needs no mismatch bound, tangent cut, or neighboring owner assumption.
+The E normalization in the DE theorem was the available input making
+the first implication exclude those two DE witnesses.
+
+For clarity, all four original quarter projections are
+\[
+\begin{aligned}
+P_0&=y+A c+Y s,&
+P_1&=A+a s+y c,\\
+P_2&=a c-y s-Y,&
+P_3&=a+A s-Y c.
+\end{aligned}
+\tag{41}
+\]
+Their support width is the same \(W=(1+c+|s|)/2\).
+If \(Y\le0\), write \(Y=-B\) and \(y=\sigma b\).
+Then \(P_0,P_1\) are precisely (12), and the signed common-marker
+expression is precisely (13). Sections 4--7 prove its value exceeds
+one using only these two states, this original witness, and the fixed
+Q-boundary geometry. Section 9 applies the same six-edge return
+contradiction regardless of which quarter edge was chosen.
+Thus \(Y\le0\) is impossible for either original axis 0 or 1.
+
+To prove the other implication, exchange the unsigned states and
+negate both transverse signs, keeping d unchanged:
+\[
+(a,y),(A,Y)\longmapsto(A,-Y),(a,-y).
+\tag{42}
+\]
+This is the local reflected-reversal operation. Direct substitution
+in (41) gives the complete original-index map
+\[
+\begin{array}{c|cccc}
+\text{new projection}&P'_0&P'_1&P'_2&P'_3\\ \hline
+\text{equal original projection}&P_2&P_3&P_0&P_1 .
+\end{array}
+\tag{43}
+\]
+In particular, the original maps are \(0\leftrightarrow2\) and
+\(1\leftrightarrow3\). The quarter increment and error d are unchanged;
+no replacement of d by its negative is made.
+
+If \(y\ge0\), the new target sign is \(-y\le0\). A retained original
+axis 2 or 3 is respectively the new forbidden axis 0 or 1, with exactly
+the same weak SAT inequality. The first part of the proof therefore
+supplies the boosted local estimate for the transformed pair.
+Its charged marker value is the original one:
+\[
+\phi+(-\ell_t)-(-\ell_s)+\beta h(|d|)
+ =\phi+\ell_s-\ell_t+\beta h(|d|).
+\tag{44}
+\]
+The physical gap is also unchanged, since the signed arctangents
+are exchanged and negated. Thus the boosted estimate belongs to the
+retained original edge and contradicts its original six-edge return
+path. A new global cycle is neither constructed nor required.
+This proves \(y<0\) in (40).
+
+The same fixed-witness radial transfer as in Section 10 applies to
+both implications: it preserves the offending weak endpoint sign.
+Weak sign-zero cases and every original tied axis have therefore been
+included.
+
+As immediate consequences, a quarter edge with \(y\ge0\) has
+\(Y>0\) and only original axes 0 or 1; a quarter edge with \(Y\le0\)
+has \(y<0\) and only original axes 2 or 3.
+
+### The hard original-owner class already has six signs
+
+Suppose the actually retained original owners are
+\[
+HG2,\quad GA0,\quad AB\in\{0,2\},\quad BT2,\quad
+TD0,\quad DE3,\quad EH1.
+\tag{45}
+\]
+Equation (40) gives, directly and without S,
+\[
+y_A>0,\qquad y_B<0,\qquad y_D<0,\qquad y_H>0.
+\]
+The independently proved
+[global zero-owner sign theorem](HAND_G3_GLOBAL_ZERO_OWNER_SIGN_RIGIDITY.md)
+then gives \(y_G<0\) from HG2 and \(y_T>0\) from TD0.
+Thus the entire six-sign pattern
+\[
+\boxed{y_H>0>y_G,\qquad y_A>0>y_B,\qquad y_T>0>y_D}
+\tag{46}
+\]
+follows globally in this original-owner class. Either zero owner on
+AB is covered because its two endpoint signs have already been
+supplied by the adjacent quarter witnesses.
+
+The same statement permits GA in \(\{0,1\}\), BT and DE in
+\(\{2,3\}\), and EH in \(\{0,1\}\); the displayed single choices in
+(45) are the specific canceling hard class. This is a consequence
+conditional on those actual original owners, not a proof that the
+unrestricted cycle has those owners. It supplies no bound on S.
