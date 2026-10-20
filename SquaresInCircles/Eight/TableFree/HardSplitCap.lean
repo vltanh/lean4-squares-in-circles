@@ -231,4 +231,174 @@ theorem second_pos {q D θ : ℝ} (h : Feasible q D)
         (mul_nonpos_of_nonpos_of_nonneg (le_of_not_gt hL) hw.le) (sq_nonneg _)
     linarith [mul_pos hX hf]
 
+theorem root_deriv {q D θ : ℝ} (h : Feasible q D)
+    (hθ : θ ∈ Icc 0 (7/10 : ℝ)) :
+    HasDerivAt (root q D) (contact D θ*Real.sin θ/root q D θ) θ := by
+  have hC := (Real.hasDerivAt_cos θ).const_add D
+  have hr : q-(contact D θ)^2 ≠ 0 := by
+    linarith [(radicand_lower h hθ).1]
+  have hd := ((hC.pow 2).const_sub q).sqrt hr
+  convert hd using 1
+  · rfl
+  · dsimp [contact,root]
+    field_simp [(root_pos h hθ).ne']
+    ring
+
+theorem drift_deriv {q D θ : ℝ} (h : Feasible q D)
+    (hθ : θ ∈ Icc 0 (7/10 : ℝ)) :
+    HasDerivAt (drift q D) (-cap q D θ/root q D θ) θ := by
+  convert (root_deriv h hθ).sub (Real.hasDerivAt_sin θ) using 1
+  · rfl
+  · dsimp [cap]
+    field_simp [(root_pos h hθ).ne']
+    ring
+
+theorem cornerX_deriv {q D θ : ℝ} (h : Feasible q D)
+    (hθ : θ ∈ Icc 0 (7/10 : ℝ)) :
+    HasDerivAt (cornerX q D) (cap q D θ*drift q D θ/root q D θ) θ := by
+  have hC := (Real.hasDerivAt_cos θ).const_add D
+  have hd := ((Real.hasDerivAt_cos θ).mul hC).add
+    ((Real.hasDerivAt_sin θ).mul (root_deriv h hθ))
+  convert hd using 1
+  · rfl
+  · dsimp [cap,drift,contact]
+    field_simp [(root_pos h hθ).ne']
+    ring
+
+theorem cap_deriv {q D θ : ℝ} (h : Feasible q D)
+    (hθ : θ ∈ Icc 0 (7/10 : ℝ)) : HasDerivAt (cap q D) (first q D θ) θ := by
+  have hC := (Real.hasDerivAt_cos θ).const_add D
+  have hd := ((Real.hasDerivAt_cos θ).mul (root_deriv h hθ)).sub
+    ((Real.hasDerivAt_sin θ).mul hC)
+  convert hd using 1
+  · rfl
+  · dsimp [first,cornerX,drift,contact]
+    field_simp [(root_pos h hθ).ne']
+    ring
+
+theorem first_deriv {q D θ : ℝ} (h : Feasible q D)
+    (hθ : θ ∈ Icc 0 (7/10 : ℝ)) :
+    HasDerivAt (first q D) (second q D θ) θ := by
+  have hd := (((cornerX_deriv h hθ).neg).mul (drift_deriv h hθ)).div
+    (root_deriv h hθ) (root_pos h hθ).ne'
+  convert hd using 1
+  · rfl
+  · dsimp [second]
+    field_simp [(root_pos h hθ).ne']
+    ring
+
+theorem first_neg {q D θ : ℝ} (h : Feasible q D)
+    (hθ : θ ∈ Icc 0 (7/10 : ℝ)) : first q D θ < 0 := by
+  unfold first
+  exact div_neg_of_neg_of_pos
+    (mul_neg_of_neg_of_pos (neg_neg_of_pos (cornerX_pos h hθ)) (drift_pos h hθ))
+    (root_pos h hθ)
+
+/-- A reusable interval form that keeps the explicit derivative witnesses;
+there is no assumption about an abstract second-derivative operator. -/
+private theorem strictConvex_of_derivatives {f df ddf : ℝ → ℝ} {l u : ℝ}
+    (hd : ∀ x ∈ Icc l u, HasDerivAt f (df x) x)
+    (hdd : ∀ x ∈ Icc l u, HasDerivAt df (ddf x) x)
+    (hp : ∀ x ∈ Icc l u, 0 < ddf x) : StrictConvexOn ℝ (Icc l u) f := by
+  have hm : StrictMonoOn df (Icc l u) := by
+    apply strictMonoOn_of_deriv_pos (convex_Icc l u)
+    · exact fun x hx => (hdd x hx).continuousAt.continuousWithinAt
+    · intro x hx
+      rw [(hdd x (interior_subset hx)).deriv]
+      exact hp x (interior_subset hx)
+  apply StrictMonoOn.strictConvexOn_of_deriv (convex_Icc l u)
+    (fun x hx => (hd x hx).continuousAt.continuousWithinAt)
+  intro x hx y hy hxy
+  rw [(hd x (interior_subset hx)).deriv,(hd y (interior_subset hy)).deriv]
+  exact hm (interior_subset hx) (interior_subset hy) hxy
+
+theorem cap_strictAnti {q D : ℝ} (h : Feasible q D) :
+    StrictAntiOn (cap q D) (Icc 0 (7/10 : ℝ)) := by
+  apply strictAntiOn_of_deriv_neg (convex_Icc 0 (7/10 : ℝ))
+  · exact fun θ hθ => (cap_deriv h hθ).continuousAt.continuousWithinAt
+  · intro θ hθ
+    rw [(cap_deriv h (interior_subset hθ)).deriv]
+    exact first_neg h (interior_subset hθ)
+
+theorem cap_strictConvex {q D : ℝ} (h : Feasible q D) :
+    StrictConvexOn ℝ (Icc 0 (7/10 : ℝ)) (cap q D) :=
+  strictConvex_of_derivatives (fun _ hθ => cap_deriv h hθ)
+    (fun _ hθ => first_deriv h hθ) (fun _ hθ => second_pos h hθ)
+
+/-- The two circles retain independent actual squared radii. -/
+def split (qA DA qB DB α θ : ℝ) : ℝ := cap qA DA θ+cap qB DB (α-θ)
+
+theorem split_strictConvex {qA DA qB DB α : ℝ}
+    (hA : Feasible qA DA) (hB : Feasible qB DB)
+    (hα : α ∈ Icc 0 (7/10 : ℝ)) :
+    StrictConvexOn ℝ (Icc 0 α) (split qA DA qB DB α) := by
+  apply strictConvex_of_derivatives
+    (df := fun θ => first qA DA θ-first qB DB (α-θ))
+    (ddf := fun θ => second qA DA θ+second qB DB (α-θ))
+  · intro θ hθ
+    have ht : θ ∈ Icc 0 (7/10 : ℝ) := ⟨hθ.1,hθ.2.trans hα.2⟩
+    have hu : α-θ ∈ Icc 0 (7/10 : ℝ) := by constructor <;> linarith [hθ.1,hθ.2,hα.2]
+    have hd := (cap_deriv hA ht).add
+      ((cap_deriv hB hu).comp θ ((hasDerivAt_id θ).const_sub α))
+    convert hd using 1
+    · rfl
+    · ring
+  · intro θ hθ
+    have ht : θ ∈ Icc 0 (7/10 : ℝ) := ⟨hθ.1,hθ.2.trans hα.2⟩
+    have hu : α-θ ∈ Icc 0 (7/10 : ℝ) := by constructor <;> linarith [hθ.1,hθ.2,hα.2]
+    have hd := (first_deriv hA ht).sub
+      ((first_deriv hB hu).comp θ ((hasDerivAt_id θ).const_sub α))
+    convert hd using 1
+    · rfl
+    · ring
+  · intro θ hθ
+    exact add_pos (second_pos hA ⟨hθ.1,hθ.2.trans hα.2⟩)
+      (second_pos hB (by constructor <;> linarith [hθ.1,hθ.2,hα.2]))
+
+private theorem strictConvex_lt_max {f : ℝ → ℝ} {l u x : ℝ}
+    (h : StrictConvexOn ℝ (Icc l u) f) (hx : x ∈ Ioo l u) :
+    f x < max (f l) (f u) := by
+  have hlu : 0 < u-l := by linarith [hx.1,hx.2]
+  let a : ℝ := (u-x)/(u-l)
+  let b : ℝ := (x-l)/(u-l)
+  have ha : 0 < a := div_pos (by linarith [hx.2]) hlu
+  have hb : 0 < b := div_pos (by linarith [hx.1]) hlu
+  have hab : a+b=1 := by dsimp [a,b]; field_simp; ring
+  have harg : a*l+b*u=x := by dsimp [a,b]; field_simp; ring
+  have hh := h.2 (left_mem_Icc.mpr (by linarith))
+    (right_mem_Icc.mpr (by linarith)) (by linarith) ha hb hab
+  simp only [smul_eq_mul,harg] at hh
+  have hL := mul_le_mul_of_nonneg_left (le_max_left (f l) (f u)) ha.le
+  have hU := mul_le_mul_of_nonneg_left (le_max_right (f l) (f u)) hb.le
+  have hweight : a*max (f l) (f u)+b*max (f l) (f u)=max (f l) (f u) := by
+    nlinarith [congrArg (fun z : ℝ => z*max (f l) (f u)) hab]
+  linarith
+
+theorem split_endpoint_strict {qA DA qB DB t u : ℝ}
+    (hA : Feasible qA DA) (hB : Feasible qB DB)
+    (ht : 0 < t) (hu : 0 < u) (hspan : t+u ≤ 7/10) :
+    cap qA DA t+cap qB DB u <
+      max (cap qA DA 0+cap qB DB (t+u))
+        (cap qA DA (t+u)+cap qB DB 0) := by
+  have hh := strictConvex_lt_max
+    (split_strictConvex hA hB ⟨by linarith,hspan⟩)
+    (show t ∈ Ioo 0 (t+u) by constructor <;> linarith)
+  simpa [split] using hh
+
+theorem split_endpoint {qA DA qB DB t u : ℝ}
+    (hA : Feasible qA DA) (hB : Feasible qB DB)
+    (ht : 0 ≤ t) (hu : 0 ≤ u) (hspan : t+u ≤ 7/10) :
+    cap qA DA t+cap qB DB u ≤
+      max (cap qA DA 0+cap qB DB (t+u))
+        (cap qA DA (t+u)+cap qB DB 0) := by
+  rcases eq_or_lt_of_le ht with ht | ht
+  · subst t
+    simpa using le_max_left (cap qA DA 0+cap qB DB u)
+      (cap qA DA u+cap qB DB 0)
+  rcases eq_or_lt_of_le hu with hu | hu
+  · subst u
+    simpa using le_max_right (cap qA DA 0+cap qB DB t)
+      (cap qA DA t+cap qB DB 0)
+  exact (split_endpoint_strict hA hB ht hu hspan).le
+
 end SquaresInCircles.Eight.TableFree.HardSplitCap
