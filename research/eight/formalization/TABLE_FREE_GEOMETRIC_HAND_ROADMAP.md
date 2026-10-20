@@ -6,7 +6,7 @@
 its complete five-parameter equality family, without a numerical lookup
 table in the mathematical dependency chain.
 
-## 1. Current mathematical status — 19 October 2026
+## 1. Current mathematical status — 19–20 October 2026 UTC
 
 The unrestricted table-free proof is **not complete**. Its remaining
 substantive work is global candidate capture in G3--G5.
@@ -82,6 +82,20 @@ coarse mismatch result only if that result did not assume H/D first.
 A full-domain support or coupled-cycle contradiction is needed for
 each forbidden tail. Existing fitted arc values are not hand premises.
 
+[The original-center norm theorem](HAND_G3_CENTER_NORM_AND_HIGH_TAIL_DIRECTIONS.md)
+now gives `|p|<283/200` and the all-original-axis nominal inequality
+`P_nominal>=1-|d|` for `|d|<=3/10`. It also excludes GA axis 0 on the
+full high-G tail and forces that tail to have negative A/G tilt once
+the earlier A sign is available. The remaining negative-tilt tail is
+not excluded by those implications.
+
+[The complete DE-owner theorem without tangent cuts](HAND_G3_D_OWNER_WITHOUT_TANGENT_CUTS_AT_ONE_THIRTY_SECOND.md)
+proves all original DE owners belong to `{2,3}` already from
+`G0--G2`, `u_E<=0`, and `S<=1/32`. It retains every original GA/EH
+witness and spends the shared HG error only once. This permits a
+forward reordering of that owner step, but does not supply the global
+bound on S or any still-missing tangent cut.
+
 ### G4: the missing coarse mismatch bounds
 
 Under only the cuts actually established at that point, prove
@@ -104,10 +118,18 @@ These are consequences of a bad mismatch, not the still-missing geometric
 upper bounds. See [closed-tour compression](HAND_CLOSED_TOUR_CHARGE_COMPRESSION.md)
 and [the exact cycle-stress interface](HAND_CYCLE_STRESS_INTERFACE.md).
 
-[The quintic positive zero-edge contact theorem](HAND_COARSE_POSITIVE_ZERO_CONTACT_WITHOUT_TABLES.md)
-closes one complete contact family, preserving its aligned continuum.
-The other signs, quarter families, compatible role potentials and cyclic
-sum are not supplied by that one-family theorem.
+[The all-sign linear zero-edge theorem](HAND_G4_ALL_SIGN_ZERO_LINEAR_CHARGE.md)
+now covers both signs of the full frame increment, every original
+transverse sign and radial state, and both original zero owners on all
+three zero-quarter edges. With `p=49/50` it proves
+`d-h(|d|)/50+p(max(y_source,0)+max(-y_target,0)-1)>=0`, strictly off
+zero. Its six explicit clipped role labels are shared between incident
+edges. One polynomial with a whole-interval curvature bound supplies
+the complete negative-increment branch. This replaces the earlier
+one-sided contact component for these new labels; it does not supply
+compatible quarter/mixed bounds. Those four estimates and their common
+cyclic sum remain the actual G4 obligation. Historical affine labels
+cannot be combined with the new zero labels as if they telescoped.
 
 ### G5: the two missing middle contractions
 
@@ -132,6 +154,13 @@ already gives `(sigma_H,sigma_G,sigma_A,sigma_B,sigma_T,sigma_D)
 =(+,-,+,-,+,-)` from `S<=1/10`, without G/T/H/D cuts or a preferred
 SAT owner. Together with reflection, E has its weak negative sign.
 Do not use those signs to justify the preceding contraction.
+
+[The signed middle zero-edge theorem](HAND_G5_SIGNED_ZERO_COERCIVITY_AT_ONE_TENTH.md)
+also proves `b+B+d>=1+|d|/32` at `S<=1/10`, and hence the larger
+charge `d-h(|d|)/16+b+B-1>=0` on both increment signs and all original
+zero owners. It preserves the signed d term for a later cyclic sum.
+The quarter/mixed estimates compatible with this linear potential
+remain missing, so neither G5 contraction is marked closed.
 
 ## 3. Completed entry and word dependencies
 
