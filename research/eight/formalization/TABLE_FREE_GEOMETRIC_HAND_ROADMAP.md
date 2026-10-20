@@ -139,11 +139,26 @@ three zero-quarter edges. With `p=49/50` it proves
 `d-h(|d|)/50+p(max(y_source,0)+max(-y_target,0)-1)>=0`, strictly off
 zero. Its six explicit clipped role labels are shared between incident
 edges. One polynomial with a whole-interval curvature bound supplies
-the complete negative-increment branch. This replaces the earlier
-one-sided contact component for these new labels; it does not supply
-compatible quarter/mixed bounds. Those four estimates and their common
-cyclic sum remain the actual G4 obligation. Historical affine labels
+the complete negative-increment branch. Historical affine labels
 cannot be combined with the new zero labels as if they telescoped.
+
+[The exact independent-pair obstruction](HAND_G4_CLIPPED_LINEAR_PAIR_BUDGET_OBSTRUCTION.md)
+now shows that these six clipped labels cannot be completed by
+independently quantified constant pair bounds with a useful charge
+budget. Four original aligned quarter test pairs, using an identical
+E state, force a cyclic constant deficit greater than `539/5000`;
+each aligned zero constant is at most zero. These are local tests,
+not a feasible common cycle. A successful argument must retain shared
+vertices or change the labels, rather than fit four more independent
+constants to this particular design.
+
+[The coupled aligned-zero/E-zero exclusion](HAND_G4_ALIGNED_ZERO_E_ZERO_BRANCH_EXCLUSION.md)
+does retain all seven original shared centers. On its explicit
+frame/owner branch, monotone elimination reduces to a two-variable
+scalar whose Hessian has a uniform negative reserve. One rational
+comparison point excludes the entire branch at Q0 without assuming
+contact or outer-boundary equalities. The result is a conditional
+branch theorem, not a reduction of arbitrary cycles to that branch.
 
 ### G5: the two missing middle contractions
 
@@ -184,6 +199,25 @@ stationary tilt interval. This is a failure of that eliminated-scalar
 proof, not a feasible packing or a counterexample. A larger-range
 argument must retain additional original-center constraints or adapt
 the stress.
+
+[The shared-center forward reduction](HAND_G5_SHARED_CENTER_FORWARD_REDUCTION_AT_ONE_TENTH.md)
+now retains all five signed errors and the unchanged E corner through
+the E--D--T--B--A--H chain. Under explicitly retained original GA0/EH1
+and intended BT/DE witnesses at `S<=1/10`, it proves the necessary
+scalar inequality `K1^2+K2^2<=Q0` with fully specified cap formulas.
+Positivity on the proposed contraction annulus remains an analytic
+target, and those owner hypotheses are not yet supplied at this scale.
+
+[The E-zero split theorem](HAND_G5_E_ZERO_HARD_QUARTER_SPLIT_EXCLUSION.md)
+extends the preceding coupled branch exclusion to every nonnegative
+split of its total frame span between GA and the negative BT error.
+A single positive factorization proves convexity of the circular cap;
+the two endpoints inherit the already proved scalar deficit. It yields
+an exact `149/625000` deficit in the shared A/B transverse-corner sum.
+It still assumes E zero, all three zero edges aligned, and the stated
+original quarter/mixed witnesses. Negative E coordinates, nonzero
+zero-edge errors and the remaining original owner alternatives are
+not covered by this branch result.
 
 ## 3. Completed entry and word dependencies
 
