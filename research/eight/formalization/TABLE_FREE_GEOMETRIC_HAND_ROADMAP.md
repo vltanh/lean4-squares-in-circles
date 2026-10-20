@@ -20,7 +20,10 @@ inputs are the normal signs and the E radial alternative
 representatives satisfy that alternative.
 
 The proof first derives `theta_G>theta_T` from the original
-neighboring inequalities, then aligns AB. A finite procedure
+neighboring inequalities, then aligns AB. The intermediate-order
+step now also permits arbitrary G/T signs; its subsequent
+arbitrary-frame AB alignment still retains the normal signs.
+A finite procedure
 processes the side with the larger middle tangent first, using
 strict crossed-frame clamps where needed. It retains any large
 negative noncanceling error until the all-mixed, arbitrary-E
@@ -70,7 +73,7 @@ ED-owner/H frame; no unjustified conversion to the old A/G tilt is used.
 | G1 | Closed on paper | Complete four-type frame concentration; real frame spread below 7/10. |
 | G2 | Closed on paper | All six wrong words excluded; only 0101011 survives. Reflection gives the weak E sign. |
 | G3 | Global EH-owner and quarter-anchor rigidity; all six cuts at S<=3/200 | Every EH witness is low; H is positive outer. B,D are negative outer. Every low quarter has outer target and every high quarter has outer source. High GA forces G outer and y_A<1/2, but that branch is not yet excluded. The conditional six tangent cuts remain closed at S<=3/200. |
-| G4 | Global capture open; normal hard-class frame order is derived | With normal signs and GA0/BT2, the arbitrary-frame middle bound and all-mixed endpoint charge force G>T. AB then aligns with strict loss, without H/D/E order. Coarse mismatch bounds remain an optional alternative route, not a missing input to this hard-class proof. |
+| G4 | Global capture open; hard-class intermediate order needs no G/T signs | With GA0/BT2 and the established H/A/B/D/E signs, the signed middle bound and all-mixed endpoint charge force G>T even for arbitrary G/T signs. The proved arbitrary-frame AB alignment still retains normal G/T signs. Coarse mismatch bounds remain an optional alternative route. |
 | G5 | Normal hard-owner class sharp for arbitrary original frames | All surviving zero owners, both outer-error signs, both DE/EH choices and arbitrary E placement are covered. The normal signs and stated E radial alternative remain inputs. The older ordered theorem separately allows arbitrary G/T signs. |
 | G6 | Closed globally without mismatch or tangent cuts | Every original BT and DE witness has owner 2 or 3; B and D have strictly negative signed tangents. The all-owner return charge and complete four-edge bound exclude every BT0/1 branch, including core E with negative DE3 and every negative-BT1/AB sign combination. |
 | G7 | Closed conditionally at S<=3/200; old contraction retired | Every original mixed owner is G0/E1, without an S<=1/1000 premise. |
@@ -323,6 +326,14 @@ the linked component notes. An
 already has its actual secondary witness feasible. These local
 facts do not assert a universal E-only conversion with H,D fixed.
 
+[The adaptive EH gain](HAND_G3_CORE_E_ADAPTIVE_EH_QUADRATIC_GAIN.md)
+supplies a smooth multiplier `p(t)=1+t^2/2+50t^4` for a genuine
+negative core-E EH1 error. Its exact lower bound retains a
+positive quadratic remainder on the full stated interval. The
+accompanying H support remains an explicit input to the later
+paired-E angle reduction; this helper alone does not exclude
+the simultaneous-negative E branch.
+
 The remaining high-GA work includes BT3, the uncovered simultaneous
 negative core-E alternatives, and outer-E positive-primary regimes.
 In particular none of the three complete domains in the table is
@@ -507,6 +518,17 @@ gives [strict intermediate order](HAND_G5_GLOBAL_INTERMEDIATE_FRAME_ORDER.md).
 removes the DE3/EH1 prerequisite by direct circle stresses.
 These are necessary-system inequalities, so later uses on
 constructed neighboring systems require no new G1 assertion.
+
+[The signed intermediate-order theorem](HAND_G5_SIGNED_INTERMEDIATE_ORDER_WITH_ALL_MIXED_OWNERS.md)
+now removes both G/T sign assumptions from this order step.
+A single fixed stress on GA0--AB--BT2 proves the unclipped
+bound `-y_G+y_T<=2sqrt(Q-1)-3+(3/4)(theta_T-theta_G)`
+for reversed intermediate frames and arbitrary middle frames.
+The original signed HG/TD charges retain that exact signed sum;
+the unchanged all-mixed H/D/E bound then contradicts reverse
+order. The proof retains every original center and all owner
+ties. The later arbitrary-frame AB alignment and sharp assembly
+have not yet been extended to those arbitrary intermediate signs.
 
 The original crossed-frame sectors are closed by the
 [large HG0 alignment](HAND_G5_CROSSED_NONCANCELING_LARGE_TANGENT_GA_ALIGNMENT.md),

@@ -151,8 +151,8 @@ unchanged original b_G,b_T.
 
 Put
 \[
- z=\theta_G-\theta_A,quad w=\theta_B-\theta_T,
- \quad d=\theta_B-\theta_A,quad z+w=d-r.
+ z=\theta_G-\theta_A,\quad w=\theta_B-\theta_T,
+ \quad d=\theta_B-\theta_A,\quad z+w=d-r.
 \]
 Add GA0, AB0, BT2 with weights \(1,\lambda,1\).
 The two collected center forces are exactly
