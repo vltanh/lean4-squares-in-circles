@@ -1,4 +1,4 @@
-# Table-free hand proof: global capture remains; final contraction retired
+# Table-free hand proof: all cuts follow from small mismatch; global capture remains
 
 **PR #10:** `formalize/eight-uncompiled-draft`.
 **Mode:** hand mathematics only; no Lean changes, compilation, or CI.
@@ -9,7 +9,10 @@ table in the mathematical dependency chain.
 ## 1. Current mathematical status — 19–20 October 2026 UTC
 
 The unrestricted table-free proof is **not complete**. Its remaining
-substantive work is global candidate capture in G3--G5.
+substantive work is global candidate capture. After G0--G2 and the E-sign
+normalization, the only extra input now needed by the complete downstream
+chain is `S<=3/200`. All six tangent cuts follow from that bound without
+any prior cut or preferred mixed owner.
 
 The old final contraction `S<=3/200 => S<1/1000` is now **unnecessary**.
 Mixed-owner rigidity, both tilt signs, the complete positive tilt tails,
@@ -22,14 +25,14 @@ ED-owner/H frame; no unjustified conversion to the old A/G tilt is used.
 | G0 | Closed on paper | Central core, physical gaps, fixed-axis boundary reduction and documented radius transfer. |
 | G1 | Closed on paper | Complete four-type frame concentration; real frame spread below 7/10. |
 | G2 | Closed on paper | All six wrong words excluded; only 0101011 survives. Reflection gives the weak E sign. |
-| G3 | Global capture open; four cuts automatic after small mismatch | At S<=1/32, G<-1/20, 1/20<T<4/5 and D<-1/2 follow without prior cuts. High-G and H cuts remain open. |
+| G3 | All six cuts closed conditionally at S<=3/200 | Cut-free quarter owners first give four cuts at S<=1/32; complete H-low exclusions then give H>1/2, followed by G>-4/5. No tangent cut is an independent missing input after small mismatch. |
 | G4 | Open | Coarse mismatch bounds S<2/5 and S<13/50. |
 | G5 | Contractions open; sign subgates closed conditionally | A positive and D negative already follow from S<=13/50; all six zero-edge signs follow from S<=1/10. Both contractions remain open. |
 | G6 | Closed conditionally at S<=1/32, without tangent cuts | Every original BT/DE witness is in {2,3}, from G0--G2, E normalization and the mismatch bound. |
 | G7 | Closed conditionally at S<=3/200; old contraction retired | Every original mixed owner is G0/E1, without an S<=1/1000 premise. |
 | G8 | Closed conditionally at S<=3/200 | t>S and 1/10<tau<4/25, where tau is the actual ED-owner/H frame difference. |
 | G9 | Closed conditionally at S<=3/200 | Sharp owner-frame inequality with S/5000, all five completed anchors, and the full equality family. |
-| G10 | Open pending G3--G5 | The fixed-ceiling/original-center transfer is proved for the new S<=3/200 owner-frame terminal. Global capture is still missing. |
+| G10 | Open pending global mismatch capture | The fixed-ceiling/original-center transfer is proved for the new S<=3/200 owner-frame terminal. It now needs only the remaining mismatch input beyond the entry geometry. |
 
 These are mathematical hand-proof statuses, not Lean verification claims.
 Historical certificate files and the uncompiled Lean draft remain unchanged.
@@ -68,19 +71,19 @@ cannot be assigned independent angular budgets. Every actual edge has
 at least one feasible original signed SAT witness; only the already
 proved zero-primary exclusion can restrict owners before later gates.
 
-### G3: the six missing tangent cuts
+### G3: all six tangent cuts follow after small mismatch
 
-The reflection proves `u_E<=0`, but not
+The reflection alone proves `u_E<=0`. The additional bound `S<=3/200`
+now supplies all six cuts
 
 \[
  -4/5<u_G<-1/20,\qquad 1/20<u_T<4/5,
  \qquad u_H>1/2,\qquad u_D<-1/2.
 \]
 
-The G cuts precede T in the historical route. H/D may use an earlier
-coarse mismatch result only if that result did not assume H/D first.
-A full-domain support or coupled-cycle contradiction is needed for
-each forbidden tail. Existing fitted arc values are not hand premises.
+This is a forward reordering of the historical route. The small-mismatch
+proofs below cannot be used to assume cuts while proving that same bound
+on S. Existing fitted arc values are not hand premises.
 
 [The original-center norm theorem](HAND_G3_CENTER_NORM_AND_HIGH_TAIL_DIRECTIONS.md)
 now gives `|p|<283/200` and the all-original-axis nominal inequality
@@ -106,9 +109,25 @@ is available before any G3 tangent cut once `S<=1/32` is known.
 proves, in forward order, `u_G<-1/20`, `1/20<u_T<4/5`, and `u_D<-1/2`
 at `S<=1/32`, without any earlier cut. The first three conclusions use
 the original zero edges and AB--BT path; D uses the newly proved BT
-owner. The remaining tangent conclusions in this reordered route are
-`u_G>-4/5` and `u_H>1/2`. None of these conditional theorems supplies
-the unrestricted bound on S.
+owner.
+
+At `S<=3/200`, [the complete H-low high-index stresses](HAND_G3_H_LOW_HIGH_INDEX_STRESSES_AT_THREE_TWO_HUNDREDTHS.md)
+exclude GA0 and GA2 on their entire arcs, all nonnegative GA tilts,
+and five of the remaining negative-tilt GA/EH pairs under `u_H<=1/2`.
+[The three primary-pair stresses](HAND_G3_H_LOW_PRIMARY_BRANCHES_AT_THREE_TWO_HUNDREDTHS.md)
+exclude the other three pairs. They retain the same original centers,
+the exact shared EH error sum, and both owners on every aligned edge.
+The last three four-circle cases use continuous rational weights,
+explicit polynomial positivity, signed first-order cancellation, and a
+single shared Taylor remainder. Together the two notes prove `u_H>1/2`
+without an earlier H or G cut.
+
+[The high-G theorem from the H cone](HAND_G3_HIGH_G_CUT_FROM_H_CONE_AT_THREE_TWO_HUNDREDTHS.md)
+then proves `u_G>-4/5`, using only the now-established weak H cone as its
+extra tangent input. [The all-cuts assembly](HAND_G3_ALL_CUTS_AT_THREE_TWO_HUNDREDTHS.md)
+states the complete conditional theorem and covers every original owner,
+including weak ties. No tangent cut remains an independent prerequisite
+after `S<=3/200`; that mismatch bound itself is still unproved globally.
 
 ### G4: the missing coarse mismatch bounds
 
@@ -159,6 +178,16 @@ scalar whose Hessian has a uniform negative reserve. One rational
 comparison point excludes the entire branch at Q0 without assuming
 contact or outer-boundary equalities. The result is a conditional
 branch theorem, not a reduction of arbitrary cycles to that branch.
+
+[The E-interior boundary reduction](HAND_G4_E_INTERIOR_BOUNDARY_REDUCTION.md)
+keeps the other six original vertices fixed on the stated aligned-zero
+branch. The two actual E contacts give an explicit one-variable corner
+function with strictly negative second derivative on its whole interval.
+An auxiliary minimum of the E corner therefore lies on `b_E=0`, DE
+alignment, or EH alignment. If a lower mismatch constraint `S>=s0` is
+retained, the additional boundary `S=s0` must also be retained. This is
+a continuous boundary reduction, not an assertion that E can always be
+set to zero or that a bad-mismatch condition survives the deformation.
 
 ### G5: the two missing middle contractions
 
@@ -245,17 +274,21 @@ preserves the whole word, giving `u_E<=0`.
 ## 4. The completed downstream chain at S<=3/200
 
 This section is a **conditional theorem**, not a claim that an arbitrary
-packing satisfies its inputs. Work with an actual candidate satisfying
-the earlier signed cuts, zero owners, core avoidance, corner containment
-and `S<=3/200`. For the lower-bound problem it suffices to consider
+packing satisfies its inputs. Work with an actual G0--G2 candidate,
+normalized by `y_E<=0`, satisfying `S<=3/200`. Retain original core
+avoidance, corner containment, and the full original separating-axis
+disjunctions. For the lower-bound problem it suffices to consider
 squared radius at most `Q1=1957767069/500000000`, because the stationary
 construction proves `q_*<Q1`. The owner lemmas use the weaker ceiling
 `Q0=9789/2500`.
 
-First apply [quarter-owner rigidity without tangent cuts](HAND_G3_B_OWNER_WITHOUT_TANGENT_CUTS_AT_ONE_THIRTY_SECOND.md),
-which is valid on the larger `S<=1/32` range. Its earlier proof in
-`HAND_QUARTER_OWNER_CLOSURE.md` remains available but its tangent-cut
-prerequisites are unnecessary for this owner step.
+First apply [the complete small-mismatch cut theorem](HAND_G3_ALL_CUTS_AT_THREE_TWO_HUNDREDTHS.md).
+It derives all six tangent cuts, all six zero-edge signs, and every
+intended quarter owner from exactly these inputs. Its forward proof
+starts with [quarter-owner rigidity without tangent cuts](HAND_G3_B_OWNER_WITHOUT_TANGENT_CUTS_AT_ONE_THIRTY_SECOND.md),
+which is valid on the larger `S<=1/32` range. The earlier proof in
+`HAND_QUARTER_OWNER_CLOSURE.md` remains available, but none of its
+tangent-cut prerequisites is an additional input to this assembly.
 The complete mixed-owner extension is then assembled by
 
 - [E2/E3 exclusion](HAND_E_OWNER_CHAIN_AT_THREE_TWO_HUNDREDTHS.md);
@@ -325,7 +358,8 @@ outer-radius expansion, and restores the already feasible lower-radius
 boundary cycle before applying the terminal. At equality it reapplies
 the zero-error stationary identity to the original centers. It requires
 only the table-free broad radius bounds `3.9154<q_*<Q1` and no final
-contraction. Global G3--G5 capture remains its explicit missing input.
+contraction. Global mismatch capture remains its explicit missing input;
+the tangent cuts are now consequences of that one input.
 
 ## 5. Proof discipline and exact global stopping condition
 
@@ -343,8 +377,8 @@ A state or angle mesh, generated Bernstein row inventory, recursive owner
 table, sampled minimum or numerical PASS is not a proof premise.
 An uncomputed potential defined by an infimum is not its own proof.
 
-The next work is **G3--G5 global capture**, not further treatment of the
-now-completed mixed-owner, tilt, or terminal stages. If a proposed
+The next work is **global mismatch capture**, not further treatment of the
+now-completed small-mismatch cuts, owners, tilt, or terminal stages. If a proposed
 one-vertex potential is false, record the obstruction and retain coupled
 vertices in a two-edge or whole-cycle argument; do not conceal it by
 refining a grid. Later-stage signs, cuts and owners cannot be used in
@@ -353,11 +387,17 @@ reverse to justify an earlier stage.
 The remaining unrestricted implication is
 
 \[
- \text{packing}\Longrightarrow\text{G0--G2 actual candidate}
- \Longrightarrow\text{G3 cuts and G4--G5 }S<3/200.
+ \boxed{\text{G0--G2 actual candidate at }q\le Q_1,
+       \quad y_E\le0\quad\Longrightarrow\quad S\le3/200.}
 \]
 
-Once that implication is proved, the completed original-center transfer
+Here `Q1=1957767069/500000000`. The historical G4/G5 contractions are
+one possible route to this implication; they are not mandatory intermediate
+theorems. A proved radius-preserving reduction to the completed regime
+could also supply the lower-bound argument, with its equality consequences
+checked separately. Neither route is asserted here as complete.
+
+Once the displayed implication is proved, the completed original-center transfer
 and Section 4 close G10 and the unrestricted theorem. The transfer is no
 longer a separate open estimate; it does not discharge global capture.
 

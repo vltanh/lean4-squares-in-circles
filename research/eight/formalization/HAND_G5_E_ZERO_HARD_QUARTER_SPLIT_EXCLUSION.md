@@ -36,7 +36,7 @@ where
 
 Retain original transverse witnesses on HG, AB, TD; an original GA
 axis 0; an original BT axis 2; an original DE axis 3; and an original
-EH axis 1. In the owner notation, T owns TB and D owns ED. All ties
+EH axis 1. These are the original zero-based axis indices. All ties
 are allowed. These are explicit branch hypotheses, not owner
 conclusions imported from a later mismatch scale.
 
