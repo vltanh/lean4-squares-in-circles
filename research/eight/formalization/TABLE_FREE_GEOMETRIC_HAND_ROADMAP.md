@@ -794,14 +794,50 @@ Both keep the other six states fixed, stay strictly inside the
 original q-circle, and reduce both error variations. Their
 boundary-neighbor order is proved directly. Together with the
 existing positive-total transports and negative-primary lemmas,
-they give complete **HG0/GA1 two-endpoint entry at Q**: actual
-GA0 or HG alignment. Reflection gives the BT3/TD2 statement.
-The complete join is stated at Q because some cited
-positive-total transports use the outer Q boundary; an
-equality-preserving join at the original q still needs its
-own radius argument. Sole positive GA1/HG2 and the remaining
-HG-aligned primary endpoints with arbitrary other zero errors
-are not excluded by these local constructions.
+the [uniform-radius pair theorem](HAND_G5_UNIFORM_RADIUS_PRIMARY_PAIR_TRANSPORT.md)
+now gives complete **HG0/GA1 two-endpoint entry at the original q**:
+actual GA0 or HG alignment, throughout the sharp-search band.
+Reflection gives the BT3/TD2 statement. All five original anchors
+are retained by these intermediate-only transports. Their positive
+primary totals therefore have a direct original-anchor equality
+obstruction. An intermediate G/T circle loss alone is still not
+used to exclude equality.
+
+The [complete aligned-HG negative endpoint](HAND_G5_GLOBAL_PRIMARY_ENTRY_ALIGNED_NEGATIVE_ENDPOINT_COMPLETE.md)
+now reaches actual GA0 with BT2, arbitrary AB/TD owners and frames,
+either T sign, every mixed-owner choice and every E placement.
+A genuinely unavailable GA0 produces strict H-circle loss at the
+same q. The radial scope is explicit: E is original core/outer,
+and D is outer at q or has an eligible primary lift (automatic
+for TD2 or aligned TD). It holds for original boundary anchors
+and intermediate-only pair descendants.
+
+Its [full-interval EH0 and short-EH1 local transport](HAND_G5_GLOBAL_PRIMARY_ENTRY_ALIGNED_HG_NEGATIVE_GA_EH0.md)
+uses no B/T hypothesis. The two original-data span bounds,
+[TD0](HAND_G5_NEGATIVE_GA_ALIGNED_HG_TD0_SPAN_BOUND.md) and
+[TD2](HAND_G5_GLOBAL_PRIMARY_ENTRY_NEGATIVE_GA_TD2_SPAN_BOUND.md),
+prove `theta_H-theta_D<.22` with no E input. Any remaining long
+positive EH1 therefore places E below D. Actual
+[DE3](HAND_G5_GLOBAL_PRIMARY_ENTRY_LONG_EH_OUTSIDE_TRANSPORT.md) and
+[DE2](HAND_G5_GLOBAL_PRIMARY_ENTRY_LONG_EH_DE2_OUTSIDE_TRANSPORT.md)
+outside transports reach EH0 or short EH1 on the same radial arc;
+the span bound excludes their aligned-DE stopping alternative.
+The final H/G step supplies the strict anchor loss independently
+of any E loss.
+
+The [negative-primary intermediate-order theorem](HAND_G5_GLOBAL_PRIMARY_ENTRY_NEGATIVE_GA_INTERMEDIATE_ORDER.md)
+also proves `H=G>T` before any transport with arbitrary original
+AB/TD owners and either T sign. Its AB2 argument is a scalar
+comparison of whole-angle support expressions, not a proposed
+unverified A movement. A separate
+[near-equal-weight negative-norm lemma](HAND_G3_NEGATIVE_NORM_MONOTONICITY_FOR_NEAR_EQUAL_WEIGHTS.md)
+provides monotonicity uniformly at the original radius for use
+in the remaining continuous stresses.
+
+Sole positive GA1/HG2 and the coupled both-primary GA1/BT3
+entry still require their complete global implications. None
+of the preceding local constructions is being asserted to
+supply those missing hypotheses automatically.
 
 The earlier contraction targets and intermediate milestones
 below retain their stated scopes; they are not additional
