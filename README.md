@@ -15,8 +15,13 @@ now gives a complete table-free mathematical proof of the sharp radius and
 the full five-parameter equality family. Its
 [geometric model](research/eight/formalization/EIGHT_SQUARE_FIVE_CORNER_MODEL.md)
 defines the radius by a five-corner minimum, with five fixed squares, two
-sliders, and a central square describing every optimum. The n=8 Lean source remains an
-[uncompiled draft](research/eight/formalization/STATUS.md).
+sliders, and a central square describing every optimum. The new
+[geometric Lean draft](research/eight/formalization/LEAN_GEOMETRIC_MODEL_DRAFT.md)
+puts that model in the public radius and packing registries. It includes
+selection, exact domain equivalence, the unique least circle, and an
+original-center proof at the sharp radius. It is uncompiled; the concrete
+global-entry implementation still retains the existing generated capture
+dependencies, as the draft report explains.
 
 ![The optimal packings of one to seven unit squares, each in its dashed circle of radius R_n at a common scale, with n and the exact radius under each: one square; two squares side by side; the T; the 2 by 2 block; the plus; six squares, one of them turned by 45 degrees; and seven squares in columns of two, three and two](docs/proof/figures/01-introduction/optimal.svg)
 

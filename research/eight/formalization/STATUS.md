@@ -1,5 +1,20 @@
 # n=8 formalization: source draft status
 
+**Current source delivery, 20 October 2026:**
+[the geometric Lean draft](LEAN_GEOMETRIC_MODEL_DRAFT.md) writes the new
+five-corner minimum, the equivalent two-height model, the actual-angle
+equality family, the unique least circle, and the original-center assembly
+at the exact sharp radius. `optimalRadius 8` and `optimalPackings 8` now use
+the pure geometric statement, and the root `optimum` uses its new proof
+record. The source is uncompiled. A static audit is reserved for the end of
+the complete drafting pass; Lean, lake, CI and certificate replay remain
+unrun. The concrete global-entry proof retains conditional capture and its
+generated dependencies; the report makes that boundary explicit.
+
+The following hand-result and F0–F12 ledger describe the earlier snapshots.
+The current geometric source report supersedes their descriptions of the
+eighth public statement and source integration.
+
 **Current hand-mathematics result, 20 October 2026:**
 [the unrestricted table-free theorem](HAND_UNRESTRICTED_EIGHT_SQUARE_THEOREM_WITHOUT_TABLES.md)
 is complete, including original-center equality and the full five-parameter
@@ -9,7 +24,7 @@ converse. Its model now defines the exact radius as a
 without auxiliary radius or core constants in either definition.
 The sharp argument works directly at that radius. Its current dependencies are in
 [the hand-proof roadmap](TABLE_FREE_GEOMETRIC_HAND_ROADMAP.md).
-This final mathematical pass changes no Lean files and runs no compilation
+That final mathematical pass changed no Lean files and ran no compilation
 or CI. The source counts, implementation history, and deferred verification
 gates below describe the separate historical uncompiled draft.
 

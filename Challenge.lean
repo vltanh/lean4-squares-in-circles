@@ -8,8 +8,9 @@ public import Mathlib.Tactic
 
 The independent statement a reader can audit. It imports only Mathlib and
 restates the pure definition bodies of `SquaresInCircles/Geometry.lean`,
-`SquaresInCircles/StatementEight.lean`, and `SquaresInCircles/Optimal.lean`,
-in that order. It states the two main theorems proved in the root library
+`SquaresInCircles/StatementEight.lean`,
+`SquaresInCircles/StatementEightGeometric.lean`, and
+`SquaresInCircles/Optimal.lean`, in that order. It states the two main theorems proved in the root library
 module; Comparator is the later check that statements and definitions agree.
 The eight-square extension and its proof source are an uncompiled draft.
 
@@ -28,7 +29,7 @@ and a relabelling of the squares:
 | 5 | `√(5/2)` | the plus: a square and its four side-neighbours |
 | 6 | `√qStar ≈ 1.6885` | a square with four neighbours, two of them pushed along its sides, and a sixth square turned by `π/4` in the corner between those two |
 | 7 | `√13 / 2` | two columns of two squares, and between them a column of three, each of which can move along the middle axis |
-| 8 | `Eight.radius` | the stationary-root family with two exterior slider coordinates and the central square's two position coordinates and angle, subject to the stated closed constraints; reflected models are included |
+| 8 | `Eight.GeometricModel.FiveCorner.radius` | the five-corner geometric minimum, with two exterior sliders and the central square's position and actual angle; exact geometric constraints and both reflected families are included |
 
 The theorems assume `1 ≤ n ≤ 8`. For every other `n`, `optimalRadius n` is the
 placeholder `0`, `optimalPackings n` is empty, and nothing is claimed.

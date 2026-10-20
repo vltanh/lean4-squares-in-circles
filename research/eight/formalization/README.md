@@ -1,5 +1,16 @@
 # Eight squares: Lean source draft
 
+## Current geometric source delivery
+
+[LEAN_GEOMETRIC_MODEL_DRAFT.md](LEAN_GEOMETRIC_MODEL_DRAFT.md) describes the
+new authorized Lean pass: the pure five-corner minimum, exact two-height
+formula, actual-angle equality domain, unique least circle, and original
+packing assembly at the sharp radius. The public registries now use these
+geometric definitions. All proof bodies are uncompiled. Audit work is
+deferred until the whole draft is written, as requested; no Lean, lake, or
+CI is run. The report also identifies the retained capture dependencies
+and the alternative hand-entry transcription still to be substituted.
+
 ## Completed mathematical hand proof
 
 The unrestricted table-free hand proof is now complete, including the sharp
@@ -20,9 +31,10 @@ lower bound and original equality at one exact working radius; the
 [auxiliary-bound catalog](HAND_AUXILIARY_RADIUS_BOUNDS.md) records the
 internal arithmetic domains separately.
 
-That mathematical completion does not change the verification status of the
-historical Lean source described below. No Lean files were changed in this
-final hand-proof pass, and no compilation or CI was run.
+The hand-proof pass changed no Lean files and ran no compilation or CI.
+The subsequent source pass is the current delivery linked above. The
+historical implementation ledger below is retained for provenance; its
+stationary public statement has now been superseded by the geometric one.
 
 ## Historical uncompiled source
 
@@ -46,6 +58,7 @@ finite computations, and deferred F12 gates.
 
 | Document or source | Purpose |
 |---|---|
+| [LEAN_GEOMETRIC_MODEL_DRAFT.md](LEAN_GEOMETRIC_MODEL_DRAFT.md) | Current geometric source, exact public definitions, retained dependencies, and end-only audit record. |
 | [GEOMETRIC_ROADMAP.md](GEOMETRIC_ROADMAP.md) | Executed geometric replacement gates, exact removal counts, and remaining work. |
 | [TABLE_DEPENDENCIES_BASELINE.json](TABLE_DEPENDENCIES_BASELINE.json) and [TABLE_DEPENDENCIES_CURRENT.json](TABLE_DEPENDENCIES_CURRENT.json) | Comparable committed-tree source inventories; no Lean or checker execution. |
 | [ROADMAP.md](ROADMAP.md) | The transferred F0–F12 specification, proof dependencies, finite domains, and acceptance criteria. |

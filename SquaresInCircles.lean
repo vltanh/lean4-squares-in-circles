@@ -8,6 +8,7 @@ public import SquaresInCircles.Five.Uniqueness
 public import SquaresInCircles.Six.Uniqueness
 public import SquaresInCircles.Seven.Uniqueness
 public import SquaresInCircles.Eight.Theorem
+public import SquaresInCircles.Eight.GeometricModel.Theorem
 public import SquaresInCircles.Optimal
 
 /-!
@@ -24,15 +25,18 @@ the central square translates and rotates in an explicit admissible domain.
 Both orientations of this five-parameter family are included. The public
 registries `optimalRadius` and `optimalPackings` are in `Optimal.lean`;
 primitive square geometry remains in `Geometry.lean`. The eighth-case
-statement data in `StatementEight.lean` use ordinary classical selection
-from explicit stationary equations, with existence, uniqueness, and agreement
-with the analytic root proved in `Eight/ExactFamily/StatementLink.lean`.
-Thus the public definitions and their Mathlib-only Challenge mirror do not
-depend on importing the case proofs.
+statement data in `StatementEightGeometric.lean` define the radius as a
+five-corner geometric minimum, and the equality family by actual angles,
+containment, rail positions, and separating axes. The geometric proof modules
+establish existence, uniqueness, and agreement with the stationary chart.
+The pure public definitions and their Mathlib-only Challenge mirror do not
+depend on importing the case proofs. The older stationary statement and
+theorem names remain available for compatibility.
 
 The n=8 extension is delivered as uncompiled draft Lean source. Its proof
-scripts and generated rational certificates have not been compiled or
-audited in this source-writing pass.
+scripts and generated rational certificates have not been compiled. The
+geometric draft is written before its final static source audit; no Lean,
+lake, kernel axiom inspection, certificate replay, or CI is run in this pass.
 
 Every case proves the same statement, an `Optimum` (`Common/Optimum.lean`): its
 models pack the disk and reach its circle, and every packing of that radius is
@@ -55,7 +59,7 @@ def optimum : (n : ℕ) → 1 ≤ n ∧ n ≤ 8 → Optimum n
   | 5, _ => Five.optimum
   | 6, _ => Six.optimum
   | 7, _ => Seven.optimum
-  | 8, _ => Eight.optimum
+  | 8, _ => Eight.GeometricModel.optimum
   | 0, h | _+9, h => absurd h (by omega)
 
 /-- `optimum n` has the radius `optimalRadius n` and the models
@@ -63,8 +67,7 @@ def optimum : (n : ℕ) → 1 ≤ n ∧ n ≤ 8 → Optimum n
 lemma optimum_spec (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 8) :
     (optimum n hn).radius = optimalRadius n ∧ (optimum n hn).models = optimalPackings n := by
   match n, hn with
-  | 1, _ | 2, _ | 3, _ | 4, _ | 5, _ | 6, _ | 7, _ => exact ⟨rfl,rfl⟩
-  | 8, _ => exact ⟨Eight.radius_statement,Eight.models_statement⟩
+  | 1, _ | 2, _ | 3, _ | 4, _ | 5, _ | 6, _ | 7, _ | 8, _ => exact ⟨rfl,rfl⟩
   | 0, h | _+9, h => exact absurd h (by omega)
 
 /-- `optimalRadius n` is the least radius of a disk that holds `n` unit squares

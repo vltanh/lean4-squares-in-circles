@@ -15,7 +15,14 @@ The [equality model](formalization/EIGHT_SQUARE_GEOMETRIC_EQUALITY_MODEL.md)
 uses five fixed squares, two contact-line sliders, and the actual central
 angle. Its exact constant and equality family agree
 with the earlier proof below; its mathematical chain does not import the
-old numerical lookup tables. Lean source verification remains deferred.
+old numerical lookup tables.
+
+The new [geometric Lean source draft](formalization/LEAN_GEOMETRIC_MODEL_DRAFT.md)
+formalizes the model, its selection, the full equality family, and the
+original-center assembly at the exact radius. The public eighth-case
+definitions now use that model. The source is uncompiled and its concrete
+global-entry implementation still uses the existing capture machinery;
+the report separates this dependency from the table-free hand proof.
 
 ## Earlier tabular manuscript and provenance
 
