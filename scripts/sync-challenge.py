@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Synchronize the pure Challenge definitions by copying source text only.
 
-The bodies of Geometry.lean, StatementEight.lean, and Optimal.lean are copied
-in that order beneath one shared noncomputable section and namespace.  The
-Challenge header, Mathlib imports, and theorem region are preserved verbatim.
+The bodies of Geometry.lean, StatementEight.lean, StatementEightGeometric.lean,
+and Optimal.lean are copied in that order beneath one shared noncomputable
+section and namespace. The Challenge header, Mathlib imports, and theorem
+region are preserved verbatim.
 
 With --write this materializes the mirror.  Without --write it reports only
 textual drift, retaining the previous comparator script's synchronization
@@ -19,6 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCES = (
     "SquaresInCircles/Geometry.lean",
     "SquaresInCircles/StatementEight.lean",
+    "SquaresInCircles/StatementEightGeometric.lean",
     "SquaresInCircles/Optimal.lean",
 )
 SECTION = "noncomputable section\n"
@@ -62,8 +64,8 @@ def main() -> int:
     if args.write:
         challenge_path.write_text(challenge[:first] + definitions + challenge[last:])
         print(
-            "Challenge.lean: copied Geometry.lean, StatementEight.lean, and "
-            "Optimal.lean definition bodies; no build or proof checking invoked"
+            "Challenge.lean: copied the primitive, stationary, geometric, and "
+            "registry definition bodies; no build or proof checking invoked"
         )
         return 0
     if challenge[first:last] != definitions:

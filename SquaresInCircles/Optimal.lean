@@ -1,15 +1,16 @@
 module
 
 public import SquaresInCircles.StatementEight
+public import SquaresInCircles.StatementEightGeometric
 
 /-!
 # The pure public radius and model registries, through eight squares
 
 The elementary square definitions remain in Geometry. The eight-square
-entry uses the explicit stationary predicate and five-parameter equality
-family in StatementEight. No case proof is imported here. The downstream
-StatementLink module proves these definitions agree with the analytically
-selected root and the family used in Eight.optimum.
+entry uses the five-corner geometric minimum and actual-angle equality
+family in StatementEightGeometric. No case proof is imported here. The
+older stationary statement remains available for compatibility; downstream
+geometric modules prove the exact correspondence between the two models.
 -/
 
 @[expose] public section
@@ -26,7 +27,7 @@ def optimalRadius : ℕ → ℝ
   | 5 => Five.radius
   | 6 => Six.radius
   | 7 => Seven.radius
-  | 8 => EightStatement.radius
+  | 8 => Eight.GeometricModel.FiveCorner.radius
   | _ => 0
 
 /-- All normalized optimum models. At eight squares the two exterior
@@ -41,7 +42,7 @@ def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
   | 5 => {Five.model}
   | 6 => {Six.model}
   | 7 => Set.range Seven.columnModel
-  | 8 => EightStatement.models
+  | 8 => Eight.GeometricModel.models
   | _ => ∅
 
 end SquaresInCircles
