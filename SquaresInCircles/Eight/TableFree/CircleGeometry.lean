@@ -3,15 +3,16 @@ module
 public import SquaresInCircles.Eight.TableFree.SignedCoordinates
 
 /-!
-# Actual-circle and true-core geometry for table-free transports
+# Actual circles, the true core, and uniform geometric reserves
 
-Uncompiled draft. Radius bounds are internal estimates; every constructed
-outer point uses its actual q-circle, never a renamed fixed-ceiling state.
+Uncompiled draft. These bounds are consequences of a circle equation or of
+an inequality on a whole interval. No finite list of sampled states is used.
+The radius symbols are squared radii throughout. The actual `q` remains in
+every constructed point; `qCap` is used only for estimates.
 -/
 
 @[expose] public section
 noncomputable section
-open scoped BigOperators
 namespace SquaresInCircles.Eight.TableFree
 
 abbrev qLow : ℝ := 19577/5000
@@ -136,28 +137,29 @@ theorem boundary_radial_alternative {q : ℝ} {E H D : SignedPoint}
 /-- Increasing only the primary coordinate preserves exact core avoidance. -/
 theorem core_mono_primary {p r : SignedPoint} (ha : p.a ≤ r.a) (hy : r.y=p.y) :
     p.coreDistance ≤ r.coreDistance := by
-  have hm := max_le_max (sub_le_sub_right ha (1/2)) le_rfl
-  have hs := pow_le_pow_left₀ (le_max_right (p.a-1/2) 0) hm 2
+  have hm := max_le_max_right (0 : ℝ) (show p.a-1/2 ≤ r.a-1/2 by linarith)
+  have hs := pow_le_pow_left₀ (le_max_right _ _) hm 2
   simp only [coreDistance,hy]
   linarith
 
+/-- The flat true-core point, used by the genuine negative-primary moves. -/
 def flat (y : ℝ) : SignedPoint := ⟨7/12,y⟩
 
 theorem flat_sorted {y : ℝ} (hy : |y| ≤ 1/2) : (flat y).Sorted := by
   exact ⟨by norm_num [flat],by dsimp [flat]; linarith⟩
 
 theorem flat_on_core {y : ℝ} (hy : |y| ≤ 1/2) : (flat y).Core :=
-  (flat_core_iff (flat_sorted hy) hy).2 rfl
+  (flat_core_iff (flat_sorted hy) hy).mpr rfl
 
 theorem flat_contained {q y : ℝ} (hq : qLow ≤ q) (hy : |y| ≤ 1/2) :
     (flat y).Contained q := by
-  have h0 := abs_nonneg y
-  unfold Contained circle flat
+  have hb := abs_nonneg y
   have hsq := pow_le_pow_left₀ (by linarith : 0 ≤ |y|+1/2)
     (show |y|+1/2 ≤ 1 by linarith) 2
-  dsimp [qLow] at hq
+  dsimp [Contained,circle,flat,qLow] at *
   nlinarith
 
+/-- Actual outer-circle ordinate construction. -/
 def outerAt (q y : ℝ) : SignedPoint :=
   ⟨Real.sqrt (q-(|y|+1/2)^2)-1/2,y⟩
 
@@ -166,25 +168,27 @@ theorem outerAt_spec {q y : ℝ} (hq : qLow ≤ q)
     (outerAt q y).Sorted ∧ (outerAt q y).Outer q ∧
       (outerAt q y).AvoidsCore := by
   have hq0 : 0 ≤ q := by dsimp [qLow] at hq; linarith
-  have hq2 := Real.sq_sqrt (show 0 ≤ q/2 by positivity)
-  have hn2 := Real.sqrt_nonneg (q/2)
-  have hy0 := abs_nonneg y
-  have hb : |y|+1/2 ≤ Real.sqrt (q/2) := by
-    dsimp [diagonalCoordinate] at hy
-    linarith
-  have hb2 := pow_le_pow_left₀ (by positivity : 0 ≤ |y|+1/2) hb 2
+  have hroot := Real.sq_sqrt (show 0 ≤ q/2 by positivity)
+  have hroot0 := Real.sqrt_nonneg (q/2)
+  have habs := abs_nonneg y
+  have hy' : |y|+1/2 ≤ Real.sqrt (q/2) := by
+    simpa [diagonalCoordinate,le_sub_iff_add_le] using hy
+  have hy2 := pow_le_pow_left₀ (by linarith : 0 ≤ |y|+1/2) hy' 2
   have hrad : 0 ≤ q-(|y|+1/2)^2 := by nlinarith
-  have hroot := Real.sq_sqrt hrad
-  have hn := Real.sqrt_nonneg (q-(|y|+1/2)^2)
-  have ha : |y|+1/2 ≤ Real.sqrt (q-(|y|+1/2)^2) := by nlinarith
-  have hlarge : 7/12 ≤ Real.sqrt (q-(|y|+1/2)^2)-1/2 := by
+  have hradSq := Real.sq_sqrt hrad
+  have hrad0 := Real.sqrt_nonneg (q-(|y|+1/2)^2)
+  have hlarge : (7/12 : ℝ)<Real.sqrt (q-(|y|+1/2)^2)-1/2 := by
     dsimp [qLow] at hq
     nlinarith
-  refine ⟨⟨by dsimp [outerAt]; linarith,by dsimp [outerAt]; linarith⟩,?_,?_⟩
-  · dsimp [outerAt,Outer,circle]
+  have hsort : |y| ≤ Real.sqrt (q-(|y|+1/2)^2)-1/2 := by
     nlinarith
-  · dsimp [outerAt,AvoidsCore,coreDistance]
-    rw [max_eq_left (by linarith : 0 ≤ Real.sqrt (q-(|y|+1/2)^2)-1/2-1/2)]
+  refine ⟨⟨by simpa [outerAt] using (show 0 <
+    Real.sqrt (q-(|y|+1/2)^2)-1/2 by linarith),hsort⟩,?_,?_⟩
+  · dsimp [Outer,circle,outerAt]
+    nlinarith
+  · dsimp [AvoidsCore,coreDistance,outerAt]
+    rw [max_eq_left (by linarith :
+      0 ≤ Real.sqrt (q-(|y|+1/2)^2)-1/2-1/2)]
     nlinarith [sq_nonneg (max (|y|-1/2) 0)]
 
 end SignedPoint
@@ -192,13 +196,11 @@ end SignedPoint
 theorem uniform_circle_reserves {q : ℝ} (hl : qLow ≤ q) (hu : q ≤ qCap) :
     899/1000 < diagonalCoordinate q ∧ diagonalCoordinate q < 9/10 ∧
       19/10 < Real.sqrt (q-1/4) ∧ Real.sqrt (q-1/4) < 383/200 := by
-  have hq2 := Real.sq_sqrt (show 0 ≤ q/2 by dsimp [qLow] at hl; linarith)
-  have hq4 := Real.sq_sqrt (show 0 ≤ q-1/4 by dsimp [qLow] at hl; linarith)
-  have hn2 := Real.sqrt_nonneg (q/2)
-  have hn4 := Real.sqrt_nonneg (q-1/4)
-  dsimp [qLow] at hl
-  dsimp [qCap] at hu
-  dsimp [diagonalCoordinate]
+  have hn := Real.sqrt_nonneg (q/2)
+  have hn' := Real.sqrt_nonneg (q-1/4)
+  have hs := Real.sq_sqrt (show 0 ≤ q/2 by dsimp [qLow] at hl; linarith)
+  have hs' := Real.sq_sqrt (show 0 ≤ q-1/4 by dsimp [qLow] at hl; linarith)
+  dsimp [qLow,qCap,diagonalCoordinate] at *
   constructor
   · nlinarith
   constructor
@@ -206,22 +208,24 @@ theorem uniform_circle_reserves {q : ℝ} (hl : qLow ≤ q) (hu : q ≤ qCap) :
   constructor <;> nlinarith
 
 theorem small_frame_cos {d : ℝ} (hd : |d| ≤ frameCap) : 3/4 < Real.cos d := by
-  have h := small_angle hd
+  have h := (small_angle hd).1
   dsimp [frameCap] at h
-  norm_num at h
   linarith
 
 theorem small_frame_width {d : ℝ} (hd : |d| ≤ frameCap) :
     edgeWidth d=(1+Real.cos d+|Real.sin d|)/2 := by
   have hc := small_frame_cos hd
-  simp [edgeWidth,pairWidth,abs_of_pos (by linarith : 0<Real.cos d),add_comm]
+  simp [edgeWidth,pairWidth,abs_of_pos (by linarith : 0 < Real.cos d),add_comm]
 
+/-- A rotation of the actual corner preserves its circle exactly. -/
 theorem circle_rotation_identity (x y d : ℝ) :
-    (x*Real.cos d-y*Real.sin d)^2+(x*Real.sin d+y*Real.cos d)^2=x^2+y^2 := by
+    (x*Real.cos d-y*Real.sin d)^2+
+      (x*Real.sin d+y*Real.cos d)^2=x^2+y^2 := by
   linear_combination (x^2+y^2)*Real.sin_sq_add_cos_sq d
 
+/-- No loss at a free intermediate is substituted for loss at an anchor. -/
 theorem circle_loss_impossible {q old new : ℝ}
-    (hold : old ≤ q) (hloss : new < old) (hnew : new=q) : False := by
+    (hold : old ≤ q) (hloss : new < old) (heq : new=q) : False := by
   linarith
 
 end SquaresInCircles.Eight.TableFree
