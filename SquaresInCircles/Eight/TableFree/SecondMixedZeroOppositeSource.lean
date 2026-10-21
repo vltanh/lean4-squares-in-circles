@@ -123,7 +123,8 @@ theorem original (r : Row) {a b A B x : ℝ}
     rw [abs_of_nonpos hsin] at hw
     have hh := negative_original r hs ht hx' (by
       rw [hw] at hm'
-      simpa only [Real.sin_neg,Real.cos_neg,mul_neg,sub_neg_eq_add] using hm')
+      simp only [Real.sin_neg,Real.cos_neg,mul_neg,sub_neg_eq_add]
+      linarith)
     simpa only [neg_neg] using hh
 
 end SquaresInCircles.Eight.TableFree.SecondWord.MixedZero.Opposite.Source
