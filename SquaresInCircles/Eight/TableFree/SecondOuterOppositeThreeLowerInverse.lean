@@ -161,4 +161,27 @@ lemma weak_phase {y z x : ℝ} (hy : y∈Icc 0 outerDiagonal) (hz : z∈shifts)
   dsimp [phase]
   linarith
 
+lemma phase_lower {y z x : ℝ} (hy : y∈Icc 0 outerDiagonal) (hz : z∈shifts)
+    (hx : x∈Icc 0 (7/10))
+    (hcut : (arc y-1/2)*Real.cos x-(y+1/2)*Real.sin x≤z) : -x≤phase z y := by
+  have hd := OppositeTwo.PrimaryInverse.data hy hz
+  have hr : 0<radius y := by linarith [hd.1]
+  have hb := NegativeTwo.ContactInverse.base_bounds hy
+  have ht := NegativeTwo.ContactInverse.base_trig hy
+  have hangle : -(Real.pi/2)≤base y-x ∧ base y-x≤Real.pi/2 := by
+    constructor <;> linarith [hb.1,hb.2,hx.1,hx.2,pi_hand_enclosure.1]
+  have hs : Real.sin (base y-x)=
+      ((arc y-1/2)*Real.cos x-(y+1/2)*Real.sin x)/radius y := by
+    rw [Real.sin_sub,ht.1,ht.2]
+    dsimp [U,W]
+    field_simp [hr.ne']
+    ring
+  have hsin : Real.sin (base y-x)≤z/radius y := by
+    rw [hs]
+    exact div_le_div_of_nonneg_right hcut hr.le
+  have ha := Real.arcsin_le_arcsin hsin
+  rw [Real.arcsin_sin hangle.1 hangle.2] at ha
+  dsimp [phase]
+  linarith
+
 end SquaresInCircles.Eight.TableFree.SecondWord.OppositeThree.LowerInverse
