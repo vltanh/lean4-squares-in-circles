@@ -127,4 +127,29 @@ theorem frame_remainders {x : ℝ} (hx : x∈Set.Icc 0 frameCap) :
   dsimp [C18] at hclo
   refine ⟨sub_nonneg.mpr hslo,?_,sub_nonneg.mpr hchi,?_⟩ <;> nlinarith
 
+theorem C14_pos {x : ℝ} (hx : x∈Set.Icc 0 frameCap) : 0<C14 x := by
+  have hc := (transport_trig hx).1
+  have hu := cos_le_C16 hx.1
+  have hp := pow_le_pow_left₀ hx.1 hx.2 16
+  have he : frameCap^16/20922789888000<(1/1000 : ℝ) := by norm_num [frameCap]
+  dsimp [C16] at hu
+  nlinarith
+
+theorem S15_hasDerivAt (x : ℝ) : HasDerivAt S15 (C14 x) x := by
+  have hd : Differentiable ℝ S15 := by dsimp [S15,S13,S11,sin9,sin7]; fun_prop
+  have he : deriv S15 x=C14 x := by
+    simp (disch := fun_prop) [S15,S13,S11,sin9,sin7,C14,C12,cos10,cos8]
+    ring
+  rw [← he]
+  exact (hd x).hasDerivAt
+
+theorem S15_nonneg {x : ℝ} (hx : x∈Set.Icc 0 frameCap) : 0≤S15 x := by
+  have hm : MonotoneOn S15 (Set.Icc 0 frameCap) :=
+    monoOn_of_hasDeriv_nonneg
+      (by dsimp [S15,S13,S11,sin9,sin7]; fun_prop)
+      (fun t _ => S15_hasDerivAt t)
+      (fun t ht => (C14_pos (Set.Ioo_subset_Icc_self ht)).le)
+  have h := hm ⟨le_rfl,by norm_num [frameCap]⟩ hx hx.1
+  simpa [S15,S13,S11,sin9,sin7] using h
+
 end SquaresInCircles.Eight.TableFree.HighOrderTaylor
