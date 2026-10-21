@@ -1,7 +1,6 @@
 module
 
 public import SquaresInCircles.Eight.GeometricModel.FiveCornerNominal
-public import SquaresInCircles.Eight.ExactFamily.Stationary
 
 /-!
 # The rational trial and the analytic stationary comparison
