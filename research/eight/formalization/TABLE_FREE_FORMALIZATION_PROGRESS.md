@@ -1,6 +1,6 @@
 # Table-free formalization: live progress and remaining work
 
-Updated **21 October 2026**. Branch: `formalize/eight-uncompiled-draft`.
+Updated **21 October 2026, 16:13 UTC**. Branch: `formalize/eight-uncompiled-draft`.
 Review: [PR #10](https://github.com/vltanh/lean4-squares-in-circles/pull/10).
 
 **The unrestricted table-free formalization is not complete.** Substantial
@@ -33,8 +33,8 @@ checkpoints against those gates.
   and the complete aggregate interface still need reconstruction.
 - **Deferred:** outside the present source-drafting pass.
 
-No Lean, lake, typechecking, tests, CI, numerical sampling, native evaluation,
-or certificate replay has been run in this continuation. The final source
+No Lean, lake, typechecking, tests, CI, native evaluation, or certificate
+replay has been run in this continuation. No sampled bound is a proof premise. The final source
 audit is deferred until all drafting is complete. All publication commits use
 `[skip ci]`. Root owns commits and publication; the three implementation lanes
 do not publish independently.
@@ -54,15 +54,16 @@ Lean paths below are relative to `SquaresInCircles/Eight/TableFree/`.
 | --- | --- | --- | --- |
 | M1 | Geometric stationary existence | **Drafted** | `GeometricStationaryExistence.lean` constructs stationary data from compact geometric minima, continuity and interior stationarity. Radius strip and ceiling are consequences. Final identification with the public designated sharp datum remains part of assembly. |
 | M2 | Four-state frame pair geometry (G1) | **Drafted** | `FrameAllPairs.all_pair`, `original_axis_pair`, and `continuous_pair_bound` cover all four radial branches, both pair orders, tangent signs and every original weak forward axis. Middle/high and high/high scalar and physical joins are included. |
-| M3 | Frame concentration and original-radius transport | **Drafted** | `FrameConcentration.lean` derives the actual cyclic charge, quarter lift, strict spread and both signed variations. `FramePhysicalTransport.lean` pulls back to the original q and original square records while preserving initially feasible axes. |
+| M3 | Frame concentration and original-radius transport | **Drafted and integrated** | `GlobalNormalization.lean` now obtains its actual-radius lift from `FramePhysicalTransport.quarter_lift`; the generated G1 pair call is removed. `NormalizationBridge.lean` retains literal original-radius squares, both variations and the initial selected physical normals. The generated word-classification step still remains. |
 | M4 | Common quarter increments and no-double gate | **Drafted** | Common G2 increment arguments and `QuarterDoubleExclusion.no_double` are available. This does not exclude the two remaining binary wrong words. |
 | M5 | Exact nearest-axis recoding and E ties | **Drafted** | `NearestAxisRecode.lean` preserves the square, center, radial kind and every signed-axis slack. `EDiagonalExclusion.lean` excludes E+ and E− at the original q using no-double. Other specified ties still depend on binary-word exclusions. |
 | M6 | Second-word completed outer sectors | **Partly drafted: 5 of 10 representatives** | OppositeTwo, NegativeTwo, NegativeThree, PositiveThree and PositiveNegativeThree have complete original-owner/reflection/physical/cycle drafts. The detailed remaining families are in §3; this count does not include mixed/core dispatch or the final word contradiction. |
-| M7 | Full-variation high-GA secondary sector | **Drafted for its stated owners** | `GlobalGASecondaryExclusion.lean` excludes HG0/2, GA2, AB0, BT2, TD0, DE2, EH0. `GlobalGANonpositiveTD.lean` also excludes TD2 with nonpositive original TD error. This does not derive those owner/sign hypotheses from arbitrary input. |
-| M8 | Positive-TD2 high-GA sector | **Active** | Actual seven-axis stress, clipped D minorant, signed concentration, admissible continuous weights, coordinate bounds and the low-angle four-to-sixteen endpoint envelope are drafted. Four low-angle polynomial reserves are also drafted. The upper polynomial bounds, analytic scalar transfer, high-angle endpoint envelope and original-sector contradiction remain. |
-| M9 | Canonical nonpositive sharp terminal | **Drafted, conditional endpoint** | `CanonicalNegativeCycle.lean` gives the stationary radius, literal five-anchor tuple, anchor-circle equalities and strict-source-loss exclusion for its actual canonical input. Exhaustive hard-input reduction and original-source recovery remain. |
-| M10 | Critical/sole/paired positive E reduction | **Drafted for its stated entry** | Critical E contact, outside-strip alternatives, sole owners, core E, and paired endpoint transport are drafted. `PositiveGABT2TD0Exclusion.lean` now closes the actual E-diagonal terminal branch for normalized HG2/GA1/BT2/TD0 and positive GA error. |
+| M7 | Full-variation high-GA secondary sector | **Drafted for its stated owners** | `GlobalGAPositiveTDExclusion.lean` completes the actual HG0/2, GA2, AB0, BT2, TD0/2, DE2, EH0 row, including all original TD error signs. The original owner hypotheses are still to be derived for the unrestricted sector. |
+| M8 | Positive-TD2 high-GA sector | **Drafted** | Both coefficient families, all six polynomial reserves, their analytic radical/Taylor transfers, all sixteen concentration endpoints and the original-cycle contradiction are joined. No scalar positivity hypothesis remains in `actual_TD2_false` or `actual_secondary_either_TD_false`. |
+| M9 | Hard sharp terminal and source recovery | **Partly drafted: complete nonpositive-outer and ordered-normal classes** | `NonpositiveOuterSharp.lean` allows all middle/E frames and every retained owner when both outer errors are nonpositive. `OrderedNormalSharp.lean` allows every outer owner/error with normal intermediates and D≤A=B≤H, T≤A≤G. Original anchor losses and nonpositive-source recovery are joined. Crossed and small-wrong-sign branches remain. |
+| M10 | Critical/sole/paired positive E reduction | **Drafted for its stated entry** | The positive-GA BT2/TD0 exclusion now covers both E signs and its reflected positive-BT row. `PositiveGAOuterSoleReduction.lean` reduces all preprocessed T and E branches to an actual same-radius sole-primary outer-E endpoint. The remaining sole-E stress families are still open. |
 | M11 | Unrestricted table-free public entry and equality | **Pending** | Existing public compatibility/capture dependencies have not been retired. All global entry hypotheses and original-source equality must be discharged before replacing that route. |
+| M12 | Global original zero/quarter-owner signs | **Drafted** | `GlobalZeroSignBridge.lean` classifies every feasible original zero-edge owner. `GlobalQuarterSignCycle.lean` proves owners 0/1 force positive target and 2/3 force negative source, all radial kinds and weak ties. This derives D<0 and every DE owner in {2,3} from E≤0; full normal-owner entry remains open. |
 
 These are theorem-interface milestones, not an effort percentage. The open
 global owner and contact arguments differ greatly in size.
@@ -71,13 +72,13 @@ global owner and contact arguments differ greatly in size.
 
 | Priority / task | Owner | Next concrete deliverable | Depends on |
 | --- | --- | --- | --- |
-| P1 — Recover the four zero-quarter outer families | `global_owner_entry` | Complete edge 0 (+,+), edge 0 (+,−), edge 4 (+,+), and edge 4 (+,−), with original-owner, reflection and actual-cycle adapters. | PositiveThree and PositiveNegativeThree are now fully drafted; retained zero-quarter hand arguments supply the next families. |
-| P2 — Finish opposite edge-three outer pair | root | All eight original axis/angle halves for `SecondWord.OppositeThree`, cost φ−T(b)−L(B) > .89777; then reflection and cycle adapters. | Both aligned minima are drafted; remaining contact minima and boundary motions are open. |
-| P3 — Close positive-TD2 scalar leaves | `boundary_bridge` | Finish the two upper-angle polynomial reserves and transfer all six exact numerators to the actual analytic scalar bounds. | The admissible continuous weight families and four low-angle polynomial reserves are drafted; source: `HAND_G3_HIGH_GA_LOW_EH_TD2_COMPLETE_SCALAR_EXCLUSION.md`. |
-| P4 — Complete original-state high-GA entry | `source_recovery` | Finish the high-angle balanced endpoint envelope and coefficient comparison; join all six scalar bounds to the original-cycle TD2 contradiction; then handle A/T/E primary-owner sectors and original hypothesis derivations. | P3; the low-angle four-to-sixteen endpoint join is drafted. Broader entry also needs the signed primary-total and same-radius transports in §4. |
-| P5 — Restore both binary-word aggregate exclusions | root + word lane | Complete the short-word aggregate; finish second-word outer/mixed/core dispatcher; telescope literal role markers on the physical cycle. | P1/P2 and §3; retained short/mixed source reconciliation. |
-| P6 — Candidate and normal-owner entry | root + geometry/owner lanes | Derive the remaining forbidden nearest-axis ties, actual candidate-word normalization, and an unconditional original-radius boundary/owner input. | P4/P5 and the completed G1 bridge. |
-| P7 — Hard input to original sharp equality | root + source lane | Complete all source-aware hard-to-canonical reductions and pull equality back to original points and physical witnesses. | P6 and the canonical sharp terminal. |
+| P1 — Finish opposite edge-three outer pair | `word_classification` | Prove the two remaining lower-secondary minima, then join all original owners, reflection and cycle adapters. | All four upper owners, the lower source-primary bound and both lower-primary reductions are drafted; actual inverse/contact/third-derivative data are drafted. |
+| P2 — Restore wrong-word aggregates and zero families | root | Complete the short-word aggregate, four second-word zero-quarter outer families, mixed/core dispatch and literal-marker telescoping. | Retained short/mixed modules, the hand zero-quarter proofs and P1. |
+| P3 — Complete original-owner entry | `owner_matrix` | Derive radial anchor restrictions, the remaining GA/BT/EH owners and signed primary-total alternatives from arbitrary original input. | Global zero/quarter signs and the full TD2 secondary row are drafted; no global owner classifier is yet available. |
+| P4 — Complete the same-radius primary matrix | owner + source lanes | Join all positive, negative, canceling, reflected and sole-E primary rows with original rigid-anchor loss. | Completed sign-free BT2/TD0 row and all-T/all-E sole-primary reduction; remaining sole-E scalar families. |
+| P5 — Complete the arbitrary hard terminal | `source_recovery` | Close crossed H/A and B/D order and small wrong intermediate signs, then join the full hard theorem and original-source recovery. | Full nonpositive-outer and ordered-normal theorems; the signed opposite envelope now proves both larger-middle normal signs without an opposite-sign premise. |
+| P6 — Candidate and normal-owner normalization | root + owner lane | Replace generated word classification and derive the remaining boundary-entry facts at the original radius. | P1/P2/P3 and the integrated G1 bridge. |
+| P7 — Hard input to original sharp equality | root + source lane | Join all source-aware primary reductions, hard sharpness and the untouched-source physical witness recovery. | P4/P5/P6; the nonpositive-source recovery and rigid-anchor loss machinery are drafted. |
 | P8 — Public theorem replacement | root | Unrestricted lower bound, attainment and full geometric equality family on the new dependency chain. | P7; stationary/public-datum link; existing geometric model adapters. |
 | P9 — End-only source audit | root / independent review | Check exact APIs/import closure, missing recovered sources, all original-witness and strictness joins, and absence of generated capture on the new public route. Fix findings. | All source drafting complete. |
 | P10 — Kernel and project verification | Deferred | Pinned Lean/mathlib elaboration, dependency/axiom/comparator checks and CI. | Separately authorized verification pass. No success is claimed now. |
@@ -94,7 +95,7 @@ the actual physical/cycle adapter. A scalar lemma alone does not close a row.
 | Edge 2, (−,−): `NegativeTwo` | **Drafted** | Consume the completed cycle wrapper in the final dispatcher. |
 | Edge 3, (−,−): `NegativeThree` | **Drafted** | Consume the completed cycle wrapper in the final dispatcher. |
 | Edge 3, (+,+): `PositiveThree` | **Drafted** | All original weak axes and both closed angle halves, reflection, physical and cycle wrappers are drafted. Consume the completed cycle wrapper in the final dispatcher. |
-| Edge 3, (−,+): `OppositeThree` | **Active** | Two aligned minima are drafted. Complete lower-axis-1 contact minimum, upper-axis-2 target concavity/diagonal boundary, lower-axis-3 critical envelope, upper-axis-4 target ratio, and the monotone remaining halves; then actual-owner joins. |
+| Edge 3, (−,+): `OppositeThree` | **Active** | All four original upper-half owners are drafted, including the complete target diagonal/concavity and source inverse-motion cases. Both lower primary owners reduce to original secondary contacts; the lower source-primary axis also has a direct full bound. Two lower-secondary continuous minima and the final all-owner/reflection/cycle join remain. |
 | Edge 3, (+,−): `PositiveNegativeThree` | **Drafted** | The existing V/K global chords give cost > .8986 for every original weak axis on the whole quarter window. Reflection, physical and cycle wrappers are drafted; consume them in the final dispatcher. |
 | Edge 0, (+,+) | **Recovery/integration** | Reconstruct same-sign zero-quarter family and original-owner join. |
 | Edge 0, (+,−) | **Recovery/integration** | Reconstruct asymmetric opposite-sign zero-quarter family and original-owner join. |
@@ -138,13 +139,20 @@ containment and weak axes. The continuous weight families are drafted in
 low-angle coefficient monotonicity and uniform H cap, and
 `GlobalGATD2LowEnvelope.low_scalars_positive` reduces all sixteen low-angle
 endpoints to four specific scalar inequalities. Their exact polynomial
-reserves are drafted in `GlobalGAPositiveTDLowPolynomial.lean`; the analytic
-transfer is still open. The scalar lane must prove the two upper-angle bounds
-as well; these inequalities must not become new geometric premises.
+reserves are drafted in `GlobalGAPositiveTDLowPolynomial.lean`. The two upper
+reserves, both analytic transfer modules and `GlobalGATD2UpperEnvelope.lean`
+are now joined in `GlobalGAPositiveTDExclusion.lean`. The full original
+secondary-sector contradiction has no remaining scalar premise.
+
+`GlobalZeroSignBridge.lean` and `GlobalQuarterSignCycle.lean` additionally
+classify every original zero/quarter weak owner at the source radius. The
+normalization bridge now derives the HG2/TD0 sign implications and D's
+negative tangent, rather than accepting them as entry hypotheses. The
+remaining normal-owner and radial-anchor restrictions are still explicit.
 
 Required global joins still open:
 
-- [ ] Positive-TD2 endpoint positivity and the complete secondary-sector
+- [x] Positive-TD2 endpoint positivity and the complete secondary-sector
   contradiction, including every intrinsic endpoint alternative.
 - [ ] All GA3/AB2 A-primary alternatives across signed primary totals.
 - [ ] BT3 T-primary alternatives and their coupled total/error cases.
@@ -158,8 +166,9 @@ Required global joins still open:
   required boundary input. Existing small-error results or a finished
   conditional stress do not discharge this unrestricted front end.
 
-The normal-entry G5 theorem `PositiveGABT2TD0Exclusion.original_false` is a
-separate completed branch. It does not replace the global G3 high-GA theorem.
+The normal-entry theorem `PositiveGABT2TD0Exclusion.original_false`, now
+including both E signs and its reflected row, is a separate completed
+branch. It does not replace the global G3 high-GA theorem.
 
 ## 5. Word recoding, hard source recovery and final assembly
 
@@ -180,9 +189,16 @@ separate completed branch. It does not replace the global G3 high-GA theorem.
 - [x] Generated-free stationary existence, uniqueness linkage within its
   geometric datum, and stationary radius estimates.
 - [x] Canonical nonpositive actual-cycle rigidity and five-anchor equality.
+- [x] Complete hard sharpness for both nonpositive outer errors, all retained
+  owners and arbitrary middle/E frames; scoped untouched-source recovery.
+- [x] Complete ordered-normal hard sharpness for every HG/TD owner and
+  outer-error sign, with strict original A/B circle losses.
+- [x] The larger middle tangent forces its strict normal intermediate sign
+  with either opposite sign, directly from the original circle/contact data.
 - [x] Critical/sole/paired E reductions and the positive-GA BT2/TD0 E-tie
   contradiction, with radius eligibility derived from stationarity.
 - [ ] Complete the exhaustive hard-input to canonical-endpoint reduction.
+  Crossed outer/middle frame orders and small wrong intermediates remain.
 - [ ] Carry original A/B data and strict H/D loss through middle alignment,
   outer/noncanceling/crossing sectors, and E endpoint/orientation reduction.
 - [ ] Reconstruct any missing hard-source witness modules from the recovery
@@ -247,3 +263,40 @@ dependencies disappeared without the corresponding completed verification.
 
 The publication checkpoint is the preservation mechanism for the ongoing
 proof work.
+
+## 8. Continuation checkpoints through 16:13 UTC
+
+Every item below is an **uncompiled source draft**. Only the stated scope is
+closed; the complete unrestricted table-free theorem remains open. G2–G6
+remain partial throughout these checkpoints.
+
+| UTC time on 2026-10-21 | Remote commit | Gate | Exact scope and remaining boundary |
+| --- | --- | --- | --- |
+| 15:36:01 | [c31973b](https://github.com/vltanh/lean4-squares-in-circles/commit/c31973b5b99f69ee1e85b9e27a94dbb541648998) | G1 | Actual-radius quarter lift integrated into normalization; generated word classification remains. |
+| 15:36:12 | [20c2f2f](https://github.com/vltanh/lean4-squares-in-circles/commit/20c2f2f669ebe44e20152f7408060a1b705e8f3c) | G4 | Positive-GA BT2/TD0 row for both E signs and its reflected row. |
+| 15:37:28 | [1b4e7b7](https://github.com/vltanh/lean4-squares-in-circles/commit/1b4e7b7385576ca3716d8af527161e8f8bae7f3c) | G5 | Nonpositive hard terminal with original rigid anchors, for its stated endpoint. |
+| 15:37:32 | [6b4b395](https://github.com/vltanh/lean4-squares-in-circles/commit/6b4b39577398433393e9806d328d8e3ff6b8a4c2) | G6 | Initial source axes, points and physical normals recovered for the completed class. |
+| 15:37:35 | [95a01e7](https://github.com/vltanh/lean4-squares-in-circles/commit/95a01e791555e6464e61f6fe7f308eba9e5a4963) | G4 | All preprocessed positive-GA T/E branches reach an actual sole-primary outer-E endpoint; remaining scalar families open. |
+| 15:37:39 | [41e2480](https://github.com/vltanh/lean4-squares-in-circles/commit/41e2480fd4ccb5024a136c4592563ab227443024) | G2 | Both original opposite-three upper secondary owners on the full continuous domain. |
+| 15:42:35 | [79d63ee](https://github.com/vltanh/lean4-squares-in-circles/commit/79d63ee496854fac1c634f8081d9321d1f7ee456) | G1/G3/G6 | Original-radius normalization retains actual squares, signed variations and initial normals. |
+| 15:42:39 | [721591c](https://github.com/vltanh/lean4-squares-in-circles/commit/721591cd3c80f09c94381c8a0528dee7f1e1b2be) | G3 | Upper TD2 endpoint envelope and exact polynomial reserves. |
+| 15:42:42 | [1c89e3e](https://github.com/vltanh/lean4-squares-in-circles/commit/1c89e3e235f79969afb7e4a003f6f1713c50de1a) | G5/G6 | Complete nonpositive-outer hard class with arbitrary middle/E frames and all zero owners; scoped source recovery. |
+| 15:42:45 | [c941605](https://github.com/vltanh/lean4-squares-in-circles/commit/c94160540c172f889d00e8e7e96189579890afa2) | G2 | Every lower opposite-three primary owner implies an original secondary contact, with weak ties. |
+| 15:47:07 | [e625acb](https://github.com/vltanh/lean4-squares-in-circles/commit/e625acb15eb70a943504361d3cdeaa8a6ee7b49f) | G3 | All four low-angle TD2 analytic scalars and low endpoint positivity without scalar premises. |
+| 15:47:10 | [3da35c0](https://github.com/vltanh/lean4-squares-in-circles/commit/3da35c08adbe989e43d42dd6095ae3e7c1876b0c) | G2 | Primary contact motion, complete lower source-primary owner and small upper source-primary region. |
+| 15:47:12 | [c705a20](https://github.com/vltanh/lean4-squares-in-circles/commit/c705a20b6ba61fba177540c8d1ef8149ad79d56a) | G5 | G−/T− and stated one-negative contradictions through strict original H/D loss. |
+| 15:48:24 | [5370328](https://github.com/vltanh/lean4-squares-in-circles/commit/53703286db0269dacc50726d0c7e89ae89a6fa97) | G3 | Actual TD2 row and secondary TD0/2 row complete, both scalar ranges and all sixteen endpoints. |
+| 16:02:51 | [c0fc15a](https://github.com/vltanh/lean4-squares-in-circles/commit/c0fc15a62171bf32085407be49c8664ca8759384) | G2 | Complete upper source-primary owner at actual weak contacts. |
+| 16:02:54 | [3e3aac8](https://github.com/vltanh/lean4-squares-in-circles/commit/3e3aac8fe94d76b1653f0375621c54b99e841b4a) | G5 | Whole small-middle scalar and actual zero-G endpoint contradiction at the original budget. |
+| 16:02:57 | [88c1ef4](https://github.com/vltanh/lean4-squares-in-circles/commit/88c1ef474dd053e737b94dfe40252b48ce17aeb3) | G3 | Global zero-owner sign support, every chart/radial kind and weak tie. |
+| 16:03:00 | [5a8c593](https://github.com/vltanh/lean4-squares-in-circles/commit/5a8c593b38584027f3fda8e793296dc8776ae4d6) | G5 | Continuous circle and clipped-angle majorants for the signed opposite envelope. |
+| 16:03:04 | [dcee7f9](https://github.com/vltanh/lean4-squares-in-circles/commit/dcee7f900ccbc82d1cbd275dec1ee37ddd75fbd6) | G3 | Original-q zero-owner classifier; normalization derives HG2/TD0 signs. |
+| 16:03:08 | [360b040](https://github.com/vltanh/lean4-squares-in-circles/commit/360b0403f49c18fdc72e98b0a18abff8ed4ec404) | G2 | Complete opposite-three upper target diagonal and original late-source motion. |
+| 16:03:11 | [a22c169](https://github.com/vltanh/lean4-squares-in-circles/commit/a22c169ed414e229fee05e219d452343a5bf4559) | G2 | All four original upper opposite-three owners complete; two lower-secondary minima remain. |
+| 16:03:14 | [eafb1af](https://github.com/vltanh/lean4-squares-in-circles/commit/eafb1af57b4873d1ab7d9f94b61185a50ae0799e) | G5 | Actual small-positive HG0 alignment with strict original A loss, without temporary lift. |
+| 16:13:25 | [45cb195](https://github.com/vltanh/lean4-squares-in-circles/commit/45cb195eeceb0b1569f8c5c91c6a872df3b7826d) | G5 | Exact local-budget reflection and small-positive TD2 alignment with strict original B loss; original E retained. |
+| 16:13:29 | [4a0f7c7](https://github.com/vltanh/lean4-squares-in-circles/commit/4a0f7c79ba028c9d3e8525071e2b5dc4b9fd7d1e) | G5 | Complete signed opposite scalar and both larger-middle source signs, without opposite-sign/envelope premises. |
+| 16:13:33 | [c84b614](https://github.com/vltanh/lean4-squares-in-circles/commit/c84b614c41dc2c0e67c310e95fbd4cb7e8db25ea) | G3 | Every original quarter-owner sign and D<0/DE restriction; normalization derives D's sign. |
+| 16:13:36 | [77e1215](https://github.com/vltanh/lean4-squares-in-circles/commit/77e1215f5482ca6bcf10ec79da2f9a5b610e0053) | G5 | Complete ordered-normal hard sharpness, all outer owners/errors and original anchor losses; crossed/wrong-small remain. |
+| 16:13:39 | [c8247b6](https://github.com/vltanh/lean4-squares-in-circles/commit/c8247b6f7f9ce48c724d2d6469ba0b203f34cea7) | G2 | Actual lower contact-domain reductions and derivative identities; the lower minimum inequalities remain open. |
+

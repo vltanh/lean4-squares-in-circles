@@ -9,14 +9,16 @@ The [live implementation roadmap](TABLE_FREE_FORMALIZATION_PROGRESS.md) adds exa
 ## Current table-free continuation — 21 October 2026
 
 The [live progress and remaining-work roadmap](TABLE_FREE_FORMALIZATION_PROGRESS.md)
-is the current implementation ledger. G1 now has complete original-axis pair,
-concentration and original-radius transport drafts. Exact nearest-axis recoding
-closes both E-diagonal signs, and that result closes the positive-GA BT2/TD0
-diagonal terminal branch. Geometric stationary existence, canonical nonpositive
-rigidity, five of the ten second-word outer representative families, and the
-high-GA secondary sector are also drafted. Positive-TD2 has actual stress,
-concentration, admissible weight families and the low-angle endpoint envelope;
-its scalar transfer, upper-angle envelope and final sector closure remain.
+is the current implementation ledger. G1's continuous original-axis frame
+concentration is now integrated into normalization at the actual source radius.
+Global zero/quarter-owner signs and the original DE restriction are drafted.
+The full positive-TD2 secondary row now includes both analytic transfer ranges
+and every concentration endpoint. Both E signs and the reflected positive-primary
+BT2/TD0 row are closed. Five of the ten second-word outer representatives are
+complete; every upper owner of the difficult opposite-three family is drafted,
+with two lower-secondary minima remaining. Hard sharpness now covers the full
+nonpositive-outer and ordered-normal classes. The signed opposite envelope
+forces both larger-middle normal signs without assuming the opposite sign.
 
 **Still incomplete:** both binary-word aggregate exclusions, remaining second-word
 contact families, exhaustive global owner entry, hard-source recovery, and the
