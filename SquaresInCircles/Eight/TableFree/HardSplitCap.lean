@@ -363,8 +363,8 @@ private theorem strictConvex_lt_max {f : ℝ → ℝ} {l u x : ℝ}
   let b : ℝ := (x-l)/(u-l)
   have ha : 0 < a := div_pos (by linarith [hx.2]) hlu
   have hb : 0 < b := div_pos (by linarith [hx.1]) hlu
-  have hab : a+b=1 := by dsimp [a,b]; field_simp; ring
-  have harg : a*l+b*u=x := by dsimp [a,b]; field_simp; ring
+  have hab : a+b=1 := by dsimp [a,b]; field_simp [hlu.ne']; ring
+  have harg : a*l+b*u=x := by dsimp [a,b]; field_simp [hlu.ne']; ring
   have hh := h.2 (left_mem_Icc.mpr (by linarith))
     (right_mem_Icc.mpr (by linarith)) (by linarith) ha hb hab
   simp only [smul_eq_mul,harg] at hh
