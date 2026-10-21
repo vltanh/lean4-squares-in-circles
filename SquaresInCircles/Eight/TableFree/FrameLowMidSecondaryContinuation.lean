@@ -154,7 +154,7 @@ theorem axial_corrected_monotone :
     exact ((axial_deriv x).add ((hasDerivAt_id x).const_mul (9/100))).continuousAt.continuousWithinAt
   · exact fun x hx => (axial_deriv x).add ((hasDerivAt_id x).const_mul (9/100))
   · intro x hx
-    have hh := FrameCoreArc.projection_lt (A := (41/100:ℝ)) (B := axialP)
+    have hh := FrameCoreArc.projection_lt (a := (41/100:ℝ)) (b := axialP)
       (x := x) (show (0:ℝ)<109/100 by norm_num) (by nlinarith [axial_norm.2.2])
     linarith
 

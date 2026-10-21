@@ -47,7 +47,7 @@ theorem energy_positive (x : ℝ) :
     0<CircularNorm.energy (FrameLowArc.u^2+FrameLowArc.v^2+lam^2)
       (-2*lam*FrameLowArc.v) (2*lam*FrameLowArc.u) x := by
   have hh := FrameCoreArc.projection_lt
-    (A := -FrameLowArc.u) (B := FrameLowArc.v) (x := x)
+    (a := -FrameLowArc.u) (b := FrameLowArc.v) (x := x)
     (show (0:ℝ)<117/100 by norm_num)
     (by norm_num [FrameLowArc.u,FrameLowArc.v])
   dsimp [CircularNorm.energy,lam,FrameLowArc.u,FrameLowArc.v] at hh ⊢
