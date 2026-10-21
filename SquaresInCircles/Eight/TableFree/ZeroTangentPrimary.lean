@@ -184,11 +184,11 @@ theorem allowance_trig_identity {d u r : ℝ}
 
 end ZeroTangent
 
-/-- The actual zero-tangent contact is replaced by a BT-aligned outer point.
-The required TD coordinate is strictly reduced. -/
-theorem zero_tangent_alignment {q B D u v : ℝ}
+/-- The larger first scalar anchor suffices for the zero-tangent
+alignment. This ordered form also applies to the two-quarter E pair. -/
+theorem zero_tangent_alignment_ordered {q B D u v : ℝ}
     (hqL : qLow≤q) (hqU : q≤qCap)
-    (hB : diagonalCoordinate q≤B) (hD : D≤diagonalCoordinate q)
+    (hB : diagonalCoordinate q≤B) (hD : D≤B)
     (hu : 0<u) (hv : 0<v) (ht : u+v≤7/10)
     (hcontact : contact q B u 0=0)
     (hfeasible : required q (u+v) u 0≤D) :
@@ -291,6 +291,20 @@ theorem zero_tangent_alignment {q B D u v : ℝ}
     nlinarith [hDf]
   exact ⟨hps,hpo,hpc,by dsimp [arc,SignedPoint.outerAt]; linarith,
     by dsimp [arc,SignedPoint.outerAt]; ring,hnew⟩
+
+/-- The original quarter/zero pair is a specialization of the ordered
+two-anchor theorem. Its actual second-primary slack remains strict. -/
+theorem zero_tangent_alignment {q B D u v : ℝ}
+    (hqL : qLow≤q) (hqU : q≤qCap)
+    (hB : diagonalCoordinate q≤B) (hD : D≤diagonalCoordinate q)
+    (hu : 0<u) (hv : 0<v) (ht : u+v≤7/10)
+    (hcontact : contact q B u 0=0)
+    (hfeasible : required q (u+v) u 0≤D) :
+    let p := arc q (B-1)
+    p.Sorted ∧ p.Outer q ∧ p.AvoidsCore ∧ p.y<0 ∧
+      B-p.y=1 ∧ edgeWidth (u+v)<p.a*Real.sin (u+v)+p.y*Real.cos (u+v)+D := by
+  exact zero_tangent_alignment_ordered hqL hqU hB (hD.trans hB)
+    hu hv ht hcontact hfeasible
 
 end PairedPrimary
 end SquaresInCircles.Eight.TableFree
