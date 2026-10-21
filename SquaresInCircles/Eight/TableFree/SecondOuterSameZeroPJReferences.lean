@@ -80,8 +80,8 @@ lemma E_endpoints : (43/1000:ℝ)<E outerDiagonal ∧ E (3/5)<187/1000 := by
   constructor <;> nlinarith
 
 lemma criticalU_endpoints :
-    (9/5:ℝ)<criticalU (3/5) ∧ criticalU (3/5)<18017/10000 ∧
-      criticalU outerDiagonal<463/250 := by
+    (1801/1000:ℝ)<criticalU (3/5) ∧ criticalU (3/5)<18017/10000 ∧
+      criticalU outerDiagonal<37/20 := by
   have hs := six_reference
   have hps := p_positive six_mem
   have hlo := pow_le_pow_left₀ (by norm_num : (0:ℝ)≤876298/1000000) hs.1.le 2
