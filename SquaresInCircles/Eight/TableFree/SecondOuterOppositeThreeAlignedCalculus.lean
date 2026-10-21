@@ -36,14 +36,14 @@ def third (reverse : Bool) (y : ℝ) : ℝ :=
 lemma mem_outer {y : ℝ} (hy : y∈Icc 0 bOne) : y∈Icc 0 outerDiagonal :=
   ⟨hy.1,hy.2.trans OppositeTwo.bOne_mem.2⟩
 
-lemma j_bounds {y : ℝ} (hy : y∈Icc 0 bOne) : 0≤j y ∧ j y<83/200 := by
+lemma j_bounds {y : ℝ} (hy : y∈Icc 0 bOne) : 0≤j y ∧ j y<2073/5000 := by
   have hlo := ShortOuterOne.SameContact.arc_antitone (outer_domain (mem_outer hy))
     (outer_domain OppositeTwo.bOne_mem) hy.2
   rw [OppositeTwo.bOne_arc] at hlo
   have hhi := (CommonQuarter.outer_bounds
     (ShortOuterOne.SameContact.arc_state (mem_outer hy))).2.1
   dsimp [j]
-  exact ⟨by linarith,by linarith [outer_endpoint_bounds.2.1]⟩
+  exact ⟨by linarith,by linarith [ShortOuterZero.fine_axial_bounds.2]⟩
 
 lemma j_mem {y : ℝ} (hy : y∈Icc 0 bOne) : j y∈Icc 0 outerDiagonal :=
   ⟨(j_bounds hy).1,by linarith [(j_bounds hy).2,fine_outer_endpoint_bounds.2]⟩
