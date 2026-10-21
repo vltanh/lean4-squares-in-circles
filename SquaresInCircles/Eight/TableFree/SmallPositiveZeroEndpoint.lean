@@ -1,6 +1,7 @@
 module
 
 public import SquaresInCircles.Eight.TableFree.SmallHardEnvelope
+public import SquaresInCircles.Eight.TableFree.HardOuterGeometry
 
 /-!
 # The positive small-side transverse-zero endpoint is impossible
@@ -93,8 +94,8 @@ boundary construction is excluded using the unchanged source cycle.
 P and Q are its actual candidate A/G points, and theta is its candidate
 G frame.  Neither a source-radius lift nor total spread for Q is hidden
 in the statement. -/
-theorem HardInput.small_positive_G_zero_impossible {q θ : ℝ}
-    (I : HardInput q) (hq : q≤qCap)
+theorem HardOuterGeometry.small_positive_G_zero_impossible {q θ : ℝ}
+    (I : HardOuterGeometry q) (hq : q≤qCap)
     (hAB : I.cycle.theta A=I.cycle.theta B)
     (hnorm : (I.cycle.point A).y-(I.cycle.point B).y=1)
     (hsmall : (I.cycle.point A).y∈Icc (67/200 : ℝ) (1/2))
@@ -161,10 +162,29 @@ theorem HardInput.small_positive_G_zero_impossible {q θ : ℝ}
     hz hv hTy hGA' hBT'
   have hTDcharge := (signed_outer_charges hq I.necessary I.anchors_normal
     I.witnesses I.zero_signs).2
-  have hbudget := endpoint_budget hq I.necessary I.anchors_normal I.E_nonpos I.witnesses
+  have hbudget := I.endpoint_bound hq
   have hS := SmallPositiveZeroEndpoint.endpoint_constant_lower
   dsimp [h,z,v,charge,epsilon] at *
   linarith
+
+/-- The source-facing statement obtains its strict budget from the
+unchanged original H/D/E witnesses. -/
+theorem HardInput.small_positive_G_zero_impossible {q θ : ℝ}
+    (I : HardInput q) (hq : q≤qCap)
+    (hAB : I.cycle.theta A=I.cycle.theta B)
+    (hnorm : (I.cycle.point A).y-(I.cycle.point B).y=1)
+    (hsmall : (I.cycle.point A).y∈Icc (67/200 : ℝ) (1/2))
+    (hTA : I.cycle.theta T≤I.cycle.theta A)
+    (hAH : I.cycle.theta A≤I.cycle.theta H)
+    (hTy : 0≤(I.cycle.point T).y)
+    (P Q : SignedPoint) (hPs : P.Sorted) (hPc : P.AvoidsCore)
+    (hPq : P.Contained q) (hPy : P.y=(I.cycle.point A).y)
+    (hQq : Q.Contained q) (hQy : Q.y=0)
+    (hHθ : I.cycle.theta H<θ) (hθA : θ-I.cycle.theta A≤frameCap)
+    (hHG : zeroFeasible (I.cycle.point H) Q (θ-I.cycle.theta H) 0)
+    (hGA : quarterFeasible Q P (I.cycle.theta A-θ) 0) : False :=
+  I.outerGeometry.small_positive_G_zero_impossible hq hAB hnorm hsmall
+    hTA hAH hTy P Q hPs hPc hPq hPy hQq hQy hHθ hθA hHG hGA
 
 end SignedCycle
 end SquaresInCircles.Eight.TableFree

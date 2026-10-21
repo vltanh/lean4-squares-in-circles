@@ -21,7 +21,7 @@ namespace SquaresInCircles.Eight.TableFree
 open Candidate HardCancelingOuter
 namespace SignedCycle
 
-theorem HardInput.positive_HG0_small_reserve {q : ℝ} (I : HardInput q)
+theorem HardOuterGeometry.positive_HG0_small_reserve {q : ℝ} (I : HardOuterGeometry q)
     (hqL : qLow≤q) (hq : q≤qCap)
     (hAB : I.cycle.theta A=I.cycle.theta B)
     (hnorm : (I.cycle.point A).y-(I.cycle.point B).y=1)
@@ -187,9 +187,10 @@ theorem HardInput.positive_HG0_small_reserve {q : ℝ} (I : HardInput q)
   dsimp [J,PositiveSmallScalar.V,P,Y] at hJ
   linarith
 
-/-- Every strictly positive HG0 error on the small normal side aligns
-at the original q and spends a strict loss on A's original circle. -/
-theorem HardInput.align_positive_HG0_small {q : ℝ} (I : HardInput q)
+/-- The local alignment output uses no sign assertion on E.  Its budget
+has already been proved on the actual source and can therefore be
+transported by exact reflection. -/
+theorem HardOuterGeometry.positive_HG0_small_output {q : ℝ} (I : HardOuterGeometry q)
     (hqL : qLow≤q) (hq : q≤qCap)
     (hAB : I.cycle.theta A=I.cycle.theta B)
     (hnorm : (I.cycle.point A).y-(I.cycle.point B).y=1)
@@ -199,12 +200,9 @@ theorem HardInput.align_positive_HG0_small {q : ℝ} (I : HardInput q)
     (hHGorder : I.cycle.theta H<I.cycle.theta G)
     (hGy : (I.cycle.point G).y≤0) (hTy : 0≤(I.cycle.point T).y)
     (hHG : I.cycle.Feasible H 0) :
-    ∃ J : HardInput q,
-      J.cycle.theta G=J.cycle.theta H ∧ J.cycle.theta A=J.cycle.theta B ∧
-      (J.cycle.point A).y=(I.cycle.point A).y ∧
-      AnchorNonincrease I.cycle J.cycle ∧ StrictAnchorLoss I.cycle J.cycle ∧
-      (∀ i,i≠G → J.cycle.theta i=I.cycle.theta i) ∧
-      (∀ i,i≠G → i≠A → J.cycle.point i=I.cycle.point i) := by
+    ∃ t, t<I.cycle.theta H-I.cycle.theta A ∧
+      Nonempty (GAlignment q (I.cycle.point H) (I.cycle.point A)
+        (I.cycle.theta H-I.cycle.theta A) t) := by
   let Θ := I.cycle.theta H-I.cycle.theta A
   let r := quarterProjection (SignedPoint.flat ((I.cycle.point H).y-1))
     (I.cycle.point A) (-Θ) 0-edgeWidth (-Θ)
@@ -223,6 +221,45 @@ theorem HardInput.align_positive_HG0_small {q : ℝ} (I : HardInput q)
     (I.necessary.contained H) (I.necessary.contained A)
     I.anchors_normal.H_nonneg I.anchors_normal.A_nonneg hΘ
     (by constructor <;> linarith) (by change (3/20)*(Θ-(Θ-δ))≤r; linarith)
+  exact ⟨Θ-δ,by linarith,⟨O⟩⟩
+
+/-- The original source has the strict reserve before any anchor changes. -/
+theorem HardInput.positive_HG0_small_reserve {q : ℝ} (I : HardInput q)
+    (hqL : qLow≤q) (hq : q≤qCap)
+    (hAB : I.cycle.theta A=I.cycle.theta B)
+    (hnorm : (I.cycle.point A).y-(I.cycle.point B).y=1)
+    (hsmall : (I.cycle.point A).y∈Icc (67/200 : ℝ) (1/2))
+    (hTA : I.cycle.theta T≤I.cycle.theta A)
+    (hAH : I.cycle.theta A≤I.cycle.theta H)
+    (hHGorder : I.cycle.theta H<I.cycle.theta G)
+    (hGy : (I.cycle.point G).y≤0) (hTy : 0≤(I.cycle.point T).y)
+    (hHG : I.cycle.Feasible H 0) :
+    0<quarterProjection (SignedPoint.flat ((I.cycle.point H).y-1))
+      (I.cycle.point A) (I.cycle.theta A-I.cycle.theta H) 0-
+        edgeWidth (I.cycle.theta A-I.cycle.theta H) :=
+  I.outerGeometry.positive_HG0_small_reserve hqL hq hAB hnorm hsmall hTA hAH
+    hHGorder hGy hTy hHG
+
+/-- Every strictly positive HG0 error on the small normal side aligns
+at the original q and spends a strict loss on A's original circle. -/
+theorem HardInput.align_positive_HG0_small {q : ℝ} (I : HardInput q)
+    (hqL : qLow≤q) (hq : q≤qCap)
+    (hAB : I.cycle.theta A=I.cycle.theta B)
+    (hnorm : (I.cycle.point A).y-(I.cycle.point B).y=1)
+    (hsmall : (I.cycle.point A).y∈Icc (67/200 : ℝ) (1/2))
+    (hTA : I.cycle.theta T≤I.cycle.theta A)
+    (hAH : I.cycle.theta A≤I.cycle.theta H)
+    (hHGorder : I.cycle.theta H<I.cycle.theta G)
+    (hGy : (I.cycle.point G).y≤0) (hTy : 0≤(I.cycle.point T).y)
+    (hHG : I.cycle.Feasible H 0) :
+    ∃ J : HardInput q,
+      J.cycle.theta G=J.cycle.theta H ∧ J.cycle.theta A=J.cycle.theta B ∧
+      (J.cycle.point A).y=(I.cycle.point A).y ∧
+      AnchorNonincrease I.cycle J.cycle ∧ StrictAnchorLoss I.cycle J.cycle ∧
+      (∀ i,i≠G → J.cycle.theta i=I.cycle.theta i) ∧
+      (∀ i,i≠G → i≠A → J.cycle.point i=I.cycle.point i) := by
+  obtain ⟨t,ht,⟨O⟩⟩ := I.outerGeometry.positive_HG0_small_output hqL hq hAB hnorm
+    hsmall hTA hAH hHGorder hGy hTy hHG
   refine ⟨I.fromCancelingHG hAB O,rfl,hAB,O.A_tangent,?_,?_,?_,?_⟩
   · intro i hi
     by_cases hiA : i=A
@@ -231,7 +268,7 @@ theorem HardInput.align_positive_HG0_small {q : ℝ} (I : HardInput q)
     · subst i; simp [anchorVertices,H,G,A,B,D,E] at hi
     · exact (congrArg SignedPoint.circle
         (alignGACycle_unchanged I.cycle O.pointG O.pointA i hiG hiA).1).le
-  · exact ⟨A,by simp [anchorVertices],O.A_strict (by linarith)⟩
+  · exact ⟨A,by simp [anchorVertices],O.A_strict ht⟩
   · intro i hi
     change (alignGACycle I.cycle O.pointG O.pointA).theta i=I.cycle.theta i
     simp [alignGACycle_theta,hi]
