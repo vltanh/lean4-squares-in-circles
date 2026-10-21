@@ -31,11 +31,9 @@ theorem S7_le_sin {z : ℝ} (hz : 0≤z) : Arithmetic.sin7 z≤Real.sin z := by
   simpa only [Arithmetic.sin7] using sin_lower_seven hz
 
 @[simp] theorem Am_cast (mu : ℚ) : (DualPolynomial.Am mu:ℝ)=midDualA (mu:ℝ) := by
-  norm_num [DualPolynomial.Am,midDualA,kappa,rho,FrameHighArc.u,FrameMidArc.p]
-  ring
+  norm_num [DualPolynomial.Am,midDualA,kappa,rho,FrameHighArc.u,FrameMidArc.p] <;> ring
 @[simp] theorem Bm_cast (mu : ℚ) : (DualPolynomial.Bm mu:ℝ)=midDualB (mu:ℝ) := by
-  norm_num [DualPolynomial.Bm,midDualB,rho,FrameHighArc.v,FrameMidArc.q]
-  ring
+  norm_num [DualPolynomial.Bm,midDualB,rho,FrameHighArc.v,FrameMidArc.q] <;> ring
 
 theorem endpoint_polynomial_lower (mu lambda K g bonus : ℚ)
     (hmu : (0:ℝ)≤(mu:ℝ)) (hl : (0:ℝ)≤(lambda:ℝ))
