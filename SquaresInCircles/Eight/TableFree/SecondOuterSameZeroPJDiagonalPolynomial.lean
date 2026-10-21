@@ -130,7 +130,7 @@ lemma logarithmic_height_bound {u r : ℝ}
     nlinarith [hc,sq_pos_of_pos hu0]
   have hroot : 4*r*N u<u*q u*(Q0-u) := by nlinarith
   dsimp [factorD,NegativeTwo.Inverse.factorD,NegativeTwo.Inverse.factor]
-  apply (div_lt_iff₀ (by positivity : 0<4)).2
+  apply (lt_div_iff₀ (by norm_num : (0:ℝ)<4)).2
   field_simp [hu0.ne',hq.ne']
   nlinarith
 
