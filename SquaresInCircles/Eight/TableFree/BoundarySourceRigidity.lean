@@ -100,15 +100,14 @@ theorem boundary_source_rigidity_of_nonpositive {q : ℝ} {C : BoundaryCycle q}
     (hAG : I.cycle.theta A≤I.cycle.theta G)
     (hGH : I.cycle.theta G≤I.cycle.theta H)
     (hDT : I.cycle.theta D≤I.cycle.theta T)
-    (hTB : I.cycle.theta T≤I.cycle.theta B)
-    (hHG : I.cycle.Feasible H 0) (hTD : I.cycle.Feasible T 2) :
+    (hTB : I.cycle.theta T≤I.cycle.theta B) :
     q=qStar ∧ StationaryFrames sharpData C.square ∧
       (∀ i,(C.selected i).normal (C.square i) (C.square (next i))=
         stationaryNormal sharpData i) ∧
       (∀ i : Fin 5,(C.square (OriginalFiveCorner.anchorIndex i)).center=
         sharpData.anchorCenters i) ∧
       dot sharpData.e (sub (C.square G).center (C.square H).center)=1 := by
-  have hs := I.nonpositive_sharp hqL hqq hAB hnorm hAG hGH hDT hTB hHG hTD
+  have hs := I.nonpositive_owner_sharp hqL hqq hAB hnorm hAG hGH hDT hTB
   have hG := hs.2.1
   have hBT := hs.2.2.1
   have hT := hs.2.2.2.1
@@ -122,5 +121,25 @@ theorem boundary_source_rigidity_of_nonpositive {q : ℝ} {C : BoundaryCycle q}
   · rw [←hAB] at hTB
     exact hDT.trans (hTB.trans (hAG.trans hGH))
   · exact hEH
+
+/-- Original AB alignment and its tangent normalization are recovered
+from the actual hard-middle construction.  Only the two nonpositive
+outer errors remain beyond the original hard-source geometry. -/
+theorem boundary_source_rigidity_of_nonpositive_outer {q : ℝ} {C : BoundaryCycle q}
+    (F : Candidate.Frame C) (I : SignedCycle.HardInput q)
+    (hcycle : I.cycle=SignedCycle.atFrame F)
+    (hqL : qLow≤q) (hqq : q≤qStar)
+    (ho : Candidate.OwnerRestriction C sourceOwners)
+    (hGH : I.cycle.theta G≤I.cycle.theta H)
+    (hDT : I.cycle.theta D≤I.cycle.theta T) :
+    q=qStar ∧ StationaryFrames sharpData C.square ∧
+      (∀ i,(C.selected i).normal (C.square i) (C.square (next i))=
+        stationaryNormal sharpData i) ∧
+      (∀ i : Fin 5,(C.square (OriginalFiveCorner.anchorIndex i)).center=
+        sharpData.anchorCenters i) ∧
+      dot sharpData.e (sub (C.square G).center (C.square H).center)=1 := by
+  obtain ⟨hAB,hrange,hnorm⟩ := I.nonpositive_outer_middle hqL hqq hGH hDT
+  exact boundary_source_rigidity_of_nonpositive F I hcycle hqL hqq ho hAB hnorm
+    hrange.2 hGH hDT (by rw [←hAB]; exact hrange.1)
 
 end SquaresInCircles.Eight.TableFree

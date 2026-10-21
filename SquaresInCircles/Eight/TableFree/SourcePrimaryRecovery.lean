@@ -1,7 +1,7 @@
 module
 
 public import SquaresInCircles.Eight.TableFree.SourceAwareBoundaryPreprocessing
-public import SquaresInCircles.Eight.TableFree.NonpositiveHardSharp
+public import SquaresInCircles.Eight.TableFree.NonpositiveOuterSharp
 
 /-!
 # Recovering hard axes on the untouched primary source
@@ -132,9 +132,7 @@ theorem nonpositive_pair_source_recovery {q : ℝ} (I : NormalizedBoundaryInput 
     (hDT : (I.pairDescendant hcap SG.output ST.output).cycle.theta D≤
       (I.pairDescendant hcap SG.output ST.output).cycle.theta T)
     (hTB : (I.pairDescendant hcap SG.output ST.output).cycle.theta T≤
-      (I.pairDescendant hcap SG.output ST.output).cycle.theta B)
-    (hHG : (I.pairDescendant hcap SG.output ST.output).cycle.Feasible H 0)
-    (hTD : (I.pairDescendant hcap SG.output ST.output).cycle.Feasible T 2) :
+      (I.pairDescendant hcap SG.output ST.output).cycle.theta B) :
     I.cycle.HardOwners ∧
       (I.pairDescendant hcap SG.output ST.output).cycle=I.cycle ∧
       q=qStar ∧ I.cycle.theta G=I.cycle.theta H ∧
@@ -145,7 +143,7 @@ theorem nonpositive_pair_source_recovery {q : ℝ} (I : NormalizedBoundaryInput 
       ∀ i j,j∈terminalOwners i → I.cycle.slack i j=0 := by
   let J := I.pairDescendant hcap SG.output ST.output
   let K := J.toHard hGA hBT
-  have hs := K.nonpositive_sharp hqL hqq hAB hnorm hAG hGH hDT hTB hHG hTD
+  have hs := K.nonpositive_owner_sharp hqL hqq hAB hnorm hAG hGH hDT hTB
   have hslack : ∀i j,j∈terminalOwners i → J.cycle.slack i j=0 := hs.2.2.2.2.2.2.2
   have hHGzero : J.cycle.slack H SG.output.hgOwner=0 := by
     apply hslack
@@ -164,6 +162,32 @@ theorem nonpositive_pair_source_recovery {q : ℝ} (I : NormalizedBoundaryInput 
     AllAnchorsOn qStar J.cycle ∧
     ∀i j,j∈terminalOwners i → J.cycle.slack i j=0 at hs
   simpa only [show J.cycle=I.cycle from heq] using hs
+
+/-- Source recovery also requires no original or descendant AB
+normalization: the hard-middle theorem derives it with its source loss
+ledger before the retained-contact argument is applied. -/
+theorem nonpositive_outer_pair_source_recovery {q : ℝ} (I : NormalizedBoundaryInput q)
+    (hqL : qLow≤q) (hqq : q≤qStar)
+    (SG : GPairSourceOutput q (I.cycle.point H) (I.cycle.point G)
+      (I.cycle.point A) (I.cycle.theta H) (I.cycle.theta G) (I.cycle.theta A))
+    (ST : TPairSourceOutput q (I.cycle.point B) (I.cycle.point T)
+      (I.cycle.point D) (I.cycle.theta B) (I.cycle.theta T) (I.cycle.theta D))
+    (hcap : q≤qCap)
+    (hGA : (I.pairDescendant hcap SG.output ST.output).cycle.Feasible G 0)
+    (hBT : (I.pairDescendant hcap SG.output ST.output).cycle.Feasible B 2)
+    (hGH : (I.pairDescendant hcap SG.output ST.output).cycle.theta G≤
+      (I.pairDescendant hcap SG.output ST.output).cycle.theta H)
+    (hDT : (I.pairDescendant hcap SG.output ST.output).cycle.theta D≤
+      (I.pairDescendant hcap SG.output ST.output).cycle.theta T) :
+    I.cycle.HardOwners ∧
+      (I.pairDescendant hcap SG.output ST.output).cycle=I.cycle := by
+  let J := I.pairDescendant hcap SG.output ST.output
+  let K := J.toHard hGA hBT
+  obtain ⟨hAB,hrange,hnorm⟩ := K.nonpositive_outer_middle hqL hqq hGH hDT
+  have hTB : J.cycle.theta T≤J.cycle.theta B := by rw [←hAB]; exact hrange.1
+  have hs := I.nonpositive_pair_source_recovery hqL hqq SG ST hcap hGA hBT
+    hAB hnorm hrange.2 hGH hDT hTB
+  exact ⟨hs.1,hs.2.1⟩
 
 end SignedCycle.NormalizedBoundaryInput
 end SquaresInCircles.Eight.TableFree
