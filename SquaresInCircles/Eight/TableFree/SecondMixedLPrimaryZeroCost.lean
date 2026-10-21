@@ -74,10 +74,10 @@ theorem lower {φ : ℝ} (hφ : φ∈angles) : (4489/5000:ℝ)<K φ := by
 
 theorem actual_negative {A B φ : ℝ} (ht : OuterState A B)
     (hφ : φ∈angles) (hU : A+1/2=U φ) :
-    threshold<φ-e-L B := by
+    (17953/20000:ℝ)<φ-e-L B := by
   have hh := lower hφ
   rw [cost_eq ht hU] at hh
-  norm_num [threshold] at *
+  norm_num at *
   linarith
 
 theorem actual_positive {A B φ : ℝ} (ht : OuterState A B)
