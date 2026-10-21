@@ -355,7 +355,7 @@ theorem hard_rate_lower {q B u : ℝ} (C : EndpointDomain q B)
         (B*Real.cos u+radius q B*Real.sin u) := by
     dsimp [angularHardRate,hardRate]
     rw [Real.tan_eq_sin_div_cos]
-    field_simp [hcos.ne']
+    field_simp [hcos.ne',hden.ne']
     ring
   rw [hrate,endpointRate]
   apply (div_le_div_iff₀ hsum hden).2
