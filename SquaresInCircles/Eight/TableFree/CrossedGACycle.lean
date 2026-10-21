@@ -1,6 +1,7 @@
 module
 
 public import SquaresInCircles.Eight.TableFree.CrossedGAOutput
+public import SquaresInCircles.Eight.TableFree.HardOuterGeometry
 
 /-!
 # Lifting the crossed GA output to the actual hard cycle
@@ -132,6 +133,88 @@ def HardInput.fromCrossedGA {q : ℝ} (I : HardInput q)
     (O : CrossedGAOutput q (I.cycle.point H) (I.cycle.point G) (I.cycle.point A)
       (I.cycle.theta A-I.cycle.theta H) (I.cycle.theta G-I.cycle.theta A)) : HardInput q :=
   I.fromCrossedGAData hAB O.toCrossedGAData
+
+/-- The same geometric replacement is available before choosing an E sign.
+Its strict endpoint budget is the proved source budget: H, D and E, and
+their frames, have not moved. -/
+def HardOuterGeometry.fromCrossedGAData {q : ℝ} (I : HardOuterGeometry q)
+    (hAB : I.cycle.theta A=I.cycle.theta B)
+    (O : CrossedGAData q (I.cycle.point H) (I.cycle.point G) (I.cycle.point A)
+      (I.cycle.theta A-I.cycle.theta H) (I.cycle.theta G-I.cycle.theta A)) :
+    HardOuterGeometry q where
+  cycle := crossedGACycle I.cycle O.pointG O.pointA
+  necessary := {
+    sorted := by
+      intro i
+      fin_cases i
+      · exact I.necessary.sorted H
+      · exact O.G_sorted
+      · exact O.A_sorted
+      · exact I.necessary.sorted B
+      · exact I.necessary.sorted T
+      · exact I.necessary.sorted D
+      · exact I.necessary.sorted E
+    contained := by
+      intro i
+      fin_cases i
+      · exact I.necessary.contained H
+      · exact O.G_contained
+      · exact O.A_contained
+      · exact I.necessary.contained B
+      · exact I.necessary.contained T
+      · exact I.necessary.contained D
+      · exact I.necessary.contained E
+    core := by
+      intro i
+      fin_cases i
+      · exact I.necessary.core H
+      · exact O.G_avoids
+      · exact O.A_avoids
+      · exact I.necessary.core B
+      · exact I.necessary.core T
+      · exact I.necessary.core D
+      · exact I.necessary.core E
+    spread := crossedGACycle_spread I.necessary.spread O.pointG O.pointA }
+  anchors_normal := {
+    H_nonneg := I.anchors_normal.H_nonneg
+    A_nonneg := by simpa [crossedGACycle,A,O.A_tangent] using I.anchors_normal.A_nonneg
+    B_nonpos := I.anchors_normal.B_nonpos
+    D_nonpos := I.anchors_normal.D_nonpos }
+  witnesses := I.witnesses.crossedGAData hAB O
+  GA_hard := by
+    simpa [crossedGACycle,Feasible,slack,edge,word,delta,next,H,G,A,
+      quarterFeasible,sub_nonneg] using O.GA_hard
+  BT_hard := by
+    simpa [crossedGACycle,Feasible,slack,edge,word,delta,next,B,T] using I.BT_hard
+  zero_signs := {
+    HG_canceling := by
+      intro hh
+      simp [Witnesses.crossedGAData,H,G] at hh
+    TD_canceling := by
+      intro hh
+      have hj : I.witnesses.owner T=0 := by
+        simpa [Witnesses.crossedGAData,H,T,G] using hh
+      exact I.zero_signs.TD_canceling hj }
+  endpoint_bound := by
+    intro hq
+    exact I.endpoint_bound hq
+
+theorem HardOuterGeometry.fromCrossedGAData_preserves_loss {q : ℝ}
+    (I : HardOuterGeometry q) (hAB : I.cycle.theta A=I.cycle.theta B)
+    (O : CrossedGAData q (I.cycle.point H) (I.cycle.point G) (I.cycle.point A)
+      (I.cycle.theta A-I.cycle.theta H) (I.cycle.theta G-I.cycle.theta A))
+    (i : Vertex) (hi : i∈anchorVertices) (hbelow : (I.cycle.point i).circle<q) :
+    ((I.fromCrossedGAData hAB O).cycle.point i).circle<q := by
+  by_cases hiA : i=A
+  · subst i
+    exact O.A_loss hbelow
+  have hiG : i≠G := by
+    intro h
+    subst i
+    simp [anchorVertices,H,G,A,B,D,E] at hi
+  change ((crossedGACycle I.cycle O.pointG O.pointA).point i).circle<q
+  rw [crossedGACycle_point_unchanged I.cycle O.pointG O.pointA i hiG hiA]
+  exact hbelow
 
 theorem HardInput.fromCrossedGAData_preserves_loss {q : ℝ} (I : HardInput q)
     (hAB : I.cycle.theta A=I.cycle.theta B)
