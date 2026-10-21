@@ -214,6 +214,12 @@ theorem H_antitone {t : ℝ} (ht : t∈Icc 0 (11/50 : ℝ)) :
   · exact fun x hx => H_x_hasDerivAt ht (Ioo_subset_Icc_self hx)
   · exact fun x hx => neg_nonpos.mpr (K_pos ht (Ioo_subset_Icc_self hx)).le
 
+theorem f_antitone : AntitoneOn f (Icc (1/2 : ℝ) (231/200)) := by
+  apply antiOn_of_hasDeriv_nonpos
+  · exact fun x hx => (f_hasDerivAt hx).continuousAt.continuousWithinAt
+  · exact fun x hx => f_hasDerivAt (Ioo_subset_Icc_self hx)
+  · exact fun x hx => neg_nonpos.mpr (ratio_pos (Ioo_subset_Icc_self hx)).le
+
 theorem K_monotone {t : ℝ} (ht : t∈Icc 0 (11/50 : ℝ)) :
     MonotoneOn (K t) (Icc (1/2 : ℝ) (231/200)) := by
   apply monoOn_of_hasDeriv_nonneg
@@ -222,7 +228,7 @@ theorem K_monotone {t : ℝ} (ht : t∈Icc 0 (11/50 : ℝ)) :
   · exact fun x hx => (Kx_pos ht (Ioo_subset_Icc_self hx)).le
 
 theorem cap_eq (t x : ℝ) : H t x=HardSplitCap.cap qCap (3/2-f x) t := by
-  simp only [H,HardSplitCap.cap,HardSplitCap.root,HardSplitCap.contact,w,C,f]
-  congr 2 <;> congr 2 <;> ring
+  have he : (3/2 : ℝ)-(R x-1/2)+Real.cos t=2-R x+Real.cos t := by ring
+  simp only [H,HardSplitCap.cap,HardSplitCap.root,HardSplitCap.contact,w,C,f,he]
 
 end SquaresInCircles.Eight.TableFree.EpsilonCapCalculus

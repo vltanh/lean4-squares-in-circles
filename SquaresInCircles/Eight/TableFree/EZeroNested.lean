@@ -142,7 +142,9 @@ theorem l_lower {t : ℝ} (ht : t∈Icc 0 (11/100 : ℝ)) : (7/2 : ℝ)<l t := b
       qCap*(24/25 : ℝ)^2/(117/100)^3 < qCap*(hd t)^2/(117/100)^3 :=
         div_lt_div_of_pos_right (mul_lt_mul_of_pos_left hsq (by norm_num [qCap])) (by norm_num)
       _ < qCap*(hd t)^2/(w t)^3 :=
-        div_lt_div_of_pos_left (by positivity) (pow_pos hwp 3) hcube
+        div_lt_div_of_pos_left
+          (mul_pos (by norm_num [qCap]) (sq_pos_of_pos (by linarith [hh.1])))
+          (pow_pos hwp 3) hcube
   have hnum : (7/2 : ℝ)<(34/25)*(23/25)+qCap*(24/25)^2/(117/100)^3 := by
     norm_num [qCap]
   dsimp [l]
