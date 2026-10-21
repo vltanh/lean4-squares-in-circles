@@ -386,6 +386,3 @@ theorem ArcSource.de2_contact_speed_lt {q b p n : ℝ} {E D H : SignedPoint}
 
 end OutsideE
 end SquaresInCircles.Eight.TableFree
-
-end OutsideDE2Comparison
-end SquaresInCircles.Eight.TableFree
