@@ -349,4 +349,3 @@ theorem axial_lower {B x : ℝ} (hB : B≤969/1000)
   nlinarith
 
 end SquaresInCircles.Eight.TableFree.FrameLowScalars
-end SquaresInCircles.Eight.TableFree.FrameLowScalars
