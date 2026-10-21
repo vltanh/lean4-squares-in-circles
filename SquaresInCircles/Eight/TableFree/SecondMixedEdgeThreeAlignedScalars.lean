@@ -19,6 +19,7 @@ open Set
 namespace SquaresInCircles.Eight.TableFree.SecondWord.EdgeThreeAligned
 open CommonQuarter CorePairGeometry Arithmetic HeightLabel
 
+def threshold : ℝ := 17953/20000
 def gp : ℝ := 1303/1250
 def ep : ℝ := 1449/100000
 def gn : ℝ := 98439/100000

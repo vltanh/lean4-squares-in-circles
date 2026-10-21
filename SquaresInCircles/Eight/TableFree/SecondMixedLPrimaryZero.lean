@@ -197,7 +197,7 @@ lemma V_positive {φ : ℝ} (hφ : φ∈angles) : 0<V φ :=
 lemma physical {φ : ℝ} (hφ : φ∈angles) : OuterState (U φ-1/2) (b φ) := by
   have hu := U_bounds hφ
   have hp := V_positive hφ
-  have hc : (V φ)^2=Q0-(U φ)^2 := root_sq (LHeightBounds.domain (height_domain hφ)).le
+  have hc : (V φ)^2=Q0-(U φ)^2 := root_sq (LHeightBounds.domain (height_domain hφ))
   have hsqL := pow_le_pow_left₀ (by norm_num : (0:ℝ)≤3/2) hu.1 2
   have hsqU := pow_le_pow_left₀ (by linarith [hu.1] : 0≤U φ) hu.2.le 2
   have hb : 0≤b φ := by dsimp [b,PrimaryZero.b]; norm_num [Q0] at hc; nlinarith
