@@ -4,6 +4,7 @@ public import SquaresInCircles.Eight.GlobalNormalization
 public import SquaresInCircles.Eight.TableFree.FramePhysicalTransport
 public import SquaresInCircles.Eight.TableFree.GlobalZeroSignBridge
 public import SquaresInCircles.Eight.TableFree.GlobalQuarterSignCycle
+public import SquaresInCircles.Eight.TableFree.GlobalOuterAnchorBridge
 
 /-!
 # Original-radius inputs from global normalization
@@ -13,10 +14,11 @@ boundary, at `sourceLevel q`.  Its points, selected weak axes and both
 signed variation budgets are retained.  The larger-radius boundary is
 used only for the already obtained frame and E sign.
 
-The last constructor consumes the precise physical owner/anchor facts
-still required from the global classifier.  It does not assume sharpness,
-stationarity or feasibility of a newly selected hard primary owner.
-The zero-owner strict signs are proved on the original recovered cycle.
+The last constructor consumes only the physical all-owner classification
+still required from the global classifier.  All four radial anchors,
+their strict signs and the zero-owner strict signs are proved on the
+original recovered cycle.  It does not assume sharpness, stationarity
+or feasibility of a newly selected hard primary owner.
 Uncompiled source draft.
 -/
 
@@ -108,19 +110,18 @@ theorem original_selected_normal {S : Fin 8 → UnitSquare} {q : ℝ}
   exact (signed_normal_same_frames (source_recovered_same_frames N i)
     (source_recovered_same_frames N (next i)) (N.recovered.selected i)).symm
 
-/-- The actual finite classifier supplies only owner sets, radial tags and
-tangent signs.  All analytic, winding and variation fields are proved on
-the original recovered record, with the original selected axes. -/
+/-- The finite classifier supplies only the original all-owner sets.
+Every radial anchor, strict anchor sign, analytic, winding and variation
+field is proved on the original recovered record and selected axes. -/
 def normalizedInput {S : Fin 8 → UnitSquare} {q : ℝ}
     (N : GlobalNormalization S q) (hq : q≤Q1)
-    (howners : Candidate.OwnerRestriction N.recovered SignedCycle.normalOwners)
-    (houter : ∀ i∈({H,A,B,D} : Finset Vertex),N.recovered.kind i=.outer)
-    (hH : 0≤N.recovered.tangent H) (hA : 0≤N.recovered.tangent A)
-    (hB : N.recovered.tangent B≤0) :
+    (howners : Candidate.OwnerRestriction N.recovered SignedCycle.normalOwners) :
     SignedCycle.NormalizedBoundaryInput (sourceLevel q) := by
   let F := recoveredFrame N
   let w := SignedCycle.retainedWitnesses F howners
   have hv := FramePhysicalTransport.candidate_variations F (source_radius_mem hq)
+  have ha := GlobalOuterAnchor.normal_anchors F (source_radius_mem hq) howners
+  have houter := GlobalOuterAnchor.normal_outer F (source_radius_mem hq) howners
   exact {
     cycle := recoveredCycle N
     necessary := SignedCycle.atFrame_necessary F
@@ -131,10 +132,10 @@ def normalizedInput {S : Fin 8 → UnitSquare} {q : ℝ}
     radial := SignedCycle.atFrame_boundary F
     anchors_outer := fun i hi => SignedCycle.atFrame_outer_of_kind F i (houter i hi)
     anchors_normal := {
-      H_nonneg := (SignedCycle.atFrame_y_nonneg_iff F H).2 hH
-      A_nonneg := (SignedCycle.atFrame_y_nonneg_iff F A).2 hA
-      B_nonpos := (SignedCycle.atFrame_y_nonpos_iff F B).2 hB
-      D_nonpos := (SignedCycle.atFrame_y_nonpos_iff F D).2 (recovered_D_negative N hq).le }
+      H_nonneg := (SignedCycle.atFrame_y_nonneg_iff F H).2 ha.1.2.le
+      A_nonneg := (SignedCycle.atFrame_y_nonneg_iff F A).2 ha.2.1.2.le
+      B_nonpos := (SignedCycle.atFrame_y_nonpos_iff F B).2 ha.2.2.1.2.le
+      D_nonpos := (SignedCycle.atFrame_y_nonpos_iff F D).2 ha.2.2.2.2.le }
     witnesses := w
     zero_signs := SignedCycle.atFrame_zero_signs F (source_radius_mem hq) w
     E_nonpos := recovered_E_nonpos N }
