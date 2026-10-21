@@ -58,11 +58,11 @@ theorem taylor_bounds {p : ℝ} (hp : p∈Icc (11/50 : ℝ) (7/10)) :
   have hmul := mul_nonneg (sq_nonneg p) (show 0≤12-p^2 by nlinarith)
   refine ⟨?_,?_,?_,?_,?_,?_,?_,hs,hsu⟩
   · rw [S3_eval]; nlinarith [hp.1]
-  · rw [S3_eval]; exact sin_lower_cubic hp0
+  · rw [S3_eval]; exact Real.sin_ge_sub_cube hp0
   · rw [S5_eval]; exact sin_upper_five hp0
   · rw [C2_eval]; nlinarith
   · rw [C2_eval]; exact Real.one_sub_sq_div_two_le_cos p
-  · rw [C4_eval]; exact cos_upper_four p
+  · rw [C4_eval]; exact cos_upper_four hp0
   · rw [C4_eval]; nlinarith
 
 theorem z_bounds {q p : ℝ} (hq : qLow≤q∧q≤qCap)
@@ -159,7 +159,7 @@ theorem bounds {q p : ℝ} (hq : qLow≤q∧q≤qCap)
   have hb : aeval p Xlo*aeval p Alo≤beta q p := by
     exact mul_le_mul hXl hfac ha.le (hxl.le.trans hXl)
   have he : aeval p Llo≤ell q p := by
-    have hh := cos_lower_six (7/10 : ℝ)
+    have hh := cos_lower_six (show (0:ℝ)≤7/10 by norm_num)
     have hcos : (478/625 : ℝ)<Real.cos (7/10 : ℝ) := by norm_num at hh ⊢; linarith
     simp only [Llo,map_sub,aeval_C]
     dsimp [ell]

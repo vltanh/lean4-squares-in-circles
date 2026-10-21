@@ -118,7 +118,7 @@ theorem endpoint_gap {q : ℝ} (hq : qLow≤q∧q≤qCap) :
     dsimp [qCap] at hqu
     nlinarith [he.1]
   have hr := root_bounds hq hp
-  have hcH := cos_upper_four (7/10 : ℝ)
+  have hcH := cos_upper_four (show (0:ℝ)≤7/10 by norm_num)
   have hsH := sin_upper_five (show (0:ℝ)≤7/10 by norm_num)
   have hL : ell q (11/50) <
       1+(1-(7/10 : ℝ)^2/2+(7/10)^4/24)-379/625 := by
@@ -133,7 +133,7 @@ theorem endpoint_gap {q : ℝ} (hq : qLow≤q∧q≤qCap) :
     norm_num at hL hroot_sq ⊢
     nlinarith [hr.1]
   have hC : 4799/5000<root q (11/50)-Real.sin (7/10 : ℝ) := by linarith
-  have hc0 := cos_lower_six (11/50 : ℝ)
+  have hc0 := cos_lower_six (show (0:ℝ)≤11/50 by norm_num)
   have hR0 : 0<radius q := lt_trans (by norm_num [Rlo]) hb.radius_lower
   have hdiv := div_le_div₀
     (show 0≤1-(11/50 : ℝ)^2/2+(11/50)^4/24-(11/50)^6/720 by norm_num)
