@@ -58,8 +58,9 @@ theorem Y_deriv {c d l : ℝ→ℝ} {x cp dp lp : ℝ}
 
 theorem contact {c d l : ℝ} (hu : c^2+d^2=2) :
     d*(X c d l+1)-c*Y c d l=l := by
-  dsimp [X,Y]
-  nlinarith only [hu]
+  calc
+    d*(X c d l+1)-c*Y c d l=(c^2+d^2)*l/2 := by dsimp [X,Y]; ring
+    _=l := by rw [hu]; ring
 
 theorem circle {c d l : ℝ} (hu : c^2+d^2=2) (hl : 0≤4*Q0-l^2) :
     (X c d l+1)^2+(Y c d l)^2=2*Q0 := by
@@ -101,7 +102,7 @@ theorem YD_contact {c d l cp dp lp : ℝ}
   have ht := contact_tangent hu hunit
   apply (mul_right_cancel₀ hX)
   field_simp [hX]
-  nlinarith [hr,ht]
+  linear_combination -(X c d l+1)*ht+d*hr
 
 theorem X_eq_chart {c d l : ℝ} (hu : c^2+d^2=2)
     (hl : 0≤4*Q0-l^2) (hX : 0≤X c d l+1) :
