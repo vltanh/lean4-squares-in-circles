@@ -129,6 +129,6 @@ theorem target_endpoints_of_one_coefficient {n j : Bool} {lam x B : ℝ}
   · exact target_endpoints hB hU
   · have hV := hUV.resolve_left hU
     exact (min_le_left _ _).trans
-      (target_first_of_coefficients hB (le_of_not_ge hU) hV)
+      (target_first_of_coefficients hB (lt_of_not_ge hU).le hV)
 
 end SquaresInCircles.Eight.TableFree.FrameDiagonalSelection
