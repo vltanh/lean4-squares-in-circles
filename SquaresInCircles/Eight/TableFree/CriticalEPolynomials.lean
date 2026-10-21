@@ -88,15 +88,16 @@ def firstHi (s : Chain) : ℚ[X] := 2-cosineLo*(rLo s-1)+sineHi*b s
 def secondLo (s : Chain) : ℚ[X] := 1+cosineLo*vLo s-sineHi*(wHi s-1)
 def secondHi (s : Chain) : ℚ[X] := 1+cosineHi*vHi s-sineLo*(wLo s-1)
 
-def positionUpper : ℚ[X] :=
-  firstHi .lower*(cosineHi*b .lower+sineHi*rHi .lower)*UHi .lower*YHi .lower*wHi .lower-
-    secondLo .lower*(2-b .lower)*VLo .lower*
-      (cosineLo*wLo .lower+sineLo*vLo .lower)*rLo .lower
+def positionUpperAt (s : Chain) : ℚ[X] :=
+  firstHi s*(cosineHi*b s+sineHi*rHi s)*UHi s*YHi s*wHi s-
+    secondLo s*(2-b s)*VLo s*(cosineLo*wLo s+sineLo*vLo s)*rLo s
 
-def positionLower : ℚ[X] :=
-  firstLo .upper*(cosineLo*a .upper+sineLo*rLo .upper)*ULo .upper*YLo .upper*wLo .upper-
-    secondHi .upper*(2-a .upper)*VHi .upper*
-      (cosineHi*wHi .upper+sineHi*vHi .upper)*rHi .upper
+def positionLowerAt (s : Chain) : ℚ[X] :=
+  firstLo s*(cosineLo*a s+sineLo*rLo s)*ULo s*YLo s*wLo s-
+    secondHi s*(2-a s)*VHi s*(cosineHi*wHi s+sineHi*vHi s)*rHi s
+
+def positionUpper : ℚ[X] := positionUpperAt .lower
+def positionLower : ℚ[X] := positionLowerAt .upper
 
 inductive Coefficient where
   | etaLower | etaUpper | kLower | kUpper | ellUpper | ellK
