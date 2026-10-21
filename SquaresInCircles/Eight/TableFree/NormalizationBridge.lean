@@ -2,6 +2,7 @@ module
 
 public import SquaresInCircles.Eight.GlobalNormalization
 public import SquaresInCircles.Eight.TableFree.FramePhysicalTransport
+public import SquaresInCircles.Eight.TableFree.GlobalZeroSignBridge
 
 /-!
 # Original-radius inputs from global normalization
@@ -14,6 +15,7 @@ used only for the already obtained frame and E sign.
 The last constructor consumes the precise physical owner/anchor facts
 still required from the global classifier.  It does not assume sharpness,
 stationarity or feasibility of a newly selected hard primary owner.
+The zero-owner strict signs are proved on the original recovered cycle.
 Uncompiled source draft.
 -/
 
@@ -99,11 +101,8 @@ def normalizedInput {S : Fin 8 → UnitSquare} {q : ℝ}
     (howners : Candidate.OwnerRestriction N.recovered SignedCycle.normalOwners)
     (houter : ∀ i∈({H,A,B,D} : Finset Vertex),N.recovered.kind i=.outer)
     (hH : 0≤N.recovered.tangent H) (hA : 0≤N.recovered.tangent A)
-    (hB : N.recovered.tangent B≤0) (hD : N.recovered.tangent D≤0)
-    (hHG : SignedCycle.retainedOwner (recoveredFrame N) H=2 →
-      N.recovered.tangent G<0)
-    (hTD : SignedCycle.retainedOwner (recoveredFrame N) T=0 →
-      0<N.recovered.tangent T) : SignedCycle.NormalizedBoundaryInput (sourceLevel q) := by
+    (hB : N.recovered.tangent B≤0) (hD : N.recovered.tangent D≤0) :
+    SignedCycle.NormalizedBoundaryInput (sourceLevel q) := by
   let F := recoveredFrame N
   let w := SignedCycle.retainedWitnesses F howners
   have hv := FramePhysicalTransport.candidate_variations F (source_radius_mem hq)
@@ -122,9 +121,7 @@ def normalizedInput {S : Fin 8 → UnitSquare} {q : ℝ}
       B_nonpos := (SignedCycle.atFrame_y_nonpos_iff F B).2 hB
       D_nonpos := (SignedCycle.atFrame_y_nonpos_iff F D).2 hD }
     witnesses := w
-    zero_signs := {
-      HG_canceling := fun h => (SignedCycle.atFrame_y_neg_iff F G).2 (hHG h)
-      TD_canceling := fun h => (SignedCycle.atFrame_y_pos_iff F T).2 (hTD h) }
+    zero_signs := SignedCycle.atFrame_zero_signs F (source_radius_mem hq) w
     E_nonpos := recovered_E_nonpos N }
 
 end SquaresInCircles.Eight.TableFree.NormalizationBridge
