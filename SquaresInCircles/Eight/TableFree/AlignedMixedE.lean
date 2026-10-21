@@ -118,10 +118,13 @@ theorem sine_pair_bound {u v : ℝ} (hs : u+v∈Icc 0 (11/50 : ℝ)) :
   have hmul := mul_le_mul_of_nonneg_left (Real.cos_le_one ((u-v)/2)) hsin
   have hid : Real.sin u+Real.sin v=
       2*Real.sin ((u+v)/2)*Real.cos ((u-v)/2) := by
-    have hu : u=(u+v)/2+(u-v)/2 := by ring
-    have hv : v=(u+v)/2-(u-v)/2 := by ring
-    conv_lhs => rw [hu,hv,Real.sin_add,Real.sin_sub]
-    ring
+    calc
+      Real.sin u+Real.sin v=
+          Real.sin ((u+v)/2+(u-v)/2)+Real.sin ((u+v)/2-(u-v)/2) := by
+        congr 1 <;> congr 1 <;> ring
+      _=2*Real.sin ((u+v)/2)*Real.cos ((u-v)/2) := by
+        rw [Real.sin_add,Real.sin_sub]
+        ring
   rw [hid]
   linarith
 
