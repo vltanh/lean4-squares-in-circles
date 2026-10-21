@@ -1,5 +1,12 @@
 # n=8 formalization: source draft status
 
+## Current closure ledger — 21 October 2026
+
+The live progress tracker is [**TABLEFREE_LEAN_CLOSURE_ROADMAP_2026_10_21.md**](TABLEFREE_LEAN_CLOSURE_ROADMAP_2026_10_21.md) (initial checkpoint commit [`099afce`](https://github.com/vltanh/lean4-squares-in-circles/commit/099afced367f1d1271e9482fe23af9aab0ad6c2b)). This distinguishes complete **hand mathematics**, extensive **uncompiled Lean source drafts**, and the still **open full table-free proof assembly**. Major remaining gates: complete physical wrong-word/owner coverage, exhaustive same-radius G/T entry, sharp equality on the untouched source, and replacement of `Candidate.capture` in the public source entry. Compilation, CI and the final audit remain deferred.
+
+The dated 20-October handoff below is kept for provenance; use the 21-October tracker for current gate statuses.
+
+
 ## Table-free source handoff — 20 October 2026
 
 The new [31-module table-free Lean draft and handoff](HANDOFF_2026_10_20_TABLEFREE_LEAN_SOURCE.md) is pushed, with [source hashes](TABLEFREE_DRAFT_SOURCE_MANIFEST_2026_10_20.json). **This local replacement is not a completed/compiled unrestricted table-free proof:** the global signed G/T owner-entry assembly and original-source axis recovery remain to be integrated, and the public n=8 theorem still uses compatibility capture and generated dependencies. The source was not compiled or checked by CI.
