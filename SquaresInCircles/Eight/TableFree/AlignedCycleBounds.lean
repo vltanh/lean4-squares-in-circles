@@ -191,7 +191,8 @@ theorem HardInput.aligned_bounds {q : ℝ} (I : HardInput q) (hq : q≤qCap)
     H_primary := ⟨SignedPoint.primary_gt_half hHs hHcore,hHu⟩
     D_primary := ⟨SignedPoint.primary_gt_half hDs hDcore,hDu⟩
     primary_sum := ?_ }
-  simpa [Hr,Dr,SignedPoint.reflect,heq] using hsum
+  rw [heq] at hsum
+  simpa [Hr,Dr,SignedPoint.reflect] using hsum
 
 end SignedCycle
 end SquaresInCircles.Eight.TableFree
