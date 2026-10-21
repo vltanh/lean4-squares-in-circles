@@ -269,4 +269,47 @@ theorem demand_monotone {q P Y Θ l r : ℝ} (S : CapData q P Y)
       exact demandD_pos S hΘ hd.1 hd.2.1 hd.2.2
   exact hm.monotoneOn
 
+/-- A feasible wrong-sign cap reaches its actual zero-tangent contact at
+a positive outer angle, with no increase in the required H tangent. -/
+theorem zero_contact {q P Y Θ e bH : ℝ} (S : CapData q P Y)
+    (hΘ : 0≤Θ) (he : 0<e) (hz : Θ+e∈Icc 0 frameCap)
+    (hv : V P Y (Θ+e)∈Ioo (2/5 : ℝ) (1/2))
+    (hH : bH<9/10) (hfeas : SmallWrongScalar.demand q P Y Θ e≤bH) :
+    ∃ s, s∈Ioc 0 e ∧ V P Y (Θ+s)=1/2 ∧ SmallWrongScalar.demand q P Y Θ s≤bH := by
+  have hΘi : Θ∈Icc 0 frameCap := ⟨hΘ,by linarith [hz.2]⟩
+  have hleft : 1/2<V P Y Θ := by
+    by_contra! hbad
+    have hm := demand_monotone S hΘ (l := 0) (r := e) (by
+      intro s hs
+      have hsi : Θ+s∈Icc 0 frameCap := ⟨by linarith [hs.1],by linarith [hs.2,hz.2]⟩
+      have hlo := V_antitone S hsi hz (by linarith [hs.2])
+      have hhi := V_antitone S hΘi hsi (by linarith [hs.1])
+      exact ⟨hs.1,hsi,⟨by linarith [hv.1],by linarith⟩⟩)
+    have hh := hm (show (0:ℝ)∈Icc 0 e from ⟨le_rfl,he.le⟩)
+      (show e∈Icc 0 e from ⟨he.le,le_rfl⟩) he.le
+    simp [SmallWrongScalar.demand] at hh
+    linarith
+  obtain ⟨Z,hZ,hZE⟩ := intermediate_value_Icc (show Θ≤Θ+e by linarith)
+    (show ContinuousOn (fun z => -V P Y z) (Icc Θ (Θ+e)) by unfold V; fun_prop)
+    (show -(1/2 : ℝ)∈Icc (-V P Y Θ) (-V P Y (Θ+e)) by
+      constructor <;> linarith [hv.2])
+  have hcontact : V P Y Z=1/2 := by linarith
+  have hZstrict : Θ<Z := by
+    apply lt_of_le_of_ne hZ.1
+    intro heq
+    rw [←heq] at hcontact
+    linarith
+  let s := Z-Θ
+  have hs : s∈Ioc 0 e := by dsimp [s]; exact ⟨sub_pos.mpr hZstrict,by linarith [hZ.2]⟩
+  have hsi : Θ+s=Z := by dsimp [s]; ring
+  have hZi : Z∈Icc 0 frameCap := ⟨hΘ.trans hZ.1,hZ.2.trans hz.2⟩
+  have hm := demand_monotone S hΘ (l := s) (r := e) (by
+    intro t ht
+    have hti : Θ+t∈Icc 0 frameCap := ⟨by linarith [ht.1,hs.1],by linarith [ht.2,hz.2]⟩
+    have hlo := V_antitone S hti hz (by linarith [ht.2])
+    have hhi := V_antitone S hZi hti (by rw [←hsi]; linarith [ht.1])
+    exact ⟨by linarith [ht.1,hs.1],hti,⟨by linarith [hv.1],by linarith⟩⟩)
+  exact ⟨s,hs,by rw [hsi]; exact hcontact,
+    (hm ⟨le_rfl,hs.2⟩ ⟨hs.2,le_rfl⟩ hs.2).trans hfeas⟩
+
 end SquaresInCircles.Eight.TableFree.CrossedSmallWrongScalar
