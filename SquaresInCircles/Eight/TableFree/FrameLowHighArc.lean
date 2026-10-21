@@ -19,7 +19,7 @@ open Set
 namespace SquaresInCircles.Eight.TableFree.FrameLowHighArc
 open FramePair FrameCircleArc FrameLowArc FrameMidArc FrameLowMidArc
 
-def extendedDomain : Set ℝ := Icc (-(1/100:ℝ)) (6/5)
+def extendedDomain : Set ℝ := Icc (-(1/4:ℝ)) (6/5)
 def slopeD (b : ℝ) : ℝ := Q0/(A b+1/2)^3
 def G (b : ℝ) : ℝ := Real.pi/4-(FrameHighArc.u-FrameHighArc.v)*c0-
   FrameHighArc.v*A b+FrameHighArc.u*b
@@ -45,7 +45,7 @@ theorem high_label_endpoint : (23197/50000:ℝ)<FrameHighArc.H2 := by
 
 theorem extended_radicand {b : ℝ} (hb : b∈extendedDomain) :
     0<Q0-(b+1/2)^2 := by
-  have hbl : (49/100:ℝ)≤b+1/2 := by dsimp [extendedDomain] at hb; linarith [hb.1]
+  have hbl : (1/4:ℝ)≤b+1/2 := by dsimp [extendedDomain] at hb; linarith [hb.1]
   have hbu : b+1/2≤17/10 := by dsimp [extendedDomain] at hb; linarith [hb.2]
   have hh := pow_le_pow_left₀ (by linarith : 0≤b+1/2) hbu 2
   norm_num [Q0]
