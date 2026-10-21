@@ -123,6 +123,53 @@ theorem strict_sorting {h d α q : ℝ} {P : State}
   have hb := (corner_coordinates hq hp).2.2
   linarith
 
+/-- The negative outer composites permit a slightly larger H/D span.
+The same actual mixed sum still keeps every relaxed E point strictly
+outside both its diagonal boundary and the true core. -/
+theorem primary_lower_wide {h d α q : ℝ} {P : State}
+    (hq : q≤qCap) (hα : α∈Icc 0 (27/100 : ℝ))
+    (hsum : h+d<1248/625-(359/500)*Real.sin α)
+    (hp : Feasible h d α q P) : 51/50<P.1 := by
+  have hb := (corner_coordinates hq hp).2.2
+  have hu : P.2.2∈Icc 0 (7/10 : ℝ) :=
+    ⟨hp.angle.1,by linarith [hp.angle.2,hα.2]⟩
+  have hv : α-P.2.2∈Icc 0 (7/10 : ℝ) :=
+    ⟨by linarith [hp.angle.2],by linarith [hp.angle.1,hα.2]⟩
+  have hsu := (transport_trig hu).2.2.1
+  have hsv := (transport_trig hv).2.2.1
+  have hT : Real.sin P.2.2+Real.sin (α-P.2.2)≤α := by
+    linarith [Real.sin_le hu.1,Real.sin_le hv.1]
+  have hbu := mul_nonneg hp.b_nonneg
+    (sub_nonneg.mpr (Real.cos_le_one P.2.2))
+  have hbv := mul_nonneg (show 0≤9/10-P.2.1 by linarith)
+    (sub_nonneg.mpr (Real.cos_le_one (α-P.2.2)))
+  have hB : P.2.1*(Real.cos P.2.2-Real.cos (α-P.2.2))≤
+      (9/10)*(1-Real.cos (α-P.2.2)) := by nlinarith
+  have hcu := Real.one_sub_sq_div_two_le_cos P.2.2
+  have hcv := Real.one_sub_sq_div_two_le_cos (α-P.2.2)
+  have hcross := mul_nonneg hu.1 hv.1
+  have hsquares : P.2.2^2+(α-P.2.2)^2≤α^2 := by nlinarith
+  have hquadratic := mul_nonneg hα.1 (show 0≤27/100-α by linarith [hα.2])
+  have hsin : (49/50)*α≤Real.sin α := by
+    have hs := Real.sin_ge_sub_cube hα.1
+    have hsquare := pow_le_pow_left₀ hα.1 hα.2 2
+    have hcube := mul_le_mul_of_nonneg_right hsquare hα.1
+    nlinarith
+  by_contra! hbad
+  have haT := mul_le_mul_of_nonneg_right hbad (add_nonneg hsu hsv)
+  have hDE := hp.DE
+  have hEH := hp.EH
+  dsimp [W,deValue,ehValue] at hDE hEH
+  nlinarith [sq_nonneg P.2.2]
+
+theorem strict_sorting_wide {h d α q : ℝ} {P : State}
+    (hq : q≤qCap) (hα : α∈Icc 0 (27/100 : ℝ))
+    (hsum : h+d<1248/625-(359/500)*Real.sin α)
+    (hp : Feasible h d α q P) : P.2.1<P.1 := by
+  have ha := primary_lower_wide hq hα hsum hp
+  have hb := (corner_coordinates hq hp).2.2
+  linarith
+
 theorem span_pos {h d α q : ℝ} {P : State}
     (hα : 0≤α) (hsum : h+d<1248/625-(359/500)*Real.sin α)
     (hp : Feasible h d α q P) : 0<α := by

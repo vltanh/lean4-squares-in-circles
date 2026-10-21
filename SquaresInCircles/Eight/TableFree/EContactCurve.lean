@@ -85,7 +85,7 @@ theorem energyD_hasDerivAt (m n α z : ℝ) :
     ((Real.hasDerivAt_cos z).const_mul (Ls m n α)) using 1 <;>
     dsimp [energyD,energyDD] <;> ring
 
-theorem half_trig {α : ℝ} (hα : α∈Ioo 0 (11/50 : ℝ)) :
+theorem half_trig {α : ℝ} (hα : α∈Ioo 0 (27/100 : ℝ)) :
     0<Real.sin (α/2) ∧ 0<Real.cos (α/2) ∧ 0<Real.sin α := by
   refine ⟨?_,?_,?_⟩
   · exact Real.sin_pos_of_pos_of_lt_pi (by linarith [hα.1])
@@ -107,7 +107,7 @@ theorem V_equation {α : ℝ} (hc : Real.cos (α/2)≠0) (n z : ℝ) :
   ring
 
 /-- Both physical primary contacts hold identically along this curve. -/
-theorem curve_contacts {α : ℝ} (hα : α∈Ioo 0 (11/50 : ℝ)) (m n z : ℝ) :
+theorem curve_contacts {α : ℝ} (hα : α∈Ioo 0 (27/100 : ℝ)) (m n z : ℝ) :
     deValue ((m-n+1)/2) (curve m n α z)=W (α/2-z) ∧
       ehValue ((m+n+1)/2) α (curve m n α z)=W (α/2+z) := by
   have ht := half_trig hα
@@ -128,7 +128,7 @@ theorem curve_contacts {α : ℝ} (hα : α∈Ioo 0 (11/50 : ℝ)) (m n z : ℝ)
     nlinarith
 
 theorem contact_unique {α m n a β z : ℝ}
-    (hα : α∈Ioo 0 (11/50 : ℝ))
+    (hα : α∈Ioo 0 (27/100 : ℝ))
     (hDE : (m-n+1)/2+a*Real.sin (α/2-z)+β*Real.cos (α/2-z)=W (α/2-z))
     (hEH : (m+n+1)/2+a*Real.sin (α/2+z)-β*Real.cos (α/2+z)=W (α/2+z)) :
     a=x m n α z+1/2 ∧ β=b m n α z := by
@@ -165,7 +165,7 @@ def scaledSecond (m n α z : ℝ) : ℝ :=
     m*Real.cos (α/2)*((Real.cos (α/2)/Real.sin (α/2)+2)*Real.cos z+Real.sin z)-
     n*Real.sin (α/2)*(Real.cos z+(Real.sin (α/2)/Real.cos (α/2)-2)*Real.sin z)
 
-theorem coefficient_sum {α : ℝ} (hα : α∈Ioo 0 (11/50 : ℝ)) :
+theorem coefficient_sum {α : ℝ} (hα : α∈Ioo 0 (27/100 : ℝ)) :
     A α+B α=1/Real.sin α ∧ A α-B α=Real.cos α/Real.sin α := by
   have ht := half_trig hα
   have hsin := Real.sin_two_mul (α/2)
@@ -182,7 +182,7 @@ theorem coefficient_sum {α : ℝ} (hα : α∈Ioo 0 (11/50 : ℝ)) :
     nlinarith [Real.sin_sq_add_cos_sq (α/2)]
 
 /-- The large terms are kept together before any numerical estimate. -/
-theorem scaled_second_identity {α : ℝ} (hα : α∈Ioo 0 (11/50 : ℝ)) (m n z : ℝ) :
+theorem scaled_second_identity {α : ℝ} (hα : α∈Ioo 0 (27/100 : ℝ)) (m n z : ℝ) :
     Real.sin α*energyDD m n α z=scaledSecond m n α z := by
   have ht := half_trig hα
   have hab := coefficient_sum hα

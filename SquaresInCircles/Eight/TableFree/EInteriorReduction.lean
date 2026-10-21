@@ -9,7 +9,8 @@ Uncompiled draft.  Compact minimization is followed by explicit radial
 descent or the exact two-contact curve.  A neighborhood is chosen only
 for the strict sorting, sign and angle inequalities.  The circle bound
 at the chosen endpoint follows from its proved strict energy decrease;
-no feasible neighborhood of the circle boundary is assumed.
+no feasible neighborhood of the circle boundary is assumed.  The full
+.27 span of the retained negative composites is allowed.
 -/
 
 @[expose] public section
@@ -18,7 +19,7 @@ open Set
 namespace SquaresInCircles.Eight.TableFree.EInteriorGeometry
 
 theorem contact_orientation_improves {h d α q : ℝ} {P : State}
-    (hq : q≤qCap) (hα : α∈Ioo 0 (11/50 : ℝ))
+    (hq : q≤qCap) (hα : α∈Ioo 0 (27/100 : ℝ))
     (hh : 1/2<h) (hd : 1/2<d)
     (hsum : h+d<1248/625-(359/500)*Real.sin α)
     (hp : Feasible h d α q P) (hb : 0<P.2.1)
@@ -50,7 +51,7 @@ theorem contact_orientation_improves {h d α q : ℝ} {P : State}
     · apply Prod.ext
       · exact hu.2.symm
       · exact hδ
-  have hsort := strict_sorting hq ⟨hα.1.le,hα.2.le⟩ hsum hp
+  have hsort := strict_sorting_wide hq ⟨hα.1.le,hα.2.le⟩ hsum hp
   let S : Set ℝ := {r |
     0<EContactCurve.b m n α r ∧
     EContactCurve.b m n α r<EContactCurve.x m n α r+1/2 ∧
@@ -113,7 +114,7 @@ theorem contact_orientation_improves {h d α q : ℝ} {P : State}
 /-- Every feasible interior state has an actual strict circle descendant.
 Each contact case is settled by a concrete geometric move. -/
 theorem interior_improves {h d α q : ℝ} {P : State}
-    (hq : q≤qCap) (hα : α∈Ioo 0 (11/50 : ℝ))
+    (hq : q≤qCap) (hα : α∈Ioo 0 (27/100 : ℝ))
     (hh : 1/2<h) (hd : 1/2<d)
     (hsum : h+d<1248/625-(359/500)*Real.sin α)
     (hp : Feasible h d α q P) (hb : 0<P.2.1) (hangle : P.2.2∈Ioo 0 α) :
@@ -124,11 +125,11 @@ theorem interior_improves {h d α q : ℝ} {P : State}
   · exact lower_tangent (by linarith [hα.2]) hp hb hde
   · rcases lt_or_eq_of_le heh0 with heh | heh
     · exact slide_DE (by linarith [hα.2]) hp
-        (strict_sorting hq ⟨hα.1.le,hα.2.le⟩ hsum hp) heh
+        (strict_sorting_wide hq ⟨hα.1.le,hα.2.le⟩ hsum hp) heh
     · exact contact_orientation_improves hq hα hh hd hsum hp hb hangle hde.symm heh.symm
 
 theorem minimum_boundary {h d α q : ℝ} {P : State}
-    (hq : q≤qCap) (hα : α∈Ico 0 (11/50 : ℝ))
+    (hq : q≤qCap) (hα : α∈Ico 0 (27/100 : ℝ))
     (hh : 1/2<h) (hd : 1/2<d)
     (hsum : h+d<1248/625-(359/500)*Real.sin α)
     (hp : Feasible h d α q P)
@@ -150,7 +151,7 @@ theorem minimum_boundary {h d α q : ℝ} {P : State}
 /-- The source ceiling and source E corner stay separate.  In particular
 an interior original E gives a strict decrease below its own circle. -/
 theorem exists_boundary_minimum {h d α q : ℝ} {P : State}
-    (hq : q≤qCap) (hα : α∈Ico 0 (11/50 : ℝ))
+    (hq : q≤qCap) (hα : α∈Ico 0 (27/100 : ℝ))
     (hh : 1/2<h) (hd : 1/2<d)
     (hsum : h+d<1248/625-(359/500)*Real.sin α)
     (hp : Feasible h d α q P) :

@@ -1,0 +1,146 @@
+module
+
+public import SquaresInCircles.Eight.TableFree.NonpositiveEInteriorCycle
+public import SquaresInCircles.Eight.TableFree.NonpositiveEZeroCycle
+
+/-!
+# The large-A endpoint barrier for retained negative composites
+
+Uncompiled draft.  The original A and H circles and their actual
+negative core composite force H's primary below one when A's tangent
+is at least one half.  The original EH1 contact at zero angle then
+excludes E=H.  Together with E-zero deletion, the genuine E minimizer
+reaches DE alignment with every other source point and loss unchanged.
+-/
+
+@[expose] public section
+noncomputable section
+open Set
+namespace SquaresInCircles.Eight.TableFree
+namespace NonpositiveEndpointBarrier
+open NegativeNoncancelingBarrier
+
+theorem large_middle_primary_lt_one {H A : SignedPoint} {Θ t : ℝ}
+    (hHu : H.y<9/10) (hAa : 1/2<A.a) (hAy : 1/2≤A.y)
+    (hHc : H.Contained qCap) (hAc : A.Contained qCap)
+    (hΘ : Θ∈Icc 0 (7/10 : ℝ)) (ht : t∈Icc 0 Θ)
+    (hf : 0≤F H A Θ t) : H.a<1 := by
+  have hAy0 : 0≤A.y := by linarith
+  have hsingle := NonpositiveChainBounds.single_contact hHu hAa hAy0 hAc hΘ ht hf
+  have hst := (transport_trig (show t∈Icc 0 (7/10 : ℝ) from
+    ⟨ht.1,ht.2.trans hΘ.2⟩)).2.2.1
+  have hse := (transport_trig (show Θ-t∈Icc 0 (7/10 : ℝ) from
+    ⟨by linarith [ht.2],by linarith [ht.1,hΘ.2]⟩)).2.2.1
+  have hprod := mul_nonneg (show 0≤A.y+1/2 by linarith) hst
+  have hsum : 2≤H.y+A.a := by linarith [hsingle.2.2]
+  have hAcircle := hAc
+  rw [SignedPoint.Contained,SignedPoint.circle,abs_of_nonneg hAy0] at hAcircle
+  have hAsq := pow_le_pow_left₀ (show (0:ℝ)≤1 by norm_num)
+    (show 1≤A.y+1/2 by linarith) 2
+  have hAu : A.a<151/125 := by
+    dsimp [qCap] at hAcircle
+    nlinarith
+  have hHy : 99/125<H.y := by linarith
+  have hHcircle := hHc
+  rw [SignedPoint.Contained,SignedPoint.circle,
+    abs_of_nonneg (show 0≤H.y by linarith)] at hHcircle
+  by_contra! hbad
+  have hprimary := pow_le_pow_left₀ (show (0:ℝ)≤3/2 by norm_num)
+    (show 3/2≤H.a+1/2 by linarith) 2
+  have htangent := pow_le_pow_left₀ (show (0:ℝ)≤323/250 by norm_num)
+    (show 323/250≤H.y+1/2 by linarith) 2
+  dsimp [qCap] at hHcircle
+  nlinarith
+
+end NonpositiveEndpointBarrier
+
+namespace SignedCycle
+open Candidate
+
+theorem HardInput.nonpositive_large_A_primary_lt_one {q : ℝ}
+    (I : HardInput q) (hq : q≤qCap)
+    (hAG : I.cycle.theta A≤I.cycle.theta G)
+    (hGH : I.cycle.theta G≤I.cycle.theta H)
+    (hHG : I.cycle.Feasible H 0) (hAy : 1/2≤(I.cycle.point A).y) :
+    (I.cycle.point H).a<1 := by
+  have hHy := (SignedPoint.coordinate_bounds (I.necessary.sorted H)
+    (I.necessary.core H) (I.necessary.contained H) hq).2.2
+  rw [abs_of_nonneg I.anchors_normal.H_nonneg] at hHy
+  apply NonpositiveEndpointBarrier.large_middle_primary_lt_one hHy
+    (SignedPoint.primary_gt_half (I.necessary.sorted A) (I.necessary.core A)) hAy
+    ((I.necessary.contained H).trans hq) ((I.necessary.contained A).trans hq)
+  · exact ⟨by linarith,(le_abs_self _).trans (I.necessary.spread H A)⟩
+  · constructor <;> linarith
+  · exact I.negative_HG0_composite hq hAG hGH hHG
+
+/-- This is the original EH1 axis.  Its E tangent keeps its original
+nonpositive sign; no reflected E point is used. -/
+theorem HardInput.nonpositive_large_A_EH_impossible {q : ℝ}
+    (I : HardInput q) (hq : q≤qCap)
+    (hAG : I.cycle.theta A≤I.cycle.theta G)
+    (hGH : I.cycle.theta G≤I.cycle.theta H)
+    (hHG : I.cycle.Feasible H 0) (hAy : 1/2≤(I.cycle.point A).y)
+    (hEHframe : I.cycle.theta E=I.cycle.theta H)
+    (hEH : I.cycle.Feasible E 1) : False := by
+  have hH := I.nonpositive_large_A_primary_lt_one hq hAG hGH hHG hAy
+  have hcontact : 1≤(I.cycle.point H).a+(I.cycle.point E).y := by
+    simpa [Feasible,slack,edge,word,delta,next,E,H,quarterProjection,
+      hEHframe,sub_nonneg,add_comm] using hEH
+  linarith [I.E_nonpos]
+
+/-- The complete large-A E-boundary selection.  The unresolved DE
+stress is deliberately not included here: the output retains its exact
+actual boundary cycle, original circles and strict E-loss ledger. -/
+theorem HardInput.reduce_nonpositive_large_A_DE {q : ℝ} (I : HardInput q) (hq : q≤qCap)
+    (hAB : I.cycle.theta A=I.cycle.theta B)
+    (hAG : I.cycle.theta A≤I.cycle.theta G)
+    (hGH : I.cycle.theta G≤I.cycle.theta H)
+    (hDT : I.cycle.theta D≤I.cycle.theta T)
+    (hTB : I.cycle.theta T≤I.cycle.theta B)
+    (hHG : I.cycle.Feasible H 0) (hTD : I.cycle.Feasible T 2)
+    (hAy : 1/2≤(I.cycle.point A).y)
+    (hDEorder : I.cycle.theta D≤I.cycle.theta E)
+    (hEHorder : I.cycle.theta E≤I.cycle.theta H)
+    (hDE : I.cycle.Feasible D 3) (hEH : I.cycle.Feasible E 1) :
+    ∃J : HardInput q,
+      (∀i, i≠E → J.cycle.point i=I.cycle.point i ∧ J.cycle.theta i=I.cycle.theta i) ∧
+      J.cycle.theta E=J.cycle.theta D ∧ AnchorNonincrease I.cycle J.cycle ∧
+      (((I.cycle.point E).y<0 ∧ I.cycle.theta D<I.cycle.theta E ∧
+        I.cycle.theta E<I.cycle.theta H) → StrictAnchorLoss I.cycle J.cycle) ∧
+      J.cycle.Feasible D 3 ∧ J.cycle.Feasible E 1 := by
+  obtain ⟨J,hfixed,hEorder,hboundary,hnon,hstrict,hJDE,hJEH⟩ :=
+    I.reduce_nonpositive_E hq hAB hAG hGH hDT hTB hHG hTD hDEorder hEHorder hDE hEH
+  have hH := hfixed H (by decide)
+  have hG := hfixed G (by decide)
+  have hA := hfixed A (by decide)
+  have hB := hfixed B (by decide)
+  have hT := hfixed T (by decide)
+  have hD := hfixed D (by decide)
+  have hJAB : J.cycle.theta A=J.cycle.theta B := by rw [hA.2,hB.2,hAB]
+  have hJAG : J.cycle.theta A≤J.cycle.theta G := by rw [hA.2,hG.2]; exact hAG
+  have hJGH : J.cycle.theta G≤J.cycle.theta H := by rw [hG.2,hH.2]; exact hGH
+  have hJDT : J.cycle.theta D≤J.cycle.theta T := by rw [hD.2,hT.2]; exact hDT
+  have hJTB : J.cycle.theta T≤J.cycle.theta B := by rw [hT.2,hB.2]; exact hTB
+  have hJHG : J.cycle.Feasible H 0 := by
+    simpa [Feasible,slack,edge,word,delta,next,H,G,hH.1,hH.2,hG.1,hG.2] using hHG
+  have hJTD : J.cycle.Feasible T 2 := by
+    simpa [Feasible,slack,edge,word,delta,next,T,D,hT.1,hT.2,hD.1,hD.2] using hTD
+  have hJAy : 1/2≤(J.cycle.point A).y := by rw [hA.1]; exact hAy
+  have hEneq0 : (J.cycle.point E).y≠0 := by
+    intro hzero
+    exact J.nonpositive_zero_E_impossible hq hJAB hJAG hJGH hJDT hJTB hJHG hJTD hzero
+      (by rw [hD.2]; exact hEorder.1) (by rw [hH.2]; exact hEorder.2) hJDE hJEH
+  have hEHneq : J.cycle.theta E≠I.cycle.theta H := by
+    intro hzero
+    exact J.nonpositive_large_A_EH_impossible hq hJAG hJGH hJHG hJAy
+      (by rw [hH.2]; exact hzero) hJEH
+  have hDEeq : J.cycle.theta E=J.cycle.theta D := by
+    rcases hboundary with hz | hd | hh
+    · exact False.elim (hEneq0 hz)
+    · rw [hD.2]
+      exact hd
+    · exact False.elim (hEHneq hh)
+  exact ⟨J,hfixed,hDEeq,hnon,hstrict,hJDE,hJEH⟩
+
+end SignedCycle
+end SquaresInCircles.Eight.TableFree

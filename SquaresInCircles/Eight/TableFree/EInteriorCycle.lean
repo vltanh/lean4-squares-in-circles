@@ -53,11 +53,11 @@ theorem eInteriorCycle_circle {C : SignedCycle} {P : State} (hb : 0≤P.2.1) :
   simp [eInteriorCycle,E,SignedPoint.circle,corner,abs_neg,abs_of_nonneg hb]
 
 theorem eInteriorCycle_DE {q : ℝ} {C : SignedCycle} {P : State}
-    (hb : AlignedChainBounds.Bounds C)
+    (hspan : C.theta H-C.theta D≤7/10)
     (hp : EInteriorGeometry.Feasible (C.point H).a (C.point D).a (C.theta H-C.theta D) q P) :
     (eInteriorCycle C P).Feasible D 3 := by
   have hu : P.2.2∈Icc 0 (7/10 : ℝ) :=
-    ⟨hp.angle.1,by linarith [hp.angle.2,hb.span_lt]⟩
+    ⟨hp.angle.1,hp.angle.2.trans hspan⟩
   have hh := hp.DE
   rw [show W P.2.2=edgeWidth P.2.2 by
     rw [edgeWidth_positive_formula hu]; rfl] at hh
@@ -65,11 +65,11 @@ theorem eInteriorCycle_DE {q : ℝ} {C : SignedCycle} {P : State}
     deValue,quarterProjection,sub_nonneg] using hh
 
 theorem eInteriorCycle_EH {q : ℝ} {C : SignedCycle} {P : State}
-    (hb : AlignedChainBounds.Bounds C)
+    (hspan : C.theta H-C.theta D≤7/10)
     (hp : EInteriorGeometry.Feasible (C.point H).a (C.point D).a (C.theta H-C.theta D) q P) :
     (eInteriorCycle C P).Feasible E 1 := by
   have hv : C.theta H-C.theta D-P.2.2∈Icc 0 (7/10 : ℝ) :=
-    ⟨by linarith [hp.angle.2],by linarith [hp.angle.1,hb.span_lt]⟩
+    ⟨by linarith [hp.angle.2],by linarith [hp.angle.1]⟩
   have hh := hp.EH
   rw [show W (C.theta H-C.theta D-P.2.2)=edgeWidth (C.theta H-C.theta D-P.2.2) by
     rw [edgeWidth_positive_formula hv]; rfl] at hh
@@ -78,7 +78,7 @@ theorem eInteriorCycle_EH {q : ℝ} {C : SignedCycle} {P : State}
     ehValue,quarterProjection,sub_nonneg,heq] using hh
 
 def Witnesses.eInterior {q : ℝ} {C : SignedCycle} (w : C.Witnesses) {P : State}
-    (hb : AlignedChainBounds.Bounds C)
+    (hspan : C.theta H-C.theta D≤7/10)
     (hp : EInteriorGeometry.Feasible (C.point H).a (C.point D).a (C.theta H-C.theta D) q P) :
     (eInteriorCycle C P).Witnesses where
   owner i := if i=D then 3 else if i=E then 1 else w.owner i
@@ -95,8 +95,8 @@ def Witnesses.eInterior {q : ℝ} {C : SignedCycle} (w : C.Witnesses) {P : State
         using w.feasible B
     · simpa [eInteriorCycle,Feasible,slack,edge,word,delta,next,T,D,E]
         using w.feasible T
-    · simpa [D,E] using eInteriorCycle_DE hb hp
-    · simpa [D,E] using eInteriorCycle_EH hb hp
+    · simpa [D,E] using eInteriorCycle_DE hspan hp
+    · simpa [D,E] using eInteriorCycle_EH hspan hp
   allowed := by
     intro i
     by_cases hiD : i=D
@@ -147,7 +147,7 @@ def HardInput.fromEInterior {q : ℝ} (I : HardInput q) (hq : q≤qCap)
     B_nonpos := I.anchors_normal.B_nonpos
     D_nonpos := I.anchors_normal.D_nonpos }
   E_nonpos := by simpa [eInteriorCycle,E] using neg_nonpos.mpr hp.b_nonneg
-  witnesses := I.witnesses.eInterior hb hp
+  witnesses := I.witnesses.eInterior (by linarith [hb.span_lt]) hp
   GA_hard := by
     simpa [eInteriorCycle,Feasible,slack,edge,word,delta,next,G,A] using I.GA_hard
   BT_hard := by
@@ -172,7 +172,6 @@ def HardInput.fromEInterior {q : ℝ} (I : HardInput q) (hq : q≤qCap)
       linarith [hb.D_tangent.2]
 
 theorem HardInput.E_source_relaxation {q : ℝ} (I : HardInput q)
-    (hb : AlignedChainBounds.Bounds I.cycle)
     (hDEorder : I.cycle.theta D≤I.cycle.theta E)
     (hEHorder : I.cycle.theta E≤I.cycle.theta H)
     (hDE : I.cycle.Feasible D 3) (hEH : I.cycle.Feasible E 1) :
@@ -228,9 +227,9 @@ theorem HardInput.reduce_ordered_E {q : ℝ} (I : HardInput q) (hq : q≤qCap)
       J.cycle.Feasible D 3 ∧ J.cycle.Feasible E 1 := by
   have hb := I.aligned_bounds hq hHG hAB hTD hleft hright
   have howners := I.aligned_primary_E_witnesses hq hHG hAB hTD hleft hright hDEorder hEHorder
-  have hp := I.E_source_relaxation hb hDEorder hEHorder howners.1 howners.2
+  have hp := I.E_source_relaxation hDEorder hEHorder howners.1 howners.2
   obtain ⟨P,hP,hcircle,hboundary,hstrict⟩ := exists_boundary_minimum hq
-    ⟨hb.span_nonneg,hb.span_lt⟩ hb.H_primary.1 hb.D_primary.1 hb.primary_sum hp
+    ⟨hb.span_nonneg,by linarith [hb.span_lt]⟩ hb.H_primary.1 hb.D_primary.1 hb.primary_sum hp
   let J := I.fromEInterior hq hb hP
   have hcircle_source : corner
       ((I.cycle.point E).a,-(I.cycle.point E).y,I.cycle.theta E-I.cycle.theta D)=
@@ -240,7 +239,8 @@ theorem HardInput.reduce_ordered_E {q : ℝ} (I : HardInput q) (hq : q≤qCap)
   have hunchanged (i : Vertex) (hi : i≠E) :
       J.cycle.point i=I.cycle.point i ∧ J.cycle.theta i=I.cycle.theta i :=
     eInteriorCycle_unchanged I.cycle P i hi
-  refine ⟨J,hunchanged,?_,?_,?_,?_,eInteriorCycle_DE hb hP,eInteriorCycle_EH hb hP⟩
+  refine ⟨J,hunchanged,?_,?_,?_,?_,eInteriorCycle_DE (by linarith [hb.span_lt]) hP,
+    eInteriorCycle_EH (by linarith [hb.span_lt]) hP⟩
   · change I.cycle.theta D+P.2.2∈Icc (I.cycle.theta D) (I.cycle.theta H)
     constructor <;> linarith [hP.angle.1,hP.angle.2]
   · rcases hboundary with hb0 | hδ0 | hε0

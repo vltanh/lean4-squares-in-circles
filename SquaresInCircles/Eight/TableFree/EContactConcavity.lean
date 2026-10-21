@@ -7,7 +7,7 @@ public import SquaresInCircles.Eight.TableFree.EContactCurve
 
 Uncompiled draft.  The apparent large cotangent terms are canceled before
 estimation.  A single factorization controls the whole orientation
-interval; there is no angle subdivision or fitted numerical certificate.
+interval through total span .27; there is no angle subdivision or fitted numerical certificate.
 -/
 
 @[expose] public section
@@ -17,23 +17,23 @@ namespace SquaresInCircles.Eight.TableFree.EContactCurve
 
 structure Window (α z : ℝ) : Prop where
   half_cos_lower : 99/100<Real.cos (α/2)
-  half_sin_upper : Real.sin (α/2)<11/100
-  full_cos_lower : 4879/5000<Real.cos α
-  full_sin_upper : Real.sin α<11/50
+  half_sin_upper : Real.sin (α/2)<27/200
+  full_cos_lower : 19271/20000<Real.cos α
+  full_sin_upper : Real.sin α<27/100
   cos_lower : Real.cos (α/2)≤Real.cos z
   double_cos_lower : Real.cos α≤Real.cos (2*z)
   sin_bounds : -Real.sin (α/2)≤Real.sin z ∧ Real.sin z≤Real.sin (α/2)
   double_sin_bounds : -Real.sin α≤Real.sin (2*z) ∧ Real.sin (2*z)≤Real.sin α
 
-theorem window {α z : ℝ} (hα : α∈Ioo 0 (11/50 : ℝ)) (hz : |z|≤α/2) :
+theorem window {α z : ℝ} (hα : α∈Ioo 0 (27/100 : ℝ)) (hz : |z|≤α/2) :
     Window α z := by
   have hhalf : 0≤α/2 := by linarith [hα.1]
-  have hhalfup : α/2≤11/100 := by linarith [hα.2]
+  have hhalfup : α/2≤27/200 := by linarith [hα.2]
   have hhalfSq := pow_le_pow_left₀ hhalf hhalfup 2
   have hfullSq := pow_lt_pow_left₀ hα.1.le hα.2 (by decide : (2:ℕ)≠0)
   have hcoshalf : 99/100<Real.cos (α/2) := by
     nlinarith [Real.one_sub_sq_div_two_le_cos (α/2)]
-  have hcosfull : 4879/5000<Real.cos α := by
+  have hcosfull : 19271/20000<Real.cos α := by
     nlinarith [Real.one_sub_sq_div_two_le_cos α]
   have hzi := abs_le.mp hz
   have hdouble : |2*z|≤α := by
@@ -73,7 +73,7 @@ theorem window {α z : ℝ} (hα : α∈Ioo 0 (11/50 : ℝ)) (hz : |z|≤α/2) :
 /-- The factor `(c-1)*(1+4*c*(1-c²))` controls the cancellation on
 the entire orientation interval.  The denominator is positive. -/
 theorem cotangent_cancellation {α z : ℝ}
-    (hα : α∈Ioo 0 (11/50 : ℝ)) (hz : |z|≤α/2) :
+    (hα : α∈Ioo 0 (27/100 : ℝ)) (hz : |z|≤α/2) :
     -2*(Real.cos α/Real.sin α)*Real.cos (2*z)+
       Real.cos (α/2)*(Real.cos (α/2)/Real.sin (α/2))*Real.cos z≤
         3*Real.sin (α/2) := by
@@ -114,7 +114,7 @@ theorem cotangent_cancellation {α z : ℝ}
   linarith
 
 theorem scaled_second_upper {m n α z : ℝ}
-    (hα : α∈Ioo 0 (11/50 : ℝ)) (hz : |z|≤α/2)
+    (hα : α∈Ioo 0 (27/100 : ℝ)) (hz : |z|≤α/2)
     (hm : m∈Icc (0:ℝ) 1) (hn : |n|≤1) :
     scaledSecond m n α z≤
       5*Real.sin (α/2)+2*Real.sin (α/2)^2+2*Real.sin α+2-4*Real.cos α := by
@@ -159,9 +159,9 @@ theorem scaled_second_upper {m n α z : ℝ}
   nlinarith [hw.double_cos_lower,hw.double_sin_bounds.1]
 
 theorem scaled_second_negative {m n α z : ℝ}
-    (hα : α∈Ioo 0 (11/50 : ℝ)) (hz : |z|≤α/2)
+    (hα : α∈Ioo 0 (27/100 : ℝ)) (hz : |z|≤α/2)
     (hm : m∈Icc (0:ℝ) 1) (hn : |n|≤1) :
-    scaledSecond m n α z< -(889/1000 : ℝ) := by
+    scaledSecond m n α z< -(2411/4000 : ℝ) := by
   have hu := scaled_second_upper hα hz hm hn
   have ht := half_trig hα
   have hw := window hα hz
@@ -170,9 +170,9 @@ theorem scaled_second_negative {m n α z : ℝ}
   nlinarith [hw.half_sin_upper,hw.full_sin_upper,hw.full_cos_lower]
 
 theorem energyDD_upper {m n α z : ℝ}
-    (hα : α∈Ioo 0 (11/50 : ℝ)) (hz : |z|≤α/2)
+    (hα : α∈Ioo 0 (27/100 : ℝ)) (hz : |z|≤α/2)
     (hm : m∈Icc (0:ℝ) 1) (hn : |n|≤1) :
-    energyDD m n α z≤ -(4/5 : ℝ) := by
+    energyDD m n α z≤ -(3/5 : ℝ) := by
   have ht := half_trig hα
   have hnumer := scaled_second_negative hα hz hm hn
   rw [←scaled_second_identity hα m n z] at hnumer
@@ -185,11 +185,11 @@ theorem energyDD_upper {m n α z : ℝ}
 The later geometric argument chooses the subinterval inside the original
 strict sorting and positive-tangent neighborhood. -/
 theorem endpoint_improves {m n α l u z : ℝ}
-    (hα : α∈Ioo 0 (11/50 : ℝ))
+    (hα : α∈Ioo 0 (27/100 : ℝ))
     (hm : m∈Icc (0:ℝ) 1) (hn : |n|≤1)
     (hl : -α/2≤l) (hu : u≤α/2) (hz : z∈Ioo l u) :
     energy m n α l<energy m n α z ∨ energy m n α u<energy m n α z := by
-  apply strict_endpoint_of_second_derivative (k := (4/5 : ℝ))
+  apply strict_endpoint_of_second_derivative (k := (3/5 : ℝ))
     (df := energyD m n α) (ddf := energyDD m n α) (by norm_num) hz
   · intro r hr
     exact energy_hasDerivAt m n α r
