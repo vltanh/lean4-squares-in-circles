@@ -27,7 +27,8 @@ theorem affine_concave (a b l u : ℝ) :
   refine ⟨convex_Icc l u,?_⟩
   intro x hx y hy α β hα hβ hsum
   simp only [smul_eq_mul]
-  nlinarith only [hsum]
+  have hc : (α+β)*b=b := by rw [hsum,one_mul]
+  nlinarith only [hc]
 
 theorem gain_junction {d s : ℝ} (hd : d∈Icc 0 frameCap) (hs : s∈Icc 0 d) :
     min (V (Real.sqrt qCap) (lN d) k d) (lambdaN d*d)≤
@@ -40,11 +41,15 @@ theorem gain_junction {d s : ℝ} (hd : d∈Icc 0 frameCap) (hs : s∈Icc 0 d) :
   have hc := concave_affine_argument hV (a := -1) (b := d) (l := 0) (u := d)
     (fun x hx => ⟨by linarith [hx.2],by linarith [hd.2,hx.1]⟩)
   have hl := affine_concave (lambdaN d) 0 0 d
-  have hh := (hl.add hc).min_le_of_mem_Icc
+  have hconc : ConcaveOn ℝ (Icc 0 d)
+      (fun x => lambdaN d*x+V (Real.sqrt qCap) (lN d) k (d-x)) := by
+    convert hl.add hc using 1
+    funext x
+    congr 1 <;> ring
+  have hh := hconc.min_le_of_mem_Icc
     (show (0:ℝ)∈Icc 0 d from ⟨le_rfl,hd.1⟩)
     (show d∈Icc 0 d from ⟨hd.1,le_rfl⟩) hs
-  simpa only [add_zero,mul_zero,zero_add,neg_mul,one_mul,neg_zero,neg_add_cancel,
-    V_zero,← sub_eq_add_neg] using hh
+  simpa only [sub_zero,sub_self,mul_zero,zero_add,V_zero,add_zero] using hh
 
 theorem low_U_lower {d s b t z : ℝ} (h : Bounds d s b t) (hd : d≤3/10)
     (i : Fin 4) (hz : z∈Icc 0 frameCap) :
