@@ -268,7 +268,7 @@ lemma target_derivative_positive {B x : ℝ} (hd : MinusDomain B x)
         hd.1 (Asymmetric.rational_outer_mem (by norm_num)) he
       have h3 := L_first_late_monotone
         ⟨by norm_num,(Asymmetric.rational_outer_mem (by norm_num)).2⟩
-        ⟨by linarith,h d.1.2⟩ hB.le
+        ⟨by linarith,hd.1.2⟩ hB.le
       linarith [slope_seven_small,L_67_first]
     · have h1 := inverseSlope_z_monotone hd.1 ⟨hz.1.le,hz.2.le⟩
         (by norm_num : (4/25:ℝ)∈Icc (-(2/5)) (2/5)) (by linarith)
