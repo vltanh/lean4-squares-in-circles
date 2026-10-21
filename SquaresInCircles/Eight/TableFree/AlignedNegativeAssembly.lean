@@ -258,6 +258,8 @@ theorem variations
     exact max_eq_right (by linarith [I.tilt_pos])
   have hGAnew : positivePart (C.theta A-(C.theta A+O.angle))=0 := by
     exact max_eq_right (by linarith [O.angle_mem.1])
+  have hGAnew' : positivePart (-O.angle)=0 :=
+    max_eq_right (neg_nonpos.mpr O.angle_mem.1)
   have hEHold' : positivePart (C.theta H-C.theta E)=C.theta H-C.theta E :=
     max_eq_left hEHold
   have hEHnew' : positivePart (C.theta A+O.angle-C.theta E)=
@@ -266,7 +268,7 @@ theorem variations
       C.theta H-C.theta A-O.angle := by
     simp [positiveVariation,Fin.sum_univ_succ,delta,next,cycle,replaceHG,
       replacePoint,H,G,A,B,T,D,E,Function.update_apply,halign,
-      hGAold,hGAnew,hEHold',hEHnew']
+      hGAold,hGAnew,hGAnew',hEHold',hEHnew']
     ring
   constructor
   · exact hp
