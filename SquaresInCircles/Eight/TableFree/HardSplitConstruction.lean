@@ -194,6 +194,10 @@ structure PairEndpoint (G A B T : SignedPoint) (t u : ℝ) where
   avoids_B : pointB.AvoidsCore
   normal_A : 0 < pointA.y
   normal_B : pointB.y < 0
+  primary_A : 11/10 ≤ pointA.a
+  primary_B : 11/10 ≤ pointB.a
+  transverse_A : 67/200 < pointA.y ∧ pointA.y < 133/200
+  transverse_B : 67/200 < -pointB.y ∧ -pointB.y < 133/200
   circle_A : pointA.circle=A.circle
   circle_B : pointB.circle=B.circle
   GA_exact : quarterProjection G pointA (-angleA) 0=edgeWidth (-angleA)
@@ -271,6 +275,10 @@ theorem actual_pair_endpoint {G A B T : SignedPoint} {t u : ℝ}
     avoids_B := by simpa [B'] using hBc
     normal_A := hnormalA
     normal_B := hnormalB
+    primary_A := hAa
+    primary_B := by simpa [B',SignedPoint.reflect] using hBa
+    transverse_A := hAy
+    transverse_B := by simpa [B',SignedPoint.reflect] using hBy
     circle_A := hAq
     circle_B := by simpa [B'] using hBq
     GA_exact := ?_
