@@ -3,6 +3,7 @@ module
 public import SquaresInCircles.Eight.GlobalNormalization
 public import SquaresInCircles.Eight.TableFree.FramePhysicalTransport
 public import SquaresInCircles.Eight.TableFree.GlobalZeroSignBridge
+public import SquaresInCircles.Eight.TableFree.GlobalQuarterSignCycle
 
 /-!
 # Original-radius inputs from global normalization
@@ -53,6 +54,20 @@ theorem recovered_E_nonpos {S : Fin 8 → UnitSquare} {q : ℝ}
     (N : GlobalNormalization S q) : ((recoveredCycle N).point E).y≤0 :=
   SignedCycle.E_nonpos_pullback N.frame N.expansion N.eHalf
 
+theorem recovered_D_negative {S : Fin 8 → UnitSquare} {q : ℝ}
+    (N : GlobalNormalization S q) (hq : q≤Q1) : N.recovered.tangent D<0 := by
+  have hE : N.recovered.tangent E≤0 :=
+    (SignedCycle.atFrame_y_nonpos_iff (recoveredFrame N) E).1 (recovered_E_nonpos N)
+  exact (GlobalQuarterSign.frame_DE (recoveredFrame N) (source_radius_mem hq) hE).1
+
+theorem recovered_DE_owners {S : Fin 8 → UnitSquare} {q : ℝ}
+    (N : GlobalNormalization S q) (hq : q≤Q1) (j : Fin 4)
+    (hj : (forwardAxis j).Feasible (N.recovered.square D) (N.recovered.square E)) :
+    j=2 ∨ j=3 := by
+  have hE : N.recovered.tangent E≤0 :=
+    (SignedCycle.atFrame_y_nonpos_iff (recoveredFrame N) E).1 (recovered_E_nonpos N)
+  exact (GlobalQuarterSign.frame_DE (recoveredFrame N) (source_radius_mem hq) hE).2 j hj
+
 theorem recovered_selected_axis {S : Fin 8 → UnitSquare} {q : ℝ}
     (N : GlobalNormalization S q) (i : Vertex) :
     N.recovered.selected i=forwardAxis (SignedCycle.retainedOwner (recoveredFrame N) i) :=
@@ -101,7 +116,7 @@ def normalizedInput {S : Fin 8 → UnitSquare} {q : ℝ}
     (howners : Candidate.OwnerRestriction N.recovered SignedCycle.normalOwners)
     (houter : ∀ i∈({H,A,B,D} : Finset Vertex),N.recovered.kind i=.outer)
     (hH : 0≤N.recovered.tangent H) (hA : 0≤N.recovered.tangent A)
-    (hB : N.recovered.tangent B≤0) (hD : N.recovered.tangent D≤0) :
+    (hB : N.recovered.tangent B≤0) :
     SignedCycle.NormalizedBoundaryInput (sourceLevel q) := by
   let F := recoveredFrame N
   let w := SignedCycle.retainedWitnesses F howners
@@ -119,7 +134,7 @@ def normalizedInput {S : Fin 8 → UnitSquare} {q : ℝ}
       H_nonneg := (SignedCycle.atFrame_y_nonneg_iff F H).2 hH
       A_nonneg := (SignedCycle.atFrame_y_nonneg_iff F A).2 hA
       B_nonpos := (SignedCycle.atFrame_y_nonpos_iff F B).2 hB
-      D_nonpos := (SignedCycle.atFrame_y_nonpos_iff F D).2 hD }
+      D_nonpos := (SignedCycle.atFrame_y_nonpos_iff F D).2 (recovered_D_negative N hq).le }
     witnesses := w
     zero_signs := SignedCycle.atFrame_zero_signs F (source_radius_mem hq) w
     E_nonpos := recovered_E_nonpos N }
