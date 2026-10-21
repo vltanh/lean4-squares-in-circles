@@ -272,9 +272,9 @@ theorem endpoint_zero : (57/10000:ℝ)<endpoint 0 := by
   linarith [diagonal_bounds.2]
 
 /-- Positive on the full original domain; no E state or motion is used. -/
-theorem scalar_positive {t u : ℝ}
+theorem scalar_reserve {t u : ℝ}
     (ht : t∈Icc 0 (9/100:ℝ)) (hu : u∈Icc 0 frameCap) (htu : 11/50≤t+u) :
-    0<f t+3+2*lambda-c-2*R*N lambda 0+V lambda u := by
+    (57/10000:ℝ)<f t+3+2*lambda-c-2*R*N lambda 0+V lambda u := by
   have hv : 11/50-t∈Icc 0 frameCap := by constructor <;> norm_num [frameCap] at * <;> linarith [ht.1,ht.2]
   have hg := V_growth (show lambda∈Icc (13/20:ℝ) (23/25) by norm_num [lambda])
     hv hu (by linarith)
@@ -282,6 +282,11 @@ theorem scalar_positive {t u : ℝ}
   have hp := endpoint_zero
   unfold endpoint at hm hp
   linarith
+
+theorem scalar_positive {t u : ℝ}
+    (ht : t∈Icc 0 (9/100:ℝ)) (hu : u∈Icc 0 frameCap) (htu : 11/50≤t+u) :
+    0<f t+3+2*lambda-c-2*R*N lambda 0+V lambda u :=
+  lt_trans (by norm_num) (scalar_reserve ht hu htu)
 
 end TD0Span
 
