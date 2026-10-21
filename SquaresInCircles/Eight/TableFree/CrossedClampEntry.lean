@@ -4,6 +4,7 @@ public import SquaresInCircles.Eight.TableFree.CrossedSmallConstruction
 public import SquaresInCircles.Eight.TableFree.SmallCancelingGeometry
 public import SquaresInCircles.Eight.TableFree.CrossedCancelingGeometry
 public import SquaresInCircles.Eight.TableFree.HardOuterOrder
+public import SquaresInCircles.Eight.TableFree.CrossedBTGeometry
 
 /-!
 # Every crossed GA reduction supplies the common-clamp hypotheses
@@ -231,6 +232,100 @@ theorem HardInput.crossed_HG_small_entry {q : ℝ} (I : HardInput q)
     obtain ⟨hAy,hr,⟨O⟩⟩ := I.crossed_HG2_small_output hqL hq hAB hnorm hTA hAG hHA hsmall hHG
     exact ⟨O,I.fromCrossedGAData_entry hqL hq hAB hnorm O hHA
       (by linarith) (Or.inr ⟨hAy.le,hr⟩)⟩
+
+/-- The reflected entry is taken only after constructing the actual
+BT descendant in the original cycle.  Its original E remains fixed;
+the reflected object is local geometry with the proved source budget. -/
+theorem HardInput.fromCrossedBTData_entry {q : ℝ} (I : HardInput q)
+    (hqL : qLow≤q) (hq : q≤qCap)
+    (hAB : I.cycle.theta A=I.cycle.theta B)
+    (hnorm : (I.cycle.point A).y-(I.cycle.point B).y=1)
+    (O : CrossedBTData q (I.cycle.point B) (I.cycle.point T) (I.cycle.point D)
+      (I.cycle.theta D-I.cycle.theta B) (I.cycle.theta B-I.cycle.theta T))
+    (hBD : I.cycle.theta B<I.cycle.theta D)
+    (hr : I.cycle.theta D-I.cycle.theta B<1/25)
+    (hentry : 1/2≤ -(I.cycle.point B).y ∨
+      (47/98≤ -(I.cycle.point B).y ∧ I.cycle.theta D-I.cycle.theta B<1/100)) :
+    CommonFrameEntry (I.fromCrossedBTData hAB O).outerGeometry.reflected := by
+  let J := I.fromCrossedBTData hAB O
+  let R := J.outerGeometry.reflected
+  have hJAB : J.cycle.theta A=J.cycle.theta B := hAB
+  have hJnorm : (J.cycle.point A).y-(J.cycle.point B).y=1 := by
+    change (I.cycle.point A).y-O.pointB.y=1
+    rw [O.B_tangent]
+    exact hnorm
+  have hRAy : (R.cycle.point A).y= -(I.cycle.point B).y := by
+    change -O.pointB.y= -(I.cycle.point B).y
+    rw [O.B_tangent]
+  have hRHr : R.cycle.theta A-R.cycle.theta H=I.cycle.theta D-I.cycle.theta B := by
+    change (I.cycle.theta B-I.cycle.theta B)-(I.cycle.theta B-I.cycle.theta D)=
+      I.cycle.theta D-I.cycle.theta B
+    ring
+  apply R.common_HG0_entry hqL hq
+  · change J.cycle.theta B-J.cycle.theta B=J.cycle.theta B-J.cycle.theta A
+    linarith
+  · change -(J.cycle.point B).y-(-(J.cycle.point A).y)=1
+    linarith
+  · change I.cycle.theta B-I.cycle.theta B=I.cycle.theta B-I.cycle.theta B
+    rfl
+  · change I.cycle.theta B-I.cycle.theta D<I.cycle.theta B-I.cycle.theta B
+    linarith
+  · rw [hRHr]
+    exact hr
+  · change -O.pointT.y≤0
+    linarith [O.T_nonneg]
+  · have hJTD : J.cycle.Feasible T 2 := by
+      simpa [J,HardInput.fromCrossedBTData,crossedBTCycle,Feasible,slack,edge,word,delta,next,
+        B,T,D,zeroFeasible,sub_nonneg] using O.TD_two
+    have hh := (reflected_feasible J.cycle H 2).2
+      (by simpa [reflectedIndex,next,H,T] using hJTD)
+    simpa [R,HardOuterGeometry.reflected,HardInput.outerGeometry,reflectedOwner] using hh
+  · rw [hRAy,hRHr]
+    exact hentry
+
+theorem HardInput.crossed_TD_large_entry {q : ℝ} (I : HardInput q)
+    (hqL : qLow≤q) (hq : q≤qCap)
+    (hAB : I.cycle.theta A=I.cycle.theta B)
+    (hnorm : (I.cycle.point A).y-(I.cycle.point B).y=1)
+    (hTA : I.cycle.theta T≤I.cycle.theta A)
+    (hAG : I.cycle.theta A≤I.cycle.theta G)
+    (hBD : I.cycle.theta B<I.cycle.theta D) (hlarge : 1/2≤ -(I.cycle.point B).y) :
+    ∃ O : CrossedBTData q (I.cycle.point B) (I.cycle.point T) (I.cycle.point D)
+      (I.cycle.theta D-I.cycle.theta B) (I.cycle.theta B-I.cycle.theta T),
+      CommonFrameEntry (I.fromCrossedBTData hAB O).outerGeometry.reflected := by
+  have howner : I.witnesses.owner T=0 ∨ I.witnesses.owner T=2 := by
+    simpa [normalOwners,T] using I.witnesses.allowed T
+  rcases howner with h0 | h2
+  · have hTD : I.cycle.Feasible T 0 := by simpa [h0] using I.witnesses.feasible T
+    obtain ⟨hr,⟨O⟩⟩ := I.crossed_TD0_large_output hqL hq hAB hnorm hTA hAG hBD hlarge hTD
+    exact ⟨O,I.fromCrossedBTData_entry hqL hq hAB hnorm O hBD hr (Or.inl hlarge)⟩
+  · have hTD : I.cycle.Feasible T 2 := by simpa [h2] using I.witnesses.feasible T
+    obtain ⟨hr,⟨O⟩⟩ := I.crossed_TD2_large_output hqL hq hAB hnorm hTA hAG hBD.le hlarge hTD
+    exact ⟨O.toCrossedBTData,I.fromCrossedBTData_entry hqL hq hAB hnorm
+      O.toCrossedBTData hBD hr (Or.inl hlarge)⟩
+
+theorem HardInput.crossed_TD_small_entry {q : ℝ} (I : HardInput q)
+    (hqL : qLow≤q) (hq : q≤qCap)
+    (hAB : I.cycle.theta A=I.cycle.theta B)
+    (hnorm : (I.cycle.point A).y-(I.cycle.point B).y=1)
+    (hTA : I.cycle.theta T≤I.cycle.theta A)
+    (hAG : I.cycle.theta A≤I.cycle.theta G)
+    (hBD : I.cycle.theta B<I.cycle.theta D)
+    (hsmall : -(I.cycle.point B).y∈Icc (67/200:ℝ) (1/2)) :
+    ∃ O : CrossedBTData q (I.cycle.point B) (I.cycle.point T) (I.cycle.point D)
+      (I.cycle.theta D-I.cycle.theta B) (I.cycle.theta B-I.cycle.theta T),
+      CommonFrameEntry (I.fromCrossedBTData hAB O).outerGeometry.reflected := by
+  have howner : I.witnesses.owner T=0 ∨ I.witnesses.owner T=2 := by
+    simpa [normalOwners,T] using I.witnesses.allowed T
+  rcases howner with h0 | h2
+  · have hTD : I.cycle.Feasible T 0 := by simpa [h0] using I.witnesses.feasible T
+    obtain ⟨hBy,hr,⟨O⟩⟩ := I.crossed_TD0_small_output hqL hq hAB hnorm hTA hAG hBD hsmall hTD
+    exact ⟨O,I.fromCrossedBTData_entry hqL hq hAB hnorm O hBD
+      (by linarith) (Or.inr ⟨hBy.le,hr⟩)⟩
+  · have hTD : I.cycle.Feasible T 2 := by simpa [h2] using I.witnesses.feasible T
+    obtain ⟨hBy,hr,⟨O⟩⟩ := I.crossed_TD2_small_output hqL hq hAB hnorm hTA hAG hBD hsmall hTD
+    exact ⟨O.toCrossedBTData,I.fromCrossedBTData_entry hqL hq hAB hnorm
+      O.toCrossedBTData hBD (by linarith) (Or.inr ⟨hBy.le,hr⟩)⟩
 
 end SignedCycle
 end SquaresInCircles.Eight.TableFree
