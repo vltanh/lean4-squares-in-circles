@@ -240,5 +240,105 @@ theorem HardInput.delta_zero_sharp {q : ℝ} (I : HardInput q) (hq : q≤qStar)
   exact ⟨hADsource,I.canonical_sharp hHG hAB hTD hADsource hED
     (hright.trans hleft) hEH hq⟩
 
+/-- The complete ordered canceling source, before either outer zero edge
+has been aligned.  H, D, E and their original mixed contacts are retained
+by the construction, so the actual delta-zero source is covered. -/
+theorem HardInput.ordered_canceling_delta_zero_endpoint {q : ℝ} (I : HardInput q)
+    (hqL : qLow≤q) (hq : q≤qCap)
+    (hAB : I.cycle.theta A=I.cycle.theta B)
+    (hsum : (I.cycle.point A).y-(I.cycle.point B).y=1)
+    (hAH : I.cycle.theta A≤I.cycle.theta H)
+    (hAG : I.cycle.theta A≤I.cycle.theta G)
+    (hDB : I.cycle.theta D≤I.cycle.theta B)
+    (hTB : I.cycle.theta T≤I.cycle.theta B)
+    (hHG : I.cycle.Feasible H 2) (hTD : I.cycle.Feasible T 0)
+    (hED : I.cycle.theta E=I.cycle.theta D)
+    (hDE : I.cycle.Feasible D 3) (hEH : I.cycle.Feasible E 1) :
+    ∃ J : HardInput q,
+      J.cycle.theta G=J.cycle.theta H ∧
+      J.cycle.theta A=J.cycle.theta B ∧
+      J.cycle.theta T=J.cycle.theta D ∧
+      J.cycle.theta A=J.cycle.theta D ∧
+      J.cycle.theta E=J.cycle.theta D ∧
+      J.cycle.theta D≤J.cycle.theta H ∧ J.cycle.Feasible E 1 ∧
+      AnchorNonincrease I.cycle J.cycle ∧
+      ((I.cycle.theta G≠I.cycle.theta H ∨ I.cycle.theta T≠I.cycle.theta D ∨
+        (I.cycle.theta A<I.cycle.theta H ∧ I.cycle.theta D<I.cycle.theta A)) →
+        StrictAnchorLoss I.cycle J.cycle) := by
+  obtain ⟨J,hG,hT,hAB',hend,hnon,hstrict,hfixed,hslack⟩ :=
+    I.ordered_canceling_split hqL hq hAB hsum hAH hAG hDB hTB hHG hTD
+  have hH := hfixed H (by simp)
+  have hD := hfixed D (by simp)
+  have hE := hfixed E (by simp)
+  have hED' : J.cycle.theta E=J.cycle.theta D := by rw [hE.2,hD.2,hED]
+  have ho : J.cycle.theta D≤J.cycle.theta H := by
+    rw [hD.2,hH.2]
+    exact (by simpa [← hAB] using hDB).trans hAH
+  have hDE' : J.cycle.Feasible D 3 := by
+    rw [Feasible,hslack D (Or.inl rfl)]
+    exact hDE
+  have hEH' : J.cycle.Feasible E 1 := by
+    rw [Feasible,hslack E (Or.inr rfl)]
+    exact hEH
+  have hAD : J.cycle.theta A=J.cycle.theta D := by
+    rcases hend with h | h
+    · exact (J.aligned_GA_DE_impossible hq hG hAB' hT h hED'
+        (by simpa [h] using ho) hDE' hEH').elim
+    · exact h
+  exact ⟨J,hG,hAB',hT,hAD,hED',ho,hEH',hnon,hstrict⟩
+
+theorem HardInput.ordered_canceling_delta_zero_lower_bound {q : ℝ} (I : HardInput q)
+    (hqL : qLow≤q) (hq : q≤qCap)
+    (hAB : I.cycle.theta A=I.cycle.theta B)
+    (hsum : (I.cycle.point A).y-(I.cycle.point B).y=1)
+    (hAH : I.cycle.theta A≤I.cycle.theta H)
+    (hAG : I.cycle.theta A≤I.cycle.theta G)
+    (hDB : I.cycle.theta D≤I.cycle.theta B)
+    (hTB : I.cycle.theta T≤I.cycle.theta B)
+    (hHG : I.cycle.Feasible H 2) (hTD : I.cycle.Feasible T 0)
+    (hED : I.cycle.theta E=I.cycle.theta D)
+    (hDE : I.cycle.Feasible D 3) (hEH : I.cycle.Feasible E 1) : qStar≤q := by
+  obtain ⟨J,hG,hAB',hT,hAD,hED',ho,hE,_,_⟩ :=
+    I.ordered_canceling_delta_zero_endpoint hqL hq hAB hsum hAH hAG hDB hTB
+      hHG hTD hED hDE hEH
+  exact J.canonical_lower_bound hG hAB' hT hAD hED' ho hE
+
+/-- The two outer errors are tested on the original source.  After their
+strict losses have been excluded, the source itself is canonical, and the
+original physical weak slacks are zero without identifying moved G/T. -/
+theorem HardInput.ordered_canceling_delta_zero_sharp {q : ℝ} (I : HardInput q)
+    (hqL : qLow≤q) (hq : q≤qStar)
+    (hAB : I.cycle.theta A=I.cycle.theta B)
+    (hsum : (I.cycle.point A).y-(I.cycle.point B).y=1)
+    (hAH : I.cycle.theta A≤I.cycle.theta H)
+    (hAG : I.cycle.theta A≤I.cycle.theta G)
+    (hDB : I.cycle.theta D≤I.cycle.theta B)
+    (hTB : I.cycle.theta T≤I.cycle.theta B)
+    (hHG : I.cycle.Feasible H 2) (hTD : I.cycle.Feasible T 0)
+    (hED : I.cycle.theta E=I.cycle.theta D)
+    (hDE : I.cycle.Feasible D 3) (hEH : I.cycle.Feasible E 1) :
+    I.cycle.theta G=I.cycle.theta H ∧
+      I.cycle.theta T=I.cycle.theta D ∧ I.cycle.theta A=I.cycle.theta D ∧
+      q=qStar ∧ I.cycle.theta H-I.cycle.theta D=FiveCorner.selected.angle ∧
+      AllAnchorsOn qStar I.cycle ∧
+      ∀ i j,j∈terminalOwners i → I.cycle.slack i j=0 := by
+  have hQ : q≤qCap := hq.trans qStar_limits.2.2.le
+  obtain ⟨J,hG,hAB',hT,hAD,hED',ho,hE,hnon,hstrict⟩ :=
+    I.ordered_canceling_delta_zero_endpoint hqL hQ hAB hsum hAH hAG hDB hTB
+      hHG hTD hED hDE hEH
+  have hsharp := J.canonical_sharp hG hAB' hT hAD hED' ho hE hq
+  have hnoloss : ¬StrictAnchorLoss I.cycle J.cycle :=
+    no_strict_loss_to_on_circle
+      (fun i _ => (I.necessary.contained i).trans hq) hsharp.2.2.1
+  have hGsource : I.cycle.theta G=I.cycle.theta H := by
+    by_contra h
+    exact hnoloss (hstrict (Or.inl h))
+  have hTsource : I.cycle.theta T=I.cycle.theta D := by
+    by_contra h
+    exact hnoloss (hstrict (Or.inr (Or.inl h)))
+  have hDA : I.cycle.theta D≤I.cycle.theta A := by simpa [← hAB] using hDB
+  exact ⟨hGsource,hTsource,I.delta_zero_sharp hq hGsource hAB hTsource
+    hAH hDA hED hDE hEH⟩
+
 end SignedCycle
 end SquaresInCircles.Eight.TableFree
