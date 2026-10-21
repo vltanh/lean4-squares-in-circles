@@ -119,7 +119,7 @@ theorem lower_primary {a b A B φ : ℝ} (hs : CoreState a b) (ht : OuterState A
   have hh := mul_nonpos_of_nonpos_of_nonneg (show value b B φ-γ≤0 by linarith) hsine.le
   linarith
 
-theorem upper_first {a b A B x : ℝ} (ht : OuterState A B)
+theorem upper_first {b A B x : ℝ} (ht : OuterState A B)
     (hx : x∈Icc (0:ℝ) (7/10))
     (hsep : (1+Real.cos x+Real.sin x)/2≤ -b+A*Real.cos x+B*Real.sin x) :
     γ<value b B (Real.pi/2+x) := by
