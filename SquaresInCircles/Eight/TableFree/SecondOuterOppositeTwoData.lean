@@ -39,11 +39,12 @@ def v (b x : ℝ) : ℝ := W b*Real.sin x+(U b-1)*Real.cos x
 
 lemma cost_identity {a b A B φ : ℝ} (hs : OuterState a b) (ht : OuterState A B) :
     SecondWord.cost 2 .outer .outer false true a b A B φ=value b B φ := by
+  unfold value
   rw [show P b=PLabel.eval a b from PLabel.outer_actual hs,
     show V B=VLabel.eval A B from VLabel.outer_actual ht]
   norm_num [SecondWord.cost,label,TableFreeWordGeometry.wrongValue,next,
     WordProblems.secondCoefficients,WordProblems.radialIndex,WordProblems.signIndex,
-    WordProblems.sign,value,PLabel,VLabel,RoleLabel.eval]
+    WordProblems.sign,PLabel,VLabel,RoleLabel.eval]
   ring
 
 lemma upper_width {x : ℝ} (hx : x∈Icc 0 (7/10)) :

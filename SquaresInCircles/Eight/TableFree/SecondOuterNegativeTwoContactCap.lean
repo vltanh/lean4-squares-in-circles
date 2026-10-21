@@ -42,16 +42,18 @@ lemma zero_target :
   have hsu := sin_le_sin9 (show (0:ℝ)≤7/10 by norm_num)
   have hcos := cos10_le_cos (show (0:ℝ)≤7/10 by norm_num)
   have hcosu := cos_le_cos12 (show (0:ℝ)≤7/10 by norm_num)
-  have hl := mul_le_mul hu.2.le hcosu
+  have hl := mul_le_mul
+    (show U 0-1≤191457567100390/100000000000000-1 by linarith) hcosu
     (by linarith [hc.2.2.1] : 0≤Real.cos (7/10))
-    (by norm_num : (0:ℝ)≤191457567100390/100000000000000)
-  have hh := mul_le_mul hu.1.le hcos
+    (by norm_num : (0:ℝ)≤191457567100390/100000000000000-1)
+  have hh := mul_le_mul
+    (show 191457567100389/100000000000000-1≤U 0-1 by linarith) hcos
     (by norm_num [cos10,cos8] : (0:ℝ)≤cos10 (7/10))
-    (by linarith [hu.1] : 0≤U 0)
+    (by linarith [hu.1] : 0≤U 0-1)
   norm_num [sin11,sin9,sin7,cos12,cos10,cos8] at hs hsu hcos hcosu hl hh
   change (613013931/5000000000:ℝ)<
       1/2-(U 0-1)*Real.cos (7/10)+(1/2)*Real.sin (7/10) ∧
     1/2-(U 0-1)*Real.cos (7/10)+(1/2)*Real.sin (7/10)<613013935/5000000000
-  constructor <;> nlinarith
+  constructor <;> linarith
 
 end SquaresInCircles.Eight.TableFree.SecondWord.NegativeTwo.TargetContact.Cap

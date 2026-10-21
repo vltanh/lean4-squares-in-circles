@@ -47,10 +47,16 @@ lemma factor_hasDerivAt {u : ℝ} (hu : u≠0) (hq : q u≠0) :
 lemma brace_identity {u r z v : ℝ} (hu : u≠0) (hq : q u≠0)
     (hv : v≠0) (hc : u^2+r^2*u^2=Q0) (hn : z^2+v^2=q u) :
     brace u r v=K u/(u^3*q u)-r^2*z^2/(q u*v^2) := by
-  dsimp [brace,K]
+  have hK : K u=Q0*q u-3*r^2*u^3 := by
+    dsimp [K,q]
+    linear_combination 3*u*hc
+  have hrec : 1/v^2=1/q u+z^2/(q u*v^2) := by
+    field_simp [hq,hv]
+    linarith
+  dsimp [brace]
+  rw [show r^2/v^2=r^2*(1/v^2) by ring,hrec,hK]
   field_simp [hu,hq,hv]
-  dsimp [q] at *
-  linear_combination (u^2*v^2)*hc+(r^2*u^3)*hn
+  ring
 
 lemma actual_q_positive {b : ℝ} (hb : b∈Icc 0 outerDiagonal) :
     (1357/1250:ℝ)<q (U b) := by

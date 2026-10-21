@@ -64,9 +64,22 @@ lemma RoleLabel.first_numerator (H : RoleLabel) {b : ℝ}
   have hr : ratio b*U b=W b := by
     change (W b/U b)*U b=W b
     field_simp [hp.ne']
-  dsimp [RoleLabel.d1]
-  change (H.q+2*H.r*b+H.s*(U b-1/2)-(H.p+H.s*b)*ratio b)*U b=_
+  dsimp [RoleLabel.d1,U,W] at hc hr ⊢
   linear_combination H.s*hc-(H.p+H.s*b)*hr
+
+lemma RoleLabel.third_numerator (H : RoleLabel) {b : ℝ}
+    (hb : b∈Icc 0 outerAxial) :
+    H.d3 b*(U b)^5= -3*Q0*(H.s*Q0+(H.p-H.s/2)*W b) := by
+  have hu := U_positive hb
+  have hc := UW_circle hb
+  have he : H.d3 b*(U b)^5=
+      -3*Q0*(H.s*(U b)^2+(H.p+H.s*b)*W b) := by
+    dsimp [RoleLabel.d3,ratioD,ratioDD,U,W]
+    field_simp [hu.ne']
+    ring
+  rw [he]
+  dsimp [W] at hc ⊢
+  linear_combination -3*Q0*H.s*hc
 
 /-- The hypotheses following the circle domain contain rational data only
 when the reference and radical bracket are rational. -/
