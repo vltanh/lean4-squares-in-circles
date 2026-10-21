@@ -35,8 +35,9 @@ structure Pair (q Y r : ℝ) (H : SignedPoint) where
   HG : zeroFeasible H pointG r 0
   GA : quarterFeasible pointG pointA 0 0
 
-theorem strict_pair {q P Y r z : ℝ} {H : SignedPoint}
-    (S : CrossedLargeScalar.CapData q P Y) (hqL : qLow≤q)
+theorem strict_pair_of_bounds {q P Y r z : ℝ} {H : SignedPoint}
+    (hPmem : P∈Icc (1/2 : ℝ) (3/4)) (hYmem : Y∈Icc (1/2 : ℝ) (13/10))
+    (hcircle : (P+1)^2+Y^2≤q) (hqL : qLow≤q) (hq : q≤qCap)
     (hr : r∈Icc 0 frameCap) (hz : z∈Ioc 0 frameCap)
     (hGA : 1/2≤V P Y z)
     (hgain : CrossedLargeScalar.demand q P Y r 0+z/150≤H.y) :
@@ -45,31 +46,31 @@ theorem strict_pair {q P Y r z : ℝ} {H : SignedPoint}
   have htr := transport_trig hzI
   have hsin : 0<Real.sin z := Real.sin_pos_of_pos_of_lt_pi hz.1
     (by dsimp [frameCap] at hz; linarith [hz.2,Real.pi_gt_three])
-  have hPcos := mul_le_mul_of_nonneg_left htr.2.1 (show 0≤P by linarith [S.P_mem.1])
-  have hYsin := mul_pos (show 0<Y by linarith [S.Y_mem.1]) hsin
+  have hPcos := mul_le_mul_of_nonneg_left htr.2.1 (show 0≤P by linarith [hPmem.1])
+  have hYsin := mul_pos (show 0<Y by linarith [hYmem.1]) hsin
   have hP : 1/2<P := by dsimp [V] at hGA; nlinarith
   let η := min ((P-1/2)/2) (z/300)
   have hη : 0<η := lt_min (by linarith) (by linarith)
   have hηP : η≤(P-1/2)/2 := min_le_left _ _
   have hηz : η≤z/300 := min_le_right _ _
   let C := P-η
-  have hC : C∈Icc (1/2 : ℝ) (177/250) := by
+  have hC : C∈Icc (1/2 : ℝ) (3/4) := by
     dsimp [C]
-    constructor <;> linarith [S.P_mem.2]
+    constructor <;> linarith [hPmem.2]
   let G' := SignedPoint.outerAt q (1/2-C)
   let A' : SignedPoint := ⟨C+1/2,Y-1/2⟩
   have hGy : G'.y≤0 := by dsimp [G',SignedPoint.outerAt]; linarith [hC.1]
   have hdiag : |1/2-C|≤diagonalCoordinate q := by
     rw [abs_of_nonpos (show 1/2-C≤0 by linarith [hC.1])]
-    linarith [hC.2,(uniform_circle_reserves hqL S.ceiling).1]
+    linarith [hC.2,(uniform_circle_reserves hqL hq).1]
   obtain ⟨hGs,hGq,hGc⟩ := SignedPoint.outerAt_spec hqL hdiag
-  have hAy : 0≤A'.y := by dsimp [A']; linarith [S.Y_mem.1]
+  have hAy : 0≤A'.y := by dsimp [A']; linarith [hYmem.1]
   have hAs : A'.Sorted := by
     constructor
     · dsimp [A']; linarith [hC.1]
     · rw [abs_of_nonneg hAy]
       dsimp [A']
-      linarith [hC.1,S.Y_mem.2]
+      linarith [hC.1,hYmem.2]
   have hAc : A'.AvoidsCore := by
     have ha : 1≤A'.a := by dsimp [A']; linarith [hC.1]
     dsimp [SignedPoint.AvoidsCore,SignedPoint.coreDistance]
@@ -84,8 +85,8 @@ theorem strict_pair {q P Y r z : ℝ} {H : SignedPoint}
       dsimp [A']
       ring
     rw [hc]
-    linarith [S.circle]
-  have hradP : 0≤q-P^2 := by nlinarith [S.circle,S.P_mem.1,S.Y_mem.1]
+    linarith [hcircle]
+  have hradP : 0≤q-P^2 := by nlinarith [hcircle,hPmem.1,hYmem.1]
   have hCP : C≤P := by dsimp [C]; linarith
   have hC2 := pow_le_pow_left₀ (show 0≤C by linarith [hC.1]) hCP 2
   have hW : Real.sqrt (q-P^2)≤Real.sqrt (q-C^2) :=
@@ -124,6 +125,15 @@ theorem strict_pair {q P Y r z : ℝ} {H : SignedPoint}
     A_tangent := rfl
     HG := hHG
     GA := hGA' }⟩
+
+theorem strict_pair {q P Y r z : ℝ} {H : SignedPoint}
+    (S : CrossedLargeScalar.CapData q P Y) (hqL : qLow≤q)
+    (hr : r∈Icc 0 frameCap) (hz : z∈Ioc 0 frameCap)
+    (hGA : 1/2≤V P Y z)
+    (hgain : CrossedLargeScalar.demand q P Y r 0+z/150≤H.y) :
+    Nonempty (Pair q Y r H) :=
+  strict_pair_of_bounds ⟨S.P_mem.1,by linarith [S.P_mem.2]⟩
+    ⟨by linarith [S.Y_mem.1],S.Y_mem.2⟩ S.circle.le hqL S.ceiling hr hz hGA hgain
 
 end CrossedLargeConstruction
 
