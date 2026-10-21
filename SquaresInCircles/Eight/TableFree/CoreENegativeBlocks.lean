@@ -64,7 +64,7 @@ theorem budgets {C : SignedCycle} {ab bt td de eh : Fin 4} {n k l b t d s : ℝ}
   exact ⟨by linarith,by linarith,by linarith,by linarith⟩
 
 theorem actual_lower {C : SignedCycle} {q d s b t : ℝ} {ab bt td de eh : Fin 4}
-    (hC : C.Necessary q) (hcore : (C.point E).Core) (hy : (C.point E).y≤0)
+    (hC : C.Necessary q) (hcore : (C.point E).Core)
     (hab : ab=0 ∨ ab=2) (hbt : bt=2 ∨ bt=3) (htd : td=0 ∨ td=2)
     (hde : de=2 ∨ de=3) (heh : eh=0 ∨ eh=1)
     (hvar : positiveVariation C.theta≤frameCap)
@@ -105,7 +105,7 @@ theorem actual_lower {C : SignedCycle} {q d s b t : ℝ} {ab bt td de eh : Fin 4
     simpa only [(hc i).1,(hc i).2] using hh
   have henv := CoreENegativeEnvelope.mixed_sum_lower h hb ⟨he,hbud.1⟩
     (fun i => (Bs i).P) (fun i => (Bs i).N) hP hN hbud.2.1 hbud.2.2.2
-  have hcharge := charge_lower hC hcore hy
+  have hcharge := charge_lower hC hcore
     (show eTotal C de eh∈Icc 0 frameCap from ⟨he,by linarith [hbud.1,h.angle.1]⟩)
   rw [CoreEStress.increment_eq C hab hbt htd]
   dsimp [Bs] at *
@@ -126,7 +126,7 @@ theorem BT_B_upper {d s : ℝ} (hd : d∈Icc 0 frameCap) (hs : s∈Icc 0 (9/100)
   linarith
 
 theorem TD_lower {C : SignedCycle} {q s : ℝ} {ab de eh : Fin 4}
-    (hC : C.Necessary q) (hcore : (C.point E).Core) (hy : (C.point E).y≤0)
+    (hC : C.Necessary q) (hcore : (C.point E).Core)
     (hab : ab=0 ∨ ab=2) (hde : de=2 ∨ de=3) (heh : eh=0 ∨ eh=1)
     (hvar : positiveVariation C.theta≤frameCap)
     (hd : delta C.theta G∈Icc 0 frameCap) (hs : s∈Icc 0 (3/10))
@@ -144,11 +144,11 @@ theorem TD_lower {C : SignedCycle} {q s : ℝ} {ab de eh : Fin 4}
   have hNT : negativePart (delta C.theta T)=s := by
     rw [hT]
     simpa [negativePart] using max_eq_left hs.1
-  exact actual_lower hC hcore hy hab (Or.inl rfl) (Or.inr rfl) hde heh hvar
+  exact actual_lower hC hcore hab (Or.inl rfl) (Or.inr rfl) hde heh hvar
     (by simp [hPG,hPT]) (by simp [hNG,hNT]) he (familyTD hd hs) (TD_B_upper hd)
 
 theorem BT_lower {C : SignedCycle} {q s : ℝ} {ab de eh : Fin 4}
-    (hC : C.Necessary q) (hcore : (C.point E).Core) (hy : (C.point E).y≤0)
+    (hC : C.Necessary q) (hcore : (C.point E).Core)
     (hab : ab=0 ∨ ab=2) (hde : de=2 ∨ de=3) (heh : eh=0 ∨ eh=1)
     (hvar : positiveVariation C.theta≤frameCap)
     (hd : delta C.theta G∈Icc 0 frameCap) (hs : s∈Icc 0 (9/100))
@@ -166,7 +166,7 @@ theorem BT_lower {C : SignedCycle} {q s : ℝ} {ab de eh : Fin 4}
   have hNB : negativePart (delta C.theta B)=s := by
     rw [hB]
     simpa [negativePart] using max_eq_left hs.1
-  exact actual_lower hC hcore hy hab (Or.inr rfl) (Or.inl rfl) hde heh hvar
+  exact actual_lower hC hcore hab (Or.inr rfl) (Or.inl rfl) hde heh hvar
     (by simp [hPG,hPB]) (by simp [hNG,hNB]) he (familyBT hd hs) (BT_B_upper hd hs)
 
 end SquaresInCircles.Eight.TableFree.CoreENegativeBlocks

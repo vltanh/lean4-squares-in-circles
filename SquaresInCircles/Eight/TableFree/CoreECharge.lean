@@ -211,6 +211,25 @@ theorem actual_core_pair {E : SignedPoint} {u v : ℝ}
   · exact hv
   · exact he
 
+/-- Exchanging the two incident errors reverses only the signed transverse
+coefficient. The same charge therefore applies to either original E sign. -/
+theorem actual_core_pair_signed {E : SignedPoint} {u v : ℝ}
+    (hs : E.Sorted) (hc : E.Core)
+    (hu : |u|≤frameCap) (hv : |v|≤frameCap) (he : u+v∈Icc 0 frameCap) :
+    J (u+v)≤pairDeficit E.a (-E.y) u v := by
+  by_cases hy : E.y≤0
+  · exact actual_core_pair hs hc hy hu hv he
+  · have hy0 : 0≤E.y := (lt_of_not_ge hy).le
+    have hh := signed_pair_lower
+      (a := E.a) (b := E.y) (u := v) (v := u)
+      ⟨(SignedPoint.primary_gt_half hs hc.ge).le,SignedPoint.core_primary_le hs hc⟩
+      ⟨hy0,by simpa [abs_of_nonneg hy0] using hs.2⟩ hv hu
+      (by simpa [add_comm] using he)
+    have hid : pairDeficit E.a E.y v u=pairDeficit E.a (-E.y) u v := by
+      dsimp [pairDeficit]
+      ring
+    simpa only [hid,add_comm] using hh
+
 theorem J_hasDerivAt (e : ℝ) :
     HasDerivAt J (-Real.cos e/12-(13/12)*Real.sin e) e := by
   convert ((Real.hasDerivAt_sin e).neg.div_const 12).sub

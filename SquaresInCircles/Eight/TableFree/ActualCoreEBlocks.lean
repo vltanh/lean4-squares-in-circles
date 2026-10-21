@@ -74,11 +74,11 @@ theorem ordinary_small {C : SignedCycle} {de eh : Fin 4}
 
 theorem charge_lower {C : SignedCycle} {q : ℝ} {de eh : Fin 4}
     (hC : C.Necessary q) (hcore : (C.point E).Core)
-    (hy : (C.point E).y≤0) (he : eTotal C de eh∈Icc 0 frameCap) :
+    (he : eTotal C de eh∈Icc 0 frameCap) :
     PositiveScalarTransfer.J (eTotal C de eh)≤charge C de eh := by
   have hs := primary_small (C := C) (de := de) (eh := eh)
     (fun i => hC.spread (next i) i)
-  exact CoreECharge.actual_core_pair (hC.sorted E) hcore hy hs.1 hs.2 he
+  exact CoreECharge.actual_core_pair_signed (hC.sorted E) hcore hs.1 hs.2 he
 
 theorem sum_parts (C : SignedCycle) {ab bt td de eh : Fin 4}
     (hab : ab=0 ∨ ab=2) (hbt : bt=2 ∨ bt=3) (htd : td=0 ∨ td=2)

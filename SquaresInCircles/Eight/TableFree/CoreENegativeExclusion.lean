@@ -40,7 +40,7 @@ theorem scalar_positive {d : ℝ} (hd : d∈Icc 0 frameCap) :
 
 theorem flat_negative_TD_false {C : SignedCycle} {q s : ℝ} {ab de eh : Fin 4}
     (hq : q≤qCap) (hC : C.Necessary q) (hn : C.NormalAnchors)
-    (hcore : (C.point E).Core) (hy : (C.point E).y≤0)
+    (hcore : (C.point E).Core)
     (hvar : positiveVariation C.theta≤frameCap)
     (hab : ab=0 ∨ ab=2) (hde : de=2 ∨ de=3) (heh : eh=0 ∨ eh=1)
     (hG : 0≤delta C.theta G) (he : 0≤eTotal C de eh)
@@ -57,7 +57,7 @@ theorem flat_negative_TD_false {C : SignedCycle} {q s : ℝ} {ab de eh : Fin 4}
   have hnec := CoreENegativeStress.negative_TD_necessary hq hC hn hab hde heh
     (by norm_num [k]) (by linarith [hb.ell_lower]) hc (by norm_num : (0:ℝ)≤19/50)
     hG hs' hT hflat hf
-  have hinc := CoreENegativeBlocks.TD_lower hC hcore hy hab hde heh hvar hd
+  have hinc := CoreENegativeBlocks.TD_lower hC hcore hab hde heh hvar hd
     (Ioc_subset_Icc_self hs) hT he
   have hgain := PositiveSecantGain.negative_TD_gain (q := qCap)
     (by norm_num [qCap]) le_rfl hd (show s∈Ioc 0 frameCap from ⟨hs.1,hs'.2⟩)
@@ -69,7 +69,7 @@ theorem flat_negative_TD_false {C : SignedCycle} {q s : ℝ} {ab de eh : Fin 4}
 
 theorem flat_negative_BT_false {C : SignedCycle} {q s : ℝ} {ab de eh : Fin 4}
     (hq : q≤qCap) (hC : C.Necessary q) (hn : C.NormalAnchors)
-    (hcore : (C.point E).Core) (hy : (C.point E).y≤0)
+    (hcore : (C.point E).Core)
     (hvar : positiveVariation C.theta≤frameCap)
     (hab : ab=0 ∨ ab=2) (hde : de=2 ∨ de=3) (heh : eh=0 ∨ eh=1)
     (hG : 0≤delta C.theta G) (he : 0≤eTotal C de eh)
@@ -86,7 +86,7 @@ theorem flat_negative_BT_false {C : SignedCycle} {q s : ℝ} {ab de eh : Fin 4}
   have hnec := CoreENegativeStress.negative_BT_necessary hq hC hn hab hde heh
     (by norm_num [k]) (by linarith [hb.ell_lower]) hc (by norm_num : (0:ℝ)≤19/50)
     hG hs' hB hflat hf
-  have hinc := CoreENegativeBlocks.BT_lower hC hcore hy hab hde heh hvar hd
+  have hinc := CoreENegativeBlocks.BT_lower hC hcore hab hde heh hvar hd
     (Ioc_subset_Icc_self hs) hB he
   have hgain := ShortSecantGain.negative_BT_gain (q := qCap)
     (by norm_num [qCap]) le_rfl hd hs
@@ -124,7 +124,7 @@ theorem reselect_BT {C : SignedCycle} {ab bt de eh : Fin 4}
 
 theorem negative_TD_false {C : SignedCycle} {q : ℝ} {ab de eh : Fin 4}
     (hq : q≤qCap) (hC : C.Necessary q) (hn : C.NormalAnchors)
-    (hcore : (C.point E).Core) (hy : (C.point E).y≤0)
+    (hcore : (C.point E).Core)
     (hvar : positiveVariation C.theta≤frameCap)
     (hab : ab=0 ∨ ab=2) (hde : de=2 ∨ de=3) (heh : eh=0 ∨ eh=1)
     (hG : 0≤delta C.theta G) (he : 0≤eTotal C de eh)
@@ -144,21 +144,21 @@ theorem negative_TD_false {C : SignedCycle} {q : ℝ} {ab de eh : Fin 4}
     hq hn.D_nonpos hs hBT hTD
   rcases hent with hsecondary | ⟨hcoreT,hflat,hyT,hyu,hshort⟩
   · have hsecondary' : C.Feasible T 0 := (TD_contact C 0).2 (by simpa [hTs] using hsecondary)
-    exact CoreEPositiveExclusion.secondary_T_false hq hC hn hcore hy hvar hab hde heh
+    exact CoreEPositiveExclusion.secondary_T_false hq hC hn hcore hvar hab hde heh
       hG he (reselect_TD hf hsecondary')
-  · exact flat_negative_TD_false hq hC hn hcore hy hvar hab hde heh hG he
+  · exact flat_negative_TD_false hq hC hn hcore hvar hab hde heh hG he
       ⟨hs.1,hshort.le⟩ hTs hflat hf
 
 theorem negative_BT_aligned_false {C : SignedCycle} {q : ℝ} {ab de eh : Fin 4}
     (hq : q≤qCap) (hC : C.Necessary q) (hn : C.NormalAnchors)
-    (hcore : (C.point E).Core) (hy : (C.point E).y≤0)
+    (hcore : (C.point E).Core)
     (hvar : positiveVariation C.theta≤frameCap)
     (hab : ab=0 ∨ ab=2) (hde : de=2 ∨ de=3) (heh : eh=0 ∨ eh=1)
     (hG : 0≤delta C.theta G) (he : 0≤eTotal C de eh)
     (hTb : (C.point T).Boundary q) (hB : delta C.theta B<0) (halign : delta C.theta T=0)
     (hf : ∀ i,C.Feasible i (CoreEStress.owners ab 3 0 de eh i)) : False := by
   by_cases hsecondary : C.Feasible B 2
-  · exact CoreEPositiveExclusion.secondary_T_false hq hC hn hcore hy hvar hab hde heh
+  · exact CoreEPositiveExclusion.secondary_T_false hq hC hn hcore hvar hab hde heh
       hG he (reselect_BT hf hsecondary)
   let s : ℝ := -delta C.theta B
   have hs : s∈Ioc 0 frameCap :=
@@ -176,7 +176,7 @@ theorem negative_BT_aligned_false {C : SignedCycle} {q : ℝ} {ab de eh : Fin 4}
   obtain ⟨hcoreT,hflat,hyT,hyu,hshort⟩ := NegativeTEntry.negative_BT_aligned_entry
     (hC.sorted B) (hC.sorted T) (hC.sorted D) (hC.contained B) hTb (hC.contained D)
     (hC.core D) hq hn.B_nonpos hn.D_nonpos hs hBT hTD hnot
-  exact flat_negative_BT_false hq hC hn hcore hy hvar hab hde heh hG he
+  exact flat_negative_BT_false hq hC hn hcore hvar hab hde heh hG he
     ⟨hs.1,hshort.le⟩ hBs hflat hf
 
 /-- The complete preprocessed T owner union at a nonnegative signed
@@ -184,7 +184,7 @@ E-primary total. Negative BT uses only the actual TD alignment delivered
 by T-pair preprocessing. -/
 theorem preprocessed_core_E_false {C : SignedCycle} {q : ℝ} {ab bt td de eh : Fin 4}
     (hq : q≤qCap) (hC : C.Necessary q) (hn : C.NormalAnchors)
-    (hcore : (C.point E).Core) (hy : (C.point E).y≤0)
+    (hcore : (C.point E).Core)
     (hvar : positiveVariation C.theta≤frameCap)
     (hab : ab=0 ∨ ab=2) (hde : de=2 ∨ de=3) (heh : eh=0 ∨ eh=1)
     (hG : 0≤delta C.theta G) (he : 0≤eTotal C de eh)
@@ -193,14 +193,14 @@ theorem preprocessed_core_E_false {C : SignedCycle} {q : ℝ} {ab bt td de eh : 
       (bt=3 ∧ td=0 ∧ (delta C.theta B<0 → delta C.theta T=0)))
     (hf : ∀ i,C.Feasible i (CoreEStress.owners ab bt td de eh i)) : False := by
   rcases hT with ⟨rfl,rfl⟩ | ⟨rfl,rfl⟩ | ⟨rfl,rfl,halign⟩
-  · exact CoreEPositiveExclusion.secondary_T_false hq hC hn hcore hy hvar hab hde heh hG he hf
+  · exact CoreEPositiveExclusion.secondary_T_false hq hC hn hcore hvar hab hde heh hG he hf
   · by_cases ht : 0≤delta C.theta T
-    · exact CoreEPositiveExclusion.positive_TD_false hq hC hn hcore hy hvar hab hde heh hG ht he hf
-    · exact negative_TD_false hq hC hn hcore hy hvar hab hde heh hG he hTb (lt_of_not_ge ht) hf
+    · exact CoreEPositiveExclusion.positive_TD_false hq hC hn hcore hvar hab hde heh hG ht he hf
+    · exact negative_TD_false hq hC hn hcore hvar hab hde heh hG he hTb (lt_of_not_ge ht) hf
   · by_cases hb : 0≤delta C.theta B
-    · exact CoreEPositiveExclusion.positive_BT_false hq hC hn hcore hy hvar hab hde heh hG hb he hf
+    · exact CoreEPositiveExclusion.positive_BT_false hq hC hn hcore hvar hab hde heh hG hb he hf
     · have hb' : delta C.theta B<0 := lt_of_not_ge hb
-      exact negative_BT_aligned_false hq hC hn hcore hy hvar hab hde heh hG he hTb hb'
+      exact negative_BT_aligned_false hq hC hn hcore hvar hab hde heh hG he hTb hb'
         (halign hb') hf
 
 end SquaresInCircles.Eight.TableFree.CoreENegativeExclusion

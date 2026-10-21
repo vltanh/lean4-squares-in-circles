@@ -65,7 +65,7 @@ theorem normalized_core_E_false {q : ℝ} (I : SignedCycle.NormalizedBoundaryInp
   have hf := original_owners I hHG hGA
   by_cases he : 0≤eTotal I.cycle (I.witnesses.owner D) (I.witnesses.owner E)
   · exact CoreENegativeExclusion.preprocessed_core_E_false hqU I.necessary I.anchors_normal
-      hcore I.E_nonpos I.positive_variation.le hab hde heh hG he (I.radial T) hT hf
+      hcore I.positive_variation.le hab hde heh hG he (I.radial T) hT hf
   · obtain ⟨R⟩ := reduce_negative_total I hqL hqU hcore (lt_of_not_ge he)
     let O := R.move
     have hnec := O.necessary I.necessary
@@ -90,7 +90,7 @@ theorem normalized_core_E_false {q : ℝ} (I : SignedCycle.NormalizedBoundaryInp
         O.other_delta T (by decide) (by decide)] using hT
     have hf' := moved_owners O hf
     rcases R.normal_form with hnonnegative | ⟨hflat,hDE,hEH⟩
-    · exact CoreENegativeExclusion.preprocessed_core_E_false hqU hnec hnormal hcore' hy'
+    · exact CoreENegativeExclusion.preprocessed_core_E_false hqU hnec hnormal hcore'
         hvar hab O.de_allowed O.eh_allowed hG' hnonnegative hTb hT' hf'
     · have hflat' : (O.cycle.point E).a=7/12 := by
         simpa [O,CycleMove.cycle,replacePoint] using hflat

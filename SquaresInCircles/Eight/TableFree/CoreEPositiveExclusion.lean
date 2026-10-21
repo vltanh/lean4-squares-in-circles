@@ -49,7 +49,7 @@ theorem N_strict {d : ℝ} (hd : d∈Icc 0 frameCap) :
 
 theorem secondary_T_false {C : SignedCycle} {q : ℝ} {ab de eh : Fin 4}
     (hq : q≤qCap) (hC : C.Necessary q) (hn : C.NormalAnchors)
-    (hcore : (C.point E).Core) (hy : (C.point E).y≤0)
+    (hcore : (C.point E).Core)
     (hvar : positiveVariation C.theta≤frameCap)
     (hab : ab=0 ∨ ab=2) (hde : de=2 ∨ de=3) (heh : eh=0 ∨ eh=1)
     (hG : 0≤delta C.theta G) (he : 0≤eTotal C de eh)
@@ -60,7 +60,7 @@ theorem secondary_T_false {C : SignedCycle} {q : ℝ} {ab de eh : Fin 4}
     (by intro h; norm_num at h) (by intro h; norm_num at h) he
   have hd : d∈Icc 0 frameCap := by simpa [removed,d] using hb.1
   have hp := familyN hd
-  have hinc := CoreEOrdinaryEnvelope.actual_lower hC hcore hy hab (Or.inl rfl)
+  have hinc := CoreEOrdinaryEnvelope.actual_lower hC hcore hab (Or.inl rfl)
     (Or.inl rfl) hde heh hvar hG (by intro h; norm_num at h)
     (by intro h; norm_num at h) he
     (by simpa [removed,d] using hp) (CoreEOrdinaryEnvelope.coefficient_intervals hd).2
@@ -80,7 +80,7 @@ theorem secondary_T_false {C : SignedCycle} {q : ℝ} {ab de eh : Fin 4}
 
 theorem positive_TD_false {C : SignedCycle} {q : ℝ} {ab de eh : Fin 4}
     (hq : q≤qCap) (hC : C.Necessary q) (hn : C.NormalAnchors)
-    (hcore : (C.point E).Core) (hy : (C.point E).y≤0)
+    (hcore : (C.point E).Core)
     (hvar : positiveVariation C.theta≤frameCap)
     (hab : ab=0 ∨ ab=2) (hde : de=2 ∨ de=3) (heh : eh=0 ∨ eh=1)
     (hG : 0≤delta C.theta G) (hT : 0≤delta C.theta T) (he : 0≤eTotal C de eh)
@@ -94,7 +94,7 @@ theorem positive_TD_false {C : SignedCycle} {q : ℝ} {ab de eh : Fin 4}
   have hx : x∈Icc 0 d := ⟨hG,by dsimp [d,x,z]; linarith⟩
   have hz : z∈Icc 0 d := ⟨hT,by dsimp [d,x,z]; linarith⟩
   have hp := familyP_td hd hx hz
-  have hinc := CoreEOrdinaryEnvelope.actual_lower hC hcore hy hab (Or.inl rfl)
+  have hinc := CoreEOrdinaryEnvelope.actual_lower hC hcore hab (Or.inl rfl)
     (Or.inr rfl) hde heh hvar hG (by intro h; norm_num at h)
     (by intro _; exact hT) he (by simpa [removed,d,x,z] using hp)
     (CoreEOrdinaryEnvelope.coefficient_intervals hd).1
@@ -111,7 +111,7 @@ theorem positive_TD_false {C : SignedCycle} {q : ℝ} {ab de eh : Fin 4}
 
 theorem positive_BT_false {C : SignedCycle} {q : ℝ} {ab de eh : Fin 4}
     (hq : q≤qCap) (hC : C.Necessary q) (hn : C.NormalAnchors)
-    (hcore : (C.point E).Core) (hy : (C.point E).y≤0)
+    (hcore : (C.point E).Core)
     (hvar : positiveVariation C.theta≤frameCap)
     (hab : ab=0 ∨ ab=2) (hde : de=2 ∨ de=3) (heh : eh=0 ∨ eh=1)
     (hG : 0≤delta C.theta G) (hB : 0≤delta C.theta B) (he : 0≤eTotal C de eh)
@@ -125,7 +125,7 @@ theorem positive_BT_false {C : SignedCycle} {q : ℝ} {ab de eh : Fin 4}
   have hx : x∈Icc 0 d := ⟨hG,by dsimp [d,x,z]; linarith⟩
   have hz : z∈Icc 0 d := ⟨hB,by dsimp [d,x,z]; linarith⟩
   have hp := familyP_bt hd hx hz
-  have hinc := CoreEOrdinaryEnvelope.actual_lower hC hcore hy hab (Or.inr rfl)
+  have hinc := CoreEOrdinaryEnvelope.actual_lower hC hcore hab (Or.inr rfl)
     (Or.inl rfl) hde heh hvar hG (by intro _; exact hB)
     (by intro h; norm_num at h) he (by simpa [removed,d,x,z] using hp)
     (CoreEOrdinaryEnvelope.coefficient_intervals hd).1
@@ -142,7 +142,7 @@ theorem positive_BT_false {C : SignedCycle} {q : ℝ} {ab de eh : Fin 4}
 
 theorem nonnegative_T_false {C : SignedCycle} {q : ℝ} {ab bt td de eh : Fin 4}
     (hq : q≤qCap) (hC : C.Necessary q) (hn : C.NormalAnchors)
-    (hcore : (C.point E).Core) (hy : (C.point E).y≤0)
+    (hcore : (C.point E).Core)
     (hvar : positiveVariation C.theta≤frameCap)
     (hab : ab=0 ∨ ab=2) (hde : de=2 ∨ de=3) (heh : eh=0 ∨ eh=1)
     (hG : 0≤delta C.theta G) (he : 0≤eTotal C de eh)
@@ -150,8 +150,8 @@ theorem nonnegative_T_false {C : SignedCycle} {q : ℝ} {ab bt td de eh : Fin 4}
       (bt=3 ∧ td=0 ∧ 0≤delta C.theta B))
     (hf : ∀ i,C.Feasible i (CoreEStress.owners ab bt td de eh i)) : False := by
   rcases hT with ⟨rfl,rfl⟩ | ⟨rfl,rfl,hT⟩ | ⟨rfl,rfl,hB⟩
-  · exact secondary_T_false hq hC hn hcore hy hvar hab hde heh hG he hf
-  · exact positive_TD_false hq hC hn hcore hy hvar hab hde heh hG hT he hf
-  · exact positive_BT_false hq hC hn hcore hy hvar hab hde heh hG hB he hf
+  · exact secondary_T_false hq hC hn hcore hvar hab hde heh hG he hf
+  · exact positive_TD_false hq hC hn hcore hvar hab hde heh hG hT he hf
+  · exact positive_BT_false hq hC hn hcore hvar hab hde heh hG hB he hf
 
 end SquaresInCircles.Eight.TableFree.CoreEPositiveExclusion

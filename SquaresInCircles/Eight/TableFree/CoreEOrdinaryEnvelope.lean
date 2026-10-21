@@ -179,7 +179,7 @@ theorem mixed_sum_lower {d e l n b t : ℝ} (h : Bounds d l n b t)
 /-- This applies the analytic concentration to the original four blocks
 and the exact charge of the original core E state. -/
 theorem actual_lower {C : SignedCycle} {q l n b t : ℝ} {ab bt td de eh : Fin 4}
-    (hC : C.Necessary q) (hcore : (C.point E).Core) (hy : (C.point E).y≤0)
+    (hC : C.Necessary q) (hcore : (C.point E).Core)
     (hab : ab=0 ∨ ab=2) (hbt : bt=2 ∨ bt=3) (htd : td=0 ∨ td=2)
     (hde : de=2 ∨ de=3) (heh : eh=0 ∨ eh=1)
     (hvar : positiveVariation C.theta≤frameCap) (hG : 0≤delta C.theta G)
@@ -215,7 +215,7 @@ theorem actual_lower {C : SignedCycle} {q l n b t : ℝ} {ab bt td de eh : Fin 4
     simpa only [(hc i).1,(hc i).2] using hh
   have henv := mixed_sum_lower h hl hb.2.1 (fun i => (Bs i).P) (fun i => (Bs i).N)
     hP hN hb.2.2.1 hb.2.2.2
-  have hcharge := ActualCoreEBlocks.charge_lower hC hcore hy
+  have hcharge := ActualCoreEBlocks.charge_lower hC hcore
     (show ActualCoreEBlocks.eTotal C de eh∈Icc 0 frameCap from
       ⟨he,by linarith [hb.1.1,hb.2.1.2]⟩)
   rw [CoreEStress.increment_eq C hab hbt htd]
