@@ -14,14 +14,22 @@ concentration is now integrated into normalization at the actual source radius.
 Global zero/quarter-owner signs and the original DE restriction are drafted.
 The full positive-TD2 secondary row now includes both analytic transfer ranges
 and every concentration endpoint. Both E signs and the reflected positive-primary
-BT2/TD0 row are closed. Five of the ten second-word outer representatives are
-complete; every upper owner of the difficult opposite-three family is drafted,
-with two lower-secondary minima remaining. Hard sharpness now covers the full
-nonpositive-outer and ordered-normal classes. The signed opposite envelope
-forces both larger-middle normal signs without assuming the opposite sign.
+BT2/TD0 row are closed. Six of the ten second-word outer representatives and
+eight of twelve mixed-quarter representatives have complete original-owner
+drafts. The opposite-three outer family is complete. Original quarter signs
+now also give the outer radial restrictions. The all-high quarter and three-zero
+charges are drafted; the final outer bridge remains active.
+
+`UniversalHardSharp.hard_sharp` is now drafted for every hard input at the
+actual qLow≤q≤qStar. All large/small crossed branches feed actual same-radius
+descendants. The common-frame clamp derives its initial cap sum and unchanged
+budget from the original contacts, remains strictly feasible for every positive
+motion, and reaches H with strict original-circle A/B loss. Its reflected
+application retains the original E. This closes the hard terminal draft, but
+does not provide the unrestricted original-owner entry required by G3/G4.
 
 **Still incomplete:** both binary-word aggregate exclusions, remaining second-word
-contact families, exhaustive global owner entry, hard-source recovery, and the
+contact families, exhaustive global owner entry, universal source/normal recovery, and the
 unconditional table-free public bound/equality assembly. The public compatibility
 capture path has not been retired. No compilation, typechecking, tests, CI,
 certificate replay or final source audit was run in this continuation. Earlier
