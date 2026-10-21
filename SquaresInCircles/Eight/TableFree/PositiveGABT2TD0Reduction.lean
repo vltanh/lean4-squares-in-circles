@@ -2,6 +2,7 @@ module
 
 public import SquaresInCircles.Eight.TableFree.PositiveEContactExclusion
 public import SquaresInCircles.Eight.TableFree.CoreEPositiveComplete
+public import SquaresInCircles.Eight.TableFree.CoreESignedExclusion
 public import SquaresInCircles.Eight.TableFree.PositiveSecondaryEExclusion
 public import SquaresInCircles.Eight.TableFree.OuterEPrimaryComparison
 
@@ -108,14 +109,15 @@ theorem positive_pair_diagonal {d : ExactFamily.Coordinates} (hd : d.IsStationar
       hab hG' hD' houter hf').elim
   · exact ⟨diagonal_output I hcap F hD.le hE.le hdiag⟩
 
-/-- The input keeps every original selected owner and the original
-normalized E sign. Every discarded branch is a proved contradiction. -/
-theorem original {d : ExactFamily.Coordinates} (hd : d.IsStationary)
-    (hsharp : d.q∈Icc qLow qTrial) {q : ℝ} (I : NormalizedBoundaryInput q)
+/-- Every original E sign is admitted. In the sole-DE case the actual
+same-radius contact theorem treats the positive-E alternative; the
+sign-symmetric core theorem treats the other radial kind. -/
+theorem original_boundary {d : ExactFamily.Coordinates} (hd : d.IsStationary)
+    (hsharp : d.q∈Icc qLow qTrial) {q : ℝ} (I : BoundaryInput q)
     (hQL : qLow≤q) (hq : q≤d.q)
     (hHG : I.witnesses.owner H=2) (hGA : I.witnesses.owner G=1)
     (hBT : I.witnesses.owner B=2) (hTD : I.witnesses.owner T=0)
-    (hG : 0<delta I.cycle.theta G) : Nonempty (DiagonalOutput I.toBoundaryInput) := by
+    (hG : 0<delta I.cycle.theta G) : Nonempty (DiagonalOutput I) := by
   have hcap : q≤qCap := (hq.trans hsharp.2).trans uniform_radius_order.2.2.1.le
   have hab : I.witnesses.owner A=0 ∨ I.witnesses.owner A=2 := by
     simpa [normalOwners,A] using I.witnesses.allowed A
@@ -123,7 +125,7 @@ theorem original {d : ExactFamily.Coordinates} (hd : d.IsStationary)
     simpa [normalOwners,D] using I.witnesses.allowed D
   have heh : I.witnesses.owner E=0 ∨ I.witnesses.owner E=1 := by
     simpa [normalOwners,E] using I.witnesses.allowed E
-  have hf := CoreEPositiveComplete.original_owners I hHG hGA
+  have hf := CoreESignedExclusion.original_owners I hHG hGA
   rw [hBT,hTD] at hf
   rcases I.radial E with houter | hcore
   · have hD : I.cycle.Feasible D 2 ∨
@@ -150,11 +152,22 @@ theorem original {d : ExactFamily.Coordinates} (hd : d.IsStationary)
       exact hh.elim
     · exact (SolePositiveExclusion.sole_EH_false hQL (hq.trans hsharp.2) I.necessary
         I.anchors_normal I.positive_variation.le hab hG.le he'.le (reselect_E hf hD hE)).elim
-    · exact (SolePositiveExclusion.sole_DE_false hQL (hq.trans hsharp.2) I.necessary
-        I.anchors_normal I.positive_variation.le hab hG.le hd'.le I.E_nonpos (reselect_E hf hD hE)).elim
-    · exact positive_pair_diagonal hd hsharp I.toBoundaryInput hQL hq hab hG hd' he'
+    · exact (PositiveEContactExclusion.sole_DE_false hd hsharp hQL hq I.necessary
+        I.anchors_normal I.positive_variation.le hab hG hd'.le houter
+        (reselect_E hf hD hE)).elim
+    · exact positive_pair_diagonal hd hsharp I hQL hq hab hG hd' he'
         (reselect_E hf hD hE)
-  · exact (CoreEPositiveComplete.normalized_core_E_false I hQL hcap hcore hHG hGA hG.le
+  · exact (CoreESignedExclusion.positive_GA_false I hQL hcap hcore hHG hGA hG.le
       (Or.inl ⟨hBT,hTD⟩)).elim
+
+/-- The normalized source is a direct specialization of the sign-free
+original-boundary theorem; no E normalization is performed in its proof. -/
+theorem original {d : ExactFamily.Coordinates} (hd : d.IsStationary)
+    (hsharp : d.q∈Icc qLow qTrial) {q : ℝ} (I : NormalizedBoundaryInput q)
+    (hQL : qLow≤q) (hq : q≤d.q)
+    (hHG : I.witnesses.owner H=2) (hGA : I.witnesses.owner G=1)
+    (hBT : I.witnesses.owner B=2) (hTD : I.witnesses.owner T=0)
+    (hG : 0<delta I.cycle.theta G) : Nonempty (DiagonalOutput I.toBoundaryInput) :=
+  original_boundary hd hsharp I.toBoundaryInput hQL hq hHG hGA hBT hTD hG
 
 end SquaresInCircles.Eight.TableFree.PositiveGABT2TD0Reduction
