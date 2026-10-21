@@ -1,5 +1,9 @@
 # Table-free source recovery and continuation — 21 October 2026
 
+> This document preserves the recovery snapshot. For subsequent reconstructed
+> results and the current task-by-task implementation status, see the
+> [live table-free formalization roadmap](TABLE_FREE_FORMALIZATION_PROGRESS.md).
+
 ## Current state
 
 The executor disconnected during proof drafting and reconnected with an older

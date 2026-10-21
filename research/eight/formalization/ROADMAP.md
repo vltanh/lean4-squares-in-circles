@@ -1,5 +1,12 @@
 # Transferred n=8 formalization roadmap — uncompiled draft pass
 
+> **Current progress, 21 October 2026:** use the
+> [live table-free formalization roadmap](TABLE_FREE_FORMALIZATION_PROGRESS.md)
+> for checkpointed results, active owners, dependencies and remaining tasks.
+> The unrestricted table-free source assembly is incomplete; all current
+> drafts are uncompiled and unaudited. The staged specification below is
+> preserved as historical scope, not a current completion ledger.
+
 This implementation continues PR #9 at `a21c91f54039e805a637e983bc612bd130f39ee7`.
 The original roadmap below is preserved as the scope of the work. The current
 user instruction authorizes source implementation and a new draft PR, and

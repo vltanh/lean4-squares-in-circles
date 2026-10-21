@@ -2,10 +2,29 @@
 
 ## Current closure ledger — 21 October 2026
 
-The live progress tracker is [**TABLEFREE_LEAN_CLOSURE_ROADMAP_2026_10_21.md**](TABLEFREE_LEAN_CLOSURE_ROADMAP_2026_10_21.md) (initial checkpoint commit [`099afce`](https://github.com/vltanh/lean4-squares-in-circles/commit/099afced367f1d1271e9482fe23af9aab0ad6c2b)). This distinguishes complete **hand mathematics**, extensive **uncompiled Lean source drafts**, and the still **open full table-free proof assembly**. Major remaining gates: complete physical wrong-word/owner coverage, exhaustive same-radius G/T entry, sharp equality on the untouched source, and replacement of `Candidate.capture` in the public source entry. Compilation, CI and the final audit remain deferred.
+The gate-level tracker is [**TABLEFREE_LEAN_CLOSURE_ROADMAP_2026_10_21.md**](TABLEFREE_LEAN_CLOSURE_ROADMAP_2026_10_21.md) (initial checkpoint commit [`099afce`](https://github.com/vltanh/lean4-squares-in-circles/commit/099afced367f1d1271e9482fe23af9aab0ad6c2b)). This distinguishes complete **hand mathematics**, extensive **uncompiled Lean source drafts**, and the still **open full table-free proof assembly**. Major remaining gates: complete physical wrong-word/owner coverage, exhaustive same-radius G/T entry, sharp equality on the untouched source, and replacement of `Candidate.capture` in the public source entry. Compilation, CI and the final audit remain deferred.
 
-The dated 20-October handoff below is kept for provenance; use the 21-October tracker for current gate statuses.
+The [live implementation roadmap](TABLE_FREE_FORMALIZATION_PROGRESS.md) adds exact representative checklists, active assignments, dependencies and later publication checkpoints. The dated 20-October handoff below is kept for provenance; use these linked 21-October ledgers for current status.
 
+## Current table-free continuation — 21 October 2026
+
+The [live progress and remaining-work roadmap](TABLE_FREE_FORMALIZATION_PROGRESS.md)
+is the current implementation ledger. G1 now has complete original-axis pair,
+concentration and original-radius transport drafts. Exact nearest-axis recoding
+closes both E-diagonal signs, and that result closes the positive-GA BT2/TD0
+diagonal terminal branch. Geometric stationary existence, canonical nonpositive
+rigidity, five of the ten second-word outer representative families, and the
+high-GA secondary sector are also drafted. Positive-TD2 has actual stress,
+concentration, admissible weight families and the low-angle endpoint envelope;
+its scalar transfer, upper-angle envelope and final sector closure remain.
+
+**Still incomplete:** both binary-word aggregate exclusions, remaining second-word
+contact families, exhaustive global owner entry, hard-source recovery, and the
+unconditional table-free public bound/equality assembly. The public compatibility
+capture path has not been retired. No compilation, typechecking, tests, CI,
+certificate replay or final source audit was run in this continuation. Earlier
+counts, audits and source-complete claims below describe their dated snapshots;
+they are not verification or completion claims for the current reconstruction.
 
 ## Table-free source handoff — 20 October 2026
 
