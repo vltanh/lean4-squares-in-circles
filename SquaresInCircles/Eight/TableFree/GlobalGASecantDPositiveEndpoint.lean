@@ -77,9 +77,10 @@ theorem fullPenalty_derivative {c θ s : ℝ} (hc : d≤c) (hθ : 0≤θ)
     (transport_trig hs).2.2.1
   have hreserve := mul_le_mul_of_nonneg_left hsmall (show 0≤reserve by norm_num [reserve])
   have hH := H_lower hc hs
-  apply (lt_of_mul_lt_mul_right (b:=Real.cos s^2) ?_ hcos2.le)
-  rw [hid]
-  nlinarith
+  have hmul : reserve*Real.cos s^2<fullPenaltyD c θ s*Real.cos s^2 := by
+    rw [hid]
+    nlinarith
+  exact (mul_lt_mul_right hcos2).mp hmul
 
 theorem diagonalPenalty_hasDerivAt (c θ : ℝ) {s : ℝ} (hs : s∈Icc 0 frameCap) :
     HasDerivAt (diagonalPenalty c θ)
