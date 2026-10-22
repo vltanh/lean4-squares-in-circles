@@ -152,7 +152,7 @@ theorem low_A_charge_quarter {a : ℝ} (ha : a∈Icc (0:ℝ) (1/4)) :
   change _≤_ at h₂
   nlinarith only [ht.2.2.2.2.1,h₁,h₂]
 
-def farNonradical (f : Family) (e : Split) (θ : ℝ) : ℝ :=
+def farBaseActual (f : Family) (e : Split) (θ : ℝ) : ℝ :=
   2*Explicit.k .far f θ+3*Explicit.l .far f θ+(3/2)*Explicit.splitM .far f e θ+
     Explicit.c .far f θ/2+3+Explicit.c .far f θ*edgeWidth (Explicit.splitT e θ)-
     Explicit.c .far f θ*Explicit.sigma*Real.sin (Explicit.splitT e θ)+
@@ -160,7 +160,7 @@ def farNonradical (f : Family) (e : Split) (θ : ℝ) : ℝ :=
 
 theorem far_nonradical_lower (f : Family) (e : Split) {θ : ℝ}
     (hθ : θ∈Icc (Explicit.left .far f) (Explicit.right .far f)) :
-    aeval θ (farB f e)≤farNonradical f e θ := by
+    aeval θ (farB f e)≤farBaseActual f e θ := by
   obtain ⟨hk,hl,hc,hm⟩ := split_positive .far f e hθ
   have hf := Explicit.family_frame_domain .far f hθ
   have ht := taylor_bounds hf
@@ -176,7 +176,7 @@ theorem far_nonradical_lower (f : Family) (e : Split) {θ : ℝ}
       rw [TwoPositive.ASupport.charge_low (by norm_num)]
       norm_num [TwoPositive.ASupport.axialCharge]
     norm_num only [farB,map_add,map_sub,map_mul,map_one,aeval_C,farK_eval,farL_eval,farC_eval]
-    simp only [farNonradical,Explicit.splitA,Explicit.splitT,hj,mul_zero,add_zero]
+    simp only [farBaseActual,Explicit.splitA,Explicit.splitT,hj,mul_zero,add_zero]
     nlinarith only [htilt,hs,hW]
   · have hJ : aeval θ (if f=.low then J0 else J1)≤TwoPositive.ASupport.charge θ := by
       cases f
@@ -186,19 +186,19 @@ theorem far_nonradical_lower (f : Family) (e : Split) {θ : ℝ}
     have hJscaled := mul_le_mul_of_nonneg_left hJ hl.le
     have hW : edgeWidth 0=1 := by norm_num [edgeWidth,pairWidth]
     norm_num only [farB,map_add,map_sub,map_mul,map_one,aeval_C,farK_eval,farL_eval,farC_eval]
-    simp only [farNonradical,Explicit.splitA,Explicit.splitT,Explicit.splitM,Explicit.m,
+    simp only [farBaseActual,Explicit.splitA,Explicit.splitT,Explicit.splitM,Explicit.m,
       Real.cos_zero,Real.sin_zero,mul_zero,mul_one,add_zero,sub_zero,hW]
     nlinarith only [hJscaled]
 
 theorem far_baseline_identity (f : Family) (e : Split) (θ : ℝ) :
-    Explicit.baseline .far f (Explicit.splitA e θ) (Explicit.splitT e θ)=farNonradical f e θ-
+    Explicit.baseline .far f (Explicit.splitA e θ) (Explicit.splitT e θ)=farBaseActual f e θ-
       R*(pairNorm (Explicit.k .far f θ) 1 0+
         pairNorm (Explicit.k .far f θ) (Explicit.l .far f θ) 0+
         pairNorm (Explicit.l .far f θ) (Explicit.splitM .far f e θ) 0+
         pairNorm 1 (Explicit.c .far f θ) 0) := by
   simp only [Explicit.baseline,split_sum,Explicit.sortedD,Bool.false_eq_true,if_false,fullSupport_pair]
   rw [pairNorm_symm (Explicit.c .far f θ) 1 0]
-  dsimp [farNonradical,Explicit.splitM]
+  dsimp [farBaseActual,Explicit.splitM]
   ring
 
 end SquaresInCircles.Eight.TableFree.GlobalGA.NegativeEHPositiveTD.Certificate
