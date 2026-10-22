@@ -1,5 +1,10 @@
 # PR #10 — table-free Lean closure roadmap and progress ledger
 
+## 22 October 2026 continuation pointer
+
+[**Latest verified GitHub push and detailed future-session handoff**](TABLEFREE_HANDOFF_2026_10_22_NONNEGATIVE_TOTALS.md). A nonnegative selected-A/E-total BT2 source package (TD0, both TD2 signs) and seven same-radius negative-A motion/normal-form/cycle modules are now pushed as **uncompiled** Lean drafts; two local corrections have also been pushed. This advances individual G3/G4 subcases **without** satisfying the global G2, G3, G4, G6 or G7 acceptance conditions. The hard terminal remains drafted, and the public assembly still uses compatibility capture. The gate definitions and original-source exit conditions below are unchanged.
+
+
 The [live implementation roadmap](TABLE_FREE_FORMALIZATION_PROGRESS.md) records
 later source checkpoints, exact remaining owner families, active assignments
 and dependencies. This document retains the aggregate G0–G9 acceptance gates.
