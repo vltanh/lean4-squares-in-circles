@@ -42,7 +42,7 @@ theorem gain_coefficient_bounds {q s : ℝ} {C : SignedCycle} (atG : Bool)
   · have hAB' : zeroFeasible (C.point A) (C.point B) (-s) 2 := by
       change delta C.theta A= -s at ha
       simpa [SignedCycle.Feasible,SignedCycle.slack,SignedCycle.edge,
-        word,A,B,next,ha] using hAB
+        zeroFeasible,sub_nonneg,word,A,B,next,ha] using hAB
     have hl := AB_tangent_lower (hsorted B) (hcontained B) hq hBy hAy hflat hs hAB'
     simp only [Bool.false_eq_true,if_false] at hcut
     simp only [gainCoefficient,capB,Bool.false_eq_true,if_false]
