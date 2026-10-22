@@ -2,7 +2,7 @@ module
 
 public import SquaresInCircles.Eight.CycleActions
 public import SquaresInCircles.Eight.TableFree.FramePhysicalTransport
-public import SquaresInCircles.Eight.WordGeometry
+public import SquaresInCircles.Eight.TableFree.QuarterWordSelection
 public import SquaresInCircles.Eight.ExactFamily.EqualityGeometry
 
 /-!
@@ -369,9 +369,9 @@ lemma candidate_normalization_of_word {q : ℝ} (C : BoundaryCycle q) (F : Quart
 
 /-- Continuous pair geometry first supplies the frame lift on the actual
 Q1 cycle. Its unchanged quarter representatives are pushed to Q0 only for
-the word exclusion, then the word conclusion is read back on the same
-source. The word classifier still has its separately recorded generated
-dependency; the frame concentration no longer uses its former pair table. -/
+the complete table-free word exclusions, then the surviving word is read
+back on the same source. Both binary wrong words and every double word
+are excluded by their full original-owner continuous proofs. -/
 theorem boundary_candidate_normalization (C : BoundaryCycle Q1) :
     Nonempty (CandidateNormalization C) := by
   have hQ1 : Q1 ∈ Set.Icc (5/2) Q0 :=
@@ -383,7 +383,7 @@ theorem boundary_candidate_normalization (C : BoundaryCycle Q1) :
     TableFree.FramePhysicalTransport.auxiliary_expansion C hQ1
   let FD := TableFree.FramePhysicalTransport.quarterPushforward F hR
   have hgapD := boundary_gap_lower D le_rfl
-  have hwordD := quarter_word_candidate D FD hgapD
+  have hwordD := TableFreeWordGeometry.quarter_word_candidate D FD hgapD
   have hgapC := boundary_gap_lower C radius_levels.2.2.1.le
   have hw : FD.word hgapD pi_lt_22_over_7=F.word hgapC pi_lt_22_over_7 :=
     TableFree.FramePhysicalTransport.quarterPushforward_word F hR hgapC hgapD
