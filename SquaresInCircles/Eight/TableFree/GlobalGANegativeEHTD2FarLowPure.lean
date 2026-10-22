@@ -67,7 +67,7 @@ lemma positive_slope {θ z s : ℝ} (hθ : θ∈Icc (0:ℝ) (1/4))
     dsimp [Blocks.dCost,Explicit.errorCharge,NegativeEH.epsilon]
     linarith [diagonal_bounds.2]
   · have hx : s-θ∈Icc 0 frameCap :=
-      ⟨(le_max_right _ _).trans hs.1 |> sub_nonneg.mpr,
+      ⟨by linarith [le_max_right (1/10:ℝ) θ,hs.1],
         by norm_num [frameCap]; linarith [hs.2,hθ.1]⟩
     have hU := NegativeDEPositiveTD.OrdinarySlope.positive_derivative_whole
       (show 0<Blocks.p .far .low θ z i by linarith [hp.1]) hp.2.1
@@ -98,10 +98,9 @@ lemma positive_start {a z : ℝ} (hθ : a+z∈Icc (0:ℝ) (1/10))
       Explicit.errorCharge,add_assoc,sub_eq_add_neg] using hH
   · have hcmp := FarLowSlopes.H_le_G ht hsplit hd
     dsimp [Explicit.U,Explicit.p,Explicit.q] at hcmp
-    simp only [positivePart,Blocks.positive,ChargedHybridConcentration.positive,
-      PositiveTD.Hybrid.positive,Blocks.p,Blocks.q,Explicit.p,Explicit.q,
-      Explicit.errorCharge,Matrix.cons_val_zero,Matrix.cons_val_succ,Fin.reduceFinMk,
-      Fin.isValue,reduceCtorEq,if_false]
+    change 0<Explicit.baseline .far .low a z+(NegativeEH.G (1/10)+
+      (U R (Explicit.k .far .low (a+z)) (Explicit.l .far .low (a+z)) (1/10-(a+z))-
+        NegativeEH.epsilon*(1/10-(a+z))))
     linarith
   · have hB := FarLowSplit.positive_B hθ ha hz
     have horder := (Explicit.far_low_tilted ht hsplit).2.2.1.le
