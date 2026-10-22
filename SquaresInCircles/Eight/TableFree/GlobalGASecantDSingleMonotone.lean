@@ -201,7 +201,8 @@ theorem negative_clipped_monotone {c n : ℝ} (hc : c∈Icc cLower cUpper)
       have hfg : x-c*Real.sin n=c*Real.cos n := by linarith
       have hsum : 0≤(x-c*Real.sin n)+c*Real.cos n := by
         rw [hfg]
-        positivity
+        have hg := mul_pos hc0 (show 0<Real.cos n by linarith [(transport_trig hn).1])
+        linarith
       rw [full_at_diagonal hfg hsum])
   simpa only [sub_nonpos,clippedSupport,sub_ite] using hh
 

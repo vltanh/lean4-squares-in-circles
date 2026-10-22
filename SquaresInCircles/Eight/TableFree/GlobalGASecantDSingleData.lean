@@ -69,8 +69,9 @@ theorem baseline_full {q c : ℝ} (hq : q∈Icc 1 qUpper)
 
 theorem force_norm (q c t : ℝ) :
     Real.sqrt ((q+c*Real.sin t)^2+(c*Real.cos t)^2)=pairNorm c q t := by
+  unfold pairNorm
   congr 1
-  dsimp [pairNorm,pairEnergy,pairProduct]
+  dsimp [pairEnergy,pairProduct]
   nlinarith [congrArg (fun z : ℝ => c^2*z) (Real.sin_sq_add_cos_sq t)]
 
 theorem full_increment_positive {q c t : ℝ} (ht : t∈Icc 0 frameCap) :
