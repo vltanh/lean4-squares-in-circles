@@ -12,9 +12,9 @@ and explicitly states each remaining obstruction.
 
 G2.0 (exact encoding and false-normalization tests) CLOSED
   |
-  +-- G2.1 (four-anchor long/short stress) CLOSED: terminal, conditional
-  +-- G2.2 (four-corner grid stress) CLOSED: terminal, conditional
-  +-- G2.3 (global triple transversal) CLOSED: unconditional, weak
+  +-- G2.T1 (four-anchor long/short stress) CLOSED: terminal, conditional
+  +-- G2.T2 (four-corner grid stress) CLOSED: terminal, conditional
+  +-- G2.T3 (global triple transversal) CLOSED: unconditional, weak
   |
   +-- G2.C (common-coordinate-separable class)
   |      C1 rank injection CLOSED
@@ -47,7 +47,7 @@ a short proof, with no double-counting or unnamed exceptional class.
 
 ## 1. Three exact terminal templates: closed
 
-**G2.1 — Long/short four-anchor stress: CLOSED (hand).**
+**G2.T1 — Long/short four-anchor stress: CLOSED (hand).**
 Four squares, independently rotated; one endpoint pair has horizontal
 center span ≥2+h_L+h_R, another has ≥1+h_L+h_R, and the first pair
 lies completely above the other. Then q≥1105/256, with four pinned
@@ -55,13 +55,13 @@ boundary anchors at equality.
 Source: FOUR_ANCHOR_STRESS.md. No other five squares appear in the
 proof.
 
-**G2.2 — Four-corner grid stress: CLOSED (hand).**
+**G2.T2 — Four-corner grid stress: CLOSED (hand).**
 Four independently rotated squares forming four signed corners,
 each with a one-square reserve in both horizontal and vertical
 endpoint differences, force q≥9/2>1105/256.
 Source: GRID_FOUR_CORNER_STRESS.md.
 
-**G2.3 — Independently rotated stratified nine-square theorem:
+**G2.T3 — Independently rotated stratified nine-square theorem:
 CLOSED within stratified class (hand).** If all nine squares admit
 projection-disjoint horizontal layers and full vertical support
 separation, then q≥1105/256. Equality includes only layer sizes
@@ -215,8 +215,10 @@ Its parameter domain has nine local degrees of freedom.
 **G5.U (unrestricted equality): OPEN.**
 One must prove every optimal packing lies in a finite union
 of explicitly parameterized families. The current G5.S
-domain need not be exhaustive; in particular the oblique
-example lies outside global stratification in the anchor frame.
+domain is provably not exhaustive as a family of record-radius
+packings: the oblique example admits no global orthogonal coordinate
+frame separating all its pairs, whereas every stratification would
+supply exactly such a frame.
 It still has the seven-anchor skeleton, and a future larger
 four-anchor-based parameter domain may absorb it.
 
