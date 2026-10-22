@@ -17,7 +17,7 @@ retains the sharp zero; no rational positive margin replaces it.
 noncomputable section
 open Set
 namespace SquaresInCircles.Eight.TableFree.CriticalEFamily
-open ExactFamily.FiveCornerGeometry PositiveAngularEnvelope
+open ExactFamily.FiveCornerGeometry PositiveAngularEnvelope OrdinaryAngleConcavity
 open ExceptionalContactSupport ExceptionalContactStress
 
 def eta (q u : ℝ) : ℝ := lowerHeight q u/lowerLeft q u

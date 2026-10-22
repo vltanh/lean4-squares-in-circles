@@ -35,13 +35,13 @@ theorem coefficient_bounds {q t : ℝ} (hq : q∈Icc qLow qTrial)
 theorem scalar_endpoints {d : ExactFamily.Coordinates} (hd : d.IsStationary)
     (hq : d.q∈Icc qLow qTrial) {t : ℝ} (ht : t∈Icc (1/10:ℝ) (4/25)) :
     0≤atE (Real.sqrt d.q) (K d.q t) (L d.q t) (Cc d.q t) (Eta d.q t) t+
-      PositiveAngularEnvelope.V (Real.sqrt d.q) (L d.q t) (Cc d.q t) t ∧
+      OrdinaryAngleConcavity.V (Real.sqrt d.q) (L d.q t) (Cc d.q t) t ∧
     0<atG (Real.sqrt d.q) (K d.q t) (L d.q t) (Cc d.q t) (Eta d.q t) t+
-      PositiveAngularEnvelope.V (Real.sqrt d.q) (L d.q t) (Cc d.q t) t := by
+      OrdinaryAngleConcavity.V (Real.sqrt d.q) (L d.q t) (Cc d.q t) t := by
   have hb := coefficient_bounds hq ht
   have hE := CriticalEFamily.minimizing_endpoint hd (CriticalEPosition.angle_mem ht)
   change 0≤atE (Real.sqrt d.q) (K d.q t) (L d.q t) (Cc d.q t) (Eta d.q t) t+
-    PositiveAngularEnvelope.V (Real.sqrt d.q) (L d.q t) (Cc d.q t) t at hE
+    OrdinaryAngleConcavity.V (Real.sqrt d.q) (L d.q t) (Cc d.q t) t at hE
   have hR := Real.sqrt_nonneg d.q
   have hR2 := Real.sq_sqrt (show 0≤d.q by norm_num [qLow] at hq; linarith [hq.1])
   have hG := E_lt_G hR
