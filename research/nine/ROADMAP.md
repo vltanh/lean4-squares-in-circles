@@ -30,14 +30,20 @@ ledger. The main changes since the first roadmap are:
   opposite-side center bounds and unit-square top/bottom cap
   capacities. [NO_CROSSED_FOUR_CHAINS_IN_ZIGZAG.md](NO_CROSSED_FOUR_CHAINS_IN_ZIGZAG.md)
   excludes a perpendicular four-chain in the common-coordinate
-  separability class. Its entire zigzag branch has longest-rank
-  rectangle 4×3. **The remaining 4×3 configurations are not excluded.**
+  separability class. Its remaining zigzag branch has longest-rank rectangle 4×3,
+  now **fully excluded** by ZIGZAG_BRANCH_CLOSED.md.
 - **G5.S CLOSED (conditional equality):**
   [STRATIFIED_EQUALITY_FAMILY.md](STRATIFIED_EQUALITY_FAMILY.md)
   supplies an exact necessary-and-sufficient nine-parameter
   family for all stratified equality packings. The oblique
   construction proves this cannot be declared the complete
   unrestricted equality family.
+- **G2.O4 CLOSED (oblique-safe shadow):**
+  [INNER_PAIR_SHADOW_DOMINATION.md](INNER_PAIR_SHADOW_DOMINATION.md)
+  proves that when a four-projection chain exists, every extra
+  square overlaps the shadow of one of its two middle members.
+  This does not require any common-coordinate separability of
+  extra-square contacts; it eliminates extreme-only incidences.
 - **G2.C4.2c CLOSED:** [ZIGZAG_BRANCH_CLOSED.md](ZIGZAG_BRANCH_CLOSED.md) excludes every large-zigzag four-chain in a nine-square common-coordinate-separable packing via a three-region 2+1+2 capacity contradiction. The proof uses arbitrary square orientations and no generated tables.
 - **Still OPEN:** G2.C4.3 coherent-sign,
   G2.O2/O3 oblique extraction and stress, G2.I/B/E global
