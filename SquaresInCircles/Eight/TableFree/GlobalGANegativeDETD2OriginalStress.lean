@@ -1,6 +1,7 @@
 module
 
 public import SquaresInCircles.Eight.TableFree.GlobalGANegativeDETD2SourceData
+public import SquaresInCircles.Eight.TableFree.GlobalGAPositiveTDStress
 public import SquaresInCircles.Eight.TableFree.GlobalGAPositiveBT3DEnvelopeGeometry
 
 /-!
@@ -85,21 +86,12 @@ theorem dReserve_nonnegative {Q c : ℝ} {C : SignedCycle}
   rw [he]
   linarith
 
+/-- TD2 has direction (1,-eta), exactly as in the original stress. -/
 theorem tReserve_nonnegative {Q c : ℝ} {C : SignedCycle}
     (hsorted : (C.point T).Sorted) (hcontained : (C.point T).Contained Q)
     (hQ : Q≤qCap) (hc : 0≤c) (hz : delta C.theta T∈Icc 0 frameCap) :
-    0≤PositiveTD.tReserve C c := by
-  have hcircle : (C.point T).Contained (R^2) := by
-    rw [radius_sq]
-    exact hcontained.trans hQ
-  have hsupp := work_le_circleSupport (Real.sqrt_nonneg qCap) hsorted hcircle
-    (1,PositiveTD.eta)
-  have heta : 0≤PositiveTD.eta := by norm_num [PositiveTD.eta]
-  have hbound : (C.point T).a+PositiveTD.eta*(C.point T).y≤PositiveTD.sigma := by
-    simpa [work,circleSupport,PositiveTD.sigma,fullSupport,abs_of_nonneg heta] using hsupp
-  have hsin := (transport_trig hz).2.2.1
-  dsimp [PositiveTD.tReserve]
-  exact mul_nonneg (mul_nonneg hc hsin) (sub_nonneg.mpr hbound)
+    0≤PositiveTD.tReserve C c :=
+  PositiveTD.tReserve_nonneg hsorted hcontained hQ hc hz
 
 theorem actual_blocks_lower {Q : ℝ} {C : SignedCycle}
     (hg ga ab : Bool) (f : Family)
