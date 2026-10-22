@@ -20,7 +20,10 @@ G2.0 (exact encoding and false-normalization tests) CLOSED
   |      C1 rank injection CLOSED
   |      C2 full 3x3 grid excluded CLOSED
   |      C3 four-chain exists CLOSED
-  |      C4 convert four-chain to sharp terminal branch OPEN
+  |      C4.1 chain-shadow barrier and coherent/zigzag split CLOSED
+  |      C4.2 large-zigzag terminal obstruction OPEN
+  |      C4.3 coherent-sign terminal obstruction OPEN
+  |      C4.4 coordinate-separable closure OPEN
   |
   +-- G2.O (genuinely oblique pairs)
   |      O1 refute global common-frame normalization CLOSED
@@ -89,7 +92,30 @@ Thus coordinate-separable n=9 packings have a horizontal or
 vertical chain of four squares. This is an unconditional
 implication **within** the coordinate-separable class.
 
-**G2.C4 — Four-chain completion: OPEN.**
+**G2.C4.1 — Shadow barrier and finite incidence: CLOSED.**
+[FOUR_CHAIN_SHADOW_BARRIER.md](FOUR_CHAIN_SHADOW_BARRIER.md)
+proves that a four-chain covers almost the entire disk projection:
+the total complement of its four projection intervals is below 1/4.
+Every other square must have positive projection overlap with
+1, 2 or 3 consecutive chain squares. In the coordinate-separable
+class, each other square lies above/below those it overlaps, or
+there is a chain-center vertical gap of at least two.
+This is a finite incidence classification, not a claim that the
+five extra squares form globally separated layers.
+
+**G2.C4.2 — Large-zigzag branch: OPEN.**
+If a pair of four-chain squares have vertical-center gap at least
+two, derive a global nine-square sharp obstruction. A four-square
+zigzag by itself is feasible well inside the candidate circle;
+the five other squares must be used essentially.
+
+**G2.C4.3 — Coherent-sign branch: OPEN.**
+If each extra square stays consistently above/below the chain
+squares its projection meets, turn the incidence types into a
+sharp long/short or grid terminal obstruction, without enumerating
+all 9^5 assignments.
+
+**G2.C4.4 — Four-chain completion: OPEN.**
 From a four-square chain plus five remaining squares
 (all with arbitrary orientations but coordinate-separated
 along one common frame), prove *one* of:
@@ -196,7 +222,7 @@ four-anchor-based parameter domain may absorb it.
 
 ## 7. Strategy: avoid minor-boundary rabbit holes
 
-The **two central research tasks** are C4 and O2/O3.
+The **two central research tasks** are C4.2/C4.3 and O2/O3.
 Do not invest effort in strengthening the constants in
 G2.1/G2.2, or excluding one of infinitely many very
 small angular subintervals. Only prove facts that close
