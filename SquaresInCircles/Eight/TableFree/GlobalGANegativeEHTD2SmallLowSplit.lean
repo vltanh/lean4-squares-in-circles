@@ -1,6 +1,6 @@
 module
 
-public import SquaresInCircles.Eight.TableFree.GlobalGANegativeEHTD2Blocks
+public import SquaresInCircles.Eight.TableFree.GlobalGANegativeEHPositiveD
 
 /-!
 # Small-EH low-total intrinsic endpoints at the original split
@@ -8,7 +8,8 @@ public import SquaresInCircles.Eight.TableFree.GlobalGANegativeEHTD2Blocks
 Uncompiled Section 3 of the small-EH companion. The s=0 endpoints are
 exactly the already proved negative-DE low endpoints. The two new EH
 endpoints keep their original coefficients and reduce only in the scalar
-A/TD split, whose concavity is independent of the retained E magnitude.
+A/TD split. The D positive singleton is compared with the exact H U term,
+so no concavity of a linearly weakened split expression is used.
 -/
 
 @[expose] public section
@@ -17,8 +18,6 @@ open Set
 namespace SquaresInCircles.Eight.TableFree.GlobalGA.NegativeEHPositiveTD.SmallLow
 open Candidate Secondary PositiveAngularEnvelope OrdinaryAngleConcavity
 
-/-- The EH baseline at multiplier one agrees with the original DE
-baseline at zero E magnitude, on the unchanged A/TD split. -/
 theorem baseline_identity (a z : ℝ) :
     Explicit.baseline .small .low a z=NegativeDEPositiveTD.Explicit.baseline .low a z 0 := by
   simp only [Explicit.baseline,Explicit.sortedD,if_true,Explicit.k,Explicit.l,Explicit.c,Explicit.m,
@@ -84,58 +83,26 @@ theorem zero_separated_positive {a z : ℝ} (hθ : a+z∈Icc (0:ℝ) (1/6))
     0<Explicit.baseline .small .low a z+Blocks.positive .small .low (a+z) z (frameCap-(a+z)) i+
       V R (Explicit.k .small .low (a+z))
         (NegativeDEPositiveTD.LowSeparated.larger atH (a+z)) frameCap := by
-  have hzd : z∈Icc 0 (a+z) := ⟨hz,by linarith⟩
+  have he := (NegativeDEPositiveTD.LowSplit.original_endpoints hθ ha hz).2.2.2
   by_cases hi : i=3
   · subst i
-    have hG := (NegativeDEPositiveTD.LowSplit.original_endpoints hθ ha hz).2.2.2
-    have hallow := NegativeDEPositiveTD.LowSeparated.positive_allowance hθ hzd (0:Fin 3)
-    have hP : 0≤frameCap-(a+z) := by norm_num [frameCap]; linarith [hθ.2]
-    have hm := NegativeDEPositiveTD.Explicit.low_tilted hθ hzd
+    have hp := he 0 atH
     have hr := NegativeDEPositiveTD.Explicit.low_ranges hθ
-    have hcost : Blocks.dCost≤(109/200)*NegativeDEPositiveTD.Explicit.m .low (a+z) z := by
-      dsimp [Blocks.dCost]
-      linarith [diagonal_bounds.2,hr.2.2.1,hr.2.2.2.2.2.2.1,hm.1]
-    have hcharged := mul_le_mul_of_nonneg_right hcost hP
-    have hendpoint : 0<NegativeDEPositiveTD.Explicit.baseline .low a z 0-
-        (109/200)*NegativeDEPositiveTD.Explicit.m .low (a+z) z*(frameCap-(a+z))+
-        V R (Explicit.k .small .low (a+z))
-          (NegativeDEPositiveTD.LowSeparated.larger atH (a+z)) frameCap := by
-      have hbase := NegativeDEPositiveTD.LowSplit.separated_endpoint
-      have hfull := NegativeDEPositiveTD.LowSplit.original_endpoints hθ ha hz
-      have hlinear : ConcaveOn ℝ (Icc 0 (a+z))
-          (fun b => NegativeDEPositiveTD.LowSplit.zeroScalar (a+z) b-
-            (109/200)*NegativeDEPositiveTD.Explicit.m .low (a+z) (a+z-b)*(frameCap-(a+z))) := by
-        apply TwoPositive.Split.low_increment_concave
-          (k:=Explicit.k .small .low (a+z)) (s:=0)
-          (g:=-(109/200)*(frameCap-(a+z))) (e:=0)
-          (by linarith [hr.2.2.2.2.1]) (by linarith [hr.2.2.1])
-          (by nlinarith [hm.2,hm.1]) hθ (by norm_num [frameCap])
-          (by nlinarith) le_rfl (by norm_num) (by simp)
-          (fun b hb => (NegativeDEPositiveTD.Explicit.low_tilted hθ
-            ⟨by linarith [hb.2],by linarith [hb.1]⟩).2.le)
-      have hSH := Certificate.small_low_equal_positive
-      cases atH
-      · have hh := NegativeDEPositiveTD.Certificate.low_SG_positive
-        exact by
-          have h0 := hh .atT hθ
-          have h1 := hh .atA hθ
-          exact concave_gt_of_endpoints (TwoPositive.Split.add_constant hlinear _)
-            ⟨ha,by linarith⟩ (by simpa [NegativeDEPositiveTD.LowSplit.zeroScalar] using h0)
-            (by simpa [NegativeDEPositiveTD.LowSplit.zeroScalar] using h1)
-      · have hh := NegativeDEPositiveTD.Certificate.low_SH_positive
-        exact by
-          have h0 := hh .atT hθ
-          have h1 := hh .atA hθ
-          exact concave_gt_of_endpoints (TwoPositive.Split.add_constant hlinear _)
-            ⟨ha,by linarith⟩ (by simpa [NegativeDEPositiveTD.LowSplit.zeroScalar] using h0)
-            (by simpa [NegativeDEPositiveTD.LowSplit.zeroScalar] using h1)
+    have hP : frameCap-(a+z)∈Icc 0 frameCap :=
+      ⟨by norm_num [frameCap]; linarith [hθ.2],by linarith [hθ.1]⟩
+    have hD := NegativeEH.PositiveD.H_le_D (ε:=0)
+      (show Explicit.k .small .low (a+z)∈Icc (3/5:ℝ) (4/5) from
+        ⟨by linarith [hr.1],by linarith [hr.2.1]⟩) hP
+    simp only [NegativeDEPositiveTD.Explicit.U,NegativeDEPositiveTD.Explicit.p,
+      NegativeDEPositiveTD.Explicit.q,Matrix.cons_val_zero] at hp
     rw [baseline_identity,Blocks.positive_D]
-    simp only [Explicit.errorCharge,add_zero]
+    simp only [Explicit.errorCharge,add_zero,zero_mul,sub_zero] at hD ⊢
+    dsimp [Blocks.dCost]
     linarith
   · obtain ⟨j,hj⟩ : ∃j : Fin 3,j.castSucc=i := by
       fin_cases i <;> simp_all
     subst i
-    have hh := (NegativeDEPositiveTD.LowSplit.original_endpoints hθ ha hz).2.2.2 j atH
+    have hh := he j atH
     simpa only [baseline_identity,Blocks.positive_ordinary,Explicit.errorCharge,zero_mul,sub_zero,
       Explicit.U,Explicit.p,Explicit.q,Explicit.k,Explicit.l,Explicit.m] using hh
 
