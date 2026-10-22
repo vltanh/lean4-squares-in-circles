@@ -16,6 +16,40 @@ The record construction has squared radius
 We have proved that this radius is **attained**. The universal
 inequality \(R_9\ge R_*\) is not yet proved.
 
+## Latest subgate closure: global-frame obstruction and four-chain shadow
+
+- **[G2_SUBGATES.md](G2_SUBGATES.md)** is the detailed finite
+  branch ledger. The remaining core is G2.C4.2/C4.3
+  (large-zigzag versus coherent side of a four-chain) and
+  G2.O2/O3 (unrestricted oblique-separator normalization).
+- **[NO_GLOBAL_ORTHOGONAL_FRAME.md](NO_GLOBAL_ORTHOGONAL_FRAME.md)**
+  constructs nine exact unit squares at q=1105/256 with seven
+  rigid anchors and two freely rotated top squares. The pair
+  requires an oblique separator, while an adjacent touching
+  anchor pair forces any common separating frame to be aligned.
+  Hence *no* common perpendicular coordinate frame can
+  separate all pairs. The rank-grid theorem cannot be
+  promoted to unrestricted G2 by assuming global coordinates.
+- **[FOUR_CHAIN_SHADOW_BARRIER.md](FOUR_CHAIN_SHADOW_BARRIER.md)**
+  proves an exact structural lemma for any four-square
+  projection-separated chain: its four projection intervals
+  leave under 1/4 of the disk's diameter uncovered, forcing
+  each remaining square to overlap the projections of one,
+  two or three consecutive chain squares. In a common-frame
+  separable packing, a square switching from above to below
+  its overlapping chain members forces their vertical centers
+  to differ by at least 2. This closes the C4.1 subgate.
+- **[STRATIFIED_EQUALITY_FAMILY.md](STRATIFIED_EQUALITY_FAMILY.md)**
+  gives a necessary-and-sufficient explicit 9-parameter
+  domain for all equality packings *within the stratified
+  class*, retaining three scalar sliders and two freely
+  rotated top squares. The no-global-frame witness proves
+  this conditional family is not all record-radius packings.
+
+**Current boundary:** G2's quantified global case coverage
+and G4's sharp unrestricted theorem are **not proved**.
+No Lean, CI, or full independent audit is claimed.
+
 ## Reading order
 
 1. [ROADMAP.md](ROADMAP.md): G0–G8 gated roadmap, complete dependency
