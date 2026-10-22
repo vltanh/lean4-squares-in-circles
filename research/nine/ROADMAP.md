@@ -266,7 +266,15 @@ succession, is not closure.
 
 ## G3 — Eliminate all exceptional structural branches [OPEN]
 
-For each E_j returned by G2, give a hand theorem of the form
+**One significant terminal branch is now closed:**
+[ROTATED_STRATIFIED_NINE.md](ROTATED_STRATIFIED_NINE.md) proves the
+sharp bound for every nine-square packing admitting horizontal
+support-separated layers, **even with all nine square frames
+independently rotated**. This is not a normalization theorem:
+G2 still has to derive such layering from arbitrary Packing,
+or characterize and exclude nonstratified configurations.
+
+For each remaining E_j returned by G2, give a hand theorem of the form
 \(E_j\Longrightarrow q\ge q_*\), or show that E_j reduces by a
 valid geometric deformation/support argument to G1.
 
@@ -277,6 +285,10 @@ interiors throughout; moving freely positioned squares to a
 template without such a proof is invalid. If a claimed bound is
 false, produce an exact counterexample and revise the structural
 alternative rather than creating arbitrary parameter subdivisions.
+
+**Gate G3 remains OPEN overall.** Its independently rotated
+stratified branch is CLOSED. The finite disjunction (E) is not yet
+known, so the remaining terminal cases cannot be counted.
 
 **Gate G3 closes iff** the finite disjunction in (E) has **no
 unresolved leaf**. Each leaf points to a proved terminal theorem;
@@ -432,12 +444,17 @@ theorems and do not merge until regression checks pass.
 | G0 | Construction, conditional bounds, false-shortcut tests | CLOSED (hand) | None |
 | G1 | Orientation-stable seven-anchor obstruction | CLOSED (hand) | None |
 | G2 | All-packings structural coverage (three origin states) | OPEN | G3, G4 |
-| G3 | Analytic closure of every exceptional alternative | OPEN | G4 |
+| G3 | Rotated-stratified branch CLOSED; other structural alternatives | PARTIAL | G4 |
 | G4 | Global sharp lower bound | OPEN | G5 |
 | G5 | Every equality packing, both directions | OPEN | G6 |
 | G6 | Independently auditable table-free hand manuscript | OPEN | G7 |
 | G7 | Lean kernel-verified theorem and classification | NOT STARTED | G8 |
 | G8 | Public interfaces, docs, validation, PR close | NOT STARTED | — |
+
+**Mathematical progress:** G1 is sharp even for independently rotated
+seven anchors; the G3 stratified nine-square branch is now also sharp
+without any common-frame assumption. Both are human geometric proofs,
+not computational certificates.
 
 **Next mathematical checkpoint:** derive a genuinely unconditional
 support/center-seam lemma for G2.2 and complete the finite coverage
