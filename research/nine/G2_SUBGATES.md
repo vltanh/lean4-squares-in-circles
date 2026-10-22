@@ -23,7 +23,7 @@ G2.0 (exact encoding and false-normalization tests) CLOSED
   |      C4.1 chain-shadow barrier and coherent/zigzag split CLOSED
   |      C4.2a middle-pair zigzag normal form + cap bound CLOSED
   |      C4.2b exclude crossed perpendicular four-chain CLOSED
-  |      C4.2c finish all 4×3 zigzag rank patterns OPEN
+  |      C4.2c eliminate entire large-zigzag branch CLOSED
   |      C4.3 coherent-sign terminal obstruction OPEN
   |      C4.4 coordinate-separable closure OPEN
   |
@@ -105,10 +105,12 @@ there is a chain-center vertical gap of at least two.
 This is a finite incidence classification, not a claim that the
 five extra squares form globally separated layers.
 
-**G2.C4.2 — Large-zigzag branch: PARTIAL.**
-Its geometric normal form and crossed-four-chain exclusion have
-closed in C4.2a/b. The five other squares still require a
-complete 4×3 rank/counting obstruction in C4.2c.
+**G2.C4.2 — Large-zigzag branch: CLOSED (hand).**
+C4.2a/b normalize the large zigzag; C4.2c gives the complete
+five-extra-square obstruction, using a three-region capacity
+argument requiring only the center disk bound and the necessary
+L-infinity center separation. No generated table or MILP claim
+enters the final hand proof.
 
 **G2.C4.2a — Zigzag position and cap control: CLOSED.**
 [FOUR_CHAIN_ZIGZAG_NORMAL_FORM.md](FOUR_CHAIN_ZIGZAG_NORMAL_FORM.md)
@@ -129,11 +131,18 @@ cannot coexist with a vertical four-chain. Therefore its
 rank rectangle is exactly 4×3 (and nine rank cells are occupied
 among twelve).
 
-**G2.C4.2c — Finish the remaining 4×3 zigzag: OPEN.**
-Count all five extra squares using the shadow incidence
-blocks and the 4×3 rank structure; prove a sharp terminal
-obstruction for **every** such arrangement. The cap capacity
-lemmas alone do not rule out all positions.
+**G2.C4.2c — All 4×3 zigzags: CLOSED (hand).**
+[ZIGZAG_BRANCH_CLOSED.md](ZIGZAG_BRANCH_CLOSED.md) proves the
+following *complete* exclusion: no nine-square configuration in
+(q\le1105/256) is coordinate-separable in one orthonormal
+frame and contains a four-horizontal-projection chain with
+vertical center diameter ≥2. From the four center bounds,
+the five extras fall into a left (capacity 2), central
+(capacity 1), and right (capacity 2) region. If these
+capacities were saturated, three extras must all lie in a
+vertical band of height <1 and a horizontal band of width
+<21/20, impossible for pairwise coordinate-separated unit
+squares. All square orientations remain arbitrary.
 
 **G2.C4.3 — Coherent-sign branch: OPEN.**
 If each extra square stays consistently above/below the chain
@@ -250,7 +259,10 @@ four-anchor-based parameter domain may absorb it.
 
 ## 7. Strategy: avoid minor-boundary rabbit holes
 
-The **two central research tasks** are C4.2c/C4.3 and O2/O3.
+The **two central research tasks** are now C4.3 (coherent-side
+four-chain completion) and O2/O3 (unrestricted oblique separators).
+The entire coordinate-separable large-zigzag branch is closed;
+do not reopen it via tiny angle or radius modifications.
 Do not invest effort in strengthening the constants in
 G2.1/G2.2, or excluding one of infinitely many very
 small angular subintervals. Only prove facts that close
