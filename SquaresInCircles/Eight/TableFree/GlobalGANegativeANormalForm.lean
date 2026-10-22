@@ -2,6 +2,7 @@ module
 
 public import SquaresInCircles.Eight.TableFree.GlobalGAMixedNegativeAMotion
 public import SquaresInCircles.Eight.TableFree.NegativePrimaryPreprocessing
+public import SquaresInCircles.Eight.TableFree.GlobalGAPairedECharge
 
 /-!
 # The three terminal A regimes on the original neighbors
