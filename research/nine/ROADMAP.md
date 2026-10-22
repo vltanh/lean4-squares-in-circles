@@ -38,7 +38,8 @@ ledger. The main changes since the first roadmap are:
   family for all stratified equality packings. The oblique
   construction proves this cannot be declared the complete
   unrestricted equality family.
-- **Still OPEN:** G2.C4.2c remaining 4×3 zigzag rank cases, G2.C4.3 coherent-sign,
+- **G2.C4.2c CLOSED:** [ZIGZAG_BRANCH_CLOSED.md](ZIGZAG_BRANCH_CLOSED.md) excludes every large-zigzag four-chain in a nine-square common-coordinate-separable packing via a three-region 2+1+2 capacity contradiction. The proof uses arbitrary square orientations and no generated tables.
+- **Still OPEN:** G2.C4.3 coherent-sign,
   G2.O2/O3 oblique extraction and stress, G2.I/B/E global
   center-incidence branches, G2.X exhaustive coverage, G4
   global optimality, and G5.U complete unrestricted equality.
