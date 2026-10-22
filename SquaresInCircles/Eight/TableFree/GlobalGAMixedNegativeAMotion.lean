@@ -85,9 +85,6 @@ theorem AB_motion {P B b n p τ : ℝ}
   have hroom : Lminus B (n-τ)≤Uplus P (p-τ) := by
     dsimp [gap] at hgap hgap0
     linarith [hτ.1]
-  have hlow : Lminus B (n-τ)≤tangentAB P b p τ := min_le_iff.not.mpr (by
-    push_neg
-    exact ⟨hL.trans hAB,hroom⟩)
   have hlow' : Lminus B (n-τ)≤tangentAB P b p τ :=
     le_min (hL.trans hAB) hroom
   exact ⟨⟨(Lminus_lower hB hangles.1).trans_le hlow',
