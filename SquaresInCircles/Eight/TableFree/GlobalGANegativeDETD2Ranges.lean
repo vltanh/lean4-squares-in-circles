@@ -271,5 +271,36 @@ theorem high_q_ratio {θ z : ℝ} (hθ : θ∈Icc (1/6:ℝ) (7/10)) (hz : z∈Ic
         · exact le_max_left _ _
       nlinarith [hm.2.1,hr.2.2.1]
 
+/-- The late interval used by the shared secant-coordinate shape proof.
+The cubic upper estimate for l and the affine c/theta correlation are
+kept before taking the maximum in the original B pair. -/
+theorem high_late_q_le_one {θ z : ℝ}
+    (hθ : θ∈Icc (1/6:ℝ) (7/10)) (hz : z∈Icc 0 θ)
+    (hlate : (11/20:ℝ)≤θ) (i : Fin 3) : q .high θ z i≤1 := by
+  have ht := high_parameter hθ
+  have htlate : (23/32:ℝ)≤t θ := by dsimp [t,L]; linarith
+  have h2 : (t θ)^2≤t θ := by
+    nlinarith [mul_nonneg ht.1 (sub_nonneg.mpr ht.2)]
+  have h3 : (t θ)^3≤(t θ)^2 := by
+    nlinarith [mul_nonneg (sq_nonneg (t θ)) (sub_nonneg.mpr ht.2)]
+  have hl : l .high θ≤1005069/1000000-(141335/1000000)*t θ := by
+    dsimp [l]
+    nlinarith
+  have hl1 : l .high θ≤1 := by linarith
+  have hr := high_ranges hθ
+  have hc : c .high θ≤227/250 := by linarith [hr.2.2.2.2.2.2.2]
+  have hcpos : 0<c .high θ := by linarith [hr.2.2.2.2.1]
+  have hm := mul_lt_mul_of_pos_left (PositiveTD.Explicit.factor_upper z) hcpos
+  have hm1 : m .high θ z≤1 := by
+    change c .high θ*(Real.cos z+PositiveTD.eta*Real.sin z)<
+      c .high θ*(1043/1000) at hm
+    dsimp [m,eta,PositiveTD.eta]
+    dsimp [PositiveTD.eta] at hm
+    nlinarith
+  fin_cases i <;> simp only [q,Matrix.cons_val_succ,Matrix.cons_val_zero]
+  · exact le_rfl
+  · exact hl1
+  · exact max_le hl1 hm1
+
 end Explicit
 end SquaresInCircles.Eight.TableFree.GlobalGA.NegativeDEPositiveTD
