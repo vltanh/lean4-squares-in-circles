@@ -1,7 +1,7 @@
 module
 
 public import SquaresInCircles.Eight.TableFree.GlobalGANegativeEHTD2HighSplit
-public import SquaresInCircles.Eight.TableFree.OrdinaryNegativeShortSlope
+public import SquaresInCircles.Eight.TableFree.OrdinaryMixedShortReserve
 
 /-!
 # Complete far-EH high-total scalar exclusion
@@ -128,7 +128,7 @@ lemma negative_positive {a z s : ℝ}
     (V_concave (Real.sqrt_nonneg qCap) radius_sq.le hp.1 hp.2.1 hp.2.2)
     (a:=-1) (b:=a+z) (l:=1/10) (u:=1/4)
     (fun s hs => ⟨by linarith [hs.2,hθ.1],by norm_num [frameCap]; linarith [hs.1,hθ.2]⟩)
-  have hc := TwoPositive.Split.add_constant (hg.add hv) (Explicit.baseline .far .high a z)
+  have hc := OrdinaryMixedShortReserve.constant_add (hg.add hv) (Explicit.baseline .far .high a z)
   have h0 := HighSplit.far_cut_positive false hθ ha hz i
   have h1 := HighSplit.far_cut_positive true hθ ha hz i
   have hh := concave_gt_of_endpoints hc hs
