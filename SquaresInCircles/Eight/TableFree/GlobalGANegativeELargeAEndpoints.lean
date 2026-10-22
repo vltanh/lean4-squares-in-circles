@@ -150,7 +150,8 @@ theorem charge_cap_lower : -(71283/100000:ℝ)<TwoPositive.ASupport.charge frame
   rw [TwoPositive.ASupport.charge,if_neg (not_le.mpr TwoPositive.ASupport.alpha_bounds.2)]
   have hS := S11_le_sin (show (0:ℝ)≤frameCap by norm_num [frameCap])
   have hH := sin_le_sin9 (show (0:ℝ)≤frameCap/2 by norm_num [frameCap])
-  have hs0 := (half_trig (show frameCap∈Icc 0 frameCap by norm_num [frameCap])).1
+  have hs0 := (TwoPositive.ASupport.half_trig
+    (show frameCap∈Icc 0 frameCap by norm_num [frameCap])).1
   have hm := mul_le_mul_of_nonneg_right radius_tight.2.le hs0
   norm_num [frameCap,S11,sin9,sin7,radiusHi] at hS hH hm
   dsimp [TwoPositive.ASupport.circleCharge]
