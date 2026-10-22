@@ -121,9 +121,9 @@ theorem high_positive (e : Endpoint) {z : ℝ} (hz : z∈Icc (1/4:ℝ) (7/10)) :
     have hh : (highValue e:ℝ)<((numerator .high e).eval (1/4):ℝ) := by
       exact_mod_cast (high_certificate e).2.2.2
     simpa only [←NonnegativeTotals.Certificate.eval_rat] using hh
-  simp only [highShift,DirectedPowerBounds.aeval_shift] at hi h0
+  simp only [highShift,DirectedPowerBounds.shift_eval] at hi h0
   norm_num at h0
-  rw [show z-1/4+1/4=z by ring] at hi
+  rw [show (1/4:ℝ)+(z-1/4)=z by ring] at hi
   linarith
 
 theorem numerator_positive (r : Row) (e : Endpoint) {z : ℝ}
