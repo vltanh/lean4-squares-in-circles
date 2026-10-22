@@ -292,6 +292,29 @@ succession, is not closure.
 
 ## G3 — Eliminate all exceptional structural branches [OPEN]
 
+**Second, structurally different terminal branch CLOSED:**
+[GRID_FOUR_CORNER_STRESS.md](GRID_FOUR_CORNER_STRESS.md) proves the
+independently rotated four-corner 3×3-grid inequality
+\(q\ge9/2>q_*\), from only four outer squares and four
+projection-span inequalities. This is a genuine alternative stress
+graph to the long/short four-anchor pair inequality; it is not
+a minor tightening of the same constant.
+
+**New global-rank reduction for a broad class:**
+[ORTHOGONAL_RANK_DICHOTOMY.md](ORTHOGONAL_RANK_DICHOTOMY.md)
+shows that for any *orthogonally separable* nine-square configuration
+(every pair separated along at least one coordinate projection in a
+single selected frame), two longest-chain ranks inject the nine
+squares into an \(a\times b\) grid. If both longest chains have
+size at most three, a 3×3 rank grid forces the above four-corner
+stress and \(q\ge9/2\). At \(q\le q_*\), five-long
+chains cannot fit, so the configuration must contain a
+four-square projection-disjoint horizontal or vertical chain.
+All nine square orientations may differ. This does **not**
+apply to an unrestricted arrangement with a pair separated
+only along oblique own-square axes, and it does **not** yet
+turn a four-chain into the full long/short anchor certificate.
+
 **One significant terminal branch is now closed:**
 [ROTATED_STRATIFIED_NINE.md](ROTATED_STRATIFIED_NINE.md) proves the
 sharp bound for every nine-square packing admitting horizontal
@@ -313,7 +336,7 @@ false, produce an exact counterexample and revise the structural
 alternative rather than creating arbitrary parameter subdivisions.
 
 **Gate G3 remains OPEN overall.** Its independently rotated
-stratified branch is CLOSED. The finite disjunction (E) is not yet
+stratified branch and the four-corner grid branch are CLOSED. The finite disjunction (E) is not yet
 known, so the remaining terminal cases cannot be counted.
 
 **Gate G3 closes iff** the finite disjunction in (E) has **no
@@ -470,8 +493,8 @@ theorems and do not merge until regression checks pass.
 |---|---|---|---|
 | G0 | Construction, conditional bounds, false-shortcut tests | CLOSED (hand) | None |
 | G1 | Orientation-stable seven-anchor obstruction | CLOSED (hand) | None |
-| G2 | All-packings structural coverage (three origin states) | OPEN | G3, G4 |
-| G3 | Rotated-stratified branch CLOSED; other structural alternatives | PARTIAL | G4 |
+| G2 | Global rank-grid reduction in coordinate-separable class; all-packings coverage | PARTIAL | G3, G4 |
+| G3 | Rotated-stratified and four-corner grid branches CLOSED; residual oblique/unlayered branches | PARTIAL | G4 |
 | G4 | Global sharp lower bound | OPEN | G5 |
 | G5 | Every equality packing, both directions | OPEN | G6 |
 | G6 | Independently auditable table-free hand manuscript | OPEN | G7 |
@@ -483,7 +506,15 @@ seven anchors; the G3 stratified nine-square branch is now also sharp
 without any common-frame assumption. Both are human geometric proofs,
 not computational certificates.
 
-**Next mathematical checkpoint:** derive a genuinely unconditional
+**Next mathematical checkpoint:** close the *structural* gap rather than
+further refine radius bounds: turn a rank-forced four-chain into a
+long/short anchor certificate in the coordinate-separable branch,
+then handle configurations with intrinsically oblique separating
+axes. In particular, no grid-size, tilt-window or boundary tightening
+counts as progress unless it excludes an entire currently unhandled
+structural branch.
+
+The longer-term goal remains a genuinely unconditional
 four-boundary-anchor extraction or finite sharp exceptional
 classification for G2.2, then handle the other two origin cases and
 complete the quantified coverage implication (E). G1 and the
