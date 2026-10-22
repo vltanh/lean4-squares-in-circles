@@ -19,8 +19,9 @@ inequality \(R_9\ge R_*\) is not yet proved.
 ## Latest subgate closure: global-frame obstruction and four-chain shadow
 
 - **[G2_SUBGATES.md](G2_SUBGATES.md)** is the detailed finite
-  branch ledger. The remaining core is G2.C4.2/C4.3
-  (large-zigzag versus coherent side of a four-chain) and
+  branch ledger. The remaining core is G2.C4.2c/C4.3
+  (the remaining 4×3 zigzag rank patterns versus coherent
+  side of a four-chain) and
   G2.O2/O3 (unrestricted oblique-separator normalization).
 - **[NO_GLOBAL_ORTHOGONAL_FRAME.md](NO_GLOBAL_ORTHOGONAL_FRAME.md)**
   constructs nine exact unit squares at q=1105/256 with seven
@@ -30,6 +31,20 @@ inequality \(R_9\ge R_*\) is not yet proved.
   Hence *no* common perpendicular coordinate frame can
   separate all pairs. The rank-grid theorem cannot be
   promoted to unrestricted G2 by assuming global coordinates.
+- **[FOUR_CHAIN_ZIGZAG_NORMAL_FORM.md](FOUR_CHAIN_ZIGZAG_NORMAL_FORM.md)**
+  closes G2.C4.2a for all square orientations: any vertical
+  zigzag ≥2 in a four-projection chain must be between the
+  **two middle squares**. Their centers straddle the horizontal
+  axis outside ±1/2; the outer center heights lie in ±2/5.
+  Each extreme upper/lower vertical cap can hold at most one
+  additional square.
+- **[NO_CROSSED_FOUR_CHAINS_IN_ZIGZAG.md](NO_CROSSED_FOUR_CHAINS_IN_ZIGZAG.md)**
+  closes G2.C4.2b: in a common coordinate-separable packing,
+  a four-chain with a vertical zigzag ≥2 cannot coexist
+  with a perpendicular four-chain. The entire zigzag branch
+  therefore has rank sizes exactly (4,3), not an unbounded
+  succession of cases. Filling the remaining three missing
+  rank cells is still an open structural counting problem.
 - **[FOUR_CHAIN_SHADOW_BARRIER.md](FOUR_CHAIN_SHADOW_BARRIER.md)**
   proves an exact structural lemma for any four-square
   projection-separated chain: its four projection intervals
