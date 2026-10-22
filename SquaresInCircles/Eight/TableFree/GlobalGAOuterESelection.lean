@@ -46,8 +46,8 @@ structure Selection {q : ℝ} {C : SignedCycle} (I : SourceDomain q C) where
   DE_positive : de=true→0<delta C.theta D
   EH_positive : eh=true→0<delta C.theta E
 
-def select {q : ℝ} {C : SignedCycle} (I : SourceDomain q C)
-    (hq : q≤qCap) (hE : (C.point E).Outer q) : Selection I := by
+theorem exists_selection {q : ℝ} {C : SignedCycle} (I : SourceDomain q C)
+    (hq : q≤qCap) (hE : (C.point E).Outer q) : Nonempty (Selection I) := by
   have hd : I.owner D=2∨I.owner D=3 := by simpa [highGAOwners,D] using I.allowed D
   have he : I.owner E=0∨I.owner E=1 := by simpa [highGAOwners,E] using I.allowed E
   obtain ⟨de,hDE,hdep⟩ : ∃de : Bool,C.Feasible D (if de then 3 else 2) ∧
@@ -66,7 +66,11 @@ def select {q : ℝ} {C : SignedCycle} (I : SourceDomain q C)
       by_cases hnonpos : delta C.theta E≤0
       · exact ⟨false,EH_secondary I hq hE hnonpos hf,by intro h; cases h⟩
       · exact ⟨true,hf,fun _ => lt_of_not_ge hnonpos⟩
-  exact ⟨de,eh,hDE,hEH,hdep,hehp⟩
+  exact ⟨⟨de,eh,hDE,hEH,hdep,hehp⟩⟩
+
+def select {q : ℝ} {C : SignedCycle} (I : SourceDomain q C)
+    (hq : q≤qCap) (hE : (C.point E).Outer q) : Selection I :=
+  Classical.choice (exists_selection I hq hE)
 
 namespace Selection
 variable {q : ℝ} {C : SignedCycle} {I : SourceDomain q C}
