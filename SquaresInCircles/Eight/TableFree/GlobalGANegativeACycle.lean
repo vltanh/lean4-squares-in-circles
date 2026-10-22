@@ -96,6 +96,21 @@ theorem negative_variation_nonincreasing (C : SignedCycle) (P : SignedPoint) {t 
   rw [←variations_equal,←variations_equal]
   exact variation_nonincreasing C P ht
 
+theorem spread_preserved {C : SignedCycle} (P : SignedPoint) {t : ℝ}
+    (hs : C.Spread) (ht : t=C.theta A ∨ t=C.theta G ∨ t=C.theta B) :
+    (replace C P t).Spread := by
+  intro i j
+  rcases ht with ht|ht|ht
+  · by_cases hi : i=A <;> by_cases hj : j=A <;>
+      simpa [replace,ht,hi,hj] using
+        hs (if i=A then A else i) (if j=A then A else j)
+  · by_cases hi : i=A <;> by_cases hj : j=A <;>
+      simpa [replace,ht,hi,hj] using
+        hs (if i=A then G else i) (if j=A then G else j)
+  · by_cases hi : i=A <;> by_cases hj : j=A <;>
+      simpa [replace,ht,hi,hj] using
+        hs (if i=A then B else i) (if j=A then B else j)
+
 theorem strict_spread_preserved {C : SignedCycle} (P : SignedPoint) {t : ℝ}
     (hs : C.StrictSpread) (ht : t=C.theta A ∨ t=C.theta G ∨ t=C.theta B) :
     (replace C P t).StrictSpread := by
@@ -159,7 +174,8 @@ def Result.toCycle {Q : ℝ} {C : SignedCycle}
       by_cases hi : i=A
       · subst i
         simpa using R.core
-      · simpa [replace,hi] using hn.core i }
+      · simpa [replace,hi] using hn.core i
+    spread := spread_preserved R.point hn.spread R.frame }
   radial := by
     intro i
     by_cases hi : i=A
