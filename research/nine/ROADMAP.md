@@ -2,9 +2,9 @@
 
 **Updated 2026-10-22.** Research branch: research/nine-tablefree-hand,
 draft PR #11. This is a **research plan**, not a claim that the
-unrestricted n = 9 theorem is established. The two essential open
-mathematical gates are **G1 (sharp independent-orientation inequality)**
-and **G2 (unrestricted structural extraction)**.
+unrestricted n = 9 theorem is established. The sharp independently rotated seven-anchor inequality is now **proved by a table-free hand argument (G1)**.
+The central unresolved mathematical task is **G2 (unrestricted structural
+extraction)**, followed by G3's remaining branches.
 
 ## 0. Exact target, definitions, and closure conditions
 
@@ -52,7 +52,7 @@ rethink the invariant rather than endlessly refining it.
 ~~~text
 G0  Exact inputs, negative controls, and geometric vocabulary [CLOSED]
  |\
- | +--> G1  Orientation-stable sharp 4-versus-3 estimate [OPEN]
+ | +--> G1  Orientation-stable sharp 4-versus-3 estimate [CLOSED, HAND]
  |
  +----> G2  Unrestricted extraction, center-status branches [OPEN]
              |
@@ -142,72 +142,56 @@ hand arguments, with exact rational checks of the witness. No
 n=9 Lean kernel compilation, full independent audit, or unrestricted
 theorem is claimed.
 
-## G1 — Sharp orientation-stable seven-anchor inequality [OPEN]
+## G1 — Sharp orientation-stable seven-anchor inequality [CLOSED: HAND PROOF]
 
-The sharp local seven-square inequality should be attempted *before*
-expanding a global contact classification; if its natural statement is
-false, we need to know at once.
+The conjectured seven-anchor terminal lemma is now **proved** with
+no small-angle assumption or computer-assisted verification.
 
-### G1.1 — Specify a precise orientation-free terminal pattern [OPEN]
+**Primary source:**
+[ORIENTATION_STABLE_SEVEN_ANCHOR.md](ORIENTATION_STABLE_SEVEN_ANCHOR.md).
 
-Let e be any unit vector and f its perpendicular. Define
-\(\mathcal P_{4,3}(e;M,B)\) to mean:
+**G1.1 (exact structural hypothesis): CLOSED.**
+Fix any orthonormal frame (e,f). Four squares have pairwise disjoint
+interior projections along e, three other squares also do, and
+every point of every square in the group of four is above every point
+of every square in the group of three along f. All seven unit squares
+have **independent arbitrary orientations**.
 
-1. M and B are disjoint labelled subfamilies of four and three
-   squares, with **arbitrary individual orientations**.
-2. The projection interiors of the four M-squares along e are
-   pairwise disjoint; likewise for the three B-squares.
-3. Every B-square lies entirely below every M-square along f:
-   \[
-    (c_m-c_b)\cdot f\ge h_m(f)+h_b(f)
-        \qquad(m\in M,\ b\in B). \tag{P}
-   \]
-
-The reflected pattern \(\mathcal P_{3,4}\) is symmetric. This
-statement recovers the existing aligned seven-anchor theorem as a
-special case. **Do not** replace (P) by center separation of 1 when
-individual frames differ.
-
-### G1.2 — Prove or falsify the sharp implication [OPEN]
-
-**Candidate lemma (not yet proved):**
+**G1.2 (sharp terminal theorem): CLOSED.** Under these hypotheses,
 \[
- \mathcal P_{4,3}(e;M,B)\ \wedge\
- \text{all seven squares in a disk of radius }\sqrt q
- \quad\Longrightarrow\quad q\ge q_* . \tag{A}
+ q\ge q_*=\frac{1105}{256}.
 \]
+Its mathematical mechanism is a more general cap-row theorem: for
+m horizontally projection-separated, independently rotated squares
+above a common floor y=s, with \(0\le s+1\le m/2\),
+\[
+ q\ge \frac{m^2}{4}+(s+1)^2.
+\]
+The reflection covers squares below a ceiling.
+The general bound is proved by adding the two tangent inequalities
+with vectors \((\pm m/2,s+1)\) and an explicit one-square nonnegative
+orientation penalty. The orientation penalty is proved by two
+elementary sign cases; no discretization or trigonometric enclosure.
 
-Use exact corner support (D), projection halfwidths h, interval order
-and convexity/dual weights. Find a short inequality showing that any
-gain from rotating a corner is more than paid for by the increased
-projection spans or vertical separation. Prove the statement over
-the full tilt range, not merely perturbations of the aligned pose.
-Treat endpoint contacts and tangent axes inclusively.
+**G1.3 (equality and stress): CLOSED.**
+Equality in the cap-row theorem (with positive height parameter)
+forces all the participating square frames to be axis aligned,
+all horizontal interval gaps to vanish, and the extreme top or
+bottom corner vertices to lie at the exact tangent points.
+For the 4-over-3 pair, equality forces the common dividing line
+at \(s=-7/16\), all seven frame alignments, horizontal centers
+\((-3/2,-1/2,1/2,3/2)\) and \((-1,0,1)\), and the four
+outer pinned anchor heights \(1/16\) and \(-15/16\).
+The two remaining squares in a nine-square packing are unrestricted.
 
-First try to **falsify** (A) with varied square orientations and
-staggered centers. Numerical experiments are exploration only:
-a valid refutation must be an exact packing (rational/Pythagorean
-frames or rigorous algebraic bounds) satisfying (P) at q<q_*.
+**Scope boundary:** G1 does **not** imply that any nine-square
+packing admits this seven-anchor pattern. That is the unproved
+structural-extraction task G2. The independently rotated witness
+NONRIGID_WITNESS.md is compatible with G1 because its rotated
+square is *not* one of the seven anchors.
 
-- If (A) is proved, record its equality conditions for G5.
-- If false, save the explicit counterexample, mark (A) **REJECTED**,
-  and reformulate a sharp terminal lemma with additional *globally
-  derivable* contact data. Do not defend a false statement by making
-  a long mesh of near-aligned subcases.
-
-### G1.3 — Equality/stress certificate [OPEN]
-
-Extract explicit nonnegative defects: unused projection span,
-intergroup support clearance, orientation slack, and corner-circle
-slack. Their simultaneous vanishing should imply the pinned
-4-plus-3 anchor data whenever that is a valid equality consequence.
-If equality has genuinely distinct geometry, record that instead of
-forcing the standard picture.
-
-**Gate G1 closes iff** a true, fully proved orientation-stable
-terminal obstruction, with its **precise sufficient hypotheses**, is
-available for the branches G2/G3 will produce. A conditional proof
-requiring seven common-frame squares does **not** close G1.
+**Verification:** hand derivation and numerical spot checks only;
+no Lean source, Lean compilation or kernel-verified formalization yet.
 
 ## G2 — Extract a global geometric skeleton from arbitrary nine squares [OPEN]
 
@@ -384,8 +368,8 @@ and Palomar-style kernel-checking standard.
 - **G7.1:** state the n=9 radius, witness, and formal equality
   family; show the model is nonempty.
 - **G7.2:** formalize the exact support/corner formulas, the
-  separating-axis condition (SAT), and the short terminal
-  inequality of G1.
+  separating-axis condition (SAT), and the now-completed hand
+  cap-row and seven-anchor theorems in ORIENTATION_STABLE_SEVEN_ANCHOR.md.
 - **G7.3:** formalize G2's full structural coverage with no
   unrestricted assumptions replaced by an ad hoc normal form.
 - **G7.4:** implement every G3 terminal case and assemble the
@@ -411,14 +395,13 @@ theorems and do not merge until regression checks pass.
 
 ## Work selection, falsification and stopping rules
 
-1. **Immediate priority:** try G1.2 for the precisely stated
-   projection-separated but independently rotated 4-versus-3
-   situation. Seek a short exact support inequality *or an exact
-   counterexample*. This is a single finite mathematical target,
-   not an open-ended search over more and more poses.
-2. **In parallel:** attack G2.2 (center on a seam) first because it
-   contains the record packing; then G2.1 and G2.3. Record which
-   geometric hypotheses G1 would need from G2.
+1. **Immediate priority:** attack G2.2 (center on a seam), since
+   the record packing lies there. The exact G1 terminal lemma is
+   available; find a global extraction theorem that actually supplies
+   its projection-separation and cross-group support-order hypotheses.
+2. **In parallel:** investigate G2.1 (center in an open square) and
+   G2.3 (origin outside the union). Any exceptional pattern must have
+   a named, independently proved terminal geometric obstruction.
 3. **Checkpoint:** no large-scale case classification until its
    terminal inequalities and complete coverage theorem are
    precisely formulated. An "exhaustive classification" must
@@ -447,7 +430,7 @@ theorems and do not merge until regression checks pass.
 | Gate | Mathematical deliverable | State | Blocks |
 |---|---|---|---|
 | G0 | Construction, conditional bounds, false-shortcut tests | CLOSED (hand) | None |
-| G1 | Orientation-stable seven-anchor obstruction | OPEN | G4, G5 |
+| G1 | Orientation-stable seven-anchor obstruction | CLOSED (hand) | None |
 | G2 | All-packings structural coverage (three origin states) | OPEN | G3, G4 |
 | G3 | Analytic closure of every exceptional alternative | OPEN | G4 |
 | G4 | Global sharp lower bound | OPEN | G5 |
@@ -456,8 +439,8 @@ theorems and do not merge until regression checks pass.
 | G7 | Lean kernel-verified theorem and classification | NOT STARTED | G8 |
 | G8 | Public interfaces, docs, validation, PR close | NOT STARTED | — |
 
-**Next mathematical checkpoint:** either prove or rigorously reject
-the candidate inequality (A), while deriving an unconditional
-support/center-seam lemma for G2.2. No enlargement of the
-conditional seven-anchor result counts as global progress unless it
-feeds the quantified coverage theorem (E).
+**Next mathematical checkpoint:** derive a genuinely unconditional
+support/center-seam lemma for G2.2 and complete the finite coverage
+implication (E). The G1 terminal theorem is now available, but G2
+must show it applies (or handle every exception) from unrestricted
+Packing hypotheses.
