@@ -6,6 +6,34 @@ unrestricted n = 9 theorem is established. The sharp independently rotated seven
 The central unresolved mathematical task is **G2 (unrestricted structural
 extraction)**, followed by G3's remaining branches.
 
+**Subgate tree and current closure ledger:**
+[G2_SUBGATES.md](G2_SUBGATES.md) is now the canonical detailed G2
+ledger. The main changes since the first roadmap are:
+
+- **G2.O1 CLOSED (negative theorem):**
+  [NO_GLOBAL_ORTHOGONAL_FRAME.md](NO_GLOBAL_ORTHOGONAL_FRAME.md)
+  gives an exact record-radius nine-square packing with no common
+  orthogonal coordinate frame separating all pairs. Any G2
+  argument premised on such a frame for all squares is false.
+- **G2.C4.1 CLOSED (structural):**
+  [FOUR_CHAIN_SHADOW_BARRIER.md](FOUR_CHAIN_SHADOW_BARRIER.md)
+  proves that any four-square horizontal projection chain
+  leaves less than 1/4 of the total disk projection uncovered,
+  so each of the five remaining squares meets one to three
+  consecutive chain projections. In the coordinate-separable
+  class each extra square has coherent vertical side, or the
+  chain contains a height zigzag of at least two units.
+- **G5.S CLOSED (conditional equality):**
+  [STRATIFIED_EQUALITY_FAMILY.md](STRATIFIED_EQUALITY_FAMILY.md)
+  supplies an exact necessary-and-sufficient nine-parameter
+  family for all stratified equality packings. The oblique
+  construction proves this cannot be declared the complete
+  unrestricted equality family.
+- **Still OPEN:** G2.C4.2 large-zigzag, G2.C4.3 coherent-sign,
+  G2.O2/O3 oblique extraction and stress, G2.I/B/E global
+  center-incidence branches, G2.X exhaustive coverage, G4
+  global optimality, and G5.U complete unrestricted equality.
+
 ## 0. Exact target, definitions, and closure conditions
 
 Write
@@ -496,7 +524,7 @@ theorems and do not merge until regression checks pass.
 | G2 | Global rank-grid reduction in coordinate-separable class; all-packings coverage | PARTIAL | G3, G4 |
 | G3 | Rotated-stratified and four-corner grid branches CLOSED; residual oblique/unlayered branches | PARTIAL | G4 |
 | G4 | Global sharp lower bound | OPEN | G5 |
-| G5 | Every equality packing, both directions | OPEN | G6 |
+| G5 | Stratified equality family CLOSED; unrestricted equality | PARTIAL | G6 |
 | G6 | Independently auditable table-free hand manuscript | OPEN | G7 |
 | G7 | Lean kernel-verified theorem and classification | NOT STARTED | G8 |
 | G8 | Public interfaces, docs, validation, PR close | NOT STARTED | — |
