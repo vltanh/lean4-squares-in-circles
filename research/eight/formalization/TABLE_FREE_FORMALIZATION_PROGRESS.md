@@ -2,9 +2,9 @@
 
 # Table-free formalization: live progress and remaining work
 
-## 22 October 2026 — newest source checkpoint
+## Archived early-22-October source checkpoint
 
-**Read [the verified remote handoff](TABLEFREE_HANDOFF_2026_10_22_NONNEGATIVE_TOTALS.md) before following the 21-Oct implementation table below.** The prior session's seven `GlobalGAMixedNegativeA*`/`GlobalGANegativeA*` modules and handoff were verified in the actual PR branch. The broad BT2 nonnegative selected-A/E-total source dispatcher `GlobalGA.NonnegativeTotals.all_TD_false` handles TD0 and both TD2 signs (uncompiled). The negative-A normal-form and `cycle_reduce` are drafted (uncompiled), with two local fixes pushed in commits `c6ba426` and `f3fcdb9`. Next source work is the shorter/longer nonnegative-E comparisons for a single negative A primary and positive TD2, then the remaining E/BT owner matrix. None of this establishes a complete unrestricted owner classifier, unconditional `SharpSourceEntry`, or a new table-free public proof. Verification and optimization remain deferred.
+**Use [the consolidated live handoff](TABLEFREE_HANDOFF_CURRENT.md) for the latest status.** The [earlier source-only handoff](TABLEFREE_HANDOFF_2026_10_22_NONNEGATIVE_TOTALS.md) is archived; the 21-Oct implementation table below is historical. The prior session's seven `GlobalGAMixedNegativeA*`/`GlobalGANegativeA*` modules and handoff were verified in the actual PR branch. The broad BT2 nonnegative selected-A/E-total source dispatcher `GlobalGA.NonnegativeTotals.all_TD_false` handles TD0 and both TD2 signs (uncompiled). The negative-A normal-form and `cycle_reduce` are drafted (uncompiled), with two local fixes pushed in commits `c6ba426` and `f3fcdb9`. Next source work is the shorter/longer nonnegative-E comparisons for a single negative A primary and positive TD2, then the remaining E/BT owner matrix. None of this establishes a complete unrestricted owner classifier, unconditional `SharpSourceEntry`, or a new table-free public proof. Verification and optimization remain deferred.
 
 **The milestones below were last globally reconciled on 21 October 2026; do not mistake their older per-lane descriptions for a later closure claim.**
 
@@ -18,8 +18,7 @@ word exclusions, global owner entry, original-source recovery, and public
 theorem assembly are still open. The public theorem has not yet been replaced
 by an unconditional table-free dependency chain.
 
-This is the current implementation ledger. It supersedes the progress claims
-and remaining-task lists in older handoffs and recovery snapshots. The older
+This is a historical implementation ledger. The canonical handoff supersedes its per-lane status claims, historical owner counts and remaining-task priorities. The older
 [ROADMAP.md](ROADMAP.md) remains the detailed target specification; the
 [table-free hand-proof roadmap](TABLE_FREE_GEOMETRIC_HAND_ROADMAP.md) remains
 the mathematical source map. Neither a completed hand proof nor a previously

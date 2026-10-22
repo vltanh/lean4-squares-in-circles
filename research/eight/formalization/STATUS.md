@@ -2,9 +2,9 @@
 
 # n=8 formalization: source draft status
 
-## Verified remote handoff — 22 October 2026
+## Archived source-only handoff — 22 October 2026 (historical; see current handoff above)
 
-[**Start the next session from the verified 22-Oct handoff**](TABLEFREE_HANDOFF_2026_10_22_NONNEGATIVE_TOTALS.md). GitHub confirmed all seven newly submitted negative-A Lean modules and their prior handoff on PR #10; two source-level fixes were subsequently pushed (`c6ba426`, `f3fcdb9`). The expanded nonnegative selected A/E total BT2 package now covers TD0 and both TD2 signs **as uncompiled drafts**, and the mixed/both-negative A reduction exists as an uncompiled source draft. Neither this package nor the seven A files closes unrestricted original-owner entry; G2/G3/G4/G6/G7 remain open/partial. The public theorem still depends on `Candidate.capture`. **No Lean, lake, CI, or kernel verification occurred.** Detailed remaining cases, proof-source links and handoff cautions are recorded in the linked document.
+[**Archived 22-Oct source-only checkpoint**](TABLEFREE_HANDOFF_2026_10_22_NONNEGATIVE_TOTALS.md); **start with [the canonical live handoff](TABLEFREE_HANDOFF_CURRENT.md)**. GitHub confirmed all seven newly submitted negative-A Lean modules and their prior handoff on PR #10; two source-level fixes were subsequently pushed (`c6ba426`, `f3fcdb9`). The expanded nonnegative selected A/E total BT2 package now covers TD0 and both TD2 signs **as uncompiled drafts**, and the mixed/both-negative A reduction exists as an uncompiled source draft. Neither this package nor the seven A files closes unrestricted original-owner entry; G2/G3/G4/G6/G7 remain open/partial. The public theorem still depends on `Candidate.capture`. **No Lean, lake, CI, or kernel verification occurred.** Detailed remaining cases, proof-source links and handoff cautions are recorded in the linked document.
 
 
 ## Current closure ledger — 21 October 2026
