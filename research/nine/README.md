@@ -19,9 +19,8 @@ inequality \(R_9\ge R_*\) is not yet proved.
 ## Latest subgate closure: global-frame obstruction and four-chain shadow
 
 - **[G2_SUBGATES.md](G2_SUBGATES.md)** is the detailed finite
-  branch ledger. The remaining core is G2.C4.2c/C4.3
-  (the remaining 4×3 zigzag rank patterns versus coherent
-  side of a four-chain) and
+  branch ledger. The remaining core is G2.C4.3 (coherent-side
+  four-chain completion) and
   G2.O2/O3 (unrestricted oblique-separator normalization).
 - **[NO_GLOBAL_ORTHOGONAL_FRAME.md](NO_GLOBAL_ORTHOGONAL_FRAME.md)**
   constructs nine exact unit squares at q=1105/256 with seven
@@ -31,6 +30,12 @@ inequality \(R_9\ge R_*\) is not yet proved.
   Hence *no* common perpendicular coordinate frame can
   separate all pairs. The rank-grid theorem cannot be
   promoted to unrestricted G2 by assuming global coordinates.
+- **[ZIGZAG_BRANCH_CLOSED.md](ZIGZAG_BRANCH_CLOSED.md)**
+  excludes every nine-square coordinate-separable four-chain
+  with center-height zigzag at least two. Five other squares
+  must fill regions with capacities 2, 1 and 2. Saturating them
+  forces three centers into a narrow horizontal band, impossible
+  for unit coordinate separation. This closes all C4.2 cases.
 - **[FOUR_CHAIN_ZIGZAG_NORMAL_FORM.md](FOUR_CHAIN_ZIGZAG_NORMAL_FORM.md)**
   closes G2.C4.2a for all square orientations: any vertical
   zigzag ≥2 in a four-projection chain must be between the
@@ -187,10 +192,9 @@ a human-checkable proof.
 
 ## Next concrete task
 
-First complete the **coordinate-separable four-chain** branch:
-from the chain forced by ORTHOGONAL_RANK_DICHOTOMY.md and the
-five remaining squares, derive the long/short four-anchor
-certificate or a small number of exact new terminal patterns.
+Complete G2.C4.3, the **coherent-side** common-coordinate-separable
+four-chain branch. Large zigzags have now been eliminated.
+Then address the unrestricted oblique-separator classification.
 Second handle the **oblique-separator branch**, in which no
 single perpendicular frame separates all square pairs; a
 coordinate rank injection cannot be used there.
