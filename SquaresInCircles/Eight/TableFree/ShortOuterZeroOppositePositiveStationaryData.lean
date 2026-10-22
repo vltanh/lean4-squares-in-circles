@@ -16,7 +16,7 @@ coordinates; it does not replace them by independent interval variables.
 noncomputable section
 open Set
 namespace SquaresInCircles.Eight.TableFree.ShortOuterZero.Opposite.Positive.Stationary
-open CommonQuarter CorePairGeometry Arithmetic
+open CommonQuarter CorePairGeometry Arithmetic WrongWordCircleSupport
 open ShortOuterOne.SameContact (arc ratio ratioD)
 open SecondWord (U W outer_domain outer_zero_mem U_positive UW_circle)
 
