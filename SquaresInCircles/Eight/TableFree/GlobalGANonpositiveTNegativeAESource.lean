@@ -151,7 +151,7 @@ theorem actual_false {Q : ℝ} {C : SignedCycle} (ga ab de eh : Bool)
     · simpa [owners,E] using hEH
   have hu := stress_nonpos hsmall hf
   have hr := reference_reserve hg ga ab de eh hs hc hQ hHy hGy hBy hDy hvar
-  have hg := NegativeFlatE.gains_reserve ga ab false de eh hs hc hcore hQ hvar hga hab
+  have hgain := NegativeFlatE.gains_reserve ga ab false de eh hs hc hcore hQ hvar hga hab
     (by simp) hde heh
   have htg := t_gain_nonneg (hs T) (hcore T) hb (hsmall B)
   have hid := decomposition hg ga ab de eh C hflat
