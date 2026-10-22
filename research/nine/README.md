@@ -30,6 +30,14 @@ inequality \(R_9\ge R_*\) is not yet proved.
   Hence *no* common perpendicular coordinate frame can
   separate all pairs. The rank-grid theorem cannot be
   promoted to unrestricted G2 by assuming global coordinates.
+- **[INNER_PAIR_SHADOW_DOMINATION.md](INNER_PAIR_SHADOW_DOMINATION.md)**
+  is a new *oblique-safe* G2 result. Conditional only on a
+  horizontal four-projection chain, every other square must
+  have positive projected overlap with M2 or M3, the two
+  middle chain squares. Exclusive overlap with M1 or M4
+  forces two inscribed unit-half-radius disks to intersect.
+  Unlike the coordinate rank argument, this result assumes
+  no common x/y separator for other-square interactions.
 - **[ZIGZAG_BRANCH_CLOSED.md](ZIGZAG_BRANCH_CLOSED.md)**
   excludes every nine-square coordinate-separable four-chain
   with center-height zigzag at least two. Five other squares
