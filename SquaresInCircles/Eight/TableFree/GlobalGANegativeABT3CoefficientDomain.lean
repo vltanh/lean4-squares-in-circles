@@ -43,6 +43,28 @@ theorem basic_domain (f : Family) {z : ℝ}
     exact ⟨⟨by linarith [hk.1],by linarith [hk.2]⟩,by linarith [hl.1],
       by linarith [hl.1],by linarith [hl.1],hml₀,by linarith [hl.1],hkc,by linarith⟩
 
+theorem family_positive (f : Family) {z : ℝ}
+    (hz : z∈Icc (Certificate.left f:ℝ) (Certificate.right f:ℝ)) :
+    0<k f z ∧ 0<l f z ∧ 0<c f z ∧ 0<m f z := by
+  have hb := basic_domain f hz
+  have hk : 0<k f z := by linarith [hb.1.1]
+  exact ⟨hk,by linarith [hb.2.1],hk.trans hb.2.2.2.2.2.2.1,
+    by linarith [hb.2.1,hb.2.2.2.2.1]⟩
+
+theorem family_basic_domain (f : Family) {z : ℝ}
+    (hz : z∈Icc (Certificate.left f:ℝ) (Certificate.right f:ℝ)) :
+    k f z∈Icc (1/2:ℝ) (17/20:ℝ) ∧ c f z∈Icc (k f z) 2 ∧
+    1<l f z ∧ k f z<l f z ∧ (11/20)*l f z<k f z ∧
+    (77/100)*l f z<m f z ∧ m f z<(71/50)*l f z := by
+  have hb := basic_domain f hz
+  exact ⟨hb.1,⟨hb.2.2.2.2.2.2.1.le,by linarith [hb.2.2.2.2.2.2.2]⟩,
+    by linarith [hb.2.1],by linarith [hb.2.1,hb.2.2.2.1],hb.2.2.1,
+    by linarith [hb.2.1,hb.2.2.2.2.1],by linarith [hb.2.1,hb.2.2.2.2.2.1]⟩
+
+theorem low_ratio {z : ℝ} (hz : z∈Icc 0 (1/4:ℝ)) :
+    (11/20)*l .low z<k .low z ∧ k .low z<(2/3)*l .low z :=
+  ⟨(low_ratios hz).1,(low_ratios hz).2.1⟩
+
 theorem secant_bounds (f : Family) (atG : Bool) {s z : ℝ}
     (hz : z∈Icc (Certificate.left f:ℝ) (Certificate.right f:ℝ))
     (hs : s∈Icc 0 (angleCut atG)) :
