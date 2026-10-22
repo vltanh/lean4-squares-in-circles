@@ -164,7 +164,7 @@ theorem secant_sine_remaining {x S : ℝ} (hx : x∈Icc 0 frameCap)
     field_simp [hc.ne']
     ring
   rw [hid] at hmul
-  have htan : 0≤Real.tan x := SecantCoordinate.tan_nonnegative hx
+  have htan : 0≤Real.tan x := NegativeAPositiveTD.SecantCoordinate.tan_nonnegative hx
   have ht := transport_trig (show frameCap∈Icc 0 frameCap by
     exact ⟨by norm_num [frameCap],le_rfl⟩)
   have hprod := mul_nonneg (show 0≤Real.cos frameCap by linarith [ht.1]) htan
