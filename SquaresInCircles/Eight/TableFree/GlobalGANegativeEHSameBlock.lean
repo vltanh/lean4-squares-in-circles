@@ -133,6 +133,7 @@ theorem negative_reserve {a b P N : ℝ} (ha : (3/5:ℝ)≤a)
     rw [Real.cos_sub]
     dsimp [phi]
     ring
+  have htrig' := congrArg (fun x : ℝ => a*x) htrig
   rw [hid]
   nlinarith [mul_nonneg ha0 hfirst]
 
