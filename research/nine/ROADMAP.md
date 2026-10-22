@@ -23,13 +23,22 @@ ledger. The main changes since the first roadmap are:
   consecutive chain projections. In the coordinate-separable
   class each extra square has coherent vertical side, or the
   chain contains a height zigzag of at least two units.
+- **G2.C4.2a/b CLOSED (zigzag structure):**
+  [FOUR_CHAIN_ZIGZAG_NORMAL_FORM.md](FOUR_CHAIN_ZIGZAG_NORMAL_FORM.md)
+  forces every vertical height gap ≥2 in a projection-separated
+  four-chain to occur between its middle two squares, with exact
+  opposite-side center bounds and unit-square top/bottom cap
+  capacities. [NO_CROSSED_FOUR_CHAINS_IN_ZIGZAG.md](NO_CROSSED_FOUR_CHAINS_IN_ZIGZAG.md)
+  excludes a perpendicular four-chain in the common-coordinate
+  separability class. Its entire zigzag branch has longest-rank
+  rectangle 4×3. **The remaining 4×3 configurations are not excluded.**
 - **G5.S CLOSED (conditional equality):**
   [STRATIFIED_EQUALITY_FAMILY.md](STRATIFIED_EQUALITY_FAMILY.md)
   supplies an exact necessary-and-sufficient nine-parameter
   family for all stratified equality packings. The oblique
   construction proves this cannot be declared the complete
   unrestricted equality family.
-- **Still OPEN:** G2.C4.2 large-zigzag, G2.C4.3 coherent-sign,
+- **Still OPEN:** G2.C4.2c remaining 4×3 zigzag rank cases, G2.C4.3 coherent-sign,
   G2.O2/O3 oblique extraction and stress, G2.I/B/E global
   center-incidence branches, G2.X exhaustive coverage, G4
   global optimality, and G5.U complete unrestricted equality.
