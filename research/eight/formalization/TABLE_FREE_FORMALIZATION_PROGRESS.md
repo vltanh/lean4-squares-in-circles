@@ -1,5 +1,12 @@
 # Table-free formalization: live progress and remaining work
 
+## 22 October 2026 — newest source checkpoint
+
+**Read [the verified remote handoff](TABLEFREE_HANDOFF_2026_10_22_NONNEGATIVE_TOTALS.md) before following the 21-Oct implementation table below.** The prior session's seven `GlobalGAMixedNegativeA*`/`GlobalGANegativeA*` modules and handoff were verified in the actual PR branch. The broad BT2 nonnegative selected-A/E-total source dispatcher `GlobalGA.NonnegativeTotals.all_TD_false` handles TD0 and both TD2 signs (uncompiled). The negative-A normal-form and `cycle_reduce` are drafted (uncompiled), with two local fixes pushed in commits `c6ba426` and `f3fcdb9`. Next source work is the shorter/longer nonnegative-E comparisons for a single negative A primary and positive TD2, then the remaining E/BT owner matrix. None of this establishes a complete unrestricted owner classifier, unconditional `SharpSourceEntry`, or a new table-free public proof. Verification and optimization remain deferred.
+
+**The milestones below were last globally reconciled on 21 October 2026; do not mistake their older per-lane descriptions for a later closure claim.**
+
+
 Updated **21 October 2026, 18:08 UTC**. Branch: `formalize/eight-uncompiled-draft`.
 Review: [PR #10](https://github.com/vltanh/lean4-squares-in-circles/pull/10).
 
