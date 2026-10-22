@@ -163,7 +163,8 @@ theorem pure_le_saturated (atG : Bool) {p q : ι→ℝ} {d i j : ι} {a s z : �
         have hp₁ := mul_le_mul_of_nonneg_right (hpay i) hN.1
         simp only [V_zero,sub_zero] at hg
         change -a*(s-z)≤ -a*P+V R (p i) (q i) N
-        nlinarith [hsurplus]
+        rw [←hsurplus]
+        nlinarith
       · simp only [block,positive,if_neg hid]
         have hratio' : q i≤(17/10)*p i := by
           have hr := hratio i
