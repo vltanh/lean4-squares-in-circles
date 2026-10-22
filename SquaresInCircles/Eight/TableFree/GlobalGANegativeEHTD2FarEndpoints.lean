@@ -42,7 +42,7 @@ def farActualExtra (r : FarCase) (e : Split) (θ : ℝ) : ℝ :=
     else if farNegativeB r then max (farActualL r θ) (farActualM r e θ) else 1)*
       (Real.cos (farArgument r θ)-1)
 def farActualA (r : FarCase) (e : Split) (θ : ℝ) : ℝ :=
-  farNonradical (farFamily r) e θ+
+  farBaseActual (farFamily r) e θ+
     (if r=.lowZero then NegativeEH.G θ else NegativeEH.G (farS r:ℝ))+farActualExtra r e θ
 
 def farIncrement (r : FarCase) (e : Split) (θ : ℝ) : ℝ :=
