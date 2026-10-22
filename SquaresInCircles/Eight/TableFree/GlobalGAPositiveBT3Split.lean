@@ -19,7 +19,7 @@ open Set
 namespace SquaresInCircles.Eight.TableFree.GlobalGA.PositiveBT3.Analytic
 open Secondary PositiveAngularEnvelope OrdinaryAngleConcavity PairNormCalculus
 open NonnegativeTotals SplitConcavityTools
-open TwoPositive (ASupport)
+open TwoPositive
 
 theorem cosine_sum {t a : ℝ} (ht : t∈Icc 0 frameCap) (ha : a∈Icc 0 t) :
     (1103/625:ℝ)<Real.cos a+Real.cos (t-a) := by
@@ -53,7 +53,7 @@ theorem strong_rest_curvature {m l t a d : ℝ}
   have hsinL := mul_le_mul_of_nonneg_left hsin hl.le
   have hsinAL := mul_nonneg hl.le hsa
   dsimp [TwoPositive.Split.smoothDD,frameCap] at *
-  nlinarith only [hcm,hcl,hsigM,hsM,hcharge,hcos,hsinL,hsinAL]
+  nlinarith only [hcm,hcl,hsigM,hsM,hcharge,hcos,hsinL,hsinAL,hl]
 
 /-- Equation (23), proved from its exact positive-square reserve. -/
 theorem D_slope {c : ℝ} (hc : c∈Icc 0 (6/5:ℝ)) :
