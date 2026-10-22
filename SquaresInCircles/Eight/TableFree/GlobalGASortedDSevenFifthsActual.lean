@@ -75,4 +75,28 @@ theorem actual_minorant {Q c x y : ℝ} {P : SignedPoint}
   dsimp [D] at hminor
   linarith
 
+theorem lower_for {k c x y : ℝ} (hk : k∈Icc (1/2:ℝ) K)
+    (hc : c∈Icc 1 Cmax) (hxy : SignedDomain x y) :
+    -slope*positiveTotal x y+V R k 1 (negativeTotal x y)≤D c x y := by
+  have hn : negativeTotal x y∈Icc 0 frameCap :=
+    ⟨add_nonneg (negativePart_nonneg _) (negativePart_nonneg _),hxy.2⟩
+  have hm := OrdinaryNegativeEnvelope.V_monotone_smaller (Real.sqrt_nonneg _) (q:=1)
+    (by norm_num) hn
+    (show k∈Icc (1/2:ℝ) 1 from ⟨hk.1,by dsimp [K] at hk; linarith [hk.2]⟩)
+    (show K∈Icc (1/2:ℝ) 1 by norm_num [K]) hk.2
+  have hh := lower hc hxy
+  dsimp [vstar] at hh
+  linarith
+
+theorem actual_minorant_for {Q k c x y : ℝ} {P : SignedPoint}
+    (hs : P.Sorted) (hy : P.y≤0) (hP : P.Contained Q) (hQ : Q≤qCap)
+    (hk : k∈Icc (1/2:ℝ) K) (hc : c∈Icc 1 Cmax) (hxy : SignedDomain x y) :
+    -slope*positiveTotal x y+V R k 1 (negativeTotal x y)≤
+      c*(edgeWidth x-1)+edgeWidth y-1+(1+c)*diagonal-
+        (forceA c x y*P.a+forceB c x y*(-P.y)) := by
+  have hsupp := actual_support hs hy hP hQ hc hxy
+  have hminor := lower_for hk hc hxy
+  dsimp [D] at hminor
+  linarith
+
 end SquaresInCircles.Eight.TableFree.GlobalGA.SortedDSevenFifths
