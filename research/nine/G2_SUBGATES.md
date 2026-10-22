@@ -21,7 +21,9 @@ G2.0 (exact encoding and false-normalization tests) CLOSED
   |      C2 full 3x3 grid excluded CLOSED
   |      C3 four-chain exists CLOSED
   |      C4.1 chain-shadow barrier and coherent/zigzag split CLOSED
-  |      C4.2 large-zigzag terminal obstruction OPEN
+  |      C4.2a middle-pair zigzag normal form + cap bound CLOSED
+  |      C4.2b exclude crossed perpendicular four-chain CLOSED
+  |      C4.2c finish all 4×3 zigzag rank patterns OPEN
   |      C4.3 coherent-sign terminal obstruction OPEN
   |      C4.4 coordinate-separable closure OPEN
   |
@@ -103,11 +105,35 @@ there is a chain-center vertical gap of at least two.
 This is a finite incidence classification, not a claim that the
 five extra squares form globally separated layers.
 
-**G2.C4.2 — Large-zigzag branch: OPEN.**
-If a pair of four-chain squares have vertical-center gap at least
-two, derive a global nine-square sharp obstruction. A four-square
-zigzag by itself is feasible well inside the candidate circle;
-the five other squares must be used essentially.
+**G2.C4.2 — Large-zigzag branch: PARTIAL.**
+Its geometric normal form and crossed-four-chain exclusion have
+closed in C4.2a/b. The five other squares still require a
+complete 4×3 rank/counting obstruction in C4.2c.
+
+**G2.C4.2a — Zigzag position and cap control: CLOSED.**
+[FOUR_CHAIN_ZIGZAG_NORMAL_FORM.md](FOUR_CHAIN_ZIGZAG_NORMAL_FORM.md)
+proves, for *arbitrary independent orientations*, that all four
+horizontal chain center x-coordinates lie in narrow rational
+intervals around (-3/2,-1/2,1/2,3/2), the outer center heights
+have absolute value <2/5, and any vertical center gap ≥2
+can only occur between the two inner chain squares. Those inner
+centers must straddle the axis above 1/2 and below -1/2.
+Moreover, at most one other square can fit entirely above the
+higher inner square, and at most one entirely below the lower.
+
+**G2.C4.2b — No perpendicular four-chain in zigzag: CLOSED.**
+[NO_CROSSED_FOUR_CHAINS_IN_ZIGZAG.md](NO_CROSSED_FOUR_CHAINS_IN_ZIGZAG.md)
+shows by exact center-coordinate comparisons that, in the
+common-coordinate-separable class, a zigzag horizontal four-chain
+cannot coexist with a vertical four-chain. Therefore its
+rank rectangle is exactly 4×3 (and nine rank cells are occupied
+among twelve).
+
+**G2.C4.2c — Finish the remaining 4×3 zigzag: OPEN.**
+Count all five extra squares using the shadow incidence
+blocks and the 4×3 rank structure; prove a sharp terminal
+obstruction for **every** such arrangement. The cap capacity
+lemmas alone do not rule out all positions.
 
 **G2.C4.3 — Coherent-sign branch: OPEN.**
 If each extra square stays consistently above/below the chain
@@ -224,7 +250,7 @@ four-anchor-based parameter domain may absorb it.
 
 ## 7. Strategy: avoid minor-boundary rabbit holes
 
-The **two central research tasks** are C4.2/C4.3 and O2/O3.
+The **two central research tasks** are C4.2c/C4.3 and O2/O3.
 Do not invest effort in strengthening the constants in
 G2.1/G2.2, or excluding one of infinitely many very
 small angular subintervals. Only prove facts that close
