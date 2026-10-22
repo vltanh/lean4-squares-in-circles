@@ -63,6 +63,10 @@ theorem ratio_zero : ratio 0=rho := by
   dsimp [rho]
   ring
 
+theorem ratio_diagonal : ratio outerDiagonal=1 := by
+  rw [ratio,SameContact.arc_diagonal]
+  exact div_self (by linarith [outer_endpoint_bounds.2.2.1])
+
 theorem target_ratio {B : ℝ} (hB : B∈Icc 0 outerDiagonal) : rho≤ratio B ∧ ratio B≤1 := by
   have hlo := SameContact.ratio_monotone
     (show (0:ℝ)∈Icc 0 outerAxial from ⟨le_rfl,by linarith [outer_endpoint_bounds.1]⟩)
