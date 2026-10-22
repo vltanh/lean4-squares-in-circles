@@ -26,7 +26,7 @@ theorem trig {x : ℝ} (hx : x∈Icc (0:ℝ) (1/4)) :
     (31/32:ℝ)≤Real.cos x ∧ 0≤Real.sin x ∧ Real.sin x≤x := by
   have h2 := pow_le_pow_left₀ hx.1 hx.2 2
   have hc := Real.one_sub_sq_div_two_le_cos (x:=x)
-  exact ⟨by nlinarith,(transport_trig (frame hx)).2.2.1,Real.sin_le_self hx.1⟩
+  exact ⟨by nlinarith,(transport_trig (frame hx)).2.2.1,Real.sin_le hx.1⟩
 
 theorem charge_axial {a : ℝ} (ha : a≤1/4) : ASupport.charge a=ASupport.axialCharge a := by
   rw [ASupport.charge,if_pos (show a≤ASupport.alpha by linarith [ASupport.alpha_bounds.1])]
@@ -36,8 +36,9 @@ theorem tilted_upper {c z : ℝ} (hc : 0<c) : tilted c z≤(1043/1000)*c := by
       (Real.sin z-eta*Real.cos z)^2=1+eta^2 := by
     linear_combination (1+eta^2)*(Real.sin_sq_add_cos_sq z)
   have hfactor : Real.cos z+eta*Real.sin z≤(1043/1000:ℝ) := by
-    dsimp [eta] at hid
-    nlinarith [sq_nonneg (Real.sin z-eta*Real.cos z)]
+    have hsq := sq_nonneg (Real.sin z-eta*Real.cos z)
+    norm_num [eta] at hid hsq ⊢
+    nlinarith
   have hh := mul_le_mul_of_nonneg_left hfactor hc.le
   simpa only [tilted,mul_comm] using hh
 
