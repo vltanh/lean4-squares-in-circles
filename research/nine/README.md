@@ -2,9 +2,9 @@
 
 **Research branch:** research/nine-tablefree-hand, draft PR #11.
 **Status (2026-10-22):** sharp table-free hand proofs are complete for
-the four-anchor terminal inequality, the independently rotated
-4-versus-3 pattern, and **every independently rotated horizontally
-stratified nine-square packing**. The unrestricted n=9 global
+the four-anchor long/short terminal inequality, the **new four-corner
+grid stress**, the independently rotated 4-versus-3 pattern, and
+**every independently rotated horizontally stratified nine-square packing**. The unrestricted n=9 global
 lower bound and the complete unrestricted equality classification
 are **OPEN**. No n=9 Lean compilation or kernel checking has run.
 
@@ -22,36 +22,49 @@ inequality \(R_9\ge R_*\) is not yet proved.
    and closure criteria. G1 is closed by a hand proof, G2 remains
    the dominant open geometric normalization task; G3's stratified
    branch is closed but nonstratified branches are not.
-2. [FOUR_ANCHOR_STRESS.md](FOUR_ANCHOR_STRESS.md): the strongest
+2. [ORTHOGONAL_RANK_DICHOTOMY.md](ORTHOGONAL_RANK_DICHOTOMY.md):
+   a full combinatorial rank injection for any nine independently
+   rotated squares whose pairwise separation is witnessed by one
+   common perpendicular coordinate frame. If neither coordinate
+   direction contains a four-square projection-separated chain,
+   nine squares force a 3×3 rank grid, excluded at q≤q* by
+   the four-corner stress. Thus a four-chain is structurally forced
+   throughout this broad separability class.
+3. [GRID_FOUR_CORNER_STRESS.md](GRID_FOUR_CORNER_STRESS.md):
+   four **independently oriented** outer corner squares, with
+   one-square reserves in both horizontal spans and both
+   vertical spans, force squared radius q≥9/2. The proof is
+   four tangent vectors and one exact orientation factorization.
+4. [FOUR_ANCHOR_STRESS.md](FOUR_ANCHOR_STRESS.md): the strongest
    geometric terminal certificate so far. **Only four arbitrary
    rotated squares** are needed: one pair has projected horizontal
    center span at least \(2+h_L+h_R\), another has span at least
    \(1+h_L+h_R\), and the first pair lies completely above the
    second. The two-tangent hand proof forces \(q\ge q_*\) and pins
    all four extremal squares at equality.
-3. [ORIENTATION_STABLE_SEVEN_ANCHOR.md](ORIENTATION_STABLE_SEVEN_ANCHOR.md):
+5. [ORIENTATION_STABLE_SEVEN_ANCHOR.md](ORIENTATION_STABLE_SEVEN_ANCHOR.md):
    one-square orientation penalty; independently rotated
    projection-separated cap-row bound; 4-over-3 terminal obstruction,
    equality included. It is a concrete consequence of the
    four-anchor stress certificate.
-4. [ROTATED_STRATIFIED_NINE.md](ROTATED_STRATIFIED_NINE.md):
+6. [ROTATED_STRATIFIED_NINE.md](ROTATED_STRATIFIED_NINE.md):
    complete five-case structural proof for **all nine independently
    rotated squares** whenever they admit horizontally
    projection-separated layers and full vertical support separation.
    The equality layer sizes are \(3,4,2\) or \(2,4,3\).
-5. [GLOBAL_TRIPLE_TRANSVERSAL.md](GLOBAL_TRIPLE_TRANSVERSAL.md):
+7. [GLOBAL_TRIPLE_TRANSVERSAL.md](GLOBAL_TRIPLE_TRANSVERSAL.md):
    an unconditional G2 input: in *every* direction some
    perpendicular line meets the interiors of at least three
    squares. It does not yet force the four anchors.
-6. [HAND_PROOF.md](HAND_PROOF.md): the initial exact 2–4–3
+8. [HAND_PROOF.md](HAND_PROOF.md): the initial exact 2–4–3
    construction, axis-aligned stratified proof and original
    seven-anchor argument. The newer rotated results supersede
    its *scope*, not its valid special-case arguments.
-7. [NONRIGID_WITNESS.md](NONRIGID_WITNESS.md): exact
+9. [NONRIGID_WITNESS.md](NONRIGID_WITNESS.md): exact
    Pythagorean-frame construction with one of the other two
    squares independently rotated. It disproves a proposed
    all-nine-aligned equality normal form.
-8. [STRUCTURAL_NEGATIVE_TESTS.md](STRUCTURAL_NEGATIVE_TESTS.md):
+10. [STRUCTURAL_NEGATIVE_TESTS.md](STRUCTURAL_NEGATIVE_TESTS.md):
    exact negative tests: no central open square in the record
    packing; general nonoverlapping parallel squares need not
    be layered in a fixed frame; true separating axes must be
@@ -87,6 +100,15 @@ with the selected frame and are pinned.
 
 ## The precise remaining G2 target
 
+**New finite reduction already proved:** with any common
+coordinate-separating frame, all nine squares either have a
+four-projection chain or the disk radius satisfies q≥9/2.
+This eliminates the entire 3×3 rank-grid class at the proposed
+sharp radius without a computational case classification.
+But an arbitrary independent-orientation packing need not be
+coordinate-separable in one common frame, and a four-chain by
+itself is still insufficient for the long/short stress.
+
 The desired unrestricted statement from the original
 Packing predicate is:
 
@@ -115,6 +137,14 @@ discover geometric invariants; the final gate must be
 a human-checkable proof.
 
 ## Next concrete task
+
+First complete the **coordinate-separable four-chain** branch:
+from the chain forced by ORTHOGONAL_RANK_DICHOTOMY.md and the
+five remaining squares, derive the long/short four-anchor
+certificate or a small number of exact new terminal patterns.
+Second handle the **oblique-separator branch**, in which no
+single perpendicular frame separates all square pairs; a
+coordinate rank injection cannot be used there.
 
 Attack the **four-anchor extraction** under the central-seam
 case G2.2, not the more demanding extraction of seven
