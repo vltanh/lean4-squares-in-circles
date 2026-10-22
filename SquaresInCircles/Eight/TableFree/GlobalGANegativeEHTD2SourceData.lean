@@ -112,7 +112,7 @@ theorem budgets {C : SignedCycle} (hg ga ab : Bool) (k l c : ℝ)
   have heq := variations_equal C.theta
   have hs0 : 0≤magnitude C := neg_nonneg.mpr hs
   change selectedA C ga ab positivePart-selectedA C ga ab negativePart=aTotal C ga ab at hA
-  refine ⟨?_,?_,?_,?_,?_,?_,?_,?_⟩
+  refine ⟨?_,?_,?_,?_,?_,?_,?_⟩
   · dsimp [total]; exact ⟨add_nonneg ha hz,by linarith⟩
   · dsimp [total]; exact ⟨ha,by linarith⟩
   · dsimp [total]; exact ⟨hz,by linarith⟩
