@@ -40,7 +40,7 @@ theorem aligned_work_lower {Q s : ℝ} {P : SignedPoint}
     (hP : P.Sorted) (hcore : P.AvoidsCore) (hPc : P.Contained Q) (hQ : Q≤qCap)
     (hs : s∈Icc 0 frameCap) : kappa*(phi s-1)≤PairedA.work P (-s) 0 := by
   have hb := SignedPoint.coordinate_bounds hP hcore hPc hQ
-  have hphi : 0≤phi s-1 := sub_nonneg.mpr (TwoPositive.phi_ge_one hs)
+  have hphi : 0≤phi s-1 := sub_nonneg.mpr (TwoPositive.Split.phi_ge_one hs)
   have hh := mul_le_mul_of_nonneg_right
     (show kappa≤P.a+1/2 by dsimp [kappa]; linarith [hb.1]) hphi
   exact hh.trans (aligned_work_sorted hP hs)
@@ -48,7 +48,7 @@ theorem aligned_work_lower {Q s : ℝ} {P : SignedPoint}
 theorem aligned_work_weak {P : SignedPoint} (hP : P.Sorted) (hcore : P.AvoidsCore)
     {s : ℝ} (hs : s∈Icc 0 frameCap) : phi s-1≤PairedA.work P (-s) 0 := by
   have ha := SignedPoint.primary_gt_half hP hcore
-  have hphi : 0≤phi s-1 := sub_nonneg.mpr (TwoPositive.phi_ge_one hs)
+  have hphi : 0≤phi s-1 := sub_nonneg.mpr (TwoPositive.Split.phi_ge_one hs)
   have hh := mul_nonneg (show 0≤P.a-1/2 by linarith) hphi
   have hb := aligned_work_sorted hP hs
   nlinarith only [hh,hb]
