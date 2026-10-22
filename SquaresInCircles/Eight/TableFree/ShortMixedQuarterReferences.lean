@@ -18,7 +18,7 @@ noncomputable section
 open Set
 namespace SquaresInCircles.Eight.TableFree.ShortWord.MixedQuarter.Reference
 open CommonQuarter Arithmetic HighOrderTaylor StationaryPrimitives
-open SecondWord.OppositeThree.ReferenceAlgebra (rootStep rootThree)
+open SecondWord.OppositeThree.ReferenceAlgebra (rootStep rootStep_hi_pos rootThree)
 
 def piBox : Interval Real.pi := Interval.of_bounds
   ⟨pi_hand_enclosure.1.le,pi_hand_enclosure.2.le⟩
@@ -42,11 +42,22 @@ def sine {x : ℝ} (hx : 0≤x) : Interval (Real.sin x) :=
 def cosine {x : ℝ} (hx : 0≤x) : Interval (Real.cos x) :=
   Interval.of_bounds ⟨C14_le_cos hx,cos_le_C16 hx⟩
 
+theorem rootThree_hi_pos {x : ℝ} (X : Interval x) (s : ℝ) (hs : 0<s)
+    (hX : 0≤X.lo) : 0<(rootThree X s hs hX).hi := by
+  unfold rootThree
+  exact rootStep_hi_pos _ _ _ _
+
+/-- Six fixed positive-square refinements retain the narrow named
+endpoint reserves without prescribing a decimal radical value. -/
+def rootSix {x : ℝ} (X : Interval x) (s : ℝ) (hs : 0<s) (hX : 0≤X.lo) :
+    Interval (Real.sqrt x) :=
+  rootThree X (rootThree X s hs hX).hi (rootThree_hi_pos X s hs hX) hX
+
 macro "mixed_fixed" : tactic => `(tactic|
   norm_num [Interval.of_bounds,Interval.point,Interval.add,Interval.sub,Interval.neg,
     Interval.mul,Interval.square,Interval.cube,Interval.div,Interval.inv,
     piBox,halfPi,axial,diagonal,coreDiagonal,circleRadius,sine,cosine,
-    rootThree,rootStep,S15,S13,S11,C16,C14,C12,sin9,sin7,cos10,cos8,
+    rootSix,rootThree,rootStep,S15,S13,S11,C16,C14,C12,sin9,sin7,cos10,cos8,
     coC,coP,coQ,coG,ocC,ocP,ocQ,ocG,Q0])
 
 end SquaresInCircles.Eight.TableFree.ShortWord.MixedQuarter.Reference
