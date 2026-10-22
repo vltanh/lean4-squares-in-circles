@@ -185,3 +185,22 @@ theorem equal_le_positive_surplus {a z s : ℝ}
   linarith
 
 end SquaresInCircles.Eight.TableFree.GlobalGA.NegativeDEPositiveTD.LowPositive
+
+namespace SquaresInCircles.Eight.TableFree.GlobalGA.NegativeDEPositiveTD.LowD
+open Candidate Secondary PositiveAngularEnvelope
+
+abbrev diagonalCorrection := diagonalGain
+
+/-- On the intrinsic interval 0 <= s <= a+z <= 1/6 the original D
+support is diagonal. This identity also covers both closed endpoints. -/
+theorem diagonal_baseline {a z s : ℝ}
+    (hθ : a+z∈Icc (0:ℝ) (1/6)) (hs : s∈Icc 0 (a+z)) :
+    Explicit.baseline .low a z s=Explicit.baseline .low a z 0+diagonalCorrection s := by
+  have hsf : s∈Icc 0 frameCap :=
+    ⟨hs.1,by norm_num [frameCap]; linarith [hs.2,hθ.2]⟩
+  have hc : 1≤Explicit.c .low (a+z) := by
+    linarith [(Explicit.low_ranges hθ).2.2.2.2.1]
+  have hdiag : sec s≤Explicit.c .low (a+z) := Certificate.low_D_diagonal hθ hs
+  rw [baseline_correction .low a z hsf,correction_diagonal hc hsf hdiag]
+
+end SquaresInCircles.Eight.TableFree.GlobalGA.NegativeDEPositiveTD.LowD
