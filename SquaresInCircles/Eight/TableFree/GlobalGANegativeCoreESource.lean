@@ -68,6 +68,7 @@ def identityMove {q : ℝ} (I : Input q)
 
 structure Reduction (q : ℝ) (I : Input q) where
   move : CycleMove q I.cycle
+  flat : move.point.a=7/12
   normal_form : 0≤eTotal move.cycle move.de move.eh ∨
     (move.point.a=7/12 ∧ primaryDE move.cycle move.de≤0 ∧ primaryEH move.cycle move.eh≤0)
 
@@ -87,7 +88,7 @@ theorem reduce_with_secondary {q : ℝ} (I : Input q)
       delta,next,H,E,quarterFeasible,sub_nonneg] using hEH
   have hf := (secondary_flat (I.necessary.sorted E) I.E_nonpos hc
     (I.necessary.sorted H) (I.necessary.contained H) hq hEH').1
-  refine ⟨⟨O,?_⟩⟩
+  refine ⟨⟨O,hf,?_⟩⟩
   by_cases hpos : 0≤primaryDE O.cycle O.de
   · left
     rw [eTotal,O.primary_EH]
@@ -140,7 +141,7 @@ theorem reduce_negative_total {q : ℝ} (I : Input q)
     let O := identityMove I hc 2 1 (Or.inl rfl) (Or.inr rfl)
       (by simpa [hde] using I.DE)
       (by simpa [heh] using I.EH)
-    refine ⟨⟨O,Or.inr ⟨hf,?_,?_⟩⟩⟩
+    refine ⟨⟨O,hf,Or.inr ⟨hf,?_,?_⟩⟩⟩
     · rw [O.primary_DE]; norm_num [O,identityMove]
     · rw [O.primary_EH]; simpa [O,identityMove,C] using hr.le
   · have hsum : C.theta H-C.theta D<0 := by
@@ -163,14 +164,14 @@ theorem reduce_negative_total {q : ℝ} (I : Input q)
           ⟨sub_pos.mpr hDEpos,by linarith⟩ hDE
           (by simpa only [neg_sub] using hEH) (by simpa only [neg_sub] using hnot)
         let O := P.toCycle hDEpos
-        refine ⟨⟨O,Or.inr ⟨P.flat,?_,?_⟩⟩⟩
+        refine ⟨⟨O,P.flat,Or.inr ⟨P.flat,?_,?_⟩⟩⟩
         · rw [O.primary_DE]; norm_num [O,NegativeEHEndpoint.toCycle]
         · rw [O.primary_EH]
           simpa [O,NegativeEHEndpoint.toCycle] using hsum.le
       · let O := identityMove I hc 3 1 (Or.inr rfl) (Or.inr rfl)
           (by simpa [hde] using I.DE)
           (by simpa [heh] using I.EH)
-        refine ⟨⟨O,Or.inr ⟨hf,?_,?_⟩⟩⟩
+        refine ⟨⟨O,hf,Or.inr ⟨hf,?_,?_⟩⟩⟩
         · rw [O.primary_DE]
           simpa [O,identityMove,C] using sub_nonpos.mpr (le_of_not_gt hDEpos)
         · rw [O.primary_EH]
@@ -188,7 +189,7 @@ theorem reduce_negative_total {q : ℝ} (I : Input q)
         (I.necessary.sorted E) I.E_nonpos hc hn ⟨hp,by linarith⟩
         (by simpa only [neg_sub] using hDE) hEH
       let O := P.toCycle
-      refine ⟨⟨O,Or.inr ⟨P.flat,?_,?_⟩⟩⟩
+      refine ⟨⟨O,P.flat,Or.inr ⟨P.flat,?_,?_⟩⟩⟩
       · rw [O.primary_DE]
         simp only [O,NegativeDEEndpoint.toCycle,ite_true]
         linarith [P.negative_remaining]
@@ -244,12 +245,14 @@ theorem actual_false {q : ℝ} {C : SignedCycle} (ga ab td de eh : Bool)
       eh_allowed := by cases eh <;> simp
       DE := hDE
       EH := hEH }
-  obtain ⟨R⟩ : Nonempty (Reduction q I) := by
-    by_cases he : 0≤eTotal C I.de I.eh
-    · let O := identityMove I hEc I.de I.eh I.de_allowed I.eh_allowed hDE hEH
-      refine ⟨⟨O,Or.inl ?_⟩⟩
-      simpa [O,identityMove,CycleMove.cycle,replacePoint,I] using he
-    · exact reduce_negative_total I hqL hqU hEc (lt_of_not_ge he)
+  by_cases he : 0≤PairedE.cycleTotal C de eh
+  · exact PairedE.Negative.actual_false ga ab td de eh hn.sorted hn.contained
+      hn.core hqU hHy hGy hBy hDy hvar hHG hGA hAB hBT hTD hDE hEH hga hab htd he
+  have hnegative : eTotal I.cycle I.de I.eh<0 := by
+    change eTotal C (if de then 3 else 2) (if eh then 1 else 0)<0
+    rw [selected_total]
+    exact lt_of_not_ge he
+  obtain ⟨R⟩ := reduce_negative_total I hqL hqU hEc hnegative
   let O := R.move
   have hn' : O.cycle.Necessary q := O.necessary hn
   have hv' : positiveVariation O.cycle.theta≤frameCap :=
