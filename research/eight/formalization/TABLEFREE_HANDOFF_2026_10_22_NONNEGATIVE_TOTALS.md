@@ -1,3 +1,5 @@
+> **Historical handoff — superseded for current source status.** Read [the consolidated live handoff](TABLEFREE_HANDOFF_CURRENT.md) first. This file records the earlier nonnegative-totals/negative-A checkpoint and must not be used as the current remaining-task list.
+
 # PR #10 — verified remote checkpoint and handoff (2026-10-22)
 
 **Start here in a new session.** This is the latest dated source-drafting

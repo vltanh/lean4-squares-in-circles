@@ -1,3 +1,5 @@
+> **PR #10 canonical continuation:** [current source handoff](TABLEFREE_HANDOFF_CURRENT.md); [global G0–G9 acceptance ledger](TABLEFREE_LEAN_CLOSURE_ROADMAP_2026_10_21.md). Consult the live handoff before following any older implementation plan in this README.
+
 # Eight squares: Lean source draft
 
 ## Table-free source handoff — 20 October 2026

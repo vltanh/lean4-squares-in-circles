@@ -1,3 +1,5 @@
+> **Live PR #10 status and next-session handoff:** [`TABLEFREE_HANDOFF_CURRENT.md`](TABLEFREE_HANDOFF_CURRENT.md). All detailed dated status sections below are historical snapshots. The new original-source `SharpSourceEntry`, public capture-free dependency route and kernel verification remain unfinished.
+
 # n=8 formalization: source draft status
 
 ## Verified remote handoff — 22 October 2026

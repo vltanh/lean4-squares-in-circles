@@ -1,3 +1,5 @@
+> **Current status is maintained in [the canonical handoff](TABLEFREE_HANDOFF_CURRENT.md).** The source-case and per-lane tables below are a 21-Oct/early-22-Oct historical implementation snapshot. In particular, negative-DE positive TD2 and small-EH TD2 scalar work advanced substantially after this table; see the canonical source matrix before selecting a task.
+
 # Table-free formalization: live progress and remaining work
 
 ## 22 October 2026 — newest source checkpoint

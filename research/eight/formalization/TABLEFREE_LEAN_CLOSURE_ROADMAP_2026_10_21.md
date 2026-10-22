@@ -1,3 +1,5 @@
+> **For the latest remote head, case matrix, priority work, and exact unfinished source entry, use [the consolidated live handoff](TABLEFREE_HANDOFF_CURRENT.md).** The G0–G9 acceptance criteria below remain operative; dated completion examples and next-task claims are historical.
+
 # PR #10 — table-free Lean closure roadmap and progress ledger
 
 ## 22 October 2026 continuation pointer
