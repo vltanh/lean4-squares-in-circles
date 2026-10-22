@@ -15,8 +15,9 @@ D cost. The final finite-sum theorem uses both original signed budgets.
 noncomputable section
 open Set
 open scoped BigOperators
-namespace SquaresInCircles.Eight.TableFree.GlobalGA.NegativeABT3.Low
+namespace SquaresInCircles.Eight.TableFree.GlobalGA.NegativeABT3
 open Candidate Secondary PositiveAngularEnvelope OrdinaryAngleConcavity OrdinaryPositiveEnvelope
+namespace Low
 
 theorem positive_allowance (atG : Bool) {s z : ℝ} (hz : z∈Icc 0 (1/4:ℝ))
     (hs : s∈Icc 0 (Explicit.angleCut atG)) (i : Fin 4) :
