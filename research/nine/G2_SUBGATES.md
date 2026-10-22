@@ -144,6 +144,18 @@ vertical band of height <1 and a horizontal band of width
 <21/20, impossible for pairwise coordinate-separated unit
 squares. All square orientations remain arbitrary.
 
+**G2.O4 — Inner-pair shadow domination: CLOSED (hand).**
+[INNER_PAIR_SHADOW_DOMINATION.md](INNER_PAIR_SHADOW_DOMINATION.md)
+proves, WITHOUT a common-frame separability premise for the
+five other squares, that whenever four square projections are
+disjoint at (q\le1105/256), every other square's open
+projection intersects one of the two inner chain squares.
+The singleton incidence blocks {1} and {4} are impossible
+because they force center distance <1 from an extreme square.
+Every allowed incidence block is consecutive and contains 2
+or 3. This is a global geometric input conditional only on the
+existence of a four-chain, valid with oblique-only separators.
+
 **G2.C4.3 — Coherent-sign branch: OPEN.**
 If each extra square stays consistently above/below the chain
 squares its projection meets, turn the incidence types into a
