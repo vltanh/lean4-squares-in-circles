@@ -7,8 +7,10 @@ packing admitting the orientation-free horizontal stratification of
 It does **not** assert that all unrestricted equality packings admit
 a stratification. In particular,
 [NO_GLOBAL_ORTHOGONAL_FRAME.md](NO_GLOBAL_ORTHOGONAL_FRAME.md)
-is an equality packing **outside** the stratified class in the anchor
-frame (its upper two projected intervals overlap).
+is an equality packing **outside** the stratified class in *every*
+frame: any orientation-free horizontal stratification makes *all*
+pairs separable along one of its two coordinate axes, whereas the
+exact witness has no globally separating orthogonal frame.
 
 The classification is an explicit at-most-nine-dimensional parameter
 domain with only three scalar slider bounds, two corner-containment
@@ -175,11 +177,9 @@ full horizontal projection width \(119/101\), and
 Both are at vertical distance \(29/808>0\) above the
 highest point of the anchored rows with
 \(\alpha=\beta=1/16\).
-Their corner radius bounds are strict: indeed the squares
-at x=±11/20,y=19/16 in NO_GLOBAL_ORTHOGONAL_FRAME.md
-have positive circle slacks, and moving their x-values outward
-by 1/20 still leaves a strictly positive slack; this also
-follows directly by substituting (8) into (5).
+The corner-radius slacks, obtained by exact substitution into (5),
+are respectively (33167/80800>0) at (x=-3/5) and
+(14367/80800>0) at (x=3/5).
 
 Therefore a small open neighborhood of the six upper
 center/orientation parameters remains feasible at the
@@ -196,7 +196,7 @@ extremizers.
 
 The Lean equality type for this branch can store only
 three real sliders and two UnitSquare values. Its
-Admissible predicate is the eight scalar inequalities
+Admissible predicate is the eleven scalar inequalities
 in (3) and (7) (plus unit-frame conditions already
 stored by UnitSquare). No nine-way pairwise Packing
 hypotheses are needed in the parameter predicate.
