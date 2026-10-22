@@ -147,8 +147,10 @@ theorem is claimed.
 The conjectured seven-anchor terminal lemma is now **proved** with
 no small-angle assumption or computer-assisted verification.
 
-**Primary source:**
-[ORIENTATION_STABLE_SEVEN_ANCHOR.md](ORIENTATION_STABLE_SEVEN_ANCHOR.md).
+**Primary sources:**
+[ORIENTATION_STABLE_SEVEN_ANCHOR.md](ORIENTATION_STABLE_SEVEN_ANCHOR.md)
+and the stronger
+[FOUR_ANCHOR_STRESS.md](FOUR_ANCHOR_STRESS.md).
 
 **G1.1 (exact structural hypothesis): CLOSED.**
 Fix any orthonormal frame (e,f). Four squares have pairwise disjoint
@@ -184,6 +186,14 @@ at \(s=-7/16\), all seven frame alignments, horizontal centers
 outer pinned anchor heights \(1/16\) and \(-15/16\).
 The two remaining squares in a nine-square packing are unrestricted.
 
+**Stronger sparse terminal theorem:** Only *four boundary anchor
+squares* are actually needed, provided one pair's horizontal-center
+span is at least (2+h_L+h_R), the other pair's span is at least
+(1+h_L+h_R), and the long-span pair is completely vertically above
+the short-span pair. The four-anchor stress theorem gives the same
+sharp (q_*) and pins all four equality anchors, without imposing
+layer separation or orientation conditions on the other five squares.
+
 **Scope boundary:** G1 does **not** imply that any nine-square
 packing admits this seven-anchor pattern. That is the unproved
 structural-extraction task G2. The independently rotated witness
@@ -208,6 +218,18 @@ graph of *actual* separating axes from (SAT). Establish a principle
 that reduces these to a **constant-size** list of geometric patterns,
 ideally one terminal 4-versus-3 pattern plus a few directly excluded
 alternatives.
+
+**Proved input G2.0a:** [GLOBAL_TRIPLE_TRANSVERSAL.md](GLOBAL_TRIPLE_TRANSVERSAL.md)
+shows that in every direction, some perpendicular line intersects the
+open interiors of at least three squares. The proof uses the total
+projection length (at least nine) versus disk diameter (2R<9/2).
+A triple transversal is not yet a 4+3 extraction; do not conflate
+intersecting one vertical line with complete layer separation.
+
+**New preferred terminal:** seek the **four-anchor** span inequalities
+of [FOUR_ANCHOR_STRESS.md](FOUR_ANCHOR_STRESS.md), not necessarily
+seven projection-separated squares. A finite disjunction may now use
+four-anchor certificates plus genuinely exceptional alternatives.
 
 A possible, **unproved**, simplification is to select e from one of
 the 18 individual square edge directions. This would make frame
@@ -248,11 +270,15 @@ named terminal patterns and with original hypotheses only:
 \[
  \mathrm{Packing}_9(q)\ \wedge\ q\le q_*
        \Longrightarrow
-       \mathcal P_{4,3}\ \vee\
-       \mathcal P_{3,4}\ \vee\
+       \mathcal A_{4}\ \vee\
+       \mathcal A_{4}^{\mathrm{refl}}\ \vee\
        \mathcal E_1\ \vee\cdots\vee \mathcal E_k . \tag{E}
 \]
 
+Here \(\mathcal A_4\) denotes the precise four-square span-and-order
+conditions of FOUR_ANCHOR_STRESS.md, and the reflected alternative
+has opposite vertical order. A seven-anchor layered pattern remains a
+sufficient special case but need not be the normalization target.
 The alternatives E_j must be explicitly defined geometric invariants,
 not strings like "all other cases". Every alternative must be routed
 to a named analytic proof gate in G3. It is acceptable to change the
@@ -408,9 +434,10 @@ theorems and do not merge until regression checks pass.
 ## Work selection, falsification and stopping rules
 
 1. **Immediate priority:** attack G2.2 (center on a seam), since
-   the record packing lies there. The exact G1 terminal lemma is
-   available; find a global extraction theorem that actually supplies
-   its projection-separation and cross-group support-order hypotheses.
+   the record packing lies there. The exact four-anchor stress lemma is
+   available: prove two horizontal span bounds for the two *outer
+   anchor pairs* and their vertical order, without first forcing the
+   other five squares into common-orientation layers.
 2. **In parallel:** investigate G2.1 (center in an open square) and
    G2.3 (origin outside the union). Any exceptional pattern must have
    a named, independently proved terminal geometric obstruction.
@@ -457,7 +484,8 @@ without any common-frame assumption. Both are human geometric proofs,
 not computational certificates.
 
 **Next mathematical checkpoint:** derive a genuinely unconditional
-support/center-seam lemma for G2.2 and complete the finite coverage
-implication (E). The G1 terminal theorem is now available, but G2
-must show it applies (or handle every exception) from unrestricted
-Packing hypotheses.
+four-boundary-anchor extraction or finite sharp exceptional
+classification for G2.2, then handle the other two origin cases and
+complete the quantified coverage implication (E). G1 and the
+independently rotated stratified branch are already available; G2 must
+show they apply (or handle every exception) from unrestricted Packing.
