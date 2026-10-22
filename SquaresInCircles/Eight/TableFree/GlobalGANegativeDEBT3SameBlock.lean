@@ -180,27 +180,28 @@ theorem ordinary_saturated_lower (f : Family) {θ z s : ℝ}
   have ht := Explicit.frame_domain f hθ
   have hP : 0≤frameCap-θ := sub_nonneg.mpr ht.2
   have hN : 0≤frameCap-s := sub_nonneg.mpr hs.2
+  have hsat : Blocks.saturated f θ z s i.castSucc i.castSucc=
+      Blocks.block f θ z s (frameCap-θ) (frameCap-s) i.castSucc := by
+    simp only [Blocks.saturated,ChargedHybridConcentration.saturated,
+      if_pos rfl,Blocks.block]
+  rw [hsat,Blocks.block_ordinary]
   by_cases he : s≤θ
-  · have hh : Explicit.V f θ i (θ-s)≤mixedBlock R (Explicit.p f θ i)
-        (Explicit.q f θ i) (frameCap-θ) (frameCap-s) := by
-      cases f
-      · exact low_negative hθ ⟨hs.1,he⟩ i
-      · have h := high_negative hθ hP (by linarith : frameCap-θ≤frameCap-s)
-          (by linarith [hs.1] : frameCap-s≤frameCap) i
-        simpa only [show frameCap-s-(frameCap-θ)=θ-s by ring] using h
-    change Blocks.negative f θ (θ-s) i.castSucc≤
-      Blocks.block f θ z s (frameCap-θ) (frameCap-s) i.castSucc
-    simpa only [Blocks.negative_ordinary,Blocks.block_ordinary] using hh
-  · have hp := Explicit.family_pairs f hθ i
+  · have hpure : Blocks.pure f θ z s i.castSucc i.castSucc=
+        Blocks.negative f θ (θ-s) i.castSucc := by
+      simp only [Blocks.pure,ChargedHybridConcentration.pure,if_pos he,Blocks.negative]
+    rw [hpure,Blocks.negative_ordinary]
+    cases f
+    · exact low_negative hθ ⟨hs.1,he⟩ i
+    · have hh := high_negative hθ hP (by linarith : frameCap-θ≤frameCap-s)
+        (by linarith [hs.1] : frameCap-s≤frameCap) i
+      simpa only [show frameCap-s-(frameCap-θ)=θ-s by ring] using hh
+  · have hpure : Blocks.pure f θ z s i.castSucc i.castSucc=
+        Blocks.positive f θ z s (s-θ) i.castSucc := by
+      simp only [Blocks.pure,ChargedHybridConcentration.pure,if_neg he,Blocks.positive]
+    rw [hpure,Blocks.positive_ordinary]
+    have hp := Explicit.family_pairs f hθ i
     have hh := positive hp.1.le (family_ratio f hθ i) hN
       (by linarith : frameCap-s≤frameCap-θ) (by linarith [ht.1] : frameCap-θ≤frameCap)
-    have hd : frameCap-θ-(frameCap-s)=s-θ := by ring
-    rw [hd] at hh
-    have hi : i.castSucc≠(3:Fin 4) := by fin_cases i <;> decide
-    simpa only [Blocks.pure,Blocks.saturated,ChargedHybridConcentration.pure,
-      ChargedHybridConcentration.saturated,if_neg he,if_pos rfl,
-      ChargedHybridConcentration.positive,ChargedHybridConcentration.block,
-      PositiveTD.Hybrid.positive,PositiveTD.Hybrid.block,if_neg hi,
-      zero_mul,sub_zero,Explicit.U,Blocks.p,Blocks.q,Explicit.p,Explicit.q] using hh
+    simpa only [show frameCap-θ-(frameCap-s)=s-θ by ring,Explicit.U] using hh
 
 end SquaresInCircles.Eight.TableFree.GlobalGA.NegativeDEPositiveBT.SameBlock
