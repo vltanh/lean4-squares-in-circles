@@ -176,7 +176,8 @@ lemma near_cos {x : ℝ} (hx : x∈Icc 0 (27/250)) : (497/500:ℝ)<Real.cos x :=
 lemma source_root {a : ℝ} (ha : a∈Icc outerDiagonal 1) :
     (129/100:ℝ)<arc a+1/2 ∧ arc a+1/2<(7/5:ℝ) := by
   have hB : 1-a∈Icc 0 b0 := ⟨by linarith [ha.2],by dsimp [b0]; linarith [ha.1]⟩
-  simpa only [sub_sub_cancel] using aligned_source_root hB
+  have he : 1-(1-a)=a := by ring
+  simpa only [he] using aligned_source_root hB
 
 lemma sourceD_upper (r : Row) {a : ℝ} (ha : a∈Icc outerDiagonal 1) :
     sourceD r a<(13/10:ℝ) := by

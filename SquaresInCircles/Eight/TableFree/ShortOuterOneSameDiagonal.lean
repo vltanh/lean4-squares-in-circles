@@ -198,7 +198,7 @@ lemma initial_value (r : Row) : cost r 0=aligned r b0 := by
   have h0 : Domain 0 := by
     refine ⟨by norm_num,?_⟩
     rw [SecondWord.NegativeTwo.PrimaryDiagonal.height_zero]
-    linarith [b0_mem.2]
+    simpa [b0] using b0_mem.2
   have harc := actual_arc h0
   rw [SecondWord.NegativeTwo.PrimaryDiagonal.height_zero] at harc
   have hV : vertical 0-1/2=b0 := SecondWord.NegativeTwo.PrimaryDiagonal.height_zero
