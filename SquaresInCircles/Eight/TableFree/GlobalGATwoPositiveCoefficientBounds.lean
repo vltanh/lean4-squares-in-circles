@@ -27,16 +27,16 @@ theorem cap_cosine_lower : (478/625:ℝ)<Real.cos frameCap := by
 
 theorem affine_low_derivative {l s w m : ℝ}
     (hl : 0<l) (hm : 0<m) (hratio : m≤(3/2)*l) (hs : |s|≤frameCap)
-    (hw : Real.cos frameCap-1≤w) (hpos : 0≤s→0≤w) :
+    (hw : Real.cos frameCap-1≤w) (hpos : 0<s→0≤w) :
     -(12/25:ℝ)<affineD l s w m := by
-  by_cases hsn : 0≤s
+  by_cases hsn : 0<s
   · have hn := mul_le_mul_of_nonneg_left (norm_slope_le_one hl hm hs)
       (Real.sqrt_nonneg qCap)
     have hw0 := hpos hsn
     dsimp [affineD]
     linarith [radius_bounds.2]
   · have ht : -s∈Icc 0 frameCap :=
-      ⟨by linarith [lt_of_not_ge hsn],by simpa [abs_of_neg (lt_of_not_ge hsn)] using hs⟩
+      ⟨by linarith [le_of_not_gt hsn],by simpa [abs_of_nonpos (le_of_not_gt hsn)] using hs⟩
     have hn := negative_slope_upper hl hm hratio ht
     simp only [neg_neg] at hn
     dsimp [affineD]
@@ -44,7 +44,7 @@ theorem affine_low_derivative {l s w m : ℝ}
 
 theorem shifted_affine_monotone {l s w b L U : ℝ}
     (hl : 0<l) (hL : 0<L) (hU : U≤(3/2)*l) (hs : |s|≤frameCap)
-    (hw : Real.cos frameCap-1≤w) (hpos : 0≤s→0≤w) :
+    (hw : Real.cos frameCap-1≤w) (hpos : 0<s→0≤w) :
     MonotoneOn (fun m => affineBranch l s w b m+(12/25)*m) (Icc L U) := by
   have hd (m : ℝ) (hm : m∈Icc L U) :
       HasDerivAt (fun x => affineBranch l s w b x+(12/25)*x)
@@ -63,7 +63,7 @@ theorem shifted_affine_monotone {l s w b L U : ℝ}
 theorem H_shifted_low {l s g e L U : ℝ}
     (hl : 0<l) (hL : 0<L) (hU : U≤(3/2)*l) (hs : |s|≤frameCap)
     (hg : 0≤g) (he : e≤0) (heLow : Real.cos frameCap-1≤e)
-    (hePos : 0≤s→e=0) :
+    (hePos : 0<s→e=0) :
     ConcaveOn ℝ (Icc L U) (fun m => H l s g e m+(12/25)*m) ∧
       MonotoneOn (fun m => H l s g e m+(12/25)*m) (Icc L U) := by
   have hge : e≤g := he.trans hg
