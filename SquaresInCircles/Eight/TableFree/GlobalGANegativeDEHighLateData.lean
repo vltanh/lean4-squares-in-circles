@@ -76,8 +76,9 @@ theorem cap : (105286/125000:ℝ)<Real.tan frameCap ∧
 
 theorem radical_tan {s : ℝ} (hs : s∈Icc 0 frameCap) :
     radical 1 (Real.tan s)=1/Real.cos s := by
-  have hh := normalized_arctan (r:=0) (x:=Real.tan s)
-  rw [Real.cos_arctan,arctan_tan hs]
+  have hh := Real.cos_arctan (Real.tan s)
+  rw [arctan_tan hs] at hh
+  rw [hh]
   simp [radical]
 
 end TrigonometricBounds
