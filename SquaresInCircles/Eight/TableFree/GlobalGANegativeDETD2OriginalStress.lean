@@ -1,6 +1,7 @@
 module
 
 public import SquaresInCircles.Eight.TableFree.GlobalGANegativeDETD2SourceData
+public import SquaresInCircles.Eight.TableFree.GlobalGAPositiveBT3DEnvelopeGeometry
 
 /-!
 # The negative-DE / positive-TD2 scalar inequality at the original cycle
@@ -18,7 +19,7 @@ open Set
 open scoped BigOperators
 namespace SquaresInCircles.Eight.TableFree.GlobalGA.NegativeDEPositiveTD.Source
 open Candidate Secondary PositiveAngularEnvelope OrdinaryAngleConcavity
-open ActualOrdinaryBlocks PairedE
+open ActualOrdinaryBlocks PairedE SignedStress PositiveBT3
 
 /-- The width identity at the actual negative DE error, including zero. -/
 theorem deCorrection_identity {C : SignedCycle}
@@ -51,13 +52,14 @@ theorem baseline_identity {C : SignedCycle} (ga ab : Bool) (f : Family)
 /-- The full-circle high baseline is a lower bound for the actual sorted D baseline. -/
 theorem fullBaseline_le (f : Family) (a z s : ℝ) :
     Explicit.fullBaseline f a z s≤Explicit.baseline f a z s := by
-  have hh := PositiveBT3.sortedSupport_le_full
-    (f:=Explicit.secant s) (g:=Explicit.c f (a+z))
   have hclip : clippedSupport (Explicit.secant s) (Explicit.c f (a+z))≤
       fullSupport (Explicit.secant s) (Explicit.c f (a+z)) := by
     by_cases h : Explicit.secant s≤Explicit.c f (a+z)
     · rw [clippedSupport,if_pos h]
-      exact diagonal_le_full _ _
+      have hh := raw_full_support (a:=diagonal) (b:=diagonal)
+        (f:=Explicit.secant s) (g:=Explicit.c f (a+z))
+        (show (diagonal+1/2)^2+(diagonal+1/2)^2≤qCap by nlinarith [diagonal_circle])
+      simpa [diagonalSupport,add_mul] using hh
     · simp [clippedSupport,h]
   dsimp [Explicit.fullBaseline]
   linarith
@@ -94,8 +96,7 @@ theorem tReserve_nonnegative {Q c : ℝ} {C : SignedCycle}
     (1,PositiveTD.eta)
   have heta : 0≤PositiveTD.eta := by norm_num [PositiveTD.eta]
   have hbound : (C.point T).a+PositiveTD.eta*(C.point T).y≤PositiveTD.sigma := by
-    simpa [SignedStress.work,SignedStress.circleSupport,PositiveTD.sigma,
-      fullSupport,abs_of_nonneg heta] using hsupp
+    simpa [work,circleSupport,PositiveTD.sigma,fullSupport,abs_of_nonneg heta] using hsupp
   have hsin := (transport_trig hz).2.2.1
   dsimp [PositiveTD.tReserve]
   exact mul_nonneg (mul_nonneg hc hsin) (sub_nonneg.mpr hbound)
