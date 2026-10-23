@@ -183,7 +183,22 @@ bands. Corresponding endpoint projections overlap because their
 x-center differences are <39/40, so the grid stress applies.
 No common orientations or fixed within-row heights are assumed.
 
-**G2.C4.3c — Residual five-square complement: OPEN.**
+**G2.C4.3c — Residual five-square complement: OPEN (equality realizable).**
+[TWO_STACK_SHARP_EQUALITY_WITNESS.md](TWO_STACK_SHARP_EQUALITY_WITNESS.md)
+is an exact rational nine-square packing at (q=1105/256)
+with a four-horizontal chain and five-square complement x-chain
+number exactly **two**. Its five extra squares form vertical stacks
+of sizes **(3,2)**, but the packing admits disjoint *perpendicular*
+vertical 4+3 projection chains. Therefore the claim that the whole
+residual two-stack branch is impossible at (q\le Q) is **REJECTED**.
+The corrected target is a *sharp* theorem: every residual packing
+has (q\ge Q), and its equality cases must be retained. A promising
+finite disjunction is a **perpendicular 4+3 signed stress** or a
+strict alternative grid/graph stress. This is not proved yet.
+The distinct crossed-four-chain eight-square witness
+[CROSSED_FOUR_CHAINS_EIGHT_WITNESS.md](CROSSED_FOUR_CHAINS_EIGHT_WITNESS.md)
+also shows that excluding crossed four-chains before using the
+ninth square is mathematically false.
 Choose a four-projection chain M. The above signed theorem closes
 the branch if the five remaining squares contain a **disjoint
 horizontal triple** in the same frame. The sole residual
@@ -314,6 +329,15 @@ Until then, G4 is genuinely OPEN.
 
 ## 6. Completed equality branch and remaining global equality task
 
+**G5.M (signed matched-chain equality): CLOSED as a conditional hand theorem.**
+[SIGNED_MATCHED_EQUALITY_FAMILY.md](SIGNED_MATCHED_EQUALITY_FAMILY.md)
+classifies the *entire terminal branch* of signed matched 4+3
+projection chains at q=Q: four pinned endpoints, three inner
+slider heights with exact mutual disjointness conditions, and
+two arbitrary freely oriented squares checked by 15 true SAT
+pair inequalities. Includes mixed endpoint signs, oblique free
+separators, and the new exact two-stack equality witness.
+
 **G5.S (stratified equality): CLOSED as a hand theorem.**
 STRATIFIED_EQUALITY_FAMILY.md gives an explicit
 three-slider-plus-two-free-squares model with necessary and
@@ -332,8 +356,9 @@ four-anchor-based parameter domain may absorb it.
 
 ## 7. Strategy: avoid minor-boundary rabbit holes
 
-The **two central research tasks** are now C4.3c (residual
-five-square two-column complement) and O2/O3 (unrestricted oblique separators).
+The **two central research tasks** are now C4.3c (**sharp**
+five-square two-column complement, not exclusion at equality)
+and O2/O3 (unrestricted oblique separators).
 The entire coordinate-separable large-zigzag branch is closed;
 do not reopen it via tiny angle or radius modifications.
 Do not invest effort in strengthening the constants in
