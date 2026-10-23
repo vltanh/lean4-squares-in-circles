@@ -3,6 +3,9 @@
 Research checkpoint: 2026-10-23 (UTC), based on main commit
 `4bea747b3efa13c869b956cb28435efaf21526fa`.
 
+Resume from [HANDOFF.md](HANDOFF.md) for the current proof gaps, next steps,
+failed shortcuts, and validation record.
+
 **The sharp radius and complete equality family are proved by hand for the
 entire common-coordinate-separated class, including independently rotated
 squares, and for unrestricted packings with eight square centers at distance
@@ -39,6 +42,7 @@ the known bound, not a lower-bound proof.
 | Three squares wholly inside the test circle almost fill a smaller circle | [Three-core stability](THREE_CORE_INNER_STABILITY.md) | Hand proof with an explicit no-protrusion hypothesis |
 | Two or three origin-vertex squares bound total capacity by nine or eight | [Origin-vertex capacity](THREE_ORIGIN_VERTEX_SQUARES.md) | Hand proof for squared containing radius at most `17/4` |
 | Five centers in the closed unit disk are impossible for a ten-packing | [Radial weight certificate](RADIAL_WEIGHT_EXCLUSION.md), [integer checker](check_radial_weight_exclusion.py) | **Computer-assisted** reduction; not a hand proof |
+| Four inner centers must split into two norms at most `.65` and two above `.9` | [Radial count localization](RADIAL_COUNT_LOCALIZATION.md), [integer checker](check_radial_count_localization.py) | **Computer-assisted**, conditional on exactly four inner centers |
 | Sharp lower bound from four anchors | [Four-anchor bound](FOUR_ANCHOR_BOUND.md) | Four common-frame squares with the stated coordinate gaps |
 | Exact finite formulation and existence of a minimizer | [Unrestricted model](UNRESTRICTED_MODEL.md) | Arbitrary individual orientations; no sharp lower bound |
 
@@ -144,6 +148,7 @@ From the repository root, with Python 3 and no external packages:
 python3 research/ten/check_construction.py --self-test
 python3 research/ten/check_core_obstruction.py
 python3 research/ten/check_radial_weight_exclusion.py
+python3 research/ten/check_radial_count_localization.py
 python3 -B research/ten/plot_construction.py
 ```
 
