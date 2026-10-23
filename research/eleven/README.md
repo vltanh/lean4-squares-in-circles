@@ -15,6 +15,13 @@ of q11 <= 49013/10000. Its rational witness certifies all 44 vertices and all
 55 pair separators; run `python3 check_rational_witness.py` in this directory.
 This bound is close to the published layout but is not asserted to be sharp.
 
+The stronger [exact contact-family construction](CANDIDATE_CONTACT_SYSTEM.md)
+now gives q11<=q_c, where q_c is a locally isolated root near
+4.901206412408145 (radius about 2.2138668461). It includes a nonempty sliding
+interval. Run `python3 isolate_contact_root.py` to replay its rational interval
+certificate; [independent review](CONTACT_ROOT_REVIEW.md) records its scope.
+Existence and feasibility are proved; optimality remains open.
+
 The [finite separator cover](FINITE_SEPARATOR_COVER.md) proves an exhaustive
 8^55-cell polynomial encoding, compact attainment and a conditional stress
 identity. A useful reduced terminal classification remains open.

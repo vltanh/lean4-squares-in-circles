@@ -9,11 +9,18 @@ only gives q11 <= U. A proposed sharp constant Q becomes the target of a
 separate universal lower-bound theorem. Do not substitute the public
 `optimalRadius 11` placeholder, which is currently zero, for q11.
 
+The current candidate target is Q=q_c, the unique root specified in
+[the contact system](CANDIDATE_CONTACT_SYSTEM.md). Exact construction proves
+q11<=q_c<49013/10000. Proving q11>=q_c is still the open global problem.
+The larger rational U remains convenient for every coarse reduction below.
+
 ## Status and closure rules
 
 **H** means a hand argument with the stated quantifiers is written and
 reviewed; it does not mean Lean verification. **C** is a conditional hand
-result. **OPEN** is a missing argument, **BLOCKED** an unmet predecessor, and
+result. **A** is an exact arithmetic certificate with a written soundness
+argument and independent replay, also not kernel verification.
+**OPEN** is a missing argument, **BLOCKED** an unmet predecessor, and
 **DEFERRED** a later implementation phase. A parent closes only when all its
 required children and its assembly implication close. Numerical evidence
 cannot close an H gate. An arithmetic regression validates a formula or finite
@@ -35,7 +42,9 @@ allowed without a separate theorem.
 | G0.2–G0.4 | Exact physical encoding, compact search domain, minimizer | H |
 | G1.1 | Baseline q=5 and exact rational upper bound U=49013/10000 | H; exact arithmetic independently replayed |
 | G1.2.a | Pinned published candidate and its evidentiary scope | H |
-| G1.2.b–G1.4 | Exact record reconstruction and target isolation | OPEN |
+| G1.2.b | Exact selected contact system, including the slider | C |
+| G1.3 | Locally unique exact root and full feasible candidate family | A; independently reviewed |
+| G1.4 | Candidate target q_c named; negative-control inventory | PARTIAL |
 | G2.1–G2.3 | Exhaustive raw finite owner/sign cover, degeneracies, normalization | H |
 | G2.4 | Useful geometric reduction and exhaustive small terminal inventory | OPEN |
 | G3.C1–C2 | Necessary common-coordinate rank classification | H |
@@ -99,6 +108,20 @@ nonemptiness. No previous n=9 theorem is used.
   every model point is a physical packing, and minimization is attained.
 
 ## G1 Exact witnesses and target selection
+
+**G1.2.b and G1.3 closed for the selected family:**
+[the contact system](CANDIDATE_CONTACT_SYSTEM.md) specifies q_c exactly by
+two radical equations and an isolating rational rectangle. A contraction
+certificate proves existence and uniqueness there; ten vertex equalities,
+fourteen pair equalities, two slider inequalities, and exact interval bounds
+for the remaining 34 vertices and 39 pairs prove full packing feasibility.
+[Independent review](CONTACT_ROOT_REVIEW.md) checks the domains, derivative
+enclosures, Banach argument, contact algebra and all residual pairs. This
+does not prove local or global optimality, identify every realization of the
+contact graph, or establish that every optimal packing has this form.
+
+**G1.4 target:** use Q=q_c as the candidate sharp target, with q_c in
+4.901206412408144+[-10^-9,10^-9]. Global sharpness is explicitly G5.
 
 - **G1.1:** give an elementary exact eleven-square construction; audit all
   44 corners and 55 pair separations. Use its radius as the initial upper

@@ -86,3 +86,25 @@ Commit timestamps and hashes are recorded after the commit exists.
   on all stage counts and all nine row/column profile-pair counts.
 - All 1105 residual geometric domains remain open, as does unrestricted
   oblique classification. No rank-grid reflection quotient is assumed.
+- Commit: `55eac929af444b7dc8d73dfbae9f02beb67392d9`,
+  2026-10-23 12:48:18 UTC.
+
+## Exact contact-family existence checkpoint
+
+- G1.2.b C: derive two exact radical equations for q and first half-angle t,
+  with explicit centers, orientations, ten boundary vertices, fourteen pair
+  contacts and one horizontal slider h in [H,a].
+- G1.3 A: rational interval arithmetic and a written Banach argument isolate
+  exactly one root in q=4.901206412408144±10^-9,
+  t=0.2054740374066444±10^-9. All derivatives and divisions are valid on the
+  whole box; no floating-point comparison is an acceptance input.
+- Exact identities plus 34 remaining vertex inequalities, 39 remaining pair
+  inequalities and both slider endpoint inequalities prove feasibility of
+  the complete closed slider interval at that exact q_c.
+- Independent review rechecked interval arithmetic, differentiation,
+  contraction, all omitted algebraic identities, and residual pair intervals
+  by a distinct vertex-projection calculation. Review hashes are recorded.
+- G1.4 partial: q_c is the candidate sharp target. Neither local optimality
+  under arbitrary perturbations nor unrestricted sharpness has been proved.
+- Evidence: `CANDIDATE_CONTACT_SYSTEM.md`, `contact_family.py`,
+  `isolate_contact_root.py`, and `CONTACT_ROOT_REVIEW.md`.

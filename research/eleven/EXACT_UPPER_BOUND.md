@@ -118,3 +118,9 @@ large rational constants.
 - No proof of the exact Kovacic candidate, its stationarity, sharp lower bound,
   or its complete equality family follows from this certificate. Those are
   separate open gates.
+
+[The contact-system construction](CANDIDATE_CONTACT_SYSTEM.md) separately
+closes exact existence and local root isolation for the reconstructed family,
+with a slightly tighter attained squared radius q_c. The rational witness
+above remains an independent simple certificate and a safe search-window
+bound. Unrestricted optimality and complete equality remain open.
