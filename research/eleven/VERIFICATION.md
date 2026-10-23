@@ -18,9 +18,11 @@ python3 axis_exclusion.py --check AXIS_EXCLUSION.json
 python3 replay_axis_exclusion.py AXIS_EXCLUSION.json
 python3 check_fixed_orientation_stress.py
 python3 check_local_angular_stress.py
+python3 check_axis_terminal_graphs.py
+python3 check_axis_counterexample.py
 ```
 
-All eight commands passed on 23 October 2026. They have different scopes:
+All ten commands passed on 23 October 2026. They have different scopes:
 
 | Command | Exact checked output | Scope limit |
 | --- | --- | --- |
@@ -38,6 +40,10 @@ argument and the meaning of all omitted exact identities are written in
 The two axis commands prove exclusion at U through six covering cases and
 19 contradiction leaves. The replay imports no generator, uses Fraction
 intervals at a different scale, and recomputes every leaf contradiction.
+The terminal-graph replay additionally verifies all 19 leaves against three
+written hand inequalities (10 stresses, 7 double chains, 2 forks). A separate
+exact counterexample at q<4.91 prevents strengthening the exclusion to the
+false whole-class bound q>=5.
 The geometric cover and arithmetic soundness are proved in
 `AXIS_ALIGNED_EXCLUSION.md`; shrinking handles independently rotated squares
 under the common-frame hypothesis.

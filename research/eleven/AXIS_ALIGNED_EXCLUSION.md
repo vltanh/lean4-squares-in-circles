@@ -173,3 +173,16 @@ This is a strict exclusion at U, not a claim that the whole common-coordinate
 class has lower bound five. The axis-aligned counterexample below five is
 consistent with this result. The next global task is the oblique reduction
 and its sharp certificates; the old 1105 rank masks no longer block it.
+
+## Hand inequalities for all terminal graphs
+
+[Three terminal arguments](THREE_AXIS_TERMINAL_LEMMAS.md) now explain all
+19 leaves: ten contain a six-square stress, seven contain two disjoint
+four-chains, and two contain a three-square fork. Exact interval propagation
+still supplies forced separators; the final radius contradictions are the
+written support and corner inequalities. `check_axis_terminal_graphs.py`
+replays every node and verifies each directed path and symmetry transform.
+
+The [exact negative control](AXIS_ALIGNED_COUNTEREXAMPLE_AND_TERMINAL.md)
+exhibits an axis-aligned packing at q<4.91. The exclusion at U is deliberately
+more precise than the false guess that every such packing needs q>=5.

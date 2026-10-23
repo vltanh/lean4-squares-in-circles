@@ -259,3 +259,17 @@ Commit timestamps and hashes are recorded after the commit exists.
   Taylor residues were recomputed.
 - The current global radial cases are exactly (3,8), (4,7), and (5,6).
   These three sharp terminal problems remain open.
+
+## Hand classification of all nineteen coordinate terminal graphs
+
+- Previous six-core exclusion commit: `910a3698096287f74ee702e1adc84dd80f28b1f8`.
+- Every coordinate exclusion leaf now has a hand terminal: ten six-square
+  stresses, seven pairs of disjoint four-chains, and two three-square forks.
+  The delicate stress gives q>360000/73441>U using seven integer weights.
+- Portable exact replay retains the forced edges, matches all 32 original
+  nodes, checks all 19 paths and coordinate transforms, and recomputes the
+  rational stress constants. Independent review checks the hand inequalities
+  and every motif. Interval propagation remains part of separator extraction.
+- Added an exact axis-aligned witness at q<4.91<5 with 44 corner checks and
+  all 55 pair checks. It refutes the stronger whole-class bound q>=5 while
+  remaining consistent with the proved exclusion at U=4.9013.
