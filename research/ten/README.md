@@ -5,8 +5,8 @@ Research checkpoint: 2026-10-23 (UTC), based on main commit
 
 **The sharp radius and complete equality family are proved by hand for the
 entire common-coordinate-separated class, including independently rotated
-squares, and for unrestricted packings with exactly two squares meeting the
-central open disk of radius `1/2`. The remaining unrestricted cases are OPEN.**
+squares, and for unrestricted packings with eight square centers at distance
+at least `1` from the disk center. The remaining unrestricted cases are OPEN.**
 The radius is `R* = 3/√2`, with squared radius `Q = 9/2`. Common-coordinate
 separation means that one fixed pair of perpendicular directions separates
 every square pair by disjoint projection interiors along at least one of
@@ -32,6 +32,7 @@ the known bound, not a lower-bound proof.
 | A square in an outward quadrant forces the sharp corner bound | [Corner rigidity](CORNER_RIGIDITY.md) | Arbitrary orientation |
 | At least two squares enter the central disk of radius `1/2` | [Exterior-arc bound](CENTRAL_DISK_REDUCTION.md) | Arbitrary orientations; squared containing radius at most `9/2` |
 | Eight exterior squares force four anchors; the exactly-two-central case is closed | [Sharp exterior ring](SHARP_EXTERIOR_RING.md) | Arbitrary orientations; no common separating frame assumed |
+| Eight centers outside the open unit disk force four anchors | [Center-radius reduction](CENTER_RADIUS_REDUCTION.md) | Arbitrary orientations; a smaller ten-packing must have exactly 3, 4, or 5 centers in the open unit disk |
 | Sharp lower bound from four anchors | [Four-anchor bound](FOUR_ANCHOR_BOUND.md) | Four common-frame squares with the stated coordinate gaps |
 | Exact finite formulation and existence of a minimizer | [Unrestricted model](UNRESTRICTED_MODEL.md) | Arbitrary individual orientations; no sharp lower bound |
 
@@ -55,8 +56,8 @@ compiled or kernel-checked.**
 | G0: source and model | Hand argument complete | Use unrestricted `Packing`; preserve boundary contact |
 | G1: attaining construction | Hand proof and exact arithmetic check complete | `∃ S : Fin 10 → UnitSquare, Packing S (0,0) (3/√2)` |
 | G2: common-coordinate theorem | CLOSED by hand, including equality | All-parallel chain argument, then disk-preserving rectification |
-| G3: unrestricted lower bound | OPEN; exactly-two-central case closed | Exclude packings below `9/2` with at least three squares meeting `B(0,1/2)` |
-| G4: unrestricted equality necessity | OPEN; exactly-two-central case closed | Exclude or classify equality structures with at least three central squares |
+| G3: unrestricted lower bound | OPEN; eight-outer-center case closed | Exclude packings below `9/2` with exactly 3, 4, or 5 centers in `B(0,1)` |
+| G4: unrestricted equality necessity | OPEN; eight-outer-center case closed | Exclude or classify equality structures with at least three centers in `B(0,1)` |
 | G5: Lean formalization | OPEN | Elaborate proofs, audit axioms, and verify statements against `Packing` |
 | G6: public integration | OPEN | Extend the registry and public theorem range only after verification |
 
@@ -79,6 +80,13 @@ at least `pi/4`. Eight such squares must alternate two equality types and
 therefore supply the four anchors. This proves that every hypothetical
 ten-square packing below `9/2` has **at least three central squares**. It also
 closes the complete equality classification when exactly two are central.
+
+The center-radius strengthening proves the same minimum arc angle whenever
+the square's center has norm at least `1`, even if the square intersects
+`B(0,1/2)`. Its third possible equality type cannot occur in an eight-arc
+ring. Consequently any smaller ten-packing must have at least three centers
+in `B(0,1)`; pairwise center distances of at least one bound this count by
+five. The precise remaining counts are therefore **3, 4, and 5 inner centers**.
 
 A [rational six-square example](SIX_CENTRAL_SQUARES.md) rules out the shortcut
 that at most four or five squares can meet the small disk. It is not a
