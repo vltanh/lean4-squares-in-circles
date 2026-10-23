@@ -225,3 +225,187 @@ therefore retain their geometry instead of assigning each a fictitious
 
 No numerical optimizer, Lean compilation, CI, whole-proof audit, or
 unrestricted optimality is claimed here.
+
+## 7. Independent incidence lemma: no triple boundary-touching junction
+
+The following statement uses only `R>sqrt2`; it does not depend on
+Theorem A, the research-window upper bound, or the selected stress.
+
+**Theorem C.** Let interior-disjoint closed unit squares be contained in
+the disk of radius `R>sqrt2`. At most two of the squares that touch the
+containing circle can contain any prescribed point `p`.
+
+Here "touch the containing circle" is a physical property. A square
+assigned zero circle multiplier is still counted if it touches the
+circle. The theorem excludes a triple boundary-touching junction. It
+does **not** exclude a junction of two such squares with a circle-clear
+square, or a triangle whose three pair contacts occur at distinct points.
+
+### 7.1. Preliminary local alternatives
+
+If `p` lies in the interior of one square, no other square can contain
+`p`. If `p` is in the relative interior of a side of two distinct squares,
+their two disjoint local open half-planes fill the available angular
+space; a third square cannot contain `p`.
+
+If `p` lies on the containing circle, it must be a vertex of each square
+containing it. Both unit edges from `p` point strictly into the disk:
+for an edge vector `u`, containment of `p+u` gives
+`p dot u <= -1/2`. Hence each square's right-angle tangent sector lies
+strictly inside the same inward open half-plane. Two disjoint sectors
+of angle `pi/2` cannot fit in that open half-plane. Thus at most one
+square contains such a `p`.
+
+It remains to consider `|p|<R`, with either all incident squares having
+`p` as a vertex, or one square having `p` in the relative interior of a
+side. We handle these alternatives separately.
+
+### 7.2. When every incident square has vertex `p`
+
+If `p=0`, every point of an incident unit square is at distance at most
+`sqrt2` from zero, so the square cannot touch the circle. Assume
+`p=(r,0)` with `0<r<R`, after rotating coordinates, and put `q=R^2`.
+
+A circle-touching corner `z` of a square with vertex `p` is either an
+adjacent corner, with `|z-p|=1`, or the opposite corner, with
+`|z-p|=sqrt2`. First suppose `z-p` has positive second coordinate.
+
+For an adjacent corner there is at most one possibility
+
+\[
+ z-p=(\cos\theta_1,\sin\theta_1),\qquad
+ 0<\theta_1<\pi,\qquad
+ \cos\theta_1=h_1:=\frac{q-r^2-1}{2r}.
+\tag{10}
+\]
+
+Write `u=z-p`. The other unit edge from `p` must be `Ju`, rather than
+`-Ju`: otherwise `z dot (-Ju)=r sin(theta_1)>0`, so `z-Ju` would lie
+outside the circle. Thus the square's open tangent sector at `p` is
+
+\[
+                     (\theta_1,\theta_1+\pi/2).
+\tag{11}
+\]
+
+For an opposite corner there is likewise at most one possibility
+
+\[
+ z-p=\sqrt2(\cos\theta_2,\sin\theta_2),\qquad
+ 0<\theta_2<\pi,\qquad
+ \cos\theta_2=h_2/\sqrt2,
+ \quad h_2:=\frac{q-r^2-2}{2r}.
+\tag{12}
+\]
+
+The corresponding open tangent sector is
+
+\[
+                     (\theta_2-\pi/4,\theta_2+\pi/4).
+\tag{13}
+\]
+
+If both possibilities exist, the sectors in `(11)` and `(13)` have
+nonempty open overlap. To see this, set `c=1/(2r)`, so
+`h_2=h_1-c` and `h_1>=-c`. If `h_1>=0`, then
+`h_2/sqrt2<h_1`. If `h_1<0`, then
+`h_2<=2h_1<sqrt2 h_1`, giving the same strict inequality. Hence
+`theta_2>theta_1`.
+
+Also
+
+\[
+                       q>(r-1)^2+1.
+\tag{14}
+\]
+
+Indeed, the convex function `(r-1)^2+1` on `[0,R]` is bounded above
+by the larger of its endpoint values `2` and `q-2R+2`; both are
+strictly smaller than `q` because `R>sqrt2`. Equation `(14)` gives
+`h_2>-1` and therefore `theta_2<3pi/4`. Consequently
+
+\[
+ \theta_2+\pi/4>\theta_1,
+ \qquad
+ \theta_2-\pi/4<\pi/2<\theta_1+\pi/2,
+\]
+
+as required. Two distinct squares with these sectors would have
+overlapping interiors near `p`. The same is true if they use the same
+candidate: an adjacent or opposite corner candidate determines the
+square uniquely. It follows that at most one incident square can have
+a circle-touching corner above `p`. Reflection gives the analogous
+statement below `p`.
+
+The only remaining possibility is a circle-touching corner on the
+horizontal line through `p`. A positive horizontal adjacent edge is
+impossible, since the next corner displaced by a perpendicular unit
+edge would lie outside the circle. A negative horizontal adjacent or
+opposite displacement cannot reach the circle when `0<r<R` and
+`R>sqrt2`. A positive horizontal opposite displacement requires
+`r=R-sqrt2`. In that case the circle has no point at distance `1` from
+`p`, and its only point at distance `sqrt2` from `p` is that one outer
+corner. It determines one square, leaving no other boundary-touching
+incident square. Thus in every vertex-only case there are at most two.
+
+### 7.3. One side-interior incidence
+
+Suppose three circle-touching squares contain `p`, with `p` in the
+relative interior of a side of the first. Its tangent sector has angle
+`pi`. Each other square must have a vertex at `p` and a tangent sector
+of angle `pi/2`. The sectors must partition the entire angular space,
+so the three squares have a common frame. In coordinates relative to
+`p`, they are necessarily
+
+\[
+ \begin{aligned}
+ S&=[-1,0]\times[-t,1-t], &&0<t<1,\\
+ B&=[0,1]\times[0,1],\\
+ C&=[0,1]\times[-1,0].
+ \end{aligned}
+\tag{15}
+\]
+
+Let the actual coordinates of `p` relative to the disk center in this
+frame be `(x,y)`. Equality of the farthest-corner radii of `B` and `C`
+gives
+
+\[
+ \max(y^2,(y+1)^2)=\max(y^2,(y-1)^2),
+\]
+
+which forces `y=0`. Put
+
+\[
+ M=\max(x^2,(x+1)^2),\quad
+ N=\max(x^2,(x-1)^2),\quad
+ h=\max(t,1-t)\in[1/2,1).
+\]
+
+All three squares touching the circle now means
+
+\[
+                         q=M+1=N+h^2.
+\tag{16}
+\]
+
+Since `h<1`, this requires `N>M`, hence `x<0`. If `x<=-1/2`, then
+`N-M=1-2x>=2`, contradicting `N-M=1-h^2<=3/4`. Thus
+`-1/2<x<0`, and `(16)` gives
+
+\[
+              -4x=1-h^2,\qquad -3/16\le x<0,
+              \qquad q=(x+1)^2+1<2.
+\]
+
+This contradicts `R>sqrt2` and completes Theorem C.
+
+### 7.4. Exact scope of the incidence consequence
+
+In a physical contact incidence graph, every junction involving three
+or more distinct squares therefore includes a circle-clear square.
+A selected loaded triangle cannot be represented by one common
+contact junction. These conclusions impose no unjustified planarity
+claim on the body-pair graph, and do not close a remaining whole coarse
+cyclic cell. In particular, the six- and seven-loaded arrangements
+left in `C4.3333.b0` still need a separate argument.
