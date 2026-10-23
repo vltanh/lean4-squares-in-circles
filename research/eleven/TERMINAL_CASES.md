@@ -83,7 +83,7 @@ Every row retains all eleven centers and frames and all 55 pair constraints.
 | ID | Core | Ring | Sharp terminal status | Equality status |
 | --- | ---: | ---: | --- | --- |
 | O-3 | 3 | 8 | OPEN | Known candidate occurs here; global exhaustion open |
-| O-4 | 4 | 7 | OPEN | OPEN |
+| O-4 | 4 | 7 | OPEN; all seven outer centers >11/10 | OPEN |
 | O-5 | 5 | 6 | EXCLUDED by weighted occupied-circle measure | NONE |
 | O-6 | 6 | 5 | EXCLUDED by the five-center theorem | NONE |
 

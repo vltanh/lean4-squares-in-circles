@@ -24,9 +24,14 @@ python3 arc_budget/check_weighted_arc_cover.py
 python3 arc_budget/replay_weighted_arcs.py
 python3 arc_budget/check_universal_bound.py
 python3 arc_budget/replay_universal_bound.py
+python3 check_angle_neighborhood.py
+python3 check_angle_tiles.py
+python3 check_reverse_angle_tiles.py
+python3 arc_budget/check_four_core_shell.py
+python3 arc_budget/replay_four_core_shell.py
 ```
 
-All fourteen commands passed on 23 October 2026. They have different scopes:
+All listed commands passed on 23 October 2026. They have different scopes:
 
 | Command | Exact checked output | Scope limit |
 | --- | --- | --- |
@@ -144,3 +149,12 @@ analytic hand arguments. No numerical test is used to infer an unloaded
 neighbor or to identify an individual support atom with a physical
 contact point. The new size bound 5<=k<=11 is restricted to full-angle
 stationary stress components.
+
+## Four-core empty radial shell
+
+The shell replay checks all 7,053 nodes and 2,936 accepted arc leaves.
+Its separate implementation imports `independent_arcs.py`, using a distinct
+square-root scale and arcsine argument reduction. Both replays pass;
+`arc_budget/FOUR_CORE_SHELL_REVIEW.md` records the independent mathematical
+audit. The conclusion is that the other seven centers exceed 11/10 when
+four centers lie within 41/40; the four-core case remains open.

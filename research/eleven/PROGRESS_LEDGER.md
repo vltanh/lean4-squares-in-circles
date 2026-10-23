@@ -335,3 +335,15 @@ Commit timestamps and hashes are recorded after the commit exists.
 - Every retained full-angle component now has 5–11 bodies. Independent
   audit passes all cases. Fixed-frame-only certificates retain their
   distinct scope, and every unstressed physical completion is preserved.
+
+## The four-core case has an empty radial shell
+
+- Previous small-graph checkpoint: `25317ae1b2863ab4a8e9f674ec2dc071cffb590c`.
+- Six weighted circles give core, middle-shell and ring bounds 33/40,
+  149/200 and 3/8. Four cores and one middle-shell square would exceed
+  the total angular budget by at least 13/1400 relative to 44/7.
+- Thus all seven outer centers are strictly beyond 11/10. The complete
+  covers contain 7,053 nodes and 2,936 arc leaves; both separate exact
+  arithmetic implementations pass, and the mathematical audit passes.
+- The four-core case itself is still open. The shell restriction is
+  available for subsequent coupled core/ring gap arguments.

@@ -32,3 +32,8 @@ result; the weighted proof also excludes it. No origin-containing square
 is imposed on either surviving case. A complete proof still needs sharp
 whole-domain inequalities or global capture for both cases, followed by
 full equality reconstruction. The known candidate lies in the 3/8 row.
+
+In the four-core row, the [empty-shell theorem](arc_budget/FOUR_CORE_EMPTY_SHELL.md)
+forces every remaining center strictly beyond 11/10. Six weighted circles
+and complete exact covers exclude the whole intervening closed shell.
+This is a necessary restriction on the open four-core terminal.
