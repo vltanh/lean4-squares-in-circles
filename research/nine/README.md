@@ -18,6 +18,15 @@ inequality \(R_9\ge R_*\) is not yet proved.
 
 ## New exact C3.3 counterexample and larger equality family
 
+- **[NONSTRATIFIED_PARALLEL_NINE.md](NONSTRATIFIED_PARALLEL_NINE.md):**
+  the exact two-stack equality witness has **no horizontal
+  stratification in any frame**, even though every square is
+  axis-aligned. Edge contact forces a common separating frame
+  to be aligned, and connected center-height gaps below one
+  exclude a partition in both axis choices. Consequently
+  stratifability cannot be a global equality normal form.
+
+
 - **[TWO_STACK_SHARP_EQUALITY_WITNESS.md](TWO_STACK_SHARP_EQUALITY_WITNESS.md):**
   nine exact rational axis-aligned squares fit (q=1105/256),
   while a selected horizontal four-chain has a five-square
