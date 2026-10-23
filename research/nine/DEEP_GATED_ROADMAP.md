@@ -184,10 +184,10 @@ Choose a four-horizontal-projection chain \(M_1,\ldots,M_4\).
 - **C3.2 CLOSED:** If the nine squares form three projection chains of three in the prescribed upper/middle/lower center bands, apply [THREE_BAND_GRID_OBSTRUCTION.md](THREE_BAND_GRID_OBSTRUCTION.md).
 - **C3.3 OPEN:** Complement \(E\) of five squares has horizontal projection-chain number \(\le2\). This is the **only residual C branch**.
   - **C3.3.a CLOSED (combinatorial):** By the interval-order chain/antichain theorem, partition \(E\) into at most **two** horizontally overlapping antichains; coordinate separability forces each antichain into a vertically projection-disjoint chain. One of these two stacks has at least three squares.
-  - **C3.3.b OPEN (geometry):** Prove an exact disk/corner/support capacity restriction on every such two-stack complement **relative to the already fixed four-chain**, without replacing squares by center-radius disks.
-  - **C3.3.c OPEN (end-to-end):** Derive a sharp four-anchor or grid stress, or rule out the entire two-stack branch at \(q\le Q\). Cover every (4,1) and (3,2) vertical-stack cardinality possibility; prove there are no other leaves.
-  - **C3.3.d OPEN (falsification):** Try to construct an **exact physical square packing** in the residual class; if it exists, abandon the proposed impossibility and find a different terminal theorem. [CENTER_RELAXATION_COUNTEREXAMPLE.md](CENTER_RELAXATION_COUNTEREXAMPLE.md) shows that center-only \(\ell^\infty\) arguments cannot do the job.
-- **Exit for C3.3:** *one* global theorem stating \(\mathrm{Packing}_9 \wedge q\le Q\wedge\mathrm{CoordinateSeparable}\wedge a=4\wedge a(E)\le2 \Rightarrow q=Q\) (with equality classification), or a rigorously verified counterexample to that theorem and a corrected terminal description.
+  - **C3.3.b OPEN (geometry):** Prove an exact disk/corner/support capacity restriction on every such two-stack complement **relative to the already fixed four-chain**, retaining orientation-dependent widths and all equality poses. **Test a perpendicular-frame 4+3-chain extraction first:** the exact equality witness proves such a switch can be necessary. Do not claim that a crossed four-chain by itself is impossible: [CROSSED_FOUR_CHAINS_EIGHT_WITNESS.md](CROSSED_FOUR_CHAINS_EIGHT_WITNESS.md) gives eight exact physical squares with two disjoint perpendicular four-chains at squared radius (17/4<Q).
+  - **C3.3.c OPEN (end-to-end):** For **both** cardinality patterns (4,1) and (3,2), prove an exhaustive disjunction: (a) perpendicular **signed 4+3** chains, (b) another proved stress, or (c) impossibility at (q\le Q). The (3,2) branch is demonstrably **attained at equality**; exclude only unsupported subbranches, not the whole parent. Establish the equality zero-set for all surviving branches.
+  - **C3.3.d CLOSED (negative, exact physical packing):** [TWO_STACK_SHARP_EQUALITY_WITNESS.md](TWO_STACK_SHARP_EQUALITY_WITNESS.md) constructs **nine genuine axis-aligned unit squares at exactly (q=Q)**, with a horizontal four-chain and a five-square complement of x-chain length precisely two. Therefore any assertion that the entire residual complement is *impossible at (q\le Q)* is FALSE. This witness has **disjoint perpendicular 4+3 chains**, so a frame-switch terminal stress explains equality. The correct goal is a **sharp lower bound with equality coverage**, not a blanket exclusion.
+- **Exit for C3.3:** One quantified theorem (mathrm{Packing}_9\wedge q\le Q\wedgemathrm{CoordinateSeparable}\wedge a=4\wedge a(E)\le2\Rightarrow q=Q), with the known rational equality witness **included** in the resulting classification. A theorem ruling out this complete parent class would contradict the committed construction.
 - **Do not:** expand into hundreds of layer/height configurations or solve one of infinitely many narrowed subclasses.
 
 ### G2.C4 — Assemble the entire coordinate-separable theorem [BLOCKED on C3.3]
@@ -306,7 +306,8 @@ Transfer from squared radius to radius \(R_*\ge0\) and match the \`Optimum\` / p
 ### G5.0 — Proven conditional families [CLOSED, hand]
 - **G5.0.1** [STRATIFIED_EQUALITY_FAMILY.md](STRATIFIED_EQUALITY_FAMILY.md) gives explicit three slider heights and two freely oriented upper squares, with exact disk/support inequalities.
 - **G5.0.2** Exact nonstratified record witness proves the stratified family is not globally complete.
-- **G5.0.3** Four-anchor and signed stress equality pins the stressed boundary squares, but says nothing about all nine unless the global extraction is proved.
+- **G5.0.3 CLOSED (conditional):** [SIGNED_MATCHED_EQUALITY_FAMILY.md](SIGNED_MATCHED_EQUALITY_FAMILY.md) classifies **all** equality packings whose seven squares form two projection-separated 4+3 chains with corresponding endpoints vertically separated. Seven anchors become axis-aligned, three heights obey four exact separator inequalities, and two arbitrary freely rotated squares obey 15 actual-SAT pair tests. It contains the new nonstratified two-stack equality witness.
+- **G5.0.4** Four-anchor stress equality pins the stressed boundary squares, but does not establish that *every* unrestricted packing has this skeleton.
 
 ### G5.1 — Equality skeleton necessity [OPEN]
 - **G5.1.1** For every \(q=Q\) packing, apply G2.X's *equality* branches.
@@ -359,10 +360,10 @@ Transfer from squared radius to radius \(R_*\ge0\) and match the \`Optimum\` / p
 
 **First research attack: G2.C3.3 (five-square two-stack complement).**
 
-1. Write down the *exact* interval-order partition and physically realizable corner bounds for the two stacks; prohibit center-only relaxations as a final proof.
-2. Attack the two *cardinality* patterns \((4,1)\) and \((3,2)\) with one shared geometric width/support lemma if possible. These are the only cardinalities up to exchange, but each contains continuous poses; cardinality enumeration alone is NOT a proof.
-3. If a candidate “all complements yield 4+3” claim is false, exhibit an exact physical counterexample or replace it with a different short terminal stress.
-4. A closure attempt must eliminate or sharply bound the **entire** quantified residual class in one statement. Avoid one-case-at-a-time incrementing and tiny boundary pushes.
+1. **Completed falsification:** an exact rational nine-square packing at (q=Q) lies in C3.3; it switches to two disjoint **vertical** projection chains of four and three. Never attempt to exclude the entire C3.3 branch including equality.
+2. **Next:** prove a *frame-switch or other sharp stress* disjunction for the full (4,1) and (3,2) complement cardinality classes using actual square projection widths and circle corner supports.
+3. **Counterexample control:** an exact eight-square cross already has disjoint horizontal and vertical four-chains; these chains alone are not forbidden. What the ninth square forces is essential.
+4. **Closure:** prove (q\ge Q) uniformly, including exact classification of equality zero sets. Avoid angle meshes and accumulating single-pose exclusions.
 
 **Second attack: G2.O3 graph invariant.**
 
@@ -386,13 +387,13 @@ Transfer from squared radius to radius \(R_*\ge0\) and match the \`Optimum\` / p
 | G1 | CLOSED hand (conditional terminals) | Global applicability |
 | G2.C0–C2 | CLOSED hand | — |
 | G2.C3.1–C3.2 | CLOSED hand | — |
-| **G2.C3.3** | **OPEN** | Sharp all-two-stack complement bound |
+| **G2.C3.3** | **OPEN; equality counterexample verified** | Frame-switch or other sharp all-two-stack bound |
 | G2.C4 | BLOCKED | G2.C3.3 |
 | G2.O0–O2 | CLOSED (negative/framework) | — |
 | **G2.O3** | **OPEN** | Global structural graph coverage |
 | **G2.O4–O5** | **OPEN/BLOCKED** | G2.O3 + uniform stresses |
 | G2.X/G4 | BLOCKED | Coordinate/oblique closure |
-| G5.0 | CLOSED hand (conditional) | — |
+| G5.0 | CLOSED hand (stratified and signed 4+3 conditional families) | — |
 | G5.1–G5.3 | OPEN/BLOCKED | Equality global necessity |
 | G6 | BLOCKED | G4/G5 |
 | G7/G8 | NOT STARTED | G6 |
