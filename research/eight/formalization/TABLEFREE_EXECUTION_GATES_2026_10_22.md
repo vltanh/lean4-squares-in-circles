@@ -95,7 +95,7 @@ At each leaf, record (i) actual theorem name, (ii) initial and terminal hypothes
   - [x] G4.3.1 Aligned genuine negative BT3 with zero TD endpoint can acquire actual BT2, conditional source draft.
   - [x] G4.3.2 \`TTransport.reduce_complete\`: resulting T pair has BT2 or positive BT3/TD0.
   - [ ] G4.3.3 Eliminate the latter *on the transported actual same-q cycle*, without assuming signs or owner choices absent from \`SourceDomain\`.
-  - [ ] G4.3.4 Export BT2 with unchanged five anchors, actual witness and all eligible signed budgets.
+  - [x] G4.3.4 Export BT2 on a same-q necessary descendant via `TTransport.SecondaryResult`; source anchor preservation is stated and drafted. This is not yet a contradiction.
 - [ ] **G4.4 — G-side owner/transport full join.**
   - [ ] G4.4.1 Original GA0 already available → preserve source.
   - [ ] G4.4.2 Positive total, wrong-sign nonpositive total, positive-GA nonpositive total: all reflected and zero cases.
@@ -147,7 +147,7 @@ At each leaf, record (i) actual theorem name, (ii) initial and terminal hypothes
 ### G7 — Unconditional sharp source entry (OPEN)
 
 - [ ] G7.1 Instantiate \`GlobalNormalization S qStar\` and the actual source-domain theorem from G1–G3.
-- [ ] G7.2 Consume the exhaustive G4 matrix, G5 hard equality and G6 original-source audit.
+- [x] G7.2 Conditional assembly from normal owners is written in `NormalizedSourceEntry.original_hard_owners`, `original_sharp`, and `source_witnesses_of_normal_owners`; universal normal-owner eligibility remains unproved.
 - [ ] G7.3 Construct **\`TableFree.SharpSourceEntry\`** *without an argument of type \`SharpSourceEntry\`*, \`Candidate.capture\`, a \`sorry\`, or an unstated original-owner premise.
 - [ ] G7.4 Ensure \`source_witnesses_of_recovered_equality\` uses the unchanged source and initially retained normals.
 - [ ] **G7 exit:** actual inhabitant of the proposition in \`TableFree/SharpEntry.lean\` under the exact \`GlobalNormalization\` hypotheses.
@@ -187,3 +187,54 @@ If a subgate cannot be completed, record **one exact missing hypothesis/theorem*
 - \`SquaresInCircles/Eight/GeometricModel/SharpAssembly.lean\`: edit only after G7 is genuinely inhabited.
 
 **Current source-level high-water mark:** G2 is assembled as a draft; positive-BT3/TD0 DE/EH local exclusions are drafted; the global G3–G6 dispatcher, unconditional G7, capture-free G8 and verified G9 remain open. Recheck live HEAD because concurrent source commits may supersede these observations.
+
+## 5. Reconciled immediate blocker — one exhaustive BT2 theorem
+
+**New commits 22 October:** \`GlobalGAHighPositiveTFrame.lean\` (`e75bc243`) closes the original physical positive-BT3/TD0 high-GA lane as source; \`GlobalGAHighOwnerExit.lean\` (`6956c16f`) connects T-to-BT2, original high-GA owner restriction and the conditional source-to-public proof. **It explicitly does not construct** \`HighGABT2Exclusion\`.
+
+Thus the operative whole-domain target is exactly:
+
+\`\`\`lean
+def HighGABT2Exclusion : Prop :=
+  ∀ {q : ℝ} {C : SignedCycle} (I : GlobalGA.SourceDomain q C),
+    qLow ≤ q → q ≤ qCap → C.Feasible B 2 → False
+\`\`\`
+
+Once an inhabitant is produced, \`sharp_source_entry_of_BT2_exclusion\` already drafts the rest of the original-normal-owner → same-radius hard-terminal → original-equality → \`SharpSourceEntry\` chain. The actual final source **must** supply the inhabitant; a conditional adapter is not closure.
+
+### BT2.0 — Input conservation
+- [ ] BT2.0.1 Original high GA and all six other originally selected axes belong to \`SourceDomain\`; H,G,B,D outer at actual q; E core/outer; weak ties allowed.
+- [x] BT2.0.2 T-only reduction supplies actual BT2 at unchanged q with a *new* valid \`SourceDomain\` (\`TTransport.reduce_secondary\`, draft).
+- [ ] BT2.0.3 No assumption that the transported T equals original T or that a changed E/A remains an actual initial packing.
+
+### BT2.1 — TD owner exhaustive split
+- [ ] BT2.1.1 TD0 selected: T primary total zero even when the individual BT/TD errors are not zero; handle arbitrary signed TD0 error.
+- [ ] BT2.1.2 TD2 selected and its actual signed error ≤0: include zero as a weak tie and every E/A owner allocation.
+- [ ] BT2.1.3 TD2 selected and its actual signed error >0: include positive-magnitude full range and all remaining A/E signs.
+
+### BT2.2 — Exact A/E normal-form split inside *each* TD row
+- [ ] BT2.2.1 E outer: choose its physically feasible secondary/nonnegative E total at the current same-q state; do not move E.
+- [ ] BT2.2.2 E true-core: negative/zero/nonnegative selected total; if negative, normalized genuine DE3/EH1 primary with the other actual secondary.
+- [ ] BT2.2.3 A selected total ≥0 vs <0; negative A normal form contains original GA3 or AB2 genuine primary, alternate secondary, and zero-boundary ties.
+- [ ] BT2.2.4 A and E simultaneous negative: use joint-negative source, not separate one-negative theorems with incompatible premises.
+
+### BT2.3 — Required finite source leaves
+- [x] BT2.3.1 Nonnegative A/E selected totals with BT2 and TD0/TD2 source packages drafted (\`GlobalGANonnegativeTotalsTD0Source\`, \`GlobalGANonnegativeTotalsNegativeTDSource\`, \`GlobalGANonnegativeTotalsSource\`).
+- [x] BT2.3.2 Negative E with nonpositive TD2 and nonnegative A source package drafted (\`GlobalGANegativeENonpositiveTDSource\`); check zero and outer-E joins in the final dispatcher.
+- [x] BT2.3.3 Negative A/negative E with positive TD2 local sources drafted (\`GlobalGAJointNegativeAETD2Source\`); apply only after the actual A/E normal-form preservation lemmas.
+- [x] BT2.3.4 Negative DE3 / EH1 with positive TD2, nonnegative A drafted (\`GlobalGANegativeDETD2Source\`, \`GlobalGANegativeEHTD2Source\`).
+- [x] BT2.3.5 Negative E EH1 with BT2/TD0 high-A draft newly present (\`GlobalGANegativeEHTD0Source\`); **does not cover every A regime or E source unless separately joined**.
+- [ ] BT2.3.6 Complete any genuinely missing cross-sign terminal, then connect every leaf to \`SourceDomain\` under original weak-owner hypotheses.
+
+### BT2.4 — Whole-domain terminal / no uncaught case
+- [ ] BT2.4.1 Construct one theorem dispatching BT2 + TD0 or TD2, two T error signs, three A-sign regimes and three E-sign/radial regimes with actual feasible owners.
+- [ ] BT2.4.2 Prove every A/E transport retains the source-domain necessary constraints when reapplied; maintain original q and physical signs.
+- [ ] BT2.4.3 Export **unconditional** \`HighGABT2Exclusion\`. If a branch is missing, name its exact input signature rather than claiming near-closure.
+
+### BT2.5 — Rejoin finished modules
+- [ ] BT2.5.1 \`high_GA_source_false_of_BT2_exclusion\` discharges all high-GA source records.
+- [ ] BT2.5.2 \`original_normal_owners_of_BT2_exclusion\` yields every permitted original owner, including all ties.
+- [ ] BT2.5.3 \`sharp_source_entry_of_BT2_exclusion\` gives an unconditional \`SharpSourceEntry\` when fed BT2.4.3.
+- [ ] BT2.5.4 G8 public import swap follows; G9 deferred kernel verification still required.
+
+**Execution priority:** finish BT2.3.5/BT2.3.6 and BT2.4 before any new local endpoint estimate. G4–G6 already possess a conditional normal-owner-to-original-equality assembly; do not redo that work.
