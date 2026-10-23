@@ -1,89 +1,102 @@
-# n=9 — current roadmap: deep P/Y obligations and coarse cyclic cell ledger
+# n=9 — current roadmap: universal two-load rigidity and whole four-body cyclic closure
 
-**Checkpoint:** 2026-10-23 quadrant/block continuation. **The unrestricted n=9 proof is NOT finished.** The new hand work proves an all-orientation quadrant capacity theorem, necessary cyclic load restrictions, an exhaustive coarse cyclic block/bridge partition, and exclusion of its isolated-triangle cell. P.ALL and Y.ALL have not been closed. Of the 58 coarse cyclic cells, 57 sharp physical completion theorems remain open. Independent full audit and Lean verification are outstanding.
+**Checkpoint:** 2026-10-23 two-load reciprocal continuation. **The unrestricted n=9 proof is NOT finished.** A new hand theorem covers every physical positive component with exactly two circle-loaded bodies, forcing all pair forces parallel. It closes the diamond residual and therefore the **entire four-body coarse cyclic cell C1.4.b0**. Of the 58 coarse cells, two are now excluded and **56 remain open**. P.ALL, Y.ALL, larger layered-core completions, global equality and verification remain unresolved.
 
-## Authoritative deep roadmap and logs
+The new general arguments are hand manuscripts pending independent mathematical audit. No Lean compilation, CI or proof-completion percentage is claimed.
 
-- [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md): full G0–G8 gates/subgates/subsubgates, with checked proof implications and unchecked parent obligations.
-- [CYCLIC_CELL_LEDGER.md](CYCLIC_CELL_LEDGER.md): all 58 cyclic coarse cells individually ticked; definitions and full completion contracts.
-- [FINITE_TREE_CASE_LEDGER.md](FINITE_TREE_CASE_LEDGER.md): original six tree profiles and P/Y survivor cover.
-- [G2_SUBGATES.md](G2_SUBGATES.md): live mathematical status.
-- [QUADRANT_BLOCK_PROGRESS.md](QUADRANT_BLOCK_PROGRESS.md): current UTC commits, exact execution and negative controls; continues ORIGIN_POCKET_PROGRESS.md and PROGRESS_LEDGER.md.
+## Canonical deep roadmap and source records
 
-## Target and existing completed work
+- [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md): full G0–G8 contracts with new TL.R/TL.P/TL.G subsubgates and checked four-body adjacency cases.
+- [CYCLIC_CELL_LEDGER.md](CYCLIC_CELL_LEDGER.md): all 58 coarse rows, now two checked and 56 unchecked.
+- [G2_SUBGATES.md](G2_SUBGATES.md): live mathematical scope and remaining completion contracts.
+- [TWO_LOAD_PROGRESS.md](TWO_LOAD_PROGRESS.md): current UTC proof commits, pinned exact run, report correction and negative controls.
+- [FINITE_TREE_CASE_LEDGER.md](FINITE_TREE_CASE_LEDGER.md): original tree profiles and P/Y survivor cover.
+- QUADRANT_BLOCK_PROGRESS.md, ORIGIN_POCKET_PROGRESS.md and PROGRESS_LEDGER.md retain earlier chronological checkpoints.
 
-Q=1105/256. An exact construction gives R9<=sqrt(Q); the missing theorem is R^2>=Q for every nine-square packing with independent orientations and pairwise disjoint open interiors.
+## Target and essential scope
 
-The whole common-coordinate-separable class is closed by hand. The unrestricted minimizer/physical-stress reductions are necessary theorems, not the lower bound itself. The positive tree branch, in the explicit 79/40<=R<=sqrt(Q) window, is quantized to R^2=17/4 and six exhaustive central-incidence profiles. TREE.12, TREE.03 and TREE.04 are excluded in full; the strict-normal point-only subtype TREE.02.P is excluded. All remaining tree candidates are exactly the P or Y families below.
+Q=1105/256. An exact nine-square construction attains Q. The missing theorem is R^2>=Q for **every** nine independently oriented physical unit-square packing, with disjoint open interiors, followed by all equality configurations.
 
-The lower window remains an explicit imported n=8 prerequisite or an independent missing coarse hand bound. It is not proved by the capacity results themselves.
+The whole common-coordinate-separable class is hand-proved. It is not unrestricted Packing: some exact Q packings have genuinely oblique-only separating pairs. The physical stress certificate is a necessary reduction at a minimizer, not by itself the sharp lower bound.
 
-## New hand theorem: quadrant capacity one
+High-radius graph consequences use **79/40<=R<=sqrt(Q)**. This lower window must be explicitly imported from the established n=8 result, with its proof dependencies, or proved independently for a standalone hand proof. The new parallel-force theorem itself assumes only q>9/4.
 
-[QUADRANT_UNAVOIDABLE_POINT.md](QUADRANT_UNAVOIDABLE_POINT.md) proves:
+## New theorem: exactly two loaded bodies force all contacts parallel
 
-> Every arbitrary unit square wholly in the first quadrant of D_(17/4) contains (1,1). A tilted square contains it in its open interior; an aligned boundary square contains a common small southwest perturbation. Therefore a quadrant holds at most ONE physically interior-disjoint square.
+[TWO_LOAD_RECIPROCAL_RIGIDITY.md](TWO_LOAD_RECIPROCAL_RIGIDITY.md), initial commit 248202d, proves a global **load-cardinality** restriction, without assuming the component is a tree or a simple cycle.
 
-No radial terminal obstacles, individual frame alignment or common pairwise separators are assumed. The proof uses four exact side-coordinate inequalities and a strict interior-point argument; a mere shared boundary point would not suffice.
+In the true contact-point incidence graph, physical force directions follow the cyclic order around each square and each shared junction. Consecutive circle atoms on each loaded square can be combined into one exterior port through its empty outer chord cap. With exactly two loaded bodies, the exterior has two opposite resultant forces.
 
-Consequently, in every perpendicular frame, any hypothetical nine-square packing in D_(17/4) has at least five squares whose open interiors meet at least one axis. This is necessary, not contradictory by itself. It does NOT prove every extra square of P/Y lies in a chosen quadrant; their whole-family capacities remain open.
+An exact dual face-potential construction gives reciprocal force polygons. Each finite polygon is weakly convex and has nonnegative signed area; all their signed areas cancel against the exterior polygon. The latter has two edges and zero area. Hence every finite polygon has zero area and all aggregated forces are parallel. A separate normal-cone extreme-ray argument recovers parallelism of every ORIGINAL pair force at multiple junctions.
 
-## New finite cyclic bookkeeping and one closed cell
+This uses planarity of the physical **incidence** graph, not an unproved planar body-pair graph. It does not conflate the <=19 planar translational stress with the <=27 physical torque-balanced certificate.
 
-[CYCLIC_BLOCK_INVENTORY.md](CYCLIC_BLOCK_INVENTORY.md) proves that, for a selected connected cyclic positive body component, if its maximal cyclic block sizes are k_i>=3 and it has b bridges, then
+### Exact research-window consequences
 
-    n = 1 + b + sum(k_i-1) <= 9.
+At 79/40<=R<=sqrt(Q), every such two-loaded component has:
 
-The solutions are exactly **21 sorted profiles and 58 bridge-count cells**. The individual ledger retains all graphs, contact choices, orientations, loads and 9-n remaining physical squares. This is a **coarse exhaustive partition**, NOT a solved geometric classification or a small sharp proof.
+- squared radius **17/4**;
+- loaded side-normal endpoints centered at (-3/2,0),(3/2,0);
+- all unloaded bodies axis-aligned in x=-1/2 or x=1/2 layers;
+- exactly two internal bodies on every directed loaded-to-loaded path;
+- **four, five or six bodies total** for the selected strictly exposing point-only normal convention.
 
-Two necessary physical force rules are established:
+Thus every triangle-containing two-loaded component and every two-loaded component with 7–9 bodies is excluded. This is a uniform theorem across the inventory, not another narrow angle/offset subclass.
 
-- an unloaded positive appendage cannot be attached through only one external body; every endblock therefore has a loaded nonarticulation body;
-- the loaded body subset cannot all pairwise physically touch in the declared window. Their center centroid and normalized circle-force balance would give R^2<=625/162<(79/40)^2.
+**Important remaining capacity:** five- and six-body parallel components really exist and can have inner heights outside [-1/2,1/2]. They are not automatically old family P. Their complete physical additions to nine remain open.
 
-The complete cell **C1.3.b0**, one selected triangle component without bridges, is thereby excluded. Triangle blocks with attached bodies and all other cells remain open.
+## Whole coarse cell C1.4.b0 closed
 
-## Ticked remaining-work summary
+[FOUR_BODY_CYCLIC_CELL_CLOSED.md](FOUR_BODY_CYCLIC_CELL_CLOSED.md), commit 05e15a0, covers all biconnected simple four-body graphs:
 
-| Gate | Current state |
+| Exhaustive adjacency type | Full exclusion |
 |---|---|
-| G2.C entire common-coordinate-separable theorem | [x] CLOSED hand |
-| TREE six-profile cover and surviving P/Y normal forms | [x] CLOSED hand reduction |
-| TREE.12, TREE.03, TREE.04 and TREE.02.P completion bounds | [x] CLOSED hand |
-| QCAP unavoidable point/capacity one | [x] NEW CLOSED hand tool |
-| CY.BLOCK 21 profiles / 58 coarse cells | [x] NEW CLOSED hand coverage only |
-| CY.LOAD endblock and loaded-clique restrictions | [x] NEW CLOSED hand necessary/exclusion |
-| C1.3.b0 | [x] NEW excluded in window |
-| **P.ALL** | [ ] OPEN full physical capacity |
-| **Y.ALL** | [ ] OPEN full physical capacity |
-| **Remaining 57 cyclic cells** | [ ] OPEN uniform sharpness |
-| G4 unrestricted sharp radius | [ ] BLOCKED |
-| G5 unrestricted equality classification | [ ] OPEN/BLOCKED |
-| G6 independent full audit | [ ] NOT COMPLETED |
-| G7–G8 Lean kernel proof and integration | [ ] NOT STARTED |
+| C4 | Prior channel theorem excludes two loaded bodies; loaded-noncontact connectedness excludes three/four |
+| K4 | Loaded subset is a touching clique, impossible |
+| Diamond K4-e | Only two nonadjacent tips can be loaded. New parallelism makes its positive triangles impossible as one-dimensional touching intervals |
 
-### P.ALL exact contract
+All load choices, individual square orientations, actual contact points and the five other physical squares are covered. The result excludes the whole selected component, so no unstressed completion is silently omitted.
 
-The four fixed aligned centers are (-3/2,0),(-1/2,tau1),(1/2,tau2),(3/2,0), with both tau in [-1/2,1/2]. Prove no FIVE additional independently oriented physical unit squares fit D_(17/4). The flat row is closed; the entire two-slider family is not.
+The loaded-noncontact and simple-four-cycle results were already committed in ACUTE_LOADED_CONTACT_GRAPH.md (690f245) and PARALLEL_TRANSMISSION_AND_FOUR_CYCLES.md (a89802c). They are credited as prior inputs, not double-counted new proofs.
 
-### Y.ALL exact contract
+## Current ticked frontier
 
-H=[-alpha,1-alpha]x[0,1], K=[0,u]+[0,v], u=(cos(theta),-sin(theta)), v=(-sin(theta),-cos(theta)), with alpha in (0,1), theta in (0,pi/2), plus radial terminals S(north),S(u),S(v). Prove no FOUR additional arbitrary squares fit D_(17/4). Its physical five-body core really exists; the theorem must use the remaining four squares.
+| Gate | State |
+|---|---|
+| G2.C common-coordinate-separable theorem | [x] CLOSED hand |
+| Tree six-profile cover and P/Y normal forms | [x] CLOSED reductions |
+| TREE.12, .03, .04 and point-only .02.P | [x] CLOSED completion bounds |
+| CAP/QCAP all-angle tools and every-direction necessary counts | [x] CLOSED at stated scope |
+| CY.BLOCK 58 coarse cells | [x] Exhaustive bookkeeping, not sharp geometry |
+| CY.ACUTE / CY.CHANNEL | [x] Necessary load/contact rules and simple C4 exclusion |
+| **CY.TWOLOAD** | [x] NEW all-component parallelism and window quantization |
+| **C1.4.b0** | [x] NEW whole four-body cell excluded |
+| C1.3.b0 | [x] Previously excluded |
+| **P.ALL / Y.ALL** | [ ] OPEN physical capacities |
+| **Five/six-body two-loaded layered completion** | [ ] OPEN |
+| **Remaining 56 coarse cyclic cells** | [ ] OPEN uniform sharpness |
+| G4/G5 unrestricted radius and all equality | [ ] OPEN/BLOCKED |
+| G6 full independent audit | [ ] NOT COMPLETED |
+| G7–G8 standard-kernel Lean and integration | [ ] NOT STARTED |
 
-### CY.SHARP exact contract
+### P.ALL and Y.ALL remain unchanged
 
-For each unchecked cell, prove q>=Q for EVERY nine-square realization with its selected component, or exclude every such component in the radius window. All intra-block adjacencies, actual contacts, independent angles, loaded vertices and other physical squares are quantified. One global invariant closing many cells is preferable to 57 angle-grid searches.
+P fixes aligned centers (-3/2,0),(-1/2,tau1),(1/2,tau2),(3/2,0), with tau_i in [-1/2,1/2], and requires exclusion of FIVE arbitrary additional squares in D_(17/4). Only flat-row capacity is finished.
 
-## Exact execution and rejected relaxations
+Y fixes the full nonaligned side/vertex five-square fan with alpha in (0,1), theta in (0,pi/2), including its three radial terminals, and requires exclusion of FOUR arbitrary added squares. Its physical core exists. Neither new reciprocal rigidity nor quadrant capacity alone closes Y.
 
-[check_quadrant_blocks.py](check_quadrant_blocks.py), source commit fed5a888, was matched to its Git blob and SHA-256 before execution at **2026-10-23 16:27:18–16:27:19 UTC**, Python 3.13.5, exit 0. [QUADRANT_BLOCK_EXACT_CHECK.json](QUADRANT_BLOCK_EXACT_CHECK.json) records 104 rational identity checks, 2,254 admissible quadrant square samples and 1,772 finite graph checks exercising all 58 cells.
+## Actual exact regression evidence
 
-The report also retains an exact FIVE-center feasible relaxation for P: all centers are inside radius 3/2, pairwise separated by more than one, with half-radius disk clearance from every root square. This is NOT a physical square packing. It proves that these center constraints alone are too weak; successful P proof must use actual square supports/corners or stronger physical geometry.
+[check_two_load_reciprocals.py](check_two_load_reciprocals.py), source **0d4c958**, was matched to its committed Git blob and SHA-256 before an actual run at **2026-10-23 19:32:40 UTC**, Python **3.13.5**, exit **0**. [TWO_LOAD_RECIPROCAL_EXACT_CHECK.json](TWO_LOAD_RECIPROCAL_EXACT_CHECK.json) records 12 exact radius comparisons, all 64 labelled four-body graphs/load subsets and five complete physical stress/reciprocal examples. An identical source rerun passed at **19:44:32 UTC**.
 
-A separate exact two-square witness at centers (5/4,+/-1/2) rejects a universal 45-degree center-angle separation rule. Do not replace the proven annular pi/6 lemma by that false stronger statement.
+Checks include corners, all physical SAT pairs, genuine application points, force/torque balance, incidence rotation-system Euler characteristic, exact dual integration, convex finite polygons and signed-area cancellation.
 
-Finite checks are regressions, not the all-angle/block proofs, physical feasibility of abstract cells, independent audit, Lean certificates or CI. The hand arguments still require independent review.
+Retained controls: a three-loaded nonparallel Y with reciprocal areas +4/3 and -4/3; an abstract wrong-direction-order vector graph with cancelling positive/negative areas; a six-cycle at inner heights +/-3/5 outside P; and a two-loaded six-body theta graph that is not a simple cycle.
 
-## Completion discipline
+These finite checks do not prove the general packing theorem, substitute for an independent audit or constitute Lean/CI verification.
 
-The proof remains unfinished: new tools and finite bookkeeping do not resolve the missing P/Y capacities or 57 sharp cyclic cells. Tick only whole quantified implications, retain all unstressed completion squares, and log the exact evidence and unchanged parent blockers. Counts are not proof-completion percentages. PR #11 remains draft.
+## Next proof obligation
+
+Use the new invariant to close **whole physical completion families**, not only additional graph labels: larger two-loaded layered cores, P/Y, or >=3-loaded cyclic cells. Retain every unstressed body and every actual separator/corner constraint. A coarse cell with an unresolved >=3-loaded family remains unchecked even if its two-loaded subclass is eliminated.
+
+All finished implications are committed and logged. PR #11 remains draft; the unrestricted proof remains unfinished.
