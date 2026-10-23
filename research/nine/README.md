@@ -16,6 +16,37 @@ The record construction has squared radius
 We have proved that this radius is **attained**. The universal
 inequality \(R_9\ge R_*\) is not yet proved.
 
+## New exact C3.3 counterexample and larger equality family
+
+- **[TWO_STACK_SHARP_EQUALITY_WITNESS.md](TWO_STACK_SHARP_EQUALITY_WITNESS.md):**
+  nine exact rational axis-aligned squares fit (q=1105/256),
+  while a selected horizontal four-chain has a five-square
+  complement with horizontal chain length **only two**.
+  This **refutes any plan to rule out all such complements at equality**.
+  On rotating the frame, disjoint **vertical** four- and
+  three-square chains appear, giving a sharp signed stress.
+- **[CROSSED_FOUR_CHAINS_EIGHT_WITNESS.md](CROSSED_FOUR_CHAINS_EIGHT_WITNESS.md):**
+  eight exact square centers form disjoint perpendicular
+  four-chains at squared radius (17/4<Q), so merely forbidding
+  crossed four-chains is a false shortcut. That particular
+  eight-square arrangement cannot accommodate a coordinate-
+  separable ninth square at (q\le Q), as an exact global
+  center-covering calculation proves.
+- **[SIGNED_MATCHED_EQUALITY_FAMILY.md](SIGNED_MATCHED_EQUALITY_FAMILY.md):**
+  the **complete conditional equality domain** for all signed
+  matched 4+3 projection chains: all seven chain squares become
+  axis-aligned, four boundary anchors pin, and three slider
+  heights plus two freely rotating/positioned squares remain.
+  Mixed signs and oblique-only free-square separation are allowed.
+  This is broader than the stratified equality family; global
+  necessity from arbitrary Packing remains OPEN.
+
+**Corrected next theorem:** From every coordinate-separable
+nine-square packing with a selected horizontal four-chain and
+five-square complement of x-chain length at most two, derive a
+**perpendicular-frame 4+3 terminal** or another *sharp*
+certificate. The residual class is nonempty at equality.
+
 ## New structural closure: signed 4+3 projection chains
 
 **[SIGNED_MATCHED_CHAIN_STRESS.md](SIGNED_MATCHED_CHAIN_STRESS.md)**
@@ -34,12 +65,11 @@ whose three x-projection chains occupy respectively the upper,
 central and lower coarse center-height bands. The forced corresponding
 endpoint vertical chains yield \(q\ge9/2\).
 
-**Exact remaining coordinate-separable question:** If M is a horizontal
-four-projection chain, can the five remaining squares have horizontal
-projection-chain length at most **two**? Such a complement partitions
-into at most two vertical chains. This is the only outstanding C4.3c
-class after the zigzag exclusion. No general exclusion of it is
-currently proved.
+**Exact remaining coordinate-separable question:** If M is a horizontal four-projection chain and the five remaining
+squares have horizontal projection-chain length at most **two**,
+we now know this can occur **exactly at the record radius**. The
+missing theorem is a sharp *all-poses lower bound* and equality
+classification for this branch, possibly by a 90-degree frame switch.
 
 **[SEPARATOR_GRAPH_CONVEX_DUAL.md](SEPARATOR_GRAPH_CONVEX_DUAL.md)**
 gives a general convex weak-dual proof certificate for arbitrary
