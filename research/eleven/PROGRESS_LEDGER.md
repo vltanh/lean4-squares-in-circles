@@ -72,3 +72,17 @@ Commit timestamps and hashes are recorded after the commit exists.
   counts 4296 -> 1359 -> 1155.
 - Evidence: `COORDINATE_RANK_CASES.md`, `classify_rank_masks.py`, and
   `RANK_MASKS.json`. The unrestricted oblique branch remains untouched.
+- Commit: `26dcc73ce85721197f5ac38e075f72b2f86b4b53`,
+  2026-10-23 12:46:10 UTC.
+
+## Shared chain-start corner checkpoint
+
+- G3.C3 further partial closure: the first row and first column cannot both
+  be full. Their common square would start perpendicular four-chains and
+  violate the unconditional center bound.
+- This excludes 50 additional masks, leaving 1105, with row-profile counts
+  225, 460, 420 for (4,3,3,1), (4,3,2,2), (3,3,3,2), respectively.
+- Independent mathematical review and a separate finite enumeration agree
+  on all stage counts and all nine row/column profile-pair counts.
+- All 1105 residual geometric domains remain open, as does unrestricted
+  oblique classification. No rank-grid reflection quotient is assumed.

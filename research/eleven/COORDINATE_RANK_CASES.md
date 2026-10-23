@@ -4,7 +4,7 @@ This note classifies necessary finite data for packings whose pairs all
 separate on one of two common perpendicular axes. This is an **additional
 hypothesis**; the unrestricted oblique branch remains open. Individual squares
 may rotate independently. In the certified window q<=U=49013/10000<5, the
-initial 4296 rank masks reduce to **1155 residual 4 by 4 masks**. None of those
+initial 4296 rank masks reduce to **1105 residual 4 by 4 masks**. None of those
 residual masks is claimed realizable or solved.
 
 ## 1. Projection orders and exact rank extraction
@@ -84,6 +84,13 @@ The directed longest-chain ranks matter. Reflecting an axis replaces ranks
 by co-ranks, which need not equal a+1-r_x. No dihedral quotient of this
 rank inventory is used without a proof of its action on actual orders.
 
+There is a second forbidden corner pattern: the first row and the first
+column cannot both be full. Their shared square at (1,1) starts an x-chain
+of length four along column 1 and a y-chain of length four along row 1.
+Reversing the endpoint estimate above gives both center coordinates at most
+R-7/2<-5/4, again contradicting ||p||²<289/100. This is a geometric proof
+for the actual chains, not a reflection of longest-chain ranks.
+
 ## 4. Two disjoint four-chains force squared radius at least five
 
 **Conditional terminal theorem.** If a common-coordinate-separable packing
@@ -145,15 +152,16 @@ eleven cells in a 3 by 4 grid have two full rows, and transposition handles
 two full columns. The surviving row profiles are (4,3,3,1), (4,3,2,2),
 and (3,3,3,2); columns obey the same condition.
 
-| Dimensions | All nonempty rank masks | Omit (4,4) | Also exclude two full rows/columns |
-| --- | ---: | ---: | ---: |
-| 3 by 4 | 12 | 12 | 0 |
-| 4 by 3 | 12 | 12 | 0 |
-| 4 by 4 | 4272 | 1335 | 1155 |
-| Total | 4296 | 1359 | 1155 |
+| Dimensions | All nonempty rank masks | Omit (4,4) | Exclude two full rows/columns | Exclude shared start corner |
+| --- | ---: | ---: | ---: | ---: |
+| 3 by 4 | 12 | 12 | 0 | 0 |
+| 4 by 3 | 12 | 12 | 0 | 0 |
+| 4 by 4 | 4272 | 1335 | 1155 | 1105 |
+| Total | 4296 | 1359 | 1155 | 1105 |
 
-The remaining 1155 masks have row-profile counts 240, 495, and 420 in the
-order just given. They are explicitly listed as integer bitmasks in
+The shared-start exclusion removes another 50 masks. The remaining 1105
+masks have row-profile counts 225, 460, and 420 in the order above.
+They are explicitly listed as integer bitmasks in
 [RANK_MASKS.json](RANK_MASKS.json). Bit 4(r-1)+(s-1) records occupancy of
 rank pair (r,s). No symmetry quotient is taken.
 
@@ -169,7 +177,7 @@ It does not establish which surviving masks are physically feasible, supply
 a sharp lower bound for them, or classify arbitrary oblique packings.
 
 **Gate status:** G3.C1–C2 are closed as a necessary finite classification;
-G3.C3 has the closed double-four-chain exclusion. G3.C3 on the 1155 residual
+G3.C3 has the closed double-four-chain exclusion. G3.C3 on the 1105 residual
 masks, G3.C4–C5, the unrestricted G3.O branch, and G5–G6 remain open. The
 next coordinate step must refine or close these residual domains, retaining
 all square centers and all orientations, rather than assuming their masks

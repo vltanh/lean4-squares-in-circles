@@ -21,7 +21,7 @@ identity. A useful reduced terminal classification remains open.
 
 [Coordinate rank cases](COORDINATE_RANK_CASES.md) closes the first conditional
 finite classes: rank extraction, a forbidden corner, and the sharp
-double-four-chain exclusion. Its 1155 residual masks are explicit; this
+double-four-chain exclusion. Its 1105 residual masks are explicit; this
 branch requires a common separating coordinate frame.
 
 The intended result is an exact least disk radius together with all attaining
