@@ -17,8 +17,9 @@ The larger rational U remains convenient for every coarse reduction below.
 ## Status and closure rules
 
 **H** means a hand argument with the stated quantifiers is written and
-reviewed; it does not mean Lean verification. **C** is a conditional hand
-result. **A** is an exact arithmetic certificate with a written soundness
+reviewed; it does not mean Lean verification. **C** flags a conditional
+result; method/scope tags can combine as H/C or H/A. **A** is an exact
+arithmetic certificate with a written soundness
 argument and independent replay, also not kernel verification.
 **OPEN** is a missing argument, **BLOCKED** an unmet predecessor, and
 **DEFERRED** a later implementation phase. A parent closes only when all its
@@ -40,18 +41,19 @@ allowed without a separate theorem.
 | --- | --- | --- |
 | G0.1 | Pinned repository semantics and n=8 workflow audit | H |
 | G0.2–G0.4 | Exact physical encoding, compact search domain, minimizer | H |
-| G1.1 | Baseline q=5 and exact rational upper bound U=49013/10000 | H; exact arithmetic independently replayed |
+| G1.1 | Baseline q=5 and exact rational upper bound U=49013/10000 | H/A; independently replayed |
 | G1.2.a | Pinned published candidate and its evidentiary scope | H |
-| G1.2.b | Exact selected contact system, including the slider | C |
+| G1.2.b | Exact selected contact system, including the slider | H/C |
 | G1.3 | Locally unique exact root and full feasible candidate family | A; independently reviewed |
 | G1.4 | Candidate target q_c named; negative-control inventory | PARTIAL |
+| G1.4.N1 | Exact family has no common separating coordinate frame | H/A |
 | G2.1–G2.3 | Exhaustive raw finite owner/sign cover, degeneracies, normalization | H |
 | G2.4 | Useful geometric reduction and exhaustive small terminal inventory | OPEN |
-| G3.C1–C2 | Necessary common-coordinate rank classification | H |
+| G3.C1–C2 | Necessary common-coordinate rank classification | H/C |
 | G3.C3 | Double-four-chain terminal excluded; 1105 residual masks | PARTIAL |
 | G3.C4–C5 | Close and assemble all common-coordinate cases | OPEN |
 | G3.O | Unrestricted oblique/core-plus-completion classification | OPEN |
-| G4.1 | Generic weak stress identity with equality consequences | H; conditional on supplied weights |
+| G4.1 | Generic weak stress identity with equality consequences | H/C; supplied weights |
 | G4.2–G4.5 | Sharp whole-domain terminal certificates and full assembly | BLOCKED |
 | G5 | Universal lower bound and attainment | BLOCKED |
 | G6 | Complete necessary-and-sufficient equality family | BLOCKED |
@@ -123,6 +125,12 @@ contact graph, or establish that every optimal packing has this form.
 **G1.4 target:** use Q=q_c as the candidate sharp target, with q_c in
 4.901206412408144+[-10^-9,10^-9]. Global sharpness is explicitly G5.
 
+**G1.4.N1 closed negative:** [no common separating frame](NO_COMMON_SEPARATING_FRAME.md)
+proves the exact candidate family forces two nonorthogonal separator normals.
+It therefore belongs to the oblique branch O. Rigid motions and relabeling
+cannot make the common-coordinate branch exhaustive. Other proposed
+normalizations must receive their own proof or negative control.
+
 - **G1.1:** give an elementary exact eleven-square construction; audit all
   44 corners and 55 pair separations. Use its radius as the initial upper
   bound without asserting sharpness.
@@ -188,6 +196,10 @@ both rectangular grids and masks with two full rows or columns at q<=U<5.
 The exact residual masks are in `RANK_MASKS.json`; they are necessary data,
 not assertions of geometric feasibility. Every surviving geometric domain
 remains an open sharp-bound obligation.
+
+[The current finite case ledger](TERMINAL_CASES.md) groups those masks into
+nine explicit profile families, gives their exact domains and counts, and
+records the separate unsolved oblique branch and next proof obligations.
 
 This is an added hypothesis: every pair's projection intervals separate on
 one of two common perpendicular axes. Squares may still be independently

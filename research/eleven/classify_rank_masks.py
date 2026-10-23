@@ -17,6 +17,7 @@ def classify():
     for a, b in [(3, 4), (4, 3), (4, 4)]:
         raw, after_corner, after_double_four, residual = [], [], [], []
         profiles = Counter()
+        profile_pairs = Counter()
         for chosen in combinations(range(a * b), 11):
             cells = {(k // b + 1, k % b + 1) for k in chosen}
             rows = [sum(r == i for r, s in cells) for i in range(1, a + 1)]
@@ -34,7 +35,10 @@ def classify():
             if rows[0] == 4 and cols[0] == 4:
                 continue
             residual.append(mask)
-            profiles[','.join(map(str, sorted(rows, reverse=True)))] += 1
+            row_key = ','.join(map(str, sorted(rows, reverse=True)))
+            col_key = ','.join(map(str, sorted(cols, reverse=True)))
+            profiles[row_key] += 1
+            profile_pairs[row_key + ' / ' + col_key] += 1
         counts = [len(raw), len(after_corner), len(after_double_four), len(residual)]
         total = [x + y for x, y in zip(total, counts)]
         dimensions.append({
@@ -44,6 +48,7 @@ def classify():
             'after_double_four_chain_exclusion': counts[2],
             'after_shared_start_corner_exclusion': counts[3],
             'residual_row_profiles': dict(sorted(profiles.items())),
+            'residual_profile_pairs': dict(sorted(profile_pairs.items())),
             'residual_masks': sorted(residual),
         })
     return {

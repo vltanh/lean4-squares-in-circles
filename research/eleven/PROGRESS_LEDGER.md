@@ -108,3 +108,22 @@ Commit timestamps and hashes are recorded after the commit exists.
   under arbitrary perturbations nor unrestricted sharpness has been proved.
 - Evidence: `CANDIDATE_CONTACT_SYSTEM.md`, `contact_family.py`,
   `isolate_contact_root.py`, and `CONTACT_ROOT_REVIEW.md`.
+- Commit: `91ded8d69bdeb68b31358100e8c1c6d0da3c4660`,
+  2026-10-23 12:50:41 UTC.
+
+## Oblique obstruction and residual case ledger checkpoint
+
+- G1.4.N1 H/A: the exact construction has two positive shared-edge contacts
+  with mandatory separator normals ex and u=(c,s), c,s>0. No common
+  orthogonal frame separates every pair, for any slider parameter.
+- Exact interval bounds give the shared edge lengths >1/10 and >19/20;
+  the shared-segment lemma supplies the geometric obstruction. Independent
+  review found no missing weak-contact or slider-endpoint case.
+- Added `TERMINAL_CASES.md`: four closed exclusion families, explicit
+  domains for all 1105 residual masks, nine open profile families with
+  independently reproduced counts, and the separate oblique frontier.
+- Enhanced the mask inventory with exact row/column profile-pair counts.
+  No additional masks were removed and none was declared realizable.
+- Current-roadmap review found and clarified overlapping method/scope tags;
+  no sharpness claim, stale current count, broken local link, or mismatched
+  contact-review artifact hash was found.

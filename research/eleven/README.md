@@ -31,6 +31,11 @@ finite classes: rank extraction, a forbidden corner, and the sharp
 double-four-chain exclusion. Its 1105 residual masks are explicit; this
 branch requires a common separating coordinate frame.
 
+[The finite case ledger](TERMINAL_CASES.md) lists four closed exclusion
+families, nine open coordinate-profile families, and the unrestricted oblique
+frontier. The [exact oblique witness](NO_COMMON_SEPARATING_FRAME.md) proves
+that a common coordinate frame cannot cover the constructed family.
+
 The intended result is an exact least disk radius together with all attaining
 packings under the repository's rotation-and-relabeling congruence. Reflected
 families must be included explicitly when they are not rotation-congruent.
