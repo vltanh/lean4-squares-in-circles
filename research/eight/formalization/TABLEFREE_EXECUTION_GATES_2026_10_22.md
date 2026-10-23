@@ -301,3 +301,27 @@ Once an inhabitant is produced, \`sharp_source_entry_of_BT2_exclusion\` already 
 - [ ] **G9.2–9.4** ordinary-kernel compilation, axiom/dependency audit, equality reverse direction and reproducible proof. Not run.
 
 **Static audit verdict:** G7/G8 are a written, connected source draft. Two concrete namespace problems were repaired; no code execution has verified them. The final gate remains **V pending**.
+
+### Auditable commit timeline (UTC; local Chicago date Oct 22)
+
+| Commit | UTC creation | Source or ledger event |
+|---|---|---|
+| `13ea96275` | 2026-10-23 01:46:26 | Negative-A, nonnegative-E necessary signed stress |
+| `34a4773ed` | 2026-10-23 01:49:40 | E-first/A-second core application |
+| `a9a0d9737` | 2026-10-23 01:53:42 | Generic/core duplicate theorem-name repair |
+| `dfe7be58e` | 2026-10-23 01:56:06 | Joint genuine negative A/E positive TD2 |
+| `9a95c1f1c` | 2026-10-23 01:57:51 | Core E-first all T dispatcher |
+| `304501f64` | 2026-10-23 01:59:05 | Whole original high-GA BT2 exclusion |
+| `d89955c70` | 2026-10-23 02:00:46 | Unconditional table-free SharpSourceEntry proof body |
+| `739d9428c` | 2026-10-23 02:02:45 | Public SharpAssembly capture replacement |
+| `b57bc3ca4` | 2026-10-23 02:06:58 | EntryReduction caller repair |
+| `e542f7aee` | 2026-10-23 02:10:07 | Public aggregate n8 geometric route and axiom-check staging |
+| `6a57d7be0` | 2026-10-23 02:16:50 | SharpEntry interface documentation |
+| `cc2f09355` | 2026-10-23 02:18:08 | Canonical handoff source reconciliation |
+| `63377bee1` | 2026-10-23 02:19:12 | Nested gate D/J logging |
+| `760e67283` | 2026-10-23 02:21:36 | Preserve pure geometric frame API |
+| `e66ac3125` | 2026-10-23 02:25:21 | Correct actual core E block namespace (14 sites) |
+| `9abfad8f5` | 2026-10-23 02:26:08 | Source entry geometry namespaces opened |
+| `44aa756db` | 2026-10-23 02:29:05 | Static G9 audit ledger |
+
+All timeline rows are GitHub commit author timestamps. None is a Lean compilation or proof-verification event.
