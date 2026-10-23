@@ -1,382 +1,301 @@
-# n=9 — finite subgates for the unrestricted G2 closure
+# n=9 — live G2 mathematical subgate ledger
 
-**Checkpoint 2026-10-22.** The mathematical target is:
-for every nine-square Packing at squared radius q≤1105/256,
-derive a proved sharp terminal inequality (at equality preserve all
-possible families). The class contains independently rotated squares,
-including configurations with oblique-only pairwise separators. This
-file separates **closed global facts** from **conditional branch results**
-and explicitly states each remaining obstruction.
+**Current target:** prove the unrestricted sharp bound `q >= Q = 1105/256`
+for nine independently rotatable unit squares, with complete equality
+classification afterwards. **The bound is not yet proved globally.**
 
-## Dependency diagram
+The entire common-coordinate-separable branch is CLOSED by hand.
+The unrestricted branch now has a proved global-minimizer reduction,
+a sparse planar actual-contact stress core, and a separate exact
+angular-stationarity certificate. The remaining task is the sharp
+core/completion inequality, not existence of multipliers or another
+small-angle estimate.
 
-G2.0 (exact encoding and false-normalization tests) CLOSED
+See [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md) for complete contracts
+and [ROADMAP.md](ROADMAP.md) for the short master status. CLOSED here
+means a written hand proof with its stated hypotheses, not Lean or an
+independent full audit. Earlier revisions remain in Git history.
+
+## 1. Dependency summary
+
+```text
+G2.T1-T4 conditional geometric stresses / fixed-owner weak dual CLOSED
   |
-  +-- G2.T1 (four-anchor long/short stress) CLOSED: terminal, conditional
-  +-- G2.T2 (four-corner grid stress) CLOSED: terminal, conditional
-  +-- G2.T3 (global triple transversal) CLOSED: unconditional, weak
+  +-- G2.C entire common-coordinate-separable class             CLOSED
+  |     C1 rank-product/four-chain extraction                   CLOSED
+  |     C2 shadow / inner-pair incidence                        CLOSED
+  |     C3 whole large-zigzag exclusion                         CLOSED
+  |     C4.3a signed 4+3 chain terminal                         CLOSED
+  |     C4.3b three-band grid terminal                         CLOSED
+  |     C4.3c(4,1) crossed four-chain + ninth exclusion          CLOSED
+  |     C4.3c(3,2) matching + perpendicular 4+3                CLOSED
+  |     C4.4 sharp whole common-frame theorem                  CLOSED
   |
-  +-- G2.C (common-coordinate-separable class)
-  |      C1 rank injection CLOSED
-  |      C2 full 3x3 grid excluded CLOSED
-  |      C3 four-chain exists CLOSED
-  |      C4.1 chain-shadow barrier and coherent/zigzag split CLOSED
-  |      C4.2a middle-pair zigzag normal form + cap bound CLOSED
-  |      C4.2b exclude crossed perpendicular four-chain CLOSED
-  |      C4.2c eliminate entire large-zigzag branch CLOSED
-  |      C4.3a signed 4+3-chain terminal CLOSED
-  |      C4.3b 3×3 center-band terminal CLOSED
-  |      C4.3c residual five squares x-chain≤2 CLOSED
-  |      C4.4 coordinate-separable closure CLOSED
-  |
-  +-- G2.O (genuinely oblique pairs)
-  |      O1 refute global common-frame normalization CLOSED
-  |      O2 identify invariant forcing anchor skeleton OR
-  |         deform into a terminal class, without increasing q OPEN
-  |
-  +-- G2.I (center in one open square) OPEN
-  +-- G2.B (center on boundary but in no interior) OPEN
-  +-- G2.E (center outside all closed squares) OPEN
-  |
-  +-- G2.X (exhaustive union of terminal branches) OPEN
-  |
-  +-- G4 unrestricted sharp theorem BLOCKED
+  +-- G2.O unrestricted oblique branch                         PARTIAL
+        O0/O1 negative controls and exact SAT language         CLOSED
+        O2 fixed-owner center-eliminating weak dual            CLOSED
+        O3.0.2 unrestricted minimizer / sparse exact stress    CLOSED
+        O3.1a-d planar outer-loaded <=19-term contact core     CLOSED
+        O3.1e separate full-angle <=27-atom certificate        CLOSED
+        O3.2 sharp core + unstressed completion alternatives   OPEN
+        O3.3 human-sized exhaustive terminal classification   OPEN
+        O4 sharp uniform inequalities >=Q                    OPEN
+        O5 unrestricted assembly                             BLOCKED
+               |
+               +-- G2.X / G4 unrestricted sharp radius        BLOCKED
+               +-- G5.U complete equality                     OPEN/BLOCKED
+```
 
-The center-position trichotomy I/B/E is a *partition of input
-configurations*. The coordinate-separable/oblique split C/O is another
-partition *relative to a specified frame*. They intersect and are NOT
-separate exhaustive independent lists of cases to add together.
-The correct final G2.X theorem should use whichever partition allows
-a short proof, with no double-counting or unnamed exceptional class.
+Legacy G2.O2/O3 referred broadly to the open oblique program; the
+new O3.0.2/O3.1 subdivisions identify the parts now actually proved.
+The origin-interior/boundary/exterior trichotomy is still a valid
+optional partition, but its three sharp branch theorems were never
+proved and are not prerequisites if the contact-core route succeeds.
 
-## 1. Three exact terminal templates: closed
+## 2. Completed conditional terminal tools
 
-**G2.T1 — Long/short four-anchor stress: CLOSED (hand).**
-Four squares, independently rotated; one endpoint pair has horizontal
-center span ≥2+h_L+h_R, another has ≥1+h_L+h_R, and the first pair
-lies completely above the other. Then q≥1105/256, with four pinned
-boundary anchors at equality.
-Source: FOUR_ANCHOR_STRESS.md. No other five squares appear in the
-proof.
+**G2.T1 — long/short four-anchor stress: CLOSED hand.**
+The four chosen endpoints have horizontal reserves 2 and 1 and the
+required vertical support gaps. They force `q>=Q`, with pinned equality
+anchors, even at arbitrary individual orientations. The signed version
+permits independent vertical directions for the two matching endpoint
+pairs. Sources: FOUR_ANCHOR_STRESS.md, PAIRED_FOUR_ANCHOR_STRESS.md,
+SIGNED_MATCHED_CHAIN_STRESS.md.
 
-**G2.T2 — Four-corner grid stress: CLOSED (hand).**
-Four independently rotated squares forming four signed corners,
-each with a one-square reserve in both horizontal and vertical
-endpoint differences, force q≥9/2>1105/256.
-Source: GRID_FOUR_CORNER_STRESS.md.
+**G2.T2 — rotated cap rows / 4+3: CLOSED hand.**
+ORIENTATION_STABLE_SEVEN_ANCHOR.md proves the all-angle square penalty,
+cap-row bound and sharp seven-anchor theorem. ROTATED_STRATIFIED_NINE.md
+covers the complete explicitly stratified class, not all packings.
 
-**G2.T3 — Independently rotated stratified nine-square theorem:
-CLOSED within stratified class (hand).** If all nine squares admit
-projection-disjoint horizontal layers and full vertical support
-separation, then q≥1105/256. Equality includes only layer sizes
-3,4,2 (or mirror 2,4,3), and its exact necessary-and-sufficient
-parameter domain is in STRATIFIED_EQUALITY_FAMILY.md.
+**G2.T3 — four-corner grid: CLOSED hand.**
+GRID_FOUR_CORNER_STRESS.md gives `q>=9/2>Q` from the four span reserves,
+without an alignment assumption on the four square frames.
 
-These are **terminal** theorems, not global structure extraction.
+**G2.T4 — fixed-owner weak dual: CLOSED hand.**
+SEPARATOR_GRAPH_CONVEX_DUAL.md gives an explicit lower bound for supplied
+nonnegative separator stresses and circle weights. It eliminates center
+coordinates while leaving the orientation variables and owner choices.
+The new minimizer theorem below additionally proves exact attainment
+for suitable stresses at an unrestricted minimizer.
 
-## 2. Common-frame coordinate-separable branch
+## 3. Common-coordinate-separable branch: completely CLOSED hand
 
-Fix a frame (e,f). An arbitrary pair is coordinate-separated if
-its open projections are disjoint along e or f. Some rotations
-can be allowed, but this property is an added hypothesis.
+**Definition.** There is one orthonormal frame such that every pair of
+squares is separated along at least one of its coordinate projections.
+The nine individual orientations can still differ. This global-frame
+hypothesis is false for some unrestricted record-radius packings.
 
-**G2.C1 — Rank injection: CLOSED.**
-The two longest-chain ranks map n coordinate-separated squares
-injectively into the product of the two chain lengths: n≤ab.
+**C1 rank extraction:** ORTHOGONAL_RANK_DICHOTOMY.md injects squares
+into pairs of x/y longest-chain ranks. No five-chain fits; a complete
+3x3 rank grid would force `q>=9/2`. Thus a four-chain exists.
 
-**G2.C2 — 3×3 rank grid excluded: CLOSED.**
-For n=9 and a,b≤3, all ranks are occupied. Equal y-rank forces
-horizontal separability, and equal x-rank forces vertical
-separability. The four corners certify the grid stress,
-q≥9/2>1105/256.
+**C2 incidence:** FOUR_CHAIN_SHADOW_BARRIER.md shows every extra square
+meets one to three consecutive chain projections. The oblique-safe
+INNER_PAIR_SHADOW_DOMINATION.md rules out exclusive outermost overlap,
+so every extra square meets one of the middle two projections.
 
-**G2.C3 — Four-chain extraction: CLOSED.**
-At q≤1105/256 no projection-separated chain of five fits.
-Thus coordinate-separable n=9 packings have a horizontal or
-vertical chain of four squares. This is an unconditional
-implication **within** the coordinate-separable class.
+**C3 zigzag:** ZIGZAG_BRANCH_CLOSED.md excludes the entire large-zigzag
+branch by capacities 2+1+2 and a contradiction when all are saturated.
+The old intermediate 4x3 rank case is not an unresolved obligation.
 
-**G2.C4.1 — Shadow barrier and finite incidence: CLOSED.**
-[FOUR_CHAIN_SHADOW_BARRIER.md](FOUR_CHAIN_SHADOW_BARRIER.md)
-proves that a four-chain covers almost the entire disk projection:
-the total complement of its four projection intervals is below 1/4.
-Every other square must have positive projection overlap with
-1, 2 or 3 consecutive chain squares. In the coordinate-separable
-class, each other square lies above/below those it overlaps, or
-there is a chain-center vertical gap of at least two.
-This is a finite incidence classification, not a claim that the
-five extra squares form globally separated layers.
+**C4.3a:** a disjoint x-projection triple outside the four-chain gives
+SIGNED_MATCHED_CHAIN_STRESS.md, covering all vertical endpoint signs.
 
-**G2.C4.2 — Large-zigzag branch: CLOSED (hand).**
-C4.2a/b normalize the large zigzag; C4.2c gives the complete
-five-extra-square obstruction, using a three-region capacity
-argument requiring only the center disk bound and the necessary
-L-infinity center separation. No generated table or MILP claim
-enters the final hand proof.
+**C4.3b:** THREE_BAND_GRID_OBSTRUCTION.md handles its full three-band
+3+3+3 terminal class by corresponding endpoint overlap and grid stress.
 
-**G2.C4.2a — Zigzag position and cap control: CLOSED.**
-[FOUR_CHAIN_ZIGZAG_NORMAL_FORM.md](FOUR_CHAIN_ZIGZAG_NORMAL_FORM.md)
-proves, for *arbitrary independent orientations*, that all four
-horizontal chain center x-coordinates lie in narrow rational
-intervals around (-3/2,-1/2,1/2,3/2), the outer center heights
-have absolute value <2/5, and any vertical center gap ≥2
-can only occur between the two inner chain squares. Those inner
-centers must straddle the axis above 1/2 and below -1/2.
-Moreover, at most one other square can fit entirely above the
-higher inner square, and at most one entirely below the lower.
+**C4.3c.1–2 two-column normal form:** TWO_COLUMN_COMPLEMENT_REDUCTION.md
+partitions five extras with x-chain height <=2 into two vertical stacks,
+necessarily (4,1) or (3,2), and forces a middle-chain displacement.
+This is a proved reduction, not a sharp exclusion on its own.
 
-**G2.C4.2b — No perpendicular four-chain in zigzag: CLOSED.**
-[NO_CROSSED_FOUR_CHAINS_IN_ZIGZAG.md](NO_CROSSED_FOUR_CHAINS_IN_ZIGZAG.md)
-shows by exact center-coordinate comparisons that, in the
-common-coordinate-separable class, a zigzag horizontal four-chain
-cannot coexist with a vertical four-chain. Therefore its
-rank rectangle is exactly 4×3 (and nine rank cells are occupied
-among twelve).
+**C4.3c(4,1) CLOSED:** FOUR_PLUS_FOUR_PLUS_ONE_EXCLUSION.md excludes
+disjoint perpendicular four-chains plus a ninth square. Four middle
+centers occupy tiny quadrant boxes whose coordinate-exclusion regions
+cover every possible ninth center. The eight-square crossed-chain
+example remains valid; the ninth square is essential.
 
-**G2.C4.2c — All 4×3 zigzags: CLOSED (hand).**
-[ZIGZAG_BRANCH_CLOSED.md](ZIGZAG_BRANCH_CLOSED.md) proves the
-following *complete* exclusion: no nine-square configuration in
-(q\le1105/256) is coordinate-separable in one orthonormal
-frame and contains a four-horizontal-projection chain with
-vertical center diameter ≥2. From the four center bounds,
-the five extras fall into a left (capacity 2), central
-(capacity 1), and right (capacity 2) region. If these
-capacities were saturated, three extras must all lie in a
-vertical band of height <1 and a horizontal band of width
-<21/20, impossible for pairwise coordinate-separated unit
-squares. All square orientations remain arbitrary.
+**C4.3c(3,2) CLOSED:** COORDINATE_SEPARABLE_NINE_COMPLETE.md proves:
+no four-antichain is possible in the height-two five-element x-poset;
+two disjoint comparable pairs plus a singleton exist. A predecessor/
+successor overlap lemma attaches each antichain class to a different
+middle four-chain anchor. The singleton's three cases complete two
+disjoint **perpendicular 4+3 chains**, so the signed stress applies.
 
-**G2.O4 — Inner-pair shadow domination: CLOSED (hand).**
-[INNER_PAIR_SHADOW_DOMINATION.md](INNER_PAIR_SHADOW_DOMINATION.md)
-proves, WITHOUT a common-frame separability premise for the
-five other squares, that whenever four square projections are
-disjoint at (q\le1105/256), every other square's open
-projection intersects one of the two inner chain squares.
-The singleton incidence blocks {1} and {4} are impossible
-because they force center distance <1 from an extreme square.
-Every allowed incidence block is consecutive and contains 2
-or 3. This is a global geometric input conditional only on the
-existence of a four-chain, valid with oblique-only separators.
+**C4.4 whole-class result CLOSED:** every common-coordinate-separable
+nine-square packing satisfies `q>=Q`. At equality some frame direction
+has a signed matched 4+3 skeleton, parametrized by
+SIGNED_MATCHED_EQUALITY_FAMILY.md with the original physical constraints
+on the two free squares retained. This is not global necessity for
+arbitrary oblique-only pairs.
 
-**G2.C4.3a — Signed matched-chain terminal: CLOSED (hand).**
-[PAIRED_FOUR_ANCHOR_STRESS.md](PAIRED_FOUR_ANCHOR_STRESS.md)
-proves a general long/short four-anchor dual using weights 23 and 9,
-requiring only the sum of vertical gaps instead of a common seam.
-[SIGNED_MATCHED_CHAIN_STRESS.md](SIGNED_MATCHED_CHAIN_STRESS.md)
-strengthens it to **independently chosen vertical signs** for the two
-corresponding endpoint pairs. Its endpoint interlocking lemma proves
-that in any q≤q* packing, the left endpoints of *disjoint*
-horizontal four- and three-chains necessarily overlap in horizontal
-projection, as do the right endpoints, regardless of orientations.
-Consequently **any common-coordinate-separable nine-square packing
-containing disjoint 4+3 horizontal projection chains obeys q≥q*.**
-Mixed vertical signs are covered by the same dual, and all equality
-outer anchors are determined for each sign choice. This is a full
-terminal structural class, not a small angle subcase.
+## 4. Unrestricted minimizer / actual-contact stress: CLOSED reduction
 
-**G2.C4.3b — Three-by-three center bands: CLOSED (hand).**
-[THREE_BAND_GRID_OBSTRUCTION.md](THREE_BAND_GRID_OBSTRUCTION.md)
-proves q≥9/2 for a coordinate-separable packing partitioned into
-three horizontal projection chains of three with centers in the
-upper (y≥1/2), middle (-1/2<y<1/2), and lower (y≤-1/2)
-bands. Corresponding endpoint projections overlap because their
-x-center differences are <39/40, so the grid stress applies.
-No common orientations or fixed within-row heights are assumed.
+**Source:** [SPARSE_MINIMIZER_STRESS.md](SPARSE_MINIMIZER_STRESS.md).
 
-**G2.C4.3c — Sharp residual five-square complement: CLOSED (hand).**
+### O3.0.2a Compactness [CLOSED]
+Centers lie in a bounded disk, frames in compact unit circles, and
+nonoverlap is a finite union of closed SAT conditions. Every subcritical
+packing leads to a global minimizer at `q0<Q`. No row deformation occurs.
 
-- **C4.3c.1 CLOSED:** [TWO_COLUMN_COMPLEMENT_REDUCTION.md](TWO_COLUMN_COMPLEMENT_REDUCTION.md)
-  gives two vertical-projection-disjoint rank stacks of sizes
-  **(4,1)** or **(3,2)** and an exact middle-height displacement.
-- **C4.3c.2 CLOSED:** [FOUR_PLUS_FOUR_PLUS_ONE_EXCLUSION.md](FOUR_PLUS_FOUR_PLUS_ONE_EXCLUSION.md)
-  rules out **all (4,1)** complements by a four-quadrant center
-  cover. Eight crossed-chain squares can fit; the ninth cannot.
-- **C4.3c.3 CLOSED:** [COORDINATE_SEPARABLE_NINE_COMPLETE.md](COORDINATE_SEPARABLE_NINE_COMPLETE.md)
-  supplies the missing **(3,2)** sharp proof. With x-chain
-  height ≤2 and five complementary squares, an x-antichain
-  of four would give the excluded (4,1) case, so x-width≤3.
-  An *elementary five-element matching lemma* partitions the
-  five-square x-order into **two disjoint comparable pairs**
-  \(L_1\prec_x R_1,L_2\prec_x R_2\), plus a singleton F.
-  Exact outer-strip bounds prove:
-  any complementary square with an x-successor overlaps
-  the horizontal projection of the left inner M-anchor,
-  and one with an x-predecessor overlaps that of the right
-  inner anchor. The singleton F has a predecessor, a
-  successor, or neither. Assigning it appropriately gives
-  two x-antichains of sizes (3,2)/(2,3), each attached to
-  a **different** inner anchor. By common-coordinate
-  separation, these become **two disjoint perpendicular
-  projection-separated chains of lengths four and three**.
-  The existing signed 4+3 stress forces \(q\ge Q\) with
-  the known equality structures.
-- **C4.3c.4 CLOSED (conditional equality):** [SIGNED_MATCHED_EQUALITY_FAMILY.md](SIGNED_MATCHED_EQUALITY_FAMILY.md)
-  gives the necessary-and-sufficient parameterization
-  whenever the signed terminal chain hypothesis holds.
-  [TWO_STACK_SHARP_EQUALITY_WITNESS.md](TWO_STACK_SHARP_EQUALITY_WITNESS.md)
-  is an exact **(3,2) equality** packing, so the sharp
-  result correctly **retains**, rather than excludes,
-  this whole structural possibility.
+### O3.0.2b Physical-contact selection [CLOSED]
+Choose a strict true own-axis separator for every pair whose closed
+squares do not touch. Then every active chosen separator joins actual
+physical contacts. At touching pairs retain any compatible true axis,
+including the junction choices used in the planarization below.
 
-**G2.C4.3 — Coherent-sign branch: CLOSED (hand).**
-The x-disjoint 4+3 terminal, three-band grid
-obstruction and now the entire two-stack complement
-have complete geometric proofs. There is no residual
-coordinate-separable case.
-
-**G2.C4.4 — Full coordinate-separable nine-square theorem:
-CLOSED (hand).** In the class where all pairs are
-separated along one *common* orthonormal frame, nine
-independently rotated unit squares always require
-\[
-                             q\ge Q=1105/256.
-\]
-Any equality packing in this class admits **in one
-of the two coordinate directions** two disjoint
-signed 4+3 terminal chains, so its seven chain
-squares have the signed equality skeleton.
-Source: [COORDINATE_SEPARABLE_NINE_COMPLETE.md](COORDINATE_SEPARABLE_NINE_COMPLETE.md).
-
-**Critical limitation:** This does not prove the unrestricted
-n=9 theorem, because [NO_GLOBAL_ORTHOGONAL_FRAME.md](NO_GLOBAL_ORTHOGONAL_FRAME.md)
-shows that a legitimate sharp-radius packing may have
-an **oblique-only** separating pair and fail common-frame
-separability entirely. Global O3/O4/O5 remain OPEN.
-No n=9 Lean/kernel verification or independent full
-audit has been performed.
-
-## 3. Oblique-separator branch
-
-**G2.O1 — No global orthogonal frame: CLOSED negative control.**
-NO_GLOBAL_ORTHOGONAL_FRAME.md exhibits a complete exact
-nine-square packing at q=q*: seven rigid aligned anchors,
-two other squares whose own oblique direction is the only
-separating axis between them. The adjacent contacting anchors
-force any globally separating frame to be axis aligned,
-and that frame fails for the two upper squares.
-Therefore global coordinate separability is a FALSE
-normalization for unrestricted nine-square packings.
-
-**G2.O2 — Anchor extraction permitting free oblique edges: OPEN.**
-Find a geometrically invariant distinction between squares
-forced into a sharp boundary skeleton and squares which can
-move/turn freely. A possible route is to prove every q≤q*
-packing can be deformed within its disk to a terminal
-four-anchor model, or belongs to a small exceptional
-geometric family with its own terminal dual. Any deformation
-must explicitly preserve non-overlapping open interiors
-throughout. Replacing an original packing by a visually
-similar drawing is not a proof.
-
-**G2.O2a — Exact separator-graph convex dual: CLOSED (general method).**
-[SEPARATOR_GRAPH_CONVEX_DUAL.md](SEPARATOR_GRAPH_CONVEX_DUAL.md)
-shows that with fixed square orientations and an actual selected
-edge-normal separator for each required pair, the center feasibility
-problem is convex. It gives a full explicit weak-dual bound, with
-nonnegative separator multipliers and unit-square radial support,
-eliminating **all center coordinates** from proof certificates.
-It does **not** classify the finite owner graphs or prove uniformly
-sharp orientation inequalities; O2/O3 remain the substantive gates.
-
-**G2.O3 — Oblique stress/exception closure: OPEN.**
-If O2 yields new non-row patterns, prove their lower bound
-without attempting a long discretized list of tilt intervals.
-No bound on the number of oblique-only pairs is presently known.
-
-## 4. Exact origin-position partition (all three open)
-
-For every fixed disk center o, its relation to the union of
-nine closed squares falls in exactly one of three cases:
-
-**G2.I — interior:** o is inside exactly one square's open
-interior (uniqueness follows from non-overlap). Exclude this
-case or derive a terminal four-anchor/grid obstruction
-without importing n=8 core lemmas at the larger radius.
-
-**G2.B — boundary, not interior:** o lies on one or more
-square boundaries but in no open square interior. This
-includes the known sharp record packing and is essential
-for equality. Extract its sharp skeleton without treating
-the record contact graph as universally compulsory.
-
-**G2.E — exterior:** o belongs to none of the nine closed
-squares. Derive a full angle/support exclusion or a
-terminal decomposition, allowing tilted square outlines.
-
-**Closure criteria** for I/B/E: a theorem from only Packing
-and that case condition, with a finite provably exhaustive
-conclusion. A conditional normalization of a selected
-diagram does not close any of these gates.
-
-## 5. Global assembly G2.X: OPEN
-
-The final theorem must have no structural assumptions
-on the nine square orientations, center or contact graph:
+### O3.0.2c Regularity / normalized stress [CLOSED]
+The velocity `dot c_i=c_i`, `dot q=K` with sufficiently large `K`
+strictly decreases every active constraint. A finite conic separation
+argument supplies nonnegative circle-vertex and edge multipliers:
 
 \[
- \forall S,o,q,\quad
- \mathrm{Packing}(S,o,\sqrt q)\wedge 0\le q\le q_*
- \Longrightarrow
- \text{one of finitely many *proved* sharp terminal hypotheses}.
+ \sum_{i,k}\lambda_{i,k}=1,\qquad
+ 2\sum_k\lambda_{i,k}p_{i,k}+F_i=0.
 \]
 
-If exact equality packings admit a new terminal stress
-pattern, include it rather than forcing the current 4+3
-structure. Each leaf must terminate in a proved lower
-bound and include a complete equality analysis as needed.
+The circle vertices and separator pairs are genuinely active.
+No abnormal objective multiplier or numerical optimizer is assumed.
 
-Once G2.X is closed, G4 derives the sharp radius immediately
-by applying terminal theorems and the already known construction.
-Until then, G4 is genuinely OPEN.
+### O3.0.2d Sparse exact dual [CLOSED]
+In 19 center/radius variables, conic thinning gives **at most 19
+positive scalar terms**, counting circle-vertex and edge terms together.
+The existing center-eliminating weak dual attains `q0` exactly.
+This is not an assertion that its unknown attained value is `Q`.
 
-## 6. Completed equality branch and remaining global equality task
+### O3.0.2e Connected loaded core [CLOSED]
+Every positive-stress component has positive circle weight on at least
+two distinct squares. A component without circle weight or an unloaded
+leaf is impossible. One connected component can be retained and its
+weights normalized without changing its exact radius certificate.
 
-**G5.M (signed matched-chain equality): CLOSED as a conditional hand theorem.**
-[SIGNED_MATCHED_EQUALITY_FAMILY.md](SIGNED_MATCHED_EQUALITY_FAMILY.md)
-classifies the *entire terminal branch* of signed matched 4+3
-projection chains at q=Q: four pinned endpoints, three inner
-slider heights with exact mutual disjointness conditions, and
-two arbitrary freely oriented squares checked by 15 true SAT
-pair inequalities. Includes mixed endpoint signs, oblique free
-separators, and the new exact two-stack equality witness.
+## 5. Planar outer-loaded contact core: CLOSED structural reduction
 
-**G5.S (stratified equality): CLOSED as a hand theorem.**
-STRATIFIED_EQUALITY_FAMILY.md gives an explicit
-three-slider-plus-two-free-squares model with necessary and
-sufficient inequalities, preserving independent orientations.
-Its parameter domain has nine local degrees of freedom.
+**Source:** [PLANAR_STRESS_CORE.md](PLANAR_STRESS_CORE.md).
 
-**G5.U (unrestricted equality): OPEN.**
-One must prove every optimal packing lies in a finite union
-of explicitly parameterized families. The current G5.S
-domain is provably not exhaustive as a family of record-radius
-packings: the oblique example admits no global orthogonal coordinate
-frame separating all its pairs, whereas every stratification would
-supply exactly such a frame.
-It still has the seven-anchor skeleton, and a future larger
-four-anchor-based parameter domain may absorb it.
+### O3.1a Four-way junction [CLOSED]
+At most four squares meet at a point; four meeting squares form an
+aligned 2x2 block. Only its two opposite-pair point contacts can cause
+crossings in the contact support drawing.
 
-## 7. Strategy: avoid minor-boundary rabbit holes
+### O3.1b Compatible diagonal choice [CLOSED]
+At each four-way junction choose the same one of its two frame axes
+for both opposite-pair separators before extracting stress. The axes
+are true and tight; the choices for different junctions do not conflict.
 
-The **remaining principal mathematical task** is G2.O3–O5:
-structural coverage and sharp orientation-uniform stresses for
-**arbitrary oblique-only separating axes**. The whole common-frame
-coordinate-separable branch is now CLOSED by hand; do not
-reopen its two-column or large-zigzag subcases by tightening
-individual angle/height bounds.
-Do not invest effort in strengthening the constants in
-G2.1/G2.2, or excluding one of infinitely many very
-small angular subintervals. Only prove facts that close
-an entire named structural class or produce a rigorous
-counterexample invalidating a proposed global gate.
+### O3.1c Exact force uncrossing [CLOSED]
+Subtract the smaller of the two crossing weights from both, and add
+that amount to the two corresponding side contacts. Every square's
+net force and the exact dual value remain unchanged; one diagonal
+vanishes. Added side contacts create no new crossing diagonal pair.
+No square moves. Angular stationarity is **not** asserted preserved.
 
-Computer assistance should be used to:
-- falsify structural conjectures via exact admissible packings;
-- identify the real finite separator/adjacency graph alternatives;
-- discover simple dual stress identities, then replace numerical
-  evidence with a complete hand argument.
+### O3.1d.1 Planarity and exterior loading [CLOSED]
+Resolve the local incidence drawings as triangles or quadrilaterals
+with at most one diagonal. The positive-stress support is planar.
+Each circle point belongs to at most one square; its loaded square
+is accessible to the exterior face. All loaded square nodes are
+cofacial on that exterior face. The whole graph need not be outerplanar.
 
-Exploration itself never counts as a proof. If C4 and O2 fail,
-make a structural pivot to a different global invariant, and
-keep the failed assumption documented. No claim is made
-that this roadmap guarantees closure of an open problem.
+### O3.1d.2 Sparse planar core [CLOSED]
+Thin the conic representation within the planar support and retain a
+connected component: still at most 19 positive terms, at least two
+circle atoms, hence at most 17 positive contact edges. The full physical
+contact graph is not claimed planar.
+
+### O3.1d.3 Transmission paths [CLOSED]
+Unloaded degree-two nodes transmit equal opposite parallel forces.
+Their tight gaps telescope. At q0<=Q, the center diameter bound
+excludes a path with three or more internal unit squares. Thus every
+contracted edge has **0,1,2 internal squares**. Retained unloaded
+nodes have degree at least three; contracted parallel edges are allowed,
+but a closed all-transmission loop is impossible.
+
+## 6. Separate full angular certificate: CLOSED necessary condition
+
+**Source:** [ROTATION_STATIONARY_STRESS.md](ROTATION_STATIONARY_STRESS.md).
+
+### O3.1e.1 Smooth support encoding [CLOSED]
+Replace a selected owner's support maximum by four smooth nonowner-
+vertex inequalities. This handles parallel-angle ties without taking
+an invalid derivative of an absolute value.
+
+### O3.1e.2 Full stationarity [CLOSED]
+The same strict active direction supplies normalized nonnegative
+multipliers in all translations, angles and the squared radius.
+The angular equations include the derivative of the owning square's
+separator normal, not just the other square's rotated vertex.
+
+### O3.1e.3 At most 27 atoms [CLOSED]
+Global rotation symmetry removes one dimension of the gradient span.
+Conic thinning therefore leaves at most 27 positive circle/support-
+vertex atoms for nine squares. Grouping support atoms recovers exact
+center-dual attainment. A positive support atom belongs to a selected
+constraint; it is not automatically a point-force inside the actual
+shared contact segment.
+
+**Nonclaim:** the <=27 angular certificate and <=19 planar
+translational certificate can differ. Any argument requiring both
+properties of one stress must first prove that additional bridge.
+
+## 7. Exact regression record: completed, not a universal proof
+
+`check_sparse_stress.py` uses rational arithmetic on the known
+record-radius construction with an obliquely separated free pair.
+The executed source was matched by Git blob and SHA-256; the report
+is [SPARSE_STRESS_EXACT_CHECK.json](SPARSE_STRESS_EXACT_CHECK.json).
+
+It checks all 36 pairwise SAT conditions, all 36 square corners,
+normalization and all node force balances, a dual value exactly
+1105/256, all angular balances for a separate 18-atom witness, and
+the exact four-junction uncrossing identity. The translational example
+has 11 positive terms. These checks do not prove global optimality,
+planarity for arbitrary graphs, or the full mathematical manuscripts.
+
+## 8. Actual remaining mathematical obligations
+
+### O3.2 — Sharp core/completion classification [OPEN]
+Every hypothetical unrestricted counterexample now produces the
+proved planar outer-loaded sparse core. Classify its feasible
+geometric types **together with the unstressed remaining squares**.
+A low-radius core of fewer than nine squares can exist; omitting its
+completion constraints would invalidate a nine-square lower bound.
+
+### O3.3 — Human-sized exhaustive terminal cover [OPEN]
+Prove a small finite disjunction of signed 4+3/grid terminal families,
+strictly impossible alternatives, or new sharp stress classes.
+Account for bridges, cycles, contracted multiedges, zero-weight limits,
+multiple circle-contact corners, and the actual count of all squares.
+The finite bounds 19 and 27 alone do not constitute such a cover.
+
+### O4 — Uniform sharp inequalities [OPEN]
+Existence of exact multipliers at a minimizer is proved, but the
+bound `q0>=Q` for every realizable nine-square core/completion remains
+unproved. Obtain explicit inequalities valid over all orientations,
+not sampled angle ranges or a mere numerical dual value.
+
+### O5 / G2.X / G4 — Global sharp assembly [BLOCKED]
+Combine the complete terminal cover and uniform sharp bounds, then
+use minimizer attainment to contradict every hypothetical q<Q packing.
+The known exact construction gives the converse upper bound.
+
+### G5.U — Every unrestricted equality packing [OPEN]
+After global optimality is proved, apply the necessary-condition
+reduction to each original q=Q packing (it is then itself a global
+minimizer). Prove necessity and sufficiency of every resulting
+parameter domain. The current stratified and signed 4+3 families
+remain conditional; no theorem makes them globally exhaustive yet.
+
+### G6–G8 — Audit, Lean and integration [NOT COMPLETED]
+Independent mathematical audit, standard-kernel Lean proof, final
+axiom/dependency checks, and public n=9 theorem integration remain.
+No compiled result, CI run or independent replay is asserted.
+
+## 9. Progress rule
+
+A new restriction on arbitrary minimizers closes a **reduction gate**,
+not automatically the sharp theorem. The next acceptable advance must
+cover a full remaining core/completion family or give one universal
+sharp invariant. Do not return to tiny coordinate boundaries, repeat
+the finished common-frame case, assume an unstressed square is free to
+move, or merge the separate planar and torque certificates silently.
