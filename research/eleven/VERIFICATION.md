@@ -31,6 +31,9 @@ python3 arc_budget/check_four_core_shell.py
 python3 arc_budget/replay_four_core_shell.py
 python3 replay_block_marker_cover.py
 python3 check_unrestricted_neighborhood.py
+python3 arc_budget/check_wide_shell.py
+python3 arc_budget/replay_wide_shell.py
+python3 check_core_gap_inventory.py
 ```
 
 All listed commands passed on 23 October 2026. They have different scopes:
@@ -180,3 +183,20 @@ replay and `UNRESTRICTED_NEIGHBORHOOD_REVIEW.md` both pass. The review also
 checks the analytic second-order errors and owner persistence. The explicit
 N<=10^-7 terminal permits every independent angle; it does not capture
 packings outside that neighborhood.
+
+## Wide shell and finite angular inventories
+
+The radius-6/5 shell has 20,405 nodes and 9,187 accepted arc bounds.
+The supplied checker rounds elementary lower bounds down to denominator
+10^12; the separate replay uses stronger unrounded bounds from the
+independent arithmetic implementation. Both pass.
+`arc_budget/WIDE_SHELL_REVIEW.md` audits the mathematical and source
+arguments. `CORE_SPLIT_GAP_REVIEW.md` and
+`THREE_CORE_INTERLEAVINGS_REVIEW.md` audit the geometric cover and
+candidate slider transition. `check_core_gap_inventory.py` independently
+uses multisets and explicit dihedral index permutations to validate the
+49 radial occupancy cases and all 165 words/17 interleaving classes.
+
+The `pending/` directory preserves further manuscripts and exact replays.
+They remain outside closed-gate claims until an independent mathematical
+audit is completed. See `HANDOFF.md` and `pending/README.md`.

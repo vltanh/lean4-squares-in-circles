@@ -83,13 +83,25 @@ Every row retains all eleven centers and frames and all 55 pair constraints.
 | ID | Core | Ring | Sharp terminal status | Equality status |
 | --- | ---: | ---: | --- | --- |
 | O-3 | 3 | 8 | OPEN | Known candidate occurs here; global exhaustion open |
-| O-4 | 4 | 7 | OPEN; all seven outer centers >11/10 | OPEN |
+| O-4 | 4 | 7 | OPEN; all seven outer centers >6/5 | OPEN |
 | O-5 | 5 | 6 | EXCLUDED by weighted occupied-circle measure | NONE |
 | O-6 | 6 | 5 | EXCLUDED by the five-center theorem | NONE |
 
 An actual packing determines one row, a ring cyclic order, and physical
 separator data. This is an exhaustive coarse classification. Each row still
 contains continuous geometric domains requiring sharp certificates.
+
+## Coarse gap and interleaving inventories
+
+The [split-core gap theorem](boundary/CORE_SPLIT_GAP_EXCLUSION.md)
+reduces the radius-27/20 angular complement to at most one gap per core.
+`CORE_GAP_COUNTS.json` records 16 three-core and 33 four-core cyclic
+ring-count rows. [The three-core interleaving cover](THREE_CORE_INTERLEAVINGS.md)
+records 17 dihedral words with zero through three visible cores.
+Every row retains original centers, frames, corners and physical pairs.
+These are exhaustive coarse alternatives, not sharp terminal exclusions.
+The known candidate uses words `00000001` and `00000101`; all 17 rows
+require a lower-bound or reduction theorem.
 
 ## Minimizer contact supports
 

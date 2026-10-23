@@ -51,8 +51,8 @@ allowed without a separate theorem.
 | G1.4.N1 | Exact family has no common separating coordinate frame | H/A |
 | G2.1–G2.3 | Exhaustive raw finite owner/sign cover, degeneracies, normalization | H |
 | G2.4.a | Unrestricted radial extraction: two core/ring counts and cyclic ring | H |
-| G2.4.a.S | Four-core row has no other center at radius <=11/10 | H/A |
-| G2.4.b–c | Reduced sharp terminal inventory inside these classes | OPEN |
+| G2.4.a.S | Four-core row has no other center at radius <=6/5 | H/A |
+| G2.4.b–c | Coarse gap inventories: 49 radial rows and 17 three-core interleavings; sharp refinement remains | PARTIAL |
 | G3.C1–C2 | Necessary common-coordinate rank classification | H/C |
 | G3.C3–C5 | Entire common-coordinate class excluded at q<=U | H/A; 6 cases, 32 nodes, 19 leaves |
 | G3.O2 | Actual minimizer stress extraction, compact weights, small-component exclusion | H |
@@ -188,7 +188,21 @@ classes, not yet sharp terminals: G2.4.b–c remain open.
 The [four-core empty-shell theorem](arc_budget/FOUR_CORE_EMPTY_SHELL.md)
 adds that its seven remaining centers are strictly beyond 11/10. Its
 7,053-node exact cover and independent arithmetic replay exclude the
-whole closed shell; they do not exclude the four-core row.
+whole closed shell. The stronger [18-circle certificate](arc_budget/FOUR_CORE_WIDE_SHELL.md)
+pushes all seven outer centers beyond 6/5. Its 20,405 nodes and 9,187
+accepted arc bounds pass supplied and separate arithmetic replay; the
+[mathematical audit](arc_budget/WIDE_SHELL_REVIEW.md) also passes. Neither
+shell certificate excludes the four-core row.
+
+The [split-core obstruction](boundary/CORE_SPLIT_GAP_EXCLUSION.md) proves
+that a ring arc cannot occupy the gap between a core square's two circle
+components on radius 27/20. Joining those components yields 49 coarse
+cyclic occupancy cases: 16 for (3,8), 33 for (4,7). Separately,
+[17 three-core interleavings](THREE_CORE_INTERLEAVINGS.md) cover 165
+words describing active cores in the eight ring gaps. The known slider
+uses two rows because one core becomes visible partway along it. These
+are proved necessary covers with independently replayed counts. Every
+sharp row bound and global capture implication is still open.
 
 - **G2.1.a:** one of eight signed own axes per unordered pair gives a raw
   finite cover; prove both directions and retain all 55 pairs.

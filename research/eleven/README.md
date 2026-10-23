@@ -5,6 +5,9 @@ square may rotate independently and boundaries may touch. The sharp lower
 bound and complete equality classification are **open**. No Lean is written
 in this phase.
 
+Resume from [the session handoff](HANDOFF.md). It records the exact current
+frontier, commands, next obligations, and unreviewed work.
+
 Start with [the deep gated roadmap](DEEP_GATED_ROADMAP.md). It is the current
 status authority; [the progress ledger](PROGRESS_LEDGER.md) records completed
 checkpoints. [Lessons from n=8](N8_METHOD_AND_SOURCES.md) explains the proof

@@ -373,3 +373,19 @@ Commit timestamps and hashes are recorded after the commit exists.
   actual pair separation then gives exactly the feasible slider interval.
 - Independent mathematical/source audit and direct rational replay pass.
   This closes an explicit terminal while global capture remains open.
+
+## Current research handoff
+
+- Previous quantitative-neighborhood checkpoint: `ca6aa425a0f15b5523ddd173e60dd8ee73f64bce`.
+- The four-core empty shell now extends to 6/5. All 20,405 cover nodes
+  and 9,187 accepted bounds pass supplied and separate arithmetic replay;
+  independent mathematical audit passes.
+- A split-core gap theorem at radius 27/20 gives 49 coarse occupancy
+  rows, and a three-core/eight-ring interleaving cover gives 17 dihedral
+  rows from 165 words. Independent geometry and exact integer audits pass.
+- Further ring-sector certificates, leaf-neighbor localization, and a
+  five-core junction argument are saved under `pending/` for independent
+  mathematical review. No sharp global gate is closed by these drafts.
+- Work is paused at the user's request with `HANDOFF.md` as the entry point.
+  The unrestricted sharp bound and global equality classification remain
+  open in both radial cases. No Lean has been written or run.

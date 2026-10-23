@@ -46,3 +46,15 @@ markers, allowing at most four completions. The independent
 `sum |p_i|^2 >= 2+4|centroid|^2`, with equality for physical squares only
 in a two-by-two block. Neither theorem assumes all four-core configurations
 are blocks.
+
+The stronger [radius-6/5 shell](arc_budget/FOUR_CORE_WIDE_SHELL.md) now
+forces all seven outer centers beyond 6/5. Its 20,405-node exact covers
+and separate arithmetic replay pass; the mathematical audit passes.
+
+The [split-core gap theorem](boundary/CORE_SPLIT_GAP_EXCLUSION.md) gives
+49 exhaustive coarse cyclic ring-count cases (16 in the three-core row,
+33 in the four-core row). A candidate-facing
+[three-core interleaving cover](THREE_CORE_INTERLEAVINGS.md) gives 17
+dihedral rows from 165 words. These finite inventories retain all
+continuous geometry and physical constraints; their sharp terminals
+remain open. `check_core_gap_inventory.py` independently replays both.
