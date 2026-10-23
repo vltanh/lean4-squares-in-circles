@@ -129,6 +129,16 @@ These theorems span all cells without closing any cell whose multi-load realizat
 
 Together with TL.ALL_TO_P, a selected component outside the P reduction has 3–7 loaded bodies and noncollinear resultants. This does not supply its sharp metric inequality. In particular C4.3333.b0 remains open: a chain of four triangles can have six loaded nonarticulation bodies and three clear articulations.
 
+### New whole boundary-graph reduction
+
+[CIRCLE_CONTACT_ANGULAR_ORDER.md](CIRCLE_CONTACT_ANGULAR_ORDER.md) proves that the complete graph induced by physical circle-touching squares is a disjoint union of paths, or is one C7. Every such shadow is shorter than 60 degrees; contact edges respect angular order. A positive stress component whose bodies all touch the circle has no leaves by force/torque, and therefore is exactly that C7, including all physical circle-touching bodies.
+
+- [x] **CY.BOUNDARY:** complete boundary graph and positive-component reduction, allowing zero circle multipliers on some circle-touching bodies.
+- [ ] **CY.C7.COMPLETE:** the general seven-cycle with two arbitrary circle-clear extras.
+- [ ] **CY.MIXED.COMPLETE:** all remaining components containing a circle-clear body.
+
+The exact regular C7 below Q is feasible and has one completion slot; it does not close C1.7.b0, whose other graphs/load choices and nonregular seven-cycles remain covered by the open row. Likewise, excluding all-boundary five-/six-body components does not close their coarse cells with circle-clear bodies. **All 56 open rows remain unchecked.**
+
 ## 5. Uniform contract for EACH open cell
 
 - [ ] **C.GEOM:** cover every internal block adjacency and articulation arrangement, or prove an inequality directly over the full cell.

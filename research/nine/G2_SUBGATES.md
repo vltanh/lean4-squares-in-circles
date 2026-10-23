@@ -131,6 +131,17 @@ Source: FOUR_BODY_CYCLIC_CELL_CLOSED.md, commit 05e15a0.
 
 This changes the coarse ledger from one excluded/57 open to **two excluded/56 open**. It does not close triangle blocks with attachments or larger cells whose loaded subsets can have three or more bodies.
 
+## 6B. Entire boundary-only component reduction
+
+[CIRCLE_CONTACT_ANGULAR_ORDER.md](CIRCLE_CONTACT_ANGULAR_ORDER.md) proves that the graph of all physical circle-touching squares consists of paths, or is one seven-cycle. The proof combines center angular separation >36 degrees, contact span <72 degrees, and complete square shadows <60 degrees. It includes circle-touching squares with zero circle multiplier and contacts with zero pair multiplier.
+
+- [x] **CY.BOUNDARY.ORDER / SHADOW:** full all-angle geometric implications.
+- [x] **CY.BOUNDARY.C7:** a positive component whose every body touches the circle is exactly C7 and contains every physical circle-touching square; nonradial contact torque excludes leaves.
+- [ ] **CY.C7.COMPLETE:** two arbitrary circle-clear completion squares still must be excluded for the full family.
+- [ ] **CY.MIXED.COMPLETE:** components with a circle-clear body still need a uniform capacity argument.
+
+The exact regular ring below Q has only one completion slot, but does not prove regularity or capacity for all rings. The independent-square nonnegative measure method is also excluded by ADDITIVE_MEASURE_OBSTRUCTION.md. No additional coarse row is checked.
+
 ## 7. Remaining cyclic/global contracts
 
 CYCLIC_CELL_LEDGER.md retains all 58 individual rows and their complete physical hypotheses. For each unchecked cell:

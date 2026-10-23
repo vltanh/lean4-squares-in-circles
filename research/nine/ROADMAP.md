@@ -4,6 +4,16 @@
 
 The new general arguments are hand manuscripts pending independent mathematical audit. No Lean compilation, CI or proof-completion percentage is claimed.
 
+## Boundary-contact continuation: one seven-cycle is the only boundary-only positive component
+
+[CIRCLE_CONTACT_ANGULAR_ORDER.md](CIRCLE_CONTACT_ANGULAR_ORDER.md) proves a global geometric reduction throughout the declared radius window. Distinct circle-touching center directions are more than 36 degrees apart; touching pairs are less than 72 degrees apart and consecutive in angular order. Each circle-touching square has angular shadow strictly shorter than 60 degrees. Hence the complete physical circle-touching graph consists of paths, or is one seven-cycle. These statements include zero-multiplier contacts and bodies.
+
+A contact between two circle-touching squares cannot have radial force line. Force and torque therefore exclude leaves in any positive stress component all of whose bodies touch the circle, even if some of their circle multipliers vanish. Such a component is exactly the seven-cycle and includes all physical circle-touching squares. Its two remaining completion squares are circle-clear.
+
+The general seven-cycle completion capacity is still OPEN. Components containing a circle-clear body also remain OPEN. This is a whole-class reduction, not a closure of any additional coarse cell: the inventory remains two closed and 56 open.
+
+[SEVEN_LOADED_RING_COUNTEREXAMPLE.md](SEVEN_LOADED_RING_COUNTEREXAMPLE.md) gives an exact positive seven-cycle with radius cos(pi/7)+1/(2 sin(pi/7)) below sqrt(17/4). Its own completion capacity is one, but its regularity is not assumed for arbitrary rings. [ADDITIVE_MEASURE_OBSTRUCTION.md](ADDITIVE_MEASURE_OBSTRUCTION.md) proves that any single nonnegative additive measure charging every contained square at least one has total mass at least 181/20>9, already at squared radius 17/4. Thus neither a component-only radius claim nor that independent-square weighting method can supply the missing proof.
+
 ## Canonical deep roadmap and source records
 
 - [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md): full G0–G8 contracts with new TL.R/TL.P/TL.G subsubgates and checked four-body adjacency cases.

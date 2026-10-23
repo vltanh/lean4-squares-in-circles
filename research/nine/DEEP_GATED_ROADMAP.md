@@ -31,7 +31,8 @@ No common separating frame, row, central square or prescribed stress graph is an
 | Common-coordinate class | Entire class proved, including conditional equality skeleton | A common frame is not available globally |
 | Positive trees | Six profiles; closed branches removed; survivors P or Y | P.ALL and Y.ALL |
 | Exactly two loaded bodies | Parallel forces, q=17/4, 4–6 aligned bodies; six-body excluded; five-body reduces to P | P.ALL only |
-| Other loaded components | 3–7 noncollinear resultants; contact budget, incidence and noncontact rules | Uniform sharp physical completion inequality |
+| Components whose bodies all touch the circle | Exactly one physical C7; includes all circle-touching squares | Exclude TWO arbitrary circle-clear completion squares |
+| Components with a circle-clear body | 3–7 noncollinear resultants; circle-touching induced graph is paths or C7 | Uniform sharp physical completion inequality |
 | Cyclic inventory | 21 profiles and 58 coarse cells; C1.3.b0 and C1.4.b0 excluded | 56 full geometric cells, or a uniform replacement |
 | Cap, row, pocket and quadrant tools | Complete local hand implications at stated hypotheses | Apply full-square routing without assumed normalizations |
 | Final assembly | Construction and explicit dependency contracts | G4 radius, G5 equality, G6 full audit, G7 Lean, G8 integration |
@@ -296,6 +297,21 @@ Source: TWO_LOAD_RECIPROCAL_RIGIDITY.md, initial commit 248202d, clarified 9fad2
 - [x] **CY.DIRECTIONS** Every loaded body's resultant direction pierces its own square on the radius-5/4 circle, so distinct loaded resultants have distinct directions and a balanced collinear family has exactly two bodies.
 - [ ] **CY.MULTILOAD** The remaining 3–7-loaded noncollinear geometry, including all extra physical squares, is not sharply bounded by these necessary restrictions.
 
+#### CY.BOUNDARY: angular order, shadow, and the remaining seven-cycle
+
+Source: [CIRCLE_CONTACT_ANGULAR_ORDER.md](CIRCLE_CONTACT_ANGULAR_ORDER.md), commit 6f1d22e.
+
+- [x] **CY.B1 ANNULUS** Every circle-touching center has radius strictly between 5/4 and 61/40.
+- [x] **CY.B2 SEPARATION** Distinct such directions differ by more than pi/5; a touching pair differs by less than 2pi/5. Thus a physical contact cannot skip another circle-touching center in angular order.
+- [x] **CY.B3 SHADOW** Every circle-touching square has angular shadow shorter than pi/3, by the full two-case corner calculation.
+- [x] **CY.B4 GRAPH** The entire physical circle-touching graph is a disjoint union of paths, or is one C7. A six-cycle would cover all directions using six shadows of total length less than 2pi.
+- [x] **CY.B5 TORQUE** A genuine contact between two circle-touching squares has nonzero moment about the origin; loaded or unloaded degree-one vertices are impossible in a positive component whose bodies all touch the circle.
+- [x] **CY.B6 REDUCTION** Every positive component with at least one positive circle multiplier and all bodies physically circle-touching is exactly C7, even if some body circle multipliers vanish. It contains every physical circle-touching square.
+- [ ] **CY.C7.COMPLETE** Exclude two arbitrary circle-clear additional squares for every allowed seven-cycle. The exact regular example is settled, but no regularity reduction exists for the full family.
+- [ ] **CY.MIXED.COMPLETE** Bound components that contain a circle-clear body, retaining all remaining physical squares and their actual contacts. The boundary graph restrictions alone do not close them.
+
+**Rejected proof shortcuts:** SEVEN_LOADED_RING_COUNTEREXAMPLE.md supplies a physical, force-and-torque-balanced seven-cycle below Q, and proves that particular ring has capacity one for arbitrary extras. ADDITIVE_MEASURE_OBSTRUCTION.md rules out every single nonnegative additive point-measure certificate of total mass below nine, via an exact fractional packing of mass 181/20. Neither item is counted as a new coarse-cell closure. The ring contact-coordinate expansion was corrected at commit 411924d; its global contact formula and subsequent stress/capacity identities were unchanged.
+
 ### C1.4.b0 — NEW full coarse-cell closure [CLOSED hand; audit pending]
 
 Source: FOUR_BODY_CYCLIC_CELL_CLOSED.md, commit 05e15a0.
@@ -395,7 +411,7 @@ Source: FOUR_BODY_CYCLIC_CELL_CLOSED.md, commit 05e15a0.
 
 1. Keep P.ALL/Y.ALL and the 3–7-loaded geometric completions OPEN. The six-body two-load completion is closed; the five-body case is completely reduced to P.
 2. The 58 coarse cells now have **two whole-cell exclusions and 56 open rows**. Do not confuse subfamily restrictions with parent closure.
-3. Use the reciprocal invariant to attack complete load/geometric families; do not create finer angle boxes merely to increase checked-gate counts.
+3. Use the reciprocal and boundary-order reductions to attack complete families: P.ALL, the general seven-cycle completion, and components containing circle-clear bodies. Do not create finer angle boxes merely to increase checked-gate counts.
 4. Preserve exact physical negative controls and every unstressed completion body.
 5. Commit finished arguments promptly and log UTC provenance, exact quantifiers, finite evidence and unchanged global blockers in TWO_LOAD_PROGRESS.md or a subsequent append-only checkpoint.
 6. If a proposed reduction fails, retain the exact witness and revise it; do not defend a false stronger normalization by shrinking the domain indefinitely.

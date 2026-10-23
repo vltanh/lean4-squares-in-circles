@@ -118,3 +118,35 @@ The six-cycle and theta examples are still physically valid cores; their complet
 The global resultant-direction continuation in CYCLIC_GLOBAL_CONTINUATION.md further shows that the remaining selected components have 3–7 loaded bodies with noncollinear resultants. Their exterior force polygon can have positive area, so the two-load zero-area proof does not force parallel channels there. P.ALL, Y.ALL, the remaining multi-load metric geometry, lower-window assembly, unrestricted equality and the full audit/integration chain remain open.
 
 Separate reasoning passes checked the new cap inequalities, pair support minimum and equality, six-body coupling, singleton torque and five-body vertex routing. No numerical probe is used as a proof premise. No Lean compilation or CI was run in this continuation. These are hand proofs with local review, not a completed independent audit of the entire manuscript.
+
+
+## Boundary graph continuation and exact method obstructions
+
+Read base: 85cfcb6b31b7761c3c0c22112a9a28198694cfe2. The seven intervening imports since 2271166 were read before work resumed; they contain alternative proofs of already closed two-load results and do not add gate closures.
+
+| Commit | Result and scope |
+|---|---|
+| [6f1d22e](https://github.com/vltanh/lean4-squares-in-circles/commit/6f1d22e9db8d546acfe1f094f70d6620c4838088) | Global circle-contact angular order and shadow proof; positive components consisting entirely of circle-touching bodies reduce to C7. Also records the exact regular C7 witness/capacity and the additive-measure impossibility theorem. |
+| [411924d](https://github.com/vltanh/lean4-squares-in-circles/commit/411924df56b00d9f0e6a73bca86c9712b012b0ea) | Corrects one expanded local coordinate in the ring witness: (C_(j+1)−C_j)·u_j=−2sd, so the side contact coordinate is xi=1/2−cos(2delta), in(−1/2,0). The global contact definition, force/torque identities, radius and capacity remain unchanged. |
+
+### Finished universal implication
+
+CIRCLE_CONTACT_ANGULAR_ORDER.md proves the narrow center annulus, >36-degree separation of distinct circle-touching centers, <72-degree span of contacts, and the <60-degree angular shadow of every circle-touching square. Hence the full physical circle-touching graph is paths or one C7. Any positive component with all bodies circle-touching and at least one positive circle multiplier has no leaves: an unloaded leaf fails force balance; a loaded leaf would require a radial contact, excluded geometrically for R>3/2. Thus it is C7 and every other physical square is circle-clear. This reduction allows zero circle multipliers on some boundary bodies.
+
+### Exact examples and method limits
+
+SEVEN_LOADED_RING_COUNTEREXAMPLE.md gives radius R=cos(pi/7)+1/(2sin(pi/7)), with 79/40<R<103/50 and R²<17/4. Every neighboring contact is a genuine side/vertex contact; all other pairs are strictly separated; normalized positive circle and contact multipliers satisfy force and torque. Any origin-centered unit square fits as an eighth. For arbitrary added-square positions and orientations, the seven center disks exclude all additional centers of radius at least 1/2, proving at most one added square.
+
+ADDITIVE_MEASURE_OBSTRUCTION.md proves a fractional packing of total mass 181/20 using rotational orbits of three explicit squares in D_(17/4). Pointwise angular occupancy is at most one. Tonelli's theorem therefore forces any nonnegative Borel measure assigning at least one to every square interior to have total mass at least181/20>9. This rules out the entire independent-square additive measure route, not merely one numerical weighting choice.
+
+### Review and execution scope
+
+The angular-order/shadow derivation and ring covering inequalities received separate hand review. A further global-coordinate check caught the ring expansion sign error after the first commit; the immediate correction above preserves that audit trail. The additive-measure proof received a separate full reasoning pass, including all angular branch and atomic-measure endpoints.
+
+An exact Fraction evaluation reproduced the three angular-rectangle values 5/8,1341/1600,3721/4000 and the ring covering values 7/20,1597/1600,17/25,3893/8000. It also checked the positive rational gaps in the sine and tangent estimates for the additive-measure proof. These finite arithmetic checks supplement the displayed hand arguments; they are not a proof of the unrestricted packing theorem.
+
+Exploratory sampled linear programs and square-pose searches guided or rejected candidate arguments. They are not premises of any committed theorem. In particular, a sampled half-pocket measure of total three is not a universal certificate. No Lean compilation or CI was run.
+
+### Remaining work, with unchanged whole-cell count
+
+P.ALL and Y.ALL remain open. The general C7 completion with two arbitrary circle-clear squares remains open, as do components containing a circle-clear body. The regular-ring capacity is not extrapolated to arbitrary rings. The count remains two whole coarse cells closed and 56 open, with the unrestricted radius, equality, lower-window assembly, independent full audit and Lean/integration obligations unchanged.
