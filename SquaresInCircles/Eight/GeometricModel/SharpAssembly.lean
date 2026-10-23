@@ -29,6 +29,45 @@ noncomputable section
 namespace SquaresInCircles.Eight.GeometricModel
 open ExactFamily Coordinates Candidate
 
+theorem frame_zero_angles {q : ℝ} {C : BoundaryCycle q} (F : Frame C)
+    (hS : mismatch F.theta=0) :
+    F.theta=![tilt F.theta,tilt F.theta,0,0,0,0,0] := by
+  have hz (i : Vertex) (hi : i ∈ charged) : delta F.theta i=0 := by
+    have hh := delta_le_mismatch F.theta hi
+    rw [hS] at hh
+    exact abs_eq_zero.mp (le_antisymm hh (abs_nonneg _))
+  have h0 := hz 0 (by decide)
+  have h2 := hz 2 (by decide)
+  have h3 := hz 3 (by decide)
+  have h4 := hz 4 (by decide)
+  have h5 := hz 5 (by decide)
+  have hA := F.theta_A
+  dsimp [delta,next,A] at h0 h2 h3 h4 h5 hA
+  funext i
+  fin_cases i <;> simp [tilt,G] <;> linarith
+
+theorem frame_zero_physical_frames {q : ℝ} {C : BoundaryCycle q}
+    (F : Frame C) (hS : mismatch F.theta=0)
+    (ht : tilt F.theta=2*Real.arctan sharpData.z) :
+    TableFree.StationaryFrames sharpData C.square := by
+  have hθ := frame_zero_angles F hS
+  have htrig := Perturbation.atan_frame sharpData.z
+  have hcos : Real.cos (tilt F.theta)=sharpData.c := by
+    simpa [ht,c] using htrig.1
+  have hsin : Real.sin (tilt F.theta)=sharpData.s := by
+    simpa [ht,s] using htrig.2
+  intro i
+  have hc := C.frame_cos i
+  have hs := C.frame_sin i
+  change (C.square i).cosine=Real.cos (C.canonicalAngle i) at hc
+  change (C.square i).sine=Real.sin (C.canonicalAngle i) at hs
+  rw [F.canonical_eq,hθ] at hc hs
+  fin_cases i <;>
+    simp [TableFree.canonicalCos,TableFree.canonicalSin,offsets,
+      Real.cos_add,Real.sin_add,Real.cos_sub,Real.sin_sub,hcos,hsin]
+      at hc hs ⊢ <;>
+    exact ⟨hc,hs⟩
+
 theorem origin_sharp_rigidity {S : Fin 8 → UnitSquare} {q : ℝ}
     (hp : SqPacking S (0,0) q) (hq : q ≤ qStar) :
     ∃ N : GlobalNormalization S qStar,
