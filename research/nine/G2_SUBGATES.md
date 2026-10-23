@@ -183,7 +183,7 @@ bands. Corresponding endpoint projections overlap because their
 x-center differences are <39/40, so the grid stress applies.
 No common orientations or fixed within-row heights are assumed.
 
-**G2.C4.3c — Residual five-square complement: OPEN (equality realizable).**
+**G2.C4.3c — Residual five-square complement: OPEN (sharp equality realizable).**
 [TWO_STACK_SHARP_EQUALITY_WITNESS.md](TWO_STACK_SHARP_EQUALITY_WITNESS.md)
 is an exact rational nine-square packing at (q=1105/256)
 with a four-horizontal chain and five-square complement x-chain
@@ -195,6 +195,11 @@ The corrected target is a *sharp* theorem: every residual packing
 has (q\ge Q), and its equality cases must be retained. A promising
 finite disjunction is a **perpendicular 4+3 signed stress** or a
 strict alternative grid/graph stress. This is not proved yet.
+An additional [NONSTRATIFIED_PARALLEL_NINE.md](NONSTRATIFIED_PARALLEL_NINE.md)
+argument proves the nine-square record-radius witness is **not
+stratifiable in any orthonormal frame**, despite all nine squares
+sharing an axis-aligned orientation. The frame-switch signed
+4+3 terminal is therefore a genuine alternative to stratification.
 The distinct crossed-four-chain eight-square witness
 [CROSSED_FOUR_CHAINS_EIGHT_WITNESS.md](CROSSED_FOUR_CHAINS_EIGHT_WITNESS.md)
 also shows that excluding crossed four-chains before using the
