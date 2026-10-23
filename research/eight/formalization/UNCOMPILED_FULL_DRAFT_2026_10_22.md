@@ -4,8 +4,8 @@
 
 This is the manifest for the complete source-level table-free proof of the unrestricted **n=8** unit-square-in-a-disk problem. It identifies the actual proof terms, imports and hand documents rather than pasting thousands of declarations into this report. The full Lean code is in the GitHub branch at the pinned revision below, and is also available in the normal GitHub archive of that revision.
 
-**Pinned source snapshot:** [`a80e002d61fdc9040cdd71924f710fecfe89c558`](https://github.com/vltanh/lean4-squares-in-circles/tree/a80e002d61fdc9040cdd71924f710fecfe89c558).
-**Full source archive:** [GitHub ZIP at the pinned revision](https://github.com/vltanh/lean4-squares-in-circles/archive/a80e002d61fdc9040cdd71924f710fecfe89c558.zip).
+**Pinned source snapshot:** [`d1eb93776321d02e5da7f96969eea6e2433ffb60`](https://github.com/vltanh/lean4-squares-in-circles/tree/d1eb93776321d02e5da7f96969eea6e2433ffb60).
+**Full source archive:** [GitHub ZIP at the pinned revision](https://github.com/vltanh/lean4-squares-in-circles/archive/d1eb93776321d02e5da7f96969eea6e2433ffb60.zip).
 **Single Lean import for all final statements:**
 ```lean
 import SquaresInCircles.Eight.TableFree.UncompiledFullProof
@@ -23,6 +23,8 @@ The new uncompiled [`UncompiledFullProof.lean`](../../SquaresInCircles/Eight/Tab
 | `TableFree.unrestricted_least_radius` | Sharp radius is least among actually attainable radii |
 | `TableFree.unrestricted_equality_classified` | Every sharp packing congruent, after relabeling, to a model |
 | `TableFree.unrestricted_equality_rigid` | Explicit isometry and permutation preserving all square open/closed sets |
+| `TableFree.unrestricted_model_unique_least_circle` | Each admissible equality model has a unique least enclosing circle with the stated center |
+| `TableFree.unrestricted_five_freedoms` | A nonempty five-dimensional box of pairwise rigidly noncongruent equality configurations |
 | `TableFree.unrestricted_eight_complete` | One unconditional conjunction of sharp lower bound, attainment, equality iff and least radius |
 
 Here and throughout, a *proof body in a Lean file* is a drafted proof, **not** a successful elaboration or Lean kernel certification. The published result must not be described as formalized/verified until G9 is completed.
@@ -105,3 +107,5 @@ The new original physical source proof **does not declare** `HighGABT2Exclusion`
 | G9 source/interface audit; Lean elaboration, kernel trust/dependencies | Source audit partial; kernel tasks deliberately deferred | **Not run** |
 
 **Next authorized work without compiling:** manually inspect critical input/result signatures, find concrete stale theorem names or imported modules, check source-level weak tie completeness, and update this ledger with each proof correction. Do **not** trigger Lean/Lake/CI or claim formal verification.
+
+**Later same-day uncompiled entry expansion:** [`d1eb93776321`](https://github.com/vltanh/lean4-squares-in-circles/commit/d1eb93776321d02e5da7f96969eea6e2433ffb60) adds the unique least circle and five-freedom noncongruence theorems; [`384c5f4653aa`](https://github.com/vltanh/lean4-squares-in-circles/commit/384c5f4653aabda869a51e46f0bee2123c02f8a6) stages corresponding `AxiomAudit.lean` checks without executing them.

@@ -354,3 +354,14 @@ This record supersedes the prior live-head snapshot; it is **source inspection o
 - [ ] **G9.2–G9.4 — unchanged, explicitly postponed by user:** Lean/Mathlib compilation, error repair, kernel/axiom validation and performance. Do not run Lean, Lake, tests or CI now.
 
 **No verification claim:** G0–G8 have full uncompiled source; G9 is only partly audited, without kernel execution. The new full entry makes the deliverable easier to inspect but does not resolve elaboration or independent mathematical validity.
+
+### G8.5 final equality completeness — October 22 (21:15–22:00 Chicago)
+
+- [x] **G8.5.e — unique least containing circle:** `TableFree.unrestricted_model_unique_least_circle` reuses `GeometricModel.Parameters.unique_least_circle` (four positively weighted original anchor support vertices), source commit [`d1eb93776321`](https://github.com/vltanh/lean4-squares-in-circles/commit/d1eb93776321d02e5da7f96969eea6e2433ffb60).
+- [x] **G8.5.f — nontrivial five-parameter equality family:** `TableFree.unrestricted_five_freedoms` reuses the `GeometricModel.Parameters.five_freedoms` witness on the strict five-dimensional parameter box; same source commit [`d1eb93776321`](https://github.com/vltanh/lean4-squares-in-circles/commit/d1eb93776321d02e5da7f96969eea6e2433ffb60).
+- [x] **G9.1.p — exact final-entry axiom targets staged:** `AxiomAudit.lean` prints the aggregate theorem, squared-radius theorem, unique enclosing circle, five freedoms and rigid equality (not run), source commit [`384c5f4653aa`](https://github.com/vltanh/lean4-squares-in-circles/commit/384c5f4653aabda869a51e46f0bee2123c02f8a6).
+- [x] **Full source handoff updated:** complete source [manifest](UNCOMPILED_FULL_DRAFT_2026_10_22.md), pinned revision, one-module final import, theorem index and original signed-owner hand argument.
+- [ ] **G9.1.q** remaining full import traversal/source interface and any necessary repairs; no claim of source/type checking.
+- [ ] **G9.2–G9.4** deferred compilation, axioms and runtime **not run at user's direction**.
+
+**Status:** the whole handwritten n=8 theorem including circle-center uniqueness and five independent equalities has an uncompiled Lean draft in GitHub. The G9 verification gate is still genuinely open.

@@ -1,6 +1,6 @@
 # PR #10 — canonical table-free Lean source handoff
 
-**Reconciled:** 2026-10-22 (America/Chicago). **Branch:** `formalize/eight-uncompiled-draft`. **PR:** [#10](https://github.com/vltanh/lean4-squares-in-circles/pull/10), base `research/eight-proof`. **Latest public proof-writing checkpoint:** [`e542f7ae`](https://github.com/vltanh/lean4-squares-in-circles/commit/e542f7aeee45b4f6e8f8919b1ddf3ceca3fcd062). Always re-fetch live HEAD before editing.
+**Reconciled:** 2026-10-22 (America/Chicago). **Branch:** `formalize/eight-uncompiled-draft`. **PR:** [#10](https://github.com/vltanh/lean4-squares-in-circles/pull/10), base `research/eight-proof`. **Latest complete uncompiled theorem-entry checkpoint:** [`d1eb93776321`](https://github.com/vltanh/lean4-squares-in-circles/commit/d1eb93776321d02e5da7f96969eea6e2433ffb60); **staged axiom audit:** [`384c5f4653aa`](https://github.com/vltanh/lean4-squares-in-circles/commit/384c5f4653aabda869a51e46f0bee2123c02f8a6). Always re-fetch live HEAD before editing.
 
 > **Verdict:** the unrestricted n=8 table-free hand proof now has an **end-to-end uncompiled Lean source draft**: `high_GA_BT2_exclusion : HighGABT2Exclusion`, an unconditional `table_free_sharp_source_entry : SharpSourceEntry`, and a public geometric sharp theorem routing through that source. **Lean has not been run, and none of these are kernel verified.** A written proof body and a verified formal theorem are different deliverables. The PR must not be marked proved or merged before G9.
 
@@ -66,3 +66,7 @@ The necessary E move is performed on an actual original `SourceDomain` *before* 
 ## 5. Source references
 
 The [full table-free hand theorem](HAND_UNRESTRICTED_EIGHT_SQUARE_THEOREM_WITHOUT_TABLES.md), [global original-owner hand argument](HAND_G5_GLOBAL_PRIMARY_OWNER_ENTRY_COMPLETE.md), and [original equality pullback](HAND_G5_GLOBAL_PRIMARY_ENTRY_ORIGINAL_EQUALITY_PULLBACK.md) remain canonical mathematical references. [Old 21-Oct gate ledger](TABLEFREE_LEAN_CLOSURE_ROADMAP_2026_10_21.md), older snapshots in `STATUS.md`, and archived reports are historical, not current source status.
+
+## 6. Full uncompiled proof entry delivered
+
+The [source manifest](UNCOMPILED_FULL_DRAFT_2026_10_22.md) identifies a pinned GitHub ZIP of the **complete** Lean draft and its canonical hand documents. Import `SquaresInCircles.Eight.TableFree.UncompiledFullProof` for all target statements, including squared radius, equality iff, least-radius attainability, original-label rigidity, unique least containing circle for each admissible model, and a nonempty five-parameter family of distinct congruence classes. The source is committed; no Lean, tests, CI or axiom commands have been run. The gated ledger is the authoritative next-work index.
