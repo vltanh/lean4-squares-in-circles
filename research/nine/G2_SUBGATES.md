@@ -1,122 +1,134 @@
-# n=9 — live G2 ledger: three tree profiles closed, two surviving master families
+# n=9 — live G2 ledger: P/Y capacities and 57 open coarse cyclic cells
 
-**Checkpoint:** 2026-10-23 origin-pocket continuation. **Unrestricted q>=Q=1105/256 is NOT proved.** The completed common-coordinate class remains closed at hand level. The six-case tree cover now has three complete profile exclusions, plus a complete point-contact subtype exclusion. Every remaining tree candidate has one of two explicit physical completion skeletons, P or Y. Their capacities and the cyclic branch remain open.
+**Checkpoint:** 2026-10-23 quadrant/block continuation, read base 59d0c9.
+**Unrestricted q>=Q=1105/256 is NOT proved.** The whole coordinate-separable class is closed at hand level. Surviving positive-tree geometries reduce to P.ALL or Y.ALL; neither capacity is closed. Cyclic selected components now have a proved 58-cell coarse block/bridge cover, with only C1.3.b0 excluded. The other 57 sharp physical cell theorems remain open.
 
-**Evidence status:** general results below are written hand arguments, pending independent full audit and Lean verification. Finite exact regression is not a universal proof. Historical versions and timestamps remain in Git.
+General results are analytic hand arguments pending independent mathematical audit and Lean verification. Finite exact regression is not a universal proof. Historical ledger versions remain in Git.
 
-See DEEP_GATED_ROADMAP.md for complete contracts, FINITE_TREE_CASE_LEDGER.md for the six profiles, and ORIGIN_POCKET_PROGRESS.md for this continuation's UTC commits and actual execution.
+**Canonical contracts:** DEEP_GATED_ROADMAP.md. **Individual cases:** FINITE_TREE_CASE_LEDGER.md and CYCLIC_CELL_LEDGER.md. **Current UTC progress:** QUADRANT_BLOCK_PROGRESS.md. Preceding PROGRESS_LEDGER.md and ORIGIN_POCKET_PROGRESS.md remain historical records.
 
-## 1. Existing closed branches and unrestricted reductions
+## 1. Ticked parent ledger
 
-- [x] **G2.C:** COORDINATE_SEPARABLE_NINE_COMPLETE.md proves the sharp bound for every nine-square packing separable in one common orthonormal frame, despite arbitrary individual rotations. The old zigzag and two-stack cases are all closed within this class.
-- [x] **O3.0.2:** SPARSE_MINIMIZER_STRESS.md gives compact unrestricted attainment, true-contact selection, normalized nonnegative stress and exact dual attainment at q0.
-- [x] **O3.1a–e:** PLANAR_STRESS_CORE.md gives <=19-term planar translational support; ROTATION_STATIONARY_STRESS.md gives separate <=27-atom angular stationarity.
-- [x] **O3.1f:** PHYSICAL_CONTACT_STRESS.md gives actual shared force points, joint force/torque balance and a planar contact-point incidence network. Do not identify this with a planar body graph or the 19-term translational certificate.
-- [x] **O3.1g:** RADIAL_BRIDGE_AND_LEAF_REDUCTION.md proves radial positive bridges, <=4 central circle-clear bridge-cover bodies, and exact side/diagonal loaded-leaf geometry.
-- [x] **CAP/ROW:** sharp three-square cap, every-direction subcritical strip occupancy, solid-four-row completion and mixed seam terminals; these remain conditional tools or global necessary conditions, not unrestricted extraction.
-
-**Selected certificate:** at a point-only vertex/vertex contact, the physical construction chooses a normal strictly exposing the point in both squares. At an off-origin contact of this type it can also be chosen nonradial. The TREE.02.P proof below requires this strict-normal choice; arbitrary non-strict force equilibria are not silently covered.
-
-## 2. Complete tree reduction, with explicit radius premise
-
-Assume 79/40<=R<=sqrt(Q), with the lower window imported explicitly from the established n=8 result or separately proved. The new fixed-radius capacity lemmas do not themselves prove this prerequisite.
-
-- [x] **TREE.F1:** TREE_BODY_LOCALIZATION.md localizes every unloaded tree body; loaded bodies have radial S/D geometry even at higher degree; origin-avoiding unloaded bodies are single side-normal transmitters to S terminals.
-- [x] **TREE.F2.I:** origin-interior roots are excluded by the exhaustive short-arm support-point alternatives and previous star exclusion.
-- [x] **TREE.F2.R:** TREE_RADIUS_QUANTIZATION.md forces **R^2=17/4 for every positive tree component** in the window. Unloaded bodies meet zero only on side interiors or vertices, loaded bodies are S(e) at centers (3/2)e.
-- [x] **TREE.F2.C:** tangent cones imply 2s+v<=4 and star exclusion s+v>=2, giving exactly six profiles. Every parameter and every unstressed physical square is retained.
-
-## 3. Six original profiles: checked statuses
-
-| Profile | Entire completion class | Status |
+| Gate | Scope | Status |
 |---|---|---|
-| TREE.20 (2,0) | Two side-origin roots, all staggered-path offsets | OPEN capacity, maps to P.ALL |
-| TREE.11 (1,1) | Side-origin + vertex-origin roots, all compatible angles/offsets | Exact normal-form reduction CLOSED; capacity Y.ALL or P endpoints OPEN |
-| TREE.12 (1,2) | Side root + two vertex roots | CLOSED hand: cardinal cage <=8 total |
-| TREE.02 (0,2) | Two vertex roots | PARTIAL: point-only TREE.02.P CLOSED; shared-edge TREE.02.E maps to P.ALL |
-| TREE.03 (0,3) | Three vertex roots | NEW CLOSED hand: annular angular capacity <=8 total |
-| TREE.04 (0,4) | Four vertex roots | CLOSED hand: central block <=8 total |
+| G2.C | All common-coordinate-separable nine-square packings, independent square frames allowed | [x] CLOSED hand |
+| O3.0.2 | Compact minimizer, genuine contacts, normalized exact active stress | [x] CLOSED hand necessary reduction |
+| O3.1a–g | Sparse planar translational support; separate angular/physical incidence certificates; radial bridge rules | [x] CLOSED hand necessary reductions |
+| TREE.F1–F2 | Every positive tree in declared window has q0=17/4 and one of six origin-incidence profiles | [x] CLOSED hand exhaustive reduction |
+| TREE.12, TREE.03, TREE.04 | Whole physical nine-square completion exclusions | [x] CLOSED hand |
+| TREE.02.P | Point-only central contact, selected strictly exposing normal | [x] CLOSED hand full contact subtype |
+| TREE.REMAINDER | Every surviving tree completion is in P or Y | [x] CLOSED hand normal form |
+| **P.ALL** | Entire staggered path plus five arbitrary physical squares | [ ] **OPEN** |
+| **Y.ALL** | Entire side/vertex fan plus four arbitrary physical squares | [ ] **OPEN** |
+| QCAP.1–3 | Quadrant unavoidable point/capacity one and every-frame axis-crossing count at q<=17/4 | [x] NEW CLOSED hand tool/necessary condition |
+| CY.BLOCK | Exact 21 block-size profiles / 58 bridge-count cells | [x] NEW CLOSED hand **coarse coverage**, not sharpness |
+| CY.LOAD.1–3 | No unloaded one-body appendage; loaded endblocks; loaded subset not a touching clique in window | [x] NEW CLOSED hand necessary/exclusion rules |
+| C1.3.b0 | Selected triangle component, no bridges, full completion retained | [x] NEW CLOSED hand exclusion in window |
+| Other 57 cyclic cells | All graphs, loads, poses and 9-n physical completion squares | [ ] **OPEN sharp bounds** |
+| O3.3.SHARP / O4 / O5 | All full realizations uniformly sharply covered | [ ] OPEN/BLOCKED |
+| G4 / G5.U | Unrestricted lower bound and all equality packings | [ ] OPEN/BLOCKED |
+| G6–G8 | Independent full audit, standard-kernel Lean and public integration | [ ] NOT COMPLETED |
 
-Boundary slider positions migrate to vertex profiles; they are not discarded. The profiles refer to the selected positive component, while their capacity statements include every other physical square.
+**No false counting:** one cyclic cell excluded is not 1/58 of a proof; the remaining cells have unequal geometric complexity. An exhaustive coarse partition is not a small sharp terminal classification.
 
-### Previously closed TREE.12 and TREE.04
+## 2. Earlier complete coordinate branch remains closed
 
-TREE_FINITE_COMPLETIONS.md proves that a cardinal cage of four radial outer squares and a central solid 2x2 block each permit at most four additional unit squares at q=17/4, even when those additions rotate or have oblique separators. TREE.12 forces the cage by equilibrium, and TREE.04 forces the block by origin-angle saturation.
+COORDINATE_SEPARABLE_NINE_COMPLETE.md combines the rank-product extraction, four-chain shadow, complete zigzag exclusion, signed 4+3 stress, crossed-four-chains-plus-ninth exclusion and elementary five-element matching. Both (4,1) and (3,2) two-stack complements are settled inside that class. Do not reopen them for narrower angle/height inequalities.
 
-### New TREE.03: complete whole-profile capacity
+The exact no-global-frame equality witness forbids applying this theorem from unrestricted physical nonoverlap alone.
 
-THREE_VERTEX_ORIGIN_CAPACITY.md has no stress premise. Three vertex-origin squares leave three angular center-direction gaps totaling pi/2. Other centers lie in those gaps and have radii in [1/sqrt(2),3/2]. Two such centers with angular separation <=pi/6 are strictly closer than one. Six extra centers distributed among <=3 gaps would require >pi/2. Therefore at most five extras fit, eight total.
+## 3. Existing unrestricted stress input — preserve representation distinctions
 
-- [x] Entire TREE.03 profile, all cone gaps and arbitrary extra orientations.
-- [x] All equality/boundary cone-gap points included.
-- [x] The eight-square cardinal cross attains the capacity bound; a smaller core is not falsely declared impossible.
+SPARSE_MINIMIZER_STRESS.md proves compact attainment and exact normalized nonnegative actual-contact stress at a hypothetical subcritical minimizer. The fixed-frame certificate has <=19 terms and attains the unknown q0.
 
-### New TREE.02.P: complete point-only central-contact branch
+PLANAR_STRESS_CORE.md produces an outer-loaded planar **translational support**. ROTATION_STATIONARY_STRESS.md supplies a separate angular certificate. PHYSICAL_CONTACT_STRESS.md refines this to true shared application points with force/torque balance, <=27 atoms and a planar **contact-point incidence graph**. The corresponding body-pair graph need not be planar and is not silently identified with the 19-term graph.
 
-TREE02_POINT_CONTACT_COMPLETION.md gives exactly two central contact types. With point-only contact, the selected strictly exposing normal requires two positive side-direction terminal loads at each root. Four distinct S terminals are present.
+RADIAL_BRIDGE_AND_LEAF_REDUCTION.md makes positive body-pair bridges radial and covered by <=4 central circle-clear bodies. Off-origin point-only vertex contacts use a chosen strict nonradial normal and cannot be bridges. Nonbridge forces are not forced radial.
 
-RADIAL_SECTOR_POCKET_CAPACITY.md proves that the central sides plus terminals screen their rays and trap every extra square wholly in a complementary wedge. The smaller gap is >=2 arctan(1/2), so the larger is <=2 arctan(2). Acute pockets are empty; right pockets hold a unique square; moderately obtuse pockets in the stated complete range hold <=2. Six core bodies therefore admit <=2 more squares, eight total.
+The tree-radius and loaded-clique exclusions have the explicit premise **79/40<=R<=sqrt(Q)**. Import the prior n=8 lower bound explicitly or prove the coarse lower window separately; it is not supplied by the new capacity tools.
 
-- [x] Entire positive-angle point-contact family, not a sampled tilt range.
-- [x] Right/right boundary g=h=pi/2 included.
-- [x] Non-strict-normal negative control retained explicitly.
+## 4. Tree scope: exhaustive reductions, unchanged P/Y parents
 
-### TREE.02.E: exact shared-edge boundary
+### TREE.F1–F2 [CLOSED hand]
 
-The roots share a full side and form a 2x1 half-block. Their possible loaded directions are E,N,W; component circle-force balance forbids positive N, leaving the two opposite E/W terminals. The component is exactly the four-square path with both inner offsets +1/2 (or reflection).
+TREE_BODY_LOCALIZATION.md localizes every unloaded tree body, gives radial S/D geometry to every loaded body and reduces origin-avoiding unloaded bodies to one-step transmitters. TREE_RADIUS_QUANTIZATION.md excludes origin-interior roots, forces q0=17/4 and proves exactly six origin-incidence profiles through 2s+v<=4 and s+v>=2.
 
-- [x] Exact shared-edge normal form.
-- [ ] Its five-square completion, included in P.ALL.
-- A zero-weight physical N square is still allowed; zero load is not absence of a physical body.
+### Full completion cases
 
-## 4. All remaining tree completions: exactly P and Y
+- [x] **TREE.12:** a cardinal terminal cage leaves total capacity <=8; arbitrary extra rotations retained.
+- [x] **TREE.04:** the central solid 2x2 block permits only four outer squares, total<=8.
+- [x] **TREE.03:** three vertex-origin cones leave annular gaps totaling pi/2; required angular separation excludes six extras, total<=8.
+- [x] **TREE.02.P:** the selected strict point-contact normal forces four terminals; exact screened-pocket capacities exclude completion to nine.
+- [x] **TREE.02.E / TREE.11 / TREE.20 routing:** REMAINING_TREE_TWO_FAMILY_REDUCTION.md proves all survivors are P or Y, with angular and slider boundary cases retained.
 
-REMAINING_TREE_TWO_FAMILY_REDUCTION.md proves exhaustive coverage after the completed exclusions.
+### P.ALL [OPEN]
 
-### P.ALL — four-square staggered path plus FIVE arbitrary squares [OPEN]
+Four aligned roots have centers (-3/2,0),(-1/2,tau1),(1/2,tau2),(3/2,0), |tau_i|<=1/2, in D_(17/4). Prove that no FIVE arbitrary additional unit squares fit.
 
-Fixed aligned centers:
+- [x] Flat row excluded by the earlier solid-row theorem.
+- [x] Exact three-above-staggered-row example rejects an independent two-per-side bound.
+- [x] NEW exact five-center relaxation satisfies radius<=3/2, pairwise distance>=1 and inscribed-disk clearance from every root rectangle. Hence those center constraints alone cannot prove the theorem.
+- [ ] Retain full square orientation/corner/SAT geometry and prove a whole-range coupled capacity bound. QCAP needs a derived whole-square quadrant placement, not merely center signs.
 
-    (-3/2,0), (-1/2,tau_1), (1/2,tau_2), (3/2,0),
-    -1/2 <= tau_1,tau_2 <= 1/2.
+### Y.ALL [OPEN]
 
-The theorem needed is no five additional physical unit squares in D_(17/4), for the whole parameter square. This includes all TREE.20, TREE.02.E and aligned TREE.11 boundaries. The flat row is already excluded, but the two-slider family is not. The known three-above-staggered-row witness rejects independent two-per-side capacities.
+The five-body fan comprises H=[-alpha,1-alpha]x[0,1], K=[0,u]+[0,v] with u=(cos(theta),-sin(theta)), v=(-sin(theta),-cos(theta)), and radial terminals S(north),S(u),S(v), for alpha in (0,1), theta in (0,pi/2). Prove no FOUR arbitrary extra squares fit in D_(17/4).
 
-### Y.ALL — side/vertex fan plus FOUR arbitrary squares [OPEN]
+- [x] Exact normal form and force ratios sin(theta),cos(theta), with angular endpoints in P.
+- [x] A nonaligned five-body stress really exists; no false core exclusion.
+- [ ] Whole-family physical region routing and capacity, including all oblique separators. Neither existing screened sectors nor QCAP yet supplies the needed global implication.
 
-Parameters 0<alpha<1, 0<theta<pi/2:
+## 5. NEW QCAP [CLOSED hand tool; applicability open]
 
-    H=[-alpha,1-alpha]x[0,1],
-    u=(cos(theta),-sin(theta)), v=(-sin(theta),-cos(theta)),
-    K={a u+b v:0<=a,b<=1},
-    loaded squares S((0,1)), S(u), S(v).
+Source: QUADRANT_UNAVOIDABLE_POINT.md, commit c02fa61.
 
-Exact equilibrium of TREE.11 gives the two downward loads in ratios sin(theta),cos(theta). For interior theta both are positive; at theta=0 or pi/2 one disappears and the geometry becomes P after exchanging axes.
+- [x] Every arbitrary unit square wholly in the first quadrant of D_(17/4) contains (1,1). The point is strictly interior for tilted squares; aligned boundary squares contain the common inward perturbation (1,1)-epsilon*(1,1).
+- [x] Therefore one origin-centered closed quadrant holds at most one physical square, without radial terminal obstacles.
+- [x] Every hypothetical nine-square packing in that disk has at least five squares whose open interiors meet one of the two axes, for every perpendicular frame.
+- [ ] Route all P/Y extras through suitable whole-square cone/crossing classes with a complete capacity inequality. A square may cross both proposed region boundaries; assigning it by center quadrant is invalid.
+- [ ] Derive an unrestricted sharp invariant from QCAP and CAP.3 or from contacts. These necessary conditions alone are not contradictory.
 
-- [x] All TREE.11 positive cores classified, including aligned boundary limits.
-- [ ] No four additional arbitrary squares for the entire fan parameter range.
-- The nonaligned five-body fan really exists and must not be excluded without its completion capacity.
+## 6. NEW cyclic coarse inventory and load rules
 
-**TREE.ALL remains OPEN** until P.ALL and Y.ALL are both proved, with the stated lower-window prerequisite. This two-family cover is a necessary reduction, not a sharp inequality.
+Sources: CYCLIC_BLOCK_INVENTORY.md and CYCLIC_CELL_LEDGER.md.
 
-## 5. CYCLIC and global assembly [OPEN]
+### CY.B1–B4 [CLOSED coverage]
 
-Either some selected positive component is a tree, or every positive component contains a cycle. The latter branch is not in the tree table.
+For a selected connected cyclic simple positive component with cyclic block sizes k_i>=3 and b bridges,
 
-- [ ] **CY.1:** a human-sized exhaustive physical inventory including loaded bodies, bridges, junctions and all unstressed completions, or one universal alternative inequality.
-- [ ] **CY.2:** orientation-uniform sharp bound q0>=Q for every surviving full nine-square realization.
-- [ ] **CY.3:** equality, zero-weight and contact-tie limits. Nonbridge edges need not be radial.
-- [ ] **O3.3/O4:** P.ALL, Y.ALL and CYCLIC covered sharply, or bypassed by one global completion-aware theorem.
-- [ ] **O5/G2.X/G4:** exclude unrestricted q<Q minimizers, combine with attainment and match the public theorem.
-- [ ] **G5.U:** complete unrestricted equality necessity and parameter converse; the current signed/stratified families are conditional.
-- [ ] **G6–G8:** independent full audit, standard-kernel Lean proof and integration.
+    n=1+b+sum(k_i-1)<=9.
 
-## 6. Actual execution, source provenance and limits
+The elementary block-cut tree proof yields exactly **21 sorted profiles and 58 bridge-count cells**. Every cell retains all 9-n other physical squares. Distinct square orientations, contacts, circle-atom locations and within-block graph adjacencies remain continuous/combinatorial variables, not implicitly resolved by this identity.
 
-check_origin_pockets.py at source commit `607d51b10bb9c96de47d17f984b1632282101b79` was matched to Git blob `6fad0c16edb6ddeaac21d13f3369ab1b6a6f01f7` and SHA-256 `b10302b888b9f1db3effdf9207c2ea7785b8e4b44da1551e9bd9eafec6d9974c`. The pinned run passed at **2026-10-23 14:29:10.989302–14:29:11.004341 UTC**, Python 3.13.5, exit 0; an identical rerun also passed at 14:44:50 UTC.
+### CY.LOAD.1–3 [CLOSED necessary/exclusion]
 
-ORIGIN_POCKET_EXACT_CHECK.json records **1,716 exact rational checks**, sharp eight-square origin-capacity attainment, the unique right-pocket square, a six-body strict-normal stress, and shared-edge/non-strict-normal controls with all corners, SAT pairs, real force points and force/torque equations checked.
+- [x] Summing unloaded force equations dotted with c_i-c_b excludes an unloaded positive subgraph attached only through body b.
+- [x] Each endblock has a circle-loaded nonarticulation body. Intermediate blocks with multiple articulations are not covered by that private-load rule.
+- [x] If every pair of loaded bodies physically touches, their center centroid and normalized circle-force balance imply R^2<=625/162<(79/40)^2. Thus this loaded-clique pattern is excluded in the declared window.
 
-These finite checks are not the all-angle proofs or independent audit. ORIGIN_POCKET_PROGRESS.md records the exact analytic scope and UTC proof commits. The older finite-tree and cap checks retain their original scope and are not counted as new results.
+### CY sharp cells
 
-**Progress rule:** tick only a whole quantified profile, an exhaustive contact type, or a proved necessary reduction. Do not equate a count of checked tree rows with a percentage of global proof completion, and do not replace true square completion geometry by center-only numerical tests.
+- [x] **C1.3.b0:** a selected triangle component without bridges has a pairwise-touching loaded subset and is excluded, independent of all six extra squares.
+- [ ] **C1.3.b1–b6:** still open; loads can lie in attached bodies.
+- [ ] **Other single-block profiles (4)–(9), all admissible b:** open.
+- [ ] **All two-, three- and four-cyclic-block profiles:** open.
+
+The 58 individual checkboxes and 57 remaining full-cell contracts are in CYCLIC_CELL_LEDGER.md. No raw graph or angle enumeration is treated as the sharp proof. A universal theorem closing many cells simultaneously is preferred.
+
+## 7. Global closure contracts [OPEN]
+
+- [x] Coarse TREE/CYCLIC alternatives are exhaustive for the selected stress.
+- [x] Tree survivors are P/Y; cyclic survivors enter the exact coarse ledger.
+- [ ] **O3.3.SHARP:** prove the actual physical completion inequalities for P.ALL, Y.ALL and every unchecked cyclic cell, or one global replacement theorem.
+- [ ] **O4:** uniform orientation/equality bounds using all nine physical squares. Existence of stress weights certifies q0, not q0>=Q.
+- [ ] **O5 / G2.X / G4:** include the lower-window dependency and combine minimizer reduction, sharpness and attainment.
+- [ ] **G5.U:** all unrestricted equality packings, not just the signed/stratified families.
+- [ ] **G6–G8:** independent full audit, standard-kernel Lean and final integration.
+
+## 8. Exact execution and progress discipline
+
+check_quadrant_blocks.py at commit fed5a888 was matched to Git blob fdb7d5ef123b8018601c3661b5451c4346672ba5 and SHA-256 before execution. QUADRANT_BLOCK_EXACT_CHECK.json records a PASS under Python 3.13.5 at 2026-10-23 16:27:18–16:27:19 UTC, exit 0: 104 identity checks, 2,254 admissible rational quadrant squares, 1,772 finite graph checks spanning every coarse cell, and exact relaxation/angle negative controls.
+
+These finite checks are not the symbolic proofs, physical graph feasibility, independent audit or Lean verification. No CI ran. QUADRANT_BLOCK_PROGRESS.md records source times and theorem scope.
+
+Tick only the full stated implication. Do not attach a completion percentage to the number of cells or lemmas. A new conditional tool cannot close P/Y or a cyclic parent until its hypotheses are derived throughout that entire physical completion family. The unrestricted proof remains unfinished.
