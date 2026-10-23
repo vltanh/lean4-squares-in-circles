@@ -29,6 +29,7 @@ the known bound, not a lower-bound proof.
 | Complete physical completion of four anchors | [Anchored equality classification](ANCHORED_EQUALITY_CLASSIFICATION.md) | Remaining six orientations initially unrestricted |
 | Three squares in a sharp cap force alignment and boundary anchors | [Three-square cap](THREE_SQUARE_CAP.md) | Arbitrary orientations, all wholly beyond a line at distance `1/2` from the disk centre |
 | A square in an outward quadrant forces the sharp corner bound | [Corner rigidity](CORNER_RIGIDITY.md) | Arbitrary orientation |
+| At least two squares enter the central disk of radius `1/2` | [Exterior-arc bound](CENTRAL_DISK_REDUCTION.md) | Arbitrary orientations; squared containing radius at most `9/2` |
 | Sharp lower bound from four anchors | [Four-anchor bound](FOUR_ANCHOR_BOUND.md) | Four common-frame squares with the stated coordinate gaps |
 | Exact finite formulation and existence of a minimizer | [Unrestricted model](UNRESTRICTED_MODEL.md) | Arbitrary individual orientations; no sharp lower bound |
 
@@ -68,7 +69,11 @@ in a hypothetical packing with `q<9/2`, every central open strip of width one
 meets at least six squares, and every square meets the union of the two such
 perpendicular strips. These conditions have not been shown contradictory.
 Finding a sharp cap triple in some frame would close the lower bound, but
-no universal cap-extraction theorem is claimed.
+no universal cap-extraction theorem is claimed. The exterior-arc bound adds
+another necessary condition: at least two squares must meet the open central
+disk of radius `1/2`. Its proof assigns an explicit minimum angular measure
+on the circle of radius `sqrt(2)` to each square avoiding that disk. This
+does not yet classify or exclude the possible central configurations.
 
 Even the established equality family can have five distinct x-coordinates;
 the all-parallel proof handles those configurations directly. No unproved
