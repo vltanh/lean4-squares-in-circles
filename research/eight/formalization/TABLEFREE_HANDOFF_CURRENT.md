@@ -1,90 +1,68 @@
-# PR #10 — canonical table-free Lean handoff
+# PR #10 — canonical table-free Lean source handoff
 
-**Reconciled handoff:** 22 October 2026. **Branch head inspected before this documentation commit:** [`ef4fbad47bc6`](https://github.com/vltanh/lean4-squares-in-circles/commit/ef4fbad47bc6f8a79268faeaf195cac03b33a8ba) (20:47:22 UTC). **Latest source-writing checkpoint:** [`1c85d286c688`](https://github.com/vltanh/lean4-squares-in-circles/commit/1c85d286c6888d8f141fa1cf06547187829f73e3) (20:32:01 UTC). **PR:** [#10](https://github.com/vltanh/lean4-squares-in-circles/pull/10), branch [`formalize/eight-uncompiled-draft`](https://github.com/vltanh/lean4-squares-in-circles/tree/formalize/eight-uncompiled-draft), base `research/eight-proof`. Always re-fetch the moving head.
+**Reconciled:** 2026-10-22 (America/Chicago). **Branch:** `formalize/eight-uncompiled-draft`. **PR:** [#10](https://github.com/vltanh/lean4-squares-in-circles/pull/10), base `research/eight-proof`. **Latest public proof-writing checkpoint:** [`e542f7ae`](https://github.com/vltanh/lean4-squares-in-circles/commit/e542f7aeee45b4f6e8f8919b1ddf3ceca3fcd062). Always re-fetch live HEAD before editing.
 
-> **This is the single current handoff.** Older dated handoffs, the 21-Oct implementation table and the long historical sections in `STATUS.md` are retained for provenance, not as the latest completion report. Read this file first in every continuation. The source can advance after this snapshot: always reread the live branch head before acting.
+> **Verdict:** the unrestricted n=8 table-free hand proof now has an **end-to-end uncompiled Lean source draft**: `high_GA_BT2_exclusion : HighGABT2Exclusion`, an unconditional `table_free_sharp_source_entry : SharpSourceEntry`, and a public geometric sharp theorem routing through that source. **Lean has not been run, and none of these are kernel verified.** A written proof body and a verified formal theorem are different deliverables. The PR must not be marked proved or merged before G9.
 
-## 0. First actions and exact open targets
+## 0. First action
 
-**Checkpoint facts.** Last source-writing commit: `1c85d28` (20:32 UTC). Later `f0ec5bb` and `ef4fbad` commits updated documentation only; they do not verify or extend the proof. Local sector `by` bodies, `by decide` polynomial certificates, hand arguments, and actual globally quantified original-source theorems have different acceptance status. The public capture-free route is not assembled.
+Read [the nested gated roadmap](TABLEFREE_EXECUTION_GATES_2026_10_22.md). It uses four statuses: H = hand mathematical argument, D = Lean body drafted, J = assembled into actual public import route, V = ordinary Lean kernel verified. G0–G8 currently have D/J source paths; G9 V is not started. No native kernel, `native_decide`, external scripts or new axioms are permitted.
 
-| Next original-source gate | Ready source to consume | Exit theorem still required |
-| --- | --- | --- |
-| Negative EH1 + nonnegative A total + **positive TD2** | `GlobalGANegativeEHTD2SmallLow.lean` and `SmallHigh.lean`: `scalar_positive` for low/high totals; `GlobalGANegativeEHTD2HighSplit.lean`; `FarEndpoints.lean`: 22 far endpoints; `Blocks.lean` keeps the actual DE2 singleton | Far low/high **continuous four-block concentration**, then one original `SignedCycle` contradiction and `BoundaryCycle` adapter covering both EH-magnitude ranges and weak endpoints |
-| Negative EH1 + nonnegative A total + **positive BT3/TD0** | `GlobalGANegativeEHBT3Polynomial*.lean` contains 34 exact endpoint families | Finish angle concentration, original weighted stress, signed budgets and physical weak-owner adapter |
-| Negative DE3 + nonnegative A total + **positive BT3/TD0** | `GlobalGASecantDSingleAngle.lean`, `GlobalGASecantDPositiveEndpoint.lean`, `GlobalGASortedDSevenFifthsActual.lean` | Finish BT3 scalar-to-original-source exclusion; retain arbitrary signed TD0 |
-| Global G2/G3/G4 | Stated-owner source contradictions and same-radius normal forms in the G/T modules | Both actual wrong-word aggregates; permitted original owners and signs; exhaustive original-cycle G/T dispatcher, including core/outer E and every weak tie |
-| G5–G8 | Conditional `UniversalHardSharp.hard_sharp`, `SharpEntry.lean` and `SharpAssembly.lean` | Original initially selected normals and rigid-anchor/equality pullback, unconditional `SharpSourceEntry`, then retire `compatibility_source_entry` and `Candidate.Capture` on the public import chain |
+## 1. Exact source chain
 
-**One coherent sequence:** close far EH/TD2 original stress → negative EH/DE BT3 source joins → all-owner G3/G4 and G2 → original G5/G6 hard/equality recovery → G7 unconditional source entry → G8 capture-free theorem. G9 is the separately authorized end-only source audit, ordinary Lean/Mathlib kernel check and dependency audit. Do not turn a transported necessary cycle into a claim about the original selected physical witnesses.
+```text
+original seven-word normalization and physical SourceDomain
+  -> G/T same-radius necessary transports and signed scalar exclusion
+  -> GlobalGAHighBT2Complete.high_GA_BT2_exclusion
+  -> GlobalGAHighOwnerExit.sharp_source_entry_of_BT2_exclusion
+  -> GlobalGAHighSourceComplete.table_free_sharp_source_entry
+  -> TableFree.table_free_original_rigidity
+  -> GeometricModel.SharpAssembly.origin_sharp_rigidity
+  -> origin_sharp_lower_bound / SharpEquality.sharp_uniqueness
+  -> GeometricModel.Theorem.optimum
+  -> SquaresInCircles.optimum 8
+```
 
-## 1. Verdict and exact target
+The necessary E move is performed on an actual original `SourceDomain` *before* A moves. The moved A cycle is used only for valid necessary inequalities. The actual q, true source H/D anchors, signed TD0/TD2 error, all originally selected physical witnesses and weak ties are retained or recovered. The original-radius dual is applied to the actual input, not to an artificial endpoint.
 
-The fully **table-free unrestricted Lean formalization is NOT finished**. The hand-level unrestricted geometric theorem and five-parameter equality classification are documented, and numerous local/global source proof bodies have been pushed. All newly drafted Lean modules remain **uncompiled**. A source theorem written with `by decide` is *not* a verified certificate.
+## 2. Source-writing commits and theorem names
 
-The exact missing contract is `TableFree.SharpSourceEntry` in [`SharpEntry.lean`](../../../SquaresInCircles/Eight/TableFree/SharpEntry.lean): for every normalized original eight-square packing at `qStar`, derive the original stationary physical frames and **initially selected signed normals** on the unchanged source. This proposition has conditional adapters but **no independent table-free inhabitant**. [`GeometricModel/SharpAssembly.lean`](../../../SquaresInCircles/Eight/GeometricModel/SharpAssembly.lean) still imports `Candidate.Capture` and constructs `compatibility_source_entry` via `Candidate.capture` and its generated dependencies. The current public lower bound/equality source therefore **does not** have the desired table-free dependency chain.
+| Gate | Proof-writing commit | Actual source result | Status |
+|---|---|---|---|
+| BT2.3.7 | [`13ea9627`](https://github.com/vltanh/lean4-squares-in-circles/commit/13ea96275d03679a688fdaf19cf5035dffc96188) | Negative A with nonnegative selected E, both short/long E charge regimes (`negative_A_nonnegative_E_positive_TD2_raw_false`) | D |
+| BT2.3.8 | [`34a4773e`](https://github.com/vltanh/lean4-squares-in-circles/commit/34a4773ed3623ca004dca7f6e1f7510ac512eaf6) | E-first/A-second source and actual GA2/AB0 secondary cases | D |
+| Source name repair | [`a9a0d973`](https://github.com/vltanh/lean4-squares-in-circles/commit/a9a0d9737307903dd457c1572df6461e3715b048) | Raw vs core-E theorem names disambiguated | D |
+| BT2.3.9 | [`dfe7be58`](https://github.com/vltanh/lean4-squares-in-circles/commit/dfe7be58e2e852fb0c77373280a90a50e0857437) | Joint genuine negative A/E positive TD2 (`negative_A_negative_E_positive_TD2_false`), real DE3/EH1 and EH0 secondary | D |
+| BT2.3.10 | [`9a95c1f1`](https://github.com/vltanh/lean4-squares-in-circles/commit/9a95c1f1ce23eabf0f1c12813709b98e29f3a1fa) | Core E-first all-T/ all-A sign dispatcher (`core_E_all_T_false`) | D |
+| G4 source | [`304501f6`](https://github.com/vltanh/lean4-squares-in-circles/commit/304501f64c52971ca4c4470b5d293adc4e68e9d7) | Whole-domain `high_GA_BT2_exclusion` | D/J |
+| G7 | [`d89955c7`](https://github.com/vltanh/lean4-squares-in-circles/commit/d89955c703a5b187554314dc1ec0c6f4c4506642) | Unconditional `table_free_sharp_source_entry` | D/J |
+| G8 | [`739d9428`](https://github.com/vltanh/lean4-squares-in-circles/commit/739d9428c84a25ce60afeb65e308f94a9b8a470b) | Remove `Candidate.capture` from `GeometricModel.SharpAssembly` and use original-q table-free source rigidity | D/J |
+| G8 | [`b57bc3ca`](https://github.com/vltanh/lean4-squares-in-circles/commit/b57bc3ca42b5b1847fab92daf353fdda639eec69) | Replace obsolete `via_capture` entry callers in `TableFree.EntryReduction` | D/J |
+| G8 | [`e542f7ae`](https://github.com/vltanh/lean4-squares-in-circles/commit/e542f7aeee45b4f6e8f8919b1ddf3ceca3fcd062) | Root `SquaresInCircles.lean` no longer imports legacy `Eight.Theorem`; public `GeometricModel` route; stage axiom audit commands | D/J |
 
-**Workflow directive retained:** faithfully transcribe the existing hand arguments; keep original source geometry, all signs, weak ties, original radius and selected physical witnesses. Commit/push small coherent batches marked `[skip ci]`. Do **not** compile, run lake/tests/CI, optimize tables, replace Mathlib's ordinary kernel, or audit the draft before source assembly is finished and the user authorizes verification. A hand inequality or local sector never counts as a global gate.
+## 3. Current gate ledger
 
-## 2. Source status — what the recent work actually delivers
+| Gate | Source status | Verified status |
+|---|---|---|
+| G0 Stationary sharp datum and five-parameter equality | Drafted | Not verified |
+| G1 Original-boundary/normal transport | Drafted and joined | Not verified |
+| G2 All seven quarter-word exclusions | Drafted and joined | Not verified |
+| G3 Original source, signs and owners | Drafted and joined | Not verified |
+| G4 Exhaustive high-GA/BT2 and G/T terminal source matrix | Drafted and joined | Not verified |
+| G5 Hard terminal and actual anchor loss | Drafted and joined | Not verified |
+| G6 Original recovered source, weak selected-normal equality | Drafted and joined | Not verified |
+| G7 Unconditional `SharpSourceEntry` | Drafted and joined | Not verified |
+| G8 Unrestricted radius and complete equality family, public import swap | Drafted and joined | Not verified |
+| **G9 Lean/Mathlib ordinary kernel checking, repair, trust/dependency audit** | **Pending** | **Not run** |
 
-All statuses below are **drafted and pushed, not elaborated or kernel-checked**. "Original-source connected" means the Lean body explicitly connects an inequality to its stated actual `SignedCycle` / `BoundaryCycle` hypotheses; it does **not** mean unrestricted owner eligibility has been proved.
+## 4. Remaining obligations
 
-| Sector or bridge | Lean entry file / representative export | Present scope and boundary |
-| --- | --- | --- |
-| Nonnegative selected A and E totals with BT2 | [`GlobalGANonnegativeTotalsNegativeTDSource.lean`](../../../SquaresInCircles/Eight/TableFree/GlobalGANonnegativeTotalsNegativeTDSource.lean), `NonnegativeTotals.all_TD_false` | TD0 and both TD2 signs, with selected totals allowing mixed individual signs; stated-owner source draft. |
-| Negative-BT3 at zero TD alignment | [`GlobalGANonpositiveTSource.lean`](../../../SquaresInCircles/Eight/TableFree/GlobalGANonpositiveTSource.lean), `NonpositiveT.Source.aligned_has_BT2`; [`GlobalGATransportTComplete.lean`](../../../SquaresInCircles/Eight/TableFree/GlobalGATransportTComplete.lean) | The actual negative-alignment endpoint gains a BT2 witness, with E and A normal-form reductions. The resulting T transport has BT2 or sole positive BT3/TD0 outcomes; still a transported necessary-cycle result, not a universal original-owner classifier. |
-| Nonnegative A/E totals, positive BT3 and TD0 | [`GlobalGAPositiveBT3Source.lean`](../../../SquaresInCircles/Eight/TableFree/GlobalGAPositiveBT3Source.lean), `PositiveBT3.Source.actual_false` | Original stress with arbitrary signed TD0 error and weak selected owners. |
-| Single negative flat A, nonnegative selected E total, positive BT3 | [`GlobalGANegativeABT3Source.lean`](../../../SquaresInCircles/Eight/TableFree/GlobalGANegativeABT3Source.lean), `NegativeABT3.original` | Both shorter/longer E comparisons, all four E-owner choices, contact at the equal-total boundary. |
-| Joint negative flat A and core E, positive TD2 | [`GlobalGAJointNegativeAETD2Source.lean`](../../../SquaresInCircles/Eight/TableFree/GlobalGAJointNegativeAETD2Source.lean), `JointNegativeAETD2.original` | Four primary-owner systems connected to the original seven signed inequalities and concentrated scalar bounds. |
-| Joint negative flat A and core E, positive BT3/TD0 | [`GlobalGAJointNegativeAEBT3Source.lean`](../../../SquaresInCircles/Eight/TableFree/GlobalGAJointNegativeAEBT3Source.lean), `JointNegativeAEBT3.original` | Original D block and arbitrary TD0 signed error retained; six polynomial endpoint families transferred to radicals. |
-| Negative DE3, nonnegative selected A total, positive TD2 | [`GlobalGANegativeDETD2Source.lean`](../../../SquaresInCircles/Eight/TableFree/GlobalGANegativeDETD2Source.lean), `NegativeDEPositiveTD.Source.actual_false` | **Both low/high total ranges now joined at 1/6** to the original physical inequalities. All HG choices, all selected A-owner pairs and both signs within the selected A total are included under the stated hypotheses. Latest source closure: [`2072cc4`](https://github.com/vltanh/lean4-squares-in-circles/commit/2072cc425dc1a8da203d74c34342dfaa942aa619) at 20:05 UTC. |
-| Genuine negative EH1, nonnegative selected A total, positive TD2 | [`GlobalGANegativeEHTD2SmallLow.lean`](../../../SquaresInCircles/Eight/TableFree/GlobalGANegativeEHTD2SmallLow.lean), `SmallLow.scalar_positive`; [`GlobalGANegativeEHTD2SmallHigh.lean`](../../../SquaresInCircles/Eight/TableFree/GlobalGANegativeEHTD2SmallHigh.lean), `SmallHigh.scalar_positive`; [`GlobalGANegativeEHTD2HighSplit.lean`](../../../SquaresInCircles/Eight/TableFree/GlobalGANegativeEHTD2HighSplit.lean) | **Small EH magnitudes:** four-block low/high scalar allocations written; retain the actual DE2 singleton and the EH positive-mass charge. The high A/TD split is reduced to both intrinsic endpoints. **Far EH magnitudes:** 22 endpoint numerator/radical inequalities exist in [`FarEndpoints`](../../../SquaresInCircles/Eight/TableFree/GlobalGANegativeEHTD2FarEndpoints.lean), but the far-angle scalar concentration and a complete **original-source EH TD2 exclusion** are not yet present. Latest [`1c85d28`](https://github.com/vltanh/lean4-squares-in-circles/commit/1c85d286c6888d8f141fa1cf06547187829f73e3) at 20:32 UTC. |
-| Negative EH1, nonnegative selected A total, positive BT3 | [`GlobalGANegativeEHBT3Polynomial.lean`](../../../SquaresInCircles/Eight/TableFree/GlobalGANegativeEHBT3Polynomial.lean) and [`PolynomialData`](../../../SquaresInCircles/Eight/TableFree/GlobalGANegativeEHBT3PolynomialData.lean) | 34 exact endpoint numerator families drafted; **not yet** connected through the complete continuous reduction and original source stress. |
-| Negative DE3, nonnegative selected A total, positive BT3 | [hand source](HAND_G3_NEGATIVE_DE3_POSITIVE_BT3_WITH_NONNEGATIVE_A_TOTAL_EXCLUSION.md) and [`SecantD`](../../../SquaresInCircles/Eight/TableFree/GlobalGASecantDSingleAngle.lean) | The secant-D signed single-angle bound, support switch and intrinsic endpoint reductions are transcribed, but **no complete negative-DE/positive-BT3 source dispatcher** has been identified. |
-| Core E and negative A normalization | [`GlobalGACoreENormalForm.lean`](../../../SquaresInCircles/Eight/TableFree/GlobalGACoreENormalForm.lean), [`GlobalGANegativeACycle.lean`](../../../SquaresInCircles/Eight/TableFree/GlobalGANegativeACycle.lean) | Reduce selected mixed/both-negative primary errors on same-radius *necessary* cycles; do not reapply original-packing eligibility to their transported outputs without a proof. |
-| Conditional sharp hard terminal | [`UniversalHardSharp.lean`](../../../SquaresInCircles/Eight/TableFree/UniversalHardSharp.lean), `HardInput.hard_sharp` | Hard-input terminal is drafted, including strict original-anchor loss, but its **`HardInput` hypotheses are not yet derived for every unrestricted source**. |
+1. Audit the exact imported signatures and namespace, all real sign/tie endpoints and whether the moved E/A/G/T records are treated only as allowed necessary cycles. Fix any concrete source errors found. The new files have **not been typechecked**.
+2. Traverse the complete transitive public module import graph from `SquaresInCircles/Eight/GeometricModel/Theorem.lean` and `SquaresInCircles.lean`. Ensure the new route has no `Eight.Theorem`, `Candidate.Capture` or `Generated.AffineBudgets` path; keeping a separate legacy module is fine.
+3. Once *separately authorized* to compile, run standard Lean/Mathlib on the public theorem and equality family; resolve every elaboration error without `sorry`, axioms, native compiler trust or generated lookup.
+4. Run the staged `AxiomAudit.lean` commands only after compilation. Require standard `[propext, Classical.choice, Quot.sound]`, no `sorryAx`, and a proven capture-free dependency route.
+5. Keep PR #10 open until source and kernel verification succeed. Do not describe this drafted source as a verified theorem.
 
-The last source-writing commits (not verified Lean compilation) are [`387ac11`](https://github.com/vltanh/lean4-squares-in-circles/commit/387ac1145bbf) (32 EH/TD2 polynomial reserves, 20:08 UTC), [`6839790`](https://github.com/vltanh/lean4-squares-in-circles/commit/68397907dfcc) (small-EH endpoint transfer, 20:14 UTC), [`8119087`](https://github.com/vltanh/lean4-squares-in-circles/commit/81190873f06f) (far-EH endpoint transfer, 20:15 UTC), [`e1a6ce8`](https://github.com/vltanh/lean4-squares-in-circles/commit/e1a6ce89d9e2) (small-low four-block scalar, 20:29 UTC), [`9bbfc07`](https://github.com/vltanh/lean4-squares-in-circles/commit/9bbfc074955e) (high-split join, 20:30 UTC), and [`1c85d28`](https://github.com/vltanh/lean4-squares-in-circles/commit/1c85d286c6888d8f141fa1cf06547187829f73e3) (small-high four-block scalar, 20:32 UTC). GitHub commit dates here record source writing, **not** proof verification.
+## 5. Source references
 
-## 3. G0–G9 exit ledger (global, not sector level)
-
-| Gate | State | Full acceptance condition |
-| --- | --- | --- |
-| G0 sharp stationary/five-corner model | DRAFT | Five-corner minimum, stationarity, circle rigidity and five-parameter family; verification later. |
-| G1 continuous original frame/transport | DRAFT, integrated | Real four-type bounds and original-radius source lift are in source, but G2 word selection remains separate. |
-| G2 all wrong words | PARTIAL | Finish four zero-quarter outer representatives, four mixed-quarter representatives, short-word gaps and **both actual binary-word aggregates**; no generated word lookup. Counts are inherited from the last 21-Oct G2 ledger and were not newly audited here. |
-| G3 original-source owner entry | PARTIAL | All permitted GA/AB/BT/TD/DE/EH owners, signs, E radial cases and weak ties proved on **the original cycle**, including all-high DE outer bridge. |
-| G4 entire G/T same-radius matrix | PARTIAL (central blocker) | A single exhaustive source dispatcher covering all signed A/E/T and BT owner sectors, including the EH/DE BT3/TD2 gaps above. |
-| G5 sharp hard terminal | DRAFT, conditional | `HardInput.hard_sharp` has a source body; need actual global entry and later verification. |
-| G6 original-source equality recovery | PARTIAL | Recover unchanged anchor centers, original initially selected physical normals and strict rigidity/equality in every matrix output. |
-| G7 unconditional source entry | OPEN | Construct `SharpSourceEntry` without compatibility capture. |
-| G8 public table-free theorem/equality | OPEN on new route | Replace `compatibility_source_entry` in `SharpAssembly`; lower bound and five freedoms must use new capture-free imports. |
-| G9 checking/cleanup | DEFERRED | End-only source/interface audit, then separately authorized standard Lean/Mathlib kernel, dependency/axiom and comparator verification. |
-
-## 4. Prioritized next work — do not optimize or start a new case enumeration
-
-1. **Finish the EH1 / positive-TD2 lane from the current head.** Reuse `SmallLow.scalar_positive`, `SmallHigh.scalar_positive` and `HighSplit`. Prove far-EH low- and high-total four-block scalar bounds from the existing 22 endpoint certificates and [far-angle hand proof](HAND_G3_CORE_E_NEGATIVE_EH1_REMAINING_ERROR_EXCLUSION.md); preserve DE2's original signed singleton. Then connect small and far magnitudes to one **`SignedCycle` original-stress contradiction** and `BoundaryCycle` adapter, including zero/overlap EH endpoints and both actual A/TD allocations. Do not silently replace the original E or D points.
-2. **Close the outstanding negative-DE3 and negative-EH1 / positive-BT3 cases.** Use [DE3 hand proof](HAND_G3_NEGATIVE_DE3_POSITIVE_BT3_WITH_NONNEGATIVE_A_TOTAL_EXCLUSION.md), [EH1 hand proof](HAND_G3_NEGATIVE_EH1_POSITIVE_BT3_WITH_NONNEGATIVE_A_TOTAL_EXCLUSION.md), [Secant D](HAND_G3_SECANT_D_SINGLE_ANGLE_COMPARISON.md), and [seven-fifths two-angle D](HAND_G3_SORTED_D_TWO_ANGLE_ENVELOPE_TO_SEVEN_FIFTHS.md). Consume existing polynomial endpoints **without treating them as full source theorems**. Preserve arbitrary signed TD0 where appropriate.
-3. **Assemble finite original-owner G3/G4 dispatch** for all E core/outer branches, mixed/negative A and E, BT2 and BT3, positive/zero/negative TD, GA2/GA3 and all allowed HG/AB/DE/EH witnesses. Use the normalized source and its permitted owner pairs, and prove each branch reaches a complete original-source contradiction or an actual hard input. The existing `GlobalGA...Source` modules give local premises, not the universal owner classifier.
-4. **Finish G2 in parallel**: four zero-quarter outer, four mixed-quarter, short-word joins, both original binary-word aggregates and the source word-selection theorem. No sampled interval tables or infinite parade of subclasses.
-5. **Join G5/G6 to untouched source, then G7/G8.** Derive `HardInput` from genuine initial witnesses, apply sharp terminal/rigid-anchor loss, recover stationary frames and initial normals, inhabit `SharpSourceEntry`, and only then remove `Candidate.Capture` / `compatibility_source_entry` from the public theorem. Keep the full five-parameter equality classification and least-circle uniqueness.
-
-**Closure discipline:** a local source contradiction requires the *actual* selected weak axes and signed total budgets; a move on a necessary cycle is not a move of an eight-square packing; an endpoint polynomial does not prove every angle; a new `by decide` is an unevaluated goal; hard terminal availability does not establish initial owner feasibility; equality of transported centers is not equality of untouched original anchors/normals.
-
-## 5. Exact continuation procedure
-
-1. Fetch the live [PR branch](https://github.com/vltanh/lean4-squares-in-circles/tree/formalize/eight-uncompiled-draft) first; compare its SHA with the source snapshot above. Read this document, [`TABLE_FREE_FORMALIZATION_PROGRESS.md`](TABLE_FREE_FORMALIZATION_PROGRESS.md) (older detailed G2/G3 checklist), and [G0–G9 acceptance roadmap](TABLEFREE_LEAN_CLOSURE_ROADMAP_2026_10_21.md). Open the **last two EH/TD2 scalar modules** and [`Blocks.lean`](../../../SquaresInCircles/Eight/TableFree/GlobalGANegativeEHTD2Blocks.lean) before writing new source.
-2. Read only the **hand proof for the chosen outstanding branch**, then transcribe its actual comparisons. Build a mathematical proof body before declaring a source result finished; avoid new optimization, mesh certificates or unrelated branches.
-3. Commit/push each coherent file batch with `[skip ci]`. Confirm the remote head, relevant file readback and original hypotheses after each batch; record UTC times and exported theorem names. Do not run Lean, lake, tests or CI in the source-first pass.
-4. When drafting of the remaining branches is complete, connect the exhaustive original G/T dispatch, source witness recovery and `SharpSourceEntry`. Only after this source assembly is in place should an end-only audit, then separately authorized compilation, begin.
-5. Update **this one file**, the first-line pointers in `STATUS.md` / roadmap / live-progress document and the PR overview. Preserve older histories instead of copying stale status prose forward. Do not claim global closure until the G7/G8 exit conditions are literal consequences of the new imports.
-
-## 6. Mathematical references and provenance
-
-- [Unrestricted table-free hand theorem](HAND_UNRESTRICTED_EIGHT_SQUARE_THEOREM_WITHOUT_TABLES.md), [complete original owner entry hand argument](HAND_G5_GLOBAL_PRIMARY_OWNER_ENTRY_COMPLETE.md), [original equality pullback](HAND_G5_GLOBAL_PRIMARY_ENTRY_ORIGINAL_EQUALITY_PULLBACK.md).
-- [Negative EH1 + positive TD2 small-error note](HAND_G3_CORE_E_NEGATIVE_EH1_SMALL_ERROR_EXCLUSION.md), [far-error note](HAND_G3_CORE_E_NEGATIVE_EH1_REMAINING_ERROR_EXCLUSION.md).
-- [Positive BT3, signed TD0](HAND_G3_POSITIVE_BT3_WITH_TD0_AND_NONNEGATIVE_A_E_TOTALS.md), [joint negative A/E BT3](HAND_G3_JOINT_NEGATIVE_A_CORE_E_POSITIVE_BT3_EXCLUSION.md).
-- [Previous source-only handoff (archive)](TABLEFREE_HANDOFF_2026_10_22_NONNEGATIVE_TOTALS.md), [20-Oct archive](HANDOFF_2026_10_20_TABLEFREE_LEAN_SOURCE.md), [commit history](https://github.com/vltanh/lean4-squares-in-circles/pull/10/commits).
-
-**Unambiguous bottom line:** large amounts of source are written and saved; **the unrestricted table-free `SharpSourceEntry` and public dependency swap remain open**, and **no kernel proof has been checked** in this continuation.
+The [full table-free hand theorem](HAND_UNRESTRICTED_EIGHT_SQUARE_THEOREM_WITHOUT_TABLES.md), [global original-owner hand argument](HAND_G5_GLOBAL_PRIMARY_OWNER_ENTRY_COMPLETE.md), and [original equality pullback](HAND_G5_GLOBAL_PRIMARY_ENTRY_ORIGINAL_EQUALITY_PULLBACK.md) remain canonical mathematical references. [Old 21-Oct gate ledger](TABLEFREE_LEAN_CLOSURE_ROADMAP_2026_10_21.md), older snapshots in `STATUS.md`, and archived reports are historical, not current source status.
