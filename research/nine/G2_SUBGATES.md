@@ -184,6 +184,27 @@ x-center differences are <39/40, so the grid stress applies.
 No common orientations or fixed within-row heights are assumed.
 
 **G2.C4.3c — Residual five-square complement: OPEN (sharp equality realizable).**
+**C4.3c.1 two-column decomposition: CLOSED (hand).**
+[TWO_COLUMN_COMPLEMENT_REDUCTION.md](TWO_COLUMN_COMPLEMENT_REDUCTION.md)
+uses the longest horizontal interval-chain ranks to partition
+the five-square complement canonically into two horizontally
+overlapping rank classes. In a common-coordinate-separable
+frame these are **vertical projection-disjoint stacks** of sizes
+**(4,1)** or **(3,2)**. No additional cardinality class exists.
+**C4.3c.2 middle-stack interaction: CLOSED (hand).**
+The middle square of any vertical triple has center height
+\(|y|<21/40\); inner-pair shadow domination forces
+one middle square of the four-horizontal chain to have
+\(|y|>19/40\). This is a necessary geometric constraint, not
+a terminal lower bound.
+**C4.3c.3 whole-branch sharp stress and equality: OPEN.**
+Prove for *every* physical packing in each stack-size class
+that \(q\ge Q=1105/256\), including equality poses;
+extract a perpendicular signed 4+3 certificate or prove
+another sharp terminal inequality. Do NOT claim the whole
+(3,2) class is infeasible, because the exact equality
+construction below is a counterexample.
+
 [TWO_STACK_SHARP_EQUALITY_WITNESS.md](TWO_STACK_SHARP_EQUALITY_WITNESS.md)
 is an exact rational nine-square packing at (q=1105/256)
 with a four-horizontal chain and five-square complement x-chain
@@ -206,17 +227,15 @@ also shows that excluding crossed four-chains before using the
 ninth square is mathematically false.
 Choose a four-projection chain M. The above signed theorem closes
 the branch if the five remaining squares contain a **disjoint
-horizontal triple** in the same frame. The sole residual
-coordinate-separable case is therefore: those five squares have
-horizontal projection-chain length ≤2. By finite poset theory
-(Dilworth/Mirsky), they can be partitioned into at most two
-vertical projection-disjoint chains; one must contain at least
-three squares. This is a *structural restatement*, not a proof
-that such a complement is impossible. The old large-zigzag
-branch is separately excluded, so a successful next argument
-must use actual circle-support and square projection widths
-to rule out the remaining coherent two-column layouts or find
-a new sparse terminal stress.
+horizontal triple** in the same frame. The sole residual coordinate-separable case has five-square
+complement horizontal chain length ≤2. Its exact **two-stack
+decomposition and forced middle-height displacement have now
+been proved** (C4.3c.1–2). Its **sharp** whole-branch inequality
+is still open (C4.3c.3): use actual circle-support and projection
+widths to derive a perpendicular signed 4+3 stress or another
+terminal obstruction. An unconditional exclusion of the
+entire two-column class at q≤Q is false, since it contains
+record-radius equality packings.
 
 **Proof-strategy falsification (C4.3c):**
 [CENTER_RELAXATION_COUNTEREXAMPLE.md](CENTER_RELAXATION_COUNTEREXAMPLE.md)
@@ -234,6 +253,9 @@ vertical stacks. A complete exclusion or sharp alternative is
 still required.
 
 **G2.C4.4 — Four-chain completion: OPEN.**
+The only missing common-frame branch is now C4.3c.3:
+the whole physical two-stack complement theorem, not its
+combinatorial reduction nor the zigzag branch.
 From a four-square chain plus five remaining squares
 (all with arbitrary orientations but coordinate-separated
 along one common frame), prove *one* of:
