@@ -161,20 +161,30 @@ In the frame of square \(j\), direct substitution of (1) gives
 
 \[
  p_j=C_j+\xi u_j+\tfrac12v_j,\qquad
- \xi=\sin2\delta-\tfrac12.
+ \xi=\tfrac12-\cos2\delta.
  \tag{7}
 \]
 
 For completeness, the center difference in that frame has coordinates
-\(2sd,2sk\). Adding the corner offset in (6) gives
+\(-2sd,2sk\). Independently, at \(j=0\) the global center difference is
+\(\rho(-2s^2,2sc)\), so its \(u_0\) coordinate is
 
 \[
- 2sd+\tfrac12(\sin2\delta-\cos2\delta)
-   =\sin2\delta-\tfrac12
+ 2\rho s(-s\cos\psi+c\sin\psi)
+ =2\rho s\sin(\psi-\delta)
+ =2\rho s\sin t=-2sd.
+\]
+
+Rotational symmetry gives the same coordinates for every \(j\).
+Adding the corner offset in (6) gives
+
+\[
+ -2sd+\tfrac12(\sin2\delta-\cos2\delta)
+   =\tfrac12-\cos2\delta
 \]
 
 in the \(u_j\) direction, and \(1/2\) in the \(v_j\) direction.
-Because \(\pi/8<\delta<\pi/6\), we have \(0<\xi<1/2\).
+Because \(0<2\delta<\pi/3\), we have \(-1/2<\xi<0\).
 Hence \(p_j\) is a corner of \(S_{j+1}\) in the relative interior
 of a side of \(S_j\). It is the unique contact point: the support
 minimum of \(S_{j+1}\) in direction \(n_j\) is unique, since
