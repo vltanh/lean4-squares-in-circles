@@ -186,3 +186,19 @@ Commit timestamps and hashes are recorded after the commit exists.
   tie, flow sign, and the compactness argument; both checkers passed.
 - The local neighborhood is existential. Global capture and all distant
   classes remain open; no stationarity-to-global inference is made.
+
+## Unrestricted five-case radial extraction
+
+- Previous local sharpness commit: `1c24400711421ca053331360b56c02b57cf18fae`.
+- G2.4.a H: every square whose center norm is at least
+  (sqrt(7)+1-sqrt(2))/2 occupies one connected auxiliary-circle arc of
+  angular length at least 2 asin(1/(2sqrt(2))). Nine such arcs cannot fit.
+- An elementary point-packing bound puts at most seven centers in the core
+  disk. Exactly one of the five count rows (3,8) through (7,4) applies.
+- The center ray lies inside each ring arc, proving a genuine cyclic order.
+  Exact near/far side formulas retain all boundary cases. Area proves every
+  core square strictly misses the containing circle.
+- Two independent reviews checked arc derivatives, all endpoint branches,
+  count bounds, cyclic ordering, and the closed-cover convention.
+- All five sharp radial terminal problems remain open. No core-to-ring pair,
+  ring nonneighbor, or unstressed square is removed.

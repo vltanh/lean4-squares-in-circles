@@ -29,7 +29,10 @@ checks both results. Global optimality remains open.
 
 The [finite separator cover](FINITE_SEPARATOR_COVER.md) proves an exhaustive
 8^55-cell polynomial encoding, compact attainment and a conditional stress
-identity. A useful reduced terminal classification remains open.
+identity. The [unrestricted radial extraction](CORE_RING_FIVE_CASES.md)
+now gives five core/ring count cases, with a genuine cyclic ring and all
+core squares strictly inside the disk. Sharp bounds for these cases remain
+open.
 
 The **entire common-coordinate branch is excluded** at q<=49013/10000:
 [shrinking](COORDINATE_SHRINKING_REDUCTION.md) reduces it to axis-aligned

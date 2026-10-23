@@ -67,6 +67,26 @@ The counts are independently reproduced and emitted by
 `classify_rank_masks.py`. These are numbers of necessary masks after the
 listed exclusions, not numbers of realizable geometric or symmetry classes.
 
+## Exhaustive oblique radial classes
+
+[The radial extraction](CORE_RING_FIVE_CASES.md) proves the following cover.
+Core means center norm below (sqrt(7)+1-sqrt(2))/2; ring is its complement.
+For compactness use the overlapping closed threshold cover in that note.
+Every core square has no circle contact. Ring arcs give a cyclic order.
+Every row retains all eleven centers and frames and all 55 pair constraints.
+
+| ID | Core | Ring | Sharp terminal status | Equality status |
+| --- | ---: | ---: | --- | --- |
+| O-3 | 3 | 8 | OPEN | Known candidate occurs here; global exhaustion open |
+| O-4 | 4 | 7 | OPEN | OPEN |
+| O-5 | 5 | 6 | OPEN | OPEN |
+| O-6 | 6 | 5 | OPEN | OPEN |
+| O-7 | 7 | 4 | OPEN | OPEN |
+
+An actual packing determines one row, a ring cyclic order, and physical
+separator data. This is an exhaustive coarse classification. Each row still
+contains continuous geometric domains requiring sharp certificates.
+
 ## Closed candidate terminals
 
 - **F:** Fix the exact candidate frames and the fourteen selected separators.
@@ -93,6 +113,6 @@ packing in branch O; the complement of L still requires classification.
    then recover all equality cases on original centers. The known slider
    family is not yet globally exhaustive.
 
-The generic stress identity is available. G2.4, the global reduced terminal
-inventory, remains open. Completing C does not provide the missing O
+The generic stress identity is available. G2.4.a radial extraction is closed; the sharp reduced terminal
+inventory G2.4.b–c remains open. Completing C does not provide the missing O
 classification; the old 1105 masks are no longer an outstanding obligation.

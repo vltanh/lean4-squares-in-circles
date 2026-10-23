@@ -48,7 +48,8 @@ allowed without a separate theorem.
 | G1.4 | Candidate target q_c named; negative-control inventory | PARTIAL |
 | G1.4.N1 | Exact family has no common separating coordinate frame | H/A |
 | G2.1–G2.3 | Exhaustive raw finite owner/sign cover, degeneracies, normalization | H |
-| G2.4 | Useful geometric reduction and exhaustive small terminal inventory | OPEN |
+| G2.4.a | Unrestricted radial extraction: five core/ring counts and cyclic ring | H |
+| G2.4.b–c | Reduced sharp terminal inventory inside these classes | OPEN |
 | G3.C1–C2 | Necessary common-coordinate rank classification | H/C |
 | G3.C3–C5 | Entire common-coordinate class excluded at q<=U | H/A; 6 cases, 32 nodes, 19 leaves |
 | G3.O | Unrestricted oblique/core-plus-completion classification | OPEN |
@@ -162,7 +163,14 @@ normalizations must receive their own proof or negative control.
 Sections 1–4, gives 8^55 tagged closed quadratic cells. Sorting orientations
 in a closed first-quadrant chart removes absolute-value sign ambiguity;
 multiple valid pair owners stay in overlapping cells. This counts syntactic
-cells, not realizable geometric classes. G2.4 remains OPEN.
+cells, not realizable geometric classes.
+
+**G2.4.a closed:** [the core/ring theorem](CORE_RING_FIVE_CASES.md) gives
+five exhaustive count rows: 3 through 7 core squares and 8 through 4 ring
+squares. Auxiliary-circle arcs prove a genuine cyclic ring; all core
+squares are strictly circle-unloaded. The proof retains every orientation
+and all 55 physical pairs, including ring nonneighbors. These are geometric
+classes, not yet sharp terminals: G2.4.b–c remain open.
 
 - **G2.1.a:** one of eight signed own axes per unordered pair gives a raw
   finite cover; prove both directions and retain all 55 pairs.
