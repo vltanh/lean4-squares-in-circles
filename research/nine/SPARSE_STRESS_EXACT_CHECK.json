@@ -1,0 +1,31 @@
+{
+  "source_commit": "228f9fdeb5cb43cdf63ac96759c1ae1e03e8f406",
+  "source_git_blob_sha": "4a10b9580fdbfc533eea3bf7a164379ba77894bb",
+  "source_sha256": "71fb7f0f6a7a2032f95972b03e26f7ca3327fdfa61bbe3a045bd6e17eca0fde0",
+  "source_bytes": 7244,
+  "python_version": "3.13.5",
+  "executed_at_utc": "2026-10-23T04:55:51.905907+00:00",
+  "exit_code": 0,
+  "checks": {
+    "scope": "one exact packing and its fixed-orientation stress; not unrestricted optimality",
+    "q": "1105/256",
+    "unit_frames_checked": 9,
+    "pairwise_SAT_checks": 36,
+    "corner_checks": 36,
+    "free_square_circle_slacks": ["42573/80800", "22173/80800"],
+    "upper_pair_oblique_gap": "79/1010",
+    "positive_circle_atoms": 4,
+    "positive_contact_edges": 7,
+    "total_positive_fixed_frame_atoms": 11,
+    "lambda_sum": "1",
+    "force_balance_at_all_nine_nodes": true,
+    "boundary_barycenter": ["0", "0"],
+    "dual_value": "1105/256",
+    "angular_separator_vertex_atoms": 14,
+    "angular_plus_circle_atoms": 18,
+    "angular_stationarity_at_all_nine_nodes": true,
+    "four_corner_uncrossing_identity": true,
+    "all_checks_passed": true
+  },
+  "verification_boundary": "Exact arithmetic regression for the specified witness and uncrossing identity only. Not universal optimality, not a Lean or independent manuscript audit."
+}
