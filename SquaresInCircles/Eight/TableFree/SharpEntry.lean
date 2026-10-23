@@ -5,27 +5,21 @@ public import SquaresInCircles.Eight.TableFree.SourceEquality
 public import SquaresInCircles.Eight.TableFree.StationarySourceOwners
 
 /-!
-# Exact replacement obligation for table-free sharp source entry
+# Original-source sharp entry: exact table-free interface
 
-Uncompiled interface draft.
+This module defines `SharpSourceEntry`, which refers to the *initially*
+retained physical normals of the actual original source and to the
+actual squared radius, not the hard witness of a moved G or T endpoint.
 
-The completed hand proof supplies the contract below by the global primary
-entry matrix and the source-aware equality pullback. SourceEquality contains
-the exhaustive source cases, and StationarySourceOwners applies the two
-strict mixed-witness exclusions to actual boundary squares. The same-radius
-endpoint constructions and the global positive/negative terminal exclusions
-have not yet been transcribed in this module.
+The unconditional proof body has now been drafted in
+`GlobalGAHighSourceComplete.table_free_sharp_source_entry`.
+`GeometricModel.SharpAssembly` imports that theorem rather than the
+generated-capture compatibility implementation. This interface module
+keeps the conditional original-radius dual and therefore does not
+import the downstream source construction (which would cause a cycle).
 
-This file does not postulate their truth: there is no axiom, admitted theorem,
-or instance of the contract here. SharpAssembly.compatibility_source_entry is
-a concrete implementation from the existing capture theorem and explicitly
-inherits its generated dependencies. Replacing that implementation requires
-the actual same-radius G/T transports, strict anchor losses, hard-owner
-equality and original-source witness comparisons of the hand proof.
-
-In particular, feasibility of newly selected hard owners on a moved endpoint
-is not sufficient for this contract. The equalities below concern the
-initially retained signed normals on the unchanged original records.
+No axiom or admission supplies `SharpSourceEntry` in this module.
+The full source-to-public proof remains uncompiled and unverified.
 -/
 
 @[expose] public section
