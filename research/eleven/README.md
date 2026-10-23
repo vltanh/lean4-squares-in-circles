@@ -36,6 +36,10 @@ families, nine open coordinate-profile families, and the unrestricted oblique
 frontier. The [exact oblique witness](NO_COMMON_SEPARATING_FRAME.md) proves
 that a common coordinate frame cannot cover the constructed family.
 
+[Verification and artifact manifest](VERIFICATION.md) records replay commands,
+independent reviews and the boundary between these results and future Lean
+verification.
+
 The intended result is an exact least disk radius together with all attaining
 packings under the repository's rotation-and-relabeling congruence. Reflected
 families must be included explicitly when they are not rotation-congruent.

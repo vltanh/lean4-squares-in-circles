@@ -127,3 +127,19 @@ Commit timestamps and hashes are recorded after the commit exists.
 - Current-roadmap review found and clarified overlapping method/scope tags;
   no sharpness claim, stale current count, broken local link, or mismatched
   contact-review artifact hash was found.
+- Commit: `1b182e43677068f76c7900ad0ca74a7640215856`,
+  2026-10-23 12:54:20 UTC.
+
+## Research verification checkpoint
+
+- Reconciled the roadmap, exact candidate, case ledger and proof scopes.
+  Final scope tags distinguish hand arguments, conditional results and exact
+  arithmetic certificates; none implies kernel verification.
+- Added `VERIFICATION.md` with the four successful exact replay commands
+  and remaining proof boundary, plus `MANIFEST.json` binding 14 critical
+  artifacts. All independent contact-review hashes and local links match.
+- All 1105 residual coordinate masks and the oblique sharp-bound branch
+  remain open. This is a partial research checkpoint, not G7 full closure.
+- The commit carrying this entry is the verification checkpoint; its
+  authoritative SHA and UTC timestamp are Git metadata, avoiding a circular
+  self-hash entry. Future work should append them with its next checkpoint.

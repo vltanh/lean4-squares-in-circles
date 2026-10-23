@@ -1,0 +1,19 @@
+{
+  "scope": "Research artifacts; hashes bind exact certificate/review inputs, not a kernel-verification claim.",
+  "sha256": {
+    "EXACT_UPPER_BOUND.md": "7ff19ea21fd022ad91d49ecbc95cc27b071c694cdc3d036c1fe691a0be00582f",
+    "RATIONAL_WITNESS.json": "c9084cc20cc2d9d68afa6e209b9a0628c3c06b794474053c5aba0533fa7c0eb2",
+    "check_rational_witness.py": "567abe6694bc44f50d10db7c34c8c6828478506a417e7f931686ea9d2d61dbfa",
+    "FINITE_SEPARATOR_COVER.md": "3f8b7ac256b3fd619745e6d2439dbec019097de3685fb7b3838d660c1c009e1a",
+    "COORDINATE_RANK_CASES.md": "4fb96b6d8744c3c5cc33cf2e20762f86cc8d0c33f1cc0306517e1eebb54d825f",
+    "RANK_MASKS.json": "7459c7065136a4762b8fc081544be30b6b4dbd0165cfbbf993179a055d8b97e0",
+    "classify_rank_masks.py": "4423ef3c78183d4b980ceade22e895a553e6bd7f4f242a878b82edc9337c28a1",
+    "CANDIDATE_CONTACT_SYSTEM.md": "ff7c0f52ce0fb256d183a52c0f5ffcb33eb6fbad68686c03060883050a39a330",
+    "contact_family.py": "481ab25ecce404d45630dd43cdf89202c1e20bff803290391590c2926883ca31",
+    "isolate_contact_root.py": "a6158c6040d1dc07074a7a16e3110a1a8e470c9e180d3452fec4260585bb7da4",
+    "CONTACT_ROOT_REVIEW.md": "f7a9066ab61813afbdc40940fd4a3aeb122eb77613c5b226e2a90fcfe199e99e",
+    "NO_COMMON_SEPARATING_FRAME.md": "5a2248037c45555fb716efc19f0cab27372a02e14ec781a9bd01b7faf6d269de",
+    "check_oblique_witness.py": "1688009b14ef5df33a2ea1ee687f1948405421e3edaf92c25fb95ff391fed52f",
+    "TERMINAL_CASES.md": "d6f4759ab5affb87c09497c45d7a1d7ae003dd30459daf4ac89152fefd7a3548"
+  }
+}
