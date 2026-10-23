@@ -197,7 +197,29 @@ The middle square of any vertical triple has center height
 one middle square of the four-horizontal chain to have
 \(|y|>19/40\). This is a necessary geometric constraint, not
 a terminal lower bound.
-**C4.3c.3 whole-branch sharp stress and equality: OPEN.**
+**C4.3c.3a — (4,1) branch CLOSED by hand.**
+[FOUR_PLUS_FOUR_PLUS_ONE_EXCLUSION.md](FOUR_PLUS_FOUR_PLUS_ONE_EXCLUSION.md)
+proves a whole-class impossibility for **disjoint horizontal
+four- and vertical four-chains plus a ninth square**, under
+the exact common-coordinate-separation hypothesis at \(q\le Q\).
+The two outer chains squeeze their four inner centers into
+\((-21/40,21/40)^2\); necessary \(\ell^\infty\) center separation
+forces those four inner centers into *all four* quadrants
+with each coordinate absolute value in \((19/40,21/40)\).
+The outer four restrict every ninth center to
+\((-7/5,7/5)^2\), which is already covered by the four inner
+centers' open \(\ell^\infty\)-unit neighborhoods. Contradiction.
+This **uses all nine squares**: eight perpendicular crossed
+chains really do fit at smaller squared radius.
+
+**C4.3c.3b — (3,2) sharp whole-branch stress: OPEN.**
+A full equality record pose exists in this branch; prove a
+sharp frame-switch to signed vertical 4+3 chains or an
+alternative exact terminal inequality. It is false to
+exclude all (3,2) configurations at \(q\le Q\).
+
+**C4.3c.3 whole-branch sharp stress and equality: PARTIAL
+((4,1) closed; (3,2) open).**
 Prove for *every* physical packing in each stack-size class
 that \(q\ge Q=1105/256\), including equality poses;
 extract a perpendicular signed 4+3 certificate or prove
@@ -383,9 +405,9 @@ four-anchor-based parameter domain may absorb it.
 
 ## 7. Strategy: avoid minor-boundary rabbit holes
 
-The **two central research tasks** are now C4.3c (**sharp**
-five-square two-column complement, not exclusion at equality)
-and O2/O3 (unrestricted oblique separators).
+The **two central research tasks** are now the **(3,2) branch
+of C4.3c** (all (4,1) packings are now excluded) and O2/O3
+(unrestricted oblique separators).
 The entire coordinate-separable large-zigzag branch is closed;
 do not reopen it via tiny angle or radius modifications.
 Do not invest effort in strengthening the constants in
