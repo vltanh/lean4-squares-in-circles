@@ -15,6 +15,10 @@ of q11 <= 49013/10000. Its rational witness certifies all 44 vertices and all
 55 pair separators; run `python3 check_rational_witness.py` in this directory.
 This bound is close to the published layout but is not asserted to be sharp.
 
+The [finite separator cover](FINITE_SEPARATOR_COVER.md) proves an exhaustive
+8^55-cell polynomial encoding, compact attainment and a conditional stress
+identity. A useful reduced terminal classification remains open.
+
 The intended result is an exact least disk radius together with all attaining
 packings under the repository's rotation-and-relabeling congruence. Reflected
 families must be included explicitly when they are not rotation-congruent.

@@ -33,3 +33,23 @@ Commit timestamps and hashes are recorded after the commit exists.
 - Evidence: `EXACT_UPPER_BOUND.md`, `RATIONAL_WITNESS.json`, and
   `check_rational_witness.py`. This certifies one packing, not an optimality
   theorem, exact published contact system, or equality classification.
+- Commit: `6ed9b0b2dac83413c3f54bb201fa1e59acf78105`,
+  2026-10-23 12:38:04 UTC.
+
+## Exact physical cover and compactness checkpoint
+
+- G0.2–G0.4 H: four-corner containment equivalence, own-axis nonoverlap
+  equivalence, orientation-sorted normalization, center bound, and compact
+  minimizer existence.
+- G2.1–G2.3 H: all 55 pair choices, eight signed owner axes per pair,
+  and the exact 8^55 closed quadratic cell cover. Closed charts and overlap
+  retain perpendicular/parallel frames, touching boundaries and owner ties.
+- G4.1 H (generic): a completed-square stress identity conditional on
+  supplied nonnegative weights; zero-loaded squares and equality residues
+  are explicit. No sharp n=11 stress has been found.
+- Review: separate mathematical audit checked the normalized support
+  threshold, Minkowski-sum converse, compactness and dual signs; no
+  substantive error found. No assumption of a common separating frame,
+  a central square, or a boundary cycle enters the cover.
+- Evidence: `FINITE_SEPARATOR_COVER.md`. The useful reduced cover G2.4,
+  sharp terminal inequalities, and global equality remain open.

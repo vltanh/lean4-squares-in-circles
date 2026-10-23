@@ -32,15 +32,16 @@ allowed without a separate theorem.
 | Gate | Output | Status |
 | --- | --- | --- |
 | G0.1 | Pinned repository semantics and n=8 workflow audit | H |
-| G0.2–G0.4 | Exact physical encoding, compact search domain, minimizer | OPEN |
+| G0.2–G0.4 | Exact physical encoding, compact search domain, minimizer | H |
 | G1.1 | Baseline q=5 and exact rational upper bound U=49013/10000 | H; exact arithmetic independently replayed |
 | G1.2.a | Pinned published candidate and its evidentiary scope | H |
 | G1.2.b–G1.4 | Exact record reconstruction and target isolation | OPEN |
-| G2.1–G2.3 | Exhaustive raw finite owner/sign cover, degeneracies, normalization | OPEN |
+| G2.1–G2.3 | Exhaustive raw finite owner/sign cover, degeneracies, normalization | H |
 | G2.4 | Useful geometric reduction and exhaustive small terminal inventory | OPEN |
 | G3.C | Conditional common-coordinate-separable rank classification | OPEN |
 | G3.O | Unrestricted oblique/core-plus-completion classification | OPEN |
-| G4 | Sharp whole-domain terminal certificates | BLOCKED |
+| G4.1 | Generic weak stress identity with equality consequences | H; conditional on supplied weights |
+| G4.2–G4.5 | Sharp whole-domain terminal certificates and full assembly | BLOCKED |
 | G5 | Universal lower bound and attainment | BLOCKED |
 | G6 | Complete necessary-and-sufficient equality family | BLOCKED |
 | G7 | Independent full hand audit and proof handoff | BLOCKED |
@@ -75,6 +76,11 @@ replace terminal enumeration, but it must cover all raw signatures and all
 physical completions, and the dependency map must record that replacement.
 
 ## G0 Physical model and global existence
+
+**G0.2–G0.4 closed:** [finite separator cover](FINITE_SEPARATOR_COVER.md),
+Sections 1–5, proves exact physical equivalence, center bounds, closed
+normalization and compact attainment. The exact upper bound supplies
+nonemptiness. No previous n=9 theorem is used.
 
 - **G0.1 H:** pin the definitions and study n=8's actual proof, not only its
   PR summary. Evidence: [source audit](N8_METHOD_AND_SOURCES.md).
@@ -117,6 +123,12 @@ physical completions, and the dependency map must record that replacement.
 - **Exit:** exact construction at Q. Global optimality remains G5.
 
 ## G2 Exhaustive finite cases
+
+**G2.1–G2.3 closed:** [finite separator cover](FINITE_SEPARATOR_COVER.md),
+Sections 1–4, gives 8^55 tagged closed quadratic cells. Sorting orientations
+in a closed first-quadrant chart removes absolute-value sign ambiguity;
+multiple valid pair owners stay in overlapping cells. This counts syntactic
+cells, not realizable geometric classes. G2.4 remains OPEN.
 
 - **G2.1.a:** one of eight signed own axes per unordered pair gives a raw
   finite cover; prove both directions and retain all 55 pairs.
@@ -174,6 +186,12 @@ oriented. Prove separately whether such a frame exists in a proposed class.
   retaining all eleven squares or a proved completion constraint.
 
 ## G4 Whole-domain terminal certificates
+
+**G4.1 generic identity closed:** Section 6 of
+[the separator note](FINITE_SEPARATOR_COVER.md) gives the exact weak bound
+for any supplied nonnegative weights, including the zero-circle-weight
+condition and equality consequences. No weights giving the sharp n=11
+bound uniformly have been supplied; all sharp terminal obligations remain.
 
 For each leaf T, prove Packing + T implies q>=Q, or show it impossible for
 q<=Q. Fix frames only inside a conditional argument; then prove the bound
