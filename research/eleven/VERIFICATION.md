@@ -16,9 +16,11 @@ python3 check_oblique_witness.py
 python3 classify_rank_masks.py --check RANK_MASKS.json
 python3 axis_exclusion.py --check AXIS_EXCLUSION.json
 python3 replay_axis_exclusion.py AXIS_EXCLUSION.json
+python3 check_fixed_orientation_stress.py
+python3 check_local_angular_stress.py
 ```
 
-All six commands passed on 23 October 2026. They have different scopes:
+All eight commands passed on 23 October 2026. They have different scopes:
 
 | Command | Exact checked output | Scope limit |
 | --- | --- | --- |
@@ -40,12 +42,22 @@ The geometric cover and arithmetic soundness are proved in
 `AXIS_ALIGNED_EXCLUSION.md`; shrinking handles independently rotated squares
 under the common-frame hypothesis.
 
+The two stress commands certify invertibility of the 24 by 24 active
+Jacobian, positivity of all 24 weights, all nine strict angular flow margins,
+and all fifteen alternative-axis failures for the oblique contacts. Their
+written square-completion and compactness arguments prove conditional global
+sharpness and unrestricted local sharpness, respectively.
+
 ## Independent review and artifact binding
 
 `CONTACT_ROOT_REVIEW.md` records the independent contact-family audit and
 hashes of its four inputs. The reviewer checked the interval operations,
 derivative domains, Banach hypotheses, all exact contacts and the 39 inactive
 pair constraints with a distinct vertex-projection calculation.
+
+`CANDIDATE_STRESS_REVIEW.md` audits the partial derivatives, interval Gaussian
+elimination, equality reconstruction, physical owner-switch derivative, exact
+flow identities, and the transverse compactness proof of local optimality.
 
 The simpler rational witness was independently checked by reconstructing all
 vertices and projecting them, with all printed coordinates compared to JSON.
@@ -63,9 +75,9 @@ as history or named reduction stages.
 ## Remaining verification boundary
 
 This is a partial research handoff. G2.4, unrestricted oblique extraction, all required sharp
-terminal inequalities and complete equality are still open. The local root
-construction does not establish even local optimality among unrestricted
-perturbations. No certificate here proves the global n=11 lower bound.
+terminal inequalities and complete equality are still open. The candidate family is now proved locally optimal under unrestricted
+perturbations, with complete local equality. No certificate here proves the
+global n=11 lower bound.
 
 G7's **full** hand-proof audit remains blocked by those mathematical gaps.
 The reviews above close only their stated artifact scopes. Future Lean

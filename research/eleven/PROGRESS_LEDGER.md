@@ -167,3 +167,22 @@ Commit timestamps and hashes are recorded after the commit exists.
 - The stronger guess q>=5 for every axis-aligned packing is false; a
   separate exact feasible witness has q<4.91. It does not conflict with
   exclusion at U=4.9013. No such false global claim enters this proof.
+
+## Candidate sharp stress and unrestricted local equality
+
+- Previous common-coordinate closure commit: `fa4f0abbf0bdc9deb373ea45179f7ec33c93c76e`.
+- G4.F H/A/C: exact interval Gaussian elimination proves the 24 by 24
+  active-gradient matrix invertible and all 24 dual weights greater than
+  1/100. A completed-square identity proves q>=q_c for arbitrary centers
+  with the fixed candidate frames and fourteen specified separators.
+- Equality recovers the eight loaded centers, the other two rigid centers,
+  and the exact slider interval using physical nonoverlap.
+- G4.L H/A: all nine parallel-contact angular flow margins exceed 1/100;
+  fifteen alternative oblique axes fail strictly. The physical directional
+  cone permits only sliding and common rotation at nonpositive radius cost.
+  Removing these exact freedoms and taking a compactness limit proves an
+  actual neighborhood theorem, including slider endpoints and local equality.
+- Independent review checked every derivative, exact linear algebra, owner
+  tie, flow sign, and the compactness argument; both checkers passed.
+- The local neighborhood is existential. Global capture and all distant
+  classes remain open; no stationarity-to-global inference is made.

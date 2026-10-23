@@ -67,6 +67,19 @@ The counts are independently reproduced and emitted by
 `classify_rank_masks.py`. These are numbers of necessary masks after the
 listed exclusions, not numbers of realizable geometric or symmetry classes.
 
+## Closed candidate terminals
+
+- **F:** Fix the exact candidate frames and the fourteen selected separators.
+  Arbitrary centers in this class satisfy q>=q_c by
+  [positive stress](FIXED_ORIENTATION_STRESS.md); physical equality is exactly
+  the known sliding family.
+- **L:** In some neighborhood of the whole candidate family, with arbitrary
+  independent orientations and physical owner switches,
+  [local sharpness and equality](LOCAL_OPTIMALITY.md) hold.
+
+These are proved terminal theorems. Their hypotheses are not derived for every
+packing in branch O; the complement of L still requires classification.
+
 ## Next proof obligations in order
 
 1. **O geometric extraction.** Derive a finite realizable owner/contact

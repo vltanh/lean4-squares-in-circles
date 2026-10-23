@@ -53,7 +53,9 @@ allowed without a separate theorem.
 | G3.C3–C5 | Entire common-coordinate class excluded at q<=U | H/A; 6 cases, 32 nodes, 19 leaves |
 | G3.O | Unrestricted oblique/core-plus-completion classification | OPEN |
 | G4.1 | Generic weak stress identity with equality consequences | H/C; supplied weights |
-| G4.2–G4.5 | Sharp whole-domain terminal certificates and full assembly | BLOCKED |
+| G4.F | Fixed candidate frames plus fourteen separators: sharp bound and equality | H/A/C |
+| G4.L | Unrestricted local sharpness and complete local equality | H/A |
+| G4.2–G4.5 | Remaining whole-domain certificates and global assembly | BLOCKED |
 | G5 | Universal lower bound and attainment | BLOCKED |
 | G6 | Complete necessary-and-sufficient equality family | BLOCKED |
 | G7 | Independent full hand audit and proof handoff | BLOCKED |
@@ -118,8 +120,8 @@ fourteen pair equalities, two slider inequalities, and exact interval bounds
 for the remaining 34 vertices and 39 pairs prove full packing feasibility.
 [Independent review](CONTACT_ROOT_REVIEW.md) checks the domains, derivative
 enclosures, Banach argument, contact algebra and all residual pairs. This
-does not prove local or global optimality, identify every realization of the
-contact graph, or establish that every optimal packing has this form.
+does not by itself prove optimality. The later G4.L theorem proves local
+optimality; global optimality and global equality remain open.
 
 **G1.4 target:** use Q=q_c as the candidate sharp target, with q_c in
 4.901206412408144+[-10^-9,10^-9]. Global sharpness is explicitly G5.
@@ -234,8 +236,13 @@ oriented. Prove separately whether such a frame exists in a proposed class.
 **G4.1 generic identity closed:** Section 6 of
 [the separator note](FINITE_SEPARATOR_COVER.md) gives the exact weak bound
 for any supplied nonnegative weights, including the zero-circle-weight
-condition and equality consequences. No weights giving the sharp n=11
-bound uniformly have been supplied; all sharp terminal obligations remain.
+condition and equality consequences. The [candidate stress](FIXED_ORIENTATION_STRESS.md) now supplies positive
+weights giving the sharp bound for the fixed candidate frames and fourteen
+specified separators, including full equality reconstruction. The
+[local theorem](LOCAL_OPTIMALITY.md) retains both parallel-contact owners
+and proves unrestricted local sharpness and equality. Both have an
+[independent audit](CANDIDATE_STRESS_REVIEW.md). They close G4.F and G4.L.
+Global capture or certificates for every distant class remain open.
 
 For each leaf T, prove Packing + T implies q>=Q, or show it impossible for
 q<=Q. Fix frames only inside a conditional argument; then prove the bound

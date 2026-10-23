@@ -20,7 +20,12 @@ now gives q11<=q_c, where q_c is a locally isolated root near
 4.901206412408145 (radius about 2.2138668461). It includes a nonempty sliding
 interval. Run `python3 isolate_contact_root.py` to replay its rational interval
 certificate; [independent review](CONTACT_ROOT_REVIEW.md) records its scope.
-Existence and feasibility are proved; optimality remains open.
+Existence and feasibility are proved. The [positive stress](FIXED_ORIENTATION_STRESS.md)
+proves sharpness for the fixed candidate frames and fourteen specified
+separators. The [local theorem](LOCAL_OPTIMALITY.md) proves unrestricted
+local optimality and complete local equality, allowing every square to
+rotate independently. [Independent review](CANDIDATE_STRESS_REVIEW.md)
+checks both results. Global optimality remains open.
 
 The [finite separator cover](FINITE_SEPARATOR_COVER.md) proves an exhaustive
 8^55-cell polynomial encoding, compact attainment and a conditional stress
