@@ -5,7 +5,8 @@ Research checkpoint: 2026-10-23 (UTC), based on main commit
 
 **The sharp radius and complete equality family are proved by hand for the
 entire common-coordinate-separated class, including independently rotated
-squares. Unrestricted optimality and equality classification remain OPEN.**
+squares, and for unrestricted packings with exactly two squares meeting the
+central open disk of radius `1/2`. The remaining unrestricted cases are OPEN.**
 The radius is `R* = 3/√2`, with squared radius `Q = 9/2`. Common-coordinate
 separation means that one fixed pair of perpendicular directions separates
 every square pair by disjoint projection interiors along at least one of
@@ -30,6 +31,7 @@ the known bound, not a lower-bound proof.
 | Three squares in a sharp cap force alignment and boundary anchors | [Three-square cap](THREE_SQUARE_CAP.md) | Arbitrary orientations, all wholly beyond a line at distance `1/2` from the disk centre |
 | A square in an outward quadrant forces the sharp corner bound | [Corner rigidity](CORNER_RIGIDITY.md) | Arbitrary orientation |
 | At least two squares enter the central disk of radius `1/2` | [Exterior-arc bound](CENTRAL_DISK_REDUCTION.md) | Arbitrary orientations; squared containing radius at most `9/2` |
+| Eight exterior squares force four anchors; the exactly-two-central case is closed | [Sharp exterior ring](SHARP_EXTERIOR_RING.md) | Arbitrary orientations; no common separating frame assumed |
 | Sharp lower bound from four anchors | [Four-anchor bound](FOUR_ANCHOR_BOUND.md) | Four common-frame squares with the stated coordinate gaps |
 | Exact finite formulation and existence of a minimizer | [Unrestricted model](UNRESTRICTED_MODEL.md) | Arbitrary individual orientations; no sharp lower bound |
 
@@ -53,8 +55,8 @@ compiled or kernel-checked.**
 | G0: source and model | Hand argument complete | Use unrestricted `Packing`; preserve boundary contact |
 | G1: attaining construction | Hand proof and exact arithmetic check complete | `∃ S : Fin 10 → UnitSquare, Packing S (0,0) (3/√2)` |
 | G2: common-coordinate theorem | CLOSED by hand, including equality | All-parallel chain argument, then disk-preserving rectification |
-| G3: unrestricted lower bound | OPEN | Handle packings with no common orthogonal separating frame |
-| G4: unrestricted equality necessity | OPEN | Extract the four anchors, or classify any other equality structures |
+| G3: unrestricted lower bound | OPEN; exactly-two-central case closed | Exclude packings below `9/2` with at least three squares meeting `B(0,1/2)` |
+| G4: unrestricted equality necessity | OPEN; exactly-two-central case closed | Exclude or classify equality structures with at least three central squares |
 | G5: Lean formalization | OPEN | Elaborate proofs, audit axioms, and verify statements against `Packing` |
 | G6: public integration | OPEN | Extend the registry and public theorem range only after verification |
 
@@ -69,11 +71,19 @@ in a hypothetical packing with `q<9/2`, every central open strip of width one
 meets at least six squares, and every square meets the union of the two such
 perpendicular strips. These conditions have not been shown contradictory.
 Finding a sharp cap triple in some frame would close the lower bound, but
-no universal cap-extraction theorem is claimed. The exterior-arc bound adds
-another necessary condition: at least two squares must meet the open central
-disk of radius `1/2`. Its proof assigns an explicit minimum angular measure
-on the circle of radius `sqrt(2)` to each square avoiding that disk. This
-does not yet classify or exclude the possible central configurations.
+no universal cap-extraction theorem is claimed.
+
+The sharp exterior-ring theorem uses the circle of radius
+`sqrt(1+1/sqrt(2))`: every square avoiding `B(0,1/2)` occupies an arc of angle
+at least `pi/4`. Eight such squares must alternate two equality types and
+therefore supply the four anchors. This proves that every hypothetical
+ten-square packing below `9/2` has **at least three central squares**. It also
+closes the complete equality classification when exactly two are central.
+
+A [rational six-square example](SIX_CENTRAL_SQUARES.md) rules out the shortcut
+that at most four or five squares can meet the small disk. It is not a
+ten-square packing. The remaining argument must use the interaction between
+central and exterior squares; a small central count alone is insufficient.
 
 Even the established equality family can have five distinct x-coordinates;
 the all-parallel proof handles those configurations directly. No unproved
@@ -93,14 +103,17 @@ From the repository root, with Python 3 and no external packages:
 
 ```sh
 python3 research/ten/check_construction.py --self-test
+python3 research/ten/check_core_obstruction.py
 python3 -B research/ten/plot_construction.py
 ```
 
 The first command checks all 40 vertices and 45 pairs using `Fraction`, identifies
 the four tight corners, and rejects deliberately overlapping, exterior, and
 floating-point witnesses. Vertex containment implies whole-square containment
-by convexity of the disk. The figure uses floating point only for drawing and
-is not a proof input.
+by convexity of the disk. The central-obstruction checker verifies six squares,
+all 15 separating pairs, and strict near/far distance bounds using rational
+arithmetic. The figure uses floating point only for drawing and is not a proof
+input.
 
 This checkpoint changes only `research/ten/`. No Lean build, axiom audit,
 Comparator run, or external kernel replay is claimed. Commits use `[skip ci]`
