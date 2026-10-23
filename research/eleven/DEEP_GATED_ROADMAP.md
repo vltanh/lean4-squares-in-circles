@@ -33,8 +33,9 @@ allowed without a separate theorem.
 | --- | --- | --- |
 | G0.1 | Pinned repository semantics and n=8 workflow audit | H |
 | G0.2–G0.4 | Exact physical encoding, compact search domain, minimizer | OPEN |
-| G1.1 | Exact baseline construction and a safe rational upper bound | OPEN |
-| G1.2–G1.4 | Reconstruct published candidate, isolate exact target, verify feasibility | OPEN |
+| G1.1 | Baseline q=5 and exact rational upper bound U=49013/10000 | H; exact arithmetic independently replayed |
+| G1.2.a | Pinned published candidate and its evidentiary scope | H |
+| G1.2.b–G1.4 | Exact record reconstruction and target isolation | OPEN |
 | G2.1–G2.3 | Exhaustive raw finite owner/sign cover, degeneracies, normalization | OPEN |
 | G2.4 | Useful geometric reduction and exhaustive small terminal inventory | OPEN |
 | G3.C | Conditional common-coordinate-separable rank classification | OPEN |
@@ -94,8 +95,15 @@ physical completions, and the dependency map must record that replacement.
 - **G1.1:** give an elementary exact eleven-square construction; audit all
   44 corners and 55 pair separations. Use its radius as the initial upper
   bound without asserting sharpness.
+  **Closed:** [exact upper bound](EXACT_UPPER_BOUND.md) gives the elementary
+  q=5 witness and a tighter rational witness at U=49013/10000. Its 11 frames,
+  44 corners and 55 separator witnesses passed exact rational replay and an
+  independent projection-interval check. The positive margins certify a
+  feasible packing, not sharpness or equality at U.
 - **G1.2.a:** pin the published candidate source and distinguish credited
   discovery, decimal radius, diagram, and exact coordinates.
+  **Closed:** Friedman source commit `fdd8504` credits Kovacic, May 2006,
+  and prints 2.21386+. It supplies a layout and decimal, not exact optimality.
 - **G1.2.b:** reconstruct its contact equations, orientations, and genuine
   free parameters. A reconstruction must be checked against physical SAT.
 - **G1.3.a:** solve the candidate equations exactly or specify algebraic
