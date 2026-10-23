@@ -2,8 +2,8 @@
 
 **Status:** hand necessary-condition and exclusion theorems for the
 physical positive-stress graph, with the radius window stated explicitly.
-No global nine-square lower bound, independent audit, Lean build, CI run,
-or remote write is claimed.
+Imported to the draft GitHub research branch on 2026-10-23. No global
+nine-square lower bound, independent audit, Lean build, or CI run is claimed.
 
 ## 1. Current source synchronization and prior inputs
 
