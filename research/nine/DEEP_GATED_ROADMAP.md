@@ -1,449 +1,490 @@
-# n=9: deep gated roadmap to a complete unrestricted proof
+# n=9: deep gated roadmap to an unrestricted hand proof
 
-**Version:** 2026-10-22 research continuation; latest live gate state is G2.C CLOSED, G2.O3–O5 OPEN. See ROADMAP.md for current head provenance.  
 **Branch:** `research/nine-tablefree-hand`; **PR:** #11 (draft).
-**Status:** mathematics OPEN. This document is a *proof dependency contract*, not a promise that the remaining conjecture is true or presently solvable. In particular **no global sharp lower bound, complete global equality classification, Lean build, or kernel verification has been delivered**.
+**Current mathematical boundary:** G2.C is hand-proved. The unrestricted
+branch now has a proved compact minimizer, exact sparse actual-contact
+stress, planar outer-loaded stress core, and separate angular-stationarity
+certificate. **The sharp inequality for all unrestricted nine-square
+packings is still OPEN**, as is the complete global equality classification.
+No n=9 Lean build, CI run or independent full manuscript audit is claimed.
 
-## A. Exact target and acceptance standard
+This version consolidates the earlier deep roadmap; the earlier plans
+and their exact timestamps remain in Git history. CLOSED below means
+**hand argument written with its stated quantifiers**, not kernel-verified.
 
-Write
+## 0. Target, standards and dependency map
+
+Put `Q=1105/256` and `R*=sqrt(1105)/16`. The exact construction proves
+`R9 <= R*`. The missing target is
+
 \[
-Q:=1105/256,\qquad R_*:=\sqrt{1105}/16.
+ \forall S:\mathrm{Fin}\,9\to\mathrm{UnitSquare},\;o,\;R\ge0,
+ \quad \mathrm{Packing}(S,o,R)\Longrightarrow R^2\ge Q. \tag{T9}
 \]
-The construction in [HAND_PROOF.md](HAND_PROOF.md) gives \(R_9\le R_*\).
-The missing *unrestricted* assertion is
 
-> **G4 / T9.** For every \(S:\mathrm{Fin}\,9\to\mathrm{UnitSquare}\), disk center \(o\) and \(R\ge0\), the original project predicate \(\mathrm{Packing}(S,o,R)\) implies \(R^2\ge Q\).
+All frames are independent; boundaries may touch; the disk center is
+arbitrary. Equality must be necessary and sufficient under the actual
+project congruence convention, including free and oblique-only squares.
 
-The separate equality theorem must classify **all** packings at \(R_*\) up to the existing \(\mathrm{Congruent}\) convention. It must not force nine parallel squares: the rigorous rotated upper-pair witness [NO_GLOBAL_ORTHOGONAL_FRAME.md](NO_GLOBAL_ORTHOGONAL_FRAME.md) contradicts such a claim.
-
-### Status vocabulary
-
-- **CLOSED (hand):** a written mathematical implication with all hypotheses stated, all cases covered, and no computation-as-oracle. It is **not** Lean-verified without a separate build.
-- **CLOSED (negative):** a precise proposed reduction has been **disproved** by an exact counterexample; no downstream lemma may silently use it.
-- **PARTIAL:** a proper, explicitly characterized subfamily is solved; no claim of global coverage.
-- **OPEN:** no valid proof or exhaustive reduction yet.
-- **BLOCKED:** logically requires an earlier OPEN item.
-- **REJECTED:** a candidate statement is mathematically false. Retain the witness and design a different route.
-
-A deep subgate is introduced **only when there is a mathematical invariant that divides the whole parent gate into a finite, fully quantified collection**. Do not create an endless tree of tighter rational boxes or tiny angle windows. Close a gate only after checking it against all known negative controls.
-
-### Master critical path
+**Status vocabulary:** CLOSED hand = stated implication proved;
+CLOSED negative = a false proposed implication has an exact counterexample;
+PARTIAL = only a specified subfamily is covered; OPEN = missing proof;
+BLOCKED = depends on an open predecessor. A proof of a necessary condition
+is not a proof of the desired sharp lower bound.
 
 ```text
-G0 Exact model, witness, negative controls           CLOSED (hand)
+G0 exact definitions, witness and false-shortcut controls       CLOSED hand
+G1 short terminal stresses and fixed-owner weak dual           CLOSED hand
   |
-G1 Exact terminal stress machinery                   CLOSED (hand)
-  |    T1 long/short paired four-anchor
-  |    T2 independently rotated 4+3
-  |    T3 four-corner 3×3 grid
-  |    T4 graph weak dual
+  +-- G2.C entire common-coordinate-separable theorem           CLOSED hand
   |
-  +--> G2.C common-coordinate-separable branch       CLOSED (hand)
-  |       C0-C3 rank and four-chain extraction       CLOSED
-  |       C4.1 shadow and inner-pair domination      CLOSED
-  |       C4.2 zigzag branch                         CLOSED
-  |       C4.3a signed 4+3-chain terminal            CLOSED
-  |       C4.3b three-center-band grid terminal     CLOSED
-  |       C4.3c(4,1) crossed four-chain + ninth       CLOSED
-  |       C4.3c(3,2) signed frame-switch completion  CLOSED
-  |       C4.4 whole C theorem                      CLOSED
-  |
-  +--> G2.O oblique separators                       PARTIAL
-  |       O0 exact no-global-frame counterexample    CLOSED (negative)
-  |       O1 exact SAT formulation                   CLOSED
-  |       O2 fixed-owner center-eliminating dual     CLOSED (hand)
-  |       O3 finite meaningful owner-graph quotient  OPEN  <-- SECOND
-  |       O4 orientation-uniform stresses/obstacles  OPEN
-  |       O5 full oblique coverage                   BLOCKED
-  |
-  +--> G2.X exhaustiveness from original Packing     OPEN
-           |
-           +--> G4 unrestricted radius bound         BLOCKED
+  +-- G2.O0-O2 actual SAT owners and oblique controls            CLOSED
+       |
+       +-- O3.0.2 compact minimizer / exact sparse stress       CLOSED hand
+       +-- O3.1a-d planar outer-loaded 19-term core             CLOSED hand
+       +-- O3.1e independent 27-atom angular certificate        CLOSED hand
+       |
+       +-- O3.2 sharp structural core/completion alternatives  OPEN
+       +-- O3.3 human-sized exhaustive terminal inventory      OPEN
+       +-- O4 uniform orientation inequalities >= Q            OPEN
+       +-- O5 unrestricted oblique lower bound                 BLOCKED
+             |
+             +-- G2.X / G4 unrestricted sharp radius           BLOCKED
+             +-- G5 all equality packings                      OPEN/BLOCKED
                     |
-                    +--> G5 equality necessity       BLOCKED
-                    +--> G5 equality converse        PARTIAL
-                               |
-                               +--> G6 hand audit     BLOCKED
-                                       |
-                                       +--> G7 Lean    NOT STARTED
-                                               |
-                                               +--> G8 public integration
+                    +-- G6 independent hand audit             NOT COMPLETED
+                    +-- G7 Lean kernel formalization          NOT STARTED
+                    +-- G8 public integration/replay           NOT STARTED
 ```
 
-**Note:** G2.C and G2.O overlap if their frame is changed; choose a frame when applying a branch. The *global dichotomy* “some common frame works / none works” is logically exhaustive, but a known equality packing is in the second branch. Never assert coordinate separability for all nine squares. The origin interior/boundary/exterior trichotomy (G2.P) is a cross-cutting optional organizing lemma, not an assumption of a central square.
+**Three distinctions that must survive every handoff:**
+1. A planar *stress support* is not the full contact graph and is not a
+   global orthogonal separating frame.
+2. The planar <=19-term translational stress and the <=27-atom angular
+   stress can differ. No simultaneous planar/torque result is proved.
+3. A stressed core may use fewer than nine squares. Its completion by
+   the other physical squares cannot be omitted from a nine-square bound.
 
 ---
 
-## G0 — Exact semantics and negative controls [CLOSED, hand; audit later]
+## G0 — Physical semantics, exact upper bound, negative controls [CLOSED hand]
 
-### G0.1 — Physical model
+### G0.1 Exact geometric encoding
+- **G0.1.1:** centers `c_i`, orthonormal side axes `u_i,v_i`, and four
+  corners `c_i+(epsilon*u_i+eta*v_i)/2`.
+- **G0.1.2:** corner containment is equivalent to full closed-square
+  containment; maximal squared radius is
+  `|c_i|^2+1/2+|c_i dot u_i|+|c_i dot v_i|`.
+- **G0.1.3:** genuine nonoverlap is one of eight signed own-axis SAT
+  alternatives per pair, allowing equality and multiple owners.
+- **G0.1.4:** centers of interior-disjoint squares have Euclidean
+  distance at least one; any coordinate halfwidth is at least one half.
+- **Exit:** statements match the original Packing predicate, not a
+  strengthened row or common-frame definition.
 
-- **G0.1.1** Exact rotated unit-square support \(H_S(z)=\tfrac12(|z\cdot u_S|+|z\cdot v_S|)\).
-- **G0.1.2** Disk containment equivalent to
-  \(\|c_S\|^2+1/2+|c_S\cdot u_S|+|c_S\cdot v_S|\le q\).
-- **G0.1.3** Pairwise disjoint open interiors equivalent to **one** true separating edge-normal axis from either square (SAT), with endpoints and equality handled.
-- **G0.1.4** Any such pair has center distance \(\ge1\) (disjoint inscribed open radius-1/2 disks).
-- **Exit:** precise lemmas directly matching `Geometry.lean` with no strict/closed-set confusion.
+### G0.2 Construction and exact witnesses
+- **G0.2.1:** HAND_PROOF.md gives an exact nine-square packing at `Q`.
+- **G0.2.2:** NONRIGID_WITNESS.md and NO_GLOBAL_ORTHOGONAL_FRAME.md
+  provide genuinely rotated record-radius examples with true oblique
+  pair separation.
+- **G0.2.3:** TWO_STACK_SHARP_EQUALITY_WITNESS.md realizes a residual
+  five-square horizontal chain number two, exactly at `Q`, and has a
+  perpendicular signed 4+3 terminal.
+- **Exit:** upper bound and falsification controls, not global optimality.
 
-### G0.2 — Exact record construction
-
-- **G0.2.1** 2–4–3 aligned construction gives \(q=Q\).
-- **G0.2.2** A second exact equality candidate has two tilted upper squares, with oblique mutual separator.
-- **G0.2.3** Verify every corner and pair separation as **exact** inequalities, not a picture.
-- **Exit:** unrestricted upper bound plus precise equality witnesses (not global optimality).
-
-### G0.3 — Rejected global normalizations
-
-- **G0.3.1 CLOSED (negative):** an n=8-style unique central open square is false at n=9 equality.
-- **G0.3.2 CLOSED (negative):** all nine squares need not share an orientation.
-- **G0.3.3 CLOSED (negative):** a single common orthogonal pair of projection separators for *every* pair is false, even at the record radius.
-- **G0.3.4 CLOSED (negative):** center radius + coordinate \(\ell^\infty\) spacing alone are too weak (see [CENTER_RELAXATION_COUNTEREXAMPLE.md](CENTER_RELAXATION_COUNTEREXAMPLE.md)).
-- **G0.3.5 CLOSED (negative, hand):** even **nine axis-aligned** squares at (q=Q) may have **no horizontal stratification in any rotated frame**; [NONSTRATIFIED_PARALLEL_NINE.md](NONSTRATIFIED_PARALLEL_NINE.md) proves this using forced frame alignment and a chain of small height gaps.
-- **Exit:** all proposed global reductions must be tested against these counterexamples before promotion.
-
----
-
-## G1 — Short analytic terminal certificates [CLOSED, hand; independent audit later]
-
-### G1.T1 — Long/short four-anchor stress
-
-- **T1.1** Two long-span endpoints \(M_L,M_R\) satisfy
-  \(x_{M_R}-x_{M_L}\ge2+h_{M_L}+h_{M_R}\).
-- **T1.2** Two short-span endpoints \(B_L,B_R\) satisfy
-  \(x_{B_R}-x_{B_L}\ge1+h_{B_L}+h_{B_R}\).
-- **T1.3** Vertical separator condition:
-  (a) common above/below seam, or
-  (b) pairwise vertical gaps, possibly independently signed, under the signed tangent formulation.
-- **T1.4** Exact tangent weights 23 and 9 give \(q\ge Q\); all orientations allowed. Equality pins the four corresponding boundary squares in each sign branch.
-- **Sources:** [FOUR_ANCHOR_STRESS.md](FOUR_ANCHOR_STRESS.md), [PAIRED_FOUR_ANCHOR_STRESS.md](PAIRED_FOUR_ANCHOR_STRESS.md), [SIGNED_MATCHED_CHAIN_STRESS.md](SIGNED_MATCHED_CHAIN_STRESS.md).
-- **Exit:** quantified implication only; does **not** assert every packing has these four anchors.
-
-### G1.T2 — Orientation-stable 4+3 projection-row stress
-
-- **T2.1** Exact one-square orientation penalty, valid across all tilt angles.
-- **T2.2** Sharp arbitrary-rotation cap-row inequality, with two tangent vectors.
-- **T2.3** 4-over-3 seam crossing at \(s=-7/16\), giving \(q\ge Q\).
-- **T2.4** Equality is axis-aligned on the seven anchors; two extra squares need not align.
-- **Source:** [ORIENTATION_STABLE_SEVEN_ANCHOR.md](ORIENTATION_STABLE_SEVEN_ANCHOR.md).
-
-### G1.T3 — Four-corner 3×3 grid terminal
-
-- **T3.1** Four horizontal/vertical span inequalities with one-unit reserves.
-- **T3.2** Four diagonal tangent supports give \(q\ge9/2>Q\).
-- **T3.3** Equality of this *conditional* theorem only at the rigid 3×3 outer corners.
-- **Source:** [GRID_FOUR_CORNER_STRESS.md](GRID_FOUR_CORNER_STRESS.md).
-
-### G1.T4 — Separator graph weak dual
-
-- **T4.1** Fix square frames and choose one genuine SAT owner/axis for each selected pair.
-- **T4.2** Disk corner constraints are convex in centers; chosen separator inequalities are linear.
-- **T4.3** For chosen nonnegative multipliers, eliminate all center variables by a one-dimensional completed-square identity, obtaining explicit orientation-dependent lower bound.
-- **T4.4** Allow zero circle-contact weights only if the corresponding net separator force vanishes.
-- **Source:** [SEPARATOR_GRAPH_CONVEX_DUAL.md](SEPARATOR_GRAPH_CONVEX_DUAL.md).
-- **Exit:** a valid **method**, not a sharp universal \(Q\)-certificate.
+### G0.3 Rejected shortcuts
+- **G0.3.1 CLOSED negative:** a central open square or positive central
+  core is not universal at n=9 equality.
+- **G0.3.2 CLOSED negative:** the nine frames need not all agree.
+- **G0.3.3 CLOSED negative:** no single globally separating perpendicular
+  frame exists for some record-radius packings.
+- **G0.3.4 CLOSED negative:** center-radius and L-infinity distance
+  relaxations alone are too weak; CENTER_RELAXATION_COUNTEREXAMPLE.md.
+- **G0.3.5 CLOSED negative:** even nine parallel squares need not be
+  horizontally stratifiable in *any* frame; NONSTRATIFIED_PARALLEL_NINE.md.
+- **G0.3.6 CLOSED negative:** eight squares can have disjoint crossed
+  horizontal/vertical four-chains below `Q`; the ninth square is essential.
+- **Exit:** retain the exact witnesses; never promote a disproved
+  normalization while rewriting a proof.
 
 ---
 
-## G2.C — Coordinate-separable nine-square branch [PARTIAL]
+## G1 — Geometric terminal inequalities [CLOSED hand, conditional]
 
-Fix one orthonormal frame and suppose **each** pair is separated in at least one of its two coordinate projections. The square frames remain independent.
+### G1.T1 Long/short four-anchor stress
+- **T1.1:** derive two endpoint span inequalities with reserves 2 and 1.
+- **T1.2:** combine true vertical endpoint gaps, permitting independent
+  signs, with weights 23 and 9.
+- **T1.3:** the all-angle square support penalty proves `q>=Q`.
+- **T1.4:** equality pins all four loaded endpoints and their frames.
+- **Sources:** FOUR_ANCHOR_STRESS.md, PAIRED_FOUR_ANCHOR_STRESS.md,
+  SIGNED_MATCHED_CHAIN_STRESS.md.
 
-### G2.C0 — Rank and projection capacity [CLOSED]
+### G1.T2 Cap row and rotated 4+3
+- **T2.1:** exact orientation penalty for all square angles.
+- **T2.2:** projection-separated cap-row bound using two tangents.
+- **T2.3:** opposite cap bounds meet at the seam `-7/16`, giving `Q`.
+- **T2.4:** equality alignment is only for the seven selected anchors.
+- **Source:** ORIENTATION_STABLE_SEVEN_ANCHOR.md.
 
-- **C0.1** Define strict partial orders \(\prec_x,\prec_y\) from disjoint open projection intervals; check boundary equality.
-- **C0.2** Associate longest-chain ranks \((r_x,r_y)\) to each of nine squares.
-- **C0.3** Prove the rank-pair injection \(9\le ab\), where \(a,b\) are the longest horizontal and vertical chain sizes.
-- **C0.4** Show five projection-separated unit squares cannot fit for \(q\le Q\); thus \(a,b\le4\).
-- **C0.5** If \(a,b\le3\), the ranks occupy a complete 3×3 rectangle and imply G1.T3; contradiction.
-- **Exit:** at least one chain of four, in one of the two frame directions.
-- **Source:** [ORTHOGONAL_RANK_DICHOTOMY.md](ORTHOGONAL_RANK_DICHOTOMY.md).
+### G1.T3 Four-corner grid
+- **T3.1:** two horizontal and two vertical spans with one-unit reserves.
+- **T3.2:** four diagonal tangent supports give `q>=9/2>Q`.
+- **Source:** GRID_FOUR_CORNER_STRESS.md.
 
-### G2.C1 — Four-chain global shadow [CLOSED]
+### G1.T4 Fixed-owner dual
+- **T4.1:** retain true chosen own-axis separators; fix frames.
+- **T4.2:** the center problem is convex; explicit force multipliers
+  and scalar completed squares eliminate center variables.
+- **T4.3:** zero circle weight requires zero node force.
+- **Source:** SEPARATOR_GRAPH_CONVEX_DUAL.md.
+- **Original scope:** a weak bound for supplied weights. The new O3.0.2
+  theorem below proves *attainment* at every unrestricted minimizer.
 
-Choose a four-horizontal-projection chain \(M_1,\ldots,M_4\).
-
-- **C1.1** Four intervals have total length \(\ge4\), while disk projection length \(2R<17/4\); all complementary gaps total \(<1/4\).
-- **C1.2** Any fifth square has projected interval length \(\ge1\), so it meets at least one chain interval.
-- **C1.3** Its incidence indices form a nonempty consecutive block of at most three.
-- **C1.4** Stronger oblique-safe lemma: neither singleton \(\{1\}\) nor singleton \(\{4\}\) occurs; every extra square meets \(M_2\) or \(M_3\) in projection.
-- **Exit:** 7 meaningful shadow-incidence blocks (not 7^5 cases to enumerate).
-- **Sources:** [FOUR_CHAIN_SHADOW_BARRIER.md](FOUR_CHAIN_SHADOW_BARRIER.md), [INNER_PAIR_SHADOW_DOMINATION.md](INNER_PAIR_SHADOW_DOMINATION.md).
-
-### G2.C2 — Remove large-zigzag chain geometry [CLOSED]
-
-- **C2.1** Deduce uniform center-radius \(<61/40\) from the exact corner functional.
-- **C2.2** Four-chain x centers lie in four disjoint narrow bands around \(-3/2,-1/2,1/2,3/2\).
-- **C2.3** An inner-to-inner center height gap \(\ge2\) is the only possible large zigzag.
-- **C2.4** In the coordinate-separable branch, prove top/bottom cap and three-region capacity bounds for **all five** other centers.
-- **C2.5** Saturating those capacities contradicts pairwise coordinate separation. No remaining 4×3 zigzag leaf.
-- **Exit:** four-chain vertical center diameter \(<2\) for the C branch.
-- **Sources:** [FOUR_CHAIN_ZIGZAG_NORMAL_FORM.md](FOUR_CHAIN_ZIGZAG_NORMAL_FORM.md), [ZIGZAG_BRANCH_CLOSED.md](ZIGZAG_BRANCH_CLOSED.md).
-
-### G2.C3 — Finish coherent-side patterns [PARTIAL; primary open branch]
-
-- **C3.1 CLOSED:** If five extra squares contain a **disjoint horizontal projection chain of three**, apply [SIGNED_MATCHED_CHAIN_STRESS.md](SIGNED_MATCHED_CHAIN_STRESS.md) (endpoint interlocking + signed vertical stress). This closes the entire disjoint 4+3-chain branch.
-- **C3.2 CLOSED:** If the nine squares form three projection chains of three in the prescribed upper/middle/lower center bands, apply [THREE_BAND_GRID_OBSTRUCTION.md](THREE_BAND_GRID_OBSTRUCTION.md).
-- **C3.3 OPEN:** Complement \(E\) of five squares has horizontal projection-chain number \(\le2\). This is the **only residual C branch**.
-  - **C3.3.a CLOSED (two-column normal form):** [TWO_COLUMN_COMPLEMENT_REDUCTION.md](TWO_COLUMN_COMPLEMENT_REDUCTION.md) proves this quantified implication for all five-square complements \(E\) of horizontal chain length at most two:
-    - **C3.3.a.1 CLOSED:** longest horizontal-chain ranks \(1,2\) partition \(E\) into two classes; the open horizontal projection intervals of each class have one common intersection (interval Helly).
-    - **C3.3.a.2 CLOSED:** common-frame coordinate separability forces each rank class to be a **vertical projection-disjoint chain**. Neither stack can have five squares; after swapping class names the only sizes are **(4,1)** and **(3,2)**.
-    - **C3.3.a.3 CLOSED:** any vertical triple has middle-center height \(|y|<21/40\). Inner-pair shadow domination plus coordinate separability then forces **one of the middle two horizontal-chain square centers** to have \(|y|>19/40\).
-    - **C3.3.a.4 LIMITATION:** these constraints do **not** exclude the branch; the exact record-radius **(3,2)** witness realizes it, and the required next implication must preserve equality.
-  - **C3.3.b CLOSED (hand; all 4+1 stacks):** [FOUR_PLUS_FOUR_PLUS_ONE_EXCLUSION.md](FOUR_PLUS_FOUR_PLUS_ONE_EXCLUSION.md) proves that **four distinct x-projection-chain squares plus four different y-projection-chain squares leave no room for a ninth** at \(q\le Q\) in any common-coordinate-separable packing. This is a complete (4,1) complement exclusion, independent of individual square orientations. The exact proof needs only center radius \(<61/40\), necessary \(\ell^\infty\)-center separation, and a four-quadrant covering: the four *inner* chain centers occupy the four boxes at \((\pm1/2,\pm1/2)\), covering every possible ninth center. A physical **eight**-square crossed-chain witness still exists at \(17/4<Q\); the ninth is essential.
-  - **C3.3.c CLOSED (hand; all 3+2 stacks):** [COORDINATE_SEPARABLE_NINE_COMPLETE.md](COORDINATE_SEPARABLE_NINE_COMPLETE.md) proves a **sharp frame-switch theorem for the entire residual class**, allowing all independent square orientations.
-    - **C3.3.c.1 CLOSED:** if the five-square complement has x-poset height ≤2, its width ≤3: an antichain of four would form a disjoint vertical four-chain and contradict the completed (4,1) exclusion.
-    - **C3.3.c.2 CLOSED:** an **elementary five-element matching** (no general Dilworth invocation needed) partitions the complement into two disjoint x-comparable pairs \(L_1\prec R_1,L_2\prec R_2\) and one singleton F. The two Ls are incomparable; likewise the two Rs.
-    - **C3.3.c.3 CLOSED:** an exact *predecessor/successor outer-strip lemma* shows each E-square with an x-successor overlaps the **left** middle M square in horizontal projection, and each E-square with an x-predecessor overlaps the **right** middle M square. This uses only radius \(<61/40\), x-projection gaps ≥1, and the outer-strip bound \(|x_E|<7/5\).
-    - **C3.3.c.4 CLOSED:** the singleton F has a successor, a predecessor, or neither. In each case assign it to the appropriate pair using the oblique-safe inner-pair shadow lemma. This gives x-antichains of sizes 3+2 that overlap **different middle M anchors**. After a quarter-turn, adding those anchors yields **two disjoint vertical-projection chains of lengths 4+3**. The preexisting signed matched-chain stress proves \(q\ge Q\), with exact equality skeletons.
-    - **C3.3.c.5 CLOSED:** [SIGNED_MATCHED_EQUALITY_FAMILY.md](SIGNED_MATCHED_EQUALITY_FAMILY.md) parametrizes the resulting *conditional* full equality family. The exact [TWO_STACK_SHARP_EQUALITY_WITNESS.md](TWO_STACK_SHARP_EQUALITY_WITNESS.md) realizes its previously problematic (3,2) branch.
-  - **C3.3.d CLOSED (negative, exact physical packing):** [TWO_STACK_SHARP_EQUALITY_WITNESS.md](TWO_STACK_SHARP_EQUALITY_WITNESS.md) constructs **nine genuine axis-aligned unit squares at exactly (q=Q)**, with a horizontal four-chain and a five-square complement of x-chain length precisely two. Therefore any assertion that the entire residual complement is *impossible at (q\le Q)* is FALSE. This witness has **disjoint perpendicular 4+3 chains**, so a frame-switch terminal stress explains equality. The correct goal is a **sharp lower bound with equality coverage**, not a blanket exclusion.
-- **Exit for C3.3:** One quantified theorem (mathrm{Packing}_9\wedge q\le Q\wedgemathrm{CoordinateSeparable}\wedge a=4\wedge a(E)\le2\Rightarrow q=Q), with the known rational equality witness **included** in the resulting classification. A theorem ruling out this complete parent class would contradict the committed construction.
-- **Do not:** expand into hundreds of layer/height configurations or solve one of infinitely many narrowed subclasses.
-
-### G2.C4 — Assemble the entire coordinate-separable theorem [BLOCKED on C3.3]
-
-- **C4.1** Choose a four-chain by C0.
-- **C4.2** Rule out large zigzag by C2.
-- **C4.3** If \(a(E)\ge3\), apply C3.1; otherwise apply the completed C3.3.
-- **C4.4** Collect equality rigidities; do not infer that all nine frames coincide.
-- **Exit:** no remaining coordinate-separable packing with \(q<Q\); every \(q=Q\) packing in this class has an explicit normal form or a fully specified finite union of normal forms.
+**G1 exit:** all statements have explicit sufficient hypotheses. Their
+validity does not prove those hypotheses occur in every packing.
 
 ---
 
-## G2.O — Oblique-separator/global graph branch [PARTIAL; dominant open difficulty]
+## G2.C — Entire common-coordinate-separable class [CLOSED hand]
 
-A fixed common orthogonal frame **need not** separate all pairs. This is true at equality, not merely at a pathological nearby configuration.
+A single orthonormal frame separates **every pair** along at least
+one of its coordinate projections. Individual square frames can differ.
+The condition is an added hypothesis, false for unrestricted packings.
 
-### G2.O0 — Validate that the branch is necessary [CLOSED (negative)]
+### G2.C0 Rank and initial extraction [CLOSED]
+- **C0.1:** the two projection orders have longest-chain ranks.
+- **C0.2:** rank pairs inject nine squares into an `a*b` grid.
+- **C0.3:** no projection chain has five members at `q<=Q`.
+- **C0.4:** if both chain lengths are at most three, the full 3x3 rank
+  grid gives G1.T3, a contradiction; otherwise choose a four-chain.
+- **Source:** ORTHOGONAL_RANK_DICHOTOMY.md.
 
-- **O0.1** Exact tilted upper-square witness at \(q=Q\).
-- **O0.2** Adjacent contacting aligned anchors force any globally separating perpendicular frame to be the anchor frame (up to signs/swaps).
-- **O0.3** In that frame the two tilted upper squares overlap in **both** projection axes but are physically disjoint on their own oblique edge axis.
-- **Exit:** never promote C4 to all packings via global frame selection.
+### G2.C1 Shadow and inner-pair incidence [CLOSED]
+- **C1.1:** the four projected intervals leave total complement <1/4.
+- **C1.2:** every extra interval intersects one to three consecutive
+  chain intervals.
+- **C1.3:** exclusive outermost shadow forces center distance <1;
+  every extra square overlaps one of the two middle intervals.
+- **Sources:** FOUR_CHAIN_SHADOW_BARRIER.md,
+  INNER_PAIR_SHADOW_DOMINATION.md. C1.3 itself is oblique-safe once
+  a four-chain exists.
 
-### G2.O1 — The exact native SAT graph [CLOSED as framework]
+### G2.C2 Large zigzag [CLOSED]
+- **C2.1:** center radius <61/40 fixes four narrow horizontal bands.
+- **C2.2:** a chain height gap >=2 is between the middle pair only.
+- **C2.3:** the five extras fall in three regions of capacities 2,1,2.
+- **C2.4:** saturation contradicts coordinate separation.
+- **Source:** ZIGZAG_BRANCH_CLOSED.md. No residual 4x3 zigzag leaf.
 
-- **O1.1** For each of 36 unordered pairs, choose a *genuine* separating normal among the two axes of each square, together with its directed sign.
-- **O1.2** Keep equality/contact pairs (several separator choices may be valid); no generic-position assumption.
-- **O1.3** Factor invariance under square relabeling, global rotation and the quarter-turn equality of square records/point sets.
-- **Exit:** a finite combinatorial syntax encoding all original unrestricted packings, *without yet* claiming it yields few geometrically distinct cases.
+### G2.C3 Complement and frame switch [CLOSED]
+- **C3.1:** a disjoint horizontal triple outside the four-chain gives
+  signed matched-chain stress, covering all endpoint signs.
+- **C3.2:** the prescribed three-band 3+3+3 class gives the grid stress.
+- **C3.3.a.1:** if the five extras have x-chain height <=2, their two
+  horizontal rank classes are antichains with a common interval point.
+- **C3.3.a.2:** coordinate separation turns these into vertical stacks
+  of sizes (4,1) or (3,2).
+- **C3.3.a.3:** a vertical triple's middle center has `|y|<21/40` and
+  forces a middle horizontal-chain center to have `|y|>19/40`.
+- **C3.3.b CLOSED:** a disjoint perpendicular four-chain plus the ninth
+  square is impossible. The four middle centers fill four central
+  quadrant boxes; their exclusion boxes cover every ninth-center option.
+- **C3.3.c.1 CLOSED:** without a four-element x-antichain, the five-element
+  height-two poset has two disjoint comparable pairs and a singleton.
+- **C3.3.c.2 CLOSED:** every extra square with a successor overlaps the
+  left middle anchor; a predecessor forces overlap with the right one.
+- **C3.3.c.3 CLOSED:** the singleton has a successor, a predecessor, or
+  neither. These three cases produce two antichains of sizes 3 and 2
+  overlapping different middle anchors.
+- **C3.3.c.4 CLOSED:** adjoining those anchors produces perpendicular
+  projection chains of sizes 4 and 3. G1.T1 gives `q>=Q` including
+  the known exact equality witness.
+- **C3.3.d CLOSED negative:** do not exclude the entire (3,2) class;
+  its exact equality packing is retained by the frame switch.
+- **Sources:** TWO_COLUMN_COMPLEMENT_REDUCTION.md,
+  FOUR_PLUS_FOUR_PLUS_ONE_EXCLUSION.md,
+  COORDINATE_SEPARABLE_NINE_COMPLETE.md.
 
-### G2.O2 — Convex center elimination [CLOSED as framework]
+### G2.C4 Whole-class assembly [CLOSED hand]
+The source COORDINATE_SEPARABLE_NINE_COMPLETE.md assembles all branches
+into `CoordinateSeparable && Packing_9 -> q>=Q`. At equality some
+frame axis supplies signed matched 4+3 chains. The seven chain
+squares have the signed matched equality form. The other two squares
+are not asserted to share their orientation.
 
-- **O2.1** For each fixed owner graph and fixed side frames, encode exact center feasibility as convex inequalities.
-- **O2.2** Establish weak dual with explicit node force vectors and nonnegative edge stresses.
-- **O2.3** Remove center variables by exact scalar minimization; document zero-contact-weight force balance.
-- **O2.4** Verify graph dual certificates are legitimate lower bounds (not necessarily strong-duality equalities).
-- **Exit:** every future candidate stress reduces to finite orientation inequalities, with no center search as a proof premise.
-- **Source:** [SEPARATOR_GRAPH_CONVEX_DUAL.md](SEPARATOR_GRAPH_CONVEX_DUAL.md).
-
-### G2.O3.0 — Avoid the false graph-only shortcut [OPEN: structural test]
-
-Before enumerating separator-owner graphs, distinguish **feasible
-edge choices** from **contact constraints active in a radius
-minimizer**. Every physically disjoint pair admits at least one
-separating axis, but the selected axis may have positive slack;
-its dual multiplier may therefore be zero. A dense SAT owner graph
-does **not** imply a dense positive-stress graph. A global
-certificate must either (a) extract a small *balanced* stressed
-subgraph whose weights are nonnegative and whose orientation
-inequality is sharp, or (b) prove a complete alternative geometric
-obstruction.
-
-- **O3.0.1 CLOSED (exact negative test):** the oblique upper-pair
-  record witness in NO_GLOBAL_ORTHOGONAL_FRAME.md disproves
-  any global-frame normal form, even at equality.
-- **O3.0.2 OPEN:** formulate and prove a *contact-support reduction*
-  from arbitrary Packing at \(q<Q\) to a finite family of stressed
-  owner graphs; prove why minimizers may be considered and why
-  the deformation/compactness step preserves closed disk
-  containment and disjoint **open** interiors.
-- **O3.0.3 OPEN:** show the graph family is small for geometric
-  reasons (cyclic support order, planar separator graph, or
-  analogous invariant), not simply because nine squares have
-  finitely many labelled pairs.
-- **O3.0.4 OPEN:** construct a universal dual or a complete set
-  of orientation-uniform graph certificates, with all equality
-  and zero-multiplier branches retained.
-
-**Do not count O3.0.1 as progress toward a full graph coverage
-theorem:** it is a falsification control. A finite syntax for all
-36 SAT disjunctions does not itself yield a hand proof.
-
-### G2.O3 — Compress owner graphs *structurally* [OPEN]
-
-- **O3.1 (graph invariant):** Find a planar/cyclic/interval or angular ordering for *arbitrary* nine squares and prove it from physical nonoverlap and containment; center-on-boundary configurations must be included.
-- **O3.2 (stress-skeleton extraction):** Show every owner graph at \(q\le Q\) has either:
-  (a) a small, balanced **positive-stress subgraph** supporting a \(Q\) lower bound;
-  (b) a named exceptional graph family with an independent direct obstruction; or
-  (c) an exact counterexample to the proposed classification.
-- **O3.3 (finite coverage):** Prove the proposed graph families are **exhaustive up to symmetry and graph-reduction rules**. Merely counting a finite \(8^{36}\) SAT search does not pass.
-- **O3.4 (no false anchored prerequisite):** If a graph lacks four long/short anchors, do not assert they can be created by deformation without proving nonoverlap and disk containment throughout.
-- **Exit:** a short theorem \(\mathrm{Packing}_9(q\le Q)\Rightarrow\bigvee_{j=1}^k \mathrm{GraphClass}_j\), every \(\mathrm{GraphClass}_j\) defined geometrically, with a genuinely human-sized fixed \(k\). **This is the largest conceptual gap.**
-
-### G2.O4 — Uniform orientation stresses [OPEN; requires O3 class inventory]
-
-For each surviving graph class \(G_j\):
-- **O4.1** Derive an explicit nonnegative edge/node multiplier assignment using graph balances (prefer support on at most a few boundary squares).
-- **O4.2** Prove the dual lower bound \(\ge Q\) **for all allowed square orientations**, by geometry or a short algebraic SOS/convexity inequality—not a fine angular box mesh.
-- **O4.3** If a graph class is infeasible at \(q\le Q\), give a short exact geometric contradiction rather than a numerical “optimizer failed.”
-- **O4.4** Record the complete equality set of the dual conditions, including zero multipliers and all free non-anchor frames.
-- **Exit:** every \(G_j\) has a mathematically checked sharp obstruction or is rigorously eliminated.
-
-### G2.O5 — Global oblique closure [BLOCKED on O3/O4]
-
-- **O5.1** Combine O3's exhaustive graph disjunction and O4's terminal inequalities.
-- **O5.2** Ensure the coordinate-separable graph classes need not be handled twice; C4 may serve as one terminal.
-- **O5.3** Verify the exact known oblique record witnesses are retained at \(q=Q\).
-- **Exit:** unrestricted **sharp** lower bound, including equality contact patterns, from original \(\mathrm{Packing}\) only.
+**Do not reopen G2.C for minor angle/height improvements.**
 
 ---
 
-## G2.P — Disk-center incidence (cross-check and fallback) [OPEN as a proof route]
+## G2.O — Unrestricted oblique branch [PARTIAL]
 
-Every disk-center point lies in exactly one of:
-- **P.I:** the open interior of exactly one square;
-- **P.B:** no open interior, but the boundary of one or more squares;
-- **P.E:** outside all nine closed squares.
+### G2.O0–O2 Existing encoding and controls [CLOSED]
+- **O0:** exact oblique-only upper-pair witness refutes global coordinates.
+- **O1:** choose true signed own-axis separators; keep contact ties.
+- **O2:** the fixed-owner center weak dual is exact as a formula, not
+  automatically a sharp `Q` bound for every graph.
 
-### P.I subgates
-- **P.I.1** Obtain a center-containing-square geometry bound **at \(Q>4\)**, not by importing n=8's \(q<4\) central-core lemma.
-- **P.I.2** Establish a global exterior-square arc/support budget.
-- **P.I.3** End at a T1–T3 stress or a new exact exclusion.
-### P.B subgates
-- **P.B.1** Treat zero-distance boundaries, including central seams/corners, without genericity.
-- **P.B.2** Extract boundary supporting rays without asserting the unique record contact pattern.
-- **P.B.3** Cover rotated free squares and invoke valid terminal stress.
-### P.E subgates
-- **P.E.1** Bound radial intersection arcs of squares that avoid the center.
-- **P.E.2** Convert arc coverage into a rigorous global cyclic-order constraint.
-- **P.E.3** Prove a terminal obstruction or route into O3 graphs.
+### G2.O3.0.2 — Minimizer and actual-contact stress [CLOSED hand]
+**Source:** [SPARSE_MINIMIZER_STRESS.md](SPARSE_MINIMIZER_STRESS.md).
 
-**Status:** all P.I/P.B/P.E terminal implications OPEN. They are **not three extra independent gates that must each be proved** if O5 already handles everything; they are a fallback route to O3's global classification. Stop pursuing a P-branch if it merely classifies one small subclass of infinitely many cases.
+- **O3.0.2a — compactness:** normalize the disk center, bound the centers,
+  use compact unit-frame circles, and express pairwise nonoverlap as
+  finite unions of closed SAT inequalities. Any subcritical packing
+  yields a global minimizer `q0<Q`.
+- **O3.0.2b — strict selection:** a physically noncontacting closed-square
+  pair has a strictly separating own axis. Select that axis; use a tight
+  axis only for actual touching pairs.
+- **O3.0.2c — regularity and multipliers:** freeze the frames and chosen
+  axes. Radially expanding the centers while increasing `q` sufficiently
+  gives a strict active-constraint direction. An elementary conic
+  alternative yields normalized nonnegative circle/edge multipliers.
+- **O3.0.2d — exact sparse dual:** the weighted circle-vertex and edge
+  gradients balance at every center; positive edge weights occur only
+  at physical contacts. At most **19 positive scalar terms** suffice
+  for nine squares, and the completed-square dual equals `q0` exactly.
+- **O3.0.2e — connected core:** every stress component has positive
+  circle weight on at least two distinct squares. One component can
+  be retained and normalized; unloaded leaves and circle-free positive
+  self-stress components are impossible.
+
+**Exit satisfied:** an arbitrary hypothetical subcritical packing can
+be replaced by a globally minimizing, exactly stressed configuration,
+without any row deformation or coordinate-separability assumption.
+This does not prove that the attained value is at least `Q`.
+
+### G2.O3.1 — Geometric planar core and bounded paths [CLOSED hand]
+**Source:** [PLANAR_STRESS_CORE.md](PLANAR_STRESS_CORE.md).
+
+- **O3.1a — junction geometry:** at most four squares meet at a point;
+  a four-way junction is an aligned 2x2 unit-square block.
+- **O3.1b — compatible owner choice:** select parallel true axes for
+  the two opposite pairs at each such junction before extracting
+  translational stress. Strictly separate every noncontact pair.
+- **O3.1c — stress uncrossing:** subtract the smaller crossing-diagonal
+  weight from both diagonals and add it to the two matching side
+  contacts. This preserves every node force and exact dual value,
+  removes a diagonal, and creates no new diagonal crossing elsewhere.
+- **O3.1d.1 — planarity:** resolve each at-most-four-square contact
+  junction respecting the cyclic order. A quadrilateral with at most
+  one diagonal is locally planar; the contact support embeds globally.
+- **O3.1d.2 — boundary loading:** a circle point belongs to at most one
+  square. Circle-loaded square nodes are all incident to the exterior
+  face of this planar embedding.
+- **O3.1d.3 — restore sparsity:** conic thinning within the planar active
+  support gives <=19 positive terms, hence <=17 positive contact edges.
+  Select one connected loaded component.
+- **O3.1d.4 — contract transmitters:** an unloaded degree-two square
+  has equal opposite forces. Suppress its maximal straight-normal
+  path with the exact support-width sum retained. For `q0<=Q`, each
+  such path contains only **0,1,2 internal squares**; no self-loop
+  or wholly unloaded transmission cycle is possible.
+
+**Exit satisfied:** unrestricted minimizers have connected planar,
+outer-loaded, sparse actual-contact stress cores, with bounded path
+labels and no unloaded leaves. This is not a theorem that the full
+physical contact graph is planar or that every core has value >=Q.
+
+### G2.O3.1e — Full angular stationarity [CLOSED hand; separate certificate]
+**Source:** [ROTATION_STATIONARY_STRESS.md](ROTATION_STATIONARY_STRESS.md).
+
+- **O3.1e.1:** encode each selected owner's support maximum by four
+  smooth nonowner-vertex inequalities; do not differentiate absolute
+  values at parallel-frame cusps.
+- **O3.1e.2:** the same dilation direction proves active-constraint
+  regularity with all angles free.
+- **O3.1e.3:** derive every angular derivative, including rotation of
+  the owner's separating axis, alongside center force balance.
+- **O3.1e.4:** global rotational symmetry removes one gradient-space
+  dimension, giving at most **27 positive atoms** for nine squares.
+- **O3.1e.5:** the center-eliminating dual remains attained exactly;
+  positive atoms occur only at active constraints and touching pairs.
+
+**Critical nonclaim:** these torque equations and the planar 19-term
+stress need not be realized by the same multipliers. A selected
+support-vertex atom is not automatically an independent force at a
+point in the actual intersection segment. No simultaneous physical-
+lever, planar, torque-balanced 19-term theorem is asserted.
+
+### G2.O3.2 — Sharp terminal extraction from the planar core [OPEN]
+This is now the first genuinely missing structural theorem.
+
+- **O3.2a — retain all packing data:** record which of the nine squares
+  lie in the stressed core, which are suppressed on its paths, and
+  which are unstressed. Keep all actual physical nonoverlap conditions.
+  An unstressed square is not necessarily geometrically unconstrained.
+- **O3.2b — core inventory:** classify connected planar core types with
+  at least two outer-face circle-loaded nodes; retained unloaded nodes
+  have degree >=3; path labels are 0,1,2; total represented squares
+  <=9; positive corner plus edge terms <=19.
+- **O3.2c — completion capacity:** for each potentially low-radius
+  core, prove how many other unit squares fit in the remaining space.
+  A smaller core alone need not require radius sqrt(Q). Discarding
+  its unstressed complement would destroy the nine-square quantifier.
+- **O3.2d — short terminal families:** derive a human-sized exhaustive
+  disjunction of known signed 4+3 / grid certificates, impossible
+  alternatives, or genuinely new sharp stress families. Do not treat
+  a finite but huge labelled graph enumeration as closure.
+- **O3.2e — falsification:** test any proposed type exclusion against
+  the exact oblique, two-stack and nonstratified equality witnesses;
+  an exact counterexample rejects that proposed exclusion.
+
+**Exit:** all feasible *nine-square* minimizing configurations are
+routed into explicitly defined sharp terminal classes. Not achieved.
+
+### G2.O3.3 — Exhaustiveness and symmetry quotient [OPEN]
+- **O3.3a:** prove every planarized core enters the inventory, including
+  bridge/cycle, multiedge-after-contraction, multiple-circle-contact,
+  and zero-weight limits. No generic-position assumption.
+- **O3.3b:** quotient only by actual global isometries, relabeling and
+  square quarter-turn equivalences; preserve reflection conventions.
+- **O3.3c:** prove every physical completion of every surviving core
+  is either covered by a terminal theorem or impossible at `q<=Q`.
+- **Exit:** a complete coverage implication, not merely a list of
+  attractive candidate graphs. O3.2 and O3.3 may be proved together.
+
+### G2.O4 — Sharp uniform inequalities [OPEN]
+For every surviving core/completion family:
+- **O4.1a CLOSED existentially:** at a minimizer a normalized exact
+  dual exists (O3.0.2). This alone gives its unknown value `q0`.
+- **O4.1b OPEN constructively:** obtain explicit usable weights or
+  an invariant inequality from the balances and geometry.
+- **O4.2 OPEN:** prove the value >=`Q` uniformly over **all** orientations
+  and completions allowed in that family, with no dense angle mesh.
+- **O4.3 OPEN:** directly exclude infeasible families by exact geometry;
+  optimizer failure is not an exclusion proof.
+- **O4.4 OPEN:** characterize every equality slack and allow zero-weight
+  free squares. Do not import torque into a planar stress without
+  proving the certificates can be chosen jointly.
+- **Exit:** all nine-square terminal families are sharply bounded,
+  including their exact equality conditions. Not achieved.
+
+### G2.O5 — Oblique assembly [BLOCKED]
+- **O5.1:** combine core/completion coverage with the uniform sharp bounds.
+- **O5.2:** check all known equality witnesses remain admissible.
+- **O5.3:** remove all graph, coordinate and orientation hypotheses
+  except those derived from the original Packing predicate.
+- **Exit:** no unrestricted minimizing packing has `q0<Q`.
+
+### G2.P — Optional origin-incidence route [NOT USED AS A COMPLETED PROOF]
+Interior / boundary-without-interior / exterior of the square union
+remain a logically exhaustive trichotomy. Individual sharp theorems
+for these three branches have **not** been proved. They are not extra
+mandatory prerequisites if the minimizer/contact-core route handles
+all configurations. Do not describe the old central-square approach
+as established or count retiring that approach as a theorem closure.
 
 ---
 
-## G2.X and G4 — Unrestricted radius theorem [BLOCKED]
+## G2.X and G4 — Unrestricted radius [BLOCKED]
 
-### G2.X.1 — Coverage theorem
-Write a theorem whose hypotheses are **only** the original Packing predicate and \(q\le Q\), whose conclusion is a proved terminal stress hypothesis or a proven impossible alternative. All freely oriented squares and all disk-center incidences must be covered.
+- **G2.X.1 CLOSED as a necessary reduction:** every hypothetical
+  subcritical packing has a compact unrestricted minimizer with the
+  sparse planar core and separate angular certificate proved above.
+- **G2.X.2 OPEN:** the core plus remaining physical squares must enter
+  a *sharp* terminal class. This is exactly O3.2–O4, not a new hidden
+  structural assumption.
+- **G4.1 CLOSED:** the explicit construction attains `Q`.
+- **G4.2 BLOCKED:** use compactness and O5 to exclude `q<Q`.
+- **G4.3 BLOCKED:** transfer the squared-radius statement to radius
+  `sqrt(Q)` and the repository's natural public predicates.
 
-### G2.X.2 — Strict-bound and boundary audit
-Check \(q<Q\) and \(q=Q\) separately where necessary. A strict result for \(q<Q\) suffices for the lower bound but not the equality classification.
-
-### G4.1 — Existence
-Use G0.2's explicit exact nine-square construction to show the set of feasible squared radii contains \(Q\).
-
-### G4.2 — Lower bound
-Use G2.X and G1/G2.O stresses to exclude \(q<Q\) without stronger normalization assumptions.
-
-### G4.3 — Statement match
-Transfer from squared radius to radius \(R_*\ge0\) and match the `Optimum` / public `Packing` definitions.
-
-**Exit:** theorem T9 is written as a complete readable hand proof, independent of execution of any certificate program.
+**Exit:** T9 with only original Packing assumptions, and no external
+optimizer, undisclosed certificate table, or unproved normalization.
 
 ---
 
-## G5 — All equality packings [PARTIAL; global necessity BLOCKED]
+## G5 — Complete equality classification [PARTIAL]
 
-### G5.0 — Proven conditional families [CLOSED, hand]
-- **G5.0.1** [STRATIFIED_EQUALITY_FAMILY.md](STRATIFIED_EQUALITY_FAMILY.md) gives explicit three slider heights and two freely oriented upper squares, with exact disk/support inequalities.
-- **G5.0.2** Exact nonstratified record witness proves the stratified family is not globally complete.
-- **G5.0.3 CLOSED (conditional):** [SIGNED_MATCHED_EQUALITY_FAMILY.md](SIGNED_MATCHED_EQUALITY_FAMILY.md) classifies **all** equality packings whose seven squares form two projection-separated 4+3 chains with corresponding endpoints vertically separated. Seven anchors become axis-aligned, three heights obey four exact separator inequalities, and two arbitrary freely rotated squares obey 15 actual-SAT pair tests. It contains the new nonstratified two-stack equality witness.
-- **G5.0.4** Four-anchor stress equality pins the stressed boundary squares, but does not establish that *every* unrestricted packing has this skeleton.
+### G5.0 Proven conditional families [CLOSED hand]
+- **G5.0.1:** STRATIFIED_EQUALITY_FAMILY.md: three slider heights and
+  two upper squares, necessary and sufficient within stratification.
+- **G5.0.2:** SIGNED_MATCHED_EQUALITY_FAMILY.md: all signed matched 4+3
+  terminal equality configurations, seven aligned chain squares,
+  three slider heights and two arbitrary square frames/centers with
+  15 actual SAT pair tests. Includes oblique-only free-square pairs.
+- **G5.0.3:** the whole common-coordinate class enters a signed
+  matched equality skeleton after one of the two frame choices.
+- **Boundary:** neither family has yet been proved exhaustive for
+  unrestricted nine-square equality packings.
 
-### G5.1 — Equality skeleton necessity [OPEN]
-- **G5.1.1** For every \(q=Q\) packing, apply G2.X's *equality* branches.
-- **G5.1.2** Prove which stress constraints are necessarily saturated (no hidden assumptions that non-stressed squares are fixed).
-- **G5.1.3** Classify different sign/reflection/owner-graph equality skeletons; merge genuinely equivalent descriptions.
+### G5.1 Global equality necessity [OPEN/BLOCKED]
+- **G5.1a:** once G4 proves optimality, *each* q=Q packing is itself a
+  global minimizer; apply the stress reduction without replacing it.
+- **G5.1b:** analyze every equality branch in the sharp classification.
+- **G5.1c:** recover all rigid anchors and all unstressed degrees of
+  freedom. A minimizer substitution alone does not classify the
+  original equality packing before optimality is known.
 
-### G5.2 — Free-parameter domain [OPEN]
-- **G5.2.1** Store rigid anchors, exact slider variables and all nonanchor square frames/centers; permit oblique-only free-square separators.
-- **G5.2.2** Replace the original 36 pairwise Packing checks with a modest explicit domain of corner containment and actual SAT projections relative to fixed anchors/free squares.
-- **G5.2.3** Prove every parameter choice yields physical disjointness and disk containment (sufficiency).
-- **G5.2.4** Prove every equality configuration appears in the parameter domain (necessity).
+### G5.2 Parameter domains and converse [OPEN globally]
+- **G5.2a:** list each genuine equality skeleton, including independent
+  sign choices and physically distinct reflection branches.
+- **G5.2b:** give exact corner/support domains for free centers and
+  angles; do not simply restate nine unknown-square Packing.
+- **G5.2c:** prove all parameters are sufficient for containment and
+  pairwise interior disjointness, using actual own-axis SAT where needed.
+- **G5.2d:** prove every unrestricted equality packing is represented.
 
-### G5.3 — Symmetry quotient [OPEN]
-- **G5.3.1** Distinguish rotations/relabelings from reflections according to the actual `Congruent` predicate.
-- **G5.3.2** Avoid claiming isolated uniqueness in the presence of nontrivial slider/rotation parameters.
-- **Exit:** a necessary-and-sufficient equality model set for all n=9 optimal packings.
-
----
-
-## G6 — Independent, table-free hand audit [BLOCKED on G4/G5]
-
-- **G6.1** Consolidate the proof as one ordered manuscript, not a pile of independently solved conditionals.
-- **G6.2** Audit every analytic inequality, algebraic factorization, sign, corner support and endpoint equality with a second derivation.
-- **G6.3** Audit SAT logical disjunctions and the graph-case exhaustiveness proof independently.
-- **G6.4** Verify all negative controls and equality witnesses.
-- **G6.5** Record exact theorem-to-source dependencies, unresolved assumptions and source commits. No bound or “numerical experiment” is silently used as an axiom.
-- **Exit:** a human reviewer can follow the full unrestricted theorem without executing any program.
-
-## G7 — Lean kernel proof, Palomar standard [NOT STARTED]
-
-- **G7.1** Introduce exact \(Q\), candidate radius and model/equality parameter types; no changes to the unrestricted square semantics.
-- **G7.2** Formalize square support, exact corner-containment and separating-axis criteria.
-- **G7.3** Formalize small terminal stress inequalities and equality zero-set lemmas.
-- **G7.4** Formalize the *actual* global G2.X structural theorem, no unexplained axioms or overstrong normalization hypotheses.
-- **G7.5** Prove sharp lower bound + attainment; prove full equality necessity/converse.
-- **G7.6** Compile through standard Lean kernel/Mathlib workflow; inspect axioms, imports, transitive dependencies and a clean independent replay.
-- **Exit:** kernel-checked public theorem with no `sorry`, `admit`, bespoke external proof oracle, native-kernel shortcuts, or unvalidated generated tables.
-
-## G8 — Repo integration and handoff [NOT STARTED]
-
-- **G8.1** Integrate n=9 into public optimal radius/packing registry and `Optimum` instances.
-- **G8.2** Update `Challenge.lean` mirror, README, proof textbook, equality illustration and registry records.
-- **G8.3** Verify no regression in n=1–8.
-- **G8.4** Commit sources with timestamps and a consolidated handoff/coverage manifest; merge/close draft PR only after verification.
-- **Exit:** full reproducible result, not just a proposed manuscript.
+### G5.3 Congruence and uniqueness language [OPEN globally]
+Use the exact rotation/relabeling equivalence; handle reflections as
+required. Do not claim isolated-pose uniqueness where the examples
+have continuous translation/rotation freedoms.
 
 ---
 
-## B. Immediate execution queue (do not skip open gates)
+## G6 — Independent hand-proof audit [NOT COMPLETED]
+- **G6.1:** consolidate the actual unrestricted dependency chain once
+  G4/G5 are proved; distinguish obsolete research attempts.
+- **G6.2:** independently check support/corner identities, cone
+  alternatives, regularity, and all equality signs and strictness.
+- **G6.3:** independently check geometric contact-junction resolutions
+  and exhaustive core/completion coverage; a graph picture is not proof.
+- **G6.4:** retain all negative controls and exact equality witnesses.
+- **G6.5:** verify theorem-to-source versions and explicit scope of
+  every computation. A rational example check is not a universal proof.
 
-**First research attack: G2.C3.3.c CLOSED — the entire common-frame proof is now assembled.**
+**Local executed checks now available:** `check_sparse_stress.py`
+was matched by Git blob and SHA-256 to the committed source and run
+with exact Fraction arithmetic. SPARSE_STRESS_EXACT_CHECK.json records
+36 pair SAT tests, 36 corners, force/angle balance, the uncrossing
+identity, exact dual value Q, runtime version and exit code. This
+closes those **regression checks only**, not G6's independent audit.
 
-The previous (4,1) and (3,2) obligations are **both CLOSED by hand**:
-FOUR_PLUS_FOUR_PLUS_ONE_EXCLUSION.md eliminates (4,1), and
-COORDINATE_SEPARABLE_NINE_COMPLETE.md closes (3,2) by an elementary
-five-element matching, predecessor/successor overlap and a perpendicular
-signed 4+3-chain stress. Do not reopen this part via tiny gap or angle
-thresholds. The overall common-coordinate-separable n=9 lower bound and
-conditional equality necessity are now proved. **The remaining primary
-research task is unrestricted O3–O5.**
+## G7 — Lean/Palomar-standard kernel formalization [NOT STARTED]
+- **G7.1:** natural n=9 constants, construction and equality type,
+  preserving existing unrestricted geometric semantics.
+- **G7.2:** support, SAT, compactness and the finite conic argument,
+  using standard mathematical lemmas or fully formalized proofs.
+- **G7.3:** sparse/planar/angle reductions and short terminal inequalities.
+- **G7.4:** the actual exhaustive sharp core/completion theorem,
+  without replacing Packing by an assumed normal form.
+- **G7.5:** radius attainment/lower bound and full equality converse.
+- **G7.6:** compile, inspect axioms and dependencies, and independently
+  replay in the standard kernel. No native-kernel shortcuts or oracles.
 
-**CURRENT CRITICAL ATTACK: G2.O3 graph invariant.**
+## G8 — Public integration and handoff [NOT STARTED]
+- **G8.1:** integrate n=9 into Optimum and the radius/packing registries.
+- **G8.2:** update Challenge mirror, README and proof textbook.
+- **G8.3:** check n=1–8 regressions, source provenance and replay record.
+- **G8.4:** only then finalize the PR; no merge or completion claim
+  before the actual advertised result is proved and checked.
 
-1. Start with actual SAT owner normals; do not assume a global frame or central square.
-2. Seek a cyclic/planar/interval graph invariant forcing a short positive-stress subgraph, allowing free-square oblique edges to have zero contact weights.
-3. Falsify candidate graph classification against the known equality witnesses, *especially* the no-global-frame pair.
-4. Only after graph coverage is proved, apply G1.T4 weak dual and search for orientation-uniform symbolic stresses.
+---
 
-### Decision points / pivot triggers
+## Immediate execution contract
 
-- If G2.C3.3 does not admit a whole-class obstruction using actual square widths, **pivot to G2.O3**; do not keep weakening a true terminal theorem into infinitely many special cases.
-- If graph enumeration grows explosively, switch to a *geometric* invariant (radial/angular budget or a balanced separator force principle), not a finer SAT enumeration.
-- If an exact 9-square packing with \(q<Q\) is found, the **target is false**; verify it by exact corner and SAT calculations and revise every downstream gate.
-- Every completion claim must name its global quantifiers, its exact added assumptions (if any), and whether hand, Lean, or independently audited.
-
-### Ledger at this commit
-
-| Gate | Current state | Immediate blocker |
-|---|---|---|
-| G0 | CLOSED hand | Independent audit later |
-| G1 | CLOSED hand (conditional terminals) | Global applicability |
-| G2.C0–C2 | CLOSED hand | — |
-| G2.C3.1–C3.2 | CLOSED hand | — |
-| **G2.C3.3** | **CLOSED hand (4,1) + (3,2)** | — |
-| G2.C4 | **CLOSED hand (sharp common-frame n=9)** | — |
-| G2.O0–O2 | CLOSED (negative/framework) | — |
-| **G2.O3** | **OPEN** | Global structural graph coverage |
-| **G2.O4–O5** | **OPEN/BLOCKED** | G2.O3 + uniform stresses |
-| G2.X/G4 | BLOCKED | **Oblique** global graph coverage only |
-| G5.0 | CLOSED hand (stratified and signed 4+3 conditional families) | — |
-| G5.1–G5.3 | OPEN/BLOCKED | Equality global necessity |
-| G6 | BLOCKED | G4/G5 |
-| G7/G8 | NOT STARTED | G6 |
-
-**Total progress must be assessed by how many *unrestricted* input configurations are now covered, not by how many narrow conditional lemmas are proved.**
+1. **Do not redo the common-coordinate theorem.** It is now closed.
+2. **Do not redo compactness or merely ask for a stress.** The exact
+   actual-contact stress exists at every unrestricted minimizer.
+3. **Do not enumerate arbitrary SAT owners.** Use the proved connected
+   planar outer-loaded core, bounded transmission paths and the separate
+   angular necessary conditions, while retaining unstressed squares.
+4. **Close a full remaining structural family or a universal inequality.**
+   The target is the sharp value `Q`, not another small center/angle bound.
+5. **If a proposed family exclusion is false, retain its exact witness.**
+   In particular preserve known q=Q two-stack and oblique examples.
+6. **Never combine separate certificates silently.** Planarity is proved
+   for translational stress; full angular balance has a separate support
+   bound. A proof needing both simultaneously must supply that bridge.
+7. **Status truth:** currently O3.2–O4, G4 and global G5 remain open;
+   G6–G8 are not completed. The new results close reductions, not T9.
