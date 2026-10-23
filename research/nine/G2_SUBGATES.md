@@ -238,6 +238,30 @@ shared contact segment.
 translational certificate can differ. Any argument requiring both
 properties of one stress must first prove that additional bridge.
 
+## 6A. Physical incidence, radial bridges and loaded leaves — prior completed reductions
+
+**G2.O3.1f CLOSED hand (global necessary reduction):**
+[PHYSICAL_CONTACT_STRESS.md](PHYSICAL_CONTACT_STRESS.md) proves
+an actual-contact-point **force-and-torque** equilibrium witness
+with <=27 atoms. The planar **incidence** graph retains junction
+vertices; the positive body-pair graph is not asserted planar.
+Square-ended unloaded transmitter paths have reserve 0,1,sqrt(2),2.
+
+**G2.O3.1g CLOSED hand (prior commit 028a63b):**
+[RADIAL_BRIDGE_AND_LEAF_REDUCTION.md](RADIAL_BRIDGE_AND_LEAF_REDUCTION.md)
+proves that each positive body-graph bridge's force line is radial,
+and every such bridge meets one of <=4 circle-clear central bodies.
+It supplies a suitable stress with off-origin point-only vertex/vertex
+edges cyclic rather than bridges. Every circle-loaded leaf is an
+exact side-normal **S** or diagonal **D** leaf with radial contact
+radii sqrt(R^2-1/4)-1 or R-sqrt(2). This was already committed
+before the new local cap/tree continuation; **do not double count**.
+
+The <=19-term planar **translational** certificate, the <=27-atom
+**physical** force-and-torque certificate and the body-pair
+stress graph are distinct representations. No automatic
+simultaneous <=19 planar-body and angular certificate is proved.
+
 ## 7. Exact regression record: completed, not a universal proof
 
 `check_sparse_stress.py` uses rational arithmetic on the known
@@ -252,27 +276,120 @@ the exact four-junction uncrossing identity. The translational example
 has 11 positive terms. These checks do not prove global optimality,
 planarity for arbitrary graphs, or the full mathematical manuscripts.
 
+## 7A. Imported 2026-10-23 cap/solid-row/tree proofs — exact status
+
+**Provenance:** manuscripts imported to this draft research branch at
+[8d92e8f](https://github.com/vltanh/lean4-squares-in-circles/commit/8d92e8f0666dd877bd4248971c8c51e2d2a70c66),
+[86ea127](https://github.com/vltanh/lean4-squares-in-circles/commit/86ea127dff34f4f1ad7ad736c1fa8958319d8536) and
+[48d3b8a](https://github.com/vltanh/lean4-squares-in-circles/commit/48d3b8a4031ddf50622e336d69fb154ee45aeaf0).
+These contain **written hand proofs pending independent mathematical
+audit**, not compiled Lean. See
+[CAP_AND_BRIDGE_GATE_UPDATE.md](CAP_AND_BRIDGE_GATE_UPDATE.md)
+and the timestamped [PROGRESS_LEDGER.md](PROGRESS_LEDGER.md).
+
+### CAP.1–CAP.3 — Three-square cap and every-direction central-strip constraint
+
+- **CAP.1 HAND DRAFT:** each unit square, arbitrarily rotated, inside
+  D_Q intersect {y>=7/16} has clipped horizontal section length >=1
+  on [-3/2,3/2] x {5/4}, strictly >1 if rotated.
+- **CAP.2 HAND DRAFT:** three physically disjoint squares in this cap
+  force q=Q, axis-aligned outer centers (+/-1,15/16) and one middle
+  center slider. Four squares cannot fit that cap.
+- **CAP.3 HAND DRAFT, UNRESTRICTED NECESSARY:** if nine squares fit
+  q<Q, then **in every direction** at least five physical squares
+  meet the strip |y|<7/16. No common-frame pairwise separation is
+  assumed, and interval antichains cannot be treated as physical rows.
+- **CAP.N EXACT NEGATIVE WITNESS:** a record-radius packing has no
+  triple cap in **any** direction. Do not claim universal cap extraction,
+  particularly in the global equality proof.
+- **CAP.4 OPEN:** combine the every-direction strip occupancy with
+  physical stressed-contact structure or another global invariant
+  to obtain q>=Q for all nine-square packings.
+- **Source:** [UNRESTRICTED_THREE_SQUARE_CAP.md](UNRESTRICTED_THREE_SQUARE_CAP.md).
+
+### ROW.1–ROW.3 — Solid four-row and mixed seam terminals
+
+- **ROW.1–2 HAND DRAFT, CONDITIONAL CLASS CLOSED:** if four of the
+  nine squares are a **solid, common-height, axis-aligned 4x1 row**,
+  all other squares lie completely on one vertical side or the other;
+  a full nine-square completion inside q<=Q forces **q=Q**.
+  The other squares may rotate or need oblique separating axes.
+- **ROW.3 HAND DRAFT, CONDITIONAL CLASS CLOSED:** a common seam with
+  a horizontal-projection-disjoint **four** group and **three**
+  other physically disjoint squares opposite the seam also forces
+  q=Q without a projection-order assumption on the three.
+- **ROW.4 OPEN:** derive such a row/seam or another terminal from an
+  arbitrary minimizing packing. A staggered 4-chain is NOT solid.
+- **Source:** [SOLID_FOUR_ROW_UNRESTRICTED_NINE.md](SOLID_FOUR_ROW_UNRESTRICTED_NINE.md).
+
+### TREE.1–TREE.3 — Small positive-stress components
+
+**Explicit premise:** 79/40 <= R <= sqrt(Q), supplied for a full n=9
+application only by importing the established n=8 lower bound
+(or proving a separate elementary lower-window result).
+This manuscript is not an independent new proof of n=8.
+
+- **TREE.1 HAND DRAFT, CONDITIONAL CLASS:** any two-circle-loaded
+  positive-stress **tree** is a four-square aligned side-normal
+  path at R^2=17/4 with centers (-3/2,0),(-1/2,tau_1),
+  (1/2,tau_2),(3/2,0) and |tau_i|<=1/2.
+- **TREE.2 HAND DRAFT, WHOLE GRAPH TOPOLOGY EXCLUDED IN WINDOW:**
+  no positive-stress **star** with one central hub and >=2 loaded
+  leaves occurs in the stated window, regardless of hub orientation
+  or the number of leaves. The result does not cover arbitrary
+  nonstar branching trees or cycles.
+- **TREE.3 HAND DRAFT, FLAT SUBCASE:** tau_1=tau_2=0 is a solid row,
+  whose five-square completion at R^2=17/4 is impossible by ROW.2.
+- **TREE.4 OPEN:** prove a sharp completion obstruction for **all**
+  staggered paths tau_1,tau_2 in [-1/2,1/2], with five freely
+  oriented other squares.
+- **TREE.5 OPEN:** handle branching nonstar trees, multi-armed
+  transmission paths and cyclic physical stressed cores, including
+  full nine-square packing capacity.
+- **Source:** [SMALL_TREE_STRESS_CORES.md](SMALL_TREE_STRESS_CORES.md).
+
+**Closure accounting:** CAP.3 is a *global necessary condition*, ROW
+a conditional complete structural class, TREE.2 a window-conditional
+whole topology exclusion. **None** supplies the missing finite
+exhaustive nine-square sharp core/completion classification.
+
 ## 8. Actual remaining mathematical obligations
 
 ### O3.2 — Sharp core/completion classification [OPEN]
-Every hypothetical unrestricted counterexample now produces the
-proved planar outer-loaded sparse core. Classify its feasible
-geometric types **together with the unstressed remaining squares**.
-A low-radius core of fewer than nine squares can exist; omitting its
-completion constraints would invalidate a nine-square lower bound.
+Every hypothetical unrestricted counterexample now produces a
+physical contact-point force/torque certificate, radial bridge
+constraints and an outer-loaded sparse planar representation.
+Within its declared radius window, star components have been
+excluded and two-loaded trees restricted to staggered four-square
+paths. The CAP.3 every-direction strip constraint also holds in
+every hypothetical subcritical packing.
+
+**Still missing:** a finite exhaustive classification with a sharp
+inequality for **each realizable nine-square core PLUS its unstressed
+other squares**. In particular, full staggered path completions,
+nonstar branching trees and cyclic cores remain unproved. A low-radius
+core of fewer than nine squares may exist and cannot simply be
+discarded. The capless q=Q witness bars a global cap-only normal form.
 
 ### O3.3 — Human-sized exhaustive terminal cover [OPEN]
 Prove a small finite disjunction of signed 4+3/grid terminal families,
 strictly impossible alternatives, or new sharp stress classes.
 Account for bridges, cycles, contracted multiedges, zero-weight limits,
 multiple circle-contact corners, and the actual count of all squares.
-The finite bounds 19 and 27 alone do not constitute such a cover.
+The finite bounds 19 and 27, the four radial transmitter labels,
+and the completed star topology alone do not constitute such a cover.
+Before closing O3.3, either produce a **small exhaustive** structural
+disjunction covering all remaining nine-square completions, or pivot
+to a universal strip/contact-capacity inequality. Proving one more
+isolated core type does not discharge the parent gate.
 
 ### O4 — Uniform sharp inequalities [OPEN]
 Existence of exact multipliers at a minimizer is proved, but the
 bound `q0>=Q` for every realizable nine-square core/completion remains
-unproved. Obtain explicit inequalities valid over all orientations,
-not sampled angle ranges or a mere numerical dual value.
+unproved. Obtain explicit inequalities valid over all orientations and all
+**unstressed-square completions**, not sampled angle ranges or a
+mere numerical dual value. The cap and solid-row tools may be used
+when their hypotheses are *derived*, not assumed.
 
 ### O5 / G2.X / G4 — Global sharp assembly [BLOCKED]
 Combine the complete terminal cover and uniform sharp bounds, then
@@ -294,7 +411,10 @@ No compiled result, CI run or independent replay is asserted.
 ## 9. Progress rule
 
 A new restriction on arbitrary minimizers closes a **reduction gate**,
-not automatically the sharp theorem. The next acceptable advance must
+not automatically the sharp theorem. Timestamp and commit each
+milestone in [PROGRESS_LEDGER.md](PROGRESS_LEDGER.md), with source,
+exact quantifiers, evidence scope and the still-open blocker.
+The next acceptable advance must
 cover a full remaining core/completion family or give one universal
 sharp invariant. Do not return to tiny coordinate boundaries, repeat
 the finished common-frame case, assume an unstressed square is free to
