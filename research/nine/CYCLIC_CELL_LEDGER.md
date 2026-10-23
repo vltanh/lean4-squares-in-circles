@@ -1,33 +1,35 @@
-# n=9 CYCLIC — exhaustive coarse cells and exact sharp-closure ledger
+# n=9 CYCLIC — 58 exhaustive coarse cells, TWO whole cells closed
 
-**Checkpoint:** 2026-10-23 quadrant/block continuation, base 59d0c9.
-**Global sharp theorem remains OPEN.** This ledger makes the cyclic bookkeeping finite and exhaustive at the **block-size / bridge-count level**. It does NOT claim that these cells are individual contact graphs, that their continuous geometries are solved, or that 58 is a small final geometric classification.
+**Checkpoint:** 2026-10-23 two-load reciprocal continuation, read base a89802c. **Global sharp theorem remains OPEN.** The inventory is exhaustive at the **block-size / bridge-count level**, not an assertion that each cell is a single contact graph or has solved continuous geometry.
 
-The two surviving tree completion families **P.ALL** and **Y.ALL** remain OPEN separately. The original six tree cases and their closed subcases are recorded in FINITE_TREE_CASE_LEDGER.md and REMAINING_TREE_TWO_FAMILY_REDUCTION.md. This file does not reopen or silently close those tree obligations.
+**NEW:** the entire four-body cell **C1.4.b0** is now excluded by the hand argument in FOUR_BODY_CYCLIC_CELL_CLOSED.md. The three-body cell C1.3.b0 was already excluded. Therefore **56 cells remain OPEN**. The new two-loaded-component rigidity also applies across the inventory, but does not close cells whose >=3-loaded possibilities remain unresolved.
 
-## 1. Exact coverage theorem and conventions
+P.ALL and Y.ALL remain OPEN separately. All results called CLOSED hand are mathematical manuscripts pending independent full audit and Lean verification. See TWO_LOAD_PROGRESS.md for current exact source and execution provenance.
 
-Source: [CYCLIC_BLOCK_INVENTORY.md](CYCLIC_BLOCK_INVENTORY.md), commit b3bac6e.
+## 1. Coverage theorem and exact graph conventions
 
-Choose one connected positive body-pair component containing a cycle, with n<=9 physical square bodies. Let k_1<=...<=k_m be its maximal cyclic vertex-biconnected block sizes, each >=3, and b its number of bridges. The block-cut tree gives
+Source: CYCLIC_BLOCK_INVENTORY.md, commit b3bac6e.
+Choose one connected cyclic positive simple body-pair component with n<=9 bodies. If its maximal cyclic vertex-biconnected block sizes are k_1<=...<=k_m, k_i>=3, and it has b bridges, then
 
     n = 1 + b + sum(k_i-1) <= 9.
 
-All other **9-n physical squares** remain in that cell's completion premise. The graph is the simple positive body-pair graph, not the contact-point incidence graph or the set of all physical contacts. We do not assume this body graph planar.
+Every one of the **9-n other physical squares** remains in the cell's completion premise. The body-pair graph need not be planar; it is distinct from the planar physical contact-point incidence graph and from all zero-stress physical contacts.
 
-- [x] **CY.B1:** block-cut identity proved by the elementary block-incidence tree argument.
-- [x] **CY.B2:** 21 sorted block-size profiles and 58 bridge-count cells are the complete solutions of the integer budget.
-- [x] **CY.LOAD.1:** an unloaded positive appendage with only one external attachment body is impossible by the summed force/support identity.
-- [x] **CY.LOAD.2:** each endblock must contain a circle-loaded nonarticulation body.
-- [x] **CY.LOAD.3:** in 79/40<=R<=sqrt(Q), the loaded body subset cannot be pairwise physically touching. Exact normalized circle-force balance and the center centroid give R^2<=625/162<(79/40)^2 otherwise.
-- [x] **C1.3.b0:** a selected triangle component with no bridges is therefore excluded in that window.
-- [ ] **CY.SHARP:** sharp bounds for the other 57 complete geometric cells. Neither the finite budget nor the load rules prove these bounds.
+- [x] **CY.B1–B2:** exact block-cut identity and complete list of 21 sorted profiles / 58 bridge-count cells.
+- [x] **CY.LOAD.1–2:** no circle-free positive appendage attached through one body; each endblock has a loaded nonarticulation body.
+- [x] **CY.LOAD.3:** in 79/40<=R<=sqrt(Q), a component's loaded subset cannot all physically touch pairwise.
+- [x] **CY.ACUTE:** ACUTE_LOADED_CONTACT_GRAPH.md strengthens this to **connectedness of the loaded physical NONCONTACT graph**. It concerns actual contact, not only positive edges.
+- [x] **CY.CHANNEL:** PARALLEL_TRANSMISSION_AND_FOUR_CYCLES.md proves normal-channel uniqueness, two-loaded simple-cycle quantization and full simple C4 exclusion.
+- [x] **CY.TWOLOAD:** TWO_LOAD_RECIPROCAL_RIGIDITY.md proves every positive component with exactly two loaded bodies has all pair forces parallel. In the window it has q=17/4 and, for the strictly exposing point-contact certificate, 4–6 bodies in two aligned internal layers. Triangle-containing and 7–9-body two-loaded components are excluded.
+- [x] **C1.3.b0:** selected triangle component excluded in the window.
+- [x] **C1.4.b0:** all C4, diamond and K4 components excluded in the window; source FOUR_BODY_CYCLIC_CELL_CLOSED.md.
+- [ ] **CY.SHARP:** 56 remaining complete geometric cells. The necessary restrictions and finite count do not prove their sharp completion bounds.
 
-If a packing has several cyclic positive components, choose one and assign its unique sorted profile and b. The inventory is disjoint for that **selected component**, not a claim that the underlying packing can have only one possible stress or one possible component choice.
+The lower-radius window remains an explicit imported n=8 prerequisite or a separate proof obligation. The coarse inventory itself needs no radius bound. Selecting one component never discards the other physical squares.
 
 ## 2. Individually ticked cells
 
-For each OPEN row, its theorem quantifies over **all** block adjacencies, articulation arrangements, contact locations, orientations, loads, zero-weight physical obstacles and all remaining physical squares having that row's data. A proof for one graph or drawing does not close a row.
+Each OPEN row quantifies over all block adjacencies, articulation arrangements, contact points, independent angles, positive loads, zero-stress physical obstacles and the complete remaining-square packing.
 
 | Cell | Cyclic block sizes | Bridges b | Component bodies n | Other physical squares 9-n | Sharp closure |
 |---|---|---:|---:|---:|---|
@@ -38,7 +40,7 @@ For each OPEN row, its theorem quantifies over **all** block adjacencies, articu
 | C1.3.b4 | 3 | 4 | 7 | 2 | [ ] OPEN |
 | C1.3.b5 | 3 | 5 | 8 | 1 | [ ] OPEN |
 | C1.3.b6 | 3 | 6 | 9 | 0 | [ ] OPEN |
-| C1.4.b0 | 4 | 0 | 4 | 5 | [ ] OPEN |
+| C1.4.b0 | 4 | 0 | 4 | 5 | [x] NEW all C4/diamond/K4 excluded |
 | C1.4.b1 | 4 | 1 | 5 | 4 | [ ] OPEN |
 | C1.4.b2 | 4 | 2 | 6 | 3 | [ ] OPEN |
 | C1.4.b3 | 4 | 3 | 7 | 2 | [ ] OPEN |
@@ -90,34 +92,50 @@ For each OPEN row, its theorem quantifies over **all** block adjacencies, articu
 | C3.344.b0 | 3,4,4 | 0 | 9 | 0 | [ ] OPEN |
 | C4.3333.b0 | 3,3,3,3 | 0 | 9 | 0 | [ ] OPEN |
 
-## 3. Uniform cell contract and useful finite subgates
+## 3. Closed four-body cell: complete internal subgates
 
-For each unchecked cell C:
+Source: FOUR_BODY_CYCLIC_CELL_CLOSED.md, commit 05e15a0.
 
-- [ ] **C.GEOM:** either prove all its physically realizable geometries enter a finite explicit stress/pocket/completion description, or establish a direct inequality for the whole cell. The abstract block sizes alone do not determine such a description.
-- [ ] **C.LOAD:** impose actual force/torque equilibrium, genuine contact points, loaded endblocks and nonclique loaded support, without importing tree radiality on nonbridge edges.
-- [ ] **C.COMPLETE:** retain all 9-n remaining squares and their true corner/SAT constraints. A lower-radius core may exist even if nine-square completion is impossible.
-- [ ] **C.SHARP:** prove q>=Q uniformly over every allowed orientation and completion, or exclude the entire selected-component cell within the stated window.
-- [ ] **C.EQUALITY:** record all q=Q possibilities, including zero-weight free squares and boundary degeneracies, when required for the global equality theorem.
+- [x] **C1.4.b0.GRAPH:** the only biconnected simple four-body adjacency types are C4, K4-e and K4. This follows from edge counts 4/5/6 and minimum degree two, not a sampled drawing.
+- [x] **C1.4.b0.C4:** two loaded bodies would force a six-body simple cycle; three or four loaded bodies violate connected loaded noncontact. Prior complete channel result.
+- [x] **C1.4.b0.K4:** the loaded subset is a touching clique and is impossible.
+- [x] **C1.4.b0.DIAMOND.LOADS:** only the two nonadjacent tips can be loaded; every other loaded subset violates the noncontact rule.
+- [x] **C1.4.b0.DIAMOND.GEOM:** the new two-loaded reciprocal theorem forces all pair normals parallel. The diamond's positive triangles would be three pairwise touching, pairwise interior-disjoint positive-length intervals on one line, an impossibility.
+- [x] **C1.4.b0.ALL:** every load/angle/contact realization is excluded independently of the other five physical squares.
 
-These are theorem contracts, not a requirement to do 57 separate brute-force searches. A global invariant or a theorem covering several profiles is preferable. In particular, the same proof may close an entire column of bridge counts or all loaded-endblock patterns at once.
+## 4. Exact status of the new cross-cell two-loaded theorem
 
-## 4. Existing negative controls and dependency boundary
+Source: TWO_LOAD_RECIPROCAL_RIGIDITY.md, first commit 248202d, clarified in 9fad28e.
 
-The exact record-radius oblique witness and signed matched-chain equality family must be retained. No theorem says arbitrary loaded bodies form a clique, no theorem gives a global common orthogonal separating frame, and a positive core of fewer than nine squares need not itself require radius sqrt(Q).
+- [x] **TL.RECIP:** plane force-polygon signed-area cancellation, with convex direction order and two external ports, forces all aggregate incidence forces parallel.
+- [x] **TL.PHYS:** square normal/tangent cones, empty outer circle-chord caps and common-point extreme rays justify the reciprocal hypotheses and recover every original pair normal.
+- [x] **TL.LAYER:** in the window, all two-loaded components have q=17/4 and aligned internal layers x=+/-1/2 between radial loaded endpoints x=+/-3/2.
+- [x] **TL.COUNT:** strict point-only normal selection gives 4–6 bodies, excluding all two-loaded 7–9-body subfamilies. No positive triangle occurs.
+- [ ] **TL.COMPLETE5–6:** the full physical completion capacity for the five-/six-body aligned layered survivors is not proved. Some heights are outside [-1/2,1/2]; they are not automatically the older P domain.
+- [ ] Components with >=3 loaded bodies in the larger cells remain unresolved unless separately excluded.
 
-The endblock loaded-body rule is necessary but insufficient. An intermediate block need not have a private loaded body; deleting such blocks on that basis would be invalid. A triangle block with bridge attachments is not the excluded isolated-triangle cell.
+This is a theorem spanning all cells, not a license to tick every cell containing a two-loaded subcase. A physical two-loaded six-body theta graph and a simple six-cycle are retained as exact controls.
 
-The exact checker check_quadrant_blocks.py enumerates the 58 integer cells and exercises every cell with an abstract graph witness. It checks all simple graphs through five vertices and a deterministic larger sample. **This is finite regression of the block bookkeeping, not a physical square feasibility proof or a universal sharp inequality.** The analytic block-cut argument is the coverage proof.
+## 5. Uniform contract for EACH open cell
 
-## 5. Current completion boundary
+- [ ] **C.GEOM:** cover every internal block adjacency and articulation arrangement, or prove an inequality directly over the full cell.
+- [ ] **C.LOAD:** impose true force/torque, actual contact points, loaded endblocks, connected loaded noncontact and TL restrictions where applicable. Do not impose bridge radiality on cycle edges.
+- [ ] **C.COMPLETE:** retain all 9-n remaining physical squares and all zero-weight contacts.
+- [ ] **C.SHARP:** prove q>=Q for every allowed realization or exclude the whole selected component in the window.
+- [ ] **C.EQUALITY:** preserve every q=Q degeneracy and free-square rotation when needed for global equality.
 
-- [x] Exhaustive coarse cyclic block/bridge inventory.
-- [x] Loaded endblock and loaded-clique restrictions.
-- [x] C1.3.b0 full exclusion in the explicit radius window.
-- [ ] Remaining 57 cyclic cells sharply bounded.
-- [ ] P.ALL and Y.ALL sharply bounded.
-- [ ] Lower-window prerequisite made independent or explicitly imported.
-- [ ] Unrestricted G4, all equality packings, independent audit, Lean kernel verification and public integration.
+These are quantified contracts, not 56 independent angle-grid searches. Prefer one global physical/force invariant that closes many cells.
 
-No percentage is attached to these counts. The cells have unequal difficulty and continuous geometric freedoms. A finite ledger prevents omitted bookkeeping cases; it does not certify that the remaining research is routine or close to finished.
+## 6. Exact regressions and current boundary
+
+The old check_quadrant_blocks.py verifies finite block bookkeeping, not physical sharpness. The NEW check_two_load_reciprocals.py, source 0d4c958, was matched by Git blob and SHA-256 and run at **2026-10-23 19:32:40 UTC**, Python 3.13.5, exit 0. TWO_LOAD_RECIPROCAL_EXACT_CHECK.json records all four-body abstract graphs/load patterns and exact physical force-polygon examples, including the necessary nonparallel three-loaded control.
+
+Finite examples do not prove the reciprocal geometry universally or replace an independent mathematical audit. All new general statements are hand manuscripts pending that audit; no Lean/CI is claimed.
+
+- [x] Complete 58-cell coarse coverage.
+- [x] C1.3.b0 and C1.4.b0 whole exclusions in the explicit window.
+- [ ] Remaining 56 cells uniformly sharply bounded.
+- [ ] P.ALL and Y.ALL capacities.
+- [ ] Declared lower-window dependency, unrestricted G4/G5, full audit and standard-kernel Lean/integration.
+
+Counts are not completion percentages. The remaining cells retain unequal, continuous geometric complexity.
