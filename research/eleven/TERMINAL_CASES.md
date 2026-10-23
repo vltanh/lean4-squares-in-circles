@@ -132,9 +132,11 @@ classifies its physical equality cases as exact blocks.
   The [full angle-class theorem](FULL_GROUP_ANGLE_CLASS.md) gives q>=q_c
   for arbitrary centers and exactly the known slider equality family.
   Its 507 closed rectangles cover both angle orders and all endpoint ties.
-- **L:** In some neighborhood of the whole candidate family, with arbitrary
-  independent orientations and physical owner switches,
-  [local sharpness and equality](LOCAL_OPTIMALITY.md) hold.
+- **L:** In the explicit normalized neighborhood N<=10^-7 of the whole
+  candidate family, with arbitrary independent orientations and physical
+  owner switches, [sharpness and equality](UNRESTRICTED_NEIGHBORHOOD.md)
+  hold. The formal reference slider is extended by 1/10000 at both ends;
+  physical equality recovers exactly its feasible closed interval.
 
 These are proved terminal theorems. Their hypotheses are not derived for every
 packing in branch O; the complement of L still requires classification.

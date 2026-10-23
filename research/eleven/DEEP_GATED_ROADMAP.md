@@ -63,7 +63,7 @@ allowed without a separate theorem.
 | G4.U | Unrestricted coarse lower bound q11>9/2 | H/A |
 | G4.F | Fixed candidate frames plus fourteen separators: sharp bound and equality | H/A/C |
 | G4.A | Full two-group-angle square with fourteen separators: sharp bound and equality | H/A/C; 507 rectangles |
-| G4.L | Unrestricted local sharpness and complete local equality | H/A |
+| G4.L | Unrestricted local sharpness and complete local equality | H/A; explicit neighborhood N<=10^-7 |
 | G4.2–G4.5 | Remaining whole-domain certificates and global assembly | BLOCKED |
 | G5 | Universal lower bound and attainment | BLOCKED |
 | G6 | Complete necessary-and-sufficient equality family | BLOCKED |
@@ -297,7 +297,13 @@ condition and equality consequences. The [candidate stress](FIXED_ORIENTATION_ST
 weights giving the sharp bound for the fixed candidate frames and fourteen
 specified separators, including full equality reconstruction. The
 [local theorem](LOCAL_OPTIMALITY.md) retains both parallel-contact owners
-and proves unrestricted local sharpness and equality. Both have an
+and proves unrestricted local sharpness and equality. The
+[quantitative physical terminal](UNRESTRICTED_NEIGHBORHOOD.md) now fixes an
+explicit normalized neighborhood N<=10^-7, with independent angles and
+physical owner choices. Exact inverse-Jacobian and angular-flow bounds
+reduce q<=q_c to N<=4820400 N^2, forcing N=0. This is a concrete retained
+terminal for a future exhaustive cover, not a global capture theorem.
+Both original stress results have an
 [independent audit](CANDIDATE_STRESS_REVIEW.md). They close G4.F and G4.L.
 The [full grouped-angle theorem](FULL_GROUP_ANGLE_CLASS.md) also closes G4.A:
 arbitrary centers and both angles in the full closed first-quadrant square

@@ -30,6 +30,7 @@ python3 check_reverse_angle_tiles.py
 python3 arc_budget/check_four_core_shell.py
 python3 arc_budget/replay_four_core_shell.py
 python3 replay_block_marker_cover.py
+python3 check_unrestricted_neighborhood.py
 ```
 
 All listed commands passed on 23 October 2026. They have different scopes:
@@ -169,3 +170,13 @@ the separator reduction, open-marker conclusion and translated-radius
 bound. `FOUR_CENTER_MOMENT_REVIEW.md` audits the analytic Gram-rank
 argument and the exact block equality case. These results restrict the
 four-core case and do not close it.
+
+## Explicit unrestricted neighborhood
+
+`check_unrestricted_neighborhood.py` replays the prior angular certificate
+and checks all uniform margins, the enlarged slider interval, positive
+weights and the inverse norm in ordinary-angle coordinates. Direct exact
+replay and `UNRESTRICTED_NEIGHBORHOOD_REVIEW.md` both pass. The review also
+checks the analytic second-order errors and owner persistence. The explicit
+N<=10^-7 terminal permits every independent angle; it does not capture
+packings outside that neighborhood.

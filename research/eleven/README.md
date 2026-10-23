@@ -29,7 +29,9 @@ Existence and feasibility are proved. The [positive stress](FIXED_ORIENTATION_ST
 proves sharpness for the fixed candidate frames and fourteen specified
 separators. The [local theorem](LOCAL_OPTIMALITY.md) proves unrestricted
 local optimality and complete local equality, allowing every square to
-rotate independently. [Independent review](CANDIDATE_STRESS_REVIEW.md)
+rotate independently. Its [quantitative version](UNRESTRICTED_NEIGHBORHOOD.md)
+now gives an explicit normalized neighborhood of radius 10^-7, including
+physical separator-owner changes and both slider endpoints. [Independent review](CANDIDATE_STRESS_REVIEW.md)
 checks both results. The [full grouped-angle terminal](FULL_GROUP_ANGLE_CLASS.md)
 now proves sharpness and the slider equality family for arbitrary centers
 and both group angles throughout their full closed first-quadrant square,

@@ -360,3 +360,16 @@ Commit timestamps and hashes are recorded after the commit exists.
   equality forces an exact block. An independent mathematical audit passes.
 - General deformed four-core configurations remain in the residual class.
   No global block normalization is asserted.
+
+## Explicit unrestricted physical neighborhood
+
+- Previous block checkpoint: `4b7485d9fed12ae55be4f906c4307fedd77bcad7`.
+- The unrestricted local theorem now has a concrete normalized radius
+  N<=10^-7, uniform across the full slider family and a formal extension
+  past both endpoints. All eleven angles vary independently and physical
+  separation retains both owners and ties.
+- Exact positive stress margins, uniform quadratic errors and an inverse
+  Jacobian norm below 40 give N<=4820400 N^2 whenever q<=q_c. Thus N=0;
+  actual pair separation then gives exactly the feasible slider interval.
+- Independent mathematical/source audit and direct rational replay pass.
+  This closes an explicit terminal while global capture remains open.
