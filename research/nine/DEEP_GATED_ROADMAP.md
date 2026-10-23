@@ -202,6 +202,8 @@ with FIVE additional independently oriented squares inside D_(17/4).
 - [ ] **P.1 ROUTING** A property for every added square, with its corners and true SAT axes, including quadrant-crossing cases.
 - [ ] **P.2 COUPLED CAPACITY** At most four extras over the entire two-slider parameter square; every subpartition must be finite and cover all continuous values.
 - [ ] **P.3 ENDPOINTS** Reconcile both signs and |tau_i|=1/2 without strengthening physical nonoverlap to an inapplicable strict-normal contact premise.
+- [x] **P.HIGH** Every square with center height above 3/sqrt(5) contains (0,sqrt(5)/2) strictly; the threshold is sharp. HIGH_CENTER_COMMON_POINT.md.
+- [x] **P.CAP** Complete quantitative terminal-cap exclusion at section threshold 19/120, all actual separating axes retained. TERMINAL_CAP_SECTION_EXCLUSION.md.
 - [ ] **P.ALL** No five-square physical completion of any member.
 
 ### TREE.Y — Whole side/vertex fan plus FOUR other squares [OPEN]
@@ -216,6 +218,9 @@ Exact domain:
 - [x] **Y.0** Every nonaligned residual TREE.11 has this five-body form; force ratios are sin(theta),cos(theta). Angular endpoints reduce to P.
 - [x] **Y.N** Nonaligned physical cores exist; their completion, not core existence, is the missing theorem.
 - [ ] **Y.1 ROUTING** Whole-square regions without a common separator assumption; derive screen hypotheses rather than assigning by center angle.
+- [x] **Y.WEDGE.2** Every screened origin pocket of aperture at most 135 degrees has capacity one, with arbitrary square orientations. WEDGE_135_CAPACITY_ONE.md.
+- [x] **Y.CAP** All orientations and owners in the positive terminal-cap inequality, plus right-owned downward separation, are covered analytically. No parameter table or interval cover is used.
+- [ ] **Y.STRICT** Prove capacity two in every remaining screened pocket of aperture strictly below 180 degrees.
 - [ ] **Y.2 CAPACITY** At most three additional arbitrary squares for every alpha/theta in the whole domain.
 - [ ] **Y.3 BOUNDARY** Include limiting shared-side configurations consistently with P.
 - [ ] **Y.ALL** No four-square completion.

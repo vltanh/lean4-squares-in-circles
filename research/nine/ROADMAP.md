@@ -99,6 +99,14 @@ P fixes aligned centers (-3/2,0),(-1/2,tau1),(1/2,tau2),(3/2,0), with tau_i in [
 
 Y fixes the full nonaligned side/vertex five-square fan with alpha in (0,1), theta in (0,pi/2), including its three radial terminals, and requires exclusion of FOUR arbitrary added squares. Its physical core exists. Neither new reciprocal rigidity nor quadrant capacity alone closes Y.
 
+### Newly closed analytic subgates
+
+- [x] **WEDGE.2:** every screened pocket of aperture at most 135 degrees has capacity one. Full proof: WEDGE_135_CAPACITY_ONE.md.
+- [x] **P.HIGH:** the sharp center-height threshold 3/sqrt(5) forces a common interior point. HIGH_CENTER_COMMON_POINT.md.
+- [x] **P.CAP:** the quantitative terminal-cap inequality at section threshold 19/120 holds for every square orientation and every physical separator. TERMINAL_CAP_SECTION_EXCLUSION.md.
+- [ ] **Y.STRICT:** the complementary strict-half-pocket capacity remains open.
+- [ ] **P.ALL:** the remaining pair-routing premise is not assumed by the new local cap theorem.
+
 ## Actual exact regression evidence
 
 [check_two_load_reciprocals.py](check_two_load_reciprocals.py), source **0d4c958**, was matched to its committed Git blob and SHA-256 before an actual run at **2026-10-23 19:32:40 UTC**, Python **3.13.5**, exit **0**. [TWO_LOAD_RECIPROCAL_EXACT_CHECK.json](TWO_LOAD_RECIPROCAL_EXACT_CHECK.json) records 12 exact radius comparisons, all 64 labelled four-body graphs/load subsets and five complete physical stress/reciprocal examples. An identical source rerun passed at **19:44:32 UTC**.

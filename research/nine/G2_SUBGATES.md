@@ -71,6 +71,8 @@ H=[-alpha,1-alpha]x[0,1], K=[0,u]+[0,v], u=(cos(theta),-sin(theta)), v=(-sin(the
 
 - [x] Exact side/vertex normal form and force ratios sin(theta),cos(theta); angular endpoints reduce to P.
 - [x] Genuine nonaligned core exists, so exclude completion, not the core.
+- [x] WEDGE.2: complete capacity-one theorem for every screened pocket of aperture at most 135 degrees; WEDGE_135_CAPACITY_ONE.md.
+- [ ] The other Y pocket has aperture strictly below 180 degrees; its capacity-two theorem remains open.
 - [ ] Complete physical pocket routing and capacity, including limits and zero-stress contacts.
 
 Source: REMAINING_TREE_TWO_FAMILY_REDUCTION.md. P.ALL and Y.ALL are not closed by the new two-load theorem: Y has three loaded bodies, and P remains the four-body two-load completion.

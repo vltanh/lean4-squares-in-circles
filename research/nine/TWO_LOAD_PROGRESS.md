@@ -150,3 +150,17 @@ Exploratory sampled linear programs and square-pose searches guided or rejected 
 ### Remaining work, with unchanged whole-cell count
 
 P.ALL and Y.ALL remain open. The general C7 completion with two arbitrary circle-clear squares remains open, as do components containing a circle-clear body. The regular-ring capacity is not extrapolated to arbitrary rings. The count remains two whole coarse cells closed and 56 open, with the unrestricted radius, equality, lower-window assembly, independent full audit and Lean/integration obligations unchanged.
+
+
+## 2026-10-23 23:53 UTC — complete 135-degree pocket and quantitative path tools
+
+Base commit: `c510ed141bfcabd8f707012245acf9a302fcb2be`.
+
+- **CLOSED WEDGE.2:** `WEDGE_135_CAPACITY_ONE.md` exhausts both owners and all pair-normal angles, using the two terminal frames. Every screened pocket of aperture at most 135 degrees has capacity one.
+- **CLOSED analytic inputs:** `OWNED_AXIS_TERMINAL_CAP_EXCLUSION.md`, `POSITIVE_NORMAL_CAP_FLOOR_EXCLUSION.md`, and `RIGHT_OWNED_DOWNWARD_SEPARATOR.md`. These use direct support inequalities, concavity, completed squares and explicit polynomial identities; no interval-cover or generated coefficient table is a proof premise.
+- **CLOSED sharp high-center bound:** `HIGH_CENTER_COMMON_POINT.md` proves that every square with center height greater than 3/sqrt(5) contains (0,sqrt(5)/2) strictly. The reflected radial pair proves sharpness.
+- **CLOSED quantitative terminal cap:** `TERMINAL_CAP_SECTION_EXCLUSION.md` proves the all-orientation cap bound at 19/120; the complementary center threshold 161/120 exceeds 3/sqrt(5) by the exact comparison 25921>25920.
+
+The cap proofs and high-center theorem received separate reasoning audits; the quantitative adapter's displayed polynomial identities and endpoint values were also checked with exact rational arithmetic. A zero-coordinate separator boundary was corrected before committing: the up-right normal (0,1) gives a weak floor at y=1/2, already covered by the cap theorem.
+
+**Unchanged open parents:** P.ALL, Y.ALL, arbitrary positive C7 completion, mixed 3–7-load components, unrestricted radius and equality classification. The general annular same-sign pair statement is not inferred from the 135-degree reflection argument. Two coarse cells remain closed and 56 open. No Lean compilation or CI was run.

@@ -89,6 +89,12 @@ The previous tree theorem, in the declared lower-radius window, forces q=17/4 an
 
 Do not assert separate two-per-side capacities for P or use only center/inscribed-disk relaxation: exact false-relaxation witnesses are already committed. The whole two-load class now reduces to P, whose completion remains open; it does not include Y's three-loaded core.
 
+## New complete pocket and section bounds
+
+[WEDGE_135_CAPACITY_ONE.md](WEDGE_135_CAPACITY_ONE.md) proves that every screened origin pocket of aperture at most 135 degrees holds at most one extra square. The proof covers both square orientations and every separating-axis owner. Its analytic inputs are [OWNED_AXIS_TERMINAL_CAP_EXCLUSION.md](OWNED_AXIS_TERMINAL_CAP_EXCLUSION.md), [POSITIVE_NORMAL_CAP_FLOOR_EXCLUSION.md](POSITIVE_NORMAL_CAP_FLOOR_EXCLUSION.md), and [RIGHT_OWNED_DOWNWARD_SEPARATOR.md](RIGHT_OWNED_DOWNWARD_SEPARATOR.md). No parameter table or interval cover is used. This settles the smaller Y pocket; the larger strict-half-pocket capacity is still open.
+
+[HIGH_CENTER_COMMON_POINT.md](HIGH_CENTER_COMMON_POINT.md) proves the sharp common-point threshold 3/sqrt(5). [TERMINAL_CAP_SECTION_EXCLUSION.md](TERMINAL_CAP_SECTION_EXCLUSION.md) proves the quantitative single-square cap exclusion at 19/120 needed to couple the two sides of P. These are complete local implications; P.ALL is not yet claimed.
+
 ## Prior tools and their scope
 
 - **Common-coordinate class:** COORDINATE_SEPARABLE_NINE_COMPLETE.md closes every packing separated pairwise by a common perpendicular frame, allowing individual rotations. That global-frame assumption is false for some equality packings.
