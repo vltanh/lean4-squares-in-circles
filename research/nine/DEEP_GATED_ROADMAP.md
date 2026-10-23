@@ -1,6 +1,6 @@
 # n=9: deep gated roadmap to a complete unrestricted proof
 
-**Version:** 2026-10-22 research continuation.  
+**Version:** 2026-10-22 research continuation, reconciled with PR #11 head c0e26c3.  
 **Branch:** `research/nine-tablefree-hand`; **PR:** #11 (draft).
 **Status:** mathematics OPEN. This document is a *proof dependency contract*, not a promise that the remaining conjecture is true or presently solvable. In particular **no global sharp lower bound, complete global equality classification, Lean build, or kernel verification has been delivered**.
 
@@ -184,8 +184,12 @@ Choose a four-horizontal-projection chain \(M_1,\ldots,M_4\).
 - **C3.1 CLOSED:** If five extra squares contain a **disjoint horizontal projection chain of three**, apply [SIGNED_MATCHED_CHAIN_STRESS.md](SIGNED_MATCHED_CHAIN_STRESS.md) (endpoint interlocking + signed vertical stress). This closes the entire disjoint 4+3-chain branch.
 - **C3.2 CLOSED:** If the nine squares form three projection chains of three in the prescribed upper/middle/lower center bands, apply [THREE_BAND_GRID_OBSTRUCTION.md](THREE_BAND_GRID_OBSTRUCTION.md).
 - **C3.3 OPEN:** Complement \(E\) of five squares has horizontal projection-chain number \(\le2\). This is the **only residual C branch**.
-  - **C3.3.a CLOSED (combinatorial):** By the interval-order chain/antichain theorem, partition \(E\) into at most **two** horizontally overlapping antichains; coordinate separability forces each antichain into a vertically projection-disjoint chain. One of these two stacks has at least three squares.
-  - **C3.3.b OPEN (geometry):** Prove an exact disk/corner/support capacity restriction on every such two-stack complement **relative to the already fixed four-chain**, retaining orientation-dependent widths and all equality poses. **Test a perpendicular-frame 4+3-chain extraction first:** the exact equality witness proves such a switch can be necessary. Do not claim that a crossed four-chain by itself is impossible: [CROSSED_FOUR_CHAINS_EIGHT_WITNESS.md](CROSSED_FOUR_CHAINS_EIGHT_WITNESS.md) gives eight exact physical squares with two disjoint perpendicular four-chains at squared radius (17/4<Q).
+  - **C3.3.a CLOSED (two-column normal form):** [TWO_COLUMN_COMPLEMENT_REDUCTION.md](TWO_COLUMN_COMPLEMENT_REDUCTION.md) proves this quantified implication for all five-square complements \(E\) of horizontal chain length at most two:
+    - **C3.3.a.1 CLOSED:** longest horizontal-chain ranks \(1,2\) partition \(E\) into two classes; the open horizontal projection intervals of each class have one common intersection (interval Helly).
+    - **C3.3.a.2 CLOSED:** common-frame coordinate separability forces each rank class to be a **vertical projection-disjoint chain**. Neither stack can have five squares; after swapping class names the only sizes are **(4,1)** and **(3,2)**.
+    - **C3.3.a.3 CLOSED:** any vertical triple has middle-center height \(|y|<21/40\). Inner-pair shadow domination plus coordinate separability then forces **one of the middle two horizontal-chain square centers** to have \(|y|>19/40\).
+    - **C3.3.a.4 LIMITATION:** these constraints do **not** exclude the branch; the exact record-radius **(3,2)** witness realizes it, and the required next implication must preserve equality.
+  - **C3.3.b OPEN (sharp geometry):** Prove an exact disk/corner/support capacity restriction on every such two-stack complement **relative to the already fixed four-chain**, retaining orientation-dependent widths and all equality poses. **Test a perpendicular-frame 4+3-chain extraction first:** the exact equality witness proves such a switch can be necessary. Do not claim that a crossed four-chain by itself is impossible: [CROSSED_FOUR_CHAINS_EIGHT_WITNESS.md](CROSSED_FOUR_CHAINS_EIGHT_WITNESS.md) gives eight exact physical squares with two disjoint perpendicular four-chains at squared radius (17/4<Q).
   - **C3.3.c OPEN (end-to-end):** For **both** cardinality patterns (4,1) and (3,2), prove an exhaustive disjunction: (a) perpendicular **signed 4+3** chains, (b) another proved stress, or (c) impossibility at (q\le Q). The (3,2) branch is demonstrably **attained at equality**; exclude only unsupported subbranches, not the whole parent. Establish the equality zero-set for all surviving branches.
   - **C3.3.d CLOSED (negative, exact physical packing):** [TWO_STACK_SHARP_EQUALITY_WITNESS.md](TWO_STACK_SHARP_EQUALITY_WITNESS.md) constructs **nine genuine axis-aligned unit squares at exactly (q=Q)**, with a horizontal four-chain and a five-square complement of x-chain length precisely two. Therefore any assertion that the entire residual complement is *impossible at (q\le Q)* is FALSE. This witness has **disjoint perpendicular 4+3 chains**, so a frame-switch terminal stress explains equality. The correct goal is a **sharp lower bound with equality coverage**, not a blanket exclusion.
 - **Exit for C3.3:** One quantified theorem (mathrm{Packing}_9\wedge q\le Q\wedgemathrm{CoordinateSeparable}\wedge a=4\wedge a(E)\le2\Rightarrow q=Q), with the known rational equality witness **included** in the resulting classification. A theorem ruling out this complete parent class would contradict the committed construction.
@@ -360,6 +364,8 @@ Transfer from squared radius to radius \(R_*\ge0\) and match the `Optimum` / pub
 ## B. Immediate execution queue (do not skip open gates)
 
 **First research attack: G2.C3.3 (five-square two-stack complement).**
+
+The exact two-stack partition and center-displacement corollary are **already CLOSED** in [TWO_COLUMN_COMPLEMENT_REDUCTION.md](TWO_COLUMN_COMPLEMENT_REDUCTION.md). Do not redo them or mislabel them as the unresolved part. The remaining work begins at C3.3.b–c: a sharp width/support or perpendicular-frame stress covering every configuration in both stack-size classes.
 
 1. **Completed falsification:** an exact rational nine-square packing at (q=Q) lies in C3.3; it switches to two disjoint **vertical** projection chains of four and three. Never attempt to exclude the entire C3.3 branch including equality.
 2. **Next:** prove a *frame-switch or other sharp stress* disjunction for the full (4,1) and (3,2) complement cardinality classes using actual square projection widths and circle corner supports.
