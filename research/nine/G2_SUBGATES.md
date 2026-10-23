@@ -26,8 +26,8 @@ G2.0 (exact encoding and false-normalization tests) CLOSED
   |      C4.2c eliminate entire large-zigzag branch CLOSED
   |      C4.3a signed 4+3-chain terminal CLOSED
   |      C4.3b 3×3 center-band terminal CLOSED
-  |      C4.3c residual five squares x-chain≤2 OPEN
-  |      C4.4 coordinate-separable closure OPEN
+  |      C4.3c residual five squares x-chain≤2 CLOSED
+  |      C4.4 coordinate-separable closure CLOSED
   |
   +-- G2.O (genuinely oblique pairs)
   |      O1 refute global common-frame normalization CLOSED
@@ -183,114 +183,67 @@ bands. Corresponding endpoint projections overlap because their
 x-center differences are <39/40, so the grid stress applies.
 No common orientations or fixed within-row heights are assumed.
 
-**G2.C4.3c — Residual five-square complement: OPEN (sharp equality realizable).**
-**C4.3c.1 two-column decomposition: CLOSED (hand).**
-[TWO_COLUMN_COMPLEMENT_REDUCTION.md](TWO_COLUMN_COMPLEMENT_REDUCTION.md)
-uses the longest horizontal interval-chain ranks to partition
-the five-square complement canonically into two horizontally
-overlapping rank classes. In a common-coordinate-separable
-frame these are **vertical projection-disjoint stacks** of sizes
-**(4,1)** or **(3,2)**. No additional cardinality class exists.
-**C4.3c.2 middle-stack interaction: CLOSED (hand).**
-The middle square of any vertical triple has center height
-\(|y|<21/40\); inner-pair shadow domination forces
-one middle square of the four-horizontal chain to have
-\(|y|>19/40\). This is a necessary geometric constraint, not
-a terminal lower bound.
-**C4.3c.3a — (4,1) branch CLOSED by hand.**
-[FOUR_PLUS_FOUR_PLUS_ONE_EXCLUSION.md](FOUR_PLUS_FOUR_PLUS_ONE_EXCLUSION.md)
-proves a whole-class impossibility for **disjoint horizontal
-four- and vertical four-chains plus a ninth square**, under
-the exact common-coordinate-separation hypothesis at \(q\le Q\).
-The two outer chains squeeze their four inner centers into
-\((-21/40,21/40)^2\); necessary \(\ell^\infty\) center separation
-forces those four inner centers into *all four* quadrants
-with each coordinate absolute value in \((19/40,21/40)\).
-The outer four restrict every ninth center to
-\((-7/5,7/5)^2\), which is already covered by the four inner
-centers' open \(\ell^\infty\)-unit neighborhoods. Contradiction.
-This **uses all nine squares**: eight perpendicular crossed
-chains really do fit at smaller squared radius.
+**G2.C4.3c — Sharp residual five-square complement: CLOSED (hand).**
 
-**C4.3c.3b — (3,2) sharp whole-branch stress: OPEN.**
-A full equality record pose exists in this branch; prove a
-sharp frame-switch to signed vertical 4+3 chains or an
-alternative exact terminal inequality. It is false to
-exclude all (3,2) configurations at \(q\le Q\).
+- **C4.3c.1 CLOSED:** [TWO_COLUMN_COMPLEMENT_REDUCTION.md](TWO_COLUMN_COMPLEMENT_REDUCTION.md)
+  gives two vertical-projection-disjoint rank stacks of sizes
+  **(4,1)** or **(3,2)** and an exact middle-height displacement.
+- **C4.3c.2 CLOSED:** [FOUR_PLUS_FOUR_PLUS_ONE_EXCLUSION.md](FOUR_PLUS_FOUR_PLUS_ONE_EXCLUSION.md)
+  rules out **all (4,1)** complements by a four-quadrant center
+  cover. Eight crossed-chain squares can fit; the ninth cannot.
+- **C4.3c.3 CLOSED:** [COORDINATE_SEPARABLE_NINE_COMPLETE.md](COORDINATE_SEPARABLE_NINE_COMPLETE.md)
+  supplies the missing **(3,2)** sharp proof. With x-chain
+  height ≤2 and five complementary squares, an x-antichain
+  of four would give the excluded (4,1) case, so x-width≤3.
+  An *elementary five-element matching lemma* partitions the
+  five-square x-order into **two disjoint comparable pairs**
+  \(L_1\prec_x R_1,L_2\prec_x R_2\), plus a singleton F.
+  Exact outer-strip bounds prove:
+  any complementary square with an x-successor overlaps
+  the horizontal projection of the left inner M-anchor,
+  and one with an x-predecessor overlaps that of the right
+  inner anchor. The singleton F has a predecessor, a
+  successor, or neither. Assigning it appropriately gives
+  two x-antichains of sizes (3,2)/(2,3), each attached to
+  a **different** inner anchor. By common-coordinate
+  separation, these become **two disjoint perpendicular
+  projection-separated chains of lengths four and three**.
+  The existing signed 4+3 stress forces \(q\ge Q\) with
+  the known equality structures.
+- **C4.3c.4 CLOSED (conditional equality):** [SIGNED_MATCHED_EQUALITY_FAMILY.md](SIGNED_MATCHED_EQUALITY_FAMILY.md)
+  gives the necessary-and-sufficient parameterization
+  whenever the signed terminal chain hypothesis holds.
+  [TWO_STACK_SHARP_EQUALITY_WITNESS.md](TWO_STACK_SHARP_EQUALITY_WITNESS.md)
+  is an exact **(3,2) equality** packing, so the sharp
+  result correctly **retains**, rather than excludes,
+  this whole structural possibility.
 
-**C4.3c.3 whole-branch sharp stress and equality: PARTIAL
-((4,1) closed; (3,2) open).**
-Prove for *every* physical packing in each stack-size class
-that \(q\ge Q=1105/256\), including equality poses;
-extract a perpendicular signed 4+3 certificate or prove
-another sharp terminal inequality. Do NOT claim the whole
-(3,2) class is infeasible, because the exact equality
-construction below is a counterexample.
+**G2.C4.3 — Coherent-sign branch: CLOSED (hand).**
+The x-disjoint 4+3 terminal, three-band grid
+obstruction and now the entire two-stack complement
+have complete geometric proofs. There is no residual
+coordinate-separable case.
 
-[TWO_STACK_SHARP_EQUALITY_WITNESS.md](TWO_STACK_SHARP_EQUALITY_WITNESS.md)
-is an exact rational nine-square packing at (q=1105/256)
-with a four-horizontal chain and five-square complement x-chain
-number exactly **two**. Its five extra squares form vertical stacks
-of sizes **(3,2)**, but the packing admits disjoint *perpendicular*
-vertical 4+3 projection chains. Therefore the claim that the whole
-residual two-stack branch is impossible at (q\le Q) is **REJECTED**.
-The corrected target is a *sharp* theorem: every residual packing
-has (q\ge Q), and its equality cases must be retained. A promising
-finite disjunction is a **perpendicular 4+3 signed stress** or a
-strict alternative grid/graph stress. This is not proved yet.
-An additional [NONSTRATIFIED_PARALLEL_NINE.md](NONSTRATIFIED_PARALLEL_NINE.md)
-argument proves the nine-square record-radius witness is **not
-stratifiable in any orthonormal frame**, despite all nine squares
-sharing an axis-aligned orientation. The frame-switch signed
-4+3 terminal is therefore a genuine alternative to stratification.
-The distinct crossed-four-chain eight-square witness
-[CROSSED_FOUR_CHAINS_EIGHT_WITNESS.md](CROSSED_FOUR_CHAINS_EIGHT_WITNESS.md)
-also shows that excluding crossed four-chains before using the
-ninth square is mathematically false.
-Choose a four-projection chain M. The above signed theorem closes
-the branch if the five remaining squares contain a **disjoint
-horizontal triple** in the same frame. The sole residual coordinate-separable case has five-square
-complement horizontal chain length ≤2. Its exact **two-stack
-decomposition and forced middle-height displacement have now
-been proved** (C4.3c.1–2). Its **sharp** whole-branch inequality
-is still open (C4.3c.3): use actual circle-support and projection
-widths to derive a perpendicular signed 4+3 stress or another
-terminal obstruction. An unconditional exclusion of the
-entire two-column class at q≤Q is false, since it contains
-record-radius equality packings.
+**G2.C4.4 — Full coordinate-separable nine-square theorem:
+CLOSED (hand).** In the class where all pairs are
+separated along one *common* orthonormal frame, nine
+independently rotated unit squares always require
+\[
+                             q\ge Q=1105/256.
+\]
+Any equality packing in this class admits **in one
+of the two coordinate directions** two disjoint
+signed 4+3 terminal chains, so its seven chain
+squares have the signed equality skeleton.
+Source: [COORDINATE_SEPARABLE_NINE_COMPLETE.md](COORDINATE_SEPARABLE_NINE_COMPLETE.md).
 
-**Proof-strategy falsification (C4.3c):**
-[CENTER_RELAXATION_COUNTEREXAMPLE.md](CENTER_RELAXATION_COUNTEREXAMPLE.md)
-provides nine exact center points of norm≤3/2, pairwise
-L-infinity distance≥1, with both horizontal and vertical
-four-chains. This refutes an attempted closure using only
-center-radius and L-infinity distance bounds; it does not
-constitute a physical square packing or disprove the q* target.
-
-**G2.C4.3 — Coherent-sign branch: PARTIALLY CLOSED.**
-The disjoint 4+3 chains and three-band grid terminal classes are
-closed by C4.3a/b. C4.3c remains: five squares outside a four-chain
-with x-chain length at most two, potentially organized into two
-vertical stacks. A complete exclusion or sharp alternative is
-still required.
-
-**G2.C4.4 — Four-chain completion: OPEN.**
-The only missing common-frame branch is now C4.3c.3:
-the whole physical two-stack complement theorem, not its
-combinatorial reduction nor the zigzag branch.
-From a four-square chain plus five remaining squares
-(all with arbitrary orientations but coordinate-separated
-along one common frame), prove *one* of:
-(a) four-anchor long/short stress;
-(b) grid stress; or
-(c) an explicitly defined third terminal inequality.
-The conclusion must be proved for all members of the
-quantified class, not a growing list of subclasses.
-
-**Falsification test:** a single exact q=q* packing in the class
-lacking (a),(b) shows that the claimed two-template exhaustiveness
-is false, though a third alternative may still succeed.
-No theorem asserts that C4 is already solved.
+**Critical limitation:** This does not prove the unrestricted
+n=9 theorem, because [NO_GLOBAL_ORTHOGONAL_FRAME.md](NO_GLOBAL_ORTHOGONAL_FRAME.md)
+shows that a legitimate sharp-radius packing may have
+an **oblique-only** separating pair and fail common-frame
+separability entirely. Global O3/O4/O5 remain OPEN.
+No n=9 Lean/kernel verification or independent full
+audit has been performed.
 
 ## 3. Oblique-separator branch
 
@@ -405,11 +358,12 @@ four-anchor-based parameter domain may absorb it.
 
 ## 7. Strategy: avoid minor-boundary rabbit holes
 
-The **two central research tasks** are now the **(3,2) branch
-of C4.3c** (all (4,1) packings are now excluded) and O2/O3
-(unrestricted oblique separators).
-The entire coordinate-separable large-zigzag branch is closed;
-do not reopen it via tiny angle or radius modifications.
+The **remaining principal mathematical task** is G2.O3–O5:
+structural coverage and sharp orientation-uniform stresses for
+**arbitrary oblique-only separating axes**. The whole common-frame
+coordinate-separable branch is now CLOSED by hand; do not
+reopen its two-column or large-zigzag subcases by tightening
+individual angle/height bounds.
 Do not invest effort in strengthening the constants in
 G2.1/G2.2, or excluding one of infinitely many very
 small angular subintervals. Only prove facts that close
