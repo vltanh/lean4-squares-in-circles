@@ -121,4 +121,8 @@ trusts the compiler, would add `Lean.ofReduceBool`.
 #print axioms SquaresInCircles.Eight.TableFree.unrestricted_source_entry
 #print axioms SquaresInCircles.Eight.TableFree.unrestricted_radius_lower_bound
 #print axioms SquaresInCircles.Eight.TableFree.unrestricted_equality_iff_parameters
+#print axioms SquaresInCircles.Eight.TableFree.unrestricted_squared_radius_lower_bound
+#print axioms SquaresInCircles.Eight.TableFree.unrestricted_model_unique_least_circle
+#print axioms SquaresInCircles.Eight.TableFree.unrestricted_five_freedoms
+#print axioms SquaresInCircles.Eight.TableFree.unrestricted_equality_rigid
 #print axioms SquaresInCircles.Eight.TableFree.unrestricted_eight_complete
