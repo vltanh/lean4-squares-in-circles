@@ -70,7 +70,7 @@ If exactly two bodies meet p, their aggregate is already the (possibly same-norm
 
 This step also shows that no hidden transverse self-stress is being discarded at a three- or four-square junction.
 
-## 6. In the research window, EVERY two-loaded component has q=17/4 and contains family P
+## 6. In the research window, EVERY two-loaded component has q=17/4 and two internal layers
 
 Now assume 79/40<=R<=sqrt(Q), Q=1105/256. Let e orient the common force line. Direct every positive body-pair edge from its lower to its upper e-support side. Its center projection increases strictly, because its active gap is H_i(e)+H_j(e)>0. Thus this directed graph is acyclic.
 
@@ -96,7 +96,7 @@ Comparison with the discrete path reserves leaves only **2A0=2**. Consequently:
 
 > **Theorem R.3.** Every two-loaded positive physical component in the research window has q=17/4. The loaded bodies are S terminals centered at (-3/2,0),(3/2,0). Every other positive body is axis-aligned and lies in one of two layers x=-1/2 or x=1/2. Every directed loaded-to-loaded path has exactly two internal bodies.
 
-Each such body has a positive side contact with one of the endpoint terminals, so its height satisfies |y|<=1. Choosing any directed path gives the exact four-square family-P skeleton, with its intermediate heights in [-1,1] a priori. To apply the existing P.ALL domain one still needs the narrower |y|<=1/2. That narrowing is NOT inferred from parallel forces alone: a physical path's force line can lie at a nonzero transverse height when other parallel paths balance it. Therefore R.3 does NOT by itself reduce every cyclic two-loaded component to the existing P.ALL completion theorem.
+Each such body has a positive side contact with one of the endpoint terminals, so its height satisfies |y|<=1. Choosing any directed path gives a four-square layered skeleton, but its intermediate heights lie only in [-1,1] a priori. To apply the existing P.ALL domain one still needs the narrower |y|<=1/2. That narrowing is NOT inferred from parallel forces alone: a physical path's force line can lie at a nonzero transverse height when other parallel paths balance it. Therefore R.3 does NOT by itself reduce every cyclic two-loaded component to the existing P.ALL completion theorem.
 
 The exact torque condition only says that the contact-height weighted average at either loaded endpoint is zero. It does not make every individual channel height zero. The distinction is retained in the next section.
 
