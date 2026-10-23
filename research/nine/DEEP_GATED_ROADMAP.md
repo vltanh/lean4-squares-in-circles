@@ -39,15 +39,15 @@ G1 Exact terminal stress machinery                   CLOSED (hand)
   |    T3 four-corner 3×3 grid
   |    T4 graph weak dual
   |
-  +--> G2.C common-coordinate-separable branch       PARTIAL
+  +--> G2.C common-coordinate-separable branch       CLOSED (hand)
   |       C0-C3 rank and four-chain extraction       CLOSED
   |       C4.1 shadow and inner-pair domination      CLOSED
   |       C4.2 zigzag branch                         CLOSED
   |       C4.3a signed 4+3-chain terminal            CLOSED
   |       C4.3b three-center-band grid terminal     CLOSED
   |       C4.3c(4,1) crossed four-chain + ninth       CLOSED
-  |       C4.3c(3,2) sharp two-stack complement      OPEN  <-- FIRST
-  |       C4.4 whole C theorem                      BLOCKED
+  |       C4.3c(3,2) signed frame-switch completion  CLOSED
+  |       C4.4 whole C theorem                      CLOSED
   |
   +--> G2.O oblique separators                       PARTIAL
   |       O0 exact no-global-frame counterexample    CLOSED (negative)
@@ -191,7 +191,12 @@ Choose a four-horizontal-projection chain \(M_1,\ldots,M_4\).
     - **C3.3.a.3 CLOSED:** any vertical triple has middle-center height \(|y|<21/40\). Inner-pair shadow domination plus coordinate separability then forces **one of the middle two horizontal-chain square centers** to have \(|y|>19/40\).
     - **C3.3.a.4 LIMITATION:** these constraints do **not** exclude the branch; the exact record-radius **(3,2)** witness realizes it, and the required next implication must preserve equality.
   - **C3.3.b CLOSED (hand; all 4+1 stacks):** [FOUR_PLUS_FOUR_PLUS_ONE_EXCLUSION.md](FOUR_PLUS_FOUR_PLUS_ONE_EXCLUSION.md) proves that **four distinct x-projection-chain squares plus four different y-projection-chain squares leave no room for a ninth** at \(q\le Q\) in any common-coordinate-separable packing. This is a complete (4,1) complement exclusion, independent of individual square orientations. The exact proof needs only center radius \(<61/40\), necessary \(\ell^\infty\)-center separation, and a four-quadrant covering: the four *inner* chain centers occupy the four boxes at \((\pm1/2,\pm1/2)\), covering every possible ninth center. A physical **eight**-square crossed-chain witness still exists at \(17/4<Q\); the ninth is essential.
-  - **C3.3.c OPEN (only 3+2 now):** Every remaining coordinate-separable two-stack complement has sizes **(3,2)**. Prove a sharp theorem covering the **entire** branch, with the known \(q=Q\) equality witness retained: (a) extract a perpendicular signed **4+3** terminal, (b) derive another exact uniform sharp stress, or (c) rigorously exclude only a disjoint impossible subbranch. Record all equality zero sets. Do **not** attempt to exclude the entire (3,2) class; that is false.
+  - **C3.3.c CLOSED (hand; all 3+2 stacks):** [COORDINATE_SEPARABLE_NINE_COMPLETE.md](COORDINATE_SEPARABLE_NINE_COMPLETE.md) proves a **sharp frame-switch theorem for the entire residual class**, allowing all independent square orientations.
+    - **C3.3.c.1 CLOSED:** if the five-square complement has x-poset height ≤2, its width ≤3: an antichain of four would form a disjoint vertical four-chain and contradict the completed (4,1) exclusion.
+    - **C3.3.c.2 CLOSED:** an **elementary five-element matching** (no general Dilworth invocation needed) partitions the complement into two disjoint x-comparable pairs \(L_1\prec R_1,L_2\prec R_2\) and one singleton F. The two Ls are incomparable; likewise the two Rs.
+    - **C3.3.c.3 CLOSED:** an exact *predecessor/successor outer-strip lemma* shows each E-square with an x-successor overlaps the **left** middle M square in horizontal projection, and each E-square with an x-predecessor overlaps the **right** middle M square. This uses only radius \(<61/40\), x-projection gaps ≥1, and the outer-strip bound \(|x_E|<7/5\).
+    - **C3.3.c.4 CLOSED:** the singleton F has a successor, a predecessor, or neither. In each case assign it to the appropriate pair using the oblique-safe inner-pair shadow lemma. This gives x-antichains of sizes 3+2 that overlap **different middle M anchors**. After a quarter-turn, adding those anchors yields **two disjoint vertical-projection chains of lengths 4+3**. The preexisting signed matched-chain stress proves \(q\ge Q\), with exact equality skeletons.
+    - **C3.3.c.5 CLOSED:** [SIGNED_MATCHED_EQUALITY_FAMILY.md](SIGNED_MATCHED_EQUALITY_FAMILY.md) parametrizes the resulting *conditional* full equality family. The exact [TWO_STACK_SHARP_EQUALITY_WITNESS.md](TWO_STACK_SHARP_EQUALITY_WITNESS.md) realizes its previously problematic (3,2) branch.
   - **C3.3.d CLOSED (negative, exact physical packing):** [TWO_STACK_SHARP_EQUALITY_WITNESS.md](TWO_STACK_SHARP_EQUALITY_WITNESS.md) constructs **nine genuine axis-aligned unit squares at exactly (q=Q)**, with a horizontal four-chain and a five-square complement of x-chain length precisely two. Therefore any assertion that the entire residual complement is *impossible at (q\le Q)* is FALSE. This witness has **disjoint perpendicular 4+3 chains**, so a frame-switch terminal stress explains equality. The correct goal is a **sharp lower bound with equality coverage**, not a blanket exclusion.
 - **Exit for C3.3:** One quantified theorem (mathrm{Packing}_9\wedge q\le Q\wedgemathrm{CoordinateSeparable}\wedge a=4\wedge a(E)\le2\Rightarrow q=Q), with the known rational equality witness **included** in the resulting classification. A theorem ruling out this complete parent class would contradict the committed construction.
 - **Do not:** expand into hundreds of layer/height configurations or solve one of infinitely many narrowed subclasses.
@@ -364,16 +369,18 @@ Transfer from squared radius to radius \(R_*\ge0\) and match the `Optimum` / pub
 
 ## B. Immediate execution queue (do not skip open gates)
 
-**First research attack: G2.C3.3.c (the remaining 3+2 two-stack complement).**
+**First research attack: G2.C3.3.c CLOSED — the entire common-frame proof is now assembled.**
 
-The exact two-stack partition and center-displacement corollary are **already CLOSED** in [TWO_COLUMN_COMPLEMENT_REDUCTION.md](TWO_COLUMN_COMPLEMENT_REDUCTION.md). Do not redo them or mislabel them as the unresolved part. The remaining work begins at C3.3.b–c: a sharp width/support or perpendicular-frame stress covering every configuration in both stack-size classes.
+The previous (4,1) and (3,2) obligations are **both CLOSED by hand**:
+FOUR_PLUS_FOUR_PLUS_ONE_EXCLUSION.md eliminates (4,1), and
+COORDINATE_SEPARABLE_NINE_COMPLETE.md closes (3,2) by an elementary
+five-element matching, predecessor/successor overlap and a perpendicular
+signed 4+3-chain stress. Do not reopen this part via tiny gap or angle
+thresholds. The overall common-coordinate-separable n=9 lower bound and
+conditional equality necessity are now proved. **The remaining primary
+research task is unrestricted O3–O5.**
 
-1. **Completed falsification:** an exact rational nine-square packing at (q=Q) lies in C3.3; it switches to two disjoint **vertical** projection chains of four and three. Never attempt to exclude the entire C3.3 branch including equality.
-2. **Closed:** (4,1) is impossible by the four central quadrant covering in FOUR_PLUS_FOUR_PLUS_ONE_EXCLUSION.md. **Next:** prove a *frame-switch or other sharp stress* disjunction for the **(3,2)** complement class using actual square projection widths and circle corner supports.
-3. **Counterexample control:** an exact eight-square cross already has disjoint horizontal and vertical four-chains; the new proof shows no ninth coordinate-separable square can coexist with **any** such disjoint crossing chains at q≤Q.
-4. **Closure:** prove (q\ge Q) uniformly, including exact classification of equality zero sets. Avoid angle meshes and accumulating single-pose exclusions.
-
-**Second attack: G2.O3 graph invariant.**
+**CURRENT CRITICAL ATTACK: G2.O3 graph invariant.**
 
 1. Start with actual SAT owner normals; do not assume a global frame or central square.
 2. Seek a cyclic/planar/interval graph invariant forcing a short positive-stress subgraph, allowing free-square oblique edges to have zero contact weights.
@@ -395,12 +402,12 @@ The exact two-stack partition and center-displacement corollary are **already CL
 | G1 | CLOSED hand (conditional terminals) | Global applicability |
 | G2.C0–C2 | CLOSED hand | — |
 | G2.C3.1–C3.2 | CLOSED hand | — |
-| **G2.C3.3** | **PARTIAL: (4,1) CLOSED; (3,2) OPEN** | Frame-switch or sharp (3,2) whole-class bound |
-| G2.C4 | BLOCKED | G2.C3.3 |
+| **G2.C3.3** | **CLOSED hand (4,1) + (3,2)** | — |
+| G2.C4 | **CLOSED hand (sharp common-frame n=9)** | — |
 | G2.O0–O2 | CLOSED (negative/framework) | — |
 | **G2.O3** | **OPEN** | Global structural graph coverage |
 | **G2.O4–O5** | **OPEN/BLOCKED** | G2.O3 + uniform stresses |
-| G2.X/G4 | BLOCKED | Coordinate/oblique closure |
+| G2.X/G4 | BLOCKED | **Oblique** global graph coverage only |
 | G5.0 | CLOSED hand (stratified and signed 4+3 conditional families) | — |
 | G5.1–G5.3 | OPEN/BLOCKED | Equality global necessity |
 | G6 | BLOCKED | G4/G5 |
