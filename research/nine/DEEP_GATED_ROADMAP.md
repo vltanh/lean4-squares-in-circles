@@ -98,6 +98,7 @@ G1 Exact terminal stress machinery                   CLOSED (hand)
 - **G0.3.2 CLOSED (negative):** all nine squares need not share an orientation.
 - **G0.3.3 CLOSED (negative):** a single common orthogonal pair of projection separators for *every* pair is false, even at the record radius.
 - **G0.3.4 CLOSED (negative):** center radius + coordinate \(\ell^\infty\) spacing alone are too weak (see [CENTER_RELAXATION_COUNTEREXAMPLE.md](CENTER_RELAXATION_COUNTEREXAMPLE.md)).
+- **G0.3.5 CLOSED (negative, hand):** even **nine axis-aligned** squares at (q=Q) may have **no horizontal stratification in any rotated frame**; [NONSTRATIFIED_PARALLEL_NINE.md](NONSTRATIFIED_PARALLEL_NINE.md) proves this using forced frame alignment and a chain of small height gaps.
 - **Exit:** all proposed global reductions must be tested against these counterexamples before promotion.
 
 ---
