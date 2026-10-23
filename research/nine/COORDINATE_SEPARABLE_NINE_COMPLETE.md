@@ -199,29 +199,67 @@ rules out exactly this entire configuration
 at \(q\le Q\).
 
 Therefore E has x-poset **width at most
-three**. Since E has five elements and
-height at most two, width cannot be
-one or two (by the finite chain/antichain
-partition theorem), so its width is
-**exactly three**.
+three**. No general poset decomposition theorem is
+needed to find the final signed chains: a
+five-element argument gives the required
+two disjoint comparable pairs directly.
 
-By the finite Dilworth chain-partition theorem,
-E can be partitioned into exactly three
-x-chains, and because its height is at most
-two the chain sizes are **(2,2,1)**.
-Write these chains as
+**Lemma 4.1 (elementary five-element matching).**
+If a strict finite partial order has five elements,
+no chain of length three and no antichain of
+length four, then its elements can be written
 \[
                 L_1\prec_x R_1,\qquad
                 L_2\prec_x R_2,\qquad
-                \{F\}. \tag{5}
+                \{F\}, \tag{5}
 \]
+where the two \(L\)'s are incomparable and
+the two \(R\)'s are incomparable.
 
-The two L elements are x-incomparable:
-if \(L_1\prec_x L_2\) we would have
-\(L_1\prec_x L_2\prec_x R_2\),
-a forbidden length-three chain. Interchanging
-indices handles the opposite order.
-Likewise \(R_1,R_2\) are x-incomparable.
+*Proof.* Partition the five elements into
+\(L\), those with **no predecessor**, and
+\(R\), those with some predecessor.
+Every R has a predecessor in L, since
+otherwise there would be a chain of three.
+The set L is an antichain by definition,
+and R is an antichain because \(r\prec r'\)
+together with a predecessor of r would
+give a length-three chain.
+
+Neither class can contain four elements,
+so their sizes are (3,2) or (2,3).
+
+- If \((|L|,|R|)=(3,2)\), let \(R_1,R_2\)
+  be the R elements. They each have a
+  predecessor in L. They must have
+  **distinct** possible predecessors:
+  otherwise only one L element could
+  precede either R, and the other two
+  L elements together with \(R_1,R_2\)
+  would be an antichain of four.
+  Choose distinct predecessors \(L_1,L_2\).
+- If \((|L|,|R|)=(2,3)\), both L elements
+  have a successor in R: an L element
+  with no successor would be incomparable
+  with all three R elements and produce
+  an antichain of four. The union of the
+  two successor sets contains at least
+  two different R elements, since each
+  of the three R elements has *some*
+  predecessor in L. For two nonempty
+  successor sets whose union has size
+  at least two, choose distinct
+  representatives \(R_1,R_2\).
+
+The one element not in the chosen two
+comparable pairs is F. Since L and R
+are antichains, the selected L pair and
+R pair are each incomparable. \(\square\)
+
+Apply Lemma 4.1 to the horizontal
+interval order on E. It yields (5)
+with exactly the incomparabilities
+required in Section 5.
 
 ## 5. Complete the (3,2) two-stack class by one finite singleton split
 
@@ -376,8 +414,7 @@ remain unproved.
 
 ## 8. Verification boundary
 
-This is a complete *hand proof* with known
-finite poset theorems and exact geometric
+This is a complete *hand proof* with an elementary five-element matching lemma and exact geometric
 inequalities. It has not undergone independent
 full mathematical audit, and no Lean
 compilation, kernel proof or CI run occurred.
