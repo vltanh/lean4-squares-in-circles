@@ -10,7 +10,7 @@
 |---|---|---|---|
 | 19:24:10 | [248202d](https://github.com/vltanh/lean4-squares-in-circles/commit/248202dba5d73d408f2a2f1d39ed06229fcbecb2) | TWO_LOAD_RECIPROCAL_RIGIDITY.md | Every physical positive component with exactly two circle-loaded bodies has parallel pair forces; no tree or simple-cycle assumption |
 | 19:25:49 | [05e15a0](https://github.com/vltanh/lean4-squares-in-circles/commit/05e15a02a345b7311db90fc3643f876ee14666ae) | FOUR_BODY_CYCLIC_CELL_CLOSED.md | Every four-body biconnected positive component is excluded in the explicit radius window; completes the diamond load pattern |
-| Subsequent clarification | [9fad28e](https://github.com/vltanh/lean4-squares-in-circles/commit/9fad28e5dd90011a454c4b1c743fc07fa3036cb7) | Correct section heading / residual domain | General two-load layers have |y|<1, NOT automatically the P slider domain |y|<=1/2 |
+| Subsequent clarification | [9fad28e](https://github.com/vltanh/lean4-squares-in-circles/commit/9fad28e5dd90011a454c4b1c743fc07fa3036cb7) | Correct section heading / residual domain | General two-load layers have abs(y)<1, NOT automatically the P slider domain abs(y)<=1/2 |
 | Source committed before the pinned run | [0d4c958](https://github.com/vltanh/lean4-squares-in-circles/commit/0d4c9588b974a2ce986a077a10036013e7f1f164) | check_two_load_reciprocals.py | Exact standard-library finite regressions; source matched to the Git blob before execution |
 | 19:32:40.835172–19:32:40.842767, actual execution | source 0d4c958 | Pinned local run | PASS, Python 3.13.5, exit 0 |
 | Report record/correction | [4843058](https://github.com/vltanh/lean4-squares-in-circles/commit/48430583e24c30192ab2b4683574de8125833e20) | TWO_LOAD_RECIPROCAL_EXACT_CHECK.json | Correct report data; repairs an initial manual transcription of the three-loaded control's areas to +4/3 and -4/3 |
@@ -74,3 +74,19 @@ Independent review must check the physical junction direction order, replacement
 **Still OPEN:** P.ALL, Y.ALL, full five-/six-body parallel-core completions, all other open cyclic cells with their physical completion constraints, the explicit lower-window prerequisite in final assembly, unrestricted equality, independent full audit and Lean/integration.
 
 **Next completion criterion:** use the new invariant to finish whole remaining load/adjacency families or a full physical completion theorem. Do not infer that a cell with >=3-loaded possibilities is closed from the two-load result, and do not turn the 58-cell ledger into 56 independent angle-grid searches.
+
+## 7. Final rerun and ticked-roadmap synchronization
+
+The identical source was rerun at **2026-10-23 19:44:32.616295–19:44:32.623763 UTC**, Python 3.13.5, exit 0. Its Git blob and SHA-256 were recomputed and matched again. All five physical examples passed, including the three-loaded control's nonzero reciprocal areas +4/3 and -4/3. The pinned committed JSON retains the original 19:32 run; this rerun is an additional regression, not an independent audit.
+
+The following documentation commits synchronize all current entry points without changing the mathematical theorem scopes:
+
+| Commit | Current artifact / checked state |
+|---|---|
+| 2d841b84c20b906e043a7ed71be0d551bb023089 | CYCLIC_CELL_LEDGER.md: C1.4.b0 checked, all 56 open rows retained |
+| 6e674d0a03a19b60e71fe1d697eddc99f5892738 | DEEP_GATED_ROADMAP.md: nested TL.R / TL.P / TL.G contracts, residual capacities and audit gates |
+| 40f9bb49e09810b41dfa3892b7a36fbbd9ff5d29 | G2_SUBGATES.md: new global two-load reduction and whole-cell status |
+| 658cbfc476e110e228e8e315f943f47354c6ecd1 | ROADMAP.md: concise actual frontier and verification scope |
+| 14b926dc5c0462e9a6a938be70988130dfaedd1a | README.md: current handoff; GitHub timestamp **2026-10-23 19:47:47 UTC** |
+
+PR #11's title and body were updated after those commits, retaining **draft** status. No merge, CI, Lean build or independent mathematical audit was requested or performed. The unrestricted theorem and P/Y remain open; the finished result is one whole coarse-cell exclusion plus a general invariant spanning every two-loaded physical component. The unchanged upper-bound construction remains at Q.
