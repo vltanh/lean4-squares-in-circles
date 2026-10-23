@@ -16,6 +16,45 @@ The record construction has squared radius
 We have proved that this radius is **attained**. The universal
 inequality \(R_9\ge R_*\) is not yet proved.
 
+## New structural closure: signed 4+3 projection chains
+
+**[SIGNED_MATCHED_CHAIN_STRESS.md](SIGNED_MATCHED_CHAIN_STRESS.md)**
+proves the entire common-coordinate-separable branch whenever the nine
+squares contain two **disjoint** horizontal projection chains of sizes
+four and three. The physical disk and center-distance bounds force
+the corresponding outer endpoint horizontal projections to overlap.
+The resulting vertical separators may point in *opposite* directions:
+a signed four-tangent stress with weights 23 and 9 proves
+\(q\ge1105/256\) in every sign pattern, without global row ordering.
+This replaces the earlier common-seam requirement.
+
+**[THREE_BAND_GRID_OBSTRUCTION.md](THREE_BAND_GRID_OBSTRUCTION.md)**
+also excludes any common-frame coordinate-separable 3+3+3 packing
+whose three x-projection chains occupy respectively the upper,
+central and lower coarse center-height bands. The forced corresponding
+endpoint vertical chains yield \(q\ge9/2\).
+
+**Exact remaining coordinate-separable question:** If M is a horizontal
+four-projection chain, can the five remaining squares have horizontal
+projection-chain length at most **two**? Such a complement partitions
+into at most two vertical chains. This is the only outstanding C4.3c
+class after the zigzag exclusion. No general exclusion of it is
+currently proved.
+
+**[SEPARATOR_GRAPH_CONVEX_DUAL.md](SEPARATOR_GRAPH_CONVEX_DUAL.md)**
+gives a general convex weak-dual proof certificate for arbitrary
+oblique SAT separating axes. Once orientations and selected separator
+owners are fixed, all centers are eliminated exactly from its lower
+bound. This shifts the global research problem toward a finite
+**separator-graph coverage** theorem and orientation-uniform dual
+inequalities, rather than enormous continuous center grids.
+
+**[CENTER_RELAXATION_COUNTEREXAMPLE.md](CENTER_RELAXATION_COUNTEREXAMPLE.md)**
+proves that center-radius and L-infinity spacing alone do not exclude
+nine centers with crossed 4-chains; true square widths and supports
+must be retained. This is a falsification control, not a packing at
+the record radius.
+
 ## Latest subgate closure: global-frame obstruction and four-chain shadow
 
 - **[G2_SUBGATES.md](G2_SUBGATES.md)** is the detailed finite
