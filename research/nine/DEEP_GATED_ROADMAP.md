@@ -1,6 +1,6 @@
 # n=9: deep gated roadmap to a complete unrestricted proof
 
-**Version:** 2026-10-22 research continuation, reconciled with PR #11 head c0e26c3.  
+**Version:** 2026-10-22 research continuation; latest live gate state is G2.C CLOSED, G2.O3–O5 OPEN. See ROADMAP.md for current head provenance.  
 **Branch:** `research/nine-tablefree-hand`; **PR:** #11 (draft).
 **Status:** mathematics OPEN. This document is a *proof dependency contract*, not a promise that the remaining conjecture is true or presently solvable. In particular **no global sharp lower bound, complete global equality classification, Lean build, or kernel verification has been delivered**.
 
@@ -237,6 +237,39 @@ A fixed common orthogonal frame **need not** separate all pairs. This is true at
 - **O2.4** Verify graph dual certificates are legitimate lower bounds (not necessarily strong-duality equalities).
 - **Exit:** every future candidate stress reduces to finite orientation inequalities, with no center search as a proof premise.
 - **Source:** [SEPARATOR_GRAPH_CONVEX_DUAL.md](SEPARATOR_GRAPH_CONVEX_DUAL.md).
+
+### G2.O3.0 — Avoid the false graph-only shortcut [OPEN: structural test]
+
+Before enumerating separator-owner graphs, distinguish **feasible
+edge choices** from **contact constraints active in a radius
+minimizer**. Every physically disjoint pair admits at least one
+separating axis, but the selected axis may have positive slack;
+its dual multiplier may therefore be zero. A dense SAT owner graph
+does **not** imply a dense positive-stress graph. A global
+certificate must either (a) extract a small *balanced* stressed
+subgraph whose weights are nonnegative and whose orientation
+inequality is sharp, or (b) prove a complete alternative geometric
+obstruction.
+
+- **O3.0.1 CLOSED (exact negative test):** the oblique upper-pair
+  record witness in NO_GLOBAL_ORTHOGONAL_FRAME.md disproves
+  any global-frame normal form, even at equality.
+- **O3.0.2 OPEN:** formulate and prove a *contact-support reduction*
+  from arbitrary Packing at \(q<Q\) to a finite family of stressed
+  owner graphs; prove why minimizers may be considered and why
+  the deformation/compactness step preserves closed disk
+  containment and disjoint **open** interiors.
+- **O3.0.3 OPEN:** show the graph family is small for geometric
+  reasons (cyclic support order, planar separator graph, or
+  analogous invariant), not simply because nine squares have
+  finitely many labelled pairs.
+- **O3.0.4 OPEN:** construct a universal dual or a complete set
+  of orientation-uniform graph certificates, with all equality
+  and zero-multiplier branches retained.
+
+**Do not count O3.0.1 as progress toward a full graph coverage
+theorem:** it is a falsification control. A finite syntax for all
+36 SAT disjunctions does not itself yield a hand proof.
 
 ### G2.O3 — Compress owner graphs *structurally* [OPEN]
 
