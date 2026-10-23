@@ -238,3 +238,20 @@ Once an inhabitant is produced, \`sharp_source_entry_of_BT2_exclusion\` already 
 - [ ] BT2.5.4 G8 public import swap follows; G9 deferred kernel verification still required.
 
 **Execution priority:** finish BT2.3.5/BT2.3.6 and BT2.4 before any new local endpoint estimate. G4–G6 already possess a conditional normal-owner-to-original-equality assembly; do not redo that work.
+
+
+## 6. Live execution ledger — 2026-10-22, current session
+
+**Do not confuse a source lemma with an unconditional entry.** The BT2 negative-A case is being closed against the exact original source at the same working q. Kernel validation is still deferred to G9.
+
+### BT2.3 negative-A refinement
+
+- [x] **BT2.3.7 (D only)** Extract a radial-kind-independent *necessary-cycle* contradiction for one genuinely negative flat A primary, positive TD2, and **nonnegative selected E total**, with both short- and long-E charge ranges and both HG weak owners. The source takes the actually feasible DE/EH witnesses, not a transported re-creation of a packing. Lean theorem: \`HighGABT2.negative_A_nonnegative_E_positive_TD2_false\` in \`GlobalGAHighBT2NegativeANonnegativeESource.lean\`. Commit [\`13ea96275\`](https://github.com/vltanh/lean4-squares-in-circles/commit/13ea96275d03679a688fdaf19cf5035dffc96188), 2026-10-23T01:46:26Z. **Not imported into the whole-domain dispatcher yet; uncompiled.**
+- [ ] **BT2.3.8** Apply BT2.3.7 to the E-first/A-second *core-E* normalized necessary cycle when \`R.E_reduced\` selects the nonnegative E branch. Derive actual A flat tangent cut by \`NegativeA.GA_entry\` or its AB analogue; handle secondary A re-selection instead of silently assuming a genuine primary.
+- [ ] **BT2.3.9** For the E-first/A-second core-E **negative E** branch, extract the two genuine negative A/E primary magnitudes from \`R.A.reduced\` and \`R.E_reduced\`; derive the EH1 short angle (\`s≤1/4\`) either from the original E-first source or by EH0 secondary re-selection; feed \`JointNegativeAETD2.original\`. Preserve original q, H/D signs, T's signed error and both real selected witnesses.
+- [ ] **BT2.3.10** Finish the core-E negative-A positive-TD2 dispatcher: nonnegative E → BT2.3.8; negative E → BT2.3.9, with all simultaneous weak owner alternatives.
+- [ ] **BT2.4.4** Partition the remaining original negative-A sources by \`I.radial E\`: outer E uses \`negative_A_outer_E_all_T_false\`; core E must normalize **E first**, then A, and dispatch on \`R.A.reduced\`, T owner, and signed error.
+- [ ] **BT2.4.5** Prove \`HighGABT2Exclusion\` itself, instantiate \`sharp_source_entry_of_BT2_exclusion\`, and swap the public dependency. None of these are finished as of this ledger entry.
+
+**Invariant audit per new lemma:** original q unchanged; \`SignedCycle\` only after A motion; HG belongs to 0/2 on that same cycle; no hypothetical owner or radial kind is inserted; proof uses the exact signed E sum, not separate nonnegative error assumptions; zero ties remain in the short interval. H→D source anchors and original initially chosen normals are to be recovered at G6, not assumed here.
+
