@@ -1,7 +1,7 @@
 # n=9: deep gated roadmap to a complete unrestricted proof
 
 **Version:** 2026-10-22 research continuation.  
-**Branch:** \`research/nine-tablefree-hand\`; **PR:** #11 (draft).
+**Branch:** `research/nine-tablefree-hand`; **PR:** #11 (draft).
 **Status:** mathematics OPEN. This document is a *proof dependency contract*, not a promise that the remaining conjecture is true or presently solvable. In particular **no global sharp lower bound, complete global equality classification, Lean build, or kernel verification has been delivered**.
 
 ## A. Exact target and acceptance standard
@@ -30,7 +30,7 @@ A deep subgate is introduced **only when there is a mathematical invariant that 
 
 ### Master critical path
 
-\`\`\`text
+```text
 G0 Exact model, witness, negative controls           CLOSED (hand)
   |
 G1 Exact terminal stress machinery                   CLOSED (hand)
@@ -68,7 +68,7 @@ G1 Exact terminal stress machinery                   CLOSED (hand)
                                        +--> G7 Lean    NOT STARTED
                                                |
                                                +--> G8 public integration
-\`\`\`
+```
 
 **Note:** G2.C and G2.O overlap if their frame is changed; choose a frame when applying a branch. The *global dichotomy* “some common frame works / none works” is logically exhaustive, but a known equality packing is in the second branch. Never assert coordinate separability for all nine squares. The origin interior/boundary/exterior trichotomy (G2.P) is a cross-cutting optional organizing lemma, not an assumption of a central square.
 
@@ -83,7 +83,7 @@ G1 Exact terminal stress machinery                   CLOSED (hand)
   \(\|c_S\|^2+1/2+|c_S\cdot u_S|+|c_S\cdot v_S|\le q\).
 - **G0.1.3** Pairwise disjoint open interiors equivalent to **one** true separating edge-normal axis from either square (SAT), with endpoints and equality handled.
 - **G0.1.4** Any such pair has center distance \(\ge1\) (disjoint inscribed open radius-1/2 disks).
-- **Exit:** precise lemmas directly matching \`Geometry.lean\` with no strict/closed-set confusion.
+- **Exit:** precise lemmas directly matching `Geometry.lean` with no strict/closed-set confusion.
 
 ### G0.2 — Exact record construction
 
@@ -296,7 +296,7 @@ Use G0.2's explicit exact nine-square construction to show the set of feasible s
 Use G2.X and G1/G2.O stresses to exclude \(q<Q\) without stronger normalization assumptions.
 
 ### G4.3 — Statement match
-Transfer from squared radius to radius \(R_*\ge0\) and match the \`Optimum\` / public \`Packing\` definitions.
+Transfer from squared radius to radius \(R_*\ge0\) and match the `Optimum` / public `Packing` definitions.
 
 **Exit:** theorem T9 is written as a complete readable hand proof, independent of execution of any certificate program.
 
@@ -322,7 +322,7 @@ Transfer from squared radius to radius \(R_*\ge0\) and match the \`Optimum\` / p
 - **G5.2.4** Prove every equality configuration appears in the parameter domain (necessity).
 
 ### G5.3 — Symmetry quotient [OPEN]
-- **G5.3.1** Distinguish rotations/relabelings from reflections according to the actual \`Congruent\` predicate.
+- **G5.3.1** Distinguish rotations/relabelings from reflections according to the actual `Congruent` predicate.
 - **G5.3.2** Avoid claiming isolated uniqueness in the presence of nontrivial slider/rotation parameters.
 - **Exit:** a necessary-and-sufficient equality model set for all n=9 optimal packings.
 
@@ -345,12 +345,12 @@ Transfer from squared radius to radius \(R_*\ge0\) and match the \`Optimum\` / p
 - **G7.4** Formalize the *actual* global G2.X structural theorem, no unexplained axioms or overstrong normalization hypotheses.
 - **G7.5** Prove sharp lower bound + attainment; prove full equality necessity/converse.
 - **G7.6** Compile through standard Lean kernel/Mathlib workflow; inspect axioms, imports, transitive dependencies and a clean independent replay.
-- **Exit:** kernel-checked public theorem with no \`sorry\`, \`admit\`, bespoke external proof oracle, native-kernel shortcuts, or unvalidated generated tables.
+- **Exit:** kernel-checked public theorem with no `sorry`, `admit`, bespoke external proof oracle, native-kernel shortcuts, or unvalidated generated tables.
 
 ## G8 — Repo integration and handoff [NOT STARTED]
 
-- **G8.1** Integrate n=9 into public optimal radius/packing registry and \`Optimum\` instances.
-- **G8.2** Update \`Challenge.lean\` mirror, README, proof textbook, equality illustration and registry records.
+- **G8.1** Integrate n=9 into public optimal radius/packing registry and `Optimum` instances.
+- **G8.2** Update `Challenge.lean` mirror, README, proof textbook, equality illustration and registry records.
 - **G8.3** Verify no regression in n=1–8.
 - **G8.4** Commit sources with timestamps and a consolidated handoff/coverage manifest; merge/close draft PR only after verification.
 - **Exit:** full reproducible result, not just a proposed manuscript.
