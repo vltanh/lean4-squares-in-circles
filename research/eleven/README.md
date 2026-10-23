@@ -41,6 +41,12 @@ with 32 nodes and 19 contradiction leaves. An independent implementation
 replays the certificate. All 1105 old rank masks are therefore closed in
 this window.
 
+[Minimizer stress extraction](SPARSE_MINIMIZER_STRESS.md) now provides an
+attained positive contact stress on a connected component of 4 to 11
+squares, with bounded multipliers. The fixed-frame and full-angle
+certificates have separate sparsity bounds; all omitted squares remain
+physical completions.
+
 [The finite case ledger](TERMINAL_CASES.md) now identifies the oblique branch
 as the global frontier. The [exact oblique witness](NO_COMMON_SEPARATING_FRAME.md)
 remains a concrete example; the new exclusion proves every feasible packing

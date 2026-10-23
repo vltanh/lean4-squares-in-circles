@@ -219,3 +219,25 @@ Commit timestamps and hashes are recorded after the commit exists.
   the radial threshold; it does not assert that seven centers at the older,
   larger threshold were impossible. All four sharp terminal bounds remain
   open. Both independent analytic audit records are included.
+
+## Actual minimizer stresses and exclusion of small contact components
+
+- Previous rational core checkpoint: `96b7311332e3ab0d7321d9ff67bd88ba46803ef2`.
+- G3.O2 H: a common strict direction for active constraints proves
+  normalized nonnegative multipliers at an actual global minimizer.
+  Strict owner selection for noncontacts makes every positive pair physical.
+- Fixed frames admit at most 23 positive terms. A separate all-angle
+  certificate uses at most 33 smooth support-vertex atoms, retaining
+  parallel ties and torque equations. These counts are not conflated.
+- The stress value is attained; a connected component can be retained and
+  normalized, with bounded multipliers and the original disk as its unique
+  minimum enclosing disk in its actual position. Every removed weight leaves
+  the corresponding physical square present as a completion.
+- An elementary center-shell theorem proves q>1469/400. Together with exact
+  path and triangle comparisons, it excludes all stress components on at
+  most three bodies. Components have 4 through 11 bodies, no unloaded leaf,
+  and at most two internal unloaded degree-two transmitters per straight path.
+- Independent audit passes all extraction, compactness, and exclusion
+  arguments. No preexisting n=8 theorem is needed for this auxiliary bound.
+- The remaining contact supports and their completions still need sharp
+  bounds; bounded finite chart data alone does not close the global proof.

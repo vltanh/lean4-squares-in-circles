@@ -52,7 +52,8 @@ allowed without a separate theorem.
 | G2.4.b–c | Reduced sharp terminal inventory inside these classes | OPEN |
 | G3.C1–C2 | Necessary common-coordinate rank classification | H/C |
 | G3.C3–C5 | Entire common-coordinate class excluded at q<=U | H/A; 6 cases, 32 nodes, 19 leaves |
-| G3.O | Unrestricted oblique/core-plus-completion classification | OPEN |
+| G3.O2 | Actual minimizer stress extraction, compact weights, small-component exclusion | H |
+| G3.O3–O5 | Complete oblique contact classes and their physical completions | OPEN |
 | G4.1 | Generic weak stress identity with equality consequences | H/C; supplied weights |
 | G4.F | Fixed candidate frames plus fourteen separators: sharp bound and equality | H/A/C |
 | G4.L | Unrestricted local sharpness and complete local equality | H/A |
@@ -224,6 +225,21 @@ oriented. Prove separately whether such a frame exists in a proposed class.
   into the unrestricted statement.
 
 ### G3.O No common separating coordinate frame
+
+**O2 closed:** [minimizer stress extraction](SPARSE_MINIMIZER_STRESS.md)
+proves normalized multipliers from a strict feasible first-order direction.
+It gives at most 23 fixed-frame terms or, separately, 33 full-angle support
+vertex atoms. All positive pairs are actual contacts. A connected positive
+component has 4 to 11 squares, at least two circle-loaded bodies, no unloaded
+leaf, and at most two internal squares in a straight transmission path.
+[The elementary center bound](CENTER_SHELL_BOUND.md) excludes the
+three-body component. All normalized multipliers are bounded, permitting
+closed semialgebraic charts with physical contact witnesses.
+[Independent review](SPARSE_STRESS_REVIEW.md) checks these claims.
+
+A stress component is different from the radial core: it can include both
+core and ring squares. Every omitted physical square remains quantified.
+Sparsity and angular stationarity do not solve the contact classes.
 
 - **O1:** preserve actual pair-owned oblique axes from G2.
 - **O2:** if using minimizer stresses, prove constraint regularity, nonnegative

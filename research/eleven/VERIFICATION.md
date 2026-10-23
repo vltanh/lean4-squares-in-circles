@@ -81,6 +81,11 @@ when there are six. `CORE_RING_REVIEW.md` and `RATIONAL_CORE_REVIEW.md`
 bind the independent reviews. Area makes all core squares strictly
 circle-unloaded. No sampled angle table is a premise.
 
+`SPARSE_STRESS_REVIEW.md` audits extraction from a global minimizer, the
+strict direction, fixed-frame versus angular counts, bounded multipliers,
+component normalization, physical-contact witnesses, small-component
+exclusions, and retained completions. These are analytic results.
+
 ## Remaining verification boundary
 
 This is a partial research handoff. G2.4.b–c, the sharp refinement of the four unrestricted radial classes, the remaining sharp

@@ -87,6 +87,20 @@ An actual packing determines one row, a ring cyclic order, and physical
 separator data. This is an exhaustive coarse classification. Each row still
 contains continuous geometric domains requiring sharp certificates.
 
+## Minimizer contact supports
+
+At an unrestricted minimizer, [sparse stress extraction](SPARSE_MINIMIZER_STRESS.md)
+gives a connected positive contact component on k=4 through 11 bodies.
+This component can contain both radial core and ring squares. Its circle
+weights lie only on ring squares. All other bodies remain a physical
+completion. Fixed-frame stresses use at most 2k+1 positive terms; a separate
+full-angle stress uses at most 3k support-vertex atoms. The multipliers are
+bounded and closed chart domains are specified.
+
+All one-, two-, and three-body positive components are excluded. The
+remaining k values are necessary support counts, not solved terminal
+classes. No support graph or completion is dropped on dimensional grounds.
+
 ## Closed candidate terminals
 
 - **F:** Fix the exact candidate frames and the fourteen selected separators.
