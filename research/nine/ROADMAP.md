@@ -50,6 +50,19 @@ ledger. The main changes since the first roadmap are:
   center-incidence branches, G2.X exhaustive coverage, G4
   global optimality, and G5.U complete unrestricted equality.
 
+**Current canonical deep roadmap:**
+[DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md) is the maintained
+G0–G8 dependency plan with exact subsubgate theorem statements,
+closure criteria and failure tests. Its immediate G2.C3.3
+claim is now **sharp frame-switch or alternative stress**, not
+wholesale impossibility: [TWO_STACK_SHARP_EQUALITY_WITNESS.md](TWO_STACK_SHARP_EQUALITY_WITNESS.md)
+is an exact *physical* record-radius packing in that residual
+branch. [SIGNED_MATCHED_EQUALITY_FAMILY.md](SIGNED_MATCHED_EQUALITY_FAMILY.md)
+classifies the full signed 4+3 conditional equality family, while
+[NONSTRATIFIED_PARALLEL_NINE.md](NONSTRATIFIED_PARALLEL_NINE.md)
+shows even nine parallel squares need not admit any horizontal
+stratification. **The unrestricted radius proof remains OPEN.**
+
 ## 0. Exact target, definitions, and closure conditions
 
 Write
