@@ -96,3 +96,36 @@ For each substantive research turn, append:
 5. **Remaining decisive obligation** and pivot trigger. No numerical count of lemmas is a substitute for coverage.
 
 Never log a simulated result, partial computational search, or theorem within a strengthened normalization as closure of unrestricted G2.X/G4. Do not record CI/Lean/audit success until actually executed and reproducible.
+
+## 2026-10-23 12:56–13:21 UTC — Exhaustive tree cover and first two complete cases
+
+**Read base:** `c27384b8112b553c26c6474a8c5bb3fd3ebd02c4`. The older statements above are historical checkpoints; the following is the new current tree status.
+
+| UTC (GitHub-reported unless marked execution) | Commit | Deliverable | Closure impact |
+|---|---|---|---|
+| 12:56:07 | [4f8144d](https://github.com/vltanh/lean4-squares-in-circles/commit/4f8144db1ff9d6b1ac0388aa1cb9413c5120e997) | TREE_BODY_LOCALIZATION.md | **All** unloaded tree bodies are central; all loaded bodies have S/D radial geometry; all origin-avoiding unloaded bodies are one-step side transmitters |
+| 12:58:52 | [4007bfc](https://github.com/vltanh/lean4-squares-in-circles/commit/4007bfcc108d42977202d0bb4cb329ea58c56593) | TREE_RADIUS_QUANTIZATION.md | **Every** positive tree in the stated window has R^2=17/4; exactly six exhaustive origin-incidence completion cases |
+| 13:05:27 | [5acabe7](https://github.com/vltanh/lean4-squares-in-circles/commit/5acabe75e3e0b729c6a6279555cffdb6e4fdce05) | TREE_FINITE_COMPLETIONS.md | Whole **TREE.12** and **TREE.04** completion cases excluded: at most eight total squares, arbitrary free rotations allowed |
+| Source committed before the pinned run | [8a6eea1](https://github.com/vltanh/lean4-squares-in-circles/commit/8a6eea10cd83379e11190a81309248537d5c6cc8) | check_finite_tree_cases.py | Reproducible exact Q(sqrt(2)) stress and algebra regression source, not a universal proof |
+| 13:20:52.173306–13:20:52.299435 (execution) | [dad17ae report](https://github.com/vltanh/lean4-squares-in-circles/commit/dad17aec9e8b6f2729db7c78044e85782f22c144) | FINITE_TREE_EXACT_CHECK.json | Actual run PASS, Python 3.13.5, exit 0; source matched to Git blob before execution |
+
+**Precise finite cover:** let s count unloaded tree bodies with zero in a side's relative interior and v count those with zero at a vertex. The analytic proof first eliminates all origin-interior roots and all radii other than 17/4, then proves 2s+v<=4 and s+v>=2. The six cases are **(2,0),(1,1),(1,2),(0,2),(0,3),(0,4)**. They retain continuous side offsets, relative cone angles and every unstressed physical square. Slider endpoints migrate to the correct vertex case rather than being discarded.
+
+**Closed full cases:**
+- **TREE.12 (1,2):** force balance and origin cones require all four cardinal S terminals; the cardinal-cage theorem permits at most four additional squares, hence at most eight total.
+- **TREE.04 (0,4):** the four origin quadrants force a solid central 2x2 block; its arbitrary-orientation completion capacity is four more squares, hence at most eight total.
+
+**Still open tree rows:** **TREE.20, TREE.11, TREE.02, TREE.03**. These are four complete geometric families, not a list of sampled angles. The separate **CYCLIC** branch remains open. Therefore two of six tree cases closed is NOT a global completion percentage.
+
+**Exact executed scope:** 909 rational checks; all six integer profiles; seven physical force-and-torque tree examples with every square corner, all pairwise SAT conditions, all genuine application points and force/torque balances checked exactly. Source blob SHA-1 `4262f357214c9067124212dbeb2d2a2d2cd9ec34`; source SHA-256 `5501e227abf47b5c2f9a714dec8a69113c22f59717b4f7d552096c9e59570c9a`. No floating-point comparison or external solver is used in this checker. Finite checks remain regression evidence, not a proof of universal geometry.
+
+**Negative controls preserved:**
+1. A genuinely nonaligned five-body TREE.11 at 17/4 exists with positive physical force/torque stress. The missing obligation is its completion to nine, not an invalid core exclusion.
+2. TREE.12 has a valid seven-body core despite its ninth-square completion being excluded.
+3. Three squares can lie above a staggered four-chain at 17/4; a two-per-side argument is false.
+4. A five-square star at q=5/2 is below the theorem window, showing why the lower premise cannot be dropped.
+5. A cardinal cage plus a diagonal-center square fits q=9/2, showing why the cage's exact radius matters.
+
+**Sources and state tracking:** [FINITE_TREE_CASE_LEDGER.md](FINITE_TREE_CASE_LEDGER.md), commit `b3538b119cfbd826fcf43d84dce18bd10fc093e9`; [TREE_FINITE_VALIDATION.md](TREE_FINITE_VALIDATION.md), commit `437908477d1eaef831fa41d058b74b07d331deef`; detailed roadmap reconciled in `b329785e3ad4579069daee7314d86357287e54df`.
+
+**Remaining global implication:** prove all four unsolved tree completion rows and the cyclic branch sharply, with the explicit 79/40 lower-window dependency, or find one universal completion-aware inequality. Unrestricted G4/G5, independent full audit and Lean verification remain open. All new general results are hand manuscripts pending independent audit; no CI or Lean run is claimed.
