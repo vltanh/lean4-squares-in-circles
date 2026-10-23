@@ -100,6 +100,28 @@ theorem unrestricted_equality_rigid
           (closedSquare (S (σ i)) (e p) ↔ closedSquare (M i) p)) :=
   GeometricModel.equality_rigid S o hp
 
+/-- Each admissible model has a unique least containing circle, with
+center at the model origin; the four stationary support vertices certify
+the center, independently of the two exterior slider coordinates. -/
+theorem unrestricted_model_unique_least_circle
+    {p : GeometricModel.Parameters}
+    (hp : p.Admissible FiveCorner.selected) :
+    IsLeast p.enclosingRadii FiveCorner.radius ∧
+      ∀ o : Point,
+        (∀ i x, closedSquare (p.model FiveCorner.selected i) x →
+          inDisk o FiveCorner.radius x) → o=(0,0) :=
+  GeometricModel.Parameters.unique_least_circle hp
+
+/-- A nonempty open five-dimensional family survives after rigid
+motions, reflections and labels are factored out. -/
+theorem unrestricted_five_freedoms :
+    (∀ p : GeometricModel.Parameters, p.InBox →
+      Packing (p.model FiveCorner.selected) (0,0) FiveCorner.radius) ∧
+    (∀ p r : GeometricModel.Parameters, p.InBox → r.InBox →
+      (ExactFamily.BoxRigidity.RigidlyCongruent
+        (p.model FiveCorner.selected) (r.model FiveCorner.selected) ↔ p=r)) :=
+  GeometricModel.Parameters.five_freedoms
+
 /-- Unrestricted, attained sharp radius and full five-parameter
 classification in a single unconditional Lean statement.
 
