@@ -93,6 +93,20 @@ that at most four or five squares can meet the small disk. It is not a
 ten-square packing. The remaining argument must use the interaction between
 central and exterior squares; a small central count alone is insufficient.
 
+Two further manuscripts record a separate approach through contact forces.
+[Physical tree reductions](PHYSICAL_TREE_REDUCTIONS.md) proves a cover of
+all positive bridges by at most four circle-clear squares, classifies tree
+components with exactly two loaded squares, and excludes stars above an
+explicit radius. Its stress-existence inputs are pinned to the cited n=9
+research commit. These are conditional graph results, not an exhaustive
+classification of a minimizing packing.
+
+[Staggered-chain completion](STAGGERED_CHAIN_REDUCTION.md) proves that six
+additional squares around a specified four-square chain must split above
+and below it. A precise arbitrary-orientation upper-triple lemma would finish
+that case; the lemma is still open. The note proves its axis-parallel version
+and gives an exact obstruction to every universal two-point stabbing shortcut.
+
 Even the established equality family can have five distinct x-coordinates;
 the all-parallel proof handles those configurations directly. No unproved
 three-column normalization is used.
