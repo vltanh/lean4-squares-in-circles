@@ -128,7 +128,7 @@ packing, including nonstratified and oblique-only variants.
 
 **Fourth: G6–G8.** Independent mathematical audit, Lean formalization
 using only standard kernel proof checking, and public integration.
-Do not change the status to completed because no \`sorry\` appears
+Do not change the status to completed because no `sorry` appears
 in an uncompiled Lean draft.
 
 ## Proof-completion discipline
