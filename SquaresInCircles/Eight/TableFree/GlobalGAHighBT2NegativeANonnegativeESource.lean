@@ -31,7 +31,7 @@ open Candidate SignedCycle
 E total, positive TD2, and arbitrary actual weak HG owner, is impossible.
 The selected E owners may be D2/E0, D3/E0, D2/E1 or D3/E1, and their
 individual signed errors are *not* assumed to be nonnegative. -/
-theorem negative_A_nonnegative_E_positive_TD2_false
+theorem negative_A_nonnegative_E_positive_TD2_raw_false
     {q s : ℝ} {C : SignedCycle}
     (atG de eh : Bool)
     (hsorted : ∀i,(C.point i).Sorted)

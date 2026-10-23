@@ -76,7 +76,7 @@ private theorem core_negative_A_positive_TD2_with_entry_false
   have hHG : R.A.cycle.Feasible H 0∨R.A.cycle.Feasible H 2 :=
     (original_HG R.E.source).imp
       (ATransport.HG R.A 0) (ATransport.HG R.A 2)
-  exact negative_A_nonnegative_E_positive_TD2_false
+  exact negative_A_nonnegative_E_positive_TD2_raw_false
     atG (deFlag R.E.source) (ehFlag R.E.source)
     R.A.necessary.sorted R.A.necessary.contained hqU
     hH hG hB hD
