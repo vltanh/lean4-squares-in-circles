@@ -291,3 +291,19 @@ Commit timestamps and hashes are recorded after the commit exists.
 - The remaining unrestricted count rows are (3,8) and (4,7). Both still
   require whole-domain sharpness and equality arguments. This count
   restriction does not identify the candidate contact topology.
+
+## An unconditional lower bound above nine halves
+
+- Previous five-core exclusion commit: `ecaec8bc8b375be4f57c8011e28803c4cb07bacd`.
+- Five concentric circles with positive rational weights summing to one
+  give every square contained at q<=9/2 occupied measure at least 23/40.
+  Eleven such squares would occupy 253/40>2pi, impossible.
+- The complete closed pose cover has 2385 nodes, 980 accepted arc leaves,
+  213 discarded leaves, and depth 21. The supplied exact replay and the
+  separately written arithmetic implementation both pass every node.
+- Independent mathematical audit verifies the same continuous-domain and
+  measure-summation soundness arguments as the earlier core count proof.
+- Every unrestricted eleven-square packing now has q>9/2. This also
+  excludes any minimizer contact class with an enclosing-disk bound at or
+  below 9/2. The sharp value near 4.9012064 and the two surviving radial
+  classes remain open.

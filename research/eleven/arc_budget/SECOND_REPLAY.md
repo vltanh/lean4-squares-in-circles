@@ -29,3 +29,9 @@ python3 replay_weighted_arcs.py
 This independent execution checks a continuous-domain certificate. It
 does not imply that the remaining three- and four-core packing classes
 have been solved or that the candidate is globally optimal.
+
+The same separate arithmetic primitives also pass
+`python3 replay_universal_bound.py`: all 2,385 nodes and 980 accepted
+leaves of the unconditional q>9/2 certificate. That replay checks the
+five radii and rational weights independently against their specified
+values, reconstructs every domain box, and verifies the final contradiction.

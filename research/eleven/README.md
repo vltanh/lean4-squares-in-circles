@@ -10,6 +10,11 @@ status authority; [the progress ledger](PROGRESS_LEDGER.md) records completed
 checkpoints. [Lessons from n=8](N8_METHOD_AND_SOURCES.md) explains the proof
 discipline and pinned sources behind the roadmap.
 
+The [unconditional lower bound](arc_budget/UNIVERSAL_LOWER_BOUND.md) now
+proves q11>9/2. Five weighted circles and a complete exact pose cover prove
+this for unrestricted orientations. The current rigorous radius window is
+9/2<q11<=q_c.
+
 The first closed construction gate is an [exact feasible upper bound](EXACT_UPPER_BOUND.md)
 of q11 <= 49013/10000. Its rational witness certifies all 44 vertices and all
 55 pair separators; run `python3 check_rational_witness.py` in this directory.

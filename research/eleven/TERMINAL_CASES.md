@@ -5,6 +5,10 @@ in [the exact contact system](CANDIDATE_CONTACT_SYSTEM.md), then classify
 all equality packings. All geometric cases allow independent square orientations
 and weak contacts. No unresolved case is silently discarded.
 
+The [universal lower bound](arc_budget/UNIVERSAL_LOWER_BOUND.md) gives
+q>9/2 for every packing. Together with the construction, every minimizer
+lies in 9/2<q<=q_c<U.
+
 **Current closure:** the entire C branch is impossible at q<=U, by
 [coordinate shrinking](COORDINATE_SHRINKING_REDUCTION.md) and the
 [six-case axis exclusion](AXIS_ALIGNED_EXCLUSION.md). All 1105 historical

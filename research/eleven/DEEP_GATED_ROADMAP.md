@@ -13,6 +13,8 @@ The current candidate target is Q=q_c, the unique root specified in
 [the contact system](CANDIDATE_CONTACT_SYSTEM.md). Exact construction proves
 q11<=q_c<49013/10000. Proving q11>=q_c is still the open global problem.
 The larger rational U remains convenient for every coarse reduction below.
+[The unconditional weighted-circle lower bound](arc_budget/UNIVERSAL_LOWER_BOUND.md)
+now proves q11>9/2, so every minimizer lies in 9/2<q<=q_c.
 
 ## Status and closure rules
 
@@ -55,6 +57,7 @@ allowed without a separate theorem.
 | G3.O2 | Actual minimizer stress extraction, compact weights, small-component exclusion | H |
 | G3.O3–O5 | Complete oblique contact classes and their physical completions | OPEN |
 | G4.1 | Generic weak stress identity with equality consequences | H/C; supplied weights |
+| G4.U | Unrestricted coarse lower bound q11>9/2 | H/A |
 | G4.F | Fixed candidate frames plus fourteen separators: sharp bound and equality | H/A/C |
 | G4.L | Unrestricted local sharpness and complete local equality | H/A |
 | G4.2–G4.5 | Remaining whole-domain certificates and global assembly | BLOCKED |

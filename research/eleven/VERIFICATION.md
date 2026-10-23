@@ -22,9 +22,11 @@ python3 check_axis_terminal_graphs.py
 python3 check_axis_counterexample.py
 python3 arc_budget/check_weighted_arc_cover.py
 python3 arc_budget/replay_weighted_arcs.py
+python3 arc_budget/check_universal_bound.py
+python3 arc_budget/replay_universal_bound.py
 ```
 
-All twelve commands passed on 23 October 2026. They have different scopes:
+All fourteen commands passed on 23 October 2026. They have different scopes:
 
 | Command | Exact checked output | Scope limit |
 | --- | --- | --- |
@@ -103,6 +105,11 @@ arcsine reduction, and recomputes every domain test and leaf bound.
 `arc_budget/WEIGHTED_ARC_INDEPENDENT_REVIEW.md` binds the mathematical and
 source audit; `arc_budget/SECOND_REPLAY.md` records the separate execution.
 Together the bounds exclude five or more core centers.
+
+The five-circle universal lower bound q>9/2 has its own 2,385-node
+continuous pose cover. Both arithmetic implementations pass all 980
+accepted leaves; `arc_budget/UNIVERSAL_BOUND_REVIEW.md` records the
+independent proof and source review. This bound is global but not sharp.
 
 ## Remaining verification boundary
 
