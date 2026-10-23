@@ -23,6 +23,7 @@ kernel-certified proof. Compilation/CI deliberately remain deferred.
 @[expose] public section
 noncomputable section
 namespace SquaresInCircles.Eight.TableFree
+open ExactFamily Coordinates GeometricModel
 
 /-- The original sharp source is stationary with every originally
 retained selected physical normal, without generated capture. -/
