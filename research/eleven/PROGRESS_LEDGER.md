@@ -241,3 +241,21 @@ Commit timestamps and hashes are recorded after the commit exists.
   arguments. No preexisting n=8 theorem is needed for this auxiliary bound.
 - The remaining contact supports and their completions still need sharp
   bounds; bounded finite chart data alone does not close the global proof.
+
+## The six-core geometric case is excluded
+
+- Previous stress extraction commit: `55ea7a9e2475836ffbe1efde6fef4505a921b2c2`.
+- A hypothetical six-square family with centers in the radius-41/40 disk
+  has a unique origin-containing square. Its five neighbor rays are more
+  than one radian apart. Center separation then pins the central center
+  within 3/40 of the origin: otherwise all five rays lie in an arc shorter
+  than four radians.
+- The five centers lie within 11/10 of the central center and avoid its
+  radius-1/2 offset. They must occupy four disjoint narrow coordinate
+  regions. Two in the same region have distance squared below 17/20,
+  contradicting disjoint inscribed radius-1/2 disks.
+- This is a full all-orientation exclusion of six centers, including the
+  closed threshold. Independent reviews agree; rational constants and
+  Taylor residues were recomputed.
+- The current global radial cases are exactly (3,8), (4,7), and (5,6).
+  These three sharp terminal problems remain open.

@@ -77,7 +77,9 @@ circle intersections cover every near/far side branch; derivative
 factorizations bound their arc lengths; exact angular counts give at least
 three and at most seven core centers. The refined rational threshold 41/40
 gives at most six core centers, with a unique origin-containing square
-when there are six. `CORE_RING_REVIEW.md` and `RATIONAL_CORE_REVIEW.md`
+when there are six. A further analytic argument excludes six altogether:
+`FIVE_CORE_REVIEW.md` verifies the center pinning and four-region contradiction.
+`CORE_RING_REVIEW.md` and `RATIONAL_CORE_REVIEW.md`
 bind the independent reviews. Area makes all core squares strictly
 circle-unloaded. No sampled angle table is a premise.
 
@@ -88,7 +90,7 @@ exclusions, and retained completions. These are analytic results.
 
 ## Remaining verification boundary
 
-This is a partial research handoff. G2.4.b–c, the sharp refinement of the four unrestricted radial classes, the remaining sharp
+This is a partial research handoff. G2.4.b–c, the sharp refinement of the three unrestricted radial classes, the remaining sharp
 terminal inequalities and complete equality are still open. The candidate family is now proved locally optimal under unrestricted
 perturbations, with complete local equality. No certificate here proves the
 global n=11 lower bound.
