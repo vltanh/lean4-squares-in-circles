@@ -60,7 +60,7 @@ theorem negative_A_nonnegative_E_positive_TD2_raw_false
         hsorted hcontained hqU hH hG hB hD hvar hs ha hflat
         hAy hcut ⟨he,hsmall⟩ hz hhg hHG'
         hGA hAB hBT hTD hDE hEH
-    · exact GlobalGA.NegativeA.LongE.Source.original atG de eh
+    · exact GlobalGA.NegativeA.LongE.original atG de eh
         hsorted hcontained hqU hH hG hB hD hvar hs ha hflat
         hAy (le_of_lt (lt_of_not_ge hsmall)) hz hhg hHG'
         hGA hAB hBT hTD hDE hEH

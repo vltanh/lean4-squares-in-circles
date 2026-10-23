@@ -97,7 +97,7 @@ private theorem raw_joint_negative_false
   obtain ⟨hH,hG,hB,hD⟩ := frame_signs R
   have hfinish (hg : Fin 4) (hhg : hg=0∨hg=2)
       (hHG : R.A.cycle.Feasible H hg) : False :=
-    GlobalGA.JointNegativeAETD2.Source.original atG atH
+    GlobalGA.JointNegativeAETD2.original atG atH
       R.A.necessary.sorted R.A.necessary.contained hqU
       hH hG hB hD (source_budget R) hr hs hshort
       ha he hAflat hEflat hz hhg hHG hGA hAB
