@@ -1,0 +1,23 @@
+{
+  "source_commit": "42fa1fbf15d101695c3ba87c2956cdf7ae06ba27",
+  "source_git_blob_sha": "41baf4a6e465bd15868bd53a9967f229a3b1aab8",
+  "source_sha256": "039818b7b8ef1c1c7b0c3c7ef087591ec0f1b502d749f8075c50de2ad23c0b05",
+  "source_bytes": 4741,
+  "dependency_git_blob_sha": "4a10b9580fdbfc533eea3bf7a164379ba77894bb",
+  "python_version": "3.13.5",
+  "executed_at_utc": "2026-10-23T05:20:47.460070+00:00",
+  "exit_code": 0,
+  "checks": {
+    "scope": "one exact physical stress and finite local algebra regressions; not global optimality",
+    "q": "1105/256",
+    "physical_pair_forces": 7,
+    "actual_shared_contact_points_checked": 7,
+    "normal_cone_memberships_checked": 14,
+    "force_residuals": [["0","0"],["0","0"],["0","0"],["0","0"],["0","0"],["0","0"],["0","0"],["0","0"],["0","0"]],
+    "physical_angular_residuals": ["0","0","0","0","0","0","0","0","0"],
+    "rational_relative_rotations_checked": 7,
+    "base_contact_endpoint_gradient_checks": 8,
+    "all_checks_passed": true
+  },
+  "verification_boundary": "Exact concrete-witness and finite local algebra regression only, not proof of universal optimality or an independent manuscript/Lean audit."
+}
