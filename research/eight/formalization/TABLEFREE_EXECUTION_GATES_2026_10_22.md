@@ -144,7 +144,7 @@ At each leaf, record (i) actual theorem name, (ii) initial and terminal hypothes
 - [ ] **G6.6 — Original-center dual and five freedoms:** all original anchor residuals and selected contact gaps vanish; original G/T sliders satisfy contact lines; original central square and pairwise separation yield the exact five-parameter domain and converse.
 - [ ] **G6.7 — Exit:** a source theorem giving stationary frames, the original initially selected physical normal at *every* edge and stationary original anchor coordinates at q=q*, with weak ties; no compatibility-capture assumption.
 
-### G7 — Unconditional sharp source entry (OPEN)
+### G7 — Unconditional sharp source entry (D/J source; V pending)
 
 - [ ] G7.1 Instantiate \`GlobalNormalization S qStar\` and the actual source-domain theorem from G1–G3.
 - [x] G7.2 Conditional assembly from normal owners is written in `NormalizedSourceEntry.original_hard_owners`, `original_sharp`, and `source_witnesses_of_normal_owners`; universal normal-owner eligibility remains unproved.
@@ -152,7 +152,7 @@ At each leaf, record (i) actual theorem name, (ii) initial and terminal hypothes
 - [ ] G7.4 Ensure \`source_witnesses_of_recovered_equality\` uses the unchanged source and initially retained normals.
 - [ ] **G7 exit:** actual inhabitant of the proposition in \`TableFree/SharpEntry.lean\` under the exact \`GlobalNormalization\` hypotheses.
 
-### G8 — Public sharp theorem and full equality (OPEN new route)
+### G8 — Public sharp theorem and full equality (D/J source; V pending)
 
 - [ ] G8.1 Replace \`GeometricModel.SharpAssembly.compatibility_source_entry\` with G7; remove \`Candidate.Capture\` from *all transitive public imports*.
 - [ ] G8.2 Lower bound is for original arbitrary-radius packing: \`qStar ≤ q\` / \`sqrt qStar ≤ R\`, not merely a moved representative.
@@ -268,3 +268,21 @@ Once an inhabitant is produced, \`sharp_source_entry_of_BT2_exclusion\` already 
 
 **First remaining source gate:** G8 public import replacement. Then G9: ordinary Lean elaboration, exact dependency check, and kernel verification. Do not call the PR verified/merged while this is uncompiled. Record each follow-up SHA/time and any concrete unsupported premise. Never restore the generated \`Candidate.Capture\` dependency as a convenient fallback.
 
+
+## 7. Public G7/G8 source completion (D/J only), 2026-10-22
+
+**This is not Lean kernel verification.** The source now has proof bodies with the original arguments and has been connected to the public n=8 geometric theorem. The new source is to be audited and then compiled *only when separately authorized*. No CI has run.
+
+- [x] **BT2.3.9, source-only** joint genuine negative A/E + positive TD2: `GlobalGAHighBT2CoreEFirstJointNegative.lean`, commit [`dfe7be58`](https://github.com/vltanh/lean4-squares-in-circles/commit/dfe7be58e2e852fb0c77373280a90a50e0857437). The genuine EH1 short-angle cut is obtained from original E-first geometry or a feasible EH0 secondary on the same necessary cycle.
+- [x] **BT2.3.10, source-only** true-core E-first/A-second normalized all-T dispatch: `core_E_all_T_false`, commit [`9a95c1f1`](https://github.com/vltanh/lean4-squares-in-circles/commit/9a95c1f1ce23eabf0f1c12813709b98e29f3a1fa).
+- [x] **BT2.4 and G4, source-only** `high_GA_BT2_exclusion : HighGABT2Exclusion` handles original E outer or true-core, all A and T signs/weak owners, commit [`304501f6`](https://github.com/vltanh/lean4-squares-in-circles/commit/304501f64c52971ca4c4470b5d293adc4e68e9d7).
+- [x] **G7.1–G7.4, D/J only** `table_free_sharp_source_entry : SharpSourceEntry` is an unconditional proof body in `GlobalGAHighSourceComplete.lean`, commit [`d89955c7`](https://github.com/vltanh/lean4-squares-in-circles/commit/d89955c703a5b187554314dc1ec0c6f4c4506642). Its original selected-normal and frame conclusions are inherited from source recovery. No new axiom/admission declared.
+- [x] **G8.1, D/J only** replace `Candidate.capture` in `GeometricModel.SharpAssembly`, call `table_free_original_rigidity` at the unchanged q, commit [`739d9428`](https://github.com/vltanh/lean4-squares-in-circles/commit/739d9428c84a25ce60afeb65e308f94a9b8a470b). The old capture route remains in a separate historical legacy module.
+- [x] **G8.2–G8.4, D/J only** `GeometricModel.Theorem` consumes new `SharpEquality` and `SharpAssembly` for squared-radius lower bound, five-parameter equality family and full rigid uniqueness. `SquaresInCircles.lean` no longer imports the legacy `Eight.Theorem`, commit [`e542f7ae`](https://github.com/vltanh/lean4-squares-in-circles/commit/e542f7aeee45b4f6e8f8919b1ddf3ceca3fcd062).
+- [x] **G8.EntryReduction repair, D/J only** rewrite obsolete `via_capture` users in `TableFree.EntryReduction.lean` as `recovered_source_entry_table_free` and `fresh_sharp_entry_table_free`, commit [`b57bc3ca`](https://github.com/vltanh/lean4-squares-in-circles/commit/b57bc3ca42b5b1847fab92daf353fdda639eec69).
+- [x] **Canonical handoff refreshed** [`TABLEFREE_HANDOFF_CURRENT.md`](TABLEFREE_HANDOFF_CURRENT.md), commit [`cc2f0935`](https://github.com/vltanh/lean4-squares-in-circles/commit/cc2f093553882ec11d6243611afdba341e171866).
+- [ ] **G9.1 transitive source/interface import audit**: inspect the complete public graph, stale compatibility references and all owner/sign endpoints; record and correct any exact source mismatch. No kernel claims.
+- [ ] **G9.2 standard Lean/Mathlib compilation and repair (separate authorization required)**: no `sorry`, native kernel, generated owner lookup or new axioms.
+- [ ] **G9.3/G9.4 trusted axiom and performance validation**: `AxiomAudit.lean` now stages `#print axioms` commands but has not been executed.
+
+**Exit criterion is unchanged:** the PR must remain unverified until ordinary Lean confirms the new public theorem and exact equality family, including no `Candidate.Capture` in the transitive new proof route. D/J source progress is not V.

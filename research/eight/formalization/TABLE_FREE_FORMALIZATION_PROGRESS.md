@@ -1,4 +1,4 @@
-> **Current status is maintained in [the canonical handoff](TABLEFREE_HANDOFF_CURRENT.md).** The source-case and per-lane tables below are a 21-Oct/early-22-Oct historical implementation snapshot. In particular, negative-DE positive TD2 and small-EH TD2 scalar work advanced substantially after this table; see the canonical source matrix before selecting a task.
+> **Latest status:** [canonical handoff](TABLEFREE_HANDOFF_CURRENT.md) and [G0–G9 execution gates](TABLEFREE_EXECUTION_GATES_2026_10_22.md). G7/G8 now have connected **uncompiled** source proof bodies; G9 kernel and dependency validation has not run. All older case tables below are archived snapshots.
 
 # Table-free formalization: live progress and remaining work
 
