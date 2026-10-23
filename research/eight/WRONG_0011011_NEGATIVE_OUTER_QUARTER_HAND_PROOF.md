@@ -15,6 +15,12 @@ third-derivative rows, and explicit one-variable comparisons. The companion
 contains only these fixed arithmetic checks. No minimizing search,
 adaptive cover, or sampled contact hypothesis is used.
 
+**Table-free successor.** The aligned, contact, and endpoint-angle
+curvature rows below are replaced by whole-domain arguments in
+[`formalization/HAND_WRONG_0011011_NEGATIVE_QUARTER_WITHOUT_TABLES.md`](formalization/HAND_WRONG_0011011_NEGATIVE_QUARTER_WITHOUT_TABLES.md).
+That note proves this complete four-axis component, retaining the other
+analytic contact reductions. The whole-word gate remains open.
+
 ## 1. Notation and scalar facts
 
 All decimals denote exact terminating rationals. Set

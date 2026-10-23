@@ -1,0 +1,28 @@
+{
+  "source_pr": 9,
+  "source_branch": "research/eight-proof",
+  "source_commit": "a21c91f54039e805a637e983bc612bd130f39ee7",
+  "source_tree": "1e5b7609e09b3132bfdef31561dea94ff07f39c5",
+  "main_baseline": "089a1cb83aeb40eea802375c1f35d3301fda06a3",
+  "lean_toolchain": "leanprover/lean4:v4.35.0-rc3",
+  "mathlib_revision": "c55e6e786f49471c72fbddbec5415808896aec1e",
+  "instruction": {
+    "compile_lean": false,
+    "run_ci": false,
+    "audit": false,
+    "deliverable": "uncompiled Lean source draft"
+  },
+  "history": "../PRE_SQUASH_COMMITS.json",
+  "history_human": "../PROGRESS_HISTORY.md",
+  "implementation_pr": 10,
+  "implementation_pr_url": "https://github.com/vltanh/lean4-squares-in-circles/pull/10",
+  "implementation_branch": "formalize/eight-uncompiled-draft",
+  "implementation_base_branch": "research/eight-proof",
+  "delivery_kind": "uncompiled Lean source draft",
+  "mathematical_entry_point": "SquaresInCircles/Eight/Theorem.lean",
+  "public_entry_point": "SquaresInCircles.lean",
+  "milestone_history": "IMPLEMENTATION_COMMITS.json",
+  "milestone_history_human": "IMPLEMENTATION_HISTORY.md",
+  "finite_lean_decisions": "written as source; not evaluated",
+  "ci_skip_marker": "[skip ci]"
+}

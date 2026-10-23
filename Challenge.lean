@@ -1,18 +1,22 @@
 module
 
 public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Angle
+public import Mathlib.Tactic
 
 /-!
 # Packing unit squares in a disk: the statement
 
-The statement a reader audits. It imports only Mathlib, restates the
-definitions of `SquaresInCircles/Geometry.lean` word for word, and states the
-two main theorems, which the root module of the library `SquaresInCircles`
-proves; Comparator checks that statements and definitions are identical.
+The independent statement a reader can audit. It imports only Mathlib and
+restates the pure definition bodies of `SquaresInCircles/Geometry.lean`,
+`SquaresInCircles/StatementEight.lean`,
+`SquaresInCircles/StatementEightGeometric.lean`, and
+`SquaresInCircles/Optimal.lean`, in that order. It states the two main theorems proved in the root library
+module; Comparator is the later check that statements and definitions agree.
+The eight-square extension and its proof source are an uncompiled draft.
 
 A packing of `n` unit squares in a disk places `n` squares of side 1 in the
 closed disk, each at its own position and rotation, so that no point is interior
-to two squares. For `n = 1, …, 7` the theorems give the least radius of such a
+to two squares. For `n = 1, …, 8` the theorems give the least radius of such a
 disk, and every packing that attains it, up to a rotation about the disk centre
 and a relabelling of the squares:
 
@@ -25,8 +29,9 @@ and a relabelling of the squares:
 | 5 | `√(5/2)` | the plus: a square and its four side-neighbours |
 | 6 | `√qStar ≈ 1.6885` | a square with four neighbours, two of them pushed along its sides, and a sixth square turned by `π/4` in the corner between those two |
 | 7 | `√13 / 2` | two columns of two squares, and between them a column of three, each of which can move along the middle axis |
+| 8 | `Eight.GeometricModel.FiveCorner.radius` | the five-corner geometric minimum, with two exterior sliders and the central square's position and actual angle; exact geometric constraints and both reflected families are included |
 
-The theorems assume `1 ≤ n ≤ 7`. For every other `n`, `optimalRadius n` is the
+The theorems assume `1 ≤ n ≤ 8`. For every other `n`, `optimalRadius n` is the
 placeholder `0`, `optimalPackings n` is empty, and nothing is claimed.
 
 A unit square is a centre and an orthonormal frame; in the coordinates of its
@@ -36,8 +41,13 @@ lie in two open squares, so squares may touch each other and the circle.
 Distances use the squared Euclidean length `normSq` (Mathlib's norm on
 `ℝ × ℝ` is the maximum norm). Congruence compares point sets, since a quarter
 turn of a frame describes the same square. It allows a rotation about the disk
-centre and a relabelling; every optimal model is symmetric under a reflection,
-so reflections add nothing.
+centre and a relabelling. At eight squares, `optimalPackings` explicitly
+includes the reflected family, giving the complete five-parameter equality
+classification with this positively oriented definition of congruence.
+
+The source-only command `python3 scripts/sync-challenge.py --write` refreshes
+the copied definitions and preserves the two intentional theorem stubs below.
+It performs no compilation or proof checking.
 -/
 
 @[expose] public section
@@ -291,8 +301,346 @@ def columnModel (c : Column) : Fin 7 → UnitSquare :=
 
 end Seven
 
-/-- The optimal radius for `n` unit squares, for `1 ≤ n ≤ 7`. Every other `n`
-gets the placeholder `0`, about which nothing is claimed. -/
+/- The pure n=8 definitions are in `SquaresInCircles/StatementEight.lean` and
+the pure public registries in `SquaresInCircles/Optimal.lean`. Their ordinary
+epsilon selection is linked to the analytically proved unique root by the
+downstream `Eight/ExactFamily/StatementLink.lean`. -/
+
+namespace EightStatement
+
+def halfAngleCos (z : ℝ) : ℝ := (1-z^2)/(1+z^2)
+def halfAngleSin (z : ℝ) : ℝ := 2*z/(1+z^2)
+
+theorem halfAngle_unit (z : ℝ) : halfAngleCos z^2+halfAngleSin z^2=1 := by
+  have hd : 0<1+z^2 := by positivity
+  unfold halfAngleCos halfAngleSin
+  field_simp [ne_of_gt hd]
+  ring
+
+/-- The seven real coordinates in the explicit stationary system. The
+branch conditions below select the four successive circle radicals. -/
+structure Root where
+  q : ℝ
+  y : ℝ
+  z : ℝ
+  x₁ : ℝ
+  x₂ : ℝ
+  y₃ : ℝ
+  x₄ : ℝ
+  deriving Inhabited
+
+namespace Root
+
+def c (d : Root) : ℝ := halfAngleCos d.z
+def s (d : Root) : ℝ := halfAngleSin d.z
+def x₃ (d : Root) : ℝ := d.x₂-3
+def y₄ (d : Root) : ℝ := d.y₃-2
+def h₁ (d : Root) : ℝ := d.c*d.x₁+d.s*d.y-2-d.c
+def h₂ (d : Root) : ℝ := -d.s*d.x₄+d.c*d.y₄-1-d.s
+def defect (d : Root) : ℝ := d.h₁^2+d.h₂^2-d.q
+def y₄deriv (d : Root) : ℝ := d.x₃*(d.y+2)/(d.y₃*d.x₂)
+def h₁deriv (d : Root) : ℝ := d.s-d.c*d.y/d.x₁
+def h₂deriv (d : Root) : ℝ := (d.c+d.s*d.y₄/d.x₄)*d.y₄deriv
+def positionDerivative (d : Root) : ℝ := 2*(d.h₁*d.h₁deriv+d.h₂*d.h₂deriv)
+def tiltDerivative (d : Root) : ℝ :=
+  2*(d.h₁*(-d.s*(d.x₁-1)+d.c*d.y)+d.h₂*(-d.c*(d.x₄+1)-d.s*d.y₄))
+
+structure IsChain (d : Root) : Prop where
+  x₁_pos : 0<d.x₁
+  x₂_pos : 0<d.x₂
+  y₃_pos : 0<d.y₃
+  x₄_neg : d.x₄<0
+  first_circle : d.x₁^2+d.y^2=d.q
+  second_circle : d.x₂^2+(d.y+2)^2=d.q
+  third_circle : d.x₃^2+d.y₃^2=d.q
+  fourth_circle : d.x₄^2+d.y₄^2=d.q
+
+/-- Circle equations, branch inequalities, and the two exact derivative
+equations in the broad analytic strip. No optimality or packing assertion
+is part of this selection predicate. -/
+structure IsStationary (d : Root) : Prop extends IsChain d where
+  q_lower : (79/40 : ℝ)^2≤d.q
+  q_upper : d.q≤9789/2500
+  y_lower : -1<d.y
+  y_upper : d.y< -(1/2)
+  y₄_lower : -1<d.y₄
+  y₄_upper : d.y₄< -(1/2)
+  position_order : d.y<d.y₄
+  z_pos : 0<d.z
+  tilt_range : 2*d.z/(1-d.z^2)<1/5
+  z_lt_one : d.z<1
+  zero_defect : d.defect=0
+  position_stationary : d.positionDerivative=0
+  tilt_stationary : d.tiltDerivative=0
+
+def inFrame (d : Root) (a b : ℝ) : Point :=
+  (d.c*a-d.s*b,d.s*a+d.c*b)
+
+def pA (d : Root) : Point := (d.x₁-1/2,d.y+1/2)
+def pB (d : Root) : Point := (d.x₂-1/2,d.y+3/2)
+def pD (d : Root) : Point := (d.x₃+1/2,d.y₃-1/2)
+def pE (d : Root) : Point := (d.x₄+1/2,d.y₄+1/2)
+def pH (d : Root) : Point := d.inFrame (d.h₁+1/2) (d.h₂+1/2)
+def pT (d : Root) (Z : ℝ) : Point := (d.x₂-3/2,Z)
+def pG (d : Root) (η : ℝ) : Point := d.inFrame (d.h₁+3/2) (d.h₂+1/2+η)
+
+def tiltedSquare (d : Root) (p : Point) : UnitSquare where
+  center := p
+  cosine := d.c
+  sine := d.s
+  unit := halfAngle_unit d.z
+
+def zMax (d : Root) : ℝ := Real.sqrt (d.q-(d.x₂-1)^2)-1/2
+def etaMin (d : Root) : ℝ := -d.h₂-Real.sqrt (d.q-(d.h₁+2)^2)
+def etaMax (d : Root) : ℝ := -d.h₂-13/12
+
+end Root
+
+/-- Ordinary Hilbert choice from the explicit stationary system. The proof
+module establishes that this predicate has exactly one solution, so the
+selection has no dependence on an arbitrary choice of branch or witness. -/
+def selected : Root := Classical.epsilon Root.IsStationary
+
+/-- The exact squared radius, characterized by `Root.IsStationary`. -/
+def qStar : ℝ := selected.q
+
+/-- The radius of the containing disk for eight squares. -/
+def radius : ℝ := Real.sqrt qStar
+
+structure Parameters where
+  x : ℝ
+  y : ℝ
+  w : ℝ
+  z : ℝ
+  eta : ℝ
+
+namespace Parameters
+
+def C (p : Parameters) : ℝ := halfAngleCos p.w
+def S (p : Parameters) : ℝ := halfAngleSin p.w
+def center (p : Parameters) : Point := (p.x,p.y)
+
+def centralSquare (p : Parameters) : UnitSquare where
+  center := p.center
+  cosine := p.C
+  sine := p.S
+  unit := halfAngle_unit p.w
+
+def M₀ (p : Parameters) (v : Point) : ℝ :=
+  max (max |v.1| |v.2|) (max |p.C*v.1+p.S*v.2| |-p.S*v.1+p.C*v.2|)
+
+def Mₜ (p : Parameters) (d : Root) (v : Point) : ℝ :=
+  max (max |d.c*v.1+d.s*v.2| |-d.s*v.1+d.c*v.2|)
+    (max |p.C*v.1+p.S*v.2| |-p.S*v.1+p.C*v.2|)
+
+def W₀ (p : Parameters) : ℝ := (1+p.C+|p.S|)/2
+def Wₜ (p : Parameters) (d : Root) : ℝ :=
+  (1+d.c*p.C+d.s*p.S+|d.c*p.S-d.s*p.C|)/2
+
+/-- The full equality domain. All separation and slider inequalities are
+weak; the central core inequalities are strict and its frame interval is
+half open. -/
+structure Admissible (d : Root) (p : Parameters) : Prop where
+  frame_lower : 1-Real.sqrt 2≤p.w
+  frame_upper : p.w<Real.sqrt 2-1
+  top_lower : 7/12≤p.z
+  top_upper : p.z≤d.zMax
+  tilted_lower : d.etaMin≤p.eta
+  tilted_upper : p.eta≤d.etaMax
+  core_first : |p.C*p.x+p.S*p.y|<5/12
+  core_second : |-p.S*p.x+p.C*p.y|<5/12
+  A_sep : p.W₀≤p.M₀ (sub d.pA p.center)
+  B_sep : p.W₀≤p.M₀ (sub d.pB p.center)
+  D_sep : p.W₀≤p.M₀ (sub d.pD p.center)
+  E_sep : p.W₀≤p.M₀ (sub d.pE p.center)
+  T_sep : p.W₀≤p.M₀ (sub (d.pT p.z) p.center)
+  H_sep : p.Wₜ d≤p.Mₜ d (sub d.pH p.center)
+  G_sep : p.Wₜ d≤p.Mₜ d (sub (d.pG p.eta) p.center)
+
+def model (d : Root) (p : Parameters) : Fin 8 → UnitSquare :=
+  ![p.centralSquare,d.tiltedSquare d.pH,d.tiltedSquare (d.pG p.eta),
+    axisSquare d.pA,axisSquare d.pB,axisSquare (d.pT p.z),axisSquare d.pD,axisSquare d.pE]
+
+end Parameters
+
+def reflectSquare (K : UnitSquare) : UnitSquare where
+  center := (K.center.2,K.center.1)
+  cosine := K.sine
+  sine := K.cosine
+  unit := by linarith [K.unit]
+
+def reflectedModel (reflected : Bool) (p : Parameters) : Fin 8 → UnitSquare :=
+  if reflected then fun i=>reflectSquare (p.model selected i) else p.model selected
+
+def models : Set (Fin 8 → UnitSquare) :=
+  {M | ∃ reflected : Bool,∃ p : Parameters,
+    p.Admissible selected ∧ M=reflectedModel reflected p}
+
+end EightStatement
+
+namespace Eight.GeometricModel
+
+def e (t : ℝ) : Point := (Real.cos t, Real.sin t)
+def f (t : ℝ) : Point := (-Real.sin t, Real.cos t)
+
+/-- The scalar projection used by the proof-independent statement layer. -/
+def projection (n p : Point) : ℝ := n.1 * p.1 + n.2 * p.2
+
+def square (p : Point) (t : ℝ) : UnitSquare where
+  center := p
+  cosine := Real.cos t
+  sine := Real.sin t
+  unit := by simpa only [add_comm] using Real.sin_sq_add_cos_sq t
+
+/-- The exact squared distance of a square's farthest vertex from zero. -/
+def containmentCost (p : Point) (t : ℝ) : ℝ :=
+  (|projection (e t) p| + 1 / 2) ^ 2 +
+    (|projection (f t) p| + 1 / 2) ^ 2
+
+def supportWidth (t : ℝ) (n : Point) : ℝ :=
+  (|projection (e t) n| + |projection (f t) n|) / 2
+
+/-- All four candidate unsigned separating axes share this support sum. -/
+def separationWidth (a b : ℝ) : ℝ :=
+  (1 + |Real.cos (a - b)| + |Real.sin (a - b)|) / 2
+
+def separationMargin (a b : ℝ) (d : Point) : ℝ :=
+  max (max |projection (e a) d| |projection (f a) d|)
+      (max |projection (e b) d| |projection (f b) d|) - separationWidth a b
+
+structure FiveCorner where
+  angle : ℝ
+  point : Fin 5 → Point
+  deriving Inhabited
+
+namespace FiveCorner
+
+/-- Five projected spans and the complete natural tilt interval. The order
+of the last two spans is E/H followed by A/H, matching the contact weights. -/
+def spans (d : FiveCorner) : Prop :=
+  0 ≤ d.angle ∧ d.angle ≤ Real.pi / 4 ∧
+  2 ≤ (d.point 1).2 - (d.point 0).2 ∧
+  3 ≤ (d.point 1).1 - (d.point 2).1 ∧
+  2 ≤ (d.point 2).2 - (d.point 3).2 ∧
+  1 + Real.sin d.angle ≤ projection (f d.angle) (sub (d.point 3) (d.point 4)) ∧
+  2 + Real.cos d.angle ≤ projection (e d.angle) (sub (d.point 0) (d.point 4))
+
+def fits (d : FiveCorner) (R : ℝ) : Prop :=
+  0 ≤ R ∧ ∀ i : Fin 5, normSq (d.point i) ≤ R ^ 2
+
+def feasibleRadii : Set ℝ := {R | ∃ d : FiveCorner, d.spans ∧ d.fits R}
+
+/-- The geometric sharp radius. Downstream proofs show that the infimum is
+attained by exactly one five-point configuration in the chosen frame. -/
+def radius : ℝ := sInf feasibleRadii
+
+def IsMinimizer (d : FiveCorner) : Prop := d.spans ∧ d.fits radius
+
+def selected : FiveCorner := Classical.epsilon IsMinimizer
+
+end FiveCorner
+
+/-- The two-height expression obtained from the upper chord of width three. -/
+def twoHeightRadiusSq (u v : ℝ) : ℝ :=
+  ((9 + (u - v) ^ 2) * (9 + (4 - u - v) ^ 2)) / 36
+
+def upperRightFromHeights (u v : ℝ) : ℝ :=
+  (9 + (u - v) * (4 - u - v)) / 6
+
+def upperLeftFromHeights (u v : ℝ) : ℝ :=
+  (9 - (u - v) * (4 - u - v)) / 6
+
+/-- Reflection in the diagonal, kept in the proof-independent model layer. -/
+def reflectSquare (K : UnitSquare) : UnitSquare where
+  center := (K.center.2, K.center.1)
+  cosine := K.sine
+  sine := K.cosine
+  unit := by linarith [K.unit]
+
+namespace FiveCorner
+
+/-- The order of the five anchor centers is `A,B,D,E,H`. -/
+def anchorCenter (d : FiveCorner) : Fin 5 → Point :=
+  ![((d.point 0).1-1/2,(d.point 0).2+1/2),
+    ((d.point 1).1-1/2,(d.point 1).2-1/2),
+    ((d.point 2).1+1/2,(d.point 2).2-1/2),
+    ((d.point 3).1+1/2,(d.point 3).2+1/2),
+    ((d.point 4).1+((e d.angle).1+(f d.angle).1)/2,
+      (d.point 4).2+((e d.angle).2+(f d.angle).2)/2)]
+
+/-- The middle upper square moves on the vertical rail one unit left of B. -/
+def topCenter (d : FiveCorner) (z : ℝ) : Point :=
+  ((d.anchorCenter 1).1-1,z)
+
+/-- The lower tilted square moves along the side direction of H. -/
+def tiltedCenter (d : FiveCorner) (η : ℝ) : Point :=
+  ((d.anchorCenter 4).1+(e d.angle).1+η*(f d.angle).1,
+    (d.anchorCenter 4).2+(e d.angle).2+η*(f d.angle).2)
+
+/-- Exterior labels retain their counterclockwise order `H,G,A,B,T,D,E`. -/
+def exteriorCenter (d : FiveCorner) (z η : ℝ) : Fin 7 → Point :=
+  ![d.anchorCenter 4,d.tiltedCenter η,d.anchorCenter 0,d.anchorCenter 1,
+    d.topCenter z,d.anchorCenter 2,d.anchorCenter 3]
+
+def exteriorAngle (d : FiveCorner) : Fin 7 → ℝ :=
+  ![d.angle,d.angle,0,0,0,0,0]
+
+def exteriorSquare (d : FiveCorner) (z η : ℝ) (i : Fin 7) : UnitSquare :=
+  square (d.exteriorCenter z η i) (d.exteriorAngle i)
+
+end FiveCorner
+
+/-- Five real freedoms, expressed using the actual central angle. -/
+structure Parameters where
+  center : Point
+  angle : ℝ
+  top : ℝ
+  tilted : ℝ
+
+namespace Parameters
+
+def centralSquare (p : Parameters) : UnitSquare := square p.center p.angle
+
+def model (d : FiveCorner) (p : Parameters) : Fin 8 → UnitSquare :=
+  Fin.cons p.centralSquare (d.exteriorSquare p.top p.tilted)
+
+/-- A half-open representative of a square frame, rather than an orientation
+of a marked edge.  The corresponding square is unchanged by a quarter turn. -/
+def AngleRepresentative (θ : ℝ) : Prop :=
+  -Real.pi/4 ≤ θ ∧ θ < Real.pi/4
+
+/-- Exact geometric conditions, with all weak rail and separation contacts. -/
+structure Admissible (d : FiveCorner) (p : Parameters) : Prop where
+  angle_mem : AngleRepresentative p.angle
+  top_contained : containmentCost (d.topCenter p.top) 0 ≤ FiveCorner.radius^2
+  tilted_contained :
+    containmentCost (d.tiltedCenter p.tilted) d.angle ≤ FiveCorner.radius^2
+  top_above_axis : 1/2 ≤ p.top
+  tilted_below_axis :
+    (d.tiltedCenter p.tilted).2 +
+      (|Real.cos d.angle|+|Real.sin d.angle|)/2 ≤ 0
+  central_first : |projection (e p.angle) p.center| < 1/2
+  central_second : |projection (f p.angle) p.center| < 1/2
+  central_separated : ∀ i : Fin 7,
+    0 ≤ separationMargin p.angle (d.exteriorAngle i)
+      (sub (d.exteriorCenter p.top p.tilted i) p.center)
+
+end Parameters
+
+/-- Both chiral copies are retained.  Arbitrary rigid motions and relabelings
+are applied by the surrounding equality classification, as in `Congruent`. -/
+def reflectedModel (reflected : Bool) (p : Parameters) : Fin 8 → UnitSquare :=
+  if reflected then fun i => reflectSquare (p.model FiveCorner.selected i)
+  else p.model FiveCorner.selected
+
+def models : Set (Fin 8 → UnitSquare) :=
+  {M | ∃ reflected : Bool, ∃ p : Parameters,
+    p.Admissible FiveCorner.selected ∧ M=reflectedModel reflected p}
+
+end Eight.GeometricModel
+
+/-- The optimal radius for `1 ≤ n ≤ 8`. Values outside this proved range
+are placeholders and carry no optimality claim. -/
 def optimalRadius : ℕ → ℝ
   | 1 => One.radius
   | 2 => Two.radius
@@ -301,12 +649,13 @@ def optimalRadius : ℕ → ℝ
   | 5 => Five.radius
   | 6 => Six.radius
   | 7 => Seven.radius
+  | 8 => Eight.GeometricModel.FiveCorner.radius
   | _ => 0
 
-/-- The optimal packings of `n` unit squares, as models about the origin: one
-packing for `n ≤ 6`, and for `n = 7` every position of the three middle
-squares. Every other `n` gets the placeholder `∅`, about which nothing is
-claimed. -/
+/-- All normalized optimum models. At eight squares the two exterior
+sliders and the central square contribute five real parameters; both
+orientations are included because `Congruent` uses a positively oriented
+frame. Values outside `1 ≤ n ≤ 8` are empty placeholders. -/
 def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
   | 1 => {One.model}
   | 2 => {Two.model}
@@ -315,6 +664,7 @@ def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
   | 5 => {Five.model}
   | 6 => {Six.model}
   | 7 => Set.range Seven.columnModel
+  | 8 => Eight.GeometricModel.models
   | _ => ∅
 
 /-! ### The theorems -/
@@ -322,16 +672,16 @@ def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
 /-- `optimalRadius n` is the least radius of a disk that holds `n` unit squares
 with disjoint interiors: some packing of `n` unit squares fits in a disk of
 that radius, and none fits in a disk of smaller radius. -/
-theorem optimal_radius (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 7) :
+theorem optimal_radius (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 8) :
     IsLeast {R | ∃ (S : Fin n → UnitSquare) (o : Point), Packing S o R} (optimalRadius n) := by
   sorry
 
 /-- The packings in a disk of radius `optimalRadius n` are exactly the
 configurations congruent to an optimal model: the model, turned about the disk
 centre and relabelled. For `n ≤ 6` the optimal packing is therefore unique up
-to rotation and relabelling, and for `n = 7` the optimal packings are exactly
-the column packings. -/
-theorem optimal_packings (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 7)
+to rotation and relabelling, for `n = 7` they are the column packings, and for
+`n = 8` they are the five-parameter family and its reflected models. -/
+theorem optimal_packings (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 8)
     (S : Fin n → UnitSquare) (o : Point) :
     Packing S o (optimalRadius n) ↔ ∃ M ∈ optimalPackings n, Congruent S o M := by
   sorry

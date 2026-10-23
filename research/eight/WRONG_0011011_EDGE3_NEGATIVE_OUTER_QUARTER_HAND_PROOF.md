@@ -1,5 +1,11 @@
 # Whole negative outer quarter row for word 0011011
 
+**Table-free successor.** The three primary-speed rows and six
+zero-target scalar intervals below are replaced in
+[`formalization/HAND_WRONG_0011011_EDGE3_NEGATIVE_WITHOUT_TABLES.md`](formalization/HAND_WRONG_0011011_EDGE3_NEGATIVE_WITHOUT_TABLES.md).
+The replacement proves this complete component with its original four
+axes and both angle halves. The whole-word gate remains open.
+
 ## 1. Statement and exact data
 
 Put

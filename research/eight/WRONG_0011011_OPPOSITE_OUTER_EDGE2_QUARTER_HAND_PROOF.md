@@ -1,5 +1,13 @@
 # 0011011: the whole opposite-sign outer edge-2 quarter row
 
+**Table-free completion.**
+[`formalization/HAND_WRONG_0011011_OPPOSITE_EDGE2_WITHOUT_TABLES.md`](formalization/HAND_WRONG_0011011_OPPOSITE_EDGE2_WITHOUT_TABLES.md)
+replaces every derivative-range table retained below by whole-domain
+calculus and two explicit quintic inequalities. With the analytic
+contact reductions in this manuscript, it proves all eight original
+axis/angle halves, including all boundary ties. The historical tables
+below are no longer premises of that completed hand component.
+
 **Theorem.** For edge 2 with a negative outer source and positive outer
 target, every retained separator and every
 \[

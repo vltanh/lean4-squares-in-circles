@@ -10,6 +10,12 @@ The continuous arguments are an endpoint-forcing derivative implication,
 a negative-Hessian test on a stationary curve, and three one-variable
 strong-convexity bounds. No contact search or adaptive subdivision is used.
 
+**Table-free successor.** The two critical-curve Hessian rows and six
+angle-curvature intervals below are replaced by whole-domain arguments in
+[`formalization/HAND_WRONG_0011011_SAME_SIGN_OUTER_WITHOUT_TABLES.md`](formalization/HAND_WRONG_0011011_SAME_SIGN_OUTER_WITHOUT_TABLES.md).
+That note retains the analytic contact reductions and proves this entire
+same-sign component without those rows. The whole-word gate remains open.
+
 ## 1. The two representative rows
 
 Write

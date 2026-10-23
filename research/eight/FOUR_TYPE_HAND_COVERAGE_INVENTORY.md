@@ -1,10 +1,12 @@
 # Whole-domain coverage inventory for the four-type hand conversion
 
-This file distinguishes complete pair entries, proved angle strips, and
-remaining continuous domains. It is a scope ledger, not a proof of the
-unproved entries. The computer-assisted PL certificate remains a separate,
-completed artifact; none of its interval trees is silently treated as a
-hand proof below.
+All ten pair entries now have table-free proofs on their complete
+continuous domains. This file records their scope and the precise
+substitutions for the old scalar appendices. The mathematical assembly is
+[the exterior-frame theorem](HAND_EXTERIOR_FRAME_CONCENTRATION.md).
+The computer-assisted PL certificate remains a separate artifact; none
+of its interval trees, coefficient lists, or numerical PASS results is
+a premise of that theorem.
 
 ## 1. The fixed proved family
 
@@ -62,35 +64,40 @@ covering one of these whole branches.
 An unordered diagonal type entry consists of eight such branches.
 An unordered off-diagonal entry consists of sixteen. The present state is:
 
-| Pair entry | Whole source-axis branches | Hand status |
+| Pair entry | Whole source-axis branches | Table-free scalar completion |
 |---|---:|---|
-| C/C | 8 | **Complete**, all signs, axes and frame angles |
-| C/L | 16 | **Complete**, independently reviewed |
-| C/M | 16 | **Complete**, 213 fixed comparisons and independent whole-domain review with 66 independently reconstructed scalar comparisons |
-| C/H | 16 | **Complete**, 143 fixed comparisons and independent polynomial/coverage review |
-| L/L | 8 | **Complete**, independently reviewed |
-| L/M | 16 | **Complete**, 305 fixed comparisons and independent reconstruction of all eight polynomial rows |
-| L/H | 16 | **Complete**, 232 fixed comparisons and independent reconstruction of all 80 Bernstein bounds and 16 endpoint rows |
-| M/M | 8 | **Complete**, 111 fixed comparisons and independent review of the whole contact deformation and both polynomial rows |
-| M/H | 16 | **Complete at .8926**, 225 fixed comparisons and independent polynomial/coverage review |
-| H/H | 8 | **Complete**, restored 108-comparison proof with fresh independent geometry, scalar and polynomial audit |
+| C/C | 8 | Original whole-pair analytic proof. |
+| C/L | 16 | [Core/low](formalization/HAND_CORE_LOW_SCALAR_WITHOUT_TABLES.md), including all three old short endpoint intervals. |
+| C/M | 16 | [Scalar replacements, Section 3](formalization/HAND_FOUR_TYPE_SCALAR_REPLACEMENTS.md), including all nine old curvature intervals. |
+| C/H | 16 | [Curvature and corner tail, Section 2](formalization/HAND_CORE_HIGH_AND_HIGH_HIGH_CURVATURE.md). |
+| L/L | 8 | [Scalar replacements, Section 2](formalization/HAND_FOUR_TYPE_SCALAR_REPLACEMENTS.md). |
+| L/M | 16 | [Scalar replacements, Section 5](formalization/HAND_FOUR_TYPE_SCALAR_REPLACEMENTS.md). |
+| L/H | 16 | [Low/high](formalization/HAND_LOW_HIGH_SCALAR_REPLACEMENTS.md), including the inherited short nonaligned interval. |
+| M/M | 8 | [Scalar replacements, Section 4](formalization/HAND_FOUR_TYPE_SCALAR_REPLACEMENTS.md). |
+| M/H | 16 | [Mid/high curvature](formalization/HAND_MID_HIGH_CURVATURE.md), at the required .8926 value. |
+| H/H | 8 | [High/high curvature, Section 3](formalization/HAND_CORE_HIGH_AND_HIGH_HIGH_CURVATURE.md). |
 
-All **128** ordered source-axis branches now have complete independently
-reviewed hand proofs. The restored C/M manuscript closes the final 16,
-with 213 fixed comparisons and an independent reconstruction of its
-polynomial and curvature arguments. See
-[the final C/M audit](CORE_MID_WHOLE_PAIR_INDEPENDENT_AUDIT.md).
-The complete [hand frame assembly](HAND_EXTERIOR_FRAME_CONCENTRATION.md)
-proves D < .7 and discharges the common quarter table's frame premise.
+Retain the geometric reductions in each original whole-pair proof and
+make exactly these scalar substitutions. All **128** ordered source-axis
+branches, and their reflected target axes, are then complete. An
+independent dependency audit also checked the cap/backward-axis
+reduction, radial deformation, endpoint ties, central-band identities,
+odd-walk budget, and real lift. The common-point gap is supplied by the
+new second central-depth band, so the old common-point coefficient
+appendix is not imported. The complete
+[hand frame assembly](HAND_EXTERIOR_FRAME_CONCENTRATION.md) proves
+\(D<.7\) without any continuous subdivision premise.
 
-The [C/H audit](CORE_HIGH_INDEPENDENT_AUDIT.md) reconstructs its
-degree-18 polynomial independently. The
-[M/H audit](MID_HIGH_WHOLE_PAIR_INDEPENDENT_AUDIT.md) reconstructs all
-five polynomials, including a direct conversion to degree 20 for the
-elevated row. The prior low-entry audit remains
-[LOW_FRAME_ENTRIES_INDEPENDENT_AUDIT.md](LOW_FRAME_ENTRIES_INDEPENDENT_AUDIT.md).
+The earlier independent audit files remain useful records of the
+original manuscripts. Their reconstructed Bernstein coefficients and
+comparison counts are not premises of the new proof.
 
-## 3. Exact scope of the proved strips
+## 3. Scope of the inherited geometric strips
+
+This section records how the original geometric reductions fit together.
+The scalar proofs in Section 2 supersede the old C/M nonaligned and
+H/L nonaligned short/curvature appendices wherever they appear below.
+Those old appendices are not additional imports of the new assembly.
 
 The interval endpoints in this table are included. Each target-axis
 image under reflected reversal is also covered, but is not an extra

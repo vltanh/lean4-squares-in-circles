@@ -1,6 +1,7 @@
 module
 
 import SquaresInCircles
+import SquaresInCircles.Eight.TableFree.UncompiledFullProof
 
 /-!
 Dependency audit. Every line below must report exactly
@@ -9,7 +10,7 @@ unproved lemma would add `sorryAx`, and a proof by `native_decide`, which
 trusts the compiler, would add `Lean.ofReduceBool`.
 -/
 
--- All seven cases in one statement, which depends on every case.
+-- All eight cases in one statement, which depends on every case.
 #print axioms SquaresInCircles.optimal_radius
 #print axioms SquaresInCircles.optimal_packings
 #print axioms SquaresInCircles.optimal_packings_rigid
@@ -106,3 +107,22 @@ trusts the compiler, would add `Lean.ofReduceBool`.
 #print SquaresInCircles.Seven.Column
 #print SquaresInCircles.Seven.columnCenters
 #print SquaresInCircles.Seven.columnModel
+
+-- Table-free n=8 public source and equality route. Check under the standard
+-- Lean kernel during G9 (this file is not being executed in this pass).
+#print axioms SquaresInCircles.Eight.TableFree.high_GA_BT2_exclusion
+#print axioms SquaresInCircles.Eight.TableFree.table_free_sharp_source_entry
+#print axioms SquaresInCircles.Eight.GeometricModel.lower_bound
+#print axioms SquaresInCircles.Eight.GeometricModel.uniqueness
+#print axioms SquaresInCircles.Eight.GeometricModel.equality_iff_parameters
+
+-- Final uncompiled eight-square theorem entry; inspect only after the
+-- ordinary Lean kernel has verified all imported proof terms.
+#print axioms SquaresInCircles.Eight.TableFree.unrestricted_source_entry
+#print axioms SquaresInCircles.Eight.TableFree.unrestricted_radius_lower_bound
+#print axioms SquaresInCircles.Eight.TableFree.unrestricted_equality_iff_parameters
+#print axioms SquaresInCircles.Eight.TableFree.unrestricted_squared_radius_lower_bound
+#print axioms SquaresInCircles.Eight.TableFree.unrestricted_model_unique_least_circle
+#print axioms SquaresInCircles.Eight.TableFree.unrestricted_five_freedoms
+#print axioms SquaresInCircles.Eight.TableFree.unrestricted_equality_rigid
+#print axioms SquaresInCircles.Eight.TableFree.unrestricted_eight_complete

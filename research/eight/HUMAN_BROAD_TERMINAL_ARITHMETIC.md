@@ -1,5 +1,13 @@
 # A hand-sized stationary and owner calculation for the broad terminal
 
+**Table-free successor.**
+[The whole-domain terminal proof](formalization/HAND_TERMINAL_RESERVES_AND_SQUARE_COMPLETION_WITHOUT_TABLES.md)
+now supplies all force weights, owner reserves, automatic sliders, and
+remainder estimates for the needed \(S\le1/1000\) theorem. It retains
+the exact force identities below while replacing this note's numerical
+rectangles and derivative estimates. The body below records the earlier
+four-rectangle argument.
+
 This note replaces the large terminal coefficient calculation by nine scalar
 inequalities on four predetermined rational rectangles. It also gives a
 coarse enclosure of the exact family radius without a root-isolation program.

@@ -2,10 +2,33 @@
 
 ## Start here
 
+The current table-free hand proof is
+[the unrestricted eight-square theorem](formalization/HAND_UNRESTRICTED_EIGHT_SQUARE_THEOREM_WITHOUT_TABLES.md).
+It proves the sharp radius, attainment, and the complete equality family
+for the original centers through continuous geometric and scalar arguments.
+Use [its dependency roadmap](formalization/TABLE_FREE_GEOMETRIC_HAND_ROADMAP.md)
+and [canonical current Lean handoff](formalization/TABLEFREE_HANDOFF_CURRENT.md) for the uncompiled reconstruction. The [20-Oct handoff](formalization/HANDOFF_2026_10_20.md) is archived. The
+[five-corner model](formalization/EIGHT_SQUARE_FIVE_CORNER_MODEL.md)
+defines the radius by a geometric minimum without a numerical bracket.
+The [equality model](formalization/EIGHT_SQUARE_GEOMETRIC_EQUALITY_MODEL.md)
+uses five fixed squares, two contact-line sliders, and the actual central
+angle. Its exact constant and equality family agree
+with the earlier proof below; its mathematical chain does not import the
+old numerical lookup tables.
+
+The new [geometric Lean source draft](formalization/LEAN_GEOMETRIC_MODEL_DRAFT.md)
+formalizes the model, its selection, the full equality family, and the
+original-center assembly at the exact radius. The public eighth-case
+definitions now use that model. The source is uncompiled and its concrete
+global-entry implementation still uses the existing capture machinery;
+the report separates this dependency from the table-free hand proof.
+
+## Earlier tabular manuscript and provenance
+
 The sharp-radius hand proof and the complete equality classification are
 assembled in
 [UNRESTRICTED_EIGHT_SQUARE_HAND_PROOF.md](UNRESTRICTED_EIGHT_SQUARE_HAND_PROOF.md).
-That manuscript is the canonical consolidated proof. Sections 1–12 join
+That manuscript is the earlier consolidated tabular proof. Sections 1–12 join
 the continuous geometric arguments to the necessary fixed rational tables
 and include both directions of the equality classification. Section 13
 records the complete gate ledger.

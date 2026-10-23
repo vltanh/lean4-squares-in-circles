@@ -1,18 +1,31 @@
-# Complete hand proof of exterior-frame concentration
+# Complete table-free hand proof of exterior-frame concentration
 
 **Theorem.** Let eight unit squares with pairwise disjoint open interiors
 lie in a disk centered at the origin with squared radius
 \(q\le Q=9789/2500\). The seven exterior square frames, considered modulo
 \(\pi/2\), admit real lifts in an interval of length strictly less than
-\(7/10\). This theorem has no retained computational coverage premise.
+\(7/10\). This theorem has no retained coefficient table, angle mesh,
+or computational coverage premise. The dependency replacements below
+are part of the proof.
 
 ## 1. The geometric hand inputs
 
-The hand central-core theorem gives a unique central square whose open
-interior contains the closed radius-\(1/12\) disk. The other seven squares
-are exterior. Order their centers by polar angle. The hand common-point
-lemma gives each adjacent center gap \(\delta_i>19/25\), with
-\(\sum_i\delta_i=2\pi\).
+The [central-band identities](formalization/HAND_CENTRAL_BANDS_WITHOUT_TABLES.md),
+combined with the analytic central-existence and forbidden-width arguments
+specified there, give a unique central square whose open interior contains
+the closed radius-\(1/12\) disk. The other seven squares are exterior.
+For each of them, sorted own-frame coordinates satisfy
+\[
+ a\ge\frac12+\frac1{12\sqrt2}>\frac{107}{200}.
+\]
+Indeed, the distance of the square from the origin is at most
+\(\sqrt2\max(a-1/2,0)\) and is at least \(1/12\).
+Order their centers by polar angle. The **second central-depth band** of
+the new note now gives each adjacent gap \(\delta_i>19/25\), with
+\(\sum_i\delta_i=2\pi\). This replaces Sections 2--4 of
+`COMMON_POINT_AND_THREE_QUARTER_ANGLE.md`; their four old Bernstein rows
+are not imported. Only that note's analytic backward-axis geometry is
+used below.
 
 The fixed-axis radial-boundary reduction translates each exterior center
 to the core boundary or the containing-disk boundary. It preserves all
@@ -24,7 +37,7 @@ apply. In particular every gap is below \(2\pi-114/25<3\pi/4\).
 
 No orientation window has been assumed at this stage.
 
-## 2. The complete continuous pair table
+## 2. The complete continuous pair inequalities
 
 Split the outer radial boundary at \(b/a=1/4,3/7\) into types L, M, H,
 and retain the whole core curve as C. With \(a_0=\sqrt{Q-1/4}-1/2\)
@@ -66,14 +79,42 @@ The ten whole-pair hand proofs and their independent audits establish
 \tag{1}
 \]
 
-All decimals are exact rational numbers. The
-[coverage inventory](FOUR_TYPE_HAND_COVERAGE_INVENTORY.md) binds every
-entry to its full continuous proof and review. There are 128 ordered
-source-axis branches; reflected reversal covers the retained target axes.
-The last entry, C/M, passes its
-[independent audit](CORE_MID_WHOLE_PAIR_INDEPENDENT_AUDIT.md).
-Every entry is proved before frame concentration, for all admissible
-angles, all signs, and every point on its stated side or arc.
+All decimals are exact rational numbers. For each pair, retain the
+geometric sign, axis, and circle-support reductions in its original
+`*_WHOLE_PAIR_HAND_PROOF.md`, with the following complete substitutions
+for its scalar appendices:
+
+| Pair | Whole-domain argument replacing coefficient or interval tables |
+|---|---|
+| C/C | The original [core/core proof](CORE_CORE_WHOLE_PAIR_HAND_PROOF.md) already uses only geometry and elementary calculus. |
+| C/L | [Core/low scalar proof](formalization/HAND_CORE_LOW_SCALAR_WITHOUT_TABLES.md), including its three formerly tabulated endpoint intervals. |
+| C/M | [Four-type scalar replacements, Section 3](formalization/HAND_FOUR_TYPE_SCALAR_REPLACEMENTS.md), including the nine-interval curvature appendix. |
+| C/H | [Core/high curvature, Section 2](formalization/HAND_CORE_HIGH_AND_HIGH_HIGH_CURVATURE.md), including the whole corner tail in Section 2.3. |
+| L/L | [Four-type scalar replacements, Section 2](formalization/HAND_FOUR_TYPE_SCALAR_REPLACEMENTS.md). |
+| L/M | [Four-type scalar replacements, Section 5](formalization/HAND_FOUR_TYPE_SCALAR_REPLACEMENTS.md). |
+| L/H | [Low/high scalar proof](formalization/HAND_LOW_HIGH_SCALAR_REPLACEMENTS.md), including the inherited short-angle appendix. |
+| M/M | [Four-type scalar replacements, Section 4](formalization/HAND_FOUR_TYPE_SCALAR_REPLACEMENTS.md). |
+| M/H | [Mid/high curvature proof](formalization/HAND_MID_HIGH_CURVATURE.md), at the required value .8926. |
+| H/H | [High/high curvature, Section 3](formalization/HAND_CORE_HIGH_AND_HIGH_HIGH_CURVATURE.md). |
+
+In particular, `CORE_MID_NONALIGNED_HAND_PROOF.md` and the old
+`HIGH_LOW_NONALIGNED_SHORT_HAND_PROOF.md` and
+`HIGH_LOW_NONALIGNED_HAND_CURVATURE.md` are not separate numerical
+premises of this assembly. Their needed scalar conclusions are proved
+on their full intervals by the replacements above. The low/high aligned,
+parallel-strip, and quarter-strip geometric arguments remain in force.
+
+The [coverage inventory](FOUR_TYPE_HAND_COVERAGE_INVENTORY.md) specifies
+the exact scope. The four diagonal pairs have eight ordered source-axis
+branches each, and the six off-diagonal pairs have sixteen each:
+\(4\cdot8+6\cdot16=128\). Reflected reversal supplies every retained
+target axis. The cap and backward-axis arguments exclude the other
+signed directions. These reductions preserve weak separating contacts,
+ties, both signs, and the side/corner and type-cut junctions. Every entry
+is proved before frame concentration, for all admissible angles and every
+point on its stated side or arc. Neither the 128 geometric branches nor
+the four-by-four display (1) is a numerical partition of a continuous
+state variable.
 
 ## 3. The seven-walk budget
 

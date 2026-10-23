@@ -1,0 +1,14 @@
+{
+  "source_commit": "741c78b1f8c2922fa520304ef00dbe7c319388b7",
+  "method": "Independent Python Fraction reconstruction of the stationary generator equations, outward dyadic rounding, inclusion tests, exclusion tests and midpoint subdivision",
+  "dyadic_precision": 40,
+  "depth_ceiling": 48,
+  "nodes": 22601,
+  "inclusion_leaves": 160,
+  "exclusion_leaves": 11141,
+  "splits": 11300,
+  "maximum_depth": 41,
+  "status": "Exact-arithmetic diagnostic reproduction, not Lean verification",
+  "lean_compiled": false,
+  "ci_run": false
+}
