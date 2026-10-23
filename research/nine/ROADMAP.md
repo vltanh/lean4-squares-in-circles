@@ -38,25 +38,27 @@ shows only that \(R_9\le\sqrt Q\); the converse is open.
 | Gate | Mathematical contract | Status |
 |---|---|---|
 | G0 | Exact construction, corner/SAT geometry, negative tests | CLOSED hand / negative controls |
-| G1 | Four-anchor, rotated 4+3, four-corner, signed stress, fixed-owner weak dual | CLOSED hand **conditional on their terminal hypotheses** |
-| G2.C0–C2 | Common-frame rank injection, four-chain shadow, and complete large-zigzag exclusion | CLOSED hand |
-| G2.C3.1–C3.2 | Signed matched 4+3 chains and three-band grid | CLOSED hand |
-| **G2.C3.3.a** (alias C4.3c.1–2) | Canonical (4,1)/(3,2) two-column stacks, middle-stack height and inner-anchor displacement | **CLOSED hand** |
-| **G2.C3.3.b–c** (alias C4.3c.3) | Sharp lower bound and equality for **every** physical two-stack complement | **OPEN — next coordinate gate** |
-| G2.C4 | Entire common-coordinate-separable branch | BLOCKED on C3.3.b–c |
-| G2.O0–O2 | Exact oblique witness, actual SAT owners, fixed-owner convex weak dual | CLOSED negative/framework |
-| **G2.O3** | Exhaustive *small geometric* separator-owner graph classes for arbitrary orientations | **OPEN — main global structural obstacle** |
-| **G2.O4–O5** | Uniform orientation inequalities and full oblique coverage | OPEN / BLOCKED on O3 |
-| G2.X / G4 | Sharp theorem from unrestricted Packing alone | BLOCKED |
-| G5.0 | Stratified and signed-matched **conditional** equality families | CLOSED hand within each named class |
-| G5.1–G5.3 | Complete necessity/converse over *all* unrestricted equality packings | OPEN / BLOCKED |
+| G1 | Arbitrarily rotated four-anchor, 4+3, grid and signed stresses; fixed-owner weak dual | CLOSED hand **conditional on terminal hypotheses** |
+| G2.C0–C2 | Common-frame rank injection, four-chain shadow and whole large-zigzag exclusion | CLOSED hand |
+| G2.C3.1–C3.2 | Signed matched 4+3 and three-band grid terminal | CLOSED hand |
+| G2.C3.3.a | Exact (4,1)/(3,2) two-stack classification | CLOSED hand |
+| G2.C3.3.b | Complete (4,1) complement exclusion by central-quadrant cover | CLOSED hand |
+| G2.C3.3.c | Complete (3,2) complement via elementary five-element matching and perpendicular 4+3 stress | **CLOSED hand** |
+| **G2.C4** | **Sharp n=9 bound for every common-coordinate-separable packing, independent orientations** | **CLOSED hand** |
+| G2.O0–O2 | Exact oblique equality witness, actual SAT owners and fixed-owner convex weak dual | CLOSED negative/framework |
+| **G2.O3** | Exhaustive geometric owner-graph classes for *unrestricted* square orientations | **OPEN — principal global blocker** |
+| **G2.O4–O5** | Uniform orientation stresses and full oblique coverage | OPEN / BLOCKED on O3 |
+| G2.X / G4 | Sharp theorem from original unrestricted Packing alone | BLOCKED on oblique structural closure |
+| G5.0 | Stratified, signed matched-chain and common-coordinate **conditional** equality families | CLOSED hand within named classes |
+| G5.1–G5.3 | Complete necessity/converse for *all* unrestricted equality packings | OPEN / BLOCKED |
 | G6 | Independent table-free manuscript audit | BLOCKED |
 | G7–G8 | Lean/Palomar-standard kernel proof and public integration | NOT STARTED |
 
-**Critical distinction:** G2.C and G2.O are not interchangeable.
-A globally separating orthonormal coordinate frame is provably
-**absent** in some record-radius packings. Therefore finishing G2.C
-does not finish G4.
+**Critical distinction:** G2.C is now **mathematically complete as a
+hand proof** but G2.O cannot be omitted. At least one exact
+record-radius packing is **not** coordinate-separable in any single
+global orthonormal frame. The unrestricted \(n=9\) conjecture
+therefore remains OPEN; no Lean or independent audit is claimed.
 
 ## Reconciliation of the recent commits
 
@@ -106,27 +108,28 @@ four-projection chain*, not a proof such a chain always exists.
 
 ## Next exact mathematical deliverables
 
-**First: G2.C3.3.b–c (sharp two-stack complement).** For every
-common-coordinate-separable nine-square packing with a selected
-four-horizontal-projection chain and five-square complement of
-horizontal chain number at most two, prove \(q\ge Q\) by a finite
-exhaustive *frame-switch to signed 4+3*, another sharp stress, or
-a strictly impossible alternative. Treat (4,1) and (3,2) completely.
-Preserve the exact equality witness. No arbitrary tilt grid or
-center-radius-only relaxation is sufficient.
+**Completed: G2.C3.3 and G2.C4 (entire common-frame branch).**
+[FOUR_PLUS_FOUR_PLUS_ONE_EXCLUSION.md](FOUR_PLUS_FOUR_PLUS_ONE_EXCLUSION.md)
+eliminates the (4,1) case.
+[COORDINATE_SEPARABLE_NINE_COMPLETE.md](COORDINATE_SEPARABLE_NINE_COMPLETE.md)
+eliminates (q<Q) in every (3,2) case via a five-element
+poset matching and a perpendicular signed 4+3 terminal. Together
+with the earlier rank/grid/zigzag theorems, this is a complete
+**hand proof** of the sharp radius for the common-coordinate class.
+Do not reopen this branch for minor parameter tightening.
 
-**Second: G2.O3–O5 (unrestricted oblique coverage).** Prove a
+**Now first: G2.O3–O5 (unrestricted oblique coverage).** Prove a
 geometrically meaningful, human-sized exhaustive class reduction
 for actual square-edge-normal separating axes. Use the convex weak
 dual to certify each class uniformly over all allowed orientations.
 A list of SAT assignments without a compression/coverage theorem
 does **not** close O3.
 
-**Third: G2.X/G4 and G5.** Only after both routes close,
+**Then: G2.X/G4 and G5.** Only after the oblique route closes,
 assemble the unrestricted lower bound and recover every equality
 packing, including nonstratified and oblique-only variants.
 
-**Fourth: G6–G8.** Independent mathematical audit, Lean formalization
+**Finally: G6–G8.** Independent mathematical audit, Lean formalization
 using only standard kernel proof checking, and public integration.
 Do not change the status to completed because no `sorry` appears
 in an uncompiled Lean draft.
