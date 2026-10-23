@@ -111,6 +111,16 @@ through 11. Spanning physical contact stars are excluded for every k. The
 remaining support counts are necessary restrictions, not solved sharp
 terminals. Every omitted square remains a physical completion.
 
+## Closed four-core subcase
+
+An exact two-by-two block whose center is within 1/50 of the disk center
+is [excluded](CENTERED_BLOCK_OBSTRUCTION.md): every completion square
+contains one of four fixed points in its open interior, so seven
+completions are impossible. This covers arbitrary common block orientation,
+but does not normalize arbitrary four-core arrangements to blocks.
+The four-center moment inequality retains centroid displacement and
+classifies its physical equality cases as exact blocks.
+
 ## Closed candidate terminals
 
 - **F:** Fix the exact candidate frames and the fourteen selected separators.

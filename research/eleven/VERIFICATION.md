@@ -29,6 +29,7 @@ python3 check_angle_tiles.py
 python3 check_reverse_angle_tiles.py
 python3 arc_budget/check_four_core_shell.py
 python3 arc_budget/replay_four_core_shell.py
+python3 replay_block_marker_cover.py
 ```
 
 All listed commands passed on 23 October 2026. They have different scopes:
@@ -158,3 +159,13 @@ square-root scale and arcsine argument reduction. Both replays pass;
 `arc_budget/FOUR_CORE_SHELL_REVIEW.md` records the independent mathematical
 audit. The conclusion is that the other seven centers exceed 11/10 when
 four centers lie within 41/40; the four-core case remains open.
+
+## Near-centered block exclusion and four-center moment
+
+`replay_block_marker_cover.py` independently checks all eight branches,
+2,882 nodes and 1,445 contradiction leaves using its own rational interval
+operations and explicit runtime checks. `BLOCK_MARKER_REVIEW.md` audits
+the separator reduction, open-marker conclusion and translated-radius
+bound. `FOUR_CENTER_MOMENT_REVIEW.md` audits the analytic Gram-rank
+argument and the exact block equality case. These results restrict the
+four-core case and do not close it.

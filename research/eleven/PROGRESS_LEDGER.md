@@ -347,3 +347,16 @@ Commit timestamps and hashes are recorded after the commit exists.
   arithmetic implementations pass, and the mathematical audit passes.
 - The four-core case itself is still open. The shell restriction is
   available for subsequent coupled core/ring gap arguments.
+
+## A four-core completion subcase and exact moment inequality
+
+- Previous empty-shell checkpoint: `ee191280724b04fc8f8d586dcb4f40d21a075be5`.
+- An exact two-by-two block within 1/50 of the containing disk center
+  cannot have seven completions at U. A complete eight-branch marker
+  certificate forces each completion to contain one of four fixed
+  points in its open interior. Independent replay passes 1,445 leaves.
+- Four mutually separated centers satisfy the exact second-moment
+  inequality `sum |p_i|^2 >= 2+4|centroid|^2`. For physical unit squares,
+  equality forces an exact block. An independent mathematical audit passes.
+- General deformed four-core configurations remain in the residual class.
+  No global block normalization is asserted.

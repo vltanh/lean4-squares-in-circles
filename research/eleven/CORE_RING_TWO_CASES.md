@@ -37,3 +37,12 @@ In the four-core row, the [empty-shell theorem](arc_budget/FOUR_CORE_EMPTY_SHELL
 forces every remaining center strictly beyond 11/10. Six weighted circles
 and complete exact covers exclude the whole intervening closed shell.
 This is a necessary restriction on the open four-core terminal.
+
+A [conditional block exclusion](CENTERED_BLOCK_OBSTRUCTION.md) rules out
+an exact two-by-two block centered within 1/50 of the containing circle
+center. Every completion square would contain one of four fixed interior
+markers, allowing at most four completions. The independent
+[four-center moment theorem](boundary/FOUR_CENTER_SECOND_MOMENT.md) gives
+`sum |p_i|^2 >= 2+4|centroid|^2`, with equality for physical squares only
+in a two-by-two block. Neither theorem assumes all four-core configurations
+are blocks.

@@ -57,6 +57,7 @@ allowed without a separate theorem.
 | G3.C3–C5 | Entire common-coordinate class excluded at q<=U | H/A; 6 cases, 32 nodes, 19 leaves |
 | G3.O2 | Actual minimizer stress extraction, compact weights, small-component exclusion | H |
 | G3.O2.S | Full-angle core has 5–11 bodies; contact stars and all four-body graphs excluded | H |
+| G3.O4.B | Exact near-centered two-by-two block cannot have seven completions | H/A/C |
 | G3.O3–O5 | Complete oblique contact classes and their physical completions | OPEN |
 | G4.1 | Generic weak stress identity with equality consequences | H/C; supplied weights |
 | G4.U | Unrestricted coarse lower bound q11>9/2 | H/A |
@@ -264,6 +265,13 @@ and both separator-owner cases.
 A stress component is different from the radial core: it can include both
 core and ring squares. Every omitted physical square remains quantified.
 Sparsity and angular stationarity do not solve the contact classes.
+The [near-centered block theorem](CENTERED_BLOCK_OBSTRUCTION.md) closes
+one four-core completion subcase: four exact block squares with block
+center within 1/50 of the disk center. A 2,882-node marker certificate
+limits completions to four. Separately, the
+[four-center second moment](boundary/FOUR_CENTER_SECOND_MOMENT.md) is at
+least two after centering, with physical equality only for a two-by-two
+block. Deformed and more displaced four-core configurations remain open.
 
 - **O1:** preserve actual pair-owned oblique axes from G2.
 - **O2:** if using minimizer stresses, prove constraint regularity, nonnegative
