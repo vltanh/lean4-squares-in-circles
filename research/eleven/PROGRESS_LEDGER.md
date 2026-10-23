@@ -143,3 +143,27 @@ Commit timestamps and hashes are recorded after the commit exists.
 - The commit carrying this entry is the verification checkpoint; its
   authoritative SHA and UTC timestamp are Git metadata, avoiding a circular
   self-hash entry. Future work should append them with its next checkpoint.
+
+
+## Whole common-coordinate branch closure
+
+- Previous verification checkpoint: `1b960b2b9cec92ce25cfd97cc0122b37558de92e`,
+  2026-10-23 12:56:02 UTC. Continued under the instruction to seek a full
+  proof without Lean.
+- G3.C closed: independently oriented squares with common-coordinate
+  separation shrink to axis-aligned squares in the same disk, preserving
+  all selected coordinate separators.
+- Thirteen fixed unit cells reduce axis-aligned eleven-square packings at
+  q<=U to 28 hole pairs and six symmetry representatives. Half-open cells
+  establish injection; closed cells and transported forced separators
+  preserve every boundary case after reflection.
+- Exact outward integer interval propagation excludes all six cases in
+  32 nodes and 19 leaves. A separate Fraction replay uses simultaneous
+  updates and rounding scale 10^6 instead of 10^8; it recomputes every
+  contradiction and independently verifies the hole orbit cover.
+- All 1105 earlier rank masks are closed by this stronger theorem. Any
+  packing in the candidate radius window, including every minimizer,
+  belongs to the unrestricted oblique branch. Global sharpness stays open.
+- The stronger guess q>=5 for every axis-aligned packing is false; a
+  separate exact feasible witness has q<4.91. It does not conflict with
+  exclusion at U=4.9013. No such false global claim enters this proof.

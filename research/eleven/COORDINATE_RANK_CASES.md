@@ -1,11 +1,15 @@
 # Eleven-square coordinate rank cases
 
+**Current status:** all 1105 masks in this note are now excluded in q<=U
+by [coordinate shrinking](COORDINATE_SHRINKING_REDUCTION.md) followed by
+[the six-case axis exclusion](AXIS_ALIGNED_EXCLUSION.md). The enumeration
+below remains a valid intermediate classification, not an open gate.
+
 This note classifies necessary finite data for packings whose pairs all
 separate on one of two common perpendicular axes. This is an **additional
 hypothesis**; the unrestricted oblique branch remains open. Individual squares
 may rotate independently. In the certified window q<=U=49013/10000<5, the
-initial 4296 rank masks reduce to **1105 residual 4 by 4 masks**. None of those
-residual masks is claimed realizable or solved.
+initial 4296 rank masks reduce to **1105 residual 4 by 4 masks**. Their impossibility is supplied by the stronger theorem linked above.
 
 ## 1. Projection orders and exact rank extraction
 
@@ -176,9 +180,6 @@ The script enumerates finite subsets and applies the predicates proved above.
 It does not establish which surviving masks are physically feasible, supply
 a sharp lower bound for them, or classify arbitrary oblique packings.
 
-**Gate status:** G3.C1–C2 are closed as a necessary finite classification;
-G3.C3 has the closed double-four-chain exclusion. G3.C3 on the 1105 residual
-masks, G3.C4–C5, the unrestricted G3.O branch, and G5–G6 remain open. The
-next coordinate step must refine or close these residual domains, retaining
-all square centers and all orientations, rather than assuming their masks
-are sufficient geometric descriptions.
+**Gate status:** G3.C1–C5 are now closed in the candidate window by the
+stronger axis reduction and exclusion. The unrestricted G3.O branch and
+G5–G6 remain open. This finite inventory is preserved for proof provenance.

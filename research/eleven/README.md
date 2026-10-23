@@ -26,15 +26,17 @@ The [finite separator cover](FINITE_SEPARATOR_COVER.md) proves an exhaustive
 8^55-cell polynomial encoding, compact attainment and a conditional stress
 identity. A useful reduced terminal classification remains open.
 
-[Coordinate rank cases](COORDINATE_RANK_CASES.md) closes the first conditional
-finite classes: rank extraction, a forbidden corner, and the sharp
-double-four-chain exclusion. Its 1105 residual masks are explicit; this
-branch requires a common separating coordinate frame.
+The **entire common-coordinate branch is excluded** at q<=49013/10000:
+[shrinking](COORDINATE_SHRINKING_REDUCTION.md) reduces it to axis-aligned
+squares, and [six exact cases](AXIS_ALIGNED_EXCLUSION.md) exclude all of them
+with 32 nodes and 19 contradiction leaves. An independent implementation
+replays the certificate. All 1105 old rank masks are therefore closed in
+this window.
 
-[The finite case ledger](TERMINAL_CASES.md) lists four closed exclusion
-families, nine open coordinate-profile families, and the unrestricted oblique
-frontier. The [exact oblique witness](NO_COMMON_SEPARATING_FRAME.md) proves
-that a common coordinate frame cannot cover the constructed family.
+[The finite case ledger](TERMINAL_CASES.md) now identifies the oblique branch
+as the global frontier. The [exact oblique witness](NO_COMMON_SEPARATING_FRAME.md)
+remains a concrete example; the new exclusion proves every feasible packing
+in the candidate window is oblique in this sense.
 
 [Verification and artifact manifest](VERIFICATION.md) records replay commands,
 independent reviews and the boundary between these results and future Lean

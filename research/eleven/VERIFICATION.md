@@ -14,22 +14,31 @@ python3 check_rational_witness.py
 python3 isolate_contact_root.py
 python3 check_oblique_witness.py
 python3 classify_rank_masks.py --check RANK_MASKS.json
+python3 axis_exclusion.py --check AXIS_EXCLUSION.json
+python3 replay_axis_exclusion.py AXIS_EXCLUSION.json
 ```
 
-All four commands passed on 23 October 2026. They have different scopes:
+All six commands passed on 23 October 2026. They have different scopes:
 
 | Command | Exact checked output | Scope limit |
 | --- | --- | --- |
 | Rational witness | 11 unit frames, 44 corner bounds, 55 pair separators at U=49013/10000 | One feasible packing |
 | Contact root | Strict interval self-map and contraction; local root uniqueness; 34 inactive corners and 39 inactive pairs | Ten corner and fourteen pair identities are proved algebraically in the note; two more pairs follow from the slider domain |
 | Oblique witness | Positive shared-edge lengths and an oblique forced normal | Refutes common-frame coverage of this family; no global sharpness |
-| Rank inventory | 4296 -> 1359 -> 1155 -> 1105 masks; all nine profile-pair counts | Necessary masks under the common-coordinate hypothesis; no realizability or sharp-bound conclusion |
+| Rank inventory | 4296 -> 1359 -> 1155 -> 1105 masks; all nine profile-pair counts | Intermediate necessary masks, now all excluded by the stronger axis theorem |
 
 The interval checker uses exact rational endpoint arithmetic and integer
 square roots; floating-point conversions only print diagnostics. It refuses
 optimized Python execution that would disable assertions. The contraction
 argument and the meaning of all omitted exact identities are written in
 `CANDIDATE_CONTACT_SYSTEM.md`.
+
+The two axis commands prove exclusion at U through six covering cases and
+19 contradiction leaves. The replay imports no generator, uses Fraction
+intervals at a different scale, and recomputes every leaf contradiction.
+The geometric cover and arithmetic soundness are proved in
+`AXIS_ALIGNED_EXCLUSION.md`; shrinking handles independently rotated squares
+under the common-frame hypothesis.
 
 ## Independent review and artifact binding
 
@@ -45,7 +54,7 @@ reviews. The all-angle double-four-chain inequality was checked for both
 endpoint order signs. The obstruction proof was reviewed with weak contact
 and slider endpoints retained.
 
-`MANIFEST.json` binds the 14 critical proof, data and checker artifacts by
+`MANIFEST.json` binds the listed critical proof, data and checker artifacts by
 SHA-256. The contact-review hashes and every local Markdown target were
 checked against the final local files. Research method/scope labels were
 reconciled in the current roadmap; historical intermediate counts remain only
@@ -53,8 +62,7 @@ as history or named reduction stages.
 
 ## Remaining verification boundary
 
-This is a partial research handoff. G2.4, the 1105 residual coordinate
-geometric domains, unrestricted oblique extraction, all required sharp
+This is a partial research handoff. G2.4, unrestricted oblique extraction, all required sharp
 terminal inequalities and complete equality are still open. The local root
 construction does not establish even local optimality among unrestricted
 perturbations. No certificate here proves the global n=11 lower bound.

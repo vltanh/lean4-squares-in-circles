@@ -2,8 +2,13 @@
 
 **Target:** prove every unrestricted packing has q>=q_c, with q_c defined
 in [the exact contact system](CANDIDATE_CONTACT_SYSTEM.md), then classify
-all equality packings. All cases below allow independent square orientations
+all equality packings. All geometric cases allow independent square orientations
 and weak contacts. No unresolved case is silently discarded.
+
+**Current closure:** the entire C branch is impossible at q<=U, by
+[coordinate shrinking](COORDINATE_SHRINKING_REDUCTION.md) and the
+[six-case axis exclusion](AXIS_ALIGNED_EXCLUSION.md). All 1105 historical
+rank masks below are closed; the global oblique branch O remains open.
 
 ## The universal split
 
@@ -38,25 +43,25 @@ inside O without proving a common-frame hypothesis for the relevant subset.
 C-D44 excludes all (3,4) and (4,3) rank grids, and every square-grid mask
 with two full rows or columns. These are proved families, not sampled cases.
 
-## Nine open coordinate profile families
+## Nine historical coordinate profile families now excluded
 
 Let A=(3,3,3,2), B=(4,3,2,2), and C=(4,3,3,1) be unordered rank occupancy
 profiles. The names below group masks for review only. Sorting a profile
 does not authorize permuting geometric rank rows or columns. Each family
 retains every directed mask listed in the machine-readable inventory.
 
-| ID | Row profile | Column profile | Masks | Sharp bound | Equality |
+| ID | Row profile | Column profile | Masks | Status at q<=U | Equality at q_c |
 | --- | --- | --- | ---: | --- | --- |
-| C-AA | A | A | 135 | OPEN | OPEN |
-| C-AB | A | B | 180 | OPEN | OPEN |
-| C-AC | A | C | 105 | OPEN | OPEN |
-| C-BA | B | A | 180 | OPEN | OPEN |
-| C-BB | B | B | 200 | OPEN | OPEN |
-| C-BC | B | C | 80 | OPEN | OPEN |
-| C-CA | C | A | 105 | OPEN | OPEN |
-| C-CB | C | B | 80 | OPEN | OPEN |
-| C-CC | C | C | 40 | OPEN | OPEN |
-| Total | | | 1105 | OPEN | OPEN |
+| C-AA | A | A | 135 | EXCLUDED | NONE |
+| C-AB | A | B | 180 | EXCLUDED | NONE |
+| C-AC | A | C | 105 | EXCLUDED | NONE |
+| C-BA | B | A | 180 | EXCLUDED | NONE |
+| C-BB | B | B | 200 | EXCLUDED | NONE |
+| C-BC | B | C | 80 | EXCLUDED | NONE |
+| C-CA | C | A | 105 | EXCLUDED | NONE |
+| C-CB | C | B | 80 | EXCLUDED | NONE |
+| C-CC | C | C | 40 | EXCLUDED | NONE |
+| Total | | | 1105 | EXCLUDED | NONE |
 
 The counts are independently reproduced and emitted by
 `classify_rank_masks.py`. These are numbers of necessary masks after the
@@ -64,26 +69,17 @@ listed exclusions, not numbers of realizable geometric or symmetry classes.
 
 ## Next proof obligations in order
 
-1. **C-CC extraction and sharp inequality.** Start with the smallest listed
-   family, retaining all 40 masks. Use its two three-chains and four-chain
-   structure to derive an actual endpoint or support terminal. Prove the
-   extraction on the complete domain before treating one contact sketch as
-   representative. If the proposed terminal fails, keep its exact witness.
-2. **C remaining eight families.** Reuse a theorem only with proved
-   hypotheses. Record a complete mask-to-terminal cover and all equality
-   residues; each unresolved mask blocks the common-coordinate theorem.
-3. **O geometric extraction.** Derive a finite realizable owner/contact
-   structure or a universal sharp invariant from arbitrary Packing. Any
-   minimizer-core reduction must retain all unstressed completions. The
-   known construction already requires an oblique branch; this is essential
-   for the global problem even if every C case is solved.
-4. **G4–G6 assembly.** Prove all-angle certificates at q_c, then combine
-   complete coverage with exact attainment and recover equality on original
-   centers. Local isolation of the constructed contact root is not a
-   substitute for any of these steps.
+1. **O geometric extraction.** Derive a finite realizable owner/contact
+   structure or a universal sharp invariant from arbitrary Packing in the
+   window. All such packings are now known to lack a common separating frame.
+   Every minimizer-core reduction must retain all unstressed completions.
+2. **O whole-domain sharp certificates.** For every extracted class, prove
+   q>=q_c uniformly in its independent orientations and continuous center
+   domain. A local or fixed-orientation theorem is only a conditional terminal.
+3. **G5–G6 assembly.** Combine exhaustive coverage with exact attainment,
+   then recover all equality cases on original centers. The known slider
+   family is not yet globally exhaustive.
 
-The generic stress identity is available for discovery and proof, but no
-choice of weights uniformly certifying q>=q_c for these residual domains
-is currently provided. G2.4, the global reduced terminal inventory, remains
-open even though the raw finite cover and the conditional C inventory are
-complete as stated.
+The generic stress identity is available. G2.4, the global reduced terminal
+inventory, remains open. Completing C does not provide the missing O
+classification; the old 1105 masks are no longer an outstanding obligation.

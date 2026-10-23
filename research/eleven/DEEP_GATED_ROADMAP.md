@@ -50,8 +50,7 @@ allowed without a separate theorem.
 | G2.1–G2.3 | Exhaustive raw finite owner/sign cover, degeneracies, normalization | H |
 | G2.4 | Useful geometric reduction and exhaustive small terminal inventory | OPEN |
 | G3.C1–C2 | Necessary common-coordinate rank classification | H/C |
-| G3.C3 | Double-four-chain terminal excluded; 1105 residual masks | PARTIAL |
-| G3.C4–C5 | Close and assemble all common-coordinate cases | OPEN |
+| G3.C3–C5 | Entire common-coordinate class excluded at q<=U | H/A; 6 cases, 32 nodes, 19 leaves |
 | G3.O | Unrestricted oblique/core-plus-completion classification | OPEN |
 | G4.1 | Generic weak stress identity with equality consequences | H/C; supplied weights |
 | G4.2–G4.5 | Sharp whole-domain terminal certificates and full assembly | BLOCKED |
@@ -188,18 +187,17 @@ cells, not realizable geometric classes. G2.4 remains OPEN.
 
 ### G3.C A common separating coordinate frame
 
-**Closed initial classification:** [coordinate rank cases](COORDINATE_RANK_CASES.md)
-proves the rank injection and reduces 4296 masks to 1105. A square cannot
-have ranks (4,4), and the first row and column cannot both be full.
-Two disjoint parallel four-chains force q>=5, excluding
-both rectangular grids and masks with two full rows or columns at q<=U<5.
-The exact residual masks are in `RANK_MASKS.json`; they are necessary data,
-not assertions of geometric feasibility. Every surviving geometric domain
-remains an open sharp-bound obligation.
+**Entire G3.C closed at q<=U:** [the shrinking theorem](COORDINATE_SHRINKING_REDUCTION.md)
+reduces every common-coordinate packing to axis-aligned squares in the same
+disk. [The complete exclusion](AXIS_ALIGNED_EXCLUSION.md) covers all
+axis-aligned packings with six fixed-cell cases and excludes every case by
+exact interval arguments (32 nodes, 19 leaves), independently replayed.
+Thus none of the old 1105 rank masks has a physical realization in this
+radius window. There are no common-coordinate equality cases at q_c.
 
-[The current finite case ledger](TERMINAL_CASES.md) groups those masks into
-nine explicit profile families, gives their exact domains and counts, and
-records the separate unsolved oblique branch and next proof obligations.
+The old rank injection, corner exclusions and mask inventory remain as proved
+intermediate reductions. [The case ledger](TERMINAL_CASES.md) records their
+closure by the stronger theorem and the remaining unrestricted oblique work.
 
 This is an added hypothesis: every pair's projection intervals separate on
 one of two common perpendicular axes. Squares may still be independently
