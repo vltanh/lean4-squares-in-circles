@@ -105,11 +105,14 @@ The exact torque condition only says that the contact-height weighted average at
 With the strictly exposing normal choice at point-only vertex/vertex contacts, each interior layer height actually satisfies |y|<1: equality would make its endpoint contact a point-only aligned vertex/vertex contact, for which a horizontal normal is not strictly exposing. In one layer, physical nonoverlap forces center-height gaps >=1. An open interval (-1,1) contains at most two such heights. Each layer is nonempty, so the component has **4, 5 or 6 bodies**.
 
 - **Four bodies:** one per layer. All endpoint contacts lie on one transmitted horizontal force line; its weighted average is that same line and must have height zero. The two internal heights are consequently in [-1/2,1/2], exactly family P.
-- **Five or six bodies:** one or two bodies in each layer, with arbitrary admissible heights in (-1,1). Physical contact/torque equations couple their side-force moments. Their full completion capacities are **OPEN**; they must not be called solid rows or automatically put inside the original P domain.
+- **Five bodies:** one or two bodies in each layer, with admissible heights in (-1,1). Physical contact/torque equations couple their side-force moments. The full completion capacity remains **OPEN**; this family must not be called a solid row or automatically put inside the original P domain.
+- **Six bodies:** two bodies in each layer, with admissible heights in (-1,1). The entire physical completion family is now **CLOSED** by [SIX_BODY_TWO_LOAD_COMPLETION.md](SIX_BODY_TWO_LOAD_COMPLETION.md): at most two additional arbitrary unit squares fit, so these genuine six-body cores cannot occur in a nine-square packing. The proof uses cap piercing and physical obstacles, not a reduction to P.
 
 **Corollary R.4 (no positive triangle with only two loaded bodies).** Such a component has no positive triangle. More directly, parallel true contacts cannot make three nondegenerate projection intervals pairwise touch: three pairwise interior-disjoint positive-length intervals cannot all have intersecting pairs. In the radius window the directed three-edge layer structure also makes the positive graph bipartite.
 
 **Corollary R.5 (new whole load-class reductions).** In the declared window, every positive component with exactly two loaded bodies has q=17/4 and at most six bodies. Thus all two-loaded subfamilies with 7–9 positive bodies are excluded, and every triangle-containing two-loaded positive component is excluded. This says nothing by itself about components with three or more loaded bodies or the added physical squares completing the component to nine.
+
+**Completion update.** The separate whole-family theorem in [SIX_BODY_TWO_LOAD_COMPLETION.md](SIX_BODY_TWO_LOAD_COMPLETION.md) excludes the six-body case from every nine-square packing. Four-body family P and the five-body layered completion remain open. The physical six-cycle and theta examples remain valid as isolated cores; it is their completion to nine that is excluded.
 
 ## 8. Why this closes the four-body diamond residual
 
