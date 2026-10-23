@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "unit_side": "1",
+  "orientation": "axis_parallel",
+  "disk": {
+    "center": ["0", "0"],
+    "radius_squared": "9/2"
+  },
+  "squares": [
+    {"id": "L0", "center": ["-1", "-1"]},
+    {"id": "L1", "center": ["-1", "0"]},
+    {"id": "L2", "center": ["-1", "1"]},
+    {"id": "C0", "center": ["0", "-3/2"]},
+    {"id": "C1", "center": ["0", "-1/2"]},
+    {"id": "C2", "center": ["0", "1/2"]},
+    {"id": "C3", "center": ["0", "3/2"]},
+    {"id": "R0", "center": ["1", "-1"]},
+    {"id": "R1", "center": ["1", "0"]},
+    {"id": "R2", "center": ["1", "1"]}
+  ]
+}
