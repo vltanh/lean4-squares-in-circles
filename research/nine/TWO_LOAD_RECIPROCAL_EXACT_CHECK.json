@@ -63,7 +63,7 @@
       "bodies":5,"corners":20,"SAT_pairs":10,"positive_body_contacts":4,"loaded_bodies":3,
       "force_and_torque_residuals_exactly_zero":true,"name":"negative_control_three_loaded_nonaligned_Y",
       "incidence_nodes":10,"faces":3,
-      "twice_reciprocal_polygon_areas":{"b0":"0","b1":"0","b2":"0","b3":"0","b4":"0","p0":"0","p1":"0","p2":"0","p3":"0","outside":"0"},
+      "twice_reciprocal_polygon_areas":{"b0":"0","b1":"4/3","b2":"0","b3":"0","b4":"0","p0":"0","p1":"0","p2":"0","p3":"0","outside":"-4/3"},
       "finite_force_polygons_weakly_convex":true,"all_pair_normals_parallel":false
     }
   ],
