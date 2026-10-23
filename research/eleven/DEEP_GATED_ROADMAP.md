@@ -48,7 +48,7 @@ allowed without a separate theorem.
 | G1.4 | Candidate target q_c named; negative-control inventory | PARTIAL |
 | G1.4.N1 | Exact family has no common separating coordinate frame | H/A |
 | G2.1–G2.3 | Exhaustive raw finite owner/sign cover, degeneracies, normalization | H |
-| G2.4.a | Unrestricted radial extraction: three core/ring counts and cyclic ring | H |
+| G2.4.a | Unrestricted radial extraction: two core/ring counts and cyclic ring | H |
 | G2.4.b–c | Reduced sharp terminal inventory inside these classes | OPEN |
 | G3.C1–C2 | Necessary common-coordinate rank classification | H/C |
 | G3.C3–C5 | Entire common-coordinate class excluded at q<=U | H/A; 6 cases, 32 nodes, 19 leaves |
@@ -166,12 +166,16 @@ in a closed first-quadrant chart removes absolute-value sign ambiguity;
 multiple valid pair owners stay in overlapping cells. This counts syntactic
 cells, not realizable geometric classes.
 
-**G2.4.a closed:** [the refined core/ring theorem](CORE_RING_THREE_CASES.md) gives
-three exhaustive count rows: 3 through 5 core squares and 8 through 6 ring
-squares, at the threshold 41/40. Auxiliary-circle arcs prove a genuine
+**G2.4.a closed:** [the refined core/ring theorem](CORE_RING_TWO_CASES.md) gives
+two exhaustive count rows: (3,8) and (4,7), at threshold 41/40. Auxiliary-circle arcs prove a genuine
 cyclic ring; all core squares are strictly circle-unloaded. The six-core
 case is excluded: its forced origin-containing square is pinned near zero,
-and five neighboring centers cannot occupy four narrow regions. The proof retains every orientation
+and five neighboring centers cannot occupy four narrow regions.
+A [weighted three-circle argument](arc_budget/WEIGHTED_ARC_EXCLUSION.md)
+now excludes every case with at least five core centers. Its complete
+continuous pose covers have 4790 nodes and 2037 accepted arc leaves;
+independent arithmetic replay uses a different inverse-trigonometric
+reduction and precision. The proof retains every orientation
 and all 55 physical pairs, including ring nonneighbors. These are geometric
 classes, not yet sharp terminals: G2.4.b–c remain open.
 

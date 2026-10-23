@@ -14,7 +14,7 @@
     "CONTACT_ROOT_REVIEW.md": "f7a9066ab61813afbdc40940fd4a3aeb122eb77613c5b226e2a90fcfe199e99e",
     "NO_COMMON_SEPARATING_FRAME.md": "5a2248037c45555fb716efc19f0cab27372a02e14ec781a9bd01b7faf6d269de",
     "check_oblique_witness.py": "1688009b14ef5df33a2ea1ee687f1948405421e3edaf92c25fb95ff391fed52f",
-    "TERMINAL_CASES.md": "b7a7e1a1857d708b431418e38b8c36386921eaff322ae1726a97f5b7895c74cf",
+    "TERMINAL_CASES.md": "7e95009eb7b5dda4a3eec819e147ec34017d6dc94ba80591113629e893ac0e00",
     "COORDINATE_SHRINKING_REDUCTION.md": "797cacfbf0ef0f68e62547c10d44ae5cdc51ab1da3803eadb7289e1246b457ab",
     "AXIS_ALIGNED_EXCLUSION.md": "7d153e8b0a745ee9a1e3a0a2fdfc39434ab6531e866e16340cf7812824015f5c",
     "axis_exclusion.py": "366b36a287fbe948cb852c2274d5c8d20e9317f498094c98b4ea99c03405a2a5",
@@ -44,6 +44,17 @@
     "AXIS_ALIGNED_COUNTEREXAMPLE.json": "ce41b5a35422976bc6d752e4521eb54c696e7e51141353ef2e6bc0cf8fc3d95e",
     "AXIS_TERMINAL_GRAPHS.json": "0f55ef73592cace7563cad3d3376e731c45bd4d09083ea70ff6283d39147b7e6",
     "check_axis_counterexample.py": "c13b7aeb023a05ae5d8fcfeafc02412ae1635af9724e3a8058b2171c86b81a18",
-    "check_axis_terminal_graphs.py": "cdfa377e3ec2973cf1ed6960a7f033f177a51bb68d98a2b2a1948135dc8a59aa"
+    "check_axis_terminal_graphs.py": "cdfa377e3ec2973cf1ed6960a7f033f177a51bb68d98a2b2a1948135dc8a59aa",
+    "arc_budget/exact_arcs.py": "ff36dd0473037002496d319d09f3e1b15c0fad3f3c576e126baa3f5f0f69db73",
+    "arc_budget/generate.py": "d5f6e67b72e16f9269842a4fe7fe8eb9d08ee688d88b20e079e2d3f05c407f22",
+    "arc_budget/check_weighted_arc_cover.py": "77e22501ce81e5738c57c2b894deea1c64dac6a161bb0aebfabe441df841a074",
+    "arc_budget/CORE_ARC_COVER.json": "3fde0312138fb276cf09726b81aeb3780f444296142130bd02ce9334f45babaf",
+    "arc_budget/RING_ARC_COVER.json": "acbd2eceb857bf93e26008640a8a536f0d5c68235afa7728ec107b519373b37a",
+    "arc_budget/WEIGHTED_ARC_EXCLUSION.md": "99d7b3213a3cbfdf30e6559c765e18bf7a0d4e3ab4d2ae84fdd853b278624b88",
+    "arc_budget/WEIGHTED_ARC_INDEPENDENT_REVIEW.md": "b6947df34ba247e9cd8af19711997440d63fd47abb664e6ab787627306c27804",
+    "arc_budget/independent_arcs.py": "c5d8a57b08927e08499600996f8c195881541adb8c3508960d912867c1894f16",
+    "arc_budget/replay_weighted_arcs.py": "c861341723206b450a6be6794f4249a7d3945bb635722433973aa7419d01ad67",
+    "arc_budget/SECOND_REPLAY.md": "f7deff4034ee07c15d74fdcb5868009c55ee9f1425f40a12278343510e1bf717",
+    "CORE_RING_TWO_CASES.md": "a228ee8800435f3f85be672ed958ef67efb87dc74a36b7b0c493c5fffc5ccb65"
   }
 }

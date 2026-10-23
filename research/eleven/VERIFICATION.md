@@ -20,9 +20,11 @@ python3 check_fixed_orientation_stress.py
 python3 check_local_angular_stress.py
 python3 check_axis_terminal_graphs.py
 python3 check_axis_counterexample.py
+python3 arc_budget/check_weighted_arc_cover.py
+python3 arc_budget/replay_weighted_arcs.py
 ```
 
-All ten commands passed on 23 October 2026. They have different scopes:
+All twelve commands passed on 23 October 2026. They have different scopes:
 
 | Command | Exact checked output | Scope limit |
 | --- | --- | --- |
@@ -94,9 +96,17 @@ strict direction, fixed-frame versus angular counts, bounded multipliers,
 component normalization, physical-contact witnesses, small-component
 exclusions, and retained completions. These are analytic results.
 
+The two weighted-arc replays check complete continuous pose covers, with
+4,790 nodes and 2,037 accepted arc leaves. The second imports neither the
+generator nor its arithmetic library, uses a different square-root scale and
+arcsine reduction, and recomputes every domain test and leaf bound.
+`arc_budget/WEIGHTED_ARC_INDEPENDENT_REVIEW.md` binds the mathematical and
+source audit; `arc_budget/SECOND_REPLAY.md` records the separate execution.
+Together the bounds exclude five or more core centers.
+
 ## Remaining verification boundary
 
-This is a partial research handoff. G2.4.b–c, the sharp refinement of the three unrestricted radial classes, the remaining sharp
+This is a partial research handoff. G2.4.b–c, the sharp refinement of the two unrestricted radial classes, the remaining sharp
 terminal inequalities and complete equality are still open. The candidate family is now proved locally optimal under unrestricted
 perturbations, with complete local equality. No certificate here proves the
 global n=11 lower bound.

@@ -69,7 +69,7 @@ listed exclusions, not numbers of realizable geometric or symmetry classes.
 
 ## Exhaustive oblique radial classes
 
-[The refined radial extraction](CORE_RING_THREE_CASES.md) proves the following cover.
+[The refined radial extraction](CORE_RING_TWO_CASES.md) proves the following cover.
 Core means center norm below 41/40; ring is its complement.
 This threshold supersedes the earlier five-row bookkeeping partition.
 For compactness use the overlapping closed threshold cover in that note.
@@ -80,7 +80,7 @@ Every row retains all eleven centers and frames and all 55 pair constraints.
 | --- | ---: | ---: | --- | --- |
 | O-3 | 3 | 8 | OPEN | Known candidate occurs here; global exhaustion open |
 | O-4 | 4 | 7 | OPEN | OPEN |
-| O-5 | 5 | 6 | OPEN | OPEN |
+| O-5 | 5 | 6 | EXCLUDED by weighted occupied-circle measure | NONE |
 | O-6 | 6 | 5 | EXCLUDED by the five-center theorem | NONE |
 
 An actual packing determines one row, a ring cyclic order, and physical

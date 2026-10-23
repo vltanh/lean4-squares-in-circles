@@ -29,8 +29,8 @@ checks both results. Global optimality remains open.
 
 The [finite separator cover](FINITE_SEPARATOR_COVER.md) proves an exhaustive
 8^55-cell polynomial encoding, compact attainment and a conditional stress
-identity. The [unrestricted radial extraction](CORE_RING_THREE_CASES.md)
-now gives three core/ring count cases, with a genuine cyclic ring and all
+identity. The [unrestricted radial extraction](CORE_RING_TWO_CASES.md)
+now gives two core/ring count cases: (3,8) and (4,7), with a genuine cyclic ring and all
 core squares strictly inside the disk. Sharp bounds for these cases remain
 open.
 

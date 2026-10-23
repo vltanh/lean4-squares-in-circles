@@ -273,3 +273,21 @@ Commit timestamps and hashes are recorded after the commit exists.
 - Added an exact axis-aligned witness at q<4.91<5 with 44 corner checks and
   all 55 pair checks. It refutes the stronger whole-class bound q>=5 while
   remaining consistent with the proved exclusion at U=4.9013.
+
+## Weighted-circle exclusion leaves only two radial count cases
+
+- Previous coordinate terminal checkpoint: `6335f2bbce656bc4d1f98dce10d37f2b455df7ce`.
+- For weights (6,85,109)/200 on circles of radii (3/10,3/5,5/4), every
+  core square contributes at least 43/50 radians and every ring square at
+  least 17/50. Five cores would require 317/50>2pi, impossible.
+- Exact adaptive closed covers handle the entire single-square pose
+  domains: core 4367 nodes and ring 423 nodes, including 2037 accepted
+  arc leaves. Every threshold, diagonal, and disk boundary stays covered.
+- The supplied replay and a separately written arithmetic implementation
+  both pass every node and accepted leaf. The second uses different
+  square-root precision and a different arcsine argument reduction.
+  Independent mathematical audit verifies domain coverage and measure
+  summation. No sampled pose or numerical optimizer is a proof premise.
+- The remaining unrestricted count rows are (3,8) and (4,7). Both still
+  require whole-domain sharpness and equality arguments. This count
+  restriction does not identify the candidate contact topology.
