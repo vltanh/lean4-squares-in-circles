@@ -16,9 +16,54 @@ not Lean-verified or independently audited end-to-end.
 [ROADMAP.md](ROADMAP.md) is the short master status.
 [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md) and
 [G2_SUBGATES.md](G2_SUBGATES.md) contain the gate contracts and ledger.
+[PROGRESS_LEDGER.md](PROGRESS_LEDGER.md) logs UTC commit times, exact
+subgate scope and evidence status for every substantive continuation.
 The latest physical-contact extension is
 [PHYSICAL_STRESS_GATE_UPDATE.md](PHYSICAL_STRESS_GATE_UPDATE.md),
 which closes O3.1f.1–6 without changing the remaining sharp target.
+
+## 2026-10-23 cap/tree research imported — hand manuscripts, audit pending
+
+**Provenance:** The cap/tree manuscripts were originally delivered
+in the conversation as a local package and are now **committed to
+this draft branch**. Their analytic arguments are written but **not
+independently audited or Lean-verified**. Their exact-regression
+Python script and JSON report remain local conversation artifacts,
+not committed GitHub source; finite checks do not prove the general
+theorems. Commit dates/hashes are recorded in
+[PROGRESS_LEDGER.md](PROGRESS_LEDGER.md).
+
+- **[UNRESTRICTED_THREE_SQUARE_CAP.md](UNRESTRICTED_THREE_SQUARE_CAP.md):**
+  a sharp physical three-square circular cap theorem, with no common
+  coordinate separation. For every hypothetical q<Q packing, **in
+  every direction** at least five squares meet the central strip
+  of halfwidth 7/16. This is an unrestricted **necessary**
+  property, not a global contradiction. An exact q=Q capless
+  packing refutes making a triple cap a mandatory equality normal form.
+- **[SOLID_FOUR_ROW_UNRESTRICTED_NINE.md](SOLID_FOUR_ROW_UNRESTRICTED_NINE.md):**
+  complete q>=Q terminal for five-square physical completions of a
+  **solid 4x1 row**, including arbitrary angles and oblique true
+  separator axes for all other squares. A staggered chain is not
+  covered. The four-vs-three seam terminal also admits unordered
+  three-square cap geometry.
+- **[SMALL_TREE_STRESS_CORES.md](SMALL_TREE_STRESS_CORES.md):**
+  in the explicit lower-radius window 79/40<=R<=sqrt(Q), all
+  positive **star** body-stress components are excluded.
+  Two-circle-loaded trees reduce to four-square side-normal
+  paths at R^2=17/4 with two freely staggered inner centers.
+  The **flat** path completion is ruled out; every nonflat
+  staggered path completion, other branching trees and cycles
+  remain open. The lower-window input comes from an existing
+  n=8 theorem and is NOT a fresh table-free proof of that prerequisite.
+- **[CAP_AND_BRIDGE_GATE_UPDATE.md](CAP_AND_BRIDGE_GATE_UPDATE.md):**
+  exact gate impact, local regression scope, negative controls and
+  the unchanged global blocker.
+
+**Progress criterion:** a general minimizer restriction, a complete
+solid-row class, and a whole star topology are significant results.
+None is a *finite exhaustive* sharp proof for every stressed core
+with all nine squares physically packed. That is still the principal
+missing mathematical obligation.
 
 ## New unrestricted-branch hand theorems
 
@@ -209,11 +254,16 @@ realizable nine-square network, including its unstressed-square
 completion.** Neither stationarity, planarity, sparsity nor four
 possible transmission labels implies that inequality by itself.
 
-The next work must classify the remaining loaded/branching networks
-and their completion capacities into a small exhaustive collection
-of sharp terminal families, or derive a global invariant covering
-all of them. Do not simply enumerate all labelled SAT assignments,
-return to solved common-frame cases, or discard unstressed squares.
+The next work must classify every remaining physical stressed
+core **together with the nine-square completion capacity** into
+a small exhaustive collection of sharp terminal families, or derive
+an all-direction cap/strip/stress invariant covering all minimizers.
+The newly closed star topology and solid-row completion do not
+eliminate staggered four-square paths, nonstar branching trees or
+cyclic cores. No theorem forces an arbitrary packing to have a
+sharp triple cap or a solid four-row. Do not simply enumerate all
+labelled SAT assignments, return to solved common-frame cases,
+or discard unstressed squares.
 
 Then follow unrestricted equality necessity/converse, independent
 hand audit, standard-kernel Lean formalization, and public registry
