@@ -52,9 +52,12 @@ this window.
 
 [Minimizer stress extraction](SPARSE_MINIMIZER_STRESS.md) now provides an
 attained positive contact stress on a connected component of 4 to 11
-squares, with bounded multipliers. The fixed-frame and full-angle
-certificates have separate sparsity bounds; all omitted squares remain
-physical completions.
+squares, with bounded multipliers. [Small graph exclusions](CLOSED_STRESS_GRAPH_FAMILIES.md)
+strengthen the full-angle component to 5 through 11 squares: spanning contact
+stars, four-cycles, and four-paths are impossible. A full-angle stress leaf
+always has a strictly circle-unloaded neighbor. The fixed-frame and
+full-angle certificates retain separate scope and sparsity bounds; all
+omitted squares remain physical completions.
 
 [The finite case ledger](TERMINAL_CASES.md) now identifies the oblique branch
 as the global frontier. The [exact oblique witness](NO_COMMON_SEPARATING_FRAME.md)

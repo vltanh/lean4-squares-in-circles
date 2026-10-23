@@ -102,8 +102,14 @@ full-angle stress uses at most 3k support-vertex atoms. The multipliers are
 bounded and closed chart domains are specified.
 
 All one-, two-, and three-body positive components are excluded. The
-remaining k values are necessary support counts, not solved terminal
-classes. No support graph or completion is dropped on dimensional grounds.
+[small-graph exclusion](CLOSED_STRESS_GRAPH_FAMILIES.md) additionally rules
+out every four-body full-angle component: stars and four-cycles have smaller
+enclosing disks, and every four-path has unloaded internal bodies by the
+[leaf-neighbor theorem](LEAF_NEIGHBOR_UNLOADED.md). Therefore full-angle
+components have k=5 through 11; fixed-frame-only extraction retains k=4
+through 11. Spanning physical contact stars are excluded for every k. The
+remaining support counts are necessary restrictions, not solved sharp
+terminals. Every omitted square remains a physical completion.
 
 ## Closed candidate terminals
 

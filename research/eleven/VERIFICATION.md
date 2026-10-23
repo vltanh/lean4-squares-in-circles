@@ -134,3 +134,13 @@ including zero cosines and equal-angle boundaries. The three reviews
 `FULL_ANGLE_COVER_REVIEW.md` bind the mathematical, source and execution
 audits. These certify the specified fourteen-separator contact class;
 unrestricted capture remains open.
+
+## Small full-angle stress graphs
+
+`SMALL_GRAPH_REVIEW.md` independently audits the spanning-star and
+four-cycle enclosing disks, the complete four-vertex graph classification,
+the angular four-path cases, and the leaf-neighbor theorem. These are
+analytic hand arguments. No numerical test is used to infer an unloaded
+neighbor or to identify an individual support atom with a physical
+contact point. The new size bound 5<=k<=11 is restricted to full-angle
+stationary stress components.

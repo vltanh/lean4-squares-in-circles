@@ -322,3 +322,16 @@ Commit timestamps and hashes are recorded after the commit exists.
   orientation groups and fourteen prescribed separators. It removes both
   fixed-angle and small-angle hypotheses from this terminal. Extracting
   this class or another solved terminal from arbitrary packings stays open.
+
+## Every full-angle stress component has at least five bodies
+
+- Previous full-angle-class checkpoint: `c81aca157825097e7fc640b2d6db32a6ebe93fb9`.
+- The universal q>9/2 bound excludes every retained component with a
+  spanning physical contact star and every four-body contact cycle.
+- A new angular leaf theorem proves its neighbor is strictly inside the
+  disk, with separate proofs for the two separator owners. This resolves
+  the internal-load issue for four-paths; their exact angular classification
+  then contradicts the radius window.
+- Every retained full-angle component now has 5–11 bodies. Independent
+  audit passes all cases. Fixed-frame-only certificates retain their
+  distinct scope, and every unstressed physical completion is preserved.

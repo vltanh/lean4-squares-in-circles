@@ -55,6 +55,7 @@ allowed without a separate theorem.
 | G3.C1–C2 | Necessary common-coordinate rank classification | H/C |
 | G3.C3–C5 | Entire common-coordinate class excluded at q<=U | H/A; 6 cases, 32 nodes, 19 leaves |
 | G3.O2 | Actual minimizer stress extraction, compact weights, small-component exclusion | H |
+| G3.O2.S | Full-angle core has 5–11 bodies; contact stars and all four-body graphs excluded | H |
 | G3.O3–O5 | Complete oblique contact classes and their physical completions | OPEN |
 | G4.1 | Generic weak stress identity with equality consequences | H/C; supplied weights |
 | G4.U | Unrestricted coarse lower bound q11>9/2 | H/A |
@@ -245,6 +246,15 @@ leaf, and at most two internal squares in a straight transmission path.
 three-body component. All normalized multipliers are bounded, permitting
 closed semialgebraic charts with physical contact witnesses.
 [Independent review](SPARSE_STRESS_REVIEW.md) checks these claims.
+The [small graph theorems](CLOSED_STRESS_GRAPH_FAMILIES.md) now exclude
+spanning physical contact stars of any size and all four-body full-angle
+cores. The [leaf-neighbor theorem](LEAF_NEIGHBOR_UNLOADED.md) uses angular
+stationarity to make a stress leaf's neighbor strictly circle-unloaded; it
+closes the previously missing loaded-internal four-path case. Thus the
+full-angle component has 5–11 bodies, while a separately extracted
+fixed-frame component retains the 4–11 bound.
+[Independent review](SMALL_GRAPH_REVIEW.md) checks the graph classification
+and both separator-owner cases.
 
 A stress component is different from the radial core: it can include both
 core and ring squares. Every omitted physical square remains quantified.
