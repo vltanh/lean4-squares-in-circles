@@ -1,6 +1,7 @@
 module
 
 import SquaresInCircles
+import SquaresInCircles.Eight.TableFree.UncompiledFullProof
 
 /-!
 Dependency audit. Every line below must report exactly
@@ -9,7 +10,7 @@ unproved lemma would add `sorryAx`, and a proof by `native_decide`, which
 trusts the compiler, would add `Lean.ofReduceBool`.
 -/
 
--- All seven cases in one statement, which depends on every case.
+-- All eight cases in one statement, which depends on every case.
 #print axioms SquaresInCircles.optimal_radius
 #print axioms SquaresInCircles.optimal_packings
 #print axioms SquaresInCircles.optimal_packings_rigid
@@ -114,3 +115,10 @@ trusts the compiler, would add `Lean.ofReduceBool`.
 #print axioms SquaresInCircles.Eight.GeometricModel.lower_bound
 #print axioms SquaresInCircles.Eight.GeometricModel.uniqueness
 #print axioms SquaresInCircles.Eight.GeometricModel.equality_iff_parameters
+
+-- Final uncompiled eight-square theorem entry; inspect only after the
+-- ordinary Lean kernel has verified all imported proof terms.
+#print axioms SquaresInCircles.Eight.TableFree.unrestricted_source_entry
+#print axioms SquaresInCircles.Eight.TableFree.unrestricted_radius_lower_bound
+#print axioms SquaresInCircles.Eight.TableFree.unrestricted_equality_iff_parameters
+#print axioms SquaresInCircles.Eight.TableFree.unrestricted_eight_complete
