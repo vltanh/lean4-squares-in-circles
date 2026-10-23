@@ -54,6 +54,38 @@ The report records 101 algebra checks, 3,174 rational admissible square examples
 
 **Next research completion criterion:** produce either (a) a short exhaustive diagram of the **entire remaining physical core/completion universe** with a sharp inequality for each leaf, or (b) one all-direction strip/contact-capacity invariant implying \(q_0\ge Q\) in every unrestricted minimizing packing. No count of hand-lemma subcases qualifies as completion.
 
+## 2026-10-23 12:29–12:33 UTC — Roadmap synchronization and finite replay
+
+| UTC | Commit / execution | Completed action | Proof impact |
+|---|---|---|---|
+| 12:29:11 | [0b26f7f](https://github.com/vltanh/lean4-squares-in-circles/commit/0b26f7f21e99b048e6207cc99e7b0e0bd86ea467) | Added exact UTC/import source provenance to this ledger | Logging only |
+| 12:30:48 | [2be1970](https://github.com/vltanh/lean4-squares-in-circles/commit/2be1970b4796c88e9ea0723dc83e52a043e2ccd0) | Updated G2_SUBGATES with old physical/radial reductions and new CAP, ROW, TREE subgates | Closed-vs-open scope reconciliation |
+| 12:32:05 | [879b43f](https://github.com/vltanh/lean4-squares-in-circles/commit/879b43fbb671fc135a7949dd23bf32408fff896f) | Updated ROADMAP.md short status | Dependency summary |
+| 12:32:48 | [9d16de7](https://github.com/vltanh/lean4-squares-in-circles/commit/9d16de7de0b8ab14a599eea2d7a55afe1e64656b) | Updated README handoff / reading order | No newly proved theorem |
+| 12:33:08–12:33:09 | local exact Python rerun, exit 0 | Reran check_three_square_cap.py using Python 3.13.5 | 101 exact algebra checks; 3,174 admissible rational cap squares (3,154 rotated), four cap-equality triples; all displayed finite stress controls passed. **Not a universal proof.** |
+
+**Exact replay caveat:** the locally available
+THREE_SQUARE_CAP_EXACT_CHECK.json retains its prior 12:06 UTC
+execution timestamps, while the 12:33 UTC direct script stdout
+reports a fresh successful run. The script SHA-256 is still
+3cf9a5d044609c486dde82133bfe74dfdbf3e3c190a7b34098db03287cec5151;
+the local JSON SHA-256 is
+7d43b930af9d8d89a4dd5ee4414f7e4b0e6bdd499e0a4add68ce467f06d785f2.
+These files remain local, not committed on the GitHub research branch.
+
+**PR metadata:** PR #11 description and title were updated after
+the documentation commits, retaining **draft** status and making
+G2.O3.2–O4 the only live global structural mathematical frontier.
+
+**Current gate state:** G0–G1 and G2.C closed at hand level;
+O3.0–O3.1g closed as global necessary reductions;
+O3.1h/i hand manuscripts pending independent audit;
+O3.1j partly closed **conditional on the radius window**;
+O3.2–O4 still OPEN; unrestricted G4/G5.U and G6–G8 NOT completed.
+No candidate value for the *unrestricted* optimum has changed.
+Future progress must eliminate an entire remaining full
+core/completion class or prove a global sharp invariant.
+
 ## How to append future entries
 
 For each substantive research turn, append:
