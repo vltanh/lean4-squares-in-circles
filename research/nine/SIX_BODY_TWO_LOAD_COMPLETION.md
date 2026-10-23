@@ -9,9 +9,10 @@ interior-disjointness is imposed. Thus such a skeleton cannot occur
 in a nine-square packing in that disk.
 
 This closes the entire six-body two-load family, including its simple
-six-cycle and theta examples. It does not close the four- or five-body
-completion families, or a coarse cyclic cell that also permits stresses
-with three or more loaded bodies. No Lean compilation or CI has been run.
+six-cycle and theta examples. The separate five-body theorem now reduces
+that family to P.ALL; the four-body P completion remains open. A coarse
+cyclic cell that also permits unresolved stresses with three or more
+loaded bodies stays open. No Lean compilation or CI has been run.
 
 ## 1. Statement and inputs
 
@@ -140,7 +141,8 @@ graph. Since six core squares leave room for at most two additional
 squares, a nine-square packing cannot contain such a component.
 
 Combined with the existing exclusion of seven through nine bodies
-with exactly two loads, the only remaining two-load completion
-families are the four-body path family and the five-body parallel-layer
-family. No statement about a component with three or more loads is
-inferred from this result.
+with exactly two loads and the whole five-body reduction in
+[FIVE_BODY_TWO_LOAD_REDUCTION.md](FIVE_BODY_TWO_LOAD_REDUCTION.md),
+this leaves P.ALL as the only two-load completion obligation. No
+statement about a component with three or more loads is inferred from
+these completion results.
