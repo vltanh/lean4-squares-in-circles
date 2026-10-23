@@ -70,6 +70,32 @@ The exact value `17/4` matters to this argument. It makes the four outer
 corners boundary contacts and closes the passages around the ends. A larger
 disk does not give this barrier for free.
 
+## Parameter subcases with complete capacity bounds
+
+Two subcases can already be excluded without the upper-triple conjecture.
+All additional square orientations remain unrestricted.
+
+**The four parameter corners: `|t1|=|t2|=1/2`.** Both inner squares then
+have the origin as a vertex. The two-origin theorem in
+[THREE_ORIGIN_VERTEX_SQUARES.md](THREE_ORIGIN_VERTEX_SQUARES.md) gives total
+capacity at most nine in `D`. Thus none of these four parameter choices
+admits a ten-square completion. This does not by itself exclude a parameter
+edge on which only one of `|t1|,|t2|` equals `1/2`.
+
+**The straight chain: `t1=t2=0`.** Here
+
+```text
+A = [-2,2] x [-1/2,1/2].
+```
+
+The same barrier proof now puts every additional square wholly in
+`y>=1/2` or wholly in `y<=-1/2`: the only other free components are the
+isolated side caps, whose horizontal width is less than one. The sharp
+[three-square cap theorem](THREE_SQUARE_CAP.md) says that three unit squares
+in either of these caps require squared radius at least `9/2`, strictly
+larger than `17/4`. There are therefore at most two additional squares above
+and two below. The entire straight-chain packing has capacity at most eight.
+
 ## A precise sufficient lemma that remains open
 
 **Upper-triple rigidity conjecture.** Suppose three unit squares, of arbitrary
@@ -162,6 +188,131 @@ A proof must control those orientations or use a different geometric
 inequality. Neither the barrier nor the axis-parallel calculation supplies
 that missing step. No conclusion about an arbitrary-oriented completion, or
 about the unrestricted ten-square optimum, follows from this note alone.
+
+## A sufficient common-slice condition for the full rigidity conclusion
+
+The arbitrary-orientation lemma does hold under the following additional
+condition: **two of the three squares have their maximum-length horizontal
+chords at a common height `y0` with `0<y0<1/2`.** This gives a geometric
+reduction beyond the axis-parallel case. It does not prove that every upper
+triple has such a height.
+
+For a unit square, let `theta in [0,pi/4]` be its smaller angle between a
+side and the horizontal or vertical direction, and put
+
+```text
+c = cos(theta),       s = sin(theta).
+```
+
+Its maximum horizontal chord length is `1/c`, attained at every height
+whose distance from its center height is at most `(c-s)/2`. This follows
+by intersecting a horizontal line with the two opposite sides that are
+closer to vertical. The statement includes the single central height when
+`theta=pi/4`.
+
+At the common height `y0`, the outer obstacles occupy `[-2,-1]` and `[1,2]`.
+The two side components of the remaining disk section each have length at
+most `sqrt(17)/2-2<1`. Neither of the two chords, each of length at least
+one, can fit there. Thus both lie in `[-1,1]`. Their relative interiors are
+disjoint: a non-axis maximal chord crosses the square's interior, and an
+axis maximal chord at height `y0<1/2` can be a boundary chord only on its
+bottom edge. Two overlapping bottom chords would also give overlapping
+interiors immediately above them. Thus their lengths sum to at most two.
+Both lengths are exactly
+one, forcing both squares to be axis-parallel and their horizontal center
+coordinates to be `-1/2,+1/2`.
+
+Write their bottom heights as `l_1,l_2`. Upper-half-plane containment and
+intersection with the slice give
+
+```text
+0 <= l_i <= y0 < 1/2.
+```
+
+Their union therefore contains the whole rectangle
+
+```text
+K = [-1,1] x [y0,1].
+```
+
+Let `Q` be the third square. First, `Q` lies wholly above `y=y0`. Here is
+the small barrier argument needed for this assertion. Below height `y0`,
+the free central part is contained in `(-1,1) x (0,y0)`. Its left and right
+boundaries belong to the outer obstacles, its upper boundary belongs to
+`K`, and its lower boundary is the boundary of the upper half-plane. An
+interior point of `Q` there would force all of its connected interior into
+this component, whose height is less than one. The two other possible
+components below `y0` are the side caps `x>2` and `x<-2`. They cannot connect
+to the region above the outer obstacles: those obstacles meet the disk
+boundary at `(+/-2,1/2)`. Each cap has horizontal width less than one.
+No component can contain a unit square. Boundary contact does not create
+a passage for the open interior of `Q`. Thus all of `Q` has `y>=y0`.
+
+Separate the convex sets `Q` and `K`, whose interiors are disjoint. Choose
+a unit normal `n=(a,b)`, reflecting horizontally if necessary so `a>=0`,
+such that
+
+```text
+min {n dot z : z in Q} >= max {n dot z : z in K}.
+```
+
+Every unit square has halfwidth at least `1/2` in every direction. Also,
+if its center is `z`, its largest squared vertex norm is at least
+
+```text
+|z|^2 + |z| + 1/2.
+```
+
+Indeed, in the square's own orthonormal frame that largest norm equals
+`|z|^2+1/2+|z_1|+|z_2|`, and `|z_1|+|z_2|>=|z|`.
+
+If `b>0`, the support of `K` is `a+b>=1`. Hence
+
+```text
+|z| >= n dot z >= a+b+1/2 >= 3/2,
+17/4 >= |z|^2+|z|+1/2 >= 17/4.
+```
+
+All equalities hold. In particular `a+b=1` and `a^2+b^2=1`, so `a=0,b=1`.
+The center is `z=(0,3/2)`, and halfwidth `1/2` in the vertical direction
+forces `Q` to be axis-parallel.
+
+If `b<=0`, the support inequality instead says, for every `(x,y) in Q`,
+
+```text
+a*x + b*(y-y0) >= a.
+```
+
+Since `y>=y0`, the case `a=0` would force the whole square onto the line
+`y=y0`, which is impossible. Thus `a>0` and every point of `Q` has `x>=1`.
+Its center then has horizontal coordinate at least `3/2`. The same vertex
+norm bound forces its center to be `(3/2,0)` and the square to be
+axis-parallel. This contradicts `y>=y0>0`. Hence only the first case occurs.
+
+Finally, the resulting top square is `[-1/2,1/2] x [1,2]`. Disjointness
+with the two lower squares forces `l_1=l_2=0`. The triple is precisely the
+T configuration.
+
+Consequently any counterexample to upper-triple rigidity would have to
+avoid this common-slice condition. In particular, the central horizontal
+chord intervals of any two of its squares cannot overlap inside
+`(0,1/2)`. This is a necessary restriction on a counterexample, not a proof
+that no counterexample exists.
+
+There is a simple equivalent height formulation. If a square's minimum
+height is `m>=0`, its maximal-chord interval is
+
+```text
+[m+sin(theta), m+cos(theta)].
+```
+
+Its upper endpoint exceeds `1/2`, since `cos(theta)>=1/sqrt(2)>1/2`.
+Therefore two squares satisfying `m+sin(theta)<1/2` automatically share
+such a slice. The quantity `m+sin(theta)` is the second-lowest vertex
+height, counting equal vertex heights separately. Any non-T triple would
+consequently have at least two squares whose second-lowest vertices are
+at or above height `1/2`. This still allows one corner of each such square
+to dip below that line; it does not place the whole squares in that cap.
 
 ## A failed shortcut: two symmetric stabbing points
 

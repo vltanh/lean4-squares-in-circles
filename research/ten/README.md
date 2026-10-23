@@ -34,7 +34,10 @@ the known bound, not a lower-bound proof.
 | Eight exterior squares force four anchors; the exactly-two-central case is closed | [Sharp exterior ring](SHARP_EXTERIOR_RING.md) | Arbitrary orientations; no common separating frame assumed |
 | Eight centers outside the open unit disk force four anchors | [Center-radius reduction](CENTER_RADIUS_REDUCTION.md) | Arbitrary orientations; a smaller ten-packing must have exactly 3, 4, or 5 centers in the open unit disk |
 | A square's arc cost bounds its center's squared radius | [Inner arc moment](INNER_ARC_MOMENT.md) | Hand proof; the proposed five-center moment bound remains open |
+| Five inner centers either form the aligned plus or a strict convex pentagon | [Moment reductions](FIVE_CENTER_MOMENT_REDUCTIONS.md) | Hand proof; independent outward radial translations preserve disjointness |
+| Four inner squares have hull width at least two in every direction | [Four-center width](FOUR_CENTER_WIDTH.md) | Hand proof; does not yet exclude six outer squares |
 | Three squares wholly inside the test circle almost fill a smaller circle | [Three-core stability](THREE_CORE_INNER_STABILITY.md) | Hand proof with an explicit no-protrusion hypothesis |
+| Two or three origin-vertex squares bound total capacity by nine or eight | [Origin-vertex capacity](THREE_ORIGIN_VERTEX_SQUARES.md) | Hand proof for squared containing radius at most `17/4` |
 | Five centers in the closed unit disk are impossible for a ten-packing | [Radial weight certificate](RADIAL_WEIGHT_EXCLUSION.md), [integer checker](check_radial_weight_exclusion.py) | **Computer-assisted** reduction; not a hand proof |
 | Sharp lower bound from four anchors | [Four-anchor bound](FOUR_ANCHOR_BOUND.md) | Four common-frame squares with the stated coordinate gaps |
 | Exact finite formulation and existence of a minimizer | [Unrestricted model](UNRESTRICTED_MODEL.md) | Arbitrary individual orientations; no sharp lower bound |
@@ -116,7 +119,10 @@ classification of a minimizing packing.
 additional squares around a specified four-square chain must split above
 and below it. A precise arbitrary-orientation upper-triple lemma would finish
 that case; the lemma is still open. The note proves its axis-parallel version
-and gives an exact obstruction to every universal two-point stabbing shortcut.
+and its common-maximal-chord version, and gives an exact obstruction to every
+universal two-point stabbing shortcut. The [origin-vertex capacity theorem](THREE_ORIGIN_VERTEX_SQUARES.md)
+closes two specified tree families at squared radius `17/4`; it does not
+establish that a general minimizing packing has one of those families.
 
 Even the established equality family can have five distinct x-coordinates;
 the all-parallel proof handles those configurations directly. No unproved
