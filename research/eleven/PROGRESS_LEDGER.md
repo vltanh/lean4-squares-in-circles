@@ -53,3 +53,22 @@ Commit timestamps and hashes are recorded after the commit exists.
   a central square, or a boundary cycle enters the cover.
 - Evidence: `FINITE_SEPARATOR_COVER.md`. The useful reduced cover G2.4,
   sharp terminal inequalities, and global equality remain open.
+- Commit: `c61d57e1bad62bb1ec19f6d0aadbb9e17beae469`,
+  2026-10-23 12:39:00 UTC.
+
+## Coordinate rank and double-four-chain checkpoint
+
+- G3.C1–C2 H: for the explicitly conditional common-coordinate-separable
+  branch, projection ranks inject into (3,4), (4,3), or (4,4), with no empty
+  rank. There are 4296 necessary labeled masks before geometric exclusions.
+- G3.C3 partial closure: rank (4,4) is impossible in q<=5; two disjoint
+  four-square projection chains in one direction force q>=5. The latter
+  is an all-angle support theorem, sharp for an aligned 2 by 4 rectangle.
+- At q<=U<5, all rectangular grids and double-full row/column profiles
+  disappear. Exactly 1155 necessary square-grid masks remain explicitly
+  listed. Their physical realizability and sharp inequalities are open.
+- Independent review confirmed the support penalty including all signs,
+  the independent left-to-right orders of endpoint pairs, and exact stage
+  counts 4296 -> 1359 -> 1155.
+- Evidence: `COORDINATE_RANK_CASES.md`, `classify_rank_masks.py`, and
+  `RANK_MASKS.json`. The unrestricted oblique branch remains untouched.

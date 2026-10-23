@@ -19,6 +19,11 @@ The [finite separator cover](FINITE_SEPARATOR_COVER.md) proves an exhaustive
 8^55-cell polynomial encoding, compact attainment and a conditional stress
 identity. A useful reduced terminal classification remains open.
 
+[Coordinate rank cases](COORDINATE_RANK_CASES.md) closes the first conditional
+finite classes: rank extraction, a forbidden corner, and the sharp
+double-four-chain exclusion. Its 1155 residual masks are explicit; this
+branch requires a common separating coordinate frame.
+
 The intended result is an exact least disk radius together with all attaining
 packings under the repository's rotation-and-relabeling congruence. Reflected
 families must be included explicitly when they are not rotation-congruent.

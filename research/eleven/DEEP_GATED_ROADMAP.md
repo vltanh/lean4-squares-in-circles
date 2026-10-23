@@ -38,7 +38,9 @@ allowed without a separate theorem.
 | G1.2.b–G1.4 | Exact record reconstruction and target isolation | OPEN |
 | G2.1–G2.3 | Exhaustive raw finite owner/sign cover, degeneracies, normalization | H |
 | G2.4 | Useful geometric reduction and exhaustive small terminal inventory | OPEN |
-| G3.C | Conditional common-coordinate-separable rank classification | OPEN |
+| G3.C1–C2 | Necessary common-coordinate rank classification | H |
+| G3.C3 | Double-four-chain terminal excluded; 1155 residual masks | PARTIAL |
+| G3.C4–C5 | Close and assemble all common-coordinate cases | OPEN |
 | G3.O | Unrestricted oblique/core-plus-completion classification | OPEN |
 | G4.1 | Generic weak stress identity with equality consequences | H; conditional on supplied weights |
 | G4.2–G4.5 | Sharp whole-domain terminal certificates and full assembly | BLOCKED |
@@ -154,6 +156,14 @@ cells, not realizable geometric classes. G2.4 remains OPEN.
 ## G3 Classify geometry before closing leaves
 
 ### G3.C A common separating coordinate frame
+
+**Closed initial classification:** [coordinate rank cases](COORDINATE_RANK_CASES.md)
+proves the rank injection and reduces 4296 masks to 1155. A square cannot
+have ranks (4,4). Two disjoint parallel four-chains force q>=5, excluding
+both rectangular grids and masks with two full rows or columns at q<=U<5.
+The exact residual masks are in `RANK_MASKS.json`; they are necessary data,
+not assertions of geometric feasibility. Every surviving geometric domain
+remains an open sharp-bound obligation.
 
 This is an added hypothesis: every pair's projection intervals separate on
 one of two common perpendicular axes. Squares may still be independently
