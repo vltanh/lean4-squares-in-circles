@@ -66,7 +66,8 @@ For example `u=21/20`, `v=11/10`, and the same four rational heights still
 pack at `Q`, and their centres have five distinct x-coordinates. This example
 falls outside the [three-column theorem](THREE_COLUMN_THEOREM.md).
 
-This is a sufficient family of radius-`R*` packings. It is not a necessary
-description of all such packings, nor an assertion of unrestricted optimality.
-Any eventual equality theorem must account for at least these degrees of
-freedom, up to ambient isometry and relabelling.
+This is a sufficient family of radius-`R*` packings. The subsequent
+[common-coordinate theorem](COORDINATE_RECTIFICATION.md) and
+[four-anchor classification](ANCHORED_EQUALITY_CLASSIFICATION.md) prove its
+necessity within their stated classes. Necessity for all unrestricted
+packings and unrestricted optimality remain open.

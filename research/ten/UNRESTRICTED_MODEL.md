@@ -72,10 +72,12 @@ The sharp lower-bound target is:
 Equivalently, rule out all solutions with `q < 9/2`, retaining every sign,
 axis-owner choice, and weak contact case. Fixing a contact graph or setting all
 frames equal proves only a conditional statement unless an exhaustive reduction
-is supplied. The [three-column theorem](THREE_COLUMN_THEOREM.md) closes one
-such conditional class. Neither numerical optimization nor the rational
+is supplied. The [common-coordinate theorem](COORDINATE_RECTIFICATION.md)
+closes a broad conditional class, including arbitrary centres and independent
+orientations subject to one shared orthogonal separating frame. Neither numerical optimization nor the rational
 construction checker closes the remaining assertion.
 
 After a sharp lower bound, equality necessity must be established separately.
-The six-parameter sufficient family in `CONSTRUCTION.md` is a starting set of
-examples, not an exhaustive equality classification.
+The six-parameter family in `CONSTRUCTION.md` is exhaustive in the
+common-coordinate class and for physical completions of the four anchors.
+It is not yet an exhaustive unrestricted equality classification.

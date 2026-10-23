@@ -3,9 +3,15 @@
 Research checkpoint: 2026-10-23 (UTC), based on main commit
 `4bea747b3efa13c869b956cb28435efaf21526fa`.
 
-**Unrestricted optimality and equality classification are OPEN.** The proposed
-sharp radius is `R* = 3/√2`, with squared radius `Q = 9/2`. This directory starts
-the n=10 work; it does not extend the public n≤8 Lean theorems.
+**The sharp radius and complete equality family are proved by hand for the
+entire common-coordinate-separated class, including independently rotated
+squares. Unrestricted optimality and equality classification remain OPEN.**
+The radius is `R* = 3/√2`, with squared radius `Q = 9/2`. Common-coordinate
+separation means that one fixed pair of perpendicular directions separates
+every square pair by disjoint projection interiors along at least one of
+the directions. This is an additional hypothesis on `Packing`.
+
+This research does not extend the public n≤8 Lean theorems.
 
 Erich Friedman's [Squares in Circles](https://erich-friedman.github.io/packing/squincir/)
 page, consulted on 2026-10-23, lists this n=10 radius and credits the construction
@@ -18,14 +24,24 @@ the known bound, not a lower-bound proof.
 | Result | Evidence | Scope |
 | --- | --- | --- |
 | Ten squares fit at `Q = 9/2` | [Exact hand proof](CONSTRUCTION.md), [rational witness](construction.json), [checker](check_construction.py) | Upper bound only |
-| A six-parameter family fits at the same radius | [Construction family](CONSTRUCTION.md#six-parameter-family) | Sufficient family; not exhaustive |
-| Sharp radius and equality for at most three columns | [Three-column theorem](THREE_COLUMN_THEOREM.md) | Common square orientation; lines parallel to an edge axis |
+| Sharp radius and complete six-parameter equality family for all parallel packings | [All-parallel theorem](ALL_PARALLEL_THEOREM.md) | Arbitrary centres; common square orientation |
+| Same sharp theorem with independent orientations and common-coordinate separation | [Rectification theorem](COORDINATE_RECTIFICATION.md) | One common orthogonal separating frame |
+| Complete physical completion of four anchors | [Anchored equality classification](ANCHORED_EQUALITY_CLASSIFICATION.md) | Remaining six orientations initially unrestricted |
+| Three squares in a sharp cap force alignment and boundary anchors | [Three-square cap](THREE_SQUARE_CAP.md) | Arbitrary orientations, all wholly beyond a line at distance `1/2` from the disk centre |
+| A square in an outward quadrant forces the sharp corner bound | [Corner rigidity](CORNER_RIGIDITY.md) | Arbitrary orientation |
 | Sharp lower bound from four anchors | [Four-anchor bound](FOUR_ANCHOR_BOUND.md) | Four common-frame squares with the stated coordinate gaps |
 | Exact finite formulation and existence of a minimizer | [Unrestricted model](UNRESTRICTED_MODEL.md) | Arbitrary individual orientations; no sharp lower bound |
 
-The hand arguments have received a separate mathematical review in this work
-session. The rational checker certifies the displayed witness. **No n=10 Lean
-source has been compiled or kernel-checked.**
+The earlier [three-column theorem](THREE_COLUMN_THEOREM.md) is retained as a
+short special case; the all-parallel theorem removes its column hypothesis.
+The [six-parameter family](CONSTRUCTION.md#six-parameter-family) is now proved
+exhaustive within the common-coordinate class and within the four-anchor
+class. Global exhaustiveness is not proved.
+
+The hand arguments have received separate mathematical review within this
+work session. The rational checker certifies the displayed witness; it is
+not a premise of the lower-bound proofs. **No n=10 Lean source has been
+compiled or kernel-checked.**
 
 ![Ten-square construction at squared radius 9/2](construction.svg)
 
@@ -35,19 +51,28 @@ source has been compiled or kernel-checked.**
 | --- | --- | --- |
 | G0: source and model | Hand argument complete | Use unrestricted `Packing`; preserve boundary contact |
 | G1: attaining construction | Hand proof and exact arithmetic check complete | `∃ S : Fin 10 → UnitSquare, Packing S (0,0) (3/√2)` |
-| G2: restricted geometry | Three-column theorem and four-anchor bound complete by hand | Derive exhaustive structure from arbitrary `Packing` |
-| G3: unrestricted lower bound | OPEN | Every unrestricted packing has `R² ≥ 9/2` |
-| G4: equality necessity | OPEN | Classify all packings at `R² = 9/2`, including translations of individual squares |
+| G2: common-coordinate theorem | CLOSED by hand, including equality | All-parallel chain argument, then disk-preserving rectification |
+| G3: unrestricted lower bound | OPEN | Handle packings with no common orthogonal separating frame |
+| G4: unrestricted equality necessity | OPEN | Extract the four anchors, or classify any other equality structures |
 | G5: Lean formalization | OPEN | Elaborate proofs, audit axioms, and verify statements against `Packing` |
 | G6: public integration | OPEN | Extend the registry and public theorem range only after verification |
 
 The next mathematical task is a lower-bound argument covering configurations
-outside the three-column class. Even the explicit family here can have five
-distinct x-coordinates. A reduction to three columns would therefore need to
-preserve radius and explain its effect on equality; it cannot simply assert that
-every equality packing already has three columns. The general all-parallel
-case and configurations with independently rotated squares both remain open
-in this work.
+outside the common-coordinate class. The rectification proof preserves
+separation because it shrinks each square's bounding box. For a merely
+physical packing those bounding boxes can overlap, so that argument does
+not supply a global reduction.
+
+The cap and corner theorems give precise unrestricted necessary conditions:
+in a hypothetical packing with `q<9/2`, every central open strip of width one
+meets at least six squares, and every square meets the union of the two such
+perpendicular strips. These conditions have not been shown contradictory.
+Finding a sharp cap triple in some frame would close the lower bound, but
+no universal cap-extraction theorem is claimed.
+
+Even the established equality family can have five distinct x-coordinates;
+the all-parallel proof handles those configurations directly. No unproved
+three-column normalization is used.
 
 For the eventual Lean construction, the existing
 [`Common/Constructions.lean`](../../SquaresInCircles/Common/Constructions.lean)
