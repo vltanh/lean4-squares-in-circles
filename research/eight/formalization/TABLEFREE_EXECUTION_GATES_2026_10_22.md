@@ -286,3 +286,18 @@ Once an inhabitant is produced, \`sharp_source_entry_of_BT2_exclusion\` already 
 - [ ] **G9.3/G9.4 trusted axiom and performance validation**: `AxiomAudit.lean` now stages `#print axioms` commands but has not been executed.
 
 **Exit criterion is unchanged:** the PR must remain unverified until ordinary Lean confirms the new public theorem and exact equality family, including no `Candidate.Capture` in the transitive new proof route. D/J source progress is not V.
+
+## 8. G9 source-only static audit progress — 2026-10-22
+
+**Method:** read code via the GitHub connector; no Lean, Mathlib build, lake, tests, CI, axiom inspection or generated checker executed. This can expose stale names/direct imports, but it CANNOT certify elaboration or mathematical soundness.
+
+- [x] **G9.1.a (textual, not kernel)** inspected the eight new high-GA source/bridge modules and five public-path modules. Found no visible source `sorry`, explicit new `axiom`, `native_decide`, `Candidate.capture` call or deleted `compatibility_source_entry` call in those thirteen code bodies. This does not quantify over every transitive module.
+- [x] **G9.1.b (textual repair)** `GlobalGAHighBT2CoreEFirstNegativeNonnegativeE.lean` mistakenly qualified `ActualCoreEBlocks` as `GlobalGA.ActualCoreEBlocks`; actual source is `SquaresInCircles.Eight.TableFree.ActualCoreEBlocks`. Fixed 14 occurrences at commit [`e66ac312`](https://github.com/vltanh/lean4-squares-in-circles/commit/e66ac31253dd62bd7a264640d462851335063146). **Not elaborated**.
+- [x] **G9.1.c (textual repair)** restore two old independent frame lemmas in the capture-free `GeometricModel.SharpAssembly` to avoid needless API breakage, commit [`760e6728`](https://github.com/vltanh/lean4-squares-in-circles/commit/760e672835c0d8f9763fdafb46dd9e8124061d14). No capture proof restored.
+- [x] **G9.1.d (textual repair)** `GlobalGAHighSourceComplete` now opens the exact geometry/co-ordinate namespaces for `sharpData`, `OriginalDual` and original radius API, commit [`9abfad8f`](https://github.com/vltanh/lean4-squares-in-circles/commit/9abfad8f591752699d2c17ba5b0e734ad332f16c). **Not elaborated**.
+- [x] **G9.1.e (limited import chain)** examined direct imports through the new `GeometricModel.Theorem` and initial G4 source paths, to a bounded depth. The sampled edges do not reach `Candidate.Capture` or legacy `Eight.Theorem`; exhaustive transitive capture-free import check remains **OPEN**.
+- [x] **G9.1.f (important qualification)** a transitive public dependency still imports `SquaresInCircles/Eight/ExactFamily/Generated/EqualityBox.lean`, an 818-line ordinary rational interval equality certificate (not the old generated affine owner-capture budget). Therefore **no claim of zero generated certificates across the entire public proof** is justified. Its ordinary Lean trust/performance must be checked at G9; removing it is a distinct project, not a reason to reopen completed geometric owner case analysis.
+- [ ] **G9.1.g** finish transitive import traversal and full exact theorem-signature/typecheck audit when Lean compilation is authorized. Record every error by file/line and patch source without modifying the hand theorem's hypotheses.
+- [ ] **G9.2–9.4** ordinary-kernel compilation, axiom/dependency audit, equality reverse direction and reproducible proof. Not run.
+
+**Static audit verdict:** G7/G8 are a written, connected source draft. Two concrete namespace problems were repaired; no code execution has verified them. The final gate remains **V pending**.
