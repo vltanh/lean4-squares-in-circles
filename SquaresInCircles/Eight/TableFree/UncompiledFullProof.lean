@@ -49,6 +49,13 @@ theorem unrestricted_radius_lower_bound
     (hp : Packing S o R) : FiveCorner.radius ≤ R :=
   GeometricModel.lower_bound hp
 
+/-- Squared-radius version, for original physical squares and their
+actual enclosing circle, prior to taking square roots. -/
+theorem unrestricted_squared_radius_lower_bound
+    {S : Fin 8 → UnitSquare} {o : Point} {q : ℝ}
+    (hp : SqPacking S o q) : FiveCorner.radius^2 ≤ q :=
+  GeometricModel.squared_radius_lower_bound hp
+
 /-- Existence at the lower bound. -/
 theorem unrestricted_sharp_attained :
     ∃ (S : Fin 8 → UnitSquare), Packing S (0,0) FiveCorner.radius :=
@@ -78,6 +85,20 @@ theorem unrestricted_equality_classified
     (hp : Packing S o FiveCorner.radius) :
     ∃ M ∈ GeometricModel.models, Congruent S o M :=
   GeometricModel.uniqueness S o hp
+
+/-- The full rigid equality witness retains an isometry, the
+arbitrary original labels and exact open/closed square preservation.
+No uniqueness of the two free sliders is asserted. -/
+theorem unrestricted_equality_rigid
+    (S : Fin 8 → UnitSquare) (o : Point)
+    (hp : Packing S o FiveCorner.radius) :
+    ∃ M ∈ GeometricModel.models,
+      ∃ (e : Point ≃ Point) (σ : Equiv.Perm (Fin 8)),
+        e (0,0)=o ∧
+        (∀ p q, normSq (sub (e p) (e q))=normSq (sub p q)) ∧
+        (∀ i p, (openSquare (S (σ i)) (e p) ↔ openSquare (M i) p) ∧
+          (closedSquare (S (σ i)) (e p) ↔ closedSquare (M i) p)) :=
+  GeometricModel.equality_rigid S o hp
 
 /-- Unrestricted, attained sharp radius and full five-parameter
 classification in a single unconditional Lean statement.
