@@ -33,6 +33,9 @@ the known bound, not a lower-bound proof.
 | At least two squares enter the central disk of radius `1/2` | [Exterior-arc bound](CENTRAL_DISK_REDUCTION.md) | Arbitrary orientations; squared containing radius at most `9/2` |
 | Eight exterior squares force four anchors; the exactly-two-central case is closed | [Sharp exterior ring](SHARP_EXTERIOR_RING.md) | Arbitrary orientations; no common separating frame assumed |
 | Eight centers outside the open unit disk force four anchors | [Center-radius reduction](CENTER_RADIUS_REDUCTION.md) | Arbitrary orientations; a smaller ten-packing must have exactly 3, 4, or 5 centers in the open unit disk |
+| A square's arc cost bounds its center's squared radius | [Inner arc moment](INNER_ARC_MOMENT.md) | Hand proof; the proposed five-center moment bound remains open |
+| Three squares wholly inside the test circle almost fill a smaller circle | [Three-core stability](THREE_CORE_INNER_STABILITY.md) | Hand proof with an explicit no-protrusion hypothesis |
+| Five centers in the closed unit disk are impossible for a ten-packing | [Radial weight certificate](RADIAL_WEIGHT_EXCLUSION.md), [integer checker](check_radial_weight_exclusion.py) | **Computer-assisted** reduction; not a hand proof |
 | Sharp lower bound from four anchors | [Four-anchor bound](FOUR_ANCHOR_BOUND.md) | Four common-frame squares with the stated coordinate gaps |
 | Exact finite formulation and existence of a minimizer | [Unrestricted model](UNRESTRICTED_MODEL.md) | Arbitrary individual orientations; no sharp lower bound |
 
@@ -86,7 +89,15 @@ the square's center has norm at least `1`, even if the square intersects
 `B(0,1/2)`. Its third possible equality type cannot occur in an eight-arc
 ring. Consequently any smaller ten-packing must have at least three centers
 in `B(0,1)`; pairwise center distances of at least one bound this count by
-five. The precise remaining counts are therefore **3, 4, and 5 inner centers**.
+five. The precise remaining counts for the hand proof are therefore **3, 4,
+and 5 inner centers**.
+
+The separate radial-weight certificate excludes five inner centers by 1,954
+exact integer parameter-box comparisons. With that computational result the
+remaining counts are three and four. An analytic replacement is still needed
+for a wholly hand proof: the inner-arc moment theorem would provide one if
+the explicitly stated five-center moment inequality is proved. Neither the
+certificate nor the conditional moment argument closes the other two cases.
 
 A [rational six-square example](SIX_CENTRAL_SQUARES.md) rules out the shortcut
 that at most four or five squares can meet the small disk. It is not a
@@ -126,6 +137,7 @@ From the repository root, with Python 3 and no external packages:
 ```sh
 python3 research/ten/check_construction.py --self-test
 python3 research/ten/check_core_obstruction.py
+python3 research/ten/check_radial_weight_exclusion.py
 python3 -B research/ten/plot_construction.py
 ```
 
@@ -134,8 +146,10 @@ the four tight corners, and rejects deliberately overlapping, exterior, and
 floating-point witnesses. Vertex containment implies whole-square containment
 by convexity of the disk. The central-obstruction checker verifies six squares,
 all 15 separating pairs, and strict near/far distance bounds using rational
-arithmetic. The figure uses floating point only for drawing and is not a proof
-input.
+arithmetic. The radial-weight checker proves continuous one-square bounds
+using integer Riemann sums and a complete dyadic parameter cover; it uses no
+floating-point arithmetic. The figure uses floating point only for drawing
+and is not a proof input.
 
 This checkpoint changes only `research/ten/`. No Lean build, axiom audit,
 Comparator run, or external kernel replay is claimed. Commits use `[skip ci]`
