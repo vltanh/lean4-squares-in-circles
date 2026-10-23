@@ -106,3 +106,11 @@ trusts the compiler, would add `Lean.ofReduceBool`.
 #print SquaresInCircles.Seven.Column
 #print SquaresInCircles.Seven.columnCenters
 #print SquaresInCircles.Seven.columnModel
+
+-- Table-free n=8 public source and equality route. Check under the standard
+-- Lean kernel during G9 (this file is not being executed in this pass).
+#print axioms SquaresInCircles.Eight.TableFree.high_GA_BT2_exclusion
+#print axioms SquaresInCircles.Eight.TableFree.table_free_sharp_source_entry
+#print axioms SquaresInCircles.Eight.GeometricModel.lower_bound
+#print axioms SquaresInCircles.Eight.GeometricModel.uniqueness
+#print axioms SquaresInCircles.Eight.GeometricModel.equality_iff_parameters

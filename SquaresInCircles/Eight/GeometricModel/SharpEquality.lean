@@ -15,9 +15,10 @@ parameters come from the actual central square, including its quarter-turn
 representative, and all model separation constraints come from the unchanged
 original packing.
 
-No theorem in Eight.Theorem is imported or called. The compatibility capture
-dependencies are exactly those disclosed in SharpAssembly; the remaining
-parameter reconstruction uses the existing exact-family geometry.
+No theorem in the legacy Eight.Theorem is imported or called. The sharp
+source now comes from the table-free global GA/BT2 owner proof in
+SharpAssembly, not generated capture. The remaining parameter reconstruction
+uses the existing exact-family geometry. Neither route has been compiled.
 -/
 
 @[expose] public section

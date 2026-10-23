@@ -7,7 +7,6 @@ public import SquaresInCircles.Four.Uniqueness
 public import SquaresInCircles.Five.Uniqueness
 public import SquaresInCircles.Six.Uniqueness
 public import SquaresInCircles.Seven.Uniqueness
-public import SquaresInCircles.Eight.Theorem
 public import SquaresInCircles.Eight.GeometricModel.Theorem
 public import SquaresInCircles.Optimal
 
@@ -30,11 +29,13 @@ five-corner geometric minimum, and the equality family by actual angles,
 containment, rail positions, and separating axes. The geometric proof modules
 establish existence, uniqueness, and agreement with the stationary chart.
 The pure public definitions and their Mathlib-only Challenge mirror do not
-depend on importing the case proofs. The older stationary statement and
-theorem names remain available for compatibility.
+depend on importing the case proofs. The older stationary eight-square theorem remains available from its
+explicit legacy module, but the aggregate import no longer depends on that
+module's generated `Candidate.Capture` proof. The selected public
+`Eight.GeometricModel.optimum` uses the table-free source assembly.
 
 The n=8 extension is delivered as uncompiled draft Lean source. Its proof
-scripts and generated rational certificates have not been compiled. The
+scripts and exact analytic certificates have not been compiled. The
 geometric draft receives static source review only in this pass; no Lean,
 lake, kernel axiom inspection, certificate replay, or CI is run.
 

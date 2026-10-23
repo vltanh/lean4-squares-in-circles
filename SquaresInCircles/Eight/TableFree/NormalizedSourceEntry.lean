@@ -15,9 +15,11 @@ retained contact obstructions then recover those owners on the untouched
 source.  No output, hard witness, frame order, endpoint equality or circle
 loss is supplied by the caller.
 
-The last theorem still requires the global normal-owner classification on
-the original recovered boundary.  In particular it is not an instance of
-`SharpSourceEntry`, and does not replace the remaining high-GA exclusion.
+The last theorem takes the original normal-owner classification as an
+explicit argument so the source-to-equality logic remains independently
+typeable. The global high-GA/BT2 proof now provides that argument in
+`GlobalGAHighSourceComplete`, and constructs an unconditional (uncompiled)
+`SharpSourceEntry`. No generated capture is used.
 It joins that precise classification obligation to the already drafted
 same-radius terminal and initially selected physical-normal conclusions.
 -/

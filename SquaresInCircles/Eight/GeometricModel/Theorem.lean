@@ -20,12 +20,14 @@ older stationary coordinate chart, including both reflections and all weak
 contacts. SharpEquality supplies unrestricted classification from a fresh
 boundary at the sharp radius and the dual at the original centers.
 
-The latter currently uses the explicitly named compatibility_source_entry:
-conditional capture and terminal equality retain generated dependencies.
-No assertion that those dependencies have been removed is made here. The
-alternative hand transport route is separated in TableFree.EntryReduction.
-Neither the old unrestricted lower bound nor the old unrestricted equality
-theorem is an input to this assembly.
+The sharp equality route now uses the unconditional *drafted* table-free
+`GlobalGAHighSourceComplete.table_free_sharp_source_entry` through
+`SharpAssembly`. The seven original physical witnesses, the actual containing
+radius and five original anchors feed the lower bound and exact equality
+classification. No generated `Candidate.Capture` proof is imported on this
+route. Neither the old unrestricted lower bound nor its equality theorem is
+an input. This is uncompiled source; ordinary Lean kernel verification and
+transitive dependency audit remain pending.
 -/
 
 @[expose] public section
