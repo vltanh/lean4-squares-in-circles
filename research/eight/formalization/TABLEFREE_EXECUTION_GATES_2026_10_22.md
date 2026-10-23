@@ -325,3 +325,18 @@ Once an inhabitant is produced, \`sharp_source_entry_of_BT2_exclusion\` already 
 | `44aa756db` | 2026-10-23 02:29:05 | Static G9 audit ledger |
 
 All timeline rows are GitHub commit author timestamps. None is a Lean compilation or proof-verification event.
+
+
+### G9.1 source-path reinspection — Chicago Oct 22, 21:52–22:00 (UTC Oct 23)
+
+This record supersedes the prior live-head snapshot; it is **source inspection only**.
+
+- [x] **G7 / G8 confirmed in live branch:** unconditional \`GlobalGAHighBT2Complete.high_GA_BT2_exclusion\` ([\`304501f64\`](https://github.com/vltanh/lean4-squares-in-circles/commit/304501f64)), \`GlobalGAHighSourceComplete.table_free_sharp_source_entry\` ([\`d89955c70\`](https://github.com/vltanh/lean4-squares-in-circles/commit/d89955c70)) and the public \`GeometricModel.SharpAssembly\` import of the new source ([\`739d9428c\`](https://github.com/vltanh/lean4-squares-in-circles/commit/739d9428c)) are **present as uncompiled proof bodies**. Public \`GeometricModel.Theorem\` imports \`SharpEquality\` and \`EntryReduction\`, which in turn import \`SharpAssembly\`.
+- [x] **G9.1.h — recent namespace repair recorded:** live head \`79dfcf135386f4f01fd0ac7aab71644211643b77\` (2026-10-23 02:34:39 UTC) is \`[skip ci] Fix LongE and joint-negative source theorem namespace references\`. This is textual source maintenance, not elaboration.
+- [x] **G9.1.i — inspected top-level dependent modules:** \`SquaresInCircles.lean\` imports \`Eight.GeometricModel.Theorem\`; \`GeometricModel.Theorem\` imports \`EqualityFamily\`, \`TwoHeightMinimum\`, \`SharpEquality\`, \`TableFree.EntryReduction\`, \`ExactFamily.StatementLink\`, \`Common.Optimum\`. \`SharpEquality\` and \`EntryReduction\` both import \`SharpAssembly\`; \`SharpAssembly\` imports the new \`GlobalGAHighSourceComplete\`. No legacy \`Candidate.Capture\` appears in **these direct inspected edges**, but all transitive imports have **not** been checked.
+- [x] **G9.1.j — separate generated equality certificate:** \`Eight.Equality\` → \`ExactFamily.EqualityBox\` and an existing \`ExactFamily.Generated.EqualityBox.lean\` (818 lines) remain in the broader source. This is not \`Eight.Generated.AffineBudgets\`; do not claim complete absence of any generated certificates. The generated equality certificate still needs kernel trust/performance checking.
+- [x] **G9.1.k — audit entry location:** root \`AxiomAudit.lean\` (not \`Eight/TableFree/AxiomAudit.lean\`) already includes \`#print axioms\` for \`TableFree.high_GA_BT2_exclusion\`, \`TableFree.table_free_sharp_source_entry\` and public bound/equality. It **has not been run**.
+- [ ] **G9.1.l — exhaustive transitive public imports, exact theorem signatures, all source proof terms:** remains open. A bounded module-inspection attempt hit tool-call limits; no full import-graph conclusion. No Lean compilation or kernel verification.
+- [ ] **G9.2–G9.4 unchanged:** compile through the ordinary kernel when authorized; fix source errors, inspect actual axiom/dependency outputs, verify sharp equality in both directions, and benchmark runtime. Nothing in this update changes the unverified status.
+
+**No false closure:** G0–G8 are D/J (source drafted and joined); G9 still V pending, despite the apparent mathematical source closure.
