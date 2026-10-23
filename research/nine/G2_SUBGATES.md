@@ -24,7 +24,9 @@ G2.0 (exact encoding and false-normalization tests) CLOSED
   |      C4.2a middle-pair zigzag normal form + cap bound CLOSED
   |      C4.2b exclude crossed perpendicular four-chain CLOSED
   |      C4.2c eliminate entire large-zigzag branch CLOSED
-  |      C4.3 coherent-sign terminal obstruction OPEN
+  |      C4.3a signed 4+3-chain terminal CLOSED
+  |      C4.3b 3×3 center-band terminal CLOSED
+  |      C4.3c residual five squares x-chain≤2 OPEN
   |      C4.4 coordinate-separable closure OPEN
   |
   +-- G2.O (genuinely oblique pairs)
@@ -156,11 +158,60 @@ Every allowed incidence block is consecutive and contains 2
 or 3. This is a global geometric input conditional only on the
 existence of a four-chain, valid with oblique-only separators.
 
-**G2.C4.3 — Coherent-sign branch: OPEN.**
-If each extra square stays consistently above/below the chain
-squares its projection meets, turn the incidence types into a
-sharp long/short or grid terminal obstruction, without enumerating
-all 9^5 assignments.
+**G2.C4.3a — Signed matched-chain terminal: CLOSED (hand).**
+[PAIRED_FOUR_ANCHOR_STRESS.md](PAIRED_FOUR_ANCHOR_STRESS.md)
+proves a general long/short four-anchor dual using weights 23 and 9,
+requiring only the sum of vertical gaps instead of a common seam.
+[SIGNED_MATCHED_CHAIN_STRESS.md](SIGNED_MATCHED_CHAIN_STRESS.md)
+strengthens it to **independently chosen vertical signs** for the two
+corresponding endpoint pairs. Its endpoint interlocking lemma proves
+that in any q≤q* packing, the left endpoints of *disjoint*
+horizontal four- and three-chains necessarily overlap in horizontal
+projection, as do the right endpoints, regardless of orientations.
+Consequently **any common-coordinate-separable nine-square packing
+containing disjoint 4+3 horizontal projection chains obeys q≥q*.**
+Mixed vertical signs are covered by the same dual, and all equality
+outer anchors are determined for each sign choice. This is a full
+terminal structural class, not a small angle subcase.
+
+**G2.C4.3b — Three-by-three center bands: CLOSED (hand).**
+[THREE_BAND_GRID_OBSTRUCTION.md](THREE_BAND_GRID_OBSTRUCTION.md)
+proves q≥9/2 for a coordinate-separable packing partitioned into
+three horizontal projection chains of three with centers in the
+upper (y≥1/2), middle (-1/2<y<1/2), and lower (y≤-1/2)
+bands. Corresponding endpoint projections overlap because their
+x-center differences are <39/40, so the grid stress applies.
+No common orientations or fixed within-row heights are assumed.
+
+**G2.C4.3c — Residual five-square complement: OPEN.**
+Choose a four-projection chain M. The above signed theorem closes
+the branch if the five remaining squares contain a **disjoint
+horizontal triple** in the same frame. The sole residual
+coordinate-separable case is therefore: those five squares have
+horizontal projection-chain length ≤2. By finite poset theory
+(Dilworth/Mirsky), they can be partitioned into at most two
+vertical projection-disjoint chains; one must contain at least
+three squares. This is a *structural restatement*, not a proof
+that such a complement is impossible. The old large-zigzag
+branch is separately excluded, so a successful next argument
+must use actual circle-support and square projection widths
+to rule out the remaining coherent two-column layouts or find
+a new sparse terminal stress.
+
+**Proof-strategy falsification (C4.3c):**
+[CENTER_RELAXATION_COUNTEREXAMPLE.md](CENTER_RELAXATION_COUNTEREXAMPLE.md)
+provides nine exact center points of norm≤3/2, pairwise
+L-infinity distance≥1, with both horizontal and vertical
+four-chains. This refutes an attempted closure using only
+center-radius and L-infinity distance bounds; it does not
+constitute a physical square packing or disprove the q* target.
+
+**G2.C4.3 — Coherent-sign branch: PARTIALLY CLOSED.**
+The disjoint 4+3 chains and three-band grid terminal classes are
+closed by C4.3a/b. C4.3c remains: five squares outside a four-chain
+with x-chain length at most two, potentially organized into two
+vertical stacks. A complete exclusion or sharp alternative is
+still required.
 
 **G2.C4.4 — Four-chain completion: OPEN.**
 From a four-square chain plus five remaining squares
@@ -199,6 +250,16 @@ geometric family with its own terminal dual. Any deformation
 must explicitly preserve non-overlapping open interiors
 throughout. Replacing an original packing by a visually
 similar drawing is not a proof.
+
+**G2.O2a — Exact separator-graph convex dual: CLOSED (general method).**
+[SEPARATOR_GRAPH_CONVEX_DUAL.md](SEPARATOR_GRAPH_CONVEX_DUAL.md)
+shows that with fixed square orientations and an actual selected
+edge-normal separator for each required pair, the center feasibility
+problem is convex. It gives a full explicit weak-dual bound, with
+nonnegative separator multipliers and unit-square radial support,
+eliminating **all center coordinates** from proof certificates.
+It does **not** classify the finite owner graphs or prove uniformly
+sharp orientation inequalities; O2/O3 remain the substantive gates.
 
 **G2.O3 — Oblique stress/exception closure: OPEN.**
 If O2 yields new non-row patterns, prove their lower bound
@@ -271,8 +332,8 @@ four-anchor-based parameter domain may absorb it.
 
 ## 7. Strategy: avoid minor-boundary rabbit holes
 
-The **two central research tasks** are now C4.3 (coherent-side
-four-chain completion) and O2/O3 (unrestricted oblique separators).
+The **two central research tasks** are now C4.3c (residual
+five-square two-column complement) and O2/O3 (unrestricted oblique separators).
 The entire coordinate-separable large-zigzag branch is closed;
 do not reopen it via tiny angle or radius modifications.
 Do not invest effort in strengthening the constants in
