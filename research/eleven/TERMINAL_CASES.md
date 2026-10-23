@@ -69,8 +69,9 @@ listed exclusions, not numbers of realizable geometric or symmetry classes.
 
 ## Exhaustive oblique radial classes
 
-[The radial extraction](CORE_RING_FIVE_CASES.md) proves the following cover.
-Core means center norm below (sqrt(7)+1-sqrt(2))/2; ring is its complement.
+[The refined radial extraction](CORE_RING_FOUR_CASES.md) proves the following cover.
+Core means center norm below 41/40; ring is its complement.
+This threshold supersedes the earlier five-row bookkeeping partition.
 For compactness use the overlapping closed threshold cover in that note.
 Every core square has no circle contact. Ring arcs give a cyclic order.
 Every row retains all eleven centers and frames and all 55 pair constraints.
@@ -80,8 +81,7 @@ Every row retains all eleven centers and frames and all 55 pair constraints.
 | O-3 | 3 | 8 | OPEN | Known candidate occurs here; global exhaustion open |
 | O-4 | 4 | 7 | OPEN | OPEN |
 | O-5 | 5 | 6 | OPEN | OPEN |
-| O-6 | 6 | 5 | OPEN | OPEN |
-| O-7 | 7 | 4 | OPEN | OPEN |
+| O-6 | 6 | 5 | OPEN; exactly one core square contains the origin | OPEN |
 
 An actual packing determines one row, a ring cyclic order, and physical
 separator data. This is an exhaustive coarse classification. Each row still

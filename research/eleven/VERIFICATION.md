@@ -75,12 +75,15 @@ as history or named reduction stages.
 The radial extraction is an analytic hand proof, separately reviewed: own-frame
 circle intersections cover every near/far side branch; derivative
 factorizations bound their arc lengths; exact angular counts give at least
-three and at most seven core centers. Area makes all core squares strictly
+three and at most seven core centers. The refined rational threshold 41/40
+gives at most six core centers, with a unique origin-containing square
+when there are six. `CORE_RING_REVIEW.md` and `RATIONAL_CORE_REVIEW.md`
+bind the independent reviews. Area makes all core squares strictly
 circle-unloaded. No sampled angle table is a premise.
 
 ## Remaining verification boundary
 
-This is a partial research handoff. G2.4.b–c, the sharp refinement of the five unrestricted radial classes, the remaining sharp
+This is a partial research handoff. G2.4.b–c, the sharp refinement of the four unrestricted radial classes, the remaining sharp
 terminal inequalities and complete equality are still open. The candidate family is now proved locally optimal under unrestricted
 perturbations, with complete local equality. No certificate here proves the
 global n=11 lower bound.

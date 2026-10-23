@@ -202,3 +202,20 @@ Commit timestamps and hashes are recorded after the commit exists.
   count bounds, cyclic ordering, and the closed-cover convention.
 - All five sharp radial terminal problems remain open. No core-to-ring pair,
   ring nonneighbor, or unstressed square is removed.
+
+## Refined rational core threshold and four exhaustive count rows
+
+- Previous radial extraction commit: `c7ca971bed640dee1e5a172a032e62c2445592ae`.
+- At the smaller threshold 41/40, every ring square contributes more than
+  7/10 radians on the radius-27/20 auxiliary circle. All four exact
+  side-branch differences have analytic lower bounds; rational Taylor
+  estimates handle the near/far diagonal endpoints. There remain at most
+  eight ring squares and at least three core squares.
+- Independently, at most six nonoverlapping squares have centers within
+  41/40. Six origin-avoiding squares would tile the unit circle in equal
+  pi/3 arcs; their forced neighboring radial squares actually overlap.
+  Thus a six-core case has exactly one origin-containing square.
+- The current exhaustive rows are (3,8), (4,7), (5,6), (6,5). This changes
+  the radial threshold; it does not assert that seven centers at the older,
+  larger threshold were impossible. All four sharp terminal bounds remain
+  open. Both independent analytic audit records are included.
