@@ -111,6 +111,11 @@ classes. No support graph or completion is dropped on dimensional grounds.
   Arbitrary centers in this class satisfy q>=q_c by
   [positive stress](FIXED_ORIENTATION_STRESS.md); physical equality is exactly
   the known sliding family.
+- **A:** Keep the three orientation groups and fourteen signed separators;
+  both group angles vary throughout the full closed square `[0,pi/2]^2`.
+  The [full angle-class theorem](FULL_GROUP_ANGLE_CLASS.md) gives q>=q_c
+  for arbitrary centers and exactly the known slider equality family.
+  Its 507 closed rectangles cover both angle orders and all endpoint ties.
 - **L:** In some neighborhood of the whole candidate family, with arbitrary
   independent orientations and physical owner switches,
   [local sharpness and equality](LOCAL_OPTIMALITY.md) hold.

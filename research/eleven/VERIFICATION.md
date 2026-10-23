@@ -122,3 +122,15 @@ G7's **full** hand-proof audit remains blocked by those mathematical gaps.
 The reviews above close only their stated artifact scopes. Future Lean
 translation, compilation, axiom/import audits and public integration remain
 G8–G9 and are outside the current no-Lean phase.
+
+## Full grouped-angle terminal
+
+Run `python3 check_angle_neighborhood.py`, `python3 check_angle_tiles.py`,
+and `python3 check_reverse_angle_tiles.py` from this directory. The first
+checks four exact positive dual stresses and their uniform Hessian bounds.
+The last two replay all 507 closed rectangles over both angle orders,
+including zero cosines and equal-angle boundaries. The three reviews
+`ANGLE_NEIGHBORHOOD_REVIEW.md`, `ORDERED_ANGLE_COVER_REVIEW.md`, and
+`FULL_ANGLE_COVER_REVIEW.md` bind the mathematical, source and execution
+audits. These certify the specified fourteen-separator contact class;
+unrestricted capture remains open.

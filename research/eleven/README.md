@@ -30,7 +30,11 @@ proves sharpness for the fixed candidate frames and fourteen specified
 separators. The [local theorem](LOCAL_OPTIMALITY.md) proves unrestricted
 local optimality and complete local equality, allowing every square to
 rotate independently. [Independent review](CANDIDATE_STRESS_REVIEW.md)
-checks both results. Global optimality remains open.
+checks both results. The [full grouped-angle terminal](FULL_GROUP_ANGLE_CLASS.md)
+now proves sharpness and the slider equality family for arbitrary centers
+and both group angles throughout their full closed first-quadrant square,
+under the fourteen prescribed separators. Global capture into this class
+remains open.
 
 The [finite separator cover](FINITE_SEPARATOR_COVER.md) proves an exhaustive
 8^55-cell polynomial encoding, compact attainment and a conditional stress

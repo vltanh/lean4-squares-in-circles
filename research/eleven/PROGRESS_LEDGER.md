@@ -307,3 +307,18 @@ Commit timestamps and hashes are recorded after the commit exists.
   excludes any minimizer contact class with an enclosing-disk bound at or
   below 9/2. The sharp value near 4.9012064 and the two surviving radial
   classes remain open.
+
+## The full grouped-angle contact class is sharp
+
+- Previous universal lower-bound commit: `d35af7b248c8cdc33d121075d93dd05aa8833115`.
+- Four positive exact stresses give a quantitative candidate-angle
+  neighborhood with arbitrary centers. Away from it, nonsingular
+  nonnegative dual profiles cover both angle orders throughout `[0,pi/2]^2`.
+- All 507 closed rectangles are solved: 355 strict dual tiles, 151 strict
+  domain discards, and one quantitatively solved neighborhood. Every edge,
+  endpoint orientation, and equal-angle tie is covered. Exact direct replay
+  and independent audits pass.
+- This proves q>=q_c and the complete slider equality family for the three
+  orientation groups and fourteen prescribed separators. It removes both
+  fixed-angle and small-angle hypotheses from this terminal. Extracting
+  this class or another solved terminal from arbitrary packings stays open.

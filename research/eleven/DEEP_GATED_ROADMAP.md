@@ -59,6 +59,7 @@ allowed without a separate theorem.
 | G4.1 | Generic weak stress identity with equality consequences | H/C; supplied weights |
 | G4.U | Unrestricted coarse lower bound q11>9/2 | H/A |
 | G4.F | Fixed candidate frames plus fourteen separators: sharp bound and equality | H/A/C |
+| G4.A | Full two-group-angle square with fourteen separators: sharp bound and equality | H/A/C; 507 rectangles |
 | G4.L | Unrestricted local sharpness and complete local equality | H/A |
 | G4.2–G4.5 | Remaining whole-domain certificates and global assembly | BLOCKED |
 | G5 | Universal lower bound and attainment | BLOCKED |
@@ -275,7 +276,14 @@ specified separators, including full equality reconstruction. The
 [local theorem](LOCAL_OPTIMALITY.md) retains both parallel-contact owners
 and proves unrestricted local sharpness and equality. Both have an
 [independent audit](CANDIDATE_STRESS_REVIEW.md). They close G4.F and G4.L.
-Global capture or certificates for every distant class remain open.
+The [full grouped-angle theorem](FULL_GROUP_ANGLE_CLASS.md) also closes G4.A:
+arbitrary centers and both angles in the full closed first-quadrant square
+satisfy the sharp bound under the fourteen selected separators. Its 507
+closed rectangles include 355 strict dual tiles, 151 strict domain discards,
+and one quantitatively solved neighborhood. Equality is exactly the known
+slider family. [Independent review](FULL_ANGLE_COVER_REVIEW.md) audits the
+assembly and both angle orders. Global capture or certificates for every
+distant class remain open.
 
 For each leaf T, prove Packing + T implies q>=Q, or show it impossible for
 q<=Q. Fix frames only inside a conditional argument; then prove the bound
