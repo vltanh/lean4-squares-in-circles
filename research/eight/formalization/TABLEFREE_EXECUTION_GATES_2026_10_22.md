@@ -355,7 +355,7 @@ This record supersedes the prior live-head snapshot; it is **source inspection o
 
 **No verification claim:** G0–G8 have full uncompiled source; G9 is only partly audited, without kernel execution. The new full entry makes the deliverable easier to inspect but does not resolve elaboration or independent mathematical validity.
 
-### G8.5 final equality completeness — October 22 (21:15–22:00 Chicago)
+### G8.5 final equality completeness — October 22 (22:15–22:16 Chicago; 03:15–03:16 UTC October 23)
 
 - [x] **G8.5.e — unique least containing circle:** `TableFree.unrestricted_model_unique_least_circle` reuses `GeometricModel.Parameters.unique_least_circle` (four positively weighted original anchor support vertices), source commit [`d1eb93776321`](https://github.com/vltanh/lean4-squares-in-circles/commit/d1eb93776321d02e5da7f96969eea6e2433ffb60).
 - [x] **G8.5.f — nontrivial five-parameter equality family:** `TableFree.unrestricted_five_freedoms` reuses the `GeometricModel.Parameters.five_freedoms` witness on the strict five-dimensional parameter box; same source commit [`d1eb93776321`](https://github.com/vltanh/lean4-squares-in-circles/commit/d1eb93776321d02e5da7f96969eea6e2433ffb60).
