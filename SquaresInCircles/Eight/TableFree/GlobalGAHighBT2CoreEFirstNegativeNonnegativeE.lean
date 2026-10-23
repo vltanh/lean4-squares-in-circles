@@ -30,15 +30,15 @@ variable {q : ℝ} {C : SignedCycle} {I : GlobalGA.SourceDomain q C}
   (R : CoreEFirstResult I)
 
 private theorem core_E_nonnegative_as_charge
-    (he : 0≤GlobalGA.ActualCoreEBlocks.eTotal R.A.cycle
+    (he : 0≤ActualCoreEBlocks.eTotal R.A.cycle
       (R.E.source.owner D) (R.E.source.owner E)) :
     0≤GlobalGA.PairedE.cycleTotal R.A.cycle
       (deFlag R.E.source) (ehFlag R.E.source) := by
   simpa [GlobalGA.PairedE.cycleTotal, GlobalGA.NonnegativeTotals.Source.eTotal,
     GlobalGA.PairedE.total, GlobalGA.PairedE.selected,
-    GlobalGA.ActualCoreEBlocks.eTotal,
-    GlobalGA.ActualCoreEBlocks.primaryDE,
-    GlobalGA.ActualCoreEBlocks.primaryEH,
+    ActualCoreEBlocks.eTotal,
+    ActualCoreEBlocks.primaryDE,
+    ActualCoreEBlocks.primaryEH,
     de_owner R.E.source,eh_owner R.E.source] using he
 
 /-- The all-source raw stress has no radial-kind assumption on E. -/
@@ -47,7 +47,7 @@ private theorem core_negative_A_positive_TD2_with_entry_false
     (hBT : R.E.cycle.Feasible B 2)
     (hTD : R.E.cycle.Feasible T 2)
     (hz : 0≤delta R.A.cycle.theta T)
-    (he : 0≤GlobalGA.ActualCoreEBlocks.eTotal R.A.cycle
+    (he : 0≤ActualCoreEBlocks.eTotal R.A.cycle
       (R.E.source.owner D) (R.E.source.owner E))
     (atG : Bool)
     (hGA : R.A.cycle.Feasible G (if atG then 3 else 2))
@@ -89,7 +89,7 @@ private theorem core_negative_A_positive_TD2_with_entry_false
 nonnegative-A/E terminal, with neither E nor T moved or reselected. -/
 private theorem secondary_GA_core_false
     (hqU : q≤qCap) (hBT : R.E.cycle.Feasible B 2)
-    (he : 0≤GlobalGA.ActualCoreEBlocks.eTotal R.A.cycle
+    (he : 0≤ActualCoreEBlocks.eTotal R.A.cycle
       (R.E.source.owner D) (R.E.source.owner E))
     (hab : R.A.ab=false)
     (hsecondary : R.A.cycle.Feasible G 2) : False := by
@@ -106,9 +106,9 @@ private theorem secondary_GA_core_false
       P.cycle (deFlag R.E.source) (ehFlag R.E.source) := by
     simpa [GlobalGA.NonnegativeTotals.Source.eTotal,
       GlobalGA.PairedE.total,GlobalGA.PairedE.selected,
-      GlobalGA.ActualCoreEBlocks.eTotal,
-      GlobalGA.ActualCoreEBlocks.primaryDE,
-      GlobalGA.ActualCoreEBlocks.primaryEH,
+      ActualCoreEBlocks.eTotal,
+      ActualCoreEBlocks.primaryDE,
+      ActualCoreEBlocks.primaryEH,
       de_owner R.E.source,eh_owner R.E.source] using he
   exact reduced_nonnegative_AE_false S hqU hBT
     (by simp [GlobalGA.NegativeANormalForm.total,
@@ -119,7 +119,7 @@ private theorem secondary_GA_core_false
 primary total without moving A, E, T or any original-radius anchor. -/
 private theorem secondary_AB_core_false
     (hqU : q≤qCap) (hBT : R.E.cycle.Feasible B 2)
-    (he : 0≤GlobalGA.ActualCoreEBlocks.eTotal R.A.cycle
+    (he : 0≤ActualCoreEBlocks.eTotal R.A.cycle
       (R.E.source.owner D) (R.E.source.owner E))
     (hga : R.A.ga=false)
     (hsecondary : R.A.cycle.Feasible A 0) : False := by
@@ -136,9 +136,9 @@ private theorem secondary_AB_core_false
       P.cycle (deFlag R.E.source) (ehFlag R.E.source) := by
     simpa [GlobalGA.NonnegativeTotals.Source.eTotal,
       GlobalGA.PairedE.total,GlobalGA.PairedE.selected,
-      GlobalGA.ActualCoreEBlocks.eTotal,
-      GlobalGA.ActualCoreEBlocks.primaryDE,
-      GlobalGA.ActualCoreEBlocks.primaryEH,
+      ActualCoreEBlocks.eTotal,
+      ActualCoreEBlocks.primaryDE,
+      ActualCoreEBlocks.primaryEH,
       de_owner R.E.source,eh_owner R.E.source] using he
   exact reduced_nonnegative_AE_false S hqU hBT
     (by simp [GlobalGA.NegativeANormalForm.total,
@@ -153,7 +153,7 @@ theorem negative_A_nonnegative_E_positive_TD2_false
     (hBT : R.E.cycle.Feasible B 2)
     (hTD : R.E.cycle.Feasible T 2)
     (hz : 0≤delta R.A.cycle.theta T)
-    (he : 0≤GlobalGA.ActualCoreEBlocks.eTotal R.A.cycle
+    (he : 0≤ActualCoreEBlocks.eTotal R.A.cycle
       (R.E.source.owner D) (R.E.source.owner E))
     (hnegative : ¬0≤GlobalGA.NegativeANormalForm.total
       R.A.ga R.A.ab
