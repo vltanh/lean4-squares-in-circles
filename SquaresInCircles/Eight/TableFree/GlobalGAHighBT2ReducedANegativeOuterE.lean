@@ -85,14 +85,16 @@ theorem negative_A_outer_E_all_T_false
           word,delta,next,G,A,quarterFeasible,sub_nonneg] using hh
       let s := -(delta O.cycle.theta G)
       have hs : s∈Ioc 0 frameCap := by
-        have hh := hu
-        norm_num [s,frameCap] at *
-        constructor <;> linarith [hh.1,hh.2]
+        dsimp [s]
+        constructor
+        · linarith [hu.2]
+        · have hc : (1/4:ℝ)≤frameCap := by norm_num [frameCap]
+          linarith [hu.1,hc]
       have houterA : (O.cycle.point A).y≤0→(O.cycle.point A).Outer q := by
         intro hh
         linarith [hy.1]
       rcases GlobalGA.NegativeA.GA_entry (O.necessary.sorted G)
-          (O.necessary.contained G) (O.necessary.sorted A) O.radial_A
+          (O.necessary.contained G) (O.necessary.sorted A) (O.radial A)
           hqU hG houterA hs
           (by simpa [s,neg_neg] using hquarter) with hsecondary|⟨_,_,hcut,_⟩
       · apply hsec
