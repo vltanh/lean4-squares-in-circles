@@ -1,6 +1,6 @@
-# n=9 — current roadmap: universal two-load rigidity and whole four-body cyclic closure
+# n=9 — current roadmap: every two-load completion reduces to P
 
-**Checkpoint:** 2026-10-23 two-load reciprocal continuation. **The unrestricted n=9 proof is NOT finished.** A new hand theorem covers every physical positive component with exactly two circle-loaded bodies, forcing all pair forces parallel. It closes the diamond residual and therefore the **entire four-body coarse cyclic cell C1.4.b0**. Of the 58 coarse cells, two are now excluded and **56 remain open**. P.ALL, Y.ALL, larger layered-core completions, global equality and verification remain unresolved.
+**Checkpoint:** 2026-10-23 completion continuation. **The unrestricted n=9 proof is NOT finished.** The whole six-body two-load family is excluded from nine-square packings, and the whole five-body family reduces to P or has total capacity at most eight. Together with the earlier reciprocal/layer theorem, this reduces **every two-loaded nine-square completion to P.ALL**. Physical circle contact and resultant lemmas leave 3–7 noncollinear loads in any other selected component. P.ALL, Y.ALL, the remaining multi-load geometry, global equality and verification stay open. The coarse inventory remains two closed cells and 56 open.
 
 The new general arguments are hand manuscripts pending independent mathematical audit. No Lean compilation, CI or proof-completion percentage is claimed.
 
@@ -43,7 +43,9 @@ At 79/40<=R<=sqrt(Q), every such two-loaded component has:
 
 Thus every triangle-containing two-loaded component and every two-loaded component with 7–9 bodies is excluded. This is a uniform theorem across the inventory, not another narrow angle/offset subclass.
 
-**Important remaining capacity:** five- and six-body parallel components really exist and can have inner heights outside [-1/2,1/2]. They are not automatically old family P. Their complete physical additions to nine remain open.
+**Whole completion progress:** [SIX_BODY_TWO_LOAD_COMPLETION.md](SIX_BODY_TWO_LOAD_COMPLETION.md), commit 52fec6f, proves that every six-body layered core has room for at most two arbitrary extra squares. [FIVE_BODY_TWO_LOAD_REDUCTION.md](FIVE_BODY_TWO_LOAD_REDUCTION.md), commit b46db3a, proves that every five-body core either contains a genuine P skeleton or has room for at most three extras. The five-body proof derives the singleton height bound from torque and handles the doubled column outside the P interval directly. Consequently P.ALL is the only remaining two-load completion gate.
+
+The new cap-sign, diagonal-center and half-disk pair lemmas allow arbitrary orientations of every added square. [CYCLIC_GLOBAL_CONTINUATION.md](CYCLIC_GLOBAL_CONTINUATION.md) also supplies a seven-body physical boundary-contact budget, excludes triple boundary-touching junctions, and proves distinct loaded resultant directions. Thus the remaining load class is 3–7 bodies with noncollinear resultants. These are necessary restrictions, not a sharp radius certificate for that class.
 
 ## Whole coarse cell C1.4.b0 closed
 
@@ -73,15 +75,17 @@ The loaded-noncontact and simple-four-cycle results were already committed in AC
 | **C1.4.b0** | [x] NEW whole four-body cell excluded |
 | C1.3.b0 | [x] Previously excluded |
 | **P.ALL / Y.ALL** | [ ] OPEN physical capacities |
-| **Five/six-body two-loaded layered completion** | [ ] OPEN |
+| **TL.COMPLETE6** | [x] CLOSED whole family: at most two extras |
+| **TL.REDUCE5 / TL.ALL_TO_P** | [x] CLOSED whole reduction to P.ALL |
+| **CY.ARC / CY.INCIDENCE / CY.DIRECTIONS** | [x] CLOSED necessary restrictions |
 | **Remaining 56 coarse cyclic cells** | [ ] OPEN uniform sharpness |
 | G4/G5 unrestricted radius and all equality | [ ] OPEN/BLOCKED |
 | G6 full independent audit | [ ] NOT COMPLETED |
 | G7–G8 standard-kernel Lean and integration | [ ] NOT STARTED |
 
-### P.ALL and Y.ALL remain unchanged
+### P.ALL and Y.ALL remain open
 
-P fixes aligned centers (-3/2,0),(-1/2,tau1),(1/2,tau2),(3/2,0), with tau_i in [-1/2,1/2], and requires exclusion of FIVE arbitrary additional squares in D_(17/4). Only flat-row capacity is finished.
+P fixes aligned centers (-3/2,0),(-1/2,tau1),(1/2,tau2),(3/2,0), with tau_i in [-1/2,1/2], and requires exclusion of FIVE arbitrary additional squares in D_(17/4). The flat-row capacity is finished; the general staggered capacity remains open. The new half-disk pair theorem closes the close-center branch of a related half-pocket triple classification, not that full classification.
 
 Y fixes the full nonaligned side/vertex five-square fan with alpha in (0,1), theta in (0,pi/2), including its three radial terminals, and requires exclusion of FOUR arbitrary added squares. Its physical core exists. Neither new reciprocal rigidity nor quadrant capacity alone closes Y.
 
@@ -97,6 +101,6 @@ These finite checks do not prove the general packing theorem, substitute for an 
 
 ## Next proof obligation
 
-Use the new invariant to close **whole physical completion families**, not only additional graph labels: larger two-loaded layered cores, P/Y, or >=3-loaded cyclic cells. Retain every unstressed body and every actual separator/corner constraint. A coarse cell with an unresolved >=3-loaded family remains unchecked even if its two-loaded subclass is eliminated.
+Prove P.ALL, which now handles the entire two-load class, and handle the remaining 3–7-loaded noncollinear components, including Y. Retain every unstressed body and every actual separator/corner/torque constraint. A coarse cell with an unresolved multi-load family stays unchecked. The two-load reciprocal argument cannot simply be extended: with three or more noncollinear resultants the exterior force polygon may have positive area.
 
 All finished implications are committed and logged. PR #11 remains draft; the unrestricted proof remains unfinished.

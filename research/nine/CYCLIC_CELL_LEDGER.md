@@ -1,8 +1,8 @@
 # n=9 CYCLIC — 58 exhaustive coarse cells, TWO whole cells closed
 
-**Checkpoint:** 2026-10-23 two-load reciprocal continuation, read base a89802c. **Global sharp theorem remains OPEN.** The inventory is exhaustive at the **block-size / bridge-count level**, not an assertion that each cell is a single contact graph or has solved continuous geometry.
+**Checkpoint:** 2026-10-23 completion continuation. **Global sharp theorem remains OPEN.** The inventory is exhaustive at the block-size / bridge-count level; each cell retains its full continuous contact geometry.
 
-**NEW:** the entire four-body cell **C1.4.b0** is now excluded by the hand argument in FOUR_BODY_CYCLIC_CELL_CLOSED.md. The three-body cell C1.3.b0 was already excluded. Therefore **56 cells remain OPEN**. The new two-loaded-component rigidity also applies across the inventory, but does not close cells whose >=3-loaded possibilities remain unresolved.
+**Current closure:** C1.3.b0 and the entire four-body cell C1.4.b0 are excluded. Therefore **56 cells remain OPEN**. Across every cell, six-body two-load completions are now excluded and five-body two-load completions reduce to an actual P skeleton. The entire two-load class therefore reduces to P.ALL. Necessary global contact/resultant restrictions also apply to all cells, but no unresolved multi-load cell is marked closed.
 
 P.ALL and Y.ALL remain OPEN separately. All results called CLOSED hand are mathematical manuscripts pending independent full audit and Lean verification. See TWO_LOAD_PROGRESS.md for current exact source and execution provenance.
 
@@ -111,10 +111,23 @@ Source: TWO_LOAD_RECIPROCAL_RIGIDITY.md, first commit 248202d, clarified in 9fad
 - [x] **TL.PHYS:** square normal/tangent cones, empty outer circle-chord caps and common-point extreme rays justify the reciprocal hypotheses and recover every original pair normal.
 - [x] **TL.LAYER:** in the window, all two-loaded components have q=17/4 and aligned internal layers x=+/-1/2 between radial loaded endpoints x=+/-3/2.
 - [x] **TL.COUNT:** strict point-only normal selection gives 4–6 bodies, excluding all two-loaded 7–9-body subfamilies. No positive triangle occurs.
-- [ ] **TL.COMPLETE5–6:** the full physical completion capacity for the five-/six-body aligned layered survivors is not proved. Some heights are outside [-1/2,1/2]; they are not automatically the older P domain.
+- [x] **TL.COMPLETE6:** SIX_BODY_TWO_LOAD_COMPLETION.md excludes every six-body core from a nine-square completion, allowing arbitrary extra orientations.
+- [x] **TL.REDUCE5:** FIVE_BODY_TWO_LOAD_REDUCTION.md covers every five-body core: actual P containment, or at most three additional squares.
+- [x] **TL.ALL_TO_P:** every nine-square packing with a two-loaded positive component in the window contains an actual P skeleton.
+- [ ] **P.ALL / TL.COMPLETE5:** P's capacity remains open and implies the five-body completion exclusion.
 - [ ] Components with >=3 loaded bodies in the larger cells remain unresolved unless separately excluded.
 
-This is a theorem spanning all cells, not a license to tick every cell containing a two-loaded subcase. A physical two-loaded six-body theta graph and a simple six-cycle are retained as exact controls.
+These theorems span all cells without closing any cell whose multi-load realizations remain unresolved. The physical six-body theta graph and simple six-cycle remain exact feasible cores; their completion to nine is now excluded.
+
+### Global physical restrictions
+
+[CYCLIC_GLOBAL_CONTINUATION.md](CYCLIC_GLOBAL_CONTINUATION.md) proves:
+
+- [x] **CY.ARC:** at most seven physical squares touch the containing circle in the declared window; every such square occupies an inner-circle open arc longer than pi/4.
+- [x] **CY.INCIDENCE:** for R>sqrt(2), no point belongs to three circle-touching squares.
+- [x] **CY.DIRECTIONS:** distinct loaded bodies have distinct circle-resultant directions. A balanced collinear family has exactly two loaded bodies.
+
+Together with TL.ALL_TO_P, a selected component outside the P reduction has 3–7 loaded bodies and noncollinear resultants. This does not supply its sharp metric inequality. In particular C4.3333.b0 remains open: a chain of four triangles can have six loaded nonarticulation bodies and three clear articulations.
 
 ## 5. Uniform contract for EACH open cell
 

@@ -1,9 +1,9 @@
-# n=9: deep ticked roadmap — two-load rigidity, P/Y completions and 56 open cyclic cells
+# n=9: deep ticked roadmap — all two-load completions reduce to P
 
 **Branch:** `research/nine-tablefree-hand`; **PR:** #11, draft.
-**Checkpoint:** 2026-10-23 two-load reciprocal continuation, read base `a89802cd834aef3a96d9622bd4829a2c49df17fd`.
+**Checkpoint:** 2026-10-23 completion continuation; source commits are recorded in TWO_LOAD_PROGRESS.md.
 
-**The unrestricted lower bound and complete global equality classification remain OPEN.** New hand arguments prove that every physical positive component with exactly two circle-loaded bodies has parallel contact forces. In the explicit radius window it has squared radius 17/4 and at most six aligned bodies. This closes the residual diamond and hence the **whole four-body cyclic cell C1.4.b0**. Two of the 58 coarse cyclic cells are now closed; 56 remain open. P.ALL, Y.ALL and completion capacities for larger two-loaded components remain unproved. Independent full audit and Lean/CI verification are not claimed.
+**The unrestricted lower bound and complete global equality classification remain OPEN.** The six-body two-load family has total capacity at most eight, and every five-body completion either contains an actual P skeleton or has total capacity at most eight. Together with reciprocal rigidity this reduces every two-loaded nine-square completion to **P.ALL**. The remaining load class has 3–7 noncollinear circle resultants. P.ALL, Y.ALL and that multi-load completion geometry remain unproved. Two coarse cells are closed and 56 remain open. Independent whole-proof audit and Lean/CI verification are not claimed.
 
 This revision consolidates the previous deep plan; its proof sources and historical timestamps remain in Git. Checkboxes describe exact theorem scope, not a proof-completion percentage.
 
@@ -25,39 +25,16 @@ Put Q=1105/256 and q0=17/4. Construction gives R9<=sqrt(Q). The missing target i
 
 No common separating frame, row, central square or prescribed stress graph is an original hypothesis. Every stressed component is studied **with all the other physical squares**, including zero-weight contacts and other stress components.
 
-```text
-[x] G0 exact model / attainment / negative controls
-[x] G1 signed/grid/cap/row/pocket/quadrant tools, conditional
-[x] G2.C entire common-coordinate-separable theorem
-[x] G2.O3.0 minimizer -> true physical stress
-[x] G2.O3.1 physical force/torque incidence and radial bridges
- |
- +-- TREE.F1/F2 q0=17/4 and six origin-incidence profiles     [x] reduction
- |     +-- TREE.12, .03, .04 and point-only .02.P            [x] completions
- |     +-- all surviving tree configurations -> P or Y      [x] reduction
- |     +-- P.ALL staggered paths + five other squares       [ ] OPEN
- |     +-- Y.ALL side/vertex fans + four other squares      [ ] OPEN
- |
- +-- CY.BLOCK 21 profiles / 58 coarse cells                 [x] coverage only
- |     +-- CY.ACUTE loaded NONCONTACT graph connected       [x] necessary
- |     +-- CY.CHANNEL all simple four-cycles excluded       [x] prior theorem
- |     +-- CY.TWOLOAD all two-loaded pair forces parallel   [x] NEW hand
- |     |     +-- radius 17/4 and 4–6 aligned bodies         [x] reduction
- |     |     +-- five/six-body physical completions         [ ] OPEN
- |     +-- C1.3.b0 isolated selected triangle               [x] excluded
- |     +-- C1.4.b0 all C4 / diamond / K4 cases               [x] NEW excluded
- |     +-- remaining 56 coarse sharp cell theorems          [ ] OPEN
- |
- +-- CAP/QCAP every-direction necessary constraints        [x] tools
- |     +-- full physical routing/global contradiction      [ ] OPEN
- |
-[ ] G2.O4/O5 all complete physical realizations sharply bounded
-[ ] G2.X/G4 unrestricted radius theorem
-[ ] G5 every equality packing, necessity and sufficiency
-[ ] G6 independent whole-manuscript audit
-[ ] G7 standard Lean kernel / Palomar replay
-[ ] G8 public integration and final PR closure
-```
+| Proof route | Complete reduction or theorem | Remaining obligation |
+|---|---|---|
+| Model and minimizer | Exact squares, attainment, true physical force/torque certificate | Assemble the unrestricted sharp theorem |
+| Common-coordinate class | Entire class proved, including conditional equality skeleton | A common frame is not available globally |
+| Positive trees | Six profiles; closed branches removed; survivors P or Y | P.ALL and Y.ALL |
+| Exactly two loaded bodies | Parallel forces, q=17/4, 4–6 aligned bodies; six-body excluded; five-body reduces to P | P.ALL only |
+| Other loaded components | 3–7 noncollinear resultants; contact budget, incidence and noncontact rules | Uniform sharp physical completion inequality |
+| Cyclic inventory | 21 profiles and 58 coarse cells; C1.3.b0 and C1.4.b0 excluded | 56 full geometric cells, or a uniform replacement |
+| Cap, row, pocket and quadrant tools | Complete local hand implications at stated hypotheses | Apply full-square routing without assumed normalizations |
+| Final assembly | Construction and explicit dependency contracts | G4 radius, G5 equality, G6 full audit, G7 Lean, G8 integration |
 
 ### G0.W Explicit radius-window prerequisite
 
@@ -304,9 +281,20 @@ Source: TWO_LOAD_RECIPROCAL_RIGIDITY.md, initial commit 248202d, clarified 9fad2
 - [x] **TL.G5** With the selected strictly exposing point-only normals, each layer height is in (-1,1) and each layer has at most two bodies. Total component size is 4,5 or 6.
 - [x] **TL.G6** Positive triangles and all two-loaded components with 7–9 bodies are excluded. Other load cardinalities in those cells remain open.
 - [x] **TL.G.N negative controls** A six-cycle can have all inner heights +/-3/5; a six-body theta graph with seven contacts also exists. Do not identify arbitrary channels with P or declare all two-loaded graphs simple cycles.
-- [ ] **TL.COMPLETE5** Entire physical four-square completion of the five-body layered cores.
-- [ ] **TL.COMPLETE6** Entire physical three-square completion of the six-body layered cores, including theta/contact-degenerate variants.
-- [ ] The four-body survivor is exactly P, whose whole completion remains P.ALL.
+- [x] **TL.COMPLETE6** SIX_BODY_TWO_LOAD_COMPLETION.md excludes the entire three-extra completion, including theta/contact-degenerate variants, by proving at most two extras.
+- [x] **TL.REDUCE5** FIVE_BODY_TWO_LOAD_REDUCTION.md proves actual P containment or at most three extras for every five-body core.
+- [x] **TL.ALL_TO_P** Every two-loaded nine-square completion in the window contains a genuine P skeleton. Singleton heights are derived by torque; other heights are not assumed in the P interval.
+- [ ] **P.ALL / TL.COMPLETE5** P remains open; its proof also completes the five-body exclusion.
+
+#### New completion tools and global load restrictions
+
+- [x] **TL.CENTER** DIAGONAL_CENTER_EXCLUSION.md proves strict center x<1 when avoiding the right terminal, hence -1<x<1 when avoiding both.
+- [x] **TL.CAP** HALF_CAP_CENTER_SEPARATION.md gives unavoidable interior points (+/-3/7,5/4), cap capacity two, and opposite center signs for a pair.
+- [x] **TL.PAIR** HALF_DISK_CLOSE_CENTER_RIGIDITY.md classifies all half-disk pairs with horizontal center gap at most 1/2, including equality.
+- [x] **CY.ARC** CYCLIC_GLOBAL_CONTINUATION.md limits physical circle-touching bodies to seven in the declared window.
+- [x] **CY.INCIDENCE** No point belongs to three circle-touching squares when R>sqrt(2).
+- [x] **CY.DIRECTIONS** Every loaded body's resultant direction pierces its own square on the radius-5/4 circle, so distinct loaded resultants have distinct directions and a balanced collinear family has exactly two bodies.
+- [ ] **CY.MULTILOAD** The remaining 3–7-loaded noncollinear geometry, including all extra physical squares, is not sharply bounded by these necessary restrictions.
 
 ### C1.4.b0 — NEW full coarse-cell closure [CLOSED hand; audit pending]
 
@@ -348,7 +336,7 @@ Source: FOUR_BODY_CYCLIC_CELL_CLOSED.md, commit 05e15a0.
 - [x] **O3.3.T** Every remaining tree realization is in P or Y after the closed origin cases.
 - [x] **O3.3.C** Every selected cyclic component belongs to exactly one of the 58 coarse cells.
 - [x] **O3.3.L2** Every two-loaded physical component has the new exact parallel/layered geometry, across the whole graph inventory.
-- [ ] **O3.3.SHARP** Finish actual completion capacities for P, Y, larger two-loaded layers and every remaining cyclic cell with >=3-loaded possibilities.
+- [ ] **O3.3.SHARP** Finish P.ALL (now covering every two-load completion), Y.ALL and the remaining cyclic cells with 3–7 noncollinear loaded bodies, retaining all physical squares.
 - [ ] **O4.1** Obtain exact orientation-uniform stress/support/capacity inequalities, not numerical dual values at selected poses.
 - [ ] **O4.2** Preserve tangencies, zero weights and all physical completion constraints.
 - [ ] **O4.3 alternative** A global CAP/QCAP/contact-area invariant can replace the inventory if it yields the unrestricted sharp theorem.
@@ -405,10 +393,13 @@ Source: FOUR_BODY_CYCLIC_CELL_CLOSED.md, commit 05e15a0.
 
 ## Current execution contract
 
-1. Keep P.ALL/Y.ALL and larger layered-core completions OPEN until their full physical capacities are proved.
+1. Keep P.ALL/Y.ALL and the 3–7-loaded geometric completions OPEN. The six-body two-load completion is closed; the five-body case is completely reduced to P.
 2. The 58 coarse cells now have **two whole-cell exclusions and 56 open rows**. Do not confuse subfamily restrictions with parent closure.
 3. Use the reciprocal invariant to attack complete load/geometric families; do not create finer angle boxes merely to increase checked-gate counts.
 4. Preserve exact physical negative controls and every unstressed completion body.
 5. Commit finished arguments promptly and log UTC provenance, exact quantifiers, finite evidence and unchanged global blockers in TWO_LOAD_PROGRESS.md or a subsequent append-only checkpoint.
 6. If a proposed reduction fails, retain the exact witness and revise it; do not defend a false stronger normalization by shrinking the domain indefinitely.
 7. T9 remains open. All newly checked general results are hand manuscripts pending independent audit; no Lean or CI success is claimed.
+
+
+**Completion-continuation review:** the cap endpoint algebra, half-disk separating-axis proof, six-body cap coupling, singleton torque bound and five-body vertex routing received separate hand checks during this continuation. This is local review of the new implications, not a completed G6 audit of the full dependency chain. No Lean build or CI was run.

@@ -2,7 +2,7 @@
 
 **Date:** 2026-10-23 UTC. **Read base:** `a89802cd834aef3a96d9622bd4829a2c49df17fd` on PR #11. This continues QUADRANT_BLOCK_PROGRESS.md, ORIGIN_POCKET_PROGRESS.md and PROGRESS_LEDGER.md without rewriting their historical claims.
 
-**Global status:** unrestricted T9, P.ALL, Y.ALL and global equality necessity remain OPEN. A NEW universal two-loaded-component hand theorem closes the **entire** coarse cyclic cell C1.4.b0 and restricts two-loaded configurations across every other cell. Of 58 coarse cells, two are now closed and 56 remain open. These are bookkeeping counts, not proof-completion percentages. The new general arguments require independent audit; no Lean or CI was run.
+**Current global status:** unrestricted T9, P.ALL, Y.ALL and global equality necessity remain OPEN. The completion continuation below closes the entire six-body two-load capacity and reduces every five-body completion to P. Thus **P.ALL is now the only two-load completion obligation**. Global circle geometry leaves 3–7 noncollinear resultants in every remaining selected component. Of 58 coarse cyclic cells, two are closed and 56 remain open; these are bookkeeping counts, not proof-completion percentages. The full dependency chain still requires independent audit; no Lean compilation or CI was run.
 
 ## 1. Completed work and source provenance
 
@@ -71,7 +71,7 @@ The checker uses exact Fraction arithmetic and a rational polar-order comparator
 
 Independent review must check the physical junction direction order, replacement of adjacent circle atoms by an exterior port, face-potential existence for repeated faces/degenerate polygons, and recovery of pair normals from junction aggregates. These are the analytic proof's critical steps; finite regressions do not certify them generally.
 
-**Still OPEN:** P.ALL, Y.ALL, full five-/six-body parallel-core completions, all other open cyclic cells with their physical completion constraints, the explicit lower-window prerequisite in final assembly, unrestricted equality, independent full audit and Lean/integration.
+**Open at the earlier reciprocal checkpoint (superseded for five/six bodies by the continuation below):** P.ALL, Y.ALL, full five-/six-body parallel-core completions, all other open cyclic cells with their physical completion constraints, the explicit lower-window prerequisite in final assembly, unrestricted equality, independent full audit and Lean/integration.
 
 **Next completion criterion:** use the new invariant to finish whole remaining load/adjacency families or a full physical completion theorem. Do not infer that a cell with >=3-loaded possibilities is closed from the two-load result, and do not turn the 58-cell ledger into 56 independent angle-grid searches.
 
@@ -90,3 +90,31 @@ The following documentation commits synchronize all current entry points without
 | 14b926dc5c0462e9a6a938be70988130dfaedd1a | README.md: current handoff; GitHub timestamp **2026-10-23 19:47:47 UTC** |
 
 PR #11's title and body were updated after those commits, retaining **draft** status. No merge, CI, Lean build or independent mathematical audit was requested or performed. The unrestricted theorem and P/Y remain open; the finished result is one whole coarse-cell exclusion plus a general invariant spanning every two-loaded physical component. The unchanged upper-bound construction remains at Q.
+
+
+## Completion continuation: every two-load completion now reduces to P
+
+This section supersedes the earlier open five-/six-body status while preserving the historical record above.
+
+| Commit | Complete hand result |
+|---|---|
+| [e4254b1](https://github.com/vltanh/lean4-squares-in-circles/commit/e4254b118da9b8383159182892a7309dd79531d7) | At most seven physical circle-touching squares in the declared window, using open arcs longer than pi/4 on the radius-5/4 circle |
+| [52fec6f](https://github.com/vltanh/lean4-squares-in-circles/commit/52fec6f9e6258261bfe878a4d938e9473eb6cdc3) | Whole six-body two-load completion excluded: at most two arbitrary extras; includes new diagonal-center and cap-sign piercing lemmas |
+| [1d28008](https://github.com/vltanh/lean4-squares-in-circles/commit/1d2800894e2261c0c3aa805b8b2980b849575e0f) | No common point of three circle-touching unit squares for R>sqrt(2) |
+| [b46db3a](https://github.com/vltanh/lean4-squares-in-circles/commit/b46db3a27d0e8d261df4e43d9140dc07f8d91b54) | Whole five-body reduction and half-disk pair rigidity; every two-loaded nine-square completion contains actual family P |
+
+### Six-body capacity
+
+Every extra center lies between x=-1 and x=1. The doubled columns force it above or below the whole corresponding column; core barriers route it into y>=1/2 or y<=-1/2. The cap theorem gives at most two per side with opposite center signs. Two on one side force both opposite column heights beyond 1/2, excluding every extra on the other side. Hence at most two extras fit.
+
+### Five-body reduction
+
+Torque at the terminal adjacent to the singleton column forces that singleton height into [-1/2,1/2]. If a doubled-column height also lies there, an actual P skeleton is present. Otherwise the doubled heights lie strictly below -1/2 and above 1/2, forcing all added centers into the opposite open horizontal half-strip. After reflection, at most one upper extra fits by cap-sign piercing. A lower square crossing the axis would put its rightmost vertex strictly inside the lower doubled-column core, so all lower squares stay in the lower half-disk. Three there would have a close horizontal pair, forcing an excluded center on x=0. Thus this complementary branch has at most three extras.
+
+### Exact remaining frontier and review
+
+The six-cycle and theta examples are still physically valid cores; their completion to nine is excluded. Five-body cores are still valid; their completions are reduced to P. P.ALL remains open, and the proof does not turn the six-body exclusion into the closure of a coarse cell with other load counts.
+
+The global resultant-direction continuation in CYCLIC_GLOBAL_CONTINUATION.md further shows that the remaining selected components have 3–7 loaded bodies with noncollinear resultants. Their exterior force polygon can have positive area, so the two-load zero-area proof does not force parallel channels there. P.ALL, Y.ALL, the remaining multi-load metric geometry, lower-window assembly, unrestricted equality and the full audit/integration chain remain open.
+
+Separate reasoning passes checked the new cap inequalities, pair support minimum and equality, six-body coupling, singleton torque and five-body vertex routing. No numerical probe is used as a proof premise. No Lean compilation or CI was run in this continuation. These are hand proofs with local review, not a completed independent audit of the entire manuscript.

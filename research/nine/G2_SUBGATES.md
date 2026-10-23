@@ -1,8 +1,8 @@
-# n=9 — live G2 ledger: two-load rigidity, P/Y and 56 open cyclic cells
+# n=9 — live G2 ledger: all two-load completions reduce to P
 
-**Checkpoint:** 2026-10-23 two-load reciprocal continuation, read base a89802c. **The unrestricted q>=Q=1105/256 theorem is NOT proved.** The entire common-coordinate-separable class is closed by hand. Tree survivors remain P.ALL and Y.ALL. The cyclic coarse inventory has 58 cells: C1.3.b0 and the NEW C1.4.b0 are closed in the explicit radius window; **56 cells remain open**.
+**Checkpoint:** 2026-10-23 completion continuation. **The unrestricted q>=Q=1105/256 theorem is NOT proved.** The whole six-body two-load completion is closed; the whole five-body completion reduces to P or has total capacity eight. Therefore every two-loaded nine-square completion reduces to P.ALL. Tree survivors remain P.ALL and Y.ALL. The coarse cyclic inventory still has two closed cells and 56 open.
 
-The new theorem applies to EVERY physical positive component with exactly two circle-loaded bodies, not merely a sampled graph: its contact forces are parallel. In the research window its radius is 17/4 and its bodies occupy aligned layers, with at most six bodies for the selected strictly exposing point-contact certificate. Larger layered-core completion capacities are not thereby solved.
+The reciprocal theorem applies to every physical positive component with exactly two loaded bodies, forcing parallel forces and 4–6 aligned bodies at q=17/4 in the declared window. The completion theorems now remove the six-body case and reduce the five-body case to a genuine P skeleton. Global physical geometry limits any other selected component to 3–7 loaded bodies with noncollinear resultants; it does not close that metric completion problem.
 
 **Verification level:** written hand arguments pending independent full audit and Lean verification. Finite exact regressions are not a universal proof. Historical ledger versions remain in Git. The current canonical contracts are DEEP_GATED_ROADMAP.md and CYCLIC_CELL_LEDGER.md; current progress/evidence is TWO_LOAD_PROGRESS.md.
 
@@ -25,7 +25,9 @@ The new theorem applies to EVERY physical positive component with exactly two ci
 | **C1.4.b0** | Every C4, diamond or K4 selected four-body component | [x] NEW CLOSED whole cell |
 | C1.3.b0 | Isolated selected triangle | [x] Previously CLOSED |
 | Other 56 cyclic cells | All graphs, >=3-loaded possibilities and remaining physical squares | [ ] OPEN sharpness |
-| TL.COMPLETE5–6 | Full physical completion of five/six-body parallel survivors | [ ] OPEN |
+| TL.COMPLETE6 | Full physical completion of six-body parallel survivors | [x] CLOSED: at most two extras |
+| TL.REDUCE5 / TL.ALL_TO_P | Five-body reduction and the whole two-load class | [x] CLOSED reduction to P.ALL |
+| CY.ARC / CY.INCIDENCE / CY.DIRECTIONS | Physical circle-contact budget, junctions and load directions | [x] CLOSED necessary restrictions |
 | G2.X / G4 / G5.U | Unrestricted lower bound and all equality packings | [ ] OPEN/BLOCKED |
 | G6–G8 | Independent audit, standard-kernel Lean and integration | [ ] NOT COMPLETED |
 
@@ -83,7 +85,7 @@ Sources: CYCLIC_BLOCK_INVENTORY.md, ACUTE_LOADED_CONTACT_GRAPH.md, PARALLEL_TRAN
 - [x] **CY.A3:** loaded physical NONCONTACT graph is connected, by total circle force zero. Actual zero-stress touching counts as contact.
 - [x] **CH.1–2:** unloaded degree-two paths are normal minimum-distance channels; parallel graph paths between the same endpoints have the same direction/reserve.
 - [x] **CH.3:** a degree-two unloaded body's neighbors cannot physically touch.
-- [x] **CH.4:** two-loaded simple cycles in the window have six aligned bodies and q=17/4; their completion was not excluded.
+- [x] **CH.4:** two-loaded simple cycles in the window have six aligned bodies and q=17/4. Their completion to nine is now excluded by SIX_BODY_TWO_LOAD_COMPLETION.md.
 - [x] **CH.C4:** all simple four-cycle load cardinalities are impossible.
 
 ## 5. NEW CY.TWOLOAD: entire two-loaded cardinality class
@@ -109,9 +111,12 @@ Source: TWO_LOAD_RECIPROCAL_RIGIDITY.md, initial 248202d and clarified 9fad28e. 
 - [x] Comparing exact path reserves with endpoint support gaps in the radius window gives **q=17/4**, both loaded centers at (+/-3/2,0), every internal body aligned in x=+/-1/2, and exactly two internal bodies per directed path.
 - [x] Strictly exposing point-only normal selection gives layer heights in (-1,1), at most two bodies per layer and total size **4,5 or 6**.
 - [x] Positive triangles and all two-loaded 7–9-body components are excluded.
-- [ ] **TL.COMPLETE5 / TL.COMPLETE6:** whole physical completion bounds remain OPEN. Individual inner heights can be outside [-1/2,1/2], so no false automatic reduction to P.
+- [x] **TL.COMPLETE6:** SIX_BODY_TWO_LOAD_COMPLETION.md proves at most two arbitrary extras for the entire six-body layer family.
+- [x] **TL.REDUCE5:** FIVE_BODY_TWO_LOAD_REDUCTION.md proves actual P containment or at most three extras across the full five-body domain.
+- [x] **TL.ALL_TO_P:** every two-loaded nine-square completion in the window contains an actual P skeleton.
+- [ ] **P.ALL / TL.COMPLETE5:** the remaining P capacity, which also implies the five-body completion, is still open.
 
-**Exact controls:** a six-cycle has heights +/-3/5; a six-body theta graph has seven positive contacts; a five-body bridge-plus-cycle exists. A three-loaded nonaligned Y has nonzero reciprocal area and nonparallel forces. These are retained, not declared infeasible.
+**Exact controls:** a six-cycle has heights +/-3/5; a six-body theta graph has seven positive contacts; a five-body bridge-plus-cycle exists. A three-loaded nonaligned Y has nonzero reciprocal area and nonparallel forces. The six-body cores remain feasible, but their completion to nine is excluded; five-body cores reduce as above. Y remains a separate three-load problem.
 
 ## 6. Whole coarse cell C1.4.b0 CLOSED
 
@@ -136,7 +141,7 @@ CYCLIC_CELL_LEDGER.md retains all 58 individual rows and their complete physical
 - [ ] Prove a uniform sharp inequality or whole selected-component exclusion over all continuous positions/angles.
 - [ ] Preserve all q=Q equality/zero-weight limits needed by the eventual theorem.
 
-**O3.3.SHARP / O4 / O5 remain OPEN:** coarse graph coverage and two-load parallelism do not finish physical capacities. P.ALL, Y.ALL, larger two-loaded completion families and >=3-loaded cyclic configurations remain genuine mathematical obligations. A common global invariant is preferable to 56 separate angle-grid searches.
+**O3.3.SHARP / O4 / O5 remain OPEN:** P.ALL now covers every two-loaded completion. Y.ALL and the remaining 3–7-loaded noncollinear cyclic configurations still require their full physical capacity inequalities. The five-body reduction and six-body exclusion have no further independent completion obligation. A uniform global argument is preferable to 56 separate angle-grid searches.
 
 **G2.X/G4:** only after complete sharp coverage and the explicit lower-window prerequisite can minimizer attainment exclude q<Q. **G5.U:** all unrestricted equality packings still need necessity/converse. **G6–G8:** independent full audit, standard-kernel Lean and integration are not done.
 

@@ -1,10 +1,14 @@
-# n=9: a uniform angular budget for every circle-touching square
+# n=9: global circle-contact, incidence and resultant restrictions
 
-**Status:** complete hand necessary-condition argument, pending independent
-review. This does **not** close the unrestricted nine-square lower bound or
-any remaining whole coarse cyclic cell. It excludes every physical packing
-with eight or more circle-touching squares in the declared radius window,
-regardless of stress choice, contact graph, or individual orientations.
+**Status:** complete hand necessary-condition arguments, with local review
+and whole-manuscript audit still pending. These results do **not** close
+the unrestricted nine-square lower bound or any remaining whole coarse
+cyclic cell. The angular budget excludes eight physical circle contacts
+in the declared window; Section 7 excludes triple circle-touching junctions
+for every R>sqrt(2); Section 8 proves distinct loaded resultant directions.
+Consequently every remaining component with more than two loaded bodies
+has 3–7 loaded bodies and noncollinear resultants. No Lean compilation or
+CI has been run.
 
 Read base: PR #11, `6b235bda64b1064a89835eeef8b18634e213a061`.
 The circle center is zero and
@@ -409,3 +413,103 @@ contact junction. These conclusions impose no unjustified planarity
 claim on the body-pair graph, and do not close a remaining whole coarse
 cyclic cell. In particular, the six- and seven-loaded arrangements
 left in `C4.3333.b0` still need a separate argument.
+
+## 8. Every circle-load resultant pierces its own inner arc
+
+Return to the declared window
+
+\[
+                 79/40\le R\le\sqrt{1105}/16,
+                 \qquad r=5/4.
+\]
+
+**Theorem D.** Let `T` be a unit square contained in the disk of radius
+`R`, and let
+
+\[
+                         m=\sum_j\lambda_j z_j,
+                         \qquad \lambda_j>0,
+\]
+
+be a nonempty positive weighted sum of its corners on the containing
+circle. Then `m` is nonzero and
+
+\[
+                            r\frac{m}{|m|}\in\operatorname{int}T.
+\tag{17}
+\]
+
+Thus the direction of every positive circle-load resultant lies in its
+square's open intersection with the same inner circle used in Theorem A.
+
+**Proof.** The bounds already used above give `r<R`, `R-r<1`, and
+`sqrt(R^2-1/4)>r`. A square in this window can have only one circle
+corner or two adjacent circle corners. Indeed, in the own frame of
+Section 2, opposite circle corners would give `a+b=1`; together with
+`a,b>=1/2`, this would force `R^2=1/2`. Three or more circle corners
+would include such an opposite pair.
+
+If the positive weights are all supported at one corner, write that
+corner as `z=(a,b)` and the square as `[a-1,a]` times `[b-1,b]`, with
+`a,b>=1/2`. Then `m` is a positive multiple of `z`. The inward amounts
+from `z` to the point `(r/R)z` are
+
+\[
+           0<(1-r/R)a\le R-r<1,
+           \qquad 0<(1-r/R)b\le R-r<1.
+\]
+
+Both own coordinates are therefore strictly between the corresponding
+square faces, proving `(17)`.
+
+Otherwise the weights are supported at two adjacent circle corners.
+Choose the square's frame so that
+
+\[
+       T=[a-1,a]\times[-1/2,1/2],\qquad
+       a=\sqrt{R^2-1/4}>r.
+\]
+
+After division by the positive total weight, the resultant is
+`(a,beta)`, with `|beta|<=1/2`. In particular it is nonzero. The point
+in `(17)` has coordinates
+
+\[
+                 X=\frac{ra}{\sqrt{a^2+\beta^2}},
+                 \qquad
+                 Y=\frac{r\beta}{\sqrt{a^2+\beta^2}}.
+\]
+
+They satisfy
+
+\[
+ X\ge\frac{ra}{R}>a-1,
+ \qquad X\le r<a,
+ \qquad |Y|\le\frac{r}{2a}<\frac12.
+\]
+
+The strict lower bound for `X` follows from
+`a(1-r/R)<=R-r<1`. This again puts the point strictly inside all four
+faces and proves the theorem. \(\square\)
+
+**Corollary E.** Distinct circle-loaded bodies in a physical packing
+have distinct directions of their circle-load resultants. In particular,
+two such resultants cannot be positive multiples of one another.
+
+Otherwise `(17)` would put the same inner-circle point in both open
+square interiors. This is impossible by physical nonoverlap.
+
+**Corollary F.** If the circle-load resultants of a nonempty balanced
+positive stress component are all collinear, that component has exactly
+two loaded bodies.
+
+Every loaded resultant is nonzero by Theorem D. Corollary E allows at
+most one on each of the two directions of a line. Their sum is zero by
+force balance for the component, so both directions occur. Thus exactly
+two bodies are loaded, as claimed.
+
+Consequently every component with three or more loaded bodies in this
+window has noncollinear circle-load resultants. Together with Corollary B,
+the remaining multi-load class has between three and seven such bodies.
+This is a uniform structural restriction, not a radius certificate for
+that remaining class and not a closure of a further coarse cyclic cell.

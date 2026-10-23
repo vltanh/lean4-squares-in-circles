@@ -3,7 +3,7 @@
 **Branch:** `research/nine-tablefree-hand` · **PR:** #11, draft.
 **Target:** unrestricted sharp squared radius Q=1105/256 and all attaining packings. The construction attains Q; **the unrestricted matching lower bound and complete equality necessity remain OPEN**.
 
-**Latest continuation, 2026-10-23:** a new hand theorem proves parallel contact forces in **every physical positive component with exactly two circle-loaded bodies**, including cyclic/branching components. It closes the diamond residual and the **entire four-body cyclic coarse cell C1.4.b0**. Two of the 58 coarse cyclic cells are now closed, 56 remain open. P.ALL, Y.ALL and larger two-loaded completion capacities are still open. Independent full audit, Lean compilation and CI are not claimed.
+**Latest continuation, 2026-10-23:** the whole six-body two-load completion is excluded, and the whole five-body family reduces to an actual four-square P skeleton or has total capacity at most eight. Therefore **P.ALL is the only remaining two-load completion obligation**. New global hand lemmas limit physical circle-touching squares to seven, exclude a triple junction of circle-touching squares, and make distinct loaded resultants have distinct directions. A remaining component outside the P reduction has **3–7 loaded bodies with noncollinear resultants**. The unrestricted lower bound and equality classification remain OPEN. The coarse cyclic count is unchanged: two cells closed, 56 open. No Lean compilation or CI has been run.
 
 ## Start here
 
@@ -32,7 +32,14 @@ In the explicit window 79/40<=R<=sqrt(Q), two-loaded components have **q=17/4**.
 
 With the selected strictly exposing normal at point-only vertex/vertex contacts, the layer heights lie in (-1,1); each layer has at most two bodies. Thus there are **four, five or six bodies** in the component. All positive triangles and all two-loaded 7–9-body components are excluded.
 
-**Limit:** a five-/six-body parallel component can have inner heights outside [-1/2,1/2], so it is not automatically a family-P skeleton. The exact six-cycle at heights +/-3/5 and a six-body theta graph are retained controls. Full physical completions of these layered cores remain open.
+**Completion update:** the genuinely staggered six-cycle and theta cores remain valid physical examples, but [SIX_BODY_TWO_LOAD_COMPLETION.md](SIX_BODY_TWO_LOAD_COMPLETION.md), commit 52fec6f, proves that no such six-body core can be completed to nine. [FIVE_BODY_TWO_LOAD_REDUCTION.md](FIVE_BODY_TWO_LOAD_REDUCTION.md), commit b46db3a, proves that every five-body completion either contains an actual P skeleton or has at most eight squares in total. The reduction retains heights outside the old P slider range rather than assuming them away.
+
+## New completion and global geometry tools
+
+- [DIAGONAL_CENTER_EXCLUSION.md](DIAGONAL_CENTER_EXCLUSION.md): a square avoiding the right radial terminal has center x<1; avoiding both terminals gives -1<x<1.
+- [HALF_CAP_CENTER_SEPARATION.md](HALF_CAP_CENTER_SEPARATION.md): in the cap y>=1/2 of D_(17/4), center sign determines an unavoidable interior point (+/-3/7,5/4). At most two squares fit, with strictly opposite center signs.
+- [HALF_DISK_CLOSE_CENTER_RIGIDITY.md](HALF_DISK_CLOSE_CENTER_RIGIDITY.md): two squares in a half-disk whose horizontal centers differ by at most 1/2 must be the aligned north terminal and an aligned lower neighbor.
+- [CYCLIC_GLOBAL_CONTINUATION.md](CYCLIC_GLOBAL_CONTINUATION.md): seven physical circle contacts at most, no triple boundary-touching junction, and distinct circle-resultant directions. These necessary restrictions retain every remaining square and do not close the 56 remaining coarse cells.
 
 ## New entire coarse cell closure: C1.4.b0
 
@@ -70,7 +77,7 @@ The previous tree theorem, in the declared lower-radius window, forces q=17/4 an
 
 **Y.ALL, OPEN:** the whole side/vertex five-body fan with alpha in (0,1), theta in (0,pi/2), three radial terminals and FOUR arbitrary additional squares. The nonaligned core is feasible; the missing theorem is its completion capacity.
 
-Do not assert separate two-per-side capacities for P or use only center/inscribed-disk relaxation: exact false-relaxation witnesses are already committed. The new two-load theorem does not solve P's completion and does not apply to Y's three-loaded core.
+Do not assert separate two-per-side capacities for P or use only center/inscribed-disk relaxation: exact false-relaxation witnesses are already committed. The whole two-load class now reduces to P, whose completion remains open; it does not include Y's three-loaded core.
 
 ## Prior tools and their scope
 
@@ -86,7 +93,7 @@ Mandatory equality controls remain NO_GLOBAL_ORTHOGONAL_FRAME.md, NONSTRATIFIED_
 ## Exact remaining proof obligations
 
 1. Prove whole-family P.ALL and Y.ALL capacities, or one invariant covering both.
-2. Prove full completions for the five-/six-body parallel two-loaded survivors, and sharp inequalities for all remaining >=3-loaded cyclic cells or a uniform global replacement.
+2. Prove sharp inequalities for the remaining components with 3–7 loaded bodies and noncollinear resultants, including their physical completion squares, or supply a uniform global replacement. The five-body reduction and six-body completion create no further independent obligation beyond P.ALL.
 3. Retain the explicit 79/40 lower-window import from n=8 or prove it independently; do not advertise a standalone table-free dependency chain before this is resolved.
 4. Assemble unrestricted optimality, all equality necessity/converse, independent whole-proof audit, standard-kernel Lean and public integration.
 
