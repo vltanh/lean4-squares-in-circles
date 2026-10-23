@@ -1,6 +1,9 @@
 # Nine unit squares in a circle — research index and handoff
 
-**Research branch:** research/nine-tablefree-hand, draft PR #11.
+**Research branch:** `research/nine-tablefree-hand`, draft PR #11.
+**Canonical roadmap:** [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md).
+**Live proof-status ledger:** [G2_SUBGATES.md](G2_SUBGATES.md).
+**Short status:** [ROADMAP.md](ROADMAP.md).
 **Status (2026-10-22):** sharp table-free hand proofs are complete for
 the four-anchor long/short terminal inequality, the **new four-corner
 grid stress**, the independently rotated 4-versus-3 pattern, and
@@ -16,7 +19,14 @@ The record construction has squared radius
 We have proved that this radius is **attained**. The universal
 inequality \(R_9\ge R_*\) is not yet proved.
 
-## New exact C3.3 counterexample and larger equality family
+## Latest exact C3.3 progress: two-stack normal form, equality witness and conditional family
+
+- **[TWO_COLUMN_COMPLEMENT_REDUCTION.md](TWO_COLUMN_COMPLEMENT_REDUCTION.md):**
+  the *completed* combinatorial reduction of the five-square complement
+  to two canonical vertical stacks of cardinalities `(4,1)` or `(3,2)`.
+  A vertical triple's middle center has `|y| < 21/40`, forcing one
+  inner four-chain center to have `|y| > 19/40`. Only the **sharp
+  terminal inequality covering the entire complement** remains open.
 
 - **[NONSTRATIFIED_PARALLEL_NINE.md](NONSTRATIFIED_PARALLEL_NINE.md):**
   the exact two-stack equality witness has **no horizontal
@@ -97,9 +107,11 @@ the record radius.
 ## Latest subgate closure: global-frame obstruction and four-chain shadow
 
 - **[G2_SUBGATES.md](G2_SUBGATES.md)** is the detailed finite
-  branch ledger. The remaining core is G2.C4.3 (coherent-side
-  four-chain completion) and
-  G2.O2/O3 (unrestricted oblique-separator normalization).
+  branch ledger. The two genuinely open mathematical targets are
+  **G2.C4.3c.3** (sharp whole-class stress for the `(4,1)` and `(3,2)`
+  two-stack complement) and **G2.O3–O5** (arbitrary oblique separator
+  graph coverage and uniform stresses). The two-stack rank decomposition,
+  middle-height bound, and large-zigzag exclusion are already closed.
 - **[NO_GLOBAL_ORTHOGONAL_FRAME.md](NO_GLOBAL_ORTHOGONAL_FRAME.md)**
   constructs nine exact unit squares at q=1105/256 with seven
   rigid anchors and two freely rotated top squares. The pair
@@ -134,8 +146,9 @@ the record radius.
   a four-chain with a vertical zigzag ≥2 cannot coexist
   with a perpendicular four-chain. The entire zigzag branch
   therefore has rank sizes exactly (4,3), not an unbounded
-  succession of cases. Filling the remaining three missing
-  rank cells is still an open structural counting problem.
+  succession of cases. **The entire large-zigzag branch was subsequently
+  excluded** by [ZIGZAG_BRANCH_CLOSED.md](ZIGZAG_BRANCH_CLOSED.md);
+  the old 4×3 intermediate classification is not a live blocker.
 - **[FOUR_CHAIN_SHADOW_BARRIER.md](FOUR_CHAIN_SHADOW_BARRIER.md)**
   proves an exact structural lemma for any four-square
   projection-separated chain: its four projection intervals
@@ -158,10 +171,10 @@ No Lean, CI, or full independent audit is claimed.
 
 ## Reading order
 
-1. [ROADMAP.md](ROADMAP.md): G0–G8 gated roadmap, complete dependency
-   and closure criteria. G1 is closed by a hand proof, G2 remains
-   the dominant open geometric normalization task; G3's stratified
-   branch is closed but nonstratified branches are not.
+1. [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md): authoritative
+   G0–G8 gated roadmap with theorem-level subgates and subsubgates.
+   [ROADMAP.md](ROADMAP.md) is the concise, current status summary,
+   and [G2_SUBGATES.md](G2_SUBGATES.md) is the live technical ledger.
 2. [ORTHOGONAL_RANK_DICHOTOMY.md](ORTHOGONAL_RANK_DICHOTOMY.md):
    a full combinatorial rank injection for any nine independently
    rotated squares whose pairwise separation is witnessed by one
@@ -266,7 +279,7 @@ or seven parallel squares: those are stronger unjustified
 hypotheses, and some fail for known exact examples.
 
 Use the three exhaustive origin-incidence branches of
-ROADMAP.md/G2: interior of a square; boundary but no
+DEEP_GATED_ROADMAP.md/G2.P: interior of a square; boundary but no
 interior; outside all closed squares. The equality record
 is in the **boundary** branch, not in the interior branch.
 
@@ -278,26 +291,21 @@ a human-checkable proof.
 
 ## Next concrete task
 
-Complete G2.C4.3, the **coherent-side** common-coordinate-separable
-four-chain branch. Large zigzags have now been eliminated.
-Then address the unrestricted oblique-separator classification.
-Second handle the **oblique-separator branch**, in which no
-single perpendicular frame separates all square pairs; a
-coordinate rank injection cannot be used there.
+**Coordinate branch:** close G2.C3.3.b–c (equivalently
+G2.C4.3c.3) with a whole-class **sharp** frame-switch or alternate
+stress covering both `(4,1)` and `(3,2)` vertical-stack complements.
+Do not re-prove their finished two-stack classification, and do not
+exclude the whole `(3,2)` class: the exact q=Q witness realizes it.
 
-Attack the **four-anchor extraction** under the central-seam
-case G2.2, not the more demanding extraction of seven
-common-frame anchors. The inner squares can be used only
-to certify the two horizontal spans, and need not be
-classified individually if a global combinatorial/geometric
-span lemma can establish those inequalities.
+**Unrestricted branch:** close G2.O3's human-sized exhaustive
+geometric SAT separator-graph classification and G2.O4's
+orientation-uniform stress certificate, then G2.O5/G2.X.
+A common orthogonal separating frame is false even at equality.
 
-Parallel tracks: the central-open-square branch G2.1
-and the fully exterior branch G2.3 may require
-different angular/dual-support obstructions.
-Record exact counterexamples if a proposed global
-normalization is false, rather than growing thousands
-of rational cases.
+Only then complete G4 unrestricted optimality, G5 unrestricted
+equality, G6 independent audit, and G7–G8 Lean/registry integration.
+Keep exact counterexamples and do not proliferate arbitrary
+small-angle or height-window subcases.
 
 **Verification scope:** mathematical hand proofs and small
 exploratory numerical checks, without an independent
