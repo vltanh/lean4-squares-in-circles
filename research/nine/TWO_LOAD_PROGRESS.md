@@ -278,3 +278,20 @@ Reconciled the live PR head `f353540845b94fcc7e41e29f8eccf4fffd951af3` against t
 The first active mathematical target is triangle-plus-leaf completion. The aligned S articulation has a full shared-side slider interval, which is not covered by the zero-tilt limits of its two tilted-vertex formulas. This boundary case is retained explicitly. The D branch retains the whole strict slider interval and its selected-normal endpoint explanation. Both require a joint capacity at most four in the two residual regions, not an assumed two-per-region bound.
 
 This commit changes proof planning and status only. It does not close C1.3.b1, C7 completion, any additional coarse cell, T9 or equality. Counts remain two closed and 56 open. Separate agents are working on the entire D branch, entire S branch and entire positive C7 capacity. No Lean compilation or CI was run.
+
+
+## October 23, 2026 — first ordered closures after deep-roadmap commit d1be168
+
+TRIANGLE_LEAF_CORE_REDUCTION.md completes G3.M4.0: exactly three loaded bodies, closed physical noncontacts from the leaf to the two triangle tips, the full force/common-moment system, the acute westward load cone, exhaustive D/S articulation formulas, and routing of every extra into two residual regions. The common triple-junction case is treated as an actual three-port tree, not an artificial triangular hole. A separate independent hand audit passed.
+
+S_LEAF_TRIANGLE_EXCLUSION.md closes the entire S-leaf branch G3.M4.S, including all aligned heights and both tilted families. After a whole-packing reflection the articulation satisfies x+y>=d-3/2. Exact radius comparisons exclude the closed 90-degree circle arc with endpoint directions(-7,3)/sqrt(58) and(-3,-7)/sqrt(58) from every neighbor's circle corners. The positive circle corners of the touching B/C pair are pairwise acute and have a negative horizontal weighted sum. They must lie on both sides of the forbidden arc, contradicting acuteness. Both root and separate independent audits passed. No completion capacity assumption is needed because the entire stressed core is impossible.
+
+BOUNDARY_SEVEN_CYCLE_CENTER_DIAMETER.md closes G3.B.R.DIAM.2 for all physical boundary C7 rings, without a stress premise. Exact shadow bounds and a common containing disk for all possible distant endpoint sectors show every three-contact path has endpoint distance<3; shorter paths are immediate. Root and separate independent audits passed. The enclosing-two=>diameter>=3 extraction remains open and is not inferred from far-vertex projections.
+
+- [x] G3.M4.0 / C1.3.b1.REDUCE.
+- [x] G3.M4.S, including S0 and S+/S-.
+- [x] G3.B.R.DIAM.2.
+- [ ] G3.M4.D and C1.3.b1.ALL remain open.
+- [ ] G3.B.CAP, remaining mixed cells, T9 and full equality remain open.
+
+The six files in roadmap commit d1be168 were read back from GitHub and matched exactly. No Lean compilation or CI was run. The coarse inventory still has two whole cells closed and 56 open.

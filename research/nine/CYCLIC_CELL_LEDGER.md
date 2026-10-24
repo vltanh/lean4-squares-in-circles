@@ -121,12 +121,12 @@ Each OPEN row quantifies over all block adjacencies, articulation arrangements, 
 
 ## Active first open cell: C1.3.b1
 
-The full execution contract is **G3.M4** in [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md): assemble the triangle-plus-leaf load/pose/routing reduction, prove the entire D-leaf branch and the entire S-leaf branch, then assemble their common parent. S includes the full aligned shared-side slider interval and both tilted-vertex branches. The required bound is jointly at most four extras in the two remaining articulation/leaf regions. The inner triangular hole and touching-boundary-pair pocket are already empty, but this does not close the parent cell.
+The S branch and full core/routing reduction are now closed; only D remains. The full execution contract is **G3.M4** in [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md): assemble the triangle-plus-leaf load/pose/routing reduction, prove the entire D-leaf branch and the entire S-leaf branch, then assemble their common parent. S includes the full aligned shared-side slider interval and both tilted-vertex branches. The required bound is jointly at most four extras in the two remaining articulation/leaf regions. The inner triangular hole and touching-boundary-pair pocket are already empty, but this does not close the parent cell.
 
-- [ ] **C1.3.b1.REDUCE** Complete core and completion-region cover.
+- [x] **C1.3.b1.REDUCE** Complete core and completion-region cover, including a common three-body junction; TRIANGLE_LEAF_CORE_REDUCTION.md.
 - [ ] **C1.3.b1.D** Full D-leaf capacity or radius-window exclusion.
-- [ ] **C1.3.b1.S0** Full aligned S-leaf slider branch.
-- [ ] **C1.3.b1.S+ / S-** Both complete tilted-vertex S branches and endpoint assembly.
+- [x] **C1.3.b1.S0** Full aligned S-leaf slider branch excluded; S_LEAF_TRIANGLE_EXCLUSION.md.
+- [x] **C1.3.b1.S+ / S-** Both complete tilted-vertex S branches and all endpoints excluded by the same theorem.
 - [ ] **C1.3.b1.ALL** All branches, all actual contacts and all five extra squares; only then tick the row above.
 
 The fine semantic contract for every other open row is G3.M.F / G3.M.C. Its finite labels retain continuous positions, frames and weights; no pose discretization is a proof premise.
@@ -175,7 +175,8 @@ Together with TL.COMPLETE and TREE.ALL, every surviving selected component is cy
 - [x] **CY.BOUNDARY:** complete boundary graph and positive-component reduction, allowing zero circle multipliers on some circle-touching bodies.
 - [x] **CY.C7.POLYGON:** C7_FORCE_POLYGON.md constructs the convex polygon of force-line concurrence points, without regularity or a common frame.
 - [x] **CY.C7.LOCALIZE:** C7_COMPLETION_LOCALIZATION.md excludes every exterior pocket and contains each completion square in that polygon.
-- [ ] **CY.C7.COMPLETE:** exclude two arbitrary circle-clear extras inside that polygon, retaining the actual seven square obstacles.
+- [x] **CY.C7.DIAMETER:** BOUNDARY_SEVEN_CYCLE_CENTER_DIAMETER.md proves center diameter<3 for every physical boundary C7.
+- [ ] **CY.C7.COMPLETE:** exclude two arbitrary circle-clear extras inside that polygon, retaining the actual seven square obstacles. The proposed enclosing-two=>diameter>=3 extraction remains open.
 - [ ] **CY.MIXED.COMPLETE:** all remaining components containing a circle-clear body.
 
 The exact regular C7 below Q is feasible and has one completion slot; it does not close C1.7.b0, whose other graphs/load choices and nonregular seven-cycles remain covered by the open row. Likewise, excluding all-boundary five-/six-body components does not close their coarse cells with circle-clear bodies. **All 56 open rows remain unchecked.**

@@ -6,6 +6,16 @@ The reciprocal theorem applies to every physical positive component with exactly
 
 **Verification level:** written hand arguments pending independent full audit and Lean verification. Finite exact regressions are not a universal proof. Historical ledger versions remain in Git. The current canonical contracts are DEEP_GATED_ROADMAP.md and CYCLIC_CELL_LEDGER.md; current progress/evidence is TWO_LOAD_PROGRESS.md.
 
+## New completed subgates: full triangle-plus-leaf reduction, entire S branch, and C7 center diameter
+
+[TRIANGLE_LEAF_CORE_REDUCTION.md](TRIANGLE_LEAF_CORE_REDUCTION.md) closes **G3.M4.0**: exactly three loads, the full S/D articulation cover, exact cycle moments, and all-extra routing into two residual regions. The routing includes a common three-body contact junction without inventing a triangular hole.
+
+[S_LEAF_TRIANGLE_EXCLUSION.md](S_LEAF_TRIANGLE_EXCLUSION.md) closes **G3.M4.S** in full. A closed 90-degree inaccessible circle arc and the acute positive-circle-load cone exclude the stressed S core itself, covering every aligned slider height, both tilted branches and all positive corner-weight masks. **Only D remains in C1.3.b1.**
+
+[BOUNDARY_SEVEN_CYCLE_CENTER_DIAMETER.md](BOUNDARY_SEVEN_CYCLE_CENTER_DIAMETER.md) closes **G3.B.R.DIAM.2**: every physical boundary C7 has center diameter strictly below 3, with no stress or regularity premise. The separate extraction from two enclosed units to diameter at least 3 remains unproved.
+
+All three arguments have separate hand audits. These subgates do not yet close C1.3.b1 or general C7 capacity. The coarse count stays two closed and 56 open; no Lean compilation or CI was run.
+
 ## Current ordered continuation — October 23, 2026, America/Chicago
 
 The roadmap has been reconciled through `f353540` and expanded into the full **G3 execution tree** in [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md). First assemble the entire four-body triangle-plus-leaf reduction, then close its full D-leaf and S-leaf branches, then its parent cell. The S branch explicitly retains the aligned shared-side slider interval as well as both tilted-vertex branches. The general positive C7 two-square capacity is pursued as a parallel whole branch. The remaining mixed cells then follow in increasing component size.

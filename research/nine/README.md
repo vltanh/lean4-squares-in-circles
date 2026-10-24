@@ -5,6 +5,16 @@
 
 **Latest continuation, 2026-10-24:** **The unrestricted lower bound and complete equality classification remain OPEN.** P_ALL_COMPLETION.md and Y_ALL_COMPLETION.md now close the full P and Y families. Together with the exhaustive tree reduction, every selected positive tree component is excluded from a nine-square packing in the declared radius window. P also completes the five-/six-body reduction, excluding every selected positive component with exactly two circle-loaded bodies, including cyclic components. The certificate can now be selected with exactly one positive component and a planar body graph; its 4–9 bodies form a cyclic component with 3–7 noncollinear circle resultants. Every other physical square has zero stress and remains a completion obstacle. The remaining geometric obligations are the general boundary-only C7 completion and mixed components containing a circle-clear body. Two coarse cells remain closed and 56 open. No Lean compilation or CI has been run.
 
+## New completed subgates: full triangle-plus-leaf reduction, entire S branch, and C7 center diameter
+
+[TRIANGLE_LEAF_CORE_REDUCTION.md](TRIANGLE_LEAF_CORE_REDUCTION.md) closes **G3.M4.0**: exactly three loads, the full S/D articulation cover, exact cycle moments, and all-extra routing into two residual regions. The routing includes a common three-body contact junction without inventing a triangular hole.
+
+[S_LEAF_TRIANGLE_EXCLUSION.md](S_LEAF_TRIANGLE_EXCLUSION.md) closes **G3.M4.S** in full. A closed 90-degree inaccessible circle arc and the acute positive-circle-load cone exclude the stressed S core itself, covering every aligned slider height, both tilted branches and all positive corner-weight masks. **Only D remains in C1.3.b1.**
+
+[BOUNDARY_SEVEN_CYCLE_CENTER_DIAMETER.md](BOUNDARY_SEVEN_CYCLE_CENTER_DIAMETER.md) closes **G3.B.R.DIAM.2**: every physical boundary C7 has center diameter strictly below 3, with no stress or regularity premise. The separate extraction from two enclosed units to diameter at least 3 remains unproved.
+
+All three arguments have separate hand audits. These subgates do not yet close C1.3.b1 or general C7 capacity. The coarse count stays two closed and 56 open; no Lean compilation or CI was run.
+
 ## Current ordered continuation — October 23, 2026, America/Chicago
 
 The roadmap has been reconciled through `f353540` and expanded into the full **G3 execution tree** in [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md). First assemble the entire four-body triangle-plus-leaf reduction, then close its full D-leaf and S-leaf branches, then its parent cell. The S branch explicitly retains the aligned shared-side slider interval as well as both tilted-vertex branches. The general positive C7 two-square capacity is pursued as a parallel whole branch. The remaining mixed cells then follow in increasing component size.

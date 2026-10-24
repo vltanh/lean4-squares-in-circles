@@ -12,10 +12,10 @@ The remaining lower-bound split is exhaustive: **G3.B**, a boundary-only C7 with
 
 | Order | Gate | Exact deliverable | Current state |
 | --- | --- | --- | --- |
-| 1 | G3.M4.0 | Assemble every four-body triangle-plus-leaf core and its complete S/D articulation cover | OPEN assembly; constituent reductions available |
+| 1 | G3.M4.0 | Every four-body triangle-plus-leaf core, complete S/D articulation cover and two-region routing | CLOSED hand; TRIANGLE_LEAF_CORE_REDUCTION.md |
 | 2 | G3.M4.D | All diagonal-leaf cores: exclude five arbitrary completion squares over the full height/radius domain | OPEN; active |
-| 3 | G3.M4.S | All side-normal-leaf cores: aligned shared-side sliders plus both tilted-vertex branches | OPEN; active |
-| 4 | G3.M4.ALL | Combine D/S and their degeneracies; close the entire C1.3.b1 cell | BLOCKED by 2 and 3 |
+| 3 | G3.M4.S | All side-normal-leaf cores: aligned shared-side sliders plus both tilted-vertex branches | CLOSED hand; the entire core is impossible |
+| 4 | G3.M4.ALL | Combine D/S and their degeneracies; close the entire C1.3.b1 cell | BLOCKED by D only |
 | Parallel whole branch | G3.B.CAP | Exclude two arbitrary completion squares for every positive boundary C7 | OPEN; active |
 | 5 | G3.M5–M9 | Process the remaining mixed cells by component size and the finite semantic cover below | OPEN |
 | 6 | G4 | Assemble the unrestricted sharp lower bound with the exact lower-window import | BLOCKED by G3 |
@@ -39,6 +39,9 @@ The finite cover keeps continuous radii, centers, orientations, contact coordina
 | C7 localization | Convex force-concurrence polygon containing0; all completion squares lie inside it | C7_FORCE_POLYGON.md; C7_COMPLETION_LOCALIZATION.md |
 | Contact-hole capacity | For k=3,4,5,6, free area <=(k/4)cot(pi/k), hence interior capacities 0,1,1,2 | CONTACT_RING_HOLE_AREA.md |
 | Boundary-pair exterior pocket | Every touching pair of circle-touching squares has an empty exterior pocket in the window | CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md |
+| Triangle-plus-leaf reduction | Complete S/D articulation cover, three-load cone and exact routing into two residual regions | TRIANGLE_LEAF_CORE_REDUCTION.md |
+| Entire S-leaf branch | No positive triangle-plus-leaf core with a radial S leaf in the window | S_LEAF_TRIANGLE_EXCLUSION.md |
+| Boundary C7 center diameter | Every pair of centers is at distance<3, with arbitrary frames and no stress premise | BOUNDARY_SEVEN_CYCLE_CENTER_DIAMETER.md |
 
 These hand manuscripts have different audit histories. The newly reviewed local arguments do not replace G6's full-chain audit. No Lean compilation or CI has been run.
 
@@ -451,8 +454,8 @@ The labels below refine the **remaining obligations**, not the numerical radius 
 - [ ] **G3.B.R.PIERCE.1** Prove0 lies in the **open interior** of every admissible completion square, or prove a common strict piercing point for the entire completion domain.
 - [ ] **G3.B.R.PIERCE.2** If only closed containment of0 is obtained, separately exclude two squares meeting0 only on their boundaries; closed piercing alone is insufficient.
 - [ ] **G3.B.R.DIAM.1** Prove that a contact cycle of at most 7 unit squares enclosing two unit squares has boundary-center diameter>=3, without aligning the inner squares.
-- [ ] **G3.B.R.DIAM.2** Prove that every relevant boundary C7 in the radius window has boundary-center diameter<3. The existing bounds <61/40 on center radii do not imply this.
-- [ ] **G3.B.R.DIAM.3** Combine both proved implications; a far-vertex span>=4 is insufficient for either center-diameter statement.
+- [x] **G3.B.R.DIAM.2** BOUNDARY_SEVEN_CYCLE_CENTER_DIAMETER.md proves every physical boundary C7 has center diameter<3. The proof bounds entire angular shadows, then encloses all possible distant endpoint sectors in one disk of radius<3/2. No stress or regularity assumption is used.
+- [ ] **G3.B.R.DIAM.3** Once DIAM.1 is proved, combine it with the completed DIAM.2. A far-vertex span>=4 does not supply the missing center-diameter lower bound.
 - [ ] **G3.B.R.CLASSIFY.1.a** Cover every cyclic assignment of vertex/side and side/side ownership, retaining two-owner/zero-owner transitions.
 - [ ] **G3.B.R.CLASSIFY.1.b** Include selected strict vertex/vertex normals, one/two circle-corner states and zero loads.
 - [ ] **G3.B.R.CLASSIFY.2** Derive an exact stationary recurrence for each entire surviving ownership type.
@@ -469,18 +472,20 @@ For each coarse cell C with m positive bodies, prove that every realization with
 
 Name the leaf L0, its articulation A, and the other triangle vertices B0,C0. The positive edges are L0-A, A-B0, B0-C0, C0-A. There are **five** remaining physical squares. The notation L0/B0/C0 denotes bodies, not the loaded-set label L above.
 
-#### G3.M4.0 Assemble the complete core reduction
+#### G3.M4.0 Assemble the complete core reduction [CLOSED hand]
+
+Source: TRIANGLE_LEAF_CORE_REDUCTION.md. The proof separately treats a Jordan triangle and a common three-body junction; both route every completion square into the same two residual regions.
 
 - [x] **G3.M4.0.a input** A positive leaf is loaded, and its positive edge is a radial bridge.
 - [x] **G3.M4.0.b input** One endpoint of every bridge is physically circle-clear; the loaded leaf is the outer endpoint, so A is circle-clear.
 - [x] **G3.M4.0.c input** An unloaded degree-two body cannot have physically touching neighbors. Thus both triangle tips B0,C0 are loaded.
 - [x] **G3.M4.0.d input** The leaf is exactly radial S or radial D, with the formulas in RADIAL_BRIDGE_AND_LEAF_REDUCTION.md.
-- [ ] **G3.M4.0.e** Assemble the three-load force/torque equations, physical L0-versus-B0/C0 separation, contact-junction cases and the full articulation pose cover in one proof source.
-- [ ] **G3.M4.0.f** Establish the exact routing of every completion square into the triangle hole or the three exterior boundary-port regions.
+- [x] **G3.M4.0.e** Assemble the three-load force/torque equations, physical L0-versus-B0/C0 separation, contact-junction cases and the full articulation pose cover in one proof source.
+- [x] **G3.M4.0.f** Establish the exact routing of every completion square into the triangle hole or the three exterior boundary-port regions.
 - [x] **G3.M4.0.g input** A genuine triangular contact-ring hole has capacity 0.
 - [x] **G3.M4.0.h input** The exterior pocket of the touching circle-boundary pair B0,C0 has capacity 0.
-- [ ] **G3.M4.0.i** Assemble the consequence: all five extra squares must occupy the two remaining articulation/leaf regions, including shared-contact degeneracies.
-- [ ] **G3.M4.0.ALL** Complete reduction with no hidden circle-load, side-owner, symmetry or routing premise.
+- [x] **G3.M4.0.i** Assemble the consequence: all five extra squares must occupy the two remaining articulation/leaf regions, including shared-contact degeneracies.
+- [x] **G3.M4.0.ALL** Complete reduction with no hidden circle-load, side-owner, symmetry or routing premise.
 
 #### G3.M4.D — Radial diagonal leaf: full open-slider domain
 
@@ -490,19 +495,21 @@ Rotate the radial leaf direction to e_x. Put d=R-sqrt(2). The strict selected no
 
 with bridge point (d,0) in the relative interior of its right side. The physical D leaf remains an obstacle; it is not replaced merely by its force.
 
-- [ ] **G3.M4.D.1 NORMAL FORM** Write the exact derivation and all force/contact equations for this entire domain.
-- [ ] **G3.M4.D.1.a** Retain both signs of t and t=0; a reflection must act on the entire packing and all loads.
-- [ ] **G3.M4.D.1.b** Explain why |t|=1/2 is excluded for this selected certificate and where limiting physical configurations enter the global cover.
+- [x] **G3.M4.D.1 NORMAL FORM** Write the exact derivation and all force/contact equations for this entire domain.
+- [x] **G3.M4.D.1.a** Retain both signs of t and t=0; a reflection must act on the entire packing and all loads.
+- [x] **G3.M4.D.1.b** Explain why |t|=1/2 is excluded for this selected certificate and where limiting physical configurations enter the global cover.
 - [ ] **G3.M4.D.2 LOAD TYPES** Cover one/two physical circle-corner states of B0 and C0, with every allowed positive-weight mask.
 - [ ] **G3.M4.D.3 CONTACT TYPES** Cover both owner directions and shared-side/strict point-contact limits at A-B0, A-C0 and B0-C0; derive rather than assume contact locations.
 - [ ] **G3.M4.D.4 TORQUE** Use the common moment of the three cycle edges and the zero bridge moment; include parallel-force and common-junction degeneracies.
-- [ ] **G3.M4.D.5 ROUTING** Apply G3.M4.0 to all five whole extra squares, keeping physical zero-weight contacts.
-- [ ] **G3.M4.D.6 JOINT CAPACITY** Prove at most4 extras in the two remaining regions jointly, or exclude the core throughout the entire radius window.
+- [x] **G3.M4.D.5 ROUTING** Apply G3.M4.0 to all five whole extra squares, keeping physical zero-weight contacts.
+- [ ] **G3.M4.D.6 JOINT CAPACITY** Prove at most4 extras in the two remaining regions jointly, or prove a separately justified certificate refinement excludes the entire D branch.
 - [ ] **G3.M4.D.6.a** If one region can hold3 or more, prove the necessary coupled loss of capacity in the other; do not assume a separate two-per-region bound.
 - [ ] **G3.M4.D.6.b** Retain arbitrary extra frames, every actual separating-axis owner, and tangencies.
 - [ ] **G3.M4.D.ALL** Close every D-leaf realization, not merely a symmetric or narrow-height subclass.
 
-#### G3.M4.S — Radial side-normal leaf: complete aligned/tilted cover
+#### G3.M4.S — Radial side-normal leaf: complete aligned/tilted cover [CLOSED hand]
+
+Source: S_LEAF_TRIANGLE_EXCLUSION.md, with the full core cover in TRIANGLE_LEAF_CORE_REDUCTION.md. One closed 90-degree inaccessible circle arc excludes the entire S core. All S completion-capacity targets below are discharged by this stronger core impossibility; no independent two-per-region estimate is asserted.
 
 Put d=sqrt(R^2-1/4)-1. The physical leaf is [d,d+1] x [-1/2,1/2], and its bridge applies at p=(d,0). The articulation lies in x<=d and contains p in its right support face. Its complete pose cover has the following three branches; overlaps at symmetry endpoints are harmless.
 
@@ -512,15 +519,15 @@ Put d=sqrt(R^2-1/4)-1. The physical leaf is [d,d+1] x [-1/2,1/2], and its bridge
 
 The theta->0 limit of S+/S- gives only t=+/-1/2. It does **not** cover the aligned interior slider heights. The theta=pi/4 duplicate is retained or removed by an explicitly proved square symmetry.
 
-- [ ] **G3.M4.S.1 COVER** Prove that S0/S+/S- exhaust all actual articulation support faces at p.
-- [ ] **G3.M4.S.2.S0** Derive full cycle/bridge balance over the closed aligned slider interval and every B0/C0 load/contact type.
-- [ ] **G3.M4.S.2.S+** Derive the same equations over the full positive-tilt range, with actual contact application points.
-- [ ] **G3.M4.S.2.S-** Supply the full-packing reflection argument or a direct proof for the reflected range.
-- [ ] **G3.M4.S.3 ROUTING** Route every whole extra square into the two retained regions; do not assume0 lies in A.
-- [ ] **G3.M4.S.4 JOINT CAPACITY** For each complete S branch prove joint capacity<=4, or prove core infeasibility in the entire radius window.
-- [ ] **G3.M4.S.4.a** Handle a possible3+2 distribution explicitly through a coupling theorem, rather than an unproved separate bound.
-- [ ] **G3.M4.S.4.b** Include t endpoints, zero tilt, diagonal tilt, two-circle-corner endpoints and all contact degeneracies.
-- [ ] **G3.M4.S.ALL** Assemble S0/S+/S- into the entire S-leaf exclusion.
+- [x] **G3.M4.S.1 COVER** Prove that S0/S+/S- exhaust all actual articulation support faces at p.
+- [x] **G3.M4.S.2.S0** Derive full cycle/bridge balance over the closed aligned slider interval and every B0/C0 load/contact type.
+- [x] **G3.M4.S.2.S+** Derive the same equations over the full positive-tilt range, with actual contact application points.
+- [x] **G3.M4.S.2.S-** Supply the full-packing reflection argument or a direct proof for the reflected range.
+- [x] **G3.M4.S.3 ROUTING** Route every whole extra square into the two retained regions; do not assume0 lies in A.
+- [x] **G3.M4.S.4 JOINT CAPACITY** For each complete S branch prove joint capacity<=4, or prove core infeasibility in the entire radius window.
+- [x] **G3.M4.S.4.a** No S core occurs, so no 3+2 completion distribution can arise. The proof does not require a separate region-capacity estimate.
+- [x] **G3.M4.S.4.b** Include t endpoints, zero tilt, diagonal tilt, two-circle-corner endpoints and all contact degeneracies.
+- [x] **G3.M4.S.ALL** Assemble S0/S+/S- into the entire S-leaf exclusion.
 
 #### G3.M4.ALL — Whole-cell closure
 
