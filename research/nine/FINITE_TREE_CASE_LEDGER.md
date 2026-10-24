@@ -1,7 +1,7 @@
-# n=9 — finite tree-case ledger: three profiles closed; all survivors in P or Y
+# n=9 — finite tree-case ledger: all six profiles closed
 
-**Checkpoint:** 2026-10-23, origin-pocket continuation. **Global theorem remains OPEN.**
-The six-case tree cover is retained. Three complete original profiles are now excluded, and the point-only contact branch of a fourth is excluded. Every surviving tree candidate reduces to one of **two explicit full-completion families P and Y**. Their capacity theorems and the separate cyclic branch remain open. All new general arguments are hand proofs pending independent audit and Lean verification.
+**Checkpoint:** 2026-10-24, complete P/Y continuation. **Global theorem remains OPEN.**
+All six original tree profiles now have full physical completion exclusions. P_ALL_COMPLETION.md and Y_ALL_COMPLETION.md close the two remaining continuous families, with independent extra-square orientations and all boundaries retained. The separate cyclic branch remains open. The conditional tree assembly keeps 79/40<=R<=sqrt(Q) explicit; its final lower-window import remains a separate obligation.
 
 ## 1. Exact outer split and dependencies
 
@@ -25,10 +25,10 @@ The lower window must be explicitly imported from the established n=8 theorem, w
 
 | ID | (s,v) | Full physical family | Completion status |
 |---|---|---|---|
-| TREE.20 | (2,0) | Opposed side-origin roots; all interior slider positions in the four-square path | [ ] OPEN; included in **P.ALL** |
-| TREE.11 | (1,1) | Side-origin plus vertex-origin root, all compatible angles and side offsets | [ ] OPEN; exact normal form is **Y.ALL**, with aligned endpoints in P |
+| TREE.20 | (2,0) | Opposed side-origin roots; all interior slider positions in the four-square path | [x] CLOSED by **P.ALL** |
+| TREE.11 | (1,1) | Side-origin plus vertex-origin root, all compatible angles and side offsets | [x] CLOSED by **Y.ALL**, with aligned endpoints covered by P |
 | TREE.12 | (1,2) | A side root and two vertex roots fill the origin angle | [x] CLOSED hand: cardinal cage, at most eight total squares |
-| TREE.02 | (0,2) | Two vertex-origin roots | **PARTIAL:** point-only branch **TREE.02.P closed**; shared-edge branch **TREE.02.E** is an exact endpoint of P.ALL |
+| TREE.02 | (0,2) | Two vertex-origin roots | [x] CLOSED: point-only **TREE.02.P**, and shared-edge **TREE.02.E** by the full P capacity |
 | TREE.03 | (0,3) | Three vertex-origin roots, all continuous cone-gap choices | [x] **NEW CLOSED hand:** angular annulus capacity, at most eight total squares |
 | TREE.04 | (0,4) | Four origin quadrants form a central 2x2 block | [x] CLOSED hand: central-block capacity, at most eight total squares |
 
@@ -54,22 +54,22 @@ No stress, shared frame or restriction on extra-square orientations is assumed b
 
 **Strict-normal distinction:** a non-strict zero-point normal can support a different arbitrary physical equilibrium. The opposite-slider path negative control is retained; the theorem uses the specific strictly exposing contact certificate, not every possible stress.
 
-## 5. Exhaustive remaining-tree master families: only TWO open completion theorems
+## 5. The two remaining master families now have complete capacities
 
 Source: [REMAINING_TREE_TWO_FAMILY_REDUCTION.md](REMAINING_TREE_TWO_FAMILY_REDUCTION.md).
 
-### P.ALL — staggered four-square path [OPEN]
+### P.ALL — staggered four-square path [CLOSED hand]
 
 Four fixed axis-aligned centers:
 
     (-3/2,0), (-1/2,tau_1), (1/2,tau_2), (3/2,0),
     -1/2 <= tau_1,tau_2 <= 1/2.
 
-**Required theorem:** no FIVE additional arbitrarily oriented unit squares can fit D_(17/4), disjoint in physical interior from these four and one another. This includes TREE.20, shared-edge TREE.02.E (tau_1=tau_2=+/-1/2) and aligned TREE.11 limits. The flat tau_1=tau_2=0 subcase is already excluded, but the full parameter square is not.
+**Proved theorem:** P_ALL_COMPLETION.md excludes FIVE additional arbitrarily oriented unit squares throughout this entire closed parameter square. This includes TREE.20, shared-edge TREE.02.E (tau_1=tau_2=+/-1/2), and aligned TREE.11 limits. Its quantitative proof couples the two sides through the lower vertical-axis section of an inner square and the sharp high-center common-point theorem.
 
 Do not use an independent two-per-side capacity: three squares can fit above a staggered path, as recorded in TREE_FINITE_VALIDATION.md.
 
-### Y.ALL — nonaligned side-plus-vertex fan [OPEN]
+### Y.ALL — nonaligned side-plus-vertex fan [CLOSED hand]
 
 For 0<alpha<1 and 0<theta<pi/2, set
 
@@ -79,9 +79,9 @@ For 0<alpha<1 and 0<theta<pi/2, set
 
 The five-body skeleton is H,K,S((0,1)),S(u),S(v), where S(e) is the radial unit square centered at (3/2)e. Exact equilibrium forces the two downward terminal weights in ratios sin(theta),cos(theta); there is no other TREE.11 positive core type. At theta=0 or pi/2, the skeleton reduces to an aligned member of P.
 
-**Required theorem:** no FOUR additional arbitrary physical unit squares can fit D_(17/4) with this skeleton. A genuine nonaligned five-body core exists; the core alone must not be falsely excluded.
+**Proved theorem:** Y_ALL_COMPLETION.md excludes FOUR additional arbitrary physical unit squares throughout this entire alpha/theta domain. Three actual ray screens leave two pockets with capacities one and two. HALF_POCKET_TRIPLE_RIGIDITY.md supplies the strict-half-pocket bound. The nonaligned core remains feasible; its completion is excluded.
 
-**Coverage:** every surviving candidate in the six original tree profiles contains P or Y. This is a proved exhaustive normal form, but neither remaining capacity bound is proved. Finishing both would close TREE.ALL, with the explicit radius-window prerequisite.
+**Coverage:** every formerly surviving candidate in the six original tree profiles contains P or Y. Both full capacities are now proved, so TREE.ALL is CLOSED hand in the declared radius window. TREE_AND_TWO_LOAD_COMPLETION.md states the exact corollary and retains every remaining physical square.
 
 ## 6. UTC source/progress history
 
@@ -101,4 +101,4 @@ The five-body skeleton is H,K,S((0,1)),S(u),S(v), where S(e) is the radial unit 
 
 The committed script check_origin_pockets.py, matched to its Git blob and SHA-256, passed **1,716 exact rational checks** plus physical attainment/strict-normal and non-strict-normal controls. ORIGIN_POCKET_EXACT_CHECK.json contains the actual pinned run; these finite regressions are not all-angle proofs, independent audit or Lean verification.
 
-The remaining global obligations are **P.ALL, Y.ALL, CYCLIC**, the explicit lower-window dependency, unrestricted radius assembly, complete equality necessity/converse, independent full audit and standard-kernel Lean integration. Three of six original tree rows closed is not a global completion percentage. No unrestricted proof is claimed.
+All six original tree rows are CLOSED hand in the declared radius window. The remaining global obligations are the general boundary-only C7 and mixed cyclic completions, the explicit lower-window dependency, unrestricted radius assembly, complete equality necessity/converse, independent full audit and standard-kernel Lean integration. The tree closure is not a global completion percentage. No unrestricted proof is claimed.

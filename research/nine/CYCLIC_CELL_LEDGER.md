@@ -2,9 +2,9 @@
 
 **Checkpoint:** 2026-10-23 completion continuation. **Global sharp theorem remains OPEN.** The inventory is exhaustive at the block-size / bridge-count level; each cell retains its full continuous contact geometry.
 
-**Current closure:** C1.3.b0 and the entire four-body cell C1.4.b0 are excluded. Therefore **56 cells remain OPEN**. Across every cell, six-body two-load completions are now excluded and five-body two-load completions reduce to an actual P skeleton. The entire two-load class therefore reduces to P.ALL. Necessary global contact/resultant restrictions also apply to all cells, but no unresolved multi-load cell is marked closed.
+**Current closure:** C1.3.b0 and the entire four-body cell C1.4.b0 are excluded. Therefore **56 cells remain OPEN**. Across every cell, the full P capacity now completes the five-/six-body reductions and excludes every exactly-two-load nine-square completion. Necessary global contact/resultant restrictions also apply to all cells, but no unresolved multi-load cell is marked closed.
 
-P.ALL and Y.ALL remain OPEN separately. All results called CLOSED hand are mathematical manuscripts pending independent full audit and Lean verification. See TWO_LOAD_PROGRESS.md for current exact source and execution provenance.
+P.ALL and Y.ALL are now CLOSED hand, and their exhaustive reduction closes every positive tree in the declared window. All results called CLOSED hand are mathematical manuscripts pending independent full audit and Lean verification. See TWO_LOAD_PROGRESS.md for current exact source and execution provenance.
 
 ## 1. Coverage theorem and exact graph conventions
 
@@ -114,7 +114,7 @@ Source: TWO_LOAD_RECIPROCAL_RIGIDITY.md, first commit 248202d, clarified in 9fad
 - [x] **TL.COMPLETE6:** SIX_BODY_TWO_LOAD_COMPLETION.md excludes every six-body core from a nine-square completion, allowing arbitrary extra orientations.
 - [x] **TL.REDUCE5:** FIVE_BODY_TWO_LOAD_REDUCTION.md covers every five-body core: actual P containment, or at most three additional squares.
 - [x] **TL.ALL_TO_P:** every nine-square packing with a two-loaded positive component in the window contains an actual P skeleton.
-- [ ] **P.ALL / TL.COMPLETE5:** P's capacity remains open and implies the five-body completion exclusion.
+- [x] **P.ALL / TL.COMPLETE5 / TL.COMPLETE:** P_ALL_COMPLETION.md closes the whole P domain and consequently every two-loaded completion, including cyclic components.
 - [ ] Components with >=3 loaded bodies in the larger cells remain unresolved unless separately excluded.
 
 These theorems span all cells without closing any cell whose multi-load realizations remain unresolved. The physical six-body theta graph and simple six-cycle remain exact feasible cores; their completion to nine is now excluded.
@@ -127,7 +127,7 @@ These theorems span all cells without closing any cell whose multi-load realizat
 - [x] **CY.INCIDENCE:** for R>sqrt(2), no point belongs to three circle-touching squares.
 - [x] **CY.DIRECTIONS:** distinct loaded bodies have distinct circle-resultant directions. A balanced collinear family has exactly two loaded bodies.
 
-Together with TL.ALL_TO_P, a selected component outside the P reduction has 3–7 loaded bodies and noncollinear resultants. This does not supply its sharp metric inequality. In particular C4.3333.b0 remains open: a chain of four triangles can have six loaded nonarticulation bodies and three clear articulations.
+Together with TL.COMPLETE and TREE.ALL, every surviving selected component is cyclic and has 3–7 loaded bodies with noncollinear resultants. This does not supply its sharp metric inequality. In particular C4.3333.b0 remains open: a chain of four triangles can have six loaded nonarticulation bodies and three clear articulations.
 
 ### New whole boundary-graph reduction
 
@@ -158,7 +158,7 @@ Finite examples do not prove the reciprocal geometry universally or replace an i
 - [x] Complete 58-cell coarse coverage.
 - [x] C1.3.b0 and C1.4.b0 whole exclusions in the explicit window.
 - [ ] Remaining 56 cells uniformly sharply bounded.
-- [ ] P.ALL and Y.ALL capacities.
+- [x] P.ALL and Y.ALL capacities; TREE.ALL and the entire two-load completion class in the declared window.
 - [ ] Declared lower-window dependency, unrestricted G4/G5, full audit and standard-kernel Lean/integration.
 
 Counts are not completion percentages. The remaining cells retain unequal, continuous geometric complexity.

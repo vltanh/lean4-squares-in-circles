@@ -1,8 +1,8 @@
-# n=9 — current roadmap: every two-load completion reduces to P
+# n=9 — current roadmap: all trees and two-load completions closed
 
-**Checkpoint:** 2026-10-23 completion continuation. **The unrestricted n=9 proof is NOT finished.** The whole six-body two-load family is excluded from nine-square packings, and the whole five-body family reduces to P or has total capacity at most eight. Together with the earlier reciprocal/layer theorem, this reduces **every two-loaded nine-square completion to P.ALL**. Physical circle contact and resultant lemmas leave 3–7 noncollinear loads in any other selected component. P.ALL, Y.ALL, the remaining multi-load geometry, global equality and verification stay open. The coarse inventory remains two closed cells and 56 open.
+**Checkpoint:** 2026-10-24 complete P/Y continuation. **The unrestricted lower bound and complete equality classification remain OPEN.** P_ALL_COMPLETION.md and Y_ALL_COMPLETION.md now close the full P and Y families. Together with the exhaustive tree reduction, every selected positive tree component is excluded from a nine-square packing in the declared radius window. P also completes the five-/six-body reduction, excluding every selected positive component with exactly two circle-loaded bodies, including cyclic components. Every surviving component is cyclic and has 3–7 noncollinear circle resultants. The remaining geometric obligations are the general boundary-only C7 completion and mixed components containing a circle-clear body. Two coarse cells remain closed and 56 open. No Lean compilation or CI has been run.
 
-The new general arguments are hand manuscripts pending independent mathematical audit. No Lean compilation, CI or proof-completion percentage is claimed.
+The new P/Y, cap, and section arguments have received separate hand audits. A full independent audit of the entire prerequisite chain remains open. No Lean compilation, CI or proof-completion percentage is claimed.
 
 ## Boundary-contact continuation: one seven-cycle is the only boundary-only positive component
 
@@ -20,7 +20,7 @@ The general seven-cycle completion capacity is still OPEN. Components containing
 - [CYCLIC_CELL_LEDGER.md](CYCLIC_CELL_LEDGER.md): all 58 coarse rows, now two checked and 56 unchecked.
 - [G2_SUBGATES.md](G2_SUBGATES.md): live mathematical scope and remaining completion contracts.
 - [TWO_LOAD_PROGRESS.md](TWO_LOAD_PROGRESS.md): current UTC proof commits, pinned exact run, report correction and negative controls.
-- [FINITE_TREE_CASE_LEDGER.md](FINITE_TREE_CASE_LEDGER.md): original tree profiles and P/Y survivor cover.
+- [FINITE_TREE_CASE_LEDGER.md](FINITE_TREE_CASE_LEDGER.md): all six tree profiles and their completed P/Y capacities.
 - QUADRANT_BLOCK_PROGRESS.md, ORIGIN_POCKET_PROGRESS.md and PROGRESS_LEDGER.md retain earlier chronological checkpoints.
 
 ## Target and essential scope
@@ -53,7 +53,7 @@ At 79/40<=R<=sqrt(Q), every such two-loaded component has:
 
 Thus every triangle-containing two-loaded component and every two-loaded component with 7–9 bodies is excluded. This is a uniform theorem across the inventory, not another narrow angle/offset subclass.
 
-**Whole completion progress:** [SIX_BODY_TWO_LOAD_COMPLETION.md](SIX_BODY_TWO_LOAD_COMPLETION.md), commit 52fec6f, proves that every six-body layered core has room for at most two arbitrary extra squares. [FIVE_BODY_TWO_LOAD_REDUCTION.md](FIVE_BODY_TWO_LOAD_REDUCTION.md), commit b46db3a, proves that every five-body core either contains a genuine P skeleton or has room for at most three extras. The five-body proof derives the singleton height bound from torque and handles the doubled column outside the P interval directly. Consequently P.ALL is the only remaining two-load completion gate.
+**Whole completion progress:** [SIX_BODY_TWO_LOAD_COMPLETION.md](SIX_BODY_TWO_LOAD_COMPLETION.md), commit 52fec6f, proves that every six-body layered core has room for at most two arbitrary extra squares. [FIVE_BODY_TWO_LOAD_REDUCTION.md](FIVE_BODY_TWO_LOAD_REDUCTION.md), commit b46db3a, proves that every five-body core either contains a genuine P skeleton or has room for at most three extras. The five-body proof derives the singleton height bound from torque and handles the doubled column outside the P interval directly. P_ALL_COMPLETION.md now closes that last gate. Consequently no selected positive component with exactly two loaded bodies can occur in a nine-square packing in the declared window.
 
 The new cap-sign, diagonal-center and half-disk pair lemmas allow arbitrary orientations of every added square. [CYCLIC_GLOBAL_CONTINUATION.md](CYCLIC_GLOBAL_CONTINUATION.md) also supplies a seven-body physical boundary-contact budget, excludes triple boundary-touching junctions, and proves distinct loaded resultant directions. Thus the remaining load class is 3–7 bodies with noncollinear resultants. These are necessary restrictions, not a sharp radius certificate for that class.
 
@@ -84,7 +84,8 @@ The loaded-noncontact and simple-four-cycle results were already committed in AC
 | **CY.TWOLOAD** | [x] NEW all-component parallelism and window quantization |
 | **C1.4.b0** | [x] NEW whole four-body cell excluded |
 | C1.3.b0 | [x] Previously excluded |
-| **P.ALL / Y.ALL** | [ ] OPEN physical capacities |
+| **P.ALL / Y.ALL** | [x] CLOSED full physical capacities |
+| **TREE.ALL / TL.COMPLETE** | [x] CLOSED conditional on the explicit radius window |
 | **TL.COMPLETE6** | [x] CLOSED whole family: at most two extras |
 | **TL.REDUCE5 / TL.ALL_TO_P** | [x] CLOSED whole reduction to P.ALL |
 | **CY.ARC / CY.INCIDENCE / CY.DIRECTIONS** | [x] CLOSED necessary restrictions |
@@ -93,19 +94,20 @@ The loaded-noncontact and simple-four-cycle results were already committed in AC
 | G6 full independent audit | [ ] NOT COMPLETED |
 | G7–G8 standard-kernel Lean and integration | [ ] NOT STARTED |
 
-### P.ALL and Y.ALL remain open
+### P.ALL and Y.ALL are complete
 
-P fixes aligned centers (-3/2,0),(-1/2,tau1),(1/2,tau2),(3/2,0), with tau_i in [-1/2,1/2], and requires exclusion of FIVE arbitrary additional squares in D_(17/4). The flat-row capacity is finished; the general staggered capacity remains open. The new half-disk pair theorem closes the close-center branch of a related half-pocket triple classification, not that full classification.
+P_ALL_COMPLETION.md excludes five arbitrary extras for the entire closed two-slider range. An upper triple either is canonical or has a small inner square; its vertical-axis section lies below 19/120. Both sliders then force every lower extra below -161/120<-3/sqrt(5), where all such squares share an interior point. The independent HALF.3 classification now supplies a shorter alternative proof.
 
-Y fixes the full nonaligned side/vertex five-square fan with alpha in (0,1), theta in (0,pi/2), including its three radial terminals, and requires exclusion of FOUR arbitrary added squares. Its physical core exists. Neither new reciprocal rigidity nor quadrant capacity alone closes Y.
+Y_ALL_COMPLETION.md routes every whole extra square into two screened pockets. One has aperture at most 135 degrees and capacity one; the other has aperture strictly below 180 degrees and capacity two. Thus every nonaligned Y core permits at most three extras. TREE_AND_TWO_LOAD_COMPLETION.md closes every positive tree and every two-load component, retaining the declared radius-window condition.
 
 ### Newly closed analytic subgates
 
 - [x] **WEDGE.2:** every screened pocket of aperture at most 135 degrees has capacity one. Full proof: WEDGE_135_CAPACITY_ONE.md.
 - [x] **P.HIGH:** the sharp center-height threshold 3/sqrt(5) forces a common interior point. HIGH_CENTER_COMMON_POINT.md.
 - [x] **P.CAP:** the quantitative terminal-cap inequality at section threshold 19/120 holds for every square orientation and every physical separator. TERMINAL_CAP_SECTION_EXCLUSION.md.
-- [ ] **Y.STRICT:** the complementary strict-half-pocket capacity remains open.
-- [ ] **P.ALL:** the remaining pair-routing premise is not assumed by the new local cap theorem.
+- [x] **HALF.3 / Y.STRICT:** every upper E/W triple is canonical; every strict terminal half-pocket has capacity two. HALF_POCKET_TRIPLE_RIGIDITY.md.
+- [x] **P.ANNULAR / P.SECTION:** the complete same-side pair exclusion and upper section theorem supply the quantitative path proof.
+- [x] **P.ALL / Y.ALL / TREE.ALL / TL.COMPLETE:** whole-family completion arguments, including all parameter boundaries and independent extra-square orientations.
 
 ## Actual exact regression evidence
 
@@ -119,6 +121,6 @@ These finite checks do not prove the general packing theorem, substitute for an 
 
 ## Next proof obligation
 
-Prove P.ALL, which now handles the entire two-load class, and handle the remaining 3–7-loaded noncollinear components, including Y. Retain every unstressed body and every actual separator/corner/torque constraint. A coarse cell with an unresolved multi-load family stays unchecked. The two-load reciprocal argument cannot simply be extended: with three or more noncollinear resultants the exterior force polygon may have positive area.
+Handle the general C7 completion and the remaining cyclic mixed components with 3–7 noncollinear loaded bodies. Retain every unstressed body and every actual separator/corner/torque constraint. A coarse cell with an unresolved multi-load family stays unchecked. The two-load reciprocal argument cannot simply be extended: with three or more noncollinear resultants the exterior force polygon may have positive area.
 
 All finished implications are committed and logged. PR #11 remains draft; the unrestricted proof remains unfinished.

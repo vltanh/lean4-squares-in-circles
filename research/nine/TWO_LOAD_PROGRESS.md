@@ -164,3 +164,34 @@ Base commit: `c510ed141bfcabd8f707012245acf9a302fcb2be`.
 The cap proofs and high-center theorem received separate reasoning audits; the quantitative adapter's displayed polynomial identities and endpoint values were also checked with exact rational arithmetic. A zero-coordinate separator boundary was corrected before committing: the up-right normal (0,1) gives a weak floor at y=1/2, already covered by the cap theorem.
 
 **Unchanged open parents:** P.ALL, Y.ALL, arbitrary positive C7 completion, mixed 3–7-load components, unrestricted radius and equality classification. The general annular same-sign pair statement is not inferred from the 135-degree reflection argument. Two coarse cells remain closed and 56 open. No Lean compilation or CI was run.
+
+
+## 2026-10-24 00:07 UTC — P.ALL and Y.ALL complete; all trees and two-load components excluded
+
+Base commit: `482ef277981c7898797a8df6b0e78e1100192924`.
+
+### Complete physical capacity theorems
+
+- **P.ALL CLOSED:** `P_ALL_COMPLETION.md` covers every slider pair in the closed square [-1/2,1/2]^2, every extra-square orientation, and every physical separator. The proof routes extras into two half-pockets of capacity three. A putative noncanonical upper triple contains a small inner square whose lower vertical-axis section is below 19/120. Both slider tops are at most that section height, so every lower extra has center below -161/120<-3/sqrt(5) and contains the same interior point. A canonical upper triple also leaves at most one lower extra. Thus five extras are impossible.
+- **Complete local dependencies:** `P_HALF_POCKET_SECTION_PROOF.md` proves the y=1 section theorem and capacity three; `LOW_OUTER_SQUARE_MEETS_N_DISK.md` and `HIGH_OUTER_SQUARE_MEETS_N_DISK.md` prove strict intersection with the open north disk; `ANNULAR_SAME_SIDE_PAIR_EXCLUSION.md` exhausts all pair directions without an orientation or separator-owner restriction.
+- **HALF.3 CLOSED:** `HALF_POCKET_TRIPLE_RIGIDITY.md` proves that every upper E/W triple is exactly the canonical aligned triple. The decisive inequality x<(q/p)(1/sqrt(2)-y), forced by the right neighbor of a small inner square, makes every direction toward the left neighbor impossible. Widening and the equality classification give capacity two for every screened pocket of aperture strictly below 180 degrees. This theorem also supplies a shorter independent P completion assembly; the quantitative proof is retained in full.
+- **Y.ALL CLOSED:** `Y_ALL_COMPLETION.md` uses the actual core and terminals to screen three full rays, including origin and endpoints. Each whole extra square belongs to one pocket; the occupied K quadrant has no extra slot. The two remaining apertures sum to 270 degrees and are each strictly below 180 degrees. Their capacities are one and two, excluding four extras for every alpha/theta in the complete open parameter rectangle. Angular endpoints reduce to the closed P family.
+
+### Exact structural consequences
+
+`TREE_AND_TWO_LOAD_COMPLETION.md` assembles two complete implications in the explicit window 79/40<=R<=sqrt(1105)/16:
+
+1. No selected positive component can be a tree, even if another component has cycles. The exhaustive six-profile cover reduces its former survivors to P or Y, both now excluded from nine-square completion. All six original tree rows are closed.
+2. No selected positive component can have exactly two circle-loaded bodies, including cyclic components. Reciprocal rigidity leaves four, five, or six aligned bodies at q=17/4. Four bodies give P; five bodies reduce to P or total capacity eight; six bodies already have total capacity eight.
+
+The lower-window prerequisite is retained as a prior-theorem dependency and is not claimed to follow from these capacities.
+
+### Review and exact scope
+
+The parent P argument and annular-pair theorem received independent complete hand audits, including zero horizontal coordinate, both slider constraints, all separator directions and the exact threshold comparison 25921>25920. The section and disk-intersection manuscripts received separate all-case review. The HALF.3 manuscript received two separate hand audits of its frame formulas, two factorizations, strict endpoint inequalities, north-disk routing and wedge-widening consequence. The Y and structural assemblies were checked against the actual physical screen and earlier component reductions.
+
+These are analytic proofs; exploratory numerical searches are not premises. No Lean compilation, CI, or new finite sampling certificate is claimed. The complete prerequisite chain still needs a full independent audit and subsequent formalization.
+
+### Remaining global obligations
+
+Every surviving selected component is cyclic with 3–7 noncollinear loaded resultants. A boundary-only component is the general physical C7, whose two-circle-clear-square completion remains open. Mixed components containing a circle-clear body also remain open. The unrestricted lower bound, all equality necessity, explicit lower-window assembly, full-chain audit and standard-kernel integration remain unfinished. The coarse cyclic ledger is still two whole cells closed and 56 open; tree and two-load closure is not used to tick a cell with unresolved multi-load realizations.

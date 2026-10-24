@@ -3,8 +3,9 @@
 **Status:** complete hand proof, using the two analytic cap inequalities
 and the right-owned downward-separator lemma identified below. The
 squares have independent orientations throughout. This closes the
-uniform `WEDGE.2` statement. It does not by itself close `Y.ALL`: the
-larger Y pocket still needs the strict-half-pocket capacity bound.
+uniform `WEDGE.2` statement. The complementary strict-half-pocket bound
+is now proved in HALF_POCKET_TRIPLE_RIGIDITY.md; together the two bounds
+close Y.ALL in Y_ALL_COMPLETION.md.
 
 Put
 

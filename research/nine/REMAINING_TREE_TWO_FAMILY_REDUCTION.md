@@ -1,6 +1,6 @@
 # n=9: all remaining positive-tree candidates reduce to TWO explicit completion families
 
-**Status:** exhaustive hand reduction of the remaining tree branch after the completed capacity exclusions. It is not a proof that either remaining family has capacity at most eight. Independent audit and Lean verification pending.
+**Status:** exhaustive hand reduction of the remaining tree branch. Subsequent complete capacity proofs are P_ALL_COMPLETION.md and Y_ALL_COMPLETION.md; together they now close TREE.ALL in the declared radius window. The reduction below retains its original geometric scope. Full prerequisite-chain audit and Lean verification remain separate.
 
 **Purpose:** replace an indefinite list of branching-tree graphs or angular subcases by two explicit geometric skeletons with complete continuous parameter ranges. The full cyclic branch remains separate and open.
 
@@ -30,7 +30,7 @@ take the four axis-aligned unit squares with centers
 
 They fit the disk of squared radius 17/4 and have disjoint open interiors. This is the complete two-loaded path family, with its boundary values retained.
 
-**P completion gate, OPEN:** prove that no FIVE other independently oriented unit squares can be added inside the same disk with pairwise disjoint open interiors. No common-coordinate separation is allowed as an extra premise.
+**P completion gate, CLOSED hand:** P_ALL_COMPLETION.md proves that no FIVE other independently oriented unit squares can be added inside the same disk with pairwise disjoint open interiors. No common-coordinate separation is allowed as an extra premise.
 
 - TREE.20 lies in the strict interior parameter range |tau_i|<1/2.
 - TREE.02.E is tau_1=tau_2=1/2 or its reflection.
@@ -64,9 +64,9 @@ The five-square skeleton consists of:
 4. the radial terminal S(u), centered at (3/2)u;
 5. the radial terminal S(v), centered at (3/2)v.
 
-**Y completion gate, OPEN:** prove that no FOUR other independently oriented physical unit squares fit the same disk of squared radius 17/4, disjoint from these five and one another, for the ENTIRE displayed alpha/theta range.
+**Y completion gate, CLOSED hand:** Y_ALL_COMPLETION.md proves that no FOUR other independently oriented physical unit squares fit the same disk of squared radius 17/4, disjoint from these five and one another, for the ENTIRE displayed alpha/theta range.
 
-The exact nonaligned witness alpha=1/2, theta=pi/4 is in TREE_FINITE_VALIDATION.md. Its physical force-and-torque stress was executed in exact arithmetic there. Thus the skeleton itself must not be excluded; the missing theorem concerns its completion to nine squares.
+The exact nonaligned witness alpha=1/2, theta=pi/4 is in TREE_FINITE_VALIDATION.md. Its physical force-and-torque stress was executed in exact arithmetic there. Thus the skeleton itself must not be excluded; the subsequent complete theorem excludes its completion to nine squares.
 
 ## 4. TREE.11 has no other positive-tree geometry
 
@@ -102,12 +102,13 @@ This proof is a necessary structural implication for the selected tree certifica
 
 *Proof.* The six-case tree theorem is exhaustive. TREE.12 and TREE.04 cannot complete to nine by their earlier capacity theorems. TREE.03 cannot by THREE_VERTEX_ORIGIN_CAPACITY.md. The point-only part of TREE.02 cannot by the new pocket completion theorem; its shared-edge boundary is family P. TREE.20 is family P. The only remaining profile TREE.11 is P or Y by Section 4. Every additional physical square remains in the respective completion premise. QED.
 
-This is a finite two-family classification with all continuous parameters retained. It is a reduction, not a capacity proof for P or Y. Finishing BOTH whole-family capacity gates would close the entire positive-tree branch (with the explicit lower-window input).
+This is a finite two-family classification with all continuous parameters retained. P_ALL_COMPLETION.md and Y_ALL_COMPLETION.md now supply both whole-family capacities. Their combination closes the entire positive-tree branch in the explicit radius window; the separate lower-window dependency remains to be assembled.
 
 ## 6. Exact remaining global obligations
 
-- [ ] **P.ALL:** no five-square completion of any staggered path in Section 2.
-- [ ] **Y.ALL:** no four-square completion of any nonaligned fan in Section 3.
+- [x] **P.ALL:** no five-square completion of any staggered path in Section 2; P_ALL_COMPLETION.md.
+- [x] **Y.ALL:** no four-square completion of any nonaligned fan in Section 3; Y_ALL_COMPLETION.md.
+- [x] **TREE.ALL:** both capacities plus the exhaustive reduction exclude every positive tree component in the declared window.
 - [ ] **CYCLIC:** a sharp exhaustive classification or universal inequality when every selected positive component contains a cycle.
 - [ ] The declared lower-radius window, global assembly, complete equality necessity/converse, independent mathematical audit and Lean/kernel integration.
 

@@ -1,8 +1,8 @@
-# n=9 — live G2 ledger: all two-load completions reduce to P
+# n=9 — live G2 ledger: all trees and two-load completions closed
 
-**Checkpoint:** 2026-10-23 completion continuation. **The unrestricted q>=Q=1105/256 theorem is NOT proved.** The whole six-body two-load completion is closed; the whole five-body completion reduces to P or has total capacity eight. Therefore every two-loaded nine-square completion reduces to P.ALL. Tree survivors remain P.ALL and Y.ALL. The coarse cyclic inventory still has two closed cells and 56 open.
+**Checkpoint:** 2026-10-24 complete P/Y continuation. **The unrestricted lower bound and complete equality classification remain OPEN.** P_ALL_COMPLETION.md and Y_ALL_COMPLETION.md now close the full P and Y families. Together with the exhaustive tree reduction, every selected positive tree component is excluded from a nine-square packing in the declared radius window. P also completes the five-/six-body reduction, excluding every selected positive component with exactly two circle-loaded bodies, including cyclic components. Every surviving component is cyclic and has 3–7 noncollinear circle resultants. The remaining geometric obligations are the general boundary-only C7 completion and mixed components containing a circle-clear body. Two coarse cells remain closed and 56 open. No Lean compilation or CI has been run.
 
-The reciprocal theorem applies to every physical positive component with exactly two loaded bodies, forcing parallel forces and 4–6 aligned bodies at q=17/4 in the declared window. The completion theorems now remove the six-body case and reduce the five-body case to a genuine P skeleton. Global physical geometry limits any other selected component to 3–7 loaded bodies with noncollinear resultants; it does not close that metric completion problem.
+The reciprocal theorem applies to every physical positive component with exactly two loaded bodies, forcing parallel forces and 4–6 aligned bodies at q=17/4 in the declared window. The completion theorems now remove the six-body case and reduce the five-body case to a genuine P skeleton, whose full capacity is proved in P_ALL_COMPLETION.md. Global physical geometry limits any other selected component to 3–7 loaded bodies with noncollinear resultants; it does not close that metric completion problem.
 
 **Verification level:** written hand arguments pending independent full audit and Lean verification. Finite exact regressions are not a universal proof. Historical ledger versions remain in Git. The current canonical contracts are DEEP_GATED_ROADMAP.md and CYCLIC_CELL_LEDGER.md; current progress/evidence is TWO_LOAD_PROGRESS.md.
 
@@ -15,7 +15,8 @@ The reciprocal theorem applies to every physical positive component with exactly
 | TREE.F1/F2 | Every positive tree in the declared window has q=17/4 and six origin-incidence profiles | [x] CLOSED exhaustive reduction |
 | TREE.12 / .03 / .04 / .02.P | Full completion exclusions, with .02.P's strict-normal contact premise | [x] CLOSED hand |
 | TREE.REMAINDER | Every surviving tree configuration is P or Y | [x] CLOSED normal form |
-| **P.ALL / Y.ALL** | Full arbitrary-square completions of both families | [ ] OPEN |
+| **P.ALL / Y.ALL** | Full arbitrary-square completions of both families | [x] CLOSED hand |
+| **TREE.ALL / TL.COMPLETE** | Every positive tree and every two-load component in the declared window | [x] CLOSED hand |
 | CAP / QCAP | All-angle cap/quadrant tools and every-direction necessary counts | [x] CLOSED at stated scope |
 | CY.BLOCK | 21 profiles, 58 block-size/bridge-count cells, all physical extras retained | [x] CLOSED coarse coverage |
 | CY.ACUTE | Loaded physical noncontact graph connected | [x] CLOSED necessary theorem |
@@ -49,33 +50,34 @@ The six (s,v) origin-incidence profiles are exhaustive in the declared window; a
 
 | Profile | Current status |
 |---|---|
-| TREE.20 (2,0) | P.ALL capacity OPEN |
-| TREE.11 (1,1) | Exact P/Y normal form CLOSED; completion OPEN |
+| TREE.20 (2,0) | CLOSED by full P.ALL capacity |
+| TREE.11 (1,1) | CLOSED by full Y.ALL and P boundary capacities |
 | TREE.12 (1,2) | CLOSED, cardinal-cage capacity <=8 |
-| TREE.02 (0,2) | Point-only strict-normal .P CLOSED; shared-edge .E is P boundary |
+| TREE.02 (0,2) | CLOSED: point-only strict-normal .P and shared-edge P boundary |
 | TREE.03 (0,3) | CLOSED, annular angular capacity <=8 |
 | TREE.04 (0,4) | CLOSED, central 2x2 block capacity <=8 |
 
-### P.ALL — unchanged open whole-family contract
+### P.ALL — CLOSED whole-family capacity
 
-Fixed aligned centers are (-3/2,0),(-1/2,tau1),(1/2,tau2),(3/2,0), with both tau in [-1/2,1/2]. Prove no FIVE other arbitrary physical unit squares fit D_(17/4).
+Fixed aligned centers are (-3/2,0),(-1/2,tau1),(1/2,tau2),(3/2,0), with both tau in [-1/2,1/2]. P_ALL_COMPLETION.md proves that no FIVE other arbitrary physical unit squares fit D_(17/4).
 
 - [x] Exact survivor reduction, including slider endpoints.
 - [x] Flat solid row excluded.
 - [x] Negative controls: one side can hold three squares; five extra centers can pass center/inscribed-disk relaxations without yielding physical squares.
-- [ ] Whole-square routing and coupled capacity over the full two-slider parameter square. QCAP alone does not route crossing squares.
+- [x] Whole-square routing and coupled capacity over the full closed two-slider parameter square. The upper section theorem, open north-disk intersection, annular same-side pair exclusion and exact 19/120 cap force capacity at most one opposite any triple.
+- [x] Both slider endpoints, arbitrary square frames, all separator owners and zero-coordinate/45-degree boundaries are retained.
 
-### Y.ALL — unchanged open whole-family contract
+### Y.ALL — CLOSED whole-family capacity
 
-H=[-alpha,1-alpha]x[0,1], K=[0,u]+[0,v], u=(cos(theta),-sin(theta)), v=(-sin(theta),-cos(theta)), alpha in (0,1), theta in (0,pi/2), plus S(north),S(u),S(v). Prove no FOUR other arbitrary squares fit D_(17/4).
+H=[-alpha,1-alpha]x[0,1], K=[0,u]+[0,v], u=(cos(theta),-sin(theta)), v=(-sin(theta),-cos(theta)), alpha in (0,1), theta in (0,pi/2), plus S(north),S(u),S(v). Y_ALL_COMPLETION.md proves that no FOUR other arbitrary squares fit D_(17/4).
 
 - [x] Exact side/vertex normal form and force ratios sin(theta),cos(theta); angular endpoints reduce to P.
 - [x] Genuine nonaligned core exists, so exclude completion, not the core.
 - [x] WEDGE.2: complete capacity-one theorem for every screened pocket of aperture at most 135 degrees; WEDGE_135_CAPACITY_ONE.md.
-- [ ] The other Y pocket has aperture strictly below 180 degrees; its capacity-two theorem remains open.
-- [ ] Complete physical pocket routing and capacity, including limits and zero-stress contacts.
+- [x] HALF.3 classifies every upper E/W triple as the canonical aligned triple. Widening then proves capacity two in every strict terminal half-pocket.
+- [x] Complete physical three-ray routing and the capacities one plus two exclude all four-extra completions. Angular limits reduce to the closed P family; zero-stress contacts remain physical obstacles.
 
-Source: REMAINING_TREE_TWO_FAMILY_REDUCTION.md. P.ALL and Y.ALL are not closed by the new two-load theorem: Y has three loaded bodies, and P remains the four-body two-load completion.
+Sources: REMAINING_TREE_TWO_FAMILY_REDUCTION.md, P_ALL_COMPLETION.md and Y_ALL_COMPLETION.md. The full P and Y capacities now close TREE.ALL; the P capacity also closes the entire exactly-two-load class through its earlier reduction. The radius-window condition remains explicit.
 
 ## 4. Cyclic necessary load and channel restrictions
 
@@ -116,9 +118,9 @@ Source: TWO_LOAD_RECIPROCAL_RIGIDITY.md, initial 248202d and clarified 9fad28e. 
 - [x] **TL.COMPLETE6:** SIX_BODY_TWO_LOAD_COMPLETION.md proves at most two arbitrary extras for the entire six-body layer family.
 - [x] **TL.REDUCE5:** FIVE_BODY_TWO_LOAD_REDUCTION.md proves actual P containment or at most three extras across the full five-body domain.
 - [x] **TL.ALL_TO_P:** every two-loaded nine-square completion in the window contains an actual P skeleton.
-- [ ] **P.ALL / TL.COMPLETE5:** the remaining P capacity, which also implies the five-body completion, is still open.
+- [x] **P.ALL / TL.COMPLETE5 / TL.COMPLETE:** the full P capacity closes every exactly-two-load completion, including all five-body cores and cyclic cases.
 
-**Exact controls:** a six-cycle has heights +/-3/5; a six-body theta graph has seven positive contacts; a five-body bridge-plus-cycle exists. A three-loaded nonaligned Y has nonzero reciprocal area and nonparallel forces. The six-body cores remain feasible, but their completion to nine is excluded; five-body cores reduce as above. Y remains a separate three-load problem.
+**Exact controls:** a six-cycle has heights +/-3/5; a six-body theta graph has seven positive contacts; a five-body bridge-plus-cycle exists. A three-loaded nonaligned Y has nonzero reciprocal area and nonparallel forces. The six-body cores remain feasible, but their completion to nine is excluded; five-body cores reduce as above. The separate three-loaded Y completion is now excluded by Y_ALL_COMPLETION.md.
 
 ## 6. Whole coarse cell C1.4.b0 CLOSED
 
@@ -154,7 +156,7 @@ CYCLIC_CELL_LEDGER.md retains all 58 individual rows and their complete physical
 - [ ] Prove a uniform sharp inequality or whole selected-component exclusion over all continuous positions/angles.
 - [ ] Preserve all q=Q equality/zero-weight limits needed by the eventual theorem.
 
-**O3.3.SHARP / O4 / O5 remain OPEN:** P.ALL now covers every two-loaded completion. Y.ALL and the remaining 3–7-loaded noncollinear cyclic configurations still require their full physical capacity inequalities. The five-body reduction and six-body exclusion have no further independent completion obligation. A uniform global argument is preferable to 56 separate angle-grid searches.
+**O3.3.SHARP / O4 / O5 remain OPEN:** P.ALL, Y.ALL, TREE.ALL and all two-loaded completions are closed at their stated scopes. The general boundary-only C7 and mixed 3–7-loaded noncollinear cyclic configurations still require full physical capacity inequalities. A uniform global argument is preferable to 56 separate angle-grid searches.
 
 **G2.X/G4:** only after complete sharp coverage and the explicit lower-window prerequisite can minimizer attainment exclude q<Q. **G5.U:** all unrestricted equality packings still need necessity/converse. **G6–G8:** independent full audit, standard-kernel Lean and integration are not done.
 
