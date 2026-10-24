@@ -607,6 +607,25 @@ the caps and central region remains open for all four whole C6 load
 orbits. No extra is assumed to lie in the concurrence polygon, and
 no positive chord is dropped to apply the simple-cycle theorem.
 
+### 6.8. The whole unique-corner, one-diagonal central region
+
+SIX_CYCLE_ONE_DIAGONAL_INNER_CAPACITY.md strengthens the central
+capacity for the complete alternating three-load family with exactly
+one diagonal transmitter and three physical unique circle corners.
+Every original shared-side mean is retained. Its full port/turn cover
+proves each loaded turn is at most135 degrees, with equality forcing
+the actual concurrence to be its circle corner. Both diagonal-end
+turns are strictly between90 and135 degrees.
+
+The exact six actual contact points give a polygon of area<5/2.
+The diagonal transmitter occupies its actual inward half, of area1/2.
+The full bounded central free union consequently has area<2, including
+weak-limit components. It holds at most one extra, so at least two
+of the three extras must lie in the actual exterior channel caps.
+Root and independent full audits passed the complete region theorem.
+This does not exclude a whole positive core, close the one-diagonal
+width class, or extend to a physical two-corner endpoint by a limit.
+
 ## 7. Two triangle blocks and one bridge: exactly three layouts
 
 If the triangles share an articulation A, their union has five
@@ -632,8 +651,30 @@ tip has degree3 and its shared articulation degree4. Neither can be
 replaced by an unchanged degree2 tip or the new exact-degree3
 one-bridge end-triangle root. TIP_LEAF_BOWTIE_D_EXCLUSION.md now excludes the entire D-leaf type,
 through its complete parallel and nonparallel articulation proofs.
-Only the whole S-leaf type remains in that final layout, with both
-aligned and tilted roots, all owners/masks/means and all three extras.
+The entire aligned S-leaf type is now excluded by
+TIP_LEAF_BOWTIE_S_ALIGNED_NONPARALLEL_EXCLUSION.md and
+TIP_LEAF_BOWTIE_S_ALIGNED_PARALLEL_EXCLUSION.md. The nonparallel
+proof exhausts the preselected left-vertex owners and all physical
+B masks, then routes both true C/E petal ports to one high H side.
+The parallel proof keeps both actual wall means. Proper B concurrence,
+the true degree-four H equation and end-triangle pressure determine
+the complete M sector. Its tilted-H alternative uses the exact petal
+torque to reach support>39/40; its aligned-H alternative uses the
+full all-frame boundary-wall bottom>1/2 theorem. All critical zero
+coordinates and shared means are included.
+
+END_TRIANGLE_HIGH_FACE_EXCLUSION.md proves the uniform all-mask
+contradiction when both actual end-triangle ports share a root side
+of height at least39/40. The quantitative companion
+END_TRIANGLE_FACE_RESULTANT_ANGLE.md gives Mhat.N>1/2 at side height
+at least4/5 and Mhat.N>4/5 at height at least29/30. These statements
+retain arbitrary additional root forces. Root and independent full
+audits passed both aligned proofs and both local tools.
+
+Only the whole tilted S-leaf articulation remains in this last
+layout. All B/H owner and frame alternatives, physical circle masks,
+actual means, root force equations and all three extras remain.
+C2.33.b1 is still open with two of its three full layouts closed.
 
 ## 8. A triangle and a four-body block: three layouts, two remaining
 
@@ -651,6 +692,34 @@ at the shared articulation. The four-body block retains the resulting
 additional interface force and all its actual body equations. An
 isolated four-body-component exclusion cannot silently remove this
 force.
+
+### 8.1. Exactly four remaining whole graph/load orbits
+
+TRIANGLE_FOUR_BODY_BLOCK_LOAD_COVER.md proves the full necessary
+load refinement. Label the C4 H--A--B--C--H and the attached triangle
+H--X--Y--H. H is physically clear; X,Y are loaded true degree-two tips.
+The whole one-adjacent-block-load family has a positive normal channel
+whose endpoints actually touch, an immediate contradiction.
+
+In the one-opposite-block-load family B, the two true unloaded
+transmitters align both endpoints and have reserve1. B's genuine
+degree-two equation forces the actual radial S unit with equal circle
+weights. The complete other petal then has M=-F_B along H's side axis,
+whose support is2-d>59/60. END_TRIANGLE_AXIS_RESULTANT_SUPPORT_BOUND.md
+proves both petal ports are on that maximizing side and gives the
+contradictory strict bound<59/60. H retains all four forces.
+
+The exact remaining C4 block-load representatives areAB,AC,ABC.
+Both two-load cases have a single actual side transmitter, proved by
+their real unit bypass. For the diamond rooted at hub H, the sole
+block-load set isKAB; its other hub K has true degree3 and is forced
+loaded, while H retains degree5. The diamond-tip layout stays closed.
+
+Root and independent full audits passed the load table, both entire
+single-load exits and the uniform axis-resultant theorem. The four
+remaining graph/load orbits require a whole contradiction, sharp bound
+or complete joint three-extra exit. One of three whole attachment
+layouts is closed; C2.34.b0 remains open.
 
 ## 9. Complete local and load-family exits beyond the initial cover
 

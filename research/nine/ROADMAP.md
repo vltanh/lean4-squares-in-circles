@@ -1,5 +1,15 @@
 # n=9 — ordered roadmap to the unrestricted hand proof
 
+## Entire aligned-S bowtie closed; sharper triangle tools and four-block load cover
+
+[END_TRIANGLE_HIGH_FACE_EXCLUSION.md](END_TRIANGLE_HIGH_FACE_EXCLUSION.md) proves the full all-mask exclusion when both actual ports of an end triangle lie on one root side of height at least**39/40**. Its exact center-cap and free/shared-interface proofs allow arbitrary additional forces at the root. [END_TRIANGLE_AXIS_RESULTANT_SUPPORT_BOUND.md](END_TRIANGLE_AXIS_RESULTANT_SUPPORT_BOUND.md) proves both ports occupy the maximizing side whenever the whole petal resultant is a root axis. [END_TRIANGLE_FACE_RESULTANT_ANGLE.md](END_TRIANGLE_FACE_RESULTANT_ANGLE.md) gives the complete quantitative direction bounds at side heights4/5 and29/30, including every free-contact chart.
+
+The whole aligned S-leaf articulation of the tip-attached bowtie is now CLOSED hand, by [TIP_LEAF_BOWTIE_S_ALIGNED_NONPARALLEL_EXCLUSION.md](TIP_LEAF_BOWTIE_S_ALIGNED_NONPARALLEL_EXCLUSION.md) and [TIP_LEAF_BOWTIE_S_ALIGNED_PARALLEL_EXCLUSION.md](TIP_LEAF_BOWTIE_S_ALIGNED_PARALLEL_EXCLUSION.md). The proofs retain every original wall mean, physical B mask, H frame and critical zero-coordinate transition. They use the real degree-four H equation and the complete C/E petal. The entire D type was already closed; **only the full tilted S articulation remains** in the last open bowtie/leaf layout.
+
+[TRIANGLE_FOUR_BODY_BLOCK_LOAD_COVER.md](TRIANGLE_FOUR_BODY_BLOCK_LOAD_COVER.md) excludes both complete single-load C4 attachment families. It leaves exactly four necessary whole graph/load orbits: C4 loadsAB,AC,ABC and diamond-hub loadsKAB. Every true root degree and all three extras remain. [SIX_CYCLE_ONE_DIAGONAL_INNER_CAPACITY.md](SIX_CYCLE_ONE_DIAGONAL_INNER_CAPACITY.md) proves central capacity at most one for the complete physical-unique, one-diagonal alternating C6 family, including shared means; at least two extras must occupy actual exterior caps.
+
+Root and separate independent full audits passed all seven complete manuscripts. Their exact gates and remaining whole-domain exits are recorded below. The authoritative coarse inventory remains **eight closed/50 open**: neither the last tilted bowtie family, the four block-load orbits nor the full C6 completion is declared closed. Unrestricted sharpness, original equality and full earlier prerequisite-chain audit remain OPEN. PR #11 stays draft; no Lean compilation or CI was run.
+
 ## Two-leaf transmitter obstruction and all four-block attachment load gates
 
 [TWO_LEAF_ROOT_NO_UNLOADED_TRANSMITTER.md](TWO_LEAF_ROOT_NO_UNLOADED_TRANSMITTER.md) proves a uniform completion exclusion at any root supporting two genuine leaves. A true unloaded degree-two neighbor contradicts the full central-disk and sharp-support bounds away from d=1. At d=1, the actual equality configuration is a whole physical Y cage or P cage. The axis proof retains the original nonzero mean and derives the full P slider from the other leaf's occupied square. The third S terminal may have arbitrary additional positive forces; it is never assigned a false leaf equation.
