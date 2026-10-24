@@ -122,7 +122,7 @@ an isolated four-body component is therefore not transferred here.
 | Block | Complete attachment layout | Exact remaining necessary positive block-load sets |
 | --- | --- | --- |
 | C4 | Arm at A | BC; BD; BCD |
-| C4 | Two leaves at A | BD; BCD |
+| C4 | Two leaves at A | BCD |
 | C4 | Leaves at adjacent roots A,B | C; CD |
 | C4 | Leaves at opposite roots A,C | BD |
 | Diamond | Arm at hub H | KBC |
@@ -133,7 +133,7 @@ an isolated four-body component is therefore not transferred here.
 | Diamond | Leaves at both tips B,C | HK |
 | Diamond | Leaves at hub H and tip B | KC |
 
-The nine open layouts have exactly thirteen necessary whole block-load
+The nine open layouts have exactly twelve necessary whole block-load
 orbits. Each set includes every automorphism preserving the actual
 attachment; each leaf/width refinement below uses the stabilizer of
 that specific load set. The table is necessary coverage and asserts
@@ -150,13 +150,21 @@ If the mask is BD, the transmitter C has bypass A and also has
 reserve1. These are actual-degree conclusions, not deletions of
 an extra root force. No internal transmitter remains in maskBCD.
 
-For two leaves at A, the new full two-leaf-root theorem forces both
-actual degree-two neighbors B,D loaded. The opposite C may be
-loaded or unloaded. Thus precisely BD andBCD remain. This excludes
-the entire one-adjacent-load, one-opposite-load and two-adjacent-load
-families, for all S/S,S/D,D/D choices and every physical mask.
-In the BD residue the actual C transmitter has unit bypass A and
-reserve1; A retains all four of its genuine positive forces.
+For two leaves at A, the full two-leaf-root theorem forces both
+actual degree-two neighbors B,D loaded. This excludes the entire
+one-adjacent-load, one-opposite-load and two-adjacent-load families,
+for all S/S,S/D,D/D choices and every physical mask. The initial
+necessary load alternatives are BD andBCD.
+
+TWO_LEAF_ROOT_OPPOSITE_C4_EXCLUSION.md now excludes the entire BD
+alternative at the common canonical radius/Phi minimizer. Each actual
+genuine leaf has positive circle-force pressure at A, in all three
+whole S/S,S/D,D/D domains. POSITIVE_ROOT_PRESSURE_OPPOSITE_C4_EXCLUSION.md
+then applies to the genuine B-C-D path, with C an unloaded transmitter,
+B/D true loaded degree two, and all four positive A forces retained.
+All three arbitrary extras remain. Only BCD remains in this layout;
+its true middle C equation cannot be deleted to use the opposite-load
+theorem. The complete same-root attachment parent is still open.
 
 For adjacent leaf roots A,B, both roots are clear. At least one of
 C,D is loaded. The attachment reflection swaps A,B and C,D, leaving
@@ -236,7 +244,7 @@ The full remaining semantic counts are therefore:
 | Layout | Whole block-load representatives | Full leaf/width families remaining |
 | --- | ---: | ---: |
 | C4 arm | 3 | 9: three arm types for each mask |
-| C4 same-root leaves | 2 | 6: three unordered leaf pairs for each mask |
+| C4 same-root leaves | 1 | 3: all three unordered leaf pairs at BCD |
 | C4 adjacent-root leaves | 2 | 5: three ordered pairs at C; two at CD |
 | C4 opposite-root leaves | 1 | 2: S/S and the full mixed orbit |
 | Diamond arm at hub | 1 | 3: all three arm types |
@@ -244,7 +252,7 @@ The full remaining semantic counts are therefore:
 | Diamond both-hub leaves | 1 | 2: S/S and the full mixed orbit |
 | Diamond both-tip leaves | 1 | 2: S/S and the full mixed orbit |
 | Diamond hub/tip leaves | 1 | 3: S/S and both ordered mixed pairs |
-| Total | 13 | 35 |
+| Total | 12 | 32 |
 
 These are entire genuine leaf/width alternatives, not sampled angles
 or arbitrary intervals introduced to inflate progress. Every original
@@ -253,12 +261,13 @@ The two previously closed diamond-tip layouts contribute no open gate.
 
 ## 5. Remaining sharp and completion contracts
 
-All nine displayed attachment parents remain open, with thirteen
-necessary block-load orbits and thirty-five leaf/width refinements.
+All nine displayed attachment parents remain open, with twelve
+necessary block-load orbits and thirty-two leaf/width refinements.
 The complete new restrictions are the two-leaf-root/no-transmitter
 exclusion, the no-channel-between-leaf-roots theorem, and the distinct-
 root D/D exclusion; their proper scopes have been applied before
-recording the residual families.
+recording the residual families. The complete canonical two-leaf
+opposite-load C4 exit removes all three BD leaf-type alternatives.
 
 Each remaining whole family must receive a full core contradiction,
 a sharp radius bound or a joint capacity theorem excluding all three

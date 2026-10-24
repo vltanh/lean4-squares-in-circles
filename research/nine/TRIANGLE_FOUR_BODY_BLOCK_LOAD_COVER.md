@@ -282,3 +282,26 @@ unused physical contact and original shared-side mean remains.
 C2.34.b0 stays open with one of three complete attachment layouts
 closed. The current two-orbit cover asserts no physical realization
 and does not discharge the original equality or earlier dependency audit.
+
+## 5. Exact new endpoint exits in both remaining load orbits
+
+TRIANGLE_C4_ALIGNED_WALL_TIP_SIGN.md covers the entire actual ABC
+wall support/radius/mean domain. Every aligned endpoint has nonnegative
+horizontal outgoing normal toward B: otherwise its lower-left support
+would exceed R²/4>=R-1 and no contained unit could touch beyond it.
+The two-aligned-endpoint family is wholly excluded by the actual B
+equation and physical circle-corner acuteness. Every surviving wall
+therefore has a tilted endpoint with a westward outgoing normal, at
+its lower vertex or outer lower face. Both physical B masks and all
+original side means remain. The full nonparallel root domain remains.
+
+NEGATIVE_UNIQUE_TRIANGLE_TIP_OWNED_EXCLUSION.md closes every A-owned
+negative HA in the diamond, including the entire shared-interface
+domain. Its proper-coordinate polynomial estimate and complete two
+other-normal alternatives use no degree equation at H or K.
+The residual owner cover is H-owned singleton across the full radius
+window, or free HA with shared AK below R²=17/4. All four physical
+K/A/B masks, H's five forces and K's three forces remain.
+Both complete sources passed root and separate independent audits;
+neither remaining whole graph/load orbit is yet closed.
+

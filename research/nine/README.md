@@ -1,5 +1,68 @@
 # Nine unit squares in a circle — current hand-proof frontier
 
+## Uniform C4 pressure, an empty C6 center, and complete endpoint-owner exits
+
+POSITIVE_ROOT_PRESSURE_OPPOSITE_C4_EXCLUSION.md proves the entire
+canonical opposite-load C4 exclusion whenever the actual outside
+circle-force sum has positive pressure at its clear hub. Its complete
+dependency audit retains arbitrary extra hub forces, the true degrees
+of the other three cycle bodies, all original means and all nine
+physical squares. No outside force is deleted or turned into a leaf.
+Its full corollary covers any same-hub collection of genuine leaves
+and intact end triangles with at most nine total component bodies.
+
+TWO_LEAF_ROOT_OPPOSITE_C4_EXCLUSION.md applies that theorem to both
+genuine hub leaves. Their individual pressure is positive for every
+S/S,S/D,D/D choice, including all radial corner-weight endpoints.
+Thus the whole BD load orbit of the C4 with two leaves at one root is
+closed at the common canonical radius/Phi minimizer. The BCD orbit
+and its attachment parent remain open. The four-block/two-bridge
+cover now has twelve whole load orbits and thirty-two full leaf/width
+families across its nine remaining layouts.
+
+SIX_CYCLE_ONE_DIAGONAL_CENTRAL_HOLE_EMPTY.md proves that the entire
+bounded central free region is empty for the physical-unique,
+one-diagonal alternating six-cycle. The full opposite-tip feature
+cover first forces exactly one genuinely shared transmitter side.
+Two exact endpoint inequalities and a complete orientation-uniform
+diamond/strip separation theorem exclude every central unit. The
+actual contact polygon retains all weak junctions and original means.
+The diagonal exterior pocket is already empty, so all three extras
+must lie in the two actual side pockets. Only the whole allocations
+3+0 and2+1 remain, with both shared-side/nonshared-side orders explicit.
+
+TRIANGLE_C4_ALIGNED_WALL_TIP_SIGN.md excludes every westward outgoing
+normal at an aligned endpoint of the remaining ABC wall domain. Its
+entire actual mean range gives a support greater than R²/4>=R-1,
+using one monotone polynomial comparison and two complete analytic
+intervals. This excludes the whole two-aligned-endpoint family.
+Every surviving wall needs a tilted endpoint with a westward normal
+at its lower vertex or outer lower face; both physical middle masks
+and every genuine side mean remain.
+
+NEGATIVE_UNIQUE_TRIANGLE_TIP_OWNED_EXCLUSION.md excludes every
+negative unique triangle endpoint that owns its hub normal, including
+every genuinely shared hub interface. The true concurrence coordinate
+is below2/3 by a complete positive polynomial identity. A horizontal
+other contact makes its boundary neighbor strictly circle-clear;
+a downward one violates the universal boundary-contact radius.
+Only the endpoint has a degree-two equation. The diamond retains
+the true H5/K3 forces, intact petal and all three extras. Its remaining
+negative contact is H-owned singleton or free with shared AK below
+R²=17/4; the whole diamond orbit remains open.
+
+Root and separate independent full audits passed all five complete
+sources, including the uniform theorem's outside-force scope and
+same-hub corollary. The deep roadmap records their full proofs,
+eight additional whole same-hub attachment/load applications on
+seven through nine bodies, and the exact remaining geometric exits.
+The coarse inventory remains nine closed and49 open; four six-body
+coarse parents and all larger mixed parents remain open. Unrestricted
+sharpness, original equality and the full earlier prerequisite-chain
+audit remain OPEN. PR #11 stays draft; no Lean compilation or CI was run.
+
+Earlier checkpoint notes below retain their then-current counts; the current exact states are in DEEP_GATED_ROADMAP.md.
+
 ## Entire opposite-load triangle/C4 branch closed; two load orbits remain
 
 TRIANGLE_C4_OPPOSITE_LOAD_BRANCH_CLOSED.md closes the entire AC

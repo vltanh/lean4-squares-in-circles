@@ -147,7 +147,7 @@ or distributed-root diamond case is excluded by that argument.
 
 FOUR_BODY_BLOCK_TWO_BRIDGES_LOAD_COVER.md supplies the full necessary
 refinement of the eleven attachments. The nine open layouts have
-thirteen whole positive block-load orbits and thirty-five complete
+twelve whole positive block-load orbits and thirty-two complete
 leaf/width alternatives, with every actual root force retained.
 The asymmetric C4 adjacent-root/single-load family keeps both mixed
 S/D orders; no root swap is used unless it also preserves the load set.
@@ -161,8 +161,11 @@ is the full actual Y cage. At an axis endpoint the other genuine leaf
 forces the whole P slider, even when the original mean is nonzero.
 Both critical capacity theorems count every original body.
 
-Consequently C4 with two leaves at A retains precisely block loadsBD
-orBCD. C4 with leaves at opposite roots A,C requires both B,D loaded:
+The full no-transmitter theorem first leaves block loadsBD orBCD for
+C4 with two leaves at A. TWO_LEAF_ROOT_OPPOSITE_C4_EXCLUSION.md now
+closes the entire BD orbit for all S/S,S/D,D/D leaf choices at the
+canonical minimizer, with every A force and all extras retained.
+Only BCD remains in this attachment. C4 with leaves at opposite roots A,C requires both B,D loaded:
 an unloaded channel cannot join two units that each meet D_epsilon,
 since its reserve would satisfy1<=w<=2epsilon<1/30. At distinct roots
 every whole D/D leaf assignment is impossible because both actual
@@ -637,13 +640,25 @@ Root and separate independent hand/algebra audits passed all 202
 positive coefficient lower bounds and the full center-cap support
 argument. No sampled sign or parameter subdivision is a premise.
 
-Together with Section 6.8, at least two extras must lie in the two
-actual side pockets. Up to their physical reflection the remaining
-whole allocations are: zero central extras with side counts(3,0) or
-(2,1), or one central extra with side counts(2,0) or(1,1). All actual
-shared means, the common loaded endpoint and the entire central free
-union remain coupled. The full joint completion and the other physical
-mask/width families remain OPEN.
+### 6.10. The whole central free union is empty; two side pockets remain
+
+SIX_CYCLE_ONE_DIAGONAL_CENTRAL_HOLE_EMPTY.md improves the entire
+central capacity in Section6.8 from one to zero. Its full actual
+opposite-tip port cover forces exactly one genuine shared transmitter
+side. The original proper endpoint equations imply two strict support
+inequalities on their whole domains. A complete separating-axis proof
+for a unit between a diagonal square and an oblique support line
+contradicts those inequalities for every hypothetical central unit.
+The whole actual contact polygon, all weak junctions and every
+original shared mean remain. Root and independent full audits passed.
+
+Together with the empty diagonal exterior pocket, all three extras
+must lie in the two actual side pockets. The only unordered counts
+are(3,0) and(2,1). Since exactly one opposite-tip interface is shared,
+each count retains both assignments to the shared-side and other-side
+pockets. The roadmap records these four whole allocations explicitly.
+The joint side capacity is OPEN, as are the physical radial and
+zero-diagonal families. No unique-mask or width premise is dropped.
 
 ## 7. Two triangle blocks and one bridge: exactly three layouts
 
@@ -810,6 +825,28 @@ remain. Unrestricted sharpness, original equality and full earlier
 prerequisite-chain audit remain OPEN. PR #11 stays draft; no Lean
 compilation or CI was run.
 
+### 8.1. Exact new endpoint exits in both remaining load orbits
+
+TRIANGLE_C4_ALIGNED_WALL_TIP_SIGN.md covers the entire actual ABC
+wall support/radius/mean domain. Every aligned endpoint has nonnegative
+horizontal outgoing normal toward B: otherwise its lower-left support
+would exceed R²/4>=R-1 and no contained unit could touch beyond it.
+The two-aligned-endpoint family is wholly excluded by the actual B
+equation and physical circle-corner acuteness. Every surviving wall
+therefore has a tilted endpoint with a westward outgoing normal, at
+its lower vertex or outer lower face. Both physical B masks and all
+original side means remain. The full nonparallel root domain remains.
+
+NEGATIVE_UNIQUE_TRIANGLE_TIP_OWNED_EXCLUSION.md closes every A-owned
+negative HA in the diamond, including the entire shared-interface
+domain. Its proper-coordinate polynomial estimate and complete two
+other-normal alternatives use no degree equation at H or K.
+The residual owner cover is H-owned singleton across the full radius
+window, or free HA with shared AK below R²=17/4. All four physical
+K/A/B masks, H's five forces and K's three forces remain.
+Both complete sources passed root and separate independent audits;
+neither remaining whole graph/load orbit is yet closed.
+
 ## 9. Complete local and load-family exits beyond the initial cover
 
 UNLOADED_TRIANGLE_HUB_EXTERNAL_SEPARATION.md has a full source-by-source
@@ -963,6 +1000,26 @@ torque put the full petal resultant in a controlled sector. Every H
 frame then has support at least2sqrt(1+sqrt(2)-R)>2/sqrt(3)>d.
 Both full source audits and the complete assembly audit passed.
 All three extras remain, and the S-leaf alternative remains open.
+
+### 9.3. Entire opposite-load C4 with positive outside pressure
+
+POSITIVE_ROOT_PRESSURE_OPPOSITE_C4_EXCLUSION.md audits the full
+parallel/canonical/unique/mixed proof under its actual uniform premises:
+H-A-U-C-H has true degrees2 at A,U,C, U is unloaded, H is clear,
+and the genuine outside circle-force sum M satisfies
+M+F_A+F_C=0 and c_H.M>0. Every extra H force and all nine physical
+squares remain. The packing is the common canonical radius/Phi
+minimizer; no original equality classification follows.
+
+The complete same-hub corollary allows k genuine leaves and t intact
+end triangles with1<=k+2t<=5. Each real attachment has positive
+pressure at H, whose true degree is2+k+2t. Every leaf S/D type,
+end-triangle physical mask, original shared mean and arbitrary extra
+is retained. This closes the exact opposite-core-load family for
+each such attachment, including eight whole cases on7--9 bodies.
+It does not close coarse cells containing other roots, internal arms,
+different core loads or extra positive edges at the true core tips.
+The entire uniform implication and corollary passed both full audits.
 
 ## 10. Exact exit contracts and status
 
