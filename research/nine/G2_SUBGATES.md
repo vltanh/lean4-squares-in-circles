@@ -188,6 +188,52 @@ opposite-C4 theorem also closes eight specified same-hub attachment/load
 families with7--9 bodies. These are full subfamily exclusions inside
 larger open coarse parents, not new whole coarse closures.
 
+## Entire parallel ABC family closed; stronger inner-arc tool
+
+[TRIANGLE_C4_TILTED_WALL_OUTER_FACE_EXCLUSION.md](TRIANGLE_C4_TILTED_WALL_OUTER_FACE_EXCLUSION.md)
+excludes the complete tilted endpoint's outgoing outer-face contact,
+including every original side mean and both endpoints. The actual
+geometry lies in the whole rectangle
+\(7/4<U<2,\ 2/3<V<61/60\). Proper concurrence fixes the unchanged
+application as \((\kappa U,V)\). A complete support-point corner
+bound and an exact positive polynomial give a containment
+contradiction throughout that rectangle, with reserve
+\(16G\ge6809/1944>0\) in its nonnegative shifted-height part.
+
+[TRIANGLE_C4_THREE_LOAD_PARALLEL_EXCLUSION.md](TRIANGLE_C4_THREE_LOAD_PARALLEL_EXCLUSION.md)
+then closes the **entire parallel-root ABC family**, for both
+physical masks SUU and UUU in order (B,A,C). B's actual radial
+resultant forces a westward endpoint. That endpoint is tilted,
+its remaining application is its actual lower vertex, and the
+prior compatible fixed-tip selection makes the contact B-owned.
+With two westward endpoints, an actual B corner lies outside the
+disk. With exactly one, the actual B width gives
+\(f_A+1-c\le d(y+w)\le d<1\), while \(f_A\ge c\).
+Every other endpoint mean and coincident case remains.
+
+[ANNULAR_CENTER_ARC_AT_23_25.md](ANNULAR_CENTER_ARC_AT_23_25.md)
+proves that **every contained unit with center norm at least23/25**
+intersects the radius-5/4 circle in one connected open arc of
+length strictly greater than43.5 degrees. The arc contains the
+actual radial-center point. Both full outer-face and inner-face
+domains are proved analytically, with exact rational trigonometric
+reserves. Two such units cannot be routed into one free interval
+of length at most87 degrees; the physical routing into a specific
+pocket remains a separate premise.
+
+All three complete sources passed root and separate independent
+full hand audits. The wall theorem uses the simultaneously
+selected necessary certificate and preserves H's true degree
+four, the intact HXY petal, all B masks and zero individual
+weights, every original mean and all three extras. The arc
+theorem has no force, degree or physical boundary premise.
+
+The nonparallel ABC owner cover, the whole ABC and diamond-hub
+KAB orbits, and all four remaining six-body coarse parents stay
+OPEN. The global inventory remains nine whole coarse cells
+closed and49 open. None of these results classifies every
+original equality packing.
+
 ## New audited endpoint and central-region results
 
 [NEGATIVE_UNIQUE_ENDPOINT_TIP_OWNED_HIGH_RADIUS.md](NEGATIVE_UNIQUE_ENDPOINT_TIP_OWNED_HIGH_RADIUS.md)
@@ -301,13 +347,14 @@ cannot be split into artificial degree-two end-triangle tips.
    audit pass. Physical radial endpoints and the zero-diagonal
    domain remain separate obligations.
 
-2. **Finish the parallel ABC wall, then the entire nonparallel owner
-   cover.** Opposite root normals and the two-aligned wall family
-   are already excluded. The wall has actual support1/4<s<1/2 and
-   the unchanged endpoint heights y,w>0 with y+w<=1. Its remaining
-   tilted features must be closed on that full domain. Use the exact
-   owner/mask table above for the nonparallel domain; do not import
-   wall support ranges into it.
+2. **Finish the entire nonparallel ABC owner cover.** The complete
+   parallel-root family is now closed for both physical B masks.
+   Continue the exact H-owned singleton, surviving free SUU and
+   low-radius A-owned/shared domains in the owner table. Retain
+   every true force and original mean. The uniform central-capacity
+   zero theorem is available, but a completion route must still
+   bound the two actual articulation pockets jointly. Do not
+   import parallel-wall support ranges into this domain.
 
 3. **Finish the diamond-hub KAB orbit.** Retain the actual H5/K3
    force coupling, the intact HXY petal and all three extras. Cover

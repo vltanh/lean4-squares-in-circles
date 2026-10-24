@@ -1162,3 +1162,73 @@ C6 side-pocket proof are separate ongoing full-audit tasks; their
 parents are not ticked by this checkpoint. Unrestricted sharpness,
 every original equality packing and the full earlier prerequisite-chain
 audit remain OPEN. PR #11 stays draft.
+
+
+## October 24 20:29 UTC — whole parallel ABC closure and connected23/25 inner arcs afterd6dc75e
+
+## Entire parallel ABC family closed; stronger inner-arc tool
+
+[TRIANGLE_C4_TILTED_WALL_OUTER_FACE_EXCLUSION.md](TRIANGLE_C4_TILTED_WALL_OUTER_FACE_EXCLUSION.md)
+excludes the complete tilted endpoint's outgoing outer-face contact,
+including every original side mean and both endpoints. The actual
+geometry lies in the whole rectangle
+\(7/4<U<2,\ 2/3<V<61/60\). Proper concurrence fixes the unchanged
+application as \((\kappa U,V)\). A complete support-point corner
+bound and an exact positive polynomial give a containment
+contradiction throughout that rectangle, with reserve
+\(16G\ge6809/1944>0\) in its nonnegative shifted-height part.
+
+[TRIANGLE_C4_THREE_LOAD_PARALLEL_EXCLUSION.md](TRIANGLE_C4_THREE_LOAD_PARALLEL_EXCLUSION.md)
+then closes the **entire parallel-root ABC family**, for both
+physical masks SUU and UUU in order (B,A,C). B's actual radial
+resultant forces a westward endpoint. That endpoint is tilted,
+its remaining application is its actual lower vertex, and the
+prior compatible fixed-tip selection makes the contact B-owned.
+With two westward endpoints, an actual B corner lies outside the
+disk. With exactly one, the actual B width gives
+\(f_A+1-c\le d(y+w)\le d<1\), while \(f_A\ge c\).
+Every other endpoint mean and coincident case remains.
+
+[ANNULAR_CENTER_ARC_AT_23_25.md](ANNULAR_CENTER_ARC_AT_23_25.md)
+proves that **every contained unit with center norm at least23/25**
+intersects the radius-5/4 circle in one connected open arc of
+length strictly greater than43.5 degrees. The arc contains the
+actual radial-center point. Both full outer-face and inner-face
+domains are proved analytically, with exact rational trigonometric
+reserves. Two such units cannot be routed into one free interval
+of length at most87 degrees; the physical routing into a specific
+pocket remains a separate premise.
+
+All three complete sources passed root and separate independent
+full hand audits. The wall theorem uses the simultaneously
+selected necessary certificate and preserves H's true degree
+four, the intact HXY petal, all B masks and zero individual
+weights, every original mean and all three extras. The arc
+theorem has no force, degree or physical boundary premise.
+
+The nonparallel ABC owner cover, the whole ABC and diamond-hub
+KAB orbits, and all four remaining six-body coarse parents stay
+OPEN. The global inventory remains nine whole coarse cells
+closed and49 open. None of these results classifies every
+original equality packing.
+
+The complete deep tree retains all1,805 earlier IDs and now has
+1,842 unique gates. Thirty-seven new checked proof steps record the
+two entire wall proofs and the whole connected-arc theorem. Seven
+earlier parallel feature/mask/parent gates are now checked. The
+nonparallel ABC parent and all four remaining six-body coarse
+parents remain open; the coarse inventory stays9 CLOSED /49 OPEN.
+
+The outer-face polynomial was reconstructed in exact integer
+arithmetic. The separate full source audit found only an undefined
+q0 symbol; the final manuscript defines q0=(79/40)²=6241/1600
+explicitly. Both complete wall proofs passed independent physical
+feature, mean, owner, selection-timing and force-assembly audits.
+The annular theorem independently passed both whole face domains,
+connectedness, radial-point inclusion and every exact reserve.
+
+The unique-corner one-diagonal C6 scalar certificate and full side
+routing are preserved separately for review. No C6 side-capacity
+gate is closed by this checkpoint until its complete source and
+independent assembly audit pass. No Lean compilation or CI was run.
+All changes use the GitHub connector; PR #11 remains draft.

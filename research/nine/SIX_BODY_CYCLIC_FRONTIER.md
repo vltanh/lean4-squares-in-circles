@@ -2,7 +2,7 @@
 
 ## Current endpoint and region checkpoint
 
-The current detailed triangle/four-block owner and radius refinement is given in TRIANGLE_FOUR_BODY_BLOCK_LOAD_COVER.md and the1,805-gate DEEP_GATED_ROADMAP.md. The five new uniform endpoint/region proofs below close their full stated subfamilies; no additional coarse parent is closed. Older sequential checkpoint descriptions are superseded by this live refinement.
+The current detailed triangle/four-block owner and radius refinement is given in TRIANGLE_FOUR_BODY_BLOCK_LOAD_COVER.md and the1,842-gate DEEP_GATED_ROADMAP.md. The whole parallel ABC family and stronger connected inner-arc theorem are now audited, alongside the five endpoint/region proofs below. No additional coarse parent is closed. Older sequential checkpoint descriptions are superseded by this live refinement.
 
 **Status: complete hand graph, attachment, load and plane-domain cover;
 root and separate independent full hand audits passed.** This manuscript refines every six-body row of the positive
@@ -815,8 +815,9 @@ both endpoint physical masks are unique. The full aligned/tilted
 endpoint descriptions keep every mean and proper-length endpoint;
 the wall support also exceeds sqrt((R-sqrt(2))²-1/4)>1/4. Its
 actual hub center lies in the open radius-1/4 disk over the entire
-same-normal domain. The full same-normal wall and nonparallel domains
-remain open.
+same-normal domain. The entire same-normal wall is now excluded by
+TRIANGLE_C4_THREE_LOAD_PARALLEL_EXCLUSION.md; only the full
+nonparallel domain remains in the ABC orbit.
 
 Root and separate independent full audits passed all five sources,
 the complete mixed geometry, every analytic scalar inequality and the
@@ -836,10 +837,13 @@ wall support/radius/mean domain. Every aligned endpoint has nonnegative
 horizontal outgoing normal toward B: otherwise its lower-left support
 would exceed R²/4>=R-1 and no contained unit could touch beyond it.
 The two-aligned-endpoint family is wholly excluded by the actual B
-equation and physical circle-corner acuteness. Every surviving wall
-therefore has a tilted endpoint with a westward outgoing normal, at
-its lower vertex or outer lower face. Both physical B masks and all
-original side means remain. The full nonparallel root domain remains.
+equation and physical circle-corner acuteness. The remaining tilted
+outer face is now excluded on the entire domain by
+TRIANGLE_C4_TILTED_WALL_OUTER_FACE_EXCLUSION.md. The lower-vertex
+case and its full force assembly are excluded by
+TRIANGLE_C4_THREE_LOAD_PARALLEL_EXCLUSION.md. Both physical B
+masks and all original side means are included. The entire
+parallel-root family is CLOSED; the full nonparallel domain remains.
 
 NEGATIVE_UNIQUE_TRIANGLE_TIP_OWNED_EXCLUSION.md closes every A-owned
 negative HA in the diamond, including the entire shared-interface
@@ -1050,6 +1054,52 @@ and50 open. No numerical graph enumeration,
 angle grid, Lean compilation or CI is a premise of this cover.
 
 ## 10. Whole negative-endpoint exits and the complete remaining owner cover
+
+## Entire parallel ABC family closed; stronger inner-arc tool
+
+[TRIANGLE_C4_TILTED_WALL_OUTER_FACE_EXCLUSION.md](TRIANGLE_C4_TILTED_WALL_OUTER_FACE_EXCLUSION.md)
+excludes the complete tilted endpoint's outgoing outer-face contact,
+including every original side mean and both endpoints. The actual
+geometry lies in the whole rectangle
+\(7/4<U<2,\ 2/3<V<61/60\). Proper concurrence fixes the unchanged
+application as \((\kappa U,V)\). A complete support-point corner
+bound and an exact positive polynomial give a containment
+contradiction throughout that rectangle, with reserve
+\(16G\ge6809/1944>0\) in its nonnegative shifted-height part.
+
+[TRIANGLE_C4_THREE_LOAD_PARALLEL_EXCLUSION.md](TRIANGLE_C4_THREE_LOAD_PARALLEL_EXCLUSION.md)
+then closes the **entire parallel-root ABC family**, for both
+physical masks SUU and UUU in order (B,A,C). B's actual radial
+resultant forces a westward endpoint. That endpoint is tilted,
+its remaining application is its actual lower vertex, and the
+prior compatible fixed-tip selection makes the contact B-owned.
+With two westward endpoints, an actual B corner lies outside the
+disk. With exactly one, the actual B width gives
+\(f_A+1-c\le d(y+w)\le d<1\), while \(f_A\ge c\).
+Every other endpoint mean and coincident case remains.
+
+[ANNULAR_CENTER_ARC_AT_23_25.md](ANNULAR_CENTER_ARC_AT_23_25.md)
+proves that **every contained unit with center norm at least23/25**
+intersects the radius-5/4 circle in one connected open arc of
+length strictly greater than43.5 degrees. The arc contains the
+actual radial-center point. Both full outer-face and inner-face
+domains are proved analytically, with exact rational trigonometric
+reserves. Two such units cannot be routed into one free interval
+of length at most87 degrees; the physical routing into a specific
+pocket remains a separate premise.
+
+All three complete sources passed root and separate independent
+full hand audits. The wall theorem uses the simultaneously
+selected necessary certificate and preserves H's true degree
+four, the intact HXY petal, all B masks and zero individual
+weights, every original mean and all three extras. The arc
+theorem has no force, degree or physical boundary premise.
+
+The nonparallel ABC owner cover, the whole ABC and diamond-hub
+KAB orbits, and all four remaining six-body coarse parents stay
+OPEN. The global inventory remains nine whole coarse cells
+closed and49 open. None of these results classifies every
+original equality packing.
 
 ## New audited endpoint and central-region results
 
