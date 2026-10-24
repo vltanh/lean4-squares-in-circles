@@ -1,5 +1,23 @@
 # Nine unit squares in a circle — current hand-proof frontier
 
+## Further complete six-body attachments and the global cycle-force theorem
+
+[SIMPLE_CYCLE_LOADED_FORCES_NONPARALLEL.md](SIMPLE_CYCLE_LOADED_FORCES_NONPARALLEL.md) proves that every loaded body in an exact simple positive cycle with at least three loads has nonparallel pair forces. The proof covers isolated loads, every channel reserve, both radial masks and all original side means. Proper radial concurrence is now available throughout the four remaining C6 load orbits; physical two-corner concurrences are not silently bounded.
+
+[TRIANGLE_THREE_BRIDGES_DOUBLE_LEAF_ROOT_EXCLUSION.md](TRIANGLE_THREE_BRIDGES_DOUBLE_LEAF_ROOT_EXCLUSION.md) closes the entire attachment with two leaves at one triangle vertex and one at another. Its reusable two-leaf central-disk theorem covers every S/D and side/vertex case, including the exact R²=17/4 exception. The final contradiction uses the true four-force articulation torque and the loaded tip's strict point cone.
+
+[ROOTED_BLOCK_ATTACHMENT_OBSTRUCTIONS.md](ROOTED_BLOCK_ATTACHMENT_OBSTRUCTIONS.md) closes five further whole attachments using unchanged local degrees: a diamond with an arm or two leaves at one tip; a book with a leaf at a hub; a wheel with a leaf at its hub; and a triangle joined to a diamond at a tip. All additional root forces are retained. Root and independent full audits passed all three new sources.
+
+| Complete attachment inventory | Closed / total | Whole layouts still open |
+| --- | --- | --- |
+| Triangle and three bridges | 3 / 7 | Fork, mixed arms, arm plus different-root leaf, one leaf at each root |
+| Four-body block and two bridges | 2 / 11 | All four C4 layouts; five remaining diamond layouts |
+| Five-body block and one leaf | 2 / 16 | Fourteen full rooted block types |
+| Two triangles and one bridge | 1 / 3 | Tip-attached bowtie leaf; disjoint triangles joined by a bridge |
+| Triangle and four-body block | 1 / 3 | C4 root; diamond-hub root |
+
+All six six-body coarse rows remain OPEN and retain three arbitrary extra squares. The exact simple C6 still has four complete load orbits open. The coarse ledger remains seven closed and51 open; unrestricted sharpness, original equality and the full earlier prerequisite-chain audit remain open. PR #11 stays draft. No Lean compilation or CI was run.
+
 **Branch:** `research/nine-tablefree-hand` · **PR:** #11, draft.  
 **Updated:** October 24, 2026, America/Chicago.  
 **Target:** the unrestricted sharp squared radius Q=1105/256 and every attaining packing.

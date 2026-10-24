@@ -262,3 +262,11 @@ The hexagon has six necessary bare-cycle load orbits. The surviving four-spoke g
 - [x] TRIANGLE_THREE_BRIDGES_LONG_CHAIN_EXCLUSION.md excludes the complete length-three attachment with the full initially possible intermediate load, both leaf/transmitter types and all means. Two of seven C1.3.b3 layouts are closed; the other five remain.
 - [x] Root and independent full audits passed every source and widened scope. Every six-body statement retains three original extra squares; no smaller-component degree equation is imported after deleting an attachment.
 - [ ] All six six-body coarse parents remain open. Simple C6 retains alternating three loads, two separated-zero four-load orbits and five loads; every chorded and other attachment domain keeps its full remaining scope. The authoritative count stays seven closed and51 open; unrestricted T9, original equality and full earlier-chain audit remain open.
+
+## Further whole attachments and uniform cycle concurrence
+
+- [x] SIMPLE_CYCLE_LOADED_FORCES_NONPARALLEL.md excludes every parallel loaded star in every exact simple cycle with at least three loads, including both isolated channels and all actual means. Proper radial concurrence follows; the physical two-corner concurrence remains unbounded without a separate proof.
+- [x] TRIANGLE_THREE_BRIDGES_DOUBLE_LEAF_ROOT_EXCLUSION.md proves the full two-leaf disk lemma and closes the complete two-leaves-plus-one attachment, including R²=17/4. Three of seven full C1.3.b3 attachments are closed; four remain.
+- [x] ROOTED_BLOCK_ATTACHMENT_OBSTRUCTIONS.md closes the diamond arm-at-tip and same-tip double-leaf layouts, the book-hub and wheel-hub leaf layouts, and the triangle/diamond-tip layout. These are five whole graph-attachment exits with every root force retained.
+- [x] The full residual attachment counts are9 of11 for C1.4.b2,14 of16 for C1.5.b1, and2 of3 for C2.34.b0. Root and independent full source and instantiation audits passed.
+- [ ] All six six-body coarse parents and the four remaining full C6 load orbits remain open. The authoritative coarse ledger stays seven closed and51 open. Every six-body domain retains three arbitrary extras; larger mixed cells, unrestricted sharpness, original equality and the full earlier-chain audit remain open.

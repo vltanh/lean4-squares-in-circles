@@ -74,8 +74,14 @@ Thus there are exactly seven abstract rooted layouts.
 The fourth layout, three leaves at the same triangle articulation,
 is excluded by ONE_ARTICULATION_TRIANGLE_LEAF_EXCLUSION.md. The entire
 first layout is now excluded by TRIANGLE_THREE_BRIDGES_LONG_CHAIN_EXCLUSION.md,
-including its initially possible loaded intermediate vertex. The other
-five layouts retain their whole load, contact and completion domains. In particular an internal vertex of an attached tree is not
+including its initially possible loaded intermediate vertex. The entire
+sixth layout, two leaves at one root and one leaf at another, is excluded
+by TRIANGLE_THREE_BRIDGES_DOUBLE_LEAF_ROOT_EXCLUSION.md. Its full two-leaf
+central-disk theorem and exact d=1 exception retain every actual root
+force. Thus three of the seven whole layouts are closed and four remain:
+the fork, mixed arms at one root, a two-edge arm plus a different-root
+leaf, and one leaf at every triangle vertex. These four retain their
+whole load, contact and completion domains. In particular an internal vertex of an attached tree is not
 assigned a radial-leaf formula merely because its edges are bridges.
 The exact degree-one S/D law applies at an actual leaf; any broader
 terminal or transmission reduction must establish its own premises.
@@ -86,7 +92,7 @@ cyclic-body equations and the three-extra joint completion problem.
 Removing the three leaf squares from its occupied geometry is not an
 allowed reduction.
 
-## 3. One four-body block with two bridges: eleven remaining layouts
+## 3. One four-body block with two bridges: eleven layouts, nine remaining
 
 A simple biconnected graph on four vertices is C4, the diamond, or K4.
 For completeness, minimum degree2 gives at least four edges. With
@@ -111,8 +117,11 @@ has eleven complete abstract attachment classes.
 The closed four-body-block-plus-one-leaf theorem cannot be applied by
 discarding a positive second leaf or arm. The root's force and torque
 equations change, and a tip with a new bridge may have positive degree3.
-Each of these eleven classes still requires its own full argument or
-a uniform theorem covering several classes.
+ROOTED_BLOCK_ATTACHMENT_OBSTRUCTIONS.md excludes the entire diamond
+arm-at-tip and two-leaves-at-one-tip layouts. Both unchanged hubs retain
+positive degree three and the other tip degree two, forcing a physical
+boundary triangle. Nine full attachment classes remain; no hub-rooted
+or distributed-root diamond case is excluded by that argument.
 
 ## 4. One five-body block with one bridge: sixteen rooted block types
 
@@ -152,7 +161,10 @@ such limitation and was legitimately used above.
 For every row retain both actual S/D leaf geometries, the root's
 additional force and torque, all block circle masks and all three
 completion squares. The sixteen-type catalogue is a domain cover,
-not a geometric existence assertion.
+not a geometric existence assertion. ROOTED_BLOCK_ATTACHMENT_OBSTRUCTIONS.md
+excludes the entire book-hub and wheel-hub leaf attachments. The book
+would have three loaded common neighbors, and the wheel four loaded
+rim vertices. The other fourteen full rooted types remain open.
 
 ## 5. A biconnected component needs at least five exterior-face vertices
 
@@ -442,13 +454,15 @@ does apply at its own articulation. The articulations are different;
 their two positive projections are not projections onto one common
 center and do not by themselves contradict bridge balance.
 
-## 8. A triangle and a four-body block: three remaining layouts
+## 8. A triangle and a four-body block: three layouts, two remaining
 
 With no bridges, the two blocks share exactly one articulation.
 The four-body block is C4, diamond or K4. K4 is globally excluded.
 The C4 articulation has one vertex orbit. The diamond articulation
-is a hub or a tip, giving two more. Thus there are three remaining
-abstract layouts.
+is a hub or a tip, giving two more. Thus there are three abstract layouts.
+ROOTED_BLOCK_ATTACHMENT_OBSTRUCTIONS.md excludes the entire diamond-tip
+articulation layout: the unchanged hubs and other tip would be a loaded
+physical triangle. The C4 and diamond-hub layouts remain open.
 
 The triangle's two nonarticulation vertices have exact positive
 degree2 and are loaded, so its whole end-triangle pressure is available
@@ -500,6 +514,14 @@ Consequently the complete simple C6 residual is exactly:
 | Four loads, zero vertices at distance2 | The isolated loaded body and both genuine channels, all means |
 | Four loads, opposite zero vertices | Both boundary pairs and both full channel-width alternatives |
 | Five loads | One full transmitter and the whole loaded boundary path |
+
+SIMPLE_CYCLE_LOADED_FORCES_NONPARALLEL.md now excludes parallel pair
+forces at every loaded body of every exact simple positive cycle with
+at least three loads. The direct, one-side, diagonal and two-transmitter
+channel alternatives are all covered, including isolated loads. Proper
+radial concurrence is therefore available for every loaded vertex in
+the four remaining C6 orbits. Physical two-corner concurrences are not
+asserted bounded; all actual means and individual zero weights remain.
 
 Positive chords retain their extra force equations and are not covered
 by an exact simple-cycle proof. All chord/load combinations remain in
