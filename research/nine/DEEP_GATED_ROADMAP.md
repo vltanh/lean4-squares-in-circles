@@ -1,7 +1,7 @@
 # n=9: deep ticked roadmap and ordered proof execution
 
 **Branch:** `research/nine-tablefree-hand`; **PR:** #11, draft.  
-**Reconciled source:** `9b3d46f99ddb46c8db5b6d7d69dc2f8db64b1915`.  
+**Reconciled source:** `ac38d6beda897cf20410fe88b252e84e9d2dc15a`.  
 **Checkpoint:** October 24, 2026, America/Chicago; the append-only evidence log retains explicit UTC provenance.
 
 **T9 and unrestricted equality remain OPEN.** The complete P/Y arguments exclude all selected positive trees and all exactly-two-loaded components from a nine-square packing in the declared radius window. A physical certificate can be selected with **one planar positive component**, all physically circle-touching vertices on its exterior face, and at most 27 positive scalar atoms. The remaining component is cyclic, has 5–9 bodies, and has 3–7 noncollinear circle-loaded resultants. Every other physical square has zero stress and remains in the problem.
@@ -19,7 +19,7 @@ The complete lower-bound split has a closed boundary-only branch **G3.B**, by th
 | 4 | G3.M4.ALL | Combine D/S and their degeneracies; close the entire C1.3.b1 cell | CLOSED hand; independent assembly audit passed |
 | Whole branch closed | G3.B.SHARP | Every physical boundary C7 with two arbitrary extras | CLOSED hand; capacity one including Q, without positive stress |
 | 5a | G3.M5.T2 | Entire triangle-with-two-bridges cell, all three attachments and four extras | CLOSED hand; full S/S slider capacity3, independent parent assembly passed |
-| 5b | G3.M5.B5 | Sole remaining five-body cell C1.5.b0: C5,house,four-load fan, with four extras | OPEN; C1.3.b2,C1.4.b1,C2.33.b0 are CLOSED |
+| 5b | G3.M5.B5 | Sole remaining five-body cell C1.5.b0: house and four-load fan, with four extras | OPEN; C1.3.b2,C1.4.b1,C2.33.b0 are CLOSED |
 | 5c | G3.M6–M9 | Process the larger mixed cells by component size and the finite semantic cover below | OPEN |
 | 6 | G4 | Assemble the unrestricted sharp lower bound with the exact lower-window import | BLOCKED by G3 |
 | 7 | G5 | Necessity and converse for every equality packing, including free centers and rotations | OPEN |
@@ -507,6 +507,10 @@ The labels below refine the **remaining obligations**, not the numerical radius 
 - [x] **G3.0.ANNULAR.FAR_FACE** For a>5/4, convexity in a+b reduces the entire inner-face inequality to b=1/2 and a=b, with E<25/32. The center-radius hypothesis supplies sqrt(2)(a-1)+(b-1)>0. Both actual inner-face and strip arc lengths exceed pi/4, retaining b=5/4.
 - [x] **G3.0.ANNULAR.COUNT** Eight such units would have disjoint open arcs of total angular length>2pi. At most seven centers have norm>=1; every nine-unit packing has at least two centers strictly inside the unit disk. In the declared window these units are physically clear.
 - [ ] **G3.0.ANNULAR.ROUTING** Derive any needed placement of those two centers from actual component geometry. The theorem alone puts them in no chosen hole, forces no outer ring and permits no independent radial movement.
+- [x] **G3.0.ONE_ARTICULATION.DOMAIN** ONE_ARTICULATION_TRIANGLE_LEAF_EXCLUSION.md covers k>=1 disjoint triangle petals and l>=0 radial leaves at one common A, with no other positive edges. Tips have exact degree2, leaves degree1 and A degree2k+l. Every physical zero-weight contact and extra remains.
+- [x] **G3.0.ONE_ARTICULATION.PRESSURE** Every tip is loaded and A is physically clear. The full end-triangle theorem gives c_A dot M_j>0 under one common certificate. Every S leaf has positive projection by the full neighbor theorem; every D leaf has c_A dot e=R-sqrt(2)-1/2>0.
+- [x] **G3.0.ONE_ARTICULATION.ALL** Internal pair forces cancel, so triangle and leaf circle resultants sum to zero; their projection on c_A is strictly positive. The entire family is excluded at every component size, with root and independent full audits.
+- [ ] **G3.0.DISTRIBUTED_ARTICULATIONS** Distinct articulation chains, larger attached blocks and the fan's degree3 inner vertices require new arguments. None inherits the common-A pressure sum automatically.
 - [ ] **G3.0.SHARP** G3.B is closed by full physical capacity one. Finish the entire mixed branch G3.M with every physical completion square retained.
 
 ### G3.B Physical boundary seven-cycle: capacity one [CLOSED hand]
@@ -1040,7 +1044,7 @@ There are four physical completion squares in every case. For cyclic block sizes
 - [x] **M5.B4L.DIAMOND.TIP.1** With the leaf at a tip, each diamond hub has exact positive degree3 and the other hub touches both of its remaining neighbors. ZERO_HUB.ALL forces both hubs loaded. The unattached degree-two tip is loaded because its neighbors touch.
 - [x] **M5.B4L.DIAMOND.TIP.2** Those two hubs and the unattached tip would be three mutually touching physical boundary squares, impossible by the boundary contact graph theorem. The entire tip attachment is closed for both S/D leaves, all circle masks, side means and four extras; independent full audit passed.
 - [x] **M5.B4L.RESIDUAL** The complete C4 load cover, both diamond attachment orbits and K4 are now excluded. The three-loaded and diamond branches are direct core exclusions; only the earlier opposite-loaded-pair C4 uses the canonical secondary minimizer.
-- [x] **M5.B4L.REGION_REDUCTION** The surviving C4 hole is empty; the entire diamond and K4 cores are excluded. Every remaining C4 completion square is exterior; a complete core exclusion may close the last family without a regional estimate.
+- [x] **M5.B4L.REGION_REDUCTION** The empty C4 hole supplies preservation of every extra in the older opposite-load secondary slide. The complete graph/load assembly is now closed; all four extras remain accounted for.
 - [x] **M5.B4L.ASSEMBLE.GRAPHS** FOUR_BODY_BLOCK_ONE_LEAF_CELL_CLOSED.md lists exactly C4,diamond,K4 and both diamond attachment orbits. One bridge leads to the fifth-body leaf; there are no other graph layouts.
 - [x] **M5.B4L.ASSEMBLE.LOADS** For C4, zero other loads violate global force, one other load is TL.COMPLETE, two other loads are the full adjacent/opposite branches, and all three are THREE.ALL. Physical zero-weight boundary bodies remain in each case.
 - [x] **M5.B4L.ASSEMBLE.CANONICAL** Choose a minimum-radius packing minimizing Phi=sum|c_i|² before normal selection. The older opposite-load theorem preserves every extra during its empty-hole slide. This premise is retained explicitly and is not exported to every original equality packing.
@@ -1056,10 +1060,10 @@ Source: FIVE_BODY_BICONNECTED_REDUCTION.md, using NO_THREE_BOUNDARY_COMMON_NEIGH
 - [x] **M5.B5.DENSE** The adjacent-two-missing-edge graph, K5 minus an edge and K5 each contain K4 and are excluded.
 - [x] **M5.B5.WHEEL** The four-rim wheel's complement has components of size at most two, incompatible with a connected loaded noncontact graph on at least three vertices.
 - [x] **M5.B5.K23_BOOK_SUBDIVISION** K2,3, the three-page book and the once-subdivided K4 each force three loaded common neighbors of two vertices. The uniform exterior-face obstruction excludes all three entire graph types.
-- [x] **M5.B5.SURVIVORS** Exactly three semantic graph families survive the necessary restrictions: C5, house and the fan over a four-vertex path. This is not an existence assertion for every remaining pose or mask.
+- [x] **M5.B5.SURVIVORS** The first seven graph exclusions reduce to C5, house and the four-path fan. The subsequent full C5 theorem leaves only house and four-load fan; no existence of every remaining pose or mask is asserted.
 - [x] **M5.B5.LOAD_COVER** The physical loaded noncontact graph is a subgraph of the positive-graph complement; therefore the induced complement on positive loads is connected. This supplies the exhaustive necessary masks below without confusing missing positive edges with physical separation.
 
-##### M5.B5.C5 — complete three-/four-load cover; geometry OPEN
+##### M5.B5.C5 — entire three-/four-load component family [CLOSED hand]
 
 - [x] **M5.B5.C5.MASKS** With three loads, the loaded induced positive graph has exactly one edge, and the two zero-load vertices are nonadjacent. This is one dihedral orbit. Four loads leave one zero-load vertex, also one orbit. Five loads contradict the all-boundary=C7 theorem.
 - [x] **M5.B5.C5.THREE.MOMENT** FIVE_CYCLE_THREE_LOAD_PARALLEL_EXCLUSION.md labels the full orbit T-U-B-C-V-T. Every edge has the same origin moment H; the actual BC boundary-pair normal is nonradial, so H is nonzero. All shared-side applications remain their actual means.
@@ -1073,12 +1077,27 @@ Source: FIVE_BODY_BICONNECTED_REDUCTION.md, using NO_THREE_BOUNDARY_COMMON_NEIGH
 - [x] **M5.B5.C5.THREE.DOUBLE_DIAGONAL.CONTACT** Exact reserves give B_x=[alpha-2-sqrt(2),alpha-1-sqrt(2)] and C_y=[beta-2-sqrt(2),beta-1-sqrt(2)]. Their actual contact forces B's lower y<=C's upper y, so one B vertex has norm squared at least(2+sqrt(2)-alpha)^2+(1+sqrt(2)-beta)^2.
 - [x] **M5.B5.C5.THREE.DOUBLE_DIAGONAL.ALL** Cauchy with the actual T circle equation gives R^2>=(9+6sqrt(2))/4>87/20>Q. The entire double-diagonal chart is excluded, all other coordinates, means, circle weights and extras retained. Independent full audit passed.
 - [x] **M5.B5.C5.THREE.WIDTH_COVER** The remaining three-load orbit has nonparallel pair forces at T and either two side-normal transmitters or exactly one side-normal and one diagonal transmitter, up to reflection. Physical zero-weight boundary states remain separate labels.
-- [ ] **M5.B5.C5.THREE.DOMAIN** Derive the two clear transmission channels, every remaining physical circle-contact mask, and all actual contact-owner and circle-corner states.
-- [ ] **M5.B5.C5.THREE.BOUND** Prove the whole remaining nonparallel-T core/radius or four-extra completion bound, including all channel widths, physical circle masks, asymmetric frames and coincident applications not excluded by a stated theorem. The complete parallel-T alternative is already closed.
-- [ ] **M5.B5.C5.FOUR.DOMAIN** Derive the full single-transmitter/cycle moment system, retaining every physical zero-weight circle contact.
-- [ ] **M5.B5.C5.FOUR.BOUND** Prove the whole four-load bound across all contact owners, shared-side means and corner weights.
-- [ ] **M5.B5.C5.ROUTING** The genuine five-ring hole has capacity one. Account for every exterior region and all mutual nonoverlap of the four extras before any capacity sum.
-- [ ] **M5.B5.C5.ALL** Assemble both load families and every boundary case; retain any equality survivors.
+- [x] **M5.B5.C5.CONCURRENCE.COINCIDENT** FIVE_CYCLE_FORCE_POLYGON_DOMAIN.md extends nonparallel proper concurrence to a loaded degree-two body without a boundary neighbor. Coincident applications have q=p and p dot m>0 because R²>2.
+- [x] **M5.B5.C5.CONCURRENCE.DISTINCT** The complete unique-corner normal-line/width calculation places q inside its body without a boundary neighbor. For two physical corners it proves the positive radial factor and p-q=alpha*n,alpha>=0; q may remain outside the body and disk. The earlier neighbor premise was needed only for parallel forces.
+- [x] **M5.B5.C5.RESERVES** Every unloaded degree-two transmitter has exact displacement w*n,w in{1,sqrt(2)}, with the actual transverse side mean. Contracted length is alpha_X+w+alpha_Y>0. Direct loaded edges have zero reserve and strictly positive length through disjoint physical corner intervals.
+- [x] **M5.B5.C5.MOMENT** A direct physical boundary edge gives nonzero origin moment. Orient the whole cycle so its common moment H>0; actual torque carries the same H through every transmitter.
+- [x] **M5.B5.C5.WINDING** Successive loaded-concurrence determinants are positive. With three or four vertices, positive increments<pi sum exactly2pi; their sectors do not cross. The polygon is simple and winds once around zero.
+- [x] **M5.B5.C5.CONVEXITY** Exact loaded force balance gives mu_i det(n_(i-1),n_i)=kappa_i H/mu_(i-1)>0. All turns are strictly left and zero lies strictly inward of every edge. The triangle/quadrilateral is strictly convex and contains zero.
+- [x] **M5.B5.C5.THREE.DOMAIN** The isolated T is nonparallel by the complete earlier parallel-T exclusion, so the neighbor-free concurrence lemma applies. B,C have a boundary neighbor. Every zero-weight physical transmitter boundary state remains; diagonal endpoints own the channel axis, while a side channel imposes no common frame.
+- [x] **M5.B5.C5.FOUR.DOMAIN** Every load has a boundary neighbor. The lone transmitter is physically clear; all four loaded-body corner masks and actual means remain.
+- [x] **M5.B5.C5.ROUTING** The genuine five-ring hole has capacity<=1. Exterior spokes stay within actual loaded bodies and partition the exterior in loaded order. Direct boundary-pair pockets are empty. A three-load completion needs>=3 extras jointly in two channel regions; a four-load completion needs>=3 in one. The later core exclusions require no separate capacity estimate.
+- [x] **M5.B5.C5.CHANNEL.HORIZONTAL_SIGNS** FIVE_CYCLE_FOUR_LOAD_EXCLUSION.md normalizes a full channel at height h>0. Both proper endpoint concurrences give positive-y circle resultants. The center x gap is w+H_X+H_Y>=2, while each center radius<91/60<2; their horizontal signs oppose.
+- [x] **M5.B5.C5.CHANNEL.UPPER_HALFPLANE** Every endpoint center has nonnegative height relative to the origin's axis. For an oblique endpoint on/below it, all farthest corners include a downward inward step and have negative height, contradicting its circle resultant. Aligned zero-height/two-corner endpoints and unequal weights remain.
+- [x] **M5.B5.C5.CHANNEL.ORDER** Radial-resultant and actual center intervals have the same cyclic order. Each channel's outward consecutive angle is gamma=pi-delta_X-delta_Y, with both deltas>=0. The loaded path uses its complementary arc.
+- [x] **M5.B5.C5.FOUR.ANGLE** Set theta=acos(9/25). Three direct boundary contacts give delta_A+delta_D<alpha=3theta-pi, cos(alpha)=13959/15625, sin(alpha)<9/20 and cos(alpha/2)>97/100.
+- [x] **M5.B5.C5.FOUR.SIDE** Width1 gives actual center distance<=1+sqrt(2), whereas the forced angular gap and radii>5/4 give squared distance>3698/625>(1+sqrt(2))². Every endpoint frame and side mean is covered.
+- [x] **M5.B5.C5.FOUR.DIAGONAL** Diagonal avoidance forces aligned endpoint frames and exact gap1+sqrt(2). Their actual circle equations give radii>4/3 and>9/7 at the smaller/larger angles; the gap must exceed5119/2100>1+sqrt(2). Both physical radial endpoints remain.
+- [x] **M5.B5.C5.FOUR.BOUND** Both reserves are excluded. The entire four-load orbit is a direct core exclusion, strict at both radius endpoints and with all four extras untouched.
+- [x] **M5.B5.C5.THREE.SIDE_ANGLE** FIVE_CYCLE_THREE_LOAD_EXCLUSION.md strengthens the endpoint radius floor to19/15. A side channel with gamma>=pi-theta/2 would have squared center distance>65702/11250>583/100>(1+sqrt(2))². Thus its entire angle is<pi-theta/2.
+- [x] **M5.B5.C5.THREE.ALIGNED_CURVE** For an aligned boundary unit, R²=r²+r(c+s)+1/2 and x_R=r*c. Its derivative is negative and x_R''=-2rE/(2r+c+s)^3, where E=4r³c+4r²+rt[(c-s)²+2s²]-(r+t)(c-s)>3-sqrt(2)>0. Strict concavity holds throughout[0,pi/4].
+- [x] **M5.B5.C5.THREE.DIAGONAL_ANGLE** If delta_X+delta_Y<=theta/2, concavity/decrease give horizontal gap>=x_R(0)+x_R(theta/2)>1829/750>1+sqrt(2), contradicting its exact value. Every diagonal channel therefore also has angle<pi-theta/2.
+- [x] **M5.B5.C5.THREE.BOUND** Both channels span<pi-theta/2 and actual BC spans<theta. Their complete circular sum would be<2pi. The whole three-load orbit is excluded, including both residual width pairs and independently double-diagonal transmission after the parallel-T reduction.
+- [x] **M5.B5.C5.ALL** FIVE_CYCLE_POSITIVE_COMPONENT_EXCLUSION.md combines both orbits, the global <3-load exclusions and physical five-boundary-cycle impossibility. Root and independent full audits passed all four new files. All masks, actual means and four extras remain; no secondary minimizer is needed. Only house and four-load fan remain in C1.5.b0.
 
 ##### M5.B5.HOUSE — complete three-mask-orbit cover; geometry OPEN
 
@@ -1109,7 +1128,7 @@ Use path u1--u2--u3--u4 and universal hub H. The two endpoint tips u1,u4 are loa
 - [ ] **M5.B5.FAN.BOUND** Prove a whole core/radius obstruction or joint four-extra completion bound for the sole remaining four-load fan, with every circle mask, actual mean and independent frame retained.
 - [ ] **M5.B5.FAN.ALL** Retain all owner/corner masks, shared-side means and any equality survivors, then close the entire fan graph.
 
-- [ ] **M5.B5.ALL** Audit and combine C5, house and fan. Only their complete geometry/completion conclusions can close C1.5.b0; the ten-to-three graph reduction leaves the coarse count unchanged.
+- [ ] **M5.B5.ALL** C5 is fully excluded and audited. Finish every house load orbit and the entire four-load fan, then combine all ten graph types to close C1.5.b0. The current whole-C5 closure leaves the coarse count unchanged.
 
 #### M5.TT — C2.33.b0: two triangles sharing an articulation [CLOSED hand]
 
@@ -1121,7 +1140,7 @@ Use path u1--u2--u3--u4 and universal hub H. The two endpoint tips u1,u4 are loa
 - [x] **M5.TT.TIP_OWNED.RADIAL** A nonowner radial tip's tangential-facing alternative contradicts positive concurrence; its inner radial face gives positive projections on both interface normals. For an owner radial tip, the actual unique-tip torque forces L>K and excludes its tangential radial frame. All corner-weight splits remain.
 - [x] **M5.TT.TIP_OWNED.UNIQUE** Exact positive torque ratios give the two circle weights. A whole-domain Cauchy chord bound and two exhaustive surplus/deficit estimates prove their weighted mean squared distance from c_A is<39/10. The exact identity R^2=-|c_A|^2+(c_A dot M)/Lambda+weighted_relative_corner_norm then gives c_A dot M>0, with the lower-window margin1/1600.
 - [x] **M5.TT.TIP_OWNED.TWO_RADIAL** Full radial-pair contact roots are checked, including the rejected pi endpoint and alternate inner-vertex root. The empty boundary-pair outer pocket and A's actual unit chord exclude both tangential faces, leaving two inner radial normals with positive c_A projections.
-- [x] **M5.TT.TIP_OWNED.ALL** Every physical circle mask satisfies c_A dot M>0 in this entire tip-owned singleton articulation branch. Both full audits passed. A bowtie with both blocks covered by this theorem is excluded; the parent remains open.
+- [x] **M5.TT.TIP_OWNED.ALL** Every physical circle mask satisfies c_A dot M>0 in this entire tip-owned singleton articulation branch. Both full audits passed. A bowtie with both blocks covered here is excluded; the later complete owner/free cover closes the entire parent.
 - [x] **M5.TT.PARALLEL.WALL** BOWTIE_PARALLEL_PRESSURE.md excludes opposite normals and a single-vertex support, then derives a full common side wall with M westward and weighted mean height0. The strict45-degree cone and acute boundary forces prove its inward offset s>0.
 - [x] **M5.TT.PARALLEL.COINCIDENT_MEANS** Equal wall means are explicitly retained. Local overlap forces two aligned tips on opposite vertical intervals[0,1] and[-1,0]; their actual circle equation R^2=(s+1)^2+1 gives s>1/2. This covers the genuine coincident shared-side endpoint missed by a strictly interior-ray argument.
 - [x] **M5.TT.PARALLEL.CORNER_BOX** For the full bad-pressure range0<s<=1/2, an exact positive-definite quadratic bound with margin207/19520 makes the necessary small corner box circle-clear. This excludes every aligned tip and all its arbitrary wall means.
@@ -1267,7 +1286,7 @@ Use path u1--u2--u3--u4 and universal hub H. The two endpoint tips u1,u4 are loa
 
 1. P.ALL, Y.ALL, TREE.ALL and TL.COMPLETE are CLOSED hand at their stated scopes. The entire physical C7 capacity-one theorem is also CLOSED hand. Keep every unresolved mixed3–7-loaded completion obligation OPEN.
 2. The 58 coarse cells now have **six whole-cell exclusions and 52 open rows**. Do not confuse subfamily restrictions with parent closure.
-3. Follow the ordered G3 execution tree: C1.3.b1 and C1.3.b2 are closed; C2.33.b0 and C1.4.b1 are also closed. Execute the sole remaining five-body cell C1.5.b0 through its entire C5,house and four-load-fan domains, then the larger mixed cells. Physical C7 completion is closed; retain its negative controls and use the new boundary-path-forest consequence throughout the mixed reduction. Use shared uniform arguments whenever possible. Do not create angle boxes merely to increase checked-gate counts.
+3. Follow the ordered G3 execution tree: C1.3.b1 and C1.3.b2 are closed; C2.33.b0 and C1.4.b1 are also closed. The entire C5 branch is also closed. Execute C1.5.b0 through its full house and four-load-fan domains, then the larger mixed cells. Physical C7 completion is closed; retain its negative controls and use the new boundary-path-forest consequence throughout the mixed reduction. Use shared uniform arguments whenever possible. Do not create angle boxes merely to increase checked-gate counts.
 4. Preserve exact physical negative controls and every unstressed completion body.
 5. Commit finished arguments promptly and log UTC provenance, exact quantifiers, finite evidence and unchanged global blockers in TWO_LOAD_PROGRESS.md or a subsequent append-only checkpoint.
 6. If a proposed reduction fails, retain the exact witness and revise it; do not defend a false stronger normalization by shrinking the domain indefinitely.

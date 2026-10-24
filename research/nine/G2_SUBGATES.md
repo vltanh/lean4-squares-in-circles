@@ -63,7 +63,7 @@ Every row retains four extra physical squares. Full nested contracts are G3.M5 i
 | --- | --- | --- |
 | M5.T2 / C1.3.b2 | Length-two arm; two leaves at one or at two distinct triangle articulations | CLOSED; all leaf types and full S/S completion, independent assembly audited |
 | M5.B4L / C1.4.b1 | Every C4 load pattern, diamond attachment and K4 | CLOSED hand; canonical minimizer retained for the older opposite-load branch |
-| M5.B5 / C1.5.b0 | Exactly C5, house and four-path fan after the exhaustive ten-type graph/load reduction | Graph/load reduction CLOSED; full geometry/completion OPEN |
+| M5.B5 / C1.5.b0 | House and four-load fan after the complete C5 exclusion and graph/load reduction | Eight graph types CLOSED; full house/fan geometry/completion OPEN |
 | M5.TT / C2.33.b0 | Entire bowtie and all four arbitrary extras | CLOSED; complete owned/free pressure theorem and opposite-resultant assembly |
 
 - [x] **M5.CATALOG:** the formula m=1+sum(block_size-1)+bridges yields exactly these four coarse cells at m=5.
@@ -97,7 +97,7 @@ Every row retains four extra physical squares. Full nested contracts are G3.M5 i
 - [x] **M5.B4L.C4.OPPOSITE.ALL:** FOUR_CYCLE_OPPOSITE_LOAD_BRANCH_CLOSED.md assembles the entire opposite-loaded-pair C4 under one canonical necessary certificate. The physical mask, leaf and owner covers are exhaustive and every extra survives the empty-hole slide. Root and separate full assembly audits passed; the full three-loaded C4 and diamond assemblies below now close C1.4.b1.
 - [x] **M5.B5.GRAPH/LOAD_COVER:** FIVE_BODY_BICONNECTED_REDUCTION.md gives all ten types, excludes seven and lists all remaining necessary positive-load masks. Zero-weight physical circle contacts and all four extras remain.
 - [x] **M5.B5.C5.THREE.PARALLEL:** FIVE_CYCLE_THREE_LOAD_PARALLEL_EXCLUSION.md excludes the whole parallel-force alternative at the isolated loaded vertex. Nonzero boundary-edge moment excludes D, a side transmitter ends at norm squared<13/50<r^2, and two diagonal transmitters overlap. All actual means and four extras remain; independent audit passed.
-- [ ] **M5.B5.C5.THREE.NONPARALLEL:** finish the full remaining nonparallel-T geometry and completion, retaining both channel widths, every physical circle mask, contact owner and shared mean.
+- [x] **M5.B5.C5.THREE.NONPARALLEL:** FIVE_CYCLE_THREE_LOAD_EXCLUSION.md excludes the entire orbit by both complete channel-angle bounds and the exact2pi sum, with every width, mask and mean retained.
 - [x] **CY.ZERO3.DIAMOND:** NO_UNLOADED_DIAMOND_HUB.md proves the entire radius-free selected-star obstruction, including U-owned/shared alternatives, all vertex locations, legitimate free-central-normal selection, and every remaining A-owned tangential-width case. An unloaded degree-three body's physical neighbors induce at most one edge.
 - [x] **M5.B4L.DIAMOND.S_HUB:** The connected-boundary-neighbor theorem and the new zero-hub theorem exhaust boundary/clear second hubs, closing the entire S-leaf hub attachment.
 - [x] **M5.B4L.DIAMOND.TIP:** Both degree-three hubs must be loaded; the unattached tip is loaded too. Their forbidden boundary triangle excludes the entire tip attachment for both leaves and every physical mask.
@@ -174,3 +174,11 @@ The new local arguments and whole-cell assembly received independent hand audits
 - [x] **M5.B4L.LAST:** FOUR_CYCLE_THREE_LOAD_BRANCH_CLOSED.md closes all S/D articulation frames, all nonparallel singleton/shared contacts and both parallel-sign alternatives, retaining every mask and actual mean. Root and separate full audits passed.
 - [x] **M5.B4L.ALL:** FOUR_BODY_BLOCK_ONE_LEAF_CELL_CLOSED.md assembles C4,diamond,K4 and every load allocation at the canonical radius/Phi minimizer. Root and two independent full assembly audits passed. Six coarse cells are closed;52 remain open.
 - [x] **ANNULAR.CENTERS:** ANNULAR_CENTER_ARC_BUDGET.md gives at least two centers strictly inside the unit disk in any nine-unit packing in D_(sqrt(Q)). The entire far-face/strip arc cover is proved; no component routing follows automatically.
+
+## Entire C5 and common-articulation families closed
+
+- [x] **M5.B5.C5.DOMAIN:** FIVE_CYCLE_FORCE_POLYGON_DOMAIN.md proves neighbor-free nonparallel proper concurrence, exact reserves, convex radial polygons and full completion routing. Radial concurrences need not lie inside their bodies.
+- [x] **M5.B5.C5.FOUR:** FIVE_CYCLE_FOUR_LOAD_EXCLUSION.md proves the all-mask endpoint half-plane lemma and excludes both widths by actual center distance or exact horizontal gap.
+- [x] **M5.B5.C5.THREE:** FIVE_CYCLE_THREE_LOAD_EXCLUSION.md gives the full side/diagonal angle bounds; the latter uses strict concavity of the actual aligned center curve. The two channels plus BC cannot span2pi.
+- [x] **M5.B5.C5.ALL:** FIVE_CYCLE_POSITIVE_COMPONENT_EXCLUSION.md closes the entire graph branch. All four sources passed root and independent full audits. House and four-load fan remain; the six/52 inventory is unchanged.
+- [x] **CY.ONE_ARTICULATION:** ONE_ARTICULATION_TRIANGLE_LEAF_EXCLUSION.md excludes all triangle petals and radial leaves at one common A, using exact degree-two tips and the same certificate. Distributed articulations and degree-three fan vertices remain outside its scope.

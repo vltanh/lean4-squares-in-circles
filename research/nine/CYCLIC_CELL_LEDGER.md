@@ -107,7 +107,7 @@ The exact identity m=1+sum(block_size-1)+bridges yields these four cells, each w
 | --- | --- | --- |
 | C1.3.b2 | Every chain/same/distinct attachment, every leaf type and four extras | CLOSED; full slider upper/lower capacities3 and0, assembly audited |
 | C1.4.b1 | Every four-body block, leaf and load allocation | CLOSED; canonical-minimizer scope explicit |
-| C1.5.b0 | Exhaustive ten-type classification reduces to C5, house and four-path fan, with necessary load masks | Graph/load cover CLOSED; full geometry and whole cell OPEN |
+| C1.5.b0 | Eight graph types excluded; only house and four-load fan remain, with complete necessary masks | Full house/fan geometry and whole cell OPEN |
 | C2.33.b0 | Entire bowtie; all physical masks, means and extras | CLOSED; complete end-triangle pressure and opposite-resultant theorem |
 
 TRIANGLE_TWO_LEAVES_SAME_ARTICULATION_CLOSED.md assembles the complete S/S, D/S and D/D exclusions under one compatible selected certificate. Both root and independent assembly audits passed. The distinct-layout domain and port-orientation theorems exclude D/D, zero triangle moment and R<=sqrt(17)/2, while retaining every actual contact mean. TRIANGLE_DISTINCT_MIXED_LEAVES_EXCLUSION.md now excludes the entire distinct D/S family. The sole remaining C1.3.b2 family has two S leaves at distinct articulations, R>sqrt(17)/2, nonzero moment and one physical circle corner at C. DISTINCT_S_LEAF_CORE_AND_CORNER_MASK.md excludes all two-corner C masks and exhibits an exact positive core below Q with strict shared means. Blanket core exclusion is false. The full parallel-articulation reduction and exact wall classification now cover every surviving S/S core, and the upper/lower capacity theorems prove at most3 extras over the entire slider interval. TRIANGLE_TWO_BRIDGES_CELL_CLOSED.md consequently closes the whole C1.3.b2 cell.
@@ -150,12 +150,12 @@ The new S/D local proofs, whole-cell assembly, graph obstructions, five-body gra
 
 TWO_LOAD_PROGRESS.md preserves chronological statuses and pinned exact-regression provenance. Earlier counts there are historical. The live count in this ledger is **six closed and 52 open**.
 
-- [x] **CY.C5.THREE.PARALLEL:** FIVE_CYCLE_THREE_LOAD_PARALLEL_EXCLUSION.md excludes the entire parallel-force alternative at the isolated loaded C5 vertex, with every transmitter width and actual mean. The remaining nonparallel three-load C5 and the full four-load branch stay OPEN; no parent count changes.
+- [x] **CY.C5.THREE.PARALLEL:** FIVE_CYCLE_THREE_LOAD_PARALLEL_EXCLUSION.md excludes the entire parallel-force alternative at the isolated loaded C5 vertex, with every transmitter width and actual mean. The later full three-/four-load sources now close every C5 component; the house/fan parent remains open.
 
 ### Further complete structural and pressure branches
 
 - [x] NO_UNLOADED_DIAMOND_HUB.md excludes every zero-load exact degree-three diamond hub in the selected certificate, radius-free and with all actual means. It closes the full S-leaf hub attachment, both S/D tip attachments and both three-load fan masks. The only five-body fan survivor has all four path vertices loaded.
-- [x] FIVE_CYCLE_THREE_LOAD_DOUBLE_DIAGONAL_EXCLUSION.md excludes the entire double-diagonal transmitter chart, with R²>=(9+6sqrt(2))/4>Q. The three-load C5 retains only side/side or side/diagonal widths and nonparallel isolated-load forces.
+- [x] FIVE_CYCLE_THREE_LOAD_DOUBLE_DIAGONAL_EXCLUSION.md excludes the entire double-diagonal transmitter chart, with R²>=(9+6sqrt(2))/4>Q. The later full angle-sum theorem excludes both residual widths, so every C5 component is now closed.
 - [x] BOWTIE_TIP_OWNED_PRESSURE.md and BOWTIE_PARALLEL_PRESSURE.md prove the strict end-block sign for two complete owner/force domains, including all physical masks and coincident shared means. Every bowtie combining those proved domains is excluded; nonparallel articulation-owned/shared interfaces remain.
 - [x] C7_INNER_OUTSIDE_FACE_CORNER_EXCLUSION.md and C7_INNER_PAIR_FAR_FACE_CENTERS.md give the entire small-angle and actual-center extraction, retaining the full outer frames. No C7 completion conclusion or coarse-cell closure is inferred.
 
@@ -192,3 +192,8 @@ Root and separate full hand audits passed both branch proofs and the assembly. *
 - [x] FOUR_CYCLE_THREE_LOAD_BRANCH_CLOSED.md closes the full final C4 load branch by both complete S-articulation families and the entire D singleton/shared/parallel cover. All nine new sources and assemblies have root and separate full audits.
 - [x] FOUR_BODY_BLOCK_ONE_LEAF_CELL_CLOSED.md closes the whole graph/load/attachment cell at a canonical radius/Phi minimizer, preserving all four extras and every actual mean. The older opposite-load canonical premise remains explicit. Only C1.5.b0 remains among five-body cells; larger mixed cells and unrestricted equality remain open.
 - [x] ANNULAR_CENTER_ARC_BUDGET.md forces at least two centers strictly inside the unit disk, without assigning them to a chosen component region.
+
+## Entire C5 and one-common-articulation checkpoint
+
+- [x] FIVE_CYCLE_POSITIVE_COMPONENT_EXCLUSION.md closes every C5 load orbit, with fully audited proper-concurrence, three-load and four-load proofs. All masks, means and four extras remain. Only house and four-load fan remain in C1.5.b0; the count stays six closed and52 open.
+- [x] ONE_ARTICULATION_TRIANGLE_LEAF_EXCLUSION.md excludes any number of triangle petals and radial leaves sharing one A within the nine-body budget. It applies to those larger-row layouts but does not close rows with distributed articulations, bridge chains or larger blocks.

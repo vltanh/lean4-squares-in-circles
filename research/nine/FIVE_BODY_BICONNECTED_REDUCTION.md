@@ -108,6 +108,12 @@ The complement of C5 is another five-cycle. With exactly three loaded vertices, 
 
 With four loaded vertices there is one unloaded vertex, again one orbit. Five loaded vertices would make all five bodies physically circle-touching, contradicting the theorem that an all-boundary positive component is C7. Thus the full necessary positive-load cover is exactly these three-load and four-load patterns. Physical circle contacts with zero multiplier remain separate labels.
 
+The subsequent FIVE_CYCLE_POSITIVE_COMPONENT_EXCLUSION.md closes both
+complete load orbits. Its full three-load angle-sum and four-load
+endpoint-separation proofs retain every physical mask, actual mean and
+all four extras. The domain, both orbits and assembly passed root and
+separate independent full hand audits. No C5 component remains.
+
 ### 4.2. The house graph
 
 Label its complement as the path
@@ -152,6 +158,15 @@ The subsequent NO_UNLOADED_DIAMOND_HUB.md, Section6, excludes both entire three-
 
 **Theorem 5.1.** Under the stated selected-certificate inputs, every five-body biconnected positive component belongs to one of the three graph families in Section 4, with one of its stated necessary load masks. The seven other abstract biconnected graph types are completely excluded, and no completion square is discarded.
 
-The remaining C1.5.b0 task is the full geometry and four-square completion theorem for C5, the house and the four-load fan. FIVE_CYCLE_THREE_LOAD_PARALLEL_EXCLUSION.md and FIVE_CYCLE_THREE_LOAD_DOUBLE_DIAGONAL_EXCLUSION.md now remove the isolated-load parallel-force alternative and the entire double-diagonal transmitter chart in the three-load C5. Each still requires all contact-axis owners, point-normal intervals, shared-side means, circle-corner masks, physical zero-weight contacts, embeddings and any equality survivors. A positive graph complement is never used as a substitute for the full physical noncontact graph.
+The subsequent C5 assembly excludes the eighth of the ten graph types.
+Every surviving five-body biconnected component is now a house in one of
+its three load-mask orbits, or a fan with all four path bodies loaded.
+Their full contact owners, actual means, physical masks, zero-weight
+contacts and four extras remain. A C5 subgraph inside either graph has
+extra positive forces and does not inherit the degree-two C5 theorem.
 
-The coarse cell C1.5.b0 remains OPEN. The current coarse count is four closed and54 open. This is a complete combinatorial and load-cover reduction, not the missing sharp bound. No Lean compilation or CI was run.
+C1.5.b0 remains OPEN until both complete graph families are excluded or
+receive a full sharp completion theorem. The current coarse count is
+six closed and52 open. The house holes are empty, but its joint exterior
+bound remains open. The fan retains every actual hub/body force and
+torque equation. No Lean compilation or CI was run.

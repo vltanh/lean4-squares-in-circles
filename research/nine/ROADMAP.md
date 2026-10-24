@@ -1,9 +1,19 @@
 # n=9 — ordered roadmap to the unrestricted hand proof
 
-**PR:** #11, draft. **Reconciled source:** `9b3d46f99ddb46c8db5b6d7d69dc2f8db64b1915`.  
+**PR:** #11, draft. **Reconciled source:** `ac38d6beda897cf20410fe88b252e84e9d2dc15a`.  
 **Updated:** October 24, 2026, America/Chicago.
 
 **The unrestricted lower bound R^2>=1105/256 and complete equality classification remain OPEN.** The construction attains Q. The full execution tree, exact subgates and boundary cases are in [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md).
+
+## Entire C5 graph branch closed
+
+[FIVE_CYCLE_POSITIVE_COMPONENT_EXCLUSION.md](FIVE_CYCLE_POSITIVE_COMPONENT_EXCLUSION.md) excludes the complete positive five-cycle component. The [exact domain theorem](FIVE_CYCLE_FORCE_POLYGON_DOMAIN.md) retains the physical transmitters and every actual mean while deriving a convex proper-concurrence triangle or quadrilateral containing the origin. A radial two-corner concurrence is not assumed to lie inside its body.
+
+The [three-load theorem](FIVE_CYCLE_THREE_LOAD_EXCLUSION.md) bounds each transmitter's outward consecutive center angle by pi-theta/2, where theta=acos(9/25). The remaining boundary edge spans less than theta; the three angles cannot sum to2pi. The diagonal-channel estimate uses strict concavity of the actual aligned boundary-center curve over its entire interval. The [four-load theorem](FIVE_CYCLE_FOUR_LOAD_EXCLUSION.md) excludes both widths through actual center-distance and horizontal-displacement bounds. Every physical mask, zero individual corner weight, shared mean and all four extras are retained.
+
+Root and separate independent full audits passed the domain, both orbit proofs and their assembly. **Only house and four-load fan remain in C1.5.b0.** The coarse count remains six closed and52 open. This theorem does not apply degree-two equations at a vertex with additional positive edges.
+
+[ONE_ARTICULATION_TRIANGLE_LEAF_EXCLUSION.md](ONE_ARTICULATION_TRIANGLE_LEAF_EXCLUSION.md) also closes every component consisting only of triangle petals and radial leaves at one common articulation. Each whole triangle and each leaf has strictly positive projection on that articulation's center, contradicting their global zero sum. Root and independent full audits passed. Distributed articulations and larger blocks remain separate families.
 
 ## Whole-cell closure: C1.4.b1
 
@@ -68,7 +78,7 @@ Root and independent full hand audits passed every local source and the parent a
 
 [BOWTIE_TIP_OWNED_PRESSURE.md](BOWTIE_TIP_OWNED_PRESSURE.md) and [BOWTIE_PARALLEL_PRESSURE.md](BOWTIE_PARALLEL_PRESSURE.md) prove c_A dot M>0 for two whole end-triangle domains, all physical circle masks retained. The parallel theorem explicitly includes coincident shared-wall endpoint means. Two blocks drawn from those domains cannot form a bowtie, since their resultants are opposite. The later full owner/free cover now closes the entire bowtie cell.
 
-[FIVE_CYCLE_THREE_LOAD_DOUBLE_DIAGONAL_EXCLUSION.md](FIVE_CYCLE_THREE_LOAD_DOUBLE_DIAGONAL_EXCLUSION.md) excludes the entire two-diagonal-transmitter chart: legitimate endpoint ownership forces a common frame, and the actual BC contact gives R^2>=(9+6sqrt(2))/4>Q. The three-load C5 now has nonparallel isolated-load forces and at most one diagonal transmitter. The full nonparallel side/side and side/diagonal families, four-load C5 and house remain open.
+[FIVE_CYCLE_THREE_LOAD_DOUBLE_DIAGONAL_EXCLUSION.md](FIVE_CYCLE_THREE_LOAD_DOUBLE_DIAGONAL_EXCLUSION.md) excludes the entire two-diagonal-transmitter chart: legitimate endpoint ownership forces a common frame, and the actual BC contact gives R^2>=(9+6sqrt(2))/4>Q. The three-load C5 now has nonparallel isolated-load forces and at most one diagonal transmitter. The later full three-/four-load theorems now close every C5 component. House and four-load fan remain open.
 
 [C7_INNER_OUTSIDE_FACE_CORNER_EXCLUSION.md](C7_INNER_OUTSIDE_FACE_CORNER_EXCLUSION.md) improves the full inner-pair domain to0<sin(theta)<4/15 by an all-frame outgoing-ray theorem. [C7_INNER_PAIR_FAR_FACE_CENTERS.md](C7_INNER_PAIR_FAR_FACE_CENTERS.md) then extracts two actual boundary centers beyond the pair's opposite outward faces and proves their exact diameter-gap budget, with every offset and outer frame retained. The full nonparallel capacity implication is now proved by the right- and left-outside theorems. These complete local results have root and separate full hand audits.
 
@@ -86,7 +96,7 @@ Root and independent full hand audits passed every local source and the parent a
 - [x] NO_POSITIVE_K4_SUBGRAPH.md excludes K4 subgraphs throughout the selected graph inventory, including the K4 branch of C1.4.b1.
 - [x] NO_THREE_BOUNDARY_COMMON_NEIGHBORS.md excludes three circle-touching common positive neighbors of any two body vertices.
 - [x] FIVE_BODY_BICONNECTED_REDUCTION.md classifies all ten five-body biconnected graph types and reduces them to C5, house and four-path fan with complete necessary positive-load masks.
-- [x] [FIVE_CYCLE_THREE_LOAD_PARALLEL_EXCLUSION.md](FIVE_CYCLE_THREE_LOAD_PARALLEL_EXCLUSION.md) excludes parallel pair forces at the isolated loaded vertex of the entire three-load C5 branch. Nonzero cycle moment excludes D; every side-normal transmitter ends too centrally for its boundary neighbor; two diagonal transmitters overlap. All actual means and four extras remain. The full nonparallel and four-load C5 families stay open.
+- [x] [FIVE_CYCLE_THREE_LOAD_PARALLEL_EXCLUSION.md](FIVE_CYCLE_THREE_LOAD_PARALLEL_EXCLUSION.md) excludes parallel pair forces at the isolated loaded vertex of the entire three-load C5 branch. Nonzero cycle moment excludes D; every side-normal transmitter ends too centrally for its boundary neighbor; two diagonal transmitters overlap. All actual means and four extras remain. The later complete three-/four-load C5 theorems now close this entire graph branch.
 - [x] TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md excludes the entire length-two arm layout of C1.3.b2, with every leaf/transmitter type and articulation pose.
 - [x] TRIANGLE_TWO_LEAVES_SAME_ARTICULATION_CLOSED.md assembles the complete S/S, D/S and D/D exclusions and closes the entire same-articulation layout, including every shared mean and contact owner. The distinct-articulation completion is now also closed by the full assembly.
 - [x] TRIANGLE_DISTINCT_LEAVES_DOMAIN.md and TRIANGLE_DISTINCT_LEAVES_PORT_ORIENTATION.md give the complete distinct-layout load/radius/moment domain and the positive radial-concurrence theorem, including parallel C forces and all actual means.
@@ -123,7 +133,7 @@ The identity m=1+sum(block_size-1)+bridges gives exactly four five-body cyclic c
 | --- | --- | --- | --- |
 | CLOSED | C1.3.b2 | Entire three-attachment triangle-with-two-bridges cell | TRIANGLE_TWO_BRIDGES_CELL_CLOSED.md; upper/lower capacities3 and0 over the whole exact slider |
 | CLOSED | C1.4.b1 | Every C4/diamond/K4 block, leaf and load allocation | FOUR_BODY_BLOCK_ONE_LEAF_CELL_CLOSED.md; canonical scope retained |
-| 3 | C1.5.b0 | C5 with three/four loads; house with three mask orbits; fan with all four path vertices loaded | Finish each complete graph/load family with every actual contact and four extras |
+| 3 | C1.5.b0 | House with three mask orbits; fan with all four path vertices loaded; entire C5 CLOSED | Finish each complete graph/load family with every actual contact and four extras |
 | 4 | C2.33.b0 | Entire bowtie with four loaded tips and all extra physical contacts | CLOSED; full pressure/selection/core assembly |
 | CLOSED | G3.B.SHARP | Every physical boundary C7 with two arbitrary extras | Capacity one throughout the window, including Q; no stress premise |
 | 5 | G3.M6–M9 | Every remaining mixed cell in increasing component size | Sharp bound or full completion exclusion for each entire cell |
