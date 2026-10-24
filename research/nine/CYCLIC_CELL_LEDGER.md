@@ -23,6 +23,7 @@ Every one of the **9-n other physical squares** remains in the cell's completion
 - [x] **CY.TWOLOAD:** TWO_LOAD_RECIPROCAL_RIGIDITY.md proves every positive component with exactly two loaded bodies has all pair forces parallel. In the window it has q=17/4 and, for the strictly exposing point-contact certificate, 4–6 bodies in two aligned internal layers. Triangle-containing and 7–9-body two-loaded components are excluded.
 - [x] **C1.3.b0:** selected triangle component excluded in the window.
 - [x] **C1.4.b0:** all C4, diamond and K4 components excluded in the window; source FOUR_BODY_CYCLIC_CELL_CLOSED.md.
+- [x] **CY.SIMPLE.SIZE:** SIMPLE_POSITIVE_CYCLE_BODY_BOUND.md proves every selected simple-cycle component has at most eight bodies, including shared contact-junction degeneracies. The nine-body simple-cycle subfamily is excluded; C1.9.b0 also contains branching biconnected graphs and remains OPEN.
 - [ ] **CY.SHARP:** 56 remaining complete geometric cells. The necessary restrictions and finite count do not prove their sharp completion bounds.
 
 LOWER_WINDOW_FROM_EIGHT.md now assembles the explicit imported n=8 prerequisite; replacing its arithmetic-table dependencies remains separate if standalone table-freedom is required. The coarse inventory itself needs no radius bound. Selecting one component never discards the other physical squares.

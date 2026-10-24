@@ -5,6 +5,12 @@
 
 **Latest continuation, 2026-10-24:** **The unrestricted lower bound and complete equality classification remain OPEN.** P_ALL_COMPLETION.md and Y_ALL_COMPLETION.md now close the full P and Y families. Together with the exhaustive tree reduction, every selected positive tree component is excluded from a nine-square packing in the declared radius window. P also completes the five-/six-body reduction, excluding every selected positive component with exactly two circle-loaded bodies, including cyclic components. Every surviving component is cyclic and has 3–7 noncollinear circle resultants. The remaining geometric obligations are the general boundary-only C7 completion and mixed components containing a circle-clear body. Two coarse cells remain closed and 56 open. No Lean compilation or CI has been run.
 
+## New simple-cycle body bound
+
+[SIMPLE_POSITIVE_CYCLE_BODY_BOUND.md](SIMPLE_POSITIVE_CYCLE_BODY_BOUND.md) proves that a selected positive component whose body-pair graph is a simple cycle has at most **eight bodies**. The proof first excludes crossing opposite-pair edges at a four-square junction, derives a Jordan cycle with the physical circle-touching bodies in circular center order, then charges more than 40 degrees to each cycle body through exact transmission-channel bounds. It retains circle-touching bodies with zero circle weight and arbitrary square orientations.
+
+This closes the nine-body **simple-cycle** subfamily. It does not close the entire C1.9.b0 coarse cell, which also includes branching biconnected graphs, or completion of smaller cycles. The whole-cell count remains two closed and 56 open. The manuscript has received two separate hand audits; the complete prerequisite chain and Lean verification remain open.
+
 ## Boundary-contact continuation: one seven-cycle is the only boundary-only positive component
 
 [CIRCLE_CONTACT_ANGULAR_ORDER.md](CIRCLE_CONTACT_ANGULAR_ORDER.md) proves a global geometric reduction throughout the declared radius window. Distinct circle-touching center directions are more than 36 degrees apart; touching pairs are less than 72 degrees apart and consecutive in angular order. Each circle-touching square has angular shadow strictly shorter than 60 degrees. Hence the complete physical circle-touching graph consists of paths, or is one seven-cycle. These statements include zero-multiplier contacts and bodies.

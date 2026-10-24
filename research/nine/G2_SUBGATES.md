@@ -6,6 +6,12 @@ The reciprocal theorem applies to every physical positive component with exactly
 
 **Verification level:** written hand arguments pending independent full audit and Lean verification. Finite exact regressions are not a universal proof. Historical ledger versions remain in Git. The current canonical contracts are DEEP_GATED_ROADMAP.md and CYCLIC_CELL_LEDGER.md; current progress/evidence is TWO_LOAD_PROGRESS.md.
 
+## New simple-cycle body bound
+
+[SIMPLE_POSITIVE_CYCLE_BODY_BOUND.md](SIMPLE_POSITIVE_CYCLE_BODY_BOUND.md) proves that a selected positive component whose body-pair graph is a simple cycle has at most **eight bodies**. The proof first excludes crossing opposite-pair edges at a four-square junction, derives a Jordan cycle with the physical circle-touching bodies in circular center order, then charges more than 40 degrees to each cycle body through exact transmission-channel bounds. It retains circle-touching bodies with zero circle weight and arbitrary square orientations.
+
+This closes the nine-body **simple-cycle** subfamily. It does not close the entire C1.9.b0 coarse cell, which also includes branching biconnected graphs, or completion of smaller cycles. The whole-cell count remains two closed and 56 open. The manuscript has received two separate hand audits; the complete prerequisite chain and Lean verification remain open.
+
 ## 1. Ticked parent ledger
 
 | Gate | Complete scope | State |

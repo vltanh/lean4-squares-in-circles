@@ -212,3 +212,18 @@ No Lean compilation or CI was run. General C7 completion, mixed cyclic completio
 `CENTERED_INNER_ARC.md` proves that every circle-touching square in the full declared radius window contains the entire closed arc of |p|=5/4 within 20 degrees of its center direction in its OPEN interior. The exact trigonometric comparisons are cos(pi/9)>15/16 and sin(pi/9)<11/32. Both own-coordinate deviations reduce to a cubic whose expansion about s=3/8 has the positive lower bound 117/40960. Consequently every pair of physically disjoint circle-touching squares has minor center-angle separation strictly greater than 40 degrees.
 
 The entire derivation received two independent hand audits, including all constants and the shifted-cubic certificate. It strengthens the earlier 36-degree necessary bound but does not by itself exclude either global cyclic completion class.
+
+
+## 2026-10-24 — all nine-body simple positive cycles excluded
+
+SIMPLE_POSITIVE_CYCLE_BODY_BOUND.md supplies a complete hand theorem in the declared radius window. A selected simple positive component has at most eight bodies. Its strict point-only vertex/vertex normal convention is the one already available from the physical stress construction.
+
+- [x] Exact top-cap contact bound at 7/10.
+- [x] Full four-square-junction crossing exclusion, including the remaining axis-position block case.
+- [x] Local noncrossing replacement, Jordan cycle and exterior attachment paths.
+- [x] Circular center order through disjoint paths in the radius-5/4 annulus.
+- [x] Channel bounds for zero, one and two clear transmitters, giving more than 40 degrees per cycle body.
+- [x] Two separate hand audits covered the inequalities, degeneracies and topology.
+- [ ] Smaller-cycle completion and branching cyclic components remain open.
+
+This is a whole simple-cycle cardinality theorem, not a closure of the entire nine-body biconnected cell. All 56 currently open coarse rows remain unchecked. No Lean compilation, CI or numerical premise is used.

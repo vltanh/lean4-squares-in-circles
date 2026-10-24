@@ -4,6 +4,12 @@
 
 The new P/Y, cap, and section arguments have received separate hand audits. A full independent audit of the entire prerequisite chain remains open. No Lean compilation, CI or proof-completion percentage is claimed.
 
+## New simple-cycle body bound
+
+[SIMPLE_POSITIVE_CYCLE_BODY_BOUND.md](SIMPLE_POSITIVE_CYCLE_BODY_BOUND.md) proves that a selected positive component whose body-pair graph is a simple cycle has at most **eight bodies**. The proof first excludes crossing opposite-pair edges at a four-square junction, derives a Jordan cycle with the physical circle-touching bodies in circular center order, then charges more than 40 degrees to each cycle body through exact transmission-channel bounds. It retains circle-touching bodies with zero circle weight and arbitrary square orientations.
+
+This closes the nine-body **simple-cycle** subfamily. It does not close the entire C1.9.b0 coarse cell, which also includes branching biconnected graphs, or completion of smaller cycles. The whole-cell count remains two closed and 56 open. The manuscript has received two separate hand audits; the complete prerequisite chain and Lean verification remain open.
+
 ## Boundary-contact continuation: one seven-cycle is the only boundary-only positive component
 
 [CIRCLE_CONTACT_ANGULAR_ORDER.md](CIRCLE_CONTACT_ANGULAR_ORDER.md) proves a global geometric reduction throughout the declared radius window. Distinct circle-touching center directions are more than 36 degrees apart; touching pairs are less than 72 degrees apart and consecutive in angular order. Each circle-touching square has angular shadow strictly shorter than 60 degrees. Hence the complete physical circle-touching graph consists of paths, or is one seven-cycle. These statements include zero-multiplier contacts and bodies.
