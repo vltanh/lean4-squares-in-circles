@@ -174,6 +174,30 @@ one-owner and free-hub contacts remain. Root and separate full audits
 passed all three sources. These are subfamily/domain conclusions,
 not a closure of the house, fan or C1.5.b0.
 
+### 4.5. Full fan endpoint owner cover and further house domains
+
+FAN_ENDPOINT_OWNER_REDUCTION.md now proves exactly one fan endpoint
+normal is H-owned. FAN_HUB_OWNED_ENDPOINT_EXCLUSION.md excludes both
+H-owned axes; FAN_NON_HUB_OWNED_ENDPOINT_EXCLUSION.md excludes every
+pair with neither H-owned, including unique-free/shared and radial-free
+masks. The exact remaining families are the mixed tip-owned,
+unique-free/shared, and physical radial-free endpoint domains, each
+with its entire H-side mean and all four extras. Their full exits
+remain open at this checkpoint.
+
+THREE_BOUNDARY_PATH_RESULTANT_CONE.md gives the whole positive-cone
+identity and excludes the all-radial hub-neighbor mask of house4,
+as well as a fan's sole-internal-unique mask.
+HOUSE_FOUR_LOAD_TIP_OWNED_ENDPOINT_EXCLUSION.md closes the house's
+two-tip-owned endpoint family using only its three actual hub forces.
+HOUSE_END_TRIPLE_TILTED_BYPASS_DOMAIN.md retains both tilt signs while
+making its endpoint/bypass contacts singleton and excluding two
+bypass-owned endpoint normals.
+HOUSE_MIDDLE_TRIPLE_UNIQUE_FREE_HUB_SELECTION.md removes free AD only
+in the full all-physical-unique mask, without fixing any shared mean.
+Every radial and one-owner middle-triple alternative remains explicit.
+Root and separate full audits passed all eight source implications.
+
 ## 5. Exact remaining whole-cell work
 
 **Theorem 5.1.** Under the stated selected-certificate inputs, every five-body biconnected positive component belongs to one of the three graph families in Section 4, with one of its stated necessary load masks. The seven other abstract biconnected graph types are completely excluded, and no completion square is discarded.

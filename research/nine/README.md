@@ -6,6 +6,18 @@
 
 **The unrestricted lower bound and complete equality classification remain OPEN.** The construction attains Q. The entire four-body triangle-plus-leaf cell is now closed, so the selected unique positive cyclic component has **5–9 bodies** and **3–7 noncollinear circle-loaded resultants**. Every other physical square remains in the completion problem. The coarse inventory has **six whole cells closed and 52 open**.
 
+## Fan reduced to exactly one hub-owned endpoint; house domains sharpened
+
+[FAN_ENDPOINT_OWNER_REDUCTION.md](FAN_ENDPOINT_OWNER_REDUCTION.md) gives the full remaining four-load fan cover. The [both-hub-owned theorem](FAN_HUB_OWNED_ENDPOINT_EXCLUSION.md) excludes equal, opposite and perpendicular hub axes, retaining all actual shared means. The [non-hub-owned theorem](FAN_NON_HUB_OWNED_ENDPOINT_EXCLUSION.md) excludes every pair with neither endpoint owned by H: unique/free/shared cases have a full torque contradiction, and physical radial-free endpoints satisfy the same strict metric bound as [tip-owned endpoints](FAN_TIP_OWNED_ENDPOINT_EXCLUSION.md).
+
+Exactly one endpoint is therefore H-owned. Its opposite endpoint has precisely three remaining full physical-feature possibilities: a tip-owned singleton; a unique-corner free contact opposite a genuine shared boundary side; or a two-corner radial free contact with two distinct inner-vertex applications. All means and all four extras remain. These three mixed families are the exact open fan obligation at this checkpoint.
+
+[THREE_BOUNDARY_PATH_RESULTANT_CONE.md](THREE_BOUNDARY_PATH_RESULTANT_CONE.md) proves that the middle resultant of every actual three-boundary path is a strictly positive combination of its endpoint resultants, without a degree-two premise. It excludes the four-load house mask with all three hub neighbors radial, and a fan with its sole unique-corner body internal. It also supplies the geometric reweighting needed by [the four-load house tip-owned endpoint theorem](HOUSE_FOUR_LOAD_TIP_OWNED_ENDPOINT_EXCLUSION.md); that transfer keeps its three genuine hub forces and every original body equation.
+
+The [tilted end-triple house domain](HOUSE_END_TRIPLE_TILTED_BYPASS_DOMAIN.md) now has two singleton bypass/endpoint contacts, weakly outward endpoint reactions with all zero-sign transitions classified, and a strictly outward roof reaction; the two endpoint contacts cannot both be bypass-owned. The [middle-triple all-unique selection](HOUSE_MIDDLE_TRIPLE_UNIQUE_FREE_HUB_SELECTION.md) removes a free hub normal using fixed positive circle-load ratios and translation balance, without fixing any shared mean. Its radial masks and one-owner hub contacts remain.
+
+Root and separate independent full audits passed all eight new sources. **The fan and house remain open at this checkpoint**, with six coarse cells closed and52 open. The complete mixed exits, unrestricted theorem, original equality and full prerequisite-chain audit remain separate obligations.
+
 ## Six-body frontier: exhaustive attachment and plane-domain roadmap
 
 [SIX_BODY_CYCLIC_FRONTIER.md](SIX_BODY_CYCLIC_FRONTIER.md) now covers all six six-body coarse rows. It derives seven triangle/three-bridge layouts, eleven four-body-block/two-bridge layouts, sixteen rooted five-body-block/leaf types, three two-triangle/bridge layouts and three triangle/four-body-block layouts. Every row retains its three extra physical squares. The complete common-articulation theorem removes only the matching layouts.
