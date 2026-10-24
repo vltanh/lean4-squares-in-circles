@@ -1,6 +1,6 @@
 # n=9 — ordered roadmap to the unrestricted hand proof
 
-**PR:** #11, draft. **Reconciled source:** `fbc12b176578ec94f3a6a42759e8410e39c2a97a`.  
+**PR:** #11, draft. **Reconciled source:** `c298675cbb9e4ae76e0fa53ae312fd2c7921aa28`.  
 **Updated:** October 23, 2026, America/Chicago.
 
 **The unrestricted lower bound R^2>=1105/256 and complete equality classification remain OPEN.** The construction attains Q. The full execution tree, exact subgates and boundary cases are in [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md).
@@ -32,6 +32,9 @@ The unique positive cyclic component now has **5–9 bodies** and **3–7 noncol
 - [x] C7_PINNED_VERTEX_CONTACT_TYPES.md reduces all free vertex edges to radial/radial contacts or mirror-paired two-square blocks. The complete length2–5 profiles, contact-radius bound and length3 exclusion are proved.
 - [x] FOUR_CYCLE_LEAF_HOLE_EMPTY.md proves zero inner capacity for the whole C4-plus-leaf branch; all surviving C1.4.b1 completion is exterior.
 - [x] C7 fixed-application and shared-side-block generic selection retains all application means and load masks. Free vertex edges require unique radial endpoints with both corner weights positive; radial runs have length at most two, and parallel radial pairs are impossible.
+- [x] C7_TWO_FREE_EDGES_EXCLUSION.md excludes both whole two-free-edge layouts. C7_RADIAL_VERTEX_EDGE_EXCLUSION.md and C7_MIRROR_VERTEX_EDGE_EXCLUSION.md then exclude every remaining free edge by legitimate pre-stress open choices. The entire residual C7 contact domain is now side-axis-owned.
+- [x] S_LEAF_CONNECTED_BOUNDARY_NEIGHBORS.md closes the S-leaf diamond-hub case with a boundary second hub, by a connected-boundary-neighbor obstruction.
+- [x] UNIT_BYPASS_NORMAL_CHANNEL.md reduces every unit-bypassed channel to one side-normal transmitter; the surviving opposite-load C4 retains its full width-one means.
 - [x] Every physical boundary C7 has center diameter below 3; two consecutive contacts span less than 3sqrt(3)/2 in the high-radius range.
 - [x] An open radius-3/2 cover of enclosing-ring centers implies a common strict interior point and completion capacity at most one.
 - [x] An exact physical C7 control disproves the unstressed center-cover claim; that control has no positive C7 stress.
@@ -49,7 +52,7 @@ The identity m=1+sum(block_size-1)+bridges gives exactly four five-body cyclic c
 | 2 | C1.4.b1 | Opposite-load or three-load C4 plus leaf; diamond plus leaf at a hub or tip | Adjacent-load C4 and K4 excluded, all holes empty; prove the full remaining bounds |
 | 3 | C1.5.b0 | C5 with three/four loads; house with three mask orbits; fan with three/four loads | Finish each complete graph/load family with every actual contact and four extras |
 | 4 | C2.33.b0 | Two triangles sharing one articulation, four loaded tips and every zero-weight physical contact | Full joint capacity or core/radius theorem |
-| Parallel | G3.B.CAP | Every positive boundary C7 with two arbitrary extra squares | Prove completion capacity at most one |
+| Parallel | G3.B.CAP | Every selected positive boundary C7 with actual side-axis owners, all owner transitions and two arbitrary extras | Free-normal branch CLOSED; prove full all-owned capacity at most one |
 | 5 | G3.M6–M9 | Every remaining mixed cell in increasing component size | Sharp bound or full completion exclusion for each entire cell |
 | 6 | G4 | All original nine-square packings | Universal R^2>=1105/256 |
 | 7 | G5 | Every equality packing and every proposed parameter family | Necessary-and-sufficient unrestricted classification |
@@ -63,7 +66,7 @@ Do not import S/D leaf geometry at a nonleaf bridge endpoint. Do not infer a com
 
 The remaining covering targets are **positive-stress** supporting triples of types (1,3,3) and (2,2,3). [C7_CENTER_COVER_GEOMETRIC_OBSTRUCTION.md](C7_CENTER_COVER_GEOMETRIC_OBSTRUCTION.md) gives exact unstressed counterexamples of the latter type at Q and at strictly smaller radii, then proves that they cannot carry a positive C7 stress. Thus a general geometric center-cover theorem is a rejected normalization, not an unfinished premise to assume.
 
-The simultaneous normal reductions are now complete in C7_FIXED_APPLICATION_GENERIC_SELECTION.md, C7_TWO_CIRCLE_CORNER_BLOCKS.md and C7_SHARED_SIDE_BLOCK_GENERIC_SELECTION.md. They leave two exhaustive contact domains: **all edges side-axis-owned**, retaining changes of ownership; or **some free vertex/vertex edge**, incident to shared-side blocks each pinned at a unique radial endpoint with both corner weights positive. The proof uses a collective virtual motion, so variable shared-side applications are not frozen. C7_PINNED_VERTEX_CONTACT_TYPES.md now classifies every free edge within the second domain: radial/radial contacts or the unique outer-adjacent-corner contact between two mirror two-square blocks. All other length pairs and vertex types are excluded. Adaptive open choices require a shared-side neighbor at both ends of every radial pair. The full free-edge graph has at most two edges, with an exhaustive length2–5 block-profile cover. The full cyclic arrangements, owned transitions and the two surviving modules still require a capacity theorem. These are necessary structure restrictions, not a stationary classification or capacity bound.
+The simultaneous normal reductions are now complete through C7_RADIAL_VERTEX_EDGE_EXCLUSION.md and C7_MIRROR_VERTEX_EDGE_EXCLUSION.md. They exclude the entire free-vertex domain and leave **all edges side-axis-owned**, retaining every change of ownership and every shared-side mean. The proof uses a collective virtual motion, so variable shared-side applications are not frozen. C7_PINNED_VERTEX_CONTACT_TYPES.md now classifies every free edge within the second domain: radial/radial contacts or the unique outer-adjacent-corner contact between two mirror two-square blocks. All other length pairs and vertex types are excluded. Adaptive open choices require a shared-side neighbor at both ends of every radial pair. The full free-edge graph has at most two edges, with an exhaustive length2–5 block-profile cover. C7_TWO_FREE_EDGES_EXCLUSION.md closes both two-edge layouts; the two final open normal selections close the radial/radial and mirror modules completely. The all-owned domain still requires its full force/torque, center-cover or direct capacity theorem. Zero-owner/two-owner transitions remain; no one-owner-per-body assumption is supplied.
 
 A complete direct capacity proof or a fully exhaustive stationary classification may replace the cover route. Such a classification must include two-owner/zero-owner transitions, one/two-circle-corner masks, zero circle loads and nonconstant periodic solutions. Closed origin containment alone would not give strict piercing. Far-vertex spans do not imply the needed boundary-center diameter lower bound.
 

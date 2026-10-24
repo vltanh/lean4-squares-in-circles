@@ -1,7 +1,7 @@
 # n=9: deep ticked roadmap and ordered proof execution
 
 **Branch:** `research/nine-tablefree-hand`; **PR:** #11, draft.  
-**Reconciled source:** `fbc12b176578ec94f3a6a42759e8410e39c2a97a`.  
+**Reconciled source:** `c298675cbb9e4ae76e0fa53ae312fd2c7921aa28`.  
 **Checkpoint:** October 23, 2026, America/Chicago; the append-only evidence log retains explicit UTC provenance.
 
 **T9 and unrestricted equality remain OPEN.** The complete P/Y arguments exclude all selected positive trees and all exactly-two-loaded components from a nine-square packing in the declared radius window. A physical certificate can be selected with **one planar positive component**, all physically circle-touching vertices on its exterior face, and at most 27 positive scalar atoms. The remaining component is cyclic, has 5–9 bodies, and has 3–7 noncollinear circle-loaded resultants. Every other physical square has zero stress and remains in the problem.
@@ -17,7 +17,7 @@ The remaining lower-bound split is exhaustive: **G3.B**, a boundary-only C7 with
 | 2b | G3.M4.D.OBLIQUE | Both articulation corners lie inside loaded-neighbor sides, all B/C contact types | CLOSED hand; full branch excluded |
 | 3 | G3.M4.S | All side-normal-leaf cores: aligned shared-side sliders plus both tilted-vertex branches | CLOSED hand; the entire core is impossible |
 | 4 | G3.M4.ALL | Combine D/S and their degeneracies; close the entire C1.3.b1 cell | CLOSED hand; independent assembly audit passed |
-| Parallel whole branch | G3.B.CAP | Exclude two arbitrary completion squares for every positive boundary C7 | OPEN; active |
+| Parallel whole branch | G3.B.CAP | Exclude two arbitrary completion squares for every selected positive boundary C7 | OPEN; entire free-normal branch CLOSED; all-owned geometry active |
 | 5a | G3.M5 | Four complete five-body cells, all four extras retained | OPEN; full chain closed, C4 hole empty, biconnected graph/load cover complete |
 | 5b | G3.M6–M9 | Process the larger mixed cells by component size and the finite semantic cover below | OPEN |
 | 6 | G4 | Assemble the unrestricted sharp lower bound with the exact lower-window import | BLOCKED by G3 |
@@ -55,6 +55,10 @@ The finite cover keeps continuous radii, centers, orientations, contact coordina
 | Mixed boundary-tip selection | Every unique-circle-corner degree-two star with fixed applications and one boundary neighbor has no free vertex edge | BOUNDARY_TIP_FIXED_APPLICATION_SELECTION.md |
 | Entire same-articulation S/S and D/S branches | All leaf weights, articulation support features and triangle-tip circle masks excluded by inaccessible arcs/support faces | TWO_S_LEAVES_ONE_TRIANGLE_ARTICULATION.md; TWO_MIXED_LEAVES_ONE_TRIANGLE_ARTICULATION.md |
 | Entire adjacent-load C4 leaf branch | A central normal channel cannot return through any boundary neighbor; all leaf/articulation types retained | FOUR_CYCLE_ADJACENT_LOAD_EXCLUSION.md |
+| Complete C7 free-normal exclusion | Every residual positive C7 has actual side-axis owners on all edges, with all owner transitions retained | C7_RADIAL_VERTEX_EDGE_EXCLUSION.md; C7_MIRROR_VERTEX_EDGE_EXCLUSION.md |
+| Entire two-free-edge C7 branch | Both 2+2+3 and 2+2+2-plus-singleton cores excluded, retaining both remaining contact owners | C7_TWO_FREE_EDGES_EXCLUSION.md |
+| S-leaf connected boundary neighbors | No connected physical graph of boundary neighbors of its articulation can contain every other load | S_LEAF_CONNECTED_BOUNDARY_NEIGHBORS.md |
+| Unit bypass of a normal channel | Exactly one side-normal transmitter, with arbitrary actual means and no radius premise | UNIT_BYPASS_NORMAL_CHANNEL.md |
 | C7 free-edge graph and block profiles | At most two free edges; explicit length2–5 pinned profiles and two surviving local vertex-contact types | C7_PINNED_VERTEX_CONTACT_TYPES.md |
 | Entire two-edge triangle arm | All leaf/transmitter types, articulation frames and circle/contact masks excluded | TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md |
 | C4-plus-leaf inner capacity | Zero inner capacity for every load assignment and contact degeneracy; four extras exterior | FOUR_CYCLE_LEAF_HOLE_EMPTY.md |
@@ -489,9 +493,20 @@ Sources: C7_FIXED_APPLICATION_GENERIC_SELECTION.md, C7_TWO_CIRCLE_CORNER_BLOCKS.
 - [x] **G3.B.N.BLOCK.9** The no-parallel-radial theorem gives exactly one physical radial body in such a common-frame block, with both its corner weights positive.
 - [x] **G3.B.N.COVER** The remaining exact contact-domain split is OWNED, where every positive edge has a genuine side-axis owner, or PINNED, where at least one free vertex edge survives and each incident shared-side block has the stated unique doubly loaded radial endpoint.
 
-#### G3.B.N.OWNED Full side-axis-owned domain [OPEN]
+#### G3.B.N.OWNED Full side-axis-owned domain [OPEN; sole remaining high-radius C7 domain]
 
-A side owner is an actual square feature, not a prescribed successor convention. A body may own zero, one or two incident contacts. An edge may have both owners when sides are parallel. Every such cyclic change must be included.
+A side owner is an actual square feature, not a prescribed successor convention. A body may own zero, one or two incident contacts. An edge may have both owners when sides are parallel. Every such cyclic change must be included. The full free-normal exclusion below is complete and supplies no one-owner-per-body normalization.
+
+- [x] **G3.B.N.OWNED.WORD_DOMAIN** On the ordered seven-cycle, label each edge by its preceding owner, succeeding owner or both owners. These3^7 formal labels cover every owned assignment; they are semantic labels, not physical pose samples. Invalid words may be removed only by proved implications.
+- [x] **G3.B.N.OWNED.COUNT** Let v_j count bodies owning j incident edges, and let D count doubly owned edges. Counting owner incidences gives v_1+2v_2=7+D and v_0+v_1+v_2=7, hence v_2-v_0=D.
+- [x] **G3.B.N.OWNED.ONE_WORD** If every body owns exactly one edge, D=0 and the cyclic arrows must point consistently around the whole cycle. Up to reflection this is one complete ownership pattern. This implication does not prove its hypothesis for arbitrary C7.
+- [ ] **G3.B.N.OWNED.ONE.CHARTS** For that complete one-owner pattern, derive all physical contact equations, both signs of every body's relative frame, and all unique/two-corner and zero-weight endpoints.
+- [ ] **G3.B.N.OWNED.ONE.RECURRENCE** Derive the exact stationary recurrence from real application points, force, torque and circle equations. Include nonconstant periodic solutions and every geometric range restriction.
+- [ ] **G3.B.N.OWNED.ONE.BOUND** Prove the full center-cover, strict-piercing or actual capacity-one theorem for this entire ownership pattern.
+- [ ] **G3.B.N.OWNED.TRANSITIONS.COVER** Cover every remaining owner word with a zero-/two-owner body or doubly owned edge, including all shared-side components and actual junction/side-feature limits.
+- [ ] **G3.B.N.OWNED.TRANSITIONS.LOADS** Retain radial bodies with one or two positive corner weights, unique-corner bodies with positive or zero weight, and every shared-side mean over its full segment.
+- [ ] **G3.B.N.OWNED.TRANSITIONS.GEOMETRY** Derive all physical shape and force/moment consequences at zero-owner and two-owner bodies; no owner transition is discarded because it fails a one-owner recurrence.
+- [ ] **G3.B.N.OWNED.TRANSITIONS.BOUND** Prove the full capacity or covering theorem uniformly across all these owner words and their continuous realizations.
 
 - [ ] **G3.B.N.OWNED.1** Give the complete cyclic owner/feature cover, including shared-side segments, endpoint contacts and coincident-owner transitions.
 - [ ] **G3.B.N.OWNED.2** For each entire owner type, retain all physical one/two-circle-corner masks and every positive/zero weight choice.
@@ -499,7 +514,7 @@ A side owner is an actual square feature, not a prescribed successor convention.
 - [ ] **G3.B.N.OWNED.4** Prove a full radius-3/2 center cover, a strict common-piercing theorem, or the actual capacity-one statement across this whole domain.
 - [ ] **G3.B.N.OWNED.5** Include every nonconstant periodic family and all owner/weight degeneration limits before closing OWNED.
 
-#### G3.B.N.PINNED Free vertex edges with unique radial endpoints [OPEN; complete graph/profile cover CLOSED]
+#### G3.B.N.PINNED Free vertex edges with unique radial endpoints [CLOSED selected-core branch]
 
 Source: C7_PINNED_VERTEX_CONTACT_TYPES.md, with the symmetric radial-run choice in C7_TWO_CIRCLE_CORNER_BLOCKS.md, Section8. These gates apply in R>=sqrt(17)/2; the smaller-radius C7 capacity is already closed by the origin-centered cover.
 
@@ -512,16 +527,17 @@ Source: C7_PINNED_VERTEX_CONTACT_TYPES.md, with the symmetric radial-run choice 
 - [x] **G3.B.N.PINNED.1** Contract all maximal shared-side blocks. Every free-incident block has at least two bodies, so at most three such blocks fit. A two-free-edge block must have one radial/radial edge and one unique/unique edge. Free cycles and disjoint free edges are impossible; at most two free edges survive.
 - [x] **G3.B.N.PINNED.2** Every free-incident block has length at most5, so the full individual-block pose/side-segment list is complete. A length6 block against a radial singleton is excluded by the symmetric radial-run selection.
 - [x] **G3.B.N.PINNED.ONE_RR.COVER** With exactly one free edge of radial/radial type, the unordered incident block lengths are (2,2), (2,3), (2,4), (2,5), (3,3), (3,4). The complementary path retains all other ring bodies and only owned point edges.
-- [ ] **G3.B.N.PINNED.ONE_RR.BOUND** Prove a whole-domain stress/cover/capacity theorem for all six length pairs, every actual owned complementary path, and both arbitrary completion squares.
+- [x] **G3.B.N.PINNED.ONE_RR.BOUND** C7_RADIAL_VERTEX_EDGE_EXCLUSION.md excludes all six length pairs uniformly. An owned far external point fixes every moment-normalized force and actual mean through a unique-corner block. A near-axis RR normal violates the radial circle cone for its fixed x>d; at x=d it fails for every strict nonaxis choice. All complementary paths and both extras remain.
 - [x] **G3.B.N.PINNED.ONE_UU.COVER** With exactly one unique/unique free edge, its two length2 blocks form the exact mirror module; all three other ring bodies lie on the complementary owned path.
-- [ ] **G3.B.N.PINNED.ONE_UU.BOUND** Prove the full theorem for every such complementary path, retaining circle masks, all shared-side means and ownership transitions.
+- [x] **G3.B.N.PINNED.ONE_UU.BOUND** C7_MIRROR_VERTEX_EDGE_EXCLUSION.md excludes every single mirror module. Its two common-cone endpoints force x=c and x=x_* at a radial shared side, while one fixed anchor normal cannot satisfy both circle cones. A strict endpoint failure persists in an open interval; all complementary paths, circle masks and actual means remain.
 - [x] **G3.B.N.PINNED.TWO.COVER** With two free edges they form a three-block path, one edge of each type. The middle block and its unique/unique neighbor have length2; the other block has length2 or3. Thus the complete length list is 2+2+3, or 2+2+2 plus one additional unique-physical-circle-corner singleton on the owned complementary path.
-- [ ] **G3.B.N.PINNED.TWO.223** Settle the full seven-body 2+2+3 realization, including its single closing owned point edge and every permitted load mask.
-- [ ] **G3.B.N.PINNED.TWO.222U** Settle the full 2+2+2-plus-singleton realization with both complementary owned edges, every singleton pose and both arbitrary extras.
-- [ ] **G3.B.N.PINNED.3** Retain both positive corner weights on each anchor and the complete free-normal intervals, including interactions between different pinned blocks.
-- [ ] **G3.B.N.PINNED.4** Handle all remaining owned edges between those blocks, with arbitrary ownership changes, shared-side means and zero circle weights elsewhere.
-- [ ] **G3.B.N.PINNED.5** Prove the full cover/piercing/capacity theorem on this entire domain, including every contact degeneration and cyclic arrangement.
-- [ ] **G3.B.N.ALL** Combine OWNED and PINNED only after each whole-domain conclusion is proved, then close B.CAP by the explicit chosen implication.
+- [x] **G3.B.N.PINNED.TWO.223** C7_TWO_FREE_EDGES_EXCLUSION.md excludes the entire 2+2+3 layout: its closing center gap exceeds60 degrees and both radii exceed sqrt(2), so those two squares cannot touch. No closing-owner or load specialization is used.
+- [x] **G3.B.N.PINNED.TWO.222U** C7_TWO_FREE_EDGES_EXCLUSION.md retains both owners of the singleton/last-block contact and all shared means. Exact bounds on its two required points, with a full all-orientation two-point center lemma, force every singleton corner below411/200<sqrt(17)/2. Its required physical boundary contact is impossible even at zero multiplier.
+- [x] **G3.B.N.PINNED.3** Both final exclusions retain the full nonnegative two-corner cone, all zero unique-body weights and every strict endpoint degeneration. Fixed means are deduced from force/torque, never substituted as a premise.
+- [x] **G3.B.N.PINNED.4** The exclusions need only actual fixed external point/axis data at the selected block or anchor. Every other owned complementary path, owner transition and physical zero-weight contact remains arbitrary; the selected core is excluded independently of completion.
+- [x] **G3.B.N.PINNED.5** The complete domain is excluded by simultaneous pre-KKT choices: adaptive radial-run intervals, the fixed-mean RR obstruction and the incompatible-endpoint UU obstruction. Uncrossing and thinning preserve all surviving point normals. The complete sources passed independent hand audits.
+- [x] **G3.B.N.SIDE_AXIS** No free vertex/vertex edge remains in a selected positive high-radius C7. Every edge has a genuine side-axis owner; all zero-owner/two-owner transitions, shared sides and physical circle masks remain.
+- [ ] **G3.B.N.ALL** Finish the entire OWNED capacity theorem. PINNED is closed; only then close B.CAP and the full boundary-only branch.
 
 #### G3.B.CAP Required terminal theorem
 
@@ -544,7 +560,7 @@ Source: C7_PINNED_VERTEX_CONTACT_TYPES.md, with the symmetric radial-run choice 
 - [x] **G3.B.R.COVER.3.b** Pattern(1,1,5) has two sides<=sqrt2; acuteness and the sine rule give circumradius<=2/sqrt3<3/2.
 - [x] **G3.B.R.COVER.3.c** If R<sqrt(17)/2, the usual circle-containment center bound puts every ring center in the open radius3/2 disk centered at0.
 - [x] **G3.B.R.COVER.4.124** BOUNDARY_TWO_CONTACT_SPAN.md proves distance<3sqrt(3)/2 along two contacts. In a supporting triangle of circumradius>=3/2, the one-edge opposite angle is<pi/6 and the two-edge opposite angle is<pi/3, contradicting acuteness. Thus the entire(1,2,4) type is excluded.
-- [ ] **G3.B.R.COVER.4.133** Exclude the entire pattern(1,3,3) for a positive-stress C7, including unequal center radii, independent frames, all side-owner directions and free point normals.
+- [ ] **G3.B.R.COVER.4.133** Exclude the entire pattern(1,3,3) for a positive-stress C7, including unequal center radii, independent frames, all side-owner directions, every owner transition and all shared application means.
 - [ ] **G3.B.R.COVER.4.223** Exclude the entire pattern(2,2,3) for a positive-stress C7, using the actual force/torque equations. The corresponding unstressed statement is false.
 - [x] **G3.B.R.COVER.CONTROL** C7_CENTER_COVER_GEOMETRIC_OBSTRUCTION.md gives exact unstressed physical rings of type(2,2,3), at Q and strictly belowQ, with covering radius>3/2. Its outgoing-contact torque identity proves that these rings have no positive C7 stress. A purely geometric cover theorem is REJECTED.
 - [ ] **G3.B.R.COVER.4.boundary** Include all acute/right transition limits, multiple supporting centers and shared-side contacts. A right supporting triangle is already covered by its antipodal pair.
@@ -553,7 +569,7 @@ Source: C7_PINNED_VERTEX_CONTACT_TYPES.md, with the symmetric radial-run choice 
 - [x] **G3.B.R.DIAM.2** BOUNDARY_SEVEN_CYCLE_CENTER_DIAMETER.md proves every physical boundary C7 has center diameter<3. The proof bounds entire angular shadows, then encloses all possible distant endpoint sectors in one disk of radius<3/2. No stress or regularity assumption is used.
 - [ ] **G3.B.R.DIAM.3** Once DIAM.1 is proved, combine it with the completed DIAM.2. A far-vertex span>=4 does not supply the missing center-diameter lower bound.
 - [ ] **G3.B.R.CLASSIFY.1.a** Cover every cyclic assignment of vertex/side and side/side ownership, retaining two-owner/zero-owner transitions.
-- [ ] **G3.B.R.CLASSIFY.1.b** Include selected strict vertex/vertex normals, one/two circle-corner states and zero loads.
+- [x] **G3.B.R.CLASSIFY.1.b** The entire selected free-vertex-normal branch is excluded by the RR and mirror-module theorems. All one/two-circle-corner states and zero weights remain in the explicit OWNED domain; no one-owner normalization is inferred.
 - [ ] **G3.B.R.CLASSIFY.2** Derive an exact stationary recurrence for each entire surviving ownership type.
 - [ ] **G3.B.R.CLASSIFY.3** Classify all periodic solutions, including nonconstant ones and all transition boundaries.
 - [ ] **G3.B.R.CLASSIFY.4** Prove capacity<=1 for every resulting family and prove the cover is exhaustive.
@@ -780,11 +796,16 @@ There are four physical completion squares in every case. For cyclic block sizes
 - [x] **M5.B4L.C4.ADJACENT.DETOUR** A boundary square touching both channel endpoints would have two points whose angular separation exceeds its strict atan(23/16) shadow bound. The argument needs no positive weight at the detour body and no circle contact at the far endpoint.
 - [x] **M5.B4L.C4.ADJACENT.ALL** The entire adjacent-loaded-pair C4-plus-leaf pattern is impossible, for both leaves, every orientation, all shared means and both transmission widths. Root and separate audits passed.
 - [ ] **M5.B4L.C4.OPPOSITE.DOMAIN** Retain the two loaded neighbors of A and the zero-load opposite transmitter, both S/D leaves, every actual support owner and all physical zero-weight circle contacts.
+- [x] **M5.B4L.C4.OPPOSITE.WIDTH** UNIT_BYPASS_NORMAL_CHANNEL.md forces exactly one side-normal transmitter of reserve1. Any longer channel exceeds the unit bypass diameter; a diagonal transmitter forces incompatible transverse same-frame separation. Its application means remain over the full sides, and no common articulation/leaf frame is inferred.
 - [ ] **M5.B4L.C4.OPPOSITE.BOUND** Prove the whole opposite-load core/radius or joint four-extra exterior bound, including all transmitter widths and articulation poses.
 - [ ] **M5.B4L.C4.THREE.DOMAIN** Derive the complete three-loaded-block force/moment system, all physical circle-corner masks and both independent cycle contacts at the clear articulation.
 - [ ] **M5.B4L.C4.THREE.BOUND** Prove the full three-load branch's radius or joint exterior-completion theorem, retaining every asymmetric and shared-side limit.
 - [ ] **M5.B4L.C4.3** Combine the completed adjacent-load and empty-hole theorems with the entire opposite/three-load conclusions before closing C4.
 - [ ] **M5.B4L.DIAMOND.HUB.1** Cover the loaded degree-two tips and all allowed states of the other hub; derive every radial-bridge and cycle-moment equation.
+- [x] **M5.B4L.DIAMOND.HUB.S_BOUNDARY.1** S_LEAF_CONNECTED_BOUNDARY_NEIGHBORS.md splits all boundary neighbors of an S articulation into two inaccessible-arc-separated sets with opposite vertical signs. Each physical boundary edge preserves its set, even for zero-weight bodies.
+- [x] **M5.B4L.DIAMOND.HUB.S_BOUNDARY.ALL** If the second hub U physically touches the circle, the path B--U--C is a connected graph of boundary neighbors containing all other loads. Their vertical sum cannot cancel the S leaf. This whole branch is excluded for every U weight and actual pose.
+- [ ] **M5.B4L.DIAMOND.HUB.S_CLEAR** Finish the entire S-leaf branch with a physically clear second hub, exactly three loaded bodies and all remaining physical contacts.
+- [ ] **M5.B4L.DIAMOND.HUB.D** Finish both physical boundary/clear states of the second hub for a D leaf, retaining every shared-side mean and load mask.
 - [ ] **M5.B4L.DIAMOND.HUB.2** Prove the complete hub-attachment bound, with all actual contact junctions and all four extras.
 - [ ] **M5.B4L.DIAMOND.TIP.1** Cover the opposite tip and every allowed hub-load assignment, using the boundary-contact and two-load exclusions only where their hypotheses hold.
 - [ ] **M5.B4L.DIAMOND.TIP.2** Prove the complete tip-attachment bound, retaining both owner directions and all shared-side means.

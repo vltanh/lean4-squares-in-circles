@@ -89,8 +89,10 @@ Every row retains four extra physical squares. Full nested contracts are G3.M5 i
 - [x] **C7.NORMAL.BLOCK:** C7_SHARED_SIDE_BLOCK_GENERIC_SELECTION.md handles whole shared-side blocks, every variable application mean and all one-active-corner masks. Every surviving free vertex edge is incident to blocks with exactly one physical radial body, at an endpoint/singleton, and both its corner weights positive.
 - [x] **C7.PINNED.PAIRS:** C7_PINNED_VERTEX_CONTACT_TYPES.md derives all relevant length2–5 shared-side profiles and excludes unequal endpoint-radius pairs and both length3 pairs. The only free-edge types are radial/radial or mirror two-square blocks. Root and separate audits passed.
 - [x] **C7.RADIAL.ENDPOINTS / C7.FREE_GRAPH:** C7_TWO_CIRCLE_CORNER_BLOCKS.md, Sections7–8, require a tangential shared side at both radial-pair ends. The pinned manuscript Section7 proves at most two free edges and the entire individual-block/arrangement cover.
-- [ ] **C7.OWNED:** finish the all-axis-owned contact domain with every two-owner/zero-owner transition and load mask.
-- [ ] **C7.PINNED:** finish the free-vertex domain with the proved unique doubly loaded radial endpoints; do not assume its entire geometry has been classified.
+- [x] **C7.TWO_FREE:** C7_TWO_FREE_EDGES_EXCLUSION.md excludes the complete 2+2+3 and 2+2+2-plus-singleton layouts, retaining both remaining contact owners and zero circle loads.
+- [x] **C7.RR.NONE:** C7_RADIAL_VERTEX_EDGE_EXCLUSION.md uses uniquely determined moment-normalized block means and an open near-axis choice to exclude every radial/radial edge, including the limiting inner endpoint mean.
+- [x] **C7.UU.NONE / C7.PINNED:** C7_MIRROR_VERTEX_EDGE_EXCLUSION.md excludes the last mirror vertex edge by incompatible endpoint mean/circle-cone requirements. The entire free-normal domain is CLOSED for the selected necessary certificate.
+- [ ] **C7.OWNED:** finish the sole residual all-axis-owned contact domain with every two-owner/zero-owner transition, actual shared mean, radial body and load mask.
 - [ ] **C7.COVER.133/223:** use positive stress to settle these two complete supporting-triple types, or replace the cover route by a full direct capacity proof.
 - [ ] **C7.COMPLETE:** exclude every two-square completion in the actual free domain, with all frames and circle-load masks.
 
@@ -101,6 +103,8 @@ For R<sqrt(17)/2 the origin itself gives the strict center cover. The remaining 
 - [x] **CY.HOLE.3–6:** CONTACT_RING_HOLE_AREA.md proves interior capacities 0,1,1,2 for rings of 3,4,5,6 unit squares, with no containing-radius or common-frame premise.
 - [x] **CY.OUTERPAIR:** CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md proves every exterior pocket of a touching boundary pair empty in the declared window.
 - [x] **CY.SIMPLECYCLE:** SIMPLE_POSITIVE_CYCLE_BODY_BOUND.md excludes every nine-body simple selected cycle; branching nine-body blocks remain.
+- [x] **CY.S.CONNECTED:** S_LEAF_CONNECTED_BOUNDARY_NEIGHBORS.md excludes every S leaf whose other loads lie in one connected physical graph of boundary neighbors of its articulation. In particular the S diamond-hub/boundary-second-hub branch is closed, including zero weight at that hub.
+- [x] **CY.BYPASS:** UNIT_BYPASS_NORMAL_CHANNEL.md proves exactly one side-normal transmitter whenever another unit square physically touches both channel endpoints. No circle premise is needed; the opposite-load C4 reserve is exactly one.
 - [ ] **CY.JOINT:** apply these tools with actual whole-square routing and coupled capacities in each surviving mixed cell.
 
 ## 7. Universal assembly, equality and verification
