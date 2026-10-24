@@ -574,3 +574,13 @@ The C5 assembly retains the n=8 lower-window import and global <3-load inputs. I
 ONE_ARTICULATION_TRIANGLE_LEAF_EXCLUSION.md also passed root and independent full audits. Each whole end triangle and each radial leaf has positive projection on their common articulation center, contradicting their zero total circle force. The family is uniform in petal/leaf count but excludes neither distributed articulations nor degree-three fan vertices. No larger coarse row is ticked without its complete layout cover.
 
 The ledger stays six closed and52 open. Unrestricted T9, original equality, larger mixed components and full-chain audit remain open. No Lean compilation or CI was run. Every new commit uses[skip ci]; PR11 remains draft.
+
+## October24,2026 — complete boundary-path separation and two house subfamilies
+
+Read base: def16eb3d7728219e1468396542e90bd19b96121. FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md proves the whole balanced four-body boundary-path restriction: physical corner/resultant directions deviate less than15 degrees from their centers, positive global balance and all three actual contacts force the endpoint minor angle above150 degrees, and center distance exceeds1+sqrt(2). Every actual endpoint hub application pair therefore has distance>1, including arbitrary side means. The theorem applies to both fan4 and house4, with the latter retaining only its three true hub edges.
+
+HOUSE_END_TRIPLE_PARALLEL_BYPASS_EXCLUSION.md excludes every parallel-bypass end-triple house. The full geometric frame cover forces aligned endpoints, the two-corner lower mask makes the other endpoint circle-clear, and the true unique endpoint torque forces d<=c for all means including k=0/1. A shared upper hub contact forces d>c; the point alternative physically separates the roof from its required neighbor. The genuinely tilted bypass remains open.
+
+HOUSE_MIDDLE_TRIPLE_SHARED_HUB_EXCLUSION.md excludes every both-hubs-owned middle-triple contact, including a positive-length shared side. Roof-triangle signs and exact unloaded balances put the lower pair strictly on opposite sides of the hub interface. Its contradiction is radius-free and retains every mean and physical mask. One-owner and strict free hub singleton cases remain open.
+
+Root and separate independent full audits passed all three sources. The deep roadmap now records their complete continuous domains, exact moment/sign gates, all physical contact features and precise remaining exits. These do not close C1.5.b0: the inventory stays six closed and52 open. The remaining house/fan cases keep every body equation and all four extras. No numerical parameter cover, Lean compilation or CI was used. Every commit uses[skip ci]; PR11 remains draft.

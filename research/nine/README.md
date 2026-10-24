@@ -6,6 +6,16 @@
 
 **The unrestricted lower bound and complete equality classification remain OPEN.** The construction attains Q. The entire four-body triangle-plus-leaf cell is now closed, so the selected unique positive cyclic component has **5–9 bodies** and **3–7 noncollinear circle-loaded resultants**. Every other physical square remains in the completion problem. The coarse inventory has **six whole cells closed and 52 open**.
 
+## House and fan: completed geometric reductions
+
+[FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md](FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md) proves that the endpoints of every balanced four-body boundary path have center distance greater than1+sqrt(2). Every physical circle corner is less than15 degrees from its center; global positive load balance and the three actual contacts force the endpoint minor center angle above150 degrees. Consequently every pair of endpoint applications on a common hub has distance greater than1, including all shared-side means. This applies to the four-load fan and the house path3--1--4--2. Endpoint contacts cannot lie on the same hub side; two vertex applications must be opposite.
+
+[HOUSE_END_TRIPLE_PARALLEL_BYPASS_EXCLUSION.md](HOUSE_END_TRIPLE_PARALLEL_BYPASS_EXCLUSION.md) excludes the entire parallel-bypass family in either end-triple house mask. Actual contact geometry aligns both channel endpoints. The degree-two endpoint's two-corner mask is impossible; its unique-corner force and torque give d<=c. A shared upper bypass contact requires d>c, while the point alternative makes the roof contact impossible. Every actual mean and strict point-contact limit is covered. The genuinely tilted bypass remains open.
+
+[HOUSE_MIDDLE_TRIPLE_SHARED_HUB_EXCLUSION.md](HOUSE_MIDDLE_TRIPLE_SHARED_HUB_EXCLUSION.md) excludes every middle-triple hub contact whose normal is owned by both clear hubs. The roof-triangle signs and the full unloaded balances put the lower endpoint squares strictly on opposite sides of the hub support line, contradicting their contact. The theorem is radius-free and keeps arbitrary shared means. Singleton contacts owned by only one hub and strict free normals remain open.
+
+Root and separate independent full audits passed all three sources. These are whole geometric implications and subfamily exclusions. **C1.5.b0 remains open**, with six coarse cells closed and52 open. The remaining fan and house proofs retain every actual degree-three/four equation, all circle masks and all four physical completion squares.
+
 ## Entire C5 graph branch closed
 
 [FIVE_CYCLE_POSITIVE_COMPONENT_EXCLUSION.md](FIVE_CYCLE_POSITIVE_COMPONENT_EXCLUSION.md) excludes the complete positive five-cycle component. The [exact domain theorem](FIVE_CYCLE_FORCE_POLYGON_DOMAIN.md) retains the physical transmitters and every actual mean while deriving a convex proper-concurrence triangle or quadrilateral containing the origin. A radial two-corner concurrence is not assumed to lie inside its body.

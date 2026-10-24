@@ -1,9 +1,19 @@
 # n=9 — ordered roadmap to the unrestricted hand proof
 
-**PR:** #11, draft. **Reconciled source:** `ac38d6beda897cf20410fe88b252e84e9d2dc15a`.  
+**PR:** #11, draft. **Reconciled source:** `def16eb3d7728219e1468396542e90bd19b96121`.  
 **Updated:** October 24, 2026, America/Chicago.
 
 **The unrestricted lower bound R^2>=1105/256 and complete equality classification remain OPEN.** The construction attains Q. The full execution tree, exact subgates and boundary cases are in [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md).
+
+## House and fan: completed geometric reductions
+
+[FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md](FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md) proves that the endpoints of every balanced four-body boundary path have center distance greater than1+sqrt(2). Every physical circle corner is less than15 degrees from its center; global positive load balance and the three actual contacts force the endpoint minor center angle above150 degrees. Consequently every pair of endpoint applications on a common hub has distance greater than1, including all shared-side means. This applies to the four-load fan and the house path3--1--4--2. Endpoint contacts cannot lie on the same hub side; two vertex applications must be opposite.
+
+[HOUSE_END_TRIPLE_PARALLEL_BYPASS_EXCLUSION.md](HOUSE_END_TRIPLE_PARALLEL_BYPASS_EXCLUSION.md) excludes the entire parallel-bypass family in either end-triple house mask. Actual contact geometry aligns both channel endpoints. The degree-two endpoint's two-corner mask is impossible; its unique-corner force and torque give d<=c. A shared upper bypass contact requires d>c, while the point alternative makes the roof contact impossible. Every actual mean and strict point-contact limit is covered. The genuinely tilted bypass remains open.
+
+[HOUSE_MIDDLE_TRIPLE_SHARED_HUB_EXCLUSION.md](HOUSE_MIDDLE_TRIPLE_SHARED_HUB_EXCLUSION.md) excludes every middle-triple hub contact whose normal is owned by both clear hubs. The roof-triangle signs and the full unloaded balances put the lower endpoint squares strictly on opposite sides of the hub support line, contradicting their contact. The theorem is radius-free and keeps arbitrary shared means. Singleton contacts owned by only one hub and strict free normals remain open.
+
+Root and separate independent full audits passed all three sources. These are whole geometric implications and subfamily exclusions. **C1.5.b0 remains open**, with six coarse cells closed and52 open. The remaining fan and house proofs retain every actual degree-three/four equation, all circle masks and all four physical completion squares.
 
 ## Entire C5 graph branch closed
 

@@ -1,7 +1,7 @@
 # n=9: deep ticked roadmap and ordered proof execution
 
 **Branch:** `research/nine-tablefree-hand`; **PR:** #11, draft.  
-**Reconciled source:** `ac38d6beda897cf20410fe88b252e84e9d2dc15a`.  
+**Reconciled source:** `def16eb3d7728219e1468396542e90bd19b96121`.  
 **Checkpoint:** October 24, 2026, America/Chicago; the append-only evidence log retains explicit UTC provenance.
 
 **T9 and unrestricted equality remain OPEN.** The complete P/Y arguments exclude all selected positive trees and all exactly-two-loaded components from a nine-square packing in the declared radius window. A physical certificate can be selected with **one planar positive component**, all physically circle-touching vertices on its exterior face, and at most 27 positive scalar atoms. The remaining component is cyclic, has 5–9 bodies, and has 3–7 noncollinear circle-loaded resultants. Every other physical square has zero stress and remains in the problem.
@@ -1099,6 +1099,18 @@ Source: FIVE_BODY_BICONNECTED_REDUCTION.md, using NO_THREE_BOUNDARY_COMMON_NEIGH
 - [x] **M5.B5.C5.THREE.BOUND** Both channels span<pi-theta/2 and actual BC spans<theta. Their complete circular sum would be<2pi. The whole three-load orbit is excluded, including both residual width pairs and independently double-diagonal transmission after the parallel-T reduction.
 - [x] **M5.B5.C5.ALL** FIVE_CYCLE_POSITIVE_COMPONENT_EXCLUSION.md combines both orbits, the global <3-load exclusions and physical five-boundary-cycle impossibility. Root and independent full audits passed all four new files. All masks, actual means and four extras remain; no secondary minimizer is needed. Only house and four-load fan remain in C1.5.b0.
 
+##### M5.B5.PATH4 — balanced boundary-path endpoint geometry [CLOSED hand]
+
+- [x] **M5.B5.PATH4.CORNER** FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md maximizes the exact corner/center deviation tan(delta)=(a-b)/(2R²-a-b) over the whole physical domain a>=b>=1/2. The maximum is1/[2sqrt(R²-1/4)]<tan(pi/12). Both physical corners and zero individual weights remain.
+- [x] **M5.B5.PATH4.RESULTANT** Every nonzero nonnegative circle resultant lies in the same open15-degree center interval. Physical center intervals are separated by more than40 degrees, so all four resultant directions preserve their actual path order.
+- [x] **M5.B5.PATH4.BALANCE** Positive global balance makes every resultant-direction gap strictly less thanpi; the equal-pi case is excluded by the two interior directions' strictly positive projection. The three-contact center span is therefore greater than5pi/6.
+- [x] **M5.B5.PATH4.CONTACTS** Actual boundary-center radii exceed5/4 and touching centers have distance<=sqrt(2), so every consecutive gap is<theta=acos(9/25). Exact cos(3theta-pi)=13959/15625>sqrt(3)/2 gives total span<7pi/6.
+- [x] **M5.B5.PATH4.METRIC** The endpoint minor angle exceeds5pi/6 and their squared distance exceeds25(2+sqrt(3))/16>(1+sqrt(2))². The final radical comparison reduces to30000>28561.
+- [x] **M5.B5.PATH4.ALL_MEANS** Every pair of actual endpoint applications on any common unit hub has distance>1 by the triangle inequality. Compactness gives the same strict separation for the full physical contact sets; all aggregate shared-side means belong to those sets.
+- [x] **M5.B5.PATH4.FEATURES** The two full endpoint-contact sets cannot meet one hub side. If both applications are hub vertices, they are opposite. Neither equal hub forces nor degree-two equations at an inner path body were used.
+- [x] **M5.B5.PATH4.APPLICATIONS** The theorem applies to fan pathu1--u2--u3--u4 and house path3--1--4--2 with common hub5; reflection covers the other house four-load mask. Root and independent full audits passed.
+- [ ] **M5.B5.PATH4.REMAINING_FEATURES** Treat opposite-vertex, vertex/opposite-side and separated-side contact sets under the full actual hub/body equations. The distance>1 theorem alone does not exclude a unit hub.
+
 ##### M5.B5.HOUSE — complete three-mask-orbit cover; geometry OPEN
 
 Label the positive-graph complement path 1--2--3--4--5. Vertex3 is the loaded degree-two roof; its positive neighbors1 and5 touch.
@@ -1109,9 +1121,25 @@ Label the positive-graph complement path 1--2--3--4--5. Vertex3 is the loaded de
 - [x] **M5.B5.HOUSE.HOLE.CLEAR_HUB** The roof is loaded; its physical triangle forbids both hubs from touching the circle. At least one hub is clear, degree3, and its roof neighbor touches an adjacent ring body. The complete cross obstruction excludes the hypothetical inner unit for every house load mask.
 - [x] **M5.B5.HOUSE.HOLE.ALL** The whole four-cycle hole is empty; the roof triangle is already empty, and the loaded roof is on the exterior face. Every house completion unit is exterior. Root and independent full audits passed; no joint exterior capacity is claimed.
 - [x] **M5.B5.HOUSE.END_TRIPLE.RADIAL** RADIAL_BOUNDARY_NEIGHBOR_PRESSURE.md, Section3, excludes the entire all-radial physical mask in either end triple: its opposite clear hub touches every load, whose projections on that hub center are all strictly positive. At least one of the three loads has a unique physical circle corner.
-- [ ] **M5.B5.HOUSE.END_TRIPLE** Prove the full geometry/completion theorem for {1,2,3} and its reflected mask, preserving all contact features and physical boundary states.
-- [ ] **M5.B5.HOUSE.MIDDLE_TRIPLE** Prove the full theorem for {2,3,4}, including both zero-load higher-degree bodies and every stress distribution.
-- [ ] **M5.B5.HOUSE.FOUR** Prove the full theorem for the four-load masks and every admissible zero-weight contact.
+- [x] **M5.B5.HOUSE.END_TRIPLE.CHANNEL** In mask{1,2,3}, use N=1,B=2,T=3,U=4,H=5. U is the exact zero-load degree-two transmitter; the unit bypass theorem forces width1 and transverse separation of H from U. All actual means remain.
+- [x] **M5.B5.HOUSE.END_TRIPLE.PARALLEL.DOMAIN** HOUSE_END_TRIPLE_PARALLEL_BYPASS_EXCLUSION.md puts every parallel bypass at H=[a,a+1]x[0,1],a>=1. The full point-only convention forces both loaded endpoints aligned; B=[b,b+1]x[-1,0],N=[n,n+1]x[1,2],a-1<=b,n<1. Both HB/HN point and shared contacts are retained.
+- [x] **M5.B5.HOUSE.END_TRIPLE.PARALLEL.MASK** A two-corner B would put every N corner strictly inside squared radius173/50<R_*². Thus B is unique; a shared HB segment would then demand an impossible vertical unique-corner resultant. HB is its actual strict point cone(c,d),c,d>0.
+- [x] **M5.B5.HOUSE.END_TRIPLE.PARALLEL.TORQUE** The genuine UB mean gives k in[0,1] and t-s=k(t-s*d/c), with t>=s. Both k=0 and k=1 are included, and the full degree-two endpoint balance forces d<=c.
+- [x] **M5.B5.HOUSE.END_TRIPLE.PARALLEL.SHARED_ROOF** A shared HN contact forces the roof normal northeast; every other sign prevents actual NT contact by strict support span. Torque about H's top-right vertex gives nu(d-c)=alpha(a+1-zeta)>0, contradicting d<=c for every actual HN mean.
+- [x] **M5.B5.HOUSE.END_TRIPLE.PARALLEL.POINT_ROOF** A point HN contact also forces a northeast roof normal. The complete reverse support span places all of T strictly beyond N's rightmost coordinate, contradicting their actual contact.
+- [x] **M5.B5.HOUSE.END_TRIPLE.PARALLEL.ALL** Both HB types, both HN types and all physical B masks are covered. The entire parallel-bypass subfamily is excluded; root and separate full audits passed. No secondary motion or new selected normal was used.
+- [ ] **M5.B5.HOUSE.END_TRIPLE.TILTED.DOMAIN** Keep the full tilted-H transverse-separation domain, every endpoint frame, arbitrary shared means and all actual roof contacts. Any claimed sign at a coincident corner must retain the strict selected point-normal premise.
+- [ ] **M5.B5.HOUSE.END_TRIPLE.TILTED.BOUND** Derive a whole tilted-core contradiction or a joint capacity<=3 for all four exterior extras, including unique/radial endpoint masks and every physical junction transition.
+- [ ] **M5.B5.HOUSE.END_TRIPLE** Assemble the completed parallel and remaining genuinely tilted domains for both reflected end-triple masks.
+- [x] **M5.B5.HOUSE.MIDDLE_TRIPLE.SHARED.SIGNS** HOUSE_MIDDLE_TRIPLE_SHARED_HUB_EXCLUSION.md labels A=1,D=5,T=3,B=4,C=2. If AD is owned by both hubs, the roof triangle gives a_x>=0,d_x<=0. Their exact unloaded degree-three balances force the AB normal strictly left and the DC normal strictly right.
+- [x] **M5.B5.HOUSE.MIDDLE_TRIPLE.SHARED.SPAN** With AD on x=H, the actual AB application lies at x=H-1 and DC at x=H+1. The complete unit support-span lemma makes max_x B<H<min_x C, contradicting BC contact. Every actual hub/contact mean is retained.
+- [x] **M5.B5.HOUSE.MIDDLE_TRIPLE.SHARED.ALL** The entire both-hubs-owned AD domain, including every positive-length shared hub side, is excluded radius-free. Root and separate full audits passed; no new normal selection is needed.
+- [ ] **M5.B5.HOUSE.MIDDLE_TRIPLE.ONE_OWNER** Treat singleton AD owned by one hub only. The aligned-hub support sign is available, while the oblique hub's adjacent support vertices and variable opposite-side means remain; the shared-frame span argument cannot be reused unchanged.
+- [ ] **M5.B5.HOUSE.MIDDLE_TRIPLE.FREE** Treat the complete strict free AD normal domain under a finite compatible pre-stress choice, retaining each radial physical mask and coincident-junction coupling. Fixed unique-corner load ratios alone do not close masks with variable circle splits.
+- [ ] **M5.B5.HOUSE.MIDDLE_TRIPLE** Assemble every AD owner/feature and full physical load mask, or give a uniform joint exterior-capacity theorem. Both clear hubs keep all three actual positive forces.
+- [x] **M5.B5.HOUSE.FOUR.ENDPOINTS** The actual boundary path3--1--4--2 is globally balanced. Hub5 touches endpoints3,2, so their entire hub contact sets have distance>1. The hub has exactly three positive neighbors; no fourth spoke is introduced.
+- [ ] **M5.B5.HOUSE.FOUR.FEATURES** Cover both endpoint vertices, vertex/side and separated-side applications with the actual 5--1 third hub edge and the true degree-three equation at vertex1. Keep all radial/unique masks and zero-stress physical contacts.
+- [ ] **M5.B5.HOUSE.FOUR** Prove a whole-core or joint exterior-completion exit for both reflected four-load masks.
 - [x] **M5.B5.HOUSE.ROUTING** HOUSE_HOLE_EMPTY.md empties both actual bounded regions for every load/owner/mask case. All four extras lie in exterior regions, with common-junction limits retained.
 - [ ] **M5.B5.HOUSE.EXTERIOR** Prove the joint exterior capacity<=3 or another full sharp exit, retaining all three load orbits, actual obstacles and all four independently oriented extras. Separate per-pocket bounds do not suffice.
 - [ ] **M5.B5.HOUSE.ALL** Assemble the three load orbits with their whole exterior theorem, feature transitions and equality survivors.
@@ -1123,7 +1151,11 @@ Use path u1--u2--u3--u4 and universal hub H. The two endpoint tips u1,u4 are loa
 - [x] **M5.B5.FAN.MASKS** The necessary loads are {u1,u2,u4}, {u1,u3,u4}, or all four path vertices. The first two are reflection partners. Zero-weight physical circle contacts at the two inner path vertices remain explicit.
 - [x] **M5.B5.FAN.THREE** NO_UNLOADED_DIAMOND_HUB.md, Section6, excludes both entire three-load masks. Each inner path vertex has exact positive degree3, with H touching both other neighbors; it must therefore be loaded. Both endpoint tips are already loaded. Every surviving fan has all four path vertices positively loaded, with H physically clear.
 - [x] **M5.B5.FAN.FOUR.RADIAL** The all-radial four-load physical mask is excluded by RADIAL_BOUNDARY_NEIGHBOR_PRESSURE.md, Section3. The clear universal hub touches every loaded body; each entire two-corner load has strictly positive center projection, contradicting the global zero sum. At least one of the four path bodies has a unique physical circle corner.
-- [ ] **M5.B5.FAN.FOUR** Derive and solve the full four-load branch, without equating all hub forces or assuming a common frame.
+- [x] **M5.B5.FAN.FOUR.ENDPOINTS** M5.B5.PATH4 gives distance>1 for every actual H-u1/H-u4 application pair. The complete physical sets cannot lie on one H side; two hub vertices must be opposite. All four hub magnitudes and actual application coordinates remain independent.
+- [ ] **M5.B5.FAN.FOUR.VERTICES** Treat the full opposite-hub-vertex endpoint domain, with the genuine physical boundary order and every allowed middle-spoke side/corner/mean. The true degree-two endpoint equations and degree-three inner-body equations must hold together.
+- [ ] **M5.B5.FAN.FOUR.SIDES** Treat the complete remaining vertex/side and separated-side endpoint-contact sets. Shared means range over actual segments; no midpoint or adjacent-vertex simplification is allowed.
+- [ ] **M5.B5.FAN.FOUR.LOCAL_BALANCE** Use each of the five actual body force and torque equations. Global circle balance and even an isolated hub force/torque equation are weaker relaxations; no core exclusion follows from them alone.
+- [ ] **M5.B5.FAN.FOUR** Combine the whole endpoint-feature domains without equating hub forces or assuming a common frame.
 - [ ] **M5.B5.FAN.ROUTING** Treat all three triangle holes and actual exterior regions, including contact coincidences and every zero-stress completion square.
 - [ ] **M5.B5.FAN.BOUND** Prove a whole core/radius obstruction or joint four-extra completion bound for the sole remaining four-load fan, with every circle mask, actual mean and independent frame retained.
 - [ ] **M5.B5.FAN.ALL** Retain all owner/corner masks, shared-side means and any equality survivors, then close the entire fan graph.

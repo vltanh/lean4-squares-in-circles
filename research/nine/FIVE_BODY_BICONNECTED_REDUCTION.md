@@ -154,6 +154,26 @@ The two triples are exchanged by reversing the original path. The two inner path
 
 The subsequent NO_UNLOADED_DIAMOND_HUB.md, Section6, excludes both entire three-load masks. Each inner path vertex has exact positive degree3, and its universal-hub neighbor physically touches both other path neighbors. The radius-free selected-star theorem therefore forces both inner path vertices to carry positive circle load. Thus every surviving fan now has **all four path vertices loaded**, with H physically circle-clear. RADIAL_BOUNDARY_NEIGHBOR_PRESSURE.md, Section3, further excludes the all-radial physical mask, so at least one path vertex has a unique physical circle corner. The earlier three-mask list remains the exhaustive combinatorial cover before this geometric refinement.
 
+### 4.4. Subsequent whole house/fan restrictions
+
+FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md proves that a balanced
+four-body boundary path has endpoint center distance>1+sqrt(2).
+Every pair of actual endpoint applications on a common hub has
+distance>1, including all shared means. It applies to the four-load
+fan and to house path3--1--4--2 with hub5. Two endpoint hub vertices
+must therefore be opposite; the full remaining feature cover stays open.
+
+HOUSE_END_TRIPLE_PARALLEL_BYPASS_EXCLUSION.md excludes every end-triple
+house whose clear bypass shares its transmitter's frame. Both point
+and shared hub contacts, every actual mean and both endpoint circle
+masks are covered. The genuinely tilted bypass remains.
+HOUSE_MIDDLE_TRIPLE_SHARED_HUB_EXCLUSION.md excludes every middle-triple
+hub force owned by both clear hubs, including all shared hub sides,
+by strict support separation of its lower endpoint pair. Singleton
+one-owner and free-hub contacts remain. Root and separate full audits
+passed all three sources. These are subfamily/domain conclusions,
+not a closure of the house, fan or C1.5.b0.
+
 ## 5. Exact remaining whole-cell work
 
 **Theorem 5.1.** Under the stated selected-certificate inputs, every five-body biconnected positive component belongs to one of the three graph families in Section 4, with one of its stated necessary load masks. The seven other abstract biconnected graph types are completely excluded, and no completion square is discarded.

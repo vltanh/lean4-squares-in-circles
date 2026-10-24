@@ -197,3 +197,10 @@ Root and separate full hand audits passed both branch proofs and the assembly. *
 
 - [x] FIVE_CYCLE_POSITIVE_COMPONENT_EXCLUSION.md closes every C5 load orbit, with fully audited proper-concurrence, three-load and four-load proofs. All masks, means and four extras remain. Only house and four-load fan remain in C1.5.b0; the count stays six closed and52 open.
 - [x] ONE_ARTICULATION_TRIANGLE_LEAF_EXCLUSION.md excludes any number of triangle petals and radial leaves sharing one A within the nine-body budget. It applies to those larger-row layouts but does not close rows with distributed articulations, bridge chains or larger blocks.
+
+## Whole house/fan subfamily checkpoint
+
+- [x] FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md gives endpoint center distance>1+sqrt(2), and distance>1 between every pair of actual endpoint hub applications, for the full balanced four-boundary path. It applies to fan4 and house4 with all shared means and circle masks.
+- [x] HOUSE_END_TRIPLE_PARALLEL_BYPASS_EXCLUSION.md excludes the entire parallel-bypass end-triple house, including point/shared transitions, both endpoint physical circle masks and all means. The genuinely tilted bypass remains open.
+- [x] HOUSE_MIDDLE_TRIPLE_SHARED_HUB_EXCLUSION.md excludes the entire both-hubs-owned contact in the middle triple, radius-free and with every actual mean. One-owner and strict free singleton contacts remain open.
+- [ ] Complete every remaining house orbit and the full four-load fan. The deep roadmap now separates the exact missing feature, local-equilibrium and joint-capacity gates. All three new sources passed root and independent full hand audits. No coarse row changes: six closed and52 open; unrestricted T9, equality and full-chain audit remain open.
