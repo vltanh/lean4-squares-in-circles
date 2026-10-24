@@ -105,7 +105,7 @@ The exact identity m=1+sum(block_size-1)+bridges yields these four cells, each w
 | Cell | Exhaustive graph/layout cover | Current internal closure |
 | --- | --- | --- |
 | C1.3.b2 | Every chain/same/distinct attachment, every leaf type and four extras | CLOSED; full slider upper/lower capacities3 and0, assembly audited |
-| C1.4.b1 | All-three-loaded C4; D-leaf hub with loaded second hub | Other C4/diamond branches CLOSED; parent OPEN |
+| C1.4.b1 | All-three-loaded C4; D-leaf hub with unique-corner loaded second hub | Other C4/diamond branches CLOSED; parent OPEN |
 | C1.5.b0 | Exhaustive ten-type classification reduces to C5, house and four-path fan, with necessary load masks | Graph/load cover CLOSED; full geometry and whole cell OPEN |
 | C2.33.b0 | Two triangles sharing an articulation; all extra physical contacts retained | Four tips loaded, articulation clear; whole completion OPEN |
 
@@ -159,3 +159,12 @@ TWO_LOAD_PROGRESS.md preserves chronological statuses and pinned exact-regressio
 - [x] C7_INNER_OUTSIDE_FACE_CORNER_EXCLUSION.md and C7_INNER_PAIR_FAR_FACE_CENTERS.md give the entire small-angle and actual-center extraction, retaining the full outer frames. No C7 completion conclusion or coarse-cell closure is inferred.
 
 The authoritative count remains four whole cells closed and54 open.
+
+### Whole house routing and complete physical-mask consequences
+
+- [x] HOUSE_HOLE_EMPTY.md proves both house bounded regions empty for every load mask, via the radius-free zero-load cross-hub obstruction. All four extras are exterior; the whole house parent remains open.
+- [x] D_DIAMOND_RADIAL_HUB_EXCLUSION.md excludes the entire physical two-circle-corner second hub. Only unique-corner loaded U remains in the D-leaf diamond, with all tip masks and exterior extras.
+- [x] BOWTIE_PERPENDICULAR_CONTACT_EXCLUSION.md resolves every perpendicular A-owned contact pair. RADIAL_BOUNDARY_NEIGHBOR_PRESSURE.md resolves the entire two-radial end-block mask and excludes the all-radial fan/end-house masks; genuine mixed/free interfaces remain.
+- [x] C7_SHARP_BALANCED_RADIAL_TAIL.md and C7_OUTSIDE_INNER_RAY_WITNESS.md give the complete sharp balanced curve and actual signed-witness theorem. Only their precise residual outside-coordinate branches are retained, without an alternate-SAT-axis assumption.
+
+No further coarse parent is closed by these results: four cells remain closed and54 open.

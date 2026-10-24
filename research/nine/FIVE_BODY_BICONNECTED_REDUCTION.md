@@ -125,6 +125,8 @@ In G, vertex3 is the degree-two roof vertex, with touching neighbors1 and5, so3 
 
 The five-vertex interval is excluded because1,3,5 form a physical triangle and cannot all touch the circle. Reflection identifies the first and third masks and the two four-load masks; the middle triple is separate. All five labeled masks are retained in the cover.
 
+HOUSE_HOLE_EMPTY.md subsequently proves that every house load mask has empty triangular and quadrilateral holes; all four completion squares are exterior. The key cross obstruction uses an unloaded exact degree-three hub and does not restrict the roof's contact owner. RADIAL_BOUNDARY_NEIGHBOR_PRESSURE.md, Section3, also excludes the complete all-radial physical mask in either end triple: the opposite clear hub touches all three loads. The middle and four-load physical masks are not removed by that corollary.
+
 ### 4.3. The fan over a four-vertex path
 
 Write its path as u1--u2--u3--u4 and its universal hub as H. Vertices u1 and u4 are positive degree-two triangle tips and therefore loaded. The hub is not loaded: in the positive-graph complement it is isolated, incompatible with (1). In fact it is physically circle-clear, because it positively touches at least three loaded boundary bodies while a boundary body has at most two boundary neighbors.
@@ -144,7 +146,7 @@ The complete necessary loaded-set list is therefore
 
 The two triples are exchanged by reversing the original path. The two inner path vertices retain their possible zero-weight physical circle contacts wherever geometry allows them.
 
-The subsequent NO_UNLOADED_DIAMOND_HUB.md, Section6, excludes both entire three-load masks. Each inner path vertex has exact positive degree3, and its universal-hub neighbor physically touches both other path neighbors. The radius-free selected-star theorem therefore forces both inner path vertices to carry positive circle load. Thus every surviving fan now has **all four path vertices loaded**, with H physically circle-clear. The earlier three-mask list remains the exhaustive combinatorial cover before this geometric refinement.
+The subsequent NO_UNLOADED_DIAMOND_HUB.md, Section6, excludes both entire three-load masks. Each inner path vertex has exact positive degree3, and its universal-hub neighbor physically touches both other path neighbors. The radius-free selected-star theorem therefore forces both inner path vertices to carry positive circle load. Thus every surviving fan now has **all four path vertices loaded**, with H physically circle-clear. RADIAL_BOUNDARY_NEIGHBOR_PRESSURE.md, Section3, further excludes the all-radial physical mask, so at least one path vertex has a unique physical circle corner. The earlier three-mask list remains the exhaustive combinatorial cover before this geometric refinement.
 
 ## 5. Exact remaining whole-cell work
 
