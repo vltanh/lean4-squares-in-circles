@@ -104,8 +104,8 @@ The exact identity m=1+sum(block_size-1)+bridges yields these four cells, each w
 
 | Cell | Exhaustive graph/layout cover | Current internal closure |
 | --- | --- | --- |
-| C1.3.b2 | Triangle arm; two leaves at one or at two distinct triangle articulations | Arm, same-articulation and entire distinct D/S CLOSED; distinct S/S OPEN |
-| C1.4.b1 | C4 with leaf and all load patterns; diamond hub/tip; K4 | Adjacent-load C4 and K4 CLOSED; every cycle hole empty; residual branches OPEN |
+| C1.3.b2 | Entire distinct S/S family classified at one radius and full slider interval | Arm, same-articulation and D/S CLOSED; full slider capacity<=3 OPEN |
+| C1.4.b1 | Residual A/U-oblique opposite-load or three-load C4; diamond hub/tip | Adjacent-load, parallel-bypass and two-oblique-tip-owner charts CLOSED; parent OPEN |
 | C1.5.b0 | Exhaustive ten-type classification reduces to C5, house and four-path fan, with necessary load masks | Graph/load cover CLOSED; full geometry and whole cell OPEN |
 | C2.33.b0 | Two triangles sharing an articulation; all extra physical contacts retained | Four tips loaded, articulation clear; whole completion OPEN |
 
@@ -121,6 +121,9 @@ The S diamond-hub branch with a physically boundary second hub is also excluded 
 - [x] **CY.C7.COVER.115/124:** these entire minimum-disk supporting-triple gap patterns are excluded by the adjacent/two-contact distance bounds.
 - [x] **CY.C7.COVER.CONTROL:** a physical (2,2,3) ring at Q and below Q disproves the unstressed cover theorem; it has no positive C7 stress.
 - [x] **CY.C7.NORMAL:** simultaneous fixed-point and shared-side-block generic selections preserve every actual application mean and corner-weight mask.
+- [x] **CY.TRIANGLE.AXIS:** UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md proves n dot m>=0 at every side-owned contact triangle, for arbitrary frames and means.
+- [x] **CY.T2.SS.WALL:** DISTINCT_S_LEAVES_PARALLEL_ARTICULATION_REDUCTION.md reduces every remaining S/S core to an aligned-leaf, parallel-force articulation wall. All tilted-owner and shared-AB alternatives are excluded. DISTINCT_S_LEAVES_WALL_CLASSIFICATION.md then exhausts every wall owner/frame, forces the exact radius and full slider/mean intervals, and verifies every family member. Uniform capacity<=3 remains open.
+- [x] **CY.C4.OPPOSITE.PARALLEL / TIP_OWNER / UNIQUE_SELECT:** the three new complete C4 implications exclude the full parallel-bypass chart and both oblique tip owners, and remove free A-tip normals throughout the physical unique/unique mask. Remaining A-owned contacts, U-parallel tips, physical two-corner masks and all four extras are explicit open obligations. No new coarse cell is closed.
 - [x] **CY.C7.RADIAL:** at most four radial bodies, no selected radial run longer than two, and no parallel radial pair. Each free-vertex-incident block has a unique radial endpoint/singleton with two positive corner weights.
 - [x] **CY.C7.PINNED.TYPES:** the exhaustive free-edge list is radial/radial or mirror-paired two-square blocks; C7_PINNED_VERTEX_CONTACT_TYPES.md. Adaptive compatible choices give shared-side neighbors at both radial-pair ends. At most two free edges survive, with a complete individual-block/arrangement cover.
 - [x] **CY.C7.TWO_FREE:** both complete two-free-edge layouts are excluded by C7_TWO_FREE_EDGES_EXCLUSION.md.

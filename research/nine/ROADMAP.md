@@ -31,6 +31,12 @@ The unique positive cyclic component now has **5–9 bodies** and **3–7 noncol
 - [x] TRIANGLE_DISTINCT_MIXED_LEAVES_EXCLUSION.md excludes the entire distinct D/S branch through an owner-independent support-span contradiction. Only distinct S/S remains in C1.3.b2.
 - [x] DISTINCT_S_LEAF_CORE_AND_CORNER_MASK.md excludes every two-circle-corner C mask and supplies an exact positively stressed S/S core below Q. Blanket core exclusion is false; the entire remaining S/S family needs completion capacity at most three.
 - [x] GENERAL_FIXED_TIP_NORMAL_SELECTION.md removes free vertex normals from every distinct-fixed-application unique-circle-corner tip without a boundary-neighbor premise; the coincident radial-D exception and variable means are retained.
+- [x] UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md proves an orientation-uniform contact-triangle obstruction: a side-owned normal has nonnegative dot product with the other normal. Its radial-leaf consequence fixes the opposite support face without any circle or generic-normal premise.
+- [x] DISTINCT_S_LEAVES_PARALLEL_ARTICULATION_REDUCTION.md reduces **every remaining distinct S/S core** to an articulation with an aligned leaf and parallel cycle forces. The complete tilted and shared-AB cases are excluded, all means and four extras retained. The full wall is classified below; its universal completion capacity remains open.
+- [x] DISTINCT_S_LEAVES_WALL_CLASSIFICATION.md exhausts every wall frame and contact owner. The three central frames align, x=(sqrt(70)-8)/4 fixes the exact radius, and the **entire** articulation interval is x(1-2x)/(1-x)<=t<2x, with explicit force and actual-mean intervals. Every interval member is a positive physical core; capacity<=3 is the remaining exit.
+- [x] FOUR_CYCLE_PARALLEL_BYPASS_EXCLUSION.md excludes the **entire A/U-parallel opposite-load C4 chart**, including both S/D leaves, every tip frame and actual shared mean.
+- [x] FOUR_CYCLE_OBLIQUE_TIP_OWNER_EXCLUSION.md excludes the complete chart where both loaded tips are oblique to the transmitter and own point contacts with the bypass, for all physical one/two-corner masks.
+- [x] FOUR_CYCLE_UNIQUE_LOAD_NORMAL_SELECTION.md removes every free A-tip normal throughout the physical unique/unique mask while preserving all other variable means. Remaining A-owned, U-parallel-tip and two-corner-mask cases stay open.
 - [x] C7_HIGH_CENTER_CONTACT_TYPES.md classifies every high-center contact and proves every positively loaded two-owned body has center radius below23/16 and a right-angle force turn; the whole C7 capacity remains open.
 - [x] FOUR_CYCLE_ADJACENT_LOAD_EXCLUSION.md closes every adjacent-loaded-pair C4 leaf case by a full normal-channel/boundary-detour obstruction.
 - [x] BOUNDARY_TIP_FIXED_APPLICATION_SELECTION.md removes free vertex normals from every unique-circle-corner degree-two star with fixed applications and at least one boundary neighbor; shared means are explicitly retained elsewhere.
@@ -53,8 +59,8 @@ The identity m=1+sum(block_size-1)+bridges gives exactly four five-body cyclic c
 
 | Order | Whole gate | Exhaustive scope | Required exit |
 | --- | --- | --- | --- |
-| 1 | C1.3.b2 | Only distinct S/S remains, with one physical C corner and realizable positive cores below Q | Prove full S/S completion capacity<=3, then assemble all closed attachment/leaf branches |
-| 2 | C1.4.b1 | Opposite-load or three-load C4 plus leaf; diamond plus leaf at a hub or tip | Adjacent-load C4 and K4 excluded, all holes empty; prove the full remaining bounds |
+| 1 | C1.3.b2 | Entire distinct S/S family classified at one exact radius and full slider interval | Prove whole-domain completion capacity<=3, then assemble all attachment/leaf branches |
+| 2 | C1.4.b1 | Residual A/U-oblique opposite-load or three-load C4; both diamond orbits | Parallel-bypass and two-oblique-tip-owner charts also closed; cover remaining owners/masks and prove the full bounds |
 | 3 | C1.5.b0 | C5 with three/four loads; house with three mask orbits; fan with three/four loads | Finish each complete graph/load family with every actual contact and four extras |
 | 4 | C2.33.b0 | Two triangles sharing one articulation, four loaded tips and every zero-weight physical contact | Full joint capacity or core/radius theorem |
 | Parallel | G3.B.CAP | Every selected positive boundary C7 with actual side-axis owners, all owner transitions and two arbitrary extras | Free-normal branch CLOSED; prove full all-owned capacity at most one |

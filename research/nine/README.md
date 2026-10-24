@@ -35,6 +35,12 @@ The proof excludes the selected core itself. It therefore accounts for the five 
 - [x] [BOUNDARY_TIP_FIXED_APPLICATION_SELECTION.md](BOUNDARY_TIP_FIXED_APPLICATION_SELECTION.md) extends generic selection to a degree-two unique-circle-corner tip with only one boundary neighbor. Both actual applications must be fixed; variable shared-side means remain outside this lemma.
 - [x] [S_LEAF_CONNECTED_BOUNDARY_NEIGHBORS.md](S_LEAF_CONNECTED_BOUNDARY_NEIGHBORS.md) excludes a radial S leaf when every other load lies in a connected physical graph of boundary neighbors of its articulation. It closes the entire S-leaf diamond-hub branch with a physically boundary second hub, including zero weight there.
 - [x] [UNIT_BYPASS_NORMAL_CHANNEL.md](UNIT_BYPASS_NORMAL_CHANNEL.md) proves that any normal channel whose endpoints have a common unit-square neighbor has exactly one side-normal transmitter. The opposite-load C4 branch therefore has reserve exactly one, with all means retained. A full separating-axis argument also forces the bypass articulation and transmitter to lie side by side in the transmitter frame, including every tilted articulation.
+- [x] [UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md](UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md) proves an orientation-uniform contact-triangle obstruction: a side-owned normal has nonnegative dot product with the other normal. Its radial-leaf consequence fixes the opposite support face without any circle or generic-normal premise.
+- [x] [DISTINCT_S_LEAVES_PARALLEL_ARTICULATION_REDUCTION.md](DISTINCT_S_LEAVES_PARALLEL_ARTICULATION_REDUCTION.md) reduces **every remaining distinct S/S core** to an articulation with an aligned leaf and parallel cycle forces. The complete tilted and shared-AB cases are excluded, all means and four extras retained. The full wall is classified below; its universal completion capacity remains open.
+- [x] [DISTINCT_S_LEAVES_WALL_CLASSIFICATION.md](DISTINCT_S_LEAVES_WALL_CLASSIFICATION.md) exhausts every wall frame and contact owner. The three central frames align, x=(sqrt(70)-8)/4 fixes the exact radius, and the **entire** articulation interval is x(1-2x)/(1-x)<=t<2x, with explicit force and actual-mean intervals. Every interval member is a positive physical core; capacity<=3 is the remaining exit.
+- [x] [FOUR_CYCLE_PARALLEL_BYPASS_EXCLUSION.md](FOUR_CYCLE_PARALLEL_BYPASS_EXCLUSION.md) excludes the **entire A/U-parallel opposite-load C4 chart**, including both S/D leaves, every tip frame and actual shared mean.
+- [x] [FOUR_CYCLE_OBLIQUE_TIP_OWNER_EXCLUSION.md](FOUR_CYCLE_OBLIQUE_TIP_OWNER_EXCLUSION.md) excludes the complete chart where both loaded tips are oblique to the transmitter and own point contacts with the bypass, for all physical one/two-corner masks.
+- [x] [FOUR_CYCLE_UNIQUE_LOAD_NORMAL_SELECTION.md](FOUR_CYCLE_UNIQUE_LOAD_NORMAL_SELECTION.md) removes every free A-tip normal throughout the physical unique/unique mask while preserving all other variable means. Remaining A-owned, U-parallel-tip and two-corner-mask cases stay open.
 - [x] The **entire C7 free-normal branch is now excluded**. The completed block/profile selections and the two final vertex-edge exclusions leave actual side-axis owners on every edge. The remaining full C7 capacity problem retains all owner transitions and shared-side means.
 
 These are complete implications at their stated scope, with independent hand audits. They do not close another coarse cell: the count remains **three closed and 55 open**.
@@ -45,8 +51,8 @@ The complete gate tree, including continuous domains, contact owners, boundary c
 
 | Gate | Entire scope | Current state |
 | --- | --- | --- |
-| C1.3.b2 | Two S leaves at distinct articulations; C has one physical circle corner; positive cores exist | OPEN; full completion capacity<=3 required; all other attachment/leaf types CLOSED |
-| C1.4.b1 | C4 with opposite or three loaded block vertices; both diamond attachment orbits | OPEN; adjacent-load C4 and K4 excluded, all cycle holes empty |
+| C1.3.b2 | Entire S/S family classified: one exact radius and one complete central slider interval | OPEN; universal capacity<=3 remains; all other attachment/leaf types CLOSED |
+| C1.4.b1 | Residual oblique opposite-load or three-load C4; both diamond attachment orbits | OPEN; adjacent-load, parallel-bypass and two-oblique-tip-owner C4 charts closed; all holes empty |
 | C1.5.b0 | C5, house or four-path fan, with the complete necessary load cover and all physical contacts | OPEN; exhaustive graph/load reduction CLOSED |
 | C2.33.b0 | Two triangles sharing one articulation, with four loaded tips and all physical contacts retained | OPEN |
 | G3.B.CAP | Every positive boundary-only C7, with two arbitrary extra squares | OPEN; parallel whole branch |
