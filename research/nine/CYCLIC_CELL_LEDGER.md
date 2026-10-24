@@ -121,10 +121,14 @@ Each OPEN row quantifies over all block adjacencies, articulation arrangements, 
 
 ## Active first open cell: C1.3.b1
 
-The S branch and full core/routing reduction are now closed; only D remains. The full execution contract is **G3.M4** in [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md): assemble the triangle-plus-leaf load/pose/routing reduction, prove the entire D-leaf branch and the entire S-leaf branch, then assemble their common parent. S includes the full aligned shared-side slider interval and both tilted-vertex branches. The required bound is jointly at most four extras in the two remaining articulation/leaf regions. The inner triangular hole and touching-boundary-pair pocket are already empty, but this does not close the parent cell.
+The S branch and full core/routing reduction are now closed; only D remains. Its complete localization and generic certificate selection reduce it to the two entire branches D.PARALLEL and D.OBLIQUE. The full execution contract is **G3.M4** in [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md): assemble the triangle-plus-leaf load/pose/routing reduction, prove the entire D-leaf branch and the entire S-leaf branch, then assemble their common parent. S includes the full aligned shared-side slider interval and both tilted-vertex branches. The required bound is jointly at most four extras in the two remaining articulation/leaf regions. The inner triangular hole and touching-boundary-pair pocket are already empty, but this does not close the parent cell.
 
 - [x] **C1.3.b1.REDUCE** Complete core and completion-region cover, including a common three-body junction; TRIANGLE_LEAF_CORE_REDUCTION.md.
-- [ ] **C1.3.b1.D** Full D-leaf capacity or radius-window exclusion.
+- [x] **C1.3.b1.D.LOC** All articulation reactions point left; complete parallel/opposite-corner alternatives.
+- [x] **C1.3.b1.D.SELECT** Pre-stress generic normal selection removes vertex/vertex articulation edges with all certificate properties retained.
+- [ ] **C1.3.b1.D.PARALLEL** Entire horizontal-reaction branch, including variable shared-side means and arbitrary neighbor frames.
+- [ ] **C1.3.b1.D.OBLIQUE** Entire opposite-corner branch with both articulation contacts owned by loaded-neighbor sides; all B0/C0 contacts and circle masks.
+- [ ] **C1.3.b1.D** Assemble both complete D branches into a full capacity or radius-window exclusion.
 - [x] **C1.3.b1.S0** Full aligned S-leaf slider branch excluded; S_LEAF_TRIANGLE_EXCLUSION.md.
 - [x] **C1.3.b1.S+ / S-** Both complete tilted-vertex S branches and all endpoints excluded by the same theorem.
 - [ ] **C1.3.b1.ALL** All branches, all actual contacts and all five extra squares; only then tick the row above.
@@ -205,3 +209,12 @@ Finite examples do not prove the reciprocal geometry universally or replace an i
 - [ ] Unrestricted G4/G5, full audit and standard-kernel Lean/integration; an independent coarse lower bound if standalone table-freedom is required.
 
 Counts are not completion percentages. The remaining cells retain unequal, continuous geometric complexity.
+
+
+## C7 center-cover route: completed conditional capacity, exact remaining blocker
+
+- [x] **CY.C7.COVER.IMPLIES** CENTER_COVER_PIERCING.md proves that an open radius3/2 disk containing all ring centers forces every enclosed unit square to contain its center in its strict interior; capacity<=1.
+- [x] **CY.C7.COVER.SUPPORT** A failure of that cover requires an acute supporting triple of a minimum enclosing center disk; two-point supports are excluded by center diameter<3.
+- [x] **CY.C7.COVER.115** Supporting-triple graph-gap pattern(1,1,5) is excluded by the two adjacent-side bounds and acuteness.
+- [ ] **CY.C7.COVER.REMAINING** Exclude the entire patterns(1,2,4), (1,3,3), (2,2,3), with arbitrary radii and frames.
+- [ ] **CY.C7.COVER.ALL** Complete the cover and then apply the conditional capacity; general C7 is still open.

@@ -1,6 +1,6 @@
 # n=9 — ordered roadmap to the unrestricted hand proof
 
-**PR:** #11, draft. **Reconciled head:** `f353540845b94fcc7e41e29f8eccf4fffd951af3`.  
+**PR:** #11, draft. **Reconciled source:** `697af9be7d3bd969e5a8bab70fedbf89253a7aa9`.  
 **Updated:** October 23, 2026, America/Chicago.
 
 **The unrestricted lower bound R^2>=1105/256 and complete equality classification remain OPEN.** The construction attains the claimed radius. The detailed proof tree, exact subgates and boundary cases are in [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md).
@@ -16,6 +16,10 @@
 - [x] Boundary-only positive components are exactly C7; every extra lies inside the convex force-concurrence polygon.
 - [x] Simple positive cycles have at most8 bodies.
 - [x] Contact-ring interior capacities for k=3,4,5,6 are0,1,1,2; exterior pockets of touching boundary pairs are empty.
+- [x] Entire S-leaf triangle-plus-leaf branch excluded; the D articulation has a complete two-pattern contact reduction.
+- [x] Pre-stress generic physical-normal selection removes D vertex/vertex articulation contacts and retains all certificate properties.
+- [x] Every physical boundary C7 has center diameter<3.
+- [x] An open radius3/2 cover of ring centers implies one strict piercing point and completion capacity<=1.
 - [x] Explicit n=8 import supplies79/40<=R; its current arithmetic-table dependencies are declared.
 
 These are hand implications. The full prerequisite-chain audit and Lean verification are separate open work.
@@ -25,7 +29,8 @@ These are hand implications. The full prerequisite-chain audit and Lean verifica
 | Step | Gate | Complete scope | Exit condition |
 | --- | --- | --- | --- |
 | 1 | G3.M4.0 [x] | Every triangle-plus-leaf core, all load states, full S/D articulation cover and whole-square routing | CLOSED: TRIANGLE_LEAF_CORE_REDUCTION.md |
-| 2 | G3.M4.D | Radial D leaf; all articulation heights -1/2<t<1/2 and all balanced B/C poses | Joint capacity<=4 in the two surviving regions, or whole-core exclusion |
+| 2a | G3.M4.D.PARALLEL | Both articulation reactions horizontal; every actual contact mean and circle mask | Exclude the whole selected core, or prove joint capacity<=4 |
+| 2b | G3.M4.D.OBLIQUE | Opposite articulation corners in relative interiors of loaded-neighbor sides | Cover both owners of the B/C contact and prove whole-branch exclusion or capacity |
 | 3 | G3.M4.S [x] | Aligned shared-side slider plus both tilted-vertex branches, with all endpoints | CLOSED: entire S core impossible |
 | 4 | G3.M4.ALL | Assemble D and the completed S branch | D remains; only then close C1.3.b1 |
 | Parallel | G3.B.CAP | Every positive boundary-only C7, arbitrary two extra squares | Prove capacity<=1 inside its actual free domain |
@@ -36,13 +41,15 @@ These are hand implications. The full prerequisite-chain audit and Lean verifica
 
 The first cell has four positive bodies and requires five extras. Its full core/routing reduction and its entire S-leaf branch are now closed; only D remains. Its inner triangle hole and the touching-boundary-pair exterior pocket are empty. The exact unresolved capacity is **at most four extras jointly in the two remaining articulation/leaf regions**. A separate bound of two per region is not assumed.
 
-For the S branch, the aligned articulation has an entire shared-side slider interval. The zero-tilt limits of the two tilted formulas cover only its endpoints. For the D branch, the strict selected normal excludes the point-only vertex/vertex bridge endpoints; that exclusion must be explicit in the cover.
+The complete S proof retains its entire aligned slider interval and both tilted formulas. For D, the bridge point lies strictly inside the articulation side. D_LEAF_ARTICULATION_CONTACT_LOCALIZATION.md proves the two remaining reactions point left; D_LEAF_GENERIC_CONTACT_SELECTION.md removes vertex/vertex articulation edges before the stress is chosen. This leaves the two full D branches in the table. The generic selection includes variable shared-side means and matched four-junction normals; it does not assume a special post-stress normal or fixed corner-weight split.
 
 ## Finite case coverage and controls
 
 [CYCLIC_CELL_LEDGER.md](CYCLIC_CELL_LEDGER.md) lists all 58 coarse block/bridge cells. Two are closed and56 remain open. The deep roadmap refines each open cell by positive versus physical contact graphs, embeddings, boundary/load masks, actual contact features, junction identifications and completion regions. All continuous poses remain universally quantified. These data types are a finite-cover contract, not a claim that their geometry has been solved.
 
 The C7 capacity routes are alternatives. Common **strict** origin piercing would suffice; closed origin containment alone would not. The proposed diameter route requires both a lower bound>=3 from two enclosed units and an upper bound<3 for the boundary centers; the upper bound<3 is now proved in BOUNDARY_SEVEN_CYCLE_CENTER_DIAMETER.md, while the enclosing-two lower bound remains open. A regularity route must cover two-owner/zero-owner transitions and nonconstant stationary solutions. No such assumption is imported.
+
+A further C7 route now has a completed implication: CENTER_COVER_PIERCING.md proves capacity<=1 from an open radius3/2 disk containing all ring centers. The remaining cover theorem reduces to an acute supporting triple of the minimum enclosing center disk. Gap pattern(1,1,5) is excluded; patterns(1,2,4), (1,3,3), (2,2,3) remain. The center of the desired disk may be translated; it need not be the original circle center.
 
 The S-leaf exclusion uses a closed 90-degree circle arc inaccessible to any neighbor of the articulation. The two touching triangle bodies have pairwise acute positive circle corners, whose sum must balance the leaf; this is impossible across the forbidden arc. The argument covers all aligned heights and tilted frames at once.
 

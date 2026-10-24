@@ -2,7 +2,7 @@
 
 **Date:** 2026-10-23 UTC. **Read base:** `a89802cd834aef3a96d9622bd4829a2c49df17fd` on PR #11. This continues QUADRANT_BLOCK_PROGRESS.md, ORIGIN_POCKET_PROGRESS.md and PROGRESS_LEDGER.md without rewriting their historical claims.
 
-**Current global status, 2026-10-24:** P.ALL, Y.ALL, TREE.ALL and TL.COMPLETE are CLOSED hand. The selected physical certificate now has one planar positive body component, with all other bodies zero-stress. The unrestricted lower bound and complete equality necessity remain OPEN: general C7 completion and mixed cyclic completion are unresolved. Two coarse cyclic cells are closed and 56 remain open. The dated entries below preserve their original checkpoint claims; later entries supersede their earlier open/closed statuses. Full-chain audit and Lean integration remain unfinished; no Lean compilation or CI was run.
+**Current global status, October 23, 2026, America/Chicago:** P.ALL, Y.ALL, TREE.ALL and TL.COMPLETE are CLOSED hand. The selected physical certificate now has one planar positive body component, with all other bodies zero-stress. The unrestricted lower bound and complete equality necessity remain OPEN: general C7 completion and mixed cyclic completion are unresolved. Two coarse cyclic cells are closed and 56 remain open. The dated entries below preserve their original checkpoint claims; later entries supersede their earlier open/closed statuses. Full-chain audit and Lean integration remain unfinished; no Lean compilation or CI was run.
 
 ## 1. Completed work and source provenance
 
@@ -295,3 +295,14 @@ BOUNDARY_SEVEN_CYCLE_CENTER_DIAMETER.md closes G3.B.R.DIAM.2 for all physical bo
 - [ ] G3.B.CAP, remaining mixed cells, T9 and full equality remain open.
 
 The six files in roadmap commit d1be168 were read back from GitHub and matched exactly. No Lean compilation or CI was run. The coarse inventory still has two whole cells closed and 56 open.
+
+
+## October 23, 2026, 21:00 CDT / October 24, 02:00 UTC — complete D contact reduction and strict center-cover piercing
+
+D_LEAF_ARTICULATION_CONTACT_LOCALIZATION.md proves the full leftward-reaction theorem for every D-leaf triangle-plus-leaf core. Its support-span lemma includes arbitrary shared-side application means. Exact circle-corner acuteness excludes rightward reactions, and contact spans exclude vertical reactions. The remaining alternatives are parallel leftward reactions or opposite left-corner reactions with the exact height/slope relation. Root and another independent hand audit passed.
+
+D_LEAF_GENERIC_CONTACT_SELECTION.md resolves the variable-application issue before choosing generic normals. An unloaded articulation determinant is a nonzero linear condition in any free strict vertex/vertex articulation normal. Finite avoidance is done before the physical stress argument and retains the matched four-junction normal pairs, uncrossing, conic thinning and unique planar component. Root independent audit passed. An exact positive physical D core at79/40<R<2 is retained as a control: the claim concerns a selected necessary certificate, not every possible stress. The entire D.PARALLEL and D.OBLIQUE branches remain open and now have detailed universal exit gates.
+
+CENTER_COVER_PIERCING.md proves the full all-orientation radial-tail inequality and its strict common-point consequence: if the boundary-square centers fit in an open radius3/2 disk, the bounded complementary region has unit-square capacity at most1. Root independent audit passed for this theorem. The elementary minimum-enclosing-disk reduction further identifies the only possible C7 obstruction as an acute supporting triple with circumradius>=3/2. Pattern(1,1,5) is excluded; the other three positive graph-gap partitions remain open in this commit.
+
+All nine files in commit697af9b were read back from GitHub and matched the submitted contents. No Lean compilation or CI was run. No whole coarse cell closes in this update: two remain closed and56 open; T9 and unrestricted equality remain open.
