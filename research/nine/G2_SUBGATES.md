@@ -14,6 +14,7 @@ The complete fine-grained contracts are in [DEEP_GATED_ROADMAP.md](DEEP_GATED_RO
 - [x] **CY.UNIQUE:** boundary-port order and force balance give exactly one positive component; UNIQUE_POSITIVE_COMPONENT.md.
 - [x] **CY.ZERO:** every remaining physical body has zero stress and stays as a completion obstacle.
 - [x] **CY.K4:** NO_POSITIVE_K4_SUBGRAPH.md excludes every K4 subgraph in the selected graph. A sufficiently small physical embedding has no triangle enclosing another body center. Both independent hand audits passed.
+- [x] **CY.K23.BOUNDARY:** NO_THREE_BOUNDARY_COMMON_NEIGHBORS.md excludes three common positive circle-touching neighbors of any pair, by the exterior-face obstruction in a K2,3 subgraph.
 - [ ] **CY.SHARP:** derive the missing universal radius/completion theorem on all remaining mixed and boundary-only cases.
 
 These are statements about a selectable necessary certificate. The full physical touching graph can have additional zero-stress contacts and can contain K4 at a four-square junction.
@@ -57,12 +58,15 @@ Every row retains four extra physical squares. Full nested contracts are G3.M5 i
 
 | Gate | Exact finite graph/layout cover | Status |
 | --- | --- | --- |
-| M5.T2 / C1.3.b2 | Triangle with a length-two arm; two leaves at one articulation; leaves at two distinct articulations | OPEN, all three layouts retained |
-| M5.B4L / C1.4.b1 | C4 plus leaf; diamond hub attachment; diamond tip attachment; K4 plus leaf | OPEN; K4 branch CLOSED uniformly |
-| M5.B5 / C1.5.b0 | All five-body biconnected simple graphs, with actual planar embeddings and contact features | OPEN |
+| M5.T2 / C1.3.b2 | Length-two arm; two leaves at one articulation; leaves at two distinct articulations | Entire arm CLOSED; both two-leaf layouts OPEN |
+| M5.B4L / C1.4.b1 | C4 plus leaf; diamond hub attachment; diamond tip attachment; K4 plus leaf | K4 CLOSED; all cycle holes empty; exterior bound OPEN |
+| M5.B5 / C1.5.b0 | Exactly C5, house and four-path fan after the exhaustive ten-type graph/load reduction | Graph/load reduction CLOSED; full geometry/completion OPEN |
 | M5.TT / C2.33.b0 | Two triangles at one shared articulation, all additional zero-weight physical contacts retained | OPEN |
 
 - [x] **M5.CATALOG:** the formula m=1+sum(block_size-1)+bridges yields exactly these four coarse cells at m=5.
+- [x] **M5.T2.CHAIN:** TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md excludes the entire chain layout. A one-boundary-neighbor concurrence lemma and three-port order force positive articulation concurrence; exact center caps and an all-mask circle-coordinate inequality finish every pose. Root and separate audits passed.
+- [x] **M5.B4L.C4.HOLE:** FOUR_CYCLE_LEAF_HOLE_EMPTY.md proves capacity zero for the full inner hole, including coincident contacts and every load allocation. The equality cross is excluded by strict selected normals or R^2=5/2. All four extras are exterior.
+- [x] **M5.B5.GRAPH/LOAD_COVER:** FIVE_BODY_BICONNECTED_REDUCTION.md gives all ten types, excludes seven and lists all remaining necessary positive-load masks. Zero-weight physical circle contacts and all four extras remain.
 - [ ] **M5.ALL:** finish every whole cell, with all boundary cases and any equality survivors.
 - [ ] **M6–M9:** finish all larger mixed cells in increasing component size.
 - [ ] **MIXED.ALL:** assemble the complete mixed-branch sharp bound.
@@ -77,6 +81,11 @@ Every row retains four extra physical squares. Full nested contracts are G3.M5 i
 - [x] **C7.PIERCE.IF:** CENTER_COVER_PIERCING.md gives a common strict interior point and capacity one if the centers fit in an open radius-3/2 disk.
 - [x] **C7.COVER.115/124:** BOUNDARY_TWO_CONTACT_SPAN.md and the elementary support-triangle argument exclude these two entire gap types.
 - [x] **C7.COVER.CONTROL:** C7_CENTER_COVER_GEOMETRIC_OBSTRUCTION.md disproves the unstressed covering theorem at Q and below Q, while proving the exact control has no positive C7 stress.
+- [x] **C7.NORMAL.FIXED:** C7_FIXED_APPLICATION_GENERIC_SELECTION.md handles every fixed-application star with one physical circle corner, before KKT and with compatible uncrossing/thinning.
+- [x] **C7.NORMAL.RADIAL:** C7_TWO_CIRCLE_CORNER_BLOCKS.md gives the exact vertex-shell contact classification, selected radial runs of length at most two, at most four radial bodies, and the geometric exclusion of parallel radial pairs.
+- [x] **C7.NORMAL.BLOCK:** C7_SHARED_SIDE_BLOCK_GENERIC_SELECTION.md handles whole shared-side blocks, every variable application mean and all one-active-corner masks. Every surviving free vertex edge is incident to blocks with exactly one physical radial body, at an endpoint/singleton, and both its corner weights positive.
+- [ ] **C7.OWNED:** finish the all-axis-owned contact domain with every two-owner/zero-owner transition and load mask.
+- [ ] **C7.PINNED:** finish the free-vertex domain with the proved unique doubly loaded radial endpoints; do not assume its entire geometry has been classified.
 - [ ] **C7.COVER.133/223:** use positive stress to settle these two complete supporting-triple types, or replace the cover route by a full direct capacity proof.
 - [ ] **C7.COMPLETE:** exclude every two-square completion in the actual free domain, with all frames and circle-load masks.
 

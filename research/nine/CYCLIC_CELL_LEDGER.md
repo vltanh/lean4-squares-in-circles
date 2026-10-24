@@ -10,6 +10,7 @@ The closed cells are **C1.3.b0**, **C1.4.b0** and **C1.3.b1**. Thus **55 coarse 
 - [x] At most seven physical circle contacts; every boundary contact joins angular neighbors; no three boundary bodies share a point.
 - [x] All-boundary positive components are exactly C7; simple positive cycles have at most eight bodies.
 - [x] NO_POSITIVE_K4_SUBGRAPH.md excludes every K4 subgraph of the selected positive graph. This includes the K4 branch of C1.4.b1 and K4-containing larger blocks.
+- [x] NO_THREE_BOUNDARY_COMMON_NEIGHBORS.md excludes three common positive circle-touching neighbors of any pair of body vertices.
 - [x] Contact-ring interior capacities for k=3,4,5,6 are 0,1,1,2; exterior pockets of touching boundary pairs are empty.
 - [x] TRIANGLE_LEAF_CELL_CLOSED.md excludes every selected four-body triangle-plus-leaf, through the full S and two exhaustive D branches.
 - [ ] General C7 capacity and every remaining mixed-cell sharp completion theorem are still required.
@@ -100,9 +101,9 @@ The exact identity m=1+sum(block_size-1)+bridges yields these four cells, each w
 
 | Cell | Exhaustive graph/layout cover | Current internal closure |
 | --- | --- | --- |
-| C1.3.b2 | Triangle plus a length-two arm; two leaves at one articulation; leaves at two distinct articulations | All three complete layouts OPEN |
-| C1.4.b1 | C4 with leaf; diamond with leaf at a hub or tip; K4 with leaf | K4 branch CLOSED; C4 and both diamond branches OPEN |
-| C1.5.b0 | Every five-body biconnected selected graph, not just C5 | K4-containing graphs excluded; whole cell OPEN |
+| C1.3.b2 | Triangle plus a length-two arm; two leaves at one articulation; leaves at two distinct articulations | Entire arm CLOSED; both two-leaf layouts OPEN |
+| C1.4.b1 | C4 with leaf; diamond with leaf at a hub or tip; K4 with leaf | K4 CLOSED; C4 inner hole and both triangle holes empty; exterior completion OPEN |
+| C1.5.b0 | Exhaustive ten-type classification reduces to C5, house and four-path fan, with necessary load masks | Graph/load cover CLOSED; full geometry and whole cell OPEN |
 | C2.33.b0 | Two triangles sharing an articulation; all extra physical contacts retained | Four tips loaded, articulation clear; whole completion OPEN |
 
 The detailed domain/equilibrium/routing/boundary/audit gates are G3.M5 in the deep roadmap. Only complete parent implications change the coarse count.
@@ -114,6 +115,9 @@ The detailed domain/equilibrium/routing/boundary/audit gates are G3.M5 in the de
 - [x] **CY.C7.COVER.IF:** an open radius-3/2 center cover gives strict common piercing and capacity one.
 - [x] **CY.C7.COVER.115/124:** these entire minimum-disk supporting-triple gap patterns are excluded by the adjacent/two-contact distance bounds.
 - [x] **CY.C7.COVER.CONTROL:** a physical (2,2,3) ring at Q and below Q disproves the unstressed cover theorem; it has no positive C7 stress.
+- [x] **CY.C7.NORMAL:** simultaneous fixed-point and shared-side-block generic selections preserve every actual application mean and corner-weight mask.
+- [x] **CY.C7.RADIAL:** at most four radial bodies, no selected radial run longer than two, and no parallel radial pair. Each free-vertex-incident block has a unique radial endpoint/singleton with two positive corner weights.
+- [ ] **CY.C7.CONTACT_DOMAINS:** finish both the all-axis-owned domain with all ownership transitions and the free-vertex domain with constrained radial-endpoint blocks.
 - [ ] **CY.C7.COVER.133/223:** the positive-stress cover problem for these two entire patterns remains open.
 - [ ] **CY.C7.COMPLETE:** prove at most one arbitrary extra square in the actual free domain, by a complete cover or another valid capacity argument.
 
@@ -121,6 +125,6 @@ No regularity, single-owner convention, global common frame, or strict origin pi
 
 ## Verification and source history
 
-The new S/D local proofs, whole-cell assembly, no-K4 obstruction, C7 span and exact geometric counterexample have independent hand audits. Full earlier prerequisite-chain audit and standard-kernel verification remain separate gates. No Lean compilation or CI was run. Every new commit uses `[skip ci]`; PR #11 remains draft.
+The new S/D local proofs, whole-cell assembly, graph obstructions, five-body graph/load cover, full chain exclusion, C4 inner-hole theorem, and C7 normal reductions have independent hand audits. Full earlier prerequisite-chain audit and standard-kernel verification remain separate gates. No Lean compilation or CI was run. Every new commit uses `[skip ci]`; PR #11 remains draft.
 
 TWO_LOAD_PROGRESS.md preserves chronological statuses and pinned exact-regression provenance. Earlier counts there are historical. The live count in this ledger is **three closed and 55 open**.

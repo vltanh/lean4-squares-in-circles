@@ -21,15 +21,24 @@
 
 The proof excludes the selected core itself. It therefore accounts for the five extra squares without needing a separate bound in each completion region. The exact positive D core with older normal choices remains a control: the theorem concerns the necessary selected certificate of a minimizing packing.
 
+## Latest completed five-body and C7 reductions
+
+- [x] [TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md](TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md) excludes the **entire length-two arm layout** of C1.3.b2. It retains both leaf types, both transmitter widths, all articulation orientations, circle masks and contact owners. The two layouts with separate leaves remain open.
+- [x] [FOUR_CYCLE_LEAF_HOLE_EMPTY.md](FOUR_CYCLE_LEAF_HOLE_EMPTY.md) proves that **every C4-plus-leaf inner hole has capacity zero**. Equality in the general hole-area bound forces an aligned cross, which cannot carry the required selected stress in the radius window. All four extras must be exterior; their joint capacity remains open.
+- [x] [NO_THREE_BOUNDARY_COMMON_NEIGHBORS.md](NO_THREE_BOUNDARY_COMMON_NEIGHBORS.md) gives a uniform exterior-face obstruction. [FIVE_BODY_BICONNECTED_REDUCTION.md](FIVE_BODY_BICONNECTED_REDUCTION.md) then supplies the full ten-type classification and excludes seven types: **only C5, the house and the four-path fan remain**, with explicit necessary load masks.
+- [x] The C7 manuscripts below make simultaneous pre-stress normal choices, including whole shared-side blocks and every application mean. A surviving free vertex/vertex edge must meet blocks with a unique radial endpoint body carrying two positive circle-corner weights.
+
+These are complete implications at their stated scope, with independent hand audits. They do not close another coarse cell: the count remains **three closed and 55 open**.
+
 ## Continue in this order
 
 The complete gate tree, including continuous domains, contact owners, boundary cases and parent exit conditions, is [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md). The next mixed frontier has exactly four five-body cells, each retaining four arbitrary completion squares.
 
 | Gate | Entire scope | Current state |
 | --- | --- | --- |
-| C1.3.b2 | One triangle plus two bridges: a length-two arm, two leaves at one articulation, or leaves at two articulations | OPEN; active |
-| C1.4.b1 | C4, diamond or K4 block with one leaf; both diamond attachment orbits | OPEN; active; K4 branch excluded |
-| C1.5.b0 | Every five-body biconnected selected graph, with its full physical contact and load data | OPEN |
+| C1.3.b2 | Two leaves at one triangle articulation, or leaves at two articulations | OPEN; the entire length-two arm is CLOSED |
+| C1.4.b1 | C4 or diamond block with one leaf; both diamond attachment orbits | OPEN; K4 excluded and all cycle holes empty; exterior completion remains |
+| C1.5.b0 | C5, house or four-path fan, with the complete necessary load cover and all physical contacts | OPEN; exhaustive graph/load reduction CLOSED |
 | C2.33.b0 | Two triangles sharing one articulation, with four loaded tips and all physical contacts retained | OPEN |
 | G3.B.CAP | Every positive boundary-only C7, with two arbitrary extra squares | OPEN; parallel whole branch |
 | G3.M6–M9 | All remaining mixed cells in increasing component size | OPEN |
@@ -45,6 +54,10 @@ The boundary-only positive component must be one seven-cycle. Its actual force-c
 - [x] [CENTER_COVER_PIERCING.md](CENTER_COVER_PIERCING.md): if all enclosing-ring centers fit in an open disk of radius 3/2, every enclosed unit square contains that disk's center in its strict interior; capacity is at most one.
 - [x] [BOUNDARY_TWO_CONTACT_SPAN.md](BOUNDARY_TWO_CONTACT_SPAN.md): two consecutive contacts span less than 3sqrt(3)/2 in the remaining high-radius range. Minimum-center-disk supporting triples with gaps (1,1,5) or (1,2,4) are excluded.
 - [x] [C7_CENTER_COVER_GEOMETRIC_OBSTRUCTION.md](C7_CENTER_COVER_GEOMETRIC_OBSTRUCTION.md): the stronger **unstressed** center-cover claim is false, including at radii strictly below sqrt(Q). An exact one-parameter physical ring has a (2,2,3) supporting triple with covering radius greater than 3/2. The same manuscript proves that this ring has no positive C7 stress.
+- [x] [C7_FIXED_APPLICATION_GENERIC_SELECTION.md](C7_FIXED_APPLICATION_GENERIC_SELECTION.md): simultaneous finite avoidance removes every free vertex-normal star with one physical circle corner and two fixed application points.
+- [x] [C7_TWO_CIRCLE_CORNER_BLOCKS.md](C7_TWO_CIRCLE_CORNER_BLOCKS.md): vertex shells classify radial contacts; selected radial runs have length at most two, so at most four bodies are radial; no two radial bodies are parallel in a physical C7.
+- [x] [C7_SHARED_SIDE_BLOCK_GENERIC_SELECTION.md](C7_SHARED_SIDE_BLOCK_GENERIC_SELECTION.md): a collective virtual-work identity handles all variable shared-side means and all circle-weight masks. Every block incident to a surviving free vertex edge has exactly one physical radial body, at an endpoint or as a singleton, with both corner weights positive.
+- [ ] Finish both remaining contact domains: every edge has a side-axis owner, retaining two-owner/zero-owner transitions; or at least one free vertex edge survives between the constrained radial-endpoint blocks.
 - [ ] The covering route must therefore use positive stress to handle the remaining patterns (1,3,3) and (2,2,3), or be replaced by a complete direct capacity argument.
 
 The piercing criterion is sufficient for capacity one; the counterexample does not claim a two-square completion. For R<sqrt(17)/2, the origin already gives the required strict center cover. The unresolved C7 work is in the higher radius range and retains all physical frames, contact types and zero-load ring vertices.
