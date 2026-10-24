@@ -202,8 +202,45 @@ making its endpoint/bypass contacts singleton and excluding two
 bypass-owned endpoint normals.
 HOUSE_MIDDLE_TRIPLE_UNIQUE_FREE_HUB_SELECTION.md removes free AD only
 in the full all-physical-unique mask, without fixing any shared mean.
-Every radial and one-owner middle-triple alternative remains explicit.
+The subsequent all-mask free-hub theorem removes the radial free
+alternatives as well; singleton one-owner contacts remain explicit.
 Root and separate full audits passed all eight source implications.
+
+### 4.6. Complete current house domains after the fan closure
+
+HOUSE_END_TRIPLE_UNIQUE_TILTED_TIP_EXCLUSION.md excludes every
+nonparallel physical-unique lower tip in the end-triple house. Its
+fixed singleton free contact is removed by the compatible selection;
+the B-owned branch contradicts the true endpoint torque and the
+H-owned branch contradicts an exact incident-support distance<=1.
+The whole remaining cover is B parallel U with either physical mask,
+or B nonparallel with two physical circle corners. All N/T masks and
+every actual U/roof mean remain.
+
+HOUSE_MIDDLE_TRIPLE_FREE_HUB_SELECTION.md removes every free AD
+middle-triple contact, for all physical circle masks. Complete
+shared-roof and two-external-shared exclusions leave an unloaded hub
+with fixed applications and a nonzero roof moment. Its full local
+wrench determinant can be avoided in the simultaneous finite
+pre-multiplier selection, with no circle-weight ratio premise.
+Together with the shared-hub theorem, only singleton AD owned by
+exactly one hub remains.
+
+HOUSE_FOUR_LOAD_ENDPOINT_OWNER_REDUCTION.md transfers the complete
+endpoint arguments with only the house's three actual hub forces.
+Its exhaustive residual is a three-collinear-normal wall or a
+physical-unique free endpoint2 with a shared2--4 side. The whole wall
+is now excluded by HOUSE_FOUR_LOAD_COLLINEAR_WALL_EXCLUSION.md.
+BOUNDARY_UNIT_SUPPORT_HEIGHT.md supplies a uniform full-frame near
+support bound whose two coupled-angle heights sum to>2241/2225,
+contradicting the hub's actual unit separation. Only the specified
+free lower endpoint/shared side remains in the four-load orbit;
+the opposite endpoint's full owner and mask remain arbitrary.
+
+Root and separate independent full audits passed all five sources.
+These are complete branch exclusions and residual-domain covers;
+none of the three house load orbits is yet fully closed. The coarse
+inventory remains six closed and52 open.
 
 ## 5. Exact remaining whole-cell work
 

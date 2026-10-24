@@ -6,6 +6,22 @@
 
 **The unrestricted lower bound and complete equality classification remain OPEN.** The construction attains Q. The entire four-body triangle-plus-leaf cell is now closed, so the selected unique positive cyclic component has **5–9 bodies** and **3–7 noncollinear circle-loaded resultants**. Every other physical square remains in the completion problem. The coarse inventory has **six whole cells closed and 52 open**.
 
+## Exact remaining house domains; the full collinear wall is closed
+
+The three house load orbits now have the following exhaustive remaining domains. Every entry retains all four completion squares and all actual force application means.
+
+| House load orbit | Whole remaining domain | Completed reduction |
+| --- | --- | --- |
+| End triple, loads1,2,3 up to reflection | Lower loaded body2 is parallel to its clear transmitter4, with either physical circle mask; or it is nonparallel with two physical circle corners. The other loaded bodies retain every mask. | [HOUSE_END_TRIPLE_UNIQUE_TILTED_TIP_EXCLUSION.md](HOUSE_END_TRIPLE_UNIQUE_TILTED_TIP_EXCLUSION.md) excludes every nonparallel physical-unique lower tip, for every bypass owner and all roof means. |
+| Middle triple, loads2,3,4 | The two clear hubs1,5 have a singleton contact whose normal is owned by exactly one hub, with every loaded physical mask and actual exterior mean. | [HOUSE_MIDDLE_TRIPLE_FREE_HUB_SELECTION.md](HOUSE_MIDDLE_TRIPLE_FREE_HUB_SELECTION.md) excludes all free hub contacts, including every two-corner mask; the both-owned/shared family was already excluded. |
+| Four loads,1,2,3,4 up to reflection | Endpoint2 is physically unique and genuinely free at hub5, and its contact with boundary body4 is a positive-length shared side. The roof endpoint3 remains arbitrary. | [HOUSE_FOUR_LOAD_ENDPOINT_OWNER_REDUCTION.md](HOUSE_FOUR_LOAD_ENDPOINT_OWNER_REDUCTION.md) exhausts every endpoint feature; [HOUSE_FOUR_LOAD_COLLINEAR_WALL_EXCLUSION.md](HOUSE_FOUR_LOAD_COLLINEAR_WALL_EXCLUSION.md) closes its last both-hub-owned wall alternative. |
+
+[BOUNDARY_UNIT_SUPPORT_HEIGHT.md](BOUNDARY_UNIT_SUPPORT_HEIGHT.md) supplies the new uniform geometric inequality. For any circle-touching unit with center angle delta<=pi/4 from a chosen direction, its near support height is at least `(R-sqrt(2))*cos(delta) - (9/40)*sin(delta)^2/cos(delta)`. The proof covers both possible vertical diagonals and the entire frame interval. The actual three-link house path couples the two endpoint angles; strict concavity makes their required support heights sum to more than2241/2225, while the hub provides exactly1.
+
+The middle-triple selection first excludes every shared roof side, a coincident roof junction and simultaneous shared exterior sides by physical support geometry. One unloaded hub then has fixed singleton applications with a nonzero roof moment. Its true force/torque determinant excludes a free hub normal by the same finite choice before multipliers, without any circle-weight ratio assumption.
+
+Root and separate independent full hand audits passed all five new sources. **All three house orbits remain open in exactly the domains listed above.** The whole fan is closed; C1.5.b0 and the unrestricted theorem remain open. The authoritative count stays six closed and52 open; original equality and the full prerequisite-chain audit remain separate obligations.
+
 ## Entire five-body fan closed; only the house remains at five bodies
 
 [FOUR_LOAD_FAN_EXCLUSION.md](FOUR_LOAD_FAN_EXCLUSION.md) now excludes the entire positive fan graph, for every positive-load mask, endpoint owner, physical circle-corner mask and actual shared-side mean. The proof retains the two inner bodies' degree-three equations and all four arbitrary completion squares. It needs no secondary minimizer.
@@ -30,7 +46,7 @@ Exactly one endpoint is therefore H-owned. Its opposite endpoint has precisely t
 
 [THREE_BOUNDARY_PATH_RESULTANT_CONE.md](THREE_BOUNDARY_PATH_RESULTANT_CONE.md) proves that the middle resultant of every actual three-boundary path is a strictly positive combination of its endpoint resultants, without a degree-two premise. It excludes the four-load house mask with all three hub neighbors radial, and a fan with its sole unique-corner body internal. It also supplies the geometric reweighting needed by [the four-load house tip-owned endpoint theorem](HOUSE_FOUR_LOAD_TIP_OWNED_ENDPOINT_EXCLUSION.md); that transfer keeps its three genuine hub forces and every original body equation.
 
-The [tilted end-triple house domain](HOUSE_END_TRIPLE_TILTED_BYPASS_DOMAIN.md) now has two singleton bypass/endpoint contacts, weakly outward endpoint reactions with all zero-sign transitions classified, and a strictly outward roof reaction; the two endpoint contacts cannot both be bypass-owned. The [middle-triple all-unique selection](HOUSE_MIDDLE_TRIPLE_UNIQUE_FREE_HUB_SELECTION.md) removes a free hub normal using fixed positive circle-load ratios and translation balance, without fixing any shared mean. Its radial masks and one-owner hub contacts remain.
+The [tilted end-triple house domain](HOUSE_END_TRIPLE_TILTED_BYPASS_DOMAIN.md) now has two singleton bypass/endpoint contacts, weakly outward endpoint reactions with all zero-sign transitions classified, and a strictly outward roof reaction; the two endpoint contacts cannot both be bypass-owned. The [middle-triple all-unique selection](HOUSE_MIDDLE_TRIPLE_UNIQUE_FREE_HUB_SELECTION.md) removes a free hub normal using fixed positive circle-load ratios and translation balance, without fixing any shared mean. The subsequent all-mask free-hub theorem removes every radial free alternative as well; only a singleton contact owned by exactly one hub remains.
 
 Root and separate independent full audits passed all eight sources in this earlier reduction checkpoint. The subsequent complete mixed-family proofs now close the entire fan. **The house remains open**, with six coarse cells closed and52 open; unrestricted sharpness, original equality and the full prerequisite-chain audit remain separate obligations.
 
@@ -48,7 +64,7 @@ Root and independent full audits passed the complete catalogue and geometric cor
 
 [HOUSE_END_TRIPLE_PARALLEL_BYPASS_EXCLUSION.md](HOUSE_END_TRIPLE_PARALLEL_BYPASS_EXCLUSION.md) excludes the entire parallel-bypass family in either end-triple house mask. Actual contact geometry aligns both channel endpoints. The degree-two endpoint's two-corner mask is impossible; its unique-corner force and torque give d<=c. A shared upper bypass contact requires d>c, while the point alternative makes the roof contact impossible. Every actual mean and strict point-contact limit is covered. The genuinely tilted bypass remains open.
 
-[HOUSE_MIDDLE_TRIPLE_SHARED_HUB_EXCLUSION.md](HOUSE_MIDDLE_TRIPLE_SHARED_HUB_EXCLUSION.md) excludes every middle-triple hub contact whose normal is owned by both clear hubs. The roof-triangle signs and the full unloaded balances put the lower endpoint squares strictly on opposite sides of the hub support line, contradicting their contact. The theorem is radius-free and keeps arbitrary shared means. Singleton contacts owned by only one hub and strict free normals remain open.
+[HOUSE_MIDDLE_TRIPLE_SHARED_HUB_EXCLUSION.md](HOUSE_MIDDLE_TRIPLE_SHARED_HUB_EXCLUSION.md) excludes every middle-triple hub contact whose normal is owned by both clear hubs. The roof-triangle signs and the full unloaded balances put the lower endpoint squares strictly on opposite sides of the hub support line, contradicting their contact. The theorem is radius-free and keeps arbitrary shared means. The subsequent all-mask free-hub selection also excludes strict free normals. Singleton contacts owned by exactly one hub remain open.
 
 Root and separate independent full audits passed all three sources. These are whole geometric implications and subfamily exclusions. **C1.5.b0 remains open**, with six coarse cells closed and52 open. The fan is now closed by its full assembly. The remaining house proofs retain every actual degree-three equation, all circle masks and all four physical completion squares.
 
