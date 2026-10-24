@@ -1,7 +1,7 @@
 # n=9 — live prerequisite and cyclic-closure ledger
 
 **Checkpoint:** October 23, 2026, America/Chicago. **PR:** #11, draft.  
-**T9 and unrestricted equality remain OPEN.** The selected physical certificate has one planar positive cyclic component with **5–9 bodies**, **3–7 noncollinear loaded resultants**, and at most **27 scalar atoms**. Every other physical square stays in the completion problem. The coarse inventory has **four whole cells closed and 54 open**.
+**T9 and unrestricted equality remain OPEN.** The selected physical certificate has one planar positive cyclic component with **5–9 bodies**, **3–7 noncollinear loaded resultants**, and at most **27 scalar atoms**. Every other physical square stays in the completion problem. The coarse inventory has **five whole cells closed and 53 open**.
 
 The complete fine-grained contracts are in [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md). This file gives live parent scope and primary sources. [TWO_LOAD_PROGRESS.md](TWO_LOAD_PROGRESS.md) preserves the chronological proof/audit record and exact regression provenance.
 
@@ -64,7 +64,7 @@ Every row retains four extra physical squares. Full nested contracts are G3.M5 i
 | M5.T2 / C1.3.b2 | Length-two arm; two leaves at one or at two distinct triangle articulations | CLOSED; all leaf types and full S/S completion, independent assembly audited |
 | M5.B4L / C1.4.b1 | C4 load patterns; diamond hub/tip attachment; K4 | Only all-three-loaded C4 and unique-corner loaded-hub D diamond remain OPEN; all other attachment/load branches CLOSED |
 | M5.B5 / C1.5.b0 | Exactly C5, house and four-path fan after the exhaustive ten-type graph/load reduction | Graph/load reduction CLOSED; full geometry/completion OPEN |
-| M5.TT / C2.33.b0 | Two triangles at one shared articulation, all additional zero-weight physical contacts retained | OPEN |
+| M5.TT / C2.33.b0 | Entire bowtie and all four arbitrary extras | CLOSED; complete owned/free pressure theorem and opposite-resultant assembly |
 
 - [x] **M5.CATALOG:** the formula m=1+sum(block_size-1)+bridges yields exactly these four coarse cells at m=5.
 - [x] **M5.T2.CHAIN:** TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md excludes the entire chain layout. A one-boundary-neighbor concurrence lemma and three-port order force positive articulation concurrence; exact center caps and an all-mask circle-coordinate inequality finish every pose. Root and separate audits passed.
@@ -105,7 +105,8 @@ Every row retains four extra physical squares. Full nested contracts are G3.M5 i
 - [x] **M5.B5.C5.DOUBLE_DIAGONAL:** FIVE_CYCLE_THREE_LOAD_DOUBLE_DIAGONAL_EXCLUSION.md uses compatible endpoint ownership and actual BC overlap to force R^2>=(9+6sqrt(2))/4>Q. Only side/side or one-side/one-diagonal transmitters remain in the nonparallel three-load orbit.
 - [x] **M5.TT.PRESSURE.TIP_OWNED:** BOWTIE_TIP_OWNED_PRESSURE.md proves c_A dot M>0 over every physical circle mask in the complete singleton tip-owned interface branch. The unique/unique weighted-corner bound is<39/10; radial masks retain their complete force cones.
 - [x] **M5.TT.PRESSURE.PARALLEL:** BOWTIE_PARALLEL_PRESSURE.md proves the same strict sign for every parallel interface, including coincident shared-wall means, all wall frames and free mutual normals. All combinations of the two proved block types are excluded in a bowtie.
-- [ ] **M5.TT.PRESSURE.REMAINDER:** finish nonparallel articulation-owned/shared interfaces without assuming the two degree-two-tip sign theorems apply to a higher-degree tip.
+- [x] **M5.TT.PRESSURE.REMAINDER:** BOWTIE_MIXED_OWNER_PRESSURE.md, BOWTIE_RADIAL_FREE_INTERFACE_PRESSURE.md and BOWTIE_SHARED_SIDE_FREE_INTERFACE.md exhaust every remaining physical mask, owner and actual shared mean. The corrected mean-length inequality retains radial variance; all three full sources passed root and independent audits.
+- [x] **M5.TT.ALL:** BOWTIE_CELL_CLOSED.md assembles one compatible selection and the complete end-triangle sign. Its two opposite block resultants give a strict contradiction. Entire C2.33.b0 CLOSED with all four extras retained; full parent audit passed.
 - [x] **M5.HOUSE.HOLES:** HOUSE_HOLE_EMPTY.md proves the complete leaf-free cross equality transfer and exact-degree-three hub obstruction. A clear house hub always exists, so both bounded faces have capacity0 and all four extras are exterior. The joint exterior bound remains open.
 - [x] **M5.D_DIAMOND.RADIAL_HUB:** D_DIAMOND_RADIAL_HUB_EXCLUSION.md excludes the entire two-physical-corner U mask, with every B/C mask, all corner weights and actual means. The remaining loaded U has exactly one physical circle corner.
 - [x] **M5.TT.PERPENDICULAR:** The complete support-point argument forces the actual BC normal northwest, giving a negative dot product of the two loaded tip vectors. Thus perpendicular A-owned contacts are impossible, including triple/shared junctions.

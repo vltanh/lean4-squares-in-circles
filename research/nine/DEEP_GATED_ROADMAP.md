@@ -1,12 +1,12 @@
 # n=9: deep ticked roadmap and ordered proof execution
 
 **Branch:** `research/nine-tablefree-hand`; **PR:** #11, draft.  
-**Reconciled source:** `cb41f80cfae3c3e525a3c1971b41090710f7fdf9`.  
+**Reconciled source:** `b245c82aec912668d08f05278a5fe187df794c44`.  
 **Checkpoint:** October 24, 2026, America/Chicago; the append-only evidence log retains explicit UTC provenance.
 
 **T9 and unrestricted equality remain OPEN.** The complete P/Y arguments exclude all selected positive trees and all exactly-two-loaded components from a nine-square packing in the declared radius window. A physical certificate can be selected with **one planar positive component**, all physically circle-touching vertices on its exterior face, and at most 27 positive scalar atoms. The remaining component is cyclic, has 5–9 bodies, and has 3–7 noncollinear circle-loaded resultants. Every other physical square has zero stress and remains in the problem.
 
-The remaining lower-bound split is exhaustive: **G3.B**, a boundary-only C7 with two completion squares; or **G3.M**, a mixed cyclic component containing a circle-clear body, with all 9-m completion squares retained. The 58-cell coarse inventory has four whole cells closed and 54 open. Subgate counts are not completion percentages.
+The remaining lower-bound split is exhaustive: **G3.B**, a boundary-only C7 with two completion squares; or **G3.M**, a mixed cyclic component containing a circle-clear body, with all 9-m completion squares retained. The 58-cell coarse inventory has five whole cells closed and 53 open. Subgate counts are not completion percentages.
 
 ## Ordered execution and gate-closing rule
 
@@ -19,7 +19,7 @@ The remaining lower-bound split is exhaustive: **G3.B**, a boundary-only C7 with
 | 4 | G3.M4.ALL | Combine D/S and their degeneracies; close the entire C1.3.b1 cell | CLOSED hand; independent assembly audit passed |
 | Parallel whole branch | G3.B.SHARP | Prove R^2>=Q with both arbitrary C7 completion squares, or the stronger capacity-one theorem | OPEN; all-owned; parallel inner pair excluded; remaining0<sin(theta)<4/15; opposite far-face centers extracted |
 | 5a | G3.M5.T2 | Entire triangle-with-two-bridges cell, all three attachments and four extras | CLOSED hand; full S/S slider capacity3, independent parent assembly passed |
-| 5b | G3.M5.B4L/B5/TT | Three remaining complete five-body cells, all four extras retained | OPEN; only all-three-loaded C4 / D-leaf unique-corner loaded diamond hub in B4L; remaining B5 and bowtie interfaces active |
+| 5b | G3.M5.B4L/B5/TT | Two remaining complete five-body cells, all four extras retained | OPEN; only all-three-loaded C4 / D-leaf unique-corner loaded diamond hub in B4L; remaining B5 active; entire bowtie CLOSED |
 | 5c | G3.M6–M9 | Process the larger mixed cells by component size and the finite semantic cover below | OPEN |
 | 6 | G4 | Assemble the unrestricted sharp lower bound with the exact lower-window import | BLOCKED by G3 |
 | 7 | G5 | Necessity and converse for every equality packing, including free centers and rotations | OPEN |
@@ -81,6 +81,10 @@ The finite cover keeps continuous radii, centers, orientations, contact coordina
 | D diamond central radial mask | Every physical two-circle-corner second hub is excluded, with arbitrary tip masks and all means | D_DIAMOND_RADIAL_HUB_EXCLUSION.md |
 | Perpendicular end-triangle contacts | Entire articulation-owned perpendicular class excluded by the actual BC normal signs and acute load vectors | BOWTIE_PERPENDICULAR_CONTACT_EXCLUSION.md |
 | Radial neighbor pressure | Every touching center has strictly positive projection on both actual radial-S circle corners, margin121/1600 | RADIAL_BOUNDARY_NEIGHBOR_PRESSURE.md |
+| Complete mixed-owner pressure | Every owned A-axis / tip-side interface, all physical masks and genuine shared means; mean-length coefficients retained | BOWTIE_MIXED_OWNER_PRESSURE.md |
+| Entire radial free interface | Actual two-inner-vertex routing, full singleton owner exclusions and shared-side pressure | BOWTIE_RADIAL_FREE_INTERFACE_PRESSURE.md |
+| Entire shared/free interface | Nonzero two-tip block determinant with actual means; full remaining radial-tip pressure | BOWTIE_SHARED_SIDE_FREE_INTERFACE.md |
+| Whole bowtie cell | Exhaustive common-selection end-triangle pressure contradicts the two opposite block resultants | BOWTIE_CELL_CLOSED.md |
 | Sharp continuous radial tail | Complete balanced-sector SAT optimization gives a sharp two-coordinate necessary curve | C7_SHARP_BALANCED_RADIAL_TAIL.md |
 | Actual signed C7 ray witness | A narrow actual-center cap identifies the ray and far-face unit, giving the exact remaining outside-coordinate cover | C7_OUTSIDE_INNER_RAY_WITNESS.md |
 | C7 inner side/corner restrictions | Own-center coordinates<3721/7200, vertex norms>sqrt(5/2)-91/60, and cos(theta)>6/7 | C7_INNER_SIDE_CORNER_RESTRICTIONS.md |
@@ -134,7 +138,7 @@ No common separating frame, row, central square or prescribed stress graph is an
 | Exactly two loaded bodies | Parallel forces, q=17/4, 4–6 aligned bodies; every completion excluded | No remaining geometry in this load class |
 | Components whose bodies all touch the circle | Exactly one physical C7; includes all circle-touching squares | Exclude TWO arbitrary circle-clear completion squares |
 | Components with a circle-clear body | 3–7 noncollinear resultants; circle-touching induced graph is paths or C7 | Uniform sharp physical completion inequality |
-| Cyclic inventory | 21 profiles and 58 coarse cells; C1.3.b0, C1.4.b0, C1.3.b1 and C1.3.b2 excluded | 54 full geometric cells, or a uniform replacement |
+| Cyclic inventory | 21 profiles and 58 coarse cells; C1.3.b0, C1.4.b0, C1.3.b1, C1.3.b2 and C2.33.b0 excluded | 53 full geometric cells, or a uniform replacement |
 | Cap, row, pocket and quadrant tools | Complete local hand implications at stated hypotheses | Apply full-square routing without assumed normalizations |
 | Final assembly | Construction and explicit dependency contracts | G4 radius, G5 equality, G6 full audit, G7 Lean, G8 integration |
 
@@ -784,7 +788,7 @@ The theta->0 limit of S+/S- gives only t=+/-1/2. It does **not** cover the align
 
 #### G3.M4.ALL — Whole-cell closure [CLOSED hand]
 
-Source: TRIANGLE_LEAF_CELL_CLOSED.md; independent assembly audit passed. The simultaneous certificate selection is compatible with every prior reduction. This earlier closure still supplies the lower component bound of five bodies. The subsequent C1.3.b2 closure makes the current coarse count four closed and54 open.
+Source: TRIANGLE_LEAF_CELL_CLOSED.md; independent assembly audit passed. The simultaneous certificate selection is compatible with every prior reduction. This earlier closure still supplies the lower component bound of five bodies. The subsequent C1.3.b2 closure makes the current coarse count five closed and53 open.
 
 - [x] **G3.M4.ALL.1** G3.M4.0 plus D.ALL plus S.ALL cover every selected C1.3.b1 realization.
 - [x] **G3.M4.ALL.2** At most4 extras contradict the required5, or the alternative full-core exclusions already contradict the premise.
@@ -1113,7 +1117,7 @@ Use path u1--u2--u3--u4 and universal hub H. The two endpoint tips u1,u4 are loa
 
 - [ ] **M5.B5.ALL** Audit and combine C5, house and fan. Only their complete geometry/completion conclusions can close C1.5.b0; the ten-to-three graph reduction leaves the coarse count unchanged.
 
-#### M5.TT — C2.33.b0: two triangles sharing an articulation [OPEN]
+#### M5.TT — C2.33.b0: two triangles sharing an articulation [CLOSED hand]
 
 - [x] **M5.TT.GRAPH** The two triangular blocks share exactly one articulation; four other bodies are the degree-two tips. No bridge is present.
 - [x] **M5.TT.LOAD_INPUT** Every tip is loaded, since a clear degree-two transmitter cannot have touching neighbors. The articulation is physically circle-clear, since otherwise either triangle would contain three mutually touching boundary bodies.
@@ -1135,12 +1139,29 @@ Use path u1--u2--u3--u4 and universal hub H. The two endpoint tips u1,u4 are loa
 - [x] **M5.TT.RADIAL_PRESSURE.GEOMETRY** RADIAL_BOUNDARY_NEIGHBOR_PRESSURE.md bounds c_A dot z>=R²-sqrt(R²-1/4)-1/2-R/sqrt(2)>121/1600 for each physical two-corner neighbor. The bound holds at every contact owner/mean and increases over the entire radius window.
 - [x] **M5.TT.RADIAL_PRESSURE.MASK** Both-radial end triangles have c_A dot M>0 without any contact-owner or degree restriction in the geometric lemma. Unequal weights and zero individual weights remain; this covers all free/shared two-radial transitions directly.
 - [x] **M5.TT.PRESSURE.COMBINATIONS** Any bowtie whose two blocks each belong to a completed pressure domain is excluded by M_1+M_2=0. The domains now include tip-owned singleton, parallel, both A-owned, and all-owner two-radial physical masks. Mixed choices are allowed; both full audits passed.
-- [ ] **M5.TT.PRESSURE.REMAINDER** Finish the mixed A-owned/tip-owned nonparallel domain and genuine free articulation-normal transitions. Keep every physical one-radial/one-unique and unique/unique mask, all shared-side means and selected normal intervals. A physical radial mask is not renamed unique when one circle weight vanishes.
-- [ ] **M5.TT.CORE** Derive the complete four-load force/torque system and the full articulation contact cover, including shared-side means and common three-body junctions.
-- [ ] **M5.TT.PHYSICAL_GRAPH** Retain all additional physical contacts between the two tip pairs, even if their selected stress is zero; do not assume the full touching graph is the abstract bowtie.
-- [ ] **M5.TT.ROUTING** Empty the two genuine triangle holes and the two touching-boundary-pair exterior pockets, while treating common-junction limits directly. Route every whole extra into the exact remaining regions.
-- [ ] **M5.TT.JOINT_BOUND** Prove the required joint capacity for all remaining regions, or a full selected-core/radius obstruction. A separate two-per-region claim is not a sufficient nine-square exclusion.
-- [ ] **M5.TT.ALL** Include all contact owners, four independent circle masks, articulation poses and equality survivors, then close C2.33.b0.
+- [x] **M5.TT.MIXED.MEAN_LENGTH** BOWTIE_MIXED_OWNER_PRESSURE.md uses the exact identity c_A dot F=rho|F|-F dot(zbar-c_A), with rho=|zbar|. Unique masks have rho=R; radial masks retain rho>=sqrt(R²-1/4)>=sqrt(5841)/40. The earlier draft's omitted variance is explicitly repaired throughout, not hidden in a corner-weight restriction.
+- [x] **M5.TT.MIXED.ALIGNED** The entire aligned/shared AB geometry forces the C lower vertex into B's top side, preserving every AB mean. Correct uniform mean-length duals give a strict3/100 pressure margin for all physical masks.
+- [x] **M5.TT.MIXED.OWNER_COVER** For oblique B, legitimate fixed-tip selection removes free BC whenever one tip is unique; both-radial needs no selection. The complete actual support cover leaves C-owned theta>psi or B-owned theta<=psi, including the genuine shared-side mean interval at equality.
+- [x] **M5.TT.MIXED.UNIQUE_B** The two actual unique-B corners and both BC owners have complete support estimates. Every radial-C transition uses a valid smaller mean-length coefficient or a full direct projection bound; the small/large psi split covers the entire interval. No two-corner average is assigned length R.
+- [x] **M5.TT.MIXED.RADIAL_B** Both entire radial-B/unique-C owner cases are excluded. The B-owned branch has a far-corner radius excess; the C-owned branch uses a circle-clear shallow interval and an exact concave torque polynomial over the whole remaining domain, including t=1. No radial-B force equation is needed in that last geometric implication.
+- [x] **M5.TT.MIXED.ALL** All owned mixed articulation interfaces have strictly positive pressure, including aligned and shared transitions, every physical mask and every actual mean. Root and separate full audits passed after the mean-length correction.
+- [x] **M5.TT.FREE_RADIAL.VERTICES** BOWTIE_RADIAL_FREE_INTERFACE_PRESSURE.md uses actual radial torque and strict support span to force the free-tip applications to its two distinct inner vertices. A shared mutual side is impossible; all circle-weight endpoints remain.
+- [x] **M5.TT.FREE_RADIAL.A_OWNED** For singleton AB, unique-tip selection supplies the two owners. The A-owned alternative gives an exact cubic whose Bernstein coefficients or small-a bound are strictly positive, forcing H<1/2 against H>9/10.
+- [x] **M5.TT.FREE_RADIAL.TIP_OWNED** The other owner has adjacent A vertices. An auxiliary geometric support axis identifies the t=1 chart of the mixed-owner proof; only the unique tip's original force/torque equations are used. No certificate normal or radial-tip weight is replaced.
+- [x] **M5.TT.FREE_RADIAL.SHARED_AB** With an actual shared AB segment, the complete unit-distance endpoint check supplies BC ownership. Both coordinates of c_A are positive by the actual unique-corner radius contradiction; this gives pressure for every free AC direction and actual AB mean.
+- [x] **M5.TT.FREE_RADIAL.ALL** The entire free articulation contact at a physical radial tip is closed, including both-radial, singleton and shared alternatives. Root and independent full audits passed.
+- [x] **M5.TT.FREE_SHARED.DEGENERACIES** BOWTIE_SHARED_SIDE_FREE_INTERFACE.md retains all means while excluding the aligned-L, coincident exterior applications and radial-D collinearity. The last would pin the actual mutual mean at an impossible minimum-radius boundary contact.
+- [x] **M5.TT.FREE_SHARED.DETERMINANT** Two block virtual-work identities cancel the shared-side force without fixing its mean. Their determinant is nonzero in every surviving free parameter product because det(p,z1)!=0 and the other force cannot be radial-parallel. Distinct junctions remain independent under matched selection, and all final shared pairs are prelisted.
+- [x] **M5.TT.FREE_SHARED.RADIAL** The remaining radial-B/unique-C mask has an exhaustive owned feature cover and an exact full shared-mean family. Its circle-force torque gives kappa(3/2-Z)=gamma(xi-Z+1). For Z<=4/3 pressure exceeds34gamma/125; for Z>=4/3 the unique-corner projection exceeds the positive radical bound(16sqrt(34)-21-51sqrt(2))/36.
+- [x] **M5.TT.FREE_SHARED.ALL** Every free-AC/shared-BC interface is excluded by compatible selection or has strictly positive pressure, with every physical mask and actual shared mean retained. Root and separate full audits passed.
+- [x] **M5.TT.PRESSURE.REMAINDER** The mixed-owned, radial-free and shared/free sources exhaust all remaining interfaces. A unique free tip with singleton other contact is removed by the existing fixed-tip theorem, whose coincident exception is impossible at a boundary-pair contact.
+- [x] **M5.TT.END_TRIANGLE.ALL** BOWTIE_CELL_CLOSED.md assembles every owned/free interface under one simultaneous pre-certificate selection and proves c_A dot(F_B+F_C)>0 for every end triangle with two exact-degree-two loaded tips. All individual zero weights and extra physical contacts remain.
+- [x] **M5.TT.OPPOSITE_RESULTANTS** All four bowtie tips are loaded and their common articulation is physically clear. Its exact equation is M_1+M_2=0; both complete block projections are strictly positive. This excludes the selected core independently of all four extras.
+- [x] **M5.TT.CORE** The complete exact-degree-two end-triangle theorem and actual articulation balance exclude the whole four-load bowtie, with no symmetry or secondary minimizer.
+- [x] **M5.TT.PHYSICAL_GRAPH** All additional zero-weight contacts remain physical obstacles and candidates during finite preselection. No missing positive edge is treated as a physical noncontact.
+- [x] **M5.TT.ROUTING** The whole-core exit makes a separate completion routing theorem unnecessary; no extra is moved or discarded. The existing triangle-hole and boundary-pocket inputs retain their original scopes.
+- [x] **M5.TT.JOINT_BOUND** The allowed full selected-core obstruction is proved for the entire cell, retaining all four arbitrary completion squares. No separate regional capacity claim is inferred.
+- [x] **M5.TT.ALL** BOWTIE_CELL_CLOSED.md closes the entire C2.33.b0 in the declared window. All source proofs and the full assembly passed root and separate independent hand audits. The coarse inventory now has five closed and53 open rows.
 
 #### G3.M.R Completion ordering by body count
 
@@ -1251,7 +1272,7 @@ Use path u1--u2--u3--u4 and universal hub H. The two endpoint tips u1,u4 are loa
 ## Current execution contract
 
 1. P.ALL, Y.ALL, TREE.ALL and TL.COMPLETE are CLOSED hand at their stated scopes. Keep the general C7 and mixed 3–7-loaded cyclic completion obligations OPEN.
-2. The 58 coarse cells now have **four whole-cell exclusions and 54 open rows**. Do not confuse subfamily restrictions with parent closure.
+2. The 58 coarse cells now have **five whole-cell exclusions and 53 open rows**. Do not confuse subfamily restrictions with parent closure.
 3. Follow the ordered G3 execution tree: C1.3.b1 and C1.3.b2 are closed; execute the three remaining complete five-body cells with their exhaustive layout/graph domains, then the larger mixed cells. Pursue the entire C7 capacity in parallel, with its proved conditional piercing criterion and explicit center-cover blocker; continue the remaining mixed cells by component size. Use shared uniform arguments whenever possible. Do not create angle boxes merely to increase checked-gate counts.
 4. Preserve exact physical negative controls and every unstressed completion body.
 5. Commit finished arguments promptly and log UTC provenance, exact quantifiers, finite evidence and unchanged global blockers in TWO_LOAD_PROGRESS.md or a subsequent append-only checkpoint.

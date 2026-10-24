@@ -2,7 +2,7 @@
 
 **Checkpoint:** October 23, 2026, America/Chicago. **Global sharp theorem and unrestricted equality remain OPEN.** Every row retains its full continuous physical geometry, actual circle-load masks and all completion squares.
 
-The closed cells are **C1.3.b0**, **C1.4.b0**, **C1.3.b1** and **C1.3.b2**. Thus **54 coarse cells remain open**. The selected unique positive cyclic component now has **5–9 bodies** and **3–7 noncollinear loaded resultants**. Every other physical square has zero stress and remains an obstacle. All positive trees and every exactly-two-loaded component are already excluded by the full P/Y assemblies.
+The closed cells are **C1.3.b0**, **C1.4.b0**, **C1.3.b1**, **C1.3.b2** and **C2.33.b0**. Thus **53 coarse cells remain open**. The selected unique positive cyclic component now has **5–9 bodies** and **3–7 noncollinear loaded resultants**. Every other physical square has zero stress and remains an obstacle. All positive trees and every exactly-two-loaded component are already excluded by the full P/Y assemblies.
 
 ## Uniform restrictions applied to every open row
 
@@ -56,7 +56,7 @@ Each open row quantifies over every block adjacency, articulation arrangement, a
 | C1.8.b0 | 8 | 0 | 8 | 1 | [ ] OPEN |
 | C1.8.b1 | 8 | 1 | 9 | 0 | [ ] OPEN |
 | C1.9.b0 | 9 | 0 | 9 | 0 | [ ] OPEN |
-| C2.33.b0 | 3,3 | 0 | 5 | 4 | [ ] OPEN |
+| C2.33.b0 | 3,3 | 0 | 5 | 4 | [x] CLOSED — BOWTIE_CELL_CLOSED.md |
 | C2.33.b1 | 3,3 | 1 | 6 | 3 | [ ] OPEN |
 | C2.33.b2 | 3,3 | 2 | 7 | 2 | [ ] OPEN |
 | C2.33.b3 | 3,3 | 3 | 8 | 1 | [ ] OPEN |
@@ -107,7 +107,7 @@ The exact identity m=1+sum(block_size-1)+bridges yields these four cells, each w
 | C1.3.b2 | Every chain/same/distinct attachment, every leaf type and four extras | CLOSED; full slider upper/lower capacities3 and0, assembly audited |
 | C1.4.b1 | All-three-loaded C4; D-leaf hub with unique-corner loaded second hub | Other C4/diamond branches CLOSED; parent OPEN |
 | C1.5.b0 | Exhaustive ten-type classification reduces to C5, house and four-path fan, with necessary load masks | Graph/load cover CLOSED; full geometry and whole cell OPEN |
-| C2.33.b0 | Two triangles sharing an articulation; all extra physical contacts retained | Four tips loaded, articulation clear; whole completion OPEN |
+| C2.33.b0 | Entire bowtie; all physical masks, means and extras | CLOSED; complete end-triangle pressure and opposite-resultant theorem |
 
 TRIANGLE_TWO_LEAVES_SAME_ARTICULATION_CLOSED.md assembles the complete S/S, D/S and D/D exclusions under one compatible selected certificate. Both root and independent assembly audits passed. The distinct-layout domain and port-orientation theorems exclude D/D, zero triangle moment and R<=sqrt(17)/2, while retaining every actual contact mean. TRIANGLE_DISTINCT_MIXED_LEAVES_EXCLUSION.md now excludes the entire distinct D/S family. The sole remaining C1.3.b2 family has two S leaves at distinct articulations, R>sqrt(17)/2, nonzero moment and one physical circle corner at C. DISTINCT_S_LEAF_CORE_AND_CORNER_MASK.md excludes all two-corner C masks and exhibits an exact positive core below Q with strict shared means. Blanket core exclusion is false. The full parallel-articulation reduction and exact wall classification now cover every surviving S/S core, and the upper/lower capacity theorems prove at most3 extras over the entire slider interval. TRIANGLE_TWO_BRIDGES_CELL_CLOSED.md consequently closes the whole C1.3.b2 cell.
 
@@ -117,7 +117,7 @@ The S diamond-hub branch with a physically boundary second hub is also excluded 
 
 - [x] C7_INNER_SIDE_CORNER_RESTRICTIONS.md: each inner own-center coordinate has magnitude<3721/7200; each inner vertex has norm>sqrt(5/2)-91/60; any two inner frames have cos(theta)>6/7.
 - [x] PARALLEL_INNER_PAIR_DIAMETER_EXTRACTION.md: every parallel pair with arbitrary gap and stagger forces enclosing center diameter>=3. The actual C7 has diameter<3, so this entire endpoint branch is excluded.
-- [ ] The residual pair now has0<sin(theta)<4/15, with actual opposite far-face boundary centers and an exact gap budget. Finish its full disk/stress-dependent radius or completion theorem. These restrictions do not close a coarse cell; the count remains four closed and54 open.
+- [ ] The residual pair now has0<sin(theta)<4/15, with actual opposite far-face boundary centers and an exact gap budget. Finish its full disk/stress-dependent radius or completion theorem. These restrictions do not close a coarse cell; the count remains five closed and53 open.
 
 ## C7 remains a separate whole branch
 
@@ -147,7 +147,7 @@ No regularity, single-owner convention, global common frame, or strict origin pi
 
 The new S/D local proofs, whole-cell assembly, graph obstructions, five-body graph/load cover, full chain exclusion, C4 inner-hole theorem, and C7 normal reductions have independent hand audits. Full earlier prerequisite-chain audit and standard-kernel verification remain separate gates. No Lean compilation or CI was run. Every new commit uses `[skip ci]`; PR #11 remains draft.
 
-TWO_LOAD_PROGRESS.md preserves chronological statuses and pinned exact-regression provenance. Earlier counts there are historical. The live count in this ledger is **four closed and 54 open**.
+TWO_LOAD_PROGRESS.md preserves chronological statuses and pinned exact-regression provenance. Earlier counts there are historical. The live count in this ledger is **five closed and 53 open**.
 
 - [x] **CY.C5.THREE.PARALLEL:** FIVE_CYCLE_THREE_LOAD_PARALLEL_EXCLUSION.md excludes the entire parallel-force alternative at the isolated loaded C5 vertex, with every transmitter width and actual mean. The remaining nonparallel three-load C5 and the full four-load branch stay OPEN; no parent count changes.
 
@@ -158,7 +158,7 @@ TWO_LOAD_PROGRESS.md preserves chronological statuses and pinned exact-regressio
 - [x] BOWTIE_TIP_OWNED_PRESSURE.md and BOWTIE_PARALLEL_PRESSURE.md prove the strict end-block sign for two complete owner/force domains, including all physical masks and coincident shared means. Every bowtie combining those proved domains is excluded; nonparallel articulation-owned/shared interfaces remain.
 - [x] C7_INNER_OUTSIDE_FACE_CORNER_EXCLUSION.md and C7_INNER_PAIR_FAR_FACE_CENTERS.md give the entire small-angle and actual-center extraction, retaining the full outer frames. No C7 completion conclusion or coarse-cell closure is inferred.
 
-The authoritative count remains four whole cells closed and54 open.
+The authoritative count remains five whole cells closed and53 open.
 
 ### Whole house routing and complete physical-mask consequences
 
@@ -167,4 +167,8 @@ The authoritative count remains four whole cells closed and54 open.
 - [x] BOWTIE_PERPENDICULAR_CONTACT_EXCLUSION.md resolves every perpendicular A-owned contact pair. RADIAL_BOUNDARY_NEIGHBOR_PRESSURE.md resolves the entire two-radial end-block mask and excludes the all-radial fan/end-house masks; genuine mixed/free interfaces remain.
 - [x] C7_SHARP_BALANCED_RADIAL_TAIL.md and C7_OUTSIDE_INNER_RAY_WITNESS.md give the complete sharp balanced curve and actual signed-witness theorem. Only their precise residual outside-coordinate branches are retained, without an alternate-SAT-axis assumption.
 
-No further coarse parent is closed by these results: four cells remain closed and54 open.
+No further coarse parent is closed by these results: five cells remain closed and53 open.
+
+### Entire bowtie cell closed
+
+BOWTIE_CELL_CLOSED.md closes C2.33.b0. Every owned/free end-triangle interface has positive c_A projection, with exact degree-two tips, all physical masks and actual means. The clear articulation's two block resultants are opposite. The complete corrected mixed-owner, radial-free and shared/free proofs plus the parent assembly passed root and independent full audits. Every extra remains; no canonical motion or regional capacity theorem is needed. The authoritative coarse count is five closed and53 open.
