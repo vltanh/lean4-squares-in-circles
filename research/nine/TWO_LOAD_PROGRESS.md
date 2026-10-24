@@ -1008,3 +1008,157 @@ sharpness, original equality and the full earlier prerequisite-chain
 audit remain OPEN. PR #11 stays draft; no Lean compilation or CI was run.
 
 The root independently reconstructed every displayed aligned-wall derivative and endpoint value and the complete shifted degree-eight polynomial. Its negative tail and both continuous comparison domains passed. The negative-tip owner proof keeps the weak torque endpoint b=a; no radial-D or shared-mean endpoint is removed. The complete central diamond/strip theorem was independently checked for every separating-axis owner and weak junction. Every changed file will be read back at the exact saved commit.
+
+## October 24 19:54 UTC — full endpoint-owner and free-contact exits; 1,805 live gates after4f44a0b
+
+## New audited endpoint and central-region results
+
+[NEGATIVE_UNIQUE_ENDPOINT_TIP_OWNED_HIGH_RADIUS.md](NEGATIVE_UNIQUE_ENDPOINT_TIP_OWNED_HIGH_RADIUS.md)
+excludes every endpoint-owned root contact at a negative unique loaded
+endpoint for \(R^2\ge17/4\), including every genuine shared interface.
+It uses only the endpoint's true degree-two equations and a physical
+boundary neighbor. The root and neighbor keep arbitrary additional
+forces; no missing root/neighbor chord is assumed.
+
+[NEGATIVE_UNIQUE_ENDPOINT_OWNED_CONTACT_DOMAIN.md](NEGATIVE_UNIQUE_ENDPOINT_OWNED_CONTACT_DOMAIN.md)
+gives the complete remaining feature description on the original full
+radius interval. The other normal is strictly northwest, acts at the
+actual adjacent endpoint vertex and has strictly positive support.
+A physical radial middle body cannot own that normal. Thus an
+endpoint-owned root interface with a radial middle body must be
+genuinely shared, with the next interface free. Its entire singleton
+alternative is excluded by the previously chosen compatible fixed-tip
+selection. With a unique middle body and singleton root interface,
+the next interface must instead be owned by that middle body.
+No shared mean is frozen.
+
+[NEGATIVE_ENDPOINT_FREE_SHARED_RADIAL_MODULE.md](NEGATIVE_ENDPOINT_FREE_SHARED_RADIAL_MODULE.md)
+handles the entire free root-contact domain. The next interface is
+genuinely shared, the following interface is a physical singleton,
+and the middle square must be radial with both original circle
+weights strictly positive. A complete two-body virtual-work argument
+retains every original shared mean and all outside forces. In the
+actual radial frame, the module is
+\[
+ \begin{gathered}
+ N=\sqrt{R^2-9/4},\qquad d=\sqrt{R^2-1/4}-1,\\
+ A=[N-1,N]\times[1/2,3/2],\quad
+ B=[d,d+1]\times[-1/2,1/2],\\
+ H\cap A=\{(N-1,1/2)\},\quad B\cap C=\{(d,-1/2)\}.
+ \end{gathered}
+\]
+This excludes every free root contact with physically unique middle
+B, and every one-active-corner endpoint of the physical radial mask.
+
+[FREE_NEGATIVE_C4_RADIAL_FAR_ENDPOINT_EXCLUSION.md](FREE_NEGATIVE_C4_RADIAL_FAR_ENDPOINT_EXCLUSION.md)
+excludes the entire physical radial-C alternative of that module.
+The exact two-radial-body contact fixes C. The actual return contact
+forces a complete downward root-vertex frame; the negative endpoint
+projection gives \(c<2/3\). A support comparison over that whole
+interval strictly separates H and C, with positive exact reserve
+\(F\cdot1699/(12\cdot91000)\). No equation at C or H is used.
+Only the free SUU mask remains, with C physically unique.
+
+[FOUR_CYCLE_THREE_BOUNDARY_HOLE_EMPTY.md](FOUR_CYCLE_THREE_BOUNDARY_HOLE_EMPTY.md)
+proves central capacity zero for every actual C4 ring having at least
+three physical boundary squares when \(R^2\ne5/2\). The entire
+weak-junction area/equality argument forces an aligned cross if a
+central unit exists; the three physical circle equations then force
+\(R^2=5/2\). No pendant leaf, degree, positive circle weight or
+canonical minimizer is required. It supplies no unproved exterior
+articulation-pocket capacity.
+
+All five complete sources have root and separate independent full hand
+audits. The endpoint-selection scope is explicit: geometric implications
+use the actual equations, while generic singleton exclusions use the
+compatible certificate chosen before extraction. Every original force,
+true degree, physical mask, individual zero weight and mean remains.
+
+## Exact remaining C4 endpoint-owner obligations
+
+Label the actual negative physically unique endpoint A. Masks are in
+the order **(middle B, endpoint A, other endpoint C)**; S means two
+physical circle corners and U means one. A physical S mask never
+silently means that both individual weights are positive.
+
+| HA contact family | SUS | UUS | SUU | UUU |
+| --- | --- | --- | --- | --- |
+| Free singleton, full radius window | CLOSED | CLOSED | Exact pinned module OPEN; both B weights positive | CLOSED |
+| A-owned singleton, \(R^2\ge17/4\) | CLOSED | CLOSED | CLOSED | CLOSED |
+| Shared positive interval, \(R^2\ge17/4\) | CLOSED | CLOSED | CLOSED | CLOSED |
+| A-owned singleton, \(R^2<17/4\) | CLOSED | AB B-owned; OPEN | CLOSED | AB B-owned; OPEN |
+| Shared positive interval, \(R^2<17/4\) | AB free; OPEN | AB B-owned or free; OPEN | AB free; OPEN | AB B-owned or free; OPEN |
+| H-owned singleton, full radius window | OPEN | OPEN | OPEN | OPEN |
+
+Every H-owned singleton occurs at A's actual corner opposite its
+unique circle corner. The complete fixed-tip selection removes free
+singleton AB. The deep roadmap therefore splits each H-owned mask
+into the complete lower/higher radius domains and the actual
+A-owned-singleton, B-owned-singleton and genuinely shared AB alternatives.
+The original means in every shared branch stay variable.
+
+The free SUU module is split by singleton versus shared HC, without
+assuming an unproved contact-owner or missing-edge reduction. A whole
+core contradiction and a complete joint-capacity theorem are alternative
+routes. If using capacity, the C4 and petal holes and the three direct
+boundary-pair pockets are empty; the two articulation pockets still
+need their actual routing and a joint bound excluding three extras.
+
+The remaining diamond-hub KAB orbit keeps H degree5 and K degree3.
+All negative A-owned/shared HA contacts are already excluded over the
+entire radius window by the actual H-A-K triangle theorem. Its exact
+remaining owner families are H-owned singleton at all radii, or free
+HA with genuinely shared AK below \(R^2=17/4\). The middle K force
+cannot be split into artificial degree-two end-triangle tips.
+
+The final independent audits identified two scope statements that were
+made explicit before saving. The full-window owned-contact theorem now
+states the prior compatible strict/fixed-tip selection at its opening:
+its geometric implications use the actual equations, while its
+singleton exclusion uses the selected certificate. The radial far-endpoint
+theorem now states the positive total circle loads at both A and B
+required by its exact module source, and derives H's physical clarity
+from the original negative-pressure bound. Initial individual zero
+weights remain allowed. No equation at C/H or new post-extraction
+normal choice enters either proof.
+
+Root and the separate endpoint_audit checked the full manuscripts,
+their inherited geometric scopes, all owner/mean endpoints and the
+complete continuous comparison domains. The independent radial-far
+audit reproduced the exact margins1969/1000000,101/40000,104/25,
+777/18484,103/31250,11/625 and1699/91000, and checked the d upper
+bound with squared margin31/57600. The full-window owned-contact
+audit separately reproduced21247/1500000 and all endpoint/monotonicity
+comparisons. These exact arithmetic checks support the displayed
+analytic proof; no numerical pose or angle coverage is a premise.
+
+The deep tree retains every prior gate and now has1,805 unique IDs:
+98 new full proof/physical-domain gates. Its50 new proof-chain gates
+record the five fully audited sources. Its48 owner/completion gates
+split all four ABC masks, both complete radius ranges, each actual
+singleton/shared owner class and the sole surviving free SUU module.
+H-owned singleton AB alternatives are explicit; a genuinely shared
+mean is never fixed to use a point-selection shortcut.
+
+The live README, ordered roadmap, prerequisite ledger and coarse
+ledger have been reconciled. Superseded duplicated checkpoint
+summaries no longer claim obsolete live counts; their verbatim
+versions remain in the pinned4f44a0b revision and repository history,
+and the full chronological evidence remains here. No proof manuscript
+or old deep gate was removed.
+
+All five new manuscripts were preserved in unreferenced GitHub review
+commits and audited before branch integration. The branch checkpoint
+will be created with a non-force expected-head lease, then every
+changed file will be read back at its exact saved commit and the
+PR draft/head/body snapshot checked. The executor outage required
+in-memory editing through the GitHub connector; no shell push,
+Lean compilation or CI was used.
+
+The authoritative count remains nine whole cells closed and49 open.
+Four six-body parents and all larger mixed parents remain open.
+The same-wall ABC assembly and entire physical-unique one-diagonal
+C6 side-pocket proof are separate ongoing full-audit tasks; their
+parents are not ticked by this checkpoint. Unrestricted sharpness,
+every original equality packing and the full earlier prerequisite-chain
+audit remain OPEN. PR #11 stays draft.
