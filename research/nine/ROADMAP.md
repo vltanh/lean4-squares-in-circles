@@ -5,27 +5,26 @@
 
 **The unrestricted lower bound R^2>=1105/256 and complete equality classification remain OPEN.** The construction attains Q. The full execution tree, exact subgates and boundary cases are in [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md).
 
-## Two entire house orbits closed; one exact end-triple family remains
+## Whole five-body biconnected cell closed; the remaining component has at least six bodies
 
-[HOUSE_FOUR_LOAD_BRANCH_CLOSED.md](HOUSE_FOUR_LOAD_BRANCH_CLOSED.md) excludes both reflected four-load house masks. The complete owner cover had left a collinear wall and a unique-corner free lower endpoint opposite a shared boundary side. The wall was already closed. [The full pinned-module theorem](HOUSE_LOWER_FREE_SHARED_PINNED_MODULE.md) now covers both possible free endpoint vertices, excludes every shared next edge, and retains the actual internal shared-side mean in its two-body virtual-work selection. It forces one exact radial/unique two-square module.
+[FIVE_BODY_BICONNECTED_CELL_CLOSED.md](FIVE_BODY_BICONNECTED_CELL_CLOSED.md) closes **all of C1.5.b0**. The hand complement-graph classification has ten biconnected types. Seven have the existing full K4, common-boundary-neighbor or loaded-complement obstruction. The complete C5, fan and now house assemblies exclude the other three, with every load set, physical circle mask, actual contact mean and all four completion squares retained.
 
-[HOUSE_LOWER_FREE_SHARED_EXCLUSION.md](HOUSE_LOWER_FREE_SHARED_EXCLUSION.md) excludes that entire module for every remaining hub contact. A hub-owned roof contact contradicts the exact two endpoint support heights; the smallest displayed strict margin is287/356000. For every other roof owner, the full hub determinant removes singleton inner contact, including its zero-moment degeneracies. Every shared inner contact then makes its loaded square strictly circle-interior. The hub keeps its three genuine forces throughout; no missing fourth spoke or lower contact triangle is inserted.
+[HOUSE_POSITIVE_COMPONENT_EXCLUSION.md](HOUSE_POSITIVE_COMPONENT_EXCLUSION.md) closes the entire house graph. Its complement path gives exactly five labeled load sets, in three reflected orbits. The middle-triple and four-load orbits were already closed. [HOUSE_END_TRIPLE_BRANCH_CLOSED.md](HOUSE_END_TRIPLE_BRANCH_CLOSED.md) now closes both end triples through the complete bypass-frame, lower-circle-mask and lower-contact-owner cover.
 
-[HOUSE_MIDDLE_TRIPLE_BRANCH_CLOSED.md](HOUSE_MIDDLE_TRIPLE_BRANCH_CLOSED.md) excludes the entire middle-triple orbit. Shared, free, one-owner/parallel and one-owner/nonparallel hub interfaces are all covered. [The complete nonparallel-star proof](HOUSE_MIDDLE_TRIPLE_NONPARALLEL_STAR_EXCLUSION.md) keeps the weighted midpoint of a parallel radial roof, every shared-side mean and all physical corner masks. Its full horizontal support spans exclude the owned roof cases. The two remaining radial free-roof faces contradict the actual roof torque or circle-force cone. Both unloaded hubs retain all three forces; neither is assumed physically circle-clear merely because its circle load vanishes.
+The final two end-triple proofs cover the whole parallel, physical-unique lower tip:
 
-[HOUSE_END_TRIPLE_RADIAL_LOWER_TIP_EXCLUSION.md](HOUSE_END_TRIPLE_RADIAL_LOWER_TIP_EXCLUSION.md) excludes the entire two-physical-circle-corner lower tip in the end-triple. Together with the preceding complete owner proof, it covers every lower frame, every HB owner and both individual zero corner-weight endpoints. For the last tilted/B-owned side, actual torque gives tau>1/2, the whole frame gives c<5/8, and two uniform chord-angle bounds make every upper-square corner strictly interior. Its aligned upper frame retains the full transmitter mean interval. Both parallel lower radial axes are also excluded.
+| Entire final owner family | Complete contradiction |
+| --- | --- |
+| [Genuinely free HB](HOUSE_END_TRIPLE_PARALLEL_UNIQUE_FREE_EXCLUSION.md) | The B+U block selection retains its internal shared UB mean and removes every fixed UN contact. Every shared UN pins the true HN contact; full H torque determines the actual roof mean. The physical N center lies beyond135 degrees, while proper roof concurrence puts the T center between−75 and60 degrees. Their actual boundary contact is impossible. |
+| [H-owned HB](HOUSE_END_TRIPLE_PARALLEL_UNIQUE_HUB_EXCLUSION.md) | The full unloaded H star and actual endpoint chord exclude parallel N and force roof tilt below pi/8. N's original degree-three torque and the complete physical-circle mask cover route every NT contact. The perpendicular transition has squared-radius deficit greater than2/5; all other unique/radial roof masks have separate complete torque or force-cone contradictions. |
 
-Root and separate independent full hand audits passed all six new proof/assembly sources. The radial proof's five displayed rational margins, radical discriminant and exact derivative factorization were separately checked by exact arithmetic. These are full continuous-domain hand proofs, with all four physical completion squares retained. No numerical pose or sampled-angle premise is used.
+Both proofs keep the entire actual UB/UN/roof mean intervals and every individual circle-weight endpoint. Their finite normal choices are imposed together before extracting the certificate; no degree-three body is treated as a degree-two tip. The entire house exit is a direct core contradiction, with no secondary minimizer or exterior-capacity premise.
 
-| House load orbit | Current whole-orbit status | Exact remaining scope or source |
-| --- | --- | --- |
-| End triple, loads1,2,3 up to reflection | OPEN in one full domain | Lower body2 is parallel to its transmitter4 and has exactly one physical circle corner. Every actual UB/UN/roof mean, HB owner, N/T circle mask and four extras remain. |
-| Middle triple, loads2,3,4 | CLOSED hand | HOUSE_MIDDLE_TRIPLE_BRANCH_CLOSED.md; every hub owner, physical mask and actual mean |
-| Four loads,1,2,3,4 up to reflection | CLOSED hand | HOUSE_FOUR_LOAD_BRANCH_CLOSED.md; both reflected masks and complete endpoint/inner-contact cover |
+Root and separate independent full hand audits passed both final owner proofs, the end-triple assembly, the whole-house assembly and the whole ten-type cell assembly. **All four five-body coarse cells are now closed.** The older opposite-load C4 branch still keeps its declared canonical radius/Phi-minimizer premise. Under that common lower-bound setup, a surviving selected positive component has **6–9 bodies**, **3–7 noncollinear loaded resultants**, and at most27 scalar atoms.
 
-**Only the stated end-triple domain remains in C1.5.b0.** The authoritative coarse inventory stays six whole cells closed and52 open until that entire parent is closed. The unrestricted lower bound, original equality classification and full earlier prerequisite-chain audit remain OPEN. PR11 stays draft; no Lean compilation or CI was run.
+The authoritative inventory is now **seven whole cells closed and51 open**. The new closure is C1.5.b0; no six-body row is ticked. The next complete frontier is the six m=6 rows of [SIX_BODY_CYCLIC_FRONTIER.md](SIX_BODY_CYCLIC_FRONTIER.md), each retaining three arbitrary extra squares. The unrestricted sharp lower bound, original equality classification and full earlier prerequisite-chain audit remain OPEN. PR11 stays draft; no Lean compilation or CI was run.
 
-## Entire five-body fan closed; only the house remains at five bodies
+## Entire five-body fan and all other five-body graph families closed
 
 [FOUR_LOAD_FAN_EXCLUSION.md](FOUR_LOAD_FAN_EXCLUSION.md) now excludes the entire positive fan graph, for every positive-load mask, endpoint owner, physical circle-corner mask and actual shared-side mean. The proof retains the two inner bodies' degree-three equations and all four arbitrary completion squares. It needs no secondary minimizer.
 
@@ -39,7 +38,7 @@ The complete owner cover leaves exactly one hub-owned endpoint. All three opposi
 
 Root and independent full hand audits passed all three proofs and the complete assembly. The unique/shared proof's displayed polynomial identities and endpoint constants were also checked by exact rational arithmetic; their whole-interval sign proofs are in the source. No sampled angle or numerical pose is a premise.
 
-**Nine of the ten five-body biconnected graph types are excluded. The house is the sole remaining graph family in C1.5.b0**, with only the parallel, physical-unique lower-tip end-triple domain still open; the middle-triple and four-load orbits are closed. The coarse inventory stays **six closed and52 open**. The unrestricted theorem, original equality and full prerequisite-chain audit remain open. A fan subgraph with extra positive edges, including a leaf attachment, is outside this exact-component theorem.
+**All ten five-body biconnected graph types are excluded.** FIVE_BODY_BICONNECTED_CELL_CLOSED.md combines the C5, house and fan assemblies with the seven uniform graph exits. The coarse inventory stays **seven closed and51 open**. The unrestricted theorem, original equality and full prerequisite-chain audit remain open. A fan subgraph with extra positive edges, including a leaf attachment, is outside this exact-component theorem.
 
 ## Fan endpoint owner cover and house-domain reductions
 
@@ -51,7 +50,7 @@ Exactly one endpoint is therefore H-owned. Its opposite endpoint has precisely t
 
 The [tilted end-triple house domain](HOUSE_END_TRIPLE_TILTED_BYPASS_DOMAIN.md) now has two singleton bypass/endpoint contacts, weakly outward endpoint reactions with all zero-sign transitions classified, and a strictly outward roof reaction; the two endpoint contacts cannot both be bypass-owned. The [middle-triple all-unique selection](HOUSE_MIDDLE_TRIPLE_UNIQUE_FREE_HUB_SELECTION.md) removes a free hub normal using fixed positive circle-load ratios and translation balance, without fixing any shared mean. The subsequent all-mask free-hub theorem removes every radial free alternative as well; the subsequent complete parallel/nonparallel star proofs now exclude every one-owner contact as well.
 
-Root and separate independent full audits passed all eight sources in this earlier reduction checkpoint. The subsequent complete mixed-family proofs now close the entire fan. **The house remains open**, with six coarse cells closed and52 open; unrestricted sharpness, original equality and the full prerequisite-chain audit remain separate obligations.
+Root and separate independent full audits passed all eight sources in this earlier reduction checkpoint. The subsequent complete mixed-family proofs now close the entire fan. **The whole house is now closed**, with seven coarse cells closed and51 open; unrestricted sharpness, original equality and the full prerequisite-chain audit remain separate obligations.
 
 ## Six-body frontier: exhaustive attachment and plane-domain roadmap
 
@@ -59,17 +58,17 @@ Root and separate independent full audits passed all eight sources in this earli
 
 For an entire biconnected component, connectedness of the loaded noncontact graph forces at least five vertices on its exterior face. A six-body block is therefore an exterior hexagon with at most three noncrossing chords, or an exterior pentagon with one clear interior body. The hexagon has six necessary load-mask orbits. The complete pentagon spoke/chord analysis leaves five graph domains; the five-spoke graph is excluded. In the four-spoke graph without a chord, the all-four-spoke-loaded subfamily is excluded by the actual width-one channel and the new boundary-path separation theorem. Its surviving load masks require the missing-spoke rim vertex loaded and physically disjoint from the hub.
 
-Root and independent full audits passed the complete catalogue and geometric corollaries. **All six six-body coarse rows remain open**, and the first unresolved size is still five bodies. A closed component theorem is not applied to a block carrying additional positive forces. The authoritative count remains six closed and52 open.
+Root and independent full audits passed the complete catalogue and geometric corollaries. **All six six-body coarse rows remain open**, and the first unresolved size is now six bodies. A closed component theorem is not applied to a block carrying additional positive forces. The authoritative count remains seven closed and51 open.
 
 ## House and fan: completed geometric reductions
 
 [FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md](FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md) proves that the endpoints of every balanced four-body boundary path have center distance greater than1+sqrt(2). Every physical circle corner is less than15 degrees from its center; global positive load balance and the three actual contacts force the endpoint minor center angle above150 degrees. Consequently every pair of endpoint applications on a common hub has distance greater than1, including all shared-side means. This applies to the four-load fan and the house path3--1--4--2. Endpoint contacts cannot lie on the same hub side; two vertex applications must be opposite.
 
-[HOUSE_END_TRIPLE_PARALLEL_BYPASS_EXCLUSION.md](HOUSE_END_TRIPLE_PARALLEL_BYPASS_EXCLUSION.md) excludes the entire parallel-bypass family in either end-triple house mask. Actual contact geometry aligns both channel endpoints. The degree-two endpoint's two-corner mask is impossible; its unique-corner force and torque give d<=c. A shared upper bypass contact requires d>c, while the point alternative makes the roof contact impossible. Every actual mean and strict point-contact limit is covered. The genuinely tilted bypass remains only with its lower loaded body parallel to the transmitter and physically unique; every other lower mask is now excluded.
+[HOUSE_END_TRIPLE_PARALLEL_BYPASS_EXCLUSION.md](HOUSE_END_TRIPLE_PARALLEL_BYPASS_EXCLUSION.md) excludes the entire parallel-bypass family in either end-triple house mask. Actual contact geometry aligns both channel endpoints. The degree-two endpoint's two-corner mask is impossible; its unique-corner force and torque give d<=c. A shared upper bypass contact requires d>c, while the point alternative makes the roof contact impossible. Every actual mean and strict point-contact limit is covered. Its complete parallel/unique lower-tip residual is now excluded by the two final end-triple owner proofs, closing the full tilted bypass as well.
 
 [HOUSE_MIDDLE_TRIPLE_SHARED_HUB_EXCLUSION.md](HOUSE_MIDDLE_TRIPLE_SHARED_HUB_EXCLUSION.md) excludes every middle-triple hub contact whose normal is owned by both clear hubs. The roof-triangle signs and the full unloaded balances put the lower endpoint squares strictly on opposite sides of the hub support line, contradicting their contact. The theorem is radius-free and keeps arbitrary shared means. The subsequent all-mask free-hub selection also excludes strict free normals. The subsequent whole middle-triple assembly excludes every singleton one-owner alternative as well.
 
-Root and separate independent full audits passed all three sources. These are whole geometric implications and subfamily exclusions. **C1.5.b0 remains open**, with six coarse cells closed and52 open. The fan is now closed by its full assembly. The remaining house proofs retain every actual degree-three equation, all circle masks and all four physical completion squares.
+Root and separate independent full audits passed all three sources. These are whole geometric implications and subfamily exclusions. **C1.5.b0 is now closed**, with seven coarse cells closed and51 open. The fan is now closed by its full assembly. The complete house proofs retain every actual degree-three equation, all circle masks and all four physical completion squares.
 
 ## Entire C5 graph branch closed
 
@@ -77,13 +76,13 @@ Root and separate independent full audits passed all three sources. These are wh
 
 The [three-load theorem](FIVE_CYCLE_THREE_LOAD_EXCLUSION.md) bounds each transmitter's outward consecutive center angle by pi-theta/2, where theta=acos(9/25). The remaining boundary edge spans less than theta; the three angles cannot sum to2pi. The diagonal-channel estimate uses strict concavity of the actual aligned boundary-center curve over its entire interval. The [four-load theorem](FIVE_CYCLE_FOUR_LOAD_EXCLUSION.md) excludes both widths through actual center-distance and horizontal-displacement bounds. Every physical mask, zero individual corner weight, shared mean and all four extras are retained.
 
-Root and separate independent full audits passed the domain, both orbit proofs and their assembly. **After the subsequent complete fan theorem, only the house remains in C1.5.b0.** The coarse count remains six closed and52 open. This theorem does not apply degree-two equations at a vertex with additional positive edges.
+Root and separate independent full audits passed the domain, both orbit proofs and their assembly. **The subsequent complete fan and house assemblies now close all of C1.5.b0.** The coarse count remains seven closed and51 open. This theorem does not apply degree-two equations at a vertex with additional positive edges.
 
 [ONE_ARTICULATION_TRIANGLE_LEAF_EXCLUSION.md](ONE_ARTICULATION_TRIANGLE_LEAF_EXCLUSION.md) also closes every component consisting only of triangle petals and radial leaves at one common articulation. Each whole triangle and each leaf has strictly positive projection on that articulation's center, contradicting their global zero sum. Root and independent full audits passed. Distributed articulations and larger blocks remain separate families.
 
 ## Whole-cell closure: C1.4.b1
 
-[FOUR_BODY_BLOCK_ONE_LEAF_CELL_CLOSED.md](FOUR_BODY_BLOCK_ONE_LEAF_CELL_CLOSED.md) closes the entire four-body-block-plus-leaf cell: C4, diamond and K4, every attachment and load allocation, both radial leaf types, all physical corner masks and actual means, and all four other packing squares. **Six coarse cells are now closed and52 remain open.** Only C1.5.b0 remains among five-body cells.
+[FOUR_BODY_BLOCK_ONE_LEAF_CELL_CLOSED.md](FOUR_BODY_BLOCK_ONE_LEAF_CELL_CLOSED.md) closes the entire four-body-block-plus-leaf cell: C4, diamond and K4, every attachment and load allocation, both radial leaf types, all physical corner masks and actual means, and all four other packing squares. **Seven coarse cells are now closed and51 remain open.** The subsequent full C1.5.b0 assembly closes the last five-body cell.
 
 The final [three-loaded C4 theorem](FOUR_CYCLE_THREE_LOAD_BRANCH_CLOSED.md) covers both full S-articulation families and every D-articulation contact. For S, actual boundary-center angles exceed the span available to two contacts. For D, positive radial concurrence and complete singleton/shared-side cases exclude every nonparallel pair. The parallel proof first excludes opposite horizontal signs; its aligned/tilted wall-tip theorems then make U's horizontal balance impossible. All owner, physical-mask, actual-mean and endpoint alternatives are retained.
 
@@ -97,7 +96,7 @@ Root and separate independent full audits passed all nine new C4 sources and ass
 
 The remaining unique-corner D hub is now covered by the complete [parallel-hub](D_DIAMOND_PARALLEL_HUB_EXCLUSION.md), [horizontal-contact](D_DIAMOND_HORIZONTAL_HUB_EXCLUSION.md) and [oblique-contact](D_DIAMOND_OBLIQUE_HUB_EXCLUSION.md) theorems. A uniform [lower-tip-owned estimate](D_DIAMOND_LOWER_TIP_OWNED_EXCLUSION.md) handles the remaining owner alternative. Each proof uses degree-two force and torque only at an actual tip; the hub retains its third contact. Every singleton owner and every variable shared mean is included.
 
-Root and separate independent full audits passed all five sources and the assembly. **C1.4.b1 is now closed** by the subsequent complete three-loaded C4 theorem and parent assembly. The live count is six closed and52 open.
+Root and separate independent full audits passed all five sources and the assembly. **C1.4.b1 is now closed** by the subsequent complete three-loaded C4 theorem and parent assembly. The live count is seven closed and51 open.
 
 ## Whole boundary-cycle closure: physical C7 capacity one
 
@@ -105,13 +104,13 @@ Root and separate independent full audits passed all five sources and the assemb
 
 The parallel inner-pair branch was already excluded. [C7_RIGHT_OUTSIDE_INNER_EXCLUSION.md](C7_RIGHT_OUTSIDE_INNER_EXCLUSION.md) now excludes the entire right-outside branch, and [C7_LEFT_OUTSIDE_INNER_EXCLUSION.md](C7_LEFT_OUTSIDE_INNER_EXCLUSION.md) excludes the entire asymmetric left-outside branch with the original SAT owner unchanged. Both identify an outgoing ray witness with the actual far-face boundary unit, covering every separator owner and sign. Actual outer corners supply the constraint missing from center-only relaxations. The final asymmetric bounds differ by a strict margin at least197/72000.
 
-Root and separate full hand audits passed both branch proofs and the assembly. **G3.B is CLOSED hand**, including its equality endpoint. Every surviving positive component contains a physically circle-clear body. The mixed seven-body coarse cell remains open; the coarse count stays **six closed and52 open**. The unrestricted theorem, equality classification and full prerequisite-chain audit remain open.
+Root and separate full hand audits passed both branch proofs and the assembly. **G3.B is CLOSED hand**, including its equality endpoint. Every surviving positive component contains a physically circle-clear body. The mixed seven-body coarse cell remains open; the coarse count stays **seven closed and51 open**. The unrestricted theorem, equality classification and full prerequisite-chain audit remain open.
 
 ## New whole-cell closure
 
 [TRIANGLE_LEAF_CELL_CLOSED.md](TRIANGLE_LEAF_CELL_CLOSED.md) closes **C1.3.b1 / G3.M4.ALL**. The full core reduction, entire S branch, entire selected oblique D branch and entire parallel-left D branch have complete proofs. Their simultaneous pre-stress normal selections retain the actual physical geometry, planar uncrossing, sparsity and unique component. Both D proofs and the parent assembly have independent hand audits.
 
-The unique positive cyclic component now has **5–9 bodies** and **3–7 noncollinear circle-loaded resultants**. Every other physical square remains. The coarse inventory is **six whole cells closed and 52 open**; these counts are not progress percentages.
+The unique positive cyclic component now has **6–9 bodies** and **3–7 noncollinear circle-loaded resultants**. Every other physical square remains. The coarse inventory is **seven whole cells closed and 51 open**; these counts are not progress percentages.
 
 ### Completed whole-cell continuation
 
@@ -126,11 +125,11 @@ C7_CENTER_POLYGON_LOCALIZATION.md places every completion unit inside the strict
 
 [BOWTIE_CELL_CLOSED.md](BOWTIE_CELL_CLOSED.md) closes the entire five-body bowtie C2.33.b0. The complete end-triangle theorem proves c_A dot M>0 for every actual owned/free articulation interface, every one-/two-circle-corner mask and every shared-side mean. Its new [mixed-owner](BOWTIE_MIXED_OWNER_PRESSURE.md), [radial-free](BOWTIE_RADIAL_FREE_INTERFACE_PRESSURE.md) and [shared/free](BOWTIE_SHARED_SIDE_FREE_INTERFACE.md) proofs retain the same compatible pre-certificate selection. The two bowtie block resultants must be opposite, contradicting their positive projections. All four extras remain arbitrary; no secondary minimizer or regional capacity estimate is needed.
 
-Root and independent full hand audits passed every local source and the parent assembly. Review corrected an omitted variance term in an intermediate mixed-owner draft: the final proof uses the true circle-force mean length, with separate valid coefficients for unique and two-corner masks. The complete corrected source is committed. The coarse count is now **six whole cells closed and52 open**. The remaining five-body parent is C1.5.b0; the unrestricted theorem and equality remain open.
+Root and independent full hand audits passed every local source and the parent assembly. Review corrected an omitted variance term in an intermediate mixed-owner draft: the final proof uses the true circle-force mean length, with separate valid coefficients for unique and two-corner masks. The complete corrected source is committed. The coarse count is now **seven whole cells closed and51 open**. The last five-body parent C1.5.b0 is now closed; the unrestricted theorem and equality remain open.
 
 ## Latest whole-region and physical-mask checkpoint
 
-[HOUSE_HOLE_EMPTY.md](HOUSE_HOLE_EMPTY.md) closes the entire house's bounded completion regions. An enclosed unit forces an aligned four-cycle cross; at a clear degree-three hub, every possible roof reaction has nonpositive outward-side projection while both cycle reactions have strictly negative projection. The positive force balance fails. The loaded roof and forbidden boundary triangle guarantee such a clear hub. Every load mask and actual mean is covered: all four house extras are exterior, while their joint exterior bound remains open.
+[HOUSE_HOLE_EMPTY.md](HOUSE_HOLE_EMPTY.md) closes the entire house's bounded completion regions. An enclosed unit forces an aligned four-cycle cross; at a clear degree-three hub, every possible roof reaction has nonpositive outward-side projection while both cycle reactions have strictly negative projection. The positive force balance fails. The loaded roof and forbidden boundary triangle guarantee such a clear hub. Every load mask and actual mean is covered: all four house extras are exterior. The subsequent direct whole-house exclusion retires the alternative exterior-capacity obligation without asserting that separate bound.
 
 [D_DIAMOND_RADIAL_HUB_EXCLUSION.md](D_DIAMOND_RADIAL_HUB_EXCLUSION.md) excludes the entire physical two-circle-corner second-hub mask in the D-leaf diamond, for every mask of its two tips. The proof retains both individual zero corner weights, every free normal and all shared means. Global corner directions, the full A support-sign cover and a purely geometric wall-pair theorem give the contradiction. The later full unique-hub cover excludes the last second-hub mask and closes the entire diamond branch.
 
@@ -144,7 +143,7 @@ Root and independent full hand audits passed every local source and the parent a
 
 [BOWTIE_TIP_OWNED_PRESSURE.md](BOWTIE_TIP_OWNED_PRESSURE.md) and [BOWTIE_PARALLEL_PRESSURE.md](BOWTIE_PARALLEL_PRESSURE.md) prove c_A dot M>0 for two whole end-triangle domains, all physical circle masks retained. The parallel theorem explicitly includes coincident shared-wall endpoint means. Two blocks drawn from those domains cannot form a bowtie, since their resultants are opposite. The later full owner/free cover now closes the entire bowtie cell.
 
-[FIVE_CYCLE_THREE_LOAD_DOUBLE_DIAGONAL_EXCLUSION.md](FIVE_CYCLE_THREE_LOAD_DOUBLE_DIAGONAL_EXCLUSION.md) excludes the entire two-diagonal-transmitter chart: legitimate endpoint ownership forces a common frame, and the actual BC contact gives R^2>=(9+6sqrt(2))/4>Q. The three-load C5 now has nonparallel isolated-load forces and at most one diagonal transmitter. The later full three-/four-load theorems now close every C5 component. The later whole fan theorem leaves only the house open.
+[FIVE_CYCLE_THREE_LOAD_DOUBLE_DIAGONAL_EXCLUSION.md](FIVE_CYCLE_THREE_LOAD_DOUBLE_DIAGONAL_EXCLUSION.md) excludes the entire two-diagonal-transmitter chart: legitimate endpoint ownership forces a common frame, and the actual BC contact gives R^2>=(9+6sqrt(2))/4>Q. The three-load C5 now has nonparallel isolated-load forces and at most one diagonal transmitter. The later full three-/four-load theorems now close every C5 component. The later full fan and house theorems close their whole parent cell.
 
 [C7_INNER_OUTSIDE_FACE_CORNER_EXCLUSION.md](C7_INNER_OUTSIDE_FACE_CORNER_EXCLUSION.md) improves the full inner-pair domain to0<sin(theta)<4/15 by an all-frame outgoing-ray theorem. [C7_INNER_PAIR_FAR_FACE_CENTERS.md](C7_INNER_PAIR_FAR_FACE_CENTERS.md) then extracts two actual boundary centers beyond the pair's opposite outward faces and proves their exact diameter-gap budget, with every offset and outer frame retained. The full nonparallel capacity implication is now proved by the right- and left-outside theorems. These complete local results have root and separate full hand audits.
 
@@ -191,16 +190,16 @@ Root and independent full hand audits passed every local source and the parent a
 
 These are hand implications. The full prerequisite-chain audit and Lean verification remain separate open work.
 
-## Execute the remaining mixed five-body frontier
+## Execute the remaining mixed six-body frontier
 
-The identity m=1+sum(block_size-1)+bridges gives exactly four five-body cyclic cells. C1.3.b2 is now closed by the full attachment/classification/capacity assembly; only C1.5.b0 remains, retaining four arbitrary physical completion squares.
+The identity m=1+sum(block_size-1)+bridges gives exactly four five-body cyclic cells. All four cells are now closed by their complete assemblies, retaining every physical completion square. The first unresolved body count is six.
 
 | Order | Whole gate | Exhaustive scope | Required exit |
 | --- | --- | --- | --- |
 | CLOSED | C1.3.b2 | Entire three-attachment triangle-with-two-bridges cell | TRIANGLE_TWO_BRIDGES_CELL_CLOSED.md; upper/lower capacities3 and0 over the whole exact slider |
 | CLOSED | C1.4.b1 | Every C4/diamond/K4 block, leaf and load allocation | FOUR_BODY_BLOCK_ONE_LEAF_CELL_CLOSED.md; canonical scope retained |
-| 3 | C1.5.b0 | House end-triple only: parallel/physical-unique lower tip; middle-triple and four-load CLOSED | Finish that entire remaining domain with every actual mean, other mask and all four extras |
-| 4 | C2.33.b0 | Entire bowtie with four loaded tips and all extra physical contacts | CLOSED; full pressure/selection/core assembly |
+| CLOSED | C1.5.b0 | All ten biconnected graph types, including every C5/house/fan orbit | FIVE_BODY_BICONNECTED_CELL_CLOSED.md; full selected-certificate assembly |
+| CLOSED | C2.33.b0 | Entire bowtie with four loaded tips and all extra physical contacts | CLOSED; full pressure/selection/core assembly |
 | CLOSED | G3.B.SHARP | Every physical boundary C7 with two arbitrary extras | Capacity one throughout the window, including Q; no stress premise |
 | 5 | G3.M6–M9 | Every remaining mixed cell in increasing component size | Sharp bound or full completion exclusion for each entire cell |
 | 6 | G4 | All original nine-square packings | Universal R^2>=1105/256 |

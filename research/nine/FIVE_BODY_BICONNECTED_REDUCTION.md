@@ -6,7 +6,7 @@
 2. the house graph: a four-cycle with a triangular roof on one edge;
 3. the fan over a four-vertex path: one vertex joined to all four path vertices.
 
-All physical circle/load masks and all four completion squares remain. This is an exhaustive reduction of C1.5.b0, not its sharp metric or completion theorem. No numerical graph or pose search is a premise of the proof below.
+All physical circle/load masks and all four completion squares remain. This is the exhaustive graph/load reduction of C1.5.b0. The subsequent full cell closure is assembled in FIVE_BODY_BICONNECTED_CELL_CLOSED.md. No numerical graph or pose search is a premise of the proof below.
 
 ## 1. Inputs and the positive-graph complement
 
@@ -213,8 +213,9 @@ nonparallel physical-unique lower tip in the end-triple house. Its
 fixed singleton free contact is removed by the compatible selection;
 the B-owned branch contradicts the true endpoint torque and the
 H-owned branch contradicts an exact incident-support distance<=1.
-The whole remaining cover is B parallel U with either physical mask,
-or B nonparallel with two physical circle corners. All N/T masks and
+At this intermediate reduction the cover is B parallel U with either
+physical mask, or B nonparallel with two physical circle corners; Section4.9
+now closes every subsequent residual. All N/T masks and
 every actual U/roof mean remain.
 
 HOUSE_MIDDLE_TRIPLE_FREE_HUB_SELECTION.md removes every free AD
@@ -240,7 +241,7 @@ the opposite endpoint's full owner and mask remain arbitrary.
 Root and separate independent full audits passed all five sources.
 These are complete branch exclusions and residual-domain covers;
 these earlier residuals are now closed or refined by Section4.8. The coarse
-inventory remains six closed and52 open.
+inventory remains seven closed and51 open.
 
 ### 4.7. Parallel middle star and tilted radial end-tip owner families closed
 
@@ -271,7 +272,7 @@ side-interior point.
 Root and independent full hand audits passed all five sources. The
 specified four-load residual is fully excluded by Section4.8. The middle
 triple is closed there as well; only the stated end-triple refinement
-remains, and the coarse count is still six closed and52 open.
+remains, and the coarse count is still seven closed and51 open.
 
 ### 4.8. Entire four-load and middle-triple orbits closed; all radial lower tips excluded
 
@@ -304,28 +305,58 @@ tilted H-owned/free families. The last tilted B-owned side has true
 torque tau>1/2, a full-frame bound c<5/8, two uniform upper-chord angle
 bounds, and strict all-corner radius bounds for every tilted or parallel
 upper N. Its entire actual transmitter mean remains. Both parallel
-radial lower axes are excluded as well. Thus the only remaining house
-has an end-triple load mask, lower B parallel U, and exactly one physical
-circle corner at B. All N/T masks, actual means and four extras remain.
+radial lower axes are excluded as well. At this intermediate stage the residual is an end-triple load mask,
+lower B parallel U, and exactly one physical circle corner at B;
+Section4.9 now closes that entire residual. All N/T masks, actual means and four extras remain.
 
 Root and separate independent full audits passed all six new source
 and assembly manuscripts. Exact arithmetic also verifies every displayed
-radial margin, its discriminant and derivative factorization. The coarse
-cell C1.5.b0 stays open until its last entire end-triple domain is closed.
+radial margin, its discriminant and derivative factorization. The subsequent Section4.9 closes that last entire end-triple domain,
+and the parent cell assembly is recorded in Section5.
 
-## 5. Exact remaining whole-cell work
+### 4.9. The final end-triple and whole house are closed
 
-**Theorem 5.1.** Under the stated selected-certificate inputs, every five-body biconnected positive component belongs to one of the three graph families in Section 4, with one of its stated necessary load masks. The seven other abstract biconnected graph types are completely excluded, and no completion square is discarded.
+HOUSE_END_TRIPLE_PARALLEL_UNIQUE_FREE_EXCLUSION.md retains the full
+actual internal UB mean in a B+U block selection. Its surviving shared
+UN frame has an exact HN point and actual HT mean from full H torque;
+the complete circle equations and proper roof concurrence contradict
+the actual N,T boundary contact angle. Every N/T physical mask remains.
 
-The subsequent complete C5 and fan assemblies exclude the eighth and
-ninth of the ten graph types. Every surviving five-body biconnected
-component is therefore a house. Section4.8 closes its full middle-triple
-and four-load orbits. The only remaining family is the end-triple with
-lower B parallel U and one physical circle corner. Every actual mean,
-other physical mask, permitted zero-weight contact and four extras remain. A C5 or fan subgraph with extra positive
-edges does not inherit either exact-component theorem.
+HOUSE_END_TRIPLE_PARALLEL_UNIQUE_HUB_EXCLUSION.md retains the full
+clear H star and removes only genuine free fixed-point normals before
+KKT. Its actual chord excludes parallel N and uniformly bounds the
+roof angle below pi/8. The physical triangle routes all NT features;
+N's true degree-three torque and full radial-axis cover retain every
+circle mask and weight endpoint. The whole perpendicular transition
+has a strict squared-radius margin2/5; every remaining unique or radial
+T mask has a separate exact exit. No N force is deleted.
 
-C1.5.b0 remains OPEN until the whole house family is excluded or receives
-a full sharp completion theorem. The current coarse count is six closed
-and52 open. The house holes are empty. A joint exterior bound for its sole
-remaining end-triple domain is an alternative to a complete core exclusion. No Lean compilation or CI was run.
+HOUSE_END_TRIPLE_BRANCH_CLOSED.md combines these with the completed
+parallel-bypass, tilted-unique and entire radial-lower-tip sources.
+Both reflected end triples are excluded. HOUSE_POSITIVE_COMPONENT_EXCLUSION.md
+then derives the exact complement-path load intervals and combines
+all three whole house orbit assemblies. The entire house graph is
+excluded, with all four extras retained and no secondary-minimizer or
+joint exterior-capacity premise. Root and independent full audits
+passed both final proofs and both assemblies.
+
+## 5. The entire five-body biconnected cell is closed
+
+**Theorem5.1.** The original complete graph/load cover has ten abstract
+types and its seven uniform exclusions leave only C5, house and fan.
+Their complete whole-graph assemblies now exclude every remaining
+selected five-body biconnected positive component in the declared
+radius window. All physical masks, actual means and four extras remain.
+
+FIVE_BODY_BICONNECTED_CELL_CLOSED.md gives the full ten-type proof
+table, exact complement count and one compatible certificate assembly.
+Root and independent full audits passed. Thus C1.5.b0 is CLOSED hand,
+and the authoritative inventory is seven whole cells closed and51 open.
+All four five-body coarse cells are now closed at the stated canonical
+lower-bound minimizer, so every remaining selected positive component
+has at least six bodies.
+
+The exact-component degree assumptions do not transfer to a C5, house
+or fan subgraph with additional positive forces. Larger mixed cells,
+the unrestricted radius theorem, original equality and full earlier
+prerequisite-chain audit remain open. No Lean compilation or CI was run.
