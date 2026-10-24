@@ -218,3 +218,12 @@ The hexagon has six necessary bare-cycle load orbits. The surviving four-spoke g
 - [x] HOUSE_FOUR_LOAD_ENDPOINT_OWNER_REDUCTION.md exhausts the actual three-spoke house geometry; all mixed and non-H-owned cases except one physical-unique free lower/shared-side domain are closed. Both-H ownership is exactly a three-collinear-normal wall with the true weighted mean identity.
 - [x] BOUNDARY_UNIT_SUPPORT_HEIGHT.md proves a uniform full-frame near support-height inequality; HOUSE_FOUR_LOAD_COLLINEAR_WALL_EXCLUSION.md combines it with actual endpoint moments and the coupled angle domain to contradict the actual unit gap with a required height sum>2241/2225. The entire wall is excluded, all masks and shared means retained.
 - [ ] Complete the three remaining house orbit domains recorded above. Root and independent full audits passed all five new sources. C1.5.b0 stays open; the authoritative count remains six closed and52 open. Unrestricted sharpness, original equality and full-chain audit remain open.
+
+## Complete parallel middle-star and radial end-tip owner exclusions
+
+- [x] HOUSE_MIDDLE_TRIPLE_OWNED_HUB_DOMAIN.md gives every remaining one-owner hub feature, actual lower side mean, true clear-hub concurrence and parallel-roof radial mask.
+- [x] HOUSE_MIDDLE_TRIPLE_FREE_EXTERNAL_SELECTION.md removes all free DC directions by the exact local unloaded-D determinant, independent of circle masks and all exterior shared means.
+- [x] HOUSE_MIDDLE_TRIPLE_PARALLEL_STAR_EXCLUSION.md excludes the entire parallel-A star by a strict full-frame horizontal-width contradiction. Every owner and original wall mean is included; the argument is radius-free.
+- [x] HOUSE_MIDDLE_TRIPLE_NONPARALLEL_FREE_FEATURES.md removes free AT and retains free AB/DT only opposite genuine shared AT/DC sides. All three complete fixed-star conditions are imposed simultaneously before multipliers, with matched-junction independence checked.
+- [x] HOUSE_END_TRIPLE_RADIAL_HUB_OWNER_EXCLUSION.md removes H-owned and free HB for the entire tilted radial lower-tip family. Every tilted/aligned upper-square frame, side mean and circle mask is included in the strict corner-radius contradiction.
+- [ ] Finish the full nonparallel-A middle star; the end-triple B-parallel or tilted-radial B-owned domains; and the four-load unique-free lower/shared-side domain. All five new sources passed root and independent full audits. The ledger stays six closed and52 open; unrestricted T9, original equality and full-chain audit remain open.

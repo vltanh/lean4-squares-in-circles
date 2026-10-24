@@ -242,6 +242,37 @@ These are complete branch exclusions and residual-domain covers;
 none of the three house load orbits is yet fully closed. The coarse
 inventory remains six closed and52 open.
 
+### 4.7. Parallel middle star and tilted radial end-tip owner families closed
+
+HOUSE_MIDDLE_TRIPLE_OWNED_HUB_DOMAIN.md gives the full one-owner
+middle-house chart, including the entire lower side-mean interval,
+both actual clear-hub concurrences and the parallel-roof radial mask.
+HOUSE_MIDDLE_TRIPLE_FREE_EXTERNAL_SELECTION.md excludes every free
+DC direction by a fixed unloaded-hub determinant, with no circle-mask
+premise. HOUSE_MIDDLE_TRIPLE_PARALLEL_STAR_EXCLUSION.md then excludes
+the entire parallel-A star: the roof forces b>1/3, while the C-owned
+frame must have horizontal width both<sqrt(2)*a and>=1+b>sqrt(2)*a.
+
+HOUSE_MIDDLE_TRIPLE_NONPARALLEL_FREE_FEATURES.md gives the complete
+remaining local selection. AT is owned; free AB can remain only
+opposite a genuinely shared AT side, and free DT only opposite a
+genuinely shared DC side. Their variable means are explicitly kept.
+The full nonparallel-A star and its genuine parallel-roof radial-S
+mask remain open.
+
+HOUSE_END_TRIPLE_RADIAL_HUB_OWNER_EXCLUSION.md excludes every
+H-owned or free HB normal for a tilted physical-radial lower B.
+The actual contact chord forces every corner of the loaded N strictly
+inside the disk, covering its whole tilted and parallel frame domains
+and all actual means. Thus the remaining end-triple cover is B parallel
+U with either physical mask, or tilted radial B owning HB at a strict
+side-interior point.
+
+Root and independent full hand audits passed all five sources. The
+four-load house still retains its specified unique-free lower endpoint
+with a shared boundary side. All three load orbits remain open and
+the coarse count remains six closed and52 open.
+
 ## 5. Exact remaining whole-cell work
 
 **Theorem 5.1.** Under the stated selected-certificate inputs, every five-body biconnected positive component belongs to one of the three graph families in Section 4, with one of its stated necessary load masks. The seven other abstract biconnected graph types are completely excluded, and no completion square is discarded.
