@@ -5,17 +5,33 @@
 
 **The unrestricted lower bound R^2>=1105/256 and complete equality classification remain OPEN.** The construction attains Q. The full execution tree, exact subgates and boundary cases are in [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md).
 
-## Fan reduced to exactly one hub-owned endpoint; house domains sharpened
+## Entire five-body fan closed; only the house remains at five bodies
+
+[FOUR_LOAD_FAN_EXCLUSION.md](FOUR_LOAD_FAN_EXCLUSION.md) now excludes the entire positive fan graph, for every positive-load mask, endpoint owner, physical circle-corner mask and actual shared-side mean. The proof retains the two inner bodies' degree-three equations and all four arbitrary completion squares. It needs no secondary minimizer.
+
+The complete owner cover leaves exactly one hub-owned endpoint. All three opposite-endpoint families are now closed:
+
+| Complete mixed family | Full contradiction |
+| --- | --- |
+| [Tip-owned opposite endpoint](FAN_MIXED_TIP_ENDPOINT_EXCLUSION.md) | Actual long-arc port order, including a shared mean at the hub corner, gives northwest/southwest centers. The two full endpoint height bounds require more than the hub's unit height. |
+| [Unique-corner free endpoint with a shared boundary neighbor](FAN_UNIQUE_FREE_SHARED_ENDPOINT_EXCLUSION.md) | Exact local contact fixes the shared offset; full hub force and torque bound the opposite side parameter. The complete circle equations force its application norm below11/20, while every point of the other loaded square has norm at least R-sqrt(2)>11/20. |
+| [Physical radial free endpoint](FAN_HUB_OWNED_RADIAL_FREE_ENDPOINT_EXCLUSION.md) | Distinct inner-vertex routing and the full corner-mean port proof give the exact radial height. Both endpoint allocations in the full concavity argument exceed the available unit height. |
+
+Root and independent full hand audits passed all three proofs and the complete assembly. The unique/shared proof's displayed polynomial identities and endpoint constants were also checked by exact rational arithmetic; their whole-interval sign proofs are in the source. No sampled angle or numerical pose is a premise.
+
+**Nine of the ten five-body biconnected graph types are excluded. The house is the sole remaining graph family in C1.5.b0**, with its end-triple, middle-triple and four-load orbits. The coarse inventory stays **six closed and52 open**. The unrestricted theorem, original equality and full prerequisite-chain audit remain open. A fan subgraph with extra positive edges, including a leaf attachment, is outside this exact-component theorem.
+
+## Fan endpoint owner cover and house-domain reductions
 
 [FAN_ENDPOINT_OWNER_REDUCTION.md](FAN_ENDPOINT_OWNER_REDUCTION.md) gives the full remaining four-load fan cover. The [both-hub-owned theorem](FAN_HUB_OWNED_ENDPOINT_EXCLUSION.md) excludes equal, opposite and perpendicular hub axes, retaining all actual shared means. The [non-hub-owned theorem](FAN_NON_HUB_OWNED_ENDPOINT_EXCLUSION.md) excludes every pair with neither endpoint owned by H: unique/free/shared cases have a full torque contradiction, and physical radial-free endpoints satisfy the same strict metric bound as [tip-owned endpoints](FAN_TIP_OWNED_ENDPOINT_EXCLUSION.md).
 
-Exactly one endpoint is therefore H-owned. Its opposite endpoint has precisely three remaining full physical-feature possibilities: a tip-owned singleton; a unique-corner free contact opposite a genuine shared boundary side; or a two-corner radial free contact with two distinct inner-vertex applications. All means and all four extras remain. These three mixed families are the exact open fan obligation at this checkpoint.
+Exactly one endpoint is therefore H-owned. Its opposite endpoint has precisely three remaining full physical-feature possibilities: a tip-owned singleton; a unique-corner free contact opposite a genuine shared boundary side; or a two-corner radial free contact with two distinct inner-vertex applications. All means and all four extras remain. The three complete mixed-family theorems above now exclude all of them.
 
 [THREE_BOUNDARY_PATH_RESULTANT_CONE.md](THREE_BOUNDARY_PATH_RESULTANT_CONE.md) proves that the middle resultant of every actual three-boundary path is a strictly positive combination of its endpoint resultants, without a degree-two premise. It excludes the four-load house mask with all three hub neighbors radial, and a fan with its sole unique-corner body internal. It also supplies the geometric reweighting needed by [the four-load house tip-owned endpoint theorem](HOUSE_FOUR_LOAD_TIP_OWNED_ENDPOINT_EXCLUSION.md); that transfer keeps its three genuine hub forces and every original body equation.
 
 The [tilted end-triple house domain](HOUSE_END_TRIPLE_TILTED_BYPASS_DOMAIN.md) now has two singleton bypass/endpoint contacts, weakly outward endpoint reactions with all zero-sign transitions classified, and a strictly outward roof reaction; the two endpoint contacts cannot both be bypass-owned. The [middle-triple all-unique selection](HOUSE_MIDDLE_TRIPLE_UNIQUE_FREE_HUB_SELECTION.md) removes a free hub normal using fixed positive circle-load ratios and translation balance, without fixing any shared mean. Its radial masks and one-owner hub contacts remain.
 
-Root and separate independent full audits passed all eight new sources. **The fan and house remain open at this checkpoint**, with six coarse cells closed and52 open. The complete mixed exits, unrestricted theorem, original equality and full prerequisite-chain audit remain separate obligations.
+Root and separate independent full audits passed all eight sources in this earlier reduction checkpoint. The subsequent complete mixed-family proofs now close the entire fan. **The house remains open**, with six coarse cells closed and52 open; unrestricted sharpness, original equality and the full prerequisite-chain audit remain separate obligations.
 
 ## Six-body frontier: exhaustive attachment and plane-domain roadmap
 
@@ -33,7 +49,7 @@ Root and independent full audits passed the complete catalogue and geometric cor
 
 [HOUSE_MIDDLE_TRIPLE_SHARED_HUB_EXCLUSION.md](HOUSE_MIDDLE_TRIPLE_SHARED_HUB_EXCLUSION.md) excludes every middle-triple hub contact whose normal is owned by both clear hubs. The roof-triangle signs and the full unloaded balances put the lower endpoint squares strictly on opposite sides of the hub support line, contradicting their contact. The theorem is radius-free and keeps arbitrary shared means. Singleton contacts owned by only one hub and strict free normals remain open.
 
-Root and separate independent full audits passed all three sources. These are whole geometric implications and subfamily exclusions. **C1.5.b0 remains open**, with six coarse cells closed and52 open. The remaining fan and house proofs retain every actual degree-three/four equation, all circle masks and all four physical completion squares.
+Root and separate independent full audits passed all three sources. These are whole geometric implications and subfamily exclusions. **C1.5.b0 remains open**, with six coarse cells closed and52 open. The fan is now closed by its full assembly. The remaining house proofs retain every actual degree-three equation, all circle masks and all four physical completion squares.
 
 ## Entire C5 graph branch closed
 
@@ -41,7 +57,7 @@ Root and separate independent full audits passed all three sources. These are wh
 
 The [three-load theorem](FIVE_CYCLE_THREE_LOAD_EXCLUSION.md) bounds each transmitter's outward consecutive center angle by pi-theta/2, where theta=acos(9/25). The remaining boundary edge spans less than theta; the three angles cannot sum to2pi. The diagonal-channel estimate uses strict concavity of the actual aligned boundary-center curve over its entire interval. The [four-load theorem](FIVE_CYCLE_FOUR_LOAD_EXCLUSION.md) excludes both widths through actual center-distance and horizontal-displacement bounds. Every physical mask, zero individual corner weight, shared mean and all four extras are retained.
 
-Root and separate independent full audits passed the domain, both orbit proofs and their assembly. **Only house and four-load fan remain in C1.5.b0.** The coarse count remains six closed and52 open. This theorem does not apply degree-two equations at a vertex with additional positive edges.
+Root and separate independent full audits passed the domain, both orbit proofs and their assembly. **After the subsequent complete fan theorem, only the house remains in C1.5.b0.** The coarse count remains six closed and52 open. This theorem does not apply degree-two equations at a vertex with additional positive edges.
 
 [ONE_ARTICULATION_TRIANGLE_LEAF_EXCLUSION.md](ONE_ARTICULATION_TRIANGLE_LEAF_EXCLUSION.md) also closes every component consisting only of triangle petals and radial leaves at one common articulation. Each whole triangle and each leaf has strictly positive projection on that articulation's center, contradicting their global zero sum. Root and independent full audits passed. Distributed articulations and larger blocks remain separate families.
 
@@ -108,7 +124,7 @@ Root and independent full hand audits passed every local source and the parent a
 
 [BOWTIE_TIP_OWNED_PRESSURE.md](BOWTIE_TIP_OWNED_PRESSURE.md) and [BOWTIE_PARALLEL_PRESSURE.md](BOWTIE_PARALLEL_PRESSURE.md) prove c_A dot M>0 for two whole end-triangle domains, all physical circle masks retained. The parallel theorem explicitly includes coincident shared-wall endpoint means. Two blocks drawn from those domains cannot form a bowtie, since their resultants are opposite. The later full owner/free cover now closes the entire bowtie cell.
 
-[FIVE_CYCLE_THREE_LOAD_DOUBLE_DIAGONAL_EXCLUSION.md](FIVE_CYCLE_THREE_LOAD_DOUBLE_DIAGONAL_EXCLUSION.md) excludes the entire two-diagonal-transmitter chart: legitimate endpoint ownership forces a common frame, and the actual BC contact gives R^2>=(9+6sqrt(2))/4>Q. The three-load C5 now has nonparallel isolated-load forces and at most one diagonal transmitter. The later full three-/four-load theorems now close every C5 component. House and four-load fan remain open.
+[FIVE_CYCLE_THREE_LOAD_DOUBLE_DIAGONAL_EXCLUSION.md](FIVE_CYCLE_THREE_LOAD_DOUBLE_DIAGONAL_EXCLUSION.md) excludes the entire two-diagonal-transmitter chart: legitimate endpoint ownership forces a common frame, and the actual BC contact gives R^2>=(9+6sqrt(2))/4>Q. The three-load C5 now has nonparallel isolated-load forces and at most one diagonal transmitter. The later full three-/four-load theorems now close every C5 component. The later whole fan theorem leaves only the house open.
 
 [C7_INNER_OUTSIDE_FACE_CORNER_EXCLUSION.md](C7_INNER_OUTSIDE_FACE_CORNER_EXCLUSION.md) improves the full inner-pair domain to0<sin(theta)<4/15 by an all-frame outgoing-ray theorem. [C7_INNER_PAIR_FAR_FACE_CENTERS.md](C7_INNER_PAIR_FAR_FACE_CENTERS.md) then extracts two actual boundary centers beyond the pair's opposite outward faces and proves their exact diameter-gap budget, with every offset and outer frame retained. The full nonparallel capacity implication is now proved by the right- and left-outside theorems. These complete local results have root and separate full hand audits.
 
@@ -163,7 +179,7 @@ The identity m=1+sum(block_size-1)+bridges gives exactly four five-body cyclic c
 | --- | --- | --- | --- |
 | CLOSED | C1.3.b2 | Entire three-attachment triangle-with-two-bridges cell | TRIANGLE_TWO_BRIDGES_CELL_CLOSED.md; upper/lower capacities3 and0 over the whole exact slider |
 | CLOSED | C1.4.b1 | Every C4/diamond/K4 block, leaf and load allocation | FOUR_BODY_BLOCK_ONE_LEAF_CELL_CLOSED.md; canonical scope retained |
-| 3 | C1.5.b0 | House with three mask orbits; fan with all four path vertices loaded; entire C5 CLOSED | Finish each complete graph/load family with every actual contact and four extras |
+| 3 | C1.5.b0 | House only, with all three mask orbits; entire C5 and fan CLOSED | Finish each whole house orbit with every actual contact and all four extras |
 | 4 | C2.33.b0 | Entire bowtie with four loaded tips and all extra physical contacts | CLOSED; full pressure/selection/core assembly |
 | CLOSED | G3.B.SHARP | Every physical boundary C7 with two arbitrary extras | Capacity one throughout the window, including Q; no stress premise |
 | 5 | G3.M6–M9 | Every remaining mixed cell in increasing component size | Sharp bound or full completion exclusion for each entire cell |

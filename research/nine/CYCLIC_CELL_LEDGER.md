@@ -107,7 +107,7 @@ The exact identity m=1+sum(block_size-1)+bridges yields these four cells, each w
 | --- | --- | --- |
 | C1.3.b2 | Every chain/same/distinct attachment, every leaf type and four extras | CLOSED; full slider upper/lower capacities3 and0, assembly audited |
 | C1.4.b1 | Every four-body block, leaf and load allocation | CLOSED; canonical-minimizer scope explicit |
-| C1.5.b0 | Eight graph types excluded; only house and four-load fan remain, with complete necessary masks | Full house/fan geometry and whole cell OPEN |
+| C1.5.b0 | Nine graph types excluded; only the house remains, with all three necessary mask orbits | Full house geometry and whole cell OPEN |
 | C2.33.b0 | Entire bowtie; all physical masks, means and extras | CLOSED; complete end-triangle pressure and opposite-resultant theorem |
 
 TRIANGLE_TWO_LEAVES_SAME_ARTICULATION_CLOSED.md assembles the complete S/S, D/S and D/D exclusions under one compatible selected certificate. Both root and independent assembly audits passed. The distinct-layout domain and port-orientation theorems exclude D/D, zero triangle moment and R<=sqrt(17)/2, while retaining every actual contact mean. TRIANGLE_DISTINCT_MIXED_LEAVES_EXCLUSION.md now excludes the entire distinct D/S family. The sole remaining C1.3.b2 family has two S leaves at distinct articulations, R>sqrt(17)/2, nonzero moment and one physical circle corner at C. DISTINCT_S_LEAF_CORE_AND_CORNER_MASK.md excludes all two-corner C masks and exhibits an exact positive core below Q with strict shared means. Blanket core exclusion is false. The full parallel-articulation reduction and exact wall classification now cover every surviving S/S core, and the upper/lower capacity theorems prove at most3 extras over the entire slider interval. TRIANGLE_TWO_BRIDGES_CELL_CLOSED.md consequently closes the whole C1.3.b2 cell.
@@ -195,7 +195,7 @@ Root and separate full hand audits passed both branch proofs and the assembly. *
 
 ## Entire C5 and one-common-articulation checkpoint
 
-- [x] FIVE_CYCLE_POSITIVE_COMPONENT_EXCLUSION.md closes every C5 load orbit, with fully audited proper-concurrence, three-load and four-load proofs. All masks, means and four extras remain. Only house and four-load fan remain in C1.5.b0; the count stays six closed and52 open.
+- [x] FIVE_CYCLE_POSITIVE_COMPONENT_EXCLUSION.md closes every C5 load orbit, with fully audited proper-concurrence, three-load and four-load proofs. All masks, means and four extras remain. The subsequent whole fan closure leaves only the house in C1.5.b0; the count stays six closed and52 open.
 - [x] ONE_ARTICULATION_TRIANGLE_LEAF_EXCLUSION.md excludes any number of triangle petals and radial leaves sharing one A within the nine-body budget. It applies to those larger-row layouts but does not close rows with distributed articulations, bridge chains or larger blocks.
 
 ## Whole house/fan subfamily checkpoint
@@ -203,7 +203,7 @@ Root and separate full hand audits passed both branch proofs and the assembly. *
 - [x] FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md gives endpoint center distance>1+sqrt(2), and distance>1 between every pair of actual endpoint hub applications, for the full balanced four-boundary path. It applies to fan4 and house4 with all shared means and circle masks.
 - [x] HOUSE_END_TRIPLE_PARALLEL_BYPASS_EXCLUSION.md excludes the entire parallel-bypass end-triple house, including point/shared transitions, both endpoint physical circle masks and all means. The genuinely tilted bypass remains open.
 - [x] HOUSE_MIDDLE_TRIPLE_SHARED_HUB_EXCLUSION.md excludes the entire both-hubs-owned contact in the middle triple, radius-free and with every actual mean. One-owner and strict free singleton contacts remain open.
-- [ ] Complete every remaining house orbit and the full four-load fan. The deep roadmap now separates the exact missing feature, local-equilibrium and joint-capacity gates. All three new sources passed root and independent full hand audits. No coarse row changes: six closed and52 open; unrestricted T9, equality and full-chain audit remain open.
+- [ ] Complete every remaining house orbit; the whole fan is now closed. The deep roadmap now separates the exact missing feature, local-equilibrium and joint-capacity gates. All three new sources passed root and independent full hand audits. No coarse row changes: six closed and52 open; unrestricted T9, equality and full-chain audit remain open.
 
 ## Complete six-body domain catalogue
 
@@ -213,7 +213,15 @@ The hexagon has six necessary bare-cycle load orbits. The surviving four-spoke g
 
 ## Complete fan endpoint owner cover and house-domain checkpoint
 
-- [x] FAN_ENDPOINT_OWNER_REDUCTION.md reduces every four-load fan to exactly one H-owned endpoint. The complete both-H-owned and neither-H-owned theorems retain all true means and physical masks. Exactly three full mixed domains remain: other-tip-owned, unique-free/shared, or two-corner radial-free.
+- [x] FAN_ENDPOINT_OWNER_REDUCTION.md reduces every four-load fan to exactly one H-owned endpoint. The complete both-H-owned and neither-H-owned theorems retain all true means and physical masks. The three full mixed domains are other-tip-owned, unique-free/shared, or two-corner radial-free; their subsequent complete theorems now close the fan.
 - [x] THREE_BOUNDARY_PATH_RESULTANT_CONE.md gives the full positive-cone identity and new fan/house radial-mask exclusions. HOUSE_FOUR_LOAD_TIP_OWNED_ENDPOINT_EXCLUSION.md transfers the endpoint metric contradiction using only three actual house hub forces and a geometric reweighting, with all original body equations intact.
 - [x] HOUSE_END_TRIPLE_TILTED_BYPASS_DOMAIN.md gives the entire tilted pose, singleton endpoint contacts and all weak/zero direction transitions. HOUSE_MIDDLE_TRIPLE_UNIQUE_FREE_HUB_SELECTION.md removes free AD for the full all-unique physical mask, retaining every shared mean and matched junction.
-- [ ] The three mixed fan exits and all remaining house orbits are still required. Root and independent full audits passed all eight new sources. The inventory stays six closed and52 open; unrestricted T9, original equality and full-chain audit remain open.
+- [ ] All remaining house orbits are still required; the three mixed fan exits are now complete. Root and independent full audits passed all eight new sources. The inventory stays six closed and52 open; unrestricted T9, original equality and full-chain audit remain open.
+
+## Entire five-body fan graph closed
+
+- [x] FAN_MIXED_TIP_ENDPOINT_EXCLUSION.md retains the full H-side mean, including its corner limit, proves the actual clockwise port order and center quadrants, and contradicts unit vertical separation over the whole coupled angular domain.
+- [x] FAN_UNIQUE_FREE_SHARED_ENDPOINT_EXCLUSION.md fixes the actual shared offset, bounds the opposite H-side parameter by full hub force and torque, and proves |P|<11/20<R-sqrt(2) over both complete physical circle masks and the whole radius window. The explicit polynomial sign proofs and exact rational coefficient audit are retained.
+- [x] FAN_HUB_OWNED_RADIAL_FREE_ENDPOINT_EXCLUSION.md proves actual radial inner-vertex routing and the full corner-mean port transfer, then contradicts unit height with its exact radial adapter. Both physical circle weights and zero individual endpoints remain.
+- [x] FOUR_LOAD_FAN_EXCLUSION.md assembles every load mask, endpoint owner and physical feature under the same permitted certificate. Root and independent full audits passed all proofs and the complete assembly. The entire fan is closed; no secondary minimizer or extra-square motion is used.
+- [ ] Only the house remains in C1.5.b0, with its entire end-triple, middle-triple and four-load families. No coarse row changes: six closed and52 open. Larger fan subgraphs with additional positive forces, unrestricted T9, original equality and full-chain audit remain open.

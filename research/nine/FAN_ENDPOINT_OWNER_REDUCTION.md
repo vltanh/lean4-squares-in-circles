@@ -2,7 +2,8 @@
 
 **Status: complete hand owner and physical-mask cover;
 root and separate independent full hand audits passed.** This is an assembly of whole-domain necessary
-implications, not an exclusion of the remaining fan.
+implications. The subsequent FOUR_LOAD_FAN_EXCLUSION.md supplies the complete
+three-family exits and closes the entire fan graph.
 
 Work in 79/40<=R<=sqrt(1105)/16 with the exact positive fan
 Hu_i (1<=i<=4), u_1u_2,u_2u_3,u_3u_4. H is unloaded and physically
@@ -118,11 +119,15 @@ endpoint belongs to one of the three complete physical-feature families
 above. None of their continuous means, independent frames or actual
 zero-stress contacts has been discarded.
 
-The fan remains OPEN until all three mixed families receive a whole
-core/radius contradiction or a uniform joint capacity at most3 for the
-four required extras. A failure of one contact owner or one physical
-circle mask does not close this assembly. The house has a different
-hub degree and is not covered merely by deleting a fan spoke.
+All three complete mixed families are now excluded by
+FAN_MIXED_TIP_ENDPOINT_EXCLUSION.md,
+FAN_UNIQUE_FREE_SHARED_ENDPOINT_EXCLUSION.md and
+FAN_HUB_OWNED_RADIAL_FREE_ENDPOINT_EXCLUSION.md. Their full force,
+actual-mean and metric arguments passed root and independent audits.
+FOUR_LOAD_FAN_EXCLUSION.md combines them with this cover and the
+three-load exclusion to close the entire fan graph. The house has a
+different hub degree and is not covered merely by deleting a fan spoke.
+C1.5.b0 remains open precisely through its house family.
 
 No secondary minimizer, new normal selection, numerical parameter
 cover, Lean compilation or CI is used by this assembly.

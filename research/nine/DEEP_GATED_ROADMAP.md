@@ -19,7 +19,7 @@ The complete lower-bound split has a closed boundary-only branch **G3.B**, by th
 | 4 | G3.M4.ALL | Combine D/S and their degeneracies; close the entire C1.3.b1 cell | CLOSED hand; independent assembly audit passed |
 | Whole branch closed | G3.B.SHARP | Every physical boundary C7 with two arbitrary extras | CLOSED hand; capacity one including Q, without positive stress |
 | 5a | G3.M5.T2 | Entire triangle-with-two-bridges cell, all three attachments and four extras | CLOSED hand; full S/S slider capacity3, independent parent assembly passed |
-| 5b | G3.M5.B5 | Sole remaining five-body cell C1.5.b0: house and four-load fan, with four extras | OPEN; C1.3.b2,C1.4.b1,C2.33.b0 are CLOSED |
+| 5b | G3.M5.B5 | Sole remaining five-body cell C1.5.b0: house only, all three load orbits and four extras | OPEN; C1.3.b2,C1.4.b1,C2.33.b0 are CLOSED |
 | 5c | G3.M6–M9 | Process the larger mixed cells by component size and the finite semantic cover below | OPEN |
 | 6 | G4 | Assemble the unrestricted sharp lower bound with the exact lower-window import | BLOCKED by G3 |
 | 7 | G5 | Necessity and converse for every equality packing, including free centers and rotations | OPEN |
@@ -1060,7 +1060,7 @@ Source: FIVE_BODY_BICONNECTED_REDUCTION.md, using NO_THREE_BOUNDARY_COMMON_NEIGH
 - [x] **M5.B5.DENSE** The adjacent-two-missing-edge graph, K5 minus an edge and K5 each contain K4 and are excluded.
 - [x] **M5.B5.WHEEL** The four-rim wheel's complement has components of size at most two, incompatible with a connected loaded noncontact graph on at least three vertices.
 - [x] **M5.B5.K23_BOOK_SUBDIVISION** K2,3, the three-page book and the once-subdivided K4 each force three loaded common neighbors of two vertices. The uniform exterior-face obstruction excludes all three entire graph types.
-- [x] **M5.B5.SURVIVORS** The first seven graph exclusions reduce to C5, house and the four-path fan. The subsequent full C5 theorem leaves only house and four-load fan; no existence of every remaining pose or mask is asserted.
+- [x] **M5.B5.SURVIVORS** The first seven graph exclusions reduce to C5, house and the four-path fan. The subsequent complete C5 and fan theorems leave only the house; no existence of every remaining pose or mask is asserted.
 - [x] **M5.B5.LOAD_COVER** The physical loaded noncontact graph is a subgraph of the positive-graph complement; therefore the induced complement on positive loads is connected. This supplies the exhaustive necessary masks below without confusing missing positive edges with physical separation.
 
 ##### M5.B5.C5 — entire three-/four-load component family [CLOSED hand]
@@ -1097,7 +1097,7 @@ Source: FIVE_BODY_BICONNECTED_REDUCTION.md, using NO_THREE_BOUNDARY_COMMON_NEIGH
 - [x] **M5.B5.C5.THREE.ALIGNED_CURVE** For an aligned boundary unit, R²=r²+r(c+s)+1/2 and x_R=r*c. Its derivative is negative and x_R''=-2rE/(2r+c+s)^3, where E=4r³c+4r²+rt[(c-s)²+2s²]-(r+t)(c-s)>3-sqrt(2)>0. Strict concavity holds throughout[0,pi/4].
 - [x] **M5.B5.C5.THREE.DIAGONAL_ANGLE** If delta_X+delta_Y<=theta/2, concavity/decrease give horizontal gap>=x_R(0)+x_R(theta/2)>1829/750>1+sqrt(2), contradicting its exact value. Every diagonal channel therefore also has angle<pi-theta/2.
 - [x] **M5.B5.C5.THREE.BOUND** Both channels span<pi-theta/2 and actual BC spans<theta. Their complete circular sum would be<2pi. The whole three-load orbit is excluded, including both residual width pairs and independently double-diagonal transmission after the parallel-T reduction.
-- [x] **M5.B5.C5.ALL** FIVE_CYCLE_POSITIVE_COMPONENT_EXCLUSION.md combines both orbits, the global <3-load exclusions and physical five-boundary-cycle impossibility. Root and independent full audits passed all four new files. All masks, actual means and four extras remain; no secondary minimizer is needed. Only house and four-load fan remain in C1.5.b0.
+- [x] **M5.B5.C5.ALL** FIVE_CYCLE_POSITIVE_COMPONENT_EXCLUSION.md combines both orbits, the global <3-load exclusions and physical five-boundary-cycle impossibility. Root and independent full audits passed all four new files. All masks, actual means and four extras remain; no secondary minimizer is needed. The subsequent complete fan theorem leaves only the house in C1.5.b0.
 
 ##### M5.B5.PATH4 — balanced boundary-path endpoint geometry [CLOSED hand]
 
@@ -1109,7 +1109,7 @@ Source: FIVE_BODY_BICONNECTED_REDUCTION.md, using NO_THREE_BOUNDARY_COMMON_NEIGH
 - [x] **M5.B5.PATH4.ALL_MEANS** Every pair of actual endpoint applications on any common unit hub has distance>1 by the triangle inequality. Compactness gives the same strict separation for the full physical contact sets; all aggregate shared-side means belong to those sets.
 - [x] **M5.B5.PATH4.FEATURES** The two full endpoint-contact sets cannot meet one hub side. If both applications are hub vertices, they are opposite. Neither equal hub forces nor degree-two equations at an inner path body were used.
 - [x] **M5.B5.PATH4.APPLICATIONS** The theorem applies to fan pathu1--u2--u3--u4 and house path3--1--4--2 with common hub5; reflection covers the other house four-load mask. Root and independent full audits passed.
-- [ ] **M5.B5.PATH4.REMAINING_FEATURES** Treat opposite-vertex, vertex/opposite-side and separated-side contact sets under the full actual hub/body equations. The distance>1 theorem alone does not exclude a unit hub.
+- [ ] **M5.B5.PATH4.REMAINING_FEATURES** The whole fan feature cover is now closed. Treat the remaining house opposite-vertex, vertex/opposite-side and separated-side contact sets under its three actual hub equations. The distance>1 theorem alone does not exclude a unit hub.
 
 ##### M5.B5.PATH3 — middle-resultant cone and full physical-mask corollaries [CLOSED hand]
 
@@ -1166,7 +1166,7 @@ Label the positive-graph complement path 1--2--3--4--5. Vertex3 is the loaded de
 - [ ] **M5.B5.HOUSE.EXTERIOR** Prove the joint exterior capacity<=3 or another full sharp exit, retaining all three load orbits, actual obstacles and all four independently oriented extras. Separate per-pocket bounds do not suffice.
 - [ ] **M5.B5.HOUSE.ALL** Assemble the three load orbits with their whole exterior theorem, feature transitions and equality survivors.
 
-##### M5.B5.FAN — entire three-load family CLOSED; four-load geometry OPEN
+##### M5.B5.FAN — entire fan graph and every load/owner/mask family [CLOSED hand]
 
 Use path u1--u2--u3--u4 and universal hub H. The two endpoint tips u1,u4 are loaded. H is physically circle-clear because it touches at least three loaded boundary bodies.
 
@@ -1193,17 +1193,36 @@ Use path u1--u2--u3--u4 and universal hub H. The two endpoint tips u1,u4 are loa
 - [x] **M5.B5.FAN.MIXED.EXACTLY_ONE** FAN_ENDPOINT_OWNER_REDUCTION.md combines the two complete exclusions: every surviving fan has exactly one H-owned endpoint. Reversal puts it at u1; no vertex degree changes.
 - [x] **M5.B5.FAN.MIXED.SIDE_DOMAIN** Normalize H=[0,1]^2,n_Hu1=ey. The other actual application is Q=(0,0) after reflection, with strict southwest normal. Every point P'=(p',1) in the full first contact has0<p'<=1 by the whole-set distance>1 theorem. The true circle origin is retained separately.
 - [x] **M5.B5.FAN.MIXED.COVER** The opposite endpoint is exactly one of: tip-owned singleton with either physical circle mask; physical unique/free opposite a genuine shared boundary side; or physical two-corner/free with the two distinct inner-vertex applications. Only the local free/shared restrictions transfer; the old opposite-vertex global torque is not imported.
-- [ ] **M5.B5.FAN.MIXED.TIP** Finish the entire exactly-one-H-owned / other-tip-owned family, including every H-side mean, both physical masks and contact-junction limits.
-- [ ] **M5.B5.FAN.MIXED.UNIQUE_FREE** Finish the entire exactly-one-H-owned / other-unique-free family, preserving its actual shared boundary side and all H-owned means.
-- [ ] **M5.B5.FAN.MIXED.RADIAL_FREE** Finish the entire exactly-one-H-owned / other-two-corner-free family, with both individual zero corner weights and the true singleton path contact.
-- [x] **M5.B5.FAN.MIXED.COVER_AUDIT** Root and independent full audits passed the complete exact-one-owner assembly. The three mixed families stay open; no fan or coarse-cell closure is inferred yet.
-- [ ] **M5.B5.FAN.FOUR.LOCAL_BALANCE** Every remaining exit must use valid necessary consequences of all actual body equations. Global circle balance or isolated hub equations alone are weaker relaxations; no internal degree-two substitution is permitted.
-- [ ] **M5.B5.FAN.FOUR** Assemble all three full mixed domains, every actual mean/mask and all four extras, then close the complete four-load family.
-- [ ] **M5.B5.FAN.ROUTING** Treat all three triangle holes and actual exterior regions, including contact coincidences and every zero-stress completion square.
-- [ ] **M5.B5.FAN.BOUND** Prove a whole core/radius obstruction or joint four-extra completion bound for the sole remaining four-load fan, with every circle mask, actual mean and independent frame retained.
-- [ ] **M5.B5.FAN.ALL** Retain all owner/corner masks, shared-side means and any equality survivors, then close the entire fan graph.
+- [x] **M5.B5.FAN.MIXED.TIP.COINCIDENCE** FAN_MIXED_TIP_ENDPOINT_EXCLUSION.md excludes equal actual endpoint applications: proper positive concurrence and the combined radial support force either a one-dimensional S normal cone or a D inner point too close to the origin for a boundary neighbor. This covers actual shared-mean endpoints.
+- [x] **M5.B5.FAN.MIXED.TIP.CORNER_MEAN** At p=1, the full H-owned contact is a shared top side. Every possible coincident inner port is exhausted: right-axis contacts belong to the long arc; strict northeast oblique vertices make the endpoint's actual applications coincide; the remaining aligned unit would make the boundary-edge moment zero. No corner mean is omitted.
+- [x] **M5.B5.FAN.MIXED.TIP.LONG_ARC** All short-arc inner normals have nonpositive horizontal components; the other endpoint is strictly southwest, contradicting the full hub force sum. The actual clockwise long arc and true endpoint torque give X>p>0.
+- [x] **M5.B5.FAN.MIXED.TIP.QUADRANTS** Proper concurrences and endpoint resultant separation>120 degrees put the two endpoint resultants northwest/southwest. The full aligned/oblique far-corner tests put their actual centers in those quadrants, including the aligned zero coordinate and every two-corner weight split.
+- [x] **M5.B5.FAN.MIXED.TIP.HEIGHTS** The first endpoint has 1-Y>=(R-sigma)cos(delta1)-sigma, sigma=1/sqrt(2). The complete tip chart gives Y>=d cos(delta4)-(3/5)sin(delta4), d=sqrt(R²-1/4)-1. Both use actual means and physical far-corner equations.
+- [x] **M5.B5.FAN.MIXED.TIP.CONCAVITY** The three boundary links impose delta1+delta4<alpha=3acos(9/25)-pi. Concavity over the entire coupled domain puts the least sum at its two endpoint allocations; both exceed1, with explicit lower bounds727/560 and1081/1000.
+- [x] **M5.B5.FAN.MIXED.TIP** The entire exactly-one-H-owned / other-tip-owned family is excluded, including p=1, both physical masks, all shared means and every genuine higher-degree force. Root and two independent full audits passed.
+- [x] **M5.B5.FAN.MIXED.UNIQUE_FREE.LOCAL** FAN_UNIQUE_FREE_SHARED_ENDPOINT_EXCLUSION.md retains the actual positive shared offset t and mean tau. The local unique endpoint equations force a>=b>0; the full H support chart has axes(c,-d),(-d,-c),0<c<d. Actual nonoverlap fixes t=c and the adjacent hub normal to ex.
+- [x] **M5.B5.FAN.MIXED.UNIQUE_FREE.SIDE_COVER** Distance>1 leaves exactly two opposite H-owned sides. One has a strictly negative full-hub torque about the actual opposite application. The other retains P=Q+v+p*w,0<p<=1, with all inner means on its actual closed arc.
+- [x] **M5.B5.FAN.MIXED.UNIQUE_FREE.HUB_BOUND** Full hub translation and torque, including the nonnegative inner force components, give p<=Ad/(Ad+Bc)<=d(d-c), with A=bd-ac>0,B=ad+bc. No degree-two equation is imposed on the shared internal neighbor.
+- [x] **M5.B5.FAN.MIXED.UNIQUE_FREE.CIRCLE_MASKS** Exact unique-endpoint and shared-neighbor circle equations retain both branches at Y=1/2 and either zero individual weight. They imply12/25<c<1/sqrt(2),0<X<1/2 and X<Y<c over the whole radius window.
+- [x] **M5.B5.FAN.MIXED.UNIQUE_FREE.MONOTONICITY** Convexity in the actual side parameter reduces |P| to its two endpoints. Both coordinates are negative and increase with R, so their norms are largest at R0=79/40. The scalar decrease preserves all necessary domain inequalities; no physical packing is moved.
+- [x] **M5.B5.FAN.MIXED.UNIQUE_FREE.LOWER_INTERVAL** On the entire12/25<c<=1/2 interval, X>3/8, L<18/25 and K0<4/5 give squared endpoint norms<121/400, with exact positive gaps637/20000 and57/20000.
+- [x] **M5.B5.FAN.MIXED.UNIQUE_FREE.UPPER_INTERVAL** On the entire1/2<=c<1/sqrt(2) interval, the first endpoint is farther. Bounds d-X<8/15 and c-Y<13/100 give its squared norm<27121/90000<121/400, retaining the physical circle-mask join.
+- [x] **M5.B5.FAN.MIXED.UNIQUE_FREE.POLYNOMIALS** Rational parametrization c=2t/(1+t²),d=(1-t²)/(1+t²) gives two explicit degree-eight numerator identities. One is a sum of positive terms with negative-discriminant quadratic; the other decreases on[0,3/7] and is strictly positive at3/7. All coefficients and endpoint values were independently checked by exact rational arithmetic.
+- [x] **M5.B5.FAN.MIXED.UNIQUE_FREE** Every actual opposite H-owned application has |P|<11/20, while its loaded boundary square requires |P|>=R-sqrt(2)>11/20. The full unique-free/shared family is excluded; singleton boundary contacts were already removed by the compatible fixed-tip selection. Root and independent full audits passed.
+- [x] **M5.B5.FAN.MIXED.RADIAL_FREE.ROUTING** FAN_HUB_OWNED_RADIAL_FREE_ENDPOINT_EXCLUSION.md uses only the actual endpoint degree-two equations and its physical triangle to put both contacts at distinct radial inner vertices. No internal hub application equals the free endpoint Q.
+- [x] **M5.B5.FAN.MIXED.RADIAL_FREE.PORTS** The full p=1 corner-mean proof transfers because radial routing supplies precisely its no-inner-contact-at-Q premise. Actual clockwise order gives O_x>p>0 with every H-owned side mean retained.
+- [x] **M5.B5.FAN.MIXED.RADIAL_FREE.QUADRANTS** Global corner balance gives -1/2<O_y<3/2. The all-mask first endpoint center is northwest. The clockwise radial vertex order gives Q-O=d*e-(1/2)Je; a northwest e would force O_y<=-1/2, so the radial center is southwest.
+- [x] **M5.B5.FAN.MIXED.RADIAL_FREE.HEIGHT** The exact physical radial height is O_y=d cos(delta4)-(1/2)sin(delta4), without imposing equal or positive individual corner weights. The opposite endpoint retains its general support-width bound.
+- [x] **M5.B5.FAN.MIXED.RADIAL_FREE.CONCAVITY** The same full coupled angular domain has both concavity endpoint allocations>1, with explicit lower bounds269/250 and101/80. This contradicts the actual unit vertical separation.
+- [x] **M5.B5.FAN.MIXED.RADIAL_FREE** The entire exactly-one-H-owned / other-two-corner-free family is excluded, with both individual zero corner weights and all actual means. Root and two independent full audits passed.
+- [x] **M5.B5.FAN.MIXED.COVER_AUDIT** The exact-one-owner reduction and all three physical alternatives now have complete root- and independently audited exits under the same permitted certificate.
+- [x] **M5.B5.FAN.FOUR.LOCAL_BALANCE** Every exit uses valid consequences of the actual endpoint and full hub equations, with all internal degree-three forces retained. No global-force or isolated-hub relaxation is mistaken for the full certificate.
+- [x] **M5.B5.FAN.FOUR** FOUR_LOAD_FAN_EXCLUSION.md assembles every owner, physical mask, shared mean and four-extra domain. The entire four-load graph family is excluded, without a secondary minimizer.
+- [x] **M5.B5.FAN.ROUTING.RETIRED** A separate fan-hole/exterior capacity estimate is no longer a proof obligation because the full selected core is impossible. No unproved standalone regional-capacity claim is asserted.
+- [x] **M5.B5.FAN.BOUND** The full core contradiction holds throughout79/40<=R<=sqrt(1105)/16, including both radius endpoints; all four arbitrary extras remain untouched.
+- [x] **M5.B5.FAN.ALL** Both initial three-load masks and the whole four-load family are excluded. Root and separate independent full assembly audits passed. The entire fan graph is CLOSED; only the house remains in C1.5.b0. Fan subgraphs with additional positive edges retain their own full equations and remain outside this theorem.
 
-- [ ] **M5.B5.ALL** C5 is fully excluded and audited. Finish every house load orbit and the entire four-load fan, then combine all ten graph types to close C1.5.b0. The current whole-C5 closure leaves the coarse count unchanged.
+- [ ] **M5.B5.ALL** C5 and the entire fan are fully excluded and audited. Finish the three complete house load orbits, then combine all ten graph types to close C1.5.b0. Nine graph types are closed; the coarse inventory remains six closed and52 open.
 
 #### M5.TT — C2.33.b0: two triangles sharing an articulation [CLOSED hand]
 
@@ -1467,7 +1486,7 @@ SIX_BODY_CYCLIC_FRONTIER.md gives the full graph/attachment/plane/load cover bel
 
 1. P.ALL, Y.ALL, TREE.ALL and TL.COMPLETE are CLOSED hand at their stated scopes. The entire physical C7 capacity-one theorem is also CLOSED hand. Keep every unresolved mixed3–7-loaded completion obligation OPEN.
 2. The 58 coarse cells now have **six whole-cell exclusions and 52 open rows**. Do not confuse subfamily restrictions with parent closure.
-3. Follow the ordered G3 execution tree: C1.3.b1 and C1.3.b2 are closed; C2.33.b0 and C1.4.b1 are also closed. The entire C5 branch is also closed. Execute C1.5.b0 through its full house and four-load-fan domains, then the larger mixed cells. Physical C7 completion is closed; retain its negative controls and use the new boundary-path-forest consequence throughout the mixed reduction. Use shared uniform arguments whenever possible. Do not create angle boxes merely to increase checked-gate counts.
+3. Follow the ordered G3 execution tree: C1.3.b1 and C1.3.b2 are closed; C2.33.b0 and C1.4.b1 are also closed. The entire C5 and fan graph branches are also closed. Execute C1.5.b0 through its three full house load orbits, then the larger mixed cells. Physical C7 completion is closed; retain its negative controls and use the new boundary-path-forest consequence throughout the mixed reduction. Use shared uniform arguments whenever possible. Do not create angle boxes merely to increase checked-gate counts.
 4. Preserve exact physical negative controls and every unstressed completion body.
 5. Commit finished arguments promptly and log UTC provenance, exact quantifiers, finite evidence and unchanged global blockers in TWO_LOAD_PROGRESS.md or a subsequent append-only checkpoint.
 6. If a proposed reduction fails, retain the exact witness and revise it; do not defend a false stronger normalization by shrinking the domain indefinitely.

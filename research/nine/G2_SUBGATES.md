@@ -63,7 +63,7 @@ Every row retains four extra physical squares. Full nested contracts are G3.M5 i
 | --- | --- | --- |
 | M5.T2 / C1.3.b2 | Length-two arm; two leaves at one or at two distinct triangle articulations | CLOSED; all leaf types and full S/S completion, independent assembly audited |
 | M5.B4L / C1.4.b1 | Every C4 load pattern, diamond attachment and K4 | CLOSED hand; canonical minimizer retained for the older opposite-load branch |
-| M5.B5 / C1.5.b0 | House and four-load fan after the complete C5 exclusion and graph/load reduction | Eight graph types CLOSED; full house/fan geometry/completion OPEN |
+| M5.B5 / C1.5.b0 | House only after the complete C5 and fan exclusions | Nine graph types CLOSED; full house geometry/completion OPEN |
 | M5.TT / C2.33.b0 | Entire bowtie and all four arbitrary extras | CLOSED; complete owned/free pressure theorem and opposite-resultant assembly |
 
 - [x] **M5.CATALOG:** the formula m=1+sum(block_size-1)+bridges yields exactly these four coarse cells at m=5.
@@ -180,7 +180,7 @@ The new local arguments and whole-cell assembly received independent hand audits
 - [x] **M5.B5.C5.DOMAIN:** FIVE_CYCLE_FORCE_POLYGON_DOMAIN.md proves neighbor-free nonparallel proper concurrence, exact reserves, convex radial polygons and full completion routing. Radial concurrences need not lie inside their bodies.
 - [x] **M5.B5.C5.FOUR:** FIVE_CYCLE_FOUR_LOAD_EXCLUSION.md proves the all-mask endpoint half-plane lemma and excludes both widths by actual center distance or exact horizontal gap.
 - [x] **M5.B5.C5.THREE:** FIVE_CYCLE_THREE_LOAD_EXCLUSION.md gives the full side/diagonal angle bounds; the latter uses strict concavity of the actual aligned center curve. The two channels plus BC cannot span2pi.
-- [x] **M5.B5.C5.ALL:** FIVE_CYCLE_POSITIVE_COMPONENT_EXCLUSION.md closes the entire graph branch. All four sources passed root and independent full audits. House and four-load fan remain; the six/52 inventory is unchanged.
+- [x] **M5.B5.C5.ALL:** FIVE_CYCLE_POSITIVE_COMPONENT_EXCLUSION.md closes the entire graph branch. All four sources passed root and independent full audits. The subsequent whole fan closure leaves only the house; the six/52 inventory is unchanged.
 - [x] **CY.ONE_ARTICULATION:** ONE_ARTICULATION_TRIANGLE_LEAF_EXCLUSION.md excludes all triangle petals and radial leaves at one common A, using exact degree-two tips and the same certificate. Distributed articulations and degree-three fan vertices remain outside its scope.
 
 ## Whole house/fan subfamily checkpoint
@@ -188,7 +188,7 @@ The new local arguments and whole-cell assembly received independent hand audits
 - [x] FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md gives endpoint center distance>1+sqrt(2), and distance>1 between every pair of actual endpoint hub applications, for the full balanced four-boundary path. It applies to fan4 and house4 with all shared means and circle masks.
 - [x] HOUSE_END_TRIPLE_PARALLEL_BYPASS_EXCLUSION.md excludes the entire parallel-bypass end-triple house, including point/shared transitions, both endpoint physical circle masks and all means. The genuinely tilted bypass remains open.
 - [x] HOUSE_MIDDLE_TRIPLE_SHARED_HUB_EXCLUSION.md excludes the entire both-hubs-owned contact in the middle triple, radius-free and with every actual mean. One-owner and strict free singleton contacts remain open.
-- [ ] Complete every remaining house orbit and the full four-load fan. The deep roadmap now separates the exact missing feature, local-equilibrium and joint-capacity gates. All three new sources passed root and independent full hand audits. No coarse row changes: six closed and52 open; unrestricted T9, equality and full-chain audit remain open.
+- [ ] Complete every remaining house orbit; the whole fan is now closed. The deep roadmap now separates the exact missing feature, local-equilibrium and joint-capacity gates. All three new sources passed root and independent full hand audits. No coarse row changes: six closed and52 open; unrestricted T9, equality and full-chain audit remain open.
 
 ## Complete six-body domain catalogue
 
@@ -198,7 +198,15 @@ The hexagon has six necessary bare-cycle load orbits. The surviving four-spoke g
 
 ## Complete fan endpoint owner cover and house-domain checkpoint
 
-- [x] FAN_ENDPOINT_OWNER_REDUCTION.md reduces every four-load fan to exactly one H-owned endpoint. The complete both-H-owned and neither-H-owned theorems retain all true means and physical masks. Exactly three full mixed domains remain: other-tip-owned, unique-free/shared, or two-corner radial-free.
+- [x] FAN_ENDPOINT_OWNER_REDUCTION.md reduces every four-load fan to exactly one H-owned endpoint. The complete both-H-owned and neither-H-owned theorems retain all true means and physical masks. The three full mixed domains are other-tip-owned, unique-free/shared, or two-corner radial-free; their subsequent complete theorems now close the fan.
 - [x] THREE_BOUNDARY_PATH_RESULTANT_CONE.md gives the full positive-cone identity and new fan/house radial-mask exclusions. HOUSE_FOUR_LOAD_TIP_OWNED_ENDPOINT_EXCLUSION.md transfers the endpoint metric contradiction using only three actual house hub forces and a geometric reweighting, with all original body equations intact.
 - [x] HOUSE_END_TRIPLE_TILTED_BYPASS_DOMAIN.md gives the entire tilted pose, singleton endpoint contacts and all weak/zero direction transitions. HOUSE_MIDDLE_TRIPLE_UNIQUE_FREE_HUB_SELECTION.md removes free AD for the full all-unique physical mask, retaining every shared mean and matched junction.
-- [ ] The three mixed fan exits and all remaining house orbits are still required. Root and independent full audits passed all eight new sources. The inventory stays six closed and52 open; unrestricted T9, original equality and full-chain audit remain open.
+- [ ] All remaining house orbits are still required; the three mixed fan exits are now complete. Root and independent full audits passed all eight new sources. The inventory stays six closed and52 open; unrestricted T9, original equality and full-chain audit remain open.
+
+## Entire five-body fan graph closed
+
+- [x] FAN_MIXED_TIP_ENDPOINT_EXCLUSION.md retains the full H-side mean, including its corner limit, proves the actual clockwise port order and center quadrants, and contradicts unit vertical separation over the whole coupled angular domain.
+- [x] FAN_UNIQUE_FREE_SHARED_ENDPOINT_EXCLUSION.md fixes the actual shared offset, bounds the opposite H-side parameter by full hub force and torque, and proves |P|<11/20<R-sqrt(2) over both complete physical circle masks and the whole radius window. The explicit polynomial sign proofs and exact rational coefficient audit are retained.
+- [x] FAN_HUB_OWNED_RADIAL_FREE_ENDPOINT_EXCLUSION.md proves actual radial inner-vertex routing and the full corner-mean port transfer, then contradicts unit height with its exact radial adapter. Both physical circle weights and zero individual endpoints remain.
+- [x] FOUR_LOAD_FAN_EXCLUSION.md assembles every load mask, endpoint owner and physical feature under the same permitted certificate. Root and independent full audits passed all proofs and the complete assembly. The entire fan is closed; no secondary minimizer or extra-square motion is used.
+- [ ] Only the house remains in C1.5.b0, with its entire end-triple, middle-triple and four-load families. No coarse row changes: six closed and52 open. Larger fan subgraphs with additional positive forces, unrestricted T9, original equality and full-chain audit remain open.

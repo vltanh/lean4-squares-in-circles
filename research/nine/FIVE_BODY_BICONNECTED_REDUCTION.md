@@ -161,7 +161,8 @@ four-body boundary path has endpoint center distance>1+sqrt(2).
 Every pair of actual endpoint applications on a common hub has
 distance>1, including all shared means. It applies to the four-load
 fan and to house path3--1--4--2 with hub5. Two endpoint hub vertices
-must therefore be opposite; the full remaining feature cover stays open.
+must therefore be opposite. The later fan assembly closes its full feature
+cover; the house retains its separate true three-spoke equations.
 
 HOUSE_END_TRIPLE_PARALLEL_BYPASS_EXCLUSION.md excludes every end-triple
 house whose clear bypass shares its transmitter's frame. Both point
@@ -172,7 +173,8 @@ hub force owned by both clear hubs, including all shared hub sides,
 by strict support separation of its lower endpoint pair. Singleton
 one-owner and free-hub contacts remain. Root and separate full audits
 passed all three sources. These are subfamily/domain conclusions,
-not a closure of the house, fan or C1.5.b0.
+not by themselves a closure of the house or C1.5.b0. The complete fan
+closure is supplied separately below.
 
 ### 4.5. Full fan endpoint owner cover and further house domains
 
@@ -182,8 +184,13 @@ H-owned axes; FAN_NON_HUB_OWNED_ENDPOINT_EXCLUSION.md excludes every
 pair with neither H-owned, including unique-free/shared and radial-free
 masks. The exact remaining families are the mixed tip-owned,
 unique-free/shared, and physical radial-free endpoint domains, each
-with its entire H-side mean and all four extras. Their full exits
-remain open at this checkpoint.
+with its entire H-side mean and all four extras. The subsequent
+FAN_MIXED_TIP_ENDPOINT_EXCLUSION.md,
+FAN_UNIQUE_FREE_SHARED_ENDPOINT_EXCLUSION.md and
+FAN_HUB_OWNED_RADIAL_FREE_ENDPOINT_EXCLUSION.md now exclude all three.
+FOUR_LOAD_FAN_EXCLUSION.md combines the full cover and all positive
+load masks to close the entire fan graph. Root and separate independent
+full audits passed every source and the assembly.
 
 THREE_BOUNDARY_PATH_RESULTANT_CONE.md gives the whole positive-cone
 identity and excludes the all-radial hub-neighbor mask of house4,
@@ -202,15 +209,14 @@ Root and separate full audits passed all eight source implications.
 
 **Theorem 5.1.** Under the stated selected-certificate inputs, every five-body biconnected positive component belongs to one of the three graph families in Section 4, with one of its stated necessary load masks. The seven other abstract biconnected graph types are completely excluded, and no completion square is discarded.
 
-The subsequent C5 assembly excludes the eighth of the ten graph types.
-Every surviving five-body biconnected component is now a house in one of
-its three load-mask orbits, or a fan with all four path bodies loaded.
-Their full contact owners, actual means, physical masks, zero-weight
-contacts and four extras remain. A C5 subgraph inside either graph has
-extra positive forces and does not inherit the degree-two C5 theorem.
+The subsequent complete C5 and fan assemblies exclude the eighth and
+ninth of the ten graph types. Every surviving five-body biconnected
+component is therefore a house in one of its three load-mask orbits.
+Its full contact owners, actual means, physical masks, zero-weight
+contacts and four extras remain. A C5 or fan subgraph with extra positive
+edges does not inherit either exact-component theorem.
 
-C1.5.b0 remains OPEN until both complete graph families are excluded or
-receive a full sharp completion theorem. The current coarse count is
-six closed and52 open. The house holes are empty, but its joint exterior
-bound remains open. The fan retains every actual hub/body force and
-torque equation. No Lean compilation or CI was run.
+C1.5.b0 remains OPEN until the whole house family is excluded or receives
+a full sharp completion theorem. The current coarse count is six closed
+and52 open. The house holes are empty, but its joint exterior bound
+remains open. No Lean compilation or CI was run.
