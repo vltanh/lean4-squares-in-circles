@@ -2,7 +2,9 @@
 
 **Status: complete hand classification; root and independent full hand audits passed.**
 This is a classification of the entire parallel-articulation wall chart
-in C1.3.b2. It does not yet bound its four arbitrary completion squares.
+in C1.3.b2. The four arbitrary completion squares are bounded separately
+in DISTINCT_S_LEAF_WALL_UPPER_CAPACITY.md and DISTINCT_S_LEAF_WALL_LOWER_EMPTY.md;
+TRIANGLE_TWO_BRIDGES_CELL_CLOSED.md assembles the complete cell.
 
 Put
 \[
@@ -53,7 +55,7 @@ The A leaf is \([d,d+1]\times[-1/2,1/2]\). The B leaf is
 All cores in this interval are physically realizable and admit the
 positive stresses described in Section7. In particular the family is
 nonempty; core exclusion is not a valid exit. Its universal completion
-capacity of at most three remains an open obligation.
+capacity of at most three is proved in the two cited capacity sources.
 
 ## 1. Preliminary signs and the complete oblique-C chart
 
@@ -469,22 +471,23 @@ Its corner norms satisfy \(|z_A|^2<d^2+1<R^2\), so it remains
 physically circle-clear. All four completion squares remain arbitrary
 physical obstacles and must still be counted.
 
-## 8. Exact remaining capacity obligation
+## 8. The completed capacity input and this classification's scope
 
 The full wall chart has now been reduced to (4)--(5), with the
 entire interval (29), every force and mean in (26)--(28), and no
 assumption on the four additional frames or centers.
 
-The needed universal exit is:
+The universal capacity exit, now proved in the upper/lower sources, is:
 
 > Every disk packing containing one of the five cores (4)--(5), for
 > any t in (29), contains at most three further unit squares.
 
-The classification does not establish that exit. It does not select
-the previously convenient height t=x, impose common frames on any
-completion square, or combine separate pocket bounds without proving
-their simultaneous applicability. The unrestricted sharp theorem,
-C1.3.b2 whole-cell closure and equality classification remain open.
+The classification itself supplies the complete input domain. The cited
+capacity sources prove whole-square routing, upper capacity three and
+lower capacity zero for every parameter above. They do not select the
+previously convenient height t=x or impose common frames on a completion
+square. TRIANGLE_TWO_BRIDGES_CELL_CLOSED.md consequently closes C1.3.b2.
+The unrestricted sharp theorem and equality classification remain open.
 
 No Lean compilation, CI, numerical pose subdivision or unproved
 normal convention is used in this manuscript.

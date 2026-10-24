@@ -299,9 +299,11 @@ inside (1), including the parallel-articulation chart and strict
 shared means. It is not a nine-square counterexample and makes no
 claim about how many further squares fit.
 
-The universal remaining obligation is to show that every such
-five-body S/S core admits at most three additional arbitrary unit
-squares, or to classify all its physical realizations and prove that
-capacity for each whole class. All four proposed extras and all
-contact-owner transitions remain in that obligation. No numerical
-optimization, Lean compilation, or CI is a premise of either result.
+The subsequent full reduction and classification are now completed in
+DISTINCT_S_LEAVES_PARALLEL_ARTICULATION_REDUCTION.md and
+DISTINCT_S_LEAVES_WALL_CLASSIFICATION.md. The upper/lower capacity sources
+prove that every member of the entire exact slider family admits at most
+three additional arbitrary unit squares. TRIANGLE_TWO_BRIDGES_CELL_CLOSED.md
+assembles the whole cell. This positive control remains valid and is
+accounted for by that capacity theorem. No numerical optimization,
+Lean compilation or CI is a premise of either result here.

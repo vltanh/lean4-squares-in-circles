@@ -1,6 +1,6 @@
 # n=9 — ordered roadmap to the unrestricted hand proof
 
-**PR:** #11, draft. **Reconciled source:** `7059d00eff82bf4b9b15288e371097bb31e4cb38`.  
+**PR:** #11, draft. **Reconciled source:** `616db0afbcf6d02174f1246f9a0d4be6342534b0`.  
 **Updated:** October 23, 2026, America/Chicago.
 
 **The unrestricted lower bound R^2>=1105/256 and complete equality classification remain OPEN.** The construction attains Q. The full execution tree, exact subgates and boundary cases are in [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md).
@@ -9,7 +9,16 @@
 
 [TRIANGLE_LEAF_CELL_CLOSED.md](TRIANGLE_LEAF_CELL_CLOSED.md) closes **C1.3.b1 / G3.M4.ALL**. The full core reduction, entire S branch, entire selected oblique D branch and entire parallel-left D branch have complete proofs. Their simultaneous pre-stress normal selections retain the actual physical geometry, planar uncrossing, sparsity and unique component. Both D proofs and the parent assembly have independent hand audits.
 
-The unique positive cyclic component now has **5–9 bodies** and **3–7 noncollinear circle-loaded resultants**. Every other physical square remains. The coarse inventory is **three whole cells closed and 55 open**; these counts are not progress percentages.
+The unique positive cyclic component now has **5–9 bodies** and **3–7 noncollinear circle-loaded resultants**. Every other physical square remains. The coarse inventory is **four whole cells closed and 54 open**; these counts are not progress percentages.
+
+### Completed whole-cell continuation
+
+TRIANGLE_TWO_BRIDGES_CELL_CLOSED.md closes C1.3.b2. DISTINCT_S_LEAF_WALL_UPPER_CAPACITY.md proves upper capacity3 through actual ray screening and all-orientation center bounds; DISTINCT_S_LEAF_WALL_LOWER_EMPTY.md excludes both lower regions, including both possible oblique endpoint wraps. Every slider value and every candidate extra frame is covered. The parent assembly exhausts chain, same-articulation and distinct-articulation attachments under one compatible certificate. Independent full audits passed.
+
+FOUR_CYCLE_SECONDARY_CONTACT_REDUCTION.md makes a separate canonical-minimizer reduction: physical AU contact, singleton A-tip edges, and the full two-A-owned D-leaf exclusion. FOUR_CYCLE_UNIQUE_TIPS_EXCLUSION.md then closes the entire physical unique/unique opposite-load mask, with all U-parallel endpoints and actual channel means. FOUR_CYCLE_TWO_RADIAL_TIPS_EXCLUSION.md closes the entire physical two/two mask without secondary minimization. Only the mixed physical mask remains in the canonical opposite-load C4 branch. These reductions do not classify every original equality packing.
+
+C7_CENTER_POLYGON_LOCALIZATION.md places every completion unit inside the strictly convex center polygon. C7_DIAMETER_EXTRACTION_COUNTEREXAMPLE.md disproves the unrestricted diameter extraction with an exact actual seven-square ring enclosing two units. The valid C7 route must retain the disk/annulus or positive stress. A complete R^2>=Q implication is sufficient for G3.B; the stronger no-two-extras-at-Q claim is optional, with equality handled separately.
+
 
 ## Completed inputs
 
@@ -26,14 +35,14 @@ The unique positive cyclic component now has **5–9 bodies** and **3–7 noncol
 - [x] NO_THREE_BOUNDARY_COMMON_NEIGHBORS.md excludes three circle-touching common positive neighbors of any two body vertices.
 - [x] FIVE_BODY_BICONNECTED_REDUCTION.md classifies all ten five-body biconnected graph types and reduces them to C5, house and four-path fan with complete necessary positive-load masks.
 - [x] TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md excludes the entire length-two arm layout of C1.3.b2, with every leaf/transmitter type and articulation pose.
-- [x] TRIANGLE_TWO_LEAVES_SAME_ARTICULATION_CLOSED.md assembles the complete S/S, D/S and D/D exclusions and closes the entire same-articulation layout, including every shared mean and contact owner. Only the distinct-articulation layout remains in C1.3.b2.
+- [x] TRIANGLE_TWO_LEAVES_SAME_ARTICULATION_CLOSED.md assembles the complete S/S, D/S and D/D exclusions and closes the entire same-articulation layout, including every shared mean and contact owner. The distinct-articulation completion is now also closed by the full assembly.
 - [x] TRIANGLE_DISTINCT_LEAVES_DOMAIN.md and TRIANGLE_DISTINCT_LEAVES_PORT_ORIENTATION.md give the complete distinct-layout load/radius/moment domain and the positive radial-concurrence theorem, including parallel C forces and all actual means.
-- [x] TRIANGLE_DISTINCT_MIXED_LEAVES_EXCLUSION.md excludes the entire distinct D/S branch through an owner-independent support-span contradiction. Only distinct S/S remains in C1.3.b2.
+- [x] TRIANGLE_DISTINCT_MIXED_LEAVES_EXCLUSION.md excludes the entire distinct D/S branch through an owner-independent support-span contradiction. The remaining S/S completion is closed by the full exact-family capacity theorem.
 - [x] DISTINCT_S_LEAF_CORE_AND_CORNER_MASK.md excludes every two-circle-corner C mask and supplies an exact positively stressed S/S core below Q. Blanket core exclusion is false; the entire remaining S/S family needs completion capacity at most three.
 - [x] GENERAL_FIXED_TIP_NORMAL_SELECTION.md removes free vertex normals from every distinct-fixed-application unique-circle-corner tip without a boundary-neighbor premise; the coincident radial-D exception and variable means are retained.
 - [x] UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md proves an orientation-uniform contact-triangle obstruction: a side-owned normal has nonnegative dot product with the other normal. Its radial-leaf consequence fixes the opposite support face without any circle or generic-normal premise.
-- [x] DISTINCT_S_LEAVES_PARALLEL_ARTICULATION_REDUCTION.md reduces **every remaining distinct S/S core** to an articulation with an aligned leaf and parallel cycle forces. The complete tilted and shared-AB cases are excluded, all means and four extras retained. The full wall is classified below; its universal completion capacity remains open.
-- [x] DISTINCT_S_LEAVES_WALL_CLASSIFICATION.md exhausts every wall frame and contact owner. The three central frames align, x=(sqrt(70)-8)/4 fixes the exact radius, and the **entire** articulation interval is x(1-2x)/(1-x)<=t<2x, with explicit force and actual-mean intervals. Every interval member is a positive physical core; capacity<=3 is the remaining exit.
+- [x] DISTINCT_S_LEAVES_PARALLEL_ARTICULATION_REDUCTION.md reduces **every remaining distinct S/S core** to an articulation with an aligned leaf and parallel cycle forces. The complete tilted and shared-AB cases are excluded, all means and four extras retained. The full wall is classified below, and its complete upper/lower capacity theorem now closes the family.
+- [x] DISTINCT_S_LEAVES_WALL_CLASSIFICATION.md exhausts every wall frame and contact owner. The three central frames align, x=(sqrt(70)-8)/4 fixes the exact radius, and the **entire** articulation interval is x(1-2x)/(1-x)<=t<2x, with explicit force and actual-mean intervals. Every interval member is a positive physical core; capacity<=3 is proved by the whole upper/lower routing theorems.
 - [x] FOUR_CYCLE_PARALLEL_BYPASS_EXCLUSION.md excludes the **entire A/U-parallel opposite-load C4 chart**, including both S/D leaves, every tip frame and actual shared mean.
 - [x] FOUR_CYCLE_OBLIQUE_TIP_OWNER_EXCLUSION.md excludes the complete chart where both loaded tips are oblique to the transmitter and own point contacts with the bypass, for all physical one/two-corner masks.
 - [x] FOUR_CYCLE_UNIQUE_LOAD_NORMAL_SELECTION.md removes every free A-tip normal throughout the physical unique/unique mask while preserving all other variable means. Remaining A-owned, U-parallel-tip and two-corner-mask cases stay open.
@@ -55,11 +64,11 @@ These are hand implications. The full prerequisite-chain audit and Lean verifica
 
 ## Execute the five-body frontier, with C7 in parallel
 
-The identity m=1+sum(block_size-1)+bridges gives exactly four five-body cyclic cells. Each retains four arbitrary physical completion squares.
+The identity m=1+sum(block_size-1)+bridges gives exactly four five-body cyclic cells. C1.3.b2 is now closed by the full attachment/classification/capacity assembly; the three remaining cells retain four arbitrary physical completion squares.
 
 | Order | Whole gate | Exhaustive scope | Required exit |
 | --- | --- | --- | --- |
-| 1 | C1.3.b2 | Entire distinct S/S family classified at one exact radius and full slider interval | Prove whole-domain completion capacity<=3, then assemble all attachment/leaf branches |
+| CLOSED | C1.3.b2 | Entire three-attachment triangle-with-two-bridges cell | TRIANGLE_TWO_BRIDGES_CELL_CLOSED.md; upper/lower capacities3 and0 over the whole exact slider |
 | 2 | C1.4.b1 | Residual A/U-oblique opposite-load or three-load C4; both diamond orbits | Parallel-bypass and two-oblique-tip-owner charts also closed; cover remaining owners/masks and prove the full bounds |
 | 3 | C1.5.b0 | C5 with three/four loads; house with three mask orbits; fan with three/four loads | Finish each complete graph/load family with every actual contact and four extras |
 | 4 | C2.33.b0 | Two triangles sharing one articulation, four loaded tips and every zero-weight physical contact | Full joint capacity or core/radius theorem |

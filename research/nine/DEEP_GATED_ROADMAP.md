@@ -1,12 +1,12 @@
 # n=9: deep ticked roadmap and ordered proof execution
 
 **Branch:** `research/nine-tablefree-hand`; **PR:** #11, draft.  
-**Reconciled source:** `220f28bae84890bbab94b91d83049c2b200411bc`.  
+**Reconciled source:** `616db0afbcf6d02174f1246f9a0d4be6342534b0`.  
 **Checkpoint:** October 23, 2026, America/Chicago; the append-only evidence log retains explicit UTC provenance.
 
 **T9 and unrestricted equality remain OPEN.** The complete P/Y arguments exclude all selected positive trees and all exactly-two-loaded components from a nine-square packing in the declared radius window. A physical certificate can be selected with **one planar positive component**, all physically circle-touching vertices on its exterior face, and at most 27 positive scalar atoms. The remaining component is cyclic, has 5–9 bodies, and has 3–7 noncollinear circle-loaded resultants. Every other physical square has zero stress and remains in the problem.
 
-The remaining lower-bound split is exhaustive: **G3.B**, a boundary-only C7 with two completion squares; or **G3.M**, a mixed cyclic component containing a circle-clear body, with all 9-m completion squares retained. The 58-cell coarse inventory has three whole cells closed and 55 open. Subgate counts are not completion percentages.
+The remaining lower-bound split is exhaustive: **G3.B**, a boundary-only C7 with two completion squares; or **G3.M**, a mixed cyclic component containing a circle-clear body, with all 9-m completion squares retained. The 58-cell coarse inventory has four whole cells closed and 54 open. Subgate counts are not completion percentages.
 
 ## Ordered execution and gate-closing rule
 
@@ -17,9 +17,10 @@ The remaining lower-bound split is exhaustive: **G3.B**, a boundary-only C7 with
 | 2b | G3.M4.D.OBLIQUE | Both articulation corners lie inside loaded-neighbor sides, all B/C contact types | CLOSED hand; full branch excluded |
 | 3 | G3.M4.S | All side-normal-leaf cores: aligned shared-side sliders plus both tilted-vertex branches | CLOSED hand; the entire core is impossible |
 | 4 | G3.M4.ALL | Combine D/S and their degeneracies; close the entire C1.3.b1 cell | CLOSED hand; independent assembly audit passed |
-| Parallel whole branch | G3.B.CAP | Exclude two arbitrary completion squares for every selected positive boundary C7 | OPEN; entire free-normal branch CLOSED; all-owned geometry active |
-| 5a | G3.M5 | Four complete five-body cells, all four extras retained | OPEN; full chain and same-articulation layouts closed, C4 hole empty, biconnected graph/load cover complete |
-| 5b | G3.M6–M9 | Process the larger mixed cells by component size and the finite semantic cover below | OPEN |
+| Parallel whole branch | G3.B.SHARP | Prove R^2>=Q with both arbitrary C7 completion squares, or the stronger capacity-one theorem | OPEN; all-owned domain; actual disk/annulus retained |
+| 5a | G3.M5.T2 | Entire triangle-with-two-bridges cell, all three attachments and four extras | CLOSED hand; full S/S slider capacity3, independent parent assembly passed |
+| 5b | G3.M5.B4L/B5/TT | Three remaining complete five-body cells, all four extras retained | OPEN; opposite-load C4 mask reductions, biconnected graph/load cover, bowtie active |
+| 5c | G3.M6–M9 | Process the larger mixed cells by component size and the finite semantic cover below | OPEN |
 | 6 | G4 | Assemble the unrestricted sharp lower bound with the exact lower-window import | BLOCKED by G3 |
 | 7 | G5 | Necessity and converse for every equality packing, including free centers and rotations | OPEN |
 | 8 | G6–G8 | Full dependency audit, subsequent standard-kernel formalization and integration | NOT COMPLETE |
@@ -59,6 +60,13 @@ The finite cover keeps continuous radii, centers, orientations, contact coordina
 | Unit contact-triangle side axes | Every owned triangle normal has nonnegative dot product with the other normal; arbitrary frames and means | UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md |
 | Entire distinct S/S reduction | Every selected core has an aligned-leaf articulation with parallel cycle forces; all other articulation charts excluded | DISTINCT_S_LEAVES_PARALLEL_ARTICULATION_REDUCTION.md |
 | Entire S/S wall classification | All remaining frames align; one exact radius, one complete articulation slider interval and every actual force/mean | DISTINCT_S_LEAVES_WALL_CLASSIFICATION.md |
+| Entire S/S completion | Actual ray routing; upper capacity3; both lower regions empty; every slider endpoint and extra frame | DISTINCT_S_LEAF_WALL_UPPER_CAPACITY.md; DISTINCT_S_LEAF_WALL_LOWER_EMPTY.md |
+| Complete triangle-with-two-bridges cell | All chain/same/distinct attachments, every S/D type and all four extras excluded | TRIANGLE_TWO_BRIDGES_CELL_CLOSED.md |
+| Canonical C4 contact | A secondary radius minimizer forces physical AU contact; no shared A-tip side; full two-A-owned D leaf excluded | FOUR_CYCLE_SECONDARY_CONTACT_REDUCTION.md |
+| Entire unique/unique C4 mask | All singleton owners, U-parallel endpoints and actual means excluded at the canonical minimizer | FOUR_CYCLE_UNIQUE_TIPS_EXCLUSION.md |
+| Entire two/two C4 mask | Full radial channel/face cover and all circle-weight splits excluded without secondary minimization | FOUR_CYCLE_TWO_RADIAL_TIPS_EXCLUSION.md |
+| C7 center polygon | Every completion square lies in the strictly convex actual center polygon; exact short-clear-chord proof | C7_CENTER_POLYGON_LOCALIZATION.md |
+| Diameter-route obstruction | An exact actual seven-square ring encloses two units with center diameter<3; it violates the disk/annulus hypotheses | C7_DIAMETER_EXTRACTION_COUNTEREXAMPLE.md |
 | C4 parallel bypass chart | Every A/U-parallel pose excluded, all leaf types, tip frames, actual means and circle masks | FOUR_CYCLE_PARALLEL_BYPASS_EXCLUSION.md |
 | C4 two oblique tip owners | Both tip-owned point contacts impossible when neither tip frame is parallel to the transmitter; every physical circle mask | FOUR_CYCLE_OBLIQUE_TIP_OWNER_EXCLUSION.md |
 | C4 unique-corner normal choice | All free A-tip normals removed for the entire physical unique/unique mask, retaining every other variable mean | FOUR_CYCLE_UNIQUE_LOAD_NORMAL_SELECTION.md |
@@ -82,7 +90,7 @@ These hand manuscripts have different audit histories. The newly reviewed local 
 
 ## Canonical sources and proof-status vocabulary
 
-- [CYCLIC_CELL_LEDGER.md](CYCLIC_CELL_LEDGER.md): every one of the 58 cells individually recorded, now three [x] and 55 [ ].
+- [CYCLIC_CELL_LEDGER.md](CYCLIC_CELL_LEDGER.md): every one of the 58 cells individually recorded, now four [x] and 54 [ ].
 - [TWO_LOAD_PROGRESS.md](TWO_LOAD_PROGRESS.md): current UTC proof commits, exact pinned execution, corrected report provenance and still-open parents.
 - [FINITE_TREE_CASE_LEDGER.md](FINITE_TREE_CASE_LEDGER.md): all six tree profiles and their complete P/Y capacities.
 - [G2_SUBGATES.md](G2_SUBGATES.md): live mathematical status.
@@ -106,7 +114,7 @@ No common separating frame, row, central square or prescribed stress graph is an
 | Exactly two loaded bodies | Parallel forces, q=17/4, 4–6 aligned bodies; every completion excluded | No remaining geometry in this load class |
 | Components whose bodies all touch the circle | Exactly one physical C7; includes all circle-touching squares | Exclude TWO arbitrary circle-clear completion squares |
 | Components with a circle-clear body | 3–7 noncollinear resultants; circle-touching induced graph is paths or C7 | Uniform sharp physical completion inequality |
-| Cyclic inventory | 21 profiles and 58 coarse cells; C1.3.b0, C1.4.b0 and C1.3.b1 excluded | 55 full geometric cells, or a uniform replacement |
+| Cyclic inventory | 21 profiles and 58 coarse cells; C1.3.b0, C1.4.b0, C1.3.b1 and C1.3.b2 excluded | 54 full geometric cells, or a uniform replacement |
 | Cap, row, pocket and quadrant tools | Complete local hand implications at stated hypotheses | Apply full-square routing without assumed normalizations |
 | Final assembly | Construction and explicit dependency contracts | G4 radius, G5 equality, G6 full audit, G7 Lean, G8 integration |
 
@@ -415,7 +423,7 @@ Source: FOUR_BODY_CYCLIC_CELL_CLOSED.md, commit 05e15a0.
 | 3 | (3,3,3),(3,3,4),(3,3,5),(3,4,4) | 7 | all [ ] |
 | 4 | (3,3,3,3) | 1 | [ ] |
 
-**55 cells OPEN.** The full triangle-plus-leaf proof closes the third whole cell. Uniform restrictions still do not tick a larger cell when any physical realization or completion remains unresolved. Seek complete shared arguments across whole families, with continuous geometry retained.
+**54 cells OPEN.** The full triangle-with-two-bridges assembly closes the fourth whole cell. Uniform restrictions still do not tick a larger cell when any physical realization or completion remains unresolved. Seek complete shared arguments across whole families, with continuous geometry retained.
 
 ### Uniform subsubgate contract for every unchecked cell C
 
@@ -472,7 +480,7 @@ The labels below refine the **remaining obligations**, not the numerical radius 
 - [x] **G3.0.TIP.PRESERVE** The finite physical prelist, matched junctions, zero-weight masks and surviving point normals remain valid under uncrossing/thinning. All choices precede multipliers and fit inside earlier open constraints. Genuinely variable shared-side means remain outside the fixed-point theorem.
 - [ ] **G3.0.SHARP** Finish both G3.B and G3.M. The split itself supplies no sharp metric inequality.
 
-### G3.B Boundary-only seven-cycle: complete two-square exclusion [OPEN]
+### G3.B Boundary-only seven-cycle: complete sharp lower-bound exit [OPEN]
 
 #### G3.B.0 Full premise and closed routing
 
@@ -561,9 +569,16 @@ Source: C7_PINNED_VERTEX_CONTACT_TYPES.md, with the symmetric radial-run choice 
 - [x] **G3.B.N.PINNED.4** The exclusions need only actual fixed external point/axis data at the selected block or anchor. Every other owned complementary path, owner transition and physical zero-weight contact remains arbitrary; the selected core is excluded independently of completion.
 - [x] **G3.B.N.PINNED.5** The complete domain is excluded by simultaneous pre-KKT choices: adaptive radial-run intervals, the fixed-mean RR obstruction and the incompatible-endpoint UU obstruction. Uncrossing and thinning preserve all surviving point normals. The complete sources passed independent hand audits.
 - [x] **G3.B.N.SIDE_AXIS** No free vertex/vertex edge remains in a selected positive high-radius C7. Every edge has a genuine side-axis owner; all zero-owner/two-owner transitions, shared sides and physical circle masks remain.
-- [ ] **G3.B.N.ALL** Finish the entire OWNED capacity theorem. PINNED is closed; only then close B.CAP and the full boundary-only branch.
+- [ ] **G3.B.N.ALL** Finish the whole OWNED radius>=Q theorem or the stronger capacity theorem. PINNED is closed. Preserve the exact distinction between a lower-bound exit and exclusion of every Q realization.
 
-#### G3.B.CAP Required terminal theorem
+#### G3.B.SHARP Sufficient lower-bound exit; capacity is a stronger alternative
+
+- [ ] **G3.B.SHARP.RADIUS** Prove R^2>=Q for every selected positive boundary C7 completed by two arbitrary units. Excluding every strictly subcritical packing is sufficient for the lower-bound assembly; equality survivors must be passed explicitly to G5.
+- [ ] **G3.B.SHARP.CAP_ROUTE** Alternatively prove the stronger capacity-one theorem throughout R^2<=Q. These are OR exits, not cumulative obligations or additional geometric cases.
+- [ ] **G3.B.SHARP.CAP_EXTRACTION** If using the established unrestricted three-square-cap theorem, prove the actual whole-square cap placement with its exact height7/16 and all hypotheses. A center-only cap or unproved common-frame normalization is insufficient.
+- [ ] **G3.B.SHARP.EQUALITY_SCOPE** If only R^2>=Q is proved, do not mark the stronger capacity gate closed; retain every Q survivor and any canonical-minimizer restriction for the independent equality analysis.
+
+#### G3.B.CAP Stronger sufficient terminal theorem
 
 - [ ] **G3.B.CAP.1** For every admissible ring, prove that its entire free completion domain cannot contain two interior-disjoint unit squares.
 - [ ] **G3.B.CAP.1.a** Retain arbitrary centers and independent frames of both extra squares.
@@ -589,9 +604,13 @@ Source: C7_PINNED_VERTEX_CONTACT_TYPES.md, with the symmetric radial-run choice 
 - [x] **G3.B.R.COVER.CONTROL** C7_CENTER_COVER_GEOMETRIC_OBSTRUCTION.md gives exact unstressed physical rings of type(2,2,3), at Q and strictly belowQ, with covering radius>3/2. Its outgoing-contact torque identity proves that these rings have no positive C7 stress. A purely geometric cover theorem is REJECTED.
 - [ ] **G3.B.R.COVER.4.boundary** Include all acute/right transition limits, multiple supporting centers and shared-side contacts. A right supporting triangle is already covered by its antipodal pair.
 - [ ] **G3.B.R.COVER.5** Assemble a single open disk of radius3/2 containing all seven centers, then apply COVER.1 and the established localization theorem to close B.CAP.
-- [ ] **G3.B.R.DIAM.1** Prove that a contact cycle of at most 7 unit squares enclosing two unit squares has boundary-center diameter>=3, without aligning the inner squares.
+- [x] **G3.B.R.CENTER_POLYGON.CONVEX** C7_CENTER_POLYGON_LOCALIZATION.md proves each center is strictly exposed by its own radial direction using5/4<r_i<91/60 and angular gaps>40 degrees. All gaps<120 degrees put0 inside the convex hull, so the actual circular order is the strictly convex polygon order.
+- [x] **G3.B.R.CENTER_POLYGON.CHORD** Every line meeting a unit square's open interior cuts its radius-half offset in a chord longer than sqrt(2). Full-direction tangent exit formulas, central symmetry and chord concavity prove the exact bound, including tangent limits.
+- [x] **G3.B.R.CENTER_POLYGON.LOCALIZE** Actual adjacent center edges have length<=sqrt(2) and both endpoints at distance>=1/2 from an extra square, so they cannot cross its interior. Each spoke-replacement triangle has area<=1/4, preserving winding. Every completion unit lies wholly in the center polygon.
+- [x] **G3.B.R.DIAM.CONTROL_SCOPE** The negative control uses actual seven unit-square obstacles with exact C7 touching graph, two independent inner frames, all squared center distances, and a strict diameter below3. It rules out the broad physical-ring lemma, not the disk/stress-dependent C7 target.
+- [x] **G3.B.R.DIAM.1** REJECTED: C7_DIAMETER_EXTRACTION_COUNTEREXAMPLE.md gives an exact physical seven-square ring enclosing two units with boundary-center diameter squared19/4+3sqrt(2)<9. Every pair separation/contact and both enclosures are checked; angular gaps also lie between40 and72 degrees. The unrestricted enclosing-ring extraction is false.
 - [x] **G3.B.R.DIAM.2** BOUNDARY_SEVEN_CYCLE_CENTER_DIAMETER.md proves every physical boundary C7 has center diameter<3. The proof bounds entire angular shadows, then encloses all possible distant endpoint sectors in one disk of radius<3/2. No stress or regularity assumption is used.
-- [ ] **G3.B.R.DIAM.3** Once DIAM.1 is proved, combine it with the completed DIAM.2. A far-vertex span>=4 does not supply the missing center-diameter lower bound.
+- [ ] **G3.B.R.DIAM.3** Any replacement extraction must retain the actual containing disk, common annulus or positive stress. The exact counterexample fails the radius91/60 center-disk bound under every translation and has an actual far-vertex pair too long for Q. A far-vertex span alone is not a center-diameter theorem.
 - [ ] **G3.B.R.CLASSIFY.1.a** Cover every cyclic assignment of vertex/side and side/side ownership, retaining two-owner/zero-owner transitions.
 - [x] **G3.B.R.CLASSIFY.1.b** The entire selected free-vertex-normal branch is excluded by the RR and mirror-module theorems. All one/two-circle-corner states and zero weights remain in the explicit OWNED domain; no one-owner normalization is inferred.
 - [ ] **G3.B.R.CLASSIFY.2** Derive an exact stationary recurrence for each entire surviving ownership type.
@@ -718,7 +737,7 @@ The theta->0 limit of S+/S- gives only t=+/-1/2. It does **not** cover the align
 
 #### G3.M4.ALL — Whole-cell closure [CLOSED hand]
 
-Source: TRIANGLE_LEAF_CELL_CLOSED.md; independent assembly audit passed. The simultaneous certificate selection is compatible with every prior reduction. The coarse count is three closed and55 open, and every remaining selected positive cyclic component has at least five bodies.
+Source: TRIANGLE_LEAF_CELL_CLOSED.md; independent assembly audit passed. The simultaneous certificate selection is compatible with every prior reduction. This earlier closure still supplies the lower component bound of five bodies. The subsequent C1.3.b2 closure makes the current coarse count four closed and54 open.
 
 - [x] **G3.M4.ALL.1** G3.M4.0 plus D.ALL plus S.ALL cover every selected C1.3.b1 realization.
 - [x] **G3.M4.ALL.2** At most4 extras contradict the required5, or the alternative full-core exclusions already contradict the premise.
@@ -772,7 +791,7 @@ There are four physical completion squares in every case. For cyclic block sizes
 - [x] **G3.M5.CATALOG** The exhaustive coarse list is C1.3.b2, C1.4.b1, C1.5.b0, C2.33.b0. Three cyclic blocks would already require at least seven bodies.
 - [ ] **G3.M5.ALL** Close all four complete cells, retaining every equality survivor and every one of the four extras.
 
-#### M5.T2 — C1.3.b2: one triangle and two bridges [OPEN; active]
+#### M5.T2 — C1.3.b2: one triangle and two bridges [CLOSED hand; full assembly audited]
 
 - [x] **M5.T2.LAYOUT** The exhaustive bridge-attachment layouts are a length-two arm at one triangle vertex, two leaves at one triangle vertex, or leaves at two distinct triangle vertices. This follows by removing the triangle edges and listing the two-edge attached forests.
 - [x] **M5.T2.CHAIN.1** TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md gives the full load and radial-channel reduction. Only the leaf and the two triangle tips are loaded; the right articulation support lies at x=r_leaf-w<1/60, with w in {1,sqrt(2)}.
@@ -864,13 +883,22 @@ There are four physical completion squares in every case. For cyclic block sizes
 - [x] **M5.T2.DISTINCT.SS.WALL.SLIDER** With u=1-x^2, the complete family is A=[x^2,1+x^2]x[t-1,t], B=[-u,x^2]x[2x-1,2x], C=[-u,x^2]x[2x-2,2x-1], and the two fixed radial S leaves. Its full position interval is x(1-2x)/(1-x)<=t<2x.
 - [x] **M5.T2.DISTINCT.SS.WALL.MEANS** Normalize C's circle weight to1/2. AC and BC magnitudes are u and2(1-x); AB is u(1-x)/x. For every actual AB height Y in [x(1-2x)/(1-x), min(t,x(1-t)/(1-x))], the other means are Z=-(1-x)Y/x and xi=-uY/(2x). Genuine side endpoint means, including the lower t endpoint, remain valid.
 - [x] **M5.T2.DISTINCT.SS.WALL.CONVERSE** Every t and Y in those full intervals gives a contained positive five-body core with the two fixed leaves. All nonincident pair separations persist as A slides, and A stays physically clear. Root and independent full hand audits passed.
-- [ ] **M5.T2.DISTINCT.SS.CAP.ROUTING** Give a complete whole-square cover of the free domain around this exact family, uniform in t. In particular prove any required lower-left/lower-right separation before imposing a quadrant or radial wedge on an arbitrary extra square.
-- [ ] **M5.T2.DISTINCT.SS.CAP.UPPER** Establish a uniform capacity bound for the complete upper region, retaining every extra orientation and all boundary states. Any center-angle or center-radius lemma must follow from the actual obstacles and whole-square routing.
-- [ ] **M5.T2.DISTINCT.SS.CAP.LOWER** Prove the complete joint lower-region bound, or exclude all lower extras, without assuming that a square cannot wrap the end of a central column or leaf. A bound on a prescribed quadrant alone does not settle this gate.
-- [ ] **M5.T2.DISTINCT.SS.PARALLEL** Combine the actual whole-domain routing and coupled capacities to obtain at most three extras for every t in the classified interval. Nonparallel concurrence cannot be applied at A, and separate pocket maxima are not automatically simultaneous.
-- [ ] **M5.T2.DISTINCT.SS.BOUND** Prove at most three additional unit squares for every surviving S/S core, using the actual full free domain. A complete classification followed by capacity for every resulting family is also sufficient. A triangle's empty inner hole alone does not bound the four candidate exterior extras.
-- [ ] **M5.T2.DISTINCT.3** Assemble the complete S/S completion conclusion with the D/D and D/S exclusions, the whole radius/zero-moment reductions, and every shared-side/degenerate contact case.
-- [ ] **M5.T2.ASSEMBLE** Combine all three layouts, audit the same simultaneous certificate choice, and only then close C1.3.b2.
+- [x] **M5.T2.DISTINCT.SS.CAP.ROUTING** The two actual radial leaf rays are fully screened by B/A, the leaves and the outer circle chords. Every additional open square lies wholly in the upper wedge or the complementary lower sector; no center-only placement assumption is used.
+- [x] **M5.T2.DISTINCT.SS.CAP.UPPER** DISTINCT_S_LEAF_WALL_UPPER_CAPACITY.md proves capacity3 for the whole upper region. Its all-orientation point lemma excludes center radius<=2/3; convex terminal-distance inequalities remove40 degrees at each end, and every center pair requires>30 degrees. The remaining angular interval is<90 degrees.
+- [x] **M5.T2.DISTINCT.SS.CAP.LOWER** DISTINCT_S_LEAF_WALL_LOWER_EMPTY.md excludes the entire lower sector. It first proves the column/leaf center constraints and whole lower-half-plane routing, then excludes both ways a tilted square can wrap an obstacle endpoint. The remaining quadrant forces squared corner radius>=R^2+4delta.
+- [x] **M5.T2.DISTINCT.SS.CAP.UPPER.POINT** Every upper unit with center norm<=2/3 strictly contains (0,2/11), by all three exhaustive side-axis coefficient regimes. That point is in B's open interior.
+- [x] **M5.T2.DISTINCT.SS.CAP.UPPER.TERMINALS** The radial endpoint radii2/3 and151/100 both have distance<1/2 from a terminal at every angle<=40 degrees. Convex squared distance covers the whole radial interval.
+- [x] **M5.T2.DISTINCT.SS.CAP.UPPER.PAIRS** The separately convex squared center-distance expression on both radius intervals has all three endpoint values<1 at angle30 degrees. Four upper centers would require three gaps>30 degrees in a sector<90 degrees.
+- [x] **M5.T2.DISTINCT.SS.CAP.LOWER.LEFT** For X<=delta, center clearance from the full B/C column puts the center into one of two exact rectangles whose distance to the B-leaf center is<1. Thus every lower center has X>delta and then X>=delta+1/2.
+- [x] **M5.T2.DISTINCT.SS.CAP.LOWER.HALFPLANE** Every proposed square has x>-u. The actual horizontal obstacle ray then forces the whole square below y=0; the conclusion is not inferred merely from its center sign.
+- [x] **M5.T2.DISTINCT.SS.CAP.LOWER.CENTERS** The fixed rectangle [-u,d]x[-f,0] inside A union B, together with the east leaf and center-radius bound, forces delta+1/2<=X<d and f+1/2<=-Y<=m<v.
+- [x] **M5.T2.DISTINCT.SS.CAP.LOWER.WRAP_RIGHT** One tilt sign already lies right of C. If its top extends above the fixed rectangle floor, its rightmost corner has norm squared at least(d+b)^2+(v-j)^2>R^2, with all orientation components and endpoint contacts retained.
+- [x] **M5.T2.DISTINCT.SS.CAP.LOWER.WRAP_BOTTOM** The other tilt sign already lies below the rectangle floor. Extending left of C's wall forces its bottommost corner to have norm squared at least(d-j)^2+(v+b)^2>R^2, using j<=b and v>d.
+- [x] **M5.T2.DISTINCT.SS.CAP.LOWER.QUADRANT** Once both wraps are excluded, the whole square is in x>=delta,y<=-f. Both tilt signs and b=0 have an actual corner of squared norm>=d^2+v^2=R^2+4delta. This closes both lower regions without independent-pocket assumptions.
+- [x] **M5.T2.DISTINCT.SS.PARALLEL** The genuine upper/lower routing and capacities3 and0 apply simultaneously for every t in the complete interval, with all genuine side endpoints and arbitrary extra orientations. Hence no classified core admits four additional units. Root and separate full audits passed.
+- [x] **M5.T2.DISTINCT.SS.BOUND** The full tilted/shared reduction, complete wall classification and uniform capacity theorem exclude every distinct S/S nine-square completion, including the valid positive core and its entire slider family.
+- [x] **M5.T2.DISTINCT.3** TRIANGLE_TWO_BRIDGES_CELL_CLOSED.md combines the whole S/S capacity with D/D, D/S, low-radius and zero-moment exclusions. Every shared-side and contact-coordinate endpoint is retained.
+- [x] **M5.T2.ALL** TRIANGLE_TWO_BRIDGES_CELL_CLOSED.md exhausts the three bridge attachments and all leaf types under one compatible pre-certificate selection. The entire C1.3.b2 cell is excluded, with all four extras accounted for. Root and separate independent assembly audits passed.
 
 #### M5.B4L — C1.4.b1: a four-body block with one leaf [OPEN; active]
 
@@ -903,9 +931,21 @@ There are four physical completion squares in every case. For cyclic block sizes
 - [x] **M5.B4L.C4.OPPOSITE.UNIQUE.DEGENERATE** FOUR_CYCLE_UNIQUE_LOAD_NORMAL_SELECTION.md excludes a loaded unique-corner tip whose pair forces are both channel-parallel. Its radial-D inner vertex and the transmitter's relative-side-interior halfplane leave no room for the second unit neighbor.
 - [x] **M5.B4L.C4.OPPOSITE.UNIQUE.FORCE** For the full physical unique/unique mask, the three noncollinear load rays fix their normalized vectors. The two A-tip forces are F_B+gamma n and F_D-gamma n, independent of every shared-side mean.
 - [x] **M5.B4L.C4.OPPOSITE.UNIQUE.SELECT** One fixed other tip axis fixes gamma; two free tip normals instead satisfy a nonzero product determinant. The junctions are distinct by the unit channel gap. A finite compatible preselection removes every free A-tip normal while retaining arbitrary BU/UD and other contact means.
-- [ ] **M5.B4L.C4.OPPOSITE.CANONICAL** Prove and audit any proposed secondary-minimizer motion before using a new physical A/U contact. It must preserve the whole nine-square packing, including all four extras, and be chosen before certificate selection; it cannot silently strengthen the equality premise.
-- [ ] **M5.B4L.C4.OPPOSITE.NONPARALLEL.OWNERS** Cover every remaining A/U-oblique axis-owner word, including A-owned edges, one or both U-parallel tip frames, and all shared-side means. The completed two-tip-owner chart does not cover these transitions.
-- [ ] **M5.B4L.C4.OPPOSITE.NONPARALLEL.MASKS** Retain physical unique/unique, unique/radial, radial/unique and radial/radial masks. The force-only free-normal selection currently covers only the first; a radial tip with one active corner still belongs to its physical two-corner mask.
+- [x] **M5.B4L.C4.OPPOSITE.CANONICAL** FOUR_CYCLE_SECONDARY_CONTACT_REDUCTION.md chooses a radius minimizer minimizing the sum of squared center norms before every normal selection. A positive A/U gap is a whole rectangle inside the proved empty C4 hole; translating U inward preserves all nine bodies and disk containment while decreasing the secondary objective. Thus AU physically touches. Root and separate audits passed.
+- [x] **M5.B4L.C4.OPPOSITE.CANONICAL.SCOPE** The compact secondary minimizer is selected before certificate extraction. The full swept strip is obstacle-free by a two-crossing Jordan slice and the already proved empty hole. This is a lower-bound reduction, not a claim that every original equality packing has AU contact.
+- [x] **M5.B4L.C4.OPPOSITE.CANONICAL.SHARED** When A is oblique, its leftmost vertex lies in U's side interior. An AB shared side would put B's unique channel-level vertex strictly to U's right; the reflected AD argument is identical. Thus both A-tip intersections are singletons, all channel means retained.
+- [x] **M5.B4L.C4.OPPOSITE.CANONICAL.D_OWNER** For a D leaf, both A-owned cycle normals would coincide opposite its leaf axis; their required vertical application gap>=1 cannot fit on an oblique unit side. Every surviving single A-owned D normal is therefore perpendicular to the leaf axis.
+- [x] **M5.B4L.C4.OPPOSITE.UNIQUE.LOWER_OBLIQUE** FOUR_CYCLE_UNIQUE_TIPS_EXCLUSION.md proves a>b at every A-owned lower contact with an oblique unique-corner tip. Its two possible physical circle corners each contradict b>=a by positive concurrence; no contact mean is prescribed.
+- [x] **M5.B4L.C4.OPPOSITE.UNIQUE.LOWER_PARALLEL** For an aligned lower tip, the exact force/torque equation gives a>=b. Equality forces its channel mean to the upper-left corner. Reflection gives b>=a at an upper A-owned contact, including the full endpoint mean.
+- [x] **M5.B4L.C4.OPPOSITE.UNIQUE.MIXED_OWNER** One A-owned and one tip-owned contact is impossible. The U-parallel tip axis list is exhausted; the remaining near oblique side forces c<d, contradicting the A vertex-cone sign bc>=ad together with a>=b. The reflected transition is covered.
+- [x] **M5.B4L.C4.OPPOSITE.UNIQUE.BOTH_A** Both A-owned contacts force the exact45-degree articulation and identical aligned tip columns. Equal circle norms and channel balance make the leaf eastward; the east support<2/3 excludes S and the frame excludes D.
+- [x] **M5.B4L.C4.OPPOSITE.UNIQUE.ALL** Both tip owners reduce to the earlier complete oblique-tip-owner theorem. Thus the entire physical unique/unique mask is excluded at the canonical minimizer, with every S/D leaf, singleton owner, U-parallel endpoint and actual channel mean. Root and separate full audits passed.
+- [x] **M5.B4L.C4.OPPOSITE.RADIAL.CHANNEL** FOUR_CYCLE_TWO_RADIAL_TIPS_EXCLUSION.md covers all physical two/two tip frames. An oblique radial channel vertex has x<-1/2; a U-parallel radial tip requires |x|<=1/2, and two U-parallel tips force h=1/2. Thus both are oblique, for all actual channel means.
+- [x] **M5.B4L.C4.OPPOSITE.RADIAL.MIRRORS** Equal inner-vertex norms force Y=-1/2. The strictly decreasing equation2h sqrt(1-s^2)-s=1 forces mirrored frames, and h>9/10 gives s>1/2. No corner-weight equality is assumed.
+- [x] **M5.B4L.C4.OPPOSITE.RADIAL.FACES** The entire lateral and outer face cover leaves only relative-interior points of both radial inner faces. Left faces are outside A's halfplane; outer faces cannot meet a contained unit; right faces exceed the unit bypass diameter. Every genuine mean and endpoint alternative is handled.
+- [x] **M5.B4L.C4.OPPOSITE.RADIAL.ALL** Positive force and torque make both inner-face parameters>1/2, so their vertical gap>1+s>3/2>sqrt(2). The entire physical two/two mask is excluded, including either zero individual circle weight, without secondary minimization. Root and separate full audits passed.
+- [ ] **M5.B4L.C4.OPPOSITE.NONPARALLEL.OWNERS** At the canonical minimizer the AU contact gives the complete owner signs, and every positive-length AB/AD shared side is impossible. The remaining singleton owner cover is retained for the physical mixed mask; no positive AU multiplier is inferred.
+- [ ] **M5.B4L.C4.OPPOSITE.NONPARALLEL.MASKS** Only the physical mixed mask remains at the canonical minimizer: one unique-circle-corner tip and one two-circle-corner tip. Retain every radial weight split, including a zero corner weight, every remaining free normal and every singleton owner/channel mean.
 - [ ] **M5.B4L.C4.OPPOSITE.BOUND** Prove the whole opposite-load core/radius or joint four-extra exterior bound, using every completed chart without omitting the full remaining contact-owner, circle-mask and actual-mean domain.
 - [ ] **M5.B4L.C4.THREE.DOMAIN** Derive the complete three-loaded-block force/moment system, all physical circle-corner masks and both independent cycle contacts at the clear articulation.
 - [ ] **M5.B4L.C4.THREE.BOUND** Prove the full three-load branch's radius or joint exterior-completion theorem, retaining every asymmetric and shared-side limit.
@@ -989,7 +1029,7 @@ Use path u1--u2--u3--u4 and universal hub H. The two endpoint tips u1,u4 are loa
 ### G3.ALL — Sharp coverage exit
 
 - [ ] **G3.ALL.1** Every selected positive certificate is covered by G3.0, with no unproved global frame or origin-containment assumption.
-- [ ] **G3.ALL.2** G3.B.CAP excludes the full boundary-only branch.
+- [ ] **G3.ALL.2** G3.B.SHARP proves the whole boundary-only lower bound, either directly atR^2>=Q or through the stronger complete capacity exclusion. Equality scope remains explicit.
 - [ ] **G3.ALL.3** G3.M.ALL gives the sharp bound or exclusion for every mixed branch.
 - [ ] **G3.ALL.4** All radius-window and imported-theorem dependencies are explicit, and no physical square was discarded.
 - [ ] **G3.ALL** Pass a complete sharp-coverage theorem to G4. This gate is OPEN.
@@ -1086,8 +1126,8 @@ Use path u1--u2--u3--u4 and universal hub H. The two endpoint tips u1,u4 are loa
 ## Current execution contract
 
 1. P.ALL, Y.ALL, TREE.ALL and TL.COMPLETE are CLOSED hand at their stated scopes. Keep the general C7 and mixed 3–7-loaded cyclic completion obligations OPEN.
-2. The 58 coarse cells now have **three whole-cell exclusions and 55 open rows**. Do not confuse subfamily restrictions with parent closure.
-3. Follow the ordered G3 execution tree: the entire C1.3.b1 cell is closed; execute the four complete five-body cells with their exhaustive layout/graph domains, then the larger mixed cells. Pursue the entire C7 capacity in parallel, with its proved conditional piercing criterion and explicit center-cover blocker; continue the remaining mixed cells by component size. Use shared uniform arguments whenever possible. Do not create angle boxes merely to increase checked-gate counts.
+2. The 58 coarse cells now have **four whole-cell exclusions and 54 open rows**. Do not confuse subfamily restrictions with parent closure.
+3. Follow the ordered G3 execution tree: C1.3.b1 and C1.3.b2 are closed; execute the three remaining complete five-body cells with their exhaustive layout/graph domains, then the larger mixed cells. Pursue the entire C7 capacity in parallel, with its proved conditional piercing criterion and explicit center-cover blocker; continue the remaining mixed cells by component size. Use shared uniform arguments whenever possible. Do not create angle boxes merely to increase checked-gate counts.
 4. Preserve exact physical negative controls and every unstressed completion body.
 5. Commit finished arguments promptly and log UTC provenance, exact quantifiers, finite evidence and unchanged global blockers in TWO_LOAD_PROGRESS.md or a subsequent append-only checkpoint.
 6. If a proposed reduction fails, retain the exact witness and revise it; do not defend a false stronger normalization by shrinking the domain indefinitely.

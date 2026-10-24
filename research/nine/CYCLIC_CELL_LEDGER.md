@@ -1,8 +1,8 @@
-# n=9 CYCLIC — 58 exhaustive coarse cells, THREE whole cells closed
+# n=9 CYCLIC — 58 exhaustive coarse cells, FOUR whole cells closed
 
 **Checkpoint:** October 23, 2026, America/Chicago. **Global sharp theorem and unrestricted equality remain OPEN.** Every row retains its full continuous physical geometry, actual circle-load masks and all completion squares.
 
-The closed cells are **C1.3.b0**, **C1.4.b0** and **C1.3.b1**. Thus **55 coarse cells remain open**. The selected unique positive cyclic component now has **5–9 bodies** and **3–7 noncollinear loaded resultants**. Every other physical square has zero stress and remains an obstacle. All positive trees and every exactly-two-loaded component are already excluded by the full P/Y assemblies.
+The closed cells are **C1.3.b0**, **C1.4.b0**, **C1.3.b1** and **C1.3.b2**. Thus **54 coarse cells remain open**. The selected unique positive cyclic component now has **5–9 bodies** and **3–7 noncollinear loaded resultants**. Every other physical square has zero stress and remains an obstacle. All positive trees and every exactly-two-loaded component are already excluded by the full P/Y assemblies.
 
 ## Uniform restrictions applied to every open row
 
@@ -30,7 +30,7 @@ Each open row quantifies over every block adjacency, articulation arrangement, a
 |---|---|---:|---:|---:|---|
 | C1.3.b0 | 3 | 0 | 3 | 6 | [x] Excluded in explicit window |
 | C1.3.b1 | 3 | 1 | 4 | 5 | [x] Entire S/D triangle-plus-leaf excluded |
-| C1.3.b2 | 3 | 2 | 5 | 4 | [ ] OPEN |
+| C1.3.b2 | 3 | 2 | 5 | 4 | [x] Entire triangle-with-two-bridges cell excluded |
 | C1.3.b3 | 3 | 3 | 6 | 3 | [ ] OPEN |
 | C1.3.b4 | 3 | 4 | 7 | 2 | [ ] OPEN |
 | C1.3.b5 | 3 | 5 | 8 | 1 | [ ] OPEN |
@@ -104,12 +104,12 @@ The exact identity m=1+sum(block_size-1)+bridges yields these four cells, each w
 
 | Cell | Exhaustive graph/layout cover | Current internal closure |
 | --- | --- | --- |
-| C1.3.b2 | Entire distinct S/S family classified at one radius and full slider interval | Arm, same-articulation and D/S CLOSED; full slider capacity<=3 OPEN |
+| C1.3.b2 | Every chain/same/distinct attachment, every leaf type and four extras | CLOSED; full slider upper/lower capacities3 and0, assembly audited |
 | C1.4.b1 | Residual A/U-oblique opposite-load or three-load C4; diamond hub/tip | Adjacent-load, parallel-bypass and two-oblique-tip-owner charts CLOSED; parent OPEN |
 | C1.5.b0 | Exhaustive ten-type classification reduces to C5, house and four-path fan, with necessary load masks | Graph/load cover CLOSED; full geometry and whole cell OPEN |
 | C2.33.b0 | Two triangles sharing an articulation; all extra physical contacts retained | Four tips loaded, articulation clear; whole completion OPEN |
 
-TRIANGLE_TWO_LEAVES_SAME_ARTICULATION_CLOSED.md assembles the complete S/S, D/S and D/D exclusions under one compatible selected certificate. Both root and independent assembly audits passed. The distinct-layout domain and port-orientation theorems exclude D/D, zero triangle moment and R<=sqrt(17)/2, while retaining every actual contact mean. TRIANGLE_DISTINCT_MIXED_LEAVES_EXCLUSION.md now excludes the entire distinct D/S family. The sole remaining C1.3.b2 family has two S leaves at distinct articulations, R>sqrt(17)/2, nonzero moment and one physical circle corner at C. DISTINCT_S_LEAF_CORE_AND_CORNER_MASK.md excludes all two-corner C masks and exhibits an exact positive core below Q with strict shared means. Blanket core exclusion is false; the full completion-capacity<=3 theorem remains an open parent obligation.
+TRIANGLE_TWO_LEAVES_SAME_ARTICULATION_CLOSED.md assembles the complete S/S, D/S and D/D exclusions under one compatible selected certificate. Both root and independent assembly audits passed. The distinct-layout domain and port-orientation theorems exclude D/D, zero triangle moment and R<=sqrt(17)/2, while retaining every actual contact mean. TRIANGLE_DISTINCT_MIXED_LEAVES_EXCLUSION.md now excludes the entire distinct D/S family. The sole remaining C1.3.b2 family has two S leaves at distinct articulations, R>sqrt(17)/2, nonzero moment and one physical circle corner at C. DISTINCT_S_LEAF_CORE_AND_CORNER_MASK.md excludes all two-corner C masks and exhibits an exact positive core below Q with strict shared means. Blanket core exclusion is false. The full parallel-articulation reduction and exact wall classification now cover every surviving S/S core, and the upper/lower capacity theorems prove at most3 extras over the entire slider interval. TRIANGLE_TWO_BRIDGES_CELL_CLOSED.md consequently closes the whole C1.3.b2 cell.
 
 The S diamond-hub branch with a physically boundary second hub is also excluded by S_LEAF_CONNECTED_BOUNDARY_NEIGHBORS.md. Its S/clear-hub and D branches remain. The detailed domain/equilibrium/routing/boundary/audit gates are G3.M5 in the deep roadmap. Only complete parent implications change the coarse count.
 
@@ -122,13 +122,15 @@ The S diamond-hub branch with a physically boundary second hub is also excluded 
 - [x] **CY.C7.COVER.CONTROL:** a physical (2,2,3) ring at Q and below Q disproves the unstressed cover theorem; it has no positive C7 stress.
 - [x] **CY.C7.NORMAL:** simultaneous fixed-point and shared-side-block generic selections preserve every actual application mean and corner-weight mask.
 - [x] **CY.TRIANGLE.AXIS:** UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md proves n dot m>=0 at every side-owned contact triangle, for arbitrary frames and means.
-- [x] **CY.T2.SS.WALL:** DISTINCT_S_LEAVES_PARALLEL_ARTICULATION_REDUCTION.md reduces every remaining S/S core to an aligned-leaf, parallel-force articulation wall. All tilted-owner and shared-AB alternatives are excluded. DISTINCT_S_LEAVES_WALL_CLASSIFICATION.md then exhausts every wall owner/frame, forces the exact radius and full slider/mean intervals, and verifies every family member. Uniform capacity<=3 remains open.
-- [x] **CY.C4.OPPOSITE.PARALLEL / TIP_OWNER / UNIQUE_SELECT:** the three new complete C4 implications exclude the full parallel-bypass chart and both oblique tip owners, and remove free A-tip normals throughout the physical unique/unique mask. Remaining A-owned contacts, U-parallel tips, physical two-corner masks and all four extras are explicit open obligations. No new coarse cell is closed.
+- [x] **CY.T2.SS.WALL:** DISTINCT_S_LEAVES_PARALLEL_ARTICULATION_REDUCTION.md reduces every remaining S/S core to an aligned-leaf, parallel-force articulation wall. All tilted-owner and shared-AB alternatives are excluded. DISTINCT_S_LEAVES_WALL_CLASSIFICATION.md then exhausts every wall owner/frame, forces the exact radius and full slider/mean intervals, and verifies every family member. The upper/lower capacity theorems now prove uniform capacity<=3; the whole parent assembly is closed.
+- [x] **CY.C4.OPPOSITE.PARALLEL / TIP_OWNER / UNIQUE_SELECT:** the three new complete C4 implications exclude the full parallel-bypass chart and both oblique tip owners, and remove free A-tip normals throughout the physical unique/unique mask. FOUR_CYCLE_SECONDARY_CONTACT_REDUCTION.md supplies a separately scoped canonical AU-contact reduction. FOUR_CYCLE_UNIQUE_TIPS_EXCLUSION.md closes every physical unique/unique owner and U-parallel endpoint; FOUR_CYCLE_TWO_RADIAL_TIPS_EXCLUSION.md excludes the entire physical two/two mask. Only the physical mixed mask remains in the canonical opposite-load branch, with all four extras retained; C1.4.b1 itself remains open.
 - [x] **CY.C7.RADIAL:** at most four radial bodies, no selected radial run longer than two, and no parallel radial pair. Each free-vertex-incident block has a unique radial endpoint/singleton with two positive corner weights.
 - [x] **CY.C7.PINNED.TYPES:** the exhaustive free-edge list is radial/radial or mirror-paired two-square blocks; C7_PINNED_VERTEX_CONTACT_TYPES.md. Adaptive compatible choices give shared-side neighbors at both radial-pair ends. At most two free edges survive, with a complete individual-block/arrangement cover.
 - [x] **CY.C7.TWO_FREE:** both complete two-free-edge layouts are excluded by C7_TWO_FREE_EDGES_EXCLUSION.md.
 - [x] **CY.C7.FREE_NONE:** C7_RADIAL_VERTEX_EDGE_EXCLUSION.md and C7_MIRROR_VERTEX_EDGE_EXCLUSION.md exclude both remaining free-edge types by compatible open choices before multipliers. Every residual C7 edge has an actual side-axis owner.
 - [x] **CY.C7.HIGH_TYPES:** C7_HIGH_CENTER_CONTACT_TYPES.md exhausts the contacts of every center of radius at least3/2, including shared means and zero-load transmission. A positively loaded two-owned body instead has center radius below23/16 and a90-degree force-polygon turn. The global coupling is still required.
+- [x] **CY.C7.CENTER_POLYGON:** C7_CENTER_POLYGON_LOCALIZATION.md proves full extra containment in the strictly convex center polygon. Its clear-endpoint chord and winding arguments cover arbitrary inner frames.
+- [x] **CY.C7.DIAMETER_FALSE:** C7_DIAMETER_EXTRACTION_COUNTEREXAMPLE.md disproves the broad physical-ring diameter extraction with actual seven outer units and two inner units. The disk/annulus-dependent version is still open.
 - [ ] **CY.C7.OWNED:** finish the complete all-owned capacity problem, retaining every zero-owner/two-owner transition, radial/unique circle mask and shared-side application mean.
 - [ ] **CY.C7.COVER.133/223:** the positive-stress cover problem for these two entire patterns remains open.
 - [ ] **CY.C7.COMPLETE:** prove at most one arbitrary extra square in the actual free domain, by a complete cover or another valid capacity argument.
@@ -139,4 +141,4 @@ No regularity, single-owner convention, global common frame, or strict origin pi
 
 The new S/D local proofs, whole-cell assembly, graph obstructions, five-body graph/load cover, full chain exclusion, C4 inner-hole theorem, and C7 normal reductions have independent hand audits. Full earlier prerequisite-chain audit and standard-kernel verification remain separate gates. No Lean compilation or CI was run. Every new commit uses `[skip ci]`; PR #11 remains draft.
 
-TWO_LOAD_PROGRESS.md preserves chronological statuses and pinned exact-regression provenance. Earlier counts there are historical. The live count in this ledger is **three closed and 55 open**.
+TWO_LOAD_PROGRESS.md preserves chronological statuses and pinned exact-regression provenance. Earlier counts there are historical. The live count in this ledger is **four closed and 54 open**.

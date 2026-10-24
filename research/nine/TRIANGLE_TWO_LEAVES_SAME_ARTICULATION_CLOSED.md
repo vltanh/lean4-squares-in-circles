@@ -18,10 +18,10 @@ squares in a nine-square packing.
 
 The length-two pendant-chain layout is separately excluded by
 `TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md`. The third layout, with
-one leaf at each of two distinct triangle vertices, remains a
-separate open parent obligation. This assembly does not claim that
-the whole C1.3.b2 cell, or the unrestricted nine-square theorem, is
-closed.
+one leaf at each of two distinct triangle vertices, is now completed
+by the full exact-slider classification and upper/lower capacity
+theorems. TRIANGLE_TWO_BRIDGES_CELL_CLOSED.md assembles the entire
+C1.3.b2 cell. The unrestricted nine-square theorem remains open.
 
 ## 1. Exhaustive physical leaf types
 

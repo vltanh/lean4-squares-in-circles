@@ -35,9 +35,11 @@ and labeling the whole surviving domain has
 \]
 with actual wall mean heights \(y_B>0>y_C\).
 
-All four completion squares remain. The nonempty wall chart (2)
-still requires a universal completion bound of at most three.
-The audited exact positive control belongs to (2).
+All four completion squares remain. The nonempty wall chart (2) is
+classified in DISTINCT_S_LEAVES_WALL_CLASSIFICATION.md; its universal
+capacity of at most three is proved in the upper/lower capacity sources
+and assembled in TRIANGLE_TWO_BRIDGES_CELL_CLOSED.md. The audited exact
+positive control belongs to (2).
 
 ## 1. Two force-only choices retain every shared mean
 
@@ -515,9 +517,11 @@ unit-height interval has \(0<t<1\).
 All B/C owned/shared transitions, all actual means, and all four
 completion squares remain in this wall chart. The audited exact
 positive core shows that it cannot simply be declared empty.
-The remaining exit is its universal capacity of at most three
-additional unit squares, or a complete classification with that
-capacity for every resulting family.
+That exit is now completed: DISTINCT_S_LEAVES_WALL_CLASSIFICATION.md
+gives the whole exact slider family, and DISTINCT_S_LEAF_WALL_UPPER_CAPACITY.md
+plus DISTINCT_S_LEAF_WALL_LOWER_EMPTY.md prove capacities three and zero
+for its genuinely routed regions. TRIANGLE_TWO_BRIDGES_CELL_CLOSED.md
+assembles the entire parent cell.
 
 No numerical pose search, radius subdivision, Lean compilation or
 CI is a premise of this reduction.
