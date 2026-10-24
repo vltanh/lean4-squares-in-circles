@@ -81,10 +81,21 @@ central-disk theorem and exact d=1 exception retain every actual root
 force. OUTER_BRIDGED_TRIANGLE_EXCLUSION.md now excludes the entire second
 layout as well: the two-leaf fork body contains the required central
 disk, and its actual bridge points outward into a true end triangle.
-Thus four of seven whole layouts are closed. The three remaining are
-mixed arms at one root, a two-edge arm plus a different-root leaf, and
-one leaf at every triangle vertex. They retain their whole load, contact
-and completion domains. In particular an internal vertex of an attached tree is not
+TRIANGLE_THREE_BRIDGES_DISTINCT_ARM_EXCLUSION.md now excludes the
+entire fifth layout, a length-two arm and a leaf at different roots.
+The actual three external resultants have nonzero common cycle moment;
+RADIAL_TRIANGLE_CONCURRENCE.md proves positive concurrences even when
+one of the other roots has parallel cycle forces. The arm's small
+support and the direct-leaf root's central disk then exclude every
+aligned or tilted arm root, retaining both true degree-three equations.
+
+Thus five of seven whole layouts are closed. The two remaining are
+mixed arms at one root and one leaf at every triangle vertex.
+TRIANGLE_THREE_BRIDGES_MIXED_ARMS_D_EXCLUSION.md already excludes the
+entire direct-D-leaf alternative of mixed arms, including every other
+leaf/transmitter type and the true four-force root. The direct-S-leaf
+alternative remains open. Both whole remaining layouts retain their
+full load, contact and three-extra completion domains. In particular an internal vertex of an attached tree is not
 assigned a radial-leaf formula merely because its edges are bridges.
 The exact degree-one S/D law applies at an actual leaf; any broader
 terminal or transmission reduction must establish its own premises.
@@ -230,6 +241,42 @@ The K4, boundary-contact and clear-degree-two restrictions may remove
 subsets, but no diagonal set is discarded merely by drawing a sample
 configuration. In particular D empty is the mixed six-cycle family,
 which is not covered by the exact five-cycle theorem.
+
+### 6.1a. Exactly nine hexagon graphs, with every necessary load orbit
+
+SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md gives the complete hand
+chord count: one zero-chord type, two single-chord types, three
+noncrossing two-chord types and three triangulations. Its full load
+cover uses only true degree-two/degree-three restrictions, boundary
+path-forest and complement connectivity, and the explicit local
+unloaded-hub and bypass theorems. A word such as014 denotes the loaded
+set {0,1,4}; each entry includes all graph-preserving dihedral images.
+
+| Positive chords | Three loads | Four loads | Five loads |
+| --- | --- | --- | --- |
+| None | 013,024 | 0123,0124,0134 | 01234 |
+| 02 | 014,134,135 | 0134,0135,0145,1345 | 01345 |
+| 03 | 014,024,124 | 0124,0125,0134,1245 | 01245 |
+| 02,03 | 124,125 | 1234,1235,1245 | 12345 |
+| 02,04 | 125,135 | 0135,1235,1245 | 12345 |
+| 02,35 | None | 0134,0145 | None |
+| 02,03,04 | None | None | 12345 |
+| 02,03,35 | None | 1245 | None |
+| 02,04,24 | 135 | 0135 | None |
+
+The single-short-chord load family013 is excluded in full: its actual
+path3--4--5--0 has two unloaded degree-two transmitters, but body2 is
+a unit bypass touching its endpoints. The whole bypass theorem forbids
+this reserve. No hub is made degree two by deleting its chord.
+
+The two bare-cycle entries013 and0123 were already excluded by the
+long-channel and boundary-path theorems. Thus this table leaves38
+necessary whole graph/load orbits, including four for the bare cycle.
+It does not assert that any open orbit is realizable. Together with
+the five exterior-pentagon domains below, the graph cover consists
+of fourteen whole biconnected graph domains. Every open orbit keeps
+its full continuous masks, owners, weights and actual means, and all
+three extra squares. No whole chorded graph is closed by enumeration.
 
 ### 6.2. Exterior pentagon with one interior body
 
@@ -540,9 +587,36 @@ increasing circle-radius lower bound f(a+b)>f(5/4)>Q. Every physical
 two-corner endpoint and transverse mean is retained. The zero-/one-
 diagonal classes and the whole alternating-load parent remain open.
 
+SIMPLE_CYCLE_CONVEX_FORCE_POLYGON.md now proves that every exact
+simple positive cycle with at least three loads has a strictly convex
+polygon of its proper loaded concurrences, with the origin strictly
+inside. The actual exterior spokes prove the one-winding order; the
+common moment is nonzero; all contracted channel reserves remain.
+Physical radial concurrences may still lie outside their squares.
+The theorem also supplies the complete local direct-edge and one-
+transmitter angular bounds, without claiming completion localization.
+
+SIX_CYCLE_ALTERNATING_UNIQUE_SINGLETON_EXCLUSION.md excludes the entire
+all-side-transmitter alternating family when each loaded square has
+one physical circle corner and all six loaded/transmitter contacts
+are singletons. The full feature and equality cover forces adjacent
+inner ports, turns in[90,135]degrees and a constant circle-corner choice.
+Actual channel closure makes a convex six-point distance sum minimal.
+TRIANGLE_SQUARE_CORNER_FERMAT_BOUND.md then gives
+R<79/40, contradicting the window. Its exact uniform constant is
+(1+sqrt(4+sqrt(3)))/sqrt(3)<79/40; the proof covers all triangle shapes.
+
+The remaining all-side family has at least one genuine shared side
+or one physical two-corner loaded mask. Both are full open features:
+a shared side can shorten the actual port chord below1, and a radial
+concurrence need not lie inside its square. Neither is included by
+an unsupported limiting argument. Exactly one diagonal is the other
+full alternating width alternative still open.
+
 Positive chords retain their extra force equations and are not covered
-by an exact simple-cycle proof. All chord/load combinations remain in
-their full graph gates except the explicit opposite-ear three-load exit.
+by an exact simple-cycle proof. The complete chord/load cover in
+Section6.1a records the additional whole short-chord bypass exit.
+Every other listed full chord/load family remains open.
 
 LONG_CHANNEL_ENDPOINT_MATCHING.md independently proves that the graph
 of all actual center pairs at distance>=3 is a matching. A body cannot
@@ -560,14 +634,33 @@ load cover using the local all-bridge radial law, then retains both
 leaf types and both transmitter widths. The root lies in a narrow western
 center cap, while the two actual boundary-tip resultants sum west.
 The full center-angle rectangle forces the touching tips to opposite
-sides with gap>2acos(4/5)>acos(9/25), a contradiction. Thus exactly
-two of the seven triangle/three-bridge layouts are now closed; five remain.
+sides with gap>2acos(4/5)>acos(9/25), a contradiction. The later fork, double-leaf-root and distinct-arm exits bring the
+current total to five of seven closed; the two residual layouts and
+the closed direct-D mixed-arms alternative are specified in Section2.
 
 Root and separate independent full audits passed all six sources above,
 including every enlarged degree, physical-contact and selection scope.
 These are complete whole-domain exits and uniform local restrictions,
 not numerical graph or pose samples. None closes an entire six-body
 coarse row on its own.
+
+### 9.1. Uniform triangle support and radial-aggregate structure
+
+END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md proves h_A(M/|M|)<d for
+any physical positive triangle whose two tips have exact degree two
+and positive circle load. The root A may carry arbitrary additional
+forces. Its proof retains every physical corner mask and actual
+application mean; it does not replace the tip pair by one leaf.
+
+Its purely physical proper-port lemma also feeds
+RADIAL_TRIANGLE_CONCURRENCE.md. For any pairwise-touching triangle with
+three genuine noncollinear radial external aggregates summing to zero
+and nonzero common cycle moment, every nonparallel root has a strictly
+positive radial concurrence. The exact parallel-root alternative uses
+its two original opposite-sign wall means. The zero-moment case remains
+an explicit application obligation, fulfilled separately by the complete
+distinct-arm proof. Root and independent full audits passed all eight
+sources introduced in this checkpoint.
 
 ## 10. Exact exit contracts and status
 

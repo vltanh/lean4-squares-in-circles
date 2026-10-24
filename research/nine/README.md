@@ -1,10 +1,22 @@
 # Nine unit squares in a circle — current hand-proof frontier
 
+## Five of seven triangle attachments closed; complete hexagon load roadmap
+
+[TRIANGLE_THREE_BRIDGES_DISTINCT_ARM_EXCLUSION.md](TRIANGLE_THREE_BRIDGES_DISTINCT_ARM_EXCLUSION.md) excludes the entire two-edge arm and direct leaf at different triangle roots. Its full zero-moment analysis and [radial-triangle concurrence theorem](RADIAL_TRIANGLE_CONCURRENCE.md) retain parallel root forces, both leaf types and transmitter widths, every actual side mean and the two genuine degree-three equations. Five of seven triangle/three-bridge layouts are now closed. Only same-root mixed arms and one leaf at each triangle root remain; [the complete direct-D mixed-arms alternative](TRIANGLE_THREE_BRIDGES_MIXED_ARMS_D_EXCLUSION.md) is also closed, with its true degree-four root retained.
+
+[END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md](END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md) supplies a stronger reusable local theorem: for two true loaded degree-two triangle tips, their root has strict support h_A(M/|M|)<sqrt(R²-1/4)-1 in the tips' actual resultant direction. The root may have arbitrary additional forces. The proof covers every physical circle mask and actual contact mean.
+
+[SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md](SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md) gives exactly nine exterior-hexagon graph types and every necessary load orbit by a hand chord count. An additional whole short-chord load family is excluded by its two-transmitter channel and actual unit bypass. The remaining necessary hexagon cover has38 graph/load orbits; with the five exterior-pentagon domains, the biconnected roadmap has fourteen explicit graph domains. Each full load orbit now has its own unchecked deep-roadmap exit, with its continuous physical domain retained.
+
+[SIMPLE_CYCLE_CONVEX_FORCE_POLYGON.md](SIMPLE_CYCLE_CONVEX_FORCE_POLYGON.md) proves the actual concurrence polygon strictly convex with the origin inside for every exact simple positive cycle with at least three loads. The proof establishes the actual one-winding order and handles all contracted reserves and physical radial masks. [The whole all-side, unique-corner, singleton alternating-C6 family](SIX_CYCLE_ALTERNATING_UNIQUE_SINGLETON_EXCLUSION.md) is now excluded using [an exact Fermat inequality](TRIANGLE_SQUARE_CORNER_FERMAT_BOUND.md) with constant(1+sqrt(4+sqrt(3)))/sqrt(3)<79/40. Shared sides and physical two-corner loaded bodies remain explicit full families, as does the exactly-one-diagonal branch.
+
+Root and separate independent full audits passed all eight new manuscripts. All six six-body coarse rows and four whole simple-C6 load orbits remain open, retaining all three original extras. The coarse ledger stays seven closed and51 open. Unrestricted sharpness, original equality and the full earlier prerequisite-chain audit remain open; PR #11 stays draft. No Lean compilation or CI was run.
+
 ## Whole fork and joined-triangles exits; full alternating-cycle width exclusion
 
 [OUTER_BRIDGED_TRIANGLE_EXCLUSION.md](OUTER_BRIDGED_TRIANGLE_EXCLUSION.md) proves the complete outward end-triangle reduction and closes the entire triangle-plus-two-leaf-fork attachment. [OUTER_BRIDGED_TRIANGLE_CAP_EXCLUSION.md](OUTER_BRIDGED_TRIANGLE_CAP_EXCLUSION.md) strengthens it throughout the full radius window: for any true end triangle attached by one bridge, the actual bridge application p satisfies p dot M_tips<0. The proof keeps the arbitrary external component, all actual means and the root's true three forces. Its exact two-center cap has squared diameter178/225<1.
 
-That strict bridge sign excludes the **entire pair of disjoint triangles joined by a bridge**, including an origin application. Thus four of seven triangle/three-bridge attachments are closed; mixed arms, an arm with a different-root leaf, and one leaf at every root remain. Two of three two-triangle/one-bridge layouts are closed; only the whole tip-attached bowtie-leaf layout remains. Neither coarse parent is ticked prematurely.
+That strict bridge sign excludes the **entire pair of disjoint triangles joined by a bridge**, including an origin application. At that checkpoint four triangle/three-bridge attachments were closed. The later distinct-arm theorem makes the current total five of seven; the two residual layouts are listed above. Two of three two-triangle/one-bridge layouts are closed; only the whole tip-attached bowtie-leaf layout remains. Neither coarse parent is ticked prematurely.
 
 [SIX_CYCLE_ALTERNATING_DOUBLE_DIAGONAL_EXCLUSION.md](SIX_CYCLE_ALTERNATING_DOUBLE_DIAGONAL_EXCLUSION.md) closes the whole alternating-three-load width class with at least two diagonal transmitters. The common loaded frame, exact circle equations and a full monotone scalar bound give R²>Q. Zero or one diagonal remains; every physical two-corner endpoint and actual side mean is retained.
 
@@ -20,7 +32,7 @@ Root and independent full audits passed all three source manuscripts and their f
 
 | Complete attachment inventory | Closed / total | Whole layouts still open |
 | --- | --- | --- |
-| Triangle and three bridges | 4 / 7 | Mixed arms, arm plus different-root leaf, one leaf at each root |
+| Triangle and three bridges | 5 / 7 | Same-root mixed arms (direct D closed); one leaf at each root |
 | Four-body block and two bridges | 2 / 11 | All four C4 layouts; five remaining diamond layouts |
 | Five-body block and one leaf | 2 / 16 | Fourteen full rooted block types |
 | Two triangles and one bridge | 2 / 3 | Tip-attached bowtie leaf |
