@@ -6,6 +6,19 @@
 
 P.ALL and Y.ALL are now CLOSED hand, and their exhaustive reduction closes every positive tree in the declared window. All results called CLOSED hand are mathematical manuscripts pending independent full audit and Lean verification. See TWO_LOAD_PROGRESS.md for current exact source and execution provenance.
 
+## New complete capacities for contact holes and exterior pockets
+
+[CONTACT_RING_HOLE_AREA.md](CONTACT_RING_HOLE_AREA.md) proves, for every simple contact ring of k unit squares with 3<=k<=6, that its unoccupied interior has area at most `(k/4) cot(pi/k)`. The resulting completion capacities for ring sizes 3, 4, 5, 6 are respectively **0, 1, 1, 2**. There is no containing-radius or common-orientation assumption. The proof retains weakly degenerate contact polygons, subtracts the actual inward square pieces, and derives the polygon-area inequality by an exact finite Fourier identity.
+
+[CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md](CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md) also proves that the exterior pocket between any touching pair of circle-touching squares is empty in the declared radius window. Simultaneous dilation would create a new circle contact between the unchanged touching pair, contradicting the angular-neighbor theorem. This applies with any number of boundary-touching bodies.
+
+- [x] **CY.HOLE.3-6:** complete interior capacities 0, 1, 1, 2; separate hand audits.
+- [x] **CY.OUTERPAIR:** complete empty exterior-pocket theorem; separate hand audits.
+- [ ] **CY.TRIANGLELEAF:** after the triangle hole and touching-boundary-pair pocket are emptied, prove at most four extras in the two remaining articulation/leaf regions jointly.
+- [ ] **CY.C7.COMPLETE / CY.MIXED.COMPLETE:** the general seven-ring and other mixed cyclic capacities remain open.
+
+These are capacity statements for the specified regions. They do not place every remaining square in an interior face or close another entire coarse cell. The count remains two closed and 56 open.
+
 ## New global reduction: one planar positive component
 
 [PHYSICAL_BODY_GRAPH_UNCROSSING.md](PHYSICAL_BODY_GRAPH_UNCROSSING.md) constructs a selected physical force-and-torque certificate whose **body-pair graph is planar**, with every physical circle-touching vertex on its exterior face. At a four-square junction, an exact positive force identity replaces crossing opposite-pair contacts by actual shared-side endpoint contacts. Conic thinning restores the at-most-27 scalar-atom bound without restoring a crossing. Strict point-contact normal choices are retained.

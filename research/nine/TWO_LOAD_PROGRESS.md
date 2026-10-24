@@ -243,7 +243,7 @@ C7_COMPLETION_LOCALIZATION.md proves that every extra square lies inside this po
 No coarse cell is marked closed by these necessary conditions. The unrestricted sharp theorem and equality necessity remain open. No Lean compilation, CI, numerical search or certificate table is a premise of either new theorem.
 
 
-## 2026-10-24 01:05 UTC — planar physical certificate and unique positive component
+## 2026-10-24 01:02 UTC — planar physical certificate and unique positive component
 
 PHYSICAL_BODY_GRAPH_UNCROSSING.md proves existence of a physical certificate whose positive body-pair graph is planar and all physical circle-touching positive vertices lie on the exterior face. Compatible strict normals at a four-square junction permit an exact uncrossing identity at the same actual contact point, preserving each body's force and torque. The added forces are original shared-side endpoint rows. Thinning only the surviving atoms restores the 27-atom bound without adding a removed crossing; aggregation retains the graph. Optional finite normal avoidances remain available.
 
@@ -255,3 +255,17 @@ UNIQUE_POSITIVE_COMPONENT.md attaches every positive circle corner as a boundary
 - [ ] CY.SHARP: C7 capacity and mixed cyclic completion remain open, including the four-body triangle-plus-leaf cell.
 
 No universal claim about arbitrary physical body graphs is made. The selected unique component has 4–9 bodies and 3–7 noncollinear loaded resultants in the declared window. The coarse cell count remains two closed and 56 open. No Lean compilation or CI was run.
+
+
+## 2026-10-24 — uniform contact-ring hole capacities and empty boundary-pair pockets
+
+CONTACT_RING_HOLE_AREA.md proves the complete bound `area(H) <= (k/4) cot(pi/k)` for every physical Jordan contact ring with 3<=k<=6, without a containing-radius assumption. Contracting each center/contact path inside its actual square gives a limiting contact polygon with winding only zero or one. A chord of length l>1 leaves an occupied inward square piece of area at least `sqrt(l*l-1)/2`; these pieces must be subtracted before counting completion area. A finite exact Fourier identity bounds signed polygon area by `cot(pi/k)/4` times the sum of squared edge lengths. The one-variable contribution is maximized at l=1 for k<=6. Thus three-, four-, five- and six-body rings have interior unit-square capacities 0, 1, 1 and 2 respectively.
+
+CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md proves that an exterior pocket of any touching pair of circle-boundary squares is empty in the declared window. Every circle corner is within 20 degrees of its body's center direction, preserving circular order. Dilation of all pocket squares away from the pair's shared point preserves actual separations until one first touches the circle; its intervening center direction contradicts the angular-neighbor rule. A separate direct contact-triangle argument is also included.
+
+- [x] CY.HOLE.3-6: full continuous-domain interior capacities, with separate root and independent hand audits.
+- [x] CY.OUTERPAIR: full exterior boundary-pair pocket exclusion, with separate root and independent hand audits.
+- [ ] CY.TRIANGLELEAF: at most four extras jointly in the two larger articulation/leaf regions remains unproved. No two-per-region claim is made.
+- [ ] CY.C7.COMPLETE / CY.MIXED.COMPLETE: general C7 and mixed cyclic completion remain open.
+
+The exact comparison for k=5 and the nonnegative winding argument are included in the manuscript. No optimizer, finite parameter cover, Lean compilation or CI run is used. The coarse cyclic count remains two whole cells closed and 56 open; the unrestricted lower bound and equality necessity remain open.
