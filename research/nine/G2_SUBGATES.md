@@ -62,7 +62,7 @@ Every row retains four extra physical squares. Full nested contracts are G3.M5 i
 | Gate | Exact finite graph/layout cover | Status |
 | --- | --- | --- |
 | M5.T2 / C1.3.b2 | Length-two arm; two leaves at one or at two distinct triangle articulations | CLOSED; all leaf types and full S/S completion, independent assembly audited |
-| M5.B4L / C1.4.b1 | C4 load patterns; diamond hub/tip attachment; K4 | Adjacent-load C4 and K4 CLOSED; all cycle holes empty; other branches OPEN |
+| M5.B4L / C1.4.b1 | C4 load patterns; diamond hub/tip attachment; K4 | Adjacent-load and entire opposite-load C4, plus K4, CLOSED; all-three-loaded C4 and diamonds OPEN |
 | M5.B5 / C1.5.b0 | Exactly C5, house and four-path fan after the exhaustive ten-type graph/load reduction | Graph/load reduction CLOSED; full geometry/completion OPEN |
 | M5.TT / C2.33.b0 | Two triangles at one shared articulation, all additional zero-weight physical contacts retained | OPEN |
 
@@ -93,8 +93,11 @@ Every row retains four extra physical squares. Full nested contracts are G3.M5 i
 - [x] **M5.B4L.C4.OPPOSITE.ALL_MASK_SELECT:** RADIAL_LEAF_ARTICULATION_FIXED_POINT_SELECTION.md removes all free A-tip normals for every physical circle mask at the canonical minimizer, with fixed singleton applications, compatible pre-stress choices and every variable channel mean retained.
 - [x] **M5.B4L.C4.OPPOSITE.TIP_ENDPOINT:** FOUR_CYCLE_MIXED_D_LEAF_EXCLUSION.md closes the full both-tip-owned U-parallel radial endpoint for either leaf type. Together with the oblique theorem this covers every both-tip-owned alternative.
 - [x] **M5.B4L.C4.OPPOSITE.D:** The same source excludes both mixed owner orders for a D leaf. Exact force/torque gives the all-corners-clear bound754/225 in one order and the too-central-contact bound53/200 in the other. All physical masks, shared channel means and U-parallel endpoints are covered. Root and independent full audits passed.
-- [ ] **M5.B4L.C4.OPPOSITE.REMAINDER:** finish the S-leaf mixed physical mask: both A-owned or either mixed owner order. Every radial circle-weight split and support-side/vertex feature remains; no free A-tip normal survives. Then assemble the full opposite-load branch.
+- [x] **M5.B4L.C4.OPPOSITE.S:** FOUR_CYCLE_MIXED_S_LEAF_EXCLUSION.md exhausts all three S support features in both mixed owner orders and the full both-A-owned family. Exact radial-tip norms/projections and the complete channel Cauchy inequality place every proposed unique-tip contact inside radius r. All side endpoints, circle weights and channel means remain. Root and independent full audits passed.
+- [x] **M5.B4L.C4.OPPOSITE.ALL:** FOUR_CYCLE_OPPOSITE_LOAD_BRANCH_CLOSED.md assembles the entire opposite-loaded-pair C4 under one canonical necessary certificate. The physical mask, leaf and owner covers are exhaustive and every extra survives the empty-hole slide. Root and separate full assembly audits passed; all-three-loaded C4 and diamonds remain OPEN.
 - [x] **M5.B5.GRAPH/LOAD_COVER:** FIVE_BODY_BICONNECTED_REDUCTION.md gives all ten types, excludes seven and lists all remaining necessary positive-load masks. Zero-weight physical circle contacts and all four extras remain.
+- [x] **M5.B5.C5.THREE.PARALLEL:** FIVE_CYCLE_THREE_LOAD_PARALLEL_EXCLUSION.md excludes the whole parallel-force alternative at the isolated loaded vertex. Nonzero boundary-edge moment excludes D, a side transmitter ends at norm squared<13/50<r^2, and two diagonal transmitters overlap. All actual means and four extras remain; independent audit passed.
+- [ ] **M5.B5.C5.THREE.NONPARALLEL:** finish the full remaining nonparallel-T geometry and completion, retaining both channel widths, every physical circle mask, contact owner and shared mean.
 - [ ] **M5.ALL:** finish every whole cell, with all boundary cases and any equality survivors.
 - [ ] **M6–M9:** finish all larger mixed cells in increasing component size.
 - [ ] **MIXED.ALL:** assemble the complete mixed-branch sharp bound.

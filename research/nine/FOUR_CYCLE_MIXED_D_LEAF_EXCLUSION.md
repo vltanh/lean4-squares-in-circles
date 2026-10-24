@@ -16,7 +16,8 @@ endpoint, actual channel mean and all four completion squares retained.
 
 The unique/unique and two/two physical masks are already excluded.
 The new proof below covers the entire remaining mixed mask. The
-S-leaf opposite-load family and the all-three-loaded C4 remain open.
+S-leaf opposite-load family is now independently closed in
+FOUR_CYCLE_MIXED_S_LEAF_EXCLUSION.md. The all-three-loaded C4 remains open.
 
 ## 1. Exact domain and constants
 
@@ -336,12 +337,13 @@ Together with the complete unique/unique and two/two physical-mask
 theorems, this closes **every radial-D-leaf opposite-loaded-pair C4**
 at the canonical minimizer, with all four extras present.
 
-The remaining opposite-loaded-pair C4 has an S leaf and the mixed
-physical mask. Its two A-tip contacts are axis-owned, all individual
-radial-corner weight splits remain, and all four extras still require
-completion control if the core cannot be excluded. The all-three-
-loaded C4 and the diamond domains remain open. No whole C1.4.b1 or
-unrestricted nine-square closure is claimed.
+The companion FOUR_CYCLE_MIXED_S_LEAF_EXCLUSION.md now excludes
+all S-leaf mixed masks as well. FOUR_CYCLE_OPPOSITE_LOAD_BRANCH_CLOSED.md
+assembles both leaves, every physical mask and every owner, retaining
+all channel means and all four extras. The entire opposite-loaded-pair
+C4 branch is closed at the canonical minimizer. The all-three-loaded
+C4 and diamond domains remain open; no whole C1.4.b1 or unrestricted
+nine-square closure is claimed.
 
 No numerical search, Lean compilation, CI, altered normal convention,
 or additional secondary-minimizer premise is used in this proof.

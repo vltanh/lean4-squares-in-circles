@@ -355,11 +355,12 @@ and the two radial leaf types have now been exhausted. The entire
 physical unique/unique opposite-loaded-pair C4 alternative is
 impossible at the canonical radius minimizer.
 
-The remaining opposite-load C4 domain has at least one loaded tip
-with two physical circle corners. Every split of its circle weights
-must still be retained, including a zero weight on one physical
-corner. The all-three-loaded C4 and diamond domains remain separate.
-No whole parent-cell or unrestricted nine-square closure is asserted.
+The separate two/two and both mixed-mask leaf theorems now exhaust
+the remaining physical masks, with every radial corner-weight split
+and actual channel mean retained. FOUR_CYCLE_OPPOSITE_LOAD_BRANCH_CLOSED.md
+assembles the complete opposite-loaded-pair closure at the canonical
+minimizer. The all-three-loaded C4 and diamond domains remain separate
+open branches; no whole parent-cell or unrestricted closure is asserted.
 
 No numerical pose search, Lean compilation, CI, or change to the
 strict selected point-normal convention is used.

@@ -105,7 +105,7 @@ The exact identity m=1+sum(block_size-1)+bridges yields these four cells, each w
 | Cell | Exhaustive graph/layout cover | Current internal closure |
 | --- | --- | --- |
 | C1.3.b2 | Every chain/same/distinct attachment, every leaf type and four extras | CLOSED; full slider upper/lower capacities3 and0, assembly audited |
-| C1.4.b1 | S-leaf mixed-mask opposite-load C4; three-load C4; diamond hub/tip | Adjacent-load and full opposite-load D branch CLOSED; parent OPEN |
+| C1.4.b1 | All-three-loaded C4; diamond hub/tip | Entire adjacent-load and opposite-load C4 branches CLOSED; parent OPEN |
 | C1.5.b0 | Exhaustive ten-type classification reduces to C5, house and four-path fan, with necessary load masks | Graph/load cover CLOSED; full geometry and whole cell OPEN |
 | C2.33.b0 | Two triangles sharing an articulation; all extra physical contacts retained | Four tips loaded, articulation clear; whole completion OPEN |
 
@@ -129,7 +129,7 @@ The S diamond-hub branch with a physically boundary second hub is also excluded 
 - [x] **CY.C7.NORMAL:** simultaneous fixed-point and shared-side-block generic selections preserve every actual application mean and corner-weight mask.
 - [x] **CY.TRIANGLE.AXIS:** UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md proves n dot m>=0 at every side-owned contact triangle, for arbitrary frames and means.
 - [x] **CY.T2.SS.WALL:** DISTINCT_S_LEAVES_PARALLEL_ARTICULATION_REDUCTION.md reduces every remaining S/S core to an aligned-leaf, parallel-force articulation wall. All tilted-owner and shared-AB alternatives are excluded. DISTINCT_S_LEAVES_WALL_CLASSIFICATION.md then exhausts every wall owner/frame, forces the exact radius and full slider/mean intervals, and verifies every family member. The upper/lower capacity theorems now prove uniform capacity<=3; the whole parent assembly is closed.
-- [x] **CY.C4.OPPOSITE:** Canonical AU contact, singleton A-tip edges and all-mask fixed-point selection give a full owned domain. Unique/unique, two/two, every both-tip-owned endpoint and the entire radial-D-leaf opposite-load branch are excluded. Only S-leaf mixed-mask owners remain for opposite loads; three-load C4 and diamonds stay OPEN. Sources include RADIAL_LEAF_ARTICULATION_FIXED_POINT_SELECTION.md and FOUR_CYCLE_MIXED_D_LEAF_EXCLUSION.md; root and separate full audits passed.
+- [x] **CY.C4.OPPOSITE:** FOUR_CYCLE_OPPOSITE_LOAD_BRANCH_CLOSED.md closes the entire opposite-loaded-pair C4 at a canonical radius minimizer. Full D- and S-leaf exclusions exhaust every physical mask, actual side-axis owner, U-parallel endpoint and radial weight split. All four extras are preserved; both full assembly audits passed. The all-three-loaded C4 and diamond branches keep C1.4.b1 OPEN.
 - [x] **CY.C7.RADIAL:** at most four radial bodies, no selected radial run longer than two, and no parallel radial pair. Each free-vertex-incident block has a unique radial endpoint/singleton with two positive corner weights.
 - [x] **CY.C7.PINNED.TYPES:** the exhaustive free-edge list is radial/radial or mirror-paired two-square blocks; C7_PINNED_VERTEX_CONTACT_TYPES.md. Adaptive compatible choices give shared-side neighbors at both radial-pair ends. At most two free edges survive, with a complete individual-block/arrangement cover.
 - [x] **CY.C7.TWO_FREE:** both complete two-free-edge layouts are excluded by C7_TWO_FREE_EDGES_EXCLUSION.md.
@@ -148,3 +148,5 @@ No regularity, single-owner convention, global common frame, or strict origin pi
 The new S/D local proofs, whole-cell assembly, graph obstructions, five-body graph/load cover, full chain exclusion, C4 inner-hole theorem, and C7 normal reductions have independent hand audits. Full earlier prerequisite-chain audit and standard-kernel verification remain separate gates. No Lean compilation or CI was run. Every new commit uses `[skip ci]`; PR #11 remains draft.
 
 TWO_LOAD_PROGRESS.md preserves chronological statuses and pinned exact-regression provenance. Earlier counts there are historical. The live count in this ledger is **four closed and 54 open**.
+
+- [x] **CY.C5.THREE.PARALLEL:** FIVE_CYCLE_THREE_LOAD_PARALLEL_EXCLUSION.md excludes the entire parallel-force alternative at the isolated loaded C5 vertex, with every transmitter width and actual mean. The remaining nonparallel three-load C5 and the full four-load branch stay OPEN; no parent count changes.

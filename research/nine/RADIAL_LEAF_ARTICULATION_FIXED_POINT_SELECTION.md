@@ -198,9 +198,11 @@ circle mask**, including the remaining mixed mask. Arbitrary means
 on the unloaded transmitter's two sides remain.
 
 This replaces no physical two-corner mask by a unique-corner one.
-It proves an exhaustive owner reduction; the mixed-mask metric or
-completion exclusion, the all-three-loaded C4 and diamond domains,
-and all four arbitrary extras remain separate obligations.
+It proves an exhaustive owner reduction. The subsequent D- and S-leaf
+mixed-mask exclusions now complete the full opposite-loaded-pair C4;
+see FOUR_CYCLE_OPPOSITE_LOAD_BRANCH_CLOSED.md for the audited assembly.
+The all-three-loaded C4 and diamond domains remain open. Every channel
+mean and all four arbitrary extras are retained in that assembly.
 
 No numerical pose argument, secondary condition beyond the cited
 C4 application, Lean compilation, CI or relaxed point-normal

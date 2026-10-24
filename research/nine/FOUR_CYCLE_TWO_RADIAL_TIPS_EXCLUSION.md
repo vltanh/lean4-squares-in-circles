@@ -250,11 +250,13 @@ the remaining opposite-loaded-pair C4 can have only the mixed
 physical mask: one loaded tip with one physical circle corner and
 the other with two.
 
-Every weight split of that remaining radial tip, every singleton
-owner or retained free normal, all channel means, and all four
-extras must still be handled. The all-three-loaded C4 and diamond
-branches also remain open. No whole parent-cell or unrestricted
-nine-square closure is asserted.
+The subsequent all-mask articulation selection and complete D- and
+S-leaf mixed-mask theorems now cover that residual as well, including
+every corner-weight split and channel mean. The full assembly is
+FOUR_CYCLE_OPPOSITE_LOAD_BRANCH_CLOSED.md. Only the all-three-loaded
+C4 and diamond branches remain in this parent domain. The assembly's
+canonical premise does not alter the premise-free scope of the
+two/two theorem proved here.
 
 No numerical pose search, Lean compilation, CI, secondary-minimizer
 assumption, or change of the strict point-normal convention is used
