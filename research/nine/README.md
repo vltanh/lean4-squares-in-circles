@@ -40,7 +40,66 @@ The four remaining six-body parents are C1.4.b2, C1.5.b1,
 C1.6.b0 and C2.34.b0. Every one retains three arbitrary additional
 physical squares. All larger mixed parents remain open.
 
-## Entire parallel ABC family closed; stronger inner-arc tool
+## Whole C6 completion and new C4 owner exclusions
+
+[SIX_CYCLE_ONE_DIAGONAL_SIDE_CAPACITIES.md](SIX_CYCLE_ONE_DIAGONAL_SIDE_CAPACITIES.md)
+closes the **entire alternating C6 family with exactly one diagonal
+transmitter and three physically unique loaded corners**. Each actual
+side-channel height exceeds 21/50; each actual outward center gap is
+less than acos(-3/5). The occupied crosscut routes every whole extra's
+inner-circle arc into one interval shorter than 87 degrees. Every
+such extra has center norm greater than 23/25 and occupies more than
+43.5 degrees. Each side pocket therefore has capacity at most one.
+The central region and diagonal pocket are already empty, so the
+three actual extras cannot fit in the two remaining pockets.
+
+The complete algebra is in
+[C6_SHARED_T_SIDE_ARC_CERTIFICATES.md](C6_SHARED_T_SIDE_ARC_CERTIFICATES.md),
+[C6_SIDE_ARC_CERTIFICATES.js](C6_SIDE_ARC_CERTIFICATES.js) and
+[C6_SIDE_ARC_CERTIFICATES.json](C6_SIDE_ARC_CERTIFICATES.json).
+One exact rational rectangle covers the full closed angle triangle.
+All 1,080 coefficients are strictly positive. A separate independent
+implementation checked every rational identity, both circle
+equations, all coefficients and minima, and reconstructed each power
+polynomial from its full Bernstein basis. The original multiplied
+torque, every shared mean, actual angular branch and physical routing
+also passed full source-specific audits. Radial loaded masks and
+the zero-diagonal family remain OPEN.
+
+[ORIGIN_ROOT_POSITIVE_PRESSURE_THREE_LOAD_C4_NONPARALLEL.md](ORIGIN_ROOT_POSITIVE_PRESSURE_THREE_LOAD_C4_NONPARALLEL.md)
+extends the full parallel C4 exclusion to an actual origin-containing
+root with positive outside pressure. H keeps arbitrary true degree
+and every outside force. It excludes the complete parallel domains
+of six same-hub attachment families with at least two genuine
+leaves, including all S/S,S/D,D/D three-load C4/two-leaf cases.
+Their nonparallel domains remain OPEN.
+
+[FREE_NEGATIVE_C4_SHARED_RETURN_EXCLUSION.md](FREE_NEGATIVE_C4_SHARED_RETURN_EXCLUSION.md)
+excludes every genuinely shared HC return in the exact free-HA module.
+Its complete signed root frame and four-side cover make C circle-clear
+in both remaining placements. This retains every shift and original
+AB mean. For the remaining SUU singleton return, the actual C
+applications are distinct, BC is C-owned, and HC is H-owned or
+C-owned by the prior compatible fixed-tip selection.
+
+[NEGATIVE_H_OWNED_ENDPOINT_RADIAL_MIDDLE_DOMAIN.md](NEGATIVE_H_OWNED_ENDPOINT_RADIAL_MIDDLE_DOMAIN.md)
+excludes every A-owned or shared next contact when HA is H-owned and
+the middle body is physically radial. Only an exact B-owned tangential
+chart survives. The entire chart is excluded for \(R^2\ge17/4\).
+Below that radius, the original H-side offset and negative-projection
+constraint remain, and the true degree-two B equation gives the full
+BC vertex/normal-ratio interval, including both zero-weight endpoints.
+The uniform parts also apply to diamond K3; its degree-three middle
+does not inherit the separate two-force B formulas.
+
+All these complete sources have root and separate independent full
+audits. The detailed tree has 1,934 unique gates, retaining all earlier
+IDs and adding 92 substantive proof/domain steps. Eighteen previously
+open gates are now closed. The coarse inventory remains 9 CLOSED /49 OPEN:
+the full six-body parents, unrestricted lower bound, original equality
+classification and complete earlier prerequisite-chain audit stay OPEN.
+
+## Earlier parallel ABC closure and stronger inner-arc tool
 
 [TRIANGLE_C4_TILTED_WALL_OUTER_FACE_EXCLUSION.md](TRIANGLE_C4_TILTED_WALL_OUTER_FACE_EXCLUSION.md)
 excludes the complete tilted endpoint's outgoing outer-face contact,
@@ -153,38 +212,46 @@ true degree, physical mask, individual zero weight and mean remains.
 
 Label the actual negative physically unique endpoint A. Masks are in
 the order **(middle B, endpoint A, other endpoint C)**; S means two
-physical circle corners and U means one. A physical S mask never
-silently means that both individual weights are positive.
+physical circle corners and U means one. Physical S retains either
+individual zero circle weight unless a complete proof forces both
+weights positive.
 
 | HA contact family | SUS | UUS | SUU | UUU |
 | --- | --- | --- | --- | --- |
-| Free singleton, full radius window | CLOSED | CLOSED | Exact pinned module OPEN; both B weights positive | CLOSED |
+| Free singleton, full radius window | CLOSED | CLOSED | Singleton HC, BC C-owned, HC H- or C-owned; OPEN | CLOSED |
 | A-owned singleton, \(R^2\ge17/4\) | CLOSED | CLOSED | CLOSED | CLOSED |
 | Shared positive interval, \(R^2\ge17/4\) | CLOSED | CLOSED | CLOSED | CLOSED |
 | A-owned singleton, \(R^2<17/4\) | CLOSED | AB B-owned; OPEN | CLOSED | AB B-owned; OPEN |
 | Shared positive interval, \(R^2<17/4\) | AB free; OPEN | AB B-owned or free; OPEN | AB free; OPEN | AB B-owned or free; OPEN |
-| H-owned singleton, full radius window | OPEN | OPEN | OPEN | OPEN |
+| H-owned singleton, \(R^2\ge17/4\) | CLOSED | OPEN | CLOSED | OPEN |
+| H-owned singleton, \(R^2<17/4\) | Exact B-owned tangential chart; OPEN | Three actual AB owner families; OPEN | Exact B-owned tangential chart; OPEN | Three actual AB owner families; OPEN |
 
-Every H-owned singleton occurs at A's actual corner opposite its
-unique circle corner. The complete fixed-tip selection removes free
-singleton AB. The deep roadmap therefore splits each H-owned mask
-into the complete lower/higher radius domains and the actual
-A-owned-singleton, B-owned-singleton and genuinely shared AB alternatives.
-The original means in every shared branch stay variable.
+Every H-owned singleton occurs at A's actual opposite circle vertex.
+With radial B, all A-owned/shared AB possibilities are excluded and
+the complete high-radius branch is closed. The lower-radius
+tangential chart keeps the actual H-side offset, strict negative
+projection, B's true BC vertex and the entire original-weight normal
+interval. With unique B, the full A-owned, B-owned and genuinely
+shared AB domains remain; no shared mean is frozen.
 
-The free SUU module is split by singleton versus shared HC, without
-assuming an unproved contact-owner or missing-edge reduction. A whole
-core contradiction and a complete joint-capacity theorem are alternative
-routes. If using capacity, the C4 and petal holes and the three direct
+The sole free-HA SUU module has both B weights positive. Its entire
+shared HC branch is closed. The two remaining actual singleton-HC
+owner alternatives are separate whole domains, with the original AB
+mean and all genuine C applications retained.
+
+A whole-core contradiction and a complete joint-capacity theorem are
+alternative routes. The C4 and petal holes and the three direct
 boundary-pair pockets are empty; the two articulation pockets still
 need their actual routing and a joint bound excluding three extras.
 
-The remaining diamond-hub KAB orbit keeps H degree5 and K degree3.
-All negative A-owned/shared HA contacts are already excluded over the
-entire radius window by the actual H-A-K triangle theorem. Its exact
-remaining owner families are H-owned singleton at all radii, or free
-HA with genuinely shared AK below \(R^2=17/4\). The middle K force
-cannot be split into artificial degree-two end-triangle tips.
+The diamond-hub KAB orbit keeps true H5/K3. Every A-owned/shared
+negative HA is already excluded. In its H-owned family with radial
+K, the uniform endpoint theorem removes all A-owned/shared AK across
+the whole window and every owner for \(R^2\ge17/4\); only its exact
+lower-radius K-owned tangential chart remains. Unique K retains its
+full H-owned domain. The separate free HA/shared AK family remains
+below \(R^2=17/4\). No degree-two middle equation, BC vertex or weight
+interval is imported at K's actual degree three.
 
 ## Six-body execution frontier
 
@@ -195,29 +262,29 @@ cannot be split into artificial degree-two end-triangle tips.
 | C1.6.b0: six-body biconnected block | 9 exterior-hexagon graphs with38 load orbits;5 interior-pentagon graphs with19 load orbits | Finish each actual plane graph, mask, channel width and joint completion domain |
 | C2.34.b0: triangle and four-body block | Diamond-tip layout closed; C4 retains ABC and diamond-hub retains KAB | Finish both whole load orbits with their true H4/H5 and middle degrees, all original means and3 extras |
 
-The same-root two-leaf C4 has only BCD open: its entire BD orbit
-was closed for every S/S,S/D,D/D pair. The complete positive-pressure
+The same-root two-leaf C4 has only nonparallel BCD open. Its entire
+BD orbit is closed for every S/S, S/D and D/D pair, and the new
+origin-root positive-pressure theorem closes all three parallel BCD
+leaf families. The six uniform parallel three-load attachment
+families keep every true articulation degree and outside force. The complete positive-pressure
 opposite-C4 theorem also closes eight specified same-hub attachment/load
 families with7--9 bodies. These are full subfamily exclusions inside
 larger open coarse parents, not new whole coarse closures.
 
 ## Next complete proof steps
 
-1. **Finish the six-cycle side-pocket theorem.** For alternating C6
-   with one diagonal transmitter and three physical unique corners,
-   the central free union and the diagonal exterior pocket are empty.
-   All three extras must occupy the two actual side pockets. The
-   remaining whole allocations are3+0 and2+1, with both assignments
-   relative to the opposite tip's unique shared side. Close this
-   complete width/mask family only after its full side-capacity proof,
-   analytic domain map, exact coefficient signs and region-routing
-   audit pass. Physical radial endpoints and the zero-diagonal
-   domain remain separate obligations.
+1. **Finish the remaining alternating C6 width/mask families.** The
+   entire physical-unique one-diagonal family is now closed by its
+   complete side-capacity theorem. Continue the whole one-diagonal
+   physical-radial domain and the zero-diagonal unique-shared/radial
+   domains. Retain both zero individual weights and any exterior
+   radial concurrence; no unique-corner limiting argument is assumed.
 
 2. **Finish the entire nonparallel ABC owner cover.** The complete
    parallel-root family is now closed for both physical B masks.
-   Continue the exact H-owned singleton, surviving free SUU and
-   low-radius A-owned/shared domains in the owner table. Retain
+   Continue the unique-middle H-owned and low-radius radial-middle
+   tangential domains, the two free-SUU singleton return owners and
+   the low-radius A-owned/shared domains in the owner table. Retain
    every true force and original mean. The uniform central-capacity
    zero theorem is available, but a completion route must still
    bound the two actual articulation pockets jointly. Do not
@@ -236,7 +303,7 @@ larger open coarse parents, not new whole coarse closures.
    whole assembly audit pass.
 
 5. **Complete all larger mixed cells and the universal exit.**
-   Preserve8-body and9-body completion counts, actual articulation
+   Preserve8-body and 9-body completion counts, actual articulation
    degrees and all original forces. Reuse only uniform local
    theorems whose stated hypotheses hold in the larger graph.
    Prove the sharp exit for every remaining cell, retaining all

@@ -1232,3 +1232,129 @@ routing are preserved separately for review. No C6 side-capacity
 gate is closed by this checkpoint until its complete source and
 independent assembly audit pass. No Lean compilation or CI was run.
 All changes use the GitHub connector; PR #11 remains draft.
+
+
+## 2026-10-24 20:58 UTC — complete C6 side capacity and further C4 owner exclusions
+
+## Whole C6 completion and new C4 owner exclusions
+
+[SIX_CYCLE_ONE_DIAGONAL_SIDE_CAPACITIES.md](SIX_CYCLE_ONE_DIAGONAL_SIDE_CAPACITIES.md)
+closes the **entire alternating C6 family with exactly one diagonal
+transmitter and three physically unique loaded corners**. Each actual
+side-channel height exceeds 21/50; each actual outward center gap is
+less than acos(-3/5). The occupied crosscut routes every whole extra's
+inner-circle arc into one interval shorter than 87 degrees. Every
+such extra has center norm greater than 23/25 and occupies more than
+43.5 degrees. Each side pocket therefore has capacity at most one.
+The central region and diagonal pocket are already empty, so the
+three actual extras cannot fit in the two remaining pockets.
+
+The complete algebra is in
+[C6_SHARED_T_SIDE_ARC_CERTIFICATES.md](C6_SHARED_T_SIDE_ARC_CERTIFICATES.md),
+[C6_SIDE_ARC_CERTIFICATES.js](C6_SIDE_ARC_CERTIFICATES.js) and
+[C6_SIDE_ARC_CERTIFICATES.json](C6_SIDE_ARC_CERTIFICATES.json).
+One exact rational rectangle covers the full closed angle triangle.
+All 1,080 coefficients are strictly positive. A separate independent
+implementation checked every rational identity, both circle
+equations, all coefficients and minima, and reconstructed each power
+polynomial from its full Bernstein basis. The original multiplied
+torque, every shared mean, actual angular branch and physical routing
+also passed full source-specific audits. Radial loaded masks and
+the zero-diagonal family remain OPEN.
+
+[ORIGIN_ROOT_POSITIVE_PRESSURE_THREE_LOAD_C4_NONPARALLEL.md](ORIGIN_ROOT_POSITIVE_PRESSURE_THREE_LOAD_C4_NONPARALLEL.md)
+extends the full parallel C4 exclusion to an actual origin-containing
+root with positive outside pressure. H keeps arbitrary true degree
+and every outside force. It excludes the complete parallel domains
+of six same-hub attachment families with at least two genuine
+leaves, including all S/S,S/D,D/D three-load C4/two-leaf cases.
+Their nonparallel domains remain OPEN.
+
+[FREE_NEGATIVE_C4_SHARED_RETURN_EXCLUSION.md](FREE_NEGATIVE_C4_SHARED_RETURN_EXCLUSION.md)
+excludes every genuinely shared HC return in the exact free-HA module.
+Its complete signed root frame and four-side cover make C circle-clear
+in both remaining placements. This retains every shift and original
+AB mean. For the remaining SUU singleton return, the actual C
+applications are distinct, BC is C-owned, and HC is H-owned or
+C-owned by the prior compatible fixed-tip selection.
+
+[NEGATIVE_H_OWNED_ENDPOINT_RADIAL_MIDDLE_DOMAIN.md](NEGATIVE_H_OWNED_ENDPOINT_RADIAL_MIDDLE_DOMAIN.md)
+excludes every A-owned or shared next contact when HA is H-owned and
+the middle body is physically radial. Only an exact B-owned tangential
+chart survives. The entire chart is excluded for \(R^2\ge17/4\).
+Below that radius, the original H-side offset and negative-projection
+constraint remain, and the true degree-two B equation gives the full
+BC vertex/normal-ratio interval, including both zero-weight endpoints.
+The uniform parts also apply to diamond K3; its degree-three middle
+does not inherit the separate two-force B formulas.
+
+All these complete sources have root and separate independent full
+audits. The detailed tree has 1,934 unique gates, retaining all earlier
+IDs and adding 92 substantive proof/domain steps. Eighteen previously
+open gates are now closed. The coarse inventory remains 9 CLOSED /49 OPEN:
+the full six-body parents, unrestricted lower bound, original equality
+classification and complete earlier prerequisite-chain audit stay OPEN.
+
+## Exact remaining C4 endpoint-owner obligations
+
+Label the actual negative physically unique endpoint A. Masks are in
+the order **(middle B, endpoint A, other endpoint C)**; S means two
+physical circle corners and U means one. Physical S retains either
+individual zero circle weight unless a complete proof forces both
+weights positive.
+
+| HA contact family | SUS | UUS | SUU | UUU |
+| --- | --- | --- | --- | --- |
+| Free singleton, full radius window | CLOSED | CLOSED | Singleton HC, BC C-owned, HC H- or C-owned; OPEN | CLOSED |
+| A-owned singleton, \(R^2\ge17/4\) | CLOSED | CLOSED | CLOSED | CLOSED |
+| Shared positive interval, \(R^2\ge17/4\) | CLOSED | CLOSED | CLOSED | CLOSED |
+| A-owned singleton, \(R^2<17/4\) | CLOSED | AB B-owned; OPEN | CLOSED | AB B-owned; OPEN |
+| Shared positive interval, \(R^2<17/4\) | AB free; OPEN | AB B-owned or free; OPEN | AB free; OPEN | AB B-owned or free; OPEN |
+| H-owned singleton, \(R^2\ge17/4\) | CLOSED | OPEN | CLOSED | OPEN |
+| H-owned singleton, \(R^2<17/4\) | Exact B-owned tangential chart; OPEN | Three actual AB owner families; OPEN | Exact B-owned tangential chart; OPEN | Three actual AB owner families; OPEN |
+
+Every H-owned singleton occurs at A's actual opposite circle vertex.
+With radial B, all A-owned/shared AB possibilities are excluded and
+the complete high-radius branch is closed. The lower-radius
+tangential chart keeps the actual H-side offset, strict negative
+projection, B's true BC vertex and the entire original-weight normal
+interval. With unique B, the full A-owned, B-owned and genuinely
+shared AB domains remain; no shared mean is frozen.
+
+The sole free-HA SUU module has both B weights positive. Its entire
+shared HC branch is closed. The two remaining actual singleton-HC
+owner alternatives are separate whole domains, with the original AB
+mean and all genuine C applications retained.
+
+A whole-core contradiction and a complete joint-capacity theorem are
+alternative routes. The C4 and petal holes and the three direct
+boundary-pair pockets are empty; the two articulation pockets still
+need their actual routing and a joint bound excluding three extras.
+
+The diamond-hub KAB orbit keeps true H5/K3. Every A-owned/shared
+negative HA is already excluded. In its H-owned family with radial
+K, the uniform endpoint theorem removes all A-owned/shared AK across
+the whole window and every owner for \(R^2\ge17/4\); only its exact
+lower-radius K-owned tangential chart remains. Unique K retains its
+full H-owned domain. The separate free HA/shared AK family remains
+below \(R^2=17/4\). No degree-two middle equation, BC vertex or weight
+interval is imported at K's actual degree three.
+
+The detailed roadmap retains all 1,842 previous unique gate IDs and
+adds 92 substantive gates: 85 complete proof/domain implications and
+seven residual obligations. Eighteen previously open gates are now
+closed. The complete count is 1,934 unique gates; the coarse inventory
+remains nine CLOSED and 49 OPEN. The C6 assembly, full exact coefficient
+packet, origin-root parallel theorem, shared-return exclusion and
+H-owned radial-middle domain all passed root and separate independent
+full audits before this checkpoint. The diamond corollary explicitly
+retains K's degree three and does not import the degree-two middle
+weight/vertex equations.
+
+All seven new source/artifact files and eight live documentation files
+are saved together. Every original shared mean, individual zero weight,
+actual degree, positive outside force and completion square remains.
+No Lean compilation or CI is run; the commit uses [skip ci]. The global
+bound, every original equality packing and the full earlier prerequisite
+chain remain OPEN. Further return-contact proofs are still under audit
+and are not used as premises or marked closed in this checkpoint.
