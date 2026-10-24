@@ -29,14 +29,14 @@ Each cyclic block has at least three vertices. At m=6 there can be
 one or two cyclic blocks, since three would contribute at least six
 to the sum in (1). The possibilities are exactly
 
-| Coarse row | Cyclic blocks | Bridges | All remaining physical squares |
-| --- | --- | ---: | ---: |
-| C1.3.b3 | One triangle | 3 | 3 |
-| C1.4.b2 | One four-body block | 2 | 3 |
-| C1.5.b1 | One five-body block | 1 | 3 |
-| C1.6.b0 | One six-body block | 0 | 3 |
-| C2.33.b1 | Two triangles | 1 | 3 |
-| C2.34.b0 | A triangle and a four-body block | 0 | 3 |
+| Coarse row | Cyclic blocks | Bridges | All remaining physical squares | Whole hand status |
+| --- | --- | ---: | ---: | --- |
+| C1.3.b3 | One triangle | 3 | 3 | CLOSED; all seven attachments |
+| C1.4.b2 | One four-body block | 2 | 3 | OPEN |
+| C1.5.b1 | One five-body block | 1 | 3 | OPEN |
+| C1.6.b0 | One six-body block | 0 | 3 | OPEN |
+| C2.33.b1 | Two triangles | 1 | 3 | OPEN |
+| C2.34.b0 | A triangle and a four-body block | 0 | 3 | OPEN |
 
 This is an exhaustive coarse list. The following sections refine its
 actual graph layouts, rather than choosing numerical poses.
@@ -89,22 +89,28 @@ one of the other roots has parallel cycle forces. The arm's small
 support and the direct-leaf root's central disk then exclude every
 aligned or tilted arm root, retaining both true degree-three equations.
 
-Thus five of seven whole layouts are closed. The two remaining are
-mixed arms at one root and one leaf at every triangle vertex.
-TRIANGLE_THREE_BRIDGES_MIXED_ARMS_D_EXCLUSION.md already excludes the
-entire direct-D-leaf alternative of mixed arms, including every other
-leaf/transmitter type and the true four-force root. The direct-S-leaf
-alternative remains open. Both whole remaining layouts retain their
-full load, contact and three-extra completion domains. In particular an internal vertex of an attached tree is not
-assigned a radial-leaf formula merely because its edges are bridges.
-The exact degree-one S/D law applies at an actual leaf; any broader
-terminal or transmission reduction must establish its own premises.
+TRIANGLE_THREE_BRIDGES_MIXED_ARMS_EXCLUSION.md closes the entire
+same-root mixed-arm layout. Its full D and S companion proofs retain
+the genuine four-force articulation. The S proof excludes every
+noncritical core and the entire critical endpoint: the opposite-leaf
+case invokes the actual P skeleton with all five other physical units.
 
-For each surviving layout, the full next gate is to combine the radial
-bridge cut equations, the physical central bridge cover, the actual
-cyclic-body equations and the three-extra joint completion problem.
-Removing the three leaf squares from its occupied geometry is not an
-allowed reduction.
+TRIANGLE_THREE_DISTINCT_LEAVES_EXCLUSION.md closes the final layout,
+one genuine leaf at each triangle root. Below d=1 the central roots'
+tangent half-planes contradict disjointness. At d=1 the actual three
+root-and-terminal rays route the three roots and three extras into
+wedges of total capacity at most5. Above d=1, the full zero-moment
+alternative is excluded; positive radial concurrences then exclude
+all D and tilted-S roots. Aligned nonparallel roots would have radial
+concurrences beyond4 while their actual contacts have norm<61/60.
+Both the all-nonparallel and one-parallel alternatives are excluded.
+
+**All seven rooted attachments and the entire C1.3.b3 cell are CLOSED
+hand**, by TRIANGLE_THREE_BRIDGES_CELL_CLOSED.md. Root and independent
+full audits passed both final attachment proofs and the complete
+assembly. Every true degree, physical mask and actual mean remains.
+The two critical capacity exits explicitly count all three extras;
+the assembly makes no isolated-core claim at those endpoints.
 
 ## 3. One four-body block with two bridges: eleven layouts, nine remaining
 
@@ -410,6 +416,33 @@ In the last row H has four positive spokes; vertices0 and3 have
 degree4. A degree-three obstruction cannot be applied to any of
 those vertices by dropping its fourth force.
 
+### 6.3a. Every necessary load orbit of the five pentagon graphs
+
+SIX_BODY_INNER_PENTAGON_LOAD_COVER.md now refines all five surviving
+graph domains by hand. Its full table includes every graph-preserving
+dihedral image and every original physical feature/mean domain:
+
+| H spokes | Outer chord | Three loads | Four loads |
+| --- | --- | --- | --- |
+| 0,2 | None | 013,023,134 | 1234,0124 |
+| 0,2 | 03 | 024,124,134 | 1234,0124 |
+| 0,1,3 | None | 013,023,024 | 1234,0134,0124 |
+| 0,1,2,3 | None | 124 | 0124 |
+| 0,1,2,3 | 03 | 124 | 0124 |
+
+The complete two-spoke/no-chord load family0234 is excluded. H has
+actual reserve1 by its unit bypass1, so its loaded endpoints0,2
+have center separation at most1+sqrt(2). The same four actual loaded
+bodies form the balanced boundary path2--3--4--0, whose endpoints
+must be more than1+sqrt(2) apart. No endpoint force is deleted.
+
+The table retains twenty whole necessary graph/load orbits. It does
+not assert any is realizable or close a graph by enumeration. The
+previous physical H--4 noncontact remains specific to the four-spoke
+no-chord domain. All actual hub degrees, means and three extra units
+remain. Together with Section6.1a this completes the necessary load
+roadmap for all fourteen biconnected graph domains.
+
 ### 6.4. Complete necessary load masks before adding chords
 
 For the exterior-hexagon domain, first ignore its additional positive
@@ -506,8 +539,10 @@ articulation-center pressure signs alone were not sufficient.
 Only the entire tip-attached bowtie-leaf layout remains. Its former
 tip has degree3 and its shared articulation degree4. Neither can be
 replaced by an unchanged degree2 tip or the new exact-degree3
-one-bridge end-triangle root. Both S/D leaves, all owners/masks/means
-and all three extra squares remain in that final full layout.
+one-bridge end-triangle root. TIP_LEAF_BOWTIE_D_EXCLUSION.md now excludes the entire D-leaf type,
+through its complete parallel and nonparallel articulation proofs.
+Only the whole S-leaf type remains in that final layout, with both
+aligned and tilted roots, all owners/masks/means and all three extras.
 
 ## 8. A triangle and a four-body block: three layouts, two remaining
 
@@ -635,8 +670,8 @@ leaf types and both transmitter widths. The root lies in a narrow western
 center cap, while the two actual boundary-tip resultants sum west.
 The full center-angle rectangle forces the touching tips to opposite
 sides with gap>2acos(4/5)>acos(9/25), a contradiction. The later fork, double-leaf-root and distinct-arm exits bring the
-current total to five of seven closed; the two residual layouts and
-the closed direct-D mixed-arms alternative are specified in Section2.
+current total to seven of seven closed; the complete whole-cell
+assembly and both critical completion exits are specified in Section2.
 
 Root and separate independent full audits passed all six sources above,
 including every enlarged degree, physical-contact and selection scope.
@@ -662,6 +697,24 @@ an explicit application obligation, fulfilled separately by the complete
 distinct-arm proof. Root and independent full audits passed all eight
 sources introduced in this checkpoint.
 
+### 9.2. The entire D-leaf tip-attached bowtie alternative
+
+TIP_LEAF_BOWTIE_D_EXCLUSION.md combines two complete source proofs.
+In the nonparallel articulation, the simultaneous A-star selection
+uses its three true forces and allows arbitrary degree at H. Every
+BH side-axis owner, actual shared mean and physical radial free
+alternative is excluded by a full scalar projection or torque bound.
+The exact bounds exceed37/35 or sqrt(6/5), contrary to the strict
+end-triangle support h_H(Mhat)<d for the untouched C,E petal.
+
+In the parallel articulation, B,H share their actual supporting
+wall. This supplies nonparallel B forces without a boundary-neighbor
+assumption. Pure physical triangle ports and H's actual degree-four
+torque put the full petal resultant in a controlled sector. Every H
+frame then has support at least2sqrt(1+sqrt(2)-R)>2/sqrt(3)>d.
+Both full source audits and the complete assembly audit passed.
+All three extras remain, and the S-leaf alternative remains open.
+
 ## 10. Exact exit contracts and status
 
 Each listed layout must retain the original square containment and
@@ -680,7 +733,8 @@ The two original common-articulation layouts and the complete length-three
 chain are excluded. Section6.3 excludes the entire five-spoke pentagon
 domain and one complete four-spoke load subfamily. Section9 records
 the additional whole simple-cycle and local-motif load-family exits.
-**All six coarse six-body rows remain open.** All five-body cells are now
-closed, so six is the first unresolved size. The authoritative count is
-seven whole cells closed and51 open. No numerical graph enumeration,
+**C1.3.b3 is CLOSED hand; the other five six-body coarse rows remain
+open.** All five-body cells are closed, and six remains the first
+unresolved size. The authoritative count is eight whole cells closed
+and50 open. No numerical graph enumeration,
 angle grid, Lean compilation or CI is a premise of this cover.

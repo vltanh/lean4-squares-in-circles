@@ -1,7 +1,7 @@
 # n=9 — live prerequisite and cyclic-closure ledger
 
 **Checkpoint:** October 24, 2026, America/Chicago. **PR:** #11, draft.  
-**T9 and unrestricted equality remain OPEN.** The selected physical certificate has one planar positive cyclic component with **6–9 bodies**, **3–7 noncollinear loaded resultants**, and at most **27 scalar atoms**. Every other physical square stays in the completion problem. The coarse inventory has **seven whole cells closed and 51 open**.
+**T9 and unrestricted equality remain OPEN.** The selected physical certificate has one planar positive cyclic component with **6–9 bodies**, **3–7 noncollinear loaded resultants**, and at most **27 scalar atoms**. Every other physical square stays in the completion problem. The coarse inventory has **eight whole cells closed and 50 open**.
 
 The complete fine-grained contracts are in [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md). This file gives live parent scope and primary sources. [TWO_LOAD_PROGRESS.md](TWO_LOAD_PROGRESS.md) preserves the chronological proof/audit record and exact regression provenance.
 
@@ -175,7 +175,7 @@ The new local arguments and whole-cell assembly received independent hand audits
 
 - [x] **M5.B4L.DIAMOND.ALL:** DIAMOND_LEAF_BLOCK_CLOSED.md excludes both attachment orbits and both radial leaf types, all physical corner masks and actual means. D_DIAMOND_PARALLEL_HUB_EXCLUSION.md, D_DIAMOND_HORIZONTAL_HUB_EXCLUSION.md, D_DIAMOND_LOWER_TIP_OWNED_EXCLUSION.md and D_DIAMOND_OBLIQUE_HUB_EXCLUSION.md exhaust the last unique-U domain. Every lower-tip owner/shared interval is covered; no degree-two equation is applied to U. Root and separate full audits passed. No secondary minimizer or completion bound is needed.
 - [x] **M5.B4L.LAST:** FOUR_CYCLE_THREE_LOAD_BRANCH_CLOSED.md closes all S/D articulation frames, all nonparallel singleton/shared contacts and both parallel-sign alternatives, retaining every mask and actual mean. Root and separate full audits passed.
-- [x] **M5.B4L.ALL:** FOUR_BODY_BLOCK_ONE_LEAF_CELL_CLOSED.md assembles C4,diamond,K4 and every load allocation at the canonical radius/Phi minimizer. Root and two independent full assembly audits passed. The current full-cell count is seven closed and51 open.
+- [x] **M5.B4L.ALL:** FOUR_BODY_BLOCK_ONE_LEAF_CELL_CLOSED.md assembles C4,diamond,K4 and every load allocation at the canonical radius/Phi minimizer. Root and two independent full assembly audits passed. The current full-cell count is eight closed and50 open.
 - [x] **ANNULAR.CENTERS:** ANNULAR_CENTER_ARC_BUDGET.md gives at least two centers strictly inside the unit disk in any nine-unit packing in D_(sqrt(Q)). The entire far-face/strip arc cover is proved; no component routing follows automatically.
 
 ## Entire C5 and common-articulation families closed
@@ -183,7 +183,7 @@ The new local arguments and whole-cell assembly received independent hand audits
 - [x] **M5.B5.C5.DOMAIN:** FIVE_CYCLE_FORCE_POLYGON_DOMAIN.md proves neighbor-free nonparallel proper concurrence, exact reserves, convex radial polygons and full completion routing. Radial concurrences need not lie inside their bodies.
 - [x] **M5.B5.C5.FOUR:** FIVE_CYCLE_FOUR_LOAD_EXCLUSION.md proves the all-mask endpoint half-plane lemma and excludes both widths by actual center distance or exact horizontal gap.
 - [x] **M5.B5.C5.THREE:** FIVE_CYCLE_THREE_LOAD_EXCLUSION.md gives the full side/diagonal angle bounds; the latter uses strict concavity of the actual aligned center curve. The two channels plus BC cannot span2pi.
-- [x] **M5.B5.C5.ALL:** FIVE_CYCLE_POSITIVE_COMPONENT_EXCLUSION.md closes the entire graph branch. All four sources passed root and independent full audits. The subsequent whole fan and house assemblies close C1.5.b0; the current inventory is seven closed and51 open.
+- [x] **M5.B5.C5.ALL:** FIVE_CYCLE_POSITIVE_COMPONENT_EXCLUSION.md closes the entire graph branch. All four sources passed root and independent full audits. The subsequent whole fan and house assemblies close C1.5.b0; the current inventory is eight closed and50 open.
 - [x] **CY.ONE_ARTICULATION:** ONE_ARTICULATION_TRIANGLE_LEAF_EXCLUSION.md excludes all triangle petals and radial leaves at one common A, using exact degree-two tips and the same certificate. Distributed articulations and degree-three fan vertices remain outside its scope.
 
 ## Whole house/fan subfamily checkpoint
@@ -197,7 +197,7 @@ The new local arguments and whole-cell assembly received independent hand audits
 
 SIX_BODY_CYCLIC_FRONTIER.md covers all six m=6 rows: seven triangle/three-bridge layouts, eleven four-block/two-bridge layouts, sixteen five-block/leaf root types, three two-triangle/bridge layouts and three triangle/four-block layouts. The entire biconnected component has exterior-face length>=5, hence an exterior hexagon with0--3 noncrossing chords or an exterior pentagon with one clear interior body. The complete spoke-sector analysis leaves five pentagon graph domains after the five-spoke exclusion; the four-spoke/no-chord all-spoke-loaded subfamily is also excluded by the actual bypass channel and four-boundary-path endpoint theorem.
 
-The hexagon has six necessary bare-cycle load orbits. The surviving four-spoke graphs have two load orbits; in the no-chord domain the missing-spoke rim vertex is loaded and physically disjoint from the hub. Exact root degrees and whole-component versus attached-block scopes remain explicit. Both full audits passed. All six six-body coarse rows stay open and retain all three extras. The deep roadmap now instantiates their entire attachment, embedding, mask, equilibrium and joint-completion exit gates. The count stays seven closed and51 open.
+The hexagon has six necessary bare-cycle load orbits. The surviving four-spoke graphs have two load orbits; in the no-chord domain the missing-spoke rim vertex is loaded and physically disjoint from the hub. Exact root degrees and whole-component versus attached-block scopes remain explicit. Both full audits passed. The five remaining six-body coarse rows stay open and retain all three extras. The deep roadmap now instantiates their entire attachment, embedding, mask, equilibrium and joint-completion exit gates. The count stays eight closed and50 open.
 
 ## Complete fan endpoint owner cover and house-domain checkpoint
 
@@ -249,8 +249,8 @@ The hexagon has six necessary bare-cycle load orbits. The surviving four-spoke g
 - [x] HOUSE_END_TRIPLE_BRANCH_CLOSED.md assembles every bypass frame, physical lower mask and lower owner for both end triples. Root and two independent full assembly audits passed; all four extras remain.
 - [x] HOUSE_POSITIVE_COMPONENT_EXCLUSION.md derives the five labeled load intervals and combines all three complete house orbit exits. Root and independent full whole-graph audits passed.
 - [x] FIVE_BODY_BICONNECTED_CELL_CLOSED.md covers all ten biconnected types and their seven uniform plus three full metric exits under one compatible certificate. C1.5.b0 is now CLOSED hand, with root and independent full whole-cell audits passed.
-- [x] All four five-body coarse cells are now closed at the stated canonical lower-bound setup. The selected positive component has6–9 bodies,3–7 noncollinear loads and at most27 atoms. The authoritative inventory is seven closed and51 open.
-- [ ] Complete all six six-body coarse rows, then every remaining seven-/eight-/nine-body mixed family. Exact smaller-component degree equations cannot be applied to blocks with additional forces. Unrestricted T9, original equality and full earlier prerequisite-chain audit remain open.
+- [x] All four five-body coarse cells are now closed at the stated canonical lower-bound setup. The selected positive component has6–9 bodies,3–7 noncollinear loads and at most27 atoms. The authoritative inventory is eight closed and50 open.
+- [ ] Complete the five remaining six-body coarse rows, then every remaining seven-/eight-/nine-body mixed family. Exact smaller-component degree equations cannot be applied to blocks with additional forces. Unrestricted T9, original equality and full earlier prerequisite-chain audit remain open.
 
 ## First six-body whole-family exits and global local obstructions
 
@@ -259,35 +259,46 @@ The hexagon has six necessary bare-cycle load orbits. The surviving four-spoke g
 - [x] BOUNDARY_THREE_EDGE_PATH_DIAMETER.md proves the full four-boundary-body metric scope and arbitrary-endpoint-degree channel obstruction. It excludes the entire adjacent-zero four-load C6 orbit.
 - [x] SIX_CYCLE_THREE_LOAD_LONG_CHANNEL_EXCLUSION.md excludes the entire three-load(1,2,3) C6 orbit, including the isolated parallel-load case, both short widths, every physical corner mask and all actual means.
 - [x] LONG_CHANNEL_ENDPOINT_MATCHING.md is a global purely geometric distance>=3 matching theorem. Its full channel consequence excludes two long paths to distinct endpoints and every at-least-eight-body simple cycle with exactly three loads; the same endpoint pair is explicitly retained.
-- [x] TRIANGLE_THREE_BRIDGES_LONG_CHAIN_EXCLUSION.md excludes the complete length-three attachment with the full initially possible intermediate load, both leaf/transmitter types and all means. Two of seven C1.3.b3 layouts are closed; the other five remain.
+- [x] TRIANGLE_THREE_BRIDGES_LONG_CHAIN_EXCLUSION.md excludes the complete length-three attachment with the full initially possible intermediate load, both leaf/transmitter types and all means. This is one of all seven C1.3.b3 attachments now closed by the complete whole-cell assembly.
 - [x] Root and independent full audits passed every source and widened scope. Every six-body statement retains three original extra squares; no smaller-component degree equation is imported after deleting an attachment.
-- [ ] All six six-body coarse parents remain open. Simple C6 retains alternating three loads, two separated-zero four-load orbits and five loads; every chorded and other attachment domain keeps its full remaining scope. The authoritative count stays seven closed and51 open; unrestricted T9, original equality and full earlier-chain audit remain open.
+- [ ] The five remaining six-body coarse parents remain open. Simple C6 retains alternating three loads, two separated-zero four-load orbits and five loads; every chorded and other attachment domain keeps its full remaining scope. The authoritative count stays eight closed and50 open; unrestricted T9, original equality and full earlier-chain audit remain open.
 
 ## Further whole attachments and uniform cycle concurrence
 
 - [x] SIMPLE_CYCLE_LOADED_FORCES_NONPARALLEL.md excludes every parallel loaded star in every exact simple cycle with at least three loads, including both isolated channels and all actual means. Proper radial concurrence follows; the physical two-corner concurrence remains unbounded without a separate proof.
-- [x] TRIANGLE_THREE_BRIDGES_DOUBLE_LEAF_ROOT_EXCLUSION.md proves the full two-leaf disk lemma and closes the complete two-leaves-plus-one attachment, including R²=17/4. Three of seven full C1.3.b3 attachments are closed; four remain.
+- [x] TRIANGLE_THREE_BRIDGES_DOUBLE_LEAF_ROOT_EXCLUSION.md proves the full two-leaf disk lemma and closes the complete two-leaves-plus-one attachment, including R²=17/4. The later full seven-attachment assembly now closes all of C1.3.b3.
 - [x] ROOTED_BLOCK_ATTACHMENT_OBSTRUCTIONS.md closes the diamond arm-at-tip and same-tip double-leaf layouts, the book-hub and wheel-hub leaf layouts, and the triangle/diamond-tip layout. These are five whole graph-attachment exits with every root force retained.
 - [x] The full residual attachment counts are9 of11 for C1.4.b2,14 of16 for C1.5.b1, and2 of3 for C2.34.b0. Root and independent full source and instantiation audits passed.
-- [ ] All six six-body coarse parents and the four remaining full C6 load orbits remain open. The authoritative coarse ledger stays seven closed and51 open. Every six-body domain retains three arbitrary extras; larger mixed cells, unrestricted sharpness, original equality and the full earlier-chain audit remain open.
+- [ ] The five remaining six-body coarse parents and the four remaining full C6 load orbits remain open. The authoritative coarse ledger stays eight closed and50 open. Every six-body domain retains three arbitrary extras; larger mixed cells, unrestricted sharpness, original equality and the full earlier-chain audit remain open.
 
 ## Strict bridged-triangle sign and two more whole six-body layouts
 
 - [x] OUTER_BRIDGED_TRIANGLE_EXCLUSION.md proves the complete actual-port/concurrence/frame theorem with an arbitrary external bridge component. Its full two-leaf central-disk corollary closes the entire fork attachment of C1.3.b3, including R²=17/4.
 - [x] OUTER_BRIDGED_TRIANGLE_CAP_EXCLUSION.md strengthens the result to every outward rho>=0. The exact support-height inequality forces t>8 and puts both true tip centers in a cap with squared diameter178/225<1. Parallel forces have the same complete cap exit; all means remain.
 - [x] Every one-bridge end triangle therefore satisfies p dot M_tips<0 at its actual radial bridge point. Orienting the bridge to its outward endpoint excludes the whole pair of disjoint triangles joined by a bridge, including p=0. The true degree3 root premise is explicit.
-- [x] C1.3.b3 now has four of seven full attachments closed; three remain. C2.33.b1 has two of three full layouts closed; only the complete tip-attached bowtie-leaf layout remains.
+- [x] C1.3.b3 is now entirely closed by the later complete seven-attachment assembly. C2.33.b1 has two of three full layouts closed; only the complete tip-attached bowtie-leaf layout remains.
 - [x] SIX_CYCLE_ALTERNATING_DOUBLE_DIAGONAL_EXCLUSION.md excludes the entire alternating-three-load width class with at least two diagonal transmitters. The exact common-frame circle equations and full monotone bound yield R²>Q. Root and independent full audits passed all three sources.
-- [ ] The zero-/one-diagonal alternating classes, the other three full C6 load orbits, and all six six-body coarse parents remain open. Every original extra and every true root force remains. The authoritative count is seven closed and51 open; unrestricted sharpness, original equality and the full earlier-chain audit remain open.
+- [ ] The zero-/one-diagonal alternating classes, the other three full C6 load orbits, and the five remaining six-body coarse parents remain open. Every original extra and every true root force remains. The authoritative count is eight closed and50 open; unrestricted sharpness, original equality and the full earlier-chain audit remain open.
 
 ## Complete force-polygon and hexagon load cover; fifth triangle attachment closed
 
 - [x] END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md proves strict root support h_A(Mhat)<d for two genuinely loaded degree-two triangle tips, with arbitrary additional root forces. The complete physical proper-port fact does not require root equilibrium.
 - [x] RADIAL_TRIANGLE_CONCURRENCE.md proves positive concurrences for three actual noncollinear radial aggregates with nonzero common triangle moment. Its whole parallel-root alternative retains both original wall means; zero moment remains a separate application obligation.
-- [x] TRIANGLE_THREE_BRIDGES_DISTINCT_ARM_EXCLUSION.md discharges that zero-moment obligation and excludes the entire distinct-root arm-and-leaf attachment. Five of seven C1.3.b3 layouts are closed. TRIANGLE_THREE_BRIDGES_MIXED_ARMS_D_EXCLUSION.md also closes the whole direct-D alternative of same-root mixed arms, with its true four-force root.
+- [x] TRIANGLE_THREE_BRIDGES_DISTINCT_ARM_EXCLUSION.md discharges that zero-moment obligation and excludes the entire distinct-root arm-and-leaf attachment. The subsequent mixed-arms and one-each proofs now close all seven C1.3.b3 layouts. TRIANGLE_THREE_BRIDGES_MIXED_ARMS_D_EXCLUSION.md also closes the whole direct-D alternative of same-root mixed arms, with its true four-force root.
 - [x] SIMPLE_CYCLE_CONVEX_FORCE_POLYGON.md establishes actual cyclic order, nonzero common moment, strict convexity and O-interiority for every exact simple positive cycle with at least three loads, together with the correctly scoped local direct/one-transmitter metric bounds.
 - [x] TRIANGLE_SQUARE_CORNER_FERMAT_BOUND.md gives a uniform six-point inequality with exact constant(1+sqrt(4+sqrt(3)))/sqrt(3)<79/40. SIX_CYCLE_ALTERNATING_UNIQUE_SINGLETON_EXCLUSION.md applies it to the complete all-side, physical-unique, singleton-contact alternating family, retaining actual transmitter means.
 - [x] SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md gives nine exact hexagon graphs and every necessary load orbit by hand. The entire short-chord013 family is excluded by its true two-transmitter channel and bypass. Thirty-eight necessary whole graph/load orbits remain, with individual deep-roadmap gates. Alongside the five pentagon domains, the biconnected cover has fourteen graph domains.
 - [x] Root and independent full audits passed all eight sources, including full feature, parallel, circle-mask, mean and degree scopes.
-- [ ] The whole direct-S mixed-arms family and whole one-leaf-at-each-root layout remain in C1.3.b3. Genuine shared sides, physical two-corner loads and exactly one diagonal remain in alternating C6. All six six-body coarse rows and all four whole simple-C6 load orbits remain open, retaining their three extra physical squares.
-- [ ] The authoritative ledger is still seven closed and51 open. Unrestricted sharpness, original equality and the full earlier prerequisite-chain audit remain open; no Lean compilation or CI was run.
+- [x] The whole direct-S mixed-arms and whole one-leaf-at-each-root families are now closed, completing C1.3.b3.
+- [ ] Genuine shared sides, physical two-corner loads and exactly one diagonal remain in alternating C6. The five remaining six-body coarse rows and all four whole simple-C6 load orbits remain open, retaining their three extra physical squares.
+- [ ] The authoritative ledger is still eight closed and50 open. Unrestricted sharpness, original equality and the full earlier prerequisite-chain audit remain open; no Lean compilation or CI was run.
+
+## First entire six-body coarse closure; full D tip-leaf and pentagon load cover
+
+- [x] TRIANGLE_THREE_BRIDGES_MIXED_ARMS_S_EXCLUSION.md closes the complete direct-S mixed-arm alternative, including the uniform all-mask small-transverse screen, every actual root mean and both d=1 endpoints. The opposite-leaf endpoint invokes P_ALL_COMPLETION.md with all five other physical units.
+- [x] TRIANGLE_THREE_BRIDGES_MIXED_ARMS_EXCLUSION.md assembles the full D/S split at the genuine degree-four root, closing the sixth complete attachment.
+- [x] TRIANGLE_THREE_DISTINCT_LEAVES_EXCLUSION.md closes the seventh attachment. At d=1 the actual three rays route six nonterminal units into total wedge capacity5. Above d=1 the entire zero-moment, D and tilted-S domains are excluded before the aligned concurrence-radius>4 contradiction. Every parallel alternative and mean endpoint remains.
+- [x] TRIANGLE_THREE_BRIDGES_CELL_CLOSED.md assembles all seven full graph attachments under one necessary certificate and retains all three extra squares at both critical completion exits. Root and independent full whole-cell audits passed. C1.3.b3 is CLOSED hand; the authoritative ledger is eight closed and50 open.
+- [x] TIP_LEAF_BOWTIE_D_EXCLUSION.md assembles the complete nonparallel and parallel D-leaf articulation proofs at true degree-three A and degree-four H. The untouched C,E end triangle supplies the strict support contradiction, with every mutual contact owner/free mask/mean and all three extras retained.
+- [x] SIX_BODY_INNER_PENTAGON_LOAD_COVER.md gives all twenty necessary remaining load orbits of the five pentagon graphs. The entire two-spoke/no-chord0234 family is excluded by the real reserve-one H channel versus balanced boundary path2--3--4--0. Root and independent full audits passed the cover and whole-family exit.
+- [ ] The other five six-body coarse rows remain open. C2.33.b1 retains the entire aligned and tilted S tip-leaf alternatives. Every biconnected graph/load gate retains its whole continuous physical domain and all three extras. Unrestricted sharpness, original equality and the full earlier prerequisite-chain audit remain open.
