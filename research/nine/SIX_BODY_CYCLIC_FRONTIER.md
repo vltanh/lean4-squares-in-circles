@@ -143,6 +143,41 @@ positive degree three and the other tip degree two, forcing a physical
 boundary triangle. Nine full attachment classes remain; no hub-rooted
 or distributed-root diamond case is excluded by that argument.
 
+### 3.1. All remaining load, leaf and transmitter-width domains
+
+FOUR_BODY_BLOCK_TWO_BRIDGES_LOAD_COVER.md supplies the full necessary
+refinement of the eleven attachments. The nine open layouts have
+thirteen whole positive block-load orbits and thirty-five complete
+leaf/width alternatives, with every actual root force retained.
+The asymmetric C4 adjacent-root/single-load family keeps both mixed
+S/D orders; no root swap is used unless it also preserves the load set.
+
+TWO_LEAF_ROOT_NO_UNLOADED_TRANSMITTER.md is a uniform new completion
+obstruction. A two-leaf root's actual central disk contradicts the
+support bound across any adjacent true unloaded transmitter, except
+at d=1. There, exact support equality forces a physical third S unit,
+without assigning it degree one. The strict opposite-quadrant domain
+is the full actual Y cage. At an axis endpoint the other genuine leaf
+forces the whole P slider, even when the original mean is nonzero.
+Both critical capacity theorems count every original body.
+
+Consequently C4 with two leaves at A retains precisely block loadsBD
+orBCD. C4 with leaves at opposite roots A,C requires both B,D loaded:
+an unloaded channel cannot join two units that each meet D_epsilon,
+since its reserve would satisfy1<=w<=2epsilon<1/30. At distinct roots
+every whole D/D leaf assignment is impossible because both actual
+roots would contain O in their open interiors. Each remaining mixed
+S/D assignment requires d>1, with that entire high-radius domain kept.
+
+All arm alternatives S/side,S/diagonal,D/side remain explicitly;
+the D/diagonal bridge is excluded by its original off-origin vertex
+normal condition. The arm root is physically clear by its actual
+application of norm<31/60<r. The complete C4 and diamond load table
+uses each body's true total degree before forcing a load. Root and
+independent full audits passed both source files, all critical means
+and every full graph/symmetry application. There are still2 of11
+whole attachments closed and9 open; C1.4.b2 remains open.
+
 ## 4. One five-body block with one bridge: sixteen rooted block types
 
 The bridge attaches one genuine degree-one leaf to a vertex of the

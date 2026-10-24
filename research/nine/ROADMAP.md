@@ -1,5 +1,13 @@
 # n=9 — ordered roadmap to the unrestricted hand proof
 
+## Two-leaf transmitter obstruction and all four-block attachment load gates
+
+[TWO_LEAF_ROOT_NO_UNLOADED_TRANSMITTER.md](TWO_LEAF_ROOT_NO_UNLOADED_TRANSMITTER.md) proves a uniform completion exclusion at any root supporting two genuine leaves. A true unloaded degree-two neighbor contradicts the full central-disk and sharp-support bounds away from d=1. At d=1, the actual equality configuration is a whole physical Y cage or P cage. The axis proof retains the original nonzero mean and derives the full P slider from the other leaf's occupied square. The third S terminal may have arbitrary additional positive forces; it is never assigned a false leaf equation.
+
+[FOUR_BODY_BLOCK_TWO_BRIDGES_LOAD_COVER.md](FOUR_BODY_BLOCK_TWO_BRIDGES_LOAD_COVER.md) gives all **13 necessary block-load orbits and35 complete leaf/width alternatives** in the nine remaining C4/diamond attachments. It excludes three full same-root C4 load families, the opposite-root C4 single-load family, and every D/D assignment at distinct roots. Every mixed distinct-root S/D family is retained over its entire necessary d>1 domain. The adjacent-root/single-load C4 keeps both distinct mixed leaf orders. Root and separate independent full audits passed both complete manuscripts and every application.
+
+These results retain every true positive degree, physical mask, original shared mean and all three extras. C1.4.b2 still has2 of11 whole attachments closed and9 open. The authoritative coarse ledger remains **eight closed/50 open**, with five six-body parents open. Unrestricted sharpness, original equality and the full earlier prerequisite-chain audit remain OPEN. PR #11 stays draft; no Lean compilation or CI was run.
+
 ## Complete rooted-block load cover and actual cycle completion caps
 
 [FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md](FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md) supplies the full hand load cover for all sixteen five-body-block/leaf root types. Two rooted types were already closed; the other fourteen now have **38 necessary whole block-load orbits**, each with explicit full S/D leaf gates. Six additional whole both-leaf-type families are excluded: two C5 bypass channels, two house channels whose endpoints actually touch, and two K2,3 families with two true transmitters and a third physical bypass. Four further whole S alternatives are excluded by the complete connected-boundary-neighbor theorem. All root forces, physical masks and actual means remain.

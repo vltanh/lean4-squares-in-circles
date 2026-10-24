@@ -1,7 +1,7 @@
 # n=9: deep ticked roadmap and ordered proof execution
 
 **Branch:** `research/nine-tablefree-hand`; **PR:** #11, draft.  
-**Reconciled source:** dfa6463e08eb851dd3023aaead3d5eed2b793d72.
+**Reconciled source:** 5e2a2e70fd3cde24a47072ba06187ca50486089a.
 **Checkpoint:** October 24, 2026, America/Chicago; the append-only evidence log retains explicit UTC provenance.
 
 **T9 and unrestricted equality remain OPEN.** The complete P/Y arguments exclude all selected positive trees and all exactly-two-loaded components from a nine-square packing in the declared radius window. A physical certificate can be selected with **one planar positive component**, all physically circle-touching vertices on its exterior face, and at most 27 positive scalar atoms. The remaining component is cyclic, has 6–9 bodies, and has 3–7 noncollinear circle-loaded resultants. Every other physical square has zero stress and remains in the problem.
@@ -1444,6 +1444,18 @@ Use path u1--u2--u3--u4 and universal hub H. The two endpoint tips u1,u4 are loa
 - [x] **LOCAL.TWO_TX.TRANSVERSE** The endpoint's two actual contact intervals force the gap between transmitters below1. Every third physical bypass is transversely separated from both and has projection width>=1. The entire between/left/right cover contradicts either that width or its endpoint contact.
 - [x] **LOCAL.TWO_TX.ALL** The complete radius-free theorem is CLOSED hand; root and independent full audits passed all means, frame/axis limits and degree scopes. It is not applied to a degree-three body after removing one force.
 
+### Two-leaf roots and complete critical transmitter cages [CLOSED hand]
+
+- [x] **LOCAL.TWO_LEAF_TX.DOMAIN** TWO_LEAF_ROOT_NO_UNLOADED_TRANSMITTER.md keeps two genuine leaves at A and another true unloaded degree-two neighbor U with endpoint V. A and V may have arbitrary additional positive forces; V is distinct from both leaves by their true degree-one premise.
+- [x] **LOCAL.TWO_LEAF_TX.SUPPORT** The actual reserve w>=1 gives h_A(n)+w<=d by the sharp support bound for the real unit V. The complete two-leaf central-disk lemma uses no triangle equations and makes this impossible for every d<1 or d>1 case and every origin-interior d=1 root.
+- [x] **LOCAL.TWO_LEAF_TX.CRITICAL_EQUALITY** The complete remaining domain is d=1, A=[0,1]u+[0,1]v, with actual perpendicular terminals S(u),S(v). Equality gives h_A(n)=0,w=1 and physical V=S(n). No degree-one equation is imposed on V, and no force is deleted.
+- [x] **LOCAL.TWO_LEAF_TX.Y** If n.u,n.v<0, the actual A--U application is O. Existing strict point normals put O in the relative interior of U's side, giving the exact full Y_ALL_COMPLETION.md parameters0<alpha<1,0<theta<pi/2. Its five actual units leave at most three extras, whereas nine requires four.
+- [x] **LOCAL.TWO_LEAF_TX.P_AXIS_MEAN** At n=-u the actual A--U mean need not be O. Write U=[-1,0]u+[t,t+1]v. Contact with A gives t<=1,t+1>=0; avoidance of the other actual terminal S(v) forces t+1<=1, hence the full -1<=t<=0 interval. Reflection covers n=-v.
+- [x] **LOCAL.TWO_LEAF_TX.P** The two opposite S terminals and actual A,U are exactly P_ALL_COMPLETION.md with t_R=1/2,t_L=t+1/2 in[-1/2,1/2]. Its full closed slider theorem counts all five other bodies, including the second genuine leaf, and excludes nine.
+- [x] **LOCAL.TWO_LEAF_TX.ALL** The uniform nine-square completion exclusion is CLOSED hand, root and independent full audits passed. Noncritical cases are local contradictions; both critical cases are physical capacity exits retaining every actual higher-degree force and original mean.
+- [x] **LOCAL.LEAF_ROOT_CHANNEL** FOUR_BODY_BLOCK_TWO_BRIDGES_LOAD_COVER.md proves no true unloaded channel can connect two genuine leaf roots: each meets D_epsilon and its actual reserve would satisfy1<=w<=2epsilon<1/30. Every endpoint degree and leaf type remains.
+- [x] **LOCAL.DISTINCT_D_ROOTS** Every D-leaf root contains O in its open interior, so two distinct such roots would overlap. The entire distinct-root D/D geometry is excluded. In a distinct-root mixed S/D pair, d<=1 makes the S root contain O too; hence the complete remaining mixed domain has d>1.
+
 ### Uniform cycle and rooted-attachment inputs [CLOSED at their stated scopes]
 
 - [x] **G3.LOCAL.CYCLE_PARALLEL.RESERVES** SIMPLE_CYCLE_LOADED_FORCES_NONPARALLEL.md retains both full channels at an arbitrary loaded cycle body: each reserve is0,1,sqrt(2),2 and their next loaded endpoints are distinct when the cycle has at least three loads.
@@ -1561,6 +1573,63 @@ SIX_BODY_CYCLIC_FRONTIER.md gives the full graph/attachment/plane/load cover bel
 
 - [x] **M6.B4L2.BLOCKS** The only abstract blocks are C4,diamond,K4; the positive-K4 subgraph theorem removes K4 even with both bridges attached.
 - [x] **M6.B4L2.COVER** The outside vertices form a length-two arm, two leaves at one root, or two distinct-root leaves. C4 has four attachment orbits and diamond seven, for eleven total.
+- [x] **M6.B4L2.EXACT_LOAD_COVER** FOUR_BODY_BLOCK_TWO_BRIDGES_LOAD_COVER.md proves thirteen necessary whole block-load orbits and thirty-five full leaf/transmitter-width alternatives across the nine remaining attachments. Its exact root/load stabilizers retain both mixed orders whenever no allowed symmetry identifies them.
+- [x] **M6.B4L2.ARM_DOMAIN** The genuine arm root has actual application x e with |x|<31/60<r, so it is physically clear. The complete arm types are S/side,S/diagonal,D/side; D/diagonal contradicts the existing off-origin vertex/vertex bridge condition. No arm force is replaced by a direct leaf.
+- [x] **M6.B4L2.C4.SAME.ONE_ADJACENT_LOAD** LOCAL.TWO_LEAF_TX.ALL excludes the entire one-adjacent-block-load family: at least one actual neighbor of the two-leaf root is an unloaded degree-two transmitter. All S/S,S/D,D/D assignments and all three extras remain.
+- [x] **M6.B4L2.C4.SAME.ONE_OPPOSITE_LOAD** Both actual root neighbors would be unloaded transmitters, excluded by the same full theorem. The d=1 exits are actual P/Y completion bounds, not an isolated-core claim.
+- [x] **M6.B4L2.C4.SAME.TWO_ADJACENT_LOADS** One actual root neighbor remains an unloaded transmitter, so the complete two-adjacent-load family is excluded for every genuine leaf pair and original mean. The only surviving load masks areBD,BCD.
+- [x] **M6.B4L2.C4.OPPOSITE.SINGLE_BLOCK_LOAD** Any zero-load B or D would be a true unloaded transmitter between the two direct-leaf roots A,C, contradicting LOCAL.LEAF_ROOT_CHANNEL. Both B,D must be loaded throughout this attachment.
+- [x] **M6.B4L2.INTERNAL_WIDTHS** Every remaining C4 mask with one internal unloaded degree-two body has an actual unit bypass, so that transmitter has reserve1. The exact bypass is identified in the source for each mask; a higher-degree root is never made into a transmitter.
+- [x] **M6.B4L2.RETAINED_CONTRACT** Every open gate below retains the exact six-body graph, all stated automorphism images, every genuine leaf and transmitter equation, each root's true force and torque, all physical circle masks and individual zero weights, every actual shared-side mean and all three arbitrary extras. Distinct-root mixed S/D gates retain the entire necessary d>1 domain. Each requires a whole core contradiction, sharp bound or complete joint three-extra exit.
+- [x] **M6.B4L2.C4.ADJACENT.DD** The entire D/D leaf-type alternative at these two distinct roots is excluded by LOCAL.DISTINCT_D_ROOTS, for every block-load mask and actual contact domain.
+- [x] **M6.B4L2.C4.OPPOSITE.DD** The entire D/D leaf-type alternative at these two distinct roots is excluded by LOCAL.DISTINCT_D_ROOTS, for every block-load mask and actual contact domain.
+- [x] **M6.B4L2.DIAMOND.TWO_HUBS.DD** The entire D/D leaf-type alternative at these two distinct roots is excluded by LOCAL.DISTINCT_D_ROOTS, for every block-load mask and actual contact domain.
+- [x] **M6.B4L2.DIAMOND.TWO_TIPS.DD** The entire D/D leaf-type alternative at these two distinct roots is excluded by LOCAL.DISTINCT_D_ROOTS, for every block-load mask and actual contact domain.
+- [x] **M6.B4L2.DIAMOND.HUB_TIP.DD** The entire D/D leaf-type alternative at these two distinct roots is excluded by LOCAL.DISTINCT_D_ROOTS, for every block-load mask and actual contact domain.
+- [x] **M6.B4L2.C4.CHAIN.LOAD_COVER** For C4 arm at A, the complete remaining positive block-load representatives areBC,BD,BCD. Genuine outside leaves are additional loaded bodies and retain their full types.
+- [ ] **M6.B4L2.C4.CHAIN.LBC.S_SIDE** Entire C4 arm at A family with block loadsBC and S arm with its actual side transmitter; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [ ] **M6.B4L2.C4.CHAIN.LBC.S_DIAGONAL** Entire C4 arm at A family with block loadsBC and S arm with its actual diagonal transmitter; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [ ] **M6.B4L2.C4.CHAIN.LBC.D_SIDE** Entire C4 arm at A family with block loadsBC and D arm with its actual side transmitter; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [ ] **M6.B4L2.C4.CHAIN.LBD.S_SIDE** Entire C4 arm at A family with block loadsBD and S arm with its actual side transmitter; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [ ] **M6.B4L2.C4.CHAIN.LBD.S_DIAGONAL** Entire C4 arm at A family with block loadsBD and S arm with its actual diagonal transmitter; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [ ] **M6.B4L2.C4.CHAIN.LBD.D_SIDE** Entire C4 arm at A family with block loadsBD and D arm with its actual side transmitter; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [ ] **M6.B4L2.C4.CHAIN.LBCD.S_SIDE** Entire C4 arm at A family with block loadsBCD and S arm with its actual side transmitter; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [ ] **M6.B4L2.C4.CHAIN.LBCD.S_DIAGONAL** Entire C4 arm at A family with block loadsBCD and S arm with its actual diagonal transmitter; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [ ] **M6.B4L2.C4.CHAIN.LBCD.D_SIDE** Entire C4 arm at A family with block loadsBCD and D arm with its actual side transmitter; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [x] **M6.B4L2.C4.SAME.LOAD_COVER** For C4 two leaves at A, the complete remaining positive block-load representatives areBD,BCD. Genuine outside leaves are additional loaded bodies and retain their full types.
+- [ ] **M6.B4L2.C4.SAME.LBD.SS** Entire C4 two leaves at A family with block loadsBD and both actual leaves S; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [ ] **M6.B4L2.C4.SAME.LBD.SD** Entire C4 two leaves at A family with block loadsBD and one actual S and one actual D leaf, including every symmetry-identified placement; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [ ] **M6.B4L2.C4.SAME.LBD.DD** Entire C4 two leaves at A family with block loadsBD and both actual leaves D at their common root; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [ ] **M6.B4L2.C4.SAME.LBCD.SS** Entire C4 two leaves at A family with block loadsBCD and both actual leaves S; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [ ] **M6.B4L2.C4.SAME.LBCD.SD** Entire C4 two leaves at A family with block loadsBCD and one actual S and one actual D leaf, including every symmetry-identified placement; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [ ] **M6.B4L2.C4.SAME.LBCD.DD** Entire C4 two leaves at A family with block loadsBCD and both actual leaves D at their common root; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [x] **M6.B4L2.C4.ADJACENT.LOAD_COVER** For C4 leaves at A,B, the complete remaining positive block-load representatives areC,CD. Genuine outside leaves are additional loaded bodies and retain their full types.
+- [ ] **M6.B4L2.C4.ADJACENT.LC.SS** Entire C4 leaves at A,B family with block loadsC and both actual leaves S; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [ ] **M6.B4L2.C4.ADJACENT.LC.SA_DB** Entire C4 leaves at A,B family with block loadsC and S at A and D at B; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [ ] **M6.B4L2.C4.ADJACENT.LC.DA_SB** Entire C4 leaves at A,B family with block loadsC and D at A and S at B; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [ ] **M6.B4L2.C4.ADJACENT.LCD.SS** Entire C4 leaves at A,B family with block loadsCD and both actual leaves S; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [ ] **M6.B4L2.C4.ADJACENT.LCD.SD** Entire C4 leaves at A,B family with block loadsCD and one actual S and one actual D leaf, including every symmetry-identified placement; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [x] **M6.B4L2.C4.OPPOSITE.LOAD_COVER** For C4 leaves at A,C, the complete remaining positive block-load representatives areBD. Genuine outside leaves are additional loaded bodies and retain their full types.
+- [ ] **M6.B4L2.C4.OPPOSITE.LBD.SS** Entire C4 leaves at A,C family with block loadsBD and both actual leaves S; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [ ] **M6.B4L2.C4.OPPOSITE.LBD.SD** Entire C4 leaves at A,C family with block loadsBD and one actual S and one actual D leaf, including every symmetry-identified placement; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [x] **M6.B4L2.DIAMOND.CHAIN_HUB.LOAD_COVER** For diamond arm at hub H, the complete remaining positive block-load representatives areKBC. Genuine outside leaves are additional loaded bodies and retain their full types.
+- [ ] **M6.B4L2.DIAMOND.CHAIN_HUB.LKBC.S_SIDE** Entire diamond arm at hub H family with block loadsKBC and S arm with its actual side transmitter; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [ ] **M6.B4L2.DIAMOND.CHAIN_HUB.LKBC.S_DIAGONAL** Entire diamond arm at hub H family with block loadsKBC and S arm with its actual diagonal transmitter; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [ ] **M6.B4L2.DIAMOND.CHAIN_HUB.LKBC.D_SIDE** Entire diamond arm at hub H family with block loadsKBC and D arm with its actual side transmitter; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [x] **M6.B4L2.DIAMOND.SAME_HUB.LOAD_COVER** For diamond two leaves at hub H, the complete remaining positive block-load representatives areKBC. Genuine outside leaves are additional loaded bodies and retain their full types.
+- [ ] **M6.B4L2.DIAMOND.SAME_HUB.LKBC.SS** Entire diamond two leaves at hub H family with block loadsKBC and both actual leaves S; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [ ] **M6.B4L2.DIAMOND.SAME_HUB.LKBC.SD** Entire diamond two leaves at hub H family with block loadsKBC and one actual S and one actual D leaf, including every symmetry-identified placement; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [ ] **M6.B4L2.DIAMOND.SAME_HUB.LKBC.DD** Entire diamond two leaves at hub H family with block loadsKBC and both actual leaves D at their common root; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [x] **M6.B4L2.DIAMOND.TWO_HUBS.LOAD_COVER** For diamond leaves at H,K, the complete remaining positive block-load representatives areBC. Genuine outside leaves are additional loaded bodies and retain their full types.
+- [ ] **M6.B4L2.DIAMOND.TWO_HUBS.LBC.SS** Entire diamond leaves at H,K family with block loadsBC and both actual leaves S; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [ ] **M6.B4L2.DIAMOND.TWO_HUBS.LBC.SD** Entire diamond leaves at H,K family with block loadsBC and one actual S and one actual D leaf, including every symmetry-identified placement; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [x] **M6.B4L2.DIAMOND.TWO_TIPS.LOAD_COVER** For diamond leaves at B,C, the complete remaining positive block-load representatives areHK. Genuine outside leaves are additional loaded bodies and retain their full types.
+- [ ] **M6.B4L2.DIAMOND.TWO_TIPS.LHK.SS** Entire diamond leaves at B,C family with block loadsHK and both actual leaves S; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [ ] **M6.B4L2.DIAMOND.TWO_TIPS.LHK.SD** Entire diamond leaves at B,C family with block loadsHK and one actual S and one actual D leaf, including every symmetry-identified placement; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [x] **M6.B4L2.DIAMOND.HUB_TIP.LOAD_COVER** For diamond leaves at H,B, the complete remaining positive block-load representatives areKC. Genuine outside leaves are additional loaded bodies and retain their full types.
+- [ ] **M6.B4L2.DIAMOND.HUB_TIP.LKC.SS** Entire diamond leaves at H,B family with block loadsKC and both actual leaves S; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [ ] **M6.B4L2.DIAMOND.HUB_TIP.LKC.SH_DB** Entire diamond leaves at H,B family with block loadsKC and S at hub H and D at tip B; close the full domain under M6.B4L2.RETAINED_CONTRACT.
+- [ ] **M6.B4L2.DIAMOND.HUB_TIP.LKC.DH_SB** Entire diamond leaves at H,B family with block loadsKC and D at hub H and S at tip B; close the full domain under M6.B4L2.RETAINED_CONTRACT.
 - [ ] **M6.B4L2.C4.CHAIN** Entire C4 with a length-two arm at its unique vertex orbit.
 - [ ] **M6.B4L2.C4.SAME** Entire C4 with two leaves at one articulation, all S/S,S/D,D/D and contact-mask transitions.
 - [ ] **M6.B4L2.C4.ADJACENT** Entire C4 with one leaf at each of two adjacent vertices.
@@ -1572,7 +1641,7 @@ SIX_BODY_CYCLIC_FRONTIER.md gives the full graph/attachment/plane/load cover bel
 - [ ] **M6.B4L2.DIAMOND.TWO_HUBS** One leaf on each of the adjacent diamond hubs.
 - [ ] **M6.B4L2.DIAMOND.TWO_TIPS** One leaf on each of the two nonadjacent diamond tips.
 - [ ] **M6.B4L2.DIAMOND.HUB_TIP** One leaf at a hub and one at a tip; all such unordered pairs are one orbit.
-- [ ] **M6.B4L2.ALL** Two of eleven complete classes are closed; finish the remaining nine with all three extras. The one-leaf C1.4.b1 theorem cannot discard a second positive attachment.
+- [ ] **M6.B4L2.ALL** Two of eleven complete classes are closed; the remaining nine now have thirteen necessary whole load orbits and thirty-five complete leaf/width gates. Finish every retained family with all three extras. The one-leaf C1.4.b1 theorem cannot discard a second positive attachment.
 
 #### M6.B5L — C1.5.b1, a five-body block and one leaf
 
