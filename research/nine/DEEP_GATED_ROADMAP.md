@@ -1,7 +1,7 @@
 # n=9: deep ticked roadmap and ordered proof execution
 
 **Branch:** `research/nine-tablefree-hand`; **PR:** #11, draft.  
-**Reconciled source:** `c298675cbb9e4ae76e0fa53ae312fd2c7921aa28`.  
+**Reconciled source:** `4f1892a9a3932859c6735eaad5de577379eabc57`.  
 **Checkpoint:** October 23, 2026, America/Chicago; the append-only evidence log retains explicit UTC provenance.
 
 **T9 and unrestricted equality remain OPEN.** The complete P/Y arguments exclude all selected positive trees and all exactly-two-loaded components from a nine-square packing in the declared radius window. A physical certificate can be selected with **one planar positive component**, all physically circle-touching vertices on its exterior face, and at most 27 positive scalar atoms. The remaining component is cyclic, has 5–9 bodies, and has 3–7 noncollinear circle-loaded resultants. Every other physical square has zero stress and remains in the problem.
@@ -18,7 +18,7 @@ The remaining lower-bound split is exhaustive: **G3.B**, a boundary-only C7 with
 | 3 | G3.M4.S | All side-normal-leaf cores: aligned shared-side sliders plus both tilted-vertex branches | CLOSED hand; the entire core is impossible |
 | 4 | G3.M4.ALL | Combine D/S and their degeneracies; close the entire C1.3.b1 cell | CLOSED hand; independent assembly audit passed |
 | Parallel whole branch | G3.B.CAP | Exclude two arbitrary completion squares for every selected positive boundary C7 | OPEN; entire free-normal branch CLOSED; all-owned geometry active |
-| 5a | G3.M5 | Four complete five-body cells, all four extras retained | OPEN; full chain closed, C4 hole empty, biconnected graph/load cover complete |
+| 5a | G3.M5 | Four complete five-body cells, all four extras retained | OPEN; full chain and same-articulation layouts closed, C4 hole empty, biconnected graph/load cover complete |
 | 5b | G3.M6–M9 | Process the larger mixed cells by component size and the finite semantic cover below | OPEN |
 | 6 | G4 | Assemble the unrestricted sharp lower bound with the exact lower-window import | BLOCKED by G3 |
 | 7 | G5 | Necessity and converse for every equality packing, including free centers and rotations | OPEN |
@@ -53,12 +53,12 @@ The finite cover keeps continuous radii, centers, orientations, contact coordina
 | Boundary common-neighbor obstruction | No two selected vertices have three common positive circle-touching neighbors | NO_THREE_BOUNDARY_COMMON_NEIGHBORS.md |
 | Five-body biconnected graph/load cover | All ten abstract types reduced to C5, house and four-path fan, with all necessary positive-load masks | FIVE_BODY_BICONNECTED_REDUCTION.md |
 | Mixed boundary-tip selection | Every unique-circle-corner degree-two star with fixed applications and one boundary neighbor has no free vertex edge | BOUNDARY_TIP_FIXED_APPLICATION_SELECTION.md |
-| Entire same-articulation S/S and D/S branches | All leaf weights, articulation support features and triangle-tip circle masks excluded by inaccessible arcs/support faces | TWO_S_LEAVES_ONE_TRIANGLE_ARTICULATION.md; TWO_MIXED_LEAVES_ONE_TRIANGLE_ARTICULATION.md |
+| Entire same-articulation two-leaf layout | S/S, D/S and D/D excluded, with every actual side mean, corner owner, leaf weight and radius transition | TRIANGLE_TWO_LEAVES_SAME_ARTICULATION_CLOSED.md; TWO_D_LEAVES_ONE_TRIANGLE_ARTICULATION.md |
 | Entire adjacent-load C4 leaf branch | A central normal channel cannot return through any boundary neighbor; all leaf/articulation types retained | FOUR_CYCLE_ADJACENT_LOAD_EXCLUSION.md |
 | Complete C7 free-normal exclusion | Every residual positive C7 has actual side-axis owners on all edges, with all owner transitions retained | C7_RADIAL_VERTEX_EDGE_EXCLUSION.md; C7_MIRROR_VERTEX_EDGE_EXCLUSION.md |
 | Entire two-free-edge C7 branch | Both 2+2+3 and 2+2+2-plus-singleton cores excluded, retaining both remaining contact owners | C7_TWO_FREE_EDGES_EXCLUSION.md |
 | S-leaf connected boundary neighbors | No connected physical graph of boundary neighbors of its articulation can contain every other load | S_LEAF_CONNECTED_BOUNDARY_NEIGHBORS.md |
-| Unit bypass of a normal channel | Exactly one side-normal transmitter, with arbitrary actual means and no radius premise | UNIT_BYPASS_NORMAL_CHANNEL.md |
+| Unit bypass of a normal channel | Exactly one side-normal transmitter; transverse bypass/transmitter separation, with arbitrary actual means, every bypass orientation and no radius premise | UNIT_BYPASS_NORMAL_CHANNEL.md |
 | C7 free-edge graph and block profiles | At most two free edges; explicit length2–5 pinned profiles and two surviving local vertex-contact types | C7_PINNED_VERTEX_CONTACT_TYPES.md |
 | Entire two-edge triangle arm | All leaf/transmitter types, articulation frames and circle/contact masks excluded | TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md |
 | C4-plus-leaf inner capacity | Zero inner capacity for every load assignment and contact degeneracy; four extras exterior | FOUR_CYCLE_LEAF_HOLE_EMPTY.md |
@@ -760,7 +760,7 @@ There are four physical completion squares in every case. For cyclic block sizes
 - [x] **M5.T2.CHAIN.SELECT** In the remaining aligned nonparallel chart, compatible pre-stress normal choices remove articulation and mutual free vertex contacts; both circle masks and both BC side owners remain.
 - [x] **M5.T2.CHAIN.AXES** The exact circle-coordinate equations force a+c<1/6, then X_i>39/20 and Z_B+Z_C>5/3, contradicting R^2<=Q.
 - [x] **M5.T2.CHAIN.3** The entire selected core is impossible throughout the window, so all four extras are accounted for without a separate completion bound. Root and separate independent hand audits passed.
-- [ ] **M5.T2.SAME.1** For two leaves at one triangle articulation, retain both radial directions, all S/S, S/D, D/D types and the full force/torque balance at the articulation.
+- [x] **M5.T2.SAME.1** TRIANGLE_TWO_LEAVES_SAME_ARTICULATION_CLOSED.md gives the exhaustive unordered S/S, D/S, D/D cover, retaining both radial directions, every physical circle mask, actual mean and positive leaf weight.
 - [x] **M5.T2.SAME.SS.COVER** TWO_S_LEAVES_ONE_TRIANGLE_ARTICULATION.md exhausts one side support, two adjacent vertices and two opposite vertices for the two equal-radius S applications.
 - [x] **M5.T2.SAME.SS.SIDE** The complete side/side and side/vertex families lie in a shifted northeast quadrant. A 150-degree inaccessible circle arc contains the negative leaf-resultant cone, contradicting the pairwise acute triangle-tip circle corners.
 - [x] **M5.T2.SAME.SS.ADJACENT** Adjacent vertex applications make the entire required left face too close to0 to meet any boundary body, contradicting articulation force balance.
@@ -770,10 +770,25 @@ There are four physical completion squares in every case. For cyclic block sizes
 - [x] **M5.T2.SAME.DS.NE** In the top-side/NE cases, exact support-height bounds make the southwest quadrant inaccessible to every boundary neighbor while its interior contains the negative leaf resultant.
 - [x] **M5.T2.SAME.DS.NW** In the NW case the entire180–300-degree arc is inaccessible, and every positive leaf-weight combination has negative direction inside it.
 - [x] **M5.T2.SAME.DS.ALL** All D/S poses and boundary masks are excluded, with every completion retained. Root and separate audits passed.
-- [ ] **M5.T2.SAME.DD.DOMAIN** Finish the complete two-D articulation/contact geometry. Both tips have unique physical circle corners, but actual shared-side means must be resolved before applying the fixed-tip selection lemma.
-- [ ] **M5.T2.SAME.DD.BOUND** Prove the whole D/D core or completion bound on the entire radius window, including every shared-side and radius-boundary transition.
-- [ ] **M5.T2.SAME.2** Derive actual mutual separation of the leaves and the triangle tips; do not replace two radial forces by an invented physical leaf.
-- [ ] **M5.T2.SAME.3** Prove the full joint capacity or core/radius obstruction for this entire layout.
+- [x] **M5.T2.SAME.DD.DOMAIN** TWO_D_LEAVES_ONE_TRIANGLE_ARTICULATION.md fixes the two D directions to adjacent side axes and the articulation to [-s,r]^2, with r=R-sqrt(2), s=1-r. The circle-clear articulation and the two unique-circle-corner triangle tips retain all actual contact points.
+- [x] **M5.T2.SAME.DD.HIGH** For R>2 the whole southwest circle arc is inaccessible; at R=2 its only possible corner forces a radial-D tip whose second positive boundary contact contradicts torque and support width. The entire high-radius interval and its endpoint are excluded.
+- [x] **M5.T2.SAME.DD.ORDER** The actual four-port embedding fixes the E,N,B,C order. Coincident articulation applications are excluded in every point/shared-side alternative; distinct applications reduce to the northwest/southwest corner case or the complete left-side/southwest case.
+- [x] **M5.T2.SAME.DD.SELECT.POINT** With point-only B--C, the fixed-application boundary-tip theorem removes every free articulation or mutual vertex normal under one prelisted selection.
+- [x] **M5.T2.SAME.DD.SELECT.SHARED** With a shared B--C side, collective pure translations annihilate its force for every application mean. The resulting nontrivial determinant removes a free outer normal; exact vertex radii exclude its coefficient degeneration. The apparent variable-mean aligned exception is geometrically impossible.
+- [x] **M5.T2.SAME.DD.SELECT.PRESERVE** All candidate tips and shared blocks are listed before multipliers, matched junction parameters remain compatible, and uncrossing/thinning preserve the surviving point choices. No mean is fixed in advance.
+- [x] **M5.T2.SAME.DD.CORNER.CHART** The full owned-corner chart retains both B--C side owners. Exact projections give j=K rho-a, U=1-b+L rho, 0<K<L and both circle-coordinate equations; the parallel shared-side alternative is already impossible by loaded-tip concurrence.
+- [x] **M5.T2.SAME.DD.CORNER.OUTER_LARGE** In the northwest-owner chart, rho>=s/d puts the circle corner below the exact radius budget. Every contact-coordinate endpoint is retained.
+- [x] **M5.T2.SAME.DD.CORNER.OUTER_SMALL** For rho<s/d, positive radial concurrence and articulation balance bound the two angles. A convex quartic sign argument on the whole r interval gives tan(phi)<2/5; the other circle corner then violates the same radius budget.
+- [x] **M5.T2.SAME.DD.CORNER.INNER** Reflecting and interchanging the tips covers the southwest owner. Exact concurrence gives a<1/10 and c<1/6; both transverse circle coordinates exceed11/10, whereas their exact sum is below11/5.
+- [x] **M5.T2.SAME.DD.SIDE.COVER** Torque gives a>b>0 for the southwest side normal. The other tip is aligned or tilted, and every possible mutual downward side axis belongs to one of the following cases.
+- [x] **M5.T2.SAME.DD.SIDE.ALIGNED** All variable articulation means are retained. A southwest-tip owner is geometrically impossible; the other owner forces tau>as and an exact corner norm below39/10.
+- [x] **M5.T2.SAME.DD.SIDE.PARALLEL** In parallel tip frames, the common support line gives tau=a Delta. Equality of circle-corner norms would require G(Delta)=0, but G is strictly decreasing and G(s)<0. This includes positive-length shared contacts and endpoint-only parallel contacts.
+- [x] **M5.T2.SAME.DD.SIDE.C_OWNER** A southwest-tip owner gives an exact concurrence whose circle-coordinate ratio is below13/20 and normal coordinate below33/20; the squared norm is below39/10.
+- [x] **M5.T2.SAME.DD.SIDE.B_LEFT** The downward-left owner of the other tip forces tau b>=v>1/sqrt(2)>b, contradicting the physical side coordinate tau<1.
+- [x] **M5.T2.SAME.DD.SIDE.B_RIGHT** Its downward-right owner either contradicts the support ordering or again forces tau>as, so the same complete corner-norm bound applies.
+- [x] **M5.T2.SAME.DD.BOUND** The entire D/D core is excluded throughout the radius window, including every radius, shared-side, parallel-frame and owner transition. Root and separate full hand audits passed.
+- [x] **M5.T2.SAME.2** Each complete leaf-type proof uses the actual disjoint squares, their support contacts and mutual triangle-tip geometry. No two radial forces are replaced by an invented physical leaf.
+- [x] **M5.T2.SAME.3** TRIANGLE_TWO_LEAVES_SAME_ARTICULATION_CLOSED.md combines all three leaf types under the same necessary selected certificate. The entire layout is impossible independently of the four extras; root and independent assembly audits passed.
 - [ ] **M5.T2.DISTINCT.1** For leaves at two triangle articulations, identify the exact loaded subset and both clear articulation poses from the physical graph.
 - [ ] **M5.T2.DISTINCT.2** Cover every leaf-type pair and every angle between the radial bridges, retaining actual articulation-to-articulation contact and torque.
 - [ ] **M5.T2.DISTINCT.3** Prove the full completion/radius bound across this entire layout, including any asymmetric or shared-side limits.
@@ -797,7 +812,8 @@ There are four physical completion squares in every case. For cyclic block sizes
 - [x] **M5.B4L.C4.ADJACENT.ALL** The entire adjacent-loaded-pair C4-plus-leaf pattern is impossible, for both leaves, every orientation, all shared means and both transmission widths. Root and separate audits passed.
 - [ ] **M5.B4L.C4.OPPOSITE.DOMAIN** Retain the two loaded neighbors of A and the zero-load opposite transmitter, both S/D leaves, every actual support owner and all physical zero-weight circle contacts.
 - [x] **M5.B4L.C4.OPPOSITE.WIDTH** UNIT_BYPASS_NORMAL_CHANNEL.md forces exactly one side-normal transmitter of reserve1. Any longer channel exceeds the unit bypass diameter; a diagonal transmitter forces incompatible transverse same-frame separation. Its application means remain over the full sides, and no common articulation/leaf frame is inferred.
-- [ ] **M5.B4L.C4.OPPOSITE.BOUND** Prove the whole opposite-load core/radius or joint four-extra exterior bound, including all transmitter widths and articulation poses.
+- [x] **M5.B4L.C4.OPPOSITE.TRANSVERSE** UNIT_BYPASS_NORMAL_CHANNEL.md, Section4, gives the full separating-axis consequence. The bypass vertical projection contains the transmitter's full width-one interval; every possible square-axis separator then forces horizontal separation. Thus the articulation and transmitter lie side by side in the transmitter frame for every articulation angle, without requiring them to touch or have a common frame.
+- [ ] **M5.B4L.C4.OPPOSITE.BOUND** Prove the whole opposite-load core/radius or joint four-extra exterior bound, using the exact width-one and transverse-separation reductions while retaining every actual application mean and articulation pose.
 - [ ] **M5.B4L.C4.THREE.DOMAIN** Derive the complete three-loaded-block force/moment system, all physical circle-corner masks and both independent cycle contacts at the clear articulation.
 - [ ] **M5.B4L.C4.THREE.BOUND** Prove the full three-load branch's radius or joint exterior-completion theorem, retaining every asymmetric and shared-side limit.
 - [ ] **M5.B4L.C4.3** Combine the completed adjacent-load and empty-hole theorems with the entire opposite/three-load conclusions before closing C4.

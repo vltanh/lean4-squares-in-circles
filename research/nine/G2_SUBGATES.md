@@ -59,7 +59,7 @@ Every row retains four extra physical squares. Full nested contracts are G3.M5 i
 
 | Gate | Exact finite graph/layout cover | Status |
 | --- | --- | --- |
-| M5.T2 / C1.3.b2 | Length-two arm; same-articulation S/S, D/S, D/D; distinct-articulation leaves | Arm, same S/S and D/S CLOSED; D/D and distinct remain OPEN |
+| M5.T2 / C1.3.b2 | Length-two arm; two leaves at one or at two distinct triangle articulations | Entire arm and entire same-articulation layout CLOSED; distinct layout OPEN |
 | M5.B4L / C1.4.b1 | C4 load patterns; diamond hub/tip attachment; K4 | Adjacent-load C4 and K4 CLOSED; all cycle holes empty; other branches OPEN |
 | M5.B5 / C1.5.b0 | Exactly C5, house and four-path fan after the exhaustive ten-type graph/load reduction | Graph/load reduction CLOSED; full geometry/completion OPEN |
 | M5.TT / C2.33.b0 | Two triangles at one shared articulation, all additional zero-weight physical contacts retained | OPEN |
@@ -68,6 +68,9 @@ Every row retains four extra physical squares. Full nested contracts are G3.M5 i
 - [x] **M5.T2.CHAIN:** TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md excludes the entire chain layout. A one-boundary-neighbor concurrence lemma and three-port order force positive articulation concurrence; exact center caps and an all-mask circle-coordinate inequality finish every pose. Root and separate audits passed.
 - [x] **M5.B4L.C4.HOLE:** FOUR_CYCLE_LEAF_HOLE_EMPTY.md proves capacity zero for the full inner hole, including coincident contacts and every load allocation. The equality cross is excluded by strict selected normals or R^2=5/2. All four extras are exterior.
 - [x] **M5.T2.SAME.SS/DS:** TWO_S_LEAVES_ONE_TRIANGLE_ARTICULATION.md and TWO_MIXED_LEAVES_ONE_TRIANGLE_ARTICULATION.md exclude both entire leaf-type branches, with every articulation feature and all weights. The inaccessible-circle-arc arguments retain all B/C masks.
+- [x] **M5.T2.SAME.DD:** TWO_D_LEAVES_ONE_TRIANGLE_ARTICULATION.md covers the whole radius window, the coincident-application alternative, both corner owners, and every aligned, tilted and parallel-frame side case. Its collective shared-side determinant retains all means before compatible normal selection. Root and separate full audits passed.
+- [x] **M5.T2.SAME.ALL:** TRIANGLE_TWO_LEAVES_SAME_ARTICULATION_CLOSED.md exhausts S/S, D/S and D/D under one simultaneous necessary certificate. The entire layout is excluded independently of all four completion squares; assembly audits passed.
+- [ ] **M5.T2.DISTINCT / ASSEMBLE:** finish the whole distinct-articulation two-leaf family with its full S/D, moment, owner and mean cover; then assemble C1.3.b2. The parent is still OPEN.
 - [x] **M5.B4L.C4.ADJACENT:** FOUR_CYCLE_ADJACENT_LOAD_EXCLUSION.md proves the full adjacent-loaded-pair exclusion. Its stronger detour theorem also permits a circle-clear channel endpoint and a zero-weight boundary detour body. Root and separate audits passed.
 - [x] **M5.B5.GRAPH/LOAD_COVER:** FIVE_BODY_BICONNECTED_REDUCTION.md gives all ten types, excludes seven and lists all remaining necessary positive-load masks. Zero-weight physical circle contacts and all four extras remain.
 - [ ] **M5.ALL:** finish every whole cell, with all boundary cases and any equality survivors.
@@ -104,7 +107,7 @@ For R<sqrt(17)/2 the origin itself gives the strict center cover. The remaining 
 - [x] **CY.OUTERPAIR:** CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md proves every exterior pocket of a touching boundary pair empty in the declared window.
 - [x] **CY.SIMPLECYCLE:** SIMPLE_POSITIVE_CYCLE_BODY_BOUND.md excludes every nine-body simple selected cycle; branching nine-body blocks remain.
 - [x] **CY.S.CONNECTED:** S_LEAF_CONNECTED_BOUNDARY_NEIGHBORS.md excludes every S leaf whose other loads lie in one connected physical graph of boundary neighbors of its articulation. In particular the S diamond-hub/boundary-second-hub branch is closed, including zero weight at that hub.
-- [x] **CY.BYPASS:** UNIT_BYPASS_NORMAL_CHANNEL.md proves exactly one side-normal transmitter whenever another unit square physically touches both channel endpoints. No circle premise is needed; the opposite-load C4 reserve is exactly one.
+- [x] **CY.BYPASS:** UNIT_BYPASS_NORMAL_CHANNEL.md proves exactly one side-normal transmitter whenever another unit square physically touches both channel endpoints. No circle premise is needed; the opposite-load C4 reserve is exactly one. The full separating-axis calculation in Section 4 also proves transverse separation of the bypass and transmitter, without inferring physical contact or a common frame.
 - [ ] **CY.JOINT:** apply these tools with actual whole-square routing and coupled capacities in each surviving mixed cell.
 
 ## 7. Universal assembly, equality and verification

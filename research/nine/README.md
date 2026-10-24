@@ -23,14 +23,14 @@ The proof excludes the selected core itself. It therefore accounts for the five 
 
 ## Latest completed five-body and C7 reductions
 
-- [x] [TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md](TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md) excludes the **entire length-two arm layout** of C1.3.b2. It retains both leaf types, both transmitter widths, all articulation orientations, circle masks and contact owners. The two layouts with separate leaves remain open.
+- [x] [TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md](TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md) excludes the **entire length-two arm layout** of C1.3.b2. It retains both leaf types, both transmitter widths, all articulation orientations, circle masks and contact owners. The same-articulation layout is now also closed below; only leaves at two distinct triangle vertices remain.
 - [x] [FOUR_CYCLE_LEAF_HOLE_EMPTY.md](FOUR_CYCLE_LEAF_HOLE_EMPTY.md) proves that **every C4-plus-leaf inner hole has capacity zero**. Equality in the general hole-area bound forces an aligned cross, which cannot carry the required selected stress in the radius window. All four extras must be exterior; their joint capacity remains open.
 - [x] [NO_THREE_BOUNDARY_COMMON_NEIGHBORS.md](NO_THREE_BOUNDARY_COMMON_NEIGHBORS.md) gives a uniform exterior-face obstruction. [FIVE_BODY_BICONNECTED_REDUCTION.md](FIVE_BODY_BICONNECTED_REDUCTION.md) then supplies the full ten-type classification and excludes seven types: **only C5, the house and the four-path fan remain**, with explicit necessary load masks.
-- [x] [TWO_S_LEAVES_ONE_TRIANGLE_ARTICULATION.md](TWO_S_LEAVES_ONE_TRIANGLE_ARTICULATION.md) and [TWO_MIXED_LEAVES_ONE_TRIANGLE_ARTICULATION.md](TWO_MIXED_LEAVES_ONE_TRIANGLE_ARTICULATION.md) exclude the entire S/S and D/S same-articulation branches. Every support-face/vertex placement and every positive weight is retained. Only D/D remains in that layout.
+- [x] [TRIANGLE_TWO_LEAVES_SAME_ARTICULATION_CLOSED.md](TRIANGLE_TWO_LEAVES_SAME_ARTICULATION_CLOSED.md) closes the **entire same-articulation layout**. The complete S/S, D/S and [D/D proof](TWO_D_LEAVES_ONE_TRIANGLE_ARTICULATION.md) retain every support feature, actual shared-side mean, contact owner, positive leaf weight and radius endpoint. Root and separate audits passed; all four extras remain accounted for by the core exclusion.
 - [x] [FOUR_CYCLE_ADJACENT_LOAD_EXCLUSION.md](FOUR_CYCLE_ADJACENT_LOAD_EXCLUSION.md) excludes the entire adjacent-loaded-pair C4-plus-leaf pattern. Its stronger geometric theorem prevents a normal channel from a near-origin articulation from returning through a circle-touching neighbor.
 - [x] [BOUNDARY_TIP_FIXED_APPLICATION_SELECTION.md](BOUNDARY_TIP_FIXED_APPLICATION_SELECTION.md) extends generic selection to a degree-two unique-circle-corner tip with only one boundary neighbor. Both actual applications must be fixed; variable shared-side means remain outside this lemma.
 - [x] [S_LEAF_CONNECTED_BOUNDARY_NEIGHBORS.md](S_LEAF_CONNECTED_BOUNDARY_NEIGHBORS.md) excludes a radial S leaf when every other load lies in a connected physical graph of boundary neighbors of its articulation. It closes the entire S-leaf diamond-hub branch with a physically boundary second hub, including zero weight there.
-- [x] [UNIT_BYPASS_NORMAL_CHANNEL.md](UNIT_BYPASS_NORMAL_CHANNEL.md) proves that any normal channel whose endpoints have a common unit-square neighbor has exactly one side-normal transmitter. The opposite-load C4 branch therefore has reserve exactly one, with all means retained.
+- [x] [UNIT_BYPASS_NORMAL_CHANNEL.md](UNIT_BYPASS_NORMAL_CHANNEL.md) proves that any normal channel whose endpoints have a common unit-square neighbor has exactly one side-normal transmitter. The opposite-load C4 branch therefore has reserve exactly one, with all means retained. A full separating-axis argument also forces the bypass articulation and transmitter to lie side by side in the transmitter frame, including every tilted articulation.
 - [x] The **entire C7 free-normal branch is now excluded**. The completed block/profile selections and the two final vertex-edge exclusions leave actual side-axis owners on every edge. The remaining full C7 capacity problem retains all owner transitions and shared-side means.
 
 These are complete implications at their stated scope, with independent hand audits. They do not close another coarse cell: the count remains **three closed and 55 open**.
@@ -41,7 +41,7 @@ The complete gate tree, including continuous domains, contact owners, boundary c
 
 | Gate | Entire scope | Current state |
 | --- | --- | --- |
-| C1.3.b2 | D/D leaves at one triangle articulation, or leaves at two articulations | OPEN; full arm and same-articulation S/S, D/S branches CLOSED |
+| C1.3.b2 | Leaves at two distinct triangle articulations, with all S/D types and actual means | OPEN; entire arm and entire same-articulation layout CLOSED |
 | C1.4.b1 | C4 with opposite or three loaded block vertices; both diamond attachment orbits | OPEN; adjacent-load C4 and K4 excluded, all cycle holes empty |
 | C1.5.b0 | C5, house or four-path fan, with the complete necessary load cover and all physical contacts | OPEN; exhaustive graph/load reduction CLOSED |
 | C2.33.b0 | Two triangles sharing one articulation, with four loaded tips and all physical contacts retained | OPEN |

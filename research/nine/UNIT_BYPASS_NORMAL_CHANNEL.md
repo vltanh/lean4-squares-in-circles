@@ -112,3 +112,75 @@ completion squares are not discarded, and that residual class is not
 closed here.
 
 No Lean compilation, CI, pose grid, or numerical optimizer is used.
+
+## 4. The bypass and transmitter are separated transversely
+
+**This additional full-chart consequence has passed an independent hand
+audit, separately from Sections 1--3.**
+
+Rotate and translate the surviving side-normal alternative so that
+
+\[
+                     U=[-1/2,1/2]\times[0,1].
+\]
+
+Then B lies below y=0 and D above y=1. Since A touches both, its
+vertical projection contains the whole interval [0,1]. Nevertheless A
+has disjoint interior from U. These conditions force A to lie entirely
+to the left or entirely to the right of U.
+
+Here is the complete separating-axis calculation, including a tilted A.
+Let its two coordinate halfwidths be w/2, where
+
+\[
+                 w=a+b,\qquad a,b\ge0,\qquad a^2+b^2=1,
+\]
+
+and write its center displacement from U as (x,y). The projection
+containment gives
+
+\[
+                              |y|\le\frac{w-1}{2}.
+\tag{7}
+\]
+
+Some side axis of A or U separates the two squares. The vertical axis
+cannot do so, because their vertical projections overlap in an interval
+of length one. If the horizontal axis separates them, its condition is
+already
+
+\[
+                              |x|\ge\frac{w+1}{2}.
+\tag{8}
+\]
+
+Otherwise a separating side axis of A has absolute horizontal and
+vertical components (a,b), or (b,a). In the first case the separator
+condition and (7) imply
+
+\[
+       a|x|\ge\frac{w+1-b(w-1)}2\ge\frac{a(w+1)}2,
+\tag{9}
+\]
+
+because the exact difference of the doubled numerators is
+
+\[
+              (1-a)(w+1)-b(w-1)=2b(1-a)\ge0.
+\tag{10}
+\]
+
+If a=0 this proposed separator is vertical and is impossible; otherwise
+(9) gives (8). Interchanging a and b proves the other side-axis case.
+Thus (8) always holds. Since A's horizontal halfwidth is w/2 and U's
+is 1/2, (8) is precisely horizontal projection separation.
+
+**Corollary 4.1.** Every unit bypass in this theorem is separated from
+its unique side-normal transmitter by a line parallel to the transmission
+direction. In the original invariant notation, the two squares are
+separated along the transmitter's axis Jn.
+
+The separation may have a positive gap. If it is a contact and A is
+tilted, A's unique transverse support vertex meets a transmitter side.
+No contact between A and U, common frame, centered application, or
+additional positive edge is inferred merely from this separation.
