@@ -1,5 +1,15 @@
 # Nine unit squares in a circle — current hand-proof frontier
 
+## Second whole six-body cell CLOSED: all two-triangle/one-bridge layouts
+
+[TWO_TRIANGLE_BLOCKS_ONE_BRIDGE_CELL_CLOSED.md](TWO_TRIANGLE_BLOCKS_ONE_BRIDGE_CELL_CLOSED.md) closes **the entire C2.33.b1 cell**: a leaf at the shared articulation, a leaf at a triangle tip, and two disjoint triangles joined by the bridge. All three whole exclusions use the same selected certificate and retain every true degree and all three extras.
+
+[TIP_LEAF_BOWTIE_EXCLUSION.md](TIP_LEAF_BOWTIE_EXCLUSION.md) finishes the last layout. The full tilted-S [domain](TIP_LEAF_BOWTIE_S_TILTED_DOMAIN.md) retains all parallel/nonparallel B/H inputs and their actual weighted means, then exhausts [two neighbor-owned vertices](TIP_LEAF_BOWTIE_S_TILTED_TWO_VERTEX_EXCLUSION.md), [an A-owned side with parallel H](TIP_LEAF_BOWTIE_S_TILTED_PARALLEL_HUB_EXCLUSION.md), and [an A-owned side with nonparallel H](TIP_LEAF_BOWTIE_S_TILTED_VERTEX_HUB_EXCLUSION.md). The last proof applies two exact direction bounds to the same actual petal side, forcing height>47/48 and contradicting39/40. Together with the complete D and aligned S sources, every leaf type and articulation feature is excluded.
+
+[END_TRIANGLE_COMMON_SIDE.md](END_TRIANGLE_COMMON_SIDE.md) proves every genuine loaded end triangle uses one actual root sideN withM.N>0 and height<39/40; it does not choose an arbitrary preferred side in a location argument. [END_TRIANGLE_RADIAL_NEIGHBOR_OBSTRUCTION.md](END_TRIANGLE_RADIAL_NEIGHBOR_OBSTRUCTION.md) forces another actual load to supply negative root pressure. It excludes the entire all-radial mask of C4 loadsAC and diamond-hub loadsKAB, leaving exactly two and five full physical-mask families with explicit roadmap gates.
+
+Root and separate independent full audits passed the four tilted sources, entire tip-leaf assembly, whole coarse-cell assembly and both uniform tools. The authoritative inventory is now **nine whole cells closed and49 open**. Two of six six-body parents are closed; the four remaining are **C1.4.b2,C1.5.b1,C1.6.b0,C2.34.b0**. Unrestricted sharpness, original equality and full earlier prerequisite-chain audit remain OPEN. PR #11 stays draft; no Lean compilation or CI was run.
+
 ## Entire aligned-S bowtie closed; sharper triangle tools and four-block load cover
 
 [END_TRIANGLE_HIGH_FACE_EXCLUSION.md](END_TRIANGLE_HIGH_FACE_EXCLUSION.md) proves the full all-mask exclusion when both actual ports of an end triangle lie on one root side of height at least**39/40**. Its exact center-cap and free/shared-interface proofs allow arbitrary additional forces at the root. [END_TRIANGLE_AXIS_RESULTANT_SUPPORT_BOUND.md](END_TRIANGLE_AXIS_RESULTANT_SUPPORT_BOUND.md) proves both ports occupy the maximizing side whenever the whole petal resultant is a root axis. [END_TRIANGLE_FACE_RESULTANT_ANGLE.md](END_TRIANGLE_FACE_RESULTANT_ANGLE.md) gives the complete quantitative direction bounds at side heights4/5 and29/30, including every free-contact chart.

@@ -1,12 +1,12 @@
 # n=9: deep ticked roadmap and ordered proof execution
 
 **Branch:** `research/nine-tablefree-hand`; **PR:** #11, draft.  
-**Reconciled source:** 9b255e65536571155abb40d2343a064f3f34834f.
+**Reconciled source:** a3cbb2e8c284675a92a978c83801882cd73a66ee.
 **Checkpoint:** October 24, 2026, America/Chicago; the append-only evidence log retains explicit UTC provenance.
 
 **T9 and unrestricted equality remain OPEN.** The complete P/Y arguments exclude all selected positive trees and all exactly-two-loaded components from a nine-square packing in the declared radius window. A physical certificate can be selected with **one planar positive component**, all physically circle-touching vertices on its exterior face, and at most 27 positive scalar atoms. The remaining component is cyclic, has 6–9 bodies, and has 3–7 noncollinear circle-loaded resultants. Every other physical square has zero stress and remains in the problem.
 
-The complete lower-bound split has a closed boundary-only branch **G3.B**, by the geometric physical C7 capacity-one theorem, and the open mixed branch **G3.M**. Every surviving positive component contains a physically circle-clear body, with all 9-m completion squares retained. The full physical circle-touching graph is a path forest. The 58-cell coarse inventory has eight whole cells closed and 50 open. Subgate counts are not completion percentages.
+The complete lower-bound split has a closed boundary-only branch **G3.B**, by the geometric physical C7 capacity-one theorem, and the open mixed branch **G3.M**. Every surviving positive component contains a physically circle-clear body, with all 9-m completion squares retained. The full physical circle-touching graph is a path forest. The 58-cell coarse inventory has nine whole cells closed and 49 open. Subgate counts are not completion percentages.
 
 ## Ordered execution and gate-closing rule
 
@@ -463,11 +463,11 @@ Source: FOUR_BODY_CYCLIC_CELL_CLOSED.md, commit 05e15a0.
 | Cyclic block count | Profiles | Cell count | Sharp status |
 |---|---|---:|---|
 | 1 | (3),(4),(5),(6),(7),(8),(9) | 28 | Seven closed: C1.3.b0–b3, C1.4.b0–b1, C1.5.b0; other21 open |
-| 2 | (3,3),(3,4),(3,5),(3,6),(3,7),(4,4),(4,5),(4,6),(5,5) | 22 | C2.33.b0 closed; other21 open |
+| 2 | (3,3),(3,4),(3,5),(3,6),(3,7),(4,4),(4,5),(4,6),(5,5) | 22 | C2.33.b0 andC2.33.b1 closed; other20 open |
 | 3 | (3,3,3),(3,3,4),(3,3,5),(3,4,4) | 7 | all [ ] |
 | 4 | (3,3,3,3) | 1 | [ ] |
 
-**50 cells OPEN, eight CLOSED.** The full triangle-with-three-bridges assembly closes C1.3.b3, the first six-body coarse cell. Uniform restrictions still do not tick a larger cell when any physical realization or completion remains unresolved. Seek complete shared arguments across whole families, with continuous geometry retained.
+**49 cells OPEN, nine CLOSED.** The complete assemblies close C1.3.b3 andC2.33.b1, the first two whole six-body coarse cells. Uniform restrictions still do not tick a larger cell when any physical realization or completion remains unresolved. Seek complete shared arguments across whole families, with continuous geometry retained.
 
 ### Uniform subsubgate contract for every unchecked cell C
 
@@ -623,7 +623,7 @@ Source: C7_LEFT_OUTSIDE_INNER_EXCLUSION.md. Keep the left-owned separator, a=xi<
 - [x] **G3.B.SHARP.EQUALITY_SCOPE** The contradiction is strict at R=sqrt(1105)/16. No boundary-C7 nine-square equality configuration survives, and no canonical secondary-minimizer restriction is needed here.
 - [x] **G3.B.PHYSICAL_PATHS** In every nine-unit packing in the window the complete physical circle-touching graph is a disjoint union of paths.
 - [x] **G3.B.MIXED_ONLY** Every surviving selected positive component contains a physically circle-clear square. Zero-circle-weight physical boundary bodies remain distinct from circle-clear bodies.
-- [x] **G3.B.COARSE_SCOPE** The mixed part of C1.7.b0 is unaffected. This whole-family closure does not tick another coarse cell: the current complete count is eight closed,50 open.
+- [x] **G3.B.COARSE_SCOPE** The mixed part of C1.7.b0 is unaffected. This whole-family closure does not tick another coarse cell: the current complete count is nine closed,49 open.
 
 #### Earlier C7 routes: completed lemmas and retired obligations
 
@@ -751,7 +751,7 @@ The theta->0 limit of S+/S- gives only t=+/-1/2. It does **not** cover the align
 
 #### G3.M4.ALL — Whole-cell closure [CLOSED hand]
 
-Source: TRIANGLE_LEAF_CELL_CLOSED.md; independent assembly audit passed. The simultaneous certificate selection is compatible with every prior reduction. This earlier closure still supplies the lower component bound of five bodies. The later complete C1.3.b2,C2.33.b0 and C1.4.b1 closures make the current coarse count eight closed and50 open.
+Source: TRIANGLE_LEAF_CELL_CLOSED.md; independent assembly audit passed. The simultaneous certificate selection is compatible with every prior reduction. This earlier closure still supplies the lower component bound of five bodies. The later complete C1.3.b2,C2.33.b0 and C1.4.b1 closures make the current coarse count nine closed and49 open.
 
 - [x] **G3.M4.ALL.1** G3.M4.0 plus D.ALL plus S.ALL cover every selected C1.3.b1 realization.
 - [x] **G3.M4.ALL.2** At most4 extras contradict the required5, or the alternative full-core exclusions already contradict the premise.
@@ -1069,7 +1069,7 @@ There are four physical completion squares in every case. For cyclic block sizes
 - [x] **M5.B4L.ASSEMBLE.LOADS** For C4, zero other loads violate global force, one other load is TL.COMPLETE, two other loads are the full adjacent/opposite branches, and all three are THREE.ALL. Physical zero-weight boundary bodies remain in each case.
 - [x] **M5.B4L.ASSEMBLE.CANONICAL** Choose a minimum-radius packing minimizing Phi=sum|c_i|² before normal selection. The older opposite-load theorem preserves every extra during its empty-hole slide. This premise is retained explicitly and is not exported to every original equality packing.
 - [x] **M5.B4L.ASSEMBLE.CERTIFICATE** All finite generic conditions and strict endpoint neighborhoods precede multiplier extraction, preserve matched junctions and actual shared means, and survive physical uncrossing/thinning. Every branch applies to the same nine-square packing.
-- [x] **M5.B4L.ASSEMBLE / G3.M5.B4L** Every graph/load/leaf/physical-mask family is excluded at the stated canonical minimizer. Root and two separate full assembly audits passed. C1.4.b1 is CLOSED; the inventory is eight closed and50 open. This does not finish larger mixed cells or unrestricted equality.
+- [x] **M5.B4L.ASSEMBLE / G3.M5.B4L** Every graph/load/leaf/physical-mask family is excluded at the stated canonical minimizer. Root and two separate full assembly audits passed. C1.4.b1 is CLOSED; the inventory is nine closed and49 open. This does not finish larger mixed cells or unrestricted equality.
 
 #### M5.B5 — C1.5.b0: every five-body biconnected graph [CLOSED hand; full assembly audited]
 
@@ -1365,7 +1365,7 @@ Use path u1--u2--u3--u4 and universal hub H. The two endpoint tips u1,u4 are loa
 - [x] **M5.B5.FAN.BOUND** The full core contradiction holds throughout79/40<=R<=sqrt(1105)/16, including both radius endpoints; all four arbitrary extras remain untouched.
 - [x] **M5.B5.FAN.ALL** Both initial three-load masks and the whole four-load family are excluded. Root and separate independent full assembly audits passed. The entire fan graph is CLOSED; the subsequent whole-house assembly closes the final C1.5.b0 branch. Fan subgraphs with additional positive edges retain their own full equations and remain outside this theorem.
 
-- [x] **M5.B5.ALL** FIVE_BODY_BICONNECTED_CELL_CLOSED.md combines all ten graph types and their full exits. Root and independent whole-cell audits passed. C1.5.b0 is CLOSED; the count is eight closed and50 open, and all larger mixed cells retain their full obligations.
+- [x] **M5.B5.ALL** FIVE_BODY_BICONNECTED_CELL_CLOSED.md combines all ten graph types and their full exits. Root and independent whole-cell audits passed. C1.5.b0 is CLOSED; the count is nine closed and49 open, and all larger mixed cells retain their full obligations.
 
 #### M5.TT — C2.33.b0: two triangles sharing an articulation [CLOSED hand]
 
@@ -1411,13 +1411,13 @@ Use path u1--u2--u3--u4 and universal hub H. The two endpoint tips u1,u4 are loa
 - [x] **M5.TT.PHYSICAL_GRAPH** All additional zero-weight contacts remain physical obstacles and candidates during finite preselection. No missing positive edge is treated as a physical noncontact.
 - [x] **M5.TT.ROUTING** The whole-core exit makes a separate completion routing theorem unnecessary; no extra is moved or discarded. The existing triangle-hole and boundary-pocket inputs retain their original scopes.
 - [x] **M5.TT.JOINT_BOUND** The allowed full selected-core obstruction is proved for the entire cell, retaining all four arbitrary completion squares. No separate regional capacity claim is inferred.
-- [x] **M5.TT.ALL** BOWTIE_CELL_CLOSED.md closes the entire C2.33.b0 in the declared window. All source proofs and the full assembly passed root and separate independent hand audits. The coarse inventory now has eight closed and50 open rows.
+- [x] **M5.TT.ALL** BOWTIE_CELL_CLOSED.md closes the entire C2.33.b0 in the declared window. All source proofs and the full assembly passed root and separate independent hand audits. The coarse inventory now has nine closed and49 open rows.
 
 - [x] **M5.B5.ASSEMBLY.TEN_TYPES** FIVE_BODY_BICONNECTED_CELL_CLOSED.md repeats the full hand complement count1+2+3+2+1+1=10. It explicitly removes the nonbiconnected bowtie complement alternative and maps every surviving abstract type to its full proof.
 - [x] **M5.B5.ASSEMBLY.UNIFORM_EXITS** Three types contain positive K4, the wheel violates loaded-complement connectivity, and K2,3/book/subdivided-K4 force three loaded common neighbors. These seven full exits use their actual subgraph hypotheses, not degree-two equations after deleting an edge.
 - [x] **M5.B5.ASSEMBLY.METRIC_EXITS** The complete C5, house and four-path fan assemblies exclude the last three graph types with every necessary load orbit, physical corner mask, contact owner and shared mean.
 - [x] **M5.B5.ASSEMBLY.CERTIFICATE** All family selections are simultaneous before multiplier extraction and preserve actual shared means, matched junctions, physical uncrossing and thinning. Every one of the four arbitrary completion squares remains in the original packing.
-- [x] **M5.B5.ASSEMBLY / G3.M5.B5** C1.5.b0 is CLOSED hand. Root and independent full whole-cell audits passed. The authoritative count is eight closed and50 open; no six-body row is closed by this exact-component theorem.
+- [x] **M5.B5.ASSEMBLY / G3.M5.B5** C1.5.b0 is CLOSED hand. Root and independent full whole-cell audits passed. The authoritative count is nine closed and49 open; no six-body row is closed by this exact-component theorem.
 - [x] **G3.M5.ALL** All four five-body coarse cells are closed: triangle/two-bridges, four-body block/leaf, five-body biconnected, and bowtie. The common canonical radius/Phi-minimizer setup retains the older opposite-load C4 premise. Every surviving selected component now has6–9 bodies and all9-m extras remain.
 
 ### G3.LOCAL — Complete local obstructions usable beyond an exact component
@@ -1499,6 +1499,14 @@ Use path u1--u2--u3--u4 and universal hub H. The two endpoint tips u1,u4 are loa
 - [x] **G3.LOCAL.END_TRIANGLE.FACE_DIRECTION.HALF** ForP>=4/5 each actual tip center has outward projection>=663/610 and normalized projection>3978/5551>1/sqrt(2). The complete all-corner direction deviation<15degrees then gives each actual tip resultant N-projection>|F_i|/2 and hence Mhat.N>1/2.
 - [x] **G3.LOCAL.END_TRIANGLE.FACE_DIRECTION.FOUR_FIFTHS** ForP>=29/30 the center projection>=1297/915 gives normalized projection>5188/5551>14/15. The exact comparison(7sqrt(6)+sqrt(2))/20<14/15 gives every tip resultant projection>4|F_i|/5, hence Mhat.N>4/5.
 - [x] **G3.LOCAL.END_TRIANGLE.FACE_DIRECTION.ALL** Both complete direction implications passed root and independent full audits, with arbitrary additional root forces and all physical masks/means. A common-side application premise must still be established separately in each use.
+
+### Uniform actual-side routing and negative block-load pressure [CLOSED hand]
+
+- [x] **G3.LOCAL.END_TRIANGLE.COMMON_SIDE.PARALLEL** END_TRIANGLE_COMMON_SIDE.md covers all parallel root normals: opposite normals are impossible; a common root axis puts both means on its support side, and a strict common direction puts both at one actual vertex. The full axis-resultant theorem separately covers every zero resultant component.
+- [x] **G3.LOCAL.END_TRIANGLE.COMMON_SIDE.NONAXIS** A nonaxis resultant has one actual maximizing vertexF. An H-owned other normal has positive dot product withM and its side containsF. An opposite strict vertex is excluded by strict span or, when the first normal is an axis atF, by the owned-normal nonobtuse lemma. All actual means remain.
+- [x] **G3.LOCAL.END_TRIANGLE.COMMON_SIDE.ALL** Every true loaded end triangle has both original root ports on one actual sideN withM.N>0 and height<39/40. Root and independent full audits passed all owners, masks and means. Existence of a common side does not identify a preferred side in a separate location argument.
+- [x] **G3.LOCAL.END_TRIANGLE.NEGATIVE_LOAD.SUM** END_TRIANGLE_RADIAL_NEIGHBOR_OBSTRUCTION.md sums every genuine component equation. The real end triangle hasc_H.M>0, so another actual positive circle load hasc_H.F<0. H is clear; no unloaded body, other H force or completion square is removed.
+- [x] **G3.LOCAL.END_TRIANGLE.NEGATIVE_LOAD.MASK** Every physical two-corner neighbor ofH has strict positive total pressure, even with one zero individual weight. A negative-pressure load touchingH therefore has a unique physical circle cornerz withc_H.z<0. The entire all-radial-neighbor class is excluded; root and independent full audits passed.
 
 ### Uniform end-triangle support and radial-aggregate concurrence [CLOSED hand]
 
@@ -1583,7 +1591,7 @@ SIX_BODY_CYCLIC_FRONTIER.md gives the full graph/attachment/plane/load cover bel
 - [x] **M6.T3.ASSEMBLY.COVER** TRIANGLE_THREE_BRIDGES_CELL_CLOSED.md matches each of the seven exhaustive rooted tree attachments to its complete source, retaining every original body's exact degree and deriving load/transmitter premises before use.
 - [x] **M6.T3.ASSEMBLY.CERTIFICATE** Every source uses the same compatible finite normal selection before multiplier extraction. No additional positive force, physical zero-weight contact or original shared mean is deleted or selected again.
 - [x] **M6.T3.ASSEMBLY.COMPLETION** The two critical d=1 exits invoke the actual four-square P cage or three screened rays. The first counts all five other units; the second counts all three roots plus all three extras. Both are complete nine-square completion exclusions, not isolated-core nonexistence assertions.
-- [x] **M6.T3.ALL / C1.3.b3** The entire triangle-plus-three-bridges coarse cell is CLOSED hand. Root and independent full whole-cell audits passed. This is the first six-body coarse closure; the authoritative count is eight closed and50 open. Other attachments, larger components and the full earlier prerequisite chain retain their stated obligations.
+- [x] **M6.T3.ALL / C1.3.b3** The entire triangle-plus-three-bridges coarse cell is CLOSED hand. Root and independent full whole-cell audits passed. This is the first six-body coarse closure; the authoritative count is nine closed and49 open. Other attachments, larger components and the full earlier prerequisite chain retain their stated obligations.
 
 #### M6.B4L2 — C1.4.b2, a four-body block and two bridges
 
@@ -1967,11 +1975,34 @@ SIX_BODY_CYCLIC_FRONTIER.md gives the full graph/attachment/plane/load cover bel
 - [x] **M6.TT1.TIP_LEAF.S.ALIGNED_NONPARALLEL.PETAL_FACE** The real H near-side strip is circle-clear because its far transverse height is<367/600 and its normal coordinate is in[-delta,0]. The both-H-owned perpendicular interface is separately excluded. Every remaining strict vertex or owned-axis port shares the far-m side, of height>59/60.
 - [x] **M6.TT1.TIP_LEAF.S.ALIGNED_NONPARALLEL** The entire nonparallel aligned-S articulation is CLOSED hand by the all-mask high-face theorem. Root and independent full audits passed the complete owner/mask/mean cover and the true root-force bookkeeping.
 - [x] **M6.TT1.TIP_LEAF.S.ALIGNED** The complete parallel/nonparallel split closes every aligned S articulation over the full radius and slider domains. All critical transitions and the same selected certificate are retained. The separate tilted articulation remains open.
-- [ ] **M6.TT1.TIP_LEAF.S.TILTED** Entire tilted S articulation whose direct-leaf normal strictly exposes an A vertex; preserve both cycle-force alternatives, all neighboring frames/owners/masks and the complete petal support constraint.
-- [ ] **M6.TT1.TIP_LEAF.S** Both full aligned reaction alternatives are closed. Finish the entire tilted domain and every transition, then assemble the whole S type with the same certificate.
-- [ ] **M6.TT1.TIP_LEAF** The whole D type and entire aligned S type are closed. Finish the full tilted S type and assemble all physical features with the three arbitrary extras before closing the last whole layout or C2.33.b1.
+- [x] **M6.TT1.TIP_LEAF.S.TILTED.DOMAIN** TIP_LEAF_BOWTIE_S_TILTED_DOMAIN.md retains the complete a>=b>0 tilted articulation. Its actual leaf point cannot meet a third unit; coincident triangle ports would be too central for loadedB. Thus both actual A reactions are independent.
+- [x] **M6.TT1.TIP_LEAF.S.TILTED.NONPARALLEL_CONCURRENCES** The pure physical behind-port relations and conditional proper loaded-B theorem giveq_A=q*e_x,q>0 andq_H on the positive actualM ray when H inputs are independent. Every physical B mask and true H force remains.
+- [x] **M6.TT1.TIP_LEAF.S.TILTED.PARALLEL_H_INPUT** The full parallel-H input hasg=m andM=(nu+gamma)m. B still givesq_A>0. At a strict H vertex both incoming points would coincide, contradicting the coefficient signs; the side-supported axis alternative is retained without inventingq_H.
+- [x] **M6.TT1.TIP_LEAF.S.TILTED.PARALLEL_B_INPUT** The full same-side parallel-B case retains physicalS/D geometry and the actual weighted mean. The exact average equation gives positive A/H concurrence signs. Zero advance forces an actual A/H common side: D violates strict point normals, while S forcesD=1 and a vanishing positive coefficient. No individual mean is replaced.
+- [x] **M6.TT1.TIP_LEAF.S.TILTED.HIGH_FEATURES** The whole-frame support inequalityh_H(e)>=2sqrt(rho) excludes every high A vertex and owned-v interface, including the parallel-H axis alternative. All have rho>D²/4. The entirea=b endpoint is covered by its zeroP/W coefficient and high-owned-axis exits.
+- [x] **M6.TT1.TIP_LEAF.S.TILTED.FEATURE_COVER** The complete actual A cover leaves exactly H-at-P/B-at-W, or A-ownedu atH withB atW or A-ownedv. The owned-u H is either parallel toA or has a strict minimum-u vertex. Near axes, opposite vertices and every other positive-force combination are explicitly excluded.
+- [x] **M6.TT1.TIP_LEAF.S.TILTED.STAR_SELECTION** The strictP/W A-star has two nonzero actual heights and vertical normal components. Its force/torque determinant has a nonzero coefficient in either free-edge parameter. The finite physical prelist removes both free A edges before multipliers, retaining arbitrary neighbor degrees and all genuine shared alternatives.
+- [x] **M6.TT1.TIP_LEAF.S.TILTED.TWO_VERTEX.LOW_FACE** TIP_LEAF_BOWTIE_S_TILTED_TWO_VERTEX_EXCLUSION.md keeps both actual neighbor-owned contacts. M.m>0 excludes every nonnegative inner H support through the whole high-face theorem. Only then does the full residue giveD>1,a>60/61,b<3/16 and uniqueB; the low-D affine numerator and free-BH domain are explicit.
+- [x] **M6.TT1.TIP_LEAF.S.TILTED.TWO_VERTEX.OWNERS** All original mutual owners lie in{-n,v_B,m,k}. Both parallel alternatives have their real radial/axis exits. Negative-frame transverse alternatives have impossible physical support coordinates, leavingL>0,K>=L. Every shared mean and zero advance remains.
+- [x] **M6.TT1.TIP_LEAF.S.TILTED.TWO_VERTEX.ADVANCE** The real unique circle corner hasX_B>31/20>Y_B. Its proper advance obeys(A_B-V)Y_B=-rho_B(X_B-Y_B)<0, while the entire H-owned transverse contact requiresA_B=VK/L>=V. Every actual side parameter remains.
+- [x] **M6.TT1.TIP_LEAF.S.TILTED.TWO_VERTEX.SCALAR** For the other full owner the exact affine-D inequality givesF_1<1/30. Whole estimates give sigma<1/2,<32/195,<4/39, omega<2/65 andrho_B>63/65. The actual circle corner would have squared norm>349/80=Q+59/1280, excluding the full continuous domain.
+- [x] **M6.TT1.TIP_LEAF.S.TILTED.TWO_VERTEX.ALL** The entire two-neighbor-owned vertex interface is CLOSED hand. Root and independent full audits passed all owners, masks, means and scalar endpoints; H retains its complete opposite petal.
+- [x] **M6.TT1.TIP_LEAF.S.TILTED.PARALLEL_HUB.DOMAIN** TIP_LEAF_BOWTIE_S_TILTED_PARALLEL_HUB_EXCLUSION.md derives the actual meanQ=(1,sigma*b) and nonnegative sigma from A force/torque, thenM_x>0 from physical triangle signs. Proper B concurrence is not used before its nonparallel premise is established.
+- [x] **M6.TT1.TIP_LEAF.S.TILTED.PARALLEL_HUB.FREE_SHARED** Da<=1 already has full high-side routing. InDa>1 the entire A-owned top mean has its own proof. FreeAB with singletonBH uses compatible selection and explicitly excludes the coincident radial-D exception; the full sharedBH exception keeps its original mean and is directly excluded.
+- [x] **M6.TT1.TIP_LEAF.S.TILTED.PARALLEL_HUB.OWNERS** The remaining strict B-owned contact has n=(s,c),0<s<=c. Every mutual-owner sign is covered. The B-owned transverse mutual contact is physically impossible; the H-owned downward contact gives the true hub bottomt=-k,k=Db+rho*s.
+- [x] **M6.TT1.TIP_LEAF.S.TILTED.PARALLEL_HUB.BOTTOM** Ifk>=1/2 the actual unique corner either has nonpositive x and forcesk<9/20, or has0<x<1/sqrt(2),0<y<=1/2+sqrt(2) and squared norm<17/4<R². Thus the complete0<k<1/2 domain routes the untouched petal to a forbidden high side.
+- [x] **M6.TT1.TIP_LEAF.S.TILTED.PARALLEL_HUB.ALL** The entire A-owned/parallel-H interface is CLOSED hand. Root and independent full audits passed every mask, mean, free/shared transition, true-degree implication and all three extras.
+- [x] **M6.TT1.TIP_LEAF.S.TILTED.VERTEX_HUB.SIGNS** TIP_LEAF_BOWTIE_S_TILTED_VERTEX_HUB_EXCLUSION.md retainsq_H=Q+t*u on the positive actualM ray, including parallelB. Nonnegative inner-s support routes to height>=1. Its zero-component limit separately forces a real petal port at the circle-clearQ.
+- [x] **M6.TT1.TIP_LEAF.S.TILTED.VERTEX_HUB.ROUTING** In the entire residue|Q|<1/5,-1/60<Q_s<0. NegativeM_s would makeQ an actual maximizing port. The full zero/positive-M_s owner/strict/free cover leaves one plus-or-minus-r common face with a nonpositive-s port; the minus face is too central, so the sole remaining face hasP=1-w>4/5.
+- [x] **M6.TT1.TIP_LEAF.S.TILTED.VERTEX_HUB.ANGLES** True geometry gives e.r<sin(psi)<delta/w. The full actual-face direction theorem first givese.r>1/2 andP>29/30, thene.r>4/5 andP>47/48>39/40. The high-face theorem contradicts that same actual side; no mean or frame is reselected.
+- [x] **M6.TT1.TIP_LEAF.S.TILTED.VERTEX_HUB.ALL** The entire A-owned/nonparallel-H interface is CLOSED hand. Root and independent full audits passed every sign-zero case, full physical B/H masks, actual means, common-side routing and both quantitative steps.
+- [x] **M6.TT1.TIP_LEAF.S.TILTED** TIP_LEAF_BOWTIE_EXCLUSION.md assembles the full domain and all three whole owner/frame exits. Root and independent full source and assembly audits passed. Everya=b,sigma=0, parallel-input and actual-mean endpoint is included; the entire tiltedS type is CLOSED hand.
+- [x] **M6.TT1.TIP_LEAF.S** The complete aligned/tilted cover closes the whole S type, every physical transition and the same certificate. TIP_LEAF_BOWTIE_EXCLUSION.md passed full root and independent assembly audits.
+- [x] **M6.TT1.TIP_LEAF** TIP_LEAF_BOWTIE_EXCLUSION.md assembles the entireD/S classification with true degrees3/4, every physical mask and original mean and all three extras. Root and independent full assembly audits passed; the whole final attachment is CLOSED hand.
 - [x] **M6.TT1.BRIDGED_TRIANGLES** OUTER_BRIDGED_TRIANGLE_CAP_EXCLUSION.md closes the entire pair of disjoint triangles joined by a bridge. Orient the actual bridge toward its outward endpoint so rho>=0; that root has exact degree3 and its two tips exact degree2. The uniform cap theorem excludes it, including p=0. Every owner, physical mask and actual mean remains, and all three extras are retained.
-- [ ] **M6.TT1.ALL** Two of three full layouts, the entire D type and the whole aligned S type of the last layout are closed. Finish its entire tilted S articulation, preserving all true degree3/degree4 equations and three extras, before ticking C2.33.b1.
+- [x] **M6.TT1.ASSEMBLY.COVER** TWO_TRIANGLE_BLOCKS_ONE_BRIDGE_CELL_CLOSED.md gives exactly three layouts: shared-root leaf, tip leaf and disjoint triangles joined by the bridge. Their changed degrees are5,4/3,3/3; no smaller-component theorem deletes a force.
+- [x] **M6.TT1.ASSEMBLY.CERTIFICATE** Every source uses one compatible pre-extraction certificate, all finite candidates prelisted, and no later normal or mean change. The full audits keep every inherited lower-window and certificate prerequisite at its original scope.
+- [x] **M6.TT1.ALL** The entireC2.33.b1 coarse cell is CLOSED hand through all three complete attachment exits. Root and separate independent whole-cell audits passed. All three extras remain; this is the second six-body coarse closure. The inventory is nine closed/49 open.
 
 #### M6.TB4 — C2.34.b0, a triangle sharing an articulation with a four-body block
 
@@ -1986,8 +2017,19 @@ SIX_BODY_CYCLIC_FRONTIER.md gives the full graph/attachment/plane/load cover bel
 - [x] **M6.TB4.DIAMOND_HUB.LOADS** At hub H the tipsA,B,X,Y are true loaded degree two, and the unchanged hub K has true degree3 with neighbor pathA-H-B. Its load is forced. The sole block-load set isKAB; H keeps all five positive forces and all five actual circle resultants remain.
 - [x] **M6.TB4.LOAD_AUDIT** Root and independent full audits passed the complete four-orbit cover, both whole single-load exits, every true degree and the independent axis-support consequence. The entire diamond-tip attachment remains closed by its original unchanged-degree argument.
 - [ ] **M6.TB4.C4.LAB** Entire block-load orbitAB (including reflectedBC), actual side transmitterC, all four circle resultants, every root force/mean/mask and all three extras. Prove a whole contradiction, sharp bound or joint completion exit.
+- [x] **M6.TB4.C4.LAC.ALL_RADIAL** END_TRIANGLE_RADIAL_NEIGHBOR_OBSTRUCTION.md excludes the whole two-radial block-tip mask: A,C and the fullX/Y petal each contribute positive pressure atH, contradicting the complete force sum. No canonical minimizer or omitted H force is used.
+- [x] **M6.TB4.C4.LAC.MASK_COVER** The exact remaining physical masks areUU andUS up toA/C reflection. InUU at least one actual unique corner hasc_H.z<0; inUS its sole unique corner is negative. Every radial weight and original contact mean remains.
+- [ ] **M6.TB4.C4.LAC.UU** Entire unique/unique mask, all actual owners, side-transmitter means and three extras, with at least one actual negative-pressure unique corner. Prove a whole exit; the necessary sign is not a closure.
+- [ ] **M6.TB4.C4.LAC.US** Entire unique/radial mask and its true reflection, every radial weight split and original mean, with the actual unique corner negative atc_H. H keeps degree4 and all three extras remain.
 - [ ] **M6.TB4.C4.LAC** Entire opposite block-load orbitAC, actual side transmitterB, all four circle resultants, every root force/mean/mask and all three extras. H has true degree4 throughout.
 - [ ] **M6.TB4.C4.LABC** Entire full block-load orbitABC with all five circle resultants, every degree-two loaded-body equation and the true degree-four H equation, full physical means/masks and all three extras.
+- [x] **M6.TB4.DIAMOND_HUB.ALL_RADIAL** All three real block loadsK,A,B touchH. Their entire all-two-corner mask contradicts whole force balance and radial-neighbor pressure. H remains degree5 andK degree3; no end-triangle force split is imposed atK.
+- [x] **M6.TB4.DIAMOND_HUB.MASK_COVER** The exact root symmetry fixesK and exchangesA/B. The five remaining physical-mask representatives in orderK,A,B areUSS,SUS,UUS,SUU,UUU. At least one actualU corner hasc_H.z<0. Every weight, root force and contact mean remains.
+- [ ] **M6.TB4.DIAMOND_HUB.LKAB.USS** Entire physical-mask representativeUSS in orderK,A,B, including itsA/B reflection, every original weight/owner/mean and all three extras. Retain the necessary negative unique corner and every true higher-degree force; prove a whole exit.
+- [ ] **M6.TB4.DIAMOND_HUB.LKAB.SUS** Entire physical-mask representativeSUS in orderK,A,B, including itsA/B reflection, every original weight/owner/mean and all three extras. Retain the necessary negative unique corner and every true higher-degree force; prove a whole exit.
+- [ ] **M6.TB4.DIAMOND_HUB.LKAB.UUS** Entire physical-mask representativeUUS in orderK,A,B, including itsA/B reflection, every original weight/owner/mean and all three extras. Retain the necessary negative unique corner and every true higher-degree force; prove a whole exit.
+- [ ] **M6.TB4.DIAMOND_HUB.LKAB.SUU** Entire physical-mask representativeSUU in orderK,A,B, including itsA/B reflection, every original weight/owner/mean and all three extras. Retain the necessary negative unique corner and every true higher-degree force; prove a whole exit.
+- [ ] **M6.TB4.DIAMOND_HUB.LKAB.UUU** Entire physical-mask representativeUUU in orderK,A,B, including itsA/B reflection, every original weight/owner/mean and all three extras. Retain the necessary negative unique corner and every true higher-degree force; prove a whole exit.
 - [ ] **M6.TB4.DIAMOND_HUB.LKAB** Entire diamond-hub orbit with positive block loadsKAB and petal loadsX/Y. Retain true degreesH=5,K=3, all genuine tip equations and all three extras; no isolated diamond theorem may remove the petal forces.
 - [ ] **M6.TB4.C4_EXIT** Entire triangle/C4 articulation family, all load masks and three extras.
 - [ ] **M6.TB4.DIAMOND_HUB_EXIT** Entire triangle/diamond-hub articulation family.
@@ -1995,7 +2037,7 @@ SIX_BODY_CYCLIC_FRONTIER.md gives the full graph/attachment/plane/load cover bel
 - [ ] **M6.TB4.ALL** The diamond-tip layout is closed. Finish the entire C4 and diamond-hub layouts with every physical mask, true articulation force and three extras.
 
 - [x] **G3.M6.COVER_AUDIT** Root and separate independent full audits passed the entire source, including the corrected limited h4 load forcing and exact d0-only physical noncontact consequence.
-- [ ] **G3.M6.ASSEMBLE** C1.3.b3 is CLOSED hand. Finish the other five coarse parents, every full graph/load/contact domain, all three extras and any Q survivors before changing further ledger ticks.
+- [ ] **G3.M6.ASSEMBLE** C1.3.b3 andC2.33.b1 are CLOSED hand. Finish the four remaining parentsC1.4.b2,C1.5.b1,C1.6.b0,C2.34.b0, every whole graph/load/contact domain, all three extras and anyQ survivors before changing further coarse ticks.
 
 #### G3.M.R Completion ordering by body count
 
@@ -2108,8 +2150,8 @@ SIX_BODY_CYCLIC_FRONTIER.md gives the full graph/attachment/plane/load cover bel
 ## Current execution contract
 
 1. P.ALL, Y.ALL, TREE.ALL and TL.COMPLETE are CLOSED hand at their stated scopes. The entire physical C7 capacity-one theorem is also CLOSED hand. Keep every unresolved mixed3–7-loaded completion obligation OPEN.
-2. The 58 coarse cells now have **eight whole-cell exclusions and 50 open rows**. Do not confuse subfamily restrictions with parent closure.
-3. All four five-body coarse cells and the entire six-body C1.3.b3 cell are closed. Continue the five remaining six-body rows: C1.4.b2,C1.5.b1,C1.6.b0,C2.33.b1,C2.34.b0. The tip-attached bowtie has only its full tilted S-leaf articulation left; its entire D and aligned S types are closed. The triangle/four-block branch has exactly four remaining whole graph/load orbits. The biconnected cover has nine hexagon and five pentagon graph domains with all necessary load orbits explicit. Then continue the seven-/eight-/nine-body mixed cells. Physical C7 is closed; retain its negative controls and full boundary-path-forest consequence. Use uniform whole-family arguments, with no angle boxes introduced to inflate counts.
+2. The 58 coarse cells now have **nine whole-cell exclusions and 49 open rows**. Do not confuse subfamily restrictions with parent closure.
+3. All four five-body cells and the two entire six-body cellsC1.3.b3,C2.33.b1 are closed. Continue the four remaining six-body rows:C1.4.b2,C1.5.b1,C1.6.b0,C2.34.b0. Every bowtie/leaf layout, S/D type and tilted/aligned articulation is closed. The triangle/four-block branch has exactly four remaining graph/load orbits; its opposite-load C4 and diamond-hub all-radial masks are excluded, with every remaining unique-corner pressure and mean domain explicit. The biconnected cover has nine hexagon and five pentagon graph domains with all necessary load orbits explicit. Then continue the seven-/eight-/nine-body mixed cells. Physical C7 is closed; retain its negative controls and full boundary-path-forest consequence. Use uniform whole-family arguments, with no angle boxes introduced to inflate counts.
 4. Preserve exact physical negative controls and every unstressed completion body.
 5. Commit finished arguments promptly and log UTC provenance, exact quantifiers, finite evidence and unchanged global blockers in TWO_LOAD_PROGRESS.md or a subsequent append-only checkpoint.
 6. If a proposed reduction fails, retain the exact witness and revise it; do not defend a false stronger normalization by shrinking the domain indefinitely.

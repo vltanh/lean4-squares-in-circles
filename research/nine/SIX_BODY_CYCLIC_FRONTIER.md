@@ -35,7 +35,7 @@ to the sum in (1). The possibilities are exactly
 | C1.4.b2 | One four-body block | 2 | 3 | OPEN |
 | C1.5.b1 | One five-body block | 1 | 3 | OPEN |
 | C1.6.b0 | One six-body block | 0 | 3 | OPEN |
-| C2.33.b1 | Two triangles | 1 | 3 | OPEN |
+| C2.33.b1 | Two triangles | 1 | 3 | CLOSED; all three attachments |
 | C2.34.b0 | A triangle and a four-body block | 0 | 3 | OPEN |
 
 This is an exhaustive coarse list. The following sections refine its
@@ -646,35 +646,48 @@ p dot M_tips<0. Reversing the common bridge produces an outward
 endpoint and a contradiction, including p=0. The two different
 articulation-center pressure signs alone were not sufficient.
 
-Only the entire tip-attached bowtie-leaf layout remains. Its former
-tip has degree3 and its shared articulation degree4. Neither can be
-replaced by an unchanged degree2 tip or the new exact-degree3
-one-bridge end-triangle root. TIP_LEAF_BOWTIE_D_EXCLUSION.md now excludes the entire D-leaf type,
-through its complete parallel and nonparallel articulation proofs.
-The entire aligned S-leaf type is now excluded by
-TIP_LEAF_BOWTIE_S_ALIGNED_NONPARALLEL_EXCLUSION.md and
-TIP_LEAF_BOWTIE_S_ALIGNED_PARALLEL_EXCLUSION.md. The nonparallel
-proof exhausts the preselected left-vertex owners and all physical
-B masks, then routes both true C/E petal ports to one high H side.
-The parallel proof keeps both actual wall means. Proper B concurrence,
-the true degree-four H equation and end-triangle pressure determine
-the complete M sector. Its tilted-H alternative uses the exact petal
-torque to reach support>39/40; its aligned-H alternative uses the
-full all-frame boundary-wall bottom>1/2 theorem. All critical zero
-coordinates and shared means are included.
+TIP_LEAF_BOWTIE_EXCLUSION.md now closes the entire tip-attached
+bowtie-leaf layout too. The true degrees3 atA and4 atH remain. Its
+complete D type and aligned S type were already closed; the entire
+tilted S type now has the full proof below.
 
-END_TRIANGLE_HIGH_FACE_EXCLUSION.md proves the uniform all-mask
-contradiction when both actual end-triangle ports share a root side
-of height at least39/40. The quantitative companion
-END_TRIANGLE_FACE_RESULTANT_ANGLE.md gives Mhat.N>1/2 at side height
-at least4/5 and Mhat.N>4/5 at height at least29/30. These statements
-retain arbitrary additional root forces. Root and independent full
-audits passed both aligned proofs and both local tools.
+TIP_LEAF_BOWTIE_S_TILTED_DOMAIN.md proves the complete concurrence
+and actual-feature cover. It retains parallel B inputs with physical
+S/D weighted means, all zero-advance limits and the true parallel-H
+axis alternative. It leaves exactly two neighbor-owned A vertices,
+or an A-owned u contact with H parallel or nonparallel toA. Each
+owned-u case includes both the far A vertex and A-owned v contact atB.
 
-Only the whole tilted S-leaf articulation remains in this last
-layout. All B/H owner and frame alternatives, physical circle masks,
-actual means, root force equations and all three extras remain.
-C2.33.b1 is still open with two of its three full layouts closed.
+TIP_LEAF_BOWTIE_S_TILTED_TWO_VERTEX_EXCLUSION.md exhausts every
+mutual owner, physical B mask and actual mean in the first interface.
+The whole nonnegative H-side domain is impossible. Its full remaining
+domain gives a unique B corner; one owner contradicts the exact proper
+advance, while the other has a complete scalar radius contradiction.
+
+TIP_LEAF_BOWTIE_S_TILTED_PARALLEL_HUB_EXCLUSION.md covers the entire
+parallel-H alternative, every top-side mean and the full free-AB/shared-BH
+exception. B's real circle corner forces the hub-bottom depth<1/2, which
+routes the untouched opposite petal to its high side.
+
+TIP_LEAF_BOWTIE_S_TILTED_VERTEX_HUB_EXCLUSION.md covers every sign
+of the actual resultant before routing to one surviving common petal
+face. Two exact direction estimates on that same actual side improve
+its height from>4/5 to>29/30 and finally>47/48>39/40, a contradiction.
+
+Root and separate independent full audits passed all four tilted
+manuscripts, TIP_LEAF_BOWTIE_EXCLUSION.md and the whole three-layout
+assembly TWO_TRIANGLE_BLOCKS_ONE_BRIDGE_CELL_CLOSED.md. Thus **all
+three attachments and the entire C2.33.b1 cell are CLOSED hand**.
+This is the second complete six-body coarse closure. Every original
+mean, true degree, physical mask, zero individual weight and all
+three arbitrary extras remain under the same selected certificate.
+
+END_TRIANGLE_COMMON_SIDE.md is a separate uniform routing theorem:
+every loaded end triangle has both original root ports on one actual
+sideN withM.N>0 and height<39/40. It includes every axis-resultant,
+parallel, strict-vertex and shared-mean case. Existence of a common
+side does not permit choosing an arbitrary preferred side in a
+particular location proof.
 
 ## 8. A triangle and a four-body block: three layouts, two remaining
 
@@ -720,6 +733,23 @@ single-load exits and the uniform axis-resultant theorem. The four
 remaining graph/load orbits require a whole contradiction, sharp bound
 or complete joint three-extra exit. One of three whole attachment
 layouts is closed; C2.34.b0 remains open.
+
+### 8.2. Complete radial-mask exits and actual negative unique corners
+
+END_TRIANGLE_RADIAL_NEIGHBOR_OBSTRUCTION.md uses the complete actual
+force sum: the real end triangle has positive pressure atc_H, so some
+other positive circle load must have negative pressure. Every physical
+two-corner neighbor ofH instead has positive pressure, with all original
+weights retained. No additional H force or unloaded body is omitted.
+
+For C4 block loadsAC this excludes the entire two-radial mask. The exact
+remaining full mask families areUU andUS up to reflection, whereU means
+one physical circle corner andS means two. An actualU corner must have
+negativec_H projection. For diamond-hub loadsKAB, the entire all-radial
+mask is excluded; the five remaining rooted representatives areUSS,SUS,
+UUS,SUU,UUU in orderK,A,B, including theirA/B reflections. At least one
+actualU corner is negative. Root and independent full audits passed
+both full-mask exits. The four whole graph/load orbits remain open.
 
 ## 9. Complete local and load-family exits beyond the initial cover
 

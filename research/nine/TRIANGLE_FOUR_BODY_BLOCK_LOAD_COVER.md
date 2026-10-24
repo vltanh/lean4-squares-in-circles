@@ -187,6 +187,20 @@ two open layouts. The complete one-adjacent and one-opposite C4
 load exits are proved above; neither closes the full C4 attachment.
 No table entry asserts a physical realization.
 
+END_TRIANGLE_RADIAL_NEIGHBOR_OBSTRUCTION.md now excludes two whole
+physical masks within this cover. The complete force sum requires a
+block load with strictly negative pressure at c_H. Every physical
+two-corner neighbor of H has strictly positive pressure, even with a
+zero individual weight. Thus the entire two-radial mask of C4 loadsAC
+is impossible. Its remaining full masks areUU andUS up toA/C reflection,
+whereU means one physical circle corner andS means two; a unique corner
+must have negative c_H projection. The entire all-radial diamond-hub
+mask is likewise impossible. Its exact remaining rooted representatives
+in the orderK,A,B areUSS,SUS,UUS,SUU,UUU, including theirA/B reflections.
+At least one actualU corner must be negative atc_H. Root and independent
+full audits passed both whole-mask exits and both exhaustive remaining
+mask covers. None closes a whole graph/load orbit.
+
 Every remaining orbit must receive a whole core contradiction,
 a sharp radius theorem or a joint capacity bound excluding all
 three arbitrary extra squares. Every true higher-degree root

@@ -1,8 +1,8 @@
-# n=9 CYCLIC — 58 exhaustive coarse cells, EIGHT whole cells closed
+# n=9 CYCLIC — 58 exhaustive coarse cells, NINE whole cells closed
 
 **Checkpoint:** October 24, 2026, America/Chicago. **Global sharp theorem and unrestricted equality remain OPEN.** Every row retains its full continuous physical geometry, actual circle-load masks and all completion squares.
 
-The closed cells are **C1.3.b0**, **C1.4.b0**, **C1.3.b1**, **C1.3.b2**, **C1.4.b1**, **C1.5.b0**, **C2.33.b0** and **C1.3.b3**. Thus **50 coarse cells remain open**. The selected unique positive cyclic component now has **6–9 bodies** and **3–7 noncollinear loaded resultants**. Every other physical square has zero stress and remains an obstacle. All positive trees and every exactly-two-loaded component are already excluded by the full P/Y assemblies.
+The closed cells are **C1.3.b0**, **C1.4.b0**, **C1.3.b1**, **C1.3.b2**, **C1.4.b1**, **C1.5.b0**, **C2.33.b0**, **C1.3.b3** and **C2.33.b1**. Thus **49 coarse cells remain open**. The selected unique positive cyclic component now has **6–9 bodies** and **3–7 noncollinear loaded resultants**. Every other physical square has zero stress and remains an obstacle. All positive trees and every exactly-two-loaded component are already excluded by the full P/Y assemblies.
 
 ## Uniform restrictions applied to every open row
 
@@ -58,7 +58,7 @@ Each open row quantifies over every block adjacency, articulation arrangement, a
 | C1.8.b1 | 8 | 1 | 9 | 0 | [ ] OPEN |
 | C1.9.b0 | 9 | 0 | 9 | 0 | [ ] OPEN |
 | C2.33.b0 | 3,3 | 0 | 5 | 4 | [x] CLOSED — BOWTIE_CELL_CLOSED.md |
-| C2.33.b1 | 3,3 | 1 | 6 | 3 | [ ] OPEN |
+| C2.33.b1 | 3,3 | 1 | 6 | 3 | [x] CLOSED — TWO_TRIANGLE_BLOCKS_ONE_BRIDGE_CELL_CLOSED.md |
 | C2.33.b2 | 3,3 | 2 | 7 | 2 | [ ] OPEN |
 | C2.33.b3 | 3,3 | 3 | 8 | 1 | [ ] OPEN |
 | C2.33.b4 | 3,3 | 4 | 9 | 0 | [ ] OPEN |
@@ -338,3 +338,11 @@ The hexagon has six necessary bare-cycle load orbits. The surviving four-spoke g
 - [x] SIX_CYCLE_ONE_DIAGONAL_INNER_CAPACITY.md gives whole central capacity<=1 for the physical-unique, exactly-one-diagonal alternating C6 family, all shared means included. Its actual six-port polygon has area<5/2 and the real diagonal transmitter occupies an inward area1/2. At least two extras must occupy actual exterior caps.
 - [x] Root and separate independent full audits passed all seven complete manuscripts and their stated full-domain applications. The deep roadmap records every completed feature/sign/constant gate and every remaining whole-family exit.
 - [ ] Finish the complete tilted S articulation before closing the tip-attached layout orC2.33.b1; finish all four complete triangle/four-block load orbits beforeC2.34.b0; finish the full joint exterior/central completion before any remaining C6 parent. The ledger remains eight closed/50 open. Unrestricted sharpness, original equality and the full earlier prerequisite-chain audit remain open. PR #11 stays draft; no Lean compilation or CI was run.
+
+## Entire second six-body cell C2.33.b1 closed; exact residual mask gates
+
+- [x] TIP_LEAF_BOWTIE_S_TILTED_DOMAIN.md proves the full concurrence and actual-feature cover, including parallel B physicalS/D weighted means, zero-advance exceptions and the genuine parallel-H axis alternative. It supplies exactly three owner/frame interfaces.
+- [x] TIP_LEAF_BOWTIE_S_TILTED_TWO_VERTEX_EXCLUSION.md, TIP_LEAF_BOWTIE_S_TILTED_PARALLEL_HUB_EXCLUSION.md and TIP_LEAF_BOWTIE_S_TILTED_VERTEX_HUB_EXCLUSION.md close all three full interfaces, every B physical mask and owner, every original mean and every sign-zero transition. All high-face/direction arguments use the real untouched petal.
+- [x] TIP_LEAF_BOWTIE_EXCLUSION.md assembles every D/S and aligned/tilted alternative. TWO_TRIANGLE_BLOCKS_ONE_BRIDGE_CELL_CLOSED.md assembles all three graph layouts with true articulation degrees5,4/3,3/3. Root and independent full source and assembly audits passed; C2.33.b1 is CLOSED hand with all three extras retained.
+- [x] END_TRIANGLE_COMMON_SIDE.md proves one actual common root side for every loaded end triangle, every parallel/axis/owned/strict-vertex case included, withM.N>0 and height<39/40. END_TRIANGLE_RADIAL_NEIGHBOR_OBSTRUCTION.md forces a negative-pressure outside load, excluding both the whole all-radialAC and all-radialKAB masks. Their remaining mask covers have two and five representatives. Both sources passed root and independent full audits.
+- [ ] The authoritative coarse inventory is nine closed/49 open. Finish the four remaining six-body parentsC1.4.b2,C1.5.b1,C1.6.b0,C2.34.b0, every larger mixed cell, original equality and the earlier prerequisite-chain audit. Full continuous domains and every physical extra remain. PR #11 stays draft; no Lean compilation or CI was run.
