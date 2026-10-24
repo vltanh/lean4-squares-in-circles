@@ -303,3 +303,10 @@ List the three positive cyclic graph gaps between those centers. They sum to7, a
 The first form is already excluded. Two of its triangle sides join touching unit squares and have lengths at most sqrt(2): the shared contact point is at distance at most1/sqrt(2) from either center. Acuteness and the cosine rule give the third side length less than2. Thus every side has length at most2. The largest triangle angle is between pi/3 and pi/2, so the sine rule bounds the circumradius by 2/sqrt(3)<3/2.
 
 The other three gap forms remain open in this manuscript. This reduction has no stress or common-frame premise and does not assert that diameter less than3 gives covering radius less than3/2. Until the acute supporting-triple obstruction is excluded, the general C7 completion assertion remains open.
+
+
+## 7. Subsequent exact refinement and scope control
+
+BOUNDARY_TWO_CONTACT_SPAN.md now excludes the entire supporting-gap pattern (1,2,4), using an exact bound below 3sqrt(3)/2 for two successive contacts. Only patterns (1,3,3) and (2,2,3) remain for a positive-stress covering route.
+
+C7_CENTER_COVER_GEOMETRIC_OBSTRUCTION.md gives exact physical C7 rings at Q and at squared radii just below Q with center covering radius greater than 3/2. Their three radial centers have pattern (2,2,3). The same manuscript proves that these rings cannot carry a positive C7 stress. Thus the unconditional center-cover theorem is false; a successful covering route must use the positive-stress equations or another separately proved restriction. The strict piercing implication of Sections 1--5 is unchanged.

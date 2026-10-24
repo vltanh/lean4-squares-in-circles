@@ -1,6 +1,6 @@
 # The entire selected nonparallel D-leaf articulation branch is impossible
 
-**Status: complete hand argument; independent hand audit passed.** In the
+**Status: complete hand argument; two independent hand audits passed.** In the
 declared radius window, the nonparallel alternative of
 `D_LEAF_ARTICULATION_CONTACT_LOCALIZATION.md` is impossible after the
 legitimate finite normal selections described below. This covers both
