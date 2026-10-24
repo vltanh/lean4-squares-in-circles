@@ -25,7 +25,7 @@ Every one of the **9-n other physical squares** remains in the cell's completion
 - [x] **C1.4.b0:** all C4, diamond and K4 components excluded in the window; source FOUR_BODY_CYCLIC_CELL_CLOSED.md.
 - [ ] **CY.SHARP:** 56 remaining complete geometric cells. The necessary restrictions and finite count do not prove their sharp completion bounds.
 
-The lower-radius window remains an explicit imported n=8 prerequisite or a separate proof obligation. The coarse inventory itself needs no radius bound. Selecting one component never discards the other physical squares.
+LOWER_WINDOW_FROM_EIGHT.md now assembles the explicit imported n=8 prerequisite; replacing its arithmetic-table dependencies remains separate if standalone table-freedom is required. The coarse inventory itself needs no radius bound. Selecting one component never discards the other physical squares.
 
 ## 2. Individually ticked cells
 
@@ -159,6 +159,7 @@ Finite examples do not prove the reciprocal geometry universally or replace an i
 - [x] C1.3.b0 and C1.4.b0 whole exclusions in the explicit window.
 - [ ] Remaining 56 cells uniformly sharply bounded.
 - [x] P.ALL and Y.ALL capacities; TREE.ALL and the entire two-load completion class in the declared window.
-- [ ] Declared lower-window dependency, unrestricted G4/G5, full audit and standard-kernel Lean/integration.
+- [x] Declared lower-window import via the actual n=8 theorem and physical deletion; LOWER_WINDOW_FROM_EIGHT.md.
+- [ ] Unrestricted G4/G5, full audit and standard-kernel Lean/integration; an independent coarse lower bound if standalone table-freedom is required.
 
 Counts are not completion percentages. The remaining cells retain unequal, continuous geometric complexity.

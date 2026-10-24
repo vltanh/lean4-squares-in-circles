@@ -29,7 +29,7 @@ Q=1105/256. An exact nine-square construction attains Q. The missing theorem is 
 
 The whole common-coordinate-separable class is hand-proved. It is not unrestricted Packing: some exact Q packings have genuinely oblique-only separating pairs. The physical stress certificate is a necessary reduction at a minimizer, not by itself the sharp lower bound.
 
-High-radius graph consequences use **79/40<=R<=sqrt(Q)**. This lower window must be explicitly imported from the established n=8 result, with its proof dependencies, or proved independently for a standalone hand proof. The new parallel-force theorem itself assumes only q>9/4.
+High-radius graph consequences use **79/40<=R<=sqrt(Q)**. LOWER_WINDOW_FROM_EIGHT.md now supplies the exact n=8 import and deletion argument. Its arithmetic-table dependencies remain explicit; a standalone table-free hand proof would replace that import. The new parallel-force theorem itself assumes only q>9/4.
 
 ## New theorem: exactly two loaded bodies force all contacts parallel
 

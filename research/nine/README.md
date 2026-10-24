@@ -11,6 +11,8 @@
 
 A contact between two circle-touching squares cannot have radial force line. Force and torque therefore exclude leaves in any positive stress component all of whose bodies touch the circle, even if some of their circle multipliers vanish. Such a component is exactly the seven-cycle and includes all physical circle-touching squares. Its two remaining completion squares are circle-clear.
 
+[CENTERED_INNER_ARC.md](CENTERED_INNER_ARC.md) strengthens the center separation to strictly more than 40 degrees: every circle-touching square contains a closed centered 40-degree arc of the radius-5/4 circle in its open interior. Its proof is an exact shifted-cubic positivity argument.
+
 The general seven-cycle completion capacity is still OPEN. Components containing a circle-clear body also remain OPEN. This is a whole-class reduction, not a closure of any additional coarse cell: the inventory remains two closed and 56 open.
 
 [SEVEN_LOADED_RING_COUNTEREXAMPLE.md](SEVEN_LOADED_RING_COUNTEREXAMPLE.md) gives an exact positive seven-cycle with radius cos(pi/7)+1/(2 sin(pi/7)) below sqrt(17/4). Its own completion capacity is one, but its regularity is not assumed for arbitrary rings. [ADDITIVE_MEASURE_OBSTRUCTION.md](ADDITIVE_MEASURE_OBSTRUCTION.md) proves that any single nonnegative additive measure charging every contained square at least one has total mass at least 181/20>9, already at squared radius 17/4. Thus neither a component-only radius claim nor that independent-square weighting method can supply the missing proof.
@@ -110,7 +112,7 @@ Mandatory equality controls remain NO_GLOBAL_ORTHOGONAL_FRAME.md, NONSTRATIFIED_
 
 1. Exclude two arbitrary circle-clear completion squares for every admissible boundary-only seven-cycle; the regular example alone does not settle the full family.
 2. Prove the sharp bound for cyclic mixed components with 3–7 loaded bodies, retaining all physical squares, or supply a uniform global replacement. P.ALL, Y.ALL, TREE.ALL and the entire two-load completion class are closed hand implications.
-3. Retain the explicit 79/40 lower-window import from n=8 or prove it independently; do not advertise a standalone table-free dependency chain before this is resolved.
+3. The lower-window import is assembled in [LOWER_WINDOW_FROM_EIGHT.md](LOWER_WINDOW_FROM_EIGHT.md), using the actual n=8 declarations and deletion of one square. It retains the n=8 arithmetic-table dependencies. Replace that import if an entirely standalone table-free bound is required.
 4. Assemble unrestricted optimality, all equality necessity/converse, independent whole-proof audit, standard-kernel Lean and public integration.
 
 Commit whole quantified arguments and log their exact evidence. Two closed coarse cyclic cells are not a proof-completion percentage. The unrestricted theorem remains unfinished.

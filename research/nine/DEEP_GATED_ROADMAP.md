@@ -29,7 +29,7 @@ No common separating frame, row, central square or prescribed stress graph is an
 |---|---|---|
 | Model and minimizer | Exact squares, attainment, true physical force/torque certificate | Assemble the unrestricted sharp theorem |
 | Common-coordinate class | Entire class proved, including conditional equality skeleton | A common frame is not available globally |
-| Positive trees | Six profiles, full P/Y capacities, all completions excluded | Assemble the explicit lower-window dependency |
+| Positive trees | Six profiles, full P/Y capacities, all completions excluded; lower window imported explicitly | No remaining geometry in this component class |
 | Exactly two loaded bodies | Parallel forces, q=17/4, 4–6 aligned bodies; every completion excluded | No remaining geometry in this load class |
 | Components whose bodies all touch the circle | Exactly one physical C7; includes all circle-touching squares | Exclude TWO arbitrary circle-clear completion squares |
 | Components with a circle-clear body | 3–7 noncollinear resultants; circle-touching induced graph is paths or C7 | Uniform sharp physical completion inequality |
@@ -39,10 +39,10 @@ No common separating frame, row, central square or prescribed stress graph is an
 
 ### G0.W Explicit radius-window prerequisite
 
-Tree quantization, channel/loaded-graph exclusions and new two-load high-radius quantization use **79/40<=R<=sqrt(Q)**. The existing n=8 lower bound can provide this by deletion, with its current proof dependencies. A standalone table-free n=9 proof must replace that import with an independent coarse hand bound. The parallel-force theorem itself only assumes q>9/4; geometric capacity statements directly in D_(17/4) do not need the lower-window input.
+Tree quantization, channel/loaded-graph exclusions and new two-load high-radius quantization use **79/40<=R<=sqrt(Q)**. LOWER_WINDOW_FROM_EIGHT.md supplies this by deleting one square and applying the actual existing n=8 declarations, with their current proof dependencies. A standalone table-free n=9 proof must replace that import with an independent coarse hand bound. The parallel-force theorem itself only assumes q>9/4; geometric capacity statements directly in D_(17/4) do not need the lower-window input.
 
 - [x] **W.1** All window-dependent manuscript hypotheses are explicit.
-- [ ] **W.2** Final dependency assembly must cite the actual established n=8 theorem and its exact deletion implication, not merely an informal reference.
+- [x] **W.2** LOWER_WINDOW_FROM_EIGHT.md pins optimal_radius, selected_stationary.q_lower, the radius definitions, and the exact physical deletion implication. The n=8 arithmetic-table dependencies are explicit.
 - [ ] **W.3** Supply an independent hand R>=79/40 argument if standalone table-freedom is required.
 
 ### Representation and scope rules
@@ -230,7 +230,7 @@ Exact domain:
 - [x] **Y.3 BOUNDARY** The theta=0 and pi/2 limits are P members, already covered by its closed slider domain.
 - [x] **Y.ALL** Y_ALL_COMPLETION.md excludes every four-square completion.
 
-**TREE.ALL [x] CLOSED hand conditional on the declared window:** P.ALL + Y.ALL + the four previously closed branches exclude every selected positive tree component in a nine-square packing. TREE_AND_TWO_LOAD_COMPLETION.md gives the exact assembly. The separate G0.W lower-window dependency remains to be assembled.
+**TREE.ALL [x] CLOSED hand conditional on the declared window:** P.ALL + Y.ALL + the four previously closed branches exclude every selected positive tree component in a nine-square packing. TREE_AND_TWO_LOAD_COMPLETION.md gives the exact assembly. G0.W.2 now supplies the explicit n=8 lower-window import; G0.W.3 remains the optional replacement for a standalone table-free derivation.
 
 ---
 
@@ -312,7 +312,7 @@ Source: TWO_LOAD_RECIPROCAL_RIGIDITY.md, initial commit 248202d, clarified 9fad2
 Source: [CIRCLE_CONTACT_ANGULAR_ORDER.md](CIRCLE_CONTACT_ANGULAR_ORDER.md), commit 6f1d22e.
 
 - [x] **CY.B1 ANNULUS** Every circle-touching center has radius strictly between 5/4 and 61/40.
-- [x] **CY.B2 SEPARATION** Distinct such directions differ by more than pi/5; a touching pair differs by less than 2pi/5. Thus a physical contact cannot skip another circle-touching center in angular order.
+- [x] **CY.B2 SEPARATION** CENTERED_INNER_ARC.md strengthens the separation to more than 2pi/9: every circle-touching square contains the entire closed centered 40-degree arc on the radius-5/4 circle in its open interior. A touching pair still differs by less than 2pi/5, so a physical contact cannot skip another circle-touching center.
 - [x] **CY.B3 SHADOW** Every circle-touching square has angular shadow shorter than pi/3, by the full two-case corner calculation.
 - [x] **CY.B4 GRAPH** The entire physical circle-touching graph is a disjoint union of paths, or is one C7. A six-cycle would cover all directions using six shadows of total length less than 2pi.
 - [x] **CY.B5 TORQUE** A genuine contact between two circle-touching squares has nonzero moment about the origin; loaded or unloaded degree-one vertices are impossible in a positive component whose bodies all touch the circle.
@@ -372,7 +372,7 @@ Source: FOUR_BODY_CYCLIC_CELL_CLOSED.md, commit 05e15a0.
 
 - [x] **X.1** A subcritical packing has an unrestricted minimizing stress.
 - [x] **X.2** Tree-present versus all-components-cyclic is a complete outer split, with all physical bodies retained.
-- [ ] **X.3** Supply the missing sharp contradiction for every branch, plus the declared lower-window input.
+- [ ] **X.3** Supply the missing sharp contradiction for the general C7 and mixed cyclic branches. The declared lower-window input is assembled in G0.W.2.
 - [x] **G4.1** Exact construction gives the upper bound.
 - [ ] **G4.2** Establish R9>=sqrt(Q) from original Packing only.
 - [ ] **G4.3** Match the existing nonnegative-radius/Optimum interface.

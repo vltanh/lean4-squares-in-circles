@@ -195,3 +195,20 @@ These are analytic proofs; exploratory numerical searches are not premises. No L
 ### Remaining global obligations
 
 Every surviving selected component is cyclic with 3–7 noncollinear loaded resultants. A boundary-only component is the general physical C7, whose two-circle-clear-square completion remains open. Mixed components containing a circle-clear body also remain open. The unrestricted lower bound, all equality necessity, explicit lower-window assembly, full-chain audit and standard-kernel integration remain unfinished. The coarse cyclic ledger is still two whole cells closed and 56 open; tree and two-load closure is not used to tick a cell with unresolved multi-load realizations.
+
+
+## 2026-10-24 00:13 UTC — explicit lower-window dependency assembled
+
+Base commit: `1760270deb45190883a23fb54a064a812a6bed6b`.
+
+`LOWER_WINDOW_FROM_EIGHT.md` supplies the exact declared R>=79/40 prerequisite for every physical nine-square packing. Deleting one square preserves the original Packing semantics. The actual existing `SquaresInCircles.optimal_radius 8` theorem then gives R>=EightStatement.radius; `StatementLink.selected_stationary.q_lower` and the stated square-root definition give EightStatement.radius>=79/40. The source declarations were read at the pinned base commit, including the direct `Eight.lower_bound` alternative and the statement/proof radius link.
+
+This closes G0.W.2 as an explicit imported-theorem assembly. It does not replace the n=8 arithmetic-table dependencies: the actual Analysis import includes Generated.LocalStationaryBounds, and the normalization/capture chain has further generated bounds. G0.W.3 remains separate if a fully standalone table-free hand lower bound is required. The direct P/Y capacities use only their own q=17/4 geometry.
+
+No Lean compilation or CI was run. General C7 completion, mixed cyclic completion, unrestricted sharpness/equality and full-chain verification remain open; no cyclic cell count changes.
+
+### Additional complete geometric input — centered forty-degree arcs
+
+`CENTERED_INNER_ARC.md` proves that every circle-touching square in the full declared radius window contains the entire closed arc of |p|=5/4 within 20 degrees of its center direction in its OPEN interior. The exact trigonometric comparisons are cos(pi/9)>15/16 and sin(pi/9)<11/32. Both own-coordinate deviations reduce to a cubic whose expansion about s=3/8 has the positive lower bound 117/40960. Consequently every pair of physically disjoint circle-touching squares has minor center-angle separation strictly greater than 40 degrees.
+
+The entire derivation received two independent hand audits, including all constants and the shifted-cubic certificate. It strengthens the earlier 36-degree necessary bound but does not by itself exclude either global cyclic completion class.

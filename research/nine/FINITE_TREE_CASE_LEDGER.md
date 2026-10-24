@@ -1,7 +1,7 @@
 # n=9 — finite tree-case ledger: all six profiles closed
 
 **Checkpoint:** 2026-10-24, complete P/Y continuation. **Global theorem remains OPEN.**
-All six original tree profiles now have full physical completion exclusions. P_ALL_COMPLETION.md and Y_ALL_COMPLETION.md close the two remaining continuous families, with independent extra-square orientations and all boundaries retained. The separate cyclic branch remains open. The conditional tree assembly keeps 79/40<=R<=sqrt(Q) explicit; its final lower-window import remains a separate obligation.
+All six original tree profiles now have full physical completion exclusions. P_ALL_COMPLETION.md and Y_ALL_COMPLETION.md close the two remaining continuous families, with independent extra-square orientations and all boundaries retained. The separate cyclic branch remains open. The conditional tree assembly keeps 79/40<=R<=sqrt(Q) explicit; LOWER_WINDOW_FROM_EIGHT.md now supplies its explicit n=8 import.
 
 ## 1. Exact outer split and dependencies
 
@@ -12,7 +12,7 @@ In the declared window 79/40<=R<=sqrt(1105)/16:
 1. If some positive body-pair component is a **tree**, select one and apply TREE.F1/F2 and this ledger. Keep **all nine physical squares**, including other components and zero-weight bodies, in every completion problem.
 2. If every positive component has a **cycle**, the separate CYCLIC branch applies and remains open. A tree argument does not make nonbridge forces radial.
 
-The lower window must be explicitly imported from the established n=8 theorem, with its proof dependencies, or proved separately for a fully independent hand proof. It is not silently established by the tree results.
+LOWER_WINDOW_FROM_EIGHT.md explicitly imports the established n=8 theorem and proves the deletion implication. Its arithmetic-table dependencies remain; a fully independent table-free hand proof would replace that import. The tree capacities do not themselves establish the coarse lower bound.
 
 ## 2. Completed universal tree reductions
 
@@ -101,4 +101,4 @@ The five-body skeleton is H,K,S((0,1)),S(u),S(v), where S(e) is the radial unit 
 
 The committed script check_origin_pockets.py, matched to its Git blob and SHA-256, passed **1,716 exact rational checks** plus physical attainment/strict-normal and non-strict-normal controls. ORIGIN_POCKET_EXACT_CHECK.json contains the actual pinned run; these finite regressions are not all-angle proofs, independent audit or Lean verification.
 
-All six original tree rows are CLOSED hand in the declared radius window. The remaining global obligations are the general boundary-only C7 and mixed cyclic completions, the explicit lower-window dependency, unrestricted radius assembly, complete equality necessity/converse, independent full audit and standard-kernel Lean integration. The tree closure is not a global completion percentage. No unrestricted proof is claimed.
+All six original tree rows are CLOSED hand in the declared radius window. The remaining global obligations are the general boundary-only C7 and mixed cyclic completions, unrestricted radius assembly, complete equality necessity/converse, independent full audit and standard-kernel Lean integration. The tree closure is not a global completion percentage. No unrestricted proof is claimed.

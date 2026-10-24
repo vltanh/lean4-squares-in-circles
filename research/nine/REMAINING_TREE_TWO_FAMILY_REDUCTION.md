@@ -102,7 +102,7 @@ This proof is a necessary structural implication for the selected tree certifica
 
 *Proof.* The six-case tree theorem is exhaustive. TREE.12 and TREE.04 cannot complete to nine by their earlier capacity theorems. TREE.03 cannot by THREE_VERTEX_ORIGIN_CAPACITY.md. The point-only part of TREE.02 cannot by the new pocket completion theorem; its shared-edge boundary is family P. TREE.20 is family P. The only remaining profile TREE.11 is P or Y by Section 4. Every additional physical square remains in the respective completion premise. QED.
 
-This is a finite two-family classification with all continuous parameters retained. P_ALL_COMPLETION.md and Y_ALL_COMPLETION.md now supply both whole-family capacities. Their combination closes the entire positive-tree branch in the explicit radius window; the separate lower-window dependency remains to be assembled.
+This is a finite two-family classification with all continuous parameters retained. P_ALL_COMPLETION.md and Y_ALL_COMPLETION.md now supply both whole-family capacities. Their combination closes the entire positive-tree branch in the explicit radius window; LOWER_WINDOW_FROM_EIGHT.md now supplies the explicit n=8 lower-window import, with its existing proof dependencies retained.
 
 ## 6. Exact remaining global obligations
 
@@ -110,6 +110,7 @@ This is a finite two-family classification with all continuous parameters retain
 - [x] **Y.ALL:** no four-square completion of any nonaligned fan in Section 3; Y_ALL_COMPLETION.md.
 - [x] **TREE.ALL:** both capacities plus the exhaustive reduction exclude every positive tree component in the declared window.
 - [ ] **CYCLIC:** a sharp exhaustive classification or universal inequality when every selected positive component contains a cycle.
-- [ ] The declared lower-radius window, global assembly, complete equality necessity/converse, independent mathematical audit and Lean/kernel integration.
+- [x] The declared lower-radius window is explicitly imported from n=8 in LOWER_WINDOW_FROM_EIGHT.md.
+- [ ] Global assembly, complete equality necessity/converse, independent mathematical audit and Lean/kernel integration; an independent coarse bound if standalone table-freedom is required.
 
 The completed tree exclusions do not make nonbridge forces radial. No conclusion about CYCLIC is inferred from this tree classification. No global n=9 proof, independent full audit, Lean compilation or CI is claimed.

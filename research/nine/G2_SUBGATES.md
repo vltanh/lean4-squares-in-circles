@@ -32,7 +32,7 @@ The reciprocal theorem applies to every physical positive component with exactly
 | G2.X / G4 / G5.U | Unrestricted lower bound and all equality packings | [ ] OPEN/BLOCKED |
 | G6–G8 | Independent audit, standard-kernel Lean and integration | [ ] NOT COMPLETED |
 
-**Radius premise:** high-radius graph exclusions assume 79/40<=R<=sqrt(Q). The existing n=8 lower bound supplies this only as an explicitly imported dependency; a standalone table-free proof needs a separate coarse bound. The new parallel-force theorem alone only needs q>9/4.
+**Radius premise:** high-radius graph exclusions assume 79/40<=R<=sqrt(Q). LOWER_WINDOW_FROM_EIGHT.md assembles the exact existing n=8 import and deletion implication, retaining its arithmetic-table dependencies; a standalone table-free proof needs a separate coarse bound. The new parallel-force theorem alone only needs q>9/4.
 
 **Graph premise:** the <=19 planar translational support and <=27 physical force/torque incidence certificate are distinct. The body-pair graph is not assumed planar. Zero-stress physical contacts constrain geometry even though absent from that graph.
 
@@ -158,7 +158,7 @@ CYCLIC_CELL_LEDGER.md retains all 58 individual rows and their complete physical
 
 **O3.3.SHARP / O4 / O5 remain OPEN:** P.ALL, Y.ALL, TREE.ALL and all two-loaded completions are closed at their stated scopes. The general boundary-only C7 and mixed 3–7-loaded noncollinear cyclic configurations still require full physical capacity inequalities. A uniform global argument is preferable to 56 separate angle-grid searches.
 
-**G2.X/G4:** only after complete sharp coverage and the explicit lower-window prerequisite can minimizer attainment exclude q<Q. **G5.U:** all unrestricted equality packings still need necessity/converse. **G6–G8:** independent full audit, standard-kernel Lean and integration are not done.
+**G2.X/G4:** the lower-window prerequisite is now explicitly assembled, but complete sharp cyclic coverage is still required before minimizer attainment can exclude q<Q. **G5.U:** all unrestricted equality packings still need necessity/converse. **G6–G8:** independent full audit, standard-kernel Lean and integration are not done.
 
 ## 8. Actual exact execution and audit priorities
 

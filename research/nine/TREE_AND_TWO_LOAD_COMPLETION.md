@@ -23,8 +23,11 @@ used by the tree localization theorem. Assume explicitly
        \qquad}                                             \tag{1}
 \]
 
-The lower inequality in (1) remains a declared prior-theorem dependency;
-it is not proved by the completion theorems or by this corollary note.
+The lower inequality in (1) is supplied by the explicit prior-theorem
+import in LOWER_WINDOW_FROM_EIGHT.md: delete one square and apply the
+existing n=8 theorem. That import retains the n=8 arithmetic-table
+dependencies. The lower bound is not proved by the completion theorems
+or by this corollary note.
 
 Only components of the nontrivial positive stress support are considered.
 Every physical square outside such a component, and every zero-weight
@@ -99,6 +102,7 @@ for all nine squares has been introduced.
 
 Corollaries T and TL close their entire structural classes in (1).
 Components with cycles and three or more circle-loaded bodies remain a
-separate global obligation. The prior lower-radius input, global
-assembly and equality analysis, and Lean/kernel integration also remain
-distinct from these completed physical capacity arguments.
+separate global obligation. The prior lower-radius input is now explicitly assembled in
+LOWER_WINDOW_FROM_EIGHT.md. Global assembly and equality analysis, and
+Lean/kernel integration remain distinct from these completed physical
+capacity arguments.
