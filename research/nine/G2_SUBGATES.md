@@ -16,6 +16,7 @@ The complete fine-grained contracts are in [DEEP_GATED_ROADMAP.md](DEEP_GATED_RO
 - [x] **CY.K4:** NO_POSITIVE_K4_SUBGRAPH.md excludes every K4 subgraph in the selected graph. A sufficiently small physical embedding has no triangle enclosing another body center. Both independent hand audits passed.
 - [x] **CY.K23.BOUNDARY:** NO_THREE_BOUNDARY_COMMON_NEIGHBORS.md excludes three common positive circle-touching neighbors of any pair, by the exterior-face obstruction in a K2,3 subgraph.
 - [x] **CY.TIP.SELECT:** BOUNDARY_TIP_FIXED_APPLICATION_SELECTION.md covers every degree-two unique-circle-corner star with two fixed applications and at least one boundary neighbor. No shared-side mean is frozen. Independent audit passed.
+- [x] **CY.TIP.GENERAL:** GENERAL_FIXED_TIP_NORMAL_SELECTION.md removes the boundary-neighbor premise for every unique-circle-corner degree-two tip with distinct fixed applications. The other radial normal is handled by translation balance; the nonradial determinant has a nonzero coefficient. Coincident radial-D inner vertices and variable shared means remain. Independent full audit passed.
 - [ ] **CY.SHARP:** derive the missing universal radius/completion theorem on all remaining mixed and boundary-only cases.
 
 These are statements about a selectable necessary certificate. The full physical touching graph can have additional zero-stress contacts and can contain K4 at a four-square junction.
@@ -59,7 +60,7 @@ Every row retains four extra physical squares. Full nested contracts are G3.M5 i
 
 | Gate | Exact finite graph/layout cover | Status |
 | --- | --- | --- |
-| M5.T2 / C1.3.b2 | Length-two arm; two leaves at one or at two distinct triangle articulations | Entire arm and entire same-articulation layout CLOSED; distinct layout OPEN |
+| M5.T2 / C1.3.b2 | Length-two arm; two leaves at one or at two distinct triangle articulations | Arm, same-articulation and entire distinct D/S CLOSED; distinct S/S OPEN |
 | M5.B4L / C1.4.b1 | C4 load patterns; diamond hub/tip attachment; K4 | Adjacent-load C4 and K4 CLOSED; all cycle holes empty; other branches OPEN |
 | M5.B5 / C1.5.b0 | Exactly C5, house and four-path fan after the exhaustive ten-type graph/load reduction | Graph/load reduction CLOSED; full geometry/completion OPEN |
 | M5.TT / C2.33.b0 | Two triangles at one shared articulation, all additional zero-weight physical contacts retained | OPEN |
@@ -70,7 +71,12 @@ Every row retains four extra physical squares. Full nested contracts are G3.M5 i
 - [x] **M5.T2.SAME.SS/DS:** TWO_S_LEAVES_ONE_TRIANGLE_ARTICULATION.md and TWO_MIXED_LEAVES_ONE_TRIANGLE_ARTICULATION.md exclude both entire leaf-type branches, with every articulation feature and all weights. The inaccessible-circle-arc arguments retain all B/C masks.
 - [x] **M5.T2.SAME.DD:** TWO_D_LEAVES_ONE_TRIANGLE_ARTICULATION.md covers the whole radius window, the coincident-application alternative, both corner owners, and every aligned, tilted and parallel-frame side case. Its collective shared-side determinant retains all means before compatible normal selection. Root and separate full audits passed.
 - [x] **M5.T2.SAME.ALL:** TRIANGLE_TWO_LEAVES_SAME_ARTICULATION_CLOSED.md exhausts S/S, D/S and D/D under one simultaneous necessary certificate. The entire layout is excluded independently of all four completion squares; assembly audits passed.
-- [ ] **M5.T2.DISTINCT / ASSEMBLE:** finish the whole distinct-articulation two-leaf family with its full S/D, moment, owner and mean cover; then assemble C1.3.b2. The parent is still OPEN.
+- [x] **M5.T2.DISTINCT.DOMAIN:** TRIANGLE_DISTINCT_LEAVES_DOMAIN.md gives exactly the two leaves and C as loads; excludes D/D, every zero-moment chart and all R<=sqrt(17)/2, including the shared-side endpoint; retains both near-origin articulations, all physical C masks and four extras.
+- [x] **M5.T2.DISTINCT.PORTS:** TRIANGLE_DISTINCT_LEAVES_PORT_ORIENTATION.md excludes articulation port coincidences, orders the actual circle groups and normals, and proves H>0. Every nonparallel articulation has positive radial concurrence; parallel C and its variable means are explicitly covered.
+- [x] **M5.T2.DISTINCT.DS:** TRIANGLE_DISTINCT_MIXED_LEAVES_EXCLUSION.md excludes the entire D/S family independently of contact owners and circle masks. The near-origin AB support and positive concurrence force its direction; the exact support-span theorem then separates B and C. Root and separate full audits passed.
+- [x] **M5.T2.DISTINCT.SS.C_MASK:** DISTINCT_S_LEAF_CORE_AND_CORNER_MASK.md proves h_A(u)<=1 behind any radial support d e with d>=1 and e dot u<=0. Applied to both articulations, this excludes every physical two-circle-corner C mask, including one-positive-corner endpoints. C is unique-corner and its pair forces are nonparallel.
+- [x] **M5.T2.DISTINCT.SS.CONTROL:** The same source gives an exact positive five-body S/S core strictly below Q with all side-axis normals and strict shared means. Blanket core exclusion is REJECTED; the parallel-articulation and shared-mean charts are indispensable.
+- [ ] **M5.T2.DISTINCT.SS / ASSEMBLE:** finish the whole remaining S/S completion bound at R>sqrt(17)/2 and H!=0, including every shared-side and parallel-force chart; then assemble C1.3.b2. The parent is still OPEN.
 - [x] **M5.B4L.C4.ADJACENT:** FOUR_CYCLE_ADJACENT_LOAD_EXCLUSION.md proves the full adjacent-loaded-pair exclusion. Its stronger detour theorem also permits a circle-clear channel endpoint and a zero-weight boundary detour body. Root and separate audits passed.
 - [x] **M5.B5.GRAPH/LOAD_COVER:** FIVE_BODY_BICONNECTED_REDUCTION.md gives all ten types, excludes seven and lists all remaining necessary positive-load masks. Zero-weight physical circle contacts and all four extras remain.
 - [ ] **M5.ALL:** finish every whole cell, with all boundary cases and any equality survivors.
@@ -95,6 +101,7 @@ Every row retains four extra physical squares. Full nested contracts are G3.M5 i
 - [x] **C7.TWO_FREE:** C7_TWO_FREE_EDGES_EXCLUSION.md excludes the complete 2+2+3 and 2+2+2-plus-singleton layouts, retaining both remaining contact owners and zero circle loads.
 - [x] **C7.RR.NONE:** C7_RADIAL_VERTEX_EDGE_EXCLUSION.md uses uniquely determined moment-normalized block means and an open near-axis choice to exclude every radial/radial edge, including the limiting inner endpoint mean.
 - [x] **C7.UU.NONE / C7.PINNED:** C7_MIRROR_VERTEX_EDGE_EXCLUSION.md excludes the last mirror vertex edge by incompatible endpoint mean/circle-cone requirements. The entire free-normal domain is CLOSED for the selected necessary certificate.
+- [x] **C7.OWNED.HIGH:** C7_HIGH_CENTER_CONTACT_TYPES.md proves the whole high-center local contact cover, all shared means included. A positively loaded high-center body owns zero or one normal; every positively loaded two-owned body has center radius below23/16 and force turn90 degrees. Zero-load transmitters have turn0. Independent full audit passed.
 - [ ] **C7.OWNED:** finish the sole residual all-axis-owned contact domain with every two-owner/zero-owner transition, actual shared mean, radial body and load mask.
 - [ ] **C7.COVER.133/223:** use positive stress to settle these two complete supporting-triple types, or replace the cover route by a full direct capacity proof.
 - [ ] **C7.COMPLETE:** exclude every two-square completion in the actual free domain, with all frames and circle-load masks.

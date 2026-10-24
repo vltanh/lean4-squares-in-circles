@@ -1,6 +1,6 @@
 # n=9 — ordered roadmap to the unrestricted hand proof
 
-**PR:** #11, draft. **Reconciled source:** `4f1892a9a3932859c6735eaad5de577379eabc57`.  
+**PR:** #11, draft. **Reconciled source:** `7059d00eff82bf4b9b15288e371097bb31e4cb38`.  
 **Updated:** October 23, 2026, America/Chicago.
 
 **The unrestricted lower bound R^2>=1105/256 and complete equality classification remain OPEN.** The construction attains Q. The full execution tree, exact subgates and boundary cases are in [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md).
@@ -27,6 +27,11 @@ The unique positive cyclic component now has **5–9 bodies** and **3–7 noncol
 - [x] FIVE_BODY_BICONNECTED_REDUCTION.md classifies all ten five-body biconnected graph types and reduces them to C5, house and four-path fan with complete necessary positive-load masks.
 - [x] TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md excludes the entire length-two arm layout of C1.3.b2, with every leaf/transmitter type and articulation pose.
 - [x] TRIANGLE_TWO_LEAVES_SAME_ARTICULATION_CLOSED.md assembles the complete S/S, D/S and D/D exclusions and closes the entire same-articulation layout, including every shared mean and contact owner. Only the distinct-articulation layout remains in C1.3.b2.
+- [x] TRIANGLE_DISTINCT_LEAVES_DOMAIN.md and TRIANGLE_DISTINCT_LEAVES_PORT_ORIENTATION.md give the complete distinct-layout load/radius/moment domain and the positive radial-concurrence theorem, including parallel C forces and all actual means.
+- [x] TRIANGLE_DISTINCT_MIXED_LEAVES_EXCLUSION.md excludes the entire distinct D/S branch through an owner-independent support-span contradiction. Only distinct S/S remains in C1.3.b2.
+- [x] DISTINCT_S_LEAF_CORE_AND_CORNER_MASK.md excludes every two-circle-corner C mask and supplies an exact positively stressed S/S core below Q. Blanket core exclusion is false; the entire remaining S/S family needs completion capacity at most three.
+- [x] GENERAL_FIXED_TIP_NORMAL_SELECTION.md removes free vertex normals from every distinct-fixed-application unique-circle-corner tip without a boundary-neighbor premise; the coincident radial-D exception and variable means are retained.
+- [x] C7_HIGH_CENTER_CONTACT_TYPES.md classifies every high-center contact and proves every positively loaded two-owned body has center radius below23/16 and a right-angle force turn; the whole C7 capacity remains open.
 - [x] FOUR_CYCLE_ADJACENT_LOAD_EXCLUSION.md closes every adjacent-loaded-pair C4 leaf case by a full normal-channel/boundary-detour obstruction.
 - [x] BOUNDARY_TIP_FIXED_APPLICATION_SELECTION.md removes free vertex normals from every unique-circle-corner degree-two star with fixed applications and at least one boundary neighbor; shared means are explicitly retained elsewhere.
 - [x] C7_PINNED_VERTEX_CONTACT_TYPES.md reduces all free vertex edges to radial/radial contacts or mirror-paired two-square blocks. The complete length2–5 profiles, contact-radius bound and length3 exclusion are proved.
@@ -48,7 +53,7 @@ The identity m=1+sum(block_size-1)+bridges gives exactly four five-body cyclic c
 
 | Order | Whole gate | Exhaustive scope | Required exit |
 | --- | --- | --- | --- |
-| 1 | C1.3.b2 | Entire arm and entire same-articulation layout CLOSED; leaves at distinct articulations remain | Finish the whole distinct-articulation family and assemble the cell |
+| 1 | C1.3.b2 | Only distinct S/S remains, with one physical C corner and realizable positive cores below Q | Prove full S/S completion capacity<=3, then assemble all closed attachment/leaf branches |
 | 2 | C1.4.b1 | Opposite-load or three-load C4 plus leaf; diamond plus leaf at a hub or tip | Adjacent-load C4 and K4 excluded, all holes empty; prove the full remaining bounds |
 | 3 | C1.5.b0 | C5 with three/four loads; house with three mask orbits; fan with three/four loads | Finish each complete graph/load family with every actual contact and four extras |
 | 4 | C2.33.b0 | Two triangles sharing one articulation, four loaded tips and every zero-weight physical contact | Full joint capacity or core/radius theorem |
