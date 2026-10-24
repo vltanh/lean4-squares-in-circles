@@ -824,3 +824,56 @@ NEGATIVE_UNIQUE_NEIGHBOR_INNER_CONTACT.md is an independent full geometric theor
 The true contact diameters also give|z-c_H|<=3/sqrt(2). Strict negative projection therefore implies|c_H|²<9/2-R²<1. AtR²>=17/4 this is<1/4, so the circle origin lies in H's actual open inscribed disk. Root and independent audits passed this additional consequence and every exact threshold. The origin-interior conclusion is not used below its full radius premise.
 
 The deep roadmap records the entire parallel hub exit, the full local cone and contact theorems, the newly closed radial endpoint masks and all remaining exact physical-mask obligations. All true positive degrees, original contact means, zero individual weights and all three extras remain. The authoritative count is still nine closed/49 open; none of the four whole triangle/four-block load orbits is claimed closed here. Four six-body coarse parents remain, followed by all larger mixed cells. Unrestricted sharpness, original equality and full earlier prerequisite-chain audit are OPEN. The existing opposite-load C4 theorem retains its canonical minimizer premise. PR #11 stays draft; no Lean compilation or CI was run. Every changed file will be read back at the exact saved commit.
+
+## October 24 18:24 UTC — adjacent C4, canonical unique mask and diagonal-pocket checkpoint after bfff059
+
+TRIANGLE_C4_ADJACENT_LOAD_EXCLUSION.md closes the entire adjacent
+block-load orbit AB and its reflected BC image. The actual side channel
+and bypass force the root-normal signs. Genuine loaded-tip concurrences
+put the root-line intersection on the positive intact-petal ray. If the
+channel support were nonpositive, both real petal applications would
+lie on a side of height at least one, contradicting the complete
+high-face theorem. Thus the full remaining domain has positive channel
+support below 1/60. The actual return square then contradicts the exact
+narrow-cap and boundary angular-shadow estimates. Every physical mask,
+owner and original mean remains; no canonical premise is needed.
+
+TRIANGLE_C4_OPPOSITE_LOAD_CANONICAL_CONTACT.md proves real hub/transmitter
+contact in the whole opposite-load AC orbit at the existing canonical
+radius/center-norm minimizer. A negative actual neighbor corner bounds
+the hub center. The complete C4 hole is empty, and any positive
+transverse gap admits an inward transmitter translation decreasing its
+corner radii and the secondary norm, while preserving all nine physical
+squares. The hub is oblique and both hub/tip contacts are singleton;
+the physical hub/transmitter contact is not assigned positive stress.
+
+TRIANGLE_C4_OPPOSITE_UNIQUE_TIPS_EXCLUSION.md closes the entire
+unique/unique physical mask in that canonical domain. Fixed-tip and
+whole shared-block virtual-work arguments remove every free root
+normal while retaining both original channel means. The full owner
+cover leaves one exact two-hub-owned endpoint. Its true block force
+points opposite to the intact petal force, and the actual hub center
+violates the petal's strict positive pressure. The mixed unique/radial
+mask remains open, including all radial corner weights.
+
+SIX_CYCLE_ONE_DIAGONAL_OUTER_CAP_EMPTY.md excludes the entire actual
+diagonal exterior pocket of the physical-unique, one-diagonal
+alternating C6 family. The complete occupied cap strip and all
+separating-axis owners are covered. Four exact polynomial identities
+prove strict positivity on complete parameter rectangles; 202 exact
+coefficient lower bounds are positive, with no sampled angle or
+subdivision. The vertical case checks the whole center cap and every
+northwest normal, including the auxiliary intermediate direction.
+Together with central capacity one, at least two of the three extras
+must lie in the two side pockets. Their joint capacity is still open.
+
+Root and separate independent full audits passed all four complete
+sources. The triangle/four-block branch now has three remaining whole
+graph/load orbits: C4 AC, C4 ABC and diamond-hub KAB. Only the mixed
+physical mask remains in AC at the canonical minimizer. Four six-body
+coarse parents remain; the authoritative inventory is nine closed and
+49 open. Unrestricted sharpness, original equality and full earlier
+prerequisite-chain audit remain OPEN. PR #11 stays draft; no Lean
+compilation or CI was run.
+
+The root exact algebra audit independently rebuilt identities I–III from the original cleared geometric expressions, identity IV from its rational rectangle map, and all 202 coefficient lower bounds in Q(sqrt(2)). The coefficient degrees are(4,3),(4,3),(8,3),(10,5); the last is degree-elevated to(20,5) on the same whole rectangle. The respective smallest displayed lower bounds are123/1000,127/1000,350/1000,10/1000. This verifies the written universal identities; it does not introduce a numerical pose search. The four remaining completion allocations are central0/side30, central0/side21, central1/side20 and central1/side11 up to the actual reflection. Every original slider and all physical squares remain. Every changed file will be read back at the exact saved commit.

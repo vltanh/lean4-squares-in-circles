@@ -706,7 +706,7 @@ additional interface force and all its actual body equations. An
 isolated four-body-component exclusion cannot silently remove this
 force.
 
-### 8.1. Exactly four remaining whole graph/load orbits
+### 8.1. Exactly three remaining whole graph/load orbits
 
 TRIANGLE_FOUR_BODY_BLOCK_LOAD_COVER.md proves the full necessary
 load refinement. Label the C4 H--A--B--C--H and the attached triangle
@@ -722,16 +722,18 @@ whose support is2-d>59/60. END_TRIANGLE_AXIS_RESULTANT_SUPPORT_BOUND.md
 proves both petal ports are on that maximizing side and gives the
 contradictory strict bound<59/60. H retains all four forces.
 
-The exact remaining C4 block-load representatives areAB,AC,ABC.
+The initial reduced C4 block-load representatives areAB,AC,ABC.
+TRIANGLE_C4_ADJACENT_LOAD_EXCLUSION.md now excludes the whole AB orbit
+and its BC reflection, leaving only AC and ABC.
 Both two-load cases have a single actual side transmitter, proved by
 their real unit bypass. For the diamond rooted at hub H, the sole
 block-load set isKAB; its other hub K has true degree3 and is forced
 loaded, while H retains degree5. The diamond-tip layout stays closed.
 
 Root and independent full audits passed the load table, both entire
-single-load exits and the uniform axis-resultant theorem. The four
-remaining graph/load orbits require a whole contradiction, sharp bound
-or complete joint three-extra exit. One of three whole attachment
+single-load exits, the complete adjacent-load exit and the uniform
+axis-resultant theorem. The three remaining graph/load orbits require
+a whole contradiction, sharp bound or complete joint three-extra exit. One of three whole attachment
 layouts is closed; C2.34.b0 remains open.
 
 ### 8.2. Complete radial-mask exits and actual negative unique corners
@@ -743,13 +745,14 @@ two-corner neighbor ofH instead has positive pressure, with all original
 weights retained. No additional H force or unloaded body is omitted.
 
 For C4 block loadsAC this excludes the entire two-radial mask. The exact
-remaining full mask families areUU andUS up to reflection, whereU means
+initial full mask families areUU andUS up to reflection, whereU means
 one physical circle corner andS means two. An actualU corner must have
-negativec_H projection. For diamond-hub loadsKAB, the entire all-radial
-mask is excluded; the five remaining rooted representatives areUSS,SUS,
-UUS,SUU,UUU in orderK,A,B, including theirA/B reflections. At least one
-actualU corner is negative. Root and independent full audits passed
-both full-mask exits. The four whole graph/load orbits remain open.
+negativec_H projection. The entire UU family is now excluded at the
+canonical minimizer, leaving US. For diamond-hub loadsKAB, the entire
+both-radial-endpoint domain is excluded by the actual boundary-path
+force cone. Its four remaining representatives areSUS,UUS,SUU,UUU in
+orderK,A,B, with an actual negative unique endpointA. Every original
+force and mean remains. The three whole graph/load orbits stay open.
 
 ### Full parallel C4 exit and exact negative-endpoint mask domains
 
@@ -784,8 +787,60 @@ bound|c_H|²<9/2-R²<1 also holds; in that high-radius domain the circle
 origin is strictly insideH. All bounds preserve the true origin and
 every original mean; no contact is reset to a corner. Root and
 independent full audits passed all three complete sources and both
-actual attachment applications. The four graph/load parents remain
-open, and the coarse inventory stays nine closed/49 open.
+actual attachment applications. The later complete adjacent-load exit
+leaves three whole graph/load orbits open. The coarse inventory stays
+nine closed/49 open.
+
+## Adjacent C4 closed, opposite unique mask closed, and diagonal C6 pocket empty
+
+TRIANGLE_C4_ADJACENT_LOAD_EXCLUSION.md closes the entire adjacent
+block-load orbit AB and its reflected BC image. The actual side channel
+and bypass force the root-normal signs. Genuine loaded-tip concurrences
+put the root-line intersection on the positive intact-petal ray. If the
+channel support were nonpositive, both real petal applications would
+lie on a side of height at least one, contradicting the complete
+high-face theorem. Thus the full remaining domain has positive channel
+support below 1/60. The actual return square then contradicts the exact
+narrow-cap and boundary angular-shadow estimates. Every physical mask,
+owner and original mean remains; no canonical premise is needed.
+
+TRIANGLE_C4_OPPOSITE_LOAD_CANONICAL_CONTACT.md proves real hub/transmitter
+contact in the whole opposite-load AC orbit at the existing canonical
+radius/center-norm minimizer. A negative actual neighbor corner bounds
+the hub center. The complete C4 hole is empty, and any positive
+transverse gap admits an inward transmitter translation decreasing its
+corner radii and the secondary norm, while preserving all nine physical
+squares. The hub is oblique and both hub/tip contacts are singleton;
+the physical hub/transmitter contact is not assigned positive stress.
+
+TRIANGLE_C4_OPPOSITE_UNIQUE_TIPS_EXCLUSION.md closes the entire
+unique/unique physical mask in that canonical domain. Fixed-tip and
+whole shared-block virtual-work arguments remove every free root
+normal while retaining both original channel means. The full owner
+cover leaves one exact two-hub-owned endpoint. Its true block force
+points opposite to the intact petal force, and the actual hub center
+violates the petal's strict positive pressure. The mixed unique/radial
+mask remains open, including all radial corner weights.
+
+SIX_CYCLE_ONE_DIAGONAL_OUTER_CAP_EMPTY.md excludes the entire actual
+diagonal exterior pocket of the physical-unique, one-diagonal
+alternating C6 family. The complete occupied cap strip and all
+separating-axis owners are covered. Four exact polynomial identities
+prove strict positivity on complete parameter rectangles; 202 exact
+coefficient lower bounds are positive, with no sampled angle or
+subdivision. The vertical case checks the whole center cap and every
+northwest normal, including the auxiliary intermediate direction.
+Together with central capacity one, at least two of the three extras
+must lie in the two side pockets. Their joint capacity is still open.
+
+Root and separate independent full audits passed all four complete
+sources. The triangle/four-block branch now has three remaining whole
+graph/load orbits: C4 AC, C4 ABC and diamond-hub KAB. Only the mixed
+physical mask remains in AC at the canonical minimizer. Four six-body
+coarse parents remain; the authoritative inventory is nine closed and
+49 open. Unrestricted sharpness, original equality and full earlier
+prerequisite-chain audit remain OPEN. PR #11 stays draft; no Lean
+compilation or CI was run.
 
 ## 9. Complete local and load-family exits beyond the initial cover
 
