@@ -1,5 +1,73 @@
 # n=9 — ordered roadmap to the unrestricted hand proof
 
+## Entire opposite-load triangle/C4 branch closed; two load orbits remain
+
+TRIANGLE_C4_OPPOSITE_LOAD_BRANCH_CLOSED.md closes the entire AC
+block-load orbit at the existing canonical radius/Phi minimizer. It
+assembles the physical two/two, unique/unique and both ordered mixed
+masks with all true degrees, original channel means, individual zero
+radial weights and all three other physical squares retained. The
+canonical packing is fixed before normal selection; any selected
+candidate with a positive hub/transmitter gap contradicts that same
+packing's secondary minimality. No packing or certificate is changed.
+
+TRIANGLE_C4_OPPOSITE_MIXED_TIPS_EXCLUSION.md supplies the final complete
+mask exit. A parallel radial tip would make the real channel point
+too central for the unique loaded tip. Whole fixed-tip/shared-block
+virtual-work arguments remove every free unique-root interface. The
+full radial-tip feature cover then gives a genuine inner-face parameter,
+strictly greater than one half when that tip owns its root interface.
+A unique-tip-owned interface contradicts the actual hub diameter.
+With the hub owning that interface and the unique tip oblique, the
+complete circle and contact equations force a radial sine greater
+than one half, then a unique-tip sine below one tenth and an actual
+radial-side parameter above nine tenths. Two actual hub points would
+have vertical separation greater than 29/20, exceeding its diameter.
+
+The entire parallel-unique-tip branch retains its original shared
+channel mean. C4_MIXED_PARALLEL_TIP_SCALAR_BOUND.md proves the required
+positive-pressure inequality on its full continuous domain. A concavity
+bound gives the strict derivative reserve; two monotone comparisons
+and exact endpoint inequalities give Delta<9/40 and rho>8/9. The final
+whole-domain pressure margin is greater than3233/2408000. These are
+analytic comparisons across full domains, with no angle boxes or
+sampled signs. The actual geometry proves every scalar hypothesis.
+
+NEGATIVE_UNIQUE_TRIANGLE_FREE_ENDPOINT_HIGH_RADIUS.md is a separate
+uniform local theorem for the remaining diamond-hub orbit. A true
+negative unique endpoint in a physical H-A-K triangle has no free HA
+contact when R²>=17/4. The complete shared-AK chart retains its actual
+mean and forces a positive physical offset. K's exact circle equation
+makes that offset exceed one half, and the actual H/K contact transfers
+the bound to H's frame. Cauchy--Schwarz then gives
+c_H.z_A>R²-R sqrt(5/2+sqrt(3))>0, a contradiction. Only A has a
+degree-two equation; H and K retain all their other forces. The
+singleton-AK selection exit holds across the full radius window.
+
+TRIANGLE_C4_THREE_LOAD_PARALLEL_DOMAIN.md excludes the whole opposite-
+normal ABC root domain. Equal normals force an actual hub wall, support
+between1/40 and1/2, opposite true application heights and height sum
+at most one. Every such application has norm squared below13/16, so
+both endpoint physical masks are unique. The full aligned/tilted
+endpoint descriptions keep every mean and proper-length endpoint;
+the wall support also exceeds sqrt((R-sqrt(2))²-1/4)>1/4. Its
+actual hub center lies in the open radius-1/4 disk over the entire
+same-normal domain. The full same-normal wall and nonparallel domains
+remain open.
+
+Root and separate independent full audits passed all five sources,
+the complete mixed geometry, every analytic scalar inequality and the
+whole AC assembly. The only remaining triangle/four-block graph/load
+orbits are C4 ABC and diamond-hub KAB. Each retains four exact
+negative-endpoint physical-mask families. Their whole exits and the
+C2.34.b0 parent are OPEN. The coarse inventory remains nine closed and
+49 open; four six-body coarse parents and all larger mixed parents
+remain. Unrestricted sharpness, original equality and full earlier
+prerequisite-chain audit remain OPEN. PR #11 stays draft; no Lean
+compilation or CI was run.
+
+Earlier checkpoint notes below retain their then-current counts; the current exact states are in DEEP_GATED_ROADMAP.md.
+
 ## Adjacent C4 closed, opposite unique mask closed, and diagonal C6 pocket empty
 
 TRIANGLE_C4_ADJACENT_LOAD_EXCLUSION.md closes the entire adjacent

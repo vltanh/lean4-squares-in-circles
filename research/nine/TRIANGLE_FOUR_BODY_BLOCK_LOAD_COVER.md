@@ -174,120 +174,111 @@ This is the already closed entire tip attachment in
 ROOTED_BLOCK_ATTACHMENT_OBSTRUCTIONS.md; the new proof does not
 reopen it or claim its changed root has degree two.
 
-## 4. Complete remaining roadmap and exact exit contracts
+## 4. Current complete remaining roadmap and exact exit contracts
 
 | Four-body block/root | Remaining necessary positive block loads | Whole parent status |
 | --- | --- | --- |
-| C4, root H | AC; ABC | OPEN; both single-load orbits and the whole adjacent-pair orbit are excluded |
-| Diamond, hub H | KAB | OPEN; every one of its five circle resultants retained |
+| C4, root H | ABC | OPEN; both single-load and both two-load orbits are excluded |
+| Diamond, hub H | KAB | OPEN; all five circle resultants and true H/K degrees retained |
 | Diamond, tip | None | CLOSED by the full unchanged-degree obstruction |
 
-There are three remaining necessary whole graph/load orbits in the
-two open layouts. The complete one-adjacent and one-opposite C4
-load exits are proved above; the entire adjacent-pair orbit is now
-excluded by TRIANGLE_C4_ADJACENT_LOAD_EXCLUSION.md. The opposite-load
-unique/unique mask is also excluded at the declared canonical minimizer.
-The mixed AC mask and whole ABC orbit still prevent full C4 closure.
-No table entry asserts a physical realization.
+There are exactly two remaining whole graph/load orbits in the two
+open layouts. The full single-load exits are proved above.
+TRIANGLE_C4_ADJACENT_LOAD_EXCLUSION.md excludes the whole AB/BC orbit
+without a canonical premise. TRIANGLE_C4_OPPOSITE_LOAD_BRANCH_CLOSED.md
+excludes the entire AC orbit at the common canonical minimizer.
 
-### Full parallel C4 exit and exact negative-endpoint mask domains
+For C4 ABC, the actual boundary path A-B-C has its middle circle force
+inside the strict positive cone of the endpoint forces. For diamond
+KAB, the same theorem applies to A-K-B with K's true degree three.
+The intact H-X-Y end triangle has positive pressure at c_H, while the
+other complete block must have negative pressure. Thus a genuine
+endpoint is uniquely circle-touching with c_H.z_A<0; label it A by the
+actual root reflection. The four necessary mask representatives in
+order(middle,A,other endpoint) are SUS,UUS,SUU,UUU in each orbit.
+Both-radial-endpoint masks are already excluded, including the
+unique-middle/two-radial-endpoint limit. No force at the middle body
+is deleted or split into artificial tips.
 
-FOUR_CYCLE_PARALLEL_BYPASS_GENERAL_EXCLUSION.md excludes the whole
-opposite-load C4 domain in which H is parallel to its true unloaded
-transmitter. All additional H forces remain. A shared root interface
-forces an actual radial endpoint and makes the other endpoint circle-
-clear. With two point interfaces, the complete physical masks become
-two unique corners at(-m,-3/2),(-m,3/2). Both genuine tip torque equations
-use the same original channel mean and force equal circle scales,
-then a forbidden equality of the two independently selected slopes.
-No radial leaf, small-root premise or canonical motion is used.
+NEGATIVE_UNIQUE_NEIGHBOR_INNER_CONTACT.md gives every real H/A point
+on A's two inner faces, within79/160 of its actual opposite corner;
+both outward circle coordinates exceed3/5. On R²>=17/4 the bounds
+improve to5/38 and19/20. The true center bound|c_H|²<9/2-R² puts the
+origin strictly inside H only in that high-radius domain. The new
+whole free-endpoint theorem below additionally uses the real physical
+H/K contact in the diamond; it cannot be imported into ABC by
+inventing an H/B edge.
 
-BOUNDARY_THREE_PATH_RESULTANT_CONE.md proves that the middle actual
-circle force on a physical three-body boundary path belongs to the
-open positive cone of its two endpoint forces. The complete force
-span is<174degrees, and both successive gaps are>10degrees. Thus the
-negative pressure required by the intact end triangle occurs at a
-genuine endpoint tip, in both C4 loadsABC and diamond-hub loadsKAB.
-After the actual root reflection, label that endpoint A: it is uniquely
-circle-touching withc_H.z_A<0. The other endpoint and middle body retain
-either physical mask. Each full family has four necessary mask
-representatives, in order(middle,A,other endpoint):SUS,UUS,SUU,UUU.
-The entire both-radial-endpoint domain is excluded, including the
-formerly open unique-hub/two-radial-tip diamond mask.
+## Entire opposite-load triangle/C4 branch closed; two load orbits remain
 
-NEGATIVE_UNIQUE_NEIGHBOR_INNER_CONTACT.md proves every actual H/A
-contact lies on A's two inner faces, with both outward circle-corner
-coordinates>3/5 and distance<79/160 from its true opposite corner.
-ForR²>=17/4 these improve to>19/20 and distance<5/38. The full root
-bound|c_H|²<9/2-R²<1 also holds; in that high-radius domain the circle
-origin is strictly insideH. All bounds preserve the true origin and
-every original mean; no contact is reset to a corner. Root and
-independent full audits passed all three complete sources and both
-actual attachment applications. The later complete adjacent-load exit
-leaves three whole graph/load orbits open. The coarse inventory stays
-nine closed/49 open.
+TRIANGLE_C4_OPPOSITE_LOAD_BRANCH_CLOSED.md closes the entire AC
+block-load orbit at the existing canonical radius/Phi minimizer. It
+assembles the physical two/two, unique/unique and both ordered mixed
+masks with all true degrees, original channel means, individual zero
+radial weights and all three other physical squares retained. The
+canonical packing is fixed before normal selection; any selected
+candidate with a positive hub/transmitter gap contradicts that same
+packing's secondary minimality. No packing or certificate is changed.
 
-## Adjacent C4 closed, opposite unique mask closed, and diagonal C6 pocket empty
+TRIANGLE_C4_OPPOSITE_MIXED_TIPS_EXCLUSION.md supplies the final complete
+mask exit. A parallel radial tip would make the real channel point
+too central for the unique loaded tip. Whole fixed-tip/shared-block
+virtual-work arguments remove every free unique-root interface. The
+full radial-tip feature cover then gives a genuine inner-face parameter,
+strictly greater than one half when that tip owns its root interface.
+A unique-tip-owned interface contradicts the actual hub diameter.
+With the hub owning that interface and the unique tip oblique, the
+complete circle and contact equations force a radial sine greater
+than one half, then a unique-tip sine below one tenth and an actual
+radial-side parameter above nine tenths. Two actual hub points would
+have vertical separation greater than 29/20, exceeding its diameter.
 
-TRIANGLE_C4_ADJACENT_LOAD_EXCLUSION.md closes the entire adjacent
-block-load orbit AB and its reflected BC image. The actual side channel
-and bypass force the root-normal signs. Genuine loaded-tip concurrences
-put the root-line intersection on the positive intact-petal ray. If the
-channel support were nonpositive, both real petal applications would
-lie on a side of height at least one, contradicting the complete
-high-face theorem. Thus the full remaining domain has positive channel
-support below 1/60. The actual return square then contradicts the exact
-narrow-cap and boundary angular-shadow estimates. Every physical mask,
-owner and original mean remains; no canonical premise is needed.
+The entire parallel-unique-tip branch retains its original shared
+channel mean. C4_MIXED_PARALLEL_TIP_SCALAR_BOUND.md proves the required
+positive-pressure inequality on its full continuous domain. A concavity
+bound gives the strict derivative reserve; two monotone comparisons
+and exact endpoint inequalities give Delta<9/40 and rho>8/9. The final
+whole-domain pressure margin is greater than3233/2408000. These are
+analytic comparisons across full domains, with no angle boxes or
+sampled signs. The actual geometry proves every scalar hypothesis.
 
-TRIANGLE_C4_OPPOSITE_LOAD_CANONICAL_CONTACT.md proves real hub/transmitter
-contact in the whole opposite-load AC orbit at the existing canonical
-radius/center-norm minimizer. A negative actual neighbor corner bounds
-the hub center. The complete C4 hole is empty, and any positive
-transverse gap admits an inward transmitter translation decreasing its
-corner radii and the secondary norm, while preserving all nine physical
-squares. The hub is oblique and both hub/tip contacts are singleton;
-the physical hub/transmitter contact is not assigned positive stress.
+NEGATIVE_UNIQUE_TRIANGLE_FREE_ENDPOINT_HIGH_RADIUS.md is a separate
+uniform local theorem for the remaining diamond-hub orbit. A true
+negative unique endpoint in a physical H-A-K triangle has no free HA
+contact when R²>=17/4. The complete shared-AK chart retains its actual
+mean and forces a positive physical offset. K's exact circle equation
+makes that offset exceed one half, and the actual H/K contact transfers
+the bound to H's frame. Cauchy--Schwarz then gives
+c_H.z_A>R²-R sqrt(5/2+sqrt(3))>0, a contradiction. Only A has a
+degree-two equation; H and K retain all their other forces. The
+singleton-AK selection exit holds across the full radius window.
 
-TRIANGLE_C4_OPPOSITE_UNIQUE_TIPS_EXCLUSION.md closes the entire
-unique/unique physical mask in that canonical domain. Fixed-tip and
-whole shared-block virtual-work arguments remove every free root
-normal while retaining both original channel means. The full owner
-cover leaves one exact two-hub-owned endpoint. Its true block force
-points opposite to the intact petal force, and the actual hub center
-violates the petal's strict positive pressure. The mixed unique/radial
-mask remains open, including all radial corner weights.
+TRIANGLE_C4_THREE_LOAD_PARALLEL_DOMAIN.md excludes the whole opposite-
+normal ABC root domain. Equal normals force an actual hub wall, support
+between1/40 and1/2, opposite true application heights and height sum
+at most one. Every such application has norm squared below13/16, so
+both endpoint physical masks are unique. The full aligned/tilted
+endpoint descriptions keep every mean and proper-length endpoint;
+the wall support also exceeds sqrt((R-sqrt(2))²-1/4)>1/4. Its
+actual hub center lies in the open radius-1/4 disk over the entire
+same-normal domain. The full same-normal wall and nonparallel domains
+remain open.
 
-SIX_CYCLE_ONE_DIAGONAL_OUTER_CAP_EMPTY.md excludes the entire actual
-diagonal exterior pocket of the physical-unique, one-diagonal
-alternating C6 family. The complete occupied cap strip and all
-separating-axis owners are covered. Four exact polynomial identities
-prove strict positivity on complete parameter rectangles; 202 exact
-coefficient lower bounds are positive, with no sampled angle or
-subdivision. The vertical case checks the whole center cap and every
-northwest normal, including the auxiliary intermediate direction.
-Together with central capacity one, at least two of the three extras
-must lie in the two side pockets. Their joint capacity is still open.
-
-Root and separate independent full audits passed all four complete
-sources. The triangle/four-block branch now has three remaining whole
-graph/load orbits: C4 AC, C4 ABC and diamond-hub KAB. Only the mixed
-physical mask remains in AC at the canonical minimizer. Four six-body
-coarse parents remain; the authoritative inventory is nine closed and
-49 open. Unrestricted sharpness, original equality and full earlier
+Root and separate independent full audits passed all five sources,
+the complete mixed geometry, every analytic scalar inequality and the
+whole AC assembly. The only remaining triangle/four-block graph/load
+orbits are C4 ABC and diamond-hub KAB. Each retains four exact
+negative-endpoint physical-mask families. Their whole exits and the
+C2.34.b0 parent are OPEN. The coarse inventory remains nine closed and
+49 open; four six-body coarse parents and all larger mixed parents
+remain. Unrestricted sharpness, original equality and full earlier
 prerequisite-chain audit remain OPEN. PR #11 stays draft; no Lean
 compilation or CI was run.
 
-Every remaining orbit must receive a whole core contradiction,
-a sharp radius theorem or a joint capacity bound excluding all
-three arbitrary extra squares. Every true higher-degree root
-force, physical zero-weight contact, individual zero circle-corner
-weight and original shared-side mean remains. The exact-component
-four-cycle and diamond-plus-leaf theorems cannot be applied after
-removing any of the triangle forces at the root.
-
-C2.34.b0 remains open with one of its three full attachment types
-closed. No numerical graph enumeration, angle sampling, Lean
-compilation or CI is used. Unrestricted sharpness, original equality
-and the full earlier prerequisite-chain audit remain separate open
-obligations.
+Every remaining orbit must receive a whole core contradiction, sharp
+radius theorem or joint capacity bound excluding all three arbitrary
+extras. Every true higher-degree force, zero individual corner weight,
+unused physical contact and original shared-side mean remains.
+C2.34.b0 stays open with one of three complete attachment layouts
+closed. The current two-orbit cover asserts no physical realization
+and does not discharge the original equality or earlier dependency audit.
