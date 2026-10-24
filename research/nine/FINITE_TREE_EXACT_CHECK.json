@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "started_utc": "2026-10-23T13:20:52.173306+00:00",
+  "finished_utc": "2026-10-23T13:20:52.299435+00:00",
+  "python": "3.13.5",
+  "source_commit": "8a6eea10cd83379e11190a81309248537d5c6cc8",
+  "source_sha256": "5501e227abf47b5c2f9a714dec8a69113c22f59717b4f7d552096c9e59570c9a",
+  "source_git_blob_sha1": "4262f357214c9067124212dbeb2d2a2d2cd9ec34",
+  "exact_rational_checks": 909,
+  "exhaustive_integer_incidence_cases": [[0,2],[0,3],[0,4],[1,1],[1,2],[2,0]],
+  "physical_force_torque_tree_witnesses": [
+    {"squares":4,"corners":16,"physical_SAT_pairs":6,"squared_radius":"17/4","name":"two_loaded_path_0_0","contacts":3,"circle_atoms":4,"loaded_bodies":2,"unloaded_bodies":2,"s":2,"v":0,"origin_interior_unloaded":0,"all_forces_and_torques_exactly_zero":true,"positive_body_graph_is_tree":true},
+    {"squares":4,"corners":16,"physical_SAT_pairs":6,"squared_radius":"17/4","name":"two_loaded_path_1/3_-2/5","contacts":3,"circle_atoms":4,"loaded_bodies":2,"unloaded_bodies":2,"s":2,"v":0,"origin_interior_unloaded":0,"all_forces_and_torques_exactly_zero":true,"positive_body_graph_is_tree":true},
+    {"squares":4,"corners":16,"physical_SAT_pairs":6,"squared_radius":"17/4","name":"two_loaded_path_1/2_0","contacts":3,"circle_atoms":4,"loaded_bodies":2,"unloaded_bodies":2,"s":1,"v":1,"origin_interior_unloaded":0,"all_forces_and_torques_exactly_zero":true,"positive_body_graph_is_tree":true},
+    {"squares":4,"corners":16,"physical_SAT_pairs":6,"squared_radius":"17/4","name":"two_loaded_path_1/2_-1/2","contacts":3,"circle_atoms":4,"loaded_bodies":2,"unloaded_bodies":2,"s":0,"v":2,"origin_interior_unloaded":0,"all_forces_and_torques_exactly_zero":true,"positive_body_graph_is_tree":true},
+    {"squares":5,"corners":20,"physical_SAT_pairs":10,"squared_radius":"17/4","name":"TREE.11_nonstar_nonaligned_five_body_core","contacts":4,"circle_atoms":6,"loaded_bodies":3,"unloaded_bodies":2,"s":1,"v":1,"origin_interior_unloaded":0,"all_forces_and_torques_exactly_zero":true,"positive_body_graph_is_tree":true},
+    {"squares":7,"corners":28,"physical_SAT_pairs":21,"squared_radius":"17/4","name":"TREE.12_feasible_seven_body_core_no_ninth_completion","contacts":6,"circle_atoms":8,"loaded_bodies":4,"unloaded_bodies":3,"s":1,"v":2,"origin_interior_unloaded":0,"all_forces_and_torques_exactly_zero":true,"positive_body_graph_is_tree":true},
+    {"squares":5,"corners":20,"physical_SAT_pairs":10,"squared_radius":"5/2","name":"negative_control_valid_star_below_radius_window","contacts":4,"circle_atoms":8,"loaded_bodies":4,"unloaded_bodies":1,"s":0,"v":0,"origin_interior_unloaded":1,"all_forces_and_torques_exactly_zero":true,"positive_body_graph_is_tree":true}
+  ],
+  "eight_square_cardinal_cage_attainment":{"squares":8,"corners":32,"physical_SAT_pairs":28,"squared_radius":"17/4"},
+  "negative_control_diagonal_center_at_q_9_over_2":{"squares":5,"corners":20,"physical_SAT_pairs":10,"squared_radius":"9/2"},
+  "negative_control_three_above_staggered_row_at_q_17_over_4":{"squares":7,"corners":28,"physical_SAT_pairs":21,"squared_radius":"17/4"},
+  "scope":"Finite exact regressions, NOT universal optimality, not an independent full audit, and not Lean verification. Source bytes matched to committed Git blob before execution; this committed JSON is the same report data with compact whitespace."
+}

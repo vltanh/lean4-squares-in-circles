@@ -1,0 +1,1360 @@
+# n=9 — two-load reciprocal continuation: progress and exact evidence
+
+**Date:** 2026-10-23 UTC. **Read base:** `a89802cd834aef3a96d9622bd4829a2c49df17fd` on PR #11. This continues QUADRANT_BLOCK_PROGRESS.md, ORIGIN_POCKET_PROGRESS.md and PROGRESS_LEDGER.md without rewriting their historical claims.
+
+**Current global status, October24,2026, America/Chicago:** P.ALL, Y.ALL, TREE.ALL and TL.COMPLETE are CLOSED hand. Six whole coarse cells are closed: C1.3.b0,C1.4.b0,C1.3.b1,C1.3.b2,C1.4.b1,C2.33.b0;52 remain open. The entire physical boundary-C7 family now has completion capacity one, so the physical boundary graph of a nine-unit packing is a path forest. Every surviving selected component is mixed, has5–9 bodies and3–7 noncollinear loaded resultants, with all other physical squares retained. The unrestricted theorem and complete equality necessity remain OPEN. Local root and separate audits do not complete the earlier full-chain audit or standard-kernel integration. Historical entries below preserve their checkpoint claims; later entries supersede them. No Lean compilation or CI was run. C1.4.b1 is closed at the declared canonical radius/Phi minimizer; only C1.5.b0 remains among five-body cells, now only its house and four-load-fan branches.
+
+## 1. Completed work and source provenance
+
+| UTC, 2026-10-23 | Commit | Deliverable | Exact scope |
+|---|---|---|---|
+| 19:24:10 | [248202d](https://github.com/vltanh/lean4-squares-in-circles/commit/248202dba5d73d408f2a2f1d39ed06229fcbecb2) | TWO_LOAD_RECIPROCAL_RIGIDITY.md | Every physical positive component with exactly two circle-loaded bodies has parallel pair forces; no tree or simple-cycle assumption |
+| 19:25:49 | [05e15a0](https://github.com/vltanh/lean4-squares-in-circles/commit/05e15a02a345b7311db90fc3643f876ee14666ae) | FOUR_BODY_CYCLIC_CELL_CLOSED.md | Every four-body biconnected positive component is excluded in the explicit radius window; completes the diamond load pattern |
+| Subsequent clarification | [9fad28e](https://github.com/vltanh/lean4-squares-in-circles/commit/9fad28e5dd90011a454c4b1c743fc07fa3036cb7) | Correct section heading / residual domain | General two-load layers have abs(y)<1, NOT automatically the P slider domain abs(y)<=1/2 |
+| Source committed before the pinned run | [0d4c958](https://github.com/vltanh/lean4-squares-in-circles/commit/0d4c9588b974a2ce986a077a10036013e7f1f164) | check_two_load_reciprocals.py | Exact standard-library finite regressions; source matched to the Git blob before execution |
+| 19:32:40.835172–19:32:40.842767, actual execution | source 0d4c958 | Pinned local run | PASS, Python 3.13.5, exit 0 |
+| Report record/correction | [4843058](https://github.com/vltanh/lean4-squares-in-circles/commit/48430583e24c30192ab2b4683574de8125833e20) | TWO_LOAD_RECIPROCAL_EXACT_CHECK.json | Correct report data; repairs an initial manual transcription of the three-loaded control's areas to +4/3 and -4/3 |
+
+The already committed ACUTE_LOADED_CONTACT_GRAPH.md (`690f245`) and PARALLEL_TRANSMISSION_AND_FOUR_CYCLES.md (`a89802c`) are inputs. Their four-cycle exclusion is not counted again as a new result.
+
+## 2. New theorem: force-polygon area, not another angle window
+
+At the physical contact-point incidence graph, each body and each contact junction has a force polygon whose edge directions follow the planar cyclic order. For square corners this uses the equality between the inward tangent quadrant and the negative outward normal quadrant. Adjacent loaded circle atoms can be replaced by their resultant through an empty exterior cap, preserving the cyclic order.
+
+With exactly two loaded bodies, add one exterior vertex with two opposite resultant-load edges. A face-potential integration gives globally glued reciprocal force polygons. Their signed areas cancel pairwise over the primal edges. Every finite polygon has nonnegative area; the two-edge exterior polygon has area zero. Therefore every polygon is degenerate and all aggregated forces are parallel.
+
+A separate extreme-ray argument at three/four-body junctions recovers parallelism of **each original pair force**, not just its aggregate. This is proved without assuming the body-pair graph planar or equating the 19-term translational stress with the 27-atom physical force/torque certificate.
+
+**Research-window consequence:** for 79/40<=R<=sqrt(Q), every two-loaded component has q=17/4, two radial side-normal loaded endpoints at (+/-3/2,0), and axis-aligned unloaded bodies in the two layers x=+/-1/2. Every directed endpoint-to-endpoint path has exactly two internal squares. The strict point-contact normal convention limits each layer to at most two bodies, hence total component size is 4, 5 or 6. All two-loaded 7–9-body components and all triangle-containing two-loaded components are excluded.
+
+**Important nonclaim:** five- and six-body two-loaded cores can genuinely branch or have cycles. Their inner heights need not lie in [-1/2,1/2]; their remaining-square capacities are open. The four-body case is P, but a larger component is not silently reduced to P.ALL by choosing an arbitrary path.
+
+## 3. Entire coarse cell C1.4.b0 now closed
+
+The exhaustive four-body biconnected simple graphs are C4, the diamond K4-e, and K4. The channel theorem already excluded all C4 load patterns; the loaded-noncontact rule excludes K4. For the diamond it leaves only the two nonadjacent tips loaded. The new parallel-force theorem excludes that residual: three positive contacts cannot form a triangle of pairwise touching, pairwise interior-disjoint positive-length projection intervals.
+
+This is a complete cell exclusion for **all** square orientations, contact points and load allocations, regardless of the five other physical squares. It is not a sample adjacency or a small perturbation theorem.
+
+## 4. Pinned finite execution
+
+Committed script: `research/nine/check_two_load_reciprocals.py`, commit `0d4c9588b974a2ce986a077a10036013e7f1f164`.
+
+- Source Git blob SHA-1: `1c379f90967ff5f36d5b1a54cbc1a1eb4ecbc1f3`.
+- Source SHA-256: `3398c22593628d4c0253e76bfd9a7639b7e507a08d80da7ff20d758402d81a1c`.
+- Actual run: 2026-10-23 19:32:40.835172–19:32:40.842767 UTC, Python 3.13.5, exit 0.
+- Report: [TWO_LOAD_RECIPROCAL_EXACT_CHECK.json](TWO_LOAD_RECIPROCAL_EXACT_CHECK.json); compact formatting preserves the executed values.
+
+```sh
+python check_two_load_reciprocals.py \
+  --source-commit 0d4c9588b974a2ce986a077a10036013e7f1f164 \
+  --output TWO_LOAD_RECIPROCAL_EXACT_CHECK.json
+```
+
+The checker uses exact Fraction arithmetic and a rational polar-order comparator; no floating angles, optimizer or external packages.
+
+**Passed finite checks:**
+- 12 exact radius/window comparisons;
+- all 64 labelled simple graphs on four vertices, recovering exactly three labelled C4 graphs, six diamonds and one K4 as the biconnected cases;
+- every loaded subset of each such graph, with the precise surviving noncontact patterns (two opposite C4 vertices or two nonadjacent diamond tips);
+- five complete physical square/stress examples, each with all corners, all true pairwise SAT tests, every genuine force point, exact center/torque equilibrium and normalized circle load;
+- planar incidence rotation systems, Euler characteristic, exact dual face-potential integration, signed-area cancellation and weak convexity of every finite force polygon.
+
+## 5. Negative controls and scope safeguards
+
+1. **Three loaded bodies:** a nonaligned physical Y core has finite reciprocal area +4/3 at its unloaded branching body and exterior area -4/3. Its pair forces are not parallel. Thus the two-loaded premise cannot be dropped.
+2. **Wrong cyclic order:** an abstract planar balanced vector graph with two exterior edges has two opposite finite polygon areas, -1 and +1. It violates the physical cyclic-direction hypothesis. Equilibrium and area cancellation alone do not imply parallelism; the square-specific ordering proof is essential.
+3. **Nonzero channel heights:** a physical two-loaded six-cycle with inner centers at (+/-1/2,+/-3/5) satisfies every exact physical and force/torque test. No inner center lies in the original P slider range. Therefore choosing a channel does not automatically produce a P skeleton.
+4. **Not just simple cycles:** a six-body two-loaded theta graph with seven positive contacts is physically realizable and has zero force-polygon areas. The new theorem does not misclassify it as a simple cycle or exclude the core instead of its completion.
+5. **Five-body cyclic component with bridge:** an exact example is retained; larger coarse cells are not marked closed merely because two-loaded four-body components are excluded.
+
+## 6. Audit priorities and next actual theorem
+
+Independent review must check the physical junction direction order, replacement of adjacent circle atoms by an exterior port, face-potential existence for repeated faces/degenerate polygons, and recovery of pair normals from junction aggregates. These are the analytic proof's critical steps; finite regressions do not certify them generally.
+
+**Open at the earlier reciprocal checkpoint (superseded for five/six bodies by the continuation below):** P.ALL, Y.ALL, full five-/six-body parallel-core completions, all other open cyclic cells with their physical completion constraints, the explicit lower-window prerequisite in final assembly, unrestricted equality, independent full audit and Lean/integration.
+
+**Next completion criterion:** use the new invariant to finish whole remaining load/adjacency families or a full physical completion theorem. Do not infer that a cell with >=3-loaded possibilities is closed from the two-load result, and do not turn the 58-cell ledger into 56 independent angle-grid searches.
+
+## 7. Final rerun and ticked-roadmap synchronization
+
+The identical source was rerun at **2026-10-23 19:44:32.616295–19:44:32.623763 UTC**, Python 3.13.5, exit 0. Its Git blob and SHA-256 were recomputed and matched again. All five physical examples passed, including the three-loaded control's nonzero reciprocal areas +4/3 and -4/3. The pinned committed JSON retains the original 19:32 run; this rerun is an additional regression, not an independent audit.
+
+The following documentation commits synchronize all current entry points without changing the mathematical theorem scopes:
+
+| Commit | Current artifact / checked state |
+|---|---|
+| 2d841b84c20b906e043a7ed71be0d551bb023089 | CYCLIC_CELL_LEDGER.md: C1.4.b0 checked, all 56 open rows retained |
+| 6e674d0a03a19b60e71fe1d697eddc99f5892738 | DEEP_GATED_ROADMAP.md: nested TL.R / TL.P / TL.G contracts, residual capacities and audit gates |
+| 40f9bb49e09810b41dfa3892b7a36fbbd9ff5d29 | G2_SUBGATES.md: new global two-load reduction and whole-cell status |
+| 658cbfc476e110e228e8e315f943f47354c6ecd1 | ROADMAP.md: concise actual frontier and verification scope |
+| 14b926dc5c0462e9a6a938be70988130dfaedd1a | README.md: current handoff; GitHub timestamp **2026-10-23 19:47:47 UTC** |
+
+PR #11's title and body were updated after those commits, retaining **draft** status. No merge, CI, Lean build or independent mathematical audit was requested or performed. The unrestricted theorem and P/Y remain open; the finished result is one whole coarse-cell exclusion plus a general invariant spanning every two-loaded physical component. The unchanged upper-bound construction remains at Q.
+
+
+## Completion continuation: every two-load completion now reduces to P
+
+This section supersedes the earlier open five-/six-body status while preserving the historical record above.
+
+| Commit | Complete hand result |
+|---|---|
+| [e4254b1](https://github.com/vltanh/lean4-squares-in-circles/commit/e4254b118da9b8383159182892a7309dd79531d7) | At most seven physical circle-touching squares in the declared window, using open arcs longer than pi/4 on the radius-5/4 circle |
+| [52fec6f](https://github.com/vltanh/lean4-squares-in-circles/commit/52fec6f9e6258261bfe878a4d938e9473eb6cdc3) | Whole six-body two-load completion excluded: at most two arbitrary extras; includes new diagonal-center and cap-sign piercing lemmas |
+| [1d28008](https://github.com/vltanh/lean4-squares-in-circles/commit/1d2800894e2261c0c3aa805b8b2980b849575e0f) | No common point of three circle-touching unit squares for R>sqrt(2) |
+| [b46db3a](https://github.com/vltanh/lean4-squares-in-circles/commit/b46db3a27d0e8d261df4e43d9140dc07f8d91b54) | Whole five-body reduction and half-disk pair rigidity; every two-loaded nine-square completion contains actual family P |
+
+### Six-body capacity
+
+Every extra center lies between x=-1 and x=1. The doubled columns force it above or below the whole corresponding column; core barriers route it into y>=1/2 or y<=-1/2. The cap theorem gives at most two per side with opposite center signs. Two on one side force both opposite column heights beyond 1/2, excluding every extra on the other side. Hence at most two extras fit.
+
+### Five-body reduction
+
+Torque at the terminal adjacent to the singleton column forces that singleton height into [-1/2,1/2]. If a doubled-column height also lies there, an actual P skeleton is present. Otherwise the doubled heights lie strictly below -1/2 and above 1/2, forcing all added centers into the opposite open horizontal half-strip. After reflection, at most one upper extra fits by cap-sign piercing. A lower square crossing the axis would put its rightmost vertex strictly inside the lower doubled-column core, so all lower squares stay in the lower half-disk. Three there would have a close horizontal pair, forcing an excluded center on x=0. Thus this complementary branch has at most three extras.
+
+### Exact remaining frontier and review
+
+The six-cycle and theta examples are still physically valid cores; their completion to nine is excluded. Five-body cores are still valid; their completions are reduced to P. P.ALL remains open, and the proof does not turn the six-body exclusion into the closure of a coarse cell with other load counts.
+
+The global resultant-direction continuation in CYCLIC_GLOBAL_CONTINUATION.md further shows that the remaining selected components have 3–7 loaded bodies with noncollinear resultants. Their exterior force polygon can have positive area, so the two-load zero-area proof does not force parallel channels there. P.ALL, Y.ALL, the remaining multi-load metric geometry, lower-window assembly, unrestricted equality and the full audit/integration chain remain open.
+
+Separate reasoning passes checked the new cap inequalities, pair support minimum and equality, six-body coupling, singleton torque and five-body vertex routing. No numerical probe is used as a proof premise. No Lean compilation or CI was run in this continuation. These are hand proofs with local review, not a completed independent audit of the entire manuscript.
+
+
+## Boundary graph continuation and exact method obstructions
+
+Read base: 85cfcb6b31b7761c3c0c22112a9a28198694cfe2. The seven intervening imports since 2271166 were read before work resumed; they contain alternative proofs of already closed two-load results and do not add gate closures.
+
+| Commit | Result and scope |
+|---|---|
+| [6f1d22e](https://github.com/vltanh/lean4-squares-in-circles/commit/6f1d22e9db8d546acfe1f094f70d6620c4838088) | Global circle-contact angular order and shadow proof; positive components consisting entirely of circle-touching bodies reduce to C7. Also records the exact regular C7 witness/capacity and the additive-measure impossibility theorem. |
+| [411924d](https://github.com/vltanh/lean4-squares-in-circles/commit/411924df56b00d9f0e6a73bca86c9712b012b0ea) | Corrects one expanded local coordinate in the ring witness: (C_(j+1)−C_j)·u_j=−2sd, so the side contact coordinate is xi=1/2−cos(2delta), in(−1/2,0). The global contact definition, force/torque identities, radius and capacity remain unchanged. |
+
+### Finished universal implication
+
+CIRCLE_CONTACT_ANGULAR_ORDER.md proves the narrow center annulus, >36-degree separation of distinct circle-touching centers, <72-degree span of contacts, and the <60-degree angular shadow of every circle-touching square. Hence the full physical circle-touching graph is paths or one C7. Any positive component with all bodies circle-touching and at least one positive circle multiplier has no leaves: an unloaded leaf fails force balance; a loaded leaf would require a radial contact, excluded geometrically for R>3/2. Thus it is C7 and every other physical square is circle-clear. This reduction allows zero circle multipliers on some boundary bodies.
+
+### Exact examples and method limits
+
+SEVEN_LOADED_RING_COUNTEREXAMPLE.md gives radius R=cos(pi/7)+1/(2sin(pi/7)), with 79/40<R<103/50 and R²<17/4. Every neighboring contact is a genuine side/vertex contact; all other pairs are strictly separated; normalized positive circle and contact multipliers satisfy force and torque. Any origin-centered unit square fits as an eighth. For arbitrary added-square positions and orientations, the seven center disks exclude all additional centers of radius at least 1/2, proving at most one added square.
+
+ADDITIVE_MEASURE_OBSTRUCTION.md proves a fractional packing of total mass 181/20 using rotational orbits of three explicit squares in D_(17/4). Pointwise angular occupancy is at most one. Tonelli's theorem therefore forces any nonnegative Borel measure assigning at least one to every square interior to have total mass at least181/20>9. This rules out the entire independent-square additive measure route, not merely one numerical weighting choice.
+
+### Review and execution scope
+
+The angular-order/shadow derivation and ring covering inequalities received separate hand review. A further global-coordinate check caught the ring expansion sign error after the first commit; the immediate correction above preserves that audit trail. The additive-measure proof received a separate full reasoning pass, including all angular branch and atomic-measure endpoints.
+
+An exact Fraction evaluation reproduced the three angular-rectangle values 5/8,1341/1600,3721/4000 and the ring covering values 7/20,1597/1600,17/25,3893/8000. It also checked the positive rational gaps in the sine and tangent estimates for the additive-measure proof. These finite arithmetic checks supplement the displayed hand arguments; they are not a proof of the unrestricted packing theorem.
+
+Exploratory sampled linear programs and square-pose searches guided or rejected candidate arguments. They are not premises of any committed theorem. In particular, a sampled half-pocket measure of total three is not a universal certificate. No Lean compilation or CI was run.
+
+### Remaining work, with unchanged whole-cell count
+
+P.ALL and Y.ALL remain open. The general C7 completion with two arbitrary circle-clear squares remains open, as do components containing a circle-clear body. The regular-ring capacity is not extrapolated to arbitrary rings. The count remains two whole coarse cells closed and 56 open, with the unrestricted radius, equality, lower-window assembly, independent full audit and Lean/integration obligations unchanged.
+
+
+## 2026-10-23 23:53 UTC — complete 135-degree pocket and quantitative path tools
+
+Base commit: `c510ed141bfcabd8f707012245acf9a302fcb2be`.
+
+- **CLOSED WEDGE.2:** `WEDGE_135_CAPACITY_ONE.md` exhausts both owners and all pair-normal angles, using the two terminal frames. Every screened pocket of aperture at most 135 degrees has capacity one.
+- **CLOSED analytic inputs:** `OWNED_AXIS_TERMINAL_CAP_EXCLUSION.md`, `POSITIVE_NORMAL_CAP_FLOOR_EXCLUSION.md`, and `RIGHT_OWNED_DOWNWARD_SEPARATOR.md`. These use direct support inequalities, concavity, completed squares and explicit polynomial identities; no interval-cover or generated coefficient table is a proof premise.
+- **CLOSED sharp high-center bound:** `HIGH_CENTER_COMMON_POINT.md` proves that every square with center height greater than 3/sqrt(5) contains (0,sqrt(5)/2) strictly. The reflected radial pair proves sharpness.
+- **CLOSED quantitative terminal cap:** `TERMINAL_CAP_SECTION_EXCLUSION.md` proves the all-orientation cap bound at 19/120; the complementary center threshold 161/120 exceeds 3/sqrt(5) by the exact comparison 25921>25920.
+
+The cap proofs and high-center theorem received separate reasoning audits; the quantitative adapter's displayed polynomial identities and endpoint values were also checked with exact rational arithmetic. A zero-coordinate separator boundary was corrected before committing: the up-right normal (0,1) gives a weak floor at y=1/2, already covered by the cap theorem.
+
+**Unchanged open parents:** P.ALL, Y.ALL, arbitrary positive C7 completion, mixed 3–7-load components, unrestricted radius and equality classification. The general annular same-sign pair statement is not inferred from the 135-degree reflection argument. Two coarse cells remain closed and 56 open. No Lean compilation or CI was run.
+
+
+## 2026-10-24 00:07 UTC — P.ALL and Y.ALL complete; all trees and two-load components excluded
+
+Base commit: `482ef277981c7898797a8df6b0e78e1100192924`.
+
+### Complete physical capacity theorems
+
+- **P.ALL CLOSED:** `P_ALL_COMPLETION.md` covers every slider pair in the closed square [-1/2,1/2]^2, every extra-square orientation, and every physical separator. The proof routes extras into two half-pockets of capacity three. A putative noncanonical upper triple contains a small inner square whose lower vertical-axis section is below 19/120. Both slider tops are at most that section height, so every lower extra has center below -161/120<-3/sqrt(5) and contains the same interior point. A canonical upper triple also leaves at most one lower extra. Thus five extras are impossible.
+- **Complete local dependencies:** `P_HALF_POCKET_SECTION_PROOF.md` proves the y=1 section theorem and capacity three; `LOW_OUTER_SQUARE_MEETS_N_DISK.md` and `HIGH_OUTER_SQUARE_MEETS_N_DISK.md` prove strict intersection with the open north disk; `ANNULAR_SAME_SIDE_PAIR_EXCLUSION.md` exhausts all pair directions without an orientation or separator-owner restriction.
+- **HALF.3 CLOSED:** `HALF_POCKET_TRIPLE_RIGIDITY.md` proves that every upper E/W triple is exactly the canonical aligned triple. The decisive inequality x<(q/p)(1/sqrt(2)-y), forced by the right neighbor of a small inner square, makes every direction toward the left neighbor impossible. Widening and the equality classification give capacity two for every screened pocket of aperture strictly below 180 degrees. This theorem also supplies a shorter independent P completion assembly; the quantitative proof is retained in full.
+- **Y.ALL CLOSED:** `Y_ALL_COMPLETION.md` uses the actual core and terminals to screen three full rays, including origin and endpoints. Each whole extra square belongs to one pocket; the occupied K quadrant has no extra slot. The two remaining apertures sum to 270 degrees and are each strictly below 180 degrees. Their capacities are one and two, excluding four extras for every alpha/theta in the complete open parameter rectangle. Angular endpoints reduce to the closed P family.
+
+### Exact structural consequences
+
+`TREE_AND_TWO_LOAD_COMPLETION.md` assembles two complete implications in the explicit window 79/40<=R<=sqrt(1105)/16:
+
+1. No selected positive component can be a tree, even if another component has cycles. The exhaustive six-profile cover reduces its former survivors to P or Y, both now excluded from nine-square completion. All six original tree rows are closed.
+2. No selected positive component can have exactly two circle-loaded bodies, including cyclic components. Reciprocal rigidity leaves four, five, or six aligned bodies at q=17/4. Four bodies give P; five bodies reduce to P or total capacity eight; six bodies already have total capacity eight.
+
+The lower-window prerequisite is retained as a prior-theorem dependency and is not claimed to follow from these capacities.
+
+### Review and exact scope
+
+The parent P argument and annular-pair theorem received independent complete hand audits, including zero horizontal coordinate, both slider constraints, all separator directions and the exact threshold comparison 25921>25920. The section and disk-intersection manuscripts received separate all-case review. The HALF.3 manuscript received two separate hand audits of its frame formulas, two factorizations, strict endpoint inequalities, north-disk routing and wedge-widening consequence. The Y and structural assemblies were checked against the actual physical screen and earlier component reductions.
+
+These are analytic proofs; exploratory numerical searches are not premises. No Lean compilation, CI, or new finite sampling certificate is claimed. The complete prerequisite chain still needs a full independent audit and subsequent formalization.
+
+### Remaining global obligations
+
+Every surviving selected component is cyclic with 3–7 noncollinear loaded resultants. A boundary-only component is the general physical C7, whose two-circle-clear-square completion remains open. Mixed components containing a circle-clear body also remain open. The unrestricted lower bound, all equality necessity, explicit lower-window assembly, full-chain audit and standard-kernel integration remain unfinished. The coarse cyclic ledger is still two whole cells closed and 56 open; tree and two-load closure is not used to tick a cell with unresolved multi-load realizations.
+
+
+## 2026-10-24 00:13 UTC — explicit lower-window dependency assembled
+
+Base commit: `1760270deb45190883a23fb54a064a812a6bed6b`.
+
+`LOWER_WINDOW_FROM_EIGHT.md` supplies the exact declared R>=79/40 prerequisite for every physical nine-square packing. Deleting one square preserves the original Packing semantics. The actual existing `SquaresInCircles.optimal_radius 8` theorem then gives R>=EightStatement.radius; `StatementLink.selected_stationary.q_lower` and the stated square-root definition give EightStatement.radius>=79/40. The source declarations were read at the pinned base commit, including the direct `Eight.lower_bound` alternative and the statement/proof radius link.
+
+This closes G0.W.2 as an explicit imported-theorem assembly. It does not replace the n=8 arithmetic-table dependencies: the actual Analysis import includes Generated.LocalStationaryBounds, and the normalization/capture chain has further generated bounds. G0.W.3 remains separate if a fully standalone table-free hand lower bound is required. The direct P/Y capacities use only their own q=17/4 geometry.
+
+No Lean compilation or CI was run. General C7 completion, mixed cyclic completion, unrestricted sharpness/equality and full-chain verification remain open; no cyclic cell count changes.
+
+### Additional complete geometric input — centered forty-degree arcs
+
+`CENTERED_INNER_ARC.md` proves that every circle-touching square in the full declared radius window contains the entire closed arc of |p|=5/4 within 20 degrees of its center direction in its OPEN interior. The exact trigonometric comparisons are cos(pi/9)>15/16 and sin(pi/9)<11/32. Both own-coordinate deviations reduce to a cubic whose expansion about s=3/8 has the positive lower bound 117/40960. Consequently every pair of physically disjoint circle-touching squares has minor center-angle separation strictly greater than 40 degrees.
+
+The entire derivation received two independent hand audits, including all constants and the shifted-cubic certificate. It strengthens the earlier 36-degree necessary bound but does not by itself exclude either global cyclic completion class.
+
+
+## 2026-10-24 — all nine-body simple positive cycles excluded
+
+SIMPLE_POSITIVE_CYCLE_BODY_BOUND.md supplies a complete hand theorem in the declared radius window. A selected simple positive component has at most eight bodies. Its strict point-only vertex/vertex normal convention is the one already available from the physical stress construction.
+
+- [x] Exact top-cap contact bound at 7/10.
+- [x] Full four-square-junction crossing exclusion, including the remaining axis-position block case.
+- [x] Local noncrossing replacement, Jordan cycle and exterior attachment paths.
+- [x] Circular center order through disjoint paths in the radius-5/4 annulus.
+- [x] Channel bounds for zero, one and two clear transmitters, giving more than 40 degrees per cycle body.
+- [x] Two separate hand audits covered the inequalities, degeneracies and topology.
+- [ ] Smaller-cycle completion and branching cyclic components remain open.
+
+This is a whole simple-cycle cardinality theorem, not a closure of the entire nine-body biconnected cell. All 56 currently open coarse rows remain unchecked. No Lean compilation, CI or numerical premise is used.
+
+
+## 2026-10-24 — full boundary-cycle force geometry and exterior-pocket exclusion
+
+C7_FORCE_POLYGON.md proves that every all-boundary positive seven-cycle has an embedded convex polygon whose vertices lie in its actual squares and whose edges follow the physical contact forces through their true application points. A loaded vertex is radial to its circle resultant; a zero-load body contributes a straight transmission vertex. The complete one-/two-circle-corner normal-cone analysis and the winding/convexity argument received an independent hand audit.
+
+C7_COMPLETION_LOCALIZATION.md proves that every extra square lies inside this polygon. The center/contact Jordan curve and one circle spoke per body bound seven exterior cells. Within any occupied exterior cell, dilating all extra centers about the two boundary bodies' common point strictly preserves obstacle separations and preserves every mutual separation. Until first circle contact the cell confines the motion. The resulting eighth circle-touching body contradicts the universal budget. A homotopy within the ring bodies then transfers winding to the convex concurrence polygon. Two separate full hand audits passed.
+
+- [x] CY.C7.POLYGON: whole positive boundary-cycle structural theorem.
+- [x] CY.C7.LOCALIZE: all exterior pockets empty; every completion square is contained in the concurrence polygon.
+- [ ] CY.C7.COMPLETE: the two-square capacity inside that polygon remains open.
+- [ ] CY.MIXED.COMPLETE: cyclic components with circle-clear bodies remain open.
+
+No coarse cell is marked closed by these necessary conditions. The unrestricted sharp theorem and equality necessity remain open. No Lean compilation, CI, numerical search or certificate table is a premise of either new theorem.
+
+
+## 2026-10-24 01:02 UTC — planar physical certificate and unique positive component
+
+PHYSICAL_BODY_GRAPH_UNCROSSING.md proves existence of a physical certificate whose positive body-pair graph is planar and all physical circle-touching positive vertices lie on the exterior face. Compatible strict normals at a four-square junction permit an exact uncrossing identity at the same actual contact point, preserving each body's force and torque. The added forces are original shared-side endpoint rows. Thinning only the surviving atoms restores the 27-atom bound without adding a removed crossing; aggregation retains the graph. Optional finite normal avoidances remain available.
+
+UNIQUE_POSITIVE_COMPONENT.md attaches every positive circle corner as a boundary port of that embedding. Jordan crosscuts rule out alternating port sets of different components. Each balanced component has all consecutive port gaps at most pi; another component's ports would lie strictly in one gap and could not balance. This includes two antipodal ports. A virial sum excludes a positive contact component without circle weight. Thus there is exactly one positive component, and every other square has zero stress.
+
+- [x] CY.PLANAR: complete construction, root and separate independent hand audit.
+- [x] CY.UNIQUE: complete global uniqueness deduction, root and separate independent hand audit.
+- [x] CY.ZERO: all other physical squares retained as zero-stress completion bodies.
+- [ ] CY.SHARP: C7 capacity and mixed cyclic completion remain open, including the four-body triangle-plus-leaf cell.
+
+No universal claim about arbitrary physical body graphs is made. The selected unique component has 4–9 bodies and 3–7 noncollinear loaded resultants in the declared window. The coarse cell count remains two closed and 56 open. No Lean compilation or CI was run.
+
+
+## 2026-10-24 — uniform contact-ring hole capacities and empty boundary-pair pockets
+
+CONTACT_RING_HOLE_AREA.md proves the complete bound `area(H) <= (k/4) cot(pi/k)` for every physical Jordan contact ring with 3<=k<=6, without a containing-radius assumption. Contracting each center/contact path inside its actual square gives a limiting contact polygon with winding only zero or one. A chord of length l>1 leaves an occupied inward square piece of area at least `sqrt(l*l-1)/2`; these pieces must be subtracted before counting completion area. A finite exact Fourier identity bounds signed polygon area by `cot(pi/k)/4` times the sum of squared edge lengths. The one-variable contribution is maximized at l=1 for k<=6. Thus three-, four-, five- and six-body rings have interior unit-square capacities 0, 1, 1 and 2 respectively.
+
+CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md proves that an exterior pocket of any touching pair of circle-boundary squares is empty in the declared window. Every circle corner is within 20 degrees of its body's center direction, preserving circular order. Dilation of all pocket squares away from the pair's shared point preserves actual separations until one first touches the circle; its intervening center direction contradicts the angular-neighbor rule. A separate direct contact-triangle argument is also included.
+
+- [x] CY.HOLE.3-6: full continuous-domain interior capacities, with separate root and independent hand audits.
+- [x] CY.OUTERPAIR: full exterior boundary-pair pocket exclusion, with separate root and independent hand audits.
+- [ ] CY.TRIANGLELEAF: at most four extras jointly in the two larger articulation/leaf regions remains unproved. No two-per-region claim is made.
+- [ ] CY.C7.COMPLETE / CY.MIXED.COMPLETE: general C7 and mixed cyclic completion remain open.
+
+The exact comparison for k=5 and the nonnegative winding argument are included in the manuscript. No optimizer, finite parameter cover, Lean compilation or CI run is used. The coarse cyclic count remains two whole cells closed and 56 open; the unrestricted lower bound and equality necessity remain open.
+
+
+## October 23, 2026, 20:28 CDT / October 24, 01:28 UTC — deep ordered roadmap reconciliation
+
+Reconciled the live PR head `f353540845b94fcc7e41e29f8eccf4fffd951af3` against the roadmap. Consolidated DEEP_GATED_ROADMAP.md around the current proved dependency chain, then added the full G3 execution tree: selected planar certificate and uniqueness; exhaustive boundary-only versus mixed split; the exact C7 capacity target and explicitly alternative proof routes; the first complete mixed cell C1.3.b1; full D and S articulation domains; finite semantic refinement contracts for every remaining coarse cell; and sharp parent assembly. G4 universal quantifiers, G5 equality necessity/converse and G6 full-chain audit received deeper exit subgates.
+
+The first active mathematical target is triangle-plus-leaf completion. The aligned S articulation has a full shared-side slider interval, which is not covered by the zero-tilt limits of its two tilted-vertex formulas. This boundary case is retained explicitly. The D branch retains the whole strict slider interval and its selected-normal endpoint explanation. Both require a joint capacity at most four in the two residual regions, not an assumed two-per-region bound.
+
+This commit changes proof planning and status only. It does not close C1.3.b1, C7 completion, any additional coarse cell, T9 or equality. Counts remain two closed and 56 open. Separate agents are working on the entire D branch, entire S branch and entire positive C7 capacity. No Lean compilation or CI was run.
+
+
+## October 23, 2026 — first ordered closures after deep-roadmap commit d1be168
+
+TRIANGLE_LEAF_CORE_REDUCTION.md completes G3.M4.0: exactly three loaded bodies, closed physical noncontacts from the leaf to the two triangle tips, the full force/common-moment system, the acute westward load cone, exhaustive D/S articulation formulas, and routing of every extra into two residual regions. The common triple-junction case is treated as an actual three-port tree, not an artificial triangular hole. A separate independent hand audit passed.
+
+S_LEAF_TRIANGLE_EXCLUSION.md closes the entire S-leaf branch G3.M4.S, including all aligned heights and both tilted families. After a whole-packing reflection the articulation satisfies x+y>=d-3/2. Exact radius comparisons exclude the closed 90-degree circle arc with endpoint directions(-7,3)/sqrt(58) and(-3,-7)/sqrt(58) from every neighbor's circle corners. The positive circle corners of the touching B/C pair are pairwise acute and have a negative horizontal weighted sum. They must lie on both sides of the forbidden arc, contradicting acuteness. Both root and separate independent audits passed. No completion capacity assumption is needed because the entire stressed core is impossible.
+
+BOUNDARY_SEVEN_CYCLE_CENTER_DIAMETER.md closes G3.B.R.DIAM.2 for all physical boundary C7 rings, without a stress premise. Exact shadow bounds and a common containing disk for all possible distant endpoint sectors show every three-contact path has endpoint distance<3; shorter paths are immediate. Root and separate independent audits passed. The enclosing-two=>diameter>=3 extraction remains open and is not inferred from far-vertex projections.
+
+- [x] G3.M4.0 / C1.3.b1.REDUCE.
+- [x] G3.M4.S, including S0 and S+/S-.
+- [x] G3.B.R.DIAM.2.
+- [ ] G3.M4.D and C1.3.b1.ALL remain open.
+- [ ] G3.B.CAP, remaining mixed cells, T9 and full equality remain open.
+
+The six files in roadmap commit d1be168 were read back from GitHub and matched exactly. No Lean compilation or CI was run. The coarse inventory still has two whole cells closed and 56 open.
+
+
+## October 23, 2026, 21:00 CDT / October 24, 02:00 UTC — complete D contact reduction and strict center-cover piercing
+
+D_LEAF_ARTICULATION_CONTACT_LOCALIZATION.md proves the full leftward-reaction theorem for every D-leaf triangle-plus-leaf core. Its support-span lemma includes arbitrary shared-side application means. Exact circle-corner acuteness excludes rightward reactions, and contact spans exclude vertical reactions. The remaining alternatives are parallel leftward reactions or opposite left-corner reactions with the exact height/slope relation. Root and another independent hand audit passed.
+
+D_LEAF_GENERIC_CONTACT_SELECTION.md resolves the variable-application issue before choosing generic normals. An unloaded articulation determinant is a nonzero linear condition in any free strict vertex/vertex articulation normal. Finite avoidance is done before the physical stress argument and retains the matched four-junction normal pairs, uncrossing, conic thinning and unique planar component. Root independent audit passed. An exact positive physical D core at79/40<R<2 is retained as a control: the claim concerns a selected necessary certificate, not every possible stress. The entire D.PARALLEL and D.OBLIQUE branches remain open and now have detailed universal exit gates.
+
+CENTER_COVER_PIERCING.md proves the full all-orientation radial-tail inequality and its strict common-point consequence: if the boundary-square centers fit in an open radius3/2 disk, the bounded complementary region has unit-square capacity at most1. Root independent audit passed for this theorem. The elementary minimum-enclosing-disk reduction further identifies the only possible C7 obstruction as an acute supporting triple with circumradius>=3/2. Pattern(1,1,5) is excluded; the other three positive graph-gap partitions remain open in this commit.
+
+All nine files in commit697af9b were read back from GitHub and matched the submitted contents. No Lean compilation or CI was run. No whole coarse cell closes in this update: two remain closed and56 open; T9 and unrestricted equality remain open.
+
+
+## October 23, 2026 — the entire selected oblique D branch is excluded
+
+D_LEAF_NONPARALLEL_OWNER_EXCLUSION.md completes G3.M4.D.OBLIQUE. At least one loaded neighbor has a unique physical circle corner because one articulation contact is too close to the origin for a two-corner body. Simultaneous finite normal selection then removes a B/C vertex/vertex edge, handling both nonparallel and parallel fixed-force lines without a degenerate determinant claim. Every remaining B/C side owner, normal sign and actual application is covered.
+
+The exact contact chart identifies actual positive-weight circle corners. If C has two physical circle corners, h<1/4 and the opposite B corner falls strictly short of the circle. If C has a unique corner, concurrence gives0<tau<1 and forces phi+psi<pi/4. A direct bound for h>=1/2 and a monotone pivot for h<=1/2 then put a genuine circle corner below the radius. The proof retains independent frames, unequal angles, all corner weights and the full height interval. Root full independent hand audit passed.
+
+Only the entire parallel-left D branch remains before C1.3.b1 can close. The coarse inventory remains two closed and56 open. The generic-selection manuscript received a second independent audit; the strict-piercing theorem received a second audit and its minimum-disk section passed a separate audit. All nine files in commit1d5b4ed were read back from GitHub and matched. No Lean compilation or CI was run.
+
+
+## October 23, 2026 — complete C1.3.b1 closure, no positive K4, and corrected C7 cover route
+
+D_LEAF_PARALLEL_LEFT_EXCLUSION.md excludes the entire remaining parallel-left D branch. Its aligned-neighbor case retains every shared-side mean and uses a uniform corner-cap inequality; its vertex-supported case derives the full section/contact chart, eliminates every alternate circle mask, treats the coincident vertex/vertex breakpoint, and contradicts the allowed wall height using the two exact torque equations. Root and a separate independent audit passed.
+
+TRIANGLE_LEAF_CELL_CLOSED.md assembles the full S exclusion, complete D localization, simultaneous pre-stress selections, and both exhaustive D exclusions. The assembly passed independent audit. This closes the entire C1.3.b1 cell with all five extra squares retained, and raises the selected positive cyclic component's minimum size to five. The live coarse inventory changes to three whole cells closed and55 open. The next m=5 cells are exactly C1.3.b2, C1.4.b1, C1.5.b0 and C2.33.b0; the deep roadmap now gives all their complete graph/layout branches and nested exit contracts.
+
+NO_POSITIVE_K4_SUBGRAPH.md proves a uniform selected-graph obstruction with no radius premise. An arbitrarily small physical embedding cannot put another body center inside a triangle: a concentric inner square of side19/20 has uniform clearance from the three obstacles, preserves its nonzero winding through the contact-chord homotopy, and has area exceeding the maximum contact-triangle area. Hence every K4 subgraph is impossible. Root and separate independent audits passed. This closes the full K4 branch of C1.4.b1 but not its other graph branches.
+
+BOUNDARY_TWO_CONTACT_SPAN.md proves the entire two-contact endpoint bound below3sqrt(3)/2 in the high-radius range, and excludes every acute minimum-center-disk supporting triple of gap type(1,2,4). Root full audit passed. Together with the earlier(1,1,5) exclusion, this leaves(1,3,3) and(2,2,3) for a positive-stress cover route.
+
+C7_CENTER_COVER_GEOMETRIC_OBSTRUCTION.md gives an exact IVT family of actual physical C7 rings whose three radial centers require covering radius>3/2. All adjacent contacts and nonneighbor separations are proved; the obstruction persists at strictly subcritical radii by uniform continuity. A separate exact outgoing-contact torque identity proves these rings admit no positive C7 stress. Root full audit passed, including the robustness argument. The unstressed center-cover theorem is therefore rejected; the valid strict-piercing criterion remains conditional and the remaining cover gates explicitly retain positive stress. No two-square completion is claimed by the control.
+
+All nine files in commit9a4573d were read back from GitHub and matched. Current handoff, concise roadmap and live ledgers were reconciled around the whole-cell closure; the deep roadmap retains the completed subproofs and supplies the entire five-body frontier. No Lean compilation or CI was run. T9, unrestricted equality and the full prerequisite-chain audit remain open.
+
+
+## October 23, 2026 — five-body graph/load cover, full chain exclusion, empty C4 hole, and C7 block selection
+
+NO_THREE_BOUNDARY_COMMON_NEIGHBORS.md proves the complete selected-embedding obstruction: two vertices cannot have three common positive circle-touching neighbors. Deleting to K2,3 preserves the exterior-face incidence of all surviving boundary vertices, whereas its outer four-cycle can contain only two of the three common neighbors. Root proof and independent audit passed.
+
+FIVE_BODY_BICONNECTED_REDUCTION.md classifies every biconnected simple graph on five vertices by complement paths/cycles and edge count. There are ten abstract types. Three contain K4; the wheel violates connectedness of the induced loaded complement; K2,3, the three-page book and the once-subdivided K4 violate the new common-neighbor obstruction. Only C5, house and the fan over a four-vertex path remain. The manuscript lists all necessary positive-load masks, with physical zero-weight circle contacts and all four extras retained. A one-off standard-library graph count was only a cross-check; the written classification is an exhaustive hand argument and does not depend on a finite computation. Independent audit passed. C1.5.b0 remains open until all three graph families receive full geometry/completion proofs.
+
+TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md closes the entire length-two-arm layout of C1.3.b2. The true radial leaf/transmitter chain gives articulation right support x<1/60. A two-force concurrence lemma requires only one circle-touching neighbor and retains the possible outside-face two-corner concurrence. The embedded three-port order gives positive articulation concurrence and two leftward reactions. Every tilted articulation violates an exact center-cap distance bound. Parallel aligned reactions violate the unit center separation. In every remaining aligned chart, simultaneous finite selections retain both side owners and all corner masks; exact circle-coordinate sums force a+c<1/6 and then a corner norm above Q. Root and separate independent audits passed. The two layouts with two leaves remain open; the full C1.3.b2 parent is not ticked.
+
+FOUR_CYCLE_LEAF_HOLE_EMPTY.md proves capacity zero in the inner hole of the entire C4-plus-leaf branch. An inner unit preserves nonzero winding through arbitrarily small physical routing and the contact-chord homotopy. Coincident contacts give a retraced loop or too-small triangle. Otherwise equality in the complete four-contact area bound forces a regular unit contact polygon and four outward aligned squares. A zero-load ring vertex would require a non-strict axis normal at a point-only vertex contact. If the other three ring vertices are loaded, their exact far-corner equations force R^2=5/2. Both alternatives contradict the declared certificate/window. Root and separate independent audits passed. All surviving C1.4.b1 completion is now exterior, since its diamond holes are triangular and K4 is excluded. The joint exterior capacity remains open.
+
+C7_FIXED_APPLICATION_GENERIC_SELECTION.md proves a complete finite-avoidance theorem for one-circle-corner stars with fixed pair applications. C7_TWO_CIRCLE_CORNER_BLOCKS.md classifies radial vertex shells and all radial-pair contacts, chooses compatible open normal intervals excluding every three-radial run, and proves there are at most four radial bodies. Its exact inner-circle arc argument separately excludes parallel radial pairs in any physical C7. Root audits passed.
+
+C7_SHARED_SIDE_BLOCK_GENERIC_SELECTION.md handles variable shared-side means collectively. Nonzero scalar multiples of J times chosen circle corners give pure translations annihilating every circle force and internal shared-side force, independently of the application positions. Combined with rotation, this gives a nontrivial determinant in each free endpoint normal. All one-active-corner and zero-load masks are listed before KKT, including the single-block closing-edge case, and the choices survive uncrossing/thinning. A surviving free vertex edge therefore meets a shared-side block with a body carrying both positive circle-corner weights. Such a radial body must be an endpoint; the no-parallel-radial theorem makes it the unique physical radial body of that block. Root full audit passed, including the strengthened weight/endpoint conclusion. This does not imply one owner per body or classify every remaining stationary ring.
+
+The live README, concise roadmap, deep roadmap, G2 ledger and complete 58-row cyclic ledger now record these exact scopes. The deep tree adds the full C5/house/fan mask branches, the entire chain closure, every C4 hole-equality gate, and the C7 all-owned versus radial-endpoint-pinned domains. The latter retain all two-owner/zero-owner changes, shared means, zero weights and contact limits. The positive-stress center-cover patterns(1,3,3) and(2,2,3) remain open. Counts stay three whole cells closed and55 open; T9, unrestricted equality and full-chain audit remain open.
+
+All 13 files in commit604c939 were read back from GitHub and matched exactly. No Lean compilation or CI was run. Every commit uses [skip ci], and PR #11 remains draft.
+
+
+## October 23, 2026 — whole S/S and D/S exclusions, C4 adjacent-load closure, and complete C7 free-edge cover
+
+TWO_S_LEAVES_ONE_TRIANGLE_ARTICULATION.md excludes every same-articulation S/S leaf-type configuration. The two radial applications are on a side support, adjacent vertices, or opposite vertices. The first full domain is excluded by an inaccessible150-degree circle arc; adjacent vertices force a needed support face too close to0 for any boundary neighbor; opposite vertices give an inaccessible120-degree arc. Every positive leaf-weight combination points the triangle-tip load into the forbidden arc, contradicting its pairwise acute circle corners. Root and separate independent audits passed.
+
+TWO_MIXED_LEAVES_ONE_TRIANGLE_ARTICULATION.md excludes the entire D/S leaf-type domain at one articulation. The D support makes A aligned; the S support is exhaustively the top side, northeast vertex or northwest vertex. Exact height bounds make the appropriate90- or120-degree circle arc inaccessible for every actual neighbor orientation. Its interior contains every negative leaf-resultant direction. Root and separate independent audits passed. Only D/D remains in the same-articulation layout; the two-distinct-articulation layout also remains open. No full C1.3.b2 closure is claimed.
+
+FOUR_CYCLE_ADJACENT_LOAD_EXCLUSION.md proves a stronger orientation-free geometric detour theorem and closes the full adjacent-loaded-pair C4-with-leaf branch. A radial-leaf articulation is within max(sqrt(R^2-1/4)-2,0) of0. A normal channel through a zero-load transmitter forces the high-radius window and confines its far square to minimum projection>59/60. A complete all-orientation cap lemma then puts that square's entire shadow within atan(13/20). A circle-touching detour square meeting both endpoints would violate the independent strict atan(23/16) boundary shadow bound, with the exact cosine margin21/sqrt(446665)>1/36. The far endpoint need not touch the circle, and the detour body need not carry circle weight. Both leaf types, both channel widths, all actual means and orientations are retained. Root and separate audits passed. The C4 opposite-load and three-load branches and both diamond attachments remain open.
+
+BOUNDARY_TIP_FIXED_APPLICATION_SELECTION.md extends the fixed-point determinant selection from C7 to every unique-physical-circle-corner degree-two star with at least one boundary neighbor. A free contact toward the possibly clear neighbor has a nonzero coefficient after the radial-inner-corner/outer-width case is excluded. A free boundary contact has a nonzero coefficient or is already impossible by the nonzero boundary-contact moment. Coincident applications, zero circle weights, matched junctions and all final uncrossing/thinning choices are covered. Variable shared-side applications are expressly outside the lemma. Independent audit passed; no unproved fixed-mean replacement is introduced.
+
+C7_TWO_CIRCLE_CORNER_BLOCKS.md now includes a full fixed-contact cone obstruction at a radial-pair endpoint. Its strict failure persists in an open interval near the appropriate tangent axis. An adaptive choice on each maximal physical radial run excludes every two-run having either outside contact point-only, while longer runs retain the previous exclusion. Thus both endpoints of every surviving radial/radial edge belong to nonsingleton shared-side blocks. Root full audit passed for the strengthened two-sided statement.
+
+C7_PINNED_VERTEX_CONTACT_TYPES.md derives every relevant length2–5 shared-side block profile from its unique radial endpoint. The new general contact bound |p|>=sqrt(R^2-1)-1 applies to every boundary/boundary common point, not only vertices. Exact vertex-radius ranges exclude all unequal endpoint-length pairs. For length3 pairs, the high vertex violates the40-degree center-separation theorem; both low-vertex side-axis endpoints violate exact application-mean or circle-cone conditions, so an open normal choice excludes that whole pair. The only surviving free-edge types are radial/radial and the mirror pair of two length2 blocks. Root and separate independent audits passed.
+
+The same manuscript contracts maximal shared-side blocks and gives the full free-edge arrangement cover. Every incident block has at least two bodies; at most three fit among seven bodies. Two free incident edges have opposite radial/radial and unique/unique types, ruling out a free cycle. Disjoint free edges would require at least eight bodies. Hence there are at most two free edges. With two, the only block-length layouts are2+2+3, or2+2+2 plus a unique-physical-circle-corner singleton on the owned complementary path. Individual-block poses are now exhaustively known; actual owned complementary contacts, their weights and the capacity theorem remain open. The all-owned C7 domain also remains open, with every ownership transition retained.
+
+The six live status files now expose each complete branch and each remaining parent obligation. The C7 minimum-center-disk patterns(1,3,3) and(2,2,3), the mixed parent cells, T9, unrestricted equality and full-chain audit are still open. The coarse inventory remains three whole cells closed and55 open. All13 files in commitfbc12b1 were read back from GitHub and matched exactly. No Lean compilation or CI was run; every new commit uses[skip ci], and PR#11 remains draft.
+
+
+## October 23, 2026 — the complete C7 free-normal branch is closed
+
+C7_TWO_FREE_EDGES_EXCLUSION.md independently excludes both complete two-free-edge layouts. For2+2+3, the closing center gap is strictly greater than60 degrees and both radii exceed sqrt(2), so the required touching centers would be more than sqrt(2) apart. For2+2+2 plus a singleton, both possible owners of its second contact give a full point segment. Exact trigonometric bounds for the first point and an orientation-uniform two-point unit-square center theorem force every singleton corner below411/200<sqrt(17)/2. This contradicts physical circle contact even at zero multiplier. Root full independent audit passed.
+
+C7_RADIAL_VERTEX_EDGE_EXCLUSION.md then supplies a stronger simultaneous-selection theorem excluding every radial/radial edge. The complete free-edge graph cover supplies an incident pinned block with an owned far external point. Normalize the common positive origin moment to one. Force balance through each unique-corner body uniquely propagates the internal force magnitude and actual shared-side mean because the circle direction is never parallel to the common side axis. No mean is frozen by assumption. The radial anchor's final mean x is therefore fixed independently of the free radial-pair normal. The exact two-corner cone inequality fails near the tangential endpoint for every x>d; at x=d it fails for every strict nonaxis normal. Adaptive physical-run choices preserve all previous selections, uncrossing and thinning. Separate full independent audit passed.
+
+C7_MIRROR_VERTEX_EDGE_EXCLUSION.md excludes the remaining single unique/unique mirror edge. Its exact common-normal cone has endpoint means x=c and x*=c(c^2-2c+13/4)/(c^2+5/4) at the radial shared side. The anchor's other external normal is an actual fixed vertex/side normal. Its nonnegative circle cone imposes closed intervals on the fixed slope k; the endpoint intervals are disjoint because x*<=14375/13312<13/12<21/19<c(2a0-1)/(2c+1). At least one endpoint fails strictly, including the s=0 and mean-boundary cases; continuity supplies a nonempty open interval of strict common normals. The choices are physical and precede multipliers. Root full independent audit passed.
+
+The complete selected-C7 contact domain is now side-axis-owned. This is a full free-normal exclusion, not a one-owner-per-body theorem. The remaining capacity proof must retain every zero-owner/two-owner transition, physical radial/unique-corner mask, zero weight, shared-side mean and both arbitrary completion squares. The deep roadmap now gives an explicit3^7 owner-word domain, the elementary count v2-v0=D of doubly owned edges, and separate full one-owner and transition-containing proof exits. No numerical pose cover or angle grid is introduced.
+
+S_LEAF_CONNECTED_BOUNDARY_NEIGHBORS.md proves a global S-leaf obstruction: all other loads cannot lie in one connected physical graph of boundary neighbors of its articulation. The existing inaccessible90-degree arc and the leaf's separated circle-corner interval split every such neighbor into one strict vertical-sign class. Physical boundary edges preserve the class by acuteness and circle-corner ordering; force balance then fails. This excludes the entire S-leaf diamond-hub case with a physically boundary second hub, including zero weight there. The clear-hub and D branches remain. Root full audit passed.
+
+UNIT_BYPASS_NORMAL_CHANNEL.md proves, without a radius premise, that a normal-transmission channel whose endpoints have another common physical unit neighbor has exactly one side-normal transmitter. The unit bypass diameter first limits the reserve to sqrt(2). Diagonal equality would give two same-frame unit squares separated transversely to their diagonal: disjointness requires center distance at least sqrt(2), while their same endpoint support face bounds it by one. Thus the reserve is exactly one. Every actual side application mean remains. This sharpens the entire opposite-load C4 residual without declaring its full geometry or exterior capacity solved. Root full audit passed.
+
+All12 files in commitc298675 were read back from GitHub and matched exactly. The live summaries and deep roadmap now record the complete C7 free-normal closure and its sole all-owned terminal capacity gate. Counts remain three whole coarse cells closed and55 open. T9, unrestricted equality and the full prerequisite-chain audit remain open. No Lean compilation or CI was run; commits use[skip ci] and PR#11 stays draft.
+
+
+## October 23, 2026 — the entire same-articulation two-leaf layout is closed
+
+TWO_D_LEAVES_ONE_TRIANGLE_ARTICULATION.md excludes the whole D/D family throughout the working radius window. Adjacent D directions fix the articulation, and both triangle tips have unique physical circle corners. Exact inaccessible-arc geometry closes R>2; the R=2 equality point forces an impossible radial tip. The full four-port order then gives an exhaustive corner/side cover, including coincident applications. The fixed-point tip determinant and a collective shared-side virtual motion remove free normals before multipliers, with all means retained and the exceptional aligned geometry separately excluded.
+
+The D/D corner proof retains both mutual-contact owners. One complete owner chart uses the whole-interval sign of an exact quartic and the radius budget; the reflected owner uses positive concurrence to force two circle coordinates whose exact sum is too small. The side proof covers the aligned tip, all parallel/shared frames, and every downward side-axis owner in tilted frames. Exact support equations, concurrence and corner norms exclude every case. Root and a separate independent full hand audit passed, including the R=2 boundary and all variable-mean cases.
+
+TRIANGLE_TWO_LEAVES_SAME_ARTICULATION_CLOSED.md assembles the exhaustive S/S, D/S and D/D leaf types under one compatible necessary certificate. The entire same-articulation layout is excluded without needing any assumption on the four additional squares. Root and separate independent assembly audits passed. Together with the previous complete length-two-chain exclusion, this leaves only the whole distinct-articulation layout in C1.3.b2. That parent cell remains open; the coarse count stays three closed and55 open.
+
+UNIT_BYPASS_NORMAL_CHANNEL.md, Section4, adds a complete orientation-uniform geometric consequence. A unit bypass touching both ends of the width-one transmitter has a projection containing its entire transmission interval. The square separating-axis alternatives and the exact identity (1-a)(a+b+1)-b(a+b-1)=2b(1-a)>=0 force transverse separation of the bypass and transmitter. This covers every tilted bypass; no physical contact, common frame or centered mean is inferred. Independent full audit passed. The remaining opposite-load C4 core and joint exterior capacity are still open.
+
+All11 files in commit4f1892a were read back from GitHub and matched exactly. The six live files now record the full same-articulation closure, every completed D/D subcase and the precise remaining parent gates. T9, unrestricted equality, the remaining all-owned C7 capacity and full prerequisite-chain audit remain open. No Lean compilation or CI was run; every commit uses[skip ci] and PR#11 remains draft.
+
+
+## October 23, 2026 — entire distinct D/S closure, exact S/S completion frontier, and high-center C7 contact types
+
+TRIANGLE_DISTINCT_LEAVES_DOMAIN.md gives the whole distinct-layout reduction. Its only loads are the two leaves and C, both articulations are physically clear and within delta<1/60 of0, and two D leaves are impossible. Nonparallel and parallel C calculations exclude every zero common triangle moment. Origin containment excludes R<sqrt(17)/2; the exact endpoint uses a necessary shared AB side and the strict C angular cone to exclude perpendicular leaf directions. All circle masks, actual means and four extras remain. Root and separate independent full audits passed.
+
+TRIANGLE_DISTINCT_LEAVES_PORT_ORIENTATION.md retains all positive circle spokes, excludes every articulation port coincidence, and orders the actual outward normals. Consecutive two-corner circle forces may be aggregated without crossing a pair normal; coincident C contacts retain their neighboring-sector order. The C concurrence gives a positive directed triangle moment. In the parallel radial-S case the same sign follows from the full ordered shared-side means. Every nonparallel articulation consequently has positive radial concurrence, without asserting that it lies inside the articulation. Root and separate independent full audits passed.
+
+TRIANGLE_DISTINCT_MIXED_LEAVES_EXCLUSION.md closes the entire distinct D/S family. The clear S articulation near0 bounds the D articulation's AB support. Positive radial concurrence excludes the upward-left normal, leaving upward or upward-right support with all vertical means retained. The other reaction points southwest. An exact orientation-uniform unit-square lemma gives directional span strictly below1, while the opposite articulation faces have span at least1; hence the two required triangle neighbors cannot touch. No contact owner or C circle mask is prescribed. Root and separate full audits passed. Only the complete distinct S/S family remains in C1.3.b2.
+
+DISTINCT_S_LEAF_CORE_AND_CORNER_MASK.md first excludes every physical two-circle-corner mask of C in that entire S/S family, including one-positive-atom endpoints. Its all-orientation support lemma bounds h_A(u) by1 behind a radial outward support of radius d>=1. Contact with a radial S C would make both leaf directions and C's resultant project positively on the same axis, contradicting force balance.
+
+The same manuscript supplies an exact positive S/S core at a radius strictly between sqrt(17)/2 and sqrt(Q), using x=(sqrt(70)-8)/4 and delta=x^2. It verifies all five containments and ten pair separations, all physical shared segments, strict application means, positive weights and exact force/torque cancellation. Every positive pair normal is an actual side axis. One articulation has parallel cycle forces, which is a real retained chart. Blanket S/S core exclusion is therefore false; the remaining universal task is completion capacity at most three for every core, or a complete classification with that capacity for each whole family. Root and separate independent full audits passed for both the mask theorem and the positive control. No nine-square counterexample or extra-square capacity is claimed by the control.
+
+GENERAL_FIXED_TIP_NORMAL_SELECTION.md removes the boundary-neighbor premise from generic selection at a unique-physical-circle-corner degree-two tip with distinct fixed applications. For a nonradial other normal, coefficient degeneration forces the radial-D inner vertex and an impossible second outward support line. For a radial other normal, translation forces the free normal radial, a finite avoidable condition even at zero circle weight. Coincident applications are impossible except for the exact radial-D inner-vertex case, which remains explicit. The finite prelist and matched junctions survive uncrossing/thinning, and variable shared means are never fixed by assumption. Independent full hand audit passed.
+
+C7_HIGH_CENTER_CONTACT_TYPES.md gives the full local contact cover at every C7 center of radius at least3/2. Exact circle-coordinate inequalities force b<3/5 and a-b>27/20; a corner bound excludes the long inner owned face and an opposite-side translate excludes the outer adjacent neighbor-owned vertex. The remaining upper/lower table retains all shared intervals, strict point owners and unloaded transmissions. Every positively loaded two-owned body is unique-corner, has center radius below23/16 and contributes a90-degree force-polygon turn; zero-load bodies have turn0. Independent full audit passed. Coupling these local alternatives across every owner word remains a global C7 obligation.
+
+All9 files in commit7059d00 were read back from GitHub and matched exactly. The six live files now record the sole S/S completion exit, its physical C mask, the exact surviving-core control, the complete distinct-layout proof dependencies, the general fixed-tip exception and every new C7 local contact/turn gate. Counts remain three whole coarse cells closed and55 open. T9, unrestricted equality, all-owned C7 capacity and full prerequisite-chain audit remain open. No Lean compilation or CI was run; every commit uses[skip ci], and PR#11 remains draft.
+
+
+## October 23, 2026 — complete S/S reduction to a parallel wall and three C4 exits
+
+UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md proves a uniform geometric implication for any three mutually touching interior-disjoint unit squares. If one articulation normal is a side axis, its dot product with the other normal is nonnegative. An obtuse alternative puts the second contact on the opposite unit face, and the complete strict support-span lemma then prevents the two neighbors from touching. No radius, stress, common frame or application midpoint is assumed. Independent full audit passed.
+
+DISTINCT_S_LEAVES_PARALLEL_ARTICULATION_REDUCTION.md reduces the entire remaining distinct S/S family to at least one articulation with parallel cycle forces. Three noncollinear load rays fix their magnitude ratios, allowing an AB side-owner selection independently of all means. For a nonparallel owner, the exhaustive other-articulation feature cover leaves only an upper vertex leaf or a complete far-side leaf. The support-span argument fixes BC's vertex and owner. The full vertical transition forces a corner below-52/25; the two C-owned vertex case has contradictory concurrence slopes; the side case has an exact whole-interval corner bound below-2079/1000. Parallel B frames and every genuine shared AB mean are separately excluded. The surviving parallel articulation has an aligned radial leaf, two opposite-to-leaf cycle normals and wall mean heights of opposite signs. Root and separate full hand audits passed. Its whole wall classification and universal capacity<=3 remain the C1.3.b2 exit.
+
+FOUR_CYCLE_PARALLEL_BYPASS_EXCLUSION.md closes the entire A/U-parallel opposite-load C4 chart. Both loaded tips must first be parallel. Every shared A-tip alternative is excluded by the complete radial leaf-feature cover and inner-radius threshold. The point/point alternative fixes the common tip column; it excludes every S leaf by the articulation norm. The residual D leaf imposes a nonzero equal-slope determinant at distinct free junctions, avoidable before extracting stress. All physical corner masks and variable side means remain. Root and separate full hand audits passed.
+
+FOUR_CYCLE_OBLIQUE_TIP_OWNER_EXCLUSION.md excludes the complete chart in which both loaded tips are oblique to U and own their point contacts with A. The side-feature cover, bypass diameter and acute-normal constraint leave one chart. Positive concurrence excludes its physical unique/unique mask; exact symmetric equations exclude radial/radial. In each mixed mask, monotonic circle equations and a whole-interval concave cubic estimate force bypass height>17/12>sqrt(2). The theorem retains every physical circle mask and weight allocation, and needs no force equation at A or radial-leaf assumption. Root and separate full hand audits passed.
+
+FOUR_CYCLE_UNIQUE_LOAD_NORMAL_SELECTION.md removes every free A-tip normal throughout the physical unique/unique C4 mask. The parallel-force radial-D degeneracy is excluded geometrically. The three load directions fix normalized external vectors; one fixed other tip direction fixes the channel magnitude, while two free directions obey a nonzero product determinant. The finite choices are compatible with distinct junctions and all prior selections. Every variable transmitter and other shared-side mean remains, and physical two-corner masks are explicitly outside this theorem. Root and separate full hand audits passed.
+
+All12 files in commit220f28b were read back from GitHub and matched exactly. The six live views now include the full S/S tilted/shared reduction and all completed C4 owner/mask subgates, while retaining the wall capacity, residual oblique C4, all-owned C7 and larger mixed cells as open. Coarse counts remain three closed and55 open. The unrestricted sharp theorem, full equality and complete prerequisite-chain audit remain OPEN. No Lean compilation or CI was run; every commit uses[skip ci] and PR#11 remains draft. Host provenance for this working checkpoint: October24,2026 UTC; user-facing date remains October23, America/Chicago.
+
+DISTINCT_S_LEAVES_WALL_CLASSIFICATION.md completes the remaining geometric classification. All four B/C frame pairs and every downward BC owner are exhausted. The oblique C concurrence has a uniform exact lower x-magnitude, incompatible with all surviving oblique B features; both mixed-frame charts are excluded, with a separate force/torque determinant retaining C's variable mean. Thus A/B/C align, and their contact plus circle equations force x=(sqrt(70)-8)/4 and R^2=(2+x^2)^2+1/4. The entire articulation interval is x(1-2x)/(1-x)<=t<2x. Every force magnitude and all three genuine shared-side mean ranges are explicit; the lower t endpoint is retained. Conversely every interval member is a positive physical core. Root and independent full audits passed. The exact remaining C1.3.b2 obligation is capacity<=3 for this whole interval, including rigorous upper/lower whole-square routing; the classification alone does not close the cell.
+
+
+## October 23, 2026 — the entire C1.3.b2 cell is closed; canonical C4 and C7 geometry advance
+
+DISTINCT_S_LEAF_WALL_UPPER_CAPACITY.md proves capacity at most3 for the whole exact S/S slider's upper region. The two radial rays are genuinely screened by the core and the circle chords, so entire additional squares are routed. Every upper unit with center norm<=2/3 strictly contains (0,2/11), already inside B; the proof covers every side-axis component regime. Convex distance to each radial terminal excludes center angles through40 degrees for the entire remaining radius interval. Separate convexity gives the exact30-degree center-separation threshold. The residual angular span is below90 degrees, so four centers are impossible. Root and separate full audits passed.
+
+DISTINCT_S_LEAF_WALL_LOWER_EMPTY.md excludes both complementary lower regions uniformly over the full t interval. Half-radius center clearance from the B/C column places every possible left center within distance<1 of the B-leaf center, a contradiction. The resulting right center, actual horizontal screen and fixed smaller rectangle inside A union B give whole lower-half-plane containment and exact center bounds. Both frame signs are covered. A square extending around the rectangle's right end or below C's bottom has an explicit corner outside the disk. The remaining full quadrant has minimum far-corner squared radius R^2+4delta. All endpoints and independent frames are retained; no per-pocket placement assumption is used. Root and separate full audits passed, matching an independently derived complete lower-region argument.
+
+TRIANGLE_TWO_BRIDGES_CELL_CLOSED.md assembles the exhaustive chain, same-articulation and distinct-articulation layouts. Every S/D type and low-radius/zero-moment alternative is covered. The final S/S family is the complete classified slider, whose genuine upper/lower capacities are3 and0; nine units would require four extras. Its finite normal choices are compatible before multiplier extraction and preserve uncrossing, actual shared means, sparsity and the unique positive component. No secondary minimizer premise is needed. Root and separate independent full assembly audits passed. The entire coarse cell C1.3.b2 is CLOSED. The authoritative inventory now has four closed cells and54 open; the positive component still has5–9 bodies because other five-body cells remain.
+
+FOUR_CYCLE_SECONDARY_CONTACT_REDUCTION.md gives a separate canonical-minimizer theorem. Among radius minimizers, minimize the sum of squared center norms before selecting the physical certificate. A positive A/U gap lies in the full empty C4 hole by exact horizontal Jordan slices; translating U into that strip preserves all nine-square nonoverlaps and decreases both its farthest corner radius and its center norm. Thus AU touches physically. The oblique AU vertex lies in U's side interior, giving exact triangle-owner signs. All shared A-tip sides are excluded, and the two-A-owned D-leaf branch is impossible. Root and separate full audits passed. The contact is not asserted for every noncanonical equality packing and need not carry stress.
+
+FOUR_CYCLE_UNIQUE_TIPS_EXCLUSION.md closes the entire physical unique/unique opposite-load C4 mask at that canonical minimizer. An A-owned lower unique tip forces a>=b, strictly when oblique; the aligned equality fixes the actual channel mean at its far side endpoint. Reflection gives the upper inequality. Mixed owners contradict the near-tip unique-circle concurrence signs. Both A owners force an exact45-degree articulation, aligned common tip columns, equal loads and an east support below2/3, incompatible with either leaf type. Both tip owners reduce to the completed all-mask owner theorem. All U-parallel endpoints, arbitrary channel means and four extras are retained. Root and separate full audits passed.
+
+FOUR_CYCLE_TWO_RADIAL_TIPS_EXCLUSION.md closes the entire physical two/two opposite-load C4 mask without a secondary-minimizer premise. The full parallel/oblique channel cover forces two mirrored oblique radial frames with s>1/2. Left, outer and right lateral faces are excluded including their endpoints, so both A applications are actual inner-face means. Force and torque retain every split of the two physical circle weights and force both side parameters>1/2; their vertical separation then exceeds3/2>sqrt(2). Root and separate full audits passed. At the canonical minimizer only the physical mixed mask remains in the opposite-load C4 branch; all-three-loaded C4 and diamond parents remain open.
+
+C7_CENTER_POLYGON_LOCALIZATION.md proves strict convexity of the actual center polygon using the common annulus and angular separation. A complete rounded-square tangent-chord calculation shows that a segment of length<=sqrt(2), whose endpoints have clearance>=1/2, cannot cross an open unit square. Each contact-spoke replacement triangle has area<=1/4, so winding is preserved. Every completion unit lies wholly in the convex center polygon. Independent full hand audit passed.
+
+C7_DIAMETER_EXTRACTION_COUNTEREXAMPLE.md gives an exact physical seven-square ring enclosing two differently oriented units, with actual touching graph exactly C7 and center diameter squared19/4+3sqrt(2)<9. Every pair separation/contact, enclosure and center-distance expression is checked. Its center angular gaps lie between40 and72 degrees, but no translation meets the known radius91/60 bound; an actual far-vertex pair also forbids the target containing disk. The unrestricted physical-ring diameter extraction is therefore REJECTED. A replacement must retain the disk/annulus or positive stress. The roadmap now explicitly accepts a whole R^2>=Q theorem as a sufficient C7 lower-bound exit, with equality survivors separate; the stronger capacity-one-at-Q statement is an alternative, not an added requirement.
+
+All12 changed files in commit616db0a were read back from GitHub and matched exactly. This checkpoint deeply ticks the completed S/S routing, center, wrap and quadrant gates and the full parent closure, with the three other five-body cells active. The unrestricted sharp theorem, full equality, all-owned C7 and full earlier dependency audit remain OPEN. No Lean compilation or CI was run; every commit uses[skip ci] and PR#11 remains draft. Host checkpoint provenance: October24,2026 UTC, presented as October23,2026 America/Chicago.
+
+
+## October 24, 2026 — entire opposite-load D-leaf C4 closed; C7 parallel extras excluded
+
+RADIAL_LEAF_ARTICULATION_FIXED_POINT_SELECTION.md extends articulation selection to every physical circle mask at two distinct fixed boundary-neighbor contacts. A complete local cone analysis excludes a boundary neighbor at the radial leaf application; every other articulation vertex collinear with that radial axis is too central for a boundary contact. The exact force/torque determinant then has a nonzero coefficient for a nonradial fixed normal, while a radial other normal forces the free direction into a finite avoidable set. Two free normals give a nonzero product determinant. The simultaneous choices retain matched junctions, all prior open intervals, uncrossing, thinning and every other shared-side mean. Canonical C4 contact supplies the singleton premise. Root and independent full hand audits passed.
+
+FOUR_CYCLE_MIXED_D_LEAF_EXCLUSION.md closes the entire D-leaf opposite-loaded-pair C4 at that canonical minimizer. First, the retained both-tip-owned endpoint with a U-parallel radial tip forces the unique tip's circle corner strictly inside the disk; this endpoint result also applies to an S leaf. For A owning the unique edge, the full radial actual mean lies at kappa in(0,1/2), including the parallel endpoint. D-leaf force and origin torque force C<4/5, d<1/7 and tau>4/5, exclude a parallel unique tip and put every oblique unique-tip corner within squared radius754/225<R^2. In the other mixed order, the A-owned radial inner-vertex norm forces t>3/4, placing the unique-tip contact inside squared radius53/200<(R-sqrt(2))^2. The earlier two-A-owned theorem and unique/unique and two/two mask exclusions complete every owner and physical mask. All four extras remain; root and independent full audits passed. The opposite-load residual is only an S leaf with the mixed physical tip mask and three retained owner alternatives. The all-three-loaded C4 and diamond parents remain open.
+
+C7_INNER_SIDE_CORNER_RESTRICTIONS.md gives two uniform disk-dependent bounds on each inner unit. A full shallow/steep radial-tail separator proof forces every own-frame center coordinate below3721/7200 in magnitude. A complete corner-diagonal-tail theorem, with both square-axis owners and every normal sign, makes each inner vertex's norm greater than sqrt(5/2)-91/60. An actual extra-to-extra separating axis then confines a support corner to an explicit triangle; the corner lower bound excludes cos(theta)<=6/7. Root and independent full hand audits passed.
+
+PARALLEL_INNER_PAIR_DIAMETER_EXTRACTION.md closes the entire parallel-inner-pair endpoint without assuming contact, zero gap or a common row. Every vertex of the actual convex center polygon has half-unit clearance from both inner squares, and each edge has length<=sqrt(2). If a far-face middle zone contains no vertex, its crossing edge has two explicit corner-clearance excesses. One missing zone contradicts all pair distances<=3; two missing zones give a cross diagonal with squared length>91/10, for either sign of arbitrary stagger. If neither zone is missing, their horizontal separation is already>=3. The actual C7 center diameter is strictly below3, so parallel inner frames are impossible. Root and separate full audits passed. The full residual is0<theta<acos(6/7), with all exact disk, own-coordinate, corner and stress restrictions retained; a universal nonparallel completion or R^2>=Q theorem remains open.
+
+All18 changed files in commitf9fa9a3 were read back from GitHub and matched exactly. The six live views now deeply record the completed all-mask selection, every D-leaf owner branch and every C7 side/corner/parallel-zone argument. The coarse count stays four closed and54 open. T9, full equality and the complete prerequisite-chain audit remain OPEN. No Lean compilation or CI was run; every commit uses[skip ci], and PR#11 stays draft. Host and user-facing checkpoint date are both October24,2026 (UTC and America/Chicago, respectively).
+
+
+## October 24, 2026 — the entire opposite-loaded-pair C4 branch is closed
+
+FOUR_CYCLE_MIXED_S_LEAF_EXCLUSION.md closes the full S-leaf mixed physical mask. An A-owned radial-tip application is its nonchannel inner vertex, with norm squared h^2+1/4 and strictly positive A-frame v-projection for every oblique or U-parallel radial tip. In the opposite ownership order, the tip-owned radial mean lies at kappa in(0,1/2) and has w-projection<-1/4. Each owner order retains the S leaf's entire support side and both adjacent support vertices. The side cases contradict the radial contact norm or put the unique contact too centrally; the vertex cases use exact norm identities, the physical projection sign and global three-load force balance. The narrow complete bound19594/62500<19600/62500 is checked exactly. Every radial corner-weight split and actual channel mean remains.
+
+For both A-owned contacts, the S support is the far articulation vertex with0<B0<3/8 and A0>4/5. The actual radial-tip norm gives k(A0+L)=3/4-2B0 and sigma<7/10+(4/5)B0. The unit channel gap and two full analytic Cauchy ranges, with endpoint values37/50 and349/400, force tau>1/2-B0. The unique-tip contact then has norm squared<29/100<(R-sqrt(2))^2. The already completed both-tip-owned theorem includes the U-parallel radial endpoint, so all four S owner alternatives are exhausted. Root and independent full hand audits passed.
+
+FOUR_CYCLE_OPPOSITE_LOAD_BRANCH_CLOSED.md assembles the entire opposite-loaded-pair C4 domain. The secondary radius minimizer is chosen before every physical normal choice and still admits the necessary selected certificate. The whole empty-hole strip translation preserves all nine units; its new AU physical contact is never assigned positive stress. The unique/unique, two/two and mixed physical masks are exhaustive, with a zero individual radial corner weight retained in the physical two-corner mask. Both S/D leaves, all contact owners, shared means and parallel endpoints are covered by complete theorems. The finite prelisting remains compatible with uncrossing, conic thinning and unique-component selection. Root and independent full assembly audits passed. Combined with the adjacent-load exclusion, only the all-three-loaded C4 remains in this block type. Both diamond attachment orbits remain open. This canonical lower-bound tool does not classify every original equality packing, and it does not close C1.4.b1.
+
+FIVE_CYCLE_THREE_LOAD_PARALLEL_EXCLUSION.md gives a further complete C1.5.b0 reduction. For T-U-B-C-V-T with precisely T,B,C loaded, all edges have the same origin moment, which is nonzero on the boundary-to-boundary BC contact. Parallel pair forces at T must both point inward on the same support face; positive radial aggregation gives the full S/D classification without a leaf-degree premise. D would make the moment zero. In S, every side-normal transmitter ends at(h-1,y), |y|<=1/2, with squared norm<13/50<(R-sqrt(2))^2, impossible in its boundary endpoint body. If both transmitters are diagonal, their same-frame centers have vertical gap<=1 and overlap on both side axes. This excludes every parallel alternative and mean endpoint, independently of all four extras. Root and independent full hand audits passed. The entire nonparallel three-load and four-load C5 branches remain open.
+
+All10 changed files in commit3709415 were read back from GitHub and matched exactly. The live roadmap now records every completed S feature, both-A-owned inequality, full opposite-load assembly and the C5 parallel-family exclusion. Coarse counts remain four whole cells closed and54 open; T9, full equality, C7's nonparallel pair, the remaining mixed cells and the full older prerequisite-chain audit remain OPEN. No Lean compilation or CI was run; every new commit uses[skip ci] and PR#11 stays draft.
+
+
+## October 24, 2026 — radius-free diamond obstruction, whole fan/attachment closures and bowtie pressure
+
+NO_UNLOADED_DIAMOND_HUB.md proves a new selected-certificate theorem independent of radius: a zero-circle-load body of exact positive degree3 cannot have one physical neighbor touching both other neighbors. If the central normal is U-owned, the two actual triangle inequalities contradict force balance, including all central shared sides. Otherwise the opposite vertex is excluded by strict support span; force balance requires precisely the two adjacent U vertices. Exact torque fixes the central slope. A nonzero product determinant permits a compatible pre-stress choice avoiding every free central normal, with all matched-junction parameters and later uncrossing/thinning preserved. In the remaining A-owned case, its two actual tip half-planes require tangential span F>1; the two-sign cover and exact linear endpoint identity prove this on the entire domain. Root and independent full audits passed.
+
+This whole structural theorem closes the entire S-leaf diamond-hub attachment, using the already proved connected-boundary-neighbor result for a physical boundary second hub. It also closes the entire tip attachment for both S/D leaves: the two hubs must be loaded, the unattached degree-two tip is loaded, and those three bodies form a forbidden physical boundary triangle. Any remaining D-leaf hub must have its other hub positively loaded. Globally, an unloaded degree-three body's three physical neighbors induce at most one edge. Applied to the five-body fan, both inner path vertices must be loaded, excluding both entire three-load masks. Only the four-load fan remains. No parent coarse cell is yet closed.
+
+FIVE_CYCLE_THREE_LOAD_DOUBLE_DIAGONAL_EXCLUSION.md excludes another entire C5 chart. Compatible diagonal avoidance makes a diagonal transmitter's endpoint a relative-side-interior point of its neighbor, so two diagonal channels align all three loaded endpoint frames. The completed parallel-T exclusion forces perpendicular T normals. Exact reserves and the actual BC contact give a B corner bound which, with T's circle equation and Cauchy, forces R²>=(9+6sqrt(2))/4>87/20>Q. Both physical circle masks and all four extras remain; independent audit passed. The residual three-load C5 has nonparallel T forces and either side/side or side/diagonal widths.
+
+BOWTIE_TIP_OWNED_PRESSURE.md proves c_A dot M>0 for the entire tip-owned singleton end-triangle interface. Applications must be adjacent A vertices. Compatible unique-tip selection gives the full BC chart; all radial masks are treated without replacing individual weights. Exact unique/unique torque ratios and complete weighted-corner surplus/deficit bounds give mean squared distance<39/10, with lower-window margin1/1600. The two-radial physical contact roots retain the pi and alternate-inner-vertex endpoints; outer-pocket emptiness and A's unit chord force inner radial faces. Root and independent full audits passed.
+
+BOWTIE_PARALLEL_PRESSURE.md gives the same strict sign for every parallel reaction. The complete wall reduction retains coincident shared-side endpoint means: that exact aligned upper/lower pair has R²=(s+1)²+1 and already yields s>1/2. Strict opposite wall means then admit a full small-box exclusion by an exact positive-definite quadratic bound. Every aligned tip and actual mean is excluded from the bad-sign range. The complete oblique section cover, symmetric free-normal endpoint, physical circle-mask comparisons and full-interval torque inequality finish all remaining poses. The repaired endpoint and all other branches passed root and independent full audits. A bowtie whose blocks are each in either completed domain is excluded by their opposite resultants. Nonparallel articulation-owned/shared interfaces remain open.
+
+C7_INNER_OUTSIDE_FACE_CORNER_EXCLUSION.md proves a full rectangle-ray optimization: any disjoint unit meeting the outward ray beyond K=[1/24,1]x[1/24,7/8] has center norm squared>=37/16>M². Both SAT owners, every normal sign and the tangential clipping are covered analytically. An enclosed unit therefore cannot have own-center coordinate magnitudes>=1/2 and>=3/8. The complete pair support-corner sign split gives sin(theta)<4/15, with the parallel endpoint independently excluded. In the auxiliary bisector frame each unit contains a centered square of side>sqrt(15/19)>7/8; the actual units keep their independent frames. Root and independent full audits passed.
+
+C7_INNER_PAIR_FAR_FACE_CENTERS.md turns every separated inner pair into two actual opposite boundary centers. If a unit's outward own coordinate is>=9/20, absence of a far-face middle-zone vertex yields a crossing edge with average norm bounded below by a concave function; both endpoints exceed M², with exact margin497/90000. The actual pair SAT relation and own-coordinate bounds put both members above that threshold. Their exact x-gap is1.5(1+c)+g+delta+epsilon*c+(1/2-r)s, so diameter<3 bounds the whole excess by1.5(1-c). All inner translations and both actual outer frames remain. Root and independent full audits passed; the full four-square/ring radius or capacity implication remains unproved.
+
+All13 changed files in commitb173dd8 were read back from GitHub and matched exactly. This checkpoint deeply records every completed structural, attachment, fan-mask, C5-width, bowtie-sign and C7-extraction gate while retaining their exact remaining parents. Coarse counts remain four closed and54 open. The unrestricted radius theorem, complete equality and full earlier prerequisite-chain audit remain OPEN. No Lean compilation or CI was run; all commits use[skip ci], and PR#11 remains draft.
+
+
+## October 24, 2026 — full house routing, central radial-hub exclusion and actual signed witnesses
+
+HOUSE_HOLE_EMPTY.md isolates a leaf-free consequence of the complete four-ring area equality proof: any enclosed unit forces the aligned cross, with strict vertex/vertex cycle normals. At a zero-load exact-degree-three cross body E, the two cycle forces have negative outward-side projection. If its third neighbor V touches an adjacent cross body and its force had positive projection, the actual support point at x=3/2 and the strict reverse support-span lemma would place all of V in x>1/2. This prevents the required adjacent contact. All three forces therefore cannot balance. The house roof is loaded, its boundary triangle forces a clear hub, and that hub has exactly the required third neighbor. Both bounded faces are empty for every load mask and contact feature. Root and independent full audits passed. All four extras are exterior; their joint capacity remains open.
+
+D_DIAMOND_RADIAL_HUB_EXCLUSION.md excludes the full central physical two-circle-corner U mask in the D-leaf diamond. Dotting global force with both actual U corners puts both west, including individual zero weights. The exact radial-leaf articulation support gives H>3/4, a too-central lower-left corner, and U wholly above zero through the quartic margin1583/10000. The complete normal-sign cover forces all three articulation reactions left; actual mean torque supplies an upper/lower touching wall pair. The final wall argument uses no force equation at U: its radial tie and exact section breakpoints force a unique lower corner whose circle equation requires a wall height gap greater than1. All B/C masks, free normals and means survive the proof. Root and separate full audits passed. The only remaining central U has one physical circle corner and positive load.
+
+BOWTIE_PERPENDICULAR_CONTACT_EXCLUSION.md proves the entire A-owned perpendicular class impossible, including shared means and a common triple endpoint. The short inward-normal segment at any square support point forces the actual mutual normal signs; exact tip balance then makes their circle-load scalar product negative, contrary to the physical acute-boundary theorem. RADIAL_BOUNDARY_NEIGHBOR_PRESSURE.md gives the stronger owner-free geometric bound c_A dot z>121/1600 at each physical radial-S circle corner. Both individual zero-weight endpoints are retained. All two-radial end blocks have positive pressure, and the full both-A-owned class is resolved. Its whole-component corollary excludes the all-radial four-load fan and both all-radial end-house triples. Root and separate audits passed; mixed/free articulation transitions remain open.
+
+C7_SHARP_BALANCED_RADIAL_TAIL.md proves the exact sharp continuous center bound over9/20<=a<=k,2a/3<=b<=a. The rectangle-owner endpoints differ by an explicit nonnegative cubic factor; the square-owner proof covers all normal signs, clipping regimes and full derivative intervals, with the upper-branch quartic margin131/1024. The unbalanced alternative is retained. C7_OUTSIDE_INNER_RAY_WITNESS.md removes the entire upper and clipped-middle witness regimes for a>=1/2. Every remaining actual center lies in x>149/100, including an explicit bound on the actual positive-normal tangential coordinate rather than a substitution of its minimizer. This cap has diameter<1, so its unique boundary center is the previously extracted far-face unit. The signed offset r<23/120 contradicts the exact pair budget r>17/58 in the full balanced right-outside domain. Secondary coordinates have magnitude<1/2, and actual pair SAT forces one main coordinate>1/2. The exact residual split is unbalanced right-outside or asymmetric left-outside/right-inside. Root and separate full audits passed; neither outer frame is replaced, and the whole C7 radius/capacity exit remains unproved.
+
+All13 changed files in commitcb41f80 were read back from GitHub and matched exactly. This checkpoint records complete proof dependencies, owner/corner/mean endpoints and the remaining whole-family exits. The coarse inventory remains four closed and54 open. The unrestricted lower bound, every equality packing and the full earlier prerequisite-chain audit remain open. No Lean compilation or CI was run; every commit uses[skip ci] and PR#11 remains draft.
+
+
+## October24,2026 — entire five-body bowtie C2.33.b0 closed
+
+BOWTIE_MIXED_OWNER_PRESSURE.md, BOWTIE_RADIAL_FREE_INTERFACE_PRESSURE.md and BOWTIE_SHARED_SIDE_FREE_INTERFACE.md finish the entire end-triangle interface cover. Root review caught an omitted variance term in an intermediate mixed-owner draft: rho=|zbar| cannot be replaced by R for two positive circle-corner weights. The corrected source uses rho>=sqrt(R²-1/4) and exact asymmetric dual coefficients, with an entire direct-projection interval where needed. Its aligned/shared, oblique owner and radial-transition arguments all subsequently passed root and independent full hand audits.
+
+The radial-free proof routes both actual applications to the radial square's distinct inner vertices. Singleton AB is excluded by the exact Bernstein polynomial or by the t=1 geometric implication using only the unique tip's original forces; no stress normal is substituted. The shared AB branch has a full two-coordinate center-pressure proof. The shared/free proof retains actual means in its two-tip virtual-work determinant, excludes every coincident/collinear/aligned exception, and treats the remaining radial/unique family through exact torque and the full two-interval pressure bound. All physical masks and zero individual weights remain. Both sources passed root and independent full audits.
+
+BOWTIE_CELL_CLOSED.md assembles all owned and free interface cases under one simultaneous finite selection. The four bowtie tips are loaded; their common articulation is physically clear. Each whole triangle resultant M_i has c_A dot M_i>0, whereas the actual articulation balance gives M_1+M_2=0. This closes the whole C2.33.b0 selected core, without secondary minimization and independently of all four arbitrary extras. Root and independent full assembly audits passed. The authoritative inventory changes from four closed/54 open to five closed/53 open. The remaining five-body parents are C1.4.b1 and C1.5.b0; other full candidate closures remain subject to the root integration review and are not inferred from this cell.
+
+All13 files changed in commitb245c82 were read back from GitHub and matched exactly. No Lean compilation or CI was run. Every commit uses[skip ci]; the unrestricted theorem and complete equality remain open and PR#11 stays draft.
+
+## October24,2026 — whole physical boundary seven-cycle closed
+
+Reconciled parent100c1145d3716a5763dc3600fb71d066b24abe6b through the GitHub connector. C7_RIGHT_OUTSIDE_INNER_EXCLUSION.md closes the full right-outside domain: the actual farthest boundary corner constrains its frame, every outgoing-witness owner/sign puts the actual center in one unique cap, and ray membership contradicts the exact pair offset over the whole continuous b interval.
+
+C7_LEFT_OUTSIDE_INNER_EXCLUSION.md closes the full asymmetric left-outside domain with the original SAT owner unchanged. A strengthened continuous radial-tail bound controls every outgoing witness. Actual outer corners exclude the upper inner-owned branch by squared-norm margin87491/20000000; all remaining signs identify the witness with the true far-face unit. The two exact r bounds contradict throughout0<d<121/7200, with final margin197/72000.
+
+BOUNDARY_SEVEN_CYCLE_CAPACITY_ONE.md assembles actual exterior localization, center-polygon containment, strict center diameter, the entire parallel-pair theorem, and the exhaustive two nonparallel branches. Every physical C7 in79/40<=R<=sqrt(1105)/16 admits at most one extra unit. There is no stress premise and no equality survivor at Q. Root and separate independent full audits passed both final branches and the assembly. The earlier complete prerequisite-chain audit remains open.
+
+The live roadmap now records every right/left domain, owner/sign, actual-frame, unique-witness, concavity and endpoint gate. Unfinished owner-word/center-cover alternatives are retired as proof obligations and are not falsely ticked as standalone theorems. Every physical boundary graph in a nine-unit packing is a path forest, and every surviving selected component is mixed. C1.7.b0 retains its mixed realizations; the coarse count remains five closed and53 open. C1.4.b1,C1.5.b0 and the larger mixed cells remain committed open; newer local drafts require root review before promotion. T9 and unrestricted equality remain open. No Lean compilation or CI was run; this checkpoint uses[skip ci] and PR11 remains draft.
+
+## October24,2026 — entire diamond-with-leaf branch closed
+
+Parentec786ea173d31e4f8ee19b25dd1685e0447a57f3 already closes the full physical C7 branch. This checkpoint adds D_DIAMOND_PARALLEL_HUB_EXCLUSION.md, D_DIAMOND_HORIZONTAL_HUB_EXCLUSION.md, D_DIAMOND_LOWER_TIP_OWNED_EXCLUSION.md, D_DIAMOND_OBLIQUE_HUB_EXCLUSION.md and DIAMOND_LEAF_BLOCK_CLOSED.md. Root and separate independent full audits passed every source and the assembly.
+
+The complete unique-U normal localization is horizontal left or strictly northwest. Parallel frames are excluded with all shared central means. The tilted horizontal branch uses an exact depth2/3 wall-section theorem to retain the whole upper-tip mask and localize only the lower tip. Its C-owned contact has every U corner inside the circle; U-owned/shared contacts require Y-VX>=0 but the exact full-domain bound is<-31/3200.
+
+The oblique branch retains both actual singleton owners and every shared mean. A uniform convexity certificate gives the exact lower-tip application bound7409/8000<(39/40)². The U-owned perpendicular endpoint uses an auxiliary expression without replacing an actual force. The shared alternatives use actual lower-tip torque and strict corner deficits(11-7sqrt(2))/24 and(10sqrt(2)-13)/24. U always retains its third positive contact; no false degree-two hub equation enters.
+
+The parent contact-triangle lemma localizes every actual lower application, including arbitrary side means, and exhausts the entire central-normal cover. Combined with previous zero/radial hub exclusions and S/tip attachment theorems, every diamond-with-leaf core is excluded for both leaf types and all four extras. No secondary minimizer is needed. C1.4.b1 now has only the full all-three-loaded C4 branch open. The ledger remains five closed and53 open; C1.5.b0 and larger mixed cells, unrestricted T9, equality and full-chain audit remain open. No Lean compilation or CI was run. Every commit uses[skip ci]; PR11 remains draft.
+
+## October24,2026 — entire C1.4.b1 closed; two central centers required
+
+Parent9b3d46f99ddb46c8db5b6d7d69dc2f8db64b1915 already closes every diamond-with-leaf branch. This checkpoint adds both complete S-articulation C4 theorems, the full D two-left-vertex and singleton theorems, the shared vertical-force theorem, both aligned/tilted parallel wall-tip theorems, FOUR_CYCLE_THREE_LOAD_BRANCH_CLOSED.md and FOUR_BODY_BLOCK_ONE_LEAF_CELL_CLOSED.md. Root and separate full hand audits passed all nine sources and assemblies; the two parents each had two independent assembly audits.
+
+For S, the full aligned slider has a western boundary-center gap>150 degrees versus the available<144 degrees. The tilted case keeps both entire corner-radius branches and gives gap>pi/2+acos(2/3)>2acos(9/25). For nonparallel D, positive concurrence is proved with arbitrary means before using contact ownership. Exact height bounds cover both physical tip masks; the complete singleton and shared-vertical families then exclude every contact feature. The shared proof uses strict neighborhoods of permissible axis endpoints, compatible with all earlier finite choices and matched junctions, while leaving the actual side mean free.
+
+For parallel D, opposite horizontal signs are explicitly excluded first by A torque, proper concurrences, boundary order and global vertical balance. Both remaining wall tips are physically unique. The aligned proof screens any westward outgoing normal by support>961/891>R-1. The tilted proof supplies entire western inner-circle tails, derives k>7/10 from an exact actual-center dot-product contradiction, and screens every remaining bad support feature by a whole-unit radius bound. U's true horizontal balance is then impossible for its complete physical corner mask and weight split.
+
+The C1.4.b1 assembly exhausts C4,diamond,K4, both diamond attachments, both radial leaf types, every load allocation and all four extras. The new three-loaded and diamond proofs are core exclusions with no secondary choice. The older opposite-loaded-pair C4 theorem requires a radius minimizer also minimizing Phi=sum|c_i|²; that premise remains explicit in the whole-cell result and does not classify every original equality packing.
+
+ANNULAR_CENTER_ARC_BUDGET.md is separately root- and independently audited. Every contained unit with center norm>=1 occupies an open radius5/4 arc longer than pi/4, whether or not it touches the outer circle. The full own-coordinate and far-corner domain is included. Hence at least two of nine centers lie strictly inside the unit disk. Their placement in any particular component region remains unproved and is not assumed.
+
+The authoritative ledger now has six closed coarse cells and52 open: C1.3.b0,C1.4.b0,C1.3.b1,C1.3.b2,C1.4.b1,C2.33.b0 are closed. Only C1.5.b0 remains among five-body components, with the complete C5,house and four-load-fan tasks active. The physical C7 family is already closed; larger mixed cells, unrestricted T9, equality necessity, full-chain audit and later standard-kernel integration remain open. No Lean compilation or CI was run. Every new commit uses[skip ci]; PR11 remains draft.
+
+## October24,2026 — the entire positive C5 component is excluded
+
+Parentac38d6beda897cf20410fe88b252e84e9d2dc15a closes C1.4.b1. This checkpoint adds FIVE_CYCLE_FORCE_POLYGON_DOMAIN.md, FIVE_CYCLE_FOUR_LOAD_EXCLUSION.md, FIVE_CYCLE_THREE_LOAD_EXCLUSION.md and FIVE_CYCLE_POSITIVE_COMPONENT_EXCLUSION.md. Root and independent full audits passed the domain, both metric orbit proofs and assembly.
+
+The nonparallel concurrence calculation no longer needs a boundary neighbor. For radial two-corner bodies only its positive radial factor and proper support directions are asserted; q may remain outside its body and disk. Exact reserves give a convex origin-containing triangle/quadrilateral. Loaded centers inherit radial-resultant order. Exterior-spoke routing is also proved, although the final core exclusions need no regional capacity estimate.
+
+In the full four-load theorem, both endpoint centers have nonnegative height above the origin's horizontal axis, retaining aligned zero-height/two-corner endpoints and all means. Three boundary contacts force an almost-antipodal endpoint pair. Width1 contradicts actual squared center distance>3698/625; widthsqrt(2) contradicts its exact horizontal gap1+sqrt(2), since the circle equations require gap>5119/2100.
+
+The complete three-load theorem first imports the entire parallel-T exclusion. Each channel width has consecutive angle<pi-theta/2, theta=acos(9/25). The side case uses endpoint radii>19/15. The diagonal case uses the actual aligned-center function, strictly decreasing and concave on its full interval; an excessive angle forces gap>1829/750. Two channels and actual BC then sum to less than2pi. No angle grid or sampled pose is used, and all four extras remain untouched.
+
+The C5 assembly retains the n=8 lower-window import and global <3-load inputs. It does not exclude a C5 subgraph with additional positive edges. Eight of ten five-body biconnected types are now excluded; only house and four-load fan remain, each with its full body equations and completion domain.
+
+ONE_ARTICULATION_TRIANGLE_LEAF_EXCLUSION.md also passed root and independent full audits. Each whole end triangle and each radial leaf has positive projection on their common articulation center, contradicting their zero total circle force. The family is uniform in petal/leaf count but excludes neither distributed articulations nor degree-three fan vertices. No larger coarse row is ticked without its complete layout cover.
+
+The ledger stays six closed and52 open. Unrestricted T9, original equality, larger mixed components and full-chain audit remain open. No Lean compilation or CI was run. Every new commit uses[skip ci]; PR11 remains draft.
+
+## October24,2026 — complete boundary-path separation and two house subfamilies
+
+Read base: def16eb3d7728219e1468396542e90bd19b96121. FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md proves the whole balanced four-body boundary-path restriction: physical corner/resultant directions deviate less than15 degrees from their centers, positive global balance and all three actual contacts force the endpoint minor angle above150 degrees, and center distance exceeds1+sqrt(2). Every actual endpoint hub application pair therefore has distance>1, including arbitrary side means. The theorem applies to both fan4 and house4, with the latter retaining only its three true hub edges.
+
+HOUSE_END_TRIPLE_PARALLEL_BYPASS_EXCLUSION.md excludes every parallel-bypass end-triple house. The full geometric frame cover forces aligned endpoints, the two-corner lower mask makes the other endpoint circle-clear, and the true unique endpoint torque forces d<=c for all means including k=0/1. A shared upper hub contact forces d>c; the point alternative physically separates the roof from its required neighbor. The genuinely tilted bypass remains open.
+
+HOUSE_MIDDLE_TRIPLE_SHARED_HUB_EXCLUSION.md excludes every both-hubs-owned middle-triple contact, including a positive-length shared side. Roof-triangle signs and exact unloaded balances put the lower pair strictly on opposite sides of the hub interface. Its contradiction is radius-free and retains every mean and physical mask. One-owner and strict free hub singleton cases remain open.
+
+Root and separate independent full audits passed all three sources. The deep roadmap now records their complete continuous domains, exact moment/sign gates, all physical contact features and precise remaining exits. These do not close C1.5.b0: the inventory stays six closed and52 open. The remaining house/fan cases keep every body equation and all four extras. No numerical parameter cover, Lean compilation or CI was used. Every commit uses[skip ci]; PR11 remains draft.
+
+## October24,2026 — exhaustive six-body roadmap and complete graph/load refinements
+
+Read base:255c224706de5d2e624e260cfaf8c5fdaef2dd53. SIX_BODY_CYCLIC_FRONTIER.md proves the complete six-row block-tree cover and all attachment counts:7 for triangle+3bridges,11 for four-block+2bridges,16 rooted five-block+leaf types,3 two-triangle+bridge layouts and3 triangle+four-block layouts. The two common-articulation layouts are already excluded by the uniform petal/leaf theorem; the other full layouts retain every load and actual bridge equation.
+
+For an entire biconnected component, loaded noncontact connectivity forces a simple exterior cycle of length>=5. At six bodies this gives only a hexagon with at most3 noncrossing chords or a pentagon with one interior clear body. The full plane-sector chord cover and exact degree2/3 restrictions leave five pentagon graph domains. The five-spoke graph is excluded because every rim vertex would be loaded. In the four-spoke/no-chord graph only the all-four-spoke-loaded subfamily is excluded by width-one transmission versus endpoint distance>1+sqrt(2). The remaining masks are explicitly{1,2,4} or{0,1,2,4} up to reflection, and the missing-spoke rim body4 is physically disjoint from H. The one-chord case keeps its higher-degree equations and does not inherit that noncontact conclusion.
+
+Independent review corrected an overbroad proposed load forcing before integration: the missing H--4 spoke prevents applying the degree-three obstruction at endpoints0,3 without an actual contact premise. The committed proof applies it only at inner vertices1,2, and the four-spoke graph remains open. Both root and independent full audits then passed the entire corrected source, including the six bare-hexagon load orbits and all precise parent scopes.
+
+The deep roadmap now instantiates every six-body attachment, plane, mask and exit gate. All six m=6 coarse rows retain three extras and remain open; the first open size is still the five-body house/fan. The authoritative ledger stays six closed and52 open. Unrestricted T9, original equality and complete earlier prerequisite-chain audit remain open. No Lean compilation or CI was run; every commit uses[skip ci] and PR11 remains draft.
+
+## October24,2026 — full fan endpoint owner cover and three deeper house domains
+
+Read base:8b390e7942c377cf18f1b6c532f0b982dda42a89. FAN_TIP_OWNED_ENDPOINT_EXCLUSION.md proves the entire two-tip-owned endpoint contradiction by actual port order, true-origin moments, proper all-mask concurrence and a full scalar lower bound1431/1000>sqrt(2). FAN_NON_HUB_OWNED_ENDPOINT_EXCLUSION.md extends it to all neither-H-owned cases: unique-free/shared endpoints have a strict full-hub torque contradiction, while radial-free endpoints have a stronger exact metric adapter. FAN_HUB_OWNED_ENDPOINT_EXCLUSION.md independently excludes all equal/opposite/perpendicular H-axis pairs, including actual shared means. Its perpendicular case uses only geometric normal signs at the internal contact triangles and the true endpoint force equations.
+
+FAN_ENDPOINT_OWNER_REDUCTION.md therefore leaves exactly one H-owned endpoint and exactly three opposite physical-feature families: tip-owned singleton; unique-free opposite a genuine shared boundary side; or radial-free with distinct inner-vertex applications. The complete actual first-side contact set remains, with0<p'<=1 after normalization. Root and independent full audits passed all four source proofs and the owner assembly; the three mixed exits remain open at this checkpoint.
+
+THREE_BOUNDARY_PATH_RESULTANT_CONE.md proves a full positive-cone identity without a degree premise, excluding the house mask with all three actual hub neighbors radial and the fan mask whose sole unique body is internal. HOUSE_FOUR_LOAD_TIP_OWNED_ENDPOINT_EXCLUSION.md uses that cone only to reweight a geometric convex combination of the three genuine house-neighbor corner sets; original force/torque equations are unchanged and the missing spoke is never inserted. Both full audits passed the entire transfer.
+
+HOUSE_END_TRIPLE_TILTED_BYPASS_DOMAIN.md covers all genuine tilt angles and both signs, all endpoint normal zero cases, two singleton bypass contacts and the strict outward roof reaction; both bypass-owned endpoint normals are impossible. HOUSE_MIDDLE_TRIPLE_UNIQUE_FREE_HUB_SELECTION.md uses fixed three-vector load ratios, full degree-two translation equations and compatible finite selection to remove a free hub edge in the all-physical-unique mask. Shared means are never fixed and matched-junction coupling is explicitly checked. Both sources passed root and independent full audits.
+
+All eight new sources are complete implications at their stated scopes; they do not yet close the remaining mixed fan or the house. Six coarse cells are closed and52 open. Every physical square, circle-weight endpoint and genuine higher-degree equation remains. Unrestricted T9, equality and full earlier prerequisite-chain audit stay open. No Lean compilation or CI was run; all commits use[skip ci] and PR11 remains draft.
+
+## October24,2026 — entire five-body fan graph closed
+
+Read base:13493b88fc384f63c7488d56f18615b1eb31769c. All15 files in that preceding owner-cover checkpoint were read back from GitHub and matched exactly. This checkpoint adds FAN_MIXED_TIP_ENDPOINT_EXCLUSION.md, FAN_UNIQUE_FREE_SHARED_ENDPOINT_EXCLUSION.md, FAN_HUB_OWNED_RADIAL_FREE_ENDPOINT_EXCLUSION.md and FOUR_LOAD_FAN_EXCLUSION.md. Root and separate independent full hand audits passed all three final families and the complete assembly.
+
+The mixed tip-owned proof gives a complete actual-mean port argument, including p=1 at a shared hub-side endpoint and every coincident inner-port possibility. A short arc contradicts full hub force balance; the genuine clockwise long arc gives the origin and endpoint signs. The aligned/oblique far-corner tests retain both physical masks. A general support-width bound at the H-owned endpoint and the full tip-owned height adapter at the other endpoint have a sum>1 over the entire coupled angle domain, contradicting the hub's unit height.
+
+The unique-free/shared proof does not import an opposite-hub-vertex torque. Actual physical nonoverlap fixes the shared offset t=c and its neighbor's hub normal. Both opposite H-owned sides are handled. Full four-force hub balance and all actual moments give p<=d(d-c). The complete circle-mask equations force both extreme application points to lie within radius11/20. Monotonicity handles the whole radius window, and the two whole c intervals use explicit strict rational inequalities and degree-eight polynomial sign identities. Exact rational arithmetic independently verified the displayed coefficients, derivative decomposition, discriminant and endpoint values. The loaded opposite tip requires |P|>=R-sqrt(2)>11/20, a contradiction.
+
+The radial-free proof retains both physical circle weights, including either zero endpoint. Its local actual triangle routing gives distinct inner-vertex applications and precisely the no-inner-contact premise needed for the full corner-mean port argument. A true-origin bound excludes the northwest radial lift; the southwest frame gives its exact height d*cos(delta)-(1/2)*sin(delta). Both full concavity endpoint allocations exceed1. No inner body is assigned an artificial degree-two equation in any branch.
+
+The assembly covers the initial three-load exclusions, the whole neither-H-owned and both-H-owned families, and every physical alternative under exactly one H-owned endpoint. The entire positive fan graph is therefore excluded throughout the declared radius window, with all four arbitrary completion squares retained and no secondary minimizer. Nine of the ten five-body biconnected graph types are now closed; only the house's three complete load-mask orbits remain in C1.5.b0.
+
+The deep roadmap records every actual-mean, local-support, hub-torque, circle-mask, monotonicity and whole-interval scalar gate. Separate fan-hole/exterior-capacity work is retired as unnecessary, without asserting an unproved regional theorem. The exact-component fan result is not exported to a larger graph carrying additional positive forces. The coarse count remains six closed and52 open. Unrestricted T9, original equality and the full earlier prerequisite-chain audit remain open. No Lean compilation or CI was run; every commit uses[skip ci] and PR11 remains draft.
+
+## October24,2026 — all-mask middle-hub selection and the entire four-load house wall excluded
+
+Read base:c03689d508dd808f31a3e18239d409e56b491dea. All12 files in the whole-fan checkpoint matched their GitHub readback. This checkpoint adds HOUSE_END_TRIPLE_UNIQUE_TILTED_TIP_EXCLUSION.md, HOUSE_MIDDLE_TRIPLE_FREE_HUB_SELECTION.md, HOUSE_FOUR_LOAD_ENDPOINT_OWNER_REDUCTION.md, BOUNDARY_UNIT_SUPPORT_HEIGHT.md and HOUSE_FOUR_LOAD_COLLINEAR_WALL_EXCLUSION.md. Root and separate independent full hand audits passed all five sources.
+
+The end-triple lower physical-unique tip cannot be nonparallel to its clear transmitter. Its actual two singleton applications permit the existing fixed-tip selection. The B-owned case has geometric c<s but true torque c>=s. The H-owned case retains both possible unique far corners; its surviving torque makes the upper bypass application farther than one unit from the true upper transmitter point, contradicting the entire incident-support feature bound. The remaining end-triple cover is disjoint: B parallel U with either physical mask, or nonparallel physical-radial B, with all N/T masks and actual means.
+
+The middle-triple free-hub proof now covers all physical circle masks, without the earlier all-unique weight-ratio premise. It geometrically excludes both shared roof sides, the coincident roof junction and simultaneous shared exterior sides, retaining every equality frame. One unloaded hub consequently has two fixed singleton applications with a nonzero roof moment. Its local force and torque determinant is a nontrivial analytic restriction on an independent free AD parameter; the finite simultaneous choice avoids it before multipliers. Matched junctions, uncrossing and added shared-side forces are explicitly checked. Only singleton AD owned by exactly one hub remains.
+
+The full four-load owner transfer uses its three actual hub neighbors. The boundary-path cone reweights only a geometric zero-corner identity, leaving every original force and torque unchanged. Both mixed tip-owned and radial-free assignments, the entire physically unique free roof endpoint and all remaining neither-H-owned tip/radial mixtures are excluded. At the lower radial endpoint the vertex sign follows directly from its true endpoint moment, without assuming the absent H--C triangle. The exhaustive residual is the collinear hub wall or one specified unique-free lower endpoint with a shared boundary side.
+
+The new uniform support-height theorem handles every square frame using the nearest radial diagonal and the maximum of both support-diagonal projections. An exact square-root difference and a positive quadratic completion give f_R(delta)=(R-sqrt(2))*cos(delta)-(9/40)*sin²(delta)/cos(delta). Strict concavity over the entire coupled endpoint-angle domain gives f_R(0)+f_R(alpha)>2241/2225.
+
+For the actual house wall, full hub force and torque give xA<xD<xB, preserving every shared mean. Actual port order is clockwise; both genuine endpoint torques give Ox>xD. The cone-origin estimate and complete aligned/oblique far-corner tests put its endpoint centers northwest/southwest. Three boundary contacts give deltaA+deltaD<alpha. Their opposing actual support heights sum to exactly1, contradicting the uniform lower sum>2241/2225. The entire wall domain is closed; only the specified physical-unique lower-free/shared-side family remains in the four-load orbit.
+
+The deep roadmap now records all geometric, support-feature, mean-endpoint, local-force, finite-selection and full scalar steps, together with exact open parent domains. All three house load orbits remain open, and the coarse ledger stays six closed and52 open. The whole C5 and fan are closed; larger components, unrestricted T9, original equality and the full earlier prerequisite-chain audit remain open. No Lean compilation or CI was run. Every new commit uses[skip ci]; PR11 remains draft.
+
+## October24,2026 — whole parallel middle star closed; radial end-tip owners reduced
+
+Read base:801a2f25779316a94325db09666cd0bcb070ba99. All12 files in the preceding house-domain/wall checkpoint matched GitHub readback. This checkpoint adds the complete owned-hub middle-house domain, the all-mask free-external selection, the complete parallel-A-star exclusion, the nonparallel fixed-feature selection, and the entire radial lower-tip H-owned/free-owner exclusion. Root and separate independent full hand audits passed all five sources.
+
+The owned-hub domain retains every physical circle mask and actual contact mean. It proves the roof uses an upper adjacent D vertex, every AT application lies above the hub-interface line, and every DC application lies strictly below it with the full side-mean bound. Nonparallel A and D have actual three-force concurrences inside their squares; the parallel roof retains its genuine physical radial-S mask and exact weighted inner-face midpoint, without fixing either application individually.
+
+At a free DC contact, the unloaded D has three distinct fixed physical applications. Its local force/torque condition has free-normal coefficient a*beta_y>0, so a simultaneous finite pre-multiplier selection removes the entire feature without any circle-weight premise. In the parallel-A star, D-owned DC is geometrically separated from B. Its remaining C-owned frame has r>s and m>l from the full D equations. The entire roof support feature requires h<=2b and h>1/(a+b), hence b>1/3. The C horizontal width is strictly below sqrt(2)*a, but its required B contact demands at least1+b>sqrt(2)*a. This closes the whole parallel-A family, radius-free.
+
+The full nonparallel fixed-star selection displays nonzero determinants for free AT, free AB opposite a singleton AT, and free DT opposite a singleton DC. The variable means of genuine shared AT/DC sides are explicitly retained. Distinct-height physical applications preserve parameter independence at matched junctions; all choices precede extraction and survive uncrossing/thinning. The entire nonparallel-A family remains the exact middle-triple parent obligation.
+
+For the end triple, tilted radial B with H-owned or genuine free HB forces a complete physical radial frame and an actual chord bound for the other loaded endpoint N. Its true transmitter application has norm<R−1, so adjacent vertices are interior. The entire tilted N frame has a strict opposite-corner deficit; the whole aligned N frame retains its full actual mean interval and has two exact uniform positive corner-radius margins. The free-HB extension has its own complete upper-side chord and monotonicity proof. Every N corner would be circle-interior, contradicting its positive load. Thus a remaining tilted radial B must itself own HB at a strict side-interior point; B parallel U remains separate.
+
+Every new gate is a whole-domain implication or exclusion, with all physical corner-weight endpoints and every true higher-degree force retained. The four-load house's specified unique-free lower/shared-side family also remains open. The ledger is unchanged at six closed and52 open. No whole house orbit, larger mixed cell, unrestricted T9 or original equality is claimed closed. The full earlier prerequisite-chain audit remains open. No Lean compilation or CI was run; every commit uses[skip ci] and PR11 remains draft.
+
+## October24,2026 — whole four-load and middle-triple house orbits closed; entire radial lower-tip mask excluded
+
+Read base:eae54581a478f6199df7d1c20a408561e36ae52d. All12 files in the preceding parallel-middle-star/radial-owner checkpoint matched GitHub readback. This checkpoint adds six complete sources: HOUSE_LOWER_FREE_SHARED_PINNED_MODULE.md, HOUSE_LOWER_FREE_SHARED_EXCLUSION.md, HOUSE_FOUR_LOAD_BRANCH_CLOSED.md, HOUSE_MIDDLE_TRIPLE_NONPARALLEL_STAR_EXCLUSION.md, HOUSE_MIDDLE_TRIPLE_BRANCH_CLOSED.md and HOUSE_END_TRIPLE_RADIAL_LOWER_TIP_EXCLUSION.md. Root and separate independent full audits passed every manuscript and both whole-orbit assemblies.
+
+For the four-load house, the pinned-module proof now explicitly covers both positions of the free unique lower vertex relative to its shared side. Its opposite-vertex branch has a separate complete geometry argument; no nonexistent HDC triangle is borrowed from a fan proof. Both branches exclude a shared next boundary edge. The exact two-body virtual-work determinant retains the full internal shared mean and every candidate active circle corner. The resulting radial/unique module has fixed external contacts. Its H-owned roof branch uses an exact signed radial/tangential height with strict endpoint margins287/356000 and81/8000. For every other roof owner, the full unloaded-hub determinant covers all zero-torque degeneracies. The genuinely shared inner-contact branch has complete positive/zero/negative shift routing and a uniform strict far-corner deficit. Every actual degree-three body retains its original equation. The exhaustive endpoint cover and prior full wall theorem therefore close both four-load masks.
+
+For the middle triple, the full nonparallel proof retains variable means in precisely those contact patterns where they prevent a fixed-star selection. Owned perpendicular roof axes contradict quantitative horizontal support spans. A parallel radial roof retains its actual weighted inner-face midpoint; the two true force-ratio bounds differ by an exact positive square and remainder. Vertical AT has a complete owned/free roof-feature cover. The final free DT opposite a shared DC first removes unique physical roof corners by the existing distinct-fixed-application selection. Its two remaining radial roof faces have separate full contradictions: true torque versus the complete interval force bound, or a physical circle-force cone narrower than the required reaction. The parent assembly includes shared, free and one-owner hub interfaces, both star types, all circle masks and all actual means. Hubs are unloaded of exact degree3, without silently requiring them to be physically circle-clear.
+
+The radial end-tip theorem completes every physical two-circle-corner B. Its remaining tilted B-owned side has exact tau>1/2, full c<5/8 and two actual upper-chord angle bounds. All tilted upper-square corners have explicit strict margins. Parallel upper N retains its entire actual transmitter mean interval, with ell>=c/s and a strict1/32 improvement on the whole upper c interval. The exact derivative lower factor has the correct sign at its negative radical coefficient; all complete scalar intervals are covered analytically. Both parallel B radial directions are also excluded. Root separately checked the five displayed rational gaps, discriminant373 and exact derivative factorization using Fraction arithmetic; no angle grid or sampled pose enters the proof.
+
+The sole remaining house domain is now the end-triple with lower B parallel U and exactly one physical circle corner. Its full HB owner, actual UB/UN/roof means, N/T physical masks and four arbitrary extras remain. The deep roadmap expands every completed proof step and every remaining full-family gate; it retires exterior-capacity obligations for the two directly excluded whole orbits. No coarse row is ticked prematurely: six closed and52 open. C1.5.b0, all larger mixed rows, unrestricted T9, original equality and the full earlier prerequisite-chain audit remain open. No Lean compilation or CI was run; every commit uses[skip ci], and PR11 remains draft.
+
+## October24,2026 — entire end-triple, house and five-body biconnected cell closed
+
+Read base:00e794ed2c0f1005a61609794c8efb8218f34c4f. All13 files in the preceding two-house-orbit/radial-mask checkpoint matched GitHub readback; PR11 metadata was updated and remained draft. This checkpoint adds the two full parallel-unique lower-tip owner proofs, the complete end-triple assembly, the whole-house assembly and FIVE_BODY_BICONNECTED_CELL_CLOSED.md. Root and separate independent full hand audits passed all five new sources; both independent teams also fully audited the final H-owned source and end-triple assembly.
+
+In the free-HB family, aggregating the actual B+U block keeps every internal UB mean variable. Two whole-block motions give a necessary external determinant with exact nonzero coefficient W_x=X*k. This removes every singleton UN before multipliers, including all tilted N and physical circle masks. Every remaining shared UN has a complete pinned HN feature, but its actual transmitter mean is retained. Full H force and torque determine the actual roof side parameter. The exact N circle equation forces its center beyond135 degrees; both actual roof-application projections are strictly positive, and proper loaded roof concurrence puts its center between-75 and60 degrees. The resulting center gap exceeds75 degrees, contradicting physical NT contact throughout the window.
+
+In the H-owned-HB family, genuine B torque includes the full k=1 endpoint, and the complete H support/star calculation puts its three physical applications at distinct fixed points. Its nonzero bilinear determinant excludes only free HN/HT normals in the simultaneous preselection. The complete actual chord interval proves ell+sin(delta)>1, excludes all parallel N and yields the mask-free roof angle alpha<pi/8. Both physical triangle inequalities route every NT contact; N retains its original three pair forces, and its true torque excludes the unique upper-right corner. All four radial N axes are explicitly covered, retaining arbitrary and zero individual corner weights. For the perpendicular NT transition, positive actual force coordinates and circle-corner acuteness justify coordinatewise comparison before the exact squared-radius margin2/5 is applied. The strictly acute alternatives have full unique-T torque/selection and both radial-T exits. Every actual side mean is preserved.
+
+The end-triple assembly lists five exhaustive whole physical domains and both reflected masks. The whole-house assembly derives the exact five loaded complement-path intervals and combines all three complete orbit exits. The new cell assembly repeats the hand ten-type graph count, keeps the seven uniform subgraph/load obstructions, and invokes the full C5/house/fan sources for the final three types. All finite conditions belong to one certificate before extraction; all four extra squares remain in their original positions. None of the three graph-specific degree arguments is exported to a larger attached block.
+
+C1.5.b0 is now CLOSED hand. The coarse inventory changes from six closed/52 open to SEVEN closed/51 open. All four five-body cyclic cells are now closed at the common canonical lower-bound minimizer; the older opposite-load C4/Phi prerequisite remains explicit. Every surviving selected positive component therefore has6–9 bodies,3–7 noncollinear loads and at most27 atoms. The remaining frontier begins with all six complete six-body rows, each retaining three physical extras. No six-body cell is ticked by the five-body closure.
+
+The live README, ordered and deep roadmaps, five-body graph source, prerequisite ledger and all58-row coarse ledger are reconciled to that exact status. The completed house exterior-capacity alternative is retired without asserting a standalone capacity theorem. Larger mixed cells, the unrestricted radius theorem, original equality and full earlier prerequisite-chain audit remain open. No Lean compilation or CI was run. Every commit uses[skip ci]; PR11 remains draft.
+
+## October24,2026 — first whole six-body attachment/load exits and uniform local obstructions
+
+Read base:de4a85aa123cece0838861b14b5e1e0f1f0c2563. All12 files in the complete five-body-cell checkpoint matched GitHub readback; PR11 metadata remained draft. This checkpoint adds six fully root/independently audited sources and refines the entire six-body catalogue plus the live deep roadmap. The ledger stays seven closed and51 open.
+
+UNLOADED_TRIANGLE_HUB_EXTERNAL_SEPARATION.md audits every equation and physical feature in the completed middle-house proof. Only unloaded exact-degree3 A,D, their exact-degree2 loaded roof T and the external physical BC contact are used; B/C degrees, loads and BC multiplier are absent. An explicit enlarged finite prelisting covers arbitrary local motifs with external forces before KKT. The whole local theorem excludes even zero-weight BC contacts. SIX_BODY_MIDDLE_MOTIF_CONSEQUENCES.md proves the exact four-graph degree cover and only its justified whole-family exits: zero-hub house/lower-leaf and every three-load two-opposite-ear graph. The latter retains exactly two full four-load masks. The two other graphs gain physical noncontact, not a graph exclusion.
+
+BOUNDARY_THREE_EDGE_PATH_DIAMETER.md establishes the exact four-body scope of the older full seven-cycle diameter Sections1–5. Root reread the full shadow, endpoint-sector and derivative proof and checked the explicit angular-lift construction; the seven-cycle enters only Section6. Every physical three-edge boundary path has endpoint-center distance<3. A channel of two or more exact unloaded transmitters requires distance>=3, even with arbitrary extra endpoint forces. The whole adjacent-zero four-load C6 orbit is therefore excluded.
+
+SIX_CYCLE_THREE_LOAD_LONG_CHANNEL_EXCLUSION.md closes every(1,2,3) three-load C6. The long reserve forces R²>=17/4 and a narrow endpoint cap. The full isolated parallel-load S/D cover is excluded before forming a proper concurrence triangle. All-mask endpoint heights and boundary-center separation put the third center below the channel. The entire short side case violates a squared-distance sum; the diagonal case retains both strict actual side parameters and excludes both radial and unique endpoint masks by exact full radius/center bounds. No three-extra motion or completion bound is needed.
+
+LONG_CHANNEL_ENDPOINT_MATCHING.md proves a new purely geometric statement for any contained units at radius<=sqrt(Q): distance>=3 center pairs form a matching. The exact cap has squared radius89/450 and would put two distinct centers at squared distance<178/225<1. Its channel corollary requires exact unloaded internal transmitters but permits arbitrary endpoint degrees and loads. Same-endpoint parallel channels are explicitly retained. Every simple cycle with at least eight bodies and exactly three loads is excluded; seven bodies retain the single run pattern(2,1,1). Root checked the complete cap constants and run scope; no new normal choice is used.
+
+TRIANGLE_THREE_BRIDGES_LONG_CHAIN_EXCLUSION.md closes the entire length-three pendant chain of C1.3.b3. The local loaded all-bridge radial aggregation is justified directly, and an initially loaded intermediate body gives an impossible transmitter width before any zero-load assumption is made. Both leaf types and both widths put the triangle root in a strict western cap. The complete angular lemma, using exact monotonicity on the full center-radius rectangle and all-mask resultant direction bounds, contradicts the touching boundary-tip pair. All three extras remain. The common-root three-leaf layout was already closed, leaving five full layouts.
+
+These six proofs add complete continuous-domain exclusions and global restrictions; none closes a whole six-body coarse row. Every exact graph/load/owner/mean gate and the entire remaining simple-C6 cover is explicit in the updated catalogue and deep roadmap. The next work remains complete six-body families, then larger mixed cells, unrestricted assembly, original equality and full earlier-chain audit. No Lean compilation or CI was run. Numerical pose sampling is not a proof premise, and no extracted normal was changed. Every commit uses[skip ci]; PR11 stays draft.
+
+## October24 structural and whole-attachment checkpoint after993c8d6
+
+SIMPLE_CYCLE_LOADED_FORCES_NONPARALLEL.md gives the complete global parallel-load exclusion for every exact simple cycle with at least three loads. Its direct and one-side channels end too centrally, radial D cannot meet a diagonal transmitter, two diagonal S neighbors overlap, a long-plus-diagonal S pair has a strict whole-circle deficit, and two long channels contradict endpoint matching. The proof supplies proper radial concurrence even at isolated loads, retaining the unbounded physical two-corner case and every original mean.
+
+TRIANGLE_THREE_BRIDGES_DOUBLE_LEAF_ROOT_EXCLUSION.md proves a uniform two-radial-leaf articulation disk theorem, with an exhaustive S/D and side/vertex cover. A third leaf at another triangle root forces overlap except at exactly R²=17/4. The complete exceptional contact cover, the actual four-force A torque and the loaded C point cone then exclude that radius too. This is the third of seven entire C1.3.b3 attachment exits; the fork, mixed arms, different-root arm/leaf and one-leaf-at-each-root layouts remain.
+
+ROOTED_BLOCK_ATTACHMENT_OBSTRUCTIONS.md records three uniform local-degree implications and five whole six-body instantiations. A diamond attached through a tip forces both unchanged hubs and the other tip to be a boundary triangle. A book with unchanged degree-two page tips has three common boundary neighbors. A four-rim wheel with unchanged degree-three rim vertices has a boundary four-cycle. The diamond-hub version of the first argument is explicitly not asserted: its forced boundary vertices form only a path. The correct full attachment residuals are9/11 in C1.4.b2,14/16 in C1.5.b1, and2/3 in C2.34.b0.
+
+Root and separate independent full hand audits passed all three sources and every widened scope. The deep roadmap ticks their actual sublemmas, exact critical-radius transition and whole attachment exits. Every original extra and root force remains. The ledger is still seven closed and51 open; all six six-body coarse cells, four whole C6 load orbits, unrestricted sharpness, original equality and the full earlier prerequisite-chain audit remain open. No Lean compilation or CI was run. Numerical diagnostics, where used to reject proposed generalizations, are not proof premises.
+
+## October24 outer end-triangle and whole-attachment checkpoint afterb371b12
+
+OUTER_BRIDGED_TRIANGLE_EXCLUSION.md establishes the full exact-degree end-triangle reduction with an arbitrary external component. The actual cut resultant supplies a negative-side circle port; true tip concurrence and actual embedded port order put the three-force articulation concurrence on the opposite ray. Tilted articulations would repeat one far-vertex application. The aligned support-height bound first excludes rho>=max(d-1,0), closing the complete triangle-plus-two-leaf-fork attachment through the full two-leaf disk theorem.
+
+Root then removed the remaining radial threshold in OUTER_BRIDGED_TRIANGLE_CAP_EXCLUSION.md. When rho>=0, the two actual aligned contact heights differ by1. Their exact support inequality forces the common concurrence parameter t>8. Each tip center has actual-normal projection>3/2 and transverse component<sqrt(181)/60, forcing x>353/243>29/20. Both centers lie in a cap of squared diameter178/225<1, contradicting their inscribed open disks. The parallel interface enters the same cap directly. Exact margins23803/925200,13/4860,47/225 were separately checked. Root and independent full audits passed both the complete inherited scope and the strengthened source.
+
+The result is the strict actual bridge-point sign p dot M_tips<0 for every true one-bridge end triangle. It excludes both disjoint triangles joined by one bridge by orienting toward the outward endpoint; p=0 is retained and excluded. Thus C1.3.b3 has four of seven attachments closed, leaving mixed arms, different-root arm/leaf, and one leaf at every root. C2.33.b1 has two of three layouts closed, leaving the whole tip-attached bowtie leaf. No degree4 articulation is represented by the new degree3 end-triangle theorem.
+
+SIX_CYCLE_ALTERNATING_DOUBLE_DIAGONAL_EXCLUSION.md closes the entire finite width alternative with at least two diagonal transmitters. The endpoint side-interior convention gives a common loaded frame and two perpendicular channels. Exact force signs retain the physical two-corner endpoints and give the three actual circle corners. Their two equal-radius identities force a,b>1/3; the summed Cauchy bound has strictly positive derivative and exceeds Q at a+b=5/4 by the exact positive numerator268-187sqrt(2). Root and independent full audits passed. Zero and one diagonal remain as full width classes; the whole alternating-load parent remains open.
+
+All actual shared means, physical zero-weight contacts and three original extra squares remain. All six six-body coarse rows and four whole simple-C6 load orbits are open. The ledger stays seven closed and51 open; unrestricted sharpness, original equality and the full earlier prerequisite-chain audit remain open. No Lean compilation or CI was run. No sampled numerical value is a proof premise.
+
+## October24 full force-polygon and fifth triangle-attachment checkpoint after21ed795
+
+END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md was checked in full at arbitrary root degree. Its purely physical normal-line lemma supplies nonnegative actual-port parameters for every side/vertex owner pattern. True loaded-tip force and torque put the root concurrence strictly opposite the tip resultant; an actual maximizing port and the sharp neighbor support bound then give h_A(Mhat)<d. The same-direction parallel limit has a separate strict equality argument. No additional root equation is used.
+
+RADIAL_TRIANGLE_CONCURRENCE.md converts that physical proper-port fact into a full aggregate theorem. For three genuine noncollinear radial external resultants with nonzero common cycle moment, exact edge-length cancellation gives strictly positive radial factors. Its unique possible parallel root retains opposite-sign wall means and yields the same positive conclusion at the other two roots. The distinct-root arm proof separately excludes zero cycle moment using only its actual direct leaf at B, never treating the arm root as another direct leaf. The small arm support and B's central disk exhaust all aligned, tilted and parallel A interfaces. Thus TRIANGLE_THREE_BRIDGES_DISTINCT_ARM_EXCLUSION.md closes the fifth complete triangle/three-bridge layout.
+
+TRIANGLE_THREE_BRIDGES_MIXED_ARMS_D_EXCLUSION.md closes the full direct-D-leaf alternative at a genuine four-force triangle root. The D leaf puts O inside the root; the complete arm cover forces a side transmitter and S arm with d>1. Root contact geometry, the new end-triangle support and all actual means leave two normals with slopes below1/8. The boundary-tip centers then lie in a cap with squared diameter357439/360000<1. The exact slope and projection margins were checked, and the full parallel branch is retained and excluded. The direct-S companion remains open in this checkpoint.
+
+SIMPLE_CYCLE_CONVEX_FORCE_POLYGON.md proves the entire simple-cycle structural theorem without a direct boundary edge premise. The common moment cannot vanish; actual exterior circle spokes fix one winding and hence its strict sign. Consecutive proper radial concurrences give a simple strictly convex polygon with O inside. The source checks the precise local C5 endpoint metric dependencies and does not claim completion localization or bound physical radial concurrences inside their squares.
+
+The all-side alternating C6 with physical-unique loads and six singleton interfaces has a complete new exclusion. Actual feature geometry gives adjacent port edges and turns in[90,135]degrees. A full mixed-corner-choice sine inequality leaves one constant choice. Original torque and channel closure make the six force-derived point distances minimal under translation, and virial gives their exact ratio R. TRIANGLE_SQUARE_CORNER_FERMAT_BOUND.md bounds that ratio by(1+sqrt(4+sqrt(3)))/sqrt(3)<79/40 using both Fermat alternatives and a complete signed two-variable inequality. The argument covers every triangle shape, not sampled poses. Shared sides and physical two-corner bodies are explicit remaining families because their port lengths or concurrence domains differ.
+
+The hexagon cover is now a complete nine-graph hand enumeration with every necessary positive-load orbit and graph-preserving symmetry. It excludes the additional whole short-chord013 family by an actual two-transmitter path and a unit bypass. After the two previously closed bare-cycle entries,38 necessary whole graph/load orbits remain; each now has a deep gate. Together with the five surviving pentagon domains, there are fourteen complete biconnected graph domains. Enumeration does not establish realizability or close an entire chorded graph.
+
+Root and separate independent full hand audits passed all eight complete sources. The current attachment inventory is five of seven C1.3.b3 layouts closed, with only same-root mixed arms and one leaf per root left; the former's entire direct-D alternative is closed. All six six-body coarse parents and four whole simple-C6 load orbits remain open. All original physical bodies, additional positive forces, shared means and zero individual circle weights remain. The ledger stays seven closed and51 open; unrestricted sharpness, original equality and full earlier prerequisite-chain audit remain open. PR #11 stays draft; no Lean compilation or CI was run.
+
+## October24 16:48 UTC — first whole six-body cell checkpoint afterc381473
+
+The entire C1.3.b3 cell is now CLOSED hand. TRIANGLE_THREE_BRIDGES_CELL_CLOSED.md exhausts the seven rooted attachments of one triangle and three bridges. Root and independent full whole-cell audits passed. The ledger advances from seven closed/51 open to eight closed/50 open; five six-body coarse rows remain open, and the selected surviving component still has6–9 bodies. This is not a completion percentage.
+
+The final mixed-arms S source covers every original leaf/transmitter alternative, high-radius root frame, actual mean and critical endpoint. Its uniform small-transverse screen handles both physical boundary masks and every contact feature without fixing a frame. The critical opposite-leaf case contains the actual full four-square P cage and counts all five other units. TRIANGLE_THREE_BRIDGES_MIXED_ARMS_EXCLUSION.md joins the full D and S alternatives at the genuine degree-four root.
+
+TRIANGLE_THREE_DISTINCT_LEAVES_EXCLUSION.md closes the last attachment. All roots meet D_epsilon and actual pair support heights lie in[-epsilon,epsilon]. Below d=1 the complete tangent-plane cover is impossible. At d=1 the actual root-and-terminal rays route the three roots plus three extras into wedges of total capacity at most5. The origin-side exceptional root was separately excluded by its full leaf-direction balance. Above d=1, zero common moment has a complete contact/support contradiction. Positive radial concurrences then exclude every D and tilted-S root with exact support margins; every aligned nonparallel root has concurrence radius>4, while each actual contact has norm<61/60. Both the three-nonparallel segment case and the one-parallel wall case are excluded. All zero-length port and mean endpoints are retained explicitly.
+
+The whole-cell assembly preserves the same pre-extraction compatible normal choice, all actual positive degrees, physical corner masks, original shared means and all three completion squares. Its two d=1 capacity exits are explicitly full nine-square completion statements, not claims that isolated six-unit subconfigurations cannot exist.
+
+The full D-leaf type of the tip-attached bowtie is also closed. TIP_LEAF_BOWTIE_D_NONPARALLEL_EXCLUSION.md retains arbitrary degree at H in the A-star preselection and exhausts every BH owner, actual side mean and radial free mask. Whole scalar projection bounds exceed37/35 or sqrt(6/5), contradicting the genuine C,E petal support. TIP_LEAF_BOWTIE_D_PARALLEL_EXCLUSION.md uses actual common-wall geometry to supply B nonparallelism; physical proper H ports and true degree-four torque control the petal direction. A whole-frame support estimate gives h_H>=2sqrt(s)>d. The complete D assembly preserves all scopes and leaves the entire S type open.
+
+SIX_BODY_INNER_PENTAGON_LOAD_COVER.md supplies the exact necessary load representatives for all five surviving inner-pentagon graphs. Its new whole no-chord/two-spoke0234 exit combines the true reserve-one H channel and the balanced actual boundary path2--3--4--0 to obtain contradictory endpoint separations. The full hand orbit count retains20 graph/load domains. Together with the38 hexagon domains, every necessary load orbit of all fourteen biconnected graphs now has an explicit deep-roadmap exit. These domain counts imply neither geometric realizability nor parent closure.
+
+All eight new source/assembly files passed root and separate independent full hand audits. The live indexes were reconciled, including the old block-count table, stale physical-C7 checkbox and outdated house execution instruction. Historical counts in this append-only log are retained. The current authoritative ledger is eight closed/50 open. Unrestricted sharpness, original equality and the full earlier prerequisite-chain audit remain OPEN. The older opposite-load C4 branch still retains its canonical radius/Phi-minimizer premise. PR #11 stays draft; no Lean compilation or CI was run.
+
+## October24 17:07 UTC — full rooted load cover and actual channel caps afterdfa6463
+
+TWO_PARALLEL_TRANSMITTERS_NO_THIRD_BYPASS.md is a complete radius-free local theorem. Two true unloaded degree-two transmitters with the same endpoints force side reserve1 and a common shortest channel direction. Strict original point normals then force aligned endpoints with positive-length physical contact intervals, though each actual weighted mean retains its endpoints. The transverse gap is below1. Every third physical bypass is separated from both transmitters and has width>=1; the complete left/between/right cover contradicts its actual endpoint contacts. Root and independent full hand audits passed.
+
+FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md proves all sixteen rooted type domains and38 necessary positive block-load orbits in the fourteen remaining types. The real loaded leaf makes the full loaded complement connected, so no isolated-block complement exclusion is transferred. Each true degree is computed before forcing a load. Six new complete both-S/D families are excluded: C5 masks12 and14; house roof/AD and hub/TD, whose unloaded B,C channels contradict the actual AD contact; and both K2,3 root families with two unloaded transmitters and a third bypass. The previously closed lower-house two-zero-hub family is retained. Four additional full S families have connected physical boundary-neighbor graphs; this closes the entire S type of fan-hub and subdivided-edge-endpoint roots, but their D types and whole rooted graphs remain open. The exact table and all whole-family applications passed separate full audits.
+
+The new local theorem also excludes the entire interior-pentagon two-spoke/chord03 load024 family: H and1 are true unloaded transmitters between0,2, and body3 is a third physical bypass retaining its true degree three. The pentagon cover now has19 necessary full graph/load orbits; the hexagon cover has38. No whole biconnected graph is closed by enumeration or by one of its load exits.
+
+SIMPLE_CYCLE_CHANNEL_POCKET_CAPS.md supplies the missing actual geometric routing for every remaining simple C6. Occupied endpoint-to-circle-corner segments and the original transmitter segment form the full crosscut. Every physical endpoint mask has a facing circle corner of height>=h; actual cyclic order identifies the upper arc with no third loaded spoke. The exterior region is in D_R intersect{y>=h}, so every extra has center height>=h+1/2. Homotopies stay in occupied squares, compact paths in extra interiors retain their labels through weak junctions, and the two-corner outer caps contain no unit. The whole bounded central free union, not merely one drawing face, has area at most3sqrt(3)/2<3. Hence at least one of the three extras belongs to a proved cap. Root and independent full audits passed the barrier, corner-height, order, whole-union area and weak-limit arguments. This is routing, not a new cap-capacity or whole-orbit theorem.
+
+The deep roadmap now gives every one of the38 rooted block-load orbits both full S/D gates, with the four proved S gates ticked and all unresolved counterparts open. It also records the exact one-/two-/three-cap joint completion obligations for the four remaining simple-C6 orbits. No angle boxes or sampled poses inflate the proof count. All actual physical bodies, true root forces, original shared means and zero individual circle weights remain.
+
+The authoritative coarse ledger remains eight closed/50 open, with five six-body rows still open. Unrestricted sharpness, original equality and the full earlier prerequisite-chain audit remain OPEN; the older opposite-load C4 theorem keeps its canonical radius/Phi-minimizer premise. All changed sources and indexes will be read back at the saved GitHub commit. PR #11 stays draft; no Lean compilation or CI was run.
+
+## October24 17:22 UTC — full two-leaf transmitter and four-block load checkpoint after5e2a2e7
+
+TWO_LEAF_ROOT_NO_UNLOADED_TRANSMITTER.md is a new uniform complete nine-square exclusion. The two-leaf root's actual central-disk containment gives h_A(n)>max(d-1,0) except in the full d=1 origin-vertex S/S endpoint. The actual unloaded transmitter of reserve w>=1 and its genuine other endpoint impose h_A(n)+w<=d. Every noncritical alternative is therefore impossible. At d=1 equality gives physical V=S(n), without removing any of V's other positive forces. A strictly negative-quadrant normal and the original strict point convention supply the exact full Y_ALL cage. At an axis endpoint the original mean may be nonzero; actual contact with A plus avoidance of the other genuine leaf forces the complete -1<=t<=0 slider and hence the exact P_ALL cage. Both capacity theorems retain all other physical units, including the remaining positive component bodies. Root and independent full audits passed the entire source and all its prerequisites at this scope.
+
+FOUR_BODY_BLOCK_TWO_BRIDGES_LOAD_COVER.md now exhausts the thirteen necessary block-load orbits and thirty-five full leaf/width alternatives of the nine open four-block/two-bridge attachments. The two earlier diamond-tip layouts remain entirely closed. All three complete arm types S/side,S/diagonal,D/side use the actual arm-root application to establish physical clearance. Every local degree rule is applied at the real total positive degree. The full loaded complement is connected through a genuine leaf, so no isolated-block complement exclusion is imported.
+
+The uniform transmitter theorem excludes every same-root C4 load family exceptBD/BCD. A positive-reserve unloaded channel cannot join two genuine leaf roots because their actual central-disk intersections would give1<=w<=2epsilon<1/30. Thus the opposite-root C4 requires both B,D loaded. Two D leaves at distinct roots would put O inside both root interiors and are impossible throughout the window. A mixed distinct-root S/D family similarly requires d>1; its entire remaining high-radius domain is kept. Every graph-preserving load stabilizer was checked by hand: the C4 adjacent-root/single-C mask retains both mixed orders, whereas the both-loaded CD mask permits swapping them. The exact source totals and all whole load/leaf exits passed separate independent full audit.
+
+The deep roadmap records each of the35 whole leaf/width gates with its full actual circle mask, root force, shared mean and three-extra contract. None of these full necessary covers closes the remaining attachment parents: C1.4.b2 still has2 of11 whole layouts closed and9 open. The authoritative coarse ledger remains eight closed/50 open, with five six-body rows open. No degree-two equation is obtained by deleting a force, no actual application is reset to a midpoint, and critical physical capacity is not reported as isolated-core nonexistence.
+
+Unrestricted sharpness, original equality and the full earlier prerequisite-chain audit remain OPEN. The older opposite-load C4 theorem keeps its canonical radius/Phi-minimizer premise. All changed files will be read back at the exact saved GitHub commit. PR #11 stays draft; no Lean compilation or CI was run.
+
+## October24 17:45 UTC — complete aligned-S bowtie and quantitative end-triangle checkpoint after9b255e6
+
+END_TRIANGLE_HIGH_FACE_EXCLUSION.md is a uniform all-mask theorem at an arbitrary-degree root with two genuine loaded degree-two tips. If both actual root applications share one side of heightP>=39/40, the owned cases put both centers in the cap of projection>=3499/2440. Its exact squared-diameter deficit is65641/2679120>0. The complete parallel, free, physical radial, unique and shared-interface cover is retained. The strengthened radial/free chart hasf<1/12,j>11/12, giving an actual circle corner outsideQ with exact deficit3739/6400. Root and independent full audits passed both the original full proof and the strengthened constants.
+
+END_TRIANGLE_AXIS_RESULTANT_SUPPORT_BOUND.md proves both actual ports share the maximizing side when the full petal resultant is a real root side axis. Its complete owner/strict-vertex cover uses no two-force equation at the root. The conservative support consequence<min(d,59/60) suffices for the new attachment exit. END_TRIANGLE_FACE_RESULTANT_ANGLE.md retains the same center-projection inequality at every positive side height and excludes every free chart already at4/5. The full local less-than15degree circle-force deviation then givesMhat.N>1/2 atP>=4/5 and>4/5 atP>=29/30. Root and independent full audits passed all geometry and exact constants.
+
+TIP_LEAF_BOWTIE_S_ALIGNED_NONPARALLEL_EXCLUSION.md closes the full nonparallel articulation with the actual star selection, true degree3/degree4 roots and every physical B mask. Its remaining high-radius owned charts have a complete scalar frame/mean proof; the actual near-H strip is circle-clear and all C/E petal ports share a side above59/60. The both-H-owned perpendicular case is explicitly excluded before using the maximizing-port theorem. No D-root negative-offset condition is imported atd>=1.
+
+TIP_LEAF_BOWTIE_S_ALIGNED_PARALLEL_EXCLUSION.md closes every full wall alternative. The actual means satisfymu*y=nu*w. Proper B concurrence determinesg_y<0; the true degree-four H equation and behind-port concurrence determineM_y<0 andq_H on its positive ray. For tiltedH, pressure controls every sign transition. The only alternate common side has true torqueP_u*M_v<=P_v*M_u, yieldingb-a<w,a>2/3 and support>39/40. For alignedH, the whole all-frame boundary-wall lemma makes B lie above1/2; pressure and complete actual-port routing force a west-side height>59/60. This includesdelta=alpha=0 and all shared-side endpoints. Root and independent full audits passed both entire manuscripts and their exhaustive aligned assembly. The entire D type was already closed; only the full tilted S type remains in this last bowtie/leaf layout.
+
+TRIANGLE_FOUR_BODY_BLOCK_LOAD_COVER.md gives the full C2.34.b0 remaining load cover. An actual positive-reserve channel excludes the single adjacent C4 load. Two genuine unloaded transmitters in the single opposite-load family align H and B. B's own force equation then forces physical radial S along the common axis with equal actual corner weights. The untouched end triangle has resultant oppositeB and root-axis support2-d>59/60, contradicting the uniform axis support theorem at true degree-fourH. The exact residue isC4 loadsAB,AC,ABC and diamond-hub loadsKAB; the hub keeps degree5 and its other hub degree3. All three extras remain. Root and independent full audits passed both full exits and every load symmetry/degree.
+
+SIX_CYCLE_ONE_DIAGONAL_INNER_CAPACITY.md treats the complete alternating one-diagonal family with three physical unique circle corners. Every original shared mean remains. Its full ordered-port cover proves turn<=135degrees, with equality only atq=z; both diagonal endpoints have strict turns between90 and135degrees. The actual six contact points give polygon area<5/2, and the real diagonal transmitter occupies its inward half-square of area1/2. The whole bounded central free union has area<2, so it holds at most one extra and at least two must lie in actual exterior caps. Root and independent full audits passed. No physical-radial extension, isolated-core exclusion or whole C6 completion is claimed.
+
+The deep roadmap records all of these whole theorem scopes, detailed verified inequalities and full remaining exits. The authoritative coarse ledger remains eight closed/50 open, with five six-body parents open. Subgate counts are not completion percentages. The original corner weights, true positive degrees, all nine physical units and every actual shared mean remain. Unrestricted sharpness, original equality and the full earlier prerequisite-chain audit are OPEN. The earlier opposite-load C4 theorem retains its canonical radius/Phi-minimizer premise. All changed files will be read back at the exact saved GitHub commit. PR #11 stays draft; no Lean compilation or CI was run.
+
+## October24 18:00 UTC — entire C2.33.b1 closed aftera3cbb2e
+
+The second six-body coarse cell is now CLOSED hand. TWO_TRIANGLE_BLOCKS_ONE_BRIDGE_CELL_CLOSED.md exhausts the three actual attachment layouts: shared-root leaf, tip-attached leaf and disjoint triangles joined by one bridge, with true changed degrees5,4/3,3/3. The first and third full exits were already proved. TIP_LEAF_BOWTIE_EXCLUSION.md now closes the entire second layout, retaining everyS/D type, aligned/tilted articulation, physical mask, individual zero weight, original mean and all three extras.
+
+TIP_LEAF_BOWTIE_S_TILTED_DOMAIN.md first proves the complete concurrence signs. Parallel B inputs keep physical radialS/D weighted means; the zero-advance common-side endpoint has an explicit strict-normal/force contradiction. Parallel H is retained as its true axis resultant without an invented finite concurrence. The whole-frame support estimate excludes all high A features; the exact remaining cover has two neighbor-owned vertices or an A-ownedu interface with H parallel/nonparallel. Everya=b,sigma=0 and actual-force endpoint is included. The fixed A-star determinant removes only its complete free-edge domain at distinct physical junctions before multipliers.
+
+TIP_LEAF_BOWTIE_S_TILTED_TWO_VERTEX_EXCLUSION.md first excludes the full nonnegative inner-H support domain, then derives its complete high-radius unique-B residue. One actual mutual owner contradicts the exact proper advanceA_B<V by requiringA_B=VK/L>=V. The other full owner has one continuous scalar proof: sigma<1/2,<32/195,<4/39, rho_B>63/65 and actual squared circle norm>349/80=Q+59/1280. All physical radial, free, parallel and mean endpoints are retained.
+
+TIP_LEAF_BOWTIE_S_TILTED_PARALLEL_HUB_EXCLUSION.md derives its own force/mean domain before any proper-B invocation. It covers the full A-owned top edge, free-AB/singleton-BH case with coincident radial-D exception and genuine free-AB/shared-BH mean. The only surviving strict owner has actual hub bottom-k. Ifk>=1/2, the real B circle corner forces eitherk<9/20 or squared norm<17/4<R². Thus the entirek<1/2 domain routes the real opposite petal to its high side and is excluded.
+
+TIP_LEAF_BOWTIE_S_TILTED_VERTEX_HUB_EXCLUSION.md checks every zero/negative resultant component before routing the petal. The near corner has norm<1/5 and cannot be an actual loaded-tip application. The sole remaining common side hasP=1-w>4/5 ande.r<sin(psi)<delta/w. The whole face-direction theorem first givesP>29/30 and thenP>47/48>39/40, contradicting the high-face theorem on that same actual side. No mean, normal, force or frame is changed.
+
+Root and separate independent full audits passed all four tilted sources, TIP_LEAF_BOWTIE_EXCLUSION.md and the complete three-layout assembly. The inherited lower-window and selected-certificate prerequisites remain explicit; the full earlier global dependency chain is not claimed audited by these local checks. No degree-two equation is assigned toH, no force is dropped, and all nine physical bodies remain.
+
+Two further uniform tools deepen the next frontier. END_TRIANGLE_COMMON_SIDE.md proves every true loaded end triangle has both original root ports on one actual sideN withM.N>0 and height<39/40. The axis-resultant/parallel alternatives and all nonaxis maximizing-port features have full separate proofs. It proves existence; choosing a particular side still needs its location argument.
+
+END_TRIANGLE_RADIAL_NEIGHBOR_OBSTRUCTION.md sums every genuine body force equation. The real end triangle has positive pressure atc_H, so another actual circle load has negative pressure. Any physical two-corner neighbor instead has strict positive pressure, with individual zero weights retained. This excludes the whole all-radialAC andKAB masks in the triangle/four-block branch. Their full residual physical-mask covers areUU/US up toA/C reflection andUSS,SUS,UUS,SUU,UUU in hub/tip order. At least one actual unique corner must have negativec_H projection. Root and independent full audits passed both sources and every application; all four whole graph/load orbits remain open.
+
+The authoritative inventory is nine closed/49 open, including the two full six-body closuresC1.3.b3,C2.33.b1. The four remaining six-body parents areC1.4.b2,C1.5.b1,C1.6.b0,C2.34.b0. The deep roadmap records every completed sign/owner/mask/assembly gate and the seven exact new residual mask obligations. Counts are not completion percentages.
+
+Unrestricted sharpness, original equality and the full earlier prerequisite-chain audit remain OPEN. The older opposite-load C4 theorem retains its canonical radius/Phi-minimizer premise. PR #11 stays draft. No Lean compilation, CI or formal-kernel verification is claimed. All changed files will be read back at the exact saved GitHub commit.
+
+## October24 18:15 UTC — whole parallel bypass and exact negative-endpoint checkpoint afterab0f197
+
+FOUR_CYCLE_PARALLEL_BYPASS_GENERAL_EXCLUSION.md is a full uniform source independent of any radial leaf or root degree. The real bypass/transmitter parallel frames force both endpoint frames parallel. A shared root interface makes its loaded endpoint physical radialS by its own true equation; the other endpoint then has all corners strictly inside the disk. With both interfaces point-only, exact circle containment fixesY=-1/2 and two unique circle corners(-m,±3/2),5/4<m<3/2. Both genuine torque equations use the same original transmitter mean and givegamma*u=k_i(3/2-m). The circle scales agree, forcing equal normal slopes at two distinct fixed junctions. Compatible finite unequal-slope selection excludes the entire domain. Root and independent full audits passed every mask, actual mean and selection compatibility; no extra H force is removed.
+
+BOUNDARY_THREE_PATH_RESULTANT_CONE.md gives a complete local geometric force-cone theorem. Physical boundary order has successive center gaps40--72degrees; the full all-mask corner-force deviation<15degrees makes actual force gaps>10degrees and total span<174degrees. The middle force is a strictly positive combination of the endpoints. Negative projection of the three-body total must therefore occur at an endpoint, with no force equation or degree assumption at the middle body.
+
+In the actual triangle/four-block attachments, the intact real end triangle has positive c_H pressure and the complete force sum makes the other block negative. For C4 loadsABC and diamond-hub loadsKAB, an actual endpoint must be negative. The radial-neighbor theorem makes that endpoint physically unique. Its actual root reflection permits labeling itA; the middle and other endpoint retain either physical mask. This excludes the entire two-radial-endpoint family for either middle mask, including the formerly open unique-hub/radial-tips diamond alternative. Each full residue has exactly four representativesSUS,UUS,SUU,UUU in order(middle,A,other endpoint), withc_H.z_A<0. Root and independent full audits passed the cone, both real degree/force applications and their exact rooted symmetries.
+
+NEGATIVE_UNIQUE_NEIGHBOR_INNER_CONTACT.md is an independent full geometric theorem. A true negative unique corner gives p.z<R/sqrt(2) at every actual root/neighbor point. Both outer faces have larger projection, so the entire real intersection lies on the two inner faces. The exact inequalitya+b>R²-R/sqrt(2), with one full monotone scalar comparison, gives both outward circle coordinates>3/5 and endpoint deficit83/4800. On the entireR²>=17/4 domain it gives>19/20 with exact deficit1/120. The same original-contact calculation yields distance<79/160 from the actual opposite corner, improving to<5/38 at high radius. No point or mean is moved or replaced by that corner.
+
+The true contact diameters also give|z-c_H|<=3/sqrt(2). Strict negative projection therefore implies|c_H|²<9/2-R²<1. AtR²>=17/4 this is<1/4, so the circle origin lies in H's actual open inscribed disk. Root and independent audits passed this additional consequence and every exact threshold. The origin-interior conclusion is not used below its full radius premise.
+
+The deep roadmap records the entire parallel hub exit, the full local cone and contact theorems, the newly closed radial endpoint masks and all remaining exact physical-mask obligations. All true positive degrees, original contact means, zero individual weights and all three extras remain. The authoritative count is still nine closed/49 open; none of the four whole triangle/four-block load orbits is claimed closed here. Four six-body coarse parents remain, followed by all larger mixed cells. Unrestricted sharpness, original equality and full earlier prerequisite-chain audit are OPEN. The existing opposite-load C4 theorem retains its canonical minimizer premise. PR #11 stays draft; no Lean compilation or CI was run. Every changed file will be read back at the exact saved commit.
+
+## October 24 18:24 UTC — adjacent C4, canonical unique mask and diagonal-pocket checkpoint after bfff059
+
+TRIANGLE_C4_ADJACENT_LOAD_EXCLUSION.md closes the entire adjacent
+block-load orbit AB and its reflected BC image. The actual side channel
+and bypass force the root-normal signs. Genuine loaded-tip concurrences
+put the root-line intersection on the positive intact-petal ray. If the
+channel support were nonpositive, both real petal applications would
+lie on a side of height at least one, contradicting the complete
+high-face theorem. Thus the full remaining domain has positive channel
+support below 1/60. The actual return square then contradicts the exact
+narrow-cap and boundary angular-shadow estimates. Every physical mask,
+owner and original mean remains; no canonical premise is needed.
+
+TRIANGLE_C4_OPPOSITE_LOAD_CANONICAL_CONTACT.md proves real hub/transmitter
+contact in the whole opposite-load AC orbit at the existing canonical
+radius/center-norm minimizer. A negative actual neighbor corner bounds
+the hub center. The complete C4 hole is empty, and any positive
+transverse gap admits an inward transmitter translation decreasing its
+corner radii and the secondary norm, while preserving all nine physical
+squares. The hub is oblique and both hub/tip contacts are singleton;
+the physical hub/transmitter contact is not assigned positive stress.
+
+TRIANGLE_C4_OPPOSITE_UNIQUE_TIPS_EXCLUSION.md closes the entire
+unique/unique physical mask in that canonical domain. Fixed-tip and
+whole shared-block virtual-work arguments remove every free root
+normal while retaining both original channel means. The full owner
+cover leaves one exact two-hub-owned endpoint. Its true block force
+points opposite to the intact petal force, and the actual hub center
+violates the petal's strict positive pressure. The mixed unique/radial
+mask remains open, including all radial corner weights.
+
+SIX_CYCLE_ONE_DIAGONAL_OUTER_CAP_EMPTY.md excludes the entire actual
+diagonal exterior pocket of the physical-unique, one-diagonal
+alternating C6 family. The complete occupied cap strip and all
+separating-axis owners are covered. Four exact polynomial identities
+prove strict positivity on complete parameter rectangles; 202 exact
+coefficient lower bounds are positive, with no sampled angle or
+subdivision. The vertical case checks the whole center cap and every
+northwest normal, including the auxiliary intermediate direction.
+Together with central capacity one, at least two of the three extras
+must lie in the two side pockets. Their joint capacity is still open.
+
+Root and separate independent full audits passed all four complete
+sources. The triangle/four-block branch now has three remaining whole
+graph/load orbits: C4 AC, C4 ABC and diamond-hub KAB. Only the mixed
+physical mask remains in AC at the canonical minimizer. Four six-body
+coarse parents remain; the authoritative inventory is nine closed and
+49 open. Unrestricted sharpness, original equality and full earlier
+prerequisite-chain audit remain OPEN. PR #11 stays draft; no Lean
+compilation or CI was run.
+
+The root exact algebra audit independently rebuilt identities I–III from the original cleared geometric expressions, identity IV from its rational rectangle map, and all 202 coefficient lower bounds in Q(sqrt(2)). The coefficient degrees are(4,3),(4,3),(8,3),(10,5); the last is degree-elevated to(20,5) on the same whole rectangle. The respective smallest displayed lower bounds are123/1000,127/1000,350/1000,10/1000. This verifies the written universal identities; it does not introduce a numerical pose search. The four remaining completion allocations are central0/side30, central0/side21, central1/side20 and central1/side11 up to the actual reflection. Every original slider and all physical squares remain. Every changed file will be read back at the exact saved commit.
+
+## October 24 18:39 UTC — whole opposite-load triangle/C4 closure and free diamond endpoint after d79f498
+
+TRIANGLE_C4_OPPOSITE_LOAD_BRANCH_CLOSED.md closes the entire AC
+block-load orbit at the existing canonical radius/Phi minimizer. It
+assembles the physical two/two, unique/unique and both ordered mixed
+masks with all true degrees, original channel means, individual zero
+radial weights and all three other physical squares retained. The
+canonical packing is fixed before normal selection; any selected
+candidate with a positive hub/transmitter gap contradicts that same
+packing's secondary minimality. No packing or certificate is changed.
+
+TRIANGLE_C4_OPPOSITE_MIXED_TIPS_EXCLUSION.md supplies the final complete
+mask exit. A parallel radial tip would make the real channel point
+too central for the unique loaded tip. Whole fixed-tip/shared-block
+virtual-work arguments remove every free unique-root interface. The
+full radial-tip feature cover then gives a genuine inner-face parameter,
+strictly greater than one half when that tip owns its root interface.
+A unique-tip-owned interface contradicts the actual hub diameter.
+With the hub owning that interface and the unique tip oblique, the
+complete circle and contact equations force a radial sine greater
+than one half, then a unique-tip sine below one tenth and an actual
+radial-side parameter above nine tenths. Two actual hub points would
+have vertical separation greater than 29/20, exceeding its diameter.
+
+The entire parallel-unique-tip branch retains its original shared
+channel mean. C4_MIXED_PARALLEL_TIP_SCALAR_BOUND.md proves the required
+positive-pressure inequality on its full continuous domain. A concavity
+bound gives the strict derivative reserve; two monotone comparisons
+and exact endpoint inequalities give Delta<9/40 and rho>8/9. The final
+whole-domain pressure margin is greater than3233/2408000. These are
+analytic comparisons across full domains, with no angle boxes or
+sampled signs. The actual geometry proves every scalar hypothesis.
+
+NEGATIVE_UNIQUE_TRIANGLE_FREE_ENDPOINT_HIGH_RADIUS.md is a separate
+uniform local theorem for the remaining diamond-hub orbit. A true
+negative unique endpoint in a physical H-A-K triangle has no free HA
+contact when R²>=17/4. The complete shared-AK chart retains its actual
+mean and forces a positive physical offset. K's exact circle equation
+makes that offset exceed one half, and the actual H/K contact transfers
+the bound to H's frame. Cauchy--Schwarz then gives
+c_H.z_A>R²-R sqrt(5/2+sqrt(3))>0, a contradiction. Only A has a
+degree-two equation; H and K retain all their other forces. The
+singleton-AK selection exit holds across the full radius window.
+
+TRIANGLE_C4_THREE_LOAD_PARALLEL_DOMAIN.md excludes the whole opposite-
+normal ABC root domain. Equal normals force an actual hub wall, support
+between1/40 and1/2, opposite true application heights and height sum
+at most one. Every such application has norm squared below13/16, so
+both endpoint physical masks are unique. The full aligned/tilted
+endpoint descriptions keep every mean and proper-length endpoint;
+the wall support also exceeds sqrt((R-sqrt(2))²-1/4)>1/4. Its
+actual hub center lies in the open radius-1/4 disk over the entire
+same-normal domain. The full same-normal wall and nonparallel domains
+remain open.
+
+Root and separate independent full audits passed all five sources,
+the complete mixed geometry, every analytic scalar inequality and the
+whole AC assembly. The only remaining triangle/four-block graph/load
+orbits are C4 ABC and diamond-hub KAB. Each retains four exact
+negative-endpoint physical-mask families. Their whole exits and the
+C2.34.b0 parent are OPEN. The coarse inventory remains nine closed and
+49 open; four six-body coarse parents and all larger mixed parents
+remain. Unrestricted sharpness, original equality and full earlier
+prerequisite-chain audit remain OPEN. PR #11 stays draft; no Lean
+compilation or CI was run.
+
+The earlier informal oblique-A coordinate-order shortcut was rejected before any source or gate closure. The completed proof does not assert A0>B0: it uses the exact circle identity B0=D+1/2+pCy, the actual C inner-face parameter and the hub diameter. Root and independent audits checked the corrected complete proof. The complete scalar argument was independently rederived, including every derivative and exact endpoint square/ratio margin. All five complete sources and the full same-certificate assembly retain their declared scope. Every changed file will be read back at the exact saved commit.
+
+## October 24 19:02 UTC — uniform C4 pressure, two-leaf orbit, empty C6 center and full owner exits after619e0ea
+
+POSITIVE_ROOT_PRESSURE_OPPOSITE_C4_EXCLUSION.md proves the entire
+canonical opposite-load C4 exclusion whenever the actual outside
+circle-force sum has positive pressure at its clear hub. Its complete
+dependency audit retains arbitrary extra hub forces, the true degrees
+of the other three cycle bodies, all original means and all nine
+physical squares. No outside force is deleted or turned into a leaf.
+Its full corollary covers any same-hub collection of genuine leaves
+and intact end triangles with at most nine total component bodies.
+
+TWO_LEAF_ROOT_OPPOSITE_C4_EXCLUSION.md applies that theorem to both
+genuine hub leaves. Their individual pressure is positive for every
+S/S,S/D,D/D choice, including all radial corner-weight endpoints.
+Thus the whole BD load orbit of the C4 with two leaves at one root is
+closed at the common canonical radius/Phi minimizer. The BCD orbit
+and its attachment parent remain open. The four-block/two-bridge
+cover now has twelve whole load orbits and thirty-two full leaf/width
+families across its nine remaining layouts.
+
+SIX_CYCLE_ONE_DIAGONAL_CENTRAL_HOLE_EMPTY.md proves that the entire
+bounded central free region is empty for the physical-unique,
+one-diagonal alternating six-cycle. The full opposite-tip feature
+cover first forces exactly one genuinely shared transmitter side.
+Two exact endpoint inequalities and a complete orientation-uniform
+diamond/strip separation theorem exclude every central unit. The
+actual contact polygon retains all weak junctions and original means.
+The diagonal exterior pocket is already empty, so all three extras
+must lie in the two actual side pockets. Only the whole allocations
+3+0 and2+1 remain, with both shared-side/nonshared-side orders explicit.
+
+TRIANGLE_C4_ALIGNED_WALL_TIP_SIGN.md excludes every westward outgoing
+normal at an aligned endpoint of the remaining ABC wall domain. Its
+entire actual mean range gives a support greater than R²/4>=R-1,
+using one monotone polynomial comparison and two complete analytic
+intervals. This excludes the whole two-aligned-endpoint family.
+Every surviving wall needs a tilted endpoint with a westward normal
+at its lower vertex or outer lower face; both physical middle masks
+and every genuine side mean remain.
+
+NEGATIVE_UNIQUE_TRIANGLE_TIP_OWNED_EXCLUSION.md excludes every
+negative unique triangle endpoint that owns its hub normal, including
+every genuinely shared hub interface. The true concurrence coordinate
+is below2/3 by a complete positive polynomial identity. A horizontal
+other contact makes its boundary neighbor strictly circle-clear;
+a downward one violates the universal boundary-contact radius.
+Only the endpoint has a degree-two equation. The diamond retains
+the true H5/K3 forces, intact petal and all three extras. Its remaining
+negative contact is H-owned singleton or free with shared AK below
+R²=17/4; the whole diamond orbit remains open.
+
+Root and separate independent full audits passed all five complete
+sources, including the uniform theorem's outside-force scope and
+same-hub corollary. The deep roadmap records their full proofs,
+eight additional whole same-hub attachment/load applications on
+seven through nine bodies, and the exact remaining geometric exits.
+The coarse inventory remains nine closed and49 open; four six-body
+coarse parents and all larger mixed parents remain open. Unrestricted
+sharpness, original equality and the full earlier prerequisite-chain
+audit remain OPEN. PR #11 stays draft; no Lean compilation or CI was run.
+
+The root independently reconstructed every displayed aligned-wall derivative and endpoint value and the complete shifted degree-eight polynomial. Its negative tail and both continuous comparison domains passed. The negative-tip owner proof keeps the weak torque endpoint b=a; no radial-D or shared-mean endpoint is removed. The complete central diamond/strip theorem was independently checked for every separating-axis owner and weak junction. Every changed file will be read back at the exact saved commit.
+
+## October 24 19:54 UTC — full endpoint-owner and free-contact exits; 1,805 live gates after4f44a0b
+
+## New audited endpoint and central-region results
+
+[NEGATIVE_UNIQUE_ENDPOINT_TIP_OWNED_HIGH_RADIUS.md](NEGATIVE_UNIQUE_ENDPOINT_TIP_OWNED_HIGH_RADIUS.md)
+excludes every endpoint-owned root contact at a negative unique loaded
+endpoint for \(R^2\ge17/4\), including every genuine shared interface.
+It uses only the endpoint's true degree-two equations and a physical
+boundary neighbor. The root and neighbor keep arbitrary additional
+forces; no missing root/neighbor chord is assumed.
+
+[NEGATIVE_UNIQUE_ENDPOINT_OWNED_CONTACT_DOMAIN.md](NEGATIVE_UNIQUE_ENDPOINT_OWNED_CONTACT_DOMAIN.md)
+gives the complete remaining feature description on the original full
+radius interval. The other normal is strictly northwest, acts at the
+actual adjacent endpoint vertex and has strictly positive support.
+A physical radial middle body cannot own that normal. Thus an
+endpoint-owned root interface with a radial middle body must be
+genuinely shared, with the next interface free. Its entire singleton
+alternative is excluded by the previously chosen compatible fixed-tip
+selection. With a unique middle body and singleton root interface,
+the next interface must instead be owned by that middle body.
+No shared mean is frozen.
+
+[NEGATIVE_ENDPOINT_FREE_SHARED_RADIAL_MODULE.md](NEGATIVE_ENDPOINT_FREE_SHARED_RADIAL_MODULE.md)
+handles the entire free root-contact domain. The next interface is
+genuinely shared, the following interface is a physical singleton,
+and the middle square must be radial with both original circle
+weights strictly positive. A complete two-body virtual-work argument
+retains every original shared mean and all outside forces. In the
+actual radial frame, the module is
+\[
+ \begin{gathered}
+ N=\sqrt{R^2-9/4},\qquad d=\sqrt{R^2-1/4}-1,\\
+ A=[N-1,N]\times[1/2,3/2],\quad
+ B=[d,d+1]\times[-1/2,1/2],\\
+ H\cap A=\{(N-1,1/2)\},\quad B\cap C=\{(d,-1/2)\}.
+ \end{gathered}
+\]
+This excludes every free root contact with physically unique middle
+B, and every one-active-corner endpoint of the physical radial mask.
+
+[FREE_NEGATIVE_C4_RADIAL_FAR_ENDPOINT_EXCLUSION.md](FREE_NEGATIVE_C4_RADIAL_FAR_ENDPOINT_EXCLUSION.md)
+excludes the entire physical radial-C alternative of that module.
+The exact two-radial-body contact fixes C. The actual return contact
+forces a complete downward root-vertex frame; the negative endpoint
+projection gives \(c<2/3\). A support comparison over that whole
+interval strictly separates H and C, with positive exact reserve
+\(F\cdot1699/(12\cdot91000)\). No equation at C or H is used.
+Only the free SUU mask remains, with C physically unique.
+
+[FOUR_CYCLE_THREE_BOUNDARY_HOLE_EMPTY.md](FOUR_CYCLE_THREE_BOUNDARY_HOLE_EMPTY.md)
+proves central capacity zero for every actual C4 ring having at least
+three physical boundary squares when \(R^2\ne5/2\). The entire
+weak-junction area/equality argument forces an aligned cross if a
+central unit exists; the three physical circle equations then force
+\(R^2=5/2\). No pendant leaf, degree, positive circle weight or
+canonical minimizer is required. It supplies no unproved exterior
+articulation-pocket capacity.
+
+All five complete sources have root and separate independent full hand
+audits. The endpoint-selection scope is explicit: geometric implications
+use the actual equations, while generic singleton exclusions use the
+compatible certificate chosen before extraction. Every original force,
+true degree, physical mask, individual zero weight and mean remains.
+
+## Exact remaining C4 endpoint-owner obligations
+
+Label the actual negative physically unique endpoint A. Masks are in
+the order **(middle B, endpoint A, other endpoint C)**; S means two
+physical circle corners and U means one. A physical S mask never
+silently means that both individual weights are positive.
+
+| HA contact family | SUS | UUS | SUU | UUU |
+| --- | --- | --- | --- | --- |
+| Free singleton, full radius window | CLOSED | CLOSED | Exact pinned module OPEN; both B weights positive | CLOSED |
+| A-owned singleton, \(R^2\ge17/4\) | CLOSED | CLOSED | CLOSED | CLOSED |
+| Shared positive interval, \(R^2\ge17/4\) | CLOSED | CLOSED | CLOSED | CLOSED |
+| A-owned singleton, \(R^2<17/4\) | CLOSED | AB B-owned; OPEN | CLOSED | AB B-owned; OPEN |
+| Shared positive interval, \(R^2<17/4\) | AB free; OPEN | AB B-owned or free; OPEN | AB free; OPEN | AB B-owned or free; OPEN |
+| H-owned singleton, full radius window | OPEN | OPEN | OPEN | OPEN |
+
+Every H-owned singleton occurs at A's actual corner opposite its
+unique circle corner. The complete fixed-tip selection removes free
+singleton AB. The deep roadmap therefore splits each H-owned mask
+into the complete lower/higher radius domains and the actual
+A-owned-singleton, B-owned-singleton and genuinely shared AB alternatives.
+The original means in every shared branch stay variable.
+
+The free SUU module is split by singleton versus shared HC, without
+assuming an unproved contact-owner or missing-edge reduction. A whole
+core contradiction and a complete joint-capacity theorem are alternative
+routes. If using capacity, the C4 and petal holes and the three direct
+boundary-pair pockets are empty; the two articulation pockets still
+need their actual routing and a joint bound excluding three extras.
+
+The remaining diamond-hub KAB orbit keeps H degree5 and K degree3.
+All negative A-owned/shared HA contacts are already excluded over the
+entire radius window by the actual H-A-K triangle theorem. Its exact
+remaining owner families are H-owned singleton at all radii, or free
+HA with genuinely shared AK below \(R^2=17/4\). The middle K force
+cannot be split into artificial degree-two end-triangle tips.
+
+The final independent audits identified two scope statements that were
+made explicit before saving. The full-window owned-contact theorem now
+states the prior compatible strict/fixed-tip selection at its opening:
+its geometric implications use the actual equations, while its
+singleton exclusion uses the selected certificate. The radial far-endpoint
+theorem now states the positive total circle loads at both A and B
+required by its exact module source, and derives H's physical clarity
+from the original negative-pressure bound. Initial individual zero
+weights remain allowed. No equation at C/H or new post-extraction
+normal choice enters either proof.
+
+Root and the separate endpoint_audit checked the full manuscripts,
+their inherited geometric scopes, all owner/mean endpoints and the
+complete continuous comparison domains. The independent radial-far
+audit reproduced the exact margins1969/1000000,101/40000,104/25,
+777/18484,103/31250,11/625 and1699/91000, and checked the d upper
+bound with squared margin31/57600. The full-window owned-contact
+audit separately reproduced21247/1500000 and all endpoint/monotonicity
+comparisons. These exact arithmetic checks support the displayed
+analytic proof; no numerical pose or angle coverage is a premise.
+
+The deep tree retains every prior gate and now has1,805 unique IDs:
+98 new full proof/physical-domain gates. Its50 new proof-chain gates
+record the five fully audited sources. Its48 owner/completion gates
+split all four ABC masks, both complete radius ranges, each actual
+singleton/shared owner class and the sole surviving free SUU module.
+H-owned singleton AB alternatives are explicit; a genuinely shared
+mean is never fixed to use a point-selection shortcut.
+
+The live README, ordered roadmap, prerequisite ledger and coarse
+ledger have been reconciled. Superseded duplicated checkpoint
+summaries no longer claim obsolete live counts; their verbatim
+versions remain in the pinned4f44a0b revision and repository history,
+and the full chronological evidence remains here. No proof manuscript
+or old deep gate was removed.
+
+All five new manuscripts were preserved in unreferenced GitHub review
+commits and audited before branch integration. The branch checkpoint
+will be created with a non-force expected-head lease, then every
+changed file will be read back at its exact saved commit and the
+PR draft/head/body snapshot checked. The executor outage required
+in-memory editing through the GitHub connector; no shell push,
+Lean compilation or CI was used.
+
+The authoritative count remains nine whole cells closed and49 open.
+Four six-body parents and all larger mixed parents remain open.
+The same-wall ABC assembly and entire physical-unique one-diagonal
+C6 side-pocket proof are separate ongoing full-audit tasks; their
+parents are not ticked by this checkpoint. Unrestricted sharpness,
+every original equality packing and the full earlier prerequisite-chain
+audit remain OPEN. PR #11 stays draft.
+
+
+## October 24 20:29 UTC — whole parallel ABC closure and connected23/25 inner arcs afterd6dc75e
+
+## Entire parallel ABC family closed; stronger inner-arc tool
+
+[TRIANGLE_C4_TILTED_WALL_OUTER_FACE_EXCLUSION.md](TRIANGLE_C4_TILTED_WALL_OUTER_FACE_EXCLUSION.md)
+excludes the complete tilted endpoint's outgoing outer-face contact,
+including every original side mean and both endpoints. The actual
+geometry lies in the whole rectangle
+\(7/4<U<2,\ 2/3<V<61/60\). Proper concurrence fixes the unchanged
+application as \((\kappa U,V)\). A complete support-point corner
+bound and an exact positive polynomial give a containment
+contradiction throughout that rectangle, with reserve
+\(16G\ge6809/1944>0\) in its nonnegative shifted-height part.
+
+[TRIANGLE_C4_THREE_LOAD_PARALLEL_EXCLUSION.md](TRIANGLE_C4_THREE_LOAD_PARALLEL_EXCLUSION.md)
+then closes the **entire parallel-root ABC family**, for both
+physical masks SUU and UUU in order (B,A,C). B's actual radial
+resultant forces a westward endpoint. That endpoint is tilted,
+its remaining application is its actual lower vertex, and the
+prior compatible fixed-tip selection makes the contact B-owned.
+With two westward endpoints, an actual B corner lies outside the
+disk. With exactly one, the actual B width gives
+\(f_A+1-c\le d(y+w)\le d<1\), while \(f_A\ge c\).
+Every other endpoint mean and coincident case remains.
+
+[ANNULAR_CENTER_ARC_AT_23_25.md](ANNULAR_CENTER_ARC_AT_23_25.md)
+proves that **every contained unit with center norm at least23/25**
+intersects the radius-5/4 circle in one connected open arc of
+length strictly greater than43.5 degrees. The arc contains the
+actual radial-center point. Both full outer-face and inner-face
+domains are proved analytically, with exact rational trigonometric
+reserves. Two such units cannot be routed into one free interval
+of length at most87 degrees; the physical routing into a specific
+pocket remains a separate premise.
+
+All three complete sources passed root and separate independent
+full hand audits. The wall theorem uses the simultaneously
+selected necessary certificate and preserves H's true degree
+four, the intact HXY petal, all B masks and zero individual
+weights, every original mean and all three extras. The arc
+theorem has no force, degree or physical boundary premise.
+
+The nonparallel ABC owner cover, the whole ABC and diamond-hub
+KAB orbits, and all four remaining six-body coarse parents stay
+OPEN. The global inventory remains nine whole coarse cells
+closed and49 open. None of these results classifies every
+original equality packing.
+
+The complete deep tree retains all1,805 earlier IDs and now has
+1,842 unique gates. Thirty-seven new checked proof steps record the
+two entire wall proofs and the whole connected-arc theorem. Seven
+earlier parallel feature/mask/parent gates are now checked. The
+nonparallel ABC parent and all four remaining six-body coarse
+parents remain open; the coarse inventory stays9 CLOSED /49 OPEN.
+
+The outer-face polynomial was reconstructed in exact integer
+arithmetic. The separate full source audit found only an undefined
+q0 symbol; the final manuscript defines q0=(79/40)²=6241/1600
+explicitly. Both complete wall proofs passed independent physical
+feature, mean, owner, selection-timing and force-assembly audits.
+The annular theorem independently passed both whole face domains,
+connectedness, radial-point inclusion and every exact reserve.
+
+The unique-corner one-diagonal C6 scalar certificate and full side
+routing are preserved separately for review. No C6 side-capacity
+gate is closed by this checkpoint until its complete source and
+independent assembly audit pass. No Lean compilation or CI was run.
+All changes use the GitHub connector; PR #11 remains draft.
+
+
+## 2026-10-24 20:58 UTC — complete C6 side capacity and further C4 owner exclusions
+
+## Whole C6 completion and new C4 owner exclusions
+
+[SIX_CYCLE_ONE_DIAGONAL_SIDE_CAPACITIES.md](SIX_CYCLE_ONE_DIAGONAL_SIDE_CAPACITIES.md)
+closes the **entire alternating C6 family with exactly one diagonal
+transmitter and three physically unique loaded corners**. Each actual
+side-channel height exceeds 21/50; each actual outward center gap is
+less than acos(-3/5). The occupied crosscut routes every whole extra's
+inner-circle arc into one interval shorter than 87 degrees. Every
+such extra has center norm greater than 23/25 and occupies more than
+43.5 degrees. Each side pocket therefore has capacity at most one.
+The central region and diagonal pocket are already empty, so the
+three actual extras cannot fit in the two remaining pockets.
+
+The complete algebra is in
+[C6_SHARED_T_SIDE_ARC_CERTIFICATES.md](C6_SHARED_T_SIDE_ARC_CERTIFICATES.md),
+[C6_SIDE_ARC_CERTIFICATES.js](C6_SIDE_ARC_CERTIFICATES.js) and
+[C6_SIDE_ARC_CERTIFICATES.json](C6_SIDE_ARC_CERTIFICATES.json).
+One exact rational rectangle covers the full closed angle triangle.
+All 1,080 coefficients are strictly positive. A separate independent
+implementation checked every rational identity, both circle
+equations, all coefficients and minima, and reconstructed each power
+polynomial from its full Bernstein basis. The original multiplied
+torque, every shared mean, actual angular branch and physical routing
+also passed full source-specific audits. Radial loaded masks and
+the zero-diagonal family remain OPEN.
+
+[ORIGIN_ROOT_POSITIVE_PRESSURE_THREE_LOAD_C4_NONPARALLEL.md](ORIGIN_ROOT_POSITIVE_PRESSURE_THREE_LOAD_C4_NONPARALLEL.md)
+extends the full parallel C4 exclusion to an actual origin-containing
+root with positive outside pressure. H keeps arbitrary true degree
+and every outside force. It excludes the complete parallel domains
+of six same-hub attachment families with at least two genuine
+leaves, including all S/S,S/D,D/D three-load C4/two-leaf cases.
+Their nonparallel domains remain OPEN.
+
+[FREE_NEGATIVE_C4_SHARED_RETURN_EXCLUSION.md](FREE_NEGATIVE_C4_SHARED_RETURN_EXCLUSION.md)
+excludes every genuinely shared HC return in the exact free-HA module.
+Its complete signed root frame and four-side cover make C circle-clear
+in both remaining placements. This retains every shift and original
+AB mean. For the remaining SUU singleton return, the actual C
+applications are distinct, BC is C-owned, and HC is H-owned or
+C-owned by the prior compatible fixed-tip selection.
+
+[NEGATIVE_H_OWNED_ENDPOINT_RADIAL_MIDDLE_DOMAIN.md](NEGATIVE_H_OWNED_ENDPOINT_RADIAL_MIDDLE_DOMAIN.md)
+excludes every A-owned or shared next contact when HA is H-owned and
+the middle body is physically radial. Only an exact B-owned tangential
+chart survives. The entire chart is excluded for \(R^2\ge17/4\).
+Below that radius, the original H-side offset and negative-projection
+constraint remain, and the true degree-two B equation gives the full
+BC vertex/normal-ratio interval, including both zero-weight endpoints.
+The uniform parts also apply to diamond K3; its degree-three middle
+does not inherit the separate two-force B formulas.
+
+All these complete sources have root and separate independent full
+audits. The detailed tree has 1,934 unique gates, retaining all earlier
+IDs and adding 92 substantive proof/domain steps. Eighteen previously
+open gates are now closed. The coarse inventory remains 9 CLOSED /49 OPEN:
+the full six-body parents, unrestricted lower bound, original equality
+classification and complete earlier prerequisite-chain audit stay OPEN.
+
+## Exact remaining C4 endpoint-owner obligations
+
+Label the actual negative physically unique endpoint A. Masks are in
+the order **(middle B, endpoint A, other endpoint C)**; S means two
+physical circle corners and U means one. Physical S retains either
+individual zero circle weight unless a complete proof forces both
+weights positive.
+
+| HA contact family | SUS | UUS | SUU | UUU |
+| --- | --- | --- | --- | --- |
+| Free singleton, full radius window | CLOSED | CLOSED | Singleton HC, BC C-owned, HC H- or C-owned; OPEN | CLOSED |
+| A-owned singleton, \(R^2\ge17/4\) | CLOSED | CLOSED | CLOSED | CLOSED |
+| Shared positive interval, \(R^2\ge17/4\) | CLOSED | CLOSED | CLOSED | CLOSED |
+| A-owned singleton, \(R^2<17/4\) | CLOSED | AB B-owned; OPEN | CLOSED | AB B-owned; OPEN |
+| Shared positive interval, \(R^2<17/4\) | AB free; OPEN | AB B-owned or free; OPEN | AB free; OPEN | AB B-owned or free; OPEN |
+| H-owned singleton, \(R^2\ge17/4\) | CLOSED | OPEN | CLOSED | OPEN |
+| H-owned singleton, \(R^2<17/4\) | Exact B-owned tangential chart; OPEN | Three actual AB owner families; OPEN | Exact B-owned tangential chart; OPEN | Three actual AB owner families; OPEN |
+
+Every H-owned singleton occurs at A's actual opposite circle vertex.
+With radial B, all A-owned/shared AB possibilities are excluded and
+the complete high-radius branch is closed. The lower-radius
+tangential chart keeps the actual H-side offset, strict negative
+projection, B's true BC vertex and the entire original-weight normal
+interval. With unique B, the full A-owned, B-owned and genuinely
+shared AB domains remain; no shared mean is frozen.
+
+The sole free-HA SUU module has both B weights positive. Its entire
+shared HC branch is closed. The two remaining actual singleton-HC
+owner alternatives are separate whole domains, with the original AB
+mean and all genuine C applications retained.
+
+A whole-core contradiction and a complete joint-capacity theorem are
+alternative routes. The C4 and petal holes and the three direct
+boundary-pair pockets are empty; the two articulation pockets still
+need their actual routing and a joint bound excluding three extras.
+
+The diamond-hub KAB orbit keeps true H5/K3. Every A-owned/shared
+negative HA is already excluded. In its H-owned family with radial
+K, the uniform endpoint theorem removes all A-owned/shared AK across
+the whole window and every owner for \(R^2\ge17/4\); only its exact
+lower-radius K-owned tangential chart remains. Unique K retains its
+full H-owned domain. The separate free HA/shared AK family remains
+below \(R^2=17/4\). No degree-two middle equation, BC vertex or weight
+interval is imported at K's actual degree three.
+
+The detailed roadmap retains all 1,842 previous unique gate IDs and
+adds 92 substantive gates: 85 complete proof/domain implications and
+seven residual obligations. Eighteen previously open gates are now
+closed. The complete count is 1,934 unique gates; the coarse inventory
+remains nine CLOSED and 49 OPEN. The C6 assembly, full exact coefficient
+packet, origin-root parallel theorem, shared-return exclusion and
+H-owned radial-middle domain all passed root and separate independent
+full audits before this checkpoint. The diamond corollary explicitly
+retains K's degree three and does not import the degree-two middle
+weight/vertex equations.
+
+All seven new source/artifact files and eight live documentation files
+are saved together. Every original shared mean, individual zero weight,
+actual degree, positive outside force and completion square remains.
+No Lean compilation or CI is run; the commit uses [skip ci]. The global
+bound, every original equality packing and the full earlier prerequisite
+chain remain OPEN. Further return-contact proofs are still under audit
+and are not used as premises or marked closed in this checkpoint.
