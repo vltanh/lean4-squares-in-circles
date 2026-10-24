@@ -239,7 +239,7 @@ the opposite endpoint's full owner and mask remain arbitrary.
 
 Root and separate independent full audits passed all five sources.
 These are complete branch exclusions and residual-domain covers;
-none of the three house load orbits is yet fully closed. The coarse
+these earlier residuals are now closed or refined by Section4.8. The coarse
 inventory remains six closed and52 open.
 
 ### 4.7. Parallel middle star and tilted radial end-tip owner families closed
@@ -257,8 +257,8 @@ HOUSE_MIDDLE_TRIPLE_NONPARALLEL_FREE_FEATURES.md gives the complete
 remaining local selection. AT is owned; free AB can remain only
 opposite a genuinely shared AT side, and free DT only opposite a
 genuinely shared DC side. Their variable means are explicitly kept.
-The full nonparallel-A star and its genuine parallel-roof radial-S
-mask remain open.
+The full nonparallel-A star, including that genuine parallel-roof radial-S
+mask, is now excluded by Section4.8.
 
 HOUSE_END_TRIPLE_RADIAL_HUB_OWNER_EXCLUSION.md excludes every
 H-owned or free HB normal for a tilted physical-radial lower B.
@@ -269,9 +269,49 @@ U with either physical mask, or tilted radial B owning HB at a strict
 side-interior point.
 
 Root and independent full hand audits passed all five sources. The
-four-load house still retains its specified unique-free lower endpoint
-with a shared boundary side. All three load orbits remain open and
-the coarse count remains six closed and52 open.
+specified four-load residual is fully excluded by Section4.8. The middle
+triple is closed there as well; only the stated end-triple refinement
+remains, and the coarse count is still six closed and52 open.
+
+### 4.8. Entire four-load and middle-triple orbits closed; all radial lower tips excluded
+
+HOUSE_LOWER_FREE_SHARED_PINNED_MODULE.md covers both initial free
+lower vertices, excludes a shared next boundary side in both complete
+cases, and applies a two-body virtual-work selection retaining every
+actual internal shared mean. The surviving radial/unique two-square
+module is exact. HOUSE_LOWER_FREE_SHARED_EXCLUSION.md excludes the
+entire module for every other hub contact: the H-owned roof has a
+strict signed-height contradiction, and the non-H-owned roof has a
+complete singleton/shared inner-contact cover. Every degree-three body
+retains its actual forces. HOUSE_FOUR_LOAD_BRANCH_CLOSED.md combines
+this with the full collinear wall and exhaustive endpoint-owner cover
+to exclude both complete four-load masks.
+
+HOUSE_MIDDLE_TRIPLE_NONPARALLEL_STAR_EXCLUSION.md excludes the entire
+one-owner nonparallel star. The actual owned roof axes and weighted
+parallel-roof midpoint have full support-span contradictions; vertical
+AT retains its actual side mean. Every remaining free DT is opposite
+a genuine shared DC. Its unique-corner roof is removed by compatible
+fixed-tip selection; both radial roof faces contradict true torque or
+the physical circle-force cone. HOUSE_MIDDLE_TRIPLE_BRANCH_CLOSED.md
+assembles this with the shared, free and parallel-star interface exits.
+The whole middle-triple orbit is excluded, including zero-weight physical
+hub circle contacts wherever geometry permits them.
+
+HOUSE_END_TRIPLE_RADIAL_LOWER_TIP_EXCLUSION.md closes the whole
+physical-radial lower-tip mask. The preceding source covers the entire
+tilted H-owned/free families. The last tilted B-owned side has true
+torque tau>1/2, a full-frame bound c<5/8, two uniform upper-chord angle
+bounds, and strict all-corner radius bounds for every tilted or parallel
+upper N. Its entire actual transmitter mean remains. Both parallel
+radial lower axes are excluded as well. Thus the only remaining house
+has an end-triple load mask, lower B parallel U, and exactly one physical
+circle corner at B. All N/T masks, actual means and four extras remain.
+
+Root and separate independent full audits passed all six new source
+and assembly manuscripts. Exact arithmetic also verifies every displayed
+radial margin, its discriminant and derivative factorization. The coarse
+cell C1.5.b0 stays open until its last entire end-triple domain is closed.
 
 ## 5. Exact remaining whole-cell work
 
@@ -279,12 +319,13 @@ the coarse count remains six closed and52 open.
 
 The subsequent complete C5 and fan assemblies exclude the eighth and
 ninth of the ten graph types. Every surviving five-body biconnected
-component is therefore a house in one of its three load-mask orbits.
-Its full contact owners, actual means, physical masks, zero-weight
-contacts and four extras remain. A C5 or fan subgraph with extra positive
+component is therefore a house. Section4.8 closes its full middle-triple
+and four-load orbits. The only remaining family is the end-triple with
+lower B parallel U and one physical circle corner. Every actual mean,
+other physical mask, permitted zero-weight contact and four extras remain. A C5 or fan subgraph with extra positive
 edges does not inherit either exact-component theorem.
 
 C1.5.b0 remains OPEN until the whole house family is excluded or receives
 a full sharp completion theorem. The current coarse count is six closed
-and52 open. The house holes are empty, but its joint exterior bound
-remains open. No Lean compilation or CI was run.
+and52 open. The house holes are empty. A joint exterior bound for its sole
+remaining end-triple domain is an alternative to a complete core exclusion. No Lean compilation or CI was run.
