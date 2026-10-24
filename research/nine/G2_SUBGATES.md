@@ -251,3 +251,14 @@ The hexagon has six necessary bare-cycle load orbits. The surviving four-spoke g
 - [x] FIVE_BODY_BICONNECTED_CELL_CLOSED.md covers all ten biconnected types and their seven uniform plus three full metric exits under one compatible certificate. C1.5.b0 is now CLOSED hand, with root and independent full whole-cell audits passed.
 - [x] All four five-body coarse cells are now closed at the stated canonical lower-bound setup. The selected positive component has6–9 bodies,3–7 noncollinear loads and at most27 atoms. The authoritative inventory is seven closed and51 open.
 - [ ] Complete all six six-body coarse rows, then every remaining seven-/eight-/nine-body mixed family. Exact smaller-component degree equations cannot be applied to blocks with additional forces. Unrestricted T9, original equality and full earlier prerequisite-chain audit remain open.
+
+## First six-body whole-family exits and global local obstructions
+
+- [x] UNLOADED_TRIANGLE_HUB_EXTERNAL_SEPARATION.md retains all external-body forces and proves strict physical separation of the two neighbors of unloaded exact-degree3 triangle hubs with an exact-degree2 roof. Its larger local prelisting precedes KKT.
+- [x] SIX_BODY_MIDDLE_MOTIF_CONSEQUENCES.md gives the exact four-graph motif cover, excludes the whole zero-hub lower-leaf house family and every three-load two-opposite-ear graph, and retains exactly two four-load opposite-ear orbits.
+- [x] BOUNDARY_THREE_EDGE_PATH_DIAMETER.md proves the full four-boundary-body metric scope and arbitrary-endpoint-degree channel obstruction. It excludes the entire adjacent-zero four-load C6 orbit.
+- [x] SIX_CYCLE_THREE_LOAD_LONG_CHANNEL_EXCLUSION.md excludes the entire three-load(1,2,3) C6 orbit, including the isolated parallel-load case, both short widths, every physical corner mask and all actual means.
+- [x] LONG_CHANNEL_ENDPOINT_MATCHING.md is a global purely geometric distance>=3 matching theorem. Its full channel consequence excludes two long paths to distinct endpoints and every at-least-eight-body simple cycle with exactly three loads; the same endpoint pair is explicitly retained.
+- [x] TRIANGLE_THREE_BRIDGES_LONG_CHAIN_EXCLUSION.md excludes the complete length-three attachment with the full initially possible intermediate load, both leaf/transmitter types and all means. Two of seven C1.3.b3 layouts are closed; the other five remain.
+- [x] Root and independent full audits passed every source and widened scope. Every six-body statement retains three original extra squares; no smaller-component degree equation is imported after deleting an attachment.
+- [ ] All six six-body coarse parents remain open. Simple C6 retains alternating three loads, two separated-zero four-load orbits and five loads; every chorded and other attachment domain keeps its full remaining scope. The authoritative count stays seven closed and51 open; unrestricted T9, original equality and full earlier-chain audit remain open.

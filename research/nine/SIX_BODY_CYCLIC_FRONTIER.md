@@ -72,9 +72,10 @@ further layouts. The count1+1+1 gives one leaf at each triangle vertex.
 Thus there are exactly seven abstract rooted layouts.
 
 The fourth layout, three leaves at the same triangle articulation,
-is excluded by ONE_ARTICULATION_TRIANGLE_LEAF_EXCLUSION.md. The
-other six layouts retain their whole load, contact and completion
-domains. In particular an internal vertex of an attached tree is not
+is excluded by ONE_ARTICULATION_TRIANGLE_LEAF_EXCLUSION.md. The entire
+first layout is now excluded by TRIANGLE_THREE_BRIDGES_LONG_CHAIN_EXCLUSION.md,
+including its initially possible loaded intermediate vertex. The other
+five layouts retain their whole load, contact and completion domains. In particular an internal vertex of an attached tree is not
 assigned a radial-leaf formula merely because its edges are bridges.
 The exact degree-one S/D law applies at an actual leaf; any broader
 terminal or transmission reduction must establish its own premises.
@@ -456,7 +457,80 @@ additional interface force and all its actual body equations. An
 isolated four-body-component exclusion cannot silently remove this
 force.
 
-## 9. Exact exit contracts and status
+## 9. Complete local and load-family exits beyond the initial cover
+
+UNLOADED_TRIANGLE_HUB_EXTERNAL_SEPARATION.md has a full source-by-source
+scope audit: unloaded exact-degree3 A,D, their exact-degree2 common roof
+T, and external positive neighbors B,C force the latter to be physically
+closed-disjoint. T is automatically loaded. B,C may have arbitrary
+additional forces, loads or physical circle masks, and their forbidden
+contact may have zero multiplier. All such local motifs are prelisted
+before extracting the common certificate.
+
+SIX_BODY_MIDDLE_MOTIF_CONSEQUENCES.md gives exactly four six-body positive
+graphs with distinct external neighbors under those exact local degrees.
+Only two receive new whole positive-load-family exits: a house block
+with a lower-vertex leaf cannot have both house hubs unloaded, and a
+hexagon with opposite triangular ears cannot have only three loads.
+For the latter, in the exterior labeling with chords02,35, the complete
+remaining four-load masks are{0,1,4,5} and{0,1,3,4}. Both remain open.
+The other two graphs, a two-root chain/leaf triangle and a one-ear
+hexagon, gain full physical BC noncontact but no graph exclusion.
+
+BOUNDARY_THREE_EDGE_PATH_DIAMETER.md proves endpoint-center distance<3
+for every physical three-edge path of four boundary units. The full
+scope audit uses Sections1–5 of the earlier seven-cycle metric theorem;
+no seventh body enters. A normal channel with at least two exact unloaded
+transmitters requires distance>=3, so the complete four-load C6 orbit
+with adjacent zero-load vertices is excluded. Endpoint degrees and loads
+are unrestricted in this stronger local channel obstruction.
+
+SIX_CYCLE_THREE_LOAD_LONG_CHANNEL_EXCLUSION.md excludes the full simple
+C6 orbit with positive-load gaps(1,2,3). Its exact long reserve gives
+R²>=17/4 and a narrow endpoint-center cap. The isolated parallel load
+is completely handled before proper concurrence is used. Both short
+transmitter widths, every physical mask and all actual means then have
+uniform strict distance/radius contradictions. All three extras remain.
+
+Consequently the complete simple C6 residual is exactly:
+
+| Positive-load orbit | Whole remaining scope |
+| --- | --- |
+| Three alternating loads | Three single-transmitter channels; every width and physical corner mask |
+| Four loads, zero vertices at distance2 | The isolated loaded body and both genuine channels, all means |
+| Four loads, opposite zero vertices | Both boundary pairs and both full channel-width alternatives |
+| Five loads | One full transmitter and the whole loaded boundary path |
+
+Positive chords retain their extra force equations and are not covered
+by an exact simple-cycle proof. All chord/load combinations remain in
+their full graph gates except the explicit opposite-ear three-load exit.
+
+LONG_CHANNEL_ENDPOINT_MATCHING.md independently proves that the graph
+of all actual center pairs at distance>=3 is a matching. A body cannot
+be the endpoint of two long normal channels to distinct other bodies.
+This applies at arbitrary endpoint degrees and without circle-load
+premises. Two channels with the same endpoints are not excluded. In a
+simple cycle with three loads it permits at most four unloaded bodies,
+excluding every such cycle on at least eight bodies. The seven-body
+three-load run pattern(2,1,1) remains; the alternating six-body pattern
+is one of the open rows above.
+
+Finally TRIANGLE_THREE_BRIDGES_LONG_CHAIN_EXCLUSION.md closes the entire
+first triangle/three-bridge attachment. It first proves the complete
+load cover using the local all-bridge radial law, then retains both
+leaf types and both transmitter widths. The root lies in a narrow western
+center cap, while the two actual boundary-tip resultants sum west.
+The full center-angle rectangle forces the touching tips to opposite
+sides with gap>2acos(4/5)>acos(9/25), a contradiction. Thus exactly
+two of the seven triangle/three-bridge layouts are now closed; five remain.
+
+Root and separate independent full audits passed all six sources above,
+including every enlarged degree, physical-contact and selection scope.
+These are complete whole-domain exits and uniform local restrictions,
+not numerical graph or pose samples. None closes an entire six-body
+coarse row on its own.
+
+## 10. Exact exit contracts and status
 
 Each listed layout must retain the original square containment and
 nonoverlap conditions, the full physical touching graph, every actual
@@ -470,10 +544,11 @@ radius inequality, or a joint capacity of at most two extras over the
 entire relevant continuous domain. Any surviving case at Q must pass
 its exact necessity and sufficiency conditions to the equality gate.
 
-Two individual attachment layouts are discharged by the already proved
-common-articulation theorem, and Section6.3 excludes the entire
-five-spoke pentagon domain and one complete four-spoke load subfamily. **All six coarse
-six-body rows remain open.** The authoritative count stays six whole
-cells closed and52 open. The five-body house/fan frontier remains the
-first unresolved component size. No numerical graph enumeration,
+The two original common-articulation layouts and the complete length-three
+chain are excluded. Section6.3 excludes the entire five-spoke pentagon
+domain and one complete four-spoke load subfamily. Section9 records
+the additional whole simple-cycle and local-motif load-family exits.
+**All six coarse six-body rows remain open.** All five-body cells are now
+closed, so six is the first unresolved size. The authoritative count is
+seven whole cells closed and51 open. No numerical graph enumeration,
 angle grid, Lean compilation or CI is a premise of this cover.

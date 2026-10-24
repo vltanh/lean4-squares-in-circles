@@ -1,7 +1,7 @@
 # n=9: deep ticked roadmap and ordered proof execution
 
 **Branch:** `research/nine-tablefree-hand`; **PR:** #11, draft.  
-**Reconciled source:** 00e794ed2c0f1005a61609794c8efb8218f34c4f.
+**Reconciled source:** de4a85aa123cece0838861b14b5e1e0f1f0c2563.
 **Checkpoint:** October 24, 2026, America/Chicago; the append-only evidence log retains explicit UTC provenance.
 
 **T9 and unrestricted equality remain OPEN.** The complete P/Y arguments exclude all selected positive trees and all exactly-two-loaded components from a nine-square packing in the declared radius window. A physical certificate can be selected with **one planar positive component**, all physically circle-touching vertices on its exterior face, and at most 27 positive scalar atoms. The remaining component is cyclic, has 6–9 bodies, and has 3–7 noncollinear circle-loaded resultants. Every other physical square has zero stress and remains in the problem.
@@ -122,6 +122,13 @@ The finite cover keeps continuous radii, centers, orientations, contact coordina
 | Entire parallel-unique/hub-owned lower tip | Genuine higher-degree torque, complete radial masks and strict perpendicular corner deficit | HOUSE_END_TRIPLE_PARALLEL_UNIQUE_HUB_EXCLUSION.md |
 | Entire five-body house | All three full load orbits under one compatible certificate | HOUSE_POSITIVE_COMPONENT_EXCLUSION.md |
 | Entire five-body biconnected cell | All ten abstract types, every load/owner/mask/mean and all four extras | FIVE_BODY_BICONNECTED_CELL_CLOSED.md |
+
+| Unloaded triangle-hub separation | Exact degree3 zero-load hubs and degree2 roof; arbitrary external-body forces, even zero-weight external contact | UNLOADED_TRIANGLE_HUB_EXTERNAL_SEPARATION.md |
+| Six-body local-motif consequences | Exact four-graph cover; full zero-hub lower-leaf and three-load opposite-ear exits | SIX_BODY_MIDDLE_MOTIF_CONSEQUENCES.md |
+| Three-edge physical boundary path | Endpoint-center distance<3 for any four actual boundary units, arbitrary degrees/weights | BOUNDARY_THREE_EDGE_PATH_DIAMETER.md |
+| Long-channel endpoint matching | All contained centers at distance>=3 form a matching; arbitrary endpoint degrees, exact internal transmitters | LONG_CHANNEL_ENDPOINT_MATCHING.md |
+| Whole long-channel three-load C6 | Full(1,2,3) orbit, both short widths, isolated parallel case, every physical mask and mean | SIX_CYCLE_THREE_LOAD_LONG_CHANNEL_EXCLUSION.md |
+| Entire three-bridge triangle chain | Every internal load, both leaf types and all widths/means; strict full angular obstruction | TRIANGLE_THREE_BRIDGES_LONG_CHAIN_EXCLUSION.md |
 
 These hand manuscripts have different audit histories. The newly reviewed local arguments do not replace G6's full-chain audit. No Lean compilation or CI has been run.
 
@@ -1413,6 +1420,22 @@ Use path u1--u2--u3--u4 and universal hub H. The two endpoint tips u1,u4 are loa
 - [x] **M5.B5.ASSEMBLY / G3.M5.B5** C1.5.b0 is CLOSED hand. Root and independent full whole-cell audits passed. The authoritative count is seven closed and51 open; no six-body row is closed by this exact-component theorem.
 - [x] **G3.M5.ALL** All four five-body coarse cells are closed: triangle/two-bridges, four-body block/leaf, five-body biconnected, and bowtie. The common canonical radius/Phi-minimizer setup retains the older opposite-load C4 premise. Every surviving selected component now has6–9 bodies and all9-m extras remain.
 
+### G3.LOCAL — Complete local obstructions usable beyond an exact component
+
+- [x] **G3.LOCAL.TRIANGLE_HUB.DEGREES** UNLOADED_TRIANGLE_HUB_EXTERNAL_SEPARATION.md uses only unloaded exact-degree3 A,D with neighbors{D,T,B},{A,T,C}, plus exact-degree2 T. The touching A,D force T loaded. Coincident B=C is excluded by the existing zero-load diamond-hub theorem.
+- [x] **G3.LOCAL.TRIANGLE_HUB.SCOPE_AUDIT** Every shared/free/owned-interface source is audited equation by equation: only complete A,D stars and the true degree-two roof are used. B,C enter through support geometry and physical BC contact; no B/C degree, load, circle-mask or positive BC-force premise is used.
+- [x] **G3.LOCAL.TRIANGLE_HUB.PRELIST** Prelist every ordered physical local motif, including zero-weight BC and arbitrary external positive forces, before extracting a certificate. Fixed-star parameters remain at the same distinct physical points; every variable-mean/coincident alternative is removed geometrically. Uncrossing/thinning preserve the applicable selections.
+- [x] **G3.LOCAL.TRIANGLE_HUB.ALL** The two external units are distinct and physically closed-disjoint under one common necessary-certificate selection. Root and independent full scope audits passed. A fourth positive hub force, a positive hub load or a third roof force remains outside this theorem.
+- [x] **G3.LOCAL.BOUNDARY_PATH.ORDER** BOUNDARY_THREE_EDGE_PATH_DIAMETER.md derives consistent angular center lifts from the actual empty-minor-arc theorem for any four distinct boundary squares in a three-edge physical path. Contact-angle copies cannot differ by a full turn; every frame and extra physical contact remains.
+- [x] **G3.LOCAL.BOUNDARY_PATH.METRIC_SCOPE** The complete original diameter Sections1–5 use only the actual four path bodies. Both endpoint sectors fit a common disk of radius y0<3/2, with exact gap9/4-y0²=20777891/13058946000. Seven-cycle graph structure is used only in the later Section6, which is not imported.
+- [x] **G3.LOCAL.BOUNDARY_PATH.CHANNEL** A channel of at least two exact unloaded degree-two transmitters requires endpoint-center projection>=3. A physical three-edge boundary path between the same endpoints requires distance<3. Endpoint and boundary-path body degrees may be arbitrary; only internal transmitter equations have the exact-degree premise.
+- [x] **G3.LOCAL.LONG_CHANNEL.CENTER_CAP** LONG_CHANNEL_ENDPOINT_MATCHING.md proves |c|<91/60 for every contained unit. Two centers at distance>=3 from one center both lie in x<-29/20 and in an open disk of squared radius89/450; their mutual squared distance<178/225<1 is impossible.
+- [x] **G3.LOCAL.LONG_CHANNEL.MATCHING** The geometric distance>=3 graph is a matching, for all physical units without a stress or lower-window premise. Hence no endpoint can have long normal channels to two distinct other endpoints, regardless of their loads or further forces. Two channels with the same endpoint pair are explicitly retained.
+- [x] **G3.LOCAL.LONG_CHANNEL.THREE_LOAD_CYCLES** In a simple cycle with three loads, each unloaded run has at most two bodies, and two length-two runs would share a loaded endpoint and have distinct other endpoints. Thus at most4 bodies are unloaded. Entire simple cycles with at least8 bodies and exactly3 loads are excluded; the seven-body run pattern remains(2,1,1).
+- [x] **G3.LOCAL.LONG_CHANNEL.GENERAL_RUNS** For k>=3 loads, length-two runs form a matching of the contracted loaded cycle, so there are at most floor(k/2) such runs. Actual internal degree-two and zero-load hypotheses are retained; a chorded vertex is not made a transmitter by deleting its extra force.
+- [x] **G3.LOCAL.SIX_MOTIF.COVER** SIX_BODY_MIDDLE_MOTIF_CONSEQUENCES.md gives exactly four positive six-body graphs with distinct external B,C: the two-root chain/leaf triangle, one-ear hexagon, house/lower-leaf, and two-opposite-ear hexagon. The exhaustive argument leaves only optional edgesBC,BX,CX outside the fixed local degree sets.
+- [x] **G3.LOCAL.SIX_MOTIF.NONCONTACT_ONLY** In the first two graphs BC need not be positive. The new theorem supplies whole physical BC noncontact when both hubs are unloaded, not a graph exclusion. Their full separated poses and completion domains remain.
+
 ### G3.M6 — The complete six-body cyclic frontier [cover CLOSED; sharp exit OPEN]
 
 SIX_BODY_CYCLIC_FRONTIER.md gives the full graph/attachment/plane/load cover below. Every six-body component retains three independently oriented physical completion squares. The first unresolved size is six. The complete six-body gates below retain actual attached-block forces; exact five-body component equations are not imported after deleting an edge.
@@ -1424,7 +1447,11 @@ SIX_BODY_CYCLIC_FRONTIER.md gives the full graph/attachment/plane/load cover bel
 #### M6.T3 — C1.3.b3, a triangle and three bridges
 
 - [x] **M6.T3.COVER** Outside-vertex counts3,2+1,1+1+1 give exactly seven rooted layouts. The count3 rooted tree has root degree1,2,3, producing two,one,one possibilities respectively.
-- [ ] **M6.T3.CHAIN3** Entire length-three arm: prove every internal load/transmission possibility and the full three-extra exit. Internal bridge vertices are not assigned the degree-one S/D law.
+- [x] **M6.T3.CHAIN3.LOAD_COVER** TRIANGLE_THREE_BRIDGES_LONG_CHAIN_EXCLUSION.md proves the loaded all-bridge radial law locally, without assuming a tree component. The leaf and triangle tips are loaded; its adjacent V and triangle root A are physically clear. A potentially loaded U is radial S, and the genuine V transmitter would require width d+r_L>29/20>sqrt(2), so U is unloaded.
+- [x] **M6.T3.CHAIN3.CAP** Keep both actual transmitter widths and S/D leaf types. Radial cut moments give p_A=(r_L-w_U-w_V)e_x and put c_A,x<-89/60, with |c_A|<91/60. The true six-body sum gives F_B+F_C=-F_L west; no actual mean or positive circle force is omitted.
+- [x] **M6.T3.CHAIN3.ANGULAR_SEPARATION** On the full center-radius rectangle, disjoint unit centers have minor gap>acos(4/5), while a touching pair has gap<pi/2. The root center ray is within15degrees of west, and each actual circle resultant is within15degrees of its center. Westward force balance forces the two boundary tips to opposite angular sides.
+- [x] **M6.T3.CHAIN3.CONTRADICTION** Their mutual center gap is then>2acos(4/5), whose cosine7/25 is below9/25. Actual touching boundary tips require gap<acos(9/25), a strict contradiction. Both exact derivative comparisons cover every radius and mask.
+- [x] **M6.T3.CHAIN3** The entire length-three pendant-chain attachment is CLOSED hand. Root and independent full audits passed its complete load, width, actual-mean and angular cover; all three extras remain unchanged.
 - [ ] **M6.T3.FORK** One bridge from the triangle root to a two-leaf branch: retain both leaf types and the branch body's complete three-force equation.
 - [ ] **M6.T3.MIXED_ARMS** One direct leaf and one length-two arm at the same triangle root, with every root moment and actual contact feature.
 - [x] **M6.T3.SAME_THREE_LEAVES** The triangle and three radial leaves share one articulation; ONE_ARTICULATION_TRIANGLE_LEAF_EXCLUSION.md excludes the whole layout, with all three extras retained.
@@ -1457,7 +1484,8 @@ SIX_BODY_CYCLIC_FRONTIER.md gives the full graph/attachment/plane/load cover bel
 - [ ] **M6.B5L.C5** The unique rooted-C5 orbit, both S/D leaves and all internal load masks.
 - [ ] **M6.B5L.HOUSE.ROOF** Leaf at the house roof; its total degree is3.
 - [ ] **M6.B5L.HOUSE.HUB** Leaf at a house degree-three hub; its total degree is4.
-- [ ] **M6.B5L.HOUSE.LOWER** Leaf at a lower degree-two house vertex; its total degree is3.
+- [x] **M6.B5L.HOUSE.LOWER.ZERO_HUBS** SIX_BODY_MIDDLE_MOTIF_CONSEQUENCES.md excludes the entire lower-leaf house family with both degree3 house hubs unloaded. The new local theorem retains arbitrary extra positive forces and loads at the attached lower B, both leaf types, all actual means and three extras; no false degree-two B equation is used.
+- [ ] **M6.B5L.HOUSE.LOWER** Complete the whole lower-leaf house attachment when at least one house hub is loaded. The total degree3 attached lower body and all physical masks/means remain; roof- and hub-rooted types are distinct full gates.
 - [ ] **M6.B5L.K23.HUB** Leaf at a vertex of the two-vertex part of K2,3.
 - [ ] **M6.B5L.K23.TIP** Leaf at a vertex of the three-vertex part of K2,3.
 - [ ] **M6.B5L.BOOK.HUB** Leaf at a common-edge hub of the three-page book.
@@ -1480,6 +1508,23 @@ SIX_BODY_CYCLIC_FRONTIER.md gives the full graph/attachment/plane/load cover bel
 - [x] **M6.B6.HEXAGON.THREE_MASKS** The full bare-cycle three-load cover is alternating{0,2,4} or one-edge{0,1,3}. Cyclic gap patterns(2,2,2),(1,2,3) survive; (1,1,4) makes the loaded complement disconnected.
 - [x] **M6.B6.HEXAGON.FOUR_MASKS** The two zero-load vertices have cyclic distance1,2,3. The corresponding positive loaded graphs are P4, P3 plus an isolated vertex, or two disjoint edges; each bare-cycle complement is connected.
 - [x] **M6.B6.HEXAGON.FIVE_MASK** One zero-load vertex gives one orbit. Six physical boundary vertices would form forbidden C6, so at least one rim body is physically clear. Zero load alone does not otherwise imply physical clearance.
+- [x] **M6.B6.C6.THREE_LONG.RESERVES** SIX_CYCLE_THREE_LOAD_LONG_CHANNEL_EXCLUSION.md retains the exact cyclic gaps(1,2,3), reserves(2,w,0), both w=1,sqrt(2) and all actual transverse means. The long channel forces center projection>=3, R²>=17/4 and every boundary center radius>27/20.
+- [x] **M6.B6.C6.THREE_LONG.PARALLEL_ISOLATED** The full parallel-force alternative at the isolated load Y is covered before proper concurrence is used. Radial D contradicts the nonzero direct-boundary-edge moment; radial S with short side or diagonal W puts the actual Z support or all Z corners strictly inside the disk. Actual roof means and both corner-weight endpoints remain.
+- [x] **M6.B6.C6.THREE_LONG.CONCURRENCE_DOMAIN** The actual nonparallel loaded concurrences form a strictly convex triangle containing O, with exact reserves2,w,0. The long side has height h0>0; its full endpoint masks force center heights>=0, horizontal magnitudes in(89/60,91/60), and heights<1/3. The third center must lie below the axis by force/center angular separation.
+- [x] **M6.B6.C6.THREE_LONG.SHORT_SIDE** The whole short side-normal branch has squared-distance sum>14479/1800 from the full center cap, while its actual contact/channel distances give sum<=5+2sqrt(2)<14100/1800. Every endpoint frame and true mean is included.
+- [x] **M6.B6.C6.THREE_LONG.DIAGONAL_FRAME** Complete diagonal endpoint ownership makes Y,Z share a frame. The long reserve forces a+b<16/15, hence b<1/10. All near-vertical/rightward normal alternatives and the wrong tilt sign are excluded by exact center displacement and the actual positive contact height.
+- [x] **M6.B6.C6.THREE_LONG.DIAGONAL_RADIAL** Every physical radial Y must point along the positive near-horizontal axis. The exact Z radius deficit is (4+2sqrt(2))*(2-K)<=0, with strict actual transverse offset; all Z corners are interior for every corner-weight split.
+- [x] **M6.B6.C6.THREE_LONG.DIAGONAL_UNIQUE** Proper unique-corner concurrence lies inside Y and retains both short side parameters. Their exact relation bounds -7/20<c_Z,y<0 and c_Z,x<-13/10. The actual X,Z center distance then has squared norm<37/72<1, contradicting the inscribed disks.
+- [x] **M6.B6.C6.THREE_LONG.ALL** The entire three-load C6 orbit with gaps(1,2,3) is CLOSED hand. Root and independent full audits passed all parallel limits, physical masks, both short widths and actual means; all three extras remain.
+- [x] **M6.B6.C6.FOUR_ADJACENT_ZERO** BOUNDARY_THREE_EDGE_PATH_DIAMETER.md excludes the complete four-load C6 orbit with adjacent unloaded vertices. Its true two-transmitter channel requires endpoint distance>=3 and its complementary actual boundary path requires<3; no endpoint equilibrium or completion motion is needed.
+- [ ] **M6.B6.C6.THREE_ALTERNATING** Entire alternating three-load mask with three one-body channels, all side/diagonal widths, every loaded parallel/nonparallel alternative and all three extras.
+- [ ] **M6.B6.C6.FOUR_ZERO_DISTANCE2** Entire four-load mask with zero vertices at cyclic distance2. Preserve the isolated loaded body's actual two-channel forces, physical radial masks and both channel widths.
+- [ ] **M6.B6.C6.FOUR_ZERO_DISTANCE3** Entire four-load mask with opposite zero vertices. Keep both physical two-boundary-body runs, all channel means, four-load force/center order and all three extras.
+- [ ] **M6.B6.C6.FIVE** Entire five-load mask with one unloaded transmitter, its two complete widths, all loaded degree-two equations, physical corner masks and three-extra geometry.
+- [ ] **M6.B6.C6.ALL** Assemble these four remaining whole load orbits with the two completed exits under one necessary certificate. This is the exact simple C6 only; positive chords retain additional forces.
+- [x] **M6.B6.HEXAGON.TWO_OPPOSITE_EARS.THREE_LOADS** In the graph with exterior-hexagon chords02,35, the two degree-two ear tips are loaded. The uniform unloaded-hub motif forces exactly one loaded hub in each triangle, so the entire three-load family is excluded with every mean and mask.
+- [x] **M6.B6.HEXAGON.TWO_OPPOSITE_EARS.FOUR_MASKS** The exact remaining four-load orbits are{0,1,4,5} and{0,1,3,4}. Their unloaded mates are physically circle-clear by the actual triangles. One orbit has adjacent hub loads and one nonadjacent; neither whole four-load family is excluded yet.
+- [ ] **M6.B6.HEXAGON.TWO_OPPOSITE_EARS.BOUND** Close both complete remaining four-load orbits of this exact chorded graph. Its loaded degree-three hubs retain all forces; an isolated C6 or house equation cannot delete either chord.
 - [ ] **M6.B6.HEXAGON.CHORD_MASKS** Impose every noncrossing chord subset on the six necessary load orbits; retain all physically allowed zero-weight contacts, proper vertex degrees and exact local equations. No sampled drawing replaces the full domain.
 - [ ] **M6.B6.HEXAGON.BOUND** Finish the mixed C6 and all chorded-hexagon domains with every contact owner/mean and all three extras.
 - [x] **M6.B6.PENTAGON.COVER** An exterior pentagon has one interior physically clear body H, spoke count h=2--5 and outer chord count d<=5-h. Every chord belongs to a true plane sector between consecutive spokes. At least one rim body is also physically clear.
@@ -1523,6 +1568,8 @@ SIX_BODY_CYCLIC_FRONTIER.md gives the full graph/attachment/plane/load cover bel
 
 - [x] **G3.M5.COMPLETE** Every mixed cell with m=5 is closed, retaining all four completion squares; the first remaining size is six.
 - [ ] **G3.M6.ALL** All remaining mixed cells with m=6 and three completion squares.
+- [x] **G3.M7.CYCLE.THREE_LOAD_RUNS** The complete three-load simple-cycle domain has only run pattern(2,1,1), by LONG_CHANNEL_ENDPOINT_MATCHING.md. Every physical realization of that whole pattern remains open; no force/center polygon has been assumed without its full parallel-load cover.
+- [x] **G3.M8.CYCLE.THREE_LOADS** Every simple positive component on at least8 bodies with exactly3 loaded bodies is excluded by the global endpoint-matching theorem. Other load counts and every chorded eight-body graph remain open, with their single extra retained.
 - [ ] **G3.M7.ALL** All mixed cells with m=7 and two completion squares; separate the already-defined boundary C7 branch.
 - [ ] **G3.M8.ALL** All mixed cells with m=8 and one completion square; a simple cycle is still allowed by the size theorem.
 - [ ] **G3.M9.ALL** All mixed cells with m=9 and no completion squares; simple cycles are excluded, branching cyclic graphs remain.

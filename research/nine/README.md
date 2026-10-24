@@ -6,6 +6,25 @@
 
 **The unrestricted lower bound and complete equality classification remain OPEN.** The construction attains Q. All four five-body cells are now closed under the stated canonical lower-bound setup, so the selected unique positive cyclic component has **6–9 bodies** and **3–7 noncollinear circle-loaded resultants**. Every other physical square remains in the completion problem. The coarse inventory has **seven whole cells closed and 51 open**.
 
+## Six-body progress and uniform local obstructions
+
+Six new full hand sources extend the first open frontier without discarding any added block force or completion square. Root and separate independent full audits passed each source, including every widened degree/selection dependency.
+
+| Complete proved scope | Result and exact limit |
+| --- | --- |
+| [Triangle plus a length-three pendant chain](TRIANGLE_THREE_BRIDGES_LONG_CHAIN_EXCLUSION.md) | Entire attachment excluded, including the initially possible loaded intermediate body, every leaf/transmitter type and all actual means. Together with the same-root three-leaf theorem, two of the seven C1.3.b3 layouts are closed; five remain. |
+| [Three-load C6 with cyclic gaps1,2,3](SIX_CYCLE_THREE_LOAD_LONG_CHANNEL_EXCLUSION.md) | Entire load orbit excluded. The reserve-two channel forces a narrow endpoint-center domain and R²>=17/4; both short-transmitter widths and every physical corner mask have complete metric contradictions. |
+| [Four-load C6 with adjacent unloaded vertices](BOUNDARY_THREE_EDGE_PATH_DIAMETER.md) | Entire load orbit excluded. Its long channel requires endpoint-center distance>=3, while its actual three-edge boundary path requires<3. Endpoint degrees are unrestricted in the stronger local theorem. |
+| [Two unloaded triangle hubs with an exact degree-two roof](UNLOADED_TRIANGLE_HUB_EXTERNAL_SEPARATION.md) | Their distinct external neighbor squares must be physically closed-disjoint, even if those neighbors carry additional forces or their contact would have zero multiplier. The two hubs must keep exact degree3 and zero load. |
+| [Exact six-body motif consequences](SIX_BODY_MIDDLE_MOTIF_CONSEQUENCES.md) | Entire zero-hub house/lower-leaf family and entire three-load two-opposite-ear family excluded. The latter retains precisely two four-load orbits; no entire chorded graph is declared closed. |
+| [Long-channel endpoint matching](LONG_CHANNEL_ENDPOINT_MATCHING.md) | In any packing inside D_(sqrt(Q)), pairs of centers at distance>=3 form a matching. Thus a body cannot end two long channels to distinct other bodies. Every simple cycle of at least eight bodies with exactly three loads is excluded; seven bodies retain run pattern(2,1,1). |
+
+The three-edge boundary-path theorem checks the complete scope of the earlier seven-cycle diameter proof: its Sections1–5 use only the four actual path bodies, and the cycle enters only afterward. The enlarged unloaded-hub theorem likewise has a complete source-by-source degree audit and a finite prelisting of arbitrary local motifs before KKT. The added forces at the external bodies are retained.
+
+The long-channel matching theorem is purely geometric. The full center cap has squared radius89/450, so two centers each at distance>=3 from a third would be less than1 apart, contradicting the two unit inscribed disks. The whole three-load C6 proof separately retains the isolated parallel-load alternative; no proper-concurrence assumption is made until that entire alternative is excluded.
+
+**All six six-body coarse rows remain OPEN.** The exact simple-C6 residual is alternating three loads; four loads with zero vertices at distance2 or3; or five loads. Every positive chord, other attachment and three-extra completion domain keeps its own full obligations. The authoritative count remains seven closed and51 open; the remaining selected component has6–9 bodies. Unrestricted sharpness, original equality and the full earlier prerequisite-chain audit remain open.
+
 ## Whole five-body biconnected cell closed; the remaining component has at least six bodies
 
 [FIVE_BODY_BICONNECTED_CELL_CLOSED.md](FIVE_BODY_BICONNECTED_CELL_CLOSED.md) closes **all of C1.5.b0**. The hand complement-graph classification has ten biconnected types. Seven have the existing full K4, common-boundary-neighbor or loaded-complement obstruction. The complete C5, fan and now house assemblies exclude the other three, with every load set, physical circle mask, actual contact mean and all four completion squares retained.
