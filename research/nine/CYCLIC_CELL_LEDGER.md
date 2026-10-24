@@ -106,13 +106,13 @@ The exact identity m=1+sum(block_size-1)+bridges yields these four cells, each w
 | Cell | Exhaustive graph/layout cover | Current internal closure |
 | --- | --- | --- |
 | C1.3.b2 | Every chain/same/distinct attachment, every leaf type and four extras | CLOSED; full slider upper/lower capacities3 and0, assembly audited |
-| C1.4.b1 | All-three-loaded C4; D-leaf hub with unique-corner loaded second hub | Other C4/diamond branches CLOSED; parent OPEN |
+| C1.4.b1 | All-three-loaded C4 only | Entire diamond and all other C4/K4 branches CLOSED; parent OPEN |
 | C1.5.b0 | Exhaustive ten-type classification reduces to C5, house and four-path fan, with necessary load masks | Graph/load cover CLOSED; full geometry and whole cell OPEN |
 | C2.33.b0 | Entire bowtie; all physical masks, means and extras | CLOSED; complete end-triangle pressure and opposite-resultant theorem |
 
 TRIANGLE_TWO_LEAVES_SAME_ARTICULATION_CLOSED.md assembles the complete S/S, D/S and D/D exclusions under one compatible selected certificate. Both root and independent assembly audits passed. The distinct-layout domain and port-orientation theorems exclude D/D, zero triangle moment and R<=sqrt(17)/2, while retaining every actual contact mean. TRIANGLE_DISTINCT_MIXED_LEAVES_EXCLUSION.md now excludes the entire distinct D/S family. The sole remaining C1.3.b2 family has two S leaves at distinct articulations, R>sqrt(17)/2, nonzero moment and one physical circle corner at C. DISTINCT_S_LEAF_CORE_AND_CORNER_MASK.md excludes all two-corner C masks and exhibits an exact positive core below Q with strict shared means. Blanket core exclusion is false. The full parallel-articulation reduction and exact wall classification now cover every surviving S/S core, and the upper/lower capacity theorems prove at most3 extras over the entire slider interval. TRIANGLE_TWO_BRIDGES_CELL_CLOSED.md consequently closes the whole C1.3.b2 cell.
 
-The S diamond-hub branch with a physically boundary second hub is also excluded by S_LEAF_CONNECTED_BOUNDARY_NEIGHBORS.md. Its S/clear-hub and D branches remain. The detailed domain/equilibrium/routing/boundary/audit gates are G3.M5 in the deep roadmap. Only complete parent implications change the coarse count.
+Every S/D diamond-hub and tip attachment is now excluded by DIAMOND_LEAF_BLOCK_CLOSED.md. The detailed domain/equilibrium/routing/boundary/audit gates are G3.M5 in the deep roadmap. Only complete parent implications change the coarse count.
 
 ### Further complete C7 restrictions
 
@@ -130,7 +130,7 @@ The S diamond-hub branch with a physically boundary second hub is also excluded 
 - [x] **CY.C7.NORMAL:** simultaneous fixed-point and shared-side-block generic selections preserve every actual application mean and corner-weight mask.
 - [x] **CY.TRIANGLE.AXIS:** UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md proves n dot m>=0 at every side-owned contact triangle, for arbitrary frames and means.
 - [x] **CY.T2.SS.WALL:** DISTINCT_S_LEAVES_PARALLEL_ARTICULATION_REDUCTION.md reduces every remaining S/S core to an aligned-leaf, parallel-force articulation wall. All tilted-owner and shared-AB alternatives are excluded. DISTINCT_S_LEAVES_WALL_CLASSIFICATION.md then exhausts every wall owner/frame, forces the exact radius and full slider/mean intervals, and verifies every family member. The upper/lower capacity theorems now prove uniform capacity<=3; the whole parent assembly is closed.
-- [x] **CY.C4.OPPOSITE:** FOUR_CYCLE_OPPOSITE_LOAD_BRANCH_CLOSED.md closes the entire opposite-loaded-pair C4 at a canonical radius minimizer. Full D- and S-leaf exclusions exhaust every physical mask, actual side-axis owner, U-parallel endpoint and radial weight split. All four extras are preserved; both full assembly audits passed. Only the all-three-loaded C4 and loaded-hub D diamond keep C1.4.b1 OPEN.
+- [x] **CY.C4.OPPOSITE:** FOUR_CYCLE_OPPOSITE_LOAD_BRANCH_CLOSED.md closes the entire opposite-loaded-pair C4 at a canonical radius minimizer. Full D- and S-leaf exclusions exhaust every physical mask, actual side-axis owner, U-parallel endpoint and radial weight split. All four extras are preserved; both full assembly audits passed. Only the all-three-loaded C4 keeps C1.4.b1 OPEN.
 - [x] **CY.C7.RADIAL:** at most four radial bodies, no selected radial run longer than two, and no parallel radial pair. Each free-vertex-incident block has a unique radial endpoint/singleton with two positive corner weights.
 - [x] **CY.C7.PINNED.TYPES:** the exhaustive free-edge list is radial/radial or mirror-paired two-square blocks; C7_PINNED_VERTEX_CONTACT_TYPES.md. Adaptive compatible choices give shared-side neighbors at both radial-pair ends. At most two free edges survive, with a complete individual-block/arrangement cover.
 - [x] **CY.C7.TWO_FREE:** both complete two-free-edge layouts are excluded by C7_TWO_FREE_EDGES_EXCLUSION.md.
@@ -164,7 +164,7 @@ The authoritative count remains five whole cells closed and53 open.
 ### Whole house routing and complete physical-mask consequences
 
 - [x] HOUSE_HOLE_EMPTY.md proves both house bounded regions empty for every load mask, via the radius-free zero-load cross-hub obstruction. All four extras are exterior; the whole house parent remains open.
-- [x] D_DIAMOND_RADIAL_HUB_EXCLUSION.md excludes the entire physical two-circle-corner second hub. Only unique-corner loaded U remains in the D-leaf diamond, with all tip masks and exterior extras.
+- [x] D_DIAMOND_RADIAL_HUB_EXCLUSION.md excludes the entire physical two-circle-corner second hub. The later complete unique-U cover closes the entire D-leaf diamond as well, retaining all tip masks and exterior extras.
 - [x] BOWTIE_PERPENDICULAR_CONTACT_EXCLUSION.md resolves every perpendicular A-owned contact pair. RADIAL_BOUNDARY_NEIGHBOR_PRESSURE.md resolves the entire two-radial end-block mask and excludes the all-radial fan/end-house masks; genuine mixed/free interfaces remain.
 - [x] C7_SHARP_BALANCED_RADIAL_TAIL.md and C7_OUTSIDE_INNER_RAY_WITNESS.md give the complete sharp balanced curve and actual signed-witness theorem. Only their precise residual outside-coordinate branches are retained, without an alternate-SAT-axis assumption.
 
@@ -182,3 +182,7 @@ The parallel inner-pair branch was already excluded. [C7_RIGHT_OUTSIDE_INNER_EXC
 
 Root and separate full hand audits passed both branch proofs and the assembly. **G3.B is CLOSED hand**, including its equality endpoint. Every surviving positive component contains a physically circle-clear body. The mixed seven-body coarse cell remains open; the coarse count stays **five closed and53 open**. The unrestricted theorem, equality classification and full prerequisite-chain audit remain open.
 
+
+## Whole diamond-with-leaf closure checkpoint
+
+- [x] DIAMOND_LEAF_BLOCK_CLOSED.md excludes every diamond attachment, leaf type, physical circle mask and actual mean. All five new source/assembly files passed root and separate full hand audits. C1.4.b1 remains open solely for all-three-loaded C4; the count stays five closed and53 open.
