@@ -1,7 +1,7 @@
 # n=9 — live prerequisite and cyclic-closure ledger
 
 **Checkpoint:** October 24, 2026, America/Chicago. **PR:** #11, draft.  
-**T9 and unrestricted equality remain OPEN.** The selected physical certificate has one planar positive cyclic component with **5–9 bodies**, **3–7 noncollinear loaded resultants**, and at most **27 scalar atoms**. Every other physical square stays in the completion problem. The coarse inventory has **five whole cells closed and 53 open**.
+**T9 and unrestricted equality remain OPEN.** The selected physical certificate has one planar positive cyclic component with **5–9 bodies**, **3–7 noncollinear loaded resultants**, and at most **27 scalar atoms**. Every other physical square stays in the completion problem. The coarse inventory has **six whole cells closed and 52 open**.
 
 The complete fine-grained contracts are in [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md). This file gives live parent scope and primary sources. [TWO_LOAD_PROGRESS.md](TWO_LOAD_PROGRESS.md) preserves the chronological proof/audit record and exact regression provenance.
 
@@ -62,7 +62,7 @@ Every row retains four extra physical squares. Full nested contracts are G3.M5 i
 | Gate | Exact finite graph/layout cover | Status |
 | --- | --- | --- |
 | M5.T2 / C1.3.b2 | Length-two arm; two leaves at one or at two distinct triangle articulations | CLOSED; all leaf types and full S/S completion, independent assembly audited |
-| M5.B4L / C1.4.b1 | C4 load patterns; diamond hub/tip attachment; K4 | Only all-three-loaded C4 remains OPEN; entire diamond and all other C4/K4 branches CLOSED |
+| M5.B4L / C1.4.b1 | Every C4 load pattern, diamond attachment and K4 | CLOSED hand; canonical minimizer retained for the older opposite-load branch |
 | M5.B5 / C1.5.b0 | Exactly C5, house and four-path fan after the exhaustive ten-type graph/load reduction | Graph/load reduction CLOSED; full geometry/completion OPEN |
 | M5.TT / C2.33.b0 | Entire bowtie and all four arbitrary extras | CLOSED; complete owned/free pressure theorem and opposite-resultant assembly |
 
@@ -94,7 +94,7 @@ Every row retains four extra physical squares. Full nested contracts are G3.M5 i
 - [x] **M5.B4L.C4.OPPOSITE.TIP_ENDPOINT:** FOUR_CYCLE_MIXED_D_LEAF_EXCLUSION.md closes the full both-tip-owned U-parallel radial endpoint for either leaf type. Together with the oblique theorem this covers every both-tip-owned alternative.
 - [x] **M5.B4L.C4.OPPOSITE.D:** The same source excludes both mixed owner orders for a D leaf. Exact force/torque gives the all-corners-clear bound754/225 in one order and the too-central-contact bound53/200 in the other. All physical masks, shared channel means and U-parallel endpoints are covered. Root and independent full audits passed.
 - [x] **M5.B4L.C4.OPPOSITE.S:** FOUR_CYCLE_MIXED_S_LEAF_EXCLUSION.md exhausts all three S support features in both mixed owner orders and the full both-A-owned family. Exact radial-tip norms/projections and the complete channel Cauchy inequality place every proposed unique-tip contact inside radius r. All side endpoints, circle weights and channel means remain. Root and independent full audits passed.
-- [x] **M5.B4L.C4.OPPOSITE.ALL:** FOUR_CYCLE_OPPOSITE_LOAD_BRANCH_CLOSED.md assembles the entire opposite-loaded-pair C4 under one canonical necessary certificate. The physical mask, leaf and owner covers are exhaustive and every extra survives the empty-hole slide. Root and separate full assembly audits passed; the complete diamond exclusion below leaves only all-three-loaded C4 OPEN.
+- [x] **M5.B4L.C4.OPPOSITE.ALL:** FOUR_CYCLE_OPPOSITE_LOAD_BRANCH_CLOSED.md assembles the entire opposite-loaded-pair C4 under one canonical necessary certificate. The physical mask, leaf and owner covers are exhaustive and every extra survives the empty-hole slide. Root and separate full assembly audits passed; the full three-loaded C4 and diamond assemblies below now close C1.4.b1.
 - [x] **M5.B5.GRAPH/LOAD_COVER:** FIVE_BODY_BICONNECTED_REDUCTION.md gives all ten types, excludes seven and lists all remaining necessary positive-load masks. Zero-weight physical circle contacts and all four extras remain.
 - [x] **M5.B5.C5.THREE.PARALLEL:** FIVE_CYCLE_THREE_LOAD_PARALLEL_EXCLUSION.md excludes the whole parallel-force alternative at the isolated loaded vertex. Nonzero boundary-edge moment excludes D, a side transmitter ends at norm squared<13/50<r^2, and two diagonal transmitters overlap. All actual means and four extras remain; independent audit passed.
 - [ ] **M5.B5.C5.THREE.NONPARALLEL:** finish the full remaining nonparallel-T geometry and completion, retaining both channel widths, every physical circle mask, contact owner and shared mean.
@@ -171,4 +171,6 @@ The new local arguments and whole-cell assembly received independent hand audits
 ## Whole diamond assembly checkpoint
 
 - [x] **M5.B4L.DIAMOND.ALL:** DIAMOND_LEAF_BLOCK_CLOSED.md excludes both attachment orbits and both radial leaf types, all physical corner masks and actual means. D_DIAMOND_PARALLEL_HUB_EXCLUSION.md, D_DIAMOND_HORIZONTAL_HUB_EXCLUSION.md, D_DIAMOND_LOWER_TIP_OWNED_EXCLUSION.md and D_DIAMOND_OBLIQUE_HUB_EXCLUSION.md exhaust the last unique-U domain. Every lower-tip owner/shared interval is covered; no degree-two equation is applied to U. Root and separate full audits passed. No secondary minimizer or completion bound is needed.
-- [ ] **M5.B4L.LAST:** Finish the all-three-loaded C4, the only remaining family in C1.4.b1 at this committed checkpoint.
+- [x] **M5.B4L.LAST:** FOUR_CYCLE_THREE_LOAD_BRANCH_CLOSED.md closes all S/D articulation frames, all nonparallel singleton/shared contacts and both parallel-sign alternatives, retaining every mask and actual mean. Root and separate full audits passed.
+- [x] **M5.B4L.ALL:** FOUR_BODY_BLOCK_ONE_LEAF_CELL_CLOSED.md assembles C4,diamond,K4 and every load allocation at the canonical radius/Phi minimizer. Root and two independent full assembly audits passed. Six coarse cells are closed;52 remain open.
+- [x] **ANNULAR.CENTERS:** ANNULAR_CENTER_ARC_BUDGET.md gives at least two centers strictly inside the unit disk in any nine-unit packing in D_(sqrt(Q)). The entire far-face/strip arc cover is proved; no component routing follows automatically.

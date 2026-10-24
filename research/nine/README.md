@@ -4,7 +4,17 @@
 **Updated:** October 24, 2026, America/Chicago.  
 **Target:** the unrestricted sharp squared radius Q=1105/256 and every attaining packing.
 
-**The unrestricted lower bound and complete equality classification remain OPEN.** The construction attains Q. The entire four-body triangle-plus-leaf cell is now closed, so the selected unique positive cyclic component has **5–9 bodies** and **3–7 noncollinear circle-loaded resultants**. Every other physical square remains in the completion problem. The coarse inventory has **five whole cells closed and 53 open**.
+**The unrestricted lower bound and complete equality classification remain OPEN.** The construction attains Q. The entire four-body triangle-plus-leaf cell is now closed, so the selected unique positive cyclic component has **5–9 bodies** and **3–7 noncollinear circle-loaded resultants**. Every other physical square remains in the completion problem. The coarse inventory has **six whole cells closed and 52 open**.
+
+## Whole-cell closure: C1.4.b1
+
+[FOUR_BODY_BLOCK_ONE_LEAF_CELL_CLOSED.md](FOUR_BODY_BLOCK_ONE_LEAF_CELL_CLOSED.md) closes the entire four-body-block-plus-leaf cell: C4, diamond and K4, every attachment and load allocation, both radial leaf types, all physical corner masks and actual means, and all four other packing squares. **Six coarse cells are now closed and52 remain open.** Only C1.5.b0 remains among five-body cells.
+
+The final [three-loaded C4 theorem](FOUR_CYCLE_THREE_LOAD_BRANCH_CLOSED.md) covers both full S-articulation families and every D-articulation contact. For S, actual boundary-center angles exceed the span available to two contacts. For D, positive radial concurrence and complete singleton/shared-side cases exclude every nonparallel pair. The parallel proof first excludes opposite horizontal signs; its aligned/tilted wall-tip theorems then make U's horizontal balance impossible. All owner, physical-mask, actual-mean and endpoint alternatives are retained.
+
+Root and separate independent full audits passed all nine new C4 sources and assemblies. The new three-loaded and diamond exclusions need no secondary motion. The **whole-cell assembly retains the canonical radius/Phi-minimizer premise** needed by the older opposite-loaded-pair C4 theorem; it does not classify every original equality packing. The unrestricted theorem, equality and full earlier prerequisite-chain audit remain open.
+
+[ANNULAR_CENTER_ARC_BUDGET.md](ANNULAR_CENTER_ARC_BUDGET.md) adds a separate geometric restriction: every contained unit whose center has norm>=1 occupies an open arc longer than45 degrees on the radius5/4 circle. Hence any nine-unit packing in D_(sqrt(Q)) has at least two centers strictly inside the unit disk. Root and independent full audits passed. This locates two clear bodies but does not assign them to a particular component hole or completion region.
 
 ## Whole diamond-with-leaf branch closed
 
@@ -12,7 +22,7 @@
 
 The remaining unique-corner D hub is now covered by the complete [parallel-hub](D_DIAMOND_PARALLEL_HUB_EXCLUSION.md), [horizontal-contact](D_DIAMOND_HORIZONTAL_HUB_EXCLUSION.md) and [oblique-contact](D_DIAMOND_OBLIQUE_HUB_EXCLUSION.md) theorems. A uniform [lower-tip-owned estimate](D_DIAMOND_LOWER_TIP_OWNED_EXCLUSION.md) handles the remaining owner alternative. Each proof uses degree-two force and torque only at an actual tip; the hub retains its third contact. Every singleton owner and every variable shared mean is included.
 
-Root and separate independent full audits passed all five sources and the assembly. **C1.4.b1 now retains only the all-three-loaded C4 branch**; its other C4 load patterns, both diamond attachment orbits and K4 are closed. The whole coarse cell remains open at this checkpoint, so the count stays five closed and53 open.
+Root and separate independent full audits passed all five sources and the assembly. **C1.4.b1 is now closed** by the subsequent complete three-loaded C4 theorem and parent assembly. The live count is six closed and52 open.
 
 ## Whole boundary-cycle closure: physical C7 capacity one
 
@@ -20,19 +30,19 @@ Root and separate independent full audits passed all five sources and the assemb
 
 The parallel inner-pair branch was already excluded. [C7_RIGHT_OUTSIDE_INNER_EXCLUSION.md](C7_RIGHT_OUTSIDE_INNER_EXCLUSION.md) now excludes the entire right-outside branch, and [C7_LEFT_OUTSIDE_INNER_EXCLUSION.md](C7_LEFT_OUTSIDE_INNER_EXCLUSION.md) excludes the entire asymmetric left-outside branch with the original SAT owner unchanged. Both identify an outgoing ray witness with the actual far-face boundary unit, covering every separator owner and sign. Actual outer corners supply the constraint missing from center-only relaxations. The final asymmetric bounds differ by a strict margin at least197/72000.
 
-Root and separate full hand audits passed both branch proofs and the assembly. **G3.B is CLOSED hand**, including its equality endpoint. Every surviving positive component contains a physically circle-clear body. The mixed seven-body coarse cell remains open; the coarse count stays **five closed and53 open**. The unrestricted theorem, equality classification and full prerequisite-chain audit remain open.
+Root and separate full hand audits passed both branch proofs and the assembly. **G3.B is CLOSED hand**, including its equality endpoint. Every surviving positive component contains a physically circle-clear body. The mixed seven-body coarse cell remains open; the coarse count stays **six closed and52 open**. The unrestricted theorem, equality classification and full prerequisite-chain audit remain open.
 
 ## Latest whole-cell closure: C1.3.b2
 
 [TRIANGLE_TWO_BRIDGES_CELL_CLOSED.md](TRIANGLE_TWO_BRIDGES_CELL_CLOSED.md) closes **every triangle with two bridges**. The chain and same-articulation layouts were already excluded. The full distinct S/S family is now classified at one exact radius, over the entire slider interval x(1-2x)/(1-x)<=t<2x for x=(sqrt(70)-8)/4. [The upper region holds at most three extras](DISTINCT_S_LEAF_WALL_UPPER_CAPACITY.md), and [both lower regions are empty](DISTINCT_S_LEAF_WALL_LOWER_EMPTY.md). Both proofs retain all extra orientations, valid slider endpoints and squares that might extend around an obstacle end. Four extras are required for nine units, so the whole cell is excluded. Root and separate full capacity and assembly audits passed.
 
-The exact positive five-body core remains valid; its universal capacity is at most eight units in total. The count is now **five closed coarse cells and 53 open**. The remaining five-body cells are C1.4.b1 and C1.5.b0; C2.33.b0 is closed by the complete bowtie theorem.
+The exact positive five-body core remains valid; its universal capacity is at most eight units in total. The count is now **six closed coarse cells and 52 open**. Only C1.5.b0 remains among five-body cells; C1.3.b2,C1.4.b1 and C2.33.b0 are closed.
 
 ## Latest whole-cell closure: the bowtie
 
 [BOWTIE_CELL_CLOSED.md](BOWTIE_CELL_CLOSED.md) closes the entire five-body bowtie C2.33.b0. The complete end-triangle theorem proves c_A dot M>0 for every actual owned/free articulation interface, every one-/two-circle-corner mask and every shared-side mean. Its new [mixed-owner](BOWTIE_MIXED_OWNER_PRESSURE.md), [radial-free](BOWTIE_RADIAL_FREE_INTERFACE_PRESSURE.md) and [shared/free](BOWTIE_SHARED_SIDE_FREE_INTERFACE.md) proofs retain the same compatible pre-certificate selection. The two bowtie block resultants must be opposite, contradicting their positive projections. All four extras remain arbitrary; no secondary minimizer or regional capacity estimate is needed.
 
-Root and independent full hand audits passed every local source and the parent assembly. Review corrected an omitted variance term in an intermediate mixed-owner draft: the final proof uses the true circle-force mean length, with separate valid coefficients for unique and two-corner masks. The complete corrected source is committed. The coarse count is now **five whole cells closed and53 open**. The remaining five-body parents are C1.4.b1 and C1.5.b0; the unrestricted theorem and equality remain open.
+Root and independent full hand audits passed every local source and the parent assembly. Review corrected an omitted variance term in an intermediate mixed-owner draft: the final proof uses the true circle-force mean length, with separate valid coefficients for unique and two-corner masks. The complete corrected source is committed. The coarse count is now **six whole cells closed and52 open**. The remaining five-body parent is C1.5.b0; the unrestricted theorem and equality remain open.
 
 ## Latest whole-region and physical-mask checkpoint
 
@@ -46,7 +56,7 @@ Root and independent full hand audits passed every local source and the parent a
 
 ## Latest structural and whole-branch checkpoint
 
-[NO_UNLOADED_DIAMOND_HUB.md](NO_UNLOADED_DIAMOND_HUB.md) proves a new radius-free selected-certificate obstruction: an unloaded vertex of exact positive degree three cannot have a physical neighbor touching both other neighbors. The complete owner, corner, generic-normal and tangential-width proof closes the **entire S-leaf diamond-hub attachment**, the **entire diamond tip attachment for both leaf types**, and **both three-load fan masks**. All physical zero-weight contacts and actual means remain. The complete diamond theorem now leaves only the all-three-loaded C4 unresolved in C1.4.b1.
+[NO_UNLOADED_DIAMOND_HUB.md](NO_UNLOADED_DIAMOND_HUB.md) proves a new radius-free selected-certificate obstruction: an unloaded vertex of exact positive degree three cannot have a physical neighbor touching both other neighbors. The complete owner, corner, generic-normal and tangential-width proof closes the **entire S-leaf diamond-hub attachment**, the **entire diamond tip attachment for both leaf types**, and **both three-load fan masks**. All physical zero-weight contacts and actual means remain. The subsequent full three-loaded C4 theorem and diamond/K4 assembly now close C1.4.b1.
 
 [BOWTIE_TIP_OWNED_PRESSURE.md](BOWTIE_TIP_OWNED_PRESSURE.md) and [BOWTIE_PARALLEL_PRESSURE.md](BOWTIE_PARALLEL_PRESSURE.md) prove c_A dot M>0 for two whole end-triangle domains, all physical circle masks retained. The parallel theorem explicitly includes coincident shared-wall endpoint means. Two blocks drawn from those domains cannot form a bowtie, since their resultants are opposite. The later full owner/free cover now closes the entire bowtie cell.
 
@@ -92,14 +102,14 @@ The proof excludes the selected core itself. It therefore accounts for the five 
 - [x] [FOUR_CYCLE_UNIQUE_LOAD_NORMAL_SELECTION.md](FOUR_CYCLE_UNIQUE_LOAD_NORMAL_SELECTION.md) removes every free A-tip normal throughout the physical unique/unique mask while preserving all other variable means. The later all-mask selection and complete D-leaf theorem below supersede this earlier physical-mask restriction.
 - [x] The **entire C7 free-normal branch is now excluded**. The completed block/profile selections and the two final vertex-edge exclusions leave actual side-axis owners on every edge. The later geometric capacity-one theorem covers every owner transition and shared-side mean without a stress premise.
 
-The complete upper/lower capacity and attachment assembly close C1.3.b2. Other local implications retain their stated scopes and do not close their larger parents. The count is **five closed and 53 open**.
+The complete upper/lower capacity and attachment assembly close C1.3.b2. Other local implications retain their stated scopes and do not close their larger parents. The count is **six closed and 52 open**.
 
 
 ### Completed whole-cell continuation
 
 TRIANGLE_TWO_BRIDGES_CELL_CLOSED.md closes C1.3.b2. DISTINCT_S_LEAF_WALL_UPPER_CAPACITY.md proves upper capacity3 through actual ray screening and all-orientation center bounds; DISTINCT_S_LEAF_WALL_LOWER_EMPTY.md excludes both lower regions, including both possible oblique endpoint wraps. Every slider value and every candidate extra frame is covered. The parent assembly exhausts chain, same-articulation and distinct-articulation attachments under one compatible certificate. Independent full audits passed.
 
-FOUR_CYCLE_SECONDARY_CONTACT_REDUCTION.md makes a separate canonical-minimizer reduction: physical AU contact, singleton A-tip edges, and the full two-A-owned D-leaf exclusion. FOUR_CYCLE_UNIQUE_TIPS_EXCLUSION.md then closes the entire physical unique/unique opposite-load mask, with all U-parallel endpoints and actual channel means. FOUR_CYCLE_TWO_RADIAL_TIPS_EXCLUSION.md closes the entire physical two/two mask without secondary minimization. RADIAL_LEAF_ARTICULATION_FIXED_POINT_SELECTION.md now removes every free A-tip normal at the canonical minimizer for all physical circle masks. FOUR_CYCLE_MIXED_D_LEAF_EXCLUSION.md closes the entire radial-D-leaf opposite-load C4, including both mixed owner orders and every U-parallel radial endpoint. FOUR_CYCLE_MIXED_S_LEAF_EXCLUSION.md now closes every remaining S-leaf support feature and owner order. FOUR_CYCLE_OPPOSITE_LOAD_BRANCH_CLOSED.md assembles the entire opposite-loaded-pair C4 exclusion, with all physical corner masks, zero individual radial weights, actual channel means and four extras retained. The two independent audits passed. Together with the adjacent-load theorem and the complete diamond exclusion, this leaves only the all-three-loaded C4 in C1.4.b1. This canonical lower-bound reduction does not classify every original equality packing.
+FOUR_CYCLE_SECONDARY_CONTACT_REDUCTION.md makes a separate canonical-minimizer reduction: physical AU contact, singleton A-tip edges, and the full two-A-owned D-leaf exclusion. FOUR_CYCLE_UNIQUE_TIPS_EXCLUSION.md then closes the entire physical unique/unique opposite-load mask, with all U-parallel endpoints and actual channel means. FOUR_CYCLE_TWO_RADIAL_TIPS_EXCLUSION.md closes the entire physical two/two mask without secondary minimization. RADIAL_LEAF_ARTICULATION_FIXED_POINT_SELECTION.md now removes every free A-tip normal at the canonical minimizer for all physical circle masks. FOUR_CYCLE_MIXED_D_LEAF_EXCLUSION.md closes the entire radial-D-leaf opposite-load C4, including both mixed owner orders and every U-parallel radial endpoint. FOUR_CYCLE_MIXED_S_LEAF_EXCLUSION.md now closes every remaining S-leaf support feature and owner order. FOUR_CYCLE_OPPOSITE_LOAD_BRANCH_CLOSED.md assembles the entire opposite-loaded-pair C4 exclusion, with all physical corner masks, zero individual radial weights, actual channel means and four extras retained. The two independent audits passed. The adjacent-load, complete three-loaded C4, diamond and K4 theorems now close the whole C1.4.b1 cell. This canonical lower-bound reduction does not classify every original equality packing.
 
 C7_CENTER_POLYGON_LOCALIZATION.md places every completion unit inside the strictly convex center polygon. C7_DIAMETER_EXTRACTION_COUNTEREXAMPLE.md disproves the unrestricted diameter extraction with an exact actual seven-square ring enclosing two units. C7_INNER_SIDE_CORNER_RESTRICTIONS.md proves that each inner square's own-frame center coordinates have absolute value below3721/7200, every inner vertex has norm greater than sqrt(5/2)-91/60, and any two inner frames satisfy cos(theta)>6/7. PARALLEL_INNER_PAIR_DIAMETER_EXTRACTION.md then excludes the entire theta=0 branch, with arbitrary gap and stagger: every qualifying enclosing center polygon would have diameter at least3. That initial restriction is now sharpened below to0<sin(theta)<4/15, with both exact disk-dependent restrictions retained. The full nonparallel domain is now excluded using actual outer-corner containment, as assembled in BOUNDARY_SEVEN_CYCLE_CAPACITY_ONE.md. The stronger capacity-one theorem includes the upper equality endpoint.
 
@@ -110,14 +120,14 @@ The complete gate tree, including continuous domains, contact owners, boundary c
 | Gate | Entire scope | Current state |
 | --- | --- | --- |
 | C1.3.b2 | All three bridge attachments, every leaf type and all four extras | CLOSED; entire slider upper/lower capacities3 and0, full assembly audited |
-| C1.4.b1 | All-three-loaded C4; D-leaf diamond hub with a unique-physical-corner loaded second hub | OPEN; other C4/diamond attachments CLOSED; all holes empty |
+| C1.4.b1 | Every C4/diamond/K4 block, attachment, load allocation and four extras | CLOSED hand at the canonical minimizer; entire cover assembled |
 | C1.5.b0 | C5, house or four-path fan, with the complete necessary load cover and all physical contacts | OPEN; exhaustive graph/load reduction CLOSED |
 | C2.33.b0 | Entire bowtie, all circle masks, means and four extras | CLOSED; complete end-triangle pressure and opposite-resultant assembly |
 | G3.B.CAP | Every physical boundary C7 with two arbitrary extra squares | CLOSED hand; capacity one including Q, without positive stress |
 | G3.M6–M9 | All remaining mixed cells in increasing component size | OPEN |
 | G4–G8 | Universal sharpness, all equality cases, full-chain audit, later formalization and integration | OPEN or blocked by G3 |
 
-[NO_POSITIVE_K4_SUBGRAPH.md](NO_POSITIVE_K4_SUBGRAPH.md) proves a new uniform obstruction: the selected positive graph has no K4 subgraph, anywhere in the inventory. An arbitrarily small physical embedding and an inner-square clearance argument prevent any embedded triangle from enclosing another body center. This closes the K4 branch of C1.4.b1, but does not close its C4 or diamond branches.
+[NO_POSITIVE_K4_SUBGRAPH.md](NO_POSITIVE_K4_SUBGRAPH.md) proves a new uniform obstruction: the selected positive graph has no K4 subgraph, anywhere in the inventory. An arbitrarily small physical embedding and an inner-square clearance argument prevent any embedded triangle from enclosing another body center. The later C4 and diamond assemblies now close the entire C1.4.b1 parent.
 
 ## C7: complete geometric capacity theorem
 
@@ -140,7 +150,7 @@ Earlier normal-selection and shared-side-block lemmas remain valid. The positive
 | Outer pockets | The exterior pocket of every touching boundary pair is empty | [CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md](CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md) |
 | Common-coordinate class | Complete sharp theorem within that declared class, allowing independent rotations | [COORDINATE_SEPARABLE_NINE_COMPLETE.md](COORDINATE_SEPARABLE_NINE_COMPLETE.md) |
 
-The five closed coarse cells are C1.3.b0, C1.4.b0, C1.3.b1, C1.3.b2 and C2.33.b0. Uniform restrictions apply across other cells without marking unresolved multi-load or completion cases closed.
+The six closed coarse cells are C1.3.b0,C1.4.b0,C1.3.b1,C1.3.b2,C1.4.b1 and C2.33.b0. Uniform restrictions apply across other cells without marking unresolved multi-load or completion cases closed.
 
 ## Equality and method controls
 
@@ -155,6 +165,6 @@ The new local proofs and whole-cell assembly have independent hand audits. The c
 - [ROADMAP.md](ROADMAP.md): concise ordered frontier.
 - [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md): full G0–G8 execution contracts and deeply nested exit gates.
 - [G2_SUBGATES.md](G2_SUBGATES.md): live prerequisite and closure ledger.
-- [CYCLIC_CELL_LEDGER.md](CYCLIC_CELL_LEDGER.md): all 58 coarse cells individually ticked, five closed and 53 open.
+- [CYCLIC_CELL_LEDGER.md](CYCLIC_CELL_LEDGER.md): all 58 coarse cells individually ticked, six closed and 52 open.
 - [TWO_LOAD_PROGRESS.md](TWO_LOAD_PROGRESS.md): append-only proof, audit, commit and exact-regression provenance; earlier checkpoint counts remain historical.
 - [FINITE_TREE_CASE_LEDGER.md](FINITE_TREE_CASE_LEDGER.md): all six tree profiles, now closed.
