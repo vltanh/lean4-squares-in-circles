@@ -1,5 +1,15 @@
 # n=9 — ordered roadmap to the unrestricted hand proof
 
+## Whole fork and joined-triangles exits; full alternating-cycle width exclusion
+
+[OUTER_BRIDGED_TRIANGLE_EXCLUSION.md](OUTER_BRIDGED_TRIANGLE_EXCLUSION.md) proves the complete outward end-triangle reduction and closes the entire triangle-plus-two-leaf-fork attachment. [OUTER_BRIDGED_TRIANGLE_CAP_EXCLUSION.md](OUTER_BRIDGED_TRIANGLE_CAP_EXCLUSION.md) strengthens it throughout the full radius window: for any true end triangle attached by one bridge, the actual bridge application p satisfies p dot M_tips<0. The proof keeps the arbitrary external component, all actual means and the root's true three forces. Its exact two-center cap has squared diameter178/225<1.
+
+That strict bridge sign excludes the **entire pair of disjoint triangles joined by a bridge**, including an origin application. Thus four of seven triangle/three-bridge attachments are closed; mixed arms, an arm with a different-root leaf, and one leaf at every root remain. Two of three two-triangle/one-bridge layouts are closed; only the whole tip-attached bowtie-leaf layout remains. Neither coarse parent is ticked prematurely.
+
+[SIX_CYCLE_ALTERNATING_DOUBLE_DIAGONAL_EXCLUSION.md](SIX_CYCLE_ALTERNATING_DOUBLE_DIAGONAL_EXCLUSION.md) closes the whole alternating-three-load width class with at least two diagonal transmitters. The common loaded frame, exact circle equations and a full monotone scalar bound give R²>Q. Zero or one diagonal remains; every physical two-corner endpoint and actual side mean is retained.
+
+Root and independent full audits passed all three source manuscripts and their full-scope corollaries. All six six-body coarse rows and four whole simple-C6 load orbits remain open, each with its three original extras. The ledger stays seven closed and51 open. Unrestricted sharpness, original equality and the full earlier prerequisite-chain audit remain open; PR #11 stays draft. No Lean compilation or CI was run.
+
 ## Further complete six-body attachments and the global cycle-force theorem
 
 [SIMPLE_CYCLE_LOADED_FORCES_NONPARALLEL.md](SIMPLE_CYCLE_LOADED_FORCES_NONPARALLEL.md) proves that every loaded body in an exact simple positive cycle with at least three loads has nonparallel pair forces. The proof covers isolated loads, every channel reserve, both radial masks and all original side means. Proper radial concurrence is now available throughout the four remaining C6 load orbits; physical two-corner concurrences are not silently bounded.
@@ -10,10 +20,10 @@
 
 | Complete attachment inventory | Closed / total | Whole layouts still open |
 | --- | --- | --- |
-| Triangle and three bridges | 3 / 7 | Fork, mixed arms, arm plus different-root leaf, one leaf at each root |
+| Triangle and three bridges | 4 / 7 | Mixed arms, arm plus different-root leaf, one leaf at each root |
 | Four-body block and two bridges | 2 / 11 | All four C4 layouts; five remaining diamond layouts |
 | Five-body block and one leaf | 2 / 16 | Fourteen full rooted block types |
-| Two triangles and one bridge | 1 / 3 | Tip-attached bowtie leaf; disjoint triangles joined by a bridge |
+| Two triangles and one bridge | 2 / 3 | Tip-attached bowtie leaf |
 | Triangle and four-body block | 1 / 3 | C4 root; diamond-hub root |
 
 All six six-body coarse rows remain OPEN and retain three arbitrary extra squares. The exact simple C6 still has four complete load orbits open. The coarse ledger remains seven closed and51 open; unrestricted sharpness, original equality and the full earlier prerequisite-chain audit remain open. PR #11 stays draft. No Lean compilation or CI was run.

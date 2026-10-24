@@ -1,7 +1,7 @@
 # n=9: deep ticked roadmap and ordered proof execution
 
 **Branch:** `research/nine-tablefree-hand`; **PR:** #11, draft.  
-**Reconciled source:** 993c8d64aff270cb29a2075084b784c34d313e3a.
+**Reconciled source:** b371b12b6b8dbfde95d59bbc87930e0210e77b9a.
 **Checkpoint:** October 24, 2026, America/Chicago; the append-only evidence log retains explicit UTC provenance.
 
 **T9 and unrestricted equality remain OPEN.** The complete P/Y arguments exclude all selected positive trees and all exactly-two-loaded components from a nine-square packing in the declared radius window. A physical certificate can be selected with **one planar positive component**, all physically circle-touching vertices on its exterior face, and at most 27 positive scalar atoms. The remaining component is cyclic, has 6–9 bodies, and has 3–7 noncollinear circle-loaded resultants. Every other physical square has zero stress and remains in the problem.
@@ -1452,6 +1452,18 @@ Use path u1--u2--u3--u4 and universal hub H. The two endpoint tips u1,u4 are loa
 - [x] **G3.LOCAL.ROOTED_WHEEL** Arbitrary additional forces at a four-rim wheel hub leave each rim at exact degree3. The two hub-neighbor edges force every rim loaded, yielding a forbidden physical boundary four-cycle.
 - [x] **G3.LOCAL.ROOTED_AUDIT** Root and independent full audits passed the complete three-theorem source and all five six-body attachment instantiations. Root forces, physical zero-weight edges, all masks/means and all three extras are retained.
 
+### Uniform bridged end-triangle sign [CLOSED hand]
+
+- [x] **G3.LOCAL.OUTER_TRIANGLE.SCOPE** OUTER_BRIDGED_TRIANGLE_EXCLUSION.md keeps true degree2 tips B,C and true degree3 root A, with one bridge into an arbitrary external component. Cut balance gives M_tips=mu*n, and radiality gives its actual p=rho*n. This is not a model of a root with two other positive forces.
+- [x] **G3.LOCAL.OUTER_TRIANGLE.SUPPORT** Every contained unit has |c|<=sqrt(R²-1/4)-1/2. A neighbor beyond support height h has h<=d=sqrt(R²-1/4)-1; equality forces one exact radial S body. The full physical mask is retained.
+- [x] **G3.LOCAL.OUTER_TRIANGLE.MOMENT** For rho>=0, the two tip resultants have positive n projection and opposite transverse signs. Their proper concurrences give a strict directed BC moment. All coincident A applications and equality with the bridge mean are excluded by the actual moment, including rho=0.
+- [x] **G3.LOCAL.OUTER_TRIANGLE.PORT_ORDER** The external cut resultant has a negative-n positive circle corner. An actual simple path supplies the third port even when that component has cycles. Its embedded order fixes the two normal signs; the real three-force root concurrence lies on the opposite ray. No degree-two root equation is introduced.
+- [x] **G3.LOCAL.OUTER_TRIANGLE.FRAME** A tilted outward root would put both actual triangle applications at its same far vertex. Thus the nonparallel domain is an aligned unit with upper and lower right contacts. The initial support-height argument excludes rho>=max(d-1,0), all masks and means.
+- [x] **G3.LOCAL.OUTER_TRIANGLE.CAP_DOMAIN** OUTER_BRIDGED_TRIANGLE_CAP_EXCLUSION.md removes that remaining threshold. For any rho>=0, put a=rho+1>=1 and t=a+b for the negative concurrence coordinate -b. Contact heights differ by1 and one has absolute value>=1/2. The exact height (a*t+y²)/sqrt(t²+y²)<=d<61/60 forces t>8 over the full interval; the comparison's squared margin is23803/925200.
+- [x] **G3.LOCAL.OUTER_TRIANGLE.CAP_NORMALS** Both true normals satisfy n_x>8/sqrt(65), |n_y|<1/sqrt(65). Every tip center has n dot c>3/2 and transverse component<sqrt(181)/60. Hence both centers have x>353/243>29/20, with exact last margin13/4860.
+- [x] **G3.LOCAL.OUTER_TRIANGLE.CAP_EXIT** The common cap |c|<91/60,x>29/20 lies in a disk of squared radius89/450. Its diameter squared178/225<1 contradicts the two unit inscribed disks. Parallel triangle forces put both centers in the same cap directly, retaining every actual mean.
+- [x] **G3.LOCAL.OUTER_TRIANGLE.ALL** Every actual one-bridge end triangle satisfies rho<0, equivalently p dot M_tips<0. The external component is unrestricted. Root and independent full audits passed both full manuscripts and the exact threshold-free scope. The strict sign cannot be applied to a degree4 root with two additional forces.
+
 ### G3.M6 — The complete six-body cyclic frontier [cover CLOSED; sharp exit OPEN]
 
 SIX_BODY_CYCLIC_FRONTIER.md gives the full graph/attachment/plane/load cover below. Every six-body component retains three independently oriented physical completion squares. The first unresolved size is six. The complete six-body gates below retain actual attached-block forces; exact five-body component equations are not imported after deleting an edge.
@@ -1468,16 +1480,17 @@ SIX_BODY_CYCLIC_FRONTIER.md gives the full graph/attachment/plane/load cover bel
 - [x] **M6.T3.CHAIN3.ANGULAR_SEPARATION** On the full center-radius rectangle, disjoint unit centers have minor gap>acos(4/5), while a touching pair has gap<pi/2. The root center ray is within15degrees of west, and each actual circle resultant is within15degrees of its center. Westward force balance forces the two boundary tips to opposite angular sides.
 - [x] **M6.T3.CHAIN3.CONTRADICTION** Their mutual center gap is then>2acos(4/5), whose cosine7/25 is below9/25. Actual touching boundary tips require gap<acos(9/25), a strict contradiction. Both exact derivative comparisons cover every radius and mask.
 - [x] **M6.T3.CHAIN3** The entire length-three pendant-chain attachment is CLOSED hand. Root and independent full audits passed its complete load, width, actual-mean and angular cover; all three extras remain unchanged.
-- [ ] **M6.T3.FORK** One bridge from the triangle root to a two-leaf branch: retain both leaf types and the branch body's complete three-force equation.
+- [x] **M6.T3.FORK.DISK** The genuine two-leaf branch U contains the disk D_max(d-1,0), including its complete d=1 boundary exception. Its actual radial U-to-A bridge therefore has rho>=max(d-1,0); both original leaf forces and U's true degree3 remain.
+- [x] **M6.T3.FORK** OUTER_BRIDGED_TRIANGLE_EXCLUSION.md, Section5, applies the whole outward end-triangle theorem to the real degree3 A and its true degree2 tips. The entire fork attachment is excluded; both full audits passed and all three extras remain. Four of seven complete C1.3.b3 attachments are now closed.
 - [ ] **M6.T3.MIXED_ARMS** One direct leaf and one length-two arm at the same triangle root, with every root moment and actual contact feature.
 - [x] **M6.T3.SAME_THREE_LEAVES** The triangle and three radial leaves share one articulation; ONE_ARTICULATION_TRIANGLE_LEAF_EXCLUSION.md excludes the whole layout, with all three extras retained.
 - [ ] **M6.T3.CHAIN_PLUS_LEAF** A length-two arm at one triangle vertex and a leaf at another: preserve both distinct articulation equations and the true intermediate-body degree.
 - [x] **M6.T3.TWO_PLUS_ONE.NONCRITICAL** A separate leaf articulation contains0 for d<=1 and meets D_(d-1) for d>1. The full two-leaf disk theorem therefore gives strict interior overlap at every noncritical radius, with all leaf types retained.
 - [x] **M6.T3.TWO_PLUS_ONE.CRITICAL_FEATURES** At d=1,R²=17/4, the double-leaf articulation is [0,1]² with its two perpendicular S leaves. The center bound |c|<=3/2 excludes every outer-side and northeast-corner C application; the leaf inner-face screens exclude the other nonzero endpoints. C must meet an open inner side.
 - [x] **M6.T3.TWO_PLUS_ONE.CRITICAL_TORQUE** The actual four-force articulation balance and its zero radial-leaf moments force the other triangle body below the adjacent inner side. The loaded C then contains two points with nonpositive scalar product, contradicting its strict point cone. No degree-two equation is used at the four-force articulation.
-- [x] **M6.T3.TWO_PLUS_ONE** TRIANGLE_THREE_BRIDGES_DOUBLE_LEAF_ROOT_EXCLUSION.md closes this entire attachment, every S/D triple and every physical C mask and actual mean. Both full audits passed. Three of seven complete triangle/three-bridge layouts are now closed; four remain.
+- [x] **M6.T3.TWO_PLUS_ONE** TRIANGLE_THREE_BRIDGES_DOUBLE_LEAF_ROOT_EXCLUSION.md closes this entire attachment, every S/D triple and every physical C mask and actual mean. Both full audits passed. This completes that whole attachment; the later fork exit makes the current total four of seven, with three remaining.
 - [ ] **M6.T3.ONE_EACH** One leaf at each of the three triangle vertices: derive the complete coupled three-articulation geometry and joint capacity.
-- [ ] **M6.T3.ALL** Close all seven layouts and every equality survivor before ticking C1.3.b3.
+- [ ] **M6.T3.ALL** Four of seven layouts are closed. Finish mixed arms, a two-edge arm plus different-root leaf, and one leaf at each root, with every physical mask, actual root equation and all three extras.
 
 #### M6.B4L2 — C1.4.b2, a four-body block and two bridges
 
@@ -1536,7 +1549,13 @@ SIX_BODY_CYCLIC_FRONTIER.md gives the full graph/attachment/plane/load cover bel
 - [x] **M6.B6.C6.THREE_LONG.DIAGONAL_UNIQUE** Proper unique-corner concurrence lies inside Y and retains both short side parameters. Their exact relation bounds -7/20<c_Z,y<0 and c_Z,x<-13/10. The actual X,Z center distance then has squared norm<37/72<1, contradicting the inscribed disks.
 - [x] **M6.B6.C6.THREE_LONG.ALL** The entire three-load C6 orbit with gaps(1,2,3) is CLOSED hand. Root and independent full audits passed all parallel limits, physical masks, both short widths and actual means; all three extras remain.
 - [x] **M6.B6.C6.FOUR_ADJACENT_ZERO** BOUNDARY_THREE_EDGE_PATH_DIAMETER.md excludes the complete four-load C6 orbit with adjacent unloaded vertices. Its true two-transmitter channel requires endpoint distance>=3 and its complementary actual boundary path requires<3; no endpoint equilibrium or completion motion is needed.
-- [ ] **M6.B6.C6.THREE_ALTERNATING** Entire alternating three-load mask with three one-body channels, all side/diagonal widths, every loaded parallel/nonparallel alternative and all three extras.
+- [x] **M6.B6.C6.THREE_ALTERNATING.TWO_DIAGONAL.FRAME** SIX_CYCLE_ALTERNATING_DOUBLE_DIAGONAL_EXCLUSION.md gives a proper force triangle without assuming a direct boundary edge. Two diagonal transmitters force all three loaded frames to agree; their two normals at the common load are perpendicular. A third diagonal would be an impossible axis-aligned triangle.
+- [x] **M6.B6.C6.THREE_ALTERNATING.TWO_DIAGONAL.CIRCLES** The remaining side channel has direction(a,-b), a,b>0, and exact center displacement(1+a,-1-b). All actual physical masks give far circle corners (alpha,beta), (alpha-A,beta-d), (alpha-e,beta-A), with A=2+sqrt(2),d=sqrt(2)-b,e=sqrt(2)-a. No diagonal-channel transverse mean is fixed.
+- [x] **M6.B6.C6.THREE_ALTERNATING.TWO_DIAGONAL.EXIT** The two exact circle identities force a,b>1/3 and a+b>5/4. Their sum and Cauchy give the full scalar bound R²>=f(a+b)>f(5/4)>Q; f has positive derivative and exact final numerator268-187sqrt(2)>0. All radius/mask endpoints remain.
+- [x] **M6.B6.C6.THREE_ALTERNATING.TWO_DIAGONAL.ALL** The entire width class with at least two diagonal transmitters is closed, with root and independent full audits. This is a complete finite width alternative, not a sampled pose slice.
+- [ ] **M6.B6.C6.THREE_ALTERNATING.ZERO_DIAGONAL** Three side transmitters; every loaded frame, physical corner mask, actual application and all three extras.
+- [ ] **M6.B6.C6.THREE_ALTERNATING.ONE_DIAGONAL** Exactly one diagonal transmitter, with its actual endpoint frame constraint and the two remaining full side channels.
+- [ ] **M6.B6.C6.THREE_ALTERNATING** Close those two remaining complete width classes before closing the whole alternating-load orbit.
 - [ ] **M6.B6.C6.FOUR_ZERO_DISTANCE2** Entire four-load mask with zero vertices at cyclic distance2. Preserve the isolated loaded body's actual two-channel forces, physical radial masks and both channel widths.
 - [ ] **M6.B6.C6.FOUR_ZERO_DISTANCE3** Entire four-load mask with opposite zero vertices. Keep both physical two-boundary-body runs, all channel means, four-load force/center order and all three extras.
 - [ ] **M6.B6.C6.FIVE** Entire five-load mask with one unloaded transmitter, its two complete widths, all loaded degree-two equations, physical corner masks and three-extra geometry.
@@ -1568,8 +1587,8 @@ SIX_BODY_CYCLIC_FRONTIER.md gives the full graph/attachment/plane/load cover bel
 - [x] **M6.TT1.COVER** The triangles either share one articulation and have a leaf at that articulation or at a tip, or are disjoint and joined by the single bridge. These are exactly three layouts.
 - [x] **M6.TT1.COMMON_ARTICULATION_LEAF** Two petals and one leaf share A; the full common-articulation theorem excludes this entire layout.
 - [ ] **M6.TT1.TIP_LEAF** A bridge at a former bowtie tip changes its degree to3; preserve that new equation and finish the full layout with all three extras.
-- [ ] **M6.TT1.BRIDGED_TRIANGLES** Both triangles have true degree-two tips, so each separate pressure theorem applies at its own articulation. Relate the two different articulation centers through the actual radial bridge before claiming a contradiction; opposite resultants alone do not contradict two different positive projections.
-- [ ] **M6.TT1.ALL** Close all three layouts and their physical feature/mean transitions.
+- [x] **M6.TT1.BRIDGED_TRIANGLES** OUTER_BRIDGED_TRIANGLE_CAP_EXCLUSION.md closes the entire pair of disjoint triangles joined by a bridge. Orient the actual bridge toward its outward endpoint so rho>=0; that root has exact degree3 and its two tips exact degree2. The uniform cap theorem excludes it, including p=0. Every owner, physical mask and actual mean remains, and all three extras are retained.
+- [ ] **M6.TT1.ALL** Two of three full layouts are closed. Finish the entire tip-attached bowtie-leaf layout, both S/D branches and all true degree3/degree4 equations, before ticking C2.33.b1.
 
 #### M6.TB4 — C2.34.b0, a triangle sharing an articulation with a four-body block
 

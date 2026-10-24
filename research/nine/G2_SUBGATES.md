@@ -270,3 +270,12 @@ The hexagon has six necessary bare-cycle load orbits. The surviving four-spoke g
 - [x] ROOTED_BLOCK_ATTACHMENT_OBSTRUCTIONS.md closes the diamond arm-at-tip and same-tip double-leaf layouts, the book-hub and wheel-hub leaf layouts, and the triangle/diamond-tip layout. These are five whole graph-attachment exits with every root force retained.
 - [x] The full residual attachment counts are9 of11 for C1.4.b2,14 of16 for C1.5.b1, and2 of3 for C2.34.b0. Root and independent full source and instantiation audits passed.
 - [ ] All six six-body coarse parents and the four remaining full C6 load orbits remain open. The authoritative coarse ledger stays seven closed and51 open. Every six-body domain retains three arbitrary extras; larger mixed cells, unrestricted sharpness, original equality and the full earlier-chain audit remain open.
+
+## Strict bridged-triangle sign and two more whole six-body layouts
+
+- [x] OUTER_BRIDGED_TRIANGLE_EXCLUSION.md proves the complete actual-port/concurrence/frame theorem with an arbitrary external bridge component. Its full two-leaf central-disk corollary closes the entire fork attachment of C1.3.b3, including R²=17/4.
+- [x] OUTER_BRIDGED_TRIANGLE_CAP_EXCLUSION.md strengthens the result to every outward rho>=0. The exact support-height inequality forces t>8 and puts both true tip centers in a cap with squared diameter178/225<1. Parallel forces have the same complete cap exit; all means remain.
+- [x] Every one-bridge end triangle therefore satisfies p dot M_tips<0 at its actual radial bridge point. Orienting the bridge to its outward endpoint excludes the whole pair of disjoint triangles joined by a bridge, including p=0. The true degree3 root premise is explicit.
+- [x] C1.3.b3 now has four of seven full attachments closed; three remain. C2.33.b1 has two of three full layouts closed; only the complete tip-attached bowtie-leaf layout remains.
+- [x] SIX_CYCLE_ALTERNATING_DOUBLE_DIAGONAL_EXCLUSION.md excludes the entire alternating-three-load width class with at least two diagonal transmitters. The exact common-frame circle equations and full monotone bound yield R²>Q. Root and independent full audits passed all three sources.
+- [ ] The zero-/one-diagonal alternating classes, the other three full C6 load orbits, and all six six-body coarse parents remain open. Every original extra and every true root force remains. The authoritative count is seven closed and51 open; unrestricted sharpness, original equality and the full earlier-chain audit remain open.

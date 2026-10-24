@@ -78,10 +78,13 @@ including its initially possible loaded intermediate vertex. The entire
 sixth layout, two leaves at one root and one leaf at another, is excluded
 by TRIANGLE_THREE_BRIDGES_DOUBLE_LEAF_ROOT_EXCLUSION.md. Its full two-leaf
 central-disk theorem and exact d=1 exception retain every actual root
-force. Thus three of the seven whole layouts are closed and four remain:
-the fork, mixed arms at one root, a two-edge arm plus a different-root
-leaf, and one leaf at every triangle vertex. These four retain their
-whole load, contact and completion domains. In particular an internal vertex of an attached tree is not
+force. OUTER_BRIDGED_TRIANGLE_EXCLUSION.md now excludes the entire second
+layout as well: the two-leaf fork body contains the required central
+disk, and its actual bridge points outward into a true end triangle.
+Thus four of seven whole layouts are closed. The three remaining are
+mixed arms at one root, a two-edge arm plus a different-root leaf, and
+one leaf at every triangle vertex. They retain their whole load, contact
+and completion domains. In particular an internal vertex of an attached tree is not
 assigned a radial-leaf formula merely because its edges are bridges.
 The exact degree-one S/D law applies at an actual leaf; any broader
 terminal or transmission reduction must establish its own premises.
@@ -445,14 +448,19 @@ blocks intersect in at most one vertex, and the block incidence graph
 is a tree.
 
 The shared-A-plus-leaf layout is excluded by
-ONE_ARTICULATION_TRIANGLE_LEAF_EXCLUSION.md. The other two remain.
-For a leaf at a former bowtie tip, that body's degree is3, so the
-bowtie pressure theorem cannot treat it as an unchanged degree2 tip.
-For two disjoint triangles joined by a bridge, each triangle has two
-true degree2 tips, so its separate end-triangle pressure implication
-does apply at its own articulation. The articulations are different;
-their two positive projections are not projections onto one common
-center and do not by themselves contradict bridge balance.
+ONE_ARTICULATION_TRIANGLE_LEAF_EXCLUSION.md. The entire disjoint
+triangles joined by a bridge is now excluded by
+OUTER_BRIDGED_TRIANGLE_CAP_EXCLUSION.md. Its stronger sign is at the
+actual radial bridge application: each true end triangle requires
+p dot M_tips<0. Reversing the common bridge produces an outward
+endpoint and a contradiction, including p=0. The two different
+articulation-center pressure signs alone were not sufficient.
+
+Only the entire tip-attached bowtie-leaf layout remains. Its former
+tip has degree3 and its shared articulation degree4. Neither can be
+replaced by an unchanged degree2 tip or the new exact-degree3
+one-bridge end-triangle root. Both S/D leaves, all owners/masks/means
+and all three extra squares remain in that final full layout.
 
 ## 8. A triangle and a four-body block: three layouts, two remaining
 
@@ -510,7 +518,7 @@ Consequently the complete simple C6 residual is exactly:
 
 | Positive-load orbit | Whole remaining scope |
 | --- | --- |
-| Three alternating loads | Three single-transmitter channels; every width and physical corner mask |
+| Three alternating loads | Three single-transmitter channels, with zero or one diagonal; every remaining physical corner mask and mean |
 | Four loads, zero vertices at distance2 | The isolated loaded body and both genuine channels, all means |
 | Four loads, opposite zero vertices | Both boundary pairs and both full channel-width alternatives |
 | Five loads | One full transmitter and the whole loaded boundary path |
@@ -522,6 +530,15 @@ channel alternatives are all covered, including isolated loads. Proper
 radial concurrence is therefore available for every loaded vertex in
 the four remaining C6 orbits. Physical two-corner concurrences are not
 asserted bounded; all actual means and individual zero weights remain.
+
+SIX_CYCLE_ALTERNATING_DOUBLE_DIAGONAL_EXCLUSION.md excludes the entire
+alternating-three-load width class with at least two diagonal
+transmitters. Their endpoint side ownership forces one common loaded
+frame and two perpendicular channels. A third diagonal is impossible;
+the full remaining side-channel case gives a,b>1/3 and an exact
+increasing circle-radius lower bound f(a+b)>f(5/4)>Q. Every physical
+two-corner endpoint and transverse mean is retained. The zero-/one-
+diagonal classes and the whole alternating-load parent remain open.
 
 Positive chords retain their extra force equations and are not covered
 by an exact simple-cycle proof. All chord/load combinations remain in
