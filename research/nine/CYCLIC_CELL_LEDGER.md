@@ -105,7 +105,7 @@ The exact identity m=1+sum(block_size-1)+bridges yields these four cells, each w
 | Cell | Exhaustive graph/layout cover | Current internal closure |
 | --- | --- | --- |
 | C1.3.b2 | Every chain/same/distinct attachment, every leaf type and four extras | CLOSED; full slider upper/lower capacities3 and0, assembly audited |
-| C1.4.b1 | All-three-loaded C4; diamond hub/tip | Entire adjacent-load and opposite-load C4 branches CLOSED; parent OPEN |
+| C1.4.b1 | All-three-loaded C4; D-leaf hub with loaded second hub | Other C4/diamond branches CLOSED; parent OPEN |
 | C1.5.b0 | Exhaustive ten-type classification reduces to C5, house and four-path fan, with necessary load masks | Graph/load cover CLOSED; full geometry and whole cell OPEN |
 | C2.33.b0 | Two triangles sharing an articulation; all extra physical contacts retained | Four tips loaded, articulation clear; whole completion OPEN |
 
@@ -117,7 +117,7 @@ The S diamond-hub branch with a physically boundary second hub is also excluded 
 
 - [x] C7_INNER_SIDE_CORNER_RESTRICTIONS.md: each inner own-center coordinate has magnitude<3721/7200; each inner vertex has norm>sqrt(5/2)-91/60; any two inner frames have cos(theta)>6/7.
 - [x] PARALLEL_INNER_PAIR_DIAMETER_EXTRACTION.md: every parallel pair with arbitrary gap and stagger forces enclosing center diameter>=3. The actual C7 has diameter<3, so this entire endpoint branch is excluded.
-- [ ] The residual pair has0<theta<acos(6/7). Finish its full disk/stress-dependent radius or completion theorem. These restrictions do not close a coarse cell; the count remains four closed and54 open.
+- [ ] The residual pair now has0<sin(theta)<4/15, with actual opposite far-face boundary centers and an exact gap budget. Finish its full disk/stress-dependent radius or completion theorem. These restrictions do not close a coarse cell; the count remains four closed and54 open.
 
 ## C7 remains a separate whole branch
 
@@ -129,7 +129,7 @@ The S diamond-hub branch with a physically boundary second hub is also excluded 
 - [x] **CY.C7.NORMAL:** simultaneous fixed-point and shared-side-block generic selections preserve every actual application mean and corner-weight mask.
 - [x] **CY.TRIANGLE.AXIS:** UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md proves n dot m>=0 at every side-owned contact triangle, for arbitrary frames and means.
 - [x] **CY.T2.SS.WALL:** DISTINCT_S_LEAVES_PARALLEL_ARTICULATION_REDUCTION.md reduces every remaining S/S core to an aligned-leaf, parallel-force articulation wall. All tilted-owner and shared-AB alternatives are excluded. DISTINCT_S_LEAVES_WALL_CLASSIFICATION.md then exhausts every wall owner/frame, forces the exact radius and full slider/mean intervals, and verifies every family member. The upper/lower capacity theorems now prove uniform capacity<=3; the whole parent assembly is closed.
-- [x] **CY.C4.OPPOSITE:** FOUR_CYCLE_OPPOSITE_LOAD_BRANCH_CLOSED.md closes the entire opposite-loaded-pair C4 at a canonical radius minimizer. Full D- and S-leaf exclusions exhaust every physical mask, actual side-axis owner, U-parallel endpoint and radial weight split. All four extras are preserved; both full assembly audits passed. The all-three-loaded C4 and diamond branches keep C1.4.b1 OPEN.
+- [x] **CY.C4.OPPOSITE:** FOUR_CYCLE_OPPOSITE_LOAD_BRANCH_CLOSED.md closes the entire opposite-loaded-pair C4 at a canonical radius minimizer. Full D- and S-leaf exclusions exhaust every physical mask, actual side-axis owner, U-parallel endpoint and radial weight split. All four extras are preserved; both full assembly audits passed. Only the all-three-loaded C4 and loaded-hub D diamond keep C1.4.b1 OPEN.
 - [x] **CY.C7.RADIAL:** at most four radial bodies, no selected radial run longer than two, and no parallel radial pair. Each free-vertex-incident block has a unique radial endpoint/singleton with two positive corner weights.
 - [x] **CY.C7.PINNED.TYPES:** the exhaustive free-edge list is radial/radial or mirror-paired two-square blocks; C7_PINNED_VERTEX_CONTACT_TYPES.md. Adaptive compatible choices give shared-side neighbors at both radial-pair ends. At most two free edges survive, with a complete individual-block/arrangement cover.
 - [x] **CY.C7.TWO_FREE:** both complete two-free-edge layouts are excluded by C7_TWO_FREE_EDGES_EXCLUSION.md.
@@ -150,3 +150,12 @@ The new S/D local proofs, whole-cell assembly, graph obstructions, five-body gra
 TWO_LOAD_PROGRESS.md preserves chronological statuses and pinned exact-regression provenance. Earlier counts there are historical. The live count in this ledger is **four closed and 54 open**.
 
 - [x] **CY.C5.THREE.PARALLEL:** FIVE_CYCLE_THREE_LOAD_PARALLEL_EXCLUSION.md excludes the entire parallel-force alternative at the isolated loaded C5 vertex, with every transmitter width and actual mean. The remaining nonparallel three-load C5 and the full four-load branch stay OPEN; no parent count changes.
+
+### Further complete structural and pressure branches
+
+- [x] NO_UNLOADED_DIAMOND_HUB.md excludes every zero-load exact degree-three diamond hub in the selected certificate, radius-free and with all actual means. It closes the full S-leaf hub attachment, both S/D tip attachments and both three-load fan masks. The only five-body fan survivor has all four path vertices loaded.
+- [x] FIVE_CYCLE_THREE_LOAD_DOUBLE_DIAGONAL_EXCLUSION.md excludes the entire double-diagonal transmitter chart, with R²>=(9+6sqrt(2))/4>Q. The three-load C5 retains only side/side or side/diagonal widths and nonparallel isolated-load forces.
+- [x] BOWTIE_TIP_OWNED_PRESSURE.md and BOWTIE_PARALLEL_PRESSURE.md prove the strict end-block sign for two complete owner/force domains, including all physical masks and coincident shared means. Every bowtie combining those proved domains is excluded; nonparallel articulation-owned/shared interfaces remain.
+- [x] C7_INNER_OUTSIDE_FACE_CORNER_EXCLUSION.md and C7_INNER_PAIR_FAR_FACE_CENTERS.md give the entire small-angle and actual-center extraction, retaining the full outer frames. No C7 completion conclusion or coarse-cell closure is inferred.
+
+The authoritative count remains four whole cells closed and54 open.

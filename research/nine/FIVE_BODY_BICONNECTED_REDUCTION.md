@@ -144,10 +144,12 @@ The complete necessary loaded-set list is therefore
 
 The two triples are exchanged by reversing the original path. The two inner path vertices retain their possible zero-weight physical circle contacts wherever geometry allows them.
 
+The subsequent NO_UNLOADED_DIAMOND_HUB.md, Section6, excludes both entire three-load masks. Each inner path vertex has exact positive degree3, and its universal-hub neighbor physically touches both other path neighbors. The radius-free selected-star theorem therefore forces both inner path vertices to carry positive circle load. Thus every surviving fan now has **all four path vertices loaded**, with H physically circle-clear. The earlier three-mask list remains the exhaustive combinatorial cover before this geometric refinement.
+
 ## 5. Exact remaining whole-cell work
 
 **Theorem 5.1.** Under the stated selected-certificate inputs, every five-body biconnected positive component belongs to one of the three graph families in Section 4, with one of its stated necessary load masks. The seven other abstract biconnected graph types are completely excluded, and no completion square is discarded.
 
-The remaining C1.5.b0 task is the full geometry and four-square completion theorem for C5, the house and the fan. Each still requires all contact-axis owners, point-normal intervals, shared-side means, circle-corner masks, physical zero-weight contacts, embeddings and any equality survivors. A positive graph complement is never used as a substitute for the full physical noncontact graph.
+The remaining C1.5.b0 task is the full geometry and four-square completion theorem for C5, the house and the four-load fan. FIVE_CYCLE_THREE_LOAD_PARALLEL_EXCLUSION.md and FIVE_CYCLE_THREE_LOAD_DOUBLE_DIAGONAL_EXCLUSION.md now remove the isolated-load parallel-force alternative and the entire double-diagonal transmitter chart in the three-load C5. Each still requires all contact-axis owners, point-normal intervals, shared-side means, circle-corner masks, physical zero-weight contacts, embeddings and any equality survivors. A positive graph complement is never used as a substitute for the full physical noncontact graph.
 
-The coarse cell C1.5.b0 remains OPEN. The coarse count remains three closed and55 open. This is a complete combinatorial and load-cover reduction, not the missing sharp bound. No Lean compilation or CI was run.
+The coarse cell C1.5.b0 remains OPEN. The current coarse count is four closed and54 open. This is a complete combinatorial and load-cover reduction, not the missing sharp bound. No Lean compilation or CI was run.
