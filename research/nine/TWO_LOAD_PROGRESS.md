@@ -306,3 +306,12 @@ D_LEAF_GENERIC_CONTACT_SELECTION.md resolves the variable-application issue befo
 CENTER_COVER_PIERCING.md proves the full all-orientation radial-tail inequality and its strict common-point consequence: if the boundary-square centers fit in an open radius3/2 disk, the bounded complementary region has unit-square capacity at most1. Root independent audit passed for this theorem. The elementary minimum-enclosing-disk reduction further identifies the only possible C7 obstruction as an acute supporting triple with circumradius>=3/2. Pattern(1,1,5) is excluded; the other three positive graph-gap partitions remain open in this commit.
 
 All nine files in commit697af9b were read back from GitHub and matched the submitted contents. No Lean compilation or CI was run. No whole coarse cell closes in this update: two remain closed and56 open; T9 and unrestricted equality remain open.
+
+
+## October 23, 2026 — the entire selected oblique D branch is excluded
+
+D_LEAF_NONPARALLEL_OWNER_EXCLUSION.md completes G3.M4.D.OBLIQUE. At least one loaded neighbor has a unique physical circle corner because one articulation contact is too close to the origin for a two-corner body. Simultaneous finite normal selection then removes a B/C vertex/vertex edge, handling both nonparallel and parallel fixed-force lines without a degenerate determinant claim. Every remaining B/C side owner, normal sign and actual application is covered.
+
+The exact contact chart identifies actual positive-weight circle corners. If C has two physical circle corners, h<1/4 and the opposite B corner falls strictly short of the circle. If C has a unique corner, concurrence gives0<tau<1 and forces phi+psi<pi/4. A direct bound for h>=1/2 and a monotone pivot for h<=1/2 then put a genuine circle corner below the radius. The proof retains independent frames, unequal angles, all corner weights and the full height interval. Root full independent hand audit passed.
+
+Only the entire parallel-left D branch remains before C1.3.b1 can close. The coarse inventory remains two closed and56 open. The generic-selection manuscript received a second independent audit; the strict-piercing theorem received a second audit and its minimum-disk section passed a separate audit. All nine files in commit1d5b4ed were read back from GitHub and matched. No Lean compilation or CI was run.

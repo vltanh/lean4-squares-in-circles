@@ -1,7 +1,7 @@
 # Generic physical normal selection removes vertex/vertex articulation contacts in the D branch
 
-**Status: complete hand certificate-selection argument; independent
-hand audit passed.** The physical stress can be selected with the existing
+**Status: complete hand certificate-selection argument; two independent
+hand audits passed.** The physical stress can be selected with the existing
 strict/nonradial point-contact conventions, planar body graph,
 at-most-27 scalar-atom bound, and unique positive component, and with
 the following additional property:

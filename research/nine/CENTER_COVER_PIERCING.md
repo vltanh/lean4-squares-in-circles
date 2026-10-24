@@ -1,6 +1,6 @@
 # A radius-three-halves cover of boundary centers gives one strict piercing point
 
-**Status: complete hand geometric implication; independent hand audit passed for Sections 1--5.** Suppose finitely many interior-disjoint unit squares form the boundary of a bounded complementary region, and all their centers lie in an open disk of radius \(3/2\), centered at p. Every further unit square lying in that bounded region contains p in its strict interior. In particular, at most one interior-disjoint unit square can occupy the region. Section 6 adds the elementary minimum-disk reduction used to state the remaining C7 obligation exactly.
+**Status: complete hand geometric implication; two independent hand audits passed for Sections 1--5, and a separate independent audit passed for Section 6.** Suppose finitely many interior-disjoint unit squares form the boundary of a bounded complementary region, and all their centers lie in an open disk of radius \(3/2\), centered at p. Every further unit square lying in that bounded region contains p in its strict interior. In particular, at most one interior-disjoint unit square can occupy the region. Section 6 adds the elementary minimum-disk reduction used to state the remaining C7 obligation exactly.
 
 All square orientations are independent. No stress, regularity, or common frame is assumed. Applied to C7, this is a sufficient completion criterion. It is not yet known here that every admissible C7 has such a center cover. Diameter less than three alone does not imply the required covering-radius bound.
 

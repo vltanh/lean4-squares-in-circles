@@ -1,7 +1,7 @@
 # n=9: deep ticked roadmap and ordered proof execution
 
 **Branch:** `research/nine-tablefree-hand`; **PR:** #11, draft.  
-**Reconciled source:** `697af9be7d3bd969e5a8bab70fedbf89253a7aa9`.  
+**Reconciled source:** `1d5b4ed29d1f29300158a121fc3c6027d54ddf44`.  
 **Checkpoint:** October 23, 2026, America/Chicago; the append-only evidence log retains explicit UTC provenance.
 
 **T9 and unrestricted equality remain OPEN.** The complete P/Y arguments exclude all selected positive trees and all exactly-two-loaded components from a nine-square packing in the declared radius window. A physical certificate can be selected with **one planar positive component**, all physically circle-touching vertices on its exterior face, and at most 27 positive scalar atoms. The remaining component is cyclic, has 4–9 bodies, and has 3–7 noncollinear circle-loaded resultants. Every other physical square has zero stress and remains in the problem.
@@ -14,9 +14,9 @@ The remaining lower-bound split is exhaustive: **G3.B**, a boundary-only C7 with
 | --- | --- | --- | --- |
 | 1 | G3.M4.0 | Every four-body triangle-plus-leaf core, complete S/D articulation cover and two-region routing | CLOSED hand; TRIANGLE_LEAF_CORE_REDUCTION.md |
 | 2a | G3.M4.D.PARALLEL | Both articulation reactions horizontal, all application means and loaded-neighbor poses | OPEN; active whole branch |
-| 2b | G3.M4.D.OBLIQUE | Both articulation corners lie inside loaded-neighbor sides, all B/C contact types | OPEN; active whole branch |
+| 2b | G3.M4.D.OBLIQUE | Both articulation corners lie inside loaded-neighbor sides, all B/C contact types | CLOSED hand; full branch excluded |
 | 3 | G3.M4.S | All side-normal-leaf cores: aligned shared-side sliders plus both tilted-vertex branches | CLOSED hand; the entire core is impossible |
-| 4 | G3.M4.ALL | Combine D/S and their degeneracies; close the entire C1.3.b1 cell | BLOCKED by D only |
+| 4 | G3.M4.ALL | Combine D/S and their degeneracies; close the entire C1.3.b1 cell | BLOCKED by D.PARALLEL only |
 | Parallel whole branch | G3.B.CAP | Exclude two arbitrary completion squares for every positive boundary C7 | OPEN; active |
 | 5 | G3.M5–M9 | Process the remaining mixed cells by component size and the finite semantic cover below | OPEN |
 | 6 | G4 | Assemble the unrestricted sharp lower bound with the exact lower-window import | BLOCKED by G3 |
@@ -45,6 +45,7 @@ The finite cover keeps continuous radii, centers, orientations, contact coordina
 | Boundary C7 center diameter | Every pair of centers is at distance<3, with arbitrary frames and no stress premise | BOUNDARY_SEVEN_CYCLE_CENTER_DIAMETER.md |
 | D reaction localization | Both triangle reactions act left; exact parallel/opposite-corner alternatives and height formula | D_LEAF_ARTICULATION_CONTACT_LOCALIZATION.md |
 | D generic selection | No point-only vertex/vertex articulation edge in the selected D star; planarity, thinning and uniqueness retained | D_LEAF_GENERIC_CONTACT_SELECTION.md |
+| Entire oblique D branch | No selected nonparallel D articulation, all BC owners and circle masks, full height domain | D_LEAF_NONPARALLEL_OWNER_EXCLUSION.md |
 | Strict center-cover piercing | Every unit enclosed by a ring whose centers lie in an open radius3/2 disk contains its center in its open interior | CENTER_COVER_PIERCING.md |
 
 These hand manuscripts have different audit histories. The newly reviewed local arguments do not replace G6's full-chain audit. No Lean compilation or CI has been run.
@@ -552,16 +553,18 @@ Source: D_LEAF_GENERIC_CONTACT_SELECTION.md. This is an existence statement abou
 - [ ] **G3.M4.D.PARALLEL.4** Use B0/C0 force and torque, not only the articulation's weighted-height equation, to exclude the entire branch or prove its joint completion capacity<=4.
 - [ ] **G3.M4.D.PARALLEL.ALL** Close every parallel-left selected D core over the full radius/height domain, including all shared-side means.
 
-##### D.OBLIQUE — Entire fixed-owner opposite-corner branch [OPEN]
+##### D.OBLIQUE — Entire fixed-owner opposite-corner branch [CLOSED hand]
+
+Source: D_LEAF_NONPARALLEL_OWNER_EXCLUSION.md, independently hand-audited. The full core is excluded after a compatible simultaneous finite normal selection. No extra-square capacity estimate is needed.
 
 - [x] **G3.M4.D.OBLIQUE.0 input** The two articulation contact points are(-s,h), (-s,h-1); each lies strictly inside a loaded-neighbor side, and h is fixed by the two slopes.
-- [ ] **G3.M4.D.OBLIQUE.1** Parameterize the two full neighbor frames and their interior side-contact coordinates; retain both signs and every allowable height.
-- [ ] **G3.M4.D.OBLIQUE.2.a** Derive the complete B0-owned B0/C0 contact chart and its valid parameter domain from physical nonoverlap.
-- [ ] **G3.M4.D.OBLIQUE.2.b** Derive the C0-owned chart or give a full-packing reflection/exchange proof; include shared-side limits.
-- [ ] **G3.M4.D.OBLIQUE.2.c** Handle any remaining strict vertex/vertex B0/C0 contact by a legitimate certificate-selection argument or a direct proof; do not silently select an owner.
-- [ ] **G3.M4.D.OBLIQUE.3** Determine every possible farthest circle corner and load mask from containment. Any angle-order or monotonicity condition used in a chart must follow from these inequalities.
-- [ ] **G3.M4.D.OBLIQUE.4** Combine common cycle moment, circle equations and contact lengths to exclude the entire branch or prove joint completion capacity<=4, without assuming equal upper/lower angles.
-- [ ] **G3.M4.D.OBLIQUE.ALL** Assemble all owners, masks and transition boundaries into one universal oblique-branch theorem.
+- [x] **G3.M4.D.OBLIQUE.1** Parameterize the two full neighbor frames and their interior side-contact coordinates; retain both signs and every allowable height.
+- [x] **G3.M4.D.OBLIQUE.2.a** Derive the complete B0-owned B0/C0 contact chart and its valid parameter domain from physical nonoverlap.
+- [x] **G3.M4.D.OBLIQUE.2.b** Horizontal reflection and exchange cover the C0-owned chart. The parallel-axis lemma excludes shared-side limits between B0 and C0, rather than omitting them.
+- [x] **G3.M4.D.OBLIQUE.2.c** At least one neighbor has a unique physical circle corner. Its fixed side-interior A force and circle force exclude all but finitely many B0/C0 point normals; simultaneous pre-stress selection removes that contact type, including parallel fixed-force cases.
+- [x] **G3.M4.D.OBLIQUE.3** Containment and force signs identify actual positive-weight circle corners for every one/two-corner mask. The two-C0-corner case is excluded directly; the unique-C0-corner case derives phi+psi<pi/4 from concurrence and torque.
+- [x] **G3.M4.D.OBLIQUE.4** For h>=1/2 bound the C0 circle corner directly. For h<=1/2 use the exact pivot r0=(1-h)/cos(psi); on either side a genuine circle corner has squared norm<(s+1)^2+9/5<R^2. All heights and unequal angles are included.
+- [x] **G3.M4.D.OBLIQUE.ALL** Both owners, all normal signs, all circle masks, all height ranges and every allowed transition are excluded in one universal selected-certificate theorem.
 
 - [x] **G3.M4.D.5 ROUTING** Apply G3.M4.0 to all five whole extra squares, keeping physical zero-weight contacts.
 - [ ] **G3.M4.D.6 JOINT CAPACITY** Prove at most4 extras in the two remaining regions jointly, or prove a separately justified certificate refinement excludes the entire D branch.
@@ -748,7 +751,7 @@ For at most nine labeled squares there are finitely many choices of each item be
 
 1. P.ALL, Y.ALL, TREE.ALL and TL.COMPLETE are CLOSED hand at their stated scopes. Keep the general C7 and mixed 3–7-loaded cyclic completion obligations OPEN.
 2. The 58 coarse cells now have **two whole-cell exclusions and 56 open rows**. Do not confuse subfamily restrictions with parent closure.
-3. Follow the ordered G3 execution tree: the C1.3.b1 reduction and S branch are closed; finish both complete selected D branches, then their parent. Pursue the entire C7 capacity in parallel, with its proved conditional piercing criterion and explicit center-cover blocker; continue the remaining mixed cells by component size. Use shared uniform arguments whenever possible. Do not create angle boxes merely to increase checked-gate counts.
+3. Follow the ordered G3 execution tree: the C1.3.b1 reduction, S branch and oblique D branch are closed; finish the entire parallel-left D branch, then their parent. Pursue the entire C7 capacity in parallel, with its proved conditional piercing criterion and explicit center-cover blocker; continue the remaining mixed cells by component size. Use shared uniform arguments whenever possible. Do not create angle boxes merely to increase checked-gate counts.
 4. Preserve exact physical negative controls and every unstressed completion body.
 5. Commit finished arguments promptly and log UTC provenance, exact quantifiers, finite evidence and unchanged global blockers in TWO_LOAD_PROGRESS.md or a subsequent append-only checkpoint.
 6. If a proposed reduction fails, retain the exact witness and revise it; do not defend a false stronger normalization by shrinking the domain indefinitely.

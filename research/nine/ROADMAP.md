@@ -1,6 +1,6 @@
 # n=9 — ordered roadmap to the unrestricted hand proof
 
-**PR:** #11, draft. **Reconciled source:** `697af9be7d3bd969e5a8bab70fedbf89253a7aa9`.  
+**PR:** #11, draft. **Reconciled source:** `1d5b4ed29d1f29300158a121fc3c6027d54ddf44`.  
 **Updated:** October 23, 2026, America/Chicago.
 
 **The unrestricted lower bound R^2>=1105/256 and complete equality classification remain OPEN.** The construction attains the claimed radius. The detailed proof tree, exact subgates and boundary cases are in [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md).
@@ -30,18 +30,18 @@ These are hand implications. The full prerequisite-chain audit and Lean verifica
 | --- | --- | --- | --- |
 | 1 | G3.M4.0 [x] | Every triangle-plus-leaf core, all load states, full S/D articulation cover and whole-square routing | CLOSED: TRIANGLE_LEAF_CORE_REDUCTION.md |
 | 2a | G3.M4.D.PARALLEL | Both articulation reactions horizontal; every actual contact mean and circle mask | Exclude the whole selected core, or prove joint capacity<=4 |
-| 2b | G3.M4.D.OBLIQUE | Opposite articulation corners in relative interiors of loaded-neighbor sides | Cover both owners of the B/C contact and prove whole-branch exclusion or capacity |
+| 2b | G3.M4.D.OBLIQUE [x] | Both B/C side owners, every corner mask, full articulation-height domain | CLOSED: D_LEAF_NONPARALLEL_OWNER_EXCLUSION.md |
 | 3 | G3.M4.S [x] | Aligned shared-side slider plus both tilted-vertex branches, with all endpoints | CLOSED: entire S core impossible |
-| 4 | G3.M4.ALL | Assemble D and the completed S branch | D remains; only then close C1.3.b1 |
+| 4 | G3.M4.ALL | Assemble D and the completed S branch | Only D.PARALLEL remains; only then close C1.3.b1 |
 | Parallel | G3.B.CAP | Every positive boundary-only C7, arbitrary two extra squares | Prove capacity<=1 inside its actual free domain |
 | 5 | G3.M5–M9 | All remaining mixed cyclic cells, in increasing component size | Sharp lower bound or full nine-square exclusion for each whole cell |
 | 6 | G4 | All original nine-square packings | Universal R^2>=1105/256 |
 | 7 | G5 | Every equality packing and every proposed parameter family | Exact necessary-and-sufficient classification |
 | 8 | G6–G8 | Full audit, later formalization and integration | Verified advertised theorem; draft PR can then be finalized |
 
-The first cell has four positive bodies and requires five extras. Its full core/routing reduction and its entire S-leaf branch are now closed; only D remains. Its inner triangle hole and the touching-boundary-pair exterior pocket are empty. The exact unresolved capacity is **at most four extras jointly in the two remaining articulation/leaf regions**. A separate bound of two per region is not assumed.
+The first cell has four positive bodies and requires five extras. Its full core/routing reduction, entire S-leaf branch and entire selected oblique D branch are now closed; only D.PARALLEL remains. Its inner triangle hole and the touching-boundary-pair exterior pocket are empty. The exact unresolved capacity is **at most four extras jointly in the two remaining articulation/leaf regions**. A separate bound of two per region is not assumed.
 
-The complete S proof retains its entire aligned slider interval and both tilted formulas. For D, the bridge point lies strictly inside the articulation side. D_LEAF_ARTICULATION_CONTACT_LOCALIZATION.md proves the two remaining reactions point left; D_LEAF_GENERIC_CONTACT_SELECTION.md removes vertex/vertex articulation edges before the stress is chosen. This leaves the two full D branches in the table. The generic selection includes variable shared-side means and matched four-junction normals; it does not assume a special post-stress normal or fixed corner-weight split.
+The complete S proof retains its entire aligned slider interval and both tilted formulas. For D, the bridge point lies strictly inside the articulation side. D_LEAF_ARTICULATION_CONTACT_LOCALIZATION.md proves the two remaining reactions point left; D_LEAF_GENERIC_CONTACT_SELECTION.md removes vertex/vertex articulation edges before the stress is chosen. This gives the two full D branches in the table. D_LEAF_NONPARALLEL_OWNER_EXCLUSION.md now excludes the whole oblique branch, including every B/C axis owner and circle mask. The generic selection includes variable shared-side means and matched four-junction normals; it does not assume a special post-stress normal or fixed corner-weight split.
 
 ## Finite case coverage and controls
 
