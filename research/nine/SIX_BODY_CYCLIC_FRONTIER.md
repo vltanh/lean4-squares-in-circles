@@ -751,6 +751,42 @@ UUS,SUU,UUU in orderK,A,B, including theirA/B reflections. At least one
 actualU corner is negative. Root and independent full audits passed
 both full-mask exits. The four whole graph/load orbits remain open.
 
+### Full parallel C4 exit and exact negative-endpoint mask domains
+
+FOUR_CYCLE_PARALLEL_BYPASS_GENERAL_EXCLUSION.md excludes the whole
+opposite-load C4 domain in which H is parallel to its true unloaded
+transmitter. All additional H forces remain. A shared root interface
+forces an actual radial endpoint and makes the other endpoint circle-
+clear. With two point interfaces, the complete physical masks become
+two unique corners at(-m,-3/2),(-m,3/2). Both genuine tip torque equations
+use the same original channel mean and force equal circle scales,
+then a forbidden equality of the two independently selected slopes.
+No radial leaf, small-root premise or canonical motion is used.
+
+BOUNDARY_THREE_PATH_RESULTANT_CONE.md proves that the middle actual
+circle force on a physical three-body boundary path belongs to the
+open positive cone of its two endpoint forces. The complete force
+span is<174degrees, and both successive gaps are>10degrees. Thus the
+negative pressure required by the intact end triangle occurs at a
+genuine endpoint tip, in both C4 loadsABC and diamond-hub loadsKAB.
+After the actual root reflection, label that endpoint A: it is uniquely
+circle-touching withc_H.z_A<0. The other endpoint and middle body retain
+either physical mask. Each full family has four necessary mask
+representatives, in order(middle,A,other endpoint):SUS,UUS,SUU,UUU.
+The entire both-radial-endpoint domain is excluded, including the
+formerly open unique-hub/two-radial-tip diamond mask.
+
+NEGATIVE_UNIQUE_NEIGHBOR_INNER_CONTACT.md proves every actual H/A
+contact lies on A's two inner faces, with both outward circle-corner
+coordinates>3/5 and distance<79/160 from its true opposite corner.
+ForR²>=17/4 these improve to>19/20 and distance<5/38. The full root
+bound|c_H|²<9/2-R²<1 also holds; in that high-radius domain the circle
+origin is strictly insideH. All bounds preserve the true origin and
+every original mean; no contact is reset to a corner. Root and
+independent full audits passed all three complete sources and both
+actual attachment applications. The four graph/load parents remain
+open, and the coarse inventory stays nine closed/49 open.
+
 ## 9. Complete local and load-family exits beyond the initial cover
 
 UNLOADED_TRIANGLE_HUB_EXTERNAL_SEPARATION.md has a full source-by-source

@@ -1,5 +1,15 @@
 # Nine unit squares in a circle — current hand-proof frontier
 
+## Full parallel C4 exit and negative-endpoint geometry
+
+[FOUR_CYCLE_PARALLEL_BYPASS_GENERAL_EXCLUSION.md](FOUR_CYCLE_PARALLEL_BYPASS_GENERAL_EXCLUSION.md) closes the entire opposite-load four-cycle domain with its hub parallel to the actual unloaded transmitter. Every other hub force remains. A full shared-interface corner bound and the two true point-interface torque equations exclude all physical masks and all original channel means; no radial leaf or canonical motion is used.
+
+[BOUNDARY_THREE_PATH_RESULTANT_CONE.md](BOUNDARY_THREE_PATH_RESULTANT_CONE.md) puts the actual middle circle force inside the strict positive cone of the two endpoint forces. Both the three-loaded C4 and the diamond-hub attachment must therefore have a negative-pressure genuine endpoint. Label itA: it has one physical circle corner withc_H.z_A<0. This closes the entire both-radial-endpoint families and leaves four exact full mask domains for each load orbit.
+
+[NEGATIVE_UNIQUE_NEIGHBOR_INNER_CONTACT.md](NEGATIVE_UNIQUE_NEIGHBOR_INNER_CONTACT.md) places every actual H/A contact on A's inner faces and within79/160 of its true opposite corner. Both outward circle coordinates exceed3/5. On the entireR²>=17/4 domain these become19/20 and5/38. The true root also satisfies|c_H|²<9/2-R², hence contains the circle origin strictly in that high-radius domain. Every original mean is retained.
+
+Root and separate independent full audits passed all three complete sources and both full attachment applications. The roadmap records the whole parallel exit, every exact contact/angle bound, the closed radial-mask families and all remaining mask domains. **The coarse inventory remains nine closed/49 open.** All four six-body parents and the unrestricted sharpness/equality and earlier prerequisite-chain obligations stay open. PR #11 remains draft; no Lean compilation or CI was run.
+
 ## Second whole six-body cell CLOSED: all two-triangle/one-bridge layouts
 
 [TWO_TRIANGLE_BLOCKS_ONE_BRIDGE_CELL_CLOSED.md](TWO_TRIANGLE_BLOCKS_ONE_BRIDGE_CELL_CLOSED.md) closes **the entire C2.33.b1 cell**: a leaf at the shared articulation, a leaf at a triangle tip, and two disjoint triangles joined by the bridge. All three whole exclusions use the same selected certificate and retain every true degree and all three extras.
