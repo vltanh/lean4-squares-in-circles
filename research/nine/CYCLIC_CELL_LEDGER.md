@@ -1,6 +1,6 @@
-# n=9 CYCLIC — 58 exhaustive coarse cells, FOUR whole cells closed
+# n=9 CYCLIC — 58 exhaustive coarse cells, FIVE whole cells closed
 
-**Checkpoint:** October 23, 2026, America/Chicago. **Global sharp theorem and unrestricted equality remain OPEN.** Every row retains its full continuous physical geometry, actual circle-load masks and all completion squares.
+**Checkpoint:** October 24, 2026, America/Chicago. **Global sharp theorem and unrestricted equality remain OPEN.** Every row retains its full continuous physical geometry, actual circle-load masks and all completion squares.
 
 The closed cells are **C1.3.b0**, **C1.4.b0**, **C1.3.b1**, **C1.3.b2** and **C2.33.b0**. Thus **53 coarse cells remain open**. The selected unique positive cyclic component now has **5–9 bodies** and **3–7 noncollinear loaded resultants**. Every other physical square has zero stress and remains an obstacle. All positive trees and every exactly-two-loaded component are already excluded by the full P/Y assemblies.
 
@@ -8,7 +8,7 @@ The closed cells are **C1.3.b0**, **C1.4.b0**, **C1.3.b1**, **C1.3.b2** and **C2
 
 - [x] One planar positive component, with at most 27 scalar atoms and all physical circle-touching vertices on its exterior face.
 - [x] At most seven physical circle contacts; every boundary contact joins angular neighbors; no three boundary bodies share a point.
-- [x] All-boundary positive components are exactly C7; simple positive cycles have at most eight bodies.
+- [x] The full physical boundary graph is a path forest, by BOUNDARY_SEVEN_CYCLE_CAPACITY_ONE.md. Every surviving positive component contains a physically circle-clear body; simple positive cycles have at most eight bodies.
 - [x] NO_POSITIVE_K4_SUBGRAPH.md excludes every K4 subgraph of the selected positive graph. This includes the K4 branch of C1.4.b1 and K4-containing larger blocks.
 - [x] NO_THREE_BOUNDARY_COMMON_NEIGHBORS.md excludes three common positive circle-touching neighbors of any pair of body vertices.
 - [x] Contact-ring interior capacities for k=3,4,5,6 are 0,1,1,2; exterior pockets of touching boundary pairs are empty.
@@ -16,7 +16,8 @@ The closed cells are **C1.3.b0**, **C1.4.b0**, **C1.3.b1**, **C1.3.b2** and **C2
 - [x] BOUNDARY_TIP_FIXED_APPLICATION_SELECTION.md extends legitimate pre-stress finite selection to fixed-application unique-corner tips with one boundary neighbor, retaining all shared-side cases outside its scope.
 - [x] GENERAL_FIXED_TIP_NORMAL_SELECTION.md excludes free vertex normals at every unique-circle-corner degree-two star with distinct fixed applications, even with two clear neighbors. It retains variable means and the exact coincident radial-D inner-vertex exception.
 - [x] UNIT_BYPASS_NORMAL_CHANNEL.md reduces every normal channel with a unit-square bypass to one width-one transmitter, retaining its actual application means. The bypass and transmitter are separated transversely in the transmitter frame, even when the bypass is tilted.
-- [ ] General C7 capacity and every remaining mixed-cell sharp completion theorem are still required.
+- [x] Entire physical boundary-C7 capacity one is proved, including Q, without a stress premise.
+- [ ] Every remaining mixed-cell sharp completion theorem is still required. Mixed C1.7.b0 remains open; no coarse row is closed by the boundary-only theorem alone.
 
 A restriction closes only the subfamilies to which it applies. A coarse row remains open while any of its load/contact/completion patterns is unresolved. Selected positive edges and the full physical touching graph remain distinct. The latter may include zero-stress contacts and four-square K4 junctions.
 
@@ -119,7 +120,7 @@ The S diamond-hub branch with a physically boundary second hub is also excluded 
 - [x] PARALLEL_INNER_PAIR_DIAMETER_EXTRACTION.md: every parallel pair with arbitrary gap and stagger forces enclosing center diameter>=3. The actual C7 has diameter<3, so this entire endpoint branch is excluded.
 - [ ] The residual pair now has0<sin(theta)<4/15, with actual opposite far-face boundary centers and an exact gap budget. Finish its full disk/stress-dependent radius or completion theorem. These restrictions do not close a coarse cell; the count remains five closed and53 open.
 
-## C7 remains a separate whole branch
+## C7 is a closed whole geometric branch
 
 - [x] **CY.C7.POLYGON/LOCALIZE:** origin-containing convex force polygon and localization of every completion square.
 - [x] **CY.C7.DIAMETER:** every physical ring has center diameter below 3.
@@ -134,12 +135,12 @@ The S diamond-hub branch with a physically boundary second hub is also excluded 
 - [x] **CY.C7.PINNED.TYPES:** the exhaustive free-edge list is radial/radial or mirror-paired two-square blocks; C7_PINNED_VERTEX_CONTACT_TYPES.md. Adaptive compatible choices give shared-side neighbors at both radial-pair ends. At most two free edges survive, with a complete individual-block/arrangement cover.
 - [x] **CY.C7.TWO_FREE:** both complete two-free-edge layouts are excluded by C7_TWO_FREE_EDGES_EXCLUSION.md.
 - [x] **CY.C7.FREE_NONE:** C7_RADIAL_VERTEX_EDGE_EXCLUSION.md and C7_MIRROR_VERTEX_EDGE_EXCLUSION.md exclude both remaining free-edge types by compatible open choices before multipliers. Every residual C7 edge has an actual side-axis owner.
-- [x] **CY.C7.HIGH_TYPES:** C7_HIGH_CENTER_CONTACT_TYPES.md exhausts the contacts of every center of radius at least3/2, including shared means and zero-load transmission. A positively loaded two-owned body instead has center radius below23/16 and a90-degree force-polygon turn. The global coupling is still required.
+- [x] **CY.C7.HIGH_TYPES:** C7_HIGH_CENTER_CONTACT_TYPES.md exhausts the contacts of every center of radius at least3/2, including shared means and zero-load transmission. A positively loaded two-owned body instead has center radius below23/16 and a90-degree force-polygon turn. The later geometric capacity theorem makes the optional global owner coupling unnecessary.
 - [x] **CY.C7.CENTER_POLYGON:** C7_CENTER_POLYGON_LOCALIZATION.md proves full extra containment in the strictly convex center polygon. Its clear-endpoint chord and winding arguments cover arbitrary inner frames.
-- [x] **CY.C7.DIAMETER_FALSE:** C7_DIAMETER_EXTRACTION_COUNTEREXAMPLE.md disproves the broad physical-ring diameter extraction with actual seven outer units and two inner units. The disk/annulus-dependent version is still open.
-- [ ] **CY.C7.OWNED:** finish the complete all-owned capacity problem, retaining every zero-owner/two-owner transition, radial/unique circle mask and shared-side application mean.
-- [ ] **CY.C7.COVER.133/223:** the positive-stress cover problem for these two entire patterns remains open.
-- [ ] **CY.C7.COMPLETE:** prove at most one arbitrary extra square in the actual free domain, by a complete cover or another valid capacity argument.
+- [x] **CY.C7.DIAMETER_FALSE:** C7_DIAMETER_EXTRACTION_COUNTEREXAMPLE.md disproves the broad physical-ring diameter extraction with actual seven outer units and two inner units. The actual disk-dependent completion theorem is now proved by the full right/left witness arguments.
+- [x] **CY.C7.OWNED:** the full geometric capacity theorem covers all owned and free interfaces, every radial/unique mask and all shared-side means.
+- **Retired alternative CY.C7.COVER.133/223:** those separate cover claims remain unproved and are no longer needed by the capacity route.
+- [x] **CY.C7.COMPLETE:** BOUNDARY_SEVEN_CYCLE_CAPACITY_ONE.md proves at most one arbitrary extra square throughout the declared window, including Q. Both final branches and the assembly have root and separate full audits.
 
 No regularity, single-owner convention, global common frame, or strict origin piercing is assumed. The regular positive C7 is a completed example, not the entire domain.
 
@@ -172,3 +173,12 @@ No further coarse parent is closed by these results: five cells remain closed an
 ### Entire bowtie cell closed
 
 BOWTIE_CELL_CLOSED.md closes C2.33.b0. Every owned/free end-triangle interface has positive c_A projection, with exact degree-two tips, all physical masks and actual means. The clear articulation's two block resultants are opposite. The complete corrected mixed-owner, radial-free and shared/free proofs plus the parent assembly passed root and independent full audits. Every extra remains; no canonical motion or regional capacity theorem is needed. The authoritative coarse count is five closed and53 open.
+
+## Whole physical C7 closure checkpoint
+
+[BOUNDARY_SEVEN_CYCLE_CAPACITY_ONE.md](BOUNDARY_SEVEN_CYCLE_CAPACITY_ONE.md) proves that every physical boundary seven-cycle in 79/40<=R<=sqrt(1105)/16 has room for **at most one additional unit square**. Both extra frames, all ring frames, every contact and the upper radius endpoint are retained. The theorem needs no positive stress. Thus no nine-square packing in this window has a physical boundary C7, and the full physical circle-touching graph is a disjoint union of paths.
+
+The parallel inner-pair branch was already excluded. [C7_RIGHT_OUTSIDE_INNER_EXCLUSION.md](C7_RIGHT_OUTSIDE_INNER_EXCLUSION.md) now excludes the entire right-outside branch, and [C7_LEFT_OUTSIDE_INNER_EXCLUSION.md](C7_LEFT_OUTSIDE_INNER_EXCLUSION.md) excludes the entire asymmetric left-outside branch with the original SAT owner unchanged. Both identify an outgoing ray witness with the actual far-face boundary unit, covering every separator owner and sign. Actual outer corners supply the constraint missing from center-only relaxations. The final asymmetric bounds differ by a strict margin at least197/72000.
+
+Root and separate full hand audits passed both branch proofs and the assembly. **G3.B is CLOSED hand**, including its equality endpoint. Every surviving positive component contains a physically circle-clear body. The mixed seven-body coarse cell remains open; the coarse count stays **five closed and53 open**. The unrestricted theorem, equality classification and full prerequisite-chain audit remain open.
+

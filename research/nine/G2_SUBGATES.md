@@ -1,6 +1,6 @@
 # n=9 — live prerequisite and cyclic-closure ledger
 
-**Checkpoint:** October 23, 2026, America/Chicago. **PR:** #11, draft.  
+**Checkpoint:** October 24, 2026, America/Chicago. **PR:** #11, draft.  
 **T9 and unrestricted equality remain OPEN.** The selected physical certificate has one planar positive cyclic component with **5–9 bodies**, **3–7 noncollinear loaded resultants**, and at most **27 scalar atoms**. Every other physical square stays in the completion problem. The coarse inventory has **five whole cells closed and 53 open**.
 
 The complete fine-grained contracts are in [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md). This file gives live parent scope and primary sources. [TWO_LOAD_PROGRESS.md](TWO_LOAD_PROGRESS.md) preserves the chronological proof/audit record and exact regression provenance.
@@ -17,7 +17,7 @@ The complete fine-grained contracts are in [DEEP_GATED_ROADMAP.md](DEEP_GATED_RO
 - [x] **CY.K23.BOUNDARY:** NO_THREE_BOUNDARY_COMMON_NEIGHBORS.md excludes three common positive circle-touching neighbors of any pair, by the exterior-face obstruction in a K2,3 subgraph.
 - [x] **CY.TIP.SELECT:** BOUNDARY_TIP_FIXED_APPLICATION_SELECTION.md covers every degree-two unique-circle-corner star with two fixed applications and at least one boundary neighbor. No shared-side mean is frozen. Independent audit passed.
 - [x] **CY.TIP.GENERAL:** GENERAL_FIXED_TIP_NORMAL_SELECTION.md removes the boundary-neighbor premise for every unique-circle-corner degree-two tip with distinct fixed applications. The other radial normal is handled by translation balance; the nonradial determinant has a nonzero coefficient. Coincident radial-D inner vertices and variable shared means remain. Independent full audit passed.
-- [ ] **CY.SHARP:** derive the missing universal radius/completion theorem on all remaining mixed and boundary-only cases.
+- [ ] **CY.SHARP:** derive the missing universal radius/completion theorem on all remaining mixed cases. The entire physical boundary-C7 branch is closed.
 
 These are statements about a selectable necessary certificate. The full physical touching graph can have additional zero-stress contacts and can contain K4 at a four-square junction.
 
@@ -112,7 +112,7 @@ Every row retains four extra physical squares. Full nested contracts are G3.M5 i
 - [x] **M5.TT.PERPENDICULAR:** The complete support-point argument forces the actual BC normal northwest, giving a negative dot product of the two loaded tip vectors. Thus perpendicular A-owned contacts are impossible, including triple/shared junctions.
 - [x] **CY.RADIAL_NEIGHBOR_PRESSURE:** RADIAL_BOUNDARY_NEIGHBOR_PRESSURE.md gives c_A dot z>121/1600 for each two-corner neighbor atom. It covers all-owner two-radial bowtie blocks, excludes the all-radial four-load fan and both all-radial house end triples, and retains individual zero weights.
 - [x] **C7.INNER.TAIL_CURVE:** The complete balanced-sector ray optimization gives its exact sharp continuous center curve, with both SAT owners, every normal sign and justified clipping. The unbalanced alternative remains explicit.
-- [x] **C7.INNER.SIGNED_WITNESS:** C7_OUTSIDE_INNER_RAY_WITNESS.md proves actual-center cap uniqueness and the signed bound r<23/120, contradicting r>17/58 in the entire balanced right-outside sector. The remaining complete split is unbalanced right-outside or asymmetric left-outside; actual frames and SAT ownership are retained.
+- [x] **C7.INNER.SIGNED_WITNESS:** C7_OUTSIDE_INNER_RAY_WITNESS.md proves actual-center cap uniqueness and the signed bound r<23/120, contradicting r>17/58 in the entire balanced right-outside sector. The later full right/left theorems exhaust that split, with actual frames and SAT ownership retained.
 - [ ] **M5.ALL:** finish every whole cell, with all boundary cases and any equality survivors.
 - [ ] **M6–M9:** finish all larger mixed cells in increasing component size.
 - [ ] **MIXED.ALL:** assemble the complete mixed-branch sharp bound.
@@ -130,7 +130,7 @@ Every row retains four extra physical squares. Full nested contracts are G3.M5 i
 - [x] **C7.INNER.PARALLEL:** PARALLEL_INNER_PAIR_DIAMETER_EXTRACTION.md excludes every parallel extra pair, including arbitrary positive gap and stagger, by the complete far-face-zone diameter theorem. Independent and root full audits passed.
 - [x] **C7.INNER.OUTSIDE:** C7_INNER_OUTSIDE_FACE_CORNER_EXCLUSION.md gives an all-frame rectangle-ray center bound37/16 and excludes an inner own-coordinate pair of magnitudes>=1/2,>=3/8. The full pair support-corner signs yield0<sin(theta)<4/15; common-frame centered inscribed squares have side>7/8, without replacing actual units.
 - [x] **C7.INNER.FAR_FACES:** C7_INNER_PAIR_FAR_FACE_CENTERS.md proves actual opposite boundary centers for every separated inner pair. Both outward coordinates exceed9/20; the missing-zone average norm contradicts M². Their exact x-gap leaves a total excess budget<1.5(1-cos(theta)), with all outer frames and offsets retained.
-- [ ] **C7.INNER.NONPARALLEL:** finish the full actual four-square/ring domain on0<sin(theta)<4/15 using containment and the exact far-face budget, or supply genuine whole-square sharp-cap routing. A complete R²>=Q implication suffices; equality remains separate.
+- [x] **C7.INNER.NONPARALLEL:** C7_RIGHT_OUTSIDE_INNER_EXCLUSION.md and C7_LEFT_OUTSIDE_INNER_EXCLUSION.md exclude the entire actual domain, retaining the original SAT owner and all outer frames. Root and separate full audits passed.
 - [x] **C7.PIERCE.IF:** CENTER_COVER_PIERCING.md gives a common strict interior point and capacity one if the centers fit in an open radius-3/2 disk.
 - [x] **C7.COVER.115/124:** BOUNDARY_TWO_CONTACT_SPAN.md and the elementary support-triangle argument exclude these two entire gap types.
 - [x] **C7.COVER.CONTROL:** C7_CENTER_COVER_GEOMETRIC_OBSTRUCTION.md disproves the unstressed covering theorem at Q and below Q, while proving the exact control has no positive C7 stress.
@@ -143,9 +143,10 @@ Every row retains four extra physical squares. Full nested contracts are G3.M5 i
 - [x] **C7.RR.NONE:** C7_RADIAL_VERTEX_EDGE_EXCLUSION.md uses uniquely determined moment-normalized block means and an open near-axis choice to exclude every radial/radial edge, including the limiting inner endpoint mean.
 - [x] **C7.UU.NONE / C7.PINNED:** C7_MIRROR_VERTEX_EDGE_EXCLUSION.md excludes the last mirror vertex edge by incompatible endpoint mean/circle-cone requirements. The entire free-normal domain is CLOSED for the selected necessary certificate.
 - [x] **C7.OWNED.HIGH:** C7_HIGH_CENTER_CONTACT_TYPES.md proves the whole high-center local contact cover, all shared means included. A positively loaded high-center body owns zero or one normal; every positively loaded two-owned body has center radius below23/16 and force turn90 degrees. Zero-load transmitters have turn0. Independent full audit passed.
-- [ ] **C7.OWNED:** finish the sole residual all-axis-owned contact domain with every two-owner/zero-owner transition, actual shared mean, radial body and load mask.
-- [ ] **C7.COVER.133/223:** use positive stress to settle these two complete supporting-triple types, or replace the cover route by a full direct capacity proof.
-- [ ] **C7.COMPLETE:** prove R^2>=Q for every two-square completion in the actual full domain, or the stronger capacity-one theorem. Any Q survivors and any canonical restriction remain explicit equality obligations.
+- [x] **C7.OWNED:** the geometric capacity-one theorem covers every all-owned ring, every owner transition, shared mean and physical circle mask without requiring a stationary classification.
+- **Retired alternative C7.COVER.133/223:** these supporting-triple claims remain unproved as standalone statements. The complete direct capacity theorem removes them as required gates.
+- [x] **C7.COMPLETE:** BOUNDARY_SEVEN_CYCLE_CAPACITY_ONE.md proves capacity<=1 for every physical ring throughout79/40<=R<=sqrt(Q), including strict exclusion at Q. Root and separate full assembly audits passed.
+- [x] **BOUNDARY.PATH_FOREST:** every physical boundary graph in a nine-unit packing in this window is a disjoint union of paths; every surviving selected component contains a physically circle-clear body.
 
 For R<sqrt(17)/2 the origin itself gives the strict center cover. The remaining cover route is a high-radius positive-stress question. Closed origin containment alone, or center diameter below 3 alone, is not a sufficient premise.
 

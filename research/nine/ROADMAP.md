@@ -1,9 +1,17 @@
 # n=9 — ordered roadmap to the unrestricted hand proof
 
-**PR:** #11, draft. **Reconciled source:** `b245c82aec912668d08f05278a5fe187df794c44`.  
+**PR:** #11, draft. **Reconciled source:** `100c1145d3716a5763dc3600fb71d066b24abe6b`.  
 **Updated:** October 24, 2026, America/Chicago.
 
 **The unrestricted lower bound R^2>=1105/256 and complete equality classification remain OPEN.** The construction attains Q. The full execution tree, exact subgates and boundary cases are in [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md).
+
+## Whole boundary-cycle closure: physical C7 capacity one
+
+[BOUNDARY_SEVEN_CYCLE_CAPACITY_ONE.md](BOUNDARY_SEVEN_CYCLE_CAPACITY_ONE.md) proves that every physical boundary seven-cycle in 79/40<=R<=sqrt(1105)/16 has room for **at most one additional unit square**. Both extra frames, all ring frames, every contact and the upper radius endpoint are retained. The theorem needs no positive stress. Thus no nine-square packing in this window has a physical boundary C7, and the full physical circle-touching graph is a disjoint union of paths.
+
+The parallel inner-pair branch was already excluded. [C7_RIGHT_OUTSIDE_INNER_EXCLUSION.md](C7_RIGHT_OUTSIDE_INNER_EXCLUSION.md) now excludes the entire right-outside branch, and [C7_LEFT_OUTSIDE_INNER_EXCLUSION.md](C7_LEFT_OUTSIDE_INNER_EXCLUSION.md) excludes the entire asymmetric left-outside branch with the original SAT owner unchanged. Both identify an outgoing ray witness with the actual far-face boundary unit, covering every separator owner and sign. Actual outer corners supply the constraint missing from center-only relaxations. The final asymmetric bounds differ by a strict margin at least197/72000.
+
+Root and separate full hand audits passed both branch proofs and the assembly. **G3.B is CLOSED hand**, including its equality endpoint. Every surviving positive component contains a physically circle-clear body. The mixed seven-body coarse cell remains open; the coarse count stays **five closed and53 open**. The unrestricted theorem, equality classification and full prerequisite-chain audit remain open.
 
 ## New whole-cell closure
 
@@ -17,7 +25,7 @@ TRIANGLE_TWO_BRIDGES_CELL_CLOSED.md closes C1.3.b2. DISTINCT_S_LEAF_WALL_UPPER_C
 
 FOUR_CYCLE_SECONDARY_CONTACT_REDUCTION.md makes a separate canonical-minimizer reduction: physical AU contact, singleton A-tip edges, and the full two-A-owned D-leaf exclusion. FOUR_CYCLE_UNIQUE_TIPS_EXCLUSION.md then closes the entire physical unique/unique opposite-load mask, with all U-parallel endpoints and actual channel means. FOUR_CYCLE_TWO_RADIAL_TIPS_EXCLUSION.md closes the entire physical two/two mask without secondary minimization. RADIAL_LEAF_ARTICULATION_FIXED_POINT_SELECTION.md now removes every free A-tip normal at the canonical minimizer for all physical circle masks. FOUR_CYCLE_MIXED_D_LEAF_EXCLUSION.md closes the entire radial-D-leaf opposite-load C4, including both mixed owner orders and every U-parallel radial endpoint. FOUR_CYCLE_MIXED_S_LEAF_EXCLUSION.md now closes every remaining S-leaf support feature and owner order. FOUR_CYCLE_OPPOSITE_LOAD_BRANCH_CLOSED.md assembles the entire opposite-loaded-pair C4 exclusion, with all physical corner masks, zero individual radial weights, actual channel means and four extras retained. The two independent audits passed. Together with the adjacent-load theorem, this leaves only the all-three-loaded C4; the remaining D-leaf unique-corner loaded-hub diamond branch remains open. This canonical lower-bound reduction does not classify every original equality packing.
 
-C7_CENTER_POLYGON_LOCALIZATION.md places every completion unit inside the strictly convex center polygon. C7_DIAMETER_EXTRACTION_COUNTEREXAMPLE.md disproves the unrestricted diameter extraction with an exact actual seven-square ring enclosing two units. C7_INNER_SIDE_CORNER_RESTRICTIONS.md proves that each inner square's own-frame center coordinates have absolute value below3721/7200, every inner vertex has norm greater than sqrt(5/2)-91/60, and any two inner frames satisfy cos(theta)>6/7. PARALLEL_INNER_PAIR_DIAMETER_EXTRACTION.md then excludes the entire theta=0 branch, with arbitrary gap and stagger: every qualifying enclosing center polygon would have diameter at least3. That initial restriction is now sharpened below to0<sin(theta)<4/15, with both exact disk-dependent restrictions retained. The full nonparallel completion/radius theorem remains open. The valid C7 route must retain the disk/annulus or positive stress. A complete R^2>=Q implication is sufficient for G3.B; the stronger no-two-extras-at-Q claim is optional, with equality handled separately.
+C7_CENTER_POLYGON_LOCALIZATION.md places every completion unit inside the strictly convex center polygon. C7_DIAMETER_EXTRACTION_COUNTEREXAMPLE.md disproves the unrestricted diameter extraction with an exact actual seven-square ring enclosing two units. C7_INNER_SIDE_CORNER_RESTRICTIONS.md proves that each inner square's own-frame center coordinates have absolute value below3721/7200, every inner vertex has norm greater than sqrt(5/2)-91/60, and any two inner frames satisfy cos(theta)>6/7. PARALLEL_INNER_PAIR_DIAMETER_EXTRACTION.md then excludes the entire theta=0 branch, with arbitrary gap and stagger: every qualifying enclosing center polygon would have diameter at least3. That initial restriction is now sharpened below to0<sin(theta)<4/15, with both exact disk-dependent restrictions retained. The full nonparallel domain is now excluded using actual outer-corner containment, as assembled in BOUNDARY_SEVEN_CYCLE_CAPACITY_ONE.md. The stronger capacity-one theorem includes the upper equality endpoint.
 
 
 ## Latest whole-cell closure: the bowtie
@@ -34,7 +42,7 @@ Root and independent full hand audits passed every local source and the parent a
 
 [BOWTIE_PERPENDICULAR_CONTACT_EXCLUSION.md](BOWTIE_PERPENDICULAR_CONTACT_EXCLUSION.md) closes the entire perpendicular A-owned class without selecting the mutual tip normal. [RADIAL_BOUNDARY_NEIGHBOR_PRESSURE.md](RADIAL_BOUNDARY_NEIGHBOR_PRESSURE.md) proves a uniform positive projection on each radial-S circle corner, margin121/1600. Consequently every both-radial end triangle has positive pressure for all contact owners and means. The complete both-A-owned class is resolved as well. The later complete mixed-owner and free-interface theorems now close the entire bowtie cell. The same radial-neighbor theorem excludes the all-radial four-load fan and house end-triple masks.
 
-[C7_SHARP_BALANCED_RADIAL_TAIL.md](C7_SHARP_BALANCED_RADIAL_TAIL.md) supplies a sharp continuous two-coordinate bound over the complete balanced sector. [C7_OUTSIDE_INNER_RAY_WITNESS.md](C7_OUTSIDE_INNER_RAY_WITNESS.md) identifies the actual ray witness with an extracted far-face boundary unit using a unique narrow center cap; its signed offset excludes the whole balanced right-outside sector. The exact remaining split is the unbalanced right-outside branch or the asymmetric left-outside/right-inside branch. Both actual outer frames remain. No full C7 radius/capacity theorem is claimed. All these completed local and whole-region results have root and separate full hand audits.
+[C7_SHARP_BALANCED_RADIAL_TAIL.md](C7_SHARP_BALANCED_RADIAL_TAIL.md) supplies a sharp continuous two-coordinate bound over the complete balanced sector. [C7_OUTSIDE_INNER_RAY_WITNESS.md](C7_OUTSIDE_INNER_RAY_WITNESS.md) identifies the actual ray witness with an extracted far-face boundary unit using a unique narrow center cap; its signed offset excludes the whole balanced right-outside sector. That intermediate split is now exhausted by the full right- and left-outside theorems. Both actual outer frames remain, and the assembled physical C7 capacity-one theorem is closed. All these completed local and whole-region results have root and separate full hand audits.
 
 ## Latest structural and whole-branch checkpoint
 
@@ -44,7 +52,7 @@ Root and independent full hand audits passed every local source and the parent a
 
 [FIVE_CYCLE_THREE_LOAD_DOUBLE_DIAGONAL_EXCLUSION.md](FIVE_CYCLE_THREE_LOAD_DOUBLE_DIAGONAL_EXCLUSION.md) excludes the entire two-diagonal-transmitter chart: legitimate endpoint ownership forces a common frame, and the actual BC contact gives R^2>=(9+6sqrt(2))/4>Q. The three-load C5 now has nonparallel isolated-load forces and at most one diagonal transmitter. The full nonparallel side/side and side/diagonal families, four-load C5 and house remain open.
 
-[C7_INNER_OUTSIDE_FACE_CORNER_EXCLUSION.md](C7_INNER_OUTSIDE_FACE_CORNER_EXCLUSION.md) improves the full inner-pair domain to0<sin(theta)<4/15 by an all-frame outgoing-ray theorem. [C7_INNER_PAIR_FAR_FACE_CENTERS.md](C7_INNER_PAIR_FAR_FACE_CENTERS.md) then extracts two actual boundary centers beyond the pair's opposite outward faces and proves their exact diameter-gap budget, with every offset and outer frame retained. The full nonparallel radius/capacity implication remains open. These complete local results have root and separate full hand audits.
+[C7_INNER_OUTSIDE_FACE_CORNER_EXCLUSION.md](C7_INNER_OUTSIDE_FACE_CORNER_EXCLUSION.md) improves the full inner-pair domain to0<sin(theta)<4/15 by an all-frame outgoing-ray theorem. [C7_INNER_PAIR_FAR_FACE_CENTERS.md](C7_INNER_PAIR_FAR_FACE_CENTERS.md) then extracts two actual boundary centers beyond the pair's opposite outward faces and proves their exact diameter-gap budget, with every offset and outer frame retained. The full nonparallel capacity implication is now proved by the right- and left-outside theorems. These complete local results have root and separate full hand audits.
 
 ## Completed inputs
 
@@ -73,7 +81,7 @@ Root and independent full hand audits passed every local source and the parent a
 - [x] FOUR_CYCLE_PARALLEL_BYPASS_EXCLUSION.md excludes the **entire A/U-parallel opposite-load C4 chart**, including both S/D leaves, every tip frame and actual shared mean.
 - [x] FOUR_CYCLE_OBLIQUE_TIP_OWNER_EXCLUSION.md excludes the complete chart where both loaded tips are oblique to the transmitter and own point contacts with the bypass, for all physical one/two-corner masks.
 - [x] FOUR_CYCLE_UNIQUE_LOAD_NORMAL_SELECTION.md removes every free A-tip normal throughout the physical unique/unique mask while preserving all other variable means. The later all-mask selection and complete D-leaf theorem below supersede this earlier physical-mask restriction.
-- [x] C7_HIGH_CENTER_CONTACT_TYPES.md classifies every high-center contact and proves every positively loaded two-owned body has center radius below23/16 and a right-angle force turn; the whole C7 capacity remains open.
+- [x] C7_HIGH_CENTER_CONTACT_TYPES.md classifies every high-center contact and proves every positively loaded two-owned body has center radius below23/16 and a right-angle force turn; the later geometric capacity-one theorem closes the whole C7 family.
 - [x] FOUR_CYCLE_ADJACENT_LOAD_EXCLUSION.md closes every adjacent-loaded-pair C4 leaf case by a full normal-channel/boundary-detour obstruction.
 - [x] BOUNDARY_TIP_FIXED_APPLICATION_SELECTION.md removes free vertex normals from every unique-circle-corner degree-two star with fixed applications and at least one boundary neighbor; shared means are explicitly retained elsewhere.
 - [x] C7_PINNED_VERTEX_CONTACT_TYPES.md reduces all free vertex edges to radial/radial contacts or mirror-paired two-square blocks. The complete length2–5 profiles, contact-radius bound and length3 exclusion are proved.
@@ -89,7 +97,7 @@ Root and independent full hand audits passed every local source and the parent a
 
 These are hand implications. The full prerequisite-chain audit and Lean verification remain separate open work.
 
-## Execute the five-body frontier, with C7 in parallel
+## Execute the remaining mixed five-body frontier
 
 The identity m=1+sum(block_size-1)+bridges gives exactly four five-body cyclic cells. C1.3.b2 is now closed by the full attachment/classification/capacity assembly; the two remaining cells retain four arbitrary physical completion squares.
 
@@ -99,7 +107,7 @@ The identity m=1+sum(block_size-1)+bridges gives exactly four five-body cyclic c
 | 2 | C1.4.b1 | All-three-loaded C4; D-leaf diamond hub with a unique-physical-corner loaded second hub | Other C4/diamond branches CLOSED; finish these two full remaining families |
 | 3 | C1.5.b0 | C5 with three/four loads; house with three mask orbits; fan with all four path vertices loaded | Finish each complete graph/load family with every actual contact and four extras |
 | 4 | C2.33.b0 | Entire bowtie with four loaded tips and all extra physical contacts | CLOSED; full pressure/selection/core assembly |
-| Parallel | G3.B.SHARP | Every all-owned boundary C7 with two arbitrary extras; remaining0<sin(theta)<4/15 and exact far-face center constraints | Prove R^2>=Q, or the stronger capacity-one theorem; equality retained separately |
+| CLOSED | G3.B.SHARP | Every physical boundary C7 with two arbitrary extras | Capacity one throughout the window, including Q; no stress premise |
 | 5 | G3.M6–M9 | Every remaining mixed cell in increasing component size | Sharp bound or full completion exclusion for each entire cell |
 | 6 | G4 | All original nine-square packings | Universal R^2>=1105/256 |
 | 7 | G5 | Every equality packing and every proposed parameter family | Necessary-and-sufficient unrestricted classification |
@@ -107,15 +115,11 @@ The identity m=1+sum(block_size-1)+bridges gives exactly four five-body cyclic c
 
 Do not import S/D leaf geometry at a nonleaf bridge endpoint. Do not infer a common frame from parallel forces in a smaller subgraph. Every physical square, zero circle weight, shared-side application mean and contact-junction limit remains in the relevant full branch.
 
-## Exact C7 frontier
+## Closed C7 exit and remaining mixed scope
 
-[CENTER_COVER_PIERCING.md](CENTER_COVER_PIERCING.md) proves the strict-piercing implication from a radius-3/2 center cover. The desired cover may be translated; its center need not be the containing circle's origin. The diameter theorem excludes two-point supports of a failing minimum center disk. The two-contact span theorem excludes acute supporting triples with graph gaps (1,1,5) and (1,2,4).
+BOUNDARY_SEVEN_CYCLE_CAPACITY_ONE.md closes G3.B through the complete geometric capacity theorem. Its two final branch proofs and assembly passed root and separate full hand audits. The exact center-cover and broad-extraction counterexamples remain valid controls; neither false stronger claim is imported.
 
-The remaining covering targets are **positive-stress** supporting triples of types (1,3,3) and (2,2,3). [C7_CENTER_COVER_GEOMETRIC_OBSTRUCTION.md](C7_CENTER_COVER_GEOMETRIC_OBSTRUCTION.md) gives exact unstressed counterexamples of the latter type at Q and at strictly smaller radii, then proves that they cannot carry a positive C7 stress. Thus a general geometric center-cover theorem is a rejected normalization, not an unfinished premise to assume.
-
-The simultaneous normal reductions are now complete through C7_RADIAL_VERTEX_EDGE_EXCLUSION.md and C7_MIRROR_VERTEX_EDGE_EXCLUSION.md. They exclude the entire free-vertex domain and leave **all edges side-axis-owned**, retaining every change of ownership and every shared-side mean. The proof uses a collective virtual motion, so variable shared-side applications are not frozen. C7_PINNED_VERTEX_CONTACT_TYPES.md now classifies every free edge within the second domain: radial/radial contacts or the unique outer-adjacent-corner contact between two mirror two-square blocks. All other length pairs and vertex types are excluded. Adaptive open choices require a shared-side neighbor at both ends of every radial pair. The full free-edge graph has at most two edges, with an exhaustive length2–5 block-profile cover. C7_TWO_FREE_EDGES_EXCLUSION.md closes both two-edge layouts; the two final open normal selections close the radial/radial and mirror modules completely. The all-owned domain still requires its full force/torque, center-cover or direct capacity theorem. Zero-owner/two-owner transitions remain; no one-owner-per-body assumption is supplied.
-
-A complete direct capacity proof or a fully exhaustive stationary classification may replace the cover route. Such a classification must include two-owner/zero-owner transitions, one/two-circle-corner masks, zero circle loads and nonconstant periodic solutions. Closed origin containment alone would not give strict piercing. Far-vertex spans do not imply the needed boundary-center diameter lower bound.
+Every physical boundary graph of a nine-square packing is now a path forest. Every surviving positive component contains a physically circle-clear body, but may include zero-loaded physical boundary bodies and all actual extra contacts. The mixed seven-body row remains open. The global lower bound and unrestricted equality therefore still depend on the complete mixed-cell exit and subsequent assembly.
 
 ## Finite coverage, audit and evidence
 

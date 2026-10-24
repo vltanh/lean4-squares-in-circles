@@ -1,12 +1,12 @@
 # n=9: deep ticked roadmap and ordered proof execution
 
 **Branch:** `research/nine-tablefree-hand`; **PR:** #11, draft.  
-**Reconciled source:** `b245c82aec912668d08f05278a5fe187df794c44`.  
+**Reconciled source:** `100c1145d3716a5763dc3600fb71d066b24abe6b`.  
 **Checkpoint:** October 24, 2026, America/Chicago; the append-only evidence log retains explicit UTC provenance.
 
 **T9 and unrestricted equality remain OPEN.** The complete P/Y arguments exclude all selected positive trees and all exactly-two-loaded components from a nine-square packing in the declared radius window. A physical certificate can be selected with **one planar positive component**, all physically circle-touching vertices on its exterior face, and at most 27 positive scalar atoms. The remaining component is cyclic, has 5–9 bodies, and has 3–7 noncollinear circle-loaded resultants. Every other physical square has zero stress and remains in the problem.
 
-The remaining lower-bound split is exhaustive: **G3.B**, a boundary-only C7 with two completion squares; or **G3.M**, a mixed cyclic component containing a circle-clear body, with all 9-m completion squares retained. The 58-cell coarse inventory has five whole cells closed and 53 open. Subgate counts are not completion percentages.
+The complete lower-bound split has a closed boundary-only branch **G3.B**, by the geometric physical C7 capacity-one theorem, and the open mixed branch **G3.M**. Every surviving positive component contains a physically circle-clear body, with all 9-m completion squares retained. The full physical circle-touching graph is a path forest. The 58-cell coarse inventory has five whole cells closed and 53 open. Subgate counts are not completion percentages.
 
 ## Ordered execution and gate-closing rule
 
@@ -17,7 +17,7 @@ The remaining lower-bound split is exhaustive: **G3.B**, a boundary-only C7 with
 | 2b | G3.M4.D.OBLIQUE | Both articulation corners lie inside loaded-neighbor sides, all B/C contact types | CLOSED hand; full branch excluded |
 | 3 | G3.M4.S | All side-normal-leaf cores: aligned shared-side sliders plus both tilted-vertex branches | CLOSED hand; the entire core is impossible |
 | 4 | G3.M4.ALL | Combine D/S and their degeneracies; close the entire C1.3.b1 cell | CLOSED hand; independent assembly audit passed |
-| Parallel whole branch | G3.B.SHARP | Prove R^2>=Q with both arbitrary C7 completion squares, or the stronger capacity-one theorem | OPEN; all-owned; parallel inner pair excluded; remaining0<sin(theta)<4/15; opposite far-face centers extracted |
+| Whole branch closed | G3.B.SHARP | Every physical boundary C7 with two arbitrary extras | CLOSED hand; capacity one including Q, without positive stress |
 | 5a | G3.M5.T2 | Entire triangle-with-two-bridges cell, all three attachments and four extras | CLOSED hand; full S/S slider capacity3, independent parent assembly passed |
 | 5b | G3.M5.B4L/B5/TT | Two remaining complete five-body cells, all four extras retained | OPEN; only all-three-loaded C4 / D-leaf unique-corner loaded diamond hub in B4L; remaining B5 active; entire bowtie CLOSED |
 | 5c | G3.M6–M9 | Process the larger mixed cells by component size and the finite semantic cover below | OPEN |
@@ -412,7 +412,7 @@ Source: TWO_LOAD_RECIPROCAL_RIGIDITY.md, initial commit 248202d, clarified 9fad2
 - [x] **CY.DIRECTIONS** Every loaded body's resultant direction pierces its own square on the radius-5/4 circle, so distinct loaded resultants have distinct directions and a balanced collinear family has exactly two bodies.
 - [ ] **CY.MULTILOAD** The remaining 3–7-loaded noncollinear geometry, including all extra physical squares, is not sharply bounded by these necessary restrictions.
 
-#### CY.BOUNDARY: angular order, shadow, and the remaining seven-cycle
+#### CY.BOUNDARY: angular order, shadow, and the now-excluded seven-cycle
 
 Source: [CIRCLE_CONTACT_ANGULAR_ORDER.md](CIRCLE_CONTACT_ANGULAR_ORDER.md), commit 6f1d22e.
 
@@ -502,173 +502,107 @@ The labels below refine the **remaining obligations**, not the numerical radius 
 - [x] **G3.0.TIP.TWO_FREE** Distinct physical applications use independent junction parameters. The determinant is not identically zero on their product, so the full bad set has empty interior.
 - [x] **G3.0.TIP.COINCIDENT** At coincident applications, torque forces either zero circle load, impossible in a pointed normal cone, or a radial-D inner vertex. This exact latter exception is retained rather than removed by a degenerate determinant.
 - [x] **G3.0.TIP.PRESERVE** The finite physical prelist, matched junctions, zero-weight masks and surviving point normals remain valid under uncrossing/thinning. All choices precede multipliers and fit inside earlier open constraints. Genuinely variable shared-side means remain outside the fixed-point theorem.
-- [ ] **G3.0.SHARP** Finish both G3.B and G3.M. The split itself supplies no sharp metric inequality.
+- [ ] **G3.0.SHARP** G3.B is closed by full physical capacity one. Finish the entire mixed branch G3.M with every physical completion square retained.
 
-### G3.B Boundary-only seven-cycle: complete sharp lower-bound exit [OPEN]
+### G3.B Physical boundary seven-cycle: capacity one [CLOSED hand]
 
-#### G3.B.0 Full premise and closed routing
+**Terminal source:** BOUNDARY_SEVEN_CYCLE_CAPACITY_ONE.md. In the entire declared window79/40<=R<=sqrt(1105)/16, every physical boundary C7 has at most one further unit square. This is a geometric theorem: arbitrary ring frames, arbitrary completion frames, tangencies, all physical circle-corner masks and zero stress are included. Root and separate full audits passed the two final branches and the assembly. The earlier full prerequisite-chain audit remains a distinct G6 obligation.
 
-- [x] **G3.B.0.a** Seven actual circle-touching squares form the positive cycle, in circular order, with arbitrary individual frames.
-- [x] **G3.B.0.b** Retain zero circle multipliers and one/two physical circle-corner states on each body.
-- [x] **G3.B.0.c** At loaded vertices the two contact-force lines concur inside the actual square; clear two-force vertices use their transmission chords.
-- [x] **G3.B.0.d** The concurrence polygon P is convex, contains 0, and follows actual positive contact-force lines.
-- [x] **G3.B.0.e** Every extra square lies inside P and avoids all seven ring-square interiors.
-- [x] **G3.B.0.f** Both remaining squares are physically circle-clear.
+#### G3.B.0 Exact scope and localization
 
-#### G3.B.N Simultaneous normal selection and radial endpoint blocks [CLOSED reduction]
+- [x] **G3.B.0.PHYSICAL** The angular-neighbor theorem identifies the physical cycle with all seven circle-touching bodies. No positive stress or regular spacing is required.
+- [x] **G3.B.0.EXTERIOR** C7_COMPLETION_LOCALIZATION.md moves every square in an occupied exterior cell simultaneously, preserving obstacle and mutual separations until an eighth circle contact. The universal boundary budget forbids that event; every extra is enclosed.
+- [x] **G3.B.0.CENTER_CONVEX** C7_CENTER_POLYGON_LOCALIZATION.md exposes each center by its own radial direction. Center radii lie in(5/4,91/60), consecutive gaps exceed40 degrees, and the circular order is the strictly convex hull order.
+- [x] **G3.B.0.CENTER_EDGES** Actual neighbor contact gives every center edge length<=sqrt(2). Every outer center has distance>=1/2 from every inner unit, through its inscribed open radius-half disk.
+- [x] **G3.B.0.CHORD** Every line through a unit's interior cuts its radius-half parallel body in a chord longer than sqrt(2), for every line direction and offset. Thus no center edge crosses an inner unit.
+- [x] **G3.B.0.WINDING** Replacing actual contact spokes by center edges preserves winding about the whole connected inner square; a replacement triangle has area<=1/4. Every completion unit lies in the convex center polygon.
+- [x] **G3.B.0.DIAMETER** BOUNDARY_SEVEN_CYCLE_CENTER_DIAMETER.md proves every pair of ring centers has distance<3, including the complete three-edge angular cases.
+- [x] **G3.B.0.CONTAINMENT** Keep each actual boundary square inside the disk of squared radius Q=1105/256. The center bound M=91/60 does not replace its corner constraints.
 
-Sources: C7_FIXED_APPLICATION_GENERIC_SELECTION.md, C7_TWO_CIRCLE_CORNER_BLOCKS.md and C7_SHARED_SIDE_BLOCK_GENERIC_SELECTION.md. All choices are made on the finite physical candidate list before multipliers, inside compatible strict normal intervals. This is a necessary selected-certificate reduction; none of the terminal capacity gates below is thereby closed.
+#### G3.B.R.INNER Whole-domain side and corner restrictions
 
-- [x] **G3.B.N.FIXED.1** For a unique-circle-corner body with two fixed contact applications, derive the exact force/moment determinant for every positive-pair and nonnegative-circle-weight mask.
-- [x] **G3.B.N.FIXED.2** Prove its coefficient in a free vertex normal is nonzero, including the diagonal inner-corner candidate and both fixed-force parallel/nonparallel alternatives.
-- [x] **G3.B.N.FIXED.3** Avoid the finite bad directions simultaneously before KKT; retain the selected pair normals under actual junction uncrossing and conic thinning.
-- [x] **G3.B.N.RADIAL.1** Classify the norms of every vertex of a one- or two-circle-corner body. A boundary vertex/vertex neighbor of a radial two-corner square is radial as well.
-- [x] **G3.B.N.RADIAL.2** Classify every physical radial-pair contact and its complete common-normal cone. The center gap is gamma=2atan(1/(2d)), where d=sqrt(R^2-1/4)-1.
-- [x] **G3.B.N.RADIAL.3** Choose an open strict normal interval near each predecessor's positive tangent. A three-radial run would force its middle circle resultant outside its nonnegative two-corner cone.
-- [x] **G3.B.N.RADIAL.4** All runs have length at most two; the cyclic seven-body count gives at most four radial bodies and at least three unique-physical-circle-corner bodies.
-- [x] **G3.B.N.RADIAL.5** Two parallel radial squares cannot occur in a physical C7. Their exact radius-5/4 arcs leave insufficient room for five other connected arcs, each longer than pi/4. This is a geometric theorem, not a stress specialization.
-- [x] **G3.B.N.RADIAL.6** At a radial-pair endpoint, every fixed other contact violates the two-corner circle cone at the tangential limiting normal. The failure is strict and persists in an open interval.
-- [x] **G3.B.N.RADIAL.7** Choose adaptively on each maximal physical radial run: keep the original choices for runs of length at least three, and choose the appropriate end of the common cone to exclude a two-run with either outside contact point-only. Distinct runs use distinct parameters.
-- [x] **G3.B.N.RADIAL.8** Every surviving radial/radial edge therefore joins two nonsingleton pinned blocks; both other contacts are positive-length tangential shared sides. Radial singletons cannot meet free vertex edges.
-- [x] **G3.B.N.BLOCK.1** Prelist every possible positive shared-side path, its two external point contacts, and every choice of one physical circle corner per body, including zero-load choices.
-- [x] **G3.B.N.BLOCK.2** Build pure center velocities w_i=kappa_i Jz_i with nonzero kappa_i so all internal shared-side work vanishes, for every application mean on every shared segment.
-- [x] **G3.B.N.BLOCK.3** Combine that virtual motion with rigid rotation about the origin to obtain the external two-contact determinant. Shared-side application coordinates are never fixed or discarded.
-- [x] **G3.B.N.BLOCK.4** Every boundary/boundary contact point has norm strictly greater than R-sqrt(2). Use this to rule out radial collinearity of a vertex contact and any chosen circle corner, making the free-normal determinant nonzero.
-- [x] **G3.B.N.BLOCK.5** Treat the single shared-side path closed by one point edge separately: the two external normals are coupled, but w_1 differs from w_k and the forbidden directions are still finite.
-- [x] **G3.B.N.BLOCK.6** Avoid all bad directions inside the radial-run open intervals and all prior strict/matched-junction choices. Uncrossing only adds already-listed physical shared-side rows, and thinning only deletes rows.
-- [x] **G3.B.N.BLOCK.7** A block incident to a surviving free vertex edge must contain a body with both circle-corner multipliers strictly positive; all at-most-one-active-corner masks have just been excluded.
-- [x] **G3.B.N.BLOCK.8** Such a radial body cannot be internal to a shared-side path: the available tangential contact forces cannot balance its positive radial circle force. It is an endpoint or a singleton.
-- [x] **G3.B.N.BLOCK.9** The no-parallel-radial theorem gives exactly one physical radial body in such a common-frame block, with both its corner weights positive.
-- [x] **G3.B.N.COVER** The remaining exact contact-domain split is OWNED, where every positive edge has a genuine side-axis owner, or PINNED, where at least one free vertex edge survives and each incident shared-side block has the stated unique doubly loaded radial endpoint.
+- [x] **G3.B.R.INNER.SIDE_SHALLOW** C7_INNER_SIDE_CORNER_RESTRICTIONS.md treats both SAT owners and every shallow separator on an outgoing side ray, forcing a boundary center outside D_M if an inner own coordinate reaches k=3721/7200.
+- [x] **G3.B.R.INNER.SIDE_STEEP** The same source proves L(a)=a+1/(2a)+1/(2sqrt(1-a²))>6163/3000 from L''>5 and its exact tangent quadratic at3/5. The complete steep-normal optimization gives the same contradiction.
+- [x] **G3.B.R.INNER.COORDINATES** Every inner center has both own-coordinate magnitudes<k. These coordinates remain tied to its actual independent frame.
+- [x] **G3.B.R.INNER.CORNER_TAIL** The sharp all-frame diagonal-tail bound is sqrt(5/2). Hence every inner vertex has norm>sqrt(5/2)-M>19/300.
+- [x] **G3.B.R.INNER.OUTSIDE_RECTANGLE** C7_INNER_OUTSIDE_FACE_CORNER_EXCLUSION.md treats an entire contained rectangle and its outgoing ray. Both rectangle-owned axes force squared outer-center norm>=37/16>M².
+- [x] **G3.B.R.INNER.OUTSIDE_SQUARE_OWNER** Its positive-normal branch has three exhaustive analytic regimes; both mixed signs retain justified tangential clipping. All square-owned separators satisfy the same37/16 bound.
+- [x] **G3.B.R.INNER.OUTSIDE_CENTERS** No inner center has one own-coordinate magnitude>=1/2 and the other>=3/8.
+- [x] **G3.B.R.INNER.ANGLE** The exact inner-pair support corner has three exhaustive sign cases. The coordinate and vertex-radius inequalities give0<sin(theta)<4/15 in every nonparallel realization.
 
-#### G3.B.N.OWNED Full side-axis-owned domain [OPEN; sole remaining high-radius C7 domain]
+#### G3.B.R.DIAM.PARALLEL Entire parallel-pair branch
 
-A side owner is an actual square feature, not a prescribed successor convention. A body may own zero, one or two incident contacts. An edge may have both owners when sides are parallel. Every such cyclic change must be included. The full free-normal exclusion below is complete and supplies no one-owner-per-body normalization.
+- [x] **G3.B.R.DIAM.PARALLEL.DOMAIN** PARALLEL_INNER_PAIR_DIAMETER_EXTRACTION.md retains arbitrary nonnegative horizontal gap and every signed vertical stagger between two actual parallel units.
+- [x] **G3.B.R.DIAM.PARALLEL.MISSING_ZONE** An absent outward middle-face zone forces a crossing polygon edge with corner excesses u,w>1/4 and v+z<=sqrt(2)-1<1/2; all clearance and edge-length cases are covered.
+- [x] **G3.B.R.DIAM.PARALLEL.ONE_EMPTY** If the opposite zone has a vertex, distance<=3 from both crossing endpoints would imply1<=2(v+z)<1. Closed distance endpoints are included.
+- [x] **G3.B.R.DIAM.PARALLEL.BOTH_EMPTY** If both zones are absent, the cross diagonal opposite the stagger sign has squared length>91/10>9, through the full corner-excess inequalities.
+- [x] **G3.B.R.DIAM.PARALLEL.ALL** If both zones contain vertices their horizontal distance is at least3 plus the gap. Every parallel pair therefore contradicts actual center diameter<3.
 
-- [x] **G3.B.N.OWNED.WORD_DOMAIN** On the ordered seven-cycle, label each edge by its preceding owner, succeeding owner or both owners. These3^7 formal labels cover every owned assignment; they are semantic labels, not physical pose samples. Invalid words may be removed only by proved implications.
-- [x] **G3.B.N.OWNED.COUNT** Let v_j count bodies owning j incident edges, and let D count doubly owned edges. Counting owner incidences gives v_1+2v_2=7+D and v_0+v_1+v_2=7, hence v_2-v_0=D.
-- [x] **G3.B.N.OWNED.ONE_WORD** If every body owns exactly one edge, D=0 and the cyclic arrows must point consistently around the whole cycle. Up to reflection this is one complete ownership pattern. This implication does not prove its hypothesis for arbitrary C7.
-- [x] **G3.B.N.OWNED.HIGH.RANGE** C7_HIGH_CENTER_CONTACT_TYPES.md proves that |center|>=3/2 forces b<3/5 and a-b>27/20 in the circle-corner frame [a-1,a] times[b-1,b], a>=b>=1/2.
-- [x] **G3.B.N.OWNED.HIGH.INNER_FACE** For a-b>1, any unit beyond the long-coordinate inner face has every corner strictly inside the disk. The proof includes all shared-side placements, while retaining differently owned contacts at the face endpoints.
-- [x] **G3.B.N.OWNED.HIGH.OUTER_VERTEX** The outer adjacent vertex cannot be a neighbor-owned point contact when b<=1: its opposite-side translate is outside the disk, or at the endpoint would be a forbidden side-interior circle point.
-- [x] **G3.B.N.OWNED.HIGH.COVER** Every high-center contact is a transverse owned side or a neighbor-owned inner vertex. Torque forces one upper and one lower contact; the explicit four-combination table retains every shared application interval and axis endpoint.
-- [x] **G3.B.N.OWNED.HIGH.LOAD** Either strict neighbor-owned contact gives a positive radial circle component. A loaded high-center body owns zero or one normals. Two transverse owned contacts force zero total circle load, equal magnitudes and equal horizontal application means.
-- [x] **G3.B.N.OWNED.TWO_OWNED** Every positively loaded two-owned body has a unique circle corner and uses both inward side axes. The inner-face lemma gives a-b<=1, hence center radius<23/16<3/2.
-- [x] **G3.B.N.OWNED.TURNS** Every positively loaded two-owned body contributes a90-degree turn to the convex force polygon; every zero-load body has turn0. All physical circle masks and mean constraints remain. These local facts do not prove the global center cover.
-- [ ] **G3.B.N.OWNED.HIGH.COUPLE** Combine the complete high-center contact table, low two-owner bodies and possible unloaded transmitters across every cyclic owner word; prove the full covering or two-square capacity implication without discarding transition words.
-- [ ] **G3.B.N.OWNED.ONE.CHARTS** For that complete one-owner pattern, derive all physical contact equations, both signs of every body's relative frame, and all unique/two-corner and zero-weight endpoints.
-- [ ] **G3.B.N.OWNED.ONE.RECURRENCE** Derive the exact stationary recurrence from real application points, force, torque and circle equations. Include nonconstant periodic solutions and every geometric range restriction.
-- [ ] **G3.B.N.OWNED.ONE.BOUND** Prove the full center-cover, strict-piercing or actual capacity-one theorem for this entire ownership pattern.
-- [ ] **G3.B.N.OWNED.TRANSITIONS.COVER** Cover every remaining owner word with a zero-/two-owner body or doubly owned edge, including all shared-side components and actual junction/side-feature limits.
-- [ ] **G3.B.N.OWNED.TRANSITIONS.LOADS** Retain radial bodies with one or two positive corner weights, unique-corner bodies with positive or zero weight, and every shared-side mean over its full segment.
-- [ ] **G3.B.N.OWNED.TRANSITIONS.GEOMETRY** Derive all physical shape and force/moment consequences at zero-owner and two-owner bodies; no owner transition is discarded because it fails a one-owner recurrence.
-- [ ] **G3.B.N.OWNED.TRANSITIONS.BOUND** Prove the full capacity or covering theorem uniformly across all these owner words and their continuous realizations.
+#### G3.B.R.INNER.FAR_ZONE Exact nonparallel geometry
 
-- [ ] **G3.B.N.OWNED.1** Give the complete cyclic owner/feature cover, including shared-side segments, endpoint contacts and coincident-owner transitions.
-- [ ] **G3.B.N.OWNED.2** For each entire owner type, retain all physical one/two-circle-corner masks and every positive/zero weight choice.
-- [ ] **G3.B.N.OWNED.3** Derive the exact physical contact, force and torque equations with the correct side applications and no uniform-tilt premise.
-- [ ] **G3.B.N.OWNED.4** Prove a full radius-3/2 center cover, a strict common-piercing theorem, or the actual capacity-one statement across this whole domain.
-- [ ] **G3.B.N.OWNED.5** Include every nonconstant periodic family and all owner/weight degeneration limits before closing OWNED.
+- [x] **G3.B.R.INNER.FAR_ZONE.PAIR** C7_INNER_PAIR_FAR_FACE_CENTERS.md uses the actual left-owned SAT inequality to force both outward center coordinates alpha,xi>9/20.
+- [x] **G3.B.R.INNER.FAR_ZONE.MISSING** A missing outward middle-face zone gives an average endpoint squared norm exceeding M². Concavity covers the whole endpoint domain; the final rational margin is497/90000.
+- [x] **G3.B.R.INNER.FAR_ZONE.ACTUAL** Extract actual boundary centers C_L=C_T-(1+delta)e_x+t e_y and C_R=C_U+(1+epsilon)u+r v, with delta,epsilon>=0 and |t|,|r|<=1/2. Neither outer frame is aligned by assumption.
+- [x] **G3.B.R.INNER.FAR_ZONE.BUDGET** The exact x-gap is1.5(1+cos(theta))+g+delta+epsilon*cos(theta)+(1/2-r)sin(theta). Center diameter<3 forces r>1/2-3tau/2, tau=tan(theta/2)<4/29.
+- [x] **G3.B.R.INNER.WITNESS.COVER** The outside-face bound makes both secondary coordinates smaller than1/2 in magnitude. The actual SAT inequality then forces xi>=1/2, or xi<1/2 and alpha>1/2. This exhaustive split keeps the same original separator owner.
 
-#### G3.B.N.PINNED Free vertex edges with unique radial endpoints [CLOSED selected-core branch]
+#### G3.B.R.INNER.RIGHT Entire right-outside branch
 
-Source: C7_PINNED_VERTEX_CONTACT_TYPES.md, with the symmetric radial-run choice in C7_TWO_CIRCLE_CORNER_BLOCKS.md, Section8. These gates apply in R>=sqrt(17)/2; the smaller-radius C7 capacity is already closed by the origin-centered cover.
+Source: C7_RIGHT_OUTSIDE_INNER_EXCLUSION.md. The following gates cover all xi>=1/2, including the previously open unbalanced sector.
 
-- [x] **G3.B.N.PINNED.CONTACT_RADIUS** Every common point p of two boundary squares satisfies |p|>=sqrt(R^2-1)-1, hence |p|>1/sqrt(2) in the residual window. One of the two tangent sectors has radial forward support at most one; no normal or vertex assumption is needed.
-- [x] **G3.B.N.PINNED.PROFILES** Starting from the unique radial endpoint, every positive-length shared-side successor is forced by the circle equation and actual side overlap. The exact length2–5 center/corner profiles and every shared segment are written, with both traversal directions retained.
-- [x] **G3.B.N.PINNED.VERTICES** Remove circle vertices, incoming-segment vertices and vertices below the contact-radius floor. The remaining squared vertex radii have disjoint ranges for every unequal pair of block lengths.
-- [x] **G3.B.N.PINNED.L3_HIGH** Two length3 blocks sharing their high vertex have center-direction gap below40 degrees, contradicting the centered inner-arc theorem.
-- [x] **G3.B.N.PINNED.L3_LOW** At one side-axis endpoint, the low-vertex stress requires its incoming mean above3/2. At the other, the previous mean lies below the radial shared segment. Strict failures persist on an open common-normal interval and retain zero circle loads.
-- [x] **G3.B.N.PINNED.LOCAL_TYPES** The complete local free-edge list is radial/radial, or the unique outer-adjacent-vertex contact between two mirror blocks of length2. The latter four-body module is fixed by R up to global rotation/reflection.
-- [x] **G3.B.N.PINNED.1** Contract all maximal shared-side blocks. Every free-incident block has at least two bodies, so at most three such blocks fit. A two-free-edge block must have one radial/radial edge and one unique/unique edge. Free cycles and disjoint free edges are impossible; at most two free edges survive.
-- [x] **G3.B.N.PINNED.2** Every free-incident block has length at most5, so the full individual-block pose/side-segment list is complete. A length6 block against a radial singleton is excluded by the symmetric radial-run selection.
-- [x] **G3.B.N.PINNED.ONE_RR.COVER** With exactly one free edge of radial/radial type, the unordered incident block lengths are (2,2), (2,3), (2,4), (2,5), (3,3), (3,4). The complementary path retains all other ring bodies and only owned point edges.
-- [x] **G3.B.N.PINNED.ONE_RR.BOUND** C7_RADIAL_VERTEX_EDGE_EXCLUSION.md excludes all six length pairs uniformly. An owned far external point fixes every moment-normalized force and actual mean through a unique-corner block. A near-axis RR normal violates the radial circle cone for its fixed x>d; at x=d it fails for every strict nonaxis choice. All complementary paths and both extras remain.
-- [x] **G3.B.N.PINNED.ONE_UU.COVER** With exactly one unique/unique free edge, its two length2 blocks form the exact mirror module; all three other ring bodies lie on the complementary owned path.
-- [x] **G3.B.N.PINNED.ONE_UU.BOUND** C7_MIRROR_VERTEX_EDGE_EXCLUSION.md excludes every single mirror module. Its two common-cone endpoints force x=c and x=x_* at a radial shared side, while one fixed anchor normal cannot satisfy both circle cones. A strict endpoint failure persists in an open interval; all complementary paths, circle masks and actual means remain.
-- [x] **G3.B.N.PINNED.TWO.COVER** With two free edges they form a three-block path, one edge of each type. The middle block and its unique/unique neighbor have length2; the other block has length2 or3. Thus the complete length list is 2+2+3, or 2+2+2 plus one additional unique-physical-circle-corner singleton on the owned complementary path.
-- [x] **G3.B.N.PINNED.TWO.223** C7_TWO_FREE_EDGES_EXCLUSION.md excludes the entire 2+2+3 layout: its closing center gap exceeds60 degrees and both radii exceed sqrt(2), so those two squares cannot touch. No closing-owner or load specialization is used.
-- [x] **G3.B.N.PINNED.TWO.222U** C7_TWO_FREE_EDGES_EXCLUSION.md retains both owners of the singleton/last-block contact and all shared means. Exact bounds on its two required points, with a full all-orientation two-point center lemma, force every singleton corner below411/200<sqrt(17)/2. Its required physical boundary contact is impossible even at zero multiplier.
-- [x] **G3.B.N.PINNED.3** Both final exclusions retain the full nonnegative two-corner cone, all zero unique-body weights and every strict endpoint degeneration. Fixed means are deduced from force/torque, never substituted as a premise.
-- [x] **G3.B.N.PINNED.4** The exclusions need only actual fixed external point/axis data at the selected block or anchor. Every other owned complementary path, owner transition and physical zero-weight contact remains arbitrary; the selected core is excluded independently of completion.
-- [x] **G3.B.N.PINNED.5** The complete domain is excluded by simultaneous pre-KKT choices: adaptive radial-run intervals, the fixed-mean RR obstruction and the incompatible-endpoint UU obstruction. Uncrossing and thinning preserve all surviving point normals. The complete sources passed independent hand audits.
-- [x] **G3.B.N.SIDE_AXIS** No free vertex/vertex edge remains in a selected positive high-radius C7. Every edge has a genuine side-axis owner; all zero-owner/two-owner transitions, shared sides and physical circle masks remain.
-- [ ] **G3.B.N.ALL** Finish the whole OWNED radius>=Q theorem or the stronger capacity theorem. PINNED is closed. Preserve the exact distinction between a lower-bound exit and exclusion of every Q realization.
+- [x] **G3.B.R.INNER.RIGHT.PARAMETERS** Write a=xi. The positive secondary coordinate contradicts the extracted center's norm; the negative coordinate eta=-b has b<3/8. The exact pair/center inequalities force b>3/16 over the whole residual domain.
+- [x] **G3.B.R.INNER.RIGHT.RAY_RADIUS** The outgoing witness has center radius>=3/2. Its actual farthest corner and q<=Q force own-axis radial tilt sine<1/20.
+- [x] **G3.B.R.INNER.RIGHT.OWN_COORDINATES** A boundary-owned separator is its positive major own axis. Its actual normal coordinate exceeds(3/2)(399/400), tangent coordinate has magnitude<91/1200, and ray strip implies |lambda*z_m|<691/1200.
+- [x] **G3.B.R.INNER.RIGHT.INNER_OWNER** Rightward inner ownership puts the witness in x>=3/2. Every upper inner-owned normal is impossible by complete coordinate minimization: either squared norm>58/25 or the coordinate sum>=9/4.
+- [x] **G3.B.R.INNER.RIGHT.MIXED_LEFT** The full leftward mixed sign gives increasing candidate coordinates from the already excluded upper-owned minimum; tangential clipping remains inactive for the proved reason.
+- [x] **G3.B.R.INNER.RIGHT.POSITIVE** The full positive quadrant is partitioned analytically by the normal coordinates and one ratio of a,b. Support and tangential-strip bounds force normal sine<1/20 and actual world x>36/25.
+- [x] **G3.B.R.INNER.RIGHT.MIXED_DOWN** The tangential quantity g has positive derivative on its whole domain and derivative>15/16 through pi/4. The actual strip gives phi<9/40 and actual world x>36/25.
+- [x] **G3.B.R.INNER.RIGHT.UNIQUE** The disk cap x>=36/25 has diameter<1, so it contains at most one physical unit center. The ray witness is exactly C_R, not a minimizing surrogate.
+- [x] **G3.B.R.INNER.RIGHT.CONTRADICTION** Ray membership gives r<h_S-b/(2a), with h_S<3/5 from actual orientation. Pair separation gives r>1/2-3e/[2(1/2-b)]. The continuous difference is positive by concavity and exact endpoint margins4109/5581500 and136499/2232600.
+- [x] **G3.B.R.INNER.RIGHT_UNBALANCED** The entire right-outside domain is excluded with all outer frames and normal signs; no balanced-sector or angle-grid premise remains.
 
-#### G3.B.SHARP Sufficient lower-bound exit; capacity is a stronger alternative
+#### G3.B.R.INNER.LEFT Entire asymmetric left-outside branch
 
-- [ ] **G3.B.SHARP.RADIUS** Prove R^2>=Q for every selected positive boundary C7 completed by two arbitrary units. Excluding every strictly subcritical packing is sufficient for the lower-bound assembly; equality survivors must be passed explicitly to G5.
-- [ ] **G3.B.SHARP.CAP_ROUTE** Alternatively prove the stronger capacity-one theorem throughout R^2<=Q. These are OR exits, not cumulative obligations or additional geometric cases.
-- [ ] **G3.B.SHARP.CAP_EXTRACTION** If using the established unrestricted three-square-cap theorem, prove the actual whole-square cap placement with its exact height7/16 and all hypotheses. A center-only cap or unproved common-frame normalization is insufficient.
-- [ ] **G3.B.SHARP.EQUALITY_SCOPE** If only R^2>=Q is proved, do not mark the stronger capacity gate closed; retain every Q survivor and any canonical-minimizer restriction for the independent equality analysis.
+Source: C7_LEFT_OUTSIDE_INNER_EXCLUSION.md. Keep the left-owned separator, a=xi<1/2, alpha>1/2, d=1/2-a and e=121/7200.
 
-#### G3.B.CAP Stronger sufficient terminal theorem
+- [x] **G3.B.R.INNER.LEFT.SIGNS** The nonnegative secondary coordinate contradicts the far-center norm. Write eta=-b. The inner vertex-radius floor excludes b>=a; the sharp balanced radial-tail theorem excludes b>=5/12.
+- [x] **G3.B.R.INNER.LEFT.DOMAIN** The exact inequality dc+(1/2-b)s<e implies0<d<e and a>12/25. With L(d)=sqrt(M²-(3/2-d)²)<8/25, the far-center bound forces9/50<b<5/12<a. No part of the original asymmetric branch is dropped.
+- [x] **G3.B.R.INNER.LEFT.RAY_SHALLOW** Every shallow normal to an outgoing witness has support at least sqrt(2a). Thus its actual center radius exceeds rho0=1483/1000, with exact squared margin899/9000000.
+- [x] **G3.B.R.INNER.LEFT.RAY_STEEP** Compare with a=1/2, retaining the exact deficit Delta=d/u0<e*sqrt(2). The tangential strip is active throughout the steep domain. The established L(a)>6163/3000 gives center radius>3/2 and hence>rho0; the rational support margin is17/33600.
+- [x] **G3.B.R.INNER.LEFT.ACTUAL_FRAME** Actual farthest-corner containment and rho>rho0 give own-axis radial tilt sine<1/10. A boundary-owned separator has actual normal coordinate>146817/100000, tangent magnitude<91/600, H<61/60 and |lambda*z_m|<391/600.
+- [x] **G3.B.R.INNER.LEFT.INNER_RIGHT** Rightward inner ownership puts the actual witness center at x>=a+1>37/25.
+- [x] **G3.B.R.INNER.LEFT.INNER_UP** Both outer-frame chiralities have an actual corner with projection on(1,2)>581/125. Its squared norm exceeds Q by87491/20000000. The whole upper-owned branch is excluded by true corner containment.
+- [x] **G3.B.R.INNER.LEFT.MIXED_LEFT** The leftward mixed sign has lambda>11/5 and |z_m|>=a>12/25, contradicting the actual tangent strip over the whole angular interval.
+- [x] **G3.B.R.INNER.LEFT.POSITIVE_HIGH** If positive normal sine>=2/25, the regimes u>=7/10 and u<=3/10 violate respectively the support or strip bound.
+- [x] **G3.B.R.INNER.LEFT.POSITIVE_MIDDLE** For3/10<=u<7/10, the complete ratio split b>=a(v-3u/4)/(u+3v/4) gives H>1843/1720; its complement gives |lambda*z_m|>141/200. Both are impossible.
+- [x] **G3.B.R.INNER.LEFT.POSITIVE_CAP** Thus positive normal sine<2/25, H>=a+1/2 and the actual witness has x>36/25.
+- [x] **G3.B.R.INNER.LEFT.MIXED_DOWN** The exact g derivative is positive globally and>99/100 through pi/4. The strip implies phi<175/594<3/10 and actual center coordinates x>4/3,-3/4<y<1/6.
+- [x] **G3.B.R.INNER.LEFT.UNIQUE** Right/positive witnesses share C_R's diameter<1 cap. For the mixed-down witness the actual center difference from C_R has squared norm<11509/14400<1. Every owner/sign gives the same physical boundary unit.
+- [x] **G3.B.R.INNER.LEFT.RAY_UPPER** Ray membership and actual orientation give r<h_S-b/(2a), h_S<11/20+L/[2(a+1)], hence r<W(d)=(11/10)a/(2a+1)+L/(a+1).
+- [x] **G3.B.R.INNER.LEFT.PAIR_LOWER** The same inequalities force P=1/2-b>103/300-3a*tau. The exact pair equation gives e-d>(103/150)tau-(61/20)tau²; endpoint concavity excludes tau>=1/10. Thus r>1/2-4(e-d).
+- [x] **G3.B.R.INNER.LEFT.CONCAVITY** W''<0 throughout0<=d<=e, W(0)<17/40 and W'(0)<43/10. Therefore r<17/40+(43/10)d, strictly below its lower bound by at least197/72000.
+- [x] **G3.B.R.INNER.LEFT_OUTSIDE** The entire asymmetric branch is excluded without changing the original SAT owner.
+- [x] **G3.B.R.INNER.NONPARALLEL / G3.B.R.DIAM.3** The exhaustive right/left cover excludes every nonparallel inner pair using actual disk containment. The false center-only extraction is not used.
 
-- [ ] **G3.B.CAP.1** For every admissible ring, prove that its entire free completion domain cannot contain two interior-disjoint unit squares.
-- [ ] **G3.B.CAP.1.a** Retain arbitrary centers and independent frames of both extra squares.
-- [ ] **G3.B.CAP.1.b** Use actual square nonoverlap, including extra-to-extra separating axes and all ring obstacles.
-- [ ] **G3.B.CAP.1.c** Include tangencies, parallel sides, shared-side contacts, two-circle-corner bodies and zero-load ring vertices.
-- [ ] **G3.B.CAP.ALL** Conclude total capacity<=8 for this entire boundary-only branch.
+#### G3.B.CAP Assembly, equality and global consequences
 
-#### G3.B.R Routes to CAP — alternatives, not additional geometric cases
+- [x] **G3.B.CAP.1.a** Both hypothetical extras have arbitrary independent centers and orientations; they need not touch each other or the ring.
+- [x] **G3.B.CAP.1.b** Localization retains every actual ring obstacle and both extra-to-extra SAT owners. Parallel and nonparallel branches exhaust all frames.
+- [x] **G3.B.CAP.1.c** Every closed tangency, shared-side contact, physical one/two-corner mask and radius endpoint is included. No force assumptions enter the final capacity argument.
+- [x] **G3.B.CAP.1 / G3.B.CAP.ALL** BOUNDARY_SEVEN_CYCLE_CAPACITY_ONE.md concludes at most one further unit, so the entire physical C7 family has total capacity<=8.
+- [x] **G3.B.SHARP.CAP_ROUTE / G3.B.SHARP.RADIUS** The stronger whole-window exclusion closes the required boundary-only lower-bound branch.
+- [x] **G3.B.SHARP.EQUALITY_SCOPE** The contradiction is strict at R=sqrt(1105)/16. No boundary-C7 nine-square equality configuration survives, and no canonical secondary-minimizer restriction is needed here.
+- [x] **G3.B.PHYSICAL_PATHS** In every nine-unit packing in the window the complete physical circle-touching graph is a disjoint union of paths.
+- [x] **G3.B.MIXED_ONLY** Every surviving selected positive component contains a physically circle-clear square. Zero-circle-weight physical boundary bodies remain distinct from circle-clear bodies.
+- [x] **G3.B.COARSE_SCOPE** The mixed part of C1.7.b0 is unaffected. This whole-family closure does not tick another coarse cell: five closed,53 open.
 
-**R.PIERCE OR R.COVER OR R.DIAM OR R.CLASSIFY OR a direct capacity argument** suffices, provided every extra premise is proved.
+#### Earlier C7 routes: completed lemmas and retired obligations
 
-- [ ] **G3.B.R.PIERCE.1** Prove0 lies in the **open interior** of every admissible completion square, or prove a common strict piercing point for the entire completion domain.
-- [ ] **G3.B.R.PIERCE.2** If only closed containment of0 is obtained, separately exclude two squares meeting0 only on their boundaries; closed piercing alone is insufficient.
-- [x] **G3.B.R.COVER.0** CENTER_COVER_PIERCING.md proves the all-orientation radial-tail statement: a disjoint square meeting the outward radial tail of a unit T with p outside its open interior has center distance at least3/2 from p.
-- [x] **G3.B.R.COVER.1** Therefore an open radius3/2 disk containing every ring center gives a common strict interior point for every enclosed unit, and completion capacity<=1. Contact tangencies and all separator owners are included.
-- [x] **G3.B.R.COVER.2** A minimum enclosing center disk is determined by two antipodal centers or an acute supporting triple; the two-point case has radius<3/2 by DIAM.2.
-- [x] **G3.B.R.COVER.3.a** The acute-triple graph gaps sum to7 and are, up to symmetry, (1,1,5), (1,2,4), (1,3,3), (2,2,3).
-- [x] **G3.B.R.COVER.3.b** Pattern(1,1,5) has two sides<=sqrt2; acuteness and the sine rule give circumradius<=2/sqrt3<3/2.
-- [x] **G3.B.R.COVER.3.c** If R<sqrt(17)/2, the usual circle-containment center bound puts every ring center in the open radius3/2 disk centered at0.
-- [x] **G3.B.R.COVER.4.124** BOUNDARY_TWO_CONTACT_SPAN.md proves distance<3sqrt(3)/2 along two contacts. In a supporting triangle of circumradius>=3/2, the one-edge opposite angle is<pi/6 and the two-edge opposite angle is<pi/3, contradicting acuteness. Thus the entire(1,2,4) type is excluded.
-- [ ] **G3.B.R.COVER.4.133** Exclude the entire pattern(1,3,3) for a positive-stress C7, including unequal center radii, independent frames, all side-owner directions, every owner transition and all shared application means.
-- [ ] **G3.B.R.COVER.4.223** Exclude the entire pattern(2,2,3) for a positive-stress C7, using the actual force/torque equations. The corresponding unstressed statement is false.
-- [x] **G3.B.R.COVER.CONTROL** C7_CENTER_COVER_GEOMETRIC_OBSTRUCTION.md gives exact unstressed physical rings of type(2,2,3), at Q and strictly belowQ, with covering radius>3/2. Its outgoing-contact torque identity proves that these rings have no positive C7 stress. A purely geometric cover theorem is REJECTED.
-- [ ] **G3.B.R.COVER.4.boundary** Include all acute/right transition limits, multiple supporting centers and shared-side contacts. A right supporting triangle is already covered by its antipodal pair.
-- [ ] **G3.B.R.COVER.5** Assemble a single open disk of radius3/2 containing all seven centers, then apply COVER.1 and the established localization theorem to close B.CAP.
-- [x] **G3.B.R.CENTER_POLYGON.CONVEX** C7_CENTER_POLYGON_LOCALIZATION.md proves each center is strictly exposed by its own radial direction using5/4<r_i<91/60 and angular gaps>40 degrees. All gaps<120 degrees put0 inside the convex hull, so the actual circular order is the strictly convex polygon order.
-- [x] **G3.B.R.CENTER_POLYGON.CHORD** Every line meeting a unit square's open interior cuts its radius-half offset in a chord longer than sqrt(2). Full-direction tangent exit formulas, central symmetry and chord concavity prove the exact bound, including tangent limits.
-- [x] **G3.B.R.CENTER_POLYGON.LOCALIZE** Actual adjacent center edges have length<=sqrt(2) and both endpoints at distance>=1/2 from an extra square, so they cannot cross its interior. Each spoke-replacement triangle has area<=1/4, preserving winding. Every completion unit lies wholly in the center polygon.
-- [x] **G3.B.R.DIAM.CONTROL_SCOPE** The negative control uses actual seven unit-square obstacles with exact C7 touching graph, two independent inner frames, all squared center distances, and a strict diameter below3. It rules out the broad physical-ring lemma, not the disk/stress-dependent C7 target.
-- [x] **G3.B.R.DIAM.1** REJECTED: C7_DIAMETER_EXTRACTION_COUNTEREXAMPLE.md gives an exact physical seven-square ring enclosing two units with boundary-center diameter squared19/4+3sqrt(2)<9. Every pair separation/contact and both enclosures are checked; angular gaps also lie between40 and72 degrees. The unrestricted enclosing-ring extraction is false.
-- [x] **G3.B.R.DIAM.2** BOUNDARY_SEVEN_CYCLE_CENTER_DIAMETER.md proves every physical boundary C7 has center diameter<3. The proof bounds entire angular shadows, then encloses all possible distant endpoint sectors in one disk of radius<3/2. No stress or regularity assumption is used.
-- [x] **G3.B.R.INNER.SIDE.SHALLOW** C7_INNER_SIDE_CORNER_RESTRICTIONS.md treats every shallow radial-tail separator. With M=91/60 and k=(M-1/2)^2/2=3721/7200, full concavity across both frame pieces forces an outer center of norm>=M if an inner own-center coordinate has magnitude>=k.
-- [x] **G3.B.R.INNER.SIDE.STEEP** The complete steep separator retains every outer frame and actual meeting point. The exact lower function L(a)=a+1/(2a)+1/(2sqrt(1-a^2)) has L''>5 and a uniform rational tangent bound above197/96, contradicting the same center-radius budget. Thus every own-center coordinate has magnitude<k.
-- [x] **G3.B.R.INNER.CORNER** A unit disjoint from[0,1]^2 that meets its outward diagonal tail has center norm>=sqrt(5/2). Both square-axis owners, positive and mixed normal signs, and all endpoint placements are covered. Every actual inner vertex consequently has norm>sqrt(5/2)-91/60.
-- [x] **G3.B.R.INNER.ANGLE** Apply an actual extra-to-extra separating side axis. With epsilon=121/7200, the potential support corner lies in an explicit triangle of maximum radius epsilon/sin(theta/2). The corner lower bound excludes cos(theta)<=6/7. Every relative frame in[0,pi/4] is covered; parallel frames remain a separate endpoint until the next theorem.
-- [x] **G3.B.R.DIAM.PARALLEL.ZONE** PARALLEL_INNER_PAIR_DIAMETER_EXTRACTION.md normalizes arbitrary parallel inner units with horizontal gap g>=0 and arbitrary vertical stagger. An absent far-face middle zone forces a crossing polygon edge with corner excesses u,w>1/4 and v+z<=sqrt(2)-1<1/2, by full clearance and edge-length cases.
-- [x] **G3.B.R.DIAM.PARALLEL.ONE_EMPTY** If the opposite zone has a vertex, its distance cannot be<=3 from both crossing endpoints: 9-(5/2+u)^2<=9v^2 would force1<=2(v+z)<1. Closed distance endpoints are included.
-- [x] **G3.B.R.DIAM.PARALLEL.BOTH_EMPTY** If both far zones are empty, each corner-excess pair obeys2x+y>9/10 and x^2+y^2>=1/4. Choose the cross diagonal opposite the sign of the arbitrary stagger; its squared length exceeds91/10>9.
-- [x] **G3.B.R.DIAM.PARALLEL.ALL** If both zones contain vertices, their horizontal distance is at least g+3. Together the four zone possibilities force center diameter>=3 for every parallel pair, contradicting the actual C7 strict diameter bound. No polygon vertex-count, touching, same-row or zero-gap premise is used. Root and independent full audits passed.
-- [ ] **G3.B.R.DIAM.3** Finish a valid disk/stress-dependent extraction on0<sin(theta)<4/15. Actual opposite far-face boundary centers and the exact gap budget are now proved. Retain both actual outer frames, every square containment and the two inner side/corner bounds; the broad polygon-only nonparallel claim remains false.
-- [x] **G3.B.R.INNER.OUTSIDE.RECTANGLE_OWNED** C7_INNER_OUTSIDE_FACE_CORNER_EXCLUSION.md uses K=[1/24,1]x[1/24,7/8] and its outgoing ray through(1/2,3/8). Both rectangle-owned axes force outer center norm squared>=37/16>M^2, retaining every square frame.
-- [x] **G3.B.R.INNER.OUTSIDE.SQUARE_OWNED** Every square-owned separator is covered. The positive-quadrant signed tangential quantity decreases through three exhaustive analytic regimes; outer regimes have increasing optimal world coordinates, and the middle uses support concavity. Both mixed-sign branches have strictly increasing coordinates and justified inactive tangential clipping.
-- [x] **G3.B.R.INNER.OUTSIDE.CENTERS** Any inner unit with one own-coordinate magnitude>=1/2 and the other>=3/8 contains K. Its outgoing ray must meet a boundary unit after leaving K, contradicting the complete37/16 center bound. This excludes the entire two-coordinate region, not sampled poses.
-- [x] **G3.B.R.INNER.OUTSIDE.ANGLE** The actual pair support corner has three exhaustive sign cases. The positive case uses its vertex-radius lower bound; each negative-coordinate case uses the new whole center restriction. Exact inequalities give sin(theta)<4/15. The parallel endpoint is independently excluded; both full audits passed.
-- [x] **G3.B.R.INNER.OUTSIDE.INSCRIBED** In the auxiliary bisector frame, each actual inner unit contains a centered common-oriented square of side ell with ell^2=1/(1+sin(theta))>15/19>49/64. This only inscribes an object; it does not align or replace the actual units.
-- [x] **G3.B.R.INNER.FAR_ZONE.MISSING** C7_INNER_PAIR_FAR_FACE_CENTERS.md transfers the complete missing-zone edge classification to an inner outward coordinate>=9/20. Average endpoint squared norm is at least F_X(V), with X>=19/20 and V<=sqrt(2)-1; concavity and both exact endpoint values exceed M^2, with final rational margin497/90000.
-- [x] **G3.B.R.INNER.FAR_ZONE.PAIR** The actual inner-pair SAT inequality and the own-coordinate bound k force both relevant outward coordinates>9/20, independently of the smaller angle bound. Thus each unit has an actual boundary center in its outward middle-face zone, retaining all normal gaps and tangential offsets.
-- [x] **G3.B.R.INNER.FAR_ZONE.BUDGET** With the exact extracted centers, their x-gap is1.5(1+cos(theta))+g+delta+epsilon*cos(theta)+(1/2-r)sin(theta). Actual center diameter<3 forces the sum of excess terms below1.5(1-cos(theta)). Root and independent full audits passed; neither outer square is assumed aligned.
-- [x] **G3.B.R.INNER.TAIL.RECTANGLE_OWNER** C7_SHARP_BALANCED_RADIAL_TAIL.md proves the sharp continuous ray bound in9/20<=a<=k,2a/3<=b<=a. The whole right/up owner minima are F_R and F_U, with exact difference(rho-1)^3[b/rho+(rho+1)/(4rho²)]>=0.
-- [x] **G3.B.R.INNER.TAIL.SQUARE_OWNER** The actual lower center norm is(H+1/2)²+max(|lambda*z_m|-1/2,0)². Monotone g gives three complete positive-normal regimes. Both outer regimes have increasing candidate coordinates; the upper regime uses the concave quartic with endpoint131/1024. The middle uses support concavity. All mixed normal signs and tangential clipping are justified.
-- [x] **G3.B.R.INNER.TAIL.CURVE** Every enclosed balanced center satisfies(a+1)²+[b(1+1/(2a))-1/2]²<M², equivalently the exact curve in(7). Sign changes and coordinate interchange are allowed. The unbalanced alternative b<2a/3 remains explicit; no global curve is inferred.
-- [x] **G3.B.R.INNER.WITNESS.UPPER** C7_OUTSIDE_INNER_RAY_WITNESS.md handles a>=1/2. The full upper regimes have center norm squared>58/25>M² by a uniform Taylor bound. The positive-normal clipped middle is also impossible by z_n²>13/36-(21/82)²>(M-1)².
-- [x] **G3.B.R.INNER.WITNESS.ACTUAL_CENTER** Every surviving actual ray center has x>149/100. In the positive-normal branch the entire radius bound gives normal sine<1/40 and separately bounds the actual tangential coordinate; the mixed-down branch retains both nonnegative own-coordinate increments and loses at most1/40 vertically. A minimizing candidate is not substituted for the actual center.
-- [x] **G3.B.R.INNER.WITNESS.UNIQUE** The disk cap x>149/100 has diameter<1, so at most one physical boundary center lies there. The ray witness equals the actual extracted far-face unit. With negative secondary coordinate its signed offset is r<23/120.
-- [x] **G3.B.R.INNER.WITNESS.RIGHT_OUTSIDE** The exact pair excess budget gives r>17/58. Thus when xi>=1/2 the whole balanced negative-secondary region is excluded, and eta>=0 is excluded directly by the center norm. The remaining right-outside branch is exactly -2xi/3<eta<0.
-- [x] **G3.B.R.INNER.WITNESS.COVER** Both secondary coordinate magnitudes are<1/2 by the outside-face lemma and main coordinates>9/20. The actual pair SAT inequality then forces at least one main coordinate>1/2. The complete residual split is right-outside xi>=1/2, or left-outside alpha>1/2 with xi<1/2. Swapping the inner squares does not preserve an assumed SAT owner.
-- [ ] **G3.B.R.INNER.RIGHT_UNBALANCED** Prove the whole right-outside residual -2xi/3<eta<0, retaining both outer frames, all signed means and actual disk containment. An extension of the witness lemma must cover every new normal/owner regime before use.
-- [ ] **G3.B.R.INNER.LEFT_OUTSIDE** Prove the full asymmetric alpha>1/2,xi<1/2 case with the original left-owned separator. Couple the signed left ray witness, if available, to the actual two-center distance; no unproved alternate separator is used.
-- [ ] **G3.B.R.INNER.NONPARALLEL** Finish the entire remaining0<sin(theta)<4/15 four-square domain using the two actual outer square frames/containments, both inner units, the exact far-zone gap budget and all other ring/stress constraints; or prove genuine whole-square cap routing. An aligned replacement or center-only cap is insufficient.
-- [ ] **G3.B.R.CLASSIFY.1.a** Cover every cyclic assignment of vertex/side and side/side ownership, retaining two-owner/zero-owner transitions.
-- [x] **G3.B.R.CLASSIFY.1.b** The entire selected free-vertex-normal branch is excluded by the RR and mirror-module theorems. All one/two-circle-corner states and zero weights remain in the explicit OWNED domain; no one-owner normalization is inferred.
-- [ ] **G3.B.R.CLASSIFY.2** Derive an exact stationary recurrence for each entire surviving ownership type.
-- [ ] **G3.B.R.CLASSIFY.3** Classify all periodic solutions, including nonconstant ones and all transition boundaries.
-- [ ] **G3.B.R.CLASSIFY.4** Prove capacity<=1 for every resulting family and prove the cover is exhaustive.
+The force-concurrence polygon, fixed-application generic choice, all shared-side means, radial-run classification, pinned-block profile cover, radial/radial and mirror-edge exclusions, and the high-center contact table remain proved in their individual manuscripts. Their full precise statements are preserved there and in the chronological log. They are not needed to add a stress hypothesis to the geometric capacity theorem above.
 
-The regular C7 is a completed example with capacity 1, not an exhaustive stationary classification. The local concurrence and support bounds alone do not justify a one-owner assumption. The area theorem for k<=6 does not supply capacity 1 for k=7. The completed implications and reductions are marked individually; no unfinished terminal capacity route is promoted to a proved premise.
+The conditional radius-3/2 center-cover piercing criterion remains valid. C7_CENTER_COVER_GEOMETRIC_OBSTRUCTION.md disproves an unconditional geometric center cover, while C7_DIAMETER_EXTRACTION_COUNTEREXAMPLE.md disproves the broad polygon-only diameter extraction. Both negative controls remain part of the proof record.
+
+The unresolved stationary recurrences, positive-stress supporting-triple types(1,3,3)/(2,2,3), complete owner-word classification and actual whole-square cap route are **retired alternatives**, not proved auxiliary theorems and not prerequisites for the closed G3.B exit. No tick claims those stronger or different statements.
 
 ### G3.M Mixed cyclic components: universal retained-square target [OPEN]
 
@@ -1175,7 +1109,7 @@ Use path u1--u2--u3--u4 and universal hub H. The two endpoint tips u1,u4 are loa
 ### G3.ALL — Sharp coverage exit
 
 - [ ] **G3.ALL.1** Every selected positive certificate is covered by G3.0, with no unproved global frame or origin-containment assumption.
-- [ ] **G3.ALL.2** G3.B.SHARP proves the whole boundary-only lower bound, either directly atR^2>=Q or through the stronger complete capacity exclusion. Equality scope remains explicit.
+- [x] **G3.ALL.2** BOUNDARY_SEVEN_CYCLE_CAPACITY_ONE.md closes the whole physical boundary-C7 branch throughout the window, including its equality endpoint. No canonical-minimizer restriction enters this branch.
 - [ ] **G3.ALL.3** G3.M.ALL gives the sharp bound or exclusion for every mixed branch.
 - [ ] **G3.ALL.4** All radius-window and imported-theorem dependencies are explicit, and no physical square was discarded.
 - [ ] **G3.ALL** Pass a complete sharp-coverage theorem to G4. This gate is OPEN.
@@ -1187,7 +1121,7 @@ Use path u1--u2--u3--u4 and universal hub H. The two endpoint tips u1,u4 are loa
 - [x] **O3.3.T** Every remaining tree realization is in P or Y after the closed origin cases.
 - [x] **O3.3.C** Every selected cyclic component belongs to exactly one of the 58 coarse cells.
 - [x] **O3.3.L2** Every two-loaded physical component has the new exact parallel/layered geometry, across the whole graph inventory.
-- [ ] **O3.3.SHARP** Finish the general C7 completion and mixed cyclic components with 3–7 noncollinear loaded bodies, retaining all physical squares. P.ALL, Y.ALL, TREE.ALL and TL.COMPLETE are closed hand implications.
+- [ ] **O3.3.SHARP** Finish every remaining mixed cyclic component with3–7 noncollinear loaded bodies, retaining all physical squares. The entire physical boundary C7 branch is closed. P.ALL, Y.ALL, TREE.ALL and TL.COMPLETE are closed hand implications.
 - [ ] **O4.1** Obtain exact orientation-uniform stress/support/capacity inequalities, not numerical dual values at selected poses.
 - [ ] **O4.2** Preserve tangencies, zero weights and all physical completion constraints.
 - [ ] **O4.3 alternative** A global CAP/QCAP/contact-area invariant can replace the inventory if it yields the unrestricted sharp theorem.
@@ -1197,7 +1131,7 @@ Use path u1--u2--u3--u4 and universal hub H. The two endpoint tips u1,u4 are loa
 
 - [x] **X.1** A subcritical packing has an unrestricted minimizing stress.
 - [x] **X.2** The selected unique component is either a tree or cyclic; the tree branch is closed and the remaining cyclic branch splits into G3.B or G3.M, with all physical bodies retained.
-- [ ] **X.3** Supply the missing sharp contradiction for the general C7 and mixed cyclic branches. The declared lower-window input is assembled in G0.W.2.
+- [ ] **X.3** Supply the missing sharp contradiction for every remaining mixed cyclic branch; physical C7 completion is closed. The declared lower-window input is assembled in G0.W.2.
 - [x] **G4.1** Exact construction gives the upper bound.
 - [ ] **G4.2** Establish R9>=sqrt(Q) from original Packing only.
 - [ ] **G4.2.a** Start from the original nine-square Packing predicate and obtain a compact minimizer with no extra orientation/contact hypothesis.
@@ -1271,9 +1205,9 @@ Use path u1--u2--u3--u4 and universal hub H. The two endpoint tips u1,u4 are loa
 
 ## Current execution contract
 
-1. P.ALL, Y.ALL, TREE.ALL and TL.COMPLETE are CLOSED hand at their stated scopes. Keep the general C7 and mixed 3–7-loaded cyclic completion obligations OPEN.
+1. P.ALL, Y.ALL, TREE.ALL and TL.COMPLETE are CLOSED hand at their stated scopes. The entire physical C7 capacity-one theorem is also CLOSED hand. Keep every unresolved mixed3–7-loaded completion obligation OPEN.
 2. The 58 coarse cells now have **five whole-cell exclusions and 53 open rows**. Do not confuse subfamily restrictions with parent closure.
-3. Follow the ordered G3 execution tree: C1.3.b1 and C1.3.b2 are closed; execute the three remaining complete five-body cells with their exhaustive layout/graph domains, then the larger mixed cells. Pursue the entire C7 capacity in parallel, with its proved conditional piercing criterion and explicit center-cover blocker; continue the remaining mixed cells by component size. Use shared uniform arguments whenever possible. Do not create angle boxes merely to increase checked-gate counts.
+3. Follow the ordered G3 execution tree: C1.3.b1 and C1.3.b2 are closed; C2.33.b0 is also closed. Execute the two remaining complete five-body cells with their exhaustive layout/graph domains, then the larger mixed cells. Physical C7 completion is closed; retain its negative controls and use the new boundary-path-forest consequence throughout the mixed reduction. Use shared uniform arguments whenever possible. Do not create angle boxes merely to increase checked-gate counts.
 4. Preserve exact physical negative controls and every unstressed completion body.
 5. Commit finished arguments promptly and log UTC provenance, exact quantifiers, finite evidence and unchanged global blockers in TWO_LOAD_PROGRESS.md or a subsequent append-only checkpoint.
 6. If a proposed reduction fails, retain the exact witness and revise it; do not defend a false stronger normalization by shrinking the domain indefinitely.
