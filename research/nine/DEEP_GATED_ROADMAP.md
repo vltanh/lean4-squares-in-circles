@@ -1,7 +1,7 @@
 # n=9: deep ticked roadmap and ordered proof execution
 
 **Branch:** `research/nine-tablefree-hand`; **PR:** #11, draft.  
-**Reconciled source:** `def16eb3d7728219e1468396542e90bd19b96121`.  
+**Reconciled source:** `255c224706de5d2e624e260cfaf8c5fdaef2dd53`.  
 **Checkpoint:** October 24, 2026, America/Chicago; the append-only evidence log retains explicit UTC provenance.
 
 **T9 and unrestricted equality remain OPEN.** The complete P/Y arguments exclude all selected positive trees and all exactly-two-loaded components from a nine-square packing in the declared radius window. A physical certificate can be selected with **one planar positive component**, all physically circle-touching vertices on its exterior face, and at most 27 positive scalar atoms. The remaining component is cyclic, has 5–9 bodies, and has 3–7 noncollinear circle-loaded resultants. Every other physical square has zero stress and remains in the problem.
@@ -1207,6 +1207,112 @@ Use path u1--u2--u3--u4 and universal hub H. The two endpoint tips u1,u4 are loa
 - [x] **M5.TT.ROUTING** The whole-core exit makes a separate completion routing theorem unnecessary; no extra is moved or discarded. The existing triangle-hole and boundary-pocket inputs retain their original scopes.
 - [x] **M5.TT.JOINT_BOUND** The allowed full selected-core obstruction is proved for the entire cell, retaining all four arbitrary completion squares. No separate regional capacity claim is inferred.
 - [x] **M5.TT.ALL** BOWTIE_CELL_CLOSED.md closes the entire C2.33.b0 in the declared window. All source proofs and the full assembly passed root and separate independent hand audits. The coarse inventory now has six closed and52 open rows.
+
+### G3.M6 — The complete six-body cyclic frontier [cover CLOSED; sharp exit OPEN]
+
+SIX_BODY_CYCLIC_FRONTIER.md gives the full graph/attachment/plane/load cover below. Every six-body component retains three independently oriented physical completion squares. The first unresolved size is still five; the six-body cover prepares the next whole-family gates without assuming that current five-body proofs apply to attached blocks.
+
+- [x] **G3.M6.CATALOG** The block identity gives exactly C1.3.b3,C1.4.b2,C1.5.b1,C1.6.b0,C2.33.b1,C2.34.b0. Three cyclic blocks already require at least seven bodies.
+- [x] **G3.M6.BRIDGE_FOREST** In a one-block component, every external bridge tree is rooted at exactly one block vertex. Two roots on one tree would create a positive cycle through a supposed bridge. This proves the attachment partitions below.
+- [x] **G3.M6.EXTRAS** All three zero-stress bodies remain in the original disk and mutual nonoverlap problem. Plane faces are not automatically physical completion regions.
+
+#### M6.T3 — C1.3.b3, a triangle and three bridges
+
+- [x] **M6.T3.COVER** Outside-vertex counts3,2+1,1+1+1 give exactly seven rooted layouts. The count3 rooted tree has root degree1,2,3, producing two,one,one possibilities respectively.
+- [ ] **M6.T3.CHAIN3** Entire length-three arm: prove every internal load/transmission possibility and the full three-extra exit. Internal bridge vertices are not assigned the degree-one S/D law.
+- [ ] **M6.T3.FORK** One bridge from the triangle root to a two-leaf branch: retain both leaf types and the branch body's complete three-force equation.
+- [ ] **M6.T3.MIXED_ARMS** One direct leaf and one length-two arm at the same triangle root, with every root moment and actual contact feature.
+- [x] **M6.T3.SAME_THREE_LEAVES** The triangle and three radial leaves share one articulation; ONE_ARTICULATION_TRIANGLE_LEAF_EXCLUSION.md excludes the whole layout, with all three extras retained.
+- [ ] **M6.T3.CHAIN_PLUS_LEAF** A length-two arm at one triangle vertex and a leaf at another: preserve both distinct articulation equations and the true intermediate-body degree.
+- [ ] **M6.T3.TWO_PLUS_ONE** Two leaves at one triangle vertex and one at another: full S/D triple, all means and one simultaneous selected certificate.
+- [ ] **M6.T3.ONE_EACH** One leaf at each of the three triangle vertices: derive the complete coupled three-articulation geometry and joint capacity.
+- [ ] **M6.T3.ALL** Close all seven layouts and every equality survivor before ticking C1.3.b3.
+
+#### M6.B4L2 — C1.4.b2, a four-body block and two bridges
+
+- [x] **M6.B4L2.BLOCKS** The only abstract blocks are C4,diamond,K4; the positive-K4 subgraph theorem removes K4 even with both bridges attached.
+- [x] **M6.B4L2.COVER** The outside vertices form a length-two arm, two leaves at one root, or two distinct-root leaves. C4 has four attachment orbits and diamond seven, for eleven total.
+- [ ] **M6.B4L2.C4.CHAIN** Entire C4 with a length-two arm at its unique vertex orbit.
+- [ ] **M6.B4L2.C4.SAME** Entire C4 with two leaves at one articulation, all S/S,S/D,D/D and contact-mask transitions.
+- [ ] **M6.B4L2.C4.ADJACENT** Entire C4 with one leaf at each of two adjacent vertices.
+- [ ] **M6.B4L2.C4.OPPOSITE** Entire C4 with one leaf at each of two opposite vertices.
+- [ ] **M6.B4L2.DIAMOND.CHAIN_HUB** Entire diamond with a length-two arm at a degree-three block hub.
+- [ ] **M6.B4L2.DIAMOND.CHAIN_TIP** Entire diamond with a length-two arm at a degree-two block tip; the attached tip's total degree is3.
+- [ ] **M6.B4L2.DIAMOND.SAME_HUB** Two leaves at one block hub; its total positive degree is5.
+- [ ] **M6.B4L2.DIAMOND.SAME_TIP** Two leaves at one block tip; its total positive degree is4.
+- [ ] **M6.B4L2.DIAMOND.TWO_HUBS** One leaf on each of the adjacent diamond hubs.
+- [ ] **M6.B4L2.DIAMOND.TWO_TIPS** One leaf on each of the two nonadjacent diamond tips.
+- [ ] **M6.B4L2.DIAMOND.HUB_TIP** One leaf at a hub and one at a tip; all such unordered pairs are one orbit.
+- [ ] **M6.B4L2.ALL** Supply a whole-core/sharp-radius/joint-completion exit for every one of the eleven classes. The one-leaf C1.4.b1 theorem cannot discard a second positive attachment.
+
+#### M6.B5L — C1.5.b1, a five-body block and one leaf
+
+- [x] **M6.B5L.CATALOG** The ten-type biconnected graph enumeration remains valid for a block. Only its three K4-containing types are removed automatically by the global subgraph theorem; seven block types with sixteen root orbits remain.
+- [x] **M6.B5L.LOAD_SCOPE** The additional loaded leaf participates in the global noncontact graph. A whole-five-body load-connectivity exclusion is not an exclusion of its attached block, and a rooted C5 has an additional positive force.
+- [ ] **M6.B5L.C5** The unique rooted-C5 orbit, both S/D leaves and all internal load masks.
+- [ ] **M6.B5L.HOUSE.ROOF** Leaf at the house roof; its total degree is3.
+- [ ] **M6.B5L.HOUSE.HUB** Leaf at a house degree-three hub; its total degree is4.
+- [ ] **M6.B5L.HOUSE.LOWER** Leaf at a lower degree-two house vertex; its total degree is3.
+- [ ] **M6.B5L.K23.HUB** Leaf at a vertex of the two-vertex part of K2,3.
+- [ ] **M6.B5L.K23.TIP** Leaf at a vertex of the three-vertex part of K2,3.
+- [ ] **M6.B5L.BOOK.HUB** Leaf at a common-edge hub of the three-page book.
+- [ ] **M6.B5L.BOOK.PAGE** Leaf at a degree-two page vertex.
+- [ ] **M6.B5L.FAN.HUB** Leaf at the universal hub of the four-path fan.
+- [ ] **M6.B5L.FAN.ENDPOINT** Leaf at an endpoint of the fan path; its tip degree changes from2 to3.
+- [ ] **M6.B5L.FAN.INNER** Leaf at an inner fan-path vertex; its total degree is4.
+- [ ] **M6.B5L.SUBDIVIDED_K4.NEW** Leaf at the subdivision vertex.
+- [ ] **M6.B5L.SUBDIVIDED_K4.ENDPOINT** Leaf at an endpoint of the subdivided edge.
+- [ ] **M6.B5L.SUBDIVIDED_K4.OTHER** Leaf at one of the other two original K4 vertices.
+- [ ] **M6.B5L.WHEEL.HUB** Leaf at the four-rim wheel hub.
+- [ ] **M6.B5L.WHEEL.RIM** Leaf at a wheel rim vertex.
+- [ ] **M6.B5L.ALL** Close all sixteen rooted block types, all exact physical masks and all three completion squares; a common theorem may close multiple full types with explicit instantiations.
+
+#### M6.B6 — C1.6.b0, every six-body biconnected component
+
+- [x] **M6.B6.OUTER_FACE** For an entire biconnected component, every loaded vertex lies on the simple exterior-face cycle. A triangle has disconnected complement on three loads; a four-cycle's complement is two disjoint edges. Connected loaded noncontact graph and at least three loads therefore force exterior length k>=5.
+- [x] **M6.B6.EULER** Euler and bounded-face lengths>=3 give e<=15-k. With six vertices, k=6 gives at most9 edges; k=5 gives at most10. This is the selected plane graph, not an assumed area decomposition of physical holes.
+- [x] **M6.B6.HEXAGON.COVER** An exterior hexagon contains all six vertices and has a simultaneously noncrossing subset of its nine diagonals, of cardinality0--3. All actual poses and physical contact supersets remain.
+- [x] **M6.B6.HEXAGON.THREE_MASKS** The full bare-cycle three-load cover is alternating{0,2,4} or one-edge{0,1,3}. Cyclic gap patterns(2,2,2),(1,2,3) survive; (1,1,4) makes the loaded complement disconnected.
+- [x] **M6.B6.HEXAGON.FOUR_MASKS** The two zero-load vertices have cyclic distance1,2,3. The corresponding positive loaded graphs are P4, P3 plus an isolated vertex, or two disjoint edges; each bare-cycle complement is connected.
+- [x] **M6.B6.HEXAGON.FIVE_MASK** One zero-load vertex gives one orbit. Six physical boundary vertices would form forbidden C6, so at least one rim body is physically clear. Zero load alone does not otherwise imply physical clearance.
+- [ ] **M6.B6.HEXAGON.CHORD_MASKS** Impose every noncrossing chord subset on the six necessary load orbits; retain all physically allowed zero-weight contacts, proper vertex degrees and exact local equations. No sampled drawing replaces the full domain.
+- [ ] **M6.B6.HEXAGON.BOUND** Finish the mixed C6 and all chorded-hexagon domains with every contact owner/mean and all three extras.
+- [x] **M6.B6.PENTAGON.COVER** An exterior pentagon has one interior physically clear body H, spoke count h=2--5 and outer chord count d<=5-h. Every chord belongs to a true plane sector between consecutive spokes. At least one rim body is also physically clear.
+- [x] **M6.B6.PENTAGON.H2** The exact degree-two H has nonconsecutive neighbors, labeled0,2. Sector diagonals are02,03,24;02 is forbidden because its neighbors cannot touch, and03/24 cross. There are exactly two domains, d0 or one of03/24. Rim vertex1 is a unit bypass, so H has actual reserve1.
+- [x] **M6.B6.PENTAGON.H3** The clear exact-degree-three hub cannot have three consecutive rim neighbors. Its sole remaining neighbor orbit is{0,1,3}. The only possible chords13,30 each create a forbidden two-edge path among those neighbors, so d=0. Physical zero-weight contacts creating that path are also excluded.
+- [x] **M6.B6.PENTAGON.H4_CHORDS** With missing spoke4, the only available outer diagonal is03. Both d0 and d1 are retained. No exact-degree-three rule is applied to the degree-four hub or a degree-four chord endpoint.
+- [x] **M6.B6.PENTAGON.H5_EXCLUDED** With all five spokes and no chords, each rim vertex has exact degree3 and its hub neighbor touches both other neighbors. All five would be loaded, contradicting the physical boundary C5. The entire graph domain is excluded.
+- [x] **M6.B6.PENTAGON.H4_ALL_SPOKES_LOADED** In d0, explicitly assume all four spoke vertices0,1,2,3 loaded. Missing-spoke4 is then clear and a degree-two transmitter; H is its bypass, so the actual endpoint center distance<=1+sqrt(2). The full balanced four-boundary-path theorem gives the strict opposite inequality. This entire load subfamily is excluded, not the whole h4d0 graph.
+- [x] **M6.B6.PENTAGON.H4_D0_MASKS** Only inner rim1,2 are initially forced loaded. Connected complement leaves three-load{1,2,4}; four loads leave0,3,or4 zero, and the last mask is excluded above. Thus vertex4 is loaded in every surviving h4d0, with masks{1,2,4} or{0,1,2,4} up to reflection.
+- [x] **M6.B6.PENTAGON.H4_D0_NONCONTACT** At least one endpoint0,3 is physically clear, since1,2,4 are loaded and boundary C5 is impossible. If H physically touched4, that clear endpoint would be a forbidden unloaded degree-three star. Thus H and4 are physically disjoint, including zero-stress contacts.
+- [x] **M6.B6.PENTAGON.H4_D1_MASKS** The chord03 makes4 a loaded degree-two triangle tip;1,2 are already loaded. At most one of0,3 physically touches the circle, because they and4 form a triangle. The same three-/four-load orbits remain, but the d0 physical H--4 noncontact is not imported.
+- [x] **M6.B6.PENTAGON.GENERAL_MASKS** For the other domains, the bare rim C5 gives one three-load and one four-load orbit. Extra spokes/chords keep their full forces, so the exact-component C5 theorem does not apply to this rim subgraph.
+- [ ] **M6.B6.PENTAGON.H2_D0_EXIT** Entire no-chord two-spoke graph, full physical masks and three-extra completion.
+- [ ] **M6.B6.PENTAGON.H2_D1_EXIT** Entire one-chord two-spoke graph, with the actual width-one H transmitter and all additional loads.
+- [ ] **M6.B6.PENTAGON.H3_EXIT** Entire no-chord three-spoke graph, with exact clear-H degree3 and every remaining rim load mask.
+- [ ] **M6.B6.PENTAGON.H4_D0_EXIT** Both complete residual load orbits with physically disjoint H,4 and every actual endpoint force.
+- [ ] **M6.B6.PENTAGON.H4_D1_EXIT** Both complete residual load orbits with the additional03 force and degree-four endpoints retained.
+- [ ] **M6.B6.ALL** Assemble both exterior-face domains and every contact/mask transition, proving a full sharp radius or three-extra exit for C1.6.b0.
+
+#### M6.TT1 — C2.33.b1, two triangles and one bridge
+
+- [x] **M6.TT1.COVER** The triangles either share one articulation and have a leaf at that articulation or at a tip, or are disjoint and joined by the single bridge. These are exactly three layouts.
+- [x] **M6.TT1.COMMON_ARTICULATION_LEAF** Two petals and one leaf share A; the full common-articulation theorem excludes this entire layout.
+- [ ] **M6.TT1.TIP_LEAF** A bridge at a former bowtie tip changes its degree to3; preserve that new equation and finish the full layout with all three extras.
+- [ ] **M6.TT1.BRIDGED_TRIANGLES** Both triangles have true degree-two tips, so each separate pressure theorem applies at its own articulation. Relate the two different articulation centers through the actual radial bridge before claiming a contradiction; opposite resultants alone do not contradict two different positive projections.
+- [ ] **M6.TT1.ALL** Close all three layouts and their physical feature/mean transitions.
+
+#### M6.TB4 — C2.34.b0, a triangle sharing an articulation with a four-body block
+
+- [x] **M6.TB4.COVER** The four-body block is C4 or diamond after global K4 exclusion. There are three root orbits: C4 vertex, diamond hub and diamond tip.
+- [x] **M6.TB4.TRIANGLE_PRESSURE** Both nonarticulation triangle tips have exact positive degree2, so the whole end-triangle pressure applies. The four-body block receives that actual additional interface force; its isolated-component exclusion cannot delete it.
+- [ ] **M6.TB4.C4_EXIT** Entire triangle/C4 articulation family, all load masks and three extras.
+- [ ] **M6.TB4.DIAMOND_HUB_EXIT** Entire triangle/diamond-hub articulation family.
+- [ ] **M6.TB4.DIAMOND_TIP_EXIT** Entire triangle/diamond-tip articulation family, including the tip's changed total degree.
+- [ ] **M6.TB4.ALL** Finish all three full graph/attachment domains and every equality survivor.
+
+- [x] **G3.M6.COVER_AUDIT** Root and separate independent full audits passed the entire source, including the corrected limited h4 load forcing and exact d0-only physical noncontact consequence.
+- [ ] **G3.M6.ASSEMBLE** All six coarse parents remain open. Assemble every graph/load/contact domain, all three extras and any Q survivors before changing their ledger ticks.
 
 #### G3.M.R Completion ordering by body count
 

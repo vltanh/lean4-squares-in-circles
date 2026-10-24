@@ -1,9 +1,17 @@
 # n=9 — ordered roadmap to the unrestricted hand proof
 
-**PR:** #11, draft. **Reconciled source:** `def16eb3d7728219e1468396542e90bd19b96121`.  
+**PR:** #11, draft. **Reconciled source:** `255c224706de5d2e624e260cfaf8c5fdaef2dd53`.  
 **Updated:** October 24, 2026, America/Chicago.
 
 **The unrestricted lower bound R^2>=1105/256 and complete equality classification remain OPEN.** The construction attains Q. The full execution tree, exact subgates and boundary cases are in [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md).
+
+## Six-body frontier: exhaustive attachment and plane-domain roadmap
+
+[SIX_BODY_CYCLIC_FRONTIER.md](SIX_BODY_CYCLIC_FRONTIER.md) now covers all six six-body coarse rows. It derives seven triangle/three-bridge layouts, eleven four-body-block/two-bridge layouts, sixteen rooted five-body-block/leaf types, three two-triangle/bridge layouts and three triangle/four-body-block layouts. Every row retains its three extra physical squares. The complete common-articulation theorem removes only the matching layouts.
+
+For an entire biconnected component, connectedness of the loaded noncontact graph forces at least five vertices on its exterior face. A six-body block is therefore an exterior hexagon with at most three noncrossing chords, or an exterior pentagon with one clear interior body. The hexagon has six necessary load-mask orbits. The complete pentagon spoke/chord analysis leaves five graph domains; the five-spoke graph is excluded. In the four-spoke graph without a chord, the all-four-spoke-loaded subfamily is excluded by the actual width-one channel and the new boundary-path separation theorem. Its surviving load masks require the missing-spoke rim vertex loaded and physically disjoint from the hub.
+
+Root and independent full audits passed the complete catalogue and geometric corollaries. **All six six-body coarse rows remain open**, and the first unresolved size is still five bodies. A closed component theorem is not applied to a block carrying additional positive forces. The authoritative count remains six closed and52 open.
 
 ## House and fan: completed geometric reductions
 

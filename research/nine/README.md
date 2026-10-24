@@ -6,6 +6,14 @@
 
 **The unrestricted lower bound and complete equality classification remain OPEN.** The construction attains Q. The entire four-body triangle-plus-leaf cell is now closed, so the selected unique positive cyclic component has **5–9 bodies** and **3–7 noncollinear circle-loaded resultants**. Every other physical square remains in the completion problem. The coarse inventory has **six whole cells closed and 52 open**.
 
+## Six-body frontier: exhaustive attachment and plane-domain roadmap
+
+[SIX_BODY_CYCLIC_FRONTIER.md](SIX_BODY_CYCLIC_FRONTIER.md) now covers all six six-body coarse rows. It derives seven triangle/three-bridge layouts, eleven four-body-block/two-bridge layouts, sixteen rooted five-body-block/leaf types, three two-triangle/bridge layouts and three triangle/four-body-block layouts. Every row retains its three extra physical squares. The complete common-articulation theorem removes only the matching layouts.
+
+For an entire biconnected component, connectedness of the loaded noncontact graph forces at least five vertices on its exterior face. A six-body block is therefore an exterior hexagon with at most three noncrossing chords, or an exterior pentagon with one clear interior body. The hexagon has six necessary load-mask orbits. The complete pentagon spoke/chord analysis leaves five graph domains; the five-spoke graph is excluded. In the four-spoke graph without a chord, the all-four-spoke-loaded subfamily is excluded by the actual width-one channel and the new boundary-path separation theorem. Its surviving load masks require the missing-spoke rim vertex loaded and physically disjoint from the hub.
+
+Root and independent full audits passed the complete catalogue and geometric corollaries. **All six six-body coarse rows remain open**, and the first unresolved size is still five bodies. A closed component theorem is not applied to a block carrying additional positive forces. The authoritative count remains six closed and52 open.
+
 ## House and fan: completed geometric reductions
 
 [FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md](FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md) proves that the endpoints of every balanced four-body boundary path have center distance greater than1+sqrt(2). Every physical circle corner is less than15 degrees from its center; global positive load balance and the three actual contacts force the endpoint minor center angle above150 degrees. Consequently every pair of endpoint applications on a common hub has distance greater than1, including all shared-side means. This applies to the four-load fan and the house path3--1--4--2. Endpoint contacts cannot lie on the same hub side; two vertex applications must be opposite.
