@@ -3,9 +3,22 @@
 **Branch:** `research/nine-tablefree-hand`; **PR:** #11, draft.
 **Checkpoint:** 2026-10-24 complete P/Y continuation; source commits are recorded in TWO_LOAD_PROGRESS.md.
 
-**The unrestricted lower bound and complete equality classification remain OPEN.** P_ALL_COMPLETION.md and Y_ALL_COMPLETION.md now close the full P and Y families. Together with the exhaustive tree reduction, every selected positive tree component is excluded from a nine-square packing in the declared radius window. P also completes the five-/six-body reduction, excluding every selected positive component with exactly two circle-loaded bodies, including cyclic components. Every surviving component is cyclic and has 3–7 noncollinear circle resultants. The remaining geometric obligations are the general boundary-only C7 completion and mixed components containing a circle-clear body. Two coarse cells remain closed and 56 open. No Lean compilation or CI has been run.
+**The unrestricted lower bound and complete equality classification remain OPEN.** P_ALL_COMPLETION.md and Y_ALL_COMPLETION.md now close the full P and Y families. Together with the exhaustive tree reduction, every selected positive tree component is excluded from a nine-square packing in the declared radius window. P also completes the five-/six-body reduction, excluding every selected positive component with exactly two circle-loaded bodies, including cyclic components. The certificate can now be selected with exactly one positive component and a planar body graph; its 4–9 bodies form a cyclic component with 3–7 noncollinear circle resultants. Every other physical square has zero stress and remains a completion obstacle. The remaining geometric obligations are the general boundary-only C7 completion and mixed components containing a circle-clear body. Two coarse cells remain closed and 56 open. No Lean compilation or CI has been run.
 
 This revision consolidates the previous deep plan; its proof sources and historical timestamps remain in Git. Checkboxes describe exact theorem scope, not a proof-completion percentage.
+
+## New global reduction: one planar positive component
+
+[PHYSICAL_BODY_GRAPH_UNCROSSING.md](PHYSICAL_BODY_GRAPH_UNCROSSING.md) constructs a selected physical force-and-torque certificate whose **body-pair graph is planar**, with every physical circle-touching vertex on its exterior face. At a four-square junction, an exact positive force identity replaces crossing opposite-pair contacts by actual shared-side endpoint contacts. Conic thinning restores the at-most-27 scalar-atom bound without restoring a crossing. Strict point-contact normal choices are retained.
+
+[UNIQUE_POSITIVE_COMPONENT.md](UNIQUE_POSITIVE_COMPONENT.md) proves that this selected certificate has **exactly one positive component**. Attach all positive circle atoms as boundary ports. Disjoint plane components have nonalternating ports; force balance gives no gap longer than a semicircle. A second component would have all its ports strictly inside one such gap, contradicting its own balance. The antipodal endpoint case and contact-only components are included.
+
+- [x] **CY.PLANAR:** selected physical body-graph planarity, exterior-face circle contacts, and the original 27-atom bound; independently hand-audited.
+- [x] **CY.UNIQUE:** all positive contact and circle atoms belong to one component; two separate hand audits.
+- [x] **CY.ZERO:** all remaining physical bodies carry zero stress and remain part of the completion problem.
+- [ ] **CY.SHARP:** prove the sharp capacity of the surviving unique cyclic component, including the general C7 and mixed cases.
+
+In the declared radius window this component has 4–9 bodies and 3–7 noncollinear loaded resultants. The four-body triangle-plus-leaf cell remains open. Neither planarity of arbitrary stresses nor planarity of the full physical touching graph is claimed. The coarse count remains two closed and 56 open cells.
 
 ## New seven-cycle force geometry and completion localization
 
@@ -41,7 +54,7 @@ Put Q=1105/256 and q0=17/4. Construction gives R9<=sqrt(Q). The missing target i
 
 > **T9:** every nine independently oriented closed unit squares with disjoint open interiors inside a disk of radius R satisfy R^2>=Q.
 
-No common separating frame, row, central square or prescribed stress graph is an original hypothesis. Every stressed component is studied **with all the other physical squares**, including zero-weight contacts and other stress components.
+No common separating frame, row, central square or prescribed stress graph is an original hypothesis. The selected unique positive component is studied **with all the other physical squares**, including every zero-stress body and every zero-weight physical contact.
 
 | Proof route | Complete reduction or theorem | Remaining obligation |
 |---|---|---|
@@ -66,7 +79,7 @@ Tree quantization, channel/loaded-graph exclusions and new two-load high-radius 
 ### Representation and scope rules
 
 1. The <=19-term planar translational support and <=27-atom physical torque-balanced contact-incidence certificate are distinct. No unproved 19-term planar-body torque theorem is imported.
-2. The physical **incidence** graph is planar; the selected positive **body-pair** graph need not be. Block sizes, bridges and triangles below concern the body-pair graph.
+2. The physical **incidence** graph is planar. PHYSICAL_BODY_GRAPH_UNCROSSING.md now also permits selection of a planar positive **body-pair** graph, and UNIQUE_POSITIVE_COMPONENT.md proves that this selected certificate has just one positive component. These are existence statements about the selected stress. Block sizes, bridges and triangles below concern its body-pair graph.
 3. A positive bridge is not every physical contact; nonbridge forces need not be radial.
 4. Loaded **noncontact** means closed squares are physically disjoint, not just that no positive edge was chosen. Zero-weight touching counts as contact.
 5. A coarse cell is not a single topology or a finite pose list. It retains all block graphs, loads, normals, positions and 9-n additional physical squares.
@@ -367,7 +380,7 @@ Source: FOUR_BODY_CYCLIC_CELL_CLOSED.md, commit 05e15a0.
 - [ ] **C.1 GRAPH** Cover every internal block adjacency and articulation assignment in its size/bridge data.
 - [ ] **C.2 LOAD** Impose actual nonnegative circle/contact forces, physical application points, torque, loaded endblocks, connected loaded noncontact, and TL where applicable.
 - [ ] **C.3 GEOMETRY** Prove a uniform inequality over every admissible orientation/pose; do not select a canonical drawing without a reduction theorem.
-- [ ] **C.4 COMPLETION** Include all 9-n other physical squares, zero-weight contacts and multiple stress components.
+- [ ] **C.4 COMPLETION** Include all 9-n other physical squares and zero-weight contacts. CY.UNIQUE now makes all these additional bodies zero-stress for the selected certificate.
 - [ ] **C.5 SHARPNESS** Establish q>=Q for every complete nine-square realization, or exclude the entire component cell in the declared window.
 - [ ] **C.6 EQUALITY** Retain all q=Q limits and free-square frames if the cell survives in global equality.
 

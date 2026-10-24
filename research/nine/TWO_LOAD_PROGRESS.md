@@ -2,7 +2,7 @@
 
 **Date:** 2026-10-23 UTC. **Read base:** `a89802cd834aef3a96d9622bd4829a2c49df17fd` on PR #11. This continues QUADRANT_BLOCK_PROGRESS.md, ORIGIN_POCKET_PROGRESS.md and PROGRESS_LEDGER.md without rewriting their historical claims.
 
-**Current global status:** unrestricted T9, P.ALL, Y.ALL and global equality necessity remain OPEN. The completion continuation below closes the entire six-body two-load capacity and reduces every five-body completion to P. Thus **P.ALL is now the only two-load completion obligation**. Global circle geometry leaves 3–7 noncollinear resultants in every remaining selected component. Of 58 coarse cyclic cells, two are closed and 56 remain open; these are bookkeeping counts, not proof-completion percentages. The full dependency chain still requires independent audit; no Lean compilation or CI was run.
+**Current global status, 2026-10-24:** P.ALL, Y.ALL, TREE.ALL and TL.COMPLETE are CLOSED hand. The selected physical certificate now has one planar positive body component, with all other bodies zero-stress. The unrestricted lower bound and complete equality necessity remain OPEN: general C7 completion and mixed cyclic completion are unresolved. Two coarse cyclic cells are closed and 56 remain open. The dated entries below preserve their original checkpoint claims; later entries supersede their earlier open/closed statuses. Full-chain audit and Lean integration remain unfinished; no Lean compilation or CI was run.
 
 ## 1. Completed work and source provenance
 
@@ -241,3 +241,17 @@ C7_COMPLETION_LOCALIZATION.md proves that every extra square lies inside this po
 - [ ] CY.MIXED.COMPLETE: cyclic components with circle-clear bodies remain open.
 
 No coarse cell is marked closed by these necessary conditions. The unrestricted sharp theorem and equality necessity remain open. No Lean compilation, CI, numerical search or certificate table is a premise of either new theorem.
+
+
+## 2026-10-24 01:05 UTC — planar physical certificate and unique positive component
+
+PHYSICAL_BODY_GRAPH_UNCROSSING.md proves existence of a physical certificate whose positive body-pair graph is planar and all physical circle-touching positive vertices lie on the exterior face. Compatible strict normals at a four-square junction permit an exact uncrossing identity at the same actual contact point, preserving each body's force and torque. The added forces are original shared-side endpoint rows. Thinning only the surviving atoms restores the 27-atom bound without adding a removed crossing; aggregation retains the graph. Optional finite normal avoidances remain available.
+
+UNIQUE_POSITIVE_COMPONENT.md attaches every positive circle corner as a boundary port of that embedding. Jordan crosscuts rule out alternating port sets of different components. Each balanced component has all consecutive port gaps at most pi; another component's ports would lie strictly in one gap and could not balance. This includes two antipodal ports. A virial sum excludes a positive contact component without circle weight. Thus there is exactly one positive component, and every other square has zero stress.
+
+- [x] CY.PLANAR: complete construction, root and separate independent hand audit.
+- [x] CY.UNIQUE: complete global uniqueness deduction, root and separate independent hand audit.
+- [x] CY.ZERO: all other physical squares retained as zero-stress completion bodies.
+- [ ] CY.SHARP: C7 capacity and mixed cyclic completion remain open, including the four-body triangle-plus-leaf cell.
+
+No universal claim about arbitrary physical body graphs is made. The selected unique component has 4–9 bodies and 3–7 noncollinear loaded resultants in the declared window. The coarse cell count remains two closed and 56 open. No Lean compilation or CI was run.

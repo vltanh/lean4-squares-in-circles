@@ -6,14 +6,27 @@
 
 P.ALL and Y.ALL are now CLOSED hand, and their exhaustive reduction closes every positive tree in the declared window. All results called CLOSED hand are mathematical manuscripts pending independent full audit and Lean verification. See TWO_LOAD_PROGRESS.md for current exact source and execution provenance.
 
+## New global reduction: one planar positive component
+
+[PHYSICAL_BODY_GRAPH_UNCROSSING.md](PHYSICAL_BODY_GRAPH_UNCROSSING.md) constructs a selected physical force-and-torque certificate whose **body-pair graph is planar**, with every physical circle-touching vertex on its exterior face. At a four-square junction, an exact positive force identity replaces crossing opposite-pair contacts by actual shared-side endpoint contacts. Conic thinning restores the at-most-27 scalar-atom bound without restoring a crossing. Strict point-contact normal choices are retained.
+
+[UNIQUE_POSITIVE_COMPONENT.md](UNIQUE_POSITIVE_COMPONENT.md) proves that this selected certificate has **exactly one positive component**. Attach all positive circle atoms as boundary ports. Disjoint plane components have nonalternating ports; force balance gives no gap longer than a semicircle. A second component would have all its ports strictly inside one such gap, contradicting its own balance. The antipodal endpoint case and contact-only components are included.
+
+- [x] **CY.PLANAR:** selected physical body-graph planarity, exterior-face circle contacts, and the original 27-atom bound; independently hand-audited.
+- [x] **CY.UNIQUE:** all positive contact and circle atoms belong to one component; two separate hand audits.
+- [x] **CY.ZERO:** all remaining physical bodies carry zero stress and remain part of the completion problem.
+- [ ] **CY.SHARP:** prove the sharp capacity of the surviving unique cyclic component, including the general C7 and mixed cases.
+
+In the declared radius window this component has 4–9 bodies and 3–7 noncollinear loaded resultants. The four-body triangle-plus-leaf cell remains open. Neither planarity of arbitrary stresses nor planarity of the full physical touching graph is claimed. The coarse count remains two closed and 56 open cells.
+
 ## 1. Coverage theorem and exact graph conventions
 
 Source: CYCLIC_BLOCK_INVENTORY.md, commit b3bac6e.
-Choose one connected cyclic positive simple body-pair component with n<=9 bodies. If its maximal cyclic vertex-biconnected block sizes are k_1<=...<=k_m, k_i>=3, and it has b bridges, then
+Use the selected planar certificate of PHYSICAL_BODY_GRAPH_UNCROSSING.md. UNIQUE_POSITIVE_COMPONENT.md gives one connected cyclic positive simple body-pair component with n<=9 bodies. If its maximal cyclic vertex-biconnected block sizes are k_1<=...<=k_m, k_i>=3, and it has b bridges, then
 
     n = 1 + b + sum(k_i-1) <= 9.
 
-Every one of the **9-n other physical squares** remains in the cell's completion premise. The body-pair graph need not be planar; it is distinct from the planar physical contact-point incidence graph and from all zero-stress physical contacts.
+Every one of the **9-n other physical squares** remains in the cell's completion premise. The selected body-pair graph is planar and is the unique positive component. It remains distinct from the physical contact-point incidence graph and from all zero-stress physical contacts. All 9-n other bodies have zero stress, but are retained as physical obstacles and completion squares.
 
 - [x] **CY.B1–B2:** exact block-cut identity and complete list of 21 sorted profiles / 58 bridge-count cells.
 - [x] **CY.LOAD.1–2:** no circle-free positive appendage attached through one body; each endblock has a loaded nonarticulation body.
