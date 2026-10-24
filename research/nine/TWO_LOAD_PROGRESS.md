@@ -227,3 +227,17 @@ SIMPLE_POSITIVE_CYCLE_BODY_BOUND.md supplies a complete hand theorem in the decl
 - [ ] Smaller-cycle completion and branching cyclic components remain open.
 
 This is a whole simple-cycle cardinality theorem, not a closure of the entire nine-body biconnected cell. All 56 currently open coarse rows remain unchecked. No Lean compilation, CI or numerical premise is used.
+
+
+## 2026-10-24 — full boundary-cycle force geometry and exterior-pocket exclusion
+
+C7_FORCE_POLYGON.md proves that every all-boundary positive seven-cycle has an embedded convex polygon whose vertices lie in its actual squares and whose edges follow the physical contact forces through their true application points. A loaded vertex is radial to its circle resultant; a zero-load body contributes a straight transmission vertex. The complete one-/two-circle-corner normal-cone analysis and the winding/convexity argument received an independent hand audit.
+
+C7_COMPLETION_LOCALIZATION.md proves that every extra square lies inside this polygon. The center/contact Jordan curve and one circle spoke per body bound seven exterior cells. Within any occupied exterior cell, dilating all extra centers about the two boundary bodies' common point strictly preserves obstacle separations and preserves every mutual separation. Until first circle contact the cell confines the motion. The resulting eighth circle-touching body contradicts the universal budget. A homotopy within the ring bodies then transfers winding to the convex concurrence polygon. Two separate full hand audits passed.
+
+- [x] CY.C7.POLYGON: whole positive boundary-cycle structural theorem.
+- [x] CY.C7.LOCALIZE: all exterior pockets empty; every completion square is contained in the concurrence polygon.
+- [ ] CY.C7.COMPLETE: the two-square capacity inside that polygon remains open.
+- [ ] CY.MIXED.COMPLETE: cyclic components with circle-clear bodies remain open.
+
+No coarse cell is marked closed by these necessary conditions. The unrestricted sharp theorem and equality necessity remain open. No Lean compilation, CI, numerical search or certificate table is a premise of either new theorem.

@@ -7,6 +7,18 @@
 
 This revision consolidates the previous deep plan; its proof sources and historical timestamps remain in Git. Checkboxes describe exact theorem scope, not a proof-completion percentage.
 
+## New seven-cycle force geometry and completion localization
+
+[C7_FORCE_POLYGON.md](C7_FORCE_POLYGON.md) proves that every positive boundary-only C7 has a convex polygon of contact-force concurrence points inside its seven actual squares. The polygon contains the origin, its edges follow the positive contact forces through the actual contact points, and loaded vertices are radial to their circle resultants. The proof covers both one- and two-circle-corner bodies and zero-load transmitters; regularity is not assumed.
+
+[C7_COMPLETION_LOCALIZATION.md](C7_COMPLETION_LOCALIZATION.md) then proves that every additional square lies inside that convex polygon. Exterior pockets are empty: simultaneously dilating their extra-square centers away from the neighboring bodies' common contact preserves all separations until an impossible eighth circle contact occurs. The topological argument retains all shared-side contacts and two-circle-corner caps.
+
+- [x] **CY.C7.POLYGON:** complete force-line concurrence and convexity theorem, independently hand-audited.
+- [x] **CY.C7.LOCALIZE:** complete exterior-pocket exclusion and containment of every extra square in the concurrence polygon, with two separate hand audits.
+- [ ] **CY.C7.COMPLETE:** exclude two disjoint unit squares inside that polygon while avoiding the actual seven boundary squares.
+
+These implications do not close the general C7 capacity or change the coarse count of two closed and 56 open cells. Mixed cyclic components also remain open. No Lean compilation or CI has been run.
+
 ## New simple-cycle body bound
 
 [SIMPLE_POSITIVE_CYCLE_BODY_BOUND.md](SIMPLE_POSITIVE_CYCLE_BODY_BOUND.md) proves that a selected positive component whose body-pair graph is a simple cycle has at most **eight bodies**. The proof first excludes crossing opposite-pair edges at a four-square junction, derives a Jordan cycle with the physical circle-touching bodies in circular center order, then charges more than 40 degrees to each cycle body through exact transmission-channel bounds. It retains circle-touching bodies with zero circle weight and arbitrary square orientations.

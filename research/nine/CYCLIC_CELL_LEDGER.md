@@ -135,7 +135,9 @@ Together with TL.COMPLETE and TREE.ALL, every surviving selected component is cy
 [CIRCLE_CONTACT_ANGULAR_ORDER.md](CIRCLE_CONTACT_ANGULAR_ORDER.md) proves that the complete graph induced by physical circle-touching squares is a disjoint union of paths, or is one C7. Every such shadow is shorter than 60 degrees; contact edges respect angular order. A positive stress component whose bodies all touch the circle has no leaves by force/torque, and therefore is exactly that C7, including all physical circle-touching bodies.
 
 - [x] **CY.BOUNDARY:** complete boundary graph and positive-component reduction, allowing zero circle multipliers on some circle-touching bodies.
-- [ ] **CY.C7.COMPLETE:** the general seven-cycle with two arbitrary circle-clear extras.
+- [x] **CY.C7.POLYGON:** C7_FORCE_POLYGON.md constructs the convex polygon of force-line concurrence points, without regularity or a common frame.
+- [x] **CY.C7.LOCALIZE:** C7_COMPLETION_LOCALIZATION.md excludes every exterior pocket and contains each completion square in that polygon.
+- [ ] **CY.C7.COMPLETE:** exclude two arbitrary circle-clear extras inside that polygon, retaining the actual seven square obstacles.
 - [ ] **CY.MIXED.COMPLETE:** all remaining components containing a circle-clear body.
 
 The exact regular C7 below Q is feasible and has one completion slot; it does not close C1.7.b0, whose other graphs/load choices and nonregular seven-cycles remain covered by the open row. Likewise, excluding all-boundary five-/six-body components does not close their coarse cells with circle-clear bodies. **All 56 open rows remain unchecked.**
