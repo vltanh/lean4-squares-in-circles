@@ -26,6 +26,9 @@ The proof excludes the selected core itself. It therefore accounts for the five 
 - [x] [TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md](TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md) excludes the **entire length-two arm layout** of C1.3.b2. It retains both leaf types, both transmitter widths, all articulation orientations, circle masks and contact owners. The two layouts with separate leaves remain open.
 - [x] [FOUR_CYCLE_LEAF_HOLE_EMPTY.md](FOUR_CYCLE_LEAF_HOLE_EMPTY.md) proves that **every C4-plus-leaf inner hole has capacity zero**. Equality in the general hole-area bound forces an aligned cross, which cannot carry the required selected stress in the radius window. All four extras must be exterior; their joint capacity remains open.
 - [x] [NO_THREE_BOUNDARY_COMMON_NEIGHBORS.md](NO_THREE_BOUNDARY_COMMON_NEIGHBORS.md) gives a uniform exterior-face obstruction. [FIVE_BODY_BICONNECTED_REDUCTION.md](FIVE_BODY_BICONNECTED_REDUCTION.md) then supplies the full ten-type classification and excludes seven types: **only C5, the house and the four-path fan remain**, with explicit necessary load masks.
+- [x] [TWO_S_LEAVES_ONE_TRIANGLE_ARTICULATION.md](TWO_S_LEAVES_ONE_TRIANGLE_ARTICULATION.md) and [TWO_MIXED_LEAVES_ONE_TRIANGLE_ARTICULATION.md](TWO_MIXED_LEAVES_ONE_TRIANGLE_ARTICULATION.md) exclude the entire S/S and D/S same-articulation branches. Every support-face/vertex placement and every positive weight is retained. Only D/D remains in that layout.
+- [x] [FOUR_CYCLE_ADJACENT_LOAD_EXCLUSION.md](FOUR_CYCLE_ADJACENT_LOAD_EXCLUSION.md) excludes the entire adjacent-loaded-pair C4-plus-leaf pattern. Its stronger geometric theorem prevents a normal channel from a near-origin articulation from returning through a circle-touching neighbor.
+- [x] [BOUNDARY_TIP_FIXED_APPLICATION_SELECTION.md](BOUNDARY_TIP_FIXED_APPLICATION_SELECTION.md) extends generic selection to a degree-two unique-circle-corner tip with only one boundary neighbor. Both actual applications must be fixed; variable shared-side means remain outside this lemma.
 - [x] The C7 manuscripts below make simultaneous pre-stress normal choices, including whole shared-side blocks and every application mean. A surviving free vertex/vertex edge must meet blocks with a unique radial endpoint body carrying two positive circle-corner weights.
 
 These are complete implications at their stated scope, with independent hand audits. They do not close another coarse cell: the count remains **three closed and 55 open**.
@@ -36,8 +39,8 @@ The complete gate tree, including continuous domains, contact owners, boundary c
 
 | Gate | Entire scope | Current state |
 | --- | --- | --- |
-| C1.3.b2 | Two leaves at one triangle articulation, or leaves at two articulations | OPEN; the entire length-two arm is CLOSED |
-| C1.4.b1 | C4 or diamond block with one leaf; both diamond attachment orbits | OPEN; K4 excluded and all cycle holes empty; exterior completion remains |
+| C1.3.b2 | D/D leaves at one triangle articulation, or leaves at two articulations | OPEN; full arm and same-articulation S/S, D/S branches CLOSED |
+| C1.4.b1 | C4 with opposite or three loaded block vertices; both diamond attachment orbits | OPEN; adjacent-load C4 and K4 excluded, all cycle holes empty |
 | C1.5.b0 | C5, house or four-path fan, with the complete necessary load cover and all physical contacts | OPEN; exhaustive graph/load reduction CLOSED |
 | C2.33.b0 | Two triangles sharing one articulation, with four loaded tips and all physical contacts retained | OPEN |
 | G3.B.CAP | Every positive boundary-only C7, with two arbitrary extra squares | OPEN; parallel whole branch |
@@ -57,6 +60,8 @@ The boundary-only positive component must be one seven-cycle. Its actual force-c
 - [x] [C7_FIXED_APPLICATION_GENERIC_SELECTION.md](C7_FIXED_APPLICATION_GENERIC_SELECTION.md): simultaneous finite avoidance removes every free vertex-normal star with one physical circle corner and two fixed application points.
 - [x] [C7_TWO_CIRCLE_CORNER_BLOCKS.md](C7_TWO_CIRCLE_CORNER_BLOCKS.md): vertex shells classify radial contacts; selected radial runs have length at most two, so at most four bodies are radial; no two radial bodies are parallel in a physical C7.
 - [x] [C7_SHARED_SIDE_BLOCK_GENERIC_SELECTION.md](C7_SHARED_SIDE_BLOCK_GENERIC_SELECTION.md): a collective virtual-work identity handles all variable shared-side means and all circle-weight masks. Every block incident to a surviving free vertex edge has exactly one physical radial body, at an endpoint or as a singleton, with both corner weights positive.
+- [x] [C7_PINNED_VERTEX_CONTACT_TYPES.md](C7_PINNED_VERTEX_CONTACT_TYPES.md) exhausts the free vertex-edge geometry: only radial/radial contacts or mirror-paired two-square blocks remain. All other block-length pairs and vertex types are excluded; the local proof also gives a uniform lower radius for every boundary/boundary contact point.
+- [x] Adaptive open choices on maximal radial runs require positive-length shared sides at both ends of every radial pair. At most two free edges survive; the full arrangement and length2–5 block-profile cover is explicit.
 - [ ] Finish both remaining contact domains: every edge has a side-axis owner, retaining two-owner/zero-owner transitions; or at least one free vertex edge survives between the constrained radial-endpoint blocks.
 - [ ] The covering route must therefore use positive stress to handle the remaining patterns (1,3,3) and (2,2,3), or be replaced by a complete direct capacity argument.
 

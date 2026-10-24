@@ -333,3 +333,145 @@ bodies. These are every possibility for parallel radial frames.
 Consequently every parallel shared-side block in a physical boundary
 C7 contains at most one radial body. This geometric fact is
 independent of the chosen loads and common normals.
+
+## 7. The predecessor of each radial pair has a shared-side neighbor
+
+The open choices can be narrowed further so that, for every surviving
+radial/radial edge oriented in positive circular order, its predecessor
+belongs to a nonsingleton shared-side block. More precisely, that
+predecessor's other positive contact is a positive-length shared side
+on its backward tangential face.
+
+Use the predecessor's radial frame
+
+\[
+ S=[d,d+1]\times[-1/2,1/2],\qquad a_0=d+1.
+\]
+
+Its forward radial-pair contact is \(p_+=(d,1/2)\), and its chosen
+normal is in the small strict interval just beyond \(e_y\). We show
+that every alternative in which its other application is fixed fails
+at the limiting normal \(e_y\), with a strict margin.
+
+The outer radial face cannot have a unit neighbor by width. The inner
+radial face cannot meet another circle-touching neighbor by the
+shallow-contact lemma. Circle corners cannot be shared. Any other
+point on the forward tangential face, including its inner vertex,
+has strictly positive origin moment for every genuine outward normal;
+it cannot balance the positive moment at \(p_+\). Thus the only
+possible fixed other applications lie on the backward tangential face
+or at its inner vertex.
+
+First let that application be \((x,-1/2)\) in the relative interior
+of the backward face, so \(d<x<a_0\). Its incoming directed force
+normal is \(e_y\). Normalize its magnitude to one. Torque at the
+limiting forward normal forces the outgoing magnitude to be x/d.
+Translation would then require
+
+\[
+                      2m=(0,1-x/d).
+\]
+
+This violates the admissible circle-resultant inequality
+\(m_x+2a_0m_y\ge0\), strictly because x>d.
+
+Next let the other fixed application be the backward inner vertex
+\((d,-1/2)\). A vertex/vertex neighbor would be radial by the
+vertex-shell lemma, producing a prohibited three-radial run in the
+selected C7. Hence the remaining fixed-point alternative is a genuine
+vertex/side contact. Its incoming normal has the form
+
+\[
+                       n_-=(s,t),\qquad s>0,\quad t\ge0.
+\]
+
+The strict inequality s>0 is necessary: if s=0, the neighbor's side
+would be parallel to S's tangential side through the vertex. Since
+that vertex is in the neighbor's side interior, their intersection
+would contain a positive-length segment, contrary to the fixed-point
+case.
+
+Normalize the incoming magnitude to one. At the limiting forward
+normal, torque forces
+
+\[
+                          \mu_+=t+\frac{s}{2d}.
+\]
+
+Translation consequently requires
+
+\[
+                2m=(s,-s/(2d)),
+ \qquad 2(m_x+2a_0m_y)=-s/d<0.
+\]
+
+This again lies strictly outside the cone of nonnegative combinations
+of \((a_0,\pm1/2)\). Zero circle weights are included in the exclusion.
+
+There are finitely many actual fixed-point alternatives. Their other
+normal is fixed in the genuine vertex/side or side/vertex case. The
+outgoing magnitude, after the above normalization, is a continuous
+ratio of positive origin moments near the limiting forward normal.
+The strict violations therefore persist on a sufficiently small open
+interval immediately beyond \(e_y\). Intersect these restrictions
+with the previously selected radial-pair intervals. They remain
+nonempty open intervals. The already excluded three-radial runs stay
+excluded, and all later finite open-dense choices remain available.
+
+No point-only alternative survives. The other positive contact must
+therefore be a shared-side segment. The outer and inner radial faces
+are already impossible, and the forward tangential face has the wrong
+moment sign, so the segment is on the backward tangential face.
+Uncrossing and thinning preserve the forward point normal, while all
+possible fixed-point alternatives were listed beforehand. This proves
+the strengthened predecessor assertion for the final selected C7.
+
+## 8. A symmetric choice removes singleton endpoints of every radial pair
+
+One can strengthen Section 7 to both endpoints by making the choice
+separately on each maximal physical radial run. This replaces the
+uniform directional choice on runs of length two; it retains all the
+conclusions already proved for the final selected C7.
+
+If the physical circle-contact graph is not a C7, it cannot underlie
+an all-boundary positive C7, and no further choice is needed for this
+branch. Otherwise its maximal radial runs are fixed by the physical
+packing and do not share radial/radial edges.
+
+For a run of length at least three, keep the uniform forward near-axis
+choices from Sections 4--5. Such a run cannot appear in the selected
+positive C7. For a maximal run of exactly two, its two outside
+neighbors are nonradial. If either outside contact is point-only,
+apply the proof of Section 7 at that endpoint. If it is the forward
+endpoint, reflect the circular order and use the other endpoint of
+the same common-normal interval. This is precisely the reflected
+fixed-point calculation, with the corresponding strict cone failure.
+
+The outside point-contact normal is fixed: a vertex/vertex outside
+neighbor would be radial by the shell lemma and would extend the
+run, while a genuine vertex/side contact has its unique side normal.
+Thus the continuity restriction used in Section 7 supplies a genuine
+nonempty open interval on this radial/radial edge. If both outside
+contacts are point-only, choose either one to exclude the run.
+
+If both outside contacts are positive-length shared sides, retain
+the original forward interval. No exclusion of this run is claimed.
+Since distinct maximal runs use distinct radial/radial edges, all
+these choices are simultaneous. They are open restrictions and remain
+compatible with the finite generic exclusions and the pinned-profile
+choices. Surviving point normals are preserved by uncrossing and
+thinning, as before.
+
+The final selected C7 therefore has the following stronger property:
+
+**Two-sided radial-pair reduction.** Every surviving radial/radial
+edge joins the radial endpoints of two nonsingleton shared-side
+blocks. Each radial body has its other positive contact on its
+outward-in-the-run tangential shared side. In particular no radial
+singleton is incident to a free vertex edge.
+
+The no-three-run and at-most-four-radial conclusions still hold:
+long physical runs were excluded by the original choice, and a
+surviving two-body run has no radial continuation. The predecessor
+statement of Section 7 is also retained, now as part of the two-sided
+conclusion.
