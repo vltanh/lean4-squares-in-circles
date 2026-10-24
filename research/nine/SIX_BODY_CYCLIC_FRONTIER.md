@@ -186,6 +186,33 @@ excludes the entire book-hub and wheel-hub leaf attachments. The book
 would have three loaded common neighbors, and the wheel four loaded
 rim vertices. The other fourteen full rooted types remain open.
 
+### 4.1. Complete positive-load and leaf-type refinement
+
+FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md now proves the complete
+necessary load cover of all sixteen rooted types by hand. The leaf
+root stays physically clear and the genuine S/D leaf is always loaded.
+The fourteen open types retain38 whole block-load orbits; each includes
+all root-preserving images, every original circle mask and actual mean.
+The full positive-loaded complement is automatically connected because
+the actual leaf is nonadjacent to every block load. Thus no isolated
+five-body complement exclusion is imported.
+
+Six further whole both-S/D families are excluded. Two rooted C5
+load families have actual two-transmitter channels with a unit bypass.
+In two house families, an actual unloaded channel would separate its
+endpoints despite their positive physical contact. In the hub- and
+tip-rooted K2,3 families, two true unloaded transmitters have a third
+physical bypass; TWO_PARALLEL_TRANSMITTERS_NO_THIRD_BYPASS.md excludes
+that full local configuration without deleting the root leaf force.
+
+Four remaining whole S alternatives are also excluded by
+S_LEAF_CONNECTED_BOUNDARY_NEIGHBORS.md: the fan-hub mask1234, the
+subdivided-K4 endpoint maskCD, and its other-original-vertex masksDA
+andDAB. Their full D alternatives remain open. This closes the entire
+S leaf type for the fan-hub and subdivided-edge-endpoint roots, but
+neither whole rooted graph. There are still2 of16 whole rooted types
+closed, and C1.5.b1 remains open with all three arbitrary extras.
+
 ## 5. A biconnected component needs at least five exterior-face vertices
 
 Here G is the **entire** selected biconnected positive component,
@@ -425,7 +452,7 @@ dihedral image and every original physical feature/mean domain:
 | H spokes | Outer chord | Three loads | Four loads |
 | --- | --- | --- | --- |
 | 0,2 | None | 013,023,134 | 1234,0124 |
-| 0,2 | 03 | 024,124,134 | 1234,0124 |
+| 0,2 | 03 | 124,134 | 1234,0124 |
 | 0,1,3 | None | 013,023,024 | 1234,0134,0124 |
 | 0,1,2,3 | None | 124 | 0124 |
 | 0,1,2,3 | 03 | 124 | 0124 |
@@ -436,7 +463,12 @@ have center separation at most1+sqrt(2). The same four actual loaded
 bodies form the balanced boundary path2--3--4--0, whose endpoints
 must be more than1+sqrt(2) apart. No endpoint force is deleted.
 
-The table retains twenty whole necessary graph/load orbits. It does
+The entire two-spoke/chord03 family024 is now excluded as well:
+H and1 are two true unloaded transmitters between0,2, while3 is
+a third physical bypass through03 and23. The new radius-free local
+theorem retains the bypass's actual degree-three equation and all
+other forces. The table retains nineteen whole necessary graph/load
+orbits. It does
 not assert any is realizable or close a graph by enumeration. The
 previous physical H--4 noncontact remains specific to the four-spoke
 no-chord domain. All actual hub degrees, means and three extra units
@@ -515,6 +547,30 @@ H--4 noncontact conclusion from d=0 is not asserted in this domain.
 These finite labeled graph, embedding and load choices still quantify
 over all actual physical circle masks, corner weights and continuous
 poses. They do not constitute a finite numerical configuration list.
+
+### 6.5. Actual completion regions for every remaining simple C6
+
+SIMPLE_CYCLE_CHANNEL_POCKET_CAPS.md proves each exterior channel
+region lies in the actual outward cap D_R intersect {y>=h}, where
+h>0 is the actual channel height. Its proof uses occupied endpoint-
+to-circle-corner segments and the original channel segment. Every
+physical circle mask has a facing corner of height at least h;
+actual circle order supplies the correct outer arc. The argument
+retains every genuine shared mean and weak contact junction.
+
+The whole bounded free region of the physical six-body ring has
+area at most3sqrt(3)/2<3, including all its free components. Thus
+it holds at most two of the three extras. Every remaining exact
+simple C6 requires at least one extra in a proved outward cap, with
+center height at least h+1/2. Alternating three loads have three such
+caps; each four-load separated-zero orbit has two; five loads have
+one. Direct boundary-pair pockets and two-corner outer caps hold no
+extra. Additional physical contacts only subdivide these regions.
+
+This is a complete localization theorem. A joint capacity bound for
+the caps and central region remains open for all four whole C6 load
+orbits. No extra is assumed to lie in the concurrence polygon, and
+no positive chord is dropped to apply the simple-cycle theorem.
 
 ## 7. Two triangle blocks and one bridge: exactly three layouts
 

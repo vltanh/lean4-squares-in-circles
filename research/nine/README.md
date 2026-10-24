@@ -1,5 +1,15 @@
 # Nine unit squares in a circle — current hand-proof frontier
 
+## Complete rooted-block load cover and actual cycle completion caps
+
+[FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md](FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md) supplies the full hand load cover for all sixteen five-body-block/leaf root types. Two rooted types were already closed; the other fourteen now have **38 necessary whole block-load orbits**, each with explicit full S/D leaf gates. Six additional whole both-leaf-type families are excluded: two C5 bypass channels, two house channels whose endpoints actually touch, and two K2,3 families with two true transmitters and a third physical bypass. Four further whole S alternatives are excluded by the complete connected-boundary-neighbor theorem. All root forces, physical masks and actual means remain.
+
+[TWO_PARALLEL_TRANSMITTERS_NO_THIRD_BYPASS.md](TWO_PARALLEL_TRANSMITTERS_NO_THIRD_BYPASS.md) proves the new radius-free local obstruction. It also excludes the entire inner-pentagon two-spoke/chord03 load family024, so the complete pentagon cover now retains **19 necessary graph/load orbits**, alongside38 in the hexagon cover. Root and independent full audits passed the local theorem, every rooted orbit and all new whole-family applications.
+
+[SIMPLE_CYCLE_CHANNEL_POCKET_CAPS.md](SIMPLE_CYCLE_CHANNEL_POCKET_CAPS.md) supplies a complete physical routing theorem for the four remaining simple-C6 load orbits. Actual occupied segments place each exterior channel pocket in its outward cap y>=h; every extra there has center height>=h+1/2. The whole bounded central free region has area at most3sqrt(3)/2<3, so at least one of the three extras must occupy a proved cap. Every physical two-corner mask, shared mean and weak junction is covered. The joint cap/central capacity bounds remain explicit unchecked gates.
+
+The authoritative count remains **eight whole coarse cells closed and50 open**. These finer domain counts do not close a parent or assert physical realizability. The five remaining six-body coarse rows, unrestricted sharpness, original equality and full earlier prerequisite-chain audit remain OPEN. PR #11 stays draft; no Lean compilation or CI was run.
+
 ## First six-body coarse cell closed: all seven triangle attachments
 
 [TRIANGLE_THREE_BRIDGES_CELL_CLOSED.md](TRIANGLE_THREE_BRIDGES_CELL_CLOSED.md) closes **all of C1.3.b3**, the triangle-plus-three-bridges cell. Its seven rooted attachments are exhausted by complete proofs under one selected certificate. Root and independent full audits passed the final two attachments and the entire assembly. Every original degree, load mask, actual contact mean and all three extra physical squares remain.
@@ -12,7 +22,7 @@ The authoritative ledger is now **eight whole cells closed and50 open**. Seven s
 
 [TIP_LEAF_BOWTIE_D_EXCLUSION.md](TIP_LEAF_BOWTIE_D_EXCLUSION.md) excludes the entire D-leaf type of the last tip-attached bowtie layout. Its [nonparallel proof](TIP_LEAF_BOWTIE_D_NONPARALLEL_EXCLUSION.md) covers every mutual owner/free mask and actual mean; its [parallel proof](TIP_LEAF_BOWTIE_D_PARALLEL_EXCLUSION.md) obtains the correct resultant sector from the real common wall and degree-four torque. Both contradict the strict support bound of the untouched end triangle, with arbitrary H frame. The full aligned and tilted S-leaf alternatives remain open; C2.33.b1 is not ticked.
 
-[SIX_BODY_INNER_PENTAGON_LOAD_COVER.md](SIX_BODY_INNER_PENTAGON_LOAD_COVER.md) gives all necessary load orbits for the five surviving interior-pentagon graphs. It also excludes the entire two-spoke/no-chord0234 family: the real reserve-one H channel requires endpoint distance<=1+sqrt(2), while the balanced actual boundary path requires>1+sqrt(2). Twenty whole pentagon graph/load domains remain, each now an explicit deep-roadmap gate, alongside the38 hexagon domains. These are necessary-domain counts, not realizability or completion percentages.
+[SIX_BODY_INNER_PENTAGON_LOAD_COVER.md](SIX_BODY_INNER_PENTAGON_LOAD_COVER.md) gives all necessary load orbits for the five surviving interior-pentagon graphs. It also excludes the entire two-spoke/no-chord0234 family: the real reserve-one H channel requires endpoint distance<=1+sqrt(2), while the balanced actual boundary path requires>1+sqrt(2). The subsequent full two-transmitter024 exit leaves nineteen whole pentagon graph/load domains, each an explicit deep-roadmap gate, alongside the38 hexagon domains. These are necessary-domain counts, not realizability or completion percentages.
 
 Root and independent full audits passed all eight source/assembly files in this checkpoint. The live roadmap's earlier coarse-count table, completed physical-C7 gate and execution order are reconciled with the full proofs. PR #11 stays draft; no Lean compilation or CI was run.
 
@@ -265,7 +275,7 @@ C7_CENTER_POLYGON_LOCALIZATION.md places every completion unit inside the strict
 
 ## Continue in this order
 
-The complete gate tree, including continuous domains, contact owners, boundary cases and parent exit conditions, is [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md). All four five-body cells are now closed, retaining their four arbitrary completion squares. The remaining work begins with the six complete six-body rows, each retaining three extras.
+The complete gate tree, including continuous domains, contact owners, boundary cases and parent exit conditions, is [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md). All four five-body cells are now closed, retaining their four arbitrary completion squares. The remaining work begins with the five open six-body rows, each retaining three extras; C1.3.b3 is already wholly closed.
 
 | Gate | Entire scope | Current state |
 | --- | --- | --- |

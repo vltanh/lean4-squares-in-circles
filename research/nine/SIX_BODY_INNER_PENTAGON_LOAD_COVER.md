@@ -1,7 +1,7 @@
 # The five interior-pentagon graphs and their complete necessary load cover
 
-**Status: complete hand finite cover and one additional whole load-family
-exclusion; root and separate independent full hand audits passed.**
+**Status: complete hand finite cover and two additional whole load-family
+exclusions; root and separate independent full hand audits passed.**
 Use the common selected certificate in the declared radius window
 79/40 <= R <= sqrt(1105)/16. The entire six-body positive component
 is biconnected, with exterior face 0,1,2,3,4 in cyclic order and its
@@ -13,7 +13,9 @@ SIX_BODY_CYCLIC_FRONTIER.md, Sections 5--6, proves that the five
 surviving graph domains are exactly those in the table below. This
 manuscript gives their full necessary positive-load cover. It also
 excludes the entire no-chord/two-spoke load family0234 by the existing
-balanced boundary-path theorem and the true H transmitter.
+balanced boundary-path theorem and the true H transmitter. The full
+two-spoke/chord03 family024 is now excluded by two actual parallel
+transmitters and a third physical unit bypass, with every force kept.
 
 A word such as013 means the positive-load set {0,1,3}. Each listed
 set includes all images under a dihedral symmetry preserving the
@@ -26,7 +28,7 @@ any of its full physical domains is realizable.
 | H spokes | Outer chord | Forced rim loads from local degrees | Three loads | Four loads |
 | --- | --- | --- | --- | --- |
 | 0,2 | None | None | 013,023,134 | 1234,0124 |
-| 0,2 | 03 | 4 | 024,124,134 | 1234,0124 |
+| 0,2 | 03 | 4 | 124,134 | 1234,0124 |
 | 0,1,3 | None | None | 013,023,024 | 1234,0134,0124 |
 | 0,1,2,3 | None | 1,2 | 124 | 0124 |
 | 0,1,2,3 | 03 | 1,2,4 | 124 | 0124 |
@@ -36,7 +38,7 @@ The fourth row's all-four-spoke-loaded set0123 was already excluded
 in SIX_BODY_CYCLIC_FRONTIER.md, Section 6.3. These are exclusions of
 whole load families, not a deletion of their positive spoke forces.
 
-The row counts are5,5,6,2,2: twenty necessary whole graph/load orbits
+The row counts are5,4,6,2,2: nineteen necessary whole graph/load orbits
 remain after those complete exits. Every one retains all continuous
 positions, frames, circle-corner weights, contact features and shared
 means, all actual positive degrees and all three arbitrary extras.
@@ -121,10 +123,20 @@ triangle tip with adjacent neighbors0,3, so4 is loaded.
 From the complete three-load list in Section 2, chord03 adds a
 second induced positive edge to each of013 and023, disconnecting
 their loaded complements. The other three triples024,124,134 each
-contain4 and retain a connected complement. These are precisely
-the three necessary representatives. No nontrivial exterior
+contain4 and retain a connected complement. These are the three initial
+necessary representatives. No nontrivial exterior
 pentagon symmetry preserves both the spokes0,2 and chord03, so
-none of these three entries is identified with another.
+none of these three initial entries is identified with another.
+
+The entire024 family is excluded by
+TWO_PARALLEL_TRANSMITTERS_NO_THIRD_BYPASS.md. H and rim1 are true
+unloaded degree-two transmitters with the same endpoints0,2. Rim3
+is a third physical unit bypass via03 and23. Its genuine degree
+three and every other force remain; no transmitter equation is
+applied to it. The uniform local theorem is impossible for these
+five actual bodies, so only124 and134 remain as three-load sets.
+This is a full graph/load exclusion for every physical mask and
+actual mean, retaining all three original extras.
 
 For four loads, vertex4 cannot be omitted. Moreover0 and3 cannot
 both be loaded, because0,3,4 would be a physical boundary triangle.
@@ -190,7 +202,7 @@ surviving exterior-pentagon graph domains. Together with the nine
 hexagon types in SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md, it gives
 an explicit necessary graph/load cover for the entire six-body
 biconnected cell C1.6.b0. The hexagon source has38 open whole load
-orbits and this source has20; neither count is a completion percentage.
+orbits and this source has19; neither count is a completion percentage.
 
 Each remaining row/set must receive a whole core contradiction,
 a sharp radius theorem, or a complete joint capacity bound excluding
@@ -201,6 +213,6 @@ A positive chord, spoke or higher-degree root force cannot be removed
 to apply an exact smaller-component theorem.
 
 All five graph parents and C1.6.b0 remain open. The coarse ledger
-is unchanged by this necessary cover and its one additional entire
-load-family exit. No numerical graph enumeration, pose sampling,
+is unchanged by this necessary cover and its two additional entire
+load-family exits. No numerical graph enumeration, pose sampling,
 Lean compilation or CI is used.
