@@ -119,6 +119,18 @@ Each OPEN row quantifies over all block adjacencies, articulation arrangements, 
 | C3.344.b0 | 3,4,4 | 0 | 9 | 0 | [ ] OPEN |
 | C4.3333.b0 | 3,3,3,3 | 0 | 9 | 0 | [ ] OPEN |
 
+## Active first open cell: C1.3.b1
+
+The full execution contract is **G3.M4** in [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md): assemble the triangle-plus-leaf load/pose/routing reduction, prove the entire D-leaf branch and the entire S-leaf branch, then assemble their common parent. S includes the full aligned shared-side slider interval and both tilted-vertex branches. The required bound is jointly at most four extras in the two remaining articulation/leaf regions. The inner triangular hole and touching-boundary-pair pocket are already empty, but this does not close the parent cell.
+
+- [ ] **C1.3.b1.REDUCE** Complete core and completion-region cover.
+- [ ] **C1.3.b1.D** Full D-leaf capacity or radius-window exclusion.
+- [ ] **C1.3.b1.S0** Full aligned S-leaf slider branch.
+- [ ] **C1.3.b1.S+ / S-** Both complete tilted-vertex S branches and endpoint assembly.
+- [ ] **C1.3.b1.ALL** All branches, all actual contacts and all five extra squares; only then tick the row above.
+
+The fine semantic contract for every other open row is G3.M.F / G3.M.C. Its finite labels retain continuous positions, frames and weights; no pose discretization is a proof premise.
+
 ## 3. Closed four-body cell: complete internal subgates
 
 Source: FOUR_BODY_CYCLIC_CELL_CLOSED.md, commit 05e15a0.

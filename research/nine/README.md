@@ -5,6 +5,12 @@
 
 **Latest continuation, 2026-10-24:** **The unrestricted lower bound and complete equality classification remain OPEN.** P_ALL_COMPLETION.md and Y_ALL_COMPLETION.md now close the full P and Y families. Together with the exhaustive tree reduction, every selected positive tree component is excluded from a nine-square packing in the declared radius window. P also completes the five-/six-body reduction, excluding every selected positive component with exactly two circle-loaded bodies, including cyclic components. The certificate can now be selected with exactly one positive component and a planar body graph; its 4–9 bodies form a cyclic component with 3–7 noncollinear circle resultants. Every other physical square has zero stress and remains a completion obstacle. The remaining geometric obligations are the general boundary-only C7 completion and mixed components containing a circle-clear body. Two coarse cells remain closed and 56 open. No Lean compilation or CI has been run.
 
+## Current ordered continuation — October 23, 2026, America/Chicago
+
+The roadmap has been reconciled through `f353540` and expanded into the full **G3 execution tree** in [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md). First assemble the entire four-body triangle-plus-leaf reduction, then close its full D-leaf and S-leaf branches, then its parent cell. The S branch explicitly retains the aligned shared-side slider interval as well as both tilted-vertex branches. The general positive C7 two-square capacity is pursued as a parallel whole branch. The remaining mixed cells then follow in increasing component size.
+
+Every subgate states its exact domain and exit condition. Alternative C7 routes are marked as alternatives; unproved regularity, center-diameter and strict-piercing statements remain unchecked. G4, G5 and the full audit now have explicit assembly and equality substeps. The unrestricted theorem remains open, and the coarse count remains two closed and 56 open.
+
 ## New complete capacities for contact holes and exterior pockets
 
 [CONTACT_RING_HOLE_AREA.md](CONTACT_RING_HOLE_AREA.md) proves, for every simple contact ring of k unit squares with 3<=k<=6, that its unoccupied interior has area at most `(k/4) cot(pi/k)`. The resulting completion capacities for ring sizes 3, 4, 5, 6 are respectively **0, 1, 1, 2**. There is no containing-radius or common-orientation assumption. The proof retains weakly degenerate contact polygons, subtracts the actual inward square pieces, and derives the polygon-area inequality by an exact finite Fourier identity.

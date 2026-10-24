@@ -269,3 +269,12 @@ CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md proves that an exterior pocket of any t
 - [ ] CY.C7.COMPLETE / CY.MIXED.COMPLETE: general C7 and mixed cyclic completion remain open.
 
 The exact comparison for k=5 and the nonnegative winding argument are included in the manuscript. No optimizer, finite parameter cover, Lean compilation or CI run is used. The coarse cyclic count remains two whole cells closed and 56 open; the unrestricted lower bound and equality necessity remain open.
+
+
+## October 23, 2026, 20:28 CDT / October 24, 01:28 UTC — deep ordered roadmap reconciliation
+
+Reconciled the live PR head `f353540845b94fcc7e41e29f8eccf4fffd951af3` against the roadmap. Consolidated DEEP_GATED_ROADMAP.md around the current proved dependency chain, then added the full G3 execution tree: selected planar certificate and uniqueness; exhaustive boundary-only versus mixed split; the exact C7 capacity target and explicitly alternative proof routes; the first complete mixed cell C1.3.b1; full D and S articulation domains; finite semantic refinement contracts for every remaining coarse cell; and sharp parent assembly. G4 universal quantifiers, G5 equality necessity/converse and G6 full-chain audit received deeper exit subgates.
+
+The first active mathematical target is triangle-plus-leaf completion. The aligned S articulation has a full shared-side slider interval, which is not covered by the zero-tilt limits of its two tilted-vertex formulas. This boundary case is retained explicitly. The D branch retains the whole strict slider interval and its selected-normal endpoint explanation. Both require a joint capacity at most four in the two residual regions, not an assumed two-per-region bound.
+
+This commit changes proof planning and status only. It does not close C1.3.b1, C7 completion, any additional coarse cell, T9 or equality. Counts remain two closed and 56 open. Separate agents are working on the entire D branch, entire S branch and entire positive C7 capacity. No Lean compilation or CI was run.

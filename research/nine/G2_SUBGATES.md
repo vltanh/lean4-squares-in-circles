@@ -6,6 +6,12 @@ The reciprocal theorem applies to every physical positive component with exactly
 
 **Verification level:** written hand arguments pending independent full audit and Lean verification. Finite exact regressions are not a universal proof. Historical ledger versions remain in Git. The current canonical contracts are DEEP_GATED_ROADMAP.md and CYCLIC_CELL_LEDGER.md; current progress/evidence is TWO_LOAD_PROGRESS.md.
 
+## Current ordered continuation — October 23, 2026, America/Chicago
+
+The roadmap has been reconciled through `f353540` and expanded into the full **G3 execution tree** in [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md). First assemble the entire four-body triangle-plus-leaf reduction, then close its full D-leaf and S-leaf branches, then its parent cell. The S branch explicitly retains the aligned shared-side slider interval as well as both tilted-vertex branches. The general positive C7 two-square capacity is pursued as a parallel whole branch. The remaining mixed cells then follow in increasing component size.
+
+Every subgate states its exact domain and exit condition. Alternative C7 routes are marked as alternatives; unproved regularity, center-diameter and strict-piercing statements remain unchecked. G4, G5 and the full audit now have explicit assembly and equality substeps. The unrestricted theorem remains open, and the coarse count remains two closed and 56 open.
+
 ## New complete capacities for contact holes and exterior pockets
 
 [CONTACT_RING_HOLE_AREA.md](CONTACT_RING_HOLE_AREA.md) proves, for every simple contact ring of k unit squares with 3<=k<=6, that its unoccupied interior has area at most `(k/4) cot(pi/k)`. The resulting completion capacities for ring sizes 3, 4, 5, 6 are respectively **0, 1, 1, 2**. There is no containing-radius or common-orientation assumption. The proof retains weakly degenerate contact polygons, subtracts the actual inward square pieces, and derives the polygon-area inequality by an exact finite Fourier identity.

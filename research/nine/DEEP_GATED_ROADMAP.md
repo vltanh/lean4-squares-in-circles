@@ -1,55 +1,46 @@
-# n=9: deep ticked roadmap — all trees and two-load completions closed
+# n=9: deep ticked roadmap and ordered proof execution
 
-**Branch:** `research/nine-tablefree-hand`; **PR:** #11, draft.
-**Checkpoint:** 2026-10-24 complete P/Y continuation; source commits are recorded in TWO_LOAD_PROGRESS.md.
+**Branch:** `research/nine-tablefree-hand`; **PR:** #11, draft.  
+**Reconciled source:** `f353540845b94fcc7e41e29f8eccf4fffd951af3`.  
+**Checkpoint:** October 23, 2026, America/Chicago; the append-only evidence log retains explicit UTC provenance.
 
-**The unrestricted lower bound and complete equality classification remain OPEN.** P_ALL_COMPLETION.md and Y_ALL_COMPLETION.md now close the full P and Y families. Together with the exhaustive tree reduction, every selected positive tree component is excluded from a nine-square packing in the declared radius window. P also completes the five-/six-body reduction, excluding every selected positive component with exactly two circle-loaded bodies, including cyclic components. The certificate can now be selected with exactly one positive component and a planar body graph; its 4–9 bodies form a cyclic component with 3–7 noncollinear circle resultants. Every other physical square has zero stress and remains a completion obstacle. The remaining geometric obligations are the general boundary-only C7 completion and mixed components containing a circle-clear body. Two coarse cells remain closed and 56 open. No Lean compilation or CI has been run.
+**T9 and unrestricted equality remain OPEN.** The complete P/Y arguments exclude all selected positive trees and all exactly-two-loaded components from a nine-square packing in the declared radius window. A physical certificate can be selected with **one planar positive component**, all physically circle-touching vertices on its exterior face, and at most 27 positive scalar atoms. The remaining component is cyclic, has 4–9 bodies, and has 3–7 noncollinear circle-loaded resultants. Every other physical square has zero stress and remains in the problem.
 
-This revision consolidates the previous deep plan; its proof sources and historical timestamps remain in Git. Checkboxes describe exact theorem scope, not a proof-completion percentage.
+The remaining lower-bound split is exhaustive: **G3.B**, a boundary-only C7 with two completion squares; or **G3.M**, a mixed cyclic component containing a circle-clear body, with all 9-m completion squares retained. The 58-cell coarse inventory has two whole cells closed and 56 open. Subgate counts are not completion percentages.
 
-## New complete capacities for contact holes and exterior pockets
+## Ordered execution and gate-closing rule
 
-[CONTACT_RING_HOLE_AREA.md](CONTACT_RING_HOLE_AREA.md) proves, for every simple contact ring of k unit squares with 3<=k<=6, that its unoccupied interior has area at most `(k/4) cot(pi/k)`. The resulting completion capacities for ring sizes 3, 4, 5, 6 are respectively **0, 1, 1, 2**. There is no containing-radius or common-orientation assumption. The proof retains weakly degenerate contact polygons, subtracts the actual inward square pieces, and derives the polygon-area inequality by an exact finite Fourier identity.
+| Order | Gate | Exact deliverable | Current state |
+| --- | --- | --- | --- |
+| 1 | G3.M4.0 | Assemble every four-body triangle-plus-leaf core and its complete S/D articulation cover | OPEN assembly; constituent reductions available |
+| 2 | G3.M4.D | All diagonal-leaf cores: exclude five arbitrary completion squares over the full height/radius domain | OPEN; active |
+| 3 | G3.M4.S | All side-normal-leaf cores: aligned shared-side sliders plus both tilted-vertex branches | OPEN; active |
+| 4 | G3.M4.ALL | Combine D/S and their degeneracies; close the entire C1.3.b1 cell | BLOCKED by 2 and 3 |
+| Parallel whole branch | G3.B.CAP | Exclude two arbitrary completion squares for every positive boundary C7 | OPEN; active |
+| 5 | G3.M5–M9 | Process the remaining mixed cells by component size and the finite semantic cover below | OPEN |
+| 6 | G4 | Assemble the unrestricted sharp lower bound with the exact lower-window import | BLOCKED by G3 |
+| 7 | G5 | Necessity and converse for every equality packing, including free centers and rotations | OPEN |
+| 8 | G6–G8 | Full dependency audit, subsequent standard-kernel formalization and integration | NOT COMPLETE |
 
-[CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md](CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md) also proves that the exterior pocket between any touching pair of circle-touching squares is empty in the declared radius window. Simultaneous dilation would create a new circle contact between the unchanged touching pair, contradicting the angular-neighbor theorem. This applies with any number of boundary-touching bodies.
+A gate closes only when its stated universal implication is written, all boundary states are retained, its prerequisites are identified, and the proof is checked. A reduction closes only its own structure statement. A proof of one contact-owner pattern does not close its parent until the other patterns are covered. Alternative proof routes are joined by **OR**, not counted as cumulative obligations or as separate mathematical cases.
 
-- [x] **CY.HOLE.3-6:** complete interior capacities 0, 1, 1, 2; separate hand audits.
-- [x] **CY.OUTERPAIR:** complete empty exterior-pocket theorem; separate hand audits.
-- [ ] **CY.TRIANGLELEAF:** after the triangle hole and touching-boundary-pair pocket are emptied, prove at most four extras in the two remaining articulation/leaf regions jointly.
-- [ ] **CY.C7.COMPLETE / CY.MIXED.COMPLETE:** the general seven-ring and other mixed cyclic capacities remain open.
+The finite cover keeps continuous radii, centers, orientations, contact coordinates and weights as universally quantified variables. It does not turn those domains into angle boxes. A failed proposed normalization is removed from the execution path and recorded as a control.
 
-These are capacity statements for the specified regions. They do not place every remaining square in an interior face or close another entire coarse cell. The count remains two closed and 56 open.
+## Current proved inputs feeding the open gates
 
-## New global reduction: one planar positive component
+| Input | Exact scope | Source |
+| --- | --- | --- |
+| Lower window | Delete one body and import the actual n=8 theorem to obtain R>=79/40; imported table dependencies explicit | LOWER_WINDOW_FROM_EIGHT.md |
+| Physical certificate | Actual shared force points, force and torque balance, strict selected point normals, <=27 atoms | PHYSICAL_CONTACT_STRESS.md |
+| Planar selection and uniqueness | One planar positive body component; all physical circle contacts on the exterior face | PHYSICAL_BODY_GRAPH_UNCROSSING.md; UNIQUE_POSITIVE_COMPONENT.md |
+| Trees and two loads | Every such nine-square completion excluded in the window | TREE_AND_TWO_LOAD_COMPLETION.md |
+| Boundary geometry | At most7 circle-touching bodies; >40-degree center gaps; touching pairs consecutive; all-boundary positive graph=C7 | CYCLIC_GLOBAL_CONTINUATION.md; CENTERED_INNER_ARC.md; CIRCLE_CONTACT_ANGULAR_ORDER.md |
+| Simple cycles | At most8 bodies in a selected simple positive cycle | SIMPLE_POSITIVE_CYCLE_BODY_BOUND.md |
+| C7 localization | Convex force-concurrence polygon containing0; all completion squares lie inside it | C7_FORCE_POLYGON.md; C7_COMPLETION_LOCALIZATION.md |
+| Contact-hole capacity | For k=3,4,5,6, free area <=(k/4)cot(pi/k), hence interior capacities 0,1,1,2 | CONTACT_RING_HOLE_AREA.md |
+| Boundary-pair exterior pocket | Every touching pair of circle-touching squares has an empty exterior pocket in the window | CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md |
 
-[PHYSICAL_BODY_GRAPH_UNCROSSING.md](PHYSICAL_BODY_GRAPH_UNCROSSING.md) constructs a selected physical force-and-torque certificate whose **body-pair graph is planar**, with every physical circle-touching vertex on its exterior face. At a four-square junction, an exact positive force identity replaces crossing opposite-pair contacts by actual shared-side endpoint contacts. Conic thinning restores the at-most-27 scalar-atom bound without restoring a crossing. Strict point-contact normal choices are retained.
-
-[UNIQUE_POSITIVE_COMPONENT.md](UNIQUE_POSITIVE_COMPONENT.md) proves that this selected certificate has **exactly one positive component**. Attach all positive circle atoms as boundary ports. Disjoint plane components have nonalternating ports; force balance gives no gap longer than a semicircle. A second component would have all its ports strictly inside one such gap, contradicting its own balance. The antipodal endpoint case and contact-only components are included.
-
-- [x] **CY.PLANAR:** selected physical body-graph planarity, exterior-face circle contacts, and the original 27-atom bound; independently hand-audited.
-- [x] **CY.UNIQUE:** all positive contact and circle atoms belong to one component; two separate hand audits.
-- [x] **CY.ZERO:** all remaining physical bodies carry zero stress and remain part of the completion problem.
-- [ ] **CY.SHARP:** prove the sharp capacity of the surviving unique cyclic component, including the general C7 and mixed cases.
-
-In the declared radius window this component has 4–9 bodies and 3–7 noncollinear loaded resultants. The four-body triangle-plus-leaf cell remains open. Neither planarity of arbitrary stresses nor planarity of the full physical touching graph is claimed. The coarse count remains two closed and 56 open cells.
-
-## New seven-cycle force geometry and completion localization
-
-[C7_FORCE_POLYGON.md](C7_FORCE_POLYGON.md) proves that every positive boundary-only C7 has a convex polygon of contact-force concurrence points inside its seven actual squares. The polygon contains the origin, its edges follow the positive contact forces through the actual contact points, and loaded vertices are radial to their circle resultants. The proof covers both one- and two-circle-corner bodies and zero-load transmitters; regularity is not assumed.
-
-[C7_COMPLETION_LOCALIZATION.md](C7_COMPLETION_LOCALIZATION.md) then proves that every additional square lies inside that convex polygon. Exterior pockets are empty: simultaneously dilating their extra-square centers away from the neighboring bodies' common contact preserves all separations until an impossible eighth circle contact occurs. The topological argument retains all shared-side contacts and two-circle-corner caps.
-
-- [x] **CY.C7.POLYGON:** complete force-line concurrence and convexity theorem, independently hand-audited.
-- [x] **CY.C7.LOCALIZE:** complete exterior-pocket exclusion and containment of every extra square in the concurrence polygon, with two separate hand audits.
-- [ ] **CY.C7.COMPLETE:** exclude two disjoint unit squares inside that polygon while avoiding the actual seven boundary squares.
-
-These implications do not close the general C7 capacity or change the coarse count of two closed and 56 open cells. Mixed cyclic components also remain open. No Lean compilation or CI has been run.
-
-## New simple-cycle body bound
-
-[SIMPLE_POSITIVE_CYCLE_BODY_BOUND.md](SIMPLE_POSITIVE_CYCLE_BODY_BOUND.md) proves that a selected positive component whose body-pair graph is a simple cycle has at most **eight bodies**. The proof first excludes crossing opposite-pair edges at a four-square junction, derives a Jordan cycle with the physical circle-touching bodies in circular center order, then charges more than 40 degrees to each cycle body through exact transmission-channel bounds. It retains circle-touching bodies with zero circle weight and arbitrary square orientations.
-
-This closes the nine-body **simple-cycle** subfamily. It does not close the entire C1.9.b0 coarse cell, which also includes branching biconnected graphs, or completion of smaller cycles. The whole-cell count remains two closed and 56 open. The manuscript has received two separate hand audits; the complete prerequisite chain and Lean verification remain open.
+These hand manuscripts have different audit histories. The newly reviewed local arguments do not replace G6's full-chain audit. No Lean compilation or CI has been run.
 
 ## Canonical sources and proof-status vocabulary
 
@@ -401,6 +392,202 @@ Source: FOUR_BODY_CYCLIC_CELL_CLOSED.md, commit 05e15a0.
 
 ---
 
+
+## G3 — Deep finite execution tree for the remaining cyclic proof
+
+The labels below refine the **remaining obligations**, not the numerical radius window. Let G be the selected positive body graph on m bodies, H the full physical touching graph on all nine bodies, B the set of physically circle-touching bodies, and L the positive circle-loaded subset. These are four different objects. Every case retains all nine actual squares.
+
+### G3.0 Selected certificate and complete outer split
+
+#### G3.0.P Physical selection [CLOSED hand]
+
+- [x] **G3.0.P.1** Choose compatible strictly exposing normals at every point-only vertex/vertex contact before taking multipliers.
+- [x] **G3.0.P.1.a** At a four-square junction choose opposite normals with matching positive absolute frame coefficients.
+- [x] **G3.0.P.1.b** Avoid radial point normals away from 0; optional diagonal avoidance remains compatible.
+- [x] **G3.0.P.2** Obtain actual force-and-torque-balanced atoms from the physical feasible branch.
+- [x] **G3.0.P.3.a** Replace both crossing opposite-pair forces by nonnegative shared-side endpoint forces at the same junction.
+- [x] **G3.0.P.3.b** Preserve every body's total force and torque and the circle normalization.
+- [x] **G3.0.P.3.c** Re-thin only surviving atom types to <=27; never restore an eliminated crossing.
+- [x] **G3.0.P.4** Embed the selected body graph while retaining all physical circle-corner spokes.
+- [x] **G3.0.P.5.a** Distinct positive components have nonalternating boundary ports.
+- [x] **G3.0.P.5.b** Each balanced port set has all consecutive angular gaps <=pi.
+- [x] **G3.0.P.5.c** A second balanced component cannot fit into one open gap, including the antipodal endpoint case.
+- [x] **G3.0.P.5.d** The support-gap virial identity excludes contact-only components with no circle weight.
+- [x] **G3.0.P.ALL** Exactly one positive component; all other bodies have zero stress.
+
+#### G3.0.S Surviving graph split [CLOSED reduction]
+
+- [x] **G3.0.S.1** Tree components are excluded by TREE.ALL.
+- [x] **G3.0.S.2** Exactly two loaded bodies are excluded by TL.COMPLETE.
+- [x] **G3.0.S.3** Every remaining component has 3–7 noncollinear loaded resultants.
+- [x] **G3.0.S.4** If every positive-component body physically touches the circle, the component is C7 and includes all boundary-touching bodies: go to G3.B.
+- [x] **G3.0.S.5** Otherwise a positive-component body is physically circle-clear: go to G3.M.
+- [x] **G3.0.S.6** Triangular and four-body biconnected components are excluded; a four-body triangle-plus-leaf remains possible: go first to G3.M4.
+- [ ] **G3.0.SHARP** Finish both G3.B and G3.M. The split itself supplies no sharp metric inequality.
+
+### G3.B Boundary-only seven-cycle: complete two-square exclusion [OPEN]
+
+#### G3.B.0 Full premise and closed routing
+
+- [x] **G3.B.0.a** Seven actual circle-touching squares form the positive cycle, in circular order, with arbitrary individual frames.
+- [x] **G3.B.0.b** Retain zero circle multipliers and one/two physical circle-corner states on each body.
+- [x] **G3.B.0.c** At loaded vertices the two contact-force lines concur inside the actual square; clear two-force vertices use their transmission chords.
+- [x] **G3.B.0.d** The concurrence polygon P is convex, contains 0, and follows actual positive contact-force lines.
+- [x] **G3.B.0.e** Every extra square lies inside P and avoids all seven ring-square interiors.
+- [x] **G3.B.0.f** Both remaining squares are physically circle-clear.
+
+#### G3.B.CAP Required terminal theorem
+
+- [ ] **G3.B.CAP.1** For every admissible ring, prove that its entire free completion domain cannot contain two interior-disjoint unit squares.
+- [ ] **G3.B.CAP.1.a** Retain arbitrary centers and independent frames of both extra squares.
+- [ ] **G3.B.CAP.1.b** Use actual square nonoverlap, including extra-to-extra separating axes and all ring obstacles.
+- [ ] **G3.B.CAP.1.c** Include tangencies, parallel sides, shared-side contacts, two-circle-corner bodies and zero-load ring vertices.
+- [ ] **G3.B.CAP.ALL** Conclude total capacity<=8 for this entire boundary-only branch.
+
+#### G3.B.R Routes to CAP — alternatives, not additional geometric cases
+
+**R.PIERCE OR R.DIAM OR R.CLASSIFY OR a direct capacity argument** suffices, provided every extra premise is proved.
+
+- [ ] **G3.B.R.PIERCE.1** Prove0 lies in the **open interior** of every admissible completion square, or prove a common strict piercing point for the entire completion domain.
+- [ ] **G3.B.R.PIERCE.2** If only closed containment of0 is obtained, separately exclude two squares meeting0 only on their boundaries; closed piercing alone is insufficient.
+- [ ] **G3.B.R.DIAM.1** Prove that a contact cycle of at most 7 unit squares enclosing two unit squares has boundary-center diameter>=3, without aligning the inner squares.
+- [ ] **G3.B.R.DIAM.2** Prove that every relevant boundary C7 in the radius window has boundary-center diameter<3. The existing bounds <61/40 on center radii do not imply this.
+- [ ] **G3.B.R.DIAM.3** Combine both proved implications; a far-vertex span>=4 is insufficient for either center-diameter statement.
+- [ ] **G3.B.R.CLASSIFY.1.a** Cover every cyclic assignment of vertex/side and side/side ownership, retaining two-owner/zero-owner transitions.
+- [ ] **G3.B.R.CLASSIFY.1.b** Include selected strict vertex/vertex normals, one/two circle-corner states and zero loads.
+- [ ] **G3.B.R.CLASSIFY.2** Derive an exact stationary recurrence for each entire surviving ownership type.
+- [ ] **G3.B.R.CLASSIFY.3** Classify all periodic solutions, including nonconstant ones and all transition boundaries.
+- [ ] **G3.B.R.CLASSIFY.4** Prove capacity<=1 for every resulting family and prove the cover is exhaustive.
+
+The regular C7 is a completed example with capacity 1, not an exhaustive stationary classification. The local concurrence and support bounds alone do not justify a one-owner assumption. The area theorem for k<=6 does not supply capacity 1 for k=7. No route in this subsection is currently promoted to a proved premise.
+
+### G3.M Mixed cyclic components: universal retained-square target [OPEN]
+
+For each coarse cell C with m positive bodies, prove that every realization with R<sqrt(Q) has no completion by 9-m unit squares. A stronger total-capacity<=8 theorem on the closed window may be used when true. If a cell survives at R=sqrt(Q), retain it for G5 rather than declaring it impossible.
+
+### G3.M4 — First complete mixed cell: C1.3.b1 triangle plus leaf [OPEN]
+
+Name the leaf L0, its articulation A, and the other triangle vertices B0,C0. The positive edges are L0-A, A-B0, B0-C0, C0-A. There are **five** remaining physical squares. The notation L0/B0/C0 denotes bodies, not the loaded-set label L above.
+
+#### G3.M4.0 Assemble the complete core reduction
+
+- [x] **G3.M4.0.a input** A positive leaf is loaded, and its positive edge is a radial bridge.
+- [x] **G3.M4.0.b input** One endpoint of every bridge is physically circle-clear; the loaded leaf is the outer endpoint, so A is circle-clear.
+- [x] **G3.M4.0.c input** An unloaded degree-two body cannot have physically touching neighbors. Thus both triangle tips B0,C0 are loaded.
+- [x] **G3.M4.0.d input** The leaf is exactly radial S or radial D, with the formulas in RADIAL_BRIDGE_AND_LEAF_REDUCTION.md.
+- [ ] **G3.M4.0.e** Assemble the three-load force/torque equations, physical L0-versus-B0/C0 separation, contact-junction cases and the full articulation pose cover in one proof source.
+- [ ] **G3.M4.0.f** Establish the exact routing of every completion square into the triangle hole or the three exterior boundary-port regions.
+- [x] **G3.M4.0.g input** A genuine triangular contact-ring hole has capacity 0.
+- [x] **G3.M4.0.h input** The exterior pocket of the touching circle-boundary pair B0,C0 has capacity 0.
+- [ ] **G3.M4.0.i** Assemble the consequence: all five extra squares must occupy the two remaining articulation/leaf regions, including shared-contact degeneracies.
+- [ ] **G3.M4.0.ALL** Complete reduction with no hidden circle-load, side-owner, symmetry or routing premise.
+
+#### G3.M4.D — Radial diagonal leaf: full open-slider domain
+
+Rotate the radial leaf direction to e_x. Put d=R-sqrt(2). The strict selected normal excludes a point-only vertex/vertex bridge. Hence the articulation has the form
+
+    A=[d-1,d] x [t-1/2,t+1/2],  -1/2<t<1/2,
+
+with bridge point (d,0) in the relative interior of its right side. The physical D leaf remains an obstacle; it is not replaced merely by its force.
+
+- [ ] **G3.M4.D.1 NORMAL FORM** Write the exact derivation and all force/contact equations for this entire domain.
+- [ ] **G3.M4.D.1.a** Retain both signs of t and t=0; a reflection must act on the entire packing and all loads.
+- [ ] **G3.M4.D.1.b** Explain why |t|=1/2 is excluded for this selected certificate and where limiting physical configurations enter the global cover.
+- [ ] **G3.M4.D.2 LOAD TYPES** Cover one/two physical circle-corner states of B0 and C0, with every allowed positive-weight mask.
+- [ ] **G3.M4.D.3 CONTACT TYPES** Cover both owner directions and shared-side/strict point-contact limits at A-B0, A-C0 and B0-C0; derive rather than assume contact locations.
+- [ ] **G3.M4.D.4 TORQUE** Use the common moment of the three cycle edges and the zero bridge moment; include parallel-force and common-junction degeneracies.
+- [ ] **G3.M4.D.5 ROUTING** Apply G3.M4.0 to all five whole extra squares, keeping physical zero-weight contacts.
+- [ ] **G3.M4.D.6 JOINT CAPACITY** Prove at most4 extras in the two remaining regions jointly, or exclude the core throughout the entire radius window.
+- [ ] **G3.M4.D.6.a** If one region can hold3 or more, prove the necessary coupled loss of capacity in the other; do not assume a separate two-per-region bound.
+- [ ] **G3.M4.D.6.b** Retain arbitrary extra frames, every actual separating-axis owner, and tangencies.
+- [ ] **G3.M4.D.ALL** Close every D-leaf realization, not merely a symmetric or narrow-height subclass.
+
+#### G3.M4.S — Radial side-normal leaf: complete aligned/tilted cover
+
+Put d=sqrt(R^2-1/4)-1. The physical leaf is [d,d+1] x [-1/2,1/2], and its bridge applies at p=(d,0). The articulation lies in x<=d and contains p in its right support face. Its complete pose cover has the following three branches; overlaps at symmetry endpoints are harmless.
+
+- **S0: aligned side contact.** A=[d-1,d] x [t-1/2,t+1/2], with -1/2<=t<=1/2. The whole slider interval is retained.
+- **S+: tilted vertex contact.** Choose 0<theta<=pi/4, a=cos(theta), b=sin(theta), and the corresponding side frame; center `(d-(a+b)/2,(a-b)/2)`.
+- **S-: reflected tilted vertex contact.** The reflected frame and center `(d-(a+b)/2,-(a-b)/2)`.
+
+The theta->0 limit of S+/S- gives only t=+/-1/2. It does **not** cover the aligned interior slider heights. The theta=pi/4 duplicate is retained or removed by an explicitly proved square symmetry.
+
+- [ ] **G3.M4.S.1 COVER** Prove that S0/S+/S- exhaust all actual articulation support faces at p.
+- [ ] **G3.M4.S.2.S0** Derive full cycle/bridge balance over the closed aligned slider interval and every B0/C0 load/contact type.
+- [ ] **G3.M4.S.2.S+** Derive the same equations over the full positive-tilt range, with actual contact application points.
+- [ ] **G3.M4.S.2.S-** Supply the full-packing reflection argument or a direct proof for the reflected range.
+- [ ] **G3.M4.S.3 ROUTING** Route every whole extra square into the two retained regions; do not assume0 lies in A.
+- [ ] **G3.M4.S.4 JOINT CAPACITY** For each complete S branch prove joint capacity<=4, or prove core infeasibility in the entire radius window.
+- [ ] **G3.M4.S.4.a** Handle a possible3+2 distribution explicitly through a coupling theorem, rather than an unproved separate bound.
+- [ ] **G3.M4.S.4.b** Include t endpoints, zero tilt, diagonal tilt, two-circle-corner endpoints and all contact degeneracies.
+- [ ] **G3.M4.S.ALL** Assemble S0/S+/S- into the entire S-leaf exclusion.
+
+#### G3.M4.ALL — Whole-cell closure
+
+- [ ] **G3.M4.ALL.1** G3.M4.0 plus D.ALL plus S.ALL cover every selected C1.3.b1 realization.
+- [ ] **G3.M4.ALL.2** At most4 extras contradict the required5, or the alternative full-core exclusions already contradict the premise.
+- [ ] **G3.M4.ALL.3** Audit the full cell, including physically touching pairs with zero selected stress.
+- [ ] **G3.M4.ALL.4** Only then tick C1.3.b1 in CYCLIC_CELL_LEDGER.md and update the component-size lower bound to5.
+
+### G3.M5–M9 — Remaining cells and a finite semantic refinement
+
+After the first cell, process increasing m, using a shared theorem whenever it closes several entire cells. At fixed m, order by bridge count and then the sorted cyclic-block profile. Every open row in CYCLIC_CELL_LEDGER.md is an instance of the contract below. The boundary-only C7 subfamily is discharged only by G3.B; the rest of its coarse row remains in the mixed branch.
+
+#### G3.M.F Finite data that may be split without discretizing poses
+
+For at most nine labeled squares there are finitely many choices of each item below. The centers, side frames, radius, weights and application coordinates remain real variables.
+
+- [ ] **G3.M.F.1 GRAPH** Specify the positive simple graph G and full physical touching graph H with G a subgraph of H; retain the 9-m zero-stress bodies.
+- [ ] **G3.M.F.1.a** Cover every internal biconnected block adjacency and articulation placement allowed by the coarse profile.
+- [ ] **G3.M.F.1.b** Keep only selected plane embeddings and circle-touching vertices on the exterior face, without imposing planarity on H.
+- [ ] **G3.M.F.1.c** Include all bridge arrangements allowed by the four-body central bridge cover.
+- [ ] **G3.M.F.2 LOADS** Specify physical boundary set B and positive load set L subset B, retaining B\L and physically clear positive bodies.
+- [ ] **G3.M.F.2.a** Cover every circle-corner mask and every positive/zero weight mask on its one or two possible boundary corners.
+- [ ] **G3.M.F.2.b** Apply loaded noncontact connectedness, distinct resultant directions, loaded endblocks and the completed two-load exclusion.
+- [ ] **G3.M.F.3 CONTACT FEATURES** For each positive edge retain vertex/side, side/vertex, side/side and point-only vertex/vertex states with actual square features.
+- [ ] **G3.M.F.3.a** Shared sides keep the application coordinate over the entire common segment, including endpoint atoms.
+- [ ] **G3.M.F.3.b** Point-only contacts use the fixed strict normal choices of the selected certificate.
+- [ ] **G3.M.F.3.c** Do not assume a two-force or radial law at a branching nonbridge vertex.
+- [ ] **G3.M.F.4 JUNCTIONS** Cover the finite identifications of contact points and their cyclic square-sector orders; preserve the proved uncrossing convention.
+- [ ] **G3.M.F.5 COMPLETION ROUTING** Specify which actual complementary region contains each zero-stress square's open interior; establish the separating barriers before using this label.
+- [ ] **G3.M.F.5.a** Distinguish genuine holes from drawing faces created only by perturbing a shared junction.
+- [ ] **G3.M.F.5.b** Use capacities 0/1/1/2 only for actual Jordan contact rings of length3/4/5/6.
+- [ ] **G3.M.F.5.c** Empty touching-boundary-pair pockets only after the actual crosscut hypotheses are supplied.
+- [ ] **G3.M.F.5.d** Retain every remaining exterior region and all mutual nonoverlap between its completion squares.
+- [ ] **G3.M.F.COVER** Prove that the chosen finite semantic cases cover the entire coarse cell, with all degeneracies. A list of data types is not a completed geometric cover.
+
+#### G3.M.C Exact closure contract instantiated for every open cell C
+
+- [ ] **C.0 DOMAIN** State the whole continuous realization domain using F.1–F.5 and the original square/circle model.
+- [ ] **C.1 EQUILIBRIUM** Write every body force and torque equation, actual shared support identity and circle normalization; derive all simplifications used later.
+- [ ] **C.2 ROUTING** Account for all nine physical bodies and every possible location of the9-m extras.
+- [ ] **C.3 BOUND** Prove R^2>=Q on the entire domain, or prove no9-body completion exists. A core-only radius bound cannot be substituted when a smaller core genuinely fits below Q.
+- [ ] **C.3.a** If region capacities depend on a common parameter, prove their joint bound before summing them.
+- [ ] **C.3.b** If a projection relaxation is used, verify that it is a necessary implication of actual square separation and sufficient for the asserted contradiction.
+- [ ] **C.3.c** Include every endpoint, load degeneration and shared-support feature transition in the finite cover.
+- [ ] **C.4 EQUALITY** If the cell survives atQ, record the exact saturated inequalities and free parameters; carry it into G5.
+- [ ] **C.5 AUDIT** Check the complete parent implication and its prerequisite chain at the declared scope.
+- [ ] **C.ALL** Tick the coarse row only after C.0–C.5 are complete. A uniform theorem may discharge several rows at once with explicit instantiations.
+
+#### G3.M.R Completion ordering by body count
+
+- [ ] **G3.M5.ALL** All remaining mixed cells with m=5 and four completion squares.
+- [ ] **G3.M6.ALL** All remaining mixed cells with m=6 and three completion squares.
+- [ ] **G3.M7.ALL** All mixed cells with m=7 and two completion squares; separate the already-defined boundary C7 branch.
+- [ ] **G3.M8.ALL** All mixed cells with m=8 and one completion square; a simple cycle is still allowed by the size theorem.
+- [ ] **G3.M9.ALL** All mixed cells with m=9 and no completion squares; simple cycles are excluded, branching cyclic graphs remain.
+- [ ] **G3.M.ALL** Combine the completed four-body cell and M5–M9, preserving every equality survivor.
+
+### G3.ALL — Sharp coverage exit
+
+- [ ] **G3.ALL.1** Every selected positive certificate is covered by G3.0, with no unproved global frame or origin-containment assumption.
+- [ ] **G3.ALL.2** G3.B.CAP excludes the full boundary-only branch.
+- [ ] **G3.ALL.3** G3.M.ALL gives the sharp bound or exclusion for every mixed branch.
+- [ ] **G3.ALL.4** All radius-window and imported-theorem dependencies are explicit, and no physical square was discarded.
+- [ ] **G3.ALL** Pass a complete sharp-coverage theorem to G4. This gate is OPEN.
+
+---
+
 ## G2.O3.3 / O4 / O5 — Global sharp coverage [OPEN]
 
 - [x] **O3.3.T** Every remaining tree realization is in P or Y after the closed origin cases.
@@ -415,11 +602,20 @@ Source: FOUR_BODY_CYCLIC_CELL_CLOSED.md, commit 05e15a0.
 ## G2.X / G4 — Unrestricted radius [BLOCKED]
 
 - [x] **X.1** A subcritical packing has an unrestricted minimizing stress.
-- [x] **X.2** Tree-present versus all-components-cyclic is a complete outer split, with all physical bodies retained.
+- [x] **X.2** The selected unique component is either a tree or cyclic; the tree branch is closed and the remaining cyclic branch splits into G3.B or G3.M, with all physical bodies retained.
 - [ ] **X.3** Supply the missing sharp contradiction for the general C7 and mixed cyclic branches. The declared lower-window input is assembled in G0.W.2.
 - [x] **G4.1** Exact construction gives the upper bound.
 - [ ] **G4.2** Establish R9>=sqrt(Q) from original Packing only.
+- [ ] **G4.2.a** Start from the original nine-square Packing predicate and obtain a compact minimizer with no extra orientation/contact hypothesis.
+- [ ] **G4.2.b** Use the construction to place the minimum at or below sqrt(Q); use physical deletion and the exact n=8 import for its lower window.
+- [ ] **G4.2.c** Select the simultaneous strict-normal, planar, unique positive certificate; verify all later reductions use this same allowable selection.
+- [ ] **G4.2.d** Apply the completed tree/two-load exclusions and the complete G3.B/G3.M split.
+- [ ] **G4.2.e** Derive R_min^2>=Q, retaining every zero-stress square in the invocation of the sharp completion theorem.
+- [ ] **G4.2.f** Transfer the minimum bound to every original packing radius by minimality and nonnegativity.
 - [ ] **G4.3** Match the existing nonnegative-radius/Optimum interface.
+- [ ] **G4.3.a** Keep the existing definitions of unit square, closed containment and interior-disjointness unchanged.
+- [ ] **G4.3.b** Pair the universal lower bound with the exact Q construction and identify the nonnegative optimal radius.
+- [ ] **G4.3.c** Publish the precise dependency list, including whether the optional independent coarse lower bound W.3 has replaced the n=8 import.
 
 ## G5 — Every equality packing [PARTIAL]
 
@@ -429,7 +625,19 @@ Source: FOUR_BODY_CYCLIC_CELL_CLOSED.md, commit 05e15a0.
 - [ ] **G5.1** After optimality is proved, apply the necessary reductions to EACH original Q packing, not just a replacement minimizer.
 - [ ] **G5.2** Characterize every surviving sharp cyclic/equality branch and its zero-weight limits.
 - [ ] **G5.3** Provide concise exact necessary-and-sufficient domains for all free centers/angles.
+- [ ] **G5.1.a** Once G4 is proved, each original packing atQ is itself minimizing; select its certificate without replacing its physical configuration.
+- [ ] **G5.1.b** Retain every equality-compatible signature, including zero stress weights and additional physical contacts.
+- [ ] **G5.2.a** Trace equality through each sharp metric inequality used by G3, rather than inferring it from numerical examples.
+- [ ] **G5.2.b** Record exactly which stressed positions and frames are forced in each surviving branch.
+- [ ] **G5.2.c** Prove the list of equality skeletons exhaustive; the known long/short anchors are conditional inputs until extracted in every surviving branch.
+- [ ] **G5.3.a** Derive the exact domains of all unstressed centers and frames around each proved skeleton.
+- [ ] **G5.3.b** Include every parameter endpoint, sliding freedom and genuinely rotated free square.
+- [ ] **G5.3.c** Prove the converse for every stated parameter value using original containment and physical nonoverlap.
+- [ ] **G5.3.d** Give an explicit parameterization or reduced exact domain; do not merely rename the original unrestricted nine-square feasibility problem.
 - [ ] **G5.4** Use the actual rotation/relabeling/reflection convention; do not claim a rigid isolated pose when continuous freedoms exist.
+- [ ] **G5.4.a** Allow overlapping parameter charts when needed; specify the symmetry relation rather than assuming unique chart representatives.
+- [ ] **G5.4.b** Check the oblique-only, nonstratified, capless and two-stack equality controls against the complete classification.
+- [ ] **G5.ALL** State and prove the unrestricted if-and-only-if equality theorem.
 
 ## G6 — Independent audit and exact evidence [NOT COMPLETED]
 
@@ -445,14 +653,20 @@ Source: FOUR_BODY_CYCLIC_CELL_CLOSED.md, commit 05e15a0.
 - [x] **G6.R3 evidence controls** Three-loaded Y has nonzero reciprocal area; an abstract wrong-order vector graph has cancelling positive/negative areas; five/six-body two-load survivors show why component completion remains necessary.
 - [ ] **G6.4** Independent full manuscript audit is not replaced by those finite executions. Correct report transcription is pinned at commit 4843058; its data are not a general certificate.
 - [ ] **G6.5** Consolidate the final unrestricted dependency proof only once sharp parent gates close.
+- [ ] **G6.5.a** Pin one source version for every used lemma and check that its hypotheses are supplied at each invocation.
+- [ ] **G6.5.b** Verify that normal choices, uncrossing and sparsification preserve all properties subsequently used together.
+- [ ] **G6.5.c** Recheck physical holes versus drawing faces, limiting winding, and boundary-versus-open-interior exclusions.
+- [ ] **G6.5.d** Check all finite-cover transitions, especially the full aligned S slider branch and strict D endpoint exclusions.
+- [ ] **G6.5.e** Confirm that every parent marked closed has a universal proof over its declared continuous domain.
+- [ ] **G6.5.f** Audit equality necessity separately from the strict subcritical contradiction and from equality sufficiency.
 
-## G7 — Standard Lean kernel / Palomar proof [NOT STARTED]
+## G7 — Standard Lean kernel / Palomar proof [DEFERRED; NOT STARTED]
 
 - [ ] **G7.1** Exact original geometry, construction and equality types, without stronger Packing semantics.
 - [ ] **G7.2** Compactness, active-gradient/conic arguments, physical stress and planar vector-flow lemmas using proved standard dependencies.
 - [ ] **G7.3** Formalize the actual exhaustive sharp physical completion proof, not assumed normal forms or finite sampled cases.
 - [ ] **G7.4** Equality necessity and sufficiency.
-- [ ] **G7.5** Compile, inspect axioms/dependencies and independently replay in the standard kernel. No native-kernel bypass, admission or undisclosed oracle.
+- [ ] **G7.5 DEFERRED** After the hand proof and draft formalization are complete, compilation/kernel replay requires a later instruction changing the current no-compilation/no-CI constraint. No native-kernel bypass, admission or undisclosed oracle.
 
 ## G8 — Integration [NOT STARTED]
 
@@ -465,11 +679,11 @@ Source: FOUR_BODY_CYCLIC_CELL_CLOSED.md, commit 05e15a0.
 
 1. P.ALL, Y.ALL, TREE.ALL and TL.COMPLETE are CLOSED hand at their stated scopes. Keep the general C7 and mixed 3–7-loaded cyclic completion obligations OPEN.
 2. The 58 coarse cells now have **two whole-cell exclusions and 56 open rows**. Do not confuse subfamily restrictions with parent closure.
-3. Use the reciprocal and boundary-order reductions to attack the general seven-cycle completion and cyclic components containing circle-clear bodies. Do not create finer angle boxes merely to increase checked-gate counts.
+3. Follow the ordered G3 execution tree: assemble C1.3.b1, close its entire D and S branches, then its parent; pursue the entire C7 capacity in parallel; continue the remaining mixed cells by component size. Use shared uniform arguments whenever possible. Do not create angle boxes merely to increase checked-gate counts.
 4. Preserve exact physical negative controls and every unstressed completion body.
 5. Commit finished arguments promptly and log UTC provenance, exact quantifiers, finite evidence and unchanged global blockers in TWO_LOAD_PROGRESS.md or a subsequent append-only checkpoint.
 6. If a proposed reduction fails, retain the exact witness and revise it; do not defend a false stronger normalization by shrinking the domain indefinitely.
-7. T9 remains open. All newly checked general results are hand manuscripts pending independent audit; no Lean or CI success is claimed.
+7. T9 remains open. The newest local manuscripts have passed separate hand audits, while G6 full-chain audit remains open. No Lean or CI success is claimed.
 
 
 **Completion-continuation review:** the cap endpoint algebra, half-disk separating-axis proof, six-body cap coupling, singleton torque bound and five-body vertex routing received separate hand checks during this continuation. This is local review of the new implications, not a completed G6 audit of the full dependency chain. No Lean build or CI was run.
