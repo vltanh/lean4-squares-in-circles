@@ -1,6 +1,6 @@
 # Ten unit squares in a circle
 
-Research checkpoint: 2026-10-23 (UTC), based on main commit
+Research checkpoint: 2026-10-25 (UTC), based on main commit
 `4bea747b3efa13c869b956cb28435efaf21526fa`.
 
 Resume from [HANDOFF.md](HANDOFF.md) for the current proof gaps, next steps,
@@ -37,10 +37,13 @@ the known bound, not a lower-bound proof.
 | Eight exterior squares force four anchors; the exactly-two-central case is closed | [Sharp exterior ring](SHARP_EXTERIOR_RING.md) | Arbitrary orientations; no common separating frame assumed |
 | Eight centers outside the open unit disk force four anchors | [Center-radius reduction](CENTER_RADIUS_REDUCTION.md) | Arbitrary orientations; a smaller ten-packing must have exactly 3, 4, or 5 centers in the open unit disk |
 | A square's arc cost bounds its center's squared radius | [Inner arc moment](INNER_ARC_MOMENT.md) | Hand proof; the proposed five-center moment bound remains open |
+| An inner center of norm at least `.9` costs more than `pi/6` on the test circle | [Large inner arc](LARGE_INNER_ARC.md) | Hand proof; at most two such centers in the four-inner case and at most one in the three-inner case |
 | Five inner centers either form the aligned plus or a strict convex pentagon | [Moment reductions](FIVE_CENTER_MOMENT_REDUCTIONS.md) | Hand proof; independent outward radial translations preserve disjointness |
 | Four inner squares have hull width at least two in every direction | [Four-center width](FOUR_CENTER_WIDTH.md) | Hand proof; does not yet exclude six outer squares |
 | Three squares wholly inside the test circle almost fill a smaller circle | [Three-core stability](THREE_CORE_INNER_STABILITY.md) | Hand proof with an explicit no-protrusion hypothesis |
 | Two or three origin-vertex squares bound total capacity by nine or eight | [Origin-vertex capacity](THREE_ORIGIN_VERTEX_SQUARES.md) | Hand proof for squared containing radius at most `17/4` |
+| One origin-vertex square plus three radial side terminals bounds capacity by nine | [One-origin capacity](ONE_ORIGIN_VERTEX_THREE_TERMINALS.md) | Hand proof at squared radius `17/4` |
+| An aligned two-by-two block translated along a side direction admits at most five further squares | [Translated-block obstruction](TRANSLATED_BLOCK_OBSTRUCTION.md) | Hand proof with the four core centers in the closed unit disk; remaining orientations arbitrary |
 | Five centers in the closed unit disk are impossible for a ten-packing | [Radial weight certificate](RADIAL_WEIGHT_EXCLUSION.md), [integer checker](check_radial_weight_exclusion.py) | **Computer-assisted** reduction; not a hand proof |
 | Four inner centers must split into two norms at most `.65` and two above `.9` | [Radial count localization](RADIAL_COUNT_LOCALIZATION.md), [integer checker](check_radial_count_localization.py) | **Computer-assisted**, conditional on exactly four inner centers |
 | Sharp lower bound from four anchors | [Four-anchor bound](FOUR_ANCHOR_BOUND.md) | Four common-frame squares with the stated coordinate gaps |
@@ -105,6 +108,13 @@ remaining counts are three and four. An analytic replacement is still needed
 for a wholly hand proof: the inner-arc moment theorem would provide one if
 the explicitly stated five-center moment inequality is proved. Neither the
 certificate nor the conditional moment argument closes the other two cases.
+
+The [large-inner-arc lemma](LARGE_INNER_ARC.md) replaces one branch of the
+radial-count argument by hand. A proposed unrestricted bound of five usable
+outer arcs around four inner squares is false: the exact
+[gap obstruction](FOUR_CORE_GAP_OBSTRUCTION.md) allows six abstract arcs.
+The [translated-block theorem](TRANSLATED_BLOCK_OBSTRUCTION.md) nevertheless
+excludes every core in its specified class using the actual center geometry.
 
 A [rational six-square example](SIX_CENTRAL_SQUARES.md) rules out the shortcut
 that at most four or five squares can meet the small disk. It is not a

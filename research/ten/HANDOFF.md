@@ -1,4 +1,4 @@
-# n=10 research handoff — 2026-10-23
+# n=10 research handoff — updated 2026-10-25
 
 PR: <https://github.com/vltanh/lean4-squares-in-circles/pull/12>  
 Branch: `research/ten-exact-start`  
@@ -45,7 +45,13 @@ is also open outside the completed cases.
    two center norms at most `.65` and two strictly above `.9`. Neither result
    alone excludes six outer squares. A proposed route is to bound the number
    of disjoint `pi/4` arcs that fit in the complement of the four core traces
-   on the test circle; this bound is **unproved**.
+   on the test circle under the two-small/two-large localization. The version
+   without localization is false; see [FOUR_CORE_GAP_OBSTRUCTION.md](FOUR_CORE_GAP_OBSTRUCTION.md).
+   [TRANSLATED_BLOCK_OBSTRUCTION.md](TRANSLATED_BLOCK_OBSTRUCTION.md) closes
+   the exact aligned two-by-two block class translated along a side direction.
+   Also [LARGE_INNER_ARC.md](LARGE_INNER_ARC.md) proves by hand that at least
+   two of four inner centers have norm strictly less than `.9`, and at most
+   one of three inner centers has norm at least `.9`.
 3. **Five inner centers, for a wholly hand proof.** The computer-assisted
    [radial-weight exclusion](RADIAL_WEIGHT_EXCLUSION.md) already excludes this
    case. An analytic replacement would follow from the proposed inequality
@@ -66,6 +72,9 @@ is also open outside the completed cases.
 5. **Contact-stress route.** [PHYSICAL_TREE_REDUCTIONS.md](PHYSICAL_TREE_REDUCTIONS.md)
    gives conditional graph reductions. [THREE_ORIGIN_VERTEX_SQUARES.md](THREE_ORIGIN_VERTEX_SQUARES.md)
    closes two specified physical tree families at squared radius `17/4`.
+   [ONE_ORIGIN_VERTEX_THREE_TERMINALS.md](ONE_ORIGIN_VERTEX_THREE_TERMINALS.md)
+   also closes the side-plus-vertex family with at least three radial side
+   terminals. Its two-terminal boundary is still a staggered-chain case.
    There is no exhaustive classification of a ten-square minimizer here.
    In particular, do not extend the n=9 tree inventory's smaller radius
    window to `9/2` without redoing its inequalities. Exploration found a
