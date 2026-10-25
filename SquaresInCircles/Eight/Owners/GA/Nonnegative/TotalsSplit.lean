@@ -1,0 +1,152 @@
+module
+
+public import SquaresInCircles.Eight.Owners.GA.Nonnegative.TotalsBalanced
+public import SquaresInCircles.Eight.Owners.GA.Nonnegative.TotalsEndpoints
+public import SquaresInCircles.Eight.Owners.GA.Two.PositiveSplit
+
+/-!
+# Eight squares: the actual fixed-theta split with the independent E total
+
+The coefficient norm
+retains negative angle delta = theta + e, while the tilted multiplier
+moves with theta - a. These two angles are not identified. The existing
+concavity theorem admits exactly these independent arguments and keeps
+the min/max coefficient transition and the original A support join.
+-/
+
+@[expose] public section
+noncomputable section
+open Set
+namespace SquaresInCircles.Eight.GlobalGA.NonnegativeTotals.Analytic
+open Secondary PositiveAngularEnvelope OrdinaryAngleConcavity
+
+def fixedPart (k l c theta e : ℝ) (i : Fin 3) : ℝ :=
+  k+(5/2)*l+2-fullSupport 1 k-fullSupport l k-fullSupport 1 c+
+    TwoPositive.ASupport.charge e+(![V R k 1 (theta+e),V R k l (theta+e),0] i)
+def coefficientAngle (t : ℝ) (i : Fin 3) : ℝ := if i=2 then t else 0
+def coefficientCosine (t : ℝ) (i : Fin 3) : ℝ := if i=2 then Real.cos t-1 else 0
+
+theorem split_form {k l c theta e a : ℝ} (i : Fin 3)
+    (hθ : theta∈Icc 0 frameCap) (ha : a∈Icc 0 theta) :
+    largeScalar k l c theta e a i=fixedPart k l c theta e i+
+      (TwoPositive.Coefficient.H l (-coefficientAngle (theta+e) i) 0
+        (coefficientCosine (theta+e) i) (PositiveTD.tilted c (theta-a))+
+          TwoPositive.Split.rest c l theta a) := by
+  have hz := (TwoPositive.Split.split_domain hθ ha).2
+  have hsmooth := TwoPositive.Split.smooth_actual (c:=c) hz
+  rw [largeScalar,fullBaseline,fullSupport_pair l (PositiveTD.tilted c (theta-a))]
+  simp only [fixedPart,TwoPositive.Coefficient.H,TwoPositive.Split.rest,hsmooth]
+  fin_cases i
+  · change _+negative k l (PositiveTD.tilted c (theta-a)) (theta+e) 0=
+      _+V R k 1 (theta+e)+((3/2)*_+0*_+(if (0:Fin 3)=2 then Real.cos (theta+e)-1 else 0)*_-
+        R*pairNorm l _ (-(if (0:Fin 3)=2 then theta+e else 0))+_)
+    simp only [negative,Fin.isValue,Matrix.cons_val_zero,Fin.reduceEq,↓reduceIte,neg_zero]
+    ring
+  · change _+negative k l (PositiveTD.tilted c (theta-a)) (theta+e) 1=
+      _+V R k l (theta+e)+((3/2)*_+0*_+(if (1:Fin 3)=2 then Real.cos (theta+e)-1 else 0)*_-
+        R*pairNorm l _ (-(if (1:Fin 3)=2 then theta+e else 0))+_)
+    simp only [negative,Fin.isValue,Matrix.cons_val_one,Matrix.cons_val_zero,Fin.reduceEq,
+      ↓reduceIte,neg_zero]
+    ring
+  · change _+negative k l (PositiveTD.tilted c (theta-a)) (theta+e) 2=
+      _+0+((3/2)*_+0*_+(if (2:Fin 3)=2 then Real.cos (theta+e)-1 else 0)*_-
+        R*pairNorm l _ (-(if (2:Fin 3)=2 then theta+e else 0))+_)
+    simp only [negative,Fin.isValue,↓reduceIte]
+    change _+V R (min l (PositiveTD.tilted c (theta-a))) (max l (PositiveTD.tilted c (theta-a)))
+      (theta+e)=_
+    rw [V,pairNorm_min_max,pairNorm_min_max]
+    ring
+
+theorem coefficient_angle_domain {t : ℝ} (ht : t∈Icc 0 frameCap) (i : Fin 3) :
+    coefficientAngle t i∈Icc 0 frameCap ∧
+    coefficientCosine t i≤0 ∧ Real.cos (coefficientAngle t i)-1≤coefficientCosine t i := by
+  by_cases hi : i=2
+  · simp only [coefficientAngle,coefficientCosine,hi,↓reduceIte]
+    exact ⟨ht,by linarith [Real.cos_le_one t],le_rfl⟩
+  · simp only [coefficientAngle,coefficientCosine,hi,↓reduceIte,Real.cos_zero,sub_self]
+    exact ⟨⟨le_rfl,by norm_num [frameCap]⟩,le_rfl,le_rfl⟩
+
+theorem largeScalar_concave (r : Region) (i : Fin 3) {x y : ℝ}
+    (hd : Explicit.Domain r x y) :
+    ConcaveOn ℝ (Icc 0 (Explicit.theta r x y))
+      (fun a => largeScalar (Explicit.k r x y) (Explicit.l r x y) (Explicit.c r x y)
+        (Explicit.theta r x y) (Explicit.e r x y) a i) := by
+  have hb := Explicit.base_bounds r hd
+  have hθ := (Explicit.domains hd).1
+  have hδ : Explicit.delta r x y∈Icc 0 frameCap :=
+    ⟨by linarith [(Explicit.domains hd).2.2.1],(Explicit.domains hd).2.2.2⟩
+  have hs := coefficient_angle_domain hδ i
+  have hm (a : ℝ) (ha : a∈Icc 0 (Explicit.theta r x y)) :
+      PositiveTD.tilted (Explicit.c r x y) (Explicit.theta r x y-a)∈
+        Icc ((2/3)*Explicit.l r x y) ((23/20)*Explicit.l r x y) := by
+    have hh := Explicit.tilted_ratio r hd
+      (show Explicit.theta r x y-a∈Icc 0 (Explicit.theta r x y) from
+        ⟨by linarith [ha.2],by linarith [ha.1]⟩)
+    exact ⟨hh.1.le,hh.2.le⟩
+  have hl0 := hb.l_positive
+  have hc := TwoPositive.Split.high_scalar_concave
+    hb.l_positive hb.c_lower_ratio hb.c_upper_ratio hθ hs.1
+    (show 0<(2/3)*Explicit.l r x y by positivity) le_rfl
+    hs.2.1 hs.2.2 hm
+  refine ⟨hc.1,?_⟩
+  intro a ha b hb' u v hu hv huv
+  have hcomb := hc.1 ha hb' hu hv huv
+  have hh := hc.2 ha hb' hu hv huv
+  simp only [smul_eq_mul] at hh hcomb ⊢
+  rw [split_form i hθ ha,split_form i hθ hb',split_form i hθ hcomb]
+  have he : Explicit.delta r x y=Explicit.theta r x y+Explicit.e r x y := rfl
+  rw [he] at hh
+  have hconst := congrArg (fun t : ℝ => t*fixedPart
+    (Explicit.k r x y) (Explicit.l r x y) (Explicit.c r x y)
+    (Explicit.theta r x y) (Explicit.e r x y) i) huv
+  simp only [add_mul,one_mul] at hconst
+  linear_combination hh+hconst
+
+theorem large_scalar_positive (r : Region) (i : Fin 3) {x y a : ℝ}
+    (hd : Explicit.Domain r x y) (ha : a∈Icc 0 (Explicit.theta r x y)) :
+    0<largeScalar (Explicit.k r x y) (Explicit.l r x y) (Explicit.c r x y)
+      (Explicit.theta r x y) (Explicit.e r x y) a i := by
+  have hleft : 0<largeScalar (Explicit.k r x y) (Explicit.l r x y) (Explicit.c r x y)
+      (Explicit.theta r x y) (Explicit.e r x y) 0 i := by
+    have h := endpoint_positive r .atT i hd
+    rw [endpoint] at h
+    exact h
+  have hright : 0<largeScalar (Explicit.k r x y) (Explicit.l r x y) (Explicit.c r x y)
+      (Explicit.theta r x y) (Explicit.e r x y) (Explicit.theta r x y) i := by
+    have h := endpoint_positive r .atA i hd
+    rw [endpoint] at h
+    exact h
+  have hc := largeScalar_concave r i hd
+  have hh := concave_gt_of_endpoints hc ⟨ha.1,ha.2⟩ hleft hright
+  exact hh
+
+def concentrationScalar (k l c theta e a : ℝ) (i j : Fin 4) : ℝ :=
+  fullBaseline k l c (theta-a)+l*TwoPositive.ASupport.charge a+
+    TwoPositive.ASupport.charge e+
+      TwoPositive.endpoint k l (PositiveTD.tilted c (theta-a)) (theta+e) i j
+
+theorem large_concentration_positive (r : Region) {x y a : ℝ}
+    (hd : Explicit.Domain r x y) (ha : a∈Icc 0 (Explicit.theta r x y)) (i j : Fin 4) :
+    0<concentrationScalar (Explicit.k r x y) (Explicit.l r x y) (Explicit.c r x y)
+      (Explicit.theta r x y) (Explicit.e r x y) a i j := by
+  have h0 := large_scalar_positive r 0 hd ha
+  have h1 := large_scalar_positive r 1 hd ha
+  have h2 := large_scalar_positive r 2 hd ha
+  have hmin : 0<fullBaseline (Explicit.k r x y) (Explicit.l r x y) (Explicit.c r x y)
+      (Explicit.theta r x y-a)+
+      Explicit.l r x y*TwoPositive.ASupport.charge a+TwoPositive.ASupport.charge (Explicit.e r x y)+
+      TwoPositive.balancedEnvelope (Explicit.k r x y) (Explicit.l r x y)
+        (PositiveTD.tilted (Explicit.c r x y) (Explicit.theta r x y-a)) (Explicit.delta r x y) := by
+    unfold TwoPositive.balancedEnvelope
+    rw [add_min,add_min]
+    exact lt_min h0 (lt_min h1 h2)
+  have hh := Explicit.balanced_endpoint r hd
+    (show Explicit.theta r x y-a∈Icc 0 (Explicit.theta r x y) from
+      ⟨by linarith [ha.2],by linarith [ha.1]⟩) i j
+  rw [Explicit.tilted_eq] at hh
+  dsimp only [concentrationScalar]
+  have he : Explicit.theta r x y+Explicit.e r x y=Explicit.delta r x y := rfl
+  rw [he]
+  linarith
+
+end SquaresInCircles.Eight.GlobalGA.NonnegativeTotals.Analytic

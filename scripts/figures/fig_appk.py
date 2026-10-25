@@ -5,17 +5,17 @@ files in docs/proof/figures/appendix-k/.
     python3 scripts/figures/fig_appk.py
 
 The arcs of the circles about o in a square are computed exactly, from the
-crossings of each circle with the sides; the polynomials of Lemma K.4 and their
-Bernstein coefficients in exact rational arithmetic; the blocked directions of
-Lemma K.5 from their definition. Each drawing asserts the facts its caption
-states.
+crossings of each circle with the sides; the polynomials of Lemma K.4, their
+completed square and their tangent parabola in exact rational arithmetic; the
+blocked directions of Lemma K.5 from their definition. Each drawing asserts
+the facts its caption states.
 """
 import math
 from fractions import Fraction as Fr
 
-from proof_figures import Figure, INK, FAINT, COLORS, FILLS, GREY, sb, u
+from proof_figures import Figure, Graph, INK, FAINT, COLORS, FILLS, GREY, sb, u
 from fig_front import it, NB, RED, RED_FILL, polyline
-from fig_eight import halo_text, core_disk, origin, add, mul, sub, dot, norm
+from fig_appj import halo_text, core_disk, origin, add, mul, sub, dot, norm
 
 PI = math.pi
 BLUE, ORANGE, GREEN, PURPLE, PINK, CYAN, YELLOW = COLORS
@@ -256,91 +256,144 @@ def band_polys(A0, Cm, Cp, Dd):
     return P, V
 
 
-def bernstein(a, l, r):
-    """The Bernstein coefficients of the polynomial a on [l, r]."""
-    n = len(a) - 1
-    # substitute u = l + (r - l) v
-    out = [Fr(0)]
-    for coeff in reversed(a):
-        out = padd(pmul(out, [l, r - l]), [coeff])
-    out += [Fr(0)] * (n + 1 - len(out))
-    return [sum(out[j] * math.comb(k, j) / math.comb(n, j) for j in range(k + 1))
-            for k in range(n + 1)]
-
-
 SEGMENT = (Fr(1, 2), Fr(11, 12), Fr(11, 12), Fr(7, 20))
 LAMBDA_A = Fr(10007, 10000)
 BAND_A = (Fr(5007, 10000), LAMBDA_A * Fr('0.9308368'),
           LAMBDA_A * Fr('0.9308369'), LAMBDA_A * Fr('0.365435'))
-# Table K.2, in units of 1e-6: the rows used by the figures
-TABLE_SEGMENT_P = {(Fr(0), Fr(1, 4)): [8011, 14261, 20852, 24921, 25307, 22675,
-                                       18731],
-                   (Fr(1, 4), Fr(1, 2)): [18731, 14787, 9532, 4674, 2967, 7433,
-                                          19695],
-                   (Fr(1, 2), Fr(1)): [19695, 44218, 99921, 199778, 334345,
-                                       418333, 180000]}
-TABLE_SEGMENT_V = {(Fr(0), Fr(3, 14)): [150000, 105357, 66071, 39112, 29658],
-                   (Fr(3, 14), Fr(3, 7)): [29658, 20203, 28253, 58985, 115785]}
-TABLE_BAND_A_P = {(Fr(7, 16), Fr(1, 2)): [1375, 566, 120, 76, 471, 1339, 2709]}
+LAMBDA_B = Fr(41, 40)
+BAND_B = (Fr(107, 200), LAMBDA_B * Fr('0.9286'), LAMBDA_B * Fr('0.9287'),
+          LAMBDA_B * Fr('0.371'))
 
 
-def check_rows(poly, table):
-    out = {}
-    for (l, r), bounds in table.items():
-        b = bernstein(poly, l, r)
-        assert len(b) == len(bounds)
-        for bk, lb in zip(b, bounds):
-            assert lb <= bk * 10 ** 6 < lb + 1, (float(bk * 10 ** 6), lb)
-        out[(l, r)] = b
+def pderiv(a):
+    return [k * a[k] for k in range(1, len(a))]
+
+
+def remainder_form(P, u0):
+    """c0, b and the coefficients of R with P = c0 + b (u - u0) + R (u - u0)^2,
+    from the expansion of P about u0."""
+    Q = [Fr(0)]
+    for coeff in reversed(P):            # P(u0 + v) as a polynomial in v
+        Q = padd(pmul(Q, [u0, Fr(1)]), [coeff])
+    R = Q[2:]                            # R(u0 + v) in v
+    Ru = [Fr(0)]
+    for coeff in reversed(R):            # back to the variable u
+        Ru = padd(pmul(Ru, [-u0, Fr(1)]), [coeff])
+    return Q[0], Q[1], Ru
+
+
+# The rational forms of the sextics: the segment, and the bands with the
+# rational constants (C-, D) that bound those of Table K.1.
+SEXTICS = [('segment', SEGMENT[1], SEGMENT[3], Fr(2, 5), Fr(1, 200),
+            Fr(1009541, 156250000), -Fr(11807, 11718750),
+            [Fr(80651), Fr(5361332), Fr(5659640), Fr(24865400),
+             Fr(41159875)], Fr(11250000)),
+           ('band A', Fr(23287, 25000), Fr(3657, 10000), Fr(7, 15),
+            Fr(8, 25), Fr(1127543919953, 3559570312500000),
+            Fr(304816277161, 26367187500000),
+            [Fr(2036745397849), Fr(1029147845214), Fr(8456151284640),
+             Fr(16795576114200), Fr(23166664513875)], Fr(6328125000000)),
+           ('band B', Fr(4759, 5000), Fr(3803, 10000), Fr(1, 2), Fr(11, 25),
+            Fr(1608241, 320000000), -Fr(21358779, 400000000),
+            [Fr(179518421), Fr(38557484), Fr(660186260), Fr(1133199440),
+             Fr(1465310704)], Fr(400000000))]
+
+
+def check_sextics():
+    """The identities and the reserves of the sextics of Section K.3, and the
+    monotone comparison with the constants of Table K.1."""
+    one = [Fr(1)]
+    for name, Cm, Dd, u0, a, c0, b, Rc, Rd in SEXTICS:
+        P = band_polys(Fr(0), Cm, Fr(0), Dd)[0]
+        # R(u) = (r0 + r1 u + r2 u(1 - u) + r3 u^2(1 - u) + r4 u^2(1 - u^2))/Rd
+        R = padd(padd(padd([Rc[0]], [Fr(0), Rc[1]]),
+                      pscale(Rc[2], [Fr(0), Fr(1), Fr(-1)])),
+                 padd(pscale(Rc[3], [Fr(0), Fr(0), Fr(1), Fr(-1)]),
+                      pscale(Rc[4], [Fr(0), Fr(0), Fr(1), Fr(0), Fr(-1)])))
+        R = pscale(1 / Rd, R)
+        c0x, bx, Rx = remainder_form(P, u0)
+        assert (c0x, bx) == (c0, b)
+        assert padd(Rx, pscale(-1, R)) == [0] * max(len(Rx), len(R))
+        assert Rc[0] / Rd >= a > 0 and all(r >= 0 for r in Rc)
+        assert b * b < 4 * a * c0
+    # Table K.1 constants: larger C-, smaller D than the rational forms
+    for (name, Cm, Dd, *_), band in zip(SEXTICS[1:], (BAND_A, BAND_B)):
+        assert band[1] >= Cm and band[3] <= Dd < Fr(1, 2)
+        P0 = band_polys(Fr(0), Cm, Fr(0), Dd)[0]
+        P1 = band_polys(Fr(0), band[1], Fr(0), band[3])[0]
+        for i in range(201):
+            x = Fr(i, 200)
+            assert peval(P1, x) >= peval(P0, x) > 0
+
+
+def check_quartics():
+    """V'' >= 7/5 on [0, 3/7] and V'(1/4)^2 < 2 (7/5) V(1/4), for the three
+    cases."""
+    out = []
+    for A0, Cm, Cp, Dd in (SEGMENT, BAND_A, BAND_B):
+        V = band_polys(A0, Cm, Cp, Dd)[1]
+        V1, V2 = pderiv(V), pderiv(pderiv(V))
+        assert V2 == [4 * Dd, 12 * (A0 + Cp), -12 * (Fr(1, 2) + Dd)]
+        for i in range(301):
+            x = Fr(3, 7) * i / 300
+            assert peval(V2, x) >= Fr(7, 5)
+        t0 = Fr(1, 4)
+        assert peval(V1, t0) ** 2 < 2 * Fr(7, 5) * peval(V, t0)
+        out.append((V, V1))
     return out
 
 
 def polys():
-    P, V = band_polys(*SEGMENT)
-    assert len(P) == 7 and len(V) == 5
-    rowsP = check_rows(P, TABLE_SEGMENT_P)
-    rowsV = check_rows(V, TABLE_SEGMENT_V)
-    for poly, top in ((P, Fr(1)), (V, Fr(3, 7))):
-        for i in range(401):
-            assert peval(poly, top * i / 400) > 0
-    f = Figure(-0.2, 7.95, -0.55, 3.05, 100)
-    LOG0, LOG1 = 3.0, 6.0          # log10 of the values in units of 1e-6
-    ky = 2.7 / (LOG1 - LOG0)
-    Y = lambda v: 0.15 + ky * (math.log10(float(v) * 1e6) - LOG0)
-
-    def panel(ox, width, top, poly, rows, name):
-        kx = width / float(top)
-        X = lambda x: ox + kx * float(x)
-        f.line((X(0), 0.15), (X(top) + 0.15, 0.15), width=1, arrow=True)
-        f.line((X(0), 0.15), (X(0), 0.15 + 2.85), width=1, arrow=True)
-        for e in range(3, 7):
-            yv = 0.15 + ky * (e - LOG0)
-            f.line((X(0), yv), (X(0) - 0.05, yv), width=1)
-            f.text((X(0) - 0.08, yv), '10<tspan dy="-6" font-size="9">'
-                   f'{e}</tspan>', size=12, italic=False, anchor='end')
-        for (l, r), b in rows.items():
-            n = len(b) - 1
-            pts = [(X(l + (r - l) * k / n), Y(bk)) for k, bk in enumerate(b)]
-            f.polygon([(X(l), 0.15)] + pts + [(X(r), 0.15)], fill=FILLS[1],
-                      stroke='none', opacity=0.5)
-            polyline(f, pts, stroke=ORANGE, width=1.2)
-            for p in pts:
-                f.dot(p, r=2.4, fill=ORANGE)
-            f.line((X(r), 0.15), (X(r), 0.1), width=1)
-        xs = [float(top) * i / 300 for i in range(301)]
-        polyline(f, [(X(x), Y(peval(poly, Fr(x)))) for x in xs], stroke=BLUE,
-                 width=2)
-        ticks = sorted({0} | {r for (l, r) in rows})
-        for t in ticks:
-            lab = str(t) if t.denominator == 1 else f'{t.numerator}/{t.denominator}'
-            f.text((X(t), -0.05), lab, size=12, italic=False)
-        f.text((X(top) + 0.15, 0.3), it('u'), size=15, anchor='end')
-        f.text((X(top) / 2 + ox / 2, 2.95), name, size=14, italic=False)
-    panel(0.75, 3.0, Fr(1), P, rowsP, it('P') + ' (segment case)')
-    panel(4.75, 2.8, Fr(3, 7), V, rowsV, it('V') + ' (segment case)')
-    f.save('appendix-k/polys', 'The polynomials P and V of the segment case of '
-           'Lemma K.4 on a logarithmic scale, with their Bernstein control '
-           'points on the cells of Table K.2, all positive')
+    check_sextics()
+    (V, V1), _, _ = check_quartics()
+    name, Cm, Dd, u0, a, c0, b, *_ = SEXTICS[0]
+    P = band_polys(*SEGMENT)[0]
+    para = lambda x: c0 + b * (x - u0) + a * (x - u0) ** 2
+    t0 = Fr(1, 4)
+    tang = lambda x: (peval(V, t0) + peval(V1, t0) * (x - t0)
+                      + Fr(7, 10) * (x - t0) ** 2)
+    for i in range(401):
+        x = Fr(i, 400)
+        assert peval(P, x) >= para(x) > 0
+        y = Fr(3, 7) * i / 400
+        assert peval(V, y) >= tang(y) > 0
+    f = Figure(-0.25, 8.1, -0.45, 3.1, 100)
+    gP = Graph(f, 3.0, 2.6 / 0.032, dx=0.75, dy=0.15)
+    gV = Graph(f, 2.8 / (3 / 7), 2.6 / 0.16, dx=4.85, dy=0.15)
+    for g, top, poly, low, ymax, ticks, yt, name in (
+            (gP, 1.0, P, para, 0.032,
+             [(0, '0'), (0.25, '¼'), (0.4, '⅖'), (0.5, '½'), (0.75, '¾'),
+              (1, '1')], [(0.01, '0.01'), (0.02, '0.02'), (0.03, '0.03')],
+             it('P')),
+            (gV, 3 / 7, V, tang, 0.16,
+             [(0, '0'), (0.125, '⅛'), (0.25, '¼'), (3 / 7, '3/7')],
+             [(0.05, '0.05'), (0.1, '0.1'), (0.15, '0.15')], it('V'))):
+        g.x_axis(0, top * 1.08, ticks=ticks, label=it('u'))
+        g.y_axis(0, ymax, ticks=yt)
+        for fn, kw in ((lambda x: float(peval(poly, Fr(x))),
+                        dict(stroke=BLUE, width=2.2)),
+                       (lambda x: float(low(Fr(x))),
+                        dict(stroke=ORANGE, width=1.8, dash='6 4'))):
+            # the part of the graph below the top of the frame
+            pts = [(top * k / 400, fn(top * k / 400)) for k in range(401)]
+            run = []
+            for q in pts + [(None, None)]:
+                if q[1] is not None and q[1] <= ymax:
+                    run.append(q)
+                elif run:
+                    g.polyline(run, **kw)
+                    run = []
+        g.text((top * (0.12 if poly is P else 0.5), ymax * 0.97), name, size=16,
+               italic=False)
+    assert peval(P, Fr(1)) > Fr(17, 100)
+    gP.text((0.93, 0.0285), it('P') + '(1)' + NB + '≈' + NB + '0.18',
+            size=12, italic=False, anchor='end')
+    gP.dot((0.4, float(para(Fr(2, 5)))), r=2.6, fill=ORANGE)
+    gV.dot((0.25, float(peval(V, t0))), r=2.6, fill=ORANGE)
+    f.save('appendix-k/polys', 'The sextic P and the quartic V of the segment '
+           'case of Lemma K.4, each above a positive parabola: the completed '
+           'square of P about 2/5 and the tangent parabola of V at 1/4 with '
+           'curvature 7/5')
 
 
 # ---------------------------------------------------------- the segment V
@@ -565,52 +618,6 @@ def rays():
            'falls inside the blocked arc')
 
 
-def cap():
-    d = 11 / 12
-    th = math.radians(20)
-    e = (math.cos(th), math.sin(th))
-    fv = (math.sin(th), -math.cos(th))
-    c_, s_ = e[0], fv[0]
-    assert c_ >= s_ >= 0
-    cx = d + (c_ + s_) / 2
-    cy = -e[1] / 2
-    centre = (cx, cy)
-    corners = [add(centre, add(mul(sx, e), mul(sy, fv)))
-               for sx, sy in ((0.5, 0.5), (-0.5, 0.5), (-0.5, -0.5),
-                              (0.5, -0.5))]
-    assert abs(min(p[0] for p in corners) - d) < 1e-12
-    m = add(centre, mul(0.5, e))
-    ends = [add(m, mul(0.5, fv)), add(m, mul(-0.5, fv))]
-    assert m[0] >= d + 1 and abs(m[1]) < 1e-12
-    reach = (d + 1) ** 2 + 0.25
-    assert max(dot(p, p) for p in ends) >= reach > Q0
-    f = Figure(-0.15, 2.45, -1.0, 1.05, 300)
-    for r, dash, col in ((math.sqrt(reach), '6 4', INK),
-                         (math.sqrt(Q0), '2 3', RED)):
-        arcp = [mul(r, u(-0.55 + 1.1 * k / 80)) for k in range(81)]
-        polyline(f, arcp, stroke=col, width=1.1, dash=dash)
-    f.line((d, -0.95), (d, 0.95), stroke=INK, width=1.1, dash='5 3')
-    f.polygon(corners, fill=FILLS[0], stroke=BLUE, width=1.6)
-    for p in ends:
-        f.line((0, 0), p, stroke=INK, width=1, dash='2 3')
-        f.dot(p, r=3, fill=BLUE)
-    f.dot(m, r=3.4)
-    f.text(shift_pt(m, (0.06, 0.0)), it('m'), size=15, anchor='start')
-    origin(f, dx=-0.02, dy=-0.07)
-    f.line((0, -0.82), (d, -0.82), stroke=INK, width=1, arrow=True)
-    f.text((d / 2, -0.88), it('d') + NB + '=' + NB + '11/12', size=13,
-           italic=False)
-    halo_text(f, shift_pt(mul(math.sqrt(reach), u(0.47)), (0.04, 0.0)),
-              '√((' + it('d') + NB + '+' + NB + '1)²' + NB + '+' + NB + '¼)',
-              size=12, anchor='start')
-    halo_text(f, shift_pt(mul(math.sqrt(Q0), u(0.4)), (-0.05, 0.0)),
-              '√' + sb(it('Q'), '0', size=12), size=12, color=RED,
-              anchor='end')
-    f.save('appendix-k/cap', 'A unit square beyond a line at distance 11/12 '
-           'from o, the midpoint m of its far side and the two ends of that '
-           'side, one of them beyond the circle of radius root((d + 1)^2 + 1/4)')
-
-
 def main():
     regions()
     weighted_figure()
@@ -619,7 +626,6 @@ def main():
     blocked()
     widths()
     rays()
-    cap()
 
 
 if __name__ == '__main__':

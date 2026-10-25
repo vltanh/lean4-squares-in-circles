@@ -3,7 +3,7 @@
 [Back to the README](../README.md)
 
 ```text
-SquaresInCircles.lean      the main theorems, for all seven cases
+SquaresInCircles.lean      the main theorems, for all eight cases
 Challenge.lean             the statement alone, for the Palomar registry
 SquaresInCircles/
 ├── Geometry.lean          the statement: squares, disks, Packing, Congruent,
@@ -15,7 +15,8 @@ SquaresInCircles/
 ├── Four/                  n = 4
 ├── Five/                  n = 5
 ├── Six/                   n = 6
-└── Seven/                 n = 7
+├── Seven/                 n = 7
+└── Eight/                 n = 8
 ```
 
 `Geometry.lean` holds everything the main theorems state, including every
@@ -40,7 +41,9 @@ disk centre, or for seven squares a marker and the arc about it), and
 squares put the long middle of their proofs in folders: six squares their
 normalization, separators, wings, tails, stress bound and equality case
 ([below](#six)), seven squares the pair theorem in `Pair/`
-([below](#seven)). Each case imports only `Common/` and its own folder.
+([below](#seven)), eight squares the radius, the boundary cycle and the
+exclusion of every other cycle ([below](#eight)). Each case imports only
+`Common/` and its own folder.
 
 ## `Common/`
 
@@ -67,12 +70,12 @@ normalization, separators, wings, tails, stress bound and equality case
 
 ## The cases
 
-| File | One | Two | Three | Four | Five | Six | Seven |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| `Construction.lean` | the centred square | the 2×1 rectangle | the T | the 2×2 block | the plus | the central square, four neighbours and the turned square | the column packings |
-| `Exterior.lean` | | | the 16-gon; caps of at least `120°` on the circle of radius `3/8`, and their two tight types | the diamond; arcs of at least `90°` on the circle of radius `1/2` | the 12-gon; arcs over `72°` on the circle of radius `5/6` | arcs over `60°` on the circle of radius `9/10` | states, labels and markers; the marker arc of half-width `1/2` |
-| `Containing.lean` | | | no square contains `o` | a square whose closed square contains `o` holds a quarter circle | the sweep of a square that contains `o` holds `72°`, unless the square is centred at `o` | exactly one square contains `o`; the box of its centre | some square contains `o`; it sits in the middle column |
-| `Uniqueness.lean` | centred at `o` | the centres `1` apart with `o` their midpoint; a shared edge | caps of exactly `120°`; one square of type A and two of type B rebuild the T | `o` a vertex of every square; a quarter grid of arcs | a square centred at `o`, the others its side-neighbours; closed 12-gon rigidity | the stress bound and the eight contacts rebuild the model | the ring and the middle column; congruence to a column packing |
+| File | One | Two | Three | Four | Five | Six | Seven | Eight |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `Construction.lean` | the centred square | the 2×1 rectangle | the T | the 2×2 block | the plus | the central square, four neighbours and the turned square | the column packings | the admissible models of the five-parameter family pack the disk |
+| `Exterior.lean` | | | the 16-gon; caps of at least `120°` on the circle of radius `3/8`, and their two tight types | the diamond; arcs of at least `90°` on the circle of radius `1/2` | the 12-gon; arcs over `72°` on the circle of radius `5/6` | arcs over `60°` on the circle of radius `9/10` | states, labels and markers; the marker arc of half-width `1/2` | angular lengths on the circles of radius `1` and `5/4`; `3 L₁ + L_{5/4} ≥ π` for a square that avoids `o` |
+| `Containing.lean` | | | no square contains `o` | a square whose closed square contains `o` holds a quarter circle | the sweep of a square that contains `o` holds `72°`, unless the square is centred at `o` | exactly one square contains `o`; the box of its centre | some square contains `o`; it sits in the middle column | exactly one square contains `o`, with the closed disk of radius `1/12` about `o` |
+| `Uniqueness.lean` | centred at `o` | the centres `1` apart with `o` their midpoint; a shared edge | caps of exactly `120°`; one square of type A and two of type B rebuild the T | `o` a vertex of every square; a quarter grid of arcs | a square centred at `o`, the others its side-neighbours; closed 12-gon rigidity | the stress bound and the eight contacts rebuild the model | the ring and the middle column; congruence to a column packing | the stationary frames and the dual at the original centres; five squares fixed, `T` and `G` sliding, the central square free |
 
 Each case has a `radius`, its `centers` (the optimal packing in the frame of
 its disk centre) and its `model`, the axis-parallel squares at those centres,
@@ -81,7 +84,9 @@ square and so no `centers`; its `Construction.lean` proves that the model
 packs the disk of that radius. Seven squares instead have the column packings
 `columnModel c`, in which each of the three middle squares has its own height;
 their `Construction.lean` also defines `centers` and `model`, the column centred
-at the disk centre.
+at the disk centre. Eight squares have the radius of the five-corner problem,
+`sInf feasibleRadii`, and the models of `Parameters` that pack its disk;
+`Construction.lean` proves that the admissible ones do.
 
 ## Six
 
@@ -120,3 +125,25 @@ the order of Chapter 10 and Appendices G to I:
 | the smaller gaps | `Pair/SmallerGaps.lean` | leftmost and smooth minima of a support sum; every gap below `π/3` |
 | the pair theorem | `Pair.lean` | markers at least `π/3` apart, and contacts at exactly `π/3` |
 | the containing square, the ring | `Containing.lean`, `Ring.lean`, `Uniqueness.lean` | a square contains the disk centre and sits in the middle column; the regular hexagon of markers and the ring of six squares; congruence to a column packing, and the optimum |
+
+## Eight
+
+The proof of eight squares has five steps ([11-eight.md](proof/11-eight.md)): the
+radius of the five-corner problem and the stationary packing, the central square
+and the cycle of the seven exterior squares, the boundary cycle with its frames
+and quarter word, the exclusion of every boundary cycle but the stationary one,
+and the lower bound and the equality through the completed identity at the
+original centres. Its long middle takes the folders `Boundary/`, `Frames/`,
+`Words/` and `Owners/`; the kernel checks are in `Arithmetic/`:
+
+| part | files | contents |
+| --- | --- | --- |
+| the radius | `Corners/` (9 files), `Stationary/` (17 files) | the five-corner problem, its minimizer and its radius; the stationary chain, its weights, the configuration `sharpData` and `qStar`; the completed identity at arbitrary centres; the five-parameter chart and its admissible set |
+| construction | `Construction.lean`, `Equality/Basic.lean`, `Equality/Equivalence.lean` | the frames and projections of the model, the admissible models, and the translation between the statement's parameters and the chart; the admissible models pack the disk |
+| the exterior and the central squares | `Exterior.lean`, `Containing.lean` | angular lengths on the circles of radius `1` and `5/4`, `3 L₁ + L_{5/4} ≥ π` for a square that avoids `o`; exactly one square contains `o`, and the one-twelfth core |
+| cycles | `Model.lean`, `Boundary/` | radius levels, signed axes, neighbour and boundary cycles; the boundary reduction, the normalization and the radius transfer; the candidate frames; the entry `SharpSourceEntry` |
+| frames | `Frames/` | the four-type budget of a boundary cycle and the cases of its frames |
+| quarter words | `Words/` | the seven admissible quarter words and the exclusion of all but `0101011`, word by word |
+| owners | `Owners/` | the owners of the separating axes of the seven edges, by edge (`Owners/GA/`, `Owners/BT/`, …) and by the signs of the sliders; no high `GA` witness, hence the stationary frames |
+| exact checks | `Arithmetic/` | rational intervals, Taylor bounds of the sine, cosine and arctangent, and the polynomial checks on intervals, triangles and rectangles that the kernel evaluates |
+| lower bound and equality | `Equality/`, `Uniqueness.lean` | the boundary cycle at the level `qStar`, the dual at the original centres, `qStar ≤ q`; at equality five squares fixed, `T` and `G` on their slider lines, the central square free; congruence to a model, and the optimum |

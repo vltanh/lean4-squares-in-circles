@@ -27,6 +27,21 @@ noncomputable section
 namespace SquaresInCircles.Six.Stress.Pair
 open Normalization
 
+/-! The types of the lines come before any proof: declaring a type waits until every
+proof above it is checked. -/
+
+/-- The three directions of lines: `n` varies, `w` varies, or both together. -/
+inductive Sweep where
+  | north | west | diagonal
+
+/-- The squared length `rotor² + baseSq + cosine cos x + sine sin x` of a vector of
+squared length `baseSq` plus a vector of length `rotor` that turns with `x`. -/
+structure Harmonic where
+  rotor : ℝ
+  baseSq : ℝ
+  cosine : ℝ
+  sine : ℝ
+
 /-! ### Sectors -/
 
 /-- The sign `±1` and the positive part `1` or `0` of a sign. -/
@@ -110,9 +125,11 @@ theorem gap_eq_sectorGap {no wo : Bool} {f : Facet} {pn pw pq : Bool} {n w : ℝ
   have hc := domain_cos_pos hd
   obtain ⟨hn0,hn1,hw0,hw1,hq0,hq1⟩ := domain_bounds hd
   have hpi := Real.pi_gt_d2
-  have hN := sign_sin hs.1 (abs_le.mpr ⟨by linarith,by linarith⟩)
-  have hW := sign_sin hs.2.1 (abs_le.mpr ⟨by linarith,by linarith⟩)
-  have hQ := sign_sin hs.2.2 (abs_le.mpr ⟨by linarith,by linarith⟩)
+  have hN := sign_sin hs.1 (abs_le.mpr ⟨by linarith only [hn0,hpi],by linarith only [hn1,hpi]⟩)
+  have hW := sign_sin hs.2.1
+    (abs_le.mpr ⟨by linarith only [hw0,hpi],by linarith only [hw1,hpi]⟩)
+  have hQ := sign_sin hs.2.2
+    (abs_le.mpr ⟨by linarith only [hq0,hpi],by linarith only [hq1,hpi]⟩)
   have hline : line w=slope pw*w := by
     cases pw
     · have h : w≤0 := hs.2.1
@@ -123,9 +140,13 @@ theorem gap_eq_sectorGap {no wo : Bool} {f : Facet} {pn pw pq : Bool} {n w : ℝ
   rw [hline,sign_abs hs.1]
   simp only [angularWidth,abs_of_pos hc.1,abs_of_pos hc.2.1,abs_of_pos hc.2.2,hN.1,hN.2,hW.1,
     hW.2,hQ.1]
+  have h1 := eq_false (show Facet.westFirst≠Facet.westSecond by decide)
+  have h2 := eq_false (show Facet.northFirst≠Facet.westSecond by decide)
+  have h3 := eq_false (show Facet.northSecond≠Facet.westSecond by decide)
   cases no <;> cases wo <;> cases f <;>
-    simp [northForce,westForce,central,Facet.north,Facet.west,Facet.model,constant,trigN,trigW,
-      trigQ,harmonic,aN,bN,aW,bW,aQ,bQ,northRadius] <;> ring
+    simp only [northForce,westForce,central,Facet.north,Facet.west,Facet.model,constant,trigN,
+      trigW,trigQ,harmonic,aN,bN,aW,bW,aQ,bQ,northRadius,Bool.false_eq_true,ite_true,ite_false,
+      h1,h2,h3] <;> ring
 
 /-! ### Lower bounds for the trigonometric terms -/
 
@@ -139,26 +160,28 @@ lemma trigN_lower {no wo pn pw pq : Bool} {f : Facet} {n w : ℝ}
     (hd : Domain no wo n w) (hs : Sector pn pw pq n w) :
     1/2≤trigN no f pn n ∧ (no=false → f.model → 9/10<trigN no f pn n) := by
   have hnb := (domain_abs hd).1
-  have hsign := sign_sin hs.1 (by linarith [Real.pi_gt_d2] : |n|≤Real.pi)
-  have hwidth := cos_add_abs_sin (by linarith [Real.pi_gt_d2] : |n|≤Real.pi/2)
+  have hsign := sign_sin hs.1 (by linarith only [hnb,Real.pi_gt_d2] : |n|≤Real.pi)
+  have hwidth := cos_add_abs_sin (by linarith only [hnb,Real.pi_gt_d2] : |n|≤Real.pi/2)
   have hcos := (small_angle hnb).1
   have hsin := (Real.abs_sin_le_abs (x := n)).trans hnb
   have hc0 := c0_bounds
   have hsn : 0≤(sign pn+1)*Real.sin n := by
-    cases pn <;> simp only [sign] at hsign ⊢ <;> nlinarith [abs_nonneg (Real.sin n),
-      neg_abs_le (Real.sin n),le_abs_self (Real.sin n)]
+    cases pn <;> simp only [sign,Bool.false_eq_true,ite_true,ite_false] at hsign ⊢ <;>
+      linarith only [hsign.1,abs_nonneg (Real.sin n)]
   refine ⟨?_,fun hno hf => ?_⟩
   · cases no
     · cases hf : f.model <;> simp only [trigN,harmonic,aN,bN,hf,Bool.false_eq_true,ite_false,
-        ite_true] <;> nlinarith [hsign.1]
+        ite_true] <;> linarith only [hwidth,hsign.1,hcos,hsn]
     · have hpos : positivePart pn*Real.sin n≤|Real.sin n| := by
         cases pn <;> simp [positivePart,le_abs_self]
       have hmax := (abs_le.mp hsin).2
       simp only [trigN,harmonic,aN,bN,ite_true]
-      nlinarith [hsign.1,mul_le_mul_of_nonneg_left hpos c0_pos.le]
+      linarith only [hwidth,hsign.1,mul_le_mul_of_nonneg_left hpos c0_pos.le,
+        mul_le_mul_of_nonneg_left (show |Real.sin n|≤Real.cos n by linarith only [hsin,hcos])
+          c0_pos.le]
   · subst hno
     simp only [trigN,harmonic,aN,bN,hf,Bool.false_eq_true,ite_false,ite_true]
-    nlinarith
+    linarith only [hcos,hsn]
 
 /-- `trigW ≥ 1/2` for W along its own axis; `≥ 23/25` for W along the west side of
 C, and `≥ 1` there when `w ≥ 0`. -/
@@ -168,14 +191,14 @@ lemma trigW_lower {no wo pn pw pq : Bool} {n w : ℝ}
       (wo=false → 23/25≤trigW wo pw w ∧ (0≤w → 1≤trigW wo pw w)) := by
   have hpi := Real.pi_gt_d2
   have hwb := (domain_abs hd).2.1
-  have hsign := sign_sin hs.2.1 (by linarith : |w|≤Real.pi)
-  have hwidth := cos_add_abs_sin (by linarith : |w|≤Real.pi/2)
+  have hsign := sign_sin hs.2.1 (by linarith only [hwb,hpi] : |w|≤Real.pi)
+  have hwidth := cos_add_abs_sin (by linarith only [hwb,hpi] : |w|≤Real.pi/2)
   refine ⟨fun hwo => ?_,fun hwo => ?_⟩
   · subst hwo
     cases pw
     · simp only [trigW,harmonic,aW,bW,ite_true,sign,positivePart,Bool.false_eq_true,
         ite_false] at hsign ⊢
-      nlinarith [hsign.1]
+      linarith only [hwidth,hsign.1]
     · have hw0 : w=0 := le_antisymm (by simpa [wHigh] using hd.2.2) hs.2.1
       subst hw0
       norm_num [trigW,harmonic,aW]
@@ -183,17 +206,18 @@ lemma trigW_lower {no wo pn pw pq : Bool} {n w : ℝ}
     have hw : |w|≤2/5 := by
       have := hd.2
       simp only [wLow,wHigh,Bool.false_eq_true,ite_false] at this
-      exact abs_le.mpr ⟨by linarith,by linarith⟩
+      exact abs_le.mpr ⟨by linarith only [this.1],by linarith only [this.2]⟩
     have hc := (small_angle hw).1
     have hpos : 0≤(sign pw+1)*Real.sin w := by
-      cases pw <;> simp only [sign] at hsign ⊢ <;> nlinarith [neg_abs_le (Real.sin w),
-        abs_nonneg (Real.sin w)]
-    refine ⟨by simp only [trigW,harmonic,aW,bW,Bool.false_eq_true,ite_false]; nlinarith,
-      fun hw0 => ?_⟩
-    have hsin := Real.sin_nonneg_of_nonneg_of_le_pi hw0 (by linarith [(abs_le.mp hw).2])
+      cases pw <;> simp only [sign,Bool.false_eq_true,ite_true,ite_false] at hsign ⊢ <;>
+        linarith only [hsign.1,abs_nonneg (Real.sin w)]
+    refine ⟨?_,fun hw0 => ?_⟩
+    · simp only [trigW,harmonic,aW,bW,Bool.false_eq_true,ite_false]
+      linarith only [hc,hpos]
+    have hsin := Real.sin_nonneg_of_nonneg_of_le_pi hw0 (by linarith only [(abs_le.mp hw).2,hpi])
     rw [abs_of_nonneg hsin] at hsign hwidth
     simp only [trigW,harmonic,aW,bW,Bool.false_eq_true,ite_false]
-    nlinarith [hsign.1]
+    linarith only [hwidth,hsign.1]
 
 /-- `trigQ > 11/50` for a facet of the model, and `> 1/3` there when W is along the
 west side of C and `w ≥ 0`; `> 9/50` for the second axis of W, and `≥ 0` for the
@@ -204,45 +228,44 @@ lemma trigQ_lower {no wo pn pw pq : Bool} {f : Facet} {n w : ℝ}
     (f=.westSecond → 9/50<trigQ f pq (n-w)) ∧ (f=.northFirst → 0≤trigQ f pq (n-w)) := by
   have hpi := Real.pi_gt_d2
   have hqb := (domain_abs hd).2.2
-  have hsign := sign_sin hs.2.2 (by linarith : |n-w|≤Real.pi)
-  have hwidth := cos_add_abs_sin (by linarith : |n-w|≤Real.pi/2)
+  have hsign := sign_sin hs.2.2 (by linarith only [hqb,hpi] : |n-w|≤Real.pi)
+  have hwidth := cos_add_abs_sin (by linarith only [hqb,hpi] : |n-w|≤Real.pi/2)
   have hr := rStar_bounds
   have hneg : 0≤(sign pq-1)*Real.sin (n-w) := by
-    cases pq <;> simp only [sign] at hsign ⊢ <;> nlinarith [le_abs_self (Real.sin (n-w))]
-  have hcos : 31/49≤Real.cos (n-w) := by nlinarith [(small_angle hqb).1]
+    cases pq <;> simp only [sign,Bool.false_eq_true,ite_true,ite_false] at hsign ⊢ <;>
+      linarith only [hsign.1,le_abs_self (Real.sin (n-w)),abs_nonneg (Real.sin (n-w))]
+  have hcos : 31/49≤Real.cos (n-w) := by linarith only [(small_angle hqb).1]
   have hmodel : f.model → trigQ f pq (n-w)=rStar*Real.cos (n-w)+
       rStar*(sign pq-1)/2*Real.sin (n-w) := by
     cases f <;> simp [trigQ,harmonic,aQ,bQ,Facet.model]
   refine ⟨fun hf => ⟨?_,fun hwo hw0 => ?_⟩,fun hf => ?_,fun hf => ?_⟩
   · rw [hmodel hf]
-    nlinarith [mul_nonneg rStar_pos.le hneg,mul_le_mul_of_nonneg_left hcos rStar_pos.le]
+    linarith only [mul_nonneg rStar_pos.le hneg,mul_le_mul_of_nonneg_left hcos rStar_pos.le,hr.1]
   · subst hwo
     rcases le_total (n-w) 0 with hq | hq
     · rw [hmodel hf]
       have hs0 : Real.sin (n-w)≤0 := by
-        have := Real.sin_nonneg_of_nonneg_of_le_pi (show 0≤-(n-w) by linarith)
-          (by linarith [(abs_le.mp hqb).1])
+        have := Real.sin_nonneg_of_nonneg_of_le_pi (show 0≤-(n-w) by linarith only [hq])
+          (by linarith only [(abs_le.mp hqb).1,hpi])
         rw [Real.sin_neg] at this
-        linarith
+        linarith only [this]
       rw [abs_of_nonpos hs0] at hsign hwidth
-      nlinarith [mul_le_mul_of_nonneg_left hwidth rStar_pos.le,hsign.1]
-    · have hq1 : |n-w|≤5/12 := abs_le.mpr ⟨by linarith,by linarith [(domain_bounds hd).2.1]⟩
+      linarith only [mul_le_mul_of_nonneg_left hwidth rStar_pos.le,
+        congrArg (HMul.hMul rStar) hsign.1,hr.1]
+    · have hq1 : |n-w|≤5/12 :=
+        abs_le.mpr ⟨by linarith only [hq],by linarith only [(domain_bounds hd).2.1,hw0]⟩
       have hc := (small_angle hq1).1
       rw [hmodel hf]
-      nlinarith [mul_nonneg rStar_pos.le hneg,mul_le_mul_of_nonneg_left hc rStar_pos.le]
+      linarith only [mul_nonneg rStar_pos.le hneg,mul_le_mul_of_nonneg_left hc rStar_pos.le,hr.1]
   · subst hf
     simp only [trigQ,harmonic,aQ,bQ,ite_true]
     have hm := mul_le_mul_of_nonneg_left hwidth rStar_pos.le
-    nlinarith [hsign.1]
+    linarith only [hm,congrArg (HMul.hMul rStar) hsign.1,hr.1]
   · subst hf
-    simp [trigQ,harmonic,aQ,bQ]
-    nlinarith [mul_nonneg rStar_pos.le hneg]
+    show 0≤0*Real.cos (n-w)+rStar*(sign pq-1)/2*Real.sin (n-w)
+    linarith only [mul_nonneg rStar_pos.le hneg]
 
 /-! ### The forces along the lines -/
-
-/-- The three directions of lines: `n` varies, `w` varies, or both together. -/
-inductive Sweep where
-  | north | west | diagonal
 
 /-- The angle `n` at the parameter `x` of the line through `(n, w)`. -/
 def Sweep.n : Sweep → ℝ → ℝ → ℝ → ℝ
@@ -255,14 +278,6 @@ def Sweep.w : Sweep → ℝ → ℝ → ℝ → ℝ
   | north, _, w, _ => w
   | west, _, _, x => x
   | diagonal, _, _, x => x
-
-/-- The squared length `rotor² + baseSq + cosine cos x + sine sin x` of a vector of
-squared length `baseSq` plus a vector of length `rotor` that turns with `x`. -/
-structure Harmonic where
-  rotor : ℝ
-  baseSq : ℝ
-  cosine : ℝ
-  sine : ℝ
 
 /-- The constant squared length `z`. -/
 def Harmonic.constant (z : ℝ) : Harmonic := ⟨0,z,0,0⟩
@@ -376,7 +391,8 @@ lemma northForce_first {no wo : Bool} {f : Facet} {n w : ℝ} (hd : Domain no wo
   have hr := rStar_bounds
   cases no <;> cases f <;>
     simp only [northForce,central,Facet.north,Bool.false_eq_true,ite_false,ite_true] <;>
-    nlinarith [Real.sin_le_one (n-w),Real.neg_one_le_cos (n-w)]
+    linarith only [hc,hr.1,hr.2,mul_le_mul_of_nonneg_left (Real.sin_le_one (n-w)) rStar_pos.le,
+      mul_le_mul_of_nonneg_left (Real.neg_one_le_cos (n-w)) rStar_pos.le]
 
 lemma westForce_first {no wo : Bool} {f : Facet} {n w : ℝ} (hd : Domain no wo n w) :
     1/2<(westForce wo f n w).1 := by
@@ -384,17 +400,20 @@ lemma westForce_first {no wo : Bool} {f : Facet} {n w : ℝ} (hd : Domain no wo 
   have hr := rStar_bounds
   cases wo <;> cases f <;>
     simp only [westForce,central,Facet.west,Bool.false_eq_true,ite_false,ite_true] <;>
-    nlinarith [Real.sin_le_one (n-w),Real.neg_one_le_cos (n-w)]
+    linarith only [hc,hr.1,hr.2,mul_le_mul_of_nonneg_left (Real.sin_le_one (n-w)) rStar_pos.le,
+      mul_le_mul_of_nonneg_left (Real.neg_one_le_cos (n-w)) rStar_pos.le]
 
 lemma northHarmonic_pos {k : Sweep} {no wo : Bool} {f : Facet} {n w x : ℝ}
     (hd : Domain no wo (k.n n w x) (k.w n w x)) : 0<(northHarmonic k no f n w).arg x := by
   rw [northHarmonic_arg]
-  nlinarith [northForce_first (f := f) hd]
+  exact add_pos_of_pos_of_nonneg
+    (pow_pos ((by norm_num : (0:ℝ)<1/2).trans (northForce_first (f := f) hd)) 2) (sq_nonneg _)
 
 lemma westHarmonic_pos {k : Sweep} {no wo : Bool} {f : Facet} {n w x : ℝ}
     (hd : Domain no wo (k.n n w x) (k.w n w x)) : 0<(westHarmonic k wo f n w).arg x := by
   rw [westHarmonic_arg]
-  nlinarith [westForce_first (f := f) hd]
+  exact add_pos_of_pos_of_nonneg
+    (pow_pos ((by norm_num : (0:ℝ)<1/2).trans (westForce_first (f := f) hd)) 2) (sq_nonneg _)
 
 @[simp] lemma Harmonic.constant_curvature (z R x : ℝ) :
     (Harmonic.constant z).curvature R x=0 := by
@@ -408,19 +427,18 @@ lemma Harmonic.curvature_le {W : Harmonic} {R x A B M : ℝ} (hR : 0≤R) (hR1 :
     W.curvature R x≤M := by
   have hb : 0≤W.baseSq := by
     by_contra! hb
-    nlinarith [sq_nonneg W.cosine,sq_nonneg W.sine,mul_pos (pow_pos hr 2) (neg_pos.mpr hb)]
+    linarith only [ha,sq_nonneg W.cosine,sq_nonneg W.sine,mul_pos (pow_pos hr 2) (neg_pos.mpr hb)]
   have hbs := Real.sq_sqrt hb
   have hb0 := Real.sqrt_nonneg W.baseSq
-  have hbup : Real.sqrt W.baseSq≤B := by nlinarith
+  have hbup : Real.sqrt W.baseSq≤B := Real.sqrt_le_iff.mpr ⟨hB0,hB⟩
   have hp : W.parameter=W.rotor^2+(Real.sqrt W.baseSq)^2 := by rw [hbs]; rfl
-  have h := harmonicCurvature_le_harmonic_mean hR hr.le hb0 (by linarith) hp
+  have h := harmonicCurvature_le_harmonic_mean hR hr.le hb0 (by linarith only [hr,hb0]) hp
     (by rwa [hbs]) hx
-  have hmono := harmonic_mean_mono hr.le hb0 (by linarith) hA hbup
-  have hAB : 0≤A*B/(A+B) := div_nonneg (mul_nonneg (by linarith) hB0) (by linarith)
+  have hmono := harmonic_mean_mono hr.le hb0 (by linarith only [hr,hb0]) hA hbup
   calc W.curvature R x≤R*(W.rotor*Real.sqrt W.baseSq/(W.rotor+Real.sqrt W.baseSq)) := by
         simpa only [Harmonic.curvature,mul_div_assoc,mul_assoc] using h
     _≤(17/10)*(A*B/(A+B)) := mul_le_mul hR1 hmono (div_nonneg (mul_nonneg hr.le hb0)
-        (by linarith)) (by norm_num)
+        (by linarith only [hr,hb0])) (by norm_num)
     _≤M := by simpa only [mul_div_assoc,mul_assoc] using hm
 
 /-- Along every line the length of the force on N has curvature at most
@@ -436,15 +454,16 @@ lemma north_curvature (k : Sweep) (no : Bool) (f : Facet) (n w x : ℝ) :
   · rw [hz,Harmonic.constant_curvature]; norm_num
   · have hR : 0≤northRadius f ∧ northRadius f≤17/10 := by
       unfold northRadius
-      split_ifs <;> constructor <;> linarith [radius_bounds,rhoStar_bounds]
+      split_ifs <;> constructor <;>
+        linarith only [radius_bounds.1,radius_bounds.2,rhoStar_bounds.1,rhoStar_bounds.2]
     have hamp := northHarmonic_amplitude k no f n w
     rw [hr,hb] at hamp
     have hx : 0<(northHarmonic k no f n w).arg x :=
-      harmonic_arg_positive rStar_pos.le zero_le_one (by linarith [rStar_bounds.2])
+      harmonic_arg_positive rStar_pos.le zero_le_one (by linarith only [rStar_bounds.2])
         (by simp only [Harmonic.parameter,hr,hb]; ring) (by rw [hamp]; ring)
     apply Harmonic.curvature_le hR.1 hR.2 (by rw [hr]; exact rStar_pos)
       (by rw [hr,hb]; exact hamp) hx (A := 37/100) (B := 1)
-      (by rw [hr]; linarith [rStar_bounds.2]) (by rw [hb]; norm_num) (by norm_num)
+      (by rw [hr]; linarith only [rStar_bounds.2]) (by rw [hb]; norm_num) (by norm_num)
     norm_num
 
 /-- If the turning vector points against the constant one, so that the squared
@@ -455,12 +474,13 @@ lemma Harmonic.curvature_nonpos {W : Harmonic} {R x : ℝ} (hR : 0≤R) (hr : 0<
     (hop : W.cosine*Real.cos x+W.sine*Real.sin x≤-2*W.rotor^2) : W.curvature R x≤0 := by
   have hb : 0≤W.baseSq := by
     by_contra! hb
-    nlinarith [sq_nonneg W.cosine,sq_nonneg W.sine,mul_pos (pow_pos hr 2) (neg_pos.mpr hb)]
+    linarith only [ha,sq_nonneg W.cosine,sq_nonneg W.sine,mul_pos (pow_pos hr 2) (neg_pos.mpr hb)]
   have hs := Real.sq_sqrt hb
   have horder : W.rotor≤Real.sqrt W.baseSq := by
     have harg := hx
     simp only [Harmonic.arg,Harmonic.parameter,harmonicArg] at harg
-    nlinarith [Real.sqrt_nonneg W.baseSq]
+    calc W.rotor=Real.sqrt (W.rotor^2) := (Real.sqrt_sq hr.le).symm
+      _≤Real.sqrt W.baseSq := Real.sqrt_le_sqrt (by linarith only [harg,hop])
   exact harmonicCurvature_nonpos_of_opposition hR hr.le horder
     (by simp only [Harmonic.parameter,hs])
     (by rwa [hs]) hx hop
@@ -505,20 +525,21 @@ lemma north_curvature_westFirst {no wo : Bool} {n w x : ℝ} (hd : Domain no wo 
       (northHarmonic .west no .westFirst n w).sine*Real.sin x≤(3/5)*rStar := by
     cases no
     · have hs : Real.sin x≤0 := by
-        have := Real.sin_nonneg_of_nonneg_of_le_pi (show 0≤-x by linarith) (by linarith [hb.2.2.1,
-          Real.pi_gt_d2])
-        rw [Real.sin_neg] at this; linarith
+        have := Real.sin_nonneg_of_nonneg_of_le_pi (show 0≤-x by linarith only [hx0])
+          (by linarith only [hb.2.2.1,Real.pi_gt_d2])
+        rw [Real.sin_neg] at this; linarith only [this]
       simp only [northHarmonic]
-      nlinarith [rStar_pos]
+      linarith only [mul_le_mul_of_nonneg_left hs rStar_pos.le,rStar_pos]
     · have hq : -3/10≤Real.sin (n-x) := by
         rcases le_total (n-x) 0 with h | h
-        · linarith [Real.le_sin h]
-        · linarith [Real.sin_nonneg_of_nonneg_of_le_pi h (by linarith [Real.pi_gt_d2])]
+        · linarith only [Real.le_sin h,hb.1,hx0]
+        · linarith only [Real.sin_nonneg_of_nonneg_of_le_pi h
+            (by linarith only [hb.2.2.2.2.2,Real.pi_gt_d2])]
       have he : (northHarmonic .west true .westFirst n w).cosine*Real.cos x+
           (northHarmonic .west true .westFirst n w).sine*Real.sin x=-2*rStar*Real.sin (n-x) := by
         simp only [northHarmonic,Real.sin_sub]; ring
       rw [he]
-      nlinarith [rStar_pos]
+      linarith only [mul_le_mul_of_nonneg_left hq rStar_pos.le,rStar_pos]
   have hx := northHarmonic_pos (k := .west) (f := .westFirst) (n := n) (w := w) (x := x) (no := no)
     (wo := wo) (by simpa only [Sweep.n,Sweep.w] using hd)
   have hshape : (northHarmonic .west no .westFirst n w).rotor=rStar ∧
@@ -526,17 +547,20 @@ lemma north_curvature_westFirst {no wo : Bool} {n w x : ℝ} (hd : Domain no wo 
   have hamp := northHarmonic_amplitude .west no .westFirst n w
   rw [hshape.1,hshape.2] at hamp
   have hsq := pow_le_pow_left₀ (by norm_num : (0:ℝ)≤43/50)
-    (show (43:ℝ)/50≤1-rStar^2 by nlinarith) 2
+    (show (43:ℝ)/50≤1-rStar^2 by
+      linarith only [hr.2,mul_lt_mul_of_pos_left hr.2 rStar_pos]) 2
   have h := harmonicCurvature_le_length (R := radius) (D := (43/50)^2) (B := 7/6) radius_pos.le hx
-    (by norm_num) (by simp only [Harmonic.parameter,hshape.1,hshape.2]; nlinarith) (by norm_num)
-    (by simp only [harmonicArg,Harmonic.parameter,hshape.1,hshape.2] at hz ⊢; nlinarith)
+    (by norm_num) (by simp only [Harmonic.parameter,hshape.1,hshape.2]; linarith only [hsq,hamp])
+    (by norm_num)
+    (by simp only [harmonicArg,Harmonic.parameter,hshape.1,hshape.2] at hz ⊢
+        linarith only [hz,hr.2,mul_lt_mul_of_pos_left hr.2 rStar_pos])
   have hcurv : (northHarmonic .west no .westFirst n w).curvature (northRadius .westFirst) x=
       harmonicCurvature radius (northHarmonic .west no .westFirst n w).parameter
         (northHarmonic .west no .westFirst n w).cosine
         (northHarmonic .west no .westFirst n w).sine x := by
     simp [Harmonic.curvature,northRadius,Facet.model]
   rw [hcurv]
-  nlinarith
+  linarith only [h,hR.2]
 
 /-- For N–W along the first axis of N the turning part of the force on W points
 against its constant part along the line in `n`:
@@ -552,19 +576,24 @@ lemma west_opposition {no wo : Bool} {n w : ℝ} (hd : Domain no wo n w) :
   · have hw : -2/5≤w := by simpa [wLow] using hd.2.1
     simp only [Bool.false_eq_true,ite_false]
     rcases le_total n 0 with hn | hn
-    · have hc := (small_angle (show |n-w|≤7/10 from abs_le.mpr ⟨by linarith,by linarith⟩)).1
-      nlinarith [Real.le_sin hn,mul_le_mul_of_nonneg_left hc mStar_pos.le]
-    · have hc := (small_angle (show |n-w|≤6/7 from abs_le.mpr ⟨by linarith,hq1⟩)).1
-      nlinarith [Real.sin_nonneg_of_nonneg_of_le_pi hn (by linarith),
-        mul_le_mul_of_nonneg_left hc mStar_pos.le]
+    · have hc := (small_angle (show |n-w|≤7/10 from
+        abs_le.mpr ⟨by linarith only [hq0],by linarith only [hn,hw]⟩)).1
+      linarith only [Real.le_sin hn,mul_le_mul_of_nonneg_left hc mStar_pos.le,hn0,hm.1,hr.2]
+    · have hc := (small_angle (show |n-w|≤6/7 from
+        abs_le.mpr ⟨by linarith only [hq0],hq1⟩)).1
+      linarith only [Real.sin_nonneg_of_nonneg_of_le_pi hn (by linarith only [hn1,hpi]),
+        mul_le_mul_of_nonneg_left hc mStar_pos.le,hm.1,hr.2]
   · have hw : w≤0 := by simpa [wHigh] using hd.2.2
     simp only [ite_true]
     rcases le_total (n-w) 0 with hq | hq
-    · have hc := (small_angle (show |n-w|≤3/10 from abs_le.mpr ⟨by linarith,by linarith⟩)).1
-      nlinarith [Real.le_sin hq,mul_le_mul_of_nonneg_left hc mStar_pos.le]
-    · have hc := (small_angle (show |n-w|≤6/7 from abs_le.mpr ⟨by linarith,hq1⟩)).1
-      nlinarith [Real.sin_nonneg_of_nonneg_of_le_pi hq (by linarith),
-        mul_le_mul_of_nonneg_left hc mStar_pos.le]
+    · have hc := (small_angle (show |n-w|≤3/10 from
+        abs_le.mpr ⟨by linarith only [hn0,hw],by linarith only [hq]⟩)).1
+      linarith only [Real.le_sin hq,mul_le_mul_of_nonneg_left hc mStar_pos.le,hn0,hw,hm.1,
+        hr.2]
+    · have hc := (small_angle (show |n-w|≤6/7 from
+        abs_le.mpr ⟨by linarith only [hq0],hq1⟩)).1
+      linarith only [Real.sin_nonneg_of_nonneg_of_le_pi hq (by linarith only [hq1,hpi]),
+        mul_le_mul_of_nonneg_left hc mStar_pos.le,hm.1,hr.2]
 
 /-- Bounds for the curvature of the length of the force on W along the lines. -/
 def westCap : Sweep → Bool → Facet → ℝ
@@ -589,70 +618,79 @@ lemma west_curvature {k : Sweep} {no wo : Bool} {f : Facet} {n w x : ℝ}
   have hr := rStar_bounds
   have hm := mStar_bounds
   have hR0 := radius_pos.le
-  have hR1 : radius≤17/10 := by linarith
+  have hR1 : radius≤17/10 := by linarith only [hR.2]
   have hb := domain_bounds hd
   cases k <;> cases wo <;> cases f
   all_goals simp only [Sweep.n,Sweep.w] at hd hb
   all_goals first
-    | (simp [westHarmonic,westCap]; done)
+    | (simp only [westHarmonic,Harmonic.constant_curvature]; exact le_rfl)
     | skip
   · -- north, false, northFirst
-    apply (Harmonic.curvature_nonpos hR0 rStar_pos hamp hx ?_).trans (by norm_num [westCap])
+    refine (Harmonic.curvature_nonpos hR0 rStar_pos hamp hx ?_).trans le_rfl
     have := west_opposition hd
     simp only [Bool.false_eq_true,ite_false] at this
     simp only [westHarmonic,Real.cos_sub] at this ⊢
-    nlinarith [rStar_pos]
+    linarith only [mul_le_mul_of_nonneg_left this rStar_pos.le]
   · -- north, false, northSecond
     have hw : |w|≤2/5 := by
       have := hd.2; simp only [wLow,wHigh,Bool.false_eq_true,ite_false] at this
-      exact abs_le.mpr ⟨by linarith,by linarith⟩
+      exact abs_le.mpr ⟨by linarith only [this.1],by linarith only [this.2]⟩
     have hs := (le_abs_self _).trans ((Real.abs_sin_le_abs (x := w)).trans hw)
-    exact Harmonic.curvature_le hR0 hR1 rStar_pos hamp hx (A := 37/100) (B := 8/5)
-      (by simp [westHarmonic]; linarith) (by simp only [westHarmonic]; nlinarith) (by norm_num)
-      (by norm_num [westCap])
+    exact Harmonic.curvature_le hR0 hR1 rStar_pos hamp hx (A := 37/100) (B := 8/5) (M := 3/5)
+      (by simp only [westHarmonic]; linarith only [hr.2])
+      (by simp only [westHarmonic]; linarith only [hm.2,mul_lt_mul_of_pos_left hm.2 mStar_pos,
+        mul_le_mul_of_nonneg_left hs mStar_pos.le]) (by norm_num) (by norm_num)
   · -- north, true, northFirst
-    apply (Harmonic.curvature_nonpos hR0 rStar_pos hamp hx ?_).trans (by norm_num [westCap])
+    refine (Harmonic.curvature_nonpos hR0 rStar_pos hamp hx ?_).trans le_rfl
     have := west_opposition hd
     simp only [ite_true] at this
     simp only [westHarmonic,Real.cos_sub,Real.sin_sub] at this ⊢
-    nlinarith [rStar_pos]
+    linarith only [mul_le_mul_of_nonneg_left this rStar_pos.le]
   · -- north, true, northSecond
-    exact Harmonic.curvature_le hR0 hR1 rStar_pos hamp hx (A := 37/100) (B := 8/5)
-      (by simp [westHarmonic]; linarith) (by simp only [westHarmonic]; nlinarith) (by norm_num)
-      (by norm_num [westCap])
+    exact Harmonic.curvature_le hR0 hR1 rStar_pos hamp hx (A := 37/100) (B := 8/5) (M := 3/5)
+      (by simp only [westHarmonic]; linarith only [hr.2])
+      (by simp only [westHarmonic]; linarith only [hm.2,mul_lt_mul_of_pos_left hm.2 mStar_pos])
+      (by norm_num) (by norm_num)
   · -- west, false, westFirst
-    exact Harmonic.curvature_le hR0 hR1 one_pos hamp hx (A := 1) (B := 97/100)
-      (by simp [westHarmonic]) (by simp only [westHarmonic]; nlinarith) (by norm_num)
-      (by norm_num [westCap])
+    exact Harmonic.curvature_le hR0 hR1 one_pos hamp hx (A := 1) (B := 97/100) (M := 21/25) le_rfl
+      (by simp only [westHarmonic]; linarith only [hm.2,hr.2,mul_lt_mul_of_pos_left hm.2 mStar_pos,
+        mul_lt_mul_of_pos_left hr.2 rStar_pos]) (by norm_num) (by norm_num)
   · -- west, false, westSecond
-    exact Harmonic.curvature_le hR0 hR1 one_pos hamp hx (A := 1) (B := 21/40)
-      (by simp [westHarmonic]) (by simp only [westHarmonic]; nlinarith) (by norm_num)
-      (by norm_num [westCap])
+    have hd0 : 0<mStar-rStar := by linarith only [hm.1,hr.2]
+    have hd1 : mStar-rStar<0.5209123 := by linarith only [hm.2,hr.1]
+    exact Harmonic.curvature_le hR0 hR1 one_pos hamp hx (A := 1) (B := 21/40) (M := 3/5) le_rfl
+      (by simp only [westHarmonic]; linarith only [hd1,mul_lt_mul_of_pos_left hd1 hd0])
+      (by norm_num) (by norm_num)
   · -- west, false, northFirst
     have hn : -3/10≤Real.sin n := by
       rcases le_total n 0 with h | h
-      · linarith [Real.le_sin h]
-      · linarith [Real.sin_nonneg_of_nonneg_of_le_pi h (by linarith [Real.pi_gt_d2])]
-    exact Harmonic.curvature_le hR0 hR1 mStar_pos hamp hx (A := 9/10) (B := 7/6)
-      (by simp only [westHarmonic]; linarith) (by simp only [westHarmonic]; nlinarith) (by norm_num)
-      (by norm_num [westCap])
+      · linarith only [Real.le_sin h,hb.1]
+      · linarith only [Real.sin_nonneg_of_nonneg_of_le_pi h
+          (by linarith only [hb.2.1,Real.pi_gt_d2])]
+    exact Harmonic.curvature_le hR0 hR1 mStar_pos hamp hx (A := 9/10) (B := 7/6) (M := 9/10)
+      (by simp only [westHarmonic]; linarith only [hm.2])
+      (by simp only [westHarmonic]; linarith only [hr.2,mul_lt_mul_of_pos_left hr.2 rStar_pos,
+        mul_le_mul_of_nonneg_left hn rStar_pos.le]) (by norm_num) (by norm_num)
   · -- west, false, northSecond
-    exact Harmonic.curvature_le hR0 hR1 mStar_pos hamp hx (A := 9/10) (B := 137/100)
-      (by simp only [westHarmonic]; linarith)
-      (by simp only [westHarmonic]; nlinarith [Real.cos_le_one n])
-      (by norm_num) (by norm_num [westCap])
+    exact Harmonic.curvature_le hR0 hR1 mStar_pos hamp hx (A := 9/10) (B := 137/100) (M := 1)
+      (by simp only [westHarmonic]; linarith only [hm.2])
+      (by simp only [westHarmonic]; linarith only [hr.2,mul_lt_mul_of_pos_left hr.2 rStar_pos,
+        mul_le_mul_of_nonneg_left (Real.cos_le_one n) rStar_pos.le]) (by norm_num) (by norm_num)
   · -- west, true, northFirst
-    exact Harmonic.curvature_le hR0 hR1 rStar_pos hamp hx (A := 37/100) (B := 27/20)
-      (by simp only [westHarmonic]; linarith) (by simp only [westHarmonic]; nlinarith) (by norm_num)
-      (by norm_num [westCap])
+    exact Harmonic.curvature_le hR0 hR1 rStar_pos hamp hx (A := 37/100) (B := 27/20) (M := 1/2)
+      (by simp only [westHarmonic]; linarith only [hr.2])
+      (by simp only [westHarmonic]; linarith only [hm.2,mul_lt_mul_of_pos_left hm.2 mStar_pos])
+      (by norm_num) (by norm_num)
   · -- west, true, northSecond
-    exact Harmonic.curvature_le hR0 hR1 rStar_pos hamp hx (A := 37/100) (B := 27/20)
-      (by simp only [westHarmonic]; linarith) (by simp only [westHarmonic]; nlinarith) (by norm_num)
-      (by norm_num [westCap])
+    exact Harmonic.curvature_le hR0 hR1 rStar_pos hamp hx (A := 37/100) (B := 27/20) (M := 1/2)
+      (by simp only [westHarmonic]; linarith only [hr.2])
+      (by simp only [westHarmonic]; linarith only [hm.2,mul_lt_mul_of_pos_left hm.2 mStar_pos])
+      (by norm_num) (by norm_num)
   all_goals
-    exact Harmonic.curvature_le hR0 hR1 one_pos hamp hx (A := 1) (B := 97/100)
-      (by simp [westHarmonic]) (by simp only [westHarmonic]; nlinarith) (by norm_num)
-      (by norm_num [westCap])
+    exact Harmonic.curvature_le hR0 hR1 one_pos hamp hx (A := 1) (B := 97/100) (M := 21/25) le_rfl
+      (by simp only [westHarmonic]; linarith only [hm.2,hr.2,mul_lt_mul_of_pos_left hm.2 mStar_pos,
+        mul_lt_mul_of_pos_left hr.2 rStar_pos,mul_pos rStar_pos mStar_pos]) (by norm_num)
+      (by norm_num)
 
 /-! ### Concavity along the lines -/
 
@@ -685,52 +723,52 @@ theorem sweepCurvature_nonpos {no wo pn pw pq : Bool} (f : Facet) (k : Sweep) {n
   · -- n varies
     cases f
     · have hW0 : (westHarmonic .north wo .westFirst n w).curvature radius x≤0 := hW
-      linarith [htN.1,(htQ.1 rfl).1]
+      linarith only [hN,hW0,htN.1,(htQ.1 rfl).1]
     · have hW0 : (westHarmonic .north wo .westSecond n w).curvature radius x≤0 := hW
-      linarith [htN.1,htQ.2.1 rfl]
+      linarith only [hN,hW0,htN.1,htQ.2.1 rfl]
     · have hW0 : (westHarmonic .north wo .northFirst n w).curvature radius x≤0 := hW
-      linarith [htN.1,htQ.2.2 rfl]
+      linarith only [hN,hW0,htN.1,htQ.2.2 rfl]
     · have hW0 : (westHarmonic .north wo .northSecond n w).curvature radius x≤3/5 := hW
       cases no
-      · linarith [htN.2 rfl rfl,(htQ.1 rfl).1]
+      · linarith only [hN,hW0,htN.2 rfl rfl,(htQ.1 rfl).1]
       · have := north_curvature_zero (k := .north) (no := true) (f := .northSecond) (n := n)
           (w := w) (x := x) (Or.inr ⟨rfl,rfl⟩) (Or.inr rfl)
-        linarith [htN.1,(htQ.1 rfl).1]
+        linarith only [this,hW0,htN.1,(htQ.1 rfl).1]
   · -- w varies
     cases f <;> cases wo
     · have hW0 : (westHarmonic .west false .westFirst n w).curvature radius x≤21/25 := hW
       rcases le_total x 0 with hx | hx
       · have := north_curvature_westFirst (w := w) hd hx
-        linarith [(htW.2 rfl).1,(htQ.1 rfl).1]
-      · linarith [(htW.2 rfl).2 hx,(htQ.1 rfl).2 rfl hx]
+        linarith only [this,hW0,(htW.2 rfl).1,(htQ.1 rfl).1]
+      · linarith only [hN,hW0,(htW.2 rfl).2 hx,(htQ.1 rfl).2 rfl hx]
     · have hW0 : (westHarmonic .west true .westFirst n w).curvature radius x≤0 := hW
-      linarith [htW.1 rfl,(htQ.1 rfl).1]
+      linarith only [hN,hW0,htW.1 rfl,(htQ.1 rfl).1]
     · have hW0 : (westHarmonic .west false .westSecond n w).curvature radius x≤3/5 := hW
-      linarith [(htW.2 rfl).1,htQ.2.1 rfl]
+      linarith only [hN,hW0,(htW.2 rfl).1,htQ.2.1 rfl]
     · have hW0 : (westHarmonic .west true .westSecond n w).curvature radius x≤0 := hW
-      linarith [htW.1 rfl,htQ.2.1 rfl]
+      linarith only [hN,hW0,htW.1 rfl,htQ.2.1 rfl]
     · have hW0 : (westHarmonic .west false .northFirst n w).curvature radius x≤9/10 := hW
       have := north_curvature_zero (k := .west) (no := no) (f := .northFirst) (n := n) (w := w)
         (x := x) (Or.inl rfl) (Or.inl rfl)
-      linarith [(htW.2 rfl).1,htQ.2.2 rfl]
+      linarith only [this,hW0,(htW.2 rfl).1,htQ.2.2 rfl]
     · have hW0 : (westHarmonic .west true .northFirst n w).curvature radius x≤1/2 := hW
       have := north_curvature_zero (k := .west) (no := no) (f := .northFirst) (n := n) (w := w)
         (x := x) (Or.inl rfl) (Or.inl rfl)
-      linarith [htW.1 rfl,htQ.2.2 rfl]
+      linarith only [this,hW0,htW.1 rfl,htQ.2.2 rfl]
     · have hW0 : (westHarmonic .west false .northSecond n w).curvature radius x≤1 := hW
       have := north_curvature_zero (k := .west) (no := no) (f := .northSecond) (n := n) (w := w)
         (x := x) (Or.inl rfl) (Or.inr rfl)
-      linarith [(htW.2 rfl).1,(htQ.1 rfl).1]
+      linarith only [this,hW0,(htW.2 rfl).1,(htQ.1 rfl).1]
     · have hW0 : (westHarmonic .west true .northSecond n w).curvature radius x≤1/2 := hW
       have := north_curvature_zero (k := .west) (no := no) (f := .northSecond) (n := n) (w := w)
         (x := x) (Or.inl rfl) (Or.inr rfl)
-      linarith [htW.1 rfl,(htQ.1 rfl).1]
+      linarith only [this,hW0,htW.1 rfl,(htQ.1 rfl).1]
   · -- n and w vary together
     cases wo
     · have hW0 : (westHarmonic .diagonal false f n w).curvature radius x≤21/25 := hW
-      linarith [htN.1,(htW.2 rfl).1]
+      linarith only [hN,hW0,htN.1,(htW.2 rfl).1]
     · have hW0 : (westHarmonic .diagonal true f n w).curvature radius x≤0 := hW
-      linarith [htN.1,htW.1 rfl]
+      linarith only [hN,hW0,htN.1,htW.1 rfl]
 
 /-- The speeds of `n` and of `w` along a line. -/
 def Sweep.speedN : Sweep → ℝ

@@ -319,9 +319,10 @@ one-variable estimates, then four each for six, seven and eight squares.
   around it, and a boundary construction moves the exterior squares to the
   circle while keeping a separating axis on each neighbouring pair. A case
   analysis of their frames and quarter turns, written by hand, excludes every
-  boundary cycle except the stationary one; its leaf inequalities, about 470
-  polynomial bounds on intervals, triangles and rectangles, are checked
-  exactly in Lean's kernel by integer arithmetic whose soundness is proved. At
+  boundary cycle except the stationary one. Its leaf inequalities are
+  polynomial bounds on intervals, triangles and rectangles: the low-degree
+  ones are proved by hand, and the others, in about 670 checks, exactly in
+  Lean's kernel by integer arithmetic whose soundness is proved. At
   the stationary frames a completion of squares with positive weights forces
   the radius: five squares are fixed, two slide along their contact lines, and
   the central square moves and turns.
@@ -375,14 +376,14 @@ SquaresInCircles/
 │                          Stress/, Equality/ in between
 ├── Seven/                 Construction, Exterior, Containing, Uniqueness, and
 │                          the pair theorem (Pair, Pair/) and the Ring
-└── Eight/                 the central core, the boundary cycle and frames,
-                           Uniqueness; GeometricModel/ (the five-corner radius,
-                           the family of packings and the sharp assembly),
-                           TableFree/ (the exclusion of the other boundary
-                           cycles, with its polynomial certificates),
-                           ExactFamily/ (the stationary packing and the
-                           equality domain), Arithmetic/ (kernel checkers)
-scripts/eight/             the generators of ExactFamily/Generated/ and of the
+└── Eight/                 Construction, Exterior, Containing, Uniqueness, and
+                           Model (levels, signed axes, cycles); Corners/ (the
+                           five-corner radius), Stationary/ (the stationary
+                           packing), Boundary/ (the boundary cycle), Frames/,
+                           Words/ and Owners/ (every other boundary cycle
+                           excluded), Equality/ (the lower bound and the
+                           equality), Arithmetic/ (the exact checks)
+scripts/eight/             the generators of Stationary/Generated/ and of the
                            arctangent kernel
 ```
 

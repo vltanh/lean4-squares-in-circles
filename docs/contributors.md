@@ -235,3 +235,30 @@ Times are rough commit times, in US Central time (UTC−5).
   written like the other cases, with the optimal packings given as the models
   that pack the disk; the tables, their data and their generators were
   deleted.
+
+## 25 October 2026
+
+* **Eight squares organized like the other cases.** At the owner's request,
+  Claude Opus 5.5, in Claude Code, reorganized the proof of eight squares. The
+  folder `Eight/` now has `Construction`, `Exterior`, `Containing` and
+  `Uniqueness` at the top, as the other cases do, and `Corners/`,
+  `Stationary/`, `Boundary/`, `Frames/`, `Words/`, `Owners/`, `Equality/` and
+  `Arithmetic/` for the rest; the draft's provisional names are gone, and its
+  comments were rewritten to describe the final proof. Modules and
+  declarations that the main theorems do not use were deleted, among them the
+  affine-table checkers that were still imported. Each module now imports only
+  what it uses, which in particular keeps eight squares from loading all of
+  Mathlib.
+* **A faster and lighter build.** The heaviest polynomial checks were rewritten
+  to compute on integers with fewer and smaller operations (gcd-reduced lists,
+  Kronecker products, packed digits read with masks and shifts, merged
+  checks), and 138 low-degree bounds became ordinary proofs, as sums of
+  nonnegative Bernstein products; Appendix L counts the 779 kernel checks that
+  remain. A clean build of the library now takes 24 minutes 41 seconds on 20
+  threads instead of 35 minutes 47 seconds, 27,055 CPU seconds instead of
+  32,711, with no Lean process above 4.9 GB instead of 6.9 GB; its longest
+  chain of modules fell from about 1,900 to about 800 seconds. The bivariate
+  checker and one model of the positive-T case were adjusted for con-ron, the
+  independent kernel of the comparator, which had rejected one proof and spent
+  minutes on others. Chapter 11 and Appendices J to M were rewritten for the
+  proof as it now stands.

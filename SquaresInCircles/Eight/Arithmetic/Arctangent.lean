@@ -1,7 +1,8 @@
 module
 
-public import SquaresInCircles.Common.Analysis
 public import Mathlib.Analysis.SpecialFunctions.Trigonometric.ArctanDeriv
+public import Mathlib.Tactic
+public import SquaresInCircles.Common.Analysis
 
 /-!
 # Eight squares: polynomial bounds for the arctangent

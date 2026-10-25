@@ -2,17 +2,38 @@
 
 [Contents](README.md) · [← Appendix J](appendix-j.md) · [Appendix L →](appendix-l.md)
 
-This appendix proves
-[Lemma 11.8](11-eight.md#lemma-118-arcs-on-two-circles), the inequality
-$3L_1(S) + L_{5/4}(S) \ge \pi$ for a square that avoids the disk centre, and
-[Theorem 11.10](11-eight.md#theorem-1110-the-one-twelfth-core), the
-one-twelfth core. It also proves the common-point lemma used in
-[Lemma 11.18](11-eight.md#lemma-1118-a-common-point) and the bound on a
-square beyond a line used in
-[Lemma 11.19](11-eight.md#lemma-1119-four-forward-axes). The disk centre is
-the origin $o$, and $\Gamma_r$ is the circle of radius $r$ about it.
+This appendix proves the two results of [Chapter 11](11-eight.md) on the
+square that holds the disk centre: the *two-circle inequality*
+$3L_1(S) + L_{5/4}(S) \ge \pi$ for a square that avoids the centre, which
+gives the central square of a packing of eight, and the *one-twelfth core*,
+which places that square around the centre with room to spare (§K.5). It also
+proves the common-point lemma (Lemma K.4), from which Chapter 11 takes the gaps
+between the centre directions of neighbouring squares. The disk centre is the
+origin $o$, and $\Gamma_r$ is the circle of radius $r$ about it.
 
 ## K.1 Arcs on two circles
+
+For a unit square $S$ and $r > 0$, let $L_r(S)$ be the length of the set of
+directions $\theta$ with $o + r\,u(\theta) \in \overline S$: the total length of
+the one or more arcs of $\Gamma_r$ in the closed square, isolated points of
+tangency included. The *two-circle inequality* states that if $\overline S$
+lies in the closed disk of squared radius $\frac{98}{25}$ about $o$ and
+$o \notin S^\circ$, then
+
+```math
+3L_1(S) + L_{5/4}(S) \ge \pi ,
+```
+
+with equality only if $L_1(S) = \frac\pi3$. Eight interior-disjoint squares
+have arcs of total length at most $2\pi$ on each circle, so they cannot all
+avoid the centre: $8\pi \le 3 \cdot 2\pi + 2\pi$ would need equality for each
+square, eight arcs of length $\frac\pi3$ on the unit circle, and these add up
+to more than $2\pi$.
+
+*Lean: [`Eight.angularLength`](../../SquaresInCircles/Eight/Exterior.lean#L67),
+[`Eight.angularLength_budget`](../../SquaresInCircles/Eight/Exterior.lean#L178),
+[`Eight.one_square_two_circle_inequality`](../../SquaresInCircles/Eight/Exterior.lean#L1017),
+[`Eight.central_square_exists`](../../SquaresInCircles/Eight/Containing.lean#L39).*
 
 Throughout this section $Q = \frac{98}{25}$, and $S$ is a unit square in the
 closed disk of squared radius $Q$ with $o \notin S^\circ$. The lengths $L_r$
@@ -87,13 +108,13 @@ increasing $x$ to $X(y) - 1$ and then $y$ to $\frac25$ increases the sum, to
 $2\arcsin\frac{2/5}r$. $\square$
 
 *Lean:
-[`Eight.TwoCircle.straddling_polynomial_upper`](../../SquaresInCircles/Eight/CentralCore.lean#L693),
-[`Eight.TwoCircle.straddling_unit_angle`](../../SquaresInCircles/Eight/CentralCore.lean#L708),
-[`Eight.TwoCircle.straddling_larger_angle`](../../SquaresInCircles/Eight/CentralCore.lean#L756),
-[`Eight.TwoCircle.corner_arcsin_sum`](../../SquaresInCircles/Eight/CentralCore.lean#L518),
-[`Eight.TwoCircle.corner_quadratic`](../../SquaresInCircles/Eight/CentralCore.lean#L500).*
+[`Eight.TwoCircle.straddling_polynomial_upper`](../../SquaresInCircles/Eight/Exterior.lean#L679),
+[`Eight.TwoCircle.straddling_unit_angle`](../../SquaresInCircles/Eight/Exterior.lean#L694),
+[`Eight.TwoCircle.straddling_larger_angle`](../../SquaresInCircles/Eight/Exterior.lean#L742),
+[`Eight.TwoCircle.corner_arcsin_sum`](../../SquaresInCircles/Eight/Exterior.lean#L504),
+[`Eight.TwoCircle.corner_quadratic`](../../SquaresInCircles/Eight/Exterior.lean#L486).*
 
-### Proof of Lemma 11.8
+### Proof of the two-circle inequality
 
 We bound $L_1$ and $L_{5/4}$ in three regions of the canonical positions
 (Figure K.1).
@@ -110,17 +131,12 @@ L_1 = \min(A_1, B_1) + \min(A_1, C_1) = \min(A_1 + C_1,\ B_1 + C_1) ,
 
 as $A_1 > \arccos\frac14 > \frac\pi3 \ge 2C_1 \ge C_1$. Here
 $A_1 + C_1 > \frac\pi3$, and $B_1 + C_1 \ge 2\arcsin\frac12 = \frac\pi3$ by the
-convexity of $\arcsin$ on $[0, 1]$, with equality only for $\nu = \frac12$.
-If $y \ge 0$, then
+convexity of $\arcsin$ on $[0, 1]$, with equality only for $\nu = \frac12$. If
+$y \ge 0$, then
 $L_1 = \frac\pi2 - \arcsin x - \arcsin y > \frac\pi2 - 2\arcsin\frac14 > \frac\pi3$,
-as $\sin(2\arcsin\frac14) = \frac{\sqrt{15}}8 < \frac12$. So
-$3L_1 + L_{5/4} \ge \pi$, with equality only if $y = -\frac12$ and
-$L_{5/4} = 0$. For $y = -\frac12$ the farthest vertex is at squared distance
-$(x + 1)^2 + \frac14$; if it exceeds $\frac{25}{16}$, the open square has
-points on both sides of $\Gamma_{5/4}$ and so holds an arc of it, of positive
-length; if not, $\overline S$ meets $\Gamma_{5/4}$ in at most two points. So
-equality holds exactly for $(x + 1)^2 + \frac14 \le \frac{25}{16}$, that is
-$x \le \frac{\sqrt{21} - 4}4 < \frac14$; then $L_1 = \frac\pi3$.
+as $\sin(2\arcsin\frac14) = \frac{\sqrt{15}}8 < \frac12$. So $L_1 \ge \frac\pi3$
+in this region, and $3L_1 + L_{5/4} \ge \pi$, with equality only if
+$L_1 = \frac\pi3$ and $L_{5/4} = 0$; then $y = -\frac12$.
 
 *The region $x \ge \frac14$, $y < 0$.* Write $y = -\nu$, $0 < \nu \le \frac12$,
 with $A_1, B_1, C_1$ as above. We show $L_1 > \alpha_0 = \arccos\frac57$.
@@ -164,29 +180,28 @@ since $3\beta_0 < \frac\pi2$ and
 $\sin 3\beta_0 = \frac{118}{125} < \frac{\sqrt{561}}{25} = \cos\gamma_0$,
 that is $13924 < 14025$.
 
-Only the first region allows equality, exactly for the squares of the
-statement. $\square$
+Only the first region allows equality, and there $L_1 = \frac\pi3$. $\square$
 
 *Lean:
-[`Eight.TwoCircle.intervalLength_straddling`](../../SquaresInCircles/Eight/CentralCore.lean#L650),
-[`Eight.TwoCircle.intervalLength_corner`](../../SquaresInCircles/Eight/CentralCore.lean#L658),
-[`Eight.TwoCircle.small_straddling_length`](../../SquaresInCircles/Eight/CentralCore.lean#L890),
-[`Eight.TwoCircle.general_straddling_unit_length`](../../SquaresInCircles/Eight/CentralCore.lean#L910),
-[`Eight.TwoCircle.general_straddling_larger_length`](../../SquaresInCircles/Eight/CentralCore.lean#L949),
-[`Eight.TwoCircle.small_corner_length`](../../SquaresInCircles/Eight/CentralCore.lean#L982),
-[`Eight.TwoCircle.corner_unit_length`](../../SquaresInCircles/Eight/CentralCore.lean#L993),
-[`Eight.TwoCircle.corner_larger_length`](../../SquaresInCircles/Eight/CentralCore.lean#L1005),
-[`Eight.TwoCircle.weighted_straddling_constant`](../../SquaresInCircles/Eight/CentralCore.lean#L811),
-[`Eight.TwoCircle.corner_larger_far_side`](../../SquaresInCircles/Eight/CentralCore.lean#L870),
-[`Eight.one_square_two_circle_inequality`](../../SquaresInCircles/Eight/CentralCore.lean#L1030).*
+[`Eight.TwoCircle.intervalLength_straddling`](../../SquaresInCircles/Eight/Exterior.lean#L636),
+[`Eight.TwoCircle.intervalLength_corner`](../../SquaresInCircles/Eight/Exterior.lean#L644),
+[`Eight.TwoCircle.small_straddling_length`](../../SquaresInCircles/Eight/Exterior.lean#L876),
+[`Eight.TwoCircle.general_straddling_unit_length`](../../SquaresInCircles/Eight/Exterior.lean#L896),
+[`Eight.TwoCircle.general_straddling_larger_length`](../../SquaresInCircles/Eight/Exterior.lean#L935),
+[`Eight.TwoCircle.small_corner_length`](../../SquaresInCircles/Eight/Exterior.lean#L968),
+[`Eight.TwoCircle.corner_unit_length`](../../SquaresInCircles/Eight/Exterior.lean#L979),
+[`Eight.TwoCircle.corner_larger_length`](../../SquaresInCircles/Eight/Exterior.lean#L991),
+[`Eight.TwoCircle.weighted_straddling_constant`](../../SquaresInCircles/Eight/Exterior.lean#L797),
+[`Eight.TwoCircle.corner_larger_far_side`](../../SquaresInCircles/Eight/Exterior.lean#L856),
+[`Eight.one_square_two_circle_inequality`](../../SquaresInCircles/Eight/Exterior.lean#L1017).*
 
 ![Three panels, each a canonical square S = [x, x + 1] x [y, y + 1] with the unit circle and the circle of radius 5/4 about o, and the arcs of each circle in the closed square drawn thick, blue on the unit circle and orange on the larger one. Left: x = 0.1 and y = -1/2, the square straddling the axis, holding an arc of exactly 60 degrees of the unit circle and missing the larger circle. Middle: x = 0.4 and y = -0.25, holding arcs of both circles. Right: x = 0.35 and y = 0.2, a corner square holding arcs of both circles. Under each panel, its region and the lengths L1 and L5/4](figures/appendix-k/regions.svg)
 
-*Figure K.1.* The three regions of the proof of Lemma 11.8, with the arcs of
-$\Gamma_1$ and $\Gamma_{5/4}$ in the square (thick). Left: an equality square,
-$y = -\frac12$, $x = 0.1$, with $L_1 = \frac\pi3$ and $L_{5/4} = 0$. Middle
-and right: squares with $x \ge \frac14$, for which $3L_1 + L_{5/4}$ is about
-$4.15$ and $4.16$, well above $\pi$.
+*Figure K.1.* The three regions of the proof of the two-circle inequality, with
+the arcs of $\Gamma_1$ and $\Gamma_{5/4}$ in the square (thick). Left: an
+equality square, $y = -\frac12$, $x = 0.1$, with $L_1 = \frac\pi3$ and
+$L_{5/4} = 0$. Middle and right: squares with $x \ge \frac14$, for which
+$3L_1 + L_{5/4}$ is about $4.15$ and $4.16$, well above $\pi$.
 
 ![The region of canonical positions (x, y), with x from 0 to about 0.92 and y from -1/2 up to the diagonal y = x and to the circle (x + 1)^2 + (y + 1)^2 = 98/25, coloured by the value of 3 L1 + L5/4 in bands of width 0.25, from pi (lightest) upwards, with a legend; the value equals pi only on the thick red segment of the bottom edge y = -1/2 with x at most (root 21 - 4)/4, grows away from it, and changes steeply just left of the dashed line x = 1/4, where the far side of the square leaves the circle of radius 5/4](figures/appendix-k/weighted.svg)
 
@@ -196,12 +211,12 @@ segment $y = -\frac12$, $0 \le x \le \frac{\sqrt{21} - 4}4$ (thick).
 
 ## K.2 A positive depth
 
-Let eight unit squares form a packing in a closed disk of squared radius at
-most $Q_0 = \frac{9789}{2500}$ about $o$, and let $K$ be the central square of
-[Proposition 11.9](11-eight.md#proposition-119-a-central-square). In a frame
-of $K$ with the origin at $o$, after a quarter turn and a reflection, its
-centre is $(a, u)$ with $0 \le u \le a < \frac12$; let $\Delta = \frac12 - a$,
-the distance from $o$ to the boundary of $K$. For an exterior square $S$ write
+Let eight unit squares form a packing in a closed disk of squared radius at most
+$Q_0 = \frac{9789}{2500}$ about $o$, and let $K$ be its central square, the one
+square that contains $o$ in its interior (§K.1). In a frame of $K$ with the
+origin at $o$, after a quarter turn and a reflection, its centre is $(a, u)$
+with $0 \le u \le a < \frac12$; let $\Delta = \frac12 - a$, the distance from
+$o$ to the boundary of $K$. For an exterior square $S$ write
 $(A, B) = (a_S, b_S)$ for its state.
 
 ### Lemma K.3 (positive depth)
@@ -220,23 +235,25 @@ where $R \le \sqrt{Q_0} < 2$ is the radius of the original disk, and
 (R + \Delta)^2 < Q_0 + \tfrac4{1000} + \tfrac1{10^6} = \tfrac{3919601}{10^6} < \tfrac{98}{25} .
 ```
 
-So Proposition 11.9, applied with $p$ as the disk centre, gives a square
-containing $p$ in its interior, a contradiction. Next, the open disk
+So the central square of §K.1, for the same packing with $p$ as the disk centre,
+is a square containing $p$ in its interior, a contradiction. Next, the open disk
 $D(o, \Delta)$ lies in $K^\circ$ and so misses every exterior square; the
 distance from $o$ to $\overline S$ is
-$\sqrt{(A - \frac12)_+^2 + (B - \frac12)_+^2} \le \sqrt2\,(A - \frac12)_+$, which
-gives $A \ge \frac12 + \frac\Delta{\sqrt2}$. Finally $\frac1{\sqrt2} > \frac7{10}$,
-and $a \le \frac9{20}$ means $\Delta \ge \frac1{20}$. $\square$
+$\sqrt{(A - \frac12)_+^2 + (B - \frac12)_+^2} \le \sqrt2\,(A - \frac12)_+$,
+which gives $A \ge \frac12 + \frac\Delta{\sqrt2}$. Finally
+$\frac1{\sqrt2} > \frac7{10}$, and $a \le \frac9{20}$ means
+$\Delta \ge \frac1{20}$. $\square$
 
 *Lean:
-[`Eight.centralDepth`](../../SquaresInCircles/Eight/CentralCore.lean#L1376),
-[`Eight.centralDepth_gt_milli`](../../SquaresInCircles/Eight/CentralCore.lean#L1475),
-[`Eight.translated_ceiling_reserve`](../../SquaresInCircles/Eight/CentralCore.lean#L392),
-[`Eight.translated_containment_reserve`](../../SquaresInCircles/Eight/CentralCore.lean#L1445),
-[`Eight.exterior_distance_from_centralDepth`](../../SquaresInCircles/Eight/CentralCore.lean#L1488),
-[`Eight.primary_distance_lower`](../../SquaresInCircles/Eight/CentralCore.lean#L1496),
-[`Eight.exterior_primary_bandA`](../../SquaresInCircles/Eight/CentralCore.lean#L1516),
-[`Eight.exterior_primary_bandB`](../../SquaresInCircles/Eight/CentralCore.lean#L1525).*
+[`Eight.centralDepth`](../../SquaresInCircles/Eight/Containing.lean#L336),
+[`Eight.centralDepth_gt_milli`](../../SquaresInCircles/Eight/Containing.lean#L435),
+[`Eight.central_square_exists_at`](../../SquaresInCircles/Eight/Containing.lean#L325),
+[`Eight.translated_ceiling_reserve`](../../SquaresInCircles/Eight/Exterior.lean#L378),
+[`Eight.translated_containment_reserve`](../../SquaresInCircles/Eight/Containing.lean#L405),
+[`Eight.exterior_distance_from_centralDepth`](../../SquaresInCircles/Eight/Containing.lean#L448),
+[`Eight.primary_distance_lower`](../../SquaresInCircles/Eight/Containing.lean#L456),
+[`Eight.exterior_primary_bandA`](../../SquaresInCircles/Eight/Containing.lean#L476),
+[`Eight.exterior_primary_bandB`](../../SquaresInCircles/Eight/Containing.lean#L485).*
 
 ## K.3 Common points
 
@@ -264,9 +281,8 @@ $r \le \rho(\alpha)$, and $\rho(\frac\pi2 - \theta) = \rho(\theta)$.
    $\frac{19}{25}$ apart.
 
 The proof reduces each claim to the positivity of two polynomials on
-intervals, which is checked by a table of 19 rows. For constants
-$A_0, C_-, C_+, D$ with $D < \frac12$, and with $u = \tan\frac\theta2$,
-$z = 1 + u^2$, $c = 1 - u^2$, $s = 2u$, let
+intervals. For constants $A_0, C_-, C_+, D$ with $0 \le D < \frac12$, and with
+$u = \tan\frac\theta2$, $z = 1 + u^2$, $c = 1 - u^2$, $s = 2u$, let
 
 ```math
 H = \tfrac12 z + C_- c - D s, \qquad P = H^2 z + H c\,(c + s) + \left(\tfrac12 - Q_0\right)c^2 z, \qquad V = \tfrac12 c z + A_0 s z - C_+ s c - D c^2 ,
@@ -295,36 +311,55 @@ polynomials in $u$ of degrees 6 and 4. Then:
 $C_- < \lambda\cos\omega < C_+$ and $\lambda\sin\omega < D$, by the alternating
 series of cosine through degrees 6 and 8 and of sine through degree 9.
 
-On an interval $[l, r]$, substitute $u = l + (r - l)v$ and write a polynomial
-of degree $n$ as $\sum_k b_k\binom nk v^k(1 - v)^{n - k}$; the basis terms are
-nonnegative on $[0, 1]$ and add up to 1, so positive coefficients prove the
-polynomial positive on $[l, r]$. If $\sum_j a_j v^j$ is the expansion after
-substitution, $b_k = \sum_{j \le k} a_j\binom kj/\binom nj$. The following
-lower bounds, in units of $10^{-6}$, are all positive.
+The six polynomials are positive by two elementary arguments, one for $P$ and
+one for $V$; no interval is subdivided.
 
-| case | polynomial | interval | lower bounds of $b_0, \dots, b_n$ |
-| --- | :-: | :-: | --- |
-| segment | $P$ | $[0, \frac14]$ | 8011, 14261, 20852, 24921, 25307, 22675, 18731 |
-| segment | $P$ | $[\frac14, \frac12]$ | 18731, 14787, 9532, 4674, 2967, 7433, 19695 |
-| segment | $P$ | $[\frac12, 1]$ | 19695, 44218, 99921, 199778, 334345, 418333, 180000 |
-| segment | $V$ | $[0, \frac3{14}]$ | 150000, 105357, 66071, 39112, 29658 |
-| segment | $V$ | $[\frac3{14}, \frac37]$ | 29658, 20203, 28253, 58985, 115785 |
-| band A | $P$ | $[0, \frac14]$ | 65047, 66616, 68215, 66933, 61593, 52875, 42551 |
-| band A | $P$ | $[\frac14, \frac38]$ | 42551, 37389, 31825, 26080, 20444, 15250, 10838 |
-| band A | $P$ | $[\frac38, \frac7{16}]$ | 10838, 8631, 6620, 4847, 3354, 2183, 1375 |
-| band A | $P$ | $[\frac7{16}, \frac12]$ | 1375, 566, 120, 76, 471, 1339, 2709 |
-| band A | $P$ | $[\frac12, 1]$ | 2709, 13672, 56758, 146628, 276434, 364583, 144311 |
-| band A | $V$ | $[0, \frac3{14}]$ | 134309, 88153, 47594, 19679, 9628 |
-| band A | $V$ | $[\frac3{14}, \frac9{28}]$ | 9628, 4603, 4043, 8602, 18819 |
-| band A | $V$ | $[\frac9{28}, \frac37]$ | 18819, 29035, 44909, 66978, 95668 |
-| band B | $P$ | $[0, \frac12]$ | 143981, 138542, 131658, 99535, 46555, 9605, 5160 |
-| band B | $P$ | $[\frac12, 1]$ | 5160, 714, 28774, 105813, 227896, 317762, 114672 |
-| band B | $V$ | $[0, \frac3{14}]$ | 119725, 75055, 36206, 10492, 3374 |
-| band B | $V$ | $[\frac3{14}, \frac{15}{56}]$ | 3374, 1595, 977, 1608, 3563 |
-| band B | $V$ | $[\frac{15}{56}, \frac9{28}]$ | 3563, 5519, 8800, 13485, 19645 |
-| band B | $V$ | $[\frac9{28}, \frac37]$ | 19645, 31963, 50179, 74860, 106455 |
+*The sextics.* If $p(u) = c_0 + b\,(u - u_0) + R(u)\,(u - u_0)^2$ with
+$R \ge a > 0$ and $b^2 < 4ac_0$, then $p > 0$, since
 
-*Table K.2.* The 19 Bernstein rows of Lemma K.4.
+```math
+4a\,p = \left(2a(u - u_0) + b\right)^2 + \left(4ac_0 - b^2\right) + 4a\left(R - a\right)(u - u_0)^2 .
+```
+
+For the segment, with $u_0 = \frac25$, the identity of polynomials
+
+```math
+P = \tfrac{1009541}{156250000} - \tfrac{11807}{11718750}\left(u - \tfrac25\right) + R(u)\left(u - \tfrac25\right)^2, \qquad R(u) = \frac{80651 + 5361332\,u + 5659640\,u(1 - u) + 24865400\,u^2(1 - u) + 41159875\,u^2(1 - u^2)}{11250000}
+```
+
+holds, and on $[0, 1]$ the four products $u$, $u(1 - u)$, $u^2(1 - u)$ and
+$u^2(1 - u^2)$ are nonnegative, so
+$R \ge \frac{80651}{11250000} > \frac1{200} = a$; and
+$b^2 \approx 1.02 \cdot 10^{-6}$ is less than
+$4ac_0 \approx 1.29 \cdot 10^{-4}$. For the bands the same argument applies, at
+$u_0 = \frac7{15}$ with $a = \frac8{25}$ and at $u_0 = \frac12$ with
+$a = \frac{11}{25}$, to $P$ with the rational constants
+$(C_-, D) = (\frac{23287}{25000}, \frac{3657}{10000})$ for band A and
+$(\frac{4759}{5000}, \frac{3803}{10000})$ for band B. These are slightly worse
+than those of Table K.1: $P$ increases with $C_- \ge 0$ and decreases with
+$D \in [0, \frac12)$ on $[0, 1]$, as for $C_- \le C_-'$ and $D' \le D$, with $H$
+and $H'$ for the two pairs,
+
+```math
+P(C_-', D') - P(C_-, D) = (H' - H)\left((H' + H)\,z + c\,(c + s)\right) \ge 0 .
+```
+
+*The quartics.*
+$V'' = 4D + 12u\left(A_0 + C_+ - (\frac12 + D)u\right) \ge \frac75$ on
+$[0, \frac37]$ in all three cases, since $A_0 \ge \frac12$, $C_+ \ge \frac9{10}$
+and $\frac7{20} \le D \le \frac25$. A function with $f'' \ge \kappa > 0$ on an
+interval lies above the parabola $f(t) + f'(t)(u - t) + \frac\kappa2(u - t)^2$,
+which is positive when $f'(t)^2 < 2\kappa f(t)$. At $t = \frac14$ this condition
+reads $2.7 \cdot 10^{-5} < 0.074$ for the segment, $1.7 \cdot 10^{-4} < 0.017$
+for band A and $0.0024 < 0.0051$ for band B.
+
+![Two graphs. Left: the sextic P of the segment case against u from 0 to 1, positive, with a local maximum of about 0.023 near u = 0.16, its least value, about 0.0065, near u = 2/5, and a steep rise beyond the frame to P(1), about 0.18; below it the dashed parabola c0 + b(u - 2/5) + (u - 2/5)^2/200 of the completed square, positive and touching P only at u = 2/5. Right: the quartic V of the segment case against u from 0 to 3/7, falling from 0.15 to its least value, about 0.026, near u = 1/4 and rising to about 0.115; below it the dashed tangent parabola at u = 1/4 with the curvature 7/5, positive on the whole interval](figures/appendix-k/polys.svg)
+
+*Figure K.3.* The polynomials $P$ (left) and $V$ (right) of the segment case of
+Lemma K.4 (solid), each above a positive parabola (dashed): for $P$ the
+parabola $c_0 + b(u - \frac25) + \frac1{200}(u - \frac25)^2$ of the completed
+square, for $V$ the tangent parabola at $u = \frac14$ with the curvature
+$\frac75$.
 
 *Proof of Lemma K.4.* (1) A point $(\frac{11}{12}, y)$ with
 $|y| \le \frac7{20}$ has the coordinates
@@ -353,28 +388,29 @@ $2\omega$ apart, the direction $\psi$ halfway between them would be within $\ome
 both, and $o + \lambda u(\psi)$ would lie in both open squares. $\square$
 
 *Lean:
-[`Eight.Arithmetic.centralBandP`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L28),
-[`Eight.Arithmetic.centralBandV`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L35),
-[`Eight.Arithmetic.segment_P_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L87),
-[`Eight.Arithmetic.segment_V_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L255),
-[`Eight.Arithmetic.bandA_P_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L182),
-[`Eight.Arithmetic.bandA_V_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L261),
-[`Eight.Arithmetic.bandB_P_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L188),
-[`Eight.Arithmetic.bandB_V_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L267),
-[`Eight.Arithmetic.centralBandP_normalized`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L286),
-[`Eight.Arithmetic.centralBandV_normalized`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L305),
-[`Eight.CentralBand.bandA_sides`](../../SquaresInCircles/Eight/CentralCore.lean#L1339),
-[`Eight.CentralBand.bandB_sides`](../../SquaresInCircles/Eight/CentralCore.lean#L1351),
-[`Eight.CentralBand.RayData.common_point_A`](../../SquaresInCircles/Eight/CentralCore.lean#L1632),
-[`Eight.CentralBand.RayData.common_point_B`](../../SquaresInCircles/Eight/CentralCore.lean#L1658),
-[`Eight.CentralBand.closed_caps_strictly_separated`](../../SquaresInCircles/Eight/CentralCore.lean#L1684).*
-
-![Two graphs on a common logarithmic scale from 10^3 to 10^6 millionths. Left: the polynomial P of the segment case against u from 0 to 1, positive throughout, with its Bernstein control points on the three cells [0, 1/4], [1/4, 1/2] and [1/2, 1] drawn as polygons with dots, the least of them, about 0.003, on the middle cell. Right: the polynomial V of the segment case against u from 0 to 3/7, positive, with its control points on the two cells [0, 3/14] and [3/14, 3/7]](figures/appendix-k/polys.svg)
-
-*Figure K.3.* The polynomials $P$ and $V$ of the segment case of Lemma K.4
-(curves), in units of $10^{-6}$ on a common logarithmic scale, and their
-Bernstein control points on the cells of Table K.2 (polygons). All control
-points are positive, so the polynomials are.
+[`Eight.Arithmetic.centralBandP`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L33),
+[`Eight.Arithmetic.centralBandV`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L40),
+[`Eight.Arithmetic.centralBandP_normalized`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L281),
+[`Eight.Arithmetic.centralBandV_normalized`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L291),
+[`Eight.Arithmetic.segment_P_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L94),
+[`Eight.Arithmetic.bandA_P_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L189),
+[`Eight.Arithmetic.bandB_P_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L195),
+[`Eight.Arithmetic.centralBandP_mono`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L157),
+[`Eight.Arithmetic.centralBandV_curvature`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L242),
+[`positive_of_curvature`](../../SquaresInCircles/Common/Analysis.lean#L183),
+[`Eight.Arithmetic.segment_V_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L263),
+[`Eight.Arithmetic.bandA_V_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L269),
+[`Eight.Arithmetic.bandB_V_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L275),
+[`Eight.CentralBand.primary_upper`](../../SquaresInCircles/Eight/Containing.lean#L101),
+[`Eight.CentralBand.secondary_upper`](../../SquaresInCircles/Eight/Containing.lean#L131),
+[`Eight.CentralBand.transverse_segment_sides`](../../SquaresInCircles/Eight/Containing.lean#L152),
+[`Eight.CentralBand.RayData.segment`](../../SquaresInCircles/Eight/Containing.lean#L536),
+[`Eight.CentralBand.angular_band_sides`](../../SquaresInCircles/Eight/Containing.lean#L229),
+[`Eight.CentralBand.bandA_sides`](../../SquaresInCircles/Eight/Containing.lean#L299),
+[`Eight.CentralBand.bandB_sides`](../../SquaresInCircles/Eight/Containing.lean#L311),
+[`Eight.CentralBand.RayData.common_point_A`](../../SquaresInCircles/Eight/Containing.lean#L592),
+[`Eight.CentralBand.RayData.common_point_B`](../../SquaresInCircles/Eight/Containing.lean#L618),
+[`Eight.CentralBand.closed_caps_strictly_separated`](../../SquaresInCircles/Eight/Containing.lean#L644).*
 
 ![Four squares in the disk of squared radius Q0, part of whose circle is dashed, each turned so that its centre direction is the horizontal axis through o: two with the frame angle 0 and two with the frame angle 45 degrees, each with its centre as near to o as a > 1/2 allows and as far as the disk allows. All four contain the vertical segment V at x = 11/12 from y = -7/20 to 7/20, drawn thick](figures/appendix-k/segment.svg)
 
@@ -421,9 +457,11 @@ gives the rest. Reflecting in the horizontal axis gives the negative
 directions. $\square$
 
 *Lean:
-[`Eight.CentralForbidden.rectangle_segment_interval`](../../SquaresInCircles/Eight/TableFree/CentralSegment.lean#L118),
-[`Eight.CentralForbidden.Row.Valid.forbidden`](../../SquaresInCircles/Eight/CentralForbidden.lean#L251),
-[`Eight.central_rectangle_forbids`](../../SquaresInCircles/Eight/CentralCore.lean#L1811).*
+[`Eight.CentralForbidden.rectangle_segment_interval`](../../SquaresInCircles/Eight/Frames/Central/Segment.lean#L117),
+[`Eight.CentralForbidden.F`](../../SquaresInCircles/Eight/Frames/Central/Segment.lean#L220),
+[`Eight.CentralForbidden.F_forbidden`](../../SquaresInCircles/Eight/Frames/Central/Segment.lean#L355),
+[`Eight.CentralForbidden.centered_rectangle_forbidden`](../../SquaresInCircles/Eight/Frames/Central/Segment.lean#L405),
+[`Eight.central_rectangle_forbids`](../../SquaresInCircles/Eight/Containing.lean#L771).*
 
 ![The rectangle T_Lambda(0.3) = [0, 11/12] x [0, 0.3], shaded, with o at its lower left corner, and seven copies of the segment V turned about o by equally spaced angles from 0 up to F_Lambda(0.3), drawn thin, the last one thick and red; each copy meets the rectangle, the last one only at the corner (A1, 0.3). The arc of directions from 0 to F_Lambda(0.3) is marked at o, and a dotted segment from o to the corner shows the radial projection of the corner onto the middle copy](figures/appendix-k/blocked.svg)
 
@@ -458,11 +496,11 @@ P_w(d) = d^4 + 6\Lambda^2 d^2 - 8\Lambda^2 d + 4\Lambda^2 - 3\Lambda^4 - 4\Lambd
 ```
 
 which decreases ($P_w' \le 4\kappa^3 + 12\Lambda^2\kappa - 8\Lambda^2 < 0$),
-with $P_w(0.1379) > 0 > P_w(0.138)$. So $w$ has a single minimum, between
-$0.1379$ and $0.138$, where
+with $P_w(0.1379) > 0 > P_w(0.138)$. So $w$ decreases up to $0.1379$ and
+increases from $0.138$, and in between
 $w \ge 2\arctan\frac{0.1379}\Lambda + E(0.862) > \frac{149}{500} + \frac{1437}{1000} = \frac{347}{200}$.
-For $\kappa \le d \le \frac12$ both terms are values of $E$, which is convex,
-so the sum is at least $2E(\frac12) > 2 \cdot \frac{899}{1000}$.
+For $\kappa \le d \le \frac12$ both terms are values of $E$, which is convex, so
+the sum is at least $2E(\frac12) > 2 \cdot \frac{899}{1000}$.
 
 *The second width.* Let $A_1 = \frac{19}{20}$; then $k^2 = \frac{217}{3600}$,
 so $\frac1{12} < k < \frac14$. For $0 \le d \le \frac1{12}$ the first term is
@@ -485,18 +523,24 @@ polynomials of sine and cosine of degrees 9 and 10 and
 $\Lambda\sin x - \kappa\cos x$ increases on $[0, \frac\pi2]$; and
 $\arctan x > x - \frac{x^3}3$ gives the arctangent bounds. $\square$
 
-The formal proof checks the two widths differently, by tables of rectangle
-rows: 128 rows for the first width and 102 for the second, each covering an
-interval of $d$ by an explicit point of the rectangle at an explicit angle,
-with a bound on its squared distance from $o$ and a Taylor bound for its
-projection, as in the proof of Lemma K.5; the rows of each table cover
-$[0, \frac12]$.
-
 *Lean:
-[`Eight.CentralForbidden.bandA_cover`](../../SquaresInCircles/Eight/CentralForbidden.lean#L681),
-[`Eight.CentralForbidden.bandA_forbidden`](../../SquaresInCircles/Eight/TableFree/CentralForbiddenWidths.lean#L341),
-[`Eight.CentralForbidden.bandB_cover`](../../SquaresInCircles/Eight/CentralForbidden.lean#L1639),
-[`Eight.CentralForbidden.bandB_forbidden`](../../SquaresInCircles/Eight/TableFree/CentralForbiddenWidths.lean#L348).*
+[`Eight.CentralForbidden.lowerWidth_antitone`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L133),
+[`Eight.CentralForbidden.steep_vertical_reserve`](../../SquaresInCircles/Eight/Frames/Central/ScalarArithmetic.lean#L163),
+[`Eight.CentralForbidden.widthPolynomial`](../../SquaresInCircles/Eight/Frames/Central/ScalarArithmetic.lean#L129),
+[`Eight.CentralForbidden.widthPolynomial_antitone`](../../SquaresInCircles/Eight/Frames/Central/ScalarArithmetic.lean#L153),
+[`Eight.CentralForbidden.widthPolynomial_signs`](../../SquaresInCircles/Eight/Frames/Central/ScalarArithmetic.lean#L159),
+[`Eight.CentralForbidden.middleWidth_lower`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L75),
+[`Eight.CentralForbidden.E_symmetric_minimum`](../../SquaresInCircles/Eight/Frames/Central/AngleCalculus.lean#L212),
+[`Eight.CentralForbidden.first_width_lower`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L167),
+[`Eight.CentralForbidden.stronger_side_endpoint`](../../SquaresInCircles/Eight/Frames/Central/ScalarArithmetic.lean#L203),
+[`Eight.CentralForbidden.stronger_side_tangent`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L248),
+[`Eight.CentralForbidden.strongerComparison_antitone`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L270),
+[`Eight.CentralForbidden.stronger_width_lower`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L299),
+[`Eight.CentralForbidden.E_lower_of_taylor`](../../SquaresInCircles/Eight/Frames/Central/ScalarArithmetic.lean#L88),
+[`Eight.CentralForbidden.E_endpoint_bounds`](../../SquaresInCircles/Eight/Frames/Central/ScalarArithmetic.lean#L101),
+[`Eight.CentralForbidden.atan_endpoint_bounds`](../../SquaresInCircles/Eight/Frames/Central/ScalarArithmetic.lean#L118),
+[`Eight.CentralForbidden.bandA_forbidden`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L340),
+[`Eight.CentralForbidden.bandB_forbidden`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L347).*
 
 ![The two widths as functions of d from 0 to 1/2: the upper curve F_{19/20}(d) + F_{19/20}(1 - d) and the lower curve F_Lambda(d) + F_Lambda(1 - d), each with kinks and a steep drop near d = 1/12, where the definition of F changes; both stay above their dashed horizontal bounds 899/500 and 347/200, the lower one coming within 0.002 of its bound near d = 0.138](figures/appendix-k/widths.svg)
 
@@ -505,10 +549,15 @@ $F_\Lambda(d) + F_\Lambda(1 - d)$ and $F_{19/20}(d) + F_{19/20}(1 - d)$ of the
 blocked intervals (curves), above $\frac{347}{200}$ and $\frac{899}{500}$
 (dashed).
 
-## K.5 Proof of Theorem 11.10
+## K.5 The one-twelfth core
 
-*Proof of Theorem 11.10.* Let $K$, $(a, u)$ and $\Delta$ be as in §K.2, and
-suppose $a \ge \frac5{12}$. In the frame of $K$,
+The *one-twelfth core* states: let eight unit squares form a packing in a closed
+disk of squared radius $q \le Q_0$ about $o$; then the central square contains
+the closed disk $\overline D(o, \frac1{12})$ in its interior, and every other
+closed square is at distance more than $\frac1{12}$ from $o$.
+
+*Proof of the one-twelfth core.* Let $K$, $(a, u)$ and $\Delta$ be as in §K.2,
+and suppose $a \ge \frac5{12}$. In the frame of $K$,
 $K = [a - \frac12, a + \frac12] \times [u - \frac12, u + \frac12]$; put
 $d = \frac12 - u \in (0, \frac12]$.
 
@@ -544,47 +593,15 @@ square lying in $K^\circ$; and a closed square is compact, so its distance
 from $o$ is attained and exceeds $\frac1{12}$. $\square$
 
 *Lean:
-[`Eight.seven_rays_avoid_interval_budget`](../../SquaresInCircles/Eight/CentralCore.lean#L1738),
-[`Eight.central_core_and_exteriors`](../../SquaresInCircles/Eight/CentralCore.lean#L1837),
-[`Eight.containsCore_of_center_bounds`](../../SquaresInCircles/Eight/CentralCore.lean#L313),
-[`Eight.strictCoreAvoiding_of_containsCore`](../../SquaresInCircles/Eight/CentralCore.lean#L385).*
+[`Eight.seven_rays_avoid_interval_budget`](../../SquaresInCircles/Eight/Containing.lean#L698),
+[`Eight.central_core_and_exteriors`](../../SquaresInCircles/Eight/Containing.lean#L797),
+[`Eight.containsCore_of_center_bounds`](../../SquaresInCircles/Eight/Exterior.lean#L298),
+[`Eight.strictCoreAvoiding_of_containsCore`](../../SquaresInCircles/Eight/Exterior.lean#L371).*
 
 ![The circle of directions about o with a shaded sector of length 347/200, the directions blocked by a shallow central square, and seven rays, the centre directions, placed one after another at the least gap 19/25 starting from one edge of the sector, with the six gaps marked; the seventh ray, red, falls about 0.012 inside the shaded sector](figures/appendix-k/rays.svg)
 
-*Figure K.7.* The proof of Theorem 11.10. A shallow central square blocks an
-interval of directions longer than $\frac{347}{200}$ (shaded); the seven centre
-directions would need six gaps of more than $\frac{19}{25}$ in the rest. Drawn
-at the least gaps, the seventh direction (red) already falls inside the blocked
-interval, since $\frac{347}{200} + 6 \cdot \frac{19}{25} > 2\pi$.
-
-## K.6 A square beyond a line
-
-### Lemma K.7 (a square beyond a line)
-
-Let a unit square lie in the closed disk of squared radius $Q$ about $o$, and
-let every point $p$ of it satisfy $\langle n, p\rangle \ge d$ for a unit vector
-$n$ and a number $d \ge 0$. Then $Q \ge (d + 1)^2 + \frac14$.
-
-*Proof.* Choose the frame $e$, $f$ of the square with
-$c = \langle n, e\rangle \ge s = \langle n, f\rangle \ge 0$, so
-$c^2 + s^2 = 1$. If $d'$ is the least value of $\langle n, \cdot\rangle$ on the
-square, the midpoint $m$ of the side reached along $e$ has
-
-```math
-\langle n, m\rangle = d' + c + \tfrac s2 \ge d + 1 ,
-```
-
-as $(c + \frac s2)^2 = 1 + cs - \frac34 s^2 \ge 1 + \frac{s^2}4 \ge 1$. The two
-ends $m \pm \frac12 f$ of that side have the mean squared distance
-$|m|^2 + \frac14 \ge (d + 1)^2 + \frac14$ from $o$, so one of them is at
-least that far. $\square$
-
-*Lean:
-[`Eight.boundary_forward_complete`](../../SquaresInCircles/Eight/BoundaryGeometry.lean#L254).*
-
-![A unit square turned by 20 degrees, lying beyond the dashed vertical line at distance d = 11/12 from o and touching it with a corner; the midpoint m of its far side, on the horizontal axis at distance more than d + 1 from o, and the two ends of that side, joined to o by dotted segments. Two arcs of circles about o almost coincide, the dashed one of radius root((d + 1)^2 + 1/4) and the red dotted one of radius root Q0 just inside it; the lower end of the far side lies outside both](figures/appendix-k/cap.svg)
-
-*Figure K.8.* Lemma K.7: a unit square beyond a line at distance $d$ from $o$
-reaches distance $\sqrt{(d + 1)^2 + \frac14}$. For $d = \frac{11}{12}$ this is
-more than $\sqrt{Q_0}$, so no square of a packing of eight lies beyond the far
-side of an exterior square.
+*Figure K.7.* The proof of the one-twelfth core. A shallow central square blocks
+an interval of directions longer than $\frac{347}{200}$ (shaded); the seven
+centre directions would need six gaps of more than $\frac{19}{25}$ in the rest.
+Drawn at the least gaps, the seventh direction (red) already falls inside the
+blocked interval, since $\frac{347}{200} + 6 \cdot \frac{19}{25} > 2\pi$.

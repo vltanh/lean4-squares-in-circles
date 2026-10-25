@@ -5,15 +5,15 @@ docs/proof/figures/11-eight/.
     python3 scripts/figures/fig_eight.py
 
 Every figure is computed from the definitions of the chapter: the five-corner
-chain and its stationary zero (from fig_front), the model of the five-parameter
-family, the canonical frames and states of the exterior squares, and, for the
-figures of the tables, rows copied from the affine-arc table that excludes
-tau_G at most -4/5. Each drawing asserts the facts its caption states.
+chain and its stationary zero (from fig_front), the five-corner problem, the
+model of the five-parameter family, the canonical frames, states and margins
+of the exterior squares, the owners of the seven contacts, and the stationary
+weights. Each drawing asserts the facts its caption states.
 """
 import itertools
 import math
 
-from proof_figures import (Figure, INK, FAINT, COLORS, FILLS, GREY,
+from proof_figures import (Figure, Graph, INK, FAINT, COLORS, FILLS, GREY,
                            square_corners, u, shift, rad, sb, clip)
 from fig_front import (it, sbn, RED, RED_FILL, NB, Q8, U8, T8, R8,
                        polyline, arrow, word)
@@ -55,11 +55,6 @@ def mul(k, p):
 
 def norm(p):
     return math.hypot(p[0], p[1])
-
-
-def rot(p, t):
-    return (p[0] * math.cos(t) - p[1] * math.sin(t),
-            p[0] * math.sin(t) + p[1] * math.cos(t))
 
 
 def wrap(t):
@@ -726,12 +721,6 @@ def measure():
            'circles, drawn in its colour')
 
 
-def clip_rect(poly, x0, x1, y0, y1):
-    for a, b, c in ((1, 0, x1), (-1, 0, -x0), (0, 1, y1), (0, -1, -y0)):
-        poly = clip(poly, a, b, c)
-    return poly
-
-
 def core_figure():
     M = model(*BOX)
     ok, core, seps = admissible(*BOX)
@@ -1313,91 +1302,79 @@ def words():
            'of its exterior squares and the digit of each edge')
 
 
-# ------------------------------------------------------------- the tangents
+# ------------------------------------------------------ the five-corner problem
 
-TANGENT_RANGE = {'H': (0.5, 1.0), 'G': (-0.8, -0.05), 'A': (-1.0, 1.0),
-                 'B': (-1.0, 1.0), 'T': (0.05, 0.8), 'D': (-1.0, -0.5),
-                 'E': (-1.0, 0.0)}
+def dimension(f, a, b, label, color=INK, size=14, off=(0.0, 0.0), ticks=()):
+    """A double-headed dimension arrow from a to b with a label at its
+    middle, shifted by off, and thin extension lines from each point of
+    ticks to the arrow."""
+    arrow(f, mul(0.5, add(a, b)), a, color=color, width=1.2, size=8.0)
+    arrow(f, mul(0.5, add(a, b)), b, color=color, width=1.2, size=8.0)
+    for p, q in ticks:
+        f.line(p, q, stroke=color, width=0.8, dash='2 2')
+    halo_text(f, add(mul(0.5, add(a, b)), off), label, size=size, color=color)
 
 
-def tangents():
+def corners_figure():
+    P1, P2, P3, P4, P5 = ROOT['P']
+    c, s = C0, S0
+    # the five spans hold with equality at the minimum (Lemma 11.3)
+    assert abs((P2[1] - P1[1]) - 2) < 1e-12
+    assert abs((P2[0] - P3[0]) - 3) < 1e-12
+    assert abs((P3[1] - P4[1]) - 2) < 1e-12
+    assert abs(dot(F_T, sub(P4, P5)) - (1 + s)) < 1e-9
+    assert abs(dot(E_T, sub(P1, P5)) - (2 + c)) < 1e-9
+    for P in ROOT['P']:
+        assert abs(norm(P) - R8) < 1e-9
     M = model(*BOX)
-    m = R8 + 0.12
-    f = Figure(-m, m, -m, m, 150)
+    m = R8 + 0.42
+    f = Figure(-m - 0.62, m, -m - 0.12, m, 140)
     f.circle((0, 0), R8, stroke=INK, width=1.1, dash='6 4')
-    for k in CYCLE:
-        cs = canonical(M[k])
-        lo, hi = TANGENT_RANGE[k]
-        assert lo <= cs['tau'] <= hi
-        if k in 'GT':
-            assert lo < cs['tau'] < hi
-        b0, b1 = cs['axis'] - math.atan(hi), cs['axis'] - math.atan(lo)
-        fan = [(0, 0)] + [mul(1.85, u(b0 + (b1 - b0) * j / 40))
-                          for j in range(41)]
-        f.polygon(fan, fill=ROLE_FILL[k], stroke=ROLE_COLOR[k], width=1,
-                  opacity=0.55)
-    for k in CYCLE:
-        cs = canonical(M[k])
-        draw_square(f, M[k], stroke=ROLE_COLOR[k], width=1.2, dash='3 3')
-        arrow(f, (0, 0), mul(1.95, u(cs['axis'])), color=ROLE_COLOR[k],
-              width=1.4)
-        f.dot(M[k][0], r=3.4, fill=ROLE_COLOR[k])
-        f.text(add(M[k][0], mul(0.22, u(cs['beta'] + 0.5))), k, size=16,
-               color=ROLE_COLOR[k])
+    for k in EXTERIOR:
+        draw_square(f, M[k], fill=ROLE_FILL[k], stroke=ROLE_COLOR[k],
+                    opacity=0.55)
+        f.text(M[k][0], k, size=15, color=ROLE_COLOR[k])
+    # the heights 2 at the right and at the left, the width 3 at the top
+    xr = max(P1[0], P2[0]) + 0.16
+    dimension(f, (xr, P1[1]), (xr, P2[1]), '2', off=(0.12, 0.0),
+              ticks=[(P1, (xr, P1[1])), (P2, (xr, P2[1]))])
+    xl = min(P3[0], P4[0]) - 0.16
+    dimension(f, (xl, P4[1]), (xl, P3[1]), '2', off=(-0.12, 0.0),
+              ticks=[(P4, (xl, P4[1])), (P3, (xl, P3[1]))])
+    yt = max(P2[1], P3[1]) + 0.16
+    dimension(f, (P3[0], yt), (P2[0], yt), '3', off=(0.0, 0.12),
+              ticks=[(P3, (P3[0], yt)), (P2, (P2[0], yt))])
+    # the two spans in the frame e, f of H and G
+    h1p5, h2p5 = dot(E_T, P5), dot(F_T, P5)
+    e4 = min(h1p5, dot(E_T, P4)) - 0.2
+    a = add(mul(e4, E_T), mul(h2p5, F_T))
+    b = add(mul(e4, E_T), mul(dot(F_T, P4), F_T))
+    dimension(f, a, b, '1' + NB + '+' + NB + 'sin' + NB + it('t'), off=(-0.42, 0.0),
+              size=13, ticks=[(P5, a), (P4, b)])
+    f2 = min(h2p5, dot(F_T, P1)) - 0.3
+    a = add(mul(h1p5, E_T), mul(f2, F_T))
+    b = add(mul(dot(E_T, P1), E_T), mul(f2, F_T))
+    dimension(f, a, b, '2' + NB + '+' + NB + 'cos' + NB + it('t'),
+              off=mul(-0.14, F_T), size=13, ticks=[(P5, a), (P1, b)])
+    for j, P in enumerate(ROOT['P']):
+        f.dot(P, r=3.6, fill=INK)
+        off = {0: (0.12, -0.15), 1: (0.2, 0.06), 2: (-0.2, 0.06),
+               3: (-0.12, 0.14), 4: (-0.17, 0.11)}[j]
+        f.text(add(P, off), sb(it('P'), str(j + 1), size=14), size=14)
     origin(f, dx=0.05, dy=-0.1)
-    f.save('11-eight/tangents', 'The exterior squares of the optimal packing with '
-           'the fans of centre directions allowed by their signed tangents after '
-           'the tangent exclusions, and their actual centres')
+    f.save('11-eight/corners', 'The five-corner problem at its minimum: the corners '
+           'P1 to P5 on the circle and the five spans, each holding with '
+           'equality')
 
 
-# ------------------------------------------------- a row and its angle chains
-
-# Data copied from G_LOWER_AFFINE_HAND_DATA.json (the table that excludes
-# tau_G at most -4/5, at the level Q1), research/eight at commit a21c91f: the arcs
-# 10 (role H) and 66 (role G) and all the rows of the edge H -> G for this
-# pair of arcs: (axis, half r, lo, hi, multiplier, support rule).
-TABLE_Q = 3.915534138
-TABLE_GAMMA = 0.8977
-ARC_10 = dict(role='H', kind='O', sign=-1, lo=0.0, hi=1 / 8, c=0.23532111,
-              p=0.0, q=-1.05377789)
-ARC_66 = dict(role='G', kind='O', sign=-1, lo=7 / 8, hi=1.0, c=0.26581382,
-              p=0.0, q=-0.91311208)
-ROWS_10_66 = [(1, -1, 0.0, 0.02539817, 19.9999997, 'endpoints'),
-              (2, -1, 0.0, 0.02539817, 19.9999997, 'endpoints'),
-              (3, -1, 0.0, 0.02539817, 19.9999997, 'endpoints'),
-              (4, -1, 0.0, 0.02539817, 19.9999997, 'endpoints'),
-              (1, 1, 0.0, 0.7, 7.56987426, 'upper'),
-              (2, 1, 0.0, 0.7, 19.9999997, 'endpoints'),
-              (3, 1, 0.0, 0.0875, 19.99999943, 'lower'),
-              (3, 1, 0.0875, 0.13125, 1.03778016, 'lower'),
-              (3, 1, 0.13125, 0.175, 1.023, 'circle'),
-              (3, 1, 0.175, 0.21875, 1.01256, 'circle'),
-              (3, 1, 0.21875, 0.2625, 1.001, 'circle'),
-              (3, 1, 0.2625, 0.30625, 0.98507418, 'upper'),
-              (3, 1, 0.30625, 0.35, 0.91311208, 'upper'),
-              (3, 1, 0.35, 0.7, 0.0, 'endpoints'),
-              (4, 1, 0.0, 0.7, 1.19411839, 'endpoints')]
-
-
-def arc_states(arc, n=60):
-    out = []
-    for j in range(n + 1):
-        tg = arc['lo'] + (arc['hi'] - arc['lo']) * j / n
-        a = outer_a(TABLE_Q, tg) if arc['kind'] == 'O' else core_a(tg)
-        out.append((a, tg * a))
-    return out
-
-
-def arc_label(arc, a, b):
-    return arc['c'] + arc['p'] * a + arc['q'] * b
-
+# ------------------------------------------------------ a pair of low squares
 
 def pair_width(phi):
     return 0.5 * (1 + abs(math.sin(phi)) + abs(math.cos(phi)))
 
 
 def forward_margin(j, sg, tg, a, b, A, B, phi):
-    """The margins of (11.5)."""
+    """The margins M1 to M4 of (11.5)."""
     s, c = math.sin(phi), math.cos(phi)
     W = pair_width(phi)
     return {1: sg * b + A * s - tg * B * c - W, 2: A - a * c + sg * b * s - W,
@@ -1405,226 +1382,103 @@ def forward_margin(j, sg, tg, a, b, A, B, phi):
             4: a - A * c - tg * B * s - W}[j]
 
 
-def row_value(row, u_, a, b, A, B):
-    """The left side of (11.10) for the arcs 10 and 66 (beta = 0)."""
-    axis, half, lo, hi, lam, mode = row
-    phi = half * u_
-    M = forward_margin(axis, ARC_10['sign'], ARC_66['sign'], a, b, A, B, phi)
-    return (phi + arc_label(ARC_10, a, b) - arc_label(ARC_66, A, B)
-            - TABLE_GAMMA - lam * M)
+LOW_U, LOW_V = 3231 / 8000, 217813 / 200000
+LOW_A0 = math.sqrt(Q0 - 0.25) - 0.5
+LOW_A1 = (math.sqrt(272 * Q0 - 36) - 10) / 17
+LOW_B1 = LOW_A1 / 4
 
 
-def row_figure():
-    row = ROWS_10_66[4]
-    axis, half, lo, hi, lam, mode = row
-    S, T = arc_states(ARC_10, 40), arc_states(ARC_66, 40)
-    us = [lo + (hi - lo) * j / 70 for j in range(71)]
-    true_min, bound = [], []
-    sg, tg = ARC_10['sign'], ARC_66['sign']
-    for u_ in us:
-        phi = half * u_
-        true_min.append(min(row_value(row, u_, a, b, A, B) for a, b in S
-                            for A, B in T))
-        # Lemma L.2 for axis 1: constant plus source and target terms
-        K = phi - TABLE_GAMMA + ARC_10['c'] - ARC_66['c'] + lam * pair_width(phi)
-        Xs, Ys = ARC_10['p'], ARC_10['q'] - lam * sg
-        Xt = -ARC_66['p'] - lam * math.sin(phi)
-        Yt = -ARC_66['q'] + lam * tg * math.cos(phi)
-        src = min(Xs * a + Ys * b for a, b in (S[0], S[-1]))
-        # the upper-endpoint rule: Yt - Xt * rho <= 0 at both endpoints
-        for A, B in (T[0], T[-1]):
-            rho = (B + 0.5) / (A + 0.5)
-            assert Yt - Xt * rho <= 0
-        tgt = Xt * T[-1][0] + Yt * T[-1][1]
-        bound.append(K + src + tgt)
-    for v, w in zip(true_min, bound):
-        assert w > 0 and w <= v + 1e-9
-    assert min(true_min) > 0.05
-    # left panel: the arcs on the radial curves; right panel: the graph
-    f = Figure(0.3, 4.55, -0.22, 1.18, 190)
-    q = TABLE_Q
-    outer = [(outer_a(q, j / 80), j / 80 * outer_a(q, j / 80)) for j in range(81)]
-    corner = [(core_a(tg_), tg_ * core_a(tg_))
-              for tg_ in (6 / 7 + (1 / 7) * j / 30 for j in range(31))]
-    f.polygon([(7 / 12, 0.0)] + outer + list(reversed(corner)), fill=FILLS[0],
-              stroke='none')
-    polyline(f, outer, stroke=FAINT, width=1.4)
-    polyline(f, [(7 / 12, 0.0), (7 / 12, 0.5)] + corner, stroke=FAINT, width=1.4)
-    polyline(f, S, stroke=PINK, width=5)
-    polyline(f, T, stroke=YELLOW, width=5)
-    f.text(add(S[len(S) // 2], (0.06, 0.07)), 'H', size=15, color=PINK)
-    f.text(add(T[len(T) // 2], (0.08, 0.04)), 'G', size=15, color=YELLOW)
-    plane_frame(f, 0.4, 1.55, 1.12, ((0.5, '½'), (1.0, '1')), ((0.5, '½'),))
-    # the graph
-    ymax = max(true_min) * 1.05
-    ox, oy, kx = 2.05, 0.05, 3.3
-    ky = 1.0 / ymax
-    P = lambda x, y: (ox + kx * x, oy + ky * y)
-    f.line(P(0, 0), P(0.74, 0), width=1, arrow=True)
-    f.line(P(0, 0), P(0, ymax * 1.06), width=1, arrow=True)
-    polyline(f, [P(x, y) for x, y in zip(us, true_min)], stroke=FILLS[0],
-             width=7)
-    polyline(f, [P(x, y) for x, y in zip(us, true_min)], stroke=BLUE, width=1.6)
-    polyline(f, [P(x, y) for x, y in zip(us, bound)], stroke=INK, width=1.3,
-             dash='5 4')
-    for x, lab in ((0.0, '0'), (0.35, '0.35'), (0.7, '0.7')):
-        f.line(P(x, 0), P(x, -0.012 / ky), width=1)
-        f.text(shift(P(x, 0), (0, -0.09)), lab, size=12, italic=False)
-    for y in (0.2, 0.4, 0.6, 0.8, 1.0):
-        if y < ymax:
-            f.line(P(0, y), shift(P(0, y), (-0.03, 0)), width=1)
-            f.text(shift(P(0, y), (-0.06, 0)), f'{y:.1f}', size=12,
-                   italic=False, anchor='end')
-    umin = us[true_min.index(min(true_min))]
-    f.dot(P(umin, min(true_min)), r=3)
-    f.text(shift(P(umin, min(true_min)), (0.0, 0.12)),
-           f'{min(true_min):.3f}', size=12, italic=False)
-    f.text(shift(P(0.74, 0), (-0.02, 0.13)), it('u'), size=15, anchor='end')
-    f.save('11-eight/row', 'One row of the table that excludes tau_G at most -4/5: '
-           'the source and target arcs on the outer curve, and the least value '
-           'of the row inequality over the two arcs against the angle, with the '
-           'support bound below it')
-    ROW_INFO[0] = (min(true_min), min(bound))
+def low_state(b):
+    a = math.sqrt(Q0 - (b + 0.5) ** 2) - 0.5
+    return a, LOW_U * (a - LOW_A0) + LOW_V * b
 
 
-ROW_INFO = [None]
+def pair_figure():
+    assert abs((LOW_A1 + 0.5) ** 2 + (LOW_B1 + 0.5) ** 2 - Q0) < 1e-12
+    n = 90
+    states = [(b,) + low_state(b) for b in
+              (LOW_B1 * k / n for k in range(n + 1))]
+    phis = [0.2 + (PI / 2 + 0.3 - 0.2) * k / 220 for k in range(221)]
+    curves = {j: [] for j in (1, 2, 3, 4)}
+    gamma = 91 / 100
+    least = 10.0
+    for phi in phis:
+        chi = 0.5 * (abs(math.sin(phi)) + abs(math.cos(phi)) - 1)
+        best = {j: None for j in (1, 2, 3, 4)}
+        for sg in (1, -1):
+            for b, a, L in states:
+                al = sg * math.atan(b / a)
+                for tg in (1, -1):
+                    for B, A, L2 in states:
+                        alt = tg * math.atan(B / A)
+                        if phi + al - alt < 19 / 25:
+                            continue
+                        cost = phi - 9 / 50 * chi + sg * L - tg * L2
+                        for j in (1, 2, 3, 4):
+                            if forward_margin(j, sg, tg, a, b, A, B, phi) >= 0:
+                                if best[j] is None or cost < best[j]:
+                                    best[j] = cost
+        for j in (1, 2, 3, 4):
+            curves[j].append(best[j])
+            if best[j] is not None:
+                least = min(least, best[j])
+    # Proposition 11.21: every separating axis leaves the cost above Gamma_LL
+    assert least > gamma, least
+    f = Figure(-0.1, 4.2, -0.35, 2.15, 150)
+    x0, y0 = 0.2, 0.86
+    g = Graph(f, 2.25, 3.2, x0=x0, y0=y0, dx=0.25, dy=0.0)
+    ytop = 1.46
+    g.x_axis(x0, PI / 2 + 0.36, y=y0,
+             ticks=[(0.5, '0.5'), (1.0, '1'), (1.5, '1.5'), (PI / 2, 'π/2')],
+             label=it('φ'))
+    g.y_axis(y0, ytop, x=x0,
+             ticks=[(0.9, '0.9'), (1.0, '1'), (1.1, '1.1'), (1.2, '1.2'),
+                    (1.3, '1.3'), (1.4, '1.4')])
+    g.line((x0, gamma), (PI / 2 + 0.3, gamma), stroke=INK, width=1.2,
+           dash='6 4')
+    g.text((PI / 2 + 0.3, gamma), '91/100', size=12, italic=False,
+           anchor='start', dx=5)
+    # the reversal of the pair exchanges the axes 1 and 3, and 2 and 4, and
+    # both squares are low, so the curves agree in pairs
+    for j, k in ((1, 3), (2, 4)):
+        for v, w in zip(curves[j], curves[k]):
+            assert (v is None) == (w is None)
+            assert v is None or abs(v - w) < 1e-9
+    cols = {1: BLUE, 2: ORANGE}
+    names = {1: 'axes' + NB + '1' + NB + 'and' + NB + '3',
+             2: 'axes' + NB + '2' + NB + 'and' + NB + '4'}
+    for j in (1, 2):
+        run = []
+        for phi, v in zip(phis, curves[j]):
+            if v is None or v > ytop:
+                if len(run) > 1:
+                    g.polyline(run, stroke=cols[j], width=1.8)
+                run = []
+            else:
+                run.append((phi, v))
+        if len(run) > 1:
+            g.polyline(run, stroke=cols[j], width=1.8)
+        # a label at the lowest point of the curve
+        pts = [(p, v) for p, v in zip(phis, curves[j]) if v is not None]
+        if j == 1:
+            p, v = min(pts, key=lambda t: t[1])
+            g.text((p, v), names[j], size=12, italic=False, color=cols[j],
+                   dy=-12)
+        else:
+            p, v = min(pts, key=lambda t: abs(t[0] - 1.3))
+            g.text((p, v), names[j], size=12, italic=False, color=cols[j],
+                   anchor='start', dx=8, dy=-4)
+    f.save('11-eight/pair', 'Proposition 11.21 for two low squares: the least '
+           'cost over the two low arcs and the sign pairs, for each axis where '
+           'it separates, above the bound 91/100')
 
 
-def chains():
-    # the required range of phi for the pair, from the gap bounds and the
-    # frame bound (Section L.6)
-    al_s = (-math.atan(ARC_10['hi']), -math.atan(ARC_10['lo']))
-    al_t = (-math.atan(ARC_66['hi']), -math.atan(ARC_66['lo']))
-    lo_req = max(19 / 25 - al_s[1] + al_t[0], -0.7)
-    hi_req = min(710 / 113 - 114 / 25 - al_s[0] + al_t[1], 0.7)
-    assert abs(lo_req + 0.02539817) < 1e-7 and hi_req == 0.7
-    f = Figure(-0.42, 2.42, 0.16, 1.2, 290)
-    X = lambda phi: (phi - lo_req) / (hi_req - lo_req) * 2.2
-    for axis in (1, 2, 3, 4):
-        yv = 1.02 - 0.2 * (axis - 1)
-        f.polygon([(X(lo_req), yv - 0.075), (X(hi_req), yv - 0.075),
-                   (X(hi_req), yv + 0.075), (X(lo_req), yv + 0.075)],
-                  fill=GREY, stroke='none')
-        ivs = sorted((min(h * a, h * b), max(h * a, h * b), mode)
-                     for (ax, h, a, b, lam, mode) in ROWS_10_66 if ax == axis)
-        # a closed chain covering the required range, endpoints shared
-        assert abs(ivs[0][0] - lo_req) < 1e-7 and abs(ivs[-1][1] - hi_req) < 1e-9
-        for (a0, a1, _), (b0, b1, _) in zip(ivs, ivs[1:]):
-            assert abs(a1 - b0) < 1e-12
-        for j, (a0, a1, mode) in enumerate(ivs):
-            col = FILLS[0] if j % 2 == 0 else FILLS[1]
-            f.polygon([(X(a0), yv - 0.05), (X(a1), yv - 0.05),
-                       (X(a1), yv + 0.05), (X(a0), yv + 0.05)], fill=col,
-                      stroke=INK, width=1)
-            if X(a1) - X(a0) > 0.14:
-                f.text(((X(a0) + X(a1)) / 2, yv), mode, size=11,
-                       italic=False, color=INK)
-            elif X(a1) - X(a0) > 0.05:
-                f.text(((X(a0) + X(a1)) / 2, yv), mode[0], size=11,
-                       italic=False, color=INK)
-        f.text((-0.06, yv), str(axis), size=14, italic=False, anchor='end')
-    f.text((-0.06, 1.15), 'margin', size=12, italic=False, anchor='end')
-    yax = 0.3
-    f.line((X(lo_req), yax), (X(hi_req) + 0.08, yax), width=1, arrow=True)
-    for phi, lab, anchor in ((lo_req, '−0.0254', 'end'), (0.0, '0', 'start'),
-                             (0.35, '0.35', 'middle'), (0.7, '0.7', 'middle')):
-        f.line((X(phi), yax), (X(phi), yax - 0.03), width=1)
-        dx = -0.01 if anchor == 'end' else (0.01 if anchor == 'start' else 0)
-        f.text((X(phi) + dx, yax - 0.08), lab, size=12, italic=False,
-               anchor=anchor)
-    f.text((X(hi_req) + 0.1, yax + 0.05), it('φ'), size=15, anchor='start')
-    f.save('11-eight/chains', 'The angle chains of one pair of arcs in the table '
-           'that excludes tau_G at most -4/5: for each of the four margins the closed '
-           'angle intervals of the rows meet at common endpoints and cover the '
-           'required range')
+# ------------------------------------------------------------------ owners
 
-
-# ------------------------------------------------------------ the mismatch
-
-def mismatch():
-    from fractions import Fraction as Fr
-    # the exact comparisons of Proposition 11.34
-    pi_up = Fr(710, 113)
-    assert 7 * Fr(89727, 100000) + Fr(99, 5000) * Fr(29, 100) * Fr(2, 5) - pi_up \
-        == Fr(271, 282500000)
-
-    def P7(x):
-        return (x / 2 - x ** 2 / 4 - x ** 3 / 12 + x ** 4 / 48 + x ** 5 / 240
-                - x ** 6 / 1440 - x ** 7 / 10080)
-    assert 7 * Fr(89727, 100000) + Fr(51, 500000) + Fr(99, 5000) * P7(Fr(13, 50)) \
-        - pi_up == Fr(9154605884982919, 494375000000000000000)
-    cubic = lambda x: x / 2 - x ** 2 / 4 - x ** 3 / 12
-    assert 7 * Fr(897582, 10 ** 6) + Fr(1, 400) * cubic(Fr(1, 10)) - pi_up \
-        == Fr(18173, 2712000000)
-    g_int, g_fin = Fr(238191, 32000000), Fr(5996999, 12000000000)
-    two_pi = Fr(628318531, 10 ** 8)
-    assert Fr(125662969, 20000000) + Fr(1, 200) * g_int - two_pi \
-        == Fr(2287, 6400000000)
-    assert Fr(502653, 80000) + Fr(1, 20) * g_fin - two_pi \
-        == Fr(522599, 240000000000)
-    assert gfun(0.015) > float(g_int) and gfun(0.001) > float(g_fin)
-    assert P7(0.26) <= gfun(0.26) and gfun(0.7) > 0.29 * 0.7
-    gam_int = [Fr(8975928, 10 ** 7)] * 5 + [Fr(89759275, 10 ** 8),
-                                            Fr(8975917, 10 ** 7)]
-    gam_fin = [Fr(897595, 10 ** 6)] * 6 + [Fr(8975925, 10 ** 7)]
-    assert sum(gam_int) == Fr(125662969, 20000000)
-    assert sum(gam_fin) == Fr(502653, 80000)
-    # the curves: the charge term divided by the deficit of the constants
-    steps = [('coarse', float(pi_up - 7 * Fr(89727, 100000)), 99 / 5000,
-              lambda d: 0.29 * d, 0.4, ORANGE, '2/5'),
-             ('raised', float(pi_up - 7 * Fr(89727, 100000) - Fr(51, 500000)),
-              99 / 5000, gfun, 13 / 50, ORANGE, '13/50'),
-             ('M1', float(pi_up - 7 * Fr(897582, 10 ** 6)), 1 / 400, gfun, 0.1,
-              BLUE, '1/10'),
-             ('int', float(two_pi - sum(gam_int)), 1 / 200, gfun, 0.015, GREEN,
-              '3/200'),
-             ('M2', float(two_pi - sum(gam_fin)), 1 / 20, gfun, 0.001, PURPLE,
-              '1/1000')]
-    ox, oy, kx, ky = 0.75, 0.55, 1.45, 1.6
-    lx = lambda d: ox + kx * (math.log10(d) + 4)
-    P = lambda d, r: (lx(d), oy + ky * r)
-    f = Figure(0.0, 7.15, 0.0, 4.2, 112)
-    f.line(P(1e-4, 0), P(1.4, 0), width=1, arrow=True)
-    f.line(P(1e-4, 0), P(1e-4, 2.2), width=1, arrow=True)
-    f.line(P(1e-4, 1), P(1.0, 1), stroke=INK, width=1, dash='5 3')
-    for e in range(-4, 1):
-        d = 10.0 ** e
-        f.line(P(d, 0), P(d, -0.04), width=1)
-        lab = '1' if e == 0 else '10' + '<tspan dy="-6" font-size="9">' + \
-            f'{e}'.replace('-', '−') + '</tspan>'
-        f.text(shift(P(d, 0), (0, -0.2)), lab, size=12, italic=False)
-    for r in (0.5, 1.0, 1.5, 2.0):
-        f.line(P(1e-4, r), shift(P(1e-4, r), (-0.05, 0)), width=1)
-        f.text(shift(P(1e-4, r), (-0.09, 0)), f'{r:.1f}', size=12,
-               italic=False, anchor='end')
-    for name, deficit, beta, lower, thr, col, lab in steps:
-        assert deficit > 0
-        ds = [10 ** (-4 + 4 * j / 200) for j in range(201)]
-        pts = [P(d, beta * lower(d) / deficit) for d in ds
-               if d <= (0.7 if lower is gfun else 1.0)
-               and beta * lower(d) / deficit <= 2.15]
-        polyline(f, pts, stroke=col, width=1.8,
-                 dash='4 3' if name == 'coarse' else None)
-        rt = beta * lower(thr) / deficit
-        assert rt > 1
-        f.dot(P(thr, rt), r=3.6, fill=col)
-        dx = 0.1 if name == 'coarse' else -0.1
-        f.text(shift(P(thr, rt), (dx, 0.16 if name != 'coarse' else -0.18)),
-               lab, size=12, italic=False, color=col,
-               anchor='start' if name == 'coarse' else 'end')
-    f.text(P(1.25, 0.07), 'Δ', size=15, anchor='end')
-    f.text(shift(P(1e-4, 2.2), (0.08, -0.05)), 'charge ÷ deficit', size=12,
-           italic=False, anchor='start')
-    f.save('11-eight/mismatch', 'The four contraction steps of the mismatch chain: '
-           'for each, the charge term beta times g of the mismatch divided by the '
-           'deficit of its constants, against the mismatch on a logarithmic axis; '
-           'each passes 1 below its threshold, marked by a dot')
-
-
-# ------------------------------------------------------------ owners, tilt
-
-OWNERS = {'H': {1, 3}, 'G': {1}, 'A': {1, 3}, 'B': {3, 4}, 'T': {1, 3},
-          'D': {3, 4}, 'E': {2}}
+TERMINAL = {'H': {1, 3}, 'G': {1}, 'A': {1, 3}, 'B': {3, 4}, 'T': {1, 3},
+            'D': {3, 4}, 'E': {2}}
+NORMAL = {'H': {1, 3}, 'G': {1, 2}, 'A': {1, 3}, 'B': {3, 4}, 'T': {1, 3},
+          'D': {3, 4}, 'E': {1, 2}}
 
 
 def owners():
@@ -1642,64 +1496,203 @@ def owners():
         j = CYCLE[(CYCLE.index(i) + 1) % 7]
         mg = margins_of(M[i], M[j])
         zero = {a for a in (1, 2, 3, 4) if abs(mg[a]) < 1e-9}
-        assert zero == OWNERS[i], (i, mg)
+        # the terminal owners separate with margin 0, the other normal
+        # owners and the other axes do not separate
+        assert zero == TERMINAL[i], (i, mg)
         assert all(mg[a] < -1e-6 for a in (1, 2, 3, 4) if a not in zero)
+        assert TERMINAL[i] <= NORMAL[i]
         n = witness_normal(i)
         c = contact[i]
         t = (-n[1], n[0])
         f.line(add(c, mul(-0.62, t)), add(c, mul(0.62, t)), stroke=INK,
                width=1.3, dash='5 3')
-        lab = '{' + ', '.join(str(a) for a in sorted(OWNERS[i])) + '}'
+        parts = []
+        for a in sorted(NORMAL[i]):
+            parts.append(f'<tspan font-weight="bold">{a}</tspan>'
+                         if a in TERMINAL[i] else str(a))
+        lab = '{' + ', '.join(parts) + '}'
         toward = mul(-1 / norm(c), c)
         halo_text(f, add(c, mul(0.34, toward)), lab, size=14)
+        if i in 'GB':
+            # the hard axes: 1 on G -> A, 3 on B -> T
+            arrow(f, add(c, mul(-0.18, n)), add(c, mul(0.18, n)), color=RED,
+                  width=2.0)
     for k, sq in ext.items():
         f.text(sq[0], k, size=17, color=ROLE_COLOR[k])
     origin(f, dx=0.05, dy=-0.1)
     f.save('11-eight/owners', 'The separating lines of the seven contacts of the '
-           'optimal packing, each edge labelled with its owner set of retained '
-           'axes')
+           'optimal packing, each edge labelled with its normal owners, the '
+           'terminal owners in bold, and the two hard axes marked')
 
 
-def tilt():
-    zs = math.tan(TSTAR / 2)
-    a, b = 1001 / 20000, 2 / 25
-    assert a < zs < b
-    assert 2 * (a - a ** 3 / 3) > 1 / 10 and 2 * math.atan(b) < 4 / 25
-    assert 1 / 10 < TSTAR < 4 / 25 and math.atan(3 / 8) * 2 > 0.7
-    f = Figure(-0.42, 0.42, -0.155, 0.14, 1000)
-    y0 = 0.08
-    f.line((-0.39, y0), (0.4, y0), width=1, arrow=True)
-    for lo, hi in ((-3 / 8, a), (b, 3 / 8)):
-        f.polygon([(lo, y0 - 0.012), (hi, y0 - 0.012), (hi, y0 + 0.012),
-                   (lo, y0 + 0.012)], fill=RED_FILL, stroke=RED, width=1)
-    for z, lab in ((-3 / 8, '−3/8'), (0.0, '0'), (3 / 8, '3/8')):
-        f.line((z, y0 - 0.02), (z, y0 + 0.02), width=1)
-        f.text((z, y0 + 0.04), lab, size=12, italic=False)
-    f.text((0.405, y0 + 0.02), it('z'), size=15, anchor='start')
-    # the enlargement of the window
-    k = 8.0
-    cz = (a + b) / 2
-    Xz = lambda z: (z - cz) * k
-    y1 = -0.09
-    f.line((Xz(a) - 0.06, y1), (Xz(b) + 0.06, y1), width=1)
-    f.polygon([(Xz(a) - 0.06, y1 - 0.012), (Xz(a), y1 - 0.012),
-               (Xz(a), y1 + 0.012), (Xz(a) - 0.06, y1 + 0.012)], fill=RED_FILL,
-              stroke=RED, width=1)
-    f.polygon([(Xz(b), y1 - 0.012), (Xz(b) + 0.06, y1 - 0.012),
-               (Xz(b) + 0.06, y1 + 0.012), (Xz(b), y1 + 0.012)], fill=RED_FILL,
-              stroke=RED, width=1)
-    f.line((a, y0 - 0.012), (Xz(a), y1 + 0.012), stroke=FAINT, width=0.8,
-           dash='2 2')
-    f.line((b, y0 - 0.012), (Xz(b), y1 + 0.012), stroke=FAINT, width=0.8,
-           dash='2 2')
-    f.dot((Xz(zs), y1), r=4, fill=INK)
-    f.text((Xz(zs), y1 + 0.035), sb(it('z'), '*', NB + '≈' + NB + '0.0619', 13),
-           size=13, italic=False)
-    for z, lab in ((a, '1001/20000'), (b, '2/25')):
-        f.text((Xz(z), y1 - 0.045), lab, size=12, italic=False)
-    f.save('11-eight/tilt', 'The tilt window: the half-angle tangent z on '
-           '[-3/8, 3/8] with the two excluded intervals shaded, and the window '
-           'between them enlarged, containing z*')
+# ------------------------------------------------------------- the boosts
+
+def boost_negative(d):
+    return PI / 2 + d + 93 / 200 - 18513 / 20000 * math.cos(d) + \
+        129 / 200 * abs(math.sin(d))
+
+
+def boost_positive(d):
+    return PI / 2 + d + 31 / 100 - 321 / 500 * math.cos(d) + \
+        49 / 100 * abs(math.sin(d))
+
+
+def boost_figure():
+    ds = [-0.7 + 1.4 * k / 400 for k in range(401)]
+    for d in ds:
+        assert boost_negative(d) > 1 and boost_positive(d) > 1
+    # the margin and the weights of the source of sign -1 give the first
+    # bound exactly (Lemma 11.33)
+    lo = min(min(boost_negative(d), boost_positive(d)) for d in ds)
+    f = Figure(-0.95, 1.2, -0.25, 2.35, 200)
+    g = Graph(f, 1.2, 1.5, x0=0.0, y0=0.9, dx=0.0, dy=0.0)
+    g.x_axis(-0.75, 0.78, y=0.9, ticks=[(-0.7, '−0.7'), (0.0, '0'), (0.7, '0.7')])
+    g.text((0.78, 0.9), it('d'), size=15, anchor='start', dx=6, dy=2)
+    g.y_axis(0.9, 2.45, x=-0.75, ticks=[(1.0, '1'), (1.5, '1.5'), (2.0, '2')])
+    g.line((-0.7, 1.0), (0.7, 1.0), stroke=INK, width=1.2, dash='6 4')
+    g.line((-0.7, 197 / 200), (0.7, 197 / 200), stroke=FAINT, width=1.2,
+           dash='2 3')
+    g.curve(boost_negative, -0.7, 0.7, stroke=BLUE, width=1.8)
+    g.curve(boost_positive, -0.7, 0.7, stroke=ORANGE, width=1.8)
+    g.text((0.35, boost_negative(0.35)), it('σ') + NB + '=' + NB + '−1',
+           size=13, italic=False, color=BLUE, anchor='end', dx=-6, dy=-8)
+    g.text((0.42, boost_positive(0.42)), it('σ') + NB + '=' + NB + '+1',
+           size=13, italic=False, color=ORANGE, anchor='start', dx=8, dy=8)
+    g.text((0.7, 1.0), '1', size=12, italic=False, anchor='start', dx=5, dy=-6)
+    g.text((0.7, 197 / 200), '197/200', size=12, italic=False, anchor='start',
+           dx=5, dy=7)
+    assert lo > 1
+    f.save('11-eight/boost', 'The two lower bounds of the boosted cost of the edge '
+           'D to E when the axis 1 separates and E has a nonpositive tangent, '
+           'both above 1')
+
+
+# ------------------------------------------------- the axes of the pair G, A
+
+def ga_axes_figure():
+    M = model(*BOX)
+    S, T = M['G'], M['A']
+    cs, ct = canonical(S), canonical(T)
+    mg = margins_of(S, T)
+    # in the optimal packing only the low axis 1 separates G from A
+    assert abs(mg[1]) < 1e-9 and -0.1 < mg[2] < -0.09
+    assert -0.26 < mg[3] < -0.25 and -0.38 < mg[4] < -0.37
+    es, fs = u(cs['axis']), u(cs['axis'] + PI / 2)
+    et, ft = u(ct['axis']), u(ct['axis'] + PI / 2)
+    f = Figure(-0.45, 2.0, -1.95, 0.15, 190)
+    R0 = R8
+    arc = [mul(R0, u(-1.72 + 1.45 * j / 100)) for j in range(101)]
+    polyline(f, arc, stroke=INK, width=1.1, dash='6 4')
+    for k in 'GA':
+        draw_square(f, M[k], fill=ROLE_FILL[k], stroke=ROLE_COLOR[k])
+    L = 0.3
+    arrows = [(S[0], fs, '1', BLUE), (T[0], et, '2', BLUE),
+              (T[0], ft, '3', RED), (S[0], mul(-1, es), '4', RED)]
+    for c, n, lab, col in arrows:
+        tip = add(c, mul(L, n))
+        arrow(f, c, tip, color=col, width=1.7)
+        halo_text(f, add(c, mul(L + 0.09, n)), lab, size=14, color=col)
+    f.text(shift(S[0], (-0.2, -0.25)), 'G', size=17, color=YELLOW)
+    f.text(shift(T[0], (0.25, -0.28)), 'A', size=17, color=BLUE)
+    f.dot(contact_features(M)[1][1], r=4.2)
+    f.save('11-eight/ga-axes', 'The pair G, A of the optimal packing with its four '
+           'retained axes: the low axes 1 and 2 point from G towards A, the high '
+           'axes 3 and 4 upwards')
+
+
+# ------------------------------------------------------- the ring of Lemma 11.39
+
+def ring_gaps(c):
+    """The seven gaps of Lemma 11.39 for centres c and the tilt t*."""
+    w = 0.5 * (1 + C0 + S0)
+    return {'HG': dot(E_T, sub(c['G'], c['H'])) - 1,
+            'GA': dot(E_T, sub(c['A'], c['G'])) - w,
+            'AB': c['B'][1] - c['A'][1] - 1, 'BT': c['B'][0] - c['T'][0] - 1,
+            'TD': c['T'][0] - c['D'][0] - 1, 'DE': c['D'][1] - c['E'][1] - 1,
+            'EH': dot(F_T, sub(c['E'], c['H'])) - w}
+
+
+def ring_figure():
+    M = model(*BOX)
+    c0 = {k: M[k][0] for k in EXTERIOR}
+    g0 = ring_gaps(c0)
+    assert all(abs(v) < 1e-9 for v in g0.values())
+    eps = 0.07
+    moves = {'H': (0.0, 0.0), 'G': mul(eps, E_T), 'A': (3 * eps, 0.0),
+             'B': (3.5 * eps, eps), 'T': (2 * eps, eps), 'D': (0.5 * eps, 1.6 * eps),
+             'E': (0.3 * eps, 0.7 * eps)}
+    c = {k: add(c0[k], moves[k]) for k in EXTERIOR}
+    g = ring_gaps(c)
+    assert all(v > 0.01 for v in g.values()), g
+    sq = {k: (c[k], M[k][1]) for k in EXTERIOR}
+    P = [add(c['A'], (0.5, -0.5)), add(c['B'], (0.5, 0.5)),
+         add(c['D'], (-0.5, 0.5)), add(c['E'], (-0.5, -0.5)),
+         sub(c['H'], mul(0.5, add(E_T, F_T)))]
+    # the excesses of the five spans are sums of the gaps
+    assert abs((P[1][1] - P[0][1] - 2) - g['AB']) < 1e-12
+    assert abs((P[1][0] - P[2][0] - 3) - (g['BT'] + g['TD'])) < 1e-12
+    assert abs((P[2][1] - P[3][1] - 2) - g['DE']) < 1e-12
+    assert abs((dot(F_T, sub(P[3], P[4])) - 1 - S0) - g['EH']) < 1e-12
+    assert abs((dot(E_T, sub(P[0], P[4])) - 2 - C0) - (g['HG'] + g['GA'])) < 1e-12
+    # the least circle about o that holds the separated squares is larger
+    # than the circle of radius R8 (Lemma 11.39 (3))
+    r = max(norm(v) for k in EXTERIOR for v in corners(sq[k]))
+    assert r > R8 + 0.1
+    m = r + 0.12
+    f = Figure(-m, m + 0.2, -m, m + 0.05, 140)
+    f.circle((0, 0), r, stroke=INK, width=1.1, dash='6 4')
+    for k in EXTERIOR:
+        draw_square(f, sq[k], fill=ROLE_FILL[k], stroke=ROLE_COLOR[k])
+        f.text(sq[k][0], k, size=15, color=ROLE_COLOR[k])
+    # the gaps, as short double arrows between the facing sides
+    def gap_arrow(p, q, label, off):
+        arrow(f, mul(0.5, add(p, q)), p, color=RED, width=1.3, size=6.0)
+        arrow(f, mul(0.5, add(p, q)), q, color=RED, width=1.3, size=6.0)
+        halo_text(f, add(mul(0.5, add(p, q)), off), label, size=12, color=RED)
+    yAB = c['A'][1] + 0.5
+    xm = 0.5 * (max(c['A'][0], c['B'][0]) - 0.5 + min(c['A'][0], c['B'][0]) + 0.5)
+    gap_arrow((xm, yAB), (xm, yAB + g['AB']), sb(it('g'), 'AB', size=12), (0.17, 0))
+    def overlap_mid(P, Q):
+        lo = max(c[P][1], c[Q][1]) - 0.5
+        hi = min(c[P][1], c[Q][1]) + 0.5
+        assert hi - lo > 0.1
+        return 0.5 * (lo + hi)
+    y = overlap_mid('B', 'T')
+    gap_arrow((c['T'][0] + 0.5, y), (c['T'][0] + 0.5 + g['BT'], y),
+              sb(it('g'), 'BT', size=12), (0.24, 0.0))
+    y = overlap_mid('T', 'D')
+    gap_arrow((c['D'][0] + 0.5, y), (c['D'][0] + 0.5 + g['TD'], y),
+              sb(it('g'), 'TD', size=12), (-0.24, 0.0))
+    yDE = c['E'][1] + 0.5
+    xd = 0.5 * (max(c['D'][0], c['E'][0]) - 0.5 + min(c['D'][0], c['E'][0]) + 0.5)
+    gap_arrow((xd, yDE), (xd, yDE + g['DE']), sb(it('g'), 'DE', size=12), (-0.17, 0))
+    # along e: from the right side of H to the left side of G, and from the
+    # right side of G to the corner of A; along f: from the upper side of H
+    # to the corner of E
+    fH = dot(F_T, c['H'])
+    p = add(mul(dot(E_T, c['H']) + 0.5, E_T), mul(fH, F_T))
+    gap_arrow(p, add(p, mul(g['HG'], E_T)), sb(it('g'), 'HG', size=12),
+              mul(-0.16, F_T))
+    cA = add(c['A'], (-0.5, -0.5))
+    p = add(mul(dot(E_T, c['G']) + 0.5, E_T), mul(dot(F_T, cA), F_T))
+    assert abs(dot(E_T, sub(cA, p)) - g['GA']) < 1e-12
+    gap_arrow(p, cA, sb(it('g'), 'GA', size=12),
+              add(mul(-0.16, F_T), mul(0.07, E_T)))
+    cE = add(c['E'], (0.5, -0.5))
+    p = add(mul(dot(E_T, cE), E_T), mul(fH + 0.5, F_T))
+    assert abs(dot(F_T, sub(cE, p)) - g['EH']) < 1e-12
+    gap_arrow(p, cE, sb(it('g'), 'EH', size=12),
+              add(mul(0.22, E_T), mul(0.08, F_T)))
+    for j, Pj in enumerate(P):
+        f.dot(Pj, r=3.4, fill=INK)
+        off = {0: (0.17, 0.0), 1: (0.17, 0.08), 2: (0.2, 0.1),
+               3: (-0.19, -0.06), 4: (0.05, -0.17)}[j]
+        f.text(add(Pj, off), sb(it('P'), str(j + 1), size=13), size=13)
+    origin(f, dx=0.05, dy=-0.1)
+    f.save('11-eight/ring', 'Seven squares with the frames of the optimal packing '
+           'separated by small gaps along the normals of its contacts, the five '
+           'corners whose spans exceed their bounds by sums of the gaps, and the '
+           'least circle about o that holds the squares')
 
 
 def stationary_weights(ch):
@@ -1777,6 +1770,7 @@ def main():
     eight()
     family()
     chain_figure()
+    corners_figure()
     sliders()
     section()
     measure()
@@ -1786,15 +1780,14 @@ def main():
     expansion()
     common_point()
     axes_figure()
+    pair_figure()
     walks()
     frames_figure()
     words()
-    tangents()
-    row_figure()
-    chains()
-    mismatch()
     owners()
-    tilt()
+    boost_figure()
+    ga_axes_figure()
+    ring_figure()
     stress()
 
 

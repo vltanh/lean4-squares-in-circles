@@ -873,22 +873,22 @@ contributes $-c_0\epsilon_n^+\sin n - c_0 + c_0\cos n$. $\square$
 
 *Lean:
 [`Six.Stress.Pair.gap`](../../SquaresInCircles/Six/Stress/PairStress.lean#L190),
-[`Six.Stress.Pair.Sector`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L39),
-[`Six.Stress.Pair.HasSign`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L36),
-[`Six.Stress.Pair.sectorGap`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L101),
-[`Six.Stress.Pair.gap_eq_sectorGap`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L107),
-[`Six.Stress.Pair.constant`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L68),
-[`Six.Stress.Pair.aN`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L77),
-[`Six.Stress.Pair.bN`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L78),
-[`Six.Stress.Pair.aW`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L80),
-[`Six.Stress.Pair.bW`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L81),
-[`Six.Stress.Pair.aQ`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L82),
-[`Six.Stress.Pair.bQ`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L87),
-[`Six.Stress.Pair.slope`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L95),
-[`Six.Stress.Pair.northRadius`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L98),
+[`Six.Stress.Pair.Sector`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L54),
+[`Six.Stress.Pair.HasSign`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L51),
+[`Six.Stress.Pair.sectorGap`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L116),
+[`Six.Stress.Pair.gap_eq_sectorGap`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L122),
+[`Six.Stress.Pair.constant`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L83),
+[`Six.Stress.Pair.aN`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L92),
+[`Six.Stress.Pair.bN`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L93),
+[`Six.Stress.Pair.aW`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L95),
+[`Six.Stress.Pair.bW`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L96),
+[`Six.Stress.Pair.aQ`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L97),
+[`Six.Stress.Pair.bQ`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L102),
+[`Six.Stress.Pair.slope`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L110),
+[`Six.Stress.Pair.northRadius`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L113),
 [`Six.Stress.Pair.domain_bounds`](../../SquaresInCircles/Six/Stress/PairStress.lean#L176),
-[`Six.Stress.Pair.domain_cos_pos`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L42),
-[`Six.Stress.Pair.sign_sin`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L53).*
+[`Six.Stress.Pair.domain_cos_pos`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L57),
+[`Six.Stress.Pair.sign_sin`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L68).*
 
 ### Lemma E.8 (the harmonics are large)
 
@@ -936,10 +936,10 @@ $H_Q = \frac12r_*(\cos q + |\sin q|) \ge \frac12r_* > \frac9{50}$; for $e^N_1$,
 $H_Q = r_*\epsilon_q^-|\sin q| \ge 0$. $\square$
 
 *Lean:
-[`Six.Stress.Pair.trigN_lower`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L138),
-[`Six.Stress.Pair.trigW_lower`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L165),
-[`Six.Stress.Pair.trigQ_lower`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L201),
-[`Six.Stress.Pair.cos_add_abs_sin`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L132).*
+[`Six.Stress.Pair.trigN_lower`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L159),
+[`Six.Stress.Pair.trigW_lower`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L188),
+[`Six.Stress.Pair.trigQ_lower`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L225),
+[`Six.Stress.Pair.cos_add_abs_sin`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L153).*
 
 A *line in $n$* is a segment on which $w$ is constant and $n = x$ varies; a
 *line in $w$* one on which $n$ is constant and $w = x$ varies; and the
@@ -1013,14 +1013,14 @@ Finally,
 which is of the stated form (Figure E.9). $\square$
 
 *Lean:
-[`Six.Stress.Pair.Sweep`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L244),
-[`Six.Stress.Pair.Harmonic`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L261),
-[`Six.Stress.Pair.northHarmonic`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L277),
-[`Six.Stress.Pair.westHarmonic`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L304),
-[`Six.Stress.Pair.northHarmonic_arg`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L340),
-[`Six.Stress.Pair.westHarmonic_arg`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L349),
-[`Six.Stress.Pair.northHarmonic_amplitude`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L358),
-[`Six.Stress.Pair.westHarmonic_amplitude`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L364).*
+[`Six.Stress.Pair.Sweep`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L34),
+[`Six.Stress.Pair.Harmonic`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L39),
+[`Six.Stress.Pair.northHarmonic`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L292),
+[`Six.Stress.Pair.westHarmonic`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L319),
+[`Six.Stress.Pair.northHarmonic_arg`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L355),
+[`Six.Stress.Pair.westHarmonic_arg`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L364),
+[`Six.Stress.Pair.northHarmonic_amplitude`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L373),
+[`Six.Stress.Pair.westHarmonic_amplitude`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L379).*
 
 ### Lemma E.10 (curvature of the forces)
 
@@ -1090,17 +1090,17 @@ depends on them only through $a^2 + b^2$ and $4a^2b^2$), shows that the second
 derivative is at most $0$. $\square$
 
 *Lean:
-[`Six.Stress.Pair.north_curvature`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L429),
-[`Six.Stress.Pair.north_curvature_zero`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L659),
-[`Six.Stress.Pair.north_curvature_westFirst`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L499),
-[`Six.Stress.Pair.west_curvature`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L583),
-[`Six.Stress.Pair.westCap`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L570),
-[`Six.Stress.Pair.west_opposition`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L545),
-[`Six.Stress.Pair.Harmonic.curvature_le`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L405),
-[`Six.Stress.Pair.Harmonic.curvature_nonpos`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L453),
-[`Six.Stress.Pair.harmonicCurvature_le_length`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L471),
-[`Six.Stress.Pair.northForce_first`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L372),
-[`Six.Stress.Pair.westForce_first`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L381).*
+[`Six.Stress.Pair.north_curvature`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L447),
+[`Six.Stress.Pair.north_curvature_zero`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L697),
+[`Six.Stress.Pair.north_curvature_westFirst`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L519),
+[`Six.Stress.Pair.west_curvature`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L612),
+[`Six.Stress.Pair.westCap`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L599),
+[`Six.Stress.Pair.west_opposition`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L569),
+[`Six.Stress.Pair.Harmonic.curvature_le`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L424),
+[`Six.Stress.Pair.Harmonic.curvature_nonpos`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L472),
+[`Six.Stress.Pair.harmonicCurvature_le_length`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L491),
+[`Six.Stress.Pair.northForce_first`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L387),
+[`Six.Stress.Pair.westForce_first`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L397).*
 
 ### Lemma E.11 (concavity along lines)
 
@@ -1156,12 +1156,12 @@ and all of these are points of Lemma E.12: the cut $w = n$ is an end of the
 diagonal, or the origin.
 
 *Lean:
-[`Six.Stress.Pair.sweepCurvature`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L666),
-[`Six.Stress.Pair.sweepCurvature_nonpos`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L676),
-[`Six.Stress.Pair.sweepGap_eq`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L776),
-[`Six.Stress.Pair.sweepGap_deriv`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L784),
-[`Six.Stress.Pair.sweepGapD_deriv`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L801),
-[`Six.Stress.Pair.gap_sweep_concave`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L822).*
+[`Six.Stress.Pair.sweepCurvature`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L704),
+[`Six.Stress.Pair.sweepCurvature_nonpos`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L714),
+[`Six.Stress.Pair.sweepGap_eq`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L814),
+[`Six.Stress.Pair.sweepGap_deriv`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L822),
+[`Six.Stress.Pair.sweepGapD_deriv`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L839),
+[`Six.Stress.Pair.gap_sweep_concave`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L860).*
 
 ### Lemma E.12 (sweeping a rectangle)
 
@@ -1241,9 +1241,9 @@ $1\%$, and at most $7.2 \cdot 10^{-6}$ and $6.9 \cdot 10^{-7}$, at $t = \pm\frac
 against the bound $10^{-5}$ (dashed).
 
 *Lean:
-[`Six.Stress.Pair.cos_upper_eight`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L32),
-[`Six.Stress.Pair.sin_upper_nine`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L41),
-[`Six.Stress.Pair.trig_error`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L51).*
+[`Six.Stress.Pair.cos_upper_eight`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L124),
+[`Six.Stress.Pair.sin_upper_nine`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L133),
+[`Six.Stress.Pair.trig_error`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L143).*
 
 ### Definition E.14 (the approximate gap)
 
@@ -1272,18 +1272,18 @@ At a rational point, $E$, $S_f|\tilde F_N|^2$ and $Q_0|\tilde F_W|^2$ are
 rational numbers.
 
 *Lean:
-[`Six.Stress.Pair.rA`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L76),
-[`Six.Stress.Pair.mA`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L77),
-[`Six.Stress.Pair.baseA`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L79),
-[`Six.Stress.Pair.centralP`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L84),
-[`Six.Stress.Pair.northP`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L86),
-[`Six.Stress.Pair.westP`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L92),
-[`Six.Stress.Pair.northForceP`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L98),
-[`Six.Stress.Pair.westForceP`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L101),
-[`Six.Stress.Pair.widthP`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L104),
-[`Six.Stress.Pair.penaltyP`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L106),
-[`Six.Stress.Pair.linearP`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L112),
-[`Six.Stress.Pair.scaleSq`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L119).*
+[`Six.Stress.Pair.rA`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L33),
+[`Six.Stress.Pair.mA`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L34),
+[`Six.Stress.Pair.baseA`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L36),
+[`Six.Stress.Pair.centralP`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L41),
+[`Six.Stress.Pair.northP`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L43),
+[`Six.Stress.Pair.westP`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L49),
+[`Six.Stress.Pair.northForceP`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L55),
+[`Six.Stress.Pair.westForceP`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L58),
+[`Six.Stress.Pair.widthP`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L61),
+[`Six.Stress.Pair.penaltyP`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L63),
+[`Six.Stress.Pair.linearP`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L69),
+[`Six.Stress.Pair.scaleSq`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L76).*
 
 ### Lemma E.15 (the error budget)
 
@@ -1341,19 +1341,19 @@ $2\sqrt{XY} < E'^2 - X - Y$, so $(\sqrt X + \sqrt Y)^2 < E'^2$ and
 $\sqrt X + \sqrt Y < E'$, that is, $\tilde G > 5 \cdot 10^{-4}$. $\square$
 
 *Lean:
-[`Six.Stress.Pair.gap_ge_model`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L314),
-[`Six.Stress.Pair.constants_close`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L174),
-[`Six.Stress.Pair.normal_error`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L184),
-[`Six.Stress.Pair.product_error`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L161),
-[`Six.Stress.Pair.force_error`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L202),
-[`Six.Stress.Pair.length_le`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L135),
-[`Six.Stress.Pair.scaled_length_le`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L167),
-[`Six.Stress.Pair.width_error`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L233),
-[`Six.Stress.Pair.threshold_error`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L242),
-[`Six.Stress.Pair.penalty_error`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L267),
-[`Six.Stress.Pair.two_roots_lt`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L151),
-[`Six.Stress.Pair.gap_pos_of_check`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L344),
-[`Six.Stress.Pair.ModelCheck`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L123).*
+[`Six.Stress.Pair.gap_ge_model`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L350),
+[`Six.Stress.Pair.constants_close`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L210),
+[`Six.Stress.Pair.normal_error`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L220),
+[`Six.Stress.Pair.product_error`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L197),
+[`Six.Stress.Pair.force_error`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L238),
+[`Six.Stress.Pair.length_le`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L169),
+[`Six.Stress.Pair.scaled_length_le`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L203),
+[`Six.Stress.Pair.width_error`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L269),
+[`Six.Stress.Pair.threshold_error`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L278),
+[`Six.Stress.Pair.penalty_error`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L303),
+[`Six.Stress.Pair.two_roots_lt`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L186),
+[`Six.Stress.Pair.gap_pos_of_check`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L382),
+[`Six.Stress.Pair.ModelCheck`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L80).*
 
 ### Lemma E.16 (the vertices)
 
@@ -1421,8 +1421,8 @@ $\tilde G$ exceeds $5 \cdot 10^{-4}$ by $1.3 \cdot 10^{-4}$. Figure E.13 shows t
 gap of the two facets of the model on the domain where it is smallest.
 
 *Lean:
-[`Six.Stress.Pair.gap_vertices`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L399),
-[`Six.Stress.Pair.gap_origin`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L390),
+[`Six.Stress.Pair.gap_vertices`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L458),
+[`Six.Stress.Pair.gap_origin`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L447),
 [`Six.Stress.Pair.value_origin`](../../SquaresInCircles/Six/Stress/PairStress.lean#L131),
 [`Six.radius_mul_north_length`](../../SquaresInCircles/Six/Constants.lean#L285),
 [`Six.radius_mul_west_length`](../../SquaresInCircles/Six/Constants.lean#L298).*
@@ -1449,8 +1449,8 @@ $\Pi(0, 0) = \beta_* + G(0, 0) > \beta_*$ for the other two. $\square$
 [`Six.Stress.Pair.lower_bound`](../../SquaresInCircles/Six/Stress/PairEstimate.lean#L128),
 [`Six.Stress.Pair.model_of_value_origin`](../../SquaresInCircles/Six/Stress/PairEstimate.lean#L137),
 [`Six.Stress.Pair.rectangle_nonneg`](../../SquaresInCircles/Six/Stress/PairEstimate.lean#L82),
-[`Six.Stress.Pair.gap_sweep_concave`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L822),
-[`Six.Stress.Pair.gap_vertices`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L399).*
+[`Six.Stress.Pair.gap_sweep_concave`](../../SquaresInCircles/Six/Stress/PairEstimate/Curvature.lean#L860),
+[`Six.Stress.Pair.gap_vertices`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L458).*
 
 ## E.3 Proof of Proposition 9.53
 

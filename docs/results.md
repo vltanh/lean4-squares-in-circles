@@ -22,7 +22,7 @@ configurations congruent to an optimal model. `optimalPackings n` is
 `{X.model}` for the case `X` of `n ≤ 6`, so the optimal packing is unique up to
 a rotation about the disk centre and a relabelling, the set of all column
 packings `Set.range Seven.columnModel` for `n = 7`, and for `n = 8` the set
-`EightStatement.models` of the packings of admissible parameters and their
+`Eight.models` of the models of parameters that pack the disk and their
 reflections ([Definitions](definitions.md#the-optimal-packings)). The statements use only
 the definitions in [Definitions](definitions.md).
 
@@ -68,21 +68,24 @@ bound of the disk of radius `√13 / 2`: their markers are at least `π/3` apart
 as in the optimal packing (`Seven.ordered_chart_contact`).
 
 For [eight squares](proof/11-eight.md) the optimum is a five-parameter
-family. `Eight.lower_bound` and `Eight.uniqueness` chain the central core
+family. The radius of the statement, the least radius of a disk about the
+origin that holds five corners with the spans of the family, is the radius
+`√qStar` of the stationary packing (`Eight.radius_eq_stationary`), and the
+minimizing corners are unique (`Eight.FiveCorner.existsUnique_minimizer`).
+`Eight.lower_bound` and `Eight.uniqueness` chain the central core
 (`Eight.central_core_and_exteriors`), the boundary reduction of the seven
-exterior squares (`Eight.boundary_reduction_exists`), the concentration of
-their frames (`Eight.physical_cycle_width_bound`), the quarter words
-(`Eight.quarter_word_candidate`), the candidate tables and the sharp terminal
-(`Eight.Terminal.boundary_rigid`); at the optimal radius
-`Eight.origin_equality_classification` recovers a model from the original
-squares. `Eight.equality_iff_parameters` states the result as an admissible
-parameter point with an optional reflection, and
-`Eight.full_dimensional_equality_box` shows that a five-dimensional box of
-parameters gives packings no two of which are congruent, even allowing
-reflections. The proof builds the stationary packing by the analytic argument
-of `ExactFamily/Stationary.lean`, and `Eight.radius_statement` and
-`Eight.models_statement` identify its radius and models with
-`EightStatement.radius` and `EightStatement.models` of the statement.
+exterior squares (`Eight.boundary_reduction_exists`), the budget of their frames
+(`Eight.four_type_cycle_budget`), the classification of their quarter words
+(`Eight.quarter_word_complete_classification`) and the exclusion of every
+boundary cycle without the stationary frames (`Eight.sharp_source_entry`). The
+completed identity of the stationary chain, evaluated at the centres of the
+packing, then gives the lower bound
+(`Eight.GeometricModel.sharp_radius_lower_bound`) and, at the optimal radius, a
+model of the family (`Eight.GeometricModel.sharp_uniqueness`): five squares are
+fixed, `T` and `G` slide, and the central square moves and turns. The models of
+the stationary chart are those of the statement
+(`Eight.GeometricModel.models_eq_stationary`), and each packs the disk
+(`Eight.GeometricModel.model_packing`).
 
 For [six squares](proof/09-six.md) `Six.model` has five axis-parallel squares and
 one turned by `π / 4`, `Six.diagonalSquare`, so there are no `Six.centers`.

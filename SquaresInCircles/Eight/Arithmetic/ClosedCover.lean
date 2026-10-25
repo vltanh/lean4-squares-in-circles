@@ -1,6 +1,7 @@
 module
 
-public import SquaresInCircles.Eight.Arithmetic.ScalarExpr
+public import Mathlib.Tactic
+public import SquaresInCircles.Eight.Arithmetic.Interval
 
 /-!
 # Eight squares: closed chains and boxes
@@ -16,9 +17,8 @@ A `QBox n` is a product of `n` rational intervals. `QBox.left` and `QBox.right` 
 rational in one coordinate, and a point of the box on one side of the cut lies in that half
 (`QBox.mem_left`, `QBox.mem_right`).
 
-The state chains of the affine tables (`StateCoverage.lean`) and the row intervals of the circle
-duals (`Candidate/Dual.lean`) are closed chains, and the formulas of `ExactFamily/` are bounded
-on such boxes.
+The formulas of `Stationary/` are bounded on such boxes (`Stationary/FixedEval.lean`,
+`Stationary/Generated/`).
 -/
 
 @[expose] public section
@@ -35,25 +35,6 @@ def ClosedChain (lo hi : ℚ) : List QInterval → Prop
 instance closedChainDecidable (lo hi : ℚ) (xs : List QInterval) :
     Decidable (ClosedChain lo hi xs) := by
   induction xs generalizing lo <;> simp only [ClosedChain] <;> infer_instance
-
-/-- Every point of `[lo, hi]` lies in an interval of a closed chain over it. -/
-theorem ClosedChain.covers {lo hi : ℚ} {xs : List QInterval}
-    (hc : ClosedChain lo hi xs) {x : ℝ} (hx : QInterval.Mem ⟨lo,hi⟩ x) :
-    ∃ I ∈ xs, I.Mem x := by
-  induction xs generalizing lo with
-  | nil =>
-      have he : (hi : ℝ) < lo := by exact_mod_cast hc
-      exact False.elim (by linarith [hx.1,hx.2])
-  | cons I rest ih =>
-      have hl : (I.lo : ℝ) ≤ lo := by exact_mod_cast hc.1
-      by_cases hxi : x ≤ (I.hi : ℝ)
-      · exact ⟨I,List.mem_cons_self,hl.trans hx.1,hxi⟩
-      · have hxi' : (I.hi : ℝ) ≤ x := (lt_of_not_ge hxi).le
-        rcases hc.2 with hlast | hnext
-        · have hu : (hi : ℝ) ≤ I.hi := by exact_mod_cast hlast
-          exact False.elim (hxi (hx.2.trans hu))
-        · obtain ⟨J,hJ,hJx⟩ := ih hnext.2 ⟨hxi',hx.2⟩
-          exact ⟨J,List.mem_cons_of_mem I hJ,hJx⟩
 
 /-- A box: a rational interval for each of `n` coordinates. -/
 abbrev QBox (n : ℕ) := Fin n → QInterval

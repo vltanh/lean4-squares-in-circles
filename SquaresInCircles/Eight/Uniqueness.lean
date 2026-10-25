@@ -1,7 +1,7 @@
 module
 
-public import SquaresInCircles.Eight.GeometricModel.EqualityFamily
-public import SquaresInCircles.Eight.GeometricModel.SharpEquality
+public import SquaresInCircles.Eight.Construction
+public import SquaresInCircles.Eight.Equality.SharpEquality
 public import SquaresInCircles.Common.Optimum
 
 /-!
@@ -12,15 +12,15 @@ and every packing in the disk of radius `radius` is congruent to one of
 `models`: the five squares with a corner on the circle are fixed, `T` and `G`
 slide, and the central square moves and turns in the room they leave.
 
-The proof works in the stationary chart of `ExactFamily`. The radius of the
+The proof works in the stationary chart of `Stationary`. The radius of the
 five-corner problem is its radius `√qStar` (`FiveCorner.radius_eq_stationary`),
 and the admissible models, those with the central square around the disk
 centre, are its models (`models_eq_stationary`). The boundary of the seven
 exterior squares of a packing is excluded except at the stationary frames
-(`GeometricModel/SharpAssembly.lean`), which gives the lower bound; at those
+(`Equality/SharpAssembly.lean`), which gives the lower bound; at those
 frames the stationary identity fixes the five squares on the circle and leaves
 the two sliders and the central square free
-(`GeometricModel/SharpEquality.lean`).
+(`Equality/SharpEquality.lean`).
 
 The file ends with `optimum`: the case as an `Optimum`.
 -/

@@ -12,6 +12,7 @@ too.
 
     python3 scripts/link_lean.py           rewrite the docs in place
     python3 scripts/link_lean.py --check   exit 1 if any link is stale
+    python3 scripts/link_lean.py DOC...    only these docs
 
 A name that matches no declaration, or more than one, is an error.
 """
@@ -113,11 +114,14 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument('--check', action='store_true',
                         help='report stale links instead of rewriting them')
+    parser.add_argument('docs', nargs='*', type=Path,
+                        help='the docs to link (default: every doc)')
     args = parser.parse_args()
 
     decls = declarations()
     errors, stale = [], []
-    for doc in sorted((ROOT / 'docs').rglob('*.md')):
+    docs = [d.resolve() for d in args.docs] or sorted((ROOT / 'docs').rglob('*.md'))
+    for doc in docs:
         old = doc.read_text()
         new = relink(doc, decls, errors)
         if new != old:

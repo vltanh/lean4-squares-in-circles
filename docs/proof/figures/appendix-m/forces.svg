@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="778" height="736" viewBox="0 0 778 736" role="img" aria-label="The weights of the dual as forces on the optimal packing: at the five corners on the circle, forces towards o labelled with the weights mu, and at the seven contacts, pairs of opposite forces labelled with the weights lambda">
+<title>The weights of the dual as forces on the optimal packing: at the five corners on the circle, forces towards o labelled with the weights mu, and at the seven contacts, pairs of opposite forces labelled with the weights lambda</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<circle cx="389.2" cy="367.8" r="326.5" fill="none" stroke="#9ca3af" stroke-width="1.2"/>
+<polygon points="513.3,519.7 678.3,519.7 678.3,354.7 513.3,354.7" fill="#dbeafe" stroke="#2563eb" stroke-width="1.4" fill-opacity="1"/>
+<text x="595.8" y="437.2" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#2563eb" text-anchor="middle" dominant-baseline="middle" font-style="italic">A</text>
+<polygon points="497.9,354.7 662.9,354.7 662.9,189.7 497.9,189.7" fill="#ffedd5" stroke="#ea580c" stroke-width="1.4" fill-opacity="1"/>
+<text x="580.4" y="272.2" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#ea580c" text-anchor="middle" dominant-baseline="middle" font-style="italic">B</text>
+<polygon points="167.9,292.8 332.9,292.8 332.9,127.8 167.9,127.8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.4" fill-opacity="1"/>
+<text x="250.4" y="210.3" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#16a34a" text-anchor="middle" dominant-baseline="middle" font-style="italic">D</text>
+<polygon points="75.4,457.8 240.4,457.8 240.4,292.8 75.4,292.8" fill="#f3e8ff" stroke="#9333ea" stroke-width="1.4" fill-opacity="1"/>
+<text x="157.9" y="375.3" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#9333ea" text-anchor="middle" dominant-baseline="middle" font-style="italic">E</text>
+<polygon points="194.4,629.8 358.1,609.4 337.8,445.7 174.0,466.0" fill="#fce7f3" stroke="#db2777" stroke-width="1.4" fill-opacity="1"/>
+<text x="266.1" y="537.7" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#db2777" text-anchor="middle" dominant-baseline="middle" font-style="italic">H</text>
+<polygon points="332.9,227.6 497.9,227.6 497.9,62.6 332.9,62.6" fill="#cffafe" stroke="#0891b2" stroke-width="1.4" fill-opacity="1"/>
+<text x="415.4" y="145.1" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#0891b2" text-anchor="middle" dominant-baseline="middle" font-style="italic">T</text>
+<polygon points="364.6,661.8 528.4,641.5 508.0,477.7 344.3,498.1" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.4" fill-opacity="1"/>
+<text x="436.3" y="569.8" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#ca8a04" text-anchor="middle" dominant-baseline="middle" font-style="italic">G</text>
+<polygon points="347.8,465.0 509.6,432.3 476.9,270.6 315.1,303.3" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.2" fill-opacity="1"/>
+<circle cx="389.2" cy="367.8" r="13.8" fill="#fecaca" stroke="#dc2626" stroke-width="1.0"/>
+<circle cx="389.2" cy="367.8" r="2.6" fill="#1f2937"/>
+<text x="397.5" y="379.3" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic">o</text>
+<line x1="678.3" y1="519.7" x2="632.9" y2="495.9" stroke="#1f2937" stroke-width="1.8"/>
+<path d="M 627.3 492.9 L 637.1 493.8 L 633.6 500.5 z" fill="#1f2937"/>
+<circle cx="678.3" cy="519.7" r="3.2" fill="#dc2626"/>
+<text x="691.4" y="526.6" font-size="13" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" dominant-baseline="middle" fill="#ffffff" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"><tspan font-style="italic">μ</tspan><tspan dy="3.9" font-size="8.8">A</tspan></text>
+<text x="691.4" y="526.6" font-size="13" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" dominant-baseline="middle" fill="#1f2937"><tspan font-style="italic">μ</tspan><tspan dy="3.9" font-size="8.8">A</tspan></text>
+<line x1="662.9" y1="189.7" x2="617.3" y2="219.4" stroke="#1f2937" stroke-width="1.8"/>
+<path d="M 612.1 222.8 L 617.5 214.7 L 621.7 221.1 z" fill="#1f2937"/>
+<circle cx="662.9" cy="189.7" r="3.2" fill="#dc2626"/>
+<text x="675.3" y="181.6" font-size="13" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" dominant-baseline="middle" fill="#ffffff" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"><tspan font-style="italic">μ</tspan><tspan dy="3.9" font-size="8.8">B</tspan></text>
+<text x="675.3" y="181.6" font-size="13" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" dominant-baseline="middle" fill="#1f2937"><tspan font-style="italic">μ</tspan><tspan dy="3.9" font-size="8.8">B</tspan></text>
+<line x1="167.9" y1="127.8" x2="214.5" y2="178.3" stroke="#1f2937" stroke-width="1.8"/>
+<path d="M 218.7 182.9 L 209.9 178.9 L 215.4 173.7 z" fill="#1f2937"/>
+<circle cx="167.9" cy="127.8" r="3.2" fill="#dc2626"/>
+<text x="157.8" y="116.9" font-size="13" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" dominant-baseline="middle" fill="#ffffff" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"><tspan font-style="italic">μ</tspan><tspan dy="3.9" font-size="8.8">D</tspan></text>
+<text x="157.8" y="116.9" font-size="13" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" dominant-baseline="middle" fill="#1f2937"><tspan font-style="italic">μ</tspan><tspan dy="3.9" font-size="8.8">D</tspan></text>
+<line x1="75.4" y1="457.8" x2="78.6" y2="456.9" stroke="#1f2937" stroke-width="1.6"/>
+<path d="M 83.3 455.5 L 77.4 460.3 L 75.8 454.6 z" fill="#1f2937"/>
+<circle cx="75.4" cy="457.8" r="3.2" fill="#dc2626"/>
+<text x="61.1" y="461.9" font-size="13" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" dominant-baseline="middle" fill="#ffffff" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"><tspan font-style="italic">μ</tspan><tspan dy="3.9" font-size="8.8">E</tspan></text>
+<text x="61.1" y="461.9" font-size="13" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" dominant-baseline="middle" fill="#1f2937"><tspan font-style="italic">μ</tspan><tspan dy="3.9" font-size="8.8">E</tspan></text>
+<line x1="194.4" y1="629.8" x2="234.9" y2="575.3" stroke="#1f2937" stroke-width="1.8"/>
+<path d="M 238.7 570.2 L 236.4 579.7 L 230.3 575.2 z" fill="#1f2937"/>
+<circle cx="194.4" cy="629.8" r="3.2" fill="#dc2626"/>
+<text x="185.5" y="641.7" font-size="13" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" dominant-baseline="middle" fill="#ffffff" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"><tspan font-style="italic">μ</tspan><tspan dy="3.9" font-size="8.8">H</tspan></text>
+<text x="185.5" y="641.7" font-size="13" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" dominant-baseline="middle" fill="#1f2937"><tspan font-style="italic">μ</tspan><tspan dy="3.9" font-size="8.8">H</tspan></text>
+<line x1="588.1" y1="354.7" x2="588.1" y2="327.2" stroke="#ea580c" stroke-width="1.6"/>
+<path d="M 588.1 321.6 L 591.4 329.6 L 584.7 329.6 z" fill="#ea580c"/>
+<line x1="588.1" y1="354.7" x2="588.1" y2="382.2" stroke="#2563eb" stroke-width="1.6"/>
+<path d="M 588.1 387.8 L 584.7 379.8 L 591.4 379.8 z" fill="#2563eb"/>
+<circle cx="588.1" cy="354.7" r="2.4" fill="#1f2937"/>
+<line x1="497.9" y1="208.6" x2="543.1" y2="208.6" stroke="#ea580c" stroke-width="1.6"/>
+<path d="M 548.7 208.6 L 540.7 212.0 L 540.7 205.3 z" fill="#ea580c"/>
+<line x1="497.9" y1="208.6" x2="452.7" y2="208.6" stroke="#0891b2" stroke-width="1.6"/>
+<path d="M 447.1 208.6 L 455.1 205.3 L 455.1 212.0 z" fill="#0891b2"/>
+<circle cx="497.9" cy="208.6" r="2.4" fill="#1f2937"/>
+<line x1="332.9" y1="177.7" x2="378.1" y2="177.7" stroke="#0891b2" stroke-width="1.6"/>
+<path d="M 383.7 177.7 L 375.7 181.0 L 375.7 174.3 z" fill="#0891b2"/>
+<line x1="332.9" y1="177.7" x2="287.7" y2="177.7" stroke="#16a34a" stroke-width="1.6"/>
+<path d="M 282.1 177.7 L 290.1 174.3 L 290.1 181.0 z" fill="#16a34a"/>
+<circle cx="332.9" cy="177.7" r="2.4" fill="#1f2937"/>
+<line x1="204.1" y1="292.8" x2="204.1" y2="243.3" stroke="#16a34a" stroke-width="1.6"/>
+<path d="M 204.1 237.7 L 207.5 245.7 L 200.8 245.7 z" fill="#16a34a"/>
+<line x1="204.1" y1="292.8" x2="204.1" y2="342.3" stroke="#9333ea" stroke-width="1.6"/>
+<path d="M 204.1 347.9 L 200.8 339.9 L 207.5 339.9 z" fill="#9333ea"/>
+<circle cx="204.1" cy="292.8" r="2.4" fill="#1f2937"/>
+<line x1="513.3" y1="519.7" x2="558.6" y2="514.1" stroke="#2563eb" stroke-width="1.6"/>
+<path d="M 564.2 513.4 L 556.6 517.7 L 555.8 511.0 z" fill="#2563eb"/>
+<line x1="513.3" y1="519.7" x2="467.9" y2="525.3" stroke="#ca8a04" stroke-width="1.6"/>
+<path d="M 462.3 526.0 L 469.9 521.7 L 470.7 528.4 z" fill="#ca8a04"/>
+<circle cx="513.3" cy="519.7" r="2.4" fill="#1f2937"/>
+<line x1="351.2" y1="553.8" x2="396.6" y2="548.1" stroke="#ca8a04" stroke-width="1.6"/>
+<path d="M 402.1 547.4 L 394.6 551.8 L 393.8 545.1 z" fill="#ca8a04"/>
+<line x1="351.2" y1="553.8" x2="305.9" y2="559.4" stroke="#db2777" stroke-width="1.6"/>
+<path d="M 300.3 560.1 L 307.8 555.8 L 308.7 562.4 z" fill="#db2777"/>
+<circle cx="351.2" cy="553.8" r="2.4" fill="#1f2937"/>
+<line x1="240.4" y1="457.8" x2="234.5" y2="410.1" stroke="#9333ea" stroke-width="1.6"/>
+<path d="M 233.8 404.6 L 238.1 412.1 L 231.4 412.9 z" fill="#9333ea"/>
+<line x1="240.4" y1="457.8" x2="246.3" y2="505.5" stroke="#db2777" stroke-width="1.6"/>
+<path d="M 247.0 511.0 L 242.7 503.5 L 249.4 502.7 z" fill="#db2777"/>
+<circle cx="240.4" cy="457.8" r="2.4" fill="#1f2937"/>
+<text x="607.9" y="343.2" font-size="12" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" dominant-baseline="middle" fill="#ffffff" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"><tspan font-style="italic">λ</tspan><tspan dy="3.6" font-size="8.2">AB</tspan></text>
+<text x="607.9" y="343.2" font-size="12" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" dominant-baseline="middle" fill="#1f2937"><tspan font-style="italic">λ</tspan><tspan dy="3.6" font-size="8.2">AB</tspan></text>
+<text x="504.5" y="180.6" font-size="12" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" dominant-baseline="middle" fill="#ffffff" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"><tspan font-style="italic">λ</tspan><tspan dy="3.6" font-size="8.2">TB</tspan></text>
+<text x="504.5" y="180.6" font-size="12" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" dominant-baseline="middle" fill="#1f2937"><tspan font-style="italic">λ</tspan><tspan dy="3.6" font-size="8.2">TB</tspan></text>
+<text x="336.2" y="149.6" font-size="12" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" dominant-baseline="middle" fill="#ffffff" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"><tspan font-style="italic">λ</tspan><tspan dy="3.6" font-size="8.2">DT</tspan></text>
+<text x="336.2" y="149.6" font-size="12" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" dominant-baseline="middle" fill="#1f2937"><tspan font-style="italic">λ</tspan><tspan dy="3.6" font-size="8.2">DT</tspan></text>
+<text x="210.7" y="314.2" font-size="12" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" dominant-baseline="middle" fill="#ffffff" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"><tspan font-style="italic">λ</tspan><tspan dy="3.6" font-size="8.2">ED</tspan></text>
+<text x="210.7" y="314.2" font-size="12" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" dominant-baseline="middle" fill="#1f2937"><tspan font-style="italic">λ</tspan><tspan dy="3.6" font-size="8.2">ED</tspan></text>
+<text x="538.0" y="531.3" font-size="12" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" dominant-baseline="middle" fill="#ffffff" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"><tspan font-style="italic">λ</tspan><tspan dy="3.6" font-size="8.2">GA</tspan></text>
+<text x="538.0" y="531.3" font-size="12" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" dominant-baseline="middle" fill="#1f2937"><tspan font-style="italic">λ</tspan><tspan dy="3.6" font-size="8.2">GA</tspan></text>
+<text x="354.5" y="581.8" font-size="12" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" dominant-baseline="middle" fill="#ffffff" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"><tspan font-style="italic">λ</tspan><tspan dy="3.6" font-size="8.2">HG</tspan></text>
+<text x="354.5" y="581.8" font-size="12" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" dominant-baseline="middle" fill="#1f2937"><tspan font-style="italic">λ</tspan><tspan dy="3.6" font-size="8.2">HG</tspan></text>
+<text x="209.0" y="457.8" font-size="12" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" dominant-baseline="middle" fill="#ffffff" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"><tspan font-style="italic">λ</tspan><tspan dy="3.6" font-size="8.2">HE</tspan></text>
+<text x="209.0" y="457.8" font-size="12" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" dominant-baseline="middle" fill="#1f2937"><tspan font-style="italic">λ</tspan><tspan dy="3.6" font-size="8.2">HE</tspan></text>
+</svg>

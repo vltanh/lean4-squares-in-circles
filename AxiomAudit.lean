@@ -92,8 +92,8 @@ trusts the compiler, would add `Lean.ofReduceBool`.
 -- Eight squares: the stationary packing and the five-parameter family, the
 -- five corners and their radius, the boundary source exclusion, the lower bound
 -- and the classification.
-#print axioms SquaresInCircles.Eight.ExactFamily.exact_stationary_existsUnique
-#print axioms SquaresInCircles.Eight.ExactFamily.model_sqPacking
+#print axioms SquaresInCircles.Eight.Stationary.exact_stationary_existsUnique
+#print axioms SquaresInCircles.Eight.Stationary.model_sqPacking
 #print axioms SquaresInCircles.Eight.FiveCorner.existsUnique_minimizer
 #print axioms SquaresInCircles.Eight.FiveCorner.radius_eq_stationary
 #print axioms SquaresInCircles.Eight.GeometricModel.models_eq_stationary

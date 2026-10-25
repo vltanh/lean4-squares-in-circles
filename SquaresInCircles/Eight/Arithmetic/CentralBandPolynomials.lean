@@ -1,23 +1,28 @@
 module
 
-public import SquaresInCircles.Common.Analysis
-public import SquaresInCircles.Common.Trigonometry
 public import Mathlib.Tactic
+public import SquaresInCircles.Common.Analysis
 
 /-!
-# Central bands from whole-interval polynomial identities
+# Eight squares: the polynomials of the central bands
 
-Uncompiled replacement of the nineteen generated Bernstein cells.
-Source: HAND_CENTRAL_BANDS_WITHOUT_TABLES.md, Sections 2--4.
+In the half-angle variable `u`, with `c = (1 - u²)/(1 + u²)` and `s = 2u/(1 + u²)`, the sextic
+`centralBandP C D u` is `(1 + u²)³` times `H² + H c (c + s) + (1/2 - Q0) c²`,
+`H = 1/2 + C c - D s`, `Q0 = 9789/2500` (`centralBandP_normalized`), and a positive value of the
+quartic `centralBandV A C D u` gives `C s + D c - A · 2u/(1 - u²) < 1/2`
+(`centralBandV_normalized`). `Containing.lean` reads them as bounds on the two coordinates of an
+exterior square, for the segment `{(11/12, y) : |y| ≤ 7/20}` and for the bands A and B of the
+common points.
 
-The sextics use one Taylor remainder identity on [0,1], written as a
-positive combination of u, u(1-u), u²(1-u), u²(1-u²). The quartics share
-one curvature bound on [0,3/7]. No subdivision, recursive box decision,
-generated certificate module, or external oracle is imported.
-
-The old public constants and normalized interfaces are retained. Their
-comparison with the slightly coarser hand-proof constants is monotone.
-The three positivity theorems quantify the entire original closed domains.
+The sextics of the segment and of the bands are positive on `[0, 1]` (`segment_P_positive`,
+`bandA_P_positive`, `bandB_P_positive`). Each is `c + b (u - u₀) + r(u) (u - u₀)²` with `b² < 4ac`
+for a lower bound `a` of `r` on `[0, 1]`, which follows from writing `r` as a positive
+combination of `u`, `u (1 - u)`, `u² (1 - u)` and `u² (1 - u²)`; one completed square concludes.
+The constants of the bands reach their rational neighbours by monotonicity
+(`centralBandP_mono`). The quartics are positive on `[0, 3/7]` (`segment_V_positive`,
+`bandA_V_positive`, `bandB_V_positive`): their second derivative is at least `7/5` there
+(`centralBandV_curvature`), and the tangent parabola at `u = 1/4` with that curvature is
+positive.
 -/
 
 @[expose] public section
@@ -38,7 +43,9 @@ def centralBandV (A Cplus D u : ℝ) : ℝ :=
   let s := 2*u
   c*z/2+A*s*z-Cplus*s*c-D*c^2
 
-/-- Historical aliases are preserved for the surrounding geometric adapters. -/
+/-- The constants of the band A: `bandA_Cminus` and `bandA_Cplus` bracket
+`(10007/10000) cos (3741/10000)`, and `bandA_D` exceeds `(10007/10000) sin (3741/10000)`
+(`bandA_trig`). Those of the band B are the same with `41/40` and `19/50` (`bandB_trig`). -/
 def bandA_Cminus : ℝ := (10007/10000)*(9308368/10000000)
 def bandA_Cplus : ℝ := (10007/10000)*(9308369/10000000)
 def bandA_D : ℝ := (10007/10000)*(365435/1000000)
@@ -53,8 +60,8 @@ private theorem nonnegative_factors {u : ℝ} (hu : u∈Icc 0 1) :
     mul_nonneg (sq_nonneg u) (sub_nonneg.mpr hu.2),
     mul_nonneg (sq_nonneg u) (sub_nonneg.mpr hs)⟩
 
-/-- A Taylor remainder lower bound implies positivity by one completed square.
-All coefficients are real; the concrete substitutions below are exact rationals. -/
+/-- If `p = c + b x + r x²` with `0 < a ≤ r` and `b² < 4 a c`, then `0 < p`, by one completed
+square. -/
 private theorem positive_of_remainder {p r a b c x : ℝ}
     (ha : 0<a) (hdisc : b^2<4*a*c) (hr : a≤r)
     (hid : p=c+b*x+r*x^2) : 0<p := by
@@ -145,8 +152,8 @@ theorem bandB_coarse_P_positive {u : ℝ} (hu : 0≤u ∧ u≤1) :
   · exact bandBR_lower hu
   · simpa [sub_eq_add_neg,mul_comm] using bandB_remainder u
 
-/-- Increasing the cosine coefficient or decreasing the transverse allowance
-increases the outer-circle comparison polynomial on the entire quadrant. -/
+/-- On `[0, 1]`, `centralBandP C D u` increases with the cosine coefficient `C ≥ 0` and decreases
+with the transverse coefficient `D` in `[0, 1/2)`. -/
 theorem centralBandP_mono {u C C' D D' : ℝ}
     (hu : u∈Icc 0 1) (hC0 : 0≤C) (hC : C≤C')
     (hD0 : 0≤D') (hD : D'≤D) (hDhalf : D<1/2) :
@@ -230,7 +237,8 @@ theorem centralBandV_derivatives (A C D u : ℝ) :
     · norm_num [centralBandV2]
       ring
 
-/-- One common curvature estimate, not three collections of interval cells. -/
+/-- For `A ≥ 1/2`, `C ≥ 9/10` and `7/20 ≤ D ≤ 2/5`, the second derivative of
+`centralBandV A C D` is at least `7/5` on `[0, 3/7]`. -/
 theorem centralBandV_curvature {A C D u : ℝ}
     (hA : 1/2≤A) (hC : 9/10≤C) (hD : 7/20≤D) (hD' : D≤2/5)
     (hu : u∈Icc 0 (3/7 : ℝ)) : 7/5≤centralBandV2 A C D u := by
@@ -270,19 +278,6 @@ theorem bandB_V_positive {u : ℝ} (hu : 0≤u ∧ u≤3/7) :
     (by norm_num [bandB_D]) (by norm_num [bandB_D]) hu
   norm_num [centralBandV,centralBandV1,bandB_Cplus,bandB_D]
 
-/-- Coarser hand constants are also exported for new geometric proofs. -/
-theorem bandA_coarse_V_positive {u : ℝ} (hu : 0≤u ∧ u≤3/7) :
-    0<centralBandV (5007/10000) (93149/100000) (3657/10000) u := by
-  apply centralBandV_positive_of_base (by norm_num) (by norm_num)
-    (by norm_num) (by norm_num) hu
-  norm_num [centralBandV,centralBandV1]
-
-theorem bandB_coarse_V_positive {u : ℝ} (hu : 0≤u ∧ u≤3/7) :
-    0<centralBandV (107/200) (119/125) (3803/10000) u := by
-  apply centralBandV_positive_of_base (by norm_num) (by norm_num)
-    (by norm_num) (by norm_num) hu
-  norm_num [centralBandV,centralBandV1]
-
 theorem centralBandP_normalized (Cminus D u : ℝ) :
     centralBandP Cminus D u/(1+u^2)^3 =
       (1/2+Cminus*((1-u^2)/(1+u^2))-D*(2*u/(1+u^2)))^2+
@@ -292,15 +287,6 @@ theorem centralBandP_normalized (Cminus D u : ℝ) :
   have hz : (1+u^2 : ℝ)≠0 := ne_of_gt (by positivity)
   unfold centralBandP
   field_simp [hz]
-
-/-- Increasing quadratic comparison, with the positive branch explicit. -/
-theorem root_lt_of_quadratic_positive {X Y B C : ℝ}
-    (hX : 0≤X) (hY : 0<Y) (hB : 0≤B)
-    (hroot : X^2+B*X+C=0) (hpoly : 0<Y^2+B*Y+C) : X<Y := by
-  by_contra h
-  have hYX : Y≤X := le_of_not_gt h
-  have hp := mul_nonneg (sub_nonneg.mpr hYX) (show 0≤X+Y+B by linarith)
-  nlinarith
 
 theorem centralBandV_normalized {A Cplus D u : ℝ} (hu : 0≤u ∧ u≤3/7)
     (hp : 0<centralBandV A Cplus D u) :

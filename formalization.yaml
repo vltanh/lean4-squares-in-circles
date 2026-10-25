@@ -32,8 +32,9 @@ project:
     optimal disk two disjoint such squares get directions at least π/3 apart.
     For eight squares a central square is found, a case analysis of the
     frames of the seven others, written by hand, excludes every boundary
-    configuration but the stationary one, with its leaf inequalities checked
-    as exact polynomial certificates in Lean's kernel, and a completion of
+    configuration but the stationary one, with its leaf inequalities proved
+    by hand where the degree is low and otherwise checked as exact polynomial
+    certificates in Lean's kernel, and a completion of
     squares with the weights of the stationary packing forces the optimal
     radius.
     We found no earlier proof for five, six, seven or eight squares, and no

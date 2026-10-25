@@ -122,7 +122,7 @@ def Four.radius : ℝ := Real.sqrt 2
 def Five.radius : ℝ := Real.sqrt (5 / 2)
 def Six.radius : ℝ := Real.sqrt qStar
 def Seven.radius : ℝ := Real.sqrt 13 / 2
-def EightStatement.radius : ℝ := Real.sqrt qStar
+def Eight.radius : ℝ := sInf feasibleRadii
 
 def optimalRadius : ℕ → ℝ
   | 1 => One.radius
@@ -132,7 +132,7 @@ def optimalRadius : ℕ → ℝ
   | 5 => Five.radius
   | 6 => Six.radius
   | 7 => Seven.radius
-  | 8 => EightStatement.radius
+  | 8 => Eight.radius
   | _ => 0
 ```
 
@@ -140,9 +140,9 @@ Each value is the distance from the disk centre to the outermost corners of the
 optimal packing. Their squares are rational, `1/2`, `5/4`, `425/256`, `2`, `5/2`
 and `13/4` (`One.radius_sq`, …, `Five.radius_sq`, `Seven.radius_sq`), except for
 six squares, where `Six.qStar ≈ 2.85118` is a root of a quartic
-([below](#six-squares)), and eight squares, where `EightStatement.qStar ≈ 3.91553`
-is the first coordinate of the solution of a system of equations
-([below](#eight-squares)). The proofs work with the squared radius, so the contact
+([below](#six-squares)), and eight squares, where the radius `≈ 1.97877` is the
+least radius of a disk that holds five corners with the spans of the family, a
+number with no closed form ([below](#eight-squares)). The proofs work with the squared radius, so the contact
 inequalities stay polynomial, which is what `nlinarith` needs. That no smaller
 radius works is proved once for all cases (`Optimum.optimality`): a packing in a
 smaller disk would also lie in the optimal disk, so it would be congruent to an
@@ -282,98 +282,94 @@ with heights `-1, 0, 1`.
 ### Eight squares
 
 For `n = 8` the optimal packings form a five-parameter family, and the radius
-is not a radical. Five squares have a corner on the circle: four axis-parallel
-squares `A`, `B`, `D`, `E`, and a square `H` turned by an angle `t ≈ 7.08°`.
-Two squares slide: `T`, axis-parallel, between `D` and `B`, and `G`, turned by
-`t` too, beside `H`. The eighth, central square moves and turns. The
-definitions are in the namespace `EightStatement`; angles are given by the
-tangent `z` of their half, with cosine `halfAngleCos z = (1 - z²) / (1 + z²)`
-and sine `halfAngleSin z = 2z / (1 + z²)`.
+is not a radical. An optimal packing has a ring of seven squares about a central
+one: `A` and `B` on the right, `B`, `T` and `D` along the top, `D` and `E` on the
+left, and `H`, `G` and `A` along the bottom. Five of them have a corner on the
+circle: the axis-parallel `A`, `B`, `D`, `E`, and `H`, turned by a small angle
+(about `7.08°`). Two slide: `T`, axis-parallel between `D` and `B`, and `G`,
+turned as `H` is and beside it. The central square moves and turns. The
+definitions are in the namespace `Eight`.
 
-**The chain.** A `Root` holds seven numbers: the squared radius `q`, the height
-`y` of the lower right corner `(x₁, y)` of `A`, the half-angle tangent `z` of
-the tilt, and `x₁`, `x₂`, `y₃`, `x₄`. With `x₃ = x₂ - 3` and `y₄ = y₃ - 2`, the
-corners are `(x₁, y)` of `A` (lower right), `(x₂, y + 2)` of `B` (upper right),
-`(x₃, y₃)` of `D` (upper left) and `(x₄, y₄)` of `E` (lower left), and
-`IsChain` asks that they lie on the circle of squared radius `q`, with
-`x₁, x₂, y₃ > 0 > x₄`. In the frame turned by the tilt, `h₁` and `h₂` are the
-coordinates of the corner of `H` that the chain determines, and the *defect*
-`h₁² + h₂² - q` says how far it is from the circle. `positionDerivative` and
-`tiltDerivative` are the derivatives of the defect in `y` and in the tilt,
-along the chain.
-
-**The stationary system.** `IsStationary` asks for the chain with defect zero
-and both derivatives zero, in a strip of the parameters:
+**Five corners.** A `FiveCorner` is a turn and five points: the lower right
+corner of `A`, the upper right corner of `B`, the upper left corner of `D`, the
+lower left corner of `E`, and the corner of `H` that is lower left in its own
+frame. `spans` asks for a turn between `0` and `π/4` and for the room the ring
+needs between the corners: `B` on top of `A` (a vertical span of `2`), `T`
+between `D` and `B` (a horizontal span of `3`), `D` on top of `E`, and, in the
+frame of `H`, `E` above `H` and `G` between `H` and `A`. `fits R` asks that the
+five corners lie in the closed disk of radius `R` about the origin, and the
+radius is the least such `R`:
 
 ```lean
-structure EightStatement.Root.IsStationary (d : Root) : Prop extends IsChain d where
-  q_lower : (79/40 : ℝ)^2≤d.q
-  q_upper : d.q≤9789/2500
-  y_lower : -1<d.y
-  y_upper : d.y< -(1/2)
-  y₄_lower : -1<d.y₄
-  y₄_upper : d.y₄< -(1/2)
-  position_order : d.y<d.y₄
-  z_pos : 0<d.z
-  tilt_range : 2*d.z/(1-d.z^2)<1/5
-  z_lt_one : d.z<1
-  zero_defect : d.defect=0
-  position_stationary : d.positionDerivative=0
-  tilt_stationary : d.tiltDerivative=0
+structure Eight.FiveCorner where
+  angle : ℝ
+  point : Fin 5 → Point
 
-def EightStatement.selected : Root := Classical.epsilon Root.IsStationary
-def EightStatement.qStar : ℝ := selected.q
-def EightStatement.radius : ℝ := Real.sqrt qStar
+def Eight.FiveCorner.spans (d : FiveCorner) : Prop :=
+  0 ≤ d.angle ∧ d.angle ≤ Real.pi / 4 ∧
+  2 ≤ (d.point 1).2 - (d.point 0).2 ∧
+  3 ≤ (d.point 1).1 - (d.point 2).1 ∧
+  2 ≤ (d.point 2).2 - (d.point 3).2 ∧
+  1 + Real.sin d.angle ≤ -Real.sin d.angle * ((d.point 3).1 - (d.point 4).1) +
+    Real.cos d.angle * ((d.point 3).2 - (d.point 4).2) ∧
+  2 + Real.cos d.angle ≤ Real.cos d.angle * ((d.point 0).1 - (d.point 4).1) +
+    Real.sin d.angle * ((d.point 0).2 - (d.point 4).2)
+
+def Eight.FiveCorner.fits (d : FiveCorner) (R : ℝ) : Prop :=
+  0 ≤ R ∧ ∀ i : Fin 5, normSq (d.point i) ≤ R ^ 2
+
+def Eight.feasibleRadii : Set ℝ := {R | ∃ d : FiveCorner, d.spans ∧ d.fits R}
+def Eight.radius : ℝ := sInf feasibleRadii
+def Eight.FiveCorner.IsMinimizer (d : FiveCorner) : Prop := d.spans ∧ d.fits radius
+def Eight.FiveCorner.selected : FiveCorner := Classical.epsilon IsMinimizer
 ```
 
-The system has exactly one solution (`Eight.ExactFamily.StatementLink.statement_stationary_existsUnique`),
-so `Classical.epsilon` picks it: `qStar ≈ 3.915534`, `radius ≈ 1.978771`,
-`y ≈ -0.9207`, `z ≈ 0.0619`, `x₁ ≈ 1.7516`, `x₂ ≈ 1.6585`, `y₃ ≈ 1.4546` and
-`x₄ ≈ -1.9021`. The radius is the least `q` at which the defect can vanish,
-and there it is stationary.
+The minimizing corners are unique (`Eight.FiveCorner.existsUnique_minimizer`), so
+`Classical.epsilon` picks them: `radius ≈ 1.978771`, its square `≈ 3.915534`,
+and the turn `≈ 7.08°`. The radius is that of the stationary packing of the
+proof (`Eight.radius_eq_stationary`).
 
-**The squares.** `pA`, `pB`, `pD`, `pE` are the centres of the four
-axis-parallel squares with these corners, `pH` the centre of `H` (from
-`h₁`, `h₂`), `pT Z = (x₂ - 3/2, Z)` the centre of `T` at height `Z`, and `pG η`
-the centre of `G`, beside `H` along the turned frame, at offset `η`.
-`tiltedSquare` is the square with the turned frame. `zMax` is the greatest
-height of `T` in the disk, `etaMin` the least offset of `G` in the disk, and
-`etaMax` the offset at which the side of `G` nearest the disk centre is at
-distance `1/12` from it, as the side of `T` is at its least height `7/12`.
+**The squares.** `anchorCenter` gives the centres of `A`, `B`, `D`, `E` and `H`
+from their corners, `topCenter z` the centre of `T` at height `z`, one to the
+left of `B`, and `tiltedCenter η` the centre of `G`, next to `H` in the frame of
+`H` and moved by `η` along its side. `turnedSquare c t` is the unit square
+centred at `c` and turned by `t`.
 
-**The parameters.** A `Parameters` holds the centre `(x, y)` and the half-angle
-tangent `w` of the turn of the central square, the height `z` of `T` and the
-offset `eta` of `G`. `M₀ v` is the largest absolute projection of `v` on the
-axes of the coordinate frame and of the frame of the central square, and
-`W₀ = (1 + C + |S|) / 2` half the sum of the widths of an axis-parallel square
-and the central square along such an axis, so `W₀ ≤ M₀ (c - center)` says that
-an axis separates the central square from the axis-parallel square centred at
-`c`; `Mₜ` and `Wₜ` are the same for a turned square. `Admissible` lists
-fifteen conditions:
-
-- the turn `w` in `[1 - √2, √2 - 1)`, that is, an angle in `[-π/4, π/4)`;
-- `7/12 ≤ z ≤ zMax` and `etaMin ≤ eta ≤ etaMax`;
-- the disk centre less than `5/12` from the centre of the central square along
-  each of its axes (`core_first`, `core_second`);
-- the central square separated from each of the other seven
-  (`A_sep`, …, `G_sep`).
-
-The separation and the slider conditions are weak, so squares may touch; the
-core conditions are strict.
-
-**The models.** `Parameters.model` lists the central square, `H`, `G`, `A`,
-`B`, `T`, `D` and `E`. `Congruent` turns and relabels but never reflects, and
-these packings have no mirror symmetry, so their reflections in the diagonal
-`x = y` are listed as well:
+**The parameters and the models.** A `Parameters` holds the five free numbers:
+the centre and the turn of the central square, the height `top` of `T` and the
+offset `tilted` of `G`. `model p` lists the central square, `H`, `G`, `A`, `B`,
+`T`, `D` and `E`. The optimal packings are the models that pack the disk of
+radius `radius`, together with their reflections in the diagonal `x = y`:
+`Congruent` turns and relabels but never reflects, and these packings have no
+mirror symmetry.
 
 ```lean
-def EightStatement.reflectedModel (reflected : Bool) (p : Parameters) : Fin 8 → UnitSquare :=
-  if reflected then fun i=>reflectSquare (p.model selected i) else p.model selected
+structure Eight.Parameters where
+  center : Point
+  angle : ℝ
+  top : ℝ
+  tilted : ℝ
 
-def EightStatement.models : Set (Fin 8 → UnitSquare) :=
-  {M | ∃ reflected : Bool,∃ p : Parameters,
-    p.Admissible selected ∧ M=reflectedModel reflected p}
+def Eight.model (p : Parameters) : Fin 8 → UnitSquare :=
+  ![turnedSquare p.center p.angle,
+    turnedSquare (FiveCorner.selected.anchorCenter 4) FiveCorner.selected.angle,
+    turnedSquare (FiveCorner.selected.tiltedCenter p.tilted) FiveCorner.selected.angle,
+    axisSquare (FiveCorner.selected.anchorCenter 0),
+    axisSquare (FiveCorner.selected.anchorCenter 1),
+    axisSquare (FiveCorner.selected.topCenter p.top),
+    axisSquare (FiveCorner.selected.anchorCenter 2),
+    axisSquare (FiveCorner.selected.anchorCenter 3)]
+
+def Eight.models : Set (Fin 8 → UnitSquare) :=
+  {M | ∃ p : Parameters, (M = model p ∨ M = fun i => reflectSquare (model p i)) ∧
+    Packing M (0, 0) radius}
 ```
+
+Packing the disk is the whole condition on the parameters: the central square
+stays clear of the other seven, `T` stays between the heights at which it meets
+the central square or leaves the disk, and `G` between the offsets at which it
+does the same, while the five squares on the circle are fixed by
+`FiveCorner.selected`.
 
 `optimalPackings` collects the optimal models, and uniqueness
 (`SquaresInCircles.lean`) says that every optimal packing is congruent to one
@@ -388,7 +384,7 @@ def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
   | 5 => {Five.model}
   | 6 => {Six.model}
   | 7 => Set.range Seven.columnModel
-  | 8 => EightStatement.models
+  | 8 => Eight.models
   | _ => ∅
 ```
 

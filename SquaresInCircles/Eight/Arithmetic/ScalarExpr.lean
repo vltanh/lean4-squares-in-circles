@@ -16,8 +16,8 @@ interval value of its argument, and every `enclose` bracket contains the interva
 argument. For a valid expression the value at every point of the box lies in the interval value
 (`sound`).
 
-`PreparedArc.lean` evaluates the endpoints of the arcs of the affine tables in this way, and
-`ExactFamily/Expression.lean` bounds its formulas on boxes with these expressions.
+The quantities of the model on the box of parameters (`Stationary/Generated/EqualityBox.lean`)
+are bounded with these expressions.
 -/
 
 @[expose] public section
