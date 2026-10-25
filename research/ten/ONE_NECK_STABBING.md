@@ -213,7 +213,11 @@ Horizontal reflection gives the same conclusion if `t2>=0`.
 
 Thus three or more additional upper squares require `t1<0` and `t2<0`.
 Vertical reflection shows that three or more additional lower squares
-require `t1>0` and `t2>0`. This excludes a `3+3` split of six additional
-squares. To exclude `4+2` and `2+4` splits as well, one still needs an
-upper capacity bound of three in the original two-unit-neck region. That
-additional count is not inferred from the two-point theorem alone.
+require `t1>0` and `t2>0`. The completed
+[wide-neck three-point theorem](WIDE_NECK_THREE_POINT_STABBING.md) separately
+bounds both groups by three, excluding `4+2` and `2+4` splits. The sign
+conditions exclude the remaining `3+3` possibility. Equivalently, the sign
+of `t1` makes one group have capacity two and the other capacity three.
+Every staggered four-square chain therefore has total capacity at most
+nine, for all parameter choices and arbitrary orientations of the
+additional squares.

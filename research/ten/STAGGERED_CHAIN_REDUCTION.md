@@ -1,10 +1,15 @@
-# Completing a staggered four-square chain: an open three-square lemma
+# A staggered four-square chain has total capacity at most nine
 
-This note gives a hand reduction for one restricted configuration class. It
-does **not** prove that a ten-square packing belongs to that class, or prove
-that the class has no ten-square completion. The geometric reduction is
-proved below; the arbitrary-orientation lemma needed to finish it is explicitly
-left open.
+This note proves a complete hand capacity bound for the stated four-square
+configuration, including arbitrary independent orientations of every
+additional square. No ten-square completion exists. The barrier and the
+two interior-stabbing theorems used below have received independent
+mathematical audits; no Lean verification is claimed.
+
+This does not prove that an arbitrary ten-square packing contains the
+specified chain. A stronger upper-triple rigidity conjecture is retained
+below as a separate research question; it is no longer needed for the
+capacity bound.
 
 ## The four-square hypothesis
 
@@ -70,10 +75,35 @@ The exact value `17/4` matters to this argument. It makes the four outer
 corners boundary contacts and closes the passages around the ends. A larger
 disk does not give this barrier for free.
 
+## Complete capacity bound for every parameter choice
+
+The [wide-neck three-point theorem](WIDE_NECK_THREE_POINT_STABBING.md)
+proves that at most three interior-disjoint unit squares in `D` can lie
+wholly above `y=0` while avoiding the two outer anchors. Its three points
+are `(+-27/64,255/256)` and `(0,5/4)`, and every candidate contains one
+strictly in its interior. Thus the upper and lower groups supplied by the
+barrier each have capacity at most three.
+
+If `t1>=0`, the left inner anchor contains `[-1,0] x [0,1/2]`. Every
+additional upper square therefore also avoids the fixed middle-left
+obstacle centered at `(-1/2,0)`. The
+[one-neck two-point theorem](ONE_NECK_STABBING.md) bounds this upper group
+by two. The lower group has at most three, so there are at most five
+additional squares.
+
+If `t1<=0`, vertical reflection applies the same argument to the lower
+group, again giving at most five additional squares. These alternatives
+cover every parameter choice, independently of `t2`. Adding the four
+anchors proves total capacity at most nine.
+
+In particular, if either parameter is zero, the two-point bound applies
+on both sides, so total capacity is at most eight. Horizontal reflection
+handles the case `t2=0`.
+
 ## Parameter subcases with complete capacity bounds
 
-Two subcases can already be excluded without the upper-triple conjecture.
-All additional square orientations remain unrestricted.
+The following direct subcase arguments are retained for comparison. All
+additional square orientations remain unrestricted.
 
 **The four parameter corners: `|t1|=|t2|=1/2`.** Both inner squares then
 have the origin as a vertex. The two-origin theorem in
@@ -96,7 +126,7 @@ in either of these caps require squared radius at least `9/2`, strictly
 larger than `17/4`. There are therefore at most two additional squares above
 and two below. The entire straight-chain packing has capacity at most eight.
 
-## A precise sufficient lemma that remains open
+## An optional stronger upper-triple rigidity conjecture
 
 **Upper-triple rigidity conjecture.** Suppose three unit squares, of arbitrary
 independent orientations, are pairwise interior-disjoint, are contained in
@@ -110,10 +140,11 @@ the three axis-parallel squares centered at
 
 This is a nonempty candidate statement: the displayed T-shaped triple really
 satisfies all the hypotheses. It is not being asserted as a proved theorem
-for arbitrary orientations.
+for arbitrary orientations. The completed capacity proof above does not
+depend on this conjecture.
 
-If this lemma is proved, it excludes a six-square completion of the original
-four-square chain:
+If proved, it would give the following alternative exclusion of a six-square
+completion of the original four-square chain:
 
 1. The barrier partitions the six additional squares into an upper group and
    a lower group.
@@ -129,8 +160,8 @@ four-square chain:
    square similarly forces `t2=-1/2`. The reflected lower triple instead
    forces `t1=t2=1/2`. These requirements are incompatible.
 
-The reduction does not require any statement about the orientations of the
-six additional squares until the open lemma is invoked.
+This alternative reduction makes no assumption about the orientations of
+the six additional squares before invoking the stronger conjecture.
 
 ## The upper-triple lemma when the three squares are axis-parallel
 
@@ -176,7 +207,7 @@ centers are exactly `(-1/2,1/2)` and `(1/2,1/2)`. There is no room for a
 fourth square. This proves the restricted lemma and, consequently, excludes
 a completion by six axis-parallel squares for every allowed `t1,t2`.
 
-## The remaining gap
+## Scope of the optional rigidity conjecture
 
 For rotated squares, disjointness need not give a horizontal or vertical
 center gap of at least one. A tilted separating axis can separate squares
@@ -184,10 +215,12 @@ whose gaps in both fixed coordinates are smaller. Likewise, a square that
 barely crosses `y=1/2` can have an arbitrarily short chord on that line;
 counting each crossing as a full unit of width would be invalid.
 
-A proof must control those orientations or use a different geometric
-inequality. Neither the barrier nor the axis-parallel calculation supplies
-that missing step. No conclusion about an arbitrary-oriented completion, or
-about the unrestricted ten-square optimum, follows from this note alone.
+A proof of the stronger rigidity conjecture must control those orientations
+or use a different geometric inequality. Neither the barrier nor the
+axis-parallel calculation proves that conjecture. The capacity-nine theorem
+above instead uses the independently proved interior-stabbing bounds. It
+settles this entire physical completion class while leaving the unrestricted
+ten-square optimum outside the scope of this note.
 
 ## A sufficient common-slice condition for the full rigidity conclusion
 

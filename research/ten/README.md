@@ -45,6 +45,9 @@ the known bound, not a lower-bound proof.
 | Two or three origin-vertex squares bound total capacity by nine or eight | [Origin-vertex capacity](THREE_ORIGIN_VERTEX_SQUARES.md) | Hand proof for squared containing radius at most `17/4` |
 | One origin-vertex square plus three radial side terminals bounds capacity by nine | [One-origin capacity](ONE_ORIGIN_VERTEX_THREE_TERMINALS.md) | Hand proof at squared radius `17/4` |
 | Two fixed interior points stab every square in the specified upper one-unit neck | [One-neck stabbing theorem](ONE_NECK_STABBING.md) | Complete hand proof at `17/4`; implies capacity two in that region |
+| Every staggered four-square S-S chain has total capacity at most nine | [Chain completion](STAGGERED_CHAIN_REDUCTION.md), [three-point theorem](WIDE_NECK_THREE_POINT_STABBING.md) | Hand proof for all slide parameters and arbitrary orientations of additional squares |
+| The exceptional five-square tree core has total capacity at most nine | [Exceptional-core completion](KAPPA_CORE_COMPLETION.md) | Hand proof uniform in its transverse slide parameter |
+| Every nonzero minimizing stress component must contain a cycle | [Expanded tree inventory](EXPANDED_TREE_INVENTORY.md) | Hand tree exclusion in the stated radius window; lower window imported explicitly from n=8 |
 | An aligned two-by-two block translated along a side direction admits at most five further squares | [Translated-block obstruction](TRANSLATED_BLOCK_OBSTRUCTION.md) | Hand proof with the four core centers in the closed unit disk; remaining orientations arbitrary |
 | A solid two-by-two block with two center norms above `.9` admits at most five outer-center squares | [Localized-block obstruction](LOCALIZED_BLOCK_OBSTRUCTION.md) | Conditional hand proof allowing arbitrary translation; its application uses computational radial localization |
 | Five centers in the closed unit disk are impossible for a ten-packing | [Radial weight certificate](RADIAL_WEIGHT_EXCLUSION.md), [integer checker](check_radial_weight_exclusion.py) | **Computer-assisted** reduction; not a hand proof |
@@ -136,14 +139,19 @@ explicit radius. Its stress-existence inputs are pinned to the cited n=9
 research commit. These are conditional graph results, not an exhaustive
 classification of a minimizing packing.
 
-[Staggered-chain completion](STAGGERED_CHAIN_REDUCTION.md) proves that six
-additional squares around a specified four-square chain must split above
-and below it. A precise arbitrary-orientation upper-triple lemma would finish
-that case; the lemma is still open. The note proves its axis-parallel version
-and its common-maximal-chord version, and gives an exact obstruction to every
-universal two-point stabbing shortcut. The [origin-vertex capacity theorem](THREE_ORIGIN_VERTEX_SQUARES.md)
-closes two specified tree families at squared radius `17/4`; it does not
-establish that a general minimizing packing has one of those families.
+[Staggered-chain completion](STAGGERED_CHAIN_REDUCTION.md) is now closed:
+the barrier splits additional squares into two half-planes, the three-point
+theorem bounds each group by three, and the sign of a slide parameter lets
+the two-point theorem bound one group by two. The stronger upper-triple
+rigidity conjecture remains optional and open.
+
+The [expanded tree inventory](EXPANDED_TREE_INVENTORY.md) includes an
+additional five-square family that appears beyond the earlier n=9 radius
+window. Its [physical completion](KAPPA_CORE_COMPLETION.md) is now excluded
+as well. Together with the origin-incidence capacity bounds, these results
+exclude every nontrivial positive tree component. The lower radius window
+is supplied by the explicitly cited n=8 theorem. Cyclic stress components
+and all their unstressed-square completions remain open.
 
 Even the established equality family can have five distinct x-coordinates;
 the all-parallel proof handles those configurations directly. No unproved

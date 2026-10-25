@@ -68,31 +68,32 @@ is also open outside the completed cases.
    [FIVE_CENTER_SMALL_TURNS.md](FIVE_CENTER_SMALL_TURNS.md) proves the strict
    moment bound by three rational certificates when all five normal turns
    are at most `pi/2`. Fans with larger turns remain open.
-4. **Staggered contact chain.** The precise arbitrary-orientation upper-triple
-   lemma in [STAGGERED_CHAIN_REDUCTION.md](STAGGERED_CHAIN_REDUCTION.md) is
-   open. Its parallel and common-maximal-chord cases are proved. Any non-T
-   counterexample must have at least two second-lowest vertices at height
-   at least `1/2`. The straight chain has total capacity at most eight; all
-   four parameter corners have capacity at most nine. Universal two-point
-   stabbing cannot prove the general lemma: exact obstructions are recorded.
-   A narrower [one-neck theorem](ONE_NECK_STABBING.md) is now fully proved:
-   two explicit points lie in the interiors of every permitted square.
-   It excludes a `3+3` split of six additional squares. A capacity-three
-   theorem for the original upper region is still needed to exclude the
-   unbalanced splits; it does not follow from the two-point theorem alone.
+4. **Staggered contact chain: CLOSED by hand.**
+   [STAGGERED_CHAIN_REDUCTION.md](STAGGERED_CHAIN_REDUCTION.md) now proves
+   total capacity at most nine for all slide parameters. The barrier and
+   [three-point theorem](WIDE_NECK_THREE_POINT_STABBING.md) bound each
+   half-plane group by three; the sign of either slide parameter lets the
+   [two-point theorem](ONE_NECK_STABBING.md) bound one group by two.
+   If either slide parameter is zero, the total capacity is at most eight.
+   The stronger upper-triple rigidity conjecture remains open but is no
+   longer an obligation for excluding this chain.
 5. **Contact-stress route.** [PHYSICAL_TREE_REDUCTIONS.md](PHYSICAL_TREE_REDUCTIONS.md)
    gives conditional graph reductions. [THREE_ORIGIN_VERTEX_SQUARES.md](THREE_ORIGIN_VERTEX_SQUARES.md)
    closes two specified physical tree families at squared radius `17/4`.
    [ONE_ORIGIN_VERTEX_THREE_TERMINALS.md](ONE_ORIGIN_VERTEX_THREE_TERMINALS.md)
    also closes the side-plus-vertex family with at least three radial side
-   terminals. Its two-terminal boundary is still a staggered-chain case.
-   There is no exhaustive classification of a ten-square minimizer here.
-   In particular, do not extend the n=9 tree inventory's smaller radius
-   window to `9/2` without redoing its inequalities. Exploration found a
-   possible extra five-body tree family near squared radius `4.35748`,
-   described by `B+2sqrt(A-1)=1`, where
-   `A=sqrt(q-1/4)-1` and `B=sqrt(q)-sqrt(2)`. Its classification and physical
-   completions were not completed or audited; it is an open lead only.
+   terminals. Its two-terminal boundary is covered by the completed chain
+   theorem. [EXPANDED_TREE_INVENTORY.md](EXPANDED_TREE_INVENTORY.md) now
+   classifies the full positive-tree branch through `9/2`, including a real
+   extra five-body family near squared radius `4.35748`.
+   [KAPPA_CORE_COMPLETION.md](KAPPA_CORE_COMPLETION.md) proves total capacity
+   at most nine for every parameter of that family. Thus every nonzero
+   minimizing stress component must contain a cycle. The lower radius
+   window is explicitly imported from n=8 at main commit
+   `cd9127ff04e089909cc460d817ea28c4b1eb9ea9`; no new local Lean build is
+   claimed. Cyclic components, possible bridges attached to them, and all
+   their unstressed-square completions remain open. Planarity of the simple
+   body-pair graph is not assumed.
 
 ## Shortcuts already ruled out
 
