@@ -110,7 +110,9 @@ def Congruent {n : ℕ} (S : Fin n → UnitSquare) (o : Point) (M : Fin n → Un
 
 The models are given in the frame of the disk centre, which is the origin.
 Every model is made of axis-parallel unit squares, except that the model for
-six squares has one square turned by `π / 4`. -/
+six squares has one square turned by `π / 4`, and the models for eight squares
+have two squares turned by a common angle and a central square turned by any
+angle. -/
 
 namespace One
 
@@ -272,227 +274,123 @@ def columnModel (c : Column) : Fin 7 → UnitSquare :=
 
 end Seven
 
-namespace EightStatement
+namespace Eight
 
-/-- The cosine of the angle whose half has tangent `z`. -/
-def halfAngleCos (z : ℝ) : ℝ := (1-z^2)/(1+z^2)
-/-- The sine of the angle whose half has tangent `z`. -/
-def halfAngleSin (z : ℝ) : ℝ := 2*z/(1+z^2)
+/-- The unit square centred at `c` and turned by the angle `t`. -/
+def turnedSquare (c : Point) (t : ℝ) : UnitSquare where
+  center := c
+  cosine := Real.cos t
+  sine := Real.sin t
+  unit := Real.cos_sq_add_sin_sq t
 
-theorem halfAngle_unit (z : ℝ) : halfAngleCos z^2+halfAngleSin z^2=1 := by
-  have hd : 0<1+z^2 := by positivity
-  unfold halfAngleCos halfAngleSin
-  field_simp [ne_of_gt hd]
-  ring
-
-/-- The numbers of the five-corner chain: the squared radius `q`, the height `y` of the
-lower right corner, the half-angle tangent `z` of the tilt of the two turned squares, and
-the coordinates `x₁`, `x₂`, `y₃`, `x₄` of the corners on the circle. -/
-structure Root where
-  q : ℝ
-  y : ℝ
-  z : ℝ
-  x₁ : ℝ
-  x₂ : ℝ
-  y₃ : ℝ
-  x₄ : ℝ
+/-- Five corners and a turn. An optimal packing has a ring of seven squares
+about a central one: `A` and `B` on the right, `B`, `T` and `D` along the top,
+`D` and `E` on the left, and `H`, `G` and `A` along the bottom. `H` and `G` are
+turned by `angle`; the other five are axis-parallel. `point` lists the lower
+right corner of `A`, the upper right corner of `B`, the upper left corner of
+`D`, the lower left corner of `E`, and the corner of `H` that is lower left in
+its own frame. -/
+structure FiveCorner where
+  angle : ℝ
+  point : Fin 5 → Point
   deriving Inhabited
 
-namespace Root
+namespace FiveCorner
 
-/-- The cosine of the tilt. -/
-def c (d : Root) : ℝ := halfAngleCos d.z
-/-- The sine of the tilt. -/
-def s (d : Root) : ℝ := halfAngleSin d.z
-/-- The abscissa of the upper left corner, three to the left of `x₂`. -/
-def x₃ (d : Root) : ℝ := d.x₂-3
-/-- The height of the lower left corner, two below `y₃`. -/
-def y₄ (d : Root) : ℝ := d.y₃-2
-/-- The first coordinate, in the tilted frame, of the fifth corner, a corner of `H`. -/
-def h₁ (d : Root) : ℝ := d.c*d.x₁+d.s*d.y-2-d.c
-/-- The second coordinate of the fifth corner. -/
-def h₂ (d : Root) : ℝ := -d.s*d.x₄+d.c*d.y₄-1-d.s
-/-- How far the fifth corner is from the circle: `h₁² + h₂² - q`. -/
-def defect (d : Root) : ℝ := d.h₁^2+d.h₂^2-d.q
-/-- The derivative of `y₄` in `y` along the chain. -/
-def y₄deriv (d : Root) : ℝ := d.x₃*(d.y+2)/(d.y₃*d.x₂)
-/-- The derivative of `h₁` in `y` along the chain. -/
-def h₁deriv (d : Root) : ℝ := d.s-d.c*d.y/d.x₁
-/-- The derivative of `h₂` in `y` along the chain. -/
-def h₂deriv (d : Root) : ℝ := (d.c+d.s*d.y₄/d.x₄)*d.y₄deriv
-/-- The derivative of the defect in `y`, along the chain. -/
-def positionDerivative (d : Root) : ℝ := 2*(d.h₁*d.h₁deriv+d.h₂*d.h₂deriv)
-/-- The derivative of the defect in the tilt. -/
-def tiltDerivative (d : Root) : ℝ :=
-  2*(d.h₁*(-d.s*(d.x₁-1)+d.c*d.y)+d.h₂*(-d.c*(d.x₄+1)-d.s*d.y₄))
+/-- The turn is between `0` and `π / 4`, and the corners leave room for the
+ring: `B` on top of `A`, `T` between `D` and `B`, `D` on top of `E`, and, in
+the frame of `H`, `E` above `H` and `G` between `H` and `A`. -/
+def spans (d : FiveCorner) : Prop :=
+  0 ≤ d.angle ∧ d.angle ≤ Real.pi / 4 ∧
+  2 ≤ (d.point 1).2 - (d.point 0).2 ∧
+  3 ≤ (d.point 1).1 - (d.point 2).1 ∧
+  2 ≤ (d.point 2).2 - (d.point 3).2 ∧
+  1 + Real.sin d.angle ≤ -Real.sin d.angle * ((d.point 3).1 - (d.point 4).1) +
+    Real.cos d.angle * ((d.point 3).2 - (d.point 4).2) ∧
+  2 + Real.cos d.angle ≤ Real.cos d.angle * ((d.point 0).1 - (d.point 4).1) +
+    Real.sin d.angle * ((d.point 0).2 - (d.point 4).2)
 
-/-- The four corners `(x₁, y)`, `(x₂, y + 2)`, `(x₃, y₃)`, `(x₄, y₄)` lie on the circle of
-squared radius `q`, on the sides of the axes that the signs select. -/
-structure IsChain (d : Root) : Prop where
-  x₁_pos : 0<d.x₁
-  x₂_pos : 0<d.x₂
-  y₃_pos : 0<d.y₃
-  x₄_neg : d.x₄<0
-  first_circle : d.x₁^2+d.y^2=d.q
-  second_circle : d.x₂^2+(d.y+2)^2=d.q
-  third_circle : d.x₃^2+d.y₃^2=d.q
-  fourth_circle : d.x₄^2+d.y₄^2=d.q
+/-- The five corners lie in the closed disk of radius `R` about the origin. -/
+def fits (d : FiveCorner) (R : ℝ) : Prop :=
+  0 ≤ R ∧ ∀ i : Fin 5, normSq (d.point i) ≤ R ^ 2
 
-/-- The stationary system: the chain closes (the defect vanishes) and the defect is
-stationary in the position and in the tilt, inside a strip of the parameters. The system
-has exactly one solution. -/
-structure IsStationary (d : Root) : Prop extends IsChain d where
-  q_lower : (79/40 : ℝ)^2≤d.q
-  q_upper : d.q≤9789/2500
-  y_lower : -1<d.y
-  y_upper : d.y< -(1/2)
-  y₄_lower : -1<d.y₄
-  y₄_upper : d.y₄< -(1/2)
-  position_order : d.y<d.y₄
-  z_pos : 0<d.z
-  tilt_range : 2*d.z/(1-d.z^2)<1/5
-  z_lt_one : d.z<1
-  zero_defect : d.defect=0
-  position_stationary : d.positionDerivative=0
-  tilt_stationary : d.tiltDerivative=0
+end FiveCorner
 
-/-- The point with coordinates `(a, b)` in the tilted frame. -/
-def inFrame (d : Root) (a b : ℝ) : Point :=
-  (d.c*a-d.s*b,d.s*a+d.c*b)
+/-- The radii of the disks about the origin that hold five corners with these
+spans. -/
+def feasibleRadii : Set ℝ := {R | ∃ d : FiveCorner, d.spans ∧ d.fits R}
 
-/-- The centre of `A`, whose lower right corner is `(x₁, y)`. -/
-def pA (d : Root) : Point := (d.x₁-1/2,d.y+1/2)
-/-- The centre of `B`, whose upper right corner is `(x₂, y + 2)`. -/
-def pB (d : Root) : Point := (d.x₂-1/2,d.y+3/2)
-/-- The centre of `D`, whose upper left corner is `(x₃, y₃)`. -/
-def pD (d : Root) : Point := (d.x₃+1/2,d.y₃-1/2)
-/-- The centre of `E`, whose lower left corner is `(x₄, y₄)`. -/
-def pE (d : Root) : Point := (d.x₄+1/2,d.y₄+1/2)
-/-- The centre of the turned square `H`, with the corner `(h₁, h₂)` in the tilted frame. -/
-def pH (d : Root) : Point := d.inFrame (d.h₁+1/2) (d.h₂+1/2)
-/-- The centre of `T`, between `D` and `B`, at height `Z`. -/
-def pT (d : Root) (Z : ℝ) : Point := (d.x₂-3/2,Z)
-/-- The centre of the turned square `G`, beside `H`, at offset `η` along the tilted frame. -/
-def pG (d : Root) (η : ℝ) : Point := d.inFrame (d.h₁+3/2) (d.h₂+1/2+η)
+/-- The optimal radius for eight unit squares, about `1.97877`: the least
+radius of a disk about the origin that holds five corners with these spans. -/
+def radius : ℝ := sInf feasibleRadii
 
-/-- The unit square centred at `p` with the tilted frame. -/
-def tiltedSquare (d : Root) (p : Point) : UnitSquare where
-  center := p
-  cosine := d.c
-  sine := d.s
-  unit := halfAngle_unit d.z
+namespace FiveCorner
 
-/-- The greatest height of `T` in the disk. -/
-def zMax (d : Root) : ℝ := Real.sqrt (d.q-(d.x₂-1)^2)-1/2
-/-- The least offset of `G` in the disk. -/
-def etaMin (d : Root) : ℝ := -d.h₂-Real.sqrt (d.q-(d.h₁+2)^2)
-/-- The greatest offset of `G`: its side nearest the centre then lies at distance `1/12`
-from it, as the side of `T` does at the least height `7/12`. -/
-def etaMax (d : Root) : ℝ := -d.h₂-13/12
+/-- The corners `d` have these spans and lie in the disk of radius `radius`. -/
+def IsMinimizer (d : FiveCorner) : Prop := d.spans ∧ d.fits radius
 
-end Root
+/-- The five corners of the optimal packings. They are unique, so the choice is
+not arbitrary. -/
+def selected : FiveCorner := Classical.epsilon IsMinimizer
 
-/-- The solution of the stationary system. It is unique, so the choice is not arbitrary. -/
-def selected : Root := Classical.epsilon Root.IsStationary
+/-- The centres of `A`, `B`, `D`, `E` and `H`. -/
+def anchorCenter (d : FiveCorner) : Fin 5 → Point :=
+  ![((d.point 0).1 - 1 / 2, (d.point 0).2 + 1 / 2),
+    ((d.point 1).1 - 1 / 2, (d.point 1).2 - 1 / 2),
+    ((d.point 2).1 + 1 / 2, (d.point 2).2 - 1 / 2),
+    ((d.point 3).1 + 1 / 2, (d.point 3).2 + 1 / 2),
+    ((d.point 4).1 + (Real.cos d.angle - Real.sin d.angle) / 2,
+      (d.point 4).2 + (Real.sin d.angle + Real.cos d.angle) / 2)]
 
-/-- The squared optimal radius for eight unit squares. -/
-def qStar : ℝ := selected.q
+/-- The centre of `T` at height `z`, one to the left of `B`. -/
+def topCenter (d : FiveCorner) (z : ℝ) : Point :=
+  ((d.anchorCenter 1).1 - 1, z)
 
-/-- The optimal radius for eight unit squares, `√qStar ≈ 1.97877`. -/
-def radius : ℝ := Real.sqrt qStar
+/-- The centre of `G` at offset `η`: next to `H` in the frame of `H`, moved by
+`η` along the side of `H`. -/
+def tiltedCenter (d : FiveCorner) (η : ℝ) : Point :=
+  ((d.anchorCenter 4).1 + Real.cos d.angle - η * Real.sin d.angle,
+    (d.anchorCenter 4).2 + Real.sin d.angle + η * Real.cos d.angle)
 
-/-- The five free numbers of an optimal packing: the centre `(x, y)` and the half-angle
-tangent `w` of the turn of the central square, the height `z` of `T`, and the offset `eta`
-of `G`. -/
+end FiveCorner
+
+/-- The five free numbers of an optimal packing: the centre and the turn of the
+central square, the height `top` of `T`, and the offset `tilted` of `G`. -/
 structure Parameters where
-  x : ℝ
-  y : ℝ
-  w : ℝ
-  z : ℝ
-  eta : ℝ
+  center : Point
+  angle : ℝ
+  top : ℝ
+  tilted : ℝ
 
-namespace Parameters
-
-/-- The cosine of the turn of the central square. -/
-def C (p : Parameters) : ℝ := halfAngleCos p.w
-/-- The sine of the turn of the central square. -/
-def S (p : Parameters) : ℝ := halfAngleSin p.w
-def center (p : Parameters) : Point := (p.x,p.y)
-
-/-- The central square. -/
-def centralSquare (p : Parameters) : UnitSquare where
-  center := p.center
-  cosine := p.C
-  sine := p.S
-  unit := halfAngle_unit p.w
-
-/-- The largest absolute projection of `v` on the axes of the coordinate frame and of the
-frame of the central square. -/
-def M₀ (p : Parameters) (v : Point) : ℝ :=
-  max (max |v.1| |v.2|) (max |p.C*v.1+p.S*v.2| |-p.S*v.1+p.C*v.2|)
-
-/-- The largest absolute projection of `v` on the axes of the tilted frame and of the frame
-of the central square. -/
-def Mₜ (p : Parameters) (d : Root) (v : Point) : ℝ :=
-  max (max |d.c*v.1+d.s*v.2| |-d.s*v.1+d.c*v.2|)
-    (max |p.C*v.1+p.S*v.2| |-p.S*v.1+p.C*v.2|)
-
-/-- The separation threshold of an axis-parallel square and the central square: half the
-sum of their widths along an axis of either. -/
-def W₀ (p : Parameters) : ℝ := (1+p.C+|p.S|)/2
-/-- The separation threshold of a tilted square and the central square. -/
-def Wₜ (p : Parameters) (d : Root) : ℝ :=
-  (1+d.c*p.C+d.s*p.S+|d.c*p.S-d.s*p.C|)/2
-
-/-- The parameters of the optimal packings: the turn of the central square in a half-open
-interval; `T` and `G` in the disk, with their sides nearest the centre at distance at least
-`1/12` from it; the disk centre less than `5/12` from the centre of the central square along
-each of its axes; and the central square separated by an axis from each of the seven other
-squares. -/
-structure Admissible (d : Root) (p : Parameters) : Prop where
-  frame_lower : 1-Real.sqrt 2≤p.w
-  frame_upper : p.w<Real.sqrt 2-1
-  top_lower : 7/12≤p.z
-  top_upper : p.z≤d.zMax
-  tilted_lower : d.etaMin≤p.eta
-  tilted_upper : p.eta≤d.etaMax
-  core_first : |p.C*p.x+p.S*p.y|<5/12
-  core_second : |-p.S*p.x+p.C*p.y|<5/12
-  A_sep : p.W₀≤p.M₀ (sub d.pA p.center)
-  B_sep : p.W₀≤p.M₀ (sub d.pB p.center)
-  D_sep : p.W₀≤p.M₀ (sub d.pD p.center)
-  E_sep : p.W₀≤p.M₀ (sub d.pE p.center)
-  T_sep : p.W₀≤p.M₀ (sub (d.pT p.z) p.center)
-  H_sep : p.Wₜ d≤p.Mₜ d (sub d.pH p.center)
-  G_sep : p.Wₜ d≤p.Mₜ d (sub (d.pG p.eta) p.center)
-
-/-- The packing of parameters `p`: the central square, the turned squares `H` and `G`, and
-the axis-parallel squares `A`, `B`, `T`, `D`, `E`. -/
-def model (d : Root) (p : Parameters) : Fin 8 → UnitSquare :=
-  ![p.centralSquare,d.tiltedSquare d.pH,d.tiltedSquare (d.pG p.eta),
-    axisSquare d.pA,axisSquare d.pB,axisSquare (d.pT p.z),axisSquare d.pD,axisSquare d.pE]
-
-end Parameters
+/-- The squares of parameters `p`: the central square, then `H`, `G`, `A`, `B`,
+`T`, `D` and `E`. -/
+def model (p : Parameters) : Fin 8 → UnitSquare :=
+  ![turnedSquare p.center p.angle,
+    turnedSquare (FiveCorner.selected.anchorCenter 4) FiveCorner.selected.angle,
+    turnedSquare (FiveCorner.selected.tiltedCenter p.tilted) FiveCorner.selected.angle,
+    axisSquare (FiveCorner.selected.anchorCenter 0),
+    axisSquare (FiveCorner.selected.anchorCenter 1),
+    axisSquare (FiveCorner.selected.topCenter p.top),
+    axisSquare (FiveCorner.selected.anchorCenter 2),
+    axisSquare (FiveCorner.selected.anchorCenter 3)]
 
 /-- The reflection of a square in the diagonal `x = y`. -/
 def reflectSquare (K : UnitSquare) : UnitSquare where
-  center := (K.center.2,K.center.1)
+  center := (K.center.2, K.center.1)
   cosine := K.sine
   sine := K.cosine
   unit := by linarith [K.unit]
 
-/-- The packing of parameters `p`, or its reflection in the diagonal. -/
-def reflectedModel (reflected : Bool) (p : Parameters) : Fin 8 → UnitSquare :=
-  if reflected then fun i=>reflectSquare (p.model selected i) else p.model selected
-
-/-- The optimal packings of eight unit squares, as models about the origin: the packings of
-admissible parameters and their reflections. Congruence turns but never reflects, so the
+/-- The optimal packings of eight unit squares, as models about the origin: the
+squares of some parameters that pack the disk of radius `radius`, and their
+reflections in the diagonal. Five squares are fixed, `T` and `G` slide, and the
+central square moves and turns. Congruence turns but never reflects, so the
 reflections are listed. -/
 def models : Set (Fin 8 → UnitSquare) :=
-  {M | ∃ reflected : Bool,∃ p : Parameters,
-    p.Admissible selected ∧ M=reflectedModel reflected p}
+  {M | ∃ p : Parameters, (M = model p ∨ M = fun i => reflectSquare (model p i)) ∧
+    Packing M (0, 0) radius}
 
-end EightStatement
+end Eight
 
 /-- The optimal radius for `n` unit squares, for `1 ≤ n ≤ 8`. Every other `n`
 gets the placeholder `0`, about which nothing is claimed. -/
@@ -504,7 +402,7 @@ def optimalRadius : ℕ → ℝ
   | 5 => Five.radius
   | 6 => Six.radius
   | 7 => Seven.radius
-  | 8 => EightStatement.radius
+  | 8 => Eight.radius
   | _ => 0
 
 /-- The optimal packings of `n` unit squares, as models about the origin: one
@@ -519,7 +417,7 @@ def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
   | 5 => {Five.model}
   | 6 => {Six.model}
   | 7 => Set.range Seven.columnModel
-  | 8 => EightStatement.models
+  | 8 => Eight.models
   | _ => ∅
 
 end SquaresInCircles

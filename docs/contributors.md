@@ -211,3 +211,27 @@ Times are rough commit times, in US Central time (UTC−5).
   exclusion of 77,480 rows and its owner geometry were ported. It also wrote
   eight squares into the textbook as Chapter 11, with Appendices J to M and
   38 figures.
+
+## 18 to 24 October 2026
+
+* **18 to 22 October — eight squares without tables.** ChatGPT 6 Pro wrote a
+  proof of eight squares without the tables, in mathematics and in Lean,
+  without compiling the Lean
+  ([PR #10](https://github.com/vltanh/lean4-squares-in-circles/pull/10)): the
+  optimum stated by a five-corner minimum, and a case analysis written by hand
+  whose leaf inequalities are polynomial certificates, about 323,000 lines in
+  1,966 modules.
+* **From 09:55 on 23 October — compiled, and the statement changed.** Claude
+  Opus 5.5, in Claude Code, compiled the draft against the library. About
+  6,700 of its proofs failed and were repaired with their arguments kept.
+  About two dozen helper lemmas were false as written, from sign and
+  precedence slips, missing hypotheses, a constant past its range and a
+  dropped section variable; each was shown by a counterexample and corrected
+  where only its own file or a single caller used it. The draft checked its
+  polynomial certificates by `decide` on rational polynomials, which Lean's
+  kernel cannot evaluate; they became exact integer certificates, the
+  two-variable ones through a packed checker written for them. At the
+  owner's request the statement of eight squares became the five-corner one,
+  written like the other cases, with the optimal packings given as the models
+  that pack the disk; the tables, their data and their generators were
+  deleted.

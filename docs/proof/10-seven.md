@@ -52,11 +52,11 @@ middle square (grey) contains $o$. The centres of the six arcs are the markers
 of Definition 10.6, in the directions 30°, 90°, …, 330°, exactly $\frac\pi3$
 apart.
 
-*Lean: [`Seven.radius`](../../SquaresInCircles/Geometry.lean#L243),
-[`Seven.columnLimit`](../../SquaresInCircles/Geometry.lean#L248),
-[`Seven.Column`](../../SquaresInCircles/Geometry.lean#L253),
-[`Seven.columnCenters`](../../SquaresInCircles/Geometry.lean#L264),
-[`Seven.columnModel`](../../SquaresInCircles/Geometry.lean#L270),
+*Lean: [`Seven.radius`](../../SquaresInCircles/Geometry.lean#L245),
+[`Seven.columnLimit`](../../SquaresInCircles/Geometry.lean#L250),
+[`Seven.Column`](../../SquaresInCircles/Geometry.lean#L255),
+[`Seven.columnCenters`](../../SquaresInCircles/Geometry.lean#L266),
+[`Seven.columnModel`](../../SquaresInCircles/Geometry.lean#L272),
 [`Seven.column_packing`](../../SquaresInCircles/Seven/Construction.lean#L54),
 [`Seven.uniqueness`](../../SquaresInCircles/Seven/Uniqueness.lean#L69),
 [`Seven.optimum`](../../SquaresInCircles/Seven/Uniqueness.lean#L75).*

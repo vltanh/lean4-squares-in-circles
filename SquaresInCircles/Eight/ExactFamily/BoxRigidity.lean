@@ -119,10 +119,10 @@ def anchorIndex : Fin 5 → Fin 8 := ![3,4,6,7,1]
 theorem anchor_closed (p : EqualityParameters) (i : Fin 5) :
     closedSquare (p.model sharpData (anchorIndex i)) (sharpData.anchorPoints i) := by
   fin_cases i
-  · norm_num [anchorIndex,model,anchorPoints,pA,axisSquare,closedSquare,localX,localY]
-  · norm_num [anchorIndex,model,anchorPoints,pB,axisSquare,closedSquare,localX,localY]
-  · norm_num [anchorIndex,model,anchorPoints,pD,axisSquare,closedSquare,localX,localY]
-  · norm_num [anchorIndex,model,anchorPoints,pE,axisSquare,closedSquare,localX,localY]
+  · norm_num [anchorIndex,EqualityParameters.model,anchorPoints,pA,axisSquare,closedSquare,localX,localY]
+  · norm_num [anchorIndex,EqualityParameters.model,anchorPoints,pB,axisSquare,closedSquare,localX,localY]
+  · norm_num [anchorIndex,EqualityParameters.model,anchorPoints,pD,axisSquare,closedSquare,localX,localY]
+  · norm_num [anchorIndex,EqualityParameters.model,anchorPoints,pE,axisSquare,closedSquare,localX,localY]
   · change closedSquare (sharpData.tiltedSquare sharpData.pH)
       (sharpData.inFrame sharpData.h₁ sharpData.h₂)
     have hx : localX (sharpData.tiltedSquare sharpData.pH)
@@ -393,7 +393,7 @@ theorem box_rigid_parameters {p r : EqualityParameters} (hp : p.InBox) (hr : r.I
     obtain ⟨x,rfl⟩ := e.surjective y
     rw [he x (0,0)]
     have hc := (whole_box_packing hr).2.1 i x ((hsets i x).2.mp hy)
-    simpa [inDisk,sub,radius,Real.sq_sqrt (by linarith [qStar_limits.1] : 0≤qStar)] using hc
+    simpa [inDisk,sub,stationaryRadius,Real.sq_sqrt (by linarith [qStar_limits.1] : 0≤qStar)] using hc
   have hnorm (i : Fin 8) :
       normSq (p.model sharpData (σ i)).center=normSq (r.model sharpData i).center := by
     have hn := he (r.model sharpData i).center (0,0)
@@ -401,20 +401,20 @@ theorem box_rigid_parameters {p r : EqualityParameters} (hp : p.InBox) (hr : r.I
   have hσ (i : Fin 8) (hi : i=0 ∨ i=2 ∨ i=3 ∨ i=5 ∨ i=7) : σ i=i :=
     distinguished_band hp hr i (σ i) hi (hnorm i)
   have hA : e sharpData.pA=sharpData.pA := by
-    simpa [model,hσ 3 (by simp),axisSquare] using hcenter 3
+    simpa [EqualityParameters.model,hσ 3 (by simp),axisSquare] using hcenter 3
   have hE : e sharpData.pE=sharpData.pE := by
-    simpa [model,hσ 7 (by simp),axisSquare] using hcenter 7
+    simpa [EqualityParameters.model,hσ 7 (by simp),axisSquare] using hcenter 7
   have hid := fixed_independent_points e he hzero hA hE
   have hcentral : p.centralSquare.center=r.centralSquare.center := by
-    simpa [hid,model,hσ 0 (by simp)] using (hcenter 0).symm
+    simpa [hid,EqualityParameters.model,hσ 0 (by simp)] using (hcenter 0).symm
   have hclosed : ∀ x,closedSquare p.centralSquare x↔closedSquare r.centralSquare x := by
     intro x
-    simpa [hid,model,hσ 0 (by simp)] using (hsets 0 x).2
+    simpa [hid,EqualityParameters.model,hσ 0 (by simp)] using (hsets 0 x).2
   have hw := central_frame_from_sets hp hr hcentral hclosed
   have hT : sharpData.pT p.z=sharpData.pT r.z := by
-    simpa [hid,model,hσ 5 (by simp),axisSquare] using (hcenter 5).symm
+    simpa [hid,EqualityParameters.model,hσ 5 (by simp),axisSquare] using (hcenter 5).symm
   have hG : sharpData.pG p.eta=sharpData.pG r.eta := by
-    simpa [hid,model,hσ 2 (by simp),tiltedSquare] using (hcenter 2).symm
+    simpa [hid,EqualityParameters.model,hσ 2 (by simp),tiltedSquare] using (hcenter 2).symm
   have hz : p.z=r.z := congrArg Prod.snd hT
   have hη : p.eta=r.eta := by
     have hh := congrArg (dot sharpData.f) hG

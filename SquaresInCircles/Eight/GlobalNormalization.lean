@@ -1,8 +1,8 @@
 module
 
 public import SquaresInCircles.Eight.CycleActions
-public import SquaresInCircles.Eight.Arithmetic.FourTypePairs
-public import SquaresInCircles.Eight.WordGeometry
+public import SquaresInCircles.Eight.TableFree.FramePhysicalTransport
+public import SquaresInCircles.Eight.TableFree.QuarterWordSelection
 public import SquaresInCircles.Eight.ExactFamily.EqualityGeometry
 
 /-!
@@ -463,27 +463,20 @@ is equivalent to `0101011` (`quarter_word_candidate`); the lift is read on the c
 the same word. -/
 theorem boundary_candidate_normalization (C : BoundaryCycle Q1) :
     Nonempty (CandidateNormalization C) := by
-  have hQ1 : Q1 ∈ Set.Icc (5/2) 4 :=
+  have hQ1 : Q1 ∈ Set.Icc (5/2) Q0 :=
     ⟨radius_levels.1.le.trans radius_levels.2.1.le,
-      (radius_levels.2.2.1.trans radius_levels.2.2.2).le⟩
-  have hQ0 : Q0 ∈ Set.Icc (5/2) 4 :=
-    ⟨hQ1.1.trans radius_levels.2.2.1.le,radius_levels.2.2.2.le⟩
-  let D := C.expand hQ1 hQ0 radius_levels.2.2.1.le
-  have hR : RadiusExpansion C D := C.expand_spec hQ1 hQ0 radius_levels.2.2.1.le
-  obtain ⟨τ,ψ,hpair⟩ := four_type_pair_bound D
-  have hcost := physical_cycle_width_bound τ D.beta
-    (fun i => periodicFrameCost (D.canonicalAngle (next i)-D.canonicalAngle i)) ψ hpair
-    (by linarith [Arithmetic.two_pi_lt_710_over_113])
-  obtain ⟨F⟩ := quarterLift_of_cost D hcost
+      radius_levels.2.2.1.le⟩
+  obtain ⟨F⟩ := TableFree.FramePhysicalTransport.quarter_lift C hQ1
+  let D := TableFree.FramePhysicalTransport.auxiliary C hQ1
+  have hR : RadiusExpansion C D :=
+    TableFree.FramePhysicalTransport.auxiliary_expansion C hQ1
+  let FD := TableFree.FramePhysicalTransport.quarterPushforward F hR
   have hgapD := boundary_gap_lower D le_rfl
-  have hwordD := quarter_word_candidate D F hgapD
-  let F' := F.pullback hR
+  have hwordD := TableFreeWordGeometry.quarter_word_candidate D FD hgapD
   have hgapC := boundary_gap_lower C radius_levels.2.2.1.le
-  have hw : F'.word hgapC pi_lt_22_over_7=F.word hgapD pi_lt_22_over_7 := by
-    funext i
-    apply Fin.ext
-    rfl
-  apply candidate_normalization_of_word C F' radius_levels.2.2.1.le hgapC
+  have hw : FD.word hgapD pi_lt_22_over_7=F.word hgapC pi_lt_22_over_7 :=
+    TableFree.FramePhysicalTransport.quarterPushforward_word F hR hgapC hgapD
+  apply candidate_normalization_of_word C F radius_levels.2.2.1.le hgapC
   simpa only [hw] using hwordD
 
 /-- Every packing at a squared radius `q ≤ Q1` has a global normalization. -/

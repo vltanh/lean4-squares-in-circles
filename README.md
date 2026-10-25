@@ -164,48 +164,51 @@ def Six.model : Fin 6 → UnitSquare :=
 
 The optimal packings of eight squares form a family. Five squares have a corner
 on the circle: four axis-parallel ones, `A`, `B`, `D` and `E`, and `H`, turned
-by a small angle `t` (about 7°). Two squares slide: `T`, axis-parallel between
-`D` and `B`, and `G`, turned as `H` is and beside it. The central square moves
-and turns. The radius is not a radical: given `q`, the position `y` and the
-tilt `t`, the four corners of `A`, `B`, `D`, `E` on the circle of squared radius
-`q` determine the corner of `H`, and its *defect* `h₁² + h₂² - q` measures how
-far that fifth corner is from the circle. The squared optimal radius is the
-least `q` at which the defect can vanish; there the defect is stationary in
-`y` and in `t`. `EightStatement.selected` is the solution of that system, in
-the variable `z = tan (t / 2)`; the system has exactly one solution, so the
-choice is determined:
+by a small angle (about 7°). Two squares slide: `T`, axis-parallel between `D`
+and `B`, and `G`, turned as `H` is and beside it. The central square moves and
+turns. The radius is not a radical. It is the least radius of a disk about the
+origin that holds five corners, one of each of `A`, `B`, `D`, `E` and `H`, with
+the room the squares between them need (`FiveCorner.spans`). The minimizing
+corners are unique, so the choice of `FiveCorner.selected` is determined:
 
 ```lean
-structure EightStatement.Root.IsStationary (d : Root) : Prop extends IsChain d where
-  q_lower : (79/40 : ℝ)^2 ≤ d.q
-  q_upper : d.q ≤ 9789/2500
-  ⋯
-  zero_defect : d.defect = 0
-  position_stationary : d.positionDerivative = 0
-  tilt_stationary : d.tiltDerivative = 0
+structure Eight.FiveCorner where
+  angle : ℝ
+  point : Fin 5 → Point
 
-def EightStatement.selected : Root := Classical.epsilon Root.IsStationary
-def EightStatement.qStar : ℝ := selected.q   -- ≈ 3.91553
-def EightStatement.radius : ℝ := Real.sqrt qStar   -- ≈ 1.97877
+def Eight.FiveCorner.spans (d : FiveCorner) : Prop :=
+  0 ≤ d.angle ∧ d.angle ≤ Real.pi / 4 ∧
+  2 ≤ (d.point 1).2 - (d.point 0).2 ∧
+  3 ≤ (d.point 1).1 - (d.point 2).1 ∧
+  2 ≤ (d.point 2).2 - (d.point 3).2 ∧
+  1 + Real.sin d.angle ≤ -Real.sin d.angle * ((d.point 3).1 - (d.point 4).1) +
+    Real.cos d.angle * ((d.point 3).2 - (d.point 4).2) ∧
+  2 + Real.cos d.angle ≤ Real.cos d.angle * ((d.point 0).1 - (d.point 4).1) +
+    Real.sin d.angle * ((d.point 0).2 - (d.point 4).2)
+
+def Eight.FiveCorner.fits (d : FiveCorner) (R : ℝ) : Prop :=
+  0 ≤ R ∧ ∀ i : Fin 5, normSq (d.point i) ≤ R ^ 2
+
+def Eight.feasibleRadii : Set ℝ := {R | ∃ d : FiveCorner, d.spans ∧ d.fits R}
+def Eight.radius : ℝ := sInf feasibleRadii   -- ≈ 1.97877
+def Eight.FiveCorner.selected : FiveCorner := Classical.epsilon IsMinimizer
 ```
 
-The five free numbers are the centre `(x, y)` and the turn `w` of the central
-square, the height `z` of `T` and the offset `eta` of `G`.
-`Parameters.Admissible` asks that the turn lie in a half-open interval, that `T`
-and `G` lie in the disk at distance at least `1/12` from its centre, that the
-disk centre be less than `5/12` from the centre of the central square along each
-of its axes, and that the central square be separated from each of the seven
-others by an axis. Congruence turns but never reflects, and these packings
-have no mirror symmetry, so the models include their reflections:
+The five free numbers are the centre and the turn of the central square, the
+height `top` of `T` and the offset `tilted` of `G`. `Eight.model p` places the
+central square, `H` and `G` turned (`turnedSquare`) and `A`, `B`, `T`, `D`, `E`
+axis-parallel, at the centres the selected corners give. The optimal packings
+are these models that pack the disk of radius `Eight.radius`. Congruence turns
+but never reflects, and these packings have no mirror symmetry, so the models
+include their reflections:
 
 ```lean
-def EightStatement.models : Set (Fin 8 → UnitSquare) :=
-  {M | ∃ reflected : Bool, ∃ p : Parameters,
-    p.Admissible selected ∧ M = reflectedModel reflected p}
+def Eight.models : Set (Fin 8 → UnitSquare) :=
+  {M | ∃ p : Parameters, (M = model p ∨ M = fun i => reflectSquare (model p i)) ∧
+    Packing M (0, 0) radius}
 ```
 
-All of it, about 250 lines, is in `Geometry.lean`; every field is explained in
-[docs/definitions.md](docs/definitions.md).
+All of it is in `Geometry.lean`.
 
 ## Results
 
@@ -227,8 +230,8 @@ theorem optimal_packings (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 8)
 unit squares; some packing attains it, and none fits in a smaller disk.
 `optimal_packings`: the packings of that radius are exactly the configurations
 congruent to a model in `optimalPackings n`, which holds one model for `n ≤ 6`,
-every column packing for `n = 7`, and for `n = 8` every packing of admissible
-parameters and its reflection:
+every column packing for `n = 7`, and for `n = 8` every model that packs the
+disk, and its reflection:
 
 ```lean
 def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
@@ -239,7 +242,7 @@ def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
   | 5 => {Five.model}
   | 6 => {Six.model}
   | 7 => Set.range Seven.columnModel
-  | 8 => EightStatement.models
+  | 8 => Eight.models
   | _ => ∅
 ```
 
@@ -257,7 +260,7 @@ five axis-parallel squares and one turned by `π / 4`
 | 5 | `Real.sqrt (5 / 2)` | `![(0,0),(1,0),(0,1),(-1,0),(0,-1)]` |
 | 6 | `Real.sqrt Six.qStar` | `(s,s)`, `(s,s+1)`, `(s+1,s)`, `(s-1,t)`, `(t,s-1)` and the turned square at `(-d,-d)`, for `s, t, d = Six.sStar, Six.tStar, Six.dStar` |
 | 7 | `Real.sqrt 13 / 2` | `Seven.columnCenters c` for every `c : Seven.Column` |
-| 8 | `Real.sqrt EightStatement.qStar` | the squares of `EightStatement.Parameters.model selected p` for every admissible `p`, and their reflections ([below](#eight-squares)) |
+| 8 | `sInf Eight.feasibleRadii` | the squares of `Eight.model p` for every `p : Eight.Parameters` that packs the disk, and their reflections ([below](#eight-squares)) |
 
 Every case proves one `Optimum` (`Common/Optimum.lean`): the radius, the
 models, that they pack the disk (`model_packing`; for seven squares
@@ -310,18 +313,18 @@ one-variable estimates, then four each for six, seven and eight squares.
   pairwise at least `π/3` apart, so one square contains the disk centre, and
   the markers of the other six form a regular hexagon, which rebuilds the
   packing up to the heights of the three middle squares.
-- **Eight squares.** Arcs on two circles about the disk centre give a central
-  square near the disk centre and seven exterior squares around it, each
-  separated from the next along one of four forward axes. Expanded to a fixed
-  radius, their frames are pinned down in steps: pair costs of four types
-  bound the spread of the frames, a whole-cycle bound leaves one sequence of
-  quarter turns, and tables of row inequalities contract the frame errors.
-  At the end a weighted sum of support inequalities, with the weights of the
-  stationary packing, bounds the radius, and at equality every error
-  vanishes: five squares are fixed, two slide, and the central square moves
-  and turns. The tables, hundreds of thousands of one-variable inequalities,
-  are checked in Lean's kernel by fixed-point and natural-number arithmetic
-  whose soundness is proved.
+- **Eight squares.** The radius is a five-corner minimum, equal to the radius
+  of the stationary packing. In a disk of that radius, arcs on two circles
+  about the disk centre give a central square and seven exterior squares
+  around it, and a boundary construction moves the exterior squares to the
+  circle while keeping a separating axis on each neighbouring pair. A case
+  analysis of their frames and quarter turns, written by hand, excludes every
+  boundary cycle except the stationary one; its leaf inequalities, about 470
+  polynomial bounds on intervals, triangles and rectangles, are checked
+  exactly in Lean's kernel by integer arithmetic whose soundness is proved. At
+  the stationary frames a completion of squares with positive weights forces
+  the radius: five squares are fixed, two slide along their contact lines, and
+  the central square moves and turns.
 - **The lower bound** is shared by all cases: a packing in a smaller disk also
   packs the optimal one, so it is congruent to a model, whose outer corners
   reach the circle of the optimal radius.
@@ -372,13 +375,15 @@ SquaresInCircles/
 │                          Stress/, Equality/ in between
 ├── Seven/                 Construction, Exterior, Containing, Uniqueness, and
 │                          the pair theorem (Pair, Pair/) and the Ring
-└── Eight/                 the central core, the boundary cycle, frames and
-                           quarter words, Candidate/ and Terminal, Uniqueness;
+└── Eight/                 the central core, the boundary cycle and frames,
+                           Uniqueness; GeometricModel/ (the five-corner radius,
+                           the family of packings and the sharp assembly),
+                           TableFree/ (the exclusion of the other boundary
+                           cycles, with its polynomial certificates),
                            ExactFamily/ (the stationary packing and the
-                           equality domain), Arithmetic/ (the kernel checkers)
-                           and Generated/ (the checked tables)
-data/eight/                the data of the tables, read by Generated/
-scripts/eight/             the generators of data/eight/ and Generated/
+                           equality domain), Arithmetic/ (kernel checkers)
+scripts/eight/             the generators of ExactFamily/Generated/ and of the
+                           arctangent kernel
 ```
 
 Each case imports only `Common/` and its own folder.

@@ -155,9 +155,9 @@ The central square $K$ (grey) holds the disk of radius $\frac1{12}$ about $o$
 [`EightStatement.reflectedModel`](../../SquaresInCircles/Geometry.lean#L485),
 [`EightStatement.models`](../../SquaresInCircles/Geometry.lean#L491),
 [`Eight.model_packing`](../../SquaresInCircles/Eight/Equality.lean#L242),
-[`Eight.lower_bound`](../../SquaresInCircles/Eight/Uniqueness.lean#L514),
-[`Eight.uniqueness`](../../SquaresInCircles/Eight/Uniqueness.lean#L522),
-[`Eight.optimum`](../../SquaresInCircles/Eight/Uniqueness.lean#L533),
+[`Eight.lower_bound`](../../SquaresInCircles/Eight/Uniqueness.lean#L55),
+[`Eight.uniqueness`](../../SquaresInCircles/Eight/Uniqueness.lean#L62),
+[`Eight.optimum`](../../SquaresInCircles/Eight/Uniqueness.lean#L82),
 [`Eight.equality_iff_parameters`](../../SquaresInCircles/Eight/Uniqueness.lean#L548).*
 
 *Remarks.* (i) In the Lean statement the parameters $\zeta$ and $\eta$ are
@@ -2126,8 +2126,8 @@ $\square$
 
 *Lean:
 [`Eight.squared_radius_lower_bound`](../../SquaresInCircles/Eight/Uniqueness.lean#L436),
-[`Eight.lower_bound`](../../SquaresInCircles/Eight/Uniqueness.lean#L514),
-[`Eight.global_normalization_exists`](../../SquaresInCircles/Eight/GlobalNormalization.lean#L490),
+[`Eight.lower_bound`](../../SquaresInCircles/Eight/Uniqueness.lean#L55),
+[`Eight.global_normalization_exists`](../../SquaresInCircles/Eight/GlobalNormalization.lean#L483),
 [`Eight.GlobalNormalization`](../../SquaresInCircles/Eight/GlobalNormalization.lean#L51),
 [`Eight.GlobalNormalization.radius_rigid`](../../SquaresInCircles/Eight/Uniqueness.lean#L145),
 [`Eight.Candidate.capture`](../../SquaresInCircles/Eight/Candidate/Capture.lean#L35),
@@ -2185,7 +2185,7 @@ Proposition 11.5. $\square$
 [`Eight.GlobalNormalization.original_frames`](../../SquaresInCircles/Eight/Uniqueness.lean#L152),
 [`Eight.GlobalNormalization.original_gaps`](../../SquaresInCircles/Eight/Uniqueness.lean#L224),
 [`Eight.GlobalNormalization.original_centers`](../../SquaresInCircles/Eight/Uniqueness.lean#L389),
-[`Eight.GlobalNormalization.original_slider_sectors`](../../SquaresInCircles/Eight/GlobalNormalization.lean#L594),
+[`Eight.GlobalNormalization.original_slider_sectors`](../../SquaresInCircles/Eight/GlobalNormalization.lean#L587),
 [`Eight.Terminal.original_pullback`](../../SquaresInCircles/Eight/Terminal.lean#L69),
 [`Eight.OriginalDual.original_centers_rigid`](../../SquaresInCircles/Eight/ExactFamily/CenterCompletion.lean#L171),
 [`Eight.OriginalDual.exact_identity`](../../SquaresInCircles/Eight/ExactFamily/CenterCompletion.lean#L124).*
@@ -2215,7 +2215,7 @@ parameters, or its mirror image if a reflection was used. $\square$
 
 *Lean:
 [`Eight.origin_equality_classification`](../../SquaresInCircles/Eight/Uniqueness.lean#L456),
-[`Eight.uniqueness`](../../SquaresInCircles/Eight/Uniqueness.lean#L522),
+[`Eight.uniqueness`](../../SquaresInCircles/Eight/Uniqueness.lean#L62),
 [`Eight.ExactFamily.central_parameters_exist`](../../SquaresInCircles/Eight/ExactFamily/CentralParameters.lean#L141),
 [`Eight.ExactFamily.halfAngle_recover`](../../SquaresInCircles/Eight/ExactFamily/CentralParameters.lean#L87),
 [`Eight.admissible_of_original_geometry`](../../SquaresInCircles/Eight/Equality.lean#L168).*
@@ -2229,7 +2229,7 @@ configuration is a packing in a closed disk of radius $R_8$ by part (1) and
 radius is attained, for instance by the point $(0.14, 0, 0.1, 1.35, -0.32)$
 of the box of Proposition 11.7. $\square$
 
-*Lean: [`Eight.optimum`](../../SquaresInCircles/Eight/Uniqueness.lean#L533),
+*Lean: [`Eight.optimum`](../../SquaresInCircles/Eight/Uniqueness.lean#L82),
 [`Eight.isLeast`](../../SquaresInCircles/Eight/Uniqueness.lean#L541),
 [`Eight.packing_iff`](../../SquaresInCircles/Eight/Uniqueness.lean#L545),
 [`Eight.equality_iff_parameters`](../../SquaresInCircles/Eight/Uniqueness.lean#L548),

@@ -68,16 +68,16 @@ $N$, and $S$ with $E$. The turned square $D$ touches $W$ and $S$ with two of its
 vertices (large dots). Six points lie on the circle (small dots): the far
 corners of $N$, $E$, $W$ and $S$, and two vertices of $D$.
 
-*Lean: [`Six.hStar`](../../SquaresInCircles/Geometry.lean#L189),
-[`Six.AStar`](../../SquaresInCircles/Geometry.lean#L193),
-[`Six.BStar`](../../SquaresInCircles/Geometry.lean#L196),
-[`Six.sStar`](../../SquaresInCircles/Geometry.lean#L203),
-[`Six.tStar`](../../SquaresInCircles/Geometry.lean#L207),
-[`Six.dStar`](../../SquaresInCircles/Geometry.lean#L211),
-[`Six.qStar`](../../SquaresInCircles/Geometry.lean#L214),
-[`Six.radius`](../../SquaresInCircles/Geometry.lean#L218),
-[`Six.diagonalSquare`](../../SquaresInCircles/Geometry.lean#L221),
-[`Six.model`](../../SquaresInCircles/Geometry.lean#L232),
+*Lean: [`Six.hStar`](../../SquaresInCircles/Geometry.lean#L191),
+[`Six.AStar`](../../SquaresInCircles/Geometry.lean#L195),
+[`Six.BStar`](../../SquaresInCircles/Geometry.lean#L198),
+[`Six.sStar`](../../SquaresInCircles/Geometry.lean#L205),
+[`Six.tStar`](../../SquaresInCircles/Geometry.lean#L209),
+[`Six.dStar`](../../SquaresInCircles/Geometry.lean#L213),
+[`Six.qStar`](../../SquaresInCircles/Geometry.lean#L216),
+[`Six.radius`](../../SquaresInCircles/Geometry.lean#L220),
+[`Six.diagonalSquare`](../../SquaresInCircles/Geometry.lean#L223),
+[`Six.model`](../../SquaresInCircles/Geometry.lean#L234),
 [`Six.model_packing`](../../SquaresInCircles/Six/Construction.lean#L164),
 [`Six.uniqueness`](../../SquaresInCircles/Six/Uniqueness.lean#L83),
 [`Six.optimum`](../../SquaresInCircles/Six/Uniqueness.lean#L104).*

@@ -353,16 +353,16 @@ $2\omega$ apart, the direction $\psi$ halfway between them would be within $\ome
 both, and $o + \lambda u(\psi)$ would lie in both open squares. $\square$
 
 *Lean:
-[`Eight.Arithmetic.centralBandP`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L39),
-[`Eight.Arithmetic.centralBandV`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L49),
-[`Eight.Arithmetic.segment_P_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L99),
-[`Eight.Arithmetic.segment_V_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L109),
-[`Eight.Arithmetic.bandA_P_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L117),
-[`Eight.Arithmetic.bandA_V_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L131),
-[`Eight.Arithmetic.bandB_P_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L141),
-[`Eight.Arithmetic.bandB_V_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L149),
-[`Eight.Arithmetic.centralBandP_normalized`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L162),
-[`Eight.Arithmetic.centralBandV_normalized`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L174),
+[`Eight.Arithmetic.centralBandP`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L28),
+[`Eight.Arithmetic.centralBandV`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L35),
+[`Eight.Arithmetic.segment_P_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L87),
+[`Eight.Arithmetic.segment_V_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L255),
+[`Eight.Arithmetic.bandA_P_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L182),
+[`Eight.Arithmetic.bandA_V_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L261),
+[`Eight.Arithmetic.bandB_P_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L188),
+[`Eight.Arithmetic.bandB_V_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L267),
+[`Eight.Arithmetic.centralBandP_normalized`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L286),
+[`Eight.Arithmetic.centralBandV_normalized`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L305),
 [`Eight.CentralBand.bandA_sides`](../../SquaresInCircles/Eight/CentralCore.lean#L1339),
 [`Eight.CentralBand.bandB_sides`](../../SquaresInCircles/Eight/CentralCore.lean#L1351),
 [`Eight.CentralBand.RayData.common_point_A`](../../SquaresInCircles/Eight/CentralCore.lean#L1632),
@@ -421,7 +421,7 @@ gives the rest. Reflecting in the horizontal axis gives the negative
 directions. $\square$
 
 *Lean:
-[`Eight.CentralForbidden.rectangle_segment_interval`](../../SquaresInCircles/Eight/CentralForbidden.lean#L133),
+[`Eight.CentralForbidden.rectangle_segment_interval`](../../SquaresInCircles/Eight/TableFree/CentralSegment.lean#L118),
 [`Eight.CentralForbidden.Row.Valid.forbidden`](../../SquaresInCircles/Eight/CentralForbidden.lean#L251),
 [`Eight.central_rectangle_forbids`](../../SquaresInCircles/Eight/CentralCore.lean#L1811).*
 
@@ -494,9 +494,9 @@ $[0, \frac12]$.
 
 *Lean:
 [`Eight.CentralForbidden.bandA_cover`](../../SquaresInCircles/Eight/CentralForbidden.lean#L681),
-[`Eight.CentralForbidden.bandA_forbidden`](../../SquaresInCircles/Eight/CentralForbidden.lean#L1321),
+[`Eight.CentralForbidden.bandA_forbidden`](../../SquaresInCircles/Eight/TableFree/CentralForbiddenWidths.lean#L341),
 [`Eight.CentralForbidden.bandB_cover`](../../SquaresInCircles/Eight/CentralForbidden.lean#L1639),
-[`Eight.CentralForbidden.bandB_forbidden`](../../SquaresInCircles/Eight/CentralForbidden.lean#L2149).*
+[`Eight.CentralForbidden.bandB_forbidden`](../../SquaresInCircles/Eight/TableFree/CentralForbiddenWidths.lean#L348).*
 
 ![The two widths as functions of d from 0 to 1/2: the upper curve F_{19/20}(d) + F_{19/20}(1 - d) and the lower curve F_Lambda(d) + F_Lambda(1 - d), each with kinks and a steep drop near d = 1/12, where the definition of F changes; both stay above their dashed horizontal bounds 899/500 and 347/200, the lower one coming within 0.002 of its bound near d = 0.138](figures/appendix-k/widths.svg)
 

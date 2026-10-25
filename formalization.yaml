@@ -10,9 +10,9 @@ project:
     For n = 1, …, 8: the least radius of a closed disk holding n unit squares
     with disjoint interiors, each placed and rotated freely, and every packing
     that attains it. The radii are √2/2, √5/2, 5√17/16, √2, √(5/2), √q₆ ≈
-    1.68854, √13/2 and √q₈ ≈ 1.97877, where q₆ is a quartic irrational and q₈
-    the squared radius of the unique solution of an explicit stationary
-    system. Up to rotation about
+    1.68854, √13/2 and R₈ ≈ 1.97877, where q₆ is a quartic irrational and R₈
+    the least radius of a disk about the origin holding five corners with
+    prescribed gaps between them. Up to rotation about
     the disk centre and relabelling, the optimal packing is unique for n ≤ 6:
     the square, the 2 × 1 rectangle, the T, the 2 × 2 block, the plus, and for
     six squares a central square with four neighbours, two of them pushed
@@ -30,10 +30,12 @@ project:
     angles of the squares, forces the optimal radius. For seven squares, each
     square avoiding the disk centre gets a direction from it, and in the
     optimal disk two disjoint such squares get directions at least π/3 apart.
-    For eight squares a central square is found, the frames of the seven
-    others are pinned down by finite tables of one-variable inequalities
-    checked in Lean's kernel, and a weighted sum of support inequalities with
-    the weights of the stationary packing forces the optimal radius.
+    For eight squares a central square is found, a case analysis of the
+    frames of the seven others, written by hand, excludes every boundary
+    configuration but the stationary one, with its leaf inequalities checked
+    as exact polynomial certificates in Lean's kernel, and a completion of
+    squares with the weights of the stationary packing forces the optimal
+    radius.
     We found no earlier proof for five, six, seven or eight squares, and no
     exact one for three, where a computer-assisted enclosure of the radius and
     the optimal arrangements was known. Four squares, uniqueness included,
@@ -183,8 +185,10 @@ automation:
         proofs that replaced the Bernstein certificates of seven squares
         (pull request #8). For eight squares, ChatGPT 6 Pro wrote the proof,
         with its finite tables checked by computer (pull request #9), and the
-        whole Lean proof (pull request #10), replacing some tables by geometric
-        arguments.
+        whole Lean proof (pull request #10), first with the tables and then
+        without them: the table-free proof, in mathematics and in Lean, is the
+        one formalized here, with the optimum stated by its five-corner
+        minimum.
     - method: "agent"
       models: ["Claude Opus 5.5"]
       framework: "Claude"
@@ -202,10 +206,10 @@ automation:
         compiled ChatGPT's proofs, repairing and modifying them until Lean
         accepted them, and integrated them into the library; proposed the
         occupied-arc idea (Claude Opus 5); wrote the proofs of one and two
-        squares; for eight squares, wrote the fixed-point and natural-number
-        checkers, with their soundness proofs, by which the kernel evaluates
-        the finite tables, and replaced the draft's branch-and-bound searches by
-        generated tables; reorganized, reviewed and simplified the library; wrote the
+        squares; for eight squares, compiled and repaired the table-free draft
+        and wrote the exact integer checkers, with their soundness proofs, by
+        which the kernel evaluates its one- and two-variable polynomial
+        certificates; reorganized, reviewed and simplified the library; wrote the
         documentation and its figures; and prepared this submission.
   notes: >-
     ChatGPT 6 Pro wrote the proofs of three, four, five and seven squares in
@@ -217,8 +221,8 @@ automation:
     proofs to replace the Bernstein certificates of seven squares. For eight
     squares ChatGPT 6 Pro wrote the proof and the Lean, without compiling the
     Lean. Claude Opus 5 and 5.5, in Claude Code, compiled, repaired and
-    modified all of these, made the finite tables of eight squares checkable
-    in Lean's kernel, and wrote the proofs of one and two squares. The repository owner directed and reviewed the
+    modified all of these, made the polynomial certificates of eight squares
+    checkable in Lean's kernel, and wrote the proofs of one and two squares. The repository owner directed and reviewed the
     work and decided its scope and naming. docs/contributors.md gives a dated
     account, and the commits name the models that co-authored them.
 

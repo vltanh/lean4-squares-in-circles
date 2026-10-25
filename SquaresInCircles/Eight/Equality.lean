@@ -220,27 +220,27 @@ theorem admissible_of_original_geometry {p : EqualityParameters}
   · dsimp [etaMin]
     change -sharpData.h₂-Real.sqrt (qStar-(sharpData.h₁+2)^2)≤ p.eta
     nlinarith [Real.sq_sqrt hGrad,Real.sqrt_nonneg (qStar-(sharpData.h₁+2)^2)]
-  · simpa [model] using hp.2.2 0 3 (by decide)
-  · simpa [model] using hp.2.2 0 4 (by decide)
-  · simpa [model] using hp.2.2 0 6 (by decide)
-  · simpa [model] using hp.2.2 0 7 (by decide)
-  · simpa [model] using hp.2.2 0 5 (by decide)
-  · simpa [model] using hp.2.2 0 1 (by decide)
-  · simpa [model] using hp.2.2 0 2 (by decide)
+  · simpa [EqualityParameters.model] using hp.2.2 0 3 (by decide)
+  · simpa [EqualityParameters.model] using hp.2.2 0 4 (by decide)
+  · simpa [EqualityParameters.model] using hp.2.2 0 6 (by decide)
+  · simpa [EqualityParameters.model] using hp.2.2 0 7 (by decide)
+  · simpa [EqualityParameters.model] using hp.2.2 0 5 (by decide)
+  · simpa [EqualityParameters.model] using hp.2.2 0 1 (by decide)
+  · simpa [EqualityParameters.model] using hp.2.2 0 2 (by decide)
 
-def radius : ℝ := Real.sqrt qStar
-def reflectedModel (reflected : Bool) (p : EqualityParameters) : Fin 8 → UnitSquare :=
+def stationaryRadius : ℝ := Real.sqrt qStar
+def stationaryReflectedModel (reflected : Bool) (p : EqualityParameters) : Fin 8 → UnitSquare :=
   if reflected then fun i=>reflectDiagonalSquare (p.model sharpData i) else p.model sharpData
-def models : Set (Fin 8 → UnitSquare) :=
+def stationaryModels : Set (Fin 8 → UnitSquare) :=
   {M | ∃ reflected : Bool, ∃ p : EqualityParameters,
-    p.Admissible sharpData ∧ M=reflectedModel reflected p}
+    p.Admissible sharpData ∧ M=stationaryReflectedModel reflected p}
 def attainingModel : Fin 8 → UnitSquare := sampleParameters.model sharpData
 
-theorem models_nonempty : models.Nonempty :=
+theorem models_nonempty : stationaryModels.Nonempty :=
   ⟨attainingModel,false,sampleParameters,sample_admissible,rfl⟩
 
-theorem model_packing (M : Fin 8 → UnitSquare) (hM : M∈models) :
-    Packing M (0,0) radius := by
+theorem model_packing (M : Fin 8 → UnitSquare) (hM : M∈stationaryModels) :
+    Packing M (0,0) stationaryRadius := by
   obtain ⟨b,p,hp,rfl⟩ := hM
   have h := (sqPacking_iff_packing _ _ (by linarith [qStar_limits.1])).mp (model_sqPacking hp)
   cases b
@@ -248,25 +248,25 @@ theorem model_packing (M : Fin 8 → UnitSquare) (hM : M∈models) :
   · exact packing_reflectDiagonal h
 
 theorem unreflected_model_reaches (p : EqualityParameters) :
-    ∃ i x, closedSquare (p.model sharpData i) x ∧ radius^2≤normSq x := by
+    ∃ i x, closedSquare (p.model sharpData i) x ∧ stationaryRadius^2≤normSq x := by
   refine ⟨3,(sharpData.x₁,sharpData.y),?_,?_⟩
-  · norm_num [model,axisSquare,closedSquare,localX,localY,pA]
-  · rw [radius,Real.sq_sqrt (by linarith [qStar_limits.1])]
+  · norm_num [EqualityParameters.model,axisSquare,closedSquare,localX,localY,pA]
+  · rw [stationaryRadius,Real.sq_sqrt (by linarith [qStar_limits.1])]
     change qStar≤ sharpData.x₁^2+sharpData.y^2
     exact sharpData_stationary.first_circle.ge
 
-theorem model_reaches (M : Fin 8 → UnitSquare) (hM : M∈models) :
-    ∃ i x, closedSquare (M i) x ∧ radius^2≤normSq x := by
+theorem model_reaches (M : Fin 8 → UnitSquare) (hM : M∈stationaryModels) :
+    ∃ i x, closedSquare (M i) x ∧ stationaryRadius^2≤normSq x := by
   obtain ⟨b,p,hp,rfl⟩ := hM
   obtain ⟨i,x,hx,hr⟩ := unreflected_model_reaches p
   cases b
   · exact ⟨i,x,hx,hr⟩
   · refine ⟨i,diagonalPoint x,?_,?_⟩
-    · simpa [reflectedModel,reflectDiagonal_closed] using hx
+    · simpa [stationaryReflectedModel,reflectDiagonal_closed] using hx
     · simpa [normSq,diagonalPoint,add_comm] using hr
 
 theorem whole_box_packing {p : EqualityParameters} (hp : p.InBox) :
-    Packing (p.model sharpData) (0,0) radius :=
+    Packing (p.model sharpData) (0,0) stationaryRadius :=
   model_packing _ ⟨false,p,box_admissible hp,rfl⟩
 
 end SquaresInCircles.Eight

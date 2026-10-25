@@ -19,7 +19,7 @@ example : optimalRadius 4 = Real.sqrt 2 := rfl
 example : optimalRadius 5 = Real.sqrt (5 / 2) := rfl
 example : optimalRadius 6 = Real.sqrt Six.qStar := rfl
 example : optimalRadius 7 = Real.sqrt 13 / 2 := rfl
-example : optimalRadius 8 = Real.sqrt EightStatement.qStar := rfl
+example : optimalRadius 8 = sInf Eight.feasibleRadii := rfl
 
 -- The model table: axis-parallel squares at these centres, and for six squares
 -- five of them and one turned by `π / 4`.
@@ -43,23 +43,22 @@ example : optimalPackings 7 = Set.range fun c : Seven.Column => fun i =>
   rfl
 example : Seven.columnCenters Seven.centeredColumn =
     ![(1,-1/2),(1,1/2),(-1,-1/2),(-1,1/2),(0,-1),(0,0),(0,1)] := rfl
-example : optimalPackings 8 = EightStatement.models := rfl
+example : optimalPackings 8 = {M | ∃ p : Eight.Parameters,
+    (M = Eight.model p ∨ M = fun i => Eight.reflectSquare (Eight.model p i)) ∧
+      Packing M (0,0) (optimalRadius 8)} := rfl
 
--- Eight squares: the stated squared radius is the one of the proof, between the
--- radius levels `7831/2000` and `1957767069/500000000`, and the radius is
--- `1.97877…`.
-example : EightStatement.qStar = Eight.ExactFamily.qStar :=
-  Eight.ExactFamily.StatementLink.qStar_eq
-example : (7831:ℝ)/2000 < EightStatement.qStar ∧
-    EightStatement.qStar < 1957767069/500000000 := by
-  rw [Eight.ExactFamily.StatementLink.qStar_eq]
-  exact ⟨Eight.ExactFamily.qStar_limits.1,Eight.ExactFamily.qStar_limits.2.1⟩
-example : (197877:ℝ)/100000 < EightStatement.radius ∧
-    EightStatement.radius < 197878/100000 := by
+-- Eight squares: the radius of the five-corner problem is the stationary radius
+-- `√qStar` of the proof, `qStar` lies between the radius levels `7831/2000` and
+-- `1957767069/500000000`, and the radius is `1.97877…`.
+example : Eight.radius = Real.sqrt Eight.ExactFamily.qStar := Eight.radius_eq_stationary
+example : (7831:ℝ)/2000 < Eight.ExactFamily.qStar ∧
+    Eight.ExactFamily.qStar < 1957767069/500000000 :=
+  ⟨Eight.ExactFamily.qStar_limits.1,Eight.ExactFamily.qStar_limits.2.1⟩
+example : (197877:ℝ)/100000 < Eight.radius ∧ Eight.radius < 197878/100000 := by
   obtain ⟨hl,hu⟩ := Eight.ExactFamily.qStar_bracket
   norm_num [Eight.ExactFamily.Generated.sharpLower,
     Eight.ExactFamily.Generated.sharpUpper] at hl hu
-  rw [EightStatement.radius,Eight.ExactFamily.StatementLink.qStar_eq]
+  rw [Eight.radius_eq_stationary,Eight.stationaryRadius]
   constructor
   · rw [Real.lt_sqrt (by norm_num)]; linarith
   · rw [Real.sqrt_lt' (by norm_num)]; linarith
@@ -146,13 +145,14 @@ example (S : Fin 7 → UnitSquare) (o : Point) (hp : Packing S o (optimalRadius 
 example (S : Fin 7 → UnitSquare) (o : Point) (R : ℝ)
     (hp : Packing S o R) : Seven.radius ≤ R := Seven.optimum.optimality S o R hp
 example (S : Fin 8 → UnitSquare) (o : Point) (hp : Packing S o (optimalRadius 8)) :
-    ∃ reflected : Bool, ∃ p : EightStatement.Parameters,
-      p.Admissible EightStatement.selected ∧
-        Congruent S o (EightStatement.reflectedModel reflected p) := by
-  obtain ⟨_,⟨b,p,hadm,rfl⟩,h⟩ := (optimal_packings 8 (by norm_num) S o).mp hp
-  exact ⟨b,p,hadm,h⟩
+    ∃ p : Eight.Parameters, Congruent S o (Eight.model p) ∨
+      Congruent S o fun i => Eight.reflectSquare (Eight.model p i) := by
+  obtain ⟨_,⟨p,hM,-⟩,h⟩ := (optimal_packings 8 (by norm_num) S o).mp hp
+  rcases hM with rfl | rfl
+  · exact ⟨p,Or.inl h⟩
+  · exact ⟨p,Or.inr h⟩
 example (S : Fin 8 → UnitSquare) (o : Point) (R : ℝ)
-    (hp : Packing S o R) : Eight.radius ≤ R := Eight.lower_bound S o R hp
+    (hp : Packing S o R) : Eight.radius ≤ R := Eight.optimum.optimality S o R hp
 example (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 8) :
     (optimum n hn).radius = optimalRadius n := (optimum_spec n hn).1
 

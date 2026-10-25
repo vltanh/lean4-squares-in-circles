@@ -52,8 +52,7 @@ def optimum : (n : ℕ) → 1 ≤ n ∧ n ≤ 8 → Optimum n
 lemma optimum_spec (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 8) :
     (optimum n hn).radius = optimalRadius n ∧ (optimum n hn).models = optimalPackings n := by
   match n, hn with
-  | 1, _ | 2, _ | 3, _ | 4, _ | 5, _ | 6, _ | 7, _ => exact ⟨rfl,rfl⟩
-  | 8, _ => exact ⟨Eight.radius_statement,Eight.models_statement⟩
+  | 1, _ | 2, _ | 3, _ | 4, _ | 5, _ | 6, _ | 7, _ | 8, _ => exact ⟨rfl,rfl⟩
   | 0, h | _+9, h => exact absurd h (by omega)
 
 /-- `optimalRadius n` is the least radius of a disk that holds `n` unit squares
