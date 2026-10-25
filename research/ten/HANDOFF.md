@@ -43,15 +43,18 @@ is also open outside the completed cases.
    squares' hull has width at least two in every direction. The separate
    computational [radial localization](RADIAL_COUNT_LOCALIZATION.md) forces
    two center norms at most `.65` and two strictly above `.9`. Neither result
-   alone excludes six outer squares. A proposed route is to bound the number
-   of disjoint `pi/4` arcs that fit in the complement of the four core traces
-   on the test circle under the two-small/two-large localization. The version
-   without localization is false; see [FOUR_CORE_GAP_OBSTRUCTION.md](FOUR_CORE_GAP_OBSTRUCTION.md).
+   alone excludes six outer squares. Abstract complementary-gap capacity
+   does not close the problem, even with radial localization: see the exact
+   counterexamples in [FOUR_CORE_GAP_OBSTRUCTION.md](FOUR_CORE_GAP_OBSTRUCTION.md)
+   and [LOCALIZED_FOUR_CORE_GAP_OBSTRUCTION.md](LOCALIZED_FOUR_CORE_GAP_OBSTRUCTION.md).
    [TRANSLATED_BLOCK_OBSTRUCTION.md](TRANSLATED_BLOCK_OBSTRUCTION.md) closes
    the exact aligned two-by-two block class translated along a side direction.
    Also [LARGE_INNER_ARC.md](LARGE_INNER_ARC.md) proves by hand that at least
    two of four inner centers have norm strictly less than `.9`, and at most
    one of three inner centers has norm at least `.9`.
+   [LOCALIZED_BLOCK_OBSTRUCTION.md](LOCALIZED_BLOCK_OBSTRUCTION.md) closes
+   any solid two-by-two core satisfying the two-large-center hypothesis;
+   applying that hypothesis still uses the computational certificate.
 3. **Five inner centers, for a wholly hand proof.** The computer-assisted
    [radial-weight exclusion](RADIAL_WEIGHT_EXCLUSION.md) already excludes this
    case. An analytic replacement would follow from the proposed inequality
@@ -60,8 +63,11 @@ is also open outside the completed cases.
    that a nonextreme center forces the aligned plus configuration. Otherwise
    all five centers form a strict convex pentagon; independent outward radial
    translations preserve disjointness. The moment inequality in that remaining
-   case is **unproved**. Summing adjacent separating-normal inequalities is
-   a possible approach; elementary Cauchy bounds tried so far are too weak.
+   case is **unproved**. A weighted dual from the neighboring separators is
+   now derived explicitly in the reductions note.
+   [FIVE_CENTER_SMALL_TURNS.md](FIVE_CENTER_SMALL_TURNS.md) proves the strict
+   moment bound by three rational certificates when all five normal turns
+   are at most `pi/2`. Fans with larger turns remain open.
 4. **Staggered contact chain.** The precise arbitrary-orientation upper-triple
    lemma in [STAGGERED_CHAIN_REDUCTION.md](STAGGERED_CHAIN_REDUCTION.md) is
    open. Its parallel and common-maximal-chord cases are proved. Any non-T

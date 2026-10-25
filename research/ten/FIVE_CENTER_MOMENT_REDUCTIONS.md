@@ -87,7 +87,120 @@ are pairwise disjoint. If a point belonged to two sweeps, it would lie in
 the interiors of two independently translated squares, contradicting the
 preceding argument.
 
-These two reductions isolate the unresolved case: a strict convex
-pentagon of nonzero centers, with disjoint outward radial sweeps. A
-weighted angular or neighboring-separation inequality proving the proposed
-moment bound in that case is still needed.
+## 3. Cyclic order of separating normals
+
+Consider a configuration other than the plus, so all centers are nonzero.
+Any two center rays make an angle at least `pi/3`. Indeed, for radii
+`0<r,s<=1` and an angle `delta<pi/3`,
+
+```text
+|r e_0-s e_delta|^2 < r^2+s^2-rs <= 1.
+```
+
+The last inequality follows by maximizing the convex quadratic separately
+over `r,s` in `[0,1]`; its maximum at the four corners is one. This would
+contradict center separation.
+
+Order the five center angles cyclically as `phi_i`. Their five successive
+gaps `delta_i` therefore satisfy
+
+```text
+pi/3 <= delta_i <= 2pi/3,    sum delta_i = 2pi.
+```
+
+In particular, the origin is in the interior of their convex hull. For
+each neighboring pair choose a separating unit normal `n_i` directed from
+square `i` toward square `i+1`. Section 2 gives
+
+```text
+n_i dot c_i <= 0 <= n_i dot c_(i+1).
+```
+
+Because `0<delta_i<pi`, the normal's angle belongs to the closed interval
+`[phi_i+pi/2, phi_(i+1)+pi/2]`, with the appropriate consecutive angle
+lifts. These intervals are cyclically ordered. Thus the normal turns
+`gamma_i = angle(n_(i-1),n_i)` can be chosen to satisfy
+
+```text
+0 <= gamma_i <= delta_(i-1)+delta_i <= pi,
+sum gamma_i = 2pi.
+```
+
+Closed endpoints cause no problem, including when a center has norm one.
+
+## 4. An explicit dual inequality for the moment
+
+Choose any nonnegative numbers `lambda_i`. Define cyclically
+
+```text
+t_i = |cos gamma_i| + |sin gamma_i|,
+a_i^2 = lambda_(i-1)^2 + lambda_i^2
+        - 2 lambda_(i-1) lambda_i cos gamma_i,
+
+g(a) = a^2/4       for 0<=a<=2,
+       a-1         for a>=2.
+```
+
+Then the moment `M = sum |c_i|^2` satisfies
+
+```text
+M >= (1/2) sum min(lambda_(i-1)+lambda_i t_i,
+                  lambda_(i-1) t_i+lambda_i)
+     - sum g(a_i).                                      (1)
+```
+
+Here is a direct proof. Weight the five neighboring separation inequalities
+by `lambda_i` and sum them. The center contribution becomes
+
+```text
+sum c_i dot f_i,
+f_i = lambda_(i-1) n_(i-1) - lambda_i n_i,
+|f_i| = a_i.
+```
+
+The two support contributions of square `i` have lower bound
+
+```text
+lambda_(i-1) h_i(n_(i-1)) + lambda_i h_i(n_i)
+ >= (1/2) min(lambda_(i-1)+lambda_i t_i,
+             lambda_(i-1) t_i+lambda_i).
+```
+
+To verify this support bound, vary the square's frame angle. Between
+successive angles where one normal is parallel to a square edge, the
+weighted sum of absolute sines and cosines is concave: its second
+derivative is its negative. Its minimum is consequently at one of those
+endpoints. Aligning either normal with an edge gives the two displayed
+values.
+
+Finally, `|c_i|<=1` gives
+
+```text
+f_i dot c_i - |c_i|^2
+ <= max_(0<=r<=1) (a_i r-r^2)
+ = g(a_i).
+```
+
+Combining these inequalities proves (1).
+
+For any auxiliary numbers `d_i>=1`, a slightly weaker but useful version is
+
+```text
+M >= (1/2) sum min(lambda_(i-1)+lambda_i t_i,
+                  lambda_(i-1) t_i+lambda_i)
+     - sum [a_i^2/(4d_i) + d_i-1].                      (2)
+```
+
+This follows from
+`a r-r^2 <= a^2/(4d)+(d-1)r^2 <= a^2/(4d)+d-1` for `r<=1`.
+For fixed `lambda_i,d_i`, the right side of (2) is a concave function of
+the five angles on the box `0<=gamma_i<=pi/2`: each support term is a
+nondecreasing concave function of `cos gamma_i+sin gamma_i`, and each
+remaining angle-dependent term is a nonnegative multiple of
+`cos gamma_i`.
+
+A sufficient remaining step is the following uniform inequality: for every
+permitted five-angle fan, find weights making (1), or (2), at least four.
+This sufficient condition is a relaxation and is not claimed to be
+equivalent to the original geometric problem. No uniform choice or complete
+analytic case analysis is claimed here.
