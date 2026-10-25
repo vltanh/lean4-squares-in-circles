@@ -1,15 +1,19 @@
 # Reductions for the five-center moment problem
 
-The following are hand proofs. They do not yet prove the remaining moment
-inequality. Let five unit squares have pairwise disjoint interiors, with
-centers `c_i` satisfying `|c_i| <= 1`. The proposed inequality is
+These geometric and dual reductions are ingredients of the completed
+five-center moment theorem. Let five unit squares have pairwise disjoint
+interiors, with centers `c_i` satisfying `|c_i| <= 1`. Then
 
 ```text
 sum_i |c_i|^2 >= 4.
 ```
 
-Its equality candidate is the plus: one center at zero and four centers at
-the unit vectors of a common square frame.
+Equality holds exactly for the plus: one center at zero and four centers
+at the unit vectors of a common square frame. The proof is completed by
+[the small-turn argument](FIVE_CENTER_SMALL_TURNS.md) and
+[the large-turn finite rational table](FIVE_CENTER_LARGE_TURNS.md).
+The latter also derives the exclusion of the five-inner-center branch
+for ten squares in squared radius `9/2`.
 
 ## 1. A nonextreme center forces the plus
 
@@ -199,8 +203,13 @@ nondecreasing concave function of `cos gamma_i+sin gamma_i`, and each
 remaining angle-dependent term is a nonnegative multiple of
 `cos gamma_i`.
 
-A sufficient remaining step is the following uniform inequality: for every
-permitted five-angle fan, find weights making (1), or (2), at least four.
-This sufficient condition is a relaxation and is not claimed to be
-equivalent to the original geometric problem. No uniform choice or complete
-analytic case analysis is claimed here.
+The sufficient uniform bound is now proved: for every permitted five-angle
+fan, suitable weights make (2) strictly larger than four. Fans with all
+turns at most `pi/2` are covered by
+[FIVE_CENTER_SMALL_TURNS.md](FIVE_CENTER_SMALL_TURNS.md). The remaining
+fans are covered by the 78 explicit rational cells in
+[FIVE_CENTER_LARGE_TURNS.md](FIVE_CENTER_LARGE_TURNS.md), which also proves
+the additional adjacent-turn restrictions used in that cover. Together
+with Section 1, these bounds give the moment theorem and its equality
+classification. The fan condition remains a sufficient relaxation; no
+equivalence with physical realizability is needed.
