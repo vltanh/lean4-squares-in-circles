@@ -75,6 +75,11 @@ is also open outside the completed cases.
    at least `1/2`. The straight chain has total capacity at most eight; all
    four parameter corners have capacity at most nine. Universal two-point
    stabbing cannot prove the general lemma: exact obstructions are recorded.
+   A narrower [one-neck theorem](ONE_NECK_STABBING.md) is now fully proved:
+   two explicit points lie in the interiors of every permitted square.
+   It excludes a `3+3` split of six additional squares. A capacity-three
+   theorem for the original upper region is still needed to exclude the
+   unbalanced splits; it does not follow from the two-point theorem alone.
 5. **Contact-stress route.** [PHYSICAL_TREE_REDUCTIONS.md](PHYSICAL_TREE_REDUCTIONS.md)
    gives conditional graph reductions. [THREE_ORIGIN_VERTEX_SQUARES.md](THREE_ORIGIN_VERTEX_SQUARES.md)
    closes two specified physical tree families at squared radius `17/4`.
