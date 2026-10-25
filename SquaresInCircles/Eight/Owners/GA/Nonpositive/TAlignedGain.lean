@@ -2,7 +2,7 @@ module
 
 public import SquaresInCircles.Eight.Owners.GA.Nonpositive.TPairedBounds
 public import SquaresInCircles.Eight.Owners.GA.Owners
-public import SquaresInCircles.Eight.Owners.GA.Paired.ACharge
+public import SquaresInCircles.Eight.Owners.GA.Paired.ECharge
 public import SquaresInCircles.Eight.Owners.GA.Two.PositiveScalar
 
 /-!

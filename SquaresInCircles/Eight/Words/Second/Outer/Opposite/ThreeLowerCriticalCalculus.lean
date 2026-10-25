@@ -1,7 +1,6 @@
 module
 
-public import SquaresInCircles.Eight.Words.Second.Outer.Opposite.ThreeLowerCriticalData
-public import SquaresInCircles.Eight.Words.Second.Outer.Opposite.ThreeLowerEnvelope
+public import SquaresInCircles.Eight.Words.Second.Outer.Opposite.ThreeLowerCriticalRootReferences
 public import SquaresInCircles.Eight.Words.Second.Outer.Opposite.ThreeLowerSourceShape
 
 /-!
@@ -13,6 +12,91 @@ term; the remaining first, second and third source derivatives are
 proved from the explicit radical parameterization.
 -/
 
+section
+/-!
+## The three uniform envelope derivative estimates
+
+The positive relation `D > 3 S / 2` preserves the stationary equation's
+dependence and proves the third derivative sign on the full target
+interval.  No source partition enters the argument.
+-/
+
+@[expose] public section
+noncomputable section
+open Set
+namespace SquaresInCircles.Eight.SecondWord.OppositeThree.LowerEnvelope
+open CommonQuarter CorePairGeometry Arithmetic
+open StationaryPrimitives (Interval)
+
+lemma envelope_first_negative {B : ℝ} (hB : B∈Icc (3/100) (3/20)) : g₁ B<0 := by
+  have hh : 0<h B := by linarith [(product_bounds hB).1]
+  have hs := S_positive (mem_outer hB)
+  dsimp [g₁]
+  exact div_neg_of_neg_of_pos (neg_lt_zero.mpr hh) (by positivity)
+
+lemma envelope_second_upper {B : ℝ} (hB : B∈Icc (3/100) (3/20)) :
+    (S B)^2*g₂ B<(63/200:ℝ) := by
+  have hs := S_positive (mem_outer hB)
+  have hd := D_positive (mem_short hB)
+  have hlarge := D_large hB
+  have hh := (product_bounds hB).2
+  have hj := (product_first_bounds hB).1
+  have he : 4*D B*((S B)^2*g₂ B)=2*D B*h B-h₁ B*S B := by
+    dsimp [g₂]
+    field_simp [hs.ne',hd.ne']
+    ring
+  have hp := mul_lt_mul_of_pos_left hh (show 0<2*D B by positivity)
+  have hq := mul_lt_mul_of_pos_right hj hs
+  have hpay : 4*D B*((S B)^2*g₂ B)<4*D B*(63/200) := by
+    linarith
+  exact lt_of_mul_lt_mul_left hpay (by positivity)
+
+lemma envelope_third_negative {B : ℝ} (hB : B∈Icc (3/100) (3/20)) : g₃ B<0 := by
+  have hs := S_positive (mem_outer hB)
+  have hd := D_positive (mem_short hB)
+  have hlarge := D_large hB
+  have hdlo : (159/100:ℝ)<D B := by linarith [(S_bounds hB).1]
+  have hv : S B/D B∈Icc (0:ℝ) (2/3) := by
+    constructor
+    · exact (div_pos hs hd).le
+    · apply (div_le_iff₀ hd).2
+      linarith
+  have hi : 1/D B∈Icc (0:ℝ) (100/159) := by
+    constructor
+    · positivity
+    · apply (div_le_iff₀ hd).2
+      linarith
+  let V : Interval (S B/D B) := Interval.of_bounds hv
+  let I : Interval (1/D B) := Interval.of_bounds hi
+  let H : Interval (h B) := Interval.of_bounds ⟨(product_bounds hB).1.le,(product_bounds hB).2.le⟩
+  let J : Interval (h₁ B) := Interval.of_bounds
+    ⟨(product_first_bounds hB).1.le,(product_first_bounds hB).2.le⟩
+  let K : Interval (h₂ B) := Interval.of_bounds
+    ⟨(product_second_bounds hB).1.le,(product_second_bounds hB).2.le⟩
+  let E : Interval (D₁ B) := Interval.of_bounds ⟨(D_first_bounds hB).1.le,(D_first_bounds hB).2.le⟩
+  let Z₀ := ((((Interval.point (-1/8)).mul K).mul V.square).add
+    (((Interval.point (1/2)).mul J).mul V)).add
+      (((((Interval.point (1/8)).mul J).mul E).mul I).mul V.square)
+  let Z := Z₀.sub H
+  have hz : Z.hi<0 := by
+    norm_num [Z,Z₀,V,I,H,J,K,E,Interval.point,Interval.of_bounds,Interval.mul,
+      Interval.square,Interval.add,Interval.sub]
+  have he : (S B)^3*g₃ B=
+      (-1/8)*h₂ B*(S B/D B)^2+(1/2)*h₁ B*(S B/D B)+
+        (1/8)*h₁ B*D₁ B*(1/D B)*(S B/D B)^2-h B := by
+    dsimp [g₃]
+    field_simp [hs.ne',hd.ne']
+  have hnegative : (S B)^3*g₃ B<0 := by rw [he]; exact Z.mem.2.trans_lt hz
+  by_contra hn
+  have hp := mul_nonneg (pow_nonneg hs.le 3) (le_of_not_gt hn)
+  linarith
+
+end SquaresInCircles.Eight.SecondWord.OppositeThree.LowerEnvelope
+end
+end
+end
+
+section
 @[expose] public section
 noncomputable section
 open Set
@@ -140,10 +224,13 @@ theorem third_negative {B : ℝ} (hB : Domain B) : third B<0 := by
 lemma second_antitone_between {l u : ℝ} (hl : Domain l) (hu : Domain u) :
     AntitoneOn second (Icc l u) :=
   antiOn_of_hasDeriv_nonpos
-    (fun B hB => (second_hasDerivAt (domain_between hl hu hB)).continuousAt.continuousWithinAt)
-    (fun B hB => second_hasDerivAt (domain_between hl hu (Ioo_subset_Icc_self hB)))
-    (fun B hB => mul_nonpos_of_nonpos_of_nonneg
+    (fun _ hB => (second_hasDerivAt (domain_between hl hu hB)).continuousAt.continuousWithinAt)
+    (fun _ hB => second_hasDerivAt (domain_between hl hu (Ioo_subset_Icc_self hB)))
+    (fun _ hB => mul_nonpos_of_nonpos_of_nonneg
       (third_negative (domain_between hl hu (Ioo_subset_Icc_self hB))).le
       (sourceD_positive (domain_between hl hu (Ioo_subset_Icc_self hB)).1).le)
 
 end SquaresInCircles.Eight.SecondWord.OppositeThree.LowerCritical
+end
+end
+end

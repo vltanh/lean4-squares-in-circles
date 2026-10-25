@@ -163,8 +163,8 @@ none of the others.
 [`Eight.model`](../../SquaresInCircles/Geometry.lean#L367),
 [`Eight.reflectSquare`](../../SquaresInCircles/Geometry.lean#L378),
 [`Eight.models`](../../SquaresInCircles/Geometry.lean#L389),
-[`Eight.Stationary.Coordinates.IsStationary`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L96),
-[`Eight.Stationary.qStar`](../../SquaresInCircles/Eight/Stationary/Analysis.lean#L376),
+[`Eight.Stationary.Coordinates.IsStationary`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L122),
+[`Eight.Stationary.qStar`](../../SquaresInCircles/Eight/Stationary/System.lean#L398),
 [`Eight.radius_eq_stationary`](../../SquaresInCircles/Eight/Uniqueness.lean#L33),
 [`Eight.lower_bound`](../../SquaresInCircles/Eight/Uniqueness.lean#L55),
 [`Eight.uniqueness`](../../SquaresInCircles/Eight/Uniqueness.lean#L62),
@@ -290,13 +290,13 @@ $c$, $s$, $h_1$, $h_2$ and $F$ are those of Theorem 11.1, and $F_y$ and $F_t$
 are the derivatives of $F$ in $y$ and in $t$ (Lemma J.1).
 
 *Lean:
-[`Eight.Stationary.Coordinates`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L54),
-[`Eight.Stationary.Coordinates.IsChain`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L84),
-[`Eight.Stationary.Coordinates.defect`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L71),
-[`Eight.Stationary.Coordinates.positionDerivative`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L77),
-[`Eight.Stationary.Coordinates.tiltDerivative`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L79),
-[`Eight.Stationary.Coordinates.anchorPoints`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L193),
-[`Eight.Stationary.Coordinates.exteriorSquares`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L189).*
+[`Eight.Stationary.Coordinates`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L80),
+[`Eight.Stationary.Coordinates.IsChain`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L110),
+[`Eight.Stationary.Coordinates.defect`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L97),
+[`Eight.Stationary.Coordinates.positionDerivative`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L103),
+[`Eight.Stationary.Coordinates.tiltDerivative`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L105),
+[`Eight.Stationary.Coordinates.anchorPoints`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L219),
+[`Eight.Stationary.Coordinates.exteriorSquares`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L215).*
 
 ### Lemma 11.3 (the chain)
 
@@ -341,13 +341,13 @@ make the angle $t$ with those of $A$ and $E$, so the thresholds of Lemma 9.11
 are $\tau(0) = 1$ and $\tau(t)$. $\square$
 
 *Lean:
-[`Eight.Stationary.Coordinates.anchor_vertex`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L204),
-[`Eight.Stationary.Coordinates.anchor_circle`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L211),
-[`Eight.Stationary.Coordinates.standard_contacts`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L246),
-[`Eight.Stationary.Coordinates.HG_contact`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L220),
-[`Eight.Stationary.Coordinates.GA_contact`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L225),
-[`Eight.Stationary.Coordinates.HE_contact`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L240),
-[`Eight.Stationary.Coordinates.HA_contact`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L234).*
+[`Eight.Stationary.Coordinates.anchor_vertex`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L230),
+[`Eight.Stationary.Coordinates.anchor_circle`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L237),
+[`Eight.Stationary.Coordinates.standard_contacts`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L272),
+[`Eight.Stationary.Coordinates.HG_contact`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L246),
+[`Eight.Stationary.Coordinates.GA_contact`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L251),
+[`Eight.Stationary.Coordinates.HE_contact`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L266),
+[`Eight.Stationary.Coordinates.HA_contact`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L260).*
 
 So the chain realizes the seven contacts of Figure 11.1 for every $q$, $y$
 and $t$, and it closes, with all five corners on the circle of radius
@@ -362,10 +362,10 @@ which decreases as $q$ grows; the least $q$ at which the minimum reaches 0 is
 $q_*$, and there the minimum is a simultaneous zero of $F$, $F_y$ and $F_t$.
 
 *Lean:
-[`Eight.FiveCorner.ofCoordinates`](../../SquaresInCircles/Eight/Corners/NominalTrial.lean#L31),
-[`Eight.FiveCorner.coordinate_contacts`](../../SquaresInCircles/Eight/Corners/NominalTrial.lean#L45),
-[`Eight.FiveCorner.ofCoordinates_spans`](../../SquaresInCircles/Eight/Corners/NominalTrial.lean#L68),
-[`Eight.FiveCorner.ofCoordinates_fits`](../../SquaresInCircles/Eight/Corners/NominalTrial.lean#L78).*
+[`Eight.FiveCorner.ofCoordinates`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L188),
+[`Eight.FiveCorner.coordinate_contacts`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L202),
+[`Eight.FiveCorner.ofCoordinates_spans`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L225),
+[`Eight.FiveCorner.ofCoordinates_fits`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L235).*
 
 ![Two panels. Left: the five-corner chain at the squared radius q* for a position y and tilt t different from the optimal ones: the squares A, B, D, E and T in their columns with the corners P1 to P4 on the dashed circle, and the turned squares H and G at the bottom, whose corner P5 lies outside the circle. Right: the plane of y and t with the level curves of the defect F(q*, y, t), closed curves around one point (y*, t*), where F has its minimum 0; a red ring marks the pose of the left panel](figures/11-eight/chain.svg)
 
@@ -410,17 +410,17 @@ defect is positive except at its minimum $(y_*, t_*)$, where it vanishes.
 The proof is given in [Appendix J](appendix-j.md).
 
 *Lean:
-[`Eight.Stationary.sharpData`](../../SquaresInCircles/Eight/Stationary/System.lean#L195),
-[`Eight.Stationary.sharpData_stationary`](../../SquaresInCircles/Eight/Stationary/System.lean#L197),
-[`Eight.Stationary.stationary_unique`](../../SquaresInCircles/Eight/Stationary/System.lean#L232),
-[`Eight.Stationary.exact_stationary_existsUnique`](../../SquaresInCircles/Eight/Stationary/System.lean#L235),
-[`Eight.Stationary.qStar_bracket`](../../SquaresInCircles/Eight/Stationary/System.lean#L143),
-[`Eight.Stationary.qStar_limits`](../../SquaresInCircles/Eight/Stationary/System.lean#L155),
+[`Eight.Stationary.sharpData`](../../SquaresInCircles/Eight/Stationary/System.lean#L1711),
+[`Eight.Stationary.sharpData_stationary`](../../SquaresInCircles/Eight/Stationary/System.lean#L1713),
+[`Eight.Stationary.stationary_unique`](../../SquaresInCircles/Eight/Stationary/System.lean#L1748),
+[`Eight.Stationary.exact_stationary_existsUnique`](../../SquaresInCircles/Eight/Stationary/System.lean#L1751),
+[`Eight.Stationary.qStar_bracket`](../../SquaresInCircles/Eight/Stationary/System.lean#L1659),
+[`Eight.Stationary.qStar_limits`](../../SquaresInCircles/Eight/Stationary/System.lean#L1671),
 [`Eight.radius_levels`](../../SquaresInCircles/Eight/Model.lean#L36),
-[`Eight.Stationary.sharp_coordinates`](../../SquaresInCircles/Eight/Stationary/System.lean#L238),
-[`Eight.Stationary.sharp_y`](../../SquaresInCircles/Eight/Stationary/System.lean#L273),
-[`Eight.Stationary.unique_minimum_zero`](../../SquaresInCircles/Eight/Stationary/Analysis.lean#L360),
-[`Eight.Stationary.minimum_radius_difference`](../../SquaresInCircles/Eight/Stationary/Analysis.lean#L312).*
+[`Eight.Stationary.sharp_coordinates`](../../SquaresInCircles/Eight/Stationary/System.lean#L1754),
+[`Eight.Stationary.sharp_y`](../../SquaresInCircles/Eight/Stationary/System.lean#L1789),
+[`Eight.Stationary.unique_minimum_zero`](../../SquaresInCircles/Eight/Stationary/System.lean#L382),
+[`Eight.Stationary.minimum_radius_difference`](../../SquaresInCircles/Eight/Stationary/System.lean#L334).*
 
 The numbers $q_-$, $Q_1$ and $Q_0$ are radius levels of the proof (§11.4).
 The level $Q_0$ is a round number above $q_*$, at which the core and the cycle
@@ -529,22 +529,22 @@ Finally, the corners of the stationary solution span and fit in $\sqrt{q_*}$, by
 Lemma 11.3 and $F = 0$, so $R_8 = \sqrt{q_*}$. $\square$
 
 *Lean:
-[`Eight.FiveCorner.stationary_radius_le`](../../SquaresInCircles/Eight/Corners/Selection.lean#L57),
-[`Eight.FiveCorner.scalar_reduction`](../../SquaresInCircles/Eight/Corners/Reduction.lean#L231),
-[`Eight.FiveCorner.defect_le_last_corner`](../../SquaresInCircles/Eight/Corners/Reduction.lean#L255),
-[`Eight.FiveCorner.weighted_spans`](../../SquaresInCircles/Eight/Corners/HighTilt.lean#L30),
-[`Eight.FiveCorner.HighTilt.exclusion`](../../SquaresInCircles/Eight/Corners/HighTilt.lean#L294),
-[`Eight.FiveCorner.Nominal.gap_nonpos_of_spans`](../../SquaresInCircles/Eight/Corners/Nominal.lean#L118),
-[`Eight.FiveCorner.Nominal.gap_ge_polynomial`](../../SquaresInCircles/Eight/Corners/Nominal.lean#L335),
-[`Eight.FiveCorner.Nominal.sine_localization`](../../SquaresInCircles/Eight/Corners/Nominal.lean#L410),
-[`Eight.FiveCorner.Nominal.tilt_localization`](../../SquaresInCircles/Eight/Corners/Nominal.lean#L430),
-[`Eight.FiveCorner.stationary_defect_nonneg`](../../SquaresInCircles/Eight/Corners/NominalTrial.lean#L96),
-[`Eight.Stationary.FiveCornerGeometry.defect_radius_decrease`](../../SquaresInCircles/Eight/Stationary/Convexity.lean#L465),
-[`Eight.FiveCorner.stationary_angle_of_fits`](../../SquaresInCircles/Eight/Corners/Selection.lean#L111),
-[`Eight.FiveCorner.stationary_points_of_fits`](../../SquaresInCircles/Eight/Corners/Selection.lean#L194),
-[`Eight.FiveCorner.radius_eq_stationary`](../../SquaresInCircles/Eight/Corners/Selection.lean#L81),
-[`Eight.FiveCorner.existsUnique_minimizer`](../../SquaresInCircles/Eight/Corners/Selection.lean#L227),
-[`Eight.FiveCorner.selected_eq_stationary`](../../SquaresInCircles/Eight/Corners/Selection.lean#L236).*
+[`Eight.FiveCorner.stationary_radius_le`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L697),
+[`Eight.FiveCorner.scalar_reduction`](../../SquaresInCircles/Eight/Corners/Nominal.lean#L244),
+[`Eight.FiveCorner.defect_le_last_corner`](../../SquaresInCircles/Eight/Corners/Nominal.lean#L268),
+[`Eight.FiveCorner.weighted_spans`](../../SquaresInCircles/Eight/Corners/Nominal.lean#L318),
+[`Eight.FiveCorner.HighTilt.exclusion`](../../SquaresInCircles/Eight/Corners/Nominal.lean#L582),
+[`Eight.FiveCorner.Nominal.gap_nonpos_of_spans`](../../SquaresInCircles/Eight/Corners/Nominal.lean#L712),
+[`Eight.FiveCorner.Nominal.gap_ge_polynomial`](../../SquaresInCircles/Eight/Corners/Nominal.lean#L929),
+[`Eight.FiveCorner.Nominal.sine_localization`](../../SquaresInCircles/Eight/Corners/Nominal.lean#L1004),
+[`Eight.FiveCorner.Nominal.tilt_localization`](../../SquaresInCircles/Eight/Corners/Nominal.lean#L1024),
+[`Eight.FiveCorner.stationary_defect_nonneg`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L253),
+[`Eight.Stationary.FiveCornerGeometry.defect_radius_decrease`](../../SquaresInCircles/Eight/Stationary/CriticalHessian.lean#L495),
+[`Eight.FiveCorner.stationary_angle_of_fits`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L751),
+[`Eight.FiveCorner.stationary_points_of_fits`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L834),
+[`Eight.FiveCorner.radius_eq_stationary`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L721),
+[`Eight.FiveCorner.existsUnique_minimizer`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L867),
+[`Eight.FiveCorner.selected_eq_stationary`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L876).*
 
 ![The optimal packing with its five corners P1 to P5 on the dashed circle of radius R8 and the five spans drawn as dimension arrows: the height 2 from P1 up to P2 across A and B, the width 3 from P3 to P2 across D, T and B, the height 2 from P4 up to P3 across E and D, and in the frame of the turned squares the span 1 + sin t from P5 to the level of P4 along f, and the span 2 + cos t from P5 to the level of P1 along e, across H, G and the bottom of A](figures/11-eight/corners.svg)
 
@@ -576,13 +576,13 @@ so that $\zeta_+ \approx 1.36600$, $\eta_- \approx -0.44505$ and
 $\eta_+ \approx 0.34665$.
 
 *Lean:
-[`Eight.FiveCorner.selected_anchorCenter`](../../SquaresInCircles/Eight/Equality/Geometry.lean#L29),
-[`Eight.FiveCorner.selected_topCenter`](../../SquaresInCircles/Eight/Equality/Geometry.lean#L38),
-[`Eight.FiveCorner.selected_tiltedCenter`](../../SquaresInCircles/Eight/Equality/Geometry.lean#L42),
-[`Eight.FiveCorner.selected_exteriorSquare`](../../SquaresInCircles/Eight/Equality/Geometry.lean#L71),
-[`Eight.Stationary.Coordinates.zMax`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L179),
-[`Eight.Stationary.Coordinates.etaMin`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L181),
-[`Eight.Stationary.Coordinates.etaMax`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L183).*
+[`Eight.FiveCorner.selected_anchorCenter`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L186),
+[`Eight.FiveCorner.selected_topCenter`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L195),
+[`Eight.FiveCorner.selected_tiltedCenter`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L200),
+[`Eight.FiveCorner.selected_exteriorSquare`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L229),
+[`Eight.Stationary.Coordinates.zMax`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L205),
+[`Eight.Stationary.Coordinates.etaMin`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L207),
+[`Eight.Stationary.Coordinates.etaMax`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L209).*
 
 ### Proposition 11.6 (the five-parameter family)
 
@@ -712,38 +712,38 @@ $|h_1 + \frac32| < \frac12$, and $h_2 + 1 + \eta \le 0$ by (b), so
 $-(h_2 + 1 + \eta) > \frac1{12}$, that is, $\eta < \eta_+$. $\square$
 
 *Lean:
-[`Eight.Parameters.Admissible`](../../SquaresInCircles/Eight/Equality/Basic.lean#L87),
-[`Eight.Parameters.AngleRepresentative`](../../SquaresInCircles/Eight/Equality/Basic.lean#L81),
-[`Eight.GeometricModel.containmentCost`](../../SquaresInCircles/Eight/Equality/Basic.lean#L30),
-[`Eight.GeometricModel.separationMargin`](../../SquaresInCircles/Eight/Equality/Basic.lean#L40),
-[`Eight.GeometricModel.wide_exterior_separator`](../../SquaresInCircles/Eight/Equality/Geometry.lean#L180),
-[`Eight.GeometricModel.wide_exterior_disjoint`](../../SquaresInCircles/Eight/Equality/Geometry.lean#L370),
-[`Eight.Parameters.tilted_below_axis_iff`](../../SquaresInCircles/Eight/Equality/Geometry.lean#L391),
-[`Eight.Parameters.exterior_disjoint`](../../SquaresInCircles/Eight/Equality/Geometry.lean#L403),
-[`Eight.Parameters.exterior_contained`](../../SquaresInCircles/Eight/Equality/Geometry.lean#L413),
-[`Eight.Stationary.exterior_contained`](../../SquaresInCircles/Eight/Stationary/EqualityGeometry.lean#L258),
-[`Eight.Stationary.sharp_exterior_bounds`](../../SquaresInCircles/Eight/Stationary/EqualityGeometry.lean#L49),
-[`Eight.Stationary.axis_containment`](../../SquaresInCircles/Eight/Stationary/EqualityGeometry.lean#L243),
-[`Eight.Stationary.tilted_containment`](../../SquaresInCircles/Eight/Stationary/EqualityGeometry.lean#L247),
-[`Eight.Parameters.central_containment_automatic`](../../SquaresInCircles/Eight/Equality/Geometry.lean#L110),
-[`Eight.FiveCorner.radius_sq_ge_nine_quarters`](../../SquaresInCircles/Eight/Equality/Geometry.lean#L82),
-[`Eight.GeometricModel.square_disjoint_iff`](../../SquaresInCircles/Eight/Equality/SquareGeometry.lean#L69),
-[`Eight.Parameters.model_packing`](../../SquaresInCircles/Eight/Equality/Geometry.lean#L471),
-[`Eight.GeometricModel.model_packing`](../../SquaresInCircles/Eight/Construction.lean#L59),
-[`Eight.GeometricModel.halfToAngle`](../../SquaresInCircles/Eight/Equality/Angles.lean#L28),
-[`Eight.GeometricModel.angleToHalf`](../../SquaresInCircles/Eight/Equality/Angles.lean#L27),
-[`Eight.Parameters.toStationary`](../../SquaresInCircles/Eight/Equality/Angles.lean#L149),
-[`Eight.Parameters.ofStationary`](../../SquaresInCircles/Eight/Equality/Angles.lean#L152),
-[`Eight.Stationary.EqualityParameters.Admissible`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L297),
-[`Eight.Stationary.sat_max_iff`](../../SquaresInCircles/Eight/Stationary/EqualityGeometry.lean#L121),
-[`Eight.Stationary.central_axis_sat`](../../SquaresInCircles/Eight/Stationary/EqualityGeometry.lean#L219),
-[`Eight.Stationary.central_tilted_sat`](../../SquaresInCircles/Eight/Stationary/EqualityGeometry.lean#L228),
-[`Eight.Parameters.ofStationary_admissible`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L29),
-[`Eight.Parameters.central_core_recovered`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L80),
-[`Eight.Parameters.top_core_rail_recovered`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L99),
-[`Eight.Parameters.tilted_core_rail_recovered`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L123),
-[`Eight.Parameters.toStationary_admissible`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L159),
-[`Eight.GeometricModel.models_eq_stationary`](../../SquaresInCircles/Eight/Construction.lean#L39).*
+[`Eight.Parameters.Admissible`](../../SquaresInCircles/Eight/Equality/Angles.lean#L104),
+[`Eight.Parameters.AngleRepresentative`](../../SquaresInCircles/Eight/Equality/Angles.lean#L98),
+[`Eight.GeometricModel.containmentCost`](../../SquaresInCircles/Eight/Equality/Angles.lean#L47),
+[`Eight.GeometricModel.separationMargin`](../../SquaresInCircles/Eight/Equality/Angles.lean#L57),
+[`Eight.GeometricModel.wide_exterior_separator`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L338),
+[`Eight.GeometricModel.wide_exterior_disjoint`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L528),
+[`Eight.Parameters.tilted_below_axis_iff`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L549),
+[`Eight.Parameters.exterior_disjoint`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L561),
+[`Eight.Parameters.exterior_contained`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L571),
+[`Eight.Stationary.exterior_contained`](../../SquaresInCircles/Eight/Stationary/Family.lean#L276),
+[`Eight.Stationary.sharp_exterior_bounds`](../../SquaresInCircles/Eight/Stationary/Family.lean#L67),
+[`Eight.Stationary.axis_containment`](../../SquaresInCircles/Eight/Stationary/Family.lean#L261),
+[`Eight.Stationary.tilted_containment`](../../SquaresInCircles/Eight/Stationary/Family.lean#L265),
+[`Eight.Parameters.central_containment_automatic`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L268),
+[`Eight.FiveCorner.radius_sq_ge_nine_quarters`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L240),
+[`Eight.GeometricModel.square_disjoint_iff`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L148),
+[`Eight.Parameters.model_packing`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L629),
+[`Eight.GeometricModel.model_packing`](../../SquaresInCircles/Eight/Construction.lean#L58),
+[`Eight.GeometricModel.halfToAngle`](../../SquaresInCircles/Eight/Equality/Angles.lean#L216),
+[`Eight.GeometricModel.angleToHalf`](../../SquaresInCircles/Eight/Equality/Angles.lean#L215),
+[`Eight.Parameters.toStationary`](../../SquaresInCircles/Eight/Equality/Angles.lean#L337),
+[`Eight.Parameters.ofStationary`](../../SquaresInCircles/Eight/Equality/Angles.lean#L340),
+[`Eight.Stationary.EqualityParameters.Admissible`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L323),
+[`Eight.Stationary.sat_max_iff`](../../SquaresInCircles/Eight/Stationary/Family.lean#L139),
+[`Eight.Stationary.central_axis_sat`](../../SquaresInCircles/Eight/Stationary/Family.lean#L237),
+[`Eight.Stationary.central_tilted_sat`](../../SquaresInCircles/Eight/Stationary/Family.lean#L246),
+[`Eight.Parameters.ofStationary_admissible`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L648),
+[`Eight.Parameters.central_core_recovered`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L699),
+[`Eight.Parameters.top_core_rail_recovered`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L718),
+[`Eight.Parameters.tilted_core_rail_recovered`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L742),
+[`Eight.Parameters.toStationary_admissible`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L779),
+[`Eight.GeometricModel.models_eq_stationary`](../../SquaresInCircles/Eight/Construction.lean#L38).*
 
 ![The exterior squares of the model of Figure 11.1 with the ranges of its two moving squares: the top square T drawn dashed at its lowest position, its centre at height 7/12 and its lower side touching the disk of radius 1/12 about o, and at its highest position, at height zeta+, with a corner on the circle; the turned square G drawn dashed at its two extreme positions along H, at eta+ touching the disk of radius 1/12 with its upper side and at eta- touching the circle with a corner. Dotted segments show the paths of the two centres](figures/11-eight/sliders.svg)
 
@@ -802,12 +802,12 @@ last two numbers are the room left in the containment of $T$ and $G$.
 $\square$
 
 *Lean:
-[`Eight.Stationary.EqualityParameters.InBox`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L316),
-[`Eight.Stationary.box_data_bounds`](../../SquaresInCircles/Eight/Stationary/EqualityBox.lean#L232),
-[`Eight.box_admissible`](../../SquaresInCircles/Eight/Stationary/Family.lean#L28),
-[`Eight.sample_admissible`](../../SquaresInCircles/Eight/Stationary/Family.lean#L129),
-[`Eight.GeometricModel.attainingParameters_admissible`](../../SquaresInCircles/Eight/Construction.lean#L52),
-[`Eight.GeometricModel.models_nonempty`](../../SquaresInCircles/Eight/Construction.lean#L56).*
+[`Eight.Stationary.EqualityParameters.InBox`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L342),
+[`Eight.Stationary.box_data_bounds`](../../SquaresInCircles/Eight/Stationary/Family.lean#L865),
+[`Eight.box_admissible`](../../SquaresInCircles/Eight/Stationary/Family.lean#L901),
+[`Eight.sample_admissible`](../../SquaresInCircles/Eight/Stationary/Family.lean#L1002),
+[`Eight.GeometricModel.attainingParameters_admissible`](../../SquaresInCircles/Eight/Construction.lean#L51),
+[`Eight.GeometricModel.models_nonempty`](../../SquaresInCircles/Eight/Construction.lean#L55).*
 
 So the optimal packings of eight squares form a family with five free
 parameters: the admissible set contains a box of positive side in each of its
@@ -817,8 +817,8 @@ over angles of both signs. Every optimal model reaches the circle: its square
 $A$ has the corner $P_1$ on it.
 
 *Lean:
-[`Eight.Parameters.model_reaches`](../../SquaresInCircles/Eight/Equality/Circle.lean#L52),
-[`Eight.GeometricModel.model_reaches`](../../SquaresInCircles/Eight/Construction.lean#L68),
+[`Eight.Parameters.model_reaches`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L75),
+[`Eight.GeometricModel.model_reaches`](../../SquaresInCircles/Eight/Construction.lean#L67),
 [`Eight.models_reach`](../../SquaresInCircles/Eight/Uniqueness.lean#L70).*
 
 ## 11.2 The central square and the one-twelfth core
@@ -948,7 +948,7 @@ $2(b + \frac12)^2 \le q < \frac{98}{25}$ fails at $b = \frac9{10}$. $\square$
 *Lean:
 [`Eight.annular_center_radius_lower`](../../SquaresInCircles/Eight/Boundary/Reduction.lean#L92),
 [`Eight.annular_center_radius_upper`](../../SquaresInCircles/Eight/Boundary/Reduction.lean#L116),
-[`Eight.Candidate.canonical_bounds`](../../SquaresInCircles/Eight/Boundary/Candidate/Geometry.lean#L51),
+[`Eight.Candidate.canonical_bounds`](../../SquaresInCircles/Eight/Boundary/Candidate/Geometry.lean#L239),
 [`Eight.coreAvoiding_iff_distance`](../../SquaresInCircles/Eight/Boundary/Reduction.lean#L71).*
 
 ![The model of Figure 11.1 with the centres of the exterior squares marked: the grey central square K containing the shaded disk of radius 1/12 about o, the dotted circle of radius 7/12 about o, and the seven exterior squares, which stay outside the shaded disk and whose centres all lie outside the dotted circle](figures/11-eight/core.svg)
@@ -1288,10 +1288,10 @@ is less than $2\pi$ minus the other six. Finally
 $2\pi - \frac{114}{25} < \frac{3\pi}4$ as $\pi < \frac{456}{125}$. $\square$
 
 *Lean:
-[`Eight.exterior_pair_gap`](../../SquaresInCircles/Eight/Boundary/Geometry.lean#L103),
-[`Eight.boundary_gap_lower`](../../SquaresInCircles/Eight/Boundary/Geometry.lean#L149),
-[`Eight.boundary_gap_upper`](../../SquaresInCircles/Eight/Boundary/Geometry.lean#L173),
-[`Eight.seven_gaps_three_quarters`](../../SquaresInCircles/Eight/Boundary/Geometry.lean#L158),
+[`Eight.exterior_pair_gap`](../../SquaresInCircles/Eight/Boundary/Realization.lean#L122),
+[`Eight.boundary_gap_lower`](../../SquaresInCircles/Eight/Boundary/Realization.lean#L168),
+[`Eight.boundary_gap_upper`](../../SquaresInCircles/Eight/Boundary/Realization.lean#L192),
+[`Eight.seven_gaps_three_quarters`](../../SquaresInCircles/Eight/Boundary/Realization.lean#L177),
 [`Eight.CentralBand.RayData.common_point_B`](../../SquaresInCircles/Eight/Containing.lean#L618).*
 
 ![Four exterior squares that miss the core disk and lie in the disk of squared radius Q0, part of whose circle is dashed: two with their states on the outer curve, at b = 0 and at a = b, and two on the core curve, at its corner point (7/12, 1/2) and on its diagonal, each with its centre direction turned by 19/50 to one side of the horizontal axis through o. The wedge of half-angle 19/50 about the axis is shaded, and all four squares contain the point at distance 41/40 from o on the axis, marked by a red dot](figures/11-eight/common-point.svg)
@@ -1361,10 +1361,10 @@ $(r' - r)\sin\alpha < 1$, as both radii lie in $(\frac12, \frac32)$. Either
 way it is less than $1 \le \tau$. The target's $-f$ is the same. $\square$
 
 *Lean:
-[`Eight.boundary_forward_complete`](../../SquaresInCircles/Eight/Boundary/Geometry.lean#L254),
-[`Eight.backward_sine_lower`](../../SquaresInCircles/Eight/Boundary/Geometry.lean#L243),
-[`Eight.BoundaryCycle.minus_source_y_projection`](../../SquaresInCircles/Eight/Boundary/Geometry.lean#L197),
-[`Eight.BoundaryCycle.minus_target_y_projection`](../../SquaresInCircles/Eight/Boundary/Geometry.lean#L220),
+[`Eight.boundary_forward_complete`](../../SquaresInCircles/Eight/Boundary/Realization.lean#L273),
+[`Eight.backward_sine_lower`](../../SquaresInCircles/Eight/Boundary/Realization.lean#L262),
+[`Eight.BoundaryCycle.minus_source_y_projection`](../../SquaresInCircles/Eight/Boundary/Realization.lean#L216),
+[`Eight.BoundaryCycle.minus_target_y_projection`](../../SquaresInCircles/Eight/Boundary/Realization.lean#L239),
 [`Eight.forwardMargin`](../../SquaresInCircles/Eight/Frames/SeparatingAxis.lean#L200),
 [`Eight.canonical_margin_identity`](../../SquaresInCircles/Eight/Frames/SeparatingAxis.lean#L223).*
 
@@ -1547,27 +1547,27 @@ exceeds $\varphi - \frac9{50} \cdot \frac{21}{100} - L_1 > \frac{91}{100}$.
 $\square$
 
 *Lean:
-[`Eight.FrameAllPairs.forward_pair`](../../SquaresInCircles/Eight/Frames/AllPairs.lean#L29),
-[`Eight.FrameAllPairs.original_axis_pair`](../../SquaresInCircles/Eight/Frames/AllPairs.lean#L60),
-[`Eight.FrameAllPairs.all_pair`](../../SquaresInCircles/Eight/Frames/AllPairs.lean#L69),
-[`Eight.FrameAllPairs.continuous_pair_bound`](../../SquaresInCircles/Eight/Frames/AllPairs.lean#L74),
+[`Eight.FrameAllPairs.forward_pair`](../../SquaresInCircles/Eight/Frames/PhysicalTransport.lean#L41),
+[`Eight.FrameAllPairs.original_axis_pair`](../../SquaresInCircles/Eight/Frames/PhysicalTransport.lean#L72),
+[`Eight.FrameAllPairs.all_pair`](../../SquaresInCircles/Eight/Frames/PhysicalTransport.lean#L81),
+[`Eight.FrameAllPairs.continuous_pair_bound`](../../SquaresInCircles/Eight/Frames/PhysicalTransport.lean#L86),
 [`Eight.FramePair.State.target_primary_reverse`](../../SquaresInCircles/Eight/Frames/Pair/Domain.lean#L178),
 [`Eight.FramePair.State.target_secondary_reverse`](../../SquaresInCircles/Eight/Frames/Pair/Domain.lean#L184),
 [`Eight.FrameCircleArc.circle_linear_lower`](../../SquaresInCircles/Eight/Frames/CircleArc.lean#L142),
 [`Eight.CircularNorm.curvature_identity`](../../SquaresInCircles/Eight/Owners/CircularNorm.lean#L75),
-[`Eight.FramePair.core_cycle_pair`](../../SquaresInCircles/Eight/Frames/Pair/Domain.lean#L362),
-[`Eight.FrameCoreLowPair.core_low_cycle_pair`](../../SquaresInCircles/Eight/Frames/Core/LowPair.lean#L161),
-[`Eight.FrameCoreMidPair.core_mid_cycle_pair`](../../SquaresInCircles/Eight/Frames/Core/MidPair.lean#L169),
-[`Eight.FrameCoreHighPair.core_high_cycle_pair`](../../SquaresInCircles/Eight/Frames/Core/HighPair.lean#L172),
-[`Eight.FrameLowPair.low_cycle_pair`](../../SquaresInCircles/Eight/Frames/Low/Pair.lean#L562),
-[`Eight.FrameLowMidPair.low_mid_cycle_pair`](../../SquaresInCircles/Eight/Frames/Low/MidPair.lean#L165),
-[`Eight.FrameLowHighPair.low_high_cycle_pair`](../../SquaresInCircles/Eight/Frames/Low/HighPair.lean#L49),
-[`Eight.FrameMidMidPair.middle_cycle_pair`](../../SquaresInCircles/Eight/Frames/Mid/MidPair.lean#L148),
-[`Eight.FrameDiagonalPair.middle_high_cycle_pair`](../../SquaresInCircles/Eight/Frames/Diagonal/Pair.lean#L38),
-[`Eight.FrameDiagonalPair.high_high_cycle_pair`](../../SquaresInCircles/Eight/Frames/Diagonal/Pair.lean#L54),
-[`Eight.FrameLowPair.secondary_positive`](../../SquaresInCircles/Eight/Frames/Low/Pair.lean#L177),
-[`Eight.FrameLowPair.full_circle_support`](../../SquaresInCircles/Eight/Frames/Low/Pair.lean#L89),
-[`Eight.FrameLowPair.endpoint_support`](../../SquaresInCircles/Eight/Frames/Low/Pair.lean#L163),
+[`Eight.FramePair.core_cycle_pair`](../../SquaresInCircles/Eight/Frames/Pair/Domain.lean#L363),
+[`Eight.FrameCoreLowPair.core_low_cycle_pair`](../../SquaresInCircles/Eight/Frames/Core/LowPair.lean#L1461),
+[`Eight.FrameCoreMidPair.core_mid_cycle_pair`](../../SquaresInCircles/Eight/Frames/Core/MidPair.lean#L1036),
+[`Eight.FrameCoreHighPair.core_high_cycle_pair`](../../SquaresInCircles/Eight/Frames/Core/HighPair.lean#L771),
+[`Eight.FrameLowPair.low_cycle_pair`](../../SquaresInCircles/Eight/Frames/Low/Pair.lean#L1130),
+[`Eight.FrameLowMidPair.low_mid_cycle_pair`](../../SquaresInCircles/Eight/Frames/Low/MidPair.lean#L1274),
+[`Eight.FrameLowHighPair.low_high_cycle_pair`](../../SquaresInCircles/Eight/Frames/Low/HighPair.lean#L126),
+[`Eight.FrameMidMidPair.middle_cycle_pair`](../../SquaresInCircles/Eight/Frames/Mid/HighQuarterStrip.lean#L1598),
+[`Eight.FrameDiagonalPair.middle_high_cycle_pair`](../../SquaresInCircles/Eight/Frames/Diagonal/Pair.lean#L177),
+[`Eight.FrameDiagonalPair.high_high_cycle_pair`](../../SquaresInCircles/Eight/Frames/Diagonal/Pair.lean#L193),
+[`Eight.FrameLowPair.secondary_positive`](../../SquaresInCircles/Eight/Frames/Low/Pair.lean#L745),
+[`Eight.FrameLowPair.full_circle_support`](../../SquaresInCircles/Eight/Frames/Low/Pair.lean#L657),
+[`Eight.FrameLowPair.endpoint_support`](../../SquaresInCircles/Eight/Frames/Low/Pair.lean#L731),
 [`Eight.four_type_cycle_budget`](../../SquaresInCircles/Eight/Frames/Basic.lean#L119).*
 
 ![Against the angle phi, for two low squares, the least value of the cost over the two low arcs and the four pairs of signs, for each axis, drawn only where that axis can separate and the gap exceeds 19/25: a blue curve for the axes 1 and 3, from phi about 0.44 to the right end of the graph, with a long flat bottom between 0.92 and 0.93 for phi from 0.8 to 1.4, and an orange curve for the axes 2 and 4, from phi about 1.14 on, falling to about 0.99 at pi/2 and rising again; both above the dashed horizontal line at 91/100, the bound Gamma_LL](figures/11-eight/pair.svg)
@@ -1666,10 +1666,10 @@ $2g(D) \le U < 2g(\frac7{10})$ and $g$ increases, $D < \frac7{10}$. The frames
 of the boundary cycle are those of the packing. $\square$
 
 *Lean:
-[`Eight.FrameConcentration.charged_cycle_budget`](../../SquaresInCircles/Eight/Frames/Concentration.lean#L22),
-[`Eight.FrameConcentration.charge_budget`](../../SquaresInCircles/Eight/Frames/Concentration.lean#L30),
-[`Eight.FrameConcentration.quarter_lift`](../../SquaresInCircles/Eight/Frames/Concentration.lean#L35),
-[`Eight.FramePhysicalTransport.quarter_lift`](../../SquaresInCircles/Eight/Frames/PhysicalTransport.lean#L53),
+[`Eight.FrameConcentration.charged_cycle_budget`](../../SquaresInCircles/Eight/Frames/PhysicalTransport.lean#L118),
+[`Eight.FrameConcentration.charge_budget`](../../SquaresInCircles/Eight/Frames/PhysicalTransport.lean#L126),
+[`Eight.FrameConcentration.quarter_lift`](../../SquaresInCircles/Eight/Frames/PhysicalTransport.lean#L131),
+[`Eight.FramePhysicalTransport.quarter_lift`](../../SquaresInCircles/Eight/Frames/PhysicalTransport.lean#L178),
 [`Eight.quarterLift_of_cost`](../../SquaresInCircles/Eight/Boundary/CycleActions.lean#L497),
 [`Eight.physical_frame_lift_of_cost`](../../SquaresInCircles/Eight/Frames/Basic.lean#L420),
 [`Eight.frameCost_concave`](../../SquaresInCircles/Eight/Frames/Basic.lean#L219),
@@ -1805,11 +1805,11 @@ Summing all seven costs, by (11.6),
 which exceeds $\frac{710}{113} > 2\pi$. $\square$
 
 *Lean:
-[`Eight.ZeroPrimary.no_primary_of_return_pair_costs`](../../SquaresInCircles/Eight/Words/Zero/PrimaryCycle.lean#L91),
-[`Eight.GlobalZeroSign.closed_boost_impossible`](../../SquaresInCircles/Eight/Owners/Zero/SignCycle.lean#L31),
-[`Eight.ZeroPrimary.frame_edge_le_return`](../../SquaresInCircles/Eight/Words/Zero/PrimaryCycle.lean#L55),
-[`Eight.ZeroPrimary.handGamma_lower`](../../SquaresInCircles/Eight/Words/Zero/PrimaryCycle.lean#L85),
-[`Eight.QuarterWordGeometry.marker_budget`](../../SquaresInCircles/Eight/Words/QuarterWordGeometry.lean#L170).*
+[`Eight.ZeroPrimary.no_primary_of_return_pair_costs`](../../SquaresInCircles/Eight/Words/Zero/PrimaryCycle.lean#L844),
+[`Eight.GlobalZeroSign.closed_boost_impossible`](../../SquaresInCircles/Eight/Owners/Zero/SignBridge.lean#L43),
+[`Eight.ZeroPrimary.frame_edge_le_return`](../../SquaresInCircles/Eight/Words/Zero/PrimaryCycle.lean#L808),
+[`Eight.ZeroPrimary.handGamma_lower`](../../SquaresInCircles/Eight/Words/Zero/PrimaryCycle.lean#L838),
+[`Eight.QuarterWordGeometry.marker_budget`](../../SquaresInCircles/Eight/Words/QuarterWordGeometry.lean#L274).*
 
 A single edge whose cost, with its frame charge added back, exceeds
 $\frac{197}{200}$ is therefore impossible: the six other edges cost at least
@@ -1855,17 +1855,17 @@ exceeds 1 at both ends. Lemma 11.26 excludes this. The axis 3 with
 $\tau_{i+1} \ge 0$ is the reflected case. $\square$
 
 *Lean:
-[`Eight.GlobalZeroSign.classify`](../../SquaresInCircles/Eight/Owners/Zero/SignCycle.lean#L161),
-[`Eight.GlobalZeroSign.secondary`](../../SquaresInCircles/Eight/Owners/Zero/SignCycle.lean#L146),
-[`Eight.GlobalZeroSign.source_positive`](../../SquaresInCircles/Eight/Owners/Zero/SignCycle.lean#L117),
-[`Eight.GlobalZeroSign.target_negative`](../../SquaresInCircles/Eight/Owners/Zero/SignCycle.lean#L132),
-[`Eight.ZeroPrimary.original_zero_secondary`](../../SquaresInCircles/Eight/Words/Zero/PrimaryCycle.lean#L138),
-[`Eight.ZeroPrimary.target_primary_domain`](../../SquaresInCircles/Eight/Words/Zero/PrimaryGeometry.lean#L49),
-[`Eight.ZeroPrimary.target_primary_boost`](../../SquaresInCircles/Eight/Words/Zero/PrimarySupport.lean#L73),
-[`Eight.ZeroPrimary.actual_boost`](../../SquaresInCircles/Eight/Words/Zero/PrimarySupport.lean#L128),
-[`Eight.GlobalZeroSign.source_secondary_domain`](../../SquaresInCircles/Eight/Owners/Zero/SignSupport.lean#L106),
-[`Eight.GlobalZeroSign.source_secondary_boost`](../../SquaresInCircles/Eight/Owners/Zero/SignSupport.lean#L172),
-[`Eight.GlobalZeroSign.scalar_gt_one`](../../SquaresInCircles/Eight/Owners/Zero/SignScalar.lean#L135).*
+[`Eight.GlobalZeroSign.classify`](../../SquaresInCircles/Eight/Owners/Zero/SignBridge.lean#L173),
+[`Eight.GlobalZeroSign.secondary`](../../SquaresInCircles/Eight/Owners/Zero/SignBridge.lean#L158),
+[`Eight.GlobalZeroSign.source_positive`](../../SquaresInCircles/Eight/Owners/Zero/SignBridge.lean#L129),
+[`Eight.GlobalZeroSign.target_negative`](../../SquaresInCircles/Eight/Owners/Zero/SignBridge.lean#L144),
+[`Eight.ZeroPrimary.original_zero_secondary`](../../SquaresInCircles/Eight/Words/Zero/PrimaryCycle.lean#L891),
+[`Eight.ZeroPrimary.target_primary_domain`](../../SquaresInCircles/Eight/Words/Zero/PrimaryCycle.lean#L68),
+[`Eight.ZeroPrimary.target_primary_boost`](../../SquaresInCircles/Eight/Words/Zero/PrimaryCycle.lean#L688),
+[`Eight.ZeroPrimary.actual_boost`](../../SquaresInCircles/Eight/Words/Zero/PrimaryCycle.lean#L743),
+[`Eight.GlobalZeroSign.source_secondary_domain`](../../SquaresInCircles/Eight/Owners/Zero/SignSupport.lean#L245),
+[`Eight.GlobalZeroSign.source_secondary_boost`](../../SquaresInCircles/Eight/Owners/Zero/SignSupport.lean#L311),
+[`Eight.GlobalZeroSign.scalar_gt_one`](../../SquaresInCircles/Eight/Owners/Zero/SignSupport.lean#L146).*
 
 ### Proposition 11.28 (only the word 0101011)
 
@@ -1910,22 +1910,22 @@ $2\pi$. $\square$
 
 *Lean:
 [`Eight.QuarterWordGeometry.quarter_word_candidate`](../../SquaresInCircles/Eight/Words/QuarterWordSelection.lean#L19),
-[`Eight.QuarterWordGeometry.three_binary_classes`](../../SquaresInCircles/Eight/Words/QuarterDoubleExclusion.lean#L82),
-[`Eight.QuarterWordGeometry.no_double`](../../SquaresInCircles/Eight/Words/QuarterDoubleExclusion.lean#L46),
-[`Eight.QuarterWordGeometry.common_pair`](../../SquaresInCircles/Eight/Words/QuarterDoubleExclusion.lean#L29),
-[`Eight.QuarterWordGeometry.commonMarker`](../../SquaresInCircles/Eight/Words/QuarterWordGeometry.lean#L149),
-[`Eight.WordProblems.commonGamma`](../../SquaresInCircles/Eight/Words/Labels.lean#L43),
+[`Eight.QuarterWordGeometry.three_binary_classes`](../../SquaresInCircles/Eight/Words/FirstNegativeOutsideEntry.lean#L523),
+[`Eight.QuarterWordGeometry.no_double`](../../SquaresInCircles/Eight/Words/FirstNegativeOutsideEntry.lean#L487),
+[`Eight.QuarterWordGeometry.common_pair`](../../SquaresInCircles/Eight/Words/FirstNegativeOutsideEntry.lean#L470),
+[`Eight.QuarterWordGeometry.commonMarker`](../../SquaresInCircles/Eight/Words/QuarterWordGeometry.lean#L253),
+[`Eight.WordProblems.commonGamma`](../../SquaresInCircles/Eight/Words/QuarterWordGeometry.lean#L58),
 [`Eight.double_word_cost_numerator`](../../SquaresInCircles/Eight/Words/Basic.lean#L301),
 [`Eight.no_double_word_of_cost_bound`](../../SquaresInCircles/Eight/Words/Basic.lean#L315),
 [`Eight.ShortWord.not_dihedral`](../../SquaresInCircles/Eight/Words/Short/WordExclusion.lean#L56),
 [`Eight.ShortWord.excluded`](../../SquaresInCircles/Eight/Words/Short/WordExclusion.lean#L44),
 [`Eight.ShortWord.actual_edge`](../../SquaresInCircles/Eight/Words/Short/WordExclusion.lean#L24),
 [`Eight.ShortWord.threshold_total`](../../SquaresInCircles/Eight/Words/Short/WordExclusion.lean#L38),
-[`Eight.SecondWord.not_dihedral`](../../SquaresInCircles/Eight/Words/Second/WordExclusion.lean#L76),
-[`Eight.SecondWord.actual_edge`](../../SquaresInCircles/Eight/Words/Second/WordExclusion.lean#L31),
-[`Eight.QuarterWordGeometry.wrongMarker`](../../SquaresInCircles/Eight/Words/QuarterWordGeometry.lean#L166),
-[`Eight.WordProblems.wrongGamma`](../../SquaresInCircles/Eight/Words/Labels.lean#L83),
-[`Eight.QuarterWordGeometry.normalize_word`](../../SquaresInCircles/Eight/Words/QuarterWordGeometry.lean#L249).*
+[`Eight.SecondWord.not_dihedral`](../../SquaresInCircles/Eight/Words/Second/WordExclusion.lean#L246),
+[`Eight.SecondWord.actual_edge`](../../SquaresInCircles/Eight/Words/Second/WordExclusion.lean#L201),
+[`Eight.QuarterWordGeometry.wrongMarker`](../../SquaresInCircles/Eight/Words/QuarterWordGeometry.lean#L270),
+[`Eight.WordProblems.wrongGamma`](../../SquaresInCircles/Eight/Words/QuarterWordGeometry.lean#L98),
+[`Eight.QuarterWordGeometry.normalize_word`](../../SquaresInCircles/Eight/Words/QuarterWordGeometry.lean#L353).*
 
 The three cost bounds are families of continuous inequalities, one for each
 digit or edge, each pair of radial curves, each pair of signs and each
@@ -1994,22 +1994,22 @@ for $X \ge 0$, and $\Lambda > \frac{17}{50}$ on $[0, \frac38]$. So $V$ is
 increasing, and $V(0) > \frac{8981}{10000}$.
 
 *Lean:
-[`Eight.ShortOuterOne.OppositeFive.UpperSecondary.original`](../../SquaresInCircles/Eight/Words/Short/Outer/One/OppositeFiveUpperSecondary.lean#L147),
-[`Eight.ShortOuterOne.OppositeFive.UpperSecondary.quartic`](../../SquaresInCircles/Eight/Words/Short/Outer/One/OppositeFiveUpperSecondary.lean#L37),
+[`Eight.ShortOuterOne.OppositeFive.UpperSecondary.original`](../../SquaresInCircles/Eight/Words/Short/Outer/One/OppositePrimaryUpperOneDiagonal.lean#L453),
+[`Eight.ShortOuterOne.OppositeFive.UpperSecondary.quartic`](../../SquaresInCircles/Eight/Words/Short/Outer/One/OppositePrimaryUpperOneDiagonal.lean#L343),
 [`Eight.WholeIntervalPolynomial.Certificate.Scaled`](../../SquaresInCircles/Eight/Arithmetic/PolynomialCertificates.lean#L308),
 [`Eight.ShortWord.Zero.actual`](../../SquaresInCircles/Eight/Words/Short/WordZero.lean#L56),
-[`Eight.ShortWord.OuterQuarter.actual`](../../SquaresInCircles/Eight/Words/Short/Outer/Quarter.lean#L59),
-[`Eight.ShortWord.MixedQuarter.actual`](../../SquaresInCircles/Eight/Words/Short/Mixed/Quarter.lean#L31),
-[`Eight.WrongWordCore.actual_core_pair`](../../SquaresInCircles/Eight/Words/Wrong/WordCore.lean#L267),
-[`Eight.SecondWord.OuterQuarter.actual`](../../SquaresInCircles/Eight/Words/Second/Outer/Quarter.lean#L56),
-[`Eight.SecondWord.OuterZero.actual`](../../SquaresInCircles/Eight/Words/Second/Outer/Opposite/ZeroCycle.lean#L118),
-[`Eight.SecondWord.MixedQuarter.actual`](../../SquaresInCircles/Eight/Words/Second/Mixed/Quarter.lean#L93),
-[`Eight.SecondWord.MixedZero.actual`](../../SquaresInCircles/Eight/Words/Second/Mixed/Zero.lean#L32),
-[`Eight.SecondWord.CoreCore.actual`](../../SquaresInCircles/Eight/Words/Second/CoreCore.lean#L136),
-[`Eight.CommonQuarter.actual_zero`](../../SquaresInCircles/Eight/Words/Common/Zero.lean#L70),
-[`Eight.CommonQuarter.actual_one`](../../SquaresInCircles/Eight/Words/Common/One.lean#L78),
-[`Eight.CommonQuarter.actual_jump_two`](../../SquaresInCircles/Eight/Words/Common/JumpTwo.lean#L315),
-[`Eight.WrongZeroOriginalOwners.original`](../../SquaresInCircles/Eight/Words/Wrong/ZeroOriginalOwners.lean#L37).*
+[`Eight.ShortWord.OuterQuarter.actual`](../../SquaresInCircles/Eight/Words/Short/Outer/Quarter.lean#L58),
+[`Eight.ShortWord.MixedQuarter.actual`](../../SquaresInCircles/Eight/Words/Short/Mixed/Quarter.lean#L874),
+[`Eight.WrongWordCore.actual_core_pair`](../../SquaresInCircles/Eight/Words/Wrong/ZeroOriginalOwners.lean#L280),
+[`Eight.SecondWord.OuterQuarter.actual`](../../SquaresInCircles/Eight/Words/Second/Outer/Quarter.lean#L54),
+[`Eight.SecondWord.OuterZero.actual`](../../SquaresInCircles/Eight/Words/Second/Outer/Opposite/ZeroCycle.lean#L1310),
+[`Eight.SecondWord.MixedQuarter.actual`](../../SquaresInCircles/Eight/Words/Second/Mixed/Quarter.lean#L205),
+[`Eight.SecondWord.MixedZero.actual`](../../SquaresInCircles/Eight/Words/Second/Mixed/Zero.lean#L154),
+[`Eight.SecondWord.CoreCore.actual`](../../SquaresInCircles/Eight/Words/Second/WordExclusion.lean#L152),
+[`Eight.CommonQuarter.actual_zero`](../../SquaresInCircles/Eight/Words/Common/Zero.lean#L298),
+[`Eight.CommonQuarter.actual_one`](../../SquaresInCircles/Eight/Words/Common/One.lean#L612),
+[`Eight.CommonQuarter.actual_jump_two`](../../SquaresInCircles/Eight/Words/Common/JumpTwo.lean#L596),
+[`Eight.WrongZeroOriginalOwners.original`](../../SquaresInCircles/Eight/Words/Wrong/ZeroOriginalOwners.lean#L342).*
 
 ## 11.7 The candidate frame and the signed cycle
 
@@ -2043,13 +2043,13 @@ candidate frame is *normalized* if moreover $\tau_E \le 0$. In the optimal
 packing $\theta_H = \theta_G = t_*$ and the other five representatives vanish.
 
 *Lean:
-[`Eight.Candidate.word`](../../SquaresInCircles/Eight/Boundary/Candidate/Model.lean#L34),
-[`Eight.Candidate.offsets`](../../SquaresInCircles/Eight/Boundary/Candidate/Model.lean#L35),
-[`Eight.Candidate.Frame`](../../SquaresInCircles/Eight/Boundary/Candidate/Model.lean#L63),
-[`Eight.Candidate.Frame.physical_angle`](../../SquaresInCircles/Eight/Boundary/Candidate/Model.lean#L76),
-[`Eight.Candidate.delta`](../../SquaresInCircles/Eight/Boundary/Candidate/Model.lean#L38),
-[`Eight.Candidate.phi`](../../SquaresInCircles/Eight/Boundary/Candidate/Model.lean#L39),
-[`Eight.Candidate.EHalf`](../../SquaresInCircles/Eight/Boundary/Candidate/Model.lean#L90).*
+[`Eight.Candidate.word`](../../SquaresInCircles/Eight/Boundary/Candidate/Geometry.lean#L51),
+[`Eight.Candidate.offsets`](../../SquaresInCircles/Eight/Boundary/Candidate/Geometry.lean#L52),
+[`Eight.Candidate.Frame`](../../SquaresInCircles/Eight/Boundary/Candidate/Geometry.lean#L80),
+[`Eight.Candidate.Frame.physical_angle`](../../SquaresInCircles/Eight/Boundary/Candidate/Geometry.lean#L93),
+[`Eight.Candidate.delta`](../../SquaresInCircles/Eight/Boundary/Candidate/Geometry.lean#L55),
+[`Eight.Candidate.phi`](../../SquaresInCircles/Eight/Boundary/Candidate/Geometry.lean#L56),
+[`Eight.Candidate.EHalf`](../../SquaresInCircles/Eight/Boundary/Candidate/Geometry.lean#L107).*
 
 ### Lemma 11.30 (normalization)
 
@@ -2174,8 +2174,8 @@ $T$, which is the side of $B$ that $T$ shares.
 
 *Lean:
 [`Eight.SignedCycle.normalOwners`](../../SquaresInCircles/Eight/Owners/NecessaryCycle.lean#L59),
-[`Eight.Candidate.terminalOwners`](../../SquaresInCircles/Eight/Boundary/Candidate/Model.lean#L93),
-[`Eight.Candidate.OwnerRestriction`](../../SquaresInCircles/Eight/Boundary/Candidate/Model.lean#L96),
+[`Eight.Candidate.terminalOwners`](../../SquaresInCircles/Eight/Boundary/Candidate/Geometry.lean#L110),
+[`Eight.Candidate.OwnerRestriction`](../../SquaresInCircles/Eight/Boundary/Candidate/Geometry.lean#L113),
 [`Eight.SignedCycle.HardOwners`](../../SquaresInCircles/Eight/Owners/NecessaryCycle.lean#L119),
 [`Eight.forwardAxis`](../../SquaresInCircles/Eight/Frames/SeparatingAxis.lean#L194),
 [`Eight.forwardMargin`](../../SquaresInCircles/Eight/Frames/SeparatingAxis.lean#L200).*
@@ -2248,19 +2248,19 @@ edges, at least $0.8833$ each, leave of $2\pi$; this is proved like the bound
 above, for each of the four placements of the two edges in the word. $\square$
 
 *Lean:
-[`Eight.GlobalQuarterSign.classify`](../../SquaresInCircles/Eight/Owners/Quarter/SignCycle.lean#L118),
-[`Eight.GlobalQuarterSign.of_frame`](../../SquaresInCircles/Eight/Owners/Quarter/SignCycle.lean#L140),
-[`Eight.GlobalQuarterSign.target_nonpos_boost`](../../SquaresInCircles/Eight/Owners/Quarter/SignSupport.lean#L247),
-[`Eight.GlobalQuarterSign.source_nonneg_boost`](../../SquaresInCircles/Eight/Owners/Quarter/SignSupport.lean#L269),
-[`Eight.GlobalQuarterSign.zero_negative_boost`](../../SquaresInCircles/Eight/Owners/Quarter/SignSupport.lean#L45),
-[`Eight.GlobalQuarterSign.zero_positive_boost`](../../SquaresInCircles/Eight/Owners/Quarter/SignSupport.lean#L70),
-[`Eight.GlobalQuarterSign.secondary_negative_scalar`](../../SquaresInCircles/Eight/Owners/Quarter/SignScalar.lean#L34),
-[`Eight.GlobalQuarterSign.secondary_positive_scalar`](../../SquaresInCircles/Eight/Owners/Quarter/SignScalar.lean#L75),
-[`Eight.GlobalQuarterSign.rotated_projection_lt`](../../SquaresInCircles/Eight/Owners/Quarter/SignMarkers.lean#L36),
-[`Eight.GlobalZeroSign.marker_lower`](../../SquaresInCircles/Eight/Owners/Zero/SignSupport.lean#L54),
-[`Eight.GlobalZeroSign.marker_small_upper`](../../SquaresInCircles/Eight/Owners/Zero/SignSupport.lean#L61),
-[`Eight.GlobalQuarterOuter.frame_classify`](../../SquaresInCircles/Eight/Owners/Quarter/OuterBridge.lean#L91),
-[`Eight.GlobalQuarterOuter.frame_high_anchor`](../../SquaresInCircles/Eight/Owners/Quarter/OuterBridge.lean#L100).*
+[`Eight.GlobalQuarterSign.classify`](../../SquaresInCircles/Eight/Owners/Quarter/SignCycle.lean#L406),
+[`Eight.GlobalQuarterSign.of_frame`](../../SquaresInCircles/Eight/Owners/Quarter/SignCycle.lean#L428),
+[`Eight.GlobalQuarterSign.target_nonpos_boost`](../../SquaresInCircles/Eight/Owners/Quarter/SignCycle.lean#L262),
+[`Eight.GlobalQuarterSign.source_nonneg_boost`](../../SquaresInCircles/Eight/Owners/Quarter/SignCycle.lean#L284),
+[`Eight.GlobalQuarterSign.zero_negative_boost`](../../SquaresInCircles/Eight/Owners/Quarter/SignCycle.lean#L60),
+[`Eight.GlobalQuarterSign.zero_positive_boost`](../../SquaresInCircles/Eight/Owners/Quarter/SignCycle.lean#L85),
+[`Eight.GlobalQuarterSign.secondary_negative_scalar`](../../SquaresInCircles/Eight/Owners/Quarter/SignScalar.lean#L178),
+[`Eight.GlobalQuarterSign.secondary_positive_scalar`](../../SquaresInCircles/Eight/Owners/Quarter/SignScalar.lean#L219),
+[`Eight.GlobalQuarterSign.rotated_projection_lt`](../../SquaresInCircles/Eight/Owners/Quarter/SignScalar.lean#L47),
+[`Eight.GlobalZeroSign.marker_lower`](../../SquaresInCircles/Eight/Owners/Zero/SignSupport.lean#L193),
+[`Eight.GlobalZeroSign.marker_small_upper`](../../SquaresInCircles/Eight/Owners/Zero/SignSupport.lean#L200),
+[`Eight.GlobalQuarterOuter.frame_classify`](../../SquaresInCircles/Eight/Owners/Quarter/OuterBridge.lean#L580),
+[`Eight.GlobalQuarterOuter.frame_high_anchor`](../../SquaresInCircles/Eight/Owners/Quarter/OuterBridge.lean#L589).*
 
 ### Proposition 11.34 (the owners of six edges)
 
@@ -2321,24 +2321,24 @@ outer with $\tau_H > 0$; the selected axes of $B \to T$ and $D \to E$ are high,
 so $B$ and $D$ are outer with negative tangents. $\square$
 
 *Lean:
-[`Eight.GlobalOriginalOwners.frame_other_owners`](../../SquaresInCircles/Eight/Owners/OriginalOwners.lean#L82),
-[`Eight.GlobalZeroSign.of_frame`](../../SquaresInCircles/Eight/Owners/Zero/SignBridge.lean#L39),
-[`Eight.GlobalQuarterSign.frame_DE`](../../SquaresInCircles/Eight/Owners/Quarter/SignCycle.lean#L168),
-[`Eight.GlobalQuarterSign.frame_target_nonpos`](../../SquaresInCircles/Eight/Owners/Quarter/SignCycle.lean#L152),
-[`Eight.GlobalBT.frame_BT_high`](../../SquaresInCircles/Eight/Owners/BT/Exclusion.lean#L91),
-[`Eight.GlobalBT.frame_BT0_false`](../../SquaresInCircles/Eight/Owners/BT/ZeroExclusion.lean#L41),
-[`Eight.GlobalBT.frame_BT1_false`](../../SquaresInCircles/Eight/Owners/BT/Exclusion.lean#L79),
-[`Eight.GlobalBT.returnCharge`](../../SquaresInCircles/Eight/Owners/BT/Return.lean#L27),
-[`Eight.GlobalBT.tailCharge`](../../SquaresInCircles/Eight/Owners/BT/Return.lean#L30),
-[`Eight.GlobalBT.return_tail_sum`](../../SquaresInCircles/Eight/Owners/BT/Return.lean#L34),
-[`Eight.GlobalBT.frame_return`](../../SquaresInCircles/Eight/Owners/BT/Return.lean#L65),
-[`Eight.GlobalEH.frame_EH_low`](../../SquaresInCircles/Eight/Owners/OriginalOwners.lean#L28),
-[`Eight.GlobalEH.frame_high_EH_high_BT_false`](../../SquaresInCircles/Eight/Owners/EH/HighRestriction.lean#L33),
-[`Eight.GlobalAllHigh.frame_all_high_false`](../../SquaresInCircles/Eight/Owners/All/HighCycle.lean#L71),
-[`Eight.GlobalOriginalOwners.atFrame_anchors`](../../SquaresInCircles/Eight/Owners/OriginalOwners.lean#L109),
-[`Eight.GlobalOriginalOwners.frame_H_anchor`](../../SquaresInCircles/Eight/Owners/OriginalOwners.lean#L48),
-[`Eight.GlobalOriginalOwners.frame_B_anchor`](../../SquaresInCircles/Eight/Owners/OriginalOwners.lean#L61),
-[`Eight.GlobalOriginalOwners.frame_D_anchor`](../../SquaresInCircles/Eight/Owners/OriginalOwners.lean#L70).*
+[`Eight.GlobalOriginalOwners.frame_other_owners`](../../SquaresInCircles/Eight/Owners/OriginalOwners.lean#L285),
+[`Eight.GlobalZeroSign.of_frame`](../../SquaresInCircles/Eight/Owners/Zero/SignBridge.lean#L211),
+[`Eight.GlobalQuarterSign.frame_DE`](../../SquaresInCircles/Eight/Owners/Quarter/SignCycle.lean#L456),
+[`Eight.GlobalQuarterSign.frame_target_nonpos`](../../SquaresInCircles/Eight/Owners/Quarter/SignCycle.lean#L440),
+[`Eight.GlobalBT.frame_BT_high`](../../SquaresInCircles/Eight/Owners/BT/Exclusion.lean#L901),
+[`Eight.GlobalBT.frame_BT0_false`](../../SquaresInCircles/Eight/Owners/BT/ZeroExclusion.lean#L838),
+[`Eight.GlobalBT.frame_BT1_false`](../../SquaresInCircles/Eight/Owners/BT/Exclusion.lean#L889),
+[`Eight.GlobalBT.returnCharge`](../../SquaresInCircles/Eight/Owners/BT/CoreDE3Support.lean#L355),
+[`Eight.GlobalBT.tailCharge`](../../SquaresInCircles/Eight/Owners/BT/CoreDE3Support.lean#L358),
+[`Eight.GlobalBT.return_tail_sum`](../../SquaresInCircles/Eight/Owners/BT/CoreDE3Support.lean#L362),
+[`Eight.GlobalBT.frame_return`](../../SquaresInCircles/Eight/Owners/BT/CoreDE3Support.lean#L393),
+[`Eight.GlobalEH.frame_EH_low`](../../SquaresInCircles/Eight/Owners/OriginalOwners.lean#L231),
+[`Eight.GlobalEH.frame_high_EH_high_BT_false`](../../SquaresInCircles/Eight/Owners/EH/HighRestriction.lean#L605),
+[`Eight.GlobalAllHigh.frame_all_high_false`](../../SquaresInCircles/Eight/Owners/All/HighCycle.lean#L504),
+[`Eight.GlobalOriginalOwners.atFrame_anchors`](../../SquaresInCircles/Eight/Owners/OriginalOwners.lean#L312),
+[`Eight.GlobalOriginalOwners.frame_H_anchor`](../../SquaresInCircles/Eight/Owners/OriginalOwners.lean#L251),
+[`Eight.GlobalOriginalOwners.frame_B_anchor`](../../SquaresInCircles/Eight/Owners/OriginalOwners.lean#L264),
+[`Eight.GlobalOriginalOwners.frame_D_anchor`](../../SquaresInCircles/Eight/Owners/OriginalOwners.lean#L273).*
 
 ![Against the frame step d from -7/10 to 7/10, the two lower bounds of the boosted cost of the edge D to E when the axis 1 separates and the target E has a nonpositive tangent: the curve pi/2 + d + 93/200 - (18513/20000) cos d + (129/200)|sin d| for a source of sign -1 and the curve pi/2 + d + 31/100 - (321/500) cos d + (49/100)|sin d| for a source of sign +1, both above the dashed horizontal line at 1, with the bound 197/200 of Lemma 11.26 dotted below it](figures/11-eight/boost.svg)
 
@@ -2402,16 +2402,16 @@ Lemma 11.33, the last because a square on its diagonal, read with its other
 nearest axis, would change the word into a wrong one (Proposition 11.28).
 
 *Lean:
-[`Eight.GlobalGA.SourceDomain`](../../SquaresInCircles/Eight/Owners/GA/SourceDomain.lean#L31),
-[`Eight.GlobalGA.sourceDomain`](../../SquaresInCircles/Eight/Owners/GA/SourceDomain.lean#L94),
+[`Eight.GlobalGA.SourceDomain`](../../SquaresInCircles/Eight/Owners/GA/EZero.lean#L41),
+[`Eight.GlobalGA.sourceDomain`](../../SquaresInCircles/Eight/Owners/GA/EZero.lean#L104),
 [`Eight.GlobalGA.highGAOwners`](../../SquaresInCircles/Eight/Owners/GA/Owners.lean#L27),
 [`Eight.SignedCycle.Ordered`](../../SquaresInCircles/Eight/Owners/NecessaryCycle.lean#L55),
 [`Eight.positiveVariation`](../../SquaresInCircles/Eight/Owners/Variation.lean#L23),
 [`Eight.negativeVariation`](../../SquaresInCircles/Eight/Owners/Variation.lean#L24),
-[`Eight.FramePhysicalTransport.candidate_variations`](../../SquaresInCircles/Eight/Frames/PhysicalTransport.lean#L89),
-[`Eight.GlobalGA.Target.frame_target_small`](../../SquaresInCircles/Eight/Owners/GA/Target/SmallTangent.lean#L20),
-[`Eight.GlobalZeroSourceOuter.frame_nonpositive_source_outer`](../../SquaresInCircles/Eight/Owners/Zero/SourceOuter.lean#L167),
-[`Eight.BinaryDiagonalExclusion.of_frame`](../../SquaresInCircles/Eight/Owners/BinaryDiagonalExclusion.lean#L135),
+[`Eight.FramePhysicalTransport.candidate_variations`](../../SquaresInCircles/Eight/Frames/PhysicalTransport.lean#L214),
+[`Eight.GlobalGA.Target.frame_target_small`](../../SquaresInCircles/Eight/Owners/GA/Target/SmallTangent.lean#L155),
+[`Eight.GlobalZeroSourceOuter.frame_nonpositive_source_outer`](../../SquaresInCircles/Eight/Owners/Zero/SourceOuter.lean#L601),
+[`Eight.BinaryDiagonalExclusion.of_frame`](../../SquaresInCircles/Eight/Owners/OriginalOwners.lean#L149),
 [`Eight.EDiagonalExclusion.of_frame`](../../SquaresInCircles/Eight/Owners/E/DiagonalExclusion.lean#L90).*
 
 ### Lemma 11.36 (moving T)
@@ -2450,15 +2450,15 @@ radius at most $Q_0$, have centre directions more than $\frac{19}{25}$ apart
 (Lemma 11.18). $\square$
 
 *Lean:
-[`Eight.GlobalGA.TTransport.reduce_secondary`](../../SquaresInCircles/Eight/Owners/GA/Transport/TSecondary.lean#L26),
-[`Eight.GlobalGA.TTransport.reduce`](../../SquaresInCircles/Eight/Owners/GA/Transport/T.lean#L207),
-[`Eight.GlobalGA.TTransport.reduce_complete`](../../SquaresInCircles/Eight/Owners/GA/Transport/TComplete.lean#L28),
-[`Eight.GlobalGA.TTransport.domain`](../../SquaresInCircles/Eight/Owners/GA/Transport/T.lean#L107),
-[`Eight.GlobalGA.TTransport.ordered`](../../SquaresInCircles/Eight/Owners/GA/Transport/Order.lean#L120),
-[`Eight.TPairOutput`](../../SquaresInCircles/Eight/Owners/Primary/PairClassification.lean#L414),
-[`Eight.GlobalGA.NonpositiveT.Source.aligned_has_BT2`](../../SquaresInCircles/Eight/Owners/GA/Nonpositive/TSource.lean#L183),
-[`Eight.GlobalGA.PositiveT.Source.original_false`](../../SquaresInCircles/Eight/Owners/GA/Positive/TSource.lean#L141),
-[`Eight.SignedCycle.nearest_axis_tie_locations`](../../SquaresInCircles/Eight/Owners/BinaryDiagonalExclusion.lean#L161).*
+[`Eight.GlobalGA.TTransport.reduce_secondary`](../../SquaresInCircles/Eight/Owners/GA/Transport/TSecondary.lean#L82),
+[`Eight.GlobalGA.TTransport.reduce`](../../SquaresInCircles/Eight/Owners/GA/Transport/T.lean#L396),
+[`Eight.GlobalGA.TTransport.reduce_complete`](../../SquaresInCircles/Eight/Owners/GA/Transport/TSecondary.lean#L40),
+[`Eight.GlobalGA.TTransport.domain`](../../SquaresInCircles/Eight/Owners/GA/Transport/T.lean#L296),
+[`Eight.GlobalGA.TTransport.ordered`](../../SquaresInCircles/Eight/Owners/GA/Transport/T.lean#L131),
+[`Eight.TPairOutput`](../../SquaresInCircles/Eight/Owners/Primary/PairClassification.lean#L563),
+[`Eight.GlobalGA.NonpositiveT.Source.aligned_has_BT2`](../../SquaresInCircles/Eight/Owners/GA/Nonpositive/TSource.lean#L456),
+[`Eight.GlobalGA.PositiveT.Source.original_false`](../../SquaresInCircles/Eight/Owners/GA/Positive/TSource.lean#L263),
+[`Eight.SignedCycle.nearest_axis_tie_locations`](../../SquaresInCircles/Eight/Owners/OriginalOwners.lean#L175).*
 
 ### Proposition 11.37 (no high GA source with the hard axis on BT)
 
@@ -2545,26 +2545,26 @@ $\frac{29}{1000}$ times that total. So
 $S > \frac{627 - 576 - 44}{10000} = \frac7{10000} > 0$. $\square$
 
 *Lean:
-[`Eight.high_GA_BT2_exclusion`](../../SquaresInCircles/Eight/Owners/GA/High/BT2Complete.lean#L26),
-[`Eight.HighGABT2Exclusion`](../../SquaresInCircles/Eight/Owners/GA/High/OwnerExit.lean#L28),
-[`Eight.HighGABT2.A_normalize`](../../SquaresInCircles/Eight/Owners/GA/High/BT2NegativeANormalForm.lean#L29),
-[`Eight.GlobalGA.NegativeANormalForm.cycle_reduce`](../../SquaresInCircles/Eight/Owners/GA/Negative/ACycle.lean#L173),
-[`Eight.GlobalGA.OuterE.select`](../../SquaresInCircles/Eight/Owners/GA/OuterESelection.lean#L70),
-[`Eight.GlobalGA.CoreENormalForm.reduce`](../../SquaresInCircles/Eight/Owners/GA/CoreENormalForm.lean#L162),
-[`Eight.HighGABT2.reduced_nonnegative_A_outer_E_false`](../../SquaresInCircles/Eight/Owners/GA/High/BT2ReducedANonnegativeOuterE.lean#L34),
-[`Eight.HighGABT2.negative_A_outer_E_all_T_false`](../../SquaresInCircles/Eight/Owners/GA/High/BT2ReducedANegativeOuterE.lean#L68),
-[`Eight.HighGABT2.core_E_all_T_false`](../../SquaresInCircles/Eight/Owners/GA/High/BT2CoreEFirstAllT.lean#L32),
+[`Eight.high_GA_BT2_exclusion`](../../SquaresInCircles/Eight/Owners/GA/High/SourceComplete.lean#L213),
+[`Eight.HighGABT2Exclusion`](../../SquaresInCircles/Eight/Owners/GA/High/SourceComplete.lean#L123),
+[`Eight.HighGABT2.A_normalize`](../../SquaresInCircles/Eight/Owners/GA/High/BT2CoreEFirstNonpositiveT.lean#L139),
+[`Eight.GlobalGA.NegativeANormalForm.cycle_reduce`](../../SquaresInCircles/Eight/Owners/GA/Negative/ACycle.lean#L308),
+[`Eight.GlobalGA.OuterE.select`](../../SquaresInCircles/Eight/Owners/GA/OuterESelection.lean#L277),
+[`Eight.GlobalGA.CoreENormalForm.reduce`](../../SquaresInCircles/Eight/Owners/GA/OuterESelection.lean#L174),
+[`Eight.HighGABT2.reduced_nonnegative_A_outer_E_false`](../../SquaresInCircles/Eight/Owners/GA/High/BT2ReducedANegativeOuterE.lean#L761),
+[`Eight.HighGABT2.negative_A_outer_E_all_T_false`](../../SquaresInCircles/Eight/Owners/GA/High/BT2ReducedANegativeOuterE.lean#L855),
+[`Eight.HighGABT2.core_E_all_T_false`](../../SquaresInCircles/Eight/Owners/GA/High/SourceComplete.lean#L42),
 [`Eight.GlobalGA.NonnegativeTotals.Source.actual_false`](../../SquaresInCircles/Eight/Owners/GA/Nonnegative/TotalsSource.lean#L62),
-[`Eight.GlobalGA.NegativeA.ShortE.original`](../../SquaresInCircles/Eight/Owners/GA/Negative/AShortESource.lean#L65),
-[`Eight.GlobalGA.NegativeA.LongE.original`](../../SquaresInCircles/Eight/Owners/GA/Negative/ALongESource.lean#L67),
-[`Eight.GlobalGA.NegativeDEPositiveTD.Source.actual_false`](../../SquaresInCircles/Eight/Owners/GA/Negative/DETD2Source.lean#L66),
-[`Eight.GlobalGA.NegativeEHPositiveTD.Source.actual_false`](../../SquaresInCircles/Eight/Owners/GA/Negative/EHTD2Source.lean#L89),
-[`Eight.GlobalGA.NegativeELowA.actual_false`](../../SquaresInCircles/Eight/Owners/GA/Negative/ELowAStress.lean#L416),
-[`Eight.GlobalGA.NegativeELargeA.Source.actual_false`](../../SquaresInCircles/Eight/Owners/GA/Negative/ELargeAStress.lean#L103),
-[`Eight.GlobalGA.JointNegativeAETD2.original`](../../SquaresInCircles/Eight/Owners/GA/Joint/NegativeAETD2Source.lean#L92),
-[`Eight.GlobalGA.NegativeAPositiveTD.Source.original`](../../SquaresInCircles/Eight/Owners/GA/Negative/ATD2Source.lean#L77),
-[`Eight.GlobalGA.CoreENegativeTotal.actual_false`](../../SquaresInCircles/Eight/Owners/GA/Negative/CoreESource.lean#L214),
-[`Eight.GlobalGA.NegativeFlatE.actual_false`](../../SquaresInCircles/Eight/Owners/GA/Negative/Flat/EExclusion.lean#L99),
+[`Eight.GlobalGA.NegativeA.ShortE.original`](../../SquaresInCircles/Eight/Owners/GA/Negative/EHBT3HighScalar.lean#L367),
+[`Eight.GlobalGA.NegativeA.LongE.original`](../../SquaresInCircles/Eight/Owners/GA/Negative/ALongESource.lean#L440),
+[`Eight.GlobalGA.NegativeDEPositiveTD.Source.actual_false`](../../SquaresInCircles/Eight/Owners/GA/Negative/DETD2Source.lean#L445),
+[`Eight.GlobalGA.NegativeEHPositiveTD.Source.actual_false`](../../SquaresInCircles/Eight/Owners/GA/Negative/EHTD2Source.lean#L503),
+[`Eight.GlobalGA.NegativeELowA.actual_false`](../../SquaresInCircles/Eight/Owners/GA/Negative/ELowAStress.lean#L1546),
+[`Eight.GlobalGA.NegativeELargeA.Source.actual_false`](../../SquaresInCircles/Eight/Owners/GA/Negative/ELargeAStress.lean#L1031),
+[`Eight.GlobalGA.JointNegativeAETD2.original`](../../SquaresInCircles/Eight/Owners/GA/Joint/NegativeAEBT3Source.lean#L1280),
+[`Eight.GlobalGA.NegativeAPositiveTD.Source.original`](../../SquaresInCircles/Eight/Owners/GA/Negative/ATD2Source.lean#L1230),
+[`Eight.GlobalGA.CoreENegativeTotal.actual_false`](../../SquaresInCircles/Eight/Owners/GA/Negative/EHTD2SmallHigh.lean#L553),
+[`Eight.GlobalGA.NegativeFlatE.actual_false`](../../SquaresInCircles/Eight/Owners/GA/Negative/Flat/EExclusion.lean#L1020),
 [`Eight.GlobalGA.PairedE.Negative.actual_false`](../../SquaresInCircles/Eight/Owners/GA/Paired/ENegativeSource.lean#L178),
 [`Eight.GlobalGA.PairedE.Negative.decomposition`](../../SquaresInCircles/Eight/Owners/GA/Paired/ENegativeSource.lean#L50).*
 
@@ -2579,10 +2579,10 @@ level $q$, Lemma 11.36 one with the axis 3 on $B \to T$, and Proposition 11.37
 excludes it. $\square$
 
 *Lean:
-[`Eight.original_GA_low_of_BT2_exclusion`](../../SquaresInCircles/Eight/Owners/GA/High/OwnerExit.lean#L43),
-[`Eight.original_normal_owners_of_BT2_exclusion`](../../SquaresInCircles/Eight/Owners/GA/High/OwnerExit.lean#L64),
-[`Eight.GlobalOriginalOwners.normal_owners_of_GA_low`](../../SquaresInCircles/Eight/Owners/GA/SourceDomain.lean#L154),
-[`Eight.high_GA_source_false_of_BT2_exclusion`](../../SquaresInCircles/Eight/Owners/GA/High/OwnerExit.lean#L34).*
+[`Eight.original_GA_low_of_BT2_exclusion`](../../SquaresInCircles/Eight/Owners/GA/High/SourceComplete.lean#L138),
+[`Eight.original_normal_owners_of_BT2_exclusion`](../../SquaresInCircles/Eight/Owners/GA/High/SourceComplete.lean#L159),
+[`Eight.GlobalOriginalOwners.normal_owners_of_GA_low`](../../SquaresInCircles/Eight/Owners/GA/EZero.lean#L164),
+[`Eight.high_GA_source_false_of_BT2_exclusion`](../../SquaresInCircles/Eight/Owners/GA/High/SourceComplete.lean#L129).*
 
 ## 11.10 The hard axes and the stationary frames
 
@@ -2643,18 +2643,18 @@ sums of nonnegative gaps, all seven gaps vanish; $g_{BT} = 0$ and $g_{HG} = 0$
 put $c_T$ and $c_G$ on the two slider lines. $\square$
 
 *Lean:
-[`Eight.OriginalFiveCorner.PhysicalFrames`](../../SquaresInCircles/Eight/Boundary/OriginalFiveCorner.lean#L40),
-[`Eight.OriginalFiveCorner.gap`](../../SquaresInCircles/Eight/Boundary/OriginalFiveCorner.lean#L49),
-[`Eight.OriginalFiveCorner.chain`](../../SquaresInCircles/Eight/Boundary/OriginalFiveCorner.lean#L59),
-[`Eight.OriginalFiveCorner.residual_identity`](../../SquaresInCircles/Eight/Boundary/OriginalFiveCorner.lean#L115),
-[`Eight.OriginalFiveCorner.corner_is_original_vertex`](../../SquaresInCircles/Eight/Boundary/OriginalFiveCorner.lean#L104),
-[`Eight.OriginalFiveCorner.chain_spans`](../../SquaresInCircles/Eight/Boundary/OriginalFiveCorner.lean#L125),
-[`Eight.OriginalFiveCorner.chain_fits`](../../SquaresInCircles/Eight/Boundary/OriginalFiveCorner.lean#L135),
-[`Eight.OriginalFiveCorner.radius_lower_bound`](../../SquaresInCircles/Eight/Boundary/OriginalFiveCorner.lean#L149),
-[`Eight.OriginalFiveCorner.original_anchor_centers`](../../SquaresInCircles/Eight/Boundary/OriginalFiveCorner.lean#L159),
-[`Eight.OriginalFiveCorner.all_original_contacts_tight`](../../SquaresInCircles/Eight/Boundary/OriginalFiveCorner.lean#L170),
-[`Eight.OriginalFiveCorner.original_sliders`](../../SquaresInCircles/Eight/Boundary/OriginalFiveCorner.lean#L209),
-[`Eight.AlignedEndpoint.sharp_rigidity`](../../SquaresInCircles/Eight/Owners/Hard/Rigidity.lean#L143).*
+[`Eight.OriginalFiveCorner.PhysicalFrames`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L324),
+[`Eight.OriginalFiveCorner.gap`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L333),
+[`Eight.OriginalFiveCorner.chain`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L343),
+[`Eight.OriginalFiveCorner.residual_identity`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L399),
+[`Eight.OriginalFiveCorner.corner_is_original_vertex`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L388),
+[`Eight.OriginalFiveCorner.chain_spans`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L409),
+[`Eight.OriginalFiveCorner.chain_fits`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L419),
+[`Eight.OriginalFiveCorner.radius_lower_bound`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L433),
+[`Eight.OriginalFiveCorner.original_anchor_centers`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L443),
+[`Eight.OriginalFiveCorner.all_original_contacts_tight`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L454),
+[`Eight.OriginalFiveCorner.original_sliders`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L493),
+[`Eight.AlignedEndpoint.sharp_rigidity`](../../SquaresInCircles/Eight/Owners/Hard/Rigidity.lean#L185).*
 
 ![The seven exterior squares of the optimal packing, with their frames, moved apart so that neighbours no longer touch; each gap of Lemma 11.39 is drawn as a short red double arrow between neighbours: g_AB between A and B, g_BT and g_TD on either side of T, g_DE between D and E, g_HG between H and G, g_GA from G to the corner of A, and g_EH from H to the corner of E. The five corners P1 to P5 of A, B, D, E and H are marked by dots, and the dashed circle about o of radius about 2.22 holds the seven squares, with the corner P2 on it](figures/11-eight/ring.svg)
 
@@ -2753,21 +2753,21 @@ this order.
 In the end the pattern holds, and the canonical case applies. $\square$
 
 *Lean:
-[`Eight.SignedCycle.HardInput.hard_sharp`](../../SquaresInCircles/Eight/Boundary/UniversalHardSharp.lean#L193),
-[`Eight.SignedCycle.HardInput.hard_middle`](../../SquaresInCircles/Eight/Boundary/UniversalHardSharp.lean#L161),
-[`Eight.SignedCycle.HardInput.canonicalize_middle`](../../SquaresInCircles/Eight/Owners/Hard/MiddleAlignment.lean#L25),
-[`Eight.SignedCycle.HardInput.canonical_hard_sharp`](../../SquaresInCircles/Eight/Boundary/UniversalHardSharp.lean#L141),
-[`Eight.SignedCycle.HardInput.canonical_hard_outer_order`](../../SquaresInCircles/Eight/Boundary/UniversalHardSharp.lean#L109),
-[`Eight.SignedCycle.HardInput.common_frame_entry_impossible`](../../SquaresInCircles/Eight/Boundary/UniversalHardSharp.lean#L35),
-[`Eight.SignedCycle.HardInput.ordered_hard_sharp`](../../SquaresInCircles/Eight/Owners/Ordered/HardSharp.lean#L87),
-[`Eight.SignedCycle.HardInput.ordered_normal_sharp`](../../SquaresInCircles/Eight/Owners/Ordered/NormalSharp.lean#L127),
-[`Eight.SignedCycle.HardInput.nonpositive_owner_sharp`](../../SquaresInCircles/Eight/Owners/Nonpositive/OwnerSharp.lean#L113),
-[`Eight.SignedCycle.HardInput.nonpositive_sharp`](../../SquaresInCircles/Eight/Owners/Nonpositive/HardSharp.lean#L114),
-[`Eight.StationaryTerminal.stationary_rigidity`](../../SquaresInCircles/Eight/Owners/Stationary/CanonicalRigidity.lean#L87),
-[`Eight.SignedCycle.HardInput.canonical_tilt`](../../SquaresInCircles/Eight/Owners/Canonical/HardEndpoint.lean#L95),
-[`Eight.SignedCycle.HardInput.canonical_lower_bound`](../../SquaresInCircles/Eight/Owners/Canonical/HardEndpoint.lean#L104),
-[`Eight.SignedCycle.HardInput.canonical_sharp`](../../SquaresInCircles/Eight/Owners/Canonical/HardEndpoint.lean#L120),
-[`Eight.SignedCycle.HardInput.all_anchors_on`](../../SquaresInCircles/Eight/Boundary/UniversalNegativeTerminal.lean#L25).*
+[`Eight.SignedCycle.HardInput.hard_sharp`](../../SquaresInCircles/Eight/Boundary/UniversalSourceRecovery.lean#L312),
+[`Eight.SignedCycle.HardInput.hard_middle`](../../SquaresInCircles/Eight/Boundary/UniversalSourceRecovery.lean#L280),
+[`Eight.SignedCycle.HardInput.canonicalize_middle`](../../SquaresInCircles/Eight/Owners/Hard/Rigidity.lean#L41),
+[`Eight.SignedCycle.HardInput.canonical_hard_sharp`](../../SquaresInCircles/Eight/Boundary/UniversalSourceRecovery.lean#L260),
+[`Eight.SignedCycle.HardInput.canonical_hard_outer_order`](../../SquaresInCircles/Eight/Boundary/UniversalSourceRecovery.lean#L228),
+[`Eight.SignedCycle.HardInput.common_frame_entry_impossible`](../../SquaresInCircles/Eight/Boundary/UniversalSourceRecovery.lean#L153),
+[`Eight.SignedCycle.HardInput.ordered_hard_sharp`](../../SquaresInCircles/Eight/Owners/Ordered/HardSharp.lean#L620),
+[`Eight.SignedCycle.HardInput.ordered_normal_sharp`](../../SquaresInCircles/Eight/Owners/Ordered/HardSharp.lean#L524),
+[`Eight.SignedCycle.HardInput.nonpositive_owner_sharp`](../../SquaresInCircles/Eight/Owners/Nonpositive/OuterSharp.lean#L125),
+[`Eight.SignedCycle.HardInput.nonpositive_sharp`](../../SquaresInCircles/Eight/Owners/Nonpositive/HardSharp.lean#L182),
+[`Eight.StationaryTerminal.stationary_rigidity`](../../SquaresInCircles/Eight/Owners/Stationary/CanonicalRigidity.lean#L414),
+[`Eight.SignedCycle.HardInput.canonical_tilt`](../../SquaresInCircles/Eight/Owners/Canonical/NegativeCycle.lean#L112),
+[`Eight.SignedCycle.HardInput.canonical_lower_bound`](../../SquaresInCircles/Eight/Owners/Canonical/NegativeCycle.lean#L121),
+[`Eight.SignedCycle.HardInput.canonical_sharp`](../../SquaresInCircles/Eight/Owners/Canonical/NegativeCycle.lean#L137),
+[`Eight.SignedCycle.HardInput.all_anchors_on`](../../SquaresInCircles/Eight/Boundary/UniversalSourceRecovery.lean#L350).*
 
 ### Proposition 11.42 (the hard axes)
 
@@ -2842,28 +2842,28 @@ core, and $c(H)$ decreases strictly. The result is a hard cycle with a strict
 loss at $H$, against Proposition 11.41.
 
 *Lean:
-[`Eight.SignedCycle.NormalizedBoundaryInput.original_hard_owners`](../../SquaresInCircles/Eight/Boundary/NormalizedSourceEntry.lean#L31),
-[`Eight.SignedCycle.BoundaryInput.g_source_output`](../../SquaresInCircles/Eight/Boundary/SourceAwareBoundaryPreprocessing.lean#L27),
-[`Eight.preprocess_G_pair_with_source`](../../SquaresInCircles/Eight/Boundary/SourceAwarePreprocessing.lean#L146),
-[`Eight.GPairOutput`](../../SquaresInCircles/Eight/Owners/Primary/PairClassification.lean#L55),
-[`Eight.GPairSourceOutput`](../../SquaresInCircles/Eight/Boundary/SourceAwarePreprocessing.lean#L22),
-[`Eight.SignedCycle.NormalizedBoundaryInput.pairDescendant`](../../SquaresInCircles/Eight/Boundary/Preprocessing.lean#L121),
-[`Eight.PairTerminalMatrix.GState`](../../SquaresInCircles/Eight/Frames/Pair/TerminalMatrix.lean#L27),
-[`Eight.PairTerminalMatrix.TState`](../../SquaresInCircles/Eight/Frames/Pair/TerminalMatrix.lean#L32),
-[`Eight.PairTerminalMatrix.hard`](../../SquaresInCircles/Eight/Frames/Pair/TerminalMatrix.lean#L133),
-[`Eight.PairTerminalMatrix.positive_G_false`](../../SquaresInCircles/Eight/Frames/Pair/TerminalMatrix.lean#L74),
-[`Eight.PairTerminalMatrix.positive_T_false`](../../SquaresInCircles/Eight/Frames/Pair/TerminalMatrix.lean#L119),
-[`Eight.PositiveGAAllTExclusion.original_boundary_false`](../../SquaresInCircles/Eight/Owners/Positive/GAAllTExclusion.lean#L21),
-[`Eight.DirectNegativeT.negative_t_impossible`](../../SquaresInCircles/Eight/Boundary/UniversalNegativeTerminal.lean#L78),
-[`Eight.AlignedNegative.negative_g_impossible`](../../SquaresInCircles/Eight/Boundary/UniversalNegativeTerminal.lean#L48),
-[`Eight.AlignedNegative.both_negative_impossible`](../../SquaresInCircles/Eight/Owners/Negative/TerminalSharp.lean#L50),
+[`Eight.SignedCycle.NormalizedBoundaryInput.original_hard_owners`](../../SquaresInCircles/Eight/Boundary/SharpEntry.lean#L43),
+[`Eight.SignedCycle.BoundaryInput.g_source_output`](../../SquaresInCircles/Eight/Boundary/SourcePrimaryRecovery.lean#L601),
+[`Eight.preprocess_G_pair_with_source`](../../SquaresInCircles/Eight/Boundary/SourcePrimaryRecovery.lean#L389),
+[`Eight.GPairOutput`](../../SquaresInCircles/Eight/Owners/Primary/PairClassification.lean#L196),
+[`Eight.GPairSourceOutput`](../../SquaresInCircles/Eight/Boundary/SourcePrimaryRecovery.lean#L265),
+[`Eight.SignedCycle.NormalizedBoundaryInput.pairDescendant`](../../SquaresInCircles/Eight/Boundary/SourceRecovery.lean#L136),
+[`Eight.PairTerminalMatrix.GState`](../../SquaresInCircles/Eight/Frames/Pair/TerminalRecovery.lean#L40),
+[`Eight.PairTerminalMatrix.TState`](../../SquaresInCircles/Eight/Frames/Pair/TerminalRecovery.lean#L45),
+[`Eight.PairTerminalMatrix.hard`](../../SquaresInCircles/Eight/Frames/Pair/TerminalRecovery.lean#L146),
+[`Eight.PairTerminalMatrix.positive_G_false`](../../SquaresInCircles/Eight/Frames/Pair/TerminalRecovery.lean#L87),
+[`Eight.PairTerminalMatrix.positive_T_false`](../../SquaresInCircles/Eight/Frames/Pair/TerminalRecovery.lean#L132),
+[`Eight.PositiveGAAllTExclusion.original_boundary_false`](../../SquaresInCircles/Eight/Owners/Positive/GAAllTExclusion.lean#L124),
+[`Eight.DirectNegativeT.negative_t_impossible`](../../SquaresInCircles/Eight/Boundary/UniversalSourceRecovery.lean#L403),
+[`Eight.AlignedNegative.negative_g_impossible`](../../SquaresInCircles/Eight/Boundary/UniversalSourceRecovery.lean#L373),
+[`Eight.AlignedNegative.both_negative_impossible`](../../SquaresInCircles/Eight/Owners/Negative/TerminalSharp.lean#L218),
 [`Eight.AlignedNegative.aligned_negative_span`](../../SquaresInCircles/Eight/Owners/TD2Span.lean#L174),
-[`Eight.AlignedNegative.NegativeGEntry.false_at_sharp`](../../SquaresInCircles/Eight/Boundary/UniversalNegativeTerminal.lean#L37),
-[`Eight.SignedCycle.BoundaryInput.G_negative_not_diagonal`](../../SquaresInCircles/Eight/Owners/BinaryDiagonalExclusion.lean#L187),
-[`Eight.PairTerminalDescendant.hard`](../../SquaresInCircles/Eight/Frames/Pair/TerminalRecovery.lean#L22),
-[`Eight.PairTerminalDescendant.source_recovery`](../../SquaresInCircles/Eight/Frames/Pair/TerminalRecovery.lean#L39),
-[`Eight.SignedCycle.NormalizedBoundaryInput.pair_source_recovery`](../../SquaresInCircles/Eight/Boundary/UniversalSourceRecovery.lean#L27),
-[`Eight.SignedCycle.BoundaryInput.original_hard_of_pair_contacts`](../../SquaresInCircles/Eight/Boundary/SourcePrimaryRecovery.lean#L28).*
+[`Eight.AlignedNegative.NegativeGEntry.false_at_sharp`](../../SquaresInCircles/Eight/Boundary/UniversalSourceRecovery.lean#L362),
+[`Eight.SignedCycle.BoundaryInput.G_negative_not_diagonal`](../../SquaresInCircles/Eight/Owners/OriginalOwners.lean#L201),
+[`Eight.PairTerminalDescendant.hard`](../../SquaresInCircles/Eight/Frames/Pair/TerminalRecovery.lean#L275),
+[`Eight.PairTerminalDescendant.source_recovery`](../../SquaresInCircles/Eight/Frames/Pair/TerminalRecovery.lean#L292),
+[`Eight.SignedCycle.NormalizedBoundaryInput.pair_source_recovery`](../../SquaresInCircles/Eight/Boundary/UniversalSourceRecovery.lean#L430),
+[`Eight.SignedCycle.BoundaryInput.original_hard_of_pair_contacts`](../../SquaresInCircles/Eight/Boundary/SourcePrimaryRecovery.lean#L761).*
 
 ### Theorem 11.43 (the stationary frames)
 
@@ -2896,21 +2896,21 @@ chosen axes of the original squares (Proposition 11.15 and Lemma 11.17), which
 proves the theorem. $\square$
 
 *Lean:
-[`Eight.SharpSourceEntry`](../../SquaresInCircles/Eight/Boundary/SharpEntry.lean#L24),
-[`Eight.sharp_source_entry`](../../SquaresInCircles/Eight/Owners/GA/High/SourceComplete.lean#L22),
-[`Eight.sharp_source_entry_of_BT2_exclusion`](../../SquaresInCircles/Eight/Owners/GA/High/OwnerExit.lean#L75),
-[`Eight.source_witnesses_of_normal_owners`](../../SquaresInCircles/Eight/Boundary/NormalizedSourceEntry.lean#L63),
-[`Eight.boundary_source_rigidity_of_normal_input`](../../SquaresInCircles/Eight/Boundary/NormalizedSourceEntry.lean#L43),
-[`Eight.boundary_source_rigidity_of_hard`](../../SquaresInCircles/Eight/Boundary/UniversalSourceRecovery.lean#L68),
-[`Eight.boundary_source_rigidity_of_canonical`](../../SquaresInCircles/Eight/Boundary/SourceRigidity.lean#L31),
+[`Eight.SharpSourceEntry`](../../SquaresInCircles/Eight/Boundary/SharpEntry.lean#L107),
+[`Eight.sharp_source_entry`](../../SquaresInCircles/Eight/Owners/GA/High/SourceComplete.lean#L238),
+[`Eight.sharp_source_entry_of_BT2_exclusion`](../../SquaresInCircles/Eight/Owners/GA/High/SourceComplete.lean#L170),
+[`Eight.source_witnesses_of_normal_owners`](../../SquaresInCircles/Eight/Boundary/SharpEntry.lean#L75),
+[`Eight.boundary_source_rigidity_of_normal_input`](../../SquaresInCircles/Eight/Boundary/SharpEntry.lean#L55),
+[`Eight.boundary_source_rigidity_of_hard`](../../SquaresInCircles/Eight/Boundary/UniversalSourceRecovery.lean#L471),
+[`Eight.boundary_source_rigidity_of_canonical`](../../SquaresInCircles/Eight/Boundary/UniversalSourceRecovery.lean#L48),
 [`Eight.NormalizationBridge.normalizedInput`](../../SquaresInCircles/Eight/Owners/NormalizationBridge.lean#L44),
 [`Eight.NormalizationBridge.recoveredFrame`](../../SquaresInCircles/Eight/Owners/NormalizationBridge.lean#L25),
-[`Eight.GlobalOuterAnchor.normal_anchors`](../../SquaresInCircles/Eight/Owners/Outer/AnchorBridge.lean#L76),
-[`Eight.StationaryFrames`](../../SquaresInCircles/Eight/Boundary/OriginalWitnesses.lean#L36),
-[`Eight.stationaryNormal`](../../SquaresInCircles/Eight/Boundary/OriginalWitnesses.lean#L40),
-[`Eight.stationary_ga1_not_feasible`](../../SquaresInCircles/Eight/Owners/Stationary/SourceOwners.lean#L51),
-[`Eight.stationary_eh0_not_feasible`](../../SquaresInCircles/Eight/Owners/Stationary/SourceOwners.lean#L118),
-[`Eight.terminal_owners_after_source_equality`](../../SquaresInCircles/Eight/Owners/Stationary/SourceOwners.lean#L169).*
+[`Eight.GlobalOuterAnchor.normal_anchors`](../../SquaresInCircles/Eight/Owners/Outer/AnchorBridge.lean#L478),
+[`Eight.StationaryFrames`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L568),
+[`Eight.stationaryNormal`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L572),
+[`Eight.stationary_ga1_not_feasible`](../../SquaresInCircles/Eight/Owners/Stationary/SourceOwners.lean#L89),
+[`Eight.stationary_eh0_not_feasible`](../../SquaresInCircles/Eight/Owners/Stationary/SourceOwners.lean#L156),
+[`Eight.terminal_owners_after_source_equality`](../../SquaresInCircles/Eight/Owners/Stationary/SourceOwners.lean#L207).*
 
 ## 11.11 The exact polynomial checks
 
@@ -2976,7 +2976,7 @@ counts the checks of the proof.
 [`Eight.PackedModels.check_lt`](../../SquaresInCircles/Eight/Arithmetic/PackedModels.lean#L3317),
 [`Eight.HighOrderTaylor.S11_le_sin`](../../SquaresInCircles/Eight/Arithmetic/HighOrderTaylor.lean#L30),
 [`Eight.HighOrderTaylor.C14_le_cos`](../../SquaresInCircles/Eight/Arithmetic/HighOrderTaylor.lean#L60),
-[`Eight.Stationary.FixedEval.bounded_sound`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L381).*
+[`Eight.Stationary.FixedEval.bounded_sound`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L1512).*
 
 ## 11.12 The lower bound
 
@@ -3021,16 +3021,16 @@ opposite normals, and completing the square at the five other points leaves
 $q_*$, by the balance of the forces of Lemma J.6.
 
 *Lean:
-[`Eight.OriginalDual.Positions`](../../SquaresInCircles/Eight/Stationary/CenterCompletion.lean#L50),
-[`Eight.OriginalDual.gap`](../../SquaresInCircles/Eight/Stationary/CenterCompletion.lean#L58),
-[`Eight.OriginalDual.exact_identity`](../../SquaresInCircles/Eight/Stationary/CenterCompletion.lean#L100),
-[`Eight.OriginalDual.value_le`](../../SquaresInCircles/Eight/Stationary/CenterCompletion.lean#L133),
-[`Eight.OriginalDual.original_centers_rigid`](../../SquaresInCircles/Eight/Stationary/CenterCompletion.lean#L147),
-[`Eight.OriginalDual.slider_coordinates`](../../SquaresInCircles/Eight/Stationary/CenterCompletion.lean#L193),
-[`Eight.GeometricModel.original_dual_quantitative`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L28),
-[`Eight.GeometricModel.original_dual_radius_lower`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L40),
-[`Eight.GeometricModel.original_radius_and_centers`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L56),
-[`Eight.GeometricModel.sharp_original_radius_and_centers`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L75).*
+[`Eight.OriginalDual.Positions`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L641),
+[`Eight.OriginalDual.gap`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L649),
+[`Eight.OriginalDual.exact_identity`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L691),
+[`Eight.OriginalDual.value_le`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L724),
+[`Eight.OriginalDual.original_centers_rigid`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L738),
+[`Eight.OriginalDual.slider_coordinates`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L784),
+[`Eight.GeometricModel.original_dual_quantitative`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L160),
+[`Eight.GeometricModel.original_dual_radius_lower`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L172),
+[`Eight.GeometricModel.original_radius_and_centers`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L188),
+[`Eight.GeometricModel.sharp_original_radius_and_centers`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L207).*
 
 ![The stationary weights of the optimal packing: the seven contacts drawn as thin lines between the centres of touching squares, labelled with their weights lambda, between 0.48 and 0.80, and the five corner forces drawn as thick arrows that start at the corners P1 to P5 of A, B, D, E and H on the circle and point outward along the radii, labelled with the weights mu: 0.210 for A, 0.221 for B, 0.273 for D, 0.025 for E and 0.271 for H. T and G carry no corner force](figures/11-eight/stress.svg)
 
@@ -3066,21 +3066,21 @@ formed with the centres of the original squares, is nonnegative. By
 Theorem 11.44, $q_* \le q$. $\square$
 
 *Lean:
-[`Eight.GeometricModel.stationary_normalization_exists`](../../SquaresInCircles/Eight/Equality/SharpBoundary.lean#L73),
+[`Eight.GeometricModel.stationary_normalization_exists`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L90),
 [`Eight.GlobalNormalization`](../../SquaresInCircles/Eight/Boundary/Normalization.lean#L49),
 [`Eight.boundary_normalization_exists`](../../SquaresInCircles/Eight/Boundary/RadiusTransfer.lean#L737),
-[`Eight.GeometricModel.normalized_at_original_radius`](../../SquaresInCircles/Eight/Equality/SharpBoundary.lean#L61),
-[`Eight.GeometricModel.originalPositions`](../../SquaresInCircles/Eight/Equality/SharpBoundary.lean#L111),
-[`Eight.GeometricModel.source_contained_at_original_radius`](../../SquaresInCircles/Eight/Equality/SharpBoundary.lean#L115),
-[`Eight.vertices_at_original_radius`](../../SquaresInCircles/Eight/Boundary/OriginalWitnesses.lean#L123),
-[`Eight.gaps_of_retained_normals`](../../SquaresInCircles/Eight/Boundary/OriginalWitnesses.lean#L89),
-[`Eight.GeometricModel.sharp_rigidity_of_original_witnesses`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L90),
-[`Eight.sharp_source_entry_original_rigidity`](../../SquaresInCircles/Eight/Boundary/SharpEntry.lean#L33),
-[`Eight.sharp_original_rigidity`](../../SquaresInCircles/Eight/Owners/GA/High/SourceComplete.lean#L27),
-[`Eight.GeometricModel.origin_sharp_rigidity`](../../SquaresInCircles/Eight/Equality/SharpAssembly.lean#L25),
-[`Eight.GeometricModel.origin_sharp_lower_bound`](../../SquaresInCircles/Eight/Equality/SharpAssembly.lean#L42),
-[`Eight.GeometricModel.sharp_squared_radius_lower_bound`](../../SquaresInCircles/Eight/Equality/SharpAssembly.lean#L49),
-[`Eight.GeometricModel.sharp_radius_lower_bound`](../../SquaresInCircles/Eight/Equality/SharpAssembly.lean#L60),
+[`Eight.GeometricModel.normalized_at_original_radius`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L78),
+[`Eight.GeometricModel.originalPositions`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L128),
+[`Eight.GeometricModel.source_contained_at_original_radius`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L132),
+[`Eight.vertices_at_original_radius`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L656),
+[`Eight.gaps_of_retained_normals`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L622),
+[`Eight.GeometricModel.sharp_rigidity_of_original_witnesses`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L222),
+[`Eight.sharp_source_entry_original_rigidity`](../../SquaresInCircles/Eight/Boundary/SharpEntry.lean#L116),
+[`Eight.sharp_original_rigidity`](../../SquaresInCircles/Eight/Owners/GA/High/SourceComplete.lean#L243),
+[`Eight.GeometricModel.origin_sharp_rigidity`](../../SquaresInCircles/Eight/Equality/SharpEquality.lean#L39),
+[`Eight.GeometricModel.origin_sharp_lower_bound`](../../SquaresInCircles/Eight/Equality/SharpEquality.lean#L56),
+[`Eight.GeometricModel.sharp_squared_radius_lower_bound`](../../SquaresInCircles/Eight/Equality/SharpEquality.lean#L63),
+[`Eight.GeometricModel.sharp_radius_lower_bound`](../../SquaresInCircles/Eight/Equality/SharpEquality.lean#L74),
 [`Eight.lower_bound`](../../SquaresInCircles/Eight/Uniqueness.lean#L55).*
 
 The boundary cycle is used only to find the frames and the separating axes;
@@ -3116,9 +3116,9 @@ gives $\zeta \le \zeta_+$ and $\eta \ge \eta_-$ (Proposition 11.6 (1)), and the
 central square contains the core disk by Theorem 11.10. $\square$
 
 *Lean:
-[`Eight.GeometricModel.source_centers_of_original_anchors`](../../SquaresInCircles/Eight/Equality/SharpAssembly.lean#L69),
+[`Eight.GeometricModel.source_centers_of_original_anchors`](../../SquaresInCircles/Eight/Equality/SharpEquality.lean#L83),
 [`Eight.sameSquare_of_physical_center`](../../SquaresInCircles/Eight/Boundary/Normalization.lean#L84),
-[`Eight.GeometricModel.source_squares_of_original_centers`](../../SquaresInCircles/Eight/Equality/SharpAssembly.lean#L93),
+[`Eight.GeometricModel.source_squares_of_original_centers`](../../SquaresInCircles/Eight/Equality/SharpEquality.lean#L107),
 [`Eight.GlobalNormalization.original_slider_sectors`](../../SquaresInCircles/Eight/Boundary/Normalization.lean#L560),
 [`Eight.two_successive_gaps_lt_pi`](../../SquaresInCircles/Eight/Boundary/Normalization.lean#L483),
 [`Eight.polarOrder_positive_three`](../../SquaresInCircles/Eight/Boundary/Normalization.lean#L528),
@@ -3149,13 +3149,13 @@ Admissible models and their mirror images are packings in the closed disk of
 radius $R_8$ (Proposition 11.6 (2)), so they are optimal models. $\square$
 
 *Lean:
-[`Eight.GeometricModel.origin_sharp_uniqueness`](../../SquaresInCircles/Eight/Equality/SharpEquality.lean#L23),
-[`Eight.GeometricModel.sharp_uniqueness`](../../SquaresInCircles/Eight/Equality/SharpEquality.lean#L86),
-[`Eight.Stationary.central_parameters_exist`](../../SquaresInCircles/Eight/Stationary/CentralParameters.lean#L119),
-[`Eight.admissible_of_original_geometry`](../../SquaresInCircles/Eight/Stationary/Family.lean#L165),
-[`Eight.containsCore_center_bounds`](../../SquaresInCircles/Eight/Stationary/Family.lean#L132),
-[`Eight.stationaryModels`](../../SquaresInCircles/Eight/Stationary/Family.lean#L231),
-[`Eight.GeometricModel.models_eq_stationary`](../../SquaresInCircles/Eight/Construction.lean#L39),
+[`Eight.GeometricModel.origin_sharp_uniqueness`](../../SquaresInCircles/Eight/Equality/SharpEquality.lean#L139),
+[`Eight.GeometricModel.sharp_uniqueness`](../../SquaresInCircles/Eight/Equality/SharpEquality.lean#L202),
+[`Eight.Stationary.central_parameters_exist`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L923),
+[`Eight.admissible_of_original_geometry`](../../SquaresInCircles/Eight/Stationary/Family.lean#L1038),
+[`Eight.containsCore_center_bounds`](../../SquaresInCircles/Eight/Stationary/Family.lean#L1005),
+[`Eight.stationaryModels`](../../SquaresInCircles/Eight/Stationary/Family.lean#L1104),
+[`Eight.GeometricModel.models_eq_stationary`](../../SquaresInCircles/Eight/Construction.lean#L38),
 [`Eight.admissibleModels_subset`](../../SquaresInCircles/Eight/Uniqueness.lean#L45),
 [`Eight.model_eq`](../../SquaresInCircles/Eight/Uniqueness.lean#L37),
 [`Eight.uniqueness`](../../SquaresInCircles/Eight/Uniqueness.lean#L62).*
@@ -3172,8 +3172,8 @@ closed disk of radius $R_8$, by the definition of the optimal models and
 
 *Lean:
 [`Eight.radius_eq_stationary`](../../SquaresInCircles/Eight/Uniqueness.lean#L33),
-[`Eight.GeometricModel.models_nonempty`](../../SquaresInCircles/Eight/Construction.lean#L56),
-[`Eight.GeometricModel.model_packing`](../../SquaresInCircles/Eight/Construction.lean#L59),
+[`Eight.GeometricModel.models_nonempty`](../../SquaresInCircles/Eight/Construction.lean#L55),
+[`Eight.GeometricModel.model_packing`](../../SquaresInCircles/Eight/Construction.lean#L58),
 [`Eight.models_reach`](../../SquaresInCircles/Eight/Uniqueness.lean#L70),
 [`Eight.lower_bound`](../../SquaresInCircles/Eight/Uniqueness.lean#L55),
 [`Eight.uniqueness`](../../SquaresInCircles/Eight/Uniqueness.lean#L62),

@@ -4,7 +4,7 @@ public import Mathlib.Algebra.Order.Ring.Star
 public import Mathlib.Data.Rat.Star
 public import SquaresInCircles.Eight.Owners.ChebyshevLeadingBounds
 public import SquaresInCircles.Eight.Owners.GA.Negative.EHTD2PolynomialData
-public import SquaresInCircles.Eight.Arithmetic.PolynomialCertificates
+public import SquaresInCircles.Eight.Arithmetic.KroneckerPolynomials
 
 /-!
 # Eight squares: whole-interval positivity for the negative-EH / TD2 endpoints
@@ -31,759 +31,69 @@ section r78
 open WholeIntervalPolynomial.Certificate (Scaled lowerOn_eq_of_rep lowerZ chebList toPoly)
 open PositiveTD.Certificate (etaQ Rbar sigmabar cbar S5 S9 S11 C4 C10 C12 num3 num4)
 
-/-! ### Reduced scaled lists
-
-`Scaled.add` and `Scaled.sub` multiply the two scales.  Their reduced forms `addN` and `subN`
-divide the list and the scale by their gcd, which keeps the integers of the kernel
-computation short. -/
-
-/-- The gcd of `g` and the entries of `l`. -/
-private def r78zgcd : List ℤ → ℕ → ℕ
-  | [],g => g
-  | a :: l,g => r78zgcd l (Nat.gcd a.natAbs g)
-
-private theorem r78zgcd_dvd : ∀ (l : List ℤ) (g : ℕ),
-    r78zgcd l g ∣ g ∧ ∀ a ∈ l,(r78zgcd l g : ℤ) ∣ a
-  | [],g => ⟨dvd_rfl,by simp⟩
-  | a :: l,g => by
-    obtain ⟨h1,h2⟩ := r78zgcd_dvd l (Nat.gcd a.natAbs g)
-    refine ⟨h1.trans (Nat.gcd_dvd_right _ _),fun b hb => ?_⟩
-    rcases List.mem_cons.1 hb with rfl|hb
-    · exact Int.ofNat_dvd_left.2 (h1.trans (Nat.gcd_dvd_left _ _))
-    · exact h2 b hb
-
-/-- The list and the scale divided by `g`. -/
-private def r78zdiv (g : ℕ) (S : Scaled) : Scaled := ⟨S.l.map (· / (g:ℤ)),S.s / g⟩
-/-- The list and the scale divided by their gcd. -/
-private def r78znorm (S : Scaled) : Scaled := r78zdiv (r78zgcd S.l S.s) S
-
-private theorem r78z_toPoly_div {g : ℤ} : ∀ l : List ℤ,(∀ a ∈ l,g ∣ a) →
-    C (g:ℚ)*toPoly (l.map (· / g))=toPoly l
-  | [],_ => by simp [toPoly]
-  | a :: l,h => by
-    have ih := r78z_toPoly_div l (fun b hb => h b (List.mem_cons_of_mem _ hb))
-    have ha : ((a / g : ℤ) : ℚ)*g=a := by exact_mod_cast Int.ediv_mul_cancel (h a List.mem_cons_self)
-    simp only [List.map_cons,toPoly]
-    rw [mul_add,mul_left_comm,ih,← map_mul,mul_comm,ha]
-
-private theorem r78z_toPoly_div_zero : ∀ l : List ℤ,toPoly (l.map (· / (0:ℤ)))=0
-  | [] => by simp [toPoly]
-  | a :: l => by rw [List.map_cons,toPoly,r78z_toPoly_div_zero l,Int.ediv_zero]; simp
-
-private theorem r78z_rep_norm {S : Scaled} {p : ℚ[X]} (hS : S.Rep p) : (r78znorm S).Rep p := by
-  obtain ⟨h1,h2⟩ := r78zgcd_dvd S.l S.s
-  unfold Scaled.Rep at *
-  rw [r78znorm,r78zdiv]
-  dsimp only
-  generalize r78zgcd S.l S.s=g at h1 h2
-  rcases Nat.eq_zero_or_pos g with rfl|hg
-  · simp only [Nat.cast_zero,Nat.div_zero,map_zero,zero_mul,r78z_toPoly_div_zero]
-  · have hC : C (g:ℚ)≠0 := by rw [Ne,C_eq_zero]; exact_mod_cast hg.ne'
-    apply mul_left_cancel₀ hC
-    have e := r78z_toPoly_div S.l h2
-    push_cast at e
-    rw [e,hS,← mul_assoc,← map_mul]
-    congr 2
-    rw [← Nat.cast_mul,Nat.mul_div_cancel' h1]
-
-/-- `Scaled.add`, reduced. -/
-private def _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.addN
-    (a b : Scaled) : Scaled := r78znorm (a.add b)
-/-- `Scaled.sub`, reduced. -/
-private def _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.subN
-    (a b : Scaled) : Scaled := r78znorm (a.sub b)
-private theorem _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.Rep.addN
-    {a b : Scaled} {p q : ℚ[X]} (ha : a.Rep p) (hb : b.Rep q) : (a.addN b).Rep (p+q) :=
-  r78z_rep_norm (ha.add hb)
-private theorem _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.Rep.subN
-    {a b : Scaled} {p q : ℚ[X]} (ha : a.Rep p) (hb : b.Rep q) : (a.subN b).Rep (p-q) :=
-  r78z_rep_norm (ha.sub hb)
-
-/-! ### Kronecker substitution
-
-An integer list is evaluated at `2 ^ k`; when every entry lies in `[-2^(k-1),2^(k-1))`, the
-list is read back from the value as its balanced digits in base `2 ^ k`, by masks and shifts
-(`r78z_dig_enc`). -/
-
-/-- The list evaluated at `B`. -/
-private def r78zenc (B : ℤ) : List ℤ → ℤ
-  | [] => 0
-  | a :: l => a+B*r78zenc B l
-
-/-- The remainder of `v` modulo `2 ^ k` in `[-2 ^ (k - 1), 2 ^ (k - 1))` and the quotient, by
-masks and shifts. -/
-private def r78zbsplit (k : ℕ) (v : ℤ) : ℤ × ℤ :=
-  match v with
-  | .ofNat n =>
-    if (n &&& (2 ^ k - 1)) < 2 ^ (k - 1) then (.ofNat (n &&& (2 ^ k - 1)), .ofNat (n >>> k))
-    else (.ofNat (n &&& (2 ^ k - 1)) - .ofNat (2 ^ k), .ofNat (n >>> k) + 1)
-  | .negSucc n =>
-    if (n &&& (2 ^ k - 1)) < 2 ^ (k - 1) then (-.ofNat (n &&& (2 ^ k - 1)) - 1, -.ofNat (n >>> k))
-    else (.ofNat (2 ^ k - 1 - (n &&& (2 ^ k - 1))), -.ofNat (n >>> k) - 1)
-
-/-- The first `n` balanced digits of `N` in base `2 ^ k`. -/
-private def r78zdig (k : ℕ) : ℕ → ℤ → List ℤ
-  | 0,_ => []
-  | n+1,N => (r78zbsplit k N).1 :: r78zdig k n (r78zbsplit k N).2
-
-/-- `64 w` for the number `w` of 64-bit words of `x` (at most `f`). -/
-private def r78zwords : ℕ → ℕ → ℕ
-  | 0,_ => 0
-  | f+1,x => if x=0 then 0 else r78zwords f (x >>> 64)+64
-/-- An exponent `e` with `x < 2 ^ e` for every `x` below `2 ^ 262144`. -/
-private def r78zbits (x : ℕ) : ℕ := r78zwords 4096 x+1
-
-/-- The sum of the absolute values of the entries. -/
-private def r78zasum : List ℤ → ℕ
-  | [] => 0
-  | a :: l => a.natAbs+r78zasum l
-
-/-- The largest absolute value of an entry. -/
-private def r78zamax : List ℤ → ℕ
-  | [] => 0
-  | a :: l => max a.natAbs (r78zamax l)
-
-private theorem r78z_enc_eq (B : ℤ) : ∀ l : List ℤ,(r78zenc B l : ℚ)=(toPoly l).eval (B:ℚ)
-  | [] => by simp [r78zenc,toPoly]
-  | a :: l => by simp [r78zenc,toPoly,r78z_enc_eq B l]
-
-private theorem r78zbsplit_spec {k : ℕ} (hk : 1 ≤ k) (v : ℤ) :
-    (r78zbsplit k v).1 + 2 ^ k * (r78zbsplit k v).2 = v ∧ -(2 ^ (k - 1) : ℤ) ≤ (r78zbsplit k v).1 ∧
-      (r78zbsplit k v).1 < 2 ^ (k - 1) := by
-  have hP : (2 : ℕ) ^ k = 2 * 2 ^ (k - 1) := by
-    rw [← pow_succ']; congr 1; omega
-  have hPz : (2 : ℤ) ^ k = 2 * 2 ^ (k - 1) := by exact_mod_cast hP
-  have hP1 : (0 : ℤ) < 2 ^ (k - 1) := by positivity
-  cases v with
-  | ofNat n =>
-    have hdm := Nat.div_add_mod n (2 ^ k)
-    have hlt := Nat.mod_lt n (show 0 < 2 ^ k by positivity)
-    simp only [r78zbsplit, Nat.and_two_pow_sub_one_eq_mod, Nat.shiftRight_eq_div_pow,
-      Int.ofNat_eq_natCast]
-    generalize n % 2 ^ k = r at *
-    generalize n / 2 ^ k = q at *
-    have hdmz : (2 : ℤ) ^ k * (q : ℤ) + (r : ℤ) = n := by exact_mod_cast hdm
-    have hltz : (r : ℤ) < 2 ^ k := by exact_mod_cast hlt
-    have hr0 : (0 : ℤ) ≤ r := by positivity
-    split_ifs with h
-    · have h' : (r : ℤ) < 2 ^ (k - 1) := by exact_mod_cast h
-      dsimp only
-      refine ⟨by linarith, by linarith, h'⟩
-    · have h' : (2 : ℤ) ^ (k - 1) ≤ r := by exact_mod_cast not_lt.1 h
-      dsimp only
-      push_cast
-      refine ⟨by linarith, by linarith, by linarith⟩
-  | negSucc n =>
-    have hdm := Nat.div_add_mod n (2 ^ k)
-    have hlt := Nat.mod_lt n (show 0 < 2 ^ k by positivity)
-    simp only [r78zbsplit, Nat.and_two_pow_sub_one_eq_mod, Nat.shiftRight_eq_div_pow,
-      Int.ofNat_eq_natCast, Int.negSucc_eq]
-    generalize n % 2 ^ k = r at *
-    generalize n / 2 ^ k = q at *
-    have hdmz : (2 : ℤ) ^ k * (q : ℤ) + (r : ℤ) = n := by exact_mod_cast hdm
-    have hltz : (r : ℤ) < 2 ^ k := by exact_mod_cast hlt
-    have hr0 : (0 : ℤ) ≤ r := by positivity
-    split_ifs with h
-    · have h' : (r : ℤ) < 2 ^ (k - 1) := by exact_mod_cast h
-      dsimp only
-      refine ⟨by linarith, by linarith, by linarith⟩
-    · have h' : (2 : ℤ) ^ (k - 1) ≤ r := by exact_mod_cast not_lt.1 h
-      have hle : r ≤ 2 ^ k - 1 := by omega
-      dsimp only
-      rw [Nat.cast_sub hle, Nat.cast_sub Nat.one_le_two_pow]
-      push_cast
-      refine ⟨by linarith, by linarith, by linarith⟩
-
-private theorem r78zbsplit_eq {k : ℕ} (hk : 1 ≤ k) {a w : ℤ} (ha1 : -(2 ^ (k - 1) : ℤ) ≤ a)
-    (ha2 : a < 2 ^ (k - 1)) : r78zbsplit k (a + 2 ^ k * w) = (a, w) := by
-  obtain ⟨h1, h2, h3⟩ := r78zbsplit_spec hk (a + 2 ^ k * w)
-  have hPz : (2 : ℤ) ^ k = 2 * 2 ^ (k - 1) := by
-    rw [← pow_succ']; congr 1; omega
-  have hpos : (0 : ℤ) < 2 ^ (k - 1) := by positivity
-  have hw : (r78zbsplit k (a + 2 ^ k * w)).2 = w := by
-    by_contra hne
-    rcases lt_or_gt_of_ne hne with h | h
-    · have : (r78zbsplit k (a + 2 ^ k * w)).2 + 1 ≤ w := h
-      nlinarith
-    · have : w + 1 ≤ (r78zbsplit k (a + 2 ^ k * w)).2 := h
-      nlinarith
-  refine Prod.ext ?_ hw
-  rw [hw] at h1
-  linarith
-
-private theorem r78z_dig_enc {k : ℕ} (hk : 1≤k) : ∀ (n : ℕ) (c : List ℤ),c.length≤n →
-    (∀ j,-((2^k:ℕ):ℤ)≤2*c.getD j 0 ∧ 2*c.getD j 0<((2^k:ℕ):ℤ)) →
-      toPoly (r78zdig k n (r78zenc ((2^k:ℕ):ℤ) c))=toPoly c
-  | 0,c,hl,_ => by
-    rw [List.length_eq_zero_iff.1 (by omega : c.length=0)]
-    rfl
-  | n+1,[],_,_ => by
-    have hpos : (0 : ℤ) < 2 ^ (k - 1) := by positivity
-    have h0 := r78zbsplit_eq hk (a:=0) (w:=0) (by linarith) hpos
-    simp only [mul_zero,add_zero] at h0
-    have ih : toPoly (r78zdig k n 0)=0 :=
-      r78z_dig_enc hk n [] (by simp) (fun j => by simp)
-    show toPoly (r78zdig k (n+1) 0)=0
-    rw [r78zdig,h0]
-    simp [toPoly,ih]
-  | n+1,x :: c,hl,hb => by
-    have hx := hb 0
-    simp only [List.getD_cons_zero] at hx
-    have hPz : (2 : ℤ) ^ k = 2 * 2 ^ (k - 1) := by
-      rw [← pow_succ']; congr 1; omega
-    push_cast at hx
-    have h1 := r78zbsplit_eq hk (a:=x) (w:=r78zenc ((2^k:ℕ):ℤ) c) (by linarith [hx.1])
-      (by linarith [hx.2])
-    have ih := r78z_dig_enc hk n c (by simpa using hl) (fun j => by simpa using hb (j+1))
-    have e : r78zenc ((2^k:ℕ):ℤ) (x :: c)=x+2^k*r78zenc ((2^k:ℕ):ℤ) c := by
-      simp only [r78zenc]; push_cast; ring
-    rw [e,r78zdig,h1]
-    rw [toPoly,toPoly,ih]
-
-private theorem r78z_getD_smul (c : ℤ) : ∀ (l : List ℤ) (j : ℕ),
-    (Certificate.smul c l).getD j 0=c*l.getD j 0
-  | [],j => by simp [Certificate.smul]
-  | a :: l,0 => by simp [Certificate.smul]
-  | a :: l,j+1 => by
-    simp only [Certificate.smul,List.getD_cons_succ,r78z_getD_smul c l j]
-
-private theorem r78z_getD_le_amax : ∀ (l : List ℤ) (j : ℕ),|l.getD j 0|≤r78zamax l
-  | [],j => by simp
-  | a :: l,0 => by simp only [List.getD_cons_zero,r78zamax]; push_cast; exact le_max_left _ _
-  | a :: l,j+1 => by
-    simp only [List.getD_cons_succ,r78zamax]
-    push_cast
-    exact (r78z_getD_le_amax l j).trans (le_max_right _ _)
-
-private theorem r78z_mul_bound : ∀ (a m : List ℤ) (j : ℕ),
-    |(Certificate.mul a m).getD j 0|≤r78zasum a*r78zamax m
-  | [],m,j => by simp [Certificate.mul]; positivity
-  | a :: l,[],j => by simp [Certificate.mul]; positivity
-  | a :: l,b :: m,j => by
-    rw [Certificate.mul,Certificate.getD_add,
-      r78z_getD_smul]
-    have h1 : |a*(b :: m).getD j 0|≤|a| * r78zamax (b :: m) := by
-      rw [abs_mul]
-      exact mul_le_mul_of_nonneg_left (r78z_getD_le_amax _ j) (abs_nonneg a)
-    have h2 : |(0 :: Certificate.mul l (b :: m)).getD j 0|≤
-        r78zasum l*r78zamax (b :: m) := by
-      rcases j with _|j
-      · simp only [List.getD_cons_zero,abs_zero]; positivity
-      · simpa only [List.getD_cons_succ] using r78z_mul_bound l (b :: m) j
-    simp only [r78zasum]
-    push_cast
-    calc _≤_ := abs_add_le _ _
-      _≤_ := add_le_add h1 h2
-      _=_ := by ring
-
-private theorem r78z_length_add : ∀ l m : List ℤ,
-    (Certificate.add l m).length=max l.length m.length
-  | [],m => by simp [Certificate.add]
-  | a :: l,[] => by simp [Certificate.add]
-  | a :: l,b :: m => by
-    simp [Certificate.add,r78z_length_add l m,Nat.succ_max_succ]
-
-private theorem r78z_length_smul (c : ℤ) : ∀ l : List ℤ,
-    (Certificate.smul c l).length=l.length
-  | [] => rfl
-  | a :: l => by simp [Certificate.smul,r78z_length_smul c l]
-
-private theorem r78z_length_mul : ∀ a m : List ℤ,
-    (Certificate.mul a m).length≤a.length+m.length-1
-  | [],m => by simp [Certificate.mul]
-  | a :: l,[] => by simp [Certificate.mul]
-  | a :: l,b :: m => by
-    have ih := r78z_length_mul l (b :: m)
-    rw [Certificate.mul,r78z_length_add,r78z_length_smul]
-    rcases l with _|⟨c,l⟩
-    · simp [Certificate.mul]
-    · simp only [List.length_cons] at ih ⊢
-      omega
-
-/-! ### Encoded sums and products
-
-`r78zK` holds the value `N` at a base `B` of an integer list of at most `n` entries, each of
-absolute value at most `β`, that represents `s` times a polynomial.  Sums and products act on
-`N` alone, so a whole expression costs a few integer operations; `toScaled` reads the list
-back as balanced digits in base `B = 2 ^ e` once `B` exceeds `2β`. -/
-
-private structure r78zK where
-  N : ℤ
-  s : ℕ
-  n : ℕ
-  β : ℕ
-
-private def r78zK.Rep (B : ℤ) (k : r78zK) (p : ℚ[X]) : Prop :=
-  ∃ l : List ℤ,l.length≤k.n ∧ (∀ j,|l.getD j 0|≤k.β) ∧ k.N=r78zenc B l ∧ toPoly l=C (k.s:ℚ)*p
-
-private def r78zK.add (a b : r78zK) : r78zK := ⟨a.N*b.s+b.N*a.s,a.s*b.s,max a.n b.n,a.β*b.s+b.β*a.s⟩
-private def r78zK.sub (a b : r78zK) : r78zK := ⟨a.N*b.s-b.N*a.s,a.s*b.s,max a.n b.n,a.β*b.s+b.β*a.s⟩
-private def r78zK.mul (a b : r78zK) : r78zK := ⟨a.N*b.N,a.s*b.s,a.n+b.n-1,a.n*a.β*b.β⟩
-private def r78zK.const (q : ℚ) : r78zK := ⟨q.num,q.den,1,q.num.natAbs⟩
-private def r78zK.ofScaled (B : ℤ) (S : Scaled) : r78zK := ⟨r78zenc B S.l,S.s,S.l.length,r78zamax S.l⟩
-private def r78zK.toScaled (e : ℕ) (k : r78zK) : Scaled :=
-  if 1≤e ∧ 2*k.β<2^e then ⟨r78zdig e k.n k.N,k.s⟩ else ⟨[],0⟩
-
-private theorem r78z_enc_add (B : ℤ) (l m : List ℤ) :
-    r78zenc B (Certificate.add l m)=r78zenc B l+r78zenc B m := by
-  have e : (r78zenc B (Certificate.add l m) : ℚ)=r78zenc B l+r78zenc B m := by
-    rw [r78z_enc_eq,r78z_enc_eq,r78z_enc_eq,Certificate.toPoly_add,eval_add]
-  exact_mod_cast e
-
-private theorem r78z_enc_smul (B c : ℤ) (l : List ℤ) :
-    r78zenc B (Certificate.smul c l)=c*r78zenc B l := by
-  have e : (r78zenc B (Certificate.smul c l) : ℚ)=c*r78zenc B l := by
-    rw [r78z_enc_eq,r78z_enc_eq,Certificate.toPoly_smul,eval_mul,eval_C]
-  exact_mod_cast e
-
-private theorem r78z_enc_mul (B : ℤ) (l m : List ℤ) :
-    r78zenc B (Certificate.mul l m)=r78zenc B l*r78zenc B m := by
-  have e : (r78zenc B (Certificate.mul l m) : ℚ)=r78zenc B l*r78zenc B m := by
-    rw [r78z_enc_eq,r78z_enc_eq,r78z_enc_eq,Certificate.toPoly_mul,eval_mul]
-  exact_mod_cast e
-
-private theorem r78z_amax_le {l : List ℤ} {β : ℕ} (h : ∀ j,|l.getD j 0|≤β) : r78zamax l≤β := by
-  induction l generalizing β with
-  | nil => simp [r78zamax]
-  | cons a l ih =>
-    have h0 := h 0
-    simp only [List.getD_cons_zero,Int.abs_eq_natAbs,Nat.cast_le] at h0
-    have h1 := ih (fun j => by simpa using h (j+1))
-    exact max_le h0 h1
-
-private theorem r78z_asum_le {l : List ℤ} {β : ℕ} (h : ∀ j,|l.getD j 0|≤β) :
-    r78zasum l≤l.length*β := by
-  induction l generalizing β with
-  | nil => simp [r78zasum]
-  | cons a l ih =>
-    have h0 := h 0
-    simp only [List.getD_cons_zero,Int.abs_eq_natAbs,Nat.cast_le] at h0
-    have h1 := ih (fun j => by simpa using h (j+1))
-    simp only [r78zasum,List.length_cons]
-    nlinarith
-
-private theorem r78zK.Rep.add {B : ℤ} {a b : r78zK} {p q : ℚ[X]} (ha : a.Rep B p) (hb : b.Rep B q) :
-    (a.add b).Rep B (p+q) := by
-  obtain ⟨la,hla,hba,hNa,hpa⟩ := ha
-  obtain ⟨lb,hlb,hbb,hNb,hpb⟩ := hb
-  refine ⟨Certificate.add (Certificate.smul b.s la) (Certificate.smul a.s lb),?_,?_,?_,?_⟩
-  · rw [r78z_length_add,r78z_length_smul,r78z_length_smul]
-    exact max_le_max hla hlb
-  · intro j
-    rw [Certificate.getD_add,r78z_getD_smul,r78z_getD_smul]
-    calc _≤|(b.s:ℤ)*la.getD j 0|+|(a.s:ℤ)*lb.getD j 0| := abs_add_le _ _
-      _≤(b.s:ℤ)*a.β+(a.s:ℤ)*b.β := by
-        rw [abs_mul,abs_mul,Nat.abs_cast,Nat.abs_cast]
-        exact add_le_add (mul_le_mul_of_nonneg_left (hba j) (by positivity))
-          (mul_le_mul_of_nonneg_left (hbb j) (by positivity))
-      _=_ := by simp only [r78zK.add]; push_cast; ring
-  · simp only [r78zK.add,r78z_enc_add,r78z_enc_smul,hNa,hNb]
-    ring
-  · simp only [r78zK.add,Certificate.toPoly_add,Certificate.toPoly_smul,hpa,hpb,Int.cast_natCast,
-      Nat.cast_mul,map_mul]
-    ring
-
-private theorem r78zK.Rep.sub {B : ℤ} {a b : r78zK} {p q : ℚ[X]} (ha : a.Rep B p) (hb : b.Rep B q) :
-    (a.sub b).Rep B (p-q) := by
-  obtain ⟨la,hla,hba,hNa,hpa⟩ := ha
-  obtain ⟨lb,hlb,hbb,hNb,hpb⟩ := hb
-  refine ⟨Certificate.add (Certificate.smul b.s la) (Certificate.smul (-(a.s:ℤ)) lb),?_,?_,?_,?_⟩
-  · rw [r78z_length_add,r78z_length_smul,r78z_length_smul]
-    exact max_le_max hla hlb
-  · intro j
-    rw [Certificate.getD_add,r78z_getD_smul,r78z_getD_smul]
-    calc _≤|(b.s:ℤ)*la.getD j 0|+|(-(a.s:ℤ))*lb.getD j 0| := abs_add_le _ _
-      _≤(b.s:ℤ)*a.β+(a.s:ℤ)*b.β := by
-        rw [abs_mul,abs_mul,abs_neg,Nat.abs_cast,Nat.abs_cast]
-        exact add_le_add (mul_le_mul_of_nonneg_left (hba j) (by positivity))
-          (mul_le_mul_of_nonneg_left (hbb j) (by positivity))
-      _=_ := by simp only [r78zK.sub]; push_cast; ring
-  · simp only [r78zK.sub,r78z_enc_add,r78z_enc_smul,hNa,hNb]
-    ring
-  · simp only [r78zK.sub,Certificate.toPoly_add,Certificate.toPoly_smul,hpa,hpb,Int.cast_natCast,
-      Int.cast_neg,Nat.cast_mul,map_mul,map_neg]
-    ring
-
-private theorem r78zK.Rep.mul {B : ℤ} {a b : r78zK} {p q : ℚ[X]} (ha : a.Rep B p) (hb : b.Rep B q) :
-    (a.mul b).Rep B (p*q) := by
-  obtain ⟨la,hla,hba,hNa,hpa⟩ := ha
-  obtain ⟨lb,hlb,hbb,hNb,hpb⟩ := hb
-  refine ⟨Certificate.mul la lb,?_,?_,?_,?_⟩
-  · have := r78z_length_mul la lb
-    simp only [r78zK.mul]
-    omega
-  · intro j
-    have h1 := r78z_mul_bound la lb j
-    have h2 : r78zasum la*r78zamax lb≤a.n*a.β*b.β :=
-      Nat.mul_le_mul ((r78z_asum_le hba).trans (Nat.mul_le_mul_right _ hla)) (r78z_amax_le hbb)
-    simp only [r78zK.mul]
-    calc _≤((r78zasum la*r78zamax lb:ℕ):ℤ) := by exact_mod_cast h1
-      _≤_ := by exact_mod_cast h2
-  · simp only [r78zK.mul,r78z_enc_mul,hNa,hNb]
-  · simp only [r78zK.mul,Certificate.toPoly_mul,hpa,hpb,Nat.cast_mul,map_mul]
-    ring
-
-private theorem r78zK.rep_const (B : ℤ) (q : ℚ) : (r78zK.const q).Rep B (C q) := by
-  refine ⟨[q.num],by simp [r78zK.const],fun j => ?_,by simp [r78zK.const,r78zenc],?_⟩
-  · rcases j with _|j
-    · simp only [List.getD_cons_zero,r78zK.const]
-      exact (Int.abs_eq_natAbs _).le
-    · simp
-  · simp only [r78zK.const,toPoly,mul_zero,add_zero,← map_mul,Rat.den_mul_eq_num]
-
-private theorem r78zK.rep_ofScaled (B : ℤ) {S : Scaled} {p : ℚ[X]} (hS : S.Rep p) :
-    (r78zK.ofScaled B S).Rep B p :=
-  ⟨S.l,le_rfl,r78z_getD_le_amax S.l,rfl,hS⟩
-
-private theorem r78zK.Rep.toScaled {e : ℕ} {k : r78zK} {p : ℚ[X]} (hk : k.Rep ((2^e:ℕ):ℤ) p) :
-    (k.toScaled e).Rep p := by
-  unfold r78zK.toScaled
-  split_ifs with h
-  · obtain ⟨l,hl,hb,hN,hp⟩ := hk
-    have hβ : 2*(k.β:ℤ)<((2^e:ℕ):ℤ) := by exact_mod_cast h.2
-    show toPoly (r78zdig e k.n k.N)=_
-    rw [hN,r78z_dig_enc h.1 _ _ hl
-      (fun j => by obtain ⟨h1,h2⟩ := abs_le.1 (hb j); constructor <;> linarith)]
-    exact hp
-  · show toPoly []=C ((0:ℕ):ℚ)*p
-    simp [toPoly]
-
-/-! ### Products by Kronecker substitution
-
-`Scaled.mul` multiplies entry by entry.  `kmul` evaluates both lists at a power of two `B`,
-multiplies the two values and reads the coefficients of the product back; `B` exceeds twice
-the bound `n·max|aᵢ|·max|bⱼ|` on those coefficients. -/
-
-/-- The exponent of the base of `kmul`. -/
-private def r78zkmulE (a b : Scaled) : ℕ := r78zbits (2*(a.l.length*r78zamax a.l*r78zamax b.l))
-private def _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.kmul
-    (a b : Scaled) : Scaled :=
-  ((r78zK.ofScaled ((2^r78zkmulE a b:ℕ):ℤ) a).mul
-    (r78zK.ofScaled ((2^r78zkmulE a b:ℕ):ℤ) b)).toScaled (r78zkmulE a b)
-private theorem _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.Rep.kmul
-    {a b : Scaled} {p q : ℚ[X]} (ha : a.Rep p) (hb : b.Rep q) : (a.kmul b).Rep (p*q) :=
-  ((r78zK.rep_ofScaled _ ha).mul (r78zK.rep_ofScaled _ hb)).toScaled
-/-- The square, by `kmul`. -/
-private def _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.ksq
-    (a : Scaled) : Scaled := a.kmul a
-private theorem _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.Rep.ksq
-    {a : Scaled} {p : ℚ[X]} (ha : a.Rep p) : a.ksq.Rep (p^2) := by
-  rw [sq]; exact ha.kmul ha
-
-/-! ### Composition with `s+tX` by Kronecker substitution
-
-The entries of the composition of `L` with `s+tX` are at most `Σ|Lᵢ| (|s|+|t|+1)^(n-1)`, so they
-are the balanced digits in base `B = 2 ^ e` of the value of `L` at `s+tB` for `B` above twice
-that bound. -/
-
-private theorem r78z_asum_add : ∀ l m : List ℤ,
-    r78zasum (Certificate.add l m)≤r78zasum l+r78zasum m
-  | [],m => by simp [Certificate.add,r78zasum]
-  | a :: l,[] => by simp [Certificate.add,r78zasum]
-  | a :: l,b :: m => by
-    have ih := r78z_asum_add l m
-    have := Int.natAbs_add_le a b
-    simp only [Certificate.add,r78zasum]
-    omega
-
-private theorem r78z_asum_affMulAux (s t : ℤ) : ∀ (c : ℤ) (z : List ℤ),
-    r78zasum (Certificate.affMulAux s t c z)≤
-      s.natAbs*r78zasum z+t.natAbs*c.natAbs+t.natAbs*r78zasum z
-  | c,[] => by simp [Certificate.affMulAux,r78zasum,Int.natAbs_mul]
-  | c,x :: z => by
-    have ih := r78z_asum_affMulAux s t x z
-    have h1 := Int.natAbs_add_le (s*x) (t*c)
-    simp only [Certificate.affMulAux,r78zasum,Int.natAbs_mul] at h1 ⊢
-    nlinarith
-
-private theorem r78z_asum_affMul (s t : ℤ) (z : List ℤ) :
-    r78zasum (Certificate.affMul s t z)≤(s.natAbs+t.natAbs)*r78zasum z := by
-  unfold Certificate.affMul
-  split_ifs with h
-  · obtain ⟨rfl,rfl⟩ := h
-    cases z with
-    | nil => simp [Certificate.shiftMul,r78zasum]
-    | cons x z =>
-      have := r78z_asum_add (x :: z) (0 :: x :: z)
-      simp only [Certificate.shiftMul]
-      simp only [r78zasum] at this ⊢
-      simp
-      omega
-  · cases z with
-    | nil => simp [Certificate.affMulGen,r78zasum]
-    | cons x z =>
-      have := r78z_asum_affMulAux s t x z
-      simp only [Certificate.affMulGen,r78zasum,Int.natAbs_mul]
-      nlinarith
-
-private theorem r78z_asum_compAff (s t : ℤ) : ∀ l : List ℤ,
-    r78zasum (Certificate.compAff s t l)≤
-      r78zasum l*(s.natAbs+t.natAbs+1)^(l.length-1)
-  | [] => by simp [Certificate.compAff,r78zasum]
-  | b :: l => by
-    have h1 := r78z_asum_add [b] (Certificate.affMul s t
-      (Certificate.compAff s t l))
-    have h2 := r78z_asum_affMul s t (Certificate.compAff s t l)
-    have hb : r78zasum [b]=b.natAbs := by simp [r78zasum]
-    rw [Certificate.compAff]
-    simp only [r78zasum,List.length_cons,Nat.add_sub_cancel]
-    rcases l with _|⟨c,l⟩
-    · simp [Certificate.compAff,Certificate.affMul,
-        Certificate.shiftMul,Certificate.affMulGen,
-        Certificate.add,r78zasum]
-    · have ih := r78z_asum_compAff s t (c :: l)
-      generalize r78zasum (Certificate.compAff s t (c :: l))=A at h1 h2 ih
-      simp only [List.length_cons,Nat.add_sub_cancel] at ih ⊢
-      have key : (s.natAbs+t.natAbs)*A≤r78zasum (c :: l)*(s.natAbs+t.natAbs+1)^(l.length+1) :=
-        calc (s.natAbs+t.natAbs)*A≤(s.natAbs+t.natAbs+1)*A := Nat.mul_le_mul_right _ (Nat.le_succ _)
-          _≤(s.natAbs+t.natAbs+1)*(r78zasum (c :: l)*(s.natAbs+t.natAbs+1)^l.length) :=
-            Nat.mul_le_mul_left _ ih
-          _=_ := by ring
-      have hM : 1≤(s.natAbs+t.natAbs+1)^(l.length+1) := Nat.one_le_pow _ _ (by omega)
-      have hb' : b.natAbs≤b.natAbs*(s.natAbs+t.natAbs+1)^(l.length+1) := Nat.le_mul_of_pos_right _ hM
-      rw [hb] at h1
-      rw [add_mul]
-      omega
-
-private theorem r78z_getD_le_asum : ∀ (l : List ℤ) (j : ℕ),(l.getD j 0).natAbs≤r78zasum l
-  | [],j => by simp [r78zasum]
-  | a :: l,0 => by simp [r78zasum]
-  | a :: l,j+1 => by
-    have := r78z_getD_le_asum l j
-    simp only [List.getD_cons_succ,r78zasum]
-    omega
-
-private theorem r78z_length_affMulAux (s t : ℤ) : ∀ (c : ℤ) (z : List ℤ),
-    (Certificate.affMulAux s t c z).length=z.length+1
-  | c,[] => rfl
-  | c,x :: z => by
-    simp [Certificate.affMulAux,r78z_length_affMulAux s t x z]
-
-private theorem r78z_length_affMul (s t : ℤ) (z : List ℤ) :
-    (Certificate.affMul s t z).length≤z.length+1 := by
-  unfold Certificate.affMul
-  split_ifs
-  · cases z with
-    | nil => simp [Certificate.shiftMul]
-    | cons x z =>
-      rw [Certificate.shiftMul,r78z_length_add]
-      simp
-  · cases z with
-    | nil => simp [Certificate.affMulGen]
-    | cons x z =>
-      simp [Certificate.affMulGen,r78z_length_affMulAux]
-
-private theorem r78z_length_compAff (s t : ℤ) : ∀ l : List ℤ,
-    (Certificate.compAff s t l).length≤l.length
-  | [] => by simp [Certificate.compAff]
-  | b :: l => by
-    have ih := r78z_length_compAff s t l
-    have h := r78z_length_affMul s t (Certificate.compAff s t l)
-    rw [Certificate.compAff,r78z_length_add]
-    simp only [List.length_cons,List.length_nil]
-    omega
-
-/-- The composition of `L` with `s+tX`, by one evaluation at `s+tB`, read back in a base
-`B = 2 ^ e` above `2 Σ|Lᵢ| (|s|+|t|+1)^(n-1)`; the list composition if that base is too small. -/
-private def r78zkcenterAux (s t : ℤ) (L : List ℤ) : List ℤ :=
-  if 1≤r78zbits (2*(r78zasum L*(s.natAbs+t.natAbs+1)^(L.length-1))) ∧
-      2*(r78zasum L*(s.natAbs+t.natAbs+1)^(L.length-1))<
-        2^r78zbits (2*(r78zasum L*(s.natAbs+t.natAbs+1)^(L.length-1))) then
-    r78zdig (r78zbits (2*(r78zasum L*(s.natAbs+t.natAbs+1)^(L.length-1)))) L.length
-      (r78zenc (s+t*((2^r78zbits (2*(r78zasum L*(s.natAbs+t.natAbs+1)^(L.length-1))):ℕ):ℤ)) L)
-  else Certificate.compAff s t L
-
-private theorem r78z_toPoly_kcenterAux (s t : ℤ) (L : List ℤ) :
-    toPoly (r78zkcenterAux s t L)=toPoly (Certificate.compAff s t L) := by
-  rw [r78zkcenterAux]
-  generalize hM : r78zasum L*(s.natAbs+t.natAbs+1)^(L.length-1)=M
-  generalize r78zbits (2*M)=e
-  split_ifs with hc
-  · obtain ⟨he,hMe⟩ := hc
-    have hE : r78zenc (s+t*((2^e:ℕ):ℤ)) L=r78zenc ((2^e:ℕ):ℤ) (Certificate.compAff s t L) := by
-      have e' : (r78zenc (s+t*((2^e:ℕ):ℤ)) L : ℚ)=
-          (r78zenc ((2^e:ℕ):ℤ) (Certificate.compAff s t L) : ℚ) := by
-        rw [r78z_enc_eq,r78z_enc_eq,Certificate.toPoly_compAff,eval_comp]
-        simp
-      exact_mod_cast e'
-    rw [hE]
-    apply r78z_dig_enc he _ _ (r78z_length_compAff s t L)
-    intro j
-    have h1 := r78z_getD_le_asum (Certificate.compAff s t L) j
-    have h2 := r78z_asum_compAff s t L
-    rw [hM] at h2
-    have h3 : ((Certificate.compAff s t L).getD j 0).natAbs≤M := h1.trans h2
-    have h4 : |(Certificate.compAff s t L).getD j 0|≤(M:ℤ) := by
-      rw [Int.abs_eq_natAbs]; exact_mod_cast h3
-    have hMe' : 2*(M:ℤ)<((2^e:ℕ):ℤ) := by exact_mod_cast hMe
-    obtain ⟨h5,h6⟩ := abs_le.1 h4
-    constructor <;> linarith
-  · rfl
-
-/-- `Scaled.center`, with the composition by `r78zkcenterAux`. -/
-private def _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.kcenter
-    (c : Scaled) (num den : ℕ) (s t : ℤ) : Scaled :=
-  ⟨r78zkcenterAux s t (Certificate.prescale num den (c.l.length-1) 0 c.l),
-    c.s*den^(c.l.length-1)⟩
-
-private theorem _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.Rep.kcentered
-    {c : Scaled} {p : ℚ[X]} (hc : c.Rep p) (num den : ℕ) (s t : ℤ)
-    {a b : ℚ} (hden : den≠0) (hm : (a+b)/2=num*s/den) (hh : (b-a)/2=num*t/den) :
-    (c.kcenter num den s t).Rep (WholeIntervalPolynomial.centered a b p) := by
-  have h := hc.centered num den s t hden hm hh
-  unfold Scaled.Rep at h ⊢
-  show toPoly (r78zkcenterAux s t _)=_
-  rw [r78z_toPoly_kcenterAux]
-  exact h
-
-private theorem r78z_rep_eq {S : Scaled} {p q : ℚ[X]} (e : q=p) (h : S.Rep q) : S.Rep p := e ▸ h
-
-/-- `num3` on encoded lists, with `w = r1 r2`:
-`2 A r0 w - R ((P0+r0²) w + ((P1+r1²) r2 + (P2+r2²) r1) r0)`. -/
-private def r78num3K (A P0 P1 P2 r0 r1 r2 w : r78zK) : r78zK :=
-  ((((r78zK.const 2).mul A).mul r0).mul w).sub ((r78zK.const Rbar).mul
-    (((P0.add (r0.mul r0)).mul w).add
-      ((((P1.add (r1.mul r1)).mul r2).add ((P2.add (r2.mul r2)).mul r1)).mul r0)))
-private def r78num3B (B : ℤ) (A P0 P1 P2 r0 r1 r2 : Scaled) : r78zK :=
-  r78num3K (r78zK.ofScaled B A) (r78zK.ofScaled B P0) (r78zK.ofScaled B P1) (r78zK.ofScaled B P2)
-    (r78zK.ofScaled B r0) (r78zK.ofScaled B r1) (r78zK.ofScaled B r2)
-    ((r78zK.ofScaled B r1).mul (r78zK.ofScaled B r2))
-private def r78num3With (e : ℕ) (A P0 P1 P2 r0 r1 r2 : Scaled) : Scaled :=
-  r78znorm ((r78num3B ((2^e:ℕ):ℤ) A P0 P1 P2 r0 r1 r2).toScaled e)
-/-- `num3` of the lists, read back in a base `2 ^ e` above twice its coefficient bound. -/
-private def r78num3 (A P0 P1 P2 r0 r1 r2 : Scaled) : Scaled :=
-  r78num3With (r78zbits (2*(r78num3B 0 A P0 P1 P2 r0 r1 r2).β)) A P0 P1 P2 r0 r1 r2
-private theorem r78num3With_rep (e : ℕ) {A P0 P1 P2 r0 r1 r2 : Scaled}
-    {a p0 p1 p2 s0 s1 s2 : ℚ[X]} (hA : A.Rep a) (h0 : P0.Rep p0) (h1 : P1.Rep p1)
-    (h2 : P2.Rep p2) (g0 : r0.Rep s0) (g1 : r1.Rep s1) (g2 : r2.Rep s2) :
-    (r78num3With e A P0 P1 P2 r0 r1 r2).Rep (num3 a p0 p1 p2 s0 s1 s2) := by
-  have kA := r78zK.rep_ofScaled ((2^e:ℕ):ℤ) hA
-  have k0 := r78zK.rep_ofScaled ((2^e:ℕ):ℤ) h0
-  have k1 := r78zK.rep_ofScaled ((2^e:ℕ):ℤ) h1
-  have k2 := r78zK.rep_ofScaled ((2^e:ℕ):ℤ) h2
-  have j0 := r78zK.rep_ofScaled ((2^e:ℕ):ℤ) g0
-  have j1 := r78zK.rep_ofScaled ((2^e:ℕ):ℤ) g1
-  have j2 := r78zK.rep_ofScaled ((2^e:ℕ):ℤ) g2
-  exact r78z_rep_eq (by unfold num3; ring) (r78z_rep_norm (r78zK.Rep.toScaled
-    (((((r78zK.rep_const ((2^e:ℕ):ℤ) 2).mul kA).mul j0).mul (j1.mul j2)).sub ((r78zK.rep_const ((2^e:ℕ):ℤ) Rbar).mul
-      (((k0.add (j0.mul j0)).mul (j1.mul j2)).add
-        ((((k1.add (j1.mul j1)).mul j2).add ((k2.add (j2.mul j2)).mul j1)).mul j0))))))
 private theorem r78num3_rep {A P0 P1 P2 r0 r1 r2 : Scaled} {a p0 p1 p2 s0 s1 s2 : ℚ[X]}
     (hA : A.Rep a) (h0 : P0.Rep p0) (h1 : P1.Rep p1) (h2 : P2.Rep p2)
     (g0 : r0.Rep s0) (g1 : r1.Rep s1) (g2 : r2.Rep s2) :
-    (r78num3 A P0 P1 P2 r0 r1 r2).Rep (num3 a p0 p1 p2 s0 s1 s2) :=
-  r78num3With_rep _ hA h0 h1 h2 g0 g1 g2
-
-/-- `num4` on encoded lists, with `u = r0 r1` and `v = r2 r3`:
-`2 A u v - R (((P0+r0²) r1 + (P1+r1²) r0) v + ((P2+r2²) r3 + (P3+r3²) r2) u)`. -/
-private def r78num4K (A P0 P1 P2 P3 r0 r1 r2 r3 u v : r78zK) : r78zK :=
-  ((((r78zK.const 2).mul A).mul u).mul v).sub ((r78zK.const Rbar).mul
-    (((((P0.add (r0.mul r0)).mul r1).add ((P1.add (r1.mul r1)).mul r0)).mul v).add
-      ((((P2.add (r2.mul r2)).mul r3).add ((P3.add (r3.mul r3)).mul r2)).mul u)))
-private def r78num4B (B : ℤ) (A P0 P1 P2 P3 r0 r1 r2 r3 : Scaled) : r78zK :=
-  r78num4K (r78zK.ofScaled B A) (r78zK.ofScaled B P0) (r78zK.ofScaled B P1) (r78zK.ofScaled B P2)
-    (r78zK.ofScaled B P3) (r78zK.ofScaled B r0) (r78zK.ofScaled B r1) (r78zK.ofScaled B r2)
-    (r78zK.ofScaled B r3) ((r78zK.ofScaled B r0).mul (r78zK.ofScaled B r1))
-    ((r78zK.ofScaled B r2).mul (r78zK.ofScaled B r3))
-private def r78num4With (e : ℕ) (A P0 P1 P2 P3 r0 r1 r2 r3 : Scaled) : Scaled :=
-  r78znorm ((r78num4B ((2^e:ℕ):ℤ) A P0 P1 P2 P3 r0 r1 r2 r3).toScaled e)
-/-- `num4` of the lists, read back in a base `2 ^ e` above twice its coefficient bound. -/
-private def r78num4 (A P0 P1 P2 P3 r0 r1 r2 r3 : Scaled) : Scaled :=
-  r78num4With (r78zbits (2*(r78num4B 0 A P0 P1 P2 P3 r0 r1 r2 r3).β)) A P0 P1 P2 P3 r0 r1 r2 r3
-private theorem r78num4With_rep (e : ℕ) {A P0 P1 P2 P3 r0 r1 r2 r3 : Scaled}
-    {a p0 p1 p2 p3 s0 s1 s2 s3 : ℚ[X]}
-    (hA : A.Rep a) (h0 : P0.Rep p0) (h1 : P1.Rep p1) (h2 : P2.Rep p2) (h3 : P3.Rep p3)
-    (g0 : r0.Rep s0) (g1 : r1.Rep s1) (g2 : r2.Rep s2) (g3 : r3.Rep s3) :
-    (r78num4With e A P0 P1 P2 P3 r0 r1 r2 r3).Rep (num4 a p0 p1 p2 p3 s0 s1 s2 s3) := by
-  have kA := r78zK.rep_ofScaled ((2^e:ℕ):ℤ) hA
-  have k0 := r78zK.rep_ofScaled ((2^e:ℕ):ℤ) h0
-  have k1 := r78zK.rep_ofScaled ((2^e:ℕ):ℤ) h1
-  have k2 := r78zK.rep_ofScaled ((2^e:ℕ):ℤ) h2
-  have k3 := r78zK.rep_ofScaled ((2^e:ℕ):ℤ) h3
-  have j0 := r78zK.rep_ofScaled ((2^e:ℕ):ℤ) g0
-  have j1 := r78zK.rep_ofScaled ((2^e:ℕ):ℤ) g1
-  have j2 := r78zK.rep_ofScaled ((2^e:ℕ):ℤ) g2
-  have j3 := r78zK.rep_ofScaled ((2^e:ℕ):ℤ) g3
-  exact r78z_rep_eq (by unfold num4; ring) (r78z_rep_norm (r78zK.Rep.toScaled
-    (((((r78zK.rep_const ((2^e:ℕ):ℤ) 2).mul kA).mul (j0.mul j1)).mul (j2.mul j3)).sub
-      ((r78zK.rep_const ((2^e:ℕ):ℤ) Rbar).mul
-        (((((k0.add (j0.mul j0)).mul j1).add ((k1.add (j1.mul j1)).mul j0)).mul (j2.mul j3)).add
-          ((((k2.add (j2.mul j2)).mul j3).add ((k3.add (j3.mul j3)).mul j2)).mul (j0.mul j1)))))))
+    (Scaled.num3 Rbar A P0 P1 P2 r0 r1 r2).Rep (num3 a p0 p1 p2 s0 s1 s2) :=
+  hA.num3 Rbar h0 h1 h2 g0 g1 g2
 private theorem r78num4_rep {A P0 P1 P2 P3 r0 r1 r2 r3 : Scaled}
     {a p0 p1 p2 p3 s0 s1 s2 s3 : ℚ[X]}
     (hA : A.Rep a) (h0 : P0.Rep p0) (h1 : P1.Rep p1) (h2 : P2.Rep p2) (h3 : P3.Rep p3)
     (g0 : r0.Rep s0) (g1 : r1.Rep s1) (g2 : r2.Rep s2) (g3 : r3.Rep s3) :
-    (r78num4 A P0 P1 P2 P3 r0 r1 r2 r3).Rep (num4 a p0 p1 p2 p3 s0 s1 s2 s3) :=
-  r78num4With_rep _ hA h0 h1 h2 h3 g0 g1 g2 g3
-
+    (Scaled.num4 Rbar A P0 P1 P2 P3 r0 r1 r2 r3).Rep (num4 a p0 p1 p2 p3 s0 s1 s2 s3) :=
+  hA.num4 Rbar h0 h1 h2 h3 g0 g1 g2 g3
 
 /-! ### The numerators and masses as scaled integer coefficient lists
 
 Each polynomial of the endpoint data is mirrored by a `Scaled` list built with the same
 operations, and `Scaled.Rep` proves that the list represents it. The kernel evaluates
 only these integer lists: sums are reduced by their gcd (`addN`, `subN`), and the numerators,
-the long products and the changes of variable go through Kronecker substitution (`r78num3`,
-`r78num4`, `kmul`, `ksq`, `kcenter`). -/
-
-/-- The monomial `X^k`. -/
-private def r78mono (k : ℕ) : Scaled := ⟨List.replicate k 0++[1],1⟩
-private theorem r78mono_rep (k : ℕ) : (r78mono k).Rep (X^k) := by
-  unfold Scaled.Rep r78mono
-  simp only [Nat.cast_one,map_one,one_mul]
-  induction k with
-  | zero => simp [toPoly]
-  | succ k ih =>
-    rw [List.replicate_succ,List.cons_append,toPoly,ih,pow_succ]
-    simp only [Int.cast_zero,map_zero,zero_add]
-    ring
+the long products and the changes of variable go through Kronecker substitution in a
+power-of-two base (`Scaled.num3`, `num4`, `kmul`, `ksq`, `kcenter` of `KroneckerPolynomials`). -/
 
 private def r78Z : Scaled := ⟨[],1⟩
 private theorem r78Z_rep : r78Z.Rep 0 := Scaled.rep_zero
 private def r78one : Scaled := Scaled.ofNat 1
 private theorem r78one_rep : r78one.Rep 1 := Scaled.rep_one
 
-private theorem r78_rep_ite {c : Prop} [Decidable c] {A B : Scaled} {p q : ℚ[X]}
-    (hA : A.Rep p) (hB : B.Rep q) : (if c then A else B).Rep (if c then p else q) := by
-  split_ifs <;> assumption
-
 private def r78S5 : Scaled :=
-  (Scaled.var.subN ((Scaled.const (1/6)).mul (r78mono 3))).addN
-    ((Scaled.const (1/120)).mul (r78mono 5))
+  (Scaled.var.subN ((Scaled.const (1/6)).mul (Scaled.mono 3))).addN
+    ((Scaled.const (1/120)).mul (Scaled.mono 5))
 private theorem r78S5_rep : r78S5.Rep S5 :=
-  (Scaled.rep_var.subN ((Scaled.rep_const _).mul (r78mono_rep 3))).addN
-    ((Scaled.rep_const _).mul (r78mono_rep 5))
+  (Scaled.rep_var.subN ((Scaled.rep_const _).mul (Scaled.rep_mono 3))).addN
+    ((Scaled.rep_const _).mul (Scaled.rep_mono 5))
 private def r78S9 : Scaled :=
-  (r78S5.subN ((Scaled.const (1/5040)).mul (r78mono 7))).addN
-    ((Scaled.const (1/362880)).mul (r78mono 9))
+  (r78S5.subN ((Scaled.const (1/5040)).mul (Scaled.mono 7))).addN
+    ((Scaled.const (1/362880)).mul (Scaled.mono 9))
 private theorem r78S9_rep : r78S9.Rep S9 :=
-  (r78S5_rep.subN ((Scaled.rep_const _).mul (r78mono_rep 7))).addN
-    ((Scaled.rep_const _).mul (r78mono_rep 9))
-private def r78S11 : Scaled := r78S9.subN ((Scaled.const (1/39916800)).mul (r78mono 11))
+  (r78S5_rep.subN ((Scaled.rep_const _).mul (Scaled.rep_mono 7))).addN
+    ((Scaled.rep_const _).mul (Scaled.rep_mono 9))
+private def r78S11 : Scaled := r78S9.subN ((Scaled.const (1/39916800)).mul (Scaled.mono 11))
 private theorem r78S11_rep : r78S11.Rep S11 :=
-  r78S9_rep.subN ((Scaled.rep_const _).mul (r78mono_rep 11))
+  r78S9_rep.subN ((Scaled.rep_const _).mul (Scaled.rep_mono 11))
 private def r78C4 : Scaled :=
-  (r78one.subN ((Scaled.const (1/2)).mul (r78mono 2))).addN
-    ((Scaled.const (1/24)).mul (r78mono 4))
+  (r78one.subN ((Scaled.const (1/2)).mul (Scaled.mono 2))).addN
+    ((Scaled.const (1/24)).mul (Scaled.mono 4))
 private theorem r78C4_rep : r78C4.Rep C4 :=
-  (r78one_rep.subN ((Scaled.rep_const _).mul (r78mono_rep 2))).addN
-    ((Scaled.rep_const _).mul (r78mono_rep 4))
+  (r78one_rep.subN ((Scaled.rep_const _).mul (Scaled.rep_mono 2))).addN
+    ((Scaled.rep_const _).mul (Scaled.rep_mono 4))
 private def r78C10 : Scaled :=
-  ((r78C4.subN ((Scaled.const (1/720)).mul (r78mono 6))).addN
-    ((Scaled.const (1/40320)).mul (r78mono 8))).subN
-    ((Scaled.const (1/3628800)).mul (r78mono 10))
+  ((r78C4.subN ((Scaled.const (1/720)).mul (Scaled.mono 6))).addN
+    ((Scaled.const (1/40320)).mul (Scaled.mono 8))).subN
+    ((Scaled.const (1/3628800)).mul (Scaled.mono 10))
 private theorem r78C10_rep : r78C10.Rep C10 :=
-  ((r78C4_rep.subN ((Scaled.rep_const _).mul (r78mono_rep 6))).addN
-    ((Scaled.rep_const _).mul (r78mono_rep 8))).subN
-    ((Scaled.rep_const _).mul (r78mono_rep 10))
-private def r78C12 : Scaled := r78C10.addN ((Scaled.const (1/479001600)).mul (r78mono 12))
+  ((r78C4_rep.subN ((Scaled.rep_const _).mul (Scaled.rep_mono 6))).addN
+    ((Scaled.rep_const _).mul (Scaled.rep_mono 8))).subN
+    ((Scaled.rep_const _).mul (Scaled.rep_mono 10))
+private def r78C12 : Scaled := r78C10.addN ((Scaled.const (1/479001600)).mul (Scaled.mono 12))
 private theorem r78C12_rep : r78C12.Rep C12 :=
-  r78C10_rep.addN ((Scaled.rep_const _).mul (r78mono_rep 12))
-private def r78C2 : Scaled := r78one.subN ((Scaled.const (1/2)).mul (r78mono 2))
+  r78C10_rep.addN ((Scaled.rep_const _).mul (Scaled.rep_mono 12))
+private def r78C2 : Scaled := r78one.subN ((Scaled.const (1/2)).mul (Scaled.mono 2))
 private theorem r78C2_rep : r78C2.Rep C2 :=
-  r78one_rep.subN ((Scaled.rep_const _).mul (r78mono_rep 2))
-private def r78S3 : Scaled := Scaled.var.subN ((Scaled.const (1/6)).mul (r78mono 3))
+  r78one_rep.subN ((Scaled.rep_const _).mul (Scaled.rep_mono 2))
+private def r78S3 : Scaled := Scaled.var.subN ((Scaled.const (1/6)).mul (Scaled.mono 3))
 private theorem r78S3_rep : r78S3.Rep S3 :=
-  Scaled.rep_var.subN ((Scaled.rep_const _).mul (r78mono_rep 3))
+  Scaled.rep_var.subN ((Scaled.rep_const _).mul (Scaled.rep_mono 3))
 
 /-! Composition with affine maps and evaluation at rational points. -/
 
@@ -989,7 +299,7 @@ private def r78RB (f : Family) (e : Split) : Scaled :=
   else (Scaled.const (7071/10000)).mul ((r78l f).addN (r78mu f e))
 private theorem r78RB_rep (f : Family) (e : Split) :
     (r78RB f e).Rep (NegativeDEPositiveTD.Certificate.RB f e) :=
-  r78_rep_ite (((Scaled.rep_const _).mul (r78mu_rep f e)).addN
+  Scaled.Rep.ite (((Scaled.rep_const _).mul (r78mu_rep f e)).addN
     ((Scaled.rep_const _).mul (r78l_rep f)))
     ((Scaled.rep_const _).mul ((r78l_rep f).addN (r78mu_rep f e)))
 private def r78RD : Scaled := (Scaled.const (18/25)).addN ((Scaled.const (347/500)).mul (r78c .high))
@@ -1040,14 +350,14 @@ private def r78smallP (r : SmallCase) (e : Split) : Fin 4 → Scaled :=
 private theorem r78smallP_rep (r : SmallCase) (e : Split) (i : Fin 4) :
     (r78smallP r e i).Rep (smallP r e i) := by
   fin_cases i
-  · exact (r78PH_rep _).subN (r78_rep_ite
+  · exact (r78PH_rep _).subN (Scaled.Rep.ite
       (((Scaled.rep_const _).mul (r78k_rep _)).mul (r78dv_rep r78S11_rep)) r78Z_rep)
-  · exact (r78PG_rep _).subN (r78_rep_ite
+  · exact (r78PG_rep _).subN (Scaled.Rep.ite
       ((((Scaled.rep_const _).mul (r78k_rep _)).mul (r78l_rep _)).mul (r78dv_rep r78S11_rep)) r78Z_rep)
-  · exact (r78PB_rep _ _).subN (r78_rep_ite
+  · exact (r78PB_rep _ _).subN (Scaled.Rep.ite
       ((((Scaled.rep_const _).mul (r78l_rep _)).mul (r78mLo_rep _ _)).kmul (r78dv_rep r78S11_rep))
       r78Z_rep)
-  · exact r78_rep_ite r78Z_rep (r78PD_rep _)
+  · exact Scaled.Rep.ite r78Z_rep (r78PD_rep _)
 
 private def r78smallMass (r : SmallCase) (e : Split) : Fin 4 → Scaled :=
   let f := smallFamily r
@@ -1066,24 +376,24 @@ private def r78smallMass (r : SmallCase) (e : Split) : Fin 4 → Scaled :=
 private theorem r78smallMass_rep (r : SmallCase) (e : Split) (i : Fin 4) :
     (r78smallMass r e i).Rep (smallMass r e i) := by
   fin_cases i
-  · exact r78_rep_ite (((Scaled.rep_const _).mul (r78dv_rep r78C2_rep)).addN
+  · exact Scaled.Rep.ite (((Scaled.rep_const _).mul (r78dv_rep r78C2_rep)).addN
         ((Scaled.rep_const _).mul ((r78k_rep _).subN (r78dv_rep r78S3_rep))))
-      (r78_rep_ite (((Scaled.rep_const _).mul (r78dv_rep r78C4_rep)).addN
+      (Scaled.Rep.ite (((Scaled.rep_const _).mul (r78dv_rep r78C4_rep)).addN
         ((Scaled.rep_const _).mul ((r78k_rep _).subN (r78dv_rep r78S5_rep)))) (r78RH_rep _))
-  · exact r78_rep_ite ((((Scaled.rep_const _).mul (r78l_rep _)).mul (r78dv_rep r78C4_rep)).addN
+  · exact Scaled.Rep.ite ((((Scaled.rep_const _).mul (r78l_rep _)).mul (r78dv_rep r78C4_rep)).addN
         ((Scaled.rep_const _).mul ((r78k_rep _).subN ((r78l_rep _).mul (r78dv_rep r78S5_rep)))))
       (r78RG_rep _)
-  · exact r78_rep_ite ((((Scaled.rep_const _).mul (r78l_rep _)).mul (r78dv_rep r78C4_rep)).addN
+  · exact Scaled.Rep.ite ((((Scaled.rep_const _).mul (r78l_rep _)).mul (r78dv_rep r78C4_rep)).addN
         ((Scaled.rep_const _).mul ((r78mu_rep _ _).subN ((r78l_rep _).mul (r78dv_rep r78S5_rep)))))
       (r78RB_rep _ _)
-  · exact r78_rep_ite r78one_rep r78RD_rep
+  · exact Scaled.Rep.ite r78one_rep r78RD_rep
 
 private def r78smallB (r : SmallCase) (e : Split) : Scaled :=
   if smallFamily r=.low then r78lowB e else r78highB e
 private theorem r78smallB_rep (r : SmallCase) (e : Split) : (r78smallB r e).Rep
     (if smallFamily r=.low then NegativeDEPositiveTD.Certificate.lowB e
       else NegativeDEPositiveTD.Certificate.highB e) :=
-  r78_rep_ite (r78lowB_rep e) (r78highB_rep e)
+  Scaled.Rep.ite (r78lowB_rep e) (r78highB_rep e)
 private def r78smallNonrad : SmallCase → Split → Scaled
   | .lowZero,e => (r78smallB .lowZero e).addN r78gPoly
   | .lowH,e => (((r78smallB .lowH e).addN r78gStarV).addN (r78dv r78C10)).subN r78one
@@ -1103,14 +413,14 @@ private theorem r78smallNonrad_rep : ∀ r e, (r78smallNonrad r e).Rep (smallNon
 
 private def r78smallNum (r : SmallCase) (e : Split) : Scaled :=
   if smallFamily r=.low then
-    r78num3 (r78smallNonrad r e) (r78smallP r e 0) (r78smallP r e 1) (r78smallP r e 2)
+    Scaled.num3 Rbar (r78smallNonrad r e) (r78smallP r e 0) (r78smallP r e 1) (r78smallP r e 2)
       (r78smallMass r e 0) (r78smallMass r e 1) (r78smallMass r e 2)
-  else r78num4 (r78smallNonrad r e) (r78smallP r e 0) (r78smallP r e 1) (r78smallP r e 2)
+  else Scaled.num4 Rbar (r78smallNonrad r e) (r78smallP r e 0) (r78smallP r e 1) (r78smallP r e 2)
       (r78smallP r e 3) (r78smallMass r e 0) (r78smallMass r e 1) (r78smallMass r e 2)
       (r78smallMass r e 3)
 private theorem r78smallNum_rep (r : SmallCase) (e : Split) :
     (r78smallNum r e).Rep (smallNumerator r e) :=
-  r78_rep_ite
+  Scaled.Rep.ite
     (r78num3_rep (r78smallNonrad_rep r e) (r78smallP_rep r e 0) (r78smallP_rep r e 1)
       (r78smallP_rep r e 2) (r78smallMass_rep r e 0) (r78smallMass_rep r e 1) (r78smallMass_rep r e 2))
     (r78num4_rep (r78smallNonrad_rep r e) (r78smallP_rep r e 0) (r78smallP_rep r e 1)
@@ -1174,7 +484,7 @@ private theorem r78farB_rep (f : Family) : ∀ e, (r78farB f e).Rep (farB f e)
   | .atA => ((((Scaled.rep_const _).mul (r78farK_rep f)).addN
       ((Scaled.rep_const _).mul (r78farL_rep f))).addN
       ((Scaled.rep_const _).mul (r78farC_rep f))).addN (Scaled.rep_const _)
-      |>.addN ((r78farL_rep f).mul (r78_rep_ite r78J0_rep r78J1_rep))
+      |>.addN ((r78farL_rep f).mul (Scaled.Rep.ite r78J0_rep r78J1_rep))
 private def r78farPH (f : Family) : Scaled := r78one.addN ((r78farK f).pow 2)
 private theorem r78farPH_rep (f : Family) : (r78farPH f).Rep (farPH f) :=
   r78one_rep.addN ((r78farK_rep f).pow 2)
@@ -1230,7 +540,7 @@ private def r78farDelta (r : FarCase) : Scaled :=
   if r=.lowUH ∨ r=.lowUB then (Scaled.const v).subN Scaled.var
   else Scaled.var.subN (Scaled.const (farS r))
 private theorem r78farDelta_rep (r : FarCase) : (r78farDelta r).Rep (farDelta r) :=
-  r78_rep_ite ((Scaled.rep_const _).subN Scaled.rep_var) (Scaled.rep_var.subN (Scaled.rep_const _))
+  Scaled.Rep.ite ((Scaled.rep_const _).subN Scaled.rep_var) (Scaled.rep_var.subN (Scaled.rep_const _))
 private def r78GStarS (r : FarCase) : Scaled :=
   if r=.highHu ∨ r=.highGu ∨ r=.highBu then r78GStarU else r78GStarV
 private theorem r78GStarS_rep (r : FarCase) : (r78GStarS r).Rep (C (GStar (farS r))) := by
@@ -1253,17 +563,17 @@ private def r78farP (r : FarCase) (e : Split) : Fin 4 → Scaled :=
 private theorem r78farP_rep (r : FarCase) (e : Split) (i : Fin 4) :
     (r78farP r e i).Rep (farP r e i) := by
   fin_cases i
-  · exact r78_rep_ite ((r78farPH_rep _).addN
+  · exact Scaled.Rep.ite ((r78farPH_rep _).addN
         (((Scaled.rep_const _).mul (r78farK_rep _)).mul (r78dfar_rep r r78S9_rep)))
-      ((r78farPH_rep _).subN (r78_rep_ite
+      ((r78farPH_rep _).subN (Scaled.Rep.ite
         (((Scaled.rep_const _).mul (r78farK_rep _)).mul (r78dfar_rep r r78S11_rep)) r78Z_rep))
-  · exact (r78farPG_rep _).subN (r78_rep_ite
+  · exact (r78farPG_rep _).subN (Scaled.Rep.ite
       ((((Scaled.rep_const _).mul (r78farK_rep _)).mul (r78farL_rep _)).mul
         (r78dfar_rep r r78S11_rep)) r78Z_rep)
-  · exact r78_rep_ite ((r78farPB_rep _ _).addN
+  · exact Scaled.Rep.ite ((r78farPB_rep _ _).addN
         ((((Scaled.rep_const _).mul (r78farL_rep _)).mul (r78farMHi_rep _ _)).kmul
           (r78dfar_rep r r78S9_rep)))
-      ((r78farPB_rep _ _).subN (r78_rep_ite
+      ((r78farPB_rep _ _).subN (Scaled.Rep.ite
         ((((Scaled.rep_const _).mul (r78farL_rep _)).mul (r78farMLo_rep _ _)).kmul
           (r78dfar_rep r r78S11_rep)) r78Z_rep))
   · exact r78farPD_rep _
@@ -1293,21 +603,21 @@ private def r78farMass (r : FarCase) (e : Split) : Fin 4 → Scaled :=
 private theorem r78farMass_rep (r : FarCase) (e : Split) (i : Fin 4) :
     (r78farMass r e i).Rep (farMass r e i) := by
   fin_cases i
-  · exact r78_rep_ite (((Scaled.rep_const _).mul (r78dfar_rep r r78C2_rep)).addN
+  · exact Scaled.Rep.ite (((Scaled.rep_const _).mul (r78dfar_rep r r78C2_rep)).addN
         ((Scaled.rep_const _).mul ((r78farK_rep _).addN (r78dfar_rep r r78S3_rep))))
-      (r78_rep_ite (((Scaled.rep_const _).mul (r78dfar_rep r r78C2_rep)).addN
+      (Scaled.Rep.ite (((Scaled.rep_const _).mul (r78dfar_rep r r78C2_rep)).addN
         ((Scaled.rep_const _).mul ((r78farK_rep _).subN (r78dfar_rep r r78S3_rep))))
-      (r78_rep_ite (((Scaled.rep_const _).mul (r78dfar_rep r r78C4_rep)).addN
+      (Scaled.Rep.ite (((Scaled.rep_const _).mul (r78dfar_rep r r78C4_rep)).addN
         ((Scaled.rep_const _).mul ((r78farK_rep _).subN (r78dfar_rep r r78S5_rep))))
         (r78farRH_rep _)))
-  · exact r78_rep_ite ((((Scaled.rep_const _).mul (r78farL_rep _)).mul (r78dfar_rep r r78C2_rep)).addN
+  · exact Scaled.Rep.ite ((((Scaled.rep_const _).mul (r78farL_rep _)).mul (r78dfar_rep r r78C2_rep)).addN
         ((Scaled.rep_const _).mul ((r78farK_rep _).subN ((r78farL_rep _).mul (r78dfar_rep r r78S3_rep)))))
-      (r78_rep_ite ((((Scaled.rep_const _).mul (r78farL_rep _)).mul (r78dfar_rep r r78C4_rep)).addN
+      (Scaled.Rep.ite ((((Scaled.rep_const _).mul (r78farL_rep _)).mul (r78dfar_rep r r78C4_rep)).addN
         ((Scaled.rep_const _).mul ((r78farK_rep _).subN ((r78farL_rep _).mul (r78dfar_rep r r78S5_rep)))))
         (r78farRG_rep _))
-  · exact r78_rep_ite ((((Scaled.rep_const _).mul (r78farL_rep _)).mul (r78dfar_rep r r78C2_rep)).addN
+  · exact Scaled.Rep.ite ((((Scaled.rep_const _).mul (r78farL_rep _)).mul (r78dfar_rep r r78C2_rep)).addN
         ((Scaled.rep_const _).mul ((r78farMu_rep _ _).addN ((r78farL_rep _).mul (r78dfar_rep r r78S3_rep)))))
-      (r78_rep_ite ((((Scaled.rep_const _).mul (r78farL_rep _)).mul (r78dfar_rep r r78C4_rep)).addN
+      (Scaled.Rep.ite ((((Scaled.rep_const _).mul (r78farL_rep _)).mul (r78dfar_rep r r78C4_rep)).addN
         ((Scaled.rep_const _).mul ((r78farMu_rep _ _).subN ((r78farL_rep _).mul (r78dfar_rep r r78S5_rep)))))
         (r78farRB_rep _ _))
   · exact r78farRD_rep _
@@ -1325,19 +635,19 @@ private def r78farNonrad (r : FarCase) (e : Split) : Scaled :=
        ((r78dfar r r78C10).subN r78one))
 private theorem r78farNonrad_rep (r : FarCase) (e : Split) :
     (r78farNonrad r e).Rep (farNonradical r e) :=
-  r78_rep_ite ((r78farB_rep _ e).addN r78GPoly_rep)
+  Scaled.Rep.ite ((r78farB_rep _ e).addN r78GPoly_rep)
     (((r78farB_rep _ e).addN (r78GStarS_rep r)).addN
-      (r78_rep_ite (((r78farK_rep _).mul
+      (Scaled.Rep.ite (((r78farK_rep _).mul
           (((r78dfar_rep r r78C10_rep).addN (r78dfar_rep r r78S11_rep)).subN r78one_rep)).subN
           ((Scaled.rep_const _).mul (r78farDelta_rep r)))
-        (r78_rep_ite (((r78farL_rep _).mul
+        (Scaled.Rep.ite (((r78farL_rep _).mul
           (((r78dfar_rep r r78C10_rep).addN (r78dfar_rep r r78S11_rep)).subN r78one_rep)).subN
           ((Scaled.rep_const _).mul (r78farDelta_rep r)))
-          ((r78_rep_ite (r78farL_rep _) (r78_rep_ite r78farQStar_rep r78one_rep)).mul
+          ((Scaled.Rep.ite (r78farL_rep _) (Scaled.Rep.ite r78farQStar_rep r78one_rep)).mul
             ((r78dfar_rep r r78C10_rep).subN r78one_rep)))))
 
 private def r78farNum (r : FarCase) (e : Split) : Scaled :=
-  r78num4 (r78farNonrad r e) (r78farP r e 0) (r78farP r e 1) (r78farP r e 2) (r78farP r e 3)
+  Scaled.num4 Rbar (r78farNonrad r e) (r78farP r e 0) (r78farP r e 1) (r78farP r e 2) (r78farP r e 3)
     (r78farMass r e 0) (r78farMass r e 1) (r78farMass r e 2) (r78farMass r e 3)
 private theorem r78farNum_rep (r : FarCase) (e : Split) :
     (r78farNum r e).Rep (farNumerator r e) :=
@@ -1397,6 +707,14 @@ private theorem r78_series_quad (c : ℕ → ℚ) (n : ℕ) :
   simp only [hrest,Polynomial.Chebyshev.T_one,show (1:ℕ)+1=2 from rfl,show (1:ℤ)+1=2 by norm_num,
     Polynomial.Chebyshev.T_two,map_sub,map_mul,map_ofNat]
   ring
+
+/-- The Chebyshev quadratic part of an expansion, with its coefficients named `c`. -/
+private theorem r78_quad_id {p : ℚ[X]} {D : ℕ} {c : ℕ → ℚ} (hc : coefficient D p=c) (hD : 2≤D)
+    (hp : p=expansion D p) : p=C (c 0-c 2)+C (c 1)*X+C (2*c 2)*X^2+tail c 3 (D-2) := by
+  obtain ⟨n,rfl⟩ : ∃ n,D=n+2 := ⟨D-2,by omega⟩
+  rw [show n+2-2=n by omega,← hc]
+  conv_lhs => rw [hp]
+  exact r78_series_quad _ n
 
 private theorem r78_I0 : (0+v:ℚ)/2=((1:ℕ):ℚ)*((1:ℤ):ℚ)/((20:ℕ):ℚ) ∧
     (v-0:ℚ)/2=((1:ℕ):ℚ)*((1:ℤ):ℚ)/((20:ℕ):ℚ) := by
@@ -2644,16 +1962,12 @@ theorem small_quadratic_certificate (r : SmallCase) (e : Split) (hr : smallQuadr
   · obtain ⟨hs,hl,h2,hq⟩ := r78kSQ_lowZero
     have hc := (r78smallNum_rep .lowZero .atT).kcentered 1 20 (1) (1)
       (a:=smallLeft .lowZero) (b:=smallRight .lowZero) (by decide) r78_I0.1 r78_I0.2
-    have hexp := hc.eq_expansion hs hl
-    have hcoef : smallCoefficients .lowZero .atT=fun j => ((WholeIntervalPolynomial.Certificate.chebList ((r78smallNum .lowZero .atT).kcenter 1 20 (1) (1)).l).getD j 0:ℚ)/
-        (((r78smallNum .lowZero .atT).kcenter 1 20 (1) (1)).s*2^((r78smallNum .lowZero .atT).kcenter 1 20 (1) (1)).l.length/2) :=
-      WholeIntervalPolynomial.Certificate.coefficient_centered_eq hc hs hl
-    refine ⟨?_,?_⟩
-    · rw [hexp]
-      change series 32 (smallCoefficients .lowZero .atT)=_
-      exact r78_series_quad (smallCoefficients .lowZero .atT) 30
-    · rw [hcoef]
-      rw [show smallDegree .lowZero .atT-2=30 from rfl]
+    have hcoef := WholeIntervalPolynomial.Certificate.coefficient_centered_eq hc hs hl
+    refine ⟨r78_quad_id (smallCoefficients.eq_1 _ _).symm (by decide) ?_,?_⟩
+    · rw [show smallDegree .lowZero .atT=32 from rfl]
+      exact hc.eq_expansion hs hl
+    · rw [smallCoefficients,show smallDegree .lowZero .atT=32 from rfl,hcoef,
+        show (32:ℕ)-2=30 from rfl]
       have hK : (((r78smallNum .lowZero .atT).kcenter 1 20 (1) (1)).s:ℚ)*2^((r78smallNum .lowZero .atT).kcenter 1 20 (1) (1)).l.length/2=((((r78smallNum .lowZero .atT).kcenter 1 20 (1) (1)).s*2^((r78smallNum .lowZero .atT).kcenter 1 20 (1) (1)).l.length:ℕ):ℚ)/2 := by
         push_cast; ring
       exact r78_quad_core (B:=fun j => (WholeIntervalPolynomial.Certificate.chebList ((r78smallNum .lowZero .atT).kcenter 1 20 (1) (1)).l).getD j 0)
@@ -2664,16 +1978,12 @@ theorem small_quadratic_certificate (r : SmallCase) (e : Split) (hr : smallQuadr
   · obtain ⟨hs,hl,h2,hq⟩ := r78kSQ_lowH
     have hc := (r78smallNum_rep .lowH .atT).kcentered 1 30 (4) (1)
       (a:=smallLeft .lowH) (b:=smallRight .lowH) (by decide) r78_I1.1 r78_I1.2
-    have hexp := hc.eq_expansion hs hl
-    have hcoef : smallCoefficients .lowH .atT=fun j => ((WholeIntervalPolynomial.Certificate.chebList ((r78smallNum .lowH .atT).kcenter 1 30 (4) (1)).l).getD j 0:ℚ)/
-        (((r78smallNum .lowH .atT).kcenter 1 30 (4) (1)).s*2^((r78smallNum .lowH .atT).kcenter 1 30 (4) (1)).l.length/2) :=
-      WholeIntervalPolynomial.Certificate.coefficient_centered_eq hc hs hl
-    refine ⟨?_,?_⟩
-    · rw [hexp]
-      change series 33 (smallCoefficients .lowH .atT)=_
-      exact r78_series_quad (smallCoefficients .lowH .atT) 31
-    · rw [hcoef]
-      rw [show smallDegree .lowH .atT-2=31 from rfl]
+    have hcoef := WholeIntervalPolynomial.Certificate.coefficient_centered_eq hc hs hl
+    refine ⟨r78_quad_id (smallCoefficients.eq_1 _ _).symm (by decide) ?_,?_⟩
+    · rw [show smallDegree .lowH .atT=33 from rfl]
+      exact hc.eq_expansion hs hl
+    · rw [smallCoefficients,show smallDegree .lowH .atT=33 from rfl,hcoef,
+        show (33:ℕ)-2=31 from rfl]
       have hK : (((r78smallNum .lowH .atT).kcenter 1 30 (4) (1)).s:ℚ)*2^((r78smallNum .lowH .atT).kcenter 1 30 (4) (1)).l.length/2=((((r78smallNum .lowH .atT).kcenter 1 30 (4) (1)).s*2^((r78smallNum .lowH .atT).kcenter 1 30 (4) (1)).l.length:ℕ):ℚ)/2 := by
         push_cast; ring
       exact r78_quad_core (B:=fun j => (WholeIntervalPolynomial.Certificate.chebList ((r78smallNum .lowH .atT).kcenter 1 30 (4) (1)).l).getD j 0)

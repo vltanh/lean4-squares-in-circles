@@ -3,7 +3,7 @@ module
 public import SquaresInCircles.Eight.Owners.E.ZeroCapEndpoints
 public import SquaresInCircles.Eight.Owners.E.ZeroGeometry
 public import SquaresInCircles.Eight.Owners.Negative.OuterEZero
-public import SquaresInCircles.Eight.Owners.Nonpositive.ChainBounds
+public import SquaresInCircles.Eight.Owners.Nonpositive.OuterReduction
 
 /-!
 # Eight squares: E-zero exclusion with both original negative outer composites

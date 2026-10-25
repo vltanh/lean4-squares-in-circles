@@ -3,8 +3,10 @@ module
 public import Mathlib.RingTheory.Etale.Weakly
 public import Mathlib.RingTheory.Flat.TorsionFree
 public import Mathlib.RingTheory.TotallySplit
+public import SquaresInCircles.Eight.Frames.Pair.TransportAssembly
+public import SquaresInCircles.Eight.Owners.E.ZeroCapEndpoints
 public import SquaresInCircles.Eight.Owners.Endpoint.BudgetScalars
-public import SquaresInCircles.Eight.Owners.Positive.TDSpanPolynomials
+public import SquaresInCircles.Eight.Owners.ScalarRadicalTransfer
 public import SquaresInCircles.Eight.Owners.TD0Span
 
 /-!
@@ -17,6 +19,523 @@ One follows from the fixed-weight span reserve; the other three use their
 explicit whole-interval polynomials, with every Taylor direction proved.
 -/
 
+section
+/-!
+## Actual same-radius E candidates for two nonnegative primaries
+
+The larger of the original H/D primary coordinates
+is chosen only for the scalar contact construction. Reversing that
+choice reflects the local E tangent and then restores the original
+DE/EH edges. The output includes both quarter-gap guards and an explicit
+diagonal alternative; the global tie theorem is not assumed here.
+-/
+
+@[expose] public section
+noncomputable section
+open Set
+namespace SquaresInCircles.Eight.PositiveEPair
+open EPairOrderedEndpoint
+
+structure Endpoint (q : ℝ) (D H : SignedPoint) (t : ℝ) where
+  point : SignedPoint
+  deError : ℝ
+  de_mem : deError∈Icc 0 t
+  sorted : point.Sorted
+  outer : point.Outer q
+  core : point.AvoidsCore
+  DE : quarterFeasible D point deError 3
+  EH : quarterFeasible point H (t-deError) 1
+  de_guard : 0<deError ∨ point.y<point.a
+  eh_guard : 0<t-deError ∨ -point.a<point.y
+  terminal : deError=0 ∨ deError=t ∨ |point.y|=point.a
+
+theorem candidate {q u v : ℝ} {D E H : SignedPoint}
+    (hQL : qLow≤q) (hQU : q≤qCap)
+    (hDs : D.Sorted) (hDo : D.Outer q) (hHs : H.Sorted) (hHo : H.Outer q)
+    (hEs : E.Sorted) (hEc : E.Contained q)
+    (hu : 0≤u) (hv : 0≤v) (ht0 : 0<u+v) (ht : u+v≤7/10)
+    (hDE : quarterFeasible D E u 3) (hEH : quarterFeasible E H v 1) :
+    Nonempty (Endpoint q D H (u+v)) := by
+  have hDb := SignedPoint.outer_bounds hDs hDo
+  have hHb := SignedPoint.outer_bounds hHs hHo
+  by_cases horder : H.a≤D.a
+  · obtain ⟨F⟩ := ordered_endpoint hQL hQU ⟨hDb.1,hDb.2.2⟩ horder
+      hu hv ht0 ht hEs hEc
+      (by simpa [quarterFeasible,quarterProjection] using hDE)
+      (by simpa [quarterFeasible,quarterProjection,add_comm,add_left_comm,add_assoc] using hEH)
+    refine ⟨{
+      point := F.point
+      deError := F.firstError
+      de_mem := F.first_mem
+      sorted := F.sorted
+      outer := F.outer
+      core := F.avoids_core
+      DE := by simpa [quarterFeasible,quarterProjection] using F.first_feasible
+      EH := by simpa [quarterFeasible,quarterProjection,add_comm,add_left_comm,add_assoc] using F.second_feasible
+      de_guard := ?_
+      eh_guard := Or.inr F.lower_strict
+      terminal := ?_ }⟩
+    · by_cases hz : F.firstError=0
+      · exact Or.inr (F.aligned_upper_strict hz)
+      · exact Or.inl (lt_of_le_of_ne F.first_mem.1 (Ne.symm hz))
+    · rcases F.endpoint with hh | hh | hh
+      · exact Or.inl hh
+      · exact Or.inr (Or.inl hh)
+      · exact Or.inr (Or.inr (by rw [hh,abs_of_pos F.sorted.1]))
+  · have horder' : D.a≤H.a := (lt_of_not_ge horder).le
+    obtain ⟨F⟩ := ordered_endpoint (p := E.reflect) (u := v) (v := u)
+      hQL hQU ⟨hHb.1,hHb.2.2⟩ horder' hv hu (by simpa [add_comm] using ht0)
+      (by simpa [add_comm] using ht)
+      ((SignedPoint.reflect_sorted E).mpr hEs) ((SignedPoint.reflect_contained E q).mpr hEc)
+      (by simpa [quarterFeasible,quarterProjection,SignedPoint.reflect,
+        add_comm,add_left_comm,add_assoc] using hEH)
+      (by simpa [quarterFeasible,quarterProjection,SignedPoint.reflect,
+        add_comm,add_left_comm,add_assoc,sub_eq_add_neg] using hDE)
+    let d := u+v-F.firstError
+    have hr : u+v-d=F.firstError := by dsimp [d]; ring
+    have hother : v+u-F.firstError=d := by dsimp [d]; ring
+    refine ⟨{
+      point := F.point.reflect
+      deError := d
+      de_mem := ⟨by dsimp [d]; linarith [F.first_mem.2],by dsimp [d]; linarith [F.first_mem.1]⟩
+      sorted := (SignedPoint.reflect_sorted F.point).mpr F.sorted
+      outer := (SignedPoint.reflect_outer F.point q).mpr F.outer
+      core := (SignedPoint.reflect_avoidsCore F.point).mpr F.avoids_core
+      DE := ?_
+      EH := ?_
+      de_guard := Or.inr (by dsimp [SignedPoint.reflect]; linarith [F.lower_strict])
+      eh_guard := ?_
+      terminal := ?_ }⟩
+    · have hh := F.second_feasible
+      rw [hother] at hh
+      simpa [quarterFeasible,quarterProjection,SignedPoint.reflect,
+        add_comm,add_left_comm,add_assoc,sub_eq_add_neg] using hh
+    · rw [hr]
+      simpa [quarterFeasible,quarterProjection,SignedPoint.reflect,
+        add_comm,add_left_comm,add_assoc,sub_eq_add_neg] using F.first_feasible
+    · by_cases hz : F.firstError=0
+      · right
+        have hh := F.aligned_upper_strict hz
+        dsimp [SignedPoint.reflect]
+        linarith
+      · left
+        rw [hr]
+        exact lt_of_le_of_ne F.first_mem.1 (Ne.symm hz)
+    · rcases F.endpoint with hh | hh | hh
+      · right; left
+        dsimp [d]
+        linarith
+      · left
+        dsimp [d]
+        linarith
+      · right; right
+        simp [SignedPoint.reflect,hh,abs_of_pos F.sorted.1]
+
+theorem DE_aligned {q t : ℝ} {D H : SignedPoint} (F : Endpoint q D H t)
+    (hd : F.deError=0) : quarterFeasible D F.point 0 2 := by
+  have hh := F.DE
+  simpa [hd,quarterFeasible,quarterProjection] using hh
+
+theorem EH_aligned {q t : ℝ} {D H : SignedPoint} (F : Endpoint q D H t)
+    (he : F.deError=t) : quarterFeasible F.point H 0 0 := by
+  have hh := F.EH
+  simp only [he,sub_self,quarterFeasible,quarterProjection] at hh ⊢
+  norm_num at hh ⊢
+  linarith
+
+end SquaresInCircles.Eight.PositiveEPair
+end
+end
+end
+
+section
+/-!
+## Inserting a positive E-pair endpoint into the seven-cycle
+
+Only E is replaced, at the same radius (`Endpoint.cycle`): the other six coordinates and frames and
+the owners of the five edges away from E stay. Both signed variations are unchanged, since the two
+original and the two new errors at E are nonnegative with the same sum (`positive_variation_eq`,
+`negative_variation_eq`). The winding follows from the geometry of the normal owners, and the
+output is a boundary input with no sign condition on E (`Endpoint.boundaryInput`). A positive
+DE3/EH1 pair has such an endpoint (`original_candidate`).
+-/
+
+@[expose] public section
+noncomputable section
+open Set
+open scoped BigOperators
+namespace SquaresInCircles.Eight.PositiveEPair
+open Candidate
+
+namespace Endpoint
+variable {q : ℝ} {C : SignedCycle}
+
+def cycle (F : Endpoint q (C.point D) (C.point H) (C.theta H-C.theta D)) : SignedCycle :=
+  replacePoint C E F.point (C.theta D+F.deError)
+
+def deOwner (F : Endpoint q (C.point D) (C.point H) (C.theta H-C.theta D)) : Fin 4 :=
+  if F.deError=0 then 2 else 3
+
+def ehOwner (F : Endpoint q (C.point D) (C.point H) (C.theta H-C.theta D)) : Fin 4 :=
+  if F.deError=C.theta H-C.theta D then 0 else 1
+
+theorem unchanged (F : Endpoint q (C.point D) (C.point H) (C.theta H-C.theta D))
+    (i : Vertex) (hi : i≠E) : F.cycle.point i=C.point i ∧ F.cycle.theta i=C.theta i := by
+  simp [cycle,replacePoint,hi]
+
+theorem delta_DE (F : Endpoint q (C.point D) (C.point H) (C.theta H-C.theta D)) :
+    delta F.cycle.theta D=F.deError := by simp [cycle,replacePoint,delta,next,D,E]
+
+theorem delta_EH (F : Endpoint q (C.point D) (C.point H) (C.theta H-C.theta D)) :
+    delta F.cycle.theta E=C.theta H-C.theta D-F.deError := by
+  simp [cycle,replacePoint,delta,next,H,D,E]
+  ring
+
+theorem other_delta (F : Endpoint q (C.point D) (C.point H) (C.theta H-C.theta D))
+    (i : Vertex) (hiD : i≠D) (hiE : i≠E) : delta F.cycle.theta i=delta C.theta i := by
+  have hn : next i≠E := by revert hiD; fin_cases i <;> decide
+  simp [delta,(F.unchanged i hiE).2,(F.unchanged (next i) hn).2]
+
+
+theorem other_feasible (F : Endpoint q (C.point D) (C.point H) (C.theta H-C.theta D))
+    (i : Vertex) (hiD : i≠D) (hiE : i≠E) (j : Fin 4) :
+    F.cycle.Feasible i j ↔ C.Feasible i j := by
+  have hn : next i≠E := by revert hiD; fin_cases i <;> decide
+  exact SignedCycle.replacePoint_other_feasible hiE hn
+
+
+private theorem r47_feasD (F : Endpoint q (C.point D) (C.point H) (C.theta H-C.theta D))
+    (j : Fin 4) : F.cycle.Feasible D j ↔
+      quarterFeasible (C.point D) F.point (delta F.cycle.theta D) j := by
+  have hw : word D≠0 := by decide
+  have hn : next D=E := rfl
+  have hDE : D≠E := by decide
+  have hE : F.cycle.point E=F.point := by simp [cycle,replacePoint]
+  simp only [SignedCycle.Feasible,SignedCycle.slack,SignedCycle.edge,hw,↓reduceIte,hn,
+    quarterFeasible,sub_nonneg,hE,(F.unchanged D hDE).1]
+
+private theorem r47_feasE (F : Endpoint q (C.point D) (C.point H) (C.theta H-C.theta D))
+    (j : Fin 4) : F.cycle.Feasible E j ↔
+      quarterFeasible F.point (C.point H) (delta F.cycle.theta E) j := by
+  have hw : word E≠0 := by decide
+  have hn : next E=H := rfl
+  have hHE : H≠E := by decide
+  have hE : F.cycle.point E=F.point := by simp [cycle,replacePoint]
+  simp only [SignedCycle.Feasible,SignedCycle.slack,SignedCycle.edge,hw,↓reduceIte,hn,
+    quarterFeasible,sub_nonneg,hE,(F.unchanged H hHE).1]
+
+theorem DE_primary (F : Endpoint q (C.point D) (C.point H) (C.theta H-C.theta D)) :
+    F.cycle.Feasible D 3 := by
+  simpa [cycle,replacePoint,SignedCycle.Feasible,SignedCycle.slack,SignedCycle.edge,
+    word,delta,next,D,E,quarterFeasible,sub_nonneg] using F.DE
+
+theorem EH_primary (F : Endpoint q (C.point D) (C.point H) (C.theta H-C.theta D)) :
+    F.cycle.Feasible E 1 := by
+  refine (r47_feasE F 1).2 ?_
+  rw [F.delta_EH]
+  exact F.EH
+
+
+theorem DE_actual (F : Endpoint q (C.point D) (C.point H) (C.theta H-C.theta D)) :
+    F.cycle.Feasible D F.deOwner := by
+  by_cases hz : F.deError=0
+  · have hh := DE_aligned F hz
+    have ho : F.deOwner=2 := by simp [deOwner,hz]
+    rw [ho]
+    refine (r47_feasD F 2).2 ?_
+    rw [F.delta_DE,hz]
+    exact hh
+  · simpa [deOwner,hz] using F.DE_primary
+
+
+theorem EH_actual (F : Endpoint q (C.point D) (C.point H) (C.theta H-C.theta D)) :
+    F.cycle.Feasible E F.ehOwner := by
+  by_cases hz : F.deError=C.theta H-C.theta D
+  · have hh := EH_aligned F hz
+    have ho : F.ehOwner=0 := by simp [ehOwner,hz]
+    rw [ho]
+    refine (r47_feasE F 0).2 ?_
+    rw [F.delta_EH,hz,sub_self]
+    exact hh
+  · simpa [ehOwner,hz] using F.EH_primary
+
+
+theorem frame_range (F : Endpoint q (C.point D) (C.point H) (C.theta H-C.theta D)) :
+    C.theta D+F.deError∈Icc (min (C.theta D) (C.theta H)) (max (C.theta D) (C.theta H)) := by
+  have hDH : C.theta D≤C.theta H := by linarith [F.de_mem.1,F.de_mem.2]
+  rw [min_eq_left hDH,max_eq_right hDH]
+  constructor <;> linarith [F.de_mem.1,F.de_mem.2]
+
+theorem necessary (F : Endpoint q (C.point D) (C.point H) (C.theta H-C.theta D))
+    (hn : C.Necessary q) : F.cycle.Necessary q :=
+  SignedCycle.necessary_replace_clamped (v := E) (a := D) (b := H)
+    hn F.sorted F.outer.le F.core (Or.inr F.frame_range)
+
+theorem normal (F : Endpoint q (C.point D) (C.point H) (C.theta H-C.theta D))
+    (hn : C.NormalAnchors) : F.cycle.NormalAnchors := by
+  constructor
+  · rw [(F.unchanged H (by decide)).1]; exact hn.H_nonneg
+  · rw [(F.unchanged A (by decide)).1]; exact hn.A_nonneg
+  · rw [(F.unchanged B (by decide)).1]; exact hn.B_nonpos
+  · rw [(F.unchanged D (by decide)).1]; exact hn.D_nonpos
+
+def witnesses (F : Endpoint q (C.point D) (C.point H) (C.theta H-C.theta D))
+    (w : C.Witnesses) : F.cycle.Witnesses where
+  owner := Function.update (Function.update w.owner D F.deOwner) E F.ehOwner
+  feasible i := by
+    by_cases hiE : i=E
+    · subst i; simpa using F.EH_actual
+    · by_cases hiD : i=D
+      · subst i; simpa [D,E] using F.DE_actual
+      · simpa [Function.update_of_ne hiE,Function.update_of_ne hiD] using
+          (F.other_feasible i hiD hiE (w.owner i)).2 (w.feasible i)
+  allowed i := by
+    by_cases hiE : i=E
+    · subst i
+      simp [SignedCycle.normalOwners,E,ehOwner]
+      exact em _
+    · by_cases hiD : i=D
+      · subst i
+        simp [SignedCycle.normalOwners,D,E,deOwner]
+        exact em _
+      · simpa [Function.update_of_ne hiE,Function.update_of_ne hiD] using w.allowed i
+
+theorem other_owner (F : Endpoint q (C.point D) (C.point H) (C.theta H-C.theta D))
+    (w : C.Witnesses) (i : Vertex) (hiD : i≠D) (hiE : i≠E) :
+    (F.witnesses w).owner i=w.owner i := by simp [witnesses,hiD,hiE]
+
+theorem zero_signs (F : Endpoint q (C.point D) (C.point H) (C.theta H-C.theta D))
+    (w : C.Witnesses) (hz : C.ZeroSignImplications w) :
+    F.cycle.ZeroSignImplications (F.witnesses w) := by
+  constructor
+  · intro hj
+    rw [(F.unchanged G (by decide)).1]
+    apply hz.HG_canceling
+    simpa [witnesses,H,D,E] using hj
+  · intro hj
+    rw [(F.unchanged T (by decide)).1]
+    apply hz.TD_canceling
+    simpa [witnesses,T,D,E] using hj
+
+theorem positive_variation_eq (F : Endpoint q (C.point D) (C.point H) (C.theta H-C.theta D))
+    (hDE : 0≤delta C.theta D) (hEH : 0≤delta C.theta E) :
+    positiveVariation F.cycle.theta=positiveVariation C.theta := by
+  have hd : 0≤C.theta 6-C.theta 5 := hDE
+  have he : 0≤C.theta 0-C.theta 6 := hEH
+  have hm := F.de_mem
+  have h5 : C.theta 5=C.theta D := rfl
+  have h0 : C.theta 0=C.theta H := rfl
+  have e1 : positivePart (C.theta D+F.deError-C.theta 5)=C.theta D+F.deError-C.theta 5 :=
+    max_eq_left (by linarith [hm.1])
+  have e2 : positivePart (C.theta 0-(C.theta D+F.deError))=C.theta 0-(C.theta D+F.deError) :=
+    max_eq_left (by linarith [hm.2])
+  have e3 : positivePart (C.theta 6-C.theta 5)=C.theta 6-C.theta 5 := max_eq_left hd
+  have e4 : positivePart (C.theta 0-C.theta 6)=C.theta 0-C.theta 6 := max_eq_left he
+  simp [positiveVariation,Fin.sum_univ_succ,delta,next,cycle,replacePoint,
+    E,Function.update_apply]
+  linarith
+
+
+theorem negative_variation_eq (F : Endpoint q (C.point D) (C.point H) (C.theta H-C.theta D))
+    (hDE : 0≤delta C.theta D) (hEH : 0≤delta C.theta E) :
+    negativeVariation F.cycle.theta=negativeVariation C.theta := by
+  rw [← variations_equal F.cycle.theta,← variations_equal C.theta]
+  exact F.positive_variation_eq hDE hEH
+
+def boundaryInput (I : SignedCycle.BoundaryInput q) (hq : q≤qCap)
+    (F : Endpoint q (I.cycle.point D) (I.cycle.point H) (I.cycle.theta H-I.cycle.theta D))
+    (hDE : 0≤delta I.cycle.theta D) (hEH : 0≤delta I.cycle.theta E) :
+    SignedCycle.BoundaryInput q where
+  cycle := F.cycle
+  necessary := F.necessary I.necessary
+  ordered := SignedCycle.normal_necessary_ordered (F.necessary I.necessary) hq
+    (F.normal I.anchors_normal) (F.witnesses I.witnesses) (F.zero_signs I.witnesses I.zero_signs)
+  strict_spread := SignedCycle.strictSpread_replace_clamped (v := E) (a := D) (b := H)
+    (p := F.point) I.strict_spread (Or.inr F.frame_range)
+  positive_variation := by rw [F.positive_variation_eq hDE hEH]; exact I.positive_variation
+  negative_variation := by rw [F.negative_variation_eq hDE hEH]; exact I.negative_variation
+  radial := by
+    intro i
+    by_cases hi : i=E
+    · subst i; exact Or.inl F.outer
+    · rw [(F.unchanged i hi).1]; exact I.radial i
+  anchors_outer := by
+    intro i hi
+    have hiE : i≠E := by rintro rfl; exact absurd hi (by decide)
+    rw [(F.unchanged i hiE).1]
+    exact I.anchors_outer i hi
+  anchors_normal := F.normal I.anchors_normal
+  witnesses := F.witnesses I.witnesses
+  zero_signs := F.zero_signs I.witnesses I.zero_signs
+
+end Endpoint
+
+theorem original_candidate {q : ℝ} (I : SignedCycle.BoundaryInput q)
+    (hQL : qLow≤q) (hQU : q≤qCap)
+    (hDE : I.cycle.Feasible D 3) (hEH : I.cycle.Feasible E 1)
+    (hd : 0≤delta I.cycle.theta D) (he : 0≤delta I.cycle.theta E)
+    (ht0 : 0<I.cycle.theta H-I.cycle.theta D) :
+    Nonempty (Endpoint q (I.cycle.point D) (I.cycle.point H)
+      (I.cycle.theta H-I.cycle.theta D)) := by
+  have hsum : delta I.cycle.theta D+delta I.cycle.theta E=I.cycle.theta H-I.cycle.theta D := by
+    simp [delta,next,D,E,H]
+  have ht : I.cycle.theta H-I.cycle.theta D≤7/10 :=
+    (le_abs_self _).trans (I.necessary.spread H D)
+  have hDE' : quarterFeasible (I.cycle.point D) (I.cycle.point E) (delta I.cycle.theta D) 3 := by
+    simpa [SignedCycle.Feasible,SignedCycle.slack,SignedCycle.edge,word,D,E,next,
+      quarterFeasible,sub_nonneg] using hDE
+  have hEH' : quarterFeasible (I.cycle.point E) (I.cycle.point H) (delta I.cycle.theta E) 1 := by
+    simpa [SignedCycle.Feasible,SignedCycle.slack,SignedCycle.edge,word,E,H,next,
+      quarterFeasible,sub_nonneg] using hEH
+  have hh := candidate hQL hQU (I.necessary.sorted D) (I.anchors_outer D (by simp))
+    (I.necessary.sorted H) (I.anchors_outer H (by simp))
+    (I.necessary.sorted E) (I.necessary.contained E) hd he
+    (by rwa [hsum]) (by rwa [hsum]) hDE' hEH'
+  simpa only [hsum] using hh
+
+
+end SquaresInCircles.Eight.PositiveEPair
+end
+end
+end
+
+section
+/-!
+## Continuous boundary certificates for the positive-TD2 long-span exclusion
+
+The three intervals are the intrinsic edges of the feasible (t,v) polygon;
+they do not subdivide an angle search. Polynomial identities and coefficient
+reserves are specified for kernel reduction and have not been executed.
+-/
+
+@[expose] public section
+noncomputable section
+namespace SquaresInCircles.Eight.PositiveTDSpanPolynomials
+open Polynomial WholeIntervalPolynomial WholeIntervalPolynomial.Certificate
+
+inductive Edge where | zero | short | spread
+
+def lo : Edge → ℚ | .zero => 11/50 | .short => 13/100 | .spread => 61/100
+def hi : Edge → ℚ | .zero => 7/10 | .short => 61/100 | .spread => 7/10
+def degree : Edge → ℕ | .zero => 10 | .short => 10 | .spread => 11
+def reserve : Edge → ℚ | .zero => 11/500 | .short => 4/125 | .spread => 33/500
+def center : Edge → ℚ | .zero => 23/50 | .short => 37/100 | .spread => 131/200
+
+def Rbar : ℚ := 494697/250000
+def cbar : ℚ := 179843/200000
+def kbar : ℚ := 114322/125000
+def lambda : ℚ[X] := C (59/100)+C (47/100)*X
+def t : Edge → ℚ[X] | .zero => 0 | .short => C (9/100) | .spread => C (7/10)-X
+def w : Edge → ℚ[X] | .zero => X-C (11/50) | .short => X-C (13/100) | .spread => C (12/25)
+def S5 (x : ℚ[X]) : ℚ[X] := x-C (1/6)*x^3+C (1/120)*x^5
+def S7 (x : ℚ[X]) : ℚ[X] := S5 x-C (1/5040)*x^7
+def C6 (x : ℚ[X]) : ℚ[X] := 1-C (1/2)*x^2+C (1/24)*x^4-C (1/720)*x^6
+def delta (i : Edge) : ℚ[X] := X-C (center i)
+def mass0 (i : Edge) : ℚ[X] :=
+  match i with
+  | .zero => C (1284507/1000000)+C (73747/250000)*delta i+C (26057/500000)*(delta i)^2
+  | .short => C (1258389/1000000)+C (8916/31250)*delta i+C (55427/1000000)*(delta i)^2
+  | .spread => C (53757/40000)+C (156999/500000)*delta i+C (45503/1000000)*(delta i)^2
+def mass1 (i : Edge) : ℚ[X] :=
+  match i with
+  | .zero => C (966507/1000000)-C (571273/1000000)*delta i-C (61027/200000)*(delta i)^2
+  | .short => C (203083/200000)-C (51519/100000)*delta i-C (158721/500000)*(delta i)^2
+  | .spread => C (843959/1000000)-C (170729/250000)*delta i-C (263049/1000000)*(delta i)^2
+def demand (i : Edge) : ℚ[X] :=
+  C (2-cbar)+2*lambda+C (3/2-cbar)*C6 (t i)+C (13/12)*S7 (t i)+C6 X-
+    C kbar*S5 (w i)+C (1/2)*C6 (w i)
+def radicand0 : ℚ[X] := 1+lambda^2
+def radicand1 : ℚ[X] := 1+lambda^2-2*lambda*S7 X
+def certificate (i : Edge) : ℚ[X] :=
+  2*mass0 i*mass1 i*demand i-C Rbar*
+    (mass1 i*(radicand0+(mass0 i)^2)+mass0 i*(radicand1+(mass1 i)^2))
+
+/-- On each edge `certificate i - reserve i` has positive Bernstein coefficients of its degree:
+it is a positive combination of the products `(v - lo)^k (hi - v)^(n-k)`, which `linarith`
+finds. -/
+local macro "edge_positive" a:term:max b:term:max : tactic => `(tactic| (
+  intro v hv
+  have h0 : 0≤v-$a := sub_nonneg.2 hv.1
+  have h1 : 0≤$b-v := sub_nonneg.2 hv.2
+  have hb (k l : ℕ) : 0≤(v-$a)^k*($b-v)^l := mul_nonneg (pow_nonneg h0 k) (pow_nonneg h1 l)
+  simp only [certificate,mass0,mass1,demand,radicand0,radicand1,lambda,t,w,S5,S7,C6,delta,center,
+    Rbar,cbar,kbar,map_add,map_sub,map_mul,map_pow,map_one,map_zero,map_ofNat,aeval_C,aeval_X,
+    eq_ratCast]
+  push_cast
+  linarith [hb 11 0,hb 10 1,hb 9 2,hb 8 3,hb 7 4,hb 6 5,hb 5 6,hb 4 7,hb 3 8,hb 2 9,hb 1 10,
+    hb 0 11,hb 10 0,hb 9 1,hb 8 2,hb 7 3,hb 6 4,hb 5 5,hb 4 6,hb 3 7,hb 2 8,hb 1 9,hb 0 10]))
+
+private theorem certificate_positive_zero :
+    ∀ {v : ℝ},v∈Set.Icc (11/50:ℝ) (7/10) → (11/500:ℝ)<aeval v (certificate .zero) := by
+  edge_positive (11/50) (7/10)
+private theorem certificate_positive_short :
+    ∀ {v : ℝ},v∈Set.Icc (13/100:ℝ) (61/100) → (4/125:ℝ)<aeval v (certificate .short) := by
+  edge_positive (13/100) (61/100)
+private theorem certificate_positive_spread :
+    ∀ {v : ℝ},v∈Set.Icc (61/100:ℝ) (7/10) → (33/500:ℝ)<aeval v (certificate .spread) := by
+  edge_positive (61/100) (7/10)
+
+theorem certificate_positive (i : Edge) {v : ℝ} (hv : v∈Set.Icc (lo i:ℝ) (hi i:ℝ)) :
+    (reserve i:ℝ)<aeval v (certificate i) := by
+  cases i <;> norm_num [lo,hi,reserve] at hv ⊢
+  · exact certificate_positive_zero hv
+  · exact certificate_positive_short hv
+  · exact certificate_positive_spread hv
+
+theorem masses_positive (i : Edge) {v : ℝ} (hv : v∈Set.Icc (lo i:ℝ) (hi i:ℝ)) :
+    0<aeval v (mass0 i) ∧ 0<aeval v (mass1 i) := by
+  have h1 : 0≤v-lo i := sub_nonneg.2 hv.1
+  have h2 : 0≤(hi i:ℝ)-v := sub_nonneg.2 hv.2
+  have h12 := mul_nonneg h1 h2
+  have h11 := mul_nonneg h1 h1
+  cases i <;>
+    simp only [lo,hi,mass0,mass1,delta,center,map_add,map_sub,map_mul,map_pow,aeval_C,aeval_X,
+      eq_ratCast] at h1 h2 h12 h11 ⊢ <;>
+    push_cast at h1 h2 h12 h11 ⊢ <;>
+    constructor <;> linarith
+
+theorem radical_transfer (i : Edge) {v D R p0 p1 : ℝ}
+    (hv : v∈Set.Icc (lo i:ℝ) (hi i:ℝ))
+    (hD : aeval v (demand i)≤D) (hR : 0≤R) (hRu : R≤(Rbar:ℝ))
+    (hp0 : 0≤p0) (hp1 : 0≤p1)
+    (hp0u : p0≤aeval v radicand0) (hp1u : p1≤aeval v radicand1) :
+    0<D-R*(Real.sqrt p0+Real.sqrt p1) := by
+  obtain ⟨hm0,hm1⟩ := masses_positive i hv
+  have hs0 := ScalarRadicalTransfer.sqrt_le_mass_majorant hp0 hm0
+  have hs1 := ScalarRadicalTransfer.sqrt_le_mass_majorant hp1 hm1
+  have hquot0 := div_le_div_of_nonneg_right
+    (add_le_add hp0u (le_refl ((aeval v (mass0 i))^2))) (by positivity : 0≤2*aeval v (mass0 i))
+  have hquot1 := div_le_div_of_nonneg_right
+    (add_le_add hp1u (le_refl ((aeval v (mass1 i))^2))) (by positivity : 0≤2*aeval v (mass1 i))
+  have hsum := add_le_add (hs0.trans hquot0) (hs1.trans hquot1)
+  have hmul := mul_le_mul hRu hsum (by positivity) (hR.trans hRu)
+  have hpoly := certificate_positive i hv
+  have hreserve : (0:ℝ)<(reserve i:ℝ) := by cases i <;> norm_num [reserve]
+  have hpolypos : 0<aeval v (certificate i) := hreserve.trans hpoly
+  have hid : aeval v (certificate i)/(2*aeval v (mass0 i)*aeval v (mass1 i))=
+      aeval v (demand i)-(Rbar:ℝ)*
+        ((aeval v radicand0+(aeval v (mass0 i))^2)/(2*aeval v (mass0 i))+
+         (aeval v radicand1+(aeval v (mass1 i))^2)/(2*aeval v (mass1 i))) := by
+    simp only [certificate,map_sub,map_add,map_mul,map_pow,map_ofNat,aeval_C,eq_ratCast]
+    field_simp [hm0.ne',hm1.ne']
+  have hpos := div_pos hpolypos (by positivity : 0<2*aeval v (mass0 i)*aeval v (mass1 i))
+  rw [hid] at hpos
+  linarith
+
+@[simp] theorem lambda_eval (v : ℝ) : aeval v lambda=59/100+(47/100)*v := by simp [lambda]
+@[simp] theorem S5_eval (p : ℚ[X]) (v : ℝ) :
+    aeval v (S5 p)=aeval v p-(aeval v p)^3/6+(aeval v p)^5/120 := by simp [S5]; ring
+@[simp] theorem S7_eval (p : ℚ[X]) (v : ℝ) :
+    aeval v (S7 p)=aeval v p-(aeval v p)^3/6+(aeval v p)^5/120-(aeval v p)^7/5040 := by simp [S7]; ring
+@[simp] theorem C6_eval (p : ℚ[X]) (v : ℝ) :
+    aeval v (C6 p)=1-(aeval v p)^2/2+(aeval v p)^4/24-(aeval v p)^6/720 := by simp [C6]; ring
+
+end SquaresInCircles.Eight.PositiveTDSpanPolynomials
+end
+end
+end
+
+section
 @[expose] public section
 noncomputable section
 open Set
@@ -379,14 +898,18 @@ theorem domain_positive {t v w : ℝ}
       have hb := polynomial_boundary PositiveTDSpanPolynomials.Edge.short
         (show v∈Icc (PositiveTDSpanPolynomials.lo .short:ℝ) (PositiveTDSpanPolynomials.hi .short:ℝ) by
           simpa [PositiveTDSpanPolynomials.lo,PositiveTDSpanPolynomials.hi] using And.intro hv.1 h)
-      convert hb using 1 <;> simp [PositiveTDSpanPolynomials.t,PositiveTDSpanPolynomials.w] <;> ring
+      convert hb using 1
+      simp [PositiveTDSpanPolynomials.t,PositiveTDSpanPolynomials.w]
+      ring
     · have hr : r=frameCap-v := min_eq_right (by dsimp [frameCap]; linarith)
       rw [hr]
       have hb := polynomial_boundary PositiveTDSpanPolynomials.Edge.spread
         (show v∈Icc (PositiveTDSpanPolynomials.lo .spread:ℝ) (PositiveTDSpanPolynomials.hi .spread:ℝ) by
           simpa [PositiveTDSpanPolynomials.lo,PositiveTDSpanPolynomials.hi,frameCap] using
             And.intro (by linarith : (61/100:ℝ)≤v) hv.2)
-      convert hb using 1 <;> simp [PositiveTDSpanPolynomials.t,PositiveTDSpanPolynomials.w,frameCap] <;> ring
+      convert hb using 1
+      simp [PositiveTDSpanPolynomials.t,PositiveTDSpanPolynomials.w,frameCap]
+      ring
   have hconc := fixed_v_concave hv
   have hmin := hconc.min_le_of_mem_Icc (left_mem_Icc.mpr hlr) (right_mem_Icc.mpr hlr) htr
   have hp : 0<F t v (t+v-11/50) := (lt_min hleft hright).trans_le hmin
@@ -398,3 +921,6 @@ theorem domain_positive {t v w : ℝ}
   linarith
 
 end SquaresInCircles.Eight.PositiveTDSpanScalars
+end
+end
+end

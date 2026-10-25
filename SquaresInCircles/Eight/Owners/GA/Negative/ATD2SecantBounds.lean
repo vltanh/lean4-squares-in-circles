@@ -1,7 +1,7 @@
 module
 
 public import SquaresInCircles.Eight.Owners.GA.Negative.ATD2InversePower
-public import SquaresInCircles.Eight.Owners.GA.Negative.ATD2SecantCoordinate
+public import SquaresInCircles.Eight.Owners.GA.Negative.ATD2AffectedNegativeCurves
 
 /-!
 # Eight squares: the secant-curvature bounds on the two high-angle cuts

@@ -1,6 +1,6 @@
 module
 
-public import SquaresInCircles.Eight.Owners.GA.ActualPairs
+public import SquaresInCircles.Eight.Owners.GA.HybridConcentration
 public import SquaresInCircles.Eight.Owners.GA.Negative.Primary.Scalar
 public import SquaresInCircles.Eight.Owners.GA.Nonpositive.TD
 public import SquaresInCircles.Eight.Owners.GA.One.AngleFunctions

@@ -1,6 +1,6 @@
 module
 
-public import SquaresInCircles.Eight.Owners.GA.Mixed.NegativeACapSlopes
+public import SquaresInCircles.Eight.Owners.GA.Mixed.NegativeAMotion
 public import SquaresInCircles.Eight.Owners.GA.Negative.AEntry
 public import SquaresInCircles.Eight.Owners.GA.Paired.ECharge
 

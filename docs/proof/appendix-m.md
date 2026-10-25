@@ -72,15 +72,15 @@ $1$ for two aligned squares and $w = \frac12 + \frac12(c + s)$ for an
 axis-parallel square against a square turned by $t$.
 
 *Lean:
-[`Eight.Stationary.Coordinates.pA`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L164),
-[`Eight.Stationary.Coordinates.pT`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L169),
-[`Eight.Stationary.Coordinates.pG`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L170),
-[`Eight.Stationary.Coordinates.anchorCenters`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L197),
-[`Eight.Stationary.Coordinates.anchorOffsets`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L200),
-[`Eight.Stationary.Coordinates.anchor_vertex`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L204),
-[`Eight.OriginalDual.Positions`](../../SquaresInCircles/Eight/Stationary/CenterCompletion.lean#L50),
-[`Eight.OriginalDual.gap`](../../SquaresInCircles/Eight/Stationary/CenterCompletion.lean#L58),
-[`Eight.OriginalDual.value`](../../SquaresInCircles/Eight/Stationary/CenterCompletion.lean#L67).*
+[`Eight.Stationary.Coordinates.pA`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L190),
+[`Eight.Stationary.Coordinates.pT`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L195),
+[`Eight.Stationary.Coordinates.pG`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L196),
+[`Eight.Stationary.Coordinates.anchorCenters`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L223),
+[`Eight.Stationary.Coordinates.anchorOffsets`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L226),
+[`Eight.Stationary.Coordinates.anchor_vertex`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L230),
+[`Eight.OriginalDual.Positions`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L641),
+[`Eight.OriginalDual.gap`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L649),
+[`Eight.OriginalDual.value`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L658).*
 
 ### Lemma M.2 (the model centres)
 
@@ -104,14 +104,14 @@ $\mathcal V(p^0) = \sum_P\mu_P|P_P|^2 = q\sum_P\mu_P = q$, the five corners
 lying on the circle of squared radius $q$ when $F = 0$. $\square$
 
 *Lean:
-[`Eight.Stationary.Coordinates.standard_contacts`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L246),
-[`Eight.Stationary.Coordinates.GA_contact`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L225),
-[`Eight.Stationary.Coordinates.HG_contact`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L220),
-[`Eight.Stationary.Coordinates.HE_contact`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L240),
-[`Eight.Stationary.Coordinates.anchor_circle`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L211),
-[`Eight.OriginalDual.reference`](../../SquaresInCircles/Eight/Stationary/CenterCompletion.lean#L55),
-[`Eight.OriginalDual.reference_gap`](../../SquaresInCircles/Eight/Stationary/CenterCompletion.lean#L71),
-[`Eight.OriginalDual.reference_value`](../../SquaresInCircles/Eight/Stationary/CenterCompletion.lean#L91).*
+[`Eight.Stationary.Coordinates.standard_contacts`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L272),
+[`Eight.Stationary.Coordinates.GA_contact`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L251),
+[`Eight.Stationary.Coordinates.HG_contact`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L246),
+[`Eight.Stationary.Coordinates.HE_contact`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L266),
+[`Eight.Stationary.Coordinates.anchor_circle`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L237),
+[`Eight.OriginalDual.reference`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L646),
+[`Eight.OriginalDual.reference_gap`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L662),
+[`Eight.OriginalDual.reference_value`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L682).*
 
 ### Lemma M.3 (the forces)
 
@@ -140,10 +140,10 @@ weights and opposite normals, and so have the two contacts of $G$. The last
 claim compares with (J.2). $\square$
 
 *Lean:
-[`Eight.Stationary.Coordinates.forces`](../../SquaresInCircles/Eight/Stationary/Weights.lean#L189),
-[`Eight.OriginalDual.weighted_gap_difference`](../../SquaresInCircles/Eight/Stationary/CenterCompletion.lean#L83),
-[`Eight.Stationary.Coordinates.force_balance`](../../SquaresInCircles/Eight/Stationary/Weights.lean#L192),
-[`Eight.Stationary.Coordinates.slider_forces_zero`](../../SquaresInCircles/Eight/Stationary/Weights.lean#L203).*
+[`Eight.Stationary.Coordinates.forces`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L571),
+[`Eight.OriginalDual.weighted_gap_difference`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L674),
+[`Eight.Stationary.Coordinates.force_balance`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L574),
+[`Eight.Stationary.Coordinates.slider_forces_zero`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L585).*
 
 ### Theorem M.4 (the completed identity)
 
@@ -165,8 +165,8 @@ $-\sum_e\lambda_e g_e(p) = \sum_{P = A, B, D, E, H}\langle F_P, p_P - p^0_P\rang
 Adding, and using $\sum_P\mu_P|P_P|^2 = q$ (Lemma M.2), gives (M.2). $\square$
 
 *Lean:
-[`Eight.center_square_difference`](../../SquaresInCircles/Eight/Stationary/CenterCompletion.lean#L29),
-[`Eight.OriginalDual.exact_identity`](../../SquaresInCircles/Eight/Stationary/CenterCompletion.lean#L100).*
+[`Eight.center_square_difference`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L620),
+[`Eight.OriginalDual.exact_identity`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L691).*
 
 The identity uses $F = 0$ and $F_y = 0$ but not $F_t = 0$: it holds for every
 chain with zero defect and a stationary position, whatever its tilt. The tilt
@@ -208,13 +208,13 @@ $p_G = p^0_G(\eta)$ for $\eta = \langle f, p_G\rangle - h_2 - \frac12$.
 $\square$
 
 *Lean:
-[`Eight.OriginalDual.value_le`](../../SquaresInCircles/Eight/Stationary/CenterCompletion.lean#L133),
-[`Eight.GeometricModel.original_dual_quantitative`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L28),
-[`Eight.GeometricModel.original_dual_radius_lower`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L40),
-[`Eight.OriginalDual.original_centers_rigid`](../../SquaresInCircles/Eight/Stationary/CenterCompletion.lean#L147),
-[`Eight.OriginalDual.slider_coordinates`](../../SquaresInCircles/Eight/Stationary/CenterCompletion.lean#L193),
-[`Eight.GeometricModel.original_radius_and_centers`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L56),
-[`Eight.GeometricModel.sharp_original_radius_and_centers`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L75).*
+[`Eight.OriginalDual.value_le`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L724),
+[`Eight.GeometricModel.original_dual_quantitative`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L160),
+[`Eight.GeometricModel.original_dual_radius_lower`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L172),
+[`Eight.OriginalDual.original_centers_rigid`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L738),
+[`Eight.OriginalDual.slider_coordinates`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L784),
+[`Eight.GeometricModel.original_radius_and_centers`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L188),
+[`Eight.GeometricModel.sharp_original_radius_and_centers`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L207).*
 
 ## M.3 The five-corner problem
 
@@ -246,10 +246,10 @@ all nonnegative by the spans. Corollary M.5 (2) with $q' = q = q_*$ gives
 $p_P = p^0_P$, that is $P_P = p^0_P + o_P$, the corners of $d_*$. $\square$
 
 *Lean: [`Eight.FiveCorner.spans`](../../SquaresInCircles/Geometry.lean#L303),
-[`Eight.FiveCorner.sourcePositions`](../../SquaresInCircles/Eight/Corners/Selection.lean#L138),
-[`Eight.FiveCorner.sourcePositions_gap`](../../SquaresInCircles/Eight/Corners/Selection.lean#L152),
-[`Eight.FiveCorner.sourcePositions_gap_nonneg`](../../SquaresInCircles/Eight/Corners/Selection.lean#L173),
-[`Eight.FiveCorner.stationary_points_of_fits`](../../SquaresInCircles/Eight/Corners/Selection.lean#L194).*
+[`Eight.FiveCorner.sourcePositions`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L778),
+[`Eight.FiveCorner.sourcePositions_gap`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L792),
+[`Eight.FiveCorner.sourcePositions_gap_nonneg`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L813),
+[`Eight.FiveCorner.stationary_points_of_fits`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L834).*
 
 Chapter 11 shows that the least radius is $\sqrt{q_*}$ and that every
 minimizer has the angle $t_*$, by the envelope of §J.4; with
@@ -257,10 +257,10 @@ Proposition M.6 the minimizer is unique, and it is $d_*$. This is the
 configuration that the statement selects.
 
 *Lean:
-[`Eight.FiveCorner.stationary_angle_of_fits`](../../SquaresInCircles/Eight/Corners/Selection.lean#L111),
-[`Eight.FiveCorner.minimizer_eq_canonical`](../../SquaresInCircles/Eight/Corners/Selection.lean#L219),
-[`Eight.FiveCorner.existsUnique_minimizer`](../../SquaresInCircles/Eight/Corners/Selection.lean#L227),
-[`Eight.FiveCorner.selected_eq_stationary`](../../SquaresInCircles/Eight/Corners/Selection.lean#L236).*
+[`Eight.FiveCorner.stationary_angle_of_fits`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L751),
+[`Eight.FiveCorner.minimizer_eq_canonical`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L859),
+[`Eight.FiveCorner.existsUnique_minimizer`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L867),
+[`Eight.FiveCorner.selected_eq_stationary`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L876).*
 
 ## M.4 Witnesses on the squares
 
@@ -294,16 +294,16 @@ $g_{HE} \ge 0$. With these frames the points $c_P + o_P$ are vertices of the
 squares $K_P$ ($P = A, B, D, E, H$), so they lie in the disk. $\square$
 
 *Lean:
-[`Eight.canonicalCos`](../../SquaresInCircles/Eight/Boundary/OriginalWitnesses.lean#L30),
-[`Eight.canonicalSin`](../../SquaresInCircles/Eight/Boundary/OriginalWitnesses.lean#L33),
-[`Eight.StationaryFrames`](../../SquaresInCircles/Eight/Boundary/OriginalWitnesses.lean#L36),
-[`Eight.stationaryNormal`](../../SquaresInCircles/Eight/Boundary/OriginalWitnesses.lean#L40),
-[`Eight.threshold_of_stationary_frames`](../../SquaresInCircles/Eight/Boundary/OriginalWitnesses.lean#L49),
-[`Eight.dual_gap_as_projection`](../../SquaresInCircles/Eight/Boundary/OriginalWitnesses.lean#L78),
-[`Eight.gaps_of_retained_normals`](../../SquaresInCircles/Eight/Boundary/OriginalWitnesses.lean#L89),
-[`Eight.anchor_offsets_closed`](../../SquaresInCircles/Eight/Boundary/OriginalWitnesses.lean#L109),
-[`Eight.vertices_at_original_radius`](../../SquaresInCircles/Eight/Boundary/OriginalWitnesses.lean#L123),
-[`Eight.GeometricModel.sharp_rigidity_of_original_witnesses`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L90).*
+[`Eight.canonicalCos`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L562),
+[`Eight.canonicalSin`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L565),
+[`Eight.StationaryFrames`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L568),
+[`Eight.stationaryNormal`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L572),
+[`Eight.threshold_of_stationary_frames`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L581),
+[`Eight.dual_gap_as_projection`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L610),
+[`Eight.gaps_of_retained_normals`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L622),
+[`Eight.anchor_offsets_closed`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L642),
+[`Eight.vertices_at_original_radius`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L656),
+[`Eight.GeometricModel.sharp_rigidity_of_original_witnesses`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L222).*
 
 Nothing is assumed about the positions of the squares beyond containment and
 the seven separations: the squares need not be close to those of the optimal
@@ -328,16 +328,16 @@ Lemma M.7 and Corollary M.5 (2), with $d = d_*$ and $q' = q \le q_*$, $q = q_*$.
 So $q \ge q_*$ in all cases. $\square$
 
 *Lean:
-[`Eight.GeometricModel.stationary_normalization_exists`](../../SquaresInCircles/Eight/Equality/SharpBoundary.lean#L73),
-[`Eight.GeometricModel.normalized_at_original_radius`](../../SquaresInCircles/Eight/Equality/SharpBoundary.lean#L61),
-[`Eight.GeometricModel.source_contained_at_original_radius`](../../SquaresInCircles/Eight/Equality/SharpBoundary.lean#L115),
-[`Eight.SharpSourceEntry`](../../SquaresInCircles/Eight/Boundary/SharpEntry.lean#L24),
-[`Eight.sharp_source_entry`](../../SquaresInCircles/Eight/Owners/GA/High/SourceComplete.lean#L22),
-[`Eight.sharp_source_entry_original_rigidity`](../../SquaresInCircles/Eight/Boundary/SharpEntry.lean#L33),
-[`Eight.GeometricModel.origin_sharp_rigidity`](../../SquaresInCircles/Eight/Equality/SharpAssembly.lean#L25),
-[`Eight.GeometricModel.origin_sharp_lower_bound`](../../SquaresInCircles/Eight/Equality/SharpAssembly.lean#L42),
-[`Eight.GeometricModel.sharp_squared_radius_lower_bound`](../../SquaresInCircles/Eight/Equality/SharpAssembly.lean#L49),
-[`Eight.GeometricModel.sharp_radius_lower_bound`](../../SquaresInCircles/Eight/Equality/SharpAssembly.lean#L60),
+[`Eight.GeometricModel.stationary_normalization_exists`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L90),
+[`Eight.GeometricModel.normalized_at_original_radius`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L78),
+[`Eight.GeometricModel.source_contained_at_original_radius`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L132),
+[`Eight.SharpSourceEntry`](../../SquaresInCircles/Eight/Boundary/SharpEntry.lean#L107),
+[`Eight.sharp_source_entry`](../../SquaresInCircles/Eight/Owners/GA/High/SourceComplete.lean#L238),
+[`Eight.sharp_source_entry_original_rigidity`](../../SquaresInCircles/Eight/Boundary/SharpEntry.lean#L116),
+[`Eight.GeometricModel.origin_sharp_rigidity`](../../SquaresInCircles/Eight/Equality/SharpEquality.lean#L39),
+[`Eight.GeometricModel.origin_sharp_lower_bound`](../../SquaresInCircles/Eight/Equality/SharpEquality.lean#L56),
+[`Eight.GeometricModel.sharp_squared_radius_lower_bound`](../../SquaresInCircles/Eight/Equality/SharpEquality.lean#L63),
+[`Eight.GeometricModel.sharp_radius_lower_bound`](../../SquaresInCircles/Eight/Equality/SharpEquality.lean#L74),
 [`Eight.lower_bound`](../../SquaresInCircles/Eight/Uniqueness.lean#L55).*
 
 ## M.6 The packings at the optimal radius
@@ -386,19 +386,19 @@ contacts included, along explicit normals; the central square lies in the disk
 and is separated from them by (3). $\square$
 
 *Lean:
-[`Eight.GeometricModel.source_centers_of_original_anchors`](../../SquaresInCircles/Eight/Equality/SharpAssembly.lean#L69),
+[`Eight.GeometricModel.source_centers_of_original_anchors`](../../SquaresInCircles/Eight/Equality/SharpEquality.lean#L83),
 [`Eight.sameSquare_of_physical_center`](../../SquaresInCircles/Eight/Boundary/Normalization.lean#L84),
-[`Eight.GeometricModel.source_squares_of_original_centers`](../../SquaresInCircles/Eight/Equality/SharpAssembly.lean#L93),
+[`Eight.GeometricModel.source_squares_of_original_centers`](../../SquaresInCircles/Eight/Equality/SharpEquality.lean#L107),
 [`Eight.GlobalNormalization.original_slider_sectors`](../../SquaresInCircles/Eight/Boundary/Normalization.lean#L560),
-[`Eight.Stationary.central_parameters_exist`](../../SquaresInCircles/Eight/Stationary/CentralParameters.lean#L119),
-[`Eight.Stationary.EqualityParameters.Admissible`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L297),
-[`Eight.admissible_of_original_geometry`](../../SquaresInCircles/Eight/Stationary/Family.lean#L165),
-[`Eight.GeometricModel.origin_sharp_uniqueness`](../../SquaresInCircles/Eight/Equality/SharpEquality.lean#L23),
-[`Eight.GeometricModel.sharp_uniqueness`](../../SquaresInCircles/Eight/Equality/SharpEquality.lean#L86),
-[`Eight.Stationary.exterior_separator`](../../SquaresInCircles/Eight/Stationary/EqualityGeometry.lean#L359),
-[`Eight.Stationary.model_sqPacking`](../../SquaresInCircles/Eight/Stationary/EqualityGeometry.lean#L558),
-[`Eight.Stationary.Coordinates.anchor_circle`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L211),
-[`Eight.model_reaches`](../../SquaresInCircles/Eight/Stationary/Family.lean#L255).*
+[`Eight.Stationary.central_parameters_exist`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L923),
+[`Eight.Stationary.EqualityParameters.Admissible`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L323),
+[`Eight.admissible_of_original_geometry`](../../SquaresInCircles/Eight/Stationary/Family.lean#L1038),
+[`Eight.GeometricModel.origin_sharp_uniqueness`](../../SquaresInCircles/Eight/Equality/SharpEquality.lean#L139),
+[`Eight.GeometricModel.sharp_uniqueness`](../../SquaresInCircles/Eight/Equality/SharpEquality.lean#L202),
+[`Eight.Stationary.exterior_separator`](../../SquaresInCircles/Eight/Stationary/Family.lean#L377),
+[`Eight.Stationary.model_sqPacking`](../../SquaresInCircles/Eight/Stationary/Family.lean#L576),
+[`Eight.Stationary.Coordinates.anchor_circle`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L237),
+[`Eight.model_reaches`](../../SquaresInCircles/Eight/Stationary/Family.lean#L1128).*
 
 ![The circle of radius root q* with the five fixed squares A, B, D, E, H drawn solid and their five corners on the circle marked in red; the square T drawn twice, dashed at its lowest position Z = 7/12, where it touches the red core disk about o, and dotted at its highest position z_max, where its upper right corner reaches the circle, with the vertical segment of its centres between them; and the turned square G drawn twice, dashed at the offset eta_min, where it reaches the circle, and dotted at eta_max, where it touches the core disk, with the segment of its centres along the side of H](figures/appendix-m/sliders.svg)
 
@@ -417,10 +417,10 @@ room left in the containment of $T$ and $G$, are bounded on the box by interval
 evaluation ([§L.6](appendix-l.md#l6-interval-evaluation)).
 
 *Lean:
-[`Eight.Stationary.EqualityParameters.InBox`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L316),
-[`Eight.Stationary.box_data_bounds`](../../SquaresInCircles/Eight/Stationary/EqualityBox.lean#L232),
-[`Eight.box_admissible`](../../SquaresInCircles/Eight/Stationary/Family.lean#L28),
-[`Eight.sample_admissible`](../../SquaresInCircles/Eight/Stationary/Family.lean#L129).*
+[`Eight.Stationary.EqualityParameters.InBox`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L342),
+[`Eight.Stationary.box_data_bounds`](../../SquaresInCircles/Eight/Stationary/Family.lean#L865),
+[`Eight.box_admissible`](../../SquaresInCircles/Eight/Stationary/Family.lean#L901),
+[`Eight.sample_admissible`](../../SquaresInCircles/Eight/Stationary/Family.lean#L1002).*
 
 ## M.7 The models of the statement
 
@@ -443,14 +443,14 @@ M.9 every optimal packing is congruent to one of them, which is the uniqueness
 part of Theorem 11.1.
 
 *Lean:
-[`Eight.Parameters.toStationary`](../../SquaresInCircles/Eight/Equality/Angles.lean#L149),
-[`Eight.Parameters.ofStationary`](../../SquaresInCircles/Eight/Equality/Angles.lean#L152),
-[`Eight.Parameters.ofStationary_admissible`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L29),
-[`Eight.Parameters.central_core_recovered`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L80),
-[`Eight.Parameters.top_core_rail_recovered`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L99),
-[`Eight.Parameters.tilted_core_rail_recovered`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L123),
-[`Eight.Parameters.toStationary_admissible`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L159),
-[`Eight.GeometricModel.models_eq_stationary`](../../SquaresInCircles/Eight/Construction.lean#L39),
+[`Eight.Parameters.toStationary`](../../SquaresInCircles/Eight/Equality/Angles.lean#L337),
+[`Eight.Parameters.ofStationary`](../../SquaresInCircles/Eight/Equality/Angles.lean#L340),
+[`Eight.Parameters.ofStationary_admissible`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L648),
+[`Eight.Parameters.central_core_recovered`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L699),
+[`Eight.Parameters.top_core_rail_recovered`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L718),
+[`Eight.Parameters.tilted_core_rail_recovered`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L742),
+[`Eight.Parameters.toStationary_admissible`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L779),
+[`Eight.GeometricModel.models_eq_stationary`](../../SquaresInCircles/Eight/Construction.lean#L38),
 [`Eight.radius_eq_stationary`](../../SquaresInCircles/Eight/Uniqueness.lean#L33),
 [`Eight.uniqueness`](../../SquaresInCircles/Eight/Uniqueness.lean#L62),
 [`Eight.models_reach`](../../SquaresInCircles/Eight/Uniqueness.lean#L70),

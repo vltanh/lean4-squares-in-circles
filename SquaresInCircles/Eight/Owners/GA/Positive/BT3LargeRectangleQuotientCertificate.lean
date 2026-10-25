@@ -1,8 +1,9 @@
 module
 
 public import SquaresInCircles.Eight.Owners.GA.Positive.BT3LargeData
+public import SquaresInCircles.Eight.Arithmetic.BivariateRounding
 
-/-! # Eight squares: the three BT3 rectangle-quotient certificates, by exact packed models of the numerators -/
+/-! # Eight squares: the three BT3 rectangle-quotient certificates, by rounded packed models of the numerators -/
 
 @[expose] public section
 noncomputable section
@@ -88,79 +89,94 @@ private theorem bq_rho_eq (i : Fin 3) (j : Fin 4) :
   unfold rho bq_rhoP
   split_ifs <;> norm_num
 
-/-- `mass .rectangle i j`, reduced. -/
-private def bq_massM (c : Config) (i : Fin 3) (j : Fin 4) : XM :=
-  XM.reduce c (XM.cubicMassRM c (bq_rhoP i j).1 (bq_rhoP i j).2 (bq_PM c i j))
+/-- `mass .rectangle i j`, reduced, in the packing `cM`: the cubic mass reads only the truncation
+of `P` to total degree three, which is carried over from the packing `cP`. -/
+private def bq_massM (cP cM : Config) (i : Fin 3) (j : Fin 4) : XM :=
+  XM.reduce cM (XM.cubicMassRM cM (bq_rhoP i j).1 (bq_rhoP i j).2
+    (BivariateRounding.repackM cP cM (XM.trunc cP (bq_PM cP i j) 3)))
 
-private theorem bq_rep_massM (c : Config) (i : Fin 3) (j : Fin 4) :
-    (bq_massM c i j).Rep c (mass .rectangle i j) := by
+private theorem bq_rep_massM (cP cM : Config) (i : Fin 3) (j : Fin 4) :
+    (bq_massM cP cM i j).Rep cM (mass .rectangle i j) := by
   have e : mass .rectangle i j = cubicMass (rho i j) (P .rectangle i j) := by simp [mass]
+  have h := XM.rep_cubicMassRM (BivariateRounding.rep_repackM (c' := cM)
+    (XM.rep_trunc (bq_rep_PM cP i j) 3)) (bq_rho_eq i j)
+  rw [BivariateRounding.cubicMass_truncTot] at h
   rw [e]
-  exact XM.rep_reduce (XM.rep_cubicMassRM (bq_rep_PM c i j) (bq_rho_eq i j))
+  exact XM.rep_reduce h
 
-/-- `numerator .rectangle i`, reduced. -/
-private def bq_numM (c : Config) (i : Fin 3) : XM :=
-  let w := bq_massM c i
-  XM.reduce c <| XM.sub c (XM.mul c (XM.mul c (XM.mul c (XM.mul c (XM.mul c (XM.ofInt c 2 1)
-      (bq_AM c i)) (w 0)) (w 1)) (w 2)) (w 3))
-    (XM.mul c (XM.ofInt c 494696877 250000000) (XM.add c (XM.add c (XM.add c
-      (XM.mul c (XM.mul c (XM.mul c (XM.add c (bq_PM c i 0) (XM.pow c (w 0) 2)) (w 1))
-        (w 2)) (w 3))
-      (XM.mul c (XM.mul c (XM.mul c (XM.add c (bq_PM c i 1) (XM.pow c (w 1) 2)) (w 0))
-        (w 2)) (w 3)))
-      (XM.mul c (XM.mul c (XM.mul c (XM.add c (bq_PM c i 2) (XM.pow c (w 2) 2)) (w 0))
-        (w 1)) (w 3)))
-      (XM.mul c (XM.mul c (XM.mul c (XM.add c (bq_PM c i 3) (XM.pow c (w 3) 2)) (w 0))
-        (w 1)) (w 2))))
+open BivariateRounding in
+/-- `numerator .rectangle i`, rounded to the scale `2 ^ K` in the packing `cE`: `A`, `P` and the
+masses are exact in their packings, the products are rounded; the smaller factor is on the right. -/
+private def bq_numE (cP cM cE : Config) (K : ℕ) (i : Fin 3) : XE :=
+  let w := fun j => XE.ofXMAt cM cE K (bq_massM cP cM i j)
+  let P := fun j => XE.ofXMAt cP cE K (bq_PM cP i j)
+  let mr := XE.mulR cE K
+  XE.sub cE (mr (mr (mr (mr (mr (XE.ofXMAt cP cE K (bq_AM cP i))
+      (XE.ofXMAt cP cE K (XM.ofInt cP 2 1))) (w 0)) (w 1)) (w 2)) (w 3))
+    (mr (XE.add cE (XE.add cE (XE.add cE
+      (mr (mr (mr (XE.add cE (P 0) (mr (w 0) (w 0))) (w 1)) (w 2)) (w 3))
+      (mr (mr (mr (XE.add cE (P 1) (mr (w 1) (w 1))) (w 0)) (w 2)) (w 3)))
+      (mr (mr (mr (XE.add cE (P 2) (mr (w 2) (w 2))) (w 0)) (w 1)) (w 3)))
+      (mr (mr (mr (XE.add cE (P 3) (mr (w 3) (w 3))) (w 0)) (w 1)) (w 2)))
+      (XE.ofXMAt cP cE K (XM.ofInt cP 494696877 250000000)))
 
-private theorem bq_rep_numM (c : Config) (i : Fin 3) :
-    (bq_numM c i).Rep c (numerator .rectangle i) := by
-  have hw (j : Fin 4) := bq_rep_massM c i j
-  have hP (j : Fin 4) := bq_rep_PM c i j
-  exact XM.rep_reduce <| XM.rep_sub (XM.rep_mul (XM.rep_mul (XM.rep_mul (XM.rep_mul (XM.rep_mul
-      (XM.rep_lit c (by norm_num)) (bq_rep_AM c i)) (hw 0)) (hw 1)) (hw 2)) (hw 3))
-    (XM.rep_mul (XM.rep_lit c (by norm_num [NonnegativeTotals.Certificate.Rbar]))
-      (XM.rep_add (XM.rep_add (XM.rep_add
-      (XM.rep_mul (XM.rep_mul (XM.rep_mul (XM.rep_add (hP 0) (XM.rep_pow (hw 0) 2)) (hw 1))
-        (hw 2)) (hw 3))
-      (XM.rep_mul (XM.rep_mul (XM.rep_mul (XM.rep_add (hP 1) (XM.rep_pow (hw 1) 2)) (hw 0))
-        (hw 2)) (hw 3)))
-      (XM.rep_mul (XM.rep_mul (XM.rep_mul (XM.rep_add (hP 2) (XM.rep_pow (hw 2) 2)) (hw 0))
-        (hw 1)) (hw 3)))
-      (XM.rep_mul (XM.rep_mul (XM.rep_mul (XM.rep_add (hP 3) (XM.rep_pow (hw 3) 2)) (hw 0))
-        (hw 1)) (hw 2))))
+open BivariateRounding in
+private theorem bq_rep_numE (cP cM cE : Config) (K : ℕ) (i : Fin 3) :
+    (bq_numE cP cM cE K i).Rep cE (numerator .rectangle i) := by
+  have hw (j : Fin 4) := XE.rep_ofXMAt (c' := cE) (bq_rep_massM cP cM i j) K
+  have hP (j : Fin 4) := XE.rep_ofXMAt (c' := cE) (bq_rep_PM cP i j) K
+  have hs (j : Fin 4) : (XE.mulR cE K (XE.ofXMAt cM cE K (bq_massM cP cM i j))
+      (XE.ofXMAt cM cE K (bq_massM cP cM i j))).Rep cE (mass .rectangle i j ^ 2) := by
+    rw [pow_two]; exact XE.rep_mulR (hw j) (hw j) K
+  exact XE.rep_sub (XE.rep_mulR (XE.rep_mulR (XE.rep_mulR (XE.rep_mulR (XE.rep_mulR_swap
+      (XE.rep_ofXMAt (XM.rep_lit cP (by norm_num)) K) (XE.rep_ofXMAt (bq_rep_AM cP i) K) K)
+      (hw 0) K) (hw 1) K) (hw 2) K) (hw 3) K)
+    (XE.rep_mulR_swap (XE.rep_ofXMAt (XM.rep_lit cP (by norm_num [NonnegativeTotals.Certificate.Rbar])) K)
+      (XE.rep_add (XE.rep_add (XE.rep_add
+      (XE.rep_mulR (XE.rep_mulR (XE.rep_mulR (XE.rep_add (hP 0) (hs 0)) (hw 1) K) (hw 2) K) (hw 3) K)
+      (XE.rep_mulR (XE.rep_mulR (XE.rep_mulR (XE.rep_add (hP 1) (hs 1)) (hw 0) K) (hw 2) K) (hw 3) K))
+      (XE.rep_mulR (XE.rep_mulR (XE.rep_mulR (XE.rep_add (hP 2) (hs 2)) (hw 0) K) (hw 1) K) (hw 3) K))
+      (XE.rep_mulR (XE.rep_mulR (XE.rep_mulR (XE.rep_add (hP 3) (hs 3)) (hw 0) K) (hw 1) K) (hw 2) K))
+      K)
 
 end Mirrors
 
 /-! ### The three checks
 
-The rectangle transform of the quotient by `x` is packed in a box of `37 × 37` digits of
-`2160` bits (the largest digit sum on the way has `2143` bits). -/
+`A` and `P` are exact in boxes of `37 × 37` digits of 170 bits, the masses in digits of 600 bits.
+The numerators are rounded models (`BivariateRounding.XE`) at the scale `2 ^ 60` in digits of
+160 bits; the quotient by `x`, the substitution onto the rectangle and the final bound use digits
+of 400 bits. The error of the rounding enters the final bounds. -/
 
 section Checks
-open PackedModels BivariateCertificate
+open PackedModels BivariateCertificate BivariateRounding
 
-private def bq_cfg : Config := ⟨0, 18, 2160⟩
+private def bq_cP : Config := ⟨0, 18, 170⟩
+private def bq_cM : Config := ⟨0, 18, 600⟩
+private def bq_cE : Config := ⟨0, 18, 160⟩
+private def bq_cT : Config := ⟨0, 18, 400⟩
+
+/-- The model of the rectangle transform of the quotient `i`. -/
+private def bq_finalE (i : Fin 3) : XE :=
+  XE.norm bq_cT (XE.toScale bq_cT bq_cT 60 (XE.rectangle bq_cT 1 6 8 15 (XE.repack bq_cE bq_cT
+    (XE.divX bq_cE (bq_numE bq_cP bq_cM bq_cE 60 i)))))
 
 set_option maxRecDepth 1000000 in
 set_option maxHeartbeats 1000000 in
 set_option Elab.async false in
-private theorem bq_check_0 : XM.lowerCheck bq_cfg (XM.reduce bq_cfg (XM.rectangleM bq_cfg
-    (XM.divXM bq_cfg (bq_numM bq_cfg 0)) 1 6 8 15)) 35 23 500 = true := by
+private theorem bq_check_0 : XE.lowerCheck bq_cT (bq_finalE 0) 35 23 500 = true := by
   decide +kernel
 
 set_option maxRecDepth 1000000 in
 set_option maxHeartbeats 1000000 in
 set_option Elab.async false in
-private theorem bq_check_1 : XM.lowerCheck bq_cfg (XM.reduce bq_cfg (XM.rectangleM bq_cfg
-    (XM.divXM bq_cfg (bq_numM bq_cfg 1)) 1 6 8 15)) 35 17 125 = true := by
+private theorem bq_check_1 : XE.lowerCheck bq_cT (bq_finalE 1) 35 17 125 = true := by
   decide +kernel
 
 set_option maxRecDepth 1000000 in
 set_option maxHeartbeats 1000000 in
 set_option Elab.async false in
-private theorem bq_check_2 : XM.lowerCheck bq_cfg (XM.reduce bq_cfg (XM.rectangleM bq_cfg
-    (XM.divXM bq_cfg (bq_numM bq_cfg 2)) 1 6 8 15)) 35 411 1000 = true := by
+private theorem bq_check_2 : XE.lowerCheck bq_cT (bq_finalE 2) 35 411 1000 = true := by
   decide +kernel
 
 end Checks
@@ -169,12 +185,14 @@ theorem rectangle_quotient_certificate (i : Fin 3) :
     transform .rectangle (rectangleQuotient i)=expansion 35
       (transform .rectangle (rectangleQuotient i)) ∧
     rectangleQuotientReserve i<lowerOn .rectangle 35 (rectangleQuotient i) := by
-  open BivariateCertificate in
-  have hm (i : Fin 3) := XM.rep_reduce (XM.rep_rectangleM (XM.rep_divXM (bq_rep_numM bq_cfg i))
-    (a := 1/6) (b := 8/15) (an := 1) (ad := 6) (bn := 8) (bd := 15) (by norm_num) (by norm_num))
+  open BivariateRounding in
+  have hm (i : Fin 3) := XE.rep_norm (XE.rep_toScale (c' := bq_cT) (XE.rep_rectangle
+    (XE.rep_repack (c' := bq_cT) (XE.rep_divX (bq_rep_numE bq_cP bq_cM bq_cE 60 i)))
+    (a := 1/6) (b := 8/15) (an := 1) (ad := 6) (bn := 8) (bd := 15) (by norm_num) (by norm_num)
+    (by norm_num) (by norm_num)) 60)
   fin_cases i
-  · exact XM.lower_certificate (hm 0) bq_check_0 (by norm_num [rectangleQuotientReserve])
-  · exact XM.lower_certificate (hm 1) bq_check_1 (by norm_num [rectangleQuotientReserve])
-  · exact XM.lower_certificate (hm 2) bq_check_2 (by norm_num [rectangleQuotientReserve])
+  · exact XE.lower_certificate (hm 0) bq_check_0 (by norm_num [rectangleQuotientReserve])
+  · exact XE.lower_certificate (hm 1) bq_check_1 (by norm_num [rectangleQuotientReserve])
+  · exact XE.lower_certificate (hm 2) bq_check_2 (by norm_num [rectangleQuotientReserve])
 
 end SquaresInCircles.Eight.GlobalGA.PositiveBT3.LargeCertificate

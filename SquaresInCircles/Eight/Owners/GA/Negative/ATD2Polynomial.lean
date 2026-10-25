@@ -5,7 +5,7 @@ public import Mathlib.Algebra.Order.Star.Real
 public import Mathlib.Data.Rat.Star
 public import SquaresInCircles.Eight.Owners.ChebyshevLeadingBounds
 public import SquaresInCircles.Eight.Owners.GA.Negative.ATD2PolynomialData
-public import SquaresInCircles.Eight.Arithmetic.PolynomialCertificates
+public import SquaresInCircles.Eight.Arithmetic.KroneckerPolynomials
 
 /-!
 # Eight squares: whole-interval positivity of the fourteen negative-A / TD2 numerators
@@ -18,8 +18,9 @@ The rational identities are proof terms, not executed certificates.
 
 The kernel evaluates integer coefficient lists that mirror the polynomials.  Sums are divided
 by the gcd of the list and its scale, which keeps the integers short; long products and the
-affine changes of variable are one integer product or evaluation read back in a large base
-(Kronecker substitution).  Each bound is one kernel evaluation of integer inequalities.
+affine changes of variable are one integer product or evaluation read back in a power-of-two
+base by masks and shifts (`KroneckerPolynomials`).  Each bound is one kernel evaluation of
+integer inequalities.
 -/
 
 @[expose] public section
@@ -30,657 +31,56 @@ open PositiveTD.Certificate (h)
 open WholeIntervalPolynomial.Certificate (Scaled lowerOn_eq_of_rep toPoly chebList lowerZ scale_pos)
 open PositiveTD.Certificate (S5 S9 S11 C4 C10 C12 num3 num4 etaQ Rbar cbar sigmabar)
 
-/-! ### Reduced scaled lists
-
-`Scaled.add` and `Scaled.sub` multiply the two scales.  Their reduced forms `addN` and `subN`
-divide the list and the scale by their gcd, which keeps the integers of the kernel
-computation short. -/
-
-/-- The gcd of `g` and the entries of `l`. -/
-private def r42gcd : List ℤ → ℕ → ℕ
-  | [],g => g
-  | a :: l,g => r42gcd l (Nat.gcd a.natAbs g)
-
-private theorem r42gcd_dvd : ∀ (l : List ℤ) (g : ℕ),
-    r42gcd l g ∣ g ∧ ∀ a ∈ l,(r42gcd l g : ℤ) ∣ a
-  | [],g => ⟨dvd_rfl,by simp⟩
-  | a :: l,g => by
-    obtain ⟨h1,h2⟩ := r42gcd_dvd l (Nat.gcd a.natAbs g)
-    refine ⟨h1.trans (Nat.gcd_dvd_right _ _),fun b hb => ?_⟩
-    rcases List.mem_cons.1 hb with rfl|hb
-    · exact Int.ofNat_dvd_left.2 (h1.trans (Nat.gcd_dvd_left _ _))
-    · exact h2 b hb
-
-/-- The list and the scale divided by `g`. -/
-private def r42div (g : ℕ) (S : Scaled) : Scaled := ⟨S.l.map (· / (g:ℤ)),S.s / g⟩
-/-- The list and the scale divided by their gcd. -/
-private def r42norm (S : Scaled) : Scaled := r42div (r42gcd S.l S.s) S
-
-private theorem r42_toPoly_div {g : ℤ} : ∀ l : List ℤ,(∀ a ∈ l,g ∣ a) →
-    C (g:ℚ)*toPoly (l.map (· / g))=toPoly l
-  | [],_ => by simp [toPoly]
-  | a :: l,h => by
-    have ih := r42_toPoly_div l (fun b hb => h b (List.mem_cons_of_mem _ hb))
-    have ha : ((a / g : ℤ) : ℚ)*g=a := by exact_mod_cast Int.ediv_mul_cancel (h a List.mem_cons_self)
-    simp only [List.map_cons,toPoly]
-    rw [mul_add,mul_left_comm,ih,← map_mul,mul_comm,ha]
-
-private theorem r42_toPoly_div_zero : ∀ l : List ℤ,toPoly (l.map (· / (0:ℤ)))=0
-  | [] => by simp [toPoly]
-  | a :: l => by rw [List.map_cons,toPoly,r42_toPoly_div_zero l,Int.ediv_zero]; simp
-
-private theorem r42_rep_norm {S : Scaled} {p : ℚ[X]} (hS : S.Rep p) : (r42norm S).Rep p := by
-  obtain ⟨h1,h2⟩ := r42gcd_dvd S.l S.s
-  unfold Scaled.Rep at *
-  rw [r42norm,r42div]
-  dsimp only
-  generalize r42gcd S.l S.s=g at h1 h2
-  rcases Nat.eq_zero_or_pos g with rfl|hg
-  · simp only [Nat.cast_zero,Nat.div_zero,map_zero,zero_mul,r42_toPoly_div_zero]
-  · have hC : C (g:ℚ)≠0 := by rw [Ne,C_eq_zero]; exact_mod_cast hg.ne'
-    apply mul_left_cancel₀ hC
-    have e := r42_toPoly_div S.l h2
-    push_cast at e
-    rw [e,hS,← mul_assoc,← map_mul]
-    congr 2
-    rw [← Nat.cast_mul,Nat.mul_div_cancel' h1]
-
-/-- `Scaled.add`, reduced. -/
-private def _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.addN
-    (a b : Scaled) : Scaled := r42norm (a.add b)
-/-- `Scaled.sub`, reduced. -/
-private def _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.subN
-    (a b : Scaled) : Scaled := r42norm (a.sub b)
-private theorem _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.Rep.addN
-    {a b : Scaled} {p q : ℚ[X]} (ha : a.Rep p) (hb : b.Rep q) : (a.addN b).Rep (p+q) :=
-  r42_rep_norm (ha.add hb)
-private theorem _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.Rep.subN
-    {a b : Scaled} {p q : ℚ[X]} (ha : a.Rep p) (hb : b.Rep q) : (a.subN b).Rep (p-q) :=
-  r42_rep_norm (ha.sub hb)
-
-/-! ### Kronecker substitution
-
-An integer list is evaluated at an integer `B`; when every entry lies in `[-B/2,B/2)`, the list
-is read back from the value as its balanced base-`B` digits (`r42_dec_enc`). -/
-
-/-- The list evaluated at `B`. -/
-private def r42enc (B : ℤ) : List ℤ → ℤ
-  | [] => 0
-  | a :: l => a+B*r42enc B l
-
-/-- The residue of `N` modulo `B` in `[-B/2,B/2)`. -/
-private def r42bal (B N : ℤ) : ℤ := if 2*(N % B)<B then N % B else N % B-B
-
-/-- The first `n` balanced base-`B` digits of `N`. -/
-private def r42dec (B : ℤ) : ℕ → ℤ → List ℤ
-  | 0,_ => []
-  | n+1,N => r42bal B N :: r42dec B n ((N-r42bal B N) / B)
-
-/-- The sum of the absolute values of the entries. -/
-private def r42asum : List ℤ → ℕ
-  | [] => 0
-  | a :: l => a.natAbs+r42asum l
-
-/-- The largest absolute value of an entry. -/
-private def r42amax : List ℤ → ℕ
-  | [] => 0
-  | a :: l => max a.natAbs (r42amax l)
-
-private theorem r42_enc_eq (B : ℤ) : ∀ l : List ℤ,(r42enc B l : ℚ)=(toPoly l).eval (B:ℚ)
-  | [] => by simp [r42enc,toPoly]
-  | a :: l => by simp [r42enc,toPoly,r42_enc_eq B l]
-
-private theorem r42_bal_eq {B c M : ℤ} (hc : -B≤2*c ∧ 2*c<B) : r42bal B (c+B*M)=c := by
-  have hB : 0<B := by omega
-  unfold r42bal
-  rw [Int.add_mul_emod_self_left]
-  rcases le_or_gt 0 c with h0|h0
-  · rw [Int.emod_eq_of_lt h0 (by omega),ite_eq_left hc.2]
-  · have e : c % B=c+B := by
-      rw [show c=(c+B)+B*(-1) by ring,Int.add_mul_emod_self_left,Int.emod_eq_of_lt (by omega) (by omega)]
-      ring
-    rw [e,ite_eq_right (by omega)]
-    ring
-
-private theorem r42_dec_enc {B : ℤ} (hB : 0<B) : ∀ (n : ℕ) (c : List ℤ),c.length≤n →
-    (∀ j,-B≤2*c.getD j 0 ∧ 2*c.getD j 0<B) → toPoly (r42dec B n (r42enc B c))=toPoly c
-  | 0,c,hl,_ => by
-    rw [List.length_eq_zero_iff.1 (by omega : c.length=0)]
-    rfl
-  | n+1,[],_,_ => by
-    have h0 : r42bal B 0=0 := by
-      simpa using r42_bal_eq (c:=0) (M:=0) (B:=B) (by omega)
-    have ih : toPoly (r42dec B n 0)=0 := r42_dec_enc hB n [] (by simp) (fun j => by simp; omega)
-    show toPoly (r42dec B (n+1) 0)=0
-    rw [r42dec,h0,sub_zero,Int.zero_ediv]
-    simp [toPoly,ih]
-  | n+1,x :: c,hl,hb => by
-    have hx := hb 0
-    simp only [List.getD_cons_zero] at hx
-    have h1 := r42_bal_eq (M:=r42enc B c) hx
-    have h2 : (x+B*r42enc B c-x) / B=r42enc B c := by
-      rw [add_sub_cancel_left,Int.mul_ediv_cancel_left _ hB.ne']
-    have ih := r42_dec_enc hB n c (by simpa using hl) (fun j => by simpa using hb (j+1))
-    simp only [r42enc,r42dec,h1,h2]
-    rw [toPoly,toPoly,ih]
-
-private theorem r42_getD_smul (c : ℤ) : ∀ (l : List ℤ) (j : ℕ),
-    (Certificate.smul c l).getD j 0=c*l.getD j 0
-  | [],j => by simp [Certificate.smul]
-  | a :: l,0 => by simp [Certificate.smul]
-  | a :: l,j+1 => by
-    simp only [Certificate.smul,List.getD_cons_succ,r42_getD_smul c l j]
-
-private theorem r42_getD_le_amax : ∀ (l : List ℤ) (j : ℕ),|l.getD j 0|≤r42amax l
-  | [],j => by simp
-  | a :: l,0 => by simp only [List.getD_cons_zero,r42amax]; push_cast; exact le_max_left _ _
-  | a :: l,j+1 => by
-    simp only [List.getD_cons_succ,r42amax]
-    push_cast
-    exact (r42_getD_le_amax l j).trans (le_max_right _ _)
-
-private theorem r42_mul_bound : ∀ (a m : List ℤ) (j : ℕ),
-    |(Certificate.mul a m).getD j 0|≤r42asum a*r42amax m
-  | [],m,j => by simp [Certificate.mul]; positivity
-  | a :: l,[],j => by simp [Certificate.mul]; positivity
-  | a :: l,b :: m,j => by
-    rw [Certificate.mul,Certificate.getD_add,
-      r42_getD_smul]
-    have h1 : |a*(b :: m).getD j 0|≤|a| * r42amax (b :: m) := by
-      rw [abs_mul]
-      exact mul_le_mul_of_nonneg_left (r42_getD_le_amax _ j) (abs_nonneg a)
-    have h2 : |(0 :: Certificate.mul l (b :: m)).getD j 0|≤
-        r42asum l*r42amax (b :: m) := by
-      rcases j with _|j
-      · simp only [List.getD_cons_zero,abs_zero]; positivity
-      · simpa only [List.getD_cons_succ] using r42_mul_bound l (b :: m) j
-    simp only [r42asum]
-    push_cast
-    calc _≤_ := abs_add_le _ _
-      _≤_ := add_le_add h1 h2
-      _=_ := by ring
-
-private theorem r42_length_add : ∀ l m : List ℤ,
-    (Certificate.add l m).length=max l.length m.length
-  | [],m => by simp [Certificate.add]
-  | a :: l,[] => by simp [Certificate.add]
-  | a :: l,b :: m => by
-    simp [Certificate.add,r42_length_add l m,Nat.succ_max_succ]
-
-private theorem r42_length_smul (c : ℤ) : ∀ l : List ℤ,
-    (Certificate.smul c l).length=l.length
-  | [] => rfl
-  | a :: l => by simp [Certificate.smul,r42_length_smul c l]
-
-private theorem r42_length_mul : ∀ a m : List ℤ,
-    (Certificate.mul a m).length≤a.length+m.length-1
-  | [],m => by simp [Certificate.mul]
-  | a :: l,[] => by simp [Certificate.mul]
-  | a :: l,b :: m => by
-    have ih := r42_length_mul l (b :: m)
-    rw [Certificate.mul,r42_length_add,r42_length_smul]
-    rcases l with _|⟨c,l⟩
-    · simp [Certificate.mul]
-    · simp only [List.length_cons] at ih ⊢
-      omega
-
-/-! ### Encoded sums and products
-
-`r42K` holds the value `N` at a base `B` of an integer list of at most `n` entries, each of
-absolute value at most `β`, that represents `s` times a polynomial.  Sums and products act on
-`N` alone, so a whole expression costs a few integer operations; `toScaled` reads the list
-back as balanced base-`B` digits once `B` exceeds `2β`. -/
-
-private structure r42K where
-  N : ℤ
-  s : ℕ
-  n : ℕ
-  β : ℕ
-
-private def r42K.Rep (B : ℤ) (k : r42K) (p : ℚ[X]) : Prop :=
-  ∃ l : List ℤ,l.length≤k.n ∧ (∀ j,|l.getD j 0|≤k.β) ∧ k.N=r42enc B l ∧ toPoly l=C (k.s:ℚ)*p
-
-private def r42K.add (a b : r42K) : r42K := ⟨a.N*b.s+b.N*a.s,a.s*b.s,max a.n b.n,a.β*b.s+b.β*a.s⟩
-private def r42K.sub (a b : r42K) : r42K := ⟨a.N*b.s-b.N*a.s,a.s*b.s,max a.n b.n,a.β*b.s+b.β*a.s⟩
-private def r42K.mul (a b : r42K) : r42K := ⟨a.N*b.N,a.s*b.s,a.n+b.n-1,a.n*a.β*b.β⟩
-private def r42K.const (q : ℚ) : r42K := ⟨q.num,q.den,1,q.num.natAbs⟩
-private def r42K.ofScaled (B : ℤ) (S : Scaled) : r42K := ⟨r42enc B S.l,S.s,S.l.length,r42amax S.l⟩
-private def r42K.toScaled (B : ℤ) (k : r42K) : Scaled :=
-  if 2*(k.β:ℤ)<B then ⟨r42dec B k.n k.N,k.s⟩ else ⟨[],0⟩
-
-private theorem r42_enc_add (B : ℤ) (l m : List ℤ) :
-    r42enc B (Certificate.add l m)=r42enc B l+r42enc B m := by
-  have e : (r42enc B (Certificate.add l m) : ℚ)=r42enc B l+r42enc B m := by
-    rw [r42_enc_eq,r42_enc_eq,r42_enc_eq,Certificate.toPoly_add,eval_add]
-  exact_mod_cast e
-
-private theorem r42_enc_smul (B c : ℤ) (l : List ℤ) :
-    r42enc B (Certificate.smul c l)=c*r42enc B l := by
-  have e : (r42enc B (Certificate.smul c l) : ℚ)=c*r42enc B l := by
-    rw [r42_enc_eq,r42_enc_eq,Certificate.toPoly_smul,eval_mul,eval_C]
-  exact_mod_cast e
-
-private theorem r42_enc_mul (B : ℤ) (l m : List ℤ) :
-    r42enc B (Certificate.mul l m)=r42enc B l*r42enc B m := by
-  have e : (r42enc B (Certificate.mul l m) : ℚ)=r42enc B l*r42enc B m := by
-    rw [r42_enc_eq,r42_enc_eq,r42_enc_eq,Certificate.toPoly_mul,eval_mul]
-  exact_mod_cast e
-
-private theorem r42_amax_le {l : List ℤ} {β : ℕ} (h : ∀ j,|l.getD j 0|≤β) : r42amax l≤β := by
-  induction l generalizing β with
-  | nil => simp [r42amax]
-  | cons a l ih =>
-    have h0 := h 0
-    simp only [List.getD_cons_zero,Int.abs_eq_natAbs,Nat.cast_le] at h0
-    have h1 := ih (fun j => by simpa using h (j+1))
-    exact max_le h0 h1
-
-private theorem r42_asum_le {l : List ℤ} {β : ℕ} (h : ∀ j,|l.getD j 0|≤β) :
-    r42asum l≤l.length*β := by
-  induction l generalizing β with
-  | nil => simp [r42asum]
-  | cons a l ih =>
-    have h0 := h 0
-    simp only [List.getD_cons_zero,Int.abs_eq_natAbs,Nat.cast_le] at h0
-    have h1 := ih (fun j => by simpa using h (j+1))
-    simp only [r42asum,List.length_cons]
-    nlinarith
-
-private theorem r42K.Rep.add {B : ℤ} {a b : r42K} {p q : ℚ[X]} (ha : a.Rep B p) (hb : b.Rep B q) :
-    (a.add b).Rep B (p+q) := by
-  obtain ⟨la,hla,hba,hNa,hpa⟩ := ha
-  obtain ⟨lb,hlb,hbb,hNb,hpb⟩ := hb
-  refine ⟨Certificate.add (Certificate.smul b.s la) (Certificate.smul a.s lb),?_,?_,?_,?_⟩
-  · rw [r42_length_add,r42_length_smul,r42_length_smul]
-    exact max_le_max hla hlb
-  · intro j
-    rw [Certificate.getD_add,r42_getD_smul,r42_getD_smul]
-    calc _≤|(b.s:ℤ)*la.getD j 0|+|(a.s:ℤ)*lb.getD j 0| := abs_add_le _ _
-      _≤(b.s:ℤ)*a.β+(a.s:ℤ)*b.β := by
-        rw [abs_mul,abs_mul,Nat.abs_cast,Nat.abs_cast]
-        exact add_le_add (mul_le_mul_of_nonneg_left (hba j) (by positivity))
-          (mul_le_mul_of_nonneg_left (hbb j) (by positivity))
-      _=_ := by simp only [r42K.add]; push_cast; ring
-  · simp only [r42K.add,r42_enc_add,r42_enc_smul,hNa,hNb]
-    ring
-  · simp only [r42K.add,Certificate.toPoly_add,Certificate.toPoly_smul,hpa,hpb,Int.cast_natCast,
-      Nat.cast_mul,map_mul]
-    ring
-
-private theorem r42K.Rep.sub {B : ℤ} {a b : r42K} {p q : ℚ[X]} (ha : a.Rep B p) (hb : b.Rep B q) :
-    (a.sub b).Rep B (p-q) := by
-  obtain ⟨la,hla,hba,hNa,hpa⟩ := ha
-  obtain ⟨lb,hlb,hbb,hNb,hpb⟩ := hb
-  refine ⟨Certificate.add (Certificate.smul b.s la) (Certificate.smul (-(a.s:ℤ)) lb),?_,?_,?_,?_⟩
-  · rw [r42_length_add,r42_length_smul,r42_length_smul]
-    exact max_le_max hla hlb
-  · intro j
-    rw [Certificate.getD_add,r42_getD_smul,r42_getD_smul]
-    calc _≤|(b.s:ℤ)*la.getD j 0|+|(-(a.s:ℤ))*lb.getD j 0| := abs_add_le _ _
-      _≤(b.s:ℤ)*a.β+(a.s:ℤ)*b.β := by
-        rw [abs_mul,abs_mul,abs_neg,Nat.abs_cast,Nat.abs_cast]
-        exact add_le_add (mul_le_mul_of_nonneg_left (hba j) (by positivity))
-          (mul_le_mul_of_nonneg_left (hbb j) (by positivity))
-      _=_ := by simp only [r42K.sub]; push_cast; ring
-  · simp only [r42K.sub,r42_enc_add,r42_enc_smul,hNa,hNb]
-    ring
-  · simp only [r42K.sub,Certificate.toPoly_add,Certificate.toPoly_smul,hpa,hpb,Int.cast_natCast,
-      Int.cast_neg,Nat.cast_mul,map_mul,map_neg]
-    ring
-
-private theorem r42K.Rep.mul {B : ℤ} {a b : r42K} {p q : ℚ[X]} (ha : a.Rep B p) (hb : b.Rep B q) :
-    (a.mul b).Rep B (p*q) := by
-  obtain ⟨la,hla,hba,hNa,hpa⟩ := ha
-  obtain ⟨lb,hlb,hbb,hNb,hpb⟩ := hb
-  refine ⟨Certificate.mul la lb,?_,?_,?_,?_⟩
-  · have := r42_length_mul la lb
-    simp only [r42K.mul]
-    omega
-  · intro j
-    have h1 := r42_mul_bound la lb j
-    have h2 : r42asum la*r42amax lb≤a.n*a.β*b.β :=
-      Nat.mul_le_mul ((r42_asum_le hba).trans (Nat.mul_le_mul_right _ hla)) (r42_amax_le hbb)
-    simp only [r42K.mul]
-    calc _≤((r42asum la*r42amax lb:ℕ):ℤ) := by exact_mod_cast h1
-      _≤_ := by exact_mod_cast h2
-  · simp only [r42K.mul,r42_enc_mul,hNa,hNb]
-  · simp only [r42K.mul,Certificate.toPoly_mul,hpa,hpb,Nat.cast_mul,map_mul]
-    ring
-
-private theorem r42K.rep_const (B : ℤ) (q : ℚ) : (r42K.const q).Rep B (C q) := by
-  refine ⟨[q.num],by simp [r42K.const],fun j => ?_,by simp [r42K.const,r42enc],?_⟩
-  · rcases j with _|j
-    · simp only [List.getD_cons_zero,r42K.const]
-      exact (Int.abs_eq_natAbs _).le
-    · simp
-  · simp only [r42K.const,toPoly,mul_zero,add_zero,← map_mul,Rat.den_mul_eq_num]
-
-private theorem r42K.rep_ofScaled (B : ℤ) {S : Scaled} {p : ℚ[X]} (hS : S.Rep p) :
-    (r42K.ofScaled B S).Rep B p :=
-  ⟨S.l,le_rfl,r42_getD_le_amax S.l,rfl,hS⟩
-
-private theorem r42K.Rep.toScaled {B : ℤ} {k : r42K} {p : ℚ[X]} (hk : k.Rep B p) :
-    (k.toScaled B).Rep p := by
-  unfold r42K.toScaled
-  split_ifs with h
-  · obtain ⟨l,hl,hb,hN,hp⟩ := hk
-    have hB : 0<B := lt_of_le_of_lt (by positivity) h
-    show toPoly (r42dec B k.n k.N)=_
-    rw [hN,r42_dec_enc hB _ _ hl (fun j => by obtain ⟨h1,h2⟩ := abs_le.1 (hb j); constructor <;> linarith)]
-    exact hp
-  · show toPoly []=C ((0:ℕ):ℚ)*p
-    simp [toPoly]
-
-/-! ### Products by Kronecker substitution
-
-`Scaled.mul` multiplies entry by entry.  `kmul` evaluates both lists at an integer `B`,
-multiplies the two values and reads the coefficients of the product back; `B` exceeds twice
-the bound `n·max|aᵢ|·max|bⱼ|` on those coefficients. -/
-
-/-- The base of `kmul`. -/
-private def r42kmulB (a b : Scaled) : ℤ := 2*(a.l.length*r42amax a.l*r42amax b.l)+1
-private def _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.kmul
-    (a b : Scaled) : Scaled :=
-  ((r42K.ofScaled (r42kmulB a b) a).mul (r42K.ofScaled (r42kmulB a b) b)).toScaled (r42kmulB a b)
-private theorem _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.Rep.kmul
-    {a b : Scaled} {p q : ℚ[X]} (ha : a.Rep p) (hb : b.Rep q) : (a.kmul b).Rep (p*q) :=
-  ((r42K.rep_ofScaled _ ha).mul (r42K.rep_ofScaled _ hb)).toScaled
-/-- The square, by `kmul`. -/
-private def _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.ksq
-    (a : Scaled) : Scaled := a.kmul a
-private theorem _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.Rep.ksq
-    {a : Scaled} {p : ℚ[X]} (ha : a.Rep p) : a.ksq.Rep (p^2) := by
-  rw [sq]; exact ha.kmul ha
-
-/-! ### Composition with `s+tX` by Kronecker substitution
-
-The entries of the composition of `L` with `s+tX` are at most `Σ|Lᵢ| (|s|+|t|+1)^(n-1)`, so they
-are the balanced base-`B` digits of the value of `L` at `s+tB` for `B` above twice that bound. -/
-
-private theorem r42_asum_add : ∀ l m : List ℤ,
-    r42asum (Certificate.add l m)≤r42asum l+r42asum m
-  | [],m => by simp [Certificate.add,r42asum]
-  | a :: l,[] => by simp [Certificate.add,r42asum]
-  | a :: l,b :: m => by
-    have ih := r42_asum_add l m
-    have := Int.natAbs_add_le a b
-    simp only [Certificate.add,r42asum]
-    omega
-
-private theorem r42_asum_affMulAux (s t : ℤ) : ∀ (c : ℤ) (z : List ℤ),
-    r42asum (Certificate.affMulAux s t c z)≤
-      s.natAbs*r42asum z+t.natAbs*c.natAbs+t.natAbs*r42asum z
-  | c,[] => by simp [Certificate.affMulAux,r42asum,Int.natAbs_mul]
-  | c,x :: z => by
-    have ih := r42_asum_affMulAux s t x z
-    have h1 := Int.natAbs_add_le (s*x) (t*c)
-    simp only [Certificate.affMulAux,r42asum,Int.natAbs_mul] at h1 ⊢
-    nlinarith
-
-private theorem r42_asum_affMul (s t : ℤ) (z : List ℤ) :
-    r42asum (Certificate.affMul s t z)≤(s.natAbs+t.natAbs)*r42asum z := by
-  unfold Certificate.affMul
-  split_ifs with h
-  · obtain ⟨rfl,rfl⟩ := h
-    cases z with
-    | nil => simp [Certificate.shiftMul,r42asum]
-    | cons x z =>
-      have := r42_asum_add (x :: z) (0 :: x :: z)
-      simp only [Certificate.shiftMul]
-      simp only [r42asum] at this ⊢
-      simp
-      omega
-  · cases z with
-    | nil => simp [Certificate.affMulGen,r42asum]
-    | cons x z =>
-      have := r42_asum_affMulAux s t x z
-      simp only [Certificate.affMulGen,r42asum,Int.natAbs_mul]
-      nlinarith
-
-private theorem r42_asum_compAff (s t : ℤ) : ∀ l : List ℤ,
-    r42asum (Certificate.compAff s t l)≤
-      r42asum l*(s.natAbs+t.natAbs+1)^(l.length-1)
-  | [] => by simp [Certificate.compAff,r42asum]
-  | b :: l => by
-    have h1 := r42_asum_add [b] (Certificate.affMul s t
-      (Certificate.compAff s t l))
-    have h2 := r42_asum_affMul s t (Certificate.compAff s t l)
-    have hb : r42asum [b]=b.natAbs := by simp [r42asum]
-    rw [Certificate.compAff]
-    simp only [r42asum,List.length_cons,Nat.add_sub_cancel]
-    rcases l with _|⟨c,l⟩
-    · simp [Certificate.compAff,Certificate.affMul,
-        Certificate.shiftMul,Certificate.affMulGen,
-        Certificate.add,r42asum]
-    · have ih := r42_asum_compAff s t (c :: l)
-      generalize r42asum (Certificate.compAff s t (c :: l))=A at h1 h2 ih
-      simp only [List.length_cons,Nat.add_sub_cancel] at ih ⊢
-      have key : (s.natAbs+t.natAbs)*A≤r42asum (c :: l)*(s.natAbs+t.natAbs+1)^(l.length+1) :=
-        calc (s.natAbs+t.natAbs)*A≤(s.natAbs+t.natAbs+1)*A := Nat.mul_le_mul_right _ (Nat.le_succ _)
-          _≤(s.natAbs+t.natAbs+1)*(r42asum (c :: l)*(s.natAbs+t.natAbs+1)^l.length) :=
-            Nat.mul_le_mul_left _ ih
-          _=_ := by ring
-      have hM : 1≤(s.natAbs+t.natAbs+1)^(l.length+1) := Nat.one_le_pow _ _ (by omega)
-      have hb' : b.natAbs≤b.natAbs*(s.natAbs+t.natAbs+1)^(l.length+1) := Nat.le_mul_of_pos_right _ hM
-      rw [hb] at h1
-      rw [add_mul]
-      omega
-
-private theorem r42_getD_le_asum : ∀ (l : List ℤ) (j : ℕ),(l.getD j 0).natAbs≤r42asum l
-  | [],j => by simp [r42asum]
-  | a :: l,0 => by simp [r42asum]
-  | a :: l,j+1 => by
-    have := r42_getD_le_asum l j
-    simp only [List.getD_cons_succ,r42asum]
-    omega
-
-private theorem r42_length_affMulAux (s t : ℤ) : ∀ (c : ℤ) (z : List ℤ),
-    (Certificate.affMulAux s t c z).length=z.length+1
-  | c,[] => rfl
-  | c,x :: z => by
-    simp [Certificate.affMulAux,r42_length_affMulAux s t x z]
-
-private theorem r42_length_affMul (s t : ℤ) (z : List ℤ) :
-    (Certificate.affMul s t z).length≤z.length+1 := by
-  unfold Certificate.affMul
-  split_ifs
-  · cases z with
-    | nil => simp [Certificate.shiftMul]
-    | cons x z =>
-      rw [Certificate.shiftMul,r42_length_add]
-      simp
-  · cases z with
-    | nil => simp [Certificate.affMulGen]
-    | cons x z =>
-      simp [Certificate.affMulGen,r42_length_affMulAux]
-
-private theorem r42_length_compAff (s t : ℤ) : ∀ l : List ℤ,
-    (Certificate.compAff s t l).length≤l.length
-  | [] => by simp [Certificate.compAff]
-  | b :: l => by
-    have ih := r42_length_compAff s t l
-    have h := r42_length_affMul s t (Certificate.compAff s t l)
-    rw [Certificate.compAff,r42_length_add]
-    simp only [List.length_cons,List.length_nil]
-    omega
-
-private def r42kcenterWith (B s t : ℤ) (L : List ℤ) : List ℤ :=
-  r42dec B L.length (r42enc (s+t*B) L)
-/-- The composition of `L` with `s+tX`, by one evaluation at `s+tB`, read back in base
-`B = 2 Σ|Lᵢ| (|s|+|t|+1)^(n-1) + 1`. -/
-private def r42kcenterAux (s t : ℤ) (L : List ℤ) : List ℤ :=
-  r42kcenterWith (2*(r42asum L*(s.natAbs+t.natAbs+1)^(L.length-1))+1) s t L
-
-private theorem r42_toPoly_kcenterAux (s t : ℤ) (L : List ℤ) :
-    toPoly (r42kcenterAux s t L)=toPoly (Certificate.compAff s t L) := by
-  rw [r42kcenterAux,r42kcenterWith]
-  generalize hB : (2*(r42asum L*(s.natAbs+t.natAbs+1)^(L.length-1))+1 : ℤ)=B
-  have hB0 : 0<B := by rw [← hB]; positivity
-  have he : r42enc (s+t*B) L=r42enc B (Certificate.compAff s t L) := by
-    have e : (r42enc (s+t*B) L : ℚ)=(r42enc B (Certificate.compAff s t L) : ℚ) := by
-      rw [r42_enc_eq,r42_enc_eq,Certificate.toPoly_compAff,eval_comp]
-      simp
-    exact_mod_cast e
-  rw [he]
-  apply r42_dec_enc hB0 _ _ (r42_length_compAff s t L)
-  intro j
-  have h1 := r42_getD_le_asum (Certificate.compAff s t L) j
-  have h2 := r42_asum_compAff s t L
-  have h3 : ((Certificate.compAff s t L).getD j 0).natAbs≤
-      r42asum L*(s.natAbs+t.natAbs+1)^(L.length-1) := h1.trans h2
-  have h4 : |(Certificate.compAff s t L).getD j 0|≤
-      ((r42asum L*(s.natAbs+t.natAbs+1)^(L.length-1) : ℕ) : ℤ) := by
-    rw [Int.abs_eq_natAbs]; exact_mod_cast h3
-  obtain ⟨h5,h6⟩ := abs_le.1 h4
-  push_cast at h5 h6 hB
-  constructor <;> linarith
-
-/-- `Scaled.center`, with the composition by `r42kcenterAux`. -/
-private def _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.kcenter
-    (c : Scaled) (num den : ℕ) (s t : ℤ) : Scaled :=
-  ⟨r42kcenterAux s t (Certificate.prescale num den (c.l.length-1) 0 c.l),
-    c.s*den^(c.l.length-1)⟩
-
-private theorem _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.Rep.kcentered
-    {c : Scaled} {p : ℚ[X]} (hc : c.Rep p) (num den : ℕ) (s t : ℤ)
-    {a b : ℚ} (hden : den≠0) (hm : (a+b)/2=num*s/den) (hh : (b-a)/2=num*t/den) :
-    (c.kcenter num den s t).Rep (WholeIntervalPolynomial.centered a b p) := by
-  have h := hc.centered num den s t hden hm hh
-  unfold Scaled.Rep at h ⊢
-  show toPoly (r42kcenterAux s t _)=_
-  rw [r42_toPoly_kcenterAux]
-  exact h
-
 /-! ### The numerators as scaled integer coefficient lists
 
 Each polynomial of the companion is mirrored by a `Scaled` list built with the same
 operations, and `Scaled.Rep` proves that the list represents it.  The kernel evaluates
 only these integer lists. -/
 
-/-- The monomial `X^k`. -/
-private def r42mono (k : ℕ) : Scaled := ⟨List.replicate k 0++[1],1⟩
-private theorem r42mono_rep (k : ℕ) : (r42mono k).Rep (X^k) := by
-  unfold Scaled.Rep r42mono
-  simp only [Nat.cast_one,map_one,one_mul]
-  induction k with
-  | zero => simp [toPoly]
-  | succ k ih =>
-    rw [List.replicate_succ,List.cons_append,toPoly,ih,pow_succ]
-    simp only [Int.cast_zero,map_zero,zero_add]
-    ring
-
 private def r42S5 : Scaled :=
-  (Scaled.var.subN ((Scaled.const (1/6)).mul (r42mono 3))).addN
-    ((Scaled.const (1/120)).mul (r42mono 5))
+  (Scaled.var.subN ((Scaled.const (1/6)).mul (Scaled.mono 3))).addN
+    ((Scaled.const (1/120)).mul (Scaled.mono 5))
 private theorem r42S5_rep : r42S5.Rep S5 :=
-  (Scaled.rep_var.subN ((Scaled.rep_const _).mul (r42mono_rep 3))).addN
-    ((Scaled.rep_const _).mul (r42mono_rep 5))
+  (Scaled.rep_var.subN ((Scaled.rep_const _).mul (Scaled.rep_mono 3))).addN
+    ((Scaled.rep_const _).mul (Scaled.rep_mono 5))
 private def r42S9 : Scaled :=
-  (r42S5.subN ((Scaled.const (1/5040)).mul (r42mono 7))).addN
-    ((Scaled.const (1/362880)).mul (r42mono 9))
+  (r42S5.subN ((Scaled.const (1/5040)).mul (Scaled.mono 7))).addN
+    ((Scaled.const (1/362880)).mul (Scaled.mono 9))
 private theorem r42S9_rep : r42S9.Rep S9 :=
-  (r42S5_rep.subN ((Scaled.rep_const _).mul (r42mono_rep 7))).addN
-    ((Scaled.rep_const _).mul (r42mono_rep 9))
-private def r42S11 : Scaled := r42S9.subN ((Scaled.const (1/39916800)).mul (r42mono 11))
+  (r42S5_rep.subN ((Scaled.rep_const _).mul (Scaled.rep_mono 7))).addN
+    ((Scaled.rep_const _).mul (Scaled.rep_mono 9))
+private def r42S11 : Scaled := r42S9.subN ((Scaled.const (1/39916800)).mul (Scaled.mono 11))
 private theorem r42S11_rep : r42S11.Rep S11 :=
-  r42S9_rep.subN ((Scaled.rep_const _).mul (r42mono_rep 11))
+  r42S9_rep.subN ((Scaled.rep_const _).mul (Scaled.rep_mono 11))
 private def r42C4 : Scaled :=
-  ((Scaled.ofNat 1).subN ((Scaled.const (1/2)).mul (r42mono 2))).addN
-    ((Scaled.const (1/24)).mul (r42mono 4))
+  ((Scaled.ofNat 1).subN ((Scaled.const (1/2)).mul (Scaled.mono 2))).addN
+    ((Scaled.const (1/24)).mul (Scaled.mono 4))
 private theorem r42C4_rep : r42C4.Rep C4 :=
-  (Scaled.rep_one.subN ((Scaled.rep_const _).mul (r42mono_rep 2))).addN
-    ((Scaled.rep_const _).mul (r42mono_rep 4))
+  (Scaled.rep_one.subN ((Scaled.rep_const _).mul (Scaled.rep_mono 2))).addN
+    ((Scaled.rep_const _).mul (Scaled.rep_mono 4))
 private def r42C10 : Scaled :=
-  ((r42C4.subN ((Scaled.const (1/720)).mul (r42mono 6))).addN
-    ((Scaled.const (1/40320)).mul (r42mono 8))).subN
-    ((Scaled.const (1/3628800)).mul (r42mono 10))
+  ((r42C4.subN ((Scaled.const (1/720)).mul (Scaled.mono 6))).addN
+    ((Scaled.const (1/40320)).mul (Scaled.mono 8))).subN
+    ((Scaled.const (1/3628800)).mul (Scaled.mono 10))
 private theorem r42C10_rep : r42C10.Rep C10 :=
-  ((r42C4_rep.subN ((Scaled.rep_const _).mul (r42mono_rep 6))).addN
-    ((Scaled.rep_const _).mul (r42mono_rep 8))).subN
-    ((Scaled.rep_const _).mul (r42mono_rep 10))
-private def r42C12 : Scaled := r42C10.addN ((Scaled.const (1/479001600)).mul (r42mono 12))
+  ((r42C4_rep.subN ((Scaled.rep_const _).mul (Scaled.rep_mono 6))).addN
+    ((Scaled.rep_const _).mul (Scaled.rep_mono 8))).subN
+    ((Scaled.rep_const _).mul (Scaled.rep_mono 10))
+private def r42C12 : Scaled := r42C10.addN ((Scaled.const (1/479001600)).mul (Scaled.mono 12))
 private theorem r42C12_rep : r42C12.Rep C12 :=
-  r42C10_rep.addN ((Scaled.rep_const _).mul (r42mono_rep 12))
+  r42C10_rep.addN ((Scaled.rep_const _).mul (Scaled.rep_mono 12))
 
-private theorem r42_rep_eq {S : Scaled} {p q : ℚ[X]} (e : q=p) (h : S.Rep q) : S.Rep p := e ▸ h
-
-/-- `num3` on encoded lists, with `w = r1 r2`:
-`2 A r0 w - R ((P0+r0²) w + ((P1+r1²) r2 + (P2+r2²) r1) r0)`. -/
-private def r42num3K (A P0 P1 P2 r0 r1 r2 w : r42K) : r42K :=
-  ((((r42K.const 2).mul A).mul r0).mul w).sub ((r42K.const Rbar).mul
-    (((P0.add (r0.mul r0)).mul w).add
-      ((((P1.add (r1.mul r1)).mul r2).add ((P2.add (r2.mul r2)).mul r1)).mul r0)))
-private def r42num3B (B : ℤ) (A P0 P1 P2 r0 r1 r2 : Scaled) : r42K :=
-  r42num3K (r42K.ofScaled B A) (r42K.ofScaled B P0) (r42K.ofScaled B P1) (r42K.ofScaled B P2)
-    (r42K.ofScaled B r0) (r42K.ofScaled B r1) (r42K.ofScaled B r2)
-    ((r42K.ofScaled B r1).mul (r42K.ofScaled B r2))
-private def r42num3With (B : ℤ) (A P0 P1 P2 r0 r1 r2 : Scaled) : Scaled :=
-  r42norm ((r42num3B B A P0 P1 P2 r0 r1 r2).toScaled B)
-/-- `num3` of the lists, read back in a base above twice its coefficient bound. -/
-private def r42num3 (A P0 P1 P2 r0 r1 r2 : Scaled) : Scaled :=
-  r42num3With (2*(r42num3B 0 A P0 P1 P2 r0 r1 r2).β+1) A P0 P1 P2 r0 r1 r2
-private theorem r42num3With_rep (B : ℤ) {A P0 P1 P2 r0 r1 r2 : Scaled}
-    {a p0 p1 p2 s0 s1 s2 : ℚ[X]} (hA : A.Rep a) (h0 : P0.Rep p0) (h1 : P1.Rep p1)
-    (h2 : P2.Rep p2) (g0 : r0.Rep s0) (g1 : r1.Rep s1) (g2 : r2.Rep s2) :
-    (r42num3With B A P0 P1 P2 r0 r1 r2).Rep (num3 a p0 p1 p2 s0 s1 s2) := by
-  have kA := r42K.rep_ofScaled B hA
-  have k0 := r42K.rep_ofScaled B h0
-  have k1 := r42K.rep_ofScaled B h1
-  have k2 := r42K.rep_ofScaled B h2
-  have j0 := r42K.rep_ofScaled B g0
-  have j1 := r42K.rep_ofScaled B g1
-  have j2 := r42K.rep_ofScaled B g2
-  exact r42_rep_eq (by unfold num3; ring) (r42_rep_norm (r42K.Rep.toScaled
-    (((((r42K.rep_const B 2).mul kA).mul j0).mul (j1.mul j2)).sub ((r42K.rep_const B Rbar).mul
-      (((k0.add (j0.mul j0)).mul (j1.mul j2)).add
-        ((((k1.add (j1.mul j1)).mul j2).add ((k2.add (j2.mul j2)).mul j1)).mul j0))))))
 private theorem r42num3_rep {A P0 P1 P2 r0 r1 r2 : Scaled} {a p0 p1 p2 s0 s1 s2 : ℚ[X]}
     (hA : A.Rep a) (h0 : P0.Rep p0) (h1 : P1.Rep p1) (h2 : P2.Rep p2)
     (g0 : r0.Rep s0) (g1 : r1.Rep s1) (g2 : r2.Rep s2) :
-    (r42num3 A P0 P1 P2 r0 r1 r2).Rep (num3 a p0 p1 p2 s0 s1 s2) :=
-  r42num3With_rep _ hA h0 h1 h2 g0 g1 g2
-
-/-- `num4` on encoded lists, with `u = r0 r1` and `v = r2 r3`:
-`2 A u v - R (((P0+r0²) r1 + (P1+r1²) r0) v + ((P2+r2²) r3 + (P3+r3²) r2) u)`. -/
-private def r42num4K (A P0 P1 P2 P3 r0 r1 r2 r3 u v : r42K) : r42K :=
-  ((((r42K.const 2).mul A).mul u).mul v).sub ((r42K.const Rbar).mul
-    (((((P0.add (r0.mul r0)).mul r1).add ((P1.add (r1.mul r1)).mul r0)).mul v).add
-      ((((P2.add (r2.mul r2)).mul r3).add ((P3.add (r3.mul r3)).mul r2)).mul u)))
-private def r42num4B (B : ℤ) (A P0 P1 P2 P3 r0 r1 r2 r3 : Scaled) : r42K :=
-  r42num4K (r42K.ofScaled B A) (r42K.ofScaled B P0) (r42K.ofScaled B P1) (r42K.ofScaled B P2)
-    (r42K.ofScaled B P3) (r42K.ofScaled B r0) (r42K.ofScaled B r1) (r42K.ofScaled B r2)
-    (r42K.ofScaled B r3) ((r42K.ofScaled B r0).mul (r42K.ofScaled B r1))
-    ((r42K.ofScaled B r2).mul (r42K.ofScaled B r3))
-private def r42num4With (B : ℤ) (A P0 P1 P2 P3 r0 r1 r2 r3 : Scaled) : Scaled :=
-  r42norm ((r42num4B B A P0 P1 P2 P3 r0 r1 r2 r3).toScaled B)
-/-- `num4` of the lists, read back in a base above twice its coefficient bound. -/
-private def r42num4 (A P0 P1 P2 P3 r0 r1 r2 r3 : Scaled) : Scaled :=
-  r42num4With (2*(r42num4B 0 A P0 P1 P2 P3 r0 r1 r2 r3).β+1) A P0 P1 P2 P3 r0 r1 r2 r3
-private theorem r42num4With_rep (B : ℤ) {A P0 P1 P2 P3 r0 r1 r2 r3 : Scaled}
-    {a p0 p1 p2 p3 s0 s1 s2 s3 : ℚ[X]}
-    (hA : A.Rep a) (h0 : P0.Rep p0) (h1 : P1.Rep p1) (h2 : P2.Rep p2) (h3 : P3.Rep p3)
-    (g0 : r0.Rep s0) (g1 : r1.Rep s1) (g2 : r2.Rep s2) (g3 : r3.Rep s3) :
-    (r42num4With B A P0 P1 P2 P3 r0 r1 r2 r3).Rep (num4 a p0 p1 p2 p3 s0 s1 s2 s3) := by
-  have kA := r42K.rep_ofScaled B hA
-  have k0 := r42K.rep_ofScaled B h0
-  have k1 := r42K.rep_ofScaled B h1
-  have k2 := r42K.rep_ofScaled B h2
-  have k3 := r42K.rep_ofScaled B h3
-  have j0 := r42K.rep_ofScaled B g0
-  have j1 := r42K.rep_ofScaled B g1
-  have j2 := r42K.rep_ofScaled B g2
-  have j3 := r42K.rep_ofScaled B g3
-  exact r42_rep_eq (by unfold num4; ring) (r42_rep_norm (r42K.Rep.toScaled
-    (((((r42K.rep_const B 2).mul kA).mul (j0.mul j1)).mul (j2.mul j3)).sub
-      ((r42K.rep_const B Rbar).mul
-        (((((k0.add (j0.mul j0)).mul j1).add ((k1.add (j1.mul j1)).mul j0)).mul (j2.mul j3)).add
-          ((((k2.add (j2.mul j2)).mul j3).add ((k3.add (j3.mul j3)).mul j2)).mul (j0.mul j1)))))))
+    (Scaled.num3 Rbar A P0 P1 P2 r0 r1 r2).Rep (num3 a p0 p1 p2 s0 s1 s2) :=
+  hA.num3 Rbar h0 h1 h2 g0 g1 g2
 private theorem r42num4_rep {A P0 P1 P2 P3 r0 r1 r2 r3 : Scaled}
     {a p0 p1 p2 p3 s0 s1 s2 s3 : ℚ[X]}
     (hA : A.Rep a) (h0 : P0.Rep p0) (h1 : P1.Rep p1) (h2 : P2.Rep p2) (h3 : P3.Rep p3)
     (g0 : r0.Rep s0) (g1 : r1.Rep s1) (g2 : r2.Rep s2) (g3 : r3.Rep s3) :
-    (r42num4 A P0 P1 P2 P3 r0 r1 r2 r3).Rep (num4 a p0 p1 p2 p3 s0 s1 s2 s3) :=
-  r42num4With_rep _ hA h0 h1 h2 h3 g0 g1 g2 g3
+    (Scaled.num4 Rbar A P0 P1 P2 P3 r0 r1 r2 r3).Rep (num4 a p0 p1 p2 p3 s0 s1 s2 s3) :=
+  hA.num4 Rbar h0 h1 h2 h3 g0 g1 g2 g3
 
 private def r42t : Family → Scaled
   | .low => (Scaled.const split).subN Scaled.var
@@ -865,9 +265,9 @@ private theorem r42sh_rep : r42sh.Rep (C PositiveTD.Certificate.sh) :=
 /-! The fourteen numerators. -/
 
 private def r42NH : Family → Scaled
-  | .low => r42num3 (((r42elem .low).addN r42C10).subN (Scaled.ofNat 1))
+  | .low => Scaled.num3 Rbar (((r42elem .low).addN r42C10).subN (Scaled.ofNat 1))
       (r42PG .low) (r42PB .low) (r42PHminus .low) (r42RG .low) (r42RB .low) (r42RHminus .low)
-  | .high => r42num4 (((r42elem .high).addN r42C10).subN (Scaled.ofNat 1))
+  | .high => Scaled.num4 Rbar (((r42elem .high).addN r42C10).subN (Scaled.ofNat 1))
       (r42PG .high) (r42PB .high) (r42PHminus .high) (r42PD .high)
       (r42RG .high) (r42RB .high) (r42RHminus .high) (r42RD .high)
 private theorem r42NH_rep : ∀ f, (r42NH f).Rep (NH f)
@@ -883,7 +283,7 @@ private theorem r42NH_rep : ∀ f, (r42NH f).Rep (NH f)
       (r42RG_rep .high) (r42RB_rep .high) (r42RHminus_rep .high) (r42RD_rep .high)
 
 private def r42NG : Scaled :=
-  r42num4 ((r42elem .high).addN ((r42l .high).mul (r42C10.subN (Scaled.ofNat 1))))
+  Scaled.num4 Rbar ((r42elem .high).addN ((r42l .high).mul (r42C10.subN (Scaled.ofNat 1))))
     (r42PH .high) (r42PB .high) (r42PGminus .high) (r42PD .high)
     (r42RH .high) (r42RB .high) (r42RGminus .high) (r42RD .high)
 private theorem r42NG_rep : r42NG.Rep NG :=
@@ -892,7 +292,7 @@ private theorem r42NG_rep : r42NG.Rep NG :=
     (r42RH_rep .high) (r42RB_rep .high) (r42RGminus_rep .high) (r42RD_rep .high)
 
 private def r42NB : Scaled :=
-  r42num4 ((r42elem .high).addN ((r42qStar .high).mul (r42C10.subN (Scaled.ofNat 1))))
+  Scaled.num4 Rbar ((r42elem .high).addN ((r42qStar .high).mul (r42C10.subN (Scaled.ofNat 1))))
     (r42PH .high) (r42PG .high) (r42PBminus .high) (r42PD .high)
     (r42RH .high) (r42RG .high) (r42RBminus .high) (r42RD .high)
 private theorem r42NB_rep : r42NB.Rep NB :=
@@ -924,9 +324,9 @@ private theorem r42GAR2_rep (f : Family) : (r42GAR2 f).Rep (equalGAR f 2) := r42
 private theorem r42GAR3_rep (f : Family) : (r42GAR3 f).Rep (equalGAR f 3) := r42C4_rep.mul (r42RD_rep f)
 
 private def r42NZ : Family → Scaled
-  | .low => r42num3 (r42AZ .low) (r42GAP0 .low) (r42GAP1 .low) (r42GAP2 .low)
+  | .low => Scaled.num3 Rbar (r42AZ .low) (r42GAP0 .low) (r42GAP1 .low) (r42GAP2 .low)
       (r42GAR0 .low) (r42GAR1 .low) (r42GAR2 .low)
-  | .high => r42num4 (r42AZ .high) (r42GAP0 .high) (r42GAP1 .high) (r42GAP2 .high) (r42GAP3 .high)
+  | .high => Scaled.num4 Rbar (r42AZ .high) (r42GAP0 .high) (r42GAP1 .high) (r42GAP2 .high) (r42GAP3 .high)
       (r42GAR0 .high) (r42GAR1 .high) (r42GAR2 .high) (r42GAR3 .high)
 private theorem r42NZ_rep : ∀ f, (r42NZ f).Rep (NZ f)
   | .low => by
@@ -940,7 +340,7 @@ private theorem r42NZ_rep : ∀ f, (r42NZ f).Rep (NZ f)
       (r42GAR0_rep .high) (r42GAR1_rep .high) (r42GAR2_rep .high) (r42GAR3_rep .high)
 
 private def r42NZA : Scaled :=
-  r42num4 (r42AZ .high) (r42GAP0 .high) (r42C12.ksq.kmul (r42PG .high))
+  Scaled.num4 Rbar (r42AZ .high) (r42GAP0 .high) (r42C12.ksq.kmul (r42PG .high))
     (((r42l .high).pow 2).addN ((r42mHi .high).ksq.kmul r42C12.ksq)) (r42GAP3 .high)
     (r42GAR0 .high) (r42C4.mul (r42RG .high))
     (((Scaled.const (4/5)).mul (r42l .high)).addN (((Scaled.const (3/5)).mul (r42mu .high)).mul r42C4))
@@ -962,7 +362,7 @@ private theorem r42chm1_rep : r42chm1.Rep (C (PositiveTD.Certificate.ch-1)) :=
   r42_rep_Csub r42ch_rep (Scaled.rep_const 1)
 
 private def r42NM : Scaled :=
-  r42num3 (((r42elem .low).addN ((r42k .low).mul (r42phiLo.subN (Scaled.ofNat 1)))).addN
+  Scaled.num3 Rbar (((r42elem .low).addN ((r42k .low).mul (r42phiLo.subN (Scaled.ofNat 1)))).addN
       ((r42l .low).mul r42chm1))
     (r42PH .low) (r42PB .low) (r42PGminus .low) (r42RH .low) (r42RB .low) (r42RGminus .low)
 private theorem r42NM_rep : r42NM.Rep NM :=
@@ -981,7 +381,7 @@ private def r42twosh : Scaled := (Scaled.const 2).mul r42sh
 private theorem r42twosh_rep : r42twosh.Rep (C (2*PositiveTD.Certificate.sh)) :=
   r42_rep_Cmul (Scaled.rep_const 2) r42sh_rep
 private def r42NSH : Scaled :=
-  r42num3 (r42lowStar.addN r42chm1) (r42PG .low) (r42PB .low)
+  Scaled.num3 Rbar (r42lowStar.addN r42chm1) (r42PG .low) (r42PB .low)
     ((r42PH .low).subN (r42twosh.mul (r42k .low))) (r42RG .low) (r42RB .low)
     (Scaled.const (77/100))
 private theorem r42NSH_rep : r42NSH.Rep NSH :=
@@ -989,7 +389,7 @@ private theorem r42NSH_rep : r42NSH.Rep NSH :=
     ((r42PH_rep .low).subN (r42twosh_rep.mul (r42k_rep .low))) (r42RG_rep .low) (r42RB_rep .low)
     (Scaled.rep_const _)
 private def r42NSG : Scaled :=
-  r42num3 (r42lowStar.addN ((r42l .low).mul r42chm1)) (r42PH .low) (r42PB .low)
+  Scaled.num3 Rbar (r42lowStar.addN ((r42l .low).mul r42chm1)) (r42PH .low) (r42PB .low)
     ((r42PG .low).subN ((r42twosh.mul (r42k .low)).mul (r42l .low))) (r42RH .low) (r42RB .low)
     ((Scaled.const (77/100)).mul (r42l .low))
 private theorem r42NSG_rep : r42NSG.Rep NSG :=
@@ -1150,13 +550,13 @@ private theorem r42cR3_rep (e : Cut) : (r42cR3 e).Rep (C (gammaApprox e)*RD .hig
   (r42ga_rep e).mul (r42RD_rep .high)
 
 private def r42cutN : Cut → Scaled
-  | .gaH => r42num4 (r42cutA .gaH) (r42cP0u .gaH) (r42cP1g .gaH) (r42cP2g .gaH) (r42cP3 .gaH)
+  | .gaH => Scaled.num4 Rbar (r42cutA .gaH) (r42cP0u .gaH) (r42cP1g .gaH) (r42cP2g .gaH) (r42cP3 .gaH)
       (r42cR0u .gaH) (r42cR1g .gaH) (r42cR2g .gaH) (r42cR3 .gaH)
-  | .gaB => r42num4 (r42cutA .gaB) (r42cP0 .gaB) (r42cP1g .gaB) (r42cP2u .gaB) (r42cP3 .gaB)
+  | .gaB => Scaled.num4 Rbar (r42cutA .gaB) (r42cP0 .gaB) (r42cP1g .gaB) (r42cP2u .gaB) (r42cP3 .gaB)
       (r42cR0 .gaB) (r42cR1g .gaB) (r42cR2u .gaB) (r42cR3 .gaB)
-  | .abG => r42num4 (r42cutA .abG) (r42cP0 .abG) (r42cP1u .abG) (r42cP2a .abG) (r42cP3 .abG)
+  | .abG => Scaled.num4 Rbar (r42cutA .abG) (r42cP0 .abG) (r42cP1u .abG) (r42cP2a .abG) (r42cP3 .abG)
       (r42cR0 .abG) (r42cR1u .abG) (r42cR2a .abG) (r42cR3 .abG)
-  | .abH => r42num4 (r42cutA .abH) (r42cP0u .abH) (r42cP1a .abH) (r42cP2a .abH) (r42cP3 .abH)
+  | .abH => Scaled.num4 Rbar (r42cutA .abH) (r42cP0u .abH) (r42cP1a .abH) (r42cP2a .abH) (r42cP3 .abH)
       (r42cR0u .abH) (r42cR1a .abH) (r42cR2a .abH) (r42cR3 .abH)
 private theorem r42cutN_rep : ∀ e, (r42cutN e).Rep (cutN e)
   | .gaH => r42num4_rep (r42cutA_rep .gaH) (r42cP0u_rep .gaH) (r42cP1g_rep .gaH) (r42cP2g_rep .gaH)
@@ -1445,25 +845,30 @@ private theorem r42NMc_rep : r42NMc.Rep (centered 0 split NM) :=
   r42NM_rep.kcentered 1 10 1 1 (by norm_num) (by norm_num [split]) (by norm_num [split])
 private theorem r42_mixed_check : r42QuadOK r42NMc 40 38 (153/5000) := by decide +kernel
 
-theorem low_mixed_identity : centered 0 split NM=
-    C (mixedCoefficient 0-mixedCoefficient 2)+C (mixedCoefficient 1)*X+
-      C (2*mixedCoefficient 2)*X^2+tail mixedCoefficient 3 38 := by
-  rw [(r42_quad r42NMc_rep r42_mixed_check).1]
-  change series 40 mixedCoefficient=_
+/-- The Chebyshev quadratic part of a series. -/
+private theorem r42_series_quad (c : ℕ → ℚ) (n : ℕ) :
+    series (n+2) c=C (c 0-c 2)+C (c 1)*X+C (2*c 2)*X^2+tail c 3 n := by
   rw [series,tail,Fin.sum_univ_succ,Fin.sum_univ_succ]
   simp only [Fin.val_zero,Fin.val_succ,Nat.cast_ofNat,Nat.cast_add,Nat.cast_one,Nat.cast_zero,
     zero_add]
-  have hrest : ∀ j : Fin 38,C (mixedCoefficient (j.val+1+1+1))*
+  have hrest : ∀ j : Fin n,C (c (j.val+1+1+1))*
       Polynomial.Chebyshev.T ℚ ((j.val:ℤ)+1+1+1)=
-      C (mixedCoefficient (j.val+3))*Polynomial.Chebyshev.T ℚ ((j.val:ℤ)+3) := fun j => by
+      C (c (j.val+3))*Polynomial.Chebyshev.T ℚ ((j.val:ℤ)+3) := fun j => by
     ring_nf
   simp only [hrest,Polynomial.Chebyshev.T_one,show (1:ℕ)+1=2 from rfl,show (1:ℤ)+1=2 by norm_num,
     Polynomial.Chebyshev.T_two,map_sub,map_mul,map_ofNat]
   ring
 
+theorem low_mixed_identity : centered 0 split NM=
+    C (mixedCoefficient 0-mixedCoefficient 2)+C (mixedCoefficient 1)*X+
+      C (2*mixedCoefficient 2)*X^2+tail mixedCoefficient 3 38 := by
+  rw [(r42_quad r42NMc_rep r42_mixed_check).1,expansion,← mixedCoefficient.eq_1]
+  exact r42_series_quad mixedCoefficient 38
+
 theorem low_mixed_reserve : 0< mixedCoefficient 2 ∧
-    (153/5000:ℚ)<quadraticReserve mixedCoefficient 38 :=
-  (r42_quad r42NMc_rep r42_mixed_check).2
+    (153/5000:ℚ)<quadraticReserve mixedCoefficient 38 := by
+  rw [mixedCoefficient]
+  exact (r42_quad r42NMc_rep r42_mixed_check).2
 
 theorem low_M_positive {z : ℝ} (hz : z∈Set.Icc 0 (1/5:ℝ)) :
     (153/5000:ℝ)<aeval z NM := by

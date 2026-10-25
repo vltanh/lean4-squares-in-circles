@@ -1,8 +1,7 @@
 module
 
 public import Mathlib.Analysis.Calculus.Deriv.MeanValue
-public import SquaresInCircles.Eight.Owners.Critical.EFamily
-public import SquaresInCircles.Eight.Owners.Critical.PositiveTCoefficients
+public import SquaresInCircles.Eight.Owners.Critical.EWeightBounds
 public import SquaresInCircles.Eight.Owners.Critical.PositiveTModel
 
 /-!

@@ -1,7 +1,7 @@
 module
 
-public import SquaresInCircles.Eight.Frames.Mid.HighTargetCalculus
-public import SquaresInCircles.Eight.Frames.Mid.HighVaryingReferences
+public import SquaresInCircles.Eight.Frames.Mid.HighSupportForms
+public import SquaresInCircles.Eight.Frames.Mid.HighVaryingScalars
 
 /-!
 # Eight squares: endpoint comparisons for the target-high support

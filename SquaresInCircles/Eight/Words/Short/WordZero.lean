@@ -3,7 +3,7 @@ module
 public import SquaresInCircles.Eight.Words.Short.Mixed.ZeroCycle
 public import SquaresInCircles.Eight.Words.Short.Outer.Zero.OppositeCycle
 public import SquaresInCircles.Eight.Words.Short.Outer.Zero.SameCycle
-public import SquaresInCircles.Eight.Words.Wrong.WordCore
+public import SquaresInCircles.Eight.Words.Wrong.ZeroOriginalOwners
 
 /-!
 # Eight squares: every original zero-quarter edge of the short wrong word

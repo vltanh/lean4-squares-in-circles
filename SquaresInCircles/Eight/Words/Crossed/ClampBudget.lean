@@ -1,8 +1,10 @@
 module
 
-public import SquaresInCircles.Eight.Words.Crossed.AngleReserve
-public import SquaresInCircles.Eight.Words.Crossed.ClampRates
+public import Mathlib.Algebra.Order.Star.Real
+public import Mathlib.Tactic
+public import SquaresInCircles.Eight.Owners.WholeIntervalBernstein
 public import SquaresInCircles.Eight.Owners.Endpoint.BudgetScalars
+public import SquaresInCircles.Eight.Owners.Endpoint.RotationPenalty
 
 /-!
 # Eight squares: the unchanged source budget at an active common-frame cap boundary
@@ -13,6 +15,287 @@ forces the active A transverse corner above `48/49` (`BoundaryData.Y_gt`). On th
 the same budget captures the opposite error below `.06` (`BoundaryData.angle_small`).
 -/
 
+section
+/-!
+## Whole-interval angle reserves for crossed outer contacts
+
+One degree-six Taylor polynomial controls the
+complete enlarged comparison interval [0,.9].  On [.04,.7] its difference
+from the left endpoint factors into a strictly positive polynomial.
+These are continuous interval arguments; no angular partition is used.
+-/
+
+@[expose] public section
+noncomputable section
+open Set
+namespace SquaresInCircles.Eight.CrossedAngleReserve
+open EndpointRotationPenalty
+
+def curve (A k h : ℝ) : ℝ := charge*h-k*Real.sin h-A*(1-Real.cos h)
+
+def polynomial (h : ℝ) : ℝ :=
+  charge*h-(183/200)*(h-h^3/6+h^5/120)-
+    (1/2)*(h^2/2-h^4/24+h^6/720)
+
+def polynomialD (h : ℝ) : ℝ :=
+  charge-(183/200)*(1-h^2/2+h^4/24)-
+    (1/2)*(h-h^3/6+h^5/120)
+
+theorem curve_hasDerivAt (A k h : ℝ) :
+    HasDerivAt (curve A k)
+      (charge-k*Real.cos h-A*Real.sin h) h := by
+  have h1 : HasDerivAt (fun x : ℝ => charge*x) charge h :=
+    ((hasDerivAt_id h).const_mul charge).congr_deriv (by simp)
+  have h2 : HasDerivAt (fun x => k*Real.sin x) (k*Real.cos h) h :=
+    (Real.hasDerivAt_sin h).const_mul k
+  have h3 : HasDerivAt (fun x => A*(1-Real.cos x)) (A*Real.sin h) h :=
+    (((Real.hasDerivAt_cos h).const_sub 1).const_mul A).congr_deriv (by ring)
+  exact (h1.sub h2).sub h3
+
+theorem polynomial_hasDerivAt (h : ℝ) :
+    HasDerivAt polynomial (polynomialD h) h := by
+  have hs : HasDerivAt (fun x : ℝ => x-x^3/6+x^5/120) (1-h^2/2+h^4/24) h :=
+    (((hasDerivAt_id h).sub ((hasDerivAt_pow 3 h).div_const 6)).add
+      ((hasDerivAt_pow 5 h).div_const 120)).congr_deriv (by simp; ring)
+  have hc : HasDerivAt (fun x : ℝ => x^2/2-x^4/24+x^6/720) (h-h^3/6+h^5/120) h :=
+    ((((hasDerivAt_pow 2 h).div_const 2).sub ((hasDerivAt_pow 4 h).div_const 24)).add
+      ((hasDerivAt_pow 6 h).div_const 720)).congr_deriv (by simp; ring)
+  have h1 : HasDerivAt (fun x : ℝ => charge*x) charge h :=
+    ((hasDerivAt_id h).const_mul charge).congr_deriv (by simp)
+  exact ((h1.sub (hs.const_mul (183/200))).sub (hc.const_mul (1/2)))
+
+theorem polynomial_lower {h : ℝ} (hh : 0≤h) :
+    polynomial h≤curve (1/2) (183/200) h := by
+  have hs := sin_upper_five hh
+  have hc := cos_lower_six hh
+  dsimp [polynomial,curve]
+  linarith
+
+theorem polynomial_positive {h : ℝ} (hh : h∈Ioc 0 (9/10 : ℝ)) :
+    0<polynomial h := by
+  let x := 7/10-h
+  have hx : x∈Icc (-(1/5) : ℝ) (7/10) := by
+    dsimp [x]
+    constructor <;> linarith [hh.1,hh.2]
+  have hax : |x|≤7/10 := abs_le.mpr ⟨by linarith [hx.1],hx.2⟩
+  have hx2 : x^2≤49/100 := by
+    have ht := pow_le_pow_left₀ (abs_nonneg x) hax 2
+    rw [sq_abs] at ht
+    norm_num at ht
+    exact ht
+  have hx3 : -(343/1000 : ℝ)≤x^3 := by
+    have ht := pow_le_pow_left₀ (abs_nonneg x) hax 3
+    rw [←abs_pow] at ht
+    exact (abs_le.mp (by norm_num at ht ⊢; exact ht)).1
+  have hx5 : -(16807/100000 : ℝ)≤x^5 := by
+    have ht := pow_le_pow_left₀ (abs_nonneg x) hax 5
+    rw [←abs_pow] at ht
+    exact (abs_le.mp (by norm_num at ht ⊢; exact ht)).1
+  have hx4 : x^4≤(49/100)*x^2 := by
+    nlinarith [mul_le_mul_of_nonneg_right hx2 (sq_nonneg x)]
+  have hp : 0<22780999/2205000000+(1236253/72000000)*x+
+      (308611/1800000)*x^2+(1411/360000)*x^3-
+      (181/18000)*x^4+x^5/1440 := by
+    nlinarith [sq_nonneg x,hx.1]
+  have hid : polynomial h=h*(22780999/2205000000+
+      (1236253/72000000)*x+(308611/1800000)*x^2+
+      (1411/360000)*x^3-(181/18000)*x^4+x^5/1440) := by
+    dsimp [polynomial,charge,x]
+    ring
+  rw [hid]
+  exact mul_pos hh.1 hp
+
+theorem nonnegative {A k h : ℝ}
+    (hA : A≤1/2) (hk : k≤183/200) (hh : h∈Icc 0 (9/10 : ℝ)) :
+    0≤curve A k h := by
+  have hs : 0≤Real.sin h := Real.sin_nonneg_of_nonneg_of_le_pi hh.1
+    (by linarith [Real.pi_gt_three,hh.2])
+  have hc : 0≤1-Real.cos h := sub_nonneg.mpr (Real.cos_le_one h)
+  have hbase : 0≤curve (1/2) (183/200) h := by
+    by_cases hz : h=0
+    · simp [hz,curve]
+    · exact (polynomial_positive ⟨lt_of_le_of_ne hh.1 (Ne.symm hz),hh.2⟩).le.trans
+        (polynomial_lower hh.1)
+  have hdiff : 0≤curve A k h-curve (1/2) (183/200) h := by
+    have hp := mul_nonneg (sub_nonneg.mpr hk) hs
+    have hq := mul_nonneg (sub_nonneg.mpr hA) hc
+    dsimp [curve]
+    nlinarith
+  linarith
+
+theorem polynomial_minimum {h : ℝ} (hh : h∈Icc (1/25 : ℝ) (7/10)) :
+    polynomial (1/25)≤polynomial h := by
+  let x := 7/10-h
+  have hx : x∈Icc (0:ℝ) (33/50) := by
+    dsimp [x]
+    constructor <;> linarith [hh.1,hh.2]
+  have hx2 := pow_le_pow_left₀ hx.1 hx.2 2
+  have hx4 : x^4≤(1089/2500)*x^2 := by
+    have ht := mul_le_mul_of_nonneg_right hx2 (sq_nonneg x)
+    nlinarith
+  have hp : 0≤2370600577/459375000000+(10375907/1000000000)*x+
+      (15439243/90000000)*x^2+(1291/300000)*x^3-
+      (121/12000)*x^4+x^5/1440 := by
+    nlinarith [pow_nonneg hx.1 3,pow_nonneg hx.1 5,sq_nonneg x,hx.1]
+  have hid : polynomial h-polynomial (1/25)=(h-1/25)*
+      (2370600577/459375000000+(10375907/1000000000)*x+
+        (15439243/90000000)*x^2+(1291/300000)*x^3-
+        (121/12000)*x^4+x^5/1440) := by
+    dsimp [polynomial,charge,x]
+    ring
+  have hm := mul_nonneg (sub_nonneg.mpr hh.1) hp
+  linarith
+
+theorem remainder_monotone :
+    MonotoneOn (fun h => curve (1/2) (183/200) h-polynomial h)
+      (Icc 0 frameCap) := by
+  have hderiv : ∀ x, HasDerivAt (fun h => curve (1/2) (183/200) h-polynomial h)
+      ((charge-(183/200)*Real.cos x-(1/2)*Real.sin x)-polynomialD x) x :=
+    fun x => (curve_hasDerivAt (1/2) (183/200) x).sub (polynomial_hasDerivAt x)
+  apply monoOn_of_hasDeriv_nonneg (fun x _ => (hderiv x).continuousAt.continuousWithinAt)
+    (fun x _ => hderiv x)
+  intro h hh
+  have hc := cos_upper_four hh.1.le
+  have hs := sin_upper_five hh.1.le
+  dsimp only [polynomialD]
+  linarith
+
+/-- Every coefficient pair admitted by an actual crossed HG0 contact
+has its complete [.04,.7] minimum at the left endpoint. -/
+theorem minimum {A k h : ℝ} (hA : A≤1/2) (hk : k≤183/200)
+    (hh : h∈Icc (1/25 : ℝ) frameCap) :
+    curve A k (1/25)≤curve A k h := by
+  have hsmall : (1/25:ℝ)∈Icc 0 frameCap := by norm_num [frameCap]
+  have hlarge : h∈Icc 0 frameCap := ⟨by linarith [hh.1],hh.2⟩
+  have hrem := remainder_monotone hsmall hlarge hh.1
+  have hpoly := polynomial_minimum (show h∈Icc (1/25 : ℝ) (7/10) from hh)
+  have hs := CorrelatedSameBlock.sin_mono hsmall hlarge hh.1
+  have hc := CorrelatedSameBlock.cos_anti hsmall hlarge hh.1
+  have hp := mul_nonneg (sub_nonneg.mpr hk) (sub_nonneg.mpr hs)
+  have hq := mul_nonneg (sub_nonneg.mpr hA) (sub_nonneg.mpr hc)
+  dsimp [curve] at *
+  nlinarith
+
+end SquaresInCircles.Eight.CrossedAngleReserve
+end
+end
+end
+
+section
+/-!
+## Shared exact rates for the crossed common-frame clamp
+
+The transverse-corner parameters are Y for A
+and B for the opposite middle point.  Every radical uses the actual q.
+The scalar angle parameters are tangents of the two physical errors;
+this separates rational rate algebra from the contact-angle bounds.
+-/
+
+@[expose] public section
+noncomputable section
+namespace SquaresInCircles.Eight.CrossedClampRates
+
+def radius (q Y : ℝ) : ℝ := Real.sqrt (q-Y^2)
+def transverse (q Y : ℝ) : ℝ := radius q Y-1
+def adjacent (q Y : ℝ) : ℝ := Real.sqrt (q-(transverse q Y)^2)
+
+def inverseRate (q Y t : ℝ) : ℝ :=
+  (radius q Y/Y)*(adjacent q Y-1+
+    t*(adjacent q Y-transverse q Y)/(adjacent q Y-transverse q Y*t))
+
+def hardRate (q B τ : ℝ) : ℝ :=
+  radius q B*(B+(radius q B-1)*τ)/(B+radius q B*τ)
+
+def angularInverseRate (q Y r : ℝ) : ℝ := inverseRate q Y (Real.tan r)
+def angularHardRate (q B u : ℝ) : ℝ := hardRate q B (Real.tan u)
+
+end SquaresInCircles.Eight.CrossedClampRates
+end
+end
+end
+
+section
+/-!
+## A uniform positive zero-tangent charge beyond the original frame span
+
+Crossed algebraic comparisons can evaluate a
+zero-tangent endpoint out to 1.1 even though the original real frames
+have spread at most .7.  One Taylor polynomial, expanded at .7, has a
+positive quadratic reserve over the complete interval [.195,1.1].
+These are scalar comparisons, not assertions of a new wider source.
+-/
+
+@[expose] public section
+noncomputable section
+open Set
+namespace SquaresInCircles.Eight.CrossedZeroReserve
+open EndpointRotationPenalty
+
+theorem fixed_coefficient_strict {h : ℝ} (hh : h∈Icc (39/200 : ℝ) (11/10)) :
+    7/1000<charge*h-(183/200)*Real.sin h-(1-Real.cos h)/2 := by
+  let x := h-7/10
+  let K := 493657/4800000+(121469/720000)*x-(263/24000)*x^2-
+    (253/24000)*x^3-x^4/1440
+  have hx : x∈Icc (-(101/200 : ℝ)) (2/5) := by
+    dsimp [x]
+    constructor <;> linarith [hh.1,hh.2]
+  have habs : |x|≤101/200 := abs_le.mpr ⟨hx.1,by linarith [hx.2]⟩
+  have hp (n : ℕ) : |x^n|≤(101/200 : ℝ)^n := by
+    rw [abs_pow]
+    exact pow_le_pow_left₀ (abs_nonneg x) habs n
+  have h2 := (abs_le.mp (hp 2)).2
+  have h3 := (abs_le.mp (hp 3)).2
+  have h4 := (abs_le.mp (hp 4)).2
+  have hK : 1/100≤K := by dsimp [K]; nlinarith [hx.1]
+  have hquad := mul_le_mul_of_nonneg_right hK (sq_nonneg x)
+  have hlinear : -(1/500)*|x|≤ -(3969253/2352000000)*x := by
+    have hxabs := le_abs_self x
+    have ha := abs_nonneg x
+    nlinarith
+  have hid : charge*h-(183/200)*(h-h^3/6+h^5/120)-
+      (h^2/2-h^4/24+h^6/720)/2-7/1000=
+      730999/3150000000-(3969253/2352000000)*x+K*x^2 := by
+    dsimp [charge,x,K]
+    ring
+  have habssq : |x|^2=x^2 := sq_abs x
+  have hpoly : 0<charge*h-(183/200)*(h-h^3/6+h^5/120)-
+      (h^2/2-h^4/24+h^6/720)/2-7/1000 := by
+    rw [hid]
+    nlinarith [sq_nonneg (|x|-1/10)]
+  have hh0 : 0≤h := by linarith [hh.1]
+  have hs := sin_upper_five hh0
+  have hc := cos_lower_six hh0
+  linarith
+
+theorem sin_nonneg {h : ℝ} (hh : h∈Icc (0:ℝ) (11/10)) : 0≤Real.sin h := by
+  exact Real.sin_nonneg_of_nonneg_of_le_pi hh.1 (by linarith [hh.2,Real.pi_gt_three])
+
+theorem strict {k h : ℝ} (hk : k≤183/200)
+    (hh : h∈Icc (39/200 : ℝ) (11/10)) :
+    7/1000<charge*h-k*Real.sin h-(1-Real.cos h)/2 := by
+  have hs := sin_nonneg (show h∈Icc (0:ℝ) (11/10) from ⟨by linarith [hh.1],hh.2⟩)
+  have hm := mul_le_mul_of_nonneg_right hk hs
+  linarith [fixed_coefficient_strict hh]
+
+theorem nonneg {k h : ℝ} (hk : k≤183/200)
+    (hh : h∈Icc (0:ℝ) (11/10)) :
+    0≤charge*h-k*Real.sin h-(1-Real.cos h)/2 := by
+  by_cases hsmall : h≤39/200
+  · have hs := Real.sin_le hh.1
+    have hc := Real.one_sub_sq_div_two_le_cos (x := h)
+    have hsq := mul_le_mul_of_nonneg_right hsmall hh.1
+    have hmul := mul_le_mul_of_nonneg_right hk (sin_nonneg hh)
+    dsimp [charge]
+    linarith [sin_nonneg hh]
+  · exact (show (0:ℝ)≤7/1000 by norm_num).trans
+      (strict hk ⟨(lt_of_not_ge hsmall).le,hh.2⟩).le
+
+end SquaresInCircles.Eight.CrossedZeroReserve
+end
+end
+end
+
+section
 @[expose] public section
 noncomputable section
 open Set
@@ -260,3 +543,6 @@ theorem BoundaryData.angle_small {q Y r u bH bT : ℝ}
   linarith
 
 end SquaresInCircles.Eight.CrossedClampBudget
+end
+end
+end

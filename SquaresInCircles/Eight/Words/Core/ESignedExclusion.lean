@@ -1,7 +1,7 @@
 module
 
 public import SquaresInCircles.Eight.Owners.Flat.EPreprocess
-public import SquaresInCircles.Eight.Frames.Signed.CoreEReduction
+public import SquaresInCircles.Eight.Frames.Signed.OppositeHardSigns
 
 /-!
 # Eight squares: core-E positive-primary exclusion before E-sign normalization

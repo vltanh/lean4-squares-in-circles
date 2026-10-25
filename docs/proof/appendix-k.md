@@ -457,10 +457,10 @@ gives the rest. Reflecting in the horizontal axis gives the negative
 directions. $\square$
 
 *Lean:
-[`Eight.CentralForbidden.rectangle_segment_interval`](../../SquaresInCircles/Eight/Frames/Central/Segment.lean#L117),
-[`Eight.CentralForbidden.F`](../../SquaresInCircles/Eight/Frames/Central/Segment.lean#L220),
-[`Eight.CentralForbidden.F_forbidden`](../../SquaresInCircles/Eight/Frames/Central/Segment.lean#L355),
-[`Eight.CentralForbidden.centered_rectangle_forbidden`](../../SquaresInCircles/Eight/Frames/Central/Segment.lean#L405),
+[`Eight.CentralForbidden.rectangle_segment_interval`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L126),
+[`Eight.CentralForbidden.F`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L229),
+[`Eight.CentralForbidden.F_forbidden`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L364),
+[`Eight.CentralForbidden.centered_rectangle_forbidden`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L414),
 [`Eight.central_rectangle_forbids`](../../SquaresInCircles/Eight/Containing.lean#L771).*
 
 ![The rectangle T_Lambda(0.3) = [0, 11/12] x [0, 0.3], shaded, with o at its lower left corner, and seven copies of the segment V turned about o by equally spaced angles from 0 up to F_Lambda(0.3), drawn thin, the last one thick and red; each copy meets the rectangle, the last one only at the corner (A1, 0.3). The arc of directions from 0 to F_Lambda(0.3) is marked at o, and a dotted segment from o to the corner shows the radial projection of the corner onto the middle copy](figures/appendix-k/blocked.svg)
@@ -524,23 +524,23 @@ $\Lambda\sin x - \kappa\cos x$ increases on $[0, \frac\pi2]$; and
 $\arctan x > x - \frac{x^3}3$ gives the arctangent bounds. $\square$
 
 *Lean:
-[`Eight.CentralForbidden.lowerWidth_antitone`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L133),
-[`Eight.CentralForbidden.steep_vertical_reserve`](../../SquaresInCircles/Eight/Frames/Central/ScalarArithmetic.lean#L163),
-[`Eight.CentralForbidden.widthPolynomial`](../../SquaresInCircles/Eight/Frames/Central/ScalarArithmetic.lean#L129),
-[`Eight.CentralForbidden.widthPolynomial_antitone`](../../SquaresInCircles/Eight/Frames/Central/ScalarArithmetic.lean#L153),
-[`Eight.CentralForbidden.widthPolynomial_signs`](../../SquaresInCircles/Eight/Frames/Central/ScalarArithmetic.lean#L159),
-[`Eight.CentralForbidden.middleWidth_lower`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L75),
-[`Eight.CentralForbidden.E_symmetric_minimum`](../../SquaresInCircles/Eight/Frames/Central/AngleCalculus.lean#L212),
-[`Eight.CentralForbidden.first_width_lower`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L167),
-[`Eight.CentralForbidden.stronger_side_endpoint`](../../SquaresInCircles/Eight/Frames/Central/ScalarArithmetic.lean#L203),
-[`Eight.CentralForbidden.stronger_side_tangent`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L248),
-[`Eight.CentralForbidden.strongerComparison_antitone`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L270),
-[`Eight.CentralForbidden.stronger_width_lower`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L299),
-[`Eight.CentralForbidden.E_lower_of_taylor`](../../SquaresInCircles/Eight/Frames/Central/ScalarArithmetic.lean#L88),
-[`Eight.CentralForbidden.E_endpoint_bounds`](../../SquaresInCircles/Eight/Frames/Central/ScalarArithmetic.lean#L101),
-[`Eight.CentralForbidden.atan_endpoint_bounds`](../../SquaresInCircles/Eight/Frames/Central/ScalarArithmetic.lean#L118),
-[`Eight.CentralForbidden.bandA_forbidden`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L340),
-[`Eight.CentralForbidden.bandB_forbidden`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L347).*
+[`Eight.CentralForbidden.lowerWidth_antitone`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L1081),
+[`Eight.CentralForbidden.steep_vertical_reserve`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L887),
+[`Eight.CentralForbidden.widthPolynomial`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L853),
+[`Eight.CentralForbidden.widthPolynomial_antitone`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L877),
+[`Eight.CentralForbidden.widthPolynomial_signs`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L883),
+[`Eight.CentralForbidden.middleWidth_lower`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L1023),
+[`Eight.CentralForbidden.E_symmetric_minimum`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L650),
+[`Eight.CentralForbidden.first_width_lower`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L1115),
+[`Eight.CentralForbidden.stronger_side_endpoint`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L927),
+[`Eight.CentralForbidden.stronger_side_tangent`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L1196),
+[`Eight.CentralForbidden.strongerComparison_antitone`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L1218),
+[`Eight.CentralForbidden.stronger_width_lower`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L1247),
+[`Eight.CentralForbidden.E_lower_of_taylor`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L812),
+[`Eight.CentralForbidden.E_endpoint_bounds`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L825),
+[`Eight.CentralForbidden.atan_endpoint_bounds`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L842),
+[`Eight.CentralForbidden.bandA_forbidden`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L1288),
+[`Eight.CentralForbidden.bandB_forbidden`](../../SquaresInCircles/Eight/Frames/Central/ForbiddenWidths.lean#L1295).*
 
 ![The two widths as functions of d from 0 to 1/2: the upper curve F_{19/20}(d) + F_{19/20}(1 - d) and the lower curve F_Lambda(d) + F_Lambda(1 - d), each with kinks and a steep drop near d = 1/12, where the definition of F changes; both stay above their dashed horizontal bounds 899/500 and 347/200, the lower one coming within 0.002 of its bound near d = 0.138](figures/appendix-k/widths.svg)
 

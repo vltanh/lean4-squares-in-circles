@@ -32,7 +32,8 @@ def m (f : Family) (z : ℝ) : ℝ := PositiveTD.tilted (c f z) z
 @[simp] theorem k_eval (f : Family) (z : ℝ) : aeval z (Certificate.k f)=k f z := by
   cases f <;> norm_num [Certificate.k,Certificate.t,Certificate.split,k,lowKAt,highKAt] <;> ring
 @[simp] theorem l_eval (f : Family) (z : ℝ) : aeval z (Certificate.l f)=l f z := by
-  cases f <;> norm_num [Certificate.l,Certificate.t,Certificate.split,l,lowLAt,highLAt] <;> ring
+  cases f <;> norm_num [Certificate.l,Certificate.t,Certificate.split,l,lowLAt,highLAt]
+  ring
 @[simp] theorem c_eval (f : Family) (z : ℝ) : aeval z (Certificate.c f)=c f z := by
   cases f <;> norm_num [Certificate.c,Certificate.t,Certificate.split,c,lowCAt,highCAt]
 

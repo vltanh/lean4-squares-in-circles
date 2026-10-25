@@ -31,9 +31,9 @@ lemma J_third_negative {b : ℝ} (hb : b∈Icc 0 outerDiagonal) : JLabel.d3 b<0 
 
 lemma J_second_antitone : AntitoneOn JLabel.d2 (Icc 0 outerDiagonal) :=
   antiOn_of_hasDeriv_nonpos
-    (fun b hb => (JLabel.d2_hasDerivAt (outer_domain hb)).continuousAt.continuousWithinAt)
-    (fun b hb => JLabel.d2_hasDerivAt (outer_domain (Ioo_subset_Icc_self hb)))
-    (fun b hb => (J_third_negative (Ioo_subset_Icc_self hb)).le)
+    (fun _ hb => (JLabel.d2_hasDerivAt (outer_domain hb)).continuousAt.continuousWithinAt)
+    (fun _ hb => JLabel.d2_hasDerivAt (outer_domain (Ioo_subset_Icc_self hb)))
+    (fun _ hb => (J_third_negative (Ioo_subset_Icc_self hb)).le)
 
 lemma J_zero_second : JLabel.d2 0< -(329/1000:ℝ) := by
   have hh := JLabel.second_chart_reference (outer_domain outer_zero_mem)

@@ -1,5 +1,6 @@
 module
 
+public import SquaresInCircles.Eight.Arithmetic.PolynomialExpressions
 public import SquaresInCircles.Eight.Owners.Negative.CaptureData
 
 /-!
@@ -16,7 +17,7 @@ finite derivative integration, give positivity on both full bands.
 noncomputable section
 open Set Polynomial
 namespace SquaresInCircles.Eight.NegativeCapturePolynomials
-open CenteredMonomialBounds NegativeCaptureData
+open CenteredMonomialBounds NegativeCaptureData PolynomialExpressions
 
 
 def otherA (b : Band) (j : Fin 4) : ℚ[X] :=
@@ -81,181 +82,12 @@ def P (b : Band) (j : Fin 4) : ℚ[X] :=
 
 def pivot (j : Fin 4) : ℚ := ![47/400,1/10,233/2000,67/500] j
 
-/-! ### Exact coefficient lists
+/-! ### Integer values
 
-A list of rationals, lowest degree first, names a polynomial. Sums,
-products, powers, compositions and derivatives of such lists are exact
-rational computations, which the kernel carries out. -/
+`reify` writes a polynomial of this file as `PolyExpr.poly` of an expression, whose integer value
+(a coefficient list with a common denominator) the kernel computes. -/
 
-private def toPoly : List ℚ → ℚ[X]
-  | [] => 0
-  | a :: l => C a+X*toPoly l
-
-private def ladd : List ℚ → List ℚ → List ℚ
-  | [], m => m
-  | a :: l, [] => a :: l
-  | a :: l, b :: m => (a+b) :: ladd l m
-
-private def lsmul (c : ℚ) : List ℚ → List ℚ
-  | [] => []
-  | a :: l => (c*a) :: lsmul c l
-
-private def lneg : List ℚ → List ℚ
-  | [] => []
-  | a :: l => (-a) :: lneg l
-
-private def lmul : List ℚ → List ℚ → List ℚ
-  | [], _ => []
-  | _ :: _, [] => []
-  | a :: l, b :: m => ladd (lsmul a (b :: m)) (0 :: lmul l (b :: m))
-
-private def lpow (l : List ℚ) : ℕ → List ℚ
-  | 0 => [1]
-  | n+1 => lmul (lpow l n) l
-
-private def lcomp : List ℚ → List ℚ → List ℚ
-  | [], _ => []
-  | a :: l, m => ladd [a] (lmul m (lcomp l m))
-
-private def lderivAux (k : ℚ) : List ℚ → List ℚ
-  | [] => []
-  | a :: l => (k*a) :: lderivAux (k+1) l
-
-private def lderiv : List ℚ → List ℚ
-  | [] => []
-  | _ :: l => lderivAux 1 l
-
-private def leval : List ℚ → ℚ → ℚ
-  | [], _ => 0
-  | a :: l, r => a+r*leval l r
-
-private theorem toPoly_add : ∀ l m : List ℚ, toPoly (ladd l m)=toPoly l+toPoly m
-  | [], m => by simp [ladd,toPoly]
-  | a :: l, [] => by simp [ladd,toPoly]
-  | a :: l, b :: m => by
-    simp only [ladd,toPoly,toPoly_add l m,C_add]
-    ring
-
-private theorem toPoly_smul (c : ℚ) : ∀ l : List ℚ, toPoly (lsmul c l)=C c*toPoly l
-  | [] => by simp [lsmul,toPoly]
-  | a :: l => by
-    simp only [lsmul,toPoly,toPoly_smul c l,C_mul]
-    ring
-
-private theorem toPoly_neg : ∀ l : List ℚ, toPoly (lneg l)=-toPoly l
-  | [] => by simp [lneg,toPoly]
-  | a :: l => by
-    simp only [lneg,toPoly,toPoly_neg l,C_neg]
-    ring
-
-private theorem toPoly_mul : ∀ l m : List ℚ, toPoly (lmul l m)=toPoly l*toPoly m
-  | [], m => by simp [lmul,toPoly]
-  | _ :: _, [] => by simp [lmul,toPoly]
-  | a :: l, b :: m => by
-    rw [lmul,toPoly_add,toPoly_smul]
-    simp only [toPoly,toPoly_mul l (b :: m),C_0]
-    ring
-
-private theorem toPoly_pow (l : List ℚ) : ∀ n : ℕ, toPoly (lpow l n)=toPoly l^n
-  | 0 => by simp [lpow,toPoly]
-  | n+1 => by rw [lpow,toPoly_mul,toPoly_pow l n,pow_succ]
-
-private theorem toPoly_comp : ∀ l m : List ℚ, toPoly (lcomp l m)=(toPoly l).comp (toPoly m)
-  | [], m => by simp [lcomp,toPoly]
-  | a :: l, m => by
-    rw [lcomp,toPoly_add,toPoly_mul,toPoly_comp l m]
-    simp only [toPoly,add_comp,mul_comp,C_comp,X_comp,mul_zero,add_zero]
-
-private theorem toPoly_derivAux : ∀ (k : ℚ) (l : List ℚ),
-    toPoly (lderivAux k l)=C k*toPoly l+X*derivative (toPoly l)
-  | k, [] => by simp [lderivAux,toPoly]
-  | k, a :: l => by
-    rw [lderivAux,toPoly,toPoly_derivAux (k+1) l,toPoly,derivative_add,derivative_C,
-      derivative_mul,derivative_X,C_mul,C_add,C_1]
-    ring
-
-private theorem toPoly_deriv : ∀ l : List ℚ, derivative (toPoly l)=toPoly (lderiv l)
-  | [] => by simp [lderiv,toPoly]
-  | a :: l => by
-    rw [lderiv,toPoly_derivAux,toPoly,derivative_add,derivative_C,derivative_mul,
-      derivative_X,C_1]
-    ring
-
-private theorem eval_toPoly (r : ℚ) : ∀ l : List ℚ, (toPoly l).eval r=leval l r
-  | [] => by simp [toPoly,leval]
-  | a :: l => by simp [toPoly,leval,eval_toPoly r l]
-
-private theorem coeff_toPoly : ∀ (l : List ℚ) (i : ℕ), (toPoly l).coeff i=l.getD i 0
-  | [], i => by simp [toPoly]
-  | a :: l, 0 => by simp [toPoly]
-  | a :: l, i+1 => by simp [toPoly,coeff_toPoly l i]
-
-private theorem getD_large : ∀ (l : List ℚ) (N : ℕ), l.length ≤ N → l.getD N 0=0
-  | [], _, _ => rfl
-  | a :: l, 0, h => by simp at h
-  | a :: l, N+1, h => by
-    rw [List.getD_cons_succ]
-    exact getD_large l N (by simp at h; omega)
-
-private theorem natDegree_toPoly (l : List ℚ) : (toPoly l).natDegree ≤ l.length-1 := by
-  rw [natDegree_le_iff_coeff_eq_zero]
-  intro N hN
-  rw [coeff_toPoly]
-  exact getD_large l N (by omega)
-
-private theorem reify_C (a : ℚ) : C a=toPoly [a] := by simp [toPoly]
-private theorem reify_X : (X : ℚ[X])=toPoly [0,1] := by simp [toPoly]
-private theorem reify_one : (1 : ℚ[X])=toPoly [1] := by simp [toPoly]
-private theorem reify_zero : (0 : ℚ[X])=toPoly [] := rfl
-private theorem reify_add (l m : List ℚ) : toPoly l+toPoly m=toPoly (ladd l m) :=
-  (toPoly_add l m).symm
-private theorem reify_sub (l m : List ℚ) :
-    toPoly l-toPoly m=toPoly (ladd l (lneg m)) := by
-  rw [toPoly_add,toPoly_neg,sub_eq_add_neg]
-private theorem reify_neg (l : List ℚ) : -toPoly l=toPoly (lneg l) :=
-  (toPoly_neg l).symm
-private theorem reify_mul (l m : List ℚ) : toPoly l*toPoly m=toPoly (lmul l m) :=
-  (toPoly_mul l m).symm
-private theorem reify_pow (l : List ℚ) (n : ℕ) : toPoly l^n=toPoly (lpow l n) :=
-  (toPoly_pow l n).symm
-private theorem reify_deriv (l : List ℚ) : derivative (toPoly l)=toPoly (lderiv l) :=
-  toPoly_deriv l
-
-private theorem translated_toPoly (m : ℚ) (l : List ℚ) :
-    translated m (toPoly l)=toPoly (lcomp l [m,1]) := by
-  rw [translated,toPoly_comp]
-  simp [toPoly]
-
-private theorem series_self {n : ℕ} {q : ℚ[X]} (hq : q.natDegree ≤ n) : q=series n q := by
-  conv_lhs => rw [as_sum_range_C_mul_X_pow' q (n := n+1) (by omega)]
-  rw [series,Finset.sum_range_succ',add_comm]
-  congr 1
-  · simp
-  · exact (Fin.sum_univ_eq_sum_range (fun j => C (q.coeff (j+1))*X^(j+1)) n).symm
-
-/-- A translated degree identity from a coefficient list of bounded length. -/
-private theorem series_toPoly {n : ℕ} {m : ℚ} {l : List ℚ}
-    (hl : (lcomp l [m,1]).length ≤ n+1) :
-    translated m (toPoly l)=series n (translated m (toPoly l)) := by
-  apply series_self
-  rw [translated_toPoly]
-  exact (natDegree_toPoly _).trans (by omega)
-
-private def lowerL (n : ℕ) (r : ℚ) (L : List ℚ) : ℚ :=
-  L.getD 0 0+∑ j : Fin n,lowerTerm (L.getD (j.val+1) 0) r (j.val+1)
-
-private def upperL (n : ℕ) (r : ℚ) (L : List ℚ) : ℚ :=
-  L.getD 0 0+∑ j : Fin n,max (L.getD (j.val+1) 0) 0*r^(j.val+1)
-
-private theorem lowerOn_toPoly (n : ℕ) (m r : ℚ) (l : List ℚ) :
-    lowerOn n m r (toPoly l)=lowerL n r (lcomp l [m,1]) := by
-  simp only [lowerOn,lower,lowerL,translated_toPoly,coeff_toPoly]
-
-private theorem upperOn_toPoly (n : ℕ) (a b : ℚ) (l : List ℚ) :
-    upperOn n a b (toPoly l)=upperL n (b-a) (lcomp l [a,1]) := by
-  simp only [upperOn,upper,upperL,translated_toPoly,coeff_toPoly]
-
-/-- Unfold the polynomials of this file into coefficient lists. -/
+/-- Unfold the polynomials of this file into expressions. -/
 local macro "reify" : tactic => `(tactic| simp only [P,constantNumerator,cosineNumerator,
   cosineSix,otherA,otherB,otherD,otherH,otherE,denominator,totalMass,scale,endpointConstant,
   endpointCosine,secantSquare,base,normA,normB,normBCosine,mass,aP,fP,weight,cubic,massARot,
@@ -272,84 +104,72 @@ Each certificate below evaluates the cleared polynomial of one band and one
 vertex once, and checks every finite fact used about it: the degree bounds,
 the cosine coefficient bound and the band's own reserves. -/
 
-private abbrev Shape (m lo' hi' res : ℚ) (L Lc : List ℚ) : Prop :=
-  (lcomp L [m,1]).length ≤ 27 ∧ (lcomp (lderiv L) [m,1]).length ≤ 27 ∧
-    (lcomp (lderiv (lderiv L)) [m,1]).length ≤ 27 ∧ (lcomp Lc [lo',1]).length ≤ 27 ∧
-    upperL 26 (hi'-lo') (lcomp Lc [lo',1])<res
+private def shapeOK (b : Band) (e ec : PolyExpr) : Bool :=
+  cmSeries 26 e && (cmSeries 26 ec && cmUpperLt 26 (lo b) (hi b) (cosineReserve b) ec)
 
-private abbrev LowOrd (p : ℚ) (L : List ℚ) : Prop :=
-  (1/200:ℚ)<lowerL 26 (rad .low) (lcomp (lderiv (lderiv L)) [mid .low,1]) ∧
-    (1/200000:ℚ)<leval L p ∧ |leval (lderiv L) p|<1/100000
+private def lowOrdOK (j : Fin 4) (e : PolyExpr) : Bool :=
+  cmLowerGt 26 (mid .low) (rad .low) (1/200) e.deriv.deriv &&
+    (valueGt (pivot j) (1/200000) e && valueAbsLt (pivot j) (1/100000) e.deriv)
 
-private abbrev LowSec (L : List ℚ) : Prop :=
-  (1/40000:ℚ)<lowerL 26 (rad .low) (lcomp L [mid .low,1])
+private def lowSecOK (e : PolyExpr) : Bool := cmLowerGt 26 (mid .low) (rad .low) (1/40000) e
 
-private abbrev HighOrd (L : List ℚ) : Prop :=
-  (-1/250000:ℚ)<lowerL 26 (rad .high) (lcomp (lderiv L) [mid .high,1]) ∧
-    (3/500000:ℚ)<leval L (7/50)
+private def highOrdOK (e : PolyExpr) : Bool :=
+  cmLowerGt 26 (mid .high) (rad .high) (-1/250000) e.deriv && valueGt (7/50) (3/500000) e
 
-private abbrev HighSec (L : List ℚ) : Prop :=
-  (1/100000:ℚ)<lowerL 26 (rad .high) (lcomp L [mid .high,1])
+private def highSecOK (e : PolyExpr) : Bool :=
+  cmLowerGt 26 (mid .high) (rad .high) (1/100000) e
 
-private theorem cert_low0 : ∃ L Lc : List ℚ, P .low 0=toPoly L ∧
-    cosineNumerator .low 0=toPoly Lc ∧
-    Shape (mid .low) (lo .low) (hi .low) (cosineReserve .low) L Lc ∧ LowOrd (pivot 0) L := by
+private theorem cert_low0 : ∃ e ec : PolyExpr, P .low 0=e.poly ∧
+    cosineNumerator .low 0=ec.poly ∧ (shapeOK .low e ec && lowOrdOK 0 e)=true := by
   refine ⟨_,_,by reify; rfl,by reify; rfl,?_⟩
   decide +kernel
 
-private theorem cert_low1 : ∃ L Lc : List ℚ, P .low 1=toPoly L ∧
-    cosineNumerator .low 1=toPoly Lc ∧
-    Shape (mid .low) (lo .low) (hi .low) (cosineReserve .low) L Lc ∧ LowSec L := by
+private theorem cert_low1 : ∃ e ec : PolyExpr, P .low 1=e.poly ∧
+    cosineNumerator .low 1=ec.poly ∧ (shapeOK .low e ec && lowSecOK e)=true := by
   refine ⟨_,_,by reify; rfl,by reify; rfl,?_⟩
   decide +kernel
 
-private theorem cert_low2 : ∃ L Lc : List ℚ, P .low 2=toPoly L ∧
-    cosineNumerator .low 2=toPoly Lc ∧
-    Shape (mid .low) (lo .low) (hi .low) (cosineReserve .low) L Lc ∧ LowOrd (pivot 2) L := by
+private theorem cert_low2 : ∃ e ec : PolyExpr, P .low 2=e.poly ∧
+    cosineNumerator .low 2=ec.poly ∧ (shapeOK .low e ec && lowOrdOK 2 e)=true := by
   refine ⟨_,_,by reify; rfl,by reify; rfl,?_⟩
   decide +kernel
 
-private theorem cert_low3 : ∃ L Lc : List ℚ, P .low 3=toPoly L ∧
-    cosineNumerator .low 3=toPoly Lc ∧
-    Shape (mid .low) (lo .low) (hi .low) (cosineReserve .low) L Lc ∧ LowOrd (pivot 3) L := by
+private theorem cert_low3 : ∃ e ec : PolyExpr, P .low 3=e.poly ∧
+    cosineNumerator .low 3=ec.poly ∧ (shapeOK .low e ec && lowOrdOK 3 e)=true := by
   refine ⟨_,_,by reify; rfl,by reify; rfl,?_⟩
   decide +kernel
 
-private theorem cert_high0 : ∃ L Lc : List ℚ, P .high 0=toPoly L ∧
-    cosineNumerator .high 0=toPoly Lc ∧
-    Shape (mid .high) (lo .high) (hi .high) (cosineReserve .high) L Lc ∧ HighOrd L := by
+private theorem cert_high0 : ∃ e ec : PolyExpr, P .high 0=e.poly ∧
+    cosineNumerator .high 0=ec.poly ∧ (shapeOK .high e ec && highOrdOK e)=true := by
   refine ⟨_,_,by reify; rfl,by reify; rfl,?_⟩
   decide +kernel
 
-private theorem cert_high1 : ∃ L Lc : List ℚ, P .high 1=toPoly L ∧
-    cosineNumerator .high 1=toPoly Lc ∧
-    Shape (mid .high) (lo .high) (hi .high) (cosineReserve .high) L Lc ∧ HighSec L := by
+private theorem cert_high1 : ∃ e ec : PolyExpr, P .high 1=e.poly ∧
+    cosineNumerator .high 1=ec.poly ∧ (shapeOK .high e ec && highSecOK e)=true := by
   refine ⟨_,_,by reify; rfl,by reify; rfl,?_⟩
   decide +kernel
 
-private theorem cert_high2 : ∃ L Lc : List ℚ, P .high 2=toPoly L ∧
-    cosineNumerator .high 2=toPoly Lc ∧
-    Shape (mid .high) (lo .high) (hi .high) (cosineReserve .high) L Lc ∧ HighOrd L := by
+private theorem cert_high2 : ∃ e ec : PolyExpr, P .high 2=e.poly ∧
+    cosineNumerator .high 2=ec.poly ∧ (shapeOK .high e ec && highOrdOK e)=true := by
   refine ⟨_,_,by reify; rfl,by reify; rfl,?_⟩
   decide +kernel
 
-private theorem cert_high3 : ∃ L Lc : List ℚ, P .high 3=toPoly L ∧
-    cosineNumerator .high 3=toPoly Lc ∧
-    Shape (mid .high) (lo .high) (hi .high) (cosineReserve .high) L Lc ∧ HighOrd L := by
+private theorem cert_high3 : ∃ e ec : PolyExpr, P .high 3=e.poly ∧
+    cosineNumerator .high 3=ec.poly ∧ (shapeOK .high e ec && highOrdOK e)=true := by
   refine ⟨_,_,by reify; rfl,by reify; rfl,?_⟩
   decide +kernel
 
-private theorem shape (b : Band) (j : Fin 4) : ∃ L Lc : List ℚ, P b j=toPoly L ∧
-    cosineNumerator b j=toPoly Lc ∧ Shape (mid b) (lo b) (hi b) (cosineReserve b) L Lc := by
+private theorem shape_of {b : Band} {c : PolyExpr → Bool} {p pc : ℚ[X]}
+    (h : ∃ e ec : PolyExpr,p=e.poly ∧ pc=ec.poly ∧ (shapeOK b e ec && c e)=true) :
+    ∃ e ec : PolyExpr,p=e.poly ∧ pc=ec.poly ∧ shapeOK b e ec=true := by
+  obtain ⟨e,ec,h1,h2,h3⟩ := h
+  exact ⟨e,ec,h1,h2,((Bool.and_eq_true _ _).mp h3).1⟩
+
+private theorem shape (b : Band) (j : Fin 4) : ∃ e ec : PolyExpr, P b j=e.poly ∧
+    cosineNumerator b j=ec.poly ∧ shapeOK b e ec=true := by
   cases b <;> fin_cases j
-  · obtain ⟨L,Lc,h1,h2,h3,-⟩ := cert_low0; exact ⟨L,Lc,h1,h2,h3⟩
-  · obtain ⟨L,Lc,h1,h2,h3,-⟩ := cert_low1; exact ⟨L,Lc,h1,h2,h3⟩
-  · obtain ⟨L,Lc,h1,h2,h3,-⟩ := cert_low2; exact ⟨L,Lc,h1,h2,h3⟩
-  · obtain ⟨L,Lc,h1,h2,h3,-⟩ := cert_low3; exact ⟨L,Lc,h1,h2,h3⟩
-  · obtain ⟨L,Lc,h1,h2,h3,-⟩ := cert_high0; exact ⟨L,Lc,h1,h2,h3⟩
-  · obtain ⟨L,Lc,h1,h2,h3,-⟩ := cert_high1; exact ⟨L,Lc,h1,h2,h3⟩
-  · obtain ⟨L,Lc,h1,h2,h3,-⟩ := cert_high2; exact ⟨L,Lc,h1,h2,h3⟩
-  · obtain ⟨L,Lc,h1,h2,h3,-⟩ := cert_high3; exact ⟨L,Lc,h1,h2,h3⟩
+  exacts [shape_of cert_low0,shape_of cert_low1,shape_of cert_low2,shape_of cert_low3,
+    shape_of cert_high0,shape_of cert_high1,shape_of cert_high2,shape_of cert_high3]
 
 private theorem fin4_cases (j : Fin 4) : j=0 ∨ j=1 ∨ j=2 ∨ j=3 := by
   fin_cases j <;> simp
@@ -367,16 +187,18 @@ theorem cosine_series : ∀b j,
     translated (lo b) (cosineNumerator b j)=
       series 26 (translated (lo b) (cosineNumerator b j)) := by
   intro b j
-  obtain ⟨L,Lc,-,hc,hs⟩ := shape b j
+  obtain ⟨e,ec,-,hc,hs⟩ := shape b j
+  simp only [shapeOK,Bool.and_eq_true] at hs
   rw [hc]
-  exact series_toPoly hs.2.2.2.1
+  exact series_of_check hs.2.1 _
 
 theorem cosine_coefficients : ∀b j,
     upperOn 26 (lo b) (hi b) (cosineNumerator b j)<cosineReserve b := by
   intro b j
-  obtain ⟨L,Lc,-,hc,hs⟩ := shape b j
-  rw [hc,upperOn_toPoly]
-  exact hs.2.2.2.2
+  obtain ⟨e,ec,-,hc,hs⟩ := shape b j
+  simp only [shapeOK,Bool.and_eq_true] at hs
+  rw [hc]
+  exact upperOn_of_check hs.2.2
 
 theorem polynomial_series : ∀b j,
     translated (mid b) (P b j)=series 26 (translated (mid b) (P b j)) ∧
@@ -385,82 +207,103 @@ theorem polynomial_series : ∀b j,
     translated (mid b) (P b j).derivative.derivative=
       series 26 (translated (mid b) (P b j).derivative.derivative) := by
   intro b j
-  obtain ⟨L,Lc,hL,-,hs⟩ := shape b j
-  rw [hL,reify_deriv,reify_deriv]
-  exact ⟨series_toPoly hs.1,series_toPoly hs.2.1,series_toPoly hs.2.2.1⟩
+  obtain ⟨e,ec,hL,-,hs⟩ := shape b j
+  simp only [shapeOK,Bool.and_eq_true] at hs
+  have hd := natDegree_of_check hs.1
+  rw [hL]
+  exact ⟨series_of_natDegree hd _,series_of_natDegree (natDegree_derivative_of_le hd) _,
+    series_of_natDegree (natDegree_derivative_of_le (natDegree_derivative_of_le hd)) _⟩
+
+private theorem low_ord {j : Fin 4} {e : PolyExpr} (h : lowOrdOK j e=true) :
+    (1/200:ℚ)<lowerOn 26 (mid .low) (rad .low) e.poly.derivative.derivative ∧
+      (1/200000:ℚ)<e.poly.eval (pivot j) ∧ |e.poly.derivative.eval (pivot j)|<1/100000 := by
+  simp only [lowOrdOK,Bool.and_eq_true] at h
+  have h1 := lowerOn_of_check h.1
+  have h3 := value_abs_of_check h.2.2
+  rw [PolyExpr.poly_deriv,PolyExpr.poly_deriv] at h1
+  rw [PolyExpr.poly_deriv] at h3
+  exact ⟨h1,value_of_check h.2.1,h3⟩
+
+private theorem high_ord {e : PolyExpr} (h : highOrdOK e=true) :
+    (-1/250000:ℚ)<lowerOn 26 (mid .high) (rad .high) e.poly.derivative ∧
+      (3/500000:ℚ)<e.poly.eval (7/50) := by
+  simp only [highOrdOK,Bool.and_eq_true] at h
+  have h1 := lowerOn_of_check h.1
+  rw [PolyExpr.poly_deriv] at h1
+  exact ⟨h1,value_of_check h.2⟩
 
 theorem low_curvature_coefficients : ∀j : Fin 4, j≠1 →
     (1/200:ℚ)<lowerOn 26 (mid .low) (rad .low) (P .low j).derivative.derivative := by
   intro j hj
   obtain rfl | rfl | rfl | rfl := fin4_cases j
-  · obtain ⟨L,Lc,hL,-,-,h⟩ := cert_low0
-    rw [hL,reify_deriv,reify_deriv,lowerOn_toPoly]
-    exact h.1
+  · obtain ⟨e,ec,hL,-,h⟩ := cert_low0
+    rw [hL]
+    exact (low_ord ((Bool.and_eq_true _ _).mp h).2).1
   · exact absurd rfl hj
-  · obtain ⟨L,Lc,hL,-,-,h⟩ := cert_low2
-    rw [hL,reify_deriv,reify_deriv,lowerOn_toPoly]
-    exact h.1
-  · obtain ⟨L,Lc,hL,-,-,h⟩ := cert_low3
-    rw [hL,reify_deriv,reify_deriv,lowerOn_toPoly]
-    exact h.1
+  · obtain ⟨e,ec,hL,-,h⟩ := cert_low2
+    rw [hL]
+    exact (low_ord ((Bool.and_eq_true _ _).mp h).2).1
+  · obtain ⟨e,ec,hL,-,h⟩ := cert_low3
+    rw [hL]
+    exact (low_ord ((Bool.and_eq_true _ _).mp h).2).1
 
 theorem low_tangent_values : ∀j : Fin 4, j≠1 →
     (1/200000:ℚ)<(P .low j).eval (pivot j) ∧
       |(P .low j).derivative.eval (pivot j)|<1/100000 := by
   intro j hj
   obtain rfl | rfl | rfl | rfl := fin4_cases j
-  · obtain ⟨L,Lc,hL,-,-,h⟩ := cert_low0
-    rw [hL,reify_deriv,eval_toPoly,eval_toPoly]
-    exact h.2
+  · obtain ⟨e,ec,hL,-,h⟩ := cert_low0
+    rw [hL]
+    exact (low_ord ((Bool.and_eq_true _ _).mp h).2).2
   · exact absurd rfl hj
-  · obtain ⟨L,Lc,hL,-,-,h⟩ := cert_low2
-    rw [hL,reify_deriv,eval_toPoly,eval_toPoly]
-    exact h.2
-  · obtain ⟨L,Lc,hL,-,-,h⟩ := cert_low3
-    rw [hL,reify_deriv,eval_toPoly,eval_toPoly]
-    exact h.2
+  · obtain ⟨e,ec,hL,-,h⟩ := cert_low2
+    rw [hL]
+    exact (low_ord ((Bool.and_eq_true _ _).mp h).2).2
+  · obtain ⟨e,ec,hL,-,h⟩ := cert_low3
+    rw [hL]
+    exact (low_ord ((Bool.and_eq_true _ _).mp h).2).2
 
 theorem low_secant_coefficients :
     (1/40000:ℚ)<lowerOn 26 (mid .low) (rad .low) (P .low 1) := by
-  obtain ⟨L,Lc,hL,-,-,h⟩ := cert_low1
-  rw [hL,lowerOn_toPoly]
-  exact h
+  obtain ⟨e,ec,hL,-,h⟩ := cert_low1
+  rw [hL]
+  exact lowerOn_of_check ((Bool.and_eq_true _ _).mp h).2
 
 theorem high_growth_coefficients : ∀j : Fin 4, j≠1 →
     (-1/250000:ℚ)<lowerOn 26 (mid .high) (rad .high) (P .high j).derivative := by
   intro j hj
   obtain rfl | rfl | rfl | rfl := fin4_cases j
-  · obtain ⟨L,Lc,hL,-,-,h⟩ := cert_high0
-    rw [hL,reify_deriv,lowerOn_toPoly]
-    exact h.1
+  · obtain ⟨e,ec,hL,-,h⟩ := cert_high0
+    rw [hL]
+    exact (high_ord ((Bool.and_eq_true _ _).mp h).2).1
   · exact absurd rfl hj
-  · obtain ⟨L,Lc,hL,-,-,h⟩ := cert_high2
-    rw [hL,reify_deriv,lowerOn_toPoly]
-    exact h.1
-  · obtain ⟨L,Lc,hL,-,-,h⟩ := cert_high3
-    rw [hL,reify_deriv,lowerOn_toPoly]
-    exact h.1
+  · obtain ⟨e,ec,hL,-,h⟩ := cert_high2
+    rw [hL]
+    exact (high_ord ((Bool.and_eq_true _ _).mp h).2).1
+  · obtain ⟨e,ec,hL,-,h⟩ := cert_high3
+    rw [hL]
+    exact (high_ord ((Bool.and_eq_true _ _).mp h).2).1
 
 theorem high_start_values : ∀j : Fin 4, j≠1 →
     (3/500000:ℚ)<(P .high j).eval (7/50) := by
   intro j hj
   obtain rfl | rfl | rfl | rfl := fin4_cases j
-  · obtain ⟨L,Lc,hL,-,-,h⟩ := cert_high0
-    rw [hL,eval_toPoly]
-    exact h.2
+  · obtain ⟨e,ec,hL,-,h⟩ := cert_high0
+    rw [hL]
+    exact (high_ord ((Bool.and_eq_true _ _).mp h).2).2
   · exact absurd rfl hj
-  · obtain ⟨L,Lc,hL,-,-,h⟩ := cert_high2
-    rw [hL,eval_toPoly]
-    exact h.2
-  · obtain ⟨L,Lc,hL,-,-,h⟩ := cert_high3
-    rw [hL,eval_toPoly]
-    exact h.2
+  · obtain ⟨e,ec,hL,-,h⟩ := cert_high2
+    rw [hL]
+    exact (high_ord ((Bool.and_eq_true _ _).mp h).2).2
+  · obtain ⟨e,ec,hL,-,h⟩ := cert_high3
+    rw [hL]
+    exact (high_ord ((Bool.and_eq_true _ _).mp h).2).2
 
 theorem high_secant_coefficients :
     (1/100000:ℚ)<lowerOn 26 (mid .high) (rad .high) (P .high 1) := by
-  obtain ⟨L,Lc,hL,-,-,h⟩ := cert_high1
-  rw [hL,lowerOn_toPoly]
-  exact h
+  obtain ⟨e,ec,hL,-,h⟩ := cert_high1
+  rw [hL]
+  exact lowerOn_of_check ((Bool.and_eq_true _ _).mp h).2
 
 theorem rational_eval (p : ℚ[X]) (r : ℚ) :
     aeval (r:ℝ) p=((p.eval r:ℚ):ℝ) := by

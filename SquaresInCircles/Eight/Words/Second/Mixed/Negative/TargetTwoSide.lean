@@ -1,9 +1,8 @@
 module
 
-public import SquaresInCircles.Eight.Words.Second.Mixed.Negative.TargetTwoSideFourth
-public import SquaresInCircles.Eight.Words.Second.Mixed.Negative.TargetTwoSideReferences
-public import SquaresInCircles.Eight.Words.Second.Outer.ConcaveSlope
-public import SquaresInCircles.Eight.Words.Second.Outer.Positive.ThreeData
+public import SquaresInCircles.Eight.Words.Second.Mixed.Negative.TargetTwoCornerCalculus
+public import SquaresInCircles.Eight.Words.Second.Outer.LabelBounds
+public import SquaresInCircles.Eight.Words.Second.Outer.Positive.ThreeUpperEasy
 
 /-!
 # Eight squares: complete original primary-side owner at edge two
@@ -14,6 +13,163 @@ one strong tangent quadratic handles the middle. Positive discriminant
 then proves the original side cost for every core coordinate at once.
 -/
 
+section
+/-!
+## One global negative fourth derivative for the side discriminant
+
+The positive double-angle harmonic is concave on the whole interval.
+Its two endpoints supply the uniform reserve that dominates every
+positive term of the fourth derivative.
+-/
+
+@[expose] public section
+noncomputable section
+open Set
+namespace SquaresInCircles.Eight.SecondWord.MixedTwo.NegativeTarget.Side
+open CommonQuarter CorePairGeometry Arithmetic
+
+def pay (x : ℝ) : ℝ := -16*C*Real.cos (2*x)+(3093051/250000)*Real.sin (2*x)
+def payD (x : ℝ) : ℝ := 32*C*Real.sin (2*x)+(3093051/125000)*Real.cos (2*x)
+
+lemma pay_hasDerivAt (x : ℝ) : HasDerivAt pay (payD x) x := by
+  have hs := (Real.hasDerivAt_sin (2*x)).comp x ((hasDerivAt_id x).const_mul 2)
+  have hc := (Real.hasDerivAt_cos (2*x)).comp x ((hasDerivAt_id x).const_mul 2)
+  convert (hc.const_mul (-16*C)).add (hs.const_mul (3093051/250000)) using 1
+  · funext y
+    simp only [pay,Pi.add_apply,Function.comp_apply]
+  · dsimp [payD]
+    ring
+
+lemma payD_hasDerivAt (x : ℝ) : HasDerivAt payD (-4*pay x) x := by
+  have hs := (Real.hasDerivAt_sin (2*x)).comp x ((hasDerivAt_id x).const_mul 2)
+  have hc := (Real.hasDerivAt_cos (2*x)).comp x ((hasDerivAt_id x).const_mul 2)
+  convert (hs.const_mul (32*C)).add (hc.const_mul (3093051/125000)) using 1
+  · funext y
+    simp only [payD,Pi.add_apply,Function.comp_apply]
+  · dsimp [pay]
+    ring
+
+lemma double_trig {x : ℝ} (hx : x∈Icc (0:ℝ) (7/10)) : 0≤Real.sin (2*x) ∧ 0≤Real.cos (2*x) :=
+  ⟨Real.sin_nonneg_of_nonneg_of_le_pi (by linarith [hx.1]) (by linarith [hx.2,pi_hand_enclosure.1]),
+    Real.cos_nonneg_of_mem_Icc ⟨by linarith [hx.1,Real.pi_pos],by linarith [hx.2,pi_hand_enclosure.1]⟩⟩
+
+lemma pay_nonnegative {x : ℝ} (hx : x∈Icc (0:ℝ) (7/10)) : 0≤pay x := by
+  have hp := mul_nonneg (show 0≤ -16*C by linarith [C_bounds.2]) (double_trig hx).2
+  have hq := mul_nonneg (by norm_num : (0:ℝ)≤3093051/250000) (double_trig hx).1
+  dsimp [pay]
+  linarith
+
+lemma pay_lower {x : ℝ} (hx : x∈Icc (0:ℝ) (7/10)) : (51/25:ℝ)<pay x := by
+  have hc : ConcaveOn ℝ (Icc (0:ℝ) (7/10)) pay :=
+    concave_of_deriv2 (fun x _ => pay_hasDerivAt x) (fun x _ => payD_hasDerivAt x)
+      (fun x hx => by linarith [pay_nonnegative hx])
+  apply concave_gt_of_endpoints hc hx
+  · norm_num [pay]
+    linarith [C_bounds.2]
+  · have hs := HighOrderTaylor.S15_le_sin (x := (7/5:ℝ)) (by norm_num)
+    norm_num [HighOrderTaylor.S15,HighOrderTaylor.S13,HighOrderTaylor.S11,sin9,sin7] at hs
+    have hp := mul_nonneg (show 0≤ -16*C by linarith [C_bounds.2])
+      (double_trig (show (7/10:ℝ)∈Icc (0:ℝ) (7/10) by norm_num)).2
+    norm_num [pay]
+    norm_num at hp
+    linarith
+
+theorem fourth_negative {x : ℝ} (hx : x∈Icc (0:ℝ) (7/10)) : E4 x<0 := by
+  have hpay := pay_lower hx
+  have ht := positive_trig hx
+  have hA := mul_le_mul_of_nonneg_left (Real.cos_le_one x) (show 0≤A by norm_num [A])
+  have hB := mul_nonpos_of_nonpos_of_nonneg (show B≤0 by norm_num [B]) ht.2.2.1
+  have hlast := mul_nonneg hx.1 (double_trig hx).2
+  dsimp [E4,pay,A,B,H,q] at *
+  nlinarith
+
+lemma third_antitone : AntitoneOn E3 (Icc (0:ℝ) (7/10)) :=
+  antiOn_of_hasDeriv_nonpos
+    (fun x _ => (E3_hasDerivAt x).continuousAt.continuousWithinAt)
+    (fun x _ => E3_hasDerivAt x)
+    (fun _ hx => (fourth_negative (Ioo_subset_Icc_self hx)).le)
+
+end SquaresInCircles.Eight.SecondWord.MixedTwo.NegativeTarget.Side
+end
+end
+end
+
+section
+/-!
+## Fixed scalar references for the complete side discriminant
+
+Every trigonometric reference is bounded by exact Taylor polynomials.
+The two pi-dependent coefficients have rational cages already proved
+from the common pi enclosure.
+-/
+
+@[expose] public section
+noncomputable section
+open Set
+namespace SquaresInCircles.Eight.SecondWord.MixedTwo.NegativeTarget.Side
+open CommonQuarter CorePairGeometry Arithmetic
+
+private lemma shift_product {x y l u : ℝ} (hx : 0≤x) (hl : 0≤l) (hy : l≤y ∧ y≤u) :
+    (-(25539083129/200000000000:ℝ)-q*x)*u≤(C-q*x)*y ∧
+    (C-q*x)*y≤(-(31923853911/250000000000:ℝ)-q*x)*l := by
+  have hy0 := hl.trans hy.1
+  have hlo : -(25539083129/200000000000:ℝ)-q*x≤0 := by dsimp [q]; linarith
+  have hhi : -(31923853911/250000000000:ℝ)-q*x≤0 := by dsimp [q]; linarith
+  constructor
+  · exact (mul_le_mul_of_nonpos_left hy.2 hlo).trans
+      (mul_le_mul_of_nonneg_right (by linarith [C_bounds.1] :
+        -(25539083129/200000000000:ℝ)-q*x≤C-q*x) hy0)
+  · exact (mul_le_mul_of_nonneg_right (by linarith [C_bounds.2] :
+        C-q*x≤ -(31923853911/250000000000:ℝ)-q*x) hy0).trans
+      (mul_le_mul_of_nonpos_left hy.1 hhi)
+
+local macro "discriminant_reference" x:term : tactic => `(tactic|
+  (have hsL := HighOrderTaylor.S15_le_sin (x := $x) (by norm_num)
+   have hsU := HighOrderTaylor.sin_le_S13 (x := $x) (by norm_num)
+   have hcL := HighOrderTaylor.C14_le_cos (x := $x) (by norm_num)
+   have hcU := HighOrderTaylor.cos_le_C12 (x := $x) (by norm_num)
+   have hs2L := HighOrderTaylor.S15_le_sin (x := 2*$x) (by norm_num)
+   have hs2U := HighOrderTaylor.sin_le_S13 (x := 2*$x) (by norm_num)
+   have hc2L := HighOrderTaylor.C14_le_cos (x := 2*$x) (by norm_num)
+   have hc2U := HighOrderTaylor.cos_le_C12 (x := 2*$x) (by norm_num)
+   have hpC := shift_product (x := $x) (by norm_num)
+     (show 0≤HighOrderTaylor.C14 (2*$x) by
+       norm_num [HighOrderTaylor.C14,HighOrderTaylor.C12,cos10,cos8]) ⟨hc2L,hc2U⟩
+   have hpS := shift_product (x := $x) (by norm_num)
+     (show 0≤HighOrderTaylor.S15 (2*$x) by
+       norm_num [HighOrderTaylor.S15,HighOrderTaylor.S13,HighOrderTaylor.S11,sin9,sin7]) ⟨hs2L,hs2U⟩
+   norm_num [q,HighOrderTaylor.S15,HighOrderTaylor.S13,HighOrderTaylor.S11,
+     HighOrderTaylor.C14,HighOrderTaylor.C12,sin9,sin7,cos10,cos8]
+     at hsL hsU hcL hcU hs2L hs2U hc2L hc2U hpC hpS
+   norm_num [E,E1,E2,E3,A,B,H,J,q]
+   repeat' constructor
+   all_goals nlinarith [C_bounds.1,C_bounds.2,Z_bounds.1,Z_bounds.2]))
+
+lemma zero_value : (177/1000000:ℝ)<E 0 := by
+  norm_num [E,A,B,H,J,q]
+  linarith [C_bounds.1,Z_bounds.1]
+
+lemma left_reference : (339/100000:ℝ)<E (3/10) ∧ (7/5:ℝ)<E3 (3/10) ∧
+    E1 (3/10)< -(13/1000:ℝ) ∧ (47/1000:ℝ)<E2 (3/10) := by
+  discriminant_reference (3/10:ℝ)
+
+lemma right_reference : (279/100000:ℝ)<E (1/2) ∧ E3 (1/2)< -(11/10:ℝ) ∧
+    (43/5000:ℝ)<E1 (1/2) ∧ (11/125:ℝ)<E2 (1/2) := by
+  discriminant_reference (1/2:ℝ)
+
+lemma terminal_value : (389/100000:ℝ)<E (7/10) := by
+  discriminant_reference (7/10:ℝ)
+
+lemma middle_reference : (61/25000:ℝ)<E (213/500) ∧
+    -(1/25000:ℝ)<E1 (213/500) ∧ E1 (213/500)<(1/25000:ℝ) := by
+  discriminant_reference (213/500:ℝ)
+
+end SquaresInCircles.Eight.SecondWord.MixedTwo.NegativeTarget.Side
+end
+end
+end
+
+section
 @[expose] public section
 noncomputable section
 open Set
@@ -106,3 +262,6 @@ theorem original_primary {a b B φ : ℝ} (hs : OuterState a b) (hB : B∈Icc (0
   linarith
 
 end SquaresInCircles.Eight.SecondWord.MixedTwo.NegativeTarget.Side
+end
+end
+end

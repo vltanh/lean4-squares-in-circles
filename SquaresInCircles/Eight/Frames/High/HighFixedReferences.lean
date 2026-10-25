@@ -1,6 +1,6 @@
 module
 
-public import SquaresInCircles.Eight.Frames.High.HighFixedCalculus
+public import SquaresInCircles.Eight.Frames.High.LowSecondNormPolynomial
 public import SquaresInCircles.Eight.Frames.Mid.HighTargetReferences
 
 /-!

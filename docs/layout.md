@@ -138,8 +138,8 @@ original centres. Its long middle takes the folders `Boundary/`, `Frames/`,
 
 | part | files | contents |
 | --- | --- | --- |
-| the radius | `Corners/` (9 files), `Stationary/` (17 files) | the five-corner problem, its minimizer and its radius; the stationary chain, its weights, the configuration `sharpData` and `qStar`; the completed identity at arbitrary centres; the five-parameter chart and its admissible set |
-| construction | `Construction.lean`, `Equality/Basic.lean`, `Equality/Equivalence.lean` | the frames and projections of the model, the admissible models, and the translation between the statement's parameters and the chart; the admissible models pack the disk |
+| the radius | `Corners/` (2 files), `Stationary/` (5 files) | the five-corner problem, its minimizer and its radius; the stationary chain, its weights, the configuration `sharpData` and `qStar`; the completed identity at arbitrary centres; the five-parameter chart and its admissible set |
+| construction | `Construction.lean`, `Equality/Angles.lean`, `Equality/Equivalence.lean` | the frames and projections of the model, the admissible models, and the translation between the statement's parameters and the chart; the admissible models pack the disk |
 | the exterior and the central squares | `Exterior.lean`, `Containing.lean` | angular lengths on the circles of radius `1` and `5/4`, `3 L₁ + L_{5/4} ≥ π` for a square that avoids `o`; exactly one square contains `o`, and the one-twelfth core |
 | cycles | `Model.lean`, `Boundary/` | radius levels, signed axes, neighbour and boundary cycles; the boundary reduction, the normalization and the radius transfer; the candidate frames; the entry `SharpSourceEntry` |
 | frames | `Frames/` | the four-type budget of a boundary cycle and the cases of its frames |

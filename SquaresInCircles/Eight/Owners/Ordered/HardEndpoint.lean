@@ -1,8 +1,8 @@
 module
 
-public import SquaresInCircles.Eight.Owners.E.InteriorCycle
+public import SquaresInCircles.Eight.Owners.E.ZeroCapEndpoints
 public import SquaresInCircles.Eight.Owners.Epsilon.Geometry
-public import SquaresInCircles.Eight.Owners.Canonical.HardEndpoint
+public import SquaresInCircles.Eight.Owners.Canonical.NegativeCycle
 public import SquaresInCircles.Eight.Owners.E.ZeroGeometry
 
 /-!

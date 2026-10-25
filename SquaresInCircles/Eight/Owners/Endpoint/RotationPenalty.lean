@@ -1,7 +1,7 @@
 module
 
 public import Mathlib.Algebra.Order.Star.Real
-public import SquaresInCircles.Eight.Frames.Ordinary.NegativeEnvelope
+public import SquaresInCircles.Eight.Frames.Ordinary.NegativeSlope
 
 /-!
 # Eight squares: an original rotated endpoint costs at least its zero-angle stress

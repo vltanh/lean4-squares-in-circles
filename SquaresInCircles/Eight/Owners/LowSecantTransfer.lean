@@ -5,8 +5,8 @@ public import Mathlib.RingTheory.Etale.Weakly
 public import Mathlib.RingTheory.Flat.TorsionFree
 public import Mathlib.RingTheory.TotallySplit
 public import SquaresInCircles.Eight.Owners.LowSecantPolynomials
-public import SquaresInCircles.Eight.Frames.Ordinary.LongSecantGrowth
-public import SquaresInCircles.Eight.Owners.Positive.SecantGain
+public import SquaresInCircles.Eight.Frames.Ordinary.SignedBudgetConcentration
+public import SquaresInCircles.Eight.Owners.Positive.SmallScalar
 
 /-!
 # Eight squares: the low-coefficient comparison with the secant bound

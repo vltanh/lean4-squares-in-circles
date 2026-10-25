@@ -81,7 +81,8 @@ theorem dPositiveDiagonal_eq {z : ℝ} (hz : z∈Icc 0 frameCap) :
     dPositiveDiagonal z=2*edgeWidth z+edgeWidth 0-
       diagonalSupport (dF z 0) (dG z 0)+charge*(z+0) := by
   rw [edgeWidth_positive_formula hz]
-  norm_num [dPositiveDiagonal,diagonalSupport,dF,dG,edgeWidth,pairWidth] <;> ring
+  norm_num [dPositiveDiagonal,diagonalSupport,dF,dG,edgeWidth,pairWidth]
+  ring
 
 theorem dPositiveFull_eq {z : ℝ} (hz : z∈Icc 0 frameCap) :
     dPositiveFull z=2*edgeWidth z+edgeWidth 0-
@@ -89,7 +90,8 @@ theorem dPositiveFull_eq {z : ℝ} (hz : z∈Icc 0 frameCap) :
   rw [edgeWidth_positive_formula hz]
   unfold fullSupport
   rw [d_force_norm]
-  norm_num [dPositiveFull,dF,dG,edgeWidth,pairWidth] <;> ring
+  norm_num [dPositiveFull,dF,dG,edgeWidth,pairWidth]
+  ring
 
 theorem dStress_positive_zero_eq {z : ℝ} (hz : z∈Icc 0 frameCap) :
     dStress z 0=if dF z 0-dG z 0≤0 then dPositiveDiagonal z else dPositiveFull z := by

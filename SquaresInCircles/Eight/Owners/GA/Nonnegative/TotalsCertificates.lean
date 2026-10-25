@@ -1,6 +1,7 @@
 module
 
 public import SquaresInCircles.Eight.Arithmetic.CertificateRestrictions
+public import SquaresInCircles.Eight.Arithmetic.BivariateRounding
 public import SquaresInCircles.Eight.Owners.GA.Nonnegative.TotalsMirrors
 
 /-!
@@ -93,223 +94,197 @@ macro "h_nnt_unfold" : tactic => `(tactic| simp only [
     reduceCtorEq,false_and,and_true,true_and,Fin.val_zero,Fin.val_one,Nat.reduceEqDiff,
     Fin.reduceEq,and_false,Fin.coe_ofNat_eq_mod,Nat.reduceMod])
 
-/-! ### Building the restrictions
+/-! ### Bivariate checks
 
-`build_rep` proves the goals `RepOn φ ?a p` along the syntax of `p`, like `build_rep_yZero`,
-`build_rep_xZero` and `build_rep_curve`, but it picks the lemma from the head of `p` and the
-restriction `φ` instead of trying the lemmas in turn, and it proves a repeated `(φ, p)` (a mass
-occurs several times in a numerator) only once. It leaves the side conditions as goals;
-`decide_all` proves all goals by one kernel computation, so that the scaled lists they share are
-computed once. -/
-
-open Lean Meta in
-/-- Proves `RepOn φ ?a p` along the syntax of `p`; returns the side conditions. -/
-private meta partial def repBuild (seen : IO.Ref (Std.HashMap (Expr × Expr) Expr))
-    (g : MVarId) : MetaM (Array MVarId) := do
-  if ← g.isAssigned then return #[]
-  let ty ← instantiateMVars (← g.getType)
-  if ty.isAppOfArity ``WholeIntervalPolynomial.Certificate.Scaled.Rep 2 then
-    g.assumption
-    return #[]
-  let_expr RepOn φ _ p := ty | return #[g]
-  if let some pf := (← seen.get)[(φ, p)]? then
-    if ← isDefEq ty (← inferType pf) then
-      g.assign pf
-      return #[]
-  let leaf (s : String) : Option Name :=
-    (match φ.getAppFn.constName? with
-      | some ``yZero => some "yZero" | some ``xZero => some "xZero"
-      | some ``onLine => some "line" | some ``onCurve => some "curve" | _ => none).map
-      fun r => .str ``RepOn (r ++ "_" ++ s)
-  let lem? : Option Name := match p.getAppFnArgs with
-    | (``HAdd.hAdd, #[_, _, _, _, _, _]) => some ``RepOn.add
-    | (``HSub.hSub, #[_, _, _, _, _, _]) => some ``RepOn.sub
-    | (``HMul.hMul, #[_, _, _, _, _, _]) => some ``RepOn.mul
-    | (``HPow.hPow, #[_, _, _, _, _, _]) => some ``RepOn.pow
-    | (``Neg.neg, #[_, _, _]) => some ``RepOn.neg
-    | (``OfNat.ofNat, #[_, n, _]) =>
-      match n.rawNatLit? with
-      | some 0 => some ``RepOn.zero
-      | some 1 => some ``RepOn.one
-      | _ => none
-    | (``TensorWholeIntervalPolynomial.scalar, #[_]) => leaf "scalar"
-    | (``Polynomial.X, #[_, _]) => leaf "X"
-    | (``TwoVariablePolynomial.cubicMass, #[_, _]) => leaf "cubicMass"
-    | (``DFunLike.coe, #[_, _, _, _, f, q]) =>
-      match f.getAppFn.constName?, q.constName? with
-      | some ``Polynomial.C, _ => leaf "CX"
-      | some ``TwoVariablePolynomial.lift, some ``GlobalGA.PositiveTD.Certificate.C10 =>
-        leaf "liftC10"
-      | some ``TwoVariablePolynomial.lift, some ``GlobalGA.PositiveTD.Certificate.C12 =>
-        leaf "liftC12"
-      | some ``TwoVariablePolynomial.lift, some ``GlobalGA.PositiveTD.Certificate.S9 =>
-        leaf "liftS9"
-      | some ``TwoVariablePolynomial.lift, some ``GlobalGA.PositiveTD.Certificate.S11 =>
-        leaf "liftS11"
-      | _, _ => none
-    | _ => none
-  let some lem := lem? | return #[g]
-  seen.modify (·.insert (φ, p) (.mvar g))
-  let mut side := #[]
-  for g' in ← withReducible (g.apply (← mkConstWithFreshMVarLevels lem)) do
-    side := side ++ (← repBuild seen g')
-  return side
-
-open Lean Elab Tactic in
-/-- Proves the goals `RepOn φ ?a p` along the syntax of `p`, leaving the side conditions. -/
-local elab "build_rep" : tactic => do
-  let seen ← IO.mkRef {}
-  let mut side := #[]
-  for g in ← getGoals do
-    side := side ++ (← repBuild seen g)
-  setGoals side.toList
-
-open Lean Meta Elab Tactic in
-/-- Proves all goals by one `decide +kernel` on their conjunction. -/
-local elab "decide_all" : tactic => do
-  let gs ← getUnsolvedGoals
-  let some last := gs.getLast? | return
-  let tys ← gs.mapM fun g => do instantiateMVars (← g.getType)
-  let conj (ts : List Expr) : Expr := ts.dropLast.foldr mkAnd ts.getLast!
-  let pf ← last.withContext (mkFreshExprMVar (conj tys))
-  setGoals [pf.mvarId!]
-  evalTactic (← `(tactic| set_option synthInstance.maxSize 4096 in decide +kernel))
-  let mut p := pf
-  let mut rest := tys
-  for g in gs do
-    match rest with
-    | a :: ts@(_ :: _) =>
-      g.assign (mkApp3 (mkConst ``And.left) a (conj ts) p)
-      p := mkApp3 (mkConst ``And.right) a (conj ts) p
-      rest := ts
-    | _ => g.assign p
-  setGoals []
-
-/-! ### Exact bivariate checks
-
-The masses are packed in boxes of `33 × 33` digits of 600 bits, the numerators in boxes of
-`41 × 41` digits of 2400 bits (`BivariateCertificate`). Each check is one kernel computation on
-natural numbers. -/
+`P` is exact (`BivariateCertificate.XM`) in digits of 170 bits, and the masses, from its truncation
+to total degree three, in digits of 600 bits; the masses are checked in boxes of `33 × 33` digits.
+The numerators are rounded models (`BivariateRounding.XE`) at the scale `2 ^ 60`: their products
+use digits of 160 bits, and the quotient, the derivative, the substitution and the final bound
+digits of 400 bits, in boxes of `41 × 41` digits at `T` (degree `39`) and `29 × 29` at `A` (degree
+at most `26`). The error of the rounding enters the final bounds. -/
 
 section C1Checks
-open PackedModels BivariateCertificate NonnegativeTotalsMirrors
+open PackedModels BivariateCertificate BivariateRounding NonnegativeTotalsMirrors
 
-/-- The packing of the masses. -/
+/-- `mass r ep i j`, reduced, in the packing `cM`, from the truncation of `P` to total degree
+three in the packing `cP` (the cubic mass reads nothing else). -/
+private def c1_massM (cP cM : Config) (r : Region) (ep : Endpoint) (i : Fin 3) (j : Fin 4) : XM :=
+  XM.reduce cM (XM.cubicMassRM cM (rhoP ep i j).1 (rhoP ep i j).2
+    (repackM cP cM (XM.trunc cP (PM cP r ep i j) 3)))
+
+private theorem c1_rep_massM (cP cM : Config) (r : Region) (ep : Endpoint) (i : Fin 3)
+    (j : Fin 4) : (c1_massM cP cM r ep i j).Rep cM (mass r ep i j) := by
+  have h := XM.rep_cubicMassRM (rep_repackM (c' := cM) (XM.rep_trunc (rep_PM cP r ep i j) 3))
+    (rho_eq ep i j)
+  rw [cubicMass_truncTot] at h
+  exact XM.rep_reduce h
+
+/-- `numerator r ep i`, rounded to the scale `2 ^ K` in the packing `cE`: `A`, `P` and the masses
+are exact in their packings, the products are rounded; the smaller factor is on the right. -/
+private def c1_numE (cP cM cE : Config) (K : ℕ) (r : Region) (ep : Endpoint) (i : Fin 3) : XE :=
+  let w := fun j => XE.ofXMAt cM cE K (c1_massM cP cM r ep i j)
+  let P := fun j => XE.ofXMAt cP cE K (PM cP r ep i j)
+  let mr := XE.mulR cE K
+  XE.sub cE (mr (mr (mr (mr (mr (XE.ofXMAt cP cE K (AM cP r ep i))
+      (XE.ofXMAt cP cE K (XM.ofInt cP 2 1))) (w 0)) (w 1)) (w 2)) (w 3))
+    (mr (XE.add cE (XE.add cE (XE.add cE
+      (mr (mr (mr (XE.add cE (P 0) (mr (w 0) (w 0))) (w 1)) (w 2)) (w 3))
+      (mr (mr (mr (XE.add cE (P 1) (mr (w 1) (w 1))) (w 0)) (w 2)) (w 3)))
+      (mr (mr (mr (XE.add cE (P 2) (mr (w 2) (w 2))) (w 0)) (w 1)) (w 3)))
+      (mr (mr (mr (XE.add cE (P 3) (mr (w 3) (w 3))) (w 0)) (w 1)) (w 2)))
+      (XE.ofXMAt cP cE K (XM.ofInt cP 494696877 250000000)))
+
+private theorem c1_rep_numE (cP cM cE : Config) (K : ℕ) (r : Region) (ep : Endpoint) (i : Fin 3) :
+    (c1_numE cP cM cE K r ep i).Rep cE (numerator r ep i) := by
+  have hw (j : Fin 4) := XE.rep_ofXMAt (c' := cE) (c1_rep_massM cP cM r ep i j) K
+  have hP (j : Fin 4) := XE.rep_ofXMAt (c' := cE) (rep_PM cP r ep i j) K
+  have hs (j : Fin 4) : (XE.mulR cE K (XE.ofXMAt cM cE K (c1_massM cP cM r ep i j))
+      (XE.ofXMAt cM cE K (c1_massM cP cM r ep i j))).Rep cE (mass r ep i j ^ 2) := by
+    rw [pow_two]; exact XE.rep_mulR (hw j) (hw j) K
+  exact XE.rep_sub (XE.rep_mulR (XE.rep_mulR (XE.rep_mulR (XE.rep_mulR (XE.rep_mulR_swap
+      (XE.rep_ofXMAt (XM.rep_lit cP (by norm_num)) K) (XE.rep_ofXMAt (rep_AM cP r ep i) K) K)
+      (hw 0) K) (hw 1) K) (hw 2) K) (hw 3) K)
+    (XE.rep_mulR_swap (XE.rep_ofXMAt (XM.rep_lit cP (by norm_num [Rbar])) K)
+      (XE.rep_add (XE.rep_add (XE.rep_add
+      (XE.rep_mulR (XE.rep_mulR (XE.rep_mulR (XE.rep_add (hP 0) (hs 0)) (hw 1) K) (hw 2) K) (hw 3) K)
+      (XE.rep_mulR (XE.rep_mulR (XE.rep_mulR (XE.rep_add (hP 1) (hs 1)) (hw 0) K) (hw 2) K) (hw 3) K))
+      (XE.rep_mulR (XE.rep_mulR (XE.rep_mulR (XE.rep_add (hP 2) (hs 2)) (hw 0) K) (hw 1) K) (hw 3) K))
+      (XE.rep_mulR (XE.rep_mulR (XE.rep_mulR (XE.rep_add (hP 3) (hs 3)) (hw 0) K) (hw 1) K) (hw 2) K))
+      K)
+
+/-- The model of the triangle transform of the `y`-derivative of the quotient `i`. -/
+private def c1_triE (cP cM cE cT : Config) (ep : Endpoint) (i : Fin 3) : XE :=
+  XE.norm cT (XE.toScale cT cT 60 (XE.triangle cT 8 15 (XE.repack cE cT
+    (XE.derivY cE (XE.divY cE (c1_numE cP cM cE 60 .triangle ep i))))))
+
+private theorem c1_rep_triE (cP cM cE cT : Config) (ep : Endpoint) (i : Fin 3) :
+    (c1_triE cP cM cE cT ep i).Rep cT (transform .triangle (derivativeY (triangleQuotient ep i))) :=
+  XE.rep_norm (XE.rep_toScale (XE.rep_triangle (XE.rep_repack (XE.rep_derivY (XE.rep_divY
+    (c1_rep_numE cP cM cE 60 .triangle ep i)))) (d := 8/15) (dn := 8) (dd := 15) (by norm_num)
+    (by norm_num)) 60)
+
+/-- The model of the rectangle transform of the quotient `i`. -/
+private def c1_recE (cP cM cE cT : Config) (ep : Endpoint) (i : Fin 3) : XE :=
+  XE.norm cT (XE.toScale cT cT 60 (XE.rectangle cT 1 6 8 15 (XE.repack cE cT
+    (XE.divX cE (c1_numE cP cM cE 60 .rectangle ep i)))))
+
+private theorem c1_rep_recE (cP cM cE cT : Config) (ep : Endpoint) (i : Fin 3) :
+    (c1_recE cP cM cE cT ep i).Rep cT (transform .rectangle (rectangleQuotient ep i)) :=
+  XE.rep_norm (XE.rep_toScale (XE.rep_rectangle (XE.rep_repack (XE.rep_divX
+    (c1_rep_numE cP cM cE 60 .rectangle ep i))) (a := 1/6) (b := 8/15) (an := 1) (ad := 6)
+    (bn := 8) (bd := 15) (by norm_num) (by norm_num) (by norm_num) (by norm_num)) 60)
+
+/-- The packings of the masses. -/
+private def c1_cPM : Config := ⟨0, 16, 170⟩
 private def c1_cfgM : Config := ⟨0, 16, 600⟩
-/-- The packing of the numerators at `T` (degree `39`). -/
-private def c1_cfgN : Config := ⟨0, 20, 2400⟩
-/-- The packing of the numerators at `A` (degree at most `26`): smaller numbers. -/
-private def c1_cfgA : Config := ⟨0, 14, 1600⟩
+/-- The packings of the numerators at `T` (degree `39`). -/
+private def c1_cPT : Config := ⟨0, 20, 170⟩
+private def c1_cMT : Config := ⟨0, 20, 600⟩
+private def c1_cET : Config := ⟨0, 20, 160⟩
+private def c1_cTT : Config := ⟨0, 20, 400⟩
+/-- The packings of the numerators at `A` (degree at most `26`). -/
+private def c1_cPA : Config := ⟨0, 14, 170⟩
+private def c1_cMA : Config := ⟨0, 14, 600⟩
+private def c1_cEA : Config := ⟨0, 14, 160⟩
+private def c1_cTA : Config := ⟨0, 14, 400⟩
 
 private theorem c1_massT_atA_0 : ∀ j : Fin 4, XM.lowerCheck c1_cfgM
-    (XM.triangleM c1_cfgM (massM c1_cfgM .triangle .atA 0 j) 8 15) 3 71 100=true := by
+    (XM.triangleM c1_cfgM (c1_massM c1_cPM c1_cfgM .triangle .atA 0 j) 8 15) 3 71 100=true := by
   decide +kernel
 private theorem c1_massR_atA_0 : ∀ j : Fin 4, XM.lowerCheck c1_cfgM
-    (XM.rectangleM c1_cfgM (massM c1_cfgM .rectangle .atA 0 j) 1 6 8 15) 3 77 100=true := by
+    (XM.rectangleM c1_cfgM (c1_massM c1_cPM c1_cfgM .rectangle .atA 0 j) 1 6 8 15) 3 77 100=true := by
   decide +kernel
 
 private theorem c1_massT_atA_1 : ∀ j : Fin 4, XM.lowerCheck c1_cfgM
-    (XM.triangleM c1_cfgM (massM c1_cfgM .triangle .atA 1 j) 8 15) 3 71 100=true := by
+    (XM.triangleM c1_cfgM (c1_massM c1_cPM c1_cfgM .triangle .atA 1 j) 8 15) 3 71 100=true := by
   decide +kernel
 private theorem c1_massR_atA_1 : ∀ j : Fin 4, XM.lowerCheck c1_cfgM
-    (XM.rectangleM c1_cfgM (massM c1_cfgM .rectangle .atA 1 j) 1 6 8 15) 3 77 100=true := by
+    (XM.rectangleM c1_cfgM (c1_massM c1_cPM c1_cfgM .rectangle .atA 1 j) 1 6 8 15) 3 77 100=true := by
   decide +kernel
 
 private theorem c1_massT_atA_2 : ∀ j : Fin 4, XM.lowerCheck c1_cfgM
-    (XM.triangleM c1_cfgM (massM c1_cfgM .triangle .atA 2 j) 8 15) 3 71 100=true := by
+    (XM.triangleM c1_cfgM (c1_massM c1_cPM c1_cfgM .triangle .atA 2 j) 8 15) 3 71 100=true := by
   decide +kernel
 private theorem c1_massR_atA_2 : ∀ j : Fin 4, XM.lowerCheck c1_cfgM
-    (XM.rectangleM c1_cfgM (massM c1_cfgM .rectangle .atA 2 j) 1 6 8 15) 3 77 100=true := by
+    (XM.rectangleM c1_cfgM (c1_massM c1_cPM c1_cfgM .rectangle .atA 2 j) 1 6 8 15) 3 77 100=true := by
   decide +kernel
 
 private theorem c1_massT_atT_0 : ∀ j : Fin 4, XM.lowerCheck c1_cfgM
-    (XM.triangleM c1_cfgM (massM c1_cfgM .triangle .atT 0 j) 8 15) 3 71 100=true := by
+    (XM.triangleM c1_cfgM (c1_massM c1_cPM c1_cfgM .triangle .atT 0 j) 8 15) 3 71 100=true := by
   decide +kernel
 private theorem c1_massR_atT_0 : ∀ j : Fin 4, XM.lowerCheck c1_cfgM
-    (XM.rectangleM c1_cfgM (massM c1_cfgM .rectangle .atT 0 j) 1 6 8 15) 3 77 100=true := by
+    (XM.rectangleM c1_cfgM (c1_massM c1_cPM c1_cfgM .rectangle .atT 0 j) 1 6 8 15) 3 77 100=true := by
   decide +kernel
 
 private theorem c1_massT_atT_1 : ∀ j : Fin 4, XM.lowerCheck c1_cfgM
-    (XM.triangleM c1_cfgM (massM c1_cfgM .triangle .atT 1 j) 8 15) 3 71 100=true := by
+    (XM.triangleM c1_cfgM (c1_massM c1_cPM c1_cfgM .triangle .atT 1 j) 8 15) 3 71 100=true := by
   decide +kernel
 private theorem c1_massR_atT_1 : ∀ j : Fin 4, XM.lowerCheck c1_cfgM
-    (XM.rectangleM c1_cfgM (massM c1_cfgM .rectangle .atT 1 j) 1 6 8 15) 3 77 100=true := by
+    (XM.rectangleM c1_cfgM (c1_massM c1_cPM c1_cfgM .rectangle .atT 1 j) 1 6 8 15) 3 77 100=true := by
   decide +kernel
 
 private theorem c1_massT_atT_2 : ∀ j : Fin 4, XM.lowerCheck c1_cfgM
-    (XM.triangleM c1_cfgM (massM c1_cfgM .triangle .atT 2 j) 8 15) 3 71 100=true := by
+    (XM.triangleM c1_cfgM (c1_massM c1_cPM c1_cfgM .triangle .atT 2 j) 8 15) 3 71 100=true := by
   decide +kernel
 private theorem c1_massR_atT_2 : ∀ j : Fin 4, XM.lowerCheck c1_cfgM
-    (XM.rectangleM c1_cfgM (massM c1_cfgM .rectangle .atT 2 j) 1 6 8 15) 3 77 100=true := by
+    (XM.rectangleM c1_cfgM (c1_massM c1_cPM c1_cfgM .rectangle .atT 2 j) 1 6 8 15) 3 77 100=true := by
   decide +kernel
 
-private theorem c1_triD_atA_0 : XM.upperCheck c1_cfgA (XM.triangleM c1_cfgA
-    (XM.derivYM c1_cfgA (XM.divYM c1_cfgA (numeratorM c1_cfgA .triangle .atA 0))) 8 15)
+private theorem c1_triD_atA_0 : XE.upperCheck c1_cTA (c1_triE c1_cPA c1_cMA c1_cEA c1_cTA .atA 0)
     (degree .triangle .atA 0) (-23) 100=true := by
   decide +kernel
 
-private theorem c1_triD_atA_1 : XM.upperCheck c1_cfgA (XM.triangleM c1_cfgA
-    (XM.derivYM c1_cfgA (XM.divYM c1_cfgA (numeratorM c1_cfgA .triangle .atA 1))) 8 15)
+private theorem c1_triD_atA_1 : XE.upperCheck c1_cTA (c1_triE c1_cPA c1_cMA c1_cEA c1_cTA .atA 1)
     (degree .triangle .atA 1) (-43) 100=true := by
   decide +kernel
 
-private theorem c1_triD_atA_2 : XM.upperCheck c1_cfgA (XM.triangleM c1_cfgA
-    (XM.derivYM c1_cfgA (XM.divYM c1_cfgA (numeratorM c1_cfgA .triangle .atA 2))) 8 15)
+private theorem c1_triD_atA_2 : XE.upperCheck c1_cTA (c1_triE c1_cPA c1_cMA c1_cEA c1_cTA .atA 2)
     (degree .triangle .atA 2) (-1) 4=true := by
   decide +kernel
 
-private theorem c1_triD_atT_0 : XM.upperCheck c1_cfgN (XM.triangleM c1_cfgN
-    (XM.derivYM c1_cfgN (XM.divYM c1_cfgN (numeratorM c1_cfgN .triangle .atT 0))) 8 15)
+private theorem c1_triD_atT_0 : XE.upperCheck c1_cTT (c1_triE c1_cPT c1_cMT c1_cET c1_cTT .atT 0)
     (degree .triangle .atT 0) (-6) 25=true := by
   decide +kernel
 
-private theorem c1_triD_atT_1 : XM.upperCheck c1_cfgN (XM.triangleM c1_cfgN
-    (XM.derivYM c1_cfgN (XM.divYM c1_cfgN (numeratorM c1_cfgN .triangle .atT 1))) 8 15)
+private theorem c1_triD_atT_1 : XE.upperCheck c1_cTT (c1_triE c1_cPT c1_cMT c1_cET c1_cTT .atT 1)
     (degree .triangle .atT 1) (-21) 50=true := by
   decide +kernel
 
-private theorem c1_triD_atT_2 : XM.upperCheck c1_cfgN (XM.triangleM c1_cfgN
-    (XM.derivYM c1_cfgN (XM.divYM c1_cfgN (numeratorM c1_cfgN .triangle .atT 2))) 8 15)
+private theorem c1_triD_atT_2 : XE.upperCheck c1_cTT (c1_triE c1_cPT c1_cMT c1_cET c1_cTT .atT 2)
     (degree .triangle .atT 2) (-13) 100=true := by
   decide +kernel
 
-private theorem c1_recQ_atA_0 : XM.lowerCheck c1_cfgA (XM.rectangleM c1_cfgA
-    (XM.divXM c1_cfgA (numeratorM c1_cfgA .rectangle .atA 0)) 1 6 8 15)
+private theorem c1_recQ_atA_0 : XE.lowerCheck c1_cTA (c1_recE c1_cPA c1_cMA c1_cEA c1_cTA .atA 0)
     (degree .rectangle .atA 0) 13 250=true := by
   decide +kernel
 
-private theorem c1_recQ_atA_1 : XM.lowerCheck c1_cfgA (XM.rectangleM c1_cfgA
-    (XM.divXM c1_cfgA (numeratorM c1_cfgA .rectangle .atA 1)) 1 6 8 15)
+private theorem c1_recQ_atA_1 : XE.lowerCheck c1_cTA (c1_recE c1_cPA c1_cMA c1_cEA c1_cTA .atA 1)
     (degree .rectangle .atA 1) 18 125=true := by
   decide +kernel
 
-private theorem c1_recQ_atA_2 : XM.lowerCheck c1_cfgA (XM.rectangleM c1_cfgA
-    (XM.divXM c1_cfgA (numeratorM c1_cfgA .rectangle .atA 2)) 1 6 8 15)
+private theorem c1_recQ_atA_2 : XE.lowerCheck c1_cTA (c1_recE c1_cPA c1_cMA c1_cEA c1_cTA .atA 2)
     (degree .rectangle .atA 2) 223 500=true := by
   decide +kernel
 
-private theorem c1_recQ_atT_0 : XM.lowerCheck c1_cfgN (XM.rectangleM c1_cfgN
-    (XM.divXM c1_cfgN (numeratorM c1_cfgN .rectangle .atT 0)) 1 6 8 15)
+private theorem c1_recQ_atT_0 : XE.lowerCheck c1_cTT (c1_recE c1_cPT c1_cMT c1_cET c1_cTT .atT 0)
     (degree .rectangle .atT 0) 23 500=true := by
   decide +kernel
 
-private theorem c1_recQ_atT_1 : XM.lowerCheck c1_cfgN (XM.rectangleM c1_cfgN
-    (XM.divXM c1_cfgN (numeratorM c1_cfgN .rectangle .atT 1)) 1 6 8 15)
+private theorem c1_recQ_atT_1 : XE.lowerCheck c1_cTT (c1_recE c1_cPT c1_cMT c1_cET c1_cTT .atT 1)
     (degree .rectangle .atT 1) 137 1000=true := by
   decide +kernel
 
-private theorem c1_recQ_atT_2 : XM.lowerCheck c1_cfgN (XM.rectangleM c1_cfgN
-    (XM.divXM c1_cfgN (numeratorM c1_cfgN .rectangle .atT 2)) 1 6 8 15)
+private theorem c1_recQ_atT_2 : XE.lowerCheck c1_cTT (c1_recE c1_cPT c1_cMT c1_cET c1_cTT .atT 2)
     (degree .rectangle .atT 2) 259 1000=true := by
   decide +kernel
 
 private theorem c1_massT (ep : Endpoint) (i : Fin 3) (j : Fin 4) : XM.lowerCheck c1_cfgM
-    (XM.triangleM c1_cfgM (massM c1_cfgM .triangle ep i j) 8 15) 3 71 100=true := by
+    (XM.triangleM c1_cfgM (c1_massM c1_cPM c1_cfgM .triangle ep i j) 8 15) 3 71 100=true := by
   rcases ep with _|_ <;> fin_cases i
   exacts [c1_massT_atA_0 j,c1_massT_atA_1 j,c1_massT_atA_2 j,c1_massT_atT_0 j,c1_massT_atT_1 j,
     c1_massT_atT_2 j]
 private theorem c1_massR (ep : Endpoint) (i : Fin 3) (j : Fin 4) : XM.lowerCheck c1_cfgM
-    (XM.rectangleM c1_cfgM (massM c1_cfgM .rectangle ep i j) 1 6 8 15) 3 77 100=true := by
+    (XM.rectangleM c1_cfgM (c1_massM c1_cPM c1_cfgM .rectangle ep i j) 1 6 8 15) 3 77 100=true := by
   rcases ep with _|_ <;> fin_cases i
   exacts [c1_massR_atA_0 j,c1_massR_atA_1 j,c1_massR_atA_2 j,c1_massR_atT_0 j,c1_massR_atT_1 j,
     c1_massR_atT_2 j]
@@ -321,26 +296,30 @@ theorem mass_certificate (r : Region) (ep : Endpoint) (i : Fin 3) (j : Fin 4) :
     transform r (mass r ep i j)=expansion 3 (transform r (mass r ep i j)) ∧
     massReserve r<lowerOn r 3 (mass r ep i j) := by
   cases r
-  · exact XM.lower_certificate (XM.rep_triangleM (rep_massM _ .triangle ep i j) (by norm_num))
+  · exact XM.lower_certificate (XM.rep_triangleM (c1_rep_massM _ _ .triangle ep i j) (by norm_num))
       (c1_massT ep i j) (by norm_num [massReserve])
-  · exact XM.lower_certificate (XM.rep_rectangleM (rep_massM _ .rectangle ep i j) (by norm_num)
+  · exact XM.lower_certificate (XM.rep_rectangleM (c1_rep_massM _ _ .rectangle ep i j) (by norm_num)
       (by norm_num)) (c1_massR ep i j) (by norm_num [massReserve])
 
-open BivariateCertificate NonnegativeTotalsMirrors in
+open BivariateRounding in
 theorem triangle_derivative_certificate (ep : Endpoint) (i : Fin 3) :
     transform .triangle (derivativeY (triangleQuotient ep i))=
       expansion (degree .triangle ep i) (transform .triangle (derivativeY (triangleQuotient ep i))) ∧
     upperOn .triangle (degree .triangle ep i) (derivativeY (triangleQuotient ep i))<
       triangleDerivativeReserve ep i := by
-  have h := fun c ep i => XM.rep_triangleM (XM.rep_derivYM (XM.rep_divYM
-    (rep_numeratorM c .triangle ep i))) (d := 8/15) (dn := 8) (dd := 15) (by norm_num)
   rcases ep with _|_ <;> fin_cases i
-  · exact XM.upper_certificate (h _ _ _) c1_triD_atA_0 (by norm_num [triangleDerivativeReserve])
-  · exact XM.upper_certificate (h _ _ _) c1_triD_atA_1 (by norm_num [triangleDerivativeReserve])
-  · exact XM.upper_certificate (h _ _ _) c1_triD_atA_2 (by norm_num [triangleDerivativeReserve])
-  · exact XM.upper_certificate (h _ _ _) c1_triD_atT_0 (by norm_num [triangleDerivativeReserve])
-  · exact XM.upper_certificate (h _ _ _) c1_triD_atT_1 (by norm_num [triangleDerivativeReserve])
-  · exact XM.upper_certificate (h _ _ _) c1_triD_atT_2 (by norm_num [triangleDerivativeReserve])
+  · exact XE.upper_certificate (c1_rep_triE _ _ _ _ _ _) c1_triD_atA_0
+      (by norm_num [triangleDerivativeReserve])
+  · exact XE.upper_certificate (c1_rep_triE _ _ _ _ _ _) c1_triD_atA_1
+      (by norm_num [triangleDerivativeReserve])
+  · exact XE.upper_certificate (c1_rep_triE _ _ _ _ _ _) c1_triD_atA_2
+      (by norm_num [triangleDerivativeReserve])
+  · exact XE.upper_certificate (c1_rep_triE _ _ _ _ _ _) c1_triD_atT_0
+      (by norm_num [triangleDerivativeReserve])
+  · exact XE.upper_certificate (c1_rep_triE _ _ _ _ _ _) c1_triD_atT_1
+      (by norm_num [triangleDerivativeReserve])
+  · exact XE.upper_certificate (c1_rep_triE _ _ _ _ _ _) c1_triD_atT_2
+      (by norm_num [triangleDerivativeReserve])
 
 set_option maxRecDepth 1000000 in
 set_option maxHeartbeats 1000000 in
@@ -686,21 +665,25 @@ theorem triangle_chord_certificate (ep : Endpoint) (i : Fin 3)
     · exact h_triangleChord_atT_2
   · exact h_triangleChord_atT_1
 
-open BivariateCertificate NonnegativeTotalsMirrors in
+open BivariateRounding in
 theorem rectangle_quotient_certificate (ep : Endpoint) (i : Fin 3) :
     transform .rectangle (rectangleQuotient ep i)=
       expansion (degree .rectangle ep i) (transform .rectangle (rectangleQuotient ep i)) ∧
     rectangleQuotientReserve ep i<lowerOn .rectangle
       (degree .rectangle ep i) (rectangleQuotient ep i) := by
-  have h := fun c ep i => XM.rep_rectangleM (XM.rep_divXM (rep_numeratorM c .rectangle ep i))
-    (a := 1/6) (b := 8/15) (an := 1) (ad := 6) (bn := 8) (bd := 15) (by norm_num) (by norm_num)
   rcases ep with _|_ <;> fin_cases i
-  · exact XM.lower_certificate (h _ _ _) c1_recQ_atA_0 (by norm_num [rectangleQuotientReserve])
-  · exact XM.lower_certificate (h _ _ _) c1_recQ_atA_1 (by norm_num [rectangleQuotientReserve])
-  · exact XM.lower_certificate (h _ _ _) c1_recQ_atA_2 (by norm_num [rectangleQuotientReserve])
-  · exact XM.lower_certificate (h _ _ _) c1_recQ_atT_0 (by norm_num [rectangleQuotientReserve])
-  · exact XM.lower_certificate (h _ _ _) c1_recQ_atT_1 (by norm_num [rectangleQuotientReserve])
-  · exact XM.lower_certificate (h _ _ _) c1_recQ_atT_2 (by norm_num [rectangleQuotientReserve])
+  · exact XE.lower_certificate (c1_rep_recE _ _ _ _ _ _) c1_recQ_atA_0
+      (by norm_num [rectangleQuotientReserve])
+  · exact XE.lower_certificate (c1_rep_recE _ _ _ _ _ _) c1_recQ_atA_1
+      (by norm_num [rectangleQuotientReserve])
+  · exact XE.lower_certificate (c1_rep_recE _ _ _ _ _ _) c1_recQ_atA_2
+      (by norm_num [rectangleQuotientReserve])
+  · exact XE.lower_certificate (c1_rep_recE _ _ _ _ _ _) c1_recQ_atT_0
+      (by norm_num [rectangleQuotientReserve])
+  · exact XE.lower_certificate (c1_rep_recE _ _ _ _ _ _) c1_recQ_atT_1
+      (by norm_num [rectangleQuotientReserve])
+  · exact XE.lower_certificate (c1_rep_recE _ _ _ _ _ _) c1_recQ_atT_2
+      (by norm_num [rectangleQuotientReserve])
 
 set_option maxRecDepth 1000000 in
 set_option maxHeartbeats 1000000 in

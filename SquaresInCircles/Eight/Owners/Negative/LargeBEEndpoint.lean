@@ -1,6 +1,6 @@
 module
 
-public import SquaresInCircles.Eight.Owners.Negative.LargeDEExclusion
+public import SquaresInCircles.Eight.Owners.Negative.PrimaryPreprocessing
 
 /-!
 # Eight squares: the large-B negative sector reaches DE alignment

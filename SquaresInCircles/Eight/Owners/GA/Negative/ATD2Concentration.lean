@@ -1,6 +1,5 @@
 module
 
-public import SquaresInCircles.Eight.Owners.GA.ActualPairs
 public import SquaresInCircles.Eight.Owners.GA.HybridConcentration
 
 /-!

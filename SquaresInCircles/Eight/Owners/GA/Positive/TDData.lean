@@ -1,6 +1,6 @@
 module
 
-public import SquaresInCircles.Eight.Owners.GA.ActualPairs
+public import SquaresInCircles.Eight.Owners.GA.HybridConcentration
 
 /-!
 # Eight squares: original positive-TD data and exact remaining sign budgets

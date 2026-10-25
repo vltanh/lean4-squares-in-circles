@@ -2,7 +2,7 @@ module
 
 public import SquaresInCircles.Eight.Owners.GA.Positive.BT3DEnvelopeGeometry
 public import SquaresInCircles.Eight.Owners.GA.Positive.BT3LowEndpoints
-public import SquaresInCircles.Eight.Owners.GA.Two.PositiveCoefficientCalculus
+public import SquaresInCircles.Eight.Owners.GA.Two.PositiveSplit
 
 /-!
 # Eight squares: whole-interval secants for the BT3 low family

@@ -1,6 +1,6 @@
 module
 
-public import SquaresInCircles.Eight.Words.Second.Outer.Negative.TwoInverse
+public import SquaresInCircles.Eight.Words.Second.Outer.Negative.ThreeData
 
 /-!
 # Eight squares: whole-domain bounds for the physical inverse-contact derivative

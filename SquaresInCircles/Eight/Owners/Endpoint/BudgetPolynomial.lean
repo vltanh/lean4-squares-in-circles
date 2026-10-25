@@ -1,6 +1,7 @@
 module
 
 public import Mathlib.Tactic
+public import SquaresInCircles.Eight.Arithmetic.PolynomialExpressions
 
 /-!
 # Eight squares: one whole-interval polynomial for the narrow endpoint budget
@@ -17,7 +18,7 @@ entire interval.  No angle rows or sampled acceptance values occur.
 noncomputable section
 open scoped BigOperators
 namespace SquaresInCircles.Eight.EndpointBudgetPolynomial
-open Polynomial
+open Polynomial PolynomialExpressions
 
 def kbar : ℚ := 914576/1000000
 def sbar : ℚ := 415026/1000000
@@ -34,125 +35,30 @@ def shifted : ℚ[X] := certificate.comp (C center+X)
 def remainder : ℚ[X] :=
   ∑ j : Fin 10,C (shifted.coeff (j.val+3))*X^(j.val+3)
 
-/-! Exact rational coefficient lists: `r23ev l` is the polynomial with coefficient list `l`;
-sums and products of lists are computed by the kernel. -/
-private def r23ev : List ℚ → ℚ[X]
-  | [] => 0
-  | a :: l => C a + X * r23ev l
+/-! The kernel computes the integer coefficients of `shifted` (`PolyExpr`) and checks the
+coefficient facts below on them. -/
 
-private def r23add : List ℚ → List ℚ → List ℚ
-  | [], m => m
-  | a :: l, [] => a :: l
-  | a :: l, b :: m => (a+b) :: r23add l m
+/-- Unfold `shifted` into an expression. -/
+local macro "reify" : tactic => `(tactic| simp only [shifted,certificate,primary,transverse,S5,C6,
+  reify_C,reify_X,reify_one,reify_add,reify_sub,reify_mul,reify_pow,reify_comp])
 
-private def r23smul (c : ℚ) : List ℚ → List ℚ
-  | [] => []
-  | a :: l => (c*a) :: r23smul c l
+private def certOK (e : PolyExpr) : Bool :=
+  cmSeries 12 e && (coeffGt 0 (1/20000) e && (coeffAbsLt 1 (1/2000) e &&
+    quadReserveGt 10 span (1/8) e))
 
-private def r23mul : List ℚ → List ℚ → List ℚ
-  | [], _ => []
-  | a :: l, m => r23add (r23smul a m) (0 :: r23mul l m)
-
-private def r23sub (l m : List ℚ) : List ℚ := r23add l (r23smul (-1) m)
-
-private theorem r23ev_add (l m : List ℚ) : r23ev (r23add l m)=r23ev l+r23ev m := by
-  induction l generalizing m with
-  | nil => simp [r23add,r23ev]
-  | cons a l ih =>
-    cases m with
-    | nil => simp [r23add,r23ev]
-    | cons b m => simp only [r23add,r23ev,ih,map_add]; ring
-
-private theorem r23ev_smul (c : ℚ) (l : List ℚ) : r23ev (r23smul c l)=C c*r23ev l := by
-  induction l with
-  | nil => simp [r23smul,r23ev]
-  | cons a l ih => simp only [r23smul,r23ev,ih,map_mul]; ring
-
-private theorem r23ev_mul (l m : List ℚ) : r23ev (r23mul l m)=r23ev l*r23ev m := by
-  induction l with
-  | nil => simp [r23mul,r23ev]
-  | cons a l ih => simp only [r23mul,r23ev,r23ev_add,r23ev_smul,ih,map_zero]; ring
-
-private theorem r23ev_sub (l m : List ℚ) : r23ev (r23sub l m)=r23ev l-r23ev m := by
-  simp only [r23sub,r23ev_add,r23ev_smul,map_neg,map_one]; ring
-
-private theorem r23ev_single (a : ℚ) : r23ev [a]=C a := by simp [r23ev]
-
-private theorem r23_coeff (l : List ℚ) (n : ℕ) : (r23ev l).coeff n=l.getD n 0 := by
-  induction l generalizing n with
-  | nil => simp [r23ev]
-  | cons a l ih =>
-    cases n with
-    | zero => simp [r23ev]
-    | succ n => simp [r23ev,ih]
-
-private theorem r23_natDegree (l : List ℚ) (n : ℕ) (h : l.length≤n+1) :
-    (r23ev l).natDegree≤n := by
-  rw [natDegree_le_iff_coeff_eq_zero]
-  intro N hN
-  rw [r23_coeff,List.getD_eq_getElem?_getD,List.getElem?_eq_none (by omega)]
-  rfl
-
-private def r23comp : List ℚ → List ℚ → List ℚ
-  | [], _ => []
-  | a :: l, q => r23add [a] (r23mul (r23comp l q) q)
-
-private theorem r23ev_comp (l q : List ℚ) : r23ev (r23comp l q)=(r23ev l).comp (r23ev q) := by
-  induction l with
-  | nil => simp [r23comp,r23ev]
-  | cons a l ih =>
-    simp only [r23comp,r23ev_add,r23ev_mul,ih,r23ev,add_comp,mul_comp,C_comp,X_comp,mul_zero,
-      add_zero]
-    ring
-
-private def r23S5L : List ℚ := [0,1,0,-(1/6),0,1/120]
-private def r23C6L : List ℚ := [1,0,-(1/2),0,1/24,0,-(1/720)]
-private def r23primaryL : List ℚ :=
-  r23sub [3/2] (r23smul (1/2) (r23add (r23smul kbar r23S5L) (r23smul (1/2) (r23sub [1] r23C6L))))
-private def r23transverseL : List ℚ := [(3-sbar-reserve)/2,25/49]
-private def r23certL : List ℚ :=
-  r23sub (r23add (r23mul r23primaryL r23primaryL) (r23mul r23transverseL r23transverseL))
-    [9789/2500]
-
-/-- The exact coefficients of `shifted`, from degree `0` to degree `12`. -/
-private def r23Sval : List ℚ :=
-  [(2077210500683914241291060856060733642321/31863767040000000000000000000000000000000000),
-      (139823037340314387780167163837433879/295034880000000000000000000000000000000),
-      (2205441626495707709914549793579833693/8851046400000000000000000000000000000),
-      (26515140684396729980671007908961/82944000000000000000000000000000),
-      -(9482908839149717246286710837/184320000000000000000000000000),
-      -(19242951779055197993729239/576000000000000000000000000),
-      (29200689169224892408081/3456000000000000000000000),
-      (6535555128412378237/2880000000000000000000),
-      -(64580872447222469/115200000000000000000),
-      -(152183206879687/1296000000000000000),
-      (86335758097/7200000000000000),
-      (82673/28800000000),
-      (1/8294400)]
-
-private theorem r23SL_val : r23comp r23certL [center,1]=r23Sval := by decide +kernel
-
-private theorem r23S5 : S5=r23ev r23S5L := by
-  simp only [S5,r23S5L,r23ev,map_neg,map_zero,map_one]; ring
-private theorem r23C6 : C6=r23ev r23C6L := by
-  simp only [C6,r23C6L,r23ev,map_neg,map_zero,map_one]; ring
-private theorem r23transverse : transverse=r23ev r23transverseL := by
-  simp only [transverse,r23transverseL,r23ev]; ring
-
-private theorem r23S_ev : shifted=r23ev r23Sval := by
-  rw [← r23SL_val,r23ev_comp]
-  simp only [r23certL,r23primaryL,r23ev_add,r23ev_sub,r23ev_mul,r23ev_smul,r23ev_single,map_one,
-    ← r23S5,← r23C6,← r23transverse]
-  simp only [shifted,certificate,primary,r23ev,map_one,mul_one,mul_zero,add_zero]
-  congr 1
-  ring
+private theorem cert : ∃ e : PolyExpr, shifted=e.poly ∧ certOK e=true := by
+  refine ⟨_,by reify; rfl,?_⟩
+  decide +kernel
 
 theorem expansion_identity :
     shifted=C (shifted.coeff 0)+C (shifted.coeff 1)*X+
       C (shifted.coeff 2)*X^2+remainder := by
+  obtain ⟨e,he,h⟩ := cert
+  simp only [certOK,Bool.and_eq_true] at h
   have hdeg : shifted.natDegree<13 := by
-    rw [r23S_ev]
-    exact Nat.lt_succ_of_le (r23_natDegree _ 12 (by rfl))
+    rw [he]
+    have := natDegree_of_check h.1
+    omega
   conv_lhs => rw [as_sum_range_C_mul_X_pow' shifted hdeg]
   rw [show (13:ℕ)=3+10 from rfl,Finset.sum_range_add,remainder,
     Fin.sum_univ_eq_sum_range (fun j => C (shifted.coeff (j+3))*X^(j+3)) 10]
@@ -163,9 +69,10 @@ theorem coefficient_reserves :
       |shifted.coeff 1|<1/2000 ∧
       (1/8 : ℚ)<shifted.coeff 2-
         ∑ j : Fin 10,|shifted.coeff (j.val+3)| *span^(j.val+1) := by
-  rw [r23S_ev]
-  simp only [r23_coeff]
-  decide +kernel
+  obtain ⟨e,he,h⟩ := cert
+  simp only [certOK,Bool.and_eq_true] at h
+  rw [he]
+  exact ⟨coeff_gt_of_check h.2.1,coeff_abs_of_check h.2.2.1,quadReserve_of_check h.2.2.2⟩
 
 /-- The tail estimate is a coefficient norm for one continuous interval.
 Its sign-independent remainder is charged only against the quadratic. -/

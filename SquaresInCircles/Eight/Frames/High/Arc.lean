@@ -158,7 +158,8 @@ theorem signed_label_bounds (i : Bool) {b : ℝ} (hb : b∈Icc b2 c0) :
 
 theorem minus_label_le (i : Bool) {b : ℝ} (hb : b∈Icc b2 c0) : -H b≤ sign i*H b := by
   have hp : 0≤H b := by linarith [(H_bounds hb).1,H2_bounds.1]
-  cases i <;> norm_num [sign] <;> linarith
+  cases i <;> norm_num [sign]
+  linarith
 
 theorem state_high_chart (s : FramePair.State) (hs : s.branch=.high) :
     s.a=A s.b ∧ s.b∈Icc b2 c0 := by

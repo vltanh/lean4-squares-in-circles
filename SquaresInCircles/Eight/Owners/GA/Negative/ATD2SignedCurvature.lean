@@ -1,7 +1,7 @@
 module
 
 public import Mathlib.Algebra.Order.Star.Real
-public import SquaresInCircles.Eight.Owners.GA.Radicals
+public import SquaresInCircles.Eight.Owners.GA.ChargedPairs
 public import SquaresInCircles.Eight.Frames.Ordinary.CurvatureBounds
 
 /-!

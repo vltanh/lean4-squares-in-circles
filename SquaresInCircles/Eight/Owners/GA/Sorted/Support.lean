@@ -1,6 +1,6 @@
 module
 
-public import SquaresInCircles.Eight.Owners.GA.Radicals
+public import SquaresInCircles.Eight.Owners.GA.ChargedPairs
 
 /-!
 # Eight squares: the sorted-circle support of the high-GA stress

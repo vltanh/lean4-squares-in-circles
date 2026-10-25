@@ -1,8 +1,7 @@
 module
 
-public import SquaresInCircles.Eight.Words.Second.Outer.LabelCalculus
-public import SquaresInCircles.Eight.Words.Second.Outer.Negative.TwoTargetContact
-public import SquaresInCircles.Eight.Words.Second.Outer.ReferenceTrig
+public import SquaresInCircles.Eight.Words.Second.Outer.PointProducts
+public import SquaresInCircles.Eight.Words.Second.Outer.Negative.ThreeData
 
 /-!
 # Eight squares: exact endpoint references for the original circle contact

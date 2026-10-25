@@ -1,6 +1,6 @@
 module
 
-public import SquaresInCircles.Eight.Words.QuarterDoubleExclusion
+public import SquaresInCircles.Eight.Words.FirstNegativeOutsideEntry
 public import SquaresInCircles.Eight.Words.Second.WordExclusion
 public import SquaresInCircles.Eight.Words.Short.WordExclusion
 

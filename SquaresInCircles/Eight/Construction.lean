@@ -1,6 +1,5 @@
 module
 
-public import SquaresInCircles.Eight.Equality.Circle
 public import SquaresInCircles.Eight.Equality.Equivalence
 
 /-!

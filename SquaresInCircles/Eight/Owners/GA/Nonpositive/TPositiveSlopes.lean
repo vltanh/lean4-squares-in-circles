@@ -1,8 +1,8 @@
 module
 
-public import SquaresInCircles.Eight.Owners.GA.Negative.ATD2PositiveSlopes
+public import SquaresInCircles.Eight.Owners.GA.Negative.DETD2LowPositiveCoefficients
 public import SquaresInCircles.Eight.Owners.GA.Nonpositive.TPairedBounds
-public import SquaresInCircles.Eight.Owners.GA.Two.PositiveCoefficientCalculus
+public import SquaresInCircles.Eight.Owners.GA.Two.PositiveSplit
 
 /-!
 # Eight squares: the positive derivative at the short paired-T endpoint

@@ -3,7 +3,7 @@ module
 public import Mathlib.Algebra.Order.Star.Real
 public import SquaresInCircles.Eight.Arithmetic.CorePairGeometry
 public import SquaresInCircles.Eight.Arithmetic.Taylor
-public import SquaresInCircles.Eight.Boundary.Candidate.GeometricCoreQuarter
+public import SquaresInCircles.Eight.Boundary.Candidate.Geometry
 
 /-!
 # Eight squares: the exact endpoint bound for every core angle

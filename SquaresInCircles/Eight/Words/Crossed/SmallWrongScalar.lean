@@ -1,7 +1,7 @@
 module
 
 public import Mathlib.Algebra.Order.Star.Real
-public import SquaresInCircles.Eight.Owners.Small.WrongScalar
+public import SquaresInCircles.Eight.Owners.Small.WrongZeroEndpoint
 
 /-!
 # Eight squares: the small wrong-sign cap
@@ -243,7 +243,8 @@ theorem demandD_pos {q P Y Θ h : ℝ} (S : CapData q P Y)
   have hterm : ((1-v)/w)*Real.sin h≤
       ((1-v)*(819/1000-v)/((39/50)*w0))*Real.cos h := by
     have hm := mul_le_mul hratio hslope htr.2.2.1 (div_nonneg hz0 hw00.le)
-    convert hm using 1 <;> ring
+    convert hm using 1
+    ring
   have hinside : Real.cos h+((1-v)/w)*Real.sin h≤b*Real.cos h := by dsimp [b]; linarith
   have ha0 : 0≤a := by dsimp [a,v]; linarith [hv.1]
   have hinside0 : 0≤Real.cos h+((1-v)/w)*Real.sin h :=

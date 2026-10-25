@@ -89,7 +89,7 @@ theorem A_antitone : AntitoneOn A (Icc 0 c0) := by
   · exact fun b hb => A_hasDerivAt (Ioo_subset_Icc_self hb)
   · exact fun b hb => Ad_nonpos (Ioo_subset_Icc_self hb)
 
-@[simp] theorem A_zero : A 0=a0 := by simp [A,a0]; congr 1 <;> norm_num
+@[simp] theorem A_zero : A 0=a0 := by simp [A,a0]; congr 1; norm_num
 
 @[simp] theorem A_c0 : A c0=c0 := by
   have hc := c0_circle

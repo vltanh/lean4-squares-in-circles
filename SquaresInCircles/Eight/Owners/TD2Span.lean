@@ -2,7 +2,7 @@ module
 
 public import SquaresInCircles.Eight.Words.Aligned.NegativeOutsideEntry
 public import SquaresInCircles.Eight.Owners.Endpoint.ECharge
-public import SquaresInCircles.Eight.Owners.Negative.TDSpanCharge
+public import SquaresInCircles.Eight.Owners.Negative.CoreEReduction
 public import SquaresInCircles.Eight.Owners.Positive.TDSpanScalars
 
 /-!

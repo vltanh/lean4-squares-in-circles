@@ -1,6 +1,7 @@
 module
 
 public import Mathlib.Tactic
+public import SquaresInCircles.Eight.Arithmetic.PolynomialExpressions
 public import SquaresInCircles.Eight.Owners.PowerTailBounds
 
 /-!
@@ -19,7 +20,7 @@ noncomputable section
 open Set
 open scoped BigOperators
 namespace SquaresInCircles.Eight.AlignedGAEndpointPolynomial
-open Polynomial PowerTailBounds
+open Polynomial PowerTailBounds PolynomialExpressions
 
 def aP : ℚ[X] := C (24/41)+C (3/5)*X+C (1/10)*X^2+C (1/5)*X^3
 def betaP : ℚ[X] := 1+C (33/100)*X-C (27/200)*X^2+C (9/25)*X^3
@@ -50,166 +51,31 @@ def L : ℚ[X] := ∑j : Fin 22,C (P.coeff (j.val+1))*X^j.val
 def negativeTailNorm (p : ℚ[X]) (start count : ℕ) (r : ℚ) : ℚ :=
   ∑j : Fin count,max 0 (-(p.coeff (j.val+start)))*r^(j.val+start-3)
 
-/-! Exact rational coefficient lists: `r23ev l` is the polynomial with coefficient list `l`;
-sums and products of lists are computed by the kernel. -/
-private def r23ev : List ℚ → ℚ[X]
-  | [] => 0
-  | a :: l => C a + X * r23ev l
+/-! The kernel computes the integer coefficients of `P` (`PolyExpr`) and checks the coefficient
+facts below on them. -/
 
-private def r23add : List ℚ → List ℚ → List ℚ
-  | [], m => m
-  | a :: l, [] => a :: l
-  | a :: l, b :: m => (a+b) :: r23add l m
+/-- Unfold `P` into an expression. -/
+local macro "reify" : tactic => `(tactic| simp only [P,constantNumerator,cosineNumerator,
+  denominator,aP,betaP,deltaP,epsilonP,massAP,massBP,massDP,massHP,massEP,cosineLower,
+  reify_C,reify_X,reify_one,reify_add,reify_sub,reify_mul,reify_pow])
 
-private def r23smul (c : ℚ) : List ℚ → List ℚ
-  | [] => []
-  | a :: l => (c*a) :: r23smul c l
+/-- The negative tail of `L` against the budget: `L` has the coefficients of `P` shifted by one. -/
+private def tailOK (e : PolyExpr) : Bool :=
+  decide (tailSumZ (fun x => max 0 (-x)) 14 9 5 (11/50:ℚ).num.natAbs (11/50:ℚ).den e.z.l*
+      (1/40000-(2163/1000000)*(11/50)^3:ℚ).den<
+    (1/40000-(2163/1000000)*(11/50)^3:ℚ).num*((e.z.s*(11/50:ℚ).den^(14-1+5) : ℕ) : ℤ))
 
-private def r23mul : List ℚ → List ℚ → List ℚ
-  | [], _ => []
-  | a :: l, m => r23add (r23smul a m) (0 :: r23mul l m)
+private def certOK (e : PolyExpr) : Bool :=
+  coeffZero 0 e && (cmSeries 22 e && (coeffGt 1 (5947/100000000) e &&
+    (coeffGt 2 (-(10203/10000000)) e && (coeffGt 3 (5211/1000000) e &&
+    (coeffGt 4 (-(2193/500000)) e && (coeffGe 5 0 e && (coeffGe 6 0 e &&
+    (coeffGt 7 (-(2163/1000000)) e && (coeffGe 8 0 e && tailOK e)))))))))
 
-private def r23sub (l m : List ℚ) : List ℚ := r23add l (r23smul (-1) m)
+private theorem cert : ∃ e : PolyExpr, P=e.poly ∧ certOK e=true := by
+  refine ⟨_,by reify; rfl,?_⟩
+  decide +kernel
 
-private theorem r23ev_add (l m : List ℚ) : r23ev (r23add l m)=r23ev l+r23ev m := by
-  induction l generalizing m with
-  | nil => simp [r23add,r23ev]
-  | cons a l ih =>
-    cases m with
-    | nil => simp [r23add,r23ev]
-    | cons b m => simp only [r23add,r23ev,ih,map_add]; ring
-
-private theorem r23ev_smul (c : ℚ) (l : List ℚ) : r23ev (r23smul c l)=C c*r23ev l := by
-  induction l with
-  | nil => simp [r23smul,r23ev]
-  | cons a l ih => simp only [r23smul,r23ev,ih,map_mul]; ring
-
-private theorem r23ev_mul (l m : List ℚ) : r23ev (r23mul l m)=r23ev l*r23ev m := by
-  induction l with
-  | nil => simp [r23mul,r23ev]
-  | cons a l ih => simp only [r23mul,r23ev,r23ev_add,r23ev_smul,ih,map_zero]; ring
-
-private theorem r23ev_sub (l m : List ℚ) : r23ev (r23sub l m)=r23ev l-r23ev m := by
-  simp only [r23sub,r23ev_add,r23ev_smul,map_neg,map_one]; ring
-
-private theorem r23ev_single (a : ℚ) : r23ev [a]=C a := by simp [r23ev]
-
-private theorem r23ev_X : r23ev [0,1]=X := by simp [r23ev]
-
-private theorem r23_coeff (l : List ℚ) (n : ℕ) : (r23ev l).coeff n=l.getD n 0 := by
-  induction l generalizing n with
-  | nil => simp [r23ev]
-  | cons a l ih =>
-    cases n with
-    | zero => simp [r23ev]
-    | succ n => simp [r23ev,ih]
-
-private theorem r23_natDegree (l : List ℚ) (n : ℕ) (h : l.length≤n+1) :
-    (r23ev l).natDegree≤n := by
-  rw [natDegree_le_iff_coeff_eq_zero]
-  intro N hN
-  rw [r23_coeff,List.getD_eq_getElem?_getD,List.getElem?_eq_none (by omega)]
-  rfl
-
-private def r23aL : List ℚ := [24/41,3/5,1/10,1/5]
-private def r23betaL : List ℚ := [1,33/100,-(27/200),9/25]
-private def r23deltaL : List ℚ := [36/31,-(49/100),-(1/20),9/100]
-private def r23epsL : List ℚ := [36/31,-(159/200),83/200,-(87/400)]
-private def r23mAL : List ℚ := [12/41,19/250,41/1000]
-private def r23mBL : List ℚ := [12/41,1/50,-(67/500),19/500]
-private def r23mDL : List ℚ := [12/31,-(1/25),-(7/1000),41/500]
-private def r23mHL : List ℚ := [12/31,-(19/125),101/1000,-(53/1000)]
-private def r23mEL : List ℚ := [0,38/125,-(47/250),11/100,-(11/250)]
-private def r23cosLL : List ℚ := [1,0,-(1/2),0,-(13/100)]
-
-private def r23denL : List ℚ :=
-  r23smul 4 (r23mul (r23mul (r23mul (r23mul r23mAL r23mBL) r23mDL) r23mHL) r23mEL)
-
-/-- The coefficient list of `P`, built from the coefficient lists of its factors. -/
-private def r23PL : List ℚ :=
-  r23add
-    (r23sub (r23sub (r23sub (r23sub (r23sub
-      (r23mul r23denL
-        (r23sub (r23add (r23add (r23add (r23add (r23add [3] (r23smul 2 r23aL))
-          (r23smul 2 r23betaL)) (r23smul 2 r23deltaL)) r23epsL) (r23mul r23epsL [0,1]))
-          (r23smul (9789/2500)
-            (r23add (r23add (r23add (r23add r23mAL r23mBL) r23mDL) r23mHL) r23mEL))))
-      (r23mul (r23mul (r23mul (r23mul r23mBL r23mDL) r23mHL) r23mEL)
-        (r23add [1] (r23mul r23aL r23aL))))
-      (r23mul (r23mul (r23mul (r23mul r23mAL r23mDL) r23mHL) r23mEL)
-        (r23sub (r23add (r23mul r23betaL r23betaL) (r23mul r23aL r23aL))
-          (r23mul (r23mul (r23smul 2 r23aL) r23betaL) [0,1]))))
-      (r23mul (r23mul (r23mul (r23mul r23mAL r23mBL) r23mHL) r23mEL)
-        (r23add (r23mul r23deltaL r23deltaL) (r23mul r23betaL r23betaL))))
-      (r23mul (r23mul (r23mul (r23mul r23mAL r23mBL) r23mDL) r23mEL)
-        (r23add (r23mul r23epsL r23epsL) [1])))
-      (r23mul (r23mul (r23mul (r23mul r23mAL r23mBL) r23mDL) r23mHL)
-        (r23add (r23mul r23deltaL r23deltaL) (r23mul r23epsL r23epsL))))
-    (r23mul
-      (r23add (r23mul r23denL r23betaL)
-        (r23mul (r23mul (r23mul (r23mul (r23mul (r23smul 2 r23deltaL) r23epsL) r23mAL)
-          r23mBL) r23mDL) r23mHL))
-      r23cosLL)
-
-/-- The exact coefficients of `P`, from degree `0` to degree `22`. -/
-private def r23Pval : List ℚ :=
-  [0,
-    (9540716544/160408243046875),
-    -(634136910024996/621581941806640625),
-    (404890745041756854/77697742725830078125),
-    -(681559526107238333121/155395485451660156250000),
-    (57787135570716920459771/15539548545166015625000000),
-    (2053387667144162876703857/1553954854516601562500000000),
-    -(67219609180953900335828631/31079097090332031250000000000),
-    (9947098672517793825760090283/2486327767226562500000000000000),
-    -(24235702328351608358798480487/9945311068906250000000000000000),
-    (26218056087615356689275839/15649584687500000000000000000),
-    -(2512558152083908969682339/3912396171875000000000000000),
-    (613754001009047374459979/15649584687500000000000000000),
-    (27217136776673006251589/201930125000000000000000000),
-    -(386783771623942816459439/2019301250000000000000000000),
-    (24641958841780056090521/201930125000000000000000000),
-    -(160453607752165575971777/2019301250000000000000000000),
-    (3653958631474495541/99296875000000000000000),
-    -(2923688617249312569/198593750000000000000000),
-    (4557954318519557087/794375000000000000000000),
-    -(6614981565063/5000000000000000000),
-    (825534164871/2500000000000000000),
-    -(2178591129/39062500000000000)]
-
-private theorem r23PL_val : r23PL=r23Pval := by decide +kernel
-
-private theorem r23aP : aP=r23ev r23aL := by
-  simp only [aP,r23aL,r23ev]; ring
-private theorem r23betaP : betaP=r23ev r23betaL := by
-  simp only [betaP,r23betaL,r23ev,map_neg,map_one]; ring
-private theorem r23deltaP : deltaP=r23ev r23deltaL := by
-  simp only [deltaP,r23deltaL,r23ev,map_neg]; ring
-private theorem r23epsP : epsilonP=r23ev r23epsL := by
-  simp only [epsilonP,r23epsL,r23ev,map_neg]; ring
-private theorem r23mAP : massAP=r23ev r23mAL := by
-  simp only [massAP,r23mAL,r23ev]; ring
-private theorem r23mBP : massBP=r23ev r23mBL := by
-  simp only [massBP,r23mBL,r23ev,map_neg]; ring
-private theorem r23mDP : massDP=r23ev r23mDL := by
-  simp only [massDP,r23mDL,r23ev,map_neg]; ring
-private theorem r23mHP : massHP=r23ev r23mHL := by
-  simp only [massHP,r23mHL,r23ev,map_neg]; ring
-private theorem r23mEP : massEP=r23ev r23mEL := by
-  simp only [massEP,r23mEL,r23ev,map_neg,map_zero]; ring
-private theorem r23cosL : cosineLower=r23ev r23cosLL := by
-  simp only [cosineLower,r23cosLL,r23ev,map_neg,map_one,map_zero]; ring
-
-private theorem r23P_ev : P=r23ev r23Pval := by
-  rw [← r23PL_val]
-  simp only [r23PL,r23denL,r23ev_add,r23ev_sub,r23ev_mul,r23ev_smul,r23ev_single,r23ev_X,
-    map_one,← r23aP,← r23betaP,← r23deltaP,← r23epsP,← r23mAP,← r23mBP,← r23mDP,← r23mHP,
-    ← r23mEP,← r23cosL]
-  simp only [P,constantNumerator,cosineNumerator,denominator]
-  ring
-
-private theorem r23L_coeff (k : ℕ) (hk : k<22) : L.coeff k=r23Pval.getD (k+1) 0 := by
-  rw [← r23_coeff,← r23P_ev]
+private theorem L_coeff (k : ℕ) (hk : k<22) : L.coeff k=P.coeff (k+1) := by
   simp only [L,finsetSum_coeff,coeff_C_mul_X_pow]
   rw [Finset.sum_eq_single ⟨k,hk⟩]
   · simp
@@ -250,12 +116,13 @@ theorem negative_tail_cubic {p : ℚ[X]} {start count : ℕ} {r : ℚ} {s : ℝ}
   simpa only [neg_mul,Finset.sum_neg_distrib,Finset.sum_mul] using hsum
 
 theorem P_factor : P=X*L := by
+  obtain ⟨e,he,h⟩ := cert
+  simp only [certOK,Bool.and_eq_true] at h
   have hdeg : P.natDegree<23 := by
-    rw [r23P_ev]
-    exact Nat.lt_succ_of_le (r23_natDegree _ 22 (by rfl))
-  have h0 : P.coeff 0=0 := by
-    rw [r23P_ev,r23_coeff]
-    rfl
+    rw [he]
+    have := natDegree_of_check h.2.1
+    omega
+  have h0 : P.coeff 0=0 := by rw [he]; exact coeff_zero_of_check h.1
   conv_lhs => rw [as_sum_range_C_mul_X_pow' P hdeg]
   rw [Finset.sum_range_succ',h0,map_zero,zero_mul,add_zero,← Fin.sum_univ_eq_sum_range,L,
     Finset.mul_sum]
@@ -289,20 +156,30 @@ theorem leading_reserves :
       -(2193/500000 : ℚ)<L.coeff 3 ∧
       0≤L.coeff 4 ∧ 0≤L.coeff 5 ∧
       -(2163/1000000 : ℚ)<L.coeff 6 ∧ 0≤L.coeff 7 := by
-  rw [r23L_coeff 0 (by norm_num),r23L_coeff 1 (by norm_num),r23L_coeff 2 (by norm_num),
-    r23L_coeff 3 (by norm_num),r23L_coeff 4 (by norm_num),r23L_coeff 5 (by norm_num),
-    r23L_coeff 6 (by norm_num),r23L_coeff 7 (by norm_num)]
-  decide +kernel
+  obtain ⟨e,he,h⟩ := cert
+  simp only [certOK,Bool.and_eq_true] at h
+  rw [L_coeff 0 (by norm_num),L_coeff 1 (by norm_num),L_coeff 2 (by norm_num),
+    L_coeff 3 (by norm_num),L_coeff 4 (by norm_num),L_coeff 5 (by norm_num),
+    L_coeff 6 (by norm_num),L_coeff 7 (by norm_num),he]
+  exact ⟨coeff_gt_of_check h.2.2.1,coeff_gt_of_check h.2.2.2.1,coeff_gt_of_check h.2.2.2.2.1,
+    coeff_gt_of_check h.2.2.2.2.2.1,coeff_ge_of_check h.2.2.2.2.2.2.1,
+    coeff_ge_of_check h.2.2.2.2.2.2.2.1,coeff_gt_of_check h.2.2.2.2.2.2.2.2.1,
+    coeff_ge_of_check h.2.2.2.2.2.2.2.2.2.1⟩
 
 theorem tail_reserve :
     (2163/1000000 : ℚ)*(11/50)^3+negativeTailNorm L 8 14 (11/50)<1/40000 := by
-  have h : negativeTailNorm L 8 14 (11/50)=
-      ∑j : Fin 14,max 0 (-(r23Pval.getD (j.val+8+1) 0))*(11/50)^(j.val+8-3) := by
+  obtain ⟨e,he,h⟩ := cert
+  simp only [certOK,Bool.and_eq_true] at h
+  have hn : negativeTailNorm L 8 14 (11/50)=
+      ∑ j : Fin 14,max 0 (-(e.poly.coeff (j.val+9)))*(11/50:ℚ)^(j.val+5) := by
     unfold negativeTailNorm
     refine Finset.sum_congr rfl (fun j _ => ?_)
-    rw [r23L_coeff _ (by omega)]
-  rw [h]
-  decide +kernel
+    rw [L_coeff _ (by omega),he,show j.val+8+1=j.val+9 by omega,show j.val+8-3=j.val+5 by omega]
+  rw [hn,tailSum_eq (fun y => max 0 (-y)) (fun x => max 0 (-x)) negPart_div_pos e.rep
+    e.scale_ne_zero 14 9 5 (by norm_num)]
+  have ht := div_lt_of_int (Nat.mul_ne_zero e.scale_ne_zero (pow_ne_zero _ (11/50:ℚ).den_nz))
+    (of_decide_eq_true h.2.2.2.2.2.2.2.2.2.2)
+  linarith
 
 def cubic (s : ℝ) : ℝ :=
   5947/100000000-(10203/10000000)*s+(5211/1000000)*s^2-(4411/1000000)*s^3

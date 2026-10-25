@@ -1,7 +1,7 @@
 module
 
 public import SquaresInCircles.Eight.Arithmetic.CorePairGeometry
-public import SquaresInCircles.Eight.Boundary.Geometry
+public import SquaresInCircles.Eight.Boundary.Realization
 
 /-!
 # Eight squares: the four types and the states of the frame pairs
@@ -323,7 +323,8 @@ theorem pairAngle_charge (C : BoundaryCycle Q0) (i : Vertex) :
     convert hh using 1
     congr 1
     simp only [pairAngle,hi,ite_true]
-    norm_num <;> ring
+    norm_num
+    ring
   · simp [pairAngle,hi]
 
 theorem stateOf_gap (C : BoundaryCycle Q0) (i : Vertex) :

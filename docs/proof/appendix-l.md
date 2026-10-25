@@ -81,7 +81,7 @@ coefficients.
 [`Eight.ChebyshevLeadingBounds.quadratic_lower`](../../SquaresInCircles/Eight/Owners/ChebyshevLeadingBounds.lean#L52),
 [`Eight.ChebyshevLeadingBounds.cubic_lower`](../../SquaresInCircles/Eight/Owners/ChebyshevLeadingBounds.lean#L67),
 [`Eight.PowerTailBounds.quadratic_lower`](../../SquaresInCircles/Eight/Owners/PowerTailBounds.lean#L86),
-[`Eight.WholeIntervalBernstein.lower_on_interval`](../../SquaresInCircles/Eight/Owners/WholeIntervalBernstein.lean#L38).*
+[`Eight.WholeIntervalBernstein.lower_on_interval`](../../SquaresInCircles/Eight/Owners/WholeIntervalBernstein.lean#L524).*
 
 ## L.2 What the kernel computes
 
@@ -248,12 +248,12 @@ removes a vanishing side or the two ends of a chord, is verified by multiplying
 back.
 
 *Lean:
-[`Eight.CertificateRestrictions.yZero`](../../SquaresInCircles/Eight/Arithmetic/CertificateRestrictions.lean#L65),
-[`Eight.CertificateRestrictions.onLine`](../../SquaresInCircles/Eight/Arithmetic/CertificateRestrictions.lean#L705),
-[`Eight.CertificateRestrictions.RepOn`](../../SquaresInCircles/Eight/Arithmetic/CertificateRestrictions.lean#L327),
-[`Eight.CertificateRestrictions.lower_cert`](../../SquaresInCircles/Eight/Arithmetic/CertificateRestrictions.lean#L475),
-[`Eight.CertificateRestrictions.edge_div`](../../SquaresInCircles/Eight/Arithmetic/CertificateRestrictions.lean#L626),
-[`Eight.CertificateRestrictions.chord_cert`](../../SquaresInCircles/Eight/Arithmetic/CertificateRestrictions.lean#L661).*
+[`Eight.CertificateRestrictions.yZero`](../../SquaresInCircles/Eight/Arithmetic/CertificateRestrictions.lean#L67),
+[`Eight.CertificateRestrictions.onLine`](../../SquaresInCircles/Eight/Arithmetic/CertificateRestrictions.lean#L707),
+[`Eight.CertificateRestrictions.RepOn`](../../SquaresInCircles/Eight/Arithmetic/CertificateRestrictions.lean#L329),
+[`Eight.CertificateRestrictions.lower_cert`](../../SquaresInCircles/Eight/Arithmetic/CertificateRestrictions.lean#L477),
+[`Eight.CertificateRestrictions.edge_div`](../../SquaresInCircles/Eight/Arithmetic/CertificateRestrictions.lean#L628),
+[`Eight.CertificateRestrictions.chord_cert`](../../SquaresInCircles/Eight/Arithmetic/CertificateRestrictions.lean#L663).*
 
 ## L.4 Trigonometric terms and radicals
 
@@ -428,17 +428,17 @@ g' \ge X_\ell A_\ell\left(\frac{L_\ell}{R_h} + \frac{Y_\ell A_\ell}{X_h}\right) 
 So the reference gap increases on $[\frac{11}{50}, \frac7{10}]$.
 
 *Lean:
-[`Eight.OutsideDE2Polynomial.certificate`](../../SquaresInCircles/Eight/Words/Outside/DE2Polynomial.lean#L36),
-[`Eight.OutsideDE2Polynomial.expansion_identity`](../../SquaresInCircles/Eight/Words/Outside/DE2Polynomial.lean#L66),
-[`Eight.OutsideDE2Polynomial.coefficient_reserve`](../../SquaresInCircles/Eight/Words/Outside/DE2Polynomial.lean#L73),
-[`Eight.OutsideDE2Polynomial.certificate_positive`](../../SquaresInCircles/Eight/Words/Outside/DE2Polynomial.lean#L90),
-[`Eight.OutsideDE2Polynomial.factor_positive`](../../SquaresInCircles/Eight/Words/Outside/DE2Polynomial.lean#L157),
-[`Eight.OutsideDE2Polynomial.derivative_lower_positive`](../../SquaresInCircles/Eight/Words/Outside/DE2Polynomial.lean#L183),
-[`Eight.OutsideDE2Polynomial.derivative_positive`](../../SquaresInCircles/Eight/Words/Outside/DE2Polynomial.lean#L206),
-[`Eight.OutsideDE2Reference.Bounds`](../../SquaresInCircles/Eight/Words/Outside/DE2Reference.lean#L96),
-[`Eight.OutsideDE2Reference.derivative_pos`](../../SquaresInCircles/Eight/Words/Outside/DE2Reference.lean#L200),
-[`Eight.OutsideDE2Reference.gap_deriv`](../../SquaresInCircles/Eight/Words/Outside/DE2ReferenceGap.lean#L56),
-[`Eight.OutsideDE2Reference.gap_strictMono`](../../SquaresInCircles/Eight/Words/Outside/DE2ReferenceGap.lean#L156).*
+[`Eight.OutsideDE2Polynomial.certificate`](../../SquaresInCircles/Eight/Words/Outside/EEndpoint.lean#L50),
+[`Eight.OutsideDE2Polynomial.expansion_identity`](../../SquaresInCircles/Eight/Words/Outside/EEndpoint.lean#L80),
+[`Eight.OutsideDE2Polynomial.coefficient_reserve`](../../SquaresInCircles/Eight/Words/Outside/EEndpoint.lean#L87),
+[`Eight.OutsideDE2Polynomial.certificate_positive`](../../SquaresInCircles/Eight/Words/Outside/EEndpoint.lean#L104),
+[`Eight.OutsideDE2Polynomial.factor_positive`](../../SquaresInCircles/Eight/Words/Outside/EEndpoint.lean#L171),
+[`Eight.OutsideDE2Polynomial.derivative_lower_positive`](../../SquaresInCircles/Eight/Words/Outside/EEndpoint.lean#L197),
+[`Eight.OutsideDE2Polynomial.derivative_positive`](../../SquaresInCircles/Eight/Words/Outside/EEndpoint.lean#L220),
+[`Eight.OutsideDE2Reference.Bounds`](../../SquaresInCircles/Eight/Words/Outside/EEndpoint.lean#L349),
+[`Eight.OutsideDE2Reference.derivative_pos`](../../SquaresInCircles/Eight/Words/Outside/EEndpoint.lean#L453),
+[`Eight.OutsideDE2Reference.gap_deriv`](../../SquaresInCircles/Eight/Words/Outside/ECycle.lean#L235),
+[`Eight.OutsideDE2Reference.gap_strictMono`](../../SquaresInCircles/Eight/Words/Outside/ECycle.lean#L335).*
 
 ![Two panels. Left: the polynomial N of degree 27 against p from 11/50 to 7/10, decreasing from about 3.65 to its least value, about 1.21, at 7/10, and the dashed horizontal line of the Chebyshev bound c0 - sum |cj|, about 0.818, below the whole curve. Right: the absolute values of the 28 Chebyshev coefficients c0 to c27 on a logarithmic scale, from about 2.2 and 1.2 down to about 10^-34, falling roughly geometrically](figures/appendix-l/example.svg)
 
@@ -479,10 +479,10 @@ of the endpoints; outward rounding only enlarges an interval. Induction on the
 expression. $\square$
 
 *Lean:
-[`Eight.Stationary.FixedEval.DI`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L68),
-[`Eight.Stationary.FixedEval.eval_sound`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L291),
-[`Eight.Stationary.FixedEval.bounded_sound`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L381),
-[`Eight.Stationary.FixedEval.regular_sound`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L400),
+[`Eight.Stationary.FixedEval.DI`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L1199),
+[`Eight.Stationary.FixedEval.eval_sound`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L1422),
+[`Eight.Stationary.FixedEval.bounded_sound`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L1512),
+[`Eight.Stationary.FixedEval.regular_sound`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L1531),
 [`Eight.Arithmetic.QInterval`](../../SquaresInCircles/Eight/Arithmetic/Interval.lean#L27),
 [`Eight.Arithmetic.QInterval.product_between_corners`](../../SquaresInCircles/Eight/Arithmetic/Interval.lean#L69),
 [`Eight.Arithmetic.QInterval.mem_sqrt`](../../SquaresInCircles/Eight/Arithmetic/Interval.lean#L144),

@@ -247,7 +247,8 @@ theorem J_concave : ConcaveOn ℝ (Icc 0 frameCap) J := by
   · intro e _; exact J_hasDerivAt e
   · intro e _
     convert ((Real.hasDerivAt_cos e).neg.div_const 12).sub
-      ((Real.hasDerivAt_sin e).const_mul (13/12 : ℝ)) using 1 <;> ring
+      ((Real.hasDerivAt_sin e).const_mul (13/12 : ℝ)) using 1
+    ring
   · intro e he
     obtain ⟨hc,hcu,hs0,hs,hsc⟩ := transport_trig he
     linarith

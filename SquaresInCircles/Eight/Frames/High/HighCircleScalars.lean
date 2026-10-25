@@ -158,7 +158,7 @@ theorem curvature_negative {l x : ℝ} (hl : Allowed l) (hx : x∈Icc (6/5:ℝ) 
 theorem concave (i cut : Bool) {l : ℝ} (hl : Allowed l) :
     ConcaveOn ℝ (Icc (6/5:ℝ) (Real.pi/2)) (F i cut l) :=
   concave_of_deriv2 (fun x _ => F_deriv i cut hl x) (fun x _ => Fd_deriv hl x)
-    (fun x hx => (curvature_negative hl hx).le)
+    (fun _ hx => (curvature_negative hl hx).le)
 
 open FrameHighHighFixedReferences (a0Box endpointABox endpointBBox)
 open FrameMidHighVaryingReferences (rBox piBox sinBox cosBox)

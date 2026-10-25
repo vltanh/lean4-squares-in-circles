@@ -92,20 +92,22 @@ def diagonalBox (x : ℝ) (hx : 0≤x) : Interval (diagonal x) := by
     (Interval.point constant)).sub ((Interval.point target).mul dBox)).add
       (Interval.point (weight/2))).add
         (((Interval.point weight).mul ((Interval.point (1/2)).sub dBox)).mul (cosBox x hx))).add
-          (((Interval.point weight).mul ((Interval.point (1/2)).add dBox)).mul (sinBox x hx)) using 1 <;>
-    dsimp [diagonal] <;> ring
+          (((Interval.point weight).mul ((Interval.point (1/2)).add dBox)).mul (sinBox x hx)) using 1
+  dsimp [diagonal]
+  ring
 def diagonalDBox (x : ℝ) (hx : 0≤x) : Interval (diagonalD x) := by
   convert ((Interval.point (-1)).add
     (((Interval.point weight).mul (dBox.sub (Interval.point (1/2)))).mul (sinBox x hx))).add
-      (((Interval.point weight).mul (dBox.add (Interval.point (1/2)))).mul (cosBox x hx)) using 1 <;>
-    dsimp [diagonalD]
+      (((Interval.point weight).mul (dBox.add (Interval.point (1/2)))).mul (cosBox x hx)) using 1
+  dsimp [diagonalD]
 def secondaryLowBox (x : ℝ) (hx : 0≤x) : Interval (secondaryLow x) := by
   convert ((((((piBox.mul (Interval.point (1/2))).sub (Interval.point x)).add
     (Interval.point constant)).sub ((Interval.point (weight+target)).mul dBox)).add
       (Interval.point (weight/2))).add
         ((Interval.point (weight/2)).mul (cosBox x hx))).add
-          (((Interval.point weight).mul ((Interval.point (1/2)).add aBox)).mul (sinBox x hx)) using 1 <;>
-    dsimp [secondaryLow] <;> ring
+          (((Interval.point weight).mul ((Interval.point (1/2)).add aBox)).mul (sinBox x hx)) using 1
+  dsimp [secondaryLow]
+  ring
 
 private lemma r87_mpr_lo {x y : ℝ} (e : x=y) (h : Interval x=Interval y) (S : Interval y) :
     (Eq.mpr h S).lo=S.lo := by subst e; rfl

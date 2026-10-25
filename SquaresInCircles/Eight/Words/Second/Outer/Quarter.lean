@@ -1,10 +1,8 @@
 module
 
-public import SquaresInCircles.Eight.Words.Second.Outer.Negative.ThreeCycle
 public import SquaresInCircles.Eight.Words.Second.Outer.Negative.TwoCycle
 public import SquaresInCircles.Eight.Words.Second.Outer.Opposite.ThreeCycle
 public import SquaresInCircles.Eight.Words.Second.Outer.Positive.NegativeThreeCycle
-public import SquaresInCircles.Eight.Words.Second.Outer.Positive.ThreeCycle
 
 /-!
 # Eight squares: every outer quarter edge of the second wrong word

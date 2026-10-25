@@ -8,6 +8,7 @@ public import Mathlib.Data.Rat.Star
 public import SquaresInCircles.Eight.Owners.CenteredMonomialBounds
 public import SquaresInCircles.Eight.Owners.ChebyshevLeadingBounds
 public import SquaresInCircles.Eight.Owners.GA.Joint.NegativeAEBT3PolynomialData
+public import SquaresInCircles.Eight.Arithmetic.KroneckerPolynomials
 
 /-!
 # Eight squares: six whole-interval BT3 numerator certificates
@@ -17,8 +18,8 @@ row uses its displayed centered quadratic reserve. The high row has
 a positive polynomial quotient at the actual D support transition.
 
 The kernel evaluates integer coefficient lists that mirror the polynomials. The numerator
-and the affine changes of variable are one integer product or evaluation read back in a large
-base (Kronecker substitution).
+and the affine changes of variable are one integer product or evaluation read back in a
+power-of-two base by masks and shifts (`KroneckerPolynomials`).
 -/
 
 @[expose] public section
@@ -28,73 +29,13 @@ open scoped BigOperators
 namespace SquaresInCircles.Eight.GlobalGA.JointNegativeAEBT3.Certificate
 open PowerTailBounds
 open WholeIntervalPolynomial.Certificate (Scaled toPoly upperZ lowerZ chebList)
+open WholeIntervalPolynomial.Certificate.Kron (Packed)
 
 /-! ### Scaled integer lists for the numerators
 
 Each polynomial of the companion is mirrored by a `Scaled` integer list built with
 the operations of `PolynomialCertificates`; `Scaled.Rep` ties the list to the
 polynomial, and the kernel evaluates only the integer lists. -/
-
-private theorem r66_ite_rep {P : Prop} [Decidable P] {a b : Scaled} {p q : ℚ[X]}
-    (ha : a.Rep p) (hb : b.Rep q) : (if P then a else b).Rep (if P then p else q) := by
-  split_ifs <;> assumption
-
-/-- The gcd of the scale `s` and all entries of `l`. -/
-private def r66_gcd (s : ℕ) : List ℤ → ℕ
-  | [] => s
-  | a :: l => Nat.gcd a.natAbs (r66_gcd s l)
-
-private theorem r66_gcd_dvd (s : ℕ) : ∀ l : List ℤ,
-    r66_gcd s l ∣ s ∧ ∀ a ∈ l,((r66_gcd s l : ℕ):ℤ) ∣ a
-  | [] => by simp [r66_gcd]
-  | a :: l => by
-    obtain ⟨h1,h2⟩ := r66_gcd_dvd s l
-    refine ⟨(Nat.gcd_dvd_right _ _).trans h1,?_⟩
-    intro b hb
-    rcases List.mem_cons.mp hb with rfl | hb
-    · exact Int.natCast_dvd.mpr (Nat.gcd_dvd_left _ _)
-    · exact (Int.natCast_dvd_natCast.mpr (Nat.gcd_dvd_right _ _)).trans (h2 b hb)
-
-private theorem r66_smul_div (g : ℤ) : ∀ l : List ℤ,(∀ a ∈ l,g ∣ a) →
-    WholeIntervalPolynomial.Certificate.smul g (l.map (fun a => a/g))=l
-  | [],_ => rfl
-  | a :: l,h => by
-    simp only [List.map_cons,WholeIntervalPolynomial.Certificate.smul]
-    rw [Int.mul_ediv_cancel' (h a List.mem_cons_self),
-      r66_smul_div g l (fun b hb => h b (List.mem_cons_of_mem a hb))]
-
-private theorem r66_toPoly_zero : ∀ l : List ℤ,toPoly (l.map (fun _ => (0:ℤ)))=0
-  | [] => rfl
-  | a :: l => by
-    simp only [List.map_cons,toPoly,r66_toPoly_zero l,Int.cast_zero,map_zero,mul_zero,add_zero]
-
-/-- Division of a scaled list by the gcd of its entries and its scale. -/
-private def r66_red (c : Scaled) : Scaled :=
-  ⟨c.l.map (fun a => a/((r66_gcd c.s c.l : ℕ):ℤ)),c.s/r66_gcd c.s c.l⟩
-
-private theorem r66_rep_red {c : Scaled} {p : ℚ[X]} (hc : c.Rep p) : (r66_red c).Rep p := by
-  obtain ⟨h1,h2⟩ := r66_gcd_dvd c.s c.l
-  set g := r66_gcd c.s c.l with hg
-  have hl := r66_smul_div (g:ℤ) c.l h2
-  unfold Scaled.Rep at *
-  rw [← hl,WholeIntervalPolynomial.Certificate.toPoly_smul] at hc
-  obtain ⟨k,hk⟩ := h1
-  simp only [r66_red,← hg]
-  rcases Nat.eq_zero_or_pos g with h0 | hpos
-  · have hs : c.s=0 := by rw [hk,h0,zero_mul]
-    have hz : ∀ a ∈ c.l,a=0 := fun a ha => by
-      have := h2 a ha
-      rw [h0,Nat.cast_zero] at this
-      exact zero_dvd_iff.mp this
-    rw [h0,hs]
-    simp only [Nat.cast_zero,Int.ediv_zero,Nat.zero_div,map_zero,zero_mul]
-    exact r66_toPoly_zero _
-  · have hg0 : (g:ℚ)≠0 := by exact_mod_cast hpos.ne'
-    rw [hk,Nat.mul_div_cancel_left k hpos]
-    rw [hk] at hc
-    push_cast at hc
-    exact mul_left_cancel₀ (show C (g:ℚ)≠0 from C_ne_zero.mpr hg0)
-      (hc.trans (by rw [map_mul,mul_assoc]))
 
 /-- The coefficient list of the derivative. -/
 private def r66_deriv : List ℤ → List ℤ
@@ -120,71 +61,59 @@ private theorem r66_rep_deriv {c : Scaled} {p : ℚ[X]} (hc : c.Rep p) :
   unfold Scaled.Rep at *
   rw [r66_derivS,r66_toPoly_deriv,hc,derivative_C_mul]
 
-/-- The monomial `X^k`, as the list it would get by `Scaled.var.pow k`. -/
-private def r66_mono (k : ℕ) : Scaled := ⟨List.replicate k 0++[1],1⟩
-private theorem r66_mono_rep (k : ℕ) : (r66_mono k).Rep (X^k) := by
-  unfold Scaled.Rep r66_mono
-  simp only [Nat.cast_one,map_one,one_mul]
-  induction k with
-  | zero => simp [toPoly]
-  | succ k ih =>
-    rw [List.replicate_succ,List.cons_append,toPoly,ih,pow_succ]
-    simp only [Int.cast_zero,map_zero,zero_add]
-    ring
-
 /-! The trigonometric polynomials and the coefficient families. -/
 
-private def r66_S : Scaled := r66_red (Scaled.var
-  |>.sub ((Scaled.const (1/6)).mul (r66_mono 3))
-  |>.add ((Scaled.const (1/120)).mul (r66_mono 5))
-  |>.sub ((Scaled.const (1/5040)).mul (r66_mono 7))
-  |>.add ((Scaled.const (1/362880)).mul (r66_mono 9))
-  |>.sub ((Scaled.const (1/39916800)).mul (r66_mono 11))
-  |>.add ((Scaled.const (1/6227020800)).mul (r66_mono 13))
-  |>.sub ((Scaled.const (1/1307674368000)).mul (r66_mono 15)))
-private theorem r66_S_rep : r66_S.Rep S := r66_rep_red (Scaled.rep_var
-  |>.sub ((Scaled.rep_const _).mul (r66_mono_rep 3))
-  |>.add ((Scaled.rep_const _).mul (r66_mono_rep 5))
-  |>.sub ((Scaled.rep_const _).mul (r66_mono_rep 7))
-  |>.add ((Scaled.rep_const _).mul (r66_mono_rep 9))
-  |>.sub ((Scaled.rep_const _).mul (r66_mono_rep 11))
-  |>.add ((Scaled.rep_const _).mul (r66_mono_rep 13))
-  |>.sub ((Scaled.rep_const _).mul (r66_mono_rep 15)))
+private def r66_S : Scaled := Scaled.reduce (Scaled.var
+  |>.sub ((Scaled.const (1/6)).mul (Scaled.mono 3))
+  |>.add ((Scaled.const (1/120)).mul (Scaled.mono 5))
+  |>.sub ((Scaled.const (1/5040)).mul (Scaled.mono 7))
+  |>.add ((Scaled.const (1/362880)).mul (Scaled.mono 9))
+  |>.sub ((Scaled.const (1/39916800)).mul (Scaled.mono 11))
+  |>.add ((Scaled.const (1/6227020800)).mul (Scaled.mono 13))
+  |>.sub ((Scaled.const (1/1307674368000)).mul (Scaled.mono 15)))
+private theorem r66_S_rep : r66_S.Rep S := Scaled.Rep.reduce (Scaled.rep_var
+  |>.sub ((Scaled.rep_const _).mul (Scaled.rep_mono 3))
+  |>.add ((Scaled.rep_const _).mul (Scaled.rep_mono 5))
+  |>.sub ((Scaled.rep_const _).mul (Scaled.rep_mono 7))
+  |>.add ((Scaled.rep_const _).mul (Scaled.rep_mono 9))
+  |>.sub ((Scaled.rep_const _).mul (Scaled.rep_mono 11))
+  |>.add ((Scaled.rep_const _).mul (Scaled.rep_mono 13))
+  |>.sub ((Scaled.rep_const _).mul (Scaled.rep_mono 15)))
 
-private def r66_C : Scaled := r66_red (Scaled.ofNat 1
-  |>.sub ((Scaled.const (1/2)).mul (r66_mono 2))
-  |>.add ((Scaled.const (1/24)).mul (r66_mono 4))
-  |>.sub ((Scaled.const (1/720)).mul (r66_mono 6))
-  |>.add ((Scaled.const (1/40320)).mul (r66_mono 8))
-  |>.sub ((Scaled.const (1/3628800)).mul (r66_mono 10))
-  |>.add ((Scaled.const (1/479001600)).mul (r66_mono 12))
-  |>.sub ((Scaled.const (1/87178291200)).mul (r66_mono 14))
-  |>.add ((Scaled.const (1/20922789888000)).mul (r66_mono 16)))
-private theorem r66_C_rep : r66_C.Rep Cstar := r66_rep_red (Scaled.rep_one
-  |>.sub ((Scaled.rep_const _).mul (r66_mono_rep 2))
-  |>.add ((Scaled.rep_const _).mul (r66_mono_rep 4))
-  |>.sub ((Scaled.rep_const _).mul (r66_mono_rep 6))
-  |>.add ((Scaled.rep_const _).mul (r66_mono_rep 8))
-  |>.sub ((Scaled.rep_const _).mul (r66_mono_rep 10))
-  |>.add ((Scaled.rep_const _).mul (r66_mono_rep 12))
-  |>.sub ((Scaled.rep_const _).mul (r66_mono_rep 14))
-  |>.add ((Scaled.rep_const _).mul (r66_mono_rep 16)))
+private def r66_C : Scaled := Scaled.reduce (Scaled.ofNat 1
+  |>.sub ((Scaled.const (1/2)).mul (Scaled.mono 2))
+  |>.add ((Scaled.const (1/24)).mul (Scaled.mono 4))
+  |>.sub ((Scaled.const (1/720)).mul (Scaled.mono 6))
+  |>.add ((Scaled.const (1/40320)).mul (Scaled.mono 8))
+  |>.sub ((Scaled.const (1/3628800)).mul (Scaled.mono 10))
+  |>.add ((Scaled.const (1/479001600)).mul (Scaled.mono 12))
+  |>.sub ((Scaled.const (1/87178291200)).mul (Scaled.mono 14))
+  |>.add ((Scaled.const (1/20922789888000)).mul (Scaled.mono 16)))
+private theorem r66_C_rep : r66_C.Rep Cstar := Scaled.Rep.reduce (Scaled.rep_one
+  |>.sub ((Scaled.rep_const _).mul (Scaled.rep_mono 2))
+  |>.add ((Scaled.rep_const _).mul (Scaled.rep_mono 4))
+  |>.sub ((Scaled.rep_const _).mul (Scaled.rep_mono 6))
+  |>.add ((Scaled.rep_const _).mul (Scaled.rep_mono 8))
+  |>.sub ((Scaled.rep_const _).mul (Scaled.rep_mono 10))
+  |>.add ((Scaled.rep_const _).mul (Scaled.rep_mono 12))
+  |>.sub ((Scaled.rep_const _).mul (Scaled.rep_mono 14))
+  |>.add ((Scaled.rep_const _).mul (Scaled.rep_mono 16)))
 
-private def r66_kfull : Scaled := r66_red (Scaled.const (65433234/100000000)
+private def r66_kfull : Scaled := Scaled.reduce (Scaled.const (65433234/100000000)
   |>.sub ((Scaled.const (6770392/100000000)).mul Scaled.var)
-  |>.add ((Scaled.const (39062724/100000000)).mul (r66_mono 2))
-  |>.sub ((Scaled.const (29937498/100000000)).mul (r66_mono 3))
-  |>.add ((Scaled.const (35999242/100000000)).mul (r66_mono 4))
-  |>.sub ((Scaled.const (29068717/100000000)).mul (r66_mono 5))
-  |>.add ((Scaled.const (14649232/100000000)).mul (r66_mono 6)))
+  |>.add ((Scaled.const (39062724/100000000)).mul (Scaled.mono 2))
+  |>.sub ((Scaled.const (29937498/100000000)).mul (Scaled.mono 3))
+  |>.add ((Scaled.const (35999242/100000000)).mul (Scaled.mono 4))
+  |>.sub ((Scaled.const (29068717/100000000)).mul (Scaled.mono 5))
+  |>.add ((Scaled.const (14649232/100000000)).mul (Scaled.mono 6)))
 private theorem r66_kfull_rep : r66_kfull.Rep (JointNegativeAETD2.Certificate.k .full) :=
-  r66_rep_red (Scaled.rep_const _
+  Scaled.Rep.reduce (Scaled.rep_const _
   |>.sub ((Scaled.rep_const _).mul Scaled.rep_var)
-  |>.add ((Scaled.rep_const _).mul (r66_mono_rep 2))
-  |>.sub ((Scaled.rep_const _).mul (r66_mono_rep 3))
-  |>.add ((Scaled.rep_const _).mul (r66_mono_rep 4))
-  |>.sub ((Scaled.rep_const _).mul (r66_mono_rep 5))
-  |>.add ((Scaled.rep_const _).mul (r66_mono_rep 6)))
+  |>.add ((Scaled.rep_const _).mul (Scaled.rep_mono 2))
+  |>.sub ((Scaled.rep_const _).mul (Scaled.rep_mono 3))
+  |>.add ((Scaled.rep_const _).mul (Scaled.rep_mono 4))
+  |>.sub ((Scaled.rep_const _).mul (Scaled.rep_mono 5))
+  |>.add ((Scaled.rep_const _).mul (Scaled.rep_mono 6)))
 
 private def r66_k : Row → Scaled
   | .low => Scaled.const (13/20)
@@ -204,98 +133,98 @@ private theorem r66_eta_rep : ∀ r,(r66_eta r).Rep (eta r)
 
 private def r66_c : Row → Scaled
   | .low => ((Scaled.const (69/50)).sub ((Scaled.const (13/5)).mul Scaled.var)).add
-      ((Scaled.const (14/5)).mul (r66_mono 2))
+      ((Scaled.const (14/5)).mul (Scaled.mono 2))
   | .middle => ((Scaled.ofNat 1).sub ((Scaled.const (61/50)).mul (Scaled.var.sub (Scaled.const (1/4))))).add
       ((Scaled.const (43/25)).mul ((Scaled.var.sub (Scaled.const (1/4))).pow 2))
   | .high => ((Scaled.ofNat 1).sub ((Scaled.const (67/100)).mul (Scaled.var.sub (Scaled.const (1/4))))).add
       ((Scaled.const (12/25)).mul ((Scaled.var.sub (Scaled.const (1/4))).pow 2))
 private theorem r66_c_rep : ∀ r,(r66_c r).Rep (c r)
   | .low => ((Scaled.rep_const _).sub ((Scaled.rep_const _).mul Scaled.rep_var)).add
-      ((Scaled.rep_const _).mul (r66_mono_rep 2))
+      ((Scaled.rep_const _).mul (Scaled.rep_mono 2))
   | .middle => (Scaled.rep_one.sub ((Scaled.rep_const _).mul (Scaled.rep_var.sub (Scaled.rep_const _)))).add
       ((Scaled.rep_const _).mul ((Scaled.rep_var.sub (Scaled.rep_const _)).pow 2))
   | .high => (Scaled.rep_one.sub ((Scaled.rep_const _).mul (Scaled.rep_var.sub (Scaled.rep_const _)))).add
       ((Scaled.rep_const _).mul ((Scaled.rep_var.sub (Scaled.rep_const _)).pow 2))
 
-private def r66_f (r : Row) : Scaled := r66_red (r66_C.add ((r66_eta r).mul r66_S))
+private def r66_f (r : Row) : Scaled := Scaled.reduce (r66_C.add ((r66_eta r).mul r66_S))
 private theorem r66_f_rep (r : Row) : (r66_f r).Rep (f r) :=
-  r66_rep_red (r66_C_rep.add ((r66_eta_rep r).mul r66_S_rep))
+  Scaled.Rep.reduce (r66_C_rep.add ((r66_eta_rep r).mul r66_S_rep))
 
-private def r66_T (r : Row) : Scaled := r66_red
+private def r66_T (r : Row) : Scaled := Scaled.reduce
   (((Scaled.ofNat 1).add ((Scaled.const 2).mul r66_C)).add
     (((Scaled.ofNat 1).add ((Scaled.const 2).mul (r66_eta r))).mul r66_S))
-private theorem r66_T_rep (r : Row) : (r66_T r).Rep (Tstar r) := r66_rep_red
+private theorem r66_T_rep (r : Row) : (r66_T r).Rep (Tstar r) := Scaled.Rep.reduce
   ((Scaled.rep_one.add ((Scaled.rep_const _).mul r66_C_rep)).add
     ((Scaled.rep_one.add ((Scaled.rep_const _).mul (r66_eta_rep r))).mul r66_S_rep))
 
 private def r66_zero : Scaled := ⟨[],1⟩
 
 private def r66_a0 (r : Row) : Scaled :=
-  r66_red ((Scaled.const (1/109)).mul ((Scaled.const 91).add ((Scaled.const 60).mul (r66_k r))))
+  Scaled.reduce ((Scaled.const (1/109)).mul ((Scaled.const 91).add ((Scaled.const 60).mul (r66_k r))))
 private theorem r66_a0_rep (r : Row) (e : Endpoint) : (r66_a0 r).Rep (alpha r e 0) :=
-  r66_rep_red ((Scaled.rep_const _).mul ((Scaled.rep_const _).add ((Scaled.rep_const _).mul (r66_k_rep r))))
+  Scaled.Rep.reduce ((Scaled.rep_const _).mul ((Scaled.rep_const _).add ((Scaled.rep_const _).mul (r66_k_rep r))))
 private def r66_a1 (r : Row) : Scaled :=
-  r66_red ((Scaled.const (1/29)).mul (((Scaled.const 20).mul (r66_f r)).add
+  Scaled.reduce ((Scaled.const (1/29)).mul (((Scaled.const 20).mul (r66_f r)).add
     ((Scaled.const 21).mul (r66_c r))))
 private theorem r66_a1_rep (r : Row) (e : Endpoint) : (r66_a1 r).Rep (alpha r e 1) :=
-  r66_rep_red ((Scaled.rep_const _).mul (((Scaled.rep_const _).mul (r66_f_rep r)).add
+  Scaled.Rep.reduce ((Scaled.rep_const _).mul (((Scaled.rep_const _).mul (r66_f_rep r)).add
     ((Scaled.rep_const _).mul (r66_c_rep r))))
-private def r66_a2 (r : Row) (e : Endpoint) : Scaled := r66_red
+private def r66_a2 (r : Row) (e : Endpoint) : Scaled := Scaled.reduce
   (if e=.V then (Scaled.const (1/85)).mul (((Scaled.const 36).mul ((r66_k r).sub r66_S)).add
       ((Scaled.const 77).mul r66_C))
    else (Scaled.const (1/109)).mul ((Scaled.const 91).add (((Scaled.const 60).mul (r66_k r)).mul r66_C)))
-private theorem r66_a2_rep (r : Row) (e : Endpoint) : (r66_a2 r e).Rep (alpha r e 2) := r66_rep_red
-  (r66_ite_rep ((Scaled.rep_const _).mul (((Scaled.rep_const _).mul ((r66_k_rep r).sub r66_S_rep)).add
+private theorem r66_a2_rep (r : Row) (e : Endpoint) : (r66_a2 r e).Rep (alpha r e 2) := Scaled.Rep.reduce
+  (Scaled.Rep.ite ((Scaled.rep_const _).mul (((Scaled.rep_const _).mul ((r66_k_rep r).sub r66_S_rep)).add
       ((Scaled.rep_const _).mul r66_C_rep)))
     ((Scaled.rep_const _).mul ((Scaled.rep_const _).add (((Scaled.rep_const _).mul (r66_k_rep r)).mul r66_C_rep))))
 private def r66_a3 (r : Row) : Scaled :=
-  r66_red ((Scaled.const (1/42)).mul ((Scaled.const 40).add ((Scaled.const 13).mul (r66_eta r))))
+  Scaled.reduce ((Scaled.const (1/42)).mul ((Scaled.const 40).add ((Scaled.const 13).mul (r66_eta r))))
 private theorem r66_a3_rep (r : Row) (e : Endpoint) : (r66_a3 r).Rep (alpha r e 3) :=
-  r66_rep_red ((Scaled.rep_const _).mul ((Scaled.rep_const _).add ((Scaled.rep_const _).mul (r66_eta_rep r))))
-private def r66_a4 (r : Row) : Scaled := r66_red
+  Scaled.Rep.reduce ((Scaled.rep_const _).mul ((Scaled.rep_const _).add ((Scaled.rep_const _).mul (r66_eta_rep r))))
+private def r66_a4 (r : Row) : Scaled := Scaled.reduce
   (if diagonalD r then Scaled.ofNat 1
    else (Scaled.const (1/29)).mul ((Scaled.const 21).add ((Scaled.const 20).mul (r66_c r))))
-private theorem r66_a4_rep (r : Row) (e : Endpoint) : (r66_a4 r).Rep (alpha r e 4) := r66_rep_red
-  (r66_ite_rep Scaled.rep_one
+private theorem r66_a4_rep (r : Row) (e : Endpoint) : (r66_a4 r).Rep (alpha r e 4) := Scaled.Rep.reduce
+  (Scaled.Rep.ite Scaled.rep_one
     ((Scaled.rep_const _).mul ((Scaled.rep_const _).add ((Scaled.rep_const _).mul (r66_c_rep r)))))
 
-private def r66_v0 (r : Row) : Scaled := r66_red ((Scaled.ofNat 1).add ((r66_k r).pow 2))
+private def r66_v0 (r : Row) : Scaled := Scaled.reduce ((Scaled.ofNat 1).add ((r66_k r).pow 2))
 private theorem r66_v0_rep (r : Row) (e : Endpoint) : (r66_v0 r).Rep (v r e 0) :=
-  r66_rep_red (Scaled.rep_one.add ((r66_k_rep r).pow 2))
-private def r66_v1 (r : Row) : Scaled := r66_red (((r66_f r).pow 2).add ((r66_c r).pow 2))
+  Scaled.Rep.reduce (Scaled.rep_one.add ((r66_k_rep r).pow 2))
+private def r66_v1 (r : Row) : Scaled := Scaled.reduce (((r66_f r).pow 2).add ((r66_c r).pow 2))
 private theorem r66_v1_rep (r : Row) (e : Endpoint) : (r66_v1 r).Rep (v r e 1) :=
-  r66_rep_red (((r66_f_rep r).pow 2).add ((r66_c_rep r).pow 2))
-private def r66_v2 (r : Row) (e : Endpoint) : Scaled := r66_red
+  Scaled.Rep.reduce (((r66_f_rep r).pow 2).add ((r66_c_rep r).pow 2))
+private def r66_v2 (r : Row) (e : Endpoint) : Scaled := Scaled.reduce
   (if e=.V then ((Scaled.ofNat 1).add ((r66_k r).pow 2)).sub (((Scaled.const 2).mul (r66_k r)).mul r66_S)
    else (Scaled.ofNat 1).add (((r66_k r).pow 2).mul (r66_C.pow 2)))
-private theorem r66_v2_rep (r : Row) (e : Endpoint) : (r66_v2 r e).Rep (v r e 2) := r66_rep_red
-  (r66_ite_rep ((Scaled.rep_one.add ((r66_k_rep r).pow 2)).sub
+private theorem r66_v2_rep (r : Row) (e : Endpoint) : (r66_v2 r e).Rep (v r e 2) := Scaled.Rep.reduce
+  (Scaled.Rep.ite ((Scaled.rep_one.add ((r66_k_rep r).pow 2)).sub
       (((Scaled.rep_const _).mul (r66_k_rep r)).mul r66_S_rep))
     (Scaled.rep_one.add (((r66_k_rep r).pow 2).mul (r66_C_rep.pow 2))))
-private def r66_v3 (r : Row) : Scaled := r66_red ((Scaled.ofNat 1).add ((r66_eta r).pow 2))
+private def r66_v3 (r : Row) : Scaled := Scaled.reduce ((Scaled.ofNat 1).add ((r66_eta r).pow 2))
 private theorem r66_v3_rep (r : Row) (e : Endpoint) : (r66_v3 r).Rep (v r e 3) :=
-  r66_rep_red (Scaled.rep_one.add ((r66_eta_rep r).pow 2))
-private def r66_v4 (r : Row) : Scaled := r66_red
+  Scaled.Rep.reduce (Scaled.rep_one.add ((r66_eta_rep r).pow 2))
+private def r66_v4 (r : Row) : Scaled := Scaled.reduce
   (if diagonalD r then r66_zero else (Scaled.ofNat 1).add ((r66_c r).pow 2))
-private theorem r66_v4_rep (r : Row) (e : Endpoint) : (r66_v4 r).Rep (v r e 4) := r66_rep_red
-  (r66_ite_rep Scaled.rep_zero (Scaled.rep_one.add ((r66_c_rep r).pow 2)))
+private theorem r66_v4_rep (r : Row) (e : Endpoint) : (r66_v4 r).Rep (v r e 4) := Scaled.Rep.reduce
+  (Scaled.Rep.ite Scaled.rep_zero (Scaled.rep_one.add ((r66_c_rep r).pow 2)))
 
 private def r66_w0 (r : Row) (e : Endpoint) : Scaled :=
-  r66_red (if e=.V then r66_f r else (r66_f r).mul r66_C)
+  Scaled.reduce (if e=.V then r66_f r else (r66_f r).mul r66_C)
 private theorem r66_w0_rep (r : Row) (e : Endpoint) : (r66_w0 r e).Rep (weight r e 0) :=
-  r66_rep_red (r66_ite_rep (r66_f_rep r) ((r66_f_rep r).mul r66_C_rep))
+  Scaled.Rep.reduce (Scaled.Rep.ite (r66_f_rep r) ((r66_f_rep r).mul r66_C_rep))
 private def r66_w1 (e : Endpoint) : Scaled := if e=.V then Scaled.ofNat 1 else r66_C
 private theorem r66_w1_rep (r : Row) (e : Endpoint) : (r66_w1 e).Rep (weight r e 1) :=
-  r66_ite_rep Scaled.rep_one r66_C_rep
+  Scaled.Rep.ite Scaled.rep_one r66_C_rep
 private theorem r66_w2_rep (r : Row) (e : Endpoint) : (r66_f r).Rep (weight r e 2) := r66_f_rep r
 private def r66_w3 (r : Row) (e : Endpoint) : Scaled :=
-  r66_red (if e=.V then (r66_c r).mul r66_S else ((r66_c r).mul r66_S).mul r66_C)
+  Scaled.reduce (if e=.V then (r66_c r).mul r66_S else ((r66_c r).mul r66_S).mul r66_C)
 private theorem r66_w3_rep (r : Row) (e : Endpoint) : (r66_w3 r e).Rep (weight r e 3) :=
-  r66_rep_red (r66_ite_rep ((r66_c_rep r).mul r66_S_rep) (((r66_c_rep r).mul r66_S_rep).mul r66_C_rep))
+  Scaled.Rep.reduce (Scaled.Rep.ite ((r66_c_rep r).mul r66_S_rep) (((r66_c_rep r).mul r66_S_rep).mul r66_C_rep))
 private def r66_w4 (r : Row) (e : Endpoint) : Scaled :=
   if diagonalD r then r66_zero else r66_w0 r e
 private theorem r66_w4_rep (r : Row) (e : Endpoint) : (r66_w4 r e).Rep (weight r e 4) :=
-  r66_ite_rep Scaled.rep_zero (r66_w0_rep r e)
+  Scaled.Rep.ite Scaled.rep_zero (r66_w0_rep r e)
 
 private def r66_AV (r : Row) : Scaled :=
   ((r66_f r).mul ((((Scaled.const 2).mul (r66_k r)).add (Scaled.ofNat 5)).add r66_C)).add
@@ -319,511 +248,36 @@ private def r66_AD (r : Row) (e : Endpoint) : Scaled :=
 private theorem r66_AD_rep (r : Row) (e : Endpoint) :
     (r66_AD r e).Rep (C (Rplus*dPlus)*(1+c r)*f r*(if e=.V then 1 else Cstar)) :=
   (((Scaled.rep_const _).mul (Scaled.rep_one.add (r66_c_rep r))).mul (r66_f_rep r)).mul
-    (r66_ite_rep Scaled.rep_one r66_C_rep)
-private def r66_A (r : Row) (e : Endpoint) : Scaled := r66_red
+    (Scaled.Rep.ite Scaled.rep_one r66_C_rep)
+private def r66_A (r : Row) (e : Endpoint) : Scaled := Scaled.reduce
   ((if e=.V then r66_AV r else r66_AF r).sub (if diagonalD r then r66_AD r e else r66_zero))
-private theorem r66_A_rep (r : Row) (e : Endpoint) : (r66_A r e).Rep (A r e) := r66_rep_red
-  ((r66_ite_rep (r66_AV_rep r) (r66_AF_rep r)).sub (r66_ite_rep (r66_AD_rep r e) Scaled.rep_zero))
+private theorem r66_A_rep (r : Row) (e : Endpoint) : (r66_A r e).Rep (A r e) := Scaled.Rep.reduce
+  ((Scaled.Rep.ite (r66_AV_rep r) (r66_AF_rep r)).sub (Scaled.Rep.ite (r66_AD_rep r e) Scaled.rep_zero))
 
-/-! ### Kronecker substitution
-
-An integer list is evaluated at an integer `B`; when every entry lies in `[-B/2,B/2)`, the list
-is read back from the value as its balanced base-`B` digits (`r66k_dec_enc`). -/
-
-/-- The list evaluated at `B`. -/
-private def r66kenc (B : ℤ) : List ℤ → ℤ
-  | [] => 0
-  | a :: l => a+B*r66kenc B l
-
-/-- The residue of `N` modulo `B` in `[-B/2,B/2)`. -/
-private def r66kbal (B N : ℤ) : ℤ := if 2*(N % B)<B then N % B else N % B-B
-
-/-- The first `n` balanced base-`B` digits of `N`. -/
-private def r66kdec (B : ℤ) : ℕ → ℤ → List ℤ
-  | 0,_ => []
-  | n+1,N => r66kbal B N :: r66kdec B n ((N-r66kbal B N) / B)
-
-/-- The sum of the absolute values of the entries. -/
-private def r66kasum : List ℤ → ℕ
-  | [] => 0
-  | a :: l => a.natAbs+r66kasum l
-
-/-- The largest absolute value of an entry. -/
-private def r66kamax : List ℤ → ℕ
-  | [] => 0
-  | a :: l => max a.natAbs (r66kamax l)
-
-private theorem r66k_enc_eq (B : ℤ) : ∀ l : List ℤ,(r66kenc B l : ℚ)=(toPoly l).eval (B:ℚ)
-  | [] => by simp [r66kenc,toPoly]
-  | a :: l => by simp [r66kenc,toPoly,r66k_enc_eq B l]
-
-private theorem r66k_bal_eq {B c M : ℤ} (hc : -B≤2*c ∧ 2*c<B) : r66kbal B (c+B*M)=c := by
-  have hB : 0<B := by omega
-  unfold r66kbal
-  rw [Int.add_mul_emod_self_left]
-  rcases le_or_gt 0 c with h0|h0
-  · rw [Int.emod_eq_of_lt h0 (by omega),ite_eq_left hc.2]
-  · have e : c % B=c+B := by
-      rw [show c=(c+B)+B*(-1) by ring,Int.add_mul_emod_self_left,Int.emod_eq_of_lt (by omega) (by omega)]
-      ring
-    rw [e,ite_eq_right (by omega)]
-    ring
-
-private theorem r66k_dec_enc {B : ℤ} (hB : 0<B) : ∀ (n : ℕ) (c : List ℤ),c.length≤n →
-    (∀ j,-B≤2*c.getD j 0 ∧ 2*c.getD j 0<B) → toPoly (r66kdec B n (r66kenc B c))=toPoly c
-  | 0,c,hl,_ => by
-    rw [List.length_eq_zero_iff.1 (by omega : c.length=0)]
-    rfl
-  | n+1,[],_,_ => by
-    have h0 : r66kbal B 0=0 := by
-      simpa using r66k_bal_eq (c:=0) (M:=0) (B:=B) (by omega)
-    have ih : toPoly (r66kdec B n 0)=0 := r66k_dec_enc hB n [] (by simp) (fun j => by simp; omega)
-    show toPoly (r66kdec B (n+1) 0)=0
-    rw [r66kdec,h0,sub_zero,Int.zero_ediv]
-    simp [toPoly,ih]
-  | n+1,x :: c,hl,hb => by
-    have hx := hb 0
-    simp only [List.getD_cons_zero] at hx
-    have h1 := r66k_bal_eq (M:=r66kenc B c) hx
-    have h2 : (x+B*r66kenc B c-x) / B=r66kenc B c := by
-      rw [add_sub_cancel_left,Int.mul_ediv_cancel_left _ hB.ne']
-    have ih := r66k_dec_enc hB n c (by simpa using hl) (fun j => by simpa using hb (j+1))
-    simp only [r66kenc,r66kdec,h1,h2]
-    rw [toPoly,toPoly,ih]
-
-private theorem r66k_getD_smul (c : ℤ) : ∀ (l : List ℤ) (j : ℕ),
-    (WholeIntervalPolynomial.Certificate.smul c l).getD j 0=c*l.getD j 0
-  | [],j => by simp [WholeIntervalPolynomial.Certificate.smul]
-  | a :: l,0 => by simp [WholeIntervalPolynomial.Certificate.smul]
-  | a :: l,j+1 => by
-    simp only [WholeIntervalPolynomial.Certificate.smul,List.getD_cons_succ,r66k_getD_smul c l j]
-
-private theorem r66k_getD_le_amax : ∀ (l : List ℤ) (j : ℕ),|l.getD j 0|≤r66kamax l
-  | [],j => by simp
-  | a :: l,0 => by simp only [List.getD_cons_zero,r66kamax]; push_cast; exact le_max_left _ _
-  | a :: l,j+1 => by
-    simp only [List.getD_cons_succ,r66kamax]
-    push_cast
-    exact (r66k_getD_le_amax l j).trans (le_max_right _ _)
-
-private theorem r66k_mul_bound : ∀ (a m : List ℤ) (j : ℕ),
-    |(WholeIntervalPolynomial.Certificate.mul a m).getD j 0|≤r66kasum a*r66kamax m
-  | [],m,j => by simp [WholeIntervalPolynomial.Certificate.mul]; positivity
-  | a :: l,[],j => by simp [WholeIntervalPolynomial.Certificate.mul]; positivity
-  | a :: l,b :: m,j => by
-    rw [WholeIntervalPolynomial.Certificate.mul,WholeIntervalPolynomial.Certificate.getD_add,
-      r66k_getD_smul]
-    have h1 : |a*(b :: m).getD j 0|≤|a| * r66kamax (b :: m) := by
-      rw [abs_mul]
-      exact mul_le_mul_of_nonneg_left (r66k_getD_le_amax _ j) (abs_nonneg a)
-    have h2 : |(0 :: WholeIntervalPolynomial.Certificate.mul l (b :: m)).getD j 0|≤
-        r66kasum l*r66kamax (b :: m) := by
-      rcases j with _|j
-      · simp only [List.getD_cons_zero,abs_zero]; positivity
-      · simpa only [List.getD_cons_succ] using r66k_mul_bound l (b :: m) j
-    simp only [r66kasum]
-    push_cast
-    calc _≤_ := abs_add_le _ _
-      _≤_ := add_le_add h1 h2
-      _=_ := by ring
-
-private theorem r66k_length_add : ∀ l m : List ℤ,
-    (WholeIntervalPolynomial.Certificate.add l m).length=max l.length m.length
-  | [],m => by simp [WholeIntervalPolynomial.Certificate.add]
-  | a :: l,[] => by simp [WholeIntervalPolynomial.Certificate.add]
-  | a :: l,b :: m => by
-    simp [WholeIntervalPolynomial.Certificate.add,r66k_length_add l m,Nat.succ_max_succ]
-
-private theorem r66k_length_smul (c : ℤ) : ∀ l : List ℤ,
-    (WholeIntervalPolynomial.Certificate.smul c l).length=l.length
-  | [] => rfl
-  | a :: l => by simp [WholeIntervalPolynomial.Certificate.smul,r66k_length_smul c l]
-
-private theorem r66k_length_mul : ∀ a m : List ℤ,
-    (WholeIntervalPolynomial.Certificate.mul a m).length≤a.length+m.length-1
-  | [],m => by simp [WholeIntervalPolynomial.Certificate.mul]
-  | a :: l,[] => by simp [WholeIntervalPolynomial.Certificate.mul]
-  | a :: l,b :: m => by
-    have ih := r66k_length_mul l (b :: m)
-    rw [WholeIntervalPolynomial.Certificate.mul,r66k_length_add,r66k_length_smul]
-    rcases l with _|⟨c,l⟩
-    · simp [WholeIntervalPolynomial.Certificate.mul]
-    · simp only [List.length_cons] at ih ⊢
-      omega
-
-/-! ### Encoded sums and products
-
-`r66kK` holds the value `N` at a base `B` of an integer list of at most `n` entries, each of
-absolute value at most `β`, that represents `s` times a polynomial.  Sums and products act on
-`N` alone, so a whole expression costs a few integer operations; `toScaled` reads the list
-back as balanced base-`B` digits once `B` exceeds `2β`. -/
-
-private structure r66kK where
-  N : ℤ
-  s : ℕ
-  n : ℕ
-  β : ℕ
-
-private def r66kK.Rep (B : ℤ) (k : r66kK) (p : ℚ[X]) : Prop :=
-  ∃ l : List ℤ,l.length≤k.n ∧ (∀ j,|l.getD j 0|≤k.β) ∧ k.N=r66kenc B l ∧ toPoly l=C (k.s:ℚ)*p
-
-private def r66kK.add (a b : r66kK) : r66kK := ⟨a.N*b.s+b.N*a.s,a.s*b.s,max a.n b.n,a.β*b.s+b.β*a.s⟩
-private def r66kK.sub (a b : r66kK) : r66kK := ⟨a.N*b.s-b.N*a.s,a.s*b.s,max a.n b.n,a.β*b.s+b.β*a.s⟩
-private def r66kK.mul (a b : r66kK) : r66kK := ⟨a.N*b.N,a.s*b.s,a.n+b.n-1,a.n*a.β*b.β⟩
-private def r66kK.const (q : ℚ) : r66kK := ⟨q.num,q.den,1,q.num.natAbs⟩
-private def r66kK.ofScaled (B : ℤ) (S : Scaled) : r66kK := ⟨r66kenc B S.l,S.s,S.l.length,r66kamax S.l⟩
-private def r66kK.toScaled (B : ℤ) (k : r66kK) : Scaled :=
-  if 2*(k.β:ℤ)<B then ⟨r66kdec B k.n k.N,k.s⟩ else ⟨[],0⟩
-
-private theorem r66k_enc_add (B : ℤ) (l m : List ℤ) :
-    r66kenc B (WholeIntervalPolynomial.Certificate.add l m)=r66kenc B l+r66kenc B m := by
-  have e : (r66kenc B (WholeIntervalPolynomial.Certificate.add l m) : ℚ)=r66kenc B l+r66kenc B m := by
-    rw [r66k_enc_eq,r66k_enc_eq,r66k_enc_eq,WholeIntervalPolynomial.Certificate.toPoly_add,eval_add]
-  exact_mod_cast e
-
-private theorem r66k_enc_smul (B c : ℤ) (l : List ℤ) :
-    r66kenc B (WholeIntervalPolynomial.Certificate.smul c l)=c*r66kenc B l := by
-  have e : (r66kenc B (WholeIntervalPolynomial.Certificate.smul c l) : ℚ)=c*r66kenc B l := by
-    rw [r66k_enc_eq,r66k_enc_eq,WholeIntervalPolynomial.Certificate.toPoly_smul,eval_mul,eval_C]
-  exact_mod_cast e
-
-private theorem r66k_enc_mul (B : ℤ) (l m : List ℤ) :
-    r66kenc B (WholeIntervalPolynomial.Certificate.mul l m)=r66kenc B l*r66kenc B m := by
-  have e : (r66kenc B (WholeIntervalPolynomial.Certificate.mul l m) : ℚ)=r66kenc B l*r66kenc B m := by
-    rw [r66k_enc_eq,r66k_enc_eq,r66k_enc_eq,WholeIntervalPolynomial.Certificate.toPoly_mul,eval_mul]
-  exact_mod_cast e
-
-private theorem r66k_amax_le {l : List ℤ} {β : ℕ} (h : ∀ j,|l.getD j 0|≤β) : r66kamax l≤β := by
-  induction l generalizing β with
-  | nil => simp [r66kamax]
-  | cons a l ih =>
-    have h0 := h 0
-    simp only [List.getD_cons_zero,Int.abs_eq_natAbs,Nat.cast_le] at h0
-    have h1 := ih (fun j => by simpa using h (j+1))
-    exact max_le h0 h1
-
-private theorem r66k_asum_le {l : List ℤ} {β : ℕ} (h : ∀ j,|l.getD j 0|≤β) :
-    r66kasum l≤l.length*β := by
-  induction l generalizing β with
-  | nil => simp [r66kasum]
-  | cons a l ih =>
-    have h0 := h 0
-    simp only [List.getD_cons_zero,Int.abs_eq_natAbs,Nat.cast_le] at h0
-    have h1 := ih (fun j => by simpa using h (j+1))
-    simp only [r66kasum,List.length_cons]
-    nlinarith
-
-private theorem r66kK.Rep.add {B : ℤ} {a b : r66kK} {p q : ℚ[X]} (ha : a.Rep B p) (hb : b.Rep B q) :
-    (a.add b).Rep B (p+q) := by
-  obtain ⟨la,hla,hba,hNa,hpa⟩ := ha
-  obtain ⟨lb,hlb,hbb,hNb,hpb⟩ := hb
-  refine ⟨WholeIntervalPolynomial.Certificate.add (WholeIntervalPolynomial.Certificate.smul b.s la) (WholeIntervalPolynomial.Certificate.smul a.s lb),?_,?_,?_,?_⟩
-  · rw [r66k_length_add,r66k_length_smul,r66k_length_smul]
-    exact max_le_max hla hlb
-  · intro j
-    rw [WholeIntervalPolynomial.Certificate.getD_add,r66k_getD_smul,r66k_getD_smul]
-    calc _≤|(b.s:ℤ)*la.getD j 0|+|(a.s:ℤ)*lb.getD j 0| := abs_add_le _ _
-      _≤(b.s:ℤ)*a.β+(a.s:ℤ)*b.β := by
-        rw [abs_mul,abs_mul,Nat.abs_cast,Nat.abs_cast]
-        exact add_le_add (mul_le_mul_of_nonneg_left (hba j) (by positivity))
-          (mul_le_mul_of_nonneg_left (hbb j) (by positivity))
-      _=_ := by simp only [r66kK.add]; push_cast; ring
-  · simp only [r66kK.add,r66k_enc_add,r66k_enc_smul,hNa,hNb]
-    ring
-  · simp only [r66kK.add,WholeIntervalPolynomial.Certificate.toPoly_add,WholeIntervalPolynomial.Certificate.toPoly_smul,hpa,hpb,Int.cast_natCast,
-      Nat.cast_mul,map_mul]
-    ring
-
-private theorem r66kK.Rep.sub {B : ℤ} {a b : r66kK} {p q : ℚ[X]} (ha : a.Rep B p) (hb : b.Rep B q) :
-    (a.sub b).Rep B (p-q) := by
-  obtain ⟨la,hla,hba,hNa,hpa⟩ := ha
-  obtain ⟨lb,hlb,hbb,hNb,hpb⟩ := hb
-  refine ⟨WholeIntervalPolynomial.Certificate.add (WholeIntervalPolynomial.Certificate.smul b.s la) (WholeIntervalPolynomial.Certificate.smul (-(a.s:ℤ)) lb),?_,?_,?_,?_⟩
-  · rw [r66k_length_add,r66k_length_smul,r66k_length_smul]
-    exact max_le_max hla hlb
-  · intro j
-    rw [WholeIntervalPolynomial.Certificate.getD_add,r66k_getD_smul,r66k_getD_smul]
-    calc _≤|(b.s:ℤ)*la.getD j 0|+|(-(a.s:ℤ))*lb.getD j 0| := abs_add_le _ _
-      _≤(b.s:ℤ)*a.β+(a.s:ℤ)*b.β := by
-        rw [abs_mul,abs_mul,abs_neg,Nat.abs_cast,Nat.abs_cast]
-        exact add_le_add (mul_le_mul_of_nonneg_left (hba j) (by positivity))
-          (mul_le_mul_of_nonneg_left (hbb j) (by positivity))
-      _=_ := by simp only [r66kK.sub]; push_cast; ring
-  · simp only [r66kK.sub,r66k_enc_add,r66k_enc_smul,hNa,hNb]
-    ring
-  · simp only [r66kK.sub,WholeIntervalPolynomial.Certificate.toPoly_add,WholeIntervalPolynomial.Certificate.toPoly_smul,hpa,hpb,Int.cast_natCast,
-      Int.cast_neg,Nat.cast_mul,map_mul,map_neg]
-    ring
-
-private theorem r66kK.Rep.mul {B : ℤ} {a b : r66kK} {p q : ℚ[X]} (ha : a.Rep B p) (hb : b.Rep B q) :
-    (a.mul b).Rep B (p*q) := by
-  obtain ⟨la,hla,hba,hNa,hpa⟩ := ha
-  obtain ⟨lb,hlb,hbb,hNb,hpb⟩ := hb
-  refine ⟨WholeIntervalPolynomial.Certificate.mul la lb,?_,?_,?_,?_⟩
-  · have := r66k_length_mul la lb
-    simp only [r66kK.mul]
-    omega
-  · intro j
-    have h1 := r66k_mul_bound la lb j
-    have h2 : r66kasum la*r66kamax lb≤a.n*a.β*b.β :=
-      Nat.mul_le_mul ((r66k_asum_le hba).trans (Nat.mul_le_mul_right _ hla)) (r66k_amax_le hbb)
-    simp only [r66kK.mul]
-    calc _≤((r66kasum la*r66kamax lb:ℕ):ℤ) := by exact_mod_cast h1
-      _≤_ := by exact_mod_cast h2
-  · simp only [r66kK.mul,r66k_enc_mul,hNa,hNb]
-  · simp only [r66kK.mul,WholeIntervalPolynomial.Certificate.toPoly_mul,hpa,hpb,Nat.cast_mul,map_mul]
-    ring
-
-private theorem r66kK.rep_const (B : ℤ) (q : ℚ) : (r66kK.const q).Rep B (C q) := by
-  refine ⟨[q.num],by simp [r66kK.const],fun j => ?_,by simp [r66kK.const,r66kenc],?_⟩
-  · rcases j with _|j
-    · simp only [List.getD_cons_zero,r66kK.const]
-      exact (Int.abs_eq_natAbs _).le
-    · simp
-  · simp only [r66kK.const,toPoly,mul_zero,add_zero,← map_mul,Rat.den_mul_eq_num]
-
-private theorem r66kK.rep_ofScaled (B : ℤ) {S : Scaled} {p : ℚ[X]} (hS : S.Rep p) :
-    (r66kK.ofScaled B S).Rep B p :=
-  ⟨S.l,le_rfl,r66k_getD_le_amax S.l,rfl,hS⟩
-
-private theorem r66kK.Rep.toScaled {B : ℤ} {k : r66kK} {p : ℚ[X]} (hk : k.Rep B p) :
-    (k.toScaled B).Rep p := by
-  unfold r66kK.toScaled
-  split_ifs with h
-  · obtain ⟨l,hl,hb,hN,hp⟩ := hk
-    have hB : 0<B := lt_of_le_of_lt (by positivity) h
-    show toPoly (r66kdec B k.n k.N)=_
-    rw [hN,r66k_dec_enc hB _ _ hl (fun j => by obtain ⟨h1,h2⟩ := abs_le.1 (hb j); constructor <;> linarith)]
-    exact hp
-  · show toPoly []=C ((0:ℕ):ℚ)*p
-    simp [toPoly]
-
-
-/-! ### Composition with `s+tX` by Kronecker substitution
-
-The entries of the composition of `L` with `s+tX` are at most `Σ|Lᵢ| (|s|+|t|+1)^(n-1)`, so they
-are the balanced base-`B` digits of the value of `L` at `s+tB` for `B` above twice that bound. -/
-
-private theorem r66k_asum_add : ∀ l m : List ℤ,
-    r66kasum (WholeIntervalPolynomial.Certificate.add l m)≤r66kasum l+r66kasum m
-  | [],m => by simp [WholeIntervalPolynomial.Certificate.add,r66kasum]
-  | a :: l,[] => by simp [WholeIntervalPolynomial.Certificate.add,r66kasum]
-  | a :: l,b :: m => by
-    have ih := r66k_asum_add l m
-    have := Int.natAbs_add_le a b
-    simp only [WholeIntervalPolynomial.Certificate.add,r66kasum]
-    omega
-
-private theorem r66k_asum_affMulAux (s t : ℤ) : ∀ (c : ℤ) (z : List ℤ),
-    r66kasum (WholeIntervalPolynomial.Certificate.affMulAux s t c z)≤
-      s.natAbs*r66kasum z+t.natAbs*c.natAbs+t.natAbs*r66kasum z
-  | c,[] => by simp [WholeIntervalPolynomial.Certificate.affMulAux,r66kasum,Int.natAbs_mul]
-  | c,x :: z => by
-    have ih := r66k_asum_affMulAux s t x z
-    have h1 := Int.natAbs_add_le (s*x) (t*c)
-    simp only [WholeIntervalPolynomial.Certificate.affMulAux,r66kasum,Int.natAbs_mul] at h1 ⊢
-    nlinarith
-
-private theorem r66k_asum_affMul (s t : ℤ) (z : List ℤ) :
-    r66kasum (WholeIntervalPolynomial.Certificate.affMul s t z)≤(s.natAbs+t.natAbs)*r66kasum z := by
-  unfold WholeIntervalPolynomial.Certificate.affMul
-  split_ifs with h
-  · obtain ⟨rfl,rfl⟩ := h
-    cases z with
-    | nil => simp [WholeIntervalPolynomial.Certificate.shiftMul,r66kasum]
-    | cons x z =>
-      have := r66k_asum_add (x :: z) (0 :: x :: z)
-      simp only [WholeIntervalPolynomial.Certificate.shiftMul]
-      simp only [r66kasum] at this ⊢
-      simp
-      omega
-  · cases z with
-    | nil => simp [WholeIntervalPolynomial.Certificate.affMulGen,r66kasum]
-    | cons x z =>
-      have := r66k_asum_affMulAux s t x z
-      simp only [WholeIntervalPolynomial.Certificate.affMulGen,r66kasum,Int.natAbs_mul]
-      nlinarith
-
-private theorem r66k_asum_compAff (s t : ℤ) : ∀ l : List ℤ,
-    r66kasum (WholeIntervalPolynomial.Certificate.compAff s t l)≤
-      r66kasum l*(s.natAbs+t.natAbs+1)^(l.length-1)
-  | [] => by simp [WholeIntervalPolynomial.Certificate.compAff,r66kasum]
-  | b :: l => by
-    have h1 := r66k_asum_add [b] (WholeIntervalPolynomial.Certificate.affMul s t
-      (WholeIntervalPolynomial.Certificate.compAff s t l))
-    have h2 := r66k_asum_affMul s t (WholeIntervalPolynomial.Certificate.compAff s t l)
-    have hb : r66kasum [b]=b.natAbs := by simp [r66kasum]
-    rw [WholeIntervalPolynomial.Certificate.compAff]
-    simp only [r66kasum,List.length_cons,Nat.add_sub_cancel]
-    rcases l with _|⟨c,l⟩
-    · simp [WholeIntervalPolynomial.Certificate.compAff,WholeIntervalPolynomial.Certificate.affMul,
-        WholeIntervalPolynomial.Certificate.shiftMul,WholeIntervalPolynomial.Certificate.affMulGen,
-        WholeIntervalPolynomial.Certificate.add,r66kasum]
-    · have ih := r66k_asum_compAff s t (c :: l)
-      generalize r66kasum (WholeIntervalPolynomial.Certificate.compAff s t (c :: l))=A at h1 h2 ih
-      simp only [List.length_cons,Nat.add_sub_cancel] at ih ⊢
-      have key : (s.natAbs+t.natAbs)*A≤r66kasum (c :: l)*(s.natAbs+t.natAbs+1)^(l.length+1) :=
-        calc (s.natAbs+t.natAbs)*A≤(s.natAbs+t.natAbs+1)*A := Nat.mul_le_mul_right _ (Nat.le_succ _)
-          _≤(s.natAbs+t.natAbs+1)*(r66kasum (c :: l)*(s.natAbs+t.natAbs+1)^l.length) :=
-            Nat.mul_le_mul_left _ ih
-          _=_ := by ring
-      have hM : 1≤(s.natAbs+t.natAbs+1)^(l.length+1) := Nat.one_le_pow _ _ (by omega)
-      have hb' : b.natAbs≤b.natAbs*(s.natAbs+t.natAbs+1)^(l.length+1) := Nat.le_mul_of_pos_right _ hM
-      rw [hb] at h1
-      rw [add_mul]
-      omega
-
-private theorem r66k_getD_le_asum : ∀ (l : List ℤ) (j : ℕ),(l.getD j 0).natAbs≤r66kasum l
-  | [],j => by simp [r66kasum]
-  | a :: l,0 => by simp [r66kasum]
-  | a :: l,j+1 => by
-    have := r66k_getD_le_asum l j
-    simp only [List.getD_cons_succ,r66kasum]
-    omega
-
-private theorem r66k_length_affMulAux (s t : ℤ) : ∀ (c : ℤ) (z : List ℤ),
-    (WholeIntervalPolynomial.Certificate.affMulAux s t c z).length=z.length+1
-  | c,[] => rfl
-  | c,x :: z => by
-    simp [WholeIntervalPolynomial.Certificate.affMulAux,r66k_length_affMulAux s t x z]
-
-private theorem r66k_length_affMul (s t : ℤ) (z : List ℤ) :
-    (WholeIntervalPolynomial.Certificate.affMul s t z).length≤z.length+1 := by
-  unfold WholeIntervalPolynomial.Certificate.affMul
-  split_ifs
-  · cases z with
-    | nil => simp [WholeIntervalPolynomial.Certificate.shiftMul]
-    | cons x z =>
-      rw [WholeIntervalPolynomial.Certificate.shiftMul,r66k_length_add]
-      simp
-  · cases z with
-    | nil => simp [WholeIntervalPolynomial.Certificate.affMulGen]
-    | cons x z =>
-      simp [WholeIntervalPolynomial.Certificate.affMulGen,r66k_length_affMulAux]
-
-private theorem r66k_length_compAff (s t : ℤ) : ∀ l : List ℤ,
-    (WholeIntervalPolynomial.Certificate.compAff s t l).length≤l.length
-  | [] => by simp [WholeIntervalPolynomial.Certificate.compAff]
-  | b :: l => by
-    have ih := r66k_length_compAff s t l
-    have h := r66k_length_affMul s t (WholeIntervalPolynomial.Certificate.compAff s t l)
-    rw [WholeIntervalPolynomial.Certificate.compAff,r66k_length_add]
-    simp only [List.length_cons,List.length_nil]
-    omega
-
-private def r66kkcenterWith (B s t : ℤ) (L : List ℤ) : List ℤ :=
-  r66kdec B L.length (r66kenc (s+t*B) L)
-/-- The composition of `L` with `s+tX`, by one evaluation at `s+tB`, read back in base
-`B = 2 Σ|Lᵢ| (|s|+|t|+1)^(n-1) + 1`. -/
-private def r66kkcenterAux (s t : ℤ) (L : List ℤ) : List ℤ :=
-  r66kkcenterWith (2*(r66kasum L*(s.natAbs+t.natAbs+1)^(L.length-1))+1) s t L
-
-private theorem r66k_toPoly_kcenterAux (s t : ℤ) (L : List ℤ) :
-    toPoly (r66kkcenterAux s t L)=toPoly (WholeIntervalPolynomial.Certificate.compAff s t L) := by
-  rw [r66kkcenterAux,r66kkcenterWith]
-  generalize hB : (2*(r66kasum L*(s.natAbs+t.natAbs+1)^(L.length-1))+1 : ℤ)=B
-  have hB0 : 0<B := by rw [← hB]; positivity
-  have he : r66kenc (s+t*B) L=r66kenc B (WholeIntervalPolynomial.Certificate.compAff s t L) := by
-    have e : (r66kenc (s+t*B) L : ℚ)=(r66kenc B (WholeIntervalPolynomial.Certificate.compAff s t L) : ℚ) := by
-      rw [r66k_enc_eq,r66k_enc_eq,WholeIntervalPolynomial.Certificate.toPoly_compAff,eval_comp]
-      simp
-    exact_mod_cast e
-  rw [he]
-  apply r66k_dec_enc hB0 _ _ (r66k_length_compAff s t L)
-  intro j
-  have h1 := r66k_getD_le_asum (WholeIntervalPolynomial.Certificate.compAff s t L) j
-  have h2 := r66k_asum_compAff s t L
-  have h3 : ((WholeIntervalPolynomial.Certificate.compAff s t L).getD j 0).natAbs≤
-      r66kasum L*(s.natAbs+t.natAbs+1)^(L.length-1) := h1.trans h2
-  have h4 : |(WholeIntervalPolynomial.Certificate.compAff s t L).getD j 0|≤
-      ((r66kasum L*(s.natAbs+t.natAbs+1)^(L.length-1) : ℕ) : ℤ) := by
-    rw [Int.abs_eq_natAbs]; exact_mod_cast h3
-  obtain ⟨h5,h6⟩ := abs_le.1 h4
-  push_cast at h5 h6 hB
-  constructor <;> linarith
-
-/-- `Scaled.center`, with the composition by `r66kkcenterAux`. -/
-private def _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.kcenter
-    (c : Scaled) (num den : ℕ) (s t : ℤ) : Scaled :=
-  ⟨r66kkcenterAux s t (WholeIntervalPolynomial.Certificate.prescale num den (c.l.length-1) 0 c.l),
-    c.s*den^(c.l.length-1)⟩
-
-private theorem _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.Rep.kcentered
-    {c : Scaled} {p : ℚ[X]} (hc : c.Rep p) (num den : ℕ) (s t : ℤ)
-    {a b : ℚ} (hden : den≠0) (hm : (a+b)/2=num*s/den) (hh : (b-a)/2=num*t/den) :
-    (c.kcenter num den s t).Rep (WholeIntervalPolynomial.centered a b p) := by
-  have h := hc.centered num den s t hden hm hh
-  unfold Scaled.Rep at h ⊢
-  show toPoly (r66kkcenterAux s t _)=_
-  rw [r66k_toPoly_kcenterAux]
-  exact h
-
-private theorem r66_rep_eq {S : Scaled} {p q : ℚ[X]} (e : q=p) (h : S.Rep q) : S.Rep p := e ▸ h
-
-/-- The numerator on encoded lists, with its sums and products written out; the partial
+/-- The numerator on packed lists, with its sums and products written out; the partial
 products `a0a1`, `a3a4`, `a0a1a2`, `a2a3a4` are shared. -/
-private def r66_numKT (A a0 a1 a2 a3 a4 w0 w1 w2 w3 w4 v0 v1 v2 v3 v4 P01 P34 P012 P234 : r66kK) :
-    r66kK :=
-  (((r66kK.const 2).mul A).mul (P012.mul P34)).sub ((r66kK.const Rplus).mul
+private def r66_numKT (A a0 a1 a2 a3 a4 w0 w1 w2 w3 w4 v0 v1 v2 v3 v4 P01 P34 P012 P234 : Packed) :
+    Packed :=
+  (((Packed.const 2).mul A).mul (P012.mul P34)).sub ((Packed.const Rplus).mul
     ((w0.mul (v0.add (a0.mul a0))).mul (a1.mul P234)
       |>.add ((w1.mul (v1.add (a1.mul a1))).mul (a0.mul P234))
       |>.add ((w2.mul (v2.add (a2.mul a2))).mul (P01.mul P34))
       |>.add ((w3.mul (v3.add (a3.mul a3))).mul (P012.mul a4))
       |>.add ((w4.mul (v4.add (a4.mul a4))).mul (P012.mul a3))))
-private def r66_numKS (A a0 a1 a2 a3 a4 w0 w1 w2 w3 w4 v0 v1 v2 v3 v4 P01 P34 : r66kK) : r66kK :=
+private def r66_numKS (A a0 a1 a2 a3 a4 w0 w1 w2 w3 w4 v0 v1 v2 v3 v4 P01 P34 : Packed) : Packed :=
   r66_numKT A a0 a1 a2 a3 a4 w0 w1 w2 w3 w4 v0 v1 v2 v3 v4 P01 P34 (P01.mul a2) (a2.mul P34)
-private def r66_numKE (A a0 a1 a2 a3 a4 w0 w1 w2 w3 w4 v0 v1 v2 v3 v4 : r66kK) : r66kK :=
+private def r66_numKE (A a0 a1 a2 a3 a4 w0 w1 w2 w3 w4 v0 v1 v2 v3 v4 : Packed) : Packed :=
   r66_numKS A a0 a1 a2 a3 a4 w0 w1 w2 w3 w4 v0 v1 v2 v3 v4 (a0.mul a1) (a3.mul a4)
-private def r66_numKB (B : ℤ) (A a0 a1 a2 a3 a4 w0 w1 w2 w3 w4 v0 v1 v2 v3 v4 : Scaled) :
-    r66kK :=
-  r66_numKE (.ofScaled B A) (.ofScaled B a0) (.ofScaled B a1) (.ofScaled B a2) (.ofScaled B a3)
-    (.ofScaled B a4) (.ofScaled B w0) (.ofScaled B w1) (.ofScaled B w2) (.ofScaled B w3)
-    (.ofScaled B w4) (.ofScaled B v0) (.ofScaled B v1) (.ofScaled B v2) (.ofScaled B v3)
-    (.ofScaled B v4)
-private def r66_numWith (B : ℤ) (A a0 a1 a2 a3 a4 w0 w1 w2 w3 w4 v0 v1 v2 v3 v4 : Scaled) :
-    Scaled :=
-  (r66_numKB B A a0 a1 a2 a3 a4 w0 w1 w2 w3 w4 v0 v1 v2 v3 v4).toScaled B
-/-- The numerator of the lists, read back in a base above twice its coefficient bound. -/
+private def r66_numKB (e : ℕ) (A a0 a1 a2 a3 a4 w0 w1 w2 w3 w4 v0 v1 v2 v3 v4 : Scaled) :
+    Packed :=
+  r66_numKE (.ofScaled e A) (.ofScaled e a0) (.ofScaled e a1) (.ofScaled e a2) (.ofScaled e a3)
+    (.ofScaled e a4) (.ofScaled e w0) (.ofScaled e w1) (.ofScaled e w2) (.ofScaled e w3)
+    (.ofScaled e w4) (.ofScaled e v0) (.ofScaled e v1) (.ofScaled e v2) (.ofScaled e v3)
+    (.ofScaled e v4)
+/-- The numerator of the lists, read back in a power-of-two base above twice its coefficient
+bound. -/
 private def r66_num (A a0 a1 a2 a3 a4 w0 w1 w2 w3 w4 v0 v1 v2 v3 v4 : Scaled) : Scaled :=
-  r66_numWith (2*(r66_numKB 0 A a0 a1 a2 a3 a4 w0 w1 w2 w3 w4 v0 v1 v2 v3 v4).β+1)
-    A a0 a1 a2 a3 a4 w0 w1 w2 w3 w4 v0 v1 v2 v3 v4
-private theorem r66_numWith_rep (B : ℤ) {A a0 a1 a2 a3 a4 w0 w1 w2 w3 w4 v0 v1 v2 v3 v4 : Scaled}
-    {pA p0 p1 p2 p3 p4 q0 q1 q2 q3 q4 u0 u1 u2 u3 u4 : ℚ[X]}
-    (hA : A.Rep pA) (h0 : a0.Rep p0) (h1 : a1.Rep p1) (h2 : a2.Rep p2) (h3 : a3.Rep p3)
-    (h4 : a4.Rep p4) (g0 : w0.Rep q0) (g1 : w1.Rep q1) (g2 : w2.Rep q2) (g3 : w3.Rep q3)
-    (g4 : w4.Rep q4) (k0 : v0.Rep u0) (k1 : v1.Rep u1) (k2 : v2.Rep u2) (k3 : v3.Rep u3)
-    (k4 : v4.Rep u4) :
-    (r66_numWith B A a0 a1 a2 a3 a4 w0 w1 w2 w3 w4 v0 v1 v2 v3 v4).Rep
-      (C 2*pA*((p0*p1*p2)*(p3*p4))-C Rplus*(q0*(u0+p0^2)*(p1*(p2*(p3*p4)))+
-        q1*(u1+p1^2)*(p0*(p2*(p3*p4)))+q2*(u2+p2^2)*((p0*p1)*(p3*p4))+
-        q3*(u3+p3^2)*((p0*p1*p2)*p4)+q4*(u4+p4^2)*((p0*p1*p2)*p3))) := by
-  have jA := r66kK.rep_ofScaled B hA
-  have j0 := r66kK.rep_ofScaled B h0
-  have j1 := r66kK.rep_ofScaled B h1
-  have j2 := r66kK.rep_ofScaled B h2
-  have j3 := r66kK.rep_ofScaled B h3
-  have j4 := r66kK.rep_ofScaled B h4
-  have m0 := r66kK.rep_ofScaled B g0
-  have m1 := r66kK.rep_ofScaled B g1
-  have m2 := r66kK.rep_ofScaled B g2
-  have m3 := r66kK.rep_ofScaled B g3
-  have m4 := r66kK.rep_ofScaled B g4
-  have n0 := r66kK.rep_ofScaled B k0
-  have n1 := r66kK.rep_ofScaled B k1
-  have n2 := r66kK.rep_ofScaled B k2
-  have n3 := r66kK.rep_ofScaled B k3
-  have n4 := r66kK.rep_ofScaled B k4
-  have P01 := j0.mul j1
-  have P34 := j3.mul j4
-  have P012 := P01.mul j2
-  have P234 := j2.mul P34
-  exact r66_rep_eq (by ring) (r66kK.Rep.toScaled
-    ((((r66kK.rep_const B 2).mul jA).mul (P012.mul P34)).sub ((r66kK.rep_const B Rplus).mul
-      ((m0.mul (n0.add (j0.mul j0))).mul (j1.mul P234)
-        |>.add ((m1.mul (n1.add (j1.mul j1))).mul (j0.mul P234))
-        |>.add ((m2.mul (n2.add (j2.mul j2))).mul (P01.mul P34))
-        |>.add ((m3.mul (n3.add (j3.mul j3))).mul (P012.mul j4))
-        |>.add ((m4.mul (n4.add (j4.mul j4))).mul (P012.mul j3))))))
+  Packed.eval fun e => r66_numKB e A a0 a1 a2 a3 a4 w0 w1 w2 w3 w4 v0 v1 v2 v3 v4
 private theorem r66_num_rep {A a0 a1 a2 a3 a4 w0 w1 w2 w3 w4 v0 v1 v2 v3 v4 : Scaled}
     {pA p0 p1 p2 p3 p4 q0 q1 q2 q3 q4 u0 u1 u2 u3 u4 : ℚ[X]}
     (hA : A.Rep pA) (h0 : a0.Rep p0) (h1 : a1.Rep p1) (h2 : a2.Rep p2) (h3 : a3.Rep p3)
@@ -833,8 +287,34 @@ private theorem r66_num_rep {A a0 a1 a2 a3 a4 w0 w1 w2 w3 w4 v0 v1 v2 v3 v4 : Sc
     (r66_num A a0 a1 a2 a3 a4 w0 w1 w2 w3 w4 v0 v1 v2 v3 v4).Rep
       (C 2*pA*((p0*p1*p2)*(p3*p4))-C Rplus*(q0*(u0+p0^2)*(p1*(p2*(p3*p4)))+
         q1*(u1+p1^2)*(p0*(p2*(p3*p4)))+q2*(u2+p2^2)*((p0*p1)*(p3*p4))+
-        q3*(u3+p3^2)*((p0*p1*p2)*p4)+q4*(u4+p4^2)*((p0*p1*p2)*p3))) :=
-  r66_numWith_rep _ hA h0 h1 h2 h3 h4 g0 g1 g2 g3 g4 k0 k1 k2 k3 k4
+        q3*(u3+p3^2)*((p0*p1*p2)*p4)+q4*(u4+p4^2)*((p0*p1*p2)*p3))) := by
+  refine Packed.Rep.eval fun e => ?_
+  have jA := Packed.rep_ofScaled e hA
+  have j0 := Packed.rep_ofScaled e h0
+  have j1 := Packed.rep_ofScaled e h1
+  have j2 := Packed.rep_ofScaled e h2
+  have j3 := Packed.rep_ofScaled e h3
+  have j4 := Packed.rep_ofScaled e h4
+  have m0 := Packed.rep_ofScaled e g0
+  have m1 := Packed.rep_ofScaled e g1
+  have m2 := Packed.rep_ofScaled e g2
+  have m3 := Packed.rep_ofScaled e g3
+  have m4 := Packed.rep_ofScaled e g4
+  have n0 := Packed.rep_ofScaled e k0
+  have n1 := Packed.rep_ofScaled e k1
+  have n2 := Packed.rep_ofScaled e k2
+  have n3 := Packed.rep_ofScaled e k3
+  have n4 := Packed.rep_ofScaled e k4
+  have P01 := j0.mul j1
+  have P34 := j3.mul j4
+  have P012 := P01.mul j2
+  have P234 := j2.mul P34
+  exact (((((Packed.rep_const e 2).mul jA).mul (P012.mul P34)).sub ((Packed.rep_const e Rplus).mul
+      ((m0.mul (n0.add (j0.mul j0))).mul (j1.mul P234)
+        |>.add ((m1.mul (n1.add (j1.mul j1))).mul (j0.mul P234))
+        |>.add ((m2.mul (n2.add (j2.mul j2))).mul (P01.mul P34))
+        |>.add ((m3.mul (n3.add (j3.mul j3))).mul (P012.mul j4))
+        |>.add ((m4.mul (n4.add (j4.mul j4))).mul (P012.mul j3))))).of_eq (by ring))
 
 private theorem r66_numerator_eq (r : Row) (e : Endpoint) : numerator r e=
     C 2*A r e*((alpha r e 0*alpha r e 1*alpha r e 2)*(alpha r e 3*alpha r e 4))-C Rplus*
@@ -864,13 +344,13 @@ private theorem r66_numerator_eq (r : Row) (e : Endpoint) : numerator r e=
     Finset.prod_singleton]
   ring
 
-private def r66_N (r : Row) (e : Endpoint) : Scaled := r66_red
+private def r66_N (r : Row) (e : Endpoint) : Scaled := Scaled.reduce
   (r66_num (r66_A r e) (r66_a0 r) (r66_a1 r) (r66_a2 r e) (r66_a3 r) (r66_a4 r)
     (r66_w0 r e) (r66_w1 e) (r66_f r) (r66_w3 r e) (r66_w4 r e)
     (r66_v0 r) (r66_v1 r) (r66_v2 r e) (r66_v3 r) (r66_v4 r))
 private theorem r66_N_rep (r : Row) (e : Endpoint) : (r66_N r e).Rep (numerator r e) := by
   rw [r66_numerator_eq]
-  exact r66_rep_red (r66_num_rep (r66_A_rep r e) (r66_a0_rep r e) (r66_a1_rep r e) (r66_a2_rep r e)
+  exact Scaled.Rep.reduce (r66_num_rep (r66_A_rep r e) (r66_a0_rep r e) (r66_a1_rep r e) (r66_a2_rep r e)
     (r66_a3_rep r e) (r66_a4_rep r e) (r66_w0_rep r e) (r66_w1_rep r e) (r66_w2_rep r e)
     (r66_w3_rep r e) (r66_w4_rep r e) (r66_v0_rep r e) (r66_v1_rep r e) (r66_v2_rep r e)
     (r66_v3_rep r e) (r66_v4_rep r e))
@@ -1088,10 +568,10 @@ private theorem r66_upperZ_eq (D : ℕ) (L : List ℤ) :
 
 /-! ### The low row: one Chebyshev derivative bound -/
 
-private def r66_lowC (e : Endpoint) : Scaled := (r66_red (r66_derivS (r66_N .low e))).kcenter 3 40 1 1
+private def r66_lowC (e : Endpoint) : Scaled := (Scaled.reduce (r66_derivS (r66_N .low e))).kcenter 3 40 1 1
 private theorem r66_lowC_rep (e : Endpoint) : (r66_lowC e).Rep
     (WholeIntervalPolynomial.centered 0 (3/20) (numerator .low e).derivative) :=
-  (r66_rep_red (r66_rep_deriv (r66_N_rep .low e))).kcentered 3 40 1 1 (by norm_num) (by norm_num)
+  (Scaled.Rep.reduce (r66_rep_deriv (r66_N_rep .low e))).kcentered 3 40 1 1 (by norm_num) (by norm_num)
     (by norm_num)
 private def r66_lowE (e : Endpoint) : Scaled := (r66_N .low e).kcenter 3 20 1 0
 private theorem r66_lowE_rep (e : Endpoint) : (r66_lowE e).Rep
@@ -1170,12 +650,12 @@ theorem low_positive (e : Endpoint) {z : ℝ} (hz : z∈Icc (0:ℝ) (3/20)) :
 /-! ### The middle row: the centered quadratic reserve -/
 
 private def r66_midS (e : Endpoint) : Scaled :=
-  r66_red (r66_rescale (r66_red ((r66_N .middle e).kcenter 47 200 1 1)) 200 47)
+  Scaled.reduce (r66_rescale (Scaled.reduce ((r66_N .middle e).kcenter 47 200 1 1)) 200 47)
 private theorem r66_midS_rep (e : Endpoint) : (r66_midS e).Rep (middleShift e) := by
   have h := (r66_N_rep .middle e).kcentered 47 200 1 1 (a:=0) (b:=2*(47/200))
     (by norm_num) (by norm_num) (by norm_num)
   rw [r66_centered_comp,show (47/200:ℚ)=((47:ℕ):ℚ)/((200:ℕ):ℚ) by norm_num] at h
-  exact r66_rep_red (r66_rep_rescale (by norm_num) (by norm_num) (r66_rep_red h))
+  exact Scaled.Rep.reduce (r66_rep_rescale (by norm_num) (by norm_num) (Scaled.Rep.reduce h))
 
 private theorem r66_mid_facts_V :
     (r66_midS .V).s≠0 ∧ (r66_midS .V).l.length≤degree .middle .V-2+2+1 ∧
@@ -1279,12 +759,12 @@ theorem middle_positive (e : Endpoint) {z : ℝ} (hz : z∈Icc (3/20:ℝ) (1/4))
 /-! ### The high row: the positive quotient at the transition -/
 
 private def r66_hiS (e : Endpoint) : Scaled :=
-  r66_red (r66_rescale (r66_red ((r66_N .high e).kcenter 1 4 1 1)) 4 1)
+  Scaled.reduce (r66_rescale (Scaled.reduce ((r66_N .high e).kcenter 1 4 1 1)) 4 1)
 private theorem r66_hiS_rep (e : Endpoint) : (r66_hiS e).Rep (highShift e) := by
   have h := (r66_N_rep .high e).kcentered 1 4 1 1 (a:=0) (b:=2*(1/4))
     (by norm_num) (by norm_num) (by norm_num)
   rw [r66_centered_comp,show (1/4:ℚ)=((1:ℕ):ℚ)/((4:ℕ):ℚ) by norm_num] at h
-  exact r66_rep_red (r66_rep_rescale (by norm_num) (by norm_num) (r66_rep_red h))
+  exact Scaled.Rep.reduce (r66_rep_rescale (by norm_num) (by norm_num) (Scaled.Rep.reduce h))
 private def r66_hiQ (e : Endpoint) : Scaled := (r66_hiS e).divX.kcenter 9 40 1 1
 
 private theorem r66_high_facts_V :

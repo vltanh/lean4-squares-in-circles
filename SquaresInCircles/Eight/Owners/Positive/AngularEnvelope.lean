@@ -129,8 +129,7 @@ theorem A_support {ab : Fin 4} (hab : ab=0 ∨ ab=2)
         (k+l*phi (if ab=0 then 0 else delta C.theta A))/2 := by
   rw [force_A hab]
   rcases hab with rfl | rfl
-  · simpa [rotatedPair,phi,signedSupport,pairNorm] using
-      rotatedPair_signedSupport R k l 0 0
+  · simp [phi,signedSupport,pairNorm]
   · simpa [rotatedPair,phi] using
       rotatedPair_signedSupport R k l (delta C.theta A) 0
 

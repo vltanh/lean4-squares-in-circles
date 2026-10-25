@@ -1,6 +1,6 @@
 module
 
-public import SquaresInCircles.Eight.Words.Short.Outer.One.SameContact
+public import SquaresInCircles.Eight.Words.Short.Outer.One.UnitScalars
 public import SquaresInCircles.Eight.Words.Common.OneSecondary
 
 /-!

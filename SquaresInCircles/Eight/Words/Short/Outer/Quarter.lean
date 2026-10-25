@@ -1,10 +1,9 @@
 module
 
-public import SquaresInCircles.Eight.Words.Short.Outer.One.SameSecondary
+public import SquaresInCircles.Eight.Words.Short.Outer.One.OppositeFiveLowerSecondaryCurvature
 public import SquaresInCircles.Eight.Words.Short.Outer.One.SamePrimary
 public import SquaresInCircles.Eight.Words.Short.Outer.One.OppositePrimary
 public import SquaresInCircles.Eight.Words.Short.Outer.One.OppositeFive
-public import SquaresInCircles.Eight.Words.Short.Outer.One.EdgeFiveComplement
 
 /-!
 # Eight squares: every original outer quarter-one owner of the short word

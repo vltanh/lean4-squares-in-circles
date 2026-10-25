@@ -1,8 +1,8 @@
 module
 
-public import SquaresInCircles.Eight.Frames.NearestAxisRecode
+public import SquaresInCircles.Eight.Frames.PhysicalCycle
 public import SquaresInCircles.Eight.Frames.PhysicalTransport
-public import SquaresInCircles.Eight.Words.QuarterDoubleExclusion
+public import SquaresInCircles.Eight.Words.FirstNegativeOutsideEntry
 public import SquaresInCircles.Eight.Boundary.Realization
 
 /-!

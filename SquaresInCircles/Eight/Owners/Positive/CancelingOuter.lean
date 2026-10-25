@@ -1,6 +1,6 @@
 module
 
-public import SquaresInCircles.Eight.Owners.Hard.CancelingOuter
+public import SquaresInCircles.Eight.Owners.Hard.CancelingOuterCycle
 
 /-!
 # Eight squares: the positive canceling outer error at a middle tangent at least `1/5`

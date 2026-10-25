@@ -53,12 +53,12 @@ $x_3^2 + y_3^2 = q$, $x_4^2 + y_4^2 = q$ and the signs
 $x_1, x_2, y_3 > 0 > x_4$.
 
 *Lean:
-[`Eight.Stationary.Coordinates`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L54),
-[`Eight.Stationary.Coordinates.IsChain`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L84),
-[`Eight.Stationary.Coordinates.defect`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L71),
-[`Eight.Stationary.Coordinates.anchorPoints`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L193),
-[`Eight.Stationary.Coordinates.anchor_circle`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L211),
-[`Eight.Stationary.Coordinates.IsStationary`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L96).*
+[`Eight.Stationary.Coordinates`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L80),
+[`Eight.Stationary.Coordinates.IsChain`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L110),
+[`Eight.Stationary.Coordinates.defect`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L97),
+[`Eight.Stationary.Coordinates.anchorPoints`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L219),
+[`Eight.Stationary.Coordinates.anchor_circle`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L237),
+[`Eight.Stationary.Coordinates.IsStationary`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L122).*
 
 ### Lemma J.1 (derivatives along the chain)
 
@@ -94,15 +94,15 @@ $2x_4\partial x_4 + 2y_4\partial y_4 = 0$, from the formulas for $h_1$ and
 $h_2$, and from $\frac{dt}{dz} = \frac2{1 + z^2}$. $\square$
 
 *Lean:
-[`Eight.Stationary.Coordinates.IsChain.radicals`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L114),
-[`Eight.Stationary.Coordinates.y₄deriv`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L72),
-[`Eight.Stationary.Coordinates.h₁deriv`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L74),
-[`Eight.Stationary.Coordinates.h₂deriv`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L75),
-[`Eight.Stationary.Coordinates.positionDerivative`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L77),
-[`Eight.Stationary.Coordinates.tiltDerivative`](../../SquaresInCircles/Eight/Stationary/Coordinates.lean#L79),
-[`Eight.Stationary.radicalCoordinates`](../../SquaresInCircles/Eight/Stationary/System.lean#L27),
-[`Eight.Stationary.familyY_radical`](../../SquaresInCircles/Eight/Stationary/System.lean#L103),
-[`Eight.Stationary.familyZ_radical`](../../SquaresInCircles/Eight/Stationary/System.lean#L118).*
+[`Eight.Stationary.Coordinates.IsChain.radicals`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L140),
+[`Eight.Stationary.Coordinates.y₄deriv`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L98),
+[`Eight.Stationary.Coordinates.h₁deriv`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L100),
+[`Eight.Stationary.Coordinates.h₂deriv`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L101),
+[`Eight.Stationary.Coordinates.positionDerivative`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L103),
+[`Eight.Stationary.Coordinates.tiltDerivative`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L105),
+[`Eight.Stationary.radicalCoordinates`](../../SquaresInCircles/Eight/Stationary/System.lean#L1543),
+[`Eight.Stationary.familyY_radical`](../../SquaresInCircles/Eight/Stationary/System.lean#L1619),
+[`Eight.Stationary.familyZ_radical`](../../SquaresInCircles/Eight/Stationary/System.lean#L1634).*
 
 The second derivatives used below are, with $\partial$ for $\partial/\partial y$,
 
@@ -120,11 +120,11 @@ of trees that the kernel checks, and wherever the radicands are positive and
 the inverted values are nonzero, the symbolic derivative is the derivative.
 
 *Lean:
-[`Eight.Stationary.Formula`](../../SquaresInCircles/Eight/Stationary/Expression.lean#L29),
-[`Eight.Stationary.Formula.diff`](../../SquaresInCircles/Eight/Stationary/Expression.lean#L114),
-[`Eight.Stationary.Formula.hasDerivAt_partial`](../../SquaresInCircles/Eight/Stationary/Expression.lean#L181),
-[`Eight.Stationary.Generated.Fy_diff`](../../SquaresInCircles/Eight/Stationary/Generated/StationaryFormula.lean#L314),
-[`Eight.Stationary.Generated.Fyy_diff`](../../SquaresInCircles/Eight/Stationary/Generated/StationaryFormula.lean#L316).*
+[`Eight.Stationary.Formula`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L971),
+[`Eight.Stationary.Formula.diff`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L1056),
+[`Eight.Stationary.Formula.hasDerivAt_partial`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L1123),
+[`Eight.Stationary.Generated.Fy_diff`](../../SquaresInCircles/Eight/Stationary/Generated/LocalStationaryBounds.lean#L1170),
+[`Eight.Stationary.Generated.Fyy_diff`](../../SquaresInCircles/Eight/Stationary/Generated/LocalStationaryBounds.lean#L1172).*
 
 ## J.2 Convexity on the local rectangle
 
@@ -167,18 +167,18 @@ $4 \times 4$ grid of the pose rectangle, and the cells cover $\mathcal R$.
 $\square$
 
 *Lean:
-[`Eight.Stationary.hessian_data`](../../SquaresInCircles/Eight/Stationary/Analysis.lean#L80),
-[`Eight.Stationary.Generated.fullFyy_bound`](../../SquaresInCircles/Eight/Stationary/Generated/LocalStationaryBounds.lean#L64),
-[`Eight.Stationary.Generated.determinant_bound`](../../SquaresInCircles/Eight/Stationary/Generated/LocalStationaryBounds.lean#L206),
-[`Eight.Stationary.Generated.determinant_cover`](../../SquaresInCircles/Eight/Stationary/Generated/LocalStationaryBounds.lean#L228),
-[`Eight.Stationary.family_q_bound`](../../SquaresInCircles/Eight/Stationary/Analysis.lean#L77),
-[`Eight.Stationary.trial_gradients`](../../SquaresInCircles/Eight/Stationary/Analysis.lean#L192),
-[`Eight.Stationary.Generated.sharpTrialFy_bound`](../../SquaresInCircles/Eight/Stationary/Generated/LocalStationaryBounds.lean#L374),
-[`Eight.Stationary.Generated.sharpTrialFz_bound`](../../SquaresInCircles/Eight/Stationary/Generated/LocalStationaryBounds.lean#L380),
-[`Eight.Stationary.Generated.lowerTest_bound`](../../SquaresInCircles/Eight/Stationary/Generated/LocalStationaryBounds.lean#L338),
-[`Eight.Stationary.Generated.upperTest_bound`](../../SquaresInCircles/Eight/Stationary/Generated/LocalStationaryBounds.lean#L344),
-[`Eight.Stationary.Generated.sharpLowF_bound`](../../SquaresInCircles/Eight/Stationary/Generated/LocalStationaryBounds.lean#L350),
-[`Eight.Stationary.Generated.sharpHighF_bound`](../../SquaresInCircles/Eight/Stationary/Generated/LocalStationaryBounds.lean#L368).*
+[`Eight.Stationary.hessian_data`](../../SquaresInCircles/Eight/Stationary/System.lean#L102),
+[`Eight.Stationary.Generated.fullFyy_bound`](../../SquaresInCircles/Eight/Stationary/Generated/LocalStationaryBounds.lean#L1634),
+[`Eight.Stationary.Generated.determinant_bound`](../../SquaresInCircles/Eight/Stationary/Generated/LocalStationaryBounds.lean#L1776),
+[`Eight.Stationary.Generated.determinant_cover`](../../SquaresInCircles/Eight/Stationary/Generated/LocalStationaryBounds.lean#L1798),
+[`Eight.Stationary.family_q_bound`](../../SquaresInCircles/Eight/Stationary/System.lean#L99),
+[`Eight.Stationary.trial_gradients`](../../SquaresInCircles/Eight/Stationary/System.lean#L214),
+[`Eight.Stationary.Generated.sharpTrialFy_bound`](../../SquaresInCircles/Eight/Stationary/Generated/LocalStationaryBounds.lean#L1944),
+[`Eight.Stationary.Generated.sharpTrialFz_bound`](../../SquaresInCircles/Eight/Stationary/Generated/LocalStationaryBounds.lean#L1950),
+[`Eight.Stationary.Generated.lowerTest_bound`](../../SquaresInCircles/Eight/Stationary/Generated/LocalStationaryBounds.lean#L1908),
+[`Eight.Stationary.Generated.upperTest_bound`](../../SquaresInCircles/Eight/Stationary/Generated/LocalStationaryBounds.lean#L1914),
+[`Eight.Stationary.Generated.sharpLowF_bound`](../../SquaresInCircles/Eight/Stationary/Generated/LocalStationaryBounds.lean#L1920),
+[`Eight.Stationary.Generated.sharpHighF_bound`](../../SquaresInCircles/Eight/Stationary/Generated/LocalStationaryBounds.lean#L1938).*
 
 ### Lemma J.3 (strong convexity)
 
@@ -204,10 +204,10 @@ $0 \le \lambda \le 1$, with $\phi'' \ge \frac14|P' - P|^2$. Integrating twice,
 $\phi(1) \ge \phi(0) + \phi'(0) + \frac18|P' - P|^2$, which is (J.1). $\square$
 
 *Lean:
-[`Eight.Stationary.quadratic_form_bound`](../../SquaresInCircles/Eight/Stationary/Analysis.lean#L91),
-[`Eight.Stationary.family_segment_first`](../../SquaresInCircles/Eight/Stationary/Analysis.lean#L121),
-[`Eight.Stationary.family_segment_second`](../../SquaresInCircles/Eight/Stationary/Analysis.lean#L131),
-[`Eight.Stationary.family_strong_convex`](../../SquaresInCircles/Eight/Stationary/Analysis.lean#L151).*
+[`Eight.Stationary.quadratic_form_bound`](../../SquaresInCircles/Eight/Stationary/System.lean#L113),
+[`Eight.Stationary.family_segment_first`](../../SquaresInCircles/Eight/Stationary/System.lean#L143),
+[`Eight.Stationary.family_segment_second`](../../SquaresInCircles/Eight/Stationary/System.lean#L153),
+[`Eight.Stationary.family_strong_convex`](../../SquaresInCircles/Eight/Stationary/System.lean#L173).*
 
 ## J.3 The minimized defect
 
@@ -254,19 +254,19 @@ the intermediate value theorem gives one zero $q_*$, between $\ell_*$ and $u_*$.
 $\square$
 
 *Lean:
-[`Eight.Stationary.minimum_exists`](../../SquaresInCircles/Eight/Stationary/Analysis.lean#L176),
-[`Eight.Stationary.minimumValue`](../../SquaresInCircles/Eight/Stationary/Analysis.lean#L183),
-[`Eight.Stationary.minimum_interior`](../../SquaresInCircles/Eight/Stationary/Analysis.lean#L205),
-[`Eight.Stationary.minimizingPose_stationary`](../../SquaresInCircles/Eight/Stationary/Analysis.lean#L270),
-[`Eight.Stationary.family_radius_difference`](../../SquaresInCircles/Eight/Stationary/Analysis.lean#L287),
-[`Eight.Stationary.minimum_radius_difference`](../../SquaresInCircles/Eight/Stationary/Analysis.lean#L312),
-[`Eight.Stationary.minimum_continuous`](../../SquaresInCircles/Eight/Stationary/Analysis.lean#L323),
-[`Eight.Stationary.minimum_trial_lower`](../../SquaresInCircles/Eight/Stationary/Analysis.lean#L338),
-[`Eight.Stationary.minimum_endpoint_signs`](../../SquaresInCircles/Eight/Stationary/Analysis.lean#L345),
-[`Eight.Stationary.sharp_endpoint_signs`](../../SquaresInCircles/Eight/Stationary/System.lean#L126),
-[`Eight.Stationary.unique_minimum_zero`](../../SquaresInCircles/Eight/Stationary/Analysis.lean#L360),
-[`Eight.Stationary.qStar`](../../SquaresInCircles/Eight/Stationary/Analysis.lean#L376),
-[`Eight.Stationary.qStar_bracket`](../../SquaresInCircles/Eight/Stationary/System.lean#L143).*
+[`Eight.Stationary.minimum_exists`](../../SquaresInCircles/Eight/Stationary/System.lean#L198),
+[`Eight.Stationary.minimumValue`](../../SquaresInCircles/Eight/Stationary/System.lean#L205),
+[`Eight.Stationary.minimum_interior`](../../SquaresInCircles/Eight/Stationary/System.lean#L227),
+[`Eight.Stationary.minimizingPose_stationary`](../../SquaresInCircles/Eight/Stationary/System.lean#L292),
+[`Eight.Stationary.family_radius_difference`](../../SquaresInCircles/Eight/Stationary/System.lean#L309),
+[`Eight.Stationary.minimum_radius_difference`](../../SquaresInCircles/Eight/Stationary/System.lean#L334),
+[`Eight.Stationary.minimum_continuous`](../../SquaresInCircles/Eight/Stationary/System.lean#L345),
+[`Eight.Stationary.minimum_trial_lower`](../../SquaresInCircles/Eight/Stationary/System.lean#L360),
+[`Eight.Stationary.minimum_endpoint_signs`](../../SquaresInCircles/Eight/Stationary/System.lean#L367),
+[`Eight.Stationary.sharp_endpoint_signs`](../../SquaresInCircles/Eight/Stationary/System.lean#L1642),
+[`Eight.Stationary.unique_minimum_zero`](../../SquaresInCircles/Eight/Stationary/System.lean#L382),
+[`Eight.Stationary.qStar`](../../SquaresInCircles/Eight/Stationary/System.lean#L398),
+[`Eight.Stationary.qStar_bracket`](../../SquaresInCircles/Eight/Stationary/System.lean#L1659).*
 
 ![The graph of the minimized defect m(q) against q over the radius interval from 7831/2000 to 9789/2500: a decreasing, nearly straight line from about 0.000126 to about -0.000243, crossing zero at q*, between two dashed lines of slopes -3 and -4 through the crossing. Beside it, an enlargement of the shaded bracket from l* to u*, of width 3 times 10 to the minus 16, in which m, computed to 60 digits and drawn in units of 10 to the minus 16, decreases from about 7.4 at l* to about -3.7 at u* and crosses zero at q*](figures/appendix-j/minimum.svg)
 
@@ -399,37 +399,37 @@ $[\ell_*, u_*] \times [y_0 - 10^{-12}, y_0 + 10^{-12}] \times [z_0 - 10^{-12}, z
 $\square$
 
 *Lean:
-[`Eight.Stationary.sharpData`](../../SquaresInCircles/Eight/Stationary/System.lean#L195),
-[`Eight.Stationary.sharpData_stationary`](../../SquaresInCircles/Eight/Stationary/System.lean#L197),
-[`Eight.Stationary.radical_local_bounds`](../../SquaresInCircles/Eight/Stationary/System.lean#L50),
-[`Eight.Stationary.FiveCornerGeometry.coordinate_defect`](../../SquaresInCircles/Eight/Stationary/Convexity.lean#L379),
-[`Eight.Stationary.FiveCornerGeometry.strictConvexOn_defect`](../../SquaresInCircles/Eight/Stationary/Convexity.lean#L312),
-[`Eight.Stationary.FiveCornerGeometry.minimizer_unique`](../../SquaresInCircles/Eight/Stationary/Convexity.lean#L321),
-[`Eight.Stationary.FiveCornerGeometry.defect_radius_decrease`](../../SquaresInCircles/Eight/Stationary/Convexity.lean#L465),
-[`Eight.Stationary.FiveCornerGeometry.window_bounds`](../../SquaresInCircles/Eight/Stationary/Envelope.lean#L377),
-[`Eight.Stationary.FiveCornerGeometry.comparison_position_negative`](../../SquaresInCircles/Eight/Stationary/Convexity.lean#L727),
-[`Eight.Stationary.FiveCornerGeometry.upper_position_positive`](../../SquaresInCircles/Eight/Stationary/Envelope.lean#L470),
-[`Eight.Stationary.FiveCornerGeometry.windowMinimizer_geometric`](../../SquaresInCircles/Eight/Stationary/Envelope.lean#L591),
-[`Eight.Stationary.FiveCornerGeometry.positionEnvelope`](../../SquaresInCircles/Eight/Stationary/Envelope.lean#L618),
-[`Eight.Stationary.FiveCornerGeometry.positionEnvelope_radius_decrease`](../../SquaresInCircles/Eight/Stationary/Envelope.lean#L640),
-[`Eight.Stationary.FiveCornerGeometry.StripCritical.normalized_hessian_identity`](../../SquaresInCircles/Eight/Stationary/CriticalHessian.lean#L732),
-[`Eight.Stationary.FiveCornerGeometry.normalized_determinant_reserve`](../../SquaresInCircles/Eight/Stationary/CriticalHessian.lean#L743),
-[`Eight.Stationary.FiveCornerGeometry.StripCritical.hessian_reserve`](../../SquaresInCircles/Eight/Stationary/CriticalHessian.lean#L761),
-[`Eight.Stationary.FiveCornerGeometry.window_critical_below_one`](../../SquaresInCircles/Eight/Stationary/Envelope.lean#L755),
-[`Eight.Stationary.FiveCornerGeometry.positionEnvelope_second_derivative`](../../SquaresInCircles/Eight/Stationary/Envelope.lean#L966),
-[`Eight.Stationary.EnvelopeGeometry.critical_unique_of_strict_minimum`](../../SquaresInCircles/Eight/Stationary/Envelope.lean#L182),
-[`Eight.Stationary.FiveCornerGeometry.positionEnvelope_critical_unique`](../../SquaresInCircles/Eight/Stationary/Envelope.lean#L999),
-[`Eight.Stationary.FiveCornerGeometry.positionEnvelope_critical_global_minimum`](../../SquaresInCircles/Eight/Stationary/Envelope.lean#L1006),
-[`Eight.Stationary.FiveCornerGeometry.stationary_envelope_nonneg`](../../SquaresInCircles/Eight/Stationary/Envelope.lean#L1078),
-[`Eight.Stationary.FiveCornerGeometry.stationary_radius_eq`](../../SquaresInCircles/Eight/Stationary/Envelope.lean#L1086),
-[`Eight.Stationary.FiveCornerGeometry.stationary_chain_unique`](../../SquaresInCircles/Eight/Stationary/Envelope.lean#L1114),
-[`Eight.Stationary.stationary_unique`](../../SquaresInCircles/Eight/Stationary/System.lean#L232),
-[`Eight.Stationary.exact_stationary_existsUnique`](../../SquaresInCircles/Eight/Stationary/System.lean#L235),
-[`Eight.Stationary.qStar_limits`](../../SquaresInCircles/Eight/Stationary/System.lean#L155),
-[`Eight.Stationary.sharpPose_close`](../../SquaresInCircles/Eight/Stationary/System.lean#L163),
-[`Eight.Stationary.sharpBox_mem`](../../SquaresInCircles/Eight/Stationary/System.lean#L186),
-[`Eight.Stationary.sharp_coordinates`](../../SquaresInCircles/Eight/Stationary/System.lean#L238),
-[`Eight.Stationary.sharp_y`](../../SquaresInCircles/Eight/Stationary/System.lean#L273).*
+[`Eight.Stationary.sharpData`](../../SquaresInCircles/Eight/Stationary/System.lean#L1711),
+[`Eight.Stationary.sharpData_stationary`](../../SquaresInCircles/Eight/Stationary/System.lean#L1713),
+[`Eight.Stationary.radical_local_bounds`](../../SquaresInCircles/Eight/Stationary/System.lean#L1566),
+[`Eight.Stationary.FiveCornerGeometry.coordinate_defect`](../../SquaresInCircles/Eight/Stationary/CriticalHessian.lean#L409),
+[`Eight.Stationary.FiveCornerGeometry.strictConvexOn_defect`](../../SquaresInCircles/Eight/Stationary/CriticalHessian.lean#L342),
+[`Eight.Stationary.FiveCornerGeometry.minimizer_unique`](../../SquaresInCircles/Eight/Stationary/CriticalHessian.lean#L351),
+[`Eight.Stationary.FiveCornerGeometry.defect_radius_decrease`](../../SquaresInCircles/Eight/Stationary/CriticalHessian.lean#L495),
+[`Eight.Stationary.FiveCornerGeometry.window_bounds`](../../SquaresInCircles/Eight/Stationary/System.lean#L779),
+[`Eight.Stationary.FiveCornerGeometry.comparison_position_negative`](../../SquaresInCircles/Eight/Stationary/CriticalHessian.lean#L757),
+[`Eight.Stationary.FiveCornerGeometry.upper_position_positive`](../../SquaresInCircles/Eight/Stationary/System.lean#L872),
+[`Eight.Stationary.FiveCornerGeometry.windowMinimizer_geometric`](../../SquaresInCircles/Eight/Stationary/System.lean#L993),
+[`Eight.Stationary.FiveCornerGeometry.positionEnvelope`](../../SquaresInCircles/Eight/Stationary/System.lean#L1020),
+[`Eight.Stationary.FiveCornerGeometry.positionEnvelope_radius_decrease`](../../SquaresInCircles/Eight/Stationary/System.lean#L1042),
+[`Eight.Stationary.FiveCornerGeometry.StripCritical.normalized_hessian_identity`](../../SquaresInCircles/Eight/Stationary/CriticalHessian.lean#L1775),
+[`Eight.Stationary.FiveCornerGeometry.normalized_determinant_reserve`](../../SquaresInCircles/Eight/Stationary/CriticalHessian.lean#L1786),
+[`Eight.Stationary.FiveCornerGeometry.StripCritical.hessian_reserve`](../../SquaresInCircles/Eight/Stationary/CriticalHessian.lean#L1804),
+[`Eight.Stationary.FiveCornerGeometry.window_critical_below_one`](../../SquaresInCircles/Eight/Stationary/System.lean#L1157),
+[`Eight.Stationary.FiveCornerGeometry.positionEnvelope_second_derivative`](../../SquaresInCircles/Eight/Stationary/System.lean#L1368),
+[`Eight.Stationary.EnvelopeGeometry.critical_unique_of_strict_minimum`](../../SquaresInCircles/Eight/Stationary/System.lean#L584),
+[`Eight.Stationary.FiveCornerGeometry.positionEnvelope_critical_unique`](../../SquaresInCircles/Eight/Stationary/System.lean#L1401),
+[`Eight.Stationary.FiveCornerGeometry.positionEnvelope_critical_global_minimum`](../../SquaresInCircles/Eight/Stationary/System.lean#L1408),
+[`Eight.Stationary.FiveCornerGeometry.stationary_envelope_nonneg`](../../SquaresInCircles/Eight/Stationary/System.lean#L1480),
+[`Eight.Stationary.FiveCornerGeometry.stationary_radius_eq`](../../SquaresInCircles/Eight/Stationary/System.lean#L1488),
+[`Eight.Stationary.FiveCornerGeometry.stationary_chain_unique`](../../SquaresInCircles/Eight/Stationary/System.lean#L1516),
+[`Eight.Stationary.stationary_unique`](../../SquaresInCircles/Eight/Stationary/System.lean#L1748),
+[`Eight.Stationary.exact_stationary_existsUnique`](../../SquaresInCircles/Eight/Stationary/System.lean#L1751),
+[`Eight.Stationary.qStar_limits`](../../SquaresInCircles/Eight/Stationary/System.lean#L1671),
+[`Eight.Stationary.sharpPose_close`](../../SquaresInCircles/Eight/Stationary/System.lean#L1679),
+[`Eight.Stationary.sharpBox_mem`](../../SquaresInCircles/Eight/Stationary/System.lean#L1702),
+[`Eight.Stationary.sharp_coordinates`](../../SquaresInCircles/Eight/Stationary/System.lean#L1754),
+[`Eight.Stationary.sharp_y`](../../SquaresInCircles/Eight/Stationary/System.lean#L1789).*
 
 ![Two panels. Left: the envelope M(q, t), the least defect over the position, against the tilt t from 0 to arctan(1/5), for the squared radii q* - 0.012, q* - 0.006 and q*; each curve has one minimum, the curves for smaller radii lie higher, and the curve for q* stays above zero and touches it only at t*, about 0.1236, marked. Right: an enlargement near t*, from 0.109 to 0.139, of the curve for q*, touching zero at t*, and of the dashed curve for q* + 0.00006, whose minimum is about -0.0002, below zero](figures/appendix-j/envelope.svg)
 
@@ -450,9 +450,9 @@ spans. Chapter 11 shows that this least radius is $\sqrt{q_*}$, and
 minimizer are those of $d_*$.
 
 *Lean:
-[`Eight.FiveCorner.radius_eq_stationary`](../../SquaresInCircles/Eight/Corners/Selection.lean#L81),
-[`Eight.FiveCorner.radius_sq_eq_stationary`](../../SquaresInCircles/Eight/Corners/Selection.lean#L90),
-[`Eight.FiveCorner.selected_eq_stationary`](../../SquaresInCircles/Eight/Corners/Selection.lean#L236).*
+[`Eight.FiveCorner.radius_eq_stationary`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L721),
+[`Eight.FiveCorner.radius_sq_eq_stationary`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L730),
+[`Eight.FiveCorner.selected_eq_stationary`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L876).*
 
 ## J.5 The weights
 
@@ -500,16 +500,16 @@ $2\mu_E^0 y_4 - c\,\epsilon^0 = -\epsilon^0(c + s\,y_4/x_4)$, so by Lemma J.1
 Adding the five equations of (J.2), the right sides cancel. $\square$
 
 *Lean:
-[`Eight.Stationary.Coordinates.WeightDomain`](../../SquaresInCircles/Eight/Stationary/Weights.lean#L47),
-[`Eight.Stationary.Coordinates.IsStationary.weightDomain`](../../SquaresInCircles/Eight/Stationary/Weights.lean#L60),
-[`Eight.Stationary.Coordinates.mu`](../../SquaresInCircles/Eight/Stationary/Weights.lean#L38),
-[`Eight.Stationary.Coordinates.lam`](../../SquaresInCircles/Eight/Stationary/Weights.lean#L43),
-[`Eight.Stationary.Coordinates.WeightDomain.mu_pos`](../../SquaresInCircles/Eight/Stationary/Weights.lean#L119),
-[`Eight.Stationary.Coordinates.WeightDomain.lam_pos`](../../SquaresInCircles/Eight/Stationary/Weights.lean#L138),
-[`Eight.Stationary.Coordinates.WeightDomain.mu_sum`](../../SquaresInCircles/Eight/Stationary/Weights.lean#L122),
-[`Eight.Stationary.Coordinates.last_force_residual`](../../SquaresInCircles/Eight/Stationary/Weights.lean#L142),
-[`Eight.Stationary.Coordinates.force_balance`](../../SquaresInCircles/Eight/Stationary/Weights.lean#L192),
-[`Eight.Stationary.Coordinates.slider_forces_zero`](../../SquaresInCircles/Eight/Stationary/Weights.lean#L203).*
+[`Eight.Stationary.Coordinates.WeightDomain`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L429),
+[`Eight.Stationary.Coordinates.IsStationary.weightDomain`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L442),
+[`Eight.Stationary.Coordinates.mu`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L420),
+[`Eight.Stationary.Coordinates.lam`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L425),
+[`Eight.Stationary.Coordinates.WeightDomain.mu_pos`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L501),
+[`Eight.Stationary.Coordinates.WeightDomain.lam_pos`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L520),
+[`Eight.Stationary.Coordinates.WeightDomain.mu_sum`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L504),
+[`Eight.Stationary.Coordinates.last_force_residual`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L524),
+[`Eight.Stationary.Coordinates.force_balance`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L574),
+[`Eight.Stationary.Coordinates.slider_forces_zero`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L585).*
 
 At the solution $d_*$ of the stationary system the weights are approximately
 $\mu = (0.2097, 0.2212, 0.2734, 0.0251, 0.2706)$ for $A, B, D, E, H$ and

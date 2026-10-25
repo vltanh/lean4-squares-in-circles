@@ -1,6 +1,6 @@
 module
 
-public import SquaresInCircles.Eight.Owners.GA.Negative.ATD2CoefficientDomain
+public import SquaresInCircles.Eight.Owners.GA.Negative.ATD2LowNegativeComparison
 public import SquaresInCircles.Eight.Owners.GA.Positive.BT3Data
 
 /-!
@@ -56,7 +56,8 @@ abbrev angle_domain := @NegativeAPositiveTD.Explicit.angle_domain
 @[simp] theorem l_eval (f : Family) (z : ℝ) : aeval z (Certificate.l f)=l f z := by
   cases f <;> norm_num [Certificate.l,l]
 @[simp] theorem m_eval (f : Family) (z : ℝ) : aeval z (Certificate.m f)=m f z := by
-  cases f <;> norm_num [Certificate.m,m] <;> ring
+  cases f <;> norm_num [Certificate.m,m]
+  ring
 
 theorem frame_domain (f : Family) {z : ℝ}
     (hz : z∈Icc (Certificate.left f:ℝ) (Certificate.right f:ℝ)) : z∈Icc 0 frameCap := by
@@ -90,7 +91,8 @@ theorem baseline_zero (atG : Bool) (k l m z : ℝ) : baseline atG k l m 0 z=base
 theorem reduced_le_baseline (f : Certificate.Family) (atG : Bool) (s z : ℝ) :
     reducedBaseline f atG s z≤baseline atG (Explicit.k f z) (Explicit.l f z) (Explicit.m f z) s z := by
   have hh := PositiveTD.Certificate.clippedSupport_le_fullSupport 1 (Explicit.c f z)
-  cases f <;> simp only [reducedBaseline,↓reduceIte,reduceCtorEq,add_zero,le_refl] <;> linarith
+  cases f <;> simp only [reducedBaseline,↓reduceIte,reduceCtorEq,add_zero,le_refl]
+  linarith
 
 def pWeights (f : Certificate.Family) (atG : Bool) (k l m c s : ℝ) : Fin 4→ℝ :=
   ![k,k,min (lambdaB atG l s) m,if f=.low then k else min 1 c]

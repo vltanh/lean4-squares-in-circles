@@ -21,14 +21,14 @@ open Set
 namespace SquaresInCircles.Eight.EZeroGeometry
 open EZeroFunctions EZeroCapped
 
-theorem E_primary {E : SignedPoint} (hEs : E.Sorted) (hEc : E.Contained qCap)
+theorem E_primary {E : SignedPoint} (_hEs : E.Sorted) (hEc : E.Contained qCap)
     (hE0 : E.y=0) : E.a≤v+1/2 := by
   have hc := hEc
   simp only [SignedPoint.Contained,SignedPoint.circle,hE0,abs_zero] at hc
   have hs := Real.sq_sqrt (show 0≤qCap-1/4 by norm_num [qCap])
   have hn := Real.sqrt_nonneg (qCap-1/4)
   dsimp [v]
-  nlinarith [hEs.1]
+  nlinarith
 
 theorem tangent_cap {P E : SignedPoint} {t : ℝ}
     (hPs : P.Sorted) (hy : 0≤P.y) (hPc : P.Contained qCap)

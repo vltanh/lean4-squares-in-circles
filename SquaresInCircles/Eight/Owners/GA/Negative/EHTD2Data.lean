@@ -1,7 +1,7 @@
 module
 
 public import SquaresInCircles.Eight.Owners.GA.Negative.DETD2Weights
-public import SquaresInCircles.Eight.Owners.GA.Negative.EHGain
+public import SquaresInCircles.Eight.Owners.GA.Negative.ELargeADCorrection
 
 /-!
 # Eight squares: negative EH1 with nonnegative A total and positive TD2

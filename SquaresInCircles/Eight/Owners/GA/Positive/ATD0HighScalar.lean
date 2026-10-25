@@ -1,8 +1,8 @@
 module
 
-public import SquaresInCircles.Eight.Owners.GA.TD2Coordinate
-public import SquaresInCircles.Eight.Owners.GA.Two.PositiveFullEndpoint
-public import SquaresInCircles.Eight.Owners.GA.Two.PositiveWeights
+public import SquaresInCircles.Eight.Owners.GA.TD2LowEnvelope
+public import SquaresInCircles.Eight.Owners.GA.Two.PositiveSplit
+public import SquaresInCircles.Eight.Owners.GA.Two.PositiveHighTransfer
 public import SquaresInCircles.Eight.Frames.Ordinary.AngleConcentration
 public import SquaresInCircles.Eight.Frames.Ordinary.PositiveEnvelope
 

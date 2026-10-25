@@ -1,7 +1,7 @@
 module
 
-public import SquaresInCircles.Eight.Owners.CorrelatedSameBlock
-public import SquaresInCircles.Eight.Owners.Positive.PrimaryBaselines
+public import SquaresInCircles.Eight.Owners.WholeIntervalBernstein
+public import SquaresInCircles.Eight.Owners.Positive.SplitComparison
 
 /-!
 # Eight squares: the original seven angles as four ordinary signed blocks

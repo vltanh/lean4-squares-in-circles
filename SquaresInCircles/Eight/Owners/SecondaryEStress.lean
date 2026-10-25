@@ -167,7 +167,8 @@ theorem positive_G_support {C : SignedCycle} {ab bt td : Fin 4}
   have hvec : (k*Real.sin (delta C.theta G),
       k*Real.cos (delta C.theta G)-tiltedWeight k η (delta C.theta G))=
       (k*Real.sin (delta C.theta G),-(k*Real.sin (delta C.theta G))*η) := by
-    ext <;> simp [tiltedWeight] <;> ring
+    ext <;> simp [tiltedWeight]
+    ring
   rw [hvec]
   exact (scaled_primary_support (R := R) (mul_nonneg hk hs) hη).1
 
@@ -182,7 +183,8 @@ theorem positive_TD_support {C : SignedCycle} {ab : Fin 4}
   have hvec : (k*Real.sin (delta C.theta T),
       k*Real.cos (delta C.theta T)-tiltedWeight k η (delta C.theta T))=
       (k*Real.sin (delta C.theta T),-(k*Real.sin (delta C.theta T))*η) := by
-    ext <;> simp [tiltedWeight] <;> ring
+    ext <;> simp [tiltedWeight]
+    ring
   rw [hvec]
   exact (scaled_primary_support (R := R) (mul_nonneg hk hs) hη).1
 
@@ -197,7 +199,8 @@ theorem positive_BT_support {C : SignedCycle} {ab : Fin 4}
   have hvec : (k*Real.sin (delta C.theta B),
       tiltedWeight k η (delta C.theta B)-k*Real.cos (delta C.theta B))=
       (k*Real.sin (delta C.theta B),(k*Real.sin (delta C.theta B))*η) := by
-    ext <;> simp [tiltedWeight] <;> ring
+    ext <;> simp [tiltedWeight]
+    ring
   rw [hvec]
   exact (scaled_primary_support (R := R) (mul_nonneg hk hs) hη).2
 

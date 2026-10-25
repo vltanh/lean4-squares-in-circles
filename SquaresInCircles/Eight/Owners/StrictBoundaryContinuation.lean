@@ -1,6 +1,6 @@
 module
 
-public import SquaresInCircles.Eight.Owners.Contact.Continuation
+public import SquaresInCircles.Eight.Owners.Contact.MinimumDerivatives
 
 /-!
 # Eight squares: continuation from the derivative at an active boundary only

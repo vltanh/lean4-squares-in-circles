@@ -41,7 +41,7 @@ theorem support_normal {P : SignedPoint} (hy : 0≤P.y) (hc : P.Contained qTrial
   have hR : 0≤R := by linarith [radius_bounds.1]
   have hc' : P.Contained (R^2) := by rw [radius_sq]; exact hc
   have hh := SignedStress.work_le_signed_support hR hc'
-    (sign := 1) (Or.inl rfl) (by simpa [abs_of_nonneg hy]) (X,Y)
+    (sign := 1) (Or.inl rfl) (by simp [abs_of_nonneg hy]) (X,Y)
   simpa [support,SignedStress.work] using hh
 
 /-- This support remains valid for the full signed E domain. -/

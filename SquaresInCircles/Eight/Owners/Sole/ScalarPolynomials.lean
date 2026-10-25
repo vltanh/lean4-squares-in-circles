@@ -2,6 +2,7 @@ module
 
 public import Mathlib.Algebra.Ring.IsFormallyReal
 public import Mathlib.Data.Int.Star
+public import SquaresInCircles.Eight.Arithmetic.FastPolynomials
 public import SquaresInCircles.Eight.Owners.Positive.ScalarPolynomials
 public import SquaresInCircles.Eight.Owners.Sole.ECoefficients
 public import SquaresInCircles.Eight.Owners.WholeIntervalBernstein
@@ -184,370 +185,15 @@ theorem local_parameter {b : Band} {t : ℝ} (ht : t∈domain b) :
 /-! ### Kernel certificates
 
 Each polynomial of this file is mirrored by a scaled integer coefficient list
-(`PolynomialCertificates`). Lists are divided by the gcd of their entries after
-every composite step, which keeps the integers short. The Newton steps of
+(`PolynomialCertificates`, `FastPolynomials`). The band polynomials, the rows and the
+masses are divided by the gcd of their entries after every composite step, which keeps
+the integers short. The products of the masses, the certificate and the centered lists
+are not: their entries have thousands of bits, and a gcd of such numbers costs the
+kernels outside Lean far more than the products it would shorten. The Newton steps of
 `newtonMass` are carried out on integer numerators and denominators. -/
 
 section Certificates
 open WholeIntervalPolynomial.Certificate
-
-/-! #### Kernel arithmetic on coefficient lists
-
-The centering and Chebyshev lists of `PolynomialCertificates` and the bounds `lowerZ`,
-`upperZ`, written with the recursors and the integer operations themselves: the kernel reduces
-them in fewer steps. Each equals its model. -/
-
-namespace SFast
-
-/-- `l + m`. -/
-def addF (l : List ℤ) : List ℤ → List ℤ :=
-  List.rec (motive := fun _ => List ℤ → List ℤ) (fun m => m)
-    (fun x t ih m => List.casesOn (motive := fun _ => List ℤ) m (x :: t)
-      (fun y m' => Int.add x y :: ih m')) l
-
-theorem addF_eq : ∀ l m : List ℤ, addF l m = Certificate.add l m
-  | [], _ => rfl
-  | _ :: _, [] => rfl
-  | x :: t, y :: m => by
-    show Int.add x y :: addF t m = (x+y) :: Certificate.add t m
-    rw [addF_eq t m]; rfl
-
-/-- `c • l`. -/
-def smulF (c : ℤ) (l : List ℤ) : List ℤ :=
-  List.rec (motive := fun _ => List ℤ) [] (fun x _ ih => Int.mul c x :: ih) l
-
-theorem smulF_eq (c : ℤ) : ∀ l : List ℤ, smulF c l = Certificate.smul c l
-  | [] => rfl
-  | x :: l => by
-    show Int.mul c x :: smulF c l = (c*x) :: Certificate.smul c l
-    rw [smulF_eq c l]; rfl
-
-/-- `p • l + q • m`, in one pass. -/
-def lincF (p q : ℤ) (l : List ℤ) : List ℤ → List ℤ :=
-  List.rec (motive := fun _ => List ℤ → List ℤ) (fun m => smulF q m)
-    (fun x t ih m => List.casesOn (motive := fun _ => List ℤ) m (smulF p (x :: t))
-      (fun y m' => Int.add (Int.mul p x) (Int.mul q y) :: ih m')) l
-
-theorem lincF_eq (p q : ℤ) : ∀ l m : List ℤ, lincF p q l m = Certificate.add (Certificate.smul p l) (Certificate.smul q m)
-  | [], m => by
-    show smulF q m = _
-    rw [smulF_eq]; rfl
-  | x :: t, [] => by
-    show smulF p (x :: t) = _
-    rw [smulF_eq]; rfl
-  | x :: t, y :: m => by
-    show Int.add (Int.mul p x) (Int.mul q y) :: lincF p q t m = (p*x+q*y) :: Certificate.add (Certificate.smul p t) (Certificate.smul q m)
-    rw [lincF_eq p q t m]; rfl
-
-/-- `a • m + acc`, in one pass. -/
-def axpyF (a : ℤ) (m : List ℤ) : List ℤ → List ℤ :=
-  List.rec (motive := fun _ => List ℤ → List ℤ) (fun acc => acc)
-    (fun x _ ih acc => List.casesOn (motive := fun _ => List ℤ) acc (Int.mul a x :: ih [])
-      (fun y acc' => Int.add (Int.mul a x) y :: ih acc')) m
-
-theorem add_nil_right : ∀ l : List ℤ, Certificate.add l [] = l
-  | [] => rfl
-  | _ :: _ => rfl
-
-theorem axpyF_eq (a : ℤ) : ∀ m acc : List ℤ, axpyF a m acc = Certificate.add (Certificate.smul a m) acc
-  | [], _ => rfl
-  | x :: m, [] => by
-    show Int.mul a x :: axpyF a m [] = (a*x) :: Certificate.smul a m
-    rw [axpyF_eq a m [],add_nil_right]; rfl
-  | x :: m, y :: acc => by
-    show Int.add (Int.mul a x) y :: axpyF a m acc = (a*x+y) :: Certificate.add (Certificate.smul a m) acc
-    rw [axpyF_eq a m acc]; rfl
-
-/-- `l * m`, row by row. -/
-def mulF (l m : List ℤ) : List ℤ :=
-  List.casesOn (motive := fun _ => List ℤ) m []
-    (fun _ _ => List.rec (motive := fun _ => List ℤ) [] (fun a _ ih => axpyF a m (0 :: ih)) l)
-
-theorem mulF_eq : ∀ l m : List ℤ, mulF l m = Certificate.mul l m
-  | _, [] => by cases ‹List ℤ› <;> rfl
-  | [], _ :: _ => rfl
-  | a :: l, b :: m => by
-    show axpyF a (b :: m) (0 :: mulF l (b :: m)) = _
-    rw [axpyF_eq,mulF_eq l (b :: m)]; rfl
-
-/-- `l ^ n`. -/
-def powF (l : List ℤ) (n : ℕ) : List ℤ :=
-  Nat.rec (motive := fun _ => List ℤ) [1] (fun _ ih => mulF ih l) n
-
-theorem powF_eq (l : List ℤ) : ∀ n : ℕ, powF l n = Certificate.pow l n
-  | 0 => rfl
-  | n+1 => by
-    show mulF (powF l n) l = Certificate.mul (Certificate.pow l n) l
-    rw [powF_eq l n,mulF_eq]
-
-/-- The coefficients `a_k num^k den^(n-k)` from index `i` on. -/
-def prescaleF (num den n : ℕ) (l : List ℤ) : ℕ → List ℤ :=
-  List.rec (motive := fun _ => ℕ → List ℤ) (fun _ => [])
-    (fun a _ ih i => Int.mul a (Int.ofNat (Nat.mul (Nat.pow num i) (Nat.pow den (Nat.sub n i))))
-      :: ih (Nat.succ i)) l
-
-theorem prescaleF_eq (num den n : ℕ) : ∀ (l : List ℤ) (i : ℕ),
-    prescaleF num den n l i = Certificate.prescale num den n i l
-  | [], _ => rfl
-  | a :: l, i => by
-    show _ :: prescaleF num den n l (i+1) = _
-    rw [prescaleF_eq num den n l (i+1)]; rfl
-
-/-- Multiplication by `1+X` of `c :: z`, from `z` on. -/
-def shiftAuxF (z : List ℤ) : ℤ → List ℤ :=
-  List.rec (motive := fun _ => ℤ → List ℤ) (fun c => [c]) (fun x _ ih c => Int.add x c :: ih x) z
-
-theorem shiftAuxF_eq : ∀ (z : List ℤ) (c : ℤ), shiftAuxF z c = Certificate.add z (c :: z)
-  | [], _ => rfl
-  | x :: z, c => by
-    show Int.add x c :: shiftAuxF z x = (x+c) :: Certificate.add z (x :: z)
-    rw [shiftAuxF_eq z x]; rfl
-
-/-- Multiplication by `s+tX` of `c :: z`, from `z` on. -/
-def affAuxF (s t : ℤ) (z : List ℤ) : ℤ → List ℤ :=
-  List.rec (motive := fun _ => ℤ → List ℤ) (fun c => [Int.mul t c])
-    (fun x _ ih c => Int.add (Int.mul s x) (Int.mul t c) :: ih x) z
-
-theorem affAuxF_eq (s t : ℤ) : ∀ (z : List ℤ) (c : ℤ), affAuxF s t z c = Certificate.affMulAux s t c z
-  | [], _ => rfl
-  | x :: z, c => by
-    show Int.add (Int.mul s x) (Int.mul t c) :: affAuxF s t z x = _
-    rw [affAuxF_eq s t z x]; rfl
-
-/-- `compAff`, by Horner's rule; additions only when `s = t = 1`. -/
-def compAffF (s t : ℤ) (l : List ℤ) : List ℤ :=
-  if s=1 ∧ t=1 then
-    List.rec (motive := fun _ => List ℤ) []
-      (fun b _ ih => List.casesOn (motive := fun _ => List ℤ) ih [b]
-        (fun x z => Int.add b x :: shiftAuxF z x)) l
-  else
-    List.rec (motive := fun _ => List ℤ) []
-      (fun b _ ih => List.casesOn (motive := fun _ => List ℤ) ih [b]
-        (fun x z => Int.add b (Int.mul s x) :: affAuxF s t z x)) l
-
-theorem compAffF_eq (s t : ℤ) (l : List ℤ) : compAffF s t l = Certificate.compAff s t l := by
-  unfold compAffF
-  split_ifs with h
-  · obtain ⟨rfl,rfl⟩ := h
-    induction l with
-    | nil => rfl
-    | cons b l ih =>
-      show List.casesOn (motive := fun _ => List ℤ) (List.rec (motive := fun _ => List ℤ) []
-        (fun b _ ih => List.casesOn (motive := fun _ => List ℤ) ih [b]
-          (fun x z => Int.add b x :: shiftAuxF z x)) l) [b]
-        (fun x z => Int.add b x :: shiftAuxF z x) = Certificate.add [b] (Certificate.affMul 1 1 (Certificate.compAff 1 1 l))
-      rw [ih]
-      rcases hc : Certificate.compAff 1 1 l with _ | ⟨x,z⟩
-      · rfl
-      · show Int.add b x :: shiftAuxF z x = Certificate.add [b] (Certificate.affMul 1 1 (x :: z))
-        rw [Certificate.affMul,ite_eq_left ⟨rfl,rfl⟩,Certificate.shiftMul,shiftAuxF_eq]
-        show Int.add b x :: _ = (b+(x+0)) :: Certificate.add [] (Certificate.add z (x :: z))
-        rw [Int.add_zero]; rfl
-  · induction l with
-    | nil => rfl
-    | cons b l ih =>
-      show List.casesOn (motive := fun _ => List ℤ) (List.rec (motive := fun _ => List ℤ) []
-        (fun b _ ih => List.casesOn (motive := fun _ => List ℤ) ih [b]
-          (fun x z => Int.add b (Int.mul s x) :: affAuxF s t z x)) l) [b]
-        (fun x z => Int.add b (Int.mul s x) :: affAuxF s t z x) = Certificate.add [b] (Certificate.affMul s t (Certificate.compAff s t l))
-      rw [ih]
-      rcases hc : Certificate.compAff s t l with _ | ⟨x,z⟩
-      · show [b] = Certificate.add [b] (Certificate.affMul s t [])
-        rw [Certificate.affMul,ite_eq_right h]; rfl
-      · show Int.add b (Int.mul s x) :: affAuxF s t z x = Certificate.add [b] (Certificate.affMul s t (x :: z))
-        rw [Certificate.affMul,ite_eq_right h,affAuxF_eq]; rfl
-
-/-- `centerList`. -/
-def centerF (num den : ℕ) (s t : ℤ) (l : List ℤ) : List ℤ :=
-  compAffF s t (prescaleF num den (l.length-1) l 0)
-
-theorem centerF_eq (num den : ℕ) (s t : ℤ) (l : List ℤ) :
-    centerF num den s t l = Certificate.centerList num den s t l := by
-  rw [centerF,compAffF_eq,prescaleF_eq]; rfl
-
-/-- `twoX`. -/
-def twoXF (u : List ℤ) : List ℤ :=
-  List.casesOn (motive := fun _ => List ℤ) u [] (fun u0 t => addF t (0 :: Int.mul 2 u0 :: t))
-
-theorem twoXF_eq : ∀ u : List ℤ, twoXF u = Certificate.twoX u
-  | [] => rfl
-  | u0 :: t => by
-    show addF t (0 :: Int.mul 2 u0 :: t) = Certificate.add t (0 :: (2*u0) :: t)
-    rw [addF_eq]; rfl
-
-/-- `chebList` and `2 ^ length`. -/
-def chebPair (l : List ℤ) : List ℤ × ℕ :=
-  List.rec (motive := fun _ => List ℤ × ℕ) ([],1)
-    (fun a _ ih => (addF [Int.mul a (Int.ofNat ih.2)] (twoXF ih.1),Nat.mul 2 ih.2)) l
-
-theorem chebPair_eq : ∀ l : List ℤ, chebPair l = (Certificate.chebList l,2^l.length)
-  | [] => rfl
-  | a :: l => by
-    show (addF [Int.mul a (Int.ofNat (chebPair l).2)] (twoXF (chebPair l).1),
-      Nat.mul 2 (chebPair l).2) = _
-    rw [chebPair_eq l,addF_eq,twoXF_eq,Certificate.chebList,List.length_cons,pow_succ,Nat.mul_comm]
-    rfl
-
-/-- `chebList`. -/
-def chebF (l : List ℤ) : List ℤ := (chebPair l).1
-
-theorem chebF_eq (l : List ℤ) : chebF l = Certificate.chebList l := by
-  rw [chebF,chebPair_eq]
-
-/-- The sum of the absolute values. -/
-def sumAbsF (l : List ℤ) : ℕ :=
-  List.rec (motive := fun _ => ℕ) 0 (fun x _ ih => Nat.add (Int.natAbs x) ih) l
-
-theorem sumAbsF_eq_sum {t : List ℤ} {D : ℕ} (h : t.length≤D) :
-    ((sumAbsF t:ℕ):ℤ)=∑ j : Fin D,|t.getD j.val 0| := by
-  induction t generalizing D with
-  | nil => simp [sumAbsF]
-  | cons x t ih =>
-    obtain ⟨D,rfl⟩ : ∃ D',D=D'+1 := ⟨D-1,by simp at h; omega⟩
-    rw [Fin.sum_univ_succ]
-    simp only [Fin.val_zero,List.getD_cons_zero,Fin.val_succ,List.getD_cons_succ]
-    rw [← ih (by simp at h; omega)]
-    show (((Int.natAbs x+sumAbsF t:ℕ)):ℤ)=_
-    push_cast
-    rfl
-
-/-- `lowerZ` of a list, from its first entry and the rest. -/
-def lowL (l : List ℤ) : ℤ :=
-  List.casesOn (motive := fun _ => ℤ) l 0 (fun b t => Int.sub b (Int.ofNat (sumAbsF t)))
-
-/-- `upperZ` of a list. -/
-def upL (l : List ℤ) : ℤ :=
-  List.casesOn (motive := fun _ => ℤ) l 0 (fun b t => Int.add b (Int.ofNat (sumAbsF t)))
-
-theorem lowL_eq {l : List ℤ} {D : ℕ} (h : l.length≤D+1) :
-    Certificate.lowerZ D (fun j => l.getD j 0)=lowL l := by
-  cases l with
-  | nil => simp [Certificate.lowerZ,lowL]
-  | cons b t =>
-    simp only [Certificate.lowerZ,List.getD_cons_zero,List.getD_cons_succ]
-    rw [← sumAbsF_eq_sum (by simp at h; omega)]
-    rfl
-
-theorem upL_eq {l : List ℤ} {D : ℕ} (h : l.length≤D+1) :
-    Certificate.upperZ D (fun j => l.getD j 0)=upL l := by
-  cases l with
-  | nil => simp [Certificate.upperZ,upL]
-  | cons b t =>
-    simp only [Certificate.upperZ,List.getD_cons_zero,List.getD_cons_succ]
-    rw [← sumAbsF_eq_sum (by simp at h; omega)]
-    rfl
-
-end SFast
-
-
-/-- `Scaled.add`, `Scaled.sub`, `Scaled.mul` and `Scaled.pow` with the kernel lists. -/
-private def _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.addK
-    (a b : Scaled) : Scaled := ⟨SFast.lincF b.s a.s a.l b.l,a.s*b.s⟩
-private def _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.subK
-    (a b : Scaled) : Scaled := ⟨SFast.lincF b.s (-(a.s:ℤ)) a.l b.l,a.s*b.s⟩
-private def _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.mulK
-    (a b : Scaled) : Scaled := ⟨SFast.mulF a.l b.l,a.s*b.s⟩
-private def _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.powK
-    (a : Scaled) (n : ℕ) : Scaled := ⟨SFast.powF a.l n,a.s^n⟩
-
-private theorem _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.Rep.addK
-    {a b : Scaled} {p q : ℚ[X]} (ha : a.Rep p) (hb : b.Rep q) : (a.addK b).Rep (p+q) := by
-  have h := ha.add hb
-  rwa [Scaled.add,← SFast.lincF_eq] at h
-
-private theorem _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.Rep.subK
-    {a b : Scaled} {p q : ℚ[X]} (ha : a.Rep p) (hb : b.Rep q) : (a.subK b).Rep (p-q) := by
-  have h := ha.sub hb
-  rwa [Scaled.sub,← SFast.lincF_eq] at h
-
-private theorem _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.Rep.mulK
-    {a b : Scaled} {p q : ℚ[X]} (ha : a.Rep p) (hb : b.Rep q) : (a.mulK b).Rep (p*q) := by
-  have h := ha.mul hb
-  rwa [Scaled.mul,← SFast.mulF_eq] at h
-
-private theorem _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.Rep.powK
-    {a : Scaled} {p : ℚ[X]} (ha : a.Rep p) (n : ℕ) : (a.powK n).Rep (p^n) := by
-  have h := ha.pow n
-  rwa [Scaled.pow,← SFast.powF_eq] at h
-
-
-/-! #### Dividing a scaled list by the gcd of its entries -/
-
-private def gcdAcc : List ℤ → ℕ → ℕ
-  | [],g => g
-  | x :: l,g => gcdAcc l (Nat.gcd x.natAbs g)
-
-private theorem gcdAcc_dvd_acc : ∀ (l : List ℤ) (g : ℕ),gcdAcc l g∣g
-  | [],_ => dvd_rfl
-  | _ :: l,_ => (gcdAcc_dvd_acc l _).trans (Nat.gcd_dvd_right _ _)
-
-private theorem gcdAcc_dvd_mem : ∀ (l : List ℤ) (g : ℕ),∀ x∈l,((gcdAcc l g:ℕ):ℤ)∣x
-  | [],_,_,hx => by simp at hx
-  | _ :: l,_,x,hx => by
-    rcases List.mem_cons.1 hx with rfl | hx
-    · exact Int.natCast_dvd.2 ((gcdAcc_dvd_acc l _).trans (Nat.gcd_dvd_left _ _))
-    · exact gcdAcc_dvd_mem l _ x hx
-
-private theorem toPoly_map_div (g : ℤ) : ∀ l : List ℤ,(∀ x∈l,g∣x) →
-    toPoly l=C (g:ℚ)*toPoly (l.map (fun x => x/g))
-  | [],_ => by simp [toPoly]
-  | x :: l,h => by
-    have hx : (x:ℚ)=(g:ℚ)*((x/g:ℤ):ℚ) := by
-      rw [← Int.cast_mul,Int.mul_ediv_cancel' (h x List.mem_cons_self)]
-    rw [List.map_cons,toPoly,toPoly,
-      toPoly_map_div g l (fun y hy => h y (List.mem_cons_of_mem _ hy)),hx,C_mul]
-    ring
-
-private theorem toPoly_map_div_zero : ∀ l : List ℤ,toPoly (l.map (fun x => x/(0:ℤ)))=0
-  | [] => by simp [toPoly]
-  | x :: l => by rw [List.map_cons,toPoly,toPoly_map_div_zero l,Int.ediv_zero]; simp
-
-/-- Trailing zeros removed. -/
-private def trim : List ℤ → List ℤ
-  | [] => []
-  | x :: l => match trim l with
-    | [] => if x=0 then [] else [x]
-    | y :: t => x :: y :: t
-
-private theorem toPoly_trim : ∀ l : List ℤ,toPoly (trim l)=toPoly l
-  | [] => rfl
-  | x :: l => by
-    have ih := toPoly_trim l
-    simp only [trim]
-    split
-    · rename_i h
-      rw [h] at ih
-      change (0:ℚ[X])=toPoly l at ih
-      change _=C (x:ℚ)+X*toPoly l
-      rw [← ih]
-      split_ifs with hx
-      · rw [hx]; simp [toPoly]
-      · change C (x:ℚ)+X*0=_
-        rfl
-    · rename_i y t h
-      rw [h] at ih
-      change C (x:ℚ)+X*toPoly (y :: t)=C (x:ℚ)+X*toPoly l
-      rw [ih]
-
-/-- The list divided by the gcd of its entries and its scale, without trailing zeros. -/
-private def nrm (a : Scaled) : Scaled :=
-  ⟨trim (a.l.map (fun x => x/((gcdAcc a.l a.s:ℕ):ℤ))),a.s/gcdAcc a.l a.s⟩
-
-private theorem rep_nrm {a : Scaled} {p : ℚ[X]} (ha : a.Rep p) : (nrm a).Rep p := by
-  unfold Scaled.Rep at *
-  rw [nrm,toPoly_trim]
-  have h1 := toPoly_map_div ((gcdAcc a.l a.s:ℕ):ℤ) a.l (gcdAcc_dvd_mem a.l a.s)
-  have h2 : gcdAcc a.l a.s∣a.s := gcdAcc_dvd_acc a.l a.s
-  generalize gcdAcc a.l a.s=g at h1 h2
-  rcases Nat.eq_zero_or_pos g with rfl | hg
-  · have hs : a.s=0 := Nat.eq_zero_of_zero_dvd h2
-    simp only [Nat.cast_zero,Nat.div_zero,map_zero,zero_mul] at h1 ⊢
-    exact toPoly_map_div_zero a.l
-  · have hgq : (g:ℚ)≠0 := by exact_mod_cast hg.ne'
-    have hdiv : ((a.s/g:ℕ):ℚ)=(a.s:ℚ)/g := Nat.cast_div h2 hgq
-    apply mul_left_cancel₀ (show (C (g:ℚ):ℚ[X])≠0 from C_ne_zero.2 hgq)
-    push_cast at h1
-    rw [← h1,ha,hdiv,← mul_assoc,← C_mul,mul_div_cancel₀ _ hgq]
 
 /-! #### Coefficients of a represented polynomial -/
 
@@ -643,16 +289,17 @@ private theorem rep_newton3 {a : Scaled} {p : ℚ[X]} (ha : a.Rep p)
   field_simp
 
 private def newtonMassS (a : Scaled) : Scaled :=
-  let w := nrm ((inv0 a).mulK ((trunc4 a).subK (const0 a)))
-  nrm (trunc4 ((newton3 a).mulK ((((Scaled.ofNat 1).addK ((Scaled.const (1/2)).mulK w)).subK
-    ((Scaled.const (1/8)).mulK (w.pow 2))).addK ((Scaled.const (1/16)).mulK (w.pow 3)))))
+  let w := Scaled.normF ((inv0 a).mulF ((trunc4 a).subF (const0 a)))
+  Scaled.normF (trunc4 ((newton3 a).mulF
+    ((((Scaled.ofNat 1).addF ((Scaled.const (1/2)).mulF w)).subF
+    ((Scaled.const (1/8)).mulF (w.powF 2))).addF ((Scaled.const (1/16)).mulF (w.powF 3)))))
 
 private theorem rep_newtonMass {a : Scaled} {p : ℚ[X]} (ha : a.Rep p)
     (hl : 0<a.l.getD 0 0) (hs : a.s≠0) : (newtonMassS a).Rep (newtonMass p) := by
-  have hw := rep_nrm ((rep_inv0 ha hl hs).mulK ((rep_trunc4 ha).subK (rep_const0 ha)))
-  exact rep_nrm (rep_trunc4 ((rep_newton3 ha hl hs).mulK ((((Scaled.rep_one).addK
-    ((Scaled.rep_const _).mulK hw)).subK ((Scaled.rep_const _).mulK (hw.pow 2))).addK
-    ((Scaled.rep_const _).mulK (hw.pow 3)))))
+  have hw := Scaled.Rep.normF ((rep_inv0 ha hl hs).mulF ((rep_trunc4 ha).subF (rep_const0 ha)))
+  exact Scaled.Rep.normF (rep_trunc4 ((rep_newton3 ha hl hs).mulF ((((Scaled.rep_one).addF
+    ((Scaled.rep_const _).mulF hw)).subF ((Scaled.rep_const _).mulF (hw.powF 2))).addF
+    ((Scaled.rep_const _).mulF (hw.powF 3)))))
 
 end Certificates
 
@@ -662,42 +309,44 @@ open WholeIntervalPolynomial.Certificate
 /-! #### The band polynomials -/
 
 private def sineB : Scaled :=
-  nrm ((((((((Scaled.var).subK ((Scaled.const (1/6)).mulK ((Scaled.var).powK 3))).addK
-    ((Scaled.const (1/120)).mulK ((Scaled.var).powK 5))).subK
-    ((Scaled.const (1/5040)).mulK ((Scaled.var).powK 7))).addK
-    ((Scaled.const (1/362880)).mulK ((Scaled.var).powK 9))).subK
-    ((Scaled.const (1/39916800)).mulK ((Scaled.var).powK 11))).addK
-    ((Scaled.const (1/6227020800)).mulK ((Scaled.var).powK 13))).subK
-    ((Scaled.const (1/1307674368000)).mulK ((Scaled.var).powK 15)))
+  Scaled.normF ((((((((Scaled.var).subF ((Scaled.const (1/6)).mulF ((Scaled.var).powF 3))).addF
+    ((Scaled.const (1/120)).mulF ((Scaled.var).powF 5))).subF
+    ((Scaled.const (1/5040)).mulF ((Scaled.var).powF 7))).addF
+    ((Scaled.const (1/362880)).mulF ((Scaled.var).powF 9))).subF
+    ((Scaled.const (1/39916800)).mulF ((Scaled.var).powF 11))).addF
+    ((Scaled.const (1/6227020800)).mulF ((Scaled.var).powF 13))).subF
+    ((Scaled.const (1/1307674368000)).mulF ((Scaled.var).powF 15)))
 
 private theorem rep_sineB : sineB.Rep PositiveScalarPolynomials.sine :=
-  rep_nrm ((((((((Scaled.rep_var).subK ((Scaled.rep_const _).mulK ((Scaled.rep_var).powK 3))).addK
-    ((Scaled.rep_const _).mulK ((Scaled.rep_var).powK 5))).subK
-    ((Scaled.rep_const _).mulK ((Scaled.rep_var).powK 7))).addK
-    ((Scaled.rep_const _).mulK ((Scaled.rep_var).powK 9))).subK
-    ((Scaled.rep_const _).mulK ((Scaled.rep_var).powK 11))).addK
-    ((Scaled.rep_const _).mulK ((Scaled.rep_var).powK 13))).subK
-    ((Scaled.rep_const _).mulK ((Scaled.rep_var).powK 15)))
+  Scaled.Rep.normF ((((((((Scaled.rep_var).subF
+    ((Scaled.rep_const _).mulF ((Scaled.rep_var).powF 3))).addF
+    ((Scaled.rep_const _).mulF ((Scaled.rep_var).powF 5))).subF
+    ((Scaled.rep_const _).mulF ((Scaled.rep_var).powF 7))).addF
+    ((Scaled.rep_const _).mulF ((Scaled.rep_var).powF 9))).subF
+    ((Scaled.rep_const _).mulF ((Scaled.rep_var).powF 11))).addF
+    ((Scaled.rep_const _).mulF ((Scaled.rep_var).powF 13))).subF
+    ((Scaled.rep_const _).mulF ((Scaled.rep_var).powF 15)))
 
 private def cosineB : Scaled :=
-  nrm (((((((((Scaled.ofNat 1).subK ((Scaled.const (1/2)).mulK ((Scaled.var).powK 2))).addK
-    ((Scaled.const (1/24)).mulK ((Scaled.var).powK 4))).subK
-    ((Scaled.const (1/720)).mulK ((Scaled.var).powK 6))).addK
-    ((Scaled.const (1/40320)).mulK ((Scaled.var).powK 8))).subK
-    ((Scaled.const (1/3628800)).mulK ((Scaled.var).powK 10))).addK
-    ((Scaled.const (1/479001600)).mulK ((Scaled.var).powK 12))).subK
-    ((Scaled.const (1/87178291200)).mulK ((Scaled.var).powK 14))).addK
-    ((Scaled.const (1/20922789888000)).mulK ((Scaled.var).powK 16)))
+  Scaled.normF (((((((((Scaled.ofNat 1).subF ((Scaled.const (1/2)).mulF ((Scaled.var).powF 2))).addF
+    ((Scaled.const (1/24)).mulF ((Scaled.var).powF 4))).subF
+    ((Scaled.const (1/720)).mulF ((Scaled.var).powF 6))).addF
+    ((Scaled.const (1/40320)).mulF ((Scaled.var).powF 8))).subF
+    ((Scaled.const (1/3628800)).mulF ((Scaled.var).powF 10))).addF
+    ((Scaled.const (1/479001600)).mulF ((Scaled.var).powF 12))).subF
+    ((Scaled.const (1/87178291200)).mulF ((Scaled.var).powF 14))).addF
+    ((Scaled.const (1/20922789888000)).mulF ((Scaled.var).powF 16)))
 
 private theorem rep_cosineB : cosineB.Rep PositiveScalarPolynomials.cosine :=
-  rep_nrm (((((((((Scaled.rep_one).subK ((Scaled.rep_const _).mulK ((Scaled.rep_var).powK 2))).addK
-    ((Scaled.rep_const _).mulK ((Scaled.rep_var).powK 4))).subK
-    ((Scaled.rep_const _).mulK ((Scaled.rep_var).powK 6))).addK
-    ((Scaled.rep_const _).mulK ((Scaled.rep_var).powK 8))).subK
-    ((Scaled.rep_const _).mulK ((Scaled.rep_var).powK 10))).addK
-    ((Scaled.rep_const _).mulK ((Scaled.rep_var).powK 12))).subK
-    ((Scaled.rep_const _).mulK ((Scaled.rep_var).powK 14))).addK
-    ((Scaled.rep_const _).mulK ((Scaled.rep_var).powK 16)))
+  Scaled.Rep.normF (((((((((Scaled.rep_one).subF
+    ((Scaled.rep_const _).mulF ((Scaled.rep_var).powF 2))).addF
+    ((Scaled.rep_const _).mulF ((Scaled.rep_var).powF 4))).subF
+    ((Scaled.rep_const _).mulF ((Scaled.rep_var).powF 6))).addF
+    ((Scaled.rep_const _).mulF ((Scaled.rep_var).powF 8))).subF
+    ((Scaled.rep_const _).mulF ((Scaled.rep_var).powF 10))).addF
+    ((Scaled.rep_const _).mulF ((Scaled.rep_var).powF 12))).subF
+    ((Scaled.rep_const _).mulF ((Scaled.rep_var).powF 14))).addF
+    ((Scaled.rep_const _).mulF ((Scaled.rep_var).powF 16)))
 
 private theorem comp_parameter (b : Band) (p : ℚ[X]) :
     p.comp (parameter b)=centered (origin b-1) (origin b+1) p := by
@@ -712,120 +361,122 @@ private theorem comp_half (b : Band) (p : ℚ[X]) :
   rw [centered,affine,e1,e2,parameter,mul_add,← C_mul]
 
 private def sinB : Band → Scaled
-  | .low => nrm (sineB.center 1 1 0 1)
-  | .middle => nrm (sineB.center 1 5 1 5)
-  | .high => nrm (sineB.center 1 20 7 20)
+  | .low => Scaled.normF (sineB.centerF 1 1 0 1)
+  | .middle => Scaled.normF (sineB.centerF 1 5 1 5)
+  | .high => Scaled.normF (sineB.centerF 1 20 7 20)
 
 private theorem rep_sinB (b : Band) : (sinB b).Rep (sine b) := by
   rw [sine,comp_parameter]
-  cases b <;> exact rep_nrm (rep_sineB.centered _ _ _ _ (by norm_num) (by norm_num [origin])
-    (by norm_num [origin]))
+  cases b <;> exact Scaled.Rep.normF (rep_sineB.centeredF _ _ _ _ (by norm_num)
+    (by norm_num [origin]) (by norm_num [origin]))
 
 private def cosB : Band → Scaled
-  | .low => nrm (cosineB.center 1 1 0 1)
-  | .middle => nrm (cosineB.center 1 5 1 5)
-  | .high => nrm (cosineB.center 1 20 7 20)
+  | .low => Scaled.normF (cosineB.centerF 1 1 0 1)
+  | .middle => Scaled.normF (cosineB.centerF 1 5 1 5)
+  | .high => Scaled.normF (cosineB.centerF 1 20 7 20)
 
 private theorem rep_cosB (b : Band) : (cosB b).Rep (cosine b) := by
   rw [cosine,comp_parameter]
-  cases b <;> exact rep_nrm (rep_cosineB.centered _ _ _ _ (by norm_num) (by norm_num [origin])
-    (by norm_num [origin]))
+  cases b <;> exact Scaled.Rep.normF (rep_cosineB.centeredF _ _ _ _ (by norm_num)
+    (by norm_num [origin]) (by norm_num [origin]))
 
 private def halfSinB : Band → Scaled
-  | .low => nrm (sineB.center 1 2 0 1)
-  | .middle => nrm (sineB.center 1 10 1 5)
-  | .high => nrm (sineB.center 1 40 7 20)
+  | .low => Scaled.normF (sineB.centerF 1 2 0 1)
+  | .middle => Scaled.normF (sineB.centerF 1 10 1 5)
+  | .high => Scaled.normF (sineB.centerF 1 40 7 20)
 
 private theorem rep_halfSinB (b : Band) : (halfSinB b).Rep (halfSine b) := by
   rw [halfSine,comp_half]
-  cases b <;> exact rep_nrm (rep_sineB.centered _ _ _ _ (by norm_num) (by norm_num [origin])
-    (by norm_num [origin]))
+  cases b <;> exact Scaled.Rep.normF (rep_sineB.centeredF _ _ _ _ (by norm_num)
+    (by norm_num [origin]) (by norm_num [origin]))
 
-private def parHighS : Scaled := (Scaled.const (7/20)).addK (Scaled.var)
+private def parHighS : Scaled := (Scaled.const (7/20)).addF (Scaled.var)
 
 private theorem rep_par : parHighS.Rep (parameter .high) :=
-  (Scaled.rep_const _).addK (Scaled.rep_var)
+  (Scaled.rep_const _).addF (Scaled.rep_var)
 
 private def kS : Band → Scaled
-  | .low => ((Scaled.const (17253/20000)).addK ((Scaled.const (11/20)).mulK (Scaled.var))).addK
-      ((Scaled.const (3/10)).mulK ((Scaled.var).powK 2))
-  | .middle => ((Scaled.const (983/1000)).addK ((Scaled.const (1/10)).mulK (Scaled.var))).subK
-      ((Scaled.const (3/10)).mulK ((Scaled.var).powK 2))
-  | .high => (Scaled.const (1017/1000)).subK ((Scaled.const (1/50)).mulK (parHighS))
+  | .low => ((Scaled.const (17253/20000)).addF ((Scaled.const (11/20)).mulF (Scaled.var))).addF
+      ((Scaled.const (3/10)).mulF ((Scaled.var).powF 2))
+  | .middle => ((Scaled.const (983/1000)).addF ((Scaled.const (1/10)).mulF (Scaled.var))).subF
+      ((Scaled.const (3/10)).mulF ((Scaled.var).powF 2))
+  | .high => (Scaled.const (1017/1000)).subF ((Scaled.const (1/50)).mulF (parHighS))
 
 private theorem rep_k : ∀ b,(kS b).Rep (k b)
-  | .low => ((Scaled.rep_const _).addK ((Scaled.rep_const _).mulK (Scaled.rep_var))).addK
-      ((Scaled.rep_const _).mulK ((Scaled.rep_var).powK 2))
-  | .middle => ((Scaled.rep_const _).addK ((Scaled.rep_const _).mulK (Scaled.rep_var))).subK
-      ((Scaled.rep_const _).mulK ((Scaled.rep_var).powK 2))
-  | .high => (Scaled.rep_const _).subK ((Scaled.rep_const _).mulK (rep_par))
+  | .low => ((Scaled.rep_const _).addF ((Scaled.rep_const _).mulF (Scaled.rep_var))).addF
+      ((Scaled.rep_const _).mulF ((Scaled.rep_var).powF 2))
+  | .middle => ((Scaled.rep_const _).addF ((Scaled.rep_const _).mulF (Scaled.rep_var))).subF
+      ((Scaled.rep_const _).mulF ((Scaled.rep_var).powF 2))
+  | .high => (Scaled.rep_const _).subF ((Scaled.rep_const _).mulF (rep_par))
 
 private def cS : Band → Scaled
-  | .low => (kS .low).addK ((Scaled.const (3/10)).mulK (Scaled.var))
-  | .middle => ((Scaled.const (209/200)).addK ((Scaled.const (13/20)).mulK (Scaled.var))).subK
-      ((Scaled.const (3/2)).mulK ((Scaled.var).powK 2))
+  | .low => (kS .low).addF ((Scaled.const (3/10)).mulF (Scaled.var))
+  | .middle => ((Scaled.const (209/200)).addF ((Scaled.const (13/20)).mulF (Scaled.var))).subF
+      ((Scaled.const (3/2)).mulF ((Scaled.var).powF 2))
   | .high => Scaled.const (113/100)
 
 private theorem rep_c : ∀ b,(cS b).Rep (c b)
-  | .low => (rep_k .low).addK ((Scaled.rep_const _).mulK (Scaled.rep_var))
-  | .middle => ((Scaled.rep_const _).addK ((Scaled.rep_const _).mulK (Scaled.rep_var))).subK
-      ((Scaled.rep_const _).mulK ((Scaled.rep_var).powK 2))
+  | .low => (rep_k .low).addF ((Scaled.rep_const _).mulF (Scaled.rep_var))
+  | .middle => ((Scaled.rep_const _).addF ((Scaled.rep_const _).mulF (Scaled.rep_var))).subF
+      ((Scaled.rep_const _).mulF ((Scaled.rep_var).powF 2))
   | .high => Scaled.rep_const _
 
 private def ellS : Band → Scaled
-  | .low => ((Scaled.const (50521/100000)).addK ((Scaled.const (823/1000)).mulK (Scaled.var))).addK
-      ((Scaled.const (7/10)).mulK ((Scaled.var).powK 2))
-  | .middle => ((Scaled.const (349/500)).addK ((Scaled.const (9/10)).mulK (Scaled.var))).subK
-      ((Scaled.var).powK 2)
-  | .high => (Scaled.const (7/10)).addK ((Scaled.const (9/25)).mulK (parHighS))
+  | .low => ((Scaled.const (50521/100000)).addF ((Scaled.const (823/1000)).mulF (Scaled.var))).addF
+      ((Scaled.const (7/10)).mulF ((Scaled.var).powF 2))
+  | .middle => ((Scaled.const (349/500)).addF ((Scaled.const (9/10)).mulF (Scaled.var))).subF
+      ((Scaled.var).powF 2)
+  | .high => (Scaled.const (7/10)).addF ((Scaled.const (9/25)).mulF (parHighS))
 
 private theorem rep_ell : ∀ b,(ellS b).Rep (ell b)
-  | .low => ((Scaled.rep_const _).addK ((Scaled.rep_const _).mulK (Scaled.rep_var))).addK
-      ((Scaled.rep_const _).mulK ((Scaled.rep_var).powK 2))
-  | .middle => ((Scaled.rep_const _).addK ((Scaled.rep_const _).mulK (Scaled.rep_var))).subK
-      ((Scaled.rep_var).powK 2)
-  | .high => (Scaled.rep_const _).addK ((Scaled.rep_const _).mulK (rep_par))
+  | .low => ((Scaled.rep_const _).addF ((Scaled.rep_const _).mulF (Scaled.rep_var))).addF
+      ((Scaled.rep_const _).mulF ((Scaled.rep_var).powF 2))
+  | .middle => ((Scaled.rep_const _).addF ((Scaled.rep_const _).mulF (Scaled.rep_var))).subF
+      ((Scaled.rep_var).powF 2)
+  | .high => (Scaled.rep_const _).addF ((Scaled.rep_const _).mulF (rep_par))
 
 private def gS : Band → Scaled
   | .low => Scaled.const (8/25)
   | .middle => Scaled.const (31/100)
-  | .high => (Scaled.const (27/100)).addK ((Scaled.const (2/25)).mulK (parHighS))
+  | .high => (Scaled.const (27/100)).addF ((Scaled.const (2/25)).mulF (parHighS))
 
 private theorem rep_g : ∀ b,(gS b).Rep (g b)
   | .low => Scaled.rep_const _
   | .middle => Scaled.rep_const _
-  | .high => (Scaled.rep_const _).addK ((Scaled.rep_const _).mulK (rep_par))
+  | .high => (Scaled.rep_const _).addF ((Scaled.rep_const _).mulF (rep_par))
 
 private def etaS : Band → Scaled
-  | .low => ((Scaled.const (131/500)).addK ((Scaled.const (267/1000)).mulK (Scaled.var))).addK
-      ((Scaled.const (1/10)).mulK ((Scaled.var).powK 2))
-  | .middle => (Scaled.const (319/1000)).addK ((Scaled.const (1/5)).mulK (Scaled.var))
+  | .low => ((Scaled.const (131/500)).addF ((Scaled.const (267/1000)).mulF (Scaled.var))).addF
+      ((Scaled.const (1/10)).mulF ((Scaled.var).powF 2))
+  | .middle => (Scaled.const (319/1000)).addF ((Scaled.const (1/5)).mulF (Scaled.var))
   | .high => Scaled.const (7/20)
 
 private theorem rep_eta : ∀ b,(etaS b).Rep (eta b)
-  | .low => ((Scaled.rep_const _).addK ((Scaled.rep_const _).mulK (Scaled.rep_var))).addK
-      ((Scaled.rep_const _).mulK ((Scaled.rep_var).powK 2))
-  | .middle => (Scaled.rep_const _).addK ((Scaled.rep_const _).mulK (Scaled.rep_var))
+  | .low => ((Scaled.rep_const _).addF ((Scaled.rep_const _).mulF (Scaled.rep_var))).addF
+      ((Scaled.rep_const _).mulF ((Scaled.rep_var).powF 2))
+  | .middle => (Scaled.rep_const _).addF ((Scaled.rep_const _).mulF (Scaled.rep_var))
   | .high => Scaled.rep_const _
 
-private def nS (b : Band) : Scaled := nrm ((kS b).mulK ((cosB b).addK ((gS b).mulK (sinB b))))
+private def nS (b : Band) : Scaled :=
+  Scaled.normF ((kS b).mulF ((cosB b).addF ((gS b).mulF (sinB b))))
 
 private theorem rep_n (b : Band) : (nS b).Rep (n b) :=
-  rep_nrm ((rep_k b).mulK ((rep_cosB b).addK ((rep_g b).mulK (rep_sinB b))))
+  Scaled.Rep.normF ((rep_k b).mulF ((rep_cosB b).addF ((rep_g b).mulF (rep_sinB b))))
 
 private def pS (b : Band) : Scaled :=
-  if b=.high then Scaled.ofNat 1 else nrm ((cosB b).addK ((etaS b).mulK (sinB b)))
+  if b=.high then Scaled.ofNat 1 else Scaled.normF ((cosB b).addF ((etaS b).mulF (sinB b)))
 
 private theorem rep_p (b : Band) : (pS b).Rep (p b) := by
   unfold pS p
   split_ifs
   · exact Scaled.rep_one
-  · exact rep_nrm ((rep_cosB b).addK ((rep_eta b).mulK (rep_sinB b)))
+  · exact Scaled.Rep.normF ((rep_cosB b).addF ((rep_eta b).mulF (rep_sinB b)))
 
-private def rS (b : Band) : Scaled := nrm ((cosB b).addK ((Scaled.const (7/10)).mulK (sinB b)))
+private def rS (b : Band) : Scaled :=
+  Scaled.normF ((cosB b).addF ((Scaled.const (7/10)).mulF (sinB b)))
 
 private theorem rep_r (b : Band) : (rS b).Rep (r b) :=
-  rep_nrm ((rep_cosB b).addK ((Scaled.rep_const _).mulK (rep_sinB b)))
+  Scaled.Rep.normF ((rep_cosB b).addF ((Scaled.rep_const _).mulF (rep_sinB b)))
 
 /-! #### The scalar cases -/
 
@@ -874,79 +525,79 @@ private theorem rep_nu (s : ScalarCase) : (nuS s).Rep (nu s) :=
 
 private def outsideS (s : ScalarCase) : Scaled :=
   let b := band s
-  nrm (((if atG s then
-      (((Scaled.ofNat 3).addK ((Scaled.ofNat 2).mulK (ellS b))).addK ((Scaled.ofNat 3).mulK (cS b))).addK
-        ((kS b).mulK (((Scaled.ofNat 1).addK ((Scaled.ofNat 2).mulK (cosB b))).addK
-          (((Scaled.ofNat 1).addK ((Scaled.ofNat 2).mulK (gS b))).mulK (sinB b))))
+  Scaled.normF (((if atG s then
+      (((Scaled.ofNat 3).addF ((Scaled.ofNat 2).mulF (ellS b))).addF ((Scaled.ofNat 3).mulF (cS b))).addF
+        ((kS b).mulF (((Scaled.ofNat 1).addF ((Scaled.ofNat 2).mulF (cosB b))).addF
+          (((Scaled.ofNat 1).addF ((Scaled.ofNat 2).mulF (gS b))).mulF (sinB b))))
     else if isDE s then
-      (((((((Scaled.ofNat 3).mulK (kS b)).addK ((Scaled.ofNat 2).mulK (ellS b))).addK
-        ((Scaled.ofNat 3).mulK (cS b))).addK (Scaled.ofNat 1)).addK
-        ((Scaled.const (1/2)).mulK (cosB b))).addK
-        ((Scaled.const (1/2-axisUpper)).mulK (sinB b))).addK ((Scaled.const (3/2)).mulK (rS b))
+      (((((((Scaled.ofNat 3).mulF (kS b)).addF ((Scaled.ofNat 2).mulF (ellS b))).addF
+        ((Scaled.ofNat 3).mulF (cS b))).addF (Scaled.ofNat 1)).addF
+        ((Scaled.const (1/2)).mulF (cosB b))).addF
+        ((Scaled.const (1/2-axisUpper)).mulF (sinB b))).addF ((Scaled.const (3/2)).mulF (rS b))
     else if b=.high then
-      (((((Scaled.ofNat 3).addK (sinB b)).subK
-        ((Scaled.const (2*radiusUpper)).mulK (halfSinB b))).addK ((Scaled.ofNat 3).mulK (kS b))).addK
-        ((Scaled.ofNat 2).mulK (ellS b))).addK ((Scaled.ofNat 3).mulK (cS b))
+      (((((Scaled.ofNat 3).addF (sinB b)).subF
+        ((Scaled.const (2*radiusUpper)).mulF (halfSinB b))).addF ((Scaled.ofNat 3).mulF (kS b))).addF
+        ((Scaled.ofNat 2).mulF (ellS b))).addF ((Scaled.ofNat 3).mulF (cS b))
     else
-      ((((((Scaled.ofNat 3).mulK (kS b)).addK ((Scaled.ofNat 2).mulK (ellS b))).addK
-        ((Scaled.ofNat 3).mulK (cS b))).addK (Scaled.ofNat 1)).addK
-        ((Scaled.ofNat 2).mulK (cosB b))).addK
-        (((Scaled.ofNat 1).addK ((Scaled.ofNat 2).mulK (etaS b))).mulK (sinB b)))).addK
-    ((nuS s).mulK ((cosB b).subK (Scaled.ofNat 1))))
+      ((((((Scaled.ofNat 3).mulF (kS b)).addF ((Scaled.ofNat 2).mulF (ellS b))).addF
+        ((Scaled.ofNat 3).mulF (cS b))).addF (Scaled.ofNat 1)).addF
+        ((Scaled.ofNat 2).mulF (cosB b))).addF
+        (((Scaled.ofNat 1).addF ((Scaled.ofNat 2).mulF (etaS b))).mulF (sinB b)))).addF
+    ((nuS s).mulF ((cosB b).subF (Scaled.ofNat 1))))
 
 private theorem rep_outside (s : ScalarCase) : (outsideS s).Rep (outside s) := by
   simp only [outsideS,outside]
-  apply rep_nrm
-  have hnu := (rep_nu s).mulK ((rep_cosB (band s)).subK (Scaled.rep_one))
+  apply Scaled.Rep.normF
+  have hnu := (rep_nu s).mulF ((rep_cosB (band s)).subF (Scaled.rep_one))
   split_ifs
-  · exact ((((Scaled.rep_ofNat 3).addK ((Scaled.rep_ofNat 2).mulK (rep_ell _))).addK
-      ((Scaled.rep_ofNat 3).mulK (rep_c _))).addK ((rep_k _).mulK (((Scaled.rep_one).addK
-      ((Scaled.rep_ofNat 2).mulK (rep_cosB _))).addK (((Scaled.rep_one).addK
-      ((Scaled.rep_ofNat 2).mulK (rep_g _))).mulK (rep_sinB _))))).addK hnu
-  · exact ((((((((Scaled.rep_ofNat 3).mulK (rep_k _)).addK ((Scaled.rep_ofNat 2).mulK (rep_ell _))).addK
-      ((Scaled.rep_ofNat 3).mulK (rep_c _))).addK (Scaled.rep_one)).addK
-      ((Scaled.rep_const _).mulK (rep_cosB _))).addK ((Scaled.rep_const _).mulK (rep_sinB _))).addK
-      ((Scaled.rep_const _).mulK (rep_r _))).addK hnu
-  · exact ((((((Scaled.rep_ofNat 3).addK (rep_sinB _)).subK
-      ((Scaled.rep_const _).mulK (rep_halfSinB _))).addK ((Scaled.rep_ofNat 3).mulK (rep_k _))).addK
-      ((Scaled.rep_ofNat 2).mulK (rep_ell _))).addK ((Scaled.rep_ofNat 3).mulK (rep_c _))).addK hnu
-  · exact (((((((Scaled.rep_ofNat 3).mulK (rep_k _)).addK ((Scaled.rep_ofNat 2).mulK (rep_ell _))).addK
-      ((Scaled.rep_ofNat 3).mulK (rep_c _))).addK (Scaled.rep_one)).addK
-      ((Scaled.rep_ofNat 2).mulK (rep_cosB _))).addK (((Scaled.rep_one).addK
-      ((Scaled.rep_ofNat 2).mulK (rep_eta _))).mulK (rep_sinB _))).addK hnu
+  · exact ((((Scaled.rep_ofNat 3).addF ((Scaled.rep_ofNat 2).mulF (rep_ell _))).addF
+      ((Scaled.rep_ofNat 3).mulF (rep_c _))).addF ((rep_k _).mulF (((Scaled.rep_one).addF
+      ((Scaled.rep_ofNat 2).mulF (rep_cosB _))).addF (((Scaled.rep_one).addF
+      ((Scaled.rep_ofNat 2).mulF (rep_g _))).mulF (rep_sinB _))))).addF hnu
+  · exact ((((((((Scaled.rep_ofNat 3).mulF (rep_k _)).addF ((Scaled.rep_ofNat 2).mulF (rep_ell _))).addF
+      ((Scaled.rep_ofNat 3).mulF (rep_c _))).addF (Scaled.rep_one)).addF
+      ((Scaled.rep_const _).mulF (rep_cosB _))).addF ((Scaled.rep_const _).mulF (rep_sinB _))).addF
+      ((Scaled.rep_const _).mulF (rep_r _))).addF hnu
+  · exact ((((((Scaled.rep_ofNat 3).addF (rep_sinB _)).subF
+      ((Scaled.rep_const _).mulF (rep_halfSinB _))).addF ((Scaled.rep_ofNat 3).mulF (rep_k _))).addF
+      ((Scaled.rep_ofNat 2).mulF (rep_ell _))).addF ((Scaled.rep_ofNat 3).mulF (rep_c _))).addF hnu
+  · exact (((((((Scaled.rep_ofNat 3).mulF (rep_k _)).addF ((Scaled.rep_ofNat 2).mulF (rep_ell _))).addF
+      ((Scaled.rep_ofNat 3).mulF (rep_c _))).addF (Scaled.rep_one)).addF
+      ((Scaled.rep_ofNat 2).mulF (rep_cosB _))).addF (((Scaled.rep_one).addF
+      ((Scaled.rep_ofNat 2).mulF (rep_eta _))).mulF (rep_sinB _))).addF hnu
 
 private def squaredNormS (s : ScalarCase) (i : Fin 4) : Scaled :=
-  (((firstS s i).powK 2).addK ((secondS s i).powK 2)).subK
+  (((firstS s i).powF 2).addF ((secondS s i).powF 2)).subF
     (if i=negativeIndex s then
-      (((Scaled.ofNat 2).mulK (firstS s i)).mulK (secondS s i)).mulK (sinB (band s))
+      (((Scaled.ofNat 2).mulF (firstS s i)).mulF (secondS s i)).mulF (sinB (band s))
     else ⟨[],1⟩)
 
 private theorem rep_squaredNorm (s : ScalarCase) (i : Fin 4) :
     (squaredNormS s i).Rep (squaredNorm s i) := by
   simp only [squaredNormS,squaredNorm]
   split_ifs
-  · exact (((rep_first s i).powK 2).addK ((rep_second s i).powK 2)).subK
-      ((((Scaled.rep_ofNat 2).mulK (rep_first s i)).mulK (rep_second s i)).mulK (rep_sinB _))
-  · exact (((rep_first s i).powK 2).addK ((rep_second s i).powK 2)).subK Scaled.rep_zero
+  · exact (((rep_first s i).powF 2).addF ((rep_second s i).powF 2)).subF
+      ((((Scaled.rep_ofNat 2).mulF (rep_first s i)).mulF (rep_second s i)).mulF (rep_sinB _))
+  · exact (((rep_first s i).powF 2).addF ((rep_second s i).powF 2)).subF Scaled.rep_zero
 
 private def rowSquareS (s : ScalarCase) (i : Fin 5) : Scaled :=
-  nrm (if hi : i.val<4 then squaredNormS s ⟨i.val,hi⟩
-    else if atG s then (Scaled.ofNat 1).addK ((gS (band s)).powK 2)
+  Scaled.normF (if hi : i.val<4 then squaredNormS s ⟨i.val,hi⟩
+    else if atG s then (Scaled.ofNat 1).addF ((gS (band s)).powF 2)
     else if isDE s=true ∨ band s=.high then Scaled.ofNat 1
-    else (Scaled.ofNat 1).addK ((etaS (band s)).powK 2))
+    else (Scaled.ofNat 1).addF ((etaS (band s)).powF 2))
 
 private theorem rep_rowSquare (s : ScalarCase) (i : Fin 5) :
     (rowSquareS s i).Rep (rowSquare s i) := by
   simp only [rowSquareS,rowSquare]
-  apply rep_nrm
+  apply Scaled.Rep.normF
   split_ifs
   · exact rep_squaredNorm s _
-  · exact (Scaled.rep_one).addK ((rep_g _).powK 2)
+  · exact (Scaled.rep_one).addF ((rep_g _).powF 2)
   · exact Scaled.rep_one
-  · exact (Scaled.rep_one).addK ((rep_eta _).powK 2)
+  · exact (Scaled.rep_one).addF ((rep_eta _).powF 2)
 
 private def rowWeightS (s : ScalarCase) (i : Fin 5) : Scaled :=
-  if i.val<4 then Scaled.ofNat 1 else if atG s then (kS (band s)).mulK (sinB (band s))
+  if i.val<4 then Scaled.ofNat 1 else if atG s then (kS (band s)).mulF (sinB (band s))
   else if isDE s=true ∨ band s=.high then ⟨[],1⟩ else sinB (band s)
 
 private theorem rep_rowWeight (s : ScalarCase) (i : Fin 5) :
@@ -954,7 +605,7 @@ private theorem rep_rowWeight (s : ScalarCase) (i : Fin 5) :
   simp only [rowWeightS,rowWeight]
   split_ifs
   · exact Scaled.rep_one
-  · exact (rep_k _).mulK (rep_sinB _)
+  · exact (rep_k _).mulF (rep_sinB _)
   · exact Scaled.rep_zero
   · exact rep_sinB _
 
@@ -974,68 +625,58 @@ private theorem rep_massAt {s : ScalarCase} (h : RowsOk s) (i : Fin 5) :
   · exact rep_newtonMass (rep_rowSquare s i) (h i).1 (h i).2
 
 private def massS (s : ScalarCase) : Scaled :=
-  nrm (((((massAtS s 0).mulK (massAtS s 1)).mulK (massAtS s 2)).mulK (massAtS s 3)).mulK
-    (massAtS s 4))
+  ((((massAtS s 0).mulF (massAtS s 1)).mulF (massAtS s 2)).mulF (massAtS s 3)).mulF
+    (massAtS s 4)
 
 private theorem rep_mass {s : ScalarCase} (h : RowsOk s) : (massS s).Rep (mass s) := by
   rw [mass,Fin.prod_univ_five]
-  exact rep_nrm (((((rep_massAt h 0).mulK (rep_massAt h 1)).mulK (rep_massAt h 2)).mulK
-    (rep_massAt h 3)).mulK (rep_massAt h 4))
+  exact ((((rep_massAt h 0).mulF (rep_massAt h 1)).mulF (rep_massAt h 2)).mulF
+    (rep_massAt h 3)).mulF (rep_massAt h 4)
 
 private def massExceptS (s : ScalarCase) (i : Fin 5) : Scaled :=
-  nrm (((((if (0:Fin 5)=i then Scaled.ofNat 1 else massAtS s 0).mulK
-    (if (1:Fin 5)=i then Scaled.ofNat 1 else massAtS s 1)).mulK
-    (if (2:Fin 5)=i then Scaled.ofNat 1 else massAtS s 2)).mulK
-    (if (3:Fin 5)=i then Scaled.ofNat 1 else massAtS s 3)).mulK
-    (if (4:Fin 5)=i then Scaled.ofNat 1 else massAtS s 4))
+  ((((if (0:Fin 5)=i then Scaled.ofNat 1 else massAtS s 0).mulF
+    (if (1:Fin 5)=i then Scaled.ofNat 1 else massAtS s 1)).mulF
+    (if (2:Fin 5)=i then Scaled.ofNat 1 else massAtS s 2)).mulF
+    (if (3:Fin 5)=i then Scaled.ofNat 1 else massAtS s 3)).mulF
+    (if (4:Fin 5)=i then Scaled.ofNat 1 else massAtS s 4)
 
 private theorem rep_massExcept {s : ScalarCase} (h : RowsOk s) (i : Fin 5) :
     (massExceptS s i).Rep (massExcept s i) := by
   rw [massExcept,Fin.prod_univ_five]
-  exact rep_nrm (((((rep_ite Scaled.rep_one (rep_massAt h 0)).mulK
-    (rep_ite Scaled.rep_one (rep_massAt h 1))).mulK (rep_ite Scaled.rep_one (rep_massAt h 2))).mulK
-    (rep_ite Scaled.rep_one (rep_massAt h 3))).mulK (rep_ite Scaled.rep_one (rep_massAt h 4)))
+  exact ((((rep_ite Scaled.rep_one (rep_massAt h 0)).mulF
+    (rep_ite Scaled.rep_one (rep_massAt h 1))).mulF (rep_ite Scaled.rep_one (rep_massAt h 2))).mulF
+    (rep_ite Scaled.rep_one (rep_massAt h 3))).mulF (rep_ite Scaled.rep_one (rep_massAt h 4))
 
 private def termS (s : ScalarCase) (i : Fin 5) : Scaled :=
-  ((rowWeightS s i).mulK ((rowSquareS s i).addK ((massAtS s i).powK 2))).mulK (massExceptS s i)
+  ((rowWeightS s i).mulF ((rowSquareS s i).addF ((massAtS s i).powF 2))).mulF (massExceptS s i)
 
 private def certificateS (s : ScalarCase) : Scaled :=
-  nrm ((((Scaled.ofNat 2).mulK ((outsideS s).subK (Scaled.const margin))).mulK (massS s)).subK
-    ((Scaled.const radiusUpper).mulK (((((termS s 0).addK (termS s 1)).addK (termS s 2)).addK
-      (termS s 3)).addK (termS s 4))))
+  (((Scaled.ofNat 2).mulF ((outsideS s).subF (Scaled.const margin))).mulF (massS s)).subF
+    ((Scaled.const radiusUpper).mulF (((((termS s 0).addF (termS s 1)).addF (termS s 2)).addF
+      (termS s 3)).addF (termS s 4)))
 
 private theorem rep_certificate {s : ScalarCase} (h : RowsOk s) :
     (certificateS s).Rep (certificate s) := by
   have ht (i : Fin 5) : (termS s i).Rep
       (rowWeight s i*(rowSquare s i+(massAt s i)^2)*massExcept s i) :=
-    ((rep_rowWeight s i).mulK ((rep_rowSquare s i).addK ((rep_massAt h i).powK 2))).mulK
+    ((rep_rowWeight s i).mulF ((rep_rowSquare s i).addF ((rep_massAt h i).powF 2))).mulF
       (rep_massExcept h i)
   rw [certificate,Fin.sum_univ_five]
-  exact rep_nrm ((((Scaled.rep_ofNat 2).mulK ((rep_outside s).subK (Scaled.rep_const _))).mulK
-    (rep_mass h)).subK ((Scaled.rep_const _).mulK (((((ht 0).addK (ht 1)).addK (ht 2)).addK
-      (ht 3)).addK (ht 4))))
-
-/-- `Scaled.center`, with `SFast.centerF`. -/
-private def centerS (c : Scaled) (num den : ℕ) (s t : ℤ) : Scaled :=
-  ⟨SFast.centerF num den s t c.l,c.s*den^(c.l.length-1)⟩
-
-private theorem rep_centerS {c : Scaled} {p : ℚ[X]} (hc : c.Rep p) (num den : ℕ) (s t : ℤ)
-    {a b : ℚ} (hden : den≠0) (hm : (a+b)/2=num*s/den) (hh : (b-a)/2=num*t/den) :
-    (centerS c num den s t).Rep (WholeIntervalPolynomial.centered a b p) := by
-  have h := hc.centered num den s t hden hm hh
-  rwa [Scaled.center,← SFast.centerF_eq] at h
+  exact (((Scaled.rep_ofNat 2).mulF ((rep_outside s).subF (Scaled.rep_const _))).mulF
+    (rep_mass h)).subF ((Scaled.rep_const _).mulF (((((ht 0).addF (ht 1)).addF (ht 2)).addF
+      (ht 3)).addF (ht 4)))
 
 /-- Centering on the band interval `[0,length b]`. -/
 private def centerB (b : Band) (a : Scaled) : Scaled :=
   match b with
-  | .low => nrm (centerS a 1 10 1 1)
-  | .middle => nrm (centerS a 3 40 1 1)
-  | .high => nrm (centerS a 7 40 1 1)
+  | .low => a.centerF 1 10 1 1
+  | .middle => a.centerF 3 40 1 1
+  | .high => a.centerF 7 40 1 1
 
 private theorem rep_centerB (b : Band) {a : Scaled} {q : ℚ[X]} (ha : a.Rep q) :
     (centerB b a).Rep (centered 0 (length b) q) := by
-  cases b <;> exact rep_nrm (rep_centerS ha _ _ _ _ (by norm_num) (by norm_num [length])
-    (by norm_num [length]))
+  cases b <;> exact ha.centeredF _ _ _ _ (by norm_num) (by norm_num [length])
+    (by norm_num [length])
 
 end Certificates2
 
@@ -1045,30 +686,22 @@ open WholeIntervalPolynomial.Certificate
 /-! #### Reserves as integer comparisons -/
 
 private abbrev LowerOk (c : Scaled) (D n d : ℕ) : Prop :=
-  (SFast.chebF c.l).length≤D+1 ∧
-    (n:ℤ)*((c.s:ℤ)*2^c.l.length)<2*(d:ℤ)*SFast.lowL (SFast.chebF c.l)
+  (Fast.chebF c.l).length≤D+1 ∧
+    (n:ℤ)*((c.s:ℤ)*2^c.l.length)<2*(d:ℤ)*Fast.lowL (Fast.chebF c.l)
 
 private abbrev UpperOk (c : Scaled) (D n d : ℕ) : Prop :=
-  (SFast.chebF c.l).length≤D+1 ∧
-    2*(d:ℤ)*SFast.upL (SFast.chebF c.l)<(n:ℤ)*((c.s:ℤ)*2^c.l.length)
+  (Fast.chebF c.l).length≤D+1 ∧
+    2*(d:ℤ)*Fast.upL (Fast.chebF c.l)<(n:ℤ)*((c.s:ℤ)*2^c.l.length)
 
 private theorem lowerOn_gt {c : Scaled} {a b r : ℚ} {q : ℚ[X]} {D n d : ℕ}
     (hc : c.Rep (centered a b q)) (hs : c.s≠0) (hl : c.l.length≤D+1)
-    (hr : r=(n:ℚ)/d) (hd : 0<d) (h : LowerOk c D n d) : r<lowerOn D a b q := by
-  rw [lowerOn_eq_of_rep hc hs hl,← SFast.chebF_eq,SFast.lowL_eq h.1,hr,
-    div_lt_div_iff₀ (by exact_mod_cast hd) (scale_pos hs)]
-  have h' := (Int.cast_lt (R := ℚ)).mpr h.2
-  push_cast at h'
-  linarith
+    (hr : r=(n:ℚ)/d) (hd : 0<d) (h : LowerOk c D n d) : r<lowerOn D a b q :=
+  lt_lowerOn_of_int hc hs hl h.1 hr hd h.2
 
 private theorem upperOn_lt {c : Scaled} {a b r : ℚ} {q : ℚ[X]} {D n d : ℕ}
     (hc : c.Rep (centered a b q)) (hs : c.s≠0) (hl : c.l.length≤D+1)
-    (hr : r=(n:ℚ)/d) (hd : 0<d) (h : UpperOk c D n d) : upperOn D a b q<r := by
-  rw [upperOn_eq_of_rep hc hs hl,← SFast.chebF_eq,SFast.upL_eq h.1,hr,
-    div_lt_div_iff₀ (scale_pos hs) (by exact_mod_cast hd)]
-  have h' := (Int.cast_lt (R := ℚ)).mpr h.2
-  push_cast at h'
-  linarith
+    (hr : r=(n:ℚ)/d) (hd : 0<d) (h : UpperOk c D n d) : upperOn D a b q<r :=
+  upperOn_lt_of_int hc hs hl h.1 hr hd h.2
 
 /-- The kernel facts for the five rows of one case. -/
 private abbrev RowFacts (s : ScalarCase) (i : Fin 5) : Prop :=
@@ -1096,88 +729,36 @@ private theorem facts_lowE : (∀ i : Fin 5,RowFacts .lowE i) ∧ CertFacts .low
 private theorem facts_lowG : (∀ i : Fin 5,RowFacts .lowG i) ∧ CertFacts .lowG := by
   decide +kernel
 
-private theorem facts_middleE0 : (∀ i : Fin 5,RowFacts (.middleE 0) i) ∧ CertFacts (.middleE 0) := by
-  decide +kernel
+private theorem facts_middleE (j : Fin 4) :
+    (∀ i : Fin 5,RowFacts (.middleE j) i) ∧ CertFacts (.middleE j) := by
+  fin_cases j <;> decide +kernel
 
-private theorem facts_middleE1 : (∀ i : Fin 5,RowFacts (.middleE 1) i) ∧ CertFacts (.middleE 1) := by
-  decide +kernel
+private theorem facts_middleG (j : Fin 4) :
+    (∀ i : Fin 5,RowFacts (.middleG j) i) ∧ CertFacts (.middleG j) := by
+  fin_cases j <;> decide +kernel
 
-private theorem facts_middleE2 : (∀ i : Fin 5,RowFacts (.middleE 2) i) ∧ CertFacts (.middleE 2) := by
-  decide +kernel
+private theorem facts_highE (j : Fin 4) :
+    (∀ i : Fin 5,RowFacts (.highE j) i) ∧ CertFacts (.highE j) := by
+  fin_cases j <;> decide +kernel
 
-private theorem facts_middleE3 : (∀ i : Fin 5,RowFacts (.middleE 3) i) ∧ CertFacts (.middleE 3) := by
-  decide +kernel
-
-private theorem facts_middleG0 : (∀ i : Fin 5,RowFacts (.middleG 0) i) ∧ CertFacts (.middleG 0) := by
-  decide +kernel
-
-private theorem facts_middleG1 : (∀ i : Fin 5,RowFacts (.middleG 1) i) ∧ CertFacts (.middleG 1) := by
-  decide +kernel
-
-private theorem facts_middleG2 : (∀ i : Fin 5,RowFacts (.middleG 2) i) ∧ CertFacts (.middleG 2) := by
-  decide +kernel
-
-private theorem facts_middleG3 : (∀ i : Fin 5,RowFacts (.middleG 3) i) ∧ CertFacts (.middleG 3) := by
-  decide +kernel
-
-private theorem facts_highE0 : (∀ i : Fin 5,RowFacts (.highE 0) i) ∧ CertFacts (.highE 0) := by
-  decide +kernel
-
-private theorem facts_highE1 : (∀ i : Fin 5,RowFacts (.highE 1) i) ∧ CertFacts (.highE 1) := by
-  decide +kernel
-
-private theorem facts_highE2 : (∀ i : Fin 5,RowFacts (.highE 2) i) ∧ CertFacts (.highE 2) := by
-  decide +kernel
-
-private theorem facts_highE3 : (∀ i : Fin 5,RowFacts (.highE 3) i) ∧ CertFacts (.highE 3) := by
-  decide +kernel
-
-private theorem facts_highG0 : (∀ i : Fin 5,RowFacts (.highG 0) i) ∧ CertFacts (.highG 0) := by
-  decide +kernel
-
-private theorem facts_highG1 : (∀ i : Fin 5,RowFacts (.highG 1) i) ∧ CertFacts (.highG 1) := by
-  decide +kernel
-
-private theorem facts_highG2 : (∀ i : Fin 5,RowFacts (.highG 2) i) ∧ CertFacts (.highG 2) := by
-  decide +kernel
-
-private theorem facts_highG3 : (∀ i : Fin 5,RowFacts (.highG 3) i) ∧ CertFacts (.highG 3) := by
-  decide +kernel
+private theorem facts_highG (j : Fin 4) :
+    (∀ i : Fin 5,RowFacts (.highG j) i) ∧ CertFacts (.highG j) := by
+  fin_cases j <;> decide +kernel
 
 private theorem facts_lowDE : (∀ i : Fin 5,RowFacts .lowDE i) ∧ CertFacts .lowDE := by
   decide +kernel
 
-private theorem facts_middleDE0 : (∀ i : Fin 5,RowFacts (.middleDE 0) i) ∧ CertFacts (.middleDE 0) := by
-  decide +kernel
-
-private theorem facts_middleDE1 : (∀ i : Fin 5,RowFacts (.middleDE 1) i) ∧ CertFacts (.middleDE 1) := by
-  decide +kernel
-
-private theorem facts_middleDE2 : (∀ i : Fin 5,RowFacts (.middleDE 2) i) ∧ CertFacts (.middleDE 2) := by
-  decide +kernel
-
-private theorem facts_middleDE3 : (∀ i : Fin 5,RowFacts (.middleDE 3) i) ∧ CertFacts (.middleDE 3) := by
-  decide +kernel
+private theorem facts_middleDE (j : Fin 4) :
+    (∀ i : Fin 5,RowFacts (.middleDE j) i) ∧ CertFacts (.middleDE j) := by
+  fin_cases j <;> decide +kernel
 
 private theorem facts_highDEH : (∀ i : Fin 5,RowFacts .highDEH i) ∧ CertFacts .highDEH := by
   decide +kernel
 
 private theorem case_facts (s : ScalarCase) : (∀ i : Fin 5,RowFacts s i) ∧ CertFacts s := by
   rcases s with _|_|j|j|j|j|_|j|_
-  · exact facts_lowE
-  · exact facts_lowG
-  · fin_cases j
-    exacts [facts_middleE0,facts_middleE1,facts_middleE2,facts_middleE3]
-  · fin_cases j
-    exacts [facts_middleG0,facts_middleG1,facts_middleG2,facts_middleG3]
-  · fin_cases j
-    exacts [facts_highE0,facts_highE1,facts_highE2,facts_highE3]
-  · fin_cases j
-    exacts [facts_highG0,facts_highG1,facts_highG2,facts_highG3]
-  · exact facts_lowDE
-  · fin_cases j
-    exacts [facts_middleDE0,facts_middleDE1,facts_middleDE2,facts_middleDE3]
-  · exact facts_highDEH
+  exacts [facts_lowE,facts_lowG,facts_middleE j,facts_middleG j,facts_highE j,facts_highG j,
+    facts_lowDE,facts_middleDE j,facts_highDEH]
 
 private theorem row_facts (s : ScalarCase) (i : Fin 5) : RowFacts s i := (case_facts s).1 i
 

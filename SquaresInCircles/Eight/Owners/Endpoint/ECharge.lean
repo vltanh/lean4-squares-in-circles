@@ -2,7 +2,7 @@ module
 
 public import SquaresInCircles.Eight.Owners.Endpoint.BudgetScalars
 public import SquaresInCircles.Eight.Owners.E.PairMinimum
-public import SquaresInCircles.Eight.Words.Middle.AngularPenalty
+public import SquaresInCircles.Eight.Words.Middle.Stress
 
 /-!
 # Eight squares: original E remainders in the endpoint stress

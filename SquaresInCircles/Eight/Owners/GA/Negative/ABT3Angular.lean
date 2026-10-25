@@ -2,7 +2,7 @@ module
 
 public import SquaresInCircles.Eight.Owners.GA.Negative.ABT3Data
 public import SquaresInCircles.Eight.Owners.GA.Negative.ATD2AffectedPositive
-public import SquaresInCircles.Eight.Owners.GA.Negative.ATD2SecantCoordinate
+public import SquaresInCircles.Eight.Owners.GA.Negative.ATD2AffectedNegativeCurves
 
 /-!
 # Eight squares: the exact s-dependent part of the BT3 reference baseline

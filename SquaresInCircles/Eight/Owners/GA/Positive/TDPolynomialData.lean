@@ -109,7 +109,8 @@ def upperC : Upper→ℚ[X]
   simp [lowC,Explicit.lowC]
 @[simp] theorem upperK_eval (a : Upper) (z : ℝ) :
     aeval z (upperK a)=Explicit.upperK a z := by
-  cases a <;> simp [upperK,Explicit.upperK,Explicit.cap] <;> ring
+  cases a <;> simp [upperK,Explicit.upperK,Explicit.cap]
+  ring
 @[simp] theorem upperC_eval (a : Upper) (z : ℝ) :
     aeval z (upperC a)=Explicit.upperC a z := by
   cases a <;> simp [upperC,Explicit.upperC,Explicit.cap]

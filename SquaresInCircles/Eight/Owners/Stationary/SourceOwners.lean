@@ -1,9 +1,10 @@
 module
 
-public import SquaresInCircles.Eight.Stationary.System
-public import SquaresInCircles.Eight.Boundary.RadiusTransfer
-public import SquaresInCircles.Eight.Boundary.OriginalWitnesses
 public import SquaresInCircles.Eight.Boundary.SourceEquality
+public import SquaresInCircles.Eight.Boundary.RadiusTransfer
+public import SquaresInCircles.Eight.Corners.GeometricStationaryExistence
+public import SquaresInCircles.Eight.Owners.Positive.NoncancelingCycle
+public import SquaresInCircles.Eight.Stationary.System
 
 /-!
 # Eight squares: pruning the owners of a stationary boundary cycle
@@ -18,6 +19,43 @@ slider. So GA1 and EH0 are not feasible (`stationary_ga1_not_feasible`,
 on the stationary data.
 -/
 
+section
+/-!
+## Original positive-owner reductions at the geometric stationary radius
+
+The sharp-radius hypotheses of the critical-contact construction are
+derived here from the broad stationary equations.  Existence and radius
+localization come from compact geometric minima and uniqueness.  The
+original common radius, points, owners and contact relation stay explicit.
+-/
+
+@[expose] public section
+noncomputable section
+open Set
+namespace SquaresInCircles.Eight.StationaryOriginalReductions
+open Candidate SignedCycle
+
+theorem sharp_interval {d : Stationary.Coordinates} (hd : d.IsStationary) :
+    d.q∈Icc qLow qTrial := by
+  exact ⟨(GeometricExistence.stationary_radius_strip hd).1,
+    (GeometricExistence.stationary_radius_ceiling hd).le⟩
+
+theorem sole_DE_false {d : Stationary.Coordinates} (hd : d.IsStationary)
+    {C : SignedCycle} {q : ℝ} {ab : Fin 4}
+    (hQL : qLow≤q) (hq : q≤d.q) (hC : C.Necessary q) (hn : C.NormalAnchors)
+    (hvar : positiveVariation C.theta≤frameCap) (hab : ab=0 ∨ ab=2)
+    (hG : 0<delta C.theta G) (hD : 0≤delta C.theta D)
+    (hE : (C.point E).Outer q)
+    (hf : ∀ i,C.Feasible i (CoreEStress.owners ab 2 0 3 0 i)) : False :=
+  PositiveEContactExclusion.sole_DE_false hd (sharp_interval hd) hQL hq hC hn hvar
+    hab hG hD hE hf
+
+end SquaresInCircles.Eight.StationaryOriginalReductions
+end
+end
+end
+
+section
 @[expose] public section
 noncomputable section
 namespace SquaresInCircles.Eight
@@ -200,3 +238,6 @@ theorem selected_normals_after_source_equality {q : ℝ} (C : BoundaryCycle q)
   exact terminal_owner_normal hf i j (ht i j hfeasible)
 
 end SquaresInCircles.Eight
+end
+end
+end

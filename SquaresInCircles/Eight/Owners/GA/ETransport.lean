@@ -1,8 +1,8 @@
 module
 
-public import SquaresInCircles.Eight.Owners.GA.Negative.CoreESource
-public import SquaresInCircles.Eight.Owners.GA.SourceDomain
-public import SquaresInCircles.Eight.Owners.GA.Transport.Order
+public import SquaresInCircles.Eight.Owners.GA.Negative.EHTD2SmallHigh
+public import SquaresInCircles.Eight.Owners.GA.EZero
+public import SquaresInCircles.Eight.Owners.GA.Transport.T
 
 /-!
 # Eight squares: the high-GA source domain after a move of a flat-core E

@@ -1,5 +1,6 @@
 module
 
+public import SquaresInCircles.Eight.Arithmetic.FastPolynomials
 public import SquaresInCircles.Eight.Owners.GA.Negative.ABT3PolynomialData
 
 /-!
@@ -21,355 +22,22 @@ open WholeIntervalPolynomial
 /-! ### Kernel certificates
 
 Every polynomial of `GlobalGANegativeABT3PolynomialData` is mirrored by a scaled integer
-coefficient list (`PolynomialCertificates`), built with the same operations; the lists are
-divided by the gcd of their entries after every composite step. -/
+coefficient list (`PolynomialCertificates`, `FastPolynomials`), built with the same operations;
+the lists are divided by the gcd of their entries after every composite step, except in the
+numerators (`bnum3`, `bnum4`): their entries have thousands of bits, and a gcd of such numbers
+costs the kernels outside Lean far more than the products it would shorten. -/
 
 section Certificates
 open WholeIntervalPolynomial.Certificate
 open PositiveTD.Certificate (S5 S9 S11 C4 C10 C12 num3 num4 etaQ Rbar cbar sigmabar)
 
-/-! #### Kernel list arithmetic
+/-! #### Normalized operations
 
-The list operations of `PolynomialCertificates`, written with the recursors and the integer
-operations themselves: the kernel reduces them in fewer steps. Each equals its model. -/
+The operations of `FastPolynomials`, each followed by division by the gcd of the result. -/
 
-private def addF (l : List ℤ) : List ℤ → List ℤ :=
-  List.rec (motive := fun _ => List ℤ → List ℤ) (fun m => m)
-    (fun x t ih m => List.casesOn (motive := fun _ => List ℤ) m (x :: t)
-      (fun y m' => Int.add x y :: ih m')) l
-
-private theorem addF_eq : ∀ l m : List ℤ,addF l m=WholeIntervalPolynomial.Certificate.add l m
-  | [],_ => rfl
-  | _ :: _,[] => rfl
-  | x :: t,y :: m => by
-    show Int.add x y :: addF t m=(x+y) :: WholeIntervalPolynomial.Certificate.add t m
-    rw [addF_eq t m]; rfl
-
-private def smulF (c : ℤ) (l : List ℤ) : List ℤ :=
-  List.rec (motive := fun _ => List ℤ) [] (fun x _ ih => Int.mul c x :: ih) l
-
-private theorem smulF_eq (c : ℤ) : ∀ l : List ℤ,smulF c l=WholeIntervalPolynomial.Certificate.smul c l
-  | [] => rfl
-  | x :: l => by
-    show Int.mul c x :: smulF c l=(c*x) :: WholeIntervalPolynomial.Certificate.smul c l
-    rw [smulF_eq c l]; rfl
-
-/-- `p • l + q • m`, in one pass. -/
-private def lincF (p q : ℤ) (l : List ℤ) : List ℤ → List ℤ :=
-  List.rec (motive := fun _ => List ℤ → List ℤ) (fun m => smulF q m)
-    (fun x t ih m => List.casesOn (motive := fun _ => List ℤ) m (smulF p (x :: t))
-      (fun y m' => Int.add (Int.mul p x) (Int.mul q y) :: ih m')) l
-
-private theorem lincF_eq (p q : ℤ) : ∀ l m : List ℤ,lincF p q l m=
-    WholeIntervalPolynomial.Certificate.add (WholeIntervalPolynomial.Certificate.smul p l)
-      (WholeIntervalPolynomial.Certificate.smul q m)
-  | [],m => by
-    show smulF q m=_
-    rw [smulF_eq]; rfl
-  | x :: t,[] => by
-    show smulF p (x :: t)=_
-    rw [smulF_eq]; rfl
-  | x :: t,y :: m => by
-    show Int.add (Int.mul p x) (Int.mul q y) :: lincF p q t m=(p*x+q*y) ::
-      WholeIntervalPolynomial.Certificate.add (WholeIntervalPolynomial.Certificate.smul p t)
-        (WholeIntervalPolynomial.Certificate.smul q m)
-    rw [lincF_eq p q t m]; rfl
-
-/-- `a • m + acc`, in one pass. -/
-private def axpyF (a : ℤ) (m : List ℤ) : List ℤ → List ℤ :=
-  List.rec (motive := fun _ => List ℤ → List ℤ) (fun acc => acc)
-    (fun x _ ih acc => List.casesOn (motive := fun _ => List ℤ) acc (Int.mul a x :: ih [])
-      (fun y acc' => Int.add (Int.mul a x) y :: ih acc')) m
-
-private theorem addC_nil_right : ∀ l : List ℤ,WholeIntervalPolynomial.Certificate.add l []=l
-  | [] => rfl
-  | _ :: _ => rfl
-
-private theorem axpyF_eq (a : ℤ) : ∀ m acc : List ℤ,axpyF a m acc=
-    WholeIntervalPolynomial.Certificate.add (WholeIntervalPolynomial.Certificate.smul a m) acc
-  | [],_ => rfl
-  | x :: m,[] => by
-    show Int.mul a x :: axpyF a m []=(a*x) :: WholeIntervalPolynomial.Certificate.smul a m
-    rw [axpyF_eq a m [],addC_nil_right]; rfl
-  | x :: m,y :: acc => by
-    show Int.add (Int.mul a x) y :: axpyF a m acc=(a*x+y) ::
-      WholeIntervalPolynomial.Certificate.add (WholeIntervalPolynomial.Certificate.smul a m) acc
-    rw [axpyF_eq a m acc]; rfl
-
-/-- `l * m`, row by row. -/
-private def mulF (l m : List ℤ) : List ℤ :=
-  List.casesOn (motive := fun _ => List ℤ) m []
-    (fun _ _ => List.rec (motive := fun _ => List ℤ) [] (fun a _ ih => axpyF a m (0 :: ih)) l)
-
-private theorem mulF_eq : ∀ l m : List ℤ,mulF l m=WholeIntervalPolynomial.Certificate.mul l m
-  | _,[] => by cases ‹List ℤ› <;> rfl
-  | [],_ :: _ => rfl
-  | a :: l,b :: m => by
-    show axpyF a (b :: m) (0 :: mulF l (b :: m))=_
-    rw [axpyF_eq,mulF_eq l (b :: m)]; rfl
-
-private def prescaleF (num den n : ℕ) (l : List ℤ) : ℕ → List ℤ :=
-  List.rec (motive := fun _ => ℕ → List ℤ) (fun _ => [])
-    (fun a _ ih i => Int.mul a (Int.ofNat (Nat.mul (Nat.pow num i) (Nat.pow den (Nat.sub n i))))
-      :: ih (Nat.succ i)) l
-
-private theorem prescaleF_eq (num den n : ℕ) : ∀ (l : List ℤ) (i : ℕ),
-    prescaleF num den n l i=WholeIntervalPolynomial.Certificate.prescale num den n i l
-  | [],_ => rfl
-  | a :: l,i => by
-    show _ :: prescaleF num den n l (i+1)=_
-    rw [prescaleF_eq num den n l (i+1)]; rfl
-
-private def shiftAuxF (z : List ℤ) : ℤ → List ℤ :=
-  List.rec (motive := fun _ => ℤ → List ℤ) (fun c => [c]) (fun x _ ih c => Int.add x c :: ih x) z
-
-private theorem shiftAuxF_eq : ∀ (z : List ℤ) (c : ℤ),
-    shiftAuxF z c=WholeIntervalPolynomial.Certificate.add z (c :: z)
-  | [],_ => rfl
-  | x :: z,c => by
-    show Int.add x c :: shiftAuxF z x=(x+c) :: WholeIntervalPolynomial.Certificate.add z (x :: z)
-    rw [shiftAuxF_eq z x]; rfl
-
-private def affAuxF (s t : ℤ) (z : List ℤ) : ℤ → List ℤ :=
-  List.rec (motive := fun _ => ℤ → List ℤ) (fun c => [Int.mul t c])
-    (fun x _ ih c => Int.add (Int.mul s x) (Int.mul t c) :: ih x) z
-
-private theorem affAuxF_eq (s t : ℤ) : ∀ (z : List ℤ) (c : ℤ),
-    affAuxF s t z c=WholeIntervalPolynomial.Certificate.affMulAux s t c z
-  | [],_ => rfl
-  | x :: z,c => by
-    show Int.add (Int.mul s x) (Int.mul t c) :: affAuxF s t z x=_
-    rw [affAuxF_eq s t z x]; rfl
-
-private def compAffF (s t : ℤ) (l : List ℤ) : List ℤ :=
-  if s=1 ∧ t=1 then
-    List.rec (motive := fun _ => List ℤ) []
-      (fun b _ ih => List.casesOn (motive := fun _ => List ℤ) ih [b]
-        (fun x z => Int.add b x :: shiftAuxF z x)) l
-  else
-    List.rec (motive := fun _ => List ℤ) []
-      (fun b _ ih => List.casesOn (motive := fun _ => List ℤ) ih [b]
-        (fun x z => Int.add b (Int.mul s x) :: affAuxF s t z x)) l
-
-private theorem compAffF_eq (s t : ℤ) (l : List ℤ) :
-    compAffF s t l=WholeIntervalPolynomial.Certificate.compAff s t l := by
-  unfold compAffF
-  split_ifs with h
-  · obtain ⟨rfl,rfl⟩ := h
-    induction l with
-    | nil => rfl
-    | cons b l ih =>
-      show List.casesOn (motive := fun _ => List ℤ) (List.rec (motive := fun _ => List ℤ) []
-        (fun b _ ih => List.casesOn (motive := fun _ => List ℤ) ih [b]
-          (fun x z => Int.add b x :: shiftAuxF z x)) l) [b]
-        (fun x z => Int.add b x :: shiftAuxF z x)=WholeIntervalPolynomial.Certificate.add [b]
-          (WholeIntervalPolynomial.Certificate.affMul 1 1
-            (WholeIntervalPolynomial.Certificate.compAff 1 1 l))
-      rw [ih]
-      rcases hc : WholeIntervalPolynomial.Certificate.compAff 1 1 l with _ | ⟨x,z⟩
-      · rfl
-      · show Int.add b x :: shiftAuxF z x=WholeIntervalPolynomial.Certificate.add [b]
-          (WholeIntervalPolynomial.Certificate.affMul 1 1 (x :: z))
-        rw [WholeIntervalPolynomial.Certificate.affMul,ite_eq_left ⟨rfl,rfl⟩,
-          WholeIntervalPolynomial.Certificate.shiftMul,shiftAuxF_eq]
-        show Int.add b x :: _=(b+(x+0)) :: WholeIntervalPolynomial.Certificate.add []
-          (WholeIntervalPolynomial.Certificate.add z (x :: z))
-        rw [Int.add_zero]; rfl
-  · induction l with
-    | nil => rfl
-    | cons b l ih =>
-      show List.casesOn (motive := fun _ => List ℤ) (List.rec (motive := fun _ => List ℤ) []
-        (fun b _ ih => List.casesOn (motive := fun _ => List ℤ) ih [b]
-          (fun x z => Int.add b (Int.mul s x) :: affAuxF s t z x)) l) [b]
-        (fun x z => Int.add b (Int.mul s x) :: affAuxF s t z x)=
-          WholeIntervalPolynomial.Certificate.add [b] (WholeIntervalPolynomial.Certificate.affMul s t
-            (WholeIntervalPolynomial.Certificate.compAff s t l))
-      rw [ih]
-      rcases hc : WholeIntervalPolynomial.Certificate.compAff s t l with _ | ⟨x,z⟩
-      · show [b]=WholeIntervalPolynomial.Certificate.add [b]
-          (WholeIntervalPolynomial.Certificate.affMul s t [])
-        rw [WholeIntervalPolynomial.Certificate.affMul,ite_eq_right h]; rfl
-      · show Int.add b (Int.mul s x) :: affAuxF s t z x=WholeIntervalPolynomial.Certificate.add [b]
-          (WholeIntervalPolynomial.Certificate.affMul s t (x :: z))
-        rw [WholeIntervalPolynomial.Certificate.affMul,ite_eq_right h,affAuxF_eq]; rfl
-
-/-- `Scaled.center`, with the fast list operations. -/
-private def centerS (c : Scaled) (num den : ℕ) (s t : ℤ) : Scaled :=
-  ⟨compAffF s t (prescaleF num den (c.l.length-1) c.l 0),c.s*den^(c.l.length-1)⟩
-
-private theorem centerS_eq (c : Scaled) (num den : ℕ) (s t : ℤ) :
-    centerS c num den s t=c.center num den s t := by
-  rw [centerS,compAffF_eq,prescaleF_eq]; rfl
-
-private def twoXF (u : List ℤ) : List ℤ :=
-  List.casesOn (motive := fun _ => List ℤ) u [] (fun u0 t => addF t (0 :: Int.mul 2 u0 :: t))
-
-private theorem twoXF_eq : ∀ u : List ℤ,twoXF u=WholeIntervalPolynomial.Certificate.twoX u
-  | [] => rfl
-  | u0 :: t => by
-    show addF t (0 :: Int.mul 2 u0 :: t)=WholeIntervalPolynomial.Certificate.add t (0 :: (2*u0) :: t)
-    rw [addF_eq]; rfl
-
-private def chebPair (l : List ℤ) : List ℤ × ℕ :=
-  List.rec (motive := fun _ => List ℤ × ℕ) ([],1)
-    (fun a _ ih => (addF [Int.mul a (Int.ofNat ih.2)] (twoXF ih.1),Nat.mul 2 ih.2)) l
-
-private theorem chebPair_eq : ∀ l : List ℤ,
-    chebPair l=(WholeIntervalPolynomial.Certificate.chebList l,2^l.length)
-  | [] => rfl
-  | a :: l => by
-    show (addF [Int.mul a (Int.ofNat (chebPair l).2)] (twoXF (chebPair l).1),
-      Nat.mul 2 (chebPair l).2)=_
-    rw [chebPair_eq l,addF_eq,twoXF_eq,WholeIntervalPolynomial.Certificate.chebList,
-      List.length_cons,pow_succ,Nat.mul_comm]
-    rfl
-
-private def chebF (l : List ℤ) : List ℤ := (chebPair l).1
-
-private theorem chebF_eq (l : List ℤ) : chebF l=WholeIntervalPolynomial.Certificate.chebList l := by
-  rw [chebF,chebPair_eq]
-
-private def sumAbsF (l : List ℤ) : ℕ :=
-  List.rec (motive := fun _ => ℕ) 0 (fun x _ ih => Nat.add (Int.natAbs x) ih) l
-
-private theorem sumAbsF_eq_sum {t : List ℤ} {D : ℕ} (h : t.length≤D) :
-    ((sumAbsF t:ℕ):ℤ)=∑ j : Fin D,|t.getD j.val 0| := by
-  induction t generalizing D with
-  | nil => simp [sumAbsF]
-  | cons x t ih =>
-    obtain ⟨D,rfl⟩ : ∃ D',D=D'+1 := ⟨D-1,by simp at h; omega⟩
-    rw [Fin.sum_univ_succ]
-    simp only [Fin.val_zero,List.getD_cons_zero,Fin.val_succ,List.getD_cons_succ]
-    rw [← ih (by simp at h; omega)]
-    show (((Int.natAbs x+sumAbsF t:ℕ)):ℤ)=_
-    push_cast
-    rfl
-
-/-- `lowerZ` of a list, from its first entry and the rest. -/
-private def lowL (l : List ℤ) : ℤ :=
-  List.casesOn (motive := fun _ => ℤ) l 0 (fun b t => Int.sub b (Int.ofNat (sumAbsF t)))
-
-private theorem lowL_eq {l : List ℤ} {D : ℕ} (h : l.length≤D+1) :
-    WholeIntervalPolynomial.Certificate.lowerZ D (fun j => l.getD j 0)=lowL l := by
-  cases l with
-  | nil => simp [WholeIntervalPolynomial.Certificate.lowerZ,lowL]
-  | cons b t =>
-    simp only [WholeIntervalPolynomial.Certificate.lowerZ,List.getD_cons_zero,List.getD_cons_succ]
-    rw [← sumAbsF_eq_sum (by simp at h; omega)]
-    rfl
-
-private def gcdAcc : List ℤ → ℕ → ℕ
-  | [],g => g
-  | x :: l,g => gcdAcc l (Nat.gcd x.natAbs g)
-
-private theorem gcdAcc_dvd_acc : ∀ (l : List ℤ) (g : ℕ),gcdAcc l g∣g
-  | [],_ => dvd_rfl
-  | _ :: l,_ => (gcdAcc_dvd_acc l _).trans (Nat.gcd_dvd_right _ _)
-
-private theorem gcdAcc_dvd_mem : ∀ (l : List ℤ) (g : ℕ),∀ x∈l,((gcdAcc l g:ℕ):ℤ)∣x
-  | [],_,_,hx => by simp at hx
-  | _ :: l,_,x,hx => by
-    rcases List.mem_cons.1 hx with rfl | hx
-    · exact Int.natCast_dvd.2 ((gcdAcc_dvd_acc l _).trans (Nat.gcd_dvd_left _ _))
-    · exact gcdAcc_dvd_mem l _ x hx
-
-private theorem toPoly_map_div (g : ℤ) : ∀ l : List ℤ,(∀ x∈l,g∣x) →
-    toPoly l=C (g:ℚ)*toPoly (l.map (fun x => x/g))
-  | [],_ => by simp [toPoly]
-  | x :: l,h => by
-    have hx : (x:ℚ)=(g:ℚ)*((x/g:ℤ):ℚ) := by
-      rw [← Int.cast_mul,Int.mul_ediv_cancel' (h x List.mem_cons_self)]
-    rw [List.map_cons,toPoly,toPoly,
-      toPoly_map_div g l (fun y hy => h y (List.mem_cons_of_mem _ hy)),hx,C_mul]
-    ring
-
-private theorem toPoly_map_div_zero : ∀ l : List ℤ,toPoly (l.map (fun x => x/(0:ℤ)))=0
-  | [] => by simp [toPoly]
-  | x :: l => by rw [List.map_cons,toPoly,toPoly_map_div_zero l,Int.ediv_zero]; simp
-
-private def trim : List ℤ → List ℤ
-  | [] => []
-  | x :: l => match trim l with
-    | [] => if x=0 then [] else [x]
-    | y :: t => x :: y :: t
-
-private theorem toPoly_trim : ∀ l : List ℤ,toPoly (trim l)=toPoly l
-  | [] => rfl
-  | x :: l => by
-    have ih := toPoly_trim l
-    simp only [trim]
-    split
-    · rename_i h
-      rw [h] at ih
-      change (0:ℚ[X])=toPoly l at ih
-      change _=C (x:ℚ)+X*toPoly l
-      rw [← ih]
-      split_ifs with hx
-      · rw [hx]; simp [toPoly]
-      · change C (x:ℚ)+X*0=_
-        rfl
-    · rename_i y t h
-      rw [h] at ih
-      change C (x:ℚ)+X*toPoly (y :: t)=C (x:ℚ)+X*toPoly l
-      rw [ih]
-
-/-- The list divided by the gcd of its entries and its scale, without trailing zeros. -/
-private def nrm (a : Scaled) : Scaled :=
-  ⟨trim (a.l.map (fun x => x/((gcdAcc a.l a.s:ℕ):ℤ))),a.s/gcdAcc a.l a.s⟩
-
-private theorem rep_nrm {a : Scaled} {p : ℚ[X]} (ha : a.Rep p) : (nrm a).Rep p := by
-  unfold Scaled.Rep at *
-  rw [nrm,toPoly_trim]
-  have h1 := toPoly_map_div ((gcdAcc a.l a.s:ℕ):ℤ) a.l (gcdAcc_dvd_mem a.l a.s)
-  have h2 : gcdAcc a.l a.s∣a.s := gcdAcc_dvd_acc a.l a.s
-  generalize gcdAcc a.l a.s=g at h1 h2
-  rcases Nat.eq_zero_or_pos g with rfl | hg
-  · have hs : a.s=0 := Nat.eq_zero_of_zero_dvd h2
-    simp only [Nat.cast_zero,Nat.div_zero,map_zero,zero_mul] at h1 ⊢
-    exact toPoly_map_div_zero a.l
-  · have hgq : (g:ℚ)≠0 := by exact_mod_cast hg.ne'
-    have hdiv : ((a.s/g:ℕ):ℚ)=(a.s:ℚ)/g := Nat.cast_div h2 hgq
-    apply mul_left_cancel₀ (show (C (g:ℚ):ℚ[X])≠0 from C_ne_zero.2 hgq)
-    push_cast at h1
-    rw [← h1,ha,hdiv,← mul_assoc,← C_mul,mul_div_cancel₀ _ hgq]
-
-/-! #### Normalized operations -/
-
-private def gcdF (l : List ℤ) : ℕ → ℕ :=
-  List.rec (motive := fun _ => ℕ → ℕ) (fun g => g) (fun x _ ih g => ih (Nat.gcd x.natAbs g)) l
-private theorem gcdF_eq : ∀ (l : List ℤ) (g : ℕ),gcdF l g=gcdAcc l g
-  | [],_ => rfl
-  | x :: l,g => gcdF_eq l (Nat.gcd x.natAbs g)
-private def divF (d : ℤ) (l : List ℤ) : List ℤ :=
-  List.rec (motive := fun _ => List ℤ) [] (fun x _ ih => x/d :: ih) l
-private theorem divF_eq (d : ℤ) : ∀ l : List ℤ,divF d l=l.map (fun x => x/d)
-  | [] => rfl
-  | x :: l => by
-    show x/d :: divF d l=_
-    rw [divF_eq d l]; rfl
-private def trimF (l : List ℤ) : List ℤ :=
-  List.rec (motive := fun _ => List ℤ) []
-    (fun x _ ih => List.casesOn (motive := fun _ => List ℤ) ih (if x=0 then [] else [x])
-      (fun y t => x :: y :: t)) l
-private theorem trimF_eq : ∀ l : List ℤ,trimF l=trim l
-  | [] => rfl
-  | x :: l => by
-    show List.casesOn (motive := fun _ => List ℤ) (trimF l) (if x=0 then [] else [x])
-      (fun y t => x :: y :: t)=trim (x :: l)
-    rw [trimF_eq l]
-    simp only [trim]
-    generalize trim l=r
-    cases r <;> rfl
-/-- `nrm`, with the fast list operations. -/
-private def nrmF (a : Scaled) : Scaled :=
-  ⟨trimF (divF ((gcdF a.l a.s:ℕ):ℤ) a.l),a.s/gcdF a.l a.s⟩
-private theorem rep_nrmF {a : Scaled} {p : ℚ[X]} (ha : a.Rep p) : (nrmF a).Rep p := by
-  have e : nrmF a=nrm a := by simp only [nrmF,nrm,gcdF_eq,divF_eq,trimF_eq]
-  rw [e]; exact rep_nrm ha
-
-private def nadd (a b : Scaled) : Scaled := nrmF ⟨lincF b.s a.s a.l b.l,a.s*b.s⟩
-private def nsub (a b : Scaled) : Scaled := nrmF ⟨lincF b.s (-(a.s:ℤ)) a.l b.l,a.s*b.s⟩
-private def nmul (a b : Scaled) : Scaled := nrmF ⟨mulF a.l b.l,a.s*b.s⟩
+private def nadd (a b : Scaled) : Scaled := (a.addF b).normF
+private def nsub (a b : Scaled) : Scaled := (a.subF b).normF
+private def nmul (a b : Scaled) : Scaled := (a.mulF b).normF
 private def npow (a : Scaled) : ℕ → Scaled
   | 0 => Scaled.ofNat 1
   | n+1 => nmul (npow a n) a
@@ -377,14 +45,11 @@ private def ncst (q : ℚ) : Scaled := Scaled.const q
 private def none' : Scaled := ⟨[],1⟩
 
 private theorem rep_nadd {a b : Scaled} {p q : ℚ[X]} (ha : a.Rep p) (hb : b.Rep q) :
-    (nadd a b).Rep (p+q) := by
-  rw [nadd,lincF_eq]; exact rep_nrmF (ha.add hb)
+    (nadd a b).Rep (p+q) := (ha.addF hb).normF
 private theorem rep_nsub {a b : Scaled} {p q : ℚ[X]} (ha : a.Rep p) (hb : b.Rep q) :
-    (nsub a b).Rep (p-q) := by
-  rw [nsub,lincF_eq]; exact rep_nrmF (ha.sub hb)
+    (nsub a b).Rep (p-q) := (ha.subF hb).normF
 private theorem rep_nmul {a b : Scaled} {p q : ℚ[X]} (ha : a.Rep p) (hb : b.Rep q) :
-    (nmul a b).Rep (p*q) := by
-  rw [nmul,mulF_eq]; exact rep_nrmF (ha.mul hb)
+    (nmul a b).Rep (p*q) := (ha.mulF hb).normF
 private theorem rep_npow {a : Scaled} {p : ℚ[X]} (ha : a.Rep p) : ∀ n : ℕ,(npow a n).Rep (p^n)
   | 0 => by rw [pow_zero]; exact Scaled.rep_one
   | n+1 => by rw [pow_succ]; exact rep_nmul (rep_npow ha n) ha
@@ -728,35 +393,37 @@ private theorem rep_bmass (e : Curve) (j : Fin 4) {p : Scaled} (hp : p.Rep (P e 
 
 /-! #### The numerators -/
 
+/-- `num3`, with the entries left undivided (see the section header). -/
 private def bnum3 (A P0 P1 P2 r0 r1 r2 : Scaled) : Scaled :=
-  nsub (nmul (nmul (nmul (nmul (ncst 2) A) r0) r1) r2) (nmul (ncst Rbar)
-    (nadd (nadd (nmul (nmul (nadd P0 (npow r0 2)) r1) r2) (nmul (nmul (nadd P1 (npow r1 2)) r0) r2))
-      (nmul (nmul (nadd P2 (npow r2 2)) r0) r1)))
+  (((((ncst 2).mulF A).mulF r0).mulF r1).mulF r2).subF ((ncst Rbar).mulF
+    (((((P0.addF (r0.powF 2)).mulF r1).mulF r2).addF
+      (((P1.addF (r1.powF 2)).mulF r0).mulF r2)).addF
+      (((P2.addF (r2.powF 2)).mulF r0).mulF r1)))
 private theorem rep_bnum3 {A P0 P1 P2 r0 r1 r2 : Scaled} {a p0 p1 p2 s0 s1 s2 : ℚ[X]}
     (hA : A.Rep a) (h0 : P0.Rep p0) (h1 : P1.Rep p1) (h2 : P2.Rep p2)
     (g0 : r0.Rep s0) (g1 : r1.Rep s1) (g2 : r2.Rep s2) :
     (bnum3 A P0 P1 P2 r0 r1 r2).Rep (num3 a p0 p1 p2 s0 s1 s2) :=
-  rep_nsub (rep_nmul (rep_nmul (rep_nmul (rep_nmul (rep_ncst 2) hA) g0) g1) g2) (rep_nmul (rep_ncst _)
-    (rep_nadd (rep_nadd (rep_nmul (rep_nmul (rep_nadd h0 (rep_npow g0 2)) g1) g2)
-      (rep_nmul (rep_nmul (rep_nadd h1 (rep_npow g1 2)) g0) g2))
-      (rep_nmul (rep_nmul (rep_nadd h2 (rep_npow g2 2)) g0) g1)))
+  (((((rep_ncst 2).mulF hA).mulF g0).mulF g1).mulF g2).subF ((rep_ncst _).mulF
+    (((((h0.addF (g0.powF 2)).mulF g1).mulF g2).addF
+      (((h1.addF (g1.powF 2)).mulF g0).mulF g2)).addF
+      (((h2.addF (g2.powF 2)).mulF g0).mulF g1)))
+/-- `num4`, with the entries left undivided (see the section header). -/
 private def bnum4 (A P0 P1 P2 P3 r0 r1 r2 r3 : Scaled) : Scaled :=
-  nsub (nmul (nmul (nmul (nmul (nmul (ncst 2) A) r0) r1) r2) r3) (nmul (ncst Rbar)
-    (nadd (nadd (nadd (nmul (nmul (nmul (nadd P0 (npow r0 2)) r1) r2) r3)
-      (nmul (nmul (nmul (nadd P1 (npow r1 2)) r0) r2) r3))
-      (nmul (nmul (nmul (nadd P2 (npow r2 2)) r0) r1) r3))
-      (nmul (nmul (nmul (nadd P3 (npow r3 2)) r0) r1) r2)))
+  ((((((ncst 2).mulF A).mulF r0).mulF r1).mulF r2).mulF r3).subF ((ncst Rbar).mulF
+    (((((((P0.addF (r0.powF 2)).mulF r1).mulF r2).mulF r3).addF
+      ((((P1.addF (r1.powF 2)).mulF r0).mulF r2).mulF r3)).addF
+      ((((P2.addF (r2.powF 2)).mulF r0).mulF r1).mulF r3)).addF
+      ((((P3.addF (r3.powF 2)).mulF r0).mulF r1).mulF r2)))
 private theorem rep_bnum4 {A P0 P1 P2 P3 r0 r1 r2 r3 : Scaled}
     {a p0 p1 p2 p3 s0 s1 s2 s3 : ℚ[X]}
     (hA : A.Rep a) (h0 : P0.Rep p0) (h1 : P1.Rep p1) (h2 : P2.Rep p2) (h3 : P3.Rep p3)
     (g0 : r0.Rep s0) (g1 : r1.Rep s1) (g2 : r2.Rep s2) (g3 : r3.Rep s3) :
     (bnum4 A P0 P1 P2 P3 r0 r1 r2 r3).Rep (num4 a p0 p1 p2 p3 s0 s1 s2 s3) :=
-  rep_nsub (rep_nmul (rep_nmul (rep_nmul (rep_nmul (rep_nmul (rep_ncst 2) hA) g0) g1) g2) g3)
-    (rep_nmul (rep_ncst _)
-    (rep_nadd (rep_nadd (rep_nadd (rep_nmul (rep_nmul (rep_nmul (rep_nadd h0 (rep_npow g0 2)) g1) g2) g3)
-      (rep_nmul (rep_nmul (rep_nmul (rep_nadd h1 (rep_npow g1 2)) g0) g2) g3))
-      (rep_nmul (rep_nmul (rep_nmul (rep_nadd h2 (rep_npow g2 2)) g0) g1) g3))
-      (rep_nmul (rep_nmul (rep_nmul (rep_nadd h3 (rep_npow g3 2)) g0) g1) g2)))
+  ((((((rep_ncst 2).mulF hA).mulF g0).mulF g1).mulF g2).mulF g3).subF ((rep_ncst _).mulF
+    (((((((h0.addF (g0.powF 2)).mulF g1).mulF g2).mulF g3).addF
+      ((((h1.addF (g1.powF 2)).mulF g0).mulF g2).mulF g3)).addF
+      ((((h2.addF (g2.powF 2)).mulF g0).mulF g1).mulF g3)).addF
+      ((((h3.addF (g3.powF 2)).mulF g0).mulF g1).mulF g2)))
 private def bnumer (e : Curve) : Scaled :=
   let p0 := bP e 0
   let p1 := bP e 1
@@ -794,22 +461,21 @@ private theorem center_data (e : Curve) :
       (length e-(0:ℚ))/2=(cnum e:ℚ)*((1:ℤ):ℚ)/(cden e:ℚ) := by
   cases e <;> norm_num [cnum,cden,length,right,family,start,split]
 private theorem rep_center {c : Scaled} {p : ℚ[X]} (hc : c.Rep p) (e : Curve) :
-    (centerS c (cnum e) (cden e) 1 1).Rep (WholeIntervalPolynomial.centered 0 (length e) p) := by
-  rw [centerS_eq]
-  exact hc.centered (cnum e) (cden e) 1 1 (center_data e).1 (center_data e).2.1 (center_data e).2.2
+    (c.centerF (cnum e) (cden e) 1 1).Rep (WholeIntervalPolynomial.centered 0 (length e) p) :=
+  hc.centeredF (cnum e) (cden e) 1 1 (center_data e).1 (center_data e).2.1 (center_data e).2.2
 
 /-! #### Integer comparisons -/
 
 /-- The kernel-checked facts of a whole-interval bound `r < lowerOn D` for the centered list `c`. -/
 private abbrev certOK (r : ℚ) (D : ℕ) (c : Scaled) : Prop :=
-  c.s≠0 ∧ c.l.length≤D+1 ∧ (chebF c.l).length≤D+1 ∧
-    r.num*((c.s*2^c.l.length:ℕ):ℤ)<lowL (chebF c.l)*((2*r.den:ℕ):ℤ)
+  c.s≠0 ∧ c.l.length≤D+1 ∧ (Fast.chebF c.l).length≤D+1 ∧
+    r.num*((c.s*2^c.l.length:ℕ):ℤ)<Fast.lowL (Fast.chebF c.l)*((2*r.den:ℕ):ℤ)
 private theorem of_certOK {r : ℚ} {D : ℕ} {c : Scaled} {a b : ℚ} {p : ℚ[X]}
     (hc : c.Rep (WholeIntervalPolynomial.centered a b p)) (h : certOK r D c) :
     WholeIntervalPolynomial.centered a b p=expansion D (WholeIntervalPolynomial.centered a b p) ∧
       r<lowerOn D a b p := by
   obtain ⟨hs,hl,hcl,hz⟩ := h
-  rw [← lowL_eq hcl,chebF_eq] at hz
+  rw [← Fast.lowL_eq hcl,Fast.chebF_eq] at hz
   refine ⟨hc.eq_expansion hs hl,?_⟩
   rw [lowerOn_eq_of_rep hc hs hl]
   have hb : (0:ℚ)<r.den := by exact_mod_cast r.pos
@@ -830,13 +496,13 @@ open WholeIntervalPolynomial.Certificate (lowerZ chebList lowerOn_eq_of_rep)
 
 /-- The kernel-checked mass bounds of one curve, checked together with its numerator. -/
 private abbrev massAll (e : Curve) : Prop :=
-  certOK (19/25) 3 (centerS (bmass e 0 (bP e 0)) (cnum e) (cden e) 1 1) ∧
-  certOK (19/25) 3 (centerS (bmass e 1 (bP e 1)) (cnum e) (cden e) 1 1) ∧
-  certOK (19/25) 3 (centerS (bmass e 2 (bP e 2)) (cnum e) (cden e) 1 1) ∧
-  certOK (19/25) 3 (centerS (bmass e 3 (bP e 3)) (cnum e) (cden e) 1 1)
+  certOK (19/25) 3 ((bmass e 0 (bP e 0)).centerF (cnum e) (cden e) 1 1) ∧
+  certOK (19/25) 3 ((bmass e 1 (bP e 1)).centerF (cnum e) (cden e) 1 1) ∧
+  certOK (19/25) 3 ((bmass e 2 (bP e 2)).centerF (cnum e) (cden e) 1 1) ∧
+  certOK (19/25) 3 ((bmass e 3 (bP e 3)).centerF (cnum e) (cden e) 1 1)
 private theorem mass_of_all {e : Curve} (h : numSide e ∧ massAll e) (j : Fin 4) :
     (family e=.low ∧ j=3 ∨ massSide (bP e j)) ∧
-      certOK (19/25) 3 (centerS (bmass e j (bP e j)) (cnum e) (cden e) 1 1) := by
+      certOK (19/25) 3 ((bmass e j (bP e j)).centerF (cnum e) (cden e) 1 1) := by
   obtain ⟨⟨h0,h1,h2,h3⟩,m0,m1,m2,m3⟩ := h
   fin_cases j
   exacts [⟨.inr h0,m0⟩,⟨.inr h1,m1⟩,⟨.inr h2,m2⟩,⟨h3.imp (fun h => ⟨h,rfl⟩) id,m3⟩]
@@ -853,25 +519,25 @@ def directReserve : Curve→ℚ
   | .abG => 337/10000 | .abH => 349/10000 | _ => 0
 
 private theorem direct_check_lowM : (numSide .lowM ∧ massAll .lowM) ∧
-    certOK (directReserve .lowM) (degree .lowM) (centerS (bnumer .lowM) (cnum .lowM) (cden .lowM) 1 1) := by
+    certOK (directReserve .lowM) (degree .lowM) ((bnumer .lowM).centerF (cnum .lowM) (cden .lowM) 1 1) := by
   decide +kernel
 private theorem direct_check_lowSH : (numSide .lowSH ∧ massAll .lowSH) ∧
-    certOK (directReserve .lowSH) (degree .lowSH) (centerS (bnumer .lowSH) (cnum .lowSH) (cden .lowSH) 1 1) := by
+    certOK (directReserve .lowSH) (degree .lowSH) ((bnumer .lowSH).centerF (cnum .lowSH) (cden .lowSH) 1 1) := by
   decide +kernel
 private theorem direct_check_lowSG : (numSide .lowSG ∧ massAll .lowSG) ∧
-    certOK (directReserve .lowSG) (degree .lowSG) (centerS (bnumer .lowSG) (cnum .lowSG) (cden .lowSG) 1 1) := by
+    certOK (directReserve .lowSG) (degree .lowSG) ((bnumer .lowSG).centerF (cnum .lowSG) (cden .lowSG) 1 1) := by
   decide +kernel
 private theorem direct_check_highB : (numSide .highB ∧ massAll .highB) ∧
-    certOK (directReserve .highB) (degree .highB) (centerS (bnumer .highB) (cnum .highB) (cden .highB) 1 1) := by
+    certOK (directReserve .highB) (degree .highB) ((bnumer .highB).centerF (cnum .highB) (cden .highB) 1 1) := by
   decide +kernel
 private theorem direct_check_highAB : (numSide .highAB ∧ massAll .highAB) ∧
-    certOK (directReserve .highAB) (degree .highAB) (centerS (bnumer .highAB) (cnum .highAB) (cden .highAB) 1 1) := by
+    certOK (directReserve .highAB) (degree .highAB) ((bnumer .highAB).centerF (cnum .highAB) (cden .highAB) 1 1) := by
   decide +kernel
 private theorem direct_check_abG : (numSide .abG ∧ massAll .abG) ∧
-    certOK (directReserve .abG) (degree .abG) (centerS (bnumer .abG) (cnum .abG) (cden .abG) 1 1) := by
+    certOK (directReserve .abG) (degree .abG) ((bnumer .abG).centerF (cnum .abG) (cden .abG) 1 1) := by
   decide +kernel
 private theorem direct_check_abH : (numSide .abH ∧ massAll .abH) ∧
-    certOK (directReserve .abH) (degree .abH) (centerS (bnumer .abH) (cnum .abH) (cden .abH) 1 1) := by
+    certOK (directReserve .abH) (degree .abH) ((bnumer .abH).centerF (cnum .abH) (cden .abH) 1 1) := by
   decide +kernel
 
 theorem direct_certificate (e : Curve) (he : direct e) :
@@ -879,7 +545,7 @@ theorem direct_certificate (e : Curve) (he : direct e) :
       expansion (degree e) (centered 0 (length e) (numerator e)) ∧
     directReserve e<lowerOn (degree e) 0 (length e) (numerator e) := by
   have h : (numSide e ∧ massAll e) ∧ certOK (directReserve e) (degree e)
-      (centerS (bnumer e) (cnum e) (cden e) 1 1) := by
+      ((bnumer e).centerF (cnum e) (cden e) 1 1) := by
     cases e
     · exact False.elim he
     · exact direct_check_lowM
@@ -917,23 +583,23 @@ def initialReserve : Curve→ℚ
 
 private theorem quotient_check_highH : (numSide .highH ∧ massAll .highH) ∧ ((bnumer .highH).s≠0 ∧
     (initialReserve .highH).num*((bnumer .highH).s:ℤ)<(bnumer .highH).l.getD 0 0*((initialReserve .highH).den:ℤ)) ∧
-    certOK (quotientReserve .highH) (degree .highH) (centerS (bnumer .highH).divX (cnum .highH) (cden .highH) 1 1) := by
+    certOK (quotientReserve .highH) (degree .highH) ((bnumer .highH).divX.centerF (cnum .highH) (cden .highH) 1 1) := by
   decide +kernel
 private theorem quotient_check_highG : (numSide .highG ∧ massAll .highG) ∧ ((bnumer .highG).s≠0 ∧
     (initialReserve .highG).num*((bnumer .highG).s:ℤ)<(bnumer .highG).l.getD 0 0*((initialReserve .highG).den:ℤ)) ∧
-    certOK (quotientReserve .highG) (degree .highG) (centerS (bnumer .highG).divX (cnum .highG) (cden .highG) 1 1) := by
+    certOK (quotientReserve .highG) (degree .highG) ((bnumer .highG).divX.centerF (cnum .highG) (cden .highG) 1 1) := by
   decide +kernel
 private theorem quotient_check_highGA : (numSide .highGA ∧ massAll .highGA) ∧ ((bnumer .highGA).s≠0 ∧
     (initialReserve .highGA).num*((bnumer .highGA).s:ℤ)<(bnumer .highGA).l.getD 0 0*((initialReserve .highGA).den:ℤ)) ∧
-    certOK (quotientReserve .highGA) (degree .highGA) (centerS (bnumer .highGA).divX (cnum .highGA) (cden .highGA) 1 1) := by
+    certOK (quotientReserve .highGA) (degree .highGA) ((bnumer .highGA).divX.centerF (cnum .highGA) (cden .highGA) 1 1) := by
   decide +kernel
 private theorem quotient_check_gaH : (numSide .gaH ∧ massAll .gaH) ∧ ((bnumer .gaH).s≠0 ∧
     (initialReserve .gaH).num*((bnumer .gaH).s:ℤ)<(bnumer .gaH).l.getD 0 0*((initialReserve .gaH).den:ℤ)) ∧
-    certOK (quotientReserve .gaH) (degree .gaH) (centerS (bnumer .gaH).divX (cnum .gaH) (cden .gaH) 1 1) := by
+    certOK (quotientReserve .gaH) (degree .gaH) ((bnumer .gaH).divX.centerF (cnum .gaH) (cden .gaH) 1 1) := by
   decide +kernel
 private theorem quotient_check_gaB : (numSide .gaB ∧ massAll .gaB) ∧ ((bnumer .gaB).s≠0 ∧
     (initialReserve .gaB).num*((bnumer .gaB).s:ℤ)<(bnumer .gaB).l.getD 0 0*((initialReserve .gaB).den:ℤ)) ∧
-    certOK (quotientReserve .gaB) (degree .gaB) (centerS (bnumer .gaB).divX (cnum .gaB) (cden .gaB) 1 1) := by
+    certOK (quotientReserve .gaB) (degree .gaB) ((bnumer .gaB).divX.centerF (cnum .gaB) (cden .gaB) 1 1) := by
   decide +kernel
 
 theorem quotient_certificate (e : Curve) (he : quotientCase e) :
@@ -943,7 +609,7 @@ theorem quotient_certificate (e : Curve) (he : quotientCase e) :
     quotientReserve e<lowerOn (degree e) 0 (length e) (numerator e).divX := by
   have h : (numSide e ∧ massAll e) ∧ ((bnumer e).s≠0 ∧
       (initialReserve e).num*((bnumer e).s:ℤ)<(bnumer e).l.getD 0 0*((initialReserve e).den:ℤ)) ∧
-      certOK (quotientReserve e) (degree e) (centerS (bnumer e).divX (cnum e) (cden e) 1 1) := by
+      certOK (quotientReserve e) (degree e) ((bnumer e).divX.centerF (cnum e) (cden e) 1 1) := by
     cases e
     · exact False.elim he
     · exact False.elim he
@@ -986,10 +652,10 @@ open WholeIntervalPolynomial.Certificate
 
 /-! #### The reversed low numerators -/
 
-private def brev (e : Curve) : Scaled := centerS (bnumer e) 1 4 1 (-4)
+private def brev (e : Curve) : Scaled := (bnumer e).centerF 1 4 1 (-4)
 private theorem rep_brev (e : Curve) (h : numSide e) : (brev e).Rep (reversed e) := by
-  rw [brev,centerS_eq]
-  have hc := (rep_bnumer e h).centered 1 4 1 (-4) (a:=5/4) (b:=-3/4)
+  rw [brev]
+  have hc := (rep_bnumer e h).centeredF 1 4 1 (-4) (a:=5/4) (b:=-3/4)
     (by norm_num) (by norm_num) (by norm_num)
   have he : WholeIntervalPolynomial.centered (5/4) (-3/4) (numerator e)=reversed e := by
     unfold WholeIntervalPolynomial.centered WholeIntervalPolynomial.affine reversed

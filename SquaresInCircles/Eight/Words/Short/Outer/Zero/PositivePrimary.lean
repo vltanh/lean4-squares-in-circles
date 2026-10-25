@@ -1,7 +1,7 @@
 module
 
-public import SquaresInCircles.Eight.Words.Common.ZeroCritical
-public import SquaresInCircles.Eight.Words.Short.Mixed.ZeroPositive
+public import SquaresInCircles.Eight.Words.Common.ZeroSame
+public import SquaresInCircles.Eight.Words.Short.Mixed.ZeroPositiveCore
 
 /-!
 # Eight squares: the positive-primary-label favorable outer zero family

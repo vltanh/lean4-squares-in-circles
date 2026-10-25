@@ -1,6 +1,7 @@
 module
 
 public import Mathlib.Algebra.Order.Floor.Semifield
+public import SquaresInCircles.Eight.Arithmetic.FastPolynomials
 public import SquaresInCircles.Eight.Owners.GA.Negative.EHBT3PolynomialData
 
 /-!
@@ -18,347 +19,10 @@ open Set Polynomial
 namespace SquaresInCircles.Eight.GlobalGA.NegativeEHBT3.Certificate
 open WholeIntervalPolynomial
 open WholeIntervalPolynomial.Certificate (Scaled lowerOn_eq_of_rep lowerZ chebList toPoly)
+open WholeIntervalPolynomial.Certificate.Fast (chebF lowL chebF_eq lowL_eq)
 open PositiveTD.Certificate (S9 S11 C10 C12)
 
-/-! #### Kernel list arithmetic
-
-The list operations of `PolynomialCertificates`, written with the recursors and the integer
-operations themselves: the kernel reduces them in fewer steps. Each equals its model. -/
-
-private def addF (l : List ℤ) : List ℤ → List ℤ :=
-  List.rec (motive := fun _ => List ℤ → List ℤ) (fun m => m)
-    (fun x t ih m => List.casesOn (motive := fun _ => List ℤ) m (x :: t)
-      (fun y m' => Int.add x y :: ih m')) l
-
-private theorem addF_eq : ∀ l m : List ℤ,addF l m=WholeIntervalPolynomial.Certificate.add l m
-  | [],_ => rfl
-  | _ :: _,[] => rfl
-  | x :: t,y :: m => by
-    show Int.add x y :: addF t m=(x+y) :: WholeIntervalPolynomial.Certificate.add t m
-    rw [addF_eq t m]; rfl
-
-private def smulF (c : ℤ) (l : List ℤ) : List ℤ :=
-  List.rec (motive := fun _ => List ℤ) [] (fun x _ ih => Int.mul c x :: ih) l
-
-private theorem smulF_eq (c : ℤ) : ∀ l : List ℤ,smulF c l=WholeIntervalPolynomial.Certificate.smul c l
-  | [] => rfl
-  | x :: l => by
-    show Int.mul c x :: smulF c l=(c*x) :: WholeIntervalPolynomial.Certificate.smul c l
-    rw [smulF_eq c l]; rfl
-
-/-- `p • l + q • m`, in one pass. -/
-private def lincF (p q : ℤ) (l : List ℤ) : List ℤ → List ℤ :=
-  List.rec (motive := fun _ => List ℤ → List ℤ) (fun m => smulF q m)
-    (fun x t ih m => List.casesOn (motive := fun _ => List ℤ) m (smulF p (x :: t))
-      (fun y m' => Int.add (Int.mul p x) (Int.mul q y) :: ih m')) l
-
-private theorem lincF_eq (p q : ℤ) : ∀ l m : List ℤ,lincF p q l m=
-    WholeIntervalPolynomial.Certificate.add (WholeIntervalPolynomial.Certificate.smul p l)
-      (WholeIntervalPolynomial.Certificate.smul q m)
-  | [],m => by
-    show smulF q m=_
-    rw [smulF_eq]; rfl
-  | x :: t,[] => by
-    show smulF p (x :: t)=_
-    rw [smulF_eq]; rfl
-  | x :: t,y :: m => by
-    show Int.add (Int.mul p x) (Int.mul q y) :: lincF p q t m=(p*x+q*y) ::
-      WholeIntervalPolynomial.Certificate.add (WholeIntervalPolynomial.Certificate.smul p t)
-        (WholeIntervalPolynomial.Certificate.smul q m)
-    rw [lincF_eq p q t m]; rfl
-
-/-- `a • m + acc`, in one pass. -/
-private def axpyF (a : ℤ) (m : List ℤ) : List ℤ → List ℤ :=
-  List.rec (motive := fun _ => List ℤ → List ℤ) (fun acc => acc)
-    (fun x _ ih acc => List.casesOn (motive := fun _ => List ℤ) acc (Int.mul a x :: ih [])
-      (fun y acc' => Int.add (Int.mul a x) y :: ih acc')) m
-
-private theorem addC_nil_right : ∀ l : List ℤ,WholeIntervalPolynomial.Certificate.add l []=l
-  | [] => rfl
-  | _ :: _ => rfl
-
-private theorem axpyF_eq (a : ℤ) : ∀ m acc : List ℤ,axpyF a m acc=
-    WholeIntervalPolynomial.Certificate.add (WholeIntervalPolynomial.Certificate.smul a m) acc
-  | [],_ => rfl
-  | x :: m,[] => by
-    show Int.mul a x :: axpyF a m []=(a*x) :: WholeIntervalPolynomial.Certificate.smul a m
-    rw [axpyF_eq a m [],addC_nil_right]; rfl
-  | x :: m,y :: acc => by
-    show Int.add (Int.mul a x) y :: axpyF a m acc=(a*x+y) ::
-      WholeIntervalPolynomial.Certificate.add (WholeIntervalPolynomial.Certificate.smul a m) acc
-    rw [axpyF_eq a m acc]; rfl
-
-/-- `l * m`, row by row. -/
-private def mulF (l m : List ℤ) : List ℤ :=
-  List.casesOn (motive := fun _ => List ℤ) m []
-    (fun _ _ => List.rec (motive := fun _ => List ℤ) [] (fun a _ ih => axpyF a m (0 :: ih)) l)
-
-private theorem mulF_eq : ∀ l m : List ℤ,mulF l m=WholeIntervalPolynomial.Certificate.mul l m
-  | _,[] => by cases ‹List ℤ› <;> rfl
-  | [],_ :: _ => rfl
-  | a :: l,b :: m => by
-    show axpyF a (b :: m) (0 :: mulF l (b :: m))=_
-    rw [axpyF_eq,mulF_eq l (b :: m)]; rfl
-
-private def prescaleF (num den n : ℕ) (l : List ℤ) : ℕ → List ℤ :=
-  List.rec (motive := fun _ => ℕ → List ℤ) (fun _ => [])
-    (fun a _ ih i => Int.mul a (Int.ofNat (Nat.mul (Nat.pow num i) (Nat.pow den (Nat.sub n i))))
-      :: ih (Nat.succ i)) l
-
-private theorem prescaleF_eq (num den n : ℕ) : ∀ (l : List ℤ) (i : ℕ),
-    prescaleF num den n l i=WholeIntervalPolynomial.Certificate.prescale num den n i l
-  | [],_ => rfl
-  | a :: l,i => by
-    show _ :: prescaleF num den n l (i+1)=_
-    rw [prescaleF_eq num den n l (i+1)]; rfl
-
-private def shiftAuxF (z : List ℤ) : ℤ → List ℤ :=
-  List.rec (motive := fun _ => ℤ → List ℤ) (fun c => [c]) (fun x _ ih c => Int.add x c :: ih x) z
-
-private theorem shiftAuxF_eq : ∀ (z : List ℤ) (c : ℤ),
-    shiftAuxF z c=WholeIntervalPolynomial.Certificate.add z (c :: z)
-  | [],_ => rfl
-  | x :: z,c => by
-    show Int.add x c :: shiftAuxF z x=(x+c) :: WholeIntervalPolynomial.Certificate.add z (x :: z)
-    rw [shiftAuxF_eq z x]; rfl
-
-private def affAuxF (s t : ℤ) (z : List ℤ) : ℤ → List ℤ :=
-  List.rec (motive := fun _ => ℤ → List ℤ) (fun c => [Int.mul t c])
-    (fun x _ ih c => Int.add (Int.mul s x) (Int.mul t c) :: ih x) z
-
-private theorem affAuxF_eq (s t : ℤ) : ∀ (z : List ℤ) (c : ℤ),
-    affAuxF s t z c=WholeIntervalPolynomial.Certificate.affMulAux s t c z
-  | [],_ => rfl
-  | x :: z,c => by
-    show Int.add (Int.mul s x) (Int.mul t c) :: affAuxF s t z x=_
-    rw [affAuxF_eq s t z x]; rfl
-
-private def compAffF (s t : ℤ) (l : List ℤ) : List ℤ :=
-  if s=1 ∧ t=1 then
-    List.rec (motive := fun _ => List ℤ) []
-      (fun b _ ih => List.casesOn (motive := fun _ => List ℤ) ih [b]
-        (fun x z => Int.add b x :: shiftAuxF z x)) l
-  else
-    List.rec (motive := fun _ => List ℤ) []
-      (fun b _ ih => List.casesOn (motive := fun _ => List ℤ) ih [b]
-        (fun x z => Int.add b (Int.mul s x) :: affAuxF s t z x)) l
-
-private theorem compAffF_eq (s t : ℤ) (l : List ℤ) :
-    compAffF s t l=WholeIntervalPolynomial.Certificate.compAff s t l := by
-  unfold compAffF
-  split_ifs with h
-  · obtain ⟨rfl,rfl⟩ := h
-    induction l with
-    | nil => rfl
-    | cons b l ih =>
-      show List.casesOn (motive := fun _ => List ℤ) (List.rec (motive := fun _ => List ℤ) []
-        (fun b _ ih => List.casesOn (motive := fun _ => List ℤ) ih [b]
-          (fun x z => Int.add b x :: shiftAuxF z x)) l) [b]
-        (fun x z => Int.add b x :: shiftAuxF z x)=WholeIntervalPolynomial.Certificate.add [b]
-          (WholeIntervalPolynomial.Certificate.affMul 1 1
-            (WholeIntervalPolynomial.Certificate.compAff 1 1 l))
-      rw [ih]
-      rcases hc : WholeIntervalPolynomial.Certificate.compAff 1 1 l with _ | ⟨x,z⟩
-      · rfl
-      · show Int.add b x :: shiftAuxF z x=WholeIntervalPolynomial.Certificate.add [b]
-          (WholeIntervalPolynomial.Certificate.affMul 1 1 (x :: z))
-        rw [WholeIntervalPolynomial.Certificate.affMul,ite_eq_left ⟨rfl,rfl⟩,
-          WholeIntervalPolynomial.Certificate.shiftMul,shiftAuxF_eq]
-        show Int.add b x :: _=(b+(x+0)) :: WholeIntervalPolynomial.Certificate.add []
-          (WholeIntervalPolynomial.Certificate.add z (x :: z))
-        rw [Int.add_zero]; rfl
-  · induction l with
-    | nil => rfl
-    | cons b l ih =>
-      show List.casesOn (motive := fun _ => List ℤ) (List.rec (motive := fun _ => List ℤ) []
-        (fun b _ ih => List.casesOn (motive := fun _ => List ℤ) ih [b]
-          (fun x z => Int.add b (Int.mul s x) :: affAuxF s t z x)) l) [b]
-        (fun x z => Int.add b (Int.mul s x) :: affAuxF s t z x)=
-          WholeIntervalPolynomial.Certificate.add [b] (WholeIntervalPolynomial.Certificate.affMul s t
-            (WholeIntervalPolynomial.Certificate.compAff s t l))
-      rw [ih]
-      rcases hc : WholeIntervalPolynomial.Certificate.compAff s t l with _ | ⟨x,z⟩
-      · show [b]=WholeIntervalPolynomial.Certificate.add [b]
-          (WholeIntervalPolynomial.Certificate.affMul s t [])
-        rw [WholeIntervalPolynomial.Certificate.affMul,ite_eq_right h]; rfl
-      · show Int.add b (Int.mul s x) :: affAuxF s t z x=WholeIntervalPolynomial.Certificate.add [b]
-          (WholeIntervalPolynomial.Certificate.affMul s t (x :: z))
-        rw [WholeIntervalPolynomial.Certificate.affMul,ite_eq_right h,affAuxF_eq]; rfl
-
-/-- `Scaled.center`, with the fast list operations. -/
-private def centerS (c : Scaled) (num den : ℕ) (s t : ℤ) : Scaled :=
-  ⟨compAffF s t (prescaleF num den (c.l.length-1) c.l 0),c.s*den^(c.l.length-1)⟩
-
-private theorem centerS_eq (c : Scaled) (num den : ℕ) (s t : ℤ) :
-    centerS c num den s t=c.center num den s t := by
-  rw [centerS,compAffF_eq,prescaleF_eq]; rfl
-
-private def twoXF (u : List ℤ) : List ℤ :=
-  List.casesOn (motive := fun _ => List ℤ) u [] (fun u0 t => addF t (0 :: Int.mul 2 u0 :: t))
-
-private theorem twoXF_eq : ∀ u : List ℤ,twoXF u=WholeIntervalPolynomial.Certificate.twoX u
-  | [] => rfl
-  | u0 :: t => by
-    show addF t (0 :: Int.mul 2 u0 :: t)=WholeIntervalPolynomial.Certificate.add t (0 :: (2*u0) :: t)
-    rw [addF_eq]; rfl
-
-private def chebPair (l : List ℤ) : List ℤ × ℕ :=
-  List.rec (motive := fun _ => List ℤ × ℕ) ([],1)
-    (fun a _ ih => (addF [Int.mul a (Int.ofNat ih.2)] (twoXF ih.1),Nat.mul 2 ih.2)) l
-
-private theorem chebPair_eq : ∀ l : List ℤ,
-    chebPair l=(WholeIntervalPolynomial.Certificate.chebList l,2^l.length)
-  | [] => rfl
-  | a :: l => by
-    show (addF [Int.mul a (Int.ofNat (chebPair l).2)] (twoXF (chebPair l).1),
-      Nat.mul 2 (chebPair l).2)=_
-    rw [chebPair_eq l,addF_eq,twoXF_eq,WholeIntervalPolynomial.Certificate.chebList,
-      List.length_cons,pow_succ,Nat.mul_comm]
-    rfl
-
-private def chebF (l : List ℤ) : List ℤ := (chebPair l).1
-
-private theorem chebF_eq (l : List ℤ) : chebF l=WholeIntervalPolynomial.Certificate.chebList l := by
-  rw [chebF,chebPair_eq]
-
-private def sumAbsF (l : List ℤ) : ℕ :=
-  List.rec (motive := fun _ => ℕ) 0 (fun x _ ih => Nat.add (Int.natAbs x) ih) l
-
-private theorem sumAbsF_eq_sum {t : List ℤ} {D : ℕ} (h : t.length≤D) :
-    ((sumAbsF t:ℕ):ℤ)=∑ j : Fin D,|t.getD j.val 0| := by
-  induction t generalizing D with
-  | nil => simp [sumAbsF]
-  | cons x t ih =>
-    obtain ⟨D,rfl⟩ : ∃ D',D=D'+1 := ⟨D-1,by simp at h; omega⟩
-    rw [Fin.sum_univ_succ]
-    simp only [Fin.val_zero,List.getD_cons_zero,Fin.val_succ,List.getD_cons_succ]
-    rw [← ih (by simp at h; omega)]
-    show (((Int.natAbs x+sumAbsF t:ℕ)):ℤ)=_
-    push_cast
-    rfl
-
-/-- `lowerZ` of a list, from its first entry and the rest. -/
-private def lowL (l : List ℤ) : ℤ :=
-  List.casesOn (motive := fun _ => ℤ) l 0 (fun b t => Int.sub b (Int.ofNat (sumAbsF t)))
-
-private theorem lowL_eq {l : List ℤ} {D : ℕ} (h : l.length≤D+1) :
-    WholeIntervalPolynomial.Certificate.lowerZ D (fun j => l.getD j 0)=lowL l := by
-  cases l with
-  | nil => simp [WholeIntervalPolynomial.Certificate.lowerZ,lowL]
-  | cons b t =>
-    simp only [WholeIntervalPolynomial.Certificate.lowerZ,List.getD_cons_zero,List.getD_cons_succ]
-    rw [← sumAbsF_eq_sum (by simp at h; omega)]
-    rfl
-
-private def powF (l : List ℤ) (n : ℕ) : List ℤ :=
-  Nat.rec (motive := fun _ => List ℤ) [1] (fun _ ih => mulF ih l) n
-
-private theorem powF_eq (l : List ℤ) : ∀ n : ℕ,powF l n=WholeIntervalPolynomial.Certificate.pow l n
-  | 0 => rfl
-  | n+1 => by
-    show mulF (powF l n) l=WholeIntervalPolynomial.Certificate.mul (WholeIntervalPolynomial.Certificate.pow l n) l
-    rw [powF_eq l n,mulF_eq]
-
-/-- `Scaled.add`, `Scaled.sub`, `Scaled.mul` and `Scaled.pow` with the fast list operations. -/
-private def _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.fadd
-    (a b : Scaled) : Scaled := ⟨lincF b.s a.s a.l b.l,a.s*b.s⟩
-private def _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.fsub
-    (a b : Scaled) : Scaled := ⟨lincF b.s (-(a.s:ℤ)) a.l b.l,a.s*b.s⟩
-private def _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.fmul
-    (a b : Scaled) : Scaled := ⟨mulF a.l b.l,a.s*b.s⟩
-private def _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.fpow
-    (a : Scaled) (n : ℕ) : Scaled := ⟨powF a.l n,a.s^n⟩
-private theorem _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.Rep.fadd
-    {a b : Scaled} {p q : ℚ[X]} (ha : a.Rep p) (hb : b.Rep q) : (a.fadd b).Rep (p+q) := by
-  have e : a.fadd b=a.add b := by
-    show (⟨lincF b.s a.s a.l b.l,a.s*b.s⟩ : Scaled)=a.add b
-    rw [lincF_eq]; rfl
-  rw [e]; exact ha.add hb
-private theorem _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.Rep.fsub
-    {a b : Scaled} {p q : ℚ[X]} (ha : a.Rep p) (hb : b.Rep q) : (a.fsub b).Rep (p-q) := by
-  have e : a.fsub b=a.sub b := by
-    show (⟨lincF b.s (-(a.s:ℤ)) a.l b.l,a.s*b.s⟩ : Scaled)=a.sub b
-    rw [lincF_eq]; rfl
-  rw [e]; exact ha.sub hb
-private theorem _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.Rep.fmul
-    {a b : Scaled} {p q : ℚ[X]} (ha : a.Rep p) (hb : b.Rep q) : (a.fmul b).Rep (p*q) := by
-  have e : a.fmul b=a.mul b := by
-    show (⟨mulF a.l b.l,a.s*b.s⟩ : Scaled)=a.mul b
-    rw [mulF_eq]; rfl
-  rw [e]; exact ha.mul hb
-private theorem _root_.SquaresInCircles.Eight.WholeIntervalPolynomial.Certificate.Scaled.Rep.fpow
-    {a : Scaled} {p : ℚ[X]} (ha : a.Rep p) (n : ℕ) : (a.fpow n).Rep (p^n) := by
-  have e : a.fpow n=a.pow n := by
-    show (⟨powF a.l n,a.s^n⟩ : Scaled)=a.pow n
-    rw [powF_eq]; rfl
-  rw [e]; exact ha.pow n
-
-/-! ### Scaled-list helpers: gcd normalization, truncation, fractions -/
-
-private def r76gcd (g : ℕ) (l : List ℤ) : ℕ := l.foldl (fun g x => Nat.gcd g x.natAbs) g
-
-private theorem r76gcd_dvd : ∀ (l : List ℤ) (g : ℕ),
-    r76gcd g l ∣ g ∧ ∀ x ∈ l,((r76gcd g l:ℕ):ℤ) ∣ x
-  | [],g => by simp [r76gcd]
-  | a :: t,g => by
-    have ih := r76gcd_dvd t (Nat.gcd g a.natAbs)
-    have he : r76gcd g (a :: t)=r76gcd (Nat.gcd g a.natAbs) t := rfl
-    rw [he]
-    refine ⟨ih.1.trans (Nat.gcd_dvd_left _ _),?_⟩
-    intro x hx
-    rcases List.mem_cons.1 hx with rfl|hx
-    · exact Int.natCast_dvd.2 (ih.1.trans (Nat.gcd_dvd_right _ _))
-    · exact ih.2 x hx
-
-private theorem r76toPoly_map_div (g : ℤ) : ∀ l : List ℤ,(∀ x ∈ l,g ∣ x) →
-    C (g:ℚ)*toPoly (l.map (fun x => x/g))=toPoly l
-  | [],_ => by simp [toPoly]
-  | a :: t,h => by
-    have ih := r76toPoly_map_div g t (fun x hx => h x (List.mem_cons_of_mem _ hx))
-    have ha : ((a/g:ℤ):ℚ)*(g:ℚ)=(a:ℚ) := by
-      exact_mod_cast Int.ediv_mul_cancel (h a (List.mem_cons_self))
-    simp only [List.map_cons,toPoly]
-    rw [mul_add,← ih,← map_mul,mul_comm (g:ℚ),ha]
-    ring
-
-/-- Division by the common gcd of the scale and the entries. -/
-private def r76normS (c : Scaled) : Scaled :=
-  if r76gcd c.s c.l=0 then c else
-    ⟨c.l.map (fun x => x/((r76gcd c.s c.l:ℕ):ℤ)),c.s/r76gcd c.s c.l⟩
-
-private theorem r76normS_rep {c : Scaled} {p : ℚ[X]} (hc : c.Rep p) : (r76normS c).Rep p := by
-  unfold r76normS
-  split_ifs with hg
-  · exact hc
-  obtain ⟨hs,hl⟩ := r76gcd_dvd c.l c.s
-  unfold Scaled.Rep at *
-  have h1 := r76toPoly_map_div _ c.l hl
-  have hgq : ((r76gcd c.s c.l:ℕ):ℚ)≠0 := by exact_mod_cast hg
-  have hs' : ((c.s/r76gcd c.s c.l:ℕ):ℚ)*(r76gcd c.s c.l:ℕ)=c.s := by
-    exact_mod_cast Nat.div_mul_cancel hs
-  apply mul_left_cancel₀ (show C ((r76gcd c.s c.l:ℕ):ℚ)≠0 from C_ne_zero.2 hgq)
-  push_cast at h1 ⊢
-  rw [h1,hc,← mul_assoc,← map_mul,mul_comm _ ((c.s/r76gcd c.s c.l:ℕ):ℚ)]
-  rw [hs']
-
-private def r76gcdF (l : List ℤ) : ℕ → ℕ :=
-  List.rec (motive := fun _ => ℕ → ℕ) (fun g => g) (fun x _ ih g => ih (Nat.gcd g x.natAbs)) l
-private theorem r76gcdF_eq : ∀ (l : List ℤ) (g : ℕ),r76gcdF l g=r76gcd g l
-  | [],_ => rfl
-  | x :: l,g => r76gcdF_eq l (Nat.gcd g x.natAbs)
-private def divF (d : ℤ) (l : List ℤ) : List ℤ :=
-  List.rec (motive := fun _ => List ℤ) [] (fun x _ ih => x/d :: ih) l
-private theorem divF_eq (d : ℤ) : ∀ l : List ℤ,divF d l=l.map (fun x => x/d)
-  | [] => rfl
-  | x :: l => by
-    show x/d :: divF d l=_
-    rw [divF_eq d l]; rfl
-/-- `r76normS`, with the fast list operations. -/
-private def r76norm (c : Scaled) : Scaled :=
-  if r76gcdF c.l c.s=0 then c else ⟨divF ((r76gcdF c.l c.s:ℕ):ℤ) c.l,c.s/r76gcdF c.l c.s⟩
-private theorem r76norm_rep {c : Scaled} {p : ℚ[X]} (hc : c.Rep p) : (r76norm c).Rep p := by
-  have e : r76norm c=r76normS c := by simp only [r76norm,r76normS,r76gcdF_eq,divF_eq]
-  rw [e]; exact r76normS_rep hc
+/-! ### Scaled-list helpers: truncation, fractions -/
 
 /-- The first four entries. -/
 private def r76trunc (c : Scaled) : Scaled := ⟨c.l.take 4,c.s⟩
@@ -418,38 +82,38 @@ private theorem r76root12 {a : ℤ} {b n : ℕ} (hb : b≠0) (ha : 0≤a)
 
 /-! ### Taylor polynomials composed with a represented polynomial -/
 
-private def r76S9of (v : Scaled) : Scaled := r76norm
-  ((((v.fsub ((Scaled.const (1/6)).fmul (v.fpow 3))).fadd
-    ((Scaled.const (1/120)).fmul (v.fpow 5))).fsub
-    ((Scaled.const (1/5040)).fmul (v.fpow 7))).fadd
-    ((Scaled.const (1/362880)).fmul (v.fpow 9)))
+private def r76S9of (v : Scaled) : Scaled := Scaled.normF
+  ((((v.subF ((Scaled.const (1/6)).mulF (v.powF 3))).addF
+    ((Scaled.const (1/120)).mulF (v.powF 5))).subF
+    ((Scaled.const (1/5040)).mulF (v.powF 7))).addF
+    ((Scaled.const (1/362880)).mulF (v.powF 9)))
 
 private theorem r76S9of_rep {v : Scaled} {q : ℚ[X]} (hv : v.Rep q) :
     (r76S9of v).Rep (S9.comp q) := by
   have e : S9.comp q=q-C (1/6)*q^3+C (1/120)*q^5-C (1/5040)*q^7+C (1/362880)*q^9 := by
     simp only [S9,PositiveTD.Certificate.S5,sub_comp,add_comp,mul_comp,C_comp,X_comp,pow_comp]
   rw [e]
-  exact r76norm_rep ((((hv.fsub ((Scaled.rep_const _).fmul (hv.fpow 3))).fadd
-    ((Scaled.rep_const _).fmul (hv.fpow 5))).fsub
-    ((Scaled.rep_const _).fmul (hv.fpow 7))).fadd
-    ((Scaled.rep_const _).fmul (hv.fpow 9)))
+  exact Scaled.Rep.normF ((((hv.subF ((Scaled.rep_const _).mulF (hv.powF 3))).addF
+    ((Scaled.rep_const _).mulF (hv.powF 5))).subF
+    ((Scaled.rep_const _).mulF (hv.powF 7))).addF
+    ((Scaled.rep_const _).mulF (hv.powF 9)))
 
-private def r76S11of (v : Scaled) : Scaled := r76norm
-  ((r76S9of v).fsub ((Scaled.const (1/39916800)).fmul (v.fpow 11)))
+private def r76S11of (v : Scaled) : Scaled := Scaled.normF
+  ((r76S9of v).subF ((Scaled.const (1/39916800)).mulF (v.powF 11)))
 
 private theorem r76S11of_rep {v : Scaled} {q : ℚ[X]} (hv : v.Rep q) :
     (r76S11of v).Rep (S11.comp q) := by
   have e : S11.comp q=S9.comp q-C (1/39916800)*q^11 := by
     simp only [S11,sub_comp,mul_comp,C_comp,X_comp,pow_comp]
   rw [e]
-  exact r76norm_rep ((r76S9of_rep hv).fsub ((Scaled.rep_const _).fmul (hv.fpow 11)))
+  exact Scaled.Rep.normF ((r76S9of_rep hv).subF ((Scaled.rep_const _).mulF (hv.powF 11)))
 
-private def r76C10of (v : Scaled) : Scaled := r76norm
-  (((((((Scaled.ofNat 1).fsub ((Scaled.const (1/2)).fmul (v.fpow 2))).fadd
-    ((Scaled.const (1/24)).fmul (v.fpow 4))).fsub
-    ((Scaled.const (1/720)).fmul (v.fpow 6))).fadd
-    ((Scaled.const (1/40320)).fmul (v.fpow 8))).fsub
-    ((Scaled.const (1/3628800)).fmul (v.fpow 10))))
+private def r76C10of (v : Scaled) : Scaled := Scaled.normF
+  (((((((Scaled.ofNat 1).subF ((Scaled.const (1/2)).mulF (v.powF 2))).addF
+    ((Scaled.const (1/24)).mulF (v.powF 4))).subF
+    ((Scaled.const (1/720)).mulF (v.powF 6))).addF
+    ((Scaled.const (1/40320)).mulF (v.powF 8))).subF
+    ((Scaled.const (1/3628800)).mulF (v.powF 10))))
 
 private theorem r76C10of_rep {v : Scaled} {q : ℚ[X]} (hv : v.Rep q) :
     (r76C10of v).Rep (C10.comp q) := by
@@ -458,96 +122,96 @@ private theorem r76C10of_rep {v : Scaled} {q : ℚ[X]} (hv : v.Rep q) :
     simp only [C10,PositiveTD.Certificate.C4,sub_comp,add_comp,mul_comp,C_comp,X_comp,pow_comp,
       one_comp]
   rw [e]
-  exact r76norm_rep (((((Scaled.rep_one.fsub ((Scaled.rep_const _).fmul (hv.fpow 2))).fadd
-    ((Scaled.rep_const _).fmul (hv.fpow 4))).fsub
-    ((Scaled.rep_const _).fmul (hv.fpow 6))).fadd
-    ((Scaled.rep_const _).fmul (hv.fpow 8))).fsub
-    ((Scaled.rep_const _).fmul (hv.fpow 10)))
+  exact Scaled.Rep.normF (((((Scaled.rep_one.subF ((Scaled.rep_const _).mulF (hv.powF 2))).addF
+    ((Scaled.rep_const _).mulF (hv.powF 4))).subF
+    ((Scaled.rep_const _).mulF (hv.powF 6))).addF
+    ((Scaled.rep_const _).mulF (hv.powF 8))).subF
+    ((Scaled.rep_const _).mulF (hv.powF 10)))
 
-private def r76C12of (v : Scaled) : Scaled := r76norm
-  ((r76C10of v).fadd ((Scaled.const (1/479001600)).fmul (v.fpow 12)))
+private def r76C12of (v : Scaled) : Scaled := Scaled.normF
+  ((r76C10of v).addF ((Scaled.const (1/479001600)).mulF (v.powF 12)))
 
 private theorem r76C12of_rep {v : Scaled} {q : ℚ[X]} (hv : v.Rep q) :
     (r76C12of v).Rep (C12.comp q) := by
   have e : C12.comp q=C10.comp q+C (1/479001600)*q^12 := by
     simp only [C12,add_comp,mul_comp,C_comp,X_comp,pow_comp]
   rw [e]
-  exact r76norm_rep ((r76C10of_rep hv).fadd ((Scaled.rep_const _).fmul (hv.fpow 12)))
+  exact Scaled.Rep.normF ((r76C10of_rep hv).addF ((Scaled.rep_const _).mulF (hv.powF 12)))
 
 /-! ### The row data -/
 
-private def r76theta (r : Row) : Scaled := Scaled.var.fadd (Scaled.const (left r))
+private def r76theta (r : Row) : Scaled := Scaled.var.addF (Scaled.const (left r))
 
 private theorem r76theta_rep (r : Row) : (r76theta r).Rep (theta r) :=
-  Scaled.rep_var.fadd (Scaled.rep_const _)
+  Scaled.rep_var.addF (Scaled.rep_const _)
 
 private def r76kB : Family→Scaled→Scaled
-  | .smallLow,v => (Scaled.const (2933/5000)).fadd ((Scaled.const (1239/2500)).fmul v)
-  | .smallHigh,v => (((Scaled.const (1673/2500)).fadd
-      ((Scaled.const (2609/5000)).fmul (v.fsub (Scaled.const (1/6))))).fsub
-      ((Scaled.const (1489/2500)).fmul ((v.fsub (Scaled.const (1/6))).fpow 2))).fadd
-      ((Scaled.const (527/1250)).fmul ((v.fsub (Scaled.const (1/6))).fpow 3))
+  | .smallLow,v => (Scaled.const (2933/5000)).addF ((Scaled.const (1239/2500)).mulF v)
+  | .smallHigh,v => (((Scaled.const (1673/2500)).addF
+      ((Scaled.const (2609/5000)).mulF (v.subF (Scaled.const (1/6))))).subF
+      ((Scaled.const (1489/2500)).mulF ((v.subF (Scaled.const (1/6))).powF 2))).addF
+      ((Scaled.const (527/1250)).mulF ((v.subF (Scaled.const (1/6))).powF 3))
   | .farLow,_ => Scaled.const (121/200)
-  | .farHigh,v => (Scaled.const (101/200)).fadd ((Scaled.const (2/5)).fmul v)
+  | .farHigh,v => (Scaled.const (101/200)).addF ((Scaled.const (2/5)).mulF v)
 
 private theorem r76kB_rep (f : Family) {v : Scaled} {q : ℚ[X]} (hv : v.Rep q) :
     (r76kB f v).Rep ((kBase f).comp q) := by
   cases f <;> simp only [kBase,r76kB,add_comp,sub_comp,mul_comp,C_comp,X_comp,pow_comp]
-  · exact (Scaled.rep_const _).fadd ((Scaled.rep_const _).fmul hv)
-  · exact (((Scaled.rep_const _).fadd ((Scaled.rep_const _).fmul (hv.fsub (Scaled.rep_const _)))).fsub
-      ((Scaled.rep_const _).fmul ((hv.fsub (Scaled.rep_const _)).fpow 2))).fadd
-      ((Scaled.rep_const _).fmul ((hv.fsub (Scaled.rep_const _)).fpow 3))
+  · exact (Scaled.rep_const _).addF ((Scaled.rep_const _).mulF hv)
+  · exact (((Scaled.rep_const _).addF ((Scaled.rep_const _).mulF (hv.subF (Scaled.rep_const _)))).subF
+      ((Scaled.rep_const _).mulF ((hv.subF (Scaled.rep_const _)).powF 2))).addF
+      ((Scaled.rep_const _).mulF ((hv.subF (Scaled.rep_const _)).powF 3))
   · exact Scaled.rep_const _
-  · exact (Scaled.rep_const _).fadd ((Scaled.rep_const _).fmul hv)
+  · exact (Scaled.rep_const _).addF ((Scaled.rep_const _).mulF hv)
 
 private def r76lB : Family→Scaled→Scaled
   | .smallLow,_ => Scaled.ofNat 1
-  | .smallHigh,v => (((Scaled.ofNat 1).fadd
-      ((Scaled.const (7/400)).fmul (v.fsub (Scaled.const (1/6))))).fsub
-      ((Scaled.const (2733/2500)).fmul ((v.fsub (Scaled.const (1/6))).fpow 2))).fadd
-      ((Scaled.const (639/500)).fmul ((v.fsub (Scaled.const (1/6))).fpow 3))
-  | .farLow,v => (Scaled.ofNat 1).fsub ((Scaled.const (9/25)).fmul v)
-  | .farHigh,v => (Scaled.const (381/400)).fsub ((Scaled.const (17/100)).fmul v)
+  | .smallHigh,v => (((Scaled.ofNat 1).addF
+      ((Scaled.const (7/400)).mulF (v.subF (Scaled.const (1/6))))).subF
+      ((Scaled.const (2733/2500)).mulF ((v.subF (Scaled.const (1/6))).powF 2))).addF
+      ((Scaled.const (639/500)).mulF ((v.subF (Scaled.const (1/6))).powF 3))
+  | .farLow,v => (Scaled.ofNat 1).subF ((Scaled.const (9/25)).mulF v)
+  | .farHigh,v => (Scaled.const (381/400)).subF ((Scaled.const (17/100)).mulF v)
 
 private theorem r76lB_rep (f : Family) {v : Scaled} {q : ℚ[X]} (hv : v.Rep q) :
     (r76lB f v).Rep ((lBase f).comp q) := by
   cases f <;> simp only [lBase,r76lB,add_comp,sub_comp,mul_comp,C_comp,X_comp,pow_comp,one_comp]
   · exact Scaled.rep_one
-  · exact ((Scaled.rep_one.fadd ((Scaled.rep_const _).fmul (hv.fsub (Scaled.rep_const _)))).fsub
-      ((Scaled.rep_const _).fmul ((hv.fsub (Scaled.rep_const _)).fpow 2))).fadd
-      ((Scaled.rep_const _).fmul ((hv.fsub (Scaled.rep_const _)).fpow 3))
-  · exact Scaled.rep_one.fsub ((Scaled.rep_const _).fmul hv)
-  · exact (Scaled.rep_const _).fsub ((Scaled.rep_const _).fmul hv)
+  · exact ((Scaled.rep_one.addF ((Scaled.rep_const _).mulF (hv.subF (Scaled.rep_const _)))).subF
+      ((Scaled.rep_const _).mulF ((hv.subF (Scaled.rep_const _)).powF 2))).addF
+      ((Scaled.rep_const _).mulF ((hv.subF (Scaled.rep_const _)).powF 3))
+  · exact Scaled.rep_one.subF ((Scaled.rep_const _).mulF hv)
+  · exact (Scaled.rep_const _).subF ((Scaled.rep_const _).mulF hv)
 
 private def r76mB : Family→Scaled→Scaled
-  | .smallLow,v => (Scaled.const (5821/5000)).fsub ((Scaled.const (4437/5000)).fmul v)
-  | .smallHigh,v => (((Scaled.const (10163/10000)).fsub
-      ((Scaled.const (209/10000)).fmul (v.fsub (Scaled.const (1/6))))).fsub
-      ((Scaled.const (5743/5000)).fmul ((v.fsub (Scaled.const (1/6))).fpow 2))).fadd
-      ((Scaled.const (14069/10000)).fmul ((v.fsub (Scaled.const (1/6))).fpow 3))
-  | .farLow,v => (Scaled.const (111/100)).fsub ((Scaled.const (77/100)).fmul v)
-  | .farHigh,v => (Scaled.const (1929/2000)).fsub ((Scaled.const (47/250)).fmul v)
+  | .smallLow,v => (Scaled.const (5821/5000)).subF ((Scaled.const (4437/5000)).mulF v)
+  | .smallHigh,v => (((Scaled.const (10163/10000)).subF
+      ((Scaled.const (209/10000)).mulF (v.subF (Scaled.const (1/6))))).subF
+      ((Scaled.const (5743/5000)).mulF ((v.subF (Scaled.const (1/6))).powF 2))).addF
+      ((Scaled.const (14069/10000)).mulF ((v.subF (Scaled.const (1/6))).powF 3))
+  | .farLow,v => (Scaled.const (111/100)).subF ((Scaled.const (77/100)).mulF v)
+  | .farHigh,v => (Scaled.const (1929/2000)).subF ((Scaled.const (47/250)).mulF v)
 
 private theorem r76mB_rep (f : Family) {v : Scaled} {q : ℚ[X]} (hv : v.Rep q) :
     (r76mB f v).Rep ((mBase f).comp q) := by
   cases f <;> simp only [mBase,r76mB,add_comp,sub_comp,mul_comp,C_comp,X_comp,pow_comp]
-  · exact (Scaled.rep_const _).fsub ((Scaled.rep_const _).fmul hv)
-  · exact (((Scaled.rep_const _).fsub ((Scaled.rep_const _).fmul (hv.fsub (Scaled.rep_const _)))).fsub
-      ((Scaled.rep_const _).fmul ((hv.fsub (Scaled.rep_const _)).fpow 2))).fadd
-      ((Scaled.rep_const _).fmul ((hv.fsub (Scaled.rep_const _)).fpow 3))
-  · exact (Scaled.rep_const _).fsub ((Scaled.rep_const _).fmul hv)
-  · exact (Scaled.rep_const _).fsub ((Scaled.rep_const _).fmul hv)
+  · exact (Scaled.rep_const _).subF ((Scaled.rep_const _).mulF hv)
+  · exact (((Scaled.rep_const _).subF ((Scaled.rep_const _).mulF (hv.subF (Scaled.rep_const _)))).subF
+      ((Scaled.rep_const _).mulF ((hv.subF (Scaled.rep_const _)).powF 2))).addF
+      ((Scaled.rep_const _).mulF ((hv.subF (Scaled.rep_const _)).powF 3))
+  · exact (Scaled.rep_const _).subF ((Scaled.rep_const _).mulF hv)
+  · exact (Scaled.rep_const _).subF ((Scaled.rep_const _).mulF hv)
 
-private def r76k (r : Row) : Scaled := r76norm (r76kB (family r) (r76theta r))
-private def r76l (r : Row) : Scaled := r76norm (r76lB (family r) (r76theta r))
-private def r76m (r : Row) : Scaled := r76norm (r76mB (family r) (r76theta r))
+private def r76k (r : Row) : Scaled := Scaled.normF (r76kB (family r) (r76theta r))
+private def r76l (r : Row) : Scaled := Scaled.normF (r76lB (family r) (r76theta r))
+private def r76m (r : Row) : Scaled := Scaled.normF (r76mB (family r) (r76theta r))
 
 private theorem r76k_rep (r : Row) : (r76k r).Rep (k r) :=
-  r76norm_rep (r76kB_rep _ (r76theta_rep r))
+  Scaled.Rep.normF (r76kB_rep _ (r76theta_rep r))
 private theorem r76l_rep (r : Row) : (r76l r).Rep (l r) :=
-  r76norm_rep (r76lB_rep _ (r76theta_rep r))
+  Scaled.Rep.normF (r76lB_rep _ (r76theta_rep r))
 private theorem r76m_rep (r : Row) : (r76m r).Rep (m r) :=
-  r76norm_rep (r76mB_rep _ (r76theta_rep r))
+  Scaled.Rep.normF (r76mB_rep _ (r76theta_rep r))
 
 private def r76s (r : Row) : Scaled :=
   if equal r then r76theta r else match r with
@@ -562,29 +226,29 @@ private theorem r76s_rep (r : Row) : (r76s r).Rep (s r) := by
     | exact Scaled.rep_const _
 
 private def r76d (r : Row) : Scaled :=
-  if positive r then (r76s r).fsub (r76theta r) else (r76theta r).fsub (r76s r)
+  if positive r then (r76s r).subF (r76theta r) else (r76theta r).subF (r76s r)
 
 private theorem r76d_rep (r : Row) : (r76d r).Rep (d r) := by
   unfold r76d d
   split_ifs
-  · exact (r76s_rep r).fsub (r76theta_rep r)
-  · exact (r76theta_rep r).fsub (r76s_rep r)
+  · exact (r76s_rep r).subF (r76theta_rep r)
+  · exact (r76theta_rep r).subF (r76s_rep r)
 
 private def r76J0of (v : Scaled) : Scaled :=
-  ((Scaled.const (1/2)).fmul ((r76C10of v).fsub (Scaled.ofNat 1))).fadd
-    ((Scaled.const (1/2-abar)).fmul (r76S9of v))
+  ((Scaled.const (1/2)).mulF ((r76C10of v).subF (Scaled.ofNat 1))).addF
+    ((Scaled.const (1/2-abar)).mulF (r76S9of v))
 
 private theorem r76J0of_rep {v : Scaled} {q : ℚ[X]} (hv : v.Rep q) :
     (r76J0of v).Rep (J0.comp q) := by
   have e : J0.comp q=C (1/2)*(C10.comp q-1)+C (1/2-abar)*S9.comp q := by
     simp only [J0,add_comp,sub_comp,mul_comp,C_comp,one_comp]
   rw [e]
-  exact ((Scaled.rep_const _).fmul ((r76C10of_rep hv).fsub Scaled.rep_one)).fadd
-    ((Scaled.rep_const _).fmul (r76S9of_rep hv))
+  exact ((Scaled.rep_const _).mulF ((r76C10of_rep hv).subF Scaled.rep_one)).addF
+    ((Scaled.rep_const _).mulF (r76S9of_rep hv))
 
 private def r76JB : Family→Scaled→Scaled
-  | .smallHigh,v => (r76J0of v).fsub ((Scaled.const (43/500)).fmul ((v.fsub (Scaled.const (1/6))).fpow 4))
-  | .farHigh,v => (r76J0of v).fsub ((Scaled.const (151/500)).fmul ((v.fsub (Scaled.const (1/6))).fpow 6))
+  | .smallHigh,v => (r76J0of v).subF ((Scaled.const (43/500)).mulF ((v.subF (Scaled.const (1/6))).powF 4))
+  | .farHigh,v => (r76J0of v).subF ((Scaled.const (151/500)).mulF ((v.subF (Scaled.const (1/6))).powF 6))
   | .smallLow,v => r76J0of v
   | .farLow,v => r76J0of v
 
@@ -592,66 +256,66 @@ private theorem r76JB_rep (f : Family) {v : Scaled} {q : ℚ[X]} (hv : v.Rep q) 
     (r76JB f v).Rep ((JBase f).comp q) := by
   cases f <;> simp only [JBase,r76JB,sub_comp,mul_comp,C_comp,X_comp,pow_comp]
   · exact r76J0of_rep hv
-  · exact (r76J0of_rep hv).fsub ((Scaled.rep_const _).fmul ((hv.fsub (Scaled.rep_const _)).fpow 4))
+  · exact (r76J0of_rep hv).subF ((Scaled.rep_const _).mulF ((hv.subF (Scaled.rep_const _)).powF 4))
   · exact r76J0of_rep hv
-  · exact (r76J0of_rep hv).fsub ((Scaled.rep_const _).fmul ((hv.fsub (Scaled.rep_const _)).fpow 6))
+  · exact (r76J0of_rep hv).subF ((Scaled.rep_const _).mulF ((hv.subF (Scaled.rep_const _)).powF 6))
 
-private def r76J (r : Row) : Scaled := r76norm (r76JB (family r) (r76theta r))
+private def r76J (r : Row) : Scaled := Scaled.normF (r76JB (family r) (r76theta r))
 
 private theorem r76J_rep (r : Row) : (r76J r).Rep (J r) :=
-  r76norm_rep (r76JB_rep _ (r76theta_rep r))
+  Scaled.Rep.normF (r76JB_rep _ (r76theta_rep r))
 
 private def r76qStar (r : Row) : Scaled :=
-  r76norm ((r76l r).fadd ((Scaled.const (3/20)).fmul ((Scaled.const h).fsub (r76theta r))))
+  Scaled.normF ((r76l r).addF ((Scaled.const (3/20)).mulF ((Scaled.const h).subF (r76theta r))))
 
 private theorem r76qStar_rep (r : Row) : (r76qStar r).Rep (qStar r) :=
-  r76norm_rep ((r76l_rep r).fadd ((Scaled.rep_const _).fmul ((Scaled.rep_const _).fsub (r76theta_rep r))))
+  Scaled.Rep.normF ((r76l_rep r).addF ((Scaled.rep_const _).mulF ((Scaled.rep_const _).subF (r76theta_rep r))))
 
 private def r76cUpper (r : Row) : Split→Scaled
   | .atA => r76m r
-  | .atT => r76norm ((r76m r).fmul ((r76C12of (r76theta r)).fadd
-      ((Scaled.const eta).fmul (r76S9of (r76theta r)))))
+  | .atT => Scaled.normF ((r76m r).mulF ((r76C12of (r76theta r)).addF
+      ((Scaled.const eta).mulF (r76S9of (r76theta r)))))
 
 private theorem r76cUpper_rep (r : Row) : ∀ ep,(r76cUpper r ep).Rep (cUpper r ep)
   | .atA => r76m_rep r
-  | .atT => r76norm_rep ((r76m_rep r).fmul ((r76C12of_rep (r76theta_rep r)).fadd
-      ((Scaled.rep_const _).fmul (r76S9of_rep (r76theta_rep r)))))
+  | .atT => Scaled.Rep.normF ((r76m_rep r).mulF ((r76C12of_rep (r76theta_rep r)).addF
+      ((Scaled.rep_const _).mulF (r76S9of_rep (r76theta_rep r)))))
 
 private def r76head (c0 : ℚ) (r : Row) : Scaled :=
-  (((Scaled.const 2).fmul (r76k r)).fadd ((Scaled.const 3).fmul (r76l r))).fadd (Scaled.const c0)
+  (((Scaled.const 2).mulF (r76k r)).addF ((Scaled.const 3).mulF (r76l r))).addF (Scaled.const c0)
 
 private theorem r76head_rep (c0 : ℚ) (r : Row) :
     (r76head c0 r).Rep (C 2*k r+C 3*l r+C c0) :=
-  (((Scaled.rep_const _).fmul (r76k_rep r)).fadd ((Scaled.rep_const _).fmul (r76l_rep r))).fadd
+  (((Scaled.rep_const _).mulF (r76k_rep r)).addF ((Scaled.rep_const _).mulF (r76l_rep r))).addF
     (Scaled.rep_const _)
 
 private def r76tail (a b : ℚ) (r : Row) : Scaled :=
-  ((Scaled.ofNat 1).fadd ((Scaled.const a).fmul (r76C10of (r76theta r)))).fadd
-    ((Scaled.const b).fmul (r76S9of (r76theta r)))
+  ((Scaled.ofNat 1).addF ((Scaled.const a).mulF (r76C10of (r76theta r)))).addF
+    ((Scaled.const b).mulF (r76S9of (r76theta r)))
 
 private theorem r76tail_rep (a b : ℚ) (r : Row) :
     (r76tail a b r).Rep (1+C a*C10.comp (theta r)+C b*S9.comp (theta r)) :=
-  (Scaled.rep_one.fadd ((Scaled.rep_const _).fmul (r76C10of_rep (r76theta_rep r)))).fadd
-    ((Scaled.rep_const _).fmul (r76S9of_rep (r76theta_rep r)))
+  (Scaled.rep_one.addF ((Scaled.rep_const _).mulF (r76C10of_rep (r76theta_rep r)))).addF
+    ((Scaled.rep_const _).mulF (r76S9of_rep (r76theta_rep r)))
 
 private def r76baseA (c0 c1 : ℚ) (r : Row) : Scaled :=
-  ((r76head c0 r).fadd ((Scaled.const c1).fmul (r76m r))).fadd ((r76l r).fmul (r76J r))
+  ((r76head c0 r).addF ((Scaled.const c1).mulF (r76m r))).addF ((r76l r).mulF (r76J r))
 
 private theorem r76baseA_rep (c0 c1 : ℚ) (r : Row) :
     (r76baseA c0 c1 r).Rep (C 2*k r+C 3*l r+C c0+C c1*m r+l r*J r) :=
-  ((r76head_rep c0 r).fadd ((Scaled.rep_const _).fmul (r76m_rep r))).fadd
-    ((r76l_rep r).fmul (r76J_rep r))
+  ((r76head_rep c0 r).addF ((Scaled.rep_const _).mulF (r76m_rep r))).addF
+    ((r76l_rep r).mulF (r76J_rep r))
 
 private def r76baseT (c0 a b : ℚ) (r : Row) : Scaled :=
-  (r76head c0 r).fadd ((r76m r).fmul (r76tail a b r))
+  (r76head c0 r).addF ((r76m r).mulF (r76tail a b r))
 
 private theorem r76baseT_rep (c0 a b : ℚ) (r : Row) :
     (r76baseT c0 a b r).Rep (C 2*k r+C 3*l r+C c0+
       m r*(1+C a*C10.comp (theta r)+C b*S9.comp (theta r))) :=
-  (r76head_rep c0 r).fadd ((r76m_rep r).fmul (r76tail_rep a b r))
+  (r76head_rep c0 r).addF ((r76m_rep r).mulF (r76tail_rep a b r))
 
 private def r76base (r : Row) (ep : Split) : Scaled :=
-  r76norm (if family r=.smallLow then
+  Scaled.normF (if family r=.smallLow then
     match ep with
     | .atA => r76baseA (5/2-cbar) (5/2-cbar) r
     | .atT => r76baseT (5/2-cbar) (3/2-cbar) (1/2+eta*(1-cbar)-sigmabar) r
@@ -662,7 +326,7 @@ private def r76base (r : Row) (ep : Split) : Scaled :=
 
 private theorem r76base_rep (r : Row) (ep : Split) : (r76base r ep).Rep (base r ep) := by
   unfold r76base base
-  apply r76norm_rep
+  apply Scaled.Rep.normF
   split_ifs <;> cases ep
   · exact r76baseA_rep _ _ r
   · exact r76baseT_rep _ _ _ r
@@ -670,21 +334,21 @@ private theorem r76base_rep (r : Row) (ep : Split) : (r76base r ep).Rep (base r 
   · exact r76baseT_rep _ _ _ r
 
 private def r76g (r : Row) : Scaled :=
-  r76norm (((Scaled.const (13/12)).fmul (r76S11of (r76s r))).fadd
-    ((Scaled.const (82/125)).fmul ((r76C10of (r76s r)).fsub (Scaled.ofNat 1))))
+  Scaled.normF (((Scaled.const (13/12)).mulF (r76S11of (r76s r))).addF
+    ((Scaled.const (82/125)).mulF ((r76C10of (r76s r)).subF (Scaled.ofNat 1))))
 
 private theorem r76g_rep (r : Row) : (r76g r).Rep (g r) :=
-  r76norm_rep (((Scaled.rep_const _).fmul (r76S11of_rep (r76s_rep r))).fadd
-    ((Scaled.rep_const _).fmul ((r76C10of_rep (r76s_rep r)).fsub Scaled.rep_one)))
+  Scaled.Rep.normF (((Scaled.rep_const _).mulF (r76S11of_rep (r76s_rep r))).addF
+    ((Scaled.rep_const _).mulF ((r76C10of_rep (r76s_rep r)).subF Scaled.rep_one)))
 
 private def r76gainLower (r : Row) : Scaled :=
-  if far (family r) then r76norm (((Scaled.const (201/200)).fmul (r76g r)).fsub
+  if far (family r) then Scaled.normF (((Scaled.const (201/200)).mulF (r76g r)).subF
     (Scaled.const (11/50000))) else r76g r
 
 private theorem r76gainLower_rep (r : Row) : (r76gainLower r).Rep (gainLower r) := by
   unfold r76gainLower gainLower
   split_ifs
-  · exact r76norm_rep (((Scaled.rep_const _).fmul (r76g_rep r)).fsub (Scaled.rep_const _))
+  · exact Scaled.Rep.normF (((Scaled.rep_const _).mulF (r76g_rep r)).subF (Scaled.rep_const _))
   · exact r76g_rep r
 
 private def r76smaller (r : Row) : Fin 4→Scaled := ![r76k r,r76k r,r76l r,Scaled.ofNat 1]
@@ -700,68 +364,68 @@ private theorem r76larger_rep (r : Row) (i : Fin 4) : (r76larger r i).Rep (large
 
 private def r76extra (r : Row) : Scaled :=
   if equal r then ⟨[],1⟩ else if positive r then
-    r76norm (((r76smaller r (index r)).fmul
-      (((r76C10of (r76d r)).fadd (r76S11of (r76d r))).fsub (Scaled.ofNat 1))).fsub
-      ((Scaled.const (1/200)).fmul (r76d r)))
-  else r76norm ((r76larger r (index r)).fmul ((r76C10of (r76d r)).fsub (Scaled.ofNat 1)))
+    Scaled.normF (((r76smaller r (index r)).mulF
+      (((r76C10of (r76d r)).addF (r76S11of (r76d r))).subF (Scaled.ofNat 1))).subF
+      ((Scaled.const (1/200)).mulF (r76d r)))
+  else Scaled.normF ((r76larger r (index r)).mulF ((r76C10of (r76d r)).subF (Scaled.ofNat 1)))
 
 private theorem r76extra_rep (r : Row) : (r76extra r).Rep
     (if equal r then 0 else if positive r then positiveExtra r else negativeExtra r) := by
   unfold r76extra
   split_ifs
   · exact Scaled.rep_zero
-  · exact r76norm_rep (((r76smaller_rep r (index r)).fmul
-      (((r76C10of_rep (r76d_rep r)).fadd (r76S11of_rep (r76d_rep r))).fsub Scaled.rep_one)).fsub
-      ((Scaled.rep_const _).fmul (r76d_rep r)))
-  · exact r76norm_rep ((r76larger_rep r (index r)).fmul
-      ((r76C10of_rep (r76d_rep r)).fsub Scaled.rep_one))
+  · exact Scaled.Rep.normF (((r76smaller_rep r (index r)).mulF
+      (((r76C10of_rep (r76d_rep r)).addF (r76S11of_rep (r76d_rep r))).subF Scaled.rep_one)).subF
+      ((Scaled.rep_const _).mulF (r76d_rep r)))
+  · exact Scaled.Rep.normF ((r76larger_rep r (index r)).mulF
+      ((r76C10of_rep (r76d_rep r)).subF Scaled.rep_one))
 
 private def r76A (r : Row) (ep : Split) : Scaled :=
-  r76norm (((r76base r ep).fadd (r76gainLower r)).fadd (r76extra r))
+  Scaled.normF (((r76base r ep).addF (r76gainLower r)).addF (r76extra r))
 
 private theorem r76A_rep (r : Row) (ep : Split) : (r76A r ep).Rep (A r ep) :=
-  r76norm_rep (((r76base_rep r ep).fadd (r76gainLower_rep r)).fadd (r76extra_rep r))
+  Scaled.Rep.normF (((r76base_rep r ep).addF (r76gainLower_rep r)).addF (r76extra_rep r))
 
 private def r76normZero (r : Row) (ep : Split) : Fin 4→Scaled :=
-  ![(Scaled.ofNat 1).fadd ((r76k r).fpow 2),((r76k r).fpow 2).fadd ((r76l r).fpow 2),
-    ((r76l r).fpow 2).fadd ((r76m r).fpow 2),(Scaled.ofNat 1).fadd ((r76cUpper r ep).fpow 2)]
+  ![(Scaled.ofNat 1).addF ((r76k r).powF 2),((r76k r).powF 2).addF ((r76l r).powF 2),
+    ((r76l r).powF 2).addF ((r76m r).powF 2),(Scaled.ofNat 1).addF ((r76cUpper r ep).powF 2)]
 
 private theorem r76normZero_rep (r : Row) (ep : Split) (i : Fin 4) :
     (r76normZero r ep i).Rep (normZero r ep i) := by
   fin_cases i
-  exacts [Scaled.rep_one.fadd ((r76k_rep r).fpow 2),((r76k_rep r).fpow 2).fadd ((r76l_rep r).fpow 2),
-    ((r76l_rep r).fpow 2).fadd ((r76m_rep r).fpow 2),Scaled.rep_one.fadd ((r76cUpper_rep r ep).fpow 2)]
+  exacts [Scaled.rep_one.addF ((r76k_rep r).powF 2),((r76k_rep r).powF 2).addF ((r76l_rep r).powF 2),
+    ((r76l_rep r).powF 2).addF ((r76m_rep r).powF 2),Scaled.rep_one.addF ((r76cUpper_rep r ep).powF 2)]
 
 private def r76product (r : Row) (ep : Split) : Fin 4→Scaled :=
-  ![r76k r,(r76k r).fmul (r76l r),(r76l r).fmul (r76m r),r76cUpper r ep]
+  ![r76k r,(r76k r).mulF (r76l r),(r76l r).mulF (r76m r),r76cUpper r ep]
 
 private theorem r76product_rep (r : Row) (ep : Split) (i : Fin 4) :
     (r76product r ep i).Rep (product r ep i) := by
   fin_cases i
-  exacts [r76k_rep r,(r76k_rep r).fmul (r76l_rep r),(r76l_rep r).fmul (r76m_rep r),r76cUpper_rep r ep]
+  exacts [r76k_rep r,(r76k_rep r).mulF (r76l_rep r),(r76l_rep r).mulF (r76m_rep r),r76cUpper_rep r ep]
 
 private def r76P (r : Row) (ep : Split) (i : Fin 4) : Scaled :=
-  if active r i then r76norm ((r76normZero r ep i).fadd
+  if active r i then Scaled.normF ((r76normZero r ep i).addF
     (if equal r∨i≠index r then ⟨[],1⟩
-    else if positive r then ((Scaled.const 2).fmul (r76product r ep i)).fmul (r76S9of (r76d r))
-    else (((Scaled.const 2).neg.fmul (r76product r ep i)).fmul (r76S11of (r76d r)))))
+    else if positive r then ((Scaled.const 2).mulF (r76product r ep i)).mulF (r76S9of (r76d r))
+    else (((Scaled.const 2).negF.mulF (r76product r ep i)).mulF (r76S11of (r76d r)))))
   else ⟨[],1⟩
 
 private theorem r76P_rep (r : Row) (ep : Split) (i : Fin 4) : (r76P r ep i).Rep (P r ep i) := by
   unfold r76P P
   split_ifs
-  · exact r76norm_rep ((r76normZero_rep r ep i).fadd Scaled.rep_zero)
-  · exact r76norm_rep ((r76normZero_rep r ep i).fadd (((Scaled.rep_const _).fmul
-      (r76product_rep r ep i)).fmul (r76S9of_rep (r76d_rep r))))
-  · exact r76norm_rep ((r76normZero_rep r ep i).fadd ((((Scaled.rep_const _).neg).fmul
-      (r76product_rep r ep i)).fmul (r76S11of_rep (r76d_rep r))))
+  · exact Scaled.Rep.normF ((r76normZero_rep r ep i).addF Scaled.rep_zero)
+  · exact Scaled.Rep.normF ((r76normZero_rep r ep i).addF (((Scaled.rep_const _).mulF
+      (r76product_rep r ep i)).mulF (r76S9of_rep (r76d_rep r))))
+  · exact Scaled.Rep.normF ((r76normZero_rep r ep i).addF ((((Scaled.rep_const _).negF).mulF
+      (r76product_rep r ep i)).mulF (r76S11of_rep (r76d_rep r))))
   · exact Scaled.rep_zero
 
 /-! ### The masses -/
 
 private def r76w (c : Scaled) : Scaled :=
-  r76norm ((⟨[(c.s:ℤ)],(c.l.getD 0 0).toNat⟩ : Scaled).fmul
-    ((r76trunc c).fsub ⟨[c.l.getD 0 0],c.s⟩))
+  Scaled.normF ((⟨[(c.s:ℤ)],(c.l.getD 0 0).toNat⟩ : Scaled).mulF
+    ((r76trunc c).subF ⟨[c.l.getD 0 0],c.s⟩))
 
 private theorem r76eval0 {c : Scaled} {p : ℚ[X]} (hc : c.Rep p) (hs : c.s≠0) :
     p.eval 0=((c.l.getD 0 0:ℤ):ℚ)/c.s := by
@@ -776,16 +440,16 @@ private theorem r76w_rep {c : Scaled} {p : ℚ[X]} (hc : c.Rep p) (hs : c.s≠0)
   have hinv : (1:ℚ)/p.eval 0=(((c.s:ℕ):ℤ):ℚ)/(((c.l.getD 0 0).toNat:ℕ):ℚ) := by
     rw [h0,one_div_div,Int.cast_natCast,← ht,Int.cast_natCast]
   rw [hinv,h0]
-  exact r76norm_rep ((r76frac_rep _ _ (by omega)).fmul ((r76trunc_rep hc).fsub (r76frac_rep _ _ hs)))
+  exact Scaled.Rep.normF ((r76frac_rep _ _ (by omega)).mulF ((r76trunc_rep hc).subF (r76frac_rep _ _ hs)))
 
 private def r76rhoJ (c : Scaled) (n : ℕ) : ℕ :=
   if 4*(c.l.getD 0 0)*1000000000000000000000000<(2*(n:ℤ)+1)^2*c.s then n else n+1
 
 private def r76massB (c : Scaled) (n : ℕ) : Scaled :=
-  r76norm ((⟨[(r76rhoJ c n:ℤ)],1000000000000⟩ : Scaled).fmul (r76trunc
-    ((((Scaled.ofNat 1).fadd ((Scaled.const (1/2)).fmul (r76w c))).fsub
-      ((Scaled.const (1/8)).fmul ((r76w c).fpow 2))).fadd
-      ((Scaled.const (1/16)).fmul ((r76w c).fpow 3)))))
+  Scaled.normF ((⟨[(r76rhoJ c n:ℤ)],1000000000000⟩ : Scaled).mulF (r76trunc
+    ((((Scaled.ofNat 1).addF ((Scaled.const (1/2)).mulF (r76w c))).subF
+      ((Scaled.const (1/8)).mulF ((r76w c).powF 2))).addF
+      ((Scaled.const (1/16)).mulF ((r76w c).powF 3)))))
 
 private theorem r76massB_rep {c : Scaled} {p : ℚ[X]} {n : ℕ} (hc : c.Rep p) (hs : c.s≠0)
     (ha : 0<c.l.getD 0 0)
@@ -800,9 +464,9 @@ private theorem r76massB_rep {c : Scaled} {p : ℚ[X]} {n : ℕ} (hc : c.Rep p) 
     rfl
   have hw := r76w_rep hc hs ha
   rw [hρ]
-  exact r76norm_rep ((r76frac_rep _ _ (by norm_num)).fmul (r76trunc_rep (((Scaled.rep_one.fadd
-    ((Scaled.rep_const _).fmul hw)).fsub ((Scaled.rep_const _).fmul (hw.fpow 2))).fadd
-    ((Scaled.rep_const _).fmul (hw.fpow 3)))))
+  exact Scaled.Rep.normF ((r76frac_rep _ _ (by norm_num)).mulF (r76trunc_rep (((Scaled.rep_one.addF
+    ((Scaled.rep_const _).mulF hw)).subF ((Scaled.rep_const _).mulF (hw.powF 2))).addF
+    ((Scaled.rep_const _).mulF (hw.powF 3)))))
 
 /-- The facts about `P` at zero that the mass representation uses. -/
 private def r76PFact (r : Row) (ep : Split) (i : Fin 4) (n : ℕ) : Prop :=
@@ -835,34 +499,36 @@ private theorem r76erase (f : Fin 4→ℚ[X]) :
   · rw [show Finset.univ.erase (3:Fin 4)={0,1,2} by decide]; simp; ring
 
 private def r76T (r : Row) (ep : Split) (i : Fin 4) (Mi o : Scaled) : Scaled :=
-  if active r i then ((r76P r ep i).fadd (Mi.fpow 2)).fmul o else ⟨[],1⟩
+  if active r i then ((r76P r ep i).addF (Mi.powF 2)).mulF o else ⟨[],1⟩
 
 private theorem r76T_rep (r : Row) (ep : Split) (i : Fin 4) {Mi o : Scaled} {q : ℚ[X]}
     (hM : Mi.Rep (mass r ep i)) (ho : o.Rep q) :
     (r76T r ep i Mi o).Rep (if active r i then (P r ep i+(mass r ep i)^2)*q else 0) := by
   unfold r76T
   split_ifs
-  · exact ((r76P_rep r ep i).fadd (hM.fpow 2)).fmul ho
+  · exact ((r76P_rep r ep i).addF (hM.powF 2)).mulF ho
   · exact Scaled.rep_zero
 
+/-- The numerator, not divided by the gcd of its entries: they have thousands of bits, and a gcd
+of such numbers costs the kernels outside Lean more than it saves. -/
 private def r76numB (r : Row) (ep : Split) (M : Fin 4→Scaled) : Scaled :=
-  r76norm ((((Scaled.const 2).fmul (r76A r ep)).fmul ((((M 0).fmul (M 1)).fmul (M 2)).fmul (M 3))).fsub
-    ((Scaled.const Rbar).fmul ((((r76T r ep 0 (M 0) (((M 1).fmul (M 2)).fmul (M 3))).fadd
-      (r76T r ep 1 (M 1) (((M 0).fmul (M 2)).fmul (M 3)))).fadd
-      (r76T r ep 2 (M 2) (((M 0).fmul (M 1)).fmul (M 3)))).fadd
-      (r76T r ep 3 (M 3) (((M 0).fmul (M 1)).fmul (M 2))))))
+  (((Scaled.const 2).mulF (r76A r ep)).mulF ((((M 0).mulF (M 1)).mulF (M 2)).mulF (M 3))).subF
+    ((Scaled.const Rbar).mulF ((((r76T r ep 0 (M 0) (((M 1).mulF (M 2)).mulF (M 3))).addF
+      (r76T r ep 1 (M 1) (((M 0).mulF (M 2)).mulF (M 3)))).addF
+      (r76T r ep 2 (M 2) (((M 0).mulF (M 1)).mulF (M 3)))).addF
+      (r76T r ep 3 (M 3) (((M 0).mulF (M 1)).mulF (M 2)))))
 
 private theorem r76numB_rep (r : Row) (ep : Split) {M : Fin 4→Scaled}
     (hM : ∀ i,(M i).Rep (mass r ep i)) : (r76numB r ep M).Rep (numerator r ep) := by
   obtain ⟨e0,e1,e2,e3⟩ := r76erase (mass r ep)
   unfold numerator
   rw [Fin.prod_univ_four,Fin.sum_univ_four,e0,e1,e2,e3]
-  exact r76norm_rep ((((Scaled.rep_const _).fmul (r76A_rep r ep)).fmul
-    ((((hM 0).fmul (hM 1)).fmul (hM 2)).fmul (hM 3))).fsub
-    ((Scaled.rep_const _).fmul ((((r76T_rep r ep 0 (hM 0) (((hM 1).fmul (hM 2)).fmul (hM 3))).fadd
-      (r76T_rep r ep 1 (hM 1) (((hM 0).fmul (hM 2)).fmul (hM 3)))).fadd
-      (r76T_rep r ep 2 (hM 2) (((hM 0).fmul (hM 1)).fmul (hM 3)))).fadd
-      (r76T_rep r ep 3 (hM 3) (((hM 0).fmul (hM 1)).fmul (hM 2))))))
+  exact ((((Scaled.rep_const _).mulF (r76A_rep r ep)).mulF
+    ((((hM 0).mulF (hM 1)).mulF (hM 2)).mulF (hM 3))).subF
+    ((Scaled.rep_const _).mulF ((((r76T_rep r ep 0 (hM 0) (((hM 1).mulF (hM 2)).mulF (hM 3))).addF
+      (r76T_rep r ep 1 (hM 1) (((hM 0).mulF (hM 2)).mulF (hM 3)))).addF
+      (r76T_rep r ep 2 (hM 2) (((hM 0).mulF (hM 1)).mulF (hM 3)))).addF
+      (r76T_rep r ep 3 (hM 3) (((hM 0).mulF (hM 1)).mulF (hM 2))))))
 
 /-! ### Integer certificates -/
 
@@ -894,9 +560,8 @@ private def r76wd : Row→ℕ
   | .farNegative _ => 40 | .farEqual => 40 | .farHigh _ _ => 40
 
 private theorem r76centered {c : Scaled} {p : ℚ[X]} (hc : c.Rep p) (r : Row) :
-    (centerS c (r76wn r) (r76wd r) 1 1).Rep (centered 0 (width r) p) := by
-  rw [centerS_eq]
-  apply hc.centered _ _ 1 1 <;> cases r <;> norm_num [r76wn,r76wd,width,left,right]
+    (c.centerF (r76wn r) (r76wd r) 1 1).Rep (centered 0 (width r) p) := by
+  apply hc.centeredF _ _ 1 1 <;> cases r <;> norm_num [r76wn,r76wd,width,left,right]
 
 private def r76n : Row→Split→Fin 4→ℕ
   | .lowEqual,.atA => ![1159353078229,1159353078229,1534718749478,0]
@@ -941,30 +606,30 @@ private abbrev r76Facts (r : Row) (ep : Split) : Prop :=
       4*(r76P r ep i).l.getD 0 0*1000000000000000000000000 ∧
     4*(r76P r ep i).l.getD 0 0*1000000000000000000000000<
       (2*(r76rhoJ (r76P r ep i) (r76n r ep i):ℤ)+1)^2*(r76P r ep i).s) ∧
-  (∀ i,(centerS (r76M r ep i) (r76wn r) (r76wd r) 1 1).s≠0 ∧
-    (centerS (r76M r ep i) (r76wn r) (r76wd r) 1 1).l.length≤3+1 ∧ (r76mr r i).2≠0 ∧
-    (chebF (centerS (r76M r ep i) (r76wn r) (r76wd r) 1 1).l).length≤3+1 ∧
-    (r76mr r i).1*(((centerS (r76M r ep i) (r76wn r) (r76wd r) 1 1).s*
-      2^(centerS (r76M r ep i) (r76wn r) (r76wd r) 1 1).l.length:ℕ):ℤ)<
-      2*lowL (chebF (centerS (r76M r ep i) (r76wn r) (r76wd r) 1 1).l)*
+  (∀ i,((r76M r ep i).centerF (r76wn r) (r76wd r) 1 1).s≠0 ∧
+    ((r76M r ep i).centerF (r76wn r) (r76wd r) 1 1).l.length≤3+1 ∧ (r76mr r i).2≠0 ∧
+    (chebF ((r76M r ep i).centerF (r76wn r) (r76wd r) 1 1).l).length≤3+1 ∧
+    (r76mr r i).1*((((r76M r ep i).centerF (r76wn r) (r76wd r) 1 1).s*
+      2^((r76M r ep i).centerF (r76wn r) (r76wd r) 1 1).l.length:ℕ):ℤ)<
+      2*lowL (chebF ((r76M r ep i).centerF (r76wn r) (r76wd r) 1 1).l)*
         (r76mr r i).2) ∧
   (affineCertificate r=false →
-    (centerS (r76num r ep) (r76wn r) (r76wd r) 1 1).s≠0 ∧
-    (centerS (r76num r ep) (r76wn r) (r76wd r) 1 1).l.length≤39+1 ∧ (r76rr r).2≠0 ∧
-    (chebF (centerS (r76num r ep) (r76wn r) (r76wd r) 1 1).l).length≤39+1 ∧
-    (r76rr r).1*(((centerS (r76num r ep) (r76wn r) (r76wd r) 1 1).s*
-      2^(centerS (r76num r ep) (r76wn r) (r76wd r) 1 1).l.length:ℕ):ℤ)<
-      2*lowL (chebF (centerS (r76num r ep) (r76wn r) (r76wd r) 1 1).l)*
+    ((r76num r ep).centerF (r76wn r) (r76wd r) 1 1).s≠0 ∧
+    ((r76num r ep).centerF (r76wn r) (r76wd r) 1 1).l.length≤39+1 ∧ (r76rr r).2≠0 ∧
+    (chebF ((r76num r ep).centerF (r76wn r) (r76wd r) 1 1).l).length≤39+1 ∧
+    (r76rr r).1*((((r76num r ep).centerF (r76wn r) (r76wd r) 1 1).s*
+      2^((r76num r ep).centerF (r76wn r) (r76wd r) 1 1).l.length:ℕ):ℤ)<
+      2*lowL (chebF ((r76num r ep).centerF (r76wn r) (r76wd r) 1 1).l)*
         (r76rr r).2) ∧
   (affineCertificate r=true →
     (r76num r ep).s≠0 ∧ (r76num r ep).l.length≤40 ∧
     13*((r76num r ep).s:ℤ)<2000*(r76num r ep).l.getD 0 0 ∧
-    (centerS (r76num r ep).divX (r76wn r) (r76wd r) 1 1).s≠0 ∧
-    (centerS (r76num r ep).divX (r76wn r) (r76wd r) 1 1).l.length≤38+1 ∧ (250:ℕ)≠0 ∧
-    (chebF (centerS (r76num r ep).divX (r76wn r) (r76wd r) 1 1).l).length≤38+1 ∧
-    (1:ℤ)*(((centerS (r76num r ep).divX (r76wn r) (r76wd r) 1 1).s*
-      2^(centerS (r76num r ep).divX (r76wn r) (r76wd r) 1 1).l.length:ℕ):ℤ)<
-      2*lowL (chebF (centerS (r76num r ep).divX (r76wn r) (r76wd r) 1 1).l)*
+    ((r76num r ep).divX.centerF (r76wn r) (r76wd r) 1 1).s≠0 ∧
+    ((r76num r ep).divX.centerF (r76wn r) (r76wd r) 1 1).l.length≤38+1 ∧ (250:ℕ)≠0 ∧
+    (chebF ((r76num r ep).divX.centerF (r76wn r) (r76wd r) 1 1).l).length≤38+1 ∧
+    (1:ℤ)*((((r76num r ep).divX.centerF (r76wn r) (r76wd r) 1 1).s*
+      2^((r76num r ep).divX.centerF (r76wn r) (r76wd r) 1 1).l.length:ℕ):ℤ)<
+      2*lowL (chebF ((r76num r ep).divX.centerF (r76wn r) (r76wd r) 1 1).l)*
         (250:ℕ))
 
 /-! ### The kernel checks, one row at a time

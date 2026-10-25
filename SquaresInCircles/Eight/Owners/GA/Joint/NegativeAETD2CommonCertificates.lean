@@ -1,10 +1,17 @@
 module
 
+public import Mathlib.Algebra.Ring.IsFormallyReal
 public import Mathlib.Algebra.Order.Ring.Star
 public import Mathlib.Algebra.Order.Star.Real
 public import Mathlib.Data.Rat.Star
 public import SquaresInCircles.Eight.Owners.ChebyshevLeadingBounds
-public import SquaresInCircles.Eight.Owners.GA.Joint.NegativeAETD2CommonData
+public import SquaresInCircles.Eight.Owners.DirectedPowerBounds
+public import SquaresInCircles.Eight.Owners.GA.Joint.NegativeAEBT3SourceData
+public import SquaresInCircles.Eight.Owners.GA.Joint.NegativeAETD2GainComparison
+public import SquaresInCircles.Eight.Owners.GA.Joint.NegativeAETD2PolynomialData
+public import SquaresInCircles.Eight.Owners.GA.Negative.ATD2LowABSlope
+public import SquaresInCircles.Eight.Owners.GA.ChargedPairs
+public import SquaresInCircles.Eight.Owners.Positive.ScalarPolynomials
 
 /-!
 # Eight squares: the coefficient certificates of the common gain on the whole domain
@@ -16,6 +23,448 @@ terms of the second certificate are kept together. All remaining powers receive 
 tail bound; no angular samples or assumed reserves occur.
 -/
 
+section
+/-!
+## The joint-negative BT3 and TD0 stress
+
+The secants of the two negative primaries cancel the flat A and E tangents in the seven
+inequalities of the cycle (`decomposition`, `stress_nonpositive`). The signed TD0 angle, independent
+of the others, stays in the force on D (`actualD`), and T is supported in the direction
+`(1, eta)` (`actual_T_support`).
+-/
+
+@[expose] public section
+noncomputable section
+open Set
+open scoped BigOperators
+namespace SquaresInCircles.Eight.GlobalGA.JointNegativeAEBT3.Source
+open Candidate Secondary SignedStress PositiveAngularEnvelope OrdinaryAngleConcavity
+open ActualOrdinaryBlocks
+
+def exactBaseline (atG atH : Bool) (k m c eta r s z : ℝ) : ℝ :=
+  k+lambdaG atG r+lambdaB atG r+m*edgeWidth z+c+
+    lambdaD atH s+lambdaH atH s-m*sigma eta*Real.sin z-
+    fullSupport (lambdaH atH s) k-fullSupport (lambdaG atG r) k-
+    fullSupport m (lambdaB atG r)-clippedSupport (lambdaD atH s) c+
+    sec r*(edgeWidth r-1)+(7/12)*Real.tan r+
+    sec s*(edgeWidth s-1)+(7/12)*Real.tan s
+
+def actualStress (C : SignedCycle) (hg : Fin 4) (atG atH : Bool)
+    (k m c r s : ℝ) : ℝ :=
+  demand C (weights atG atH k m c r s)-
+    ∑i,work (force C (owners hg atG atH) (weights atG atH k m c r s) i) (C.point i)
+
+def actualD (C : SignedCycle) (atH : Bool) (c s : ℝ) : ℝ :=
+  let x := delta C.theta T
+  let y := if atH then delta C.theta D else 0
+  c*(edgeWidth x-1)+lambdaD atH s*(edgeWidth y-1)+clippedSupport (lambdaD atH s) c-
+    (pairF c (lambdaD atH s) x y*(C.point D).a+
+      pairG c (lambdaD atH s) x y*(-(C.point D).y))
+
+def actualBlocks (C : SignedCycle) (hg : Fin 4) (atG atH : Bool)
+    (k m c r s : ℝ) : Fin 5→ℝ :=
+  ![PositiveTD.actualPairIncrement (blocks C hg atG atH k m c r s 0) (C.point H),
+    PositiveTD.actualPairIncrement (blocks C hg atG atH k m c r s 1) (C.point G).reflect,
+    PositiveTD.actualPairIncrement (blocks C hg atG atH k m c r s 2) (C.point B).reflect,
+    actualD C atH c s,0]
+
+def tReserve (C : SignedCycle) (m eta : ℝ) : ℝ :=
+  m*Real.sin (delta C.theta B)*(sigma eta-((C.point T).a+eta*(C.point T).y))
+
+theorem actual_T_support {q eta : ℝ} {P : SignedPoint}
+    (hs : P.Sorted) (hc : P.Contained q) (hq : q≤qCap) (he : 0≤eta) :
+    P.a+eta*P.y≤ sigma eta := by
+  have hC : P.Contained (R^2) := by rw [radius_sq]; exact hc.trans hq
+  have hh := work_le_circleSupport (Real.sqrt_nonneg qCap) hs hC (1,eta)
+  simpa [work,circleSupport,sigma,fullSupport,abs_of_nonneg he] using hh
+
+theorem tReserve_nonnegative {q m eta : ℝ} {C : SignedCycle}
+    (hs : (C.point T).Sorted) (hc : (C.point T).Contained q) (hq : q≤qCap)
+    (hm : 0≤ m) (he : 0≤eta) (hz : delta C.theta B∈Icc 0 frameCap) :
+    0≤tReserve C m eta := by
+  exact mul_nonneg (mul_nonneg hm (transport_trig hz).2.2.1)
+    (sub_nonneg.mpr (actual_T_support hs hc hq he))
+
+theorem decomposition (C : SignedCycle) {hg : Fin 4} (atG atH : Bool)
+    (k m eta : ℝ) {c r s : ℝ} (hhg : hg=0 ∨ hg=2)
+    (hr : r∈Icc 0 frameCap) (hs : s∈Icc 0 frameCap)
+    (ha : aError C atG= -r) (he : eError C atH= -s)
+    (hA : (C.point A).a=7/12) (hE : (C.point E).a=7/12)
+    (hrot : c=m*tilt eta (delta C.theta B)) :
+    actualStress C hg atG atH k m c r s=
+      exactBaseline atG atH k m c eta r s (delta C.theta B)+
+        (∑i,actualBlocks C hg atG atH k m c r s i)+tReserve C m eta := by
+  have hcr : Real.cos r≠0 := (show 0<Real.cos r by linarith [(transport_trig hr).1]).ne'
+  have hcs : Real.cos s≠0 := (show 0<Real.cos s by linarith [(transport_trig hs).1]).ne'
+  have hA' : (C.point 2).a=7/12 := hA
+  have hE' : (C.point 6).a=7/12 := hE
+  cases atG <;> cases atH <;> rcases hhg with rfl|rfl <;>
+    simp only [aError,eError,JointNegativeAETD2.Source.aError,
+      JointNegativeAETD2.Source.eError,Bool.false_eq_true,↓reduceIte,G,A,D,E] at ha he <;>
+    simp only [actualStress,demand,weights,lambdaG,JointNegativeAETD2.Source.lambdaG,
+      Bool.false_eq_true,↓reduceIte,lambdaB,JointNegativeAETD2.Source.lambdaB,
+      SecantNormCurvature.secant,one_div,hrot,tilt,B,Fin.isValue,lambdaD,
+      JointNegativeAETD2.Source.lambdaD,lambdaH,JointNegativeAETD2.Source.lambdaH,
+      Fin.sum_univ_succ,Matrix.cons_val_zero,Matrix.cons_val_succ,Fin.succ_zero_eq_one,one_mul,
+      Fin.succ_one_eq_two,ha,edgeWidth_neg,Fin.reduceSucc,he,Finset.univ_unique,
+      Fin.default_eq_zero,Matrix.cons_val_fin_one,Finset.sum_singleton,work,force,add,scale,
+      source,word,Nat.succ_eq_add_one,Nat.reduceAdd,owners,previous,target,mul_zero,
+      Matrix.cons_val,one_ne_zero,zero_add,mul_one,mul_neg,Real.cos_neg,Real.sin_neg,
+      Matrix.cons_val_one,add_zero,hA',neg_mul,neg_neg,hE',exactBaseline,sec,
+      Real.tan_eq_sin_div_cos,actualBlocks,PositiveTD.actualPairIncrement,blocks,E,H,G,T,
+      edgeWidth_zero,sub_self,pairF,Real.sin_zero,pairG,Real.cos_zero,SignedPoint.reflect,
+      zero_sub,neg_add_rev,actualD,D,Finset.sum_const_zero,tReserve,Fin.reduceEq,A,
+      inv_mul_cancel₀ hcr,inv_mul_cancel₀ hcs] <;>
+    ring
+
+theorem weights_nonnegative (atG atH : Bool) {k m c r s : ℝ}
+    (hk : 0≤k) (hm : 0≤ m) (hc : 0≤c) (hr : r∈Icc 0 frameCap)
+    (hs : s∈Icc 0 frameCap) (i : Vertex) : 0≤weights atG atH k m c r s i := by
+  have hcr : 0<Real.cos r := by linarith [(transport_trig hr).1]
+  have hcs : 0<Real.cos s := by linarith [(transport_trig hs).1]
+  have hr0 : 0≤ sec r := div_nonneg (by norm_num) hcr.le
+  have hs0 : 0≤ sec s := div_nonneg (by norm_num) hcs.le
+  cases atG <;> cases atH <;> fin_cases i <;>
+    simp [weights,lambdaG,lambdaB,lambdaH,lambdaD,
+      JointNegativeAETD2.Source.lambdaG,JointNegativeAETD2.Source.lambdaB,
+      JointNegativeAETD2.Source.lambdaH,JointNegativeAETD2.Source.lambdaD] <;> positivity
+
+theorem stress_nonpositive {C : SignedCycle} {hg : Fin 4} (atG atH : Bool)
+    {k m c r s : ℝ} (hk : 0≤k) (hm : 0≤ m) (hc : 0≤c)
+    (hr : r∈Icc 0 frameCap) (hs : s∈Icc 0 frameCap)
+    (hHG : C.Feasible H hg)
+    (hGA : C.Feasible G (if atG then 3 else 2))
+    (hAB : C.Feasible A (if atG then 0 else 2))
+    (hBT : C.Feasible B 3) (hTD : C.Feasible T 0)
+    (hDE : C.Feasible D (if atH then 2 else 3))
+    (hEH : C.Feasible E (if atH then 1 else 0)) :
+    actualStress C hg atG atH k m c r s≤0 := by
+  have hf (i : Vertex) : C.Feasible i (owners hg atG atH i) := by
+    fin_cases i
+    · simpa [owners,H] using hHG
+    · simpa [owners,G] using hGA
+    · simpa [owners,A] using hAB
+    · simpa [owners,B] using hBT
+    · simpa [owners,T] using hTD
+    · simpa [owners,D] using hDE
+    · simpa [owners,E] using hEH
+  exact sub_nonpos.mpr (weighted_separation (weights_nonnegative atG atH hk hm hc hr hs) hf)
+
+def aGain (atG : Bool) (k m r : ℝ) : ℝ := F (if atG then k else m) r
+def eGain (atH : Bool) (k c s : ℝ) : ℝ :=
+  if atH then F k s else JointNegativeAETD2.sortedGain c s
+
+theorem baseline_identity (atG atH : Bool) (k m c eta z : ℝ) {r s : ℝ}
+    (hr : r∈Icc 0 frameCap) (hs : s∈Icc 0 frameCap) (hz : z∈Icc 0 frameCap)
+    (hf : tilt eta z≠0) (hrot : c=m*tilt eta z) :
+    exactBaseline atG atH k m c eta r s z=
+      baseline k c eta z+aGain atG k m r+eGain atH k c s := by
+  have hm : c/tilt eta z=m := by rw [hrot]; exact mul_div_cancel_right₀ m hf
+  have hrw := NegativeAPositiveTD.secant_width_identity (l:=1) hr
+  have hsw := NegativeAPositiveTD.secant_width_identity (l:=1) hs
+  dsimp [NegativeAPositiveTD.secant] at hrw hsw
+  have hw := edgeWidth_positive_formula hz
+  cases atG <;> cases atH <;>
+    simp only [exactBaseline,baseline,aGain,eGain,lambdaG,lambdaB,lambdaH,lambdaD,
+      JointNegativeAETD2.Source.lambdaG,JointNegativeAETD2.Source.lambdaB,
+      JointNegativeAETD2.Source.lambdaH,JointNegativeAETD2.Source.lambdaD,
+      Bool.false_eq_true,↓reduceIte,JointNegativeAETD2.clipped_norm,
+      JointNegativeAETD2.sortedNorm_one,fullSupport,F,JointNegativeAETD2.F,
+      JointNegativeAETD2.sortedGain,SecantNormCurvature.normalized,
+      SecantNormCurvature.supportNorm,one_pow,hw,hm,JointNegativeAETD2.Source.sec]
+  all_goals
+    simp only [add_comm (k^2) ((sec r)^2),add_comm (k^2) ((sec s)^2),
+      add_comm (m^2) ((sec r)^2),add_comm (k^2) 1,add_comm (m^2) 1]
+    dsimp only [sec,SecantNormCurvature.secant,tilt,JointNegativeAETD2.Source.sec] at *
+    linarith [hrw,hsw,hrot]
+
+theorem common_baseline_lower {k m c eta r s z : ℝ} (atG atH : Bool)
+    (hk : 0<k) (hk1 : k≤1) (hkc : k≤c) (hkm : k≤ m)
+    (hr : r∈Icc 0 frameCap) (hs : s∈Icc 0 frameCap) (hz : z∈Icc 0 frameCap)
+    (hf : tilt eta z≠0) (hrot : c=m*tilt eta z) :
+    baseline k c eta z+F k r+F k s≤exactBaseline atG atH k m c eta r s z := by
+  have ha : F k r≤aGain atG k m r := by
+    cases atG
+    · exact JointNegativeAETD2.fullGain_monotone hk.le hkm hr
+    · exact le_rfl
+  have he : F k s≤eGain atH k c s := by
+    cases atH
+    · exact JointNegativeAETD2.sortedGain_lower hk hk1 hkc hs
+    · exact le_rfl
+  rw [baseline_identity atG atH k m c eta z hr hs hz hf hrot]
+  linarith
+
+end SquaresInCircles.Eight.GlobalGA.JointNegativeAEBT3.Source
+end
+end
+end
+
+section
+/-!
+## The derivative and polynomial data of the common secant gain
+
+Inverse half-powers are written as odd powers of the positive square root `D k x`. The two
+coefficient certificates are the rational polynomials `P`, of degree 13, and `J`, of degree 150,
+with their shifts `centeredP` and `centeredJ`.
+-/
+
+@[expose] public section
+noncomputable section
+open Set
+open scoped BigOperators
+namespace SquaresInCircles.Eight.GlobalGA.JointNegativeAETD2.CommonGain
+open Candidate Secondary
+
+abbrev K : ℝ := 13/12
+def shapeA (k y : ℝ) : ℝ := 1+k^2-k^2*y^2
+def shapeB (k y : ℝ) : ℝ := (1+k^2)*(1+y^2)-2*k^2*y^4
+def shapeC (k y : ℝ) : ℝ :=
+  (1+k^2)*(5+8*k^2)+(1+k^2)*(1-12*k^2)*y^2-2*k^2*y^4+4*k^4*y^6
+def D (k x : ℝ) : ℝ := Real.sqrt (1+k^2*Real.cos x^2)
+def F1 (k x : ℝ) : ℝ :=
+  (K+Real.sin x-R*Real.sin x/D k x)/Real.cos x^2
+def F2 (k x : ℝ) : ℝ :=
+  (2*K*Real.sin x+1+Real.sin x^2-R*shapeB k (Real.sin x)/(D k x)^3)/Real.cos x^3
+def F3 (k x : ℝ) : ℝ :=
+  (2*K+5*Real.sin x+4*K*Real.sin x^2+Real.sin x^3-
+    R*Real.sin x*shapeC k (Real.sin x)/(D k x)^5)/Real.cos x^4
+def F2k (k x : ℝ) : ℝ :=
+  R*k*Real.cos x*(1+k^2*(1+2*Real.sin x^2))/(D k x)^5
+def signPolynomial (p u : ℝ) : ℝ :=
+  (1+p)*(8*p-1)-2*p*(5+2*p)*u-4*p^2*u^2
+def F3k (k x : ℝ) : ℝ :=
+  R*k*Real.sin x*signPolynomial (k^2) (Real.sin x^2)/(D k x)^7
+def E2 (x : ℝ) : ℝ :=
+  -1/250+(33/25)*(x-7/20)-(1/10)*(x-7/20)^2+(19/10)*(x-7/20)^3
+def L (v : ℝ) : ℝ := 1+(5/2)*v+(35/8)*v^2+8*v^3
+def L2 (v : ℝ) : ℝ := 1+(3/2)*v+(15/8)*v^2+(35/16)*v^3
+
+namespace Certificate
+open Polynomial
+abbrev pLow : ℚ := 169/400
+abbrev pHigh : ℚ := (751/1000)^2
+def b (p : ℚ) : ℚ[X] := C (1+p)*(1+X^2)-C (2*p)*X^4
+def c (p : ℚ) : ℚ[X] :=
+  C ((1+p)*(5+8*p))+C ((1+p)*(1-12*p))*X^2-C (2*p)*X^4+C (4*p^2)*X^6
+def l : ℚ[X] := 1+C (5/2)*X+C (35/8)*X^2+C 8*X^3
+def l2 : ℚ[X] := 1+C (3/2)*X+C (15/8)*X^2+C (35/16)*X^3
+def e2 : ℚ[X] := -C (1/250)+C (33/25)*(X-C (7/20))-
+  C (1/10)*(X-C (7/20))^2+C (19/10)*(X-C (7/20))^3
+def P : ℚ[X] :=
+  C (13/6-11/10)+C 5*X+C (13/3+11/5)*X^2+X^3-C (11/10)*X^4-
+    C (163983/200000)*X*c pLow*(l.comp (C (pLow/(1+pLow))*X^2))
+def J : ℚ[X] :=
+  e2*PositiveScalarPolynomials.cosine^3-C (13/6)*PositiveScalarPolynomials.sine-
+    1-PositiveScalarPolynomials.sine^2+C (6323/6250)*
+      ((b pHigh).comp PositiveScalarPolynomials.sine)*
+      (l2.comp (C (pHigh/(1+pHigh))*PositiveScalarPolynomials.sine^2))
+def centeredP : ℚ[X] := DirectedPowerBounds.shift (2/5) P
+def centeredJ : ℚ[X] := DirectedPowerBounds.shift (7/20) J
+def jTailNorm : ℚ :=
+  ∑i:Fin 145,|centeredJ.coeff (i.val+6)| *(7/20)^(i.val+4)
+
+end Certificate
+end SquaresInCircles.Eight.GlobalGA.JointNegativeAETD2.CommonGain
+end
+end
+end
+
+section
+/-!
+## Exact derivatives of the common secant gain
+
+The square-root
+identities are used before clearing denominators, so each derivative
+reduces to the displayed polynomial identity in sine and cosine.
+-/
+
+@[expose] public section
+noncomputable section
+open Set
+namespace SquaresInCircles.Eight.GlobalGA.JointNegativeAETD2.CommonGain
+open Candidate Secondary
+
+theorem D_positive (k x : ℝ) : 0<D k x := Real.sqrt_pos.mpr (by positivity)
+theorem D_square (k x : ℝ) : (D k x)^2=1+k^2*Real.cos x^2 :=
+  Real.sq_sqrt (by positivity)
+theorem cos_square (x : ℝ) : Real.cos x^2=1-Real.sin x^2 := by
+  linarith [Real.sin_sq_add_cos_sq x]
+theorem D_shape (k x : ℝ) : (D k x)^2=shapeA k (Real.sin x) := by
+  rw [D_square,cos_square]
+  dsimp [shapeA]
+  ring
+
+theorem D_angle_derivative (k x : ℝ) :
+    HasDerivAt (D k) (-k^2*Real.sin x*Real.cos x/D k x) x := by
+  have hd := ((((Real.hasDerivAt_cos x).pow 2).const_mul (k^2)).const_add 1).sqrt
+    (show 1+k^2*Real.cos x^2≠0 by positivity)
+  convert hd using 1
+  · rfl
+  · dsimp [D]
+    ring
+theorem D_parameter_derivative (k x : ℝ) :
+    HasDerivAt (fun k => D k x) (k*Real.cos x^2/D k x) k := by
+  have hd := ((((hasDerivAt_id k).pow 2).mul_const (Real.cos x^2)).const_add 1).sqrt
+    (show 1+k^2*Real.cos x^2≠0 by positivity)
+  convert hd using 1
+  · rfl
+  · dsimp [D]
+    ring
+
+theorem B_angle_derivative (k x : ℝ) :
+    HasDerivAt (fun x => shapeB k (Real.sin x))
+      ((2*(1+k^2)*Real.sin x-8*k^2*Real.sin x^3)*Real.cos x) x := by
+  refine ((((Real.hasDerivAt_sin x).fun_pow 2).const_add 1).const_mul (1+k^2)).fun_sub
+    (((Real.hasDerivAt_sin x).fun_pow 4).const_mul (2*k^2)) |>.congr_deriv ?_
+  norm_num
+  ring
+theorem B_parameter_derivative (k y : ℝ) :
+    HasDerivAt (fun k => shapeB k y) (2*k*(1+y^2)-4*k*y^4) k := by
+  refine ((((hasDerivAt_id' k).fun_pow 2).const_add 1).mul_const (1+y^2)).fun_sub
+    ((((hasDerivAt_id' k).fun_pow 2).const_mul 2).mul_const (y^4)) |>.congr_deriv ?_
+  simp only [Nat.cast_ofNat,Nat.reduceSub,pow_one,mul_one]
+  ring
+theorem C_parameter_derivative (k y : ℝ) :
+    HasDerivAt (fun k => shapeC k y)
+      (2*k*(13+16*k^2)+2*k*(-11-24*k^2)*y^2-4*k*y^4+16*k^3*y^6) k := by
+  have hp := (hasDerivAt_id' k).fun_pow 2
+  refine ((((hp.const_add 1).fun_mul ((hp.const_mul 8).const_add 5)).fun_add
+    (((hp.const_add 1).fun_mul ((hp.const_mul 12).const_sub 1)).mul_const (y^2))).fun_sub
+      ((hp.const_mul 2).mul_const (y^4))).fun_add
+      ((((hasDerivAt_id' k).fun_pow 4).const_mul 4).mul_const (y^6)) |>.congr_deriv ?_
+  norm_num
+  ring
+
+theorem F_derivative {k x : ℝ} (hx : x∈Icc 0 frameCap) :
+    HasDerivAt (F k) (F1 k x) x := by
+  have hc : 0<Real.cos x := by linarith [(transport_trig hx).1]
+  have hh := SecantNormCurvature.normalized_hasDerivAt (R:=R) (a:=k) hc
+  have he := NegativeAPositiveTD.SecantBaseline.angleSlope_eq (l:=1) (r:=k) hc
+  have he' : SecantNormCurvature.gainFirst R k x=F1 k x := by
+    simpa [F1,D,K,NegativeAPositiveTD.SecantBaseline.angleSlope,
+      NegativeAPositiveTD.SecantBaseline.denominator] using he
+  rw [he'] at hh
+  exact hh
+
+theorem F1_derivative {k x : ℝ} (hx : x∈Icc 0 frameCap) :
+    HasDerivAt (F1 k) (F2 k x) x := by
+  have hc : Real.cos x≠0 := (show 0<Real.cos x by linarith [(transport_trig hx).1]).ne'
+  have hD := (D_positive k x).ne'
+  have hB : shapeB k (Real.sin x)=
+      (Real.cos x^2+2*Real.sin x^2)*(D k x)^2+
+        k^2*Real.sin x^2*Real.cos x^2 := by
+    rw [D_square,cos_square]
+    dsimp [shapeB]
+    ring
+  have h1 : 2*K*Real.sin x+1+Real.sin x^2=2*K*Real.sin x+(Real.cos x^2+2*Real.sin x^2) := by
+    rw [cos_square]; ring
+  have hd := (((Real.hasDerivAt_sin x).const_add K).fun_sub
+    (((Real.hasDerivAt_sin x).const_mul R).fun_div (D_angle_derivative k x) hD)).fun_div
+      ((Real.hasDerivAt_cos x).fun_pow 2) (pow_ne_zero _ hc)
+  refine hd.congr_deriv ?_
+  rw [F2,hB,h1]
+  norm_num
+  field_simp
+  ring
+
+theorem F2_derivative {k x : ℝ} (hx : x∈Icc 0 frameCap) :
+    HasDerivAt (F2 k) (F3 k x) x := by
+  have hc : Real.cos x≠0 := (show 0<Real.cos x by linarith [(transport_trig hx).1]).ne'
+  have hD := (D_positive k x).ne'
+  have hC : Real.sin x*shapeC k (Real.sin x)=
+      Real.cos x^2*((2*(1+k^2)*Real.sin x-8*k^2*Real.sin x^3)*(D k x)^2+
+        3*k^2*Real.sin x*shapeB k (Real.sin x))+
+      3*Real.sin x*shapeB k (Real.sin x)*(D k x)^2 := by
+    rw [D_square,cos_square]
+    dsimp [shapeB,shapeC]
+    ring
+  have hK : 2*K+5*Real.sin x+4*K*Real.sin x^2+Real.sin x^3=
+      (2*K+2*Real.sin x)*Real.cos x^2+
+        3*Real.sin x*(2*K*Real.sin x+1+Real.sin x^2) := by
+    rw [cos_square]
+    ring
+  have hd := (((((Real.hasDerivAt_sin x).const_mul (2*K)).add_const 1).add
+    ((Real.hasDerivAt_sin x).pow 2)).sub
+      (((B_angle_derivative k x).const_mul R).div ((D_angle_derivative k x).pow 3)
+        (pow_ne_zero _ hD))).div ((Real.hasDerivAt_cos x).pow 3) (pow_ne_zero _ hc)
+  convert hd using 1
+  · rfl
+  · dsimp [F3]
+    rw [show R*Real.sin x*shapeC k (Real.sin x)=R*(Real.sin x*shapeC k (Real.sin x)) by ring,hC,hK]
+    field_simp [hc,hD]
+    ring
+
+theorem F1_parameter_derivative {k x : ℝ} (hx : x∈Icc 0 frameCap) :
+    HasDerivAt (fun k => F1 k x) (R*k*Real.sin x/(D k x)^3) k := by
+  have hc : Real.cos x≠0 := (show 0<Real.cos x by linarith [(transport_trig hx).1]).ne'
+  have hD := (D_positive k x).ne'
+  have hd := (((hasDerivAt_const k (R*Real.sin x)).div
+    (D_parameter_derivative k x) hD).const_sub (K+Real.sin x)).div_const (Real.cos x^2)
+  convert hd using 1
+  · rfl
+  · field_simp [hc,hD]
+    ring
+
+theorem F2_parameter_derivative {k x : ℝ} (hx : x∈Icc 0 frameCap) :
+    HasDerivAt (fun k => F2 k x) (F2k k x) k := by
+  have hc : Real.cos x≠0 := (show 0<Real.cos x by linarith [(transport_trig hx).1]).ne'
+  have hD := (D_positive k x).ne'
+  have hid : -(2*k*(1+Real.sin x^2)-4*k*Real.sin x^4)*(D k x)^2+
+      3*shapeB k (Real.sin x)*k*Real.cos x^2=
+        k*Real.cos x^4*(1+k^2*(1+2*Real.sin x^2)) := by
+    rw [D_square,show Real.cos x^4=(Real.cos x^2)^2 by ring,cos_square]
+    dsimp [shapeB]
+    ring
+  have hout : F2k k x=R*(-(2*k*(1+Real.sin x^2)-4*k*Real.sin x^4)*(D k x)^2+
+      3*shapeB k (Real.sin x)*k*Real.cos x^2)/((D k x)^5*Real.cos x^3) := by
+    rw [hid]
+    dsimp [F2k]
+    field_simp
+  have hd := ((((B_parameter_derivative k (Real.sin x)).const_mul R).fun_div
+    ((D_parameter_derivative k x).fun_pow 3) (pow_ne_zero _ hD)).const_sub
+      (2*K*Real.sin x+1+Real.sin x^2)).div_const (Real.cos x^3)
+  refine hd.congr_deriv ?_
+  rw [hout]
+  norm_num
+  field_simp
+  ring
+
+theorem F3_parameter_derivative {k x : ℝ} (hx : x∈Icc 0 frameCap) :
+    HasDerivAt (fun k => F3 k x) (F3k k x) k := by
+  have hc : Real.cos x≠0 := (show 0<Real.cos x by linarith [(transport_trig hx).1]).ne'
+  have hD := (D_positive k x).ne'
+  have hid : -(2*k*(13+16*k^2)+2*k*(-11-24*k^2)*Real.sin x^2-
+      4*k*Real.sin x^4+16*k^3*Real.sin x^6)*(D k x)^2+
+      5*shapeC k (Real.sin x)*k*Real.cos x^2=
+        k*Real.cos x^4*signPolynomial (k^2) (Real.sin x^2) := by
+    rw [D_square,show Real.cos x^4=(Real.cos x^2)^2 by ring,cos_square]
+    dsimp [shapeC,signPolynomial]
+    ring
+  have hout : F3k k x=R*Real.sin x*
+      (-(2*k*(13+16*k^2)+2*k*(-11-24*k^2)*Real.sin x^2-
+        4*k*Real.sin x^4+16*k^3*Real.sin x^6)*(D k x)^2+
+        5*shapeC k (Real.sin x)*k*Real.cos x^2)/((D k x)^7*Real.cos x^4) := by
+    rw [hid]
+    dsimp [F3k]
+    field_simp
+  have hd := ((((C_parameter_derivative k (Real.sin x)).const_mul (R*Real.sin x)).fun_div
+    ((D_parameter_derivative k x).fun_pow 5) (pow_ne_zero _ hD)).const_sub
+      (2*K+5*Real.sin x+4*K*Real.sin x^2+Real.sin x^3)).div_const (Real.cos x^4)
+  refine hd.congr_deriv ?_
+  rw [hout]
+  norm_num
+  field_simp
+  ring
+
+@[simp] theorem F_zero (k : ℝ) : F k 0=0 := by
+  simp [F,SecantNormCurvature.normalized,SecantNormCurvature.secant,SecantNormCurvature.supportNorm]
+
+end SquaresInCircles.Eight.GlobalGA.JointNegativeAETD2.CommonGain
+end
+end
+end
+
+section
 @[expose] public section
 noncomputable section
 open Set
@@ -541,3 +990,6 @@ theorem J_positive {x : ℝ} (hx : x∈Icc 0 frameCap) :
   linarith
 
 end SquaresInCircles.Eight.GlobalGA.JointNegativeAETD2.CommonGain.Certificate
+end
+end
+end

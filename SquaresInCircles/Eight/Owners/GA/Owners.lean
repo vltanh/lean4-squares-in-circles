@@ -70,12 +70,12 @@ theorem fourCircle_radical_reserve :
   dsimp [diagonalCoordinate]
   linarith
 
-/-- Sorting and containment suffice for this upper coordinate bound; no
+/-- Containment at `q ≤ qCap` alone bounds the coordinate `a` above; no
 core or outer-boundary hypothesis is used in the perturbation estimate. -/
 theorem primary_upper {q : ℝ} {p : SignedPoint}
-    (hs : p.Sorted) (hc : p.Contained q) (hq : q≤qCap) : p.a≤283/200 := by
+    (_hs : p.Sorted) (hc : p.Contained q) (hq : q≤qCap) : p.a≤283/200 := by
   have hcircle : (p.a+1/2)^2+(|p.y|+1/2)^2≤qCap := hc.trans hq
   dsimp [qCap] at hcircle
-  nlinarith [abs_nonneg p.y,sq_nonneg |p.y|,hs.1]
+  nlinarith [abs_nonneg p.y,sq_nonneg |p.y|]
 
 end SquaresInCircles.Eight.GlobalGA

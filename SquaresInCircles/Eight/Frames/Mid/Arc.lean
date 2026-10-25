@@ -1,7 +1,7 @@
 module
 
 public import Mathlib.Algebra.Order.Star.Real
-public import SquaresInCircles.Eight.Frames.Low.Arc
+public import SquaresInCircles.Eight.Frames.Low.Pair
 
 /-!
 # Eight squares: the complete middle outer arc and its exact frame marker

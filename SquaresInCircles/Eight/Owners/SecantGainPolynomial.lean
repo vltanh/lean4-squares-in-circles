@@ -1,6 +1,7 @@
 module
 
 public import Mathlib.Algebra.Order.Star.Real
+public import SquaresInCircles.Eight.Arithmetic.PolynomialExpressions
 public import SquaresInCircles.Eight.Owners.Varying.BCertificate
 
 /-!
@@ -9,15 +10,14 @@ public import SquaresInCircles.Eight.Owners.Varying.BCertificate
 A Taylor polynomial is centered at 9/20; its
 quadratic coefficient dominates the entire higher-degree tail on the
 one interval |s-9/20|≤9/20. Completing a square proves positivity. The
-finite coefficient reductions are specified from the polynomial itself
-and have not been executed.
+finite coefficient reductions are computed by the kernel on integer coefficient lists.
 -/
 
 @[expose] public section
 noncomputable section
 open scoped BigOperators
 namespace SquaresInCircles.Eight.SecantGainPolynomial
-open Polynomial
+open Polynomial PolynomialExpressions
 
 def numerator : ℚ[X] := C (13/12)*VaryingBCertificate.S11-
   C (103/100)*X*VaryingBCertificate.C12-
@@ -32,163 +32,41 @@ def quadraticReserve : ℚ := b 2-tailBudget
 def expansion : ℚ[X] := C (b 0)+C (b 1)*X+C (b 2)*X^2+
   ∑ j : Fin 41,C (b (j.val+3))*X^(j.val+3)
 
-/-! Exact rational coefficient lists, evaluated by Horner's rule. The kernel
-computes the coefficients of `shifted` from these lists. -/
+/-! The kernel computes the integer coefficients of `numerator` and of `shifted` (`PolyExpr`)
+and checks the coefficient facts below on them. -/
 
-private def r29_poly : List ℚ → ℚ[X]
-  | [] => 0
-  | a :: l => C a+X*r29_poly l
+/-- Unfold the polynomials of this file into expressions. -/
+local macro "reify" : tactic => `(tactic| simp only [numerator,VaryingBCertificate.S11,
+  VaryingBCertificate.S9,VaryingBCertificate.C10,VaryingBCertificate.C12,reify_C,reify_X,
+  reify_one,reify_add,reify_sub,reify_mul,reify_pow])
 
-private def r29_add : List ℚ → List ℚ → List ℚ
-  | [],m => m
-  | a :: l,[] => a :: l
-  | a :: l,b :: m => (a+b) :: r29_add l m
+private def shiftedE (e : PolyExpr) : PolyExpr := .trans (9/20) (.divX e)
 
-private def r29_smul (c : ℚ) : List ℚ → List ℚ
-  | [] => []
-  | a :: l => (c*a) :: r29_smul c l
+private def certOK (e : PolyExpr) : Bool :=
+  coeffZero 0 e && (cmSeries 43 (shiftedE e) && (coeffGt 0 (2427/1250000) (shiftedE e) &&
+    (coeffAbsLt 1 (169/200000) (shiftedE e) &&
+      quadReserveGt 41 (9/20) (12849/100000) (shiftedE e))))
 
-private def r29_mul : List ℚ → List ℚ → List ℚ
-  | [],_ => []
-  | a :: l,m => r29_add (r29_smul a m) (0 :: r29_mul l m)
+private theorem cert : ∃ e : PolyExpr, numerator=e.poly ∧ certOK e=true := by
+  refine ⟨_,by reify; rfl,?_⟩
+  decide +kernel
 
-private def r29_sub (l m : List ℚ) : List ℚ := r29_add l (r29_smul (-1) m)
-
-private def r29_pow (l : List ℚ) : ℕ → List ℚ
-  | 0 => [1]
-  | n+1 => r29_mul (r29_pow l n) l
-
-private def r29_shiftStep (c b : ℚ) (m : List ℚ) : List ℚ :=
-  r29_add [b] (r29_add (r29_smul c m) (0 :: m))
-
-/-- Horner composition with `C c+X`. -/
-private def r29_shift (c : ℚ) : List ℚ → List ℚ
-  | [] => []
-  | b :: l => r29_shiftStep c b (r29_shift c l)
-
-private theorem r29_poly_add : ∀ l m : List ℚ,r29_poly (r29_add l m)=r29_poly l+r29_poly m
-  | [],m => by simp [r29_add,r29_poly]
-  | a :: l,[] => by simp [r29_add,r29_poly]
-  | a :: l,b :: m => by
-    simp only [r29_add,r29_poly,r29_poly_add l m,map_add]
-    ring
-
-private theorem r29_poly_smul (c : ℚ) :
-    ∀ l : List ℚ,r29_poly (r29_smul c l)=C c*r29_poly l
-  | [] => by simp [r29_smul,r29_poly]
-  | a :: l => by
-    simp only [r29_smul,r29_poly,r29_poly_smul c l,map_mul]
-    ring
-
-private theorem r29_poly_mul : ∀ l m : List ℚ,r29_poly (r29_mul l m)=r29_poly l*r29_poly m
-  | [],m => by simp [r29_mul,r29_poly]
-  | a :: l,m => by
-    rw [r29_mul,r29_poly_add,r29_poly_smul]
-    simp only [r29_poly,r29_poly_mul l m,map_zero]
-    ring
-
-private theorem r29_poly_sub (l m : List ℚ) :
-    r29_poly (r29_sub l m)=r29_poly l-r29_poly m := by
-  rw [r29_sub,r29_poly_add,r29_poly_smul,map_neg,map_one]
-  ring
-
-private theorem r29_poly_pow (l : List ℚ) : ∀ n : ℕ,r29_poly (r29_pow l n)=r29_poly l^n
-  | 0 => by simp [r29_pow,r29_poly]
-  | n+1 => by rw [r29_pow,r29_poly_mul,r29_poly_pow l n,pow_succ]
-
-private theorem r29_poly_shift (c : ℚ) :
-    ∀ l : List ℚ,r29_poly (r29_shift c l)=(r29_poly l).comp (C c+X)
-  | [] => by simp [r29_shift,r29_poly]
-  | b :: l => by
-    simp only [r29_shift,r29_shiftStep,r29_poly_add,r29_poly_smul,r29_poly,r29_poly_shift c l,
-      add_comp,C_comp,mul_comp,X_comp,map_zero,mul_zero,add_zero]
-    ring
-
-private theorem r29_poly_tail : ∀ l : List ℚ,r29_poly l.tail=divX (r29_poly l)
-  | [] => by simp [r29_poly]
-  | a :: l => by
-    simp only [r29_poly,List.tail_cons,divX_add,divX_C,zero_add]
-    ext n
-    rw [coeff_divX,coeff_X_mul]
-
-private theorem r29_coeff_poly : ∀ (l : List ℚ) (n : ℕ),(r29_poly l).coeff n=l.getD n 0
-  | [],n => by simp [r29_poly]
-  | a :: l,0 => by simp [r29_poly]
-  | a :: l,n+1 => by
-    simp only [r29_poly,coeff_add,coeff_C,coeff_X_mul,r29_coeff_poly l n]
-    simp
-
-private theorem r29_natDegree_poly : ∀ l : List ℚ,(r29_poly l).natDegree≤l.length-1
-  | [] => by simp [r29_poly]
-  | [a] => by simp [r29_poly]
-  | a :: b :: l => by
-    have ih := r29_natDegree_poly (b :: l)
-    have h1 : (X*r29_poly (b :: l)).natDegree≤(b :: l).length := by
-      calc (X*r29_poly (b :: l)).natDegree≤X.natDegree+(r29_poly (b :: l)).natDegree :=
-            natDegree_mul_le
-        _≤1+((b :: l).length-1) := by
-            gcongr
-            exact natDegree_X_le
-        _=(b :: l).length := by simp; omega
-    calc (r29_poly (a :: b :: l)).natDegree≤
-          max (C a).natDegree (X*r29_poly (b :: l)).natDegree := natDegree_add_le _ _
-      _≤(a :: b :: l).length-1 := by
-          rw [natDegree_C]
-          simp only [List.length_cons] at h1 ⊢
-          omega
-
-private def r29_X : List ℚ := [0,1]
-private def r29_C (q : ℚ) : List ℚ := [q]
-
-private theorem r29_poly_X : r29_poly r29_X=X := by simp [r29_X,r29_poly]
-private theorem r29_poly_C (q : ℚ) : r29_poly (r29_C q)=C q := by simp [r29_C,r29_poly]
-
-private def r29_S9 : List ℚ :=
-  r29_add (r29_sub (r29_add (r29_sub r29_X (r29_mul (r29_C (1/6)) (r29_pow r29_X 3)))
-    (r29_mul (r29_C (1/120)) (r29_pow r29_X 5))) (r29_mul (r29_C (1/5040)) (r29_pow r29_X 7)))
-    (r29_mul (r29_C (1/362880)) (r29_pow r29_X 9))
-private def r29_S11 : List ℚ :=
-  r29_sub r29_S9 (r29_mul (r29_C (1/39916800)) (r29_pow r29_X 11))
-private def r29_C10 : List ℚ :=
-  r29_sub (r29_add (r29_sub (r29_add (r29_sub (r29_C 1)
-    (r29_mul (r29_C (1/2)) (r29_pow r29_X 2)))
-    (r29_mul (r29_C (1/24)) (r29_pow r29_X 4))) (r29_mul (r29_C (1/720)) (r29_pow r29_X 6)))
-    (r29_mul (r29_C (1/40320)) (r29_pow r29_X 8)))
-    (r29_mul (r29_C (1/3628800)) (r29_pow r29_X 10))
-private def r29_C12 : List ℚ :=
-  r29_add r29_C10 (r29_mul (r29_C (1/479001600)) (r29_pow r29_X 12))
-private def r29_num : List ℚ :=
-  r29_add (r29_add (r29_sub (r29_sub (r29_mul (r29_C (13/12)) r29_S11)
-    (r29_mul (r29_mul (r29_C (103/100)) r29_X) r29_C12))
-    (r29_mul (r29_C (64551/40000)) (r29_sub (r29_C 1) r29_C10)))
-    (r29_mul (r29_C (111571/200000)) (r29_pow r29_S11 2)))
-    (r29_mul (r29_C (59531/1000000)) (r29_pow r29_S11 4))
-private def r29_B : List ℚ := r29_shift (9/20) r29_num.tail
-
-private theorem r29_rep_num : r29_poly r29_num=numerator := by
-  simp only [r29_num,r29_S11,r29_S9,r29_C10,r29_C12,r29_poly_add,r29_poly_sub,r29_poly_mul,
-    r29_poly_pow,r29_poly_C,r29_poly_X,map_one,numerator,VaryingBCertificate.S11,
-    VaryingBCertificate.S9,VaryingBCertificate.C10,VaryingBCertificate.C12]
-
-private theorem r29_rep_shifted : r29_poly r29_B=shifted := by
-  rw [r29_B,r29_poly_shift,r29_poly_tail,r29_rep_num]
-  rfl
-
-private theorem r29_b_eq (j : ℕ) : b j=r29_B.getD j 0 := by
-  rw [b,← r29_rep_shifted,r29_coeff_poly]
+private theorem shifted_eq {e : PolyExpr} (h : numerator=e.poly) : shifted=(shiftedE e).poly := by
+  rw [shifted,certificate,h,shiftedE,PolyExpr.poly_trans,PolyExpr.poly_divX]
 
 theorem zero_identity : X*certificate=numerator := by
-  have h0 : numerator.coeff 0=0 := by
-    rw [← r29_rep_num,r29_coeff_poly]
-    decide +kernel
+  obtain ⟨e,he,h⟩ := cert
+  simp only [certOK,Bool.and_eq_true] at h
+  have h0 : numerator.coeff 0=0 := by rw [he]; exact coeff_zero_of_check h.1
   have h := X_mul_divX_add numerator
   rwa [h0,map_zero,add_zero] at h
 
 theorem expansion_identity : shifted=expansion := by
+  obtain ⟨e,he,h⟩ := cert
+  simp only [certOK,Bool.and_eq_true] at h
   have hdeg : shifted.natDegree<44 := by
-    rw [← r29_rep_shifted]
-    have h := r29_natDegree_poly r29_B
-    have hl : r29_B.length=44 := by decide +kernel
+    rw [shifted_eq he]
+    have := natDegree_of_check h.2.1
     omega
   have hsplit (f : ℕ → ℚ[X]) :
       ∑ i ∈ Finset.range 44,f i=f 0+f 1+f 2+∑ j : Fin 41,f (j.val+3) := by
@@ -201,8 +79,11 @@ theorem expansion_identity : shifted=expansion := by
 theorem coefficient_reserves :
     (2427/1250000 : ℚ)<b 0 ∧ |b 1|<(169/200000 : ℚ) ∧
       (12849/100000 : ℚ)<quadraticReserve := by
-  simp only [quadraticReserve,tailBudget,r29_b_eq]
-  decide +kernel
+  obtain ⟨e,he,h⟩ := cert
+  simp only [certOK,Bool.and_eq_true] at h
+  simp only [quadraticReserve,tailBudget,b]
+  rw [shifted_eq he]
+  exact ⟨coeff_gt_of_check h.2.2.1,coeff_abs_of_check h.2.2.2.1,quadReserve_of_check h.2.2.2.2⟩
 
 theorem tail_term_lower {z : ℝ} (hz : |z|≤9/20) (j : Fin 41) :
     -( |(b (j.val+3):ℝ)| *(9/20)^(j.val+1))*z^2≤

@@ -1,6 +1,6 @@
 module
 
-public import SquaresInCircles.Eight.Words.Second.Mixed.HeightLabel
+public import SquaresInCircles.Eight.Words.Second.Mixed.LHeightGrowth
 
 /-!
 # Eight squares: the exact primary zero-source contact curve

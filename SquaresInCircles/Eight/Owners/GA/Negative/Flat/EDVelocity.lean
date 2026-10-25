@@ -1,8 +1,16 @@
 module
 
+public import Mathlib.Tactic
 public import Mathlib.Algebra.Order.Star.Real
-public import SquaresInCircles.Eight.Owners.GA.Negative.Flat.EParameters
-public import SquaresInCircles.Eight.Owners.GA.Radicals
+public import Mathlib.RingTheory.Etale.Weakly
+public import Mathlib.RingTheory.Flat.TorsionFree
+public import Mathlib.RingTheory.TotallySplit
+public import Mathlib.Algebra.Ring.IsFormallyReal
+public import SquaresInCircles.Eight.Arithmetic.Taylor
+public import SquaresInCircles.Eight.Owners.CircleGeometry
+public import SquaresInCircles.Eight.Owners.GA.HybridConcentration
+public import SquaresInCircles.Eight.Owners.GA.ChargedPairs
+public import SquaresInCircles.Eight.Owners.TrigonometricReserves
 
 /-!
 # Eight squares: the D velocity for the lower charged flat-core-E stress
@@ -12,6 +20,447 @@ negative-angle comparisons keep the smaller charge `473/500`, on the same signed
 the same intrinsic endpoints (`dVelocity_sine_lower`).
 -/
 
+section
+/-!
+## The lower angular charge for negative flat-core E
+
+The four force weights are unchanged; only the stated angular charge
+is lowered to 473/500.
+-/
+
+@[expose] public section
+noncomputable section
+namespace SquaresInCircles.Eight.GlobalGA.NegativeFlatE
+
+abbrev lowK : ℝ := 39/50
+abbrev lowL : ℝ := 63/50
+abbrev lowC : ℝ := 9/5
+abbrev charge : ℝ := 473/500
+abbrev baseline : ℝ := 13/400
+abbrev K : ℝ := 13/12
+abbrev a : ℝ := 183/200
+
+end SquaresInCircles.Eight.GlobalGA.NegativeFlatE
+end
+end
+end
+
+section
+/-!
+## The three full-circle blocks at the lower E charge
+
+The linear charge keeps the separate concavity (`chargedMixed_concave_P`,
+`chargedMixed_concave_N`). The zero and mixed corners stay exact; the positive corner keeps the
+reserve `16733/10^6`, and the negative corner improves (`fixed_corners`). No sampled angles are
+used.
+-/
+
+@[expose] public section
+noncomputable section
+open Set
+namespace SquaresInCircles.Eight.GlobalGA.NegativeFlatE
+open Secondary PositiveAngularEnvelope PairNormCalculus OrdinaryAngleConcavity ActualOrdinaryBlocks
+
+def chargedMixed (p q P N : ℝ) : ℝ :=
+  mixedBlock R p q P N+charge*(P-N)
+
+def chargedPair (p q a b : ℝ) : ℝ :=
+  p*psi a+q*psi b-R*(pairNorm p q (a+b)-pairNorm p q 0)+charge*(a+b)
+
+@[simp] theorem chargedMixed_zero (p q : ℝ) : chargedMixed p q 0 0=0 := by
+  simp [chargedMixed,mixedBlock]
+
+theorem chargedMixed_concave_P {p q N : ℝ}
+    (hp : 0<p) (hpq : p≤q) (hqp : q≤2*p) (hN : N∈Icc 0 frameCap) :
+    ConcaveOn ℝ (Icc 0 frameCap) (fun P => chargedMixed p q P N) := by
+  apply concave_of_deriv2
+    (f' := fun P => mixedPDerivative R p q P N+charge)
+    (f'' := fun P => curvature R p q (P-N)-p*PositiveAngularEnvelope.phi P)
+  · intro P hP
+    have h := (mixedP_hasDerivAt (R := R) hp (hp.trans_le hpq) hP hN).fun_add
+      (((hasDerivAt_id P).sub_const N).const_mul charge)
+    convert h using 1
+    · funext x
+      simp only [chargedMixed,id]
+    · ring
+  · intro P hP
+    exact (mixedPDerivative_hasDerivAt hp (hp.trans_le hpq) hP hN).add_const charge
+  · intro P hP
+    exact (mixedP_second_lt (Real.sqrt_nonneg _) (by rw [radius_sq])
+      hp hpq hqp hP hN).le.trans (by nlinarith)
+
+theorem chargedMixed_concave_N {p q P : ℝ}
+    (hp : 0<p) (hpq : p≤q) (hqp : q≤2*p) (hP : P∈Icc 0 frameCap) :
+    ConcaveOn ℝ (Icc 0 frameCap) (chargedMixed p q P) := by
+  apply concave_of_deriv2
+    (f' := fun N => mixedNDerivative R p q P N-charge)
+    (f'' := fun N => curvature R p q (P-N)-q*Real.cos N)
+  · intro N hN
+    have h := (mixedN_hasDerivAt (R := R) hp (hp.trans_le hpq) hP hN).fun_add
+      (((hasDerivAt_const N P).sub (hasDerivAt_id N)).const_mul charge)
+    convert h using 1
+    · funext x
+      simp only [chargedMixed,id,Pi.sub_apply]
+    · ring
+  · intro N hN
+    exact (mixedNDerivative_hasDerivAt hp (hp.trans_le hpq) hP hN).sub_const charge
+  · intro N hN
+    exact (mixedN_second_lt (Real.sqrt_nonneg _) (by rw [radius_sq])
+      hp hpq hqp hP hN).le.trans (by nlinarith [hp.trans_le hpq])
+
+theorem charged_pair_minorant {p q a b : ℝ} (hp : 0≤p) (hpq : p≤q)
+    (hP : positivePart a+positivePart b≤frameCap)
+    (hN : negativePart a+negativePart b≤frameCap) :
+    chargedMixed p q (positivePart a+positivePart b) (negativePart a+negativePart b)≤
+      chargedPair p q a b := by
+  let B : Block := ⟨p,q,a,b⟩
+  have hm := B.minorant R
+    (by simpa [B,Block.p,min_eq_left hpq] using hp) hP hN
+  have he : positivePart a+positivePart b-(negativePart a+negativePart b)=a+b := by
+    linarith [positive_sub_negative a,positive_sub_negative b]
+  simp only [B,Block.p,Block.q,Block.P,Block.N,Block.increment,
+    min_eq_left hpq,max_eq_right hpq] at hm
+  dsimp [chargedMixed,chargedPair]
+  rw [he]
+  linarith
+
+/-- The zero corner is exact; the other three corners have a strict reserve. -/
+theorem charged_rectangle_nonneg {p q P N : ℝ}
+    (hp : 0<p) (hpq : p≤q) (hqp : q≤2*p)
+    (hP : P∈Icc 0 frameCap) (hN : N∈Icc 0 frameCap)
+    (h10 : 0≤chargedMixed p q frameCap 0)
+    (h01 : 0≤chargedMixed p q 0 frameCap)
+    (h11 : 0≤chargedMixed p q frameCap frameCap) :
+    0≤chargedMixed p q P N := by
+  have hz : (0:ℝ)∈Icc 0 frameCap := by norm_num [frameCap]
+  have hh : frameCap∈Icc 0 frameCap := by norm_num [frameCap]
+  have h0 := (chargedMixed_concave_N hp hpq hqp hz).min_le_of_mem_Icc hz hh hN
+  have h1 := (chargedMixed_concave_N hp hpq hqp hh).min_le_of_mem_Icc hz hh hN
+  have h2 := (chargedMixed_concave_P hp hpq hqp hN).min_le_of_mem_Icc hz hh hP
+  have h00 : 0≤chargedMixed p q 0 0 := by simp
+  exact (le_min ((le_min h00 h01).trans h0) ((le_min h10 h11).trans h1)).trans h2
+
+def coefficientP : Fin 3→ℝ := ![lowK,lowK,lowL]
+def coefficientQ : Fin 3→ℝ := ![lowL,1,lowC]
+def normZeroLower : Fin 3→ℝ := ![1481890/1000000,1268227/1000000,2197180/1000000]
+def normZeroUpper : Fin 3→ℝ := ![1481891/1000000,1268228/1000000,2197181/1000000]
+def normPositiveUpper : Fin 3→ℝ := ![1860719/1000000,1616596/1000000,2783842/1000000]
+def normNegativeUpper : Fin 3→ℝ := ![964223/1000000,776802/1000000,1380373/1000000]
+
+theorem coefficient_ranges (i : Fin 3) :
+    0<coefficientP i ∧ coefficientP i≤coefficientQ i ∧ coefficientQ i≤2*coefficientP i := by
+  fin_cases i <;> norm_num [coefficientP,coefficientQ,lowK,lowL,lowC]
+
+theorem fixed_norm_zero (i : Fin 3) :
+    normZeroLower i<pairNorm (coefficientP i) (coefficientQ i) 0 ∧
+      pairNorm (coefficientP i) (coefficientQ i) 0<normZeroUpper i := by
+  rw [pairNorm_zero]
+  fin_cases i <;>
+    exact ⟨(Real.lt_sqrt (by norm_num [normZeroLower])).mpr
+        (by norm_num [coefficientP,coefficientQ,normZeroLower,lowK,lowL,lowC]),
+      (Real.sqrt_lt' (by norm_num [normZeroUpper])).mpr
+        (by norm_num [coefficientP,coefficientQ,normZeroUpper,lowK,lowL,lowC])⟩
+
+theorem fixed_norm_positive (i : Fin 3) :
+    pairNorm (coefficientP i) (coefficientQ i) frameCap<normPositiveUpper i := by
+  have ht := cap_trig.2.1
+  norm_num [Arithmetic.sin9,Arithmetic.sin7,frameCap] at ht
+  unfold pairNorm
+  fin_cases i <;>
+    refine (Real.sqrt_lt' (by norm_num [normPositiveUpper])).mpr ?_ <;>
+    norm_num [coefficientP,coefficientQ,normPositiveUpper,lowK,lowL,lowC,frameCap] <;>
+    linarith
+
+theorem fixed_norm_negative (i : Fin 3) :
+    pairNorm (coefficientP i) (coefficientQ i) (-frameCap)<normNegativeUpper i := by
+  have hh := coefficient_ranges i
+  have hs := pairNorm_sq hh.1 (hh.1.trans_le hh.2.1)
+    (t:= -frameCap) (by norm_num [frameCap])
+  have hp := pairNorm_pos hh.1 (hh.1.trans_le hh.2.1)
+    (t:= -frameCap) (by norm_num [frameCap])
+  have ht := cap_trig.1
+  fin_cases i <;>
+    norm_num [coefficientP,coefficientQ,normNegativeUpper,lowK,lowL,lowC,
+      pairEnergy,pairProduct,Real.sin_neg,Arithmetic.sin7,frameCap] at hs hp ht ⊢ <;> nlinarith
+
+theorem fixed_corners (i : Fin 3) :
+    (16733/1000000:ℝ)<chargedMixed (coefficientP i) (coefficientQ i) frameCap 0 ∧
+    (7/1000:ℝ)<chargedMixed (coefficientP i) (coefficientQ i) 0 frameCap ∧
+    (11/500:ℝ)<chargedMixed (coefficientP i) (coefficientQ i) frameCap frameCap := by
+  have hn0 := radius_norm_lower
+    (show 0<normZeroLower i by fin_cases i <;> norm_num [normZeroLower]) (fixed_norm_zero i).1
+  have hnp := radius_norm_upper
+    (show 0<normPositiveUpper i by fin_cases i <;> norm_num [normPositiveUpper]) (fixed_norm_positive i)
+  have hnn := radius_norm_upper
+    (show 0<normNegativeUpper i by fin_cases i <;> norm_num [normNegativeUpper]) (fixed_norm_negative i)
+  -- The positive corner of the third block needs the radicals to 10^-7.
+  have hR := radius_sq
+  have hR0 : 0≤R := Real.sqrt_nonneg _
+  have hsq0 := pairNorm_sq (p:=lowL) (q:=lowC) (t:=0)
+    (by norm_num [lowL]) (by norm_num [lowC]) (by norm_num [frameCap])
+  have hsqp := pairNorm_sq (p:=lowL) (q:=lowC) (t:=frameCap)
+    (by norm_num [lowL]) (by norm_num [lowC]) (by norm_num [frameCap])
+  have hs9 := cap_trig.2.1
+  have hB0 : (43477523/10000000:ℝ)<R*pairNorm lowL lowC 0 := by
+    refine lt_of_pow_lt_pow_left₀ 2 (mul_nonneg hR0 (Real.sqrt_nonneg _)) ?_
+    rw [mul_pow,hR,hsq0]
+    norm_num [pairEnergy,pairProduct,lowL,lowC,qCap]
+  have hBp : R*pairNorm lowL lowC frameCap<55086301/10000000 := by
+    refine lt_of_pow_lt_pow_left₀ 2 (by norm_num) ?_
+    rw [mul_pow,hR,hsqp]
+    norm_num [Arithmetic.sin9,Arithmetic.sin7,frameCap] at hs9
+    norm_num [pairEnergy,pairProduct,lowL,lowC,qCap,frameCap]
+    linarith
+  have hs := cap_trig.1
+  have hc := cap_trig.2.2.1
+  fin_cases i
+  · norm_num [coefficientP,coefficientQ,normZeroLower,normPositiveUpper,normNegativeUpper,
+      Arithmetic.sin7,frameCap,lowK,lowL,lowC] at hn0 hnp hnn hs hc ⊢
+    refine ⟨?_,?_,?_⟩ <;>
+    norm_num [chargedMixed,mixedBlock,PositiveAngularEnvelope.phi,charge,
+      lowK,lowL,lowC,frameCap] <;> linarith
+  · norm_num [coefficientP,coefficientQ,normZeroLower,normPositiveUpper,normNegativeUpper,
+      Arithmetic.sin7,frameCap,lowK,lowL,lowC] at hn0 hnp hnn hs hc ⊢
+    refine ⟨?_,?_,?_⟩ <;>
+    norm_num [chargedMixed,mixedBlock,PositiveAngularEnvelope.phi,charge,
+      lowK,lowL,lowC,frameCap] <;> linarith
+  · refine ⟨?_,?_,?_⟩
+    · simp only [coefficientP,coefficientQ]
+      norm_num [Arithmetic.sin7,frameCap] at hs hc hB0 hBp
+      norm_num [chargedMixed,mixedBlock,PositiveAngularEnvelope.phi,charge,frameCap]
+      linarith
+    · norm_num [coefficientP,coefficientQ,normZeroLower,normPositiveUpper,normNegativeUpper,
+        Arithmetic.sin7,frameCap,lowK,lowL,lowC] at hn0 hnp hnn hs hc ⊢
+      norm_num [chargedMixed,mixedBlock,PositiveAngularEnvelope.phi,charge,
+        lowK,lowL,lowC,frameCap]
+      linarith
+    · norm_num [coefficientP,coefficientQ,normZeroLower,normPositiveUpper,normNegativeUpper,
+        Arithmetic.sin7,frameCap,lowK,lowL,lowC] at hn0 hnp hnn hs hc ⊢
+      norm_num [chargedMixed,mixedBlock,PositiveAngularEnvelope.phi,charge,
+        lowK,lowL,lowC,frameCap]
+      linarith
+
+theorem fixed_pair_nonneg (i : Fin 3) {a b : ℝ}
+    (hP : positivePart a+positivePart b≤frameCap)
+    (hN : negativePart a+negativePart b≤frameCap) :
+    0≤chargedPair (coefficientP i) (coefficientQ i) a b := by
+  have hr := coefficient_ranges i
+  have hc := fixed_corners i
+  have hh := charged_rectangle_nonneg hr.1 hr.2.1 hr.2.2
+    ⟨add_nonneg (positivePart_nonneg _) (positivePart_nonneg _),hP⟩
+    ⟨add_nonneg (negativePart_nonneg _) (negativePart_nonneg _),hN⟩
+    (by linarith [hc.1]) (by linarith [hc.2.1]) (by linarith [hc.2.2])
+  exact hh.trans (charged_pair_minorant hr.1.le hr.2.1 hP hN)
+
+def pairIncrement (p q a b : ℝ) (P : SignedPoint) : ℝ :=
+  p*(edgeWidth a-1)+q*(edgeWidth b-1)-
+    (pairF p q a b*P.a+pairG p q a b*P.y)+
+    fullSupport q p+charge*(a+b)
+
+theorem actual_pair_lower {r p q a b : ℝ} {P : SignedPoint}
+    (hy : 0≤P.y) (hc : P.Contained r) (hr : r≤qCap)
+    (ha : |a|≤frameCap) (hb : |b|≤frameCap) :
+    chargedPair p q a b≤pairIncrement p q a b P := by
+  have hh := Secondary.actual_pair_lower hy hc hr ha hb (p:=p) (q:=q)
+  dsimp [Secondary.chargedPair,Secondary.pairIncrement,chargedPair,pairIncrement] at *
+  linarith
+
+theorem actual_fixed_pair_nonneg (i : Fin 3) {r a b : ℝ} {P : SignedPoint}
+    (hy : 0≤P.y) (hc : P.Contained r) (hr : r≤qCap)
+    (hP : positivePart a+positivePart b≤frameCap)
+    (hN : negativePart a+negativePart b≤frameCap) :
+    0≤pairIncrement (coefficientP i) (coefficientQ i) a b P := by
+  have he := pair_error_bounds hP hN
+  exact (fixed_pair_nonneg i hP hN).trans (actual_pair_lower hy hc hr he.1 he.2.1)
+
+def lowBaseline : ℝ := lowK+2*lowL+2*lowC+2-
+  fullSupport 1 lowK-fullSupport lowL lowK-fullSupport lowC lowL-(1+lowC)*GlobalGA.Secondary.diagonal
+
+theorem low_baseline_reserve : (13/400:ℝ)<lowBaseline := by
+  have hG := radius_norm_upper (by norm_num : (0:ℝ)<1481891/1000000) (fixed_norm_zero 0).2
+  have hH := radius_norm_upper (by norm_num : (0:ℝ)<1268228/1000000) (fixed_norm_zero 1).2
+  have hB := radius_norm_upper (by norm_num : (0:ℝ)<2197181/1000000) (fixed_norm_zero 2).2
+  have hd := diagonal_bounds.2
+  rw [lowBaseline,fullSupport_pair lowK 1,fullSupport_pair lowK lowL,fullSupport_pair lowL lowC]
+  norm_num [coefficientP,coefficientQ,normZeroUpper,lowK,lowL,lowC] at hG hH hB ⊢
+  linarith
+
+
+end SquaresInCircles.Eight.GlobalGA.NegativeFlatE
+end
+end
+end
+
+section
+/-!
+## The exact flat-core-E secant gain and its derivatives
+
+The same gain is used for DE3 and EH1; their separate secants
+cancel the signed E tangent before these scalar comparisons.
+-/
+
+@[expose] public section
+noncomputable section
+open Set
+namespace SquaresInCircles.Eight.GlobalGA.NegativeFlatE
+open Arithmetic
+
+def g (s : ℝ) : ℝ := (K*Real.sin s-a*(1-Real.cos s))/Real.cos s
+def gd (s : ℝ) : ℝ := (K-a*Real.sin s)/Real.cos s^2
+def numerator (s : ℝ) : ℝ := 2*K*Real.sin s-a*(1+Real.sin s^2)
+def gdd (s : ℝ) : ℝ := numerator s/Real.cos s^3
+def ratioNumerator (s : ℝ) : ℝ := s*gd s-g s
+
+theorem cosine_pos {s : ℝ} (hs : s∈Icc 0 frameCap) : 0<Real.cos s :=
+  transport_cos_pos (by rw [abs_of_nonneg hs.1]; exact hs.2)
+
+@[simp] theorem g_zero : g 0=0 := by norm_num [g]
+@[simp] theorem ratioNumerator_zero : ratioNumerator 0=0 := by simp [ratioNumerator]
+
+theorem g_hasDerivAt {s : ℝ} (hs : s∈Icc 0 frameCap) : HasDerivAt g (gd s) s := by
+  have hc := (cosine_pos hs).ne'
+  have hh := (((Real.hasDerivAt_sin s).const_mul K).fun_sub
+    (((Real.hasDerivAt_cos s).const_sub 1).const_mul a)).fun_div (Real.hasDerivAt_cos s) hc
+  refine (show HasDerivAt g _ s from hh).congr_deriv ?_
+  rw [gd]
+  congr 1
+  linear_combination K*Real.sin_sq_add_cos_sq s
+
+theorem gd_hasDerivAt {s : ℝ} (hs : s∈Icc 0 frameCap) : HasDerivAt gd (gdd s) s := by
+  have hc := (cosine_pos hs).ne'
+  have hh := (((Real.hasDerivAt_sin s).const_mul a).const_sub K).fun_div
+    ((Real.hasDerivAt_cos s).fun_pow 2) (pow_ne_zero 2 hc)
+  refine (show HasDerivAt gd _ s from hh).congr_deriv ?_
+  rw [gdd,numerator,div_eq_div_iff (pow_ne_zero 2 (pow_ne_zero 2 hc)) (pow_ne_zero 3 hc)]
+  rw [show (2:ℕ)-1=1 from rfl,pow_one]
+  push_cast
+  linear_combination (-a*Real.cos s^4)*Real.sin_sq_add_cos_sq s
+
+theorem numerator_hasDerivAt (s : ℝ) :
+    HasDerivAt numerator (2*Real.cos s*(K-a*Real.sin s)) s := by
+  have hh := ((Real.hasDerivAt_sin s).const_mul (2*K)).fun_sub
+    ((((Real.hasDerivAt_sin s).fun_pow 2).const_add 1).const_mul a)
+  refine (show HasDerivAt numerator _ s from hh).congr_deriv ?_
+  rw [show (2:ℕ)-1=1 from rfl,pow_one]
+  push_cast
+  ring
+
+theorem numerator_monotone : MonotoneOn numerator (Icc 0 frameCap) := by
+  apply monoOn_of_hasDeriv_nonneg
+    (fun s _ => (numerator_hasDerivAt s).continuousAt.continuousWithinAt)
+    (fun s _ => numerator_hasDerivAt s)
+  intro s hs
+  have ht := transport_trig (Ioo_subset_Icc_self hs)
+  have hk : 0<K-a*Real.sin s := by dsimp [K,a]; linarith [ht.2.2.2.1]
+  exact mul_nonneg (by linarith [ht.1]) hk.le
+
+theorem ratioNumerator_hasDerivAt {s : ℝ} (hs : s∈Icc 0 frameCap) :
+    HasDerivAt ratioNumerator (s*gdd s) s := by
+  have hh := ((hasDerivAt_id s).fun_mul (gd_hasDerivAt hs)).fun_sub (g_hasDerivAt hs)
+  convert hh using 1
+  · funext x
+    simp only [ratioNumerator,id]
+  · simp only [id]
+    ring
+
+def capC6 : ℝ := 1-frameCap^2/2+frameCap^4/24-frameCap^6/720
+def capS7 : ℝ := sin7 frameCap
+def capC8 : ℝ := cos8 frameCap
+
+theorem cap_trig_bounds :
+    0<capS7 ∧ capS7≤Real.sin frameCap ∧
+    0<capC6 ∧ capC6≤Real.cos frameCap ∧ Real.cos frameCap≤capC8 := by
+  have hh : 0≤frameCap := by norm_num [frameCap]
+  refine ⟨by norm_num [capS7,sin7,frameCap],?_,
+    by norm_num [capC6,frameCap],cos_lower_six hh,cos_le_cos8 hh⟩
+  simpa [capS7,sin7] using sin_lower_seven hh
+
+theorem ratioNumerator_cap_identity :
+    Real.cos frameCap^2*ratioNumerator frameCap=
+      K*frameCap-a*frameCap*Real.sin frameCap-
+      K*Real.sin frameCap*Real.cos frameCap+a*Real.cos frameCap-a*Real.cos frameCap^2 := by
+  have hc := (cosine_pos (by norm_num [frameCap] : frameCap∈Icc 0 frameCap)).ne'
+  dsimp [ratioNumerator,gd,g]
+  field_simp [hc]
+  ring
+
+theorem ratioNumerator_cap_negative : ratioNumerator frameCap<0 := by
+  have ht := cap_trig_bounds
+  have hp := mul_le_mul ht.2.1 ht.2.2.2.1 ht.2.2.1.le
+    (by linarith [ht.1,ht.2.1] : 0≤Real.sin frameCap)
+  have hsq := pow_le_pow_left₀ ht.2.2.1.le ht.2.2.2.1 2
+  have hupper : Real.cos frameCap^2*ratioNumerator frameCap≤
+      K*frameCap-a*frameCap*capS7-K*capS7*capC6+a*capC8-a*capC6^2 := by
+    rw [ratioNumerator_cap_identity]
+    dsimp [K,a,frameCap] at *
+    nlinarith [ht.2.2.2.2]
+  have he : K*frameCap-a*frameCap*capS7-K*capS7*capC6+a*capC8-a*capC6^2=
+      -(3654654647214851707/155520000000000000000:ℝ) := by
+    norm_num [K,a,frameCap,capS7,capC6,capC8,sin7,cos8]
+  have hc := cosine_pos (by norm_num [frameCap] : frameCap∈Icc 0 frameCap)
+  rw [he] at hupper
+  nlinarith [sq_pos_of_pos hc]
+
+theorem ratioNumerator_nonpos {s : ℝ} (hs : s∈Icc 0 frameCap) : ratioNumerator s≤0 := by
+  by_cases hn : numerator s≤0
+  · have hm : AntitoneOn ratioNumerator (Icc 0 s) := by
+      apply antiOn_of_hasDeriv_nonpos
+        (fun z hz => (ratioNumerator_hasDerivAt ⟨hz.1,hz.2.trans hs.2⟩).continuousAt.continuousWithinAt)
+        (fun z hz => ratioNumerator_hasDerivAt ⟨hz.1.le,hz.2.le.trans hs.2⟩)
+      intro z hz
+      have hzi : z∈Icc 0 frameCap := ⟨hz.1.le,hz.2.le.trans hs.2⟩
+      have hnum := (numerator_monotone hzi hs hz.2.le).trans hn
+      exact mul_nonpos_of_nonneg_of_nonpos hz.1.le
+        (div_nonpos_of_nonpos_of_nonneg hnum (pow_nonneg (cosine_pos hzi).le 3))
+    simpa only [ratioNumerator_zero] using
+      hm ⟨le_rfl,hs.1⟩ ⟨hs.1,le_rfl⟩ hs.1
+  · have hm : MonotoneOn ratioNumerator (Icc s frameCap) := by
+      apply monoOn_of_hasDeriv_nonneg
+        (fun z hz => (ratioNumerator_hasDerivAt ⟨hs.1.trans hz.1,hz.2⟩).continuousAt.continuousWithinAt)
+        (fun z hz => ratioNumerator_hasDerivAt ⟨hs.1.trans hz.1.le,hz.2.le⟩)
+      intro z hz
+      have hzi : z∈Icc 0 frameCap := ⟨hs.1.trans hz.1.le,hz.2.le⟩
+      have hnum := (lt_of_not_ge hn).le.trans (numerator_monotone hs hzi hz.1.le)
+      exact mul_nonneg hzi.1 (div_nonneg hnum (pow_nonneg (cosine_pos hzi).le 3))
+    exact (hm ⟨le_rfl,hs.2⟩ ⟨hs.2,le_rfl⟩ hs.2).trans ratioNumerator_cap_negative.le
+
+theorem ratio_antitone {s t : ℝ} (hs : 0<s) (ht : t≤frameCap) (hst : s≤t) :
+    g t/t≤g s/s := by
+  have hm : AntitoneOn (fun z => g z/z) (Icc s t) := by
+    apply antiOn_of_hasDeriv_nonpos (d:=fun z => ratioNumerator z/z^2)
+    · intro z hz
+      exact ((g_hasDerivAt ⟨(hs.trans_le hz.1).le,hz.2.trans ht⟩).fun_div
+        (hasDerivAt_id z) (hs.trans_le hz.1).ne').continuousAt.continuousWithinAt
+    · intro z hz
+      refine ((g_hasDerivAt ⟨(hs.trans hz.1).le,hz.2.le.trans ht⟩).fun_div
+        (hasDerivAt_id z) (hs.trans hz.1).ne').congr_deriv ?_
+      simp only [ratioNumerator,id]
+      ring
+    · intro z hz
+      exact div_nonpos_of_nonpos_of_nonneg
+        (ratioNumerator_nonpos ⟨(hs.trans hz.1).le,hz.2.le.trans ht⟩) (sq_nonneg z)
+  exact hm ⟨le_rfl,hst⟩ ⟨hst,le_rfl⟩ hst
+
+theorem gain_pair {s t : ℝ} (hs : 0≤ s) (ht : 0≤t) (hsum : s+t≤frameCap) :
+    g (s+t)≤g s+g t := by
+  by_cases hs0 : s=0
+  · simp [hs0]
+  by_cases ht0 : t=0
+  · simp [ht0]
+  have hsp : 0<s := lt_of_le_of_ne hs (Ne.symm hs0)
+  have htp : 0<t := lt_of_le_of_ne ht (Ne.symm ht0)
+  have hst : 0<s+t := add_pos hsp htp
+  have h1 := (div_le_div_iff₀ hst hsp).1 (ratio_antitone hsp hsum (by linarith))
+  have h2 := (div_le_div_iff₀ hst htp).1 (ratio_antitone htp hsum (by linarith))
+  have hh : g (s+t)*(s+t)≤(g s+g t)*(s+t) := by linarith only [h1,h2]
+  exact le_of_mul_le_mul_right hh hst
+
+end SquaresInCircles.Eight.GlobalGA.NegativeFlatE
+end
+end
+end
+
+section
 @[expose] public section
 noncomputable section
 open Set
@@ -234,3 +683,6 @@ theorem dVelocity_sine_lower {s w : ℝ}
     linarith
 
 end SquaresInCircles.Eight.GlobalGA.NegativeFlatE
+end
+end
+end

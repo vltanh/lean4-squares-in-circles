@@ -1,6 +1,6 @@
 module
 
-public import SquaresInCircles.Eight.Owners.GA.Negative.EHHComparison
+public import SquaresInCircles.Eight.Owners.GA.Negative.DETD2LowPositiveCoefficients
 public import SquaresInCircles.Eight.Owners.GA.Negative.EHTD2Data
 
 /-!

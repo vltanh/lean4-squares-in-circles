@@ -1,7 +1,7 @@
 module
 
 public import SquaresInCircles.Eight.Owners.GA.Joint.NegativeAEBT3AnalyticData
-public import SquaresInCircles.Eight.Owners.GA.Joint.NegativeAEBT3Coefficients
+public import SquaresInCircles.Eight.Owners.GA.Joint.NegativeAEBT3SourceData
 public import SquaresInCircles.Eight.Owners.GA.Joint.NegativeAEBT3Polynomial
 public import SquaresInCircles.Eight.Owners.GA.Joint.NegativeAETD2Taylor
 
