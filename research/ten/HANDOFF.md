@@ -29,6 +29,39 @@ five inner centers by an explicit finite-table argument. Thus a hypothetical
 smaller ten-packing must have **exactly three or four inner centers**.
 The equality classification remains open outside the completed classes.
 
+## Snapshot at pause
+
+This handoff preserves the remaining manuscripts as well as the completed
+results. Work paused at the user's request to commit and push. No proof of
+the unrestricted n=10 optimum is claimed.
+
+| Manuscript added in this checkpoint | Status at pause |
+| --- | --- |
+| [Extreme upper asymmetry](EXTREME_ASYMMETRIC_TWO_ROW.md) | Independent full mathematical review passed; removes the quarter-offset restriction for the stated touching-lower-pair core with `0<t<=5/12` |
+| [Seven-angle action](SEVEN_RING_ANGLE_ACTION.md) | Independent full mathematical review passed; exact reduction for one contact pattern, with no global uniqueness result |
+| [Wider row displacement](WIDE_DISPLACEMENT_TWO_ROW.md) | Draft; independent audit incomplete. Proposed interval is `0<t<3/2-2^(-1/4)` |
+| [Separated lower pair](SEPARATED_LOWER_TWO_ROW.md) | Draft; independent audit incomplete. Proposed extension removes lower-pair touching under the displayed bounds |
+
+Resume by auditing the two marked drafts before applying them. Even if both
+are correct, they cover specified common-frame two-row cores; there is no
+argument reducing every four-inner-square core to those arrangements.
+
+The one-chirality ring work now has the exact seven-angle action, positive
+root branch, criticality equations, and derivative formulas in the linked
+note. A promising unproved route is a phase-rotation bound for its nonlinear
+recurrence: numerical exploration suggested a two-step bound that would
+exclude nonconstant period-seven orbits. Neither that bound nor the
+resulting global uniqueness assertion has been proved. Positive mixed
+contact ownership patterns also remain outside this one-chirality model.
+
+For the radial-side mixed five-cycle, two diagonal transmitters remain.
+An exploratory symmetric stationary candidate overlapped at its two
+transmitters, so endpoint force equations alone do not certify a physical
+core. In the symmetric corner-contact case, transmitter disjointness forces
+the outward angle to be at least `pi/12`. Turning separation into a full
+exclusion or a capacity bound is still required; no such exclusion is
+claimed in [MIXED_FIVE_CYCLE_STATUS.md](MIXED_FIVE_CYCLE_STATUS.md).
+
 ## Remaining obligations
 
 1. **Three inner centers.** Seven outer squares consume at least `7pi/4`
@@ -55,7 +88,10 @@ The equality classification remains open outside the completed classes.
    [SYMMETRIC_TWO_ROW_COMPLETION.md](SYMMETRIC_TWO_ROW_COMPLETION.md) excludes
    the specified symmetric two-row family with two center norms at most
    `.65` and the other two at most one. Neither result normalizes arbitrary
-   four-square cores to those families.
+   four-square cores to those families. The reviewed
+   [extreme-asymmetry extension](EXTREME_ASYMMETRIC_TWO_ROW.md) now permits
+   all upper offsets satisfying its center bounds when the lower pair
+   touches. The broader proposals in the snapshot table remain drafts.
 3. **Nonuniform loaded rings.** An entirely circle-loaded positive component
    of a strictly subcritical ten-packing must be a seven-square physical
    ring enclosing the other three squares:
@@ -81,6 +117,10 @@ The equality classification remains open outside the completed classes.
    [SEVEN_RING_LOCAL_RIGIDITY.md](SEVEN_RING_LOCAL_RIGIDITY.md) proves that
    the normalized uniform scalar solution is locally isolated. No explicit
    neighborhood size or global uniqueness is claimed.
+   [SEVEN_RING_ANGLE_ACTION.md](SEVEN_RING_ANGLE_ACTION.md) removes the seven
+   force magnitudes and reduces this ownership pattern to critical points
+   of an angle sum. It still requires the physical inequalities and
+   nonneighbor separation; it does not classify all contact patterns.
 4. **Mixed cyclic stress components.**
    [CYCLIC_STRESS_REDUCTIONS.md](CYCLIC_STRESS_REDUCTIONS.md) excludes
    two-terminal components made of transmission paths and several small

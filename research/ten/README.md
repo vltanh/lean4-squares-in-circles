@@ -56,6 +56,7 @@ the known bound, not a lower-bound proof.
 | A solid two-by-two core, with its four centers in the closed unit disk, admits at most five additional squares | [General translated-block theorem](GENERAL_TRANSLATED_BLOCK_OBSTRUCTION.md) | Hand proof for every translation and rotation; additional orientations arbitrary |
 | A specified symmetric two-row core with two center norms at most `.65` has total capacity at most nine | [Two-row theorem](SYMMETRIC_TWO_ROW_COMPLETION.md) | Hand proof over the full stated parameter family; does not normalize arbitrary cores |
 | The upper offsets in that two-row core may be unequal | [Asymmetric two-row theorem](ASYMMETRIC_TWO_ROW_COMPLETION.md) | Hand proof with offsets at least `1/4` and the stated lower-row displacement bound |
+| The quarter-unit upper-offset restriction can be removed | [Extreme-asymmetry theorem](EXTREME_ASYMMETRIC_TWO_ROW.md) | Independently reviewed hand proof for the displayed two-row core; arbitrary cores remain open |
 | The sharp cap beginning at `sqrt(7/2)-1` contains at most two squares, with a unique pair | [Sharp two-square cap](SHARP_TWO_SQUARE_CAP.md) | Hand proof; any stricter cap contains at most one |
 | An aligned two-by-two block translated along a side direction admits at most five further squares | [Translated-block obstruction](TRANSLATED_BLOCK_OBSTRUCTION.md) | Hand proof with the four core centers in the closed unit disk; remaining orientations arbitrary |
 | A solid two-by-two block with two center norms above `.9` admits at most five outer-center squares | [Localized-block obstruction](LOCALIZED_BLOCK_OBSTRUCTION.md) | Conditional hand proof allowing arbitrary translation; its application uses computational radial localization |
@@ -193,9 +194,17 @@ The [mixed five-cycle status](MIXED_FIVE_CYCLE_STATUS.md) consolidates its
 remaining patterns and the explicitly imported lower-radius bounds.
 The uniform side/vertex ring is also
 [locally isolated](SEVEN_RING_LOCAL_RIGIDITY.md) among normalized solutions
-of its exact equations; this does not imply global uniqueness. The
+of its exact equations; this does not imply global uniqueness. Its
+[seven-angle action](SEVEN_RING_ANGLE_ACTION.md) gives an independently
+reviewed exact reduction with the global critical-point problem still open. The
 [planar junction construction](PLANAR_CONTACT_TORQUE_CYCLES.md) preserves
 the physical forces but does not prove that every torque cycle encloses zero.
+
+The handoff also preserves two **draft extensions awaiting independent
+review**: [a wider row-displacement range](WIDE_DISPLACEMENT_TWO_ROW.md) and
+[a separated lower pair](SEPARATED_LOWER_TWO_ROW.md). They are not used as
+premises of the completed results above. See the snapshot table in
+[HANDOFF.md](HANDOFF.md) for their status and the next proof obligations.
 
 Even the established equality family can have five distinct x-coordinates;
 the all-parallel proof handles those configurations directly. No unproved
