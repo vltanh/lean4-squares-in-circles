@@ -1,6 +1,6 @@
 # Ten unit squares in a circle
 
-Research checkpoint: 2026-10-25 (UTC), based on main commit
+Research checkpoint: 2026-10-28 (UTC), based on main commit
 `4bea747b3efa13c869b956cb28435efaf21526fa`.
 
 Resume from [HANDOFF.md](HANDOFF.md) for the current proof gaps, next steps,
@@ -36,10 +36,10 @@ the known bound, not a lower-bound proof.
 | At least two squares enter the central disk of radius `1/2` | [Exterior-arc bound](CENTRAL_DISK_REDUCTION.md) | Arbitrary orientations; squared containing radius at most `9/2` |
 | Eight exterior squares force four anchors; the exactly-two-central case is closed | [Sharp exterior ring](SHARP_EXTERIOR_RING.md) | Arbitrary orientations; no common separating frame assumed |
 | Eight centers outside the open unit disk force four anchors | [Center-radius reduction](CENTER_RADIUS_REDUCTION.md) | Arbitrary orientations; a smaller ten-packing must have exactly 3, 4, or 5 centers in the open unit disk |
-| A square's arc cost bounds its center's squared radius | [Inner arc moment](INNER_ARC_MOMENT.md) | Hand proof; the proposed five-center moment bound remains open |
+| A square's arc cost bounds its center's squared radius | [Inner arc moment](INNER_ARC_MOMENT.md) | Hand proof; used in the completed five-center exclusion |
 | An inner center of norm at least `.9` costs more than `pi/6` on the test circle | [Large inner arc](LARGE_INNER_ARC.md) | Hand proof; at most two such centers in the four-inner case and at most one in the three-inner case |
 | Five inner centers either form the aligned plus or a strict convex pentagon | [Moment reductions](FIVE_CENTER_MOMENT_REDUCTIONS.md) | Hand proof; independent outward radial translations preserve disjointness |
-| The five-center moment exceeds four when every separating-normal turn is at most `pi/2` | [Small-turn moment theorem](FIVE_CENTER_SMALL_TURNS.md) | Conditional hand proof using three explicit rational certificates; larger turns remain open |
+| Five squares centered in the closed unit disk have squared-center moment at least four, with equality only for the plus | [Completed moment proof](FIVE_CENTER_LARGE_TURNS.md), [small turns](FIVE_CENTER_SMALL_TURNS.md), [printed table](FIVE_CENTER_LARGE_TURNS_TABLE.md) | Hand argument with 78 explicit finite-table cases and 1,193 rational vertex bounds; excludes five inner centers in a ten-packing |
 | Four inner squares have hull width at least two in every direction | [Four-center width](FOUR_CENTER_WIDTH.md) | Hand proof; does not yet exclude six outer squares |
 | Three squares wholly inside the test circle almost fill a smaller circle | [Three-core stability](THREE_CORE_INNER_STABILITY.md) | Hand proof with an explicit no-protrusion hypothesis |
 | Two or three origin-vertex squares bound total capacity by nine or eight | [Origin-vertex capacity](THREE_ORIGIN_VERTEX_SQUARES.md) | Hand proof for squared containing radius at most `17/4` |
@@ -48,9 +48,16 @@ the known bound, not a lower-bound proof.
 | Every staggered four-square S-S chain has total capacity at most nine | [Chain completion](STAGGERED_CHAIN_REDUCTION.md), [three-point theorem](WIDE_NECK_THREE_POINT_STABBING.md) | Hand proof for all slide parameters and arbitrary orientations of additional squares |
 | The exceptional five-square tree core has total capacity at most nine | [Exceptional-core completion](KAPPA_CORE_COMPLETION.md) | Hand proof uniform in its transverse slide parameter |
 | Every nonzero minimizing stress component must contain a cycle | [Expanded tree inventory](EXPANDED_TREE_INVENTORY.md) | Hand tree exclusion in the stated radius window; lower window imported explicitly from n=8 |
+| Every entirely circle-loaded positive component is a seven-square physical ring enclosing the other three squares | [Loaded-ring theorem](ALL_LOADED_COMPONENT_RINGS.md) | Conditional on an entirely loaded component in a strictly subcritical ten-packing |
+| The loaded ring's contact-force polygon strictly contains the origin | [Force circulation](SEVEN_RING_FORCE_CIRCULATION.md), [strict containment](SEVEN_RING_FORCE_ORIGIN.md) | Hand proof using original physical force witnesses |
+| A loaded ring with common signed frame offsets cannot contain three further squares | [Uniform-ring exclusion](REGULAR_SEVEN_LOADED_RING.md) | Hand proof; nonuniform rings remain open |
+| Several mixed cyclic stress patterns are impossible | [Cyclic reductions](CYCLIC_STRESS_REDUCTIONS.md), [remaining five-cycle form](SIDE_NORMAL_MIXED_FIVE_CYCLE.md) | Conditional hand reductions; neither a complete graph classification nor a global exclusion |
+| A solid two-by-two core, with its four centers in the closed unit disk, admits at most five additional squares | [General translated-block theorem](GENERAL_TRANSLATED_BLOCK_OBSTRUCTION.md) | Hand proof for every translation and rotation; additional orientations arbitrary |
+| A specified symmetric two-row core with two center norms at most `.65` has total capacity at most nine | [Two-row theorem](SYMMETRIC_TWO_ROW_COMPLETION.md) | Hand proof over the full stated parameter family; does not normalize arbitrary cores |
+| The sharp cap beginning at `sqrt(7/2)-1` contains at most two squares, with a unique pair | [Sharp two-square cap](SHARP_TWO_SQUARE_CAP.md) | Hand proof; any stricter cap contains at most one |
 | An aligned two-by-two block translated along a side direction admits at most five further squares | [Translated-block obstruction](TRANSLATED_BLOCK_OBSTRUCTION.md) | Hand proof with the four core centers in the closed unit disk; remaining orientations arbitrary |
 | A solid two-by-two block with two center norms above `.9` admits at most five outer-center squares | [Localized-block obstruction](LOCALIZED_BLOCK_OBSTRUCTION.md) | Conditional hand proof allowing arbitrary translation; its application uses computational radial localization |
-| Five centers in the closed unit disk are impossible for a ten-packing | [Radial weight certificate](RADIAL_WEIGHT_EXCLUSION.md), [integer checker](check_radial_weight_exclusion.py) | **Computer-assisted** reduction; not a hand proof |
+| Five centers in the closed unit disk are impossible for a ten-packing | [Radial weight certificate](RADIAL_WEIGHT_EXCLUSION.md), [integer checker](check_radial_weight_exclusion.py) | Earlier **computer-assisted** reduction retained for comparison; the five-inner case now has the separate finite-table hand proof above |
 | Four inner centers must split into two norms at most `.65` and two above `.9` | [Radial count localization](RADIAL_COUNT_LOCALIZATION.md), [integer checker](check_radial_count_localization.py) | **Computer-assisted**, conditional on exactly four inner centers |
 | Sharp lower bound from four anchors | [Four-anchor bound](FOUR_ANCHOR_BOUND.md) | Four common-frame squares with the stated coordinate gaps |
 | Exact finite formulation and existence of a minimizer | [Unrestricted model](UNRESTRICTED_MODEL.md) | Arbitrary individual orientations; no sharp lower bound |
@@ -62,9 +69,12 @@ exhaustive within the common-coordinate class and within the four-anchor
 class. Global exhaustiveness is not proved.
 
 The hand arguments have received separate mathematical review within this
-work session. The rational checker certifies the displayed witness; it is
-not a premise of the lower-bound proofs. **No n=10 Lean source has been
-compiled or kernel-checked.**
+work session. The construction checker certifies the displayed witness.
+The five-center proof prints its full finite table and proves why those
+inequalities suffice; its separate exact checker re-enumerates the vertices,
+checks the cover, and verifies every rational bound. The radial-count
+certificates remain computational results with their own stated scope.
+**No n=10 Lean source has been compiled or kernel-checked.**
 
 ![Ten-square construction at squared radius 9/2](construction.svg)
 
@@ -75,7 +85,7 @@ compiled or kernel-checked.**
 | G0: source and model | Hand argument complete | Use unrestricted `Packing`; preserve boundary contact |
 | G1: attaining construction | Hand proof and exact arithmetic check complete | `∃ S : Fin 10 → UnitSquare, Packing S (0,0) (3/√2)` |
 | G2: common-coordinate theorem | CLOSED by hand, including equality | All-parallel chain argument, then disk-preserving rectification |
-| G3: unrestricted lower bound | OPEN; eight-outer-center case closed | Exclude packings below `9/2` with exactly 3, 4, or 5 centers in `B(0,1)` |
+| G3: unrestricted lower bound | OPEN; eight-outer-center and five-inner-center cases closed | Exclude packings below `9/2` with exactly 3 or 4 centers in `B(0,1)` |
 | G4: unrestricted equality necessity | OPEN; eight-outer-center case closed | Exclude or classify equality structures with at least three centers in `B(0,1)` |
 | G5: Lean formalization | OPEN | Elaborate proofs, audit axioms, and verify statements against `Packing` |
 | G6: public integration | OPEN | Extend the registry and public theorem range only after verification |
@@ -105,15 +115,14 @@ the square's center has norm at least `1`, even if the square intersects
 `B(0,1/2)`. Its third possible equality type cannot occur in an eight-arc
 ring. Consequently any smaller ten-packing must have at least three centers
 in `B(0,1)`; pairwise center distances of at least one bound this count by
-five. The precise remaining counts for the hand proof are therefore **3, 4,
-and 5 inner centers**.
-
-The separate radial-weight certificate excludes five inner centers by 1,954
-exact integer parameter-box comparisons. With that computational result the
-remaining counts are three and four. An analytic replacement is still needed
-for a wholly hand proof: the inner-arc moment theorem would provide one if
-the explicitly stated five-center moment inequality is proved. Neither the
-certificate nor the conditional moment argument closes the other two cases.
+five. The [completed five-center moment theorem](FIVE_CENTER_LARGE_TURNS.md)
+then excludes five inner centers: its strict moment bound and the inner-arc
+estimate make the ten disjoint traces longer than the test circle. Its
+large-turn part uses an explicit finite table, with every case and rational
+vertex bound printed for inspection. Thus the remaining counts are
+**3 and 4 inner centers**. The older 1,954-box radial-weight certificate
+is retained as an independent computational route, not a premise of the
+new moment argument.
 
 The [large-inner-arc lemma](LARGE_INNER_ARC.md) replaces one branch of the
 radial-count argument by hand. A proposed unrestricted bound of five usable
@@ -121,10 +130,14 @@ outer arcs around four inner squares is false: the exact
 [gap obstruction](FOUR_CORE_GAP_OBSTRUCTION.md) allows six abstract arcs.
 The [localized gap counterexample](LOCALIZED_FOUR_CORE_GAP_OBSTRUCTION.md)
 also defeats that bound under the two-small/two-large radial split.
-The [translated-block theorem](TRANSLATED_BLOCK_OBSTRUCTION.md) and
-[localized solid-block theorem](LOCALIZED_BLOCK_OBSTRUCTION.md) nevertheless
-exclude their stated physical core classes. The simpler center-only argument
-has its own [exact limitation](DIAGONAL_BLOCK_CENTER_RELAXATION.md).
+The [general translated-block theorem](GENERAL_TRANSLATED_BLOCK_OBSTRUCTION.md)
+now excludes every solid two-by-two core whose centers lie in the closed
+unit disk, without radial localization. The
+[symmetric two-row theorem](SYMMETRIC_TWO_ROW_COMPLETION.md) also excludes
+the physical core family containing the localized gap counterexample.
+Neither theorem applies to arbitrary four-square cores. The simpler
+center-only argument has its own
+[exact limitation](DIAGONAL_BLOCK_CENTER_RELAXATION.md).
 
 A [rational six-square example](SIX_CENTRAL_SQUARES.md) rules out the shortcut
 that at most four or five squares can meet the small disk. It is not a
@@ -150,8 +163,23 @@ additional five-square family that appears beyond the earlier n=9 radius
 window. Its [physical completion](KAPPA_CORE_COMPLETION.md) is now excluded
 as well. Together with the origin-incidence capacity bounds, these results
 exclude every nontrivial positive tree component. The lower radius window
-is supplied by the explicitly cited n=8 theorem. Cyclic stress components
-and all their unstressed-square completions remain open.
+is supplied by the explicitly cited n=8 theorem.
+
+The [cyclic reductions](CYCLIC_STRESS_REDUCTIONS.md) exclude two-terminal
+cycles and several small components. An
+[entirely loaded component](ALL_LOADED_COMPONENT_RINGS.md) must be a
+seven-square physical ring enclosing three inner squares. Its
+[force polygon strictly contains zero](SEVEN_RING_FORCE_ORIGIN.md), and the
+[common signed-offset case](REGULAR_SEVEN_LOADED_RING.md) is excluded.
+For one fixed side/vertex ownership pattern,
+[exact scalar equations](SEVEN_RING_ONE_CHIRALITY.md) show that equal force
+magnitudes or equal frame turns force the excluded uniform ring. Simultaneous
+variation remains open. Mixed components also remain open; the
+[five-cycle normal form](SIDE_NORMAL_MIXED_FIVE_CYCLE.md) records a precise
+remaining local pattern, and [two diagonal transmitters](DIAGONAL_MIXED_FIVE_CYCLE.md)
+are now excluded in that pattern. The
+[planar junction construction](PLANAR_CONTACT_TORQUE_CYCLES.md) preserves
+the physical forces but does not prove that every torque cycle encloses zero.
 
 Even the established equality family can have five distinct x-coordinates;
 the all-parallel proof handles those configurations directly. No unproved
@@ -172,6 +200,7 @@ From the repository root, with Python 3 and no external packages:
 ```sh
 python3 research/ten/check_construction.py --self-test
 python3 research/ten/check_core_obstruction.py
+python3 research/ten/check_five_center_large_turns.py
 python3 research/ten/check_radial_weight_exclusion.py
 python3 research/ten/check_radial_count_localization.py
 python3 -B research/ten/plot_construction.py
@@ -186,6 +215,11 @@ arithmetic. The radial-weight checker proves continuous one-square bounds
 using integer Riemann sums and a complete dyadic parameter cover; it uses no
 floating-point arithmetic. The figure uses floating point only for drawing
 and is not a proof input.
+
+The five-center checker uses only standard-library rational arithmetic.
+It verifies all 78 cells, 1,193 vertices, 42 covering roots, and both
+singleton cross-references, with uniform lower bound
+`200007133/50000000 > 4` on the large-turn fan branch.
 
 This checkpoint changes only `research/ten/`. No Lean build, axiom audit,
 Comparator run, or external kernel replay is claimed. Commits use `[skip ci]`
