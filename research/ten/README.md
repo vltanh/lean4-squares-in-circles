@@ -177,7 +177,11 @@ magnitudes or equal frame turns force the excluded uniform ring. Simultaneous
 variation remains open. Mixed components also remain open; the
 [five-cycle normal form](SIDE_NORMAL_MIXED_FIVE_CYCLE.md) records a precise
 remaining local pattern, and [two diagonal transmitters](DIAGONAL_MIXED_FIVE_CYCLE.md)
-are now excluded in that pattern. The
+are now excluded in that pattern. If its vertex transmitter is diagonal,
+[the opposite endpoint must be rotated](DIAGONAL_SIDE_ENDPOINT_REDUCTION.md).
+The uniform side/vertex ring is also
+[locally isolated](SEVEN_RING_LOCAL_RIGIDITY.md) among normalized solutions
+of its exact equations; this does not imply global uniqueness. The
 [planar junction construction](PLANAR_CONTACT_TORQUE_CYCLES.md) preserves
 the physical forces but does not prove that every torque cycle encloses zero.
 

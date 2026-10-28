@@ -73,6 +73,9 @@ The equality classification remains open outside the completed classes.
    ownership pattern, [SEVEN_RING_ONE_CHIRALITY.md](SEVEN_RING_ONE_CHIRALITY.md)
    derives exact equations. Equal contact magnitudes or equal frame turns
    force the uniform ring, but neither equality is established in general.
+   [SEVEN_RING_LOCAL_RIGIDITY.md](SEVEN_RING_LOCAL_RIGIDITY.md) proves that
+   the normalized uniform scalar solution is locally isolated. No explicit
+   neighborhood size or global uniqueness is claimed.
 4. **Mixed cyclic stress components.**
    [CYCLIC_STRESS_REDUCTIONS.md](CYCLIC_STRESS_REDUCTIONS.md) excludes
    two-terminal components made of transmission paths and several small
@@ -89,7 +92,10 @@ The equality classification remains open outside the completed classes.
    and adjacent-side-interior contact form.
    [DIAGONAL_MIXED_FIVE_CYCLE.md](DIAGONAL_MIXED_FIVE_CYCLE.md) excludes two
    diagonal transmitters in that form, so at least one must be a side
-   transmitter. The other transmitter types, and the case where `C` has
+   transmitter. If the vertex transmitter is diagonal,
+   [DIAGONAL_SIDE_ENDPOINT_REDUCTION.md](DIAGONAL_SIDE_ENDPOINT_REDUCTION.md)
+   forces the opposite endpoint to be rotated and contacted at a vertex.
+   The other transmitter types, and the case where `C` has
    two loaded circle vertices, remain open.
    [PLANAR_CONTACT_TORQUE_CYCLES.md](PLANAR_CONTACT_TORQUE_CYCLES.md) gives a
    planar junction construction retaining the physical forces; it does not
