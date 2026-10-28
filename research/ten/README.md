@@ -50,10 +50,12 @@ the known bound, not a lower-bound proof.
 | Every nonzero minimizing stress component must contain a cycle | [Expanded tree inventory](EXPANDED_TREE_INVENTORY.md) | Hand tree exclusion in the stated radius window; lower window imported explicitly from n=8 |
 | Every entirely circle-loaded positive component is a seven-square physical ring enclosing the other three squares | [Loaded-ring theorem](ALL_LOADED_COMPONENT_RINGS.md) | Conditional on an entirely loaded component in a strictly subcritical ten-packing |
 | The loaded ring's contact-force polygon strictly contains the origin | [Force circulation](SEVEN_RING_FORCE_CIRCULATION.md), [strict containment](SEVEN_RING_FORCE_ORIGIN.md) | Hand proof using original physical force witnesses |
+| Loaded-body force lines concur inside their closed squares; the physical contact polygon is convex and contains the three inner squares | [Internal concurrence](SEVEN_RING_INTERNAL_CONCURRENCE.md) | Hand proof covering unique and double geometric circle vertices; no sufficient capacity bound for this polygon yet |
 | A loaded ring with common signed frame offsets cannot contain three further squares | [Uniform-ring exclusion](REGULAR_SEVEN_LOADED_RING.md) | Hand proof; nonuniform rings remain open |
 | Several mixed cyclic stress patterns are impossible | [Cyclic reductions](CYCLIC_STRESS_REDUCTIONS.md), [remaining five-cycle form](SIDE_NORMAL_MIXED_FIVE_CYCLE.md) | Conditional hand reductions; neither a complete graph classification nor a global exclusion |
 | A solid two-by-two core, with its four centers in the closed unit disk, admits at most five additional squares | [General translated-block theorem](GENERAL_TRANSLATED_BLOCK_OBSTRUCTION.md) | Hand proof for every translation and rotation; additional orientations arbitrary |
 | A specified symmetric two-row core with two center norms at most `.65` has total capacity at most nine | [Two-row theorem](SYMMETRIC_TWO_ROW_COMPLETION.md) | Hand proof over the full stated parameter family; does not normalize arbitrary cores |
+| The upper offsets in that two-row core may be unequal | [Asymmetric two-row theorem](ASYMMETRIC_TWO_ROW_COMPLETION.md) | Hand proof with offsets at least `1/4` and the stated lower-row displacement bound |
 | The sharp cap beginning at `sqrt(7/2)-1` contains at most two squares, with a unique pair | [Sharp two-square cap](SHARP_TWO_SQUARE_CAP.md) | Hand proof; any stricter cap contains at most one |
 | An aligned two-by-two block translated along a side direction admits at most five further squares | [Translated-block obstruction](TRANSLATED_BLOCK_OBSTRUCTION.md) | Hand proof with the four core centers in the closed unit disk; remaining orientations arbitrary |
 | A solid two-by-two block with two center norms above `.9` admits at most five outer-center squares | [Localized-block obstruction](LOCALIZED_BLOCK_OBSTRUCTION.md) | Conditional hand proof allowing arbitrary translation; its application uses computational radial localization |
@@ -169,7 +171,11 @@ The [cyclic reductions](CYCLIC_STRESS_REDUCTIONS.md) exclude two-terminal
 cycles and several small components. An
 [entirely loaded component](ALL_LOADED_COMPONENT_RINGS.md) must be a
 seven-square physical ring enclosing three inner squares. Its
-[force polygon strictly contains zero](SEVEN_RING_FORCE_ORIGIN.md), and the
+[force polygon strictly contains zero](SEVEN_RING_FORCE_ORIGIN.md), its
+[force-line intersections lie inside their bodies](SEVEN_RING_INTERNAL_CONCURRENCE.md),
+and the actual contact points form a convex polygon enclosing the three
+remaining squares. No sufficient area or circumradius bound for this polygon
+has been proved. The
 [common signed-offset case](REGULAR_SEVEN_LOADED_RING.md) is excluded.
 For one fixed side/vertex ownership pattern,
 [exact scalar equations](SEVEN_RING_ONE_CHIRALITY.md) show that equal force
@@ -179,6 +185,10 @@ variation remains open. Mixed components also remain open; the
 remaining local pattern, and [two diagonal transmitters](DIAGONAL_MIXED_FIVE_CYCLE.md)
 are now excluded in that pattern. If its vertex transmitter is diagonal,
 [the opposite endpoint must be rotated](DIAGONAL_SIDE_ENDPOINT_REDUCTION.md).
+For the reverse side-to-diagonal pattern, a vertex-supported first endpoint
+[must have a rightward edge](SIDE_DIAGONAL_LEFT_ENDPOINT.md).
+When the central loaded square has two circle vertices,
+[two side transmitters](RADIAL_SIDE_MIXED_FIVE_CYCLE.md) are excluded.
 The uniform side/vertex ring is also
 [locally isolated](SEVEN_RING_LOCAL_RIGIDITY.md) among normalized solutions
 of its exact equations; this does not imply global uniqueness. The

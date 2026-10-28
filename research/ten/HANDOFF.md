@@ -63,8 +63,13 @@ The equality classification remains open outside the completed classes.
    Its contact-force polygon is strictly convex and strictly contains zero,
    by [SEVEN_RING_FORCE_CIRCULATION.md](SEVEN_RING_FORCE_CIRCULATION.md) and
    [SEVEN_RING_FORCE_ORIGIN.md](SEVEN_RING_FORCE_ORIGIN.md). Each body's
-   two force lines concur on its positive circle-load ray; concurrence
-   inside the square has not been proved.
+   two force lines concur on its positive circle-load ray.
+   [SEVEN_RING_INTERNAL_CONCURRENCE.md](SEVEN_RING_INTERNAL_CONCURRENCE.md)
+   now places every such intersection inside its closed square, including
+   the two-circle-vertex case. The actual contact points form a convex
+   polygon containing all three inner squares. A capacity bound for that
+   polygon remains open; it is an enclosure of the free hole, not the hole
+   itself, and their areas must not be confused.
    [REGULAR_SEVEN_LOADED_RING.md](REGULAR_SEVEN_LOADED_RING.md) excludes
    common signed frame offsets. The smooth stressed member has hole area
    below `231/80<3`; the radial-side endpoint has a hole inside a disk of
@@ -95,8 +100,12 @@ The equality classification remains open outside the completed classes.
    transmitter. If the vertex transmitter is diagonal,
    [DIAGONAL_SIDE_ENDPOINT_REDUCTION.md](DIAGONAL_SIDE_ENDPOINT_REDUCTION.md)
    forces the opposite endpoint to be rotated and contacted at a vertex.
-   The other transmitter types, and the case where `C` has
-   two loaded circle vertices, remain open.
+   For the reverse side-to-diagonal pattern,
+   [SIDE_DIAGONAL_LEFT_ENDPOINT.md](SIDE_DIAGONAL_LEFT_ENDPOINT.md) forces a
+   vertex-supported first endpoint to have an edge pointing right in C's
+   frame. When C has two geometric circle vertices,
+   [RADIAL_SIDE_MIXED_FIVE_CYCLE.md](RADIAL_SIDE_MIXED_FIVE_CYCLE.md) excludes
+   two side transmitters. The other remaining patterns are still open.
    [PLANAR_CONTACT_TORQUE_CYCLES.md](PLANAR_CONTACT_TORQUE_CYCLES.md) gives a
    planar junction construction retaining the physical forces; it does not
    establish that every torque cycle encloses zero. Planarity of the simple
