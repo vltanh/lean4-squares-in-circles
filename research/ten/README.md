@@ -188,7 +188,9 @@ are now excluded in that pattern. If its vertex transmitter is diagonal,
 For the reverse side-to-diagonal pattern, a vertex-supported first endpoint
 [must have a rightward edge](SIDE_DIAGONAL_LEFT_ENDPOINT.md).
 When the central loaded square has two circle vertices,
-[two side transmitters](RADIAL_SIDE_MIXED_FIVE_CYCLE.md) are excluded.
+[only two diagonal transmitters remain](RADIAL_SIDE_MIXED_TRANSMISSIONS.md).
+The [mixed five-cycle status](MIXED_FIVE_CYCLE_STATUS.md) consolidates its
+remaining patterns and the explicitly imported lower-radius bounds.
 The uniform side/vertex ring is also
 [locally isolated](SEVEN_RING_LOCAL_RIGIDITY.md) among normalized solutions
 of its exact equations; this does not imply global uniqueness. The

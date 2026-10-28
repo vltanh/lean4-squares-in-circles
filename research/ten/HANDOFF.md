@@ -104,8 +104,11 @@ The equality classification remains open outside the completed classes.
    [SIDE_DIAGONAL_LEFT_ENDPOINT.md](SIDE_DIAGONAL_LEFT_ENDPOINT.md) forces a
    vertex-supported first endpoint to have an edge pointing right in C's
    frame. When C has two geometric circle vertices,
-   [RADIAL_SIDE_MIXED_FIVE_CYCLE.md](RADIAL_SIDE_MIXED_FIVE_CYCLE.md) excludes
-   two side transmitters. The other remaining patterns are still open.
+   [RADIAL_SIDE_MIXED_TRANSMISSIONS.md](RADIAL_SIDE_MIXED_TRANSMISSIONS.md)
+   leaves only two diagonal transmitters. It uses the slightly sharper
+   imported lower bound `R^2>5/2+sqrt(2)`, with the n=8 bracket dependency
+   explicitly stated. [MIXED_FIVE_CYCLE_STATUS.md](MIXED_FIVE_CYCLE_STATUS.md)
+   consolidates all remaining patterns; this component is not yet excluded.
    [PLANAR_CONTACT_TORQUE_CYCLES.md](PLANAR_CONTACT_TORQUE_CYCLES.md) gives a
    planar junction construction retaining the physical forces; it does not
    establish that every torque cycle encloses zero. Planarity of the simple
