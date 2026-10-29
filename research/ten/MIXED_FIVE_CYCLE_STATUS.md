@@ -103,3 +103,20 @@ Closing this component alone would still leave other cyclic components,
 including the four-loaded five-cycle, larger mixed cycles, and components
 with branching cyclic blocks. No exhaustive reduction to the five-cycle
 is asserted here.
+
+## Further radial-side DD restrictions (2026-10-29)
+
+The independently reviewed [double-diagonal note](RADIAL_SIDE_DOUBLE_DIAGONAL.md)
+proves exact transmitter separation for outward angles `theta>=eta` and
+contact-height gap `d<=1`:
+
+```text
+d*cos(pi/4-theta)>=cos(theta+eta),
+2*theta+eta>=pi/4,
+d<=cos(theta)+cos(eta)-sqrt(2)*(sin(theta)+sin(eta)).
+```
+
+The middle inequality is strict when `d<1`; an opposite side-interior
+contact therefore forces `theta>pi/8`. The note also supplies an endpoint
+radius inequality. These necessary conditions retain contact equality and
+do not exclude the DD component.

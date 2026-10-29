@@ -43,6 +43,11 @@ No proof of the unrestricted n=10 optimum is claimed.
 | [Wider row displacement](WIDE_DISPLACEMENT_TWO_ROW.md) | Independent full mathematical review passed; interval is `0<t<3/2-2^(-1/4)` |
 | [Separated lower pair](SEPARATED_LOWER_TWO_ROW.md) | Independent full mathematical review passed; extension removes lower-pair touching under the displayed bounds |
 
+The [combined theorem](SEPARATED_WIDE_TWO_ROW.md), independently reviewed
+on 2026-10-29, permits a separated lower pair throughout the full wider
+displacement interval. Its proof checks the virtual slot, center clearance,
+and arc counts under both extensions at once.
+
 Both extensions cover specified common-frame two-row cores. There is still
 no argument reducing every four-inner-square core to those arrangements.
 
@@ -58,9 +63,12 @@ For the radial-side mixed five-cycle, two diagonal transmitters remain.
 An exploratory symmetric stationary candidate overlapped at its two
 transmitters, so endpoint force equations alone do not certify a physical
 core. In the symmetric corner-contact case, transmitter disjointness forces
-the outward angle to be at least `pi/12`. Turning separation into a full
-exclusion or a capacity bound is still required; no such exclusion is
-claimed in [MIXED_FIVE_CYCLE_STATUS.md](MIXED_FIVE_CYCLE_STATUS.md).
+the outward angle to be at least `pi/12`. The reviewed [double-diagonal restrictions](RADIAL_SIDE_DOUBLE_DIAGONAL.md)
+now give the exact transmitter separation inequality for unequal angles and
+contact heights. In particular, if the opposite contact is in a side
+interior, the larger outward angle exceeds `pi/8`. Turning these necessary
+conditions into a full exclusion or capacity bound is still required; no
+such exclusion is claimed.
 
 ## Remaining obligations
 

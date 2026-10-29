@@ -57,6 +57,7 @@ the known bound, not a lower-bound proof.
 | A specified symmetric two-row core with two center norms at most `.65` has total capacity at most nine | [Two-row theorem](SYMMETRIC_TWO_ROW_COMPLETION.md) | Hand proof over the full stated parameter family; does not normalize arbitrary cores |
 | The upper offsets in that two-row core may be unequal | [Asymmetric two-row theorem](ASYMMETRIC_TWO_ROW_COMPLETION.md) | Hand proof with offsets at least `1/4` and the stated lower-row displacement bound |
 | The quarter-unit upper-offset restriction can be removed | [Extreme-asymmetry theorem](EXTREME_ASYMMETRIC_TWO_ROW.md) | Independently reviewed hand proof for the displayed two-row core; arbitrary cores remain open |
+| The lower pair may be separated throughout the wider displacement interval | [Combined two-row theorem](SEPARATED_WIDE_TWO_ROW.md) | Reviewed hand proof for the exact displayed common-frame core; arbitrary extra orientations |
 | The sharp cap beginning at `sqrt(7/2)-1` contains at most two squares, with a unique pair | [Sharp two-square cap](SHARP_TWO_SQUARE_CAP.md) | Hand proof; any stricter cap contains at most one |
 | An aligned two-by-two block translated along a side direction admits at most five further squares | [Translated-block obstruction](TRANSLATED_BLOCK_OBSTRUCTION.md) | Hand proof with the four core centers in the closed unit disk; remaining orientations arbitrary |
 | A solid two-by-two block with two center norms above `.9` admits at most five outer-center squares | [Localized-block obstruction](LOCALIZED_BLOCK_OBSTRUCTION.md) | Conditional hand proof allowing arbitrary translation; its application uses computational radial localization |
@@ -190,6 +191,9 @@ For the reverse side-to-diagonal pattern, a vertex-supported first endpoint
 [must have a rightward edge](SIDE_DIAGONAL_LEFT_ENDPOINT.md).
 When the central loaded square has two circle vertices,
 [only two diagonal transmitters remain](RADIAL_SIDE_MIXED_TRANSMISSIONS.md).
+Their disjointness gives [exact angular restrictions](RADIAL_SIDE_DOUBLE_DIAGONAL.md),
+including a lower bound of `pi/12` on the larger outward angle; this
+remaining case is still open.
 The [mixed five-cycle status](MIXED_FIVE_CYCLE_STATUS.md) consolidates its
 remaining patterns and the explicitly imported lower-radius bounds.
 The uniform side/vertex ring is also
@@ -205,7 +209,9 @@ Two further conditional theorems have now passed
 [a wider row-displacement range](WIDE_DISPLACEMENT_TWO_ROW.md) and
 [a separated lower pair](SEPARATED_LOWER_TWO_ROW.md). These still require
 their displayed common-frame two-row cores. See [HANDOFF.md](HANDOFF.md)
-for the remaining general core and cyclic-component obligations.
+for the remaining general core and cyclic-component obligations. The
+[combined theorem](SEPARATED_WIDE_TWO_ROW.md) now permits both extensions
+simultaneously, with their interaction checked explicitly.
 
 Even the established equality family can have five distinct x-coordinates;
 the all-parallel proof handles those configurations directly. No unproved
