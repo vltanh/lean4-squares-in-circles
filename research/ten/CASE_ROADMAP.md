@@ -8,8 +8,8 @@ lemma that does not close its family. All lower-bound cases below concern
 <!-- CASE_PROGRESS_START -->
 **Main gates:** `███░░░░` **3/7 closed**.
 
-**G3 lower-bound case ledger:** `████████████████░░░░░`
-**16 hand closed · 0 computer closed · 5 open / 21 terminal families.**
+**G3 lower-bound case ledger:** `█████████████████░░░░`
+**17 hand closed · 0 computer closed · 4 open / 21 terminal families.**
 
 **C20 larger-cycle subcases:** `██████████▏░░░░░░░░░░░░░` **118/279 closed; 161 open.**
 
@@ -42,7 +42,7 @@ lemma that does not close its family. All lower-bound cases below concern
 | C12 | HAND CLOSED | **Unique-circle-vertex central body: two distinct vertex contacts.** After C10–C11. [Proof / reduction](VERTEX_CONTACT_MIXED_FIVE_CYCLE.md). |
 | C13 | HAND CLOSED | **Unique-circle-vertex central body: two side-normal transmissions.** After C10–C12; includes two side-interior contacts. [Proof / reduction](SIDE_NORMAL_MIXED_FIVE_CYCLE.md). |
 | C14 | HAND CLOSED | **Remaining vertex/side pattern: D-D.** First letter is the transmitter at the central vertex contact; second is at the side-interior contact. [Proof / reduction](DIAGONAL_MIXED_FIVE_CYCLE.md). |
-| C15 | OPEN | **Remaining vertex/side pattern: S-S.** Same ordered convention as C14; all vertex-supported first endpoints are excluded, so its contact must lie in a relative side interior. [Proof / reduction](SIDE_SIDE_VERTEX_EXCLUSION.md). |
+| C15 | HAND CLOSED | **Remaining vertex/side pattern: S-S.** Same ordered convention as C14; vertex exclusions and an analytic side-interior clearance proof rule out the entire S-S pattern. [Proof / reduction](SIDE_SIDE_EXCLUSION.md). |
 | C16 | HAND CLOSED | **Remaining vertex/side pattern: S-D.** Same ordered convention; physical torque balance forces a far vertex to carry circle load, while elementary analytic bounds place it strictly inside the circle. [Proof / reduction](SIDE_DIAGONAL_EXCLUSION.md). |
 | C17 | HAND CLOSED | **Remaining vertex/side pattern: D-S.** Same ordered convention; endpoint classification and a printed exact clearance table exclude both remaining circle-load patterns. [Proof / reduction](DIAGONAL_SIDE_EXCLUSION.md). |
 | C18 | HAND CLOSED | **Five-cycle with four loads: side transmitter.** Its only unloaded body is a degree-two side transmitter. [Proof / reduction](MIXED_FIVE_FOUR_LOADED.md). |
@@ -96,7 +96,7 @@ Nonzero minimizing positive component
             │        ├─ Otherwise, two side normals ....... C13 H
             │        └─ Remaining vertex/side normal form
             │           ├─ D-D ........................... C14 H
-            │           ├─ S-S ........................... C15 O
+            │           ├─ S-S ........................... C15 H
             │           ├─ S-D ........................... C16 H
             │           └─ D-S ........................... C17 H
             ├─ Length five, four loaded bodies
@@ -122,7 +122,7 @@ coordinates, orientations, and positive force magnitudes.
 
 ## What is left, concretely
 
-There are five open physical families. Every closed family in the main
+There are four open physical families. Every closed family in the main
 ledger now has a reviewed hand deduction, with its imported dependencies
 stated in the linked proof:
 
@@ -130,7 +130,6 @@ stated in the linked proof:
 | --- | --- |
 | C04: other loaded-ring ownership | Classify and exclude the remaining contact patterns, or prove one capacity theorem covering all of them. The strict one-chirality theorem does not cover mixed ownership, vertex/vertex contacts, or its boundary cases. |
 | C05: branching mixed components | Classify or exclude the connected cyclic graphs that are not whole simple cycles, including bridge attachments and exactly two loaded bodies. |
-| C15: unique-circle S-S five-cycle | Audit the [saved side-interior candidate](SIDE_SIDE_SIDE_INTERIOR_HANDOFF.md); it is not yet promoted. Otherwise exclude that remaining core or prove capacity at most nine. |
 | C19: four-loaded five-cycle with D | Exclude this component or its ten-square completion. |
 | C20: larger mixed simple cycles | Exclude the [279 enumerated graph/transmitter cases](CYCLE_CASES.md), refining physical contact ownership where needed. |
 

@@ -12,7 +12,7 @@ claimed. This PR changes only research artifacts under `research/ten/`.
 ## Start here
 
 [CASE_ROADMAP.md](CASE_ROADMAP.md) is the current finite case tree and gated
-progress ledger: **16 hand-closed, 0 computer-only, and 5 open families**.
+progress ledger: **17 hand-closed, 0 computer-only, and 4 open families**.
 [CYCLE_CASES.md](CYCLE_CASES.md) enumerates all 279 larger mixed-cycle cases;
 Its generated progress bar and proof links record every reviewed exclusion.
 The bars count these fixed families, not the fraction of proof effort.
@@ -35,10 +35,11 @@ five inner centers by an explicit finite-table argument. Thus a hypothetical
 smaller ten-packing must have **exactly three or four inner centers**.
 The equality classification remains open outside the completed classes.
 
-## Frozen handoff checkpoint
+## Current resumed checkpoint
 
-Research is paused at the user's request. The unrestricted proof is still
-open. The main case ledger has **16 reviewed hand closures and 5 open
+Research resumed from handoff commit `fb91a0517a0eedf192e11759f9bdec2a60ab46af`.
+The unrestricted proof is still open. The main case ledger has **17 reviewed
+hand closures and 4 open
 families out of 21**; the larger-cycle subledger has **118 reviewed hand
 closures and 161 open cases out of 279**. Main gates remain **3/7 closed**.
 The closed counts do not measure the fraction of mathematical effort.
@@ -48,8 +49,10 @@ Latest completed work:
 - C03: a hand cap proof excludes every physical ring in the fixed
   one-chirality ownership pattern, independently of the earlier interval
   action verifier.
-- C17 and C16: the unique-circle D-S and S-D five-cycles are excluded.
-  The remaining S-S branch requires side-interior contact at A.
+- C15, C16 and C17: the unique-circle S-S, S-D and D-S five-cycles are
+  excluded. The saved S-S candidate passed both integrated reviews;
+  [SIDE_SIDE_EXCLUSION.md](SIDE_SIDE_EXCLUSION.md) is the complete proof.
+  Every three-loaded five-cycle is now excluded.
 - C20: [single-side uncrossing](SINGLE_SIDE_TRANSMISSION_UNCROSSING.md)
   proves radial loaded order whenever at most one D transmitter occurs.
   Its [117-case selection](single_side_cycle_batch.json) overlaps 27 earlier
@@ -62,7 +65,6 @@ Latest completed work:
 | --- | --- |
 | C04: other seven-ring ownership | Audit the 25-candidate ownership alphabet and its 34 coarse proper-contact schemes. Combine the reviewed side-support and opposite-vertex corner bounds where the spike geometry applies. Opposite-corner, radial-side, and pair-contact degeneracies still require treatment. |
 | C05: branching mixed components | Audit the proposed suppressed skeleton and then enumerate or exclude its remaining graphs. Do not assume the body-pair graph is planar. |
-| C15: S-S five-cycle | Audit [the side-interior candidate](SIDE_SIDE_SIDE_INTERIOR_HANDOFF.md) first. It has one helper review; integrated root and independent audit are still pending. Every vertex-supported A is already excluded. |
 | C19: four-loaded diagonal five-cycle | Turn its origin-containing transmitter and forced protrusions into a capacity bound, or exclude the component. |
 | C20: 161 larger-cycle entries | Resolve cases with two or more D paths, and the shorter or all-S cases not excluded by the present angular budgets. Every remaining ID is explicit in CYCLE_CASES.md. |
 
@@ -84,10 +86,9 @@ The [opposite-vertex restriction](LOADED_DIAGONAL_VERTEX_RESTRICTION.md)
 has two completed independent reviews: its opposite corner has squared
 norm below `49/64`; the double-side bound is `53/64`. Their combination
 is a local tool, not a general ring exclusion.
-The [S-S side-interior candidate](SIDE_SIDE_SIDE_INTERIOR_HANDOFF.md)
-was saved just before the pause. It contains a full proposed analytic
-clearance argument and one helper review, but lacks the integrated reviews
-required for promotion. **C15 remains open** in every progress count.
+The former [S-S handoff candidate](SIDE_SIDE_SIDE_INTERIOR_HANDOFF.md)
+has now passed full root and independent audits. Its promoted proof closes
+C15; the earlier draft remains available in the handoff commit's history.
 No new n=10 Lean theorem or kernel check was attempted.
 
 ## Resumed checkpoint
@@ -125,9 +126,9 @@ Other ownership patterns remain open.
 The [full radial-side D-D proof](RADIAL_SIDE_DD_EXCLUSION.md) now excludes
 its asymmetric smaller-radius branch too. Together with S-S and S-D, this
 closes the radial-side central-body case of the three-loaded five-cycle.
-The [D-S closure](DIAGONAL_SIDE_EXCLUSION.md) and
-[S-D closure](SIDE_DIAGONAL_EXCLUSION.md) now leave only unique-circle
-S-S for that component type. The four-loaded diagonal five-cycle remains
+The [D-S closure](DIAGONAL_SIDE_EXCLUSION.md),
+[S-D closure](SIDE_DIAGONAL_EXCLUSION.md), and
+[final S-S closure](SIDE_SIDE_EXCLUSION.md) close that component type. The four-loaded diagonal five-cycle remains
 open, with a new [inner trace restriction](DIAGONAL_FIVE_CYCLE_INNER_TRACE.md):
 at most one other square is wholly contained in the test disk.
 

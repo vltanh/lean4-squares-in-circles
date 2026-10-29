@@ -151,10 +151,10 @@
     },
     {
       "id": "C15",
-      "status": "open",
+      "status": "hand",
       "title": "Remaining vertex/side pattern: S-S",
-      "scope": "Same ordered convention as C14; all vertex-supported first endpoints are excluded, so its contact must lie in a relative side interior.",
-      "evidence": "SIDE_SIDE_VERTEX_EXCLUSION.md"
+      "scope": "Same ordered convention as C14; vertex exclusions and an analytic side-interior clearance proof rule out the entire S-S pattern.",
+      "evidence": "SIDE_SIDE_EXCLUSION.md"
     },
     {
       "id": "C16",

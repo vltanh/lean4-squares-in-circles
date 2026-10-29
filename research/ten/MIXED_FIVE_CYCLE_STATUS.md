@@ -12,7 +12,7 @@ The cycle pattern itself follows from
 [CYCLIC_STRESS_REDUCTIONS.md](CYCLIC_STRESS_REDUCTIONS.md). Each
 transmitter is side type S of width one, or diagonal type D of width
 `sqrt(2)`. The radius and physical-stress conventions are those of the
-linked manuscripts. **This five-cycle has not yet been excluded.**
+linked manuscripts. **This three-loaded five-cycle is now excluded.**
 
 The generic reductions exclude parallel outgoing transmission directions,
 coincident C contacts, and two directions both normal to C's sides:
@@ -50,26 +50,20 @@ balance give
 (b-a)/(a+1/2) = d(1-rho)/(1-d).
 ```
 
-Only this transmitter choice remains:
+All four ordered transmitter choices are now excluded:
 
-| U at P | V at Q | Further proved restriction |
+| U at P | V at Q | Reviewed hand exclusion |
 | --- | --- | --- |
-| S | S | The first loaded endpoint A must be contacted in a relative side interior |
+| D | D | [Diagonal pair](DIAGONAL_MIXED_FIVE_CYCLE.md) |
+| D | S | [D-S proof](DIAGONAL_SIDE_EXCLUSION.md) |
+| S | D | [S-D proof](SIDE_DIAGONAL_EXCLUSION.md) |
+| S | S | [S-S proof](SIDE_SIDE_EXCLUSION.md) |
 
-The D-D row is excluded by
-[DIAGONAL_MIXED_FIVE_CYCLE.md](DIAGONAL_MIXED_FIVE_CYCLE.md).
-The D-S row is now completely excluded by
-[DIAGONAL_SIDE_EXCLUSION.md](DIAGONAL_SIDE_EXCLUSION.md), including both
-possible positive circle-load patterns at its last side-supported endpoint.
-Its printed rational table is independently checked by
-[check_diagonal_side_clearance.py](check_diagonal_side_clearance.py).
-The S-D row is now completely excluded by the elementary analytic proof in
-[SIDE_DIAGONAL_EXCLUSION.md](SIDE_DIAGONAL_EXCLUSION.md).
-The remaining S-S endpoint restriction is proved in
-[SIDE_SIDE_VERTEX_EXCLUSION.md](SIDE_SIDE_VERTEX_EXCLUSION.md).
-The earlier S-S and S-D endpoint restrictions follow from the
-[side-transmission vertex reduction](SIDE_TRANSMISSION_VERTEX_REDUCTION.md),
-combined for S-D with [SIDE_DIAGONAL_LEFT_ENDPOINT.md](SIDE_DIAGONAL_LEFT_ENDPOINT.md).
+The final S-S proof first uses the
+[vertex exclusion](SIDE_SIDE_VERTEX_EXCLUSION.md), then a joint contact
+projection bound and convex endpoint estimates to place every vertex of A
+strictly inside the containing circle, contradicting A's positive load.
+Its exact final squared-radius margin is `369/40000` at the lower radius.
 
 ## C has two circle vertices
 
@@ -113,13 +107,12 @@ three-loaded/two-transmitter patterns above.
 
 | Roadmap ID | Remaining family | Status |
 | --- | --- | --- |
-| C15 | Unique-circle C; vertex transmitter S, side transmitter S | OPEN |
 | C19 | Four loaded bodies; the sole unloaded transmitter D | OPEN |
 
 For each row, either exclude the physical component or prove that its
-completion has capacity at most nine. These are the only remaining
-five-cycle families after the ordered reductions in
-[CASE_ROADMAP.md](CASE_ROADMAP.md). They still permit continuous coordinates
-and varying endpoint contact ownership. Closing them does not by itself
+completion has capacity at most nine. This is the only remaining
+five-cycle family after the ordered reductions in
+[CASE_ROADMAP.md](CASE_ROADMAP.md). It still permits continuous coordinates
+and varying endpoint contact ownership. Closing it does not by itself
 settle larger mixed cycles, branching components, or other loaded-ring
 ownership patterns.
