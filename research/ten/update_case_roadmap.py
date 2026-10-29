@@ -38,7 +38,7 @@ def main():
     cycle_done = len(cycle_status)
     cycle_total = len(cycle_ids)
     cycle_bar = fraction_bar(cycle_done, cycle_total)
-    branch = json.loads((ROOT / "branching_ss_bridge_summary.json").read_text())
+    branch = json.loads((ROOT / "branching_selected_graph_summary.json").read_text())
     branch_total = branch["initial_cases"]
     branch_done = branch["distinct_exclusions"]
     if (not 0 <= branch_done <= branch_total
@@ -90,7 +90,9 @@ def main():
             "This is the complete current **graph/transmitter overclassification** for C20. "
             "It covers whole positive components of lengths 6–10, modulo cyclic rotation and reflection. "
             "The inventory itself does not assert geometric feasibility or classify contact ownership. "
-            "Separately proved exclusions are tracked below.", "",
+            "Separately proved exclusions are tracked below for the jointly selected "
+            "certificate in [CASE_ROADMAP.md](CASE_ROADMAP.md); they need not exclude "
+            "every alternative choice of physical stress.", "",
             f"**Exclusion progress:** `{cycle_bar}` **{cycle_done}/{cycle_total} transmitter cases closed; {cycle_total-cycle_done} open.**", "",
             "| Length | Binary load families | S/D cases | Excluded |", "| --- | ---: | ---: | ---: |"]
     for r in cycles["counts_by_length"]:
@@ -110,7 +112,8 @@ def main():
             record = cycle_status.get(c["id"])
             status = f"[{labels[record['status']]}]({record['evidence']})" if record else "OPEN"
             rows.append(f"| {c['id']} | `{c['word']}` | {status} |")
-    rows += ["", "Update the ledger only after a proof covers every physical realization of the entry. "
+    rows += ["", "Update the ledger only after a proof covers every realization of the entry "
+             "under the ledger's selected-certificate conventions. "
              "A conditional core lemma or an infeasible numerical sample does not close an entry.", ""]
     (ROOT / "CYCLE_CASES.md").write_text("\n".join(rows))
     print(f"Rendered {done}/{len(gates)} gates; {dict(counts)} across {len(cases)} case families; {cycle_done}/{cycle_total} cycle cases closed.")

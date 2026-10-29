@@ -1,12 +1,12 @@
 # Finite inventory of the larger mixed simple cycles
 
-This is the complete current **graph/transmitter overclassification** for C20. It covers whole positive components of lengths 6–10, modulo cyclic rotation and reflection. The inventory itself does not assert geometric feasibility or classify contact ownership. Separately proved exclusions are tracked below.
+This is the complete current **graph/transmitter overclassification** for C20. It covers whole positive components of lengths 6–10, modulo cyclic rotation and reflection. The inventory itself does not assert geometric feasibility or classify contact ownership. Separately proved exclusions are tracked below for the jointly selected certificate in [CASE_ROADMAP.md](CASE_ROADMAP.md); they need not exclude every alternative choice of physical stress.
 
-**Exclusion progress:** `████████████████████▏░░░` **235/279 transmitter cases closed; 44 open.**
+**Exclusion progress:** `████████████████████▍░░░` **238/279 transmitter cases closed; 41 open.**
 
 | Length | Binary load families | S/D cases | Excluded |
 | --- | ---: | ---: | ---: |
-| 6 | 6 | 15 | 1 |
+| 6 | 6 | 15 | 4 |
 | 7 | 9 | 23 | 4 |
 | 8 | 15 | 45 | 34 |
 | 9 | 21 | 71 | 71 |
@@ -18,12 +18,12 @@ The independent enumerations and Burnside count in [check_cycle_cases.py](check_
 
 | Stable ID | Canonical cyclic word | Status |
 | --- | --- | --- |
-| C20-M06-L03-B01-T01 | `LLSLSS` | OPEN |
+| C20-M06-L03-B01-T01 | `LLSLSS` | [HAND CLOSED](SS_SIDE_SIX_CYCLE_EXCLUSION.md) |
 | C20-M06-L03-B01-T02 | `LLDLSS` | [HAND CLOSED](SS_DIAGONAL_SIX_CYCLE_EXCLUSION.md) |
 | C20-M06-L03-B02-T01 | `LSLSLS` | OPEN |
 | C20-M06-L03-B02-T02 | `LSLSLD` | OPEN |
-| C20-M06-L03-B02-T03 | `LSLDLD` | OPEN |
-| C20-M06-L03-B02-T04 | `LDLDLD` | OPEN |
+| C20-M06-L03-B02-T03 | `LSLDLD` | [HAND CLOSED](TWO_DIAGONAL_ONE_SIDE_SIX_CYCLE_EXCLUSION.md) |
+| C20-M06-L03-B02-T04 | `LDLDLD` | [HAND CLOSED](DIAGONAL_PATH_GRAPH_RESTRICTIONS.md) |
 | C20-M06-L04-B01-T01 | `LLLLSS` | OPEN |
 | C20-M06-L04-B02-T01 | `LLLSLS` | OPEN |
 | C20-M06-L04-B02-T02 | `LLLSLD` | OPEN |
@@ -298,4 +298,4 @@ The independent enumerations and Burnside count in [check_cycle_cases.py](check_
 | C20-M10-L07-B07-T05 | `LLLDLLSLLD` | [HAND CLOSED](RADIAL_ORDER_CYCLE_BUDGET.md) |
 | C20-M10-L07-B07-T06 | `LLLDLLDLLD` | [HAND CLOSED](RADIAL_ORDER_CYCLE_BUDGET.md) |
 
-Update the ledger only after a proof covers every physical realization of the entry. A conditional core lemma or an infeasible numerical sample does not close an entry.
+Update the ledger only after a proof covers every realization of the entry under the ledger's selected-certificate conventions. A conditional core lemma or an infeasible numerical sample does not close an entry.

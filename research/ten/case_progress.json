@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "scope": "Strictly subcritical n=10 lower bound; first choose generic strict/nonradial, diagonal-avoiding physical stress with the reviewed finite concurrence-polynomial exclusions at a minimizer, then classify a nonzero positive component.",
+  "scope": "Strictly subcritical n=10 lower bound; choose the jointly generic planar physical stress, including the reviewed loaded-ring polynomial and open-interval normal restrictions, before classifying a nonzero positive component.",
   "statuses": {
     "hand": "closed by reviewed hand deduction, with cited imported dependencies",
     "computer": "closed by reviewed computer-assisted theorem; hand replacement open",
@@ -76,15 +76,15 @@
       "id": "C04",
       "status": "open",
       "title": "Other seven-loaded-ring contact ownership",
-      "scope": "Every surviving ring has a unique-circle row U4/U5/U8/U9 or a VV pair. For joint generic normals, each unique-circle endpoint of VV has its other pair on an SS segment with aggregate point in its interior. Other inner-face and radial-side cases are excluded when no VV pair is present.",
-      "evidence": "SEVEN_RING_OWNERSHIP_ALPHABET.md"
+      "scope": "The selected loaded ring must contain a unique-circle outer-edge/opposite-corner row U4 or U5. All other unique-circle rows, arbitrary radial-side bodies, and every pair-support type are covered by the extended capacity argument when U4/U5 are absent.",
+      "evidence": "SEVEN_RING_OUTER_EDGE_REDUCTION.md"
     },
     {
       "id": "C05",
       "status": "open",
       "title": "Mixed cyclic component whose whole graph is not a simple cycle",
-      "scope": "Includes branching cyclic blocks and bridges. When every retained vertex is loaded, a fixed 45,666-case catalog has 40,336 reviewed exclusions and 5,330 remaining. Unloaded retained branch vertices remain unclassified.",
-      "evidence": "BRANCHING_SS_BRIDGE_FILTER.md"
+      "scope": "Includes branching cyclic blocks and bridges. When every retained vertex is loaded, a fixed 45,666-case catalog has 42,532 reviewed exclusions and 3,134 remaining. Unloaded retained branch vertices still require classification.",
+      "evidence": "BRANCHING_SELECTED_GRAPH_FILTERS.md"
     },
     {
       "id": "C06",
@@ -188,8 +188,8 @@
       "id": "C20",
       "status": "open",
       "title": "Mixed simple cycles of lengths six through ten",
-      "scope": "At least three loaded bodies. Radial loaded order and cap angles exclude 234 fixed signatures; the SS/D six-cycle is also excluded for the generic certificate. Of 279 signatures, 235 are closed and 44 remain at lengths six through eight.",
-      "evidence": "SS_DIAGONAL_SIX_CYCLE_EXCLUSION.md"
+      "scope": "At least three loaded bodies. The cap budget and reviewed six-cycle exclusions close 238 of 279 fixed signatures. Forty-one remain: 11 at length six, 19 at seven, and 11 at eight.",
+      "evidence": "CYCLE_CASES.md"
     }
   ]
 }

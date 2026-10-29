@@ -202,6 +202,9 @@ The independent program prints counts and writes `(body_count,code)` rows;
 sorting its codes lexicographically reproduces each compact catalog.
 This is coverage validation, not Lean verification.
 
-Pursue geometric exclusions of the 7,717 retained b=0 records, and
+The counts in Sections 4--5 describe the original two-filter batch.
+The current [combined graph certificates](BRANCHING_SELECTED_GRAPH_FILTERS.md)
+exclude 42,532 of these same 45,666 fixed records, leaving 3,134.
+Pursue geometric exclusions of those remaining b=0 records, and
 classify the b>0 skeletons separately. None of
 these counts should be substituted for the main C05 family's status.

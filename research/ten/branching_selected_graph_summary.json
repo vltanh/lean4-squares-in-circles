@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "scope": "Fixed C05 b=0 catalog under jointly selected generic planar physical stress.",
+  "proof": "BRANCHING_SELECTED_GRAPH_FILTERS.md",
+  "initial_cases": 45666,
+  "previous_distinct_exclusions": 40336,
+  "planar_exclusions": 9349,
+  "planar_new_exclusions": 2071,
+  "after_planar_exclusions": 42407,
+  "d_forest_exclusions": 2814,
+  "d_forest_new_before_planar": 402,
+  "d_forest_new_after_planar": 125,
+  "distinct_exclusions": 42532,
+  "remaining_cases": 3134,
+  "by_loaded_count": [
+    {
+      "k": 3,
+      "total": 35,
+      "planar": 0,
+      "planar_new": 0,
+      "d_forest": 0,
+      "d_forest_new_after_planar": 0,
+      "union": 16,
+      "retained": 19
+    },
+    {
+      "k": 4,
+      "total": 1234,
+      "planar": 133,
+      "planar_new": 79,
+      "d_forest": 54,
+      "d_forest_new_after_planar": 7,
+      "union": 939,
+      "retained": 295
+    },
+    {
+      "k": 5,
+      "total": 10305,
+      "planar": 1899,
+      "planar_new": 700,
+      "d_forest": 885,
+      "d_forest_new_after_planar": 43,
+      "union": 9277,
+      "retained": 1028
+    },
+    {
+      "k": 6,
+      "total": 22407,
+      "planar": 5072,
+      "planar_new": 1026,
+      "d_forest": 1618,
+      "d_forest_new_after_planar": 63,
+      "union": 21096,
+      "retained": 1311
+    },
+    {
+      "k": 7,
+      "total": 11685,
+      "planar": 2245,
+      "planar_new": 266,
+      "d_forest": 257,
+      "d_forest_new_after_planar": 12,
+      "union": 11204,
+      "retained": 481
+    }
+  ]
+}

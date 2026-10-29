@@ -333,28 +333,36 @@ rules out U2 and U3 in any entirely loaded ring, regardless of the pair
 support types. These deductions prune the raw alphabet; they do not
 change its original 25-symbol coverage or the 34 coarse-scheme count.
 
-After these exclusions, the remaining ownership problem is covered by
-the following explicit families:
+The [all-pair inner-face capacity theorem](SEVEN_RING_ALL_INNER_FACE_CAPACITY.md)
+now also absorbs VV pair defects under a stronger certificate selection.
+Its additional normal choices are made before the positive graph is
+classified and are compatible with the preceding finite-polynomial
+exclusions. Consequently every remaining loaded ring of that certificate
+contains at least one unique-circle body U4,U5,U8 or U9. The subsequent
+[outer-edge reduction](SEVEN_RING_OUTER_EDGE_REDUCTION.md) also absorbs
+U8/U9: their opposite V contact equals their core corner and contributes
+only a degenerate triangle. Therefore U4 or U5 is necessary in every
+remaining loaded ring of this certificate.
 
-1. Proper `SV/VS` pair contacts with no sources or sinks, but with at least
-   one unique-circle outer-edge/opposite-corner row U4 or U5.
+A finite cover of the remaining ownership problem is therefore:
+
+1. Proper `SV/VS` pair contacts with no sources or sinks, and at least one
+   unique-circle outer-edge/opposite-corner row U4 or U5.
 2. Proper `SV/VS` pair contacts with `r=1,2,3`, represented by the
-   `6+20+6` source/sink run schemes above, and with at least one row
-   U4,U5,U8,U9 on a unique-circle body.
-3. At least one strict `VV` pair contact, with all other pair types retained
-   and constrained by (5)--(6), and with U2/U3 excluded. Under the stronger
-   [joint normal selection](LOADED_VV_GENERIC_RESTRICTION.md), every
-   unique-circle endpoint of that VV pair is U4,U5,U6,U7 and has its other
-   positive pair on a shared SS segment with aggregate application in
-   its relative interior. Radial endpoints retain their separate scope.
-4. No `VV` pair, but at least one `SS` pair contact, and at least one
-   unique-circle U4,U5,U8,U9 body. All endpoint and shared-segment cases
-   remain covered by this family; rings without such a body are excluded
-   by the shared-side capacity theorem.
+   `6+20+6` source/sink schemes above, and at least one unique-circle row
+   U4 or U5.
+3. At least one strict `VV` pair contact and at least one unique-circle
+   U4 or U5 body. Every unique-circle endpoint of a VV pair is U4--U7
+   and has its other positive pair on a shared SS segment with aggregate
+   application in its relative interior. Radial endpoints retain their
+   separate load-split scope.
+4. No `VV` pair, but at least one `SS` pair contact and at least one
+   unique-circle U4 or U5 body. Endpoint and shared-segment cases remain
+   included.
 
-These are necessary finite combinatorial families. They are not yet
-excluded, and the local alphabet by itself supplies neither feasible
-geometric realizations nor proofs of impossibility. The 34 schemes are
-a coarse cover, so excluding some geometric realizations of a scheme
-does not mark that entire scheme closed. No closed-scheme percentage is
-inferred from the two local exclusions.
+The incidence identity and turn budget still apply, and U2/U3 are excluded
+throughout. Radial bodies and changes of pair ownership alone no longer
+leave an open inner-capacity case in this selected certificate. The two
+outer-edge mixed rows U4/U5 retain their continuous geometry and are not
+yet excluded. The 34 original schemes remain a coarse cover, so a scheme with
+some excluded realizations is not counted as wholly closed.

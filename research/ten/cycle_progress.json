@@ -940,6 +940,18 @@
     "C20-M06-L03-B01-T02": {
       "status": "hand",
       "evidence": "SS_DIAGONAL_SIX_CYCLE_EXCLUSION.md"
+    },
+    "C20-M06-L03-B01-T01": {
+      "status": "hand",
+      "evidence": "SS_SIDE_SIX_CYCLE_EXCLUSION.md"
+    },
+    "C20-M06-L03-B02-T04": {
+      "status": "hand",
+      "evidence": "DIAGONAL_PATH_GRAPH_RESTRICTIONS.md"
+    },
+    "C20-M06-L03-B02-T03": {
+      "status": "hand",
+      "evidence": "TWO_DIAGONAL_ONE_SIDE_SIX_CYCLE_EXCLUSION.md"
     }
   }
 }

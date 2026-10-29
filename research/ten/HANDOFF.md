@@ -40,16 +40,28 @@ The equality classification remains open outside the completed classes.
 Research resumed from handoff commit `fb91a0517a0eedf192e11759f9bdec2a60ab46af`.
 The unrestricted proof is still open. The main case ledger has **18 reviewed
 hand closures and 3 open
-families out of 21**; the larger-cycle subledger has **235 reviewed hand
-closures and 44 open cases out of 279**. Main gates remain **3/7 closed**.
+families out of 21**; the larger-cycle subledger has **238 reviewed hand
+closures and 41 open cases out of 279**. Main gates remain **3/7 closed**.
 The closed counts do not measure the fraction of mathematical effort.
 
 Latest completed work:
 
+- C20: the [SS/S six-cycle](SS_SIDE_SIX_CYCLE_EXCLUSION.md),
+  [all-D cycle](DIAGONAL_PATH_GRAPH_RESTRICTIONS.md), and
+  [two-D/one-S six-cycle](TWO_DIAGONAL_ONE_SIDE_SIX_CYCLE_EXCLUSION.md)
+  are now hand closed. Together with the earlier SS/D result, the current
+  total is 238/279.
+- C04: the [all-inner-face theorem](SEVEN_RING_ALL_INNER_FACE_CAPACITY.md)
+  and [outer-edge reduction](SEVEN_RING_OUTER_EDGE_REDUCTION.md) cover VV
+  pairs and U8/U9. Every surviving selected ring must contain U4 or U5.
+- C05: [planar stress selection](PLANAR_SELECTED_PHYSICAL_STRESS.md)
+  and the [D-path forest theorem](DIAGONAL_PATH_GRAPH_RESTRICTIONS.md)
+  add 2,196 exclusions to the preceding 40,336-case union. The resulting
+  42,532/45,666 count retains exact independently checked certificates.
 - C20: the complete [SS/D six-cycle exclusion](SS_DIAGONAL_SIX_CYCLE_EXCLUSION.md)
   closes `C20-M06-L03-B01-T02` (`LLDLSS`). Width-two versions of the
   parallel, common-vertex, distinct-vertex, incident-support, and radial
-  cases are all checked. The companion `LLSLSS` remains open here.
+  cases are all checked. The companion `LLSLSS` is now closed by the separate radial-side argument.
 - C04: the [shared-side capacity theorem](SEVEN_RING_SHARED_SIDE_CAPACITY.md)
   extends the good-row/radial-body argument to SS pair contacts whenever
   no VV pair occurs. The [joint generic restriction](LOADED_VV_GENERIC_RESTRICTION.md)
@@ -67,8 +79,8 @@ Latest completed work:
 - C05: the [loaded-branch catalog](BRANCHING_LOADED_SKELETON_INVENTORY.md)
   has 45,666 stable records modulo circular rotations and reflection.
   Independent Python and C++ enumerators agree on every record. The
-  [combined angle and bridge certificates](BRANCHING_SS_BRIDGE_FILTER.md)
-  exclude 40,336 and leave 5,330. Every angular witness is a sum of at most
+  [combined exact graph certificates](BRANCHING_SELECTED_GRAPH_FILTERS.md)
+  exclude 42,532 and leave 3,134. Every angular witness is a sum of at most
   seven strict integer inequalities; every bridge witness is a graph cut.
   This is only `b=0`, where all retained branching vertices are loaded.
   The `b>0` subclass remains outside the catalog and C05 remains open.
@@ -114,9 +126,9 @@ Latest completed work:
 
 | Open family | Concrete next work |
 | --- | --- |
-| C04: other seven-ring ownership | Proper-contact survivors require a unique-circle U4/U5/U8/U9. Side/side and vertex/vertex pair defects remain separate; radial bodies are covered in the proper-contact capacity theorem. |
-| C05: branching mixed components | Exclude the 5,330 remaining loaded-branch catalog records and classify components with unloaded retained branching vertices. Do not assume body-pair planarity. |
-| C20: 44 larger-cycle entries | Improve the angular/contact bounds or prove completion capacity for 14 length-six, 19 length-seven, and 11 length-eight signatures. Every remaining ID is explicit in CYCLE_CASES.md. |
+| C04: other seven-ring ownership | Every selected surviving ring contains a unique-circle outer-edge/opposite-corner row U4 or U5. Their exclusion or a capacity extension remains open. |
+| C05: branching mixed components | Exclude the 3,134 remaining loaded-branch catalog records and classify components with unloaded retained branching vertices. Apply planarity only to the jointly selected certificate. |
+| C20: 41 larger-cycle entries | Improve the angular/contact bounds or prove completion capacity for 11 length-six, 19 length-seven, and 11 length-eight signatures. Every remaining ID is explicit in CYCLE_CASES.md. |
 
 The former D-D crossing lead is now a reviewed theorem. A crossing
 forces a lower loaded square's other contact to the opposite end of its
@@ -128,8 +140,8 @@ to branching components without that hypothesis.
 The [ownership alphabet](SEVEN_RING_OWNERSHIP_ALPHABET.md) now has two
 full integrated reviews, including its radial-side tables, coarse schemes,
 and strict side-endpoint reduction for pure chirality. It gives 25 local
-candidates and four explicit remaining ownership families; it does not
-exclude those families. The
+candidates; the current capacity reductions require U4 or U5 in every
+surviving selected ring. Neither row has yet been excluded. The
 [branching skeleton](BRANCHING_COMPONENT_SKELETON_DRAFT.md) also passed two
 full mathematical reviews of its suppression, degree, bundle, and effective
 contact reductions. Both remain necessary classifications, not global
