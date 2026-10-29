@@ -1,7 +1,8 @@
 # A finite support-feature alphabet for loaded seven-rings
 
 **Status:** hand classification of necessary local candidates; independent
-review pending. This is not a realization theorem and does not exclude all
+full mathematical review passed on 2026-10-29, including the side-endpoint
+check in Section 6. This is not a realization theorem and does not exclude all
 candidate words. It makes the remaining contact-ownership problem finite
 at the combinatorial level while retaining its continuous geometric data.
 
@@ -275,8 +276,46 @@ alphabet and the turn budget (5).
 ## 6. Which words are already excluded, and what remains
 
 In the pure incoming-`V` word, if every body has a unique circle vertex
-and row U7 (`B→L`), this is exactly the fixed one-chirality pattern already
-excluded by the
+and row U7 (`B→L`), the support-edge application points are in fact
+strict side-interior points. This needs a separate endpoint check because
+the definition of `S` above deliberately allows edge endpoints.
+
+Rotate each local frame to the notation of
+[SEVEN_RING_ONE_CHIRALITY.md](SEVEN_RING_ONE_CHIRALITY.md). Then
+
+```text
+p_(i-1)=w_i-u_i,
+p_i=w_i-lambda_i u_i+v_i,       0<=lambda_i<=1.
+```
+
+The force-turn table gives `0<delta_i<pi/2`. The force and torque
+calculation in that note, which does not require strictness of lambda,
+gives `lambda_i mu_i=mu_(i-1)cos(delta_i)>0`. Thus `lambda_i>0`.
+
+Suppose `lambda_i=1`. At this contact use the first body's frame and write
+
+```text
+P=A_i=(a,-H),       w_i=(a+1,-H-1),
+c=cos(delta_(i+1)), s=sin(delta_(i+1)),       c,s>0,
+w_(i+1)=P+(c,s).
+```
+
+The first body's unique-farthest-vertex sign gives `H>-1/2`.
+The next body's corresponding sign is
+`Z:=a*s+H*c>1/2`. Equal squared norms of the two circle vertices give
+
+```text
+a(1-c)+H(1+s)=-1/2.
+```
+
+Using `c^2+s^2=1` and `s>0`, this identity implies
+
+```text
+Z-1/2 = -[(1+s+c)/s]*(H+1/2)<0,
+```
+
+contradicting `Z>1/2`. Therefore `lambda_i<1` as well. All contacts
+indeed satisfy the strict pattern, which is already excluded by the
 [hand cap proof](SEVEN_RING_RADIAL_CAP_BOUND.md).
 Its reflection and reversal is the pure incoming-`S` word with row U6
 (`D→C`) everywhere, and is excluded by the same theorem.

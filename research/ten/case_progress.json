@@ -188,8 +188,8 @@
       "id": "C20",
       "status": "open",
       "title": "Mixed simple cycles of lengths six through ten",
-      "scope": "At least three loaded bodies; finite cyclic load words with S/D transmission decorations.",
-      "evidence": "CYCLIC_STRESS_REDUCTIONS.md"
+      "scope": "At least three loaded bodies. Radial loaded order is proved; 206 of 279 fixed signatures are excluded, including every length-ten case. Seventy-three signatures remain.",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
     }
   ]
 }

@@ -1,9 +1,10 @@
 # Draft finite skeleton for mixed branching positive components
 
-**Status: DRAFT handoff, independent audit pending.** This note records a
-proposed finite overclassification of C05. It does not exclude C05, count
-its cases, or change a roadmap status. The degree and parallel-multiplicity
-arguments below have not yet received another agent's independent review.
+**Status: independently reviewed necessary skeleton reductions.** The
+suppression, degree, bundle, and effective-contact arguments in Sections 1–4
+received an independent mathematical audit on 2026-10-29. They give a finite
+overclassification of C05; they do not exclude C05 or change its roadmap
+status. No Lean verification is claimed.
 
 Work with the selected physical positive-stress certificate of a hypothetical
 strictly subcritical ten-square packing in `79/40<=R<3/sqrt(2)`. A loaded
@@ -54,9 +55,9 @@ is its center and w a circle vertex, then
 In particular the still-open branching family includes k=2; the reviewed
 two-terminal theorem must not be applied to arbitrary branching graphs.
 
-## 2. Proposed universal body degree bound: eight
+## 2. Universal body degree bound: eight
 
-**Pending independent audit.** Fix a body center c. Every touching body's
+Fix a body center c. Every touching body's
 center differs from c by a vector of length in `[1,sqrt(2)]`: the lower
 bound follows from disjoint open inscribed half-unit disks, and the upper
 bound from a shared point and the two circumradii.
@@ -75,9 +76,9 @@ corner values of this rectangle. Those values are strictly below
 Hence every original positive body degree, and every retained multigraph
 degree, is at most eight.
 
-## 3. Proposed parallel-bundle bounds
+## 3. Parallel-bundle bounds
 
-**Pending independent audit.** For a D bundle, all its single diagonal
+For a D bundle, all its single diagonal
 transmitters have the same orientation. The contacts on either endpoint
 support face vary only in the transverse direction and by at most one,
 since a square's support face is a vertex or a unit side. Thus their
@@ -114,7 +115,7 @@ The same argument applies at the other endpoint and to the first column
 of an SS bundle. A double S or double SS bundle therefore has side support
 at both endpoints, fixing their frames parallel to the transmitters.
 
-Combining these proposed bounds with Section 1 gives the finite per-pair
+Combining these bounds with Section 1 gives the finite per-pair
 alphabet
 
 ```text
@@ -126,7 +127,7 @@ two parallel one-body paths; SS means one two-body path. Those must not be
 confused. This is an overclassification, with continuous geometric and
 force parameters still attached to every retained record.
 
-## 4. Further proposed local reduction, not yet promoted
+## 4. An unloaded branch with two distinct retained neighbors
 
 Suppose an unloaded retained vertex H has exactly two distinct skeleton
 neighbors, even though its multigraph degree is at least three. Aggregate
@@ -141,11 +142,27 @@ projection bound `1+W<25/8`. Hence one bundle is direct. The other must
 have multiplicity at least two, so the proposed bounds in Section 3 leave
 a double S or double SS bundle. Double SS would again give width at least
 three. A D frame for H together with double S would give width
-`1+sqrt(2)>17/8`. The proposed only remaining pattern is therefore one
+`1+sqrt(2)>17/8`. The only remaining pattern is therefore one
 direct edge and one double-S bundle, with H itself an effective S body.
 
-This paragraph needs particular review of the effective-contact
-aggregation and the projection bound before use in an enumeration.
+Here is the effective-point justification for that projection argument.
+For a bundle of paths between H and J, give each path its common positive
+force magnitude as weight. Its two endpoint application points differ by
+`W d`, with the same W and d for the entire bundle. Taking the same
+weighted averages on H and J preserves that identity and keeps both
+averages on the corresponding convex support faces. For a direct edge,
+use its original application point and W=0.
+
+On H the two aggregate forces are opposite and equal, and their total
+torque vanishes. Thus their two effective points differ by `w_H d`, where
+`w_H` is 1 or sqrt(2), by the usual two-force square argument. The two
+outer effective points consequently differ by
+`(W_1+w_H+W_2)d`. The outer endpoint squares lie on opposite sides of the
+support lines through those points. Their center projections differ by
+at least `1+W_1+w_H+W_2`. Both centers have norm below `25/16`, so this
+quantity is strictly less than `25/8`, exactly the bound used above.
+The effective points are used only to deduce this necessary geometry;
+no replacement physical stress or movement of a body is asserted.
 
 ## 5. Next work and exact stopping boundary
 
@@ -158,7 +175,7 @@ and its width-two dependency. These give further necessary rejection
 tests for a future finite generator. The k=2, b=0 subclass is already
 excluded by the reviewed two-terminal theorem.
 
-Required next steps are independent audit of Sections 2--4, an exact
+Required next steps are an exact
 canonical finite generator with body-budget and cut checks, and geometric
 exclusions for the retained skeletons. There is presently no claimed
 number of C05 cases and no claimed C05 closure.

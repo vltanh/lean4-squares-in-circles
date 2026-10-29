@@ -40,8 +40,8 @@ The equality classification remains open outside the completed classes.
 Research resumed from handoff commit `fb91a0517a0eedf192e11759f9bdec2a60ab46af`.
 The unrestricted proof is still open. The main case ledger has **17 reviewed
 hand closures and 4 open
-families out of 21**; the larger-cycle subledger has **118 reviewed hand
-closures and 161 open cases out of 279**. Main gates remain **3/7 closed**.
+families out of 21**; the larger-cycle subledger has **206 reviewed hand
+closures and 73 open cases out of 279**. Main gates remain **3/7 closed**.
 The closed counts do not measure the fraction of mathematical effort.
 
 Latest completed work:
@@ -53,35 +53,37 @@ Latest completed work:
   excluded. The saved S-S candidate passed both integrated reviews;
   [SIDE_SIDE_EXCLUSION.md](SIDE_SIDE_EXCLUSION.md) is the complete proof.
   Every three-loaded five-cycle is now excluded.
-- C20: [single-side uncrossing](SINGLE_SIDE_TRANSMISSION_UNCROSSING.md)
-  proves radial loaded order whenever at most one D transmitter occurs.
-  Its [117-case selection](single_side_cycle_batch.json) overlaps 27 earlier
-  exclusions and adds 90; the separate seven-loaded D-D case makes 118.
+- C20: [complete uncrossing](DIAGONAL_PATH_UNCROSSING.md) proves radial
+  loaded order for every whole mixed simple cycle, including multiple D
+  paths. The [206-case angular budget](RADIAL_ORDER_CYCLE_BUDGET.md)
+  closes all length-ten signatures and leaves 73 shorter signatures.
 - C19: the diagonal transmitter is wholly within squared radius `3/2` and
   occupies more than `5pi/6` on the radius-`3/8` circle. At most one other
   square can be wholly inside the test disk. This is a restriction only.
 
 | Open family | Concrete next work |
 | --- | --- |
-| C04: other seven-ring ownership | Audit the 25-candidate ownership alphabet and its 34 coarse proper-contact schemes. Combine the reviewed side-support and opposite-vertex corner bounds where the spike geometry applies. Opposite-corner, radial-side, and pair-contact degeneracies still require treatment. |
-| C05: branching mixed components | Audit the proposed suppressed skeleton and then enumerate or exclude its remaining graphs. Do not assume the body-pair graph is planar. |
+| C04: other seven-ring ownership | Use the reviewed 25-candidate ownership alphabet and its 34 coarse proper-contact schemes. Combine the reviewed side-support and opposite-vertex corner bounds where the spike geometry applies. Opposite-corner, radial-side, and pair-contact degeneracies still require treatment. |
+| C05: branching mixed components | Enumerate or exclude the remaining graphs in the reviewed suppressed skeleton. Do not assume the body-pair graph is planar. |
 | C19: four-loaded diagonal five-cycle | Turn its origin-containing transmitter and forced protrusions into a capacity bound, or exclude the component. |
-| C20: 161 larger-cycle entries | Resolve cases with two or more D paths, and the shorter or all-S cases not excluded by the present angular budgets. Every remaining ID is explicit in CYCLE_CASES.md. |
+| C20: 73 larger-cycle entries | Improve the angular/contact bounds or prove completion capacity for 15 length-six, 23 length-seven, 28 length-eight, and seven all-S length-nine signatures. Every remaining ID is explicit in CYCLE_CASES.md. |
 
-One useful **unproved** C20 lead is now precise: a crossing between two
-single-D transmission paths forces a solid block centered at `(0,v)`,
-`-7/8<v<-7/10`, with two loaded lower squares and two diagonal upper
-transmitters. Their other loaded endpoint contacts are `(+-1,v+1)`.
-The loaded lower squares' force/torque equations might exclude this
-junction, but no such exclusion has been established.
+The former D-D crossing lead is now a reviewed theorem. A crossing
+forces a lower loaded square's other contact to the opposite end of its
+top side; its neighbor is then a fixed northwest unit square with a vertex
+outside the containing circle by squared-radius excess `2(1+v)>0`.
+This proof uses degree two at the loaded endpoint and must not be applied
+to branching components without that hypothesis.
 
-The [ownership alphabet](SEVEN_RING_OWNERSHIP_ALPHABET.md) is retained as
-a **review-pending draft**. Independent review covered its first two
-sections only; do not use its later classification tables as settled
-premises. The [branching skeleton draft](BRANCHING_COMPONENT_SKELETON_DRAFT.md)
-records the proposed seven-valued edge alphabet, degree bound, parallel
-bundle restrictions, and cut constraints; its new arguments need an
-independent audit before enumeration or use as premises.
+The [ownership alphabet](SEVEN_RING_OWNERSHIP_ALPHABET.md) now has two
+full integrated reviews, including its radial-side tables, coarse schemes,
+and strict side-endpoint reduction for pure chirality. It gives 25 local
+candidates and four explicit remaining ownership families; it does not
+exclude those families. The
+[branching skeleton](BRANCHING_COMPONENT_SKELETON_DRAFT.md) also passed two
+full mathematical reviews of its suppression, degree, bundle, and effective
+contact reductions. Both remain necessary classifications, not global
+exclusion theorems.
 The [opposite-vertex restriction](LOADED_DIAGONAL_VERTEX_RESTRICTION.md)
 has two completed independent reviews: its opposite corner has squared
 norm below `49/64`; the double-side bound is `53/64`. Their combination

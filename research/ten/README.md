@@ -63,7 +63,8 @@ the known bound, not a lower-bound proof.
 | The entire three-loaded five-cycle is impossible | [Final S-S exclusion](SIDE_SIDE_EXCLUSION.md), [complete case index](MIXED_FIVE_CYCLE_STATUS.md) | Reviewed hand closure of all ordered transmitter choices and both central circle-contact types |
 | The unique-circle S-D three-loaded five-cycle is impossible | [S-D exclusion](SIDE_DIAGONAL_EXCLUSION.md) | Reviewed hand closure by torque and elementary analytic clearance; no finite interval table |
 | A four-loaded diagonal five-cycle permits at most one other square wholly inside the test disk | [Inner trace restriction](DIAGONAL_FIVE_CYCLE_INNER_TRACE.md) | Reviewed hand restriction; C19 remains open |
-| With at most one diagonal transmitter, a mixed simple cycle follows loaded radial order | [Single-side uncrossing](SINGLE_SIDE_TRANSMISSION_UNCROSSING.md), [117-case batch](single_side_cycle_batch.json) | Reviewed hand theorem; 90 new closures, bringing the larger-cycle total to 118 |
+| Every whole mixed simple cycle follows loaded radial order | [D-D uncrossing](DIAGONAL_PATH_UNCROSSING.md), [206-case budget](RADIAL_ORDER_CYCLE_BUDGET.md) | Reviewed hand structural theorem and exclusions; all length-ten cases closed, 73 shorter signatures remain |
+| With at most one diagonal transmitter, a mixed simple cycle follows loaded radial order | [Single-side uncrossing](SINGLE_SIDE_TRANSMISSION_UNCROSSING.md), [117-case batch](single_side_cycle_batch.json) | Reviewed hand theorem; 90 closures in that batch; superseded in coverage by the 206-case theorem |
 | Two transmission runs sharing a loaded endpoint obey strict angular budgets | [Shared-endpoint cases](SHARED_ENDPOINT_CYCLE_ANGLE_BUDGET.md), [seven-loaded cases](SEVEN_LOADED_LONG_PATHS.md) | Reviewed hand closures of eleven further larger-cycle entries; [uncrossing](TRANSMISSION_PATH_UNCROSSING.md) closes thirteen more |
 | A radial-side central body cannot occur in the three-loaded five-cycle | [Full radial D-D exclusion](RADIAL_SIDE_DD_EXCLUSION.md) | Reviewed hand closure, together with the earlier S-S and S-D arguments |
 | Several mixed cyclic stress patterns are impossible | [Cyclic reductions](CYCLIC_STRESS_REDUCTIONS.md), [remaining five-cycle form](SIDE_NORMAL_MIXED_FIVE_CYCLE.md) | Conditional hand reductions; neither a complete graph classification nor a global exclusion |
@@ -106,7 +107,7 @@ certificates remain computational results with their own stated scope.
 **G3 lower-bound case ledger:** `█████████████████░░░░`
 **17 hand closed · 0 computer closed · 4 open / 21 terminal families.**
 
-**C20 larger-cycle subcases:** `██████████▏░░░░░░░░░░░░░` **118/279 closed; 161 open.**
+**C20 larger-cycle subcases:** `█████████████████▋░░░░░░` **206/279 closed; 73 open.**
 
 `█` reviewed hand deduction; `▓` reviewed computer-assisted result; `░` open. These are counts of the fixed ledger entries, **not a percentage of the proof or remaining effort**. Every currently closed family has a reviewed hand deduction; imported dependencies remain as stated in each proof.
 

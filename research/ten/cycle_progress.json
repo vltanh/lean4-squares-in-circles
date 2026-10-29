@@ -472,6 +472,358 @@
     "C20-M10-L07-B07-T03": {
       "status": "hand",
       "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M08-L04-B02-T04": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M08-L04-B03-T03": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M08-L04-B05-T03": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M08-L04-B05-T04": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M08-L04-B05-T05": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M08-L04-B05-T06": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M08-L05-B03-T06": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M08-L05-B04-T06": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M09-L04-B03-T04": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M09-L04-B03-T05": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M09-L04-B03-T06": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M09-L05-B02-T04": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M09-L05-B03-T03": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M09-L05-B05-T04": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M09-L05-B06-T03": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M09-L05-B07-T04": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M09-L05-B07-T05": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M09-L05-B07-T06": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M09-L05-B07-T07": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M09-L05-B07-T08": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M09-L05-B07-T09": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M09-L05-B07-T10": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M09-L06-B03-T04": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M09-L06-B03-T05": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M09-L06-B03-T06": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M09-L06-B05-T04": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M09-L06-B05-T06": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M09-L06-B05-T07": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M09-L06-B05-T08": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M09-L06-B06-T03": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M09-L06-B06-T04": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M09-L07-B03-T03": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M09-L07-B04-T03": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L04-B02-T03": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L04-B03-T03": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L05-B04-T04": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L05-B04-T06": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L05-B04-T07": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L05-B04-T08": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L05-B05-T04": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L05-B05-T06": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L05-B05-T07": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L05-B05-T08": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L05-B07-T03": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L05-B07-T04": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L05-B07-T05": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L05-B07-T06": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L05-B07-T07": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L05-B07-T08": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L06-B02-T04": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L06-B03-T03": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L06-B05-T04": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L06-B06-T04": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L06-B07-T04": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L06-B08-T04": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L06-B08-T05": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L06-B08-T06": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L06-B08-T07": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L06-B08-T08": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L06-B08-T09": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L06-B08-T10": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L06-B10-T03": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L06-B11-T04": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L06-B11-T05": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L06-B11-T06": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L06-B11-T08": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L06-B11-T09": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L06-B11-T10": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L06-B11-T11": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L06-B11-T12": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L06-B12-T03": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L06-B12-T04": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L06-B12-T05": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L06-B12-T06": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L06-B12-T07": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L07-B03-T04": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L07-B03-T05": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L07-B03-T06": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L07-B05-T04": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L07-B05-T06": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L07-B05-T07": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L07-B05-T08": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L07-B06-T03": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L07-B06-T05": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L07-B06-T06": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L07-B07-T04": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L07-B07-T05": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+    },
+    "C20-M10-L07-B07-T06": {
+      "status": "hand",
+      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
     }
   }
 }

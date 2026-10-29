@@ -11,7 +11,7 @@ lemma that does not close its family. All lower-bound cases below concern
 **G3 lower-bound case ledger:** `█████████████████░░░░`
 **17 hand closed · 0 computer closed · 4 open / 21 terminal families.**
 
-**C20 larger-cycle subcases:** `██████████▏░░░░░░░░░░░░░` **118/279 closed; 161 open.**
+**C20 larger-cycle subcases:** `█████████████████▋░░░░░░` **206/279 closed; 73 open.**
 
 `█` reviewed hand deduction; `▓` reviewed computer-assisted result; `░` open. These are counts of the fixed ledger entries, **not a percentage of the proof or remaining effort**. Every currently closed family has a reviewed hand deduction; imported dependencies remain as stated in each proof.
 
@@ -47,7 +47,7 @@ lemma that does not close its family. All lower-bound cases below concern
 | C17 | HAND CLOSED | **Remaining vertex/side pattern: D-S.** Same ordered convention; endpoint classification and a printed exact clearance table exclude both remaining circle-load patterns. [Proof / reduction](DIAGONAL_SIDE_EXCLUSION.md). |
 | C18 | HAND CLOSED | **Five-cycle with four loads: side transmitter.** Its only unloaded body is a degree-two side transmitter. [Proof / reduction](MIXED_FIVE_FOUR_LOADED.md). |
 | C19 | OPEN | **Five-cycle with four loads: diagonal transmitter.** The diagonal transmitter contains zero, lies wholly in squared radius 3/2, and permits at most one other square wholly inside the test disk; completion capacity remains open. [Proof / reduction](DIAGONAL_FIVE_CYCLE_INNER_TRACE.md). |
-| C20 | OPEN | **Mixed simple cycles of lengths six through ten.** At least three loaded bodies; finite cyclic load words with S/D transmission decorations. [Proof / reduction](CYCLIC_STRESS_REDUCTIONS.md). |
+| C20 | OPEN | **Mixed simple cycles of lengths six through ten.** At least three loaded bodies. Radial loaded order is proved; 206 of 279 fixed signatures are excluded, including every length-ten case. Seventy-three signatures remain. [Proof / reduction](RADIAL_ORDER_CYCLE_BUDGET.md). |
 <!-- CASE_PROGRESS_END -->
 
 ## How the case tree is exhaustive
@@ -164,8 +164,9 @@ vertices of degree two in the **whole positive graph**. The list has not
 been enumerated or reduced by graph isomorphism here; it is a finite,
 explicitly defined remaining family, not a closed classification theorem.
 The [new skeleton draft](BRANCHING_COMPONENT_SKELETON_DRAFT.md) proposes
-further degree and parallel-path restrictions, with its independent-audit
-gate still open; it does not yet reduce the recorded open count.
+further degree and parallel-path restrictions, now independently reviewed.
+These necessary restrictions do not yet close C05 or reduce its main
+open-family count.
 
 **C20 is already enumerated.** [CYCLE_CASES.md](CYCLE_CASES.md) lists all
 279 stable case IDs and their canonical words. Independent enumerations and
@@ -178,7 +179,12 @@ with [width-two path uncrossing](TRANSMISSION_PATH_UNCROSSING.md) extending
 them to separated runs. The
 [single-side uncrossing theorem](SINGLE_SIDE_TRANSMISSION_UNCROSSING.md)
 then forces radial loaded order when at most one diagonal occurs and
-excludes the [117-case batch](single_side_cycle_batch.json).
+excludes the [117-case batch](single_side_cycle_batch.json). The
+[D-D uncrossing theorem](DIAGONAL_PATH_UNCROSSING.md) now proves radial
+order for every whole mixed simple cycle. Its
+[206-case angular budget](RADIAL_ORDER_CYCLE_BUDGET.md) leaves exactly
+73 ledger entries open: 15 at length six, 23 at length seven, 28 at length
+eight, seven at length nine, and none at length ten.
 An entry is never claimed feasible or excluded merely because it appears
 in the list.
 
