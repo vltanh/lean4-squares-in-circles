@@ -35,6 +35,61 @@ five inner centers by an explicit finite-table argument. Thus a hypothetical
 smaller ten-packing must have **exactly three or four inner centers**.
 The equality classification remains open outside the completed classes.
 
+## Frozen handoff checkpoint
+
+Research is paused at the user's request. The unrestricted proof is still
+open. The main case ledger has **16 reviewed hand closures and 5 open
+families out of 21**; the larger-cycle subledger has **118 reviewed hand
+closures and 161 open cases out of 279**. Main gates remain **3/7 closed**.
+The closed counts do not measure the fraction of mathematical effort.
+
+Latest completed work:
+
+- C03: a hand cap proof excludes every physical ring in the fixed
+  one-chirality ownership pattern, independently of the earlier interval
+  action verifier.
+- C17 and C16: the unique-circle D-S and S-D five-cycles are excluded.
+  The remaining S-S branch requires side-interior contact at A.
+- C20: [single-side uncrossing](SINGLE_SIDE_TRANSMISSION_UNCROSSING.md)
+  proves radial loaded order whenever at most one D transmitter occurs.
+  Its [117-case selection](single_side_cycle_batch.json) overlaps 27 earlier
+  exclusions and adds 90; the separate seven-loaded D-D case makes 118.
+- C19: the diagonal transmitter is wholly within squared radius `3/2` and
+  occupies more than `5pi/6` on the radius-`3/8` circle. At most one other
+  square can be wholly inside the test disk. This is a restriction only.
+
+| Open family | Concrete next work |
+| --- | --- |
+| C04: other seven-ring ownership | Audit the 25-candidate ownership alphabet and its 34 coarse proper-contact schemes. Combine the reviewed side-support and opposite-vertex corner bounds where the spike geometry applies. Opposite-corner, radial-side, and pair-contact degeneracies still require treatment. |
+| C05: branching mixed components | Audit the proposed suppressed skeleton and then enumerate or exclude its remaining graphs. Do not assume the body-pair graph is planar. |
+| C15: S-S five-cycle | Audit [the side-interior candidate](SIDE_SIDE_SIDE_INTERIOR_HANDOFF.md) first. It has one helper review; integrated root and independent audit are still pending. Every vertex-supported A is already excluded. |
+| C19: four-loaded diagonal five-cycle | Turn its origin-containing transmitter and forced protrusions into a capacity bound, or exclude the component. |
+| C20: 161 larger-cycle entries | Resolve cases with two or more D paths, and the shorter or all-S cases not excluded by the present angular budgets. Every remaining ID is explicit in CYCLE_CASES.md. |
+
+One useful **unproved** C20 lead is now precise: a crossing between two
+single-D transmission paths forces a solid block centered at `(0,v)`,
+`-7/8<v<-7/10`, with two loaded lower squares and two diagonal upper
+transmitters. Their other loaded endpoint contacts are `(+-1,v+1)`.
+The loaded lower squares' force/torque equations might exclude this
+junction, but no such exclusion has been established.
+
+The [ownership alphabet](SEVEN_RING_OWNERSHIP_ALPHABET.md) is retained as
+a **review-pending draft**. Independent review covered its first two
+sections only; do not use its later classification tables as settled
+premises. The [branching skeleton draft](BRANCHING_COMPONENT_SKELETON_DRAFT.md)
+records the proposed seven-valued edge alphabet, degree bound, parallel
+bundle restrictions, and cut constraints; its new arguments need an
+independent audit before enumeration or use as premises.
+The [opposite-vertex restriction](LOADED_DIAGONAL_VERTEX_RESTRICTION.md)
+has two completed independent reviews: its opposite corner has squared
+norm below `49/64`; the double-side bound is `53/64`. Their combination
+is a local tool, not a general ring exclusion.
+The [S-S side-interior candidate](SIDE_SIDE_SIDE_INTERIOR_HANDOFF.md)
+was saved just before the pause. It contains a full proposed analytic
+clearance argument and one helper review, but lacks the integrated reviews
+required for promotion. **C15 remains open** in every progress count.
+No new n=10 Lean theorem or kernel check was attempted.
+
 ## Resumed checkpoint
 
 Work resumed from commit `9b90c5e` on 2026-10-29. Both pending two-row

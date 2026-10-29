@@ -112,6 +112,366 @@
     "C20-M10-L07-B04-T02": {
       "status": "hand",
       "evidence": "TRANSMISSION_PATH_UNCROSSING.md"
+    },
+    "C20-M08-L04-B02-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M08-L04-B02-T03": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M08-L04-B03-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M09-L04-B01-T01": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M09-L04-B01-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M09-L04-B02-T01": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M09-L04-B02-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M09-L04-B03-T01": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M09-L04-B03-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M09-L04-B03-T03": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M09-L05-B02-T01": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M09-L05-B02-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M09-L05-B02-T03": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M09-L05-B03-T01": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M09-L05-B03-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M09-L05-B05-T01": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M09-L05-B05-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M09-L05-B05-T03": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M09-L05-B06-T01": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M09-L05-B06-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M09-L05-B07-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M09-L05-B07-T03": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M09-L06-B03-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M09-L06-B03-T03": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M09-L06-B05-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M09-L06-B05-T03": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M09-L06-B05-T05": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M09-L06-B06-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M09-L07-B03-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M09-L07-B04-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L04-B02-T01": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L04-B02-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L04-B03-T01": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L04-B03-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L05-B01-T01": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L05-B01-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L05-B02-T01": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L05-B02-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L05-B03-T01": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L05-B03-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L05-B04-T01": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L05-B04-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L05-B04-T03": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L05-B04-T05": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L05-B05-T01": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L05-B05-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L05-B05-T03": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L05-B05-T05": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L05-B06-T01": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L05-B06-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L05-B07-T01": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L05-B07-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L06-B02-T01": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L06-B02-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L06-B02-T03": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L06-B03-T01": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L06-B03-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L06-B05-T01": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L06-B05-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L06-B05-T03": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L06-B06-T01": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L06-B06-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L06-B06-T03": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L06-B07-T01": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L06-B07-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L06-B07-T03": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L06-B08-T01": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L06-B08-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L06-B08-T03": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L06-B10-T01": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L06-B10-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L06-B11-T01": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L06-B11-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L06-B11-T03": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L06-B11-T07": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L06-B12-T01": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L06-B12-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L07-B03-T01": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L07-B03-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L07-B03-T03": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L07-B05-T01": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L07-B05-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L07-B05-T03": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L07-B05-T05": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L07-B06-T01": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L07-B06-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L07-B06-T04": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L07-B07-T01": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L07-B07-T02": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
+    },
+    "C20-M10-L07-B07-T03": {
+      "status": "hand",
+      "evidence": "SINGLE_SIDE_TRANSMISSION_UNCROSSING.md"
     }
   }
 }

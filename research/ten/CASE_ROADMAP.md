@@ -11,7 +11,7 @@ lemma that does not close its family. All lower-bound cases below concern
 **G3 lower-bound case ledger:** `████████████████░░░░░`
 **16 hand closed · 0 computer closed · 5 open / 21 terminal families.**
 
-**C20 larger-cycle subcases:** `██▍░░░░░░░░░░░░░░░░░░░░░` **28/279 closed; 251 open.**
+**C20 larger-cycle subcases:** `██████████▏░░░░░░░░░░░░░` **118/279 closed; 161 open.**
 
 `█` reviewed hand deduction; `▓` reviewed computer-assisted result; `░` open. These are counts of the fixed ledger entries, **not a percentage of the proof or remaining effort**. Every currently closed family has a reviewed hand deduction; imported dependencies remain as stated in each proof.
 
@@ -130,7 +130,7 @@ stated in the linked proof:
 | --- | --- |
 | C04: other loaded-ring ownership | Classify and exclude the remaining contact patterns, or prove one capacity theorem covering all of them. The strict one-chirality theorem does not cover mixed ownership, vertex/vertex contacts, or its boundary cases. |
 | C05: branching mixed components | Classify or exclude the connected cyclic graphs that are not whole simple cycles, including bridge attachments and exactly two loaded bodies. |
-| C15: unique-circle S-S five-cycle | Exclude the remaining exact vertex/side core, or prove its completion has capacity at most nine. |
+| C15: unique-circle S-S five-cycle | Audit the [saved side-interior candidate](SIDE_SIDE_SIDE_INTERIOR_HANDOFF.md); it is not yet promoted. Otherwise exclude that remaining core or prove capacity at most nine. |
 | C19: four-loaded five-cycle with D | Exclude this component or its ten-square completion. |
 | C20: larger mixed simple cycles | Exclude the [279 enumerated graph/transmitter cases](CYCLE_CASES.md), refining physical contact ownership where needed. |
 
@@ -164,6 +164,9 @@ blocks joined by bridges. The degree-two S/D reduction applies only to
 vertices of degree two in the **whole positive graph**. The list has not
 been enumerated or reduced by graph isomorphism here; it is a finite,
 explicitly defined remaining family, not a closed classification theorem.
+The [new skeleton draft](BRANCHING_COMPONENT_SKELETON_DRAFT.md) proposes
+further degree and parallel-path restrictions, with its independent-audit
+gate still open; it does not yet reduce the recorded open count.
 
 **C20 is already enumerated.** [CYCLE_CASES.md](CYCLE_CASES.md) lists all
 279 stable case IDs and their canonical words. Independent enumerations and
@@ -173,7 +176,10 @@ proof link for every exclusion. The latest exclusions use
 [seven-loaded path adjacency](SEVEN_LOADED_LONG_PATHS.md) and
 [shared-endpoint angular budgets](SHARED_ENDPOINT_CYCLE_ANGLE_BUDGET.md),
 with [width-two path uncrossing](TRANSMISSION_PATH_UNCROSSING.md) extending
-them to separated runs.
+them to separated runs. The
+[single-side uncrossing theorem](SINGLE_SIDE_TRANSMISSION_UNCROSSING.md)
+then forces radial loaded order when at most one diagonal occurs and
+excludes the [117-case batch](single_side_cycle_batch.json).
 An entry is never claimed feasible or excluded merely because it appears
 in the list.
 

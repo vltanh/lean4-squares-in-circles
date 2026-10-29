@@ -1,0 +1,302 @@
+# A finite support-feature alphabet for loaded seven-rings
+
+**Status:** hand classification of necessary local candidates; independent
+review pending. This is not a realization theorem and does not exclude all
+candidate words. It makes the remaining contact-ownership problem finite
+at the combinatorial level while retaining its continuous geometric data.
+
+Use the entirely loaded physical seven-ring from
+[ALL_LOADED_COMPONENT_RINGS.md](ALL_LOADED_COMPONENT_RINGS.md). Keep the
+original nonzero pair forces `f_i`, actual contact points `p_i`, and positive
+circle loads. The reviewed
+[force-origin theorem](SEVEN_RING_FORCE_ORIGIN.md) gives strictly increasing
+force-ray angles with
+
+```text
+0<delta_i=arg(f_i)-arg(f_(i-1))<pi,
+sum_i delta_i=2pi.                                      (1)
+```
+
+On body `i`, the incoming actual force is `f_(i-1)` and the outgoing
+actual force is `-f_i`. Their sum is its outward circle-load resultant
+`g_i`. Incoming and outgoing below always use this fixed cyclic order.
+
+## 1. Support features retain boundary contacts correctly
+
+For each applied pair force, use its inward supporting normal on the body.
+A square's exposed support feature is exactly one of:
+
+* `S`: a whole edge, when the normal is perpendicular to that edge;
+* `V`: a single vertex, when the normal is strictly inside that vertex's
+  inward normal cone.
+
+The application point for an `S` incidence may be an endpoint of its
+support edge. Thus a geometric corner contact is not automatically a `V`
+incidence. This convention retains force-normal boundary cases without
+perturbing the stress or changing any application point.
+
+The two application points on one ring body are distinct. Otherwise its
+two ring neighbors would touch at that same point; they are nonneighbors
+of one another, contrary to the loaded-ring separation theorem. Also no
+application point is a point of the containing circle: two packed squares
+cannot share such a point, as proved in Section 1 of
+[SEVEN_RING_INTERNAL_CONCURRENCE.md](SEVEN_RING_INTERNAL_CONCURRENCE.md).
+
+Every pair contact has one of the four ordered support types
+
+```text
+SS, SV, VS, VV.                                        (2)
+```
+
+An `SS` pair has parallel supporting edges, with either segment overlap or
+endpoint intersection. `SV` and `VS` pairs have a vertex on a supporting
+edge. A `VV` pair has two strictly exposed vertices at its contact point.
+These are support-feature statements, not generic-position assumptions.
+
+## 2. Ten candidates when the circle vertex is unique
+
+Choose a positively oriented square frame and local unit-square labels so
+that its unique circle vertex is `W=(1,1)`. Its physical coordinates relative
+to the disk center are `(X,Y)` with `X,Y>1/2`. Normalize the total circle
+load to one, so `g=(X,Y)` has both coordinates strictly positive.
+
+Label the other vertices and the edges as follows:
+
+```text
+A=(0,0): opposite corner,    B=(1,0),    C=(0,1),
+L: left edge, D: bottom edge, R: right edge, T: top edge.
+```
+
+Here the coordinates in these labels specify locations within the unit
+square; its physical opposite corner is `(X-1,Y-1)`.
+The inward directions for `L,D,R,T` are respectively
+`(+1,0),(0,+1),(-1,0),(0,-1)`. The strict inward cones at `A,B,C` are
+respectively `(+,+),(-,+),(+,-)`. The circle vertex `W` cannot be used.
+
+Every body is in the following table. An arrow means its incoming support
+feature followed by its outgoing support feature.
+
+| Candidate | Incoming → outgoing | Force turn | Additional necessary coordinate restriction |
+|---|---|---|---|
+| U1 | `D → L` | `delta=pi/2` | — |
+| U2 | `D → A` | `pi/2<delta<pi` | `X<1<Y` |
+| U3 | `A → L` | `pi/2<delta<pi` | `Y<1<X` |
+| U4 | `R → A` | `0<delta<pi/2` | `X<1<Y` |
+| U5 | `A → T` | `0<delta<pi/2` | `Y<1<X` |
+| U6 | `D → C` | `0<delta<pi/2` | — |
+| U7 | `B → L` | `0<delta<pi/2` | — |
+| U8 | `B → A` | `0<delta<pi` | `X<1<Y` |
+| U9 | `A → C` | `0<delta<pi` | `Y<1<X` |
+| U10 | `B → C` | `0<delta<pi/2` | — |
+
+No assertion is made that each row can occur in a complete packing.
+
+### Completeness of the table
+
+Write the two actual inward forces as `a,b`, so `a+b=(X,Y)`, with
+`a=f_(i-1)` and `-b=f_i`. The counterclockwise turn from `a` to `-b`
+is the number in (1).
+
+For two edge supports, positivity of both components of `a+b` forces the
+pair of inward directions `L,D`. The allowed order is `D → L`; the reverse
+order would have force turn `3pi/2`.
+
+If one support is the corner `A`, positivity allows any of the four edge
+directions. The turn condition leaves precisely
+`D → A`, `A → L`, `R → A`, and `A → T`.
+If the corner is `B`, only the edge direction `L` can supply the missing
+positive first component; the allowed order is `B → L`.
+If the corner is `C`, the analogous argument gives `D → C`.
+
+For two strict vertex supports, equal vertices are excluded by distinctness
+of the application points. The pair `A,B` allows only `B → A`, and `A,C`
+allows only `A → C`. For `B,C`, positivity of the sum forces the
+counterclockwise order `B → C`. Its two force rays belong to the same open
+quadrant, so its turn is acute. This exhausts all possibilities.
+
+The turn bounds also follow directly from the inward cones. For a mixed
+edge/vertex body, an incident edge and vertex have actual inward-force
+angle below `pi/2`, hence force-ray turn above `pi/2`. A nonincident edge
+and vertex give the reverse inequalities. The two adjacent strict-vertex
+rows U8 and U9 may have either acute or obtuse turn and are deliberately
+left unrestricted within (1).
+
+### Why the opposite-corner rows have a small own coordinate
+
+Whenever the strict support vertex `A` is used, the
+[inner-corner clearance lemma](LOADED_INNER_CORNER_CLEARANCE.md) gives
+
+```text
+min(X,Y)<1.                                            (3)
+```
+
+If both coordinates exceeded one, the neighbor would be circle-clear.
+If their minimum were one, the only loaded-neighbor exception would be a
+shared-side square with a boundary normal, not a strict `V` support.
+The case `X=Y=1` is outside the radius window.
+
+For U2, write the bottom-side application point as
+`(X-1+xi,Y-1)` and its positive inward force as `(0,h)`.
+The other force acts at `A`. Taking the total torque about the original
+origin gives
+
+```text
+Y-X=h*xi>0,
+```
+
+where `xi>0` because the two application points are distinct.
+For U8, write the incoming force at `B` as `(-b,h)` with `b,h>0`;
+the same torque calculation gives `Y-X=h>0`. Together with (3) and
+`X^2+Y^2>=6241/1600>2`, these yield `X<1<Y`.
+
+For U4, the neighbor supported beyond the outer right edge has minimum
+first coordinate at least `X`. Every unit square has projection width at
+least one in any direction, so disk containment gives `X<=R_disk-1`.
+Consequently
+
+```text
+Y^2=R_disk^2-X^2>=2R_disk-1>1.
+```
+
+Equation (3) then forces `X<1<Y`.
+Reflection across the coordinate diagonal, combined with reversal of the
+cyclic order, proves the stated restrictions for U3, U5, and U9.
+
+## 3. The radial-side boundary cases are also finite
+
+A loaded square has either one circle vertex or two adjacent circle
+vertices. Indeed the farthest-corner formula is
+
+```text
+|center|^2+1/2 +/- center dot u +/- center dot v.
+```
+
+Two corners tie only when one center coordinate vanishes. Four ties would
+put the center at zero and give radius `1/sqrt(2)`, outside this problem.
+Thus there are no additional circle-feature cases.
+
+For a radial-side body, the circle-load resultant is a positive multiple
+of a point of the outer circle edge, allowing either endpoint if just one
+geometric circle vertex has positive load. First suppose both components
+of the resultant are nonzero. Choose the positively oriented square frame
+so that both are positive. The circle edge is then either the outer right
+edge or the outer top edge.
+
+No contact can use that outer circle edge as an `S` support. Its distance
+from zero is `sqrt(R_disk^2-1/4)>R_disk-1`; a unit square beyond its
+supporting line would have maximum projection greater than `R_disk`.
+Both endpoints of the circle edge are forbidden application points as well.
+
+Applying these deletions to the ten-row cone table gives:
+
+| Circle edge | Allowed local candidates |
+|---|---|
+| Right (`R_x`) | `D→L`, `D→A`, `A→L`, `A→T`, `D→C`, `A→C` |
+| Top (`R_y`) | `D→L`, `D→A`, `A→L`, `R→A`, `B→L`, `B→A` |
+
+The coordinate restrictions in the unique-vertex table are not transferred
+to these rows: their circle-load resultant need not be a circle vertex.
+The support-cone turn classifications do transfer unchanged.
+
+If the resultant is exactly radial, orient the first axis outward, so its
+components are `(positive,0)` and the circle edge is the right edge.
+The only candidates are
+
+```text
+D → C,        A → T,        A → C.                     (4)
+```
+
+This follows by imposing cancellation of the second force components.
+The first two rows have acute turn; the last is in `(0,pi)`.
+Thus a finite alphabet of `10+6+6+3=25` local candidates covers every
+circle-load and support-feature case. Continuous force ratios, contact
+positions, and frame angles remain attached to these candidates.
+
+## 4. A turn budget and an incidence identity
+
+A body with two edge supports must have adjacent supports. Equal edge
+directions would give force-ray turn `pi`, and opposite directions would
+give turn zero. Therefore every `SS` body has turn exactly `pi/2`.
+Every mixed body whose edge and vertex are incident has turn strictly
+larger than `pi/2`.
+
+Since there are seven strictly positive turns summing to `2pi`,
+
+```text
+number(SS bodies) + number(incident mixed bodies) <= 3.  (5)
+```
+
+Let `b_SS,b_VV` count the body types with two like support features.
+Let `e_SS,e_VV` count the corresponding pair-contact types in (2).
+Counting all fourteen incidences in the two ways gives the exact identity
+
+```text
+b_SS-b_VV=e_SS-e_VV.                                   (6)
+```
+
+This remains valid for geometric shared-side endpoints, because their
+support features were retained rather than assigned by the application
+point alone.
+
+## 5. Thirty-four coarse words when every pair has one edge and one vertex
+
+Assume all seven pair contacts have type `SV` or `VS`. Orient each contact
+from its `S` body to its `V` body. An `SS` body is then a source, a `VV`
+body a sink, and a mixed body transmits the arrow. Sources and sinks
+alternate around the cycle. Equations (5)--(6) give
+
+```text
+b_SS=b_VV=r in {0,1,2,3},
+number(mixed bodies)=7-2r.                              (7)
+```
+
+For `r=0`, all arrows have the same cyclic orientation. There are two
+coarse words: every body has incoming `V`, outgoing `S`, or every body has
+incoming `S`, outgoing `V`.
+
+For `r>=1`, start at a source and record the numbers of mixed bodies on
+the successive runs between alternating sources and sinks. These are
+`2r` nonnegative integers with sum `7-2r`:
+
+| r | Run-length tuples | Number before identifying repeated cyclic starts |
+|---|---|---:|
+| 1 | `(l_0,l_1)`, sum `5` | `6` |
+| 2 | `(l_0,l_1,l_2,l_3)`, sum `3` | `20` |
+| 3 | `(l_0,...,l_5)`, sum `1` | `6` |
+
+The counts are the elementary composition counts
+`binom(6,1)`, `binom(6,3)`, and `binom(6,5)`.
+Together with the two pure words, these give a cover by at most
+`2+6+20+6=34` coarse cyclic schemes. Some schemes may agree after a
+cyclic shift; no uniqueness of this representation is asserted.
+Each body in a scheme must also satisfy its row of the 25-symbol local
+alphabet and the turn budget (5).
+
+## 6. Which words are already excluded, and what remains
+
+In the pure incoming-`V` word, if every body has a unique circle vertex
+and row U7 (`B→L`), this is exactly the fixed one-chirality pattern already
+excluded by the
+[hand cap proof](SEVEN_RING_RADIAL_CAP_BOUND.md).
+Its reflection and reversal is the pure incoming-`S` word with row U6
+(`D→C`) everywhere, and is excluded by the same theorem.
+
+The remaining ownership problem is covered by the following explicit
+families:
+
+1. Proper `SV/VS` pair contacts with no sources or sinks, but with at least
+   one opposite-corner mixed row or a radial-side circle body.
+2. Proper `SV/VS` pair contacts with `r=1,2,3`, represented by the
+   `6+20+6` source/sink run schemes above.
+3. At least one strict `VV` pair contact, with all other pair types retained
+   and constrained by (5)--(6).
+4. No `VV` pair, but at least one `SS` pair contact, again retaining all
+   endpoint and shared-segment cases.
+
+These are necessary finite combinatorial families. They are not yet
+excluded, and the local alphabet by itself supplies neither feasible
+geometric realizations nor proofs of impossibility. It does prevent the
+remaining problem from being described simply as an unspecified
+nonuniform seven-ring: the pure standard chirality has a hand exclusion,
+and every other ring must exhibit one of the listed changes of support
+ownership or circle type.
