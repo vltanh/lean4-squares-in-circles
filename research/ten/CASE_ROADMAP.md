@@ -11,7 +11,7 @@ lemma that does not close its family. All lower-bound cases below concern
 **G3 lower-bound case ledger:** `██████████████████░░░`
 **18 hand closed · 0 computer closed · 3 open / 21 terminal families.**
 
-**C20 larger-cycle subcases:** `████████████████████▏░░░` **234/279 closed; 45 open.**
+**C20 larger-cycle subcases:** `████████████████████▏░░░` **235/279 closed; 44 open.**
 
 **C05 branching subclass, all branch vertices loaded:** `█████████████████████▏░░` **40,336/45,666 excluded; 5,330 remain.** [Catalog and certificates](BRANCHING_SS_BRIDGE_FILTER.md). Unloaded branching vertices remain outside this subledger.
 
@@ -33,7 +33,7 @@ lemma that does not close its family. All lower-bound cases below concern
 | C01 | HAND CLOSED | **Entirely loaded cyclic component that is not a seven-body simple cycle.** The all-loaded reduction forces an enclosing seven-cycle in a strictly subcritical ten-packing. [Proof / reduction](ALL_LOADED_COMPONENT_RINGS.md). |
 | C02 | HAND CLOSED | **Seven loaded bodies with a common signed frame offset.** Includes the smooth uniform ring and the radial-side/diagonal endpoints. [Proof / reduction](REGULAR_SEVEN_LOADED_RING.md). |
 | C03 | HAND CLOSED | **Nonuniform strict one-chirality seven-ring.** After C02: the fixed side/vertex pattern, allowing reflection and cyclic relabeling. A hand cap theorem traps all three inner squares below the three-square minimum radius. [Proof / reduction](SEVEN_RING_RADIAL_CAP_BOUND.md). |
-| C04 | OPEN | **Other seven-loaded-ring contact ownership.** After C02 and C03: proper edge/vertex rings, including radial-side bodies, require a unique-circle row U4/U5/U8/U9. Incident rows U2/U3 and all other proper-contact patterns are excluded. Side/side and vertex/vertex pair-support defects remain. [Proof / reduction](SEVEN_RING_OWNERSHIP_ALPHABET.md). |
+| C04 | OPEN | **Other seven-loaded-ring contact ownership.** Every surviving ring has a unique-circle row U4/U5/U8/U9 or a VV pair. For joint generic normals, each unique-circle endpoint of VV has its other pair on an SS segment with aggregate point in its interior. Other inner-face and radial-side cases are excluded when no VV pair is present. [Proof / reduction](SEVEN_RING_OWNERSHIP_ALPHABET.md). |
 | C05 | OPEN | **Mixed cyclic component whose whole graph is not a simple cycle.** Includes branching cyclic blocks and bridges. When every retained vertex is loaded, a fixed 45,666-case catalog has 40,336 reviewed exclusions and 5,330 remaining. Unloaded retained branch vertices remain unclassified. [Proof / reduction](BRANCHING_SS_BRIDGE_FILTER.md). |
 | C06 | HAND CLOSED | **Mixed simple cycle of length at most four.** All load assignments. [Proof / reduction](CYCLIC_STRESS_REDUCTIONS.md). |
 | C07 | HAND CLOSED | **Mixed simple cycle of length at least five with at most two loads.** The two-terminal transmission-path theorem applies to a whole simple cycle. [Proof / reduction](CYCLIC_STRESS_REDUCTIONS.md). |
@@ -49,7 +49,7 @@ lemma that does not close its family. All lower-bound cases below concern
 | C17 | HAND CLOSED | **Remaining vertex/side pattern: D-S.** Same ordered convention; endpoint classification and a printed exact clearance table exclude both remaining circle-load patterns. [Proof / reduction](DIAGONAL_SIDE_EXCLUSION.md). |
 | C18 | HAND CLOSED | **Five-cycle with four loads: side transmitter.** Its only unloaded body is a degree-two side transmitter. [Proof / reduction](MIXED_FIVE_FOUR_LOADED.md). |
 | C19 | HAND CLOSED | **Five-cycle with four loads: diagonal transmitter.** For the generic selected certificate, D transmitter neighbors must be contacted in side interiors. The nearer-endpoint theorem forbids side support, excluding the component. The certificate is selected before classification. [Proof / reduction](DIAGONAL_FIVE_CYCLE_EXCLUSION.md). |
-| C20 | OPEN | **Mixed simple cycles of lengths six through ten.** At least three loaded bodies. Radial loaded order is proved; 234 of 279 fixed signatures are excluded, including every length-nine and length-ten case. Forty-five signatures remain at lengths six through eight. [Proof / reduction](SHARP_TRANSMISSION_CYCLE_BUDGET.md). |
+| C20 | OPEN | **Mixed simple cycles of lengths six through ten.** At least three loaded bodies. Radial loaded order and cap angles exclude 234 fixed signatures; the SS/D six-cycle is also excluded for the generic certificate. Of 279 signatures, 235 are closed and 44 remain at lengths six through eight. [Proof / reduction](SS_DIAGONAL_SIX_CYCLE_EXCLUSION.md). |
 <!-- CASE_PROGRESS_END -->
 
 ## How the case tree is exhaustive
@@ -64,6 +64,9 @@ that also avoid both incident square diagonals at point-only vertex/vertex
 contacts. This preserves the earlier strict/nonradial convention and is
 the selection used to close C19. It is an existence choice before the
 multiplier theorem, not a modification keeping an older graph fixed.
+The [finite concurrence-polynomial exclusions](LOADED_VV_GENERIC_RESTRICTION.md)
+can be imposed jointly with those choices and give the stated additional
+restriction on loaded-ring VV pairs.
 Every such component
 has at most ten bodies and at most seven loaded bodies. An unloaded set with
 at most one outside neighbor is impossible by the force-sum argument. This
@@ -141,7 +144,7 @@ stated in the linked proof:
 
 | Family | Next result needed |
 | --- | --- |
-| C04: other loaded-ring ownership | Proper edge/vertex survivors must contain a unique-circle row U4/U5/U8/U9; the other rows and arbitrary radial-side bodies are covered by reviewed exclusions. Rule out those remaining rows and the side/side or vertex/vertex pair defects, or prove a capacity theorem covering them. |
+| C04: other loaded-ring ownership | Survivors need a unique-circle row U4/U5/U8/U9 or a VV pair. At each unique-circle VV endpoint, joint generic selection forces the other pair to be an SS segment with interior aggregate application. Rule out these remaining cases or prove a capacity theorem covering them. |
 | C05: branching mixed components | Classify or exclude the connected cyclic graphs that are not whole simple cycles, including bridge attachments and exactly two loaded bodies. |
 | C20: larger mixed simple cycles | Exclude the [279 enumerated graph/transmitter cases](CYCLE_CASES.md), refining physical contact ownership where needed. |
 
@@ -170,8 +173,11 @@ to 34 coarse source/sink schemes. The
 every scheme made only from U1/U6/U7/U10, and the
 [incident mixed theorem](LOADED_INCIDENT_MIXED_EXCLUSION.md) excludes U2/U3.
 The [radial extension](SEVEN_RING_RADIAL_INNER_FACE_CAPACITY.md) includes
-all radial-side bodies, so proper-contact survivors must contain
-U4/U5/U8/U9. This leaves pair-support defects as the other broad branch.
+all radial-side bodies. The [shared-side extension](SEVEN_RING_SHARED_SIDE_CAPACITY.md)
+also permits SS pairs, so any survivor needs U4/U5/U8/U9 or a VV pair.
+The [joint generic restriction](LOADED_VV_GENERIC_RESTRICTION.md) forces
+each unique-circle VV endpoint to have its other pair on an SS segment
+with aggregate application strictly inside that segment.
 The raw row and scheme counts are coverage counts, not counts of surviving
 realizable rings. A theorem covering all records would close C04 directly.
 
@@ -211,8 +217,9 @@ excludes the [117-case batch](single_side_cycle_batch.json). The
 order for every whole mixed simple cycle. Its
 [206-case angular budget](RADIAL_ORDER_CYCLE_BUDGET.md) is strengthened by
 the [cap-angle budget](SHARP_TRANSMISSION_CYCLE_BUDGET.md), which closes
-234 entries and leaves exactly 45 open: 15 at length six, 19 at length
-seven, 11 at length eight, and none at lengths nine or ten.
+234 entries. The [SS/D six-cycle exclusion](SS_DIAGONAL_SIX_CYCLE_EXCLUSION.md)
+adds one whole signature, leaving exactly 44 open: 14 at length six,
+19 at length seven, 11 at length eight, and none at lengths nine or ten.
 An entry is never claimed feasible or excluded merely because it appears
 in the list.
 

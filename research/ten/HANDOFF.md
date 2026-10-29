@@ -40,12 +40,22 @@ The equality classification remains open outside the completed classes.
 Research resumed from handoff commit `fb91a0517a0eedf192e11759f9bdec2a60ab46af`.
 The unrestricted proof is still open. The main case ledger has **18 reviewed
 hand closures and 3 open
-families out of 21**; the larger-cycle subledger has **234 reviewed hand
-closures and 45 open cases out of 279**. Main gates remain **3/7 closed**.
+families out of 21**; the larger-cycle subledger has **235 reviewed hand
+closures and 44 open cases out of 279**. Main gates remain **3/7 closed**.
 The closed counts do not measure the fraction of mathematical effort.
 
 Latest completed work:
 
+- C20: the complete [SS/D six-cycle exclusion](SS_DIAGONAL_SIX_CYCLE_EXCLUSION.md)
+  closes `C20-M06-L03-B01-T02` (`LLDLSS`). Width-two versions of the
+  parallel, common-vertex, distinct-vertex, incident-support, and radial
+  cases are all checked. The companion `LLSLSS` remains open here.
+- C04: the [shared-side capacity theorem](SEVEN_RING_SHARED_SIDE_CAPACITY.md)
+  extends the good-row/radial-body argument to SS pair contacts whenever
+  no VV pair occurs. The [joint generic restriction](LOADED_VV_GENERIC_RESTRICTION.md)
+  forces every unique-circle VV endpoint to have its other positive pair
+  on an SS overlap, with aggregate application strictly inside the overlap.
+  These normal exclusions are imposed before selecting stress components.
 - C19 is now [hand closed](DIAGONAL_FIVE_CYCLE_EXCLUSION.md). Choose
   [generic contact normals](GENERIC_CONTACT_NORMAL_SELECTION.md) before
   classifying the stress graph; each diagonal transmitter must then meet
@@ -106,7 +116,7 @@ Latest completed work:
 | --- | --- |
 | C04: other seven-ring ownership | Proper-contact survivors require a unique-circle U4/U5/U8/U9. Side/side and vertex/vertex pair defects remain separate; radial bodies are covered in the proper-contact capacity theorem. |
 | C05: branching mixed components | Exclude the 5,330 remaining loaded-branch catalog records and classify components with unloaded retained branching vertices. Do not assume body-pair planarity. |
-| C20: 45 larger-cycle entries | Improve the angular/contact bounds or prove completion capacity for 15 length-six, 19 length-seven, and 11 length-eight signatures. Every remaining ID is explicit in CYCLE_CASES.md. |
+| C20: 44 larger-cycle entries | Improve the angular/contact bounds or prove completion capacity for 14 length-six, 19 length-seven, and 11 length-eight signatures. Every remaining ID is explicit in CYCLE_CASES.md. |
 
 The former D-D crossing lead is now a reviewed theorem. A crossing
 forces a lower loaded square's other contact to the opposite end of its

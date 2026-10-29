@@ -936,6 +936,10 @@
     "C20-M09-L07-B04-T01": {
       "status": "hand",
       "evidence": "SHARP_TRANSMISSION_CYCLE_BUDGET.md"
+    },
+    "C20-M06-L03-B01-T02": {
+      "status": "hand",
+      "evidence": "SS_DIAGONAL_SIX_CYCLE_EXCLUSION.md"
     }
   }
 }

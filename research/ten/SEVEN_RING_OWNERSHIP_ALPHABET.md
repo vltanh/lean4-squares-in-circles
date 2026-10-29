@@ -324,7 +324,10 @@ The newer [inner-face capacity theorem](SEVEN_RING_INNER_FACE_CAPACITY.md)
 and its [radial-side extension](SEVEN_RING_RADIAL_INNER_FACE_CAPACITY.md)
 exclude every proper `SV/VS` ring whose unique-circle local rows all
 belong to `U1,U6,U7,U10`, including nonuniform source/sink schemes and
-arbitrary radial-side bodies.
+arbitrary radial-side bodies. The
+[shared-side extension](SEVEN_RING_SHARED_SIDE_CAPACITY.md) also permits
+SS pair contacts whenever no VV pair is present, under the same restriction
+on unique-circle rows.
 Moreover the [incident mixed exclusion](LOADED_INCIDENT_MIXED_EXCLUSION.md)
 rules out U2 and U3 in any entirely loaded ring, regardless of the pair
 support types. These deductions prune the raw alphabet; they do not
@@ -339,9 +342,15 @@ the following explicit families:
    `6+20+6` source/sink run schemes above, and with at least one row
    U4,U5,U8,U9 on a unique-circle body.
 3. At least one strict `VV` pair contact, with all other pair types retained
-   and constrained by (5)--(6), and with U2/U3 excluded.
-4. No `VV` pair, but at least one `SS` pair contact, again retaining all
-   endpoint and shared-segment cases, and with U2/U3 excluded.
+   and constrained by (5)--(6), and with U2/U3 excluded. Under the stronger
+   [joint normal selection](LOADED_VV_GENERIC_RESTRICTION.md), every
+   unique-circle endpoint of that VV pair is U4,U5,U6,U7 and has its other
+   positive pair on a shared SS segment with aggregate application in
+   its relative interior. Radial endpoints retain their separate scope.
+4. No `VV` pair, but at least one `SS` pair contact, and at least one
+   unique-circle U4,U5,U8,U9 body. All endpoint and shared-segment cases
+   remain covered by this family; rings without such a body are excluded
+   by the shared-side capacity theorem.
 
 These are necessary finite combinatorial families. They are not yet
 excluded, and the local alphabet by itself supplies neither feasible
