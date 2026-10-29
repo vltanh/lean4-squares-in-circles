@@ -13,7 +13,7 @@ lemma that does not close its family. All lower-bound cases below concern
 
 **C20 larger-cycle subcases:** `████████████████████▏░░░` **234/279 closed; 45 open.**
 
-**C05 branching subclass, all branch vertices loaded:** `█████████████████████▏░░` **40,306/45,666 excluded; 5,360 remain.** [Catalog and certificates](BRANCHING_LOADED_CAP_ANGLES.md). Unloaded branching vertices remain outside this subledger.
+**C05 branching subclass, all branch vertices loaded:** `█████████████████████▏░░` **40,336/45,666 excluded; 5,330 remain.** [Catalog and certificates](BRANCHING_SS_BRIDGE_FILTER.md). Unloaded branching vertices remain outside this subledger.
 
 `█` reviewed hand deduction; `▓` reviewed computer-assisted result; `░` open. These are counts of the fixed ledger entries, **not a percentage of the proof or remaining effort**. Every currently closed family has a reviewed hand deduction; imported dependencies remain as stated in each proof.
 
@@ -33,8 +33,8 @@ lemma that does not close its family. All lower-bound cases below concern
 | C01 | HAND CLOSED | **Entirely loaded cyclic component that is not a seven-body simple cycle.** The all-loaded reduction forces an enclosing seven-cycle in a strictly subcritical ten-packing. [Proof / reduction](ALL_LOADED_COMPONENT_RINGS.md). |
 | C02 | HAND CLOSED | **Seven loaded bodies with a common signed frame offset.** Includes the smooth uniform ring and the radial-side/diagonal endpoints. [Proof / reduction](REGULAR_SEVEN_LOADED_RING.md). |
 | C03 | HAND CLOSED | **Nonuniform strict one-chirality seven-ring.** After C02: the fixed side/vertex pattern, allowing reflection and cyclic relabeling. A hand cap theorem traps all three inner squares below the three-square minimum radius. [Proof / reduction](SEVEN_RING_RADIAL_CAP_BOUND.md). |
-| C04 | OPEN | **Other seven-loaded-ring contact ownership.** After C02 and C03: proper edge/vertex rings using only U1/U6/U7/U10 are also excluded. Incident opposite-corner rows U2/U3 are impossible. Other opposite-corner rows, radial-side bodies, and pair-support defects remain. [Proof / reduction](SEVEN_RING_OWNERSHIP_ALPHABET.md). |
-| C05 | OPEN | **Mixed cyclic component whose whole graph is not a simple cycle.** Includes branching cyclic blocks and bridges. When every retained vertex is loaded, a fixed 45,666-case catalog has 40,306 reviewed exclusions and 5,360 remaining. Unloaded retained branch vertices remain unclassified. [Proof / reduction](BRANCHING_LOADED_CAP_ANGLES.md). |
+| C04 | OPEN | **Other seven-loaded-ring contact ownership.** After C02 and C03: proper edge/vertex rings, including radial-side bodies, require a unique-circle row U4/U5/U8/U9. Incident rows U2/U3 and all other proper-contact patterns are excluded. Side/side and vertex/vertex pair-support defects remain. [Proof / reduction](SEVEN_RING_OWNERSHIP_ALPHABET.md). |
+| C05 | OPEN | **Mixed cyclic component whose whole graph is not a simple cycle.** Includes branching cyclic blocks and bridges. When every retained vertex is loaded, a fixed 45,666-case catalog has 40,336 reviewed exclusions and 5,330 remaining. Unloaded retained branch vertices remain unclassified. [Proof / reduction](BRANCHING_SS_BRIDGE_FILTER.md). |
 | C06 | HAND CLOSED | **Mixed simple cycle of length at most four.** All load assignments. [Proof / reduction](CYCLIC_STRESS_REDUCTIONS.md). |
 | C07 | HAND CLOSED | **Mixed simple cycle of length at least five with at most two loads.** The two-terminal transmission-path theorem applies to a whole simple cycle. [Proof / reduction](CYCLIC_STRESS_REDUCTIONS.md). |
 | C08 | HAND CLOSED | **Five-cycle with three loads and adjacent unloaded bodies.** The middle loaded body touches every other loaded body. [Proof / reduction](CYCLIC_STRESS_REDUCTIONS.md). |
@@ -130,7 +130,7 @@ stated in the linked proof:
 
 | Family | Next result needed |
 | --- | --- |
-| C04: other loaded-ring ownership | Proper edge/vertex rings with only U1/U6/U7/U10 are excluded, as are incident opposite-corner rows U2/U3. Exclude the other opposite-corner rows, radial-side bodies, and pair-support defects, or prove a capacity theorem covering them. |
+| C04: other loaded-ring ownership | Proper edge/vertex survivors must contain a unique-circle row U4/U5/U8/U9; the other rows and arbitrary radial-side bodies are covered by reviewed exclusions. Rule out those remaining rows and the side/side or vertex/vertex pair defects, or prove a capacity theorem covering them. |
 | C05: branching mixed components | Classify or exclude the connected cyclic graphs that are not whole simple cycles, including bridge attachments and exactly two loaded bodies. |
 | C19: four-loaded five-cycle with D | Exclude this component or its ten-square completion. |
 | C20: larger mixed simple cycles | Exclude the [279 enumerated graph/transmitter cases](CYCLE_CASES.md), refining physical contact ownership where needed. |
@@ -159,6 +159,9 @@ to 34 coarse source/sink schemes. The
 [inner-face capacity theorem](SEVEN_RING_INNER_FACE_CAPACITY.md) excludes
 every scheme made only from U1/U6/U7/U10, and the
 [incident mixed theorem](LOADED_INCIDENT_MIXED_EXCLUSION.md) excludes U2/U3.
+The [radial extension](SEVEN_RING_RADIAL_INNER_FACE_CAPACITY.md) includes
+all radial-side bodies, so proper-contact survivors must contain
+U4/U5/U8/U9. This leaves pair-support defects as the other broad branch.
 The raw row and scheme counts are coverage counts, not counts of surviving
 realizable rings. A theorem covering all records would close C04 directly.
 
@@ -175,8 +178,8 @@ vertex loaded (`b=0`) now has a fixed
 [catalog of 45,666 stable cases](BRANCHING_LOADED_SKELETON_INVENTORY.md),
 independently reproduced by Python and C++ enumerators. Each row records
 the circular loaded order, path types, multiplicities, and body count.
-The [exact angle and bridge certificates](BRANCHING_LOADED_CAP_ANGLES.md)
-exclude 40,306 records and leave 5,360; the separate bar above tracks this
+The [combined angle and bridge certificates](BRANCHING_SS_BRIDGE_FILTER.md)
+exclude 40,336 records and leave 5,330; the separate bar above tracks this
 fixed subclass. Each angular rejection prints at most seven integer
 inequalities summing to a contradiction. The subclass with an unloaded
 retained branching vertex (`b>0`) is outside that catalog and remains

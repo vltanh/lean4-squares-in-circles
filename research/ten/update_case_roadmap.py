@@ -38,7 +38,7 @@ def main():
     cycle_done = len(cycle_status)
     cycle_total = len(cycle_ids)
     cycle_bar = fraction_bar(cycle_done, cycle_total)
-    branch = json.loads((ROOT / "branching_loaded_cap_angle_summary.json").read_text())
+    branch = json.loads((ROOT / "branching_ss_bridge_summary.json").read_text())
     branch_total = branch["initial_cases"]
     branch_done = branch["distinct_exclusions"]
     if (not 0 <= branch_done <= branch_total

@@ -49,11 +49,15 @@ Latest completed work:
 - C05: the [loaded-branch catalog](BRANCHING_LOADED_SKELETON_INVENTORY.md)
   has 45,666 stable records modulo circular rotations and reflection.
   Independent Python and C++ enumerators agree on every record. The
-  [cap-angle and bridge certificates](BRANCHING_LOADED_CAP_ANGLES.md)
-  exclude 40,306 and leave 5,360. Every angular witness is a sum of at most
+  [combined angle and bridge certificates](BRANCHING_SS_BRIDGE_FILTER.md)
+  exclude 40,336 and leave 5,330. Every angular witness is a sum of at most
   seven strict integer inequalities; every bridge witness is a graph cut.
   This is only `b=0`, where all retained branching vertices are loaded.
   The `b>0` subclass remains outside the catalog and C05 remains open.
+  The newest [SS-bridge endpoint theorem](BRANCHING_SS_BRIDGE_ENDPOINTS.md)
+  forces parallel endpoint frames, squared radius above `17/4`, and
+  forbids an incident double transmission bundle. Its 354 explicit graph
+  cuts add 30 exclusions to the preceding angle/bridge union.
 - C03: a hand cap proof excludes every physical ring in the fixed
   one-chirality ownership pattern, independently of the earlier interval
   action verifier.
@@ -74,6 +78,11 @@ Latest completed work:
   radius below `83/50<425/256`, with side endpoints included. Separately,
   [incident opposite-corner rows U2/U3](LOADED_INCIDENT_MIXED_EXCLUSION.md)
   are impossible even when the neighbors have other support types.
+  The reviewed [radial extension](SEVEN_RING_RADIAL_INNER_FACE_CAPACITY.md)
+  permits arbitrary radial-side bodies and geometric circle-load splits.
+  A surviving proper-contact ring must therefore include a unique-circle
+  row U4/U5/U8/U9. Side/side and vertex/vertex pair defects remain outside
+  this capacity theorem.
 - C19: the [force quadrilateral](FOUR_LOADED_FORCE_QUADRILATERAL.md)
   surrounds zero strictly and gives positive radial concurrence on all
   four loaded bodies. The [exact trace counterexample](DIAGONAL_CORE_TRACE_OBSTRUCTION.md)

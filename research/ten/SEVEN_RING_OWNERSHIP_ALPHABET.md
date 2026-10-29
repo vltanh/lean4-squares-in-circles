@@ -321,8 +321,10 @@ Its reflection and reversal is the pure incoming-`S` word with row U6
 (`D→C`) everywhere, and is excluded by the same theorem.
 
 The newer [inner-face capacity theorem](SEVEN_RING_INNER_FACE_CAPACITY.md)
-excludes every proper `SV/VS` ring whose unique-circle local rows all
-belong to `U1,U6,U7,U10`, including nonuniform source/sink schemes.
+and its [radial-side extension](SEVEN_RING_RADIAL_INNER_FACE_CAPACITY.md)
+exclude every proper `SV/VS` ring whose unique-circle local rows all
+belong to `U1,U6,U7,U10`, including nonuniform source/sink schemes and
+arbitrary radial-side bodies.
 Moreover the [incident mixed exclusion](LOADED_INCIDENT_MIXED_EXCLUSION.md)
 rules out U2 and U3 in any entirely loaded ring, regardless of the pair
 support types. These deductions prune the raw alphabet; they do not
@@ -332,10 +334,10 @@ After these exclusions, the remaining ownership problem is covered by
 the following explicit families:
 
 1. Proper `SV/VS` pair contacts with no sources or sinks, but with at least
-   one outer-edge/opposite-corner row U4 or U5, or a radial-side circle body.
+   one unique-circle outer-edge/opposite-corner row U4 or U5.
 2. Proper `SV/VS` pair contacts with `r=1,2,3`, represented by the
    `6+20+6` source/sink run schemes above, and with at least one row
-   U4,U5,U8,U9 or a radial-side circle body.
+   U4,U5,U8,U9 on a unique-circle body.
 3. At least one strict `VV` pair contact, with all other pair types retained
    and constrained by (5)--(6), and with U2/U3 excluded.
 4. No `VV` pair, but at least one `SS` pair contact, again retaining all

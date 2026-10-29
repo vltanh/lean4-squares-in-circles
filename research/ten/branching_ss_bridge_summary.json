@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "scope": "Fixed C05 b=0 catalog; b>0 remains outside the enumeration.",
+  "proof": "BRANCHING_SS_BRIDGE_FILTER.md",
+  "initial_cases": 45666,
+  "ss_bridge_exclusions": 354,
+  "previous_distinct_exclusions": 40306,
+  "intersection_with_previous": 324,
+  "new_distinct_exclusions": 30,
+  "distinct_exclusions": 40336,
+  "remaining_cases": 5330,
+  "by_loaded_count": [
+    {
+      "k": 3,
+      "total": 35,
+      "ss_bridge": 2,
+      "new_exclusions": 1,
+      "union": 16,
+      "retained": 19
+    },
+    {
+      "k": 4,
+      "total": 1234,
+      "ss_bridge": 59,
+      "new_exclusions": 13,
+      "union": 853,
+      "retained": 381
+    },
+    {
+      "k": 5,
+      "total": 10305,
+      "ss_bridge": 222,
+      "new_exclusions": 15,
+      "union": 8534,
+      "retained": 1771
+    },
+    {
+      "k": 6,
+      "total": 22407,
+      "ss_bridge": 71,
+      "new_exclusions": 1,
+      "union": 20007,
+      "retained": 2400
+    },
+    {
+      "k": 7,
+      "total": 11685,
+      "ss_bridge": 0,
+      "new_exclusions": 0,
+      "union": 10926,
+      "retained": 759
+    }
+  ],
+  "new_case_ids": [
+    "C05-B0-K03-00007",
+    "C05-B0-K04-00324",
+    "C05-B0-K04-00328",
+    "C05-B0-K04-00383",
+    "C05-B0-K04-00419",
+    "C05-B0-K04-00548",
+    "C05-B0-K04-00551",
+    "C05-B0-K04-00552",
+    "C05-B0-K04-00553",
+    "C05-B0-K04-00554",
+    "C05-B0-K04-00558",
+    "C05-B0-K04-00572",
+    "C05-B0-K04-00586",
+    "C05-B0-K04-00596",
+    "C05-B0-K05-05245",
+    "C05-B0-K05-05246",
+    "C05-B0-K05-05396",
+    "C05-B0-K05-05458",
+    "C05-B0-K05-06745",
+    "C05-B0-K05-06746",
+    "C05-B0-K05-06780",
+    "C05-B0-K05-06797",
+    "C05-B0-K05-06800",
+    "C05-B0-K05-06801",
+    "C05-B0-K05-06812",
+    "C05-B0-K05-06857",
+    "C05-B0-K05-06858",
+    "C05-B0-K05-06914",
+    "C05-B0-K05-06915",
+    "C05-B0-K06-17852"
+  ]
+}

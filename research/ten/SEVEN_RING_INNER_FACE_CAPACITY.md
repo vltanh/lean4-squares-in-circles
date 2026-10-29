@@ -233,4 +233,9 @@ out U2 and U3 in any entirely loaded ring, even when the pair supports
 are SS or VV. Thus a still-possible proper-contact ring must contain
 U4,U5,U8,U9 or a radial-side circle body. Rings with SS or VV pair
 contacts remain outside the capacity theorem, subject to the same U2/U3
-exclusion. No global C04 closure or unrestricted n=10 proof is claimed.
+exclusion. The subsequent
+[radial-side extension](SEVEN_RING_RADIAL_INNER_FACE_CAPACITY.md) absorbs
+all radial-side bodies into this capacity argument. Combining the two
+exclusions, a remaining proper-contact ring must contain a unique-circle
+U4,U5,U8,U9 body. No global C04 closure or unrestricted n=10 proof is
+claimed.

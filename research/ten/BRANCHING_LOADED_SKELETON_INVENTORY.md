@@ -6,6 +6,12 @@ exclusion deductions (2026-10-29), with the
 open. This is only the subclass `b=0`:
 every unloaded body has degree two in the whole positive component.
 
+**Current combined progress:** the later
+[cap-angle and SS-bridge certificates](BRANCHING_SS_BRIDGE_FILTER.md)
+exclude **40,336 of these 45,666 fixed cases; 5,330 remain**. The original
+two-filter counts below are preserved to make the successive deductions
+and their overlap auditable.
+
 The raw catalog has **45,666 stable cases**. Two exact necessary-condition
 filters prove **37,949 exclusions**, leaving **7,717 cases**. These are
 case counts, not claims of geometric feasibility or a percentage of the

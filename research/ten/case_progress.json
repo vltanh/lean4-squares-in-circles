@@ -76,15 +76,15 @@
       "id": "C04",
       "status": "open",
       "title": "Other seven-loaded-ring contact ownership",
-      "scope": "After C02 and C03: proper edge/vertex rings using only U1/U6/U7/U10 are also excluded. Incident opposite-corner rows U2/U3 are impossible. Other opposite-corner rows, radial-side bodies, and pair-support defects remain.",
+      "scope": "After C02 and C03: proper edge/vertex rings, including radial-side bodies, require a unique-circle row U4/U5/U8/U9. Incident rows U2/U3 and all other proper-contact patterns are excluded. Side/side and vertex/vertex pair-support defects remain.",
       "evidence": "SEVEN_RING_OWNERSHIP_ALPHABET.md"
     },
     {
       "id": "C05",
       "status": "open",
       "title": "Mixed cyclic component whose whole graph is not a simple cycle",
-      "scope": "Includes branching cyclic blocks and bridges. When every retained vertex is loaded, a fixed 45,666-case catalog has 40,306 reviewed exclusions and 5,360 remaining. Unloaded retained branch vertices remain unclassified.",
-      "evidence": "BRANCHING_LOADED_CAP_ANGLES.md"
+      "scope": "Includes branching cyclic blocks and bridges. When every retained vertex is loaded, a fixed 45,666-case catalog has 40,336 reviewed exclusions and 5,330 remaining. Unloaded retained branch vertices remain unclassified.",
+      "evidence": "BRANCHING_SS_BRIDGE_FILTER.md"
     },
     {
       "id": "C06",
