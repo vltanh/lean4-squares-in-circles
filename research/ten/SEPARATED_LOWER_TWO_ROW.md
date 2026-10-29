@@ -1,8 +1,8 @@
 # Two-row cores whose lower pair need not touch
 
-**Handoff status:** draft proof; the independent audit was incomplete when
-work paused. In particular, review the virtual-rectangle slot argument and
-the reuse of the earlier arc and cap bounds before relying on this extension.
+**Status:** independently reviewed hand proof for the stated core family
+(2026-10-29). See [the audit](TWO_ROW_EXTENSION_AUDIT.md). The unrestricted
+four-inner-square case remains open.
 
 Suppose a packing in the origin-centered disk of squared radius `9/2`
 contains four axis-parallel unit squares with centers
@@ -180,8 +180,10 @@ covered by the lower core pair except for the open vertical slot
 G=(-d,d) x (-t-1/2,h).
 ```
 
-The slot's two sides and top are contained in actual core squares; only
-its bottom is open to the exterior. If d=0, J is already wholly in the
+The slot's two sides and top are contained in actual core squares: the
+whole top is in the upper-right square because
+`b-1/2<-1/4<-d` and `b+1/2>d`. Only its bottom is open to the exterior.
+If d=0, J is already wholly in the
 core. For d>0 we prove that no large-gap square can enter G either.
 
 Suppose an interior point p of such a square S were in G. Its center c

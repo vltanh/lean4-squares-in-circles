@@ -1,8 +1,8 @@
 # Consolidated two-row core exclusion over a wider displacement range
 
-**Handoff status:** draft proof; the independent audit was incomplete when
-work paused. Review the constant replacements and dependencies below before
-using this extension as an established result.
+**Status:** independently reviewed hand proof for the stated core family
+(2026-10-29). See [the audit](TWO_ROW_EXTENSION_AUDIT.md). The unrestricted
+four-inner-square case remains open.
 
 Put `r=sqrt(1+1/sqrt(2))`. Suppose a packing in the origin-centered disk
 of squared radius `9/2` contains four axis-parallel unit squares with
@@ -169,7 +169,9 @@ The retained upper-left arc is
 ```
 
 Its outward corner is outside the test circle because
-`b_L+1/2>=1` and `z>2^(-1/4)`. Its inward corner is inside. The lower
+`b_L+1/2>=1` and `z>2^(-1/4)`. Its inward top corner is inside because
+`(b_L-1/2)^2+z^2<=5/2-t-b_L<=2-t<r^2`; here `t>t_*>1/3`
+and `r^2>5/3`. Its other inward corner has smaller absolute height. The lower
 endpoint's outer vertical-edge bound is at most gamma, since its absolute
 x-coordinate is at least one. Any positive lower horizontal-edge bound
 is smaller than gamma, since `h<1/2<2^(-1/4)=r sin(gamma)`.

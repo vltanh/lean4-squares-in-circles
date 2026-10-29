@@ -1,4 +1,4 @@
-# n=10 research handoff — updated 2026-10-28
+# n=10 research handoff — updated 2026-10-29
 
 PR: <https://github.com/vltanh/lean4-squares-in-circles/pull/12>  
 Branch: `research/ten-exact-start`  
@@ -29,22 +29,22 @@ five inner centers by an explicit finite-table argument. Thus a hypothetical
 smaller ten-packing must have **exactly three or four inner centers**.
 The equality classification remains open outside the completed classes.
 
-## Snapshot at pause
+## Resumed checkpoint
 
-This handoff preserves the remaining manuscripts as well as the completed
-results. Work paused at the user's request to commit and push. No proof of
-the unrestricted n=10 optimum is claimed.
+Work resumed from commit `9b90c5e` on 2026-10-29. Both pending two-row
+extensions passed independent mathematical review; the explicit review is
+recorded in [TWO_ROW_EXTENSION_AUDIT.md](TWO_ROW_EXTENSION_AUDIT.md).
+No proof of the unrestricted n=10 optimum is claimed.
 
-| Manuscript added in this checkpoint | Status at pause |
+| Manuscript | Current status |
 | --- | --- |
 | [Extreme upper asymmetry](EXTREME_ASYMMETRIC_TWO_ROW.md) | Independent full mathematical review passed; removes the quarter-offset restriction for the stated touching-lower-pair core with `0<t<=5/12` |
 | [Seven-angle action](SEVEN_RING_ANGLE_ACTION.md) | Independent full mathematical review passed; exact reduction for one contact pattern, with no global uniqueness result |
-| [Wider row displacement](WIDE_DISPLACEMENT_TWO_ROW.md) | Draft; independent audit incomplete. Proposed interval is `0<t<3/2-2^(-1/4)` |
-| [Separated lower pair](SEPARATED_LOWER_TWO_ROW.md) | Draft; independent audit incomplete. Proposed extension removes lower-pair touching under the displayed bounds |
+| [Wider row displacement](WIDE_DISPLACEMENT_TWO_ROW.md) | Independent full mathematical review passed; interval is `0<t<3/2-2^(-1/4)` |
+| [Separated lower pair](SEPARATED_LOWER_TWO_ROW.md) | Independent full mathematical review passed; extension removes lower-pair touching under the displayed bounds |
 
-Resume by auditing the two marked drafts before applying them. Even if both
-are correct, they cover specified common-frame two-row cores; there is no
-argument reducing every four-inner-square core to those arrangements.
+Both extensions cover specified common-frame two-row cores. There is still
+no argument reducing every four-inner-square core to those arrangements.
 
 The one-chirality ring work now has the exact seven-angle action, positive
 root branch, criticality equations, and derivative formulas in the linked
@@ -91,7 +91,8 @@ claimed in [MIXED_FIVE_CYCLE_STATUS.md](MIXED_FIVE_CYCLE_STATUS.md).
    four-square cores to those families. The reviewed
    [extreme-asymmetry extension](EXTREME_ASYMMETRIC_TWO_ROW.md) now permits
    all upper offsets satisfying its center bounds when the lower pair
-   touches. The broader proposals in the snapshot table remain drafts.
+   touches. The broader extensions in the checkpoint table are now reviewed conditional
+   theorems; the absence of a general core reduction remains the gap.
 3. **Nonuniform loaded rings.** An entirely circle-loaded positive component
    of a strictly subcritical ten-packing must be a seven-square physical
    ring enclosing the other three squares:

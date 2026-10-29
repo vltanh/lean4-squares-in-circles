@@ -1,6 +1,6 @@
 # Ten unit squares in a circle
 
-Research checkpoint: 2026-10-28 (UTC), based on main commit
+Research checkpoint: 2026-10-29 (UTC), based on main commit
 `4bea747b3efa13c869b956cb28435efaf21526fa`.
 
 Resume from [HANDOFF.md](HANDOFF.md) for the current proof gaps, next steps,
@@ -200,11 +200,12 @@ reviewed exact reduction with the global critical-point problem still open. The
 [planar junction construction](PLANAR_CONTACT_TORQUE_CYCLES.md) preserves
 the physical forces but does not prove that every torque cycle encloses zero.
 
-The handoff also preserves two **draft extensions awaiting independent
-review**: [a wider row-displacement range](WIDE_DISPLACEMENT_TWO_ROW.md) and
-[a separated lower pair](SEPARATED_LOWER_TWO_ROW.md). They are not used as
-premises of the completed results above. See the snapshot table in
-[HANDOFF.md](HANDOFF.md) for their status and the next proof obligations.
+Two further conditional theorems have now passed
+[independent review](TWO_ROW_EXTENSION_AUDIT.md):
+[a wider row-displacement range](WIDE_DISPLACEMENT_TWO_ROW.md) and
+[a separated lower pair](SEPARATED_LOWER_TWO_ROW.md). These still require
+their displayed common-frame two-row cores. See [HANDOFF.md](HANDOFF.md)
+for the remaining general core and cyclic-component obligations.
 
 Even the established equality family can have five distinct x-coordinates;
 the all-parallel proof handles those configurations directly. No unproved
