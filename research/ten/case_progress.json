@@ -76,8 +76,8 @@
       "id": "C04",
       "status": "open",
       "title": "Other seven-loaded-ring contact ownership",
-      "scope": "After C02 and C03: other vertex/edge ownership, geometric circle-contact types, or boundary degeneracies.",
-      "evidence": "SEVEN_RING_INTERNAL_CONCURRENCE.md"
+      "scope": "After C02 and C03: proper edge/vertex rings using only U1/U6/U7/U10 are also excluded. Incident opposite-corner rows U2/U3 are impossible. Other opposite-corner rows, radial-side bodies, and pair-support defects remain.",
+      "evidence": "SEVEN_RING_OWNERSHIP_ALPHABET.md"
     },
     {
       "id": "C05",
@@ -118,7 +118,7 @@
       "id": "C10",
       "status": "hand",
       "title": "Unique-circle-vertex central body: parallel transmissions",
-      "scope": "Nonadjacent unloaded bodies; apply this predicate before C11–C17.",
+      "scope": "Nonadjacent unloaded bodies; apply this predicate before C11\u2013C17.",
       "evidence": "PARALLEL_MIXED_FIVE_CYCLE.md"
     },
     {
@@ -132,14 +132,14 @@
       "id": "C12",
       "status": "hand",
       "title": "Unique-circle-vertex central body: two distinct vertex contacts",
-      "scope": "After C10–C11.",
+      "scope": "After C10\u2013C11.",
       "evidence": "VERTEX_CONTACT_MIXED_FIVE_CYCLE.md"
     },
     {
       "id": "C13",
       "status": "hand",
       "title": "Unique-circle-vertex central body: two side-normal transmissions",
-      "scope": "After C10–C12; includes two side-interior contacts.",
+      "scope": "After C10\u2013C12; includes two side-interior contacts.",
       "evidence": "SIDE_NORMAL_MIXED_FIVE_CYCLE.md"
     },
     {
@@ -181,15 +181,15 @@
       "id": "C19",
       "status": "open",
       "title": "Five-cycle with four loads: diagonal transmitter",
-      "scope": "The diagonal transmitter contains zero, lies wholly in squared radius 3/2, and permits at most one other square wholly inside the test disk; completion capacity remains open.",
-      "evidence": "DIAGONAL_FIVE_CYCLE_INNER_TRACE.md"
+      "scope": "The diagonal transmitter contains zero and lies wholly in squared radius 3/2. Its four loaded forces surround zero, with positive radial concurrence. Ten-square completion capacity remains open.",
+      "evidence": "FOUR_LOADED_FORCE_QUADRILATERAL.md"
     },
     {
       "id": "C20",
       "status": "open",
       "title": "Mixed simple cycles of lengths six through ten",
-      "scope": "At least three loaded bodies. Radial loaded order is proved; 206 of 279 fixed signatures are excluded, including every length-ten case. Seventy-three signatures remain.",
-      "evidence": "RADIAL_ORDER_CYCLE_BUDGET.md"
+      "scope": "At least three loaded bodies. Radial loaded order is proved; 234 of 279 fixed signatures are excluded, including every length-nine and length-ten case. Forty-five signatures remain at lengths six through eight.",
+      "evidence": "SHARP_TRANSMISSION_CYCLE_BUDGET.md"
     }
   ]
 }

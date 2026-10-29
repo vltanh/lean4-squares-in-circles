@@ -11,7 +11,7 @@ lemma that does not close its family. All lower-bound cases below concern
 **G3 lower-bound case ledger:** `█████████████████░░░░`
 **17 hand closed · 0 computer closed · 4 open / 21 terminal families.**
 
-**C20 larger-cycle subcases:** `█████████████████▋░░░░░░` **206/279 closed; 73 open.**
+**C20 larger-cycle subcases:** `████████████████████▏░░░` **234/279 closed; 45 open.**
 
 `█` reviewed hand deduction; `▓` reviewed computer-assisted result; `░` open. These are counts of the fixed ledger entries, **not a percentage of the proof or remaining effort**. Every currently closed family has a reviewed hand deduction; imported dependencies remain as stated in each proof.
 
@@ -31,7 +31,7 @@ lemma that does not close its family. All lower-bound cases below concern
 | C01 | HAND CLOSED | **Entirely loaded cyclic component that is not a seven-body simple cycle.** The all-loaded reduction forces an enclosing seven-cycle in a strictly subcritical ten-packing. [Proof / reduction](ALL_LOADED_COMPONENT_RINGS.md). |
 | C02 | HAND CLOSED | **Seven loaded bodies with a common signed frame offset.** Includes the smooth uniform ring and the radial-side/diagonal endpoints. [Proof / reduction](REGULAR_SEVEN_LOADED_RING.md). |
 | C03 | HAND CLOSED | **Nonuniform strict one-chirality seven-ring.** After C02: the fixed side/vertex pattern, allowing reflection and cyclic relabeling. A hand cap theorem traps all three inner squares below the three-square minimum radius. [Proof / reduction](SEVEN_RING_RADIAL_CAP_BOUND.md). |
-| C04 | OPEN | **Other seven-loaded-ring contact ownership.** After C02 and C03: other vertex/edge ownership, geometric circle-contact types, or boundary degeneracies. [Proof / reduction](SEVEN_RING_INTERNAL_CONCURRENCE.md). |
+| C04 | OPEN | **Other seven-loaded-ring contact ownership.** After C02 and C03: proper edge/vertex rings using only U1/U6/U7/U10 are also excluded. Incident opposite-corner rows U2/U3 are impossible. Other opposite-corner rows, radial-side bodies, and pair-support defects remain. [Proof / reduction](SEVEN_RING_OWNERSHIP_ALPHABET.md). |
 | C05 | OPEN | **Mixed cyclic component whose whole graph is not a simple cycle.** Includes branching cyclic blocks and bridges attached to cyclic blocks; two loaded bodies are allowed here. [Proof / reduction](CYCLIC_STRESS_REDUCTIONS.md). |
 | C06 | HAND CLOSED | **Mixed simple cycle of length at most four.** All load assignments. [Proof / reduction](CYCLIC_STRESS_REDUCTIONS.md). |
 | C07 | HAND CLOSED | **Mixed simple cycle of length at least five with at most two loads.** The two-terminal transmission-path theorem applies to a whole simple cycle. [Proof / reduction](CYCLIC_STRESS_REDUCTIONS.md). |
@@ -46,8 +46,8 @@ lemma that does not close its family. All lower-bound cases below concern
 | C16 | HAND CLOSED | **Remaining vertex/side pattern: S-D.** Same ordered convention; physical torque balance forces a far vertex to carry circle load, while elementary analytic bounds place it strictly inside the circle. [Proof / reduction](SIDE_DIAGONAL_EXCLUSION.md). |
 | C17 | HAND CLOSED | **Remaining vertex/side pattern: D-S.** Same ordered convention; endpoint classification and a printed exact clearance table exclude both remaining circle-load patterns. [Proof / reduction](DIAGONAL_SIDE_EXCLUSION.md). |
 | C18 | HAND CLOSED | **Five-cycle with four loads: side transmitter.** Its only unloaded body is a degree-two side transmitter. [Proof / reduction](MIXED_FIVE_FOUR_LOADED.md). |
-| C19 | OPEN | **Five-cycle with four loads: diagonal transmitter.** The diagonal transmitter contains zero, lies wholly in squared radius 3/2, and permits at most one other square wholly inside the test disk; completion capacity remains open. [Proof / reduction](DIAGONAL_FIVE_CYCLE_INNER_TRACE.md). |
-| C20 | OPEN | **Mixed simple cycles of lengths six through ten.** At least three loaded bodies. Radial loaded order is proved; 206 of 279 fixed signatures are excluded, including every length-ten case. Seventy-three signatures remain. [Proof / reduction](RADIAL_ORDER_CYCLE_BUDGET.md). |
+| C19 | OPEN | **Five-cycle with four loads: diagonal transmitter.** The diagonal transmitter contains zero and lies wholly in squared radius 3/2. Its four loaded forces surround zero, with positive radial concurrence. Ten-square completion capacity remains open. [Proof / reduction](FOUR_LOADED_FORCE_QUADRILATERAL.md). |
+| C20 | OPEN | **Mixed simple cycles of lengths six through ten.** At least three loaded bodies. Radial loaded order is proved; 234 of 279 fixed signatures are excluded, including every length-nine and length-ten case. Forty-five signatures remain at lengths six through eight. [Proof / reduction](SHARP_TRANSMISSION_CYCLE_BUDGET.md). |
 <!-- CASE_PROGRESS_END -->
 
 ## How the case tree is exhaustive
@@ -128,7 +128,7 @@ stated in the linked proof:
 
 | Family | Next result needed |
 | --- | --- |
-| C04: other loaded-ring ownership | Classify and exclude the remaining contact patterns, or prove one capacity theorem covering all of them. The strict one-chirality theorem does not cover mixed ownership, vertex/vertex contacts, or its boundary cases. |
+| C04: other loaded-ring ownership | Proper edge/vertex rings with only U1/U6/U7/U10 are excluded, as are incident opposite-corner rows U2/U3. Exclude the other opposite-corner rows, radial-side bodies, and pair-support defects, or prove a capacity theorem covering them. |
 | C05: branching mixed components | Classify or exclude the connected cyclic graphs that are not whole simple cycles, including bridge attachments and exactly two loaded bodies. |
 | C19: four-loaded five-cycle with D | Exclude this component or its ten-square completion. |
 | C20: larger mixed simple cycles | Exclude the [279 enumerated graph/transmitter cases](CYCLE_CASES.md), refining physical contact ownership where needed. |
@@ -151,8 +151,14 @@ incidence records before symmetry, force, and geometry restrictions. The
 normal at a vertex ranges over its supporting cone; it is not replaced by
 an edge normal. The records are finite, but this enormous raw list has
 **not** been reduced to a practical audited catalog. That reduction is an
-open subgate of C04. Alternatively, a theorem covering all records closes
-the family directly.
+open subgate of C04. The reviewed [support alphabet](SEVEN_RING_OWNERSHIP_ALPHABET.md)
+reduces necessary local types to 25 rows and proper edge/vertex ownership
+to 34 coarse source/sink schemes. The
+[inner-face capacity theorem](SEVEN_RING_INNER_FACE_CAPACITY.md) excludes
+every scheme made only from U1/U6/U7/U10, and the
+[incident mixed theorem](LOADED_INCIDENT_MIXED_EXCLUSION.md) excludes U2/U3.
+The raw row and scheme counts are coverage counts, not counts of surviving
+realizable rings. A theorem covering all records would close C04 directly.
 
 **C05, branching mixed graphs.** A precise finite envelope consists of
 `m<=10` labeled vertices, an edge mask in `{0,1}^{m choose 2}`, and a loaded
@@ -182,9 +188,10 @@ then forces radial loaded order when at most one diagonal occurs and
 excludes the [117-case batch](single_side_cycle_batch.json). The
 [D-D uncrossing theorem](DIAGONAL_PATH_UNCROSSING.md) now proves radial
 order for every whole mixed simple cycle. Its
-[206-case angular budget](RADIAL_ORDER_CYCLE_BUDGET.md) leaves exactly
-73 ledger entries open: 15 at length six, 23 at length seven, 28 at length
-eight, seven at length nine, and none at length ten.
+[206-case angular budget](RADIAL_ORDER_CYCLE_BUDGET.md) is strengthened by
+the [cap-angle budget](SHARP_TRANSMISSION_CYCLE_BUDGET.md), which closes
+234 entries and leaves exactly 45 open: 15 at length six, 19 at length
+seven, 11 at length eight, and none at lengths nine or ten.
 An entry is never claimed feasible or excluded merely because it appears
 in the list.
 

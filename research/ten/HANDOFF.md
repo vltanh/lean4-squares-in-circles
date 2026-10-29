@@ -40,8 +40,8 @@ The equality classification remains open outside the completed classes.
 Research resumed from handoff commit `fb91a0517a0eedf192e11759f9bdec2a60ab46af`.
 The unrestricted proof is still open. The main case ledger has **17 reviewed
 hand closures and 4 open
-families out of 21**; the larger-cycle subledger has **206 reviewed hand
-closures and 73 open cases out of 279**. Main gates remain **3/7 closed**.
+families out of 21**; the larger-cycle subledger has **234 reviewed hand
+closures and 45 open cases out of 279**. Main gates remain **3/7 closed**.
 The closed counts do not measure the fraction of mathematical effort.
 
 Latest completed work:
@@ -55,8 +55,22 @@ Latest completed work:
   Every three-loaded five-cycle is now excluded.
 - C20: [complete uncrossing](DIAGONAL_PATH_UNCROSSING.md) proves radial
   loaded order for every whole mixed simple cycle, including multiple D
-  paths. The [206-case angular budget](RADIAL_ORDER_CYCLE_BUDGET.md)
-  closes all length-ten signatures and leaves 73 shorter signatures.
+  paths. The [sharp cap-angle budget](SHARP_TRANSMISSION_CYCLE_BUDGET.md)
+  closes 234 signatures, including every length-nine and length-ten case.
+  The remaining 45 comprise 15 length-six, 19 length-seven, and 11
+  length-eight signatures. The cap theorem uses arbitrary orientations
+  and strip separation, so its local angle bounds also apply to branching paths.
+- C04: the [inner-face capacity theorem](SEVEN_RING_INNER_FACE_CAPACITY.md)
+  excludes all proper edge/vertex rings using only rows U1/U6/U7/U10,
+  including mixed source/sink schemes. Its new side-source cap has squared
+  radius below `83/50<425/256`, with side endpoints included. Separately,
+  [incident opposite-corner rows U2/U3](LOADED_INCIDENT_MIXED_EXCLUSION.md)
+  are impossible even when the neighbors have other support types.
+- C19: the [force quadrilateral](FOUR_LOADED_FORCE_QUADRILATERAL.md)
+  surrounds zero strictly and gives positive radial concurrence on all
+  four loaded bodies. The [exact trace counterexample](DIAGONAL_CORE_TRACE_OBSTRUCTION.md)
+  shows why the current scalar bounds on the transmitter alone cannot
+  close the remaining capacity argument; it is not a realization of C19.
 - C19: the diagonal transmitter is wholly within squared radius `3/2` and
   occupies more than `5pi/6` on the radius-`3/8` circle. At most one other
   square can be wholly inside the test disk. This is a restriction only.
