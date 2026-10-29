@@ -85,6 +85,11 @@ selections are jointly possible, not merely separately possible.
 In the n=10 radius window this also permits the additional open-interval
 choices in
 [SEVEN_RING_ALL_INNER_FACE_CAPACITY.md](SEVEN_RING_ALL_INNER_FACE_CAPACITY.md).
+The opposite-corner midpoint intervals in
+[LOADED_OUTER_VV_NORMAL_EXCLUSION.md](LOADED_OUTER_VV_NORMAL_EXCLUSION.md)
+also satisfy the compatibility argument below. They concern disjoint VV
+pairs from the earlier circle-adjacent intervals and impose one common
+open interval that works for either endpoint's possible outer-body role.
 Those choices concern only point-only VV pairs whose two incident squares
 both have geometric circle vertices (and in the restricted cases have
 unique circle vertices adjacent to the pair contact). Such a pair cannot

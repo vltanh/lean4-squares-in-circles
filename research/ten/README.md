@@ -60,6 +60,7 @@ the known bound, not a lower-bound proof.
 | A loaded body supported on its two inner sides has a small opposite corner | [Double-side restriction](LOADED_DOUBLE_SIDE_RESTRICTION.md) | Reviewed hand necessary bounds; other ring ownership remains open |
 | Every physical one-chirality seven-ring has insufficient room for three inner squares | [Hand cap theorem](SEVEN_RING_RADIAL_CAP_BOUND.md), [chord bound](SEVEN_RING_CAP_CHORD_BOUND.md) | Reviewed hand closure: squared inner radius below `33/20<425/256` |
 | Every surviving selected seven-ring contains an outer-edge/opposite-corner row U4 or U5 | [All-inner-face capacity](SEVEN_RING_ALL_INNER_FACE_CAPACITY.md), [outer-edge reduction](SEVEN_RING_OUTER_EDGE_REDUCTION.md) | Reviewed hand reductions including arbitrary radial bodies and SS/VV pairs; U4/U5 remain open |
+| The extra U4/U5 corner has squared norm below 9/2-2sqrt(2); if it reaches 83/50, its opposite-corner pair is proper V/S | [Outer-body bounds](LOADED_OUTER_MIXED_RESTRICTIONS.md), [VV normal selection](LOADED_OUTER_VV_NORMAL_EXCLUSION.md) | Reviewed hand restrictions; the S neighbor has unique-circle row U1/U6/U7; the capacity gap remains open |
 | Generic selection restricts unique-circle endpoints of loaded-ring VV pairs | [Concurrence-polynomial selection](LOADED_VV_GENERIC_RESTRICTION.md) | The other pair must be an SS overlap with interior aggregate application; radial load splits remain outside this restriction |
 | The incident opposite-corner rows U2/U3 are impossible in a loaded ring | [Incident mixed exclusion](LOADED_INCIDENT_MIXED_EXCLUSION.md) | Reviewed hand local exclusion allowing either support type on each loaded neighbor |
 | The unique-circle D-S three-loaded five-cycle is impossible | [D-S exclusion](DIAGONAL_SIDE_EXCLUSION.md), [exact table checker](check_diagonal_side_clearance.py) | Reviewed hand closure, including both endpoint load patterns |
@@ -77,6 +78,8 @@ the known bound, not a lower-bound proof.
 | A radial-side central body cannot occur in the three-loaded five-cycle | [Full radial D-D exclusion](RADIAL_SIDE_DD_EXCLUSION.md) | Reviewed hand closure, together with the earlier S-S and S-D arguments |
 | Several mixed cyclic stress patterns are impossible | [Cyclic reductions](CYCLIC_STRESS_REDUCTIONS.md), [remaining five-cycle form](SIDE_NORMAL_MIXED_FIVE_CYCLE.md) | Conditional hand reductions; neither a complete graph classification nor a global exclusion |
 | Branching components with every branch vertex loaded have a fixed catalog of 45,666 cases | [Catalog](BRANCHING_LOADED_SKELETON_INVENTORY.md), [combined exact graph certificates](BRANCHING_SELECTED_GRAPH_FILTERS.md) | Independent enumerators agree; 42,532 excluded and 3,134 remain; unloaded branch vertices are outside this subclass |
+| Branching components with exactly one unloaded retained vertex have 524,870 fixed cases | [Catalog](BRANCHING_ONE_UNLOADED_INVENTORY.md), [proof decoder](BRANCHING_ONE_UNLOADED_FILTERS.md) | Independent enumerators and checkers agree; 385,071 excluded and 139,799 remain; b>=2 remains outside both catalogs |
+| One unloaded branch vertex and exactly two loaded bodies cannot occur | [Complete exclusion](ONE_UNLOADED_TWO_LOADED_EXCLUSION.md) | Reviewed hand capacity bound for the forced five-square core, including arbitrary orientations of additional squares |
 | A five-cycle with four loaded squares cannot use a side transmitter | [Four-loaded five-cycle](MIXED_FIVE_FOUR_LOADED.md) | Side transmitter excluded by hand in the explicitly imported radius window; the diagonal branch is now excluded above for the chosen certificate |
 | Parallel four-inner cores have a line-separated or pinwheel form; narrow internal channels can be filled as virtual obstacles | [Projection graphs and channel lemma](FOUR_CORE_GENERALIZATION.md) | Hand structural reduction and exact localized pinwheel; no general completion bound |
 | A solid two-by-two core, with its four centers in the closed unit disk, admits at most five additional squares | [General translated-block theorem](GENERAL_TRANSLATED_BLOCK_OBSTRUCTION.md) | Hand proof for every translation and rotation; additional orientations arbitrary |
@@ -118,7 +121,9 @@ certificates remain computational results with their own stated scope.
 
 **C20 larger-cycle subcases:** `████████████████████▍░░░` **238/279 closed; 41 open.**
 
-**C05 branching subclass, all branch vertices loaded:** `██████████████████████▎░` **42,532/45,666 excluded; 3,134 remain.** [Catalog and certificates](BRANCHING_SELECTED_GRAPH_FILTERS.md). Unloaded branching vertices remain outside this subledger.
+**C05 branching subclass, all branch vertices loaded:** `██████████████████████▎░` **42,532/45,666 excluded; 3,134 remain.** [Catalog and certificates](BRANCHING_SELECTED_GRAPH_FILTERS.md). This is the fixed `b=0` subledger.
+
+**C05 branching subclass, exactly one unloaded branch vertex:** `█████████████████▌░░░░░░` **385,071/524,870 excluded; 139,799 remain.** [Catalog and proof decoder](BRANCHING_ONE_UNLOADED_FILTERS.md). At least two unloaded branch vertices remain outside these catalogs.
 
 `█` reviewed hand deduction; `▓` reviewed computer-assisted result; `░` open. These are counts of the fixed ledger entries, **not a percentage of the proof or remaining effort**. Every currently closed family has a reviewed hand deduction; imported dependencies remain as stated in each proof.
 

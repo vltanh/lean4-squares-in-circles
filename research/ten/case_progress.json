@@ -83,8 +83,8 @@
       "id": "C05",
       "status": "open",
       "title": "Mixed cyclic component whose whole graph is not a simple cycle",
-      "scope": "Includes branching cyclic blocks and bridges. When every retained vertex is loaded, a fixed 45,666-case catalog has 42,532 reviewed exclusions and 3,134 remaining. Unloaded retained branch vertices still require classification.",
-      "evidence": "BRANCHING_SELECTED_GRAPH_FILTERS.md"
+      "scope": "Includes branching cyclic blocks and bridges. Fixed catalogs cover b=0 (45,666 records: 3,134 remain) and b=1 (524,870 records: 139,799 remain). The complete k=2,b=1 stratum is excluded. At least two unloaded retained branch vertices remain unclassified.",
+      "evidence": "BRANCHING_ONE_UNLOADED_FILTERS.md"
     },
     {
       "id": "C06",

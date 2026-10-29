@@ -46,89 +46,49 @@ The closed counts do not measure the fraction of mathematical effort.
 
 Latest completed work:
 
-- C20: the [SS/S six-cycle](SS_SIDE_SIX_CYCLE_EXCLUSION.md),
-  [all-D cycle](DIAGONAL_PATH_GRAPH_RESTRICTIONS.md), and
-  [two-D/one-S six-cycle](TWO_DIAGONAL_ONE_SIDE_SIX_CYCLE_EXCLUSION.md)
-  are now hand closed. Together with the earlier SS/D result, the current
-  total is 238/279.
-- C04: the [all-inner-face theorem](SEVEN_RING_ALL_INNER_FACE_CAPACITY.md)
-  and [outer-edge reduction](SEVEN_RING_OUTER_EDGE_REDUCTION.md) cover VV
-  pairs and U8/U9. Every surviving selected ring must contain U4 or U5.
-- C05: [planar stress selection](PLANAR_SELECTED_PHYSICAL_STRESS.md)
-  and the [D-path forest theorem](DIAGONAL_PATH_GRAPH_RESTRICTIONS.md)
-  add 2,196 exclusions to the preceding 40,336-case union. The resulting
-  42,532/45,666 count retains exact independently checked certificates.
-- C20: the complete [SS/D six-cycle exclusion](SS_DIAGONAL_SIX_CYCLE_EXCLUSION.md)
-  closes `C20-M06-L03-B01-T02` (`LLDLSS`). Width-two versions of the
-  parallel, common-vertex, distinct-vertex, incident-support, and radial
-  cases are all checked. The companion `LLSLSS` is now closed by the separate radial-side argument.
-- C04: the [shared-side capacity theorem](SEVEN_RING_SHARED_SIDE_CAPACITY.md)
-  extends the good-row/radial-body argument to SS pair contacts whenever
-  no VV pair occurs. The [joint generic restriction](LOADED_VV_GENERIC_RESTRICTION.md)
-  forces every unique-circle VV endpoint to have its other positive pair
-  on an SS overlap, with aggregate application strictly inside the overlap.
-  These normal exclusions are imposed before selecting stress components.
-- C19 is now [hand closed](DIAGONAL_FIVE_CYCLE_EXCLUSION.md). Choose
-  [generic contact normals](GENERIC_CONTACT_NORMAL_SELECTION.md) before
-  classifying the stress graph; each diagonal transmitter must then meet
-  relative side interiors of its neighbors. The independently reviewed
-  [nearer-endpoint exclusion](DIAGONAL_FIVE_CYCLE_NEAR_ENDPOINT.md),
-  Sections 1--4, makes this impossible in the four-loaded five-cycle.
-  The stronger selection preserves all earlier strict/nonradial premises.
-  It does not assert that arbitrary previously chosen stress graphs persist.
-- C05: the [loaded-branch catalog](BRANCHING_LOADED_SKELETON_INVENTORY.md)
-  has 45,666 stable records modulo circular rotations and reflection.
-  Independent Python and C++ enumerators agree on every record. The
-  [combined exact graph certificates](BRANCHING_SELECTED_GRAPH_FILTERS.md)
-  exclude 42,532 and leave 3,134. Every angular witness is a sum of at most
-  seven strict integer inequalities; every bridge witness is a graph cut.
-  This is only `b=0`, where all retained branching vertices are loaded.
-  The `b>0` subclass remains outside the catalog and C05 remains open.
-  The newest [SS-bridge endpoint theorem](BRANCHING_SS_BRIDGE_ENDPOINTS.md)
-  forces parallel endpoint frames, squared radius above `17/4`, and
-  forbids an incident double transmission bundle. Its 354 explicit graph
-  cuts add 30 exclusions to the preceding angle/bridge union.
-- C03: a hand cap proof excludes every physical ring in the fixed
-  one-chirality ownership pattern, independently of the earlier interval
-  action verifier.
-- C15, C16 and C17: the unique-circle S-S, S-D and D-S five-cycles are
-  excluded. The saved S-S candidate passed both integrated reviews;
-  [SIDE_SIDE_EXCLUSION.md](SIDE_SIDE_EXCLUSION.md) is the complete proof.
-  Every three-loaded five-cycle is now excluded.
-- C20: [complete uncrossing](DIAGONAL_PATH_UNCROSSING.md) proves radial
-  loaded order for every whole mixed simple cycle, including multiple D
-  paths. The [sharp cap-angle budget](SHARP_TRANSMISSION_CYCLE_BUDGET.md)
-  closes 234 signatures, including every length-nine and length-ten case.
-  The remaining 45 comprise 15 length-six, 19 length-seven, and 11
-  length-eight signatures. The cap theorem uses arbitrary orientations
-  and strip separation, so its local angle bounds also apply to branching paths.
-- C04: the [inner-face capacity theorem](SEVEN_RING_INNER_FACE_CAPACITY.md)
-  excludes all proper edge/vertex rings using only rows U1/U6/U7/U10,
-  including mixed source/sink schemes. Its new side-source cap has squared
-  radius below `83/50<425/256`, with side endpoints included. Separately,
-  [incident opposite-corner rows U2/U3](LOADED_INCIDENT_MIXED_EXCLUSION.md)
-  are impossible even when the neighbors have other support types.
-  The reviewed [radial extension](SEVEN_RING_RADIAL_INNER_FACE_CAPACITY.md)
-  permits arbitrary radial-side bodies and geometric circle-load splits.
-  A surviving proper-contact ring must therefore include a unique-circle
-  row U4/U5/U8/U9. Side/side and vertex/vertex pair defects remain outside
-  this capacity theorem.
-- C19: the [force quadrilateral](FOUR_LOADED_FORCE_QUADRILATERAL.md)
-  surrounds zero strictly and gives positive radial concurrence on all
-  four loaded bodies. The [exact trace counterexample](DIAGONAL_CORE_TRACE_OBSTRUCTION.md)
-  shows why the current scalar bounds on the transmitter alone cannot
-  close the remaining capacity argument; it is not a realization of C19.
-  The new selected-certificate exclusion above closes C19 without requiring
-  that capacity argument or the extra concurrence conclusion.
-- C19: the diagonal transmitter is wholly within squared radius `3/2` and
-  occupies more than `5pi/6` on the radius-`3/8` circle. At most one other
-  square can be wholly inside the test disk. This is a restriction only.
+- Every whole five-cycle is hand excluded for the selected certificate.
+  [C19](DIAGONAL_FIVE_CYCLE_EXCLUSION.md) uses generic contact normals
+  and the reviewed nearer-endpoint obstruction.
+- C20 has 238/279 hand closures. The cap budget supplies 234; the
+  [SS/D](SS_DIAGONAL_SIX_CYCLE_EXCLUSION.md),
+  [SS/S](SS_SIDE_SIX_CYCLE_EXCLUSION.md),
+  [all-D](DIAGONAL_PATH_GRAPH_RESTRICTIONS.md), and
+  [two-D/one-S](TWO_DIAGONAL_ONE_SIDE_SIX_CYCLE_EXCLUSION.md) six-cycle
+  arguments supply four more. The 41 open IDs comprise 11 length-six,
+  19 length-seven, and 11 length-eight signatures.
+- C04's [all-inner-face capacity theorem](SEVEN_RING_ALL_INNER_FACE_CAPACITY.md)
+  and [outer-edge reduction](SEVEN_RING_OUTER_EDGE_REDUCTION.md) cover
+  arbitrary radial-side bodies, SS/VV pairs, and U8/U9. Every surviving
+  selected seven-ring must contain a unique-circle row U4 or U5.
+  Its [extra corner bound](LOADED_OUTER_MIXED_RESTRICTIONS.md) narrowly
+  exceeds the three-square threshold. If that corner reaches squared
+  radius 83/50, a [joint midpoint-normal selection](LOADED_OUTER_VV_NORMAL_EXCLUSION.md)
+  forces the opposite-corner pair to be proper V/S, with an inner-side
+  neighbor of row U1/U6/U7. These are restrictions, not a capacity closure.
+- C05's [loaded-branch catalog](BRANCHING_LOADED_SKELETON_INVENTORY.md)
+  has 45,666 fixed records. [Exact graph certificates](BRANCHING_SELECTED_GRAPH_FILTERS.md)
+  exclude 42,532 and leave 3,134. Independent enumerators agree on every
+  record, and independent checkers validate the finite witnesses.
+- C05 now also has a [one-unloaded-branch catalog](BRANCHING_ONE_UNLOADED_INVENTORY.md)
+  with 524,870 fixed records. The [compact proof ledger](BRANCHING_ONE_UNLOADED_FILTERS.md)
+  excludes 385,071 and leaves 139,799. Codes are stable IDs, so an
+  on-demand decoder prints the case and its proof witness. Raw catalogs
+  and exact remaining-case lists can be regenerated without committing
+  hundreds of thousands of rows.
+- The entire [two-loaded, one-unloaded-branch stratum](ONE_UNLOADED_TWO_LOADED_EXCLUSION.md)
+  is hand excluded. A forced five-square core has squared radius 17/4;
+  a sealed-cavity and two-half-plane capacity argument bounds its total
+  completion by nine squares, with arbitrary additional orientations.
+- [Planar stress selection](PLANAR_SELECTED_PHYSICAL_STRESS.md) is
+  compatible with the normal restrictions used above. Select the new
+  certificate before classifying its graph; an arbitrary earlier stress
+  graph need not retain its edges, degrees, or components.
 
 | Open family | Concrete next work |
 | --- | --- |
-| C04: other seven-ring ownership | Every selected surviving ring contains a unique-circle outer-edge/opposite-corner row U4 or U5. Their exclusion or a capacity extension remains open. |
-| C05: branching mixed components | Exclude the 3,134 remaining loaded-branch catalog records and classify components with unloaded retained branching vertices. Apply planarity only to the jointly selected certificate. |
-| C20: 41 larger-cycle entries | Improve the angular/contact bounds or prove completion capacity for 11 length-six, 19 length-seven, and 11 length-eight signatures. Every remaining ID is explicit in CYCLE_CASES.md. |
+| C04: other seven-ring ownership | Exclude U4/U5 or extend capacity to their extra inner-boundary corners. |
+| C05: branching mixed components | Exclude 3,134 remaining b=0 records and 139,799 remaining b=1 records; classify or exclude b>=2. |
+| C20: 41 larger-cycle entries | Prove completion bounds or contact exclusions for the explicit remaining signatures in CYCLE_CASES.md. |
 
 The former D-D crossing lead is now a reviewed theorem. A crossing
 forces a lower loaded square's other contact to the opposite end of its

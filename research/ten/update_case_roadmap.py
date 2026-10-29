@@ -48,6 +48,15 @@ def main():
             or not (ROOT / branch["proof"]).is_file()):
         raise ValueError("Invalid branching subclass totals or evidence")
     branch_bar = fraction_bar(branch_done, branch_total)
+    branch_one = json.loads((ROOT / "branching_one_unloaded_progress.json").read_text())
+    b1_total, b1_done = branch_one["raw_cases"], branch_one["hand_closed"]
+    if (not 0 <= b1_done <= b1_total
+            or b1_total - b1_done != branch_one["remaining"]
+            or sum(r["raw_cases"] for r in branch_one["by_loaded_count"]) != b1_total
+            or sum(r["hand_closed"] for r in branch_one["by_loaded_count"]) != b1_done
+            or not (ROOT / branch_one["evidence"]).is_file()):
+        raise ValueError("Invalid one-unloaded branching totals or evidence")
+    b1_bar = fraction_bar(b1_done, b1_total)
     cases = data["cases"]
     if len({c["id"] for c in cases}) != len(cases):
         raise ValueError("Duplicate case ID")
@@ -72,7 +81,11 @@ def main():
         f"**C05 branching subclass, all branch vertices loaded:** `{branch_bar}` "
         f"**{branch_done:,}/{branch_total:,} excluded; {branch_total-branch_done:,} remain.** "
         f"[Catalog and certificates]({branch['proof']}). "
-        "Unloaded branching vertices remain outside this subledger.\n\n"
+        "This is the fixed `b=0` subledger.\n\n"
+        f"**C05 branching subclass, exactly one unloaded branch vertex:** `{b1_bar}` "
+        f"**{b1_done:,}/{b1_total:,} excluded; {b1_total-b1_done:,} remain.** "
+        f"[Catalog and proof decoder]({branch_one['evidence']}). "
+        "At least two unloaded branch vertices remain outside these catalogs.\n\n"
         "`█` reviewed hand deduction; `▓` reviewed computer-assisted result; `░` open. "
         "These are counts of the fixed ledger entries, **not a percentage of the proof or remaining effort**. "
         + ("For the requested hand proof, each computer-assisted family also needs a hand replacement."
@@ -117,7 +130,8 @@ def main():
              "A conditional core lemma or an infeasible numerical sample does not close an entry.", ""]
     (ROOT / "CYCLE_CASES.md").write_text("\n".join(rows))
     print(f"Rendered {done}/{len(gates)} gates; {dict(counts)} across {len(cases)} case families; {cycle_done}/{cycle_total} cycle cases closed.")
-    print(f"Branching b=0: {branch_done}/{branch_total} excluded; {branch_total-branch_done} remain; b>0 unclassified.")
+    print(f"Branching b=0: {branch_done}/{branch_total} excluded; {branch_total-branch_done} remain.")
+    print(f"Branching b=1: {b1_done}/{b1_total} excluded; {b1_total-b1_done} remain; b>=2 unclassified.")
 
 
 if __name__ == "__main__":

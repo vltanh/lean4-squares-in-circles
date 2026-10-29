@@ -13,7 +13,9 @@ lemma that does not close its family. All lower-bound cases below concern
 
 **C20 larger-cycle subcases:** `████████████████████▍░░░` **238/279 closed; 41 open.**
 
-**C05 branching subclass, all branch vertices loaded:** `██████████████████████▎░` **42,532/45,666 excluded; 3,134 remain.** [Catalog and certificates](BRANCHING_SELECTED_GRAPH_FILTERS.md). Unloaded branching vertices remain outside this subledger.
+**C05 branching subclass, all branch vertices loaded:** `██████████████████████▎░` **42,532/45,666 excluded; 3,134 remain.** [Catalog and certificates](BRANCHING_SELECTED_GRAPH_FILTERS.md). This is the fixed `b=0` subledger.
+
+**C05 branching subclass, exactly one unloaded branch vertex:** `█████████████████▌░░░░░░` **385,071/524,870 excluded; 139,799 remain.** [Catalog and proof decoder](BRANCHING_ONE_UNLOADED_FILTERS.md). At least two unloaded branch vertices remain outside these catalogs.
 
 `█` reviewed hand deduction; `▓` reviewed computer-assisted result; `░` open. These are counts of the fixed ledger entries, **not a percentage of the proof or remaining effort**. Every currently closed family has a reviewed hand deduction; imported dependencies remain as stated in each proof.
 
@@ -34,7 +36,7 @@ lemma that does not close its family. All lower-bound cases below concern
 | C02 | HAND CLOSED | **Seven loaded bodies with a common signed frame offset.** Includes the smooth uniform ring and the radial-side/diagonal endpoints. [Proof / reduction](REGULAR_SEVEN_LOADED_RING.md). |
 | C03 | HAND CLOSED | **Nonuniform strict one-chirality seven-ring.** After C02: the fixed side/vertex pattern, allowing reflection and cyclic relabeling. A hand cap theorem traps all three inner squares below the three-square minimum radius. [Proof / reduction](SEVEN_RING_RADIAL_CAP_BOUND.md). |
 | C04 | OPEN | **Other seven-loaded-ring contact ownership.** The selected loaded ring must contain a unique-circle outer-edge/opposite-corner row U4 or U5. All other unique-circle rows, arbitrary radial-side bodies, and every pair-support type are covered by the extended capacity argument when U4/U5 are absent. [Proof / reduction](SEVEN_RING_OUTER_EDGE_REDUCTION.md). |
-| C05 | OPEN | **Mixed cyclic component whose whole graph is not a simple cycle.** Includes branching cyclic blocks and bridges. When every retained vertex is loaded, a fixed 45,666-case catalog has 42,532 reviewed exclusions and 3,134 remaining. Unloaded retained branch vertices still require classification. [Proof / reduction](BRANCHING_SELECTED_GRAPH_FILTERS.md). |
+| C05 | OPEN | **Mixed cyclic component whose whole graph is not a simple cycle.** Includes branching cyclic blocks and bridges. Fixed catalogs cover b=0 (45,666 records: 3,134 remain) and b=1 (524,870 records: 139,799 remain). The complete k=2,b=1 stratum is excluded. At least two unloaded retained branch vertices remain unclassified. [Proof / reduction](BRANCHING_ONE_UNLOADED_FILTERS.md). |
 | C06 | HAND CLOSED | **Mixed simple cycle of length at most four.** All load assignments. [Proof / reduction](CYCLIC_STRESS_REDUCTIONS.md). |
 | C07 | HAND CLOSED | **Mixed simple cycle of length at least five with at most two loads.** The two-terminal transmission-path theorem applies to a whole simple cycle. [Proof / reduction](CYCLIC_STRESS_REDUCTIONS.md). |
 | C08 | HAND CLOSED | **Five-cycle with three loads and adjacent unloaded bodies.** The middle loaded body touches every other loaded body. [Proof / reduction](CYCLIC_STRESS_REDUCTIONS.md). |
@@ -207,9 +209,18 @@ the circular loaded order, path types, multiplicities, and body count.
 The [combined exact graph certificates](BRANCHING_SELECTED_GRAPH_FILTERS.md)
 exclude 42,532 records and leave 3,134; the separate bar above tracks this
 fixed subclass. Each angular rejection prints at most seven integer
-inequalities summing to a contradiction. The subclass with an unloaded
-retained branching vertex (`b>0`) is outside that catalog and remains
-unenumerated. Neither partial classification closes C05.
+inequalities summing to a contradiction.
+
+The subclass with exactly one unloaded retained branch vertex (`b=1`)
+now has a second fixed [catalog of 524,870 cases](BRANCHING_ONE_UNLOADED_INVENTORY.md),
+independently enumerated in two different orders. Its
+[proof decoder](BRANCHING_ONE_UNLOADED_FILTERS.md) excludes 385,071 and
+leaves 139,799; the six cases with only two loaded vertices have a
+[complete hand capacity exclusion](ONE_UNLOADED_TWO_LOADED_EXCLUSION.md).
+The code itself is the stable ID, and an exact list of remaining IDs can
+be exported from regenerated catalogs. At least two unloaded retained
+vertices (`b>=2`) remain outside both catalogs. Neither partial
+classification closes C05.
 
 **C20 is already enumerated.** [CYCLE_CASES.md](CYCLE_CASES.md) lists all
 279 stable case IDs and their canonical words. Independent enumerations and
