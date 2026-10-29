@@ -90,6 +90,13 @@ Latest completed work:
 | C05: branching mixed components | Exclude 3,134 remaining b=0 records and 139,799 remaining b=1 records; classify or exclude b>=2. |
 | C20: 41 larger-cycle entries | Prove completion bounds or contact exclusions for the explicit remaining signatures in CYCLE_CASES.md. |
 
+The open `LSLSLD` signature now has a
+[reproducible numerical six-body candidate](ONE_DIAGONAL_TWO_SIDE_COMPONENT_CANDIDATE.md)
+at radius about 2.03253, with positive stress and numerical clearance.
+It is neither a certified exact component nor a ten-square packing. It
+suggests that this branch needs a bound on the four additional squares,
+and it changes no progress count.
+
 The former D-D crossing lead is now a reviewed theorem. A crossing
 forces a lower loaded square's other contact to the opposite end of its
 top side; its neighbor is then a fixed northwest unit square with a vertex
