@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "case_status": {
+    "C20-M08-L03-B01-T01": {
+      "status": "hand",
+      "evidence": "THREE_LOADED_LONG_CYCLES.md"
+    },
+    "C20-M08-L03-B01-T02": {
+      "status": "hand",
+      "evidence": "THREE_LOADED_LONG_CYCLES.md"
+    },
+    "C20-M09-L03-B01-T01": {
+      "status": "hand",
+      "evidence": "THREE_LOADED_LONG_CYCLES.md"
+    },
+    "C20-M10-L04-B01-T01": {
+      "status": "hand",
+      "evidence": "FOUR_LOADED_THREE_LONG_PATHS.md"
+    }
+  }
+}

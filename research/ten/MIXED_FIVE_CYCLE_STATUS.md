@@ -82,55 +82,42 @@ zero; the zero-torque midpoint alternative has parallel directions and
 is excluded. At least one contact is a corner, since two side-interior
 contacts would also have parallel directions.
 
-**Only D-D remains in this branch.** The S-S exclusion is
-[RADIAL_SIDE_MIXED_FIVE_CYCLE.md](RADIAL_SIDE_MIXED_FIVE_CYCLE.md).
-The S-D exclusion is
-[RADIAL_SIDE_MIXED_TRANSMISSIONS.md](RADIAL_SIDE_MIXED_TRANSMISSIONS.md).
-That last proof uses the slightly stronger bound `R^2>5/2+sqrt(2)`,
-explicitly derived from the pinned n=8 lower theorem and its coarse
-stationary bracket. Its generated interval-data dependency is stated in
-the manuscript; no new independent hand proof of that bracket is claimed.
+**This central-body branch is now closed.** The S-S exclusion is
+[RADIAL_SIDE_MIXED_FIVE_CYCLE.md](RADIAL_SIDE_MIXED_FIVE_CYCLE.md),
+the S-D exclusion is
+[RADIAL_SIDE_MIXED_TRANSMISSIONS.md](RADIAL_SIDE_MIXED_TRANSMISSIONS.md),
+and the complete D-D exclusion is
+[RADIAL_SIDE_DD_EXCLUSION.md](RADIAL_SIDE_DD_EXCLUSION.md), using the
+restrictions in [RADIAL_SIDE_DOUBLE_DIAGONAL.md](RADIAL_SIDE_DOUBLE_DIAGONAL.md).
+The last argument covers its unequal-angle, smaller-radius case by
+endpoint clearance, physical torque balance, and a strict separating axis.
 
-## Work still required
+These proofs use the slightly stronger bound `R^2>5/2+sqrt(2)`, explicitly
+derived from the pinned n=8 lower theorem and its coarse stationary bracket.
+Its generated interval-data dependency remains stated; no independent
+hand derivation of that imported bracket is claimed.
 
-The remaining task for this component is to exclude the three rows of the
-unique-circle-vertex table and the radial-side D-D pattern, or to bound
-the capacity of their physical completions by nine. Each restriction
-above concerns actual squares and actual contact forces, not merely an
-abstract graph or a center-distance relaxation.
-
-Closing this component alone would still leave other cyclic components,
-including the four-loaded five-cycle, larger mixed cycles, and components
-with branching cyclic blocks. No exhaustive reduction to the five-cycle
-is asserted here.
-
-## Further radial-side DD restrictions (2026-10-29)
-
-The independently reviewed [double-diagonal note](RADIAL_SIDE_DOUBLE_DIAGONAL.md)
-proves exact transmitter separation for outward angles `theta>=eta` and
-contact-height gap `d<=1`:
-
-```text
-d*cos(pi/4-theta)>=cos(theta+eta),
-2*theta+eta>=pi/4,
-d<=cos(theta)+cos(eta)-sqrt(2)*(sin(theta)+sin(eta)).
-```
-
-The middle inequality is strict when `d<1`; an opposite side-interior
-contact therefore forces `theta>pi/8`. The note also supplies an endpoint
-radius inequality. These necessary conditions retain contact equality and
-do not exclude the DD component.
-
-The same note now also proves **exclusion of the radial-side DD component
-for `R^2>=17/4`**, and excludes equal outward angles throughout the
-working window. Its endpoint-clearance proof forces the remaining domain
-to `R^2<17/4` and `0<=eta<pi/12<theta<pi/4`, with the preceding
-separation inequalities. This remaining asymmetric domain is open.
-
-## Four loaded bodies (2026-10-29)
+## Four loaded bodies
 
 For a whole five-cycle with four loaded bodies and one unloaded degree-two
-body, the [four-loaded theorem](MIXED_FIVE_FOUR_LOADED.md) now excludes a
-side transmitter throughout the explicitly imported lower-radius window.
-Only its diagonal-transmitter case remains. This is a different component
-type from the three-loaded/two-transmitter patterns discussed above.
+body, [MIXED_FIVE_FOUR_LOADED.md](MIXED_FIVE_FOUR_LOADED.md) excludes a
+side transmitter throughout the same radius window. Only the diagonal
+transmitter remains. This is a different component type from the
+three-loaded/two-transmitter patterns above.
+
+## Exact remaining five-cycle obligations
+
+| Roadmap ID | Remaining family | Status |
+| --- | --- | --- |
+| C15 | Unique-circle C; vertex transmitter S, side transmitter S | OPEN |
+| C16 | Unique-circle C; vertex transmitter S, side transmitter D | OPEN |
+| C17 | Unique-circle C; vertex transmitter D, side transmitter S | OPEN |
+| C19 | Four loaded bodies; the sole unloaded transmitter D | OPEN |
+
+For each row, either exclude the physical component or prove that its
+completion has capacity at most nine. These are the only remaining
+five-cycle families after the ordered reductions in
+[CASE_ROADMAP.md](CASE_ROADMAP.md). They still permit continuous coordinates
+and varying endpoint contact ownership. Closing them does not by itself
+settle larger mixed cycles, branching components, or other loaded-ring
+ownership patterns.

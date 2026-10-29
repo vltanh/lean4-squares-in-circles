@@ -3,8 +3,9 @@
 Research checkpoint: 2026-10-29 (UTC), based on main commit
 `4bea747b3efa13c869b956cb28435efaf21526fa`.
 
-Resume from [HANDOFF.md](HANDOFF.md) for the current proof gaps, next steps,
-failed shortcuts, and validation record.
+Start with the [case tree and progress bars](CASE_ROADMAP.md) for exactly what
+remains. [HANDOFF.md](HANDOFF.md) records dependencies, failed shortcuts, and
+validation. [CYCLE_CASES.md](CYCLE_CASES.md) lists all 279 larger-cycle cases.
 
 **The sharp radius and complete equality family are proved by hand for the
 entire common-coordinate-separated class, including independently rotated
@@ -53,7 +54,10 @@ the known bound, not a lower-bound proof.
 | Loaded-body force lines concur inside their closed squares; the physical contact polygon is convex and contains the three inner squares | [Internal concurrence](SEVEN_RING_INTERNAL_CONCURRENCE.md) | Hand proof covering unique and double geometric circle vertices; no sufficient capacity bound for this polygon yet |
 | Every loaded-ring contact magnitude is within a factor `32/9` of every other; one-chirality incoming contacts force `R cos(alpha)>1` | [Force ratios and neighbor containment](SEVEN_RING_FORCE_RATIO.md) | Reviewed hand necessary conditions using the original physical neighbors |
 | One-chirality hole vertices outside the opposite-corner disk lie in explicit contact triangles and in their base-diameter disks | [Spike reduction](SEVEN_RING_SPIKE_REDUCTION.md) | Reviewed hand reductions; the proposed sharp local radius bound remains unproved |
-| A loaded ring with common signed frame offsets cannot contain three further squares | [Uniform-ring exclusion](REGULAR_SEVEN_LOADED_RING.md) | Hand proof; nonuniform rings remain open |
+| A loaded ring with common signed frame offsets cannot contain three further squares | [Uniform-ring exclusion](REGULAR_SEVEN_LOADED_RING.md) | Hand proof; other ownership patterns remain open |
+| Adjacent opposite-corner moments bound the capacity of a one-chirality hole | [Corner-moment capacity](SEVEN_RING_CORNER_MOMENT_CAPACITY.md) | Reviewed hand sufficient condition, including the displayed own-coordinate subcase |
+| Every strict one-chirality side/vertex ring is uniform and cannot enclose three more squares | [Global action theorem](SEVEN_RING_GLOBAL_ACTION.md), [exact verifier](check_seven_ring_action.cpp) | **Computer-assisted**, independently audited; a hand replacement and other ownership patterns remain open |
+| A radial-side central body cannot occur in the three-loaded five-cycle | [Full radial D-D exclusion](RADIAL_SIDE_DD_EXCLUSION.md) | Reviewed hand closure, together with the earlier S-S and S-D arguments |
 | Several mixed cyclic stress patterns are impossible | [Cyclic reductions](CYCLIC_STRESS_REDUCTIONS.md), [remaining five-cycle form](SIDE_NORMAL_MIXED_FIVE_CYCLE.md) | Conditional hand reductions; neither a complete graph classification nor a global exclusion |
 | A five-cycle with four loaded squares must use a diagonal transmitter | [Four-loaded five-cycle](MIXED_FIVE_FOUR_LOADED.md) | Side transmitter excluded by hand in the explicitly imported radius window; diagonal case open |
 | Parallel four-inner cores have a line-separated or pinwheel form; narrow internal channels can be filled as virtual obstacles | [Projection graphs and channel lemma](FOUR_CORE_GENERALIZATION.md) | Hand structural reduction and exact localized pinwheel; no general completion bound |
@@ -88,15 +92,20 @@ certificates remain computational results with their own stated scope.
 
 ## Roadmap and next obligation
 
-| Gate | Status | Required result |
-| --- | --- | --- |
-| G0: source and model | Hand argument complete | Use unrestricted `Packing`; preserve boundary contact |
-| G1: attaining construction | Hand proof and exact arithmetic check complete | `∃ S : Fin 10 → UnitSquare, Packing S (0,0) (3/√2)` |
-| G2: common-coordinate theorem | CLOSED by hand, including equality | All-parallel chain argument, then disk-preserving rectification |
-| G3: unrestricted lower bound | OPEN; eight-outer-center and five-inner-center cases closed | Exclude packings below `9/2` with exactly 3 or 4 centers in `B(0,1)` |
-| G4: unrestricted equality necessity | OPEN; eight-outer-center case closed | Exclude or classify equality structures with at least three centers in `B(0,1)` |
-| G5: Lean formalization | OPEN | Elaborate proofs, audit axioms, and verify statements against `Packing` |
-| G6: public integration | OPEN | Extend the registry and public theorem range only after verification |
+<!-- CASE_PROGRESS_START -->
+**Main gates:** `███░░░░` **3/7 closed**.
+
+**G3 lower-bound case ledger:** `█████████████▓░░░░░░░`
+**13 hand closed · 1 computer closed · 7 open / 21 terminal families.**
+
+**C20 larger-cycle subcases:** `▎░░░░░░░░░░░░░░░░░░░░░░░` **4/279 closed; 275 open.**
+
+`█` reviewed hand deduction; `▓` reviewed computer-assisted result; `░` open. These are counts of the fixed ledger entries, **not a percentage of the proof or remaining effort**. For the requested hand proof, the computer-assisted family also needs a hand replacement.
+
+[Open the full case tree and remaining obligations](CASE_ROADMAP.md). [Browse all 279 larger-cycle cases](CYCLE_CASES.md).
+<!-- CASE_PROGRESS_END -->
+
+
 
 The next mathematical task is a lower-bound argument covering configurations
 outside the common-coordinate class. The rectification proof preserves
@@ -186,26 +195,24 @@ has been proved. The
 For one fixed side/vertex ownership pattern,
 [exact scalar equations](SEVEN_RING_ONE_CHIRALITY.md) show that equal force
 magnitudes or equal frame turns force the excluded uniform ring. Simultaneous
-variation remains open. Mixed components also remain open; the
+variation is now excluded for this ownership pattern by the
+[independently audited exact recurrence theorem](SEVEN_RING_GLOBAL_ACTION.md).
+Its interval step still needs a hand replacement. Mixed components also remain open; the
 [five-cycle normal form](SIDE_NORMAL_MIXED_FIVE_CYCLE.md) records a precise
 remaining local pattern, and [two diagonal transmitters](DIAGONAL_MIXED_FIVE_CYCLE.md)
 are now excluded in that pattern. If its vertex transmitter is diagonal,
 [the opposite endpoint must be rotated](DIAGONAL_SIDE_ENDPOINT_REDUCTION.md).
 For the reverse side-to-diagonal pattern, a vertex-supported first endpoint
 [must have a rightward edge](SIDE_DIAGONAL_LEFT_ENDPOINT.md).
-When the central loaded square has two circle vertices,
-[only two diagonal transmitters remain](RADIAL_SIDE_MIXED_TRANSMISSIONS.md).
-Their disjointness gives [exact angular restrictions](RADIAL_SIDE_DOUBLE_DIAGONAL.md),
-and exclude the component at `R^2>=17/4` as well as equal outward
-angles throughout the working window. Only an asymmetric smaller-radius
-domain remains for this component type.
-The [mixed five-cycle status](MIXED_FIVE_CYCLE_STATUS.md) consolidates its
-remaining patterns and the explicitly imported lower-radius bounds.
-The uniform side/vertex ring is also
-[locally isolated](SEVEN_RING_LOCAL_RIGIDITY.md) among normalized solutions
-of its exact equations; this does not imply global uniqueness. Its
-[seven-angle action](SEVEN_RING_ANGLE_ACTION.md) gives an independently
-reviewed exact reduction with the global critical-point problem still open. The
+When the central loaded square has two circle vertices, the
+[full radial D-D exclusion](RADIAL_SIDE_DD_EXCLUSION.md) closes the final
+transmitter type. The [mixed five-cycle status](MIXED_FIVE_CYCLE_STATUS.md)
+now lists exactly four remaining five-cycle families: unique-circle
+S-S, S-D, D-S, and the four-loaded diagonal-transmitter cycle.
+The uniform side/vertex ring is [locally isolated](SEVEN_RING_LOCAL_RIGIDITY.md),
+and its [angle action](SEVEN_RING_ANGLE_ACTION.md) now has the separately
+labeled [computer-assisted global classification](SEVEN_RING_GLOBAL_ACTION.md).
+Other loaded-ring ownership patterns remain open. The
 [planar junction construction](PLANAR_CONTACT_TORQUE_CYCLES.md) preserves
 the physical forces but does not prove that every torque cycle encloses zero.
 
@@ -240,6 +247,8 @@ python3 research/ten/check_core_obstruction.py
 python3 research/ten/check_five_center_large_turns.py
 python3 research/ten/check_radial_weight_exclusion.py
 python3 research/ten/check_radial_count_localization.py
+python3 research/ten/check_cycle_cases.py
+python3 research/ten/update_case_roadmap.py
 python3 -B research/ten/plot_construction.py
 ```
 
@@ -261,3 +270,9 @@ singleton cross-references, with uniform lower bound
 This checkpoint changes only `research/ten/`. No Lean build, axiom audit,
 Comparator run, or external kernel replay is claimed. Commits use `[skip ci]`
 for this research-only draft, following the existing research PR convention.
+
+The exact computer-assisted ring check and its independent sanitizer replay are
+recorded in [SEVEN_RING_ACTION_AUDIT.md](SEVEN_RING_ACTION_AUDIT.md). Its
+[reproduction command](SEVEN_RING_GLOBAL_ACTION.md#6-arithmetic-and-reproducibility)
+uses a C++17 compiler with `__int128`. This result is separate from the hand
+proof ledger and does not constitute a Lean kernel check.

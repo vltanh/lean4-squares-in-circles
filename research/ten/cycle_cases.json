@@ -1,0 +1,2376 @@
+{
+  "schema_version": 1,
+  "scope": "whole positive components whose body-pair graph is a mixed simple cycle",
+  "radius_scope": "hypothetical strictly subcritical ten-square packing; 79/40 <= R < 3/sqrt(2)",
+  "meaning": "finite overclassification; entries need not be geometrically realizable and none is marked excluded by this inventory",
+  "labels": {
+    "L": "positive circle load",
+    "U": "unloaded (binary words only)",
+    "S": "unloaded degree-two side transmitter, width 1",
+    "D": "unloaded degree-two diagonal transmitter, width sqrt(2)"
+  },
+  "equivalence": "all cycle rotations and reversals; transmitter types preserved",
+  "necessary_restrictions": [
+    "cycle length 6 through 10; five-cycles are tracked separately",
+    "3 <= loaded count <= min(7, cycle length - 1)",
+    "no loaded vertex adjacent to every other loaded vertex",
+    "no unloaded run longer than two",
+    "an unloaded run of length two consists of two side transmitters"
+  ],
+  "dependencies": [
+    "CYCLIC_STRESS_REDUCTIONS.md",
+    "CENTER_RADIUS_REDUCTION.md"
+  ],
+  "not_classified": [
+    "branching positive components or cycles that are only blocks of such components",
+    "loaded-body contact ownership, circle-vertex multiplicity, force magnitudes, and geometric parameters",
+    "physical feasibility, completion capacity, or the unrestricted packing optimum"
+  ],
+  "totals": {
+    "binary_families": 80,
+    "transmitter_cases": 279
+  },
+  "counts_by_length": [
+    {
+      "cycle_length": 6,
+      "binary_families": 6,
+      "transmitter_cases": 15
+    },
+    {
+      "cycle_length": 7,
+      "binary_families": 9,
+      "transmitter_cases": 23
+    },
+    {
+      "cycle_length": 8,
+      "binary_families": 15,
+      "transmitter_cases": 45
+    },
+    {
+      "cycle_length": 9,
+      "binary_families": 21,
+      "transmitter_cases": 71
+    },
+    {
+      "cycle_length": 10,
+      "binary_families": 29,
+      "transmitter_cases": 125
+    }
+  ],
+  "families": [
+    {
+      "id": "C20-M06-L03-B01",
+      "cycle_length": 6,
+      "loaded_count": 3,
+      "loaded_word": "LLULUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M06-L03-B01-T01",
+          "word": "LLSLSS",
+          "side_count": 3,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M06-L03-B01-T02",
+          "word": "LLDLSS",
+          "side_count": 2,
+          "diagonal_count": 1
+        }
+      ]
+    },
+    {
+      "id": "C20-M06-L03-B02",
+      "cycle_length": 6,
+      "loaded_count": 3,
+      "loaded_word": "LULULU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M06-L03-B02-T01",
+          "word": "LSLSLS",
+          "side_count": 3,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M06-L03-B02-T02",
+          "word": "LSLSLD",
+          "side_count": 2,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M06-L03-B02-T03",
+          "word": "LSLDLD",
+          "side_count": 1,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M06-L03-B02-T04",
+          "word": "LDLDLD",
+          "side_count": 0,
+          "diagonal_count": 3
+        }
+      ]
+    },
+    {
+      "id": "C20-M06-L04-B01",
+      "cycle_length": 6,
+      "loaded_count": 4,
+      "loaded_word": "LLLLUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M06-L04-B01-T01",
+          "word": "LLLLSS",
+          "side_count": 2,
+          "diagonal_count": 0
+        }
+      ]
+    },
+    {
+      "id": "C20-M06-L04-B02",
+      "cycle_length": 6,
+      "loaded_count": 4,
+      "loaded_word": "LLLULU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M06-L04-B02-T01",
+          "word": "LLLSLS",
+          "side_count": 2,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M06-L04-B02-T02",
+          "word": "LLLSLD",
+          "side_count": 1,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M06-L04-B02-T03",
+          "word": "LLLDLD",
+          "side_count": 0,
+          "diagonal_count": 2
+        }
+      ]
+    },
+    {
+      "id": "C20-M06-L04-B03",
+      "cycle_length": 6,
+      "loaded_count": 4,
+      "loaded_word": "LLULLU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M06-L04-B03-T01",
+          "word": "LLSLLS",
+          "side_count": 2,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M06-L04-B03-T02",
+          "word": "LLSLLD",
+          "side_count": 1,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M06-L04-B03-T03",
+          "word": "LLDLLD",
+          "side_count": 0,
+          "diagonal_count": 2
+        }
+      ]
+    },
+    {
+      "id": "C20-M06-L05-B01",
+      "cycle_length": 6,
+      "loaded_count": 5,
+      "loaded_word": "LLLLLU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M06-L05-B01-T01",
+          "word": "LLLLLS",
+          "side_count": 1,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M06-L05-B01-T02",
+          "word": "LLLLLD",
+          "side_count": 0,
+          "diagonal_count": 1
+        }
+      ]
+    },
+    {
+      "id": "C20-M07-L03-B01",
+      "cycle_length": 7,
+      "loaded_count": 3,
+      "loaded_word": "LLUULUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M07-L03-B01-T01",
+          "word": "LLSSLSS",
+          "side_count": 4,
+          "diagonal_count": 0
+        }
+      ]
+    },
+    {
+      "id": "C20-M07-L03-B02",
+      "cycle_length": 7,
+      "loaded_count": 3,
+      "loaded_word": "LULULUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M07-L03-B02-T01",
+          "word": "LSLSLSS",
+          "side_count": 4,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M07-L03-B02-T02",
+          "word": "LSLDLSS",
+          "side_count": 3,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M07-L03-B02-T03",
+          "word": "LDLDLSS",
+          "side_count": 2,
+          "diagonal_count": 2
+        }
+      ]
+    },
+    {
+      "id": "C20-M07-L04-B01",
+      "cycle_length": 7,
+      "loaded_count": 4,
+      "loaded_word": "LLLULUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M07-L04-B01-T01",
+          "word": "LLLSLSS",
+          "side_count": 3,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M07-L04-B01-T02",
+          "word": "LLLDLSS",
+          "side_count": 2,
+          "diagonal_count": 1
+        }
+      ]
+    },
+    {
+      "id": "C20-M07-L04-B02",
+      "cycle_length": 7,
+      "loaded_count": 4,
+      "loaded_word": "LLULLUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M07-L04-B02-T01",
+          "word": "LLSLLSS",
+          "side_count": 3,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M07-L04-B02-T02",
+          "word": "LLDLLSS",
+          "side_count": 2,
+          "diagonal_count": 1
+        }
+      ]
+    },
+    {
+      "id": "C20-M07-L04-B03",
+      "cycle_length": 7,
+      "loaded_count": 4,
+      "loaded_word": "LLULULU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M07-L04-B03-T01",
+          "word": "LLSLSLS",
+          "side_count": 3,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M07-L04-B03-T02",
+          "word": "LLSLSLD",
+          "side_count": 2,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M07-L04-B03-T03",
+          "word": "LLSLDLS",
+          "side_count": 2,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M07-L04-B03-T04",
+          "word": "LLSLDLD",
+          "side_count": 1,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M07-L04-B03-T05",
+          "word": "LLDLSLD",
+          "side_count": 1,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M07-L04-B03-T06",
+          "word": "LLDLDLD",
+          "side_count": 0,
+          "diagonal_count": 3
+        }
+      ]
+    },
+    {
+      "id": "C20-M07-L05-B01",
+      "cycle_length": 7,
+      "loaded_count": 5,
+      "loaded_word": "LLLLLUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M07-L05-B01-T01",
+          "word": "LLLLLSS",
+          "side_count": 2,
+          "diagonal_count": 0
+        }
+      ]
+    },
+    {
+      "id": "C20-M07-L05-B02",
+      "cycle_length": 7,
+      "loaded_count": 5,
+      "loaded_word": "LLLLULU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M07-L05-B02-T01",
+          "word": "LLLLSLS",
+          "side_count": 2,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M07-L05-B02-T02",
+          "word": "LLLLSLD",
+          "side_count": 1,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M07-L05-B02-T03",
+          "word": "LLLLDLD",
+          "side_count": 0,
+          "diagonal_count": 2
+        }
+      ]
+    },
+    {
+      "id": "C20-M07-L05-B03",
+      "cycle_length": 7,
+      "loaded_count": 5,
+      "loaded_word": "LLLULLU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M07-L05-B03-T01",
+          "word": "LLLSLLS",
+          "side_count": 2,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M07-L05-B03-T02",
+          "word": "LLLSLLD",
+          "side_count": 1,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M07-L05-B03-T03",
+          "word": "LLLDLLD",
+          "side_count": 0,
+          "diagonal_count": 2
+        }
+      ]
+    },
+    {
+      "id": "C20-M07-L06-B01",
+      "cycle_length": 7,
+      "loaded_count": 6,
+      "loaded_word": "LLLLLLU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M07-L06-B01-T01",
+          "word": "LLLLLLS",
+          "side_count": 1,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M07-L06-B01-T02",
+          "word": "LLLLLLD",
+          "side_count": 0,
+          "diagonal_count": 1
+        }
+      ]
+    },
+    {
+      "id": "C20-M08-L03-B01",
+      "cycle_length": 8,
+      "loaded_count": 3,
+      "loaded_word": "LULUULUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M08-L03-B01-T01",
+          "word": "LSLSSLSS",
+          "side_count": 5,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M08-L03-B01-T02",
+          "word": "LDLSSLSS",
+          "side_count": 4,
+          "diagonal_count": 1
+        }
+      ]
+    },
+    {
+      "id": "C20-M08-L04-B01",
+      "cycle_length": 8,
+      "loaded_count": 4,
+      "loaded_word": "LLLUULUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M08-L04-B01-T01",
+          "word": "LLLSSLSS",
+          "side_count": 4,
+          "diagonal_count": 0
+        }
+      ]
+    },
+    {
+      "id": "C20-M08-L04-B02",
+      "cycle_length": 8,
+      "loaded_count": 4,
+      "loaded_word": "LLULULUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M08-L04-B02-T01",
+          "word": "LLSLSLSS",
+          "side_count": 4,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M08-L04-B02-T02",
+          "word": "LLSLDLSS",
+          "side_count": 3,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M08-L04-B02-T03",
+          "word": "LLDLSLSS",
+          "side_count": 3,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M08-L04-B02-T04",
+          "word": "LLDLDLSS",
+          "side_count": 2,
+          "diagonal_count": 2
+        }
+      ]
+    },
+    {
+      "id": "C20-M08-L04-B03",
+      "cycle_length": 8,
+      "loaded_count": 4,
+      "loaded_word": "LLULUULU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M08-L04-B03-T01",
+          "word": "LLSLSSLS",
+          "side_count": 4,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M08-L04-B03-T02",
+          "word": "LLSLSSLD",
+          "side_count": 3,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M08-L04-B03-T03",
+          "word": "LLDLSSLD",
+          "side_count": 2,
+          "diagonal_count": 2
+        }
+      ]
+    },
+    {
+      "id": "C20-M08-L04-B04",
+      "cycle_length": 8,
+      "loaded_count": 4,
+      "loaded_word": "LLUULLUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M08-L04-B04-T01",
+          "word": "LLSSLLSS",
+          "side_count": 4,
+          "diagonal_count": 0
+        }
+      ]
+    },
+    {
+      "id": "C20-M08-L04-B05",
+      "cycle_length": 8,
+      "loaded_count": 4,
+      "loaded_word": "LULULULU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M08-L04-B05-T01",
+          "word": "LSLSLSLS",
+          "side_count": 4,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M08-L04-B05-T02",
+          "word": "LSLSLSLD",
+          "side_count": 3,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M08-L04-B05-T03",
+          "word": "LSLSLDLD",
+          "side_count": 2,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M08-L04-B05-T04",
+          "word": "LSLDLSLD",
+          "side_count": 2,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M08-L04-B05-T05",
+          "word": "LSLDLDLD",
+          "side_count": 1,
+          "diagonal_count": 3
+        },
+        {
+          "id": "C20-M08-L04-B05-T06",
+          "word": "LDLDLDLD",
+          "side_count": 0,
+          "diagonal_count": 4
+        }
+      ]
+    },
+    {
+      "id": "C20-M08-L05-B01",
+      "cycle_length": 8,
+      "loaded_count": 5,
+      "loaded_word": "LLLLULUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M08-L05-B01-T01",
+          "word": "LLLLSLSS",
+          "side_count": 3,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M08-L05-B01-T02",
+          "word": "LLLLDLSS",
+          "side_count": 2,
+          "diagonal_count": 1
+        }
+      ]
+    },
+    {
+      "id": "C20-M08-L05-B02",
+      "cycle_length": 8,
+      "loaded_count": 5,
+      "loaded_word": "LLLULLUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M08-L05-B02-T01",
+          "word": "LLLSLLSS",
+          "side_count": 3,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M08-L05-B02-T02",
+          "word": "LLLDLLSS",
+          "side_count": 2,
+          "diagonal_count": 1
+        }
+      ]
+    },
+    {
+      "id": "C20-M08-L05-B03",
+      "cycle_length": 8,
+      "loaded_count": 5,
+      "loaded_word": "LLLULULU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M08-L05-B03-T01",
+          "word": "LLLSLSLS",
+          "side_count": 3,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M08-L05-B03-T02",
+          "word": "LLLSLSLD",
+          "side_count": 2,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M08-L05-B03-T03",
+          "word": "LLLSLDLS",
+          "side_count": 2,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M08-L05-B03-T04",
+          "word": "LLLSLDLD",
+          "side_count": 1,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M08-L05-B03-T05",
+          "word": "LLLDLSLD",
+          "side_count": 1,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M08-L05-B03-T06",
+          "word": "LLLDLDLD",
+          "side_count": 0,
+          "diagonal_count": 3
+        }
+      ]
+    },
+    {
+      "id": "C20-M08-L05-B04",
+      "cycle_length": 8,
+      "loaded_count": 5,
+      "loaded_word": "LLULLULU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M08-L05-B04-T01",
+          "word": "LLSLLSLS",
+          "side_count": 3,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M08-L05-B04-T02",
+          "word": "LLSLLSLD",
+          "side_count": 2,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M08-L05-B04-T03",
+          "word": "LLSLLDLD",
+          "side_count": 1,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M08-L05-B04-T04",
+          "word": "LLDLLSLS",
+          "side_count": 2,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M08-L05-B04-T05",
+          "word": "LLDLLSLD",
+          "side_count": 1,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M08-L05-B04-T06",
+          "word": "LLDLLDLD",
+          "side_count": 0,
+          "diagonal_count": 3
+        }
+      ]
+    },
+    {
+      "id": "C20-M08-L06-B01",
+      "cycle_length": 8,
+      "loaded_count": 6,
+      "loaded_word": "LLLLLLUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M08-L06-B01-T01",
+          "word": "LLLLLLSS",
+          "side_count": 2,
+          "diagonal_count": 0
+        }
+      ]
+    },
+    {
+      "id": "C20-M08-L06-B02",
+      "cycle_length": 8,
+      "loaded_count": 6,
+      "loaded_word": "LLLLLULU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M08-L06-B02-T01",
+          "word": "LLLLLSLS",
+          "side_count": 2,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M08-L06-B02-T02",
+          "word": "LLLLLSLD",
+          "side_count": 1,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M08-L06-B02-T03",
+          "word": "LLLLLDLD",
+          "side_count": 0,
+          "diagonal_count": 2
+        }
+      ]
+    },
+    {
+      "id": "C20-M08-L06-B03",
+      "cycle_length": 8,
+      "loaded_count": 6,
+      "loaded_word": "LLLLULLU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M08-L06-B03-T01",
+          "word": "LLLLSLLS",
+          "side_count": 2,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M08-L06-B03-T02",
+          "word": "LLLLSLLD",
+          "side_count": 1,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M08-L06-B03-T03",
+          "word": "LLLLDLLD",
+          "side_count": 0,
+          "diagonal_count": 2
+        }
+      ]
+    },
+    {
+      "id": "C20-M08-L06-B04",
+      "cycle_length": 8,
+      "loaded_count": 6,
+      "loaded_word": "LLLULLLU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M08-L06-B04-T01",
+          "word": "LLLSLLLS",
+          "side_count": 2,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M08-L06-B04-T02",
+          "word": "LLLSLLLD",
+          "side_count": 1,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M08-L06-B04-T03",
+          "word": "LLLDLLLD",
+          "side_count": 0,
+          "diagonal_count": 2
+        }
+      ]
+    },
+    {
+      "id": "C20-M08-L07-B01",
+      "cycle_length": 8,
+      "loaded_count": 7,
+      "loaded_word": "LLLLLLLU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M08-L07-B01-T01",
+          "word": "LLLLLLLS",
+          "side_count": 1,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M08-L07-B01-T02",
+          "word": "LLLLLLLD",
+          "side_count": 0,
+          "diagonal_count": 1
+        }
+      ]
+    },
+    {
+      "id": "C20-M09-L03-B01",
+      "cycle_length": 9,
+      "loaded_count": 3,
+      "loaded_word": "LUULUULUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M09-L03-B01-T01",
+          "word": "LSSLSSLSS",
+          "side_count": 6,
+          "diagonal_count": 0
+        }
+      ]
+    },
+    {
+      "id": "C20-M09-L04-B01",
+      "cycle_length": 9,
+      "loaded_count": 4,
+      "loaded_word": "LLULUULUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M09-L04-B01-T01",
+          "word": "LLSLSSLSS",
+          "side_count": 5,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M09-L04-B01-T02",
+          "word": "LLDLSSLSS",
+          "side_count": 4,
+          "diagonal_count": 1
+        }
+      ]
+    },
+    {
+      "id": "C20-M09-L04-B02",
+      "cycle_length": 9,
+      "loaded_count": 4,
+      "loaded_word": "LLUULULUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M09-L04-B02-T01",
+          "word": "LLSSLSLSS",
+          "side_count": 5,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M09-L04-B02-T02",
+          "word": "LLSSLDLSS",
+          "side_count": 4,
+          "diagonal_count": 1
+        }
+      ]
+    },
+    {
+      "id": "C20-M09-L04-B03",
+      "cycle_length": 9,
+      "loaded_count": 4,
+      "loaded_word": "LULULULUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M09-L04-B03-T01",
+          "word": "LSLSLSLSS",
+          "side_count": 5,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M09-L04-B03-T02",
+          "word": "LSLSLDLSS",
+          "side_count": 4,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M09-L04-B03-T03",
+          "word": "LSLDLSLSS",
+          "side_count": 4,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M09-L04-B03-T04",
+          "word": "LSLDLDLSS",
+          "side_count": 3,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M09-L04-B03-T05",
+          "word": "LDLSLDLSS",
+          "side_count": 3,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M09-L04-B03-T06",
+          "word": "LDLDLDLSS",
+          "side_count": 2,
+          "diagonal_count": 3
+        }
+      ]
+    },
+    {
+      "id": "C20-M09-L05-B01",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "loaded_word": "LLLLUULUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M09-L05-B01-T01",
+          "word": "LLLLSSLSS",
+          "side_count": 4,
+          "diagonal_count": 0
+        }
+      ]
+    },
+    {
+      "id": "C20-M09-L05-B02",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "loaded_word": "LLLULULUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M09-L05-B02-T01",
+          "word": "LLLSLSLSS",
+          "side_count": 4,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M09-L05-B02-T02",
+          "word": "LLLSLDLSS",
+          "side_count": 3,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M09-L05-B02-T03",
+          "word": "LLLDLSLSS",
+          "side_count": 3,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M09-L05-B02-T04",
+          "word": "LLLDLDLSS",
+          "side_count": 2,
+          "diagonal_count": 2
+        }
+      ]
+    },
+    {
+      "id": "C20-M09-L05-B03",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "loaded_word": "LLLULUULU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M09-L05-B03-T01",
+          "word": "LLLSLSSLS",
+          "side_count": 4,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M09-L05-B03-T02",
+          "word": "LLLSLSSLD",
+          "side_count": 3,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M09-L05-B03-T03",
+          "word": "LLLDLSSLD",
+          "side_count": 2,
+          "diagonal_count": 2
+        }
+      ]
+    },
+    {
+      "id": "C20-M09-L05-B04",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "loaded_word": "LLLUULLUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M09-L05-B04-T01",
+          "word": "LLLSSLLSS",
+          "side_count": 4,
+          "diagonal_count": 0
+        }
+      ]
+    },
+    {
+      "id": "C20-M09-L05-B05",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "loaded_word": "LLULLULUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M09-L05-B05-T01",
+          "word": "LLSLLSLSS",
+          "side_count": 4,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M09-L05-B05-T02",
+          "word": "LLSLLDLSS",
+          "side_count": 3,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M09-L05-B05-T03",
+          "word": "LLDLLSLSS",
+          "side_count": 3,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M09-L05-B05-T04",
+          "word": "LLDLLDLSS",
+          "side_count": 2,
+          "diagonal_count": 2
+        }
+      ]
+    },
+    {
+      "id": "C20-M09-L05-B06",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "loaded_word": "LLULULLUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M09-L05-B06-T01",
+          "word": "LLSLSLLSS",
+          "side_count": 4,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M09-L05-B06-T02",
+          "word": "LLSLDLLSS",
+          "side_count": 3,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M09-L05-B06-T03",
+          "word": "LLDLDLLSS",
+          "side_count": 2,
+          "diagonal_count": 2
+        }
+      ]
+    },
+    {
+      "id": "C20-M09-L05-B07",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "loaded_word": "LLULULULU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M09-L05-B07-T01",
+          "word": "LLSLSLSLS",
+          "side_count": 4,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M09-L05-B07-T02",
+          "word": "LLSLSLSLD",
+          "side_count": 3,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M09-L05-B07-T03",
+          "word": "LLSLSLDLS",
+          "side_count": 3,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M09-L05-B07-T04",
+          "word": "LLSLSLDLD",
+          "side_count": 2,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M09-L05-B07-T05",
+          "word": "LLSLDLSLD",
+          "side_count": 2,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M09-L05-B07-T06",
+          "word": "LLSLDLDLS",
+          "side_count": 2,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M09-L05-B07-T07",
+          "word": "LLSLDLDLD",
+          "side_count": 1,
+          "diagonal_count": 3
+        },
+        {
+          "id": "C20-M09-L05-B07-T08",
+          "word": "LLDLSLSLD",
+          "side_count": 2,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M09-L05-B07-T09",
+          "word": "LLDLSLDLD",
+          "side_count": 1,
+          "diagonal_count": 3
+        },
+        {
+          "id": "C20-M09-L05-B07-T10",
+          "word": "LLDLDLDLD",
+          "side_count": 0,
+          "diagonal_count": 4
+        }
+      ]
+    },
+    {
+      "id": "C20-M09-L06-B01",
+      "cycle_length": 9,
+      "loaded_count": 6,
+      "loaded_word": "LLLLLULUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M09-L06-B01-T01",
+          "word": "LLLLLSLSS",
+          "side_count": 3,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M09-L06-B01-T02",
+          "word": "LLLLLDLSS",
+          "side_count": 2,
+          "diagonal_count": 1
+        }
+      ]
+    },
+    {
+      "id": "C20-M09-L06-B02",
+      "cycle_length": 9,
+      "loaded_count": 6,
+      "loaded_word": "LLLLULLUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M09-L06-B02-T01",
+          "word": "LLLLSLLSS",
+          "side_count": 3,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M09-L06-B02-T02",
+          "word": "LLLLDLLSS",
+          "side_count": 2,
+          "diagonal_count": 1
+        }
+      ]
+    },
+    {
+      "id": "C20-M09-L06-B03",
+      "cycle_length": 9,
+      "loaded_count": 6,
+      "loaded_word": "LLLLULULU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M09-L06-B03-T01",
+          "word": "LLLLSLSLS",
+          "side_count": 3,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M09-L06-B03-T02",
+          "word": "LLLLSLSLD",
+          "side_count": 2,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M09-L06-B03-T03",
+          "word": "LLLLSLDLS",
+          "side_count": 2,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M09-L06-B03-T04",
+          "word": "LLLLSLDLD",
+          "side_count": 1,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M09-L06-B03-T05",
+          "word": "LLLLDLSLD",
+          "side_count": 1,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M09-L06-B03-T06",
+          "word": "LLLLDLDLD",
+          "side_count": 0,
+          "diagonal_count": 3
+        }
+      ]
+    },
+    {
+      "id": "C20-M09-L06-B04",
+      "cycle_length": 9,
+      "loaded_count": 6,
+      "loaded_word": "LLLULLLUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M09-L06-B04-T01",
+          "word": "LLLSLLLSS",
+          "side_count": 3,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M09-L06-B04-T02",
+          "word": "LLLDLLLSS",
+          "side_count": 2,
+          "diagonal_count": 1
+        }
+      ]
+    },
+    {
+      "id": "C20-M09-L06-B05",
+      "cycle_length": 9,
+      "loaded_count": 6,
+      "loaded_word": "LLLULLULU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M09-L06-B05-T01",
+          "word": "LLLSLLSLS",
+          "side_count": 3,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M09-L06-B05-T02",
+          "word": "LLLSLLSLD",
+          "side_count": 2,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M09-L06-B05-T03",
+          "word": "LLLSLLDLS",
+          "side_count": 2,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M09-L06-B05-T04",
+          "word": "LLLSLLDLD",
+          "side_count": 1,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M09-L06-B05-T05",
+          "word": "LLLDLLSLS",
+          "side_count": 2,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M09-L06-B05-T06",
+          "word": "LLLDLLSLD",
+          "side_count": 1,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M09-L06-B05-T07",
+          "word": "LLLDLLDLS",
+          "side_count": 1,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M09-L06-B05-T08",
+          "word": "LLLDLLDLD",
+          "side_count": 0,
+          "diagonal_count": 3
+        }
+      ]
+    },
+    {
+      "id": "C20-M09-L06-B06",
+      "cycle_length": 9,
+      "loaded_count": 6,
+      "loaded_word": "LLULLULLU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M09-L06-B06-T01",
+          "word": "LLSLLSLLS",
+          "side_count": 3,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M09-L06-B06-T02",
+          "word": "LLSLLSLLD",
+          "side_count": 2,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M09-L06-B06-T03",
+          "word": "LLSLLDLLD",
+          "side_count": 1,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M09-L06-B06-T04",
+          "word": "LLDLLDLLD",
+          "side_count": 0,
+          "diagonal_count": 3
+        }
+      ]
+    },
+    {
+      "id": "C20-M09-L07-B01",
+      "cycle_length": 9,
+      "loaded_count": 7,
+      "loaded_word": "LLLLLLLUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M09-L07-B01-T01",
+          "word": "LLLLLLLSS",
+          "side_count": 2,
+          "diagonal_count": 0
+        }
+      ]
+    },
+    {
+      "id": "C20-M09-L07-B02",
+      "cycle_length": 9,
+      "loaded_count": 7,
+      "loaded_word": "LLLLLLULU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M09-L07-B02-T01",
+          "word": "LLLLLLSLS",
+          "side_count": 2,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M09-L07-B02-T02",
+          "word": "LLLLLLSLD",
+          "side_count": 1,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M09-L07-B02-T03",
+          "word": "LLLLLLDLD",
+          "side_count": 0,
+          "diagonal_count": 2
+        }
+      ]
+    },
+    {
+      "id": "C20-M09-L07-B03",
+      "cycle_length": 9,
+      "loaded_count": 7,
+      "loaded_word": "LLLLLULLU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M09-L07-B03-T01",
+          "word": "LLLLLSLLS",
+          "side_count": 2,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M09-L07-B03-T02",
+          "word": "LLLLLSLLD",
+          "side_count": 1,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M09-L07-B03-T03",
+          "word": "LLLLLDLLD",
+          "side_count": 0,
+          "diagonal_count": 2
+        }
+      ]
+    },
+    {
+      "id": "C20-M09-L07-B04",
+      "cycle_length": 9,
+      "loaded_count": 7,
+      "loaded_word": "LLLLULLLU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M09-L07-B04-T01",
+          "word": "LLLLSLLLS",
+          "side_count": 2,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M09-L07-B04-T02",
+          "word": "LLLLSLLLD",
+          "side_count": 1,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M09-L07-B04-T03",
+          "word": "LLLLDLLLD",
+          "side_count": 0,
+          "diagonal_count": 2
+        }
+      ]
+    },
+    {
+      "id": "C20-M10-L04-B01",
+      "cycle_length": 10,
+      "loaded_count": 4,
+      "loaded_word": "LLUULUULUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M10-L04-B01-T01",
+          "word": "LLSSLSSLSS",
+          "side_count": 6,
+          "diagonal_count": 0
+        }
+      ]
+    },
+    {
+      "id": "C20-M10-L04-B02",
+      "cycle_length": 10,
+      "loaded_count": 4,
+      "loaded_word": "LULULUULUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M10-L04-B02-T01",
+          "word": "LSLSLSSLSS",
+          "side_count": 6,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M10-L04-B02-T02",
+          "word": "LSLDLSSLSS",
+          "side_count": 5,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L04-B02-T03",
+          "word": "LDLDLSSLSS",
+          "side_count": 4,
+          "diagonal_count": 2
+        }
+      ]
+    },
+    {
+      "id": "C20-M10-L04-B03",
+      "cycle_length": 10,
+      "loaded_count": 4,
+      "loaded_word": "LULUULULUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M10-L04-B03-T01",
+          "word": "LSLSSLSLSS",
+          "side_count": 6,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M10-L04-B03-T02",
+          "word": "LSLSSLDLSS",
+          "side_count": 5,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L04-B03-T03",
+          "word": "LDLSSLDLSS",
+          "side_count": 4,
+          "diagonal_count": 2
+        }
+      ]
+    },
+    {
+      "id": "C20-M10-L05-B01",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "loaded_word": "LLLULUULUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M10-L05-B01-T01",
+          "word": "LLLSLSSLSS",
+          "side_count": 5,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M10-L05-B01-T02",
+          "word": "LLLDLSSLSS",
+          "side_count": 4,
+          "diagonal_count": 1
+        }
+      ]
+    },
+    {
+      "id": "C20-M10-L05-B02",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "loaded_word": "LLLUULULUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M10-L05-B02-T01",
+          "word": "LLLSSLSLSS",
+          "side_count": 5,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M10-L05-B02-T02",
+          "word": "LLLSSLDLSS",
+          "side_count": 4,
+          "diagonal_count": 1
+        }
+      ]
+    },
+    {
+      "id": "C20-M10-L05-B03",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "loaded_word": "LLULLUULUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M10-L05-B03-T01",
+          "word": "LLSLLSSLSS",
+          "side_count": 5,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M10-L05-B03-T02",
+          "word": "LLDLLSSLSS",
+          "side_count": 4,
+          "diagonal_count": 1
+        }
+      ]
+    },
+    {
+      "id": "C20-M10-L05-B04",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "loaded_word": "LLULULULUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M10-L05-B04-T01",
+          "word": "LLSLSLSLSS",
+          "side_count": 5,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M10-L05-B04-T02",
+          "word": "LLSLSLDLSS",
+          "side_count": 4,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L05-B04-T03",
+          "word": "LLSLDLSLSS",
+          "side_count": 4,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L05-B04-T04",
+          "word": "LLSLDLDLSS",
+          "side_count": 3,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M10-L05-B04-T05",
+          "word": "LLDLSLSLSS",
+          "side_count": 4,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L05-B04-T06",
+          "word": "LLDLSLDLSS",
+          "side_count": 3,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M10-L05-B04-T07",
+          "word": "LLDLDLSLSS",
+          "side_count": 3,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M10-L05-B04-T08",
+          "word": "LLDLDLDLSS",
+          "side_count": 2,
+          "diagonal_count": 3
+        }
+      ]
+    },
+    {
+      "id": "C20-M10-L05-B05",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "loaded_word": "LLULULUULU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M10-L05-B05-T01",
+          "word": "LLSLSLSSLS",
+          "side_count": 5,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M10-L05-B05-T02",
+          "word": "LLSLSLSSLD",
+          "side_count": 4,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L05-B05-T03",
+          "word": "LLSLDLSSLS",
+          "side_count": 4,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L05-B05-T04",
+          "word": "LLSLDLSSLD",
+          "side_count": 3,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M10-L05-B05-T05",
+          "word": "LLDLSLSSLS",
+          "side_count": 4,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L05-B05-T06",
+          "word": "LLDLSLSSLD",
+          "side_count": 3,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M10-L05-B05-T07",
+          "word": "LLDLDLSSLS",
+          "side_count": 3,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M10-L05-B05-T08",
+          "word": "LLDLDLSSLD",
+          "side_count": 2,
+          "diagonal_count": 3
+        }
+      ]
+    },
+    {
+      "id": "C20-M10-L05-B06",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "loaded_word": "LLULUULLUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M10-L05-B06-T01",
+          "word": "LLSLSSLLSS",
+          "side_count": 5,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M10-L05-B06-T02",
+          "word": "LLDLSSLLSS",
+          "side_count": 4,
+          "diagonal_count": 1
+        }
+      ]
+    },
+    {
+      "id": "C20-M10-L05-B07",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "loaded_word": "LULULULULU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M10-L05-B07-T01",
+          "word": "LSLSLSLSLS",
+          "side_count": 5,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M10-L05-B07-T02",
+          "word": "LSLSLSLSLD",
+          "side_count": 4,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L05-B07-T03",
+          "word": "LSLSLSLDLD",
+          "side_count": 3,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M10-L05-B07-T04",
+          "word": "LSLSLDLSLD",
+          "side_count": 3,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M10-L05-B07-T05",
+          "word": "LSLSLDLDLD",
+          "side_count": 2,
+          "diagonal_count": 3
+        },
+        {
+          "id": "C20-M10-L05-B07-T06",
+          "word": "LSLDLSLDLD",
+          "side_count": 2,
+          "diagonal_count": 3
+        },
+        {
+          "id": "C20-M10-L05-B07-T07",
+          "word": "LSLDLDLDLD",
+          "side_count": 1,
+          "diagonal_count": 4
+        },
+        {
+          "id": "C20-M10-L05-B07-T08",
+          "word": "LDLDLDLDLD",
+          "side_count": 0,
+          "diagonal_count": 5
+        }
+      ]
+    },
+    {
+      "id": "C20-M10-L06-B01",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "loaded_word": "LLLLLUULUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M10-L06-B01-T01",
+          "word": "LLLLLSSLSS",
+          "side_count": 4,
+          "diagonal_count": 0
+        }
+      ]
+    },
+    {
+      "id": "C20-M10-L06-B02",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "loaded_word": "LLLLULULUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M10-L06-B02-T01",
+          "word": "LLLLSLSLSS",
+          "side_count": 4,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M10-L06-B02-T02",
+          "word": "LLLLSLDLSS",
+          "side_count": 3,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L06-B02-T03",
+          "word": "LLLLDLSLSS",
+          "side_count": 3,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L06-B02-T04",
+          "word": "LLLLDLDLSS",
+          "side_count": 2,
+          "diagonal_count": 2
+        }
+      ]
+    },
+    {
+      "id": "C20-M10-L06-B03",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "loaded_word": "LLLLULUULU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M10-L06-B03-T01",
+          "word": "LLLLSLSSLS",
+          "side_count": 4,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M10-L06-B03-T02",
+          "word": "LLLLSLSSLD",
+          "side_count": 3,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L06-B03-T03",
+          "word": "LLLLDLSSLD",
+          "side_count": 2,
+          "diagonal_count": 2
+        }
+      ]
+    },
+    {
+      "id": "C20-M10-L06-B04",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "loaded_word": "LLLLUULLUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M10-L06-B04-T01",
+          "word": "LLLLSSLLSS",
+          "side_count": 4,
+          "diagonal_count": 0
+        }
+      ]
+    },
+    {
+      "id": "C20-M10-L06-B05",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "loaded_word": "LLLULLULUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M10-L06-B05-T01",
+          "word": "LLLSLLSLSS",
+          "side_count": 4,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M10-L06-B05-T02",
+          "word": "LLLSLLDLSS",
+          "side_count": 3,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L06-B05-T03",
+          "word": "LLLDLLSLSS",
+          "side_count": 3,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L06-B05-T04",
+          "word": "LLLDLLDLSS",
+          "side_count": 2,
+          "diagonal_count": 2
+        }
+      ]
+    },
+    {
+      "id": "C20-M10-L06-B06",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "loaded_word": "LLLULLUULU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M10-L06-B06-T01",
+          "word": "LLLSLLSSLS",
+          "side_count": 4,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M10-L06-B06-T02",
+          "word": "LLLSLLSSLD",
+          "side_count": 3,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L06-B06-T03",
+          "word": "LLLDLLSSLS",
+          "side_count": 3,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L06-B06-T04",
+          "word": "LLLDLLSSLD",
+          "side_count": 2,
+          "diagonal_count": 2
+        }
+      ]
+    },
+    {
+      "id": "C20-M10-L06-B07",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "loaded_word": "LLLULULLUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M10-L06-B07-T01",
+          "word": "LLLSLSLLSS",
+          "side_count": 4,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M10-L06-B07-T02",
+          "word": "LLLSLDLLSS",
+          "side_count": 3,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L06-B07-T03",
+          "word": "LLLDLSLLSS",
+          "side_count": 3,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L06-B07-T04",
+          "word": "LLLDLDLLSS",
+          "side_count": 2,
+          "diagonal_count": 2
+        }
+      ]
+    },
+    {
+      "id": "C20-M10-L06-B08",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "loaded_word": "LLLULULULU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M10-L06-B08-T01",
+          "word": "LLLSLSLSLS",
+          "side_count": 4,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M10-L06-B08-T02",
+          "word": "LLLSLSLSLD",
+          "side_count": 3,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L06-B08-T03",
+          "word": "LLLSLSLDLS",
+          "side_count": 3,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L06-B08-T04",
+          "word": "LLLSLSLDLD",
+          "side_count": 2,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M10-L06-B08-T05",
+          "word": "LLLSLDLSLD",
+          "side_count": 2,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M10-L06-B08-T06",
+          "word": "LLLSLDLDLS",
+          "side_count": 2,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M10-L06-B08-T07",
+          "word": "LLLSLDLDLD",
+          "side_count": 1,
+          "diagonal_count": 3
+        },
+        {
+          "id": "C20-M10-L06-B08-T08",
+          "word": "LLLDLSLSLD",
+          "side_count": 2,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M10-L06-B08-T09",
+          "word": "LLLDLSLDLD",
+          "side_count": 1,
+          "diagonal_count": 3
+        },
+        {
+          "id": "C20-M10-L06-B08-T10",
+          "word": "LLLDLDLDLD",
+          "side_count": 0,
+          "diagonal_count": 4
+        }
+      ]
+    },
+    {
+      "id": "C20-M10-L06-B09",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "loaded_word": "LLLUULLLUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M10-L06-B09-T01",
+          "word": "LLLSSLLLSS",
+          "side_count": 4,
+          "diagonal_count": 0
+        }
+      ]
+    },
+    {
+      "id": "C20-M10-L06-B10",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "loaded_word": "LLULLULLUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M10-L06-B10-T01",
+          "word": "LLSLLSLLSS",
+          "side_count": 4,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M10-L06-B10-T02",
+          "word": "LLSLLDLLSS",
+          "side_count": 3,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L06-B10-T03",
+          "word": "LLDLLDLLSS",
+          "side_count": 2,
+          "diagonal_count": 2
+        }
+      ]
+    },
+    {
+      "id": "C20-M10-L06-B11",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "loaded_word": "LLULLULULU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M10-L06-B11-T01",
+          "word": "LLSLLSLSLS",
+          "side_count": 4,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M10-L06-B11-T02",
+          "word": "LLSLLSLSLD",
+          "side_count": 3,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L06-B11-T03",
+          "word": "LLSLLSLDLS",
+          "side_count": 3,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L06-B11-T04",
+          "word": "LLSLLSLDLD",
+          "side_count": 2,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M10-L06-B11-T05",
+          "word": "LLSLLDLSLD",
+          "side_count": 2,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M10-L06-B11-T06",
+          "word": "LLSLLDLDLD",
+          "side_count": 1,
+          "diagonal_count": 3
+        },
+        {
+          "id": "C20-M10-L06-B11-T07",
+          "word": "LLDLLSLSLS",
+          "side_count": 3,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L06-B11-T08",
+          "word": "LLDLLSLSLD",
+          "side_count": 2,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M10-L06-B11-T09",
+          "word": "LLDLLSLDLS",
+          "side_count": 2,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M10-L06-B11-T10",
+          "word": "LLDLLSLDLD",
+          "side_count": 1,
+          "diagonal_count": 3
+        },
+        {
+          "id": "C20-M10-L06-B11-T11",
+          "word": "LLDLLDLSLD",
+          "side_count": 1,
+          "diagonal_count": 3
+        },
+        {
+          "id": "C20-M10-L06-B11-T12",
+          "word": "LLDLLDLDLD",
+          "side_count": 0,
+          "diagonal_count": 4
+        }
+      ]
+    },
+    {
+      "id": "C20-M10-L06-B12",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "loaded_word": "LLULULLULU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M10-L06-B12-T01",
+          "word": "LLSLSLLSLS",
+          "side_count": 4,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M10-L06-B12-T02",
+          "word": "LLSLSLLSLD",
+          "side_count": 3,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L06-B12-T03",
+          "word": "LLSLSLLDLD",
+          "side_count": 2,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M10-L06-B12-T04",
+          "word": "LLSLDLLSLD",
+          "side_count": 2,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M10-L06-B12-T05",
+          "word": "LLSLDLLDLS",
+          "side_count": 2,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M10-L06-B12-T06",
+          "word": "LLSLDLLDLD",
+          "side_count": 1,
+          "diagonal_count": 3
+        },
+        {
+          "id": "C20-M10-L06-B12-T07",
+          "word": "LLDLDLLDLD",
+          "side_count": 0,
+          "diagonal_count": 4
+        }
+      ]
+    },
+    {
+      "id": "C20-M10-L07-B01",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "loaded_word": "LLLLLLULUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M10-L07-B01-T01",
+          "word": "LLLLLLSLSS",
+          "side_count": 3,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M10-L07-B01-T02",
+          "word": "LLLLLLDLSS",
+          "side_count": 2,
+          "diagonal_count": 1
+        }
+      ]
+    },
+    {
+      "id": "C20-M10-L07-B02",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "loaded_word": "LLLLLULLUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M10-L07-B02-T01",
+          "word": "LLLLLSLLSS",
+          "side_count": 3,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M10-L07-B02-T02",
+          "word": "LLLLLDLLSS",
+          "side_count": 2,
+          "diagonal_count": 1
+        }
+      ]
+    },
+    {
+      "id": "C20-M10-L07-B03",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "loaded_word": "LLLLLULULU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M10-L07-B03-T01",
+          "word": "LLLLLSLSLS",
+          "side_count": 3,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M10-L07-B03-T02",
+          "word": "LLLLLSLSLD",
+          "side_count": 2,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L07-B03-T03",
+          "word": "LLLLLSLDLS",
+          "side_count": 2,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L07-B03-T04",
+          "word": "LLLLLSLDLD",
+          "side_count": 1,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M10-L07-B03-T05",
+          "word": "LLLLLDLSLD",
+          "side_count": 1,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M10-L07-B03-T06",
+          "word": "LLLLLDLDLD",
+          "side_count": 0,
+          "diagonal_count": 3
+        }
+      ]
+    },
+    {
+      "id": "C20-M10-L07-B04",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "loaded_word": "LLLLULLLUU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M10-L07-B04-T01",
+          "word": "LLLLSLLLSS",
+          "side_count": 3,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M10-L07-B04-T02",
+          "word": "LLLLDLLLSS",
+          "side_count": 2,
+          "diagonal_count": 1
+        }
+      ]
+    },
+    {
+      "id": "C20-M10-L07-B05",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "loaded_word": "LLLLULLULU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M10-L07-B05-T01",
+          "word": "LLLLSLLSLS",
+          "side_count": 3,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M10-L07-B05-T02",
+          "word": "LLLLSLLSLD",
+          "side_count": 2,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L07-B05-T03",
+          "word": "LLLLSLLDLS",
+          "side_count": 2,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L07-B05-T04",
+          "word": "LLLLSLLDLD",
+          "side_count": 1,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M10-L07-B05-T05",
+          "word": "LLLLDLLSLS",
+          "side_count": 2,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L07-B05-T06",
+          "word": "LLLLDLLSLD",
+          "side_count": 1,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M10-L07-B05-T07",
+          "word": "LLLLDLLDLS",
+          "side_count": 1,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M10-L07-B05-T08",
+          "word": "LLLLDLLDLD",
+          "side_count": 0,
+          "diagonal_count": 3
+        }
+      ]
+    },
+    {
+      "id": "C20-M10-L07-B06",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "loaded_word": "LLLULLLULU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M10-L07-B06-T01",
+          "word": "LLLSLLLSLS",
+          "side_count": 3,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M10-L07-B06-T02",
+          "word": "LLLSLLLSLD",
+          "side_count": 2,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L07-B06-T03",
+          "word": "LLLSLLLDLD",
+          "side_count": 1,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M10-L07-B06-T04",
+          "word": "LLLDLLLSLS",
+          "side_count": 2,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L07-B06-T05",
+          "word": "LLLDLLLSLD",
+          "side_count": 1,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M10-L07-B06-T06",
+          "word": "LLLDLLLDLD",
+          "side_count": 0,
+          "diagonal_count": 3
+        }
+      ]
+    },
+    {
+      "id": "C20-M10-L07-B07",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "loaded_word": "LLLULLULLU",
+      "transmitter_cases": [
+        {
+          "id": "C20-M10-L07-B07-T01",
+          "word": "LLLSLLSLLS",
+          "side_count": 3,
+          "diagonal_count": 0
+        },
+        {
+          "id": "C20-M10-L07-B07-T02",
+          "word": "LLLSLLSLLD",
+          "side_count": 2,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L07-B07-T03",
+          "word": "LLLSLLDLLS",
+          "side_count": 2,
+          "diagonal_count": 1
+        },
+        {
+          "id": "C20-M10-L07-B07-T04",
+          "word": "LLLSLLDLLD",
+          "side_count": 1,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M10-L07-B07-T05",
+          "word": "LLLDLLSLLD",
+          "side_count": 1,
+          "diagonal_count": 2
+        },
+        {
+          "id": "C20-M10-L07-B07-T06",
+          "word": "LLLDLLDLLD",
+          "side_count": 0,
+          "diagonal_count": 3
+        }
+      ]
+    }
+  ]
+}

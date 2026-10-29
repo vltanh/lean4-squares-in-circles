@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "scope": "Strictly subcritical n=10 lower bound; choose a nonzero minimizing physical stress component.",
+  "statuses": {
+    "hand": "closed by reviewed hand deduction, with cited imported dependencies",
+    "computer": "closed by reviewed computer-assisted theorem; hand replacement open",
+    "open": "not excluded"
+  },
+  "gates": [
+    {
+      "id": "G0",
+      "name": "Physical model and existence",
+      "closed": true
+    },
+    {
+      "id": "G1",
+      "name": "Exact attaining construction",
+      "closed": true
+    },
+    {
+      "id": "G2",
+      "name": "Sharp common-coordinate theorem",
+      "closed": true
+    },
+    {
+      "id": "G3",
+      "name": "Unrestricted lower bound",
+      "closed": false
+    },
+    {
+      "id": "G4",
+      "name": "Unrestricted equality classification",
+      "closed": false
+    },
+    {
+      "id": "G5",
+      "name": "Lean formalization and kernel checks",
+      "closed": false
+    },
+    {
+      "id": "G6",
+      "name": "Public integration",
+      "closed": false
+    }
+  ],
+  "cases": [
+    {
+      "id": "C00",
+      "status": "hand",
+      "title": "Acyclic positive component",
+      "scope": "Every nonzero tree component.",
+      "evidence": "EXPANDED_TREE_INVENTORY.md"
+    },
+    {
+      "id": "C01",
+      "status": "hand",
+      "title": "Entirely loaded cyclic component that is not a seven-body simple cycle",
+      "scope": "The all-loaded reduction forces an enclosing seven-cycle in a strictly subcritical ten-packing.",
+      "evidence": "ALL_LOADED_COMPONENT_RINGS.md"
+    },
+    {
+      "id": "C02",
+      "status": "hand",
+      "title": "Seven loaded bodies with a common signed frame offset",
+      "scope": "Includes the smooth uniform ring and the radial-side/diagonal endpoints.",
+      "evidence": "REGULAR_SEVEN_LOADED_RING.md"
+    },
+    {
+      "id": "C03",
+      "status": "computer",
+      "title": "Nonuniform strict one-chirality seven-ring",
+      "scope": "After C02: the exact side/vertex pattern, allowing reflection and cyclic relabeling. Exact recurrence certificate excludes it; a hand replacement remains required.",
+      "evidence": "SEVEN_RING_GLOBAL_ACTION.md"
+    },
+    {
+      "id": "C04",
+      "status": "open",
+      "title": "Other seven-loaded-ring contact ownership",
+      "scope": "After C02 and C03: other vertex/edge ownership, geometric circle-contact types, or boundary degeneracies.",
+      "evidence": "SEVEN_RING_INTERNAL_CONCURRENCE.md"
+    },
+    {
+      "id": "C05",
+      "status": "open",
+      "title": "Mixed cyclic component whose whole graph is not a simple cycle",
+      "scope": "Includes branching cyclic blocks and bridges attached to cyclic blocks; two loaded bodies are allowed here.",
+      "evidence": "CYCLIC_STRESS_REDUCTIONS.md"
+    },
+    {
+      "id": "C06",
+      "status": "hand",
+      "title": "Mixed simple cycle of length at most four",
+      "scope": "All load assignments.",
+      "evidence": "CYCLIC_STRESS_REDUCTIONS.md"
+    },
+    {
+      "id": "C07",
+      "status": "hand",
+      "title": "Mixed simple cycle of length at least five with at most two loads",
+      "scope": "The two-terminal transmission-path theorem applies to a whole simple cycle.",
+      "evidence": "CYCLIC_STRESS_REDUCTIONS.md"
+    },
+    {
+      "id": "C08",
+      "status": "hand",
+      "title": "Five-cycle with three loads and adjacent unloaded bodies",
+      "scope": "The middle loaded body touches every other loaded body.",
+      "evidence": "CYCLIC_STRESS_REDUCTIONS.md"
+    },
+    {
+      "id": "C09",
+      "status": "hand",
+      "title": "Three-loaded five-cycle with radial-side central body",
+      "scope": "Nonadjacent unloaded bodies; the central loaded square has two geometric circle vertices. S-S, mixed S-D, and D-D are all excluded.",
+      "evidence": "RADIAL_SIDE_DD_EXCLUSION.md"
+    },
+    {
+      "id": "C10",
+      "status": "hand",
+      "title": "Unique-circle-vertex central body: parallel transmissions",
+      "scope": "Nonadjacent unloaded bodies; apply this predicate before C11–C17.",
+      "evidence": "PARALLEL_MIXED_FIVE_CYCLE.md"
+    },
+    {
+      "id": "C11",
+      "status": "hand",
+      "title": "Unique-circle-vertex central body: coincident contacts",
+      "scope": "After C10; equal and mixed transmission types are excluded.",
+      "evidence": "COMMON_CORNER_MIXED_TRANSMISSIONS.md"
+    },
+    {
+      "id": "C12",
+      "status": "hand",
+      "title": "Unique-circle-vertex central body: two distinct vertex contacts",
+      "scope": "After C10–C11.",
+      "evidence": "VERTEX_CONTACT_MIXED_FIVE_CYCLE.md"
+    },
+    {
+      "id": "C13",
+      "status": "hand",
+      "title": "Unique-circle-vertex central body: two side-normal transmissions",
+      "scope": "After C10–C12; includes two side-interior contacts.",
+      "evidence": "SIDE_NORMAL_MIXED_FIVE_CYCLE.md"
+    },
+    {
+      "id": "C14",
+      "status": "hand",
+      "title": "Remaining vertex/side pattern: D-D",
+      "scope": "First letter is the transmitter at the central vertex contact; second is at the side-interior contact.",
+      "evidence": "DIAGONAL_MIXED_FIVE_CYCLE.md"
+    },
+    {
+      "id": "C15",
+      "status": "open",
+      "title": "Remaining vertex/side pattern: S-S",
+      "scope": "Same ordered convention as C14; normal form and its exact force equations are proved.",
+      "evidence": "SIDE_NORMAL_MIXED_FIVE_CYCLE.md"
+    },
+    {
+      "id": "C16",
+      "status": "open",
+      "title": "Remaining vertex/side pattern: S-D",
+      "scope": "Same ordered convention; a vertex-supported first endpoint must have a rightward edge.",
+      "evidence": "SIDE_DIAGONAL_LEFT_ENDPOINT.md"
+    },
+    {
+      "id": "C17",
+      "status": "open",
+      "title": "Remaining vertex/side pattern: D-S",
+      "scope": "Same ordered convention; the opposite loaded endpoint must be rotated and contacted at a vertex.",
+      "evidence": "DIAGONAL_SIDE_ENDPOINT_REDUCTION.md"
+    },
+    {
+      "id": "C18",
+      "status": "hand",
+      "title": "Five-cycle with four loads: side transmitter",
+      "scope": "Its only unloaded body is a degree-two side transmitter.",
+      "evidence": "MIXED_FIVE_FOUR_LOADED.md"
+    },
+    {
+      "id": "C19",
+      "status": "open",
+      "title": "Five-cycle with four loads: diagonal transmitter",
+      "scope": "Its diagonal transmitter contains zero in its interior and has center norm below 3/5; completion capacity remains open.",
+      "evidence": "MIXED_FIVE_FOUR_LOADED_GEOMETRY.md"
+    },
+    {
+      "id": "C20",
+      "status": "open",
+      "title": "Mixed simple cycles of lengths six through ten",
+      "scope": "At least three loaded bodies; finite cyclic load words with S/D transmission decorations.",
+      "evidence": "CYCLIC_STRESS_REDUCTIONS.md"
+    }
+  ]
+}

@@ -11,6 +11,12 @@ claimed. This PR changes only research artifacts under `research/ten/`.
 
 ## Start here
 
+[CASE_ROADMAP.md](CASE_ROADMAP.md) is the current finite case tree and gated
+progress ledger: **13 hand-closed, 1 computer-closed, and 7 open families**.
+[CYCLE_CASES.md](CYCLE_CASES.md) enumerates all 279 larger mixed-cycle cases;
+four are now hand-closed and 275 remain open.
+The bars count these fixed families, not the fraction of proof effort.
+
 [README.md](README.md) indexes the completed arguments and their hypotheses.
 [UNRESTRICTED_MODEL.md](UNRESTRICTED_MODEL.md) states the physical model and
 exact finite formulation. The exact construction at `Q` is checked by
@@ -39,7 +45,7 @@ No proof of the unrestricted n=10 optimum is claimed.
 | Manuscript | Current status |
 | --- | --- |
 | [Extreme upper asymmetry](EXTREME_ASYMMETRIC_TWO_ROW.md) | Independent full mathematical review passed; removes the quarter-offset restriction for the stated touching-lower-pair core with `0<t<=5/12` |
-| [Seven-angle action](SEVEN_RING_ANGLE_ACTION.md) | Independent full mathematical review passed; exact reduction for one contact pattern, with no global uniqueness result |
+| [Seven-angle action](SEVEN_RING_ANGLE_ACTION.md) | Independent full mathematical review passed; exact reduction; its separate global classification is now computer-assisted |
 | [Wider row displacement](WIDE_DISPLACEMENT_TWO_ROW.md) | Independent full mathematical review passed; interval is `0<t<3/2-2^(-1/4)` |
 | [Separated lower pair](SEPARATED_LOWER_TWO_ROW.md) | Independent full mathematical review passed; extension removes lower-pair touching under the displayed bounds |
 
@@ -51,27 +57,18 @@ and arc counts under both extensions at once.
 Both extensions cover specified common-frame two-row cores. There is still
 no argument reducing every four-inner-square core to those arrangements.
 
-The one-chirality ring work now has the exact seven-angle action, positive
-root branch, criticality equations, and derivative formulas in the linked
-note. A promising unproved route is a phase-rotation bound for its nonlinear
-recurrence: numerical exploration suggested a two-step bound that would
-exclude nonconstant period-seven orbits. Neither that bound nor the
-resulting global uniqueness assertion has been proved. Positive mixed
-contact ownership patterns also remain outside this one-chirality model.
+The [global angle-action theorem](SEVEN_RING_GLOBAL_ACTION.md) now excludes
+nonuniform solutions in the strict one-chirality ownership pattern using an
+independently audited exact interval verifier. This is a **computer-assisted
+result**; the hand cone inequality and other ownership patterns remain open.
+The [force-ratio and neighbor-containment bounds](SEVEN_RING_FORCE_RATIO.md)
+and [spike reduction](SEVEN_RING_SPIKE_REDUCTION.md) are hand tools for that
+remaining work.
 
-For the radial-side mixed five-cycle, two diagonal transmitters remain.
-An exploratory symmetric stationary candidate overlapped at its two
-transmitters, so endpoint force equations alone do not certify a physical
-core. In the symmetric corner-contact case, transmitter disjointness forces
-the outward angle to be at least `pi/12`. The reviewed [double-diagonal restrictions](RADIAL_SIDE_DOUBLE_DIAGONAL.md)
-now give the exact transmitter separation inequality for unequal angles and
-contact heights. In particular, if the opposite contact is in a side
-interior, the larger outward angle exceeds `pi/8`. Turning these necessary
-conditions into a full exclusion or capacity bound remains open below
-`R^2=17/4`. The note now excludes the whole radial-side DD component for
-`R^2>=17/4` and excludes equal outward angles throughout the working
-window. Its only remaining angle pattern is
-`0<=eta<pi/12<theta<pi/4`, after exchanging upper and lower.
+The [full radial-side D-D proof](RADIAL_SIDE_DD_EXCLUSION.md) now excludes
+its asymmetric smaller-radius branch too. Together with S-S and S-D, this
+closes the radial-side central-body case of the three-loaded five-cycle.
+Only unique-circle S-S, S-D, and D-S remain for that component type.
 
 The resumed work also proves a [parallel-core graph dichotomy and narrow-channel
 filling lemma](FOUR_CORE_GENERALIZATION.md), with an exact localized pinwheel
@@ -133,17 +130,12 @@ Its proposed sharp local radius inequality remains unproved.
    common signed frame offsets. The smooth stressed member has hole area
    below `231/80<3`; the radial-side endpoint has a hole inside a disk of
    radius below `5/4`; the radial-diagonal endpoint exceeds the target
-   radius. General nonuniform rings remain open. For one side/vertex
-   ownership pattern, [SEVEN_RING_ONE_CHIRALITY.md](SEVEN_RING_ONE_CHIRALITY.md)
-   derives exact equations. Equal contact magnitudes or equal frame turns
-   force the uniform ring, but neither equality is established in general.
-   [SEVEN_RING_LOCAL_RIGIDITY.md](SEVEN_RING_LOCAL_RIGIDITY.md) proves that
-   the normalized uniform scalar solution is locally isolated. No explicit
-   neighborhood size or global uniqueness is claimed.
-   [SEVEN_RING_ANGLE_ACTION.md](SEVEN_RING_ANGLE_ACTION.md) removes the seven
-   force magnitudes and reduces this ownership pattern to critical points
-   of an angle sum. It still requires the physical inequalities and
-   nonneighbor separation; it does not classify all contact patterns.
+   radius. Other contact ownership patterns remain open. For the strict
+   side/vertex one-chirality pattern, the [global action theorem](SEVEN_RING_GLOBAL_ACTION.md)
+   now forces the uniform ring by an exact computer-assisted cone argument.
+   A hand proof of its finite cone lemma remains required for the user's
+   hand-only goal. The earlier local-rigidity and angle-action notes remain
+   useful derivations, but no longer describe the global computational status.
 4. **Mixed cyclic stress components.**
    [CYCLIC_STRESS_REDUCTIONS.md](CYCLIC_STRESS_REDUCTIONS.md) excludes
    two-terminal components made of transmission paths and several small
@@ -170,10 +162,11 @@ Its proposed sharp local radius inequality remains unproved.
    vertex-supported first endpoint to have an edge pointing right in C's
    frame. When C has two geometric circle vertices,
    [RADIAL_SIDE_MIXED_TRANSMISSIONS.md](RADIAL_SIDE_MIXED_TRANSMISSIONS.md)
-   leaves only two diagonal transmitters. It uses the slightly sharper
-   imported lower bound `R^2>5/2+sqrt(2)`, with the n=8 bracket dependency
-   explicitly stated. [MIXED_FIVE_CYCLE_STATUS.md](MIXED_FIVE_CYCLE_STATUS.md)
-   consolidates all remaining patterns; this component is not yet excluded.
+   and the [full D-D exclusion](RADIAL_SIDE_DD_EXCLUSION.md) now close that
+   branch. They use the slightly sharper imported lower bound
+   `R^2>5/2+sqrt(2)`, with the n=8 bracket dependency explicitly stated.
+   [MIXED_FIVE_CYCLE_STATUS.md](MIXED_FIVE_CYCLE_STATUS.md) lists the remaining
+   unique-circle patterns and the four-loaded diagonal cycle.
    [PLANAR_CONTACT_TORQUE_CYCLES.md](PLANAR_CONTACT_TORQUE_CYCLES.md) gives a
    planar junction construction retaining the physical forces; it does not
    establish that every torque cycle encloses zero. Planarity of the simple
