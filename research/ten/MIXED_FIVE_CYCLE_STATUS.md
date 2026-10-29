@@ -120,3 +120,9 @@ The middle inequality is strict when `d<1`; an opposite side-interior
 contact therefore forces `theta>pi/8`. The note also supplies an endpoint
 radius inequality. These necessary conditions retain contact equality and
 do not exclude the DD component.
+
+The same note now also proves **exclusion of the radial-side DD component
+for `R^2>=17/4`**, and excludes equal outward angles throughout the
+working window. Its endpoint-clearance proof forces the remaining domain
+to `R^2<17/4` and `0<=eta<pi/12<theta<pi/4`, with the preceding
+separation inequalities. This remaining asymmetric domain is open.

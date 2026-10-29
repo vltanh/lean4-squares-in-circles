@@ -192,8 +192,9 @@ For the reverse side-to-diagonal pattern, a vertex-supported first endpoint
 When the central loaded square has two circle vertices,
 [only two diagonal transmitters remain](RADIAL_SIDE_MIXED_TRANSMISSIONS.md).
 Their disjointness gives [exact angular restrictions](RADIAL_SIDE_DOUBLE_DIAGONAL.md),
-including a lower bound of `pi/12` on the larger outward angle; this
-remaining case is still open.
+and exclude the component at `R^2>=17/4` as well as equal outward
+angles throughout the working window. Only an asymmetric smaller-radius
+domain remains for this component type.
 The [mixed five-cycle status](MIXED_FIVE_CYCLE_STATUS.md) consolidates its
 remaining patterns and the explicitly imported lower-radius bounds.
 The uniform side/vertex ring is also

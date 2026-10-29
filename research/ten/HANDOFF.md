@@ -67,8 +67,11 @@ the outward angle to be at least `pi/12`. The reviewed [double-diagonal restrict
 now give the exact transmitter separation inequality for unequal angles and
 contact heights. In particular, if the opposite contact is in a side
 interior, the larger outward angle exceeds `pi/8`. Turning these necessary
-conditions into a full exclusion or capacity bound is still required; no
-such exclusion is claimed.
+conditions into a full exclusion or capacity bound remains open below
+`R^2=17/4`. The note now excludes the whole radial-side DD component for
+`R^2>=17/4` and excludes equal outward angles throughout the working
+window. Its only remaining angle pattern is
+`0<=eta<pi/12<theta<pi/4`, after exchanging upper and lower.
 
 ## Remaining obligations
 
