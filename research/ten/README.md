@@ -64,15 +64,16 @@ the known bound, not a lower-bound proof.
 | The unique-circle D-S three-loaded five-cycle is impossible | [D-S exclusion](DIAGONAL_SIDE_EXCLUSION.md), [exact table checker](check_diagonal_side_clearance.py) | Reviewed hand closure, including both endpoint load patterns |
 | The entire three-loaded five-cycle is impossible | [Final S-S exclusion](SIDE_SIDE_EXCLUSION.md), [complete case index](MIXED_FIVE_CYCLE_STATUS.md) | Reviewed hand closure of all ordered transmitter choices and both central circle-contact types |
 | The unique-circle S-D three-loaded five-cycle is impossible | [S-D exclusion](SIDE_DIAGONAL_EXCLUSION.md) | Reviewed hand closure by torque and elementary analytic clearance; no finite interval table |
-| A four-loaded diagonal five-cycle permits at most one other square wholly inside the test disk | [Inner trace restriction](DIAGONAL_FIVE_CYCLE_INNER_TRACE.md) | Reviewed hand restriction; C19 remains open |
+| A four-loaded diagonal five-cycle permits at most one other square wholly inside the test disk | [Inner trace restriction](DIAGONAL_FIVE_CYCLE_INNER_TRACE.md) | Reviewed hand restriction used in the nearer-endpoint exclusion below |
 | Every whole mixed simple cycle follows loaded radial order; the strip cap gives stronger angle bounds | [D-D uncrossing](DIAGONAL_PATH_UNCROSSING.md), [cap-angle theorem](TRANSMISSION_CAP_ANGLE_BOUND.md), [234-case budget](SHARP_TRANSMISSION_CYCLE_BUDGET.md) | Reviewed hand structural theorem and exclusions; all length-nine and length-ten cases closed, 45 shorter signatures remain |
-| The four-loaded diagonal five-cycle has a force quadrilateral strictly around zero | [Force quadrilateral](FOUR_LOADED_FORCE_QUADRILATERAL.md), [trace-route obstruction](DIAGONAL_CORE_TRACE_OBSTRUCTION.md) | Reviewed hand necessary geometry; its completion remains open and scalar transmitter bounds alone do not force enough trace |
+| The four-loaded diagonal five-cycle has a force quadrilateral strictly around zero | [Force quadrilateral](FOUR_LOADED_FORCE_QUADRILATERAL.md), [trace-route obstruction](DIAGONAL_CORE_TRACE_OBSTRUCTION.md) | Reviewed hand necessary geometry; scalar transmitter bounds alone do not force enough trace |
+| Every four-loaded five-cycle is excluded for the selected certificate | [Diagonal exclusion](DIAGONAL_FIVE_CYCLE_EXCLUSION.md), [generic normal selection](GENERIC_CONTACT_NORMAL_SELECTION.md), [nearer endpoint](DIAGONAL_FIVE_CYCLE_NEAR_ENDPOINT.md) | Reviewed hand closure of C19: D neighbors must have side-interior contacts, but the nearer endpoint cannot have side support |
 | With at most one diagonal transmitter, a mixed simple cycle follows loaded radial order | [Single-side uncrossing](SINGLE_SIDE_TRANSMISSION_UNCROSSING.md), [117-case batch](single_side_cycle_batch.json) | Reviewed hand theorem; 90 closures in that batch; superseded in coverage by the 206-case theorem |
 | Two transmission runs sharing a loaded endpoint obey strict angular budgets | [Shared-endpoint cases](SHARED_ENDPOINT_CYCLE_ANGLE_BUDGET.md), [seven-loaded cases](SEVEN_LOADED_LONG_PATHS.md) | Reviewed hand closures of eleven further larger-cycle entries; [uncrossing](TRANSMISSION_PATH_UNCROSSING.md) closes thirteen more |
 | A radial-side central body cannot occur in the three-loaded five-cycle | [Full radial D-D exclusion](RADIAL_SIDE_DD_EXCLUSION.md) | Reviewed hand closure, together with the earlier S-S and S-D arguments |
 | Several mixed cyclic stress patterns are impossible | [Cyclic reductions](CYCLIC_STRESS_REDUCTIONS.md), [remaining five-cycle form](SIDE_NORMAL_MIXED_FIVE_CYCLE.md) | Conditional hand reductions; neither a complete graph classification nor a global exclusion |
 | Branching components with every branch vertex loaded have a fixed catalog of 45,666 cases | [Catalog](BRANCHING_LOADED_SKELETON_INVENTORY.md), [combined angle and bridge certificates](BRANCHING_SS_BRIDGE_FILTER.md) | Independent enumerators agree; 40,336 excluded and 5,330 remain; unloaded branch vertices are outside this subclass |
-| A five-cycle with four loaded squares must use a diagonal transmitter | [Four-loaded five-cycle](MIXED_FIVE_FOUR_LOADED.md) | Side transmitter excluded by hand in the explicitly imported radius window; diagonal case open |
+| A five-cycle with four loaded squares cannot use a side transmitter | [Four-loaded five-cycle](MIXED_FIVE_FOUR_LOADED.md) | Side transmitter excluded by hand in the explicitly imported radius window; the diagonal branch is now excluded above for the chosen certificate |
 | Parallel four-inner cores have a line-separated or pinwheel form; narrow internal channels can be filled as virtual obstacles | [Projection graphs and channel lemma](FOUR_CORE_GENERALIZATION.md) | Hand structural reduction and exact localized pinwheel; no general completion bound |
 | A solid two-by-two core, with its four centers in the closed unit disk, admits at most five additional squares | [General translated-block theorem](GENERAL_TRANSLATED_BLOCK_OBSTRUCTION.md) | Hand proof for every translation and rotation; additional orientations arbitrary |
 | A specified symmetric two-row core with two center norms at most `.65` has total capacity at most nine | [Two-row theorem](SYMMETRIC_TWO_ROW_COMPLETION.md) | Hand proof over the full stated parameter family; does not normalize arbitrary cores |
@@ -108,8 +109,8 @@ certificates remain computational results with their own stated scope.
 <!-- CASE_PROGRESS_START -->
 **Main gates:** `███░░░░` **3/7 closed**.
 
-**G3 lower-bound case ledger:** `█████████████████░░░░`
-**17 hand closed · 0 computer closed · 4 open / 21 terminal families.**
+**G3 lower-bound case ledger:** `██████████████████░░░`
+**18 hand closed · 0 computer closed · 3 open / 21 terminal families.**
 
 **C20 larger-cycle subcases:** `████████████████████▏░░░` **234/279 closed; 45 open.**
 

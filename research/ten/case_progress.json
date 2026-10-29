@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "scope": "Strictly subcritical n=10 lower bound; choose a nonzero minimizing physical stress component.",
+  "scope": "Strictly subcritical n=10 lower bound; first choose the generic strict/nonradial, diagonal-avoiding physical stress certificate at a minimizer, then classify a nonzero positive component.",
   "statuses": {
     "hand": "closed by reviewed hand deduction, with cited imported dependencies",
     "computer": "closed by reviewed computer-assisted theorem; hand replacement open",
@@ -179,10 +179,10 @@
     },
     {
       "id": "C19",
-      "status": "open",
+      "status": "hand",
       "title": "Five-cycle with four loads: diagonal transmitter",
-      "scope": "The diagonal transmitter contains zero and lies wholly in squared radius 3/2. Its four loaded forces surround zero, with positive radial concurrence. Ten-square completion capacity remains open.",
-      "evidence": "FOUR_LOADED_FORCE_QUADRILATERAL.md"
+      "scope": "For the generic selected certificate, D transmitter neighbors must be contacted in side interiors. The nearer-endpoint theorem forbids side support, excluding the component. The certificate is selected before classification.",
+      "evidence": "DIAGONAL_FIVE_CYCLE_EXCLUSION.md"
     },
     {
       "id": "C20",

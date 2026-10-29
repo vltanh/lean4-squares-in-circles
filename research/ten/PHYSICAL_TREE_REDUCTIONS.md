@@ -48,6 +48,13 @@ body-pair graph, not the entire geometric contact graph. A zero-weight square
 remains a physical obstacle even if it has no vertex in a selected positive
 component.
 
+The current roadmap may additionally choose the normals to avoid both
+diagonal directions of each incident square at every point-only
+vertex/vertex contact. The reviewed
+[generic selection theorem](GENERIC_CONTACT_NORMAL_SELECTION.md) proves
+existence with that stronger convention. It is chosen before classifying
+the positive graph and retains every premise used in the reductions below.
+
 We use the certificate furnished by the cited physical-stress construction
 with the following normal choice: at every point-only vertex/vertex contact
 away from the origin, select a supporting normal that is not radial. Such a

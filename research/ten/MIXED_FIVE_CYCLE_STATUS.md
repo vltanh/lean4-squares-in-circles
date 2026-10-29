@@ -1,4 +1,4 @@
-# Remaining patterns in a three-loaded positive five-cycle
+# Completed positive five-cycle exclusions
 
 This is an index of proved reductions and the exact remaining cases for a
 whole positive component
@@ -99,20 +99,21 @@ hand derivation of that imported bracket is claimed.
 
 For a whole five-cycle with four loaded bodies and one unloaded degree-two
 body, [MIXED_FIVE_FOUR_LOADED.md](MIXED_FIVE_FOUR_LOADED.md) excludes a
-side transmitter throughout the same radius window. Only the diagonal
-transmitter remains. This is a different component type from the
-three-loaded/two-transmitter patterns above.
+side transmitter throughout the same radius window. The
+[diagonal exclusion](DIAGONAL_FIVE_CYCLE_EXCLUSION.md) now closes the
+other transmitter type for the generic certificate selected before
+classifying the positive graph. Its normal choice forces side-interior
+endpoint contacts, whereas the nearer-endpoint theorem forbids side support.
+This is a different component type from the three-loaded patterns above.
 
-## Exact remaining five-cycle obligations
+## Five-cycle completion status
 
-| Roadmap ID | Remaining family | Status |
+| Roadmap ID | Family | Status |
 | --- | --- | --- |
-| C19 | Four loaded bodies; the sole unloaded transmitter D | OPEN |
+| C19 | Four loaded bodies; the sole unloaded transmitter D | [HAND CLOSED for the selected certificate](DIAGONAL_FIVE_CYCLE_EXCLUSION.md) |
 
-For each row, either exclude the physical component or prove that its
-completion has capacity at most nine. This is the only remaining
-five-cycle family after the ordered reductions in
-[CASE_ROADMAP.md](CASE_ROADMAP.md). It still permits continuous coordinates
-and varying endpoint contact ownership. Closing it does not by itself
-settle larger mixed cycles, branching components, or other loaded-ring
-ownership patterns.
+No whole five-cycle family remains open in the selected-certificate
+classification of [CASE_ROADMAP.md](CASE_ROADMAP.md). The unrestricted
+problem still has larger mixed cycles, branching components, and other
+loaded-ring ownership patterns. Equality and Lean integration remain
+separate obligations.

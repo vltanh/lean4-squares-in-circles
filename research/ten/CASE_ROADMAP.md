@@ -8,8 +8,8 @@ lemma that does not close its family. All lower-bound cases below concern
 <!-- CASE_PROGRESS_START -->
 **Main gates:** `███░░░░` **3/7 closed**.
 
-**G3 lower-bound case ledger:** `█████████████████░░░░`
-**17 hand closed · 0 computer closed · 4 open / 21 terminal families.**
+**G3 lower-bound case ledger:** `██████████████████░░░`
+**18 hand closed · 0 computer closed · 3 open / 21 terminal families.**
 
 **C20 larger-cycle subcases:** `████████████████████▏░░░` **234/279 closed; 45 open.**
 
@@ -48,7 +48,7 @@ lemma that does not close its family. All lower-bound cases below concern
 | C16 | HAND CLOSED | **Remaining vertex/side pattern: S-D.** Same ordered convention; physical torque balance forces a far vertex to carry circle load, while elementary analytic bounds place it strictly inside the circle. [Proof / reduction](SIDE_DIAGONAL_EXCLUSION.md). |
 | C17 | HAND CLOSED | **Remaining vertex/side pattern: D-S.** Same ordered convention; endpoint classification and a printed exact clearance table exclude both remaining circle-load patterns. [Proof / reduction](DIAGONAL_SIDE_EXCLUSION.md). |
 | C18 | HAND CLOSED | **Five-cycle with four loads: side transmitter.** Its only unloaded body is a degree-two side transmitter. [Proof / reduction](MIXED_FIVE_FOUR_LOADED.md). |
-| C19 | OPEN | **Five-cycle with four loads: diagonal transmitter.** The diagonal transmitter contains zero and lies wholly in squared radius 3/2. Its four loaded forces surround zero, with positive radial concurrence. Ten-square completion capacity remains open. [Proof / reduction](FOUR_LOADED_FORCE_QUADRILATERAL.md). |
+| C19 | HAND CLOSED | **Five-cycle with four loads: diagonal transmitter.** For the generic selected certificate, D transmitter neighbors must be contacted in side interiors. The nearer-endpoint theorem forbids side support, excluding the component. The certificate is selected before classification. [Proof / reduction](DIAGONAL_FIVE_CYCLE_EXCLUSION.md). |
 | C20 | OPEN | **Mixed simple cycles of lengths six through ten.** At least three loaded bodies. Radial loaded order is proved; 234 of 279 fixed signatures are excluded, including every length-nine and length-ten case. Forty-five signatures remain at lengths six through eight. [Proof / reduction](SHARP_TRANSMISSION_CYCLE_BUDGET.md). |
 <!-- CASE_PROGRESS_END -->
 
@@ -58,7 +58,13 @@ Take a hypothetical strictly subcritical ten-packing and a radius-minimizing
 packing no larger than it. The physical stress certificate supplies a
 nonzero positive component; its source and radius dependencies are pinned
 in [PHYSICAL_TREE_REDUCTIONS.md](PHYSICAL_TREE_REDUCTIONS.md) and
-[EXPANDED_TREE_INVENTORY.md](EXPANDED_TREE_INVENTORY.md). Every such component
+[EXPANDED_TREE_INVENTORY.md](EXPANDED_TREE_INVENTORY.md). Before classifying
+its graph, choose the [generic contact normals](GENERIC_CONTACT_NORMAL_SELECTION.md)
+that also avoid both incident square diagonals at point-only vertex/vertex
+contacts. This preserves the earlier strict/nonradial convention and is
+the selection used to close C19. It is an existence choice before the
+multiplier theorem, not a modification keeping an older graph fixed.
+Every such component
 has at most ten bodies and at most seven loaded bodies. An unloaded set with
 at most one outside neighbor is impossible by the force-sum argument. This
 excludes zero or one loaded body in a component with other bodies. An
@@ -103,7 +109,7 @@ Nonzero minimizing positive component
             │           └─ D-S ........................... C17 H
             ├─ Length five, four loaded bodies
             │  ├─ Unloaded transmitter S ................. C18 H
-            │  └─ Unloaded transmitter D ................. C19 O
+            │  └─ Unloaded transmitter D ................. C19 H
             └─ Length six through ten .................... C20 O
                └─ 80 load-word families / 279 S-D cases
 ```
@@ -122,9 +128,14 @@ This is a **finite partition into proof families**, not a claim that there
 are finitely many geometric packings. Each family still permits continuous
 coordinates, orientations, and positive force magnitudes.
 
+The [four-loaded diagonal five-cycle exclusion](DIAGONAL_FIVE_CYCLE_EXCLUSION.md)
+uses this chosen certificate: generic normals make both D endpoint contacts
+relative side interiors, whereas the nearer-endpoint theorem forbids side
+support. All four-loaded five-cycles are therefore excluded in this route.
+
 ## What is left, concretely
 
-There are four open physical families. Every closed family in the main
+There are three open physical families. Every closed family in the main
 ledger now has a reviewed hand deduction, with its imported dependencies
 stated in the linked proof:
 
@@ -132,7 +143,6 @@ stated in the linked proof:
 | --- | --- |
 | C04: other loaded-ring ownership | Proper edge/vertex survivors must contain a unique-circle row U4/U5/U8/U9; the other rows and arbitrary radial-side bodies are covered by reviewed exclusions. Rule out those remaining rows and the side/side or vertex/vertex pair defects, or prove a capacity theorem covering them. |
 | C05: branching mixed components | Classify or exclude the connected cyclic graphs that are not whole simple cycles, including bridge attachments and exactly two loaded bodies. |
-| C19: four-loaded five-cycle with D | Exclude this component or its ten-square completion. |
 | C20: larger mixed simple cycles | Exclude the [279 enumerated graph/transmitter cases](CYCLE_CASES.md), refining physical contact ownership where needed. |
 
 The recently proved two-row, block, cap, channel, and corner-moment lemmas

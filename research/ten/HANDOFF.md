@@ -12,7 +12,7 @@ claimed. This PR changes only research artifacts under `research/ten/`.
 ## Start here
 
 [CASE_ROADMAP.md](CASE_ROADMAP.md) is the current finite case tree and gated
-progress ledger: **17 hand-closed, 0 computer-only, and 4 open families**.
+progress ledger: **18 hand-closed, 0 computer-only, and 3 open families**.
 [CYCLE_CASES.md](CYCLE_CASES.md) enumerates all 279 larger mixed-cycle cases;
 Its generated progress bar and proof links record every reviewed exclusion.
 The bars count these fixed families, not the fraction of proof effort.
@@ -38,14 +38,22 @@ The equality classification remains open outside the completed classes.
 ## Current resumed checkpoint
 
 Research resumed from handoff commit `fb91a0517a0eedf192e11759f9bdec2a60ab46af`.
-The unrestricted proof is still open. The main case ledger has **17 reviewed
-hand closures and 4 open
+The unrestricted proof is still open. The main case ledger has **18 reviewed
+hand closures and 3 open
 families out of 21**; the larger-cycle subledger has **234 reviewed hand
 closures and 45 open cases out of 279**. Main gates remain **3/7 closed**.
 The closed counts do not measure the fraction of mathematical effort.
 
 Latest completed work:
 
+- C19 is now [hand closed](DIAGONAL_FIVE_CYCLE_EXCLUSION.md). Choose
+  [generic contact normals](GENERIC_CONTACT_NORMAL_SELECTION.md) before
+  classifying the stress graph; each diagonal transmitter must then meet
+  relative side interiors of its neighbors. The independently reviewed
+  [nearer-endpoint exclusion](DIAGONAL_FIVE_CYCLE_NEAR_ENDPOINT.md),
+  Sections 1--4, makes this impossible in the four-loaded five-cycle.
+  The stronger selection preserves all earlier strict/nonradial premises.
+  It does not assert that arbitrary previously chosen stress graphs persist.
 - C05: the [loaded-branch catalog](BRANCHING_LOADED_SKELETON_INVENTORY.md)
   has 45,666 stable records modulo circular rotations and reflection.
   Independent Python and C++ enumerators agree on every record. The
@@ -88,16 +96,17 @@ Latest completed work:
   four loaded bodies. The [exact trace counterexample](DIAGONAL_CORE_TRACE_OBSTRUCTION.md)
   shows why the current scalar bounds on the transmitter alone cannot
   close the remaining capacity argument; it is not a realization of C19.
+  The new selected-certificate exclusion above closes C19 without requiring
+  that capacity argument or the extra concurrence conclusion.
 - C19: the diagonal transmitter is wholly within squared radius `3/2` and
   occupies more than `5pi/6` on the radius-`3/8` circle. At most one other
   square can be wholly inside the test disk. This is a restriction only.
 
 | Open family | Concrete next work |
 | --- | --- |
-| C04: other seven-ring ownership | Use the reviewed 25-candidate ownership alphabet and its 34 coarse proper-contact schemes. Combine the reviewed side-support and opposite-vertex corner bounds where the spike geometry applies. Opposite-corner, radial-side, and pair-contact degeneracies still require treatment. |
-| C05: branching mixed components | Enumerate or exclude the remaining graphs in the reviewed suppressed skeleton. Do not assume the body-pair graph is planar. |
-| C19: four-loaded diagonal five-cycle | Turn its origin-containing transmitter and forced protrusions into a capacity bound, or exclude the component. |
-| C20: 73 larger-cycle entries | Improve the angular/contact bounds or prove completion capacity for 15 length-six, 23 length-seven, 28 length-eight, and seven all-S length-nine signatures. Every remaining ID is explicit in CYCLE_CASES.md. |
+| C04: other seven-ring ownership | Proper-contact survivors require a unique-circle U4/U5/U8/U9. Side/side and vertex/vertex pair defects remain separate; radial bodies are covered in the proper-contact capacity theorem. |
+| C05: branching mixed components | Exclude the 5,330 remaining loaded-branch catalog records and classify components with unloaded retained branching vertices. Do not assume body-pair planarity. |
+| C20: 45 larger-cycle entries | Improve the angular/contact bounds or prove completion capacity for 15 length-six, 19 length-seven, and 11 length-eight signatures. Every remaining ID is explicit in CYCLE_CASES.md. |
 
 The former D-D crossing lead is now a reviewed theorem. A crossing
 forces a lower loaded square's other contact to the opposite end of its
@@ -161,9 +170,11 @@ its asymmetric smaller-radius branch too. Together with S-S and S-D, this
 closes the radial-side central-body case of the three-loaded five-cycle.
 The [D-S closure](DIAGONAL_SIDE_EXCLUSION.md),
 [S-D closure](SIDE_DIAGONAL_EXCLUSION.md), and
-[final S-S closure](SIDE_SIDE_EXCLUSION.md) close that component type. The four-loaded diagonal five-cycle remains
-open, with a new [inner trace restriction](DIAGONAL_FIVE_CYCLE_INNER_TRACE.md):
-at most one other square is wholly contained in the test disk.
+[final S-S closure](SIDE_SIDE_EXCLUSION.md) close that component type. The
+four-loaded diagonal five-cycle is also now excluded for the generic
+selected certificate by [its nearer endpoint](DIAGONAL_FIVE_CYCLE_EXCLUSION.md).
+The earlier [inner trace restriction](DIAGONAL_FIVE_CYCLE_INNER_TRACE.md)
+remains one input to that proof.
 
 The resumed work also proves a [parallel-core graph dichotomy and narrow-channel
 filling lemma](FOUR_CORE_GENERALIZATION.md), with an exact localized pinwheel
@@ -236,10 +247,10 @@ the earlier sharper target is no longer a required step for that case.
 4. **Mixed cyclic stress components.**
    [CYCLIC_STRESS_REDUCTIONS.md](CYCLIC_STRESS_REDUCTIONS.md) excludes
    two-terminal components made of transmission paths and several small
-   loaded graphs. Components with branching cyclic blocks, five-cycles with
-   four loaded bodies and a diagonal transmitter, and larger mixed cycles
-   remain open. The side-transmitter case is now excluded by the
-   [four-loaded theorem](MIXED_FIVE_FOUR_LOADED.md). For a whole
+   loaded graphs. Components with branching cyclic blocks and the remaining
+   larger mixed cycles remain open. The four-loaded five-cycle is excluded
+   by the [side theorem](MIXED_FIVE_FOUR_LOADED.md) and the
+   [selected-certificate diagonal theorem](DIAGONAL_FIVE_CYCLE_EXCLUSION.md). For a whole
    five-cycle `A-U-C-V-B-A` with precisely `A,B,C` loaded, the following
    patterns are excluded: [parallel transmissions](PARALLEL_MIXED_FIVE_CYCLE.md),
    [equal-type common-corner contacts](COMMON_CORNER_SIDE_TRANSMISSIONS.md),
@@ -259,8 +270,8 @@ the earlier sharper target is no longer a required step for that case.
    and the [full D-D exclusion](RADIAL_SIDE_DD_EXCLUSION.md) now close that
    branch. They use the slightly sharper imported lower bound
    `R^2>5/2+sqrt(2)`, with the n=8 bracket dependency explicitly stated.
-   [MIXED_FIVE_CYCLE_STATUS.md](MIXED_FIVE_CYCLE_STATUS.md) lists the remaining
-   unique-circle patterns and the four-loaded diagonal cycle.
+   [MIXED_FIVE_CYCLE_STATUS.md](MIXED_FIVE_CYCLE_STATUS.md) indexes these
+   completed five-cycle branches.
    [PLANAR_CONTACT_TORQUE_CYCLES.md](PLANAR_CONTACT_TORQUE_CYCLES.md) gives a
    planar junction construction retaining the physical forces; it does not
    establish that every torque cycle encloses zero. Planarity of the simple
