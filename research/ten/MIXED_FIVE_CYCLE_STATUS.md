@@ -126,3 +126,11 @@ for `R^2>=17/4`**, and excludes equal outward angles throughout the
 working window. Its endpoint-clearance proof forces the remaining domain
 to `R^2<17/4` and `0<=eta<pi/12<theta<pi/4`, with the preceding
 separation inequalities. This remaining asymmetric domain is open.
+
+## Four loaded bodies (2026-10-29)
+
+For a whole five-cycle with four loaded bodies and one unloaded degree-two
+body, the [four-loaded theorem](MIXED_FIVE_FOUR_LOADED.md) now excludes a
+side transmitter throughout the explicitly imported lower-radius window.
+Only its diagonal-transmitter case remains. This is a different component
+type from the three-loaded/two-transmitter patterns discussed above.

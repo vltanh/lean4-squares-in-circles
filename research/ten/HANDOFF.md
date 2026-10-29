@@ -73,6 +73,17 @@ conditions into a full exclusion or capacity bound remains open below
 window. Its only remaining angle pattern is
 `0<=eta<pi/12<theta<pi/4`, after exchanging upper and lower.
 
+The resumed work also proves a [parallel-core graph dichotomy and narrow-channel
+filling lemma](FOUR_CORE_GENERALIZATION.md), with an exact localized pinwheel
+showing why raw two-row normalization fails. The [four-loaded five-cycle
+theorem](MIXED_FIVE_FOUR_LOADED.md) excludes its side transmitter throughout
+the imported radius window. For loaded rings, [force ratios and physical
+neighbor containment](SEVEN_RING_FORCE_RATIO.md) give new necessary bounds,
+including `R cos(alpha)>1` in the one-chirality pattern. The reviewed
+[spike reduction](SEVEN_RING_SPIKE_REDUCTION.md) confines protruding
+inner-square vertices to explicit contact triangles cut by diameter disks.
+Its proposed sharp local radius inequality remains unproved.
+
 ## Remaining obligations
 
 1. **Three inner centers.** Seven outer squares consume at least `7pi/4`
@@ -137,7 +148,9 @@ window. Its only remaining angle pattern is
    [CYCLIC_STRESS_REDUCTIONS.md](CYCLIC_STRESS_REDUCTIONS.md) excludes
    two-terminal components made of transmission paths and several small
    loaded graphs. Components with branching cyclic blocks, five-cycles with
-   four loaded bodies, and larger mixed cycles remain open. For a whole
+   four loaded bodies and a diagonal transmitter, and larger mixed cycles
+   remain open. The side-transmitter case is now excluded by the
+   [four-loaded theorem](MIXED_FIVE_FOUR_LOADED.md). For a whole
    five-cycle `A-U-C-V-B-A` with precisely `A,B,C` loaded, the following
    patterns are excluded: [parallel transmissions](PARALLEL_MIXED_FIVE_CYCLE.md),
    [equal-type common-corner contacts](COMMON_CORNER_SIDE_TRANSMISSIONS.md),
