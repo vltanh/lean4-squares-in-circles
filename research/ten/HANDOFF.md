@@ -46,6 +46,14 @@ The closed counts do not measure the fraction of mathematical effort.
 
 Latest completed work:
 
+- C05: the [loaded-branch catalog](BRANCHING_LOADED_SKELETON_INVENTORY.md)
+  has 45,666 stable records modulo circular rotations and reflection.
+  Independent Python and C++ enumerators agree on every record. The
+  [cap-angle and bridge certificates](BRANCHING_LOADED_CAP_ANGLES.md)
+  exclude 40,306 and leave 5,360. Every angular witness is a sum of at most
+  seven strict integer inequalities; every bridge witness is a graph cut.
+  This is only `b=0`, where all retained branching vertices are loaded.
+  The `b>0` subclass remains outside the catalog and C05 remains open.
 - C03: a hand cap proof excludes every physical ring in the fixed
   one-chirality ownership pattern, independently of the earlier interval
   action verifier.

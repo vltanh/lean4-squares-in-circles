@@ -1,6 +1,7 @@
 # A hand spike-cap bound for a body supported on both inner sides
 
-**Status:** complete hand argument; independent review pending.
+**Status:** hand proof; two independent full mathematical reviews passed
+on 2026-10-29, including the negative-offset case and side endpoints.
 This extends the local cap estimate used for a one-chirality ring to a
 unique-circle body whose two contact support faces are its adjacent inner
 sides. It is a local theorem, not an exclusion of all loaded-ring types.

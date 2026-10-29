@@ -83,8 +83,8 @@
       "id": "C05",
       "status": "open",
       "title": "Mixed cyclic component whose whole graph is not a simple cycle",
-      "scope": "Includes branching cyclic blocks and bridges attached to cyclic blocks; two loaded bodies are allowed here.",
-      "evidence": "CYCLIC_STRESS_REDUCTIONS.md"
+      "scope": "Includes branching cyclic blocks and bridges. When every retained vertex is loaded, a fixed 45,666-case catalog has 40,306 reviewed exclusions and 5,360 remaining. Unloaded retained branch vertices remain unclassified.",
+      "evidence": "BRANCHING_LOADED_CAP_ANGLES.md"
     },
     {
       "id": "C06",

@@ -71,6 +71,7 @@ the known bound, not a lower-bound proof.
 | Two transmission runs sharing a loaded endpoint obey strict angular budgets | [Shared-endpoint cases](SHARED_ENDPOINT_CYCLE_ANGLE_BUDGET.md), [seven-loaded cases](SEVEN_LOADED_LONG_PATHS.md) | Reviewed hand closures of eleven further larger-cycle entries; [uncrossing](TRANSMISSION_PATH_UNCROSSING.md) closes thirteen more |
 | A radial-side central body cannot occur in the three-loaded five-cycle | [Full radial D-D exclusion](RADIAL_SIDE_DD_EXCLUSION.md) | Reviewed hand closure, together with the earlier S-S and S-D arguments |
 | Several mixed cyclic stress patterns are impossible | [Cyclic reductions](CYCLIC_STRESS_REDUCTIONS.md), [remaining five-cycle form](SIDE_NORMAL_MIXED_FIVE_CYCLE.md) | Conditional hand reductions; neither a complete graph classification nor a global exclusion |
+| Branching components with every branch vertex loaded have a fixed catalog of 45,666 cases | [Catalog](BRANCHING_LOADED_SKELETON_INVENTORY.md), [exact angle and bridge certificates](BRANCHING_LOADED_CAP_ANGLES.md) | Independent enumerators agree; 40,306 excluded and 5,360 remain; unloaded branch vertices are outside this subclass |
 | A five-cycle with four loaded squares must use a diagonal transmitter | [Four-loaded five-cycle](MIXED_FIVE_FOUR_LOADED.md) | Side transmitter excluded by hand in the explicitly imported radius window; diagonal case open |
 | Parallel four-inner cores have a line-separated or pinwheel form; narrow internal channels can be filled as virtual obstacles | [Projection graphs and channel lemma](FOUR_CORE_GENERALIZATION.md) | Hand structural reduction and exact localized pinwheel; no general completion bound |
 | A solid two-by-two core, with its four centers in the closed unit disk, admits at most five additional squares | [General translated-block theorem](GENERAL_TRANSLATED_BLOCK_OBSTRUCTION.md) | Hand proof for every translation and rotation; additional orientations arbitrary |
@@ -111,6 +112,8 @@ certificates remain computational results with their own stated scope.
 **17 hand closed · 0 computer closed · 4 open / 21 terminal families.**
 
 **C20 larger-cycle subcases:** `████████████████████▏░░░` **234/279 closed; 45 open.**
+
+**C05 branching subclass, all branch vertices loaded:** `█████████████████████▏░░` **40,306/45,666 excluded; 5,360 remain.** [Catalog and certificates](BRANCHING_LOADED_CAP_ANGLES.md). Unloaded branching vertices remain outside this subledger.
 
 `█` reviewed hand deduction; `▓` reviewed computer-assisted result; `░` open. These are counts of the fixed ledger entries, **not a percentage of the proof or remaining effort**. Every currently closed family has a reviewed hand deduction; imported dependencies remain as stated in each proof.
 

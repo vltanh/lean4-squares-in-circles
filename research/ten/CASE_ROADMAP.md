@@ -13,6 +13,8 @@ lemma that does not close its family. All lower-bound cases below concern
 
 **C20 larger-cycle subcases:** `████████████████████▏░░░` **234/279 closed; 45 open.**
 
+**C05 branching subclass, all branch vertices loaded:** `█████████████████████▏░░` **40,306/45,666 excluded; 5,360 remain.** [Catalog and certificates](BRANCHING_LOADED_CAP_ANGLES.md). Unloaded branching vertices remain outside this subledger.
+
 `█` reviewed hand deduction; `▓` reviewed computer-assisted result; `░` open. These are counts of the fixed ledger entries, **not a percentage of the proof or remaining effort**. Every currently closed family has a reviewed hand deduction; imported dependencies remain as stated in each proof.
 
 | Gate | Obligation | Status |
@@ -32,7 +34,7 @@ lemma that does not close its family. All lower-bound cases below concern
 | C02 | HAND CLOSED | **Seven loaded bodies with a common signed frame offset.** Includes the smooth uniform ring and the radial-side/diagonal endpoints. [Proof / reduction](REGULAR_SEVEN_LOADED_RING.md). |
 | C03 | HAND CLOSED | **Nonuniform strict one-chirality seven-ring.** After C02: the fixed side/vertex pattern, allowing reflection and cyclic relabeling. A hand cap theorem traps all three inner squares below the three-square minimum radius. [Proof / reduction](SEVEN_RING_RADIAL_CAP_BOUND.md). |
 | C04 | OPEN | **Other seven-loaded-ring contact ownership.** After C02 and C03: proper edge/vertex rings using only U1/U6/U7/U10 are also excluded. Incident opposite-corner rows U2/U3 are impossible. Other opposite-corner rows, radial-side bodies, and pair-support defects remain. [Proof / reduction](SEVEN_RING_OWNERSHIP_ALPHABET.md). |
-| C05 | OPEN | **Mixed cyclic component whose whole graph is not a simple cycle.** Includes branching cyclic blocks and bridges attached to cyclic blocks; two loaded bodies are allowed here. [Proof / reduction](CYCLIC_STRESS_REDUCTIONS.md). |
+| C05 | OPEN | **Mixed cyclic component whose whole graph is not a simple cycle.** Includes branching cyclic blocks and bridges. When every retained vertex is loaded, a fixed 45,666-case catalog has 40,306 reviewed exclusions and 5,360 remaining. Unloaded retained branch vertices remain unclassified. [Proof / reduction](BRANCHING_LOADED_CAP_ANGLES.md). |
 | C06 | HAND CLOSED | **Mixed simple cycle of length at most four.** All load assignments. [Proof / reduction](CYCLIC_STRESS_REDUCTIONS.md). |
 | C07 | HAND CLOSED | **Mixed simple cycle of length at least five with at most two loads.** The two-terminal transmission-path theorem applies to a whole simple cycle. [Proof / reduction](CYCLIC_STRESS_REDUCTIONS.md). |
 | C08 | HAND CLOSED | **Five-cycle with three loads and adjacent unloaded bodies.** The middle loaded body touches every other loaded body. [Proof / reduction](CYCLIC_STRESS_REDUCTIONS.md). |
@@ -166,13 +168,19 @@ subset of size `2..min(7,m-1)`. Keep connected graphs containing a cycle
 and at least one vertex of degree at least three. Contacts retain their
 vertex/side incidence and physical force witnesses. This includes cyclic
 blocks joined by bridges. The degree-two S/D reduction applies only to
-vertices of degree two in the **whole positive graph**. The list has not
-been enumerated or reduced by graph isomorphism here; it is a finite,
-explicitly defined remaining family, not a closed classification theorem.
-The [new skeleton draft](BRANCHING_COMPONENT_SKELETON_DRAFT.md) proposes
-further degree and parallel-path restrictions, now independently reviewed.
-These necessary restrictions do not yet close C05 or reduce its main
-open-family count.
+vertices of degree two in the **whole positive graph**.
+The [reviewed skeleton reductions](BRANCHING_COMPONENT_SKELETON_DRAFT.md)
+give degree and parallel-path restrictions. The subclass with every branch
+vertex loaded (`b=0`) now has a fixed
+[catalog of 45,666 stable cases](BRANCHING_LOADED_SKELETON_INVENTORY.md),
+independently reproduced by Python and C++ enumerators. Each row records
+the circular loaded order, path types, multiplicities, and body count.
+The [exact angle and bridge certificates](BRANCHING_LOADED_CAP_ANGLES.md)
+exclude 40,306 records and leave 5,360; the separate bar above tracks this
+fixed subclass. Each angular rejection prints at most seven integer
+inequalities summing to a contradiction. The subclass with an unloaded
+retained branching vertex (`b>0`) is outside that catalog and remains
+unenumerated. Neither partial classification closes C05.
 
 **C20 is already enumerated.** [CYCLE_CASES.md](CYCLE_CASES.md) lists all
 279 stable case IDs and their canonical words. Independent enumerations and

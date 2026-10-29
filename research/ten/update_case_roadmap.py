@@ -9,6 +9,13 @@ START = "<!-- CASE_PROGRESS_START -->"
 END = "<!-- CASE_PROGRESS_END -->"
 
 
+def fraction_bar(done, total):
+    ticks = done * 24 * 8 // total
+    full, part = divmod(ticks, 8)
+    partial = " ▏▎▍▌▋▊▉"[part] if part else ""
+    return "█" * full + partial + "░" * (24-full-bool(part))
+
+
 def replace_region(path, content):
     text = path.read_text()
     if text.count(START) != 1 or text.count(END) != 1:
@@ -30,10 +37,17 @@ def main():
             raise ValueError(f"Invalid cycle closure: {key}")
     cycle_done = len(cycle_status)
     cycle_total = len(cycle_ids)
-    ticks = cycle_done * 24 * 8 // cycle_total
-    full, part = divmod(ticks, 8)
-    partial = " ▏▎▍▌▋▊▉"[part] if part else ""
-    cycle_bar = "█" * full + partial + "░" * (24-full-bool(part))
+    cycle_bar = fraction_bar(cycle_done, cycle_total)
+    branch = json.loads((ROOT / "branching_loaded_cap_angle_summary.json").read_text())
+    branch_total = branch["initial_cases"]
+    branch_done = branch["distinct_exclusions"]
+    if (not 0 <= branch_done <= branch_total
+            or branch_total - branch_done != branch["remaining_cases"]
+            or sum(r["total"] for r in branch["by_loaded_count"]) != branch_total
+            or sum(r["union"] for r in branch["by_loaded_count"]) != branch_done
+            or not (ROOT / branch["proof"]).is_file()):
+        raise ValueError("Invalid branching subclass totals or evidence")
+    branch_bar = fraction_bar(branch_done, branch_total)
     cases = data["cases"]
     if len({c["id"] for c in cases}) != len(cases):
         raise ValueError("Duplicate case ID")
@@ -55,6 +69,10 @@ def main():
         f"{counts['open']} open / {len(cases)} terminal families.**\n\n"
         f"**C20 larger-cycle subcases:** `{cycle_bar}` **{cycle_done}/{cycle_total} closed; "
         f"{cycle_total-cycle_done} open.**\n\n"
+        f"**C05 branching subclass, all branch vertices loaded:** `{branch_bar}` "
+        f"**{branch_done:,}/{branch_total:,} excluded; {branch_total-branch_done:,} remain.** "
+        f"[Catalog and certificates]({branch['proof']}). "
+        "Unloaded branching vertices remain outside this subledger.\n\n"
         "`█` reviewed hand deduction; `▓` reviewed computer-assisted result; `░` open. "
         "These are counts of the fixed ledger entries, **not a percentage of the proof or remaining effort**. "
         + ("For the requested hand proof, each computer-assisted family also needs a hand replacement."
@@ -96,6 +114,7 @@ def main():
              "A conditional core lemma or an infeasible numerical sample does not close an entry.", ""]
     (ROOT / "CYCLE_CASES.md").write_text("\n".join(rows))
     print(f"Rendered {done}/{len(gates)} gates; {dict(counts)} across {len(cases)} case families; {cycle_done}/{cycle_total} cycle cases closed.")
+    print(f"Branching b=0: {branch_done}/{branch_total} excluded; {branch_total-branch_done} remain; b>0 unclassified.")
 
 
 if __name__ == "__main__":

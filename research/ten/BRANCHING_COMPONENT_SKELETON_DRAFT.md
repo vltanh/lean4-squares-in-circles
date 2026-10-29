@@ -1,8 +1,8 @@
-# Draft finite skeleton for mixed branching positive components
+# A finite skeleton for mixed branching positive components
 
 **Status: independently reviewed necessary skeleton reductions.** The
 suppression, degree, bundle, and effective-contact arguments in Sections 1–4
-received an independent mathematical audit on 2026-10-29. They give a finite
+received two independent mathematical audits on 2026-10-29. They give a finite
 overclassification of C05; they do not exclude C05 or change its roadmap
 status. No Lean verification is claimed.
 
@@ -164,18 +164,18 @@ quantity is strictly less than `25/8`, exactly the bound used above.
 The effective points are used only to deduce this necessary geometry;
 no replacement physical stress or movement of a body is asserted.
 
-## 5. Next work and exact stopping boundary
+## 5. Enumerated subclass and remaining scope
 
-No enumeration was run. A first manageable subclass would set b=0, so all
-branch vertices are loaded and every unloaded body lies on a suppressed
-path. For k>=4, direct loaded edges join radial neighbors. Vertex-disjoint
-transmission paths with alternating loaded endpoints must both be D, by
-[SINGLE_SIDE_TRANSMISSION_UNCROSSING.md](SINGLE_SIDE_TRANSMISSION_UNCROSSING.md)
-and its width-two dependency. These give further necessary rejection
-tests for a future finite generator. The k=2, b=0 subclass is already
-excluded by the reviewed two-terminal theorem.
+The b=0 subclass, where all retained vertices are loaded, now has a
+[finite catalog](BRANCHING_LOADED_SKELETON_INVENTORY.md) of 45,666 raw
+records. Two independent implementations agree on every canonical code.
+The catalog retains radial loaded order modulo rotations and reflection,
+body cost, direct-contact restrictions, and the reviewed S/SS uncrossing
+tests. Its further bridge and exact angular filters have separate proof
+and review records. This inventory does not enumerate b>0.
 
-Required next steps are an exact
-canonical finite generator with body-budget and cut checks, and geometric
-exclusions for the retained skeletons. There is presently no claimed
-number of C05 cases and no claimed C05 closure.
+For the general family, the finite per-pair alphabet and body-budget/cut
+tests above are necessary conditions only. No planarity is assumed, no
+geometric realization is asserted, and C05 remains open. The next tasks
+are to finish the b=0 geometric exclusions and to enumerate or exclude
+skeletons containing unloaded retained branching vertices.
