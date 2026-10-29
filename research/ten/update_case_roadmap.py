@@ -57,7 +57,8 @@ def main():
         f"{cycle_total-cycle_done} open.**\n\n"
         "`█` reviewed hand deduction; `▓` reviewed computer-assisted result; `░` open. "
         "These are counts of the fixed ledger entries, **not a percentage of the proof or remaining effort**. "
-        "For the requested hand proof, the computer-assisted family also needs a hand replacement."
+        + ("For the requested hand proof, each computer-assisted family also needs a hand replacement."
+           if counts['computer'] else "Every currently closed family has a reviewed hand deduction; imported dependencies remain as stated in each proof.")
     )
     gate_table = ["| Gate | Obligation | Status |", "| --- | --- | --- |"]
     gate_table += [f"| {g['id']} | {g['name']} | {'CLOSED' if g['closed'] else 'OPEN'} |" for g in gates]

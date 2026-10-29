@@ -12,9 +12,9 @@ claimed. This PR changes only research artifacts under `research/ten/`.
 ## Start here
 
 [CASE_ROADMAP.md](CASE_ROADMAP.md) is the current finite case tree and gated
-progress ledger: **13 hand-closed, 1 computer-closed, and 7 open families**.
+progress ledger: **15 hand-closed, 0 computer-only, and 6 open families**.
 [CYCLE_CASES.md](CYCLE_CASES.md) enumerates all 279 larger mixed-cycle cases;
-four are now hand-closed and 275 remain open.
+Its generated progress bar and proof links record every reviewed exclusion.
 The bars count these fixed families, not the fraction of proof effort.
 
 [README.md](README.md) indexes the completed arguments and their hypotheses.
@@ -57,18 +57,23 @@ and arc counts under both extensions at once.
 Both extensions cover specified common-frame two-row cores. There is still
 no argument reducing every four-inner-square core to those arrangements.
 
-The [global angle-action theorem](SEVEN_RING_GLOBAL_ACTION.md) now excludes
-nonuniform solutions in the strict one-chirality ownership pattern using an
-independently audited exact interval verifier. This is a **computer-assisted
-result**; the hand cone inequality and other ownership patterns remain open.
-The [force-ratio and neighbor-containment bounds](SEVEN_RING_FORCE_RATIO.md)
-and [spike reduction](SEVEN_RING_SPIKE_REDUCTION.md) are hand tools for that
-remaining work.
+The strict one-chirality seven-ring is now excluded **by hand**. The
+[chord-endpoint bound](SEVEN_RING_CAP_CHORD_BOUND.md) and
+[radial cap theorem](SEVEN_RING_RADIAL_CAP_BOUND.md), both independently
+reviewed, put all three inner squares in a disk of squared radius
+`33/20<425/256`, below their established minimum. The independently audited
+[computer-assisted angle-action theorem](SEVEN_RING_GLOBAL_ACTION.md)
+remains a separate result proving uniformity in this ownership pattern;
+its interval proof is no longer needed to close the hand completion case.
+Other ownership patterns remain open.
 
 The [full radial-side D-D proof](RADIAL_SIDE_DD_EXCLUSION.md) now excludes
 its asymmetric smaller-radius branch too. Together with S-S and S-D, this
 closes the radial-side central-body case of the three-loaded five-cycle.
-Only unique-circle S-S, S-D, and D-S remain for that component type.
+The [D-S closure](DIAGONAL_SIDE_EXCLUSION.md) now leaves only unique-circle
+S-S and S-D for that component type. The
+[side-transmission reduction](SIDE_TRANSMISSION_VERTEX_REDUCTION.md) forces
+side-interior contact at the first endpoint in S-D.
 
 The resumed work also proves a [parallel-core graph dichotomy and narrow-channel
 filling lemma](FOUR_CORE_GENERALIZATION.md), with an exact localized pinwheel
@@ -79,7 +84,8 @@ neighbor containment](SEVEN_RING_FORCE_RATIO.md) give new necessary bounds,
 including `R cos(alpha)>1` in the one-chirality pattern. The reviewed
 [spike reduction](SEVEN_RING_SPIKE_REDUCTION.md) confines protruding
 inner-square vertices to explicit contact triangles cut by diameter disks.
-Its proposed sharp local radius inequality remains unproved.
+The weaker physical cap bound now closes the one-chirality completion;
+the earlier sharper target is no longer a required step for that case.
 
 ## Remaining obligations
 
@@ -133,9 +139,10 @@ Its proposed sharp local radius inequality remains unproved.
    radius. Other contact ownership patterns remain open. For the strict
    side/vertex one-chirality pattern, the [global action theorem](SEVEN_RING_GLOBAL_ACTION.md)
    now forces the uniform ring by an exact computer-assisted cone argument.
-   A hand proof of its finite cone lemma remains required for the user's
-   hand-only goal. The earlier local-rigidity and angle-action notes remain
-   useful derivations, but no longer describe the global computational status.
+   The separate [hand cap theorem](SEVEN_RING_RADIAL_CAP_BOUND.md) now
+   excludes the same completion pattern geometrically, so the finite cone
+   lemma no longer needs a hand replacement for this case. Other ownership
+   patterns still require classification or a general capacity theorem.
 4. **Mixed cyclic stress components.**
    [CYCLIC_STRESS_REDUCTIONS.md](CYCLIC_STRESS_REDUCTIONS.md) excludes
    two-terminal components made of transmission paths and several small
@@ -154,13 +161,11 @@ Its proposed sharp local radius inequality remains unproved.
    and adjacent-side-interior contact form.
    [DIAGONAL_MIXED_FIVE_CYCLE.md](DIAGONAL_MIXED_FIVE_CYCLE.md) excludes two
    diagonal transmitters in that form, so at least one must be a side
-   transmitter. If the vertex transmitter is diagonal,
-   [DIAGONAL_SIDE_ENDPOINT_REDUCTION.md](DIAGONAL_SIDE_ENDPOINT_REDUCTION.md)
-   forces the opposite endpoint to be rotated and contacted at a vertex.
-   For the reverse side-to-diagonal pattern,
-   [SIDE_DIAGONAL_LEFT_ENDPOINT.md](SIDE_DIAGONAL_LEFT_ENDPOINT.md) forces a
-   vertex-supported first endpoint to have an edge pointing right in C's
-   frame. When C has two geometric circle vertices,
+   transmitter. The [D-S exclusion](DIAGONAL_SIDE_EXCLUSION.md) now closes
+   the diagonal-then-side case. For the reverse side-to-diagonal pattern,
+   the [side-transmission reduction](SIDE_TRANSMISSION_VERTEX_REDUCTION.md)
+   forces a side-interior contact at the first loaded endpoint.
+   When C has two geometric circle vertices,
    [RADIAL_SIDE_MIXED_TRANSMISSIONS.md](RADIAL_SIDE_MIXED_TRANSMISSIONS.md)
    and the [full D-D exclusion](RADIAL_SIDE_DD_EXCLUSION.md) now close that
    branch. They use the slightly sharper imported lower bound

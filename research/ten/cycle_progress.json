@@ -16,6 +16,50 @@
     "C20-M10-L04-B01-T01": {
       "status": "hand",
       "evidence": "FOUR_LOADED_THREE_LONG_PATHS.md"
+    },
+    "C20-M09-L07-B01-T01": {
+      "status": "hand",
+      "evidence": "SEVEN_LOADED_LONG_PATHS.md"
+    },
+    "C20-M10-L07-B01-T01": {
+      "status": "hand",
+      "evidence": "SEVEN_LOADED_LONG_PATHS.md"
+    },
+    "C20-M10-L07-B01-T02": {
+      "status": "hand",
+      "evidence": "SEVEN_LOADED_LONG_PATHS.md"
+    },
+    "C20-M08-L04-B01-T01": {
+      "status": "hand",
+      "evidence": "SHARED_ENDPOINT_CYCLE_ANGLE_BUDGET.md"
+    },
+    "C20-M09-L05-B01-T01": {
+      "status": "hand",
+      "evidence": "SHARED_ENDPOINT_CYCLE_ANGLE_BUDGET.md"
+    },
+    "C20-M10-L06-B01-T01": {
+      "status": "hand",
+      "evidence": "SHARED_ENDPOINT_CYCLE_ANGLE_BUDGET.md"
+    },
+    "C20-M09-L06-B01-T01": {
+      "status": "hand",
+      "evidence": "SHARED_ENDPOINT_CYCLE_ANGLE_BUDGET.md"
+    },
+    "C20-M09-L06-B01-T02": {
+      "status": "hand",
+      "evidence": "SHARED_ENDPOINT_CYCLE_ANGLE_BUDGET.md"
+    },
+    "C20-M08-L05-B01-T02": {
+      "status": "hand",
+      "evidence": "SHARED_ENDPOINT_CYCLE_ANGLE_BUDGET.md"
+    },
+    "C20-M09-L07-B02-T02": {
+      "status": "hand",
+      "evidence": "SHARED_ENDPOINT_CYCLE_ANGLE_BUDGET.md"
+    },
+    "C20-M09-L07-B02-T03": {
+      "status": "hand",
+      "evidence": "SHARED_ENDPOINT_CYCLE_ANGLE_BUDGET.md"
     }
   }
 }

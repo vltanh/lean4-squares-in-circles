@@ -8,12 +8,12 @@ lemma that does not close its family. All lower-bound cases below concern
 <!-- CASE_PROGRESS_START -->
 **Main gates:** `███░░░░` **3/7 closed**.
 
-**G3 lower-bound case ledger:** `█████████████▓░░░░░░░`
-**13 hand closed · 1 computer closed · 7 open / 21 terminal families.**
+**G3 lower-bound case ledger:** `███████████████░░░░░░`
+**15 hand closed · 0 computer closed · 6 open / 21 terminal families.**
 
-**C20 larger-cycle subcases:** `▎░░░░░░░░░░░░░░░░░░░░░░░` **4/279 closed; 275 open.**
+**C20 larger-cycle subcases:** `█▎░░░░░░░░░░░░░░░░░░░░░░` **15/279 closed; 264 open.**
 
-`█` reviewed hand deduction; `▓` reviewed computer-assisted result; `░` open. These are counts of the fixed ledger entries, **not a percentage of the proof or remaining effort**. For the requested hand proof, the computer-assisted family also needs a hand replacement.
+`█` reviewed hand deduction; `▓` reviewed computer-assisted result; `░` open. These are counts of the fixed ledger entries, **not a percentage of the proof or remaining effort**. Every currently closed family has a reviewed hand deduction; imported dependencies remain as stated in each proof.
 
 | Gate | Obligation | Status |
 | --- | --- | --- |
@@ -30,7 +30,7 @@ lemma that does not close its family. All lower-bound cases below concern
 | C00 | HAND CLOSED | **Acyclic positive component.** Every nonzero tree component. [Proof / reduction](EXPANDED_TREE_INVENTORY.md). |
 | C01 | HAND CLOSED | **Entirely loaded cyclic component that is not a seven-body simple cycle.** The all-loaded reduction forces an enclosing seven-cycle in a strictly subcritical ten-packing. [Proof / reduction](ALL_LOADED_COMPONENT_RINGS.md). |
 | C02 | HAND CLOSED | **Seven loaded bodies with a common signed frame offset.** Includes the smooth uniform ring and the radial-side/diagonal endpoints. [Proof / reduction](REGULAR_SEVEN_LOADED_RING.md). |
-| C03 | COMPUTER CLOSED | **Nonuniform strict one-chirality seven-ring.** After C02: the exact side/vertex pattern, allowing reflection and cyclic relabeling. Exact recurrence certificate excludes it; a hand replacement remains required. [Proof / reduction](SEVEN_RING_GLOBAL_ACTION.md). |
+| C03 | HAND CLOSED | **Nonuniform strict one-chirality seven-ring.** After C02: the fixed side/vertex pattern, allowing reflection and cyclic relabeling. A hand cap theorem traps all three inner squares below the three-square minimum radius. [Proof / reduction](SEVEN_RING_RADIAL_CAP_BOUND.md). |
 | C04 | OPEN | **Other seven-loaded-ring contact ownership.** After C02 and C03: other vertex/edge ownership, geometric circle-contact types, or boundary degeneracies. [Proof / reduction](SEVEN_RING_INTERNAL_CONCURRENCE.md). |
 | C05 | OPEN | **Mixed cyclic component whose whole graph is not a simple cycle.** Includes branching cyclic blocks and bridges attached to cyclic blocks; two loaded bodies are allowed here. [Proof / reduction](CYCLIC_STRESS_REDUCTIONS.md). |
 | C06 | HAND CLOSED | **Mixed simple cycle of length at most four.** All load assignments. [Proof / reduction](CYCLIC_STRESS_REDUCTIONS.md). |
@@ -42,9 +42,9 @@ lemma that does not close its family. All lower-bound cases below concern
 | C12 | HAND CLOSED | **Unique-circle-vertex central body: two distinct vertex contacts.** After C10–C11. [Proof / reduction](VERTEX_CONTACT_MIXED_FIVE_CYCLE.md). |
 | C13 | HAND CLOSED | **Unique-circle-vertex central body: two side-normal transmissions.** After C10–C12; includes two side-interior contacts. [Proof / reduction](SIDE_NORMAL_MIXED_FIVE_CYCLE.md). |
 | C14 | HAND CLOSED | **Remaining vertex/side pattern: D-D.** First letter is the transmitter at the central vertex contact; second is at the side-interior contact. [Proof / reduction](DIAGONAL_MIXED_FIVE_CYCLE.md). |
-| C15 | OPEN | **Remaining vertex/side pattern: S-S.** Same ordered convention as C14; normal form and its exact force equations are proved. [Proof / reduction](SIDE_NORMAL_MIXED_FIVE_CYCLE.md). |
-| C16 | OPEN | **Remaining vertex/side pattern: S-D.** Same ordered convention; a vertex-supported first endpoint must have a rightward edge. [Proof / reduction](SIDE_DIAGONAL_LEFT_ENDPOINT.md). |
-| C17 | OPEN | **Remaining vertex/side pattern: D-S.** Same ordered convention; the opposite loaded endpoint must be rotated and contacted at a vertex. [Proof / reduction](DIAGONAL_SIDE_ENDPOINT_REDUCTION.md). |
+| C15 | OPEN | **Remaining vertex/side pattern: S-S.** Same ordered convention as C14; a vertex-supported first endpoint cannot have a rightward incident edge. Side contacts and other vertex orientations remain open. [Proof / reduction](SIDE_TRANSMISSION_VERTEX_REDUCTION.md). |
+| C16 | OPEN | **Remaining vertex/side pattern: S-D.** Same ordered convention; the first loaded endpoint must be contacted in a relative side interior. [Proof / reduction](SIDE_TRANSMISSION_VERTEX_REDUCTION.md). |
+| C17 | HAND CLOSED | **Remaining vertex/side pattern: D-S.** Same ordered convention; endpoint classification and a printed exact clearance table exclude both remaining circle-load patterns. [Proof / reduction](DIAGONAL_SIDE_EXCLUSION.md). |
 | C18 | HAND CLOSED | **Five-cycle with four loads: side transmitter.** Its only unloaded body is a degree-two side transmitter. [Proof / reduction](MIXED_FIVE_FOUR_LOADED.md). |
 | C19 | OPEN | **Five-cycle with four loads: diagonal transmitter.** Its diagonal transmitter contains zero in its interior and has center norm below 3/5; completion capacity remains open. [Proof / reduction](MIXED_FIVE_FOUR_LOADED_GEOMETRY.md). |
 | C20 | OPEN | **Mixed simple cycles of lengths six through ten.** At least three loaded bodies; finite cyclic load words with S/D transmission decorations. [Proof / reduction](CYCLIC_STRESS_REDUCTIONS.md). |
@@ -77,7 +77,7 @@ Nonzero minimizing positive component
    │  ├─ Not a seven-body simple cycle .................... C01 H
    │  └─ Seven-body physical ring
    │     ├─ Common signed frame offset ................... C02 H
-   │     ├─ Otherwise, strict one-chirality ownership ..... C03 C
+   │     ├─ Otherwise, strict one-chirality ownership ..... C03 H
    │     └─ Other contact ownership / boundary cases ...... C04 O
    └─ Some bodies are unloaded
       ├─ Whole graph is not a simple cycle ................ C05 O
@@ -98,7 +98,7 @@ Nonzero minimizing positive component
             │           ├─ D-D ........................... C14 H
             │           ├─ S-S ........................... C15 O
             │           ├─ S-D ........................... C16 O
-            │           └─ D-S ........................... C17 O
+            │           └─ D-S ........................... C17 H
             ├─ Length five, four loaded bodies
             │  ├─ Unloaded transmitter S ................. C18 H
             │  └─ Unloaded transmitter D ................. C19 O
@@ -122,17 +122,16 @@ coordinates, orientations, and positive force magnitudes.
 
 ## What is left, concretely
 
-There are seven open physical families, plus one computer-assisted family
-that still needs a hand proof for the requested goal:
+There are six open physical families. Every closed family in the main
+ledger now has a reviewed hand deduction, with its imported dependencies
+stated in the linked proof:
 
 | Family | Next result needed |
 | --- | --- |
-| C03: strict one-chirality rings | Replace the exact interval cone certificate with hand inequalities, or give a hand capacity bound for every ring in this pattern. |
 | C04: other loaded-ring ownership | Classify and exclude the remaining contact patterns, or prove one capacity theorem covering all of them. The strict one-chirality theorem does not cover mixed ownership, vertex/vertex contacts, or its boundary cases. |
 | C05: branching mixed components | Classify or exclude the connected cyclic graphs that are not whole simple cycles, including bridge attachments and exactly two loaded bodies. |
 | C15: unique-circle S-S five-cycle | Exclude the remaining exact vertex/side core, or prove its completion has capacity at most nine. |
-| C16: unique-circle S-D five-cycle | Same obligation, using the existing first-endpoint restriction. |
-| C17: unique-circle D-S five-cycle | Same obligation, using the existing rotated vertex-supported second endpoint. |
+| C16: unique-circle S-D five-cycle | Exclude the side-interior first-endpoint case, or bound every completion by nine. |
 | C19: four-loaded five-cycle with D | Exclude this component or its ten-square completion. |
 | C20: larger mixed simple cycles | Exclude the [279 enumerated graph/transmitter cases](CYCLE_CASES.md), refining physical contact ownership where needed. |
 
@@ -169,10 +168,13 @@ explicitly defined remaining family, not a closed classification theorem.
 
 **C20 is already enumerated.** [CYCLE_CASES.md](CYCLE_CASES.md) lists all
 279 stable case IDs and their canonical words. Independent enumerations and
-a Burnside count check the complete [manifest](cycle_cases.json). Four are now excluded by the
-[three-loaded long-cycle theorem](THREE_LOADED_LONG_CYCLES.md) and the
-[three-long-path theorem](FOUR_LOADED_THREE_LONG_PATHS.md), leaving 275 open. An entry is never claimed feasible or excluded merely
-because it appears in the list.
+a Burnside count check the complete [manifest](cycle_cases.json). The live
+bar above and the inventory give the current closed/open counts, with a
+proof link for every exclusion. The latest exclusions use
+[seven-loaded path adjacency](SEVEN_LOADED_LONG_PATHS.md) and
+[shared-endpoint angular budgets](SHARED_ENDPOINT_CYCLE_ANGLE_BUDGET.md).
+An entry is never claimed feasible or excluded merely because it appears
+in the list.
 
 ## Orthogonal filters and later gates
 

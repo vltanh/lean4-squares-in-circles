@@ -3,8 +3,10 @@
 **Status:** Sections 1–3 and 5 have independent mathematical reviews
 (2026-10-29). The inner-corner bound, polygon reduction, and diameter-disk
 cut are proved.
-The final local inequality is an **unproved research target**. This note does
-not exclude a nonuniform ring or establish the unrestricted n=10 bound.
+The sharper general local inequality remains an **unproved research target**.
+The physical one-chirality completion is now excluded by the weaker hand
+cap bound in [SEVEN_RING_RADIAL_CAP_BOUND.md](SEVEN_RING_RADIAL_CAP_BOUND.md).
+Other ownership patterns and the unrestricted n=10 bound remain open.
 
 Use the radius window and the physical loaded seven-ring of
 [ALL_LOADED_COMPONENT_RINGS.md](ALL_LOADED_COMPONENT_RINGS.md). Section 1
@@ -325,5 +327,9 @@ It is essential to retain the triangle in (6): the full diameter disk can
 extend far beyond the central free hole. The incoming-neighbor inequality
 in [SEVEN_RING_FORCE_RATIO.md](SEVEN_RING_FORCE_RATIO.md) supplies further
 physical restrictions, in particular `R cos(a)>1` and `R cos(b)>1` for
-a complete one-chirality loaded ring. Bounding the farthest norm in (6)
-under those restrictions remains an open analytic step here.
+a complete one-chirality loaded ring. The
+[chord-endpoint bound](SEVEN_RING_CAP_CHORD_BOUND.md) and
+[radial-extreme bound](SEVEN_RING_RADIAL_CAP_BOUND.md) now bound every
+physical point in (6) by squared radius `33/20`, sufficient to exclude
+three inner squares. The sharper target without these physical restrictions
+remains unproved, but is no longer needed for this completion exclusion.

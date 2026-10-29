@@ -4,7 +4,8 @@ Independent mathematical review passed on 2026-10-29; this is not Lean verificat
 
 **Status:** hand proof of a conditional nonuniform-ring exclusion. This
 uses the one-chirality contact pattern; it does not classify other contact
-patterns or exclude every ring in this pattern.
+patterns. A separate [hand cap theorem](SEVEN_RING_RADIAL_CAP_BOUND.md)
+now excludes every physical seven-ring in this pattern.
 
 Use the physical loaded seven-ring, its three inner unit squares, and the
 one-chirality notation of
@@ -139,9 +140,12 @@ Section 3 therefore excludes the three-square completion under (1).
 
 This theorem provides a geometric sufficient condition for exclusion;
 it does not prove that every physical ring satisfies that condition.
-A remaining one-chirality seven-ring must have an adjacent pair of
+Any one-chirality seven-ring not excluded by this sufficient condition
+would have an adjacent pair of
 opposite corners with squared-norm sum at least `425/256`, and it must
 have at least one body with `R sin(alpha_i)<15/16`. These conditions
-retain arbitrary variation in the frames and contact magnitudes.
+retain arbitrary variation in the frames and contact magnitudes. The
+separate [hand cap theorem](SEVEN_RING_RADIAL_CAP_BOUND.md) now excludes
+that remaining possibility too.
 Other contact ownership patterns remain outside this manuscript.
 No Lean verification is claimed.

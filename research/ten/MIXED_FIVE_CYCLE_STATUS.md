@@ -54,18 +54,19 @@ Exactly these transmitter choices remain:
 
 | U at P | V at Q | Further proved restriction |
 | --- | --- | --- |
-| S | S | No completion exclusion yet |
-| S | D | If A's contact is a vertex, an incident edge must point strictly right in C's frame |
-| D | S | V contacts a vertex of B, and B is not parallel to C |
+| S | S | A cannot have a vertex contact with a rightward incident edge |
+| S | D | The contact at A must lie in a relative side interior |
 
-The missing D-D row is excluded by
+The D-D row is excluded by
 [DIAGONAL_MIXED_FIVE_CYCLE.md](DIAGONAL_MIXED_FIVE_CYCLE.md).
-The extra S-D restriction is proved in
-[SIDE_DIAGONAL_LEFT_ENDPOINT.md](SIDE_DIAGONAL_LEFT_ENDPOINT.md);
-the contact in a side of A remains untreated by that argument.
-The D-S restriction is proved in
-[DIAGONAL_SIDE_ENDPOINT_REDUCTION.md](DIAGONAL_SIDE_ENDPOINT_REDUCTION.md).
-It does not exclude a rotated, vertex-supported B.
+The D-S row is now completely excluded by
+[DIAGONAL_SIDE_EXCLUSION.md](DIAGONAL_SIDE_EXCLUSION.md), including both
+possible positive circle-load patterns at its last side-supported endpoint.
+Its printed rational table is independently checked by
+[check_diagonal_side_clearance.py](check_diagonal_side_clearance.py).
+The S-S and S-D restrictions follow from the
+[side-transmission vertex reduction](SIDE_TRANSMISSION_VERTEX_REDUCTION.md),
+combined for S-D with [SIDE_DIAGONAL_LEFT_ENDPOINT.md](SIDE_DIAGONAL_LEFT_ENDPOINT.md).
 
 ## C has two circle vertices
 
@@ -111,7 +112,6 @@ three-loaded/two-transmitter patterns above.
 | --- | --- | --- |
 | C15 | Unique-circle C; vertex transmitter S, side transmitter S | OPEN |
 | C16 | Unique-circle C; vertex transmitter S, side transmitter D | OPEN |
-| C17 | Unique-circle C; vertex transmitter D, side transmitter S | OPEN |
 | C19 | Four loaded bodies; the sole unloaded transmitter D | OPEN |
 
 For each row, either exclude the physical component or prove that its
