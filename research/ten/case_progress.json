@@ -153,15 +153,15 @@
       "id": "C15",
       "status": "open",
       "title": "Remaining vertex/side pattern: S-S",
-      "scope": "Same ordered convention as C14; a vertex-supported first endpoint cannot have a rightward incident edge. Side contacts and other vertex orientations remain open.",
-      "evidence": "SIDE_TRANSMISSION_VERTEX_REDUCTION.md"
+      "scope": "Same ordered convention as C14; all vertex-supported first endpoints are excluded, so its contact must lie in a relative side interior.",
+      "evidence": "SIDE_SIDE_VERTEX_EXCLUSION.md"
     },
     {
       "id": "C16",
-      "status": "open",
+      "status": "hand",
       "title": "Remaining vertex/side pattern: S-D",
-      "scope": "Same ordered convention; the first loaded endpoint must be contacted in a relative side interior.",
-      "evidence": "SIDE_TRANSMISSION_VERTEX_REDUCTION.md"
+      "scope": "Same ordered convention; physical torque balance forces a far vertex to carry circle load, while elementary analytic bounds place it strictly inside the circle.",
+      "evidence": "SIDE_DIAGONAL_EXCLUSION.md"
     },
     {
       "id": "C17",
@@ -181,8 +181,8 @@
       "id": "C19",
       "status": "open",
       "title": "Five-cycle with four loads: diagonal transmitter",
-      "scope": "Its diagonal transmitter contains zero in its interior and has center norm below 3/5; completion capacity remains open.",
-      "evidence": "MIXED_FIVE_FOUR_LOADED_GEOMETRY.md"
+      "scope": "The diagonal transmitter contains zero, lies wholly in squared radius 3/2, and permits at most one other square wholly inside the test disk; completion capacity remains open.",
+      "evidence": "DIAGONAL_FIVE_CYCLE_INNER_TRACE.md"
     },
     {
       "id": "C20",

@@ -126,7 +126,7 @@ proportional to
 ```
 
 Consequently the A--B force must have negative torque about W. Every
-point of A strictly to the right of Q_A lies on the two boundary edges
+possible A--B contact point strictly to the right of Q_A lies on the two boundary edges
 meeting at `E=Q_A+e`, and their inward force cones have nonnegative
 torque about W: on Q_A--E the unit normal f gives torque 1-t at
 `Q_A+t e`; on E--W the normal -e gives torque 1-t at `E+t f`.
@@ -212,6 +212,8 @@ Combining the two exclusions shows that **the S-D transmitter must
 contact A in a relative side interior**.
 
 In the S-S case, this note excludes a rightward edge at a vertex contact.
-A vertex contact with no rightward edge, or a side-interior contact,
-remains possible under the present reductions. Neither the full S-D
-component nor the full S-S component is excluded here.
+The complementary vertex frames are now excluded in
+[SIDE_SIDE_VERTEX_EXCLUSION.md](SIDE_SIDE_VERTEX_EXCLUSION.md), leaving
+only side-interior contact at A. The full S-D component is separately
+excluded in [SIDE_DIAGONAL_EXCLUSION.md](SIDE_DIAGONAL_EXCLUSION.md).
+This note's local restriction alone does not exclude either component.

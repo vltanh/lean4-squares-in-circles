@@ -12,7 +12,7 @@ claimed. This PR changes only research artifacts under `research/ten/`.
 ## Start here
 
 [CASE_ROADMAP.md](CASE_ROADMAP.md) is the current finite case tree and gated
-progress ledger: **15 hand-closed, 0 computer-only, and 6 open families**.
+progress ledger: **16 hand-closed, 0 computer-only, and 5 open families**.
 [CYCLE_CASES.md](CYCLE_CASES.md) enumerates all 279 larger mixed-cycle cases;
 Its generated progress bar and proof links record every reviewed exclusion.
 The bars count these fixed families, not the fraction of proof effort.
@@ -70,10 +70,11 @@ Other ownership patterns remain open.
 The [full radial-side D-D proof](RADIAL_SIDE_DD_EXCLUSION.md) now excludes
 its asymmetric smaller-radius branch too. Together with S-S and S-D, this
 closes the radial-side central-body case of the three-loaded five-cycle.
-The [D-S closure](DIAGONAL_SIDE_EXCLUSION.md) now leaves only unique-circle
-S-S and S-D for that component type. The
-[side-transmission reduction](SIDE_TRANSMISSION_VERTEX_REDUCTION.md) forces
-side-interior contact at the first endpoint in S-D.
+The [D-S closure](DIAGONAL_SIDE_EXCLUSION.md) and
+[S-D closure](SIDE_DIAGONAL_EXCLUSION.md) now leave only unique-circle
+S-S for that component type. The four-loaded diagonal five-cycle remains
+open, with a new [inner trace restriction](DIAGONAL_FIVE_CYCLE_INNER_TRACE.md):
+at most one other square is wholly contained in the test disk.
 
 The resumed work also proves a [parallel-core graph dichotomy and narrow-channel
 filling lemma](FOUR_CORE_GENERALIZATION.md), with an exact localized pinwheel
@@ -162,9 +163,8 @@ the earlier sharper target is no longer a required step for that case.
    [DIAGONAL_MIXED_FIVE_CYCLE.md](DIAGONAL_MIXED_FIVE_CYCLE.md) excludes two
    diagonal transmitters in that form, so at least one must be a side
    transmitter. The [D-S exclusion](DIAGONAL_SIDE_EXCLUSION.md) now closes
-   the diagonal-then-side case. For the reverse side-to-diagonal pattern,
-   the [side-transmission reduction](SIDE_TRANSMISSION_VERTEX_REDUCTION.md)
-   forces a side-interior contact at the first loaded endpoint.
+   the diagonal-then-side case. The reverse side-to-diagonal pattern is
+   now closed by [SIDE_DIAGONAL_EXCLUSION.md](SIDE_DIAGONAL_EXCLUSION.md).
    When C has two geometric circle vertices,
    [RADIAL_SIDE_MIXED_TRANSMISSIONS.md](RADIAL_SIDE_MIXED_TRANSMISSIONS.md)
    and the [full D-D exclusion](RADIAL_SIDE_DD_EXCLUSION.md) now close that

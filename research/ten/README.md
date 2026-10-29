@@ -57,10 +57,12 @@ the known bound, not a lower-bound proof.
 | A loaded ring with common signed frame offsets cannot contain three further squares | [Uniform-ring exclusion](REGULAR_SEVEN_LOADED_RING.md) | Hand proof; other ownership patterns remain open |
 | Adjacent opposite-corner moments bound the capacity of a one-chirality hole | [Corner-moment capacity](SEVEN_RING_CORNER_MOMENT_CAPACITY.md) | Reviewed hand sufficient condition, including the displayed own-coordinate subcase |
 | Every strict one-chirality side/vertex ring is uniform and cannot enclose three more squares | [Global action theorem](SEVEN_RING_GLOBAL_ACTION.md), [exact verifier](check_seven_ring_action.cpp) | **Computer-assisted**, independently audited; the separate hand cap theorem below now excludes its completion pattern |
+| A loaded body supported on its two inner sides has a small opposite corner | [Double-side restriction](LOADED_DOUBLE_SIDE_RESTRICTION.md) | Reviewed hand necessary bounds; other ring ownership remains open |
 | Every physical one-chirality seven-ring has insufficient room for three inner squares | [Hand cap theorem](SEVEN_RING_RADIAL_CAP_BOUND.md), [chord bound](SEVEN_RING_CAP_CHORD_BOUND.md) | Reviewed hand closure: squared inner radius below `33/20<425/256` |
 | The unique-circle D-S three-loaded five-cycle is impossible | [D-S exclusion](DIAGONAL_SIDE_EXCLUSION.md), [exact table checker](check_diagonal_side_clearance.py) | Reviewed hand closure, including both endpoint load patterns |
-| A side-first transmitter excludes right-extending vertex contact at its loaded endpoint | [Side-transmission vertex reduction](SIDE_TRANSMISSION_VERTEX_REDUCTION.md) | Reviewed hand restriction; S-D now requires side-interior contact |
-| Two transmission runs sharing a loaded endpoint obey strict angular budgets | [Shared-endpoint cases](SHARED_ENDPOINT_CYCLE_ANGLE_BUDGET.md), [seven-loaded cases](SEVEN_LOADED_LONG_PATHS.md) | Reviewed hand closures of eleven further larger-cycle entries |
+| The unique-circle S-D three-loaded five-cycle is impossible | [S-D exclusion](SIDE_DIAGONAL_EXCLUSION.md) | Reviewed hand closure by torque and elementary analytic clearance; no finite interval table |
+| A four-loaded diagonal five-cycle permits at most one other square wholly inside the test disk | [Inner trace restriction](DIAGONAL_FIVE_CYCLE_INNER_TRACE.md) | Reviewed hand restriction; C19 remains open |
+| Two transmission runs sharing a loaded endpoint obey strict angular budgets | [Shared-endpoint cases](SHARED_ENDPOINT_CYCLE_ANGLE_BUDGET.md), [seven-loaded cases](SEVEN_LOADED_LONG_PATHS.md) | Reviewed hand closures of eleven further larger-cycle entries; [uncrossing](TRANSMISSION_PATH_UNCROSSING.md) closes thirteen more |
 | A radial-side central body cannot occur in the three-loaded five-cycle | [Full radial D-D exclusion](RADIAL_SIDE_DD_EXCLUSION.md) | Reviewed hand closure, together with the earlier S-S and S-D arguments |
 | Several mixed cyclic stress patterns are impossible | [Cyclic reductions](CYCLIC_STRESS_REDUCTIONS.md), [remaining five-cycle form](SIDE_NORMAL_MIXED_FIVE_CYCLE.md) | Conditional hand reductions; neither a complete graph classification nor a global exclusion |
 | A five-cycle with four loaded squares must use a diagonal transmitter | [Four-loaded five-cycle](MIXED_FIVE_FOUR_LOADED.md) | Side transmitter excluded by hand in the explicitly imported radius window; diagonal case open |
@@ -99,10 +101,10 @@ certificates remain computational results with their own stated scope.
 <!-- CASE_PROGRESS_START -->
 **Main gates:** `███░░░░` **3/7 closed**.
 
-**G3 lower-bound case ledger:** `███████████████░░░░░░`
-**15 hand closed · 0 computer closed · 6 open / 21 terminal families.**
+**G3 lower-bound case ledger:** `████████████████░░░░░`
+**16 hand closed · 0 computer closed · 5 open / 21 terminal families.**
 
-**C20 larger-cycle subcases:** `█▎░░░░░░░░░░░░░░░░░░░░░░` **15/279 closed; 264 open.**
+**C20 larger-cycle subcases:** `██▍░░░░░░░░░░░░░░░░░░░░░` **28/279 closed; 251 open.**
 
 `█` reviewed hand deduction; `▓` reviewed computer-assisted result; `░` open. These are counts of the fixed ledger entries, **not a percentage of the proof or remaining effort**. Every currently closed family has a reviewed hand deduction; imported dependencies remain as stated in each proof.
 
@@ -207,13 +209,13 @@ Mixed components remain open. In the
 [five-cycle normal form](SIDE_NORMAL_MIXED_FIVE_CYCLE.md), both
 [two diagonal transmitters](DIAGONAL_MIXED_FIVE_CYCLE.md) and
 [diagonal-then-side transmitters](DIAGONAL_SIDE_EXCLUSION.md) are excluded.
-The [side-transmission reduction](SIDE_TRANSMISSION_VERTEX_REDUCTION.md)
-forces a side-interior first endpoint in S-D. When the central loaded
+The [S-D hand exclusion](SIDE_DIAGONAL_EXCLUSION.md) now closes that
+ordered transmitter choice as well. When the central loaded
 square has two circle vertices, the
 [full radial D-D exclusion](RADIAL_SIDE_DD_EXCLUSION.md) closes the final
 transmitter type. The [mixed five-cycle status](MIXED_FIVE_CYCLE_STATUS.md)
-now lists three remaining five-cycle families: unique-circle S-S and S-D,
-and the four-loaded diagonal-transmitter cycle.
+now lists two remaining five-cycle families: unique-circle S-S and the
+four-loaded diagonal-transmitter cycle.
 The uniform side/vertex ring is [locally isolated](SEVEN_RING_LOCAL_RIGIDITY.md),
 and its [angle action](SEVEN_RING_ANGLE_ACTION.md) now has the separately
 labeled [computer-assisted global classification](SEVEN_RING_GLOBAL_ACTION.md).

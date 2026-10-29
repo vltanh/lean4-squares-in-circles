@@ -8,10 +8,10 @@ lemma that does not close its family. All lower-bound cases below concern
 <!-- CASE_PROGRESS_START -->
 **Main gates:** `███░░░░` **3/7 closed**.
 
-**G3 lower-bound case ledger:** `███████████████░░░░░░`
-**15 hand closed · 0 computer closed · 6 open / 21 terminal families.**
+**G3 lower-bound case ledger:** `████████████████░░░░░`
+**16 hand closed · 0 computer closed · 5 open / 21 terminal families.**
 
-**C20 larger-cycle subcases:** `█▎░░░░░░░░░░░░░░░░░░░░░░` **15/279 closed; 264 open.**
+**C20 larger-cycle subcases:** `██▍░░░░░░░░░░░░░░░░░░░░░` **28/279 closed; 251 open.**
 
 `█` reviewed hand deduction; `▓` reviewed computer-assisted result; `░` open. These are counts of the fixed ledger entries, **not a percentage of the proof or remaining effort**. Every currently closed family has a reviewed hand deduction; imported dependencies remain as stated in each proof.
 
@@ -42,11 +42,11 @@ lemma that does not close its family. All lower-bound cases below concern
 | C12 | HAND CLOSED | **Unique-circle-vertex central body: two distinct vertex contacts.** After C10–C11. [Proof / reduction](VERTEX_CONTACT_MIXED_FIVE_CYCLE.md). |
 | C13 | HAND CLOSED | **Unique-circle-vertex central body: two side-normal transmissions.** After C10–C12; includes two side-interior contacts. [Proof / reduction](SIDE_NORMAL_MIXED_FIVE_CYCLE.md). |
 | C14 | HAND CLOSED | **Remaining vertex/side pattern: D-D.** First letter is the transmitter at the central vertex contact; second is at the side-interior contact. [Proof / reduction](DIAGONAL_MIXED_FIVE_CYCLE.md). |
-| C15 | OPEN | **Remaining vertex/side pattern: S-S.** Same ordered convention as C14; a vertex-supported first endpoint cannot have a rightward incident edge. Side contacts and other vertex orientations remain open. [Proof / reduction](SIDE_TRANSMISSION_VERTEX_REDUCTION.md). |
-| C16 | OPEN | **Remaining vertex/side pattern: S-D.** Same ordered convention; the first loaded endpoint must be contacted in a relative side interior. [Proof / reduction](SIDE_TRANSMISSION_VERTEX_REDUCTION.md). |
+| C15 | OPEN | **Remaining vertex/side pattern: S-S.** Same ordered convention as C14; all vertex-supported first endpoints are excluded, so its contact must lie in a relative side interior. [Proof / reduction](SIDE_SIDE_VERTEX_EXCLUSION.md). |
+| C16 | HAND CLOSED | **Remaining vertex/side pattern: S-D.** Same ordered convention; physical torque balance forces a far vertex to carry circle load, while elementary analytic bounds place it strictly inside the circle. [Proof / reduction](SIDE_DIAGONAL_EXCLUSION.md). |
 | C17 | HAND CLOSED | **Remaining vertex/side pattern: D-S.** Same ordered convention; endpoint classification and a printed exact clearance table exclude both remaining circle-load patterns. [Proof / reduction](DIAGONAL_SIDE_EXCLUSION.md). |
 | C18 | HAND CLOSED | **Five-cycle with four loads: side transmitter.** Its only unloaded body is a degree-two side transmitter. [Proof / reduction](MIXED_FIVE_FOUR_LOADED.md). |
-| C19 | OPEN | **Five-cycle with four loads: diagonal transmitter.** Its diagonal transmitter contains zero in its interior and has center norm below 3/5; completion capacity remains open. [Proof / reduction](MIXED_FIVE_FOUR_LOADED_GEOMETRY.md). |
+| C19 | OPEN | **Five-cycle with four loads: diagonal transmitter.** The diagonal transmitter contains zero, lies wholly in squared radius 3/2, and permits at most one other square wholly inside the test disk; completion capacity remains open. [Proof / reduction](DIAGONAL_FIVE_CYCLE_INNER_TRACE.md). |
 | C20 | OPEN | **Mixed simple cycles of lengths six through ten.** At least three loaded bodies; finite cyclic load words with S/D transmission decorations. [Proof / reduction](CYCLIC_STRESS_REDUCTIONS.md). |
 <!-- CASE_PROGRESS_END -->
 
@@ -97,7 +97,7 @@ Nonzero minimizing positive component
             │        └─ Remaining vertex/side normal form
             │           ├─ D-D ........................... C14 H
             │           ├─ S-S ........................... C15 O
-            │           ├─ S-D ........................... C16 O
+            │           ├─ S-D ........................... C16 H
             │           └─ D-S ........................... C17 H
             ├─ Length five, four loaded bodies
             │  ├─ Unloaded transmitter S ................. C18 H
@@ -122,7 +122,7 @@ coordinates, orientations, and positive force magnitudes.
 
 ## What is left, concretely
 
-There are six open physical families. Every closed family in the main
+There are five open physical families. Every closed family in the main
 ledger now has a reviewed hand deduction, with its imported dependencies
 stated in the linked proof:
 
@@ -131,7 +131,6 @@ stated in the linked proof:
 | C04: other loaded-ring ownership | Classify and exclude the remaining contact patterns, or prove one capacity theorem covering all of them. The strict one-chirality theorem does not cover mixed ownership, vertex/vertex contacts, or its boundary cases. |
 | C05: branching mixed components | Classify or exclude the connected cyclic graphs that are not whole simple cycles, including bridge attachments and exactly two loaded bodies. |
 | C15: unique-circle S-S five-cycle | Exclude the remaining exact vertex/side core, or prove its completion has capacity at most nine. |
-| C16: unique-circle S-D five-cycle | Exclude the side-interior first-endpoint case, or bound every completion by nine. |
 | C19: four-loaded five-cycle with D | Exclude this component or its ten-square completion. |
 | C20: larger mixed simple cycles | Exclude the [279 enumerated graph/transmitter cases](CYCLE_CASES.md), refining physical contact ownership where needed. |
 
@@ -172,7 +171,9 @@ a Burnside count check the complete [manifest](cycle_cases.json). The live
 bar above and the inventory give the current closed/open counts, with a
 proof link for every exclusion. The latest exclusions use
 [seven-loaded path adjacency](SEVEN_LOADED_LONG_PATHS.md) and
-[shared-endpoint angular budgets](SHARED_ENDPOINT_CYCLE_ANGLE_BUDGET.md).
+[shared-endpoint angular budgets](SHARED_ENDPOINT_CYCLE_ANGLE_BUDGET.md),
+with [width-two path uncrossing](TRANSMISSION_PATH_UNCROSSING.md) extending
+them to separated runs.
 An entry is never claimed feasible or excluded merely because it appears
 in the list.
 

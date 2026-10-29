@@ -50,12 +50,11 @@ balance give
 (b-a)/(a+1/2) = d(1-rho)/(1-d).
 ```
 
-Exactly these transmitter choices remain:
+Only this transmitter choice remains:
 
 | U at P | V at Q | Further proved restriction |
 | --- | --- | --- |
-| S | S | A cannot have a vertex contact with a rightward incident edge |
-| S | D | The contact at A must lie in a relative side interior |
+| S | S | The first loaded endpoint A must be contacted in a relative side interior |
 
 The D-D row is excluded by
 [DIAGONAL_MIXED_FIVE_CYCLE.md](DIAGONAL_MIXED_FIVE_CYCLE.md).
@@ -64,7 +63,11 @@ The D-S row is now completely excluded by
 possible positive circle-load patterns at its last side-supported endpoint.
 Its printed rational table is independently checked by
 [check_diagonal_side_clearance.py](check_diagonal_side_clearance.py).
-The S-S and S-D restrictions follow from the
+The S-D row is now completely excluded by the elementary analytic proof in
+[SIDE_DIAGONAL_EXCLUSION.md](SIDE_DIAGONAL_EXCLUSION.md).
+The remaining S-S endpoint restriction is proved in
+[SIDE_SIDE_VERTEX_EXCLUSION.md](SIDE_SIDE_VERTEX_EXCLUSION.md).
+The earlier S-S and S-D endpoint restrictions follow from the
 [side-transmission vertex reduction](SIDE_TRANSMISSION_VERTEX_REDUCTION.md),
 combined for S-D with [SIDE_DIAGONAL_LEFT_ENDPOINT.md](SIDE_DIAGONAL_LEFT_ENDPOINT.md).
 
@@ -111,7 +114,6 @@ three-loaded/two-transmitter patterns above.
 | Roadmap ID | Remaining family | Status |
 | --- | --- | --- |
 | C15 | Unique-circle C; vertex transmitter S, side transmitter S | OPEN |
-| C16 | Unique-circle C; vertex transmitter S, side transmitter D | OPEN |
 | C19 | Four loaded bodies; the sole unloaded transmitter D | OPEN |
 
 For each row, either exclude the physical component or prove that its

@@ -2,15 +2,15 @@
 
 This is the complete current **graph/transmitter overclassification** for C20. It covers whole positive components of lengths 6–10, modulo cyclic rotation and reflection. The inventory itself does not assert geometric feasibility or classify contact ownership. Separately proved exclusions are tracked below.
 
-**Exclusion progress:** `█▎░░░░░░░░░░░░░░░░░░░░░░` **15/279 transmitter cases closed; 264 open.**
+**Exclusion progress:** `██▍░░░░░░░░░░░░░░░░░░░░░` **28/279 transmitter cases closed; 251 open.**
 
 | Length | Binary load families | S/D cases | Excluded |
 | --- | ---: | ---: | ---: |
 | 6 | 6 | 15 | 0 |
 | 7 | 9 | 23 | 0 |
-| 8 | 15 | 45 | 4 |
-| 9 | 21 | 71 | 7 |
-| 10 | 29 | 125 | 4 |
+| 8 | 15 | 45 | 6 |
+| 9 | 21 | 71 | 12 |
+| 10 | 29 | 125 | 10 |
 
 `L` means loaded; `S` and `D` are unloaded side and diagonal transmitters. The labels retain boundary contact. Two consecutive unloaded bodies must both be S; three consecutive unloaded bodies are impossible. The loaded-star exclusion is applied only when one body touches every other loaded body.
 
@@ -66,7 +66,7 @@ The independent enumerations and Burnside count in [check_cycle_cases.py](check_
 | C20-M08-L04-B03-T01 | `LLSLSSLS` | OPEN |
 | C20-M08-L04-B03-T02 | `LLSLSSLD` | OPEN |
 | C20-M08-L04-B03-T03 | `LLDLSSLD` | OPEN |
-| C20-M08-L04-B04-T01 | `LLSSLLSS` | OPEN |
+| C20-M08-L04-B04-T01 | `LLSSLLSS` | [HAND CLOSED](TRANSMISSION_PATH_UNCROSSING.md) |
 | C20-M08-L04-B05-T01 | `LSLSLSLS` | OPEN |
 | C20-M08-L04-B05-T02 | `LSLSLSLD` | OPEN |
 | C20-M08-L04-B05-T03 | `LSLSLDLD` | OPEN |
@@ -76,7 +76,7 @@ The independent enumerations and Burnside count in [check_cycle_cases.py](check_
 | C20-M08-L05-B01-T01 | `LLLLSLSS` | OPEN |
 | C20-M08-L05-B01-T02 | `LLLLDLSS` | [HAND CLOSED](SHARED_ENDPOINT_CYCLE_ANGLE_BUDGET.md) |
 | C20-M08-L05-B02-T01 | `LLLSLLSS` | OPEN |
-| C20-M08-L05-B02-T02 | `LLLDLLSS` | OPEN |
+| C20-M08-L05-B02-T02 | `LLLDLLSS` | [HAND CLOSED](TRANSMISSION_PATH_UNCROSSING.md) |
 | C20-M08-L05-B03-T01 | `LLLSLSLS` | OPEN |
 | C20-M08-L05-B03-T02 | `LLLSLSLD` | OPEN |
 | C20-M08-L05-B03-T03 | `LLLSLDLS` | OPEN |
@@ -120,7 +120,7 @@ The independent enumerations and Burnside count in [check_cycle_cases.py](check_
 | C20-M09-L05-B03-T01 | `LLLSLSSLS` | OPEN |
 | C20-M09-L05-B03-T02 | `LLLSLSSLD` | OPEN |
 | C20-M09-L05-B03-T03 | `LLLDLSSLD` | OPEN |
-| C20-M09-L05-B04-T01 | `LLLSSLLSS` | OPEN |
+| C20-M09-L05-B04-T01 | `LLLSSLLSS` | [HAND CLOSED](TRANSMISSION_PATH_UNCROSSING.md) |
 | C20-M09-L05-B05-T01 | `LLSLLSLSS` | OPEN |
 | C20-M09-L05-B05-T02 | `LLSLLDLSS` | OPEN |
 | C20-M09-L05-B05-T03 | `LLDLLSLSS` | OPEN |
@@ -140,16 +140,16 @@ The independent enumerations and Burnside count in [check_cycle_cases.py](check_
 | C20-M09-L05-B07-T10 | `LLDLDLDLD` | OPEN |
 | C20-M09-L06-B01-T01 | `LLLLLSLSS` | [HAND CLOSED](SHARED_ENDPOINT_CYCLE_ANGLE_BUDGET.md) |
 | C20-M09-L06-B01-T02 | `LLLLLDLSS` | [HAND CLOSED](SHARED_ENDPOINT_CYCLE_ANGLE_BUDGET.md) |
-| C20-M09-L06-B02-T01 | `LLLLSLLSS` | OPEN |
-| C20-M09-L06-B02-T02 | `LLLLDLLSS` | OPEN |
+| C20-M09-L06-B02-T01 | `LLLLSLLSS` | [HAND CLOSED](TRANSMISSION_PATH_UNCROSSING.md) |
+| C20-M09-L06-B02-T02 | `LLLLDLLSS` | [HAND CLOSED](TRANSMISSION_PATH_UNCROSSING.md) |
 | C20-M09-L06-B03-T01 | `LLLLSLSLS` | OPEN |
 | C20-M09-L06-B03-T02 | `LLLLSLSLD` | OPEN |
 | C20-M09-L06-B03-T03 | `LLLLSLDLS` | OPEN |
 | C20-M09-L06-B03-T04 | `LLLLSLDLD` | OPEN |
 | C20-M09-L06-B03-T05 | `LLLLDLSLD` | OPEN |
 | C20-M09-L06-B03-T06 | `LLLLDLDLD` | OPEN |
-| C20-M09-L06-B04-T01 | `LLLSLLLSS` | OPEN |
-| C20-M09-L06-B04-T02 | `LLLDLLLSS` | OPEN |
+| C20-M09-L06-B04-T01 | `LLLSLLLSS` | [HAND CLOSED](TRANSMISSION_PATH_UNCROSSING.md) |
+| C20-M09-L06-B04-T02 | `LLLDLLLSS` | [HAND CLOSED](TRANSMISSION_PATH_UNCROSSING.md) |
 | C20-M09-L06-B05-T01 | `LLLSLLSLS` | OPEN |
 | C20-M09-L06-B05-T02 | `LLLSLLSLD` | OPEN |
 | C20-M09-L06-B05-T03 | `LLLSLLDLS` | OPEN |
@@ -219,7 +219,7 @@ The independent enumerations and Burnside count in [check_cycle_cases.py](check_
 | C20-M10-L06-B03-T01 | `LLLLSLSSLS` | OPEN |
 | C20-M10-L06-B03-T02 | `LLLLSLSSLD` | OPEN |
 | C20-M10-L06-B03-T03 | `LLLLDLSSLD` | OPEN |
-| C20-M10-L06-B04-T01 | `LLLLSSLLSS` | OPEN |
+| C20-M10-L06-B04-T01 | `LLLLSSLLSS` | [HAND CLOSED](TRANSMISSION_PATH_UNCROSSING.md) |
 | C20-M10-L06-B05-T01 | `LLLSLLSLSS` | OPEN |
 | C20-M10-L06-B05-T02 | `LLLSLLDLSS` | OPEN |
 | C20-M10-L06-B05-T03 | `LLLDLLSLSS` | OPEN |
@@ -242,7 +242,7 @@ The independent enumerations and Burnside count in [check_cycle_cases.py](check_
 | C20-M10-L06-B08-T08 | `LLLDLSLSLD` | OPEN |
 | C20-M10-L06-B08-T09 | `LLLDLSLDLD` | OPEN |
 | C20-M10-L06-B08-T10 | `LLLDLDLDLD` | OPEN |
-| C20-M10-L06-B09-T01 | `LLLSSLLLSS` | OPEN |
+| C20-M10-L06-B09-T01 | `LLLSSLLLSS` | [HAND CLOSED](TRANSMISSION_PATH_UNCROSSING.md) |
 | C20-M10-L06-B10-T01 | `LLSLLSLLSS` | OPEN |
 | C20-M10-L06-B10-T02 | `LLSLLDLLSS` | OPEN |
 | C20-M10-L06-B10-T03 | `LLDLLDLLSS` | OPEN |
@@ -267,16 +267,16 @@ The independent enumerations and Burnside count in [check_cycle_cases.py](check_
 | C20-M10-L06-B12-T07 | `LLDLDLLDLD` | OPEN |
 | C20-M10-L07-B01-T01 | `LLLLLLSLSS` | [HAND CLOSED](SEVEN_LOADED_LONG_PATHS.md) |
 | C20-M10-L07-B01-T02 | `LLLLLLDLSS` | [HAND CLOSED](SEVEN_LOADED_LONG_PATHS.md) |
-| C20-M10-L07-B02-T01 | `LLLLLSLLSS` | OPEN |
-| C20-M10-L07-B02-T02 | `LLLLLDLLSS` | OPEN |
+| C20-M10-L07-B02-T01 | `LLLLLSLLSS` | [HAND CLOSED](TRANSMISSION_PATH_UNCROSSING.md) |
+| C20-M10-L07-B02-T02 | `LLLLLDLLSS` | [HAND CLOSED](TRANSMISSION_PATH_UNCROSSING.md) |
 | C20-M10-L07-B03-T01 | `LLLLLSLSLS` | OPEN |
 | C20-M10-L07-B03-T02 | `LLLLLSLSLD` | OPEN |
 | C20-M10-L07-B03-T03 | `LLLLLSLDLS` | OPEN |
 | C20-M10-L07-B03-T04 | `LLLLLSLDLD` | OPEN |
 | C20-M10-L07-B03-T05 | `LLLLLDLSLD` | OPEN |
 | C20-M10-L07-B03-T06 | `LLLLLDLDLD` | OPEN |
-| C20-M10-L07-B04-T01 | `LLLLSLLLSS` | OPEN |
-| C20-M10-L07-B04-T02 | `LLLLDLLLSS` | OPEN |
+| C20-M10-L07-B04-T01 | `LLLLSLLLSS` | [HAND CLOSED](TRANSMISSION_PATH_UNCROSSING.md) |
+| C20-M10-L07-B04-T02 | `LLLLDLLLSS` | [HAND CLOSED](TRANSMISSION_PATH_UNCROSSING.md) |
 | C20-M10-L07-B05-T01 | `LLLLSLLSLS` | OPEN |
 | C20-M10-L07-B05-T02 | `LLLLSLLSLD` | OPEN |
 | C20-M10-L07-B05-T03 | `LLLLSLLDLS` | OPEN |
