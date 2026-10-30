@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="876" height="331" viewBox="0 0 876 331" role="img" aria-label="The tilt window: the half-angle tangent z on [-3/8, 3/8] with the two excluded intervals shaded, and the window between them enlarged, containing z*">
+<title>The tilt window: the half-angle tangent z on [-3/8, 3/8] with the two excluded intervals shaded, and the window between them enlarged, containing z*</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<line x1="48.0" y1="78.0" x2="838.0" y2="78.0" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
+<polygon points="63.0,90.0 488.0,90.0 488.0,66.0 63.0,66.0" fill="#fecaca" stroke="#dc2626" stroke-width="1" fill-opacity="1"/>
+<polygon points="518.0,90.0 813.0,90.0 813.0,66.0 518.0,66.0" fill="#fecaca" stroke="#dc2626" stroke-width="1" fill-opacity="1"/>
+<line x1="63.0" y1="98.0" x2="63.0" y2="58.0" stroke="#1f2937" stroke-width="1"/>
+<text x="63.0" y="38.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">−3/8</text>
+<line x1="438.0" y1="98.0" x2="438.0" y2="58.0" stroke="#1f2937" stroke-width="1"/>
+<text x="438.0" y="38.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">0</text>
+<line x1="813.0" y1="98.0" x2="813.0" y2="58.0" stroke="#1f2937" stroke-width="1"/>
+<text x="813.0" y="38.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">3/8</text>
+<text x="843.0" y="58.0" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic"><tspan font-style="italic">z</tspan></text>
+<line x1="258.2" y1="248.0" x2="617.8" y2="248.0" stroke="#1f2937" stroke-width="1"/>
+<polygon points="258.2,260.0 318.2,260.0 318.2,236.0 258.2,236.0" fill="#fecaca" stroke="#dc2626" stroke-width="1" fill-opacity="1"/>
+<polygon points="557.8,260.0 617.8,260.0 617.8,236.0 557.8,236.0" fill="#fecaca" stroke="#dc2626" stroke-width="1" fill-opacity="1"/>
+<line x1="488.0" y1="90.0" x2="318.2" y2="236.0" stroke="#9ca3af" stroke-width="0.8" stroke-dasharray="2 2"/>
+<line x1="518.0" y1="90.0" x2="557.8" y2="236.0" stroke="#9ca3af" stroke-width="0.8" stroke-dasharray="2 2"/>
+<circle cx="413.0" cy="248.0" r="4" fill="#1f2937"/>
+<text x="413.0" y="213.0" font-size="13" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle"><tspan font-style="italic">z</tspan><tspan dy="3.9" font-size="8.8">*</tspan><tspan dy="-3.9"> ≈ 0.0619</tspan></text>
+<text x="318.2" y="293.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">1001/20000</text>
+<text x="557.8" y="293.0" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">2/25</text>
+</svg>

@@ -3,8 +3,8 @@ module
 public import Mathlib.Topology.Algebra.Module.ModuleTopology
 public import SquaresInCircles.Common.Trigonometry
 public import SquaresInCircles.Eight.Equality.Angles
-public import SquaresInCircles.Eight.Stationary.CriticalHessian
-public import SquaresInCircles.Eight.Stationary.System
+public import SquaresInCircles.Eight.ExactFamily.CriticalHessian
+public import SquaresInCircles.Eight.ExactFamily.Stationary
 
 /-!
 # Eight squares: the single polynomial nominal support and global tilt localization
@@ -37,7 +37,7 @@ namespace SquaresInCircles.Eight.FiveCorner
 open GeometricModel
 
 open Set
-open Stationary
+open ExactFamily
 namespace Scalar
 abbrev upper := FiveCornerGeometry.upper
 abbrev lowerRight := FiveCornerGeometry.lowerRight
@@ -1023,7 +1023,7 @@ theorem sine_localization {p : FiveCorner} {R : ℝ}
 
 theorem tilt_localization {p : FiveCorner} {R : ℝ}
     (hp : p.spans) (hfit : p.fits R) (hq : R^2 ≤ ceiling) :
-    p.angle ∈ Stationary.FiveCornerGeometry.tiltInterval := by
+    p.angle ∈ ExactFamily.FiveCornerGeometry.tiltInterval := by
   have h := (spans_iff_spanBounds p).1 hp
   have ht : p.angle ∈ Icc 0 (Real.pi/4) := ⟨h.angle_lower, h.angle_upper⟩
   obtain ⟨hsl, hsu⟩ := sine_localization hp hfit hq
@@ -1031,7 +1031,7 @@ theorem tilt_localization {p : FiveCorner} {R : ℝ}
   have hu := Real.sin_sq_add_cos_sq p.angle
   have hs₀ : 0 ≤ Real.sin p.angle := by linarith
   have hs₂ : Real.sin p.angle ^ 2 < (79/500:ℝ)^2 := by
-    exact Stationary.FiveCornerGeometry.square_strict_mono_nonneg hs₀ hsu
+    exact ExactFamily.FiveCornerGeometry.square_strict_mono_nonneg hs₀ hsu
   have htan : Real.sin p.angle / Real.cos p.angle < 1/5 := by
     rw [div_lt_iff₀ hc]
     nlinarith

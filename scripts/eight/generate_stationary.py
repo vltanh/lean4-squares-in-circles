@@ -3,12 +3,12 @@
 
     python3 -I scripts/eight/generate_stationary.py
 
-The chain of SquaresInCircles/Eight/Stationary/Coordinates.lean is built as a formula in the
+The chain of SquaresInCircles/Eight/ExactFamily/Coordinates.lean is built as a formula in the
 variables (q, y, z): the square roots x₁, x₂, y₃, x₄, the cosine and sine of the tilt in its
 half-angle tangent z, the fifth corner (h₁, h₂) and the defect F = h₁² + h₂² - q. Derivatives are
-taken by the rules of `Formula.diff` (Stationary/Expression.lean), so that the kernel can decide
+taken by the rules of `Formula.diff` (ExactFamily/Expression.lean), so that the kernel can decide
 that each written derivative is the symbolic derivative of its formula. The script writes, in
-SquaresInCircles/Eight/Stationary/Generated,
+SquaresInCircles/Eight/ExactFamily/Generated,
 
 - StationaryFormula.lean: the formulas F, F_q, F_y, F_z, F_yy, F_yz, F_zz, the coordinates and the
   determinant (F_yy - 1/4)(F_zz - 1/4) - F_yz², the box localBox, the trial point and the bracket
@@ -18,16 +18,16 @@ SquaresInCircles/Eight/Stationary/Generated,
   point.
 
 Every regularity claim and every bound is evaluated with the fixed-point interval arithmetic of
-Stationary/FixedEval.lean, integer for integer (`fx_eval`), before it is written, and the script
+ExactFamily/FixedEval.lean, integer for integer (`fx_eval`), before it is written, and the script
 stops at the first that fails; where the enclosure on the whole box is too wide, the radius
-interval is split in half. generate_equality.py imports the formulas and the evaluators from
-here.
+interval is split in half. generate_adaptive.py and generate_equality.py import the formulas and
+the evaluators from here.
 """
 from fractions import Fraction as Q
 from math import isqrt
 from pathlib import Path
 
-OUT = Path(__file__).resolve().parents[2]/'SquaresInCircles'/'Eight'/'Stationary'/'Generated'
+OUT = Path(__file__).resolve().parents[2]/'SquaresInCircles'/'Eight'/'ExactFamily'/'Generated'
 
 
 class Algebra:
@@ -114,7 +114,7 @@ class Algebra:
         return sorted(out)
 
 
-# The chain of Stationary/Coordinates.lean in the variables (q, y, z), the defect F, its first
+# The chain of ExactFamily/Coordinates.lean in the variables (q, y, z), the defect F, its first
 # partial derivatives and its second derivatives in y and z.
 A = Algebra()
 q,y,z = [A.var(i) for i in range(3)]
@@ -188,7 +188,7 @@ def evaluate(box,targets=outputs,bits=40):
 # whether the box a lies in the box b, as `FixedEval.inside` tests
 def inside(a,b): return all(J[0]<=I[0] and I[1]<=J[1] for I,J in zip(a,b))
 
-# The fixed-point interval arithmetic of `Stationary/FixedEval.lean`, integer for integer: an
+# The fixed-point interval arithmetic of `ExactFamily/FixedEval.lean`, integer for integer: an
 # interval is a pair of integers read as multiples of 2^-p, and every operation rounds outwards.
 def fx_ofrat(q,p):
     """`DI.ofRat`: the outward enclosure of the rational q."""
@@ -233,7 +233,7 @@ def fx_bounded(box,t,lo,hi,p):
     I=fx_enclosure(box,t,p)
     return I is not None and fx_ofrat(lo,p)[1]<=I[0] and I[1]<=fx_ofrat(hi,p)[0]
 
-# localBox: q in [qMinus, Q0] and (y, z) in the rectangle poseBox of Stationary/Analysis.lean
+# localBox: q in [qMinus, Q0] and (y, z) in the rectangle poseBox of ExactFamily/Analysis.lean
 local = ((Q(7831,2000),Q(9789,2500)),(Q(-937,1000),Q(-179,200)),(Q(1,20),Q(81,1000)))
 
 
@@ -281,11 +281,11 @@ def header(imports,doc):
     namespace."""
     return ('module\n\n'+''.join(f'public import {i}\n' for i in imports)+'\n/-!\n'+doc+'\n-/\n\n'
       '@[expose] public section\nnoncomputable section\nset_option maxRecDepth 100000\n\n'
-      'namespace SquaresInCircles.Eight.Stationary.Generated\nopen Arithmetic\n\n')
+      'namespace SquaresInCircles.Eight.ExactFamily.Generated\nopen Arithmetic\n\n')
 
 FORMULA_DOC='''# Eight squares: the formulas of the stationary point
 
-The chain of `Stationary/Coordinates.lean` as formulas (`Formula`) in the variables `(q, y, z)`:
+The chain of `ExactFamily/Coordinates.lean` as formulas (`Formula`) in the variables `(q, y, z)`:
 the coordinates `x₁, x₂, y₃, x₄` (`xOneFormula`, ...), the cosine and sine of the tilt, the fifth
 corner `(h₁, h₂)`, the defect `F = h₁² + h₂² - q` (`FFormula`), its first partial derivatives,
 its second derivatives in `y` and `z`, and the determinant `(F_yy - 1/4)(F_zz - 1/4) - F_yz²` of
@@ -299,7 +299,7 @@ bracket `[sharpLower, sharpUpper]` of `qStar`. Written by `scripts/eight/generat
 BOUNDS_DOC='''# Eight squares: interval bounds near the stationary point
 
 Bounds on the formulas of `StationaryFormula.lean`, each decided by the kernel with the
-fixed-point interval evaluation of `Stationary/FixedEval.lean`, at 80 to 200 bits. On `localBox`
+fixed-point interval evaluation of `ExactFamily/FixedEval.lean`, at 80 to 200 bits. On `localBox`
 the formulas `F`, `F_y` and `F_z` are regular (`fullF_regular`, ...), `-4 ≤ F_q ≤ -3`
 (`fullFq_bound`), `6 ≤ F_yy ≤ 9` (`fullFyy_bound`), and the coordinates of the chain lie in
 rational intervals (`localXOne_bound`, ...); the determinant of the shifted Hessian lies in
@@ -309,7 +309,7 @@ rational intervals (`localXOne_bound`, ...); the determinant of the shifted Hess
 `q = Q0` (`lowerTest_bound`, `upperTest_bound`), and likewise at the two ends of the bracket of
 `qStar` (`sharpLowF_bound`, `sharpHighF_bound`); and on the bracket `|F_y|` and `|F_z|` are at
 most `10⁻¹⁵` (`sharpTrialFy_bound`, ...). On `sharpBox` the coordinates lie in narrow intervals
-(`sharpXOne_bound`, ...). `Stationary/Analysis.lean` and `Stationary/System.lean` use these
+(`sharpXOne_bound`, ...). `ExactFamily/Analysis.lean` and `ExactFamily/Stationary.lean` use these
 bounds. Written by `scripts/eight/generate_stationary.py`.'''
 
 BOUNDS_HELPERS='''/-- A fixed-point enclosure gives a bound with real endpoints. -/
@@ -338,14 +338,14 @@ def write_local(out):
     bounds={'F':F,'Fq':Fq,'Fy':Fy,'Fz':Fz,'Fyy':Fyy,'Fyz':Fyz,'Fzz':Fzz,
       'xOne':x1,'xTwo':x2,'yThree':y3,'xFour':x4,'cosine':c,'sine':s,'hOne':h1,'hTwo':h2,
       'determinant':det}
-    lines=[header(['SquaresInCircles.Eight.Stationary.Expression'],FORMULA_DOC)]
+    lines=[header(['SquaresInCircles.Eight.ExactFamily.Expression'],FORMULA_DOC)]
     nodes=A.dependencies(list(bounds.values()))
     for i in nodes:
         core=formula_node(A.nodes[i]).replace(' n',' formula')
         lines.append(f'def formula{i} : Formula 3 := {core}')
     lines += ['',*['def '+name+'Formula : Formula 3 := formula'+str(i) for name,i in bounds.items()],
       '/-- The box of `(q, y, z)`: `q` in `[qMinus, Q0]` and `(y, z)` in the rectangle `poseBox`',
-      'of `Stationary/Analysis.lean`. -/',
+      'of `ExactFamily/Analysis.lean`. -/',
       'def localBox : QBox 3 := '+boxlit(local),
       '/-- The position `y` of the trial point, near the stationary pose (`sharpPose_close`). -/',
       'def trialY : ℝ := '+rat(yt),
@@ -399,11 +399,11 @@ def write_local(out):
       '  norm_num [FzFormula,FyzFormula,Formula.diff,Formula.plus,Formula.minus,Formula.times,',
       '    Formula.power,Formula.reciprocal,Formula.quotient,Formula.eval,'+defs+']',
       '  ring','',
-      'end SquaresInCircles.Eight.Stationary.Generated','']
+      'end SquaresInCircles.Eight.ExactFamily.Generated','']
     lines=[('noncomputable '+l if l.startswith('def ') else l) for l in lines]
     (out/'StationaryFormula.lean').write_text('\n'.join(lines))
-    lines=[header(['SquaresInCircles.Eight.Stationary.Generated.StationaryFormula',
-      'SquaresInCircles.Eight.Stationary.FixedEval'],BOUNDS_DOC)+BOUNDS_HELPERS]
+    lines=[header(['SquaresInCircles.Eight.ExactFamily.Generated.StationaryFormula',
+      'SquaresInCircles.Eight.ExactFamily.FixedEval'],BOUNDS_DOC)+BOUNDS_HELPERS]
     def certificate(name,box,target,lo=None,hi=None,bits=80,regular=False):
         """Write the box <name>Box and, once the fixed-point arithmetic at `bits` bits confirms
         them, the regularity of the formula `target` on it (<name>_regular) and the bounds
@@ -536,7 +536,7 @@ def write_local(out):
       ('sharpHOne',h1,Q('-1.36797'),Q('-1.36748')),
       ('sharpHTwo',h2,Q('-1.43022'),Q('-1.42976'))]:
         certificate(name,small,target,lo,hi,160)
-    lines += ['end SquaresInCircles.Eight.Stationary.Generated','']
+    lines += ['end SquaresInCircles.Eight.ExactFamily.Generated','']
     lines=[('noncomputable '+l if l.startswith('def ') else l) for l in lines]
     (out/'LocalStationaryBounds.lean').write_text('\n'.join(lines))
 

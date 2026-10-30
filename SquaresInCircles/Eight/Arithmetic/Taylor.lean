@@ -1,7 +1,6 @@
 module
 
-public import Mathlib.Tactic
-public import SquaresInCircles.Common.Trigonometry
+public import SquaresInCircles.Eight.Arithmetic.Interval
 
 /-!
 # Eight squares: Taylor bounds of the sine and the cosine
@@ -32,6 +31,10 @@ theorem pi_hand_enclosure :
   constructor <;> linarith [Real.pi_gt_d20,Real.pi_lt_d20]
 
 theorem two_pi_lt_710_over_113 : 2*Real.pi < (710 : ℝ)/113 := by
+  linarith [pi_hand_enclosure.2]
+
+theorem two_pi_lt_628318531_over_1e8 :
+    2*Real.pi < (628318531 : ℝ)/100000000 := by
   linarith [pi_hand_enclosure.2]
 
 /-- The Taylor polynomial of the sine through the degree seven. -/
@@ -76,5 +79,36 @@ theorem trig_taylor_bounds {x : ℝ} (hx : 0 ≤ x) :
     sin7 x ≤ Real.sin x ∧ Real.sin x ≤ sin9 x ∧
     cos10 x ≤ Real.cos x ∧ Real.cos x ≤ cos8 x :=
   ⟨sin_lower_seven hx,sin_le_sin9 hx,cos10_le_cos hx,cos_le_cos8 hx⟩
+
+/-- For `x ≥ 0`, `sin x = sin7 x + e x⁹` for some `e ∈ [0, 1/9!]`. -/
+theorem sin_remainder_coefficient {x : ℝ} (hx : 0 ≤ x) :
+    ∃ e : ℝ, 0 ≤ e ∧ e ≤ 1/362880 ∧ Real.sin x = sin7 x+e*x^9 := by
+  rcases hx.eq_or_lt with he | hp
+  · subst x
+    exact ⟨0,by norm_num,by norm_num,by norm_num [sin7]⟩
+  · refine ⟨(Real.sin x-sin7 x)/x^9,?_,?_,?_⟩
+    · exact div_nonneg (sub_nonneg.mpr (trig_taylor_bounds hx).1) (pow_pos hp 9).le
+    · apply (div_le_iff₀ (pow_pos hp 9)).mpr
+      have hs := (trig_taylor_bounds hx).2.1
+      dsimp [sin9] at hs
+      linarith
+    · field_simp [ne_of_gt hp]
+      ring
+
+/-- For `x ≥ 0`, `cos x = cos8 x + e x¹⁰` for some `e ∈ [-1/10!, 0]`. -/
+theorem cos_remainder_coefficient {x : ℝ} (hx : 0 ≤ x) :
+    ∃ e : ℝ, -(1/3628800) ≤ e ∧ e ≤ 0 ∧ Real.cos x = cos8 x+e*x^10 := by
+  rcases hx.eq_or_lt with he | hp
+  · subst x
+    exact ⟨0,by norm_num,by norm_num,by norm_num [cos8]⟩
+  · refine ⟨(Real.cos x-cos8 x)/x^10,?_,?_,?_⟩
+    · apply (le_div_iff₀ (pow_pos hp 10)).mpr
+      have hc := (trig_taylor_bounds hx).2.2.1
+      dsimp [cos10] at hc
+      linarith
+    · exact div_nonpos_of_nonpos_of_nonneg
+        (sub_nonpos.mpr (trig_taylor_bounds hx).2.2.2) (pow_pos hp 10).le
+    · field_simp [ne_of_gt hp]
+      ring
 
 end SquaresInCircles.Eight.Arithmetic

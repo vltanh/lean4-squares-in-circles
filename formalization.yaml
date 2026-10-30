@@ -30,13 +30,14 @@ project:
     angles of the squares, forces the optimal radius. For seven squares, each
     square avoiding the disk centre gets a direction from it, and in the
     optimal disk two disjoint such squares get directions at least π/3 apart.
-    For eight squares a central square is found, a case analysis of the
-    frames of the seven others, written by hand, excludes every boundary
-    configuration but the stationary one, with its leaf inequalities proved
-    by hand where the degree is low and otherwise checked as exact polynomial
-    certificates in Lean's kernel, and a completion of
-    squares with the weights of the stationary packing forces the optimal
-    radius.
+    For eight squares a central square is found, checked pair, affine and
+    owner tables capture the frames of the seven exterior squares near the
+    stationary configuration, and a completion of squares with the weights
+    of the stationary packing forces the optimal radius. Lean verifies the
+    table bounds and their coverage. The public radius and optimal family
+    retain their geometric five-corner description, proved equivalent to the
+    stationary description used by the tables. The table-free case analysis
+    is deprecated and is absent from the active library.
     We found no earlier proof for five, six, seven or eight squares, and no
     exact one for three, where a computer-assisted enclosure of the radius and
     the optimal arrangements was known. Four squares, uniqueness included,
@@ -165,6 +166,18 @@ status:
 automation:
   methods:
     - method: "agent"
+      models: ["GPT-6"]
+      framework: "Codex"
+      tool_setup: >-
+        Local Lean and Lake, using the formalize-math-paper skill, version
+        3.0.0. At the maintainer's request, restored the checked-table proof
+        from 4bea747b, retired the table-free case analysis, and retained the
+        geometric radius and optimal-family definitions with their proved
+        bridges to the stationary chart. No sub-agents were used.
+        Local verification passed the full build, the audit of all 26,581
+        project declarations, sanity and documentation checks, and Comparator
+        with con-ron, NanoDa and Lean's default kernel.
+    - method: "agent"
       models: ["ChatGPT 6 Pro", "ChatGPT (its latest model, September 2026)"]
       framework: "ChatGPT"
       tool_setup: >-
@@ -187,9 +200,9 @@ automation:
         (pull request #8). For eight squares, ChatGPT 6 Pro wrote the proof,
         with its finite tables checked by computer (pull request #9), and the
         whole Lean proof (pull request #10), first with the tables and then
-        without them: the table-free proof, in mathematics and in Lean, is the
-        one formalized here, with the optimum stated by its five-corner
-        minimum.
+        without them. The active library uses the table proof and retains the
+        five-corner minimum and geometric optimal-family description from the
+        table-free development.
     - method: "agent"
       models: ["Claude Opus 5.5"]
       framework: "Claude"

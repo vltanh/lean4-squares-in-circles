@@ -1,527 +1,396 @@
-# Appendix L. Eight squares: the exact polynomial checks
+# Appendix L. Eight squares: what a table row proves
 
 [Contents](README.md) · [← Appendix K](appendix-k.md) · [Appendix M →](appendix-m.md)
 
-Many inequalities of the proof of eight squares come down to the positivity of
-an explicit polynomial with rational coefficients: in one variable on an
-interval, or in two variables on a triangle or a rectangle. Sines, cosines,
-square roots and quotients enter these polynomials through Taylor polynomials
-with signed remainders, through rational majorants and through cleared
-denominators. Each such positivity is proved by a *check*: a Boolean value
-computed from natural numbers and integers, which the Lean kernel evaluates,
-together with a soundness theorem that turns the value `true` into the real
-inequality at every point of the domain. This appendix describes the checks:
-the bound by Chebyshev coefficients (§L.1), what the kernel computes (§L.2), two
-variables (§L.3), trigonometric terms and radicals (§L.4), a worked example
-(§L.5), the interval evaluations of Appendices J and M (§L.6), and the checks of
-the whole proof (§L.7).
+This appendix proves part (1) of
+[Proposition 11.31](11-eight.md#proposition-1131-rows-and-tables): a row of
+an affine-arc table, with its fixed rational data, proves the inequality
+(11.10) on a whole product of two arcs of states and an interval of angles,
+by finitely many rational comparisons. It also describes how the covers of
+the tables are checked (§L.6) and the pair tables by which the formal proof
+proves the smaller tables of
+[Proposition 11.21](11-eight.md#proposition-1121-pair-costs-of-the-four-types-a-finite-table)
+and [Proposition 11.26](11-eight.md#proposition-1126-only-the-word-0101011-finite-tables)
+(§L.7).
 
-A proposition about natural numbers or integers built from decidable
-comparisons has a decision procedure; `decide +kernel` proves it by asking the
-kernel to reduce that procedure to `true` by definitional unfolding. The kernel
-evaluates arithmetic on natural number literals with arbitrary-precision
-integers (sums, products, quotients, remainders, comparisons and bit
-operations), so these reductions are exact and fast. No compiled code and no
-external program is trusted.
-
-## L.1 A polynomial on an interval
-
-Let $T_j$ be the Chebyshev polynomials, $T_j(\cos\theta) = \cos j\theta$, so
-that $|T_j(u)| \le 1$ for $|u| \le 1$.
-
-### Lemma L.1 (Chebyshev bound)
-
-Let $p$ be a polynomial with rational coefficients, $a < b$ rationals and
-$D \ge \deg p$. Write the *centred* polynomial as
-$\tilde p(u) = p\left(\frac{a + b}2 + \frac{b - a}2u\right) = \sum_{i \le D} p_i u^i$,
-and for $j \le D$ let
+Fix a row: an edge with charge $\beta \ge 0$ and constant $\gamma$, a source
+arc with sign $\sigma$ and label $L_s = c + p\,a + q\,b$, a target arc with
+sign $\sigma'$ and label $L_t = c' + p'a' + q'b'$, a margin $M_j$ of (11.5), a
+multiplier $\lambda \ge 0$ and an angle interval
+$\varphi = k\frac\pi2 + \epsilon u$, $u_0 \le u \le u_1$, with $k \in \lbrace 0, 1\rbrace$,
+$\epsilon = \pm1$ and $0 \le u_0 \le u_1 \le \frac7{10}$. We must show that
 
 ```math
-c_j = \sum_{i \le D} p_i\,\gamma_{ij}, \qquad \gamma_{ij} = \begin{cases} \epsilon_j\,2^{-i}\binom i{(i - j)/2}, & j \le i \text{ and } i - j \text{ even}, \\ 0, & \text{otherwise}, \end{cases} \qquad \epsilon_0 = 1, \ \epsilon_j = 2 \ (j \ge 1) .
+G = \varphi - \beta\chi(\varphi) + L_s(a, b) - L_t(a', b') - \gamma - \lambda M_j > 0 \tag{L.1}
 ```
 
-Then $\tilde p = \sum_{j \le D} c_j T_j$, and for every $x$ in $[a, b]$
+for all states $(a, b)$ on the source arc, $(a', b')$ on the target arc, and
+$u \in [u_0, u_1]$.
+
+## L.1 Arcs of the radial curves
+
+On the outer curve $\mathcal O_Q$ and on the corner of the core curve
+$\mathcal C$ the first coordinate is a function of the second,
 
 ```math
-c_0 - \sum_{j = 1}^D |c_j| \;\le\; p(x) \;\le\; c_0 + \sum_{j = 1}^D |c_j| . \tag{L.1}
+a(b) = v + \sqrt{\rho^2 - (b - v)^2}, \qquad \text{with } (v, \rho) = \left(-\tfrac12, \sqrt Q\right) \text{ on } \mathcal O_Q \text{ and } \left(\tfrac12, \tfrac1{12}\right) \text{ on the corner of } \mathcal C ,
 ```
 
-*Proof.* From $(2\cos\theta)^i = \sum_k \binom ik e^{\mathrm i(i - 2k)\theta}$,
-$u^i = 2^{-i}\sum_{k = 0}^i \binom ik T_{|i - 2k|}(u)$, and grouping $k$ with
-$i - k$ gives the coefficient $\gamma_{ij}$ of $T_j$. (The formal proof
-derives the same identity by induction on $i$ from
-$2u\,T_{n + 1} = T_{n + 2} + T_n$.) So $\tilde p = \sum_j c_jT_j$. For
-$x \in [a, b]$, $u = \frac{2x - a - b}{b - a}$ lies in $[-1, 1]$, where every
-$|T_j(u)| \le 1$. $\square$
+and on the side of $\mathcal C$ it is the constant $\frac7{12}$. An arc is
+given by two rational values of the tangent $b/a$; its endpoints are the
+positive roots of quadratic equations with rational coefficients, enclosed by
+rational brackets whose squares are compared with the radicands. On a circular
+piece, with $\varrho(b) = \frac{b - v}{a(b) - v}$,
+
+```math
+a'(b) = -\varrho(b), \qquad \varrho'(b) = \frac{\rho^2}{(a - v)^3} > 0, \qquad a''(b) = -\varrho'(b) < 0 .
+```
 
 *Lean:
-[`Eight.WholeIntervalPolynomial.centered`](../../SquaresInCircles/Eight/Arithmetic/WholeIntervalPolynomial.lean#L26),
-[`Eight.WholeIntervalPolynomial.monomialCoefficient`](../../SquaresInCircles/Eight/Arithmetic/WholeIntervalPolynomial.lean#L30),
-[`Eight.WholeIntervalPolynomial.coefficient`](../../SquaresInCircles/Eight/Arithmetic/WholeIntervalPolynomial.lean#L35),
-[`Eight.WholeIntervalPolynomial.expansion`](../../SquaresInCircles/Eight/Arithmetic/WholeIntervalPolynomial.lean#L44),
-[`Eight.WholeIntervalPolynomial.sum_monomialCoefficient_mul_T`](../../SquaresInCircles/Eight/Arithmetic/PolynomialCertificates.lean#L140),
-[`Eight.WholeIntervalPolynomial.eq_expansion_of_natDegree_le`](../../SquaresInCircles/Eight/Arithmetic/PolynomialCertificates.lean#L200),
-[`Eight.WholeIntervalPolynomial.series_bounds`](../../SquaresInCircles/Eight/Arithmetic/WholeIntervalPolynomial.lean#L56),
-[`Eight.WholeIntervalPolynomial.interval_bounds`](../../SquaresInCircles/Eight/Arithmetic/WholeIntervalPolynomial.lean#L75),
-[`Eight.WholeIntervalPolynomial.positive_on_interval`](../../SquaresInCircles/Eight/Arithmetic/WholeIntervalPolynomial.lean#L101).*
+[`Eight.Arithmetic.ArcData`](../../SquaresInCircles/Eight/Arithmetic/AffineTableData.lean#L35),
+[`Eight.Arithmetic.ArcData.OnCurve`](../../SquaresInCircles/Eight/Arithmetic/AffineTableData.lean#L50),
+[`Eight.Arithmetic.outerEndpoint_facts`](../../SquaresInCircles/Eight/Arithmetic/ArcGeometry.lean#L41),
+[`Eight.Arithmetic.coreEndpoint_facts`](../../SquaresInCircles/Eight/Arithmetic/ArcGeometry.lean#L69),
+[`Eight.Arithmetic.circleX_deriv`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L174),
+[`Eight.Arithmetic.circleRatio_deriv`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L185),
+[`Eight.Arithmetic.PreparedArc`](../../SquaresInCircles/Eight/Arithmetic/PreparedArc.lean#L56),
+[`Eight.Arithmetic.PreparedArc.NumericValid`](../../SquaresInCircles/Eight/Arithmetic/PreparedArc.lean#L100).*
 
-The bound (L.1) is exact for $p$ constant and loses at most
-$2\sum_{j \ge 1}|c_j|$; the Chebyshev coefficients of the polynomials of the
-proof decrease quickly, so the loss comes mostly from the first few. Where the
-linear or quadratic part dominates, three variants keep it exactly. In the
-Chebyshev basis, $c_0 - c_2 + c_1u + 2c_2u^2$ is minimized exactly and only the
-tail $j \ge 3$ is bounded by its coefficient sum. In the power basis
-$p(x) = \sum_i a_i x^i$ on $|x| \le r$, the part $a_0 + a_1x + a_2x^2$ is kept
-and $\sum_{i \ge 3}|a_i|\,r^{i - 2}x^2$ bounds the rest. And with the
-Bernstein polynomials $\binom Di x^i(b - x)^{D - i}/b^D$ on $[0, b]$, which are
-nonnegative and add up to 1, $p$ is at least the least of its Bernstein
+### Lemma L.1 (supports on an arc)
+
+Let $X$ and $Y$ be real numbers, and consider the linear function
+$X a + Y b$ of the states on one arc. Its minimum over the arc is at least:
+
+1. on a side of $\mathcal C$, the smaller of its two endpoint values;
+2. on a circular piece, if $X \ge 0$, the smaller of its two endpoint values;
+3. on a circular piece, if $Y - X\varrho \ge 0$ at both endpoints, its value
+   at the lower endpoint, and if $Y - X\varrho \le 0$ at both endpoints, its
+   value at the upper endpoint;
+4. on a circular piece of the circle with centre $(v, v)$ and radius $\rho$,
+   the number $v(X + Y) - \rho\sqrt{X^2 + Y^2}$.
+
+*Proof.* (1) The function is affine in $b$ on a segment. (2) $X a(b) + Y b$ is
+concave in $b$ when $X \ge 0$, so its minimum on an interval is at an end.
+(3) Its derivative in $b$ is $Y - X\varrho(b)$, which is affine in $\varrho$,
+and $\varrho$ is monotone in $b$; so the derivative lies between its endpoint
+values and has the sign of both. (4) The arc lies on the circle, and on the
+whole circle the minimum of the linear function is the value at the centre
+minus $\rho$ times the length of $(X, Y)$, by Cauchy–Schwarz. $\square$
+
+*Lean:
+[`Eight.Arithmetic.side_endpoint_lower`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L159),
+[`Eight.Arithmetic.circle_functional_concave`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L214),
+[`Eight.Arithmetic.circle_endpoints_lower`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L227),
+[`Eight.Arithmetic.circle_lower_endpoint`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L247),
+[`Eight.Arithmetic.circle_upper_endpoint`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L265),
+[`Eight.Arithmetic.full_circle_lower`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L144).*
+
+The rules hold whatever the sign of $X$ in rule 3, and rule 4 holds even when
+the point of the circle where the minimum is attained lies outside the arc;
+it is never used on a side. A row records which rule it uses for the target
+arc; for the source arc the rule is determined by the signs of the fixed
 coefficients.
 
-*Lean:
-[`Eight.ChebyshevLeadingBounds.quadratic_lower`](../../SquaresInCircles/Eight/Owners/ChebyshevLeadingBounds.lean#L52),
-[`Eight.ChebyshevLeadingBounds.cubic_lower`](../../SquaresInCircles/Eight/Owners/ChebyshevLeadingBounds.lean#L67),
-[`Eight.PowerTailBounds.quadratic_lower`](../../SquaresInCircles/Eight/Owners/PowerTailBounds.lean#L86),
-[`Eight.WholeIntervalBernstein.lower_on_interval`](../../SquaresInCircles/Eight/Owners/WholeIntervalBernstein.lean#L524).*
+![Two panels of the (a, b)-plane near the outer curve of the level Q1, each with an arc of the curve drawn thick between two endpoints and level lines of a linear function X a + Y b, the lowest one dashed. Left: X = 0.8 and Y = -1, for the arc of tangents from 1/8 to 3/8; the function is concave along the arc and its least value is at the upper endpoint, marked. Right: X = -1 and Y = -0.6, for the arc of tangents from 1/4 to 1/2; the dashed level line of the circle bound v(X + Y) - rho root(X^2 + Y^2) touches the full circle at a point of the arc, marked, so the bound is attained there](figures/appendix-l/supports.svg)
 
-## L.2 What the kernel computes
+*Figure L.1.* Lemma L.1 on two arcs of $\mathcal O_{Q_1}$ (thick). Left: with
+$X \ge 0$ the function is concave along the arc, and its least value is at an
+endpoint (dot). Right: the circle rule takes the least value on the whole
+circle, at the point where a level line (dashed) touches it; it is a lower
+bound on every arc, and here, where that point lies on the arc, it is
+attained.
 
-The polynomial ring over $\mathbb Q$ is not computable in Lean, so a check
-never manipulates $p$ itself. It manipulates integer lists.
+## L.2 The separating-axis reduction
 
-### Lemma L.2 (integer representations)
+### Lemma L.2 (separating the source and the target)
 
-A *scaled list* $(l, s)$, with integers $l_0, \dots, l_n$ and a natural number
-$s$, *represents* $p$ if $\sum_k l_kX^k = s\,p$.
-
-1. Lists that represent $p + q$, $p - q$, $pq$, $p^m$, a rational constant and
-   $X$ are computed from lists that represent $p$ and $q$ by integer operations.
-2. If $(l, s)$ represents $p$ and $\frac{a + b}2 = \frac{\nu\sigma}\delta$,
-   $\frac{b - a}2 = \frac{\nu\tau}\delta$ with natural numbers $\nu$,
-   $\delta \ne 0$ and integers $\sigma$, $\tau$, then a list computed from $l$
-   by integer operations represents the centred polynomial $\tilde p$, with the
-   scale $s\,\delta^n$: it multiplies $l_k$ by $\nu^k\delta^{n - k}$ and
-   composes with $\sigma + \tau X$ by Horner's rule.
-3. If $(l, s)$ represents $\tilde p$, $s \ne 0$ and $n \le D$, then integers
-   $C_0, \dots, C_D$ computed from $l$ satisfy $c_j = C_j/(s\,2^{n + 1}/2)$,
-   where $c_j$ are the coefficients of Lemma L.1.
-
-*Proof.* (1) The operations of polynomials act on coefficient lists by sums,
-convolutions and repeated products. (2)
-$\delta^n\,p(\nu(\sigma + \tau u)/\delta)$ has the coefficients of (2) composed
-with $\sigma + \tau u$. (3) Horner's rule
-$\tilde p = l_0 + u(l_1 + u(l_2 + \cdots))/s$ in the Chebyshev basis: since
-$2u\,T_0 = 2T_1$ and $2u\,T_j = T_{j + 1} + T_{j - 1}$ for $j \ge 1$,
-multiplication by $2u$ maps the Chebyshev coefficients $(v_0, v_1, v_2, \dots)$
-of a polynomial to $(v_1, 2v_0 + v_2, v_1 + v_3, v_2 + v_4, \dots)$, an integer
-operation, and each Horner step doubles the scale. $\square$
-
-*Lean:
-[`Eight.WholeIntervalPolynomial.Certificate.Scaled`](../../SquaresInCircles/Eight/Arithmetic/PolynomialCertificates.lean#L308),
-[`Eight.WholeIntervalPolynomial.Certificate.Scaled.Rep`](../../SquaresInCircles/Eight/Arithmetic/PolynomialCertificates.lean#L313),
-[`Eight.WholeIntervalPolynomial.Certificate.Scaled.Rep.mul`](../../SquaresInCircles/Eight/Arithmetic/PolynomialCertificates.lean#L348),
-[`Eight.WholeIntervalPolynomial.Certificate.Scaled.Rep.centered`](../../SquaresInCircles/Eight/Arithmetic/PolynomialCertificates.lean#L515),
-[`Eight.WholeIntervalPolynomial.Certificate.Scaled.Rep.eq_expansion`](../../SquaresInCircles/Eight/Arithmetic/PolynomialCertificates.lean#L404),
-[`Eight.WholeIntervalPolynomial.Certificate.twoX`](../../SquaresInCircles/Eight/Arithmetic/PolynomialCertificates.lean#L536),
-[`Eight.WholeIntervalPolynomial.Certificate.chebList`](../../SquaresInCircles/Eight/Arithmetic/PolynomialCertificates.lean#L541),
-[`Eight.WholeIntervalPolynomial.Certificate.chebList_spec`](../../SquaresInCircles/Eight/Arithmetic/PolynomialCertificates.lean#L604),
-[`Eight.WholeIntervalPolynomial.Certificate.Scaled.Rep.coefficient_eq`](../../SquaresInCircles/Eight/Arithmetic/PolynomialCertificates.lean#L630).*
-
-### Theorem L.3 (a univariate check)
-
-Let $(l, s)$ represent the centred polynomial of $p$ on $[a, b]$, with
-$s \ne 0$ and $l$ of length $n + 1 \le D + 1$, let $C_j$ be the integers of
-Lemma L.2 (3), and let $\rho = m/d$ with $d > 0$. If
+For the axes 1 and 4,
 
 ```math
-m\,s\,2^{n + 1} < 2d\left(C_0 - \sum_{j = 1}^D |C_j|\right),
+G = \varphi - \beta\chi(\varphi) + c - c' - \gamma + \lambda\tau(\varphi) + X_s a + Y_s b + X_t a' + Y_t b' ,
 ```
 
-then $\rho < p(x)$ for every real $x$ in $[a, b]$.
+with the coefficients
 
-*Proof.* By Lemma L.2 (3),
-$C_0 - \sum_{j \ge 1}|C_j| = \frac{s\,2^{n + 1}}2\left(c_0 - \sum_{j \ge 1}|c_j|\right)$,
-so the hypothesis says $\frac md < c_0 - \sum_{j \ge 1}|c_j|$. The expansion of
-Lemma L.1 holds as $\deg\tilde p \le n \le D$, and (L.1) concludes. $\square$
+| axis | $X_s$ | $Y_s$ | $X_t$ | $Y_t$ |
+| :-: | :-: | :-: | :-: | :-: |
+| 1 | $p$ | $q - \lambda\sigma$ | $-p' - \lambda\sin\varphi$ | $-q' + \lambda\sigma'\cos\varphi$ |
+| 4 | $p - \lambda$ | $q$ | $-p' + \lambda\cos\varphi$ | $-q' + \lambda\sigma'\sin\varphi$ |
+
+and the squared lengths $X_t^2 + Y_t^2$ are
+$V_1 = p'^2 + q'^2 + \lambda^2 + 2p'\lambda\sin\varphi - 2q'\lambda\sigma'\cos\varphi$
+and
+$V_4 = p'^2 + q'^2 + \lambda^2 - 2p'\lambda\cos\varphi - 2q'\lambda\sigma'\sin\varphi$.
+The axes 2 and 3 reduce to the axes 4 and 1: reflecting the plane and
+reversing the edge exchanges the source and the target, changes both signs,
+leaves $\varphi$ unchanged, turns $M_2$ into $M_4$ and $M_3$ into $M_1$, and
+the cost stays the same if the labels are replaced by $-L_t$ and $-L_s$.
+
+*Proof.* Substitute (11.5) and the labels into (L.1) and collect the terms in
+$a$, $b$, $a'$, $b'$; the squared lengths follow from
+$\sin^2\varphi + \cos^2\varphi = 1$. For the reduction, the reversed pair has
+the source state $(a', b')$ with sign $-\sigma'$ and the target state $(a, b)$
+with sign $-\sigma$ at the same angle, and substituting into (11.5) turns the
+margins as stated; the cost $\varphi + L_s - L_t$ equals
+$\varphi + (-L_t) - (-L_s)$. $\square$
 
 *Lean:
-[`Eight.WholeIntervalPolynomial.Certificate.lowerZ`](../../SquaresInCircles/Eight/Arithmetic/PolynomialCertificates.lean#L655),
-[`Eight.WholeIntervalPolynomial.Certificate.lowerOn_eq_of_rep`](../../SquaresInCircles/Eight/Arithmetic/PolynomialCertificates.lean#L686),
-[`Eight.WholeIntervalPolynomial.Certificate.upperOn_eq_of_rep`](../../SquaresInCircles/Eight/Arithmetic/PolynomialCertificates.lean#L694),
-[`Eight.WholeIntervalPolynomial.positive_on_interval`](../../SquaresInCircles/Eight/Arithmetic/WholeIntervalPolynomial.lean#L101).*
+[`Eight.Arithmetic.forwardMargin`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L72),
+[`Eight.Arithmetic.forwardMargin_actual`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L80),
+[`Eight.Arithmetic.margin_reverse`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L92),
+[`Eight.Arithmetic.charge_reverse`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L98),
+[`Eight.Arithmetic.lagrangian_identity`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L132).*
 
-The hypotheses $s \ne 0$, $n \le D$ and the inequality of Theorem L.3 are
-closed statements about integers computed from the formula of $p$; each is
-proved by `decide +kernel`. The lists themselves are built along the syntax of
-$p$ by a tactic that applies the rules of Lemma L.2 (1), so $p$ is never
-expanded by hand and no coefficient is copied from elsewhere. The upper bound
-of (L.1) is checked in the same way.
+So, for a fixed angle, $G$ is a constant plus a linear function on the source
+arc with constant coefficients, plus a linear function on the target arc whose
+coefficients depend on $\varphi$. Lemma L.1 bounds the first by a rational
+number, and the second by an endpoint value, which is a trigonometric
+polynomial in $\varphi$ with algebraic coefficients, or by the circle bound,
+which contains the radical $\sqrt{V_j}$.
 
-## L.3 Two variables
+## L.3 The last radical
 
-### Lemma L.4 (Chebyshev bound on a square)
+### Lemma L.3 (a polynomial majorant of the square root)
 
-Let $q(x, y) = \sum_{a, b \le D} q_{ab}\,x^ay^b$ have rational coefficients
-and put $c_{ij} = \sum_{a, b} q_{ab}\,\gamma_{ai}\gamma_{bj}$. Then
-$q = \sum_{i, j} c_{ij}\,T_i(x)T_j(y)$, and on $[-1, 1]^2$
+For a rational $h_0 > 0$ and every $V \ge 0$, with
 
 ```math
-c_{00} - \sum_{(i, j) \ne (0, 0)} |c_{ij}| \;\le\; q \;\le\; c_{00} + \sum_{(i, j) \ne (0, 0)} |c_{ij}| .
+T_{h_0}(V) = \frac1{16}\left(5h_0 + \frac{15V}{h_0} - \frac{5V^2}{h_0^3} + \frac{V^3}{h_0^5}\right),
 ```
 
-*Proof.* Lemma L.1 in each variable, and $|T_i(x)T_j(y)| \le 1$. $\square$
-
-*Lean:
-[`Eight.TensorWholeIntervalPolynomial.coefficient`](../../SquaresInCircles/Eight/Arithmetic/TensorWholeIntervalPolynomial.lean#L64),
-[`Eight.TensorWholeIntervalPolynomial.expansion`](../../SquaresInCircles/Eight/Arithmetic/TensorWholeIntervalPolynomial.lean#L82),
-[`Eight.TensorWholeIntervalPolynomial.lower_bound`](../../SquaresInCircles/Eight/Arithmetic/TensorWholeIntervalPolynomial.lean#L111),
-[`Eight.TwoVariablePolynomial.square_bounds`](../../SquaresInCircles/Eight/Arithmetic/TwoVariablePolynomial.lean#L166).*
-
-### Lemma L.5 (rectangles, triangles and trapezoids)
-
-Let $U = \frac{X + 1}2$ and $V = \frac{Y + 1}2$, which run over $[0, 1]$ when
-$X, Y$ run over $[-1, 1]$. The substitutions
+we have $T_{h_0}(V) \ge \sqrt V$; indeed
 
 ```math
-(x, y) = (aU,\ bV), \qquad (x, y) = (dU(1 - V),\ dUV), \qquad (x, y) = (dU,\ (l + dU)V)
+T_{h_0}(V) - \sqrt V = \frac{\left(\sqrt V - h_0\right)^4\left(V + 4h_0\sqrt V + 5h_0^2\right)}{16h_0^5} .
 ```
 
-map the square $[-1, 1]^2$ onto the rectangle $[0, a] \times [0, b]$, the
-triangle $x, y \ge 0$, $x + y \le d$, and the trapezoid $0 \le x \le d$,
-$0 \le y \le l + x$ ($a, b, d, l > 0$). So a bound of the substituted
-polynomial on the square (Lemma L.4) is a bound of $q$ on the region.
+*Proof.* With $w = \sqrt V$, both sides multiplied by $16h_0^5$ equal
+$w^6 - 5h_0^2 w^4 + 15h_0^4 w^2 - 16h_0^5 w + 5h_0^6$, as one checks by
+expanding $(w - h_0)^4(w^2 + 4h_0 w + 5h_0^2)$. $\square$
 
-*Proof.* Each map is onto: for the triangle, a point $(x, y) \ne o$ comes from
-$U = (x + y)/d$, $V = y/(x + y)$, and $o$ from $U = 0$; the trapezoid is
-similar. $\square$
+So the circle bound $v(X_t + Y_t) - \rho\sqrt{V_j}$ is at least
+$v(X_t + Y_t) - \rho\,T_{h_0}(V_j)$, a polynomial in $\sin\varphi$ and
+$\cos\varphi$. The majorant touches $\sqrt V$ to fourth order at $V = h_0^2$,
+and a row chooses $h_0$ near the value of $\sqrt{V_j}$ on its interval
+(Figure L.2). No minimization over states remains.
 
-*Lean:
-[`Eight.TwoVariablePolynomial.rectangle`](../../SquaresInCircles/Eight/Arithmetic/TwoVariablePolynomial.lean#L137),
-[`Eight.TwoVariablePolynomial.triangle`](../../SquaresInCircles/Eight/Arithmetic/TwoVariablePolynomial.lean#L140),
-[`Eight.TwoVariablePolynomial.trapezoid`](../../SquaresInCircles/Eight/Arithmetic/TwoVariablePolynomial.lean#L143),
-[`Eight.TwoVariablePolynomial.rectangle_bounds`](../../SquaresInCircles/Eight/Arithmetic/TwoVariablePolynomial.lean#L186),
-[`Eight.TwoVariablePolynomial.triangle_bounds`](../../SquaresInCircles/Eight/Arithmetic/TwoVariablePolynomial.lean#L201),
-[`Eight.TwoVariablePolynomial.trapezoid_bounds`](../../SquaresInCircles/Eight/Arithmetic/TwoVariablePolynomial.lean#L230).*
+![The graph of the square root of V for V from 0 to 4, and the polynomial majorant T_h0(V) for h0 = 1, which lies above it, touches it at V = 1 and stays very close to it between about 0.5 and 1.8; a second panel enlarges the difference T_h0(V) - root V for V from 0 to 2.5, which vanishes to fourth order at V = 1](figures/appendix-l/majorant.svg)
 
-![Three panels, each the image of a 10 by 10 grid of the square [-1, 1]^2 under one substitution of Lemma L.5, with the lines of constant U in blue and those of constant V in orange: the rectangle (aU, bV) with a straight grid; the triangle (dU(1 - V), dUV) with vertices o, (d, 0) and (0, d), whose lines of constant U are segments parallel to its long side and whose lines of constant V are rays from o, the whole side U = 0 collapsed to o; and the trapezoid (dU, (l + dU)V) over [0, d], whose lines of constant U are vertical segments and whose lines of constant V are segments that, extended, meet at the point (-l, 0)](figures/appendix-l/regions.svg)
+*Figure L.2.* Lemma L.3 for $h_0 = 1$: the majorant $T_{h_0}(V)$ (dashed)
+lies above $\sqrt V$ (solid) and touches it at $V = h_0^2$, where the
+difference (right, enlarged) vanishes to fourth order.
 
-*Figure L.1.* Lemma L.5: the images of a grid of the square $[-1, 1]^2$ under
-the three substitutions (lines of constant $U$ blue, of constant $V$ orange).
-The rectangle is a product; the triangle is covered by segments parallel to
-its long side and by rays from $o$, the side $U = 0$ of the square collapsing to
-the vertex $o$; the trapezoid by vertical segments and by segments through
-$(-l, 0)$. One square, and so one check, covers the whole region.
+## L.4 One angle
 
-The kernel computes bivariate coefficients on *packed* natural numbers. A
-polynomial $\sum n_{ij}X^iY^j$ of total degree at most $B$ with coefficients
-$0 \le n_{ij} < 2^w$ is stored as the single number
-$\sum n_{ij}\,2^{w(Si + j)}$, with $S = 2B + 1$, and a polynomial with
-coefficients of both signs as the difference of two such numbers. As the
-digits of a product of two such polynomials do not overlap, one product of
-natural numbers in the kernel computes the product of polynomials, provided no
-digit overflows; this is guaranteed by bounds on the sums of the digits, which
-are checked along the computation and recorded in a flag that every
-representation lemma assumes. The digit sum of a packed number, kept below
-$2^w - 1$, is its remainder modulo $2^w - 1$, since $2^w \equiv 1$; so the sum
-of the absolute values of the
-Chebyshev coefficients of Lemma L.4, computed in one variable and then in the
-other by the recurrence of Lemma L.2 (3) with shifts and masks, takes two
-remainders.
-The substitutions of Lemma L.5 are computed on packed numbers too.
-
-*Lean:
-[`Eight.PackedModels.pack`](../../SquaresInCircles/Eight/Arithmetic/PackedModels.lean#L182),
-[`Eight.BivariateCertificate.XM`](../../SquaresInCircles/Eight/Arithmetic/BivariateCertificates.lean#L1407),
-[`Eight.BivariateCertificate.XM.Rep`](../../SquaresInCircles/Eight/Arithmetic/BivariateCertificates.lean#L1434),
-[`Eight.BivariateCertificate.XM.rep_mul`](../../SquaresInCircles/Eight/Arithmetic/BivariateCertificates.lean#L1604),
-[`Eight.BivariateCertificate.XM.rep_triangleM`](../../SquaresInCircles/Eight/Arithmetic/BivariateCertificates.lean#L2350),
-[`Eight.BivariateCertificate.XM.rep_rectangleM`](../../SquaresInCircles/Eight/Arithmetic/BivariateCertificates.lean#L2360),
-[`Eight.BivariateCertificate.XM.final_spec`](../../SquaresInCircles/Eight/Arithmetic/BivariateCertificates.lean#L2514),
-[`Eight.BivariateCertificate.XM.lowerCheck`](../../SquaresInCircles/Eight/Arithmetic/BivariateCertificates.lean#L2613),
-[`Eight.BivariateCertificate.XM.lower_certificate`](../../SquaresInCircles/Eight/Arithmetic/BivariateCertificates.lean#L2624).*
-
-Often a bivariate numerator vanishes on one side of its region, or its bound is
-needed along a side. The restriction of a numerator to the line $y = 0$, the
-line $x = 0$, a line $y = tx$ or a polynomial curve is a ring homomorphism to
-univariate polynomials, computed on scaled lists, so the univariate checks of
-§L.2 apply along the side; an exact quotient by $X$ or by $X(\ell - X)$, which
-removes a vanishing side or the two ends of a chord, is verified by multiplying
-back.
-
-*Lean:
-[`Eight.CertificateRestrictions.yZero`](../../SquaresInCircles/Eight/Arithmetic/CertificateRestrictions.lean#L67),
-[`Eight.CertificateRestrictions.onLine`](../../SquaresInCircles/Eight/Arithmetic/CertificateRestrictions.lean#L707),
-[`Eight.CertificateRestrictions.RepOn`](../../SquaresInCircles/Eight/Arithmetic/CertificateRestrictions.lean#L329),
-[`Eight.CertificateRestrictions.lower_cert`](../../SquaresInCircles/Eight/Arithmetic/CertificateRestrictions.lean#L477),
-[`Eight.CertificateRestrictions.edge_div`](../../SquaresInCircles/Eight/Arithmetic/CertificateRestrictions.lean#L628),
-[`Eight.CertificateRestrictions.chord_cert`](../../SquaresInCircles/Eight/Arithmetic/CertificateRestrictions.lean#L663).*
-
-## L.4 Trigonometric terms and radicals
-
-### Lemma L.6 (Taylor polynomials)
-
-For $x \ge 0$, with $S_k$ and $C_k$ the Taylor polynomials of degree $k$ of
-the sine and the cosine,
+The angle enters through $\sin\varphi$, $\cos\varphi$ and
+$\chi(\varphi)$. With $\varphi = k\frac\pi2 + \epsilon u$ and
+$0 \le u \le \frac7{10}$,
 
 ```math
-S_7 \le \sin x \le S_9, \qquad C_{10} \le \cos x \le C_8, \qquad S_{11} \le \sin x \le S_{13}, \qquad C_{14} \le \cos x \le C_{12}, \qquad S_{15} \le \sin x \le S_{17}, \qquad C_{18} \le \cos x \le C_{16} .
+\tau(\varphi) = \tfrac12(1 + \sin u + \cos u), \qquad \chi(\varphi) = \tfrac12(\sin u + \cos u - 1), \qquad (\sin\varphi, \cos\varphi) = \begin{cases} (\epsilon\sin u,\ \cos u), & k = 0, \\ (\cos u,\ -\epsilon\sin u), & k = 1 . \end{cases}
 ```
 
-For $0 \le x \le \frac7{10}$, $0 \le \sin x - S_{15}(x) < 10^{-15}$ and
-$0 \le C_{16}(x) - \cos x < 10^{-15}$.
+### Lemma L.4 (Taylor bounds with interval remainders)
 
-*Proof.* Each difference vanishes at 0 and its derivative is the difference
-before it, so the inequalities follow one from another, starting from
-$\sin x \ge S_7(x)$. The remainders are at most
-$(\frac7{10})^{17}/17!$ and $(\frac7{10})^{18}/18!$. $\square$
-
-*Lean:
-[`Eight.Arithmetic.trig_taylor_bounds`](../../SquaresInCircles/Eight/Arithmetic/Taylor.lean#L75),
-[`Eight.HighOrderTaylor.S11_le_sin`](../../SquaresInCircles/Eight/Arithmetic/HighOrderTaylor.lean#L30),
-[`Eight.HighOrderTaylor.sin_le_S13`](../../SquaresInCircles/Eight/Arithmetic/HighOrderTaylor.lean#L50),
-[`Eight.HighOrderTaylor.C14_le_cos`](../../SquaresInCircles/Eight/Arithmetic/HighOrderTaylor.lean#L60),
-[`Eight.HighOrderTaylor.frame_remainders`](../../SquaresInCircles/Eight/Arithmetic/HighOrderTaylor.lean#L116).*
-
-So a sine or a cosine of a frame angle in $[0, \frac7{10}]$ is replaced by a
-polynomial on the side that the inequality needs. A frame angle that ranges
-over an interval becomes the variable of a check, and a fixed rational value of
-$\pi$ or of an angle enters through rational bounds.
-
-### Lemma L.7 (rational majorants of roots)
-
-For $P \ge 0$ and $w > 0$, $\sqrt P \le \frac{P + w^2}{2w}$, with equality
-exactly at $w = \sqrt P$. Hence, for polynomials $A$, $P_j \ge 0$ and $w_j > 0$
-($j = 1, \dots, k$) and $\bar R \ge 0$, if
+For $u \ge 0$,
 
 ```math
-2A\prod_j w_j - \bar R\sum_j\left(P_j + w_j^2\right)\prod_{i \ne j} w_i > 0 ,
+\sin u = S_7(u) + e_s u^9, \qquad \cos u = C_8(u) + e_c u^{10}, \qquad 0 \le e_s \le \tfrac1{9!}, \qquad -\tfrac1{10!} \le e_c \le 0 ,
 ```
 
-then $A > \bar R\sum_j\sqrt{P_j}$.
+where $S_7$ and $C_8$ are the Taylor polynomials of degrees 7 and 8 and
+$e_s$, $e_c$ depend on $u$. Moreover
+$3.14159265 < \pi < 3.14159266$, by Machin's formula and the alternating
+series of the arctangent; so $2\pi < \frac{710}{113}$ and
+$2\pi < 6.28318531$.
 
-*Proof.* $(\sqrt P - w)^2 \ge 0$; divide the hypothesis by $\prod_j w_j$.
-$\square$
-
-The bivariate checks of the owner analysis use this with *cubic masses*: $w_j$
-is a rational constant $\rho_j$ times the Taylor polynomial
-$1 + \frac\delta2 - \frac{\delta^2}8 + \frac{\delta^3}{16}$ of
-$\sqrt{1 + \delta}$, with $\delta = (P_j - P_j(0))/P_j(0)$, all truncated to
-total degree 3; for $\rho_j$ near $\sqrt{P_j(0)}$ this is a polynomial
-approximation of $\sqrt{P_j}$. The positivity of each mass is a check of its
-own.
+*Proof.* The alternating series give $S_7(u) \le \sin u \le S_9(u)$ and
+$C_{10}(u) \le \cos u \le C_8(u)$ for $u \ge 0$, and
+$S_9 - S_7 = \frac{u^9}{9!}$, $C_{10} - C_8 = -\frac{u^{10}}{10!}$. $\square$
 
 *Lean:
-[`Eight.TwoVariablePolynomial.cubicMass`](../../SquaresInCircles/Eight/Arithmetic/TwoVariablePolynomial.lean#L129),
-[`Eight.GlobalGA.PositiveBT3.LargeCertificate.numerator`](../../SquaresInCircles/Eight/Owners/GA/Positive/BT3LargeData.lean#L67),
-[`Eight.GlobalGA.PositiveBT3.LargeCertificate.mass`](../../SquaresInCircles/Eight/Owners/GA/Positive/BT3LargeData.lean#L60).*
+[`Eight.Arithmetic.trig_taylor_bounds`](../../SquaresInCircles/Eight/Arithmetic/Taylor.lean#L78),
+[`Eight.Arithmetic.sin_remainder_coefficient`](../../SquaresInCircles/Eight/Arithmetic/Taylor.lean#L84),
+[`Eight.Arithmetic.cos_remainder_coefficient`](../../SquaresInCircles/Eight/Arithmetic/Taylor.lean#L99),
+[`Eight.Arithmetic.pi_hand_enclosure`](../../SquaresInCircles/Eight/Arithmetic/Taylor.lean#L28),
+[`Eight.Arithmetic.two_pi_lt_710_over_113`](../../SquaresInCircles/Eight/Arithmetic/Taylor.lean#L33),
+[`Eight.Arithmetic.two_pi_lt_628318531_over_1e8`](../../SquaresInCircles/Eight/Arithmetic/Taylor.lean#L36).*
 
-### Lemma L.8 (Taylor models)
+Substituting these expressions, with the interval coefficients $e_s$ and
+$e_c$ and the rational brackets of $\pi$ and of the algebraic endpoint
+coordinates, turns each bound of §L.2 and §L.3 into a polynomial in $u$
+whose coefficients are intervals. Since $u \ge 0$, replacing every coefficient
+by the lower end of its interval gives a polynomial $\underline G(u)$ with
+rational coefficients and $\underline G(u) \le$ the bound, pointwise, even
+though $e_s$ and $e_c$ vary with $u$; no derivative of a remainder is needed.
+Its degree is at most 10 for the endpoint rules and at most 30 for the circle
+rule. The support premises of the rules (the sign conditions in Lemma L.1 (2)
+and (3)) are treated in the same way, as polynomial inequalities in $u$.
 
-An expression in two variables $x, y \in [-1, 1]$ built from rational
-constants, sums, products, powers, sines and cosines of arguments in
-$[0, \frac7{10}]$, square roots and reciprocals has a *model*, computed by
-integer operations when the checks below pass: a polynomial $m(x, y)$ and a
-number $e \ge 0$ with $|v(x, y) - m(x, y)| \le e$ on the whole square, where
-$v$ is the value of the expression. In particular:
+### Lemma L.5 (Bernstein coefficients)
 
-1. a product of models is truncated to total degree $B$ and rounded to
-   multiples of $2^{-K}$, and the discarded and rounded parts are added to the
-   error, bounded by the sums of their absolute coefficients;
-2. $\sin$ and $\cos$ use $S_{13}$ and $C_{14}$, with the errors
-   $(\frac7{10})^{15}/15!$ and $(\frac7{10})^{16}/16!$, after a check that the
-   model of the argument lies in $[0, \frac7{10}]$;
-3. $\sqrt v$ and $1/v$ are expanded about a rational $v_0 > 0$ at the constant
-   term of the model of $v$: $v = v_0(1 + h)$ with
-   $|h| \le \sigma < \frac{19}{200}$, and
-   $(1 + h)^{1/2}$ or $(1 + h)^{-1}$ is replaced by its binomial series up to
-   degree 12, with the error $|\kappa_{13}|\,\sigma^{13}/(1 - \sigma)$, since
-   the absolute binomial coefficients $|\kappa_n|$ decrease from $n = 13$ on.
+Let $\underline G$ be a polynomial of degree $n$ and $[u_0, u_1]$ an interval.
+Write $\underline G(u_0 + (u_1 - u_0)x) = \sum_{j=0}^n g_j\binom nj x^j(1 - x)^{n - j}$.
+If every $g_j > 0$, then $\underline G > 0$ on $[u_0, u_1]$; if every
+$g_j \ge 0$, then $\underline G \ge 0$ there.
 
-If all the Bernstein coefficients of degree $n$ in each variable of $m$ are
-at least $\rho + e$, then $v \ge \rho$ on the square.
-
-*Proof.* (1) and (2) by the triangle inequality and Lemma L.6. (3) The
-binomial series of $(1 + h)^\alpha$ converges for $|h| < 1$, and its tail from
-degree 13 is at most $|\kappa_{13}|\sum_{k \ge 0}\sigma^{13 + k}$. The Bernstein
-polynomials of degree $n$ in each variable are nonnegative on the square and
-add up to 1. $\square$
+*Proof.* The Bernstein basis polynomials are nonnegative on $[0, 1]$ and add
+up to $(x + 1 - x)^n = 1$, so $\underline G$ is at least the least $g_j$. $\square$
 
 *Lean:
-[`Eight.PackedModels.Model`](../../SquaresInCircles/Eight/Arithmetic/PackedModels.lean#L840),
-[`Eight.PackedModels.Model.Contains`](../../SquaresInCircles/Eight/Arithmetic/PackedModels.lean#L858),
-[`Eight.PackedModels.Model.contains_mul`](../../SquaresInCircles/Eight/Arithmetic/PackedModels.lean#L1373),
-[`Eight.PackedModels.Model.contains_sin`](../../SquaresInCircles/Eight/Arithmetic/PackedModels.lean#L1587),
-[`Eight.PackedModels.Model.contains_sqrt`](../../SquaresInCircles/Eight/Arithmetic/PackedModels.lean#L2836),
-[`Eight.RoundedBinomialEnclosure.binomial_remainder`](../../SquaresInCircles/Eight/Arithmetic/RoundedBinomialEnclosure.lean#L116),
-[`Eight.PackedModels.IE.eval_sound`](../../SquaresInCircles/Eight/Arithmetic/PackedModels.lean#L3092),
-[`Eight.PackedModels.bernCheck_sound`](../../SquaresInCircles/Eight/Arithmetic/PackedModels.lean#L2519),
-[`Eight.PackedModels.check_lt`](../../SquaresInCircles/Eight/Arithmetic/PackedModels.lean#L3317).*
+[`Eight.Arithmetic.bernsteinBasis_nonneg`](../../SquaresInCircles/Eight/Arithmetic/Bernstein.lean#L42),
+[`Eight.Arithmetic.bernsteinBasis_sum`](../../SquaresInCircles/Eight/Arithmetic/Bernstein.lean#L49),
+[`Eight.Arithmetic.bernstein_lower`](../../SquaresInCircles/Eight/Arithmetic/Bernstein.lean#L63),
+[`Eight.Arithmetic.BernsteinRow.Valid.sound`](../../SquaresInCircles/Eight/Arithmetic/Bernstein.lean#L99),
+[`Eight.Arithmetic.BernsteinRow.valid_of_check`](../../SquaresInCircles/Eight/Arithmetic/BernsteinCheck.lean#L121).*
 
-A second family of models, with exact rational coefficients, certifies a root
-or a reciprocal by its residual: if $r$ is any polynomial and $P$ the model of
-$v$, then $|\sqrt v - r| \le |v - r^2|/(\sqrt v + r)$ and
-$|1/v - r| = |1 - vr|/v$, and the norms of $r^2 - P$ and $Pr - 1$ bound the
-numerators. The square-root domains, the denominators and the trigonometric
-arguments are checked on the rationals.
+## L.5 Proof of Proposition 11.31 (1)
+
+*Proof.* Reduce the axes 2 and 3 to 4 and 1 by Lemma L.2. For each $u$ in the
+row's interval, $G$ is at least the rational lower bound of the source term
+(Lemma L.1, by the signs of the constant coefficients $X_s$, $Y_s$) plus the
+bound of the target term by the row's rule (Lemma L.1, with Lemma L.3 for the
+circle rule), plus the explicit terms in $\varphi$. Lemma L.4 turns this into
+a polynomial $\underline G(u)$ with $\underline G \le G$, and the premises of
+the rule into polynomials whose nonnegativity implies them. The row supplies
+lower bounds for the Bernstein coefficients of all these polynomials on
+$[u_0, u_1]$; if the premise coefficients are nonnegative and the cost
+coefficients positive, Lemma L.5 gives (L.1). Every step is an inequality
+valid on the whole product of the two arcs and the interval. $\square$
 
 *Lean:
-[`Eight.TensorResidualEnclosure.Contains.root`](../../SquaresInCircles/Eight/Owners/Tensor/ResidualEnclosure.lean#L51),
-[`Eight.TensorResidualEnclosure.Contains.reciprocal`](../../SquaresInCircles/Eight/Owners/Tensor/ResidualEnclosure.lean#L103),
-[`Eight.TensorRadicalExpression.Expr.Valid`](../../SquaresInCircles/Eight/Arithmetic/TensorRadicalExpression.lean#L65),
-[`Eight.TensorRadicalExpression.Expr.contains`](../../SquaresInCircles/Eight/Arithmetic/TensorRadicalExpression.lean#L108).*
+[`Eight.Arithmetic.CoreRow`](../../SquaresInCircles/Eight/Arithmetic/CoreRow.lean#L33),
+[`Eight.Arithmetic.CoreRow.Positive`](../../SquaresInCircles/Eight/Arithmetic/CoreRow.lean#L67),
+[`Eight.Arithmetic.coreCheck_positive`](../../SquaresInCircles/Eight/Arithmetic/RowCheck.lean#L1116),
+[`Eight.Arithmetic.CoreRow.sound_of_positive`](../../SquaresInCircles/Eight/Arithmetic/CoreRow.lean#L79),
+[`Eight.Arithmetic.PreparedRow.sound_of_positive`](../../SquaresInCircles/Eight/Arithmetic/PreparedRow.lean#L62),
+[`Eight.Arithmetic.PreparedRow.claim_of_positive`](../../SquaresInCircles/Eight/Arithmetic/PreparedRow.lean#L136),
+[`Eight.Arithmetic.checkRow_claim`](../../SquaresInCircles/Eight/Arithmetic/RowCheck.lean#L1277).*
 
-## L.5 A worked example
+In the formal proof the data of a row are only its arcs, axis, angle
+interval, multiplier, rule and $h_0$; the polynomial $\underline G$, its
+Bernstein coefficients and their positivity are recomputed in Lean, and the
+expansion is checked as an identity of polynomials with rational coefficients,
+so that no coefficient list is trusted. A row whose arithmetic fails makes
+the table's proof fail; nothing else is assumed about it.
 
-In the word analysis of [Chapter 11](11-eight.md), a reference contact at the
-frame angle $p \in [\frac{11}{50}, \frac7{10}]$ and the squared radius
-$q \in [\frac{19577}{5000}, \frac{9789}{2500}]$ defines a gap $g(p)$, and the
-proof needs $g' > 0$. With $R = \sqrt q$, $u = \sqrt{q/2} - 1 - \sin p$,
-$z = \sqrt{q - u^2}$, the point
-$(x, y) = (z\cos p - u\sin p,\ z\sin p + u\cos p)$ of the circle of radius $R$,
-$\beta = x(1 - \cos p/z)$ and $\ell = 1 + \cos\frac7{10} - y$,
+![The polynomial P of band A of Table K.2 against u on its cell from 7/16 to 1/2, in units of 10^-6, a positive convex curve from 1375 down to about 354 and up to 2709, with the polygon of its seven Bernstein control points, labelled 1375, 566, 120, 76, 471, 1339 and 2709, all above zero; a dashed line at the least of them, 76, lies below the curve](figures/appendix-l/bernstein.svg)
+
+*Figure L.3.* Lemma L.5 for the polynomial $P$ of band A of Table K.2 on its
+tightest cell $[\frac7{16}, \frac12]$: its Bernstein control points (dots) are
+positive, the least being $76 \cdot 10^{-6}$, so the polynomial (curve), which
+lies above the lowest of them, is positive. The rows of the affine-arc tables
+are checked in the same way, at higher degree.
+
+## L.6 Covers
+
+A table proves its cyclic bound only if every case is covered. Two kinds of
+cover are checked, separately from the rows.
+
+*States.* For each role and sign, the closed tangent intervals of the arcs of
+that role, on $\mathcal O_Q$ and on $\mathcal C$, must cover the declared
+interval of the signed tangent, consecutive arcs sharing an endpoint, and the
+core curve must be cut at the tangent $\frac67$ between its side and its
+corner. At a shared endpoint either arc may be chosen, once for the square, so
+that each square has one label on both of its edges.
+
+*Angles.* For a pair of arcs with signed tangent angles in
+$[\alpha_s^-, \alpha_s^+]$ and $[\alpha_t^-, \alpha_t^+]$, the gap bounds
+(11.4) and $\delta = \varphi + \alpha_s - \alpha_t$ give the necessary range
 
 ```math
-g' = \beta\left(\frac\ell{\sqrt{q - \ell^2}} + \frac yx\left(1 - \frac{\cos p}R\right)\right) - \frac{x\sin p}R ,
+\tfrac{19}{25} - \alpha_s^+ + \alpha_t^- < \varphi < \tfrac{710}{113} - \tfrac{114}{25} - \alpha_s^- + \alpha_t^+ ,
 ```
 
-a function of $p$ and $q$ with four radicals and several quotients.
-
-*The polynomial.* Let $S_3$, $S_5$, $C_2$, $C_4$ be Taylor polynomials of the
-sine and the cosine in $p$, $R_\ell = \frac{19787}{10000}$ and
-$R_h = \frac{4947}{2500}$ (bounds of $R$), $Z_\ell = \frac{981}{500}$ (a lower
-bound of $z$), $P_\ell = \frac{3991}{10000}$ and $P_h = \frac{3993}{10000}$
-(bounds of $\sqrt{q/2} - 1$), and
-
-```math
-\begin{gathered}
-Y_\ell = (Z_\ell - C_4)S_3 + P_\ell C_2, \qquad Y_h = (R_h - C_2)S_5 + P_h C_4, \qquad X_\ell = Z_\ell C_2 - P_h S_5 + S_3^2, \qquad X_h = R_h C_4 - P_\ell S_3 + S_5^2, \\
-A_\ell = 1 - C_4/Z_\ell, \qquad L_\ell = \tfrac{1103}{625} - Y_h, \qquad N = R_\ell\,X_\ell A_\ell\left(L_\ell X_h + R_h\,Y_\ell A_\ell\right) - R_h\,X_h^2\,S_5 ,
-\end{gathered}
-```
-
-a polynomial in $p$ of degree 27 with rational coefficients.
-
-*The check.* A scaled list representing $N$ is built along this formula. It is
-centred on $[\frac{11}{50}, \frac7{10}]$ with $\nu = 1$, $\delta = 50$,
-$\sigma = 23$, $\tau = 12$, since $\frac{a + b}2 = \frac{23}{50}$ and
-$\frac{b - a}2 = \frac{12}{50}$; its 28 Chebyshev coefficients are computed; and
-the inequality of Theorem L.3 for $\rho = \frac{8179}{10000}$ is decided. In
-exact arithmetic $c_0 \approx 2.23622$ and
-$\sum_{j \ge 1}|c_j| \approx 1.41830$, almost all of it from
-$|c_1| \approx 1.22176$ and $|c_2| \approx 0.19456$; the coefficients from $c_3$
-on are below $0.0016$ and fall to $10^{-34}$. So
-$N > c_0 - \sum|c_j| \approx 0.817922 > 0.8179$ on the interval (Figure L.2).
-The same check proves $Y_\ell$, $Y_h$, $X_\ell$, $X_h$, $A_\ell$ and $L_\ell$
-positive there, at degree 10.
-
-*The transfer.* From the circle and contact formulas, on the same interval and
-for the same $q$: $R_\ell \le R \le R_h$, $Z_\ell < z \le R$,
-$X_\ell \le x \le X_h$, $Y_\ell \le y$, $L_\ell \le \ell$,
-$X_\ell A_\ell \le \beta$, $A_\ell \le 1 - \cos p/R$ and $0 \le \sin p \le S_5$,
-with the polynomials evaluated at $p$. Replacing each factor of $g'$ by its
-bound in the unfavourable direction, and the radical $\sqrt{q - \ell^2} \le R$
-by $R_h$,
-
-```math
-g' \ge X_\ell A_\ell\left(\frac{L_\ell}{R_h} + \frac{Y_\ell A_\ell}{X_h}\right) - \frac{X_h S_5}{R_\ell} = \frac N{R_\ell R_h X_h} > 0 .
-```
-
-So the reference gap increases on $[\frac{11}{50}, \frac7{10}]$.
+which is intersected with $k\frac\pi2 + [-\frac7{10}, \frac7{10}]$, and with
+the declared range of the frame difference when an earlier mismatch bound is
+assumed. The arctangent endpoints are enclosed by the half-angle formula
+$\arctan x = 2\arctan\frac x{1 + \sqrt{1 + x^2}}$ and the alternating series
+of the arctangent through the powers 49 and 51. For every edge, pair of arcs
+and permitted original axis, the rows' angle intervals must form a closed
+chain covering both halves, $\epsilon = \pm1$, of the necessary range,
+consecutive intervals meeting at a common rational endpoint; an isolated
+endpoint of the range must be covered too.
 
 *Lean:
-[`Eight.OutsideDE2Polynomial.certificate`](../../SquaresInCircles/Eight/Words/Outside/EEndpoint.lean#L50),
-[`Eight.OutsideDE2Polynomial.expansion_identity`](../../SquaresInCircles/Eight/Words/Outside/EEndpoint.lean#L80),
-[`Eight.OutsideDE2Polynomial.coefficient_reserve`](../../SquaresInCircles/Eight/Words/Outside/EEndpoint.lean#L87),
-[`Eight.OutsideDE2Polynomial.certificate_positive`](../../SquaresInCircles/Eight/Words/Outside/EEndpoint.lean#L104),
-[`Eight.OutsideDE2Polynomial.factor_positive`](../../SquaresInCircles/Eight/Words/Outside/EEndpoint.lean#L171),
-[`Eight.OutsideDE2Polynomial.derivative_lower_positive`](../../SquaresInCircles/Eight/Words/Outside/EEndpoint.lean#L197),
-[`Eight.OutsideDE2Polynomial.derivative_positive`](../../SquaresInCircles/Eight/Words/Outside/EEndpoint.lean#L220),
-[`Eight.OutsideDE2Reference.Bounds`](../../SquaresInCircles/Eight/Words/Outside/EEndpoint.lean#L349),
-[`Eight.OutsideDE2Reference.derivative_pos`](../../SquaresInCircles/Eight/Words/Outside/EEndpoint.lean#L453),
-[`Eight.OutsideDE2Reference.gap_deriv`](../../SquaresInCircles/Eight/Words/Outside/ECycle.lean#L235),
-[`Eight.OutsideDE2Reference.gap_strictMono`](../../SquaresInCircles/Eight/Words/Outside/ECycle.lean#L335).*
+[`Eight.Arithmetic.StateChains`](../../SquaresInCircles/Eight/Arithmetic/StateCoverage.lean#L142),
+[`Eight.Arithmetic.StateChains.covers`](../../SquaresInCircles/Eight/Arithmetic/StateCoverage.lean#L159),
+[`Eight.Arithmetic.boundary_arc_contains`](../../SquaresInCircles/Eight/Arithmetic/StateCoverage.lean#L127),
+[`Eight.Arithmetic.ClosedChain`](../../SquaresInCircles/Eight/Arithmetic/ClosedCover.lean#L31),
+[`Eight.Arithmetic.ClosedChain.covers`](../../SquaresInCircles/Eight/Arithmetic/ClosedCover.lean#L40),
+[`Eight.Arithmetic.PairCover.atanLo_le`](../../SquaresInCircles/Eight/Arithmetic/AtanBounds.lean#L303),
+[`Eight.Arithmetic.PairCover.le_atanHi`](../../SquaresInCircles/Eight/Arithmetic/AtanBounds.lean#L320),
+[`Eight.Arithmetic.endpointsValid_atanEnds`](../../SquaresInCircles/Eight/Arithmetic/RowCover.lean#L618),
+[`Eight.Arithmetic.atanLower_le`](../../SquaresInCircles/Eight/Arithmetic/Arctangent.lean#L25),
+[`Eight.Arithmetic.arctan_le_atanUpper`](../../SquaresInCircles/Eight/Arithmetic/Arctangent.lean#L43),
+[`Eight.Arithmetic.AffineCover.required_mem`](../../SquaresInCircles/Eight/Arithmetic/AffineCoverage.lean#L223),
+[`Eight.Arithmetic.coverBlocks_sound`](../../SquaresInCircles/Eight/Arithmetic/RowCover.lean#L532).*
 
-![Two panels. Left: the polynomial N of degree 27 against p from 11/50 to 7/10, decreasing from about 3.65 to its least value, about 1.21, at 7/10, and the dashed horizontal line of the Chebyshev bound c0 - sum |cj|, about 0.818, below the whole curve. Right: the absolute values of the 28 Chebyshev coefficients c0 to c27 on a logarithmic scale, from about 2.2 and 1.2 down to about 10^-34, falling roughly geometrically](figures/appendix-l/example.svg)
+![The two radial curves at the level Q1 in the (a, b)-plane, with the arcs of the role G in the coarse table of the mismatch chain drawn alternately in two colours: 25 arcs on the outer curve, with endpoints at the tangents 1/20, then multiples of 1/32, then 4/5, and 8 arcs on the side a = 7/12 of the core curve, with endpoints at 1/20, multiples of 3/28 and 4/5; dashed rays from the origin mark the tangents 1/20 and 4/5 that bound the declared range](figures/appendix-l/cover.svg)
 
-*Figure L.2.* The check of §L.5. Left: the polynomial $N$ on
-$[\frac{11}{50}, \frac7{10}]$ (solid) and the bound
-$c_0 - \sum_{j \ge 1}|c_j| \approx 0.8179$ of Lemma L.1 (dashed), which lies
-below $N$ everywhere. Right: the Chebyshev coefficients $|c_j|$ on a
-logarithmic scale; past $j = 2$ they are too small to matter.
+*Figure L.4.* The state cover of one role in the coarse table of
+Proposition 11.34 (1): the arcs of the role $G$, with the sign $-1$, on
+$\mathcal O_{Q_1}$ and on $\mathcal C$ (alternately coloured). Their endpoints
+are rational tangents, consecutive arcs share an endpoint, and together they
+cover both curves over the declared range $\frac1{20} \le b/a \le \frac45$,
+that is $-\frac45 \le \tau_G \le -\frac1{20}$; on $\mathcal C$ this range
+lies on the side, below the cut at $\frac67$.
 
-## L.6 Interval evaluation
+## L.7 Pair tables
 
-Appendix J and §M.6 bound expressions with square roots and reciprocals on
-boxes by interval arithmetic instead.
+The four-type table of Proposition 11.21 and the word tables of
+Proposition 11.26 are proved by rows of the same kind, on arcs chosen for each
+problem, together with a coverage tree for each problem.
 
-### Lemma L.9 (interval evaluation)
+*Problems.* A problem fixes a source end and a target end, each with a chart
+(the outer curve, or the side or the corner of the core curve), a closed
+interval of the tangent $b/a$, a sign and a label; an original axis; a charge
+$\beta$ ($\frac9{50}$ for the four types, 0 for the words); a target
+$\gamma$; and halves $(k, \epsilon, u^+)$, on which
+$\varphi = k\frac\pi2 + \epsilon u$ with $0 \le u \le u^+$. The four-type
+problems have the six halves $(0, -, 1)$, $(0, +, \frac45)$,
+$(1, \pm, \frac45)$, $(2, -, \frac45)$, $(2, +, \frac{43}{50})$, which cover
+$\varphi \in [-1, 4]$ because $\frac\pi2 - \frac45 \le \frac45$ and
+$\pi + \frac{43}{50} \ge 4$; the word problems have the two halves
+$(k, \pm, \frac7{10})$ of the frame difference. The claim of a problem is
+the charged inequality $\gamma < \varphi + L_s(a, b) - L_t(a', b') - \beta
+\chi(\varphi)$ for all states on its two ends and all angles of a half that
+satisfy the gap bounds (11.4) and the margin of its axis.
 
-Let an expression in $n$ variables be built from rational constants, sums,
-negatives, products, powers, reciprocals and square roots, and let a box of
-rational intervals be given.
+*Labels.* A label is $c + pa + qb + rb^2 + sab$ whose constant $c$ lies in a
+rational interval: it contains $\sqrt{Q_0 - \frac14}$ or $\sqrt{Q_0/2}$ and
+$\pi$ for two of the four types, and $r$, $s$ vanish except for the markers of
+$0011011$. An arc of a table carries an affine label, below the label on the
+whole arc for a source arc and above it for a target arc. On a circle chart
+$a^2 + b^2 = \kappa_0 + \kappa_1(a + b)$, and each of $x = a, b, a + b, a - b$
+lies between bounds $x^- \le x \le x^+$ given by the supports of Lemma L.1 on
+the arc, so $(x - x^-)(x^+ - x) \ge 0$. The difference of the label and the
+affine label, minus nonnegative multiples of these products (fixed by the signs
+of $r$ and $s$) and a multiple of the circle identity, is affine in $(a, b)$,
+and its minimum over $[a^-, a^+] \times [b^-, b^+]$ must be nonnegative. On
+the side $a = \frac7{12}$, and $b^2$ is bounded above by its secant and below
+by its tangent at the midpoint.
 
-1. *(Fixed point.)* Enclose every input by integers $l, h$ with
-   $l\,2^{-p} \le x \le h\,2^{-p}$, and every operation by rounding its
-   integer result outwards at the scale $2^{-p}$; a reciprocal or a square root
-   is admitted only if the enclosure of its argument has a positive lower end.
-   If one pass succeeds, the value of the expression at every point of the box
-   lies in the final enclosure, and every radicand and every inverted value is
-   positive on the box.
-2. *(Rational.)* Give each square root, and any subexpression, a rational
-   bracket, and check on the rationals that every reciprocal has an argument of
-   positive interval value, that every square-root bracket is nonnegative and
-   its ends square to bounds of the interval value of its argument, and that
-   every other bracket contains the interval value of its subexpression. Then
-   the value at every point of the box lies in the interval value.
-
-*Proof.* Each operation of interval arithmetic contains the results of the
-operation on members of its operands; a product lies between the four products
-of the endpoints; outward rounding only enlarges an interval. Induction on the
-expression. $\square$
+*Trees.* A tree splits the box (source tangent) $\times$ (target tangent)
+$\times$ $u$ of a half by bisections. At a gap leaf, rational bounds of the
+arctangents at the ends of the two tangent intervals confine $u$, through
+(11.4), to an interval disjoint from the cell; at a trim leaf, to a
+subinterval on which the tree goes on. At a row leaf the next row of the table
+covers the cell: its arcs contain the two tangent intervals, on the same charts
+with the same signs and labels; its angle interval contains the cell's; and it
+has the axis, the quarter and the half of the problem and a target at least
+$\gamma$. The rows are taken in the order of the leaves. The arctangent bounds
+use $\arctan x = \arctan c + \arctan\frac{x - c}{1 + xc}$ at the anchor
+$c = \frac j{16}$ nearest to $x$ and the alternating series through the powers
+9 and 11; each anchor follows from the previous one by the same formula.
 
 *Lean:
-[`Eight.Stationary.FixedEval.DI`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L1199),
-[`Eight.Stationary.FixedEval.eval_sound`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L1422),
-[`Eight.Stationary.FixedEval.bounded_sound`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L1512),
-[`Eight.Stationary.FixedEval.regular_sound`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L1531),
-[`Eight.Arithmetic.QInterval`](../../SquaresInCircles/Eight/Arithmetic/Interval.lean#L27),
-[`Eight.Arithmetic.QInterval.product_between_corners`](../../SquaresInCircles/Eight/Arithmetic/Interval.lean#L69),
-[`Eight.Arithmetic.QInterval.mem_sqrt`](../../SquaresInCircles/Eight/Arithmetic/Interval.lean#L144),
-[`Eight.Arithmetic.ScalarExpr.Valid`](../../SquaresInCircles/Eight/Arithmetic/ScalarExpr.lean#L73),
-[`Eight.Arithmetic.ScalarExpr.sound`](../../SquaresInCircles/Eight/Arithmetic/ScalarExpr.lean#L90).*
-
-The fixed-point evaluation, at 80 to 200 bits, gives the bounds of
-Lemma J.2 and Proposition J.5 (46 checks); the rational one gives the eighteen
-bounds on the box of parameters of the family in §M.6 (54 checks).
-
-## L.7 The checks of the proof
-
-| kind of check | method | modules | `decide +kernel` |
-| --- | --- | --: | --: |
-| one variable on an interval | §L.1, §L.2 | 40 | 526 |
-| two variables on a triangle, rectangle or trapezoid, and along its sides | §L.3, Lemma L.7 | 15 | 137 |
-| Taylor models with sines, cosines, roots and reciprocals | Lemma L.8 | 7 | 7 |
-| interval evaluation | §L.6 | 2 | 100 |
-| identities of formulas, finite enumerations | | 3 | 9 |
-| total | | 67 | 779 |
-
-*Table L.1.* The kernel checks of the proof of eight squares, by kind, counted
-as occurrences of `decide +kernel` in the Lean files. One occurrence may decide
-a conjunction: an inequality with its side conditions ($s \ne 0$, the length of
-a list, the flag of a packed model), or the same check for several cases.
-
-All of the checks of the first three kinds belong to the owner and word analysis
-of Chapter 11. A typical one-variable check proves, on an interval of a frame
-angle, that a margin, a gap, a derivative or a weighted sum of constraints is
-positive, after Taylor polynomials have replaced the sines and cosines and
-rational bounds the constants; the Chebyshev expansions have degrees from a few
-units up to 84. The two-variable checks bound, over triangles, rectangles and
-trapezoids of two angles, numerators of weighted sums with cubic masses (Lemma
-L.7) and their restrictions to the sides, with degrees up to 39 in each
-variable, and a tangent cap on the square $[0, 0.09]^2$ by one tensor expansion
-of degree 14. The seven Taylor-model checks each decide a whole list of
-inequalities at once, on the gains and derivatives of the sign cases of the
-sliding square $T$, whose formulas mix roots, reciprocals, sines and cosines.
-The interval evaluations are those of Appendix J and §M.6. The last line of
-Table L.1 counts the six identities between the symbolic derivatives of the
-stationary formulas (§J.1) and the finite enumerations of the quarter words and
-of the four-type walks of Chapter 11.
+[`Eight.Arithmetic.PairCover.PairProblem.Cell`](../../SquaresInCircles/Eight/Arithmetic/PairCover.lean#L86),
+[`Eight.Arithmetic.PairCover.treeCheck_sound`](../../SquaresInCircles/Eight/Arithmetic/PairCover.lean#L492),
+[`Eight.Arithmetic.PairCover.problemsCheck_sound`](../../SquaresInCircles/Eight/Arithmetic/PairCover.lean#L618),
+[`Eight.Arithmetic.PairCover.table_sound`](../../SquaresInCircles/Eight/Arithmetic/PairCover.lean#L639),
+[`Eight.Arithmetic.lowerCheck_sound`](../../SquaresInCircles/Eight/Arithmetic/LabelRelax.lean#L287),
+[`Eight.Arithmetic.labelsCheck_sound`](../../SquaresInCircles/Eight/Arithmetic/LabelRelax.lean#L384),
+[`Eight.Arithmetic.PairCover.anchor_bounds`](../../SquaresInCircles/Eight/Arithmetic/AtanBounds.lean#L227),
+[`Eight.Arithmetic.PairCover.atanLo_le`](../../SquaresInCircles/Eight/Arithmetic/AtanBounds.lean#L303),
+[`Eight.Arithmetic.PairCover.le_atanHi`](../../SquaresInCircles/Eight/Arithmetic/AtanBounds.lean#L320).*

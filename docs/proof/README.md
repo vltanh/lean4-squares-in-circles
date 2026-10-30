@@ -37,9 +37,9 @@ $\frac\pi3$ apart. For eight squares the lower bound is proved directly: one
 square holds a small disk about the centre, the frames of the other seven are
 forced close together and into the arrangement of the optimal packing, and a
 weighted sum of separating inequalities with balanced weights gives the
-radius. The step that pins the frames is a case analysis whose leaf
-inequalities, polynomial bounds on intervals, triangles and rectangles, are
-checked exactly by Lean's kernel. Every result is proved in Lean 4 with mathlib, and each
+radius. The step that pins the frames rests on finite tables of explicit
+inequalities, each proved on whole intervals of positions and angles and
+checked in Lean. Every result is proved in Lean 4 with mathlib, and each
 numbered statement names the declarations that prove it.
 
 ## Contents
@@ -128,16 +128,15 @@ numbered statement names the declarations that prove it.
   - [11.1 Construction](11-eight.md#111-construction)
   - [11.2 The central square and the one-twelfth core](11-eight.md#112-the-central-square-and-the-one-twelfth-core)
   - [11.3 The boundary neighbour cycle](11-eight.md#113-the-boundary-neighbour-cycle)
-  - [11.4 Radius levels](11-eight.md#114-radius-levels)
+  - [11.4 Three radius levels](11-eight.md#114-three-radius-levels)
   - [11.5 Frame concentration](11-eight.md#115-frame-concentration)
   - [11.6 Quarter words](11-eight.md#116-quarter-words)
-  - [11.7 The candidate frame and the signed cycle](11-eight.md#117-the-candidate-frame-and-the-signed-cycle)
-  - [11.8 The owners of six edges](11-eight.md#118-the-owners-of-six-edges)
-  - [11.9 The high axes of the pair G, A](11-eight.md#119-the-high-axes-of-the-pair-g-a)
-  - [11.10 The hard axes and the stationary frames](11-eight.md#1110-the-hard-axes-and-the-stationary-frames)
-  - [11.11 The exact polynomial checks](11-eight.md#1111-the-exact-polynomial-checks)
-  - [11.12 The lower bound](11-eight.md#1112-the-lower-bound)
-  - [11.13 The packings at the optimal radius](11-eight.md#1113-the-packings-at-the-optimal-radius)
+  - [11.7 Candidate coordinates and the tangent exclusions](11-eight.md#117-candidate-coordinates-and-the-tangent-exclusions)
+  - [11.8 What an affine-arc table row proves](11-eight.md#118-what-an-affine-arc-table-row-proves)
+  - [11.9 The mismatch chain](11-eight.md#119-the-mismatch-chain)
+  - [11.10 Owners, tilt and the sharp terminal](11-eight.md#1110-owners-tilt-and-the-sharp-terminal)
+  - [11.11 The unrestricted lower bound and the pullback](11-eight.md#1111-the-unrestricted-lower-bound-and-the-pullback)
+  - [11.12 The equality domain](11-eight.md#1112-the-equality-domain)
 - [Appendix A. One-variable estimates](appendix-a.md)
   - [A.1 Monotonicity and concavity](appendix-a.md#a1-monotonicity-and-concavity)
   - [A.2 Sine and cosine](appendix-a.md#a2-sine-and-cosine)
@@ -203,30 +202,33 @@ numbered statement names the declarations that prove it.
   - [J.1 The chain](appendix-j.md#j1-the-chain)
   - [J.2 Convexity on the local rectangle](appendix-j.md#j2-convexity-on-the-local-rectangle)
   - [J.3 The minimized defect](appendix-j.md#j3-the-minimized-defect)
-  - [J.4 The stationary solution](appendix-j.md#j4-the-stationary-solution)
-  - [J.5 The weights](appendix-j.md#j5-the-weights)
+  - [J.4 Every solution lies in the local rectangle](appendix-j.md#j4-every-solution-lies-in-the-local-rectangle)
+  - [J.5 Proof of Proposition 11.4](appendix-j.md#j5-proof-of-proposition-114)
+  - [J.6 The weights](appendix-j.md#j6-the-weights)
 - [Appendix K. Eight squares: the central core](appendix-k.md)
   - [K.1 Arcs on two circles](appendix-k.md#k1-arcs-on-two-circles)
   - [K.2 A positive depth](appendix-k.md#k2-a-positive-depth)
   - [K.3 Common points](appendix-k.md#k3-common-points)
   - [K.4 Directions blocked by a rectangle](appendix-k.md#k4-directions-blocked-by-a-rectangle)
-  - [K.5 The one-twelfth core](appendix-k.md#k5-the-one-twelfth-core)
-- [Appendix L. Eight squares: the exact polynomial checks](appendix-l.md)
-  - [L.1 A polynomial on an interval](appendix-l.md#l1-a-polynomial-on-an-interval)
-  - [L.2 What the kernel computes](appendix-l.md#l2-what-the-kernel-computes)
-  - [L.3 Two variables](appendix-l.md#l3-two-variables)
-  - [L.4 Trigonometric terms and radicals](appendix-l.md#l4-trigonometric-terms-and-radicals)
-  - [L.5 A worked example](appendix-l.md#l5-a-worked-example)
-  - [L.6 Interval evaluation](appendix-l.md#l6-interval-evaluation)
-  - [L.7 The checks of the proof](appendix-l.md#l7-the-checks-of-the-proof)
-- [Appendix M. Eight squares: the dual at the original centres](appendix-m.md)
-  - [M.1 The dual at arbitrary centres](appendix-m.md#m1-the-dual-at-arbitrary-centres)
-  - [M.2 The radius and the rigid centres](appendix-m.md#m2-the-radius-and-the-rigid-centres)
-  - [M.3 The five-corner problem](appendix-m.md#m3-the-five-corner-problem)
-  - [M.4 Witnesses on the squares](appendix-m.md#m4-witnesses-on-the-squares)
-  - [M.5 The lower bound](appendix-m.md#m5-the-lower-bound)
-  - [M.6 The packings at the optimal radius](appendix-m.md#m6-the-packings-at-the-optimal-radius)
-  - [M.7 The models of the statement](appendix-m.md#m7-the-models-of-the-statement)
+  - [K.5 Proof of Theorem 11.10](appendix-k.md#k5-proof-of-theorem-1110)
+  - [K.6 A square beyond a line](appendix-k.md#k6-a-square-beyond-a-line)
+- [Appendix L. Eight squares: what a table row proves](appendix-l.md)
+  - [L.1 Arcs of the radial curves](appendix-l.md#l1-arcs-of-the-radial-curves)
+  - [L.2 The separating-axis reduction](appendix-l.md#l2-the-separating-axis-reduction)
+  - [L.3 The last radical](appendix-l.md#l3-the-last-radical)
+  - [L.4 One angle](appendix-l.md#l4-one-angle)
+  - [L.5 Proof of Proposition 11.31 (1)](appendix-l.md#l5-proof-of-proposition-1131-1)
+  - [L.6 Covers](appendix-l.md#l6-covers)
+  - [L.7 Pair tables](appendix-l.md#l7-pair-tables)
+- [Appendix M. Eight squares: the sharp terminal](appendix-m.md)
+  - [M.1 The comparison chain at a free tilt](appendix-m.md#m1-the-comparison-chain-at-a-free-tilt)
+  - [M.2 Weights at a free tilt](appendix-m.md#m2-weights-at-a-free-tilt)
+  - [M.3 The dual bound and the completed squares](appendix-m.md#m3-the-dual-bound-and-the-completed-squares)
+  - [M.4 The first-order term](appendix-m.md#m4-the-first-order-term)
+  - [M.5 The remainder](appendix-m.md#m5-the-remainder)
+  - [M.6 Proof of Theorem 11.36](appendix-m.md#m6-proof-of-theorem-1136)
+  - [M.7 The circle duals of the quartic tables](appendix-m.md#m7-the-circle-duals-of-the-quartic-tables)
+  - [M.8 The identity at zero errors](appendix-m.md#m8-the-identity-at-zero-errors)
 
 ## 1. Introduction
 
@@ -560,22 +562,23 @@ most $Q_0 = \frac{9789}{2500}$, just above $q_*$.
    directions, are separated from their neighbours along chosen axes. Each can
    be moved, keeping its frame and these separations, until it touches the
    circle or the small disk, and pushing the squares further out keeps every
-   separation; so the next steps can be carried out on a boundary cycle at
-   the squared radius $q_*$.
+   separation; so the next steps can be carried out at fixed squared radii
+   just above $q_*$.
 3. *Frames and the quarter word.* A budget of the angles between neighbours
    puts the frames of the seven squares within $\frac7{10}$ of one another
    modulo quarter turns, and the quarter turns between the frames of
    neighbours form the word $0101011$ of the optimal packing.
-4. *The stationary frames.* A case analysis of the frames, the quarter turns
-   and the axes that separate neighbours excludes every boundary cycle whose
-   frames and separating axes are not those of the optimal packing. Its leaf
-   inequalities are polynomial bounds on intervals, triangles and rectangles,
-   which Lean's kernel checks exactly.
-5. *The dual at the original centres.* A weighted sum of the seven contacts
-   and the five corner constraints, with the weights of the stationary chain
-   and evaluated at the centres of the packing itself, bounds the squared
-   radius below by $q_*$, and at $q = q_*$ it fixes the five squares on the
-   circle; the other three squares then range over the five-parameter family.
+4. *Finite tables.* Ten tables of 660,370 rows in all, each row an inequality
+   proved on two whole arcs of positions and an interval of angles, bound the
+   positions of four squares and shrink the turn between the frames of
+   neighbours below $\frac1{1000}$; 3,513 quartic polynomials then fix the
+   separating axes and the tilt of the two turned squares. Lean checks every
+   row.
+5. *The sharp terminal.* A weighted sum of the seven contacts and the five
+   corner constraints, with the weights of the stationary chain, bounds the
+   squared radius below by $q_*$, and at $q = q_*$ it fixes the five squares
+   on the circle; the other three squares then range over the five-parameter
+   family.
 
 ![The optimal packing of eight squares with the unit circle and the circle of radius 5/4 about o; each of the seven squares that avoid o holds one arc of each circle, drawn thick in its colour, and the grey central square, which contains o, meets neither circle](figures/11-eight/measure.svg)
 
@@ -592,9 +595,10 @@ Chapters 2 and 3 contain the definitions and the tools shared by several cases;
 each of Chapters 4 to 11 proves one case, and the appendices hold the long
 computations: Appendix A the one-variable estimates, Appendices B to E those of
 six squares, Appendices F to I those of seven squares and Appendices J to M
-those of eight squares. For eight squares part of the proof rests on
-polynomial inequalities that Lean's kernel checks exactly; Appendix L says
-what such a check proves and why it is sound. Definitions, lemmas,
+those of eight squares. For eight squares part of the proof rests on finite
+tables of inequalities; Chapter 11 says what each row of a table proves, how
+the rows are checked and how large each table is, and the tables themselves
+are part of the formalization. Definitions, lemmas,
 propositions, theorems and corollaries are numbered together within each
 chapter; figures, tables and tagged equations are numbered separately.
 Sections are cited as §3.4. Proofs end with $\square$.

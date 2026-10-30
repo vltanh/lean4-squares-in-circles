@@ -262,3 +262,24 @@ Times are rough commit times, in US Central time (UTC−5).
   independent kernel of the comparator, which had rejected one proof and spent
   minutes on others. Chapter 11 and Appendices J to M were rewritten for the
   proof as it now stands.
+
+## 30 October 2026
+
+* **The checked tables restored; the geometric family retained.** At the
+  owner's request, Codex (GPT-6), using the `formalize-math-paper` skill
+  version 3.0.0, restored the proof, certificate inputs and generators of
+  `4bea747b`. The table-free case analysis was retired; its geometric
+  five-corner radius, unique selected configuration and parameterization of
+  the optimal family were retained. The bridge proofs were adapted to the
+  restored stationary chart, and `TableProof.lean` now supplies the lower
+  bound and classification used by the geometric public interface.
+  Chapter 11 and Appendices J to M again describe the table proof, with the
+  geometric statement and its bridges documented alongside it. No sub-agents
+  were used.
+
+  Local validation passed: the full library build, the axiom audit of all
+  26,581 project declarations, the sanity checks and the documentation checks.
+  Comparator accepted the public theorems in con-ron, NanoDa and Lean's
+  default kernel, finishing with `Your solution is okay!`; its local run took
+  1 hour, 1 minute and 14 seconds. The allowed axioms are `propext`, `Classical.choice` and
+  `Quot.sound`.

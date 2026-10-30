@@ -15,6 +15,14 @@ Needs Elan and network access for mathlib. Lean and mathlib are at
 which the Palomar registry uses. Every proof is complete and rests on
 `propext`, `Classical.choice` and `Quot.sound` alone.
 
+For eight squares, the active proof restores the checked-table strategy of
+`4bea747b3efa13c869b956cb28435efaf21526fa`. The table-free case analysis has
+been retired. The geometric five-corner radius and the five-parameter optimal
+family remain the public statement. `Eight/TableProof.lean` proves the
+stationary lower bound and classification, and `Eight/Uniqueness.lean`
+transfers them through the geometric bridges. Full verification includes
+these bridges and all three kernels below.
+
 - `lake build` must succeed without warnings; an unfinished proof would show as
   `declaration uses 'sorry'`.
 - Every `#print axioms` line in the audit must read

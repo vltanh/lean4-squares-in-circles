@@ -5,13 +5,13 @@
 
 The eight variables are (q, y, z) of the chain, on the box sharpBox of generate_stationary.py
 around the stationary point, and the five parameters (x, y, w, z, eta) of the family, on the box
-InBox of SquaresInCircles/Eight/Stationary/Coordinates.lean. From the chain of
+InBox of SquaresInCircles/Eight/ExactFamily/Coordinates.lean. From the chain of
 generate_stationary.py the script builds eighteen quantities of the model: the cosine and sine of
 the central frame and of its angle to the frame of H and G, the coordinates of the centre in the
 central frame, the seven separation margins of the central square, the room left in the
 containment of T and G, the height of the highest point of H, and the height of the highest point
 and the abscissa of the leftmost point of G at the largest offset eta = etaMax. Each is written to
-SquaresInCircles/Eight/Stationary/Generated/EqualityBox.lean as a `ScalarExpr` whose nodes carry
+SquaresInCircles/Eight/ExactFamily/Generated/EqualityBox.lean as a `ScalarExpr` whose nodes carry
 the intervals of exact rational interval arithmetic on the box, rounded outwards to multiples of
 2^-140 (`generate_stationary.evaluate`). Before it writes an expression the script checks that its
 interval lies in the stated bounds, and it stops at the first that does not.
@@ -41,7 +41,7 @@ gx=A.sub(A.mul(g.c,A.add(g.h1,C(Q(3,2)))),A.mul(g.s,A.add(A.add(g.h2,C(Q(1,2))),
 gy=A.add(A.mul(g.s,A.add(g.h1,C(Q(3,2)))),A.mul(g.c,A.add(A.add(g.h2,C(Q(1,2))),eta)))
 subx=lambda a:A.sub(a,x)
 suby=lambda a:A.sub(a,yy)
-# the eighteen quantities of `boxData` (Stationary/EqualityBox.lean) and their stated bounds
+# the eighteen quantities of `boxData` (ExactFamily/EqualityBox.lean) and their stated bounds
 targets={
  'centralCosine':cc,'centralSine':ss,'relativeCosine':rc,'relativeSine':rs,
  'coreFirst':A.add(A.mul(cc,x),A.mul(ss,yy)),
@@ -83,7 +83,7 @@ def generate():
  out=g.OUT/'EqualityBox.lean'
  lines=['''module
 
-public import SquaresInCircles.Eight.Stationary.Expression
+public import SquaresInCircles.Eight.ExactFamily.Expression
 
 /-!
 # Eight squares: interval expressions on the box of parameters
@@ -93,14 +93,14 @@ radius, the position and the tilt of the chain, and `InBox` in the five paramete
 `(x, y, w, z, eta)` of the family. For each of eighteen quantities of the model there is an
 interval expression (`ScalarExpr`, `Arithmetic/ScalarExpr.lean`) whose nodes carry rational
 intervals; the kernel decides that they are valid on `box` (`_valid`), so the quantity lies
-between rational bounds on the whole box (`_bound`). `Stationary/EqualityBox.lean` identifies the
+between rational bounds on the whole box (`_bound`). `ExactFamily/EqualityBox.lean` identifies the
 expressions with the quantities of the model. Written by `scripts/eight/generate_equality.py`.
 -/
 
 @[expose] public section
 noncomputable section
 set_option maxRecDepth 100000
-namespace SquaresInCircles.Eight.Stationary.EqualityGenerated
+namespace SquaresInCircles.Eight.ExactFamily.EqualityGenerated
 open Arithmetic
 ''','/-- The box `sharpBox` in `(q, y, z)` and `InBox` in the parameters `(x, y, w, z, eta)`. -/',
  'def box : QBox 8 := '+g.boxlit(box),'','''/-- An expression valid on `box` lies in every rational interval containing its range. -/
@@ -121,7 +121,7 @@ private theorem bound_of_valid {e : ScalarExpr 8} (hv : e.Valid box) {env : Fin 
     f'    ({g.rat(lo)}:ℝ)≤{name}Expression.eval env ∧ {name}Expression.eval env≤{g.rat(hi)} :=',
     f'  bound_of_valid {name}_valid he {g.bound_arg(lo)} {g.bound_arg(hi)} (by decide +kernel)',
     '    (by decide +kernel) (by norm_num) (by norm_num)','']
- lines += ['end SquaresInCircles.Eight.Stationary.EqualityGenerated','']
+ lines += ['end SquaresInCircles.Eight.ExactFamily.EqualityGenerated','']
  lines=[('noncomputable '+l if l.startswith('def ') else l) for l in lines]
  out.write_text('\n'.join(lines));print({'bytes':out.stat().st_size,'expressions':len(targets)})
 if __name__=='__main__':generate()

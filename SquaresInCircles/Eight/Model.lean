@@ -1,8 +1,10 @@
 module
 
+public import SquaresInCircles.Common.Basic
+public import SquaresInCircles.Common.Frames
+public import SquaresInCircles.Common.SeparatingAxes
 public import Mathlib.Data.Fin.VecNotation
 public import Mathlib.Tactic
-public import SquaresInCircles.Common.SeparatingAxes
 
 /-!
 # Eight squares: radius levels, signed axes and cycles
@@ -93,7 +95,7 @@ theorem e_unit (K : UnitSquare) : normSq (e K) = 1 := K.unit
 
 def SameFrame (K L : UnitSquare) : Prop := K.cosine = L.cosine ∧ K.sine = L.sine
 
-/-- The frames of the two squares agree up to a quarter turn: the squares have the same axes. -/
+/-- Equality of the unoriented square frame, with the quarter turn retained. -/
 def SamePhysicalFrame (K L : UnitSquare) : Prop :=
   (K.cosine = L.cosine ∧ K.sine = L.sine) ∨
   (K.cosine = -L.sine ∧ K.sine = L.cosine) ∨

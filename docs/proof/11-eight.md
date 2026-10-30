@@ -15,53 +15,31 @@ squares can slide along the other, and the middle square can move and turn in
 the room the others leave. The optimal packings form a five-parameter family
 (Figure 11.2).
 
-The radius is the minimum of a smaller problem. Keep only the five corners on
-the circle, one of each of the squares $A$, $B$, $D$, $E$ and $H$ of
-Figure 11.1, and the room the ring of seven squares needs between them: two
-heights, a width and two spans along the frame of the turned squares. The least
-radius of a disk about the centre that holds five corners with this room is
-$R_8$ (Theorem 11.1). It has no closed form: at the minimum, five corners of a
-chain of squares lie on one circle, and the excess of the fifth one and its two
-derivatives vanish together, so that $R_8^2 = q_*$ is the first coordinate of
-the unique solution of an explicit system of equations (Propositions 11.4
-and 11.5).
+The radius has no closed form. Five corners on one circle and seven contacts
+between the squares leave, for each radius, a chain of squares with two free
+numbers, a position and a tilt; the fifth corner of the chain may stick out of
+the circle, and $R_8^2 = q_*$ is the least squared radius at which it does not.
+At that radius the excess of the fifth corner and its two derivatives vanish
+together, and $q_*$ is the first coordinate of the unique solution of an
+explicit system of equations (Theorem 11.1, Proposition 11.4).
 
-The proof has two halves. The first shows that the seven squares around the
-central one carry the frames of Figure 11.1 and are separated along its
-contacts: a square holds a small disk about the centre, the cycle of the seven
-other squares is pushed out to two boundary curves, the frames are shown to
-turn little against each other, the quarter turns between neighbours form a
-word that leaves one arrangement, and on each of the seven pairs of neighbours
-the axis that separates them is identified. Each step is a whole-cycle
-inequality: one inequality for each pair of neighbours, with markers that
-cancel round the cycle and lower bounds adding up to more than $2\pi$, or a
-weighted sum of the separating inequalities and the circle constraints, a
-stress in the sense of Chapter 9. The second half is the five-corner problem
-itself, applied to the ring, and one identity of the stationary chain,
-evaluated at the centres of the squares, which gives the radius and the five
-fixed squares. The case analyses of the first half are large, and many of
-their branches end in a polynomial inequality in one or two angles, which the
-Lean kernel checks in exact arithmetic (§11.11 and
-[Appendix L](appendix-l.md)). For each case analysis the chapter gives what is
-split and on what, the inequality that closes each branch with its constants,
-and one representative case in full.
+The proof differs from those of the earlier chapters in one respect. Its steps
+are continuous arguments: a square holding a small disk about the centre, a
+cycle of the seven other squares pushed out to two boundary curves, a bound on
+how far their frames can turn against each other, a word in the quarter turns
+between neighbours that leaves one arrangement, and a final weighted inequality
+that gives the radius $q_*$ exactly, in the spirit of the stresses of
+Chapter 9. Between the word and the final inequality, however, the proof pins
+the frames of the seven squares to those of Figure 11.1 by finite tables of
+explicit inequalities: 660,370 rows in ten affine-arc tables, 3,513 quartic
+polynomials for the separating axes and the tilt, and the tables that exclude
+the wrong words. Each row is a statement about a whole interval of angles and
+two whole arcs of states, proved by a fixed polynomial identity. This chapter
+gives the continuous argument in full, says what each row proves and how the
+rows are checked, and gives the size and the role of each table; it does not
+print the tables. The formalization checks every row in Lean.
 
 ## Theorem 11.1 (eight squares)
-
-For an angle $\theta$ put $e_\theta = (\cos\theta, \sin\theta)$ and
-$f_\theta = (-\sin\theta, \cos\theta)$. A *five-corner configuration* is an
-angle $\theta$ and five points $P_1, \dots, P_5$ of the plane. It *spans* if
-
-```math
-0 \le \theta \le \tfrac\pi4, \qquad (P_2 - P_1)_y \ge 2, \qquad (P_2 - P_3)_x \ge 3, \qquad (P_3 - P_4)_y \ge 2, \qquad \langle f_\theta, P_4 - P_5\rangle \ge 1 + \sin\theta, \qquad \langle e_\theta, P_1 - P_5\rangle \ge 2 + \cos\theta ,
-```
-
-and it *fits* in the radius $R \ge 0$ if $|P_i| \le R$ for $i = 1, \dots, 5$. The
-*optimal radius* is
-
-```math
-R_8 = \inf\lbrace R : \text{some spanning five-corner configuration fits in } R\rbrace .
-```
 
 For real numbers $q, y, z, x_1, x_2, y_3, x_4$ put
 
@@ -93,105 +71,116 @@ F = 0, \qquad F_y = 0, \qquad F_t = 0 .
 It has exactly one solution (Proposition 11.4). Write $q_*$, $y_*$ and $z_*$
 for its first three coordinates, $c_*$, $s_*$, $x_1, \dots, h_2$ for the values
 of the other quantities there, $t_* = 2\arctan z_*$, so that
-$c_* = \cos t_*$ and $s_* = \sin t_*$, and $e = e_{t_*}$, $f = f_{t_*}$.
-Numerically $q_* \approx 3.9155341375$, $\sqrt{q_*} \approx 1.9787709$,
-$y_* \approx -0.92066$ and $t_* \approx 0.12364$, about $7.08°$.
+$c_* = \cos t_*$ and $s_* = \sin t_*$, and $R_8 = \sqrt{q_*}$. Numerically
+$q_* \approx 3.9155341375$, $R_8 \approx 1.9787709$, $y_* \approx -0.92066$
+and $t_* \approx 0.12364$, about $7.08°$.
 
-*The models.* Let $(\theta^\circ, P^\circ_1, \dots, P^\circ_5)$ be a spanning
-five-corner configuration that fits in $R_8$; by part (1) below there is exactly
-one. For real numbers $x, y, \varphi, \zeta, \eta$ the *model*
-$M(x, y, \varphi, \zeta, \eta)$ consists of the eight unit squares
+Let $e = (c_*, s_*)$ and $f = (-s_*, c_*)$. For real numbers
+$x, y, w, \zeta, \eta$, the *model* $M(x, y, w, \zeta, \eta)$ consists of
+the eight unit squares
+
+```math
+A = Q\left(x_1 - \tfrac12,\ y_* + \tfrac12\right), \quad B = Q\left(x_2 - \tfrac12,\ y_* + \tfrac32\right), \quad D = Q\left(x_3 + \tfrac12,\ y_3 - \tfrac12\right), \quad E = Q\left(x_4 + \tfrac12,\ y_4 + \tfrac12\right), \quad T = Q\left(x_2 - \tfrac32,\ \zeta\right),
+```
+
+the squares $H$ and $G$ with the frame $e$, $f$ and the centres
+
+```math
+p_H = \left(h_1 + \tfrac12\right)e + \left(h_2 + \tfrac12\right)f, \qquad p_G = \left(h_1 + \tfrac32\right)e + \left(h_2 + \tfrac12 + \eta\right)f ,
+```
+
+and the *central square* $K$ with the centre $(x, y)$ and the frame
+$(C_w, S_w)$, $(-S_w, C_w)$, where $C_w = \frac{1 - w^2}{1 + w^2}$ and
+$S_w = \frac{2w}{1 + w^2}$; in the notation of
+[Definition 9.9](09-six.md#definition-99-squares-in-a-frame),
+$H = Q_{t_*}(h_1 + \frac12, h_2 + \frac12)$ and
+$G = Q_{t_*}(h_1 + \frac32, h_2 + \frac12 + \eta)$. Put
+
+```math
+\zeta_+ = \sqrt{q_* - (x_2 - 1)^2} - \tfrac12, \qquad \eta_- = -h_2 - \sqrt{q_* - (h_1 + 2)^2}, \qquad \eta_+ = -h_2 - \tfrac{13}{12} ,
+```
+
+so that $\zeta_+ \approx 1.36600$, $\eta_- \approx -0.44505$ and
+$\eta_+ \approx 0.34665$, and for a vector $v = (v_1, v_2)$ let
+
+```math
+\begin{aligned}
+M_0(v) &= \max\left(|v_1|,\ |v_2|,\ |C_w v_1 + S_w v_2|,\ |-S_w v_1 + C_w v_2|\right), & W_0 &= \tfrac12\left(1 + C_w + |S_w|\right), \\
+M_*(v) &= \max\left(|c_* v_1 + s_* v_2|,\ |-s_* v_1 + c_* v_2|,\ |C_w v_1 + S_w v_2|,\ |-S_w v_1 + C_w v_2|\right), & W_* &= \tfrac12\left(1 + c_* C_w + s_* S_w + |c_* S_w - s_* C_w|\right).
+\end{aligned}
+```
+
+The parameters are *admissible* if
 
 ```math
 \begin{gathered}
-A = Q\left(P^\circ_1 + \left(-\tfrac12, \tfrac12\right)\right), \quad B = Q\left(P^\circ_2 + \left(-\tfrac12, -\tfrac12\right)\right), \quad D = Q\left(P^\circ_3 + \left(\tfrac12, -\tfrac12\right)\right), \quad E = Q\left(P^\circ_4 + \left(\tfrac12, \tfrac12\right)\right), \\
-T = Q\left((P^\circ_2)_x - \tfrac32,\ \zeta\right),
+1 - \sqrt2 \le w < \sqrt2 - 1, \qquad \tfrac7{12} \le \zeta \le \zeta_+, \qquad \eta_- \le \eta \le \eta_+, \\
+|C_w x + S_w y| < \tfrac5{12}, \qquad |-S_w x + C_w y| < \tfrac5{12}, \\
+M_0\left(p_P - (x, y)\right) \ge W_0 \quad (P = A, B, D, E, T), \qquad M_*\left(p_P - (x, y)\right) \ge W_* \quad (P = H, G),
 \end{gathered}
 ```
 
-the squares $H$ and $G$ turned by $\theta^\circ$, with the centres
+where $p_P$ is the centre of the square $P$ of the model.
 
-```math
-p_H = P^\circ_5 + \tfrac12\left(e_{\theta^\circ} + f_{\theta^\circ}\right), \qquad p_G = p_H + e_{\theta^\circ} + \eta\,f_{\theta^\circ} ,
-```
-
-and the *central square* $K$, the unit square with the centre $(x, y)$ turned
-by $\varphi$. So $P^\circ_1$, $P^\circ_2$, $P^\circ_3$, $P^\circ_4$ are the lower
-right corner of $A$, the upper right corner of $B$, the upper left corner of
-$D$ and the lower left corner of $E$, and $P^\circ_5$ is the corner of $H$ that
-is the lower left one in its own frame; $T$ lies one unit to the left of $B$ at
-the height $\zeta$, and $G$ lies next to $H$, moved by $\eta$ along the side of
-$H$. The *optimal models* are the models that are packings in the closed disk
-of radius $R_8$ about the origin, together with their mirror images in the
-diagonal $y = x$.
-
-1. $R_8 = \sqrt{q_*}$, and exactly one spanning five-corner configuration fits
-   in $R_8$: the angle $t_*$ and the points
-   $(x_1, y_*)$, $(x_2, y_* + 2)$, $(x_3, y_3)$, $(x_4, y_4)$, $h_1 e + h_2 f$.
-2. There are optimal models, and each of them has a point of one of its squares
-   on the circle of radius $R_8$.
-3. If eight unit squares form a packing in a closed disk of radius $R$, then
+1. For admissible parameters the model is a packing in the closed disk of
+   radius $R_8$ about the origin, and so is its mirror image in the diagonal
+   $y = x$.
+2. If eight unit squares form a packing in a closed disk of radius $R$, then
    $R \ge R_8$.
-4. The packings of eight unit squares in a closed disk of radius $R_8$ are
-   exactly the configurations congruent to an optimal model.
+3. The packings of eight unit squares in a closed disk of radius $R_8$ are
+   exactly the configurations congruent to the model of admissible parameters
+   or to its mirror image in the diagonal.
 
 ![The optimal packing of eight unit squares in its dashed circle of radius about 1.9788 about the disk centre o: at the right the squares A below and B above, at the left D above and E below, the square T on top between B and D, and at the bottom the two squares H and G, turned by about 7 degrees; in the middle the grey central square K, turned by about 11 degrees, holds o and a small shaded disk of radius 1/12 about it. Five dots mark the corners P1 to P5 of A, B, D, E and H on the circle; thick segments mark the five contacts along sides, A with B, B with T, T with D, D with E and H with G, and two larger dots the corner contacts of E with H and of A with G](figures/11-eight/eight.svg)
 
 *Figure 11.1.* The model with the parameters
-$(x, y, \varphi, \zeta, \eta) = (0.14, 0, 2\arctan 0.1, 1.35, -0.32)$, the
-centre of the box of Proposition 11.7, in its circle of radius $R_8$ (dashed);
-$2\arctan 0.1 \approx 11.4°$. The corners $P_1, \dots, P_5$ of $A$, $B$, $D$,
-$E$ and $H$ lie on the circle (dots), and the seven exterior squares touch in a
-cycle: $A$ with $B$, $B$ with $T$, $T$ with $D$, $D$ with $E$ and $H$ with $G$
-along segments of their sides (thick), $E$ with $H$ and $G$ with $A$ at a
-corner of one square on a side of the other (large dots). The central square
-$K$ (grey) holds the disk of radius $\frac1{12}$ about $o$ (shaded) and touches
-none of the others.
+$(x, y, w, \zeta, \eta) = (0.14, 0, 0.1, 1.35, -0.32)$, the centre of the box
+of Proposition 11.7, in its circle of radius $R_8$ (dashed). The corners
+$P_1, \dots, P_5$ of $A$, $B$, $D$, $E$ and $H$ lie on the circle (dots), and
+the seven exterior squares touch in a cycle: $A$ with $B$, $B$ with $T$,
+$T$ with $D$, $D$ with $E$ and $H$ with $G$ along segments of their sides
+(thick), $E$ with $H$ and $G$ with $A$ at a corner of one square on a side of
+the other (large dots).
+The central square $K$ (grey) holds the disk of radius $\frac1{12}$ about $o$
+(shaded) and touches none of the others.
 
 *Lean: [`Eight.FiveCorner`](../../SquaresInCircles/Geometry.lean#L293),
 [`Eight.FiveCorner.spans`](../../SquaresInCircles/Geometry.lean#L303),
-[`Eight.FiveCorner.fits`](../../SquaresInCircles/Geometry.lean#L314),
-[`Eight.feasibleRadii`](../../SquaresInCircles/Geometry.lean#L321),
-[`Eight.radius`](../../SquaresInCircles/Geometry.lean#L325),
-[`Eight.FiveCorner.IsMinimizer`](../../SquaresInCircles/Geometry.lean#L330),
 [`Eight.FiveCorner.selected`](../../SquaresInCircles/Geometry.lean#L334),
-[`Eight.FiveCorner.anchorCenter`](../../SquaresInCircles/Geometry.lean#L337),
-[`Eight.FiveCorner.topCenter`](../../SquaresInCircles/Geometry.lean#L346),
-[`Eight.FiveCorner.tiltedCenter`](../../SquaresInCircles/Geometry.lean#L351),
-[`Eight.turnedSquare`](../../SquaresInCircles/Geometry.lean#L280),
+[`Eight.radius`](../../SquaresInCircles/Geometry.lean#L325),
 [`Eight.Parameters`](../../SquaresInCircles/Geometry.lean#L359),
 [`Eight.model`](../../SquaresInCircles/Geometry.lean#L367),
-[`Eight.reflectSquare`](../../SquaresInCircles/Geometry.lean#L378),
 [`Eight.models`](../../SquaresInCircles/Geometry.lean#L389),
-[`Eight.Stationary.Coordinates.IsStationary`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L122),
-[`Eight.Stationary.qStar`](../../SquaresInCircles/Eight/Stationary/System.lean#L398),
-[`Eight.radius_eq_stationary`](../../SquaresInCircles/Eight/Uniqueness.lean#L33),
+[`Eight.ExactFamily.Coordinates`](../../SquaresInCircles/Eight/ExactFamily/Coordinates.lean#L54),
+[`Eight.ExactFamily.Coordinates.IsStationary`](../../SquaresInCircles/Eight/ExactFamily/Coordinates.lean#L96),
+[`Eight.ExactFamily.EqualityParameters.Admissible`](../../SquaresInCircles/Eight/ExactFamily/Coordinates.lean#L297),
+[`Eight.GeometricModel.models_eq_stationary`](../../SquaresInCircles/Eight/Construction.lean#L38),
 [`Eight.lower_bound`](../../SquaresInCircles/Eight/Uniqueness.lean#L55),
 [`Eight.uniqueness`](../../SquaresInCircles/Eight/Uniqueness.lean#L62),
-[`Eight.models_reach`](../../SquaresInCircles/Eight/Uniqueness.lean#L70),
-[`Eight.optimum`](../../SquaresInCircles/Eight/Uniqueness.lean#L82).*
+[`Eight.optimum`](../../SquaresInCircles/Eight/Uniqueness.lean#L82),
+[`Eight.equality_iff_parameters`](../../SquaresInCircles/Eight/Uniqueness.lean#L107).*
 
-*Remarks.* (i) The spans say that the five corners leave room for the ring of
-seven squares: $B$ stands on $A$, $D$, $T$ and $B$ stand side by side,
-$D$ stands on $E$, a corner of $E$ rests on the upper side of $H$, and $G$ fits
-between $H$ and $A$. The last two spans are measured in the frame of $H$: the
-span $1 + \sin\theta$ is the width of $H$ along $f_\theta$ plus the projection
-on $f_\theta$ of the lower side of $E$, and $2 + \cos\theta$ is the width of $H$
-and of $G$ along $e_\theta$ plus the projection on $e_\theta$ of the lower side
-of $A$ (Figure 11.4). In the Lean statement the parameters
-$(x, y)$, $\varphi$, $\zeta$, $\eta$ are called `center`, `angle`, `top` and
-`tilted`.
+*Remarks.* (i) In the stationary chart used by the proof, the parameters $\zeta$ and
+$\eta$ are called z and eta. The public geometric parameters call them top
+and tilted, and use the central angle $\theta=2\arctan w$ directly. The conditions on the parameters say the following. The first
+line takes one frame of $K$ out of the four quarter turns of each (the angle
+$2\arctan w$ lies in $[-\frac\pi4, \frac\pi4)$) and bounds the positions of
+$T$ and $G$. The second line says that the closed disk of radius $\frac1{12}$
+about the origin lies in the open square $K$: the local coordinates of the
+origin in $K$ are less than $\frac5{12}$ in absolute value. The last line says
+that $K$ is separated from each of the seven other squares along one of the
+eight axes of the pair, the separating-axis theorem of
+[Lemma 9.11](09-six.md#lemma-911-separating-axes-of-two-squares) with its
+threshold $\tau$ written out (Proposition 11.6).
 
 (ii) The optimum is not unique. The five squares $A$, $B$, $D$, $E$, $H$ that
 touch the circle and the frames of all seven exterior squares are fixed. The
 top square $T$ moves vertically, the square $G$ slides along $H$, and the
 central square moves and turns; the room for each depends on the positions of
-the others (Figures 11.2 and 11.6). Proposition 11.6 gives explicit conditions
-on the parameters, the *admissible* parameters, under which the model is a
-packing, and the proof of part (4) shows that every packing at the radius $R_8$
-is congruent to the model of admissible parameters or to its mirror image.
-Proposition 11.7 gives a box of admissible parameters, of side $0.002$ in each
-of the five directions.
+the others (Figures 11.2 and 11.5). Proposition 11.7 gives a box of
+parameters, of side $0.002$ in each of the five directions, whose points are
+all admissible and give pairwise non-congruent packings, even when reflections
+are allowed.
 
 (iii) The model has no symmetry, so mirror images must be listed separately;
 in the earlier chapters every optimal model was symmetric in a line through
@@ -206,19 +195,17 @@ optimal and that the optimal packings are exactly the members of the family.
 ![Four optimal packings of eight unit squares, each in its dashed circle of radius R8: the five squares on the circle and the frames of the outer squares are the same in all four, while the top square T, the turned square G and the grey central square K sit at different places; in the first the central square is turned by about 11 degrees, in the second T is lowered and K moved down, in the third G is pushed along H towards the centre, and in the fourth T and G touch the circle and K is turned the other way, by about 33 degrees](figures/11-eight/family.svg)
 
 *Figure 11.2.* Four optimal packings: the squares $A$, $B$, $D$, $E$, $H$ do
-not move, while $T$, $G$ and the central square $K$ do. In the coordinates
-$(x, y, w, \zeta, \eta)$ of Proposition 11.6, with $\varphi = 2\arctan w$, the
-parameters are $(0.14, 0, 0.1, 1.35, -0.32)$,
+not move, while $T$, $G$ and the central square $K$ do. The parameters
+$(x, y, w, \zeta, \eta)$ are $(0.14, 0, 0.1, 1.35, -0.32)$,
 $(0.17, -0.18, 0.07, 0.92, -0.32)$, $(0.14, 0.015, 0.08, 1.35, -0.1)$ and
 $(-0.0475, -0.0325, -0.3, \zeta_+, \eta_-)$: the centre of the box of
 Proposition 11.7, $T$ lowered, $G$ pushed towards the centre, and $T$ and $G$
 on the circle with $K$ turned by about $-33°$. All four are admissible.
 
-*Outline of the proof.* Part (1) is Propositions 11.4 and 11.5 (§11.1), and
-part (2) is Propositions 11.6 and 11.7. Part (3) is Proposition 11.45
-(§11.12): the lower bound is proved directly, not through uniqueness, since the
-argument works below the radius $R_8$ as well. Part (4) is Proposition 11.47
-(§11.13). The proof of the lower bound has eight steps.
+*Outline of the proof.* Part (1) is Proposition 11.6 (§11.1). Part (2) is
+Proposition 11.37 (§11.11): the lower bound is proved directly, not through
+uniqueness, since the argument works below the radius $R_8$ as well. Part (3)
+is Proposition 11.39 (§11.12). The proof of the lower bound has eight steps.
 
 1. *The central core* (§11.2). In a packing of eight squares in a disk of
    squared radius at most $Q_0 = \frac{9789}{2500}$, just above $q_*$, one
@@ -229,37 +216,45 @@ argument works below the radius $R_8$ as well. Part (4) is Proposition 11.47
    its frame and one chosen separating axis on each consecutive pair kept,
    until it touches the circle or the core (Proposition 11.15). Its state
    then lies on one of two curves, $\mathcal O$ and $\mathcal C$.
-3. *Radius levels* (§11.4). A packing of squared radius at most $q_*$ is
-   viewed in the disk of squared radius $q_*$, and its boundary cycle is taken
-   there. Pushing the squares on $\mathcal O$ outward keeps every separating
-   axis (Lemma 11.17); this moves the cycle to the levels $Q_1$ and $Q_0$,
-   where frames and words are read, and back.
+3. *Three radius levels* (§11.4). Pushing the squares on $\mathcal O$ outward
+   keeps every separating axis (Lemma 11.17). This moves a cycle from the
+   actual radius to the fixed levels $Q_1$ and $Q_0$ at which the tables are
+   computed, and back.
 4. *Frame concentration* (§11.5). The frames of the seven squares lie, modulo
    quarter turns, in an interval shorter than $\frac7{10}$
    (Theorem 11.23).
 5. *The quarter word* (§11.6). The quarter turns between the frames of
    neighbours form a word of seven digits, and only the word $0101011$ of
-   Figure 11.1 survives (Proposition 11.28).
-6. *The owners* (§11.7 to §11.9). With the roles $H, G, A, B, T, D, E$ of
-   Figure 11.1, each of the seven pairs of neighbours is separated only along
-   its *normal owners*, at most two of the four axes of the pair
-   (Proposition 11.34 for six pairs, Corollary 11.38 for the pair $G$, $A$).
-7. *The hard axes and the stationary frames* (§11.10). The two axes that hold
-   the ring together separate the pairs $G$, $A$ and $B$, $T$; then the frames
-   align, the five corners of $A$, $B$, $D$, $E$, $H$ span, and the five-corner
-   problem gives the frames of Figure 11.1 and the separating normals of its
-   seven contacts (Theorem 11.43).
-8. *The dual at the original centres* (§11.12, §11.13). The weights of the
-   stationary chain, applied to the five corner constraints and the seven
-   separations of the original squares, give $q \ge q_*$, and at $q = q_*$ they
-   fix $A$, $B$, $D$, $E$, $H$ and put $T$ and $G$ on their slider lines
-   (Theorem 11.44).
+   Figure 11.1 survives (Proposition 11.26).
+6. *Candidate coordinates* (§11.7, §11.8). Six affine-arc tables bound the
+   positions of four squares (Proposition 11.29).
+7. *The mismatch chain* (§11.9). Four more affine-arc tables shrink the
+   angles between the frames of aligned neighbours, the *mismatch*, from
+   $\frac{13}{50}$ to $\frac1{1000}$ (Proposition 11.34).
+8. *The sharp terminal* (§11.10, §11.11). Quartic tables fix the separating
+   axes and the tilt (Proposition 11.35), and a weighted sum of the
+   seven contacts and five corner constraints, with the weights of the
+   stationary chain, gives $q \ge q_*$ (Theorem 11.36). Applied to the
+   original squares at $q = q_*$, the same weighted sum fixes the five squares
+   on the circle (Proposition 11.38).
 
 The longer proofs are in [Appendix J](appendix-j.md) (the stationary
 system), [Appendix K](appendix-k.md) (the central core),
-[Appendix L](appendix-l.md) (the exact polynomial checks) and
-[Appendix M](appendix-m.md) (the dual at the original centres and the
-equality).
+[Appendix L](appendix-l.md) (what a table row proves) and
+[Appendix M](appendix-m.md) (the sharp terminal).
+
+The public statement in `Geometry.lean` defines the radius directly as the
+least radius holding five corners with the required spans, and describes the
+family by the central square's centre and angle and the two slider positions.
+The stationary coordinates below give an equivalent chart used by the table
+proof. `FiveCorner.existsUnique_minimizer` identifies the five fixed corners,
+`radius_eq_stationary` identifies the radii, and `models_eq_stationary`
+identifies the admissible families, including their reflections.
+
+*Lean:
+[`Eight.FiveCorner.existsUnique_minimizer`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L868),
+[`Eight.radius_eq_stationary`](../../SquaresInCircles/Eight/Uniqueness.lean#L33),
+[`Eight.GeometricModel.models_eq_stationary`](../../SquaresInCircles/Eight/Construction.lean#L38).*
 
 ## 11.1 Construction
 
@@ -290,13 +285,13 @@ $c$, $s$, $h_1$, $h_2$ and $F$ are those of Theorem 11.1, and $F_y$ and $F_t$
 are the derivatives of $F$ in $y$ and in $t$ (Lemma J.1).
 
 *Lean:
-[`Eight.Stationary.Coordinates`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L80),
-[`Eight.Stationary.Coordinates.IsChain`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L110),
-[`Eight.Stationary.Coordinates.defect`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L97),
-[`Eight.Stationary.Coordinates.positionDerivative`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L103),
-[`Eight.Stationary.Coordinates.tiltDerivative`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L105),
-[`Eight.Stationary.Coordinates.anchorPoints`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L219),
-[`Eight.Stationary.Coordinates.exteriorSquares`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L215).*
+[`Eight.ExactFamily.Coordinates`](../../SquaresInCircles/Eight/ExactFamily/Coordinates.lean#L54),
+[`Eight.ExactFamily.Coordinates.IsChain`](../../SquaresInCircles/Eight/ExactFamily/Coordinates.lean#L84),
+[`Eight.ExactFamily.Coordinates.defect`](../../SquaresInCircles/Eight/ExactFamily/Coordinates.lean#L71),
+[`Eight.ExactFamily.Coordinates.positionDerivative`](../../SquaresInCircles/Eight/ExactFamily/Coordinates.lean#L77),
+[`Eight.ExactFamily.Coordinates.tiltDerivative`](../../SquaresInCircles/Eight/ExactFamily/Coordinates.lean#L79),
+[`Eight.ExactFamily.Coordinates.anchorPoints`](../../SquaresInCircles/Eight/ExactFamily/Coordinates.lean#L193),
+[`Eight.ExactFamily.Coordinates.exteriorSquares`](../../SquaresInCircles/Eight/ExactFamily/Coordinates.lean#L189).*
 
 ### Lemma 11.3 (the chain)
 
@@ -341,31 +336,20 @@ make the angle $t$ with those of $A$ and $E$, so the thresholds of Lemma 9.11
 are $\tau(0) = 1$ and $\tau(t)$. $\square$
 
 *Lean:
-[`Eight.Stationary.Coordinates.anchor_vertex`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L230),
-[`Eight.Stationary.Coordinates.anchor_circle`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L237),
-[`Eight.Stationary.Coordinates.standard_contacts`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L272),
-[`Eight.Stationary.Coordinates.HG_contact`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L246),
-[`Eight.Stationary.Coordinates.GA_contact`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L251),
-[`Eight.Stationary.Coordinates.HE_contact`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L266),
-[`Eight.Stationary.Coordinates.HA_contact`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L260).*
+[`Eight.ExactFamily.Coordinates.anchor_vertex`](../../SquaresInCircles/Eight/ExactFamily/Coordinates.lean#L204),
+[`Eight.ExactFamily.Coordinates.anchor_circle`](../../SquaresInCircles/Eight/ExactFamily/Coordinates.lean#L211),
+[`Eight.ExactFamily.Coordinates.standard_contacts`](../../SquaresInCircles/Eight/ExactFamily/Coordinates.lean#L246),
+[`Eight.ExactFamily.Coordinates.HG_contact`](../../SquaresInCircles/Eight/ExactFamily/Coordinates.lean#L220),
+[`Eight.ExactFamily.Coordinates.GA_contact`](../../SquaresInCircles/Eight/ExactFamily/Coordinates.lean#L225),
+[`Eight.ExactFamily.Coordinates.HE_contact`](../../SquaresInCircles/Eight/ExactFamily/Coordinates.lean#L240),
+[`Eight.ExactFamily.Coordinates.HA_contact`](../../SquaresInCircles/Eight/ExactFamily/Coordinates.lean#L234).*
 
 So the chain realizes the seven contacts of Figure 11.1 for every $q$, $y$
 and $t$, and it closes, with all five corners on the circle of radius
-$\sqrt q$, exactly when $F(q, y, t) = 0$ (Figure 11.3). Its five corners always
-have the spans of Theorem 11.1 with equality: by Lemma 11.3 (2) and (3),
-$(P_2 - P_1)_y = 2$, $(P_2 - P_3)_x = 3$, $(P_3 - P_4)_y = 2$,
-$\langle f_t, P_4 - P_5\rangle = 1 + \sin t$ and
-$\langle e_t, P_1 - P_5\rangle = 2 + \cos t$. So for $0 \le t \le \frac\pi4$ a
-chain with $F(q, y, t) = 0$ is a spanning five-corner configuration that fits
-in $\sqrt q$. For $q$ near $q_*$ the defect has a unique minimum in $(y, t)$,
-which decreases as $q$ grows; the least $q$ at which the minimum reaches 0 is
-$q_*$, and there the minimum is a simultaneous zero of $F$, $F_y$ and $F_t$.
-
-*Lean:
-[`Eight.FiveCorner.ofCoordinates`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L188),
-[`Eight.FiveCorner.coordinate_contacts`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L202),
-[`Eight.FiveCorner.ofCoordinates_spans`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L225),
-[`Eight.FiveCorner.ofCoordinates_fits`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L235).*
+$\sqrt q$, exactly when $F(q, y, t) = 0$ (Figure 11.3). For $q$ near $q_*$
+the defect has a unique minimum in $(y, t)$, which decreases as $q$ grows; the
+least $q$ at which the minimum reaches 0 is $q_*$, and there the minimum is a
+simultaneous zero of $F$, $F_y$ and $F_t$.
 
 ![Two panels. Left: the five-corner chain at the squared radius q* for a position y and tilt t different from the optimal ones: the squares A, B, D, E and T in their columns with the corners P1 to P4 on the dashed circle, and the turned squares H and G at the bottom, whose corner P5 lies outside the circle. Right: the plane of y and t with the level curves of the defect F(q*, y, t), closed curves around one point (y*, t*), where F has its minimum 0; a red ring marks the pose of the left panel](figures/11-eight/chain.svg)
 
@@ -410,231 +394,34 @@ defect is positive except at its minimum $(y_*, t_*)$, where it vanishes.
 The proof is given in [Appendix J](appendix-j.md).
 
 *Lean:
-[`Eight.Stationary.sharpData`](../../SquaresInCircles/Eight/Stationary/System.lean#L1711),
-[`Eight.Stationary.sharpData_stationary`](../../SquaresInCircles/Eight/Stationary/System.lean#L1713),
-[`Eight.Stationary.stationary_unique`](../../SquaresInCircles/Eight/Stationary/System.lean#L1748),
-[`Eight.Stationary.exact_stationary_existsUnique`](../../SquaresInCircles/Eight/Stationary/System.lean#L1751),
-[`Eight.Stationary.qStar_bracket`](../../SquaresInCircles/Eight/Stationary/System.lean#L1659),
-[`Eight.Stationary.qStar_limits`](../../SquaresInCircles/Eight/Stationary/System.lean#L1671),
-[`Eight.radius_levels`](../../SquaresInCircles/Eight/Model.lean#L36),
-[`Eight.Stationary.sharp_coordinates`](../../SquaresInCircles/Eight/Stationary/System.lean#L1754),
-[`Eight.Stationary.sharp_y`](../../SquaresInCircles/Eight/Stationary/System.lean#L1789),
-[`Eight.Stationary.unique_minimum_zero`](../../SquaresInCircles/Eight/Stationary/System.lean#L382),
-[`Eight.Stationary.minimum_radius_difference`](../../SquaresInCircles/Eight/Stationary/System.lean#L334).*
+[`Eight.ExactFamily.exact_stationary_existsUnique`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L251),
+[`Eight.ExactFamily.qStar_bracket`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L159),
+[`Eight.ExactFamily.qStar_limits`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L171),
+[`Eight.radius_levels`](../../SquaresInCircles/Eight/Model.lean#L38),
+[`Eight.ExactFamily.sharp_coordinates`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L254),
+[`Eight.ExactFamily.sharp_y`](../../SquaresInCircles/Eight/ExactFamily/Stationary.lean#L289),
+[`Eight.ExactFamily.unique_minimum_zero`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L360),
+[`Eight.ExactFamily.minimum_radius_difference`](../../SquaresInCircles/Eight/ExactFamily/Analysis.lean#L312).*
 
-The numbers $q_-$, $Q_1$ and $Q_0$ are radius levels of the proof (§11.4).
-The level $Q_0$ is a round number above $q_*$, at which the core and the cycle
-of §11.2 to §11.6 are studied; $Q_1$ exceeds $q_*$ by less than
-$5 \cdot 10^{-10}$, and below it the five-corner problem is localized; and
-$q_-$, just below $q_*$, starts the interval of Proposition 11.4 (4).
+The three numbers $q_-$, $Q_1$ and $Q_0$ are the *radius levels* of the
+proof (§11.4). The level $Q_0$ is a round number above $q_*$; $Q_1$ exceeds
+$q_*$ by less than $5 \cdot 10^{-10}$; and $q_- < q_*$ is used to start the
+lower bound.
 
-### Proposition 11.5 (the five-corner problem)
+### Proposition 11.5 (the seven exterior squares)
 
-1. If a spanning five-corner configuration $(\theta, P_1, \dots, P_5)$ fits in
-   the radius $R$, then $R \ge \sqrt{q_*}$.
-2. If it fits in $\sqrt{q_*}$, then $\theta = t_*$ and $P_1, \dots, P_5$ are the
-   five corners of the solution of the stationary system,
-   $(x_1, y_*)$, $(x_2, y_* + 2)$, $(x_3, y_3)$, $(x_4, y_4)$ and
-   $h_1 e + h_2 f$.
-
-Hence $R_8 = \sqrt{q_*}$, the infimum that defines $R_8$ is attained, and the
-corners of the stationary solution, with the angle $t_*$, are the only spanning
-five-corner configuration that fits in $R_8$.
-
-*Proof.* (1) Suppose $R < \sqrt{q_*}$; then $R < 2$ by (11.1). Write
-$q = R^2$, $c = \cos\theta$, $s = \sin\theta$, and $y = (P_1)_y$.
-
-*Step 1: the chain below the corners.* The spans and the conditions
-$|P_i|^2 \le q$ place the corners of the chain of Definition 11.2 at the
-squared radius $q$, the position $y$ and the tilt $\theta$ outside the given
-ones. First $(P_2)_y \ge y + 2$ and $(P_2)_y \le R < 2$ give $y < 0$, and the
-radicals of Definition 11.2 are defined. Then $(P_1)_x \le x_1$ and, as
-$0 < y + 2 \le (P_2)_y$, $(P_2)_x \le x_2$. Next
-$(P_3)_x \le (P_2)_x - 3 \le x_3 < 0$, so $(P_3)_x^2 \ge x_3^2$ and
-$(P_3)_y \le y_3$; then $(P_4)_y \le (P_3)_y - 2 \le y_4 < 0$, so
-$(P_4)_y^2 \ge y_4^2$ and $(P_4)_x \ge x_4$. As $c, s \ge 0$, the last two
-spans give
-
-```math
-\langle e_\theta, P_5\rangle \le \langle e_\theta, P_1\rangle - 2 - c \le c\,x_1 + s\,y - 2 - c = h_1, \qquad \langle f_\theta, P_5\rangle \le \langle f_\theta, P_4\rangle - 1 - s \le -s\,x_4 + c\,y_4 - 1 - s = h_2 ,
-```
-
-and $h_1$, $h_2$ are negative (proof of
-[Proposition J.5](appendix-j.md#proposition-j5-the-stationary-solution),
-Step 1). So $|P_5|^2 \ge h_1^2 + h_2^2$, that is,
-
-```math
-F(q, y, \theta) \le |P_5|^2 - q \le 0 .
-```
-
-*Step 2: the tilt.* Two weighted sums of the spans locate $\theta$. For weights
-$a, b, d, \varepsilon \ge 0$, adding the five spans with the weights
-$a, b, d, \varepsilon, 1$ gives
-
-```math
-2a + 3b + 2d + \varepsilon\,(1 + \sin\theta) + 2 + \cos\theta \le \sum_{i=1}^5 \langle F_i, P_i\rangle ,
-```
-
-with the forces $F_1 = (\cos\theta, \sin\theta - a)$, $F_2 = (b, a)$,
-$F_3 = (-b, d)$, $F_4 = (-\varepsilon\sin\theta, \varepsilon\cos\theta - d)$ and
-$F_5 = (\varepsilon\sin\theta - \cos\theta, -\varepsilon\cos\theta - \sin\theta)$.
-If $\sin\theta \ge \frac3{10}$, take
-$(a, b, d, \varepsilon) = (\frac{23}{30}, \frac{31}{32}, \frac9{10}, \frac67)$
-and bound $\langle F_i, P_i\rangle \le R|F_i|$ with $R < \frac{4947}{2500}$: the
-left side minus $\frac{4947}{2500}\sum_i|F_i|$ is a concave function
-of $\theta$ on $[\arcsin\frac3{10}, \frac\pi4]$, positive at both ends, so
-the inequality fails. If $\sin\theta \le \frac3{10}$, take the weights
-
-```math
-a = \tfrac{24}{41} + \tfrac{49}{100}s - \tfrac{s^2}{20}, \qquad b = 1 - \tfrac s{20} - \tfrac{s^2}6, \qquad d = \tfrac{36}{31} - \tfrac7{10}s - \tfrac{s^2}{16}, \qquad \varepsilon = \tfrac{36}{31} - s + \tfrac{11}{20}s^2
-```
-
-and complete the squares, $\langle F_i, P_i\rangle \le m_i q + |F_i|^2/(4m_i)$,
-with the masses
-$m_1 = \frac{12}{41}/(1 + \frac{13s}{60})$, $m_2 = \frac{12}{41}/(1 - \frac{9s}{50})$,
-$m_3 = \frac{12}{31}/(1 + \frac{9s}{25})$, $m_4 = \frac{3s}{10}/(1 + \frac{4s}5)$
-and $m_5 = \frac{12}{31}/(1 + \frac{49s}{100})$ (at $s = 0$, $m_4 = 0$ and
-$F_4 = 0$). After rational majorants of the masses and of $1 - \cos\theta$, the
-difference of the two sides is at least the quintic
-
-```math
-\tfrac{38726637}{9929687500} - \tfrac{79}{1250}s + \tfrac{51}{200}s^2 - \tfrac{s^3}{100} - \tfrac{27}{100}s^4 - \tfrac3{10}s^5 ,
-```
-
-which is decreasing and positive on $[0, \frac1{10}]$ and increasing and
-positive on $[\frac{79}{500}, \frac3{10}]$. Hence
-$\frac1{10} < \sin\theta < \frac{79}{500}$, and $0 < \tan\theta < \frac15$.
-
-*Step 3: the envelope.* By the proof of
-[Proposition J.5](appendix-j.md#proposition-j5-the-stationary-solution)
-(Steps 1 to 4), at the squared radius $q_*$ the defect is nonnegative at every
-position of its radical domain and every tilt in $[0, \arctan\frac15]$.
-
-*Step 4: the radius.* For $q < q_* < 4$ the radical domain at $q$ lies in that
-at $q_*$, and $F(q_*, y, \theta) < F(q, y, \theta) - (q_* - q)$ (Appendix J,
-Step 1). By Step 1, $F(q_*, y, \theta) < 0$, against Step 3.
-
-(2) If $R = \sqrt{q_*}$, Steps 1 and 2 still apply: $\theta$ lies in
-$(0, \arctan\frac15)$, and $F(q_*, y, \theta) \le 0$. The envelope
-$M(q_*, \cdot)$, the least defect over the positions, is nonnegative on
-$[0, \arctan\frac15]$ by Step 3 and at most $F(q_*, y, \theta) \le 0$ at
-$\theta$; so $\theta$ is an interior minimum of $M(q_*, \cdot)$, hence a
-critical tilt, and $M(q_*, \cdot)$ has only one, $t_*$ (Appendix J, Step 4).
-With $\theta = t_*$ the five points are fixed by the weighted identity of the
-stationary chain at arbitrary points: the gaps of the identity are the excesses
-of the five spans, which are nonnegative
-([Appendix M](appendix-m.md)).
-
-Finally, the corners of the stationary solution span and fit in $\sqrt{q_*}$, by
-Lemma 11.3 and $F = 0$, so $R_8 = \sqrt{q_*}$. $\square$
-
-*Lean:
-[`Eight.FiveCorner.stationary_radius_le`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L697),
-[`Eight.FiveCorner.scalar_reduction`](../../SquaresInCircles/Eight/Corners/Nominal.lean#L244),
-[`Eight.FiveCorner.defect_le_last_corner`](../../SquaresInCircles/Eight/Corners/Nominal.lean#L268),
-[`Eight.FiveCorner.weighted_spans`](../../SquaresInCircles/Eight/Corners/Nominal.lean#L318),
-[`Eight.FiveCorner.HighTilt.exclusion`](../../SquaresInCircles/Eight/Corners/Nominal.lean#L582),
-[`Eight.FiveCorner.Nominal.gap_nonpos_of_spans`](../../SquaresInCircles/Eight/Corners/Nominal.lean#L712),
-[`Eight.FiveCorner.Nominal.gap_ge_polynomial`](../../SquaresInCircles/Eight/Corners/Nominal.lean#L929),
-[`Eight.FiveCorner.Nominal.sine_localization`](../../SquaresInCircles/Eight/Corners/Nominal.lean#L1004),
-[`Eight.FiveCorner.Nominal.tilt_localization`](../../SquaresInCircles/Eight/Corners/Nominal.lean#L1024),
-[`Eight.FiveCorner.stationary_defect_nonneg`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L253),
-[`Eight.Stationary.FiveCornerGeometry.defect_radius_decrease`](../../SquaresInCircles/Eight/Stationary/CriticalHessian.lean#L495),
-[`Eight.FiveCorner.stationary_angle_of_fits`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L751),
-[`Eight.FiveCorner.stationary_points_of_fits`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L834),
-[`Eight.FiveCorner.radius_eq_stationary`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L721),
-[`Eight.FiveCorner.existsUnique_minimizer`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L867),
-[`Eight.FiveCorner.selected_eq_stationary`](../../SquaresInCircles/Eight/Corners/GeometricStationaryExistence.lean#L876).*
-
-![The optimal packing with its five corners P1 to P5 on the dashed circle of radius R8 and the five spans drawn as dimension arrows: the height 2 from P1 up to P2 across A and B, the width 3 from P3 to P2 across D, T and B, the height 2 from P4 up to P3 across E and D, and in the frame of the turned squares the span 1 + sin t from P5 to the level of P4 along f, and the span 2 + cos t from P5 to the level of P1 along e, across H, G and the bottom of A](figures/11-eight/corners.svg)
-
-*Figure 11.4.* The five-corner problem at its minimum. The corners
-$P_1, \dots, P_5$ (dots) lie on the circle of radius $R_8$ (dashed), and each
-span holds with equality: the heights $2$ across $A$ and $B$ and across $E$
-and $D$, the width $3$ across $D$, $T$ and $B$, and, along the frame $e$, $f$
-of $H$ and $G$, the spans $1 + \sin t_*$ from $P_5$ to $P_4$ and
-$2 + \cos t_*$ from $P_5$ to $P_1$.
-
-The squares of the model are now explicit. By Proposition 11.5,
-$\theta^\circ = t_*$ and the corners $P^\circ_i$ are those of the stationary
-solution, so
-
-```math
-A = Q\left(x_1 - \tfrac12,\ y_* + \tfrac12\right), \quad B = Q\left(x_2 - \tfrac12,\ y_* + \tfrac32\right), \quad D = Q\left(x_3 + \tfrac12,\ y_3 - \tfrac12\right), \quad E = Q\left(x_4 + \tfrac12,\ y_4 + \tfrac12\right), \quad T = Q\left(x_2 - \tfrac32,\ \zeta\right),
-```
-
-and, in the notation of
-[Definition 9.9](09-six.md#definition-99-squares-in-a-frame),
-$H = Q_{t_*}(h_1 + \frac12, h_2 + \frac12)$ and
-$G = Q_{t_*}(h_1 + \frac32, h_2 + \frac12 + \eta)$. Put
-
-```math
-\zeta_+ = \sqrt{q_* - (x_2 - 1)^2} - \tfrac12, \qquad \eta_- = -h_2 - \sqrt{q_* - (h_1 + 2)^2}, \qquad \eta_+ = -h_2 - \tfrac{13}{12} ,
-```
-
-so that $\zeta_+ \approx 1.36600$, $\eta_- \approx -0.44505$ and
-$\eta_+ \approx 0.34665$.
-
-*Lean:
-[`Eight.FiveCorner.selected_anchorCenter`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L186),
-[`Eight.FiveCorner.selected_topCenter`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L195),
-[`Eight.FiveCorner.selected_tiltedCenter`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L200),
-[`Eight.FiveCorner.selected_exteriorSquare`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L229),
-[`Eight.Stationary.Coordinates.zMax`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L205),
-[`Eight.Stationary.Coordinates.etaMin`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L207),
-[`Eight.Stationary.Coordinates.etaMax`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L209).*
-
-### Proposition 11.6 (the five-parameter family)
-
-Call the parameters $(x, y, \varphi, \zeta, \eta)$ *admissible* if
-
-1. $-\frac\pi4 \le \varphi < \frac\pi4$;
-2. $\zeta \ge \frac12$ and $s_*(h_1 + 2) + c_*(h_2 + 1 + \eta) \le 0$;
-3. $\zeta \le \zeta_+$ and $\eta \ge \eta_-$;
-4. $|\langle e_\varphi, (x, y)\rangle| < \frac12$ and
-   $|\langle f_\varphi, (x, y)\rangle| < \frac12$;
-5. for each exterior square $P$, with the centre $p_P$ and the turn
-   $\theta_P$, equal to $t_*$ for $H$ and $G$ and to $0$ for the others,
-
-   ```math
-   \max\left(|\langle e_\varphi, v\rangle|,\ |\langle f_\varphi, v\rangle|,\ |\langle e_{\theta_P}, v\rangle|,\ |\langle f_{\theta_P}, v\rangle|\right) \ge \tfrac12\left(1 + |\cos(\varphi - \theta_P)| + |\sin(\varphi - \theta_P)|\right), \qquad v = p_P - (x, y) .
-   ```
-
-Condition (b) says that the lower side of $T$ lies at or above the horizontal
-axis and the highest point of $G$ at or below it, (c) that $T$ and $G$ lie in the
-closed disk of radius $R_8$, (d) that the origin lies in the open square $K$,
-and (e), by [Lemma 9.11](09-six.md#lemma-911-separating-axes-of-two-squares),
-that $K$ and $P$ have disjoint interiors.
-
-1. If $\zeta \ge \frac12$ and the highest point of $G$ lies at or below the
-   horizontal axis, the seven exterior squares have pairwise disjoint
-   interiors. The squares $A$, $B$, $D$, $E$, $H$ lie in the closed disk of
-   radius $R_8$ about the origin, with the corners $P_1, \dots, P_5$ on its
-   circle; $T$ lies in it exactly when $\zeta \le \zeta_+$, and $G$ exactly
-   when $\eta \ge \eta_-$, and they reach the circle exactly when
-   $\zeta = \zeta_+$ and $\eta = \eta_-$.
-2. For admissible parameters the model is a packing in the closed disk of
-   radius $R_8$ about the origin, and so is its mirror image in the diagonal.
-3. Let $-\frac\pi4 \le \varphi < \frac\pi4$, and let
-   $w = \frac{\sin\varphi}{1 + \cos\varphi}$, so that $\varphi = 2\arctan w$,
-   $C_w = \cos\varphi = \frac{1 - w^2}{1 + w^2}$ and
-   $S_w = \sin\varphi = \frac{2w}{1 + w^2}$. The parameters are admissible if
-   and only if
-
-   ```math
-   1 - \sqrt2 \le w < \sqrt2 - 1, \qquad \tfrac7{12} \le \zeta \le \zeta_+, \qquad \eta_- \le \eta \le \eta_+, \qquad |C_w x + S_w y| < \tfrac5{12}, \qquad |-S_w x + C_w y| < \tfrac5{12} ,
-   ```
-
-   and (e) holds. In particular, for admissible parameters $K$ contains the
-   closed disk of radius $\frac1{12}$ about the origin in its interior.
-
-We call $(x, y, w, \zeta, \eta)$ the *chart* of the family.
+Let $\frac7{12} \le \zeta \le \zeta_+$ and $\eta_- \le \eta \le \eta_+$. Then
+the seven squares $A$, $B$, $D$, $E$, $H$, $T$, $G$ of the model are pairwise
+disjoint and lie in the closed disk of radius $R_8$ about the origin, and the
+corners $P_1, \dots, P_5$ of $A$, $B$, $D$, $E$, $H$ lie on its circle. The
+square $T$ reaches the circle exactly when $\zeta = \zeta_+$, and $G$ exactly
+when $\eta = \eta_-$.
 
 *Proof.* We use the bounds of Proposition 11.4 (3) throughout.
 
-(1) *Containment.* By [Lemma 3.4](03-tools.md#lemma-34-farthest-vertex) a
-square lies in the closed disk of radius $R_8$ exactly when its vertex farthest
-from the origin does, and that vertex is the one across both axes of the square
+*Containment.* By [Lemma 3.4](03-tools.md#lemma-34-farthest-vertex) a square
+lies in the closed disk of radius $R_8$ exactly when its vertex farthest from
+the origin does, and that vertex is the one across both axes of the square
 from the origin. The centre of $A$ has a positive first and a negative second
 coordinate, as $x_1 > \frac12$ and $y_* < -\frac12$, so its farthest vertex
 is its lower right corner $P_1$; in the same way the farthest vertices of $B$,
@@ -644,11 +431,10 @@ $P_5 = h_1 e + h_2 f$. These five points are at squared distance $q_*$ by
 Lemma 11.3 (1), since $F = 0$ at the solution. The centre of $T$ has the
 coordinates $x_2 - \frac32 \in (0, \frac12)$ and $\zeta > 0$, so its farthest
 vertex is $(x_2 - 1, \zeta + \frac12)$, at squared distance at most $q_*$
-exactly when $\zeta \le \zeta_+$, with equality exactly when $\zeta = \zeta_+$.
-In the frame $e$, $f$ the centre of $G$ has the coordinates
-$h_1 + \frac32 \in (0, \frac12)$ and $h_2 + \frac12 + \eta < 0$, the latter as
-$c_*(h_2 + 1 + \eta) \le -s_*(h_1 + 2) < 0$; so its farthest vertex is
-$(h_1 + 2)e + (h_2 + \eta)f$, at squared distance
+exactly when $\zeta \le \zeta_+$. In the frame $e$, $f$ the centre of $G$ has
+the coordinates $h_1 + \frac32 \in (0, \frac12)$ and
+$h_2 + \frac12 + \eta \le -\frac7{12}$, as $\eta \le \eta_+$; so its farthest
+vertex is $(h_1 + 2)e + (h_2 + \eta)f$, at squared distance
 $(h_1 + 2)^2 + (h_2 + \eta)^2$, which is at most $q_*$ exactly when
 $-h_2 - \eta \le \sqrt{q_* - (h_1 + 2)^2}$, that is, when $\eta \ge \eta_-$.
 
@@ -665,165 +451,187 @@ $\langle e, p_A - p_H\rangle = 1 + \tau(t_*) \ge \tau(t_*)$; none of these
 uses $\eta$.
 
 *$E$ and $G$.* The leftmost point of $G$ has the first coordinate
-$c_*(h_1 + 1) - s_*(h_2 + 1 + \eta)$, and the second condition of (b) gives
-$-s_*(h_2 + 1 + \eta) \ge \frac{s_*^2}{c_*}(h_1 + 2) > 0$, so this coordinate
-exceeds $c_*(h_1 + 1) > -\frac12$, while the right side of $E$ is at
-$x_4 + 1 < -\frac9{10}$.
+$\langle (1, 0), p_G\rangle - \frac12(c_* + s_*)$, which decreases as $\eta$
+grows, and at $\eta = \eta_+$ equals
+$c_*(h_1 + 1) + \frac{s_*}{12} > -0.355$, while the right side of $E$ is at
+$x_4 + 1 < -0.902$.
 
 *Six pairs across the horizontal axis.* The highest point of $H$ has the
-height $s_*(h_1 + 1) + c_*(h_2 + 1) < 0$, and that of $G$ the height
-$s_*(h_1 + 2) + c_*(h_2 + 1 + \eta) \le 0$ by (b). The lowest points of $B$,
-$D$, $T$ have the heights $y_* + 1$, $y_3 - 1$ and $\zeta - \frac12 \ge 0$, so
-the horizontal axis separates each of $H$, $G$ from each of $B$, $D$, $T$.
+height $s_*(h_1 + 1) + c_*(h_2 + 1) < 0$, and that of $G$ is
+$s_*(h_1 + 2) + c_*(h_2 + 1 + \eta) \le s_*(h_1 + 2) - \frac{c_*}{12} < -0.004$.
+The lowest points of $B$, $D$, $T$ have the heights $y_* + 1$, $y_3 - 1$ and
+$\zeta - \frac12 \ge \frac1{12}$, all positive. So the horizontal axis
+separates each of $H$, $G$ from each of $B$, $D$, $T$.
 
 These are $10 + 4 + 1 + 6 = 21$ pairs, all the pairs of the seven squares.
-
-(2) By (d) the origin lies in the open square $K$, so the vertex of $K$ farthest
-from the origin is at squared distance less than $2(\frac12 + \frac12)^2 = 2$
-([Lemma 3.4](03-tools.md#lemma-34-farthest-vertex)), while
-$R_8^2 \ge \frac94$, as $P_2$ and $P_3$ lie in the disk and differ by at least 3
-in the first coordinate; so $K$ lies in the disk. By (e) and Lemma 9.11, $K$ is
-disjoint from each exterior square, and with (1) all 28 pairs are disjoint. A
-reflection in a line through the origin preserves packings in the disk.
-
-(3) The map $w \mapsto 2\arctan w$ is a bijection from
-$[1 - \sqrt2, \sqrt2 - 1)$ onto $[-\frac\pi4, \frac\pi4)$, with inverse
-$\varphi \mapsto \frac{\sin\varphi}{1 + \cos\varphi}$. Suppose the conditions of
-(3) hold. Then $\zeta \ge \frac7{12} > \frac12$; the highest point of $G$ is at
-the height $s_*(h_1 + 2) + c_*(h_2 + 1 + \eta) \le s_*(h_1 + 2) - \frac{c_*}{12} < 0$,
-as $\eta \le \eta_+$; (c) holds, and $|C_w x + S_w y| < \frac5{12}$ and
-$|-S_w x + C_w y| < \frac5{12}$ give (d), since $C_w x + S_w y$ and
-$-S_w x + C_w y$ are the two projections of (d). So the parameters are
-admissible.
-
-Conversely, let the parameters be admissible. By (2) the model is a packing in a
-disk of squared radius $q_* \le Q_0$, so by the one-twelfth core
-(Theorem 11.10, §11.2) one of its squares contains the closed disk
-$\overline D(o, \frac1{12})$ in its interior and the seven others are at
-distance more than $\frac1{12}$ from $o$. The square containing the core contains
-$o$, as does $K$ by (d), so it is $K$
-(Proposition 11.9). The points at distance $\frac1{12}$ from $o$ along the axes
-of $K$ lie in $K^\circ$, which gives $|C_w x + S_w y| < \frac5{12}$ and
-$|-S_w x + C_w y| < \frac5{12}$. The point $(0, \zeta - \frac12)$ lies on the
-lower side of $T$, as $|x_2 - \frac32| < \frac12$, so its distance
-$\zeta - \frac12$ from $o$ exceeds $\frac1{12}$, and $\zeta > \frac7{12}$. In
-the same way the point $(h_2 + 1 + \eta)f$ lies on the upper side of $G$, as
-$|h_1 + \frac32| < \frac12$, and $h_2 + 1 + \eta \le 0$ by (b), so
-$-(h_2 + 1 + \eta) > \frac1{12}$, that is, $\eta < \eta_+$. $\square$
+$\square$
 
 *Lean:
-[`Eight.Parameters.Admissible`](../../SquaresInCircles/Eight/Equality/Angles.lean#L104),
-[`Eight.Parameters.AngleRepresentative`](../../SquaresInCircles/Eight/Equality/Angles.lean#L98),
-[`Eight.GeometricModel.containmentCost`](../../SquaresInCircles/Eight/Equality/Angles.lean#L47),
-[`Eight.GeometricModel.separationMargin`](../../SquaresInCircles/Eight/Equality/Angles.lean#L57),
-[`Eight.GeometricModel.wide_exterior_separator`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L338),
-[`Eight.GeometricModel.wide_exterior_disjoint`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L528),
-[`Eight.Parameters.tilted_below_axis_iff`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L549),
-[`Eight.Parameters.exterior_disjoint`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L561),
-[`Eight.Parameters.exterior_contained`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L571),
-[`Eight.Stationary.exterior_contained`](../../SquaresInCircles/Eight/Stationary/Family.lean#L276),
-[`Eight.Stationary.sharp_exterior_bounds`](../../SquaresInCircles/Eight/Stationary/Family.lean#L67),
-[`Eight.Stationary.axis_containment`](../../SquaresInCircles/Eight/Stationary/Family.lean#L261),
-[`Eight.Stationary.tilted_containment`](../../SquaresInCircles/Eight/Stationary/Family.lean#L265),
-[`Eight.Parameters.central_containment_automatic`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L268),
-[`Eight.FiveCorner.radius_sq_ge_nine_quarters`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L240),
-[`Eight.GeometricModel.square_disjoint_iff`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L148),
-[`Eight.Parameters.model_packing`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L629),
-[`Eight.GeometricModel.model_packing`](../../SquaresInCircles/Eight/Construction.lean#L58),
-[`Eight.GeometricModel.halfToAngle`](../../SquaresInCircles/Eight/Equality/Angles.lean#L216),
-[`Eight.GeometricModel.angleToHalf`](../../SquaresInCircles/Eight/Equality/Angles.lean#L215),
-[`Eight.Parameters.toStationary`](../../SquaresInCircles/Eight/Equality/Angles.lean#L337),
-[`Eight.Parameters.ofStationary`](../../SquaresInCircles/Eight/Equality/Angles.lean#L340),
-[`Eight.Stationary.EqualityParameters.Admissible`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L323),
-[`Eight.Stationary.sat_max_iff`](../../SquaresInCircles/Eight/Stationary/Family.lean#L139),
-[`Eight.Stationary.central_axis_sat`](../../SquaresInCircles/Eight/Stationary/Family.lean#L237),
-[`Eight.Stationary.central_tilted_sat`](../../SquaresInCircles/Eight/Stationary/Family.lean#L246),
-[`Eight.Parameters.ofStationary_admissible`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L648),
-[`Eight.Parameters.central_core_recovered`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L699),
-[`Eight.Parameters.top_core_rail_recovered`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L718),
-[`Eight.Parameters.tilted_core_rail_recovered`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L742),
-[`Eight.Parameters.toStationary_admissible`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L779),
-[`Eight.GeometricModel.models_eq_stationary`](../../SquaresInCircles/Eight/Construction.lean#L38).*
+[`Eight.ExactFamily.exterior_contained`](../../SquaresInCircles/Eight/ExactFamily/EqualityGeometry.lean#L258),
+[`Eight.ExactFamily.exterior_disjoint`](../../SquaresInCircles/Eight/ExactFamily/EqualityGeometry.lean#L544),
+[`Eight.ExactFamily.sharp_exterior_bounds`](../../SquaresInCircles/Eight/ExactFamily/EqualityGeometry.lean#L49),
+[`Eight.ExactFamily.axis_containment`](../../SquaresInCircles/Eight/ExactFamily/EqualityGeometry.lean#L243),
+[`Eight.ExactFamily.tilted_containment`](../../SquaresInCircles/Eight/ExactFamily/EqualityGeometry.lean#L247).*
 
 ![The exterior squares of the model of Figure 11.1 with the ranges of its two moving squares: the top square T drawn dashed at its lowest position, its centre at height 7/12 and its lower side touching the disk of radius 1/12 about o, and at its highest position, at height zeta+, with a corner on the circle; the turned square G drawn dashed at its two extreme positions along H, at eta+ touching the disk of radius 1/12 with its upper side and at eta- touching the circle with a corner. Dotted segments show the paths of the two centres](figures/11-eight/sliders.svg)
 
-*Figure 11.5.* The two exterior squares that move. $T$ moves vertically with
+*Figure 11.4.* The two exterior squares that move. $T$ moves vertically with
 $\frac7{12} \le \zeta \le \zeta_+$, from touching the disk of radius
 $\frac1{12}$ to touching the circle; $G$ slides along $H$ with
 $\eta_- \le \eta \le \eta_+$, from the circle to the disk of radius
 $\frac1{12}$ (dashed: the extreme positions; dotted: the paths of the
 centres). The other five exterior squares are fixed.
 
+### Proposition 11.6 (the five-parameter family)
+
+1. For admissible parameters, the model is a packing in the closed disk of
+   radius $R_8$ about the origin; its central square $K$ contains the closed
+   disk of radius $\frac1{12}$ about the origin in its interior; and the
+   corners $P_1, \dots, P_5$ lie on the circle.
+2. Conversely, let $\frac7{12} \le \zeta \le \zeta_+$ and
+   $\eta_- \le \eta \le \eta_+$, and let $K$ be a unit square with centre
+   $(x, y)$ whose frame is turned by $2\arctan w$ with
+   $1 - \sqrt2 \le w < \sqrt2 - 1$. If $K$ contains the closed disk of radius
+   $\frac1{12}$ about the origin in its interior and is disjoint from the
+   seven exterior squares of the model with these $\zeta$ and $\eta$, then
+   $(x, y, w, \zeta, \eta)$ is admissible.
+
+*Proof.* The local coordinates of the origin in $K$ are
+$-(C_w x + S_w y)$ and $-(-S_w x + C_w y)$. So the second line of the
+admissibility conditions says that both are less than $\frac5{12}$ in absolute
+value, and by [Lemma 3.9](03-tools.md#lemma-39-inscribed-disks) (2), with
+$\alpha = \frac5{12}$, the open disk of radius $\frac1{12}$ about the origin
+lies in $K^\circ$; as the inequalities are strict, a slightly larger
+$\alpha$ still works, and the closed disk lies in $K^\circ$. Conversely, if
+the closed disk lies in $K^\circ$, the point at distance $\frac1{12}$ from
+the origin along each axis of $K$ lies in $K^\circ$, which gives the two
+strict inequalities. The vertex of $K$ farthest from the origin is at squared
+distance less than $2(\frac5{12} + \frac12)^2 = \frac{121}{72} < q_*$
+([Lemma 3.4](03-tools.md#lemma-34-farthest-vertex)), so $K$ lies in the disk.
+
+Let $P$ be one of the seven exterior squares and $v = p_P - (x, y)$. If $P$
+has the frame $(1, 0)$, $(0, 1)$, the relative angle of $K$ and $P$ is
+$\delta = 2\arctan w$, with $\cos\delta = C_w > 0$ and $\sin\delta = S_w$, so
+the threshold of [Lemma 9.11](09-six.md#lemma-911-separating-axes-of-two-squares)
+is $\tau(\delta) = W_0$, and the eight vectors $\pm n$ of that lemma give the
+eight numbers $\pm\langle n, v\rangle$ whose largest value is $M_0(v)$. If $P$
+is $H$ or $G$, the relative angle is $\delta = 2\arctan w - t_*$, with
+$|\delta| < \frac\pi2$, $\cos\delta = c_* C_w + s_* S_w > 0$ and
+$\sin\delta = c_* S_w - s_* C_w$, so $\tau(\delta) = W_*$ and the largest of
+the eight numbers is $M_*(v)$. By Lemma 9.11, $K$ and $P$ are disjoint
+exactly when this largest number is at least the threshold. With
+Proposition 11.5 this proves (1), and the corners are on the circle by
+Proposition 11.5. For (2), the frame condition and the slider ranges are
+hypotheses, the second line is the core, and the last line is disjointness
+from the seven squares. $\square$
+
+*Lean:
+[`Eight.ExactFamily.model_sqPacking`](../../SquaresInCircles/Eight/ExactFamily/EqualityGeometry.lean#L558),
+[`Eight.ExactFamily.sat_max_iff`](../../SquaresInCircles/Eight/ExactFamily/EqualityGeometry.lean#L121),
+[`Eight.ExactFamily.central_axis_sat`](../../SquaresInCircles/Eight/ExactFamily/EqualityGeometry.lean#L219),
+[`Eight.ExactFamily.central_tilted_sat`](../../SquaresInCircles/Eight/ExactFamily/EqualityGeometry.lean#L228),
+[`Eight.ExactFamily.frame_parameter_bounds`](../../SquaresInCircles/Eight/ExactFamily/EqualityGeometry.lean#L191),
+[`Eight.model_packing`](../../SquaresInCircles/Eight/Equality.lean#L242),
+[`Eight.model_reaches`](../../SquaresInCircles/Eight/Equality.lean#L258),
+[`Eight.containsCore_center_bounds`](../../SquaresInCircles/Eight/Equality.lean#L135).*
+
 The family is not a product of intervals. For instance $\zeta = \frac7{12}$
 is not attained: then the lower side of $T$ is at height $\frac1{12}$ above
 the disk centre, but $K$ contains a point above that height near the centre,
-inside the column of $T$. Figure 11.6 shows a section.
+inside the column of $T$. Figure 11.5 shows a section.
 
 ![The plane of the centre (x, y) of the central square for the frame parameter w = 0.1 and the sliders zeta = 1.35, eta = -0.32: the admissible centres form a shaded pentagon, tall and narrow, about 0.07 wide and 0.24 high, bounded by five straight segments, on each of which the central square touches one of the exterior squares D, B, A, G and H, labelled in their colours; a tiny black box around (0.14, 0) is marked inside it](figures/11-eight/section.svg)
 
-*Figure 11.6.* A section of the family: the centres $(x, y)$ admissible with
+*Figure 11.5.* A section of the family: the centres $(x, y)$ admissible with
 $w = 0.1$, $\zeta = 1.35$ and $\eta = -0.32$ (shaded). Each side of the region
 is a contact of $K$ with an exterior square, labelled by that square; the
-core conditions $|C_w x + S_w y| < \frac5{12}$, $|-S_w x + C_w y| < \frac5{12}$
-are not active on this section. The small box is the section of the box of
+core condition $|C_w x + S_w y|, |-S_w x + C_w y| \le \frac5{12}$ is not
+active on this section. The small box is the section of the box of
 Proposition 11.7.
 
-### Proposition 11.7 (a box of admissible parameters)
+### Proposition 11.7 (a box of different packings)
 
-Let $\mathcal B$ be the box of the chart with
+Let $\mathcal B$ be the box of the parameters with
 
 ```math
 0.139 \le x \le 0.141, \qquad -0.001 \le y \le 0.001, \qquad 0.099 \le w \le 0.101, \qquad 1.349 \le \zeta \le 1.351, \qquad -0.321 \le \eta \le -0.319 .
 ```
 
-Every point of $\mathcal B$ gives admissible parameters, and every inequality of
-Proposition 11.6 (3) in which a parameter occurs holds with room to spare
-uniformly on $\mathcal B$: the central square is separated from $A$, $B$, $D$,
-$E$, $H$, $G$, $T$ along the unit normals $(1, 0)$, $(C_w, S_w)$, $(-S_w, C_w)$,
-$(-1, 0)$, $(-C_w, -S_w)$, $(s_*, -c_*)$, $(0, 1)$, with the projected gaps of
-the centres exceeding the thresholds by at least $\frac1{100}$;
-$|C_w x + S_w y| \le 0.139$ and $|-S_w x + C_w y| \le 0.03$; and
-$q_* - (x_2 - 1)^2 - (\zeta + \frac12)^2 \ge 0.055$ and
-$q_* - (h_1 + 2)^2 - (h_2 + \eta)^2 \ge 0.448$.
+1. Every point of $\mathcal B$ is admissible, and every inequality of the
+   admissibility conditions in which $x$, $y$, $w$, $\zeta$ or $\eta$ occurs
+   holds with room to spare uniformly on $\mathcal B$: the central square is
+   separated from $A$, $B$, $D$, $E$, $H$, $G$, $T$ along the unit normals
+   $(1, 0)$, $(C_w, S_w)$, $(-S_w, C_w)$, $(-1, 0)$, $(-C_w, -S_w)$,
+   $(s_*, -c_*)$, $(0, 1)$ with the projected gaps of the centres exceeding
+   the thresholds by more than $0.020$, $0.020$, $0.036$, $0.450$, $0.031$,
+   $0.192$, $0.257$; $|C_w x + S_w y| < 0.139$ and $|-S_w x + C_w y| < 0.030$;
+   and $q_* - (x_2 - 1)^2 - (\zeta + \frac12)^2 > 0.055$ and
+   $q_* - (h_1 + 2)^2 - (h_2 + \eta)^2 > 0.448$.
+2. If two points of $\mathcal B$ give models that are congruent, even by an
+   isometry of the plane that reflects, with a relabelling of the squares,
+   then the two points are equal.
 
-*Proof.* Each listed quantity is a function of the five parameters and of the
-coordinates of the stationary solution. Eighteen such quantities, these and
-the cosine and sine of the frames, are bounded on $\mathcal B$ by interval
-expressions with rational endpoints, evaluated exactly by the Lean kernel, with
-the coordinates of the solution in their brackets (Appendix L, interval
-evaluation). For instance, the gap for $B$ is
+*Proof.* (1) Each listed quantity is a function of the five parameters and of
+the constants of Proposition 11.4 (3), monotone or rational in each
+parameter; bounding it with the endpoints of $\mathcal B$ and of those brackets
+is a finite rational computation. For instance, the gap for $B$ is
 $C_w(x_2 - \frac12 - x) + S_w(y_* + \frac32 - y) - \frac12(1 + C_w + S_w)$,
-with $C_w$ between $\frac{979}{1000}$ and $\frac{981}{1000}$ and $S_w$ between
-$\frac{39}{200}$ and $\frac{201}{1000}$ on $\mathcal B$. On $\mathcal B$,
-$c_* S_w - s_* C_w \ge \frac9{125} > 0$, so the absolute values of
-Proposition 11.6 (e) for $H$ and $G$ have fixed signs. Each separation along
-one of the listed normals implies the corresponding maximum condition, and the
-last two numbers are the room left in the containment of $T$ and $G$.
-$\square$
+with $C_w$ between $\frac{1 - 0.101^2}{1 + 0.101^2}$ and
+$\frac{1 - 0.099^2}{1 + 0.099^2}$ and $S_w$ between
+$\frac{2 \cdot 0.099}{1 + 0.099^2}$ and $\frac{2 \cdot 0.101}{1 + 0.101^2}$.
+On $\mathcal B$, $c_* S_w - s_* C_w > 0$, so the absolute value in $W_*$ has a
+fixed sign. Each separation implies the corresponding maximum condition, and
+the last two numbers are the room in the containment of $T$ and $G$ of
+Proposition 11.5.
 
-*Lean:
-[`Eight.Stationary.EqualityParameters.InBox`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L342),
-[`Eight.Stationary.box_data_bounds`](../../SquaresInCircles/Eight/Stationary/Family.lean#L865),
-[`Eight.box_admissible`](../../SquaresInCircles/Eight/Stationary/Family.lean#L901),
-[`Eight.sample_admissible`](../../SquaresInCircles/Eight/Stationary/Family.lean#L1002),
-[`Eight.GeometricModel.attainingParameters_admissible`](../../SquaresInCircles/Eight/Construction.lean#L51),
-[`Eight.GeometricModel.models_nonempty`](../../SquaresInCircles/Eight/Construction.lean#L55).*
+(2) Let the isometry $\Phi$ carry the model of $p \in \mathcal B$ onto the
+model of $p' \in \mathcal B$, square by square up to a relabelling.
 
-So the optimal packings of eight squares form a family with five free
-parameters: the admissible set contains a box of positive side in each of its
-five coordinates. The family is large: in Figure 11.2 the square $T$ is lowered
-by $0.43$ and $G$ is moved by $0.22$ from the box, and the frame of $K$ ranges
-over angles of both signs. Every optimal model reaches the circle: its square
-$A$ has the corner $P_1$ on it.
+*The centre.* Let $\mu_A, \mu_B, \mu_D, \mu_E, \mu_H > 0$ be the weights of
+Lemma J.6, with $\sum \mu_P = 1$ and $\sum \mu_P P_P = 0$, where
+$P_A = P_1, \dots, P_H = P_5$ are the five corners on the circle. If all
+eight squares of a model lie in a closed disk of radius $R_8$ about a point
+$o'$, then
 
-*Lean:
-[`Eight.Parameters.model_reaches`](../../SquaresInCircles/Eight/Equality/Equivalence.lean#L75),
-[`Eight.GeometricModel.model_reaches`](../../SquaresInCircles/Eight/Construction.lean#L67),
-[`Eight.models_reach`](../../SquaresInCircles/Eight/Uniqueness.lean#L70).*
+```math
+q_* \ge \sum_P \mu_P |P_P - o'|^2 = \sum_P \mu_P |P_P|^2 - 2\left\langle \sum_P \mu_P P_P,\ o'\right\rangle + |o'|^2 = q_* + |o'|^2 ,
+```
+
+so $o'$ is the origin. As $\Phi$ maps the disk of radius $R_8$ about the
+origin, which holds the model of $p$, onto a disk of radius $R_8$ about
+$\Phi(0)$ holding the model of $p'$, $\Phi(0) = 0$, and $\Phi$ is linear.
+
+*Two fixed centres.* On $\mathcal B$ the distances of the eight centres from
+the origin lie in eight pairwise disjoint intervals, the same for $p$ and
+$p'$ (for the fixed squares they do not depend on the parameters). As $\Phi$
+preserves these distances, it maps each square to the square of the same name.
+In particular it fixes $p_A$ and $p_E$, which are linearly independent, so
+$\Phi$ is the identity.
+
+*The parameters.* Then the two models are equal square by square: $T$ gives
+$\zeta = \zeta'$, $G$ gives $\eta = \eta'$, $K$ gives $(x, y) = (x', y')$, and
+the frame of $K$, determined modulo quarter turns, gives $w = w'$ since
+$2\arctan w$ and $2\arctan w'$ lie in an interval of length less than
+$\frac\pi2$. $\square$
+
+*Lean: [`Eight.box_admissible`](../../SquaresInCircles/Eight/Equality.lean#L31),
+[`Eight.whole_box_packing`](../../SquaresInCircles/Eight/Equality.lean#L268),
+[`Eight.full_dimensional_equality_box`](../../SquaresInCircles/Eight/TableProof.lean#L559),
+[`Eight.ExactFamily.box_data_bounds`](../../SquaresInCircles/Eight/ExactFamily/EqualityBox.lean#L232),
+[`Eight.ExactFamily.BoxRigidity.enclosing_center_unique`](../../SquaresInCircles/Eight/ExactFamily/BoxRigidity.lean#L191),
+[`Eight.ExactFamily.BoxRigidity.anchor_barycenter`](../../SquaresInCircles/Eight/ExactFamily/BoxRigidity.lean#L138),
+[`Eight.ExactFamily.BoxRigidity.center_band`](../../SquaresInCircles/Eight/ExactFamily/BoxRigidity.lean#L217),
+[`Eight.ExactFamily.BoxRigidity.box_rigidlyCongruent_iff`](../../SquaresInCircles/Eight/ExactFamily/BoxRigidity.lean#L429).*
+
+So the optimal packings of eight squares form a family with five independent
+parameters, and infinitely many of them are pairwise not congruent. The
+family is large: in Figure 11.2 the square $T$ is lowered by $0.43$ and $G$ is
+moved by $0.22$ from the box, and the frame of $K$ ranges over angles of both
+signs.
 
 ## 11.2 The central square and the one-twelfth core
 
-From here to §11.12 we prove the lower bound. Throughout, a packing of eight
+From here to §11.11 we prove the lower bound. Throughout, a packing of eight
 unit squares lies in a closed disk about $o$ of squared radius $q$, and the
 squares are measured from $o$ as in Chapter 3. The first step is the analogue
 of the containing square of Chapter 9, but it is proved with the total length
@@ -849,13 +657,14 @@ and $L_{5/4}(S) = 0$.
 
 The proof is given in [Appendix K](appendix-k.md).
 
-*Lean: [`Eight.squareAngles`](../../SquaresInCircles/Eight/Exterior.lean#L64),
-[`Eight.angularLength`](../../SquaresInCircles/Eight/Exterior.lean#L67),
-[`Eight.one_square_two_circle_inequality`](../../SquaresInCircles/Eight/Exterior.lean#L1017).*
+*Lean:
+[`Eight.squareAngles`](../../SquaresInCircles/Eight/CentralCore.lean#L79),
+[`Eight.angularLength`](../../SquaresInCircles/Eight/CentralCore.lean#L82),
+[`Eight.one_square_two_circle_inequality`](../../SquaresInCircles/Eight/CentralCore.lean#L1030).*
 
 ![The model of Figure 11.1 with the unit circle and the circle of radius 5/4 about o. Each of the seven exterior squares holds one arc of each circle, drawn thick in the colour of the square, and the arcs on each circle do not overlap; the grey central square K, which contains o, meets neither circle](figures/11-eight/measure.svg)
 
-*Figure 11.7.* Lemma 11.8 in the optimal packing. On the unit circle
+*Figure 11.6.* Lemma 11.8 in the optimal packing. On the unit circle
 $\Gamma_1$ and on $\Gamma_{5/4}$ each exterior square holds an arc (thick), and
 for each of them $3L_1 + L_{5/4} > \pi$; the smallest value, about $3.170$,
 belongs to $H$, with $D$ close behind. Had the eighth square avoided $o$ as
@@ -884,10 +693,10 @@ and $\sum_i L_1(S_i) = \frac{8\pi}3 > 2\pi$, a contradiction. Two disjoint
 squares cannot both contain $o$ in their interiors. $\square$
 
 *Lean:
-[`Eight.angularLength_budget`](../../SquaresInCircles/Eight/Exterior.lean#L178),
-[`Eight.central_exists_from_one_square_inequality`](../../SquaresInCircles/Eight/Exterior.lean#L263),
-[`Eight.central_square_exists`](../../SquaresInCircles/Eight/Containing.lean#L39),
-[`Eight.central_square_unique`](../../SquaresInCircles/Eight/Exterior.lean#L290).*
+[`Eight.angularLength_budget`](../../SquaresInCircles/Eight/CentralCore.lean#L193),
+[`Eight.central_exists_from_one_square_inequality`](../../SquaresInCircles/Eight/CentralCore.lean#L278),
+[`Eight.central_square_exists`](../../SquaresInCircles/Eight/CentralCore.lean#L1080),
+[`Eight.central_square_unique`](../../SquaresInCircles/Eight/CentralCore.lean#L305).*
 
 The square that contains $o$ is the *central square*. Proposition 11.9 holds
 up to the squared radius $\frac{98}{25} = 3.92$, a little above $q_*$; the
@@ -913,8 +722,8 @@ segments, and the seven centre directions, which are pairwise more than
 $\frac{19}{25}$ apart, would not fit in what is left of the circle.
 
 *Lean:
-[`Eight.central_core_and_exteriors`](../../SquaresInCircles/Eight/Containing.lean#L797),
-[`Eight.centralDepth_gt_milli`](../../SquaresInCircles/Eight/Containing.lean#L435).*
+[`Eight.central_core_and_exteriors`](../../SquaresInCircles/Eight/CentralCore.lean#L1837),
+[`Eight.centralDepth_gt_milli`](../../SquaresInCircles/Eight/CentralCore.lean#L1475).*
 
 The other seven squares are the *exterior squares*. For an exterior square
 $S$ we use its state $(a_S, b_S)$, the offsets of $o$ from its centre along
@@ -946,14 +755,14 @@ Finally $(a + \frac12)^2 + \frac14 \le q$ fails at $a = \frac{283}{200}$, and
 $2(b + \frac12)^2 \le q < \frac{98}{25}$ fails at $b = \frac9{10}$. $\square$
 
 *Lean:
-[`Eight.annular_center_radius_lower`](../../SquaresInCircles/Eight/Boundary/Reduction.lean#L92),
-[`Eight.annular_center_radius_upper`](../../SquaresInCircles/Eight/Boundary/Reduction.lean#L116),
-[`Eight.Candidate.canonical_bounds`](../../SquaresInCircles/Eight/Boundary/Candidate/Geometry.lean#L239),
-[`Eight.coreAvoiding_iff_distance`](../../SquaresInCircles/Eight/Boundary/Reduction.lean#L71).*
+[`Eight.annular_center_radius_lower`](../../SquaresInCircles/Eight/BoundaryReduction.lean#L92),
+[`Eight.annular_center_radius_upper`](../../SquaresInCircles/Eight/BoundaryReduction.lean#L116),
+[`Eight.Candidate.canonical_bounds`](../../SquaresInCircles/Eight/Candidate/Geometry.lean#L51),
+[`Eight.coreAvoiding_iff_distance`](../../SquaresInCircles/Eight/BoundaryReduction.lean#L71).*
 
 ![The model of Figure 11.1 with the centres of the exterior squares marked: the grey central square K containing the shaded disk of radius 1/12 about o, the dotted circle of radius 7/12 about o, and the seven exterior squares, which stay outside the shaded disk and whose centres all lie outside the dotted circle](figures/11-eight/core.svg)
 
-*Figure 11.8.* The core in the optimal packing. The central square $K$
+*Figure 11.7.* The core in the optimal packing. The central square $K$
 contains $\overline D(o, \frac1{12})$ (shaded) in its interior; the exterior
 squares avoid it, so their centres lie outside the circle of radius
 $\frac7{12}$ (dotted).
@@ -984,18 +793,18 @@ following properties.
 
 Nonconsecutive squares may overlap. By Theorem 11.10 and Lemma 9.11, the
 exterior squares of a packing in a closed disk of squared radius
-$q \le Q_1$, taken in the order of their centre directions and with any
-choice of witnesses, form a neighbour cycle at level $\max(q, q_-)$:
+$q \le Q_0$, taken in the order of their centre directions and with any
+choice of witnesses, form a neighbour cycle at level $\max(q, \frac52)$:
 two disjoint exterior squares cannot have the same centre direction, since
 their centres would be at least 1 apart on one ray although both lie at
 distances between $\frac7{12}$ and $\frac{71}{50}$.
 
-*Lean: [`Eight.NeighborCycle`](../../SquaresInCircles/Eight/Model.lean#L159),
-[`Eight.SignedAxis.Feasible`](../../SquaresInCircles/Eight/Model.lean#L136),
-[`Eight.signed_axis_of_disjoint`](../../SquaresInCircles/Eight/Frames/SeparatingAxis.lean#L52),
-[`Eight.OrderedExterior`](../../SquaresInCircles/Eight/Boundary/RadiusTransfer.lean#L636),
-[`Eight.ordered_exterior_exists`](../../SquaresInCircles/Eight/Boundary/RadiusTransfer.lean#L649),
-[`Eight.center_direction_separated`](../../SquaresInCircles/Eight/Boundary/RadiusTransfer.lean#L600).*
+*Lean: [`Eight.NeighborCycle`](../../SquaresInCircles/Eight/Model.lean#L161),
+[`Eight.SignedAxis.Feasible`](../../SquaresInCircles/Eight/Model.lean#L138),
+[`Eight.signed_axis_of_disjoint`](../../SquaresInCircles/Eight/SeparatingAxis.lean#L53),
+[`Eight.OrderedExterior`](../../SquaresInCircles/Eight/RadiusTransfer.lean#L633),
+[`Eight.ordered_exterior_exists`](../../SquaresInCircles/Eight/RadiusTransfer.lean#L646),
+[`Eight.center_direction_separated`](../../SquaresInCircles/Eight/RadiusTransfer.lean#L597).*
 
 ### Lemma 11.13 (gaps of a neighbour cycle)
 
@@ -1028,10 +837,10 @@ add up to more than $\frac{18}5 > \pi$, and all seven to more than $2\pi$.
 $\square$
 
 *Lean:
-[`Eight.polar_gap_cosine_bound`](../../SquaresInCircles/Eight/Boundary/Reduction.lean#L607),
-[`Eight.annular_cosine_quotient`](../../SquaresInCircles/Eight/Boundary/Reduction.lean#L145),
-[`Eight.gap_gt_three_fifths`](../../SquaresInCircles/Eight/Boundary/Reduction.lean#L641),
-[`Eight.seven_gaps_below_pi`](../../SquaresInCircles/Eight/Boundary/Reduction.lean#L649).*
+[`Eight.polar_gap_cosine_bound`](../../SquaresInCircles/Eight/BoundaryReduction.lean#L607),
+[`Eight.annular_cosine_quotient`](../../SquaresInCircles/Eight/BoundaryReduction.lean#L145),
+[`Eight.gap_gt_three_fifths`](../../SquaresInCircles/Eight/BoundaryReduction.lean#L641),
+[`Eight.seven_gaps_below_pi`](../../SquaresInCircles/Eight/BoundaryReduction.lean#L649).*
 
 ### Definition 11.14 (canonical frames and the radial curves)
 
@@ -1066,19 +875,19 @@ and at a vertex otherwise (the *core corner*). A neighbour cycle at level $q$
 is a *boundary cycle* if the state of every square lies on $\mathcal O_q$ or
 on $\mathcal C$.
 
-*Lean: [`Eight.RadialKind`](../../SquaresInCircles/Eight/Model.lean#L146),
-[`Eight.BoundaryState`](../../SquaresInCircles/Eight/Model.lean#L150),
-[`Eight.BoundaryCycle`](../../SquaresInCircles/Eight/Model.lean#L170),
-[`Eight.BoundaryCycle.tangent`](../../SquaresInCircles/Eight/Model.lean#L189),
-[`Eight.BoundaryCycle.alpha`](../../SquaresInCircles/Eight/Model.lean#L192),
-[`Eight.BoundaryCycle.canonicalAngle`](../../SquaresInCircles/Eight/Model.lean#L195),
-[`Eight.CanonicalSquare`](../../SquaresInCircles/Eight/Boundary/Reduction.lean#L775),
-[`Eight.canonical_square_exists`](../../SquaresInCircles/Eight/Boundary/Reduction.lean#L788),
-[`Eight.CanonicalSquare.boundary_kind`](../../SquaresInCircles/Eight/Boundary/Reduction.lean#L824).*
+*Lean: [`Eight.RadialKind`](../../SquaresInCircles/Eight/Model.lean#L148),
+[`Eight.BoundaryState`](../../SquaresInCircles/Eight/Model.lean#L152),
+[`Eight.BoundaryCycle`](../../SquaresInCircles/Eight/Model.lean#L172),
+[`Eight.BoundaryCycle.tangent`](../../SquaresInCircles/Eight/Model.lean#L191),
+[`Eight.BoundaryCycle.alpha`](../../SquaresInCircles/Eight/Model.lean#L194),
+[`Eight.BoundaryCycle.canonicalAngle`](../../SquaresInCircles/Eight/Model.lean#L197),
+[`Eight.CanonicalSquare`](../../SquaresInCircles/Eight/BoundaryReduction.lean#L775),
+[`Eight.canonical_square_exists`](../../SquaresInCircles/Eight/BoundaryReduction.lean#L788),
+[`Eight.CanonicalSquare.boundary_kind`](../../SquaresInCircles/Eight/BoundaryReduction.lean#L824).*
 
 ![The (a, b)-plane with 0 at most b at most a: the states allowed by containment and the core form a shaded strip between the core curve C, a vertical segment at a = 7/12 followed by a small quarter circle up to the diagonal, and the outer curve O, an arc of the circle about (-1/2, -1/2) of radius root q. The outer curve is divided at the lines b = a/4 and b = 3a/7 into the three types L, M and H, and the core curve at b = 6a/7 into its side and its corner. Dots mark the states of the seven exterior squares of the optimal packing, five on the outer curve and two inside the strip](figures/11-eight/radial.svg)
 
-*Figure 11.9.* The radial curves at the level $Q_0$. The states allowed by
+*Figure 11.8.* The radial curves at the level $Q_0$. The states allowed by
 containment and the core (shaded) lie between $\mathcal C$ and $\mathcal O$.
 The dots are the states of the exterior squares of Figure 11.1: $A$, $B$, $D$,
 $E$, $H$ on $\mathcal O$, while $T$ and $G$ lie inside. The lines
@@ -1123,48 +932,30 @@ every square touches the circle or the core, that is, its state lies on
 $\mathcal O_q$ or on $\mathcal C$. $\square$
 
 *Lean:
-[`Eight.boundary_reduction_exists`](../../SquaresInCircles/Eight/Boundary/Reduction.lean#L1029),
-[`Eight.anchored_cycle_exists`](../../SquaresInCircles/Eight/Boundary/Reduction.lean#L1003),
-[`Eight.vertex_motion_exists`](../../SquaresInCircles/Eight/Boundary/Reduction.lean#L428),
-[`Eight.two_halfplanes_recession`](../../SquaresInCircles/Eight/Boundary/Reduction.lean#L188),
-[`Eight.first_two_boundary_contact`](../../SquaresInCircles/Eight/Boundary/Reduction.lean#L289),
-[`Eight.boundary_normalization_exists`](../../SquaresInCircles/Eight/Boundary/RadiusTransfer.lean#L737),
-[`Eight.BoundaryNormalization.original_selected_feasible`](../../SquaresInCircles/Eight/Boundary/RadiusTransfer.lean#L760).*
+[`Eight.boundary_reduction_exists`](../../SquaresInCircles/Eight/BoundaryReduction.lean#L1029),
+[`Eight.anchored_cycle_exists`](../../SquaresInCircles/Eight/BoundaryReduction.lean#L1003),
+[`Eight.vertex_motion_exists`](../../SquaresInCircles/Eight/BoundaryReduction.lean#L428),
+[`Eight.two_halfplanes_recession`](../../SquaresInCircles/Eight/BoundaryReduction.lean#L188),
+[`Eight.first_two_boundary_contact`](../../SquaresInCircles/Eight/BoundaryReduction.lean#L289),
+[`Eight.boundary_normalization_exists`](../../SquaresInCircles/Eight/RadiusTransfer.lean#L734),
+[`Eight.BoundaryNormalization.original_selected_feasible`](../../SquaresInCircles/Eight/RadiusTransfer.lean#L757).*
 
 ![The model of Figure 11.1 with the moves of the boundary reduction for its two squares that touch neither boundary. For T, its two witnesses, the vertical lines through its sides shared with B and D, leave it free to move vertically, and it moves up until its corner meets the circle; for G, its two witnesses, the lines across H and A perpendicular to e, leave it free to move along f, and it moves outward until its corner meets the circle. The moved squares are dashed, and arrows show the directions of the moves](figures/11-eight/reduction.svg)
 
-*Figure 11.10.* Proposition 11.15 for the exterior squares of Figure 11.1. The
+*Figure 11.9.* Proposition 11.15 for the exterior squares of Figure 11.1. The
 witnesses of $T$ are the vertical lines it shares with $D$ and $B$; their
 inward normals are opposite, so $T$ moves along the perpendicular, up to the
 circle. The witnesses of $G$ are perpendicular to $e$; $G$ moves along $f$,
 out to the circle. The other five squares already touch the circle.
 
-## 11.4 Radius levels
+## 11.4 Three radius levels
 
-The steps of the proof are carried out at a few fixed squared radii: the
-levels of (11.1) and $q_{\mathrm{low}} = \frac{19577}{5000}$, so that
-
-```math
-\tfrac52 < q_{\mathrm{low}} < q_- < q_* < Q_1 < Q_0 < 4 .
-```
-
-A packing in a closed disk of squared radius $q \le q_*$ also lies in the disk
-of squared radius $q_*$, and its boundary cycle is taken at that level. The
-theorems on the core, the frames and the quarter words hold for every level up
-to $Q_0$ and are proved at $Q_0$; the candidate frame of §11.7 is read at $Q_1$;
-the owners and the hard axes of §11.8 to §11.10 are determined at every level
-from $q_{\mathrm{low}}$ to $Q_0$, or to $q_*$; and the final inequality is applied at the
-radius of the packing itself. Between the levels the boundary cycles are moved
-by pushing the squares on $\mathcal O$ outward along their centre directions.
-
-*Lean: [`Eight.qMinus`](../../SquaresInCircles/Eight/Model.lean#L31),
-[`Eight.Q1`](../../SquaresInCircles/Eight/Model.lean#L32),
-[`Eight.Q0`](../../SquaresInCircles/Eight/Model.lean#L33),
-[`Eight.qLow`](../../SquaresInCircles/Eight/Owners/CircleGeometry.lean#L20),
-[`Eight.qCap`](../../SquaresInCircles/Eight/Owners/CircleGeometry.lean#L22),
-[`Eight.radius_levels`](../../SquaresInCircles/Eight/Model.lean#L36),
-[`Eight.uniform_radius_order`](../../SquaresInCircles/Eight/Owners/CircleGeometry.lean#L28),
-[`Eight.sourceLevel`](../../SquaresInCircles/Eight/Boundary/RadiusTransfer.lean#L588).*
+The steps of the proof are carried out at three squared radii, the levels of
+(11.1). The theorems on the core, the frames and the quarter words hold for
+every level up to $Q_0$; the tables of §11.7 to §11.10 are computed once, at
+the fixed level $Q_1$; and the final inequality is applied at the radius of
+the packing itself. Between the levels the boundary cycles are moved by
+pushing the squares on $\mathcal O$ outward along their centre directions.
 
 ### Lemma 11.16 (the outer radius)
 
@@ -1192,10 +983,10 @@ touches $\overline D(o, \frac1{12})$, so its centre is a point of the closed
 unit square about the origin plus a vector of length $\frac1{12}$. $\square$
 
 *Lean:
-[`Eight.RadiusTransfer.outerRadius`](../../SquaresInCircles/Eight/Boundary/RadiusTransfer.lean#L38),
-[`Eight.RadiusTransfer.outerRadius_equation`](../../SquaresInCircles/Eight/Boundary/RadiusTransfer.lean#L76),
-[`Eight.RadiusTransfer.outerRadius_bounds`](../../SquaresInCircles/Eight/Boundary/RadiusTransfer.lean#L84),
-[`Eight.BoundaryCycle.core_radius_bound`](../../SquaresInCircles/Eight/Boundary/RadiusTransfer.lean#L353).*
+[`Eight.RadiusTransfer.outerRadius`](../../SquaresInCircles/Eight/RadiusTransfer.lean#L40),
+[`Eight.RadiusTransfer.outerRadius_equation`](../../SquaresInCircles/Eight/RadiusTransfer.lean#L78),
+[`Eight.RadiusTransfer.outerRadius_bounds`](../../SquaresInCircles/Eight/RadiusTransfer.lean#L86),
+[`Eight.BoundaryCycle.core_radius_bound`](../../SquaresInCircles/Eight/RadiusTransfer.lean#L350).*
 
 ### Lemma 11.17 (expansion)
 
@@ -1237,26 +1028,26 @@ $r_0 < \frac45$ fixed, so $u\,r > \frac15$, $u > \frac2{15}$ and
 $P' > \frac1{30}$. If both are on $\mathcal C$, nothing moves. $\square$
 
 *Lean:
-[`Eight.RadiusTransfer.every_feasible_projection_preserved`](../../SquaresInCircles/Eight/Boundary/RadiusTransfer.lean#L258),
-[`Eight.BoundaryCycle.expand_spec`](../../SquaresInCircles/Eight/Boundary/RadiusTransfer.lean#L580),
-[`Eight.RadiusExpansion`](../../SquaresInCircles/Eight/Model.lean#L212),
-[`Eight.radialSquare_core`](../../SquaresInCircles/Eight/Boundary/Reduction.lean#L231).*
+[`Eight.RadiusTransfer.every_feasible_projection_preserved`](../../SquaresInCircles/Eight/RadiusTransfer.lean#L255),
+[`Eight.BoundaryCycle.expand_spec`](../../SquaresInCircles/Eight/RadiusTransfer.lean#L577),
+[`Eight.RadiusExpansion`](../../SquaresInCircles/Eight/Model.lean#L214),
+[`Eight.radialSquare_core`](../../SquaresInCircles/Eight/BoundaryReduction.lean#L231).*
 
-The lemma is used in two ways. A boundary cycle at the level $q_*$ is
-expanded to $Q_1$ or $Q_0$, and every conclusion about frames, tangents, gaps or
-words transfers back unchanged, since these do not move. And a conclusion of
-the form "every separating axis of this pair belongs to a given set", proved at
-the higher level, applies to the axes of the original cycle, since each of them
-still separates after the expansion. No converse, that inward motion keeps
-separations, is needed.
+The lemma is used in two ways. A boundary cycle at the radius of a packing is
+expanded to the level of a table, and every conclusion about frames, tangents,
+gaps or words transfers back unchanged, since these do not move. And a
+conclusion of the form "every separating axis of this pair belongs to a given
+set", proved at the higher level, applies to the axes of the original cycle,
+since each of them still separates after the expansion. No converse, that
+inward motion keeps separations, is needed.
 
-![Two graphs. Left: against q from 5/2 to 4, the distance r(q, B) from o of a centre whose state lies on the outer curve, for B = 1, rising from 1 to about 1.44, and for B = √2, rising from about 0.87 to about 1.29, with q* marked by a dashed vertical line. Right: against q from 3.2 to 4, the margins of the seven witnesses of the boundary cycle of Figure 11.10 when its squares are moved to the level q: seven nearly coincident increasing lines, one in the colour of each square, all crossing 0 at q*](figures/11-eight/expansion.svg)
+![Two graphs. Left: against q from 5/2 to 4, the distance r(q, B) from o of a centre whose state lies on the outer curve, for B = 1, rising from 1 to about 1.44, and for B = √2, rising from about 0.87 to about 1.29, with q* marked by a dashed vertical line. Right: against q from 3.2 to 4, the margins of the seven witnesses of the boundary cycle of Figure 11.9 when its squares are moved to the level q: seven nearly coincident increasing lines, one in the colour of each square, all crossing 0 at q*](figures/11-eight/expansion.svg)
 
-*Figure 11.11.* Lemmas 11.16 and 11.17. Left: the outer radius $r(q, B)$
+*Figure 11.10.* Lemmas 11.16 and 11.17. Left: the outer radius $r(q, B)$
 for the extreme values $B = 1$ (centre on the canonical axis) and
 $B = \sqrt2$ (centre on the diagonal); both rise with slopes between
 $\frac14$ and $\frac13$. Right: the seven witness margins of the boundary
-cycle of Figure 11.10 when its squares are moved along their centre directions
+cycle of Figure 11.9 when its squares are moved along their centre directions
 to the level $q$. They all vanish at $q_*$, where every witness is a contact,
 and increase with $q$, as in the proof of Lemma 11.17.
 
@@ -1288,15 +1079,15 @@ is less than $2\pi$ minus the other six. Finally
 $2\pi - \frac{114}{25} < \frac{3\pi}4$ as $\pi < \frac{456}{125}$. $\square$
 
 *Lean:
-[`Eight.exterior_pair_gap`](../../SquaresInCircles/Eight/Boundary/Realization.lean#L122),
-[`Eight.boundary_gap_lower`](../../SquaresInCircles/Eight/Boundary/Realization.lean#L168),
-[`Eight.boundary_gap_upper`](../../SquaresInCircles/Eight/Boundary/Realization.lean#L192),
-[`Eight.seven_gaps_three_quarters`](../../SquaresInCircles/Eight/Boundary/Realization.lean#L177),
-[`Eight.CentralBand.RayData.common_point_B`](../../SquaresInCircles/Eight/Containing.lean#L618).*
+[`Eight.exterior_pair_gap`](../../SquaresInCircles/Eight/BoundaryGeometry.lean#L103),
+[`Eight.boundary_gap_lower`](../../SquaresInCircles/Eight/BoundaryGeometry.lean#L149),
+[`Eight.boundary_gap_upper`](../../SquaresInCircles/Eight/BoundaryGeometry.lean#L173),
+[`Eight.seven_gaps_three_quarters`](../../SquaresInCircles/Eight/BoundaryGeometry.lean#L158),
+[`Eight.CentralBand.RayData.common_point_B`](../../SquaresInCircles/Eight/CentralCore.lean#L1658).*
 
 ![Four exterior squares that miss the core disk and lie in the disk of squared radius Q0, part of whose circle is dashed: two with their states on the outer curve, at b = 0 and at a = b, and two on the core curve, at its corner point (7/12, 1/2) and on its diagonal, each with its centre direction turned by 19/50 to one side of the horizontal axis through o. The wedge of half-angle 19/50 about the axis is shaded, and all four squares contain the point at distance 41/40 from o on the axis, marked by a red dot](figures/11-eight/common-point.svg)
 
-*Figure 11.12.* Lemma 11.18: squares that miss the core, lie in the disk and
+*Figure 11.11.* Lemma 11.18: squares that miss the core, lie in the disk and
 have their centre directions within $\frac{19}{50}$ of a direction $\psi$
 (shaded wedge) all contain the point $o + \frac{41}{40}u(\psi)$ (dot). Drawn,
 for $\psi$ horizontal, are four squares at extremes of the states and
@@ -1340,15 +1131,9 @@ formulas of that lemma. Suppose the source is separated from the target along
 its own $+e$. Then the whole target lies beyond the line
 $\langle e, x\rangle = a + \frac12$, at distance $a + \frac12 > \frac{11}{12}$
 from $o$, as $a > \frac{447}{800} > \frac5{12}$ by (11.3). A unit square
-beyond a line at distance $d \ge 0$ from $o$, with the unit normal $n$, has a
-vertex at squared distance at least $(d + 1)^2 + \frac14$ from $o$: choose the
-frame $e'$, $f'$ of the square with $c' = \langle n, e'\rangle \ge s' = \langle n, f'\rangle \ge 0$;
-the midpoint $m$ of its side farthest along $e'$ has
-$\langle n, m\rangle \ge d + c' + \frac{s'}2 \ge d + 1$, as
-$(c' + \frac{s'}2)^2 = 1 + c's' - \frac34 s'^2 \ge 1$, and the two ends
-$m \pm \frac12 f'$ of that side have the mean squared distance
-$|m|^2 + \frac14$ from $o$, so one of them is at least that far. As
-$(\frac{23}{12})^2 + \frac14 = \frac{565}{144} > Q_0$, this is a contradiction. The
+in the disk beyond a line at distance $d \ge 0$ from $o$ has a vertex at
+squared distance at least $(d + 1)^2 + \frac14$ (Lemma K.7), and
+$(\frac{23}{12})^2 + \frac14 = \frac{565}{144} > Q_0$, a contradiction. The
 target's $-e$ is the same with the roles exchanged. For $-f$ of the source,
 write the centres as $r\,u(\beta)$ and $r'u(\beta + \delta)$ with
 $0 < \delta < \frac{3\pi}4$ (Lemma 11.18) and the source axis at the angle
@@ -1361,16 +1146,16 @@ $(r' - r)\sin\alpha < 1$, as both radii lie in $(\frac12, \frac32)$. Either
 way it is less than $1 \le \tau$. The target's $-f$ is the same. $\square$
 
 *Lean:
-[`Eight.boundary_forward_complete`](../../SquaresInCircles/Eight/Boundary/Realization.lean#L273),
-[`Eight.backward_sine_lower`](../../SquaresInCircles/Eight/Boundary/Realization.lean#L262),
-[`Eight.BoundaryCycle.minus_source_y_projection`](../../SquaresInCircles/Eight/Boundary/Realization.lean#L216),
-[`Eight.BoundaryCycle.minus_target_y_projection`](../../SquaresInCircles/Eight/Boundary/Realization.lean#L239),
-[`Eight.forwardMargin`](../../SquaresInCircles/Eight/Frames/SeparatingAxis.lean#L200),
-[`Eight.canonical_margin_identity`](../../SquaresInCircles/Eight/Frames/SeparatingAxis.lean#L223).*
+[`Eight.boundary_forward_complete`](../../SquaresInCircles/Eight/BoundaryGeometry.lean#L254),
+[`Eight.backward_sine_lower`](../../SquaresInCircles/Eight/BoundaryGeometry.lean#L243),
+[`Eight.BoundaryCycle.minus_source_y_projection`](../../SquaresInCircles/Eight/BoundaryGeometry.lean#L197),
+[`Eight.BoundaryCycle.minus_target_y_projection`](../../SquaresInCircles/Eight/BoundaryGeometry.lean#L220),
+[`Eight.forwardMargin`](../../SquaresInCircles/Eight/SeparatingAxis.lean#L201),
+[`Eight.canonical_margin_identity`](../../SquaresInCircles/Eight/SeparatingAxis.lean#L224).*
 
 ![The pair B, T of the optimal packing drawn in the canonical frame of B, the source: B to the right of o, its canonical axis horizontal, and the target T above it and to the left, touching B along a short piece of their common vertical side. At each centre four signed axes are drawn as arrows: the four retained ones, numbered 1 to 4 (source +f upwards at B, target +e upwards at T, target +f to the left at T, source -e to the left at B), solid, and the other four dashed and faded. The dashed red vertical line through the far side of B, at distance a + 1/2 > 11/12 from o, cuts off a cap of the disk, shaded, too thin for a unit square](figures/11-eight/axes.svg)
 
-*Figure 11.13.* Lemma 11.19 for the pair $B$, $T$ of Figure 11.1, drawn in the
+*Figure 11.12.* Lemma 11.19 for the pair $B$, $T$ of Figure 11.1, drawn in the
 canonical frame of $B$. Of the eight signed axes only the four numbered ones
 can separate a consecutive pair: beyond the far side of the source (dashed
 line) the disk leaves a cap too thin for a unit square (shaded), and the
@@ -1419,21 +1204,14 @@ So a lower bound $\gamma_i$ for each cost gives
 $2\pi - \frac9{50}\sum_i\chi(\varphi_i) > \sum_i\gamma_i$, whatever the
 markers are, provided each square uses one marker on both of its edges.
 
-*Lean: [`Eight.handGamma`](../../SquaresInCircles/Eight/Frames/Basic.lean#L78),
-[`Eight.frameCost`](../../SquaresInCircles/Eight/Frames/Basic.lean#L131),
-[`Eight.periodicFrameCost`](../../SquaresInCircles/Eight/Frames/Basic.lean#L135),
-[`Eight.cyclic_markers_cancel`](../../SquaresInCircles/Eight/Frames/Basic.lean#L63),
-[`Eight.FramePair.Branch`](../../SquaresInCircles/Eight/Frames/Pair/Domain.lean#L31),
-[`Eight.FramePair.label`](../../SquaresInCircles/Eight/Frames/Pair/Domain.lean#L70),
-[`Eight.FramePair.TypeMem`](../../SquaresInCircles/Eight/Frames/Pair/Domain.lean#L77),
-[`Eight.FramePair.State`](../../SquaresInCircles/Eight/Frames/Pair/Domain.lean#L84),
-[`Eight.FramePair.State.cost`](../../SquaresInCircles/Eight/Frames/Pair/Domain.lean#L98),
-[`Eight.FramePair.branchOf`](../../SquaresInCircles/Eight/Frames/Pair/Domain.lean#L194),
-[`Eight.FramePair.stateOf`](../../SquaresInCircles/Eight/Frames/Pair/Domain.lean#L267),
-[`Eight.FramePair.pairAngle`](../../SquaresInCircles/Eight/Frames/Pair/Domain.lean#L291),
-[`Eight.FramePair.pairAngle_gap`](../../SquaresInCircles/Eight/Frames/Pair/Domain.lean#L294).*
+*Lean: [`Eight.handGamma`](../../SquaresInCircles/Eight/Frames.lean#L80),
+[`Eight.frameCost`](../../SquaresInCircles/Eight/Frames.lean#L145),
+[`Eight.periodicFrameCost`](../../SquaresInCircles/Eight/Frames.lean#L149),
+[`Eight.cyclic_markers_cancel`](../../SquaresInCircles/Eight/Frames.lean#L65),
+[`Eight.Arithmetic.FourType.label`](../../SquaresInCircles/Eight/Arithmetic/FourTypePairs.lean#L66),
+[`Eight.Arithmetic.FourType.TypeMem`](../../SquaresInCircles/Eight/Arithmetic/FourTypePairs.lean#L76).*
 
-### Proposition 11.21 (pair costs of the four types)
+### Proposition 11.21 (pair costs of the four types; a finite table)
 
 For two consecutive squares of a boundary cycle at the level $Q_0$, of types
 $X$ and $Y$, and for each of the four margins of (11.5) that is nonnegative,
@@ -1446,139 +1224,24 @@ $X$ and $Y$, and for each of the four margins of (11.5) that is nonnegative,
 in the order $\mathsf C, \mathsf L, \mathsf M, \mathsf H$ of the rows and the
 columns.
 
-*Proof.* The proposition is a family of continuous inequalities, one for each
-ordered pair of types, signs and retained axis, each on the whole range of the
-two states and of the angle. Two remarks reduce it. First, a separation along
-a target axis is a separation along a source axis of the reversed pair, read
-in the frame of the target, with both signs changed; the axes 2 and 3 become
-the axes 4 and 1, and the cost does not change. So for each orientation of each
-pair of types it suffices to treat the axes 1 and 4. Second, the angle is
-$\varphi = \delta + \alpha' - \alpha$ with $\delta > \frac{19}{25}$ by (11.4)
-and $|\alpha|, |\alpha'| \le \frac\pi4$, which bounds $\varphi$ from below;
-for large $\varphi$ the cost exceeds $\Gamma_{XY}$ by the bounds
-$\chi < \frac{21}{100}$ and the ranges of the labels alone.
-
-In every remaining case the margin $M_j \ge 0$ is multiplied by a weight
-$\lambda \ge 0$, a constant or a function of $\varphi$, and the cost is bounded
-below by the cost minus $\lambda M_j$. For fixed $\varphi$ this is a sum of a
-function of the source state and one of the target state, each a linear form
-plus a label, and each state is replaced by its worst point on its arc, by one
-of three supports:
-
-* *the full circle*: on the outer curve
-  $(a + \frac12)^2 + (b + \frac12)^2 = Q_0$,
-  $p\,a + q\,b \ge -\sqrt{Q_0}\sqrt{p^2 + q^2} - \frac12(p + q)$ for all $p$,
-  $q$ (Cauchy–Schwarz);
-* *the ends of an arc*: along the outer curve $a$ is a concave function of
-  $b$, so $p\,a + q\,b$ with $p \ge 0$ takes its least value on an arc at an
-  end of the arc;
-* *the core*: affine supports of the core corner at its diagonal point
-  $(\frac12 + \frac{\sqrt2}{24}, \frac12 + \frac{\sqrt2}{24})$, and the side
-  $a = \frac7{12}$ directly.
-
-What remains is a function of $\varphi$ alone, shown to exceed $\Gamma_{XY}$
-on intervals of $\varphi$ by concavity or monotonicity, from the signs of its
-derivatives: for the full-circle support the norm
-$N(\varphi) = \sqrt{p(\varphi)^2 + q(\varphi)^2}$ of a force that turns with
-$\varphi$ satisfies $N'' + \frac14 N = (A^2 - B^2 - C^2)/(4N^3)$ for explicit
-$A$, $B$, $C$, which gives its curvature, and the sines and cosines are bounded
-at the ends of the intervals by Taylor polynomials. No other estimate enters;
-in particular no case of this proposition needs a computation by the kernel.
-
-The case analysis has sixteen families, one for each ordered pair of types
-up to the reversal: core–core, where the two centres lie within $\frac45$ of
-$o$ and 1 apart, so the gap exceeds $\frac43$ and the cost exceeds
-$\frac{979}{1000} - \frac9{50} \cdot \frac{21}{100} > \frac{23}{25}$ outright;
-the six families of a core and an outer square; the outer families
-$\mathsf L\mathsf L$, $\mathsf L\mathsf M$, $\mathsf M\mathsf L$,
-$\mathsf L\mathsf H$, $\mathsf H\mathsf L$ and $\mathsf M\mathsf M$; and the
-families $\mathsf M\mathsf H$, $\mathsf H\mathsf M$, $\mathsf H\mathsf H$,
-treated in the diagonal coordinates $d = a - b$, $a + b$, in which the outer
-curve is the graph of the concave function $a + b = \sqrt{2Q_0 - d^2} - 1$ and,
-for angles up to a quarter turn, only one of the axes 1 and 4 can separate.
-
-*A representative case: two low squares* ($\Gamma_{\mathsf L\mathsf L} = \frac{91}{100}$).
-On the low arc $a = A(b) = \sqrt{Q_0 - (b + \frac12)^2} - \frac12$ with
-$0 \le b \le b_1$, where $b_1 = \frac{a_1}4$ and $(a_1, b_1)$ lies on the
-circle. The label $L(b) = u\,(A(b) - a_0) + v\,b$, with
-$u = \frac{3231}{8000}$ and $v = \frac{217813}{200000}$, is increasing, with
-$0 \le L(b) \le b$ and $L(b) \le L_1 = L(b_1) < 0.30683$, since the slope
-$(b + \frac12)/(A(b) + \frac12)$ of the arc lies in $(\frac{13}{50}, \frac{23}{50})$;
-the angle offsets satisfy $|\arctan\frac ba| < \frac14$. The gap gives
-$\varphi > \frac{19}{25} - \frac12 > 0$. For $\varphi \ge \frac\pi2$ the cost
-is at least $\frac\pi2 - \frac9{50} \cdot \frac{21}{100} - 2L_1 > \frac{91}{100}$.
-For $0 \le \varphi \le \frac\pi2$ the cost is
-$\varphi - \frac9{100}(\cos\varphi + \sin\varphi - 1) + \sigma L(b) - \sigma' L(B)$
-and $\tau(\varphi) = \frac12(1 + \sin\varphi + \cos\varphi)$.
-
-*Axis 1, positive target.* Take $\lambda = \frac{189}{200}$ if $\sigma = +1$
-and $\lambda = 1$ if $\sigma = -1$; the source then contributes
-$\sigma(L(b) - \lambda b) \ge -\varepsilon$, with $\varepsilon = \frac1{50000}$
-or $0$ (by concavity of $L - \lambda b$ along the arc and its value at $b_1$,
-or by $L \le b$). Up to the cut $\varphi \le \frac{24}{25}$, respectively
-$\frac{11}{10}$, the full-circle support on the target gives the bound
-$G(\varphi) = \varphi + \frac9{100} + u\,a_0 + \frac12(u + v + \lambda) - \varepsilon + (\lambda - \frac9{100})\sin\varphi - \frac9{100}\cos\varphi - \sqrt{Q_0}\,N(\varphi)$
-with $N(\varphi)^2 = (u + \lambda\sin\varphi)^2 + (\lambda\cos\varphi - v)^2$.
-Taylor polynomials of the sine and cosine give a polynomial $T \le G - \frac{91}{100} + \sqrt{Q_0}N$
-and a polynomial $\bar N^2 \ge N^2$, and $T^2 - Q_0\bar N^2$ is a polynomial of
-degree 8 that is concave on the interval and positive at both ends; so
-$T > \sqrt{Q_0}\,N$ and $G > \frac{91}{100}$. Beyond the cut the target term decreases in $B$, so $B = b_1$, and the
-resulting function $E(\varphi)$ has $E > \frac{459}{500}$ and
-$E' > -\frac3{50}$ at the cut and $E'' > \frac14$, so
-$E \ge \frac{459}{500} - \frac3{50}x + \frac18x^2 > \frac{91}{100}$, $x$ the
-distance from the cut.
-
-*Axis 1, negative target.* With $\lambda = \frac{24}{25}$ the source gives
-$\sigma(L(b) - \frac{24}{25}b) \ge -\frac{13}{1000}$, and the target term is
-concave or monotone in $B$, so its least value is at $B = 0$ or $B = b_1$. At
-$B = 0$ the bound is
-$\frac{557}{1000} + \varphi + \frac{39}{100}\cos\varphi - (\frac{24}{25}a_0 - \frac{39}{100})\sin\varphi > \frac{91}{100}$,
-and at $B = b_1$ an increasing function of $\varphi$ whose value at 0 exceeds
-$\frac{91}{100}$.
-
-*Axis 4.* With a positive target the margin is negative up to
-$\varphi = \frac{13}{10}$; beyond, with $\lambda = \frac9{10}$, both terms
-decrease along the arc, both states go to $b_1$, and the bound
-$\varphi - 2L_1 + \frac{27}{50} - \frac9{10}a_1 + (\frac9{25} + \frac9{10}a_1)\cos\varphi + (\frac9{25} + \frac9{10}b_1)\sin\varphi$
-exceeds $\frac{91}{100}$ on $[\frac{13}{10}, \frac\pi2]$, by concavity. With a
-negative target, $\lambda = \frac54$ up to $\frac{13}{10}$ leaves two concave
-endpoint functions above $\frac{91}{100}$, and beyond $\frac{13}{10}$ the cost
-exceeds $\varphi - \frac9{50} \cdot \frac{21}{100} - L_1 > \frac{91}{100}$.
-$\square$
+The proposition is a finite collection of continuous inequalities, one for
+each ordered pair of types, signs and retained axis. The hand proof treats
+the ten unordered pairs of types in ten whole-pair arguments, each a chain of
+circle supports, monotonicity in the angle and fixed polynomial comparisons;
+reflection followed by reversal of the cycle turns the target axes 2 and 3
+into the source axes 4 and 1. The formal proof proves the 200 cases, one for
+each ordered pair of charts (the core curve split into its side and its
+corner), signs and source axis, as the problems of 25 pair tables
+(Appendix L.7): on each of six halves of $\varphi \in [-1, 4]$ a tree splits
+the box of the two tangents $b/a$, $b'/a'$ and the angle, and every leaf either
+violates the gap of (11.4) or is covered by an affine row that proves the cost
+greater than $\Gamma_{XY}$; 1,069 rows in all.
 
 *Lean:
-[`Eight.FrameAllPairs.forward_pair`](../../SquaresInCircles/Eight/Frames/PhysicalTransport.lean#L41),
-[`Eight.FrameAllPairs.original_axis_pair`](../../SquaresInCircles/Eight/Frames/PhysicalTransport.lean#L72),
-[`Eight.FrameAllPairs.all_pair`](../../SquaresInCircles/Eight/Frames/PhysicalTransport.lean#L81),
-[`Eight.FrameAllPairs.continuous_pair_bound`](../../SquaresInCircles/Eight/Frames/PhysicalTransport.lean#L86),
-[`Eight.FramePair.State.target_primary_reverse`](../../SquaresInCircles/Eight/Frames/Pair/Domain.lean#L178),
-[`Eight.FramePair.State.target_secondary_reverse`](../../SquaresInCircles/Eight/Frames/Pair/Domain.lean#L184),
-[`Eight.FrameCircleArc.circle_linear_lower`](../../SquaresInCircles/Eight/Frames/CircleArc.lean#L142),
-[`Eight.CircularNorm.curvature_identity`](../../SquaresInCircles/Eight/Owners/CircularNorm.lean#L75),
-[`Eight.FramePair.core_cycle_pair`](../../SquaresInCircles/Eight/Frames/Pair/Domain.lean#L363),
-[`Eight.FrameCoreLowPair.core_low_cycle_pair`](../../SquaresInCircles/Eight/Frames/Core/LowPair.lean#L1461),
-[`Eight.FrameCoreMidPair.core_mid_cycle_pair`](../../SquaresInCircles/Eight/Frames/Core/MidPair.lean#L1036),
-[`Eight.FrameCoreHighPair.core_high_cycle_pair`](../../SquaresInCircles/Eight/Frames/Core/HighPair.lean#L771),
-[`Eight.FrameLowPair.low_cycle_pair`](../../SquaresInCircles/Eight/Frames/Low/Pair.lean#L1130),
-[`Eight.FrameLowMidPair.low_mid_cycle_pair`](../../SquaresInCircles/Eight/Frames/Low/MidPair.lean#L1274),
-[`Eight.FrameLowHighPair.low_high_cycle_pair`](../../SquaresInCircles/Eight/Frames/Low/HighPair.lean#L126),
-[`Eight.FrameMidMidPair.middle_cycle_pair`](../../SquaresInCircles/Eight/Frames/Mid/HighQuarterStrip.lean#L1598),
-[`Eight.FrameDiagonalPair.middle_high_cycle_pair`](../../SquaresInCircles/Eight/Frames/Diagonal/Pair.lean#L177),
-[`Eight.FrameDiagonalPair.high_high_cycle_pair`](../../SquaresInCircles/Eight/Frames/Diagonal/Pair.lean#L193),
-[`Eight.FrameLowPair.secondary_positive`](../../SquaresInCircles/Eight/Frames/Low/Pair.lean#L745),
-[`Eight.FrameLowPair.full_circle_support`](../../SquaresInCircles/Eight/Frames/Low/Pair.lean#L657),
-[`Eight.FrameLowPair.endpoint_support`](../../SquaresInCircles/Eight/Frames/Low/Pair.lean#L731),
-[`Eight.four_type_cycle_budget`](../../SquaresInCircles/Eight/Frames/Basic.lean#L119).*
-
-![Against the angle phi, for two low squares, the least value of the cost over the two low arcs and the four pairs of signs, for each axis, drawn only where that axis can separate and the gap exceeds 19/25: a blue curve for the axes 1 and 3, from phi about 0.44 to the right end of the graph, with a long flat bottom between 0.92 and 0.93 for phi from 0.8 to 1.4, and an orange curve for the axes 2 and 4, from phi about 1.14 on, falling to about 0.99 at pi/2 and rising again; both above the dashed horizontal line at 91/100, the bound Gamma_LL](figures/11-eight/pair.svg)
-
-*Figure 11.14.* Proposition 11.21 for two low squares. For each angle
-$\varphi$ and each axis, the least cost over the states of the two low arcs
-and the signs for which that axis separates (curves), against the bound
-$\Gamma_{\mathsf L\mathsf L} = \frac{91}{100}$ (dashed). Reversing the pair
-exchanges the axes 1 and 3, and 2 and 4, and keeps both squares low, so the
-four curves coincide in pairs. The curves are computed on a fine grid of
-states; the proof bounds them from below by the supports above.
+[`Eight.Arithmetic.FourType.fourTypeProblem`](../../SquaresInCircles/Eight/Arithmetic/FourTypeProblems.lean#L94),
+[`Eight.Arithmetic.FourType.fourTypeTable_holds`](../../SquaresInCircles/Eight/Arithmetic/FourTypePairs.lean#L213),
+[`Eight.Arithmetic.FourType.source_pair`](../../SquaresInCircles/Eight/Arithmetic/FourTypePairs.lean#L338),
+[`Eight.four_type_cycle_budget`](../../SquaresInCircles/Eight/Frames.lean#L121).*
 
 ### Lemma 11.22 (closed walks)
 
@@ -1588,29 +1251,26 @@ For every sequence of types $X_0, \dots, X_6, X_7 = X_0$,
 \sum_{i=0}^6 \Gamma_{X_i X_{i+1}} \ge 7 \cdot 0.8833 + 0.0265 = \tfrac{3881}{625} .
 ```
 
-*Proof.* Multiply by $10^4$, so that the entries of $\Gamma$ are integers. Let
-$\Gamma^{(2)}(X, Z) = \min_Y\left(\Gamma_{XY} + \Gamma_{YZ}\right)$ be the least
-weight of a walk of two steps from $X$ to $Z$, the min-plus square of $\Gamma$.
-The walk of seven steps splits into the three walks
-$X_0X_1X_2$, $X_2X_3X_4$, $X_4X_5X_6$ of two steps and the step $X_6X_0$, so
-its weight is at least
-$\Gamma^{(2)}(X_0, X_2) + \Gamma^{(2)}(X_2, X_4) + \Gamma^{(2)}(X_4, X_6) + \Gamma_{X_6X_0}$.
-The $4^3$ inequalities defining $\Gamma^{(2)}$ and the $4^4$ inequalities
-saying that this sum is at least $62096$ for all $X_0, X_2, X_4, X_6$ are
-finite checks on integers, decided by the Lean kernel. $\square$
-
-The bound is attained: the walk
-$\mathsf C\mathsf M\mathsf H\mathsf C\mathsf H\mathsf C\mathsf H$, back to
-$\mathsf C$, weighs $0.9005 + 0.8926 + 5 \cdot 0.8833 = 6.2096$
-(Figure 11.15).
+*Proof.* Subtract $0.8833$ from every entry of $\Gamma$; the residuals are
+nonnegative. The four triangles of distinct types have residual sums
+$0.0611$, $0.0267$, $0.0265$, $0.0265$, all at least $p = 0.0265$. Every loop
+$\Gamma_{XX}$ other than $\mathsf M$ has residual at least $p$; the loop at
+$\mathsf M$ has residual $0.0079$, and every edge from $\mathsf M$ to another
+type has residual at least $0.0093$. A closed walk of odd length on four
+vertices contains a loop or a triangle as a closed subwalk, by the usual
+argument for odd closed walks. If the walk is $\mathsf M$ seven times, its
+residual is $7 \cdot 0.0079 > p$. If it uses the loop at $\mathsf M$ and some
+other vertex, it enters and leaves $\mathsf M$, at a cost of at least
+$0.0079 + 2 \cdot 0.0093 = p$. Otherwise it contains a loop of residual at
+least $p$ or a triangle. The other residuals are nonnegative. $\square$
 
 *Lean:
-[`Eight.four_type_seven_walk`](../../SquaresInCircles/Eight/Frames/Basic.lean#L109),
-[`Eight.four_type_seven_walk_numerator`](../../SquaresInCircles/Eight/Frames/Basic.lean#L92).*
+[`Eight.four_type_seven_walk`](../../SquaresInCircles/Eight/Frames.lean#L111),
+[`Eight.four_type_seven_walk_numerator`](../../SquaresInCircles/Eight/Frames.lean#L94).*
 
 ![The four types C, L, M and H drawn as the corners of a square, joined by six edges and with a loop at each corner, each labelled with its entry of Gamma minus 0.8833: the loop at M has the smallest residual, 0.0079, the edges from M to C and to L have 0.0172, the edge from M to H 0.0093, the loops at C, L and H 0.0367, 0.0267 and 0.0266, and the edges from H to C and to L have residual 0. A closed walk of length seven, C, M, H, C, H, C, H and back to C, is highlighted along the edges from C to M, from M to H and from H to C](figures/11-eight/walks.svg)
 
-*Figure 11.15.* Lemma 11.22. The residuals $\Gamma_{XY} - 0.8833$ on the
+*Figure 11.13.* Lemma 11.22. The residuals $\Gamma_{XY} - 0.8833$ on the
 loops and edges of the four types; every closed walk of length seven picks up
 at least $0.0265$ of them. The highlighted walk
 $\mathsf{C}\mathsf{M}\mathsf{H}\mathsf{C}\mathsf{H}\mathsf{C}\mathsf{H}$
@@ -1620,14 +1280,14 @@ least weight of a closed walk.
 ### Theorem 11.23 (frame concentration)
 
 Let eight unit squares form a packing in a closed disk of squared radius
-$q \le Q_1$ about $o$. Then the frames of the seven exterior squares,
+$q \le Q_0$ about $o$. Then the frames of the seven exterior squares,
 taken modulo $\frac\pi2$, have real representatives $\theta_0, \dots, \theta_6$
 that lie in an interval of length less than $\frac7{10}$.
 
 *Proof.* By Theorem 11.10 the exterior squares, in the order of their centre
 directions and with any witnesses, form a neighbour cycle; by
 Proposition 11.15 there is a boundary cycle with the same frames, at the
-level $\max(q, q_-)$, and by Lemma 11.17 it can be expanded to the level
+level $\max(q, \frac52)$, and by Lemma 11.17 it can be expanded to the level
 $Q_0$, again with the same frames and with each witness still separating. By
 Lemma 11.19 each witness is one of the four retained axes, so
 Proposition 11.21 applies to every pair. Summing it round the cycle, with
@@ -1666,27 +1326,23 @@ $2g(D) \le U < 2g(\frac7{10})$ and $g$ increases, $D < \frac7{10}$. The frames
 of the boundary cycle are those of the packing. $\square$
 
 *Lean:
-[`Eight.FrameConcentration.charged_cycle_budget`](../../SquaresInCircles/Eight/Frames/PhysicalTransport.lean#L118),
-[`Eight.FrameConcentration.charge_budget`](../../SquaresInCircles/Eight/Frames/PhysicalTransport.lean#L126),
-[`Eight.FrameConcentration.quarter_lift`](../../SquaresInCircles/Eight/Frames/PhysicalTransport.lean#L131),
-[`Eight.FramePhysicalTransport.quarter_lift`](../../SquaresInCircles/Eight/Frames/PhysicalTransport.lean#L178),
-[`Eight.quarterLift_of_cost`](../../SquaresInCircles/Eight/Boundary/CycleActions.lean#L497),
-[`Eight.physical_frame_lift_of_cost`](../../SquaresInCircles/Eight/Frames/Basic.lean#L420),
-[`Eight.frameCost_concave`](../../SquaresInCircles/Eight/Frames/Basic.lean#L219),
-[`Eight.frameCost_monotone`](../../SquaresInCircles/Eight/Frames/Basic.lean#L154),
-[`Eight.frameCost_triangle`](../../SquaresInCircles/Eight/Frames/Basic.lean#L265),
-[`Eight.frameCost_seven_tenths`](../../SquaresInCircles/Eight/Frames/Basic.lean#L295),
-[`Eight.closed_walk_range_bound`](../../SquaresInCircles/Eight/Frames/Basic.lean#L172),
-[`Eight.Arithmetic.two_pi_lt_710_over_113`](../../SquaresInCircles/Eight/Arithmetic/Taylor.lean#L34).*
+[`Eight.physical_cycle_width_bound`](../../SquaresInCircles/Eight/Frames.lean#L133),
+[`Eight.physical_frame_lift_of_cost`](../../SquaresInCircles/Eight/Frames.lean#L434),
+[`Eight.frameCost_concave`](../../SquaresInCircles/Eight/Frames.lean#L233),
+[`Eight.frameCost_monotone`](../../SquaresInCircles/Eight/Frames.lean#L168),
+[`Eight.frameCost_triangle`](../../SquaresInCircles/Eight/Frames.lean#L279),
+[`Eight.frameCost_seven_tenths`](../../SquaresInCircles/Eight/Frames.lean#L309),
+[`Eight.closed_walk_range_bound`](../../SquaresInCircles/Eight/Frames.lean#L186),
+[`Eight.Arithmetic.two_pi_lt_710_over_113`](../../SquaresInCircles/Eight/Arithmetic/Taylor.lean#L33).*
 
 The bound $\frac7{10}$ is about $40°$; in the optimal packing the range is
-$t_* \approx 7.08°$ (Figure 11.16). The theorem says that the exterior squares
+$t_* \approx 7.08°$ (Figure 11.14). The theorem says that the exterior squares
 cannot turn far from one another; it does not yet say which quarter turns
 separate their frames.
 
 ![The circle of frame directions modulo a quarter turn, of circumference pi/2, drawn as a circle: the frames of the five axis-parallel exterior squares A, B, T, D, E sit at one point, those of H and G at another point 7.08 degrees further; an arc of length 7/10 starting at the first point is marked as the bound of Theorem 11.23. Beside it, the graph of the frame charge chi on [0, pi/4], increasing and concave from 0 to (root 2 - 1)/2, with its chord and its value at t* marked](figures/11-eight/frames.svg)
 
-*Figure 11.16.* Left: the frames of the exterior squares of Figure 11.1 on
+*Figure 11.14.* Left: the frames of the exterior squares of Figure 11.1 on
 the circle of directions modulo $\frac\pi2$; they span $t_*$, far less than
 the bound $\frac7{10}$ of Theorem 11.23 (arc). Right: the frame charge
 $\chi = g$ on $[0, \frac\pi4]$ and its chord, the linear lower bound of the
@@ -1721,10 +1377,10 @@ With $d_i = \theta_{i+1} - \theta_i$,
 ```
 
 *Lean:
-[`Eight.QuarterLift`](../../SquaresInCircles/Eight/Words/Basic.lean#L164),
-[`Eight.QuarterLift.word`](../../SquaresInCircles/Eight/Words/Basic.lean#L263),
-[`Eight.QuarterLift.edge_identity`](../../SquaresInCircles/Eight/Words/Basic.lean#L180),
-[`Eight.integerQuarterIncrement_sum`](../../SquaresInCircles/Eight/Words/Basic.lean#L157).*
+[`Eight.QuarterLift`](../../SquaresInCircles/Eight/QuarterWords.lean#L164),
+[`Eight.QuarterLift.word`](../../SquaresInCircles/Eight/QuarterWords.lean#L263),
+[`Eight.QuarterLift.edge_identity`](../../SquaresInCircles/Eight/QuarterWords.lean#L180),
+[`Eight.integerQuarterIncrement_sum`](../../SquaresInCircles/Eight/QuarterWords.lean#L157).*
 
 The words are read up to the symmetries of the cycle: a cyclic shift of the
 indices, and a reflection of the plane, which reverses the order of the
@@ -1767,121 +1423,32 @@ two positions next to the 2 are exchanged by the reflection. This gives the
 four words $0010012$, $0010102$, $0010201$ and $0011002$. $\square$
 
 *Lean:
-[`Eight.QuarterLift.digit_range`](../../SquaresInCircles/Eight/Words/Basic.lean#L216),
-[`Eight.QuarterLift.no_three_zero_increments`](../../SquaresInCircles/Eight/Words/Basic.lean#L243),
-[`Eight.QuarterLift.word_admissible`](../../SquaresInCircles/Eight/Words/Basic.lean#L273),
-[`Eight.quarter_word_complete_classification`](../../SquaresInCircles/Eight/Words/Basic.lean#L130).*
+[`Eight.QuarterLift.digit_range`](../../SquaresInCircles/Eight/QuarterWords.lean#L216),
+[`Eight.QuarterLift.no_three_zero_increments`](../../SquaresInCircles/Eight/QuarterWords.lean#L243),
+[`Eight.QuarterLift.word_admissible`](../../SquaresInCircles/Eight/QuarterWords.lean#L273),
+[`Eight.quarter_word_complete_classification`](../../SquaresInCircles/Eight/QuarterWords.lean#L130).*
 
 ![Top: the seven quarter words of Lemma 11.25 drawn as necklaces of seven beads, the digits 0, 1 and 2 shown as white, light and dark beads, with the last one, 0101011, highlighted. Below: the exterior squares of the optimal packing with the canonical axis of each square drawn as an arrow near its centre direction; the arrows of H and G, A and B, T and D, and E point in the directions minus a quarter turn, 0, a quarter turn and a half turn from the frame of A, and each edge of the cycle is labelled with its digit 0 or 1](figures/11-eight/words.svg)
 
-*Figure 11.17.* Top: the seven words of Lemma 11.25 as necklaces (white 0,
+*Figure 11.15.* Top: the seven words of Lemma 11.25 as necklaces (white 0,
 light 1, dark 2). Below: the word of Figure 11.1. The canonical axes
 (arrows) of $H, G, A, B, T, D, E$ are $-1, -1, 0, 0, 1, 1, 2$ quarter turns
 ahead of that of $A$, up to the small tilt of $H$ and $G$, so the word,
 starting at $H$, is $0101011$.
 
-### Lemma 11.26 (a boosted edge)
-
-Let $S_0, \dots, S_6$ be a boundary cycle at the level $Q_0$, with frames as in
-Definition 11.24, the markers $\ell_i$ of Definition 11.20 and the frame steps
-$d_i = \theta_{i+1} - \theta_i$. Then no edge $i$ has
-
-```math
-\varphi_i + \ell_i - \ell_{i+1} + \tfrac9{50}\chi(d_i) > \tfrac{197}{200} .
-```
-
-*Proof.* By Proposition 11.21 and Lemma 11.19, every other edge $k$ has
-$\varphi_k + \ell_k - \ell_{k+1} - \frac9{50}\chi(d_k) > \Gamma \ge 0.8833$, where
-$\chi(\varphi_k) = \chi(d_k)$ as $\chi$ has the period $\frac\pi2$. The steps
-return, $\sum_k d_k = 0$, and they are shorter than $\frac7{10} < \frac\pi4$, so
-$|d_i| \le \sum_{k \ne i}|d_k|$ and, as $\chi = g(|\cdot|)$ there with $g$
-increasing and subadditive (Theorem 11.23), $\chi(d_i) \le \sum_{k \ne i}\chi(d_k)$.
-Summing all seven costs, by (11.6),
-
-```math
-2\pi = \sum_k \left(\varphi_k + \ell_k - \ell_{k+1}\right) > \tfrac{197}{200} - \tfrac9{50}\chi(d_i) + 6 \cdot 0.8833 + \tfrac9{50}\sum_{k \ne i}\chi(d_k) \ge \tfrac{197}{200} + 5.2998 = 6.2848 ,
-```
-
-which exceeds $\frac{710}{113} > 2\pi$. $\square$
-
-*Lean:
-[`Eight.ZeroPrimary.no_primary_of_return_pair_costs`](../../SquaresInCircles/Eight/Words/Zero/PrimaryCycle.lean#L844),
-[`Eight.GlobalZeroSign.closed_boost_impossible`](../../SquaresInCircles/Eight/Owners/Zero/SignBridge.lean#L43),
-[`Eight.ZeroPrimary.frame_edge_le_return`](../../SquaresInCircles/Eight/Words/Zero/PrimaryCycle.lean#L808),
-[`Eight.ZeroPrimary.handGamma_lower`](../../SquaresInCircles/Eight/Words/Zero/PrimaryCycle.lean#L838),
-[`Eight.QuarterWordGeometry.marker_budget`](../../SquaresInCircles/Eight/Words/QuarterWordGeometry.lean#L274).*
-
-A single edge whose cost, with its frame charge added back, exceeds
-$\frac{197}{200}$ is therefore impossible: the six other edges cost at least
-$0.8833$ each, and the closed tour of the frames pays the charge of the special
-edge. This lemma is used for the digit-0 edges below and for the quarter edges
-of §11.8.
-
-### Lemma 11.27 (edges with the digit 0)
-
-Let $S_0, \dots, S_6$ be a boundary cycle at a level $\frac52 \le q \le Q_0$,
-with frames as in Definition 11.24, and let the edge $i$ have the digit
-$k_i = 0$. Then each retained axis that separates $S_i$ from $S_{i+1}$ is the
-axis 1, and then $\tau_i > 0$, or the axis 3, and then $\tau_{i+1} < 0$.
-
-*Proof.* By Lemma 11.17 we may expand the cycle to $Q_0$: the frames, digits and
-tangents do not change and every separating axis still separates. Here
-$\varphi_i = d_i$, and the gap is $\delta_i = d_i + \alpha_i - \alpha_{i+1} > \frac{19}{25}$.
-
-*Axes 2 and 4.* If the axis 2 separates, then $M_2 \ge 0$ and the gap force
-$\frac9{20} < d_i \le \frac7{10}$, a positive source with $b_i > 0$ and an outer
-target with $a_{i+1} > 1$. Subtracting $\lambda M_2 \ge 0$ from the cost,
-with $\lambda = m/\sin d_i$, where $m = \frac45$ for an outer source and
-$m = \frac{107}{100}$ for a core source, and bounding the target marker by its
-supports, gives
-$\varphi_i + \ell_i - \ell_{i+1} + \frac9{50}\chi(d_i) > \frac{197}{200}$: in the
-variable $\tan\frac{d_i}2$ the difference is a polynomial of degree 8 whose
-coefficients are nonnegative after a shift of the variable. Lemma 11.26
-excludes this. The axis 4 is the axis 2 of the reversed pair.
-
-*Signs.* If the axis 1 separates and $\tau_i \le 0$, the margin $M_1 \ge 0$
-forces $\frac{29}{100} < d_i \le \frac7{10}$, a negative target and
-$b_i < \frac12$. Subtract $\frac{111}{100}M_1$, bound the unsigned labels by
-$\frac45 b$ from below and, as $b_i < \frac12$, by $\frac{111}{100}b_i$ from
-above, and replace the target by its circle support: the cost plus the charge
-is at least
-
-```math
-d + \tfrac{13}{200} + \tfrac65\left(\sin d + \cos d\right) - \sqrt{Q_0}\sqrt{K - M\cos d}, \qquad K = \tfrac{18721}{10000}, \quad M = \tfrac{222}{125},
-```
-
-which exceeds 1 on $[\frac{29}{100}, \frac7{10}]$: it is concave there and
-exceeds 1 at both ends. Lemma 11.26 excludes this. The axis 3 with
-$\tau_{i+1} \ge 0$ is the reflected case. $\square$
-
-*Lean:
-[`Eight.GlobalZeroSign.classify`](../../SquaresInCircles/Eight/Owners/Zero/SignBridge.lean#L173),
-[`Eight.GlobalZeroSign.secondary`](../../SquaresInCircles/Eight/Owners/Zero/SignBridge.lean#L158),
-[`Eight.GlobalZeroSign.source_positive`](../../SquaresInCircles/Eight/Owners/Zero/SignBridge.lean#L129),
-[`Eight.GlobalZeroSign.target_negative`](../../SquaresInCircles/Eight/Owners/Zero/SignBridge.lean#L144),
-[`Eight.ZeroPrimary.original_zero_secondary`](../../SquaresInCircles/Eight/Words/Zero/PrimaryCycle.lean#L891),
-[`Eight.ZeroPrimary.target_primary_domain`](../../SquaresInCircles/Eight/Words/Zero/PrimaryCycle.lean#L68),
-[`Eight.ZeroPrimary.target_primary_boost`](../../SquaresInCircles/Eight/Words/Zero/PrimaryCycle.lean#L688),
-[`Eight.ZeroPrimary.actual_boost`](../../SquaresInCircles/Eight/Words/Zero/PrimaryCycle.lean#L743),
-[`Eight.GlobalZeroSign.source_secondary_domain`](../../SquaresInCircles/Eight/Owners/Zero/SignSupport.lean#L245),
-[`Eight.GlobalZeroSign.source_secondary_boost`](../../SquaresInCircles/Eight/Owners/Zero/SignSupport.lean#L311),
-[`Eight.GlobalZeroSign.scalar_gt_one`](../../SquaresInCircles/Eight/Owners/Zero/SignSupport.lean#L146).*
-
-### Proposition 11.28 (only the word 0101011)
+### Proposition 11.26 (only the word 0101011; finite tables)
 
 In a boundary cycle at a level $q \le Q_0$ whose frames lie in an interval of
 length less than $\frac7{10}$, the quarter word is $0101011$ up to the
 symmetries of the cycle.
 
 *Proof.* Expand the cycle to the level $Q_0$ (Lemma 11.17); its word does not
-change. A rotation of the indices or a reflection of the plane, which reverses
-the cycle, turns the word into one of the seven words of Lemma 11.25 literally,
-and each of the six other words is excluded by a whole-cycle bound: markers
-$\ell_i$, one per square, a function of its state, sign and radial curve, and
-lower bounds $\gamma_i$ for the costs $\varphi_i + \ell_i - \ell_{i+1}$ of the
-seven pairs, valid for every separating retained axis (Lemma 11.19), all
-states on $\mathcal O$ and $\mathcal C$, all signs and all angles allowed by
-(11.4) and Definition 11.24, with $\sum_i\gamma_i > 2\pi$, against (11.6).
+change. Each of the six other words of Lemma 11.25 is excluded by a whole-cycle
+bound: markers $\ell_i$ of the states, one per square, and lower bounds
+$\gamma_i$ for the costs $\varphi_i + \ell_i - \ell_{i+1}$ of the seven pairs,
+valid for every feasible retained axis (Lemma 11.19), all states on
+$\mathcal O$ and $\mathcal C$, all signs and all angles allowed by (11.4) and
+Definition 11.24, with $\sum_i\gamma_i > 2\pi$, which contradicts (11.6).
 
 *The four words with a 2.* One pair of markers serves all four words:
 
@@ -1894,1294 +1461,798 @@ $\mathcal O$ or on $\mathcal C$. The cost of a pair exceeds $\frac{391}{400}$,
 $\frac{157}{200}$, $\frac{163}{200}$ when its digit is 0, 1, 2. A word with
 one 2, two 1s and four 0s therefore has costs adding up to more than
 $4 \cdot \frac{391}{400} + 2 \cdot \frac{157}{200} + \frac{163}{200} = \frac{1259}{200}$,
-which exceeds $\frac{44}7 > 2\pi$.
+which exceeds $\frac{44}7 > 2\pi$ by $\frac{13}{1400}$.
 
-*The word 0010111.* The markers are affine, $c + p\,a + \sigma q\,b$, with
-coefficients that depend on the role of the square in the word, its sign and
-its radial curve. The costs exceed $\frac{359}{400}$ on the third edge and
+*The word 0010111.* Markers that depend on the role of the square in the word
+give costs above $\frac{359}{400}$ on the third edge and above
 $\frac{17953}{20000}$ on the six others, in all more than
-$\frac{31417}{5000} = 6.2834$, which exceeds $2\pi$.
+$\frac{31417}{5000}$, which exceeds $\frac{710}{113}$ by $\frac{121}{565000}$.
 
-*The word 0011011.* The markers are quadratic,
-$\sigma(c + p\,a + q\,b + r\,b^2 + s\,ab)$, with coefficients that depend on the
-role, the sign and the radial curve. The costs exceed $\frac{17953}{20000}$ on
-every edge, in all more than $\frac{125671}{20000} = 6.28355$, which exceeds
-$2\pi$. $\square$
-
-*Lean:
-[`Eight.QuarterWordGeometry.quarter_word_candidate`](../../SquaresInCircles/Eight/Words/QuarterWordSelection.lean#L19),
-[`Eight.QuarterWordGeometry.three_binary_classes`](../../SquaresInCircles/Eight/Words/FirstNegativeOutsideEntry.lean#L523),
-[`Eight.QuarterWordGeometry.no_double`](../../SquaresInCircles/Eight/Words/FirstNegativeOutsideEntry.lean#L487),
-[`Eight.QuarterWordGeometry.common_pair`](../../SquaresInCircles/Eight/Words/FirstNegativeOutsideEntry.lean#L470),
-[`Eight.QuarterWordGeometry.commonMarker`](../../SquaresInCircles/Eight/Words/QuarterWordGeometry.lean#L253),
-[`Eight.WordProblems.commonGamma`](../../SquaresInCircles/Eight/Words/QuarterWordGeometry.lean#L58),
-[`Eight.double_word_cost_numerator`](../../SquaresInCircles/Eight/Words/Basic.lean#L301),
-[`Eight.no_double_word_of_cost_bound`](../../SquaresInCircles/Eight/Words/Basic.lean#L315),
-[`Eight.ShortWord.not_dihedral`](../../SquaresInCircles/Eight/Words/Short/WordExclusion.lean#L56),
-[`Eight.ShortWord.excluded`](../../SquaresInCircles/Eight/Words/Short/WordExclusion.lean#L44),
-[`Eight.ShortWord.actual_edge`](../../SquaresInCircles/Eight/Words/Short/WordExclusion.lean#L24),
-[`Eight.ShortWord.threshold_total`](../../SquaresInCircles/Eight/Words/Short/WordExclusion.lean#L38),
-[`Eight.SecondWord.not_dihedral`](../../SquaresInCircles/Eight/Words/Second/WordExclusion.lean#L246),
-[`Eight.SecondWord.actual_edge`](../../SquaresInCircles/Eight/Words/Second/WordExclusion.lean#L201),
-[`Eight.QuarterWordGeometry.wrongMarker`](../../SquaresInCircles/Eight/Words/QuarterWordGeometry.lean#L270),
-[`Eight.WordProblems.wrongGamma`](../../SquaresInCircles/Eight/Words/QuarterWordGeometry.lean#L98),
-[`Eight.QuarterWordGeometry.normalize_word`](../../SquaresInCircles/Eight/Words/QuarterWordGeometry.lean#L353).*
-
-The three cost bounds are families of continuous inequalities, one for each
-digit or edge, each pair of radial curves, each pair of signs and each
-retained axis, on the whole range of the states and of the angle. Their proofs
-follow the pattern of Proposition 11.21, and the structure of the case analysis
-is the following.
-
-*Reductions.* A target axis is a source axis of the reversed pair, so only the
-axes 1 and 4 are treated for each orientation; the angle is written
-$\varphi = k\frac\pi2 \pm x$ with $0 \le x \le \frac7{10}$, and the two halves
-are treated separately. The signs are not all free. On an edge with digit 0,
-(11.8) gives $\delta_i = d_i + \alpha_i - \alpha_{i+1}$, so
-$\alpha_i \le 0 \le \alpha_{i+1}$ would make $\delta_i < \frac7{10}$; and both
-wrong binary words begin with two edges of digit 0, along which
-$\alpha_0 - \alpha_2 > 2 \cdot \frac{19}{25} - \frac7{10} = \frac{41}{50}$, so the
-first square has $\alpha_0 > 0$ and the third $\alpha_2 < 0$. This leaves 19
-combinations of an edge and a pair of signs for each of the two words. On the
-edges with digit 0, Lemma 11.27 leaves the axes 1 and 3 only.
-
-*Branches.* The common bound splits by the digit and then by the axis and the
-signs; the two wrong words split by the digit of the edge, by the radial
-curves of the two squares (outer–outer, mixed, core–core), by the pair of signs
-and by the axis. Each branch is closed in the manner of Proposition 11.21: the
-margin is multiplied by a weight, constant or optimized, the two states are
-replaced by their worst points by circle supports, completed squares or the
-ends of their arcs, and the resulting function of the angle is shown to exceed
-its bound by concavity, monotonicity or a compact minimum on a contact curve,
-with Taylor polynomials at the ends. Two core squares have centres within
-$\frac45$ of $o$, so their gap exceeds $\frac{27}{20}$, and their branches close
-by the bounds of the markers. In four branches of the two wrong words the final
-inequality is a polynomial inequality in one variable, of degree up to 26,
-which the kernel checks (§11.11).
-
-*A representative case.* Edge 5 of the word $0010111$, with digit 1, a source of
-sign $-1$ and a target of sign $+1$, both outer, separated along the axis 1, on
-the upper half $\varphi = \frac\pi2 + x$, $0 \le x \le \frac7{10}$. The claim is
-that the cost exceeds $\frac{8981}{10000}$, more than the bound
-$\frac{17953}{20000}$:
-
-```math
-\tfrac\pi2 + x + c + p\,a - q\,b - P A - t B > \tfrac{8981}{10000}, \qquad (c, p, q, P, t) = \left(\tfrac{50283}{10^5}, -\tfrac{20967}{10^5}, \tfrac{83048}{10^5}, \tfrac{21826}{10^5}, \tfrac{83472}{10^5}\right),
-```
-
-where $(a, b)$ and $(A, B)$ are the source and target states and the left side
-is $\varphi + \ell_5 - \ell_6$ for the markers of the word. The separation reads
-$\frac12(1 + \cos x + \sin x) \le -b + A\cos x + B\sin x$. Multiply it by
-$l \ge 0$ and add. For an outer state and $m > 0$, the circle equation gives
-$X(a + \frac12) + Y(b + \frac12) \ge -m\,Q_0 - \frac{X^2 + Y^2}{4m}$, a completed
-square; apply it to the source with $m = \frac{11}{200}$ and to the target with
-$m = \frac{41}{125}$. This leaves a quadratic function of $l$,
-
-```math
-\text{cost} \ge \tfrac\pi2 + x + k_0 + \beta(x)\,l - \alpha\,l^2, \qquad \alpha = \tfrac{9575}{1804}, \quad \beta(x) = \tfrac{q}{2\mu} + \left(1 - \tfrac P{2\nu}\right)\cos x + \left(1 - \tfrac t{2\nu}\right)\sin x > 0 ,
-```
-
-with $\mu = \frac{11}{200}$, $\nu = \frac{41}{125}$ and an explicit constant
-$k_0$, and the best weight $l = \beta/(2\alpha)$ gives the bound
-$V(x) = \frac\pi2 + x + k_0 + \beta(x)^2/(4\alpha)$. Its derivative is
-$1 + \beta\beta'/(2\alpha)$, and with $X = \tan\frac x2 \in [0, \frac38)$ the
-product $(1 + X^2)^2\,V'(x)$ is a quartic polynomial $Q(X)$ with rational
-coefficients. The kernel checks that the coefficients of
-$Q(X) - \Lambda(X)$, with
-$\Lambda(X) = \frac{789}{1000} - \frac{1047}{1000}X + \frac{1051}{500}X^2 - \frac{899}{1000}X^3 + \frac{1173}{1000}X^4$,
-are positive in degree 0 and nonnegative in degrees 1 to 4, so $Q > \Lambda$
-for $X \ge 0$, and $\Lambda > \frac{17}{50}$ on $[0, \frac38]$. So $V$ is
-increasing, and $V(0) > \frac{8981}{10000}$.
+*The word 0011011.* Markers quadratic in the state give costs above
+$\frac{17953}{20000}$ on every edge, in all more than
+$\frac{125671}{20000}$, which exceeds $\frac{710}{113}$ by
+$\frac{823}{2260000}$. $\square$
 
 *Lean:
-[`Eight.ShortOuterOne.OppositeFive.UpperSecondary.original`](../../SquaresInCircles/Eight/Words/Short/Outer/One/OppositePrimaryUpperOneDiagonal.lean#L453),
-[`Eight.ShortOuterOne.OppositeFive.UpperSecondary.quartic`](../../SquaresInCircles/Eight/Words/Short/Outer/One/OppositePrimaryUpperOneDiagonal.lean#L343),
-[`Eight.WholeIntervalPolynomial.Certificate.Scaled`](../../SquaresInCircles/Eight/Arithmetic/PolynomialCertificates.lean#L308),
-[`Eight.ShortWord.Zero.actual`](../../SquaresInCircles/Eight/Words/Short/WordZero.lean#L56),
-[`Eight.ShortWord.OuterQuarter.actual`](../../SquaresInCircles/Eight/Words/Short/Outer/Quarter.lean#L58),
-[`Eight.ShortWord.MixedQuarter.actual`](../../SquaresInCircles/Eight/Words/Short/Mixed/Quarter.lean#L874),
-[`Eight.WrongWordCore.actual_core_pair`](../../SquaresInCircles/Eight/Words/Wrong/ZeroOriginalOwners.lean#L280),
-[`Eight.SecondWord.OuterQuarter.actual`](../../SquaresInCircles/Eight/Words/Second/Outer/Quarter.lean#L54),
-[`Eight.SecondWord.OuterZero.actual`](../../SquaresInCircles/Eight/Words/Second/Outer/Opposite/ZeroCycle.lean#L1310),
-[`Eight.SecondWord.MixedQuarter.actual`](../../SquaresInCircles/Eight/Words/Second/Mixed/Quarter.lean#L205),
-[`Eight.SecondWord.MixedZero.actual`](../../SquaresInCircles/Eight/Words/Second/Mixed/Zero.lean#L154),
-[`Eight.SecondWord.CoreCore.actual`](../../SquaresInCircles/Eight/Words/Second/WordExclusion.lean#L152),
-[`Eight.CommonQuarter.actual_zero`](../../SquaresInCircles/Eight/Words/Common/Zero.lean#L298),
-[`Eight.CommonQuarter.actual_one`](../../SquaresInCircles/Eight/Words/Common/One.lean#L612),
-[`Eight.CommonQuarter.actual_jump_two`](../../SquaresInCircles/Eight/Words/Common/JumpTwo.lean#L596),
-[`Eight.WrongZeroOriginalOwners.original`](../../SquaresInCircles/Eight/Words/Wrong/ZeroOriginalOwners.lean#L342).*
+[`Eight.WordGeometry.no_double`](../../SquaresInCircles/Eight/WordGeometry.lean#L506),
+[`Eight.WordGeometry.wrong_word_impossible`](../../SquaresInCircles/Eight/WordGeometry.lean#L602),
+[`Eight.WordGeometry.six_exclusions`](../../SquaresInCircles/Eight/WordGeometry.lean#L657),
+[`Eight.quarter_word_candidate`](../../SquaresInCircles/Eight/WordGeometry.lean#L686),
+[`Eight.candidate_word_after_six_exclusions`](../../SquaresInCircles/Eight/QuarterWords.lean#L329),
+[`Eight.WordGeometry.commonPairProblem`](../../SquaresInCircles/Eight/Arithmetic/WordProblems.lean#L190),
+[`Eight.WordGeometry.wrongPairProblem`](../../SquaresInCircles/Eight/Arithmetic/WordProblems.lean#L197),
+[`Eight.WordGeometry.word_pair`](../../SquaresInCircles/Eight/WordGeometry.lean#L389).*
 
-## 11.7 The candidate frame and the signed cycle
+The three cost bounds are finite tables of continuous inequalities, one for
+each digit or edge, each pair of radial curves, each pair of signs and each
+retained axis. In the hand proof they are whole-pair arguments of the kind of
+§11.8: the common table is three lemmas, one for each digit; the exclusion of
+$0010111$ assembles 304 cases of retained axes, closing its hardest edge with
+six neighbourhoods of contacts and 140 scalar regimes; and that of $0011011$
+assembles 76 cases of radial curves and signs (39 up to reflection), again
+with 304 cases of axes. The formal proof proves the same inequalities as the
+problems of pair tables (Appendix L.7), with the core curve split into side and
+corner: $3 \cdot 9 \cdot 4 \cdot 4 = 432$ problems for the common table, and for
+each of the two words 684 problems, 19 combinations of an edge and a pair of
+signs times 9 pairs of curves times 4 axes; 1,800 problems in all, each on the
+two halves of the frame difference $|d| \le \frac7{10}$, with 8,375 rows. A leaf
+of a tree is closed either by the gap of (11.4) or by a row proving the cost
+bound; the quadratic markers of $0011011$ are bounded on each arc by affine
+labels. The signs are not all free
+in the two words. On an edge with digit 0, (11.8) gives
+$\delta_i = d_i + \alpha_i - \alpha_{i+1}$, so $\alpha_i \le 0 \le \alpha_{i+1}$
+would make $\delta_i < \frac7{10}$; and both words begin with two edges of
+digit 0, along which $\alpha_0 - \alpha_2 > 2 \cdot \frac{19}{25} - \frac7{10} = \frac{41}{50}$,
+so the first square has $\alpha_0 > 0$ and the third $\alpha_2 < 0$. This
+leaves 19 combinations of an edge and a pair of signs.
 
-From now on the word is $0101011$, and the squares get the roles of
-Figure 11.1. This section fixes the coordinates of the rest of the proof.
+## 11.7 Candidate coordinates and the tangent exclusions
 
-### Definition 11.29 (candidate frames)
+From now on the word is $0101011$, and the proof works with the roles of the
+squares in Figure 11.1.
 
-Let $S_0, \dots, S_6$ be a boundary cycle at a level $q \le Q_0$ with the quarter
-word $0101011$, indexed so that $k = (0, 1, 0, 1, 0, 1, 1)$, and name the
-squares
+### Definition 11.27 (candidate coordinates)
+
+Let $S_0, \dots, S_6$ be a boundary cycle with the quarter word $0101011$,
+indexed so that $k = (0, 1, 0, 1, 0, 1, 1)$, and name the squares
 
 ```math
 (S_0, \dots, S_6) = (H, G, A, B, T, D, E) .
 ```
 
-The edges $H \to G$, $A \to B$ and $T \to D$ have the digit 0, and
-$G \to A$, $B \to T$, $D \to E$ and $E \to H$ the digit 1. A *candidate frame*
-of the cycle is a choice of real representatives $\theta_H, \dots, \theta_E$ of
-the frames with $\theta_A = 0$ and $|\theta_i - \theta_j| < \frac7{10}$, such
-that the canonical axis of $S_i$ points in the direction
-$\theta_i + m_i\frac\pi2$, with the *offsets*
+Relative to the canonical frame of $A$, the canonical frames are
+$-1, -1, 0, 0, 1, 1, 2$ quarter turns ahead. The five *aligned* edges are
+$H \to G$, $A \to B$, $B \to T$, $T \to D$, $D \to E$ (indices
+$I = \lbrace 0, 2, 3, 4, 5\rbrace$), and the two *mixed* edges are $G \to A$ and
+$E \to H$. Take the real frame representatives with $\theta_A = 0$, and call
+$t = \theta_G$ the *tilt* and
 
 ```math
-(m_H, m_G, m_A, m_B, m_T, m_D, m_E) = (-1, -1, 0, 0, 1, 1, 2) .
+\Delta = \sum_{i \in I} |d_i| = |\theta_G - \theta_H| + |\theta_B| + |\theta_T - \theta_B| + |\theta_D - \theta_T| + |\theta_E - \theta_D|
 ```
 
-The *frame steps* are $d_i = \theta_{i+1} - \theta_i$, and the angles of
-Definition 11.20 are $\varphi_i = k_i\frac\pi2 + d_i$. The cycle with its
-candidate frame is *normalized* if moreover $\tau_E \le 0$. In the optimal
-packing $\theta_H = \theta_G = t_*$ and the other five representatives vanish.
+the *mismatch*. Then $\varphi_{G \to A} = \frac\pi2 - t$ and
+$\varphi_{E \to H} = \frac\pi2 + t - \sum_{i \in I} d_i$. In the optimal
+packing $\Delta = 0$ and $t = t_*$.
 
 *Lean:
-[`Eight.Candidate.word`](../../SquaresInCircles/Eight/Boundary/Candidate/Geometry.lean#L51),
-[`Eight.Candidate.offsets`](../../SquaresInCircles/Eight/Boundary/Candidate/Geometry.lean#L52),
-[`Eight.Candidate.Frame`](../../SquaresInCircles/Eight/Boundary/Candidate/Geometry.lean#L80),
-[`Eight.Candidate.Frame.physical_angle`](../../SquaresInCircles/Eight/Boundary/Candidate/Geometry.lean#L93),
-[`Eight.Candidate.delta`](../../SquaresInCircles/Eight/Boundary/Candidate/Geometry.lean#L55),
-[`Eight.Candidate.phi`](../../SquaresInCircles/Eight/Boundary/Candidate/Geometry.lean#L56),
-[`Eight.Candidate.EHalf`](../../SquaresInCircles/Eight/Boundary/Candidate/Geometry.lean#L107).*
+[`Eight.Candidate.word`](../../SquaresInCircles/Eight/Candidate/Model.lean#L36),
+[`Eight.Candidate.offsets`](../../SquaresInCircles/Eight/Candidate/Model.lean#L37),
+[`Eight.Candidate.charged`](../../SquaresInCircles/Eight/Candidate/Model.lean#L38),
+[`Eight.Candidate.mixedEdges`](../../SquaresInCircles/Eight/Candidate/Model.lean#L41),
+[`Eight.Candidate.delta`](../../SquaresInCircles/Eight/Candidate/Model.lean#L43),
+[`Eight.Candidate.phi`](../../SquaresInCircles/Eight/Candidate/Model.lean#L44),
+[`Eight.Candidate.mismatch`](../../SquaresInCircles/Eight/Candidate/Model.lean#L45),
+[`Eight.Candidate.tilt`](../../SquaresInCircles/Eight/Candidate/Model.lean#L46),
+[`Eight.Candidate.Frame`](../../SquaresInCircles/Eight/Candidate/Model.lean#L90).*
 
-### Lemma 11.30 (normalization)
+### Lemma 11.28 (normalization)
 
-Let a boundary cycle at the level $Q_1$ have its frames in an interval of length
-less than $\frac7{10}$ and the word $0101011$ up to the symmetries of the cycle.
-After a renumbering of its squares, a rotation of the plane about $o$ and
-possibly a reflection, it is normalized, with a candidate frame.
+Reflecting the plane in a line through $o$ and renumbering the squares by
+$i \mapsto 5 - i$ modulo 7 turns a boundary cycle with the word $0101011$ into
+another one, with the roles $(D, T, B, A, G, H, E)$ in place of
+$(H, G, A, B, T, D, E)$ and the same word; it changes the sign of every
+signed tangent and fixes $E$. So we may assume $\tau_E \le 0$.
 
-*Proof.* A rotation of the indices, or a reflection of the plane followed by a
-reversal of the order, turns the word into $0101011$ itself, and a rotation of
-the plane about $o$ makes $\theta_A = 0$. Reflecting the plane in a line through
-$o$ and renumbering the squares by $i \mapsto 5 - i$ modulo 7 restores the cyclic
-order and keeps the word, since $k_{4 - i} = k_i$ for the word $0101011$ read
-from $H$; it sends the roles $(H, G, A, B, T, D, E)$ to $(D, T, B, A, G, H, E)$
-and fixes $E$. A reflection exchanges the two sides of each centre direction,
-so it changes the sign of every signed tangent; one of the two orientations has
-$\tau_E \le 0$. $\square$
+*Proof.* The reflection keeps containment, the core, the frames up to
+reflection, the separations and the gaps, and reverses the cyclic order, which
+the renumbering restores. Under it the edge $i$ becomes the edge $4 - i$, and
+$k_{4 - i} = k_i$ for the word $0101011$ read from $H$. A reflection exchanges
+the two sides of each centre direction, so it changes the sign $\sigma$ of
+every square and keeps $(a, b)$. The square $S_6 = E$ is sent to
+$S_{5 - 6} = S_6$. $\square$
 
 *Lean:
-[`Eight.boundary_candidate_normalization`](../../SquaresInCircles/Eight/Boundary/Normalization.lean#L462),
-[`Eight.candidate_normalization_of_word`](../../SquaresInCircles/Eight/Boundary/Normalization.lean#L430),
-[`Eight.candidateFrameOfWordAction`](../../SquaresInCircles/Eight/Boundary/Normalization.lean#L388),
-[`Eight.CycleAction.candidateMirror`](../../SquaresInCircles/Eight/Boundary/Normalization.lean#L344),
-[`Eight.CycleAction.candidateMirror_E`](../../SquaresInCircles/Eight/Boundary/Normalization.lean#L355),
-[`Eight.candidate_word_mirror`](../../SquaresInCircles/Eight/Boundary/Normalization.lean#L370),
-[`Eight.CandidateNormalization`](../../SquaresInCircles/Eight/Boundary/Normalization.lean#L422).*
+[`Eight.boundary_candidate_normalization`](../../SquaresInCircles/Eight/GlobalNormalization.lean#L464),
+[`Eight.candidate_word_mirror`](../../SquaresInCircles/Eight/GlobalNormalization.lean#L372),
+[`Eight.CycleAction.candidateMirror`](../../SquaresInCircles/Eight/GlobalNormalization.lean#L346),
+[`Eight.CycleAction.candidateMirror_E`](../../SquaresInCircles/Eight/GlobalNormalization.lean#L357),
+[`Eight.Candidate.EHalf`](../../SquaresInCircles/Eight/Candidate/Model.lean#L121).*
 
-The motions of the lemma act on the whole packing at once: the renumbering, the
-rotation and the reflection are applied to the eight squares, to their
-boundary cycle and to its expansions, which keeps every square, every frame and
-every separating axis (§11.12).
+### Proposition 11.29 (six tangent exclusions; six affine-arc tables)
 
-### Definition 11.31 (signed cycles)
-
-For a boundary cycle with a candidate frame, the *signed point* of the square
-$S_i$ is $(a_i, y_i)$ with $y_i = \sigma_i b_i$, so that $|y_i| \le a_i$, $y_i$
-has the sign of the signed tangent $\tau_i = y_i/a_i$, and the centre of $S_i$
-is $a_i e_i - y_i f_i$ in its canonical frame $e_i$, $f_i$. The *signed cycle*
-is the list of the seven signed points with the representatives $\theta_i$.
-With $(a, y) = (a_i, y_i)$, $(a', y') = (a_{i+1}, y_{i+1})$ and $d = d_i$, the
-margins (11.5) of the pair $S_i$, $S_{i+1}$ read, on an edge with the digit 0,
+Let a boundary cycle at the level $Q_1$ have the word $0101011$, frames in an
+interval of length less than $\frac7{10}$, and $\tau_E \le 0$. Then
 
 ```math
-\begin{aligned}
-M_1 &= y + a'\sin d - y'\cos d - \tau(d), & M_2 &= a' - a\cos d + y\sin d - \tau(d), \\
-M_3 &= a\sin d + y\cos d - y' - \tau(d), & M_4 &= a - a'\cos d - y'\sin d - \tau(d),
-\end{aligned}
+-\tfrac45 < \tau_G < -\tfrac1{20}, \qquad \tfrac1{20} < \tau_T < \tfrac45, \qquad \tau_H > \tfrac12, \qquad \tau_D < -\tfrac12 . \tag{11.9}
 ```
 
-and on an edge with the digit 1
+*Proof.* Each of the six closed domains of Table 11.1 is excluded, in the
+order of the table, by a whole-cycle bound as in Proposition 11.26: the table
+gives markers, one per arc of states, and for every pair a lower bound
+$\gamma_i$ of the cost $\varphi_i + \ell_i - \ell_{i+1}$ for every feasible
+retained axis, with $\sum_i\gamma_i > \frac{710}{113} > 2\pi$, against (11.6).
+The rows of each table and their meaning are explained in §11.8. $\square$
+
+| excluded domain | earlier hypotheses | rows | arcs | $\sum_i \gamma_i$ | reserve over $\frac{710}{113}$ |
+| --- | --- | --: | --: | :-: | :-: |
+| $\tau_G \le -\frac45$ | $\tau_E \le 0$ | 9,087 | 114 | $\frac{62839}{10000}$ | $\frac{807}{1130000}$ |
+| $\tau_G \ge -\frac1{20}$ | $\tau_E \le 0$ | 9,796 | 122 | $\frac{62839}{10000}$ | $\frac{807}{1130000}$ |
+| $\tau_T \ge \frac45$ | $\tau_G \in [-\frac45, -\frac1{20}]$, $\tau_E \le 0$ | 7,078 | 102 | $\frac{62839}{10000}$ | $\frac{807}{1130000}$ |
+| $\tau_T \le \frac1{20}$ | $\tau_G \in [-\frac45, -\frac1{20}]$, $\tau_E \le 0$ | 49,971 | 303 | $\frac{3927}{625}$ | $\frac1{70625}$ |
+| $\tau_H \le \frac12$ | $\tau_G$, $\tau_T$ as in (11.9), $\tau_E \le 0$ | 48,050 | 279 | $\frac{62839}{10000}$ | $\frac{807}{1130000}$ |
+| $\tau_D \ge -\frac12$ | $\tau_G$, $\tau_T$ as in (11.9), $\tau_E \le 0$ | 24,197 | 199 | $\frac{125671}{20000}$ | $\frac{823}{2260000}$ |
+
+*Table 11.1.* The six tangent exclusions at the level $Q_1$. Each table
+covers both radial curves at every square, all four margins of (11.5) on
+every edge and the whole range of angles allowed by (11.4) and
+Theorem 11.23; no separating axis is chosen in advance.
+
+*Lean:
+[`Eight.Candidate.Tables.g_lower_excluded`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L67),
+[`Eight.Candidate.Tables.g_upper_excluded`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L116),
+[`Eight.Candidate.Tables.t_upper_excluded`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L217),
+[`Eight.Candidate.Tables.t_lower_excluded`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L166),
+[`Eight.Candidate.Tables.h_lower_excluded`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L326),
+[`Eight.Candidate.Tables.d_upper_excluded`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L381),
+[`Eight.Candidate.Tables.g_cut`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L435),
+[`Eight.Candidate.Tables.t_cut`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L441),
+[`Eight.Candidate.Tables.hd_cut`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L447).*
+
+![The exterior squares of the optimal packing, each with a shaded fan of the centre directions that its signed tangent allows after Proposition 11.29, drawn about its canonical axis: narrow fans on one side for G and T, the outer parts of the fans for H and D, the half fan on the side of negative tangents for E, and full fans for A and B, which share their axis; the actual centre direction of each square lies in its fan](figures/11-eight/tangents.svg)
+
+*Figure 11.16.* The bounds (11.9) in the optimal packing. For each exterior
+square, the shaded fan is the set of centre directions $\beta = \theta - \alpha$
+allowed by its signed tangent, about its canonical axis (arrow); the centre
+directions (dots) lie inside. The fans of $A$, $B$ and $E$ are not restricted
+at this stage, beyond $\tau_E \le 0$.
+
+## 11.8 What an affine-arc table row proves
+
+The ten largest tables of the proof, the six of Table 11.1 and the four of
+the mismatch chain (§11.9), are *affine-arc tables*. This section describes
+them and the continuous argument that makes them a proof; the details are in
+[Appendix L](appendix-l.md).
+
+### Definition 11.30 (arcs, rows and covers)
+
+An *affine-arc table* at a level $Q$ consists of the following data, all
+rational.
+
+1. *Arcs.* For each role and each sign, a finite list of closed arcs of the
+   radial curves $\mathcal O_Q$ and $\mathcal C$, given by intervals of the
+   unsigned tangent $b/a$ with rational ends; the core curve is cut at
+   $b/a = \frac67$ into its side and its corner. Each arc carries an affine
+   *label* $L(a, b) = c + p\,a + q\,b$.
+2. *Rows.* A row names an edge $i$, a source arc and a target arc, an angle
+   interval $\varphi \in k_i\frac\pi2 \pm [u_0, u_1]$ with
+   $0 \le u_0 \le u_1 \le \frac7{10}$, one of the four margins $M_j$ of
+   (11.5), a multiplier $\lambda \ge 0$, and a rule for the support of the
+   target arc (§L.2).
+3. *Covers.* For each role and sign the arcs cover the curve; for each edge,
+   pair of arcs and margin, the angle intervals of the rows form a closed
+   chain covering the range of $\varphi$ allowed by (11.4), by
+   Theorem 11.23 and by any earlier bound on the mismatch.
+4. *Constants.* The edge constants $\gamma_i$ and the charge $\beta_i \ge 0$,
+   zero for the tangent tables and on the mixed edges.
+
+A row is *valid* if the following inequality holds for all states $(a, b)$
+on the source arc and $(a', b')$ on the target arc and all $\varphi$ in its
+angle interval:
 
 ```math
-\begin{aligned}
-M_1 &= y + a'\cos d + y'\sin d - \tau(d), & M_2 &= a' + a\sin d + y\cos d - \tau(d), \\
-M_3 &= a\cos d - y\sin d - y' - \tau(d), & M_4 &= a + a'\sin d - y'\cos d - \tau(d),
-\end{aligned}
+\varphi - \beta_i\,\chi(\varphi) + L_s(a, b) - L_t(a', b') - \gamma_i - \lambda\,M_j > 0 . \tag{11.10}
 ```
 
-with $\tau(d) = \frac12(1 + |\sin d| + |\cos d|)$. The axis $j$ *separates* the
-pair if $M_j \ge 0$. The point $(a, y)$ lies on the circle of squared radius $q$
-if $(a + \frac12)^2 + (|y| + \frac12)^2 = q$, inside its disk if the left side is
-at most $q$, and on the core if
-$\max(a - \frac12, 0)^2 + \max(|y| - \frac12, 0)^2 = \frac1{144}$. More
-generally, a *signed cycle at the level $q$* is any list of seven points
-$(a_i, y_i)$ with $|y_i| \le a_i$, inside the disk of squared radius $q$ and
-outside the open core disk, and of seven representatives $\theta_i$ within
-$\frac7{10}$ of each other; its separations are the conditions $M_j \ge 0$ on
-its edges.
+*Lean:
+[`Eight.Arithmetic.ArcData`](../../SquaresInCircles/Eight/Arithmetic/AffineTableData.lean#L35),
+[`Eight.Arithmetic.AffineTableRow`](../../SquaresInCircles/Eight/Arithmetic/AffineTableData.lean#L76),
+[`Eight.Arithmetic.AffineTableRow.Claim`](../../SquaresInCircles/Eight/Arithmetic/AffineTableData.lean#L107),
+[`Eight.Arithmetic.AffineTableMeta`](../../SquaresInCircles/Eight/Arithmetic/AffineTableData.lean#L63),
+[`Eight.Arithmetic.AffineCover`](../../SquaresInCircles/Eight/Arithmetic/AffineCoverage.lean#L143),
+[`Eight.Arithmetic.chargedCost`](../../SquaresInCircles/Eight/Arithmetic/AffineArc.lean#L87).*
 
-A signed cycle records only the seven separations of consecutive pairs. The
-later steps move one or two of its squares and keep these seven separations,
-the containment and the core, but not the separations of other pairs; the
-squares of a moved cycle need not form a packing.
+Where the margin $M_j$ is nonnegative, that is, where the axis $j$
+separates, (11.10) gives the charged cost bound
+$\varphi - \beta_i\chi(\varphi) + L_s - L_t > \gamma_i$. Where it is negative,
+the axis does not separate and (11.10) holds trivially once $\lambda$ is
+large; the multiplier lets a single smooth inequality cover both regions.
+
+### Proposition 11.31 (rows and tables)
+
+1. *A row is checked by finitely many rational comparisons.* Subtracting
+   $\lambda M_j$ separates the source and the target: the left side of
+   (11.10) is a constant plus a linear function of $(a, b)$ with fixed
+   coefficients plus a linear function of $(a', b')$ whose coefficients are
+   trigonometric in $\varphi$. Its minimum over a source arc is bounded below
+   by an endpoint value or by the support of the whole circle, its minimum
+   over the target arc likewise, with one radical removed by a fixed
+   polynomial majorant; then sine and cosine are replaced by their Taylor
+   polynomials with interval remainders, and the resulting polynomial in the
+   angle is shown positive by the signs of its coefficients in a Bernstein
+   basis. Every step is a valid inequality, so positive coefficients prove
+   (11.10) on the whole row.
+2. *A valid table gives a cyclic bound.* Let every row of an affine-arc table
+   be valid and its covers complete. Then for every boundary cycle at the
+   level $Q$ whose states, signs and angles lie in the declared domains,
+
+   ```math
+   2\pi > \sum_{i=0}^6 \gamma_i + \sum_{i=0}^6 \beta_i\,\chi(\varphi_i) . \tag{11.11}
+   ```
+
+The proof of (1) is given in [Appendix L](appendix-l.md). For (2), give each
+square one arc containing its state, and so one label; on each edge choose a
+feasible retained axis $j$ (Lemma 11.19). The covers provide a row for the
+edge, the two arcs and $j$, whose angle interval contains $\varphi_i$, and as
+$M_j \ge 0$ the row gives
+$\varphi_i - \beta_i\chi(\varphi_i) + \ell_i - \ell_{i+1} > \gamma_i$, with
+the labels as markers. Summing and using (11.6) gives (11.11).
 
 *Lean:
-[`Eight.SignedPoint`](../../SquaresInCircles/Eight/Frames/Signed/Coordinates.lean#L32),
-[`Eight.SignedPoint.circle`](../../SquaresInCircles/Eight/Frames/Signed/Coordinates.lean#L39),
-[`Eight.SignedPoint.Contained`](../../SquaresInCircles/Eight/Frames/Signed/Coordinates.lean#L47),
-[`Eight.SignedPoint.AvoidsCore`](../../SquaresInCircles/Eight/Frames/Signed/Coordinates.lean#L49),
-[`Eight.SignedPoint.Outer`](../../SquaresInCircles/Eight/Frames/Signed/Coordinates.lean#L51),
-[`Eight.SignedPoint.Core`](../../SquaresInCircles/Eight/Frames/Signed/Coordinates.lean#L53),
-[`Eight.SignedCycle`](../../SquaresInCircles/Eight/Frames/Signed/Coordinates.lean#L217),
-[`Eight.SignedCycle.atFrame`](../../SquaresInCircles/Eight/Frames/Signed/Coordinates.lean#L233),
-[`Eight.zeroProjection`](../../SquaresInCircles/Eight/Frames/Signed/Coordinates.lean#L150),
-[`Eight.quarterProjection`](../../SquaresInCircles/Eight/Frames/Signed/Coordinates.lean#L156),
-[`Eight.SignedCycle.slack`](../../SquaresInCircles/Eight/Frames/Signed/Coordinates.lean#L228),
-[`Eight.SignedCycle.Feasible`](../../SquaresInCircles/Eight/Frames/Signed/Coordinates.lean#L231),
-[`Eight.SignedCycle.atFrame_slack`](../../SquaresInCircles/Eight/Frames/Signed/Coordinates.lean#L238),
-[`Eight.SignedCycle.atFrame_feasible`](../../SquaresInCircles/Eight/Frames/Signed/Coordinates.lean#L246),
-[`Eight.SignedCycle.Necessary`](../../SquaresInCircles/Eight/Owners/NecessaryCycle.lean#L47).*
+[`Eight.Arithmetic.CoreRow.sound_of_positive`](../../SquaresInCircles/Eight/Arithmetic/CoreRow.lean#L79),
+[`Eight.Arithmetic.PreparedRow.claim_of_positive`](../../SquaresInCircles/Eight/Arithmetic/PreparedRow.lean#L136),
+[`Eight.Arithmetic.checkRow_claim`](../../SquaresInCircles/Eight/Arithmetic/RowCheck.lean#L1277),
+[`Eight.Arithmetic.coverBlocks_sound`](../../SquaresInCircles/Eight/Arithmetic/RowCover.lean#L532),
+[`Eight.Arithmetic.StateChains.covers`](../../SquaresInCircles/Eight/Arithmetic/StateCoverage.lean#L159),
+[`Eight.Arithmetic.ClosedChain.covers`](../../SquaresInCircles/Eight/Arithmetic/ClosedCover.lean#L40),
+[`Eight.Candidate.ChargedBound.cyclic`](../../SquaresInCircles/Eight/Candidate/Model.lean#L163).*
 
-### Definition 11.32 (owners)
+Nothing in a row is a sample: each row is a statement about a product of two
+whole arcs and a whole interval of angles, its arithmetic is a fixed list of
+rational coefficients, and the covers are checked separately from the rows,
+by comparing rational endpoints. The arcs, rows and covers of the ten tables
+are listed in Table 11.2. In the formal proof each table is a data file read
+by Lean; the rational root brackets of the arc endpoints, the arctangent
+bounds of the angle endpoints and the coverage chains are recomputed and
+checked in Lean, and each row's Bernstein coefficients are checked as an
+identity of rational polynomials.
 
-The *normal owners* of the seven edges $H \to G$, $G \to A$, $A \to B$,
-$B \to T$, $T \to D$, $D \to E$, $E \to H$ are the sets of axes
+| table | proves | arcs | rows | $\beta$ | $\gamma_i$ |
+| --- | --- | --: | --: | :-: | --- |
+| $\tau_G \le -\frac45$ | excluded | 114 | 9,087 | 0 | Table 11.1 |
+| $\tau_G \ge -\frac1{20}$ | excluded | 122 | 9,796 | 0 | Table 11.1 |
+| $\tau_T \ge \frac45$ | excluded | 102 | 7,078 | 0 | Table 11.1 |
+| $\tau_T \le \frac1{20}$ | excluded | 303 | 49,971 | 0 | Table 11.1 |
+| $\tau_H \le \frac12$ | excluded | 279 | 48,050 | 0 | Table 11.1 |
+| $\tau_D \ge -\frac12$ | excluded | 199 | 24,197 | 0 | Table 11.1 |
+| coarse mismatch | $\Delta < \frac{13}{50}$ | 462 | 129,031 | $\frac{99}{5000}$ | $0.89727$ |
+| M1 | $\Delta \le \frac{13}{50} \Rightarrow \Delta < \frac1{10}$ | 401 | 131,255 | $\frac1{400}$ | $0.897582$ |
+| intermediate | $\Delta \le \frac1{10} \Rightarrow \Delta < \frac3{200}$ | 335 | 107,196 | $\frac1{200}$ | (11.13) |
+| M2 | $\Delta \le \frac3{200} \Rightarrow \Delta < \frac1{1000}$ | 456 | 144,709 | $\frac1{20}$ | (11.14) |
+| total | | 2,773 | 660,370 | | |
+
+*Table 11.2.* The ten affine-arc tables. The six tangent tables are at the
+level $Q_1$ without a charge; the four mismatch tables, also at $Q_1$, charge
+the five aligned edges with $\beta$.
+
+![Two panels for one row of the table that excludes tau_G at most -4/5, on the edge from H to G. Left: the (a, b)-plane with the region between the core curve and the outer curve shaded; the source arc of H, the states of the outer curve with b/a between 0 and 1/8, and the target arc of G, those with b/a between 7/8 and 1, are drawn thick. Right: against the angle phi = u from 0 to 0.7, the least value over the two arcs of the left side of (11.10) for the margin M1 with the multiplier about 7.57, a positive convex curve whose least value, about 0.072, is near u = 0.55, and the lower bound of the support rules, dashed, which coincides with it to drawing accuracy](figures/11-eight/row.svg)
+
+*Figure 11.17.* One row of the table that excludes $\tau_G \le -\frac45$: the
+edge $H \to G$, the source arc of $H$, the states of $\mathcal O_{Q_1}$ with
+$b/a \in [0, \frac18]$, and the target arc of $G$, those with
+$b/a \in [\frac78, 1]$, both with the sign $-1$ (left, thick); the margin
+$M_1$, the angles $0 \le \varphi \le \frac7{10}$ and the multiplier
+$\lambda \approx 7.57$. Right: the least value over the two arcs of the left
+side of (11.10) (solid) and the bound of Proposition 11.31 (1), with the
+upper-endpoint rule of Lemma L.1 (3) for the target (dashed), coincide to
+drawing accuracy; both stay above $0.072$.
+
+![For the same pair of arcs and the edge from H to G, the four margins drawn as four horizontal bars over the angles from -0.0254 to 0.7: each bar is a chain of closed angle intervals, one for each row, consecutive intervals meeting at common endpoints, labelled by the support rule the row uses for the target arc, and each chain covers the grey band of angles allowed by the gap and frame bounds. The bars of margins 1, 2 and 4 have two rows each, one for the negative angles and one for the rest; the bar of margin 3 has nine](figures/11-eight/chains.svg)
+
+*Figure 11.18.* The angle chains of the table of Figure 11.17 for the same
+pair of arcs: for each of the four margins, the rows' closed intervals
+(alternately shaded) meet at common rational endpoints and cover the whole
+range $-0.0254 \le \varphi \le \frac7{10}$ allowed by the gap and frame bounds
+(grey band). Each interval is labelled by the rule of Lemma L.1 that its row
+uses for the target arc: both endpoints (e), the lower or the upper endpoint
+(l, u), or the circle (c). These are all 15 rows of the pair.
+
+## 11.9 The mismatch chain
+
+The tangent exclusions leave the frames free within the bound $\frac7{10}$
+of Theorem 11.23. Four charged tables now shrink the mismatch $\Delta$, the
+total turn between the frames of aligned neighbours, in four steps. Each table
+proves a cyclic bound (11.11) with a positive charge $\beta$ on the aligned
+edges, and a lemma about the frame charge converts it into a bound on
+$\Delta$.
+
+### Lemma 11.32 (contraction)
+
+Let a boundary cycle with the word $0101011$ satisfy (11.11) with
+$\beta_i = \beta > 0$ on the aligned edges and $\beta_i = 0$ on the mixed ones,
+and let every aligned $|d_i|$ be at most $\frac7{10}$.
+
+1. $\chi(\varphi_i) = g(|d_i|)$ on every aligned edge, where
+   $g(x) = \frac12(\cos x + \sin x - 1)$ is increasing and concave on
+   $[0, \frac7{10}]$, and
+   $g(x) \ge P_7(x) = \frac x2 - \frac{x^2}4 - \frac{x^3}{12} + \frac{x^4}{48} + \frac{x^5}{240} - \frac{x^6}{1440} - \frac{x^7}{10080}$
+   for $x \ge 0$.
+2. If $\sum_i\gamma_i + \beta\kappa\Delta_0 \ge \frac{710}{113}$ for numbers
+   $\kappa \le g(\frac7{10})/\frac7{10}$ and $\Delta_0 > 0$, then
+   $\Delta < \Delta_0$.
+3. If $\Delta \le \frac7{10}$ and $\sum_i\gamma_i + \beta\,g(\Delta_0) \ge \frac{710}{113}$
+   for a number $0 < \Delta_0 \le \frac7{10}$, then $\Delta < \Delta_0$.
+
+*Proof.* (1) On an aligned edge $\varphi_i = k_i\frac\pi2 + d_i$, and $\chi$
+has the period $\frac\pi2$ and is even. On $[0, \frac\pi4]$,
+$g' = \frac12(\cos x - \sin x) \ge 0$ and $g'' = -\frac12(\sin x + \cos x) < 0$.
+The bound $g \ge P_7$ is the sum of the lower Taylor bounds
+$\cos x \ge 1 - \frac{x^2}2 + \frac{x^4}{24} - \frac{x^6}{720}$ and
+$\sin x \ge x - \frac{x^3}6 + \frac{x^5}{120} - \frac{x^7}{5040}$. (2) By
+concavity and $g(0) = 0$, $g(x) \ge \kappa x$ on $[0, \frac7{10}]$, so
+$\sum_{i \in I}\chi(\varphi_i) \ge \kappa\Delta$; if $\Delta \ge \Delta_0$,
+(11.11) would give $2\pi > \frac{710}{113}$. (3) A concave function with
+$g(0) = 0$ is subadditive, so $\sum_{i \in I} g(|d_i|) \ge g(\Delta)$, and if
+$\Delta \ge \Delta_0$ this is at least $g(\Delta_0)$. $\square$
+
+*Lean:
+[`Eight.Candidate.h_monotone`](../../SquaresInCircles/Eight/Candidate/Mismatch.lean#L37),
+[`Eight.Candidate.h_concave`](../../SquaresInCircles/Eight/Candidate/Mismatch.lean#L44),
+[`Eight.Candidate.hLower7_le`](../../SquaresInCircles/Eight/Candidate/Mismatch.lean#L85),
+[`Eight.Candidate.h_cubic_lower`](../../SquaresInCircles/Eight/Candidate/Mismatch.lean#L93),
+[`Eight.Candidate.hSum_ge_chord`](../../SquaresInCircles/Eight/Candidate/Mismatch.lean#L107),
+[`Eight.Candidate.hSum_ge_h_mismatch`](../../SquaresInCircles/Eight/Candidate/Mismatch.lean#L115),
+[`Eight.Candidate.mismatch_contract`](../../SquaresInCircles/Eight/Candidate/Mismatch.lean#L129).*
+
+### Lemma 11.33 (owners and signs at small mismatch)
+
+Let a boundary cycle at a level $q \le Q_0$ have the word $0101011$ and
+frames in an interval of length less than $\frac7{10}$.
+
+1. Every exterior square has $0.55875 < a < 1.415$ and $b < 0.9$.
+2. If $\Delta \le \frac25$, then on the three edges $H \to G$, $A \to B$,
+   $T \to D$, whose digit is 0, the margins $M_2$ and $M_4$ are negative: only
+   the axes 1 and 3 can separate.
+3. If $\Delta \le \frac1{10}$, then
+   $\tau_H > 0 > \tau_G$, $\tau_A > 0 > \tau_B$ and $\tau_T > 0 > \tau_D$.
+
+*Proof.* (1) is (11.3). (2) On a zero edge $\varphi = d$ with
+$x = |d| \le \frac25$, and as $b \le a$, $b' \le a'$ and
+$\cos x - \sin x > 0$, both $M_2$ and $M_4$ are at most
 
 ```math
-\lbrace 1, 3\rbrace, \quad \lbrace 1, 2\rbrace, \quad \lbrace 1, 3\rbrace, \quad \lbrace 3, 4\rbrace, \quad \lbrace 1, 3\rbrace, \quad \lbrace 3, 4\rbrace, \quad \lbrace 1, 2\rbrace ,
+1.415 - 0.55875(\cos x - \sin x) - \tfrac12(1 + \sin x + \cos x) = 0.915 - 1.05875\cos x + 0.05875\sin x \le -\tfrac{711}{20000}
 ```
 
-and the *terminal owners* are
+by $\cos x \ge 1 - \frac{x^2}2 \ge 0.92$ and $\sin x \le x \le 0.4$.
+(3) Now $x \le \frac1{10}$ and only $M_1$ and $M_3$ remain. If the source has
+$\sigma b \le 0$, then
+$M_1 \le 1.415\sin x + 0.9\cos x - \tau \le 0.915 \cdot 0.1 + 0.4 - 0.5 < 0$
+and $M_3 \le 0.9 + 1.415\sin x - \tau \le 0.4 + 0.0915 - \frac12(1 - \frac{0.01}2) < 0$;
+if the target has $\sigma'b' \ge 0$, the same two bounds hold with the roles
+of $M_1$ and $M_3$ exchanged. So a separating zero edge has
+$\tau_{\mathrm{source}} > 0 > \tau_{\mathrm{target}}$. $\square$
+
+*Lean:
+[`Eight.Candidate.canonical_bounds`](../../SquaresInCircles/Eight/Candidate/Geometry.lean#L51),
+[`Eight.Candidate.primary_margin_negative`](../../SquaresInCircles/Eight/Candidate/Geometry.lean#L129),
+[`Eight.Candidate.zero_edge_primary_excluded`](../../SquaresInCircles/Eight/Candidate/Geometry.lean#L144),
+[`Eight.Candidate.zero_owners_of_mismatch`](../../SquaresInCircles/Eight/Candidate/Geometry.lean#L173),
+[`Eight.Candidate.secondary_margins_source_nonpos`](../../SquaresInCircles/Eight/Candidate/Geometry.lean#L186),
+[`Eight.Candidate.secondary_margins_target_nonneg`](../../SquaresInCircles/Eight/Candidate/Geometry.lean#L204),
+[`Eight.Candidate.zero_edge_signs`](../../SquaresInCircles/Eight/Candidate/Geometry.lean#L222),
+[`Eight.Candidate.signs_of_mismatch`](../../SquaresInCircles/Eight/Candidate/Geometry.lean#L258).*
+
+### Proposition 11.34 (the mismatch chain; four affine-arc tables)
+
+Let a boundary cycle at the level $Q_1$ have the word $0101011$, frames in an
+interval of length less than $\frac7{10}$, $\tau_E \le 0$ and the bounds
+(11.9). Then
 
 ```math
-\lbrace 1, 3\rbrace, \quad \lbrace 1\rbrace, \quad \lbrace 1, 3\rbrace, \quad \lbrace 3, 4\rbrace, \quad \lbrace 1, 3\rbrace, \quad \lbrace 3, 4\rbrace, \quad \lbrace 2\rbrace .
+\Delta < \tfrac{13}{50} \ \Longrightarrow\ \Delta < \tfrac1{10} \ \Longrightarrow\ \Delta < \tfrac3{200} \ \Longrightarrow\ \Delta < \tfrac1{1000}, \tag{11.12}
 ```
 
-A cycle satisfies the *owner restriction* to a family of sets if every axis
-that separates the pair of an edge belongs to the set of that edge. On every
-edge the axes 1 and 2 are the *low* axes and the axes 3 and 4 the *high* axes.
-The axis 1 on $G \to A$ and the axis 3 on $B \to T$ are the *hard axes*.
+and the first bound holds. More precisely, the following four steps are
+proved in this order.
 
-The terminal owners are the axes along which the squares of the optimal
-packing are separated, each with margin 0 (Figure 11.18): on the five edges
-between squares with the same frame two squares share a side, and two axes
-separate; on $G \to A$ a corner of $A$ rests on the side of $G$, and the axis
-of $G$ separates; on $E \to H$ a corner of $E$ rests on the side of $H$, and the
-axis of $H$ separates. The normal owners add the axes of $A$ and of $E$ on the
-last two edges, which the optimal packing does not use. The hard axes hold the
-two halves of the ring together: in Figure 11.1, $G$ presses on $A$ along the
-axis 1 of the pair $G$, $A$, and $T$ on $B$ along the axis 3 of the pair $B$,
-$T$, which is the side of $B$ that $T$ shares.
+1. *Coarse step.* With $|d_i| < \frac7{10}$ only, the coarse table (462 arcs,
+   129,031 rows, covering 121,808 required angle chains) gives (11.11) with
+   $\beta = \frac{99}{5000}$ and every $\gamma_i = 0.89727$. With
+   $\kappa = \frac{29}{100}$, Lemma 11.32 (2) and
+
+   ```math
+   7 \cdot 0.89727 + \tfrac{99}{5000} \cdot \tfrac{29}{100} \cdot \tfrac25 - \tfrac{710}{113} = \tfrac{271}{282500000} > 0
+   ```
+
+   give $\Delta < \frac25$. The same rows prove the cost bounds with the seven
+   constants raised by $(15, 13, 18, 12, 15, 23, 6) \cdot 10^{-6}$, in all by
+   $\frac{51}{500000}$, since each raise is below the least reserve of the rows
+   of its edge; then Lemma 11.32 (3) and
+
+   ```math
+   7 \cdot 0.89727 + \tfrac{51}{500000} + \tfrac{99}{5000}\,P_7\!\left(\tfrac{13}{50}\right) - \tfrac{710}{113} = \tfrac{9154605884982919}{494375000000000000000} > 0
+   ```
+
+   give $\Delta < \frac{13}{50}$.
+2. *M1.* Assume $\Delta \le \frac{13}{50}$ and the closed ranges
+   $\tau_H \in [\frac12, 1]$, $\tau_G \in [-\frac45, -\frac1{20}]$,
+   $\tau_T \in [\frac1{20}, \frac45]$, $\tau_D \in [-1, -\frac12]$,
+   $\tau_E \in [-1, 0]$, with $\tau_A$, $\tau_B$ free, the aligned $d_i$ in
+   $[-\frac{13}{50}, \frac{13}{50}]$ and the mixed ones in
+   $[-\frac7{10}, \frac7{10}]$, all four margins on every edge. The table M1
+   (401 arcs, 131,255 rows, 123,168 required chains) gives (11.11) with
+   $\beta = \frac1{400}$ and every $\gamma_i = 0.897582$, and
+
+   ```math
+   7 \cdot 0.897582 + \tfrac1{400}\left(\tfrac{0.1}2 - \tfrac{0.1^2}4 - \tfrac{0.1^3}{12}\right) - \tfrac{710}{113} = \tfrac{18173}{2712000000} > 0
+   ```
+
+   gives $\Delta < \frac1{10}$ by Lemma 11.32 (3), the cubic being a lower
+   bound for $g$.
+3. *Intermediate step.* Now Lemma 11.33 (3) gives the signs. Assume
+   $\Delta \le \frac1{10}$, $\tau_H, \tau_A \in [0, 1]$,
+   $\tau_G \in [-\frac45, -\frac1{20}]$, $\tau_B, \tau_D, \tau_E \in [-1, 0]$,
+   $\tau_T \in [\frac1{20}, \frac45]$, all four margins and the mixed angles in
+   $[-\frac7{10}, \frac7{10}]$. The intermediate table (335 arcs, 107,196 rows,
+   101,280 chains) gives (11.11) with $\beta = \frac1{200}$ and
+
+   ```math
+   \gamma = (0.8975928,\ 0.8975928,\ 0.8975928,\ 0.8975928,\ 0.8975928,\ 0.89759275,\ 0.8975917), \qquad \textstyle\sum_i \gamma_i = \tfrac{125662969}{20000000}, \tag{11.13}
+   ```
+
+   and $g(\frac3{200}) > \frac{238191}{32000000}$, $2\pi < 6.28318531$ and
+   $\frac{125662969}{20000000} + \frac1{200} \cdot \frac{238191}{32000000} - 6.28318531 = \frac{2287}{6400000000} > 0$
+   give $\Delta < \frac3{200}$.
+4. *M2.* Assume $\Delta \le \frac3{200}$, the ranges of step 2 with
+   $\tau_A \in [0, 1]$ and $\tau_B \in [-1, 0]$, only the axes 1 and 3 on
+   $H \to G$, $A \to B$, $T \to D$ (Lemma 11.33 (2)) and only the axes 3 and 4
+   on $B \to T$, $D \to E$ (Proposition 11.35 (1)), and all four margins on
+   the two mixed edges, whose angles are not restricted by $\Delta$. The
+   table M2 (456 arcs, 144,709 rows, 129,368 chains) gives (11.11) with
+   $\beta = \frac1{20}$ and
+
+   ```math
+   \gamma = (0.897595,\ 0.897595,\ 0.897595,\ 0.897595,\ 0.897595,\ 0.897595,\ 0.8975925), \qquad \textstyle\sum_i \gamma_i = \tfrac{502653}{80000}, \tag{11.14}
+   ```
+
+   and $g(\frac1{1000}) > \frac{5996999}{12000000000}$ and
+   $\frac{502653}{80000} + \frac1{20} \cdot \frac{5996999}{12000000000} - 6.28318531 = \frac{522599}{240000000000} > 0$
+   give $\Delta < \frac1{1000}$.
+
+*Proof.* Each step is Proposition 11.31 (2) for its table, whose declared
+domain contains the cycle by the hypotheses and the earlier steps, followed by
+Lemma 11.32 and the displayed rational comparison; the bounds
+$2\pi < \frac{710}{113}$ and $2\pi < 6.28318531$ follow from Machin's formula
+$\frac\pi4 = 4\arctan\frac15 - \arctan\frac1{239}$ and the alternating series
+of the arctangent. No step uses a conclusion it is meant to prove: the owners
+of step 4 come from Lemma 11.33 at $\Delta \le \frac25$ and from
+Proposition 11.35 at $\Delta \le \frac3{200}$, both available after step 3.
+$\square$
 
 *Lean:
-[`Eight.SignedCycle.normalOwners`](../../SquaresInCircles/Eight/Owners/NecessaryCycle.lean#L59),
-[`Eight.Candidate.terminalOwners`](../../SquaresInCircles/Eight/Boundary/Candidate/Geometry.lean#L110),
-[`Eight.Candidate.OwnerRestriction`](../../SquaresInCircles/Eight/Boundary/Candidate/Geometry.lean#L113),
-[`Eight.SignedCycle.HardOwners`](../../SquaresInCircles/Eight/Owners/NecessaryCycle.lean#L119),
-[`Eight.forwardAxis`](../../SquaresInCircles/Eight/Frames/SeparatingAxis.lean#L194),
-[`Eight.forwardMargin`](../../SquaresInCircles/Eight/Frames/SeparatingAxis.lean#L200).*
+[`Eight.Candidate.coarse_first_contraction`](../../SquaresInCircles/Eight/Candidate/Mismatch.lean#L159),
+[`Eight.Candidate.coarse_enhanced_contraction`](../../SquaresInCircles/Eight/Candidate/Mismatch.lean#L169),
+[`Eight.Candidate.contraction_026_to_01`](../../SquaresInCircles/Eight/Candidate/Mismatch.lean#L180),
+[`Eight.Candidate.contraction_01_to_015`](../../SquaresInCircles/Eight/Candidate/Mismatch.lean#L188),
+[`Eight.Candidate.contraction_015_to_001`](../../SquaresInCircles/Eight/Candidate/Mismatch.lean#L200),
+[`Eight.Candidate.Tables.coarse_bound`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L455),
+[`Eight.Candidate.Tables.enhanced_bound`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L709),
+[`Eight.Candidate.Tables.middle_bound`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L475),
+[`Eight.Candidate.Tables.intermediate_bound`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L547),
+[`Eight.Candidate.Tables.final_bound`](../../SquaresInCircles/Eight/Generated/AffineBudgets.lean#L624),
+[`Eight.Arithmetic.pi_hand_enclosure`](../../SquaresInCircles/Eight/Arithmetic/Taylor.lean#L28).*
 
-In the Lean files the axes $1, 2, 3, 4$ are `forwardAxis 0`, …,
-`forwardAxis 3`.
+![The contraction steps as graphs against the mismatch Delta on a logarithmic axis from 10 to the minus 4 to 1: for each step, its charge term, beta times its lower bound for the frame charge, divided by the deficit of its constants, the bound on 2 pi minus the sum of the gamma_i. The first bound of the coarse step uses the chord 0.29 Delta (dashed curve), the others g(Delta). Each curve increases and passes the level 1, a dashed horizontal line, just before the threshold of its step, 2/5, 13/50, 1/10, 3/200 and 1/1000, where a dot marks its value above 1](figures/11-eight/mismatch.svg)
 
-![The exterior squares of the optimal packing with the dashed separating line of each of the seven contacts; each edge of the cycle H, G, A, B, T, D, E is labelled with its set of normal owners, the terminal owners in bold: {1, 3} on H to G, {1, 2} with 1 bold on G to A, {1, 3} on A to B, {3, 4} on B to T, {1, 3} on T to D, {3, 4} on D to E, and {1, 2} with 2 bold on E to H; the two hard axes, 1 on G to A and 3 on B to T, are marked by short arrows across their contacts](figures/11-eight/owners.svg)
+*Figure 11.19.* The mismatch chain. For each step, the charge term
+$\beta\,g(\Delta)$ (for the first bound of the coarse step the chord
+$\beta\kappa\Delta$, dashed) divided by the deficit of the constants,
+$\frac{710}{113} - \sum_i\gamma_i$ or $6.28318531 - \sum_i\gamma_i$, against
+$\Delta$ on a logarithmic axis. Where the ratio exceeds 1 the cyclic bound
+(11.11) fails, so such a mismatch is impossible; at the thresholds
+$\frac25$, $\frac{13}{50}$, $\frac1{10}$, $\frac3{200}$ and $\frac1{1000}$
+(dots) the ratio already exceeds 1. The proof uses the polynomial lower bounds
+of Lemma 11.32 (1) in place of $g$ at the thresholds.
 
-*Figure 11.18.* The owners in the optimal packing. Each contact line (dashed)
-is a side of one square or of both; the label of each edge is its set of normal
-owners, with the terminal owners, the axes that separate here, in bold. On the
-five edges between squares with the same frame the two squares share a side, so
-two axes separate; on $G \to A$ and $E \to H$ a corner rests on a side. The two
-arrows mark the hard axes.
+## 11.10 Owners, tilt and the sharp terminal
 
-## 11.8 The owners of six edges
+At $\Delta < \frac1{1000}$ the frames are nearly those of Figure 11.1. Two
+more tables, of quartic polynomials in the half-angle tangent of the tilt,
+decide the separating axes and the tilt, and then a single inequality gives
+the radius.
 
-This section proves the owner restriction on the six edges other than
-$G \to A$, by the boosted edges of Lemma 11.26: on the wrong axis, or with the
-wrong sign, one edge costs so much that the six other edges, each costing at
-least $0.8833$ by Proposition 11.21, push the total over $2\pi$. The edges with
-the digit 0 are settled by Lemma 11.27.
+### Proposition 11.35 (owners and tilt; quartic tables)
 
-### Lemma 11.33 (edges with the digit 1)
+Let a boundary cycle at a level $q \le Q_0$ have the word $0101011$, frames in
+an interval of length less than $\frac7{10}$, $\tau_E \le 0$, the bounds
+(11.9) and the signs of Lemma 11.33 (3).
 
-Let a boundary cycle at a level $\frac52 \le q \le Q_0$ have a candidate frame,
-and let the edge $i$ have the digit 1. If the axis 1 or 2 separates the pair,
-then $\tau_{i+1} > 0$ and $S_{i+1}$ lies on $\mathcal O$; if the axis 3 or 4
-separates it, then $\tau_i < 0$ and $S_i$ lies on $\mathcal O$.
+1. If $\Delta \le \frac3{200}$, every separating retained axis on $B \to T$
+   and on $D \to E$ is the axis 3 or 4 (1,545 quartics).
+2. If $\Delta \le \frac1{1000}$, every separating retained axis on $G \to A$
+   is the axis 1, and on $E \to H$ the axis 2 (729 quartics).
+3. If $\Delta \le \frac1{1000}$ and $q \le Q_1$, then
+   $\frac{1001}{20000} < \tan\frac t2 < \frac2{25}$, hence
+   $\frac1{10} < t < \frac4{25}$ (1,239 quartics).
 
-*Proof.* By Lemma 11.17 we work at the level $Q_0$; here
-$\varphi_i = \frac\pi2 + d_i$ with $|d_i| < \frac7{10}$. Suppose that the axis 1
-or 2 separates and $\tau_{i+1} \le 0$. In each case the separation gives
-$\varphi_i + \ell_i - \ell_{i+1} + \frac9{50}\chi(d_i) > 1$, which
-Lemma 11.26 excludes; the axes 3 and 4 with $\tau_i \ge 0$ are the reflected
-cases. We give the case of the axis 1 with a source of sign $-1$ in full; the
-other three combinations of an axis and a source sign are treated in the same
-way, with the weights $\frac45$ and Taylor bounds of the trigonometric terms.
-
-With $\sigma_i = -1$ and $y_{i+1} = -b_{i+1} \le 0$, the separation reads
+So at $\Delta \le \frac1{1000}$ the separating axes of the seven edges, in the
+order $H \to G, \dots, E \to H$, lie in the *owner sets*
 
 ```math
-\tfrac12\left(1 + \cos d + |\sin d|\right) \le -b + a'\cos d - b'\sin d ,
+\lbrace 1, 3\rbrace, \quad \lbrace 1\rbrace, \quad \lbrace 1, 3\rbrace, \quad \lbrace 3, 4\rbrace, \quad \lbrace 1, 3\rbrace, \quad \lbrace 3, 4\rbrace, \quad \lbrace 2\rbrace . \tag{11.15}
 ```
 
-with $d = d_i$, $(a, b)$ and $(a', b')$ the two states. As
-$a'\cos d - b'\sin d < \frac{283}{200}$, the projection of a centre of a square
-in the disk, the source has $b < \frac12$, so its unsigned label is at most
-$\frac{111}{100}b$, while the unsigned label of the target is at least
-$\frac45 b'$; the cost is
-$\frac\pi2 + d - u + u' + \frac9{50}\chi(d)$, where $u$ and $u'$ are the unsigned
-labels. Add $\frac{111}{100}$ times the separation. The terms in $b'$ have the
-coefficient $\frac45 + \frac{111}{100}\sin d \ge 0$, and $a' < \frac{283}{200}$,
-so
+*Proof.* Each claim excludes a finite list of alternatives. For (1), these are
+the *owner patterns*, one retained axis on each edge, with axis 1 or 3 on the
+zero edges (Lemma 11.33 (2)), any axis on the mixed edges, and a forbidden axis
+on $B \to T$ or $D \to E$; on an aligned edge the two possible nominal
+projections are the same, which leaves 48 patterns. For (2) they are the 15
+patterns with a forbidden axis on a mixed edge, and for (3) the tilt outside
+the stated window. Each alternative is excluded by a *circle dual*
+(Lemma M.8): replacing every aligned angle $\varphi_i$ by $k_i\frac\pi2$ changes
+each projection by at most $\frac32|d_i|$, since every centre is within
+$\frac32$ of $o$, so the separations give linear inequalities
+$f_i(t) \cdot x \ge w_i(t) - \frac32\varepsilon$ in the 14 coordinates
+$x = (a_0, \dots, a_6, b_0, \dots, b_6)$, with coefficients rational in
+$z = \tan\frac t2$; adding them with weights $\lambda_i \ge 0$ and 35 linear
+bounds on the coordinates with weights $\kappa_j \ge 0$, and completing the
+square in each $(a_i + \frac12, b_i + \frac12)$, whose squared length is at
+most $q$, gives with weights $\mu_i > 0$ the necessary inequality
 
 ```math
-\varphi_i + \ell_i - \ell_{i+1} + \tfrac9{50}\chi(d) \ge \tfrac\pi2 + d + \tfrac{93}{200} - \tfrac{18513}{20000}\cos d + \tfrac{129}{200}|\sin d| ,
+L(z) \le q\sum_i \mu_i + \sum_i \frac{C_{a_i}(z)^2 + C_{b_i}(z)^2}{4\mu_i} . \tag{11.16}
 ```
 
-and the right side exceeds 1 for $|d| \le \frac7{10}$: for $d \ge 0$ at once, and
-for $d < 0$ by Taylor bounds. With a source of sign $+1$ the weight $\frac45$
-gives $\frac\pi2 + d + \frac{31}{100} - \frac{321}{500}\cos d + \frac{49}{100}|\sin d| > 1$.
-
-*The radial curves.* Every edge with the digit 1 is next to an edge with the
-digit 0. If the square that the separation designates, the target for the axes
-1 and 2 and the source for the axes 3 and 4, lay on the core, the cost of the
-two edges together, with their charges, would exceed what the five other
-edges, at least $0.8833$ each, leave of $2\pi$; this is proved like the bound
-above, for each of the four placements of the two edges in the word. $\square$
-
-*Lean:
-[`Eight.GlobalQuarterSign.classify`](../../SquaresInCircles/Eight/Owners/Quarter/SignCycle.lean#L406),
-[`Eight.GlobalQuarterSign.of_frame`](../../SquaresInCircles/Eight/Owners/Quarter/SignCycle.lean#L428),
-[`Eight.GlobalQuarterSign.target_nonpos_boost`](../../SquaresInCircles/Eight/Owners/Quarter/SignCycle.lean#L262),
-[`Eight.GlobalQuarterSign.source_nonneg_boost`](../../SquaresInCircles/Eight/Owners/Quarter/SignCycle.lean#L284),
-[`Eight.GlobalQuarterSign.zero_negative_boost`](../../SquaresInCircles/Eight/Owners/Quarter/SignCycle.lean#L60),
-[`Eight.GlobalQuarterSign.zero_positive_boost`](../../SquaresInCircles/Eight/Owners/Quarter/SignCycle.lean#L85),
-[`Eight.GlobalQuarterSign.secondary_negative_scalar`](../../SquaresInCircles/Eight/Owners/Quarter/SignScalar.lean#L178),
-[`Eight.GlobalQuarterSign.secondary_positive_scalar`](../../SquaresInCircles/Eight/Owners/Quarter/SignScalar.lean#L219),
-[`Eight.GlobalQuarterSign.rotated_projection_lt`](../../SquaresInCircles/Eight/Owners/Quarter/SignScalar.lean#L47),
-[`Eight.GlobalZeroSign.marker_lower`](../../SquaresInCircles/Eight/Owners/Zero/SignSupport.lean#L193),
-[`Eight.GlobalZeroSign.marker_small_upper`](../../SquaresInCircles/Eight/Owners/Zero/SignSupport.lean#L200),
-[`Eight.GlobalQuarterOuter.frame_classify`](../../SquaresInCircles/Eight/Owners/Quarter/OuterBridge.lean#L580),
-[`Eight.GlobalQuarterOuter.frame_high_anchor`](../../SquaresInCircles/Eight/Owners/Quarter/OuterBridge.lean#L589).*
-
-### Proposition 11.34 (the owners of six edges)
-
-Let a boundary cycle at a level $\frac52 \le q \le Q_0$ have a candidate frame,
-with $\tau_E \le 0$. Then every axis that separates $H$ from $G$, $A$ from $B$ or
-$T$ from $D$ is the axis 1 or 3; every axis that separates $B$ from $T$ or $D$
-from $E$ is the axis 3 or 4; and every axis that separates $E$ from $H$ is the
-axis 1 or 2. Moreover $H$, $B$ and $D$ lie on $\mathcal O$, with $\tau_H > 0$
-and $\tau_B, \tau_D < 0$.
-
-*Proof.* *The edges with the digit 0* are Lemma 11.27. *The edge $D \to E$* is
-Lemma 11.33: as $\tau_E \le 0$, the axes 1 and 2 are impossible, and each axis
-3 or 4 gives $\tau_D < 0$ with $D$ on $\mathcal O$.
-
-*The edge $B \to T$.* Here the axes 1 and 2 are excluded by a split of the
-cycle into two paths. Let $\kappa = \frac{49}{50}$, and let $u_E$ be the
-unsigned label of $E$. The *return* $\pi + d_E + d_H + d_G - \kappa b_A - u_E$
-of the three edges from $E$ back to $A$ and the *tail*
-$\pi + d_A + d_B + d_T + d_D + \kappa b_A + u_E$ of the four edges from $A$ to
-$E$ add up to $2\pi$. The pair bounds of the three return edges, the
-projections of their separations and the bound of the label give the return
-more than $\frac{103}{40}$, whatever the axes of $E \to H$ and $G \to A$, when
-$\tau_E \le 0$ and $\tau_A \ge 0$; so the tail is less than
-$\frac{710}{113} - \frac{103}{40} = \frac{16761}{4520}$. A low axis on $B \to T$
-puts $T$ on $\mathcal O$ with $\tau_T > 0$ (Lemma 11.33) and gives
-$\tau_A > 0$, by a charge of the two edges $A \to B \to T$ of the same kind,
-and each branch then proves the tail larger than $\frac{16761}{4520}$: the
-separations of the four tail edges are added with explicit weights, $\kappa$ on
-$B \to T$, a weight between $\frac35$ and $\kappa$ on $T \to D$, and
-$\frac{9449}{10000}$, $\frac{797}{1000}$ or $\frac{16}{25}$ on $D \to E$ as $E$ is
-core or low, middle or high; $T$ and $D$ are replaced by their circle supports;
-the negative frame steps of the tail, which add up to at most $\frac7{10}$ by
-the frame concentration, are concentrated into one variable; and the resulting
-functions of one angle are positive by the polynomial checks of §11.11. The
-branches split by the axis (1 or 2), the signs of the frame steps $d_A$ and
-$d_B$, the axis of $A \to B$, the axis of $D \to E$ and the radial curve of $E$.
-
-*The edge $E \to H$.* Let the axis 3 or 4 separate $E$ from $H$. By
-Lemma 11.33, $E$ is outer with $\tau_E < 0$, so the axis of $B \to T$ is 3 or 4
-by the previous step, and the axis of $D \to E$ is 3 or 4. A high axis on
-$E \to H$ also makes every axis of $G \to A$ high: with a low axis on
-$G \to A$, the three edges $E \to H \to G \to A$ have a combined charge above
-$\frac{11}4$, and the four other edges, each above $0.8833$, bring the total to
-$\frac{11}4 + 4 \cdot 0.8833 = 6.2832 > \frac{710}{113}$. So all four edges with
-the digit 1 are separated along their axes 3 or 4. This last configuration is
-excluded by a whole-cycle bound with markers built from the potential
-$\kappa a + \rho\,(L_{\mathsf H}(a, b) - u)$ of an outer state, where
-$\kappa = \frac{103}{100}$, $\rho = \frac{11}{10}$, $u$ is the unsigned label and
-$L_{\mathsf H}$ the label of the high type, extended to the whole outer curve:
-each of the three quarter edges $E \to H$, $G \to A$, $B \to T$ costs at least
-$\frac\pi2 + \kappa$, the three zero edges together at least
-$3\kappa(1 - 2c_0) - \frac7{1000}$, with $c_0 = \sqrt{Q_0/2} - \frac12$, and
-$D \to E$ more than $\frac{957}{1000}$. These add up to more than $2\pi$, since
-$\frac\pi2 < 6\kappa(1 - c_0) + \frac{19}{20}$.
-
-*The anchors.* The selected axis of $E \to H$ is low, so by Lemma 11.33 $H$ is
-outer with $\tau_H > 0$; the selected axes of $B \to T$ and $D \to E$ are high,
-so $B$ and $D$ are outer with negative tangents. $\square$
+Multiplied by $(1 + z^2)^2$, the reverse of (11.16) is a quartic polynomial in
+$z$. Each row of the tables gives an alternative, a closed interval
+$[l, r]$ of $z$, rational weights and five positive lower bounds for the
+coefficients of that quartic in the Bernstein basis of $[l, r]$; so it proves
+the quartic positive on $[l, r]$ and excludes the alternative there. For (1)
+and (2) the intervals of each pattern cover $[-\frac38, \frac38]$, which
+contains every $z$, as $|t| < \frac7{10} < \arctan\frac38$. For (3), with the
+owners (11.15) known, the projections are expanded to second order in the
+signed errors $d_i$, one weight vector is fixed for each interval of $z$, and
+the maximum of the first-order error term over
+$\sum_{i \in I}|d_i| \le \frac1{1000}$ is attained at 0 or at
+$\pm\frac1{1000}$ on one edge, with one of
+its two owners: $1 + 5 \cdot 2 \cdot 2 = 21$ alternatives; 59 intervals with 21
+quartics each cover $[-\frac38, \frac{1001}{20000}] \cup [\frac2{25}, \frac38]$.
+Finally $2(\frac{1001}{20000} - \frac13(\frac{1001}{20000})^3) > \frac1{10}$
+and $2\arctan\frac2{25} < \frac4{25}$. The details are in
+[Appendix M](appendix-m.md). $\square$
 
 *Lean:
-[`Eight.GlobalOriginalOwners.frame_other_owners`](../../SquaresInCircles/Eight/Owners/OriginalOwners.lean#L285),
-[`Eight.GlobalZeroSign.of_frame`](../../SquaresInCircles/Eight/Owners/Zero/SignBridge.lean#L211),
-[`Eight.GlobalQuarterSign.frame_DE`](../../SquaresInCircles/Eight/Owners/Quarter/SignCycle.lean#L456),
-[`Eight.GlobalQuarterSign.frame_target_nonpos`](../../SquaresInCircles/Eight/Owners/Quarter/SignCycle.lean#L440),
-[`Eight.GlobalBT.frame_BT_high`](../../SquaresInCircles/Eight/Owners/BT/Exclusion.lean#L901),
-[`Eight.GlobalBT.frame_BT0_false`](../../SquaresInCircles/Eight/Owners/BT/ZeroExclusion.lean#L838),
-[`Eight.GlobalBT.frame_BT1_false`](../../SquaresInCircles/Eight/Owners/BT/Exclusion.lean#L889),
-[`Eight.GlobalBT.returnCharge`](../../SquaresInCircles/Eight/Owners/BT/CoreDE3Support.lean#L355),
-[`Eight.GlobalBT.tailCharge`](../../SquaresInCircles/Eight/Owners/BT/CoreDE3Support.lean#L358),
-[`Eight.GlobalBT.return_tail_sum`](../../SquaresInCircles/Eight/Owners/BT/CoreDE3Support.lean#L362),
-[`Eight.GlobalBT.frame_return`](../../SquaresInCircles/Eight/Owners/BT/CoreDE3Support.lean#L393),
-[`Eight.GlobalEH.frame_EH_low`](../../SquaresInCircles/Eight/Owners/OriginalOwners.lean#L231),
-[`Eight.GlobalEH.frame_high_EH_high_BT_false`](../../SquaresInCircles/Eight/Owners/EH/HighRestriction.lean#L605),
-[`Eight.GlobalAllHigh.frame_all_high_false`](../../SquaresInCircles/Eight/Owners/All/HighCycle.lean#L504),
-[`Eight.GlobalOriginalOwners.atFrame_anchors`](../../SquaresInCircles/Eight/Owners/OriginalOwners.lean#L312),
-[`Eight.GlobalOriginalOwners.frame_H_anchor`](../../SquaresInCircles/Eight/Owners/OriginalOwners.lean#L251),
-[`Eight.GlobalOriginalOwners.frame_B_anchor`](../../SquaresInCircles/Eight/Owners/OriginalOwners.lean#L264),
-[`Eight.GlobalOriginalOwners.frame_D_anchor`](../../SquaresInCircles/Eight/Owners/OriginalOwners.lean#L273).*
+[`Eight.Candidate.Dual.circle_dual_necessary`](../../SquaresInCircles/Eight/Candidate/Dual.lean#L53),
+[`Eight.Candidate.Dual.error_vertex_disjunction`](../../SquaresInCircles/Eight/Candidate/Dual.lean#L89),
+[`Eight.Candidate.Dual.Row.Valid.excludes`](../../SquaresInCircles/Eight/Candidate/Dual.lean#L332),
+[`Eight.Candidate.Dual.OwnerTable`](../../SquaresInCircles/Eight/Candidate/Dual.lean#L389),
+[`Eight.Candidate.Dual.TiltBundle`](../../SquaresInCircles/Eight/Candidate/Dual.lean#L412),
+[`Eight.Candidate.quarter_owners`](../../SquaresInCircles/Eight/Candidate/GeometricOwnersQuarterComplete.lean#L335),
+[`Eight.Candidate.mixed_owners`](../../SquaresInCircles/Eight/Candidate/DualApplication.lean#L194),
+[`Eight.Candidate.tilt_window`](../../SquaresInCircles/Eight/Candidate/DualApplication.lean#L403),
+[`Eight.Candidate.terminalOwners`](../../SquaresInCircles/Eight/Candidate/Model.lean#L138).*
 
-![Against the frame step d from -7/10 to 7/10, the two lower bounds of the boosted cost of the edge D to E when the axis 1 separates and the target E has a nonpositive tangent: the curve pi/2 + d + 93/200 - (18513/20000) cos d + (129/200)|sin d| for a source of sign -1 and the curve pi/2 + d + 31/100 - (321/500) cos d + (49/100)|sin d| for a source of sign +1, both above the dashed horizontal line at 1, with the bound 197/200 of Lemma 11.26 dotted below it](figures/11-eight/boost.svg)
+The three quartic tables have 1,545, 729 and 1,239 rows, 3,513 in all, with
+17,565 positive Bernstein coefficients. In the formal proof each row carries
+its interval, its weights and its quartic, and Lean checks that the quartic is
+the stated combination, that its Bernstein coefficients are positive, and that
+the intervals of each alternative chain together to cover the required range.
 
-*Figure 11.19.* Lemma 11.33 on the edge $D \to E$ with $\tau_E \le 0$: the two
-lower bounds of the boosted cost when the axis 1 separates, for a source of sign
-$-1$ and of sign $+1$, against the frame step $d$. Both exceed 1, above the bound
-$\frac{197}{200}$ of Lemma 11.26 (dotted), so the axis 1 never separates $D$
-from $E$.
+![The separating axes of the seven contacts in the optimal packing: for each pair of neighbours the separating line is drawn dashed through the contact, and each edge is labelled with its owner set, 1 or 3 on H to G, 1 on G to A, 1 or 3 on A to B, 3 or 4 on B to T, 1 or 3 on T to D, 3 or 4 on D to E and 2 on E to H](figures/11-eight/owners.svg)
 
-## 11.9 The high axes of the pair G, A
+*Figure 11.20.* The owner sets (11.15) in the optimal packing. Each contact
+line (dashed) is a side of one square or of both: on the five aligned edges
+the two squares share the side, so two retained axes separate, and on the
+mixed edges $G \to A$ and $E \to H$ one square's side touches the other's
+corner.
 
-On the edge $G \to A$ the high axes 3 and 4 remain (Figure 11.20). They are
-excluded by moving $T$ until the hard axis 3 separates $B$ from $T$, and then
-by stresses, weighted sums of the seven separations, whose weights depend on
-which axes separate and on the signs of the frame steps. This is the largest
-case analysis of the proof.
+![The tilt window: the half-angle tangent z = tan(t/2) on a line from -3/8 to 3/8, with the two intervals excluded by the tilt table, from -3/8 to 1001/20000 and from 2/25 to 3/8, shaded, and between them the open window from about 0.05 to 0.08, enlarged below, containing the value z* of the optimal packing](figures/11-eight/tilt.svg)
 
-![The pair G, A of the optimal packing: the turned square G at the lower left and the axis-parallel square A at the upper right, with a corner of A resting on the right side of G, marked by a dot, and part of the dashed circle below them. At the centre of each square its two retained axes are drawn as arrows: the low axis 1 at G and the low axis 2 at A point to the right, from G towards A, and the high axis 4 at G and the high axis 3 at A point upwards](figures/11-eight/ga-axes.svg)
+*Figure 11.21.* Proposition 11.35 (3). The 59 intervals of the tilt table
+cover the two shaded parts of $[-\frac38, \frac38]$ in $z = \tan\frac t2$; the
+tilt of a cycle at $\Delta \le \frac1{1000}$ lies in the window between them,
+which contains $z_* \approx 0.0619$ (enlarged below).
 
-*Figure 11.20.* The four retained axes of the pair $G$, $A$ in the optimal
-packing, each drawn at the centre of the square it belongs to. Only the low
-axis 1 separates, with margin 0, as a corner of $A$ (dot) rests on the side of
-$G$; the margins of the axes 2, 3 and 4 are about $-0.09$, $-0.25$ and
-$-0.38$. A high GA source would separate $G$ from $A$ along the axis 3 or 4.
+### Theorem 11.36 (the sharp terminal)
 
-The two edges at each of the squares $A$, $T$ and $E$ have one axis of the
-middle square itself, the *secondary* axis of that edge at the square, and one
-axis of the neighbour, the *primary* axis: at $A$ the secondary axes are 3 on
-$G \to A$ and 1 on $A \to B$, and the primary axes 4 on $G \to A$ and 3 on
-$A \to B$; at $T$ they are 3 on $B \to T$, 1 on $T \to D$ and 4, 3; at $E$, 3 on
-$D \to E$, 1 on $E \to H$ and 4, 2. A secondary axis is perpendicular to the
-middle square and its margin does not depend on the frame step at the first
-order; the margin of a primary axis does, through the coordinate of the middle
-square times the frame step. With secondary axes on both edges and equal
-weights, the forces of a stress on the middle square cancel.
-
-### Definition 11.35 (high GA sources)
-
-A signed cycle at a level $q$ is a *high GA source* if one axis is chosen on each
-edge, separating its pair, in the normal owners on the six edges other than
-$G \to A$ and equal to 3 or 4 on $G \to A$, and
-
-1. the gaps between consecutive centre directions, computed from the signed
-   points and the frames, are positive and less than $\pi$, and the
-   representatives lie within less than $\frac7{10}$ of each other;
-2. the positive frame steps add up to less than $\frac7{10}$, and so do the
-   negative ones;
-3. every point lies on the circle of squared radius $q$ or on the core, and
-   $H$, $G$, $B$, $D$ on the circle;
-4. $y_H > 0$, $y_G < 0$, $y_B < 0$, $y_D < 0$, $y_E \le 0$, $y_A < \frac12$,
-   $A$ lies on the circle if $y_A \le 0$, and $|y| < a$ at $G$, $A$, $B$, $T$, $E$.
-
-A normalized cycle at a level $\frac52 \le q \le Q_0$ in which a high axis
-separates $G$ from $A$ gives a high GA source at the same level, its signed
-cycle with that axis on $G \to A$ and the selected axes elsewhere: the owners
-are those of Proposition 11.34; $H$, $B$, $D$ and, by Lemma 11.33, $G$ lie on
-the circle with the stated signs; the bounds on the frame steps follow from the
-charge budget of Theorem 11.23, as the charge $g$ lies above its chord; and the
-bounds at $A$ and the strict inequalities $|y| < a$ are proved like
-Lemma 11.33, the last because a square on its diagonal, read with its other
-nearest axis, would change the word into a wrong one (Proposition 11.28).
-
-*Lean:
-[`Eight.GlobalGA.SourceDomain`](../../SquaresInCircles/Eight/Owners/GA/EZero.lean#L41),
-[`Eight.GlobalGA.sourceDomain`](../../SquaresInCircles/Eight/Owners/GA/EZero.lean#L104),
-[`Eight.GlobalGA.highGAOwners`](../../SquaresInCircles/Eight/Owners/GA/Owners.lean#L27),
-[`Eight.SignedCycle.Ordered`](../../SquaresInCircles/Eight/Owners/NecessaryCycle.lean#L55),
-[`Eight.positiveVariation`](../../SquaresInCircles/Eight/Owners/Variation.lean#L23),
-[`Eight.negativeVariation`](../../SquaresInCircles/Eight/Owners/Variation.lean#L24),
-[`Eight.FramePhysicalTransport.candidate_variations`](../../SquaresInCircles/Eight/Frames/PhysicalTransport.lean#L214),
-[`Eight.GlobalGA.Target.frame_target_small`](../../SquaresInCircles/Eight/Owners/GA/Target/SmallTangent.lean#L155),
-[`Eight.GlobalZeroSourceOuter.frame_nonpositive_source_outer`](../../SquaresInCircles/Eight/Owners/Zero/SourceOuter.lean#L601),
-[`Eight.BinaryDiagonalExclusion.of_frame`](../../SquaresInCircles/Eight/Owners/OriginalOwners.lean#L149),
-[`Eight.EDiagonalExclusion.of_frame`](../../SquaresInCircles/Eight/Owners/E/DiagonalExclusion.lean#L90).*
-
-### Lemma 11.36 (moving T)
-
-For every high GA source at a level $q_{\mathrm{low}} \le q \le Q_0$ there is a
-high GA source at the same level that differs from it only in the point and the
-frame of $T$, in which the axis 3 separates $B$ from $T$.
-
-*Proof.* If the axis 3 separates $B$ from $T$, nothing moves. Otherwise the
-axis 4 does, and $T$ is moved, with $B$, $D$ and all the other squares fixed, in
-one of three ways, according to the axis of $T \to D$ and the signs of the frame
-steps $d_B$, $d_T$ and of $y_T$: it slides along the flat side $a = \frac7{12}$ of
-the core, strictly inside the circle, its frame turning to $\theta_B$ or
-$\theta_D$; or it moves on the circle of squared radius $q$, its frame between
-$\theta_B$ and $\theta_D$, to the minimum of a continuous function over a
-compact set of positions and frames on which both separations of $T$ hold; or
-it jumps to the point $(\frac7{12}, a_B - 1)$
-of the flat side with the frame $\theta_B$, where the axes 3 and 4 of
-$B \to T$ both separate. The motion stops when the axis 3 separates, which
-happens in particular when the frame of $T$ reaches $\theta_B$, since there the
-axes 3 and 4 tie. It can also stop with the frame of $T$ at $\theta_D$ and
-$d_B > 0$, or at $\theta_D$ with $d_B < 0$ and $y_T > 0$, or with $T$ on its
-diagonal. The diagonal is excluded by Proposition 11.28: read with its other
-nearest axis, $T$ would turn the word into a wrong one. The two other stops are
-excluded by stresses of the kind used in Proposition 11.37.
-
-The moved square stays in the disk of squared radius $q$ and outside the open
-core, on the circle or on the core, and its frame stays between the frames of
-its neighbours, so the frames stay within $\frac7{10}$ of each other and the
-sums of the positive and of the negative frame steps do not grow. The
-separations of the other five edges and all the other signed points are
-unchanged. The order of the centre directions is proved anew: each moved gap is
-larger than $-\frac{19}{25}$ by the local bounds of the motion, and two squares
-separated from each other, outside the core and inside the disk of squared
-radius at most $Q_0$, have centre directions more than $\frac{19}{25}$ apart
-(Lemma 11.18). $\square$
-
-*Lean:
-[`Eight.GlobalGA.TTransport.reduce_secondary`](../../SquaresInCircles/Eight/Owners/GA/Transport/TSecondary.lean#L82),
-[`Eight.GlobalGA.TTransport.reduce`](../../SquaresInCircles/Eight/Owners/GA/Transport/T.lean#L396),
-[`Eight.GlobalGA.TTransport.reduce_complete`](../../SquaresInCircles/Eight/Owners/GA/Transport/TSecondary.lean#L40),
-[`Eight.GlobalGA.TTransport.domain`](../../SquaresInCircles/Eight/Owners/GA/Transport/T.lean#L296),
-[`Eight.GlobalGA.TTransport.ordered`](../../SquaresInCircles/Eight/Owners/GA/Transport/T.lean#L131),
-[`Eight.TPairOutput`](../../SquaresInCircles/Eight/Owners/Primary/PairClassification.lean#L563),
-[`Eight.GlobalGA.NonpositiveT.Source.aligned_has_BT2`](../../SquaresInCircles/Eight/Owners/GA/Nonpositive/TSource.lean#L456),
-[`Eight.GlobalGA.PositiveT.Source.original_false`](../../SquaresInCircles/Eight/Owners/GA/Positive/TSource.lean#L263),
-[`Eight.SignedCycle.nearest_axis_tie_locations`](../../SquaresInCircles/Eight/Owners/OriginalOwners.lean#L175).*
-
-### Proposition 11.37 (no high GA source with the hard axis on BT)
-
-No high GA source at a level $q_{\mathrm{low}} \le q \le Q_0$ has its pair $B$,
-$T$ separated along the axis 3.
-
-*Proof.* *Normal forms.* Before the stresses, the square $A$ and, if it lies on
-the core, the square $E$ are put into normal forms by further motions that keep
-the level and the separations of the other edges. Call the *total* at $A$ the
-sum of the frame steps $d_G$ and $d_A$ over the edges at $A$ whose chosen axis
-is primary, and likewise at $E$. If a primary axis has a nonpositive frame step
-and the secondary axis of the same edge also separates, the secondary axis is
-chosen instead; for an outer $E$ this is always possible. Otherwise $A$ is
-moved along the flat side of the core, its frame turning to $\theta_G$ or
-$\theta_B$, until the total at $A$ is nonnegative or $A$ lies on the flat side
-with a single negative primary step,
-$-\frac14 < d_G < 0$ on $G \to A$ or $-\frac{19}{50} < d_A < 0$ on $A \to B$.
-A square $E$ on the core is moved along the core in the same way, and an outer
-$E$ keeps its point; at the end the total at $E$ is nonnegative or $E$ lies on
-the flat side with a single negative primary step. A cycle with a moved $A$ is
-used only as a signed cycle.
-
-*The case tree.* The cases are split by the radial curve of $E$, by the sign of
-the total at $A$ and which of its primary axes carries a negative step, by
-whether $T \to D$ is separated along the axis 3 with $d_T > 0$, by the normal
-form of $E$ and, when $E \to H$ is separated along the axis 2, by whether the
-axis 1 separates it as well. Each of the fourteen kinds of leaves is closed by
-a stress, the same in all of its sub-cases up to the choice of the axis of
-$H \to G$.
-
-*The stresses.* A stress takes weights $w_i \ge 0$ on the seven edges, with a
-factor $1/\cos d_i$ on an edge whose chosen primary axis has a negative step,
-and adds the separations: since each chosen axis separates,
+Let seven unit squares $H, G, A, B, T, D, E$ each lie in the closed disk of
+squared radius $q \le Q_0$ about $o$ and miss $D(o, \frac1{12})$, with
+canonical frames $-1, -1, 0, 0, 1, 1, 2$ quarter turns ahead of that of $A$,
+frame representatives with $\theta_A = 0$ and $t = \theta_G$,
 
 ```math
-S = \sum_i w_i\left(\tau(d_i) - p_i\right) \le 0 ,
+\tfrac1{10} \le t \le \tfrac4{25}, \qquad \Delta \le \tfrac1{1000},
 ```
 
-where $p_i$ is the projection on the chosen axis of the difference of the
-centres. An exact identity writes $S$ as a constant, the *baseline*, plus four
-*blocks*, one for each of the squares $H$, $G$, $B$, $D$ on the circle, each a
-function of the two frame steps at that square and of its signed point, plus
-terms in the totals and in the negative primary steps, plus nonnegative
-reserves. Each block is bounded below by the support of the disk in the
-direction of the force on its square; the bounds are concave in the positive
-and in the negative frame steps, which add up to at most $\frac7{10}$ each, so
-the worst case puts all the positive steps in one block and all the negative
-steps in one block. What remains are functions of one or two total angles,
-with weights that are polynomials in these angles, and their positivity is a
-polynomial inequality on an interval, a triangle or a rectangle, checked by the
-kernel (§11.11). So $S > 0$, a contradiction.
-
-*A representative leaf.* Let $E$ be outer, the total at $A$ negative, and $T \to D$
-not separated along the axis 3 with $d_T > 0$; after the normal forms the
-chosen axes are 1 or 3 on $H \to G$, 4 or 3 on $G \to A$, 3 or 1 on $A \to B$,
-3 on $B \to T$, 3 or 1 on $T \to D$, 4 or 3 on $D \to E$ and 2 or 1 on $E \to H$,
-every chosen primary axis at $A$ or at $T$ has a nonpositive step, and the total
-at $E$ is nonnegative. Take the weights
+and on each of the seven edges a separating axis in the owner set (11.15).
+Then, with the weights $\mu_P > 0$ ($P = A, B, D, E, H$, $\sum_P\mu_P = 1$) of
+Lemma M.2, the corner offsets $o_P$ and the forces $F_P$ of §M.3,
 
 ```math
-\left(w_{HG}, w_{GA}, w_{AB}, w_{BT}, w_{TD}, w_{DE}, w_{EH}\right) = \left(k,\ l,\ l,\ 2,\ 2,\ 1,\ 1\right), \qquad k = \tfrac{31}{40}, \quad l = \tfrac{31}{20} ,
+q \ \ge\ q_* + \frac{3\mu_H}8(t - t_*)^2 + \sum_{P = A, B, D, E, H} \mu_P \left|p_P + o_P + \frac{F_P}{2\mu_P}\right|^2 + \frac{10293}{5000000}\,\Delta \ \ge\ q_* . \tag{11.17}
 ```
 
-with the factor $1/\cos d$ on $w_{GA}$ or $w_{AB}$ when the primary axis is
-chosen there. Their sum, the demand, is $\frac{79}8$. At zero frame steps the
-forces on $A$, $T$ and $E$ vanish, and the forces on $H$, $G$, $B$, $D$ are
-$(1, k)$, $(l, k)$, $(2, l)$ and $(1, 2)$ in their frames. With
-$R = \sqrt{Q_0}$ and the support $V(f, g) = R\sqrt{f^2 + g^2} - \frac12(f + g)$
-of a force $(f, g)$ on a square of the disk, the baseline is
-
-```math
-\tfrac{79}8 - V(1, k) - V(l, k) - V(2, l) - 3\left(\sqrt{Q_0/2} - \tfrac12\right) > \tfrac{627}{10000} ,
-```
-
-the last term coming from the force $(1, 2)$ on $D$, whose support is taken
-over the part $|y_D| \le a_D$ of the disk. The block of $G$ is at least $-\frac{576}{10000}$
-and that of $B$ at least $-\frac{44}{10000}$ at every corner of the frame
-steps, by concavity, and the blocks of $H$ and $D$ are nonnegative; with the
-axis 3 on $H \to G$ the block of $H$ is at least $-\frac{22}{10000}$ and that of $G$
-nonnegative. The terms in the negative primary steps at $A$ and $T$ are at
-least $\frac{71983}{10^6}$ times the steps at $A$ and $\frac{83}{700}$ times the
-step at $T$, in absolute value, and the terms in the total at $E$ are at least
-$\frac{29}{1000}$ times that total. So
-$S > \frac{627 - 576 - 44}{10000} = \frac7{10000} > 0$. $\square$
+The proof is given in [Appendix M](appendix-m.md). No bound on the centres is
+assumed beyond containment and the core; the theorem holds for the original
+centres of a packing as well as for a boundary cycle.
 
 *Lean:
-[`Eight.high_GA_BT2_exclusion`](../../SquaresInCircles/Eight/Owners/GA/High/SourceComplete.lean#L213),
-[`Eight.HighGABT2Exclusion`](../../SquaresInCircles/Eight/Owners/GA/High/SourceComplete.lean#L123),
-[`Eight.HighGABT2.A_normalize`](../../SquaresInCircles/Eight/Owners/GA/High/BT2CoreEFirstNonpositiveT.lean#L139),
-[`Eight.GlobalGA.NegativeANormalForm.cycle_reduce`](../../SquaresInCircles/Eight/Owners/GA/Negative/ACycle.lean#L308),
-[`Eight.GlobalGA.OuterE.select`](../../SquaresInCircles/Eight/Owners/GA/OuterESelection.lean#L277),
-[`Eight.GlobalGA.CoreENormalForm.reduce`](../../SquaresInCircles/Eight/Owners/GA/OuterESelection.lean#L174),
-[`Eight.HighGABT2.reduced_nonnegative_A_outer_E_false`](../../SquaresInCircles/Eight/Owners/GA/High/BT2ReducedANegativeOuterE.lean#L761),
-[`Eight.HighGABT2.negative_A_outer_E_all_T_false`](../../SquaresInCircles/Eight/Owners/GA/High/BT2ReducedANegativeOuterE.lean#L855),
-[`Eight.HighGABT2.core_E_all_T_false`](../../SquaresInCircles/Eight/Owners/GA/High/SourceComplete.lean#L42),
-[`Eight.GlobalGA.NonnegativeTotals.Source.actual_false`](../../SquaresInCircles/Eight/Owners/GA/Nonnegative/TotalsSource.lean#L62),
-[`Eight.GlobalGA.NegativeA.ShortE.original`](../../SquaresInCircles/Eight/Owners/GA/Negative/EHBT3HighScalar.lean#L367),
-[`Eight.GlobalGA.NegativeA.LongE.original`](../../SquaresInCircles/Eight/Owners/GA/Negative/ALongESource.lean#L440),
-[`Eight.GlobalGA.NegativeDEPositiveTD.Source.actual_false`](../../SquaresInCircles/Eight/Owners/GA/Negative/DETD2Source.lean#L445),
-[`Eight.GlobalGA.NegativeEHPositiveTD.Source.actual_false`](../../SquaresInCircles/Eight/Owners/GA/Negative/EHTD2Source.lean#L503),
-[`Eight.GlobalGA.NegativeELowA.actual_false`](../../SquaresInCircles/Eight/Owners/GA/Negative/ELowAStress.lean#L1546),
-[`Eight.GlobalGA.NegativeELargeA.Source.actual_false`](../../SquaresInCircles/Eight/Owners/GA/Negative/ELargeAStress.lean#L1031),
-[`Eight.GlobalGA.JointNegativeAETD2.original`](../../SquaresInCircles/Eight/Owners/GA/Joint/NegativeAEBT3Source.lean#L1280),
-[`Eight.GlobalGA.NegativeAPositiveTD.Source.original`](../../SquaresInCircles/Eight/Owners/GA/Negative/ATD2Source.lean#L1230),
-[`Eight.GlobalGA.CoreENegativeTotal.actual_false`](../../SquaresInCircles/Eight/Owners/GA/Negative/EHTD2SmallHigh.lean#L553),
-[`Eight.GlobalGA.NegativeFlatE.actual_false`](../../SquaresInCircles/Eight/Owners/GA/Negative/Flat/EExclusion.lean#L1020),
-[`Eight.GlobalGA.PairedE.Negative.actual_false`](../../SquaresInCircles/Eight/Owners/GA/Paired/ENegativeSource.lean#L178),
-[`Eight.GlobalGA.PairedE.Negative.decomposition`](../../SquaresInCircles/Eight/Owners/GA/Paired/ENegativeSource.lean#L50).*
+[`Eight.Terminal.boundary_quantitative`](../../SquaresInCircles/Eight/Terminal.lean#L33),
+[`Eight.Terminal.boundary_rigid`](../../SquaresInCircles/Eight/Terminal.lean#L49),
+[`Eight.ExactFamily.Perturbation.quantitative`](../../SquaresInCircles/Eight/ExactFamily/Perturbation.lean#L184),
+[`Eight.terminal_constants`](../../SquaresInCircles/Eight/ExactFamily/CenterCompletion.lean#L62),
+[`Eight.Terminal.automatic_projections`](../../SquaresInCircles/Eight/TerminalEstimates.lean#L437),
+[`Eight.Arithmetic.positive_energy_rigid`](../../SquaresInCircles/Eight/Arithmetic/PositiveEnergy.lean#L22).*
 
-### Corollary 11.38 (the normal owners)
+The idea is that of the stresses of Chapter 9. At the tilt $t$ of the cycle,
+the chain of Definition 11.2 at the radius $q_*$, with its position chosen to
+minimize the defect, carries positive weights on its seven contacts and five
+corners that balance at every square (Figure 11.22). The weighted sum of the
+five corner constraints $|v_P|^2 \le q$ and the seven separations is a
+quadratic function of the actual centres; completing the square in each
+anchored centre leaves $q_*$ plus the defect of the chain, at least
+$\frac38(t - t_*)^2$ by Proposition 11.4, plus terms in the frame errors that
+are positive to first order, by the owner sets, and at most $9.3\Delta^2$ to
+second order.
 
-A normalized cycle at a level $q_{\mathrm{low}} \le q \le Q_0$ satisfies the owner
-restriction to the normal owners.
+![The exterior squares of the optimal packing with the seven contacts drawn as thin lines between the centres of touching squares, labelled with their weights lambda, between 0.48 and 0.80, and the five corner forces drawn as thick arrows that start at the corners P1 to P5 of A, B, D, E and H on the circle and point outward along the radii, labelled with the weights mu: 0.210 for A, 0.221 for B, 0.273 for D, 0.025 for E and 0.271 for H. T and G carry no corner force](figures/11-eight/stress.svg)
 
-*Proof.* Proposition 11.34 gives the six edges other than $G \to A$. If a high
-axis separated $G$ from $A$, Definition 11.35 would give a high GA source at the
-level $q$, Lemma 11.36 one with the axis 3 on $B \to T$, and Proposition 11.37
-excludes it. $\square$
+*Figure 11.22.* The stationary weights at $t = t_*$: the contact weights
+$\lambda$ on the seven contacts (thin) and the corner forces $2\mu_P P_P$ along
+the radii to the corners on the circle (thick). At each of the seven squares
+the forces balance; at $T$ and $G$ the two contact forces cancel. With these
+weights the sum of the corner constraints and the contacts is exactly $q_*$
+plus squares (Proposition 11.38).
 
-*Lean:
-[`Eight.original_GA_low_of_BT2_exclusion`](../../SquaresInCircles/Eight/Owners/GA/High/SourceComplete.lean#L138),
-[`Eight.original_normal_owners_of_BT2_exclusion`](../../SquaresInCircles/Eight/Owners/GA/High/SourceComplete.lean#L159),
-[`Eight.GlobalOriginalOwners.normal_owners_of_GA_low`](../../SquaresInCircles/Eight/Owners/GA/EZero.lean#L164),
-[`Eight.high_GA_source_false_of_BT2_exclusion`](../../SquaresInCircles/Eight/Owners/GA/High/SourceComplete.lean#L129).*
+## 11.11 The unrestricted lower bound and the pullback
 
-## 11.10 The hard axes and the stationary frames
-
-With the normal owners known, two facts remain: the hard axes separate, and
-then the frames are those of Figure 11.1. Both rest on the five-corner problem.
-Seven squares whose frames have the pattern of Figure 11.1 and which are
-separated along the contacts of Figure 11.1 have five corners with the spans of
-Theorem 11.1, so their disk has radius at least $\sqrt{q_*}$
-(Lemma 11.39). A configuration that departs from the pattern is moved, at the
-same squared radius $q$, towards the pattern, and every departure costs one of
-the five squares $A$, $B$, $D$, $E$, $H$ room against the circle; at the end the
-pattern holds and the five squares touch the circle of squared radius
-$q_* \ge q$, so no room was lost, and there was no departure.
-
-### Lemma 11.39 (the five corners of a ring)
-
-Let $0 \le t \le \frac\pi4$, let $K_H, K_G, K_A, K_B, K_T, K_D, K_E$ be unit squares
-with centres $c_H, \dots, c_E$, of which $K_H$ and $K_G$ are turned by $t$ and the
-others are axis-parallel, and let the seven *gaps*
-
-```math
-\begin{gathered}
-g_{HG} = \langle e_t, c_G - c_H\rangle - 1, \quad g_{GA} = \langle e_t, c_A - c_G\rangle - w, \quad g_{AB} = (c_B - c_A)_y - 1, \quad g_{BT} = (c_B - c_T)_x - 1, \\
-g_{TD} = (c_T - c_D)_x - 1, \quad g_{DE} = (c_D - c_E)_y - 1, \quad g_{EH} = \langle f_t, c_E - c_H\rangle - w ,
-\end{gathered}
-```
-
-with $w = \frac12(1 + \cos t + \sin t)$, be nonnegative. Put
-
-```math
-P_1 = c_A + \left(\tfrac12, -\tfrac12\right), \quad P_2 = c_B + \left(\tfrac12, \tfrac12\right), \quad P_3 = c_D + \left(-\tfrac12, \tfrac12\right), \quad P_4 = c_E + \left(-\tfrac12, -\tfrac12\right), \quad P_5 = c_H - \tfrac12\left(e_t + f_t\right) .
-```
-
-1. The configuration $(t, P_1, \dots, P_5)$ spans, and the excesses of its five
-   spans over their bounds are $g_{AB}$, $g_{BT} + g_{TD}$, $g_{DE}$, $g_{EH}$
-   and $g_{HG} + g_{GA}$.
-2. If the seven squares lie in the closed disk of radius $R$, then
-   $R \ge \sqrt{q_*}$.
-3. If they lie in the closed disk of radius $\sqrt{q_*}$, then $t = t_*$,
-   $K_A$, $K_B$, $K_D$, $K_E$, $K_H$ are the squares $A$, $B$, $D$, $E$, $H$ of the
-   models, all seven gaps vanish, and $c_T = (x_2 - \frac32, \zeta)$ and
-   $c_G = p_H + e + \eta f$ for some $\zeta$ and $\eta$.
-
-*Proof.* (1) The excess of the first span is
-$(P_2 - P_1)_y - 2 = (c_B - c_A)_y - 1 = g_{AB}$, and in the same way the
-second is $(c_B - c_D)_x - 2 = g_{BT} + g_{TD}$ and the third $g_{DE}$. For the
-fourth, $\langle f_t, P_4 - P_5\rangle - 1 - \sin t
-= \langle f_t, c_E - c_H\rangle + \frac12(\sin t - \cos t) + \frac12 - 1 - \sin t = g_{EH}$,
-and the fifth is
-$\langle e_t, P_1 - P_5\rangle - 2 - \cos t = \langle e_t, c_A - c_H\rangle - 1 - w = g_{HG} + g_{GA}$.
-(2) With these frames each $P_i$ is a vertex of its square, so it lies in the
-disk: the configuration spans and fits in $R$, and $R \ge R_8 = \sqrt{q_*}$ by the
-definition of $R_8$ and Proposition 11.5. (3) The configuration then fits in
-$R_8$, so by Proposition 11.5 (2) it is the stationary one: $t = t_*$, the five
-corners are those of the stationary solution, and so the centres of the five
-squares are those of the models. The five excesses vanish, and as they are
-sums of nonnegative gaps, all seven gaps vanish; $g_{BT} = 0$ and $g_{HG} = 0$
-put $c_T$ and $c_G$ on the two slider lines. $\square$
-
-*Lean:
-[`Eight.OriginalFiveCorner.PhysicalFrames`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L324),
-[`Eight.OriginalFiveCorner.gap`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L333),
-[`Eight.OriginalFiveCorner.chain`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L343),
-[`Eight.OriginalFiveCorner.residual_identity`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L399),
-[`Eight.OriginalFiveCorner.corner_is_original_vertex`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L388),
-[`Eight.OriginalFiveCorner.chain_spans`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L409),
-[`Eight.OriginalFiveCorner.chain_fits`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L419),
-[`Eight.OriginalFiveCorner.radius_lower_bound`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L433),
-[`Eight.OriginalFiveCorner.original_anchor_centers`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L443),
-[`Eight.OriginalFiveCorner.all_original_contacts_tight`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L454),
-[`Eight.OriginalFiveCorner.original_sliders`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L493),
-[`Eight.AlignedEndpoint.sharp_rigidity`](../../SquaresInCircles/Eight/Owners/Hard/Rigidity.lean#L185).*
-
-![The seven exterior squares of the optimal packing, with their frames, moved apart so that neighbours no longer touch; each gap of Lemma 11.39 is drawn as a short red double arrow between neighbours: g_AB between A and B, g_BT and g_TD on either side of T, g_DE between D and E, g_HG between H and G, g_GA from G to the corner of A, and g_EH from H to the corner of E. The five corners P1 to P5 of A, B, D, E and H are marked by dots, and the dashed circle about o of radius about 2.22 holds the seven squares, with the corner P2 on it](figures/11-eight/ring.svg)
-
-*Figure 11.21.* Lemma 11.39: seven squares with the frames of Figure 11.1,
-separated from their neighbours by the gaps $g$, here between $0.04$ and
-$0.14$. The five corners $P_1, \dots, P_5$ (dots) span as in Theorem 11.1, each
-span exceeding its bound by the sum of the gaps along it (compare
-Figure 11.4). The least disk about $o$ that holds the squares (dashed) has
-radius about $2.22 > \sqrt{q_*}$; by part (3) of the lemma no disk of radius
-$\sqrt{q_*}$ holds them, as some gap is positive.
-
-### Definition 11.40 (hard cycles and anchor losses)
-
-A *hard cycle* at the level $q$ is a signed cycle at the level $q$ with
-$y_H \ge 0$, $y_A \ge 0$, $y_B \le 0$, $y_D \le 0$ and $y_E \le 0$, with one axis
-chosen on each edge in its normal owners and separating its pair, with the hard
-axes 1 on $G \to A$ and 3 on $B \to T$ separating, with $y_G < 0$ if the chosen
-axis of $H \to G$ is 3 and $y_T > 0$ if that of $T \to D$ is 1, and with
-$a_E \le \frac7{12}$ or $|y_H|, |y_D| \le a_E$. Its anchors need not lie on the
-circle, and its centre directions need not be in order.
-
-For two signed cycles $C$ and $C'$, write $c(P) = (a_P + \frac12)^2 + (|y_P| + \frac12)^2$
-for the squared distance from $o$ of the farthest vertex of the square $P$ of
-$C$, and $c'(P)$ for that of $C'$. Then $C'$ has *no larger anchors* than $C$ if
-$c'(P) \le c(P)$ for the five *anchors* $P = H, A, B, D, E$, and a *strict loss*
-if moreover one of these inequalities is strict. If the anchors of $C$ lie in
-the disk of squared radius $q$ and those of $C'$ on its circle, then $C'$ has no
-strict loss against $C$: $c'(P) < c(P) \le q = c'(P)$ is impossible.
-
-*Lean:
-[`Eight.SignedCycle.HardInput`](../../SquaresInCircles/Eight/Owners/NecessaryCycle.lean#L106),
-[`Eight.SignedCycle.NormalAnchors`](../../SquaresInCircles/Eight/Owners/NecessaryCycle.lean#L68),
-[`Eight.SignedCycle.ZeroSignImplications`](../../SquaresInCircles/Eight/Owners/NecessaryCycle.lean#L76),
-[`Eight.SignedCycle.Witnesses`](../../SquaresInCircles/Eight/Owners/NecessaryCycle.lean#L63),
-[`Eight.anchorVertices`](../../SquaresInCircles/Eight/Owners/LossLedger.lean#L23),
-[`Eight.AnchorNonincrease`](../../SquaresInCircles/Eight/Owners/LossLedger.lean#L25),
-[`Eight.StrictAnchorLoss`](../../SquaresInCircles/Eight/Owners/LossLedger.lean#L28),
-[`Eight.AllAnchorsOn`](../../SquaresInCircles/Eight/Owners/LossLedger.lean#L34),
-[`Eight.no_strict_loss_to_on_circle`](../../SquaresInCircles/Eight/Owners/LossLedger.lean#L67),
-[`Eight.anchors_tight_before`](../../SquaresInCircles/Eight/Owners/LossLedger.lean#L75).*
-
-### Proposition 11.41 (sharp hard cycles)
-
-Let a hard cycle lie at a level $q_{\mathrm{low}} \le q \le q_*$. Then $q = q_*$;
-$\theta_A = \theta_B = \theta_T = \theta_D = \theta_E$ and $\theta_G = \theta_H$,
-with $\theta_H - \theta_D = t_*$; $y_A - y_B = 1$; the five anchors lie on the
-circle of squared radius $q_*$; and every terminal owner of every edge
-separates its pair with margin 0.
-
-*Proof.* *The canonical case.* Suppose that the frames have the pattern
-$\theta_G = \theta_H$, $\theta_A = \theta_B = \theta_T = \theta_D = \theta_E$ and
-$\theta_D \le \theta_H$, and that the axis 2 separates $E$ from $H$. Then
-$t = \theta_H - \theta_D$ lies in $[0, \frac7{10}] \subset [0, \frac\pi4]$, and
-turning the plane by $-\theta_D$ gives seven squares as in Lemma 11.39. On each
-edge between squares with the same frame the two normal owners have the same
-normal, which is the normal of the corresponding gap of Lemma 11.39, with the
-threshold 1; on $G \to A$ the hard axis 1 and on $E \to H$ the axis 2 have the
-normals $e_t$ and $-f_t$, with the threshold $w$; and on $B \to T$ the hard axis
-3 has the normal $(-1, 0)$. So the chosen separations make the seven gaps
-nonnegative, and Lemma 11.39 gives $q = q_*$, $t = t_*$, the anchors on the
-circle and all gaps 0, which is the claim.
-
-*The general case.* A sequence of moves of the signed cycle at the same level
-$q$, each giving a hard cycle with no larger anchors, leads to the canonical
-case; each move that is needed because the source departs from the pattern
-gives a strict loss at one of the anchors. At the end the anchors lie on the
-circle of squared radius $q_* \ge q$, by the canonical case, so no move had a
-strict loss, and the cycle had the pattern from the start. The moves come in
-this order.
-
-1. *The middle.* $A$ and $B$ are given a common frame and the gap $y_A - y_B = 1$,
-   and $\theta_T \le \theta_A \le \theta_G$; a defect gives $A$ or $B$ a strict
-   loss.
-2. *The outer order* $\theta_A \le \theta_H$ and $\theta_D \le \theta_B$. A crossed
-   order is excluded by a clamp of $G$, $A$, $B$ to a common frame, which gives
-   the middle anchors a strict loss; the side with the larger tangent,
-   $y_A \ge \frac12$ or $-y_B \ge \frac12$, is ordered first, and its bound puts
-   the other tangent in $[\frac{67}{200}, \frac12]$, where the crossed case of
-   the other side is excluded in the same way.
-3. *The signs* $y_G < 0$ and $y_T > 0$: a wrong sign on the larger of the two
-   middle tangents is excluded by an envelope of the opposite pair, and a
-   small wrong sign by the budget of the edges with mixed frames.
-4. $\theta_G \le \theta_H$ and $\theta_D \le \theta_T$: otherwise $H$ is aligned
-   with $G$, or $D$ with $T$, with a strict loss at $A$ or $B$; and the chosen
-   axes of $H \to G$ and $T \to D$ become 1 and 3.
-5. $\theta_E = \theta_D$: $E$ moves on its own circle, its tangent decreasing,
-   and turns to the frame of $D$.
-6. $\theta_G = \theta_H$ and $\theta_B = \theta_T = \theta_D$: the remaining
-   reductions end in a weighted dual with the weights of the stationary chain at
-   the tilt of the cycle, which bounds $q$ below by $q_*$ plus nonnegative losses
-   of the centres, of the circles and of the frames; at $q \le q_*$ all of them
-   vanish. One endpoint, at which $G \to A$ and $D \to E$ would be tight
-   together, is excluded by a five-anchor stress whose weights are polynomials in
-   the tilt, checked by the kernel (§11.11).
-
-In the end the pattern holds, and the canonical case applies. $\square$
-
-*Lean:
-[`Eight.SignedCycle.HardInput.hard_sharp`](../../SquaresInCircles/Eight/Boundary/UniversalSourceRecovery.lean#L312),
-[`Eight.SignedCycle.HardInput.hard_middle`](../../SquaresInCircles/Eight/Boundary/UniversalSourceRecovery.lean#L280),
-[`Eight.SignedCycle.HardInput.canonicalize_middle`](../../SquaresInCircles/Eight/Owners/Hard/Rigidity.lean#L41),
-[`Eight.SignedCycle.HardInput.canonical_hard_sharp`](../../SquaresInCircles/Eight/Boundary/UniversalSourceRecovery.lean#L260),
-[`Eight.SignedCycle.HardInput.canonical_hard_outer_order`](../../SquaresInCircles/Eight/Boundary/UniversalSourceRecovery.lean#L228),
-[`Eight.SignedCycle.HardInput.common_frame_entry_impossible`](../../SquaresInCircles/Eight/Boundary/UniversalSourceRecovery.lean#L153),
-[`Eight.SignedCycle.HardInput.ordered_hard_sharp`](../../SquaresInCircles/Eight/Owners/Ordered/HardSharp.lean#L620),
-[`Eight.SignedCycle.HardInput.ordered_normal_sharp`](../../SquaresInCircles/Eight/Owners/Ordered/HardSharp.lean#L524),
-[`Eight.SignedCycle.HardInput.nonpositive_owner_sharp`](../../SquaresInCircles/Eight/Owners/Nonpositive/OuterSharp.lean#L125),
-[`Eight.SignedCycle.HardInput.nonpositive_sharp`](../../SquaresInCircles/Eight/Owners/Nonpositive/HardSharp.lean#L182),
-[`Eight.StationaryTerminal.stationary_rigidity`](../../SquaresInCircles/Eight/Owners/Stationary/CanonicalRigidity.lean#L414),
-[`Eight.SignedCycle.HardInput.canonical_tilt`](../../SquaresInCircles/Eight/Owners/Canonical/NegativeCycle.lean#L112),
-[`Eight.SignedCycle.HardInput.canonical_lower_bound`](../../SquaresInCircles/Eight/Owners/Canonical/NegativeCycle.lean#L121),
-[`Eight.SignedCycle.HardInput.canonical_sharp`](../../SquaresInCircles/Eight/Owners/Canonical/NegativeCycle.lean#L137),
-[`Eight.SignedCycle.HardInput.all_anchors_on`](../../SquaresInCircles/Eight/Boundary/UniversalSourceRecovery.lean#L350).*
-
-### Proposition 11.42 (the hard axes)
-
-Let a normalized boundary cycle at a level $q_{\mathrm{low}} \le q \le q_*$ satisfy
-the owner restriction to the normal owners. Then the hard axes separate: the
-axis 1 separates $G$ from $A$, and the axis 3 separates $B$ from $T$.
-
-*Proof.* *Moving $G$ and $T$.* If the axis 1 does not separate $G$ from $A$, the
-normal owner 2 does, and $G$ is moved, with all the other squares fixed, by the
-mirror image of the motion of $T$ in Lemma 11.36: along the flat side of the
-core, on the circle of squared radius $q$ with its frame between $\theta_H$ and
-$\theta_A$, or to the point $(\frac7{12}, 1 - a_A)$ of the flat side with the
-frame $\theta_A$. The same is done with $T$ if the axis 3 does not separate $B$
-from $T$. The result $J$ is a signed cycle at the level $q$ with the same anchors,
-the same separations on the other edges and its centre directions in order; its
-pair $G$, $A$ is in one of three *terminal states*: the axis 1 separates
-($G_0$); the axis 2 separates, $H \to G$ along the axis 3, and $d_G > 0$
-($G_+$); or the axis 2 separates, $\theta_G = \theta_H$, $d_G < 0$ and $y_G < 0$
-($G_-$). The pair $B$, $T$ is likewise in the state $T_0$ (axis 3), $T_+$ (axis 4,
-$T \to D$ along the axis 1, $d_B > 0$) or $T_-$ (axis 4, $\theta_T = \theta_D$,
-$d_B < 0$, $y_T > 0$). The motion could also stop with $G$ or $T$ on its
-diagonal; read with its other nearest axis, that square would turn the word
-$0101011$ into one of the two wrong binary words, which Proposition 11.28
-excludes.
-
-*The terminal matrix.* In the state $(G_0, T_0)$ the hard axes separate in $J$.
-The other eight states are impossible:
-
-| | $T_0$ | $T_+$ | $T_-$ |
-| --- | --- | --- | --- |
-| $G_0$ | hard axes | stresses, by reflection | strict loss at $D$ |
-| $G_+$ | stresses | stresses | stresses |
-| $G_-$ | strict loss at $H$ | stresses, by reflection | strict losses at $H$ and $D$ |
-
-A state $G_+$ is excluded by stresses, after the square $E$ is put into a
-normal form, with weights that are polynomials in the positive frame step and
-positivity checked by the kernel; a state $T_+$ is the state $G_+$ of the
-reflected cycle. In a negative state the square $H$, or $D$, is turned together
-with $G$, or $T$, towards the frame of $A$, or $B$, which gives a hard cycle with a
-strict loss at $H$, or $D$; by Proposition 11.41 the anchors of that hard cycle
-lie on the circle of squared radius $q_*$, which a strict loss forbids.
-
-*Back to the original cycle.* So $J$ is a hard cycle, and by Proposition 11.41
-its frames satisfy $\theta_A \le \theta_G = \theta_H$ and
-$\theta_D = \theta_T \le \theta_B$, with its chosen axes on $H \to G$ and
-$T \to D$ tight. The anchors and their frames did not move, so
-$\theta_A \le \theta_H$ and $\theta_D \le \theta_B$ hold in the original cycle as
-well. If the original cycle lacked the axis 1 on $G \to A$, the motion of $G$
-would have produced it only with $\theta_A - \theta_H > 0$ or with a positive
-margin on $H \to G$, and neither holds; so the original cycle had the axis 1,
-and in the same way the axis 3 on $B \to T$. $\square$
-
-*A representative case: the state $(G_-, T_0)$, with $E \to H$ separated along
-the axis 1.* Here $\theta_G = \theta_H$, $t = \theta_H - \theta_A > 0$,
-$y_G \le 0$, the axis 2 separates $G$ from $A$ but the axis 1 does not, and the
-axis 3 separates $B$ from $T$. A stress gives the span
-$\theta_H - \theta_D < \frac{11}{50}$, and the separations give the cuts
-$a_G \ge \frac7{12}$, $\frac1{10} < -y_G < \frac{39}{250}$,
-$\frac{211}{250} < y_H$, $a_H < 1$ and $t < \frac9{100}$. First $G$ is moved to
-the flat side of the core where the axis 2 of $G \to A$ is tight, and $H$ along
-its own circle until the axis 1 of $H \to G$ is tight; the separation of
-$E \to H$ along the axis 1 is kept. Then $H$ and $G$ are turned together, with
-the common frame $\theta_A + x$, $H$ on its circle and $G$ on the curve where the
-axis 2 of $G \to A$ stays tight. Let $L(x)$ be the margin of $E \to H$ along the
-axis 1, and $S$ the compact set of the $x \in [l, t]$, $l = \max(0, \theta_E - \theta_A)$,
-with $L(x) \ge L(t) + \frac3{100}(t - x)$. At its least point $m$ the axis 1
-separates $G$ from $A$: otherwise $L' < -\frac3{50}$ there, and $S$ would contain
-smaller points. So $m < t$ and $L(m) > 0$. Now move $H$ inward to
-$(a_H - \eta, y_H)$ with $\eta = \min(\frac12(a_H - y_H), \frac12(a_H - \frac7{12}), \frac12 L(m))$:
-the separations of $H \to G$ and $E \to H$ still hold, $H$ stays outside the
-core, and $c(H)$ decreases strictly. The result is a hard cycle with a strict
-loss at $H$, against Proposition 11.41.
-
-*Lean:
-[`Eight.SignedCycle.NormalizedBoundaryInput.original_hard_owners`](../../SquaresInCircles/Eight/Boundary/SharpEntry.lean#L43),
-[`Eight.SignedCycle.BoundaryInput.g_source_output`](../../SquaresInCircles/Eight/Boundary/SourcePrimaryRecovery.lean#L601),
-[`Eight.preprocess_G_pair_with_source`](../../SquaresInCircles/Eight/Boundary/SourcePrimaryRecovery.lean#L389),
-[`Eight.GPairOutput`](../../SquaresInCircles/Eight/Owners/Primary/PairClassification.lean#L196),
-[`Eight.GPairSourceOutput`](../../SquaresInCircles/Eight/Boundary/SourcePrimaryRecovery.lean#L265),
-[`Eight.SignedCycle.NormalizedBoundaryInput.pairDescendant`](../../SquaresInCircles/Eight/Boundary/SourceRecovery.lean#L136),
-[`Eight.PairTerminalMatrix.GState`](../../SquaresInCircles/Eight/Frames/Pair/TerminalRecovery.lean#L40),
-[`Eight.PairTerminalMatrix.TState`](../../SquaresInCircles/Eight/Frames/Pair/TerminalRecovery.lean#L45),
-[`Eight.PairTerminalMatrix.hard`](../../SquaresInCircles/Eight/Frames/Pair/TerminalRecovery.lean#L146),
-[`Eight.PairTerminalMatrix.positive_G_false`](../../SquaresInCircles/Eight/Frames/Pair/TerminalRecovery.lean#L87),
-[`Eight.PairTerminalMatrix.positive_T_false`](../../SquaresInCircles/Eight/Frames/Pair/TerminalRecovery.lean#L132),
-[`Eight.PositiveGAAllTExclusion.original_boundary_false`](../../SquaresInCircles/Eight/Owners/Positive/GAAllTExclusion.lean#L124),
-[`Eight.DirectNegativeT.negative_t_impossible`](../../SquaresInCircles/Eight/Boundary/UniversalSourceRecovery.lean#L403),
-[`Eight.AlignedNegative.negative_g_impossible`](../../SquaresInCircles/Eight/Boundary/UniversalSourceRecovery.lean#L373),
-[`Eight.AlignedNegative.both_negative_impossible`](../../SquaresInCircles/Eight/Owners/Negative/TerminalSharp.lean#L218),
-[`Eight.AlignedNegative.aligned_negative_span`](../../SquaresInCircles/Eight/Owners/TD2Span.lean#L174),
-[`Eight.AlignedNegative.NegativeGEntry.false_at_sharp`](../../SquaresInCircles/Eight/Boundary/UniversalSourceRecovery.lean#L362),
-[`Eight.SignedCycle.BoundaryInput.G_negative_not_diagonal`](../../SquaresInCircles/Eight/Owners/OriginalOwners.lean#L201),
-[`Eight.PairTerminalDescendant.hard`](../../SquaresInCircles/Eight/Frames/Pair/TerminalRecovery.lean#L275),
-[`Eight.PairTerminalDescendant.source_recovery`](../../SquaresInCircles/Eight/Frames/Pair/TerminalRecovery.lean#L292),
-[`Eight.SignedCycle.NormalizedBoundaryInput.pair_source_recovery`](../../SquaresInCircles/Eight/Boundary/UniversalSourceRecovery.lean#L430),
-[`Eight.SignedCycle.BoundaryInput.original_hard_of_pair_contacts`](../../SquaresInCircles/Eight/Boundary/SourcePrimaryRecovery.lean#L761).*
-
-### Theorem 11.43 (the stationary frames)
-
-Let eight unit squares form a packing in a closed disk of squared radius
-$q \le q_*$ about $o$. View it in the disk of squared radius $q_*$, take its
-boundary cycle at the level $q_*$ with separating axes chosen on the packing,
-and normalize it (Lemma 11.30). Then the seven exterior squares of the packing
-have the frames of the models of Theorem 11.1, up to quarter turns: $A$, $B$,
-$T$, $D$, $E$ axis-parallel and $H$, $G$ turned by $t_*$. Each chosen axis has
-the normal of the corresponding contact of the models:
-
-```math
-e \ \text{on}\ H \to G \ \text{and}\ G \to A, \qquad (0, 1)\ \text{on}\ A \to B, \qquad (-1, 0)\ \text{on}\ B \to T\ \text{and}\ T \to D, \qquad (0, -1)\ \text{on}\ D \to E, \qquad -f\ \text{on}\ E \to H .
-```
-
-*Proof.* The boundary cycle lies at the level $q_*$, between $q_{\mathrm{low}}$
-and $Q_0$. By Corollary 11.38 it satisfies the owner restriction to the normal
-owners, and by Proposition 11.42 the hard axes separate. With the normal
-owners, Lemma 11.33 puts $H$, $A$, $B$, $D$ on the circle with $y_H, y_A > 0$ and
-$y_B, y_D < 0$, so its signed cycle is a hard cycle, and by
-Proposition 11.41 its frames have the pattern of Figure 11.1 with
-$\theta_H - \theta_D = t_*$; as $\theta_A = 0$, the canonical frames are those of
-the models. The two squares of an edge between squares with the same frame have
-the same normal on both normal owners. On $G \to A$ the normal owner 2, an axis
-of $A$, does not separate in the stationary configuration, as $a_G > \frac{447}{800}$
-leaves a strict reserve; so the chosen axis is 1, with the normal $e$. On $E \to H$
-the normal owner 1, an axis of $E$, does not separate either, so the chosen
-axis is 2, with the normal $-f$. The boundary cycle has the frames and the
-chosen axes of the original squares (Proposition 11.15 and Lemma 11.17), which
-proves the theorem. $\square$
-
-*Lean:
-[`Eight.SharpSourceEntry`](../../SquaresInCircles/Eight/Boundary/SharpEntry.lean#L107),
-[`Eight.sharp_source_entry`](../../SquaresInCircles/Eight/Owners/GA/High/SourceComplete.lean#L238),
-[`Eight.sharp_source_entry_of_BT2_exclusion`](../../SquaresInCircles/Eight/Owners/GA/High/SourceComplete.lean#L170),
-[`Eight.source_witnesses_of_normal_owners`](../../SquaresInCircles/Eight/Boundary/SharpEntry.lean#L75),
-[`Eight.boundary_source_rigidity_of_normal_input`](../../SquaresInCircles/Eight/Boundary/SharpEntry.lean#L55),
-[`Eight.boundary_source_rigidity_of_hard`](../../SquaresInCircles/Eight/Boundary/UniversalSourceRecovery.lean#L471),
-[`Eight.boundary_source_rigidity_of_canonical`](../../SquaresInCircles/Eight/Boundary/UniversalSourceRecovery.lean#L48),
-[`Eight.NormalizationBridge.normalizedInput`](../../SquaresInCircles/Eight/Owners/NormalizationBridge.lean#L44),
-[`Eight.NormalizationBridge.recoveredFrame`](../../SquaresInCircles/Eight/Owners/NormalizationBridge.lean#L25),
-[`Eight.GlobalOuterAnchor.normal_anchors`](../../SquaresInCircles/Eight/Owners/Outer/AnchorBridge.lean#L478),
-[`Eight.StationaryFrames`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L568),
-[`Eight.stationaryNormal`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L572),
-[`Eight.stationary_ga1_not_feasible`](../../SquaresInCircles/Eight/Owners/Stationary/SourceOwners.lean#L89),
-[`Eight.stationary_eh0_not_feasible`](../../SquaresInCircles/Eight/Owners/Stationary/SourceOwners.lean#L156),
-[`Eight.terminal_owners_after_source_equality`](../../SquaresInCircles/Eight/Owners/Stationary/SourceOwners.lean#L207).*
-
-## 11.11 The exact polynomial checks
-
-Many branches of §11.8 to §11.10, and four of §11.6, end in an inequality
-between explicit functions of one angle, or of two, on an interval, a triangle,
-a rectangle or a trapezoid. Sines and cosines are replaced there by Taylor
-polynomials with signed remainders, square roots by rational majorants or by
-squaring, and denominators are cleared, so that the inequality says that a
-polynomial $p$ with rational coefficients exceeds a rational reserve $\rho$ on
-the domain. Such a positivity is proved by a *check*. An affine map takes the
-interval to $[-1, 1]$, and a polynomial map takes the triangle, the rectangle or
-the trapezoid to the square $[-1, 1]^2$; the polynomial is expanded in the
-Chebyshev polynomials $T_j$, or in the products $T_j(x)T_k(y)$; and the constant
-coefficient minus the sum of the absolute values of all the other coefficients
-is compared with $\rho$. Since $|T_j| \le 1$ on $[-1, 1]$, the inequality
-$\rho < c_0 - \sum_{j \ge 1}|c_j|$ for the coefficients $c_j$ gives $p > \rho$ on
-the whole domain, with no subdivision and no sampling. When the degree is low
-and the margin is not too small, no check is needed: on an interval $[a, b]$
-the polynomial minus the reserve is a combination with nonnegative coefficients
-of the Bernstein products $(x - a)^i (b - x)^{n - i}$, possibly with one added
-square, and an ordinary linear argument proves the bound.
-
-The identity between the polynomial and its expansion, the coefficients and
-the final comparison are computations with integers, carried out by the Lean
-kernel itself (`decide +kernel`); the polynomial is represented by a list of
-integers with a common denominator, built along the formula that defines it,
-and a lemma for each arithmetic operation shows that the list represents the
-formula. No floating-point number and no external program enters. The checks
-are used in these places:
-
-* the endpoint functions of the stresses of Lemma 11.36 and
-  Proposition 11.37, in one variable and, on triangles and rectangles of two
-  frame steps, in two;
-* the tail of the edge $B \to T$ and the configuration with all high axes in
-  Proposition 11.34;
-* the stresses of the positive states and the anchor stresses of
-  Propositions 11.41 and 11.42;
-* four branches of the wrong words in Proposition 11.28.
-
-Besides these, the kernel evaluates interval expressions with rational
-endpoints for the stationary solution (Proposition 11.4 and
-[Appendix J](appendix-j.md)) and for the box of Proposition 11.7, and it
-enumerates the finite cases of Lemma 11.22 and of the quarter words. No check
-enters Proposition 11.21 or Lemmas 11.26, 11.27 and 11.33.
-
-[Appendix L](appendix-l.md) describes the bound by Chebyshev coefficients,
-the integer representation that the kernel computes on, the two-variable checks
-and their restrictions to the sides of a triangle, the Taylor polynomials,
-rational majorants of roots and Taylor models, and a worked example; it also
-counts the checks of the proof.
-
-*Lean:
-[`Eight.WholeIntervalPolynomial.positive_on_interval`](../../SquaresInCircles/Eight/Arithmetic/WholeIntervalPolynomial.lean#L101),
-[`Eight.WholeIntervalPolynomial.interval_bounds`](../../SquaresInCircles/Eight/Arithmetic/WholeIntervalPolynomial.lean#L75),
-[`Eight.WholeIntervalPolynomial.Certificate.Scaled`](../../SquaresInCircles/Eight/Arithmetic/PolynomialCertificates.lean#L308),
-[`Eight.WholeIntervalPolynomial.Certificate.lowerOn_eq_of_rep`](../../SquaresInCircles/Eight/Arithmetic/PolynomialCertificates.lean#L686),
-[`Eight.TensorWholeIntervalPolynomial.positive_on_square`](../../SquaresInCircles/Eight/Arithmetic/TensorWholeIntervalPolynomial.lean#L119),
-[`Eight.TwoVariablePolynomial.square_bounds`](../../SquaresInCircles/Eight/Arithmetic/TwoVariablePolynomial.lean#L166),
-[`Eight.TwoVariablePolynomial.rectangle_bounds`](../../SquaresInCircles/Eight/Arithmetic/TwoVariablePolynomial.lean#L186),
-[`Eight.TwoVariablePolynomial.triangle_bounds`](../../SquaresInCircles/Eight/Arithmetic/TwoVariablePolynomial.lean#L201),
-[`Eight.TwoVariablePolynomial.trapezoid_bounds`](../../SquaresInCircles/Eight/Arithmetic/TwoVariablePolynomial.lean#L230),
-[`Eight.BivariateCertificate.XM.lower_certificate`](../../SquaresInCircles/Eight/Arithmetic/BivariateCertificates.lean#L2624),
-[`Eight.PackedModels.check_lt`](../../SquaresInCircles/Eight/Arithmetic/PackedModels.lean#L3317),
-[`Eight.HighOrderTaylor.S11_le_sin`](../../SquaresInCircles/Eight/Arithmetic/HighOrderTaylor.lean#L30),
-[`Eight.HighOrderTaylor.C14_le_cos`](../../SquaresInCircles/Eight/Arithmetic/HighOrderTaylor.lean#L60),
-[`Eight.Stationary.FixedEval.bounded_sound`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L1512).*
-
-## 11.12 The lower bound
-
-The lower bound now follows from one identity, applied to the original squares.
-By Theorem 11.43 the seven exterior squares of a packing of squared radius
-$q \le q_*$ have the frames of the models and are separated along the normals
-of the seven contacts. The weights $\mu_P$ of the five corners and $\lambda_e$ of
-the seven contacts of the stationary chain
-([Lemma J.6](appendix-j.md#lemma-j6-the-weights-of-the-chain)) balance at
-every square, and the weighted sum of the five corner constraints and the seven
-separations is then exactly $q_*$ plus a sum of squares. Nothing is assumed
-about how close the squares are to the optimal ones.
-
-### Theorem 11.44 (the dual at the original centres)
-
-Let $p_H, p_G, p_A, p_B, p_T, p_D, p_E$ be seven points of the plane, and let the
-gaps $g$ of Lemma 11.39 be formed with these points as centres and $t = t_*$.
-With the corner offsets $o_A = (\frac12, -\frac12)$, $o_B = (\frac12, \frac12)$,
-$o_D = (-\frac12, \frac12)$, $o_E = (-\frac12, -\frac12)$,
-$o_H = -\frac12(e + f)$ and the centres $p^0_P$ of the squares $A$, $B$, $D$, $E$,
-$H$ of the models,
-
-```math
-\sum_{P = A, B, D, E, H}\mu_P\,|p_P + o_P|^2 - \sum_e \lambda_e\,g_e = q_* + \sum_{P = A, B, D, E, H}\mu_P\,|p_P - p^0_P|^2 . \tag{11.9}
-```
-
-So if the five points $p_P + o_P$ lie in the closed disk of squared radius $q$ and
-the seven gaps are nonnegative, then
-
-```math
-q_* + \sum_{P = A, B, D, E, H}\mu_P\,|p_P - p^0_P|^2 \le q ;
-```
-
-and if moreover $q \le q_*$, then $q = q_*$, $p_P = p^0_P$ for
-$P = A, B, D, E, H$, every gap vanishes, and $p_T = (x_2 - \frac32, \zeta)$ and
-$p_G = p_H + e + \eta f$ for some $\zeta$ and $\eta$.
-
-The proof is given in [Appendix M](appendix-m.md). Both sides of (11.9) are
-quadratic in the seven points; the coefficients of the points $p_T$ and $p_G$
-vanish, as the two contacts at each of the sliders have equal weights and
-opposite normals, and completing the square at the five other points leaves
-$q_*$, by the balance of the forces of Lemma J.6.
-
-*Lean:
-[`Eight.OriginalDual.Positions`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L641),
-[`Eight.OriginalDual.gap`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L649),
-[`Eight.OriginalDual.exact_identity`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L691),
-[`Eight.OriginalDual.value_le`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L724),
-[`Eight.OriginalDual.original_centers_rigid`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L738),
-[`Eight.OriginalDual.slider_coordinates`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L784),
-[`Eight.GeometricModel.original_dual_quantitative`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L160),
-[`Eight.GeometricModel.original_dual_radius_lower`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L172),
-[`Eight.GeometricModel.original_radius_and_centers`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L188),
-[`Eight.GeometricModel.sharp_original_radius_and_centers`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L207).*
-
-![The stationary weights of the optimal packing: the seven contacts drawn as thin lines between the centres of touching squares, labelled with their weights lambda, between 0.48 and 0.80, and the five corner forces drawn as thick arrows that start at the corners P1 to P5 of A, B, D, E and H on the circle and point outward along the radii, labelled with the weights mu: 0.210 for A, 0.221 for B, 0.273 for D, 0.025 for E and 0.271 for H. T and G carry no corner force](figures/11-eight/stress.svg)
-
-*Figure 11.22.* The stationary weights: the contact weights $\lambda$ on the
-seven contacts (thin) and the corner forces $2\mu_P P_P$ along the radii to the
-corners on the circle (thick). At each of the seven squares the forces balance;
-at $T$ and $G$ the two contact forces cancel. With these weights the sum of the
-corner constraints and the separations is exactly $q_*$ plus squares,
-identity (11.9).
-
-### Proposition 11.45 (the lower bound)
+### Proposition 11.37 (the lower bound)
 
 If eight unit squares form a packing in a closed disk of squared radius $q$,
 then $q \ge q_*$.
 
-*Proof.* Translate the packing so that the disk centre is $o$, and suppose
-$q \le q_*$. The packing also lies in the disk of squared radius $q_*$, which is
-below $Q_1$. By Theorem 11.10 it has a central square and seven exterior
-squares; take a separating axis on each consecutive pair. By
-Proposition 11.15 the exterior squares give a boundary cycle at the level
-$\max(q_*, q_-) = q_*$ with the same frames and axes, and by Lemma 11.17 its
-expansions to $Q_1$ and $Q_0$; by Theorem 11.23 and Proposition 11.28 the word is
-$0101011$, and by Lemma 11.30 a renumbering, a rotation and possibly a
-reflection, applied to the whole packing, normalize the cycle. The moved packing
-still lies in the disk of squared radius $q$. By Theorem 11.43 its exterior
-squares have the frames of the models and the chosen axes have the normals of
-the seven contacts.
+*Proof.* Suppose $q < q_*$, and enlarge the disk, without moving the squares,
+to the squared radius $\bar q = \max(q, q_-)$; by (11.1),
+$\frac52 < \bar q < q_* < Q_1$. By Theorem 11.10 the squares have a central
+square and seven exterior squares; choose a witness on each consecutive pair.
+By Proposition 11.15 there is a boundary cycle $\mathcal Z$ at the level
+$\bar q$ with the same frames and witnesses, and by Lemma 11.17 its expansion
+$\mathcal Z_1$ to the level $Q_1$, with the same frames, centre directions,
+signed tangents and words, in which every witness still separates.
 
-With these frames the vertex $p_P + o_P$ of each of the squares $A$, $B$, $D$,
-$E$, $H$ is a point of the square, so it lies in the disk of squared radius $q$,
-and each chosen separation says that the corresponding gap of Theorem 11.44,
-formed with the centres of the original squares, is nonnegative. By
-Theorem 11.44, $q_* \le q$. $\square$
-
-*Lean:
-[`Eight.GeometricModel.stationary_normalization_exists`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L90),
-[`Eight.GlobalNormalization`](../../SquaresInCircles/Eight/Boundary/Normalization.lean#L49),
-[`Eight.boundary_normalization_exists`](../../SquaresInCircles/Eight/Boundary/RadiusTransfer.lean#L737),
-[`Eight.GeometricModel.normalized_at_original_radius`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L78),
-[`Eight.GeometricModel.originalPositions`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L128),
-[`Eight.GeometricModel.source_contained_at_original_radius`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L132),
-[`Eight.vertices_at_original_radius`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L656),
-[`Eight.gaps_of_retained_normals`](../../SquaresInCircles/Eight/Boundary/SourceEquality.lean#L622),
-[`Eight.GeometricModel.sharp_rigidity_of_original_witnesses`](../../SquaresInCircles/Eight/Equality/SharpOriginal.lean#L222),
-[`Eight.sharp_source_entry_original_rigidity`](../../SquaresInCircles/Eight/Boundary/SharpEntry.lean#L116),
-[`Eight.sharp_original_rigidity`](../../SquaresInCircles/Eight/Owners/GA/High/SourceComplete.lean#L243),
-[`Eight.GeometricModel.origin_sharp_rigidity`](../../SquaresInCircles/Eight/Equality/SharpEquality.lean#L39),
-[`Eight.GeometricModel.origin_sharp_lower_bound`](../../SquaresInCircles/Eight/Equality/SharpEquality.lean#L56),
-[`Eight.GeometricModel.sharp_squared_radius_lower_bound`](../../SquaresInCircles/Eight/Equality/SharpEquality.lean#L63),
-[`Eight.GeometricModel.sharp_radius_lower_bound`](../../SquaresInCircles/Eight/Equality/SharpEquality.lean#L74),
-[`Eight.lower_bound`](../../SquaresInCircles/Eight/Uniqueness.lean#L55).*
-
-The boundary cycle is used only to find the frames and the separating axes;
-the radius comes from (11.9) applied to the original squares, which needs no
-estimate of how far a square moved in the reduction. The same argument at the
-radius $q_*$ itself proves more.
-
-## 11.13 The packings at the optimal radius
-
-### Proposition 11.46 (the exterior squares at the optimal radius)
-
-Let eight unit squares form a packing in a closed disk of radius $\sqrt{q_*}$
-about $o$. Then, after a renumbering, a rotation about $o$ and possibly a
-reflection in a line through $o$, the seven exterior squares are the squares
-$A$, $B$, $D$, $E$, $H$ of the models and the squares $T$ and $G$ of the models
-for some $\zeta$ and $\eta$, with $\frac7{12} \le \zeta \le \zeta_+$ and
-$\eta_- \le \eta \le \eta_+$, and the central square contains the closed disk
-$\overline D(o, \frac1{12})$ in its interior.
-
-*Proof.* Run the proof of Proposition 11.45 with $q = q_*$. By Theorem 11.44 the
-centres of $A$, $B$, $D$, $E$, $H$ are those of the models, every gap vanishes,
-and the centres of $T$ and $G$ are $(x_2 - \frac32, \zeta)$ and
-$p_H + e + \eta f$. A unit square is determined by its centre and its frame up
-to quarter turns, so with the frames of Theorem 11.43 the seven squares are those
-of the models. The order of the centre directions puts the centre of $T$ in the
-sector from $B$ to $D$, and two consecutive gaps add up to less than $\pi$ by
-(11.4), so $\zeta > 0$; the centre of $G$ lies in the sector from $H$ to $A$,
-which gives $h_2 + \frac12 + \eta < 0$. Both squares avoid the closed disk
-$\overline D(o, \frac1{12})$ by Theorem 11.10: the point $(0, \zeta - \frac12)$ of
-the lower side of $T$ gives $\zeta \ge \frac7{12}$, and the point
-$(h_2 + 1 + \eta)f$ of the upper side of $G$ gives $\eta \le \eta_+$. Containment
-gives $\zeta \le \zeta_+$ and $\eta \ge \eta_-$ (Proposition 11.6 (1)), and the
-central square contains the core disk by Theorem 11.10. $\square$
+For the frames and the word, expand further to $Q_0$: Theorem 11.23 and
+Proposition 11.26 give frames in an interval of length less than $\frac7{10}$
+and the word $0101011$, and these are properties of the unchanged frames, so
+they hold for $\mathcal Z_1$ and $\mathcal Z$. After the normalization of
+Lemma 11.28, Proposition 11.29 gives (11.9) for $\mathcal Z_1$, Proposition
+11.34 gives $\Delta < \frac1{1000}$, Lemma 11.33 and Proposition 11.35 give
+the owner sets (11.15) for every separating axis of $\mathcal Z_1$ and the
+tilt window. These conclusions are about frames, tangents and directions,
+which $\mathcal Z$ shares, except the owner sets, which concern axes; but each
+witness of $\mathcal Z$ separates in $\mathcal Z_1$, so it lies in its owner
+set. So $\mathcal Z$, a boundary cycle at the level $\bar q$, satisfies the
+hypotheses of Theorem 11.36, which gives $\bar q \ge q_*$, a contradiction.
+$\square$
 
 *Lean:
-[`Eight.GeometricModel.source_centers_of_original_anchors`](../../SquaresInCircles/Eight/Equality/SharpEquality.lean#L83),
-[`Eight.sameSquare_of_physical_center`](../../SquaresInCircles/Eight/Boundary/Normalization.lean#L84),
-[`Eight.GeometricModel.source_squares_of_original_centers`](../../SquaresInCircles/Eight/Equality/SharpEquality.lean#L107),
-[`Eight.GlobalNormalization.original_slider_sectors`](../../SquaresInCircles/Eight/Boundary/Normalization.lean#L560),
-[`Eight.two_successive_gaps_lt_pi`](../../SquaresInCircles/Eight/Boundary/Normalization.lean#L483),
-[`Eight.polarOrder_positive_three`](../../SquaresInCircles/Eight/Boundary/Normalization.lean#L528),
-[`Eight.core_primary_of_small_secondary`](../../SquaresInCircles/Eight/Boundary/Normalization.lean#L542).*
+[`Eight.squared_radius_lower_bound`](../../SquaresInCircles/Eight/TableProof.lean#L435),
+[`Eight.lower_bound`](../../SquaresInCircles/Eight/Uniqueness.lean#L55),
+[`Eight.global_normalization_exists`](../../SquaresInCircles/Eight/GlobalNormalization.lean#L490),
+[`Eight.GlobalNormalization`](../../SquaresInCircles/Eight/GlobalNormalization.lean#L51),
+[`Eight.GlobalNormalization.radius_rigid`](../../SquaresInCircles/Eight/TableProof.lean#L144),
+[`Eight.Candidate.capture`](../../SquaresInCircles/Eight/Candidate/Capture.lean#L35),
+[`Eight.Candidate.Captured.pullback`](../../SquaresInCircles/Eight/Candidate/Capture.lean#L75),
+[`Eight.sourceLevel`](../../SquaresInCircles/Eight/RadiusTransfer.lean#L585).*
 
-### Proposition 11.47 (uniqueness)
+The detour through $Q_1$ is needed because the tables are computed at one
+level, and it costs nothing: the expansion keeps every separating axis, and
+only the frames, directions and tangents, which it does not move, are carried
+back. The same argument at the radius $q_*$ itself proves more.
+
+### Proposition 11.38 (the original squares at the optimal radius)
+
+Let eight unit squares form a packing in a closed disk of radius $R_8$ about
+$o$. Then, after a rotation about $o$ and possibly a reflection, and a
+relabelling, the seven exterior squares are the squares $A$, $B$, $D$, $E$,
+$H$ of the model and the squares $T$ and $G$ of the model for some $\zeta$ and
+$\eta$, with the same frames, and $\frac7{12} \le \zeta \le \zeta_+$ and
+$\eta_- \le \eta \le \eta_+$.
+
+*Proof.* Run the proof of Proposition 11.37 with $\bar q = q_*$. Theorem 11.36
+applied to the boundary cycle $\mathcal Z$ at the level $q_*$ gives equality in
+(11.17), so $\Delta = 0$ and $t = t_*$: the frames of the boundary cycle, which
+are the frames of the original squares, are those of the model, up to a
+rotation, and the reflection of Lemma 11.28.
+
+Now apply the stationary weights a second time, to the original centres $p_P$.
+The seven original witnesses lie in the owner sets (11.15), and at zero frame
+errors either owner of an aligned edge gives the same normal, the normal of
+the model; so the original gaps $g_e$ on these normals are nonnegative. As in
+Theorem 11.36, the weighted sum is an exact identity (Lemma M.9):
+
+```math
+\sum_{P = A, B, D, E, H}\mu_P|p_P + o_P|^2 - \sum_e \lambda_e\,g_e = q_* + \sum_{P = A, B, D, E, H}\mu_P\left|p_P - p_P^0\right|^2 , \tag{11.18}
+```
+
+where $p_P^0$ are the centres of the model. Containment gives
+$|p_P + o_P|^2 \le q_*$, so the left side is at most $q_*$. Hence every
+$p_P = p_P^0$ and, as every $\lambda_e > 0$, every $g_e = 0$. The contacts
+$D \to T$ and $T \to B$ along the horizontal normal fix the first coordinate
+of $p_T$ at $x_2 - \frac32$, and the contact $H \to G$ along $e$ fixes
+$\langle e, p_G - p_H\rangle = 1$; so $p_T = (x_2 - \frac32, \zeta)$ and
+$p_G = p_H + e + \eta f$ for some $\zeta$ and $\eta$. The cyclic order puts the
+centre of $T$ in the sector from $B$ to $D$, in the upper half plane, so
+$\zeta > 0$, and as the first coordinate of $p_T$ lies in $(0, \frac12)$, the
+distance from $o$ to $T$ is $\zeta - \frac12$, at least $\frac1{12}$ by
+Theorem 11.10; so $\zeta \ge \frac7{12}$. In the same way $G$ lies in the
+sector from $H$ to $A$, its coordinate along $f$ is negative, its coordinate
+$h_1 + \frac32$ along $e$ lies in $(0, \frac12)$, and the core gives
+$h_2 + \frac12 + \eta \le -\frac7{12}$, that is, $\eta \le \eta_+$.
+Containment gives $\zeta \le \zeta_+$ and $\eta \ge \eta_-$ as in
+Proposition 11.5. $\square$
+
+*Lean:
+[`Eight.GlobalNormalization.original_frames`](../../SquaresInCircles/Eight/TableProof.lean#L151),
+[`Eight.GlobalNormalization.original_gaps`](../../SquaresInCircles/Eight/TableProof.lean#L223),
+[`Eight.GlobalNormalization.original_centers`](../../SquaresInCircles/Eight/TableProof.lean#L388),
+[`Eight.GlobalNormalization.original_slider_sectors`](../../SquaresInCircles/Eight/GlobalNormalization.lean#L594),
+[`Eight.Terminal.original_pullback`](../../SquaresInCircles/Eight/Terminal.lean#L69),
+[`Eight.OriginalDual.original_centers_rigid`](../../SquaresInCircles/Eight/ExactFamily/CenterCompletion.lean#L171),
+[`Eight.OriginalDual.exact_identity`](../../SquaresInCircles/Eight/ExactFamily/CenterCompletion.lean#L124).*
+
+The boundary cycle is used only to transfer the frames and the witnesses; the
+positions come from (11.18) applied to the original squares, which needs no
+estimate of how far a square moved in the reduction.
+
+## 11.12 The equality domain
+
+### Proposition 11.39 (uniqueness)
 
 Every packing of eight unit squares in a closed disk of radius $R_8$ is
 congruent to the model of admissible parameters or to its mirror image in the
-diagonal; in particular it is congruent to an optimal model.
+diagonal.
 
-*Proof.* Translate the packing so that the disk centre is the origin; the
-translation is a congruence. By Proposition 11.46, after a rotation about the
-origin, possibly a reflection, and a renumbering, the exterior squares are
-those of the models for some $\zeta$ and $\eta$ with $\frac7{12} \le \zeta \le \zeta_+$
-and $\eta_- \le \eta \le \eta_+$, and the central square $K$ contains the closed
-disk of radius $\frac1{12}$ about the origin in its interior. One of the four
-frames of $K$ makes an angle $\varphi \in [-\frac\pi4, \frac\pi4)$ with the
-horizontal, and $w = \frac{\sin\varphi}{1 + \cos\varphi}$ lies in
-$[1 - \sqrt2, \sqrt2 - 1)$; let $(x, y)$ be the centre of $K$. The packing is the
-model of $(x, y, \varphi, \zeta, \eta)$, and it is a packing in the closed disk
-of radius $R_8$; so the conditions of Proposition 11.6 (3) hold: the frame and
-the sliders by construction, the core conditions because $K$ contains the core
-disk, and the separations because $K$ is disjoint from the seven exterior
-squares. By Proposition 11.6 (3) the parameters are admissible, and the packing
-is the model of these parameters, or its mirror image if a reflection was used.
-Admissible models and their mirror images are packings in the closed disk of
-radius $R_8$ (Proposition 11.6 (2)), so they are optimal models. $\square$
+*Proof.* By Proposition 11.38, after a rotation, possibly a reflection in the
+diagonal, and a relabelling, the exterior squares are those of the model for
+some admissible $\zeta$ and $\eta$. The central square contains the closed
+disk of radius $\frac1{12}$ about $o$ in its interior (Theorem 11.10). One of
+the four frames of the central square makes an angle in $[-\frac\pi4, \frac\pi4)$
+with the horizontal; it is $2\arctan w$ for exactly one $w$ in
+$[1 - \sqrt2, \sqrt2 - 1)$, namely $w = \frac{S}{1 + C}$ for that frame
+$(C, S)$. Let $(x, y)$ be its centre. By Proposition 11.6 (2) the parameters
+$(x, y, w, \zeta, \eta)$ are admissible, and the packing is the model of these
+parameters, or its mirror image if a reflection was used. $\square$
 
 *Lean:
-[`Eight.GeometricModel.origin_sharp_uniqueness`](../../SquaresInCircles/Eight/Equality/SharpEquality.lean#L139),
-[`Eight.GeometricModel.sharp_uniqueness`](../../SquaresInCircles/Eight/Equality/SharpEquality.lean#L202),
-[`Eight.Stationary.central_parameters_exist`](../../SquaresInCircles/Eight/Stationary/FixedEval.lean#L923),
-[`Eight.admissible_of_original_geometry`](../../SquaresInCircles/Eight/Stationary/Family.lean#L1038),
-[`Eight.containsCore_center_bounds`](../../SquaresInCircles/Eight/Stationary/Family.lean#L1005),
-[`Eight.stationaryModels`](../../SquaresInCircles/Eight/Stationary/Family.lean#L1104),
-[`Eight.GeometricModel.models_eq_stationary`](../../SquaresInCircles/Eight/Construction.lean#L38),
-[`Eight.admissibleModels_subset`](../../SquaresInCircles/Eight/Uniqueness.lean#L45),
-[`Eight.model_eq`](../../SquaresInCircles/Eight/Uniqueness.lean#L37),
-[`Eight.uniqueness`](../../SquaresInCircles/Eight/Uniqueness.lean#L62).*
-
-*Proof of Theorem 11.1.* Part (1) is Proposition 11.5. Part (2): by
-Proposition 11.7 there are admissible parameters, whose models are packings in
-the closed disk of radius $R_8$ by Proposition 11.6 (2), and every model has the
-corner $P_1$ of its square $A$ on the circle, as does its mirror image. Part (3):
-by Proposition 11.45, $R^2 \ge q_* = R_8^2$. Part (4): by Proposition 11.47 every
-packing in a closed disk of radius $R_8$ is congruent to an optimal model, and
-conversely a configuration congruent to an optimal model is a packing in a
-closed disk of radius $R_8$, by the definition of the optimal models and
-[Lemma 2.7](02-preliminaries.md#lemma-27-congruent-configurations). $\square$
-
-*Lean:
-[`Eight.radius_eq_stationary`](../../SquaresInCircles/Eight/Uniqueness.lean#L33),
-[`Eight.GeometricModel.models_nonempty`](../../SquaresInCircles/Eight/Construction.lean#L55),
-[`Eight.GeometricModel.model_packing`](../../SquaresInCircles/Eight/Construction.lean#L58),
-[`Eight.models_reach`](../../SquaresInCircles/Eight/Uniqueness.lean#L70),
-[`Eight.lower_bound`](../../SquaresInCircles/Eight/Uniqueness.lean#L55),
+[`Eight.origin_equality_classification`](../../SquaresInCircles/Eight/TableProof.lean#L455),
 [`Eight.uniqueness`](../../SquaresInCircles/Eight/Uniqueness.lean#L62),
-[`Eight.optimum`](../../SquaresInCircles/Eight/Uniqueness.lean#L82).*
+[`Eight.ExactFamily.central_parameters_exist`](../../SquaresInCircles/Eight/ExactFamily/CentralParameters.lean#L141),
+[`Eight.ExactFamily.halfAngle_recover`](../../SquaresInCircles/Eight/ExactFamily/CentralParameters.lean#L87),
+[`Eight.admissible_of_original_geometry`](../../SquaresInCircles/Eight/Equality.lean#L168).*
+
+*Proof of Theorem 11.1.* Part (1) is Proposition 11.6 (1); a reflection
+preserves packings. Part (2): by Proposition 11.37, $R^2 \ge q_*$. Part (3):
+by Proposition 11.39 every packing in a closed disk of radius $R_8$ is
+congruent to an admissible model or its mirror image, and conversely such a
+configuration is a packing in a closed disk of radius $R_8$ by part (1) and
+[Lemma 2.7](02-preliminaries.md#lemma-27-congruent-configurations). The
+radius is attained, for instance by the point $(0.14, 0, 0.1, 1.35, -0.32)$
+of the box of Proposition 11.7. $\square$
+
+*Lean: [`Eight.optimum`](../../SquaresInCircles/Eight/Uniqueness.lean#L82),
+[`Eight.isLeast`](../../SquaresInCircles/Eight/Uniqueness.lean#L98),
+[`Eight.packing_iff`](../../SquaresInCircles/Eight/Uniqueness.lean#L102),
+[`Eight.equality_iff_parameters`](../../SquaresInCircles/Eight/Uniqueness.lean#L107),
+[`Eight.models_nonempty`](../../SquaresInCircles/Eight/Equality.lean#L239),
+[`Eight.radius_eq_stationary`](../../SquaresInCircles/Eight/Uniqueness.lean#L33),
+[`Eight.GeometricModel.models_eq_stationary`](../../SquaresInCircles/Eight/Construction.lean#L38).*
 
 The theorem fits the scheme of
 [Corollary 2.10](02-preliminaries.md#corollary-210-the-scheme-of-proof), with
-the optimal models as the set $\mathcal M$: they are packings in the disk, they
-reach the circle at the corner $P_1$ of $A$, and every packing at the radius
-$R_8$ is congruent to one of them. Here, unlike in the earlier chapters, the
-lower bound is also proved directly, by Proposition 11.45.
+the admissible models and their mirror images as the set $\mathcal M$: they
+are packings in the disk, they reach the circle at the corner $P_1$ of $A$,
+and every packing at the radius $R_8$ is congruent to one of them. Here,
+unlike in the earlier chapters, the lower bound is also proved directly, by
+Proposition 11.37.

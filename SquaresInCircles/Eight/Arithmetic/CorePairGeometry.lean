@@ -1,7 +1,7 @@
 module
 
 public import SquaresInCircles.Eight.Arithmetic.Arctangent
-public import SquaresInCircles.Eight.Boundary.RadiusTransfer
+public import SquaresInCircles.Eight.BoundaryGeometry
 
 /-!
 # Eight squares: pairs of two core squares

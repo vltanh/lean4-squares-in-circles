@@ -18,7 +18,7 @@ and the sample parameters of the chart give one (`models_nonempty`).
 noncomputable section
 
 namespace SquaresInCircles.Eight.GeometricModel
-open Stationary
+open ExactFamily
 
 theorem reflectedModel_ofStationary (b : Bool) (p : EqualityParameters) :
     reflectedModel b (Parameters.ofStationary p)=stationaryReflectedModel b p := by

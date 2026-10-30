@@ -1,8 +1,9 @@
 module
 
 public import SquaresInCircles.Eight.Corners.Nominal
-public import SquaresInCircles.Eight.Stationary.FixedEval
-public import SquaresInCircles.Eight.Stationary.System
+public import SquaresInCircles.Eight.ExactFamily.Envelope
+public import SquaresInCircles.Eight.ExactFamily.Stationary
+public import SquaresInCircles.Eight.ExactFamily.CenterCompletion
 
 /-!
 # Eight squares: existence of the stationary chain
@@ -34,7 +35,7 @@ noncomputable section
 open Set
 open scoped BigOperators
 namespace SquaresInCircles.Eight.GeometricExistence
-open Stationary.FiveCornerGeometry Eight.FiveCorner
+open ExactFamily.FiveCornerGeometry Eight.FiveCorner
 
 def lowerRadius : ℝ := 19577/5000
 def upperRadius : ℝ := Nominal.ceiling
@@ -182,7 +183,7 @@ noncomputable section
 namespace SquaresInCircles.Eight.FiveCorner
 open GeometricModel
 
-open Set Stationary
+open Set ExactFamily
 open Scalar
 
 def ofCoordinates (d : Coordinates) : FiveCorner where
@@ -382,7 +383,7 @@ stationary system `IsStationary` (`data_stationary`).
 noncomputable section
 open Set
 namespace SquaresInCircles.Eight.GeometricExistence
-open Stationary Stationary.FiveCornerGeometry Eight.FiveCorner
+open ExactFamily ExactFamily.FiveCornerGeometry Eight.FiveCorner
 
 def data (q u t : ℝ) : Coordinates where
   q := q
@@ -589,7 +590,7 @@ The rational trial supplies the opposite sign at the upper radius.
 noncomputable section
 open Set
 namespace SquaresInCircles.Eight.GeometricExistence
-open Stationary.FiveCornerGeometry Eight.FiveCorner
+open ExactFamily.FiveCornerGeometry Eight.FiveCorner
 
 theorem lower_radius_defect_positive {u t : ℝ}
     (hu : u∈positionWindow) (ht : t∈closedTilts) :
@@ -665,7 +666,7 @@ open scoped BigOperators Topology
 namespace SquaresInCircles.Eight.FiveCorner
 open GeometricModel
 
-open Set Filter Stationary
+open Set Filter ExactFamily
 open Scalar
 
 def canonical : FiveCorner := ofCoordinates sharpData
@@ -727,7 +728,7 @@ theorem radius_eq_stationary : radius=Real.sqrt sharpData.q := by
     rintro R ⟨p, hp, hfit⟩
     exact stationary_radius_le sharpData_stationary hp hfit
 
-theorem radius_sq_eq_stationary : radius^2=Stationary.qStar := by
+theorem radius_sq_eq_stationary : radius^2=ExactFamily.qStar := by
   rw [radius_eq_stationary, Real.sq_sqrt (r4_q_pos sharpData_stationary.toIsChain).le]
   rfl
 
@@ -895,7 +896,7 @@ section
 noncomputable section
 open Set
 namespace SquaresInCircles.Eight.GeometricExistence
-open Stationary Stationary.FiveCornerGeometry Eight.FiveCorner
+open ExactFamily ExactFamily.FiveCornerGeometry Eight.FiveCorner
 
 theorem closedTilts_nonempty : closedTilts.Nonempty :=
   ⟨0,le_rfl,(Real.arctan_pos.mpr (by norm_num : (0:ℝ)<1/5)).le⟩

@@ -1,18 +1,18 @@
 module
 
 public import SquaresInCircles.Common.Frames
-public import SquaresInCircles.Eight.Containing
+public import SquaresInCircles.Eight.CentralCore
 public import SquaresInCircles.Eight.Corners.GeometricStationaryExistence
 public import SquaresInCircles.Eight.Equality.Angles
-public import SquaresInCircles.Eight.Frames.SeparatingAxis
-public import SquaresInCircles.Eight.Stationary.Family
+public import SquaresInCircles.Eight.SeparatingAxis
+public import SquaresInCircles.Eight.Equality
 
 /-!
 # Eight squares: equivalence of the two descriptions of the family
 
 The family of the statement (`Parameters.Admissible FiveCorner.selected`) asks of the central
 square that it contain the disk centre and be separated from the ring, of T that it lie above the
-axis and of G that it lie below. The family of `Stationary/Coordinates.lean`
+axis and of G that it lie below. The family of `ExactFamily/Coordinates.lean`
 (`EqualityParameters.Admissible sharpData`) asks instead for the core of radius `1/12`: the
 centre of the central square within `5/12` of the origin in its frame, `7/12 ≤ z` for T and
 `eta ≤ etaMax` for G. The half-angle coordinate maps the second family into the first
@@ -40,7 +40,7 @@ noncomputable section
 open scoped BigOperators
 
 namespace SquaresInCircles.Eight.GeometricModel
-open Stationary Stationary.Coordinates
+open ExactFamily ExactFamily.Coordinates
 
 def fourAnchorIndex : Fin 4 → Fin 8 := ![3,4,6,7]
 def fourAnchorPoint (i : Fin 4) : Point := FiveCorner.selected.point i.castSucc
@@ -70,7 +70,7 @@ theorem fourAnchor_closed (p : Parameters) (i : Fin 4) :
 end SquaresInCircles.Eight.GeometricModel
 
 namespace SquaresInCircles.Eight.Parameters
-open GeometricModel Stationary Stationary.Coordinates
+open GeometricModel ExactFamily ExactFamily.Coordinates
 
 theorem model_reaches (p : Parameters) :
     ∃ i x,closedSquare (p.model FiveCorner.selected i) x ∧
@@ -181,11 +181,11 @@ core of radius `1/12` is not used.
 noncomputable section
 
 namespace SquaresInCircles.Eight.FiveCorner
-open GeometricModel Stationary Stationary.Coordinates
+open GeometricModel ExactFamily ExactFamily.Coordinates
 
 theorem selected_anchorCenter (i : Fin 5) :
     selected.anchorCenter i=sharpData.anchorCenters i := by
-  have ht := Stationary.FiveCornerGeometry.coordinateAngle_frame sharpData
+  have ht := ExactFamily.FiveCornerGeometry.coordinateAngle_frame sharpData
   fin_cases i <;>
     ext <;>
     simp [anchorCenter,selected_point,selected_angle,Coordinates.anchorPoints,
@@ -198,7 +198,7 @@ theorem selected_topCenter (z : ℝ) : selected.topCenter z=sharpData.pT z := by
   ring
 
 theorem selected_tiltedCenter (η : ℝ) : selected.tiltedCenter η=sharpData.pG η := by
-  have ht := Stationary.FiveCornerGeometry.coordinateAngle_frame sharpData
+  have ht := ExactFamily.FiveCornerGeometry.coordinateAngle_frame sharpData
   rw [tiltedCenter,selected_anchorCenter]
   ext <;>
     simp [Coordinates.anchorCenters,Coordinates.pH,Coordinates.pG,
@@ -219,7 +219,7 @@ private theorem r4_unitSquare_eq {K L : UnitSquare} (h1 : K.center=L.center)
 
 theorem square_selected_angle (p : Point) :
     turnedSquare p selected.angle=sharpData.tiltedSquare p := by
-  have ht := Stationary.FiveCornerGeometry.coordinateAngle_frame sharpData
+  have ht := ExactFamily.FiveCornerGeometry.coordinateAngle_frame sharpData
   exact r4_unitSquare_eq rfl (by simp [turnedSquare,Coordinates.tiltedSquare,selected_angle,ht.1])
     (by simp [turnedSquare,Coordinates.tiltedSquare,selected_angle,ht.2])
 
@@ -249,7 +249,7 @@ theorem radius_sq_ge_nine_quarters : (9/4:ℝ)≤radius^2 := by
 end SquaresInCircles.Eight.FiveCorner
 
 namespace SquaresInCircles.Eight.Parameters
-open GeometricModel Stationary Stationary.Coordinates
+open GeometricModel ExactFamily ExactFamily.Coordinates
 
 theorem ofStationary_model (p : EqualityParameters) :
     (ofStationary p).model FiveCorner.selected=p.model sharpData := by
@@ -285,7 +285,7 @@ theorem origin_in_central {p : Parameters}
 end SquaresInCircles.Eight.Parameters
 
 namespace SquaresInCircles.Eight.GeometricModel
-open Stationary Stationary.Coordinates
+open ExactFamily ExactFamily.Coordinates
 
 private theorem width_tilted_e (p : Point) :
     width (sharpData.tiltedSquare p) sharpData.e=1/2 := by
@@ -544,13 +544,13 @@ theorem wide_exterior_disjoint {z η : ℝ} (hz : 1/2≤z)
 end SquaresInCircles.Eight.GeometricModel
 
 namespace SquaresInCircles.Eight.Parameters
-open GeometricModel Stationary Stationary.Coordinates
+open GeometricModel ExactFamily ExactFamily.Coordinates
 
 theorem tilted_below_axis_iff (p : Parameters) :
     ((FiveCorner.selected.tiltedCenter p.tilted).2+
       (|Real.cos FiveCorner.selected.angle|+|Real.sin FiveCorner.selected.angle|)/2≤0) ↔
     sharpData.s*(sharpData.h₁+2)+sharpData.c*(sharpData.h₂+1+p.tilted)≤0 := by
-  have ht := Stationary.FiveCornerGeometry.coordinateAngle_frame sharpData
+  have ht := ExactFamily.FiveCornerGeometry.coordinateAngle_frame sharpData
   have hc := sharpData_stationary.weightDomain.c_pos
   have hs := sharpData_stationary.weightDomain.s_pos
   rw [FiveCorner.selected_tiltedCenter,FiveCorner.selected_angle,ht.1,ht.2,
@@ -573,7 +573,7 @@ theorem exterior_contained {p : Parameters} (hp : p.Admissible FiveCorner.select
       (FiveCorner.selected.exteriorSquare p.top p.tilted i) := by
   have hT := (square_sqContained_iff _ _ _).mpr hp.top_contained
   have hG := (square_sqContained_iff _ _ _).mpr hp.tilted_contained
-  have ha := Stationary.exterior_contained Eight.sample_admissible
+  have ha := ExactFamily.exterior_contained Eight.sample_admissible
   fin_cases i
   · simpa [FiveCorner.selected_exteriorSquare,Coordinates.exteriorSquares,
       FiveCorner.radius_sq_eq_stationary] using ha 0
@@ -643,7 +643,7 @@ section
 noncomputable section
 
 namespace SquaresInCircles.Eight.Parameters
-open GeometricModel Stationary Stationary.Coordinates
+open GeometricModel ExactFamily ExactFamily.Coordinates
 
 theorem ofStationary_admissible {p : EqualityParameters} (hp : p.Admissible sharpData) :
     (ofStationary p).Admissible FiveCorner.selected := by
@@ -652,9 +652,9 @@ theorem ofStationary_admissible {p : EqualityParameters} (hp : p.Admissible shar
   have hframe := halfToAngle_frame p.w
   have hpack : SqPacking ((ofStationary p).model FiveCorner.selected) (0,0) qStar := by
     rw [ofStationary_model]
-    exact Stationary.model_sqPacking hp
-  have hT := Stationary.exterior_contained hp 4
-  have hG := Stationary.exterior_contained hp 1
+    exact ExactFamily.model_sqPacking hp
+  have hT := ExactFamily.exterior_contained hp 4
+  have hG := ExactFamily.exterior_contained hp 1
   have hη : sharpData.h₂+p.eta≤ -13/12 := by
     have h := hp.tilted_upper
     dsimp [Coordinates.etaMax] at h
@@ -774,7 +774,7 @@ theorem tilted_core_rail_recovered {p : Parameters}
   nlinarith
 
 /-- Admissible parameters of the statement give admissible parameters of
-`Stationary/Coordinates.lean` under the half-angle coordinate; the conditions of the core come
+`ExactFamily/Coordinates.lean` under the half-angle coordinate; the conditions of the core come
 from the squares of the model. -/
 theorem toStationary_admissible {p : Parameters} (hp : p.Admissible FiveCorner.selected) :
     p.toStationary.Admissible sharpData := by

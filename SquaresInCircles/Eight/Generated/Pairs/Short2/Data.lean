@@ -1,0 +1,104 @@
+module
+
+public import SquaresInCircles.Eight.Arithmetic.WordProblems
+public meta import SquaresInCircles.Eight.IntRows
+
+/-!
+# Eight squares: the data of the pair table `Short2`
+
+Its arcs, the quadratic label of each arc with its side, its problems and its
+fixed-point context, checked against the arcs once.
+-/
+
+@[expose] public section
+noncomputable section
+namespace SquaresInCircles.Eight.Generated.Pairs.Short2
+open Arithmetic Arithmetic.PairCover
+
+set_option maxRecDepth 100000
+
+/-- The arcs of the table. The fields `cuts`, `word`, `differenceRange` and `allowedAxes` serve
+the state and angle covers of the affine tables; the pair tables use coverage trees instead. -/
+def table : AffineTableMeta :=
+  { radius := (9789/2500)
+    arcs := [
+      ⟨0, 2, true, false, ⟨0, 1⟩, ⟨(-2623/100000), (9133/100000), (-44037/50000)⟩⟩,
+      ⟨1, 3, true, false, ⟨0, 1⟩, ⟨(25433/50000), (-33147/100000), (-1417/1250)⟩⟩,
+      ⟨2, 2, true, false, ⟨0, (1/2)⟩, ⟨(-2623/100000), (9133/100000), (-44037/50000)⟩⟩,
+      ⟨3, 3, true, false, ⟨0, (1/8)⟩, ⟨(25433/50000), (-33147/100000), (-1417/1250)⟩⟩,
+      ⟨4, 2, true, false, ⟨(1/2), (3/4)⟩, ⟨(-2623/100000), (9133/100000), (-44037/50000)⟩⟩,
+      ⟨5, 2, true, false, ⟨(3/4), 1⟩, ⟨(-2623/100000), (9133/100000), (-44037/50000)⟩⟩,
+      ⟨6, 3, true, false, ⟨0, (1/16)⟩, ⟨(25433/50000), (-33147/100000), (-1417/1250)⟩⟩,
+      ⟨7, 3, true, false, ⟨(1/16), (1/8)⟩, ⟨(25433/50000), (-33147/100000), (-1417/1250)⟩⟩,
+      ⟨8, 3, true, false, ⟨(1/8), (1/4)⟩, ⟨(25433/50000), (-33147/100000), (-1417/1250)⟩⟩,
+      ⟨9, 3, true, false, ⟨(1/4), (1/2)⟩, ⟨(25433/50000), (-33147/100000), (-1417/1250)⟩⟩,
+      ⟨10, 3, true, false, ⟨(1/2), 1⟩, ⟨(25433/50000), (-33147/100000), (-1417/1250)⟩⟩,
+      ⟨11, 3, true, false, ⟨0, (1/4)⟩, ⟨(25433/50000), (-33147/100000), (-1417/1250)⟩⟩,
+      ⟨12, 3, true, true, ⟨0, 1⟩, ⟨(-68803/100000), (25777/50000), (119909/100000)⟩⟩,
+      ⟨13, 2, true, false, ⟨(1/2), 1⟩, ⟨(-2623/100000), (9133/100000), (-44037/50000)⟩⟩,
+      ⟨14, 3, false, false, ⟨0, (6/7)⟩, ⟨(-777/5000), 0, (-251/400)⟩⟩,
+      ⟨15, 3, false, true, ⟨0, (6/7)⟩, ⟨(4149/100000), 0, (104729/100000)⟩⟩,
+      ⟨16, 3, false, false, ⟨(6/7), 1⟩, ⟨(-777/5000), 0, (-251/400)⟩⟩,
+      ⟨17, 3, false, true, ⟨(6/7), 1⟩, ⟨(4149/100000), 0, (104729/100000)⟩⟩,
+      ⟨18, 2, false, false, ⟨0, (6/7)⟩, ⟨(73/625), 0, (-22771/20000)⟩⟩,
+      ⟨19, 2, false, false, ⟨(6/7), 1⟩, ⟨(73/625), 0, (-22771/20000)⟩⟩]
+    cuts := fun _ => ⟨0, 1⟩
+    word := fun _ => 0
+    charge := fun _ => 0
+    target := fun _ => (359/400)
+    differenceRange := fun _ => ⟨0, 1⟩
+    allowedAxes := fun _ => [] }
+
+/-- For each arc, the quadratic label its affine label bounds: below (`true`, a source arc) or
+above (`false`, a target arc). -/
+def specs : List (QuadLabel × Bool) := [
+  (⟨(-2623/100000), (-2623/100000), (9133/100000), (-44037/50000), 0, 0⟩, true),
+  (⟨(25433/50000), (25433/50000), (-33147/100000), (-1417/1250), 0, 0⟩, false),
+  (⟨(-2623/100000), (-2623/100000), (9133/100000), (-44037/50000), 0, 0⟩, true),
+  (⟨(25433/50000), (25433/50000), (-33147/100000), (-1417/1250), 0, 0⟩, false),
+  (⟨(-2623/100000), (-2623/100000), (9133/100000), (-44037/50000), 0, 0⟩, true),
+  (⟨(-2623/100000), (-2623/100000), (9133/100000), (-44037/50000), 0, 0⟩, true),
+  (⟨(25433/50000), (25433/50000), (-33147/100000), (-1417/1250), 0, 0⟩, false),
+  (⟨(25433/50000), (25433/50000), (-33147/100000), (-1417/1250), 0, 0⟩, false),
+  (⟨(25433/50000), (25433/50000), (-33147/100000), (-1417/1250), 0, 0⟩, false),
+  (⟨(25433/50000), (25433/50000), (-33147/100000), (-1417/1250), 0, 0⟩, false),
+  (⟨(25433/50000), (25433/50000), (-33147/100000), (-1417/1250), 0, 0⟩, false),
+  (⟨(25433/50000), (25433/50000), (-33147/100000), (-1417/1250), 0, 0⟩, false),
+  (⟨(-68803/100000), (-68803/100000), (25777/50000), (119909/100000), 0, 0⟩, false),
+  (⟨(-2623/100000), (-2623/100000), (9133/100000), (-44037/50000), 0, 0⟩, true),
+  (⟨(-777/5000), (-777/5000), 0, (-251/400), 0, 0⟩, false),
+  (⟨(4149/100000), (4149/100000), 0, (104729/100000), 0, 0⟩, false),
+  (⟨(-777/5000), (-777/5000), 0, (-251/400), 0, 0⟩, false),
+  (⟨(4149/100000), (4149/100000), 0, (104729/100000), 0, 0⟩, false),
+  (⟨(73/625), (73/625), 0, (-22771/20000), 0, 0⟩, true),
+  (⟨(73/625), (73/625), 0, (-22771/20000), 0, 0⟩, true)]
+
+/-- The problems of the table: `wrongPairProblem .short 2 ks kt σ τ j` for the cases
+`(ks, kt, σ, τ, j)` of `wrongCases .short 2`, in order. -/
+def problems : List PairProblem :=
+  (WordGeometry.wrongCases .short 2).map fun c =>
+    WordGeometry.wrongPairProblem .short 2 c.1 c.2.1 c.2.2.1 c.2.2.2.1 c.2.2.2.2
+
+def ctx : TableCtx :=
+  ⟨100000000, 20,
+    [int_rows% "../../../../../data/eight/pairs/short_2.arcs" 8 28 ↦
+        ArcBox.ofData],
+    int_rows% "../../../../../data/eight/pairs/short_2.arcs" 1 8 ↦
+      fun (a b _c _d : Int) => (⟨a, b⟩ : Fixed.FI),
+    int_rows% "../../../../../data/eight/pairs/short_2.arcs" 1 8 ↦
+      fun (_a _b c d : Int) => (⟨c, d⟩ : Fixed.FI)⟩
+
+theorem ctx_scalars : ctx.checkScalars table = true := by decide +kernel
+
+theorem ctx_boxes_0 : boxesRange table.radius table.arcs ctx.boxes 0 20 = true := by
+  decide +kernel
+
+theorem ctx_valid : ctx.Valid table :=
+  TableCtx.valid_of ctx_scalars (blocks := [(0, 20)]) (by decide +kernel)
+    (by simp only [AllBlocks]; exact
+      ⟨ctx_boxes_0, trivial⟩)
+
+theorem labels_check : labelsCheck table.radius ctx.boxes 0 table.arcs specs = true := by
+  decide +kernel
+
+end SquaresInCircles.Eight.Generated.Pairs.Short2

@@ -1,7 +1,7 @@
 module
 
 public import SquaresInCircles.Eight.Construction
-public import SquaresInCircles.Eight.Equality.SharpEquality
+public import SquaresInCircles.Eight.TableProof
 public import SquaresInCircles.Common.Optimum
 
 /-!
@@ -12,17 +12,17 @@ and every packing in the disk of radius `radius` is congruent to one of
 `models`: the five squares with a corner on the circle are fixed, `T` and `G`
 slide, and the central square moves and turns in the room they leave.
 
-The proof works in the stationary chart of `Stationary`. The radius of the
+The proof works in the stationary chart of `ExactFamily`. The radius of the
 five-corner problem is its radius `√qStar` (`FiveCorner.radius_eq_stationary`),
 and the admissible models, those with the central square around the disk
-centre, are its models (`models_eq_stationary`). The boundary of the seven
-exterior squares of a packing is excluded except at the stationary frames
-(`Equality/SharpAssembly.lean`), which gives the lower bound; at those
-frames the stationary identity fixes the five squares on the circle and leaves
-the two sliders and the central square free
-(`Equality/SharpEquality.lean`).
+centre, are its models (`models_eq_stationary`). The checked pair and owner
+tables capture the boundary frames near the stationary configuration
+(`TableProof.lean`). The terminal identity then gives the lower bound and
+fixes the five anchor squares, leaving the two sliders and the central square
+free. The geometric family is connected to that stationary family by
+`models_eq_stationary`.
 
-The file ends with `optimum`: the case as an `Optimum`.
+The file provides `optimum`, the case as an `Optimum`, and its public corollaries.
 -/
 
 @[expose] public section
@@ -55,14 +55,14 @@ theorem admissibleModels_subset : admissibleModels ⊆ models := by
 theorem lower_bound {S : Fin 8 → UnitSquare} {o : Point} {R : ℝ}
     (hp : Packing S o R) : radius ≤ R := by
   rw [radius_eq_stationary]
-  exact sharp_radius_lower_bound hp
+  exact table_lower_bound S o R hp
 
 /-- Every packing in the disk of radius `radius` is congruent to one of
 `models`. -/
 theorem uniqueness (S : Fin 8 → UnitSquare) (o : Point)
     (hp : Packing S o radius) : ∃ M ∈ models, Congruent S o M := by
   rw [radius_eq_stationary] at hp
-  obtain ⟨M, hM, hcongruent⟩ := sharp_uniqueness hp
+  obtain ⟨M, hM, hcongruent⟩ := table_uniqueness S o hp
   exact ⟨M, admissibleModels_subset (models_eq_stationary.symm ▸ hM), hcongruent⟩
 
 /-- Every model reaches the circle, at a corner of one of the five fixed
@@ -86,5 +86,29 @@ def optimum : Optimum 8 where
   model_packing _ hM := hM.choose_spec.2
   model_reaches := models_reach
   uniqueness := uniqueness
+
+theorem radius_sq : radius ^ 2 = ExactFamily.qStar := by
+  rw [radius_eq_stationary]
+  exact stationaryRadius_sq
+
+theorem radius_pos : 0 < radius := by
+  rw [radius_eq_stationary]
+  exact stationaryRadius_pos
+
+theorem isLeast : IsLeast
+    {R : ℝ | ∃ (S : Fin 8 → UnitSquare) (o : Point), Packing S o R} radius :=
+  optimum.isLeast
+
+theorem packing_iff (S : Fin 8 → UnitSquare) (o : Point) :
+    Packing S o radius ↔ ∃ M ∈ models, Congruent S o M :=
+  optimum.packing_iff S o
+
+/-- The same optimal family in the stationary coordinates used by the tables. -/
+theorem equality_iff_parameters (S : Fin 8 → UnitSquare) (o : Point) :
+    Packing S o radius ↔ ∃ reflected : Bool, ∃ p : ExactFamily.EqualityParameters,
+      p.Admissible ExactFamily.sharpData ∧
+        Congruent S o (stationaryReflectedModel reflected p) := by
+  rw [radius_eq_stationary]
+  exact table_equality_iff_parameters S o
 
 end SquaresInCircles.Eight
