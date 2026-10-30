@@ -46,6 +46,14 @@ The closed counts do not measure the fraction of mathematical effort.
 
 Latest completed work:
 
+- A [universal two-loaded exclusion](TWO_LOADED_COMPONENT_EXCLUSION.md)
+  covers every graph and every b. A planar reciprocal-force argument
+  forces all contact forces parallel; torque and the radius window give
+  two S columns at squared radius 17/4, whose total capacity is at most
+  nine. Remaining components have at least three loaded bodies.
+- [Outer-center exposure](OUTER_CENTER_EXPOSURE_AND_WIDTH_TWO_UNIQUENESS.md)
+  permits at most one distinct actual-SS or effective-width-two endpoint
+  pair in the whole selected graph, independent of loaded count.
 - Every whole five-cycle is hand excluded for the selected certificate.
   [C19](DIAGONAL_FIVE_CYCLE_EXCLUSION.md) uses generic contact normals
   and the reviewed nearer-endpoint obstruction.
@@ -88,12 +96,14 @@ Latest completed work:
 | C05: branching mixed components | Exclude 3,134 remaining b=0 records and 139,799 remaining b=1 records; classify or exclude b>=2. |
 | C20: 33 larger-cycle entries | Prove completion bounds or contact exclusions for the explicit remaining signatures in CYCLE_CASES.md. |
 
-The remaining branching range is finite: `2<=k<=7`, `2<=b<=10-k`,
-hence `b<=8` (27 parameter pairs). Work is focused on structural arguments
+The remaining branching range is finite: `3<=k<=7`, `2<=b<=10-k`,
+hence `b<=7` (20 parameter pairs). Work is focused on structural arguments
 covering all these pairs, rather than adding larger catalogs. The
 [two-neighbor branch theorem](TWO_NEIGHBOR_UNLOADED_BRANCH_RESTRICTIONS.md)
 is such a universal restriction: at most one unloaded retained vertex
-has only two distinct retained neighbors. It is not a closure of C05.
+has only two distinct retained neighbors. It is not a closure of C05. There is no plan to handle successive loaded
+counts as separate catalogs; the priority is one structural or completion
+argument for the remaining mixed family.
 
 The open `LSLSLD` signature now has a
 [reproducible numerical six-body candidate](ONE_DIAGONAL_TWO_SIDE_COMPONENT_CANDIDATE.md)

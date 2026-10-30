@@ -83,8 +83,8 @@
       "id": "C05",
       "status": "open",
       "title": "Mixed cyclic component whose whole graph is not a simple cycle",
-      "scope": "Includes branching cyclic blocks and bridges. Fixed catalogs cover b=0 (45,666 records: 3,134 remain) and b=1 (524,870 records: 139,799 remain). The complete k=2,b=1 stratum is excluded. At least two unloaded retained branch vertices remain unclassified.",
-      "evidence": "BRANCHING_ONE_UNLOADED_FILTERS.md"
+      "scope": "Includes branching cyclic blocks and bridges. A universal hand theorem excludes exactly two loaded bodies for every b, so every remaining component has at least three loads. Existing fixed catalogs retain b=0 (3,134 remaining of 45,666) and b=1 (139,799 remaining of 524,870); b>=2 is one bounded remaining family. At most one distinct SS/effective-width-two endpoint pair occurs in the whole selected graph.",
+      "evidence": "OUTER_CENTER_EXPOSURE_AND_WIDTH_TWO_UNIQUENESS.md"
     },
     {
       "id": "C06",

@@ -36,7 +36,7 @@ lemma that does not close its family. All lower-bound cases below concern
 | C02 | HAND CLOSED | **Seven loaded bodies with a common signed frame offset.** Includes the smooth uniform ring and the radial-side/diagonal endpoints. [Proof / reduction](REGULAR_SEVEN_LOADED_RING.md). |
 | C03 | HAND CLOSED | **Nonuniform strict one-chirality seven-ring.** After C02: the fixed side/vertex pattern, allowing reflection and cyclic relabeling. A hand cap theorem traps all three inner squares below the three-square minimum radius. [Proof / reduction](SEVEN_RING_RADIAL_CAP_BOUND.md). |
 | C04 | HAND CLOSED | **Other seven-loaded-ring contact ownership.** For the jointly selected certificate, outer-row extra corners have squared norm below 33/20. The enlarged core boundary and all SS/SV/VS/VV caps place the three inner squares below squared radius 83/50, contradicting 425/256. This closes every loaded seven-ring ownership pattern. [Proof / reduction](SEVEN_RING_COMPLETE_CAPACITY.md). |
-| C05 | OPEN | **Mixed cyclic component whose whole graph is not a simple cycle.** Includes branching cyclic blocks and bridges. Fixed catalogs cover b=0 (45,666 records: 3,134 remain) and b=1 (524,870 records: 139,799 remain). The complete k=2,b=1 stratum is excluded. At least two unloaded retained branch vertices remain unclassified. [Proof / reduction](BRANCHING_ONE_UNLOADED_FILTERS.md). |
+| C05 | OPEN | **Mixed cyclic component whose whole graph is not a simple cycle.** Includes branching cyclic blocks and bridges. A universal hand theorem excludes exactly two loaded bodies for every b, so every remaining component has at least three loads. Existing fixed catalogs retain b=0 (3,134 remaining of 45,666) and b=1 (139,799 remaining of 524,870); b>=2 is one bounded remaining family. At most one distinct SS/effective-width-two endpoint pair occurs in the whole selected graph. [Proof / reduction](OUTER_CENTER_EXPOSURE_AND_WIDTH_TWO_UNIQUENESS.md). |
 | C06 | HAND CLOSED | **Mixed simple cycle of length at most four.** All load assignments. [Proof / reduction](CYCLIC_STRESS_REDUCTIONS.md). |
 | C07 | HAND CLOSED | **Mixed simple cycle of length at least five with at most two loads.** The two-terminal transmission-path theorem applies to a whole simple cycle. [Proof / reduction](CYCLIC_STRESS_REDUCTIONS.md). |
 | C08 | HAND CLOSED | **Five-cycle with three loads and adjacent unloaded bodies.** The middle loaded body touches every other loaded body. [Proof / reduction](CYCLIC_STRESS_REDUCTIONS.md). |
@@ -81,8 +81,10 @@ at most one outside neighbor is impossible by the force-sum argument. This
 excludes zero or one loaded body in a component with other bodies. An
 isolated loaded body is also impossible: balanced circle loads would put
 zero in the convex hull of its circle vertices, contrary to its diameter
-and the radius window. In particular, **two loaded
-bodies remain allowed in the branching family C05**.
+and the radius window. The new
+[two-loaded component theorem](TWO_LOADED_COMPONENT_EXCLUSION.md) excludes
+exactly two loaded bodies as well, for every graph and every b. Every
+remaining positive component therefore has at least three loaded bodies.
 
 Choose any one nonzero positive component and follow this tree. Tests at
 each node are ordered, so a configuration belongs to one terminal family.
@@ -152,7 +154,7 @@ stated in the linked proof:
 
 | Family | Next result needed |
 | --- | --- |
-| C05: branching mixed components | Classify or exclude the connected cyclic graphs that are not whole simple cycles, including bridge attachments and exactly two loaded bodies. |
+| C05: branching mixed components | Classify or exclude the connected cyclic graphs that are not whole simple cycles, including bridge attachments, with at least three loaded bodies. |
 | C20: larger mixed simple cycles | Exclude the [279 enumerated graph/transmitter cases](CYCLE_CASES.md), refining physical contact ownership where needed. |
 
 The recently proved two-row, block, cap, channel, and corner-moment lemmas
@@ -178,7 +180,7 @@ planar certificate used in the remaining mixed-component families.
 
 **C05, branching mixed graphs.** A precise finite envelope consists of
 `m<=10` labeled vertices, an edge mask in `{0,1}^{m choose 2}`, and a loaded
-subset of size `2..min(7,m-1)`. Keep connected graphs containing a cycle
+subset of size `3..min(7,m-1)`. Keep connected graphs containing a cycle
 and at least one vertex of degree at least three. Contacts retain their
 vertex/side incidence and physical force witnesses. This includes cyclic
 blocks joined by bridges. The degree-two S/D reduction applies only to
@@ -205,8 +207,8 @@ be exported from regenerated catalogs. At least two unloaded retained
 vertices (`b>=2`) remain outside both catalogs. Neither partial
 classification closes C05.
 
-This remaining family is bounded: `2<=k<=7` and `2<=b<=10-k`, so
-`b<=8` and only 27 pairs `(k,b)` are possible. Every skeleton has at most
+This remaining family is bounded: `3<=k<=7` and `2<=b<=10-k`, so
+`b<=7` and only 20 pairs `(k,b)` are possible. Every skeleton has at most
 ten retained vertices and the fixed seven-symbol edge alphabet. There is
 no unbounded sequence of strata. The research priority is now to prove
 restrictions across this entire remaining family, rather than build
@@ -215,6 +217,12 @@ successively larger catalogs. The
 already applies to every b: such branch vertices form an independent set,
 cannot repeat a neighbor pair, and obey `k+b+2r<=10`. In particular there
 is at most one in the entire selected component, and none when `k+b>=9`.
+The stronger [outer-center exposure theorem](OUTER_CENTER_EXPOSURE_AND_WIDTH_TWO_UNIQUENESS.md)
+allows at most one distinct endpoint pair among all actual SS paths and
+effective width-two connections in the whole graph. These are universal
+restrictions, not a plan to prove separate theorems for each successive
+loaded count. The remaining goal is a structural or completion-capacity
+argument covering the mixed family together.
 
 **C20 is already enumerated.** [CYCLE_CASES.md](CYCLE_CASES.md) lists all
 279 stable case IDs and their canonical words. Independent enumerations and
