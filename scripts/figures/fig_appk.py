@@ -5,8 +5,8 @@ files in docs/proof/figures/appendix-k/.
     python3 scripts/figures/fig_appk.py
 
 The arcs of the circles about o in a square are computed exactly, from the
-crossings of each circle with the sides; the polynomials of Lemma K.4 and their
-Bernstein coefficients in exact rational arithmetic; the blocked directions of
+crossings of each circle with the sides; the polynomials of Lemma K.4, the Bernstein
+coefficients of P and the quadratic lower bound of V in exact rational arithmetic; the blocked directions of
 Lemma K.5 from their definition. Each drawing asserts the facts its caption
 states.
 """
@@ -279,8 +279,6 @@ TABLE_SEGMENT_P = {(Fr(0), Fr(1, 4)): [8011, 14261, 20852, 24921, 25307, 22675,
                                           19695],
                    (Fr(1, 2), Fr(1)): [19695, 44218, 99921, 199778, 334345,
                                        418333, 180000]}
-TABLE_SEGMENT_V = {(Fr(0), Fr(3, 14)): [150000, 105357, 66071, 39112, 29658],
-                   (Fr(3, 14), Fr(3, 7)): [29658, 20203, 28253, 58985, 115785]}
 TABLE_BAND_A_P = {(Fr(7, 16), Fr(1, 2)): [1375, 566, 120, 76, 471, 1339, 2709]}
 
 
@@ -299,7 +297,14 @@ def polys():
     P, V = band_polys(*SEGMENT)
     assert len(P) == 7 and len(V) == 5
     rowsP = check_rows(P, TABLE_SEGMENT_P)
-    rowsV = check_rows(V, TABLE_SEGMENT_V)
+    # V(u) >= V(1/4) + V'(1/4) (u-1/4) + (3/2) (u-1/4)^2.
+    b = peval(V, Fr(1, 4))
+    m = peval([i * a for i, a in enumerate(V)][1:], Fr(1, 4))
+    assert m*m < 6*b
+    lower = lambda x: b + m*(x-Fr(1, 4)) + Fr(3, 2)*(x-Fr(1, 4))**2
+    for i in range(401):
+        x = Fr(3, 7)*i/400
+        assert 0 < lower(x) <= peval(V, x)
     for poly, top in ((P, Fr(1)), (V, Fr(3, 7))):
         for i in range(401):
             assert peval(poly, top * i / 400) > 0
@@ -308,7 +313,7 @@ def polys():
     ky = 2.7 / (LOG1 - LOG0)
     Y = lambda v: 0.15 + ky * (math.log10(float(v) * 1e6) - LOG0)
 
-    def panel(ox, width, top, poly, rows, name):
+    def panel(ox, width, top, poly, rows, name, quadratic=None):
         kx = width / float(top)
         X = lambda x: ox + kx * float(x)
         f.line((X(0), 0.15), (X(top) + 0.15, 0.15), width=1, arrow=True)
@@ -330,17 +335,20 @@ def polys():
         xs = [float(top) * i / 300 for i in range(301)]
         polyline(f, [(X(x), Y(peval(poly, Fr(x)))) for x in xs], stroke=BLUE,
                  width=2)
-        ticks = sorted({0} | {r for (l, r) in rows})
+        if quadratic is not None:
+            polyline(f, [(X(x), Y(quadratic(Fr(x)))) for x in xs], stroke=ORANGE,
+                     width=1.4)
+        ticks = sorted({Fr(0), top} | {r for (l, r) in rows})
         for t in ticks:
             lab = str(t) if t.denominator == 1 else f'{t.numerator}/{t.denominator}'
             f.text((X(t), -0.05), lab, size=12, italic=False)
         f.text((X(top) + 0.15, 0.3), it('u'), size=15, anchor='end')
         f.text((X(top) / 2 + ox / 2, 2.95), name, size=14, italic=False)
     panel(0.75, 3.0, Fr(1), P, rowsP, it('P') + ' (segment case)')
-    panel(4.75, 2.8, Fr(3, 7), V, rowsV, it('V') + ' (segment case)')
+    panel(4.75, 2.8, Fr(3, 7), V, {}, it('V') + ' (segment case)', lower)
     f.save('appendix-k/polys', 'The polynomials P and V of the segment case of '
-           'Lemma K.4 on a logarithmic scale, with their Bernstein control '
-           'points on the cells of Table K.2, all positive')
+           'Lemma K.4 on a logarithmic scale, with the positive Bernstein control '
+           'points of P and the positive quadratic lower bound of V')
 
 
 # ---------------------------------------------------------- the segment V

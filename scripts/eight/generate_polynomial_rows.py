@@ -4,11 +4,13 @@
     python3 -I scripts/eight/generate_polynomial_rows.py [--root ROOT]
 
 In SquaresInCircles/Eight/CentralCore.lean (namespace `CentralBand`) the positivity of the
-polynomials `centralBandP C D` on [0, 1] and `centralBandV A C D` on [0, 3/7] of
-SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean, in the half-angle tangent u, gives
-the bounds `primary_upper` and `secondary_upper`, from which `transverse_segment_sides`,
-`bandA_sides` and `bandB_sides` derive the side inequalities of a square, each for its own
-parameters. The script expands each of these six polynomials in powers of u, cuts its interval
+polynomials `centralBandP C D` on [0, 1] of
+SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean, in the half-angle tangent u,
+gives the bound `primary_upper`. Together with `secondary_upper`, it gives the side inequalities
+of a square in `transverse_segment_sides`, `bandA_sides` and `bandB_sides`, each for its own
+parameters. The polynomials `centralBandV A C D` used by `secondary_upper` are proved positive
+by completing a square in Lean and need no rows. The script expands each of the P polynomials
+in powers of u, cuts its interval
 into pieces, and computes on each piece the exact Bernstein coefficients of the expansion, with
 the margin half the least of them. It writes the rows to
 SquaresInCircles/Eight/Generated/WholePairPolynomialsNNN.lean, 24 to a module, each with a theorem
@@ -65,46 +67,39 @@ def pscale(c, a):
     return [rat(c) * x for x in a]
 
 
-# the Lean names of the six polynomials (Arithmetic/CentralBandPolynomials.lean) and the theorems
+# the Lean names of the three polynomials (Arithmetic/CentralBandPolynomials.lean) and the theorems
 # of CentralCore.lean that use them
-LEAN_NAMES = {('segment', 'P'): 'centralBandP (11/12) (7/20)',
-              ('segment', 'V'): 'centralBandV (1/2) (11/12) (7/20)',
-              ('bandA', 'P'): 'centralBandP bandA_Cminus bandA_D',
-              ('bandA', 'V'): 'centralBandV (5007/10000) bandA_Cplus bandA_D',
-              ('bandB', 'P'): 'centralBandP bandB_Cminus bandB_D',
-              ('bandB', 'V'): 'centralBandV (107/200) bandB_Cplus bandB_D'}
+LEAN_NAMES = {'segment': 'centralBandP (11/12) (7/20)',
+              'bandA': 'centralBandP bandA_Cminus bandA_D',
+              'bandB': 'centralBandP bandB_Cminus bandB_D'}
 USED_BY = {'segment': 'transverse_segment_sides', 'bandA': 'bandA_sides', 'bandB': 'bandB_sides'}
 
 
 def central_band_rows():
-    """The rows: for each set of parameters the polynomials P = `centralBandP C₋ D` and
-    V = `centralBandV A C₊ D` in u, with z = 1 + u², c = 1 - u², s = 2u, on the pieces of the cuts
-    of [0, 1] for P and of [0, 3/7] for V. Each row is (declaration, docstring, label, polynomial,
+    """The rows: for each set of parameters the polynomial P = `centralBandP C₋ D`
+    in u, with z = 1 + u², c = 1 - u², s = 2u, on the pieces of a cut of [0, 1].
+    Each row is (declaration, docstring, label, polynomial,
     piece, degree)."""
     z = [Q(1), Q(0), Q(1)]
     c = [Q(1), Q(0), Q(-1)]
     s = [Q(0), Q(2)]
-    # (name, A, C₋, C₊, D, cuts of [0, 1] for P, cuts of [0, 3/7] for V)
-    specs = [('segment', Q(1, 2), Q(11, 12), Q(11, 12), Q(7, 20), ['0', '1/4', '1/2', '1'],
-              ['0', '3/14', '3/7']),
-             ('bandA', Q(5007, 10000), Q(10007, 10000) * Q(9308368, 10 ** 7),
-              Q(10007, 10000) * Q(9308369, 10 ** 7), Q(10007, 10000) * Q(365435, 10 ** 6),
-              ['0', '1/4', '3/8', '7/16', '1/2', '1'], ['0', '3/14', '9/28', '3/7']),
-             ('bandB', Q(107, 200), Q(41, 40) * Q(9286, 10000), Q(41, 40) * Q(9287, 10000),
-              Q(41, 40) * Q(371, 1000), ['0', '1/2', '1'], ['0', '3/14', '15/56', '9/28', '3/7'])]
+    # (name, C₋, D, cuts of [0, 1] for P)
+    specs = [('segment', Q(11, 12), Q(7, 20), ['0', '1/4', '1/2', '1']),
+             ('bandA', Q(10007, 10000) * Q(9308368, 10 ** 7),
+              Q(10007, 10000) * Q(365435, 10 ** 6),
+              ['0', '1/4', '3/8', '7/16', '1/2', '1']),
+             ('bandB', Q(41, 40) * Q(9286, 10000),
+              Q(41, 40) * Q(371, 1000), ['0', '1/2', '1'])]
     out = []
-    for name, A, Cm, Cp, D, pcuts, vcuts in specs:
+    for name, Cm, D, pcuts in specs:
         H = padd(padd(pscale(Q(1, 2), z), pscale(Cm, c)), pscale(-D, s))
         P = padd(padd(pmul(pmul(H, H), z), pmul(pmul(H, c), padd(c, s))),
                  pscale(Q(1, 2) - Q(9789, 2500), pmul(pmul(c, c), z)))
-        V = padd(padd(pscale(Q(1, 2), pmul(c, z)), pscale(A, pmul(s, z))),
-                 padd(pscale(-Cp, pmul(s, c)), pscale(-D, pmul(c, c))))
-        for letter, poly, cuts in [('P', P, pcuts), ('V', V, vcuts)]:
-            for i, (lo, hi) in enumerate(zip(cuts, cuts[1:])):
-                out.append((f'central_{name}_{letter}{i}',
-                            f'The polynomial `{LEAN_NAMES[name, letter]}` for `{USED_BY[name]}`,\n'
-                            f'expanded in powers of `u`, on `[{lo}, {hi}]`.',
-                            f'{name} {letter}, row {i}', poly, [lo, hi], len(poly) - 1))
+        for i, (lo, hi) in enumerate(zip(pcuts, pcuts[1:])):
+            out.append((f'central_{name}_P{i}',
+                        f'The polynomial `{LEAN_NAMES[name]}` for `{USED_BY[name]}`,\n'
+                        f'expanded in powers of `u`, on `[{lo}, {hi}]`.',
+                        f'{name} P, row {i}', P, [lo, hi], len(P) - 1))
     return out
 
 
@@ -112,15 +107,17 @@ HEADER = ['module', '', 'public import SquaresInCircles.Eight.Arithmetic.Bernste
           '/-!',
           '# Eight squares: the polynomial rows of the central band',
           '',
-          'The polynomials `centralBandP` and `centralBandV` of',
+          'The polynomials `centralBandP` of',
           '`Arithmetic/CentralBandPolynomials.lean` for `transverse_segment_sides`, `bandA_sides`',
           'and `bandB_sides` of `CentralCore.lean`, expanded in powers of the half-angle tangent',
-          '`u`, each on the pieces of a cut of its interval: `[0, 1]` for `centralBandP` and',
-          '`[0, 3/7]` for `centralBandV`. A row (`Arithmetic.BernsteinRow`) holds the expansion,',
+          '`u`, each on the pieces of a cut of `[0, 1]`.',
+          'A row (`Arithmetic.BernsteinRow`) holds the expansion,',
           'the piece and the exact Bernstein coefficients there. The kernel checks each row by',
           '`BernsteinRow.check` (`_valid`), and its positive coefficients make the polynomial',
           'positive on the piece (`_positive`). `Arithmetic/CentralBandPolynomials.lean`',
-          'identifies each expansion with its polynomial and joins the pieces. Written by',
+          'identifies each expansion with its polynomial and joins the pieces.',
+          'The polynomials `centralBandV` instead use a quadratic lower bound and a completed square.',
+          'Written by',
           '`scripts/eight/generate_polynomial_rows.py`.',
           '-/', '',
           '@[expose] public section', 'noncomputable section', 'open scoped BigOperators',
@@ -168,7 +165,7 @@ def main():
         + '\n/-!\n# Eight squares: the polynomial rows of the central band\n\n'
           'The polynomial rows of the central band, gathered from their modules;\n'
           '`Arithmetic/CentralBandPolynomials.lean` identifies them with the polynomials\n'
-          '`centralBandP` and `centralBandV`. Written by\n'
+          '`centralBandP`. Written by\n'
           '`scripts/eight/generate_polynomial_rows.py`.\n'
           '-/\n')
     (output / 'polynomial_generation_index.json').write_text(json.dumps(

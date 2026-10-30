@@ -5,15 +5,17 @@ public import SquaresInCircles.Eight.Arithmetic.BernsteinCheck
 /-!
 # Eight squares: the polynomial rows of the central band
 
-The polynomials `centralBandP` and `centralBandV` of
+The polynomials `centralBandP` of
 `Arithmetic/CentralBandPolynomials.lean` for `transverse_segment_sides`, `bandA_sides`
 and `bandB_sides` of `CentralCore.lean`, expanded in powers of the half-angle tangent
-`u`, each on the pieces of a cut of its interval: `[0, 1]` for `centralBandP` and
-`[0, 3/7]` for `centralBandV`. A row (`Arithmetic.BernsteinRow`) holds the expansion,
+`u`, each on the pieces of a cut of `[0, 1]`.
+A row (`Arithmetic.BernsteinRow`) holds the expansion,
 the piece and the exact Bernstein coefficients there. The kernel checks each row by
 `BernsteinRow.check` (`_valid`), and its positive coefficients make the polynomial
 positive on the piece (`_positive`). `Arithmetic/CentralBandPolynomials.lean`
-identifies each expansion with its polynomial and joins the pieces. Written by
+identifies each expansion with its polynomial and joins the pieces.
+The polynomials `centralBandV` instead use a quadratic lower bound and a completed square.
+Written by
 `scripts/eight/generate_polynomial_rows.py`.
 -/
 
@@ -61,32 +63,6 @@ theorem central_segment_P2_valid : central_segment_P2.Valid (2521/256000) :=
 theorem central_segment_P2_positive {x : ℝ} (hx : ((1/2) : ℝ) ≤ x ∧ x ≤ 1) :
     0 < central_segment_P2.polynomial.eval x :=
   central_segment_P2_valid.positive_of_eq (by norm_num) rfl (by push_cast; exact hx)
-/-- The polynomial `centralBandV (1/2) (11/12) (7/20)` for `transverse_segment_sides`,
-expanded in powers of `u`, on `[0, 3/14]`. -/
-def central_segment_V0 : Arithmetic.BernsteinRow :=
-  { interval := ⟨0,(3/14)⟩
-    polynomial := [(3/20), (-5/6), (7/10), (17/6), (-17/20)]
-    degree := 4
-    coefficients := [(3/20), (59/560), (37/560), (4293/109760), (22787/768320)] }
-
-theorem central_segment_V0_valid : central_segment_V0.Valid (22787/1536640) :=
-  Arithmetic.BernsteinRow.valid_of_check (by decide +kernel)
-theorem central_segment_V0_positive {x : ℝ} (hx : (0 : ℝ) ≤ x ∧ x ≤ (3/14)) :
-    0 < central_segment_V0.polynomial.eval x :=
-  central_segment_V0_valid.positive_of_eq (by norm_num) rfl (by push_cast; exact hx)
-/-- The polynomial `centralBandV (1/2) (11/12) (7/20)` for `transverse_segment_sides`,
-expanded in powers of `u`, on `[3/14, 3/7]`. -/
-def central_segment_V1 : Arithmetic.BernsteinRow :=
-  { interval := ⟨(3/14),(3/7)⟩
-    polynomial := [(3/20), (-5/6), (7/10), (17/6), (-17/20)]
-    degree := 4
-    coefficients := [(22787/768320), (15523/768320), (5427/192080), (1133/19208), (278/2401)] }
-
-theorem central_segment_V1_valid : central_segment_V1.Valid (15523/1536640) :=
-  Arithmetic.BernsteinRow.valid_of_check (by decide +kernel)
-theorem central_segment_V1_positive {x : ℝ} (hx : ((3/14) : ℝ) ≤ x ∧ x ≤ (3/7)) :
-    0 < central_segment_V1.polynomial.eval x :=
-  central_segment_V1_valid.positive_of_eq (by norm_num) rfl (by push_cast; exact hx)
 /-- The polynomial `centralBandP bandA_Cminus bandA_D` for `bandA_sides`,
 expanded in powers of `u`, on `[0, 1/4]`. -/
 def central_bandA_P0 : Arithmetic.BernsteinRow :=
@@ -152,45 +128,6 @@ theorem central_bandA_P4_valid : central_bandA_P4.Valid (5419983821580126081/400
 theorem central_bandA_P4_positive {x : ℝ} (hx : ((1/2) : ℝ) ≤ x ∧ x ≤ 1) :
     0 < central_bandA_P4.polynomial.eval x :=
   central_bandA_P4_valid.positive_of_eq (by norm_num) rfl (by push_cast; exact hx)
-/-- The polynomial `centralBandV (5007/10000) bandA_Cplus bandA_D` for `bandA_sides`,
-expanded in powers of `u`, on `[0, 3/14]`. -/
-def central_bandA_V0 : Arithmetic.BernsteinRow :=
-  { interval := ⟨0,(3/14)⟩
-    polynomial := [(268618391/2000000000), (-43078848583/50000000000), (731381609/1000000000), (143218848583/50000000000), (-1731381609/2000000000)]
-    degree := 4
-    coefficients := [(268618391/2000000000), (246829201651/2800000000000), (2379734267/50000000000), (10800114775129/548800000000000), (18494556101093/1920800000000000)] }
-
-theorem central_bandA_V0_valid : central_bandA_V0.Valid (18494556101093/3841600000000000) :=
-  Arithmetic.BernsteinRow.valid_of_check (by decide +kernel)
-theorem central_bandA_V0_positive {x : ℝ} (hx : (0 : ℝ) ≤ x ∧ x ≤ (3/14)) :
-    0 < central_bandA_V0.polynomial.eval x :=
-  central_bandA_V0_valid.positive_of_eq (by norm_num) rfl (by push_cast; exact hx)
-/-- The polynomial `centralBandV (5007/10000) bandA_Cplus bandA_D` for `bandA_sides`,
-expanded in powers of `u`, on `[3/14, 9/28]`. -/
-def central_bandA_V1 : Arithmetic.BernsteinRow :=
-  { interval := ⟨(3/14),(9/28)⟩
-    polynomial := [(268618391/2000000000), (-43078848583/50000000000), (731381609/1000000000), (143218848583/50000000000), (-1731381609/2000000000)]
-    degree := 4
-    coefficients := [(18494556101093/1920800000000000), (7073306636131/1536640000000000), (77671165583/19208000000000), (52878472222753/6146560000000000), (578371840373027/30732800000000000)] }
-
-theorem central_bandA_V1_valid : central_bandA_V1.Valid (77671165583/38416000000000) :=
-  Arithmetic.BernsteinRow.valid_of_check (by decide +kernel)
-theorem central_bandA_V1_positive {x : ℝ} (hx : ((3/14) : ℝ) ≤ x ∧ x ≤ (9/28)) :
-    0 < central_bandA_V1.polynomial.eval x :=
-  central_bandA_V1_valid.positive_of_eq (by norm_num) rfl (by push_cast; exact hx)
-/-- The polynomial `centralBandV (5007/10000) bandA_Cplus bandA_D` for `bandA_sides`,
-expanded in powers of `u`, on `[9/28, 3/7]`. -/
-def central_bandA_V2 : Arithmetic.BernsteinRow :=
-  { interval := ⟨(9/28),(3/7)⟩
-    polynomial := [(268618391/2000000000), (-43078848583/50000000000), (731381609/1000000000), (143218848583/50000000000), (-1731381609/2000000000)]
-    degree := 4
-    coefficients := [(578371840373027/30732800000000000), (892351319632289/30732800000000000), (172523972746231/3841600000000000), (64326357702913/960400000000000), (287124070757/3001250000000)] }
-
-theorem central_bandA_V2_valid : central_bandA_V2.Valid (578371840373027/61465600000000000) :=
-  Arithmetic.BernsteinRow.valid_of_check (by decide +kernel)
-theorem central_bandA_V2_positive {x : ℝ} (hx : ((9/28) : ℝ) ≤ x ∧ x ≤ (3/7)) :
-    0 < central_bandA_V2.polynomial.eval x :=
-  central_bandA_V2_valid.positive_of_eq (by norm_num) rfl (by push_cast; exact hx)
 /-- The polynomial `centralBandP bandB_Cminus bandB_D` for `bandB_sides`,
 expanded in powers of `u`, on `[0, 1/2]`. -/
 def central_bandB_P0 : Arithmetic.BernsteinRow :=
@@ -217,56 +154,4 @@ theorem central_bandB_P1_valid : central_bandB_P1.Valid (915056701/2560000000000
 theorem central_bandB_P1_positive {x : ℝ} (hx : ((1/2) : ℝ) ≤ x ∧ x ≤ 1) :
     0 < central_bandB_P1.polynomial.eval x :=
   central_bandB_P1_valid.positive_of_eq (by norm_num) rfl (by push_cast; exact hx)
-/-- The polynomial `centralBandV (107/200) bandB_Cplus bandB_D` for `bandB_sides`,
-expanded in powers of `u`, on `[0, 3/14]`. -/
-def central_bandB_V0 : Arithmetic.BernsteinRow :=
-  { interval := ⟨0,(3/14)⟩
-    polynomial := [(4789/40000), (-166767/200000), (15211/20000), (594767/200000), (-35211/40000)]
-    degree := 4
-    coefficients := [(4789/40000), (840619/11200000), (101377/2800000), (23033761/2195200000), (25928687/7683200000)] }
-
-theorem central_bandB_V0_valid : central_bandB_V0.Valid (25928687/15366400000) :=
-  Arithmetic.BernsteinRow.valid_of_check (by decide +kernel)
-theorem central_bandB_V0_positive {x : ℝ} (hx : (0 : ℝ) ≤ x ∧ x ≤ (3/14)) :
-    0 < central_bandB_V0.polynomial.eval x :=
-  central_bandB_V0_valid.positive_of_eq (by norm_num) rfl (by push_cast; exact hx)
-/-- The polynomial `centralBandV (107/200) bandB_Cplus bandB_D` for `bandB_sides`,
-expanded in powers of `u`, on `[3/14, 15/56]`. -/
-def central_bandB_V1 : Arithmetic.BernsteinRow :=
-  { interval := ⟨(3/14),(15/56)⟩
-    polynomial := [(4789/40000), (-166767/200000), (15211/20000), (594767/200000), (-35211/40000)]
-    degree := 4
-    coefficients := [(25928687/7683200000), (98050543/61465600000), (30053507/30732800000), (1581472597/983449600000), (1401939853/393379840000)] }
-
-theorem central_bandB_V1_valid : central_bandB_V1.Valid (30053507/61465600000) :=
-  Arithmetic.BernsteinRow.valid_of_check (by decide +kernel)
-theorem central_bandB_V1_positive {x : ℝ} (hx : ((3/14) : ℝ) ≤ x ∧ x ≤ (15/56)) :
-    0 < central_bandB_V1.polynomial.eval x :=
-  central_bandB_V1_valid.positive_of_eq (by norm_num) rfl (by push_cast; exact hx)
-/-- The polynomial `centralBandV (107/200) bandB_Cplus bandB_D` for `bandB_sides`,
-expanded in powers of `u`, on `[15/56, 9/28]`. -/
-def central_bandB_V2 : Arithmetic.BernsteinRow :=
-  { interval := ⟨(15/56),(9/28)⟩
-    polynomial := [(4789/40000), (-166767/200000), (15211/20000), (594767/200000), (-35211/40000)]
-    degree := 4
-    coefficients := [(1401939853/393379840000), (1357056667/245862400000), (4327610183/491724800000), (1657823819/122931200000), (2414995853/122931200000)] }
-
-theorem central_bandB_V2_valid : central_bandB_V2.Valid (1401939853/786759680000) :=
-  Arithmetic.BernsteinRow.valid_of_check (by decide +kernel)
-theorem central_bandB_V2_positive {x : ℝ} (hx : ((15/56) : ℝ) ≤ x ∧ x ≤ (9/28)) :
-    0 < central_bandB_V2.polynomial.eval x :=
-  central_bandB_V2_valid.positive_of_eq (by norm_num) rfl (by push_cast; exact hx)
-/-- The polynomial `centralBandV (107/200) bandB_Cplus bandB_D` for `bandB_sides`,
-expanded in powers of `u`, on `[9/28, 3/7]`. -/
-def central_bandB_V3 : Arithmetic.BernsteinRow :=
-  { interval := ⟨(9/28),(3/7)⟩
-    polynomial := [(4789/40000), (-166767/200000), (15211/20000), (594767/200000), (-35211/40000)]
-    degree := 4
-    coefficients := [(2414995853/122931200000), (3929339921/122931200000), (771085879/15366400000), (287583337/3841600000), (1277993/12005000)] }
-
-theorem central_bandB_V3_valid : central_bandB_V3.Valid (2414995853/245862400000) :=
-  Arithmetic.BernsteinRow.valid_of_check (by decide +kernel)
-theorem central_bandB_V3_positive {x : ℝ} (hx : ((9/28) : ℝ) ≤ x ∧ x ≤ (3/7)) :
-    0 < central_bandB_V3.polynomial.eval x :=
-  central_bandB_V3_valid.positive_of_eq (by norm_num) rfl (by push_cast; exact hx)
 end SquaresInCircles.Eight.Generated

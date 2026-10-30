@@ -283,3 +283,16 @@ Times are rough commit times, in US Central time (UTC−5).
   default kernel, finishing with `Your solution is okay!`; its local run took
   1 hour, 1 minute and 14 seconds. The allowed axioms are `propext`, `Classical.choice` and
   `Quot.sound`.
+
+* **Three central-band inequalities by completing a square.** At the owner's
+  request for more explicit mathematical arguments, Codex (GPT-6), using the
+  same skill and no sub-agents, replaced nine generated Bernstein rows for
+  `centralBandV` with a shared quadratic lower bound at `u = 1/4`. A positive
+  completed square then proves all three inequalities. The statements and
+  hypotheses of those inequalities are unchanged. The generator and Appendix K
+  now retain only the ten rows for `centralBandP`; Appendix K gives the new
+  argument and its figure shows the quadratic lower bound.
+
+  Local validation passed the full build, the audit of all 26,541 project
+  declarations, sanity checks, documentation checks and exact regeneration of
+  the remaining rows. Only the three standard axioms occur.

@@ -17,11 +17,11 @@ Let `u ∈ [0, 1]` be the half-angle tangent of a direction `(c, s) = (cos θ, s
 Three sets of parameters occur: the transverse segment, with `C⁻ = C⁺ = 11/12`, `D = 7/20` and
 `A = 1/2`, and the bands A and B, whose constants bound `λ cos h` and `λ sin h` for
 `(λ, h) = (10007/10000, 3741/10000)` and `(41/40, 19/50)`, with the lower bounds
-`A = 5007/10000` and `A = 107/200` of the primary coordinate. Each of the six polynomials is
-positive on its interval, `[0, 1]` for `P` and `[0, 3/7]` for `V`: it is the polynomial of its
-Bernstein rows in `Generated/WholePairPolynomials000.lean` (`segment_P_identity` and the five
-like it), and its interval is split into two to five pieces, nineteen in all, each covered by a
-valid row (`Bernstein.lean`).
+`A = 5007/10000` and `A = 107/200` of the primary coordinate. Each polynomial is positive on its
+interval. For `P` on `[0, 1]`, ten Bernstein rows in `Generated/WholePairPolynomials000.lean`
+cover the three cases. For `V` on `[0, 3/7]`, expansion at `u = 1/4` gives a quadratic lower
+bound (`centralBandV_quadratic_lower`); completing a square proves positivity from its value
+and slope there (`centralBandV_positive_of_quadratic`).
 `CentralCore.lean` uses this positivity for the transverse segment (`transverse_segment_sides`)
 and for the common points of the two bands (`bandA_sides`, `bandB_sides`), and proves the bounds
 of `λ cos h` and `λ sin h` (`bandA_trig`, `bandB_trig`).
@@ -70,19 +70,9 @@ theorem segment_P_identity (u : ℝ) :
   norm_num [centralBandP,central_segment_P0,QPoly.eval]
   ring
 
-theorem segment_V_identity (u : ℝ) :
-    centralBandV (1/2) (11/12) (7/20) u = central_segment_V0.polynomial.eval u := by
-  norm_num [centralBandV,central_segment_V0,QPoly.eval]
-  ring
-
 theorem bandA_P_identity (u : ℝ) :
     centralBandP bandA_Cminus bandA_D u = central_bandA_P0.polynomial.eval u := by
   norm_num [centralBandP,bandA_Cminus,bandA_D,central_bandA_P0,QPoly.eval]
-  ring
-
-theorem bandA_V_identity (u : ℝ) :
-    centralBandV (5007/10000) bandA_Cplus bandA_D u = central_bandA_V0.polynomial.eval u := by
-  norm_num [centralBandV,bandA_Cplus,bandA_D,central_bandA_V0,QPoly.eval]
   ring
 
 theorem bandB_P_identity (u : ℝ) :
@@ -90,10 +80,46 @@ theorem bandB_P_identity (u : ℝ) :
   norm_num [centralBandP,bandB_Cminus,bandB_D,central_bandB_P0,QPoly.eval]
   ring
 
-theorem bandB_V_identity (u : ℝ) :
-    centralBandV (107/200) bandB_Cplus bandB_D u = central_bandB_V0.polynomial.eval u := by
-  norm_num [centralBandV,bandB_Cplus,bandB_D,central_bandB_V0,QPoly.eval]
-  ring
+/-- A quadratic lower bound obtained by expanding at `u = 1/4`. -/
+theorem centralBandV_quadratic_lower {A C D u : ℝ}
+    (hAC : 7/5 ≤ A+C) (hD : 7/20 ≤ D ∧ D ≤ 2/5)
+    (hu : 0 ≤ u ∧ u ≤ 3/7) :
+    centralBandV A C D (1/4) +
+        (19*A/8-13*C/8+15*D/16-1/32)*(u-1/4) +
+        (3/2)*(u-1/4)^2 ≤ centralBandV A C D u := by
+  let K := u^2+u/2+3/16
+  have hu2 : u^2 ≤ 9/49 := by
+    nlinarith [mul_nonneg hu.1 (sub_nonneg.mpr hu.2)]
+  have hK : 0 ≤ K ∧ K ≤ 3/5 := by
+    dsimp [K]
+    constructor
+    · nlinarith only [hu.1, sq_nonneg u]
+    · linarith only [hu2, hu.2]
+  have hlin : (7/5 : ℝ) ≤ (A+C)*(2*u+1) := calc
+    (7/5 : ℝ) ≤ A+C := hAC
+    _ ≤ (A+C)*(2*u+1) := le_mul_of_one_le_right (by linarith) (by linarith)
+  have hneg : (1/2+D)*K ≤ 27/50 := calc
+    (1/2+D)*K ≤ (9/10)*K := mul_le_mul_of_nonneg_right (by linarith) hK.1
+    _ ≤ 27/50 := by linarith only [hK.2]
+  have hcurv : 3/2 ≤ 2*D+(A+C)*(2*u+1)-(1/2+D)*K := by
+    linarith only [hD.1,hlin,hneg]
+  have hid : centralBandV A C D u = centralBandV A C D (1/4) +
+      (19*A/8-13*C/8+15*D/16-1/32)*(u-1/4) +
+      (u-1/4)^2*(2*D+(A+C)*(2*u+1)-(1/2+D)*K) := by
+    dsimp [centralBandV, K]
+    ring
+  rw [hid]
+  nlinarith only [mul_nonneg (sq_nonneg (u-1/4)) (sub_nonneg.mpr hcurv)]
+
+/-- Positive curvature makes the value at `1/4` and its slope control the interval. -/
+theorem centralBandV_positive_of_quadratic {A C D u : ℝ}
+    (hAC : 7/5 ≤ A+C) (hD : 7/20 ≤ D ∧ D ≤ 2/5)
+    (hmargin : (19*A/8-13*C/8+15*D/16-1/32)^2 <
+      6*centralBandV A C D (1/4))
+    (hu : 0 ≤ u ∧ u ≤ 3/7) : 0 < centralBandV A C D u := by
+  have hlower := centralBandV_quadratic_lower hAC hD hu
+  have hsquare := sq_nonneg (3*(u-1/4)+(19*A/8-13*C/8+15*D/16-1/32))
+  nlinarith only [hlower, hsquare, hmargin]
 
 /-- The polynomial `P` of the transverse segment is positive on `[0, 1]`, by three rows. -/
 theorem segment_P_positive {u : ℝ} (hu : 0 ≤ u ∧ u ≤ 1) :
@@ -105,13 +131,10 @@ theorem segment_P_positive {u : ℝ} (hu : 0 ≤ u ∧ u ≤ 1) :
     · exact central_segment_P1_positive ⟨by linarith,h₂⟩
     · exact central_segment_P2_positive ⟨by linarith,hu.2⟩
 
-/-- The polynomial `V` of the transverse segment is positive on `[0, 3/7]`, by two rows. -/
+/-- The polynomial `V` of the transverse segment is positive by completing a square. -/
 theorem segment_V_positive {u : ℝ} (hu : 0 ≤ u ∧ u ≤ 3/7) :
     0 < centralBandV (1/2) (11/12) (7/20) u := by
-  rw [segment_V_identity]
-  by_cases h : u ≤ 3/14
-  · exact central_segment_V0_positive ⟨hu.1,h⟩
-  · exact central_segment_V1_positive ⟨by linarith,hu.2⟩
+  apply centralBandV_positive_of_quadratic (hu := hu) <;> norm_num [centralBandV]
 
 /-- The polynomial `P` of band A is positive on `[0, 1]`, by five rows. -/
 theorem bandA_P_positive {u : ℝ} (hu : 0 ≤ u ∧ u ≤ 1) :
@@ -127,15 +150,11 @@ theorem bandA_P_positive {u : ℝ} (hu : 0 ≤ u ∧ u ≤ 1) :
         · exact central_bandA_P3_positive ⟨by linarith,h₄⟩
         · exact central_bandA_P4_positive ⟨by linarith,hu.2⟩
 
-/-- The polynomial `V` of band A is positive on `[0, 3/7]`, by three rows. -/
+/-- The polynomial `V` of band A is positive by completing a square. -/
 theorem bandA_V_positive {u : ℝ} (hu : 0 ≤ u ∧ u ≤ 3/7) :
     0 < centralBandV (5007/10000) bandA_Cplus bandA_D u := by
-  rw [bandA_V_identity]
-  by_cases h₁ : u ≤ 3/14
-  · exact central_bandA_V0_positive ⟨hu.1,h₁⟩
-  · by_cases h₂ : u ≤ 9/28
-    · exact central_bandA_V1_positive ⟨by linarith,h₂⟩
-    · exact central_bandA_V2_positive ⟨by linarith,hu.2⟩
+  apply centralBandV_positive_of_quadratic (hu := hu) <;>
+    norm_num [centralBandV, bandA_Cplus, bandA_D]
 
 /-- The polynomial `P` of band B is positive on `[0, 1]`, by two rows. -/
 theorem bandB_P_positive {u : ℝ} (hu : 0 ≤ u ∧ u ≤ 1) :
@@ -145,17 +164,11 @@ theorem bandB_P_positive {u : ℝ} (hu : 0 ≤ u ∧ u ≤ 1) :
   · exact central_bandB_P0_positive ⟨hu.1,h⟩
   · exact central_bandB_P1_positive ⟨by linarith,hu.2⟩
 
-/-- The polynomial `V` of band B is positive on `[0, 3/7]`, by four rows. -/
+/-- The polynomial `V` of band B is positive by completing a square. -/
 theorem bandB_V_positive {u : ℝ} (hu : 0 ≤ u ∧ u ≤ 3/7) :
     0 < centralBandV (107/200) bandB_Cplus bandB_D u := by
-  rw [bandB_V_identity]
-  by_cases h₁ : u ≤ 3/14
-  · exact central_bandB_V0_positive ⟨hu.1,h₁⟩
-  · by_cases h₂ : u ≤ 15/56
-    · exact central_bandB_V1_positive ⟨by linarith,h₂⟩
-    · by_cases h₃ : u ≤ 9/28
-      · exact central_bandB_V2_positive ⟨by linarith,h₃⟩
-      · exact central_bandB_V3_positive ⟨by linarith,hu.2⟩
+  apply centralBandV_positive_of_quadratic (hu := hu) <;>
+    norm_num [centralBandV, bandB_Cplus, bandB_D]
 
 /-- `centralBandP C⁻ D u / (1 + u²)³` in terms of `c = (1 - u²) / (1 + u²)` and
 `s = 2u / (1 + u²)`. -/

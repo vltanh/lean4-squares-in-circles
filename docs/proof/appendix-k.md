@@ -264,7 +264,8 @@ $r \le \rho(\alpha)$, and $\rho(\frac\pi2 - \theta) = \rho(\theta)$.
    $\frac{19}{25}$ apart.
 
 The proof reduces each claim to the positivity of two polynomials on
-intervals, which is checked by a table of 19 rows. For constants
+intervals. Ten Bernstein rows prove positivity of the three polynomials $P$;
+one quadratic estimate proves positivity of all three polynomials $V$. For constants
 $A_0, C_-, C_+, D$ with $D < \frac12$, and with $u = \tan\frac\theta2$,
 $z = 1 + u^2$, $c = 1 - u^2$, $s = 2u$, let
 
@@ -295,6 +296,31 @@ polynomials in $u$ of degrees 6 and 4. Then:
 $C_- < \lambda\cos\omega < C_+$ and $\lambda\sin\omega < D$, by the alternating
 series of cosine through degrees 6 and 8 and of sine through degree 9.
 
+For $V$, write $A=A_0$, $C=C_+$ and $t=u-\frac14$. Its expansion at $\frac14$ is
+
+```math
+V(u)=b+mt+t^2 R(u), \qquad b=V(\tfrac14), \qquad
+m=\tfrac{19}{8}A-\tfrac{13}{8}C+\tfrac{15}{16}D-\tfrac1{32},
+```
+
+where
+
+```math
+R(u)=2D+(A+C)(2u+1)-(\tfrac12+D)(u^2+\tfrac12u+\tfrac3{16}).
+```
+
+All three cases have $A+C\ge\frac75$ and $\frac7{20}\le D\le\frac25$.
+On $[0,\frac37]$, the last parenthesis lies in $[0,\frac35]$, so
+$R(u)\ge\frac7{10}+\frac75-\frac9{10}\frac35=\frac{39}{25}>\frac32$.
+Direct rational arithmetic gives $b>\frac1{600}$ and $|m|<\frac1{20}$
+in each case, hence $6b>m^2$. Completing the square now gives
+
+```math
+6V(u)\ge 6b+6mt+9t^2=(3t+m)^2+6b-m^2>0.
+```
+
+Thus the secondary-coordinate inequalities need no interval subdivision.
+
 On an interval $[l, r]$, substitute $u = l + (r - l)v$ and write a polynomial
 of degree $n$ as $\sum_k b_k\binom nk v^k(1 - v)^{n - k}$; the basis terms are
 nonnegative on $[0, 1]$ and add up to 1, so positive coefficients prove the
@@ -307,24 +333,15 @@ lower bounds, in units of $10^{-6}$, are all positive.
 | segment | $P$ | $[0, \frac14]$ | 8011, 14261, 20852, 24921, 25307, 22675, 18731 |
 | segment | $P$ | $[\frac14, \frac12]$ | 18731, 14787, 9532, 4674, 2967, 7433, 19695 |
 | segment | $P$ | $[\frac12, 1]$ | 19695, 44218, 99921, 199778, 334345, 418333, 180000 |
-| segment | $V$ | $[0, \frac3{14}]$ | 150000, 105357, 66071, 39112, 29658 |
-| segment | $V$ | $[\frac3{14}, \frac37]$ | 29658, 20203, 28253, 58985, 115785 |
 | band A | $P$ | $[0, \frac14]$ | 65047, 66616, 68215, 66933, 61593, 52875, 42551 |
 | band A | $P$ | $[\frac14, \frac38]$ | 42551, 37389, 31825, 26080, 20444, 15250, 10838 |
 | band A | $P$ | $[\frac38, \frac7{16}]$ | 10838, 8631, 6620, 4847, 3354, 2183, 1375 |
 | band A | $P$ | $[\frac7{16}, \frac12]$ | 1375, 566, 120, 76, 471, 1339, 2709 |
 | band A | $P$ | $[\frac12, 1]$ | 2709, 13672, 56758, 146628, 276434, 364583, 144311 |
-| band A | $V$ | $[0, \frac3{14}]$ | 134309, 88153, 47594, 19679, 9628 |
-| band A | $V$ | $[\frac3{14}, \frac9{28}]$ | 9628, 4603, 4043, 8602, 18819 |
-| band A | $V$ | $[\frac9{28}, \frac37]$ | 18819, 29035, 44909, 66978, 95668 |
 | band B | $P$ | $[0, \frac12]$ | 143981, 138542, 131658, 99535, 46555, 9605, 5160 |
 | band B | $P$ | $[\frac12, 1]$ | 5160, 714, 28774, 105813, 227896, 317762, 114672 |
-| band B | $V$ | $[0, \frac3{14}]$ | 119725, 75055, 36206, 10492, 3374 |
-| band B | $V$ | $[\frac3{14}, \frac{15}{56}]$ | 3374, 1595, 977, 1608, 3563 |
-| band B | $V$ | $[\frac{15}{56}, \frac9{28}]$ | 3563, 5519, 8800, 13485, 19645 |
-| band B | $V$ | $[\frac9{28}, \frac37]$ | 19645, 31963, 50179, 74860, 106455 |
 
-*Table K.2.* The 19 Bernstein rows of Lemma K.4.
+*Table K.2.* The ten Bernstein rows for $P$ in Lemma K.4.
 
 *Proof of Lemma K.4.* (1) A point $(\frac{11}{12}, y)$ with
 $|y| \le \frac7{20}$ has the coordinates
@@ -355,26 +372,28 @@ both, and $o + \lambda u(\psi)$ would lie in both open squares. $\square$
 *Lean:
 [`Eight.Arithmetic.centralBandP`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L39),
 [`Eight.Arithmetic.centralBandV`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L49),
-[`Eight.Arithmetic.segment_P_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L99),
-[`Eight.Arithmetic.segment_V_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L109),
-[`Eight.Arithmetic.bandA_P_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L117),
-[`Eight.Arithmetic.bandA_V_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L131),
-[`Eight.Arithmetic.bandB_P_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L141),
-[`Eight.Arithmetic.bandB_V_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L149),
-[`Eight.Arithmetic.centralBandP_normalized`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L162),
-[`Eight.Arithmetic.centralBandV_normalized`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L174),
+[`Eight.Arithmetic.centralBandV_quadratic_lower`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L84),
+[`Eight.Arithmetic.centralBandV_positive_of_quadratic`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L115),
+[`Eight.Arithmetic.segment_P_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L125),
+[`Eight.Arithmetic.segment_V_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L135),
+[`Eight.Arithmetic.bandA_P_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L140),
+[`Eight.Arithmetic.bandA_V_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L154),
+[`Eight.Arithmetic.bandB_P_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L160),
+[`Eight.Arithmetic.bandB_V_positive`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L168),
+[`Eight.Arithmetic.centralBandP_normalized`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L175),
+[`Eight.Arithmetic.centralBandV_normalized`](../../SquaresInCircles/Eight/Arithmetic/CentralBandPolynomials.lean#L187),
 [`Eight.CentralBand.bandA_sides`](../../SquaresInCircles/Eight/CentralCore.lean#L1339),
 [`Eight.CentralBand.bandB_sides`](../../SquaresInCircles/Eight/CentralCore.lean#L1351),
 [`Eight.CentralBand.RayData.common_point_A`](../../SquaresInCircles/Eight/CentralCore.lean#L1632),
 [`Eight.CentralBand.RayData.common_point_B`](../../SquaresInCircles/Eight/CentralCore.lean#L1658),
 [`Eight.CentralBand.closed_caps_strictly_separated`](../../SquaresInCircles/Eight/CentralCore.lean#L1684).*
 
-![Two graphs on a common logarithmic scale from 10^3 to 10^6 millionths. Left: the polynomial P of the segment case against u from 0 to 1, positive throughout, with its Bernstein control points on the three cells [0, 1/4], [1/4, 1/2] and [1/2, 1] drawn as polygons with dots, the least of them, about 0.003, on the middle cell. Right: the polynomial V of the segment case against u from 0 to 3/7, positive, with its control points on the two cells [0, 3/14] and [3/14, 3/7]](figures/appendix-k/polys.svg)
+![Two graphs on a common logarithmic scale from 10^3 to 10^6 millionths. Left: the polynomial P of the segment case against u from 0 to 1 with its positive Bernstein control points on three cells. Right: the polynomial V of the segment case against u from 0 to 3/7 with its positive quadratic lower bound](figures/appendix-k/polys.svg)
 
 *Figure K.3.* The polynomials $P$ and $V$ of the segment case of Lemma K.4
-(curves), in units of $10^{-6}$ on a common logarithmic scale, and their
-Bernstein control points on the cells of Table K.2 (polygons). All control
-points are positive, so the polynomials are.
+(blue), in units of $10^{-6}$ on a common logarithmic scale. For $P$, the
+Bernstein control points on the cells of Table K.2 are positive (orange polygons).
+For $V$, the orange curve is the positive quadratic lower bound at $u=\frac14$.
 
 ![Four squares in the disk of squared radius Q0, part of whose circle is dashed, each turned so that its centre direction is the horizontal axis through o: two with the frame angle 0 and two with the frame angle 45 degrees, each with its centre as near to o as a > 1/2 allows and as far as the disk allows. All four contain the vertical segment V at x = 11/12 from y = -7/20 to 7/20, drawn thick](figures/appendix-k/segment.svg)
 

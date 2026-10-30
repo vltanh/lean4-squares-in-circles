@@ -1,6 +1,6 @@
 {
   "schema": "eight-polynomial-v1",
-  "rows": 19,
+  "rows": 10,
   "chunks": [
     "WholePairPolynomials000"
   ],
@@ -16,14 +16,6 @@
     {
       "declaration": "central_segment_P2",
       "polynomial": "segment P, row 2"
-    },
-    {
-      "declaration": "central_segment_V0",
-      "polynomial": "segment V, row 0"
-    },
-    {
-      "declaration": "central_segment_V1",
-      "polynomial": "segment V, row 1"
     },
     {
       "declaration": "central_bandA_P0",
@@ -46,40 +38,12 @@
       "polynomial": "bandA P, row 4"
     },
     {
-      "declaration": "central_bandA_V0",
-      "polynomial": "bandA V, row 0"
-    },
-    {
-      "declaration": "central_bandA_V1",
-      "polynomial": "bandA V, row 1"
-    },
-    {
-      "declaration": "central_bandA_V2",
-      "polynomial": "bandA V, row 2"
-    },
-    {
       "declaration": "central_bandB_P0",
       "polynomial": "bandB P, row 0"
     },
     {
       "declaration": "central_bandB_P1",
       "polynomial": "bandB P, row 1"
-    },
-    {
-      "declaration": "central_bandB_V0",
-      "polynomial": "bandB V, row 0"
-    },
-    {
-      "declaration": "central_bandB_V1",
-      "polynomial": "bandB V, row 1"
-    },
-    {
-      "declaration": "central_bandB_V2",
-      "polynomial": "bandB V, row 2"
-    },
-    {
-      "declaration": "central_bandB_V3",
-      "polynomial": "bandB V, row 3"
     }
   ]
 }

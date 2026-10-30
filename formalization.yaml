@@ -177,6 +177,9 @@ automation:
         Local verification passed the full build, the audit of all 26,581
         project declarations, sanity and documentation checks, and Comparator
         with con-ron, NanoDa and Lean's default kernel.
+        Subsequently replaced nine central-band Bernstein rows with a shared
+        quadratic lower bound and completed-square argument, preserving the
+        three positivity statements and documenting the argument in Appendix K.
     - method: "agent"
       models: ["ChatGPT 6 Pro", "ChatGPT (its latest model, September 2026)"]
       framework: "ChatGPT"
