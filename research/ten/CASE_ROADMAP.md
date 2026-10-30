@@ -11,7 +11,7 @@ lemma that does not close its family. All lower-bound cases below concern
 **G3 lower-bound case ledger:** `██████████████████░░░`
 **18 hand closed · 0 computer closed · 3 open / 21 terminal families.**
 
-**C20 larger-cycle subcases:** `████████████████████▍░░░` **238/279 closed; 41 open.**
+**C20 larger-cycle subcases:** `█████████████████████▏░░` **246/279 closed; 33 open.**
 
 **C05 branching subclass, all branch vertices loaded:** `██████████████████████▎░` **42,532/45,666 excluded; 3,134 remain.** [Catalog and certificates](BRANCHING_SELECTED_GRAPH_FILTERS.md). This is the fixed `b=0` subledger.
 
@@ -51,7 +51,7 @@ lemma that does not close its family. All lower-bound cases below concern
 | C17 | HAND CLOSED | **Remaining vertex/side pattern: D-S.** Same ordered convention; endpoint classification and a printed exact clearance table exclude both remaining circle-load patterns. [Proof / reduction](DIAGONAL_SIDE_EXCLUSION.md). |
 | C18 | HAND CLOSED | **Five-cycle with four loads: side transmitter.** Its only unloaded body is a degree-two side transmitter. [Proof / reduction](MIXED_FIVE_FOUR_LOADED.md). |
 | C19 | HAND CLOSED | **Five-cycle with four loads: diagonal transmitter.** For the generic selected certificate, D transmitter neighbors must be contacted in side interiors. The nearer-endpoint theorem forbids side support, excluding the component. The certificate is selected before classification. [Proof / reduction](DIAGONAL_FIVE_CYCLE_EXCLUSION.md). |
-| C20 | OPEN | **Mixed simple cycles of lengths six through ten.** At least three loaded bodies. The cap budget and reviewed six-cycle exclusions close 238 of 279 fixed signatures. Forty-one remain: 11 at length six, 19 at seven, and 11 at eight. [Proof / reduction](CYCLE_CASES.md). |
+| C20 | OPEN | **Mixed simple cycles of lengths six through ten.** At least three loaded bodies. Reviewed cap, loaded-pair angle, and six-cycle arguments close 246 of 279 fixed signatures. Thirty-three remain: 11 at length six, 15 at seven, and 7 at eight. [Proof / reduction](CYCLE_CASES.md). |
 <!-- CASE_PROGRESS_END -->
 
 ## How the case tree is exhaustive
@@ -222,6 +222,17 @@ be exported from regenerated catalogs. At least two unloaded retained
 vertices (`b>=2`) remain outside both catalogs. Neither partial
 classification closes C05.
 
+This remaining family is bounded: `2<=k<=7` and `2<=b<=10-k`, so
+`b<=8` and only 27 pairs `(k,b)` are possible. Every skeleton has at most
+ten retained vertices and the fixed seven-symbol edge alphabet. There is
+no unbounded sequence of strata. The research priority is now to prove
+restrictions across this entire remaining family, rather than build
+successively larger catalogs. The
+[two-neighbor branch theorem](TWO_NEIGHBOR_UNLOADED_BRANCH_RESTRICTIONS.md)
+already applies to every b: such branch vertices form an independent set,
+cannot repeat a neighbor pair, and obey `k+b+2r<=10`. In particular there
+are at most two of them, and none when `k+b>=9`.
+
 **C20 is already enumerated.** [CYCLE_CASES.md](CYCLE_CASES.md) lists all
 279 stable case IDs and their canonical words. Independent enumerations and
 a Burnside count check the complete [manifest](cycle_cases.json). The live
@@ -242,8 +253,10 @@ the [cap-angle budget](SHARP_TRANSMISSION_CYCLE_BUDGET.md), which closes
 [SS/S](SS_SIDE_SIX_CYCLE_EXCLUSION.md) six-cycle exclusions, the
 [D-path forest theorem](DIAGONAL_PATH_GRAPH_RESTRICTIONS.md), and the
 [two-D/one-S exclusion](TWO_DIAGONAL_ONE_SIDE_SIX_CYCLE_EXCLUSION.md)
-raise the total to 238, leaving exactly 41 open: 11 at length six,
-19 at length seven, 11 at length eight, and none at lengths nine or ten.
+give 238 closures. The [stronger loaded-pair angle](STRONG_DIRECT_CYCLE_BUDGET.md)
+adds eight more, raising the total to 246 and leaving exactly 33 open:
+11 at length six, 15 at length seven, 7 at length eight, and none at
+lengths nine or ten.
 An entry is never claimed feasible or excluded merely because it appears
 in the list.
 

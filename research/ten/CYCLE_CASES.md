@@ -2,13 +2,13 @@
 
 This is the complete current **graph/transmitter overclassification** for C20. It covers whole positive components of lengths 6–10, modulo cyclic rotation and reflection. The inventory itself does not assert geometric feasibility or classify contact ownership. Separately proved exclusions are tracked below for the jointly selected certificate in [CASE_ROADMAP.md](CASE_ROADMAP.md); they need not exclude every alternative choice of physical stress.
 
-**Exclusion progress:** `████████████████████▍░░░` **238/279 transmitter cases closed; 41 open.**
+**Exclusion progress:** `█████████████████████▏░░` **246/279 transmitter cases closed; 33 open.**
 
 | Length | Binary load families | S/D cases | Excluded |
 | --- | ---: | ---: | ---: |
 | 6 | 6 | 15 | 4 |
-| 7 | 9 | 23 | 4 |
-| 8 | 15 | 45 | 34 |
+| 7 | 9 | 23 | 8 |
+| 8 | 15 | 45 | 38 |
 | 9 | 21 | 71 | 71 |
 | 10 | 29 | 125 | 125 |
 
@@ -38,14 +38,14 @@ The independent enumerations and Burnside count in [check_cycle_cases.py](check_
 | C20-M07-L03-B02-T02 | `LSLDLSS` | [HAND CLOSED](SHARP_TRANSMISSION_CYCLE_BUDGET.md) |
 | C20-M07-L03-B02-T03 | `LDLDLSS` | [HAND CLOSED](SHARP_TRANSMISSION_CYCLE_BUDGET.md) |
 | C20-M07-L04-B01-T01 | `LLLSLSS` | OPEN |
-| C20-M07-L04-B01-T02 | `LLLDLSS` | OPEN |
+| C20-M07-L04-B01-T02 | `LLLDLSS` | [HAND CLOSED](STRONG_DIRECT_CYCLE_BUDGET.md) |
 | C20-M07-L04-B02-T01 | `LLSLLSS` | OPEN |
-| C20-M07-L04-B02-T02 | `LLDLLSS` | OPEN |
+| C20-M07-L04-B02-T02 | `LLDLLSS` | [HAND CLOSED](STRONG_DIRECT_CYCLE_BUDGET.md) |
 | C20-M07-L04-B03-T01 | `LLSLSLS` | OPEN |
 | C20-M07-L04-B03-T02 | `LLSLSLD` | OPEN |
 | C20-M07-L04-B03-T03 | `LLSLDLS` | OPEN |
-| C20-M07-L04-B03-T04 | `LLSLDLD` | OPEN |
-| C20-M07-L04-B03-T05 | `LLDLSLD` | OPEN |
+| C20-M07-L04-B03-T04 | `LLSLDLD` | [HAND CLOSED](STRONG_DIRECT_CYCLE_BUDGET.md) |
+| C20-M07-L04-B03-T05 | `LLDLSLD` | [HAND CLOSED](STRONG_DIRECT_CYCLE_BUDGET.md) |
 | C20-M07-L04-B03-T06 | `LLDLDLD` | [HAND CLOSED](SHARP_TRANSMISSION_CYCLE_BUDGET.md) |
 | C20-M07-L05-B01-T01 | `LLLLLSS` | OPEN |
 | C20-M07-L05-B02-T01 | `LLLLSLS` | OPEN |
@@ -89,15 +89,15 @@ The independent enumerations and Burnside count in [check_cycle_cases.py](check_
 | C20-M08-L05-B04-T04 | `LLDLLSLS` | [HAND CLOSED](SHARP_TRANSMISSION_CYCLE_BUDGET.md) |
 | C20-M08-L05-B04-T05 | `LLDLLSLD` | [HAND CLOSED](SHARP_TRANSMISSION_CYCLE_BUDGET.md) |
 | C20-M08-L05-B04-T06 | `LLDLLDLD` | [HAND CLOSED](RADIAL_ORDER_CYCLE_BUDGET.md) |
-| C20-M08-L06-B01-T01 | `LLLLLLSS` | OPEN |
+| C20-M08-L06-B01-T01 | `LLLLLLSS` | [HAND CLOSED](STRONG_DIRECT_CYCLE_BUDGET.md) |
 | C20-M08-L06-B02-T01 | `LLLLLSLS` | OPEN |
-| C20-M08-L06-B02-T02 | `LLLLLSLD` | OPEN |
+| C20-M08-L06-B02-T02 | `LLLLLSLD` | [HAND CLOSED](STRONG_DIRECT_CYCLE_BUDGET.md) |
 | C20-M08-L06-B02-T03 | `LLLLLDLD` | [HAND CLOSED](SHARP_TRANSMISSION_CYCLE_BUDGET.md) |
 | C20-M08-L06-B03-T01 | `LLLLSLLS` | OPEN |
-| C20-M08-L06-B03-T02 | `LLLLSLLD` | OPEN |
+| C20-M08-L06-B03-T02 | `LLLLSLLD` | [HAND CLOSED](STRONG_DIRECT_CYCLE_BUDGET.md) |
 | C20-M08-L06-B03-T03 | `LLLLDLLD` | [HAND CLOSED](SHARP_TRANSMISSION_CYCLE_BUDGET.md) |
 | C20-M08-L06-B04-T01 | `LLLSLLLS` | OPEN |
-| C20-M08-L06-B04-T02 | `LLLSLLLD` | OPEN |
+| C20-M08-L06-B04-T02 | `LLLSLLLD` | [HAND CLOSED](STRONG_DIRECT_CYCLE_BUDGET.md) |
 | C20-M08-L06-B04-T03 | `LLLDLLLD` | [HAND CLOSED](SHARP_TRANSMISSION_CYCLE_BUDGET.md) |
 | C20-M08-L07-B01-T01 | `LLLLLLLS` | OPEN |
 | C20-M08-L07-B01-T02 | `LLLLLLLD` | OPEN |

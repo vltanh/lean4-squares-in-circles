@@ -952,6 +952,38 @@
     "C20-M06-L03-B02-T03": {
       "status": "hand",
       "evidence": "TWO_DIAGONAL_ONE_SIDE_SIX_CYCLE_EXCLUSION.md"
+    },
+    "C20-M07-L04-B01-T02": {
+      "status": "hand",
+      "evidence": "STRONG_DIRECT_CYCLE_BUDGET.md"
+    },
+    "C20-M07-L04-B02-T02": {
+      "status": "hand",
+      "evidence": "STRONG_DIRECT_CYCLE_BUDGET.md"
+    },
+    "C20-M07-L04-B03-T04": {
+      "status": "hand",
+      "evidence": "STRONG_DIRECT_CYCLE_BUDGET.md"
+    },
+    "C20-M07-L04-B03-T05": {
+      "status": "hand",
+      "evidence": "STRONG_DIRECT_CYCLE_BUDGET.md"
+    },
+    "C20-M08-L06-B01-T01": {
+      "status": "hand",
+      "evidence": "STRONG_DIRECT_CYCLE_BUDGET.md"
+    },
+    "C20-M08-L06-B02-T02": {
+      "status": "hand",
+      "evidence": "STRONG_DIRECT_CYCLE_BUDGET.md"
+    },
+    "C20-M08-L06-B03-T02": {
+      "status": "hand",
+      "evidence": "STRONG_DIRECT_CYCLE_BUDGET.md"
+    },
+    "C20-M08-L06-B04-T02": {
+      "status": "hand",
+      "evidence": "STRONG_DIRECT_CYCLE_BUDGET.md"
     }
   }
 }

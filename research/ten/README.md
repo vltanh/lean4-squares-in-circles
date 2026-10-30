@@ -67,7 +67,7 @@ the known bound, not a lower-bound proof.
 | The entire three-loaded five-cycle is impossible | [Final S-S exclusion](SIDE_SIDE_EXCLUSION.md), [complete case index](MIXED_FIVE_CYCLE_STATUS.md) | Reviewed hand closure of all ordered transmitter choices and both central circle-contact types |
 | The unique-circle S-D three-loaded five-cycle is impossible | [S-D exclusion](SIDE_DIAGONAL_EXCLUSION.md) | Reviewed hand closure by torque and elementary analytic clearance; no finite interval table |
 | A four-loaded diagonal five-cycle permits at most one other square wholly inside the test disk | [Inner trace restriction](DIAGONAL_FIVE_CYCLE_INNER_TRACE.md) | Reviewed hand restriction used in the nearer-endpoint exclusion below |
-| Every whole mixed simple cycle follows loaded radial order; the strip cap gives stronger angle bounds | [D-D uncrossing](DIAGONAL_PATH_UNCROSSING.md), [cap-angle theorem](TRANSMISSION_CAP_ANGLE_BOUND.md), [234-case budget](SHARP_TRANSMISSION_CYCLE_BUDGET.md) | Reviewed hand structural theorem and exclusions; with the six-cycle results, 238 cases are closed and 41 shorter signatures remain |
+| Every whole mixed simple cycle follows loaded radial order; the strip cap gives stronger angle bounds | [D-D uncrossing](DIAGONAL_PATH_UNCROSSING.md), [cap-angle theorem](TRANSMISSION_CAP_ANGLE_BOUND.md), [234-case budget](SHARP_TRANSMISSION_CYCLE_BUDGET.md) | Reviewed hand structural theorem and exclusions; with the six-cycle results, 246 cases are closed and 33 shorter signatures remain |
 | Three-loaded six-cycles with an SS path are excluded | [SS/D exclusion](SS_DIAGONAL_SIX_CYCLE_EXCLUSION.md), [SS/S exclusion](SS_SIDE_SIX_CYCLE_EXCLUSION.md) | Reviewed hand closures of `LLDLSS` and `LLSLSS` for the selected certificate |
 | Three-loaded six-cycles with at least two D paths are excluded | [D-path forest](DIAGONAL_PATH_GRAPH_RESTRICTIONS.md), [two-D/one-S exclusion](TWO_DIAGONAL_ONE_SIDE_SIX_CYCLE_EXCLUSION.md) | Reviewed hand closures of `LDLDLD` and `LSLDLD`; every D-path graph is a forest of paths |
 | The remaining one-D/two-S six-body equations have a reproducible high-precision candidate | [Exploratory component](ONE_DIAGONAL_TWO_SIDE_COMPONENT_CANDIDATE.md) | Numerical research only: no exact existence certificate, no ten-square completion, and no case closure; investigate completion capacity |
@@ -81,6 +81,8 @@ the known bound, not a lower-bound proof.
 | Branching components with every branch vertex loaded have a fixed catalog of 45,666 cases | [Catalog](BRANCHING_LOADED_SKELETON_INVENTORY.md), [combined exact graph certificates](BRANCHING_SELECTED_GRAPH_FILTERS.md) | Independent enumerators agree; 42,532 excluded and 3,134 remain; unloaded branch vertices are outside this subclass |
 | Branching components with exactly one unloaded retained vertex have 524,870 fixed cases | [Catalog](BRANCHING_ONE_UNLOADED_INVENTORY.md), [proof decoder](BRANCHING_ONE_UNLOADED_FILTERS.md) | Independent enumerators and checkers agree; 385,071 excluded and 139,799 remain; b>=2 remains outside both catalogs |
 | One unloaded branch vertex and exactly two loaded bodies cannot occur | [Complete exclusion](ONE_UNLOADED_TWO_LOADED_EXCLUSION.md) | Reviewed hand capacity bound for the forced five-square core, including arbitrary orientations of additional squares |
+| Unloaded branch vertices with two retained neighbors obey universal restrictions | [Two-neighbor branch theorem](TWO_NEIGHBOR_UNLOADED_BRANCH_RESTRICTIONS.md) | Reviewed hand theorem for every b: at most two such vertices, no adjacent pair or repeated neighbor pair, and k+b+2r<=10 |
+| Any two loaded squares have center-ray separation at least 2 atan(1/(sqrt(14)-1)) | [Loaded-pair angle](LOADED_PAIR_ANGLE_BOUND.md) | Reviewed hand theorem for arbitrary orientations and all separator offsets; stronger than the previous generic angular bound |
 | A five-cycle with four loaded squares cannot use a side transmitter | [Four-loaded five-cycle](MIXED_FIVE_FOUR_LOADED.md) | Side transmitter excluded by hand in the explicitly imported radius window; the diagonal branch is now excluded above for the chosen certificate |
 | Parallel four-inner cores have a line-separated or pinwheel form; narrow internal channels can be filled as virtual obstacles | [Projection graphs and channel lemma](FOUR_CORE_GENERALIZATION.md) | Hand structural reduction and exact localized pinwheel; no general completion bound |
 | A solid two-by-two core, with its four centers in the closed unit disk, admits at most five additional squares | [General translated-block theorem](GENERAL_TRANSLATED_BLOCK_OBSTRUCTION.md) | Hand proof for every translation and rotation; additional orientations arbitrary |
@@ -120,7 +122,7 @@ certificates remain computational results with their own stated scope.
 **G3 lower-bound case ledger:** `██████████████████░░░`
 **18 hand closed · 0 computer closed · 3 open / 21 terminal families.**
 
-**C20 larger-cycle subcases:** `████████████████████▍░░░` **238/279 closed; 41 open.**
+**C20 larger-cycle subcases:** `█████████████████████▏░░` **246/279 closed; 33 open.**
 
 **C05 branching subclass, all branch vertices loaded:** `██████████████████████▎░` **42,532/45,666 excluded; 3,134 remain.** [Catalog and certificates](BRANCHING_SELECTED_GRAPH_FILTERS.md). This is the fixed `b=0` subledger.
 

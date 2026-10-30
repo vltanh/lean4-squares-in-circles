@@ -188,7 +188,7 @@
       "id": "C20",
       "status": "open",
       "title": "Mixed simple cycles of lengths six through ten",
-      "scope": "At least three loaded bodies. The cap budget and reviewed six-cycle exclusions close 238 of 279 fixed signatures. Forty-one remain: 11 at length six, 19 at seven, and 11 at eight.",
+      "scope": "At least three loaded bodies. Reviewed cap, loaded-pair angle, and six-cycle arguments close 246 of 279 fixed signatures. Thirty-three remain: 11 at length six, 15 at seven, and 7 at eight.",
       "evidence": "CYCLE_CASES.md"
     }
   ]

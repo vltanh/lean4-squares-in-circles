@@ -40,8 +40,8 @@ The equality classification remains open outside the completed classes.
 Research resumed from handoff commit `fb91a0517a0eedf192e11759f9bdec2a60ab46af`.
 The unrestricted proof is still open. The main case ledger has **18 reviewed
 hand closures and 3 open
-families out of 21**; the larger-cycle subledger has **238 reviewed hand
-closures and 41 open cases out of 279**. Main gates remain **3/7 closed**.
+families out of 21**; the larger-cycle subledger has **246 reviewed hand
+closures and 33 open cases out of 279**. Main gates remain **3/7 closed**.
 The closed counts do not measure the fraction of mathematical effort.
 
 Latest completed work:
@@ -49,13 +49,15 @@ Latest completed work:
 - Every whole five-cycle is hand excluded for the selected certificate.
   [C19](DIAGONAL_FIVE_CYCLE_EXCLUSION.md) uses generic contact normals
   and the reviewed nearer-endpoint obstruction.
-- C20 has 238/279 hand closures. The cap budget supplies 234; the
+- C20 has 246/279 hand closures. The cap budget supplies 234; the
   [SS/D](SS_DIAGONAL_SIX_CYCLE_EXCLUSION.md),
   [SS/S](SS_SIDE_SIX_CYCLE_EXCLUSION.md),
   [all-D](DIAGONAL_PATH_GRAPH_RESTRICTIONS.md), and
   [two-D/one-S](TWO_DIAGONAL_ONE_SIDE_SIX_CYCLE_EXCLUSION.md) six-cycle
-  arguments supply four more. The 41 open IDs comprise 11 length-six,
-  19 length-seven, and 11 length-eight signatures.
+  arguments supply four more, and the
+  [stronger loaded-pair angle](STRONG_DIRECT_CYCLE_BUDGET.md) adds eight.
+  The 33 open IDs comprise 11 length-six,
+  15 length-seven, and 7 length-eight signatures.
 - C04's [all-inner-face capacity theorem](SEVEN_RING_ALL_INNER_FACE_CAPACITY.md)
   and [outer-edge reduction](SEVEN_RING_OUTER_EDGE_REDUCTION.md) cover
   arbitrary radial-side bodies, SS/VV pairs, and U8/U9. Every surviving
@@ -88,7 +90,13 @@ Latest completed work:
 | --- | --- |
 | C04: other seven-ring ownership | Exclude U4/U5 or extend capacity to their extra inner-boundary corners. |
 | C05: branching mixed components | Exclude 3,134 remaining b=0 records and 139,799 remaining b=1 records; classify or exclude b>=2. |
-| C20: 41 larger-cycle entries | Prove completion bounds or contact exclusions for the explicit remaining signatures in CYCLE_CASES.md. |
+| C20: 33 larger-cycle entries | Prove completion bounds or contact exclusions for the explicit remaining signatures in CYCLE_CASES.md. |
+
+The remaining branching range is finite: `2<=k<=7`, `2<=b<=10-k`,
+hence `b<=8` (27 parameter pairs). Work is focused on structural arguments
+covering all these pairs, rather than adding larger catalogs. The
+[two-neighbor branch theorem](TWO_NEIGHBOR_UNLOADED_BRANCH_RESTRICTIONS.md)
+is such a universal restriction; it is not a closure of that family.
 
 The open `LSLSLD` signature now has a
 [reproducible numerical six-body candidate](ONE_DIAGONAL_TWO_SIDE_COMPONENT_CANDIDATE.md)
