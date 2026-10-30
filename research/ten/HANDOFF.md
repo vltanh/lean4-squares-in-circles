@@ -38,6 +38,81 @@ five inner centers by an explicit finite-table argument. Thus a hypothetical
 smaller ten-packing must have **exactly three or four inner centers**.
 The equality classification remains open outside the completed classes.
 
+## Final handoff checkpoint — 2026-10-30
+
+Work is paused at the user's request. The unrestricted proof is still open.
+The fixed master denominator is **336**, with **273 reviewed hand closures
+and 63 open families**. No additional master ID should be created for a
+research refinement. The latest main research checkpoints are
+`e67bbc1fbcbfba829bb1c9044c15b4486ef683fb` (frozen master and universal patch
+reductions) and `c7b306f86b82162a6b2865108a22c634a76e43f7` (shared capacity,
+SS reductions, numerical research and exact obstruction examples). This
+handoff commit preserves the final D-endpoint result and next obligations.
+
+| All open IDs, grouped for shared arguments | Count | Next common obligation |
+| --- | ---: | --- |
+| C05 branching families | 30 | Use force/torque or completion geometry on regions with at least three terminals. Exposure and topology alone are insufficient. |
+| C20 with SS | 5 | A uniform barrier/capacity theorem for arbitrary loaded SS endpoints and transmitter slides; include extra endpoint forces where possible. |
+| C20 with D but no SS | 14 | Combine the new D-endpoint direction theorem with exhaustive endpoint support/circle signs and a uniform completion bound. |
+| C20 with only single S paths | 14 | Stress-dependent loaded-run restrictions or uniform completion bounds; geometric angular estimates alone do not yet suffice. |
+
+For branching, the reviewed minimum-active-body class has a simple
+suppressed skeleton, every unloaded retained vertex has at least three
+distinct retained neighbors, and every connected unloaded two-terminal
+region is S, D, or SS. This is an existence normalization over packing and
+stress pairs. It does not exclude every original realization or preserve
+its raw case ID. The original unused generic-selection polynomials have
+not all been proved compatible with the motions; use only the explicitly
+preserved positive-normal, four-junction, loading and planar properties
+until that additional compatibility is established.
+
+The [D-endpoint restriction](DIAGONAL_ENDPOINT_NONEMPTY_PATH_DIRECTION.md),
+which passed root and independent full reviews at handoff, forbids an outward second path of any width W>=1 at a degree-two loaded D
+endpoint. Its single-S corollary retains only inner-corner or opposite
+horizontal-side support, including radial circle-load splits. Direct
+neighbors (W=0) are outside its scope. The whole LSLSLD signature remains
+open and has a reproducible numerical six-body positive-stress candidate;
+no internal-component impossibility should be inferred from the new lemma.
+
+The [focused D completion handoff](SHARED_DIAGONAL_COMPLETION_HANDOFF.md)
+preserves an explicitly unreviewed opposite-unique-circle argument. It is
+not promoted to a theorem or used to close any ledger entry; radial
+geometric circle ties remain outside that draft argument.
+
+For LSLSLSS, the remaining central forms are U-EE, U-VE-N, U-VV-A, U-VV-O,
+and radial R-VV with mixed or two-vertex SS endpoint support. U-EE requires
+R²>13/3 and both source coordinates above one. U-VE-I, R-VE and radial
+R-VV with E/E SS endpoints are hand excluded. The existing center-cover
+certificates cover their stated center regions only. Establishing uniform
+regions for every realization is still the missing step.
+
+Validation at handoff: the master renderer and its independent audit agree
+on all 336 IDs and 63 open rows; the frozen-manifest mutation check rejects
+changed obligations. The cycle checker agrees by independent enumerations
+on all 279 signatures. The seven-body exact checker verifies all 28 cells
+(11 empty), with maximum assigned squared distance 197/200. The saved
+seven-body numerical candidate JSON was reproduced identically. Published
+files were compared with their remote Git blob hashes. No Lean compilation
+or kernel check was run or claimed.
+
+From this directory, regenerate/verify the research bookkeeping with:
+
+```sh
+python update_case_roadmap.py
+python check_cycle_cases.py
+python check_seven_body_central_hole_cover.py
+```
+
+The [reciprocal-tiling research note](RECIPROCAL_TILING_RESEARCH_HANDOFF.md)
+is preserved as an unreviewed draft. It records why a convex reciprocal
+tiling alone does not bound unloaded cells by k−2; further physical or
+minimum-active hypotheses are needed. This note changes no status.
+
+The old local `EXPOSED_TWO_TERMINAL_UNLOADED_PATCH.md` draft is superseded
+by the published arbitrary-terminal theorem; it contains no unique pending
+result. Do not restart a b=2, b=3, ... catalog sequence or a loaded-count
+sequence. Use the fixed master list and aim for shared arguments.
+
 ## Current resumed checkpoint
 
 Research resumed from handoff commit `fb91a0517a0eedf192e11759f9bdec2a60ab46af`.
