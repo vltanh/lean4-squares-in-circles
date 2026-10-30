@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "case_status": {
+    "C05-F-K02-B01": {
+      "status": "hand",
+      "evidence": "TWO_LOADED_COMPONENT_EXCLUSION.md"
+    },
+    "C05-F-K02-B02": {
+      "status": "hand",
+      "evidence": "TWO_LOADED_COMPONENT_EXCLUSION.md"
+    },
+    "C05-F-K02-B03": {
+      "status": "hand",
+      "evidence": "TWO_LOADED_COMPONENT_EXCLUSION.md"
+    },
+    "C05-F-K02-B04": {
+      "status": "hand",
+      "evidence": "TWO_LOADED_COMPONENT_EXCLUSION.md"
+    },
+    "C05-F-K02-B05": {
+      "status": "hand",
+      "evidence": "TWO_LOADED_COMPONENT_EXCLUSION.md"
+    },
+    "C05-F-K02-B06": {
+      "status": "hand",
+      "evidence": "TWO_LOADED_COMPONENT_EXCLUSION.md"
+    },
+    "C05-F-K02-B07": {
+      "status": "hand",
+      "evidence": "TWO_LOADED_COMPONENT_EXCLUSION.md"
+    },
+    "C05-F-K02-B08": {
+      "status": "hand",
+      "evidence": "TWO_LOADED_COMPONENT_EXCLUSION.md"
+    }
+  }
+}

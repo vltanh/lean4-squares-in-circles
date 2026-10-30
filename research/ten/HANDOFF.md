@@ -11,11 +11,14 @@ claimed. This PR changes only research artifacts under `research/ten/`.
 
 ## Start here
 
-[CASE_ROADMAP.md](CASE_ROADMAP.md) is the current finite case tree and gated
-progress ledger: **19 hand-closed, 0 computer-only, and 2 open families**.
-[CYCLE_CASES.md](CYCLE_CASES.md) enumerates all 279 larger mixed-cycle cases;
-Its generated progress bar and proof links record every reviewed exclusion.
-The bars count these fixed families, not the fraction of proof effort.
+<!-- CASE_PROGRESS_START -->
+**Fixed strict-lower-bound master ledger:** `███████████████████▌░░░░` **273/336 closed; 63 open.** (273 hand; 0 computer-only.) [All stable IDs and the exact remaining obligations](MASTER_CASES.md).
+
+The denominator is frozen: 19 other terminal families + 38 branching families + 279 cycle signatures. A branching family includes every permitted graph and continuous realization for its fixed `(k,b)`. These are proof-family counts, **not a percentage of effort or of the full n=10 deliverable**. Equality and Lean verification have separate gates.
+<!-- CASE_PROGRESS_END -->
+
+[CASE_ROADMAP.md](CASE_ROADMAP.md) gives the ordered coverage tree and separate gates.
+[CYCLE_CASES.md](CYCLE_CASES.md) gives the 279 cycle signatures.
 
 [README.md](README.md) indexes the completed arguments and their hypotheses.
 [UNRESTRICTED_MODEL.md](UNRESTRICTED_MODEL.md) states the physical model and
@@ -46,6 +49,22 @@ The closed counts do not measure the fraction of mathematical effort.
 
 Latest completed work:
 
+- The [master ledger](MASTER_CASES.md) is frozen at 336 explicit proof families,
+  with 273 hand closed and 63 open. The 30 open branching families cover all
+  k and b simultaneously; the other 33 are explicit cycle signatures.
+  New refinements cannot increase the denominator.
+- The [three-interior-body theorem](THREE_INTERIOR_BODY_REDUCTION.md) exposes
+  every center of norm at least 1/sqrt(2); at most three physical bodies
+  remain inside the planar disk drawing, independently of k and b.
+- The [two-terminal patch theorem](TWO_TERMINAL_UNLOADED_PATCH_REDUCTION.md)
+  reduces every connected unloaded region with exactly two outside neighbors
+  to one S, one D, or two to four S bodies in two columns. Its terminals
+  need not be loaded or exposed in the original graph.
+- [Double-S consolidation](DOUBLE_SIDE_BUNDLE_CONSOLIDATION.md) preserves
+  the packing radius and all endpoint wrenches while removing one active
+  transmitter. Its minimum-active-body normalization has a precisely stated
+  certificate class; it does not silently extend old unused generic-polynomial
+  conditions, nor close any fixed master family on its own.
 - A [universal two-loaded exclusion](TWO_LOADED_COMPONENT_EXCLUSION.md)
   covers every graph and every b. A planar reciprocal-force argument
   forces all contact forces parallel; torque and the radius window give
@@ -93,11 +112,11 @@ Latest completed work:
 
 | Open family | Concrete next work |
 | --- | --- |
-| C05: branching mixed components | Exclude 3,134 remaining b=0 records and 139,799 remaining b=1 records; classify or exclude b>=2. |
+| C05: branching mixed components | Close the 30 fixed open branching families in MASTER_CASES.md using structural or completion arguments across k and b. |
 | C20: 33 larger-cycle entries | Prove completion bounds or contact exclusions for the explicit remaining signatures in CYCLE_CASES.md. |
 
-The remaining branching range is finite: `3<=k<=7`, `2<=b<=10-k`,
-hence `b<=7` (20 parameter pairs). Work is focused on structural arguments
+The fixed open branching range is `3<=k<=7`, `0<=b<=10-k`: exactly
+30 families, including every larger b without extending the denominator. Work is focused on structural arguments
 covering all these pairs, rather than adding larger catalogs. The
 [two-neighbor branch theorem](TWO_NEIGHBOR_UNLOADED_BRANCH_RESTRICTIONS.md)
 is such a universal restriction: at most one unloaded retained vertex

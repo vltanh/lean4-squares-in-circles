@@ -1,10 +1,10 @@
 # Ten unit squares in a circle
 
-Research checkpoint: 2026-10-29 (UTC), based on main commit
+Research checkpoint: 2026-10-30 (UTC), based on main commit
 `4bea747b3efa13c869b956cb28435efaf21526fa`.
 
-Start with the [case tree and progress bars](CASE_ROADMAP.md) for exactly what
-remains. [HANDOFF.md](HANDOFF.md) records dependencies, failed shortcuts, and
+Start with the [fixed 336-family master ledger](MASTER_CASES.md) for exactly
+what remains, and the [case tree and separate gates](CASE_ROADMAP.md). [HANDOFF.md](HANDOFF.md) records dependencies, failed shortcuts, and
 validation. [CYCLE_CASES.md](CYCLE_CASES.md) lists all 279 larger-cycle cases.
 
 **The sharp radius and complete equality family are proved by hand for the
@@ -82,6 +82,9 @@ the known bound, not a lower-bound proof.
 | Branching components with exactly one unloaded retained vertex have 524,870 fixed cases | [Catalog](BRANCHING_ONE_UNLOADED_INVENTORY.md), [proof decoder](BRANCHING_ONE_UNLOADED_FILTERS.md) | Independent enumerators and checkers agree; 385,071 excluded and 139,799 remain; b>=2 remains outside both catalogs |
 | No positive component has exactly two loaded bodies, regardless of its graph or unloaded branch count | [Parallel-force reduction](TWO_LOADED_PARALLEL_FORCE_REDUCTION.md), [complete exclusion](TWO_LOADED_COMPONENT_EXCLUSION.md) | Reviewed hand theorem: two-column capacity at most nine, with arbitrary additional orientations |
 | At most one distinct actual-SS or effective-width-two endpoint pair occurs in the whole selected graph | [Outer-center exposure](OUTER_CENTER_EXPOSURE_AND_WIDTH_TWO_UNIQUENESS.md), [two-neighbor branch theorem](TWO_NEIGHBOR_UNLOADED_BRANCH_RESTRICTIONS.md) | Reviewed universal planar restriction, independent of the loaded count or b |
+| At most three physical body vertices need lie inside the planar disk | [Three-interior-body reduction](THREE_INTERIOR_BODY_REDUCTION.md) | Reviewed hand theorem; all centers of norm at least 1/sqrt(2) are radially exposed, including every D/SS endpoint |
+| Every connected unloaded region with only two outside neighbors has parallel forces | [Two-terminal patch theorem](TWO_TERMINAL_UNLOADED_PATCH_REDUCTION.md) | Reviewed hand theorem for arbitrary terminals: one S, one D, or two to four S bodies in two columns |
+| Double-S bundles can be replaced by one stressed path while preserving all ten physical squares | [Bundle consolidation](DOUBLE_SIDE_BUNDLE_CONSOLIDATION.md) | Reviewed local motion and wrench proof; minimum-active-body normalization has explicit certificate scope and closes no master entry by itself |
 | Any two loaded squares have center-ray separation at least 2 atan(1/(sqrt(14)-1)) | [Loaded-pair angle](LOADED_PAIR_ANGLE_BOUND.md) | Reviewed hand theorem for arbitrary orientations and all separator offsets; stronger than the previous generic angular bound |
 | A five-cycle with four loaded squares cannot use a side transmitter | [Four-loaded five-cycle](MIXED_FIVE_FOUR_LOADED.md) | Side transmitter excluded by hand in the explicitly imported radius window; the diagonal branch is now excluded above for the chosen certificate |
 | Parallel four-inner cores have a line-separated or pinwheel form; narrow internal channels can be filled as virtual obstacles | [Projection graphs and channel lemma](FOUR_CORE_GENERALIZATION.md) | Hand structural reduction and exact localized pinwheel; no general completion bound |
@@ -117,6 +120,10 @@ certificates remain computational results with their own stated scope.
 ## Roadmap and next obligation
 
 <!-- CASE_PROGRESS_START -->
+**Fixed strict-lower-bound master ledger:** `███████████████████▌░░░░` **273/336 closed; 63 open.** (273 hand; 0 computer-only.) [All stable IDs and the exact remaining obligations](MASTER_CASES.md).
+
+The denominator is frozen: 19 other terminal families + 38 branching families + 279 cycle signatures. A branching family includes every permitted graph and continuous realization for its fixed `(k,b)`. These are proof-family counts, **not a percentage of effort or of the full n=10 deliverable**. Equality and Lean verification have separate gates.
+
 **Main gates:** `███░░░░` **3/7 closed**.
 
 **G3 lower-bound case ledger:** `███████████████████░░`
@@ -124,9 +131,9 @@ certificates remain computational results with their own stated scope.
 
 **C20 larger-cycle subcases:** `█████████████████████▏░░` **246/279 closed; 33 open.**
 
-**C05 branching subclass, all branch vertices loaded:** `██████████████████████▎░` **42,532/45,666 excluded; 3,134 remain.** [Catalog and certificates](BRANCHING_SELECTED_GRAPH_FILTERS.md). This is the fixed `b=0` subledger.
+C05 optional b=0 drilldown: 42,532/45,666 raw records excluded; 3,134 remain. [Catalog and certificates](BRANCHING_SELECTED_GRAPH_FILTERS.md). 
 
-**C05 branching subclass, exactly one unloaded branch vertex:** `█████████████████▌░░░░░░` **385,071/524,870 excluded; 139,799 remain.** [Catalog and proof decoder](BRANCHING_ONE_UNLOADED_FILTERS.md). At least two unloaded branch vertices remain outside these catalogs.
+C05 optional b=1 drilldown: 385,071/524,870 raw records excluded; 139,799 remain. [Catalog and proof decoder](BRANCHING_ONE_UNLOADED_FILTERS.md). Larger b is already covered by the fixed master families. These drilldowns do not add master progress.
 
 `█` reviewed hand deduction; `▓` reviewed computer-assisted result; `░` open. These are counts of the fixed ledger entries, **not a percentage of the proof or remaining effort**. Every currently closed family has a reviewed hand deduction; imported dependencies remain as stated in each proof.
 

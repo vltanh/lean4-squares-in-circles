@@ -1,11 +1,15 @@
 # The n=10 case tree and proof progress
 
-The unrestricted lower bound is **not proved**. This ledger states exactly
+The unrestricted lower bound is **not proved**. The [fixed 336-family master ledger](MASTER_CASES.md) states exactly
 which finite families remain, and separates a closed case from a useful
 lemma that does not close its family. All lower-bound cases below concern
 `R^2<9/2`; equality and Lean integration have separate gates.
 
 <!-- CASE_PROGRESS_START -->
+**Fixed strict-lower-bound master ledger:** `███████████████████▌░░░░` **273/336 closed; 63 open.** (273 hand; 0 computer-only.) [All stable IDs and the exact remaining obligations](MASTER_CASES.md).
+
+The denominator is frozen: 19 other terminal families + 38 branching families + 279 cycle signatures. A branching family includes every permitted graph and continuous realization for its fixed `(k,b)`. These are proof-family counts, **not a percentage of effort or of the full n=10 deliverable**. Equality and Lean verification have separate gates.
+
 **Main gates:** `███░░░░` **3/7 closed**.
 
 **G3 lower-bound case ledger:** `███████████████████░░`
@@ -13,9 +17,9 @@ lemma that does not close its family. All lower-bound cases below concern
 
 **C20 larger-cycle subcases:** `█████████████████████▏░░` **246/279 closed; 33 open.**
 
-**C05 branching subclass, all branch vertices loaded:** `██████████████████████▎░` **42,532/45,666 excluded; 3,134 remain.** [Catalog and certificates](BRANCHING_SELECTED_GRAPH_FILTERS.md). This is the fixed `b=0` subledger.
+C05 optional b=0 drilldown: 42,532/45,666 raw records excluded; 3,134 remain. [Catalog and certificates](BRANCHING_SELECTED_GRAPH_FILTERS.md). 
 
-**C05 branching subclass, exactly one unloaded branch vertex:** `█████████████████▌░░░░░░` **385,071/524,870 excluded; 139,799 remain.** [Catalog and proof decoder](BRANCHING_ONE_UNLOADED_FILTERS.md). At least two unloaded branch vertices remain outside these catalogs.
+C05 optional b=1 drilldown: 385,071/524,870 raw records excluded; 139,799 remain. [Catalog and proof decoder](BRANCHING_ONE_UNLOADED_FILTERS.md). Larger b is already covered by the fixed master families. These drilldowns do not add master progress.
 
 `█` reviewed hand deduction; `▓` reviewed computer-assisted result; `░` open. These are counts of the fixed ledger entries, **not a percentage of the proof or remaining effort**. Every currently closed family has a reviewed hand deduction; imported dependencies remain as stated in each proof.
 
@@ -192,8 +196,8 @@ vertex loaded (`b=0`) now has a fixed
 independently reproduced by Python and C++ enumerators. Each row records
 the circular loaded order, path types, multiplicities, and body count.
 The [combined exact graph certificates](BRANCHING_SELECTED_GRAPH_FILTERS.md)
-exclude 42,532 records and leave 3,134; the separate bar above tracks this
-fixed subclass. Each angular rejection prints at most seven integer
+exclude 42,532 records and leave 3,134; this is an optional raw-code drilldown within the
+fixed master families. Each angular rejection prints at most seven integer
 inequalities summing to a contradiction.
 
 The subclass with exactly one unloaded retained branch vertex (`b=1`)
@@ -207,8 +211,9 @@ be exported from regenerated catalogs. At least two unloaded retained
 vertices (`b>=2`) remain outside both catalogs. Neither partial
 classification closes C05.
 
-This remaining family is bounded: `3<=k<=7` and `2<=b<=10-k`, so
-`b<=7` and only 20 pairs `(k,b)` are possible. Every skeleton has at most
+The fixed master ledger covers all remaining branching graphs with
+`3<=k<=7` and `0<=b<=10-k`: exactly 30 open pairs `(k,b)`.
+The eight k=2 branching families are already hand closed. Every skeleton has at most
 ten retained vertices and the fixed seven-symbol edge alphabet. There is
 no unbounded sequence of strata. The research priority is now to prove
 restrictions across this entire remaining family, rather than build
@@ -290,3 +295,21 @@ do not present the changed denominator as mathematical progress.
 C20 closures are tracked separately in [cycle_progress.json](cycle_progress.json),
 so the original inventory remains a stable denominator. Add a reviewed proof
 reference there when an entire graph/transmitter case is excluded.
+
+## Shared reductions across the fixed open families
+
+The [three-interior-body theorem](THREE_INTERIOR_BODY_REDUCTION.md) gives a
+single bounded central graph problem: at most three physical body vertices
+can fail radial exposure, regardless of k or b. All D/SS endpoints are
+exposed in the same drawing. The [two-terminal patch theorem](TWO_TERMINAL_UNLOADED_PATCH_REDUCTION.md)
+then reduces every connected unloaded set with exactly two outside neighbors
+to one S, one D, or two to four S bodies in two columns. This applies even
+when the terminals were not exposed in the original graph. Regions with
+three or more terminals remain a common unresolved target.
+
+[Bundle consolidation](DOUBLE_SIDE_BUNDLE_CONSOLIDATION.md) supplies a further
+packing-and-stress normalization eliminating double-S bundles. Its explicitly
+listed certificate properties survive; compatibility with any additional
+selection hypothesis must be checked before use. These universal reductions
+advance the proof without adding master entries or treating partial reductions
+as closed families.

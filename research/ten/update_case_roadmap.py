@@ -3,6 +3,7 @@
 from collections import Counter
 import json
 from pathlib import Path
+from render_master_cases import render_master
 
 ROOT = Path(__file__).resolve().parent
 START = "<!-- CASE_PROGRESS_START -->"
@@ -71,21 +72,22 @@ def main():
     bar = "".join(symbols[s] * counts[s] for s in ("hand", "computer", "open"))
     gates = data["gates"]
     done = sum(g["closed"] for g in gates)
-    summary = (
+    master_summary = render_master(data, cycles, cycle_status, fraction_bar)
+    summary = master_summary + "\n\n" + (
         f"**Main gates:** `{'█' * done}{'░' * (len(gates)-done)}` **{done}/{len(gates)} closed**.\n\n"
         f"**G3 lower-bound case ledger:** `{bar}`\n"
         f"**{counts['hand']} hand closed · {counts['computer']} computer closed · "
         f"{counts['open']} open / {len(cases)} terminal families.**\n\n"
         f"**C20 larger-cycle subcases:** `{cycle_bar}` **{cycle_done}/{cycle_total} closed; "
         f"{cycle_total-cycle_done} open.**\n\n"
-        f"**C05 branching subclass, all branch vertices loaded:** `{branch_bar}` "
-        f"**{branch_done:,}/{branch_total:,} excluded; {branch_total-branch_done:,} remain.** "
+        f"C05 optional b=0 drilldown: {branch_done:,}/{branch_total:,} raw records excluded; "
+        f"{branch_total-branch_done:,} remain. "
         f"[Catalog and certificates]({branch['proof']}). "
-        "This is the fixed `b=0` subledger.\n\n"
-        f"**C05 branching subclass, exactly one unloaded branch vertex:** `{b1_bar}` "
-        f"**{b1_done:,}/{b1_total:,} excluded; {b1_total-b1_done:,} remain.** "
+        "\n\n"
+        f"C05 optional b=1 drilldown: {b1_done:,}/{b1_total:,} raw records excluded; "
+        f"{b1_total-b1_done:,} remain. "
         f"[Catalog and proof decoder]({branch_one['evidence']}). "
-        "At least two unloaded branch vertices remain outside these catalogs.\n\n"
+        "Larger b is already covered by the fixed master families. These drilldowns do not add master progress.\n\n"
         "`█` reviewed hand deduction; `▓` reviewed computer-assisted result; `░` open. "
         "These are counts of the fixed ledger entries, **not a percentage of the proof or remaining effort**. "
         + ("For the requested hand proof, each computer-assisted family also needs a hand replacement."
@@ -99,6 +101,7 @@ def main():
     replace_region(ROOT / "CASE_ROADMAP.md", content)
     replace_region(ROOT / "README.md", summary + "\n\n[Open the full case tree and remaining obligations](CASE_ROADMAP.md). "
                    "[Browse all 279 larger-cycle cases](CYCLE_CASES.md).")
+    replace_region(ROOT / "HANDOFF.md", master_summary)
     rows = ["# Finite inventory of the larger mixed simple cycles", "",
             "This is the complete current **graph/transmitter overclassification** for C20. "
             "It covers whole positive components of lengths 6–10, modulo cyclic rotation and reflection. "
@@ -131,7 +134,7 @@ def main():
     (ROOT / "CYCLE_CASES.md").write_text("\n".join(rows))
     print(f"Rendered {done}/{len(gates)} gates; {dict(counts)} across {len(cases)} case families; {cycle_done}/{cycle_total} cycle cases closed.")
     print(f"Branching b=0: {branch_done}/{branch_total} excluded; {branch_total-branch_done} remain.")
-    print(f"Branching b=1: {b1_done}/{b1_total} excluded; {b1_total-b1_done} remain; b>=2 unclassified.")
+    print(f"Branching b=1 drilldown: {b1_done}/{b1_total} excluded; {b1_total-b1_done} remain; all b covered by master.")
 
 
 if __name__ == "__main__":
