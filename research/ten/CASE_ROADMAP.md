@@ -8,8 +8,8 @@ lemma that does not close its family. All lower-bound cases below concern
 <!-- CASE_PROGRESS_START -->
 **Main gates:** `███░░░░` **3/7 closed**.
 
-**G3 lower-bound case ledger:** `██████████████████░░░`
-**18 hand closed · 0 computer closed · 3 open / 21 terminal families.**
+**G3 lower-bound case ledger:** `███████████████████░░`
+**19 hand closed · 0 computer closed · 2 open / 21 terminal families.**
 
 **C20 larger-cycle subcases:** `█████████████████████▏░░` **246/279 closed; 33 open.**
 
@@ -35,7 +35,7 @@ lemma that does not close its family. All lower-bound cases below concern
 | C01 | HAND CLOSED | **Entirely loaded cyclic component that is not a seven-body simple cycle.** The all-loaded reduction forces an enclosing seven-cycle in a strictly subcritical ten-packing. [Proof / reduction](ALL_LOADED_COMPONENT_RINGS.md). |
 | C02 | HAND CLOSED | **Seven loaded bodies with a common signed frame offset.** Includes the smooth uniform ring and the radial-side/diagonal endpoints. [Proof / reduction](REGULAR_SEVEN_LOADED_RING.md). |
 | C03 | HAND CLOSED | **Nonuniform strict one-chirality seven-ring.** After C02: the fixed side/vertex pattern, allowing reflection and cyclic relabeling. A hand cap theorem traps all three inner squares below the three-square minimum radius. [Proof / reduction](SEVEN_RING_RADIAL_CAP_BOUND.md). |
-| C04 | OPEN | **Other seven-loaded-ring contact ownership.** The selected loaded ring must contain a unique-circle outer-edge/opposite-corner row U4 or U5. All other unique-circle rows, arbitrary radial-side bodies, and every pair-support type are covered by the extended capacity argument when U4/U5 are absent. [Proof / reduction](SEVEN_RING_OUTER_EDGE_REDUCTION.md). |
+| C04 | HAND CLOSED | **Other seven-loaded-ring contact ownership.** For the jointly selected certificate, outer-row extra corners have squared norm below 33/20. The enlarged core boundary and all SS/SV/VS/VV caps place the three inner squares below squared radius 83/50, contradicting 425/256. This closes every loaded seven-ring ownership pattern. [Proof / reduction](SEVEN_RING_COMPLETE_CAPACITY.md). |
 | C05 | OPEN | **Mixed cyclic component whose whole graph is not a simple cycle.** Includes branching cyclic blocks and bridges. Fixed catalogs cover b=0 (45,666 records: 3,134 remain) and b=1 (524,870 records: 139,799 remain). The complete k=2,b=1 stratum is excluded. At least two unloaded retained branch vertices remain unclassified. [Proof / reduction](BRANCHING_ONE_UNLOADED_FILTERS.md). |
 | C06 | HAND CLOSED | **Mixed simple cycle of length at most four.** All load assignments. [Proof / reduction](CYCLIC_STRESS_REDUCTIONS.md). |
 | C07 | HAND CLOSED | **Mixed simple cycle of length at least five with at most two loads.** The two-terminal transmission-path theorem applies to a whole simple cycle. [Proof / reduction](CYCLIC_STRESS_REDUCTIONS.md). |
@@ -97,7 +97,7 @@ Nonzero minimizing positive component
    │  └─ Seven-body physical ring
    │     ├─ Common signed frame offset ................... C02 H
    │     ├─ Otherwise, strict one-chirality ownership ..... C03 H
-   │     └─ Other contact ownership / boundary cases ...... C04 O
+   │     └─ Other contact ownership / boundary cases ...... C04 H
    └─ Some bodies are unloaded
       ├─ Whole graph is not a simple cycle ................ C05 O
       └─ Whole graph is a simple cycle
@@ -146,13 +146,12 @@ support. All four-loaded five-cycles are therefore excluded in this route.
 
 ## What is left, concretely
 
-There are three open physical families. Every closed family in the main
+There are two open physical families. Every closed family in the main
 ledger now has a reviewed hand deduction, with its imported dependencies
 stated in the linked proof:
 
 | Family | Next result needed |
 | --- | --- |
-| C04: other loaded-ring ownership | Every selected surviving ring contains a unique-circle outer-edge/opposite-corner row U4 or U5. Exclude these rows or extend the capacity theorem to cover them. |
 | C05: branching mixed components | Classify or exclude the connected cyclic graphs that are not whole simple cycles, including bridge attachments and exactly two loaded bodies. |
 | C20: larger mixed simple cycles | Exclude the [279 enumerated graph/transmitter cases](CYCLE_CASES.md), refining physical contact ownership where needed. |
 
@@ -161,37 +160,21 @@ are tools for these obligations. A proof for a special core does **not**
 close a leaf unless every configuration in that leaf has been reduced to
 that core.
 
-## The two broad finite families are still classification work
+## Closed ring classification and the remaining mixed families
 
-**C04, seven-loaded ownership.** First relabel each square's local frame so
-its geometric circle vertex, or adjacent circle-vertex pair, has a canonical
-label. A fully explicit finite encoding then uses, for
-each of seven bodies, its circle-contact type (one geometric vertex, or two
-with the first, second, or both weights positive) and the incidence of each
-of its two original pair-contact points (one of four vertices or one of four
-relative side interiors). This gives at most `4^7 * 8^14 = 2^56` labeled
-incidence records before symmetry, force, and geometry restrictions. The
-normal at a vertex ranges over its supporting cone; it is not replaced by
-an edge normal. The records are finite, but this enormous raw list has
-**not** been reduced to a practical audited catalog. That reduction is an
-open subgate of C04. The reviewed [support alphabet](SEVEN_RING_OWNERSHIP_ALPHABET.md)
-reduces necessary local types to 25 rows and proper edge/vertex ownership
-to 34 coarse source/sink schemes. The
-[inner-face capacity theorem](SEVEN_RING_INNER_FACE_CAPACITY.md) excludes
-every scheme made only from U1/U6/U7/U10, and the
-[incident mixed theorem](LOADED_INCIDENT_MIXED_EXCLUSION.md) excludes U2/U3.
-The [radial extension](SEVEN_RING_RADIAL_INNER_FACE_CAPACITY.md) includes
-all radial-side bodies. The [shared-side extension](SEVEN_RING_SHARED_SIDE_CAPACITY.md)
-also permits SS pairs. The [all-inner-face extension](SEVEN_RING_ALL_INNER_FACE_CAPACITY.md)
-handles VV pairs by jointly selected normals, and the
-[outer-edge reduction](SEVEN_RING_OUTER_EDGE_REDUCTION.md) absorbs U8/U9.
-Every remaining ring therefore contains U4 or U5, including rings with
-arbitrary radial-side bodies and either support type on each pair.
-The [joint generic restriction](LOADED_VV_GENERIC_RESTRICTION.md) forces
-each unique-circle VV endpoint to have its other pair on an SS segment
-with aggregate application strictly inside that segment.
-The raw row and scheme counts are coverage counts, not counts of surviving
-realizable rings. A theorem covering all records would close C04 directly.
+**C04 is now closed across every ownership pattern.** The fixed support
+alphabet retains its 25 local symbols and 34 historical proper-contact
+schemes as coverage data. The [complete capacity theorem](SEVEN_RING_COMPLETE_CAPACITY.md)
+selects compatible normals before classifying the physical graph. Its
+[outer-corner theorem](LOADED_OUTER_CORNER_CLEARANCE.md) bounds the extra
+U4/U5 corners by squared radius 33/20. The
+[enlarged core assembly](SEVEN_RING_OUTER_CORE_ASSEMBLY.md) includes those
+corners and every radial, SS, SV/VS, and VV case. The old caps and the
+[new outer caps](OUTER_SIDE_CAPACITY_MARGIN.md) then place every vertex
+of all three inner squares below squared radius 83/50, contradicting
+the three-square minimum 425/256. No enumeration of continuous ring
+realizations is required. The normal choices are joint with the selected
+planar certificate used in the remaining mixed-component families.
 
 **C05, branching mixed graphs.** A precise finite envelope consists of
 `m<=10` labeled vertices, an edge mask in `{0,1}^{m choose 2}`, and a loaded
@@ -231,7 +214,7 @@ successively larger catalogs. The
 [two-neighbor branch theorem](TWO_NEIGHBOR_UNLOADED_BRANCH_RESTRICTIONS.md)
 already applies to every b: such branch vertices form an independent set,
 cannot repeat a neighbor pair, and obey `k+b+2r<=10`. In particular there
-are at most two of them, and none when `k+b>=9`.
+is at most one in the entire selected component, and none when `k+b>=9`.
 
 **C20 is already enumerated.** [CYCLE_CASES.md](CYCLE_CASES.md) lists all
 279 stable case IDs and their canonical words. Independent enumerations and

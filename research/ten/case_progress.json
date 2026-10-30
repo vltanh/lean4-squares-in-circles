@@ -74,10 +74,10 @@
     },
     {
       "id": "C04",
-      "status": "open",
+      "status": "hand",
       "title": "Other seven-loaded-ring contact ownership",
-      "scope": "The selected loaded ring must contain a unique-circle outer-edge/opposite-corner row U4 or U5. All other unique-circle rows, arbitrary radial-side bodies, and every pair-support type are covered by the extended capacity argument when U4/U5 are absent.",
-      "evidence": "SEVEN_RING_OUTER_EDGE_REDUCTION.md"
+      "scope": "For the jointly selected certificate, outer-row extra corners have squared norm below 33/20. The enlarged core boundary and all SS/SV/VS/VV caps place the three inner squares below squared radius 83/50, contradicting 425/256. This closes every loaded seven-ring ownership pattern.",
+      "evidence": "SEVEN_RING_COMPLETE_CAPACITY.md"
     },
     {
       "id": "C05",

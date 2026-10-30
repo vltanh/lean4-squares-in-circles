@@ -2,9 +2,12 @@
 
 **Status:** hand classification of necessary local candidates; independent
 full mathematical review passed on 2026-10-29, including the side-endpoint
-check in Section 6. This is not a realization theorem and does not exclude all
-candidate words. It makes the remaining contact-ownership problem finite
-at the combinatorial level while retaining its continuous geometric data.
+check in Section 6. The alphabet is a cover by necessary candidates, not
+a realization theorem. The subsequent independently reviewed corner,
+cap and enlarged-core assembly theorems now exclude every loaded
+seven-ring of the jointly selected certificate; Section 6 records that
+closure. The original 25 local symbols and 34 proper-contact schemes
+are retained as the fixed combinatorial cover.
 
 Use the entirely loaded physical seven-ring from
 [ALL_LOADED_COMPONENT_RINGS.md](ALL_LOADED_COMPONENT_RINGS.md). Keep the
@@ -273,7 +276,7 @@ cyclic shift; no uniqueness of this representation is asserted.
 Each body in a scheme must also satisfy its row of the 25-symbol local
 alphabet and the turn budget (5).
 
-## 6. Which words are already excluded, and what remains
+## 6. Successive reductions and closure of all ownership families
 
 In the pure incoming-`V` word, if every body has a unique circle vertex
 and row U7 (`B→L`), the support-edge application points are in fact
@@ -334,7 +337,7 @@ support types. These deductions prune the raw alphabet; they do not
 change its original 25-symbol coverage or the 34 coarse-scheme count.
 
 The [all-pair inner-face capacity theorem](SEVEN_RING_ALL_INNER_FACE_CAPACITY.md)
-now also absorbs VV pair defects under a stronger certificate selection.
+also absorbs VV pair defects under a stronger certificate selection.
 Its additional normal choices are made before the positive graph is
 classified and are compatible with the preceding finite-polynomial
 exclusions. Consequently every remaining loaded ring of that certificate
@@ -344,7 +347,7 @@ U8/U9: their opposite V contact equals their core corner and contributes
 only a degenerate triangle. Therefore U4 or U5 is necessary in every
 remaining loaded ring of this certificate.
 
-A finite cover of the remaining ownership problem is therefore:
+A finite cover of the ownership problem remaining at that stage was:
 
 1. Proper `SV/VS` pair contacts with no sources or sinks, and at least one
    unique-circle outer-edge/opposite-corner row U4 or U5.
@@ -360,9 +363,26 @@ A finite cover of the remaining ownership problem is therefore:
    unique-circle U4 or U5 body. Endpoint and shared-segment cases remain
    included.
 
-The incidence identity and turn budget still apply, and U2/U3 are excluded
-throughout. Radial bodies and changes of pair ownership alone no longer
-leave an open inner-capacity case in this selected certificate. The two
-outer-edge mixed rows U4/U5 retain their continuous geometry and are not
-yet excluded. The 34 original schemes remain a coarse cover, so a scheme with
-some excluded realizations is not counted as wholly closed.
+All four families are now excluded by the reviewed outer-body extension:
+
+* [Outer-corner clearance](LOADED_OUTER_CORNER_CLEARANCE.md) strengthens
+  the compatible normal selection and proves that every U4/U5 extra
+  inner-boundary corner has squared norm below `33/20`.
+* The [outer-spike cap](OUTER_SIDE_SPIKE_CAP_BOUND.md) and its
+  [capacity margin](OUTER_SIDE_CAPACITY_MARGIN.md) put every inner-square
+  vertex in an outer proper-contact spike below squared radius `83/50`.
+* The [enlarged-core assembly](SEVEN_RING_OUTER_CORE_ASSEMBLY.md) includes
+  those extra corners and spikes, all SS boundary replacements, every
+  VV degeneracy, and every radial load split. All three inner squares
+  would lie in the disk of squared radius `83/50<425/256`, contradicting
+  the known three-square minimum.
+
+The strengthened intervals and finite-polynomial conditions are imposed
+jointly before constructing and classifying the stress; this conclusion
+does not require preservation of a previously selected positive graph.
+Thus every word in the original 34-scheme proper-contact cover is excluded,
+and both SS/VV defect families are excluded as well. The raw 25-symbol
+alphabet and 34-scheme denominator are unchanged: their continuous
+realizations have been excluded by one geometric capacity theorem, rather
+than counted by a new enumeration. This closes the loaded seven-ring
+case C04; it is not a proof of the other n=10 component cases.

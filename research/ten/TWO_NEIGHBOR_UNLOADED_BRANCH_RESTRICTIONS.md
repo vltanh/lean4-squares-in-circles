@@ -1,7 +1,8 @@
 # Restrictions on unloaded branch vertices with two neighbors
 
-**Status:** hand restrictions; root and independent full mathematical
-reviews passed on 2026-10-29. These
+**Status:** hand restrictions; Sections 1--5 received root and independent
+full mathematical reviews on 2026-10-29. The stronger matching and
+`r<=1` consequences in Sections 6--7 passed both reviews on 2026-10-30. These
 apply to every C05 skeleton in the ten-square radius window, including
 unloaded retained endpoints. They do not exclude the whole branching
 family and do not change any fixed raw catalog.
@@ -20,6 +21,13 @@ neighbors. Degrees still count parallel paths.
 3. No two of the r vertices are adjacent in the skeleton.
 4. No two of them have the same unordered neighbor pair {A,B}.
 5. Their internal double-S paths are disjoint, and `k+b+2r<=10`.
+6. The unordered endpoint pairs of all width-two relations form a
+   matching, after repetitions of the same pair are ignored. This includes
+   both actual SS paths and the effective connections in item 1. In
+   particular, the r exceptional vertices have disjoint neighbor pairs.
+7. If the stress is chosen with the jointly compatible planar selection
+   of [PLANAR_SELECTED_PHYSICAL_STRESS.md](PLANAR_SELECTED_PHYSICAL_STRESS.md),
+   then `r<=1`, for every number b of unloaded retained vertices.
 
 Whenever A and B are loaded, the cap-angle theorem additionally makes
 both arcs between their center rays greater than 162 degrees. This angle
@@ -168,9 +176,126 @@ loaded-loaded pair code must be zero, and their loaded angular separation
 has the same lower bound as an SS connection. These are additional
 necessary predicates, to be recorded as exclusions against the unchanged
 raw catalog. For `b>=2`, the independent-set and distinct-neighbor-pair
-conditions also constrain the remaining enumeration.
+conditions constrain the entire remaining finite family.
 
 Contracting one of these configurations to an effective width-two
 relation is only geometric bookkeeping. It changes graph degrees and
 cycle counts, and it is not asserted to produce a new physical stress
 with fewer square bodies.
+
+## 6. Every width-two relation belongs to one matching
+
+Call an unordered pair of distinct retained bodies a width-two relation
+when their parallel supporting lines are separated by two. An actual SS
+path supplies such a relation, as does Section 1 at an exceptional vertex.
+The assertion below is geometric: it does not require either endpoint
+to be loaded or require the relation to be a skeleton edge.
+
+If A,B form a width-two relation, their center separation is at least
+three, since each square contributes directional halfwidth at least one
+half. The universal center bound therefore gives
+
+```text
+|c_A| >= 3-|c_B| > 23/16 > 5/4,
+|c_B| > 23/16 > 5/4.
+```
+
+Any two distinct bodies occurring as endpoints of width-two relations
+thus have center norms in `(5/4,25/16)` and center separation at least
+one. Their center rays are more than 36 degrees apart. For completeness,
+if their minor angle were at most `pi/5`, then
+`cos(pi/5)>4/5` would bound their squared distance strictly above by
+
+```text
+f(x,y)=x^2+y^2-(8/5)xy.
+```
+
+Separate convexity puts the maximum over `[5/4,25/16]^2` at a corner.
+The three different corner values are `5/8`, `225/256`, and `125/128`,
+all less than one, a contradiction. This uses the annular-center
+calculation from [ALL_LOADED_COMPONENT_RINGS.md](ALL_LOADED_COMPONENT_RINGS.md),
+Section 1, with its lower-radius hypothesis now supplied by the
+width-two relation instead of loading.
+
+Suppose A has width-two relations with two different bodies B,C.
+The W=2 cap theorem gives both minor angles A--B and A--C greater than
+162 degrees. Thus the rays of B and C are each less than 18 degrees
+from the antipodal ray to A. Their mutual minor angle is less than
+36 degrees by the circular triangle inequality. This contradicts the
+preceding annular-center bound. Consequently no endpoint has two
+different width-two partners, proving the matching assertion.
+
+Section 4 already excludes two exceptional vertices with the same
+unordered neighbor pair. Therefore their neighbor pairs are pairwise
+disjoint. Moreover neither member of such a pair can be incident to an
+actual SS path: a different SS partner would contradict the matching
+property, while its own partner is excluded by Section 2. Multiple
+actual SS paths with the same endpoint pair are not excluded by the
+matching statement alone.
+
+## 7. At most one unloaded retained vertex has two neighbors
+
+Use the jointly selected planar certificate. Sections 1--6 hold for that
+same certificate, because its selection preserves the strict point-only
+VV normal convention before the graph is classified.
+
+Section 5 gives `r<=2`. Suppose equality, and name the exceptional
+vertices H,H', with neighbor pairs {A,B} and {C,D}. The pairs are disjoint
+by Section 6. Neither H nor H' belongs to either pair, by Section 3.
+These are therefore six distinct retained bodies. The body budget gives
+
+```text
+6 <= k+b <= 10-2r = 6.
+```
+
+Thus these are all retained bodies, and the four distinct internal S
+bodies of the two double bundles exhaust the remaining body budget.
+Every other skeleton edge is direct: every nonempty suppressed path
+would require at least one additional physical square.
+
+Consider one endpoint, say A. It cannot be joined to B by Section 2.
+It cannot be joined to H', whose two neighbors are exactly C,D. Apart
+from its own connection to H, its possible neighbors are therefore C,D,
+and those possible edges are direct. It cannot touch both C and D:
+two touching unit squares have center distance at most `sqrt(2)`, so
+the triangle inequality through A would give
+
+```text
+|c_C-c_D| <= |c_C-c_A|+|c_A-c_D| <= 2sqrt(2) < 3,
+```
+
+contrary to the width-two relation C--D. Hence A has at most two
+distinct retained neighbors. The same argument applies to B,C,D.
+
+If any of these endpoints were unloaded, it would have multigraph
+degree at least three. The per-pair bundle multiplicity is at most two,
+so it cannot have only one distinct neighbor. Having exactly two would
+make it a third exceptional vertex, contrary to `r<=2`. All four
+endpoints are consequently loaded, and `k=4,b=2`.
+
+Their four successive circular center-ray gaps are each greater than
+36 degrees. If the two disjoint pairs {A,B} and {C,D} did not alternate
+in this order, both pairs would be adjacent boundary pairs. One of the
+four successive gaps would then run directly from A to B, and a
+different gap directly from C to D. Each of these two gaps is greater
+than 162 degrees by Section 6 and the W=2 cap theorem: both circular
+arcs between a width-two pair have this lower bound. The other two gaps
+are greater than 36 degrees. Their sum would exceed
+`162+162+36+36=396` degrees, contradicting 360 degrees. The two pairs
+must therefore alternate in loaded circular order.
+
+Choose one of the two S bodies in each double bundle. They give actual
+positive-graph paths from A to B through H and its chosen S body, and
+from C to D through H' and its chosen S body. The order of H and S on
+its path depends on which endpoint is direct, but the two paths are
+vertex-disjoint in either case. All their internal bodies are unloaded.
+The planar selection theorem places the four loaded endpoints on the
+disk boundary in their center-ray circular order. Two vertex-disjoint
+paths with alternating boundary endpoints cannot be drawn in a disk:
+one path, completed along a boundary arc, separates the endpoints of the
+other. This contradicts that theorem's disk embedding.
+
+Thus r cannot be two, and `r<=1`. This restriction holds across the
+entire branching family, with arbitrary allowed k,b. It needs no new
+catalog and changes none of the existing raw denominators or exclusion
+counts by itself.

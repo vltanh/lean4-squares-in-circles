@@ -1,4 +1,4 @@
-# n=10 research handoff — updated 2026-10-29
+# n=10 research handoff — updated 2026-10-30
 
 PR: <https://github.com/vltanh/lean4-squares-in-circles/pull/12>  
 Branch: `research/ten-exact-start`  
@@ -12,7 +12,7 @@ claimed. This PR changes only research artifacts under `research/ten/`.
 ## Start here
 
 [CASE_ROADMAP.md](CASE_ROADMAP.md) is the current finite case tree and gated
-progress ledger: **18 hand-closed, 0 computer-only, and 3 open families**.
+progress ledger: **19 hand-closed, 0 computer-only, and 2 open families**.
 [CYCLE_CASES.md](CYCLE_CASES.md) enumerates all 279 larger mixed-cycle cases;
 Its generated progress bar and proof links record every reviewed exclusion.
 The bars count these fixed families, not the fraction of proof effort.
@@ -38,8 +38,8 @@ The equality classification remains open outside the completed classes.
 ## Current resumed checkpoint
 
 Research resumed from handoff commit `fb91a0517a0eedf192e11759f9bdec2a60ab46af`.
-The unrestricted proof is still open. The main case ledger has **18 reviewed
-hand closures and 3 open
+The unrestricted proof is still open. The main case ledger has **19 reviewed
+hand closures and 2 open
 families out of 21**; the larger-cycle subledger has **246 reviewed hand
 closures and 33 open cases out of 279**. Main gates remain **3/7 closed**.
 The closed counts do not measure the fraction of mathematical effort.
@@ -58,15 +58,12 @@ Latest completed work:
   [stronger loaded-pair angle](STRONG_DIRECT_CYCLE_BUDGET.md) adds eight.
   The 33 open IDs comprise 11 length-six,
   15 length-seven, and 7 length-eight signatures.
-- C04's [all-inner-face capacity theorem](SEVEN_RING_ALL_INNER_FACE_CAPACITY.md)
-  and [outer-edge reduction](SEVEN_RING_OUTER_EDGE_REDUCTION.md) cover
-  arbitrary radial-side bodies, SS/VV pairs, and U8/U9. Every surviving
-  selected seven-ring must contain a unique-circle row U4 or U5.
-  Its [extra corner bound](LOADED_OUTER_MIXED_RESTRICTIONS.md) narrowly
-  exceeds the three-square threshold. If that corner reaches squared
-  radius 83/50, a [joint midpoint-normal selection](LOADED_OUTER_VV_NORMAL_EXCLUSION.md)
-  forces the opposite-corner pair to be proper V/S, with an inner-side
-  neighbor of row U1/U6/U7. These are restrictions, not a capacity closure.
+- C04 is [hand closed](SEVEN_RING_COMPLETE_CAPACITY.md), including every
+  ownership row and radial load split. The new outer-corner theorem gives
+  squared radius below 33/20; the complete enlarged-core and contact-cap
+  argument places all three inner squares below 83/50, contradicting
+  their exact minimum 425/256. The corner selection, cap bounds, and
+  global winding argument passed root and independent reviews.
 - C05's [loaded-branch catalog](BRANCHING_LOADED_SKELETON_INVENTORY.md)
   has 45,666 fixed records. [Exact graph certificates](BRANCHING_SELECTED_GRAPH_FILTERS.md)
   exclude 42,532 and leave 3,134. Independent enumerators agree on every
@@ -88,7 +85,6 @@ Latest completed work:
 
 | Open family | Concrete next work |
 | --- | --- |
-| C04: other seven-ring ownership | Exclude U4/U5 or extend capacity to their extra inner-boundary corners. |
 | C05: branching mixed components | Exclude 3,134 remaining b=0 records and 139,799 remaining b=1 records; classify or exclude b>=2. |
 | C20: 33 larger-cycle entries | Prove completion bounds or contact exclusions for the explicit remaining signatures in CYCLE_CASES.md. |
 
@@ -96,7 +92,8 @@ The remaining branching range is finite: `2<=k<=7`, `2<=b<=10-k`,
 hence `b<=8` (27 parameter pairs). Work is focused on structural arguments
 covering all these pairs, rather than adding larger catalogs. The
 [two-neighbor branch theorem](TWO_NEIGHBOR_UNLOADED_BRANCH_RESTRICTIONS.md)
-is such a universal restriction; it is not a closure of that family.
+is such a universal restriction: at most one unloaded retained vertex
+has only two distinct retained neighbors. It is not a closure of C05.
 
 The open `LSLSLD` signature now has a
 [reproducible numerical six-body candidate](ONE_DIAGONAL_TWO_SIDE_COMPONENT_CANDIDATE.md)
@@ -115,8 +112,8 @@ to branching components without that hypothesis.
 The [ownership alphabet](SEVEN_RING_OWNERSHIP_ALPHABET.md) now has two
 full integrated reviews, including its radial-side tables, coarse schemes,
 and strict side-endpoint reduction for pure chirality. It gives 25 local
-candidates; the current capacity reductions require U4 or U5 in every
-surviving selected ring. Neither row has yet been excluded. The
+candidates; the complete capacity theorem now excludes all seven-ring
+ownership families, including U4/U5 and every pair-support type. The
 [branching skeleton](BRANCHING_COMPONENT_SKELETON_DRAFT.md) also passed two
 full mathematical reviews of its suppression, degree, bundle, and effective
 contact reductions. Both remain necessary classifications, not global

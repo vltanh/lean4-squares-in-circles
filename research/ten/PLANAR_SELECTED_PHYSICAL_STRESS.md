@@ -90,6 +90,11 @@ The opposite-corner midpoint intervals in
 also satisfy the compatibility argument below. They concern disjoint VV
 pairs from the earlier circle-adjacent intervals and impose one common
 open interval that works for either endpoint's possible outer-body role.
+The enlarged candidate range in
+[LOADED_OUTER_CORNER_CLEARANCE.md](LOADED_OUTER_CORNER_CLEARANCE.md),
+Section 2, uses that same midpoint prescription on the old candidates.
+It is compatible for the same reason and is the range used in the
+complete seven-ring exclusion.
 Those choices concern only point-only VV pairs whose two incident squares
 both have geometric circle vertices (and in the restricted cases have
 unique circle vertices adjacent to the pair contact). Such a pair cannot
