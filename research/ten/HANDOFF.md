@@ -49,6 +49,35 @@ The closed counts do not measure the fraction of mathematical effort.
 
 Latest completed work:
 
+- [Parallel patch consolidation](PARALLEL_SIDE_PATCH_CONSOLIDATION.md)
+  replaces any three/four-body two-column patch or double-SS bundle by
+  one SS stress path, keeping every physical square and terminal wrench.
+  Combined with double-S consolidation, the stated minimum-active-body
+  class has a simple skeleton and no unloaded branching region behind
+  two terminals. This is a normalization, not a raw-family exclusion.
+- The entire [incident U-VE-I source](INCIDENT_SIDE_SOURCE_SS_EXCLUSION.md)
+  is excluded when two S paths lead to SS-separated endpoints. Arbitrary
+  extra endpoint contacts are allowed, so the theorem also applies to
+  branching substructures. The whole LSLSLSS signature remains open.
+- [Exact obstructions](UNIVERSAL_BRANCHING_REDUCTION_OBSTRUCTIONS.md)
+  show that topology and exposure alone cannot finish C05. An outerplanar
+  three-sun survives the graph reductions; an explicit eight-square stress
+  has exposed unloaded branches with nonparallel forces. Neither is a
+  ten-square counterexample.
+- The [shared completion criterion](FINITE_CENTER_COVER_CAPACITY.md) bounds
+  any m-body core plus q remaining center regions by m+q squares. A reviewed
+  [28-cell rational cover](SEVEN_BODY_CENTRAL_HOLE_EXCLUSION.md) gives a
+  robust seven-core example, with no eighth square after an orientation
+  argument. Uniform hypotheses for all realizations are still missing.
+- [LSLSLSS support normalization](LSLSLSS_SUPPORT_NORMALIZATION.md) gives
+  seven necessary central forms inside its existing fixed ID. R-VE is
+  excluded, as is the radial R-VV subcase with E/E SS endpoint supports.
+  The [U-EE source bounds](TWO_SIDE_SOURCE_WITH_SS_ENDPOINTS.md) require
+  R²>13/3 and both source coordinates above one, for every slide.
+- A [seven-body numerical candidate](TWO_SIDE_ONE_DOUBLE_SIDE_COMPONENT_CANDIDATE.md)
+  at R²≈4.478903 has reproduced JSON, positive numerical stress and
+  noncontact clearance. It is not an exact existence proof or a ten-packing.
+  These results do not close a whole master entry.
 - The [master ledger](MASTER_CASES.md) is frozen at 336 explicit proof families,
   with 273 hand closed and 63 open. The 30 open branching families cover all
   k and b simultaneously; the other 33 are explicit cycle signatures.

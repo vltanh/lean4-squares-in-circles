@@ -1,0 +1,559 @@
+{
+  "center_disk_radius": "25/16",
+  "regions": {
+    "A": [
+      [
+        "-31/20",
+        "-4/25"
+      ],
+      [
+        "-31/20",
+        "-3/20"
+      ],
+      [
+        "-77/50",
+        "-4/25"
+      ],
+      [
+        "-77/50",
+        "-3/20"
+      ]
+    ],
+    "B": [
+      [
+        "77/50",
+        "-4/25"
+      ],
+      [
+        "77/50",
+        "-3/20"
+      ],
+      [
+        "31/20",
+        "-4/25"
+      ],
+      [
+        "31/20",
+        "-3/20"
+      ]
+    ],
+    "C": [
+      [
+        "-1/100",
+        "7/5"
+      ],
+      [
+        "-1/100",
+        "71/50"
+      ],
+      [
+        "1/100",
+        "7/5"
+      ],
+      [
+        "1/100",
+        "71/50"
+      ]
+    ],
+    "U": [
+      [
+        "-1/2",
+        "-1"
+      ],
+      [
+        "-1/2",
+        "-1"
+      ],
+      [
+        "-1/2",
+        "-1"
+      ],
+      [
+        "-1/2",
+        "-1"
+      ]
+    ],
+    "V": [
+      [
+        "1/2",
+        "-1"
+      ],
+      [
+        "1/2",
+        "-1"
+      ],
+      [
+        "1/2",
+        "-1"
+      ],
+      [
+        "1/2",
+        "-1"
+      ]
+    ],
+    "S": [
+      [
+        "-3/4",
+        "37/50"
+      ],
+      [
+        "-3/4",
+        "3/4"
+      ],
+      [
+        "-37/50",
+        "37/50"
+      ],
+      [
+        "-37/50",
+        "3/4"
+      ]
+    ],
+    "T": [
+      [
+        "37/50",
+        "37/50"
+      ],
+      [
+        "37/50",
+        "3/4"
+      ],
+      [
+        "3/4",
+        "37/50"
+      ],
+      [
+        "3/4",
+        "3/4"
+      ]
+    ]
+  },
+  "midpoints": {
+    "A": [
+      "-309/200",
+      "-31/200"
+    ],
+    "B": [
+      "309/200",
+      "-31/200"
+    ],
+    "C": [
+      "0",
+      "141/100"
+    ],
+    "U": [
+      "-1/2",
+      "-1"
+    ],
+    "V": [
+      "1/2",
+      "-1"
+    ],
+    "S": [
+      "-149/200",
+      "149/200"
+    ],
+    "T": [
+      "149/200",
+      "149/200"
+    ]
+  },
+  "outer_halfplanes": [
+    {
+      "normal": [
+        1,
+        0
+      ],
+      "bound": "25/16"
+    },
+    {
+      "normal": [
+        -1,
+        0
+      ],
+      "bound": "25/16"
+    },
+    {
+      "normal": [
+        0,
+        1
+      ],
+      "bound": "25/16"
+    },
+    {
+      "normal": [
+        0,
+        -1
+      ],
+      "bound": "25/16"
+    },
+    {
+      "normal": [
+        1,
+        1
+      ],
+      "bound": "125/56"
+    },
+    {
+      "normal": [
+        -1,
+        -1
+      ],
+      "bound": "125/56"
+    },
+    {
+      "normal": [
+        1,
+        -1
+      ],
+      "bound": "125/56"
+    },
+    {
+      "normal": [
+        -1,
+        1
+      ],
+      "bound": "125/56"
+    },
+    {
+      "normal": [
+        2,
+        1
+      ],
+      "bound": "85/24"
+    },
+    {
+      "normal": [
+        -2,
+        -1
+      ],
+      "bound": "85/24"
+    },
+    {
+      "normal": [
+        2,
+        -1
+      ],
+      "bound": "85/24"
+    },
+    {
+      "normal": [
+        -2,
+        1
+      ],
+      "bound": "85/24"
+    },
+    {
+      "normal": [
+        1,
+        2
+      ],
+      "bound": "85/24"
+    },
+    {
+      "normal": [
+        -1,
+        -2
+      ],
+      "bound": "85/24"
+    },
+    {
+      "normal": [
+        1,
+        -2
+      ],
+      "bound": "85/24"
+    },
+    {
+      "normal": [
+        -1,
+        2
+      ],
+      "bound": "85/24"
+    },
+    {
+      "normal": [
+        1,
+        3
+      ],
+      "bound": "475/96"
+    },
+    {
+      "normal": [
+        -1,
+        -3
+      ],
+      "bound": "475/96"
+    },
+    {
+      "normal": [
+        1,
+        -3
+      ],
+      "bound": "475/96"
+    },
+    {
+      "normal": [
+        -1,
+        3
+      ],
+      "bound": "475/96"
+    },
+    {
+      "normal": [
+        3,
+        1
+      ],
+      "bound": "475/96"
+    },
+    {
+      "normal": [
+        -3,
+        -1
+      ],
+      "bound": "475/96"
+    },
+    {
+      "normal": [
+        3,
+        -1
+      ],
+      "bound": "475/96"
+    },
+    {
+      "normal": [
+        -3,
+        1
+      ],
+      "bound": "475/96"
+    },
+    {
+      "normal": [
+        1,
+        4
+      ],
+      "bound": "155/24"
+    },
+    {
+      "normal": [
+        -1,
+        -4
+      ],
+      "bound": "155/24"
+    },
+    {
+      "normal": [
+        1,
+        -4
+      ],
+      "bound": "155/24"
+    },
+    {
+      "normal": [
+        -1,
+        4
+      ],
+      "bound": "155/24"
+    },
+    {
+      "normal": [
+        4,
+        1
+      ],
+      "bound": "155/24"
+    },
+    {
+      "normal": [
+        -4,
+        -1
+      ],
+      "bound": "155/24"
+    },
+    {
+      "normal": [
+        4,
+        -1
+      ],
+      "bound": "155/24"
+    },
+    {
+      "normal": [
+        -4,
+        1
+      ],
+      "bound": "155/24"
+    }
+  ],
+  "outside_box_halfplanes": [
+    {
+      "normal": [
+        1,
+        0
+      ],
+      "bound": "1/5"
+    },
+    {
+      "normal": [
+        -1,
+        0
+      ],
+      "bound": "1/5"
+    },
+    {
+      "normal": [
+        0,
+        1
+      ],
+      "bound": "1/10"
+    },
+    {
+      "normal": [
+        0,
+        -1
+      ],
+      "bound": "1/5"
+    }
+  ],
+  "cells": [
+    {
+      "region": "A",
+      "outside": 0,
+      "maximum_squared_distance": null
+    },
+    {
+      "region": "A",
+      "outside": 1,
+      "maximum_squared_distance": "329055259609/418091560000"
+    },
+    {
+      "region": "A",
+      "outside": 2,
+      "maximum_squared_distance": "770908637/1411200000"
+    },
+    {
+      "region": "A",
+      "outside": 3,
+      "maximum_squared_distance": "1216034581/1747240000"
+    },
+    {
+      "region": "B",
+      "outside": 0,
+      "maximum_squared_distance": "329055259609/418091560000"
+    },
+    {
+      "region": "B",
+      "outside": 1,
+      "maximum_squared_distance": null
+    },
+    {
+      "region": "B",
+      "outside": 2,
+      "maximum_squared_distance": "770908637/1411200000"
+    },
+    {
+      "region": "B",
+      "outside": 3,
+      "maximum_squared_distance": "1216034581/1747240000"
+    },
+    {
+      "region": "C",
+      "outside": 0,
+      "maximum_squared_distance": "18493828321/38753280000"
+    },
+    {
+      "region": "C",
+      "outside": 1,
+      "maximum_squared_distance": "18493828321/38753280000"
+    },
+    {
+      "region": "C",
+      "outside": 2,
+      "maximum_squared_distance": "408555277/707560000"
+    },
+    {
+      "region": "C",
+      "outside": 3,
+      "maximum_squared_distance": null
+    },
+    {
+      "region": "U",
+      "outside": 0,
+      "maximum_squared_distance": null
+    },
+    {
+      "region": "U",
+      "outside": 1,
+      "maximum_squared_distance": "4668815281/4872040000"
+    },
+    {
+      "region": "U",
+      "outside": 2,
+      "maximum_squared_distance": null
+    },
+    {
+      "region": "U",
+      "outside": 3,
+      "maximum_squared_distance": "89/100"
+    },
+    {
+      "region": "V",
+      "outside": 0,
+      "maximum_squared_distance": "4668815281/4872040000"
+    },
+    {
+      "region": "V",
+      "outside": 1,
+      "maximum_squared_distance": null
+    },
+    {
+      "region": "V",
+      "outside": 2,
+      "maximum_squared_distance": null
+    },
+    {
+      "region": "V",
+      "outside": 3,
+      "maximum_squared_distance": "89/100"
+    },
+    {
+      "region": "S",
+      "outside": 0,
+      "maximum_squared_distance": null
+    },
+    {
+      "region": "S",
+      "outside": 1,
+      "maximum_squared_distance": "4735229981/4872040000"
+    },
+    {
+      "region": "S",
+      "outside": 2,
+      "maximum_squared_distance": "197/200"
+    },
+    {
+      "region": "S",
+      "outside": 3,
+      "maximum_squared_distance": null
+    },
+    {
+      "region": "T",
+      "outside": 0,
+      "maximum_squared_distance": "4735229981/4872040000"
+    },
+    {
+      "region": "T",
+      "outside": 1,
+      "maximum_squared_distance": null
+    },
+    {
+      "region": "T",
+      "outside": 2,
+      "maximum_squared_distance": "197/200"
+    },
+    {
+      "region": "T",
+      "outside": 3,
+      "maximum_squared_distance": null
+    }
+  ]
+}

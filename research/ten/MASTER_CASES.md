@@ -28,6 +28,19 @@ The b=0 and b=1 raw catalogs remain optional drilldowns. Their exclusions do not
 | All branching families | 8 | 0 | 30 | 38 |
 | All cycle signatures | 246 | 0 | 33 | 279 |
 
+## Shared arguments covering the remaining list
+
+The following work groups partition the open IDs by a fixed structural feature. They are research targets, not additional progress denominators or claimed theorems. Every open entry is included; one argument may still cover several groups.
+
+| Shared target | Open IDs covered | Missing common argument |
+| --- | ---: | --- |
+| Branching components | 30 | Use the three-interior-body and two-terminal patch reductions to control regions with at least three terminals or bound their completion capacity. |
+| Cycles containing SS | 5 | Prove a uniform barrier or capacity bound across all endpoint ownership and transmitter slides. |
+| Cycles containing D, without SS | 14 | Extend D-endpoint geometry or completion bounds across the full signatures, retaining every loaded support type. |
+| Cycles with only single S transmissions | 14 | Use loaded-run force/torque restrictions and completion capacity uniformly over S slides. |
+
+A general tool for these routes is [finite center-cover capacity](FINITE_CENTER_COVER_CAPACITY.md). Its hypotheses must be established for every realization of the entry before it can close that entry.
+
 ## Remaining obligations
 
 Each row below requires exclusion of **every** realization stated in the full ledger. A completion-capacity theorem is enough; the component itself need not be impossible.
