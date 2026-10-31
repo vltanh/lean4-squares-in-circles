@@ -12,6 +12,14 @@ The [refined work queue](gates/README.md) maps all **140** original unchecked la
 
 This is **not** a replacement for the original 2,513-ID fine-gate denominator or a claim that the 296 units have equal mathematical difficulty. The original roadmap also contains 30 checked unlabeled historical checkboxes, excluded from the 2,513 canonical ID count. All original checkboxes and the 58-cell/38-exterior ledgers remain unchanged.
 
+### Frozen session-level hand-proof checkpoints (supplemental, not canonical)
+
+The [57-ID finite session checkpoint ledger](gates/SESSION_CHECKPOINTS.md) is the visible **smaller proof-step** index inside the existing 296 refined record hierarchy. Its current state is **14/57 written hand checkpoints checked; 43 open**. These statuses record literal, narrowly scoped written hand results; some are self-checked and **not independently audited**. They do not establish parent-case coverage or change any original flags.
+
+**Two checkpoints completed in this continuation:** **M01** proves the original full-cut identity and finite nine-square envelope, and **M02** gives the exactly **seven** necessary full-degree signatures for an unloaded cycle-rank-two module behind three original positive cut edges; see the [new hand proof](THREE_PORT_DEGREE_SIGNATURE_CENSUS_2026_10_31.md). The remaining **12** checked microgates reconcile older source manuscripts, not new exclusions. The checked microgates remain **0 new coarse parents / 0 new original fine flags**. The canonical counts in Section 1 remain **37/58**, **2,373/2,513**, and **18/38**.
+
+**Operating rule:** Each future session starts from an existing OPEN exact-scope microgate or an already-defined `F-*` / `P-*` refined gate, aims to close at least one *genuine complete proof leaf*, and logs the exact proof and independent-review state. If no full leaf closes, record **zero** and the remaining obstruction; do not invent more labels to show activity. Once a proof covers an entire original nine-square caller, follow Section 6 to update its canonical status.
+
 ## 1. Single reconciled progress snapshot
 
 | Canonical inventory | Closed / checked | Open | Total | Interpretation |
@@ -129,6 +137,7 @@ No three-block or four-block coarse parent is open; every such original coarse r
 
 | Status | Theorem / reusable result | Source | What it **does not** prove |
 |---|---|---|---|
+| Exact hand counting, no geometry excluded | For any entire unloaded set with original cut size `p` and internal cycle rank `b`, `Σ(deg_full−2)=2b+p−2`; `|K|≤7`, `p≤20`, `b≤15`. At `p=3,b=2` there are **seven necessary degree signatures** | [full-cut degree census](THREE_PORT_DEGREE_SIGNATURE_CENSUS_2026_10_31.md) | Any original graph/stress geometry, high-degree signature exclusion, or full nine-square coarse parent |
 | Reviewed hand result | Any actual parallel 4+3 projection chains force `R² ≥ 1105/256`, arbitrary square frames; equality pins four anchors | [physical two-square cap](PHYSICAL_TWO_SQUARE_CAP_SUPPORT_AND_UNRESTRICTED_FOUR_PLUS_THREE_CHAINS_2026_10_31.md) | Every packing must contain these chains |
 | Hand corollary, later self-check | For four distinct endpoint squares `46 g_e(M_L,M_R)+(27/2)g_e(B_L,B_R) ≤ 211/2 − 119(R_*−R)`; gaps 2 and 1 force sharpness | [four-square paired-gap](FOUR_SQUARE_PAIRED_GAP_HAND_COROLLARY_2026_10_31.md) | Extraction of the required endpoint gaps, especially from a T-shaped completion |
 | Reviewed hand result | Entirely unloaded connected **tree** behind `p≥3` full positive cut edges has `|K|≤2p−3` | [unloaded tree/cut](BRANCH_GLOBAL_FULL_CUT_TREE_SIZE_AND_DIRECT_FORCE_BUDGET_2026_10_31.md) | Cyclic unloaded interiors |
@@ -336,5 +345,6 @@ The following 140 distinct, currently unchecked labels are copied from the **cur
 4. For every new source distinguish: physical unconditional; conditional hand theorem; original full-case closure; proof audit; or failed conjecture. Link its exact manuscript and state whether independent review was actually performed.
 5. Keep the PR **draft** until the unrestricted inequality, **all** equality cases, G4.2.c common-selection audit and required later standard-kernel verification truly exist. Under the current hand-only request, **do not run Lean/Lake or CI**.
 6. This file is authoritative for **status and next obligations**, not for mathematical correctness. Refer to the original source manuscripts for proofs and to the append-only [historical ledger](PROGRESS_LEDGER.md) for provenance. Older READMEs/handoffs retain snapshots and do not override the current snapshot.
+7. Maintain the separate [57-checkpoint session ladder](gates/SESSION_CHECKPOINTS.md) with a *frozen denominator*, exact source and audit status, and an append-only session proof-closure log. Its ticked IDs are **not** part of the canonical 2,513-ID count and never substitute for the existing 296 refined record acceptance criteria.
 
 **Squash note:** This ledger is prepared together with a one-commit rewrite of the PR branch against its original `main` base. The rewrite preserves all proof/review/history files as tree content; old commit links in historical research notes may no longer be reachable through the branch history. Current references in this index use stable repository-relative file paths rather than historical commit SHAs.
