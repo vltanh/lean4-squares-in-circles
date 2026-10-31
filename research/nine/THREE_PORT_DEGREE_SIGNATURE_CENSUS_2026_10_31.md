@@ -8,7 +8,7 @@ Date: 2026-10-31. PR #11, hand-only research.
 
 Take nine actual unit squares with disjoint open interiors in a disk of squared radius at most $Q=1105/256$, equipped with one unchanged, complete positive body-pair contact-force certificate. Let $K$ be a connected nonempty set of **selected circle-unloaded** actual bodies. Let
 
-- $n=|K|$, (e=|E$K$|), and $b=e-n+1\ge0$ be the internal edge count and cycle rank of the **induced original positive graph**;
+- $n=|K|$, $e=|E(K)|$, and $b=e-n+1\ge0$ be the internal edge count and cycle rank of the **induced original positive graph**;
 - $p\ge1$ be the number of **original positive cut edges**, counting each body-pair edge across $K\mid K^c$ once, even if external endpoints repeat;
 - $d(v)$ be the **full original positive degree** of $v\in K$, internal edges and cut edges both included.
 
