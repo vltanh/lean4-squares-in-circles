@@ -170,6 +170,14 @@ The closed counts do not measure the fraction of mathematical effort.
 
 Latest completed work:
 
+- The [strict side-source rational reduction](STRICT_SIDE_SOURCE_RATIONAL_REDUCTION.md)
+  gives five exhaustive C circle-feature rows and reduces all E_A core
+  coordinates, squared radius and force height to two S half-angle variables.
+  Two residual scalar equations remain, with all denominator conditions
+  explicit. E_B is its reflection. The [completion research note](STRICT_SIDE_SOURCE_COMPLETION_RESEARCH.md)
+  preserves floating interval prototypes and their unresolved cells; they
+  are not exact enclosures or proof inputs. The zero-contact-length boundary
+  cannot simply be discarded.
 - The [radial vertical-source theorem](RADIAL_VERTICAL_SOURCE_EXCLUSION.md)
   closes the last vertical-endpoint form in the both-unique-D-endpoint branch.
   Its complete 248-leaf certificate covers every closed parameter rectangle,

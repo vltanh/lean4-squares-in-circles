@@ -233,3 +233,12 @@ now eliminate every vertical endpoint in this both-unique branch. Hence
 alpha=beta=0 and p,r>0 in all surviving realizations. The three source-edge
 rows E_A, E_B and V_V remain, retaining all C circle multiplicities and
 both full S-transmitter slide intervals.
+
+## Circle-feature and side-source rational refinement
+
+The [strict side-source reduction](STRICT_SIDE_SOURCE_RATIONAL_REDUCTION.md)
+now gives five exhaustive C circle-feature rows. E_A and E_B each force
+a unique geometric circle vertex; V_V retains two unique-vertex choices
+or the upper radial side. The entire E_A geometry is rational in the two
+S half-angle parameters, with two residual scalar equations; E_B follows
+by reflection. This does not isolate their roots or prove completion.
