@@ -1,20 +1,40 @@
-# Finite session checkpoint ledger (hand proof, n = 9)
+# Finite proof-milestone ledger (hand proof, n = 9; NOT uniform in difficulty)
 
-**Status as of 2026-10-31: 14 checked / 43 open / exactly 57 locally defined checkpoints.** The open checkpoints are targets, not claims of solved physical cases. **The unrestricted inequality and every remaining original 21 coarse parent remain OPEN.**
+**Status as of 2026-10-31: 15 written hand milestones checked / 42 open / exactly 57 locally defined milestones.** The open entries are heterogeneous milestones, **not guaranteed single-session tasks and not uniformly easy**. Some require an unrestricted physical inequality or a complete original-family assembly. **The unrestricted inequality and every remaining original 21 coarse parent remain OPEN.**
 
 [Authoritative central status](../PROGRESS.md) · [Complete 296-child coverage inventory](README.md) · [All 21 parent domains](COARSE_PARENTS.md) · [Six-body 122 leaves](SIX_BODY.md)
 
 ## What a tick means — three deliberately separate accounting levels
 
-1. **This 57-ID session ladder** is a *finite, frozen, nested work-progress index*. Here `[x]` means a complete written hand derivation of the checkpoint **at its literal stated scope**, with an identified manuscript. A self-checked source may be recorded as written but still needs independent review. A conditional theorem is never silently treated as an unconditional nine-square exclusion.
+1. **This 57-ID milestone ladder** is a *finite, frozen, nested source-progress index*, not a work-effort estimator. Here `[x]` means a complete written hand derivation of the checkpoint **at its literal stated scope**, with an identified manuscript. A self-checked source may be recorded as written but still needs independent review. A conditional theorem is never silently treated as an unconditional nine-square exclusion.
 2. **The existing 296 refined records** are the exhaustive planning decomposition of all 140 remaining *original* fine labels: 218 mathematical leaves, 69 blocked integration items, 9 deferred release items. The 57 IDs are a **cross-index to selected high-leverage work**, not 57 extra tasks to add to 296, nor a replacement for the existing 122 load-mask leaves. Existing refined parent leaves stay open until their own exit conditions are fully proved.
 3. **Canonical closure counts** remain **37/58 coarse**, **2373/2513 fine**, **18/38 nested six-body exterior**. A complete original nine-square caller proof, independent evidence review and source-flag update are required before any canonical flag changes. A micro-tick makes *no* claim that a full original parent was proved.
 
 **Frozen inventory rule:** The following 57 IDs are the complete session ladder, `M01–M36`, `G01–G10`, `W01–W08`, `S01–S03`. Do **not** add a new local checkpoint just because a proof attempt branches. Put further subdivisions inside the existing named entry and retain its acceptance criterion; the complete 296-record inventory already covers the other original domains. If the actual mathematical statements need revision, record an explicit versioned amendment rather than silently expanding denominators.
 
-**Each session:** select one OPEN item with the smallest complete, verifiable *hand* statement; write or link its physical proof; check it **only if** its entire literal scope is done; log its date, original caller, proof and review state in the update table below. A session with no proof closure must explicitly report **zero**, not gain a bookkeeping tick. Optimize for the number of genuine old or shared domains discharged per theorem, not the easiest checkbox.
+**Each session:** work on a narrowly stated falsifiable hand lemma within an OPEN milestone or an existing `F-*` / `P-*` refined record. A session **need not and may not** promise a completed milestone; track proven intermediate lemmas inside the existing milestone without inventing a new numerator. Check an ID **only if its full literal scope is proved** and link the proof, original caller, and audit state. If nothing closes, record **zero**. Prioritize one proof that eliminates several physical subfamilies; don't count splitting a question as mathematical progress.
 
-## M — actual unloaded full-cut module and degree census (10/36 checked)
+## Difficulty audit: the 57 entries are NOT equal-sized or reliably session-closable
+
+The original presentation as "one gate per session" was **overconfident**. A graph-degree census can take one hand page, while a single graph/load family with arbitrary square orientations and original contact means can conceal the entire difficult geometric obstruction. Freezing a list makes it *finite*, not *uniformly tractable*. In particular:
+
+| Existing milestones | Actual scope / risk | Operational role |
+|---|---|---|
+| **M01–M02**, M08 | Elementary finite counting/graph classification; fast when hypotheses are sound | Prerequisite lemmas, **not** evidence that the global radius proof is nearly complete |
+| **M28** | Large-looking three-signature branch, now **closed** by one reusable occupied-$K_{2,3}$ theorem | Proof that **one common argument** can beat fine case-by-case splits |
+| **M26** | Seven-vertex finite graph-and-port **census**; tractable as hand combinatorics but classification may be long | A true finite combinatorial output; **not** its geometric exclusion |
+| **M29**, M17–M25 | Finitely named subgraphs, but each can still involve full continuous force/torque and nine-square completion | **High risk**, one current physical profile per attempt; no per-session completion guarantee |
+| **M27**, **M32**, **M34–M36** | Whole high-degree/cut-rank families, including cut sizes 5–20 | **Major research milestones**, not atomic hand lemmas; seek a uniform global theorem |
+| **G10**, **W08** | Assemble respectively 11 and 10 original open coarse parents | **Integration objectives**, not independent short geometric cases |
+| **G03–G09**, **W03–W07**, **S01–S03** | New continuous geometric inequalities, mixed-side wrench analyses, or complete original physical masks | **Unknown/unbounded difficulty**, pending actual successful lemmas |
+
+**Do not compute a "percent of proof done" from 15/57.** This ratio mixes theorem-strength, prerequisites, and end-stage integration. Even the **original 37/58** is a case count rather than an effort forecast.
+
+**Better evidence to log for each attempt:** (1) its exact original positive-graph, full-cut, physical contact/load/mean and nine-square domain; (2) its complete hand-proved statement; (3) the *previously open explicit subfamily* it truly eliminates; (4) which existing milestone(s) it advances, and whether any **entire** original coarse parent is now closed; and (5) independent review state. If only a conjectured geometric inequality or a classification remains, mark **partial/open** rather than checking the milestone. Prefer one uniform theorem that closes many profiles over harvesting easy count identities.
+
+**Current minimal finite next queue without new IDs:** finish **M29**'s three necessary genuine-transmitter profiles from its theorem (one six-body case and two seven-body resource patterns); inspect the **M30** four-hub reduced simple graph; separately perform the purely combinatorial **M26** seven-hub graph-and-port census. These are finite *inputs*, but their continuous geometric conclusions cannot be promised easy. If they remain difficult, pivot to shared **G07–G09** branch/center or **W03–W05** full-wrench arguments rather than endlessly splitting M29.
+
+## M — actual unloaded full-cut module and degree census (11/36 checked)
 
 These checkpoints refine structural `R-MODULE-TRICYCLE`, `R-MODULE-SMALL_UNI`, `R-MODULE-SMALL_FORCE`, `R-MODULE-CUT4_UNI`, `R-MODULE-CUT4_MULTI` and `R-MODULE-CUT5_UP`. Every original positive cut edge, full degree, force, torque, mean and all nine physical squares must be retained. For *subcubic* reductions the **one reduced exit arm per branching hub** condition is essential.
 
@@ -50,8 +70,8 @@ These checkpoints refine structural `R-MODULE-TRICYCLE`, `R-MODULE-SMALL_UNI`, `
 - [ ] **M25 — Rank-two K₂,₃, two internal transmitters.** All unordered distinct-edge placements and the unchanged three exit arms, with nine actual squares.
 - [ ] **M26 — Seven-hub rank-three trivalent graph/port census.** Give a complete **finite hand** classification of simple seven-hub nine-internal-edge graphs with three original distinct reduced exits, up to graph isomorphism, preserving possible physical embeddings. A list alone does not exclude them.
 - [ ] **M27 — Seven-hub rank-three physical exclusion.** Show every M26 graph plus the exactly two actual positively loaded external squares is incompatible with `R²<Q` (or establish a correctly sharp equality alternative) using original force/torque and joint geometry.
-- [ ] **M28 — Rank-two three-port higher-degree signatures, one or two hubs.** Full original nine-square physical exclusions or sharp alternatives for excess partitions `(5)`, `(4,1)`, `(3,2)`, with any genuine transmitters.
-- [ ] **M29 — Rank-two higher-degree signatures, three hubs.** Same whole-caller exit for excess partitions `(3,1,1)`, `(2,2,1)`.
+- [x] **M28 — Rank-two three-port higher-degree signatures, one or two hubs.** All three full excess partitions `(5)`, `(4,1)`, `(3,2)` **excluded** without a one-exit-per-hub hypothesis. **Evidence:** [uniform full-cut no-return / three parallel channels / actual embedded `K₂,₃` hand exclusion](../THREE_PORT_RANK_TWO_LOW_HUB_UNIFORM_EXCLUSION_2026_10_31.md), Theorem A. *Self-checked, original selected-planar and occupied-cross prerequisites named; independent audit pending. No original parent fully closed.*
+- [ ] **M29 — Rank-two higher-degree signatures, three hubs.** The `(3,1,1)` branch and direct-third-channel `(2,2,1)` branch are now **excluded**, but the following three original physical profiles remain: two true transmitters on parallel `AB`, plus **(i)** one transmitter on `AC/BC` and no transmitted exit (six unloaded bodies); **(ii)** one on `AC/BC` and one on an exit arm (seven); **(iii)** two on `AC/BC` and none on exits (seven). **Done when:** all three profiles are excluded or sharply classified with the exact original cut and nine squares. **Source:** [rank-two low-hub theorem](../THREE_PORT_RANK_TWO_LOW_HUB_UNIFORM_EXCLUSION_2026_10_31.md), Theorem B. *Open: finite table ≠ small continuous-geometry proof.*
 - [ ] **M30 — Rank-two higher-degree signatures, four hubs.** Same whole-caller exit for `(2,1,1,1)`; do not apply the subcubic graph dichotomy.
 - [ ] **M31 — Three-port multiple-reduced-exit hub.** Exclude or classify every remaining rank with two or three reduced exit arms from one branch hub, including arms transmitted through actual degree-two bodies.
 - [ ] **M32 — Three-port cycle rank 3–15 with high-degree hubs.** Exclude or reduce all original full-degree `≥4` multicyclic modules not covered by M27–M31 to a finite physically complete remainder.
@@ -114,5 +134,6 @@ The precise, exhaustive 71 parent-specific refined gates (and independent final 
 |---|---|---|---|---|
 | Baseline on adoption, 2026-10-31 | M03–M10, G01–G02, W01–W02 (12 existing proofs reconciled) | Prior source manuscripts linked above; **not newly proved by making this list** | Mixed: reviewed and self-checked; see each gate | 0 / 0 |
 | 2026-10-31 degree-excess continuation | **M01, M02** | [new exact full-cut/count and seven-signature hand proof](../THREE_PORT_DEGREE_SIGNATURE_CENSUS_2026_10_31.md) | Elementary hand derivation; independent audit not recorded | **0 / 0** |
+| 2026-10-31 scope/difficulty audit | **M28**; M29 narrowed, not ticked | [common no-return / original-channel / physical occupied-`K₂,₃` proof](../THREE_PORT_RANK_TWO_LOW_HUB_UNIFORM_EXCLUSION_2026_10_31.md) excludes all one/two-hub rank-two three-port graphs | New self-checked hand source; independent review pending | **0 / 0** |
 
-**Honest progress measures:** local session checkpoints **14/57**; complete original parents **37/58**; original fine gates **2373/2513**; nested six-body exterior **18/38**. All denominator lines are different nested registers; do not add or average them. No Lean, CI or external mathematical exclusion script was run.
+**Honest progress measures:** local written-scope milestones **15/57** (very uneven difficulty, not % effort); complete original parents **37/58**; original fine gates **2373/2513**; nested six-body exterior **18/38**. All denominator lines are different nested registers; do not add or average them. No Lean, CI or external mathematical exclusion script was run.
