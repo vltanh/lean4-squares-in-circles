@@ -4,6 +4,13 @@
 
 The [parent map](PARENT_MAP.md) maps **all 140 original unchecked entries** to **296 unique refined records**; the full relationship, including very broad shared parents, is stored in [data/parent_map.json](data/parent_map.json).
 
+
+## Smaller fixed session ladder — 57 checkpoints (14 checked / 43 open)
+
+The [finite session checkpoint ledger](SESSION_CHECKPOINTS.md) nests **57 concrete hand-proof microgates** under the existing 296-entry inventory and logs each session's exact completed IDs. As of 2026-10-31, **14** are checked at their literal hand-proof scope (12 reconcile previously written sources, 2 are new [full-cut degree-counting results](../THREE_PORT_DEGREE_SIGNATURE_CENSUS_2026_10_31.md)); **43 remain open**. Self-checked manuscripts still need independent review; microgates do **not** close their broad `R-*` / `F-*` / `P-*` callers automatically.
+
+This is a **nonadditive cross-index**, not a new canonical denominator, a claim that all 57 have similar difficulty, or a replacement for the 296 refined entries. All **21** original coarse parents, **140** original fine flags and **20** six-body exterior rows remain open. Future sessions check a complete existing local or refined gate, link the literal proof and review status, or record zero. The 57 IDs are frozen: do not split indefinitely to manufacture a progress count.
+
 ## Work records by role
 
 | Refined group | Records | Status and links |
