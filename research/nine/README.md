@@ -4,6 +4,8 @@
 
 ## Latest hand-only continuation (2026-10-31)
 
+- [Finite session-level hand-proof checkpoints](gates/SESSION_CHECKPOINTS.md): **14/57 written scope-specific hand checkpoints ticked, 43 open** (some self-checked; no new original full-case closure). This smaller frozen progress ladder cross-indexes, and does not add to, the 296 existing refined records.
+- [Exact full-cut and three-port degree census](THREE_PORT_DEGREE_SIGNATURE_CENSUS_2026_10_31.md): a new elementary original-degree hand proof; exactly seven necessary degree-excess signatures at `p=3,b=2`, with all higher-degree shapes and physical exclusions still open.
 - [Three-port multicycle subcubic reduction](THREE_PORT_MULTICYCLE_SUBCUBIC_REDUCTION_2026_10_31.md): a full-cut, one-reduced-exit-per-hub theorem classifying rank-two modules into house or \(K_{2,3}\) skeletons, and rank-three modules into a seven-hub/two-loaded-body extreme. It excludes only the literal internally unsubdivided \(K_{2,3}\) subfamily; transmitted exit arms are retained. **Not** a completed coarse or fine gate.
 - [Handoff and exact outstanding exceptions](HANDOFF_THREE_PORT_MULTICYCLE_2026_10_31.md): separates proved reductions from unverified proposed stronger exclusions and identifies the next same-nine tests.
 
