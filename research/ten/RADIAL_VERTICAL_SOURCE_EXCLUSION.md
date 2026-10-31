@@ -432,5 +432,5 @@ branch has separate obligations. Whole-case completion is not inferred.
 
 This certificate completes the 30 unresolved cells preserved in
 [RADIAL_VERTICAL_SOURCE_RESEARCH_HANDOFF.md](RADIAL_VERTICAL_SOURCE_RESEARCH_HANDOFF.md).
-The master ledger remains 274/336 hand closed and 62 open because the
-whole LSLSLD signature is still open.
+This local theorem changes no master status because the whole LSLSLD
+signature is still open.

@@ -988,6 +988,14 @@
     "C20-M08-L07-B01-T02": {
       "status": "hand",
       "evidence": "LOADED_THREE_RAY_ANGLE_BOUND.md"
+    },
+    "C20-M07-L05-B02-T03": {
+      "status": "hand",
+      "evidence": "LOADED_JOINT_ANGLE_BOUND.md"
+    },
+    "C20-M07-L05-B03-T03": {
+      "status": "hand",
+      "evidence": "LOADED_JOINT_ANGLE_BOUND.md"
     }
   }
 }

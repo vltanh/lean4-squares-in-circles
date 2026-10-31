@@ -1,6 +1,12 @@
 # Stronger loaded-run angles: frozen research handoff
 
-**Status: UNREVIEWED RESEARCH, 2026-10-31.** This records calculations
+**Status: historical research lead, now completed.**
+The target below is proved by [LOADED_JOINT_ANGLE_BOUND.md](LOADED_JOINT_ANGLE_BOUND.md),
+including all separator-offset signs and side-normal kinks. Its explicit
+332-frame, 28,000-leaf certificate closes both five-loaded/two-D signatures.
+The text below preserves the earlier incomplete calculations.
+
+Original status: UNREVIEWED RESEARCH, 2026-10-31. This records calculations
 already reached when the user requested a handoff. It is not a theorem,
 an exact certificate for the stronger bound, or a further case closure.
 
