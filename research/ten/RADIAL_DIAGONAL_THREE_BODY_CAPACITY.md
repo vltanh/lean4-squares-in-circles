@@ -244,3 +244,46 @@ the cycle subledger becomes **250/279 closed; 29 open**.
 This does not prove the unrestricted n=10 lower bound. The 59 remaining
 fixed families and the separate equality/Lean gates remain as recorded
 in the master ledger.
+
+
+## 7. Shared corollary: no radial endpoint on any loaded-to-loaded D path
+
+The conclusion is independent of endpoint degree and the rest of the graph.
+
+**Corollary.** In the jointly selected certificate of a hypothetical
+strictly subcritical ten-packing, every D transmitter whose two neighbors
+are loaded has unique geometric circle vertices at both neighbors.
+This includes every loaded count and every allowed branching count.
+It excludes a geometric two-circle endpoint even if one of its two circle
+coefficients is zero.
+
+By Section 4 of
+[generic normal selection](GENERIC_CONTACT_NORMAL_SELECTION.md), both D
+contacts are relative interiors of the neighbor sides. Those neighbor
+frames are therefore parallel and the strip normalization u+v=K applies,
+without requiring either neighbor to have degree two.
+
+The endpoints' horizontal centers have strict opposite signs: containment
+gives u,v<=sqrt(R^2-1/4)<33/16 and hence u,v>K-33/16>4/3.
+Thus a geometric two-circle endpoint must have its two circle vertices on
+its outer vertical side, rather than a horizontal side whose center would
+have horizontal coordinate zero.
+
+Suppose the left endpoint is radial. Then
+u=sqrt(R^2-1/4)>19/10, while v=K-u<61/40.
+Both endpoints cannot be radial, since that would give u+v>19/5>K.
+The right endpoint has
+
+```text
+H^2=R^2-v^2 > ((79)^2-(61)^2)/1600=63/40>25/16.
+```
+
+Reflect vertically so its unique circle vertex is lower.
+The common D height belongs strictly to both loaded sides, so
+-1/2<h<1-H and H<3/2. All hypotheses of Section 1 hold.
+Its capacity bound contradicts the ambient ten-packing.
+Relabeling covers a radial right endpoint.
+
+The corollary does not apply when a D path has an unloaded retained
+neighbor. No count is claimed closed solely because this shared
+multiplicity class has disappeared.

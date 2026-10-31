@@ -198,7 +198,12 @@ Latest completed work:
   of the remaining source or slides. Together with the complete unique-D-endpoint
   source arguments it closes the whole LSLSLD signature. All 42 parameter
   rows, the one impossible radius row and 7,604 cover leaves passed both
-  exact backends. The master is 277/336 closed with 59 open.
+  exact backends. Its shared corollary removes radial endpoints from every
+  loaded-to-loaded D path, regardless of endpoint degree, loaded count or
+  branching count. [Two fixed parameter modes](LOADED_DIAGONAL_PARAMETER_BOX.md)
+  cover all remaining unique/unique three-body D geometries; no capacity
+  theorem for those entire boxes is claimed. The master is 277/336 closed
+  with 59 open.
 
 - The [coupled loaded-ray theorem](LOADED_JOINT_ANGLE_BOUND.md) proves
   the two-gap bound pi/2-atan(1/45) and closes both five-loaded/two-D
