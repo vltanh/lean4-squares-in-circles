@@ -3,7 +3,8 @@
 **Status:** exact conditional hand proofs; root and independent full
 mathematical reviews of the assembled note passed on 2026-10-31. These
 prune support rows within LSLSLD and do not close the whole signature.
-The final radial-C row described below remains open.
+The final radial-C row described below was subsequently excluded by
+[RADIAL_VERTICAL_SOURCE_EXCLUSION.md](RADIAL_VERTICAL_SOURCE_EXCLUSION.md).
 
 Use the both-unique-D-endpoint branch and the common-edge classification
 of [ONE_DIAGONAL_TWO_SIDE_COMMON_SOURCE_EDGE.md](ONE_DIAGONAL_TWO_SIDE_COMMON_SOURCE_EDGE.md).
@@ -141,3 +142,11 @@ geometric circle vertices at C. Its contacts are strict vertices, so the
 side-normal clearance lemma does not apply. The two radial circle loads
 must remain free, including a possible zero coefficient. No exclusion
 of that remaining row is claimed here.
+
+## Completion of the vertical-endpoint classification
+
+The [complete radial-source certificate](RADIAL_VERTICAL_SOURCE_EXCLUSION.md)
+now excludes the last V_V/radial-C form. Consequently both S contacts at
+the D endpoints are strict inner-corner contacts throughout the whole
+both-unique-D-endpoint branch. This does not remove radial D endpoints
+or prove completion capacity for the remaining strict/strict forms.

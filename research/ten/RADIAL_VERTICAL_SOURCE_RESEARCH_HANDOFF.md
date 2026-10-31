@@ -1,6 +1,12 @@
 # Unfinished radial-source branch with a vertical endpoint
 
-**Status: NOT PROMOTED.** This is an unfinished parameter reduction and
+**Status: historical research lead, completed.**
+The formulas have now been checked and the subdivision completed in
+[RADIAL_VERTICAL_SOURCE_EXCLUSION.md](RADIAL_VERTICAL_SOURCE_EXCLUSION.md),
+with a full 248-leaf rational certificate and no unresolved cells.
+The text below records the earlier incomplete exploration.
+
+Original status: NOT PROMOTED. This is an unfinished parameter reduction and
 interval exploration, not an exclusion theorem. Research was frozen for
 handoff with unresolved cells. No whole case or support row is closed
 by this note.

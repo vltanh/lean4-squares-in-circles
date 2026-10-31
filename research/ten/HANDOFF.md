@@ -86,9 +86,11 @@ are uniform inputs for a completion table, not a whole-case exclusion.
 
 The [16-interval vertical-source table](ONE_DIAGONAL_VERTICAL_SOURCE_SIDE_EXCLUSION.md)
 and [further torque exclusions](ONE_DIAGONAL_VERTICAL_SOURCE_TORQUE_EXCLUSIONS.md)
-remove every vertical-D-endpoint source row except V_V with radial C.
-The unfinished [radial-source interval exploration](RADIAL_VERTICAL_SOURCE_RESEARCH_HANDOFF.md)
-leaves 30 unresolved cells and is **not** a proof. The
+now combine with the [complete radial-source certificate](RADIAL_VERTICAL_SOURCE_EXCLUSION.md)
+to remove every vertical-D-endpoint source row. All 30 formerly unresolved
+cells are resolved by a full 248-leaf rational certificate. Both unique
+D endpoints must use strict inner-corner S supports; the three common-source
+rows and all S slides still require uniform completion bounds. The
 [focused diagonal handoff](DIAGONAL_CYCLE_RESEARCH_HANDOFF_2026_10_31.md)
 records all remaining radial and uniform completion obligations.
 
@@ -144,6 +146,7 @@ python check_cycle_cases.py
 python check_seven_body_central_hole_cover.py
 python check_loaded_three_ray_angle_bound.py
 python check_diagonal_vertical_source_side.py
+python check_radial_vertical_source_exclusion.py
 ```
 
 The [reciprocal-tiling research note](RECIPROCAL_TILING_RESEARCH_HANDOFF.md)
@@ -167,6 +170,13 @@ The closed counts do not measure the fraction of mathematical effort.
 
 Latest completed work:
 
+- The [radial vertical-source theorem](RADIAL_VERTICAL_SOURCE_EXCLUSION.md)
+  closes the last vertical-endpoint form in the both-unique-D-endpoint branch.
+  Its complete 248-leaf certificate covers every closed parameter rectangle,
+  with no unresolved cells. A second interval implementation checked every
+  rejection and a separate prefix/Kraft calculation checked coverage.
+  Both S supports are now strict inner corners throughout that branch.
+  Whole LSLSLD completion and radial D endpoints remain open.
 - The [quadrant-straddler theorem](QUADRANT_STRADDLER_LEMMA.md) proves
   at most one unit square can straddle an empty quadrant, and an anchored
   southwest unit square excludes every straddler. It completes the earlier

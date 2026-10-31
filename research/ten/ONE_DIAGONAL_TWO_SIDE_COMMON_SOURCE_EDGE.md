@@ -223,3 +223,13 @@ for a six-body core, using
 No such uniform certificate is asserted here. The separate radial
 endpoint branch must also be covered before the whole LSLSLD signature
 can close.
+
+## Subsequent vertical-endpoint exclusions
+
+The [16-interval side-source table](ONE_DIAGONAL_VERTICAL_SOURCE_SIDE_EXCLUSION.md),
+[further torque exclusions](ONE_DIAGONAL_VERTICAL_SOURCE_TORQUE_EXCLUSIONS.md),
+and [complete radial-source certificate](RADIAL_VERTICAL_SOURCE_EXCLUSION.md)
+now eliminate every vertical endpoint in this both-unique branch. Hence
+alpha=beta=0 and p,r>0 in all surviving realizations. The three source-edge
+rows E_A, E_B and V_V remain, retaining all C circle multiplicities and
+both full S-transmitter slide intervals.

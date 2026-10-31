@@ -24,12 +24,15 @@ still open; no whole-signature count changes follow from this work.
 * `ONE_DIAGONAL_VERTICAL_SOURCE_TORQUE_EXCLUSIONS.md`: further torque
   exclusions remove the other source rows with a vertical endpoint,
   except V_V with radial C. Root and independent full reviews of the
-  assembled note passed. That final remaining row has not been excluded.
+  assembled note passed. That final remaining row is now excluded by
+  [RADIAL_VERTICAL_SOURCE_EXCLUSION.md](RADIAL_VERTICAL_SOURCE_EXCLUSION.md).
 
 `RADIAL_VERTICAL_SOURCE_RESEARCH_HANDOFF.md` and
 `explore_radial_vertical_source.py` preserve the unfinished work on that
-remaining row. They are explicitly NOT PROMOTED; their exploratory
-interval subdivision leaves unresolved cells and is not a proof.
+remaining row. They preserve the earlier incomplete exploration. Its 30 unresolved cells
+are now resolved by [RADIAL_VERTICAL_SOURCE_EXCLUSION.md](RADIAL_VERTICAL_SOURCE_EXCLUSION.md)
+and [radial_vertical_source_exclusion.json](radial_vertical_source_exclusion.json).
+All both-unique D endpoint survivors therefore have strict/strict S supports.
 
 ## Numerical work, without exhaustive or existence claims
 
