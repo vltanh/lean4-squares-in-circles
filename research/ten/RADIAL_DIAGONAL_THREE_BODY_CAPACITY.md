@@ -287,3 +287,10 @@ Relabeling covers a radial right endpoint.
 The corollary does not apply when a D path has an unloaded retained
 neighbor. No count is claimed closed solely because this shared
 multiplicity class has disappeared.
+
+
+The subsequent [opposite-sign capacity theorem](OPPOSITE_DIAGONAL_CAPACITY.md)
+now also excludes every loaded D pair with unique circle vertices of
+opposite transverse signs. Every selected loaded-to-loaded D path therefore
+has unique same-sign endpoint circle vertices. Endpoint degrees and the
+remaining graph stay unrestricted.

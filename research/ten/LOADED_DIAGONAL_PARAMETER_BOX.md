@@ -2,7 +2,9 @@
 
 **Status:** complete necessary geometric classification after generic
 normal selection and the universal radial-D capacity exclusion. This
-is a shared reduction, not a further whole-family exclusion. The master
+is a shared reduction. The subsequent [opposite-sign capacity theorem](OPPOSITE_DIAGONAL_CAPACITY.md)
+now closes the entire opposite-sign mode, leaving only the same-sign mode.
+It is not a further whole-family exclusion. The master
 ledger remains 277/336 closed, 59 open.
 
 ## 1. The shared circle-feature class is now unique/unique
@@ -95,8 +97,12 @@ and total weight at least one at every allowed center, would give the
 same integer capacity bound: sum the pointwise inequality over added
 centers, then use capacity one in each region.
 
-No complete such cover is provided for either entire three-parameter mode.
-Exploratory six-disk clustering at Q=9/2 does not attain radius below 1/2
+The [complete opposite-sign capacity theorem](OPPOSITE_DIAGONAL_CAPACITY.md)
+now supplies such a cover for that entire mode: 254 capacity rectangles,
+26 radius-impossible rectangles, and all 50,607 strict center-cover cells.
+Both exact arithmetic backends verify the full closed parameter cube.
+No complete cover is provided for the remaining same-sign mode.
+Exploratory six-disk clustering in that same-sign mode at Q=9/2 does not attain radius below 1/2
 uniformly even at individual samples. A finite-grid fractional disk-cover
 experiment also did not supply total weight below seven. These are
 ordinary floating numerical probes, not lower bounds on optimal covers,

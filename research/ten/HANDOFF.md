@@ -193,6 +193,15 @@ The closed counts do not measure the fraction of mathematical effort.
 
 Latest completed work:
 
+- The [uniform opposite-sign D-core capacity theorem](OPPOSITE_DIAGONAL_CAPACITY.md)
+  proves total capacity at most nine for every selected loaded-to-loaded D
+  path whose unique circle vertices have opposite transverse signs. Its
+  254 capacity rows, 26 radius-impossible rows and all 50,607 strict center
+  cells pass both exact backends. Together with radial-D capacity, every
+  loaded D path now has unique same-sign endpoint circle vertices, regardless
+  of loaded count, endpoint degree or branching count. No further master
+  closure is claimed from this shared feature reduction.
+
 - The [universal radial-D three-body capacity theorem](RADIAL_DIAGONAL_THREE_BODY_CAPACITY.md)
   bounds every normalized radial-D core by nine total squares, independently
   of the remaining source or slides. Together with the complete unique-D-endpoint
@@ -201,8 +210,8 @@ Latest completed work:
   exact backends. Its shared corollary removes radial endpoints from every
   loaded-to-loaded D path, regardless of endpoint degree, loaded count or
   branching count. [Two fixed parameter modes](LOADED_DIAGONAL_PARAMETER_BOX.md)
-  cover all remaining unique/unique three-body D geometries; no capacity
-  theorem for those entire boxes is claimed. The master is 277/336 closed
+  cover unique/unique three-body D geometries; the opposite-sign mode is
+  now completely excluded above, leaving only the same-sign mode. The master is 277/336 closed
   with 59 open.
 
 - The [coupled loaded-ray theorem](LOADED_JOINT_ANGLE_BOUND.md) proves
