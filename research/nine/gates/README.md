@@ -5,11 +5,11 @@
 The [parent map](PARENT_MAP.md) maps **all 140 original unchecked entries** to **296 unique refined records**; the full relationship, including very broad shared parents, is stored in [data/parent_map.json](data/parent_map.json).
 
 
-## Smaller fixed session ladder — 57 checkpoints (14 checked / 43 open)
+## Fixed 57-milestone research ledger — NOT uniformly easy (15 checked / 42 open)
 
-The [finite session checkpoint ledger](SESSION_CHECKPOINTS.md) nests **57 concrete hand-proof microgates** under the existing 296-entry inventory and logs each session's exact completed IDs. As of 2026-10-31, **14** are checked at their literal hand-proof scope (12 reconcile previously written sources, 2 are new [full-cut degree-counting results](../THREE_PORT_DEGREE_SIGNATURE_CENSUS_2026_10_31.md)); **43 remain open**. Self-checked manuscripts still need independent review; microgates do **not** close their broad `R-*` / `F-*` / `P-*` callers automatically.
+The [fixed proof-milestone ledger](SESSION_CHECKPOINTS.md) cross-indexes **57 deliberately heterogeneous proof milestones** against the existing 296-entry inventory and records precise manuscript closures and partial results. As of 2026-10-31, **15** are written at their literal scope (12 reconcile older manuscripts, 2 are the [new full-cut hand census](../THREE_PORT_DEGREE_SIGNATURE_CENSUS_2026_10_31.md), and **M28** is a [new whole low-hub structural-family exclusion](../THREE_PORT_RANK_TWO_LOW_HUB_UNIFORM_EXCLUSION_2026_10_31.md)); **42 remain open**. M29 is narrowed but unclosed. Some sources are still self-checked only; no broad `R-*` / `F-*` / `P-*` caller automatically closes.
 
-This is a **nonadditive cross-index**, not a new canonical denominator, a claim that all 57 have similar difficulty, or a replacement for the 296 refined entries. All **21** original coarse parents, **140** original fine flags and **20** six-body exterior rows remain open. Future sessions check a complete existing local or refined gate, link the literal proof and review status, or record zero. The 57 IDs are frozen: do not split indefinitely to manufacture a progress count.
+This is a **nonadditive cross-index**, not a new canonical denominator, an equal-effort progress bar, or a replacement for the 296 refined entries. **Some milestones are major new continuous geometric theorems or all-parent assemblies; nobody can guarantee a completed gate every session.** All **21** original coarse parents, **140** original fine flags and **20** six-body exterior rows remain open. Record fully proved source-scoped milestones, or partial advances inside their existing ID; log zero when nothing fully closes. The 57 IDs remain frozen rather than indefinitely proliferating.
 
 ## Work records by role
 
