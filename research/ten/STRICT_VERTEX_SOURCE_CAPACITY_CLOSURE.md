@@ -1,5 +1,7 @@
 # Complete source closure when both LSLSLD D endpoints have unique circle vertices
 
+**Subsequent whole-case completion:** [the radial-D three-body capacity theorem](RADIAL_DIAGONAL_THREE_BODY_CAPACITY.md) now completes the remaining radial-D class. The entire LSLSLD signature is closed; the branch-specific statements below record their original scope.
+
 **Status:** complete branch argument in the selected-certificate radius
 window 79/40<=R<=3/sqrt(2). Two exact arithmetic backends checked the
 finite tables in this single-agent session. No independent agent review

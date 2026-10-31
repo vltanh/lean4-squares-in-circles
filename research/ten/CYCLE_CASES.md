@@ -2,11 +2,11 @@
 
 This is the complete current **graph/transmitter overclassification** for C20. It covers whole positive components of lengths 6–10, modulo cyclic rotation and reflection. The inventory itself does not assert geometric feasibility or classify contact ownership. Separately proved exclusions are tracked below for the jointly selected certificate in [CASE_ROADMAP.md](CASE_ROADMAP.md); they need not exclude every alternative choice of physical stress.
 
-**Exclusion progress:** `█████████████████████▍░░` **249/279 transmitter cases closed; 30 open.**
+**Exclusion progress:** `█████████████████████▌░░` **250/279 transmitter cases closed; 29 open.**
 
 | Length | Binary load families | S/D cases | Excluded |
 | --- | ---: | ---: | ---: |
-| 6 | 6 | 15 | 4 |
+| 6 | 6 | 15 | 5 |
 | 7 | 9 | 23 | 10 |
 | 8 | 15 | 45 | 39 |
 | 9 | 21 | 71 | 71 |
@@ -21,7 +21,7 @@ The independent enumerations and Burnside count in [check_cycle_cases.py](check_
 | C20-M06-L03-B01-T01 | `LLSLSS` | [HAND CLOSED](SS_SIDE_SIX_CYCLE_EXCLUSION.md) |
 | C20-M06-L03-B01-T02 | `LLDLSS` | [HAND CLOSED](SS_DIAGONAL_SIX_CYCLE_EXCLUSION.md) |
 | C20-M06-L03-B02-T01 | `LSLSLS` | OPEN |
-| C20-M06-L03-B02-T02 | `LSLSLD` | OPEN |
+| C20-M06-L03-B02-T02 | `LSLSLD` | [HAND CLOSED](RADIAL_DIAGONAL_THREE_BODY_CAPACITY.md) |
 | C20-M06-L03-B02-T03 | `LSLDLD` | [HAND CLOSED](TWO_DIAGONAL_ONE_SIDE_SIX_CYCLE_EXCLUSION.md) |
 | C20-M06-L03-B02-T04 | `LDLDLD` | [HAND CLOSED](DIAGONAL_PATH_GRAPH_RESTRICTIONS.md) |
 | C20-M06-L04-B01-T01 | `LLLLSS` | OPEN |

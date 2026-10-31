@@ -1,5 +1,7 @@
 # Uniform capacity closure of both strict side-source rows in LSLSLD
 
+**Subsequent whole-case completion:** [the radial-D three-body capacity theorem](RADIAL_DIAGONAL_THREE_BODY_CAPACITY.md) now completes the remaining radial-D class. The entire LSLSLD signature is closed; the branch-specific statements below record their original scope.
+
 **Status:** complete necessary-parameter classification and completion bound
 for E_A and E_B with both D endpoints uniquely circle-loaded. The finite
 rational tables below were checked by two arithmetic implementations in

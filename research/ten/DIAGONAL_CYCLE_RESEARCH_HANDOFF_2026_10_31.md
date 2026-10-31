@@ -1,5 +1,7 @@
 # Diagonal-cycle research handoff, 2026-10-31
 
+**Subsequent whole-case completion:** [the radial-D three-body capacity theorem](RADIAL_DIAGONAL_THREE_BODY_CAPACITY.md) now completes the remaining radial-D class. The entire LSLSLD signature is closed; the branch-specific statements below record their original scope.
+
 **Status:** handoff index and explicit unfinished research. LSLSLD is
 still open; no whole-signature count changes follow from this work.
 

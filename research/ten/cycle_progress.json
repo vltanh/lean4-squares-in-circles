@@ -996,6 +996,10 @@
     "C20-M07-L05-B03-T03": {
       "status": "hand",
       "evidence": "LOADED_JOINT_ANGLE_BOUND.md"
+    },
+    "C20-M06-L03-B02-T02": {
+      "status": "hand",
+      "evidence": "RADIAL_DIAGONAL_THREE_BODY_CAPACITY.md"
     }
   }
 }

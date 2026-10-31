@@ -1,5 +1,7 @@
 # One diagonal and two side paths: a common source edge in the unique-endpoint branch
 
+**Subsequent whole-case completion:** [the radial-D three-body capacity theorem](RADIAL_DIAGONAL_THREE_BODY_CAPACITY.md) now completes the remaining radial-D class. The entire LSLSLD signature is closed; the branch-specific statements below record their original scope.
+
 **Status:** reviewed exact geometric normalization; root and independent
 full mathematical reviews passed on 2026-10-31.
 This is a parameterization of the entire branch in which both D endpoints

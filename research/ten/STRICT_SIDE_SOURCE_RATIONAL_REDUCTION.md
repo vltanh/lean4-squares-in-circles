@@ -1,5 +1,7 @@
 # Five circle-feature rows and a two-angle reduction for a strict side source
 
+**Subsequent whole-case completion:** [the radial-D three-body capacity theorem](RADIAL_DIAGONAL_THREE_BODY_CAPACITY.md) now completes the remaining radial-D class. The entire LSLSLD signature is closed; the branch-specific statements below record their original scope.
+
 **Status:** complete necessary-form argument checked in this session; no
 independent agent review or Lean verification is claimed. This is a uniform
 reduction inside LSLSLD. The subsequent [uniform side-source closure](STRICT_SIDE_SOURCE_CAPACITY_CLOSURE.md) now completes the E_A/E_B rows; the subsequent [V_V source theorem](STRICT_VERTEX_SOURCE_CAPACITY_CLOSURE.md) closes those rows too. Radial D endpoints remain open.

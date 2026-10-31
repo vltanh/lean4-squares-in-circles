@@ -6,7 +6,7 @@ lemma that does not close its family. All lower-bound cases below concern
 `R^2<9/2`; equality and Lean integration have separate gates.
 
 <!-- CASE_PROGRESS_START -->
-**Fixed strict-lower-bound master ledger:** `███████████████████▋░░░░` **276/336 closed; 60 open.** (276 hand; 0 computer-only.) [All stable IDs and the exact remaining obligations](MASTER_CASES.md).
+**Fixed strict-lower-bound master ledger:** `███████████████████▊░░░░` **277/336 closed; 59 open.** (277 hand; 0 computer-only.) [All stable IDs and the exact remaining obligations](MASTER_CASES.md).
 
 The denominator is frozen: 19 other terminal families + 38 branching families + 279 cycle signatures. A branching family includes every permitted graph and continuous realization for its fixed `(k,b)`. These are proof-family counts, **not a percentage of effort or of the full n=10 deliverable**. Equality and Lean verification have separate gates.
 
@@ -15,7 +15,7 @@ The denominator is frozen: 19 other terminal families + 38 branching families + 
 **G3 lower-bound case ledger:** `███████████████████░░`
 **19 hand closed · 0 computer closed · 2 open / 21 terminal families.**
 
-**C20 larger-cycle subcases:** `█████████████████████▍░░` **249/279 closed; 30 open.**
+**C20 larger-cycle subcases:** `█████████████████████▌░░` **250/279 closed; 29 open.**
 
 C05 optional b=0 drilldown: 42,532/45,666 raw records excluded; 3,134 remain. [Catalog and certificates](BRANCHING_SELECTED_GRAPH_FILTERS.md). 
 
@@ -55,7 +55,7 @@ C05 optional b=1 drilldown: 385,071/524,870 raw records excluded; 139,799 remain
 | C17 | HAND CLOSED | **Remaining vertex/side pattern: D-S.** Same ordered convention; endpoint classification and a printed exact clearance table exclude both remaining circle-load patterns. [Proof / reduction](DIAGONAL_SIDE_EXCLUSION.md). |
 | C18 | HAND CLOSED | **Five-cycle with four loads: side transmitter.** Its only unloaded body is a degree-two side transmitter. [Proof / reduction](MIXED_FIVE_FOUR_LOADED.md). |
 | C19 | HAND CLOSED | **Five-cycle with four loads: diagonal transmitter.** For the generic selected certificate, D transmitter neighbors must be contacted in side interiors. The nearer-endpoint theorem forbids side support, excluding the component. The certificate is selected before classification. [Proof / reduction](DIAGONAL_FIVE_CYCLE_EXCLUSION.md). |
-| C20 | OPEN | **Mixed simple cycles of lengths six through ten.** At least three loaded bodies. Reviewed cap, pair-angle, coupled three-ray and six-cycle arguments close 249 of 279 fixed signatures. Thirty remain: 11 at length six, 13 at seven, and 6 at eight. [Proof / reduction](CYCLE_CASES.md). |
+| C20 | OPEN | **Mixed simple cycles of lengths six through ten.** At least three loaded bodies. Reviewed cap, pair-angle, coupled three-ray and source-capacity arguments close 250 of 279 fixed signatures. Twenty-nine remain: 10 at length six, 13 at seven, and 6 at eight. [Proof / reduction](CYCLE_CASES.md). |
 <!-- CASE_PROGRESS_END -->
 
 ## How the case tree is exhaustive
@@ -252,9 +252,9 @@ the [cap-angle budget](SHARP_TRANSMISSION_CYCLE_BUDGET.md), which closes
 give 238 closures. The [stronger loaded-pair angle](STRONG_DIRECT_CYCLE_BUDGET.md)
 adds eight more. The [24-row three-ray bound](LOADED_THREE_RAY_ANGLE_BOUND.md)
 then closes the seven-loaded one-D cycle, raising the total to 247. The [coupled three-ray bound](LOADED_JOINT_ANGLE_BOUND.md)
-then closes both five-loaded/two-D signatures, giving 249 closures and
-exactly 30 open:
-11 at length six, 13 at length seven, 6 at length eight, and none at
+then closes both five-loaded/two-D signatures. The [complete LSLSLD source and radial-D capacity assembly](RADIAL_DIAGONAL_THREE_BODY_CAPACITY.md)
+raises the total to 250 closures and exactly 29 open:
+10 at length six, 13 at length seven, 6 at length eight, and none at
 lengths nine or ten.
 An entry is never claimed feasible or excluded merely because it appears
 in the list.

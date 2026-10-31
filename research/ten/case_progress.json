@@ -118,7 +118,7 @@
       "id": "C10",
       "status": "hand",
       "title": "Unique-circle-vertex central body: parallel transmissions",
-      "scope": "Nonadjacent unloaded bodies; apply this predicate before C11\u2013C17.",
+      "scope": "Nonadjacent unloaded bodies; apply this predicate before C11–C17.",
       "evidence": "PARALLEL_MIXED_FIVE_CYCLE.md"
     },
     {
@@ -132,14 +132,14 @@
       "id": "C12",
       "status": "hand",
       "title": "Unique-circle-vertex central body: two distinct vertex contacts",
-      "scope": "After C10\u2013C11.",
+      "scope": "After C10–C11.",
       "evidence": "VERTEX_CONTACT_MIXED_FIVE_CYCLE.md"
     },
     {
       "id": "C13",
       "status": "hand",
       "title": "Unique-circle-vertex central body: two side-normal transmissions",
-      "scope": "After C10\u2013C12; includes two side-interior contacts.",
+      "scope": "After C10–C12; includes two side-interior contacts.",
       "evidence": "SIDE_NORMAL_MIXED_FIVE_CYCLE.md"
     },
     {
@@ -188,7 +188,7 @@
       "id": "C20",
       "status": "open",
       "title": "Mixed simple cycles of lengths six through ten",
-      "scope": "At least three loaded bodies. Reviewed cap, pair-angle, coupled three-ray and six-cycle arguments close 249 of 279 fixed signatures. Thirty remain: 11 at length six, 13 at seven, and 6 at eight.",
+      "scope": "At least three loaded bodies. Reviewed cap, pair-angle, coupled three-ray and source-capacity arguments close 250 of 279 fixed signatures. Twenty-nine remain: 10 at length six, 13 at seven, and 6 at eight.",
       "evidence": "CYCLE_CASES.md"
     }
   ]
