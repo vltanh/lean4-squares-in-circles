@@ -99,7 +99,7 @@ These are the actual unsolved mathematical burdens. An "attempt" does not become
 | Obstruction | Exact surviving domain | One potentially broad closing argument to seek | What must actually be proved |
 |---|---|---|---|
 | **B29** | All **H1–H5** (6/7-body unloaded connected modules; 2/3 actual external bodies) | **Use the real S-2PAR-STRIP** two-transmitter transverse span (side $\ge2$, diagonal $\ge2\sqrt2$) and actual disk-corner bound, together with full end-hub force/torque and **joint completion** | Original force/torque and nine-square bound covering all five locations; not merely the two-transmitter strip itself |
-| **B30** | Both D-central and D-peripheral diamonds with up to three real internal/exit transmitters | Two-triangle root-force/moment obstruction that respects the *two exits from one hub* in D-peripheral | Uniform physical exclusion of both diamonds or an exact sharp alternative at every original original graph |
+| **B30** | Both D-central and D-peripheral diamonds with up to three real internal/exit transmitters | Two-triangle root-force/moment obstruction that respects the *two exits from one hub* in D-peripheral | Uniform physical exclusion of both diamonds or an exact sharp alternative at every original graph |
 | **B5H** | House reduced five-hub topology with at most two real transmitters | Joint house-face capacity or a degree-three hub long-gap contradiction | Complete nine-square physical exclusion over all house placements/true original cut arms |
 | **BK23** | The six internally subdivided K1–K6, **not** the already forbidden literal $K_{2,3}$ | Actual contact-ring or force-gap theorem surviving a subdivided edge | Full nine-square exclusion of each K1–K6 original physical family |
 | **B3C** | Seven **unloaded trivalent** hubs, 9 internal edges, 3 original exits, 2 external **loaded** bodies in one component | One uniform physical occupied-cross / terminal-ball / two-cut argument, or a finite *hand* graph classification followed by it | Rank-three original graph + complete same-nine geometry, not only degree sequence |
@@ -146,6 +146,17 @@ Every row below is one actual original coarse case, not an extra mathematical th
 | `C2.45.b1` | 9+0 | MIXED / CLEAR / FAR / WRENCH | 4+5 articulation plus original bridge | **OPEN** |
 | `C2.46.b0` | 9+0 | MIXED / CLEAR / FAR | 4+6 two-block articulation with full side means | **OPEN** |
 | `C2.55.b0` | 9+0 | MIXED / CLEAR / FAR / WRENCH | 5+5 two-block articulation and original root force/moment | **OPEN** |
+
+### Previously settled proper features within still-open original parents (not a full case)
+
+| Original parent | Earlier genuinely proved smaller feature | What that does **not** discharge |
+|---|---|---|
+| `C1.6.b0` | **18/38** original exterior rows marked checked | The **20** other exterior rows and nonexterior six-body domains, all with the three real extras |
+| `C1.6.b3` | Entire **connected-private partition3** excluded by the original return-free middle-star source | The disconnected clear-Q Type I/II and full weak original contact-owner alternatives |
+| `C1.7.b0` | Original long-run/4+3 and full two-RR short-simple-C7 exits already proved at exact prior scopes | Genuine one-RR and zero-RR short arrangements, positive chords/branching and joint placement of **two** extras |
+| `C1.8.b0` | All *compatible genuine simple* C8 positive cycles ruled out | Eight-body **chorded or branching** positive graphs and the ninth real square |
+| `C1.9.b0` | All *compatible genuine simple* C9 positive cycles ruled out | **Chorded or branching** nine-body positive graphs; no automatic reduction to a simple cycle |
+| `C2.*` (10 rows) | The earlier reviewed **origin-containing/common-side** endblock pressure lemma is available as an imported conditional tool | **No** original full two-block caller mapped or closed; mixed-side roots, circle-clear positive neighbors and distant loads remain |
 
 **Coverage contract:** The 58-row [original source table](../CYCLIC_CELL_LEDGER.md) retains **37 CLOSED, 21 OPEN**. The [140 currently unchecked original fine IDs](../PROGRESS.md#5-all-140-currently-unchecked-detailed-roadmap-entries), their [296 refined child records and parent map](PARENT_MAP.md), and the [18/38 nested six-body exterior reconciliation](../PROGRESS.md#1-single-reconciled-progress-snapshot) are kept intact. A proof of B29, BK23 or another structural feature gets **zero** original-parent credit until an explicit original-graph caller map shows it exhausts **all** of a named original row, including all its sibling masks, attachments and full nine-square completion. The new graph subdivisions are not asserted to cover the 21 parent cases.
 
