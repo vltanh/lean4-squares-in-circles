@@ -2,7 +2,7 @@
 
 **Status:** complete necessary-form argument checked in this session; no
 independent agent review or Lean verification is claimed. This is a uniform
-reduction inside LSLSLD. The subsequent [uniform side-source closure](STRICT_SIDE_SOURCE_CAPACITY_CLOSURE.md) now completes the E_A/E_B rows; V_V sources and radial D endpoints remain open.
+reduction inside LSLSLD. The subsequent [uniform side-source closure](STRICT_SIDE_SOURCE_CAPACITY_CLOSURE.md) now completes the E_A/E_B rows; the subsequent [V_V source theorem](STRICT_VERTEX_SOURCE_CAPACITY_CLOSURE.md) closes those rows too. Radial D endpoints remain open.
 
 Use [ONE_DIAGONAL_TWO_SIDE_COMMON_SOURCE_EDGE.md](ONE_DIAGONAL_TWO_SIDE_COMMON_SOURCE_EDGE.md)
 after the [complete vertical-endpoint exclusion](RADIAL_VERTICAL_SOURCE_EXCLUSION.md).
@@ -201,5 +201,6 @@ The [subsequent E_A/E_B closure](STRICT_SIDE_SOURCE_CAPACITY_CLOSURE.md)
 provides a complete 1,133-leaf necessary-parameter enclosure, excludes both
 retained degenerate boundary roots by injectivity, and proves total capacity
 at most nine uniformly over the retained interior rectangle with a 161-cell
-four-center cover. Both transmitter slides remain unrestricted. The V_V
-source rows and radial D endpoints remain separate open obligations.
+four-center cover. Both transmitter slides remain unrestricted. The subsequent [V_V source closure](STRICT_VERTEX_SOURCE_CAPACITY_CLOSURE.md)
+completes the remaining source features. Only radial D endpoints remain
+open in LSLSLD.

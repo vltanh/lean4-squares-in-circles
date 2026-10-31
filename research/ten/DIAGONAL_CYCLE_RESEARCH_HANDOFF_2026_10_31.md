@@ -48,7 +48,11 @@ A prospective completion route is to use only A,B,C,D as four fixed
 cores. If their common uncovered center domain can be covered by at most
 five sets of diameter below one, the whole packing has at most nine
 squares. This would automatically retain every S-transmitter slide.
-No uniform finite capacity certificate has yet been constructed.
+The subsequent [strict side-source closure](STRICT_SIDE_SOURCE_CAPACITY_CLOSURE.md)
+and [V_V source closure](STRICT_VERTEX_SOURCE_CAPACITY_CLOSURE.md) now give
+complete exact parameter and capacity certificates for this entire
+both-unique-D-endpoint family. The floating survey remains historical and
+is not a premise of these proofs. The radial-D-endpoint branch remains open.
 
 ## Existing unreviewed local observation for the radial D-endpoint branch
 

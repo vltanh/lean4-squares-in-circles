@@ -241,4 +241,10 @@ now gives five exhaustive C circle-feature rows. E_A and E_B each force
 a unique geometric circle vertex; V_V retains two unique-vertex choices
 or the upper radial side. The entire E_A geometry is rational in the two
 S half-angle parameters, with two residual scalar equations; E_B follows
-by reflection. This does not isolate their roots or prove completion.
+by reflection. The subsequent [E_A/E_B capacity theorem](STRICT_SIDE_SOURCE_CAPACITY_CLOSURE.md)
+now excludes both rows by complete exact parameter and capacity tables.
+The [V_V source closure](STRICT_VERTEX_SOURCE_CAPACITY_CLOSURE.md) excludes
+the two unique-circle rows analytically and the radial row by complete
+216-leaf parameter and 120-cell capacity tables. Every both-unique-D-endpoint
+LSLSLD configuration is therefore excluded; the separate radial-D-endpoint
+branch is still open.

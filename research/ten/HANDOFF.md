@@ -59,8 +59,12 @@ four-center cover then puts all added centers in five disks of diameter 9/10.
 Both full transmitter slide intervals are included. Two arithmetic backends
 (44 and 60 bits) pass every leaf and exact Q(sqrt(2)) checks verify both
 boundary identities. No independent agent review or Lean check is claimed.
-The V_V source rows and radial D endpoints remain open, so the fixed master
-count remains 276/336. This is a branch closure, not another whole-cycle closure.
+The subsequent [complete unique-D-endpoint source closure](STRICT_VERTEX_SOURCE_CAPACITY_CLOSURE.md)
+now also excludes both unique-circle V_V sources by a same-sign torque
+argument, and the radial V_V source by a complete 216-leaf parameter table
+and 120-cell physical capacity cover. Both 44-bit and 60-bit backends pass
+all leaves. Thus only the radial-D-endpoint class remains in LSLSLD.
+The fixed count remains 276/336; no whole-cycle closure is claimed.
 
 | All open IDs, grouped for shared arguments | Count | Next common obligation |
 | --- | ---: | --- |
