@@ -2,6 +2,13 @@
 
 **Unrestricted theorem: OPEN.** The target is `R² ≥ 1105/256`. A sharp construction is known, but the global lower-bound argument, all equality packings and the final common-certificate audit are not closed. This directory contains hand-proof research, **not a completed Lean proof**.
 
+## Latest hand-only continuation (2026-10-31)
+
+- [Three-port multicycle subcubic reduction](THREE_PORT_MULTICYCLE_SUBCUBIC_REDUCTION_2026_10_31.md): a full-cut, one-reduced-exit-per-hub theorem classifying rank-two modules into house or \(K_{2,3}\) skeletons, and rank-three modules into a seven-hub/two-loaded-body extreme. It excludes only the literal internally unsubdivided \(K_{2,3}\) subfamily; transmitted exit arms are retained. **Not** a completed coarse or fine gate.
+- [Handoff and exact outstanding exceptions](HANDOFF_THREE_PORT_MULTICYCLE_2026_10_31.md): separates proved reductions from unverified proposed stronger exclusions and identifies the next same-nine tests.
+
+The original canonical ledger is unchanged; no Lean, CI or computer-assisted exclusion was run.
+
 ## Start here
 
 - **[Refined original-open-gate hierarchy](gates/README.md)** — 296 scoped child records with all 140 original open parents mapped; [full parent map](gates/PARENT_MAP.md)
