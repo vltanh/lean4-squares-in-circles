@@ -38,9 +38,9 @@ five inner centers by an explicit finite-table argument. Thus a hypothetical
 smaller ten-packing must have **exactly three or four inner centers**.
 The equality classification remains open outside the completed classes.
 
-## Final handoff checkpoint — 2026-10-31
+## Resumed checkpoint — 2026-10-31
 
-Research is paused at the user's handoff request. Exact finite tables are permitted; every table must
+Research has resumed. Exact finite tables are permitted; every table must
 cover its full stated parameter domain and use exact, reviewable inequalities.
 The unrestricted proof is still open.
 The fixed master denominator is **336**, with **274 reviewed hand closures
@@ -116,9 +116,11 @@ Unfinished routes are preserved without closure claims:
 - [Stronger coupled loaded-run angle](LOADED_RUN_STRONGER_ANGLE_HANDOFF.md):
   a joint bound above pi/2-atan(1/45) may close two more D signatures;
   no complete table exists, and larger-offset separators remain a gap.
-- [Diagonal block completion](DIAGONAL_TRANSLATED_BLOCK_RESEARCH.md):
-  a proposed quadrant-straddler lemma and 2+2+1 capacity argument need
-  review of separator coverage. The three-square-junction case remains.
+- The [diagonal-block lead](DIAGONAL_TRANSLATED_BLOCK_RESEARCH.md) is now
+  completed by the [quadrant-straddler lemma](QUADRANT_STRADDLER_LEMMA.md)
+  and [two-parameter outward block capacity theorem](OUTWARD_INSCRIBED_BLOCK_CAPACITY.md).
+  At most five squares can be added, including the sharp boundary. This
+  excludes the four-square-junction on-ray residual; three-square junctions remain.
 - [The 27-row numerical D survey](ONE_DIAGONAL_TWO_SIDE_NORMAL_FORM_EXPLORATION.md)
   reproduces three filtered roots, but is neither exhaustive nor a physical
   realization or completion certificate. Its JSON was reproduced identically.
@@ -165,6 +167,13 @@ The closed counts do not measure the fraction of mathematical effort.
 
 Latest completed work:
 
+- The [quadrant-straddler theorem](QUADRANT_STRADDLER_LEMMA.md) proves
+  at most one unit square can straddle an empty quadrant, and an anchored
+  southwest unit square excludes every straddler. It completes the earlier
+  separator-coverage gap. The [outward inscribed block theorem](OUTWARD_INSCRIBED_BLOCK_CAPACITY.md)
+  now bounds completion by nine for all shifts s,t in [0,1/2] when the
+  outer corner is on the circle. Its proof retains arbitrary orientations
+  and handles the equality boundary. No full master entry closes from it.
 - The [24-row loaded-ray theorem](LOADED_THREE_RAY_ANGLE_BOUND.md) closes
   the whole seven-loaded one-D signature C20-M08-L07-B01-T02. Its 72
   endpoint bounds were independently verified with dyadic radical bounds

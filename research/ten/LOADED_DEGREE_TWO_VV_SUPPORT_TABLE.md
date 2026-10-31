@@ -189,3 +189,13 @@ This proves the final column and the simple-cycle corollary. A two-circle-
 vertex loaded body has a variable radial-side resultant and is outside
 this table. Coincident on-ray contacts in a branching component remain
 possible in this argument; no exclusion of that residual is claimed.
+
+## Four-square-junction completion refinement
+
+The on-ray row cannot occur at a geometric four-square junction in a
+subcritical ten-packing. The four right-angle sectors force the solid
+block `[a-1,a+1]^2`, and the
+[outward inscribed block theorem](OUTWARD_INSCRIBED_BLOCK_CAPACITY.md)
+bounds its entire completion by nine squares, with arbitrary additional
+orientations. The three-square-junction residual is still open. This
+refinement does not exclude an entire fixed branching family.

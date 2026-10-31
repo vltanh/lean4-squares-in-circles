@@ -1,6 +1,13 @@
 # Unreviewed completion lead for an outward diagonal two-by-two block
 
-**Status: UNREVIEWED research handoff, 2026-10-31.** This records a proof
+**Status: historical research lead, completed on 2026-10-31.**
+The separator coverage and quadrant lemma below are now proved in
+[QUADRANT_STRADDLER_LEMMA.md](QUADRANT_STRADDLER_LEMMA.md). The stronger
+two-parameter block theorem, including its equality boundary, is proved
+in [OUTWARD_INSCRIBED_BLOCK_CAPACITY.md](OUTWARD_INSCRIBED_BLOCK_CAPACITY.md).
+The text below preserves the original derivation and its former open questions.
+
+Original status: This records a proof
 derivation reached before the user's handoff request. It has not received
 root or independent review and is not a proved exclusion or ledger input.
 In particular the quadrant lemma and its separating-axis coverage need
