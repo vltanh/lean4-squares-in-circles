@@ -12,9 +12,13 @@
 * Unrestricted \(R^2\ge1105/256\), complete equality classification, and common certificate audit G4.2.c are **OPEN**.
 * Refined 296-record task hierarchy is a planning map, NOT 296 extra canonical gates. Do not tick its R-MODULE-TRICYCLE item until its full arbitrary-degree/three-cut scope is discharged.
 
-## Finite session proof checkpoints (reconciled 2026-10-31)
+## Live case coverage and research front (reorganized 2026-10-31)
 
-The [fixed 57-ID heterogeneous milestone ledger](gates/SESSION_CHECKPOINTS.md) records **15 written-scope hand milestones checked / 42 still open** without altering the 296 refined gates or any original coarse/fine flag. **M01–M02** establish the [full-cut identity and seven necessary original-degree signatures](THREE_PORT_DEGREE_SIGNATURE_CENSUS_2026_10_31.md). **M28** is now completed at its exact structural-family scope by the [uniform hand no-return / physical embedded-`K₂,₃` exclusion](THREE_PORT_RANK_TWO_LOW_HUB_UNIFORM_EXCLUSION_2026_10_31.md): every three-cut, rank-two unloaded module with one or two hubs is impossible, with no one-exit-per-hub restriction. **M29 remains open**, narrowed to three genuine third-channel transmitter arrangements. The other twelve checked items link earlier sources. **No original nine-square coarse parent was closed**. Critically, **the 57 IDs are not equal-size and no per-session tick can be guaranteed**. Focus on a common geometric lemma across M29, M30, remaining house/subdivided-K₂,₃ shapes, or G/W, without inventing new gate denominators.
+Use [ONE original-caller and hand-proof evidence ledger](gates/SESSION_CHECKPOINTS.md), not the retired 15/57 checklist (preserved [as history](gates/HISTORICAL_57_MILESTONES_2026_10_31.md)). Every source is graded **H** written / **V** independently reviewed / **J** original caller joined / **C** original canonical closed; large unknown continuous geometric problems are explicitly **BLOCKED**, not called quick session gates. The complete **21 original open coarse rows** are listed individually. No new original coarse or fine ID closed in this reorganization.
+
+New exact hand necessary graph classification sources: [four hubs ⇒ two diamond/exit forms](THREE_PORT_RANK_TWO_FOUR_HUB_DIAMOND_CENSUS_2026_10_31.md); [three hubs ⇒ five remaining genuine transmitter/exit locations](THREE_PORT_RANK_TWO_THREE_HUB_FIVE_ORBITS_2026_10_31.md); [subdivided five-hub K23 ⇒ six remaining genuine transmitter/exit locations](THREE_PORT_SUBDIVIDED_K23_SIX_ORBITS_2026_10_31.md). All **continuous physical force/torque and nine-square completion** exclusions for those classes remain open. Source manuscripts are self-checked, not independently reviewed.
+
+**Next hand-proof move:** verify common original-certificate scope of the low-hub and three-/four-/five-hub graph reductions, then seek a **single physical inequality** covering multiple true-transmitter patterns (B29, B30, BK23), rather than generating more nested graph-category gates. The house finite transmitted-placement table is a legitimate short *combinatorial* next item, not a promise that house physical exclusion is easy.
 
 ## New source proved at exact scope
 
