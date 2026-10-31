@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "started_utc": "2026-10-23T16:27:18.851687+00:00",
+  "finished_utc": "2026-10-23T16:27:19.137192+00:00",
+  "python": "3.13.5",
+  "source_commit": "fed5a8882ba4d002c5299cefae1139221da98f12",
+  "source_sha256": "d7fe0378cf8d1accea9f971daa97e06056900780469d0593cdfbc0186b4938b7",
+  "source_git_blob_sha1": "fdb7d5ef123b8018601c3661b5451c4346672ba5",
+  "quadrant": {
+    "exact_identity_checks": 104,
+    "admissible_quadrant_square_samples": 2254,
+    "tilted_samples_with_strict_point_containment": 2082,
+    "axis_aligned_boundary_samples": 33,
+    "negative_control_two_quadrant_squares_at_q": 5,
+    "negative_control_45_degree_bound": {
+      "centers": [["5/4", "1/2"], ["5/4", "-1/2"]],
+      "q": "65/16",
+      "angle_cosine": "21/29",
+      "angle_strictly_below_45_degrees": true
+    }
+  },
+  "cyclic_inventory": {
+    "profiles": 21,
+    "cells": 58,
+    "closed_cells": 1,
+    "open_cells": 57,
+    "finite_connected_cyclic_graph_checks": 1772,
+    "distinct_cells_exercised": 58,
+    "method": "All simple graphs through five vertices; deterministic samples above five; one abstract witness per cell. Not a universal proof or physical feasibility test."
+  },
+  "P_center_relaxation_negative_control": {
+    "root_sliders": ["-193/1000", "186/1000"],
+    "extra_centers": [["887/1000", "301/250"], ["-16/125", "1353/1000"], ["-547/500", "1003/1000"], ["-69/125", "-303/250"], ["111/200", "-1189/1000"]],
+    "min_center_radius_squared_slack": "2723/200000",
+    "min_obstacle_distance_squared_slack": "3009/1000000",
+    "min_pair_distance_squared_slack": "26213/500000",
+    "scope": "Exact feasible center/inscribed-disk relaxation for P plus five. NOT a physical unit-square packing. Full square supports are essential."
+  },
+  "scope": "Finite exact checks only. No universal n=9 proof, full audit, Lean compilation or CI. Source bytes matched to committed Git blob before execution. Report data preserved with compact whitespace."
+}

@@ -1,0 +1,80 @@
+{
+  "schema": "hand-proof-full-window-review-v1",
+  "reviewer": "six_body",
+  "date": "2026-10-28",
+  "verdict": "PASS unchanged",
+  "sources": [
+    {
+      "name": "D_LEAF_SHALLOW_SIDE_BOUNDARY_FULL_WINDOW_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/diamond/D_LEAF_SHALLOW_SIDE_BOUNDARY_FULL_WINDOW_EXCLUSION.md",
+      "sha256": "ca7c3f4b32e45fc0c118bd766f438fce3019b0b44220604e33bc842a504ac670",
+      "bytes": 9842
+    },
+    {
+      "name": "D_LEAF_COMMON_TRIANGLE_NEIGHBOR_FULL_WINDOW_QUARTER_DISK.md",
+      "path": "/workspace/scratch/7d553350ce2a/diamond/D_LEAF_COMMON_TRIANGLE_NEIGHBOR_FULL_WINDOW_QUARTER_DISK.md",
+      "sha256": "c39605b955d98f7fbe8499cf0a06dc4cc780a7dada4ee83c05ffc627f6d866bc",
+      "bytes": 9919
+    }
+  ],
+  "review": {
+    "name": "REVIEW_D_SHALLOW_AND_COMMON_NEIGHBOR_FULL_WINDOW_2026_10_28.md",
+    "path": "/workspace/scratch/7d553350ce2a/six_body/REVIEW_D_SHALLOW_AND_COMMON_NEIGHBOR_FULL_WINDOW_2026_10_28.md",
+    "sha256": "730e50c7a8b348d1bcf20ad6110e645586f0073097e6c8d372a000c058b14a5e",
+    "bytes": 8602
+  },
+  "independence": "Independent reconstruction of diamond-authored full-window shallow-D kernel and new full-window transfer. Reviewer authored earlier radius-two-dependent common-neighbor argument; its full prior independent acceptance by diamond is separately pinned below, not described as an independent discovery by this reviewer.",
+  "predecessor": {
+    "name": "D_LEAF_COMMON_TRIANGLE_NEIGHBOR_AVOIDS_QUARTER_DISK.md",
+    "path": "/workspace/scratch/7d553350ce2a/six_body/D_LEAF_COMMON_TRIANGLE_NEIGHBOR_AVOIDS_QUARTER_DISK.md",
+    "sha256": "2330462d457e8f6eaedae3f8d6c8d535379742a213e033c438827f86b4d31288",
+    "bytes": 9303
+  },
+  "predecessor_independent_review": {
+    "name": "REVIEW_D_COMMON_TRIANGLE_NEIGHBOR_QUARTER_DISK_INDEPENDENT_2026_10_28.md",
+    "path": "/workspace/scratch/7d553350ce2a/diamond/REVIEW_D_COMMON_TRIANGLE_NEIGHBOR_QUARTER_DISK_INDEPENDENT_2026_10_28.md",
+    "sha256": "1b90ccdec4831c8bcde9643ca4dae79cf8a0aeb22dc789884f63327c9ffba16c",
+    "bytes": 5783
+  },
+  "direct_original_dependencies": [
+    {
+      "name": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "bytes": 14902
+    },
+    {
+      "name": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "bytes": 4431
+    },
+    {
+      "name": "END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+      "sha256": "20a845eff8bee3e9c533162df0b32ea96f9dd104a3cfec41efb3b0cf92d6e9cf",
+      "bytes": 8686
+    }
+  ],
+  "exact_arithmetic": {
+    "sqrt2_upper_57_40_square_reserve": "49/1600",
+    "R_upper_133_64_square_reserve": "9/4096",
+    "sqrt2_lower_140_99_square_reserve": "2/9801",
+    "r_upper_gap": "17/6336",
+    "q_squared_lower": "6/25",
+    "upper_P_squared": "73/144",
+    "upward_vertex_reserve": "869/14400",
+    "North_side_reserve": "2141/1600",
+    "owned_NE_deficit": "-11/400",
+    "cubic_at_three_quarters": "63/64"
+  },
+  "scope": "Every R in [79/40,sqrt(1105)/16], both endpoints; arbitrary actual degree m+2 at common-neighbor D root with every original positive force and mean retained. Shallow kernel itself is entirely force-free.",
+  "not_dependencies": [
+    "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+    "Any radius-two certificate or analytic measure theorem",
+    "Any smaller-packing theorem"
+  ],
+  "fine_gate_delta": 0,
+  "coarse_gate_delta": 0,
+  "validation": "Full direct hand reconstruction and exact rational identity check. No Lean compilation, CI, pose sample, normal reselection, force deletion, ledger mutation or remote write."
+}

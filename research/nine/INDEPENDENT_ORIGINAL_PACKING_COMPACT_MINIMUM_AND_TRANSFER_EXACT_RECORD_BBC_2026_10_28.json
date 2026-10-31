@@ -1,0 +1,446 @@
+{
+  "title": "Complete independent review of original finite Packing compactness, canonical minimum and conditional radius transfer",
+  "date_utc": "2026-10-28",
+  "reviewer": "broad_s_families",
+  "author": "root",
+  "status": "PASS_UNCHANGED_FULL_ORIGINAL_DOMAIN_WITH_G4_2_A_ELIGIBILITY",
+  "reviewer_discovery_or_repair_contribution": false,
+  "source": {
+    "path": "continuation_broad_c62/research/nine/ORIGINAL_PACKING_COMPACT_CANONICAL_MINIMUM_AND_RADIUS_TRANSFER.md",
+    "bytes": 15756,
+    "lines": 312,
+    "sha256": "be6636a018df64f52a48f382dc21b453a208d0a929fdeaa7cb5bef9c30822c06",
+    "git_blob": "78056e2005e0c2a01c0a4d0c466830edee9ed05c"
+  },
+  "full_source_read_lines": [
+    1,
+    312
+  ],
+  "source_changed": false,
+  "comparison_head": "bbc1e87f65168bba704d2b21a91faf0e313945c2",
+  "full_tree": {
+    "path": "current_bbc_base/TREE_BBC.json",
+    "bytes": 1383917,
+    "lines": 32030,
+    "sha256": "c70b94b46a8d7e674556276e5b6bf628150aff3c55464ff4910408f4f5c0db7f",
+    "git_blob": "02bff89f742d54c7f7c95117be2247e50a5d3462"
+  },
+  "direct_source_inputs": [
+    {
+      "path": "current_bbc_base/SquaresInCircles/Geometry.lean",
+      "bytes": 20319,
+      "lines": 525,
+      "sha256": "64bb2e778f86274f9c256aa875d6cf0737006dcf7d70694e7fe5cf1124c72a94",
+      "git_blob": "14e10cb5be282f490ad46ac2cac63185de4ff566",
+      "repository_path": "SquaresInCircles/Geometry.lean",
+      "role": "Exact original definitions; complete file read. No theorem implementation imported or modified.",
+      "complete_text_read": true,
+      "exact_current_tree_match": true,
+      "source_literal_pin_line": "| `SquaresInCircles/Geometry.lean` | 20319 | `64bb2e778f86274f9c256aa875d6cf0737006dcf7d70694e7fe5cf1124c72a94` | `14e10cb5be282f490ad46ac2cac63185de4ff566` | Actual Point, normSq, UnitSquare, localX/localY, closedSquare/openSquare, inDisk and Packing definitions; no theorem implementation is changed |"
+    },
+    {
+      "path": "current_bbc_base/research/nine/SPARSE_MINIMIZER_STRESS.md",
+      "bytes": 16597,
+      "lines": 419,
+      "sha256": "b182276dace03bf64d9903145e8861022712b05f7ff7317ad62f30f97850e9ac",
+      "git_blob": "5ee6d10f5e7a2770ae1916f0f65cf7ca73b4e868",
+      "repository_path": "research/nine/SPARSE_MINIMIZER_STRESS.md",
+      "role": "Complete provenance source read; Section 1 is provenance only; no stress conclusion or 2n+1 bound imported.",
+      "complete_text_read": true,
+      "exact_current_tree_match": true,
+      "source_literal_pin_line": "| `research/nine/SPARSE_MINIMIZER_STRESS.md` | 16597 | `b182276dace03bf64d9903145e8861022712b05f7ff7317ad62f30f97850e9ac` | `5ee6d10f5e7a2770ae1916f0f65cf7ca73b4e868` | Full source read; Section 1 is provenance only, with the complete attainment proof supplied above; no later stress conclusion imported |"
+    }
+  ],
+  "all_direct_sources_read_completely": true,
+  "operative_external_mathematical_manuscript_imports": [],
+  "standard_mathematics_used": [
+    "finite-dimensional closed bounded sets are compact",
+    "finite products of compact sets are compact",
+    "continuous images preserve limits",
+    "sequential closedness equals closedness in metric spaces",
+    "closed subsets of compact sets are compact",
+    "continuous real functionals attain minima on nonempty compact sets",
+    "Euclidean disk convexity"
+  ],
+  "original_definitions_exact_literal_matches": {
+    "Point": "abbrev Point := ℝ × ℝ",
+    "normSq": "def normSq (p : Point) : ℝ := p.1 ^ 2 + p.2 ^ 2",
+    "sub": "def sub (p q : Point) : Point := (p.1 - q.1, p.2 - q.2)",
+    "UnitSquare": "structure UnitSquare where\n  center : Point\n  cosine : ℝ\n  sine : ℝ\n  unit : cosine ^ 2 + sine ^ 2 = 1",
+    "localX": "def localX (S : UnitSquare) (p : Point) : ℝ :=\n  S.cosine * (p.1 - S.center.1) + S.sine * (p.2 - S.center.2)",
+    "localY": "def localY (S : UnitSquare) (p : Point) : ℝ :=\n  -S.sine * (p.1 - S.center.1) + S.cosine * (p.2 - S.center.2)",
+    "closedSquare": "def closedSquare (S : UnitSquare) (p : Point) : Prop :=\n  |localX S p| ≤ 1 / 2 ∧ |localY S p| ≤ 1 / 2",
+    "openSquare": "def openSquare (S : UnitSquare) (p : Point) : Prop :=\n  |localX S p| < 1 / 2 ∧ |localY S p| < 1 / 2",
+    "inDisk": "def inDisk (o : Point) (R : ℝ) (p : Point) : Prop :=\n  normSq (sub p o) ≤ R ^ 2",
+    "Packing": "def Packing {n : ℕ} (S : Fin n → UnitSquare) (o : Point) (R : ℝ) : Prop :=\n  0 ≤ R ∧\n  (∀ i p, closedSquare (S i) p → inDisk o R p) ∧\n  (∀ i j, i ≠ j → ∀ p, ¬ (openSquare (S i) p ∧ openSquare (S j) p))",
+    "Congruent": "def Congruent {n : ℕ} (S : Fin n → UnitSquare) (o : Point) (M : Fin n → UnitSquare) : Prop :=\n  ∃ (φ : Direction) (σ : Equiv.Perm (Fin n)), ∀ i p,\n    (openSquare (S (σ i)) (pointInDirection o φ p.1 p.2) ↔ openSquare (M i) p) ∧\n    (closedSquare (S (σ i)) (pointInDirection o φ p.1 p.2) ↔ closedSquare (M i) p)"
+  },
+  "algebraic_checks": [
+    {
+      "name": "First frame norm identity",
+      "identity_scope": "u=(C,S); a=C^2+S^2=1 on the original structure subtype.",
+      "zero_remainder_coefficients": [],
+      "pass": true
+    },
+    {
+      "name": "Second frame norm identity",
+      "identity_scope": "v=(-S,C) has the same norm.",
+      "zero_remainder_coefficients": [],
+      "pass": true
+    },
+    {
+      "name": "Frame orthogonality",
+      "identity_scope": "u dot v=0 without any sign or angular restriction.",
+      "zero_remainder_coefficients": [],
+      "pass": true
+    },
+    {
+      "name": "Frame determinant",
+      "identity_scope": "The original columns give determinant a=1; no singular frame or quotient is introduced.",
+      "zero_remainder_coefficients": [],
+      "pass": true
+    },
+    {
+      "name": "Inverse-frame reconstruction x",
+      "identity_scope": "Under a=1 this equals px-cx.",
+      "zero_remainder_coefficients": [],
+      "pass": true
+    },
+    {
+      "name": "Inverse-frame reconstruction y",
+      "identity_scope": "Under a=1 this equals py-cy.",
+      "zero_remainder_coefficients": [],
+      "pass": true
+    },
+    {
+      "name": "Local-coordinate norm preservation",
+      "identity_scope": "Under a=1 the original local norm equals the physical displacement norm.",
+      "zero_remainder_coefficients": [],
+      "pass": true
+    },
+    {
+      "name": "Parametrized own x coordinate",
+      "identity_scope": "For a=1 this is exactly localX=x, including both closed endpoints.",
+      "zero_remainder_coefficients": [],
+      "pass": true
+    },
+    {
+      "name": "Parametrized own y coordinate",
+      "identity_scope": "For a=1 this is exactly localY=y, with strict or weak inequalities unchanged.",
+      "zero_remainder_coefficients": [],
+      "pass": true
+    },
+    {
+      "name": "Translation localX",
+      "identity_scope": "The same arbitrary translation subtracts the original disk center from every point and center.",
+      "zero_remainder_coefficients": [],
+      "pass": true
+    },
+    {
+      "name": "Translation localY",
+      "identity_scope": "No individual frame coordinate is altered.",
+      "zero_remainder_coefficients": [],
+      "pass": true
+    },
+    {
+      "name": "Translation disk norm",
+      "identity_scope": "Original squared inDisk and origin-centered squared inDisk are exactly identical.",
+      "zero_remainder_coefficients": [],
+      "pass": true
+    },
+    {
+      "name": "Corner offset norm (-1, -1)",
+      "identity_scope": "Each actual half-diagonal offset has squared norm 1/2 after a=1.",
+      "zero_remainder_coefficients": [],
+      "pass": true
+    },
+    {
+      "name": "Corner offset norm (-1, 1)",
+      "identity_scope": "Each actual half-diagonal offset has squared norm 1/2 after a=1.",
+      "zero_remainder_coefficients": [],
+      "pass": true
+    },
+    {
+      "name": "Corner offset norm (1, -1)",
+      "identity_scope": "Each actual half-diagonal offset has squared norm 1/2 after a=1.",
+      "zero_remainder_coefficients": [],
+      "pass": true
+    },
+    {
+      "name": "Corner offset norm (1, 1)",
+      "identity_scope": "Each actual half-diagonal offset has squared norm 1/2 after a=1.",
+      "zero_remainder_coefficients": [],
+      "pass": true
+    },
+    {
+      "name": "Four weights sum to one",
+      "identity_scope": "All four factors are nonnegative when -1/2 <= x,y <= 1/2.",
+      "zero_remainder_coefficients": [],
+      "pass": true
+    },
+    {
+      "name": "Weighted own x coordinate",
+      "identity_scope": "Includes x=+-1/2; zero weights on an unused face are permitted.",
+      "zero_remainder_coefficients": [],
+      "pass": true
+    },
+    {
+      "name": "Weighted own y coordinate",
+      "identity_scope": "Includes y=+-1/2 and the four vertex endpoints.",
+      "zero_remainder_coefficients": [],
+      "pass": true
+    },
+    {
+      "name": "Weighted physical x coordinate",
+      "identity_scope": "The proposed convex combination is the original actual point.",
+      "zero_remainder_coefficients": [],
+      "pass": true
+    },
+    {
+      "name": "Weighted physical y coordinate",
+      "identity_scope": "Both coordinates use the same four physical vertices and weights.",
+      "zero_remainder_coefficients": [],
+      "pass": true
+    },
+    {
+      "name": "Mean vertex x",
+      "identity_scope": "The original center is the four-vertex barycenter.",
+      "zero_remainder_coefficients": [],
+      "pass": true
+    },
+    {
+      "name": "Mean vertex y",
+      "identity_scope": "The center lies in the actual closed square; no corner selector is required.",
+      "zero_remainder_coefficients": [],
+      "pass": true
+    },
+    {
+      "name": "Mean squared vertex norm",
+      "identity_scope": "Under a=1 the average is |c|^2+1/2, uniformly for every frame and contact endpoint.",
+      "zero_remainder_coefficients": [],
+      "pass": true
+    },
+    {
+      "name": "Strict interior stability margin",
+      "identity_scope": "If m is the maximum of the four limit local absolute values, m<1/2; perturbation <(1/2-m)/2 retains a positive margin.",
+      "zero_remainder_coefficients": [],
+      "pass": true
+    },
+    {
+      "name": "Nonnegative radius square monotonicity",
+      "identity_scope": "For 0<=r<=R the factored difference is nonnegative; strict Q input remains strict after comparison.",
+      "zero_remainder_coefficients": [],
+      "pass": true
+    },
+    {
+      "name": "Center-only Phi relative to translated circle",
+      "identity_scope": "The canonical center energy is measured relative to the same containing-circle center.",
+      "zero_remainder_coefficients": [],
+      "pass": true
+    }
+  ],
+  "algebraic_check_count": 27,
+  "endpoint_checks": [
+    {
+      "name": "Unit half side squared",
+      "actual": "1/4",
+      "expected": "1/4",
+      "pass": true
+    },
+    {
+      "name": "Half-diagonal squared",
+      "actual": "1/2",
+      "expected": "1/2",
+      "pass": true
+    },
+    {
+      "name": "Empty-family minimum radius and Phi",
+      "radius": "0",
+      "Phi": "0",
+      "rationale": "The empty product is one point, nonoverlap and containment quantifiers are vacuous, and R ranges over [0,R0].",
+      "pass": true
+    },
+    {
+      "name": "Q exact threshold nonnegative",
+      "Q": "1105/256",
+      "pass": true
+    }
+  ],
+  "endpoint_check_count": 4,
+  "domain": {
+    "labels": "Every original Fin n label, for every finite natural n including zero.",
+    "frames": "Independent full unit circles C_i^2+S_i^2=1; no common orientation, angular chart cut, quotient or unique frame representation.",
+    "disk": "Any original center and finite real radius with the actual nonnegative Packing conjunct.",
+    "contacts": "Open-interior nonoverlap only; shared sides, point contacts, tangencies, multiple junctions and newly gained limit contacts are included.",
+    "witness": "Any original feasible packing, translated by its own disk center; no sharp construction is needed."
+  },
+  "complete_proof_reconstruction": [
+    {
+      "section": "1",
+      "result": "Original predicate equivalence",
+      "reason": "Orthonormal coordinate inversion identifies exact closed and open unit-coordinate boxes; squared disk containment is joined with the actual R>=0 conjunct; every original distinct-label pair is retained."
+    },
+    {
+      "section": "1.1",
+      "result": "Exact translation equivalence",
+      "reason": "Local coordinates and disk displacement are unchanged by subtracting the original disk center from all physical points and centers. Translation back proves the converse."
+    },
+    {
+      "section": "2",
+      "result": "Compact containing coordinate sublevel",
+      "reason": "R in [0,R0], each c_i in the closed radius-R0 disk because c_i is in its actual square, and each frame in the whole S1. This is a compact finite-dimensional product and contains every feasible origin-centered packing at R<=R0."
+    },
+    {
+      "section": "2.1",
+      "result": "Whole-square containment equivalent to four closed inequalities",
+      "reason": "Actual four vertices depend continuously on coordinates. The displayed four nonnegative weights sum to one and recover every closed-square point. Convexity of the closed disk, including R=0, proves both directions."
+    },
+    {
+      "section": "2.2",
+      "result": "Closed original nonoverlap without SAT or contact selection",
+      "reason": "A hypothetical common open-interior point at the limit has a positive strict margin in four actual local absolute coordinates. Continuity at that same point makes the two interiors overlap at all sufficiently late feasible tuples. Contradiction. No moving witness, selected direction or inactive-constraint margin is needed."
+    },
+    {
+      "section": "2.2",
+      "result": "No loss or merger of original bodies",
+      "reason": "Every label remains in the same finite product. Any merger into the same nonempty geometric square would violate the just-proved original nonoverlap condition. Boundary-only new contacts remain admissible."
+    },
+    {
+      "section": "3 Theorem 1",
+      "result": "Attained global radius, not merely a bounded or local minimum",
+      "reason": "The supplied translated witness makes K nonempty; radius is continuous. Any other original packing with R<=R0 translates into K; if R>R0, it is already no better than R*<=R0. These two cases exhaust all feasible nonnegative radii."
+    },
+    {
+      "section": "3 squared radius",
+      "result": "Radius and squared-radius minimization agree",
+      "reason": "Squaring is increasing on the actual nonnegative radius domain, and the displayed factorization verifies the order comparison."
+    },
+    {
+      "section": "3 Theorem 2",
+      "result": "Finite continuous lexicographic refinement",
+      "reason": "The global radius-minimum fiber is compact and nonempty. Successive minima of a prescribed finite list of continuous real functionals leave compact nonempty closed fibers. Empty lists also preserve the initial fiber; infinite or discontinuous choices and uniqueness are not asserted."
+    },
+    {
+      "section": "3 Phi",
+      "result": "Global secondary minimum before selection",
+      "reason": "The finite sum of squared centers measured from the containing-circle origin is continuous. Every original global radius minimizer translates into the same radius fiber. Phi is therefore minimized on all original minimum packings modulo the exact translation, without graph or stress restrictions."
+    },
+    {
+      "section": "3.1",
+      "result": "Full-packing canonical-motion contradiction",
+      "reason": "A competitor at the same attained radius that preserves the actual Packing predicate for all n bodies and strictly lowers total Phi contradicts the secondary minimum. Checking only a stressed subcomponent is insufficient; preserving a previously chosen stress certificate is unnecessary for this particular comparison."
+    },
+    {
+      "section": "4",
+      "result": "All n and radius endpoints",
+      "reason": "For n=0, R*=0. For n>=1, averaging the four contained vertex norms gives R^2>=|c_i|^2+1/2. At R^2=1/2 all centers are zero, and for n>=2 their shared inscribed open radius-1/2 disk contradicts open-interior nonoverlap. No artificial smaller core is substituted."
+    },
+    {
+      "section": "5 Corollary 3",
+      "result": "Subcritical entry",
+      "reason": "An original R^2<Q witness gives the attained radius/Phi minimizer with 0<=R*<=R and R*^2<Q. No sharp upper witness or window deletion is needed."
+    },
+    {
+      "section": "5 Corollary 4",
+      "result": "Conditional universal lower-bound transfer",
+      "reason": "A subcritical original counterexample would yield the prohibited subcritical canonical minimum. Equivalently R>=R*>=0 implies R^2>=R*^2>=Q once that minimum bound has been proved."
+    },
+    {
+      "section": "5 Corollary 5",
+      "result": "Conditional exact optimum",
+      "reason": "A universal lower bound and an actual nonnegative upper witness with squared radius <=Q force equality to Q and least radius sqrt(Q). Neither missing premise is manufactured."
+    },
+    {
+      "section": "6",
+      "result": "Correct original-equality boundary",
+      "reason": "After the universal lower bound, every original R^2=Q packing is itself a global radius minimizer. It need not be a Phi minimizer. Replacement by a different canonical packing cannot classify the original equality packing or transfer a Phi-motion exclusion without a separate proof."
+    },
+    {
+      "section": "7",
+      "result": "Provenance and global audit boundary",
+      "reason": "Old SPARSE_MINIMIZER_STRESS attainment is provenance only. Its translational 2n+1 bound, later stress, simultaneous normal conditions, uncrossing and thinning do not enter this self-contained compactness proof."
+    }
+  ],
+  "all_endpoint_and_quantifier_checks": [
+    "n=0 empty product and empty sums; no manufactured unit or positivity premise",
+    "n=1 radius endpoint 1/sqrt(2) remains allowed",
+    "n>=2 endpoint R^2=1/2 is excluded by a common open disk",
+    "R0=0 allowed when feasible; nonempty square cases rule it out through the original definition",
+    "R=R0 and every closed vertex/contact endpoint retained",
+    "Full S1 frame limits, including sign and wrap endpoints, remain in the product",
+    "Positive strict margins are used only for a hypothetical open-interior overlap, not for weak boundary contacts",
+    "One common point p is held fixed in the limit contradiction",
+    "No quotient by label, rotation or reflection is required for compactness",
+    "Finite lexicographic list includes the empty list; no infinite-limit selector is asserted",
+    "Every canonical competitor must retain all actual units and every original pairwise condition",
+    "Q=0 and n=0 are logically included in conditional transfer; no division by radius appears",
+    "The containing circle center may vary across original packings; it is removed by each packing own exact translation",
+    "Original equality packings retain their units, frames, labels and zero-weight contacts; Phi minimality is not presumed"
+  ],
+  "literal_original_gate": {
+    "id": "G4.2.a",
+    "index_zero_based": 2457,
+    "current_entry": {
+      "id": "G4.2.a",
+      "checked": false
+    },
+    "exact_roadmap_line": "- [ ] **G4.2.a** Start from the original nine-square Packing predicate and obtain a compact minimizer with no extra orientation/contact hypothesis.",
+    "complete_current_roadmap_pin": {
+      "path": "current_bbc_base/research/nine/DEEP_GATED_ROADMAP.md",
+      "bytes": 995125,
+      "lines": 7101,
+      "sha256": "b3d2c6598caa02343528e273f23890aaa50452170eb3a7de2ce911298b56ec63",
+      "git_blob": "138af49f8bccff7d2437cb725b76b0ab60013743"
+    },
+    "complete_current_checkpoint_pin": {
+      "path": "current_bbc_base/research/nine/PARTIALLY_UNLOADED_POCKETS_ZERO_AXIS_AND_UNIQUE_C_CHECKPOINT_2026_10_28.json",
+      "bytes": 314808,
+      "lines": 11857,
+      "sha256": "7f75ae65f936b368a33953b37e0ea3e2f82d3ae79f6a5396163a1a8ce2c86eb0",
+      "git_blob": "11e37c4fe2a8216b57e9fbf3f8d299837df4bd31"
+    },
+    "result": "Entire original gate mathematically supplied. Eligible only after separate root adoption and exact integration; this review makes no authoritative flag edit."
+  },
+  "conditional_only": [
+    "G4.2.f minimum-to-original transfer is proved as a conditional implication; its minimum lower-bound premise remains outside this source.",
+    "Exact optimum matching requires both a proved universal lower bound and an actual upper witness."
+  ],
+  "not_closed": [
+    "G4.2.b lower-window entry in its full literal scope",
+    "G4.2.c simultaneous normal/planar/unique positive selection",
+    "G4.2.d complete branch exclusions",
+    "G4.2.e sharp minimum bound",
+    "G4.2 as a parent",
+    "equality classification",
+    "G6.1 complete global audit",
+    "any remaining mixed geometry"
+  ],
+  "actual_changes": {
+    "original_fine_flags": 0,
+    "original_coarse_flags": 0,
+    "parent_flags": 0,
+    "computational_certificates": 0,
+    "certificate_retirements": 0
+  },
+  "prospective_full_original_gate_eligibility": [
+    {
+      "id": "G4.2.a",
+      "index_zero_based": 2457,
+      "requires_root_adoption": true
+    }
+  ],
+  "source_and_authoritative_metadata_left_unchanged": true,
+  "no_computational_geometry_certificate": "All finite algebra checks corroborate displayed exact identities; the complete continuous-domain proof is in the reviewed source and narrative report.",
+  "actions_not_performed": [
+    "source edit",
+    "old-source adoption by analogy",
+    "stress or normal selection",
+    "body deletion",
+    "mean or force replacement",
+    "authoritative flag or ledger edit",
+    "Lean compilation",
+    "CI/workflow",
+    "remote mutation",
+    "merge"
+  ]
+}

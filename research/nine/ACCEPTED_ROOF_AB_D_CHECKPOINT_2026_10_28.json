@@ -1,0 +1,149 @@
+{
+  "date_utc": "2026-10-28",
+  "status": "Complete root-authored family with two full independent acceptances; local one-ID increment only.",
+  "parent_checkpoint": {
+    "path": "research/nine/ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+    "sha256": "32d2d301dc00d36ed0c4b6204ebb7704869d01988f73ae6d20828292d9059e78",
+    "accepted_archive_sha256": "ab79c8cc92a15d95785ea5a46b650d693260ccdceeb7bc6b3aed415ba44a94af"
+  },
+  "separate_accepted_partial_checkpoint": {
+    "path": "research/nine/ACCEPTED_HOUSE_S_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+    "sha256": "92d9b488fc0fc409796ba4c47b5f515ec80e04318990c98057dd8733a81e0111",
+    "archive_sha256": "22d869407a87b0814b4354b8fa54fc72a3a19c52fb513b9468a1596ab6682ba5"
+  },
+  "last_verified_remote_head": "703cfc0e079b93fc860a4f32cbb5ce5f70458b4b",
+  "coarse_total": 58,
+  "coarse_closed": 33,
+  "coarse_open": 25,
+  "fine_total": 2513,
+  "fine_checked": 2331,
+  "fine_open": 182,
+  "coarse_changes": [],
+  "fine_changes": [
+    {
+      "id": "M6.B5L.HOUSE.ROOF.LAB.D",
+      "from": "open",
+      "to": "checked",
+      "whole_source": "HOUSE_ROOF_AB_D_COMPLETE_EXCLUSION.md"
+    }
+  ],
+  "original_ids_preserved_in_order": true,
+  "accepted_sources_and_reviews": [
+    {
+      "path": "research/nine/HOUSE_ROOF_AB_D_COMPLETE_EXCLUSION.md",
+      "sha256": "7b0bd9ee78d84e5d68424034729d55187fa44ea10035f56a57bd1c5fa75dc119",
+      "bytes": 13344
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_ROOF_AB_D_COMPLETE_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "18ec7f986d47a347fb919258822ebbc7cd6eed7ef84e64ac0780dfd9b0a4ac92",
+      "bytes": 13833
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_ROOF_AB_D_COMPLETE_HEXAGON_2026_10_28.md",
+      "sha256": "2d730f5a3eaf7288d3bb4b196ef288c96a65df97661f62d4898d4827a6531ed2",
+      "bytes": 12541
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_ROOF_AB_D_FINAL_INTEGRATION_ROOT_2026_10_28.md",
+      "sha256": "87d458ba7c92a0ddc0d4b8860eeafaaea1b1e22adf8972e2da75c0ea58b31e4e",
+      "bytes": 4053
+    }
+  ],
+  "retained_direct_inputs": [
+    {
+      "path": "research/nine/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "sha256": "7ba98ef149c1faff4ef4baeaf0b0305a38cf1153f883a3fe4bfa92087d33622d",
+      "bytes": 17790
+    },
+    {
+      "path": "research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "sha256": "6154eee2ab1114d063b0dbd1a2800c3522cbb1b46ec44a258c1c89d8ffb9e975",
+      "bytes": 14903
+    },
+    {
+      "path": "research/nine/UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "sha256": "d6008ceb18b2c8921c1f3711e6babfea3a01761487352ef4dca60579a83353b8",
+      "bytes": 6574
+    },
+    {
+      "path": "research/nine/CHORDED_HEXAGON_SIDE_TRANSMITTER_BYPASS_UNLOADED_ENDPOINT_SEPARATION.md",
+      "sha256": "4a979638b562040455e3058351db24358e7ecb093e5c0c1635dcd6438492eecd",
+      "bytes": 13267
+    },
+    {
+      "path": "research/nine/END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+      "sha256": "6f3459eaf4ca425ee2001ddb27e1ba7a1b5eb0003548498f48c610776554d3bb",
+      "bytes": 8687
+    },
+    {
+      "path": "research/nine/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "sha256": "ee865704904a8b2a5cab7649bdfd928008c253631abf1eb346d4950411c3afac",
+      "bytes": 4432
+    },
+    {
+      "path": "research/nine/D_LEAF_SHALLOW_SIDE_BOUNDARY_EXCLUSION.md",
+      "sha256": "79ddc3bc94613ba34b30ea3b1e4176a14d644b08887020cbc38f9ef9d785d8a8",
+      "bytes": 7803
+    }
+  ],
+  "metadata": [
+    {
+      "path": "research/nine/CYCLIC_CELL_LEDGER.md",
+      "previous_sha256": "9b921eac9b831646625c6d81024d0fa745c4aae185392fd1ff4a64aa5e9d5180",
+      "sha256": "a23134f7306f7df67b929eb4174ca3b3b964ebb0e7cbfaef3a24d8c2e3cf62e3",
+      "bytes": 219210
+    },
+    {
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "previous_sha256": "0d443b7c05c4e534d4c95d8f54e558374505bec719122e6f6e3439249d3d49fb",
+      "sha256": "e94eb877a8314e87cd259a1781d444c5d08907f5fc570a8ee547613631b793db",
+      "bytes": 936783
+    },
+    {
+      "path": "research/nine/HANDOFF_PR11_2026_10_25.md",
+      "previous_sha256": "0ee33de19ca0d7570c877ac988fa4b47cbe0379ce0753808d1a673c674e17417",
+      "sha256": "65c70f437d51e1ceeb7d9eb04e470c6fa7931827afed9e59f5e83c72a6bdc810",
+      "bytes": 136626
+    },
+    {
+      "path": "research/nine/HANDOFF_PR11_2026_10_27_CURRENT.md",
+      "previous_sha256": "5b4b334f83caea7b64fbfc1080949fc56d69b5923ae2cf1e0610419fa23c6380",
+      "sha256": "ff1c0ec23b3aaa860f57bd8409ada3daaf56104a7f91309c2c08021ff88a6642",
+      "bytes": 36125
+    },
+    {
+      "path": "research/nine/TWO_LOAD_PROGRESS.md",
+      "previous_sha256": "bc33aae39d6ec9dd1eb926d6519e710f0514ca3fc6272abf9a6de91c006e8721",
+      "sha256": "8ad75835d7f93e1c480d20b0eb516d67682eee2bbdfa8fa83bf15824e8086b46",
+      "bytes": 552439
+    }
+  ],
+  "arithmetic_record": {
+    "path": "/tmp/pr11_root_roof_ab_d_exact_checks.json",
+    "sha256": "2cd5d53c366ca45da26362c6e5c15d7403c5156c157b66ede8f9d952d6a8d698"
+  },
+  "not_claimed": [
+    "unrestricted sharp inequality",
+    "all original equality packings",
+    "older complete transitive prerequisite audit",
+    "Lean integration",
+    "house hub-TC S companion",
+    "any C2.44.b2 whole family",
+    "successful remote mutation",
+    "whole H3 or H4_D0 pentagon graph",
+    "house lower-TD S companion",
+    "whole house roof-AB S companion"
+  ],
+  "constraints": [
+    "all nine actual units",
+    "true positive degrees and all forces",
+    "original selected normals and means",
+    "physical circle masks and individual zero weights",
+    "PR draft",
+    "no Lean compilation",
+    "no CI or workflow dispatch",
+    "no merge",
+    "future commits require skip-ci message, expected-head lease and exact committed readback"
+  ]
+}

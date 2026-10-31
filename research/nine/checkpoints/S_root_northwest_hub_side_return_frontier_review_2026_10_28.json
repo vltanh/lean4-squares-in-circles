@@ -1,0 +1,126 @@
+{
+  "date_utc": "2026-10-28",
+  "reviewer": "frontier_audit",
+  "verdict": "PASS: complete HC-side row and complete strict-Northwest root-owned-singleton interface join",
+  "target": {
+    "path": "research/nine/OPEN_ORIGIN_S_ROOT_NORTHWEST_HUB_SIDE_RETURN_EXCLUSION.md",
+    "sha256": "09bd79005a42b0af16e72917ef99ced9c1e35eadd3090fa525c6523dbdeb15ae"
+  },
+  "review": {
+    "path": "research/nine/REVIEW_S_ROOT_NORTHWEST_HUB_SIDE_RETURN_FRONTIER_2026_10_28.md",
+    "sha256": "fa42a7e99fafed776e15336d862b57e6b2a1f890fd6cdba1f30360eb003f71c9"
+  },
+  "dependency_pin_count": 5,
+  "dependency_pins": [
+    {
+      "path": "research/nine/OPEN_ORIGIN_S_ROOT_OWNED_SINGLETON_OPPOSITE_HUB_RETURN_REDUCTION.md",
+      "expected_sha256": "b567e96efdc5d1cb56102b7460a33de2d6e83c5c17af1bd03f3a04aa8a4c6e0f",
+      "actual_sha256": "b567e96efdc5d1cb56102b7460a33de2d6e83c5c17af1bd03f3a04aa8a4c6e0f",
+      "match": true
+    },
+    {
+      "path": "research/nine/OPEN_ORIGIN_S_ROOT_OWNED_AXIS_POSITIVE_CONCURRENCE_FROM_ACTUAL_HUB_STRIP.md",
+      "expected_sha256": "8fb2124065fbc37b4746e94bf45611f2dbd3bb29990391256ddd15d5c15bb917",
+      "actual_sha256": "8fb2124065fbc37b4746e94bf45611f2dbd3bb29990391256ddd15d5c15bb917",
+      "match": true
+    },
+    {
+      "path": "research/nine/ONE_UNLOADED_RETURN_HUB_ACTUAL_WEAK_MOMENT_STRIP.md",
+      "expected_sha256": "382e06b874e41cf582b17374a122c7e4f289472f00cd6d02d926b680f15c1ed5",
+      "actual_sha256": "382e06b874e41cf582b17374a122c7e4f289472f00cd6d02d926b680f15c1ed5",
+      "match": true
+    },
+    {
+      "path": "research/nine/OPEN_ORIGIN_S_ROOT_NORTHWEST_OPPOSITE_HUB_RETURNS_EXCLUSION.md",
+      "expected_sha256": "e46f43bf8b902711caa5aebc6041f62b71870463884193bfa3d3f14fc02a1b00",
+      "actual_sha256": "e46f43bf8b902711caa5aebc6041f62b71870463884193bfa3d3f14fc02a1b00",
+      "match": true
+    },
+    {
+      "path": "research/nine/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "expected_sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "actual_sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "match": true
+    }
+  ],
+  "unchanged_full_face_and_opposite_row_audit": {
+    "path": "research/nine/REVIEW_S_ROOT_NORTHWEST_OPPOSITE_RETURNS_FRONTIER_2026_10_28.md",
+    "sha256": "60b55db2dbe5a30b320d673621ec9fc51da565c320558509e2ae677cfdb7c7cc"
+  },
+  "exact_positive_reserves": {
+    "slope_monotonicity_numerator_reserve": {
+      "numerator": 29,
+      "denominator": 40,
+      "positive": true
+    },
+    "alpha_below_thirteen_hundredths_squared": {
+      "numerator": 7,
+      "denominator": 30000,
+      "positive": true
+    },
+    "beta_above_ninety_nine_hundredths_squared": {
+      "numerator": 97,
+      "denominator": 30000,
+      "positive": true
+    },
+    "W_at_one_fifth_above_twenty_seven_twentieths_squared_numerator": {
+      "numerator": 1126,
+      "denominator": 1,
+      "positive": true
+    },
+    "small_b_top_corner_squared_radius_reserve": {
+      "numerator": 1599,
+      "denominator": 160000,
+      "positive": true
+    },
+    "ellipse_to_eleven_fortieths_squared_reserve": {
+      "numerator": 1693,
+      "denominator": 95040000,
+      "positive": true
+    },
+    "W_at_one_fifth_above_nineteen_fourteenths_squared_numerator": {
+      "numerator": 150,
+      "denominator": 1,
+      "positive": true
+    },
+    "large_b_top_corner_squared_radius_reserve": {
+      "numerator": 166736179,
+      "denominator": 111769862400,
+      "positive": true
+    },
+    "same_face_z_bounds_gap": {
+      "numerator": 3,
+      "denominator": 40,
+      "positive": true
+    }
+  },
+  "exact_identities_checked": [
+    "(398/99)*(1/60)+(1/60)^2=7993/118800",
+    "1+99/800=899/800",
+    "1+19/14-11/40-5/1194=347351/167160"
+  ],
+  "whole_hand_checks": [
+    "actual HC side mean retained, including physical shared contact",
+    "no new H normal selector",
+    "full physical N.m sign/face cover",
+    "complete same-face inequality and full-face radius alternative",
+    "perpendicular N=w entire actual tau_A/rho endpoint interval",
+    "original weak moment yields t>b/2 and actual slope monotonicity",
+    "actual leaf ellipse and exact weighted Cauchy",
+    "both continuous b ranges, with b=1/5 shared endpoint",
+    "displayed actual highest A corner leaves original containing disk",
+    "complete opposite-row plus side-row Northwest interface assembly"
+  ],
+  "no_loaded_A_B_C_equation": true,
+  "all_nine_actual_units_retained": true,
+  "new_original_gate_credit": 0,
+  "metadata_edited": false,
+  "lean_or_ci_run": false,
+  "remaining_domains": [
+    "XA North",
+    "shared HX",
+    "aligned-high roots",
+    "origin-free roots",
+    "true H4 fan"
+  ]
+}

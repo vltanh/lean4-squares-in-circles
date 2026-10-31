@@ -1,0 +1,42 @@
+{
+  "reviewer": "frontier_audit",
+  "date": "2026-10-28",
+  "target": "Complete current 81ff70e5 local support theorem and whole shared open-origin roof AC.S interface exclusion. No complete original fine gate.",
+  "pins": {
+    "BOUNDARY_ENDPOINT_TRANSMITTER_OBLIQUE_HUB_OWNED_EXIT_POSITIVE_SUPPORT.md": "81ff70e50d96bee07e2f1612df700b9bb1fcf7b783387f856d6db71fb04c2cea",
+    "UNIT_BYPASS_NORMAL_CHANNEL.md": "db073cd024a4f2e763e7cd0a21bf5cb6a2a8be67069f3f9d3aff638b8a40b258",
+    "HOUSE_END_TRIPLE_TILTED_BYPASS_DOMAIN.md": "73b54547dfc5b04ece8aa137533ace68179b05cdc412bb7305074503cdc14cbf",
+    "HOUSE_END_TRIPLE_UNIQUE_TILTED_TIP_EXCLUSION.md": "23baa17e19c4bd5b8722ceb79b718eb310cfb717817d0eb879b7c75888469ffd",
+    "GENERAL_FIXED_TIP_NORMAL_SELECTION.md": "ef8ae8a219af9fa15a70698e485bbb337925e5caf2cd64b6b5c2619d9c4bd194",
+    "HOUSE_END_TRIPLE_RADIAL_HUB_OWNER_EXCLUSION.md": "6ee367eca974a62c495eb9d8eda4ac3afb75ff5cf64a34581e43590780e0b144",
+    "HOUSE_END_TRIPLE_RADIAL_LOWER_TIP_EXCLUSION.md": "a0bab9ed546b22f17f18e6d3dd4f07354d6a8f859ce5f172c4353ec2905522cf",
+    "HOUSE_END_TRIPLE_PARALLEL_UNIQUE_FREE_EXCLUSION.md": "d83d0938ca639e5712c3d910d35890fc823227262d7364f1110d73937c7f5784",
+    "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+    "PHYSICAL_CONTACT_STRESS.md": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+    "PHYSICAL_BODY_GRAPH_UNCROSSING.md": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+    "UNIT_SUPPORT_CAP_AND_SHARED_S_ROOT_ROOF_RETURN_SEPARATION.md": "2b90b565591b3c9bbc30c2c1af48cf117771b96bbc58ad81441f9e99497067d6",
+    "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b"
+  },
+  "full_reads": "Entire target; entire bypass and fixed-tip selector; full tilted-bypass geometry; unique-tip operative Sections 1-3; both complete radial containment manuscripts; parallel unique free-tip Sections 1-3 and exact support through equation 27, with unused later X equations excluded from the import.",
+  "exact_positive_reserves": {
+    "h_above_9_over_10": "13/320",
+    "h_below_51_over_50": "2239/160000",
+    "R_below_21_over_10": "599/6400",
+    "sqrt2_below_99_over_70": "1/4900",
+    "s_above_91_over_100_integer_reserve": "185039",
+    "central_application_reserve": "4/75",
+    "opposite_corner_factor": "17/120",
+    "radial_free_parallel_low_c": "122829/1562500",
+    "radial_free_parallel_high_c": "1308919/196000000",
+    "c_below_5_over_8_integer_reserve": "373",
+    "radial_owned_tilted_opposite": "411/80000",
+    "radial_owned_tilted_adjacent_lower_c": "421/8000",
+    "radial_owned_tilted_adjacent_higher_c": "376919/64000000",
+    "radial_owned_parallel_lower_c": "229/8000",
+    "radial_owned_parallel_higher_c": "795411/16000000",
+    "parallel_radial_radius_reserve": "71/1400",
+    "half_angle_endpoint_contact_reserve": "1/15",
+    "final_owned_support_reserve": "3/10"
+  },
+  "validation": "Independent continuous hand/source-scope audit plus exact arithmetic and literal current hashes. No Lean, CI, sampled angle or pose, new geometric certificate, or historical enumeration replay."
+}

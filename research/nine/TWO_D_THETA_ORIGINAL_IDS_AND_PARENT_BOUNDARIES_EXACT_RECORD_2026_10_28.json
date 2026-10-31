@@ -1,0 +1,352 @@
+{
+  "date_utc": "2026-10-28",
+  "auditor_agent": "diamond",
+  "scope": "Literal original-ID, actual graph/degree and parent/coarse boundary audit only; not another full proof review.",
+  "audit": {
+    "path": "/workspace/scratch/7d553350ce2a/diamond/AUDIT_TWO_D_THETA_ORIGINAL_IDS_AND_PARENT_BOUNDARIES_2026_10_28.md",
+    "sha256": "3874c41ecf9f2a06ecd05407d5e4e6f1ac95d6f63aa319ee9d6cfe14845c21f8"
+  },
+  "baseline_roadmap": {
+    "path": "/workspace/scratch/7d553350ce2a/baseline/research/nine/DEEP_GATED_ROADMAP.md",
+    "sha256": "c6fd513602e15bb6c46e5fed1d701002f0934bd8619787cd7b897b506a5c0ab2",
+    "original_head": "cc143bb36c116590d1de7e7925ad04ca49ea675a"
+  },
+  "pre_checkpoint_roadmap": {
+    "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/DEEP_GATED_ROADMAP.md",
+    "sha256": "204165a228086459035a7b8d06cdeed9825e657a80159c75084facdd75ceed24"
+  },
+  "original_load_cover": {
+    "path": "/workspace/scratch/7d553350ce2a/baseline/research/nine/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+    "sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b"
+  },
+  "original_retained_contract_line": "- [x] **M6.B5L.RETAINED_CONTRACT** Every load/leaf gate below retains all root-preserving images, the physically clear root, the actual loaded leaf, every block force and torque equation, physical zero-weight contacts, every actual circle mask and individual zero weight, the full continuous radius/frame/mean domain, and all three arbitrary extras. A whole core contradiction, sharp bound or complete joint three-extra exclusion is required.",
+  "inventory": {
+    "original_count": 2513,
+    "current_count": 2513,
+    "all_ids_unique": true,
+    "exact_id_sequence_unchanged": true,
+    "ordered_id_sequence_sha256": "1348b02317fb5b4c2895dc9033c5688789eeca991bba5f788d3fe34ec460df57",
+    "new_ids": []
+  },
+  "exact_target_and_boundary_entries": [
+    {
+      "id": "M6.B5L.FAN.INNER.L134.D",
+      "baseline_line": "- [ ] **M6.B5L.FAN.INNER.L134.D** Entire D-leaf type at fan inner path vertex2 with block loads134; retain the full side-interior root slider and every block mask, force, mean and three-extra completion under M6.B5L.RETAINED_CONTRACT.",
+      "current_line": "- [ ] **M6.B5L.FAN.INNER.L134.D** Entire D-leaf type at fan inner path vertex2 with block loads134; retain the full side-interior root slider and every block mask, force, mean and three-extra completion under M6.B5L.RETAINED_CONTRACT.",
+      "prospective_action": "check only this existing fine ID"
+    },
+    {
+      "id": "M6.B5L.HOUSE.HUB.LTCB.D",
+      "baseline_line": "- [ ] **M6.B5L.HOUSE.HUB.LTCB.D** Entire D-leaf type at house hub A with block loadsTCB; retain the full side-interior root slider and every block mask, force, mean and three-extra completion under M6.B5L.RETAINED_CONTRACT.",
+      "current_line": "- [ ] **M6.B5L.HOUSE.HUB.LTCB.D** Entire D-leaf type at house hub A with block loadsTCB; retain the full side-interior root slider and every block mask, force, mean and three-extra completion under M6.B5L.RETAINED_CONTRACT.",
+      "prospective_action": "check only this existing fine ID"
+    },
+    {
+      "id": "M6.B5L.FAN.INNER.L134.S",
+      "baseline_line": "- [ ] **M6.B5L.FAN.INNER.L134.S** Entire S-leaf type at fan inner path vertex2 with block loads134; close its full actual physical domain and three-extra completion under M6.B5L.RETAINED_CONTRACT.",
+      "current_line": "- [ ] **M6.B5L.FAN.INNER.L134.S** Entire S-leaf type at fan inner path vertex2 with block loads134; close its full actual physical domain and three-extra completion under M6.B5L.RETAINED_CONTRACT.",
+      "prospective_action": "remain unchecked"
+    },
+    {
+      "id": "M6.B5L.HOUSE.HUB.LTCB.S",
+      "baseline_line": "- [ ] **M6.B5L.HOUSE.HUB.LTCB.S** Entire S-leaf type at house hub A with block loadsTCB; close its full actual physical domain and three-extra completion under M6.B5L.RETAINED_CONTRACT.",
+      "current_line": "- [ ] **M6.B5L.HOUSE.HUB.LTCB.S** Entire S-leaf type at house hub A with block loadsTCB; close its full actual physical domain and three-extra completion under M6.B5L.RETAINED_CONTRACT.",
+      "prospective_action": "remain unchecked"
+    },
+    {
+      "id": "M6.B5L.FAN.INNER",
+      "baseline_line": "- [ ] **M6.B5L.FAN.INNER** Leaf at an inner fan-path vertex; its total degree is4.",
+      "current_line": "- [ ] **M6.B5L.FAN.INNER** Leaf at an inner fan-path vertex; its total degree is4.",
+      "prospective_action": "remain unchecked"
+    },
+    {
+      "id": "M6.B5L.HOUSE.HUB",
+      "baseline_line": "- [ ] **M6.B5L.HOUSE.HUB** Leaf at a house degree-three hub; its total degree is4.",
+      "current_line": "- [ ] **M6.B5L.HOUSE.HUB** Leaf at a house degree-three hub; its total degree is4.",
+      "prospective_action": "remain unchecked"
+    },
+    {
+      "id": "M6.B5L.ALL",
+      "baseline_line": "- [ ] **M6.B5L.ALL** Eleven of sixteen complete rooted types are CLOSED, including the entire rooted C5 for both S/D leaves. Five rooted types remain: house roof/hub/lower and fan endpoint/inner, with thirteen whole positive block-load orbits and twenty-six original S/D families. The whole fan-hub root and house-hub four-load TDCB orbit remain closed. All three arbitrary completion squares and every original force, mask and mean remain. Close the complete remaining domains before this parent.",
+      "current_line": "- [ ] **M6.B5L.ALL** Eleven of sixteen rooted types remain closed. The five open rooted types are house roof/hub/lower and fan endpoint/inner; after the recovered whole-family proofs, they retain 15 original S/D families in nine original load orbits. Hub TC.S, lower TD.S and lower TAC.S are the three unpaired S remainders; the other six orbits retain both types. All three arbitrary completion squares and every original force, mask and mean remain. C1.5.b1 remains open.",
+      "prospective_action": "remain unchecked"
+    }
+  ],
+  "literal_graph_caller_audits": [
+    {
+      "fine_id": "M6.B5L.FAN.INNER.L134.D",
+      "source": {
+        "path": "/workspace/scratch/7d553350ce2a/diamond/D_LEAF_TWO_BOUNDARY_THETA_PAGES_COMPLETE_EXCLUSION.md",
+        "sha256": "a6f96f0ac277af8f978e03e7f1e7208f073958165addb113a8dab19183e5136d"
+      },
+      "original_edges": [
+        [
+          "1",
+          "2"
+        ],
+        [
+          "2",
+          "3"
+        ],
+        [
+          "3",
+          "4"
+        ],
+        [
+          "J",
+          "1"
+        ],
+        [
+          "J",
+          "2"
+        ],
+        [
+          "J",
+          "3"
+        ],
+        [
+          "J",
+          "4"
+        ],
+        [
+          "2",
+          "L"
+        ]
+      ],
+      "independently_counted_true_degrees": {
+        "1": 2,
+        "2": 4,
+        "3": 3,
+        "4": 2,
+        "J": 4,
+        "L": 1
+      },
+      "complete_neighbors": {
+        "1": [
+          "2",
+          "J"
+        ],
+        "2": [
+          "1",
+          "3",
+          "J",
+          "L"
+        ],
+        "3": [
+          "2",
+          "4",
+          "J"
+        ],
+        "4": [
+          "3",
+          "J"
+        ],
+        "J": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "L": [
+          "2"
+        ]
+      },
+      "root": "2",
+      "block_load_set": [
+        "1",
+        "3",
+        "4"
+      ],
+      "generic_caller_map": {
+        "H": "2",
+        "K": "J",
+        "A": "1",
+        "B": "3"
+      },
+      "actual_theta_paths": [
+        [
+          "2",
+          "1",
+          "J"
+        ],
+        [
+          "2",
+          "J"
+        ],
+        [
+          "2",
+          "3",
+          "J"
+        ]
+      ],
+      "actual_component_vertices": 6,
+      "arbitrary_completing_units": 3,
+      "all_nine_units_retained": true
+    },
+    {
+      "fine_id": "M6.B5L.HOUSE.HUB.LTCB.D",
+      "source": {
+        "path": "/workspace/scratch/7d553350ce2a/six_body/D_LEAF_TWO_BOUNDARY_THETA_BRANCHES_AND_HOUSE_HUB_TCB_COMPLETE_EXCLUSION.md",
+        "sha256": "c70101e72eb09566b54d7a997149b1acedac8049f58e10ccce5f259c81e2d810"
+      },
+      "original_edges": [
+        [
+          "A",
+          "T"
+        ],
+        [
+          "D",
+          "T"
+        ],
+        [
+          "A",
+          "D"
+        ],
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ],
+        [
+          "C",
+          "D"
+        ],
+        [
+          "A",
+          "L"
+        ]
+      ],
+      "independently_counted_true_degrees": {
+        "A": 4,
+        "B": 2,
+        "C": 2,
+        "D": 3,
+        "L": 1,
+        "T": 2
+      },
+      "complete_neighbors": {
+        "A": [
+          "B",
+          "D",
+          "L",
+          "T"
+        ],
+        "B": [
+          "A",
+          "C"
+        ],
+        "C": [
+          "B",
+          "D"
+        ],
+        "D": [
+          "A",
+          "C",
+          "T"
+        ],
+        "L": [
+          "A"
+        ],
+        "T": [
+          "A",
+          "D"
+        ]
+      },
+      "root": "A",
+      "block_load_set": [
+        "T",
+        "C",
+        "B"
+      ],
+      "generic_caller_map": {
+        "H": "A",
+        "K": "D",
+        "P": "T",
+        "Q": "B"
+      },
+      "actual_theta_paths": [
+        [
+          "A",
+          "T",
+          "D"
+        ],
+        [
+          "A",
+          "D"
+        ],
+        [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      ],
+      "actual_component_vertices": 6,
+      "arbitrary_completing_units": 3,
+      "all_nine_units_retained": true
+    }
+  ],
+  "coarse_ledger_snapshot": {
+    "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/CYCLIC_CELL_LEDGER.md",
+    "sha256": "0195d32039113ef47ced95b9252f3cc0666708d31128a1c953e37cc34c0843c8",
+    "exact_C1_5_b1_row": "| C1.5.b1 | 5 | 1 | 6 | 3 | [ ] OPEN |",
+    "prospective_action": "leave OPEN"
+  },
+  "prospective_two_id_only_calculation": {
+    "before_checked": 2337,
+    "after_checked": 2339,
+    "after_unchecked": 174,
+    "total": 2513,
+    "changed_ids": [
+      "M6.B5L.HOUSE.HUB.LTCB.D",
+      "M6.B5L.FAN.INNER.L134.D"
+    ],
+    "fine_delta": 2,
+    "coarse_delta": 0,
+    "rooted_parent_delta": 0,
+    "whole_load_orbit_delta": 0
+  },
+  "actual_open_house_fan_families_before": [
+    "M6.B5L.HOUSE.ROOF.LAC.S",
+    "M6.B5L.HOUSE.ROOF.LABC.S",
+    "M6.B5L.HOUSE.HUB.LTC.S",
+    "M6.B5L.HOUSE.HUB.LTCB.S",
+    "M6.B5L.HOUSE.HUB.LTCB.D",
+    "M6.B5L.HOUSE.LOWER.LTD.S",
+    "M6.B5L.HOUSE.LOWER.LTAC.S",
+    "M6.B5L.HOUSE.LOWER.LTDC.S",
+    "M6.B5L.HOUSE.LOWER.LTDC.D",
+    "M6.B5L.FAN.ENDPOINT.L234.S",
+    "M6.B5L.FAN.INNER.L134.S",
+    "M6.B5L.FAN.INNER.L134.D"
+  ],
+  "actual_open_house_fan_families_after_only_two_changes": [
+    "M6.B5L.HOUSE.ROOF.LAC.S",
+    "M6.B5L.HOUSE.ROOF.LABC.S",
+    "M6.B5L.HOUSE.HUB.LTC.S",
+    "M6.B5L.HOUSE.HUB.LTCB.S",
+    "M6.B5L.HOUSE.LOWER.LTD.S",
+    "M6.B5L.HOUSE.LOWER.LTAC.S",
+    "M6.B5L.HOUSE.LOWER.LTDC.S",
+    "M6.B5L.HOUSE.LOWER.LTDC.D",
+    "M6.B5L.FAN.ENDPOINT.L234.S",
+    "M6.B5L.FAN.INNER.L134.S"
+  ],
+  "after_house_fan_counts": {
+    "open_families": 10,
+    "open_load_orbits": 9,
+    "open_rooted_types": 5,
+    "closed_rooted_types": 11,
+    "total_rooted_types": 16,
+    "open_S_families": 9,
+    "open_D_families": 1
+  },
+  "prose_reconciliation": "M6.B5L.ALL currently says15 open families although its current checkboxes give12. After this exact two-ID checkpoint, descriptive counts should say10 open families in9load orbits; parent and coarse remain unchecked/open.",
+  "ledger_or_roadmap_mutation_performed": false,
+  "source_mutation_performed": false,
+  "lean_or_ci_run": false,
+  "remote_write_performed": false
+}

@@ -1,0 +1,2103 @@
+{
+  "status": "accepted_complete_implications_and_exhaustive_necessary_reductions",
+  "baseline_commit": "53d326511bd6280f18a14555922351ec15942b3d",
+  "baseline_directory": "/workspace/scratch/7d553350ce2a/repo/research/nine",
+  "baseline_verification": {
+    "method": "Exact Git blob hashes from the prior baseline tree, overlaid by the 195-file recovery publication map that root verified against committed 53d3265.",
+    "records": [
+      {
+        "source_path": "/workspace/scratch/7d553350ce2a/baseline_manifest.json",
+        "sha256": "40bec012dc63de4b52aba6f8b9d3e5d413dbee7b6fa9e2b7f96bca0ab2694329"
+      },
+      {
+        "source_path": "/workspace/scratch/7d553350ce2a/publication_manifest.json",
+        "sha256": "5318d7d8896ca6d4454854dd7f5662fad87558ed8b7bf249f9fa729f76087f82"
+      },
+      {
+        "source_path": "/workspace/scratch/7d553350ce2a/recovery_committed_verification.json",
+        "sha256": "405ad55f8f52a41f7829f4fbc457911e44e9d255f1358a1a7593157792cf7c8a"
+      }
+    ],
+    "new_remote_read_performed_by_this_audit": false
+  },
+  "root_sources": [
+    "CENTRAL_DISK_LEAF_ROOT_AND_DOUBLE_LEAF_TRIANGLE_BLOCK_EXCLUSION.md",
+    "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md"
+  ],
+  "scope": {
+    "new_whole_coarse_cells": 0,
+    "new_fine_identifiers": 0,
+    "coarse_count_unchanged": 34,
+    "fine_count_unchanged": "2333/2513",
+    "C2.35.b2": "Intact triangle and same-private-root double-leaf layouts excluded; exhaustive four remaining structural families all require strict R^2>17/4. Every original marked five-block and load mask remains quantified over.",
+    "C2.36.b1": "Exact original attachment reduction, whole genuine simple-C6 direct-leaf exit, and necessary critical/private-leaf chart only. Chorded six-blocks and stated high-radius features remain open.",
+    "retained_global_prerequisite_audits": true,
+    "frozen_mathematical_sources_modified": false,
+    "lean_build_or_ci_performed": false
+  },
+  "files": [
+    {
+      "filename": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "repository_path": "research/nine/C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/two_blocks/C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "sha256": "28810d74517a6f6a4a4e5b2972c5359bdf41559957bd7e33bcb5fb4b358685d5",
+      "bytes": 21371,
+      "kind": "mathematical_source"
+    },
+    {
+      "filename": "C6_NEXT_EQUAL_PARALLEL_ROOT_PAIR_NEGATIVE_PRESSURE_EXCLUSION.md",
+      "repository_path": "research/nine/C6_NEXT_EQUAL_PARALLEL_ROOT_PAIR_NEGATIVE_PRESSURE_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/C6_NEXT_EQUAL_PARALLEL_ROOT_PAIR_NEGATIVE_PRESSURE_EXCLUSION.md",
+      "sha256": "0d534b2399f6d01d59c2caa121bc440957bb66bf08840e9e6da5bbff7a990f72",
+      "bytes": 8057,
+      "kind": "mathematical_source"
+    },
+    {
+      "filename": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_EXCLUSION.md",
+      "repository_path": "research/nine/C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_EXCLUSION.md",
+      "sha256": "6a1a37c6ed825ef1cea0bebf503e894e3ca9d4777fe23e3cf508b188e4898aa5",
+      "bytes": 18645,
+      "kind": "mathematical_source"
+    },
+    {
+      "filename": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_EXCLUSION.md",
+      "repository_path": "research/nine/C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_EXCLUSION.md",
+      "sha256": "7c8f58d14aab1540bf71de95d51df3c531f1832a282dd53b00df9f9752fa1f49",
+      "bytes": 21548,
+      "kind": "mathematical_source"
+    },
+    {
+      "filename": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "repository_path": "research/nine/C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "sha256": "80d239a76dd632a3b982c6ef9b2a52028fc9c418e1f0c221852047a180efc238",
+      "bytes": 23354,
+      "kind": "mathematical_source"
+    },
+    {
+      "filename": "C6_NEXT_INTACT_ROOT_ORDER_FIVE_FROM_PUBLISHED_NONNEGATIVE_PRESSURE.md",
+      "repository_path": "research/nine/C6_NEXT_INTACT_ROOT_ORDER_FIVE_FROM_PUBLISHED_NONNEGATIVE_PRESSURE.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/C6_NEXT_INTACT_ROOT_ORDER_FIVE_FROM_PUBLISHED_NONNEGATIVE_PRESSURE.md",
+      "sha256": "e7760977ee91d09c5c672e5db11f0010934650cfe292d63d7132220f8e59b164",
+      "bytes": 8841,
+      "kind": "mathematical_source"
+    },
+    {
+      "filename": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "repository_path": "research/nine/C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "sha256": "5e49f162076ce7e699e5013e8e5d6354e907a343bcc4520aa08f1beef78fda42",
+      "bytes": 18029,
+      "kind": "mathematical_source"
+    },
+    {
+      "filename": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_OPPOSITE_PARALLEL_EXCLUSION.md",
+      "repository_path": "research/nine/C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_OPPOSITE_PARALLEL_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_OPPOSITE_PARALLEL_EXCLUSION.md",
+      "sha256": "fc07a3b7dd840b17eb13caba1d36193724afdea68c9c0acd23bfdc66a574017f",
+      "bytes": 15629,
+      "kind": "mathematical_source"
+    },
+    {
+      "filename": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "repository_path": "research/nine/C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "sha256": "402d147ca6f0eb417a2c0e039409b2309fca61495ccda409a13708c47d190135",
+      "bytes": 20063,
+      "kind": "mathematical_source"
+    },
+    {
+      "filename": "CENTRAL_DISK_LEAF_ROOT_AND_DOUBLE_LEAF_TRIANGLE_BLOCK_EXCLUSION.md",
+      "repository_path": "research/nine/CENTRAL_DISK_LEAF_ROOT_AND_DOUBLE_LEAF_TRIANGLE_BLOCK_EXCLUSION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/two_blocks/CENTRAL_DISK_LEAF_ROOT_AND_DOUBLE_LEAF_TRIANGLE_BLOCK_EXCLUSION.md",
+      "sha256": "dd03214ab5e0100bd35211993591baabd5fd0578191cc2ad2d4c1e344b8a5411",
+      "bytes": 12273,
+      "kind": "mathematical_source"
+    },
+    {
+      "filename": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "repository_path": "research/nine/GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "sha256": "103a0f4ceccba044c132a45c632bd64df57540feb70fd69d6159c52759e449c6",
+      "bytes": 17543,
+      "kind": "mathematical_source"
+    },
+    {
+      "filename": "INDEPENDENT_CENTRAL_LEAF_ROOT_AND_TWO_BLOCK_REDUCTIONS_EXACT_RECORD_2026_10_28.json",
+      "repository_path": "research/nine/INDEPENDENT_CENTRAL_LEAF_ROOT_AND_TWO_BLOCK_REDUCTIONS_EXACT_RECORD_2026_10_28.json",
+      "source_path": "/workspace/scratch/7d553350ce2a/six_body/INDEPENDENT_CENTRAL_LEAF_ROOT_AND_TWO_BLOCK_REDUCTIONS_EXACT_RECORD_2026_10_28.json",
+      "sha256": "b3bb243320f643d686c95c551babd01772587129e19d689e583a22b22c691be5",
+      "bytes": 14719,
+      "kind": "exact_arithmetic_record"
+    },
+    {
+      "filename": "REVIEW_C2_35_C2_36_ACCEPTED_DEPENDENCY_ASSEMBLY_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_C2_35_C2_36_ACCEPTED_DEPENDENCY_ASSEMBLY_2026_10_28.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/two_blocks/REVIEW_C2_35_C2_36_ACCEPTED_DEPENDENCY_ASSEMBLY_2026_10_28.md",
+      "sha256": "0a15669b8dc9cfeacc1c6b7645735b41d4273afd61724e93a55dda2c8fadfea4",
+      "bytes": 7759,
+      "kind": "acceptance_review"
+    },
+    {
+      "filename": "REVIEW_CENTRAL_LEAF_ROOT_AND_LARGER_TWO_BLOCK_REDUCTIONS_INDEPENDENT_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_CENTRAL_LEAF_ROOT_AND_LARGER_TWO_BLOCK_REDUCTIONS_INDEPENDENT_2026_10_28.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/six_body/REVIEW_CENTRAL_LEAF_ROOT_AND_LARGER_TWO_BLOCK_REDUCTIONS_INDEPENDENT_2026_10_28.md",
+      "sha256": "266dc4b409514057f48a4773956bdbb470dbd7c67f824ef4df0c05cff6d9f3a6",
+      "bytes": 11853,
+      "kind": "acceptance_review"
+    },
+    {
+      "filename": "REVIEW_EQUAL_PARALLEL_ROOT_PAIR_PRESSURE_GLOBAL_NEXT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_EQUAL_PARALLEL_ROOT_PAIR_PRESSURE_GLOBAL_NEXT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_EQUAL_PARALLEL_ROOT_PAIR_PRESSURE_GLOBAL_NEXT_2026_10_27.md",
+      "sha256": "56b30ce7630d78ea910b03c9d607bc2312b8f8b454b2b0568797ba9a2de50455",
+      "bytes": 6585,
+      "kind": "acceptance_review"
+    },
+    {
+      "filename": "REVIEW_EQUAL_PARALLEL_ROOT_PAIR_PRESSURE_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_EQUAL_PARALLEL_ROOT_PAIR_PRESSURE_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_EQUAL_PARALLEL_ROOT_PAIR_PRESSURE_ROOT_2026_10_27.md",
+      "sha256": "58170b4c492b97bb283435692ac2939759c6d0458b9180fa1c84519358a4c5ec",
+      "bytes": 4680,
+      "kind": "acceptance_review"
+    },
+    {
+      "filename": "REVIEW_INTACT_ROOT_CYCLE_NEGATIVE_CONCURRENCE_GLOBAL_NEXT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_INTACT_ROOT_CYCLE_NEGATIVE_CONCURRENCE_GLOBAL_NEXT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_INTACT_ROOT_CYCLE_NEGATIVE_CONCURRENCE_GLOBAL_NEXT_2026_10_27.md",
+      "sha256": "52165c83ba86707f50ce8715ce1a55c7d16eefd62535a3de8a8631794d6bcb25",
+      "bytes": 11050,
+      "kind": "acceptance_review"
+    },
+    {
+      "filename": "REVIEW_INTACT_ROOT_CYCLE_NEGATIVE_CONCURRENCE_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_INTACT_ROOT_CYCLE_NEGATIVE_CONCURRENCE_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_INTACT_ROOT_CYCLE_NEGATIVE_CONCURRENCE_ROOT_2026_10_27.md",
+      "sha256": "bd0351ec775bb78c2fbec52e35911802d70ea5e632b01e25d93983294b3f8439",
+      "bytes": 9347,
+      "kind": "acceptance_review"
+    },
+    {
+      "filename": "REVIEW_INTACT_ROOT_CYCLE_OPPOSITE_PARALLEL_GLOBAL_NEXT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_INTACT_ROOT_CYCLE_OPPOSITE_PARALLEL_GLOBAL_NEXT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_INTACT_ROOT_CYCLE_OPPOSITE_PARALLEL_GLOBAL_NEXT_2026_10_27.md",
+      "sha256": "48140f9b1161d9d869bad9ea4b2dc030ca6be017d71b2e49b89e2588e96c9a38",
+      "bytes": 12037,
+      "kind": "acceptance_review"
+    },
+    {
+      "filename": "REVIEW_INTACT_ROOT_CYCLE_OPPOSITE_PARALLEL_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_INTACT_ROOT_CYCLE_OPPOSITE_PARALLEL_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_INTACT_ROOT_CYCLE_OPPOSITE_PARALLEL_ROOT_2026_10_27.md",
+      "sha256": "cbf0ac0f1bf28a9f0872503af70e1636714f0f0915673ebb45ad397f7c0f15e3",
+      "bytes": 8962,
+      "kind": "acceptance_review"
+    },
+    {
+      "filename": "REVIEW_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_GLOBAL_NEXT_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_GLOBAL_NEXT_2026_10_28.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_GLOBAL_NEXT_2026_10_28.md",
+      "sha256": "0713aa41839b0d84a2087ba0596045056d654947f96f5176a9fd84d2a621cc23",
+      "bytes": 12838,
+      "kind": "acceptance_review"
+    },
+    {
+      "filename": "REVIEW_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_ROOT_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_ROOT_2026_10_28.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_ROOT_2026_10_28.md",
+      "sha256": "e79a4a070d11d07d803ade5212a606efd83ab5bdf7a48177757062d17663f1bc",
+      "bytes": 7261,
+      "kind": "acceptance_review"
+    },
+    {
+      "filename": "REVIEW_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_MIXED_BLOCKS_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_MIXED_BLOCKS_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_MIXED_BLOCKS_2026_10_27.md",
+      "sha256": "96050848f380944f70a32d6aa783c69c64d174f4345f68600800b86fabbfbc64",
+      "bytes": 12990,
+      "kind": "acceptance_review"
+    },
+    {
+      "filename": "REVIEW_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_ROOT_2026_10_27.md",
+      "sha256": "a3ea7af11fb0cafe682c4fd5ae2e1b3f07bfe7353dc38b249610845276288de3",
+      "bytes": 7377,
+      "kind": "acceptance_review"
+    },
+    {
+      "filename": "REVIEW_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_GLOBAL_NEXT_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_GLOBAL_NEXT_2026_10_28.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_GLOBAL_NEXT_2026_10_28.md",
+      "sha256": "131e0c4a53c5dc1d61fe527a54dd4663d5adbf7a2d191213a44a709cdd87409b",
+      "bytes": 17446,
+      "kind": "acceptance_review"
+    },
+    {
+      "filename": "REVIEW_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_ROOT_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_ROOT_2026_10_28.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_ROOT_2026_10_28.md",
+      "sha256": "9ef87a99420d103cd9f4ba833059af7b8375b22f13b2ab9dbfd4eae1f99e3e6b",
+      "bytes": 8446,
+      "kind": "acceptance_review"
+    },
+    {
+      "filename": "REVIEW_INTACT_ROOT_ORDER_FIVE_PUBLISHED_PRESSURE_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_INTACT_ROOT_ORDER_FIVE_PUBLISHED_PRESSURE_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_INTACT_ROOT_ORDER_FIVE_PUBLISHED_PRESSURE_ROOT_2026_10_27.md",
+      "sha256": "0b35354afa658b33a7ada3a1e97342089ef2d69611b945d58853d3227c5a6f07",
+      "bytes": 5012,
+      "kind": "acceptance_review"
+    },
+    {
+      "filename": "REVIEW_INTACT_ROOT_PUBLISHED_PRESSURE_ORDER_FIVE_GLOBAL_NEXT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_INTACT_ROOT_PUBLISHED_PRESSURE_ORDER_FIVE_GLOBAL_NEXT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_INTACT_ROOT_PUBLISHED_PRESSURE_ORDER_FIVE_GLOBAL_NEXT_2026_10_27.md",
+      "sha256": "9667532851b0fd30ca4339a5829ba44c44756543f760475acf5fad965c11f021",
+      "bytes": 9661,
+      "kind": "acceptance_review"
+    },
+    {
+      "filename": "REVIEW_INTACT_ROOT_UNLOADED_MOMENT_AND_COMPONENT_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_INTACT_ROOT_UNLOADED_MOMENT_AND_COMPONENT_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_INTACT_ROOT_UNLOADED_MOMENT_AND_COMPONENT_ROOT_2026_10_27.md",
+      "sha256": "27b8e71cd4aebd35e0bfc6dfa6c17438bbd5fc758a00d9afd14e1ccf49245e79",
+      "bytes": 7378,
+      "kind": "acceptance_review"
+    },
+    {
+      "filename": "REVIEW_INTACT_ROOT_UNLOADED_MOMENT_BLOCK_REDUCTION_C6_NEXT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_INTACT_ROOT_UNLOADED_MOMENT_BLOCK_REDUCTION_C6_NEXT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_INTACT_ROOT_UNLOADED_MOMENT_BLOCK_REDUCTION_C6_NEXT_2026_10_27.md",
+      "sha256": "4bde800a7d74b1af0f82bdf48b673abfcc672ba2968a0e530fc0b9ff0a3426f1",
+      "bytes": 11884,
+      "kind": "acceptance_review"
+    },
+    {
+      "filename": "REVIEW_NEW_UNIFORM_GEOMETRY_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_NEW_UNIFORM_GEOMETRY_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/REVIEW_NEW_UNIFORM_GEOMETRY_ROOT_2026_10_27.md",
+      "sha256": "5cf9ea7615730b838cbc1f43a1a636c9a503cc2bd67fa2daa15294287e7d651f",
+      "bytes": 11914,
+      "kind": "acceptance_review"
+    },
+    {
+      "filename": "REVIEW_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS_GLOBAL_NEXT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS_GLOBAL_NEXT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS_GLOBAL_NEXT_2026_10_27.md",
+      "sha256": "49c51d6864ff6e99eda83d16d429560c685479286b6f569bcdafff9632455748",
+      "bytes": 11075,
+      "kind": "acceptance_review"
+    },
+    {
+      "filename": "REVIEW_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS_ROOT_2026_10_27.md",
+      "sha256": "2d5156be26e48ce5b1b81136eda2fdb36590b681a9c7ca0d0e65e602c15a47bb",
+      "bytes": 6931,
+      "kind": "acceptance_review"
+    },
+    {
+      "filename": "ROOT_NEW_UNIFORM_EXACT_RECORD_2026_10_27.json",
+      "repository_path": "research/nine/ROOT_NEW_UNIFORM_EXACT_RECORD_2026_10_27.json",
+      "source_path": "/workspace/scratch/7d553350ce2a/root_new_uniform_exact_record.json",
+      "sha256": "7aef2ff33492153d24996db40fc982f6ddfccd03933dc2626a92549add8d8e94",
+      "bytes": 1205,
+      "kind": "exact_arithmetic_record"
+    }
+  ],
+  "already_published_exact_dependencies": [
+    {
+      "filename": "ACUTE_LOADED_CONTACT_GRAPH.md",
+      "repository_path": "research/nine/ACUTE_LOADED_CONTACT_GRAPH.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/ACUTE_LOADED_CONTACT_GRAPH.md",
+      "sha256": "e6ce319da0dfb6b3d885584e521edc15834132a349674a3b580771e54d236f59",
+      "bytes": 6886,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "a83aa5cc9c40020b9cab8ac7776adfa66e71cf5a"
+    },
+    {
+      "filename": "BOWTIE_CELL_CLOSED.md",
+      "repository_path": "research/nine/BOWTIE_CELL_CLOSED.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/BOWTIE_CELL_CLOSED.md",
+      "sha256": "6feb6e53387be1ba25adc0f3ca901ffce029e6dd3466678b548991d198c6dcf6",
+      "bytes": 7223,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "f96f11c7c6dd62efac35b248c7d00b9b00c5566c"
+    },
+    {
+      "filename": "C7_FORCE_POLYGON.md",
+      "repository_path": "research/nine/C7_FORCE_POLYGON.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/C7_FORCE_POLYGON.md",
+      "sha256": "d50d8ca48ea19156175e651bfa74be30ef3e58065ec14d8d1834670a41559089",
+      "bytes": 18062,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "6777c3971586a4dafad4dc81f7d85692da30c563"
+    },
+    {
+      "filename": "CENTERED_INNER_ARC.md",
+      "repository_path": "research/nine/CENTERED_INNER_ARC.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/CENTERED_INNER_ARC.md",
+      "sha256": "fac240eca4ad3254ba4aafd8c915f9771f7eeb3acea57bd2ee3ddd4eab0ba2e5",
+      "bytes": 4515,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "b7032d8803dad8a46368d2f9eddc4f9df947fdb2"
+    },
+    {
+      "filename": "CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "repository_path": "research/nine/CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "sha256": "e54df61d3134c5709bee5ac1a250fdd51084828da114d896f14c7e6337c4e8c5",
+      "bytes": 12813,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "83e319b9cd507011c9b12e0bad1a2127f2b99c34"
+    },
+    {
+      "filename": "CLOSED_ORIGIN_OUTSIDE_LEAF_DECORATED_TRIANGLE_EXCLUSION.md",
+      "repository_path": "research/nine/CLOSED_ORIGIN_OUTSIDE_LEAF_DECORATED_TRIANGLE_EXCLUSION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/CLOSED_ORIGIN_OUTSIDE_LEAF_DECORATED_TRIANGLE_EXCLUSION.md",
+      "sha256": "8eb35af704981de87df91a3f8507abbbb5406251176c7370442f3795e97dbff5",
+      "bytes": 18050,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "63fbd332f02e88dcce3b4d292a4c1501d7a06220"
+    },
+    {
+      "filename": "DIAMOND_ROOT_PRESSURE_AND_MIXED_BOUQUET_CLOSURE.md",
+      "repository_path": "research/nine/DIAMOND_ROOT_PRESSURE_AND_MIXED_BOUQUET_CLOSURE.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/DIAMOND_ROOT_PRESSURE_AND_MIXED_BOUQUET_CLOSURE.md",
+      "sha256": "afec7af10d9b384b4420b588d7a7d6b172ddf2e10b5d84d5db780b97c3b13f2b",
+      "bytes": 17181,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "c9e4f64613d750be7d36749a317e98734caf2597"
+    },
+    {
+      "filename": "DOUBLE_LEAF_TRIANGLE_ROOT_WITH_ANOTHER_LEAF_ROOT_EXCLUSION.md",
+      "repository_path": "research/nine/DOUBLE_LEAF_TRIANGLE_ROOT_WITH_ANOTHER_LEAF_ROOT_EXCLUSION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/DOUBLE_LEAF_TRIANGLE_ROOT_WITH_ANOTHER_LEAF_ROOT_EXCLUSION.md",
+      "sha256": "800fdfcc586ccfa586373360f6e402eeac6a05fe7f45eda86c7b398a45b58952",
+      "bytes": 7928,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "9961d4fa921407b65c5ce9446afb495a061041fc"
+    },
+    {
+      "filename": "D_LEAF_COMPLETE_BOUNDARY_CYCLE_EXCLUSION.md",
+      "repository_path": "research/nine/D_LEAF_COMPLETE_BOUNDARY_CYCLE_EXCLUSION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/D_LEAF_COMPLETE_BOUNDARY_CYCLE_EXCLUSION.md",
+      "sha256": "4eb4689a7d09e44c3246557520e7822878af874bc4572b0ae464dadf5bec0c74",
+      "bytes": 12992,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "9b91e46106d35be64cc95cb1656e0071659e523d"
+    },
+    {
+      "filename": "FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "repository_path": "research/nine/FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "sha256": "164d08bb2c4dfe8510247e44298d309920cb88a780221252d833f51aa654225f",
+      "bytes": 8495,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "61d53e409e235e67fb40bd712828a9a4be63f836"
+    },
+    {
+      "filename": "GLOBAL_CLOSURE_COMMON_ROOT_INTACT_TRIANGLE_FORESTS_EXCLUSION.md",
+      "repository_path": "research/nine/GLOBAL_CLOSURE_COMMON_ROOT_INTACT_TRIANGLE_FORESTS_EXCLUSION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/GLOBAL_CLOSURE_COMMON_ROOT_INTACT_TRIANGLE_FORESTS_EXCLUSION.md",
+      "sha256": "543bd9504574af9c039e54857657d47cc84c4d973c32c4cfe710610433797e33",
+      "bytes": 10075,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "825c7fc759e4ed69c6ecf83a6c1aaa246ec0bced"
+    },
+    {
+      "filename": "GLOBAL_CLOSURE_INTACT_ROOT_D_LEAF_CENTRAL_DISK_EXCLUSION.md",
+      "repository_path": "research/nine/GLOBAL_CLOSURE_INTACT_ROOT_D_LEAF_CENTRAL_DISK_EXCLUSION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/GLOBAL_CLOSURE_INTACT_ROOT_D_LEAF_CENTRAL_DISK_EXCLUSION.md",
+      "sha256": "fd838aec5fc0a836962ad2d1c49b58d0cc53b1de4d623b8462b18eb390d65b3b",
+      "bytes": 9588,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "5cb017733162321c53e5880598ef164aec755288"
+    },
+    {
+      "filename": "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "repository_path": "research/nine/GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+      "bytes": 16597,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "a52df273af3a2fdcd4665a1cda0ac51d954013fe"
+    },
+    {
+      "filename": "GLOBAL_NEXT_TWO_INTACT_PETALS_HOUSE_FAN_BOUQUETS_EXCLUSION.md",
+      "repository_path": "research/nine/GLOBAL_NEXT_TWO_INTACT_PETALS_HOUSE_FAN_BOUQUETS_EXCLUSION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/GLOBAL_NEXT_TWO_INTACT_PETALS_HOUSE_FAN_BOUQUETS_EXCLUSION.md",
+      "sha256": "d7c7c69d2ac398b402d0dcfaa4e77864c83596e7a1e520db0db3c023f34f7298",
+      "bytes": 17661,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "dab11c17d464dc94b59f17d9c51082a5ddf52f1b"
+    },
+    {
+      "filename": "LONG_CHANNEL_ENDPOINT_MATCHING.md",
+      "repository_path": "research/nine/LONG_CHANNEL_ENDPOINT_MATCHING.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/LONG_CHANNEL_ENDPOINT_MATCHING.md",
+      "sha256": "38fa41694cc24fcbe7ac13bc64481323117bcf9d283832a9ec95049cc265cf59",
+      "bytes": 6009,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "95b08499be6d154cd30e89d0b3c3d55b742915fa"
+    },
+    {
+      "filename": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "repository_path": "research/nine/NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "sha256": "46220c8a3eb3f539c682bf6a6fa932edf003e37484e0f6004d321e7cb14d7957",
+      "bytes": 18215,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "453091c80f23e0e1630f3351f139c7f50418c03d"
+    },
+    {
+      "filename": "NINE_SQUARE_CENTRAL_DISK_AND_SIX_BOUNDARY_NEIGHBORS_EXCLUSION.md",
+      "repository_path": "research/nine/NINE_SQUARE_CENTRAL_DISK_AND_SIX_BOUNDARY_NEIGHBORS_EXCLUSION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/NINE_SQUARE_CENTRAL_DISK_AND_SIX_BOUNDARY_NEIGHBORS_EXCLUSION.md",
+      "sha256": "3d80e291f2f5c095f91011fbc7e6014dbb4f5abd5441bc4c2a2da64fb14d2058",
+      "bytes": 14612,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "fb1136bfaf60414c7f81b2c88b94260757c49884"
+    },
+    {
+      "filename": "NO_POSITIVE_K4_SUBGRAPH.md",
+      "repository_path": "research/nine/NO_POSITIVE_K4_SUBGRAPH.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/NO_POSITIVE_K4_SUBGRAPH.md",
+      "sha256": "2920da7e2ce89a02781fa7b2edc7fedd52c0c0a6eb64859c7c611ce1d133fece",
+      "bytes": 7157,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "0a3e81e1e941af7cbeb5d5176a8108ed9a3f5ff1"
+    },
+    {
+      "filename": "ORIGIN_ROOT_C4_PRESSURE_AND_BOUQUET_CLOSURE.md",
+      "repository_path": "research/nine/ORIGIN_ROOT_C4_PRESSURE_AND_BOUQUET_CLOSURE.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/ORIGIN_ROOT_C4_PRESSURE_AND_BOUQUET_CLOSURE.md",
+      "sha256": "a70f4bc9f3bb9cd42e808fc4712716a2c4824057de44bae6c53c988837e41e3e",
+      "bytes": 22529,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "98f018f223d9771a3196f62864f67d64b9813130"
+    },
+    {
+      "filename": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "repository_path": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "bytes": 14121,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "723228d77626f68c3ded2e3e897a21d4f1ed7ccc"
+    },
+    {
+      "filename": "P_ALL_COMPLETION.md",
+      "repository_path": "research/nine/P_ALL_COMPLETION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/P_ALL_COMPLETION.md",
+      "sha256": "d5bf389eb4e129eead6019aa975b75b9e33dfe6760c2c27899c69b49691efc32",
+      "bytes": 11805,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "aa8ed9a41285d07c747ee00e24719f4e6171d7b4"
+    },
+    {
+      "filename": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "repository_path": "research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "bytes": 14902,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "8f935773421d3d6bcc8a7a6387a85851b27a1771"
+    },
+    {
+      "filename": "REVIEW_DIAMOND_ROOT_PRESSURE_AND_BOUQUETS_2026_10_25.md",
+      "repository_path": "research/nine/REVIEW_DIAMOND_ROOT_PRESSURE_AND_BOUQUETS_2026_10_25.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/REVIEW_DIAMOND_ROOT_PRESSURE_AND_BOUQUETS_2026_10_25.md",
+      "sha256": "69c2b939dfbcb7899284b9516c8cb6fb7d3fd24e223e8e72652156d8e7978388",
+      "bytes": 19011,
+      "kind": "acceptance_review",
+      "committed_blob_sha1": "40f0b7a1d3a062497a201a694c40f9bbb1df3c6c"
+    },
+    {
+      "filename": "REVIEW_ORIGIN_ROOT_C4_BOUQUET_CLOSURE_2026_10_25.md",
+      "repository_path": "research/nine/REVIEW_ORIGIN_ROOT_C4_BOUQUET_CLOSURE_2026_10_25.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/REVIEW_ORIGIN_ROOT_C4_BOUQUET_CLOSURE_2026_10_25.md",
+      "sha256": "e369a7a494db414bcc2c35d13861826729b86e1af9fd788c9aa88e6cdfb8e2bc",
+      "bytes": 16321,
+      "kind": "acceptance_review",
+      "committed_blob_sha1": "cc32f2988adcb7c90b223c6c5024cb2c234da8a2"
+    },
+    {
+      "filename": "ROOTED_C4_OPPOSITE_LOAD_ORIGIN_TRIANGLE_COMPLETE_EXCLUSION.md",
+      "repository_path": "research/nine/ROOTED_C4_OPPOSITE_LOAD_ORIGIN_TRIANGLE_COMPLETE_EXCLUSION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/ROOTED_C4_OPPOSITE_LOAD_ORIGIN_TRIANGLE_COMPLETE_EXCLUSION.md",
+      "sha256": "8608a7abc8eb8fd8af03132c914ca1134a9b7d09e2e4246defc67b17c8212bdf",
+      "bytes": 18747,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "cc69988d6646491c0f8ac7e31c87f7cbefabb075"
+    },
+    {
+      "filename": "ROOTED_END_TRIANGLE_ORIGIN_INTERIOR.md",
+      "repository_path": "research/nine/ROOTED_END_TRIANGLE_ORIGIN_INTERIOR.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/ROOTED_END_TRIANGLE_ORIGIN_INTERIOR.md",
+      "sha256": "591fee19418c23d036a19522a25a59cdebb43ae52910e06708aa0f5bd18fa6af",
+      "bytes": 12826,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "3392eb334146f978bae15134f6efdf7e923976e5"
+    },
+    {
+      "filename": "ROOTED_INTACT_PETAL_CENTRAL_DISK_INTERIOR.md",
+      "repository_path": "research/nine/ROOTED_INTACT_PETAL_CENTRAL_DISK_INTERIOR.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/ROOTED_INTACT_PETAL_CENTRAL_DISK_INTERIOR.md",
+      "sha256": "8a2fda961a9d9f76191add305ff65d4942e9e583a611448ec51d77df313035a8",
+      "bytes": 9483,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "7d5fd623740dea20369a84ce65b305d166e61131"
+    },
+    {
+      "filename": "SIMPLE_CYCLE_CONVEX_FORCE_POLYGON.md",
+      "repository_path": "research/nine/SIMPLE_CYCLE_CONVEX_FORCE_POLYGON.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/SIMPLE_CYCLE_CONVEX_FORCE_POLYGON.md",
+      "sha256": "5dac2a88ac992ab72247e76eafcc5ee0fb1ad57a2ec4b11015d0caf07ec87635",
+      "bytes": 10139,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "35b0d8a21162b79da9a42b796466d2d78ecd3f98"
+    },
+    {
+      "filename": "SIMPLE_CYCLE_LOADED_FORCES_NONPARALLEL.md",
+      "repository_path": "research/nine/SIMPLE_CYCLE_LOADED_FORCES_NONPARALLEL.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/SIMPLE_CYCLE_LOADED_FORCES_NONPARALLEL.md",
+      "sha256": "cd2a8c765c181ac803d8ee1c8672d1a8ceea3591248cbca449ef3653b4be6ebe",
+      "bytes": 8618,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "72ced9c6b4abca85401257a5e558c2de056b3140"
+    },
+    {
+      "filename": "TRIANGLE_SMALL_RADIAL_EXTERNAL_SUPPORT_EXCLUSION.md",
+      "repository_path": "research/nine/TRIANGLE_SMALL_RADIAL_EXTERNAL_SUPPORT_EXCLUSION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/TRIANGLE_SMALL_RADIAL_EXTERNAL_SUPPORT_EXCLUSION.md",
+      "sha256": "d77935c0d0754d87666c02c64b808673718c81990ded9f5d9d5566ba2b01ba48",
+      "bytes": 12545,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "3d44266d14285f13dc9f7f90dbc96b696135e084"
+    },
+    {
+      "filename": "TRIANGLE_THREE_BRIDGES_DOUBLE_LEAF_ROOT_EXCLUSION.md",
+      "repository_path": "research/nine/TRIANGLE_THREE_BRIDGES_DOUBLE_LEAF_ROOT_EXCLUSION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/TRIANGLE_THREE_BRIDGES_DOUBLE_LEAF_ROOT_EXCLUSION.md",
+      "sha256": "0cb8877bc74397213f4bf5a0768037a6e2650b812e55a41c2b793410c9f964de",
+      "bytes": 10338,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "8ab96eb8a5c8707d9523bd50fe57ca2d547547f5"
+    },
+    {
+      "filename": "TWO_LEAF_TRIANGLE_CLOSED_ORIGIN_AND_DISJOINT_FOUR_BLOCK_EXCLUSION.md",
+      "repository_path": "research/nine/TWO_LEAF_TRIANGLE_CLOSED_ORIGIN_AND_DISJOINT_FOUR_BLOCK_EXCLUSION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/TWO_LEAF_TRIANGLE_CLOSED_ORIGIN_AND_DISJOINT_FOUR_BLOCK_EXCLUSION.md",
+      "sha256": "2034492eb8863f348cac660ea83f6c67ccc10b226a449e6cd8fb8cd54ec11980",
+      "bytes": 18097,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "b44025d76cf6eb4669c26abd57615375f2893aa8"
+    },
+    {
+      "filename": "TWO_LEAF_TRIANGLE_NEAR_THIRD_VERTEX_EXCLUSION.md",
+      "repository_path": "research/nine/TWO_LEAF_TRIANGLE_NEAR_THIRD_VERTEX_EXCLUSION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/TWO_LEAF_TRIANGLE_NEAR_THIRD_VERTEX_EXCLUSION.md",
+      "sha256": "993d53527970e67ff5120c41369bb867d775df2ad4197b570d2b580c1134439d",
+      "bytes": 17918,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "038e2b902f6de4b936a53282829dce2e2b827e84"
+    },
+    {
+      "filename": "TWO_S_TIP_TRIANGLES_LOW_RADIUS_EXCLUSION.md",
+      "repository_path": "research/nine/TWO_S_TIP_TRIANGLES_LOW_RADIUS_EXCLUSION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/TWO_S_TIP_TRIANGLES_LOW_RADIUS_EXCLUSION.md",
+      "sha256": "9436e1385fd537863eb96d29da1b06c42ac827c0e3aa83cb9f6a46bcdcf91ad1",
+      "bytes": 10281,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "b38728eec43a4d780b4ae311e113f5d030c7cb58"
+    },
+    {
+      "filename": "UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "repository_path": "research/nine/UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "sha256": "db073cd024a4f2e763e7cd0a21bf5cb6a2a8be67069f3f9d3aff638b8a40b258",
+      "bytes": 6573,
+      "kind": "mathematical_source",
+      "committed_blob_sha1": "8c08b57321074c57fbbac76025883fd888994e0f"
+    }
+  ],
+  "operative_dependency_edges": [
+    {
+      "parent": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "dependency": "ACUTE_LOADED_CONTACT_GRAPH.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "dependency": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "dependency": "CENTRAL_DISK_LEAF_ROOT_AND_DOUBLE_LEAF_TRIANGLE_BLOCK_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "dependency": "CLOSED_ORIGIN_OUTSIDE_LEAF_DECORATED_TRIANGLE_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "dependency": "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "dependency": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "dependency": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "dependency": "P_ALL_COMPLETION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "dependency": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "dependency": "TRIANGLE_SMALL_RADIAL_EXTERNAL_SUPPORT_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "dependency": "TWO_LEAF_TRIANGLE_CLOSED_ORIGIN_AND_DISJOINT_FOUR_BLOCK_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "dependency": "TWO_LEAF_TRIANGLE_NEAR_THIRD_VERTEX_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "dependency": "TWO_S_TIP_TRIANGLES_LOW_RADIUS_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_EQUAL_PARALLEL_ROOT_PAIR_NEGATIVE_PRESSURE_EXCLUSION.md",
+      "dependency": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_EQUAL_PARALLEL_ROOT_PAIR_NEGATIVE_PRESSURE_EXCLUSION.md",
+      "dependency": "NINE_SQUARE_CENTRAL_DISK_AND_SIX_BOUNDARY_NEIGHBORS_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_EQUAL_PARALLEL_ROOT_PAIR_NEGATIVE_PRESSURE_EXCLUSION.md",
+      "dependency": "REVIEW_INTACT_ROOT_UNLOADED_MOMENT_BLOCK_REDUCTION_C6_NEXT_2026_10_27.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_EXCLUSION.md",
+      "dependency": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_EXCLUSION.md",
+      "dependency": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_EXCLUSION.md",
+      "dependency": "CENTERED_INNER_ARC.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_EXCLUSION.md",
+      "dependency": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_EXCLUSION.md",
+      "dependency": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_EXCLUSION.md",
+      "dependency": "NINE_SQUARE_CENTRAL_DISK_AND_SIX_BOUNDARY_NEIGHBORS_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_EXCLUSION.md",
+      "dependency": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_EXCLUSION.md",
+      "dependency": "REVIEW_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS_GLOBAL_NEXT_2026_10_27.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_EXCLUSION.md",
+      "dependency": "REVIEW_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS_ROOT_2026_10_27.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_EXCLUSION.md",
+      "dependency": "CENTERED_INNER_ARC.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_EXCLUSION.md",
+      "dependency": "D_LEAF_COMPLETE_BOUNDARY_CYCLE_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_EXCLUSION.md",
+      "dependency": "FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_EXCLUSION.md",
+      "dependency": "GLOBAL_CLOSURE_COMMON_ROOT_INTACT_TRIANGLE_FORESTS_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_EXCLUSION.md",
+      "dependency": "GLOBAL_CLOSURE_INTACT_ROOT_D_LEAF_CENTRAL_DISK_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_EXCLUSION.md",
+      "dependency": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_EXCLUSION.md",
+      "dependency": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_EXCLUSION.md",
+      "dependency": "NINE_SQUARE_CENTRAL_DISK_AND_SIX_BOUNDARY_NEIGHBORS_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_EXCLUSION.md",
+      "dependency": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_EXCLUSION.md",
+      "dependency": "ROOTED_C4_OPPOSITE_LOAD_ORIGIN_TRIANGLE_COMPLETE_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "dependency": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "dependency": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "dependency": "C6_NEXT_INTACT_ROOT_ORDER_FIVE_FROM_PUBLISHED_NONNEGATIVE_PRESSURE.md",
+      "basis": "Explicit additional accepted order-five join in both complete 80d reviews; use e776 published nonnegative pressures, never d480 fresh strict-pressure sources."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "dependency": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "dependency": "CENTERED_INNER_ARC.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "dependency": "GLOBAL_CLOSURE_COMMON_ROOT_INTACT_TRIANGLE_FORESTS_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "dependency": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "dependency": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "dependency": "NINE_SQUARE_CENTRAL_DISK_AND_SIX_BOUNDARY_NEIGHBORS_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "dependency": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "dependency": "ROOTED_END_TRIANGLE_ORIGIN_INTERIOR.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_ORDER_FIVE_FROM_PUBLISHED_NONNEGATIVE_PRESSURE.md",
+      "dependency": "CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_ORDER_FIVE_FROM_PUBLISHED_NONNEGATIVE_PRESSURE.md",
+      "dependency": "DIAMOND_ROOT_PRESSURE_AND_MIXED_BOUQUET_CLOSURE.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_ORDER_FIVE_FROM_PUBLISHED_NONNEGATIVE_PRESSURE.md",
+      "dependency": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_ORDER_FIVE_FROM_PUBLISHED_NONNEGATIVE_PRESSURE.md",
+      "dependency": "NO_POSITIVE_K4_SUBGRAPH.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_ORDER_FIVE_FROM_PUBLISHED_NONNEGATIVE_PRESSURE.md",
+      "dependency": "ORIGIN_ROOT_C4_PRESSURE_AND_BOUQUET_CLOSURE.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_ORDER_FIVE_FROM_PUBLISHED_NONNEGATIVE_PRESSURE.md",
+      "dependency": "REVIEW_DIAMOND_ROOT_PRESSURE_AND_BOUQUETS_2026_10_25.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_ORDER_FIVE_FROM_PUBLISHED_NONNEGATIVE_PRESSURE.md",
+      "dependency": "REVIEW_INTACT_ROOT_UNLOADED_MOMENT_AND_COMPONENT_ROOT_2026_10_27.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_ORDER_FIVE_FROM_PUBLISHED_NONNEGATIVE_PRESSURE.md",
+      "dependency": "REVIEW_INTACT_ROOT_UNLOADED_MOMENT_BLOCK_REDUCTION_C6_NEXT_2026_10_27.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_ORDER_FIVE_FROM_PUBLISHED_NONNEGATIVE_PRESSURE.md",
+      "dependency": "REVIEW_ORIGIN_ROOT_C4_BOUQUET_CLOSURE_2026_10_25.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "dependency": "C6_NEXT_EQUAL_PARALLEL_ROOT_PAIR_NEGATIVE_PRESSURE_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "dependency": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_OPPOSITE_PARALLEL_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "dependency": "CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "dependency": "FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "dependency": "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "dependency": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "dependency": "LONG_CHANNEL_ENDPOINT_MATCHING.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "dependency": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "dependency": "ROOTED_C4_OPPOSITE_LOAD_ORIGIN_TRIANGLE_COMPLETE_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "dependency": "SIMPLE_CYCLE_CONVEX_FORCE_POLYGON.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "dependency": "SIMPLE_CYCLE_LOADED_FORCES_NONPARALLEL.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "dependency": "UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_OPPOSITE_PARALLEL_EXCLUSION.md",
+      "dependency": "C6_NEXT_EQUAL_PARALLEL_ROOT_PAIR_NEGATIVE_PRESSURE_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_OPPOSITE_PARALLEL_EXCLUSION.md",
+      "dependency": "C7_FORCE_POLYGON.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_OPPOSITE_PARALLEL_EXCLUSION.md",
+      "dependency": "CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_OPPOSITE_PARALLEL_EXCLUSION.md",
+      "dependency": "FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_OPPOSITE_PARALLEL_EXCLUSION.md",
+      "dependency": "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_OPPOSITE_PARALLEL_EXCLUSION.md",
+      "dependency": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_OPPOSITE_PARALLEL_EXCLUSION.md",
+      "dependency": "LONG_CHANNEL_ENDPOINT_MATCHING.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_OPPOSITE_PARALLEL_EXCLUSION.md",
+      "dependency": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_OPPOSITE_PARALLEL_EXCLUSION.md",
+      "dependency": "ROOTED_C4_OPPOSITE_LOAD_ORIGIN_TRIANGLE_COMPLETE_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_OPPOSITE_PARALLEL_EXCLUSION.md",
+      "dependency": "SIMPLE_CYCLE_CONVEX_FORCE_POLYGON.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_OPPOSITE_PARALLEL_EXCLUSION.md",
+      "dependency": "SIMPLE_CYCLE_LOADED_FORCES_NONPARALLEL.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "dependency": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "dependency": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "dependency": "CENTERED_INNER_ARC.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "dependency": "CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "dependency": "FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "dependency": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "dependency": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "dependency": "NINE_SQUARE_CENTRAL_DISK_AND_SIX_BOUNDARY_NEIGHBORS_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "dependency": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "dependency": "ROOTED_C4_OPPOSITE_LOAD_ORIGIN_TRIANGLE_COMPLETE_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "CENTRAL_DISK_LEAF_ROOT_AND_DOUBLE_LEAF_TRIANGLE_BLOCK_EXCLUSION.md",
+      "dependency": "ACUTE_LOADED_CONTACT_GRAPH.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "CENTRAL_DISK_LEAF_ROOT_AND_DOUBLE_LEAF_TRIANGLE_BLOCK_EXCLUSION.md",
+      "dependency": "C7_FORCE_POLYGON.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "CENTRAL_DISK_LEAF_ROOT_AND_DOUBLE_LEAF_TRIANGLE_BLOCK_EXCLUSION.md",
+      "dependency": "DOUBLE_LEAF_TRIANGLE_ROOT_WITH_ANOTHER_LEAF_ROOT_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "CENTRAL_DISK_LEAF_ROOT_AND_DOUBLE_LEAF_TRIANGLE_BLOCK_EXCLUSION.md",
+      "dependency": "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "CENTRAL_DISK_LEAF_ROOT_AND_DOUBLE_LEAF_TRIANGLE_BLOCK_EXCLUSION.md",
+      "dependency": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "CENTRAL_DISK_LEAF_ROOT_AND_DOUBLE_LEAF_TRIANGLE_BLOCK_EXCLUSION.md",
+      "dependency": "TRIANGLE_THREE_BRIDGES_DOUBLE_LEAF_ROOT_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "dependency": "BOWTIE_CELL_CLOSED.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "dependency": "GLOBAL_CLOSURE_COMMON_ROOT_INTACT_TRIANGLE_FORESTS_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "dependency": "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "dependency": "GLOBAL_NEXT_TWO_INTACT_PETALS_HOUSE_FAN_BOUQUETS_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "dependency": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "dependency": "NINE_SQUARE_CENTRAL_DISK_AND_SIX_BOUNDARY_NEIGHBORS_EXCLUSION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "dependency": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    },
+    {
+      "parent": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "dependency": "ROOTED_INTACT_PETAL_CENTRAL_DISK_INTERIOR.md",
+      "basis": "Named in frozen mathematical source; scoped use retained."
+    }
+  ],
+  "excluded_mentions_and_unused_dependency_sections": [
+    {
+      "parent": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "dependency": "C6_NEXT_COMMON_ROOT_SIDE_NEGATIVE_CONCURRENCE_PRESSURE_EXCLUSION.md",
+      "reason": "Unused: 402d Section 6 closed-root concurrence conclusion. Neither the aligned nor tilted leaf exit uses root-port properness or concurrence membership in E."
+    },
+    {
+      "parent": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "dependency": "C6_NEXT_INTACT_PETAL_PHYSICAL_RAY_AND_CYCLE_ROOT_PROPERNESS.md",
+      "reason": "Unused: 402d Sections 1 and 4--7 physical-ray/properness conclusions. The aligned/tilted callers use only Sections 2--3 through the original five-neighbor order and leaf rank. No petal-ray or positive-q-sector avoidance is used."
+    }
+  ],
+  "section_scope_notes": [
+    "402d is included as an unchanged complete source, but only its Sections 2--3 original five-neighbor/angular-order extraction is operative in these callers. The positive-q-sector, physical-ray, root-port properness and closed-root conclusions are not invoked. The source records its broader dependencies honestly; publication of this closure does not newly support those unused conclusions.",
+    "80d final full direct-leaf genuine-cycle union is accompanied by the explicit e776 published weak-pressure order-five refinement appearing in both full acceptance records. For the present C2.36 caller q=6 is also given by its original graph. The separate d480 fresh strict-pressure assembly and its dependencies are not used or published.",
+    "Review records are terminal acceptance/context records, not new theorem dependencies. Root review covers three additional independently published geometric implications; their sources and separate reviews belong to the root/diamond manifests.",
+    "Historical metadata and abandoned source versions are not copied. Baseline ACUTE_LOADED_CONTACT_GRAPH.md e6ce319d is retained; the recovered newline-only 95a737 version is not published.",
+    "The unused 402d-to-ed8 branch would import 7e510 and a differing PARALLEL_TRANSMISSION_AND_FOUR_CYCLES.md pin. That branch is not operative and no baseline source is overwritten.",
+    "The root exact record is intentionally renamed on publication to ROOT_NEW_UNIFORM_EXACT_RECORD_2026_10_27.json, matching the frozen root review; its source bytes are unchanged."
+  ],
+  "complete_review_coverage": [
+    {
+      "mathematical_source": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "source_sha256": "28810d74517a6f6a4a4e5b2972c5359bdf41559957bd7e33bcb5fb4b358685d5",
+      "reviews": [
+        {
+          "filename": "REVIEW_NEW_UNIFORM_GEOMETRY_ROOT_2026_10_27.md",
+          "sha256": "5cf9ea7615730b838cbc1f43a1a636c9a503cc2bd67fa2daa15294287e7d651f",
+          "exact_source_pin_present": true,
+          "full_acceptance_record": true
+        },
+        {
+          "filename": "REVIEW_CENTRAL_LEAF_ROOT_AND_LARGER_TWO_BLOCK_REDUCTIONS_INDEPENDENT_2026_10_28.md",
+          "sha256": "266dc4b409514057f48a4773956bdbb470dbd7c67f824ef4df0c05cff6d9f3a6",
+          "exact_source_pin_present": true,
+          "full_acceptance_record": true
+        }
+      ]
+    },
+    {
+      "mathematical_source": "C6_NEXT_EQUAL_PARALLEL_ROOT_PAIR_NEGATIVE_PRESSURE_EXCLUSION.md",
+      "source_sha256": "0d534b2399f6d01d59c2caa121bc440957bb66bf08840e9e6da5bbff7a990f72",
+      "reviews": [
+        {
+          "filename": "REVIEW_EQUAL_PARALLEL_ROOT_PAIR_PRESSURE_ROOT_2026_10_27.md",
+          "sha256": "58170b4c492b97bb283435692ac2939759c6d0458b9180fa1c84519358a4c5ec",
+          "exact_source_pin_present": true,
+          "full_acceptance_record": true
+        },
+        {
+          "filename": "REVIEW_EQUAL_PARALLEL_ROOT_PAIR_PRESSURE_GLOBAL_NEXT_2026_10_27.md",
+          "sha256": "56b30ce7630d78ea910b03c9d607bc2312b8f8b454b2b0568797ba9a2de50455",
+          "exact_source_pin_present": true,
+          "full_acceptance_record": true
+        }
+      ]
+    },
+    {
+      "mathematical_source": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_EXCLUSION.md",
+      "source_sha256": "6a1a37c6ed825ef1cea0bebf503e894e3ca9d4777fe23e3cf508b188e4898aa5",
+      "reviews": [
+        {
+          "filename": "REVIEW_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_ROOT_2026_10_28.md",
+          "sha256": "e79a4a070d11d07d803ade5212a606efd83ab5bdf7a48177757062d17663f1bc",
+          "exact_source_pin_present": true,
+          "full_acceptance_record": true
+        },
+        {
+          "filename": "REVIEW_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_GLOBAL_NEXT_2026_10_28.md",
+          "sha256": "0713aa41839b0d84a2087ba0596045056d654947f96f5176a9fd84d2a621cc23",
+          "exact_source_pin_present": true,
+          "full_acceptance_record": true
+        }
+      ]
+    },
+    {
+      "mathematical_source": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_EXCLUSION.md",
+      "source_sha256": "7c8f58d14aab1540bf71de95d51df3c531f1832a282dd53b00df9f9752fa1f49",
+      "reviews": [
+        {
+          "filename": "REVIEW_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_ROOT_2026_10_27.md",
+          "sha256": "a3ea7af11fb0cafe682c4fd5ae2e1b3f07bfe7353dc38b249610845276288de3",
+          "exact_source_pin_present": true,
+          "full_acceptance_record": true
+        },
+        {
+          "filename": "REVIEW_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_MIXED_BLOCKS_2026_10_27.md",
+          "sha256": "96050848f380944f70a32d6aa783c69c64d174f4345f68600800b86fabbfbc64",
+          "exact_source_pin_present": true,
+          "full_acceptance_record": true
+        }
+      ]
+    },
+    {
+      "mathematical_source": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "source_sha256": "80d239a76dd632a3b982c6ef9b2a52028fc9c418e1f0c221852047a180efc238",
+      "reviews": [
+        {
+          "filename": "REVIEW_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_ROOT_2026_10_28.md",
+          "sha256": "9ef87a99420d103cd9f4ba833059af7b8375b22f13b2ab9dbfd4eae1f99e3e6b",
+          "exact_source_pin_present": true,
+          "full_acceptance_record": true
+        },
+        {
+          "filename": "REVIEW_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_GLOBAL_NEXT_2026_10_28.md",
+          "sha256": "131e0c4a53c5dc1d61fe527a54dd4663d5adbf7a2d191213a44a709cdd87409b",
+          "exact_source_pin_present": true,
+          "full_acceptance_record": true
+        }
+      ]
+    },
+    {
+      "mathematical_source": "C6_NEXT_INTACT_ROOT_ORDER_FIVE_FROM_PUBLISHED_NONNEGATIVE_PRESSURE.md",
+      "source_sha256": "e7760977ee91d09c5c672e5db11f0010934650cfe292d63d7132220f8e59b164",
+      "reviews": [
+        {
+          "filename": "REVIEW_INTACT_ROOT_ORDER_FIVE_PUBLISHED_PRESSURE_ROOT_2026_10_27.md",
+          "sha256": "0b35354afa658b33a7ada3a1e97342089ef2d69611b945d58853d3227c5a6f07",
+          "exact_source_pin_present": true,
+          "full_acceptance_record": true
+        },
+        {
+          "filename": "REVIEW_INTACT_ROOT_PUBLISHED_PRESSURE_ORDER_FIVE_GLOBAL_NEXT_2026_10_27.md",
+          "sha256": "9667532851b0fd30ca4339a5829ba44c44756543f760475acf5fad965c11f021",
+          "exact_source_pin_present": true,
+          "full_acceptance_record": true
+        }
+      ]
+    },
+    {
+      "mathematical_source": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "source_sha256": "5e49f162076ce7e699e5013e8e5d6354e907a343bcc4520aa08f1beef78fda42",
+      "reviews": [
+        {
+          "filename": "REVIEW_INTACT_ROOT_CYCLE_NEGATIVE_CONCURRENCE_ROOT_2026_10_27.md",
+          "sha256": "bd0351ec775bb78c2fbec52e35911802d70ea5e632b01e25d93983294b3f8439",
+          "exact_source_pin_present": true,
+          "full_acceptance_record": true
+        },
+        {
+          "filename": "REVIEW_INTACT_ROOT_CYCLE_NEGATIVE_CONCURRENCE_GLOBAL_NEXT_2026_10_27.md",
+          "sha256": "52165c83ba86707f50ce8715ce1a55c7d16eefd62535a3de8a8631794d6bcb25",
+          "exact_source_pin_present": true,
+          "full_acceptance_record": true
+        }
+      ]
+    },
+    {
+      "mathematical_source": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_OPPOSITE_PARALLEL_EXCLUSION.md",
+      "source_sha256": "fc07a3b7dd840b17eb13caba1d36193724afdea68c9c0acd23bfdc66a574017f",
+      "reviews": [
+        {
+          "filename": "REVIEW_INTACT_ROOT_CYCLE_OPPOSITE_PARALLEL_ROOT_2026_10_27.md",
+          "sha256": "cbf0ac0f1bf28a9f0872503af70e1636714f0f0915673ebb45ad397f7c0f15e3",
+          "exact_source_pin_present": true,
+          "full_acceptance_record": true
+        },
+        {
+          "filename": "REVIEW_INTACT_ROOT_CYCLE_OPPOSITE_PARALLEL_GLOBAL_NEXT_2026_10_27.md",
+          "sha256": "48140f9b1161d9d869bad9ea4b2dc030ca6be017d71b2e49b89e2588e96c9a38",
+          "exact_source_pin_present": true,
+          "full_acceptance_record": true
+        }
+      ]
+    },
+    {
+      "mathematical_source": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "source_sha256": "402d147ca6f0eb417a2c0e039409b2309fca61495ccda409a13708c47d190135",
+      "reviews": [
+        {
+          "filename": "REVIEW_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS_ROOT_2026_10_27.md",
+          "sha256": "2d5156be26e48ce5b1b81136eda2fdb36590b681a9c7ca0d0e65e602c15a47bb",
+          "exact_source_pin_present": true,
+          "full_acceptance_record": true
+        },
+        {
+          "filename": "REVIEW_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS_GLOBAL_NEXT_2026_10_27.md",
+          "sha256": "49c51d6864ff6e99eda83d16d429560c685479286b6f569bcdafff9632455748",
+          "exact_source_pin_present": true,
+          "full_acceptance_record": true
+        }
+      ]
+    },
+    {
+      "mathematical_source": "CENTRAL_DISK_LEAF_ROOT_AND_DOUBLE_LEAF_TRIANGLE_BLOCK_EXCLUSION.md",
+      "source_sha256": "dd03214ab5e0100bd35211993591baabd5fd0578191cc2ad2d4c1e344b8a5411",
+      "reviews": [
+        {
+          "filename": "REVIEW_NEW_UNIFORM_GEOMETRY_ROOT_2026_10_27.md",
+          "sha256": "5cf9ea7615730b838cbc1f43a1a636c9a503cc2bd67fa2daa15294287e7d651f",
+          "exact_source_pin_present": true,
+          "full_acceptance_record": true
+        },
+        {
+          "filename": "REVIEW_CENTRAL_LEAF_ROOT_AND_LARGER_TWO_BLOCK_REDUCTIONS_INDEPENDENT_2026_10_28.md",
+          "sha256": "266dc4b409514057f48a4773956bdbb470dbd7c67f824ef4df0c05cff6d9f3a6",
+          "exact_source_pin_present": true,
+          "full_acceptance_record": true
+        }
+      ]
+    },
+    {
+      "mathematical_source": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "source_sha256": "103a0f4ceccba044c132a45c632bd64df57540feb70fd69d6159c52759e449c6",
+      "reviews": [
+        {
+          "filename": "REVIEW_INTACT_ROOT_UNLOADED_MOMENT_AND_COMPONENT_ROOT_2026_10_27.md",
+          "sha256": "27b8e71cd4aebd35e0bfc6dfa6c17438bbd5fc758a00d9afd14e1ccf49245e79",
+          "exact_source_pin_present": true,
+          "full_acceptance_record": true
+        },
+        {
+          "filename": "REVIEW_INTACT_ROOT_UNLOADED_MOMENT_BLOCK_REDUCTION_C6_NEXT_2026_10_27.md",
+          "sha256": "4bde800a7d74b1af0f82bdf48b673abfcc672ba2968a0e530fc0b9ff0a3426f1",
+          "exact_source_pin_present": true,
+          "full_acceptance_record": true
+        }
+      ]
+    }
+  ],
+  "direct_pin_checks": [
+    {
+      "parent": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "dependency": "ACUTE_LOADED_CONTACT_GRAPH.md",
+      "expected_sha256": "e6ce319da0dfb6b3d885584e521edc15834132a349674a3b580771e54d236f59",
+      "actual_sha256": "e6ce319da0dfb6b3d885584e521edc15834132a349674a3b580771e54d236f59",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "dependency": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "expected_sha256": "80d239a76dd632a3b982c6ef9b2a52028fc9c418e1f0c221852047a180efc238",
+      "actual_sha256": "80d239a76dd632a3b982c6ef9b2a52028fc9c418e1f0c221852047a180efc238",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "dependency": "CENTRAL_DISK_LEAF_ROOT_AND_DOUBLE_LEAF_TRIANGLE_BLOCK_EXCLUSION.md",
+      "expected_sha256": "dd03214ab5e0100bd35211993591baabd5fd0578191cc2ad2d4c1e344b8a5411",
+      "actual_sha256": "dd03214ab5e0100bd35211993591baabd5fd0578191cc2ad2d4c1e344b8a5411",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "dependency": "CLOSED_ORIGIN_OUTSIDE_LEAF_DECORATED_TRIANGLE_EXCLUSION.md",
+      "expected_sha256": "8eb35af704981de87df91a3f8507abbbb5406251176c7370442f3795e97dbff5",
+      "actual_sha256": "8eb35af704981de87df91a3f8507abbbb5406251176c7370442f3795e97dbff5",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "dependency": "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "expected_sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+      "actual_sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "dependency": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "expected_sha256": "103a0f4ceccba044c132a45c632bd64df57540feb70fd69d6159c52759e449c6",
+      "actual_sha256": "103a0f4ceccba044c132a45c632bd64df57540feb70fd69d6159c52759e449c6",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "dependency": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "expected_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "actual_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "dependency": "P_ALL_COMPLETION.md",
+      "expected_sha256": "d5bf389eb4e129eead6019aa975b75b9e33dfe6760c2c27899c69b49691efc32",
+      "actual_sha256": "d5bf389eb4e129eead6019aa975b75b9e33dfe6760c2c27899c69b49691efc32",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "dependency": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "expected_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "actual_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "dependency": "TRIANGLE_SMALL_RADIAL_EXTERNAL_SUPPORT_EXCLUSION.md",
+      "expected_sha256": "d77935c0d0754d87666c02c64b808673718c81990ded9f5d9d5566ba2b01ba48",
+      "actual_sha256": "d77935c0d0754d87666c02c64b808673718c81990ded9f5d9d5566ba2b01ba48",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "dependency": "TWO_LEAF_TRIANGLE_CLOSED_ORIGIN_AND_DISJOINT_FOUR_BLOCK_EXCLUSION.md",
+      "expected_sha256": "2034492eb8863f348cac660ea83f6c67ccc10b226a449e6cd8fb8cd54ec11980",
+      "actual_sha256": "2034492eb8863f348cac660ea83f6c67ccc10b226a449e6cd8fb8cd54ec11980",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "dependency": "TWO_LEAF_TRIANGLE_NEAR_THIRD_VERTEX_EXCLUSION.md",
+      "expected_sha256": "993d53527970e67ff5120c41369bb867d775df2ad4197b570d2b580c1134439d",
+      "actual_sha256": "993d53527970e67ff5120c41369bb867d775df2ad4197b570d2b580c1134439d",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "dependency": "TWO_S_TIP_TRIANGLES_LOW_RADIUS_EXCLUSION.md",
+      "expected_sha256": "9436e1385fd537863eb96d29da1b06c42ac827c0e3aa83cb9f6a46bcdcf91ad1",
+      "actual_sha256": "9436e1385fd537863eb96d29da1b06c42ac827c0e3aa83cb9f6a46bcdcf91ad1",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_EQUAL_PARALLEL_ROOT_PAIR_NEGATIVE_PRESSURE_EXCLUSION.md",
+      "dependency": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "expected_sha256": "103a0f4ceccba044c132a45c632bd64df57540feb70fd69d6159c52759e449c6",
+      "actual_sha256": "103a0f4ceccba044c132a45c632bd64df57540feb70fd69d6159c52759e449c6",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_EQUAL_PARALLEL_ROOT_PAIR_NEGATIVE_PRESSURE_EXCLUSION.md",
+      "dependency": "REVIEW_INTACT_ROOT_UNLOADED_MOMENT_BLOCK_REDUCTION_C6_NEXT_2026_10_27.md",
+      "expected_sha256": "4bde800a7d74b1af0f82bdf48b673abfcc672ba2968a0e530fc0b9ff0a3426f1",
+      "actual_sha256": "4bde800a7d74b1af0f82bdf48b673abfcc672ba2968a0e530fc0b9ff0a3426f1",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_EXCLUSION.md",
+      "dependency": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "expected_sha256": "5e49f162076ce7e699e5013e8e5d6354e907a343bcc4520aa08f1beef78fda42",
+      "actual_sha256": "5e49f162076ce7e699e5013e8e5d6354e907a343bcc4520aa08f1beef78fda42",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_EXCLUSION.md",
+      "dependency": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "expected_sha256": "402d147ca6f0eb417a2c0e039409b2309fca61495ccda409a13708c47d190135",
+      "actual_sha256": "402d147ca6f0eb417a2c0e039409b2309fca61495ccda409a13708c47d190135",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_EXCLUSION.md",
+      "dependency": "CENTERED_INNER_ARC.md",
+      "expected_sha256": "fac240eca4ad3254ba4aafd8c915f9771f7eeb3acea57bd2ee3ddd4eab0ba2e5",
+      "actual_sha256": "fac240eca4ad3254ba4aafd8c915f9771f7eeb3acea57bd2ee3ddd4eab0ba2e5",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_EXCLUSION.md",
+      "dependency": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "expected_sha256": "103a0f4ceccba044c132a45c632bd64df57540feb70fd69d6159c52759e449c6",
+      "actual_sha256": "103a0f4ceccba044c132a45c632bd64df57540feb70fd69d6159c52759e449c6",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_EXCLUSION.md",
+      "dependency": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "expected_sha256": "46220c8a3eb3f539c682bf6a6fa932edf003e37484e0f6004d321e7cb14d7957",
+      "actual_sha256": "46220c8a3eb3f539c682bf6a6fa932edf003e37484e0f6004d321e7cb14d7957",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_EXCLUSION.md",
+      "dependency": "NINE_SQUARE_CENTRAL_DISK_AND_SIX_BOUNDARY_NEIGHBORS_EXCLUSION.md",
+      "expected_sha256": "3d80e291f2f5c095f91011fbc7e6014dbb4f5abd5441bc4c2a2da64fb14d2058",
+      "actual_sha256": "3d80e291f2f5c095f91011fbc7e6014dbb4f5abd5441bc4c2a2da64fb14d2058",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_EXCLUSION.md",
+      "dependency": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "expected_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "actual_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_EXCLUSION.md",
+      "dependency": "REVIEW_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS_GLOBAL_NEXT_2026_10_27.md",
+      "expected_sha256": "49c51d6864ff6e99eda83d16d429560c685479286b6f569bcdafff9632455748",
+      "actual_sha256": "49c51d6864ff6e99eda83d16d429560c685479286b6f569bcdafff9632455748",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_EXCLUSION.md",
+      "dependency": "REVIEW_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS_ROOT_2026_10_27.md",
+      "expected_sha256": "2d5156be26e48ce5b1b81136eda2fdb36590b681a9c7ca0d0e65e602c15a47bb",
+      "actual_sha256": "2d5156be26e48ce5b1b81136eda2fdb36590b681a9c7ca0d0e65e602c15a47bb",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_EXCLUSION.md",
+      "dependency": "CENTERED_INNER_ARC.md",
+      "expected_sha256": "fac240eca4ad3254ba4aafd8c915f9771f7eeb3acea57bd2ee3ddd4eab0ba2e5",
+      "actual_sha256": "fac240eca4ad3254ba4aafd8c915f9771f7eeb3acea57bd2ee3ddd4eab0ba2e5",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_EXCLUSION.md",
+      "dependency": "FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "expected_sha256": "164d08bb2c4dfe8510247e44298d309920cb88a780221252d833f51aa654225f",
+      "actual_sha256": "164d08bb2c4dfe8510247e44298d309920cb88a780221252d833f51aa654225f",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_EXCLUSION.md",
+      "dependency": "GLOBAL_CLOSURE_COMMON_ROOT_INTACT_TRIANGLE_FORESTS_EXCLUSION.md",
+      "expected_sha256": "543bd9504574af9c039e54857657d47cc84c4d973c32c4cfe710610433797e33",
+      "actual_sha256": "543bd9504574af9c039e54857657d47cc84c4d973c32c4cfe710610433797e33",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_EXCLUSION.md",
+      "dependency": "GLOBAL_CLOSURE_INTACT_ROOT_D_LEAF_CENTRAL_DISK_EXCLUSION.md",
+      "expected_sha256": "fd838aec5fc0a836962ad2d1c49b58d0cc53b1de4d623b8462b18eb390d65b3b",
+      "actual_sha256": "fd838aec5fc0a836962ad2d1c49b58d0cc53b1de4d623b8462b18eb390d65b3b",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_EXCLUSION.md",
+      "dependency": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "expected_sha256": "103a0f4ceccba044c132a45c632bd64df57540feb70fd69d6159c52759e449c6",
+      "actual_sha256": "103a0f4ceccba044c132a45c632bd64df57540feb70fd69d6159c52759e449c6",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_EXCLUSION.md",
+      "dependency": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "expected_sha256": "46220c8a3eb3f539c682bf6a6fa932edf003e37484e0f6004d321e7cb14d7957",
+      "actual_sha256": "46220c8a3eb3f539c682bf6a6fa932edf003e37484e0f6004d321e7cb14d7957",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_EXCLUSION.md",
+      "dependency": "NINE_SQUARE_CENTRAL_DISK_AND_SIX_BOUNDARY_NEIGHBORS_EXCLUSION.md",
+      "expected_sha256": "3d80e291f2f5c095f91011fbc7e6014dbb4f5abd5441bc4c2a2da64fb14d2058",
+      "actual_sha256": "3d80e291f2f5c095f91011fbc7e6014dbb4f5abd5441bc4c2a2da64fb14d2058",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_EXCLUSION.md",
+      "dependency": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "expected_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "actual_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_EXCLUSION.md",
+      "dependency": "ROOTED_C4_OPPOSITE_LOAD_ORIGIN_TRIANGLE_COMPLETE_EXCLUSION.md",
+      "expected_sha256": "8608a7abc8eb8fd8af03132c914ca1134a9b7d09e2e4246defc67b17c8212bdf",
+      "actual_sha256": "8608a7abc8eb8fd8af03132c914ca1134a9b7d09e2e4246defc67b17c8212bdf",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "dependency": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_EXCLUSION.md",
+      "expected_sha256": "6a1a37c6ed825ef1cea0bebf503e894e3ca9d4777fe23e3cf508b188e4898aa5",
+      "actual_sha256": "6a1a37c6ed825ef1cea0bebf503e894e3ca9d4777fe23e3cf508b188e4898aa5",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "dependency": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_EXCLUSION.md",
+      "expected_sha256": "7c8f58d14aab1540bf71de95d51df3c531f1832a282dd53b00df9f9752fa1f49",
+      "actual_sha256": "7c8f58d14aab1540bf71de95d51df3c531f1832a282dd53b00df9f9752fa1f49",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "dependency": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "expected_sha256": "402d147ca6f0eb417a2c0e039409b2309fca61495ccda409a13708c47d190135",
+      "actual_sha256": "402d147ca6f0eb417a2c0e039409b2309fca61495ccda409a13708c47d190135",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "dependency": "CENTERED_INNER_ARC.md",
+      "expected_sha256": "fac240eca4ad3254ba4aafd8c915f9771f7eeb3acea57bd2ee3ddd4eab0ba2e5",
+      "actual_sha256": "fac240eca4ad3254ba4aafd8c915f9771f7eeb3acea57bd2ee3ddd4eab0ba2e5",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "dependency": "GLOBAL_CLOSURE_COMMON_ROOT_INTACT_TRIANGLE_FORESTS_EXCLUSION.md",
+      "expected_sha256": "543bd9504574af9c039e54857657d47cc84c4d973c32c4cfe710610433797e33",
+      "actual_sha256": "543bd9504574af9c039e54857657d47cc84c4d973c32c4cfe710610433797e33",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "dependency": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "expected_sha256": "103a0f4ceccba044c132a45c632bd64df57540feb70fd69d6159c52759e449c6",
+      "actual_sha256": "103a0f4ceccba044c132a45c632bd64df57540feb70fd69d6159c52759e449c6",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "dependency": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "expected_sha256": "46220c8a3eb3f539c682bf6a6fa932edf003e37484e0f6004d321e7cb14d7957",
+      "actual_sha256": "46220c8a3eb3f539c682bf6a6fa932edf003e37484e0f6004d321e7cb14d7957",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "dependency": "NINE_SQUARE_CENTRAL_DISK_AND_SIX_BOUNDARY_NEIGHBORS_EXCLUSION.md",
+      "expected_sha256": "3d80e291f2f5c095f91011fbc7e6014dbb4f5abd5441bc4c2a2da64fb14d2058",
+      "actual_sha256": "3d80e291f2f5c095f91011fbc7e6014dbb4f5abd5441bc4c2a2da64fb14d2058",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "dependency": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "expected_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "actual_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "dependency": "ROOTED_END_TRIANGLE_ORIGIN_INTERIOR.md",
+      "expected_sha256": "591fee19418c23d036a19522a25a59cdebb43ae52910e06708aa0f5bd18fa6af",
+      "actual_sha256": "591fee19418c23d036a19522a25a59cdebb43ae52910e06708aa0f5bd18fa6af",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_ORDER_FIVE_FROM_PUBLISHED_NONNEGATIVE_PRESSURE.md",
+      "dependency": "CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "expected_sha256": "e54df61d3134c5709bee5ac1a250fdd51084828da114d896f14c7e6337c4e8c5",
+      "actual_sha256": "e54df61d3134c5709bee5ac1a250fdd51084828da114d896f14c7e6337c4e8c5",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_ORDER_FIVE_FROM_PUBLISHED_NONNEGATIVE_PRESSURE.md",
+      "dependency": "DIAMOND_ROOT_PRESSURE_AND_MIXED_BOUQUET_CLOSURE.md",
+      "expected_sha256": "afec7af10d9b384b4420b588d7a7d6b172ddf2e10b5d84d5db780b97c3b13f2b",
+      "actual_sha256": "afec7af10d9b384b4420b588d7a7d6b172ddf2e10b5d84d5db780b97c3b13f2b",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_ORDER_FIVE_FROM_PUBLISHED_NONNEGATIVE_PRESSURE.md",
+      "dependency": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "expected_sha256": "103a0f4ceccba044c132a45c632bd64df57540feb70fd69d6159c52759e449c6",
+      "actual_sha256": "103a0f4ceccba044c132a45c632bd64df57540feb70fd69d6159c52759e449c6",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_ORDER_FIVE_FROM_PUBLISHED_NONNEGATIVE_PRESSURE.md",
+      "dependency": "NO_POSITIVE_K4_SUBGRAPH.md",
+      "expected_sha256": "2920da7e2ce89a02781fa7b2edc7fedd52c0c0a6eb64859c7c611ce1d133fece",
+      "actual_sha256": "2920da7e2ce89a02781fa7b2edc7fedd52c0c0a6eb64859c7c611ce1d133fece",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_ORDER_FIVE_FROM_PUBLISHED_NONNEGATIVE_PRESSURE.md",
+      "dependency": "ORIGIN_ROOT_C4_PRESSURE_AND_BOUQUET_CLOSURE.md",
+      "expected_sha256": "a70f4bc9f3bb9cd42e808fc4712716a2c4824057de44bae6c53c988837e41e3e",
+      "actual_sha256": "a70f4bc9f3bb9cd42e808fc4712716a2c4824057de44bae6c53c988837e41e3e",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_ORDER_FIVE_FROM_PUBLISHED_NONNEGATIVE_PRESSURE.md",
+      "dependency": "REVIEW_DIAMOND_ROOT_PRESSURE_AND_BOUQUETS_2026_10_25.md",
+      "expected_sha256": "69c2b939dfbcb7899284b9516c8cb6fb7d3fd24e223e8e72652156d8e7978388",
+      "actual_sha256": "69c2b939dfbcb7899284b9516c8cb6fb7d3fd24e223e8e72652156d8e7978388",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_ORDER_FIVE_FROM_PUBLISHED_NONNEGATIVE_PRESSURE.md",
+      "dependency": "REVIEW_INTACT_ROOT_UNLOADED_MOMENT_AND_COMPONENT_ROOT_2026_10_27.md",
+      "expected_sha256": "27b8e71cd4aebd35e0bfc6dfa6c17438bbd5fc758a00d9afd14e1ccf49245e79",
+      "actual_sha256": "27b8e71cd4aebd35e0bfc6dfa6c17438bbd5fc758a00d9afd14e1ccf49245e79",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_ORDER_FIVE_FROM_PUBLISHED_NONNEGATIVE_PRESSURE.md",
+      "dependency": "REVIEW_INTACT_ROOT_UNLOADED_MOMENT_BLOCK_REDUCTION_C6_NEXT_2026_10_27.md",
+      "expected_sha256": "4bde800a7d74b1af0f82bdf48b673abfcc672ba2968a0e530fc0b9ff0a3426f1",
+      "actual_sha256": "4bde800a7d74b1af0f82bdf48b673abfcc672ba2968a0e530fc0b9ff0a3426f1",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_ORDER_FIVE_FROM_PUBLISHED_NONNEGATIVE_PRESSURE.md",
+      "dependency": "REVIEW_ORIGIN_ROOT_C4_BOUQUET_CLOSURE_2026_10_25.md",
+      "expected_sha256": "e369a7a494db414bcc2c35d13861826729b86e1af9fd788c9aa88e6cdfb8e2bc",
+      "actual_sha256": "e369a7a494db414bcc2c35d13861826729b86e1af9fd788c9aa88e6cdfb8e2bc",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "dependency": "C6_NEXT_EQUAL_PARALLEL_ROOT_PAIR_NEGATIVE_PRESSURE_EXCLUSION.md",
+      "expected_sha256": "0d534b2399f6d01d59c2caa121bc440957bb66bf08840e9e6da5bbff7a990f72",
+      "actual_sha256": "0d534b2399f6d01d59c2caa121bc440957bb66bf08840e9e6da5bbff7a990f72",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "dependency": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_OPPOSITE_PARALLEL_EXCLUSION.md",
+      "expected_sha256": "fc07a3b7dd840b17eb13caba1d36193724afdea68c9c0acd23bfdc66a574017f",
+      "actual_sha256": "fc07a3b7dd840b17eb13caba1d36193724afdea68c9c0acd23bfdc66a574017f",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "dependency": "CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "expected_sha256": "e54df61d3134c5709bee5ac1a250fdd51084828da114d896f14c7e6337c4e8c5",
+      "actual_sha256": "e54df61d3134c5709bee5ac1a250fdd51084828da114d896f14c7e6337c4e8c5",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "dependency": "FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "expected_sha256": "164d08bb2c4dfe8510247e44298d309920cb88a780221252d833f51aa654225f",
+      "actual_sha256": "164d08bb2c4dfe8510247e44298d309920cb88a780221252d833f51aa654225f",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "dependency": "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "expected_sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+      "actual_sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "dependency": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "expected_sha256": "103a0f4ceccba044c132a45c632bd64df57540feb70fd69d6159c52759e449c6",
+      "actual_sha256": "103a0f4ceccba044c132a45c632bd64df57540feb70fd69d6159c52759e449c6",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "dependency": "LONG_CHANNEL_ENDPOINT_MATCHING.md",
+      "expected_sha256": "38fa41694cc24fcbe7ac13bc64481323117bcf9d283832a9ec95049cc265cf59",
+      "actual_sha256": "38fa41694cc24fcbe7ac13bc64481323117bcf9d283832a9ec95049cc265cf59",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "dependency": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "expected_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "actual_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "dependency": "ROOTED_C4_OPPOSITE_LOAD_ORIGIN_TRIANGLE_COMPLETE_EXCLUSION.md",
+      "expected_sha256": "8608a7abc8eb8fd8af03132c914ca1134a9b7d09e2e4246defc67b17c8212bdf",
+      "actual_sha256": "8608a7abc8eb8fd8af03132c914ca1134a9b7d09e2e4246defc67b17c8212bdf",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "dependency": "SIMPLE_CYCLE_CONVEX_FORCE_POLYGON.md",
+      "expected_sha256": "5dac2a88ac992ab72247e76eafcc5ee0fb1ad57a2ec4b11015d0caf07ec87635",
+      "actual_sha256": "5dac2a88ac992ab72247e76eafcc5ee0fb1ad57a2ec4b11015d0caf07ec87635",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "dependency": "SIMPLE_CYCLE_LOADED_FORCES_NONPARALLEL.md",
+      "expected_sha256": "cd2a8c765c181ac803d8ee1c8672d1a8ceea3591248cbca449ef3653b4be6ebe",
+      "actual_sha256": "cd2a8c765c181ac803d8ee1c8672d1a8ceea3591248cbca449ef3653b4be6ebe",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "dependency": "UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "expected_sha256": "db073cd024a4f2e763e7cd0a21bf5cb6a2a8be67069f3f9d3aff638b8a40b258",
+      "actual_sha256": "db073cd024a4f2e763e7cd0a21bf5cb6a2a8be67069f3f9d3aff638b8a40b258",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_OPPOSITE_PARALLEL_EXCLUSION.md",
+      "dependency": "C6_NEXT_EQUAL_PARALLEL_ROOT_PAIR_NEGATIVE_PRESSURE_EXCLUSION.md",
+      "expected_sha256": "0d534b2399f6d01d59c2caa121bc440957bb66bf08840e9e6da5bbff7a990f72",
+      "actual_sha256": "0d534b2399f6d01d59c2caa121bc440957bb66bf08840e9e6da5bbff7a990f72",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_OPPOSITE_PARALLEL_EXCLUSION.md",
+      "dependency": "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "expected_sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+      "actual_sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_OPPOSITE_PARALLEL_EXCLUSION.md",
+      "dependency": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "expected_sha256": "103a0f4ceccba044c132a45c632bd64df57540feb70fd69d6159c52759e449c6",
+      "actual_sha256": "103a0f4ceccba044c132a45c632bd64df57540feb70fd69d6159c52759e449c6",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_OPPOSITE_PARALLEL_EXCLUSION.md",
+      "dependency": "LONG_CHANNEL_ENDPOINT_MATCHING.md",
+      "expected_sha256": "38fa41694cc24fcbe7ac13bc64481323117bcf9d283832a9ec95049cc265cf59",
+      "actual_sha256": "38fa41694cc24fcbe7ac13bc64481323117bcf9d283832a9ec95049cc265cf59",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_OPPOSITE_PARALLEL_EXCLUSION.md",
+      "dependency": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "expected_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "actual_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_OPPOSITE_PARALLEL_EXCLUSION.md",
+      "dependency": "ROOTED_C4_OPPOSITE_LOAD_ORIGIN_TRIANGLE_COMPLETE_EXCLUSION.md",
+      "expected_sha256": "8608a7abc8eb8fd8af03132c914ca1134a9b7d09e2e4246defc67b17c8212bdf",
+      "actual_sha256": "8608a7abc8eb8fd8af03132c914ca1134a9b7d09e2e4246defc67b17c8212bdf",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_OPPOSITE_PARALLEL_EXCLUSION.md",
+      "dependency": "SIMPLE_CYCLE_LOADED_FORCES_NONPARALLEL.md",
+      "expected_sha256": "cd2a8c765c181ac803d8ee1c8672d1a8ceea3591248cbca449ef3653b4be6ebe",
+      "actual_sha256": "cd2a8c765c181ac803d8ee1c8672d1a8ceea3591248cbca449ef3653b4be6ebe",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "dependency": "C6_NEXT_COMMON_ROOT_SIDE_NEGATIVE_CONCURRENCE_PRESSURE_EXCLUSION.md",
+      "expected_sha256": "1672413b60c3616470d3ad424b9eb25b15fcc60068f121d093f4309335a0d998",
+      "actual_sha256": "1672413b60c3616470d3ad424b9eb25b15fcc60068f121d093f4309335a0d998",
+      "matches": true,
+      "operative": false
+    },
+    {
+      "parent": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "dependency": "C6_NEXT_INTACT_PETAL_PHYSICAL_RAY_AND_CYCLE_ROOT_PROPERNESS.md",
+      "expected_sha256": "ed8cbbeede73d3ba348a99d677f31500830207a352f1602a24b10e01d9bb8365",
+      "actual_sha256": "ed8cbbeede73d3ba348a99d677f31500830207a352f1602a24b10e01d9bb8365",
+      "matches": true,
+      "operative": false
+    },
+    {
+      "parent": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "dependency": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_EXCLUSION.md",
+      "expected_sha256": "7c8f58d14aab1540bf71de95d51df3c531f1832a282dd53b00df9f9752fa1f49",
+      "actual_sha256": "7c8f58d14aab1540bf71de95d51df3c531f1832a282dd53b00df9f9752fa1f49",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "dependency": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "expected_sha256": "5e49f162076ce7e699e5013e8e5d6354e907a343bcc4520aa08f1beef78fda42",
+      "actual_sha256": "5e49f162076ce7e699e5013e8e5d6354e907a343bcc4520aa08f1beef78fda42",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "dependency": "CENTERED_INNER_ARC.md",
+      "expected_sha256": "fac240eca4ad3254ba4aafd8c915f9771f7eeb3acea57bd2ee3ddd4eab0ba2e5",
+      "actual_sha256": "fac240eca4ad3254ba4aafd8c915f9771f7eeb3acea57bd2ee3ddd4eab0ba2e5",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "dependency": "CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "expected_sha256": "e54df61d3134c5709bee5ac1a250fdd51084828da114d896f14c7e6337c4e8c5",
+      "actual_sha256": "e54df61d3134c5709bee5ac1a250fdd51084828da114d896f14c7e6337c4e8c5",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "dependency": "FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "expected_sha256": "164d08bb2c4dfe8510247e44298d309920cb88a780221252d833f51aa654225f",
+      "actual_sha256": "164d08bb2c4dfe8510247e44298d309920cb88a780221252d833f51aa654225f",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "dependency": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "expected_sha256": "103a0f4ceccba044c132a45c632bd64df57540feb70fd69d6159c52759e449c6",
+      "actual_sha256": "103a0f4ceccba044c132a45c632bd64df57540feb70fd69d6159c52759e449c6",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "dependency": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "expected_sha256": "46220c8a3eb3f539c682bf6a6fa932edf003e37484e0f6004d321e7cb14d7957",
+      "actual_sha256": "46220c8a3eb3f539c682bf6a6fa932edf003e37484e0f6004d321e7cb14d7957",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "dependency": "NINE_SQUARE_CENTRAL_DISK_AND_SIX_BOUNDARY_NEIGHBORS_EXCLUSION.md",
+      "expected_sha256": "3d80e291f2f5c095f91011fbc7e6014dbb4f5abd5441bc4c2a2da64fb14d2058",
+      "actual_sha256": "3d80e291f2f5c095f91011fbc7e6014dbb4f5abd5441bc4c2a2da64fb14d2058",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "dependency": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "expected_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "actual_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "dependency": "ROOTED_C4_OPPOSITE_LOAD_ORIGIN_TRIANGLE_COMPLETE_EXCLUSION.md",
+      "expected_sha256": "8608a7abc8eb8fd8af03132c914ca1134a9b7d09e2e4246defc67b17c8212bdf",
+      "actual_sha256": "8608a7abc8eb8fd8af03132c914ca1134a9b7d09e2e4246defc67b17c8212bdf",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "CENTRAL_DISK_LEAF_ROOT_AND_DOUBLE_LEAF_TRIANGLE_BLOCK_EXCLUSION.md",
+      "dependency": "ACUTE_LOADED_CONTACT_GRAPH.md",
+      "expected_sha256": "e6ce319da0dfb6b3d885584e521edc15834132a349674a3b580771e54d236f59",
+      "actual_sha256": "e6ce319da0dfb6b3d885584e521edc15834132a349674a3b580771e54d236f59",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "CENTRAL_DISK_LEAF_ROOT_AND_DOUBLE_LEAF_TRIANGLE_BLOCK_EXCLUSION.md",
+      "dependency": "C7_FORCE_POLYGON.md",
+      "expected_sha256": "d50d8ca48ea19156175e651bfa74be30ef3e58065ec14d8d1834670a41559089",
+      "actual_sha256": "d50d8ca48ea19156175e651bfa74be30ef3e58065ec14d8d1834670a41559089",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "CENTRAL_DISK_LEAF_ROOT_AND_DOUBLE_LEAF_TRIANGLE_BLOCK_EXCLUSION.md",
+      "dependency": "DOUBLE_LEAF_TRIANGLE_ROOT_WITH_ANOTHER_LEAF_ROOT_EXCLUSION.md",
+      "expected_sha256": "800fdfcc586ccfa586373360f6e402eeac6a05fe7f45eda86c7b398a45b58952",
+      "actual_sha256": "800fdfcc586ccfa586373360f6e402eeac6a05fe7f45eda86c7b398a45b58952",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "CENTRAL_DISK_LEAF_ROOT_AND_DOUBLE_LEAF_TRIANGLE_BLOCK_EXCLUSION.md",
+      "dependency": "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "expected_sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+      "actual_sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "CENTRAL_DISK_LEAF_ROOT_AND_DOUBLE_LEAF_TRIANGLE_BLOCK_EXCLUSION.md",
+      "dependency": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "expected_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "actual_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "CENTRAL_DISK_LEAF_ROOT_AND_DOUBLE_LEAF_TRIANGLE_BLOCK_EXCLUSION.md",
+      "dependency": "TRIANGLE_THREE_BRIDGES_DOUBLE_LEAF_ROOT_EXCLUSION.md",
+      "expected_sha256": "0cb8877bc74397213f4bf5a0768037a6e2650b812e55a41c2b793410c9f964de",
+      "actual_sha256": "0cb8877bc74397213f4bf5a0768037a6e2650b812e55a41c2b793410c9f964de",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "dependency": "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "expected_sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+      "actual_sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+      "matches": true,
+      "operative": true
+    },
+    {
+      "parent": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "dependency": "GLOBAL_NEXT_TWO_INTACT_PETALS_HOUSE_FAN_BOUQUETS_EXCLUSION.md",
+      "expected_sha256": "d7c7c69d2ac398b402d0dcfaa4e77864c83596e7a1e520db0db3c023f34f7298",
+      "actual_sha256": "d7c7c69d2ac398b402d0dcfaa4e77864c83596e7a1e520db0db3c023f34f7298",
+      "matches": true,
+      "operative": true
+    }
+  ],
+  "missing_files": [],
+  "changed_prior_source_conflicts": [],
+  "operative_pin_mismatches": [],
+  "baseline_tree_mismatches": [],
+  "review_pin_failures": [],
+  "counts": {
+    "new_files": 34,
+    "already_published_exact_dependencies": 35,
+    "mathematical_source": 11,
+    "acceptance_review": 21,
+    "exact_arithmetic_record": 2
+  }
+}

@@ -1,0 +1,512 @@
+{
+  "date": "2026-10-28",
+  "timezone": "UTC",
+  "read_base_head": "1adc3528879acdc17992fa2cd5e0dc143103014e",
+  "status": "accepted complete original D-family exclusions and separately accepted zero-count geometric interface",
+  "coarse_total": 58,
+  "coarse_closed": 34,
+  "coarse_open": 24,
+  "fine_total": 2513,
+  "fine_checked": 2337,
+  "fine_open": 176,
+  "coarse_changes": [],
+  "fine_changes": [
+    {
+      "id": "M6.B5L.HOUSE.ROOF.LAC.D",
+      "from": " ",
+      "to": "x"
+    },
+    {
+      "id": "M6.B5L.HOUSE.ROOF.LABC.D",
+      "from": " ",
+      "to": "x"
+    },
+    {
+      "id": "M6.B5L.FAN.ENDPOINT.L234.D",
+      "from": " ",
+      "to": "x"
+    }
+  ],
+  "exact_original_gate_lines": [
+    {
+      "id": "M6.B5L.HOUSE.ROOF.LABC.D",
+      "original_line": "- [ ] **M6.B5L.HOUSE.ROOF.LABC.D** Entire D-leaf type at house roof T with block loadsABC; retain the full side-interior root slider and every block mask, force, mean and three-extra completion under M6.B5L.RETAINED_CONTRACT.",
+      "proposed_accepted_line": "- [x] **M6.B5L.HOUSE.ROOF.LABC.D** D_LEAF_ONE_CLEAR_COMMON_NEIGHBOR_BOUNDARY_REMAINDER_EXCLUSION.md gives the entire original D-family exclusion from actual private moment order and the complete unloaded common-neighbor star, on the full radius window with every original true degree, circle mask, positive force, normal, mean and all three completing squares retained."
+    },
+    {
+      "id": "M6.B5L.FAN.ENDPOINT.L234.D",
+      "original_line": "- [ ] **M6.B5L.FAN.ENDPOINT.L234.D** Entire D-leaf type at fan path endpoint1 with block loads234; retain the full side-interior root slider and every block mask, force, mean and three-extra completion under M6.B5L.RETAINED_CONTRACT.",
+      "proposed_accepted_line": "- [x] **M6.B5L.FAN.ENDPOINT.L234.D** D_LEAF_ONE_CLEAR_COMMON_NEIGHBOR_BOUNDARY_REMAINDER_EXCLUSION.md gives the entire original D-family exclusion from actual private moment order and the complete unloaded common-neighbor star, on the full radius window with every original true degree, circle mask, positive force, normal, mean and all three completing squares retained."
+    },
+    {
+      "id": "M6.B5L.HOUSE.ROOF.LAC.D",
+      "original_line": "- [ ] **M6.B5L.HOUSE.ROOF.LAC.D** Entire D-leaf type at house roof T with block loadsAC; retain the full side-interior root slider and every block mask, force, mean and three-extra completion under M6.B5L.RETAINED_CONTRACT.",
+      "proposed_accepted_line": "- [x] **M6.B5L.HOUSE.ROOF.LAC.D** HOUSE_ROOF_AC_D_COMPLETE_MOMENT_EXCLUSION.md excludes the full original D-roof AC family: the actual B2 normal chord and a complete far-body port theorem give private C4 moment order, forcing the full unloaded D3 star into contradiction. All original degrees, loads, means, physical masks and three completing squares remain."
+    }
+  ],
+  "original_ids_preserved_in_order": true,
+  "new_source_and_review_files": [
+    {
+      "filename": "D_LEAF_ONE_CLEAR_COMMON_NEIGHBOR_BOUNDARY_REMAINDER_EXCLUSION.md",
+      "repository_path": "research/nine/D_LEAF_ONE_CLEAR_COMMON_NEIGHBOR_BOUNDARY_REMAINDER_EXCLUSION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/six_body/D_LEAF_ONE_CLEAR_COMMON_NEIGHBOR_BOUNDARY_REMAINDER_EXCLUSION.md",
+      "sha256": "4e4e6e09bcb61f8e9a4de8cc75341b99914136369f807936c0351c1aff8f85b5",
+      "git_blob_sha": "b269b8f5028a6b70287cb684aed5e6c1c377d8d7",
+      "bytes": 20109
+    },
+    {
+      "filename": "D_LEAF_BOUNDARY_REMAINDER_TWO_ORIGINAL_JOINS_EXACT_RECORD_2026_10_28.json",
+      "repository_path": "research/nine/D_LEAF_BOUNDARY_REMAINDER_TWO_ORIGINAL_JOINS_EXACT_RECORD_2026_10_28.json",
+      "source_path": "/workspace/scratch/7d553350ce2a/six_body/D_LEAF_BOUNDARY_REMAINDER_TWO_ORIGINAL_JOINS_EXACT_RECORD_2026_10_28.json",
+      "sha256": "65814011bb4e85b33a31100c346a053740a623974c0a5493990a7a495af26033",
+      "git_blob_sha": "f66008d840bbe2acc789b611674d791d9478e1d0",
+      "bytes": 6177
+    },
+    {
+      "filename": "REVIEW_D_ONE_CLEAR_COMMON_NEIGHBOR_BOUNDARY_REMAINDER_INDEPENDENT_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_D_ONE_CLEAR_COMMON_NEIGHBOR_BOUNDARY_REMAINDER_INDEPENDENT_2026_10_28.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/diamond/REVIEW_D_ONE_CLEAR_COMMON_NEIGHBOR_BOUNDARY_REMAINDER_INDEPENDENT_2026_10_28.md",
+      "sha256": "4bfe738c542325f7b3a82c8d6aed492f64a7211bd11be1b820fb4d329eb4930b",
+      "git_blob_sha": "cca672a38ec18da51b0f59f0f31e1a9ab12cc16a",
+      "bytes": 12974
+    },
+    {
+      "filename": "INDEPENDENT_D_ONE_CLEAR_COMMON_NEIGHBOR_REMAINDER_EXACT_RECORD_2026_10_28.json",
+      "repository_path": "research/nine/INDEPENDENT_D_ONE_CLEAR_COMMON_NEIGHBOR_REMAINDER_EXACT_RECORD_2026_10_28.json",
+      "source_path": "/workspace/scratch/7d553350ce2a/diamond/INDEPENDENT_D_ONE_CLEAR_COMMON_NEIGHBOR_REMAINDER_EXACT_RECORD_2026_10_28.json",
+      "sha256": "ab7b72cc4d2deb955deaceef651282b45ad2b40757028dd64aaad13cdfe6812a",
+      "git_blob_sha": "65f3a90c049581ccc7eb1b879e1da72ffc7ec266",
+      "bytes": 4176
+    },
+    {
+      "filename": "REVIEW_D_BOUNDARY_REMAINDER_TWO_ORIGINAL_FAMILIES_ROOT_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_D_BOUNDARY_REMAINDER_TWO_ORIGINAL_FAMILIES_ROOT_2026_10_28.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/REVIEW_D_BOUNDARY_REMAINDER_TWO_ORIGINAL_FAMILIES_ROOT_2026_10_28.md",
+      "sha256": "8bba50adf72bee6c58ad065af32955d8c49635b49095887536b7fa4073521208",
+      "git_blob_sha": "f20aa69ec0107144bf5fd294ead49b09164b1dad",
+      "bytes": 9617
+    },
+    {
+      "filename": "HOUSE_ROOF_AC_D_COMPLETE_MOMENT_EXCLUSION.md",
+      "repository_path": "research/nine/HOUSE_ROOF_AC_D_COMPLETE_MOMENT_EXCLUSION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/six_body/HOUSE_ROOF_AC_D_COMPLETE_MOMENT_EXCLUSION.md",
+      "sha256": "db795b7a1a287d7e8e422bd80f3ea04e714d9d98af88226e9c16ad757b7e0f5a",
+      "git_blob_sha": "6c3c50c362ae8fa2edfd3395fc3d30c2e83d430c",
+      "bytes": 18517
+    },
+    {
+      "filename": "HOUSE_ROOF_AC_D_ORIGINAL_JOIN_EXACT_RECORD_2026_10_28.json",
+      "repository_path": "research/nine/HOUSE_ROOF_AC_D_ORIGINAL_JOIN_EXACT_RECORD_2026_10_28.json",
+      "source_path": "/workspace/scratch/7d553350ce2a/six_body/HOUSE_ROOF_AC_D_ORIGINAL_JOIN_EXACT_RECORD_2026_10_28.json",
+      "sha256": "21ea7819ccc3578e46c209d17cebe4333aed5b4d890e063341a2105a82e5d65f",
+      "git_blob_sha": "fa7e2409af143d298d66b6020deb13610241e04e",
+      "bytes": 5076
+    },
+    {
+      "filename": "REVIEW_HOUSE_ROOF_AC_D_MOMENT_EXCLUSION_INDEPENDENT_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_HOUSE_ROOF_AC_D_MOMENT_EXCLUSION_INDEPENDENT_2026_10_28.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/diamond/REVIEW_HOUSE_ROOF_AC_D_MOMENT_EXCLUSION_INDEPENDENT_2026_10_28.md",
+      "sha256": "e79176507f6d8f22c9ba1e27d76f82606aea6b6f5417cb9a6a8ae1e95f2bd0d8",
+      "git_blob_sha": "6ac996cb4ffe8d9afab4ea535b66dfa9bb5bd7f1",
+      "bytes": 10423
+    },
+    {
+      "filename": "INDEPENDENT_HOUSE_ROOF_AC_D_MOMENT_EXCLUSION_EXACT_RECORD_2026_10_28.json",
+      "repository_path": "research/nine/INDEPENDENT_HOUSE_ROOF_AC_D_MOMENT_EXCLUSION_EXACT_RECORD_2026_10_28.json",
+      "source_path": "/workspace/scratch/7d553350ce2a/diamond/INDEPENDENT_HOUSE_ROOF_AC_D_MOMENT_EXCLUSION_EXACT_RECORD_2026_10_28.json",
+      "sha256": "5638057573e4aad08ee88f16293df151a2df86d1d9a5155849efa245dc1bc2db",
+      "git_blob_sha": "3779cf37a4c9570ee19dd5d95cad0cbe690e46fa",
+      "bytes": 4210
+    },
+    {
+      "filename": "REVIEW_HOUSE_ROOF_AC_D_COMPLETE_MOMENT_ROOT_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_HOUSE_ROOF_AC_D_COMPLETE_MOMENT_ROOT_2026_10_28.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/REVIEW_HOUSE_ROOF_AC_D_COMPLETE_MOMENT_ROOT_2026_10_28.md",
+      "sha256": "b0051a6a47eceb8e27a0b3ebbcb23f334498b80da6e9979c92e01e078966af0b",
+      "git_blob_sha": "e5c972366cab4d8e38d784cff6cd583ede31fbea",
+      "bytes": 8178
+    },
+    {
+      "filename": "HIGH_RADIUS_PARALLEL_DECORATED_TRIANGLE_DISJOINT_BLOCK_EXCLUSION.md",
+      "repository_path": "research/nine/HIGH_RADIUS_PARALLEL_DECORATED_TRIANGLE_DISJOINT_BLOCK_EXCLUSION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/two_blocks/HIGH_RADIUS_PARALLEL_DECORATED_TRIANGLE_DISJOINT_BLOCK_EXCLUSION.md",
+      "sha256": "f7355fdbe12322e6926b169c4039d4124c3f2db37fc03983d175bef2e03a3293",
+      "git_blob_sha": "8995a88853fb5a4269fd8cdacb058efca3837aaf",
+      "bytes": 11637
+    },
+    {
+      "filename": "HIGH_RADIUS_PARALLEL_DECORATED_TRIANGLE_EXACT_SOURCE_RECORD.json",
+      "repository_path": "research/nine/HIGH_RADIUS_PARALLEL_DECORATED_TRIANGLE_EXACT_SOURCE_RECORD.json",
+      "source_path": "/workspace/scratch/7d553350ce2a/two_blocks/HIGH_RADIUS_PARALLEL_DECORATED_TRIANGLE_EXACT_SOURCE_RECORD.json",
+      "sha256": "9af6f31dfbae76996e3d79e96ee1ca61d138187a1c3093048d788099736b50b0",
+      "git_blob_sha": "bea62f430e1ab1c7321443bfc43a3c9437b07d41",
+      "bytes": 2687
+    },
+    {
+      "filename": "REVIEW_HIGH_RADIUS_PARALLEL_DECORATED_TRIANGLE_DISJOINT_BLOCK_INDEPENDENT_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_HIGH_RADIUS_PARALLEL_DECORATED_TRIANGLE_DISJOINT_BLOCK_INDEPENDENT_2026_10_28.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/six_body/REVIEW_HIGH_RADIUS_PARALLEL_DECORATED_TRIANGLE_DISJOINT_BLOCK_INDEPENDENT_2026_10_28.md",
+      "sha256": "b8a8e0b7182427a078b118eed5a044d4d9f9003da0f65205ed034e471166a4d6",
+      "git_blob_sha": "270eccd5e69f0af54b067704e748f40f8965c337",
+      "bytes": 11993
+    },
+    {
+      "filename": "HIGH_RADIUS_PARALLEL_DECORATED_TRIANGLE_DISJOINT_BLOCK_REVIEW_EXACT_RECORD_2026_10_28.json",
+      "repository_path": "research/nine/HIGH_RADIUS_PARALLEL_DECORATED_TRIANGLE_DISJOINT_BLOCK_REVIEW_EXACT_RECORD_2026_10_28.json",
+      "source_path": "/workspace/scratch/7d553350ce2a/six_body/HIGH_RADIUS_PARALLEL_DECORATED_TRIANGLE_DISJOINT_BLOCK_REVIEW_EXACT_RECORD_2026_10_28.json",
+      "sha256": "6a559b3b354c9390ec3736b143883e816053e7ecf1e59312c6e83ada249d7ab9",
+      "git_blob_sha": "e66ac728c0e8a2ab76aacec14d79a949138d77b4",
+      "bytes": 5537
+    },
+    {
+      "filename": "REVIEW_HIGH_RADIUS_PARALLEL_DISJOINT_BLOCK_ROOT_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_HIGH_RADIUS_PARALLEL_DISJOINT_BLOCK_ROOT_2026_10_28.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/REVIEW_HIGH_RADIUS_PARALLEL_DISJOINT_BLOCK_ROOT_2026_10_28.md",
+      "sha256": "a31e72083ebec05be36519a4816b02a24b13588c900eb36d2b952dcc7381234b",
+      "git_blob_sha": "88e5d760012aa678aa5b9c31c718f2348b38c206",
+      "bytes": 7026
+    }
+  ],
+  "direct_dependency_pins": [
+    {
+      "filename": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "bytes": 14902
+    },
+    {
+      "filename": "D_LEAF_SHALLOW_SIDE_BOUNDARY_FULL_WINDOW_EXCLUSION.md",
+      "sha256": "ca7c3f4b32e45fc0c118bd766f438fce3019b0b44220604e33bc842a504ac670",
+      "bytes": 9842
+    },
+    {
+      "filename": "D_LEAF_COMMON_TRIANGLE_NEIGHBOR_FULL_WINDOW_QUARTER_DISK.md",
+      "sha256": "c39605b955d98f7fbe8499cf0a06dc4cc780a7dada4ee83c05ffc627f6d866bc",
+      "bytes": 9919
+    },
+    {
+      "filename": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "bytes": 4431
+    },
+    {
+      "filename": "END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+      "sha256": "20a845eff8bee3e9c533162df0b32ea96f9dd104a3cfec41efb3b0cf92d6e9cf",
+      "bytes": 8686
+    },
+    {
+      "filename": "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+      "bytes": 16597
+    },
+    {
+      "filename": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "bytes": 14121
+    },
+    {
+      "filename": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "bytes": 17789
+    },
+    {
+      "filename": "D_LEAF_ONE_CLEAR_COMMON_NEIGHBOR_BOUNDARY_REMAINDER_EXCLUSION.md",
+      "sha256": "4e4e6e09bcb61f8e9a4de8cc75341b99914136369f807936c0351c1aff8f85b5",
+      "bytes": 20109
+    },
+    {
+      "filename": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "sha256": "28810d74517a6f6a4a4e5b2972c5359bdf41559957bd7e33bcb5fb4b358685d5",
+      "bytes": 21371
+    },
+    {
+      "filename": "ROOTED_C3_334_PRIVATE_ADJACENT_LEAF_TWO_LOAD_C4_EXCLUSION.md",
+      "sha256": "9036a1a8c2b1c7e0f713eef3e0dc3bacbecb42d588332120cf9e04c27ffa98c5",
+      "bytes": 23810
+    },
+    {
+      "filename": "ROOTED_PARALLEL_DECORATED_TRIANGLE_THIRD_NEAR_UNIT_EXCLUSION.md",
+      "sha256": "989eae4dd32e7c48617b3e908b149daf847ed1292f484e48eb1e87fb75561426",
+      "bytes": 9170
+    }
+  ],
+  "existing_mathematical_dependency_bytes_unchanged": true,
+  "zero_count_result": "HIGH_RADIUS_PARALLEL_DECORATED_TRIANGLE_DISJOINT_BLOCK_EXCLUSION.md; outside closed-origin boundary-path extension and parallel-A/parallel-H disjoint-block interface only.",
+  "original_parent_types_and_coarse_C1_5_b1_remain_open": true,
+  "remaining_house_fan_families": [
+    "M6.B5L.HOUSE.ROOF.LAC.S",
+    "M6.B5L.HOUSE.ROOF.LABC.S",
+    "M6.B5L.HOUSE.HUB.LTC.S",
+    "M6.B5L.HOUSE.HUB.LTCB.S",
+    "M6.B5L.HOUSE.HUB.LTCB.D",
+    "M6.B5L.HOUSE.LOWER.LTD.S",
+    "M6.B5L.HOUSE.LOWER.LTAC.S",
+    "M6.B5L.HOUSE.LOWER.LTDC.S",
+    "M6.B5L.HOUSE.LOWER.LTDC.D",
+    "M6.B5L.FAN.ENDPOINT.L234.S",
+    "M6.B5L.FAN.INNER.L134.S",
+    "M6.B5L.FAN.INNER.L134.D"
+  ],
+  "open_coarse_cells": [
+    "C1.5.b1",
+    "C1.5.b2",
+    "C1.5.b3",
+    "C1.5.b4",
+    "C1.6.b0",
+    "C1.6.b1",
+    "C1.6.b2",
+    "C1.6.b3",
+    "C1.7.b0",
+    "C1.7.b1",
+    "C1.7.b2",
+    "C1.8.b0",
+    "C1.8.b1",
+    "C1.9.b0",
+    "C2.35.b0",
+    "C2.35.b1",
+    "C2.35.b2",
+    "C2.36.b0",
+    "C2.36.b1",
+    "C2.37.b0",
+    "C2.45.b0",
+    "C2.45.b1",
+    "C2.46.b0",
+    "C2.55.b0"
+  ],
+  "open_fine_identifiers": [
+    "T1.EXTRACT:",
+    "CAP.4",
+    "ROW.4",
+    "POCKET.ROUTING",
+    "QCAP.GLOBAL",
+    "CY.B5 GEOMETRY",
+    "CY.MULTILOAD",
+    "CY.MIXED.COMPLETE",
+    "C.1 GRAPH",
+    "C.2 LOAD",
+    "C.3 GEOMETRY",
+    "C.4 COMPLETION",
+    "C.5 SHARPNESS",
+    "C.6 EQUALITY",
+    "G3.0.ANNULAR.ROUTING",
+    "G3.0.DISTRIBUTED_ARTICULATIONS",
+    "G3.0.SHARP",
+    "G3.M.F.1 GRAPH",
+    "G3.M.F.1.a",
+    "G3.M.F.1.b",
+    "G3.M.F.1.c",
+    "G3.M.F.2 LOADS",
+    "G3.M.F.2.a",
+    "G3.M.F.2.b",
+    "G3.M.F.3 CONTACT FEATURES",
+    "G3.M.F.3.a",
+    "G3.M.F.3.b",
+    "G3.M.F.3.c",
+    "G3.M.F.4 JUNCTIONS",
+    "G3.M.F.5 COMPLETION ROUTING",
+    "G3.M.F.5.a",
+    "G3.M.F.5.b",
+    "G3.M.F.5.c",
+    "G3.M.F.5.d",
+    "G3.M.F.COVER",
+    "C.0 DOMAIN",
+    "C.1 EQUILIBRIUM",
+    "C.2 ROUTING",
+    "C.3 BOUND",
+    "C.3.a",
+    "C.3.b",
+    "C.3.c",
+    "C.4 EQUALITY",
+    "C.5 AUDIT",
+    "C.ALL",
+    "M6.B5L.HOUSE.ROOF.LAC.S",
+    "M6.B5L.HOUSE.ROOF.LABC.S",
+    "M6.B5L.HOUSE.HUB.LTC.S",
+    "M6.B5L.HOUSE.HUB.LTCB.S",
+    "M6.B5L.HOUSE.HUB.LTCB.D",
+    "M6.B5L.HOUSE.LOWER.LTD.S",
+    "M6.B5L.HOUSE.LOWER.LTAC.S",
+    "M6.B5L.HOUSE.LOWER.LTDC.S",
+    "M6.B5L.HOUSE.LOWER.LTDC.D",
+    "M6.B5L.FAN.ENDPOINT.L234.S",
+    "M6.B5L.FAN.INNER.L134.S",
+    "M6.B5L.FAN.INNER.L134.D",
+    "M6.B5L.HOUSE.ROOF",
+    "M6.B5L.HOUSE.HUB",
+    "M6.B5L.HOUSE.LOWER",
+    "M6.B5L.FAN.ENDPOINT",
+    "M6.B5L.FAN.INNER",
+    "M6.B5L.ALL",
+    "M6.B6.HEXAGON.TWO_OPPOSITE_EARS.BOUND",
+    "M6.B6.HEXAGON.D02.L014",
+    "M6.B6.HEXAGON.D02.L134",
+    "M6.B6.HEXAGON.D02.L135",
+    "M6.B6.HEXAGON.D02.L0134",
+    "M6.B6.HEXAGON.D02.L0135",
+    "M6.B6.HEXAGON.D02.L0145",
+    "M6.B6.HEXAGON.D02.L1345",
+    "M6.B6.HEXAGON.D02.L01345",
+    "M6.B6.HEXAGON.D02.ALL",
+    "M6.B6.HEXAGON.D03.L014",
+    "M6.B6.HEXAGON.D03.L024",
+    "M6.B6.HEXAGON.D03.L124",
+    "M6.B6.HEXAGON.D03.L0124",
+    "M6.B6.HEXAGON.D03.L0125",
+    "M6.B6.HEXAGON.D03.L1245",
+    "M6.B6.HEXAGON.D03.ALL",
+    "M6.B6.HEXAGON.D0203.L124",
+    "M6.B6.HEXAGON.D0203.L125",
+    "M6.B6.HEXAGON.D0203.L1234",
+    "M6.B6.HEXAGON.D0203.L1235",
+    "M6.B6.HEXAGON.D0203.L1245",
+    "M6.B6.HEXAGON.D0203.ALL",
+    "M6.B6.HEXAGON.D0204.L125",
+    "M6.B6.HEXAGON.D0204.L135",
+    "M6.B6.HEXAGON.D0204.L0135",
+    "M6.B6.HEXAGON.D0204.L1235",
+    "M6.B6.HEXAGON.D0204.L1245",
+    "M6.B6.HEXAGON.D0204.ALL",
+    "M6.B6.HEXAGON.D0235.L0134",
+    "M6.B6.HEXAGON.D0235.L0145",
+    "M6.B6.HEXAGON.D0235.ALL",
+    "M6.B6.HEXAGON.CHORD_PATH.L1245",
+    "M6.B6.HEXAGON.CHORD_PATH.ALL",
+    "M6.B6.HEXAGON.CENTRAL_TRIANGLE.L135",
+    "M6.B6.HEXAGON.CENTRAL_TRIANGLE.L0135",
+    "M6.B6.HEXAGON.CENTRAL_TRIANGLE.ALL",
+    "M6.B6.HEXAGON.BOUND",
+    "M6.B6.PENTAGON.H3.L024",
+    "M6.B6.PENTAGON.H3.L1234",
+    "M6.B6.PENTAGON.H3.L0124",
+    "M6.B6.PENTAGON.H4_D0.L124",
+    "M6.B6.PENTAGON.H4_D0.L0124",
+    "M6.B6.PENTAGON.H3_EXIT",
+    "M6.B6.PENTAGON.H4_D0_EXIT",
+    "M6.B6.ALL",
+    "G3.M6.ASSEMBLE",
+    "G3.M6.ALL",
+    "G3.M7.ALL",
+    "G3.M8.ALL",
+    "G3.M9.ALL",
+    "G3.M.ALL",
+    "G3.ALL.1",
+    "G3.ALL.3",
+    "G3.ALL.4",
+    "G3.ALL",
+    "O3.3.SHARP",
+    "O4.1",
+    "O4.2",
+    "O4.3 alternative",
+    "O5",
+    "X.3",
+    "G4.2",
+    "G4.2.a",
+    "G4.2.b",
+    "G4.2.c",
+    "G4.2.d",
+    "G4.2.e",
+    "G4.2.f",
+    "G4.3",
+    "G4.3.a",
+    "G4.3.b",
+    "G4.3.c",
+    "G5.1",
+    "G5.2",
+    "G5.3",
+    "G5.1.a",
+    "G5.1.b",
+    "G5.2.a",
+    "G5.2.b",
+    "G5.2.c",
+    "G5.3.a",
+    "G5.3.b",
+    "G5.3.c",
+    "G5.3.d",
+    "G5.4",
+    "G5.4.a",
+    "G5.4.b",
+    "G5.ALL",
+    "G6.1",
+    "G6.2",
+    "G6.3",
+    "G6.TL1 NEW",
+    "G6.TL2 NEW",
+    "G6.TL3 NEW",
+    "G6.TL4 NEW",
+    "G6.4",
+    "G6.5",
+    "G6.5.a",
+    "G6.5.b",
+    "G6.5.c",
+    "G6.5.d",
+    "G6.5.e",
+    "G6.5.f",
+    "G7.1",
+    "G7.2",
+    "G7.3",
+    "G7.4",
+    "G7.5 DEFERRED",
+    "G8.1",
+    "G8.2",
+    "G8.3",
+    "G8.4"
+  ],
+  "operative_lower_window_entry_reconciliation": {
+    "old": "The explicit lower-window import is LOWER_WINDOW_FROM_EIGHT.md; its inherited arithmetic-table dependencies remain declared. The combinatorial inventory itself has no radius premise. Full fine-grained exit contracts are in DEEP_GATED_ROADMAP.md.",
+    "new": "The independent lower-window entry is LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md (original W.3, R>2>79/40). LOWER_WINDOW_FROM_EIGHT.md remains an alternative with its inherited arithmetic-table dependencies; it is not a premise of the independent route. The combinatorial inventory itself has no radius premise. Full fine-grained exit contracts are in DEEP_GATED_ROADMAP.md."
+  },
+  "historical_checkpoints": [
+    "RECOVERED_TWO_CELLS_FOURTEEN_FINE_GATES_2026_10_27.json",
+    "INDEPENDENT_WINDOW_AND_UNIFORM_GEOMETRY_CHECKPOINT_2026_10_28.json"
+  ],
+  "not_claimed": [
+    "sharp global inequality",
+    "all original equality configurations",
+    "remaining full prerequisite audit",
+    "Lean integration",
+    "new coarse closure",
+    "S alternatives",
+    "other remaining D alternatives",
+    "duplicate roof AB.D or BC.D credit"
+  ],
+  "constraints": {
+    "all_nine_original_units_retained": true,
+    "complete_original_forces_degrees_normals_means_masks_zero_weights_retained": true,
+    "Lean_compilation": false,
+    "CI_dispatch": false,
+    "workflow_dispatch": false,
+    "merge": false,
+    "PR_remains_draft": true
+  },
+  "metadata": [
+    {
+      "filename": "CYCLIC_CELL_LEDGER.md",
+      "sha256": "0195d32039113ef47ced95b9252f3cc0666708d31128a1c953e37cc34c0843c8",
+      "bytes": 214906
+    },
+    {
+      "filename": "DEEP_GATED_ROADMAP.md",
+      "sha256": "204165a228086459035a7b8d06cdeed9825e657a80159c75084facdd75ceed24",
+      "bytes": 933301
+    },
+    {
+      "filename": "HANDOFF_PR11_2026_10_27_CURRENT.md",
+      "sha256": "772b05ef7492e3f1015216477c506750f5da8ef9bb1f64acfde12d1dd797aba7",
+      "bytes": 31684
+    },
+    {
+      "filename": "HANDOFF_PR11_2026_10_27_PUSHED.md",
+      "sha256": "8ee0026775dd48657ea9855cf3457e862096fb1cfcfdcd8a6e9c20e1ba222bb8",
+      "bytes": 9885
+    },
+    {
+      "filename": "README.md",
+      "sha256": "9c77cb843b3f88eed8564c5fd4d4a62f81c1b2c8fda959fbd319d06943a9dc86",
+      "bytes": 56698
+    },
+    {
+      "filename": "HANDOFF_PR11_2026_10_28_CURRENT.md",
+      "sha256": "7024c3e136fcf18018d57d3e356d609ca0779547993cf0a4bfbb0a80eb6f66bb",
+      "bytes": 7414
+    }
+  ]
+}

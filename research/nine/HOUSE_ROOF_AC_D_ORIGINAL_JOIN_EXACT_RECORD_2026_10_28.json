@@ -1,0 +1,93 @@
+{
+  "schema": "pr11-whole-original-house-roof-ac-d-v1",
+  "date": "2026-10-28",
+  "author": "six_body",
+  "status": "complete source frozen for root and separate independent review; no ledger change",
+  "source": {
+    "name": "HOUSE_ROOF_AC_D_COMPLETE_MOMENT_EXCLUSION.md",
+    "path": "/workspace/scratch/7d553350ce2a/six_body/HOUSE_ROOF_AC_D_COMPLETE_MOMENT_EXCLUSION.md",
+    "sha256": "db795b7a1a287d7e8e422bd80f3ea04e714d9d98af88226e9c16ad757b7e0f5a",
+    "bytes": 18517
+  },
+  "direct_operative_dependencies": [
+    {
+      "name": "D_LEAF_ONE_CLEAR_COMMON_NEIGHBOR_BOUNDARY_REMAINDER_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/six_body/D_LEAF_ONE_CLEAR_COMMON_NEIGHBOR_BOUNDARY_REMAINDER_EXCLUSION.md",
+      "sha256": "4e4e6e09bcb61f8e9a4de8cc75341b99914136369f807936c0351c1aff8f85b5",
+      "bytes": 20109
+    },
+    {
+      "name": "D_LEAF_COMMON_TRIANGLE_NEIGHBOR_FULL_WINDOW_QUARTER_DISK.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/D_LEAF_COMMON_TRIANGLE_NEIGHBOR_FULL_WINDOW_QUARTER_DISK.md",
+      "sha256": "c39605b955d98f7fbe8499cf0a06dc4cc780a7dada4ee83c05ffc627f6d866bc",
+      "bytes": 9919
+    },
+    {
+      "name": "D_LEAF_SHALLOW_SIDE_BOUNDARY_FULL_WINDOW_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/D_LEAF_SHALLOW_SIDE_BOUNDARY_FULL_WINDOW_EXCLUSION.md",
+      "sha256": "ca7c3f4b32e45fc0c118bd766f438fce3019b0b44220604e33bc842a504ac670",
+      "bytes": 9842
+    },
+    {
+      "name": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "bytes": 14902
+    },
+    {
+      "name": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "bytes": 4431
+    },
+    {
+      "name": "END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+      "sha256": "20a845eff8bee3e9c533162df0b32ea96f9dd104a3cfec41efb3b0cf92d6e9cf",
+      "bytes": 8686
+    },
+    {
+      "name": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "bytes": 14121
+    },
+    {
+      "name": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "bytes": 17789
+    }
+  ],
+  "original_fine_id": "M6.B5L.HOUSE.ROOF.LAC.D",
+  "original_line": "- [ ] **M6.B5L.HOUSE.ROOF.LAC.D** Entire D-leaf type at house roof T with block loadsAC; retain the full side-interior root slider and every block mask, force, mean and three-extra completion under M6.B5L.RETAINED_CONTRACT.",
+  "proposed_accepted_line": "- [x] **M6.B5L.HOUSE.ROOF.LAC.D** HOUSE_ROOF_AC_D_COMPLETE_MOMENT_EXCLUSION.md excludes the full original D-roof AC family: the actual B2 normal chord and a complete far-body port theorem give private C4 moment order, forcing the full unloaded D3 star into contradiction. All original degrees, loads, means, physical masks and three completing squares remain.",
+  "expected_fine_delta_after_acceptance": 1,
+  "expected_coarse_delta": 0,
+  "original_roadmap": {
+    "name": "DEEP_GATED_ROADMAP.md",
+    "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/DEEP_GATED_ROADMAP.md",
+    "sha256": "b75eadd26fdf56f7503a73484408a63f60db6a4471575713eaab6500430edc06",
+    "bytes": 930336
+  },
+  "explicitly_not_assumed": [
+    "Physical circle clearance at unloaded B or D",
+    "D_epsilon avoidance at true transmitter B",
+    "Degree-two force equation at loaded A3 or unloaded D3",
+    "Intact petal at T",
+    "A radius-two lower bound or measure certificate",
+    "Root origin interior at any body other than the actual genuine D root T"
+  ],
+  "new_proved_kernels": [
+    "Far-body port order for an actual unit at distance>sqrt2epsilon, with arbitrary contained actual neighbors including near neighbors.",
+    "Actual unloaded B2 mean-to-mean normal chord of full width>=1.",
+    "Whole radial-chord exclusion using the actual boundary endpoint norm>=r and containing-neighbor support<=d.",
+    "Strict positive angular contribution through B for any directed positive-moment passage."
+  ],
+  "not_claimed": [
+    "Roof AC.S",
+    "Any whole original coarse cell",
+    "Previously checked roof AB.D or BC.D as new credit"
+  ],
+  "validation": "Complete direct hand argument, exact source pins and original-ID lookup; no Lean compilation, CI, numerical pose, scalar certificate, mean replacement, normal reselection, force deletion, ledger mutation or remote action."
+}

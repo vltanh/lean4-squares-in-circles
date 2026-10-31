@@ -1,0 +1,328 @@
+{
+  "status": "PROPOSED_COMPLETE_AUTHOR_RECORD_NOT_INDEPENDENT_REVIEW",
+  "author": "broad_s_families continuation",
+  "contribution": "New complete tilted sign cover, whole original min-u face, entire original lower-mean entry and strict-corner tilt restriction by this author. Horizontal reach/top-point equality reproduced with published ea076 provenance; root did not supply a discovery step to this source.",
+  "exact_comparison_commit": "a5f3922a9c12830b76f2a7ee9dd4dbf1024f85b5",
+  "actual_comparison_git_tree": "2617ed629140d69171c86bfa68b0ee5784ab8c8c",
+  "tree_payload_sha_field_semantics": "GitHub recursive tree-by-commit API identifier; actual Git tree given separately",
+  "target": {
+    "path": "continuation_broad_c62/research/nine/TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+    "bytes": 12803,
+    "lines": 305,
+    "sha256": "be0af78eefcfba0b4c00c62c748bcd6c6dc8a294128c1f13272c5c2d7ea8bb5c",
+    "git_blob": "4bd9aefa121164dffe191b3167ec1ef05d0f1055",
+    "role": "complete new source",
+    "read_scope": "complete source text"
+  },
+  "input_identities": [
+    {
+      "path": "current_315_base/research/nine/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "bytes": 13651,
+      "lines": 302,
+      "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "git_blob": "f1e09cf1f62a2bb6305bd2c20e7d49be2fffc0ae",
+      "role": "operative original-domain entry; whole source, both leaf charts and C force alternatives",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_a5f_base/research/nine/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "bytes": 20196,
+      "lines": 511,
+      "sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334",
+      "git_blob": "75fa5e0b4a97ec854ecd4a3af0ef03799c78a5cb",
+      "role": "operative whole q>=3/8 exit and reproduced geometric reach provenance",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 12841,
+      "lines": 275,
+      "sha256": "9a0c704df3817a413639a98fbae8864ef58c583811735ac5c6816f69e1b0f636",
+      "git_blob": "d007b7ee912a045bc525ad5bb45e3d80683b1aa1",
+      "role": "complete separate upstream independent review; not a substitute for source read",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_a5f_base/research/nine/REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+      "bytes": 13485,
+      "lines": 294,
+      "sha256": "167e5f8a305f33944e798668394d1d3efd92b4626968f3ad75dea494f371c154",
+      "git_blob": "ebc03976c208188226e8745d4ea2d2f9ea9e53b8",
+      "role": "complete separate upstream independent review; not a substitute for source read",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "bytes": 17104,
+      "lines": 345,
+      "sha256": "fb99b163e4450df464fcc095ac6aea0a3294624fcb329ffbc515efda6a0bea28",
+      "git_blob": "73cfd49b7ba738e5cd85a057d98358ea1c3b36d4",
+      "role": "published full original-domain adoption",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_a5f_base/research/nine/ADOPTION_THREE_BROAD_CONTINUOUS_CAP_OWNER_AND_SHIFT_TOOLS_ROOT_2026_10_29.md",
+      "bytes": 8044,
+      "lines": 43,
+      "sha256": "865db6ecd1b9ee6774a11be75edd4f73b59e132a21bc9df1708cc3169183c36e",
+      "git_blob": "4c1a4718606ec73576d039a4e91ae1401f7def57",
+      "role": "published entire upper-mean owner-union adoption",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/ADOPTION_THREE_BROAD_CONTINUOUS_CAP_OWNER_AND_SHIFT_TOOLS_ROOT_2026_10_29.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/ALIGNED_CHANNEL_LOWER_BYPASS_COMMON_NEIGHBOR_VERTICAL_NORMAL_OBSTRUCTION.md",
+      "bytes": 14534,
+      "lines": 296,
+      "sha256": "2f5514f91ba10b88d0703802eca3b459e82e0d639533d3b178f56a00fd7367cd",
+      "git_blob": "2bd553232216877d16f6aa665be060e5fe850d6e",
+      "role": "full provenance only; old aligned-A theorem not imported into tilted caller",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/ALIGNED_CHANNEL_LOWER_BYPASS_COMMON_NEIGHBOR_VERTICAL_NORMAL_OBSTRUCTION.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+      "bytes": 15961,
+      "lines": 383,
+      "sha256": "4f8da84dcc3f1fa9b8f5e231486751b134b3438905e8271f6f3484a3f10d275a",
+      "git_blob": "69eb2e51f2a8fe607dbac1d58ae6be85fbb6eaa2",
+      "role": "full corroborating provenance for literal two leaf charts; already encapsulated by operative entry",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "bytes": 17930,
+      "lines": 427,
+      "sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143",
+      "git_blob": "4625dfa796aa6a8eb1166efd326b55f0b87afda1",
+      "role": "full corroborating provenance for C masks, positive coefficients and actual Q interval; encapsulated by operative entry",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "exact_a5f_tree_blob_match": true
+    }
+  ],
+  "complete_math_exports": [
+    "Radius-free all-mean actual AD signs n_x>=0,n_y<=0 and one entire A support face.",
+    "Exact whole-D rectangle when P belongs to D, and complete strict-NE third-support exclusion below P.",
+    "Actual D must be tilted to A whenever original AD=-u, including all original side means.",
+    "Literal both-leaf/both-C original TC reduction; no entire TC conclusion.",
+    "Whole strict AD-corner tilt bound t<sqrt(2)-1,a>9/10 and owned-leaf q>(9/2)epsilon."
+  ],
+  "exact_scalar_checks": [
+    {
+      "identity": "2-(281/200)^2",
+      "exact_value": "1039/40000",
+      "positive": true
+    },
+    {
+      "identity": "(121/85)^2-2",
+      "exact_value": "191/7225",
+      "positive": true
+    },
+    {
+      "identity": "3/8-31/120",
+      "exact_value": "7/60",
+      "positive": true
+    },
+    {
+      "identity": "9/10-3/8-1/2",
+      "exact_value": "1/40",
+      "positive": true
+    },
+    {
+      "identity": "2*(9/2)/(1+(9/2)^2)=36/85",
+      "equal": true
+    }
+  ],
+  "symbolic_mathematical_reconstructions": [
+    {
+      "name": "proper root axes",
+      "statement": "det((-a,t),(-t,-a))=a^2+t^2=1; u.v=0"
+    },
+    {
+      "name": "world AD sign",
+      "statement": "n.u=-a*n_x+t*n_y<0 for n_x>=0,n_y<=0,n!=0"
+    },
+    {
+      "name": "coincident cone",
+      "statement": "(-rho*u-omega*v)_y=-rho*t+omega*a"
+    },
+    {
+      "name": "strict far cone",
+      "statement": "(-rho*u+omega*v)_x=rho*a-omega*t"
+    },
+    {
+      "name": "parallel-D maximum y",
+      "statement": "max_D y=p*t-k*a; P_y=p*t-b*a"
+    },
+    {
+      "name": "parallel-D maximum x",
+      "statement": "max_D x=-a*(p-1)-t*k<=h+a<h+1"
+    },
+    {
+      "name": "strict corner displacement",
+      "statement": "Q_x-(P+v)_x=1+t"
+    },
+    {
+      "name": "tilt endpoint",
+      "statement": "1-(sqrt(2)-1)^2=2*sqrt(2)-2"
+    },
+    {
+      "name": "owned leaf tilt monotonicity",
+      "statement": "d/dk[2k/(1+k^2)]=2(1-k^2)/(1+k^2)^2<0 for k>1"
+    }
+  ],
+  "original_graph": {
+    "edges": [
+      "AT",
+      "DT",
+      "AD",
+      "AB",
+      "BC",
+      "CD",
+      "AL"
+    ],
+    "degrees": {
+      "A": 4,
+      "D": 3,
+      "B": 2,
+      "C": 2,
+      "T": 2,
+      "L": 1
+    },
+    "loaded": [
+      "T",
+      "C",
+      "L"
+    ],
+    "unloaded": [
+      "A",
+      "D",
+      "B"
+    ],
+    "genuine_leaf": "L",
+    "all_actual_units": 9,
+    "actual_component_units": 6,
+    "arbitrary_completion_units": 3,
+    "no_BD": true
+  },
+  "section_dag": {
+    "nodes": [
+      "actual_geometry",
+      "strict_horizontal_reach",
+      "upward_normal_exclusion",
+      "whole_support_face",
+      "top_point_equality",
+      "coincident_rigidity",
+      "owned_parallel_frame_exclusion",
+      "6f5634_entry",
+      "ea076_upper_exit",
+      "literal_TC_reduction",
+      "strict_corner_tilt"
+    ],
+    "edges": [
+      [
+        "actual_geometry",
+        "strict_horizontal_reach"
+      ],
+      [
+        "actual_geometry",
+        "upward_normal_exclusion"
+      ],
+      [
+        "strict_horizontal_reach",
+        "upward_normal_exclusion"
+      ],
+      [
+        "upward_normal_exclusion",
+        "whole_support_face"
+      ],
+      [
+        "actual_geometry",
+        "top_point_equality"
+      ],
+      [
+        "top_point_equality",
+        "coincident_rigidity"
+      ],
+      [
+        "actual_geometry",
+        "owned_parallel_frame_exclusion"
+      ],
+      [
+        "6f5634_entry",
+        "literal_TC_reduction"
+      ],
+      [
+        "ea076_upper_exit",
+        "literal_TC_reduction"
+      ],
+      [
+        "whole_support_face",
+        "literal_TC_reduction"
+      ],
+      [
+        "coincident_rigidity",
+        "literal_TC_reduction"
+      ],
+      [
+        "owned_parallel_frame_exclusion",
+        "literal_TC_reduction"
+      ],
+      [
+        "literal_TC_reduction",
+        "strict_corner_tilt"
+      ]
+    ]
+  },
+  "scope_and_endpoint_guards": [
+    "No radius, load, degree, force balance, torque, or circle-mask hypothesis in Theorems A-C.",
+    "All means in full actual closed physical contact sets; no midpoint replacement.",
+    "Original normal held fixed; no selector convention needed for new geometric proof.",
+    "Q is an actual point of the same D, not a virtual unit or force mean.",
+    "Q_x>=h+1 and max_D y<=q are literal hypotheses, not inferred from graph alone.",
+    "A is strictly tilted with a,t>0; aligned endpoints not silently included.",
+    "All side endpoints included in strict reach and maximum-y arguments.",
+    "The original owned-AD sigma=0 row overlaps the coincident cover and is not omitted.",
+    "The strict (-u,+v) row retains n_x=0 and its exact weak slope bound.",
+    "Theorem B applies when P belongs to D even if AD originally has another mean.",
+    "Theorem B forces the whole actual D rectangle and actual Q_x equality.",
+    "Strict Northeast Q means an actual original maximum support of D.",
+    "D-parallel exclusion uses no false degree-two equation at D.",
+    "No AT, DT, or AC physical premise is required by geometric core.",
+    "No boundary status is assigned to unloaded B.",
+    "True A4,D3,B2,C2,T2,L1 preserved; no BD edge manufactured.",
+    "Both physical C coefficients positive only by the full accepted original entry.",
+    "C radial shape is not substituted for a one-force leaf equation.",
+    "Both C force rows remain in the general reduction.",
+    "Nonparallel C excludes all actual P_AB membership in D, not only one selected application.",
+    "Parallel-C coincidence remains open after this source.",
+    "Strict-corner diameter row keeps actual Q_y in [-1/2,0); no fixed false corner in parallel C.",
+    "The q<3/8 caller bound is the complete original complement of ea076, not an invented fine ID.",
+    "The upper-adjacent chart has q<31/120<3/8 literally.",
+    "No weighted radial T mean is placed in A.",
+    "No T parallel exception is removed by this source.",
+    "No physical-two proper concurrence is asserted inside its unit.",
+    "No completion unit is removed; all nine actual units remain.",
+    "No new whole-row flag, parent/coarse closure, certificate or retirement.",
+    "No numerical geometric sampling, finite packing certificate, Lean/Lake/CI or remote write."
+  ],
+  "new_whole_original_flags": 0,
+  "new_computational_certificates": 0,
+  "certificate_retirements": 0,
+  "remaining": "Full nonparallel-T, owned-AD and strict-corner geometry in two original leaf charts; parallel-C coincidence not excluded. H4 parallel-T research remains a separate proposed source until separately reviewed and adopted."
+}

@@ -1,0 +1,723 @@
+{
+  "status": "PROPOSED_COMPLETE_AUTHOR_RECORD_NOT_INDEPENDENT_REVIEW",
+  "author": "broad_s_families continuation",
+  "contribution": "New strict triple-point tangent-sector theorem, full D3 opposite-vertex consequence, whole returned-unit quadrant and both complete original C-branch exits by this author. Root received the complete candidate and requested a frozen reviewable source; that is not independent acceptance.",
+  "exact_comparison_commit": "a5f3922a9c12830b76f2a7ee9dd4dbf1024f85b5",
+  "actual_comparison_git_tree": "2617ed629140d69171c86bfa68b0ee5784ab8c8c",
+  "tree_payload_sha_field_semantics": "recursive tree-by-commit API identifier; actual Git tree given separately",
+  "target": {
+    "path": "continuation_broad_c62/research/nine/STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_DIAGONAL_AND_HOUSE_RETURN_EXCLUSION.md",
+    "bytes": 17221,
+    "lines": 383,
+    "sha256": "44fa42fa2f33468495fb00d6d0c82287afc25cbd0416b28cd81e6d96ba0a6a71",
+    "git_blob": "1cd7951384311653b54e25926e5fb26f546bdaca",
+    "role": "complete new mathematical source",
+    "read_scope": "complete source text"
+  },
+  "input_identities": [
+    {
+      "path": "current_315_base/research/nine/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "bytes": 13651,
+      "lines": 302,
+      "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "git_blob": "f1e09cf1f62a2bb6305bd2c20e7d49be2fffc0ae",
+      "role": "operative entire original-domain residual, graph, actual leaf and C force cover",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_a5f_base/research/nine/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "bytes": 20196,
+      "lines": 511,
+      "sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334",
+      "git_blob": "75fa5e0b4a97ec854ecd4a3af0ef03799c78a5cb",
+      "role": "operative entire original q>=3/8 exit, used only for the complementary q<3/8 domain",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "bytes": 17930,
+      "lines": 427,
+      "sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143",
+      "git_blob": "4625dfa796aa6a8eb1166efd326b55f0b87afda1",
+      "role": "operative complete actual C mask/force cover and true D3 touching-return strict whole-body support",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "bytes": 23353,
+      "lines": 555,
+      "sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78",
+      "git_blob": "f6afbca0c7607933fe807064a02bc512d921a9e0",
+      "role": "operative actual one-application and two-distinct-nonparallel alternatives, including physical-two exterior concurrence",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 12841,
+      "lines": 275,
+      "sha256": "9a0c704df3817a413639a98fbae8864ef58c583811735ac5c6816f69e1b0f636",
+      "git_blob": "d007b7ee912a045bc525ad5bb45e3d80683b1aa1",
+      "role": "complete separate upstream independent review, not a replacement for the mathematical source read",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_a5f_base/research/nine/REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+      "bytes": 13485,
+      "lines": 294,
+      "sha256": "167e5f8a305f33944e798668394d1d3efd92b4626968f3ad75dea494f371c154",
+      "git_blob": "ebc03976c208188226e8745d4ea2d2f9ea9e53b8",
+      "role": "complete separate upstream independent review, not a replacement for the mathematical source read",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+      "bytes": 16080,
+      "lines": 332,
+      "sha256": "f917697f13c574c533658ea108b0c770d4c1c949fc463ba996511e890e2d62ae",
+      "git_blob": "a35d7aa4fe1e422aa109ab9414dc5e5c6e08fe84",
+      "role": "complete separate upstream independent review, including original degrees, force masks and both zero coefficients",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/REVIEW_LOADED_TWO_APPLICATION_BOUNDARY_FREE_DICHOTOMY_INDEPENDENT_2026_10_28.md",
+      "bytes": 21488,
+      "lines": 494,
+      "sha256": "0d71302c571280dd0df9f9b16470d668580ad1fb57ebd306468fb2a8b04d0bc5",
+      "git_blob": "ef6bc56db4c37b7c3fde3bfe5d1a2e0197aa487c",
+      "role": "complete separate upstream independent review, including one-application and both physical masks",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/REVIEW_LOADED_TWO_APPLICATION_BOUNDARY_FREE_DICHOTOMY_INDEPENDENT_2026_10_28.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "bytes": 17104,
+      "lines": 345,
+      "sha256": "fb99b163e4450df464fcc095ac6aea0a3294624fcb329ffbc515efda6a0bea28",
+      "git_blob": "73cfd49b7ba738e5cd85a057d98358ea1c3b36d4",
+      "role": "complete published adoption of the exact full original-domain entry",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_a5f_base/research/nine/ADOPTION_THREE_BROAD_CONTINUOUS_CAP_OWNER_AND_SHIFT_TOOLS_ROOT_2026_10_29.md",
+      "bytes": 8044,
+      "lines": 43,
+      "sha256": "865db6ecd1b9ee6774a11be75edd4f73b59e132a21bc9df1708cc3169183c36e",
+      "git_blob": "4c1a4718606ec73576d039a4e91ae1401f7def57",
+      "role": "complete published adoption of the exact whole upper-mean owner union",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/ADOPTION_THREE_BROAD_CONTINUOUS_CAP_OWNER_AND_SHIFT_TOOLS_ROOT_2026_10_29.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/ADOPTION_BROADER_CENTERED_ARCS_AND_TWO_FULL_STAR_REDUCTIONS_ROOT_2026_10_28.md",
+      "bytes": 9911,
+      "lines": 186,
+      "sha256": "cf84585f5eba59a6df2e61a657f65a62248f74d0064d8a43907947ba9f4dc503",
+      "git_blob": "df552f0a8f51898f5c76c8f7739ac24fa55294de",
+      "role": "complete published adoption of the high-support physical-mask and original full-star reduction",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/ADOPTION_BROADER_CENTERED_ARCS_AND_TWO_FULL_STAR_REDUCTIONS_ROOT_2026_10_28.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/ADOPTION_COMPLETE_ROOF_INTERFACES_AND_BOUNDARY_FREE_STAR_ROOT_2026_10_28.md",
+      "bytes": 13739,
+      "lines": 254,
+      "sha256": "aa52da0dee41ff228f68e9e4b9d8982f6d5ab89cfd0f58c62b53f84158a77678",
+      "git_blob": "689687ea7118aa552b8eb9d7f2740fb0c1826181",
+      "role": "complete published adoption of the boundary-free two-application theorem",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/ADOPTION_COMPLETE_ROOF_INTERFACES_AND_BOUNDARY_FREE_STAR_ROOT_2026_10_28.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_c62_base/research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "bytes": 17993,
+      "lines": 399,
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "git_blob": "fd91cf5e38a8b9eb877710cab9d4dd1575f9bc22",
+      "role": "published force-contract provenance; the entire operative original equations are printed in the new source",
+      "read_scope": "identity and force-contract provenance only; no new global stress/selector audit claimed",
+      "published_path": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_a67_base/research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "bytes": 14121,
+      "lines": 326,
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "git_blob": "723228d77626f68c3ded2e3e897a21d4f1ed7ccc",
+      "role": "operative original prescribed strict vertex/vertex convention; no new normal selection, atom thinning, global compatibility claim or embedding operation",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "exact_a5f_tree_blob_match": true
+    }
+  ],
+  "operative_mathematical_inputs": 5,
+  "complete_separate_original_entry_reviews_read": 4,
+  "complete_separate_original_entry_adoptions_read": 4,
+  "new_complete_exports": [
+    {
+      "scope": "Radius-free strict host corner with a real third unit: both contacted units have an actual vertex there; prescribed strict singleton normals then apply literally."
+    },
+    {
+      "scope": "Full unloaded D3 whose two real returns share that corner: the complete original third force exposes the opposite D vertex, including arbitrary original DT means on a side containing the corner."
+    },
+    {
+      "scope": "Actual southwest opposite diagonal K>1,W>0 gives a whole upper-halfplane third unit and a continuous all-orientation opposite-corner radius lower bound."
+    },
+    {
+      "scope": "Entire original owned-leaf TC strict-common-AD/AT-corner feature, both complete original C force rows and all original D/T owners, means, masks and coincidences."
+    }
+  ],
+  "exact_scalar_checks": [
+    {
+      "name": "sqrt2 < 17/12: (17/12)^2-2",
+      "exact_value": "1/144",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "a>9/10: 1-(5/12)^2-(9/10)^2",
+      "exact_value": "59/3600",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "actual world vertical separation: 9/10-3/8-1/2",
+      "exact_value": "1/40",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "parallel C force ratio: 9/10-3/8",
+      "exact_value": "21/40",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "strict ratio margin above one-half",
+      "exact_value": "1/40",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "full diagonal derivative: 9/10-7/8",
+      "exact_value": "1/40",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "full diagonal endpoint tilt",
+      "exact_value": "13/40",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "q upper value from actual radial leaf",
+      "exact_value": "4/39",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "V lower value",
+      "exact_value": "35/39",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "q upper lies in the original interval",
+      "exact_value": "85/312",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "positive K lower decomposition: 1/2-25/114",
+      "exact_value": "16/57",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "complete t/(1+a) comparison value",
+      "exact_value": "25/114",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "actual W positive floor",
+      "exact_value": "1/8",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "corner norm strict upper-radius reserve",
+      "exact_value": "2441399/9734400",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "V greater than epsilon throughout the sharpened branch",
+      "exact_value": "229/260",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "properness lower squared radius",
+      "exact_value": "9/4",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "properness upper comparison using sqrt2>7/5",
+      "exact_value": "1899/1280",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "sqrt2 lower comparison",
+      "exact_value": "1/25",
+      "positive": true,
+      "expected_exact_match": true
+    }
+  ],
+  "exact_symbolic_checks": [
+    {
+      "name": "actual leaf unit axes",
+      "left": "4*r**2/(r**2 + 1)**2 + (1 - r**2)**2/(r**2 + 1)**2",
+      "right": "1",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "actual leaf first root identity",
+      "left": "2*q*r/(r**2 + 1)",
+      "right": "q*r*((1 - r**2)/(r**2 + 1) + 1)",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "actual leaf second root identity",
+      "left": "2*q*r**2/(r**2 + 1)",
+      "right": "q*(-(1 - r**2)/(r**2 + 1) + 1)",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "actual common corner world x",
+      "left": "-q*r*(1 - r**2)/(r**2 + 1) - 2*r*(1 - q)/(r**2 + 1)",
+      "right": "q*r - 2*r/(r**2 + 1)",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "actual common corner world y",
+      "left": "2*q*r**2/(r**2 + 1) - (1 - q)*(1 - r**2)/(r**2 + 1)",
+      "right": "q - (1 - r**2)/(r**2 + 1)",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "full A4 common-corner moment cancellation",
+      "left": "-mu*q*(1 - r**2)/(r**2 + 1) + (1 - q)*(eta + rho)",
+      "right": "-mu*q*(1 - r**2)/(r**2 + 1) + (1 - q)*(eta + rho)",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "parallel C full T horizontal resultant after full torque",
+      "left": "a*nu - eta - rho",
+      "right": "a*nu - eta - rho",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "parallel C full T vertical resultant after full vector balance",
+      "left": "mu*t + nu*t",
+      "right": "t*(mu + nu)",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "parallel-C proper ray first coefficient",
+      "left": "-2*q*r**2/(r**2 + 1) + (1 - q)*(1 - r**2)/(r**2 + 1)",
+      "right": "-q + (1 - r**2)/(r**2 + 1)",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "parallel-C proper ray second coefficient",
+      "left": "2*q*r**2/(r**2 + 1) + q*(1 - r**2)/(r**2 + 1)",
+      "right": "q",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "full properness inequality rearrangement",
+      "left": "-2*q*r**2*(mu + nu)/(r**2 + 1) + (1 - q)*(1 - r**2)*(-mu*q/(1 - q) + nu)/(r**2 + 1)",
+      "right": "-mu*q + nu*(-q + (1 - r**2)/(r**2 + 1))",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "world diameter complete expansion",
+      "left": "(2*r/(r**2 + 1) + 1)**2 + (-q + (1 - r**2)/(r**2 + 1) - 1/2)**2",
+      "right": "4*r/(r**2 + 1) - 2*(1 - r**2)*(q + 1/2)/(r**2 + 1) + (q + 1/2)**2 + 2",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "nonparallel-C opposite-diagonal scalar equality",
+      "left": "-a**2 - t**2 + (t + 1)**2 + (a - q - 1/2)**2 - 1",
+      "right": "-2*a*(q + 1/2) + 2*t + (q + 1/2)**2",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "actual Q-S u coordinate",
+      "left": "-q*r - r/(r**2 + 1) - (1 - r**2)*(q*r + 1)/(r**2 + 1)",
+      "right": "-2*r*(q + 1/2)/(r**2 + 1) - (1 - r**2)/(r**2 + 1)",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "actual Q-S v coordinate",
+      "left": "q - 2*r*(q*r + 1)/(r**2 + 1) + (1 - r**2)/(2*(r**2 + 1)) - 1",
+      "right": "q - 2*r*(q*r + 1)/(r**2 + 1) + (1 - r**2)/(2*(r**2 + 1)) - 1",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "actual K lower decomposition",
+      "left": "2*r*(q + 1/2)/(r**2 + 1) + (1 - r**2)/(r**2 + 1) - 1",
+      "right": "2*r*(q - 2*r/((r**2 + 1)*((1 - r**2)/(r**2 + 1) + 1)) + 1/2)/(r**2 + 1)",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "world and leaf opposite-diagonal lengths",
+      "left": "(2*r*(q + 1/2)/(r**2 + 1) + (1 - r**2)/(r**2 + 1))**2 + (-q + 2*r*(q*r + 1)/(r**2 + 1) - (1 - r**2)/(2*(r**2 + 1)) + 1)**2",
+      "right": "(2*r/(r**2 + 1) + 1)**2 + (-q + (1 - r**2)/(r**2 + 1) - 1/2)**2",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "actual D inward axis sum",
+      "left": "-K",
+      "right": "-K",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "actual D inward vertical axis sum",
+      "left": "-W",
+      "right": "-W",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "actual D axis norm from diagonal",
+      "left": "(K/2 - W/2)**2 + (K/2 + W/2)**2",
+      "right": "K**2/2 + W**2/2",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "actual opposite T corner expansion",
+      "left": "(C - S0 + epsilon)**2 + (C + S0 + V)**2",
+      "right": "2*C**2 + 2*S0**2 + V**2 + 2*V*(C + S0) + epsilon**2 + 2*epsilon*(C - S0)",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "whole top-quadrant norm comparison first reserve",
+      "left": "2*V*(C + S0) + 2*epsilon*(C - S0) - (C + S0)*(2*V - 2*epsilon)",
+      "right": "4*C*epsilon",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "whole top-quadrant norm comparison second reserve",
+      "left": "V**2 + epsilon**2 - (1 - epsilon)**2 + (C + S0)*(2*V - 2*epsilon) - (V + 1)**2 + 2",
+      "right": "(2*V - 2*epsilon)*(C + S0 - 1)",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "nonnegative top axes have sum at least one by squared identity",
+      "left": "(C + S0)**2 - 1",
+      "right": "2*C*S0",
+      "constraint": "C**2 + S0**2=1",
+      "exact_symbolic_difference": "0 modulo the circle identity"
+    }
+  ],
+  "literal_original_graph": {
+    "edges": [
+      [
+        "A",
+        "T"
+      ],
+      [
+        "D",
+        "T"
+      ],
+      [
+        "A",
+        "D"
+      ],
+      [
+        "A",
+        "B"
+      ],
+      [
+        "B",
+        "C"
+      ],
+      [
+        "C",
+        "D"
+      ],
+      [
+        "A",
+        "L"
+      ]
+    ],
+    "true_degrees": {
+      "A": 4,
+      "B": 2,
+      "C": 2,
+      "D": 3,
+      "T": 2,
+      "L": 1
+    },
+    "positive_circle_loads": [
+      "T",
+      "C",
+      "L"
+    ],
+    "unloaded": [
+      "A",
+      "B",
+      "D"
+    ],
+    "actual_unit_count": 9,
+    "other_actual_units": 3,
+    "BD_edge": false
+  },
+  "complete_domain_guards": [
+    "The tangent-sector statement uses actual triple-point contact and pairwise interior-disjoint unit squares.",
+    "No third unit can have interior at the shared point; its local angular sector has width at least pi/2.",
+    "Strict host exposure places both A rays strictly inside the halfplane opposite a putative D side interior.",
+    "The two remaining angular gaps each have width strictly below pi/2, so the connected third-unit quadrant fits neither.",
+    "Both original AD and AT normals strictly expose S in A; both physical intersections with A are the singleton S.",
+    "The unchanged prescribed vertex/vertex normal then strictly exposes S in D and T; no original normal is replaced.",
+    "The original DT mean need not equal S. Its original supporting face contains S because S lies in the actual intersection.",
+    "All positive D3 magnitudes remain; strict DA projections plus weak DT projections force strict positive DC projections.",
+    "The actual DC support is an opposite vertex, not an artificial extremal point chosen in place of a side mean.",
+    "The radius-free common-corner diagonal theorem has no boundary premise at A,T,C and no force premise at those bodies.",
+    "The quadrant proof requires K>1,W>0,K^2+W^2=2; it is not asserted for another diagonal orientation.",
+    "Both boundary rays and coincident side-ray endpoints remain in the whole-upper-T quadrant conclusion.",
+    "The opposite-corner bound includes both aligned orientations and all intervening rotations.",
+    "The original nine units and actual three extras are retained without an allocation claim.",
+    "The literal graph retains A4,D3,B2,C2,T2,L1 and has no BD edge.",
+    "The actual B is unloaded, and both C coefficients stay strictly positive as supplied by the full current entry.",
+    "The true A4 equation contains AL, AB, AD and AT; the exact common-corner moment identity retains both strict forces.",
+    "The strict-AD tilt bound is rederived from actual D points and not imported by analogy from another feature.",
+    "The complete parallel C mean interval -1/2<=y<0 is retained.",
+    "Parallel T is excluded directly from the opposite signs of its AT vector versus its positive-positive full resultant.",
+    "One-application and distinct-nonparallel T alternatives are both included; the proper ray can have zero length.",
+    "The physical-two T concurrence may be outside T. No inside assertion is used.",
+    "Every physical T circle mask and individual zero coefficient is retained in the parallel branch.",
+    "The nonparallel branch uses the original C corner Q_world=(d,-1/2), not a parallel-row substitute.",
+    "The nonparallel proof makes no hypothesis on original D-axis ownership or the original DT mean.",
+    "The actual T need not be boundary for the final nonparallel corner contradiction; containment of every actual corner suffices.",
+    "Theorem 2 supplies a whole closed unit halfplane, not a statement only about a center or a radial force.",
+    "The scalar bound t>13/40 covers the entire actual k0 interval without numerical search.",
+    "The strict upper-radius corner reserve is exact and uniform over the complete literal original domain.",
+    "No be0, d92e, a813 or new selected-endpoint corollary is an operative input.",
+    "The strict vertex/vertex convention is a premise of the same original selected certificate; no new foundation compatibility audit is claimed.",
+    "The whole original TC.S row, other AT features and upper-adjacent genuine-leaf chart remain open.",
+    "This author record is exact corroboration, not an independent review or an adoption.",
+    "No original flag, certificate, retirement, Lean/Lake/CI or remote write is performed."
+  ],
+  "section_dependency_dag": {
+    "nodes": [
+      "three actual common-point units",
+      "strict A corner supports",
+      "local side-interior exclusion",
+      "prescribed strict vertex convention",
+      "strict D vertex at S",
+      "actual DT support contains S",
+      "complete unloaded D3",
+      "actual opposite D vertex Q",
+      "whole original TC residual",
+      "full A4 common-corner equations",
+      "complete C force cover",
+      "actual D horizontal span",
+      "a>9/10",
+      "parallel C positive-positive T resultant",
+      "actual boundary-free proper T ray",
+      "parallel C contradiction",
+      "nonparallel fixed diagonal scalar",
+      "t>13/40 and q<4/39",
+      "southwest root-frame D diagonal",
+      "actual whole upper T quadrant",
+      "actual opposite T corner outside circle",
+      "whole stated original feature exclusion"
+    ],
+    "edges": [
+      [
+        "three actual common-point units",
+        "local side-interior exclusion"
+      ],
+      [
+        "strict A corner supports",
+        "local side-interior exclusion"
+      ],
+      [
+        "local side-interior exclusion",
+        "strict D vertex at S"
+      ],
+      [
+        "prescribed strict vertex convention",
+        "strict D vertex at S"
+      ],
+      [
+        "three actual common-point units",
+        "actual DT support contains S"
+      ],
+      [
+        "strict D vertex at S",
+        "actual opposite D vertex Q"
+      ],
+      [
+        "actual DT support contains S",
+        "actual opposite D vertex Q"
+      ],
+      [
+        "complete unloaded D3",
+        "actual opposite D vertex Q"
+      ],
+      [
+        "whole original TC residual",
+        "full A4 common-corner equations"
+      ],
+      [
+        "whole original TC residual",
+        "complete C force cover"
+      ],
+      [
+        "whole original TC residual",
+        "actual D horizontal span"
+      ],
+      [
+        "complete C force cover",
+        "actual D horizontal span"
+      ],
+      [
+        "actual D horizontal span",
+        "a>9/10"
+      ],
+      [
+        "full A4 common-corner equations",
+        "parallel C positive-positive T resultant"
+      ],
+      [
+        "complete C force cover",
+        "parallel C positive-positive T resultant"
+      ],
+      [
+        "parallel C positive-positive T resultant",
+        "actual boundary-free proper T ray"
+      ],
+      [
+        "actual boundary-free proper T ray",
+        "parallel C contradiction"
+      ],
+      [
+        "a>9/10",
+        "parallel C contradiction"
+      ],
+      [
+        "actual opposite D vertex Q",
+        "nonparallel fixed diagonal scalar"
+      ],
+      [
+        "complete C force cover",
+        "nonparallel fixed diagonal scalar"
+      ],
+      [
+        "nonparallel fixed diagonal scalar",
+        "t>13/40 and q<4/39"
+      ],
+      [
+        "a>9/10",
+        "t>13/40 and q<4/39"
+      ],
+      [
+        "actual opposite D vertex Q",
+        "southwest root-frame D diagonal"
+      ],
+      [
+        "a>9/10",
+        "southwest root-frame D diagonal"
+      ],
+      [
+        "southwest root-frame D diagonal",
+        "actual whole upper T quadrant"
+      ],
+      [
+        "local side-interior exclusion",
+        "actual whole upper T quadrant"
+      ],
+      [
+        "actual whole upper T quadrant",
+        "actual opposite T corner outside circle"
+      ],
+      [
+        "t>13/40 and q<4/39",
+        "actual opposite T corner outside circle"
+      ],
+      [
+        "parallel C contradiction",
+        "whole stated original feature exclusion"
+      ],
+      [
+        "actual opposite T corner outside circle",
+        "whole stated original feature exclusion"
+      ]
+    ],
+    "node_count": 22,
+    "edge_count": 30,
+    "acyclic": true,
+    "topological_order": [
+      "complete unloaded D3",
+      "prescribed strict vertex convention",
+      "strict A corner supports",
+      "three actual common-point units",
+      "whole original TC residual",
+      "actual DT support contains S",
+      "complete C force cover",
+      "full A4 common-corner equations",
+      "local side-interior exclusion",
+      "actual D horizontal span",
+      "parallel C positive-positive T resultant",
+      "strict D vertex at S",
+      "a>9/10",
+      "actual boundary-free proper T ray",
+      "actual opposite D vertex Q",
+      "nonparallel fixed diagonal scalar",
+      "parallel C contradiction",
+      "southwest root-frame D diagonal",
+      "actual whole upper T quadrant",
+      "t>13/40 and q<4/39",
+      "actual opposite T corner outside circle",
+      "whole stated original feature exclusion"
+    ]
+  },
+  "counts": {
+    "input_identities": 14,
+    "scalar_checks": 18,
+    "symbolic_checks": 24,
+    "domain_guards": 34
+  },
+  "accounting": {
+    "whole_original_flags": 0,
+    "new_computational_certificates": 0,
+    "certificate_retirements": 0,
+    "remaining": "Other original AD/AT feature pairings and the entire upper-adjacent genuine-leaf chart; no whole original TC closure."
+  }
+}

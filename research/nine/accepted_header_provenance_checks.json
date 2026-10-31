@@ -1,0 +1,72 @@
+[
+  {
+    "path": "research/nine/ROOTED_C3_334_ONE_BRIDGE_CELL_CLOSED.md",
+    "expected": "73c9072c74f6e744552e85e304160ddfaba860e5bc03bbf38b04d59abf9226c7",
+    "actual": "73c9072c74f6e744552e85e304160ddfaba860e5bc03bbf38b04d59abf9226c7"
+  },
+  {
+    "path": "research/nine/ROOTED_C3_334_ONE_BRIDGE_STRUCTURAL_REDUCTION.md",
+    "expected": "1155b3ce024ecc4dfe2d5f16dac88bbbad9114204003d6729a6b50f716c3ea26",
+    "actual": "1155b3ce024ecc4dfe2d5f16dac88bbbad9114204003d6729a6b50f716c3ea26"
+  },
+  {
+    "path": "research/nine/ROOTED_C3_334_ONE_BRIDGE_BOUQUET_EXCLUSION.md",
+    "expected": "f9c89f2aa420ecc5fb651be967c74e18e8b2b9140a58993ceae7c1dda60b5b23",
+    "actual": "f9c89f2aa420ecc5fb651be967c74e18e8b2b9140a58993ceae7c1dda60b5b23"
+  },
+  {
+    "path": "research/nine/ROOTED_C3_334_ONE_BRIDGE_DECORATED_END_CHAIN_EXCLUSION.md",
+    "expected": "80f2f8a4ba02abcaeb411090cca45cfcea6a523040ed1c2c5ebaa8201bb83582",
+    "actual": "80f2f8a4ba02abcaeb411090cca45cfcea6a523040ed1c2c5ebaa8201bb83582"
+  },
+  {
+    "path": "research/nine/ROOTED_NONZERO_MOMENT_TRIANGLE_ORIGIN_UNIT_EXCLUSION.md",
+    "expected": "93984d3f831ecae05eeb6bc77ba970c51ad1b0ae1c31b35380db5995402039cd",
+    "actual": "93984d3f831ecae05eeb6bc77ba970c51ad1b0ae1c31b35380db5995402039cd"
+  },
+  {
+    "path": "research/nine/GLOBAL_CLOSURE_TWO_DECORATED_TRIANGLES_ORIGIN_INTERIOR.md",
+    "expected": "dfea1c034867d84c51b375195db89efcc3baf771fa4e893b25be49d8a656ca6a",
+    "actual": "dfea1c034867d84c51b375195db89efcc3baf771fa4e893b25be49d8a656ca6a"
+  },
+  {
+    "path": "research/nine/GLOBAL_CLOSURE_TWO_TRIANGLE_TIP_LEAVES_HUB_CLEARANCE.md",
+    "expected": "865e890948d7afe1610b138e5a87f462245ff1914cb35d23c5471790dc4fd81c",
+    "actual": "865e890948d7afe1610b138e5a87f462245ff1914cb35d23c5471790dc4fd81c"
+  },
+  {
+    "path": "research/nine/ROOTED_C3_334_ONE_BRIDGE_PRIVATE_DIAMOND_EXCLUSION.md",
+    "expected": "b6a56d7452063d8c443cf40d1b63553cbcb556eed5e94c8092a29bb821832fea",
+    "actual": "b6a56d7452063d8c443cf40d1b63553cbcb556eed5e94c8092a29bb821832fea"
+  },
+  {
+    "path": "research/nine/ROOTED_ORIGIN_FREE_RADIAL_CONTACT_EXCLUSIONS.md",
+    "expected": "4a8f7bf60faecb973abb54096c34a3d8f8c60f0e50a20ae0b035f8e2dee3efd3",
+    "actual": "4a8f7bf60faecb973abb54096c34a3d8f8c60f0e50a20ae0b035f8e2dee3efd3"
+  },
+  {
+    "path": "research/nine/ROOTED_GEOMETRIC_TRIANGLE_MOMENT_CIRCUIT_EXCLUSION.md",
+    "expected": "5c7bca9ee6df342fd901571322201eca9d7857a1b5bd39459567d31350afc1df",
+    "actual": "5c7bca9ee6df342fd901571322201eca9d7857a1b5bd39459567d31350afc1df"
+  },
+  {
+    "path": "research/nine/ROOTED_ORIGIN_FREE_LEAF_C4_TRANSMITTER_EXCLUSIONS.md",
+    "expected": "f58f21ce4b3d4b2adad4008389a9aa90749b51897d535f7ad8ec5684aed6d8e9",
+    "actual": "f58f21ce4b3d4b2adad4008389a9aa90749b51897d535f7ad8ec5684aed6d8e9"
+  },
+  {
+    "path": "research/nine/ROOTED_C3_334_PRIVATE_OPPOSITE_LEAF_C4_EXCLUSION.md",
+    "expected": "fbb9cc76a54a72771366c36f810f505d7b557be5f6fd607713fae4e1e0f5e6b8",
+    "actual": "fbb9cc76a54a72771366c36f810f505d7b557be5f6fd607713fae4e1e0f5e6b8"
+  },
+  {
+    "path": "research/nine/GLOBAL_CLOSURE_ADJACENT_LEAF_C4_SINGLE_TRANSMITTER_EXCLUSION.md",
+    "expected": "19e73cb3b1a2d8c1a8c8c56be395a59cab4c5c7a6f81b470b261781f605630db",
+    "actual": "19e73cb3b1a2d8c1a8c8c56be395a59cab4c5c7a6f81b470b261781f605630db"
+  },
+  {
+    "path": "research/nine/ROOTED_C3_334_PRIVATE_ADJACENT_LEAF_TWO_LOAD_C4_EXCLUSION.md",
+    "expected": "9036a1a8c2b1c7e0f713eef3e0dc3bacbecb42d588332120cf9e04c27ffa98c5",
+    "actual": "9036a1a8c2b1c7e0f713eef3e0dc3bacbecb42d588332120cf9e04c27ffa98c5"
+  }
+]

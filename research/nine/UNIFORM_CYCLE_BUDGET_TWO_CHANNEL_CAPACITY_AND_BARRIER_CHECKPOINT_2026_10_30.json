@@ -1,0 +1,178 @@
+{
+  "checkpoint": "uniform cycle budgets, two-channel physical capacity and actual line barrier",
+  "date_utc": "2026-10-30",
+  "input_head": "e88e8482272a7f698ab263310b9bd7c2a3a5c4b6",
+  "files": [
+    {
+      "path": "research/nine/FOUR_SQUARE_JUNCTION_CAPACITY_EIGHT_WITH_ONE_FIFTEENTH_MARGIN_2026_10_30.md",
+      "bytes": 4756,
+      "sha256": "df237a44886f100d3fa901981c6c747b0dfa827d61ef4c1f046b476df1c1ada4",
+      "git_blob": "7a050d16121e2a01ef00ddf1dc4f98ff67f8373f"
+    },
+    {
+      "path": "research/nine/TWO_LONG_CHANNELS_FORCE_CAPACITY_EIGHT_AND_FOUR_LOAD_CYCLE_REDUCTION_2026_10_30.md",
+      "bytes": 22842,
+      "sha256": "e05fa0520279d957659f694fdaa5b08be750a848d5117f3792df4399476354f5",
+      "git_blob": "f3591f9f0c0517d2999fc520110b757b9376bee1"
+    },
+    {
+      "path": "research/nine/LONG_CHANNEL_OUTER_STRIP_EXCLUSION_AND_STRAIGHT_LINE_BARRIER_2026_10_30.md",
+      "bytes": 10679,
+      "sha256": "dd1d91f8e49f4a5f507a70b53a75a30b299757f9f04a0976da3e674674ae7b05",
+      "git_blob": "2612363a55cd1e579f7b2706f28b54d781282566"
+    },
+    {
+      "path": "research/nine/UNIFORM_MARKED_CYCLE_ANGULAR_BUDGET_AND_NINE_BODY_CYCLE_EXCLUSION_2026_10_30.md",
+      "bytes": 17899,
+      "sha256": "b5d9f55141ca2ab2c4f4195de68a714340fa2de607b8b9e81bb484578e4b16be",
+      "git_blob": "172ffd399e67a199fba9249d449a0a29fef5fd4e"
+    },
+    {
+      "path": "research/nine/SHARP_LONG_AND_DIAGONAL_RUN_ANGLE_BUDGET_2026_10_30.md",
+      "bytes": 12298,
+      "sha256": "614382093c6c976e7767855c5234419fe3a3c477bafc8c4465e46d86446e56fc",
+      "git_blob": "8b0138d3101318ec8dfe27c724b9bf3fbeb95beb"
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_SQUARE_JUNCTION_ONE_FIFTEENTH_MARGIN_AXIAL_INDEPENDENT_2026_10_30.md",
+      "bytes": 5111,
+      "sha256": "9b85e7c9f821fa7f33c2cd7312418156df8bf5b4b6e7b0f90a0e13c12759d801",
+      "git_blob": "4e896e91fa494d7337f2a9907bbfca5331d245dc"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_LONG_CHANNELS_FORCE_CAPACITY_EIGHT_ANNULAR_INDEPENDENT_2026_10_30.md",
+      "bytes": 7584,
+      "sha256": "1ad1d9ef45fbbc857f3aa0e5461c49d8a5d2906309a67f45db3c87d9115de529",
+      "git_blob": "39bbee25a210168330904309430c6740bc3b69fe"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_LONG_CHANNELS_CAPACITY_EIGHT_AXIAL_INDEPENDENT_2026_10_30.md",
+      "bytes": 11187,
+      "sha256": "a6d7c9d1e17b2461f8e29f807ce7b4327a028acc22db1496df351c0f1da25164",
+      "git_blob": "20cf00ece01bb362964bc2cc92e17ff9e998c478"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_CHANNEL_CAPACITY_AND_FORCE_LINE_BARRIER_ROOT_2026_10_30.md",
+      "bytes": 10901,
+      "sha256": "fc4daa5230bf0fbf04ef3b9b1547f484428b7118dce11536b8eff5027dcdf002",
+      "git_blob": "9e3f97ac4be181b1eb0000bfbc2fca54ab9ec757"
+    },
+    {
+      "path": "research/nine/REVIEW_LONG_CHANNEL_STRAIGHT_LINE_BARRIER_ANNULAR_INDEPENDENT_2026_10_30.md",
+      "bytes": 4592,
+      "sha256": "dbdb29725352cfa634881b65259c7d620e106c269ff13d160bce47c2d4898de9",
+      "git_blob": "06a3d3bfd6f60ce10fb540f79d3559e8332aa31f"
+    },
+    {
+      "path": "research/nine/REVIEW_UNIFORM_MARKED_CYCLE_ANGULAR_BUDGET_AXIAL_INDEPENDENT_2026_10_30.md",
+      "bytes": 10721,
+      "sha256": "fabeec368a0caf5843d113c3fb403229f45afdd4777afce06d6bc80c602e2a03",
+      "git_blob": "1a9f5f6aa8b1cc99989798ac8daf92c19d5f04c3"
+    },
+    {
+      "path": "research/nine/REVIEW_UNIFORM_MARKED_CYCLE_ANGULAR_BUDGET_ROOT_2026_10_30.md",
+      "bytes": 9338,
+      "sha256": "6fe6ff5a3ef779104b9b95e49d4205db5e0bb663bb3135fe91afc338c7758503",
+      "git_blob": "6f7a48497b3427c4bcb0a7aabe9d445e417c47ff"
+    },
+    {
+      "path": "research/nine/REVIEW_SHARP_LONG_AND_DIAGONAL_RUN_ANGLE_BUDGET_BLOCK_EARS_2026_10_30.md",
+      "bytes": 6731,
+      "sha256": "989dc81c2ab83fcf9a72405af83df3b5a010ff3eca5a29b224ceb670ef0613d0",
+      "git_blob": "163c6c1ebc33e9baeaa4e5f9bd8c621d44690b36"
+    },
+    {
+      "path": "research/nine/REVIEW_SHARP_LONG_AND_DIAGONAL_ANGLE_BUDGET_ROOT_2026_10_30.md",
+      "bytes": 4864,
+      "sha256": "3dc47e34e9d765a7716f1a87b30eeca2834bb7cea5c690a075431088d81a2cd1",
+      "git_blob": "6c665a42cad9d330911243c564af869db42e2174"
+    },
+    {
+      "path": "research/nine/ADOPTION_UNIFORM_CYCLE_BUDGET_TWO_CHANNEL_CAPACITY_AND_BARRIER_2026_10_30.md",
+      "bytes": 11524,
+      "sha256": "0a28f5e467b562393cad0714dc2e342fa4885d68e0664414054766d58bc3bbad",
+      "git_blob": "b3734990d7093dc67b7b0e0fdbfa75f6f10eb0a4"
+    },
+    {
+      "path": "research/nine/README.md",
+      "bytes": 115404,
+      "sha256": "6a01bfca9684fe38d9ac4e49ebd8542fa93ade13f33d1fa6a1be2e2fce058626",
+      "git_blob": "2aba9f5ebc4d8c39ef34b2d6b23a0358e20e64ab"
+    },
+    {
+      "path": "research/nine/ROADMAP.md",
+      "bytes": 94150,
+      "sha256": "288c3fe215516e65cfa9f5fc483b5ab13e3468f2bd53d61726dfae95b260246c",
+      "git_blob": "a58252a40307498b3ea4167d2660355988723026"
+    },
+    {
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "bytes": 1096850,
+      "sha256": "0be6151566d42573e70abf9574c87d8c7ac1cafa63888e1107be0d44a366428b",
+      "git_blob": "1ec63686d0257fd0535ebc0e22fbd63096e2a7f9"
+    },
+    {
+      "path": "research/nine/CYCLIC_CELL_LEDGER.md",
+      "bytes": 351602,
+      "sha256": "e1d1dcfb0736f762bd8c3332f6a1cc6d29a9eac588fb29f7ed0a46a01d611681",
+      "git_blob": "fbd69c4a9a026dcf7265524cf32fc2d8b7611a05"
+    }
+  ],
+  "source_table_hash_occurrences_verified": 24,
+  "distinct_source_table_pins_verified": 11,
+  "exact_arithmetic": {
+    "junction_radius_screen": "3111/6400",
+    "long_endpoint_150_degree_reserve": "359/960",
+    "four_endpoint_30_degree_reserve": "709/9000",
+    "same_axis_cap_threshold_reserve": "211/54000",
+    "junction_inverse_margin": "419/26070",
+    "wide_junction_corner_reserve": "2251/3600",
+    "wide_junction_cap_squared_diameter": "713/720",
+    "wide_junction_cap_reserve": "7/720",
+    "strip_transverse_square_bound": "6789/10000",
+    "strip_transverse_reserve": "1399/90000",
+    "strip_center_separation_reserve": "11/576",
+    "barrier_height_square": "81/256",
+    "cos20_upper_cubic_reserve": "159/2000",
+    "sin10_lower_cubic_reserve": "1/54",
+    "singleton_80_degree_reserve": "359/2160",
+    "long_160_degree_reserve": "347/12000",
+    "centered_inner_arc_cubic_reserve": "117/40960",
+    "long_175_angle_comparison": "13/33642",
+    "diagonal_105_distance_reserve_to_29_over_5": "33/10000"
+  },
+  "original_fine_inventory": {
+    "total": 2513,
+    "checked": 2373,
+    "open": 140,
+    "identifiers_order_flags_unchanged": true
+  },
+  "original_coarse_inventory": {
+    "total": 58,
+    "closed": 36,
+    "open": 22,
+    "identifiers_order_flags_unchanged": true
+  },
+  "complete_conclusions": [
+    "Compatible marked cycles obey m+ell<=8; all nine-body simple positive components and all eight-body such components containing long runs are excluded.",
+    "The geometric refinement 8m+5d+11ell<=71 excludes every seven-body marked cycle combining a long run and a diagonal singleton, and limits every eight-body marked cycle to at most one diagonal singleton.",
+    "Two vertex-disjoint common-normal four-square actual contact paths force total physical capacity eight; a nine-square translational stress has at most one distinct long endpoint pair.",
+    "A true long channel with its actual internal moment equations separates all five completion squares by its original force line and has the sharp height bound |t|<=9/16."
+  ],
+  "remaining": [
+    "All 22 coarse parents",
+    "Chorded cycles with circle-clear branching vertices",
+    "Smaller-component sharp completion",
+    "Unrestricted lower bound",
+    "Equality classification",
+    "G4.2.c for other downstream callers"
+  ],
+  "verification_limits": {
+    "lean_compilation": false,
+    "ci_dispatch": false,
+    "numerical_pose_search": false,
+    "mesh": false,
+    "new_packing_certificate": false,
+    "merge": false
+  }
+}

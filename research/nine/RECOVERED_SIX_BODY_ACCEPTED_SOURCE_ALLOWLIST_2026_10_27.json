@@ -1,0 +1,1842 @@
+{
+  "description": "Exact explicit accepted checkpoint allowlist from8168; excludes all stale shared metadata. Existing complete reviews are preserved; new-six_body independent audit is separate. Historical metadata_unchanged pins are excluded because subsequent accepted increments changed metadata; all135 accepted mathematical source/review/dependency pins pass.",
+  "baseline_head": "cc143bb36c116590d1de7e7925ad04ca49ea675a",
+  "checkpoints": [
+    {
+      "name": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+      "sha256": "5243ff54e3182fee2e44ac12d2c985d4e0a5fa953af46c311cabf0f55f405185",
+      "fine_changes": [
+        {
+          "id": "M6.B5L.HOUSE.ROOF.LBC.S",
+          "from": "open",
+          "to": "checked",
+          "evidence": "CLOSED by HOUSE_ROOF_GENUINE_LEAF_TWO_UNLOADED_HUBS_EXCLUSION.md, with full root review REVIEW_HOUSE_ROOF_TWO_UNLOADED_HUBS_ROOT_2026_10_27.md and separate full review REVIEW_HOUSE_ROOF_TWO_UNLOADED_HUBS_TRIANGLE_BRIDGES_2026_10_27.md. The entire original leaf type, true A3/D3/T3 stars, all masks, means and all nine actual units are retained; no fake two-force roof is used. The complete original M6.B5L.RETAINED_CONTRACT is covered."
+        },
+        {
+          "id": "M6.B5L.HOUSE.ROOF.LBC.D",
+          "from": "open",
+          "to": "checked",
+          "evidence": "CLOSED by HOUSE_ROOF_GENUINE_LEAF_TWO_UNLOADED_HUBS_EXCLUSION.md, with full root review REVIEW_HOUSE_ROOF_TWO_UNLOADED_HUBS_ROOT_2026_10_27.md and separate full review REVIEW_HOUSE_ROOF_TWO_UNLOADED_HUBS_TRIANGLE_BRIDGES_2026_10_27.md. The entire original leaf type, true A3/D3/T3 stars, all masks, means and all nine actual units are retained; no fake two-force roof is used. The complete original M6.B5L.RETAINED_CONTRACT is covered."
+        },
+        {
+          "id": "M6.B5L.HOUSE.HUB.LTC.D",
+          "from": "open",
+          "to": "checked",
+          "evidence": "CLOSED by HOUSE_HUB_TC_D_COMPLETE_EXCLUSION.md, with full root review REVIEW_HOUSE_HUB_TC_D_COMPLETE_ROOT_2026_10_28.md and separate full review REVIEW_HOUSE_HUB_TC_D_COMPLETE_TRIANGLE_BRIDGES_2026_10_28.md. The complete D-root, channel-sign, bypass-side, loaded-C2 mask, zero-mean and actual D-frame cover retains true A4 and unloaded D3. The all-nine canonical B slide and full roof-height screen preserve every force and original mean, including rho=k. The entire D family under M6.B5L.RETAINED_CONTRACT is covered; its S companion remains separate."
+        },
+        {
+          "id": "M6.B5L.HOUSE.HUB.LTB.S",
+          "from": "open",
+          "to": "checked",
+          "evidence": "CLOSED by HOUSE_HUB_TB_CANONICAL_CONTACT_EXCLUSION.md, with full root review REVIEW_HOUSE_HUB_TB_CANONICAL_CONTACT_ROOT_2026_10_28.md and separate full review REVIEW_HOUSE_HUB_TB_CANONICAL_CONTACT_TRIANGLE_BRIDGES_2026_10_27.md. The actual unloaded C2 channel, complete C4 empty-hole and all-nine canonical slide give physical AC contact; the entire true unloaded D3 obstruction then applies. Full A4/T2/D3/B2/C2/L1, every original mean, circle mask, weight endpoint and all three extras remain under M6.B5L.RETAINED_CONTRACT."
+        },
+        {
+          "id": "M6.B5L.HOUSE.HUB.LTB.D",
+          "from": "open",
+          "to": "checked",
+          "evidence": "CLOSED by HOUSE_HUB_TB_CANONICAL_CONTACT_EXCLUSION.md, with full root review REVIEW_HOUSE_HUB_TB_CANONICAL_CONTACT_ROOT_2026_10_28.md and separate full review REVIEW_HOUSE_HUB_TB_CANONICAL_CONTACT_TRIANGLE_BRIDGES_2026_10_27.md. The actual unloaded C2 channel, complete C4 empty-hole and all-nine canonical slide give physical AC contact; the entire true unloaded D3 obstruction then applies. Full A4/T2/D3/B2/C2/L1, every original mean, circle mask, weight endpoint and all three extras remain under M6.B5L.RETAINED_CONTRACT."
+        },
+        {
+          "id": "M6.B5L.HOUSE.HUB.LTDB.S",
+          "from": "open",
+          "to": "checked",
+          "evidence": "CLOSED by HOUSE_HUB_TDB_COMPLETE_ATTACHMENT_EXCLUSION.md, with full direct root review REVIEW_HOUSE_HUB_TDB_COMPLETE_ROOT_2026_10_28.md, separate full direct triangle_bridges reviews, and complete parent review REVIEW_HOUSE_HUB_TDB_COMPLETE_JOIN_HEXAGON_2026_10_27.md. The exhaustive S/D sources retain A4/T2/D3/B2/C2/L1, every circle mask and original mean, all nine physical squares and the initial radius/Phi minimizer. The low-S owned return uses two explicit exact polynomial inequalities with all thirty positive Bernstein coefficients. The full original M6.B5L.RETAINED_CONTRACT is covered."
+        },
+        {
+          "id": "M6.B5L.HOUSE.HUB.LTDB.D",
+          "from": "open",
+          "to": "checked",
+          "evidence": "CLOSED by HOUSE_HUB_TDB_COMPLETE_ATTACHMENT_EXCLUSION.md, with full direct root review REVIEW_HOUSE_HUB_TDB_COMPLETE_ROOT_2026_10_28.md, separate full direct triangle_bridges reviews, and complete parent review REVIEW_HOUSE_HUB_TDB_COMPLETE_JOIN_HEXAGON_2026_10_27.md. The exhaustive S/D sources retain A4/T2/D3/B2/C2/L1, every circle mask and original mean, all nine physical squares and the initial radius/Phi minimizer. The low-S owned return uses two explicit exact polynomial inequalities with all thirty positive Bernstein coefficients. The full original M6.B5L.RETAINED_CONTRACT is covered."
+        },
+        {
+          "id": "M6.B6.PENTAGON.H2_D0.L013",
+          "from": "open",
+          "to": "checked",
+          "evidence": "CLOSED by INNER_PENTAGON_TWO_SPOKE_THREE_LOAD_013_COMPLETE_EXCLUSION.md, with full direct root review REVIEW_PARALLEL_OBLIQUE_BYPASS_AND_PENTAGON_013_ROOT_2026_10_28.md, separate parallel review REVIEW_PARALLEL_BYPASS_UNLOADED_THREE_FORCE_TRIANGLE_BRIDGES_2026_10_27.md, and full oblique/join review REVIEW_OBLIQUE_BYPASS_AND_INNER_PENTAGON_013_JOIN_TRIANGLE_BRIDGES_2026_10_27.md. Both actual bypass frames, all owners, side means, physical masks and original reflection124 are covered at the true A3/B2/V3/C2/X2/Y2 stars. All nine units and M6.B6.PENTAGON.LOAD_CONTRACT remain."
+        }
+      ],
+      "lists": {
+        "accepted_sources_and_reviews": 83
+      }
+    },
+    {
+      "name": "ACCEPTED_LOWER_TD_D_AND_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+      "sha256": "b2f3aaa116a096e79bab66adc9b8fb270bb6db79638997cdc8ba6326c3ecd287",
+      "fine_changes": [
+        {
+          "id": "M6.B5L.HOUSE.LOWER.LTD.D",
+          "from": "open",
+          "to": "checked",
+          "whole_source": "HOUSE_LOWER_TD_D_COMPLETE_EXCLUSION.md"
+        }
+      ],
+      "lists": {
+        "accepted_sources_and_reviews": 9
+      }
+    },
+    {
+      "name": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+      "sha256": "32d2d301dc00d36ed0c4b6204ebb7704869d01988f73ae6d20828292d9059e78",
+      "fine_changes": [
+        {
+          "id": "M6.B6.PENTAGON.H2_D0.L1234",
+          "from": "open",
+          "to": "checked"
+        },
+        {
+          "id": "M6.B6.PENTAGON.H2_D0_EXIT",
+          "from": "open",
+          "to": "checked"
+        }
+      ],
+      "lists": {
+        "accepted_sources_and_reviews": 10,
+        "retained_direct_chain_sources_and_reviews": 23
+      }
+    },
+    {
+      "name": "ACCEPTED_HOUSE_S_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+      "sha256": "92d9b488fc0fc409796ba4c47b5f515ec80e04318990c98057dd8733a81e0111",
+      "fine_changes": [],
+      "lists": {
+        "accepted_sources_and_reviews": 8
+      }
+    },
+    {
+      "name": "ACCEPTED_ROOF_AB_D_CHECKPOINT_2026_10_28.json",
+      "sha256": "d25a70160877328d7362f0d489bef3e9ead9b6c42f467abc395bd47d7e1f37de",
+      "fine_changes": [
+        {
+          "id": "M6.B5L.HOUSE.ROOF.LAB.D",
+          "from": "open",
+          "to": "checked",
+          "whole_source": "HOUSE_ROOF_AB_D_COMPLETE_EXCLUSION.md"
+        }
+      ],
+      "lists": {
+        "accepted_sources_and_reviews": 4,
+        "retained_direct_inputs": 7
+      }
+    }
+  ],
+  "new_accepted_files": [
+    {
+      "path": "research/nine/ALIGNED_S_ROOT_PARALLEL_CHANNEL_TRIANGLE_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/ALIGNED_S_ROOT_PARALLEL_CHANNEL_TRIANGLE_EXCLUSION.md",
+      "sha256": "1b1c1572b29b110596afe25ef660b0f264b97d1910f110f287bfddeb9451465a",
+      "bytes": 20320,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_HOUSE_S_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/ALIGNED_S_ROOT_PERPENDICULAR_CHANNEL_TRIANGLE_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/ALIGNED_S_ROOT_PERPENDICULAR_CHANNEL_TRIANGLE_EXCLUSION.md",
+      "sha256": "2fe9347a1f4e45653b427d1217db129faeff56e871ef0cdf4cd957c1ba654dd9",
+      "bytes": 12973,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_LOWER_TD_D_AND_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/CLOSE_SUPPORT_PORTS_STRADDLING_NORMALS_FRESH_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/CLOSE_SUPPORT_PORTS_STRADDLING_NORMALS_FRESH_EXCLUSION.md",
+      "sha256": "f3c83072e2e09bc844bbd1a79813ab76b7979d008980ce9b2be07f25b85811d2",
+      "bytes": 3986,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/FOUR_BODY_BLOCK_SAME_ROOT_LEAF_AND_SHORT_ARM_FRESH_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/FOUR_BODY_BLOCK_SAME_ROOT_LEAF_AND_SHORT_ARM_FRESH_EXCLUSION.md",
+      "sha256": "6dcf79aa2c3bce2adb7d5ce35d67ee1ac9522beb26e693af0a9c4bf920641071",
+      "bytes": 26524,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/FOUR_BODY_BLOCK_ZERO_APPLICATION_BRIDGE_FRESH_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/FOUR_BODY_BLOCK_ZERO_APPLICATION_BRIDGE_FRESH_EXCLUSION.md",
+      "sha256": "5e9f44b9ae62fd5c81e4b7c347bdee06d6000ca2ecbe5cf8ac7afe8a5cd72c57",
+      "bytes": 20401,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/GENUINE_S_THREE_FORCE_ROOT_TWO_NEAR_NEIGHBORS_FRESH_DOMAIN.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/GENUINE_S_THREE_FORCE_ROOT_TWO_NEAR_NEIGHBORS_FRESH_DOMAIN.md",
+      "sha256": "5dba416ea7bfd8500daf6f33bcecd56521dd7013f2357b9442964d2c49edb480",
+      "bytes": 9841,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/HOUSE_HUB_TB_CANONICAL_CONTACT_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/HOUSE_HUB_TB_CANONICAL_CONTACT_EXCLUSION.md",
+      "sha256": "0a23b1dc8db0910147077ec114ebd4e8db40d08b6166f69c8400c5f7b6192d6f",
+      "bytes": 9349,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/HOUSE_HUB_TC_D_COMPLETE_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/HOUSE_HUB_TC_D_COMPLETE_EXCLUSION.md",
+      "sha256": "4dee13debeaab5009adec437202f7697e3d5fc53515524aa1f8610a3af39397b",
+      "bytes": 25955,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/HOUSE_HUB_TDB_ALIGNED_LOW_S_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/HOUSE_HUB_TDB_ALIGNED_LOW_S_EXCLUSION.md",
+      "sha256": "250e0626130e6259442873113e9ae3b4c7085c43630dec864ee25a235a7482d4",
+      "bytes": 14531,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/HOUSE_HUB_TDB_COMPLETE_ATTACHMENT_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/HOUSE_HUB_TDB_COMPLETE_ATTACHMENT_EXCLUSION.md",
+      "sha256": "5b0300286fd5aa65a4e968a06aedce20d4b783018aa10043cb4289f02f4619ff",
+      "bytes": 5670,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/HOUSE_HUB_TDB_D_COMPLETE_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/HOUSE_HUB_TDB_D_COMPLETE_EXCLUSION.md",
+      "sha256": "29c7bd6db5e8ac60631f9669a1446df959e33d9ed887819b48128396c0a957f7",
+      "bytes": 11792,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/HOUSE_HUB_TDB_S_COMPLETE_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/HOUSE_HUB_TDB_S_COMPLETE_EXCLUSION.md",
+      "sha256": "458665f78aa025a44bb3fa989481be2d8fe5f0446a17409435490b8af1188434",
+      "bytes": 4801,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/HOUSE_HUB_TDB_S_ROOT_COMPLETE_DOMAIN.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/HOUSE_HUB_TDB_S_ROOT_COMPLETE_DOMAIN.md",
+      "sha256": "f9461dd33f28e0419fd023583ecff96c95d7076b53d47b8cc6236ab9ab7c4dec",
+      "bytes": 17653,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/HOUSE_LOWER_TD_D_COMPLETE_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/HOUSE_LOWER_TD_D_COMPLETE_EXCLUSION.md",
+      "sha256": "51d90e77cccd75ba987e9f26717c1019ad9e4fc3d9d9cbf4a034c2bcecfe6fcb",
+      "bytes": 8643,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_LOWER_TD_D_AND_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/HOUSE_LOWER_TD_S_PARALLEL_BYPASS_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/HOUSE_LOWER_TD_S_PARALLEL_BYPASS_EXCLUSION.md",
+      "sha256": "de2b585692b350e63be7f6f703a04fa9a8725b7dc5293ea0f241d2bac9ed5dec",
+      "bytes": 10186,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_HOUSE_S_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/HOUSE_ROOF_AB_D_COMPLETE_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/HOUSE_ROOF_AB_D_COMPLETE_EXCLUSION.md",
+      "sha256": "7b0bd9ee78d84e5d68424034729d55187fa44ea10035f56a57bd1c5fa75dc119",
+      "bytes": 13344,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_ROOF_AB_D_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/HOUSE_ROOF_GENUINE_LEAF_TWO_UNLOADED_HUBS_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/HOUSE_ROOF_GENUINE_LEAF_TWO_UNLOADED_HUBS_EXCLUSION.md",
+      "sha256": "db32526e04e2101bb72e38a461ab6d7e82b4fbb35b7647b70cbcd4825796da3b",
+      "bytes": 27054,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_FOUR_LOAD_OBLIQUE_BYPASS_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/INNER_PENTAGON_FOUR_LOAD_OBLIQUE_BYPASS_EXCLUSION.md",
+      "sha256": "c97050fd440b02a5aa71849c603132d9b37cb479a58e183102ce3f4d5a3dc6e3",
+      "bytes": 17664,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_FOUR_LOAD_PARALLEL_BYPASS_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/INNER_PENTAGON_FOUR_LOAD_PARALLEL_BYPASS_EXCLUSION.md",
+      "sha256": "46a853de32bca6a4198c3305fea1f9cdba56744da86712d07ae0b812f93b8494",
+      "bytes": 11328,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_LOWER_TD_D_AND_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        },
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "retained_direct_chain_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_TWO_SPOKE_FOUR_LOAD_1234_COMPLETE_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/INNER_PENTAGON_TWO_SPOKE_FOUR_LOAD_1234_COMPLETE_EXCLUSION.md",
+      "sha256": "e3c93d69a9c3a046ff2a21545887b0bf292adee9289e42606abe83ac815fa238",
+      "bytes": 11991,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_TWO_SPOKE_NO_CHORD_COMPLETE_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/INNER_PENTAGON_TWO_SPOKE_NO_CHORD_COMPLETE_EXCLUSION.md",
+      "sha256": "aac5b85cf106560e75af9a06375f8f3572eec6f53b1855c8253bd0afe5b50661",
+      "bytes": 18710,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_TWO_SPOKE_THREE_LOAD_013_COMPLETE_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/INNER_PENTAGON_TWO_SPOKE_THREE_LOAD_013_COMPLETE_EXCLUSION.md",
+      "sha256": "178c40e8dbb0cccd9b5ce8fd04dde9f1367007dda944736bbcfe13f777ad790a",
+      "bytes": 8851,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        },
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "retained_direct_chain_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/OBLIQUE_BYPASS_AT_UNLOADED_THREE_FORCE_ENDPOINT_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/OBLIQUE_BYPASS_AT_UNLOADED_THREE_FORCE_ENDPOINT_EXCLUSION.md",
+      "sha256": "95cdc83959d7a93b5788c9678d0c8bda5f2f0298df27a9c1d4920a4c9cf126ee",
+      "bytes": 17292,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/ONE_FOUR_BODY_BLOCK_THREE_BRIDGES_COMPLETE_JOIN.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/ONE_FOUR_BODY_BLOCK_THREE_BRIDGES_COMPLETE_JOIN.md",
+      "sha256": "18873439b72582bda3ae79550d316b87236bc3d43983d6805381b8596354cca8",
+      "bytes": 10741,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/ONE_FOUR_BODY_BLOCK_THREE_BRIDGES_FRESH_ATTACHMENT_COVER.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/ONE_FOUR_BODY_BLOCK_THREE_BRIDGES_FRESH_ATTACHMENT_COVER.md",
+      "sha256": "fe7cd59246d06d4ac2386d15525c3e00a48cbed2829de88741d9344e9beb9ca0",
+      "bytes": 16525,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/OWNED_SOUTH_BOUNDARY_CHANNEL_HEIGHT_BOUND.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/OWNED_SOUTH_BOUNDARY_CHANNEL_HEIGHT_BOUND.md",
+      "sha256": "550cb41f99ecb61408fa71272eb45dc9461cfa50aebf1cf2be4d7b533ddb5f7d",
+      "bytes": 4853,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/PARALLEL_BYPASS_AT_UNLOADED_THREE_FORCE_ENDPOINT_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/PARALLEL_BYPASS_AT_UNLOADED_THREE_FORCE_ENDPOINT_EXCLUSION.md",
+      "sha256": "0643b1ea0c6cd66724f2ad130c9cbd3fb2ffdbb53979e43170d7b58b2023e3be",
+      "bytes": 10556,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_ALIGNED_S_ROOT_PARALLEL_CHANNEL_TRIANGLE_ROOTED_BLOCKS_2026_10_28.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_ALIGNED_S_ROOT_PARALLEL_CHANNEL_TRIANGLE_ROOTED_BLOCKS_2026_10_28.md",
+      "sha256": "fe76a26b23b83efd1d357ef0c96425e7121b6d698070d4a0da51928f4bb87753",
+      "bytes": 13054,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_HOUSE_S_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_ALIGNED_S_ROOT_PERPENDICULAR_CHANNEL_TRIANGLE_ROOTED_BLOCKS_2026_10_28.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_ALIGNED_S_ROOT_PERPENDICULAR_CHANNEL_TRIANGLE_ROOTED_BLOCKS_2026_10_28.md",
+      "sha256": "a51970eb5c46ec9fba4b29477f7a0e9b94e565b3eac96913a880bead0a19598f",
+      "bytes": 8584,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_LOWER_TD_D_AND_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_ALIGNED_S_ROOT_PERPENDICULAR_CHANNEL_TRIANGLE_ROOT_2026_10_28.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_ALIGNED_S_ROOT_PERPENDICULAR_CHANNEL_TRIANGLE_ROOT_2026_10_28.md",
+      "sha256": "e47f234dc1114e81aa28f7623f6e11bf6fa05aa8f652869e578624b81b29923f",
+      "bytes": 8060,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_LOWER_TD_D_AND_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_BOUNDARY_THREE_NEAR_NEIGHBORS_FRESH_HEXAGON_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_BOUNDARY_THREE_NEAR_NEIGHBORS_FRESH_HEXAGON_2026_10_27.md",
+      "sha256": "8ae31e5cc651ab151a65df358fed675379801e1f514eda69a7d010e05771ca85",
+      "bytes": 4803,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_BOUNDARY_THREE_NEAR_NEIGHBORS_FRESH_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_BOUNDARY_THREE_NEAR_NEIGHBORS_FRESH_ROOT_2026_10_27.md",
+      "sha256": "a5d5d5802353b08cd3247f8e2a2ae15e3a135f5fdfb6b79be3b21c5fd52ddfed",
+      "bytes": 5406,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_CLOSE_SUPPORT_PORTS_STRADDLING_FRESH_ROOTED_BLOCKS_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_CLOSE_SUPPORT_PORTS_STRADDLING_FRESH_ROOTED_BLOCKS_2026_10_27.md",
+      "sha256": "81ce471afe1f69d9f6aa0495750cbdcf0c1084e1c6f18d4731ad2ab7821f9b38",
+      "bytes": 3979,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_DOUBLE_GENUINE_ROOT_AND_DISTINCT_GENUINE_ROOT_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_DOUBLE_GENUINE_ROOT_AND_DISTINCT_GENUINE_ROOT_ROOT_2026_10_27.md",
+      "sha256": "513e7c0c0bcbfdef267dc4459295bea50b37aff824b2a4bc92982ad99f14c345",
+      "bytes": 8866,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BODY_SAME_ROOT_LEAF_SHORT_ARM_FRESH_HEXAGON_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_FOUR_BODY_SAME_ROOT_LEAF_SHORT_ARM_FRESH_HEXAGON_2026_10_27.md",
+      "sha256": "c83c49dba69d2a0a89ec09fa03b117955cdc2111021c710d011930229ed648a1",
+      "bytes": 18790,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BODY_SAME_ROOT_LEAF_SHORT_ARM_FRESH_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_FOUR_BODY_SAME_ROOT_LEAF_SHORT_ARM_FRESH_ROOT_2026_10_27.md",
+      "sha256": "654fb06acdc92112404992af81586c517d88bf950dc5cb40a9ef1fe7d83195c0",
+      "bytes": 12927,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BODY_THREE_BRIDGES_FRESH_COVER_HEXAGON_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_FOUR_BODY_THREE_BRIDGES_FRESH_COVER_HEXAGON_2026_10_27.md",
+      "sha256": "18f2d9cb0694ef9475783a94bc26c910be1e3073a39079292cfade14355697b5",
+      "bytes": 9572,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BODY_THREE_BRIDGES_FRESH_COVER_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_FOUR_BODY_THREE_BRIDGES_FRESH_COVER_ROOT_2026_10_27.md",
+      "sha256": "9482d829b1a44a2664177cd602baa8fef87f79764b65b8af9b8ca5f6444a337c",
+      "bytes": 7470,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BODY_THREE_BRIDGES_SEVENTEEN_JOIN_HEXAGON_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_FOUR_BODY_THREE_BRIDGES_SEVENTEEN_JOIN_HEXAGON_2026_10_27.md",
+      "sha256": "572113471a79a0999051323ee0d22860655b09c69d2400c6b0ec300c118dcac9",
+      "bytes": 6771,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BODY_THREE_BRIDGES_SEVENTEEN_JOIN_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_FOUR_BODY_THREE_BRIDGES_SEVENTEEN_JOIN_ROOT_2026_10_27.md",
+      "sha256": "9e1e897cf1cd752b09406957ced31fc7297b481e5df0483efc98965ae4d663d1",
+      "bytes": 5960,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BODY_ZERO_APPLICATION_BRIDGE_FRESH_HEXAGON_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_FOUR_BODY_ZERO_APPLICATION_BRIDGE_FRESH_HEXAGON_2026_10_27.md",
+      "sha256": "50dd37cf38c6dc0d6f31c90f0fe8ff1014764ac4195c9884f8f97724cf1bfd8c",
+      "bytes": 14877,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BODY_ZERO_APPLICATION_BRIDGE_FRESH_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_FOUR_BODY_ZERO_APPLICATION_BRIDGE_FRESH_ROOT_2026_10_27.md",
+      "sha256": "9dfdfdf582f415cd4918202d4f7265f20cc877541c77d242745ec5a25891b5f1",
+      "bytes": 11998,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BRIDGE_C4_LONG_ARM_OPPOSITE_LEAF_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_FOUR_BRIDGE_C4_LONG_ARM_OPPOSITE_LEAF_ROOT_2026_10_27.md",
+      "sha256": "23cba25df24327f386128e610097d9187c85fe621643c893c1fd6fcac7c389cb",
+      "bytes": 8288,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BRIDGE_NEGATIVE_BRIDGE_AND_SINGLE_TREE_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_FOUR_BRIDGE_NEGATIVE_BRIDGE_AND_SINGLE_TREE_ROOT_2026_10_27.md",
+      "sha256": "7b3d23987bcba9db71944c82c9b04501442d484c51388c7ddd65a2410e55d3e4",
+      "bytes": 15801,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_LOAD_OBLIQUE_BYPASS_AND_OBTUSE_CENTER_TRIANGLE_BRIDGES_2026_10_28.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_FOUR_LOAD_OBLIQUE_BYPASS_AND_OBTUSE_CENTER_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "4251f4816fd237aa818ab4603994603b346bc87d3901f25518384c24c61d38aa",
+      "bytes": 14896,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_GENUINE_S_THREE_FORCE_TWO_NEAR_FRESH_DOMAIN_HEXAGON_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_GENUINE_S_THREE_FORCE_TWO_NEAR_FRESH_DOMAIN_HEXAGON_2026_10_27.md",
+      "sha256": "2595b9050f97e3af62ef950f1c214a9f2f94fc0de8f0c4c26356f61d1587d1e5",
+      "bytes": 7638,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_GENUINE_S_TWO_NEAR_AND_CLOSE_PORTS_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_GENUINE_S_TWO_NEAR_AND_CLOSE_PORTS_ROOT_2026_10_27.md",
+      "sha256": "9457b77e2f8ebc42892a8b7d2f9dd27be52ae6fe6266e762fc71fb5fa23ab539",
+      "bytes": 8049,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_HUB_TB_CANONICAL_CONTACT_ROOT_2026_10_28.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_HUB_TB_CANONICAL_CONTACT_ROOT_2026_10_28.md",
+      "sha256": "7af1f1a43fd5e703ce6468e5ed68cbceb8305cdc278e980ac4bb6f9cc1b5ee37",
+      "bytes": 7392,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_HUB_TB_CANONICAL_CONTACT_TRIANGLE_BRIDGES_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_HUB_TB_CANONICAL_CONTACT_TRIANGLE_BRIDGES_2026_10_27.md",
+      "sha256": "f72805162088a6024a6e4818106cbcdd7214b2cf1425f4fa32fb3143e149f7e2",
+      "bytes": 10207,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_HUB_TC_D_COMPLETE_ROOT_2026_10_28.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_HUB_TC_D_COMPLETE_ROOT_2026_10_28.md",
+      "sha256": "34041598838ca9ab3d5be54c4c389decbacb0ed5ee75d42e0e3cd0cab10b51a2",
+      "bytes": 14049,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_HUB_TC_D_COMPLETE_TRIANGLE_BRIDGES_2026_10_28.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_HUB_TC_D_COMPLETE_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "8d132348216554e089cf5a3106983feafe778e56f7117fcb995058eff84ed7f0",
+      "bytes": 17510,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_HUB_TDB_COMPLETE_JOIN_HEXAGON_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_HUB_TDB_COMPLETE_JOIN_HEXAGON_2026_10_27.md",
+      "sha256": "1eef8ba6dce28e0a362ff06475daa8c3d0eab1895ded2d141eedb009262d6f45",
+      "bytes": 9303,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_HUB_TDB_COMPLETE_ROOT_2026_10_28.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_HUB_TDB_COMPLETE_ROOT_2026_10_28.md",
+      "sha256": "458f4342e6b32acdb36e57ddd9ec23f7933797cdccbbbaebccf1d3eaaa051eef",
+      "bytes": 18476,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_HUB_TDB_D_COMPLETE_TRIANGLE_BRIDGES_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_HUB_TDB_D_COMPLETE_TRIANGLE_BRIDGES_2026_10_27.md",
+      "sha256": "cd1d562356fe2dc437221ba6c445bf2faa200b610126dc99176ad8813b665ff2",
+      "bytes": 9580,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_HUB_TDB_LOW_SCALAR_AND_COMPLETE_S_TRIANGLE_BRIDGES_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_HUB_TDB_LOW_SCALAR_AND_COMPLETE_S_TRIANGLE_BRIDGES_2026_10_27.md",
+      "sha256": "8ff8386d21ab4555f7540058cde686fe584a88e82238b59c9a3a17590b6d5b65",
+      "bytes": 13024,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_HUB_TDB_S_ROOT_DOMAIN_TRIANGLE_BRIDGES_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_HUB_TDB_S_ROOT_DOMAIN_TRIANGLE_BRIDGES_2026_10_27.md",
+      "sha256": "6720c8c09e46051b1a6d6b4a631f16ebec111107f565d10172ff9cf4cb105d10",
+      "bytes": 10391,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_LOWER_TD_D_COMPLETE_ROOT_2026_10_28.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_LOWER_TD_D_COMPLETE_ROOT_2026_10_28.md",
+      "sha256": "c25f680332d86dbfaa88765fd14961d513bed07be126285deb160249f1187f15",
+      "bytes": 6727,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_LOWER_TD_D_AND_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_LOWER_TD_D_COMPLETE_TRIANGLE_BRIDGES_2026_10_28.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_LOWER_TD_D_COMPLETE_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "2b6dea170d318ccf284d8cbfc0b2be0089b6e9256632b75b1a7689fe8176b694",
+      "bytes": 7786,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_LOWER_TD_D_AND_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_LOWER_TD_S_PARALLEL_BYPASS_ROOT_2026_10_28.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_LOWER_TD_S_PARALLEL_BYPASS_ROOT_2026_10_28.md",
+      "sha256": "99d95b9bfefa851835410ddcc5a96634adae2476d672439c88969a767d4c6aba",
+      "bytes": 6709,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_HOUSE_S_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_LOWER_TD_S_PARALLEL_BYPASS_TRIANGLE_BRIDGES_2026_10_28.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_LOWER_TD_S_PARALLEL_BYPASS_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "9f8a8e03abcbec5e9ecf6ca3c563e7d6e46d80262ab602982bb2516ab4c3d173",
+      "bytes": 9044,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_HOUSE_S_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_ROOF_AB_D_COMPLETE_HEXAGON_2026_10_28.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_ROOF_AB_D_COMPLETE_HEXAGON_2026_10_28.md",
+      "sha256": "2d730f5a3eaf7288d3bb4b196ef288c96a65df97661f62d4898d4827a6531ed2",
+      "bytes": 12541,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_ROOF_AB_D_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_ROOF_AB_D_COMPLETE_TRIANGLE_BRIDGES_2026_10_28.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_ROOF_AB_D_COMPLETE_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "18ec7f986d47a347fb919258822ebbc7cd6eed7ef84e64ac0780dfd9b0a4ac92",
+      "bytes": 13833,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_ROOF_AB_D_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_ROOF_AB_D_FINAL_INTEGRATION_ROOT_2026_10_28.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_ROOF_AB_D_FINAL_INTEGRATION_ROOT_2026_10_28.md",
+      "sha256": "87d458ba7c92a0ddc0d4b8860eeafaaea1b1e22adf8972e2da75c0ea58b31e4e",
+      "bytes": 4053,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_ROOF_AB_D_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_ROOF_TWO_UNLOADED_HUBS_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_ROOF_TWO_UNLOADED_HUBS_ROOT_2026_10_27.md",
+      "sha256": "05579d7f8cb2a11ed0d2c18369cc316e942d0f3b59815c6c85f37d471323c339",
+      "bytes": 12547,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_ROOF_TWO_UNLOADED_HUBS_TRIANGLE_BRIDGES_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_ROOF_TWO_UNLOADED_HUBS_TRIANGLE_BRIDGES_2026_10_27.md",
+      "sha256": "98e82958c90a39712d25a63e1493235a5ab2b4fc2f33b25ed352769104581750",
+      "bytes": 10901,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_INNER_PENTAGON_FOUR_LOAD_1234_COMPLETE_JOIN_ROOTED_BLOCKS_2026_10_28.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_INNER_PENTAGON_FOUR_LOAD_1234_COMPLETE_JOIN_ROOTED_BLOCKS_2026_10_28.md",
+      "sha256": "d6794cb6c00876a360adecafd47ec07666065536ec9bfb8b632c75d05dbcf796",
+      "bytes": 9589,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_INNER_PENTAGON_FOUR_LOAD_1234_FINAL_INTEGRATION_ROOT_2026_10_28.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_INNER_PENTAGON_FOUR_LOAD_1234_FINAL_INTEGRATION_ROOT_2026_10_28.md",
+      "sha256": "fbaacd867714592473e6cac98c8f2b90906844e7eb833c7760938855fcf54bd5",
+      "bytes": 4274,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_INNER_PENTAGON_FOUR_LOAD_OBLIQUE_AND_JOIN_ROOT_2026_10_28.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_INNER_PENTAGON_FOUR_LOAD_OBLIQUE_AND_JOIN_ROOT_2026_10_28.md",
+      "sha256": "039688d53af57dd0b9aa356b117b84b09596497a068d62031c683ac1a0cd1197",
+      "bytes": 12501,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_INNER_PENTAGON_FOUR_LOAD_PARALLEL_BYPASS_ROOTED_BLOCKS_2026_10_28.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_INNER_PENTAGON_FOUR_LOAD_PARALLEL_BYPASS_ROOTED_BLOCKS_2026_10_28.md",
+      "sha256": "6ddd107d4eefc855ebce9bc9ff784d7655eeb491352872e52ddc1b57b202c48e",
+      "bytes": 9484,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_LOWER_TD_D_AND_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        },
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "retained_direct_chain_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_INNER_PENTAGON_FOUR_LOAD_PARALLEL_BYPASS_ROOT_2026_10_28.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_INNER_PENTAGON_FOUR_LOAD_PARALLEL_BYPASS_ROOT_2026_10_28.md",
+      "sha256": "67d2aaecd3310b016805a9ab90a74d469ac43f0bf1a4baba9a2d35c1802aa82c",
+      "bytes": 7426,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_LOWER_TD_D_AND_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        },
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "retained_direct_chain_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_INNER_PENTAGON_TWO_SPOKE_NO_CHORD_COMPLETE_JOIN_ROOTED_BLOCKS_2026_10_28.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_INNER_PENTAGON_TWO_SPOKE_NO_CHORD_COMPLETE_JOIN_ROOTED_BLOCKS_2026_10_28.md",
+      "sha256": "3beff0a5203f5470a351a63f27c70eb85d6f21e8fd8b813b51c1d6ad69f616cd",
+      "bytes": 14269,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_INNER_PENTAGON_TWO_SPOKE_NO_CHORD_COMPLETE_ROOT_2026_10_28.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_INNER_PENTAGON_TWO_SPOKE_NO_CHORD_COMPLETE_ROOT_2026_10_28.md",
+      "sha256": "f9aabdc30dff589dd171ca7f13669da9cf8d9b93bae3856fc1727239263e86c8",
+      "bytes": 12775,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_OBLIQUE_BYPASS_AND_INNER_PENTAGON_013_JOIN_TRIANGLE_BRIDGES_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_OBLIQUE_BYPASS_AND_INNER_PENTAGON_013_JOIN_TRIANGLE_BRIDGES_2026_10_27.md",
+      "sha256": "279562e2dd6e6f83987a8efbffe21d86b52599f96f19dfde13c12cc2e74adb33",
+      "bytes": 14199,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        },
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "retained_direct_chain_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_ONE_FOUR_BLOCK_THREE_BRIDGES_COMPLETE_JOIN_ROOTED_BLOCKS_2026_10_28.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_ONE_FOUR_BLOCK_THREE_BRIDGES_COMPLETE_JOIN_ROOTED_BLOCKS_2026_10_28.md",
+      "sha256": "017079f9663b39056fb409129205c85e9b1557dcd4f6ab97f19c4326f1e877ce",
+      "bytes": 17050,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_ONE_FOUR_BODY_THREE_BRIDGES_COMPLETE_JOIN_TRIANGLE_BRIDGES_2026_10_28.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_ONE_FOUR_BODY_THREE_BRIDGES_COMPLETE_JOIN_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "85292f2225a7b595008a311faff14592f22182043e9b753afb80aa6cc4e0e9b5",
+      "bytes": 17691,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_ONE_FOUR_BODY_THREE_BRIDGES_INTEGRATION_ROOT_2026_10_28.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_ONE_FOUR_BODY_THREE_BRIDGES_INTEGRATION_ROOT_2026_10_28.md",
+      "sha256": "07f902609465c235142be1f1f01ed9d25e35f06d53161c66f7ec42f34c88d78a",
+      "bytes": 2673,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_PARALLEL_BYPASS_UNLOADED_THREE_FORCE_TRIANGLE_BRIDGES_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_PARALLEL_BYPASS_UNLOADED_THREE_FORCE_TRIANGLE_BRIDGES_2026_10_27.md",
+      "sha256": "b55b55650640951b94d100b607b9e7c46be1512b343ed28e8a5c797c85a353dc",
+      "bytes": 9564,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_PARALLEL_OBLIQUE_BYPASS_AND_PENTAGON_013_ROOT_2026_10_28.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_PARALLEL_OBLIQUE_BYPASS_AND_PENTAGON_013_ROOT_2026_10_28.md",
+      "sha256": "026d2c05b157d98d912cb86e8a1cc270d8a24996885229f9c57b3cbf7df25328",
+      "bytes": 10604,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        },
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "retained_direct_chain_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_PUBLISHED_AND_FRESH_THREE_BRIDGES_RECONCILIATION_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_PUBLISHED_AND_FRESH_THREE_BRIDGES_RECONCILIATION_ROOT_2026_10_27.md",
+      "sha256": "6556fd9a1604632a30235375d53f64cd64a5e8be324e58ce35b1d2a4541e2274",
+      "bytes": 6658,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_SHORT_ARM_DISTINCT_ROOT_LOW_CRITICAL_TYPES_HEXAGON_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_SHORT_ARM_DISTINCT_ROOT_LOW_CRITICAL_TYPES_HEXAGON_2026_10_27.md",
+      "sha256": "e045669a10fa1a1d41f86a350d910790339976da5d8401c028e09e30db4de39d",
+      "bytes": 10197,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_SHORT_ARM_DISTINCT_ROOT_LOW_CRITICAL_TYPES_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_SHORT_ARM_DISTINCT_ROOT_LOW_CRITICAL_TYPES_ROOT_2026_10_27.md",
+      "sha256": "9d3a4a0ae6796f66fb6bfaf817852b5d2c611fd612c73ef1f1e15086a8dac0ba",
+      "bytes": 9437,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_SHORT_ARM_THREE_FORCE_ADJACENT_GENUINE_ROOT_FRESH_HEXAGON_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_SHORT_ARM_THREE_FORCE_ADJACENT_GENUINE_ROOT_FRESH_HEXAGON_2026_10_27.md",
+      "sha256": "79a2ad9b00ab4d2e1eab2dc4134a049f737a3b72bb9a62ffbbcd3e1d2b098e2e",
+      "bytes": 12233,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_SHORT_ARM_THREE_FORCE_ADJACENT_GENUINE_ROOT_FRESH_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_SHORT_ARM_THREE_FORCE_ADJACENT_GENUINE_ROOT_FRESH_ROOT_2026_10_27.md",
+      "sha256": "b2b2b6e6e474507bd8c507ebb24c4b9de2a8c42f79b5c892f3e72da1bc5a2c6d",
+      "bytes": 10086,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_SHORT_ARM_TRIANGLE_PARENT_NEAR_ROOT_FRESH_HEXAGON_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_SHORT_ARM_TRIANGLE_PARENT_NEAR_ROOT_FRESH_HEXAGON_2026_10_27.md",
+      "sha256": "6366a7c122af9853355f7a69e0a64abdcb7cdf04198ac8921ba2115a67858483",
+      "bytes": 10606,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_SHORT_ARM_TRIANGLE_PARENT_NEAR_ROOT_FRESH_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_SHORT_ARM_TRIANGLE_PARENT_NEAR_ROOT_FRESH_ROOT_2026_10_27.md",
+      "sha256": "b5660fa8f2e5691eec1adf0b9403a318a551369665b6baadbfe7c13579017521",
+      "bytes": 7589,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_SIDE_CHANNEL_UNLOADED_TRIANGLE_POSITIVE_MEAN_HEXAGON_2026_10_28.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_SIDE_CHANNEL_UNLOADED_TRIANGLE_POSITIVE_MEAN_HEXAGON_2026_10_28.md",
+      "sha256": "3077224a609df530e0db2887186729bdfd7db0706dde55f8905564d72c6579f6",
+      "bytes": 11380,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_HOUSE_S_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_TC_S_POSITIVE_MEAN_AND_PARALLEL_CHANNEL_ROOT_2026_10_28.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_TC_S_POSITIVE_MEAN_AND_PARALLEL_CHANNEL_ROOT_2026_10_28.md",
+      "sha256": "5703b7b6658ddcdf9356863d63a0966c3a0f489a242ac6e453bfcdcb0aad276e",
+      "bytes": 13781,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_HOUSE_S_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_GENUINE_LEAVES_C4_COMPLETE_FRESH_HEXAGON_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_THREE_GENUINE_LEAVES_C4_COMPLETE_FRESH_HEXAGON_2026_10_27.md",
+      "sha256": "0e841b32a1cfacfdee9da4b8f3b9c399a67eb8eef156d9c53af87e37c67c0299",
+      "bytes": 9421,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_GENUINE_LEAVES_C4_FRESH_COMPLETE_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_THREE_GENUINE_LEAVES_C4_FRESH_COMPLETE_ROOT_2026_10_27.md",
+      "sha256": "5fb827878405f6ad9feea9a2d6eb878fd25a3fdd7cfdfc15f5a619333a80b317",
+      "bytes": 11800,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_GENUINE_LEAVES_DIAMOND_FRESH_COMPLETE_JOIN_ROOTED_BLOCKS_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_THREE_GENUINE_LEAVES_DIAMOND_FRESH_COMPLETE_JOIN_ROOTED_BLOCKS_2026_10_27.md",
+      "sha256": "0bd47b3dd7575ac4c1710f06ced5e8196a47bc2e13b02c5bf2d4410f4fe0a1da",
+      "bytes": 5343,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_GENUINE_LEAVES_DIAMOND_FRESH_COMPLETE_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_THREE_GENUINE_LEAVES_DIAMOND_FRESH_COMPLETE_ROOT_2026_10_27.md",
+      "sha256": "049a851fb7214e87a1b5e3e379832111499d18bf78a38b7285115256e27edafb",
+      "bytes": 14455,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_LEAF_C4_OWNED_NEIGHBORS_FRESH_ROOTED_BLOCKS_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_THREE_LEAF_C4_OWNED_NEIGHBORS_FRESH_ROOTED_BLOCKS_2026_10_27.md",
+      "sha256": "8c1e98c735100a97194ec0f2c488ecadc1da9ba86d80d780bfee01a614c1c84b",
+      "bytes": 8211,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_LEAF_C4_PARALLEL_TILTED_FRESH_HEXAGON_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_THREE_LEAF_C4_PARALLEL_TILTED_FRESH_HEXAGON_2026_10_27.md",
+      "sha256": "ca19a7af1c6282759f0ff514a6c6734e5a44627b27b7d6535ad8476e6e29d00b",
+      "bytes": 11320,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_LEAF_DIAMOND_NONPARALLEL_AND_OWNED_PARALLEL_FRESH_ROOTED_BLOCKS_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_THREE_LEAF_DIAMOND_NONPARALLEL_AND_OWNED_PARALLEL_FRESH_ROOTED_BLOCKS_2026_10_27.md",
+      "sha256": "576cdb2c46ad653bb5f7598c21eb54c5d9b1c47f394fb386dce2f646296f23d0",
+      "bytes": 8091,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_LEAF_DIAMOND_ONE_TILTED_FRESH_TRIANGLE_BRIDGES_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_THREE_LEAF_DIAMOND_ONE_TILTED_FRESH_TRIANGLE_BRIDGES_2026_10_27.md",
+      "sha256": "4ae3a2f47d80333542491667c912c5664a9762050e83a4e505a68dd7596d3525",
+      "bytes": 10105,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_LEAF_DIAMOND_TWO_TILTED_FRESH_ROOTED_BLOCKS_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_THREE_LEAF_DIAMOND_TWO_TILTED_FRESH_ROOTED_BLOCKS_2026_10_27.md",
+      "sha256": "391415d31fc52b96ac44bff0b42c664842c50a2217afe8c94a09c1c83decad4c",
+      "bytes": 9410,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_TRANSVERSE_OWNED_NEAR_ROOT_NORMAL_TRIANGLE_BRIDGES_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_TRANSVERSE_OWNED_NEAR_ROOT_NORMAL_TRIANGLE_BRIDGES_2026_10_27.md",
+      "sha256": "855474649d7bfc34f58c324f7b7fa94fcc0ccca9e3a865c21eb870ba0682faf2",
+      "bytes": 3302,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_GENUINE_LEAVES_AND_DISTINCT_ROOT_ROOTED_BLOCKS_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_TWO_GENUINE_LEAVES_AND_DISTINCT_ROOT_ROOTED_BLOCKS_2026_10_27.md",
+      "sha256": "c1a6a2d4839b9ac461865623d4608757ca134aea1a3c49b901d4a3fb799aa62c",
+      "bytes": 13217,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/SHORT_ARM_DISTINCT_GENUINE_ROOT_LOW_CRITICAL_AND_TYPE_FRESH_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/SHORT_ARM_DISTINCT_GENUINE_ROOT_LOW_CRITICAL_AND_TYPE_FRESH_EXCLUSION.md",
+      "sha256": "fa43c1e85ac5f290430c0440f2c36dca1333058df6a0b0fda272fa3d0469a729",
+      "bytes": 11696,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/SHORT_ARM_THREE_FORCE_PARENT_ADJACENT_GENUINE_ROOT_FRESH_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/SHORT_ARM_THREE_FORCE_PARENT_ADJACENT_GENUINE_ROOT_FRESH_EXCLUSION.md",
+      "sha256": "5a6c6180c5fb22973352f4cb94a97daf43b38e1f25bb2756eb6366f2ddeccc1c",
+      "bytes": 13514,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/SHORT_ARM_THREE_FORCE_TRIANGLE_PARENT_NEAR_ROOT_FRESH_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/SHORT_ARM_THREE_FORCE_TRIANGLE_PARENT_NEAR_ROOT_FRESH_EXCLUSION.md",
+      "sha256": "0347f02721a7457aabb90840535f4e6b67bd0a6955a23bb0836fe46a34f437b0",
+      "bytes": 10736,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/SIDE_CHANNEL_UNLOADED_TRIANGLE_BYPASS_POSITIVE_MEAN.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/SIDE_CHANNEL_UNLOADED_TRIANGLE_BYPASS_POSITIVE_MEAN.md",
+      "sha256": "5a1607a588e45d0702c46c3d74074561f31109dccc0b8f94c665991cd4a9f5ee",
+      "bytes": 11411,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_HOUSE_S_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/THREE_BOUNDARY_PATH_MIDDLE_CENTER_OBTUSE.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/THREE_BOUNDARY_PATH_MIDDLE_CENTER_OBTUSE.md",
+      "sha256": "c2fb1f360163a513724c5388a5eca77b1ecadef40f39b7f6b3e46ea52335623b",
+      "bytes": 4238,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/THREE_GENUINE_LEAVES_C4_COMPLETE_FRESH_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/THREE_GENUINE_LEAVES_C4_COMPLETE_FRESH_EXCLUSION.md",
+      "sha256": "d4f7c0fbde651c76d1e8dd9b679e9acbcbfc154091cf0c38444c942a013d82e7",
+      "bytes": 9960,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/THREE_GENUINE_LEAVES_DIAMOND_FRESH_COMPLETE_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/THREE_GENUINE_LEAVES_DIAMOND_FRESH_COMPLETE_EXCLUSION.md",
+      "sha256": "ecdedce6af9577138972daff2bdae610dbe18279826853eb1424aa01fca492cf",
+      "bytes": 10168,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/THREE_LEAF_C4_OWNED_NEIGHBORS_FRESH_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/THREE_LEAF_C4_OWNED_NEIGHBORS_FRESH_EXCLUSION.md",
+      "sha256": "1bdfc293d44dbf81c1cb40280b46e362ee878ceb5887ac8652093d11f2f4fd93",
+      "bytes": 17491,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/THREE_LEAF_C4_PARALLEL_TILTED_NEIGHBORS_FRESH_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/THREE_LEAF_C4_PARALLEL_TILTED_NEIGHBORS_FRESH_EXCLUSION.md",
+      "sha256": "5f37a10ef2f445ded295779394e6057d0a64f0365e73abda2c1006d3047e66ab",
+      "bytes": 18432,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/THREE_LEAF_DIAMOND_NONPARALLEL_AND_OWNED_PARALLEL_FRESH_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/THREE_LEAF_DIAMOND_NONPARALLEL_AND_OWNED_PARALLEL_FRESH_EXCLUSION.md",
+      "sha256": "80bd0ad1a120592a0cc4c0509c12898f697094cc1fd7142b117b7f7477494357",
+      "bytes": 16825,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/THREE_LEAF_DIAMOND_PARALLEL_ONE_TILTED_HUB_FRESH_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/THREE_LEAF_DIAMOND_PARALLEL_ONE_TILTED_HUB_FRESH_EXCLUSION.md",
+      "sha256": "51ccbcfd5681d6be4e8ab6f5583769ea07e6a06101f031c5cfe6cba52f1df086",
+      "bytes": 14578,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/THREE_LEAF_DIAMOND_PARALLEL_TWO_TILTED_HUBS_FRESH_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/THREE_LEAF_DIAMOND_PARALLEL_TWO_TILTED_HUBS_FRESH_EXCLUSION.md",
+      "sha256": "11530ae9f40f09ff0d6d868ed10b492fb99bd737e9f8769be829fda307bc452b",
+      "bytes": 19160,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/certificates/house_tdb_owned_south_channel_height_check.py",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/certificates/house_tdb_owned_south_channel_height_check.py",
+      "sha256": "589814e33139f431e222c9e8da16291fb3893998f27d6e64df6d2d9fb72bf005",
+      "bytes": 2877,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/certificates/review_house_tdb_owned_south_channel_height_independent.py",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/certificates/review_house_tdb_owned_south_channel_height_independent.py",
+      "sha256": "a228c00c7374fb1ced950b015597062b567ad7bd0bf3e3a119a6bb86bd88bd20",
+      "bytes": 4125,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    }
+  ],
+  "unchanged_baseline_files": [
+    {
+      "path": "research/nine/BOUNDARY_UNIT_THREE_NEAR_NEIGHBORS_FRESH_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/BOUNDARY_UNIT_THREE_NEAR_NEIGHBORS_FRESH_EXCLUSION.md",
+      "sha256": "ba49bbf678dfecdadbd120328de745253c8e5a45a5f7635d7044fc784179f156",
+      "bytes": 6263,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/CHORDED_HEXAGON_DOUBLE_CHANNEL_THREE_LOAD_THETA_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/CHORDED_HEXAGON_DOUBLE_CHANNEL_THREE_LOAD_THETA_EXCLUSION.md",
+      "sha256": "0af7a3d68597ff0ca166d9d014e5026787dc3905fdef73b17cf7935cca919615",
+      "bytes": 20370,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "retained_direct_chain_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/CHORDED_HEXAGON_ONE_PROPER_DIAGONAL_ANGLE_AND_PENTAGON_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/CHORDED_HEXAGON_ONE_PROPER_DIAGONAL_ANGLE_AND_PENTAGON_EXCLUSION.md",
+      "sha256": "ff76e6a5f21b49c7a46036c1b4535457c342cf19710fb8bbac83d67cf078c979",
+      "bytes": 12839,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "retained_direct_chain_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/CHORDED_HEXAGON_SIDE_TRANSMITTER_BYPASS_UNLOADED_ENDPOINT_SEPARATION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/CHORDED_HEXAGON_SIDE_TRANSMITTER_BYPASS_UNLOADED_ENDPOINT_SEPARATION.md",
+      "sha256": "4a979638b562040455e3058351db24358e7ecb093e5c0c1635dcd6438492eecd",
+      "bytes": 13267,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "retained_direct_chain_sources_and_reviews"
+        },
+        {
+          "checkpoint": "ACCEPTED_ROOF_AB_D_CHECKPOINT_2026_10_28.json",
+          "field": "retained_direct_inputs"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/D_LEAF_SHALLOW_SIDE_BOUNDARY_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/D_LEAF_SHALLOW_SIDE_BOUNDARY_EXCLUSION.md",
+      "sha256": "79ddc3bc94613ba34b30ea3b1e4176a14d644b08887020cbc38f9ef9d785d8a8",
+      "bytes": 7803,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_ROOF_AB_D_CHECKPOINT_2026_10_28.json",
+          "field": "retained_direct_inputs"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_DOUBLE_CHANNEL_THREE_LOAD_THETA_ROOTED_BLOCKS_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_DOUBLE_CHANNEL_THREE_LOAD_THETA_ROOTED_BLOCKS_2026_10_27.md",
+      "sha256": "37862dc097330056fdd6dba1fd07630e08aa89cf081baf39c1ee328cc121f78f",
+      "bytes": 10132,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "retained_direct_chain_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_DOUBLE_CHANNEL_THREE_LOAD_THETA_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_DOUBLE_CHANNEL_THREE_LOAD_THETA_ROOT_2026_10_27.md",
+      "sha256": "29279dd7a104b562bd402dd881d9145d52d75730a6817d66033f73f2be727f74",
+      "bytes": 7027,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "retained_direct_chain_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_ONE_PROPER_DIAGONAL_ANGLE_AND_PENTAGON_GLOBAL_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_ONE_PROPER_DIAGONAL_ANGLE_AND_PENTAGON_GLOBAL_2026_10_27.md",
+      "sha256": "36036e8d3cebd7e8ead33f43f0b5997c8441495afb2902a6e0c0e30949daaa37",
+      "bytes": 8664,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "retained_direct_chain_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_ONE_PROPER_DIAGONAL_ANGLE_AND_PENTAGON_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_ONE_PROPER_DIAGONAL_ANGLE_AND_PENTAGON_ROOT_2026_10_27.md",
+      "sha256": "3e561b25653419e7b282017c9d6ddb449bbd7146b87a56bf3b0e5e8752d67198",
+      "bytes": 5892,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "retained_direct_chain_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_SIDE_TRANSMITTER_UNLOADED_ENDPOINT_SEPARATION_ROOTED_BLOCKS_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_SIDE_TRANSMITTER_UNLOADED_ENDPOINT_SEPARATION_ROOTED_BLOCKS_2026_10_27.md",
+      "sha256": "0ee225e71d43495f66a126b382bffe3e75cc40d2c93d3031604dc69ebd047574",
+      "bytes": 9932,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "retained_direct_chain_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_SIDE_TRANSMITTER_UNLOADED_ENDPOINT_SEPARATION_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_SIDE_TRANSMITTER_UNLOADED_ENDPOINT_SEPARATION_ROOT_2026_10_27.md",
+      "sha256": "5a01ca79842745c78e8b98e039cec4ebd8c0f0dad1f4c8ed7140837ee47ec046",
+      "bytes": 5024,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "retained_direct_chain_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/REVIEW_SIX_BODY_SEVEN_RECOVERED_SOURCES_2026_10_27.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_SIX_BODY_SEVEN_RECOVERED_SOURCES_2026_10_27.md",
+      "sha256": "9480e81d87479e93da45dbd3bf1db2533efe835011a8160038d58d325f5abbf7",
+      "bytes": 10863,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "retained_direct_chain_sources_and_reviews"
+        }
+      ]
+    },
+    {
+      "path": "research/nine/TWO_GENUINE_LEAVES_AT_ONE_ROOT_AND_A_DISTINCT_GENUINE_ROOT_EXCLUSION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/TWO_GENUINE_LEAVES_AT_ONE_ROOT_AND_A_DISTINCT_GENUINE_ROOT_EXCLUSION.md",
+      "sha256": "c810d66cb1babc60dc759364692ca5ba8ef4cdfa78875c56d859ae7a58fc9783",
+      "bytes": 12168,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "accepted_sources_and_reviews"
+        }
+      ]
+    }
+  ],
+  "changed_existing_conflicts": [
+    {
+      "path": "research/nine/CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "sha256": "2625b3a2b730525a6397bc90232e78c5e1aac8091381c1f5e5fc8a71ef1da449",
+      "bytes": 12814,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "retained_direct_chain_sources_and_reviews"
+        }
+      ],
+      "baseline_sha256": "e54df61d3134c5709bee5ac1a250fdd51084828da114d896f14c7e6337c4e8c5",
+      "difference": "terminal-linefeed-only"
+    },
+    {
+      "path": "research/nine/END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+      "sha256": "6f3459eaf4ca425ee2001ddb27e1ba7a1b5eb0003548498f48c610776554d3bb",
+      "bytes": 8687,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "retained_direct_chain_sources_and_reviews"
+        },
+        {
+          "checkpoint": "ACCEPTED_ROOF_AB_D_CHECKPOINT_2026_10_28.json",
+          "field": "retained_direct_inputs"
+        }
+      ],
+      "baseline_sha256": "20a845eff8bee3e9c533162df0b32ea96f9dd104a3cfec41efb3b0cf92d6e9cf",
+      "difference": "terminal-linefeed-only"
+    },
+    {
+      "path": "research/nine/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "sha256": "7ba98ef149c1faff4ef4baeaf0b0305a38cf1153f883a3fe4bfa92087d33622d",
+      "bytes": 17790,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_ROOF_AB_D_CHECKPOINT_2026_10_28.json",
+          "field": "retained_direct_inputs"
+        }
+      ],
+      "baseline_sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "difference": "terminal-linefeed-only"
+    },
+    {
+      "path": "research/nine/FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "sha256": "6c38d162e1f2c435cf65a8b4a58a7001fe9489c65b3510159fee2687b9753708",
+      "bytes": 8496,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "retained_direct_chain_sources_and_reviews"
+        }
+      ],
+      "baseline_sha256": "164d08bb2c4dfe8510247e44298d309920cb88a780221252d833f51aa654225f",
+      "difference": "terminal-linefeed-only"
+    },
+    {
+      "path": "research/nine/NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "sha256": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c",
+      "bytes": 18216,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "retained_direct_chain_sources_and_reviews"
+        }
+      ],
+      "baseline_sha256": "46220c8a3eb3f539c682bf6a6fa932edf003e37484e0f6004d321e7cb14d7957",
+      "difference": "terminal-linefeed-only"
+    },
+    {
+      "path": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a",
+      "bytes": 14122,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "retained_direct_chain_sources_and_reviews"
+        }
+      ],
+      "baseline_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "difference": "terminal-linefeed-only"
+    },
+    {
+      "path": "research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "sha256": "6154eee2ab1114d063b0dbd1a2800c3522cbb1b46ec44a258c1c89d8ffb9e975",
+      "bytes": 14903,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_ROOF_AB_D_CHECKPOINT_2026_10_28.json",
+          "field": "retained_direct_inputs"
+        }
+      ],
+      "baseline_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "difference": "terminal-linefeed-only"
+    },
+    {
+      "path": "research/nine/SIX_BODY_INNER_PENTAGON_LOAD_COVER.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/SIX_BODY_INNER_PENTAGON_LOAD_COVER.md",
+      "sha256": "fa877c9d7d25c57a7c8cf438a429465b5952cb8db6628c57d9d93695b33dd434",
+      "bytes": 10871,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "retained_direct_chain_sources_and_reviews"
+        }
+      ],
+      "baseline_sha256": "cfe85a201b09182200d5270f0dcdc0e590bf99eded19aaf6d56f86830e959c0a",
+      "difference": "terminal-linefeed-only"
+    },
+    {
+      "path": "research/nine/UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "sha256": "d6008ceb18b2c8921c1f3711e6babfea3a01761487352ef4dca60579a83353b8",
+      "bytes": 6574,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+          "field": "retained_direct_chain_sources_and_reviews"
+        },
+        {
+          "checkpoint": "ACCEPTED_ROOF_AB_D_CHECKPOINT_2026_10_28.json",
+          "field": "retained_direct_inputs"
+        }
+      ],
+      "baseline_sha256": "db073cd024a4f2e763e7cd0a21bf5cb6a2a8be67069f3f9d3aff638b8a40b258",
+      "difference": "terminal-linefeed-only"
+    },
+    {
+      "path": "research/nine/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "sha256": "ee865704904a8b2a5cab7649bdfd928008c253631abf1eb346d4950411c3afac",
+      "bytes": 4432,
+      "acceptance_records": [
+        {
+          "checkpoint": "ACCEPTED_ROOF_AB_D_CHECKPOINT_2026_10_28.json",
+          "field": "retained_direct_inputs"
+        }
+      ],
+      "baseline_sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "difference": "terminal-linefeed-only"
+    }
+  ],
+  "excluded_historical_metadata_records": [
+    [
+      "ACCEPTED_HOUSE_S_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+      "metadata_unchanged",
+      "CYCLIC_CELL_LEDGER.md",
+      "a23134f7306f7df67b929eb4174ca3b3b964ebb0e7cbfaef3a24d8c2e3cf62e3",
+      "9b921eac9b831646625c6d81024d0fa745c4aae185392fd1ff4a64aa5e9d5180"
+    ],
+    [
+      "ACCEPTED_HOUSE_S_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+      "metadata_unchanged",
+      "DEEP_GATED_ROADMAP.md",
+      "e94eb877a8314e87cd259a1781d444c5d08907f5fc570a8ee547613631b793db",
+      "0d443b7c05c4e534d4c95d8f54e558374505bec719122e6f6e3439249d3d49fb"
+    ],
+    [
+      "ACCEPTED_HOUSE_S_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+      "metadata_unchanged",
+      "HANDOFF_PR11_2026_10_25.md",
+      "65c70f437d51e1ceeb7d9eb04e470c6fa7931827afed9e59f5e83c72a6bdc810",
+      "0ee33de19ca0d7570c877ac988fa4b47cbe0379ce0753808d1a673c674e17417"
+    ],
+    [
+      "ACCEPTED_HOUSE_S_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+      "metadata_unchanged",
+      "HANDOFF_PR11_2026_10_27_CURRENT.md",
+      "ff1c0ec23b3aaa860f57bd8409ada3daaf56104a7f91309c2c08021ff88a6642",
+      "5b4b334f83caea7b64fbfc1080949fc56d69b5923ae2cf1e0610419fa23c6380"
+    ],
+    [
+      "ACCEPTED_HOUSE_S_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+      "metadata_unchanged",
+      "TWO_LOAD_PROGRESS.md",
+      "8ad75835d7f93e1c480d20b0eb516d67682eee2bbdfa8fa83bf15824e8086b46",
+      "bc33aae39d6ec9dd1eb926d6519e710f0514ca3fc6272abf9a6de91c006e8721"
+    ]
+  ],
+  "pin_errors": []
+}

@@ -1,0 +1,1357 @@
+{
+  "date_utc": "2026-10-28",
+  "reviewer": "frontier_audit",
+  "status": "Complete already accepted original LTAC.S proof dependency closure recovered without replacing current accepted source files; final current adoption belongs to root.",
+  "original_family_id": "M6.B5L.HOUSE.LOWER.LTAC.S",
+  "original_source_workspace": "/workspace/scratch/8168d2185cf7/repo/research/nine",
+  "current_workspace": "/workspace/scratch/02b38038fee3/lean4-squares-in-circles/research/nine",
+  "historical_checkpoint": {
+    "path": "/workspace/scratch/8168d2185cf7/repo/research/nine/ACCEPTED_LOWER_TAC_S_AND_THREE_SPOKE_GRAPH_CHECKPOINT_2026_10_28.json",
+    "sha256": "2060c38e8104eb622d3b5114c9fe1ab0f89cd6b429182ed0b6670e3320d16a7f",
+    "historical_last_verified_remote_head": "703cfc0e079b93fc860a4f32cbb5ce5f70458b4b",
+    "historical_fine_changes": [
+      {
+        "id": "M6.B5L.HOUSE.LOWER.LTAC.S",
+        "from": "open",
+        "to": "checked"
+      },
+      {
+        "id": "M6.B6.PENTAGON.H3_EXIT",
+        "from": "open",
+        "to": "checked"
+      }
+    ],
+    "current_recovery_credit_scope": "Only LTAC.S. Historical H3 parent already independently adopted on current branch; no duplicate credit. Historical global counts are not adopted."
+  },
+  "current_base_head_before_recovery": "c008ac1997afd39b6dfd7e5576bdf8133047f656",
+  "files": [
+    {
+      "path": "HOUSE_LOWER_TAC_S_COMPLETE_EXCLUSION.md",
+      "old_sha256": "de3565cda8f47022376c115c26f50061fc67e10e320c9f389dcce1c99d8a568b",
+      "new_sha256": "de3565cda8f47022376c115c26f50061fc67e10e320c9f389dcce1c99d8a568b",
+      "action": "copy",
+      "bytes": 18815
+    },
+    {
+      "path": "REVIEW_HOUSE_LOWER_TAC_S_COMPLETE_ROOT_2026_10_28.md",
+      "old_sha256": "dcd0fa7b2579cad478c53f58e4ba63e7cb5b7b779ee33d9fc7b723661bfa1d95",
+      "new_sha256": "dcd0fa7b2579cad478c53f58e4ba63e7cb5b7b779ee33d9fc7b723661bfa1d95",
+      "action": "copy",
+      "bytes": 9750
+    },
+    {
+      "path": "REVIEW_HOUSE_LOWER_TAC_S_COMPLETE_JOIN_TRIANGLE_BRIDGES_2026_10_28.md",
+      "old_sha256": "5aeda0e622fa3d89edd778b6cb81c7b0eeed112e80a7a3e3b46bb68bbd91ac38",
+      "new_sha256": "5aeda0e622fa3d89edd778b6cb81c7b0eeed112e80a7a3e3b46bb68bbd91ac38",
+      "action": "copy",
+      "bytes": 14553
+    },
+    {
+      "path": "ALIGNED_LOW_S_LOWER_RETURN_HEIGHT_SEPARATION.md",
+      "old_sha256": "93bb8e2d6dc3f2965c1a1868ba4a7552f63c5326cbe05cab5381950f4db765be",
+      "new_sha256": "93bb8e2d6dc3f2965c1a1868ba4a7552f63c5326cbe05cab5381950f4db765be",
+      "action": "copy",
+      "bytes": 8973
+    },
+    {
+      "path": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_A_EXCLUSION.md",
+      "old_sha256": "975b2ab626aa30b06decdf068fd0667c7badee83e6711ec489de0daab673c773",
+      "new_sha256": "975b2ab626aa30b06decdf068fd0667c7badee83e6711ec489de0daab673c773",
+      "action": "copy",
+      "bytes": 14578
+    },
+    {
+      "path": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_EXCLUSION.md",
+      "old_sha256": "b773da381ac721c0f3c06083c9da6258ea1142353fd4a6e000edaff1d8398125",
+      "new_sha256": "b773da381ac721c0f3c06083c9da6258ea1142353fd4a6e000edaff1d8398125",
+      "action": "copy",
+      "bytes": 16294
+    },
+    {
+      "path": "REVIEW_ALIGNED_LOW_S_LOWER_RETURN_HEIGHT_SEPARATION_HEXAGON_2026_10_28.md",
+      "old_sha256": "cf5f599682c976732df9ef591518f309f68d4babc7747b6d1f080f4683c7173c",
+      "new_sha256": "cf5f599682c976732df9ef591518f309f68d4babc7747b6d1f080f4683c7173c",
+      "action": "copy",
+      "bytes": 11444
+    },
+    {
+      "path": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_A_TRIANGLE_BRIDGES_2026_10_28.md",
+      "old_sha256": "98355c7ee0a865b919330af7bc8b1094d0cb56118188a0e1fab2a59b587e9ab9",
+      "new_sha256": "98355c7ee0a865b919330af7bc8b1094d0cb56118188a0e1fab2a59b587e9ab9",
+      "action": "copy",
+      "bytes": 16026
+    },
+    {
+      "path": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_HEXAGON_2026_10_28.md",
+      "old_sha256": "4b5aafac6605f488a3ee63d3d4c453200f0b27fb472b26d2ab3c11da3643c394",
+      "new_sha256": "4b5aafac6605f488a3ee63d3d4c453200f0b27fb472b26d2ab3c11da3643c394",
+      "action": "copy",
+      "bytes": 20454
+    },
+    {
+      "path": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_ROOTED_BLOCKS_2026_10_28.md",
+      "old_sha256": "8fbc107ca79a3e8e9a747f501a4ed1b272aa5c23b662da4641a2a20fea186554",
+      "new_sha256": "8fbc107ca79a3e8e9a747f501a4ed1b272aa5c23b662da4641a2a20fea186554",
+      "action": "copy",
+      "bytes": 17225
+    },
+    {
+      "path": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_TRIANGLE_BRIDGES_2026_10_28.md",
+      "old_sha256": "e8c69725a44711eaebb674a4f82778ce687a5c9d29f418f2a4cd15e0b1673fb4",
+      "new_sha256": "e8c69725a44711eaebb674a4f82778ce687a5c9d29f418f2a4cd15e0b1673fb4",
+      "action": "copy",
+      "bytes": 15794
+    },
+    {
+      "path": "REVIEW_LOWER_TAC_S_ALIGNED_UPPER_A_ROOT_2026_10_28.md",
+      "old_sha256": "6a0854accf176563cb83461fe3d0d328c978611e7fdddf6f08e880ceb35f18f3",
+      "new_sha256": "6a0854accf176563cb83461fe3d0d328c978611e7fdddf6f08e880ceb35f18f3",
+      "action": "copy",
+      "bytes": 9077
+    },
+    {
+      "path": "HOUSE_LOWER_TAC_S_TILTED_ROOT_COMPLETE_EXCLUSION.md",
+      "old_sha256": "ab0e50c96ee74b50afe2f094e4ae20f3467880c54a807dcc4b36d754b35e52da",
+      "new_sha256": "ab0e50c96ee74b50afe2f094e4ae20f3467880c54a807dcc4b36d754b35e52da",
+      "action": "copy",
+      "bytes": 17411
+    },
+    {
+      "path": "REVIEW_HOUSE_LOWER_TAC_S_TILTED_ROOT_ROOT_2026_10_28.md",
+      "old_sha256": "5b7950398a451bbbeae6497ddb2f14742df707476b21e5491f0207f92af7146f",
+      "new_sha256": "5b7950398a451bbbeae6497ddb2f14742df707476b21e5491f0207f92af7146f",
+      "action": "copy",
+      "bytes": 10127
+    },
+    {
+      "path": "REVIEW_HOUSE_LOWER_TAC_S_TILTED_ROOT_TRIANGLE_BRIDGES_2026_10_28.md",
+      "old_sha256": "a0a5c243b67f18c6941f981eac6afc90bb36fb3ac55c8b7d0ecfa5d35cf5de86",
+      "new_sha256": "a0a5c243b67f18c6941f981eac6afc90bb36fb3ac55c8b7d0ecfa5d35cf5de86",
+      "action": "copy",
+      "bytes": 10699
+    },
+    {
+      "path": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "old_sha256": "7ba98ef149c1faff4ef4baeaf0b0305a38cf1153f883a3fe4bfa92087d33622d",
+      "new_sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "action": "LF-only-preserve",
+      "bytes": 17790
+    },
+    {
+      "path": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "old_sha256": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c",
+      "new_sha256": "4c9e708945938c3f9df575e76f7573903d6b5a0ce4eccb5bcea760353a47458a",
+      "action": "same-export-adopt-current-analytic",
+      "bytes": 18216
+    },
+    {
+      "path": "ALIGNED_S_LEAF_ROOT_TWO_BOUNDARY_NEIGHBORS_EXCLUSION.md",
+      "old_sha256": "7c0e55bc75013f14d667a85635cd743361b325f7180f4710fd832c4f14ab9873",
+      "new_sha256": "7c0e55bc75013f14d667a85635cd743361b325f7180f4710fd832c4f14ab9873",
+      "action": "exact",
+      "bytes": 12473
+    },
+    {
+      "path": "S_LEAF_C5_ALIGNED_LOW_RADIUS_EXCLUSION.md",
+      "old_sha256": "02fd37d94d14f8342365160064cff63d91b572e9e162944e9551590fc8f535a1",
+      "new_sha256": "02fd37d94d14f8342365160064cff63d91b572e9e162944e9551590fc8f535a1",
+      "action": "exact",
+      "bytes": 17848
+    },
+    {
+      "path": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "old_sha256": "6154eee2ab1114d063b0dbd1a2800c3522cbb1b46ec44a258c1c89d8ffb9e975",
+      "new_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "action": "LF-only-preserve",
+      "bytes": 14903
+    },
+    {
+      "path": "certificates/aligned_low_s_lower_return_height_separation.py",
+      "old_sha256": "bd92d1895f240805a78ea5160b0b7ed56f6948a4ec6ce88ff870bb55a6472f15",
+      "new_sha256": "bd92d1895f240805a78ea5160b0b7ed56f6948a4ec6ce88ff870bb55a6472f15",
+      "action": "copy",
+      "bytes": 4391
+    },
+    {
+      "path": "certificates/aligned_low_s_upper_c_visibility_separation.py",
+      "old_sha256": "d57e7506d4f6e1dd92c991c8579fcfcd03377703863b0d42d50f417267fe2c4c",
+      "new_sha256": "d57e7506d4f6e1dd92c991c8579fcfcd03377703863b0d42d50f417267fe2c4c",
+      "action": "copy",
+      "bytes": 4744
+    },
+    {
+      "path": "ALIGNED_LOW_S_ROOT_LOWER_BOUNDARY_UNIQUE_CORNER_AND_CENTER.md",
+      "old_sha256": "c32b99ad24da76907f2e3eaa4d4e7c88b9b2d2599a0eefe50234fae493441c48",
+      "new_sha256": "c32b99ad24da76907f2e3eaa4d4e7c88b9b2d2599a0eefe50234fae493441c48",
+      "action": "exact",
+      "bytes": 9838
+    },
+    {
+      "path": "FIVE_CYCLE_FORCE_POLYGON_DOMAIN.md",
+      "old_sha256": "7d0c4092ba133a832cf963f329b1c3a6442a3260576f16319293835b39e6d282",
+      "new_sha256": "7d0c4092ba133a832cf963f329b1c3a6442a3260576f16319293835b39e6d282",
+      "action": "exact",
+      "bytes": 12974
+    },
+    {
+      "path": "ALIGNED_LOW_S_ROOT_UPPER_BOUNDARY_RETURN_EXCLUSION.md",
+      "old_sha256": "843e9afce21baa487804740b3aa7505cac254ef2904e525819960302505dace2",
+      "new_sha256": "843e9afce21baa487804740b3aa7505cac254ef2904e525819960302505dace2",
+      "action": "exact",
+      "bytes": 9763
+    },
+    {
+      "path": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "old_sha256": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a",
+      "new_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "action": "LF-only-preserve",
+      "bytes": 14122
+    },
+    {
+      "path": "certificates/review_aligned_low_s_lower_return_height_separation_hexagon.py",
+      "old_sha256": "c8ced658818cb45978c14964337e2fdbcb43c9ab3aad623667bf77d9029e25b0",
+      "new_sha256": "c8ced658818cb45978c14964337e2fdbcb43c9ab3aad623667bf77d9029e25b0",
+      "action": "copy",
+      "bytes": 9436
+    },
+    {
+      "path": "certificates/review_lower_tac_upper_a_height_triangle_bridges.py",
+      "old_sha256": "cb248f5417d2c43b67291106f896ac97e9dae5cef23e56aac46316a2963f5654",
+      "new_sha256": "cb248f5417d2c43b67291106f896ac97e9dae5cef23e56aac46316a2963f5654",
+      "action": "copy",
+      "bytes": 6805
+    },
+    {
+      "path": "certificates/review_aligned_low_s_upper_c_visibility_hexagon.py",
+      "old_sha256": "dd657ff02b1061590ff19533babe0e56c68d68d68452c00aef2b1c2ece7ae588",
+      "new_sha256": "dd657ff02b1061590ff19533babe0e56c68d68d68452c00aef2b1c2ece7ae588",
+      "action": "copy",
+      "bytes": 12761
+    },
+    {
+      "path": "C7_FORCE_POLYGON.md",
+      "old_sha256": "d50d8ca48ea19156175e651bfa74be30ef3e58065ec14d8d1834670a41559089",
+      "new_sha256": "d50d8ca48ea19156175e651bfa74be30ef3e58065ec14d8d1834670a41559089",
+      "action": "exact",
+      "bytes": 18062
+    },
+    {
+      "path": "TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md",
+      "old_sha256": "0d61292a0aa57084b88b4a72754fc78e123e8b684dac09be966fb074ab58e877",
+      "new_sha256": "29e38d3f641fe16c6db587e51245f92ad4c447f9536db7d14c221f56b5357e82",
+      "action": "LF-only-preserve",
+      "bytes": 20943
+    },
+    {
+      "path": "FOUR_CYCLE_ALIGNED_S_ARTICULATION_EXCLUSION.md",
+      "old_sha256": "f538032c069d34ef4e26e4ad03f85fd7f30f98b341e08b89a2579cdc7d9e9e56",
+      "new_sha256": "a250740c2533db8aacdd3a8d23e33ba42582c580f3bab5fb40ed0491d041b9f9",
+      "action": "LF-only-preserve",
+      "bytes": 9459
+    },
+    {
+      "path": "certificates/review_lower_tac_upper_c_visibility_triangle_bridges.py",
+      "old_sha256": "417a832c7ba660850b1a2f9abf92dd2ea68b5504536875d772f41ad168575180",
+      "new_sha256": "417a832c7ba660850b1a2f9abf92dd2ea68b5504536875d772f41ad168575180",
+      "action": "copy",
+      "bytes": 7355
+    },
+    {
+      "path": "SMALLER_CENTRAL_DISKS_NINE_UNIT_CAPACITY.md",
+      "old_sha256": "b0b2858252d2a3bee205d40f97958da445ece0a3a4e05bd693340b2e94884257",
+      "new_sha256": "b0b2858252d2a3bee205d40f97958da445ece0a3a4e05bd693340b2e94884257",
+      "action": "exact",
+      "bytes": 9239
+    },
+    {
+      "path": "CENTRAL_S_ROOT_THREE_BOUNDARY_PATH_CAPACITY.md",
+      "old_sha256": "91b34cfb58f69565d75e87ebc95fb92a6ed0226588292379cb380daae87efd3f",
+      "new_sha256": "91b34cfb58f69565d75e87ebc95fb92a6ed0226588292379cb380daae87efd3f",
+      "action": "exact",
+      "bytes": 9634
+    },
+    {
+      "path": "S_LEAF_ROOT_HIGH_COORDINATE_NORTH_SCREEN_EXCLUSION.md",
+      "old_sha256": "acec45db3253b2be2c6b68a85714313da572a8a858e9921431a745cafd889a83",
+      "new_sha256": "acec45db3253b2be2c6b68a85714313da572a8a858e9921431a745cafd889a83",
+      "action": "exact",
+      "bytes": 13147
+    }
+  ],
+  "source_pin_checks": [
+    {
+      "from": "HOUSE_LOWER_TAC_S_COMPLETE_EXCLUSION.md",
+      "path": "REVIEW_HOUSE_LOWER_TAC_S_TILTED_ROOT_ROOT_2026_10_28.md",
+      "declared": "5b7950398a451bbbeae6497ddb2f14742df707476b21e5491f0207f92af7146f",
+      "old_actual": "5b7950398a451bbbeae6497ddb2f14742df707476b21e5491f0207f92af7146f",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_COMPLETE_EXCLUSION.md",
+      "path": "REVIEW_HOUSE_LOWER_TAC_S_TILTED_ROOT_TRIANGLE_BRIDGES_2026_10_28.md",
+      "declared": "a0a5c243b67f18c6941f981eac6afc90bb36fb3ac55c8b7d0ecfa5d35cf5de86",
+      "old_actual": "a0a5c243b67f18c6941f981eac6afc90bb36fb3ac55c8b7d0ecfa5d35cf5de86",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_COMPLETE_EXCLUSION.md",
+      "path": "REVIEW_LOWER_TAC_S_ALIGNED_UPPER_A_ROOT_2026_10_28.md",
+      "declared": "6a0854accf176563cb83461fe3d0d328c978611e7fdddf6f08e880ceb35f18f3",
+      "old_actual": "6a0854accf176563cb83461fe3d0d328c978611e7fdddf6f08e880ceb35f18f3",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_COMPLETE_EXCLUSION.md",
+      "path": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_A_TRIANGLE_BRIDGES_2026_10_28.md",
+      "declared": "98355c7ee0a865b919330af7bc8b1094d0cb56118188a0e1fab2a59b587e9ab9",
+      "old_actual": "98355c7ee0a865b919330af7bc8b1094d0cb56118188a0e1fab2a59b587e9ab9",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_COMPLETE_EXCLUSION.md",
+      "path": "REVIEW_ALIGNED_LOW_S_LOWER_RETURN_HEIGHT_SEPARATION_HEXAGON_2026_10_28.md",
+      "declared": "cf5f599682c976732df9ef591518f309f68d4babc7747b6d1f080f4683c7173c",
+      "old_actual": "cf5f599682c976732df9ef591518f309f68d4babc7747b6d1f080f4683c7173c",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_COMPLETE_EXCLUSION.md",
+      "path": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_ROOTED_BLOCKS_2026_10_28.md",
+      "declared": "8fbc107ca79a3e8e9a747f501a4ed1b272aa5c23b662da4641a2a20fea186554",
+      "old_actual": "8fbc107ca79a3e8e9a747f501a4ed1b272aa5c23b662da4641a2a20fea186554",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_COMPLETE_EXCLUSION.md",
+      "path": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_HEXAGON_2026_10_28.md",
+      "declared": "4b5aafac6605f488a3ee63d3d4c453200f0b27fb472b26d2ab3c11da3643c394",
+      "old_actual": "4b5aafac6605f488a3ee63d3d4c453200f0b27fb472b26d2ab3c11da3643c394",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_COMPLETE_EXCLUSION.md",
+      "path": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_TRIANGLE_BRIDGES_2026_10_28.md",
+      "declared": "e8c69725a44711eaebb674a4f82778ce687a5c9d29f418f2a4cd15e0b1673fb4",
+      "old_actual": "e8c69725a44711eaebb674a4f82778ce687a5c9d29f418f2a4cd15e0b1673fb4",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_COMPLETE_EXCLUSION.md",
+      "path": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "declared": "7ba98ef149c1faff4ef4baeaf0b0305a38cf1153f883a3fe4bfa92087d33622d",
+      "old_actual": "7ba98ef149c1faff4ef4baeaf0b0305a38cf1153f883a3fe4bfa92087d33622d",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_COMPLETE_EXCLUSION.md",
+      "path": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "declared": "6154eee2ab1114d063b0dbd1a2800c3522cbb1b46ec44a258c1c89d8ffb9e975",
+      "old_actual": "6154eee2ab1114d063b0dbd1a2800c3522cbb1b46ec44a258c1c89d8ffb9e975",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_COMPLETE_EXCLUSION.md",
+      "path": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "declared": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c",
+      "old_actual": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_COMPLETE_EXCLUSION.md",
+      "path": "HOUSE_LOWER_TAC_S_TILTED_ROOT_COMPLETE_EXCLUSION.md",
+      "declared": "ab0e50c96ee74b50afe2f094e4ae20f3467880c54a807dcc4b36d754b35e52da",
+      "old_actual": "ab0e50c96ee74b50afe2f094e4ae20f3467880c54a807dcc4b36d754b35e52da",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_COMPLETE_EXCLUSION.md",
+      "path": "ALIGNED_S_LEAF_ROOT_TWO_BOUNDARY_NEIGHBORS_EXCLUSION.md",
+      "declared": "7c0e55bc75013f14d667a85635cd743361b325f7180f4710fd832c4f14ab9873",
+      "old_actual": "7c0e55bc75013f14d667a85635cd743361b325f7180f4710fd832c4f14ab9873",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_COMPLETE_EXCLUSION.md",
+      "path": "S_LEAF_C5_ALIGNED_LOW_RADIUS_EXCLUSION.md",
+      "declared": "02fd37d94d14f8342365160064cff63d91b572e9e162944e9551590fc8f535a1",
+      "old_actual": "02fd37d94d14f8342365160064cff63d91b572e9e162944e9551590fc8f535a1",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_COMPLETE_EXCLUSION.md",
+      "path": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_A_EXCLUSION.md",
+      "declared": "975b2ab626aa30b06decdf068fd0667c7badee83e6711ec489de0daab673c773",
+      "old_actual": "975b2ab626aa30b06decdf068fd0667c7badee83e6711ec489de0daab673c773",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_COMPLETE_EXCLUSION.md",
+      "path": "ALIGNED_LOW_S_LOWER_RETURN_HEIGHT_SEPARATION.md",
+      "declared": "93bb8e2d6dc3f2965c1a1868ba4a7552f63c5326cbe05cab5381950f4db765be",
+      "old_actual": "93bb8e2d6dc3f2965c1a1868ba4a7552f63c5326cbe05cab5381950f4db765be",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_COMPLETE_EXCLUSION.md",
+      "path": "certificates/aligned_low_s_lower_return_height_separation.py",
+      "declared": "bd92d1895f240805a78ea5160b0b7ed56f6948a4ec6ce88ff870bb55a6472f15",
+      "old_actual": "bd92d1895f240805a78ea5160b0b7ed56f6948a4ec6ce88ff870bb55a6472f15",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_COMPLETE_EXCLUSION.md",
+      "path": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_EXCLUSION.md",
+      "declared": "b773da381ac721c0f3c06083c9da6258ea1142353fd4a6e000edaff1d8398125",
+      "old_actual": "b773da381ac721c0f3c06083c9da6258ea1142353fd4a6e000edaff1d8398125",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_COMPLETE_EXCLUSION.md",
+      "path": "certificates/aligned_low_s_upper_c_visibility_separation.py",
+      "declared": "d57e7506d4f6e1dd92c991c8579fcfcd03377703863b0d42d50f417267fe2c4c",
+      "old_actual": "d57e7506d4f6e1dd92c991c8579fcfcd03377703863b0d42d50f417267fe2c4c",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_COMPLETE_JOIN_TRIANGLE_BRIDGES_2026_10_28.md",
+      "path": "HOUSE_LOWER_TAC_S_COMPLETE_EXCLUSION.md",
+      "declared": "de3565cda8f47022376c115c26f50061fc67e10e320c9f389dcce1c99d8a568b",
+      "old_actual": "de3565cda8f47022376c115c26f50061fc67e10e320c9f389dcce1c99d8a568b",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_A_EXCLUSION.md",
+      "path": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "declared": "7ba98ef149c1faff4ef4baeaf0b0305a38cf1153f883a3fe4bfa92087d33622d",
+      "old_actual": "7ba98ef149c1faff4ef4baeaf0b0305a38cf1153f883a3fe4bfa92087d33622d",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_A_EXCLUSION.md",
+      "path": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "declared": "6154eee2ab1114d063b0dbd1a2800c3522cbb1b46ec44a258c1c89d8ffb9e975",
+      "old_actual": "6154eee2ab1114d063b0dbd1a2800c3522cbb1b46ec44a258c1c89d8ffb9e975",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_A_EXCLUSION.md",
+      "path": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "declared": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c",
+      "old_actual": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_A_EXCLUSION.md",
+      "path": "S_LEAF_C5_ALIGNED_LOW_RADIUS_EXCLUSION.md",
+      "declared": "02fd37d94d14f8342365160064cff63d91b572e9e162944e9551590fc8f535a1",
+      "old_actual": "02fd37d94d14f8342365160064cff63d91b572e9e162944e9551590fc8f535a1",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_A_EXCLUSION.md",
+      "path": "ALIGNED_LOW_S_ROOT_LOWER_BOUNDARY_UNIQUE_CORNER_AND_CENTER.md",
+      "declared": "c32b99ad24da76907f2e3eaa4d4e7c88b9b2d2599a0eefe50234fae493441c48",
+      "old_actual": "c32b99ad24da76907f2e3eaa4d4e7c88b9b2d2599a0eefe50234fae493441c48",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_A_EXCLUSION.md",
+      "path": "ALIGNED_LOW_S_ROOT_UPPER_BOUNDARY_RETURN_EXCLUSION.md",
+      "declared": "843e9afce21baa487804740b3aa7505cac254ef2904e525819960302505dace2",
+      "old_actual": "843e9afce21baa487804740b3aa7505cac254ef2904e525819960302505dace2",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_A_EXCLUSION.md",
+      "path": "FIVE_CYCLE_FORCE_POLYGON_DOMAIN.md",
+      "declared": "7d0c4092ba133a832cf963f329b1c3a6442a3260576f16319293835b39e6d282",
+      "old_actual": "7d0c4092ba133a832cf963f329b1c3a6442a3260576f16319293835b39e6d282",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_A_EXCLUSION.md",
+      "path": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "declared": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a",
+      "old_actual": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_A_EXCLUSION.md",
+      "path": "ALIGNED_LOW_S_LOWER_RETURN_HEIGHT_SEPARATION.md",
+      "declared": "93bb8e2d6dc3f2965c1a1868ba4a7552f63c5326cbe05cab5381950f4db765be",
+      "old_actual": "93bb8e2d6dc3f2965c1a1868ba4a7552f63c5326cbe05cab5381950f4db765be",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_A_EXCLUSION.md",
+      "path": "certificates/aligned_low_s_lower_return_height_separation.py",
+      "declared": "bd92d1895f240805a78ea5160b0b7ed56f6948a4ec6ce88ff870bb55a6472f15",
+      "old_actual": "bd92d1895f240805a78ea5160b0b7ed56f6948a4ec6ce88ff870bb55a6472f15",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_EXCLUSION.md",
+      "path": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "declared": "7ba98ef149c1faff4ef4baeaf0b0305a38cf1153f883a3fe4bfa92087d33622d",
+      "old_actual": "7ba98ef149c1faff4ef4baeaf0b0305a38cf1153f883a3fe4bfa92087d33622d",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_EXCLUSION.md",
+      "path": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "declared": "6154eee2ab1114d063b0dbd1a2800c3522cbb1b46ec44a258c1c89d8ffb9e975",
+      "old_actual": "6154eee2ab1114d063b0dbd1a2800c3522cbb1b46ec44a258c1c89d8ffb9e975",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_EXCLUSION.md",
+      "path": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "declared": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c",
+      "old_actual": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_EXCLUSION.md",
+      "path": "S_LEAF_C5_ALIGNED_LOW_RADIUS_EXCLUSION.md",
+      "declared": "02fd37d94d14f8342365160064cff63d91b572e9e162944e9551590fc8f535a1",
+      "old_actual": "02fd37d94d14f8342365160064cff63d91b572e9e162944e9551590fc8f535a1",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_EXCLUSION.md",
+      "path": "ALIGNED_LOW_S_ROOT_LOWER_BOUNDARY_UNIQUE_CORNER_AND_CENTER.md",
+      "declared": "c32b99ad24da76907f2e3eaa4d4e7c88b9b2d2599a0eefe50234fae493441c48",
+      "old_actual": "c32b99ad24da76907f2e3eaa4d4e7c88b9b2d2599a0eefe50234fae493441c48",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_EXCLUSION.md",
+      "path": "ALIGNED_LOW_S_ROOT_UPPER_BOUNDARY_RETURN_EXCLUSION.md",
+      "declared": "843e9afce21baa487804740b3aa7505cac254ef2904e525819960302505dace2",
+      "old_actual": "843e9afce21baa487804740b3aa7505cac254ef2904e525819960302505dace2",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_EXCLUSION.md",
+      "path": "FIVE_CYCLE_FORCE_POLYGON_DOMAIN.md",
+      "declared": "7d0c4092ba133a832cf963f329b1c3a6442a3260576f16319293835b39e6d282",
+      "old_actual": "7d0c4092ba133a832cf963f329b1c3a6442a3260576f16319293835b39e6d282",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_EXCLUSION.md",
+      "path": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "declared": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a",
+      "old_actual": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_EXCLUSION.md",
+      "path": "certificates/aligned_low_s_upper_c_visibility_separation.py",
+      "declared": "d57e7506d4f6e1dd92c991c8579fcfcd03377703863b0d42d50f417267fe2c4c",
+      "old_actual": "d57e7506d4f6e1dd92c991c8579fcfcd03377703863b0d42d50f417267fe2c4c",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_ALIGNED_LOW_S_LOWER_RETURN_HEIGHT_SEPARATION_HEXAGON_2026_10_28.md",
+      "path": "ALIGNED_LOW_S_LOWER_RETURN_HEIGHT_SEPARATION.md",
+      "declared": "93bb8e2d6dc3f2965c1a1868ba4a7552f63c5326cbe05cab5381950f4db765be",
+      "old_actual": "93bb8e2d6dc3f2965c1a1868ba4a7552f63c5326cbe05cab5381950f4db765be",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_ALIGNED_LOW_S_LOWER_RETURN_HEIGHT_SEPARATION_HEXAGON_2026_10_28.md",
+      "path": "certificates/aligned_low_s_lower_return_height_separation.py",
+      "declared": "bd92d1895f240805a78ea5160b0b7ed56f6948a4ec6ce88ff870bb55a6472f15",
+      "old_actual": "bd92d1895f240805a78ea5160b0b7ed56f6948a4ec6ce88ff870bb55a6472f15",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_ALIGNED_LOW_S_LOWER_RETURN_HEIGHT_SEPARATION_HEXAGON_2026_10_28.md",
+      "path": "certificates/review_aligned_low_s_lower_return_height_separation_hexagon.py",
+      "declared": "c8ced658818cb45978c14964337e2fdbcb43c9ab3aad623667bf77d9029e25b0",
+      "old_actual": "c8ced658818cb45978c14964337e2fdbcb43c9ab3aad623667bf77d9029e25b0",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_A_TRIANGLE_BRIDGES_2026_10_28.md",
+      "path": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_A_EXCLUSION.md",
+      "declared": "975b2ab626aa30b06decdf068fd0667c7badee83e6711ec489de0daab673c773",
+      "old_actual": "975b2ab626aa30b06decdf068fd0667c7badee83e6711ec489de0daab673c773",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_A_TRIANGLE_BRIDGES_2026_10_28.md",
+      "path": "ALIGNED_LOW_S_LOWER_RETURN_HEIGHT_SEPARATION.md",
+      "declared": "93bb8e2d6dc3f2965c1a1868ba4a7552f63c5326cbe05cab5381950f4db765be",
+      "old_actual": "93bb8e2d6dc3f2965c1a1868ba4a7552f63c5326cbe05cab5381950f4db765be",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_A_TRIANGLE_BRIDGES_2026_10_28.md",
+      "path": "certificates/aligned_low_s_lower_return_height_separation.py",
+      "declared": "bd92d1895f240805a78ea5160b0b7ed56f6948a4ec6ce88ff870bb55a6472f15",
+      "old_actual": "bd92d1895f240805a78ea5160b0b7ed56f6948a4ec6ce88ff870bb55a6472f15",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_A_TRIANGLE_BRIDGES_2026_10_28.md",
+      "path": "certificates/review_lower_tac_upper_a_height_triangle_bridges.py",
+      "declared": "cb248f5417d2c43b67291106f896ac97e9dae5cef23e56aac46316a2963f5654",
+      "old_actual": "cb248f5417d2c43b67291106f896ac97e9dae5cef23e56aac46316a2963f5654",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_HEXAGON_2026_10_28.md",
+      "path": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_EXCLUSION.md",
+      "declared": "b773da381ac721c0f3c06083c9da6258ea1142353fd4a6e000edaff1d8398125",
+      "old_actual": "b773da381ac721c0f3c06083c9da6258ea1142353fd4a6e000edaff1d8398125",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_HEXAGON_2026_10_28.md",
+      "path": "certificates/aligned_low_s_upper_c_visibility_separation.py",
+      "declared": "d57e7506d4f6e1dd92c991c8579fcfcd03377703863b0d42d50f417267fe2c4c",
+      "old_actual": "d57e7506d4f6e1dd92c991c8579fcfcd03377703863b0d42d50f417267fe2c4c",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_HEXAGON_2026_10_28.md",
+      "path": "certificates/review_aligned_low_s_upper_c_visibility_hexagon.py",
+      "declared": "dd657ff02b1061590ff19533babe0e56c68d68d68452c00aef2b1c2ece7ae588",
+      "old_actual": "dd657ff02b1061590ff19533babe0e56c68d68d68452c00aef2b1c2ece7ae588",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_HEXAGON_2026_10_28.md",
+      "path": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "declared": "7ba98ef149c1faff4ef4baeaf0b0305a38cf1153f883a3fe4bfa92087d33622d",
+      "old_actual": "7ba98ef149c1faff4ef4baeaf0b0305a38cf1153f883a3fe4bfa92087d33622d",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_HEXAGON_2026_10_28.md",
+      "path": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "declared": "6154eee2ab1114d063b0dbd1a2800c3522cbb1b46ec44a258c1c89d8ffb9e975",
+      "old_actual": "6154eee2ab1114d063b0dbd1a2800c3522cbb1b46ec44a258c1c89d8ffb9e975",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_HEXAGON_2026_10_28.md",
+      "path": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "declared": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c",
+      "old_actual": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_HEXAGON_2026_10_28.md",
+      "path": "S_LEAF_C5_ALIGNED_LOW_RADIUS_EXCLUSION.md",
+      "declared": "02fd37d94d14f8342365160064cff63d91b572e9e162944e9551590fc8f535a1",
+      "old_actual": "02fd37d94d14f8342365160064cff63d91b572e9e162944e9551590fc8f535a1",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_HEXAGON_2026_10_28.md",
+      "path": "ALIGNED_LOW_S_ROOT_LOWER_BOUNDARY_UNIQUE_CORNER_AND_CENTER.md",
+      "declared": "c32b99ad24da76907f2e3eaa4d4e7c88b9b2d2599a0eefe50234fae493441c48",
+      "old_actual": "c32b99ad24da76907f2e3eaa4d4e7c88b9b2d2599a0eefe50234fae493441c48",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_HEXAGON_2026_10_28.md",
+      "path": "ALIGNED_LOW_S_ROOT_UPPER_BOUNDARY_RETURN_EXCLUSION.md",
+      "declared": "843e9afce21baa487804740b3aa7505cac254ef2904e525819960302505dace2",
+      "old_actual": "843e9afce21baa487804740b3aa7505cac254ef2904e525819960302505dace2",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_HEXAGON_2026_10_28.md",
+      "path": "FIVE_CYCLE_FORCE_POLYGON_DOMAIN.md",
+      "declared": "7d0c4092ba133a832cf963f329b1c3a6442a3260576f16319293835b39e6d282",
+      "old_actual": "7d0c4092ba133a832cf963f329b1c3a6442a3260576f16319293835b39e6d282",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_HEXAGON_2026_10_28.md",
+      "path": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "declared": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a",
+      "old_actual": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_HEXAGON_2026_10_28.md",
+      "path": "certificates/aligned_low_s_upper_c_visibility_separation.py",
+      "declared": "d57e7506d4f6e1dd92c991c8579fcfcd03377703863b0d42d50f417267fe2c4c",
+      "old_actual": "d57e7506d4f6e1dd92c991c8579fcfcd03377703863b0d42d50f417267fe2c4c",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_ROOTED_BLOCKS_2026_10_28.md",
+      "path": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_EXCLUSION.md",
+      "declared": "b773da381ac721c0f3c06083c9da6258ea1142353fd4a6e000edaff1d8398125",
+      "old_actual": "b773da381ac721c0f3c06083c9da6258ea1142353fd4a6e000edaff1d8398125",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_ROOTED_BLOCKS_2026_10_28.md",
+      "path": "certificates/aligned_low_s_upper_c_visibility_separation.py",
+      "declared": "d57e7506d4f6e1dd92c991c8579fcfcd03377703863b0d42d50f417267fe2c4c",
+      "old_actual": "d57e7506d4f6e1dd92c991c8579fcfcd03377703863b0d42d50f417267fe2c4c",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_ROOTED_BLOCKS_2026_10_28.md",
+      "path": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "declared": "7ba98ef149c1faff4ef4baeaf0b0305a38cf1153f883a3fe4bfa92087d33622d",
+      "old_actual": "7ba98ef149c1faff4ef4baeaf0b0305a38cf1153f883a3fe4bfa92087d33622d",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_ROOTED_BLOCKS_2026_10_28.md",
+      "path": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "declared": "6154eee2ab1114d063b0dbd1a2800c3522cbb1b46ec44a258c1c89d8ffb9e975",
+      "old_actual": "6154eee2ab1114d063b0dbd1a2800c3522cbb1b46ec44a258c1c89d8ffb9e975",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_ROOTED_BLOCKS_2026_10_28.md",
+      "path": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "declared": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c",
+      "old_actual": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_ROOTED_BLOCKS_2026_10_28.md",
+      "path": "S_LEAF_C5_ALIGNED_LOW_RADIUS_EXCLUSION.md",
+      "declared": "02fd37d94d14f8342365160064cff63d91b572e9e162944e9551590fc8f535a1",
+      "old_actual": "02fd37d94d14f8342365160064cff63d91b572e9e162944e9551590fc8f535a1",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_ROOTED_BLOCKS_2026_10_28.md",
+      "path": "ALIGNED_LOW_S_ROOT_LOWER_BOUNDARY_UNIQUE_CORNER_AND_CENTER.md",
+      "declared": "c32b99ad24da76907f2e3eaa4d4e7c88b9b2d2599a0eefe50234fae493441c48",
+      "old_actual": "c32b99ad24da76907f2e3eaa4d4e7c88b9b2d2599a0eefe50234fae493441c48",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_ROOTED_BLOCKS_2026_10_28.md",
+      "path": "ALIGNED_LOW_S_ROOT_UPPER_BOUNDARY_RETURN_EXCLUSION.md",
+      "declared": "843e9afce21baa487804740b3aa7505cac254ef2904e525819960302505dace2",
+      "old_actual": "843e9afce21baa487804740b3aa7505cac254ef2904e525819960302505dace2",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_ROOTED_BLOCKS_2026_10_28.md",
+      "path": "FIVE_CYCLE_FORCE_POLYGON_DOMAIN.md",
+      "declared": "7d0c4092ba133a832cf963f329b1c3a6442a3260576f16319293835b39e6d282",
+      "old_actual": "7d0c4092ba133a832cf963f329b1c3a6442a3260576f16319293835b39e6d282",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_ROOTED_BLOCKS_2026_10_28.md",
+      "path": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "declared": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a",
+      "old_actual": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_ROOTED_BLOCKS_2026_10_28.md",
+      "path": "certificates/aligned_low_s_upper_c_visibility_separation.py",
+      "declared": "d57e7506d4f6e1dd92c991c8579fcfcd03377703863b0d42d50f417267fe2c4c",
+      "old_actual": "d57e7506d4f6e1dd92c991c8579fcfcd03377703863b0d42d50f417267fe2c4c",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_TRIANGLE_BRIDGES_2026_10_28.md",
+      "path": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_EXCLUSION.md",
+      "declared": "b773da381ac721c0f3c06083c9da6258ea1142353fd4a6e000edaff1d8398125",
+      "old_actual": "b773da381ac721c0f3c06083c9da6258ea1142353fd4a6e000edaff1d8398125",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_TRIANGLE_BRIDGES_2026_10_28.md",
+      "path": "certificates/aligned_low_s_upper_c_visibility_separation.py",
+      "declared": "d57e7506d4f6e1dd92c991c8579fcfcd03377703863b0d42d50f417267fe2c4c",
+      "old_actual": "d57e7506d4f6e1dd92c991c8579fcfcd03377703863b0d42d50f417267fe2c4c",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_TRIANGLE_BRIDGES_2026_10_28.md",
+      "path": "certificates/review_lower_tac_upper_c_visibility_triangle_bridges.py",
+      "declared": "417a832c7ba660850b1a2f9abf92dd2ea68b5504536875d772f41ad168575180",
+      "old_actual": "417a832c7ba660850b1a2f9abf92dd2ea68b5504536875d772f41ad168575180",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_TILTED_ROOT_COMPLETE_EXCLUSION.md",
+      "path": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "declared": "7ba98ef149c1faff4ef4baeaf0b0305a38cf1153f883a3fe4bfa92087d33622d",
+      "old_actual": "7ba98ef149c1faff4ef4baeaf0b0305a38cf1153f883a3fe4bfa92087d33622d",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_TILTED_ROOT_COMPLETE_EXCLUSION.md",
+      "path": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "declared": "6154eee2ab1114d063b0dbd1a2800c3522cbb1b46ec44a258c1c89d8ffb9e975",
+      "old_actual": "6154eee2ab1114d063b0dbd1a2800c3522cbb1b46ec44a258c1c89d8ffb9e975",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_TILTED_ROOT_COMPLETE_EXCLUSION.md",
+      "path": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "declared": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c",
+      "old_actual": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_TILTED_ROOT_COMPLETE_EXCLUSION.md",
+      "path": "SMALLER_CENTRAL_DISKS_NINE_UNIT_CAPACITY.md",
+      "declared": "b0b2858252d2a3bee205d40f97958da445ece0a3a4e05bd693340b2e94884257",
+      "old_actual": "b0b2858252d2a3bee205d40f97958da445ece0a3a4e05bd693340b2e94884257",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_TILTED_ROOT_COMPLETE_EXCLUSION.md",
+      "path": "CENTRAL_S_ROOT_THREE_BOUNDARY_PATH_CAPACITY.md",
+      "declared": "91b34cfb58f69565d75e87ebc95fb92a6ed0226588292379cb380daae87efd3f",
+      "old_actual": "91b34cfb58f69565d75e87ebc95fb92a6ed0226588292379cb380daae87efd3f",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_TILTED_ROOT_COMPLETE_EXCLUSION.md",
+      "path": "S_LEAF_ROOT_HIGH_COORDINATE_NORTH_SCREEN_EXCLUSION.md",
+      "declared": "acec45db3253b2be2c6b68a85714313da572a8a858e9921431a745cafd889a83",
+      "old_actual": "acec45db3253b2be2c6b68a85714313da572a8a858e9921431a745cafd889a83",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_TILTED_ROOT_COMPLETE_EXCLUSION.md",
+      "path": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "declared": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a",
+      "old_actual": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a",
+      "matches": true
+    },
+    {
+      "from": "HOUSE_LOWER_TAC_S_TILTED_ROOT_COMPLETE_EXCLUSION.md",
+      "path": "ALIGNED_S_LEAF_ROOT_TWO_BOUNDARY_NEIGHBORS_EXCLUSION.md",
+      "declared": "7c0e55bc75013f14d667a85635cd743361b325f7180f4710fd832c4f14ab9873",
+      "old_actual": "7c0e55bc75013f14d667a85635cd743361b325f7180f4710fd832c4f14ab9873",
+      "matches": true
+    },
+    {
+      "from": "REVIEW_HOUSE_LOWER_TAC_S_TILTED_ROOT_ROOT_2026_10_28.md",
+      "path": "HOUSE_LOWER_TAC_S_TILTED_ROOT_COMPLETE_EXCLUSION.md",
+      "declared": "ab0e50c96ee74b50afe2f094e4ae20f3467880c54a807dcc4b36d754b35e52da",
+      "old_actual": "ab0e50c96ee74b50afe2f094e4ae20f3467880c54a807dcc4b36d754b35e52da",
+      "matches": true
+    }
+  ],
+  "equivalences": [
+    {
+      "path": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "old_sha256": "7ba98ef149c1faff4ef4baeaf0b0305a38cf1153f883a3fe4bfa92087d33622d",
+      "current_sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "rule": "Only terminal LF bytes differ; all other bytes agree exactly."
+    },
+    {
+      "path": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "old_sha256": "6154eee2ab1114d063b0dbd1a2800c3522cbb1b46ec44a258c1c89d8ffb9e975",
+      "current_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "rule": "Only terminal LF bytes differ; all other bytes agree exactly."
+    },
+    {
+      "path": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "old_sha256": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a",
+      "current_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "rule": "Only terminal LF bytes differ; all other bytes agree exactly."
+    },
+    {
+      "path": "TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md",
+      "old_sha256": "0d61292a0aa57084b88b4a72754fc78e123e8b684dac09be966fb074ab58e877",
+      "current_sha256": "29e38d3f641fe16c6db587e51245f92ad4c447f9536db7d14c221f56b5357e82",
+      "rule": "Only terminal LF bytes differ; all other bytes agree exactly."
+    },
+    {
+      "path": "FOUR_CYCLE_ALIGNED_S_ARTICULATION_EXCLUSION.md",
+      "old_sha256": "f538032c069d34ef4e26e4ad03f85fd7f30f98b341e08b89a2579cdc7d9e9e56",
+      "current_sha256": "a250740c2533db8aacdd3a8d23e33ba42582c580f3bab5fb40ed0491d041b9f9",
+      "rule": "Only terminal LF bytes differ; all other bytes agree exactly."
+    }
+  ],
+  "same_export_adoptions": [
+    {
+      "path": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "old_sha256": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c",
+      "current_sha256": "4c9e708945938c3f9df575e76f7573903d6b5a0ce4eccb5bcea760353a47458a",
+      "rule": "Preserve current accepted complete same-nine R>2 theorem with analytic fixed-value prerequisite. Old five-fixed-value certificate was replaced by an accepted analytic proof; identical unconditional hypotheses/conclusion. Do not copy old theorem or silently rewrite historical pins.",
+      "operative_analytic_source": "LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "previous_full_reconciliation": "REVIEW_RECOVERED_FOUR_ORIGINAL_FAMILIES_FRONTIER_2026_10_28.md"
+    }
+  ],
+  "arithmetic_records": [
+    {
+      "original_path": "/tmp/pr11_root_lower_tac_s_tilted_checks.json",
+      "original_sha256": "9911a7635a4f0c1e1656930dcd32778cfda3e08d1f326970444062f5764ac858",
+      "original_bytes": 2357,
+      "preserved_path": "checkpoints/recovered_lower_TAC_S_2026_10_28/pr11_root_lower_tac_s_tilted_checks.json",
+      "encoding": "plain",
+      "preserved_sha256": "9911a7635a4f0c1e1656930dcd32778cfda3e08d1f326970444062f5764ac858",
+      "preserved_bytes": 2357,
+      "matches_original_checkpoint": true,
+      "json_valid": true,
+      "top_level_keys": [
+        "source",
+        "sha256",
+        "all_eight_literal_pins",
+        "twelve_exact_positive_reserves",
+        "complete_root_derivation",
+        "remaining"
+      ]
+    },
+    {
+      "original_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/checkpoints/triangle_bridges_lower_tac_s_tilted_independent_checks_2026_10_28.json",
+      "original_sha256": "a8ceb22687524f4458d8e94839f069496e4759c9e0979b355c504ba09b7f9472",
+      "original_bytes": 3305,
+      "preserved_path": "checkpoints/recovered_lower_TAC_S_2026_10_28/triangle_bridges_lower_tac_s_tilted_independent_checks_2026_10_28.json",
+      "encoding": "plain",
+      "preserved_sha256": "a8ceb22687524f4458d8e94839f069496e4759c9e0979b355c504ba09b7f9472",
+      "preserved_bytes": 3305,
+      "matches_original_checkpoint": true,
+      "json_valid": true,
+      "top_level_keys": [
+        "date",
+        "reviewer",
+        "source",
+        "literal_pins",
+        "rational_checks",
+        "independent_polynomial_expansion",
+        "status"
+      ]
+    },
+    {
+      "original_path": "/tmp/pr11_root_lower_tac_s_upper_a_checks.json",
+      "original_sha256": "62fe61bb75f4a567fa411c1d4fe9bbf23725a2f6e6a7a1677c205a5be62954db",
+      "original_bytes": 3771,
+      "preserved_path": "checkpoints/recovered_lower_TAC_S_2026_10_28/pr11_root_lower_tac_s_upper_a_checks.json",
+      "encoding": "plain",
+      "preserved_sha256": "62fe61bb75f4a567fa411c1d4fe9bbf23725a2f6e6a7a1677c205a5be62954db",
+      "preserved_bytes": 3771,
+      "matches_original_checkpoint": true,
+      "json_valid": true,
+      "top_level_keys": [
+        "full_physical_source",
+        "source_sha256",
+        "scalar_source",
+        "scalar_sha256",
+        "checker_sha256",
+        "root_contributed_initial_scalar_proof",
+        "two_separate_complete_scalar_peer_reviews_required",
+        "all_complete_physical_source_scalar_and_checker_read_by_root",
+        "full_operative_common_inputs_read_by_root",
+        "positive_exact_reserves",
+        "return_moment_identity_modulo_unit_axes",
+        "full_exact_replay",
+        "literal_pins",
+        "full_features",
+        "remaining",
+        "no_pose_sampling",
+        "no_Lean_compilation"
+      ]
+    },
+    {
+      "original_path": "/tmp/pr11_root_replay_aligned_low_s_lower_return_height_separation_certificate.json",
+      "original_sha256": "ce034bcdca30eb79e8ea0e1647885f71614af2da138ebf58d5856978e41d9470",
+      "original_bytes": 419588,
+      "preserved_path": "checkpoints/recovered_lower_TAC_S_2026_10_28/pr11_root_replay_aligned_low_s_lower_return_height_separation_certificate.json.gz",
+      "encoding": "gzip",
+      "preserved_sha256": "ca314fd0706fe616f7ada3a3206cfe06d3f0058f52b7f66dec5cf302849e1391",
+      "preserved_bytes": 136678,
+      "matches_original_checkpoint": true,
+      "json_valid": true,
+      "top_level_keys": [
+        "uniform_strict_floor",
+        "initial",
+        "bits",
+        "nodes",
+        "leaf_count",
+        "max_depth",
+        "counts",
+        "smallest_margin",
+        "prefix_cover",
+        "leaf_digest",
+        "leaves"
+      ]
+    },
+    {
+      "original_path": "/tmp/aligned_low_s_upper_c_visibility_certificate.json",
+      "original_sha256": "a960dd73c0ed3084e4dfe4cf34a3f749e2a2ca2fef962e247c46cc3ffc405691",
+      "original_bytes": 8895684,
+      "preserved_path": "checkpoints/recovered_lower_TAC_S_2026_10_28/aligned_low_s_upper_c_visibility_certificate.json.gz",
+      "encoding": "gzip",
+      "preserved_sha256": "23a6bcfe18fd33425537ccf262692843dca9e2a6f3f71d0f952bbcca7712ba89",
+      "preserved_bytes": 3403466,
+      "matches_original_checkpoint": true,
+      "json_valid": true,
+      "top_level_keys": [
+        "parameters",
+        "initial",
+        "square_root_dyadic_bits",
+        "nodes",
+        "max_depth",
+        "leaf_count",
+        "reason_counts",
+        "unresolved_boxes",
+        "complete_prefix_cover",
+        "uniform_strict_floor",
+        "smallest_margin",
+        "canonical_leaf_sha256",
+        "sampled_poses",
+        "leaves"
+      ]
+    },
+    {
+      "original_path": "/tmp/rooted_blocks_lower_tac_upper_c_visibility_independent.py",
+      "original_sha256": "07e42d3e87574df13ce29abab92af2a9bf6e5792e334cd3b4b47c0d7c71401ea",
+      "original_bytes": 4508,
+      "preserved_path": "checkpoints/recovered_lower_TAC_S_2026_10_28/rooted_blocks_lower_tac_upper_c_visibility_independent.py",
+      "encoding": "plain",
+      "preserved_sha256": "07e42d3e87574df13ce29abab92af2a9bf6e5792e334cd3b4b47c0d7c71401ea",
+      "preserved_bytes": 4508,
+      "matches_original_checkpoint": true
+    },
+    {
+      "original_path": "/tmp/rooted_blocks_lower_tac_upper_c_visibility_independent_2026_10_28.json",
+      "original_sha256": "af9337817f3f892f953c5c266108ee3b5e40c4f61738bb84c06a5d8166875cb1",
+      "original_bytes": 12095363,
+      "preserved_path": "checkpoints/recovered_lower_TAC_S_2026_10_28/rooted_blocks_lower_tac_upper_c_visibility_independent_2026_10_28.json.gz",
+      "encoding": "gzip",
+      "preserved_sha256": "3526a393761ec3d9d000da8e6ff3a4ace5c82e231d62a7e8a74da76b384e16c8",
+      "preserved_bytes": 4772781,
+      "matches_original_checkpoint": true,
+      "json_valid": true,
+      "top_level_keys": [
+        "initial",
+        "bits",
+        "normal_enclosure",
+        "nodes",
+        "leaves",
+        "reasons",
+        "maxdepth",
+        "minimum",
+        "prefix_cover",
+        "digest",
+        "terminal_paths"
+      ]
+    },
+    {
+      "original_path": "/tmp/rooted_blocks_upper_C_visibility_exact_checks_2026_10_28.json",
+      "original_sha256": "33e5c6d367aa58b5c361274ab0a02ff6fd60e029f0a30deb83221eb536ca8bef",
+      "original_bytes": 2302,
+      "preserved_path": "checkpoints/recovered_lower_TAC_S_2026_10_28/rooted_blocks_upper_C_visibility_exact_checks_2026_10_28.json",
+      "encoding": "plain",
+      "preserved_sha256": "33e5c6d367aa58b5c361274ab0a02ff6fd60e029f0a30deb83221eb536ca8bef",
+      "preserved_bytes": 2302,
+      "matches_original_checkpoint": true,
+      "json_valid": true,
+      "top_level_keys": [
+        "source_sha256",
+        "pins",
+        "strict_fraction_reserves",
+        "exact_lambda_factor",
+        "exact_lambda_bound",
+        "polynomial_identities",
+        "author_record_sha256",
+        "author_leaf_digest",
+        "independent_record_sha256",
+        "independent_leaf_digest",
+        "identical_complete_leaf_paths",
+        "independent_strict_floor",
+        "independent_code_sha256"
+      ]
+    },
+    {
+      "original_path": "/tmp/pr11_root_lower_tac_s_complete_join_checks_20261028.json",
+      "original_sha256": "235650953425d959d6c10a987ecab146eda69aa5e439c13bcafca6f7e87af85f",
+      "original_bytes": 5211,
+      "preserved_path": "checkpoints/recovered_lower_TAC_S_2026_10_28/pr11_root_lower_tac_s_complete_join_checks_20261028.json",
+      "encoding": "plain",
+      "preserved_sha256": "235650953425d959d6c10a987ecab146eda69aa5e439c13bcafca6f7e87af85f",
+      "preserved_bytes": 5211,
+      "matches_original_checkpoint": true,
+      "json_valid": true,
+      "top_level_keys": [
+        "source",
+        "literal_source_review_code_pins",
+        "actual_positive_edges",
+        "actual_degrees",
+        "actual_positive_loads",
+        "full_disjoint_partition",
+        "critical_endpoints",
+        "strict_exact_reserves",
+        "retained_complete_root_records",
+        "scope"
+      ]
+    },
+    {
+      "original_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/certificates/review_aligned_low_s_lower_return_height_separation_hexagon.py",
+      "original_sha256": "c8ced658818cb45978c14964337e2fdbcb43c9ab3aad623667bf77d9029e25b0",
+      "original_bytes": 9436,
+      "preserved_path": "certificates/review_aligned_low_s_lower_return_height_separation_hexagon.py",
+      "encoding": "plain",
+      "preserved_sha256": "c8ced658818cb45978c14964337e2fdbcb43c9ab3aad623667bf77d9029e25b0",
+      "preserved_bytes": 9436,
+      "matches_original_checkpoint": true
+    },
+    {
+      "original_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/checkpoints/hexagon_aligned_low_s_lower_return_height_independent_checks_2026_10_28.json",
+      "original_sha256": "2c81e956ec55ca2c6abdd648a92c45ba74efdf64718bc622d2b149df269589f1",
+      "original_bytes": 571060,
+      "preserved_path": "checkpoints/recovered_lower_TAC_S_2026_10_28/hexagon_aligned_low_s_lower_return_height_independent_checks_2026_10_28.json.gz",
+      "encoding": "gzip",
+      "preserved_sha256": "d5af372e49812a863563f8e7ccfd5788d3e83f41742bed18cd59d9a9e9b5e8dc",
+      "preserved_bytes": 206557,
+      "matches_original_checkpoint": true,
+      "json_valid": true,
+      "top_level_keys": [
+        "method",
+        "source_pins",
+        "author_leaf_digest",
+        "printed_source_minimum_verified",
+        "radical_bits",
+        "nodes",
+        "leaves",
+        "max_depth",
+        "counts",
+        "minimum_target_bound",
+        "strict_margin_above_uniform_floor",
+        "minimum_rejection_margin",
+        "complete_closed_box_cover",
+        "every_positive_bound_at_least_author_bound",
+        "replay"
+      ]
+    },
+    {
+      "original_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/certificates/review_lower_tac_upper_a_height_triangle_bridges.py",
+      "original_sha256": "cb248f5417d2c43b67291106f896ac97e9dae5cef23e56aac46316a2963f5654",
+      "original_bytes": 6805,
+      "preserved_path": "certificates/review_lower_tac_upper_a_height_triangle_bridges.py",
+      "encoding": "plain",
+      "preserved_sha256": "cb248f5417d2c43b67291106f896ac97e9dae5cef23e56aac46316a2963f5654",
+      "preserved_bytes": 6805,
+      "matches_original_checkpoint": true
+    },
+    {
+      "original_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/checkpoints/triangle_bridges_lower_tac_upper_a_independent_scalar_2026_10_28.json",
+      "original_sha256": "8f6c15e57acfdd998ccf753a45aa7c39efb9950316b3b36c7524d0ef3171e0a1",
+      "original_bytes": 536120,
+      "preserved_path": "checkpoints/recovered_lower_TAC_S_2026_10_28/triangle_bridges_lower_tac_upper_a_independent_scalar_2026_10_28.json.gz",
+      "encoding": "gzip",
+      "preserved_sha256": "f83034e230b030aa972501f9dbb26223d5404a61f601a587e90f7dd45c05c583",
+      "preserved_bytes": 208531,
+      "matches_original_checkpoint": true,
+      "json_valid": true,
+      "top_level_keys": [
+        "reviewer",
+        "bits",
+        "normal_enclosure",
+        "source_pins",
+        "uniform_strict_floor",
+        "initial",
+        "nodes",
+        "terminal_boxes",
+        "maximum_depth",
+        "terminal_reasons",
+        "minimum_lower_bound",
+        "complete_binary_trie",
+        "exact_kraft_sum",
+        "leaves"
+      ]
+    },
+    {
+      "original_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/checkpoints/triangle_bridges_lower_tac_upper_a_physical_checks_2026_10_28.json",
+      "original_sha256": "f0e18f8c188f058ce509ee73b31072870587564f2b85861ace29898c39c42680",
+      "original_bytes": 2169,
+      "preserved_path": "checkpoints/recovered_lower_TAC_S_2026_10_28/triangle_bridges_lower_tac_upper_a_physical_checks_2026_10_28.json",
+      "encoding": "plain",
+      "preserved_sha256": "f0e18f8c188f058ce509ee73b31072870587564f2b85861ace29898c39c42680",
+      "preserved_bytes": 2169,
+      "matches_original_checkpoint": true,
+      "json_valid": true,
+      "top_level_keys": [
+        "source",
+        "sha256",
+        "source_pins",
+        "strict_exact_values",
+        "polynomial_identities",
+        "independent_scalar_lower_bound_above",
+        "independent_scalar_json_sha256",
+        "author_reproduction_json_sha256"
+      ]
+    },
+    {
+      "original_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/certificates/review_aligned_low_s_upper_c_visibility_hexagon.py",
+      "original_sha256": "dd657ff02b1061590ff19533babe0e56c68d68d68452c00aef2b1c2ece7ae588",
+      "original_bytes": 12761,
+      "preserved_path": "certificates/review_aligned_low_s_upper_c_visibility_hexagon.py",
+      "encoding": "plain",
+      "preserved_sha256": "dd657ff02b1061590ff19533babe0e56c68d68d68452c00aef2b1c2ece7ae588",
+      "preserved_bytes": 12761,
+      "matches_original_checkpoint": true
+    },
+    {
+      "original_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/checkpoints/hexagon_aligned_low_s_upper_c_visibility_independent_checks_2026_10_28.json",
+      "original_sha256": "b5f4dd16e204785379fadc7f15ec9ff8d5ea6ef44427e10b06939d2bea920178",
+      "original_bytes": 18142422,
+      "preserved_path": "checkpoints/recovered_lower_TAC_S_2026_10_28/hexagon_aligned_low_s_upper_c_visibility_independent_checks_2026_10_28.json.gz",
+      "encoding": "gzip",
+      "preserved_sha256": "975a2c76b5fe443cd1a2d3ae7b07174f7adac7d42d3c9ec8dcf456953bdfd990",
+      "preserved_bytes": 7759020,
+      "matches_original_checkpoint": true,
+      "json_valid": true,
+      "top_level_keys": [
+        "method",
+        "pins",
+        "author_complete_leaf_digest",
+        "author_record_sha256",
+        "nodes",
+        "leaves",
+        "maximum_depth",
+        "reason_counts",
+        "complete_closed_box_cover",
+        "all_original_leaf_reasons_reproved",
+        "every_positive_bound_at_least_author_bound",
+        "uniform_strict_floor",
+        "minimum_independent_bound",
+        "strict_floor_reserve",
+        "hand_checks",
+        "replay"
+      ]
+    },
+    {
+      "original_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/certificates/review_lower_tac_upper_c_visibility_triangle_bridges.py",
+      "original_sha256": "417a832c7ba660850b1a2f9abf92dd2ea68b5504536875d772f41ad168575180",
+      "original_bytes": 7355,
+      "preserved_path": "certificates/review_lower_tac_upper_c_visibility_triangle_bridges.py",
+      "encoding": "plain",
+      "preserved_sha256": "417a832c7ba660850b1a2f9abf92dd2ea68b5504536875d772f41ad168575180",
+      "preserved_bytes": 7355,
+      "matches_original_checkpoint": true
+    },
+    {
+      "original_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/checkpoints/triangle_bridges_lower_tac_upper_c_independent_scalar_2026_10_28.json",
+      "original_sha256": "6753484f79acdf7ffaeabb3d9b738f13496eca37ce5383aff17a4981637a7745",
+      "original_bytes": 21575007,
+      "preserved_path": "checkpoints/recovered_lower_TAC_S_2026_10_28/triangle_bridges_lower_tac_upper_c_independent_scalar_2026_10_28.json.gz",
+      "encoding": "gzip",
+      "preserved_sha256": "23324f821d91a41e9d4e7f28a24f14d1ef3845c74a6bd3765532637b9aa2e5b7",
+      "preserved_bytes": 9359403,
+      "matches_original_checkpoint": true,
+      "json_valid": true,
+      "top_level_keys": [
+        "reviewer",
+        "bits",
+        "source_pins",
+        "independent_normal_enclosure",
+        "author_leaf_digest",
+        "nodes",
+        "terminal_boxes",
+        "maximum_depth",
+        "reason_counts",
+        "full_binary_trie",
+        "exact_kraft_sum",
+        "all_author_target_margins_weakly_improved",
+        "minimum_lower_bound",
+        "uniform_strict_floor",
+        "leaves"
+      ]
+    },
+    {
+      "original_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/checkpoints/triangle_bridges_lower_tac_upper_c_physical_checks_2026_10_28.json",
+      "original_sha256": "c62068ade4a9a81a0fceabc24e38133d050702f0306bfae2ae8e814f5c073281",
+      "original_bytes": 2256,
+      "preserved_path": "checkpoints/recovered_lower_TAC_S_2026_10_28/triangle_bridges_lower_tac_upper_c_physical_checks_2026_10_28.json",
+      "encoding": "plain",
+      "preserved_sha256": "c62068ade4a9a81a0fceabc24e38133d050702f0306bfae2ae8e814f5c073281",
+      "preserved_bytes": 2256,
+      "matches_original_checkpoint": true,
+      "json_valid": true,
+      "top_level_keys": [
+        "source",
+        "sha256",
+        "source_pins",
+        "rational_values",
+        "polynomial_identities",
+        "author_reproduction_sha256",
+        "author_complete_counts"
+      ]
+    },
+    {
+      "original_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/checkpoints/triangle_bridges_lower_tac_s_complete_join_checks_2026_10_28.json",
+      "original_sha256": "264ba2234a5832c9066009b8355bc18def3f8c92ecb0baf261a80f885f84122d",
+      "original_bytes": 4821,
+      "preserved_path": "checkpoints/recovered_lower_TAC_S_2026_10_28/triangle_bridges_lower_tac_s_complete_join_checks_2026_10_28.json",
+      "encoding": "plain",
+      "preserved_sha256": "264ba2234a5832c9066009b8355bc18def3f8c92ecb0baf261a80f885f84122d",
+      "preserved_bytes": 4821,
+      "matches_original_checkpoint": true,
+      "json_valid": true,
+      "top_level_keys": [
+        "date",
+        "reviewer",
+        "verdict",
+        "source",
+        "original_family",
+        "edges",
+        "degrees",
+        "positive_block_loads",
+        "actual_units",
+        "component_units",
+        "arbitrary_extras",
+        "radius_endpoint_checks",
+        "rows",
+        "all_19_pins_match",
+        "pins",
+        "pending_direct_mathematics",
+        "pending_direct_independent_reviews"
+      ]
+    },
+    {
+      "original_path": "/tmp/pr11_root_lower_tac_s_complete_join_checks_20261028.py",
+      "original_sha256": "c7bef2d2710c512d16b34392a0e502e5ab7fbe5e231c9f8705c141ec86a3215b",
+      "original_bytes": 2803,
+      "preserved_path": "checkpoints/recovered_lower_TAC_S_2026_10_28/pr11_root_lower_tac_s_complete_join_checks_20261028.py",
+      "encoding": "plain",
+      "preserved_sha256": "c7bef2d2710c512d16b34392a0e502e5ab7fbe5e231c9f8705c141ec86a3215b",
+      "preserved_bytes": 2803,
+      "matches_original_checkpoint": true
+    }
+  ],
+  "counts": {
+    "LF-only-preserve": 5,
+    "copy": 21,
+    "exact": 9,
+    "same-export-adopt-current-analytic": 1,
+    "total_files": 36,
+    "old_declared_pin_checks": 81,
+    "old_declared_pin_disagreements": 0,
+    "historical_audit_records": 21,
+    "audit_original_bytes": 62305104,
+    "audit_preserved_bytes": 25916296
+  },
+  "missing": [],
+  "unresolved_disagreements": [],
+  "review_scope": "Read complete original family assembly, complete root and independent whole-family joins, all three complete tilted/upper-A/upper-C branch proofs and standalone upper-A scalar theorem. Imported exact historical code/replay and full direct peer records; did not rerun their scalar arithmetic or assert a new independent proof of each transitive certificate.",
+  "constraints": [
+    "No current existing mathematical source overwritten",
+    "No ledger, roadmap, handoff or original IDs edited",
+    "No global historical counts imported",
+    "No new scalar proof certificate run",
+    "No Lean compilation, CI, workflow, merge or remote mutation"
+  ],
+  "current_recovery_checks": {
+    "path": "checkpoints/recovered_lower_TAC_S_2026_10_28/current_recovery_graph_and_archive_checks.json",
+    "sha256": "47635c28cbc80b71d1eea3bfec99c7d018f3de71e1e357aff2eb5cc750a69564",
+    "scope": "Complete old archive hash readback, seven stored exact prefix covers and stored target margins, graph/partition and five rational reserves; no new scalar replay."
+  }
+}

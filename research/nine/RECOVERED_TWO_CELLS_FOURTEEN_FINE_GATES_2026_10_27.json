@@ -1,0 +1,1582 @@
+{
+  "date": "2026-10-27",
+  "timezone": "America/Chicago",
+  "read_base_head": "cc143bb36c116590d1de7e7925ad04ca49ea675a",
+  "status": "Recovered hand-proof acceptances reconciled against exact live branch; publication is verified separately after a successful ref update.",
+  "coarse_total": 58,
+  "coarse_closed": 34,
+  "coarse_open": 24,
+  "fine_total": 2513,
+  "fine_checked": 2333,
+  "fine_open": 180,
+  "coarse_changes": [
+    {
+      "id": "C1.4.b3",
+      "from": "open",
+      "to": "closed",
+      "source": "ONE_FOUR_BODY_BLOCK_THREE_BRIDGES_COMPLETE_JOIN.md; all 24 original placements, both completion units, all S/D types, complete low/critical/high radius cases and true H4/K4/B3/C2 diamond equations. The fresh diamond audit is REVIEW_THREE_LEAF_DIAMOND_FRESH_CURRENT_INDEPENDENT_2026_10_27.md; the full parent has the two separate original-domain reviews pinned in the recovery checkpoint."
+    },
+    {
+      "id": "C2.44.b2",
+      "from": "open",
+      "to": "closed",
+      "source": "ROOTED_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md; entire original bridge/forest cover, all 21 original rooted-type pairs, low/critical/high radius and all origin alternatives, true H4/H5/H6 equations, all loads and side means. Root and independent full reviews and the fresh recovery audit are pinned in the recovery checkpoint."
+    }
+  ],
+  "fine_changes": [
+    {
+      "id": "M6.B5L.HOUSE.ROOF.LBC.S",
+      "from": "open",
+      "to": "checked"
+    },
+    {
+      "id": "M6.B5L.HOUSE.ROOF.LBC.D",
+      "from": "open",
+      "to": "checked"
+    },
+    {
+      "id": "M6.B5L.HOUSE.ROOF.LAB.D",
+      "from": "open",
+      "to": "checked"
+    },
+    {
+      "id": "M6.B5L.HOUSE.HUB.LTC.D",
+      "from": "open",
+      "to": "checked"
+    },
+    {
+      "id": "M6.B5L.HOUSE.HUB.LTB.S",
+      "from": "open",
+      "to": "checked"
+    },
+    {
+      "id": "M6.B5L.HOUSE.HUB.LTB.D",
+      "from": "open",
+      "to": "checked"
+    },
+    {
+      "id": "M6.B5L.HOUSE.HUB.LTDB.S",
+      "from": "open",
+      "to": "checked"
+    },
+    {
+      "id": "M6.B5L.HOUSE.HUB.LTDB.D",
+      "from": "open",
+      "to": "checked"
+    },
+    {
+      "id": "M6.B5L.HOUSE.LOWER.LTD.D",
+      "from": "open",
+      "to": "checked"
+    },
+    {
+      "id": "M6.B6.PENTAGON.H2_D0.L013",
+      "from": "open",
+      "to": "checked"
+    },
+    {
+      "id": "M6.B6.PENTAGON.H2_D0.L1234",
+      "from": "open",
+      "to": "checked"
+    },
+    {
+      "id": "M6.B6.PENTAGON.H2_D0_EXIT",
+      "from": "open",
+      "to": "checked"
+    },
+    {
+      "id": "M6.B5L.HOUSE.ROOF.LAB.S",
+      "from": "open",
+      "to": "checked"
+    },
+    {
+      "id": "M6.B5L.HOUSE.LOWER.LTAC.D",
+      "from": "open",
+      "to": "checked"
+    }
+  ],
+  "original_ids_preserved_in_order": true,
+  "new_source_review_and_recovery_files": [
+    {
+      "path": "research/nine/ALIGNED_S_ROOT_PARALLEL_CHANNEL_TRIANGLE_EXCLUSION.md",
+      "sha256": "1b1c1572b29b110596afe25ef660b0f264b97d1910f110f287bfddeb9451465a",
+      "git_blob_sha": "6efaeecdf021a7defb3781df3db0cfdaefe47b73",
+      "bytes": 20320,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/ALIGNED_S_ROOT_PARALLEL_CHANNEL_TRIANGLE_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/ALIGNED_S_ROOT_PERPENDICULAR_CHANNEL_TRIANGLE_EXCLUSION.md",
+      "sha256": "2fe9347a1f4e45653b427d1217db129faeff56e871ef0cdf4cd957c1ba654dd9",
+      "git_blob_sha": "d51825071eff69b0174df44cdf27f5ad00a558d2",
+      "bytes": 12973,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/ALIGNED_S_ROOT_PERPENDICULAR_CHANNEL_TRIANGLE_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/CLOSE_SUPPORT_PORTS_STRADDLING_NORMALS_FRESH_EXCLUSION.md",
+      "sha256": "f3c83072e2e09bc844bbd1a79813ab76b7979d008980ce9b2be07f25b85811d2",
+      "git_blob_sha": "c8b9c79212244b138b5173f7dd503db95ec260d5",
+      "bytes": 3986,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/CLOSE_SUPPORT_PORTS_STRADDLING_NORMALS_FRESH_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/FOUR_BODY_BLOCK_SAME_ROOT_LEAF_AND_SHORT_ARM_FRESH_EXCLUSION.md",
+      "sha256": "6dcf79aa2c3bce2adb7d5ce35d67ee1ac9522beb26e693af0a9c4bf920641071",
+      "git_blob_sha": "dacb379dc8c012b10353d812b270f794127f8c8f",
+      "bytes": 26524,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/FOUR_BODY_BLOCK_SAME_ROOT_LEAF_AND_SHORT_ARM_FRESH_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/FOUR_BODY_BLOCK_ZERO_APPLICATION_BRIDGE_FRESH_EXCLUSION.md",
+      "sha256": "5e9f44b9ae62fd5c81e4b7c347bdee06d6000ca2ecbe5cf8ac7afe8a5cd72c57",
+      "git_blob_sha": "594b2c13cd1ebe2c4c125ffb7e197fb1421913c0",
+      "bytes": 20401,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/FOUR_BODY_BLOCK_ZERO_APPLICATION_BRIDGE_FRESH_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/GENUINE_S_THREE_FORCE_ROOT_TWO_NEAR_NEIGHBORS_FRESH_DOMAIN.md",
+      "sha256": "5dba416ea7bfd8500daf6f33bcecd56521dd7013f2357b9442964d2c49edb480",
+      "git_blob_sha": "ad4abb34b89122e4f1bfae9b786bcbcd0ba3ddaa",
+      "bytes": 9841,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/GENUINE_S_THREE_FORCE_ROOT_TWO_NEAR_NEIGHBORS_FRESH_DOMAIN.md"
+    },
+    {
+      "path": "research/nine/HOUSE_HUB_TB_CANONICAL_CONTACT_EXCLUSION.md",
+      "sha256": "0a23b1dc8db0910147077ec114ebd4e8db40d08b6166f69c8400c5f7b6192d6f",
+      "git_blob_sha": "ab5d56e87f847948b796f8d3a8e57b7b03d1e888",
+      "bytes": 9349,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/HOUSE_HUB_TB_CANONICAL_CONTACT_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/HOUSE_HUB_TC_D_COMPLETE_EXCLUSION.md",
+      "sha256": "4dee13debeaab5009adec437202f7697e3d5fc53515524aa1f8610a3af39397b",
+      "git_blob_sha": "5e669629b69d7113f86b5e355aef4e1f895277f7",
+      "bytes": 25955,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/HOUSE_HUB_TC_D_COMPLETE_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/HOUSE_HUB_TDB_ALIGNED_LOW_S_EXCLUSION.md",
+      "sha256": "250e0626130e6259442873113e9ae3b4c7085c43630dec864ee25a235a7482d4",
+      "git_blob_sha": "60fa82a6e462dd404790b4654dc329d6a8ae9ee5",
+      "bytes": 14531,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/HOUSE_HUB_TDB_ALIGNED_LOW_S_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/HOUSE_HUB_TDB_COMPLETE_ATTACHMENT_EXCLUSION.md",
+      "sha256": "5b0300286fd5aa65a4e968a06aedce20d4b783018aa10043cb4289f02f4619ff",
+      "git_blob_sha": "dceb314a80b3fecd4180f7e21fae1c465469c907",
+      "bytes": 5670,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/HOUSE_HUB_TDB_COMPLETE_ATTACHMENT_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/HOUSE_HUB_TDB_D_COMPLETE_EXCLUSION.md",
+      "sha256": "29c7bd6db5e8ac60631f9669a1446df959e33d9ed887819b48128396c0a957f7",
+      "git_blob_sha": "3a8d7a5bf12524bab0fc3414e8e936c4cfd233bc",
+      "bytes": 11792,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/HOUSE_HUB_TDB_D_COMPLETE_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/HOUSE_HUB_TDB_S_COMPLETE_EXCLUSION.md",
+      "sha256": "458665f78aa025a44bb3fa989481be2d8fe5f0446a17409435490b8af1188434",
+      "git_blob_sha": "9feeb7d59e4d79593f0fca10692c5d8d948fa08d",
+      "bytes": 4801,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/HOUSE_HUB_TDB_S_COMPLETE_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/HOUSE_HUB_TDB_S_ROOT_COMPLETE_DOMAIN.md",
+      "sha256": "f9461dd33f28e0419fd023583ecff96c95d7076b53d47b8cc6236ab9ab7c4dec",
+      "git_blob_sha": "4b1309517ee338e170baacdbff083f32fd743ade",
+      "bytes": 17653,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/HOUSE_HUB_TDB_S_ROOT_COMPLETE_DOMAIN.md"
+    },
+    {
+      "path": "research/nine/HOUSE_LOWER_TD_D_COMPLETE_EXCLUSION.md",
+      "sha256": "51d90e77cccd75ba987e9f26717c1019ad9e4fc3d9d9cbf4a034c2bcecfe6fcb",
+      "git_blob_sha": "040b675fafc86821fa00cd66d7cc32c652971516",
+      "bytes": 8643,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/HOUSE_LOWER_TD_D_COMPLETE_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/HOUSE_LOWER_TD_S_PARALLEL_BYPASS_EXCLUSION.md",
+      "sha256": "de2b585692b350e63be7f6f703a04fa9a8725b7dc5293ea0f241d2bac9ed5dec",
+      "git_blob_sha": "5e8cc6ab33a23679be0c6b246ab2359536566b99",
+      "bytes": 10186,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/HOUSE_LOWER_TD_S_PARALLEL_BYPASS_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/HOUSE_ROOF_AB_D_COMPLETE_EXCLUSION.md",
+      "sha256": "7b0bd9ee78d84e5d68424034729d55187fa44ea10035f56a57bd1c5fa75dc119",
+      "git_blob_sha": "8f731cc922e9a50e7895f237b81cd9646b1d71ee",
+      "bytes": 13344,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/HOUSE_ROOF_AB_D_COMPLETE_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/HOUSE_ROOF_GENUINE_LEAF_TWO_UNLOADED_HUBS_EXCLUSION.md",
+      "sha256": "db32526e04e2101bb72e38a461ab6d7e82b4fbb35b7647b70cbcd4825796da3b",
+      "git_blob_sha": "3bdc1ad0d684f64fbf4f3e5c857fc4bbb94f7731",
+      "bytes": 27054,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/HOUSE_ROOF_GENUINE_LEAF_TWO_UNLOADED_HUBS_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_FOUR_LOAD_OBLIQUE_BYPASS_EXCLUSION.md",
+      "sha256": "c97050fd440b02a5aa71849c603132d9b37cb479a58e183102ce3f4d5a3dc6e3",
+      "git_blob_sha": "f3d897790afdcb407d778362daa2b53e07c8db78",
+      "bytes": 17664,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/INNER_PENTAGON_FOUR_LOAD_OBLIQUE_BYPASS_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_FOUR_LOAD_PARALLEL_BYPASS_EXCLUSION.md",
+      "sha256": "46a853de32bca6a4198c3305fea1f9cdba56744da86712d07ae0b812f93b8494",
+      "git_blob_sha": "17bedcd01271d87350454ada8fae065e5cc6652d",
+      "bytes": 11328,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/INNER_PENTAGON_FOUR_LOAD_PARALLEL_BYPASS_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_TWO_SPOKE_FOUR_LOAD_1234_COMPLETE_EXCLUSION.md",
+      "sha256": "e3c93d69a9c3a046ff2a21545887b0bf292adee9289e42606abe83ac815fa238",
+      "git_blob_sha": "1930510cb7802953afb42a205c760e008b71efd7",
+      "bytes": 11991,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/INNER_PENTAGON_TWO_SPOKE_FOUR_LOAD_1234_COMPLETE_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_TWO_SPOKE_NO_CHORD_COMPLETE_EXCLUSION.md",
+      "sha256": "aac5b85cf106560e75af9a06375f8f3572eec6f53b1855c8253bd0afe5b50661",
+      "git_blob_sha": "ad7fae1a6a2dd891162f58c77f4ffba4294d9204",
+      "bytes": 18710,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/INNER_PENTAGON_TWO_SPOKE_NO_CHORD_COMPLETE_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_TWO_SPOKE_THREE_LOAD_013_COMPLETE_EXCLUSION.md",
+      "sha256": "178c40e8dbb0cccd9b5ce8fd04dde9f1367007dda944736bbcfe13f777ad790a",
+      "git_blob_sha": "d1d199926c7d6165e8bbeba5bd1cd3467f87207c",
+      "bytes": 8851,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/INNER_PENTAGON_TWO_SPOKE_THREE_LOAD_013_COMPLETE_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/OBLIQUE_BYPASS_AT_UNLOADED_THREE_FORCE_ENDPOINT_EXCLUSION.md",
+      "sha256": "95cdc83959d7a93b5788c9678d0c8bda5f2f0298df27a9c1d4920a4c9cf126ee",
+      "git_blob_sha": "f1fc6938f7e66390af882d8e3c36e68445d73e41",
+      "bytes": 17292,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/OBLIQUE_BYPASS_AT_UNLOADED_THREE_FORCE_ENDPOINT_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/ONE_FOUR_BODY_BLOCK_THREE_BRIDGES_COMPLETE_JOIN.md",
+      "sha256": "18873439b72582bda3ae79550d316b87236bc3d43983d6805381b8596354cca8",
+      "git_blob_sha": "3b55e21b125e1402b9466cae0f2847dac26b17b2",
+      "bytes": 10741,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/ONE_FOUR_BODY_BLOCK_THREE_BRIDGES_COMPLETE_JOIN.md"
+    },
+    {
+      "path": "research/nine/ONE_FOUR_BODY_BLOCK_THREE_BRIDGES_FRESH_ATTACHMENT_COVER.md",
+      "sha256": "fe7cd59246d06d4ac2386d15525c3e00a48cbed2829de88741d9344e9beb9ca0",
+      "git_blob_sha": "6908b746047a7f86fa2cdf2f493a6b1a855188c0",
+      "bytes": 16525,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/ONE_FOUR_BODY_BLOCK_THREE_BRIDGES_FRESH_ATTACHMENT_COVER.md"
+    },
+    {
+      "path": "research/nine/OWNED_SOUTH_BOUNDARY_CHANNEL_HEIGHT_BOUND.md",
+      "sha256": "550cb41f99ecb61408fa71272eb45dc9461cfa50aebf1cf2be4d7b533ddb5f7d",
+      "git_blob_sha": "ecbe8dbb2737aa3a585f7c4d3a87ae3547786f0d",
+      "bytes": 4853,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/OWNED_SOUTH_BOUNDARY_CHANNEL_HEIGHT_BOUND.md"
+    },
+    {
+      "path": "research/nine/PARALLEL_BYPASS_AT_UNLOADED_THREE_FORCE_ENDPOINT_EXCLUSION.md",
+      "sha256": "0643b1ea0c6cd66724f2ad130c9cbd3fb2ffdbb53979e43170d7b58b2023e3be",
+      "git_blob_sha": "f55d314944135d125816bf89cb10cb24e0de3423",
+      "bytes": 10556,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/PARALLEL_BYPASS_AT_UNLOADED_THREE_FORCE_ENDPOINT_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/REVIEW_ALIGNED_S_ROOT_PARALLEL_CHANNEL_TRIANGLE_ROOTED_BLOCKS_2026_10_28.md",
+      "sha256": "fe76a26b23b83efd1d357ef0c96425e7121b6d698070d4a0da51928f4bb87753",
+      "git_blob_sha": "a90b007b31aa59fa576292e67902ec84ee6104a0",
+      "bytes": 13054,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_ALIGNED_S_ROOT_PARALLEL_CHANNEL_TRIANGLE_ROOTED_BLOCKS_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_ALIGNED_S_ROOT_PERPENDICULAR_CHANNEL_TRIANGLE_ROOTED_BLOCKS_2026_10_28.md",
+      "sha256": "a51970eb5c46ec9fba4b29477f7a0e9b94e565b3eac96913a880bead0a19598f",
+      "git_blob_sha": "67b9be63ada8a1b424d2308b8822ec0e6fdec898",
+      "bytes": 8584,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_ALIGNED_S_ROOT_PERPENDICULAR_CHANNEL_TRIANGLE_ROOTED_BLOCKS_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_ALIGNED_S_ROOT_PERPENDICULAR_CHANNEL_TRIANGLE_ROOT_2026_10_28.md",
+      "sha256": "e47f234dc1114e81aa28f7623f6e11bf6fa05aa8f652869e578624b81b29923f",
+      "git_blob_sha": "3289cd3aa5613387435276a90f73036515152205",
+      "bytes": 8060,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_ALIGNED_S_ROOT_PERPENDICULAR_CHANNEL_TRIANGLE_ROOT_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_BOUNDARY_THREE_NEAR_NEIGHBORS_FRESH_HEXAGON_2026_10_27.md",
+      "sha256": "8ae31e5cc651ab151a65df358fed675379801e1f514eda69a7d010e05771ca85",
+      "git_blob_sha": "9026d196ca4766e648e0d609317b8dae36f014c9",
+      "bytes": 4803,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_BOUNDARY_THREE_NEAR_NEIGHBORS_FRESH_HEXAGON_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_BOUNDARY_THREE_NEAR_NEIGHBORS_FRESH_ROOT_2026_10_27.md",
+      "sha256": "a5d5d5802353b08cd3247f8e2a2ae15e3a135f5fdfb6b79be3b21c5fd52ddfed",
+      "git_blob_sha": "b29a37d431fd6b3697e612b023bf53e6a0e4e9e5",
+      "bytes": 5406,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_BOUNDARY_THREE_NEAR_NEIGHBORS_FRESH_ROOT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_CLOSE_SUPPORT_PORTS_STRADDLING_FRESH_ROOTED_BLOCKS_2026_10_27.md",
+      "sha256": "81ce471afe1f69d9f6aa0495750cbdcf0c1084e1c6f18d4731ad2ab7821f9b38",
+      "git_blob_sha": "a20ab8d7374f47661992ed136bb4bb5fc44999a8",
+      "bytes": 3979,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_CLOSE_SUPPORT_PORTS_STRADDLING_FRESH_ROOTED_BLOCKS_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_DOUBLE_GENUINE_ROOT_AND_DISTINCT_GENUINE_ROOT_ROOT_2026_10_27.md",
+      "sha256": "513e7c0c0bcbfdef267dc4459295bea50b37aff824b2a4bc92982ad99f14c345",
+      "git_blob_sha": "dbd0acd3bcf9f6df83f75bcfbcf1ca890825928b",
+      "bytes": 8866,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_DOUBLE_GENUINE_ROOT_AND_DISTINCT_GENUINE_ROOT_ROOT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BODY_SAME_ROOT_LEAF_SHORT_ARM_FRESH_HEXAGON_2026_10_27.md",
+      "sha256": "c83c49dba69d2a0a89ec09fa03b117955cdc2111021c710d011930229ed648a1",
+      "git_blob_sha": "019003055aa35e459b314aaf13e91a60b414e399",
+      "bytes": 18790,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_FOUR_BODY_SAME_ROOT_LEAF_SHORT_ARM_FRESH_HEXAGON_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BODY_SAME_ROOT_LEAF_SHORT_ARM_FRESH_ROOT_2026_10_27.md",
+      "sha256": "654fb06acdc92112404992af81586c517d88bf950dc5cb40a9ef1fe7d83195c0",
+      "git_blob_sha": "f2330bfd314f4cf2290c9dce322909799d7e9243",
+      "bytes": 12927,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_FOUR_BODY_SAME_ROOT_LEAF_SHORT_ARM_FRESH_ROOT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BODY_THREE_BRIDGES_FRESH_COVER_HEXAGON_2026_10_27.md",
+      "sha256": "18f2d9cb0694ef9475783a94bc26c910be1e3073a39079292cfade14355697b5",
+      "git_blob_sha": "2bd51736865e64a3aaab96c87bac0da3081f53d4",
+      "bytes": 9572,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_FOUR_BODY_THREE_BRIDGES_FRESH_COVER_HEXAGON_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BODY_THREE_BRIDGES_FRESH_COVER_ROOT_2026_10_27.md",
+      "sha256": "9482d829b1a44a2664177cd602baa8fef87f79764b65b8af9b8ca5f6444a337c",
+      "git_blob_sha": "714376b644aa99c6549a9a2ddc4323fbc90ecc78",
+      "bytes": 7470,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_FOUR_BODY_THREE_BRIDGES_FRESH_COVER_ROOT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BODY_THREE_BRIDGES_SEVENTEEN_JOIN_HEXAGON_2026_10_27.md",
+      "sha256": "572113471a79a0999051323ee0d22860655b09c69d2400c6b0ec300c118dcac9",
+      "git_blob_sha": "8c6673f1d58a38d56547f6b34d3010dcef886399",
+      "bytes": 6771,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_FOUR_BODY_THREE_BRIDGES_SEVENTEEN_JOIN_HEXAGON_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BODY_THREE_BRIDGES_SEVENTEEN_JOIN_ROOT_2026_10_27.md",
+      "sha256": "9e1e897cf1cd752b09406957ced31fc7297b481e5df0483efc98965ae4d663d1",
+      "git_blob_sha": "e5807ac10c6eb5c3e3d0730226935ec74105c7bd",
+      "bytes": 5960,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_FOUR_BODY_THREE_BRIDGES_SEVENTEEN_JOIN_ROOT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BODY_ZERO_APPLICATION_BRIDGE_FRESH_HEXAGON_2026_10_27.md",
+      "sha256": "50dd37cf38c6dc0d6f31c90f0fe8ff1014764ac4195c9884f8f97724cf1bfd8c",
+      "git_blob_sha": "c92ee4190941e7f2464a0393a772218110f4dc63",
+      "bytes": 14877,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_FOUR_BODY_ZERO_APPLICATION_BRIDGE_FRESH_HEXAGON_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BODY_ZERO_APPLICATION_BRIDGE_FRESH_ROOT_2026_10_27.md",
+      "sha256": "9dfdfdf582f415cd4918202d4f7265f20cc877541c77d242745ec5a25891b5f1",
+      "git_blob_sha": "bb2deb9bfb8163b6c672b383270064ec303d09d0",
+      "bytes": 11998,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_FOUR_BODY_ZERO_APPLICATION_BRIDGE_FRESH_ROOT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BRIDGE_C4_LONG_ARM_OPPOSITE_LEAF_ROOT_2026_10_27.md",
+      "sha256": "23cba25df24327f386128e610097d9187c85fe621643c893c1fd6fcac7c389cb",
+      "git_blob_sha": "0bb045b1808cf8681a9c9a3bde4626430d8ef985",
+      "bytes": 8288,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_FOUR_BRIDGE_C4_LONG_ARM_OPPOSITE_LEAF_ROOT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BRIDGE_NEGATIVE_BRIDGE_AND_SINGLE_TREE_ROOT_2026_10_27.md",
+      "sha256": "7b3d23987bcba9db71944c82c9b04501442d484c51388c7ddd65a2410e55d3e4",
+      "git_blob_sha": "cc85422c630491437f3d4be6de4dc10487ffc76f",
+      "bytes": 15801,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_FOUR_BRIDGE_NEGATIVE_BRIDGE_AND_SINGLE_TREE_ROOT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_LOAD_OBLIQUE_BYPASS_AND_OBTUSE_CENTER_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "4251f4816fd237aa818ab4603994603b346bc87d3901f25518384c24c61d38aa",
+      "git_blob_sha": "d4ea6a2db9da295ddaaf529dbc7f6f64770677f4",
+      "bytes": 14896,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_FOUR_LOAD_OBLIQUE_BYPASS_AND_OBTUSE_CENTER_TRIANGLE_BRIDGES_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_GENUINE_S_THREE_FORCE_TWO_NEAR_FRESH_DOMAIN_HEXAGON_2026_10_27.md",
+      "sha256": "2595b9050f97e3af62ef950f1c214a9f2f94fc0de8f0c4c26356f61d1587d1e5",
+      "git_blob_sha": "5aac4dd20076c2898238e86444f27ae429adb49a",
+      "bytes": 7638,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_GENUINE_S_THREE_FORCE_TWO_NEAR_FRESH_DOMAIN_HEXAGON_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_GENUINE_S_TWO_NEAR_AND_CLOSE_PORTS_ROOT_2026_10_27.md",
+      "sha256": "9457b77e2f8ebc42892a8b7d2f9dd27be52ae6fe6266e762fc71fb5fa23ab539",
+      "git_blob_sha": "3b9081f8b83797d6d9ba47fb0a5762153fb3a606",
+      "bytes": 8049,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_GENUINE_S_TWO_NEAR_AND_CLOSE_PORTS_ROOT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_HUB_TB_CANONICAL_CONTACT_ROOT_2026_10_28.md",
+      "sha256": "7af1f1a43fd5e703ce6468e5ed68cbceb8305cdc278e980ac4bb6f9cc1b5ee37",
+      "git_blob_sha": "081f53b77408b4407c7f6395f0a52e80732a4576",
+      "bytes": 7392,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_HUB_TB_CANONICAL_CONTACT_ROOT_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_HUB_TB_CANONICAL_CONTACT_TRIANGLE_BRIDGES_2026_10_27.md",
+      "sha256": "f72805162088a6024a6e4818106cbcdd7214b2cf1425f4fa32fb3143e149f7e2",
+      "git_blob_sha": "128557a3c9715b756dec7b6e3a827eb5926d14fd",
+      "bytes": 10207,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_HUB_TB_CANONICAL_CONTACT_TRIANGLE_BRIDGES_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_HUB_TC_D_COMPLETE_ROOT_2026_10_28.md",
+      "sha256": "34041598838ca9ab3d5be54c4c389decbacb0ed5ee75d42e0e3cd0cab10b51a2",
+      "git_blob_sha": "e13f57a073b4e72054ee91676c809e95359861d0",
+      "bytes": 14049,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_HUB_TC_D_COMPLETE_ROOT_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_HUB_TC_D_COMPLETE_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "8d132348216554e089cf5a3106983feafe778e56f7117fcb995058eff84ed7f0",
+      "git_blob_sha": "61ddf69f610ad8e16fdf61509a0b16d267e183ed",
+      "bytes": 17510,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_HUB_TC_D_COMPLETE_TRIANGLE_BRIDGES_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_HUB_TDB_COMPLETE_JOIN_HEXAGON_2026_10_27.md",
+      "sha256": "1eef8ba6dce28e0a362ff06475daa8c3d0eab1895ded2d141eedb009262d6f45",
+      "git_blob_sha": "95fada4efe469cb1c30c8c0a3d3aac673a836bef",
+      "bytes": 9303,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_HUB_TDB_COMPLETE_JOIN_HEXAGON_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_HUB_TDB_COMPLETE_ROOT_2026_10_28.md",
+      "sha256": "458f4342e6b32acdb36e57ddd9ec23f7933797cdccbbbaebccf1d3eaaa051eef",
+      "git_blob_sha": "0ff098a7fd4f47efe151f35d390debeaf2610b81",
+      "bytes": 18476,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_HUB_TDB_COMPLETE_ROOT_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_HUB_TDB_D_COMPLETE_TRIANGLE_BRIDGES_2026_10_27.md",
+      "sha256": "cd1d562356fe2dc437221ba6c445bf2faa200b610126dc99176ad8813b665ff2",
+      "git_blob_sha": "dff3f9abf21f41e01444fb8ad4b1514123917e2b",
+      "bytes": 9580,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_HUB_TDB_D_COMPLETE_TRIANGLE_BRIDGES_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_HUB_TDB_LOW_SCALAR_AND_COMPLETE_S_TRIANGLE_BRIDGES_2026_10_27.md",
+      "sha256": "8ff8386d21ab4555f7540058cde686fe584a88e82238b59c9a3a17590b6d5b65",
+      "git_blob_sha": "856e09afd3cbcef68f21568962c8031314e3ca8b",
+      "bytes": 13024,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_HUB_TDB_LOW_SCALAR_AND_COMPLETE_S_TRIANGLE_BRIDGES_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_HUB_TDB_S_ROOT_DOMAIN_TRIANGLE_BRIDGES_2026_10_27.md",
+      "sha256": "6720c8c09e46051b1a6d6b4a631f16ebec111107f565d10172ff9cf4cb105d10",
+      "git_blob_sha": "1ea521d28b23f81d74e68b72f3d9554c5bb9e1fa",
+      "bytes": 10391,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_HUB_TDB_S_ROOT_DOMAIN_TRIANGLE_BRIDGES_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_LOWER_TD_D_COMPLETE_ROOT_2026_10_28.md",
+      "sha256": "c25f680332d86dbfaa88765fd14961d513bed07be126285deb160249f1187f15",
+      "git_blob_sha": "7b074b48fff74ab4e9acccdd09bfc94358e5adae",
+      "bytes": 6727,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_LOWER_TD_D_COMPLETE_ROOT_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_LOWER_TD_D_COMPLETE_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "2b6dea170d318ccf284d8cbfc0b2be0089b6e9256632b75b1a7689fe8176b694",
+      "git_blob_sha": "2ff0688e08a778a07df3451210499eddceb20ac2",
+      "bytes": 7786,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_LOWER_TD_D_COMPLETE_TRIANGLE_BRIDGES_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_LOWER_TD_S_PARALLEL_BYPASS_ROOT_2026_10_28.md",
+      "sha256": "99d95b9bfefa851835410ddcc5a96634adae2476d672439c88969a767d4c6aba",
+      "git_blob_sha": "980d535af1269f27ff2b7cc99884d5e41c470233",
+      "bytes": 6709,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_LOWER_TD_S_PARALLEL_BYPASS_ROOT_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_LOWER_TD_S_PARALLEL_BYPASS_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "9f8a8e03abcbec5e9ecf6ca3c563e7d6e46d80262ab602982bb2516ab4c3d173",
+      "git_blob_sha": "cab25b59639292c21fd5fab804af62a6a3067f04",
+      "bytes": 9044,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_LOWER_TD_S_PARALLEL_BYPASS_TRIANGLE_BRIDGES_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_ROOF_AB_D_COMPLETE_HEXAGON_2026_10_28.md",
+      "sha256": "2d730f5a3eaf7288d3bb4b196ef288c96a65df97661f62d4898d4827a6531ed2",
+      "git_blob_sha": "69620361cfef6a088be57815a15bb8e9414e0499",
+      "bytes": 12541,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_ROOF_AB_D_COMPLETE_HEXAGON_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_ROOF_AB_D_COMPLETE_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "18ec7f986d47a347fb919258822ebbc7cd6eed7ef84e64ac0780dfd9b0a4ac92",
+      "git_blob_sha": "e8568fd66e0280c7f9d23dc4a082b0d4075e53c9",
+      "bytes": 13833,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_ROOF_AB_D_COMPLETE_TRIANGLE_BRIDGES_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_ROOF_AB_D_FINAL_INTEGRATION_ROOT_2026_10_28.md",
+      "sha256": "87d458ba7c92a0ddc0d4b8860eeafaaea1b1e22adf8972e2da75c0ea58b31e4e",
+      "git_blob_sha": "89ea2e7ff86a1d7359d41079b3f765951f1c8cd9",
+      "bytes": 4053,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_ROOF_AB_D_FINAL_INTEGRATION_ROOT_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_ROOF_TWO_UNLOADED_HUBS_ROOT_2026_10_27.md",
+      "sha256": "05579d7f8cb2a11ed0d2c18369cc316e942d0f3b59815c6c85f37d471323c339",
+      "git_blob_sha": "7ccfcb10211f8fbe46392d57a09f2c7dfadcc97c",
+      "bytes": 12547,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_ROOF_TWO_UNLOADED_HUBS_ROOT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_ROOF_TWO_UNLOADED_HUBS_TRIANGLE_BRIDGES_2026_10_27.md",
+      "sha256": "98e82958c90a39712d25a63e1493235a5ab2b4fc2f33b25ed352769104581750",
+      "git_blob_sha": "ec01b4dee57fa70ed9c910fec2490457237437e1",
+      "bytes": 10901,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_HOUSE_ROOF_TWO_UNLOADED_HUBS_TRIANGLE_BRIDGES_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_INNER_PENTAGON_FOUR_LOAD_1234_COMPLETE_JOIN_ROOTED_BLOCKS_2026_10_28.md",
+      "sha256": "d6794cb6c00876a360adecafd47ec07666065536ec9bfb8b632c75d05dbcf796",
+      "git_blob_sha": "2d2b198dfa9268a66aac8734ad4760455545ee68",
+      "bytes": 9589,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_INNER_PENTAGON_FOUR_LOAD_1234_COMPLETE_JOIN_ROOTED_BLOCKS_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_INNER_PENTAGON_FOUR_LOAD_1234_FINAL_INTEGRATION_ROOT_2026_10_28.md",
+      "sha256": "fbaacd867714592473e6cac98c8f2b90906844e7eb833c7760938855fcf54bd5",
+      "git_blob_sha": "b40b717e306d3d59f8ab632cfdad75e73e1e58d0",
+      "bytes": 4274,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_INNER_PENTAGON_FOUR_LOAD_1234_FINAL_INTEGRATION_ROOT_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_INNER_PENTAGON_FOUR_LOAD_OBLIQUE_AND_JOIN_ROOT_2026_10_28.md",
+      "sha256": "039688d53af57dd0b9aa356b117b84b09596497a068d62031c683ac1a0cd1197",
+      "git_blob_sha": "9b0f429223fe5650c437393dd8f594212e55ef3b",
+      "bytes": 12501,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_INNER_PENTAGON_FOUR_LOAD_OBLIQUE_AND_JOIN_ROOT_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_INNER_PENTAGON_FOUR_LOAD_PARALLEL_BYPASS_ROOTED_BLOCKS_2026_10_28.md",
+      "sha256": "6ddd107d4eefc855ebce9bc9ff784d7655eeb491352872e52ddc1b57b202c48e",
+      "git_blob_sha": "05b92e9c0858ce7aab4fcc997febbffa556b140d",
+      "bytes": 9484,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_INNER_PENTAGON_FOUR_LOAD_PARALLEL_BYPASS_ROOTED_BLOCKS_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_INNER_PENTAGON_FOUR_LOAD_PARALLEL_BYPASS_ROOT_2026_10_28.md",
+      "sha256": "67d2aaecd3310b016805a9ab90a74d469ac43f0bf1a4baba9a2d35c1802aa82c",
+      "git_blob_sha": "43123fd8fe71f6f2a6e42a905d1d39f736b67a98",
+      "bytes": 7426,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_INNER_PENTAGON_FOUR_LOAD_PARALLEL_BYPASS_ROOT_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_INNER_PENTAGON_TWO_SPOKE_NO_CHORD_COMPLETE_JOIN_ROOTED_BLOCKS_2026_10_28.md",
+      "sha256": "3beff0a5203f5470a351a63f27c70eb85d6f21e8fd8b813b51c1d6ad69f616cd",
+      "git_blob_sha": "7f2cdfdaa2ccde5261c9f00f54174c73a25884cf",
+      "bytes": 14269,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_INNER_PENTAGON_TWO_SPOKE_NO_CHORD_COMPLETE_JOIN_ROOTED_BLOCKS_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_INNER_PENTAGON_TWO_SPOKE_NO_CHORD_COMPLETE_ROOT_2026_10_28.md",
+      "sha256": "f9aabdc30dff589dd171ca7f13669da9cf8d9b93bae3856fc1727239263e86c8",
+      "git_blob_sha": "f8110f5165744154827d8e4289832481b287dcd9",
+      "bytes": 12775,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_INNER_PENTAGON_TWO_SPOKE_NO_CHORD_COMPLETE_ROOT_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_OBLIQUE_BYPASS_AND_INNER_PENTAGON_013_JOIN_TRIANGLE_BRIDGES_2026_10_27.md",
+      "sha256": "279562e2dd6e6f83987a8efbffe21d86b52599f96f19dfde13c12cc2e74adb33",
+      "git_blob_sha": "9136afb6fa79b5f16e8264e5b21cd41da1518932",
+      "bytes": 14199,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_OBLIQUE_BYPASS_AND_INNER_PENTAGON_013_JOIN_TRIANGLE_BRIDGES_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_ONE_FOUR_BLOCK_THREE_BRIDGES_COMPLETE_JOIN_ROOTED_BLOCKS_2026_10_28.md",
+      "sha256": "017079f9663b39056fb409129205c85e9b1557dcd4f6ab97f19c4326f1e877ce",
+      "git_blob_sha": "b9e442ee2bce397d04db70f6be39d9acf3d184a4",
+      "bytes": 17050,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_ONE_FOUR_BLOCK_THREE_BRIDGES_COMPLETE_JOIN_ROOTED_BLOCKS_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_ONE_FOUR_BODY_THREE_BRIDGES_COMPLETE_JOIN_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "85292f2225a7b595008a311faff14592f22182043e9b753afb80aa6cc4e0e9b5",
+      "git_blob_sha": "a2427f1c9dc60a09571cfb981f9df1912eeaa384",
+      "bytes": 17691,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_ONE_FOUR_BODY_THREE_BRIDGES_COMPLETE_JOIN_TRIANGLE_BRIDGES_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_ONE_FOUR_BODY_THREE_BRIDGES_INTEGRATION_ROOT_2026_10_28.md",
+      "sha256": "07f902609465c235142be1f1f01ed9d25e35f06d53161c66f7ec42f34c88d78a",
+      "git_blob_sha": "7bca46dc3b2118bb5bd3d1965262b869d5f7d803",
+      "bytes": 2673,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_ONE_FOUR_BODY_THREE_BRIDGES_INTEGRATION_ROOT_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_PARALLEL_BYPASS_UNLOADED_THREE_FORCE_TRIANGLE_BRIDGES_2026_10_27.md",
+      "sha256": "b55b55650640951b94d100b607b9e7c46be1512b343ed28e8a5c797c85a353dc",
+      "git_blob_sha": "373bf15cbbe995d7aeb138385060bde0affd2f8b",
+      "bytes": 9564,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_PARALLEL_BYPASS_UNLOADED_THREE_FORCE_TRIANGLE_BRIDGES_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_PARALLEL_OBLIQUE_BYPASS_AND_PENTAGON_013_ROOT_2026_10_28.md",
+      "sha256": "026d2c05b157d98d912cb86e8a1cc270d8a24996885229f9c57b3cbf7df25328",
+      "git_blob_sha": "7b6f35c88740b141b90fc340cb6298d6c69e3f8a",
+      "bytes": 10604,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_PARALLEL_OBLIQUE_BYPASS_AND_PENTAGON_013_ROOT_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_PUBLISHED_AND_FRESH_THREE_BRIDGES_RECONCILIATION_ROOT_2026_10_27.md",
+      "sha256": "6556fd9a1604632a30235375d53f64cd64a5e8be324e58ce35b1d2a4541e2274",
+      "git_blob_sha": "5842185099a5de2a4225eabcc7d39c02f1271ff7",
+      "bytes": 6658,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_PUBLISHED_AND_FRESH_THREE_BRIDGES_RECONCILIATION_ROOT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_SHORT_ARM_DISTINCT_ROOT_LOW_CRITICAL_TYPES_HEXAGON_2026_10_27.md",
+      "sha256": "e045669a10fa1a1d41f86a350d910790339976da5d8401c028e09e30db4de39d",
+      "git_blob_sha": "9c5e096d6a8cf59d61bfefc6b139274f50016fe8",
+      "bytes": 10197,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_SHORT_ARM_DISTINCT_ROOT_LOW_CRITICAL_TYPES_HEXAGON_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_SHORT_ARM_DISTINCT_ROOT_LOW_CRITICAL_TYPES_ROOT_2026_10_27.md",
+      "sha256": "9d3a4a0ae6796f66fb6bfaf817852b5d2c611fd612c73ef1f1e15086a8dac0ba",
+      "git_blob_sha": "c60ee9f7c8e9521302fbe03df60e5ebaabeed517",
+      "bytes": 9437,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_SHORT_ARM_DISTINCT_ROOT_LOW_CRITICAL_TYPES_ROOT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_SHORT_ARM_THREE_FORCE_ADJACENT_GENUINE_ROOT_FRESH_HEXAGON_2026_10_27.md",
+      "sha256": "79a2ad9b00ab4d2e1eab2dc4134a049f737a3b72bb9a62ffbbcd3e1d2b098e2e",
+      "git_blob_sha": "7cd65c6c09aaf216648a8dc0d057fb421d4fed44",
+      "bytes": 12233,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_SHORT_ARM_THREE_FORCE_ADJACENT_GENUINE_ROOT_FRESH_HEXAGON_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_SHORT_ARM_THREE_FORCE_ADJACENT_GENUINE_ROOT_FRESH_ROOT_2026_10_27.md",
+      "sha256": "b2b2b6e6e474507bd8c507ebb24c4b9de2a8c42f79b5c892f3e72da1bc5a2c6d",
+      "git_blob_sha": "a2b71398e25f9a5a687b62f4c403836c74c73132",
+      "bytes": 10086,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_SHORT_ARM_THREE_FORCE_ADJACENT_GENUINE_ROOT_FRESH_ROOT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_SHORT_ARM_TRIANGLE_PARENT_NEAR_ROOT_FRESH_HEXAGON_2026_10_27.md",
+      "sha256": "6366a7c122af9853355f7a69e0a64abdcb7cdf04198ac8921ba2115a67858483",
+      "git_blob_sha": "c81c31dd7ee1f1546124272d549cbf791899a77d",
+      "bytes": 10606,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_SHORT_ARM_TRIANGLE_PARENT_NEAR_ROOT_FRESH_HEXAGON_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_SHORT_ARM_TRIANGLE_PARENT_NEAR_ROOT_FRESH_ROOT_2026_10_27.md",
+      "sha256": "b5660fa8f2e5691eec1adf0b9403a318a551369665b6baadbfe7c13579017521",
+      "git_blob_sha": "283ab1eaa25e27896ae6845569b5aae94dba99fe",
+      "bytes": 7589,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_SHORT_ARM_TRIANGLE_PARENT_NEAR_ROOT_FRESH_ROOT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_SIDE_CHANNEL_UNLOADED_TRIANGLE_POSITIVE_MEAN_HEXAGON_2026_10_28.md",
+      "sha256": "3077224a609df530e0db2887186729bdfd7db0706dde55f8905564d72c6579f6",
+      "git_blob_sha": "cb0343411e06b34a8f75b0a24cfb653a5199262c",
+      "bytes": 11380,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_SIDE_CHANNEL_UNLOADED_TRIANGLE_POSITIVE_MEAN_HEXAGON_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_TC_S_POSITIVE_MEAN_AND_PARALLEL_CHANNEL_ROOT_2026_10_28.md",
+      "sha256": "5703b7b6658ddcdf9356863d63a0966c3a0f489a242ac6e453bfcdcb0aad276e",
+      "git_blob_sha": "548eb6465564d5ce3b2908c535cbedee2938154e",
+      "bytes": 13781,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_TC_S_POSITIVE_MEAN_AND_PARALLEL_CHANNEL_ROOT_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_GENUINE_LEAVES_C4_COMPLETE_FRESH_HEXAGON_2026_10_27.md",
+      "sha256": "0e841b32a1cfacfdee9da4b8f3b9c399a67eb8eef156d9c53af87e37c67c0299",
+      "git_blob_sha": "c4537626b33adcc53b6f8be0dcbd871bffcaa12a",
+      "bytes": 9421,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_THREE_GENUINE_LEAVES_C4_COMPLETE_FRESH_HEXAGON_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_GENUINE_LEAVES_C4_FRESH_COMPLETE_ROOT_2026_10_27.md",
+      "sha256": "5fb827878405f6ad9feea9a2d6eb878fd25a3fdd7cfdfc15f5a619333a80b317",
+      "git_blob_sha": "e0765cbe1a1037c5625e89ae3ed27d32334d0f52",
+      "bytes": 11800,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_THREE_GENUINE_LEAVES_C4_FRESH_COMPLETE_ROOT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_GENUINE_LEAVES_DIAMOND_FRESH_COMPLETE_JOIN_ROOTED_BLOCKS_2026_10_27.md",
+      "sha256": "0bd47b3dd7575ac4c1710f06ced5e8196a47bc2e13b02c5bf2d4410f4fe0a1da",
+      "git_blob_sha": "f1c90aae3d435f9e2a237f17a3c251f4ef871d69",
+      "bytes": 5343,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_THREE_GENUINE_LEAVES_DIAMOND_FRESH_COMPLETE_JOIN_ROOTED_BLOCKS_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_GENUINE_LEAVES_DIAMOND_FRESH_COMPLETE_ROOT_2026_10_27.md",
+      "sha256": "049a851fb7214e87a1b5e3e379832111499d18bf78a38b7285115256e27edafb",
+      "git_blob_sha": "c3e6cd72a10aa5daacbfddb7c801e48519b12462",
+      "bytes": 14455,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_THREE_GENUINE_LEAVES_DIAMOND_FRESH_COMPLETE_ROOT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_LEAF_C4_OWNED_NEIGHBORS_FRESH_ROOTED_BLOCKS_2026_10_27.md",
+      "sha256": "8c1e98c735100a97194ec0f2c488ecadc1da9ba86d80d780bfee01a614c1c84b",
+      "git_blob_sha": "263ca7510a8651847fe41979ca508068b01386d1",
+      "bytes": 8211,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_THREE_LEAF_C4_OWNED_NEIGHBORS_FRESH_ROOTED_BLOCKS_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_LEAF_C4_PARALLEL_TILTED_FRESH_HEXAGON_2026_10_27.md",
+      "sha256": "ca19a7af1c6282759f0ff514a6c6734e5a44627b27b7d6535ad8476e6e29d00b",
+      "git_blob_sha": "ef256ab1f605a1e0b1070e936cd353674809d2c0",
+      "bytes": 11320,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_THREE_LEAF_C4_PARALLEL_TILTED_FRESH_HEXAGON_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_LEAF_DIAMOND_NONPARALLEL_AND_OWNED_PARALLEL_FRESH_ROOTED_BLOCKS_2026_10_27.md",
+      "sha256": "576cdb2c46ad653bb5f7598c21eb54c5d9b1c47f394fb386dce2f646296f23d0",
+      "git_blob_sha": "91ed384cef7ae68b344a4ff0acde31fb8657bfe6",
+      "bytes": 8091,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_THREE_LEAF_DIAMOND_NONPARALLEL_AND_OWNED_PARALLEL_FRESH_ROOTED_BLOCKS_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_LEAF_DIAMOND_ONE_TILTED_FRESH_TRIANGLE_BRIDGES_2026_10_27.md",
+      "sha256": "4ae3a2f47d80333542491667c912c5664a9762050e83a4e505a68dd7596d3525",
+      "git_blob_sha": "212339d5be5a52921dee39a2d4bb9f00adc804ee",
+      "bytes": 10105,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_THREE_LEAF_DIAMOND_ONE_TILTED_FRESH_TRIANGLE_BRIDGES_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_LEAF_DIAMOND_TWO_TILTED_FRESH_ROOTED_BLOCKS_2026_10_27.md",
+      "sha256": "391415d31fc52b96ac44bff0b42c664842c50a2217afe8c94a09c1c83decad4c",
+      "git_blob_sha": "cb38852d5a47b2cae7974b58eb722fd57b977ee8",
+      "bytes": 9410,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_THREE_LEAF_DIAMOND_TWO_TILTED_FRESH_ROOTED_BLOCKS_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_TRANSVERSE_OWNED_NEAR_ROOT_NORMAL_TRIANGLE_BRIDGES_2026_10_27.md",
+      "sha256": "855474649d7bfc34f58c324f7b7fa94fcc0ccca9e3a865c21eb870ba0682faf2",
+      "git_blob_sha": "b664b331736a010910c0a555eb272a40a1903ccd",
+      "bytes": 3302,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_TRANSVERSE_OWNED_NEAR_ROOT_NORMAL_TRIANGLE_BRIDGES_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_GENUINE_LEAVES_AND_DISTINCT_ROOT_ROOTED_BLOCKS_2026_10_27.md",
+      "sha256": "c1a6a2d4839b9ac461865623d4608757ca134aea1a3c49b901d4a3fb799aa62c",
+      "git_blob_sha": "cd82c3ce818786fdebb2a7e45a467d3013ad7056",
+      "bytes": 13217,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_TWO_GENUINE_LEAVES_AND_DISTINCT_ROOT_ROOTED_BLOCKS_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/SHORT_ARM_DISTINCT_GENUINE_ROOT_LOW_CRITICAL_AND_TYPE_FRESH_EXCLUSION.md",
+      "sha256": "fa43c1e85ac5f290430c0440f2c36dca1333058df6a0b0fda272fa3d0469a729",
+      "git_blob_sha": "789cea7aa070495a85882b01759b09c59717121c",
+      "bytes": 11696,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/SHORT_ARM_DISTINCT_GENUINE_ROOT_LOW_CRITICAL_AND_TYPE_FRESH_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/SHORT_ARM_THREE_FORCE_PARENT_ADJACENT_GENUINE_ROOT_FRESH_EXCLUSION.md",
+      "sha256": "5a6c6180c5fb22973352f4cb94a97daf43b38e1f25bb2756eb6366f2ddeccc1c",
+      "git_blob_sha": "5fcc58467c2b0a0451adb0c8a297f9df99210f41",
+      "bytes": 13514,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/SHORT_ARM_THREE_FORCE_PARENT_ADJACENT_GENUINE_ROOT_FRESH_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/SHORT_ARM_THREE_FORCE_TRIANGLE_PARENT_NEAR_ROOT_FRESH_EXCLUSION.md",
+      "sha256": "0347f02721a7457aabb90840535f4e6b67bd0a6955a23bb0836fe46a34f437b0",
+      "git_blob_sha": "ca2cd7f74c8bb7466764ea4358dd0cf5aaa31361",
+      "bytes": 10736,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/SHORT_ARM_THREE_FORCE_TRIANGLE_PARENT_NEAR_ROOT_FRESH_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/SIDE_CHANNEL_UNLOADED_TRIANGLE_BYPASS_POSITIVE_MEAN.md",
+      "sha256": "5a1607a588e45d0702c46c3d74074561f31109dccc0b8f94c665991cd4a9f5ee",
+      "git_blob_sha": "07b9d107b2ab7f78d30eb582382fa689fa17d544",
+      "bytes": 11411,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/SIDE_CHANNEL_UNLOADED_TRIANGLE_BYPASS_POSITIVE_MEAN.md"
+    },
+    {
+      "path": "research/nine/THREE_BOUNDARY_PATH_MIDDLE_CENTER_OBTUSE.md",
+      "sha256": "c2fb1f360163a513724c5388a5eca77b1ecadef40f39b7f6b3e46ea52335623b",
+      "git_blob_sha": "58cc4a3352e9397ca0a9516a56ba9f146556dd8a",
+      "bytes": 4238,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/THREE_BOUNDARY_PATH_MIDDLE_CENTER_OBTUSE.md"
+    },
+    {
+      "path": "research/nine/THREE_GENUINE_LEAVES_C4_COMPLETE_FRESH_EXCLUSION.md",
+      "sha256": "d4f7c0fbde651c76d1e8dd9b679e9acbcbfc154091cf0c38444c942a013d82e7",
+      "git_blob_sha": "2df97e6a555127abf4de5c6e2b0cc9b47a4b6ded",
+      "bytes": 9960,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/THREE_GENUINE_LEAVES_C4_COMPLETE_FRESH_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/THREE_GENUINE_LEAVES_DIAMOND_FRESH_COMPLETE_EXCLUSION.md",
+      "sha256": "ecdedce6af9577138972daff2bdae610dbe18279826853eb1424aa01fca492cf",
+      "git_blob_sha": "f6d32efd2386b352b2f67b8f781ab729538376a4",
+      "bytes": 10168,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/THREE_GENUINE_LEAVES_DIAMOND_FRESH_COMPLETE_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/THREE_LEAF_C4_OWNED_NEIGHBORS_FRESH_EXCLUSION.md",
+      "sha256": "1bdfc293d44dbf81c1cb40280b46e362ee878ceb5887ac8652093d11f2f4fd93",
+      "git_blob_sha": "dff6d58813bfc0dc3c53fbfa712d0bf9d888dd2a",
+      "bytes": 17491,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/THREE_LEAF_C4_OWNED_NEIGHBORS_FRESH_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/THREE_LEAF_C4_PARALLEL_TILTED_NEIGHBORS_FRESH_EXCLUSION.md",
+      "sha256": "5f37a10ef2f445ded295779394e6057d0a64f0365e73abda2c1006d3047e66ab",
+      "git_blob_sha": "0fed71b3fe5e8d9baa9f17705974453bb34800d2",
+      "bytes": 18432,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/THREE_LEAF_C4_PARALLEL_TILTED_NEIGHBORS_FRESH_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/THREE_LEAF_DIAMOND_NONPARALLEL_AND_OWNED_PARALLEL_FRESH_EXCLUSION.md",
+      "sha256": "80bd0ad1a120592a0cc4c0509c12898f697094cc1fd7142b117b7f7477494357",
+      "git_blob_sha": "f3c310b79530a13343d69ff4a6016a89b0731b49",
+      "bytes": 16825,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/THREE_LEAF_DIAMOND_NONPARALLEL_AND_OWNED_PARALLEL_FRESH_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/THREE_LEAF_DIAMOND_PARALLEL_ONE_TILTED_HUB_FRESH_EXCLUSION.md",
+      "sha256": "51ccbcfd5681d6be4e8ab6f5583769ea07e6a06101f031c5cfe6cba52f1df086",
+      "git_blob_sha": "911d293d2ddf527e92f9f261c20f2fb258d1a888",
+      "bytes": 14578,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/THREE_LEAF_DIAMOND_PARALLEL_ONE_TILTED_HUB_FRESH_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/THREE_LEAF_DIAMOND_PARALLEL_TWO_TILTED_HUBS_FRESH_EXCLUSION.md",
+      "sha256": "11530ae9f40f09ff0d6d868ed10b492fb99bd737e9f8769be829fda307bc452b",
+      "git_blob_sha": "479fcc9b6253c805c3c411d429a7953269fa3423",
+      "bytes": 19160,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/THREE_LEAF_DIAMOND_PARALLEL_TWO_TILTED_HUBS_FRESH_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/certificates/house_tdb_owned_south_channel_height_check.py",
+      "sha256": "589814e33139f431e222c9e8da16291fb3893998f27d6e64df6d2d9fb72bf005",
+      "git_blob_sha": "9b0b6aff0785e1967075e22fa6e3d492fad1b9e0",
+      "bytes": 2877,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/certificates/house_tdb_owned_south_channel_height_check.py"
+    },
+    {
+      "path": "research/nine/certificates/review_house_tdb_owned_south_channel_height_independent.py",
+      "sha256": "a228c00c7374fb1ced950b015597062b567ad7bd0bf3e3a119a6bb86bd88bd20",
+      "git_blob_sha": "519a141a9743b04b05ca9646c878c33088e52fd0",
+      "bytes": 4125,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/certificates/review_house_tdb_owned_south_channel_height_independent.py"
+    },
+    {
+      "path": "research/nine/REVIEW_ALIGNED_OUTER_LEAF_CHANNEL_THIRD_NEAR_C6_NEXT_2026_10_27.md",
+      "sha256": "5ed7f395d3fb88f6eebdfe3a75a5fd2ad640cf1f65851fca9546c32d273a8db1",
+      "git_blob_sha": "bb8062c907ad39bf5993ec08ccf58e8b15255956",
+      "bytes": 10189,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_ALIGNED_OUTER_LEAF_CHANNEL_THIRD_NEAR_C6_NEXT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_ALIGNED_OUTER_LEAF_CHANNEL_THIRD_NEAR_ROOT_2026_10_27.md",
+      "sha256": "6cc1fbf912874fc9960bf8c93d1a03dd4c9c43ebee996dccec6f26161c768365",
+      "git_blob_sha": "ad11929c8d5fc8fa99afa7250bc2a9715c72f473",
+      "bytes": 3955,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_ALIGNED_OUTER_LEAF_CHANNEL_THIRD_NEAR_ROOT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_GLOBAL_NEXT_2026_10_28.md",
+      "sha256": "799cc7974b8232c012370f9af2d411b2102fce128f35b3b763c4ed573f6ebc67",
+      "git_blob_sha": "012d9129e0550722ec620c79c7ba47566034517b",
+      "bytes": 11913,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_GLOBAL_NEXT_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_ROOT_2026_10_28.md",
+      "sha256": "b31b1abdee956aab5ee58a7b6e1651be950b429cde9ea82c356d7f7e71a8d72b",
+      "git_blob_sha": "1755833062ec2bf57a5bc5f4d5d4a1947a20f836",
+      "bytes": 10182,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_ROOT_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_DECORATED_FOUR_CHANNEL_AND_NORMAL_CONE_EXITS_ROOT_2026_10_27.md",
+      "sha256": "30109340272470b0daad16a736655a57221019db509e54bb16067aa9346b99e3",
+      "git_blob_sha": "52a86cf621828e7a4699d39aa49b3a49e52cce61",
+      "bytes": 9947,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_DECORATED_FOUR_CHANNEL_AND_NORMAL_CONE_EXITS_ROOT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_DECORATED_FOUR_UNLOADED_ROOT_NEIGHBOR_SMALL_PORT_GLOBAL_NEXT_2026_10_27.md",
+      "sha256": "3640dec86a4a141ea421e9f661166e239add27f83593659e0478d1ebdce47763",
+      "git_blob_sha": "8b107675fafa981ae1317302c22ea60e4e2ffa5d",
+      "bytes": 9932,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_DECORATED_FOUR_UNLOADED_ROOT_NEIGHBOR_SMALL_PORT_GLOBAL_NEXT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_GENUINE_S_LEAF_ONE_TENTH_BOUNDARY_CAP_C6_NEXT_2026_10_27.md",
+      "sha256": "38f3b928e8b22cefaa6f2cd65272072c74eafafa4eea17082335c5fd5d1428a4",
+      "git_blob_sha": "50fb490209cf2d6fd769937adc61fa4f102e3271",
+      "bytes": 10285,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_GENUINE_S_LEAF_ONE_TENTH_BOUNDARY_CAP_C6_NEXT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_PARALLEL_PRIVATE_LEAF_CHANNEL_DECORATED_HUB_C6_NEXT_2026_10_27.md",
+      "sha256": "89149c5824a055871a12d387df1961406c74813d0786b121327136a0211e1d13",
+      "git_blob_sha": "7fa3f7fb6cfbfa20ca9922dea105332a052044bc",
+      "bytes": 10740,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_PARALLEL_PRIVATE_LEAF_CHANNEL_DECORATED_HUB_C6_NEXT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_PARALLEL_PRIVATE_LEAF_CHANNEL_DECORATED_HUB_ROOT_2026_10_27.md",
+      "sha256": "02de452ff7c44ff6624df2cfe65bb40b634a9c4d062fd3f41f511a91392ff5a1",
+      "git_blob_sha": "cdab36580a5fdfd6d183224258f3e2f35597eb29",
+      "bytes": 6801,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_PARALLEL_PRIVATE_LEAF_CHANNEL_DECORATED_HUB_ROOT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_MIXED_DIAMOND_C6_NEXT_2026_10_27.md",
+      "sha256": "462e01b8bb8b9fbbbdd63a78e2b5775d3e0e64687333ebc7e7a2b886a4fcedc7",
+      "git_blob_sha": "59679034a00b9363d5968d645bb76f52409e6309",
+      "bytes": 19202,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_MIXED_DIAMOND_C6_NEXT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_MIXED_DIAMOND_ROOT_2026_10_27.md",
+      "sha256": "634eb40ae340a991d52388516f6d069498d08c2fd04334ced8d5959cdcf47b26",
+      "git_blob_sha": "60454cdf9ee34ee721b08753cd8d617da8890604",
+      "bytes": 9415,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_MIXED_DIAMOND_ROOT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_SMALL_PRIVATE_LEAF_ROOT_UNLOADED_CHANNEL_C6_NEXT_2026_10_27.md",
+      "sha256": "92b62f3c0fc26cdd331df3f5a0056b30d65b697e2cedbbd7ee8429c758a5ec50",
+      "git_blob_sha": "e78e899b1c89e11b58705986cbd9d7821d4a0b72",
+      "bytes": 10569,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_SMALL_PRIVATE_LEAF_ROOT_UNLOADED_CHANNEL_C6_NEXT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_TILTED_LEAF_ORIGIN_TRANSMITTER_C6_2026_10_27.md",
+      "sha256": "a54f1c4b135c5b885a40851d6746b4e35d41213f04d542c48f8c0dbd7e3d3bfc",
+      "git_blob_sha": "7c59f1df15879bb5994e8e12d50d28549dd56ab8",
+      "bytes": 6409,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TILTED_LEAF_ORIGIN_TRANSMITTER_C6_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_TWICE_EPSILON_H_AND_ONE_TENTH_S_ROOT_CORNERS_ROOT_2026_10_27.md",
+      "sha256": "594a038c52e770b31a843811ae0e00577d7658f769584164dcb5cd27cbf55646",
+      "git_blob_sha": "f6868b5fd8776dbe62c878857544defeaf052b07",
+      "bytes": 7500,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWICE_EPSILON_H_AND_ONE_TENTH_S_ROOT_CORNERS_ROOT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_BOUNDARY_ANGLE_BUDGET_C6_NEXT_2026_10_28.md",
+      "sha256": "b5418dab4a9e3c0c307412bda496195bc43fb27ba1ade9836924edf65dbaccc3",
+      "git_blob_sha": "936b6408aadad765bdef7c13a5af47142cfd8866",
+      "bytes": 15603,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_BOUNDARY_ANGLE_BUDGET_C6_NEXT_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_BOUNDARY_ANGLE_BUDGET_ROOT_2026_10_28.md",
+      "sha256": "ee97ec69780b79dd578309bb02f615d77e78235ef90ea7d538d291fdfc167b7d",
+      "git_blob_sha": "d755c868dad6a7d7c8c9dbe6e995632287f1c1f3",
+      "bytes": 7696,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_BOUNDARY_ANGLE_BUDGET_ROOT_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_GLOBAL_NEXT_2026_10_28.md",
+      "sha256": "c542a11c99b16f8851bde0a7e05b7cf053608b98f9a80ab8b443966462b07357",
+      "git_blob_sha": "8d51b6b123f9f5d7d8a9275af313f70c7d832b08",
+      "bytes": 11891,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_GLOBAL_NEXT_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_ROOT_2026_10_28.md",
+      "sha256": "ae9f8869c3e5093af56bceb1a739aebc7b057e69d640115f71c18cb85c3d91d5",
+      "git_blob_sha": "083162c88d4b79755de3b81f8ad9e5bbe0a9e537",
+      "bytes": 7863,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_ROOT_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_OWNED_ROOT_SMALL_VERTEX_MIXED_BLOCKS_2026_10_28.md",
+      "sha256": "0546538c6874b06f3041eab51a78be186a23e59962d25a544da77e9fb45e0bae",
+      "git_blob_sha": "fd9fe0ace718c4820fa05812efde3678d2632609",
+      "bytes": 11602,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_OWNED_ROOT_SMALL_VERTEX_MIXED_BLOCKS_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_OWNED_ROOT_SMALL_VERTEX_ROOT_2026_10_28.md",
+      "sha256": "890a2bf1b8d651b52f47a10a80c13aaca9369fc6b45650378bbcce4e454bcd6e",
+      "git_blob_sha": "36cc49d4970c2260a850b98121e17efe968e4edf",
+      "bytes": 8142,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_OWNED_ROOT_SMALL_VERTEX_ROOT_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_SIX_EPSILON_C6_NEXT_2026_10_28.md",
+      "sha256": "dd0c26a411c801ab93b8b709846d42817c27902ef8892657f275cae6e5b3db0e",
+      "git_blob_sha": "3a7ff97a1e1c3b70596916dde076321cbef99f18",
+      "bytes": 10168,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_SIX_EPSILON_C6_NEXT_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_SIX_EPSILON_ROOT_2026_10_28.md",
+      "sha256": "85962680ec92cdb5caa4c1244be840fcb6efa28b4eb6946b247a6b27353b14a5",
+      "git_blob_sha": "d915d80895d747f5ac558436831a8cd4c607f65b",
+      "bytes": 3542,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_SIX_EPSILON_ROOT_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_SMALL_CORNER_NORMAL_CONE_GLOBAL_NEXT_2026_10_27.md",
+      "sha256": "6814054923fb04e05f8cf128cfe1503193bd7a32e645636ccc5823c0ae43b004",
+      "git_blob_sha": "701932e0e1e6a9fc12c06d400bb0f49fd68150d1",
+      "bytes": 12770,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_SMALL_CORNER_NORMAL_CONE_GLOBAL_NEXT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_GLOBAL_NEXT_2026_10_27.md",
+      "sha256": "053dad26d6723987c6334490f318de2137a678ada1034d2d5c4747fa9db1a2bb",
+      "git_blob_sha": "80ea402bcd18373526241e8c1001788d15d18af8",
+      "bytes": 13740,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_GLOBAL_NEXT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_ROOT_2026_10_27.md",
+      "sha256": "ec9571d9737f7dd2c77a21b06df252331403f0cfea644dc1a73d7150f3846e68",
+      "git_blob_sha": "a23c5f6243cfbeafee1c285c8bed951b7bf45b2a",
+      "bytes": 7292,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_ROOT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_DECORATED_FOUR_CRITICAL_RADIUS_GLOBAL_NEXT_2026_10_27.md",
+      "sha256": "a32444f6d426a174890173c1e15508bf1730f667a84e0d10c779f372940b3ddd",
+      "git_blob_sha": "9cdd9b08cd3cfe6e55a4686ccbead0a04327b04f",
+      "bytes": 17270,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_DECORATED_FOUR_CRITICAL_RADIUS_GLOBAL_NEXT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_DECORATED_FOUR_CRITICAL_RADIUS_ROOT_2026_10_27.md",
+      "sha256": "9a5c4f64790f4f137ddf82e24c86f69b73b370e52d53052f8005880eaff54e2c",
+      "git_blob_sha": "a7c6e314d932707bd99248405f3f0e95bb34536c",
+      "bytes": 12766,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_DECORATED_FOUR_CRITICAL_RADIUS_ROOT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_GLOBAL_NEXT_2026_10_27.md",
+      "sha256": "140871adb7f1247da4f73c2c15a4cbe23f21aacb71f4f3c586a72a86e9c581d9",
+      "git_blob_sha": "db5f750a61f0741788d0f97fd09be318617a0e9a",
+      "bytes": 11069,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_GLOBAL_NEXT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_ROOT_2026_10_27.md",
+      "sha256": "b78f6263c11e627b188cfb070c134674eb7fd11033347be982c33d8b52d2a727",
+      "git_blob_sha": "98ba49d9caa10bf50402ec5e4eb7fb41062382c1",
+      "bytes": 5989,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_ROOT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_DECORATED_FOUR_TWICE_EPSILON_CORNER_MIXED_BLOCKS_2026_10_27.md",
+      "sha256": "ef0d1b13378e8c649822f81baaf67071e1599dd7ec1484cbed072ce622ea891a",
+      "git_blob_sha": "6838446a3692c38cf07fb9e11fad21449adcf25e",
+      "bytes": 8410,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_DECORATED_FOUR_TWICE_EPSILON_CORNER_MIXED_BLOCKS_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_GLOBAL_NEXT_2026_10_27.md",
+      "sha256": "2ad018ff0cd96a5be31b8cd243af2a14833c98354d234d11bee4a2ca25e9d296",
+      "git_blob_sha": "b633a3f85d514f8fb4a6b3d969b2cef1bfff4fa2",
+      "bytes": 16310,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_GLOBAL_NEXT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_ROOT_2026_10_27.md",
+      "sha256": "678fe8c81c750666ba80f4d86268fd3b0ce0b800ae5e3a9e8c71313d2b928546",
+      "git_blob_sha": "c3e5dca0495658b8816ed0b6ed022532d57e9b15",
+      "bytes": 8035,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_ROOT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_GENUINE_LEAF_ROOTS_COMMON_OWNED_SIDE_C6_NEXT_2026_10_27.md",
+      "sha256": "a7a788c86206132adb7d356a5270318bc906f785a4a6ea9eeef45bab65af2461",
+      "git_blob_sha": "c48a10d92c3c1aaf567c0882dd2ff3e8dcf48a1f",
+      "bytes": 11380,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_GENUINE_LEAF_ROOTS_COMMON_OWNED_SIDE_C6_NEXT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_GENUINE_LEAF_ROOTS_COMMON_OWNED_SIDE_ROOT_2026_10_27.md",
+      "sha256": "bb88591886c3e3e08a4b7c7cab2bcbd4286b0b2f3ce725a86cce0ae4da57b802",
+      "git_blob_sha": "afc87a1603fcae6e2bed2376d2df6c7a2d6210b5",
+      "bytes": 6747,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_GENUINE_LEAF_ROOTS_COMMON_OWNED_SIDE_ROOT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/ROOTED_ALIGNED_OUTER_LEAF_CHANNEL_THIRD_NEAR_UNIT_EXCLUSION.md",
+      "sha256": "1231c5101ec9fc2f7955aad3a1bc4e0ba0bff74c208162648989c95cdedf7b24",
+      "git_blob_sha": "2c2089e1c06a52169b9b12cc168484603a09b55f",
+      "bytes": 11911,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_ALIGNED_OUTER_LEAF_CHANNEL_THIRD_NEAR_UNIT_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/ROOTED_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "sha256": "1977a8e7b538bb322ce503b20606867a5fde3ea684d17533c32ed00d4b4a0c2f",
+      "git_blob_sha": "e2dfd5f3f3de7990990d05c6c2cfb159445bd622",
+      "bytes": 17749,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/ROOTED_DECORATED_FOUR_UNLOADED_ROOT_NEIGHBOR_SMALL_PORT_EXCLUSION.md",
+      "sha256": "0ab059130813827a7b23e7a087fbb5a90c1fc92c75f35d9020b46a996a44f7fc",
+      "git_blob_sha": "03edb03c7646c1c13506adfe387d82d426dffc87",
+      "bytes": 13067,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_DECORATED_FOUR_UNLOADED_ROOT_NEIGHBOR_SMALL_PORT_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/ROOTED_GENUINE_S_LEAF_ONE_TENTH_CORNER_BOUNDARY_CAP.md",
+      "sha256": "31058df9d4e4ac6eaff1194d2b0d59565349fca885795f284c891537a1be820d",
+      "git_blob_sha": "10add60d6d45811b7f90dbf5d0d15cd50bbb8f61",
+      "bytes": 16477,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_GENUINE_S_LEAF_ONE_TENTH_CORNER_BOUNDARY_CAP.md"
+    },
+    {
+      "path": "research/nine/ROOTED_PARALLEL_PRIVATE_LEAF_CHANNEL_AND_DECORATED_HUB_EXCLUSION.md",
+      "sha256": "e44172ddbabed5d2e88cf848deb74f163abb97cc4433403123c06732e8b55ff0",
+      "git_blob_sha": "39eab072cc5c33369ed949ebe36065dcccb95143",
+      "bytes": 14684,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_PARALLEL_PRIVATE_LEAF_CHANNEL_AND_DECORATED_HUB_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/ROOTED_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_AND_MIXED_DIAMOND_EXCLUSION.md",
+      "sha256": "2923e7a39fdb263c1bb49bf79cd847abc6af034c1bfce3c0df9f1420567a035a",
+      "git_blob_sha": "1e144de7055876392d7b6ac19b0663253393df2b",
+      "bytes": 24517,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_AND_MIXED_DIAMOND_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/ROOTED_SMALL_PRIVATE_LEAF_ROOT_UNLOADED_CHANNEL_EXCLUSION.md",
+      "sha256": "2191da73d3b8bca796e6d69ae4988b7070125677c42478528f1810bf732255fe",
+      "git_blob_sha": "ff4821e8acfbc8987869a09c3548d32b4e446463",
+      "bytes": 9857,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_SMALL_PRIVATE_LEAF_ROOT_UNLOADED_CHANNEL_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/ROOTED_TWO_ADJACENT_LEAF_CYCLES_BOUNDARY_ANGLE_BUDGET_EXCLUSION.md",
+      "sha256": "6647d6f0f20b0c183675cfe46cc2fd9ee6a54501d515e9e97525cdcbe0592ef0",
+      "git_blob_sha": "452236a38f1d078fc74a285499df24d70ac9e3f6",
+      "bytes": 23176,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_TWO_ADJACENT_LEAF_CYCLES_BOUNDARY_ANGLE_BUDGET_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/ROOTED_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_EXCLUSION.md",
+      "sha256": "70f295b704fad5c68ccc7d6866460679b9be09b42263b667a8643acc010c5588",
+      "git_blob_sha": "f00d75dc11c83a1ad31a1f3ff6dc25b87e73c7c0",
+      "bytes": 13399,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/ROOTED_TWO_ADJACENT_LEAF_CYCLES_OWNED_ROOT_SMALL_VERTEX_REDUCTION.md",
+      "sha256": "68ed9356177d5dc9383b68ee0f280da04b5c1ea244d306c322dc4b2c44722404",
+      "git_blob_sha": "4932a30e281ca5cd8dfff5865841b25a6167cc33",
+      "bytes": 16483,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_TWO_ADJACENT_LEAF_CYCLES_OWNED_ROOT_SMALL_VERTEX_REDUCTION.md"
+    },
+    {
+      "path": "research/nine/ROOTED_TWO_ADJACENT_LEAF_CYCLES_SIX_EPSILON_CORNERS.md",
+      "sha256": "c8c80cac934540579cdf07c2cb73fa75effbf2dfa75864d9e630ed40deb43a85",
+      "git_blob_sha": "883b7ddde80980a2b3ea20738b7c25e42f11c413",
+      "bytes": 12093,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_TWO_ADJACENT_LEAF_CYCLES_SIX_EPSILON_CORNERS.md"
+    },
+    {
+      "path": "research/nine/ROOTED_TWO_ADJACENT_LEAF_CYCLES_SMALL_CORNER_NORMAL_CONE_REDUCTION.md",
+      "sha256": "2f23eca409fde9924c22cd99e41873060894ed2731470eaafa105acd4620744d",
+      "git_blob_sha": "54331c2c921ec207e015e60037f2e0c437459e3f",
+      "bytes": 11002,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_TWO_ADJACENT_LEAF_CYCLES_SMALL_CORNER_NORMAL_CONE_REDUCTION.md"
+    },
+    {
+      "path": "research/nine/ROOTED_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_EXCLUSION.md",
+      "sha256": "5d458a2425a42cf158e2093192dce768afeea8420d8cda1a6dbeffde0c61eb2e",
+      "git_blob_sha": "ce09ac7e551a9744109f9fe33139d137a65ade13",
+      "bytes": 21084,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/ROOTED_TWO_DECORATED_FOUR_CRITICAL_RADIUS_EXCLUSION.md",
+      "sha256": "d0ce399fd298d0250876ba9898c85aff2b5d605970c12305cc50f0490cf6c4fc",
+      "git_blob_sha": "b001feefb29d752e09ad99c0826e8c5bede320d7",
+      "bytes": 29548,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_TWO_DECORATED_FOUR_CRITICAL_RADIUS_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/ROOTED_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_EXCLUSION.md",
+      "sha256": "bade040a942812297d1586ad872cee93e22a09b4e96e877e85c8b6e10f70e8ab",
+      "git_blob_sha": "f69679ed85cd7883de0e9c0fd42929cf9edf480a",
+      "bytes": 18780,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/ROOTED_TWO_DECORATED_FOUR_TWICE_EPSILON_CORNER_REDUCTION.md",
+      "sha256": "359f9a77b4f3c7a04e1f8d939f165b8f505ca4534caaddf1b33e932059c420b5",
+      "git_blob_sha": "018dfbe0e4a2c8ba7c38ec4b8ddf2cd29f898321",
+      "bytes": 10757,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_TWO_DECORATED_FOUR_TWICE_EPSILON_CORNER_REDUCTION.md"
+    },
+    {
+      "path": "research/nine/ROOTED_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_REDUCTION.md",
+      "sha256": "3f52c75b96b249dac86bdfa2cf4438fdf6f4c71ac53231619ca10c6f2bb62f97",
+      "git_blob_sha": "8a8c1164a772dc3f820790ab39e2d11c8cdfe680",
+      "bytes": 24011,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_REDUCTION.md"
+    },
+    {
+      "path": "research/nine/ROOTED_TWO_GENUINE_LEAF_ROOTS_COMMON_OWNED_SIDE_EXCLUSION.md",
+      "sha256": "b01eeafba1c4575af86f56aeb2105478569c13c029f37e0d4c190c742e7dcc37",
+      "git_blob_sha": "fbe3a4c4607381d6bc1492886fdb2cf6fa7368ea",
+      "bytes": 11983,
+      "recovered_from": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_TWO_GENUINE_LEAF_ROOTS_COMMON_OWNED_SIDE_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/REVIEW_RECOVERED_C2_44_B2_CURRENT_SOURCE_ASSEMBLY_2026_10_27.md",
+      "sha256": "ab95903f59e961eb1b5f6e1954568e9e6904d8bd79979f23a4fa2011726bd2a6",
+      "git_blob_sha": "350e61601b8d35af1489a555a6ec38da4f1a7d18",
+      "bytes": 8056,
+      "recovered_from": "/workspace/scratch/7d553350ce2a/two_blocks/REVIEW_RECOVERED_C2_44_B2_CURRENT_SOURCE_ASSEMBLY_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+      "sha256": "5243ff54e3182fee2e44ac12d2c985d4e0a5fa953af46c311cabf0f55f405185",
+      "git_blob_sha": "3574045a5f7935c29dd7a5e291ef758ae1aad8e4",
+      "bytes": 25975,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json"
+    },
+    {
+      "path": "research/nine/ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.md",
+      "sha256": "8c9c2e01df7615d4a50afe67ed56108286d7a358ae191859e18b93f772dd2995",
+      "git_blob_sha": "60a02071898fc8f00b7f24d850780a1a0e1b7dc3",
+      "bytes": 6280,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/ACCEPTED_LOWER_TD_D_AND_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+      "sha256": "b2f3aaa116a096e79bab66adc9b8fb270bb6db79638997cdc8ba6326c3ecd287",
+      "git_blob_sha": "0c58ac2e0f9aa2cf82205667839c9560641b1494",
+      "bytes": 5216,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/ACCEPTED_LOWER_TD_D_AND_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json"
+    },
+    {
+      "path": "research/nine/ACCEPTED_LOWER_TD_D_AND_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.md",
+      "sha256": "824fe9d87fbe51b123607c32fdd2281e00d15935d69d9986c63019cfbc67d1ee",
+      "git_blob_sha": "851eba8fec13a29d5b291a9651f8fd1152bdae72",
+      "bytes": 2692,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/ACCEPTED_LOWER_TD_D_AND_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+      "sha256": "32d2d301dc00d36ed0c4b6204ebb7704869d01988f73ae6d20828292d9059e78",
+      "git_blob_sha": "d12b268b8ac9d16b64d16db6d2e887e60f6e54bb",
+      "bytes": 10770,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json"
+    },
+    {
+      "path": "research/nine/ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.md",
+      "sha256": "4a718376fb3684080168ee34af25d4ba9fec7f9bffae255022cfa723d5d085de",
+      "git_blob_sha": "cc04df81fb7bc155ec97b2b1bafa0e7042a9ce31",
+      "bytes": 3352,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/ACCEPTED_HOUSE_S_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+      "sha256": "92d9b488fc0fc409796ba4c47b5f515ec80e04318990c98057dd8733a81e0111",
+      "git_blob_sha": "36b1ea9bbaf1e940e7172a4ef8c6cd58edb9b8a4",
+      "bytes": 4590,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/ACCEPTED_HOUSE_S_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json"
+    },
+    {
+      "path": "research/nine/ACCEPTED_HOUSE_S_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.md",
+      "sha256": "ce4d5ecea81dbe9980ea2213ede66fc4fc2b8d3a3c4023e1d284b47f1e8fa106",
+      "git_blob_sha": "61b3e920b577ba2002a797d148a43596db18c522",
+      "bytes": 902,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/ACCEPTED_HOUSE_S_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/ACCEPTED_ROOF_AB_D_CHECKPOINT_2026_10_28.json",
+      "sha256": "d25a70160877328d7362f0d489bef3e9ead9b6c42f467abc395bd47d7e1f37de",
+      "git_blob_sha": "98f5a50de1651417811a3eb773b5aab32d980e9e",
+      "bytes": 5742,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/ACCEPTED_ROOF_AB_D_CHECKPOINT_2026_10_28.json"
+    },
+    {
+      "path": "research/nine/ACCEPTED_ROOF_AB_D_CHECKPOINT_2026_10_28.md",
+      "sha256": "b3c3a1c80a0cd8d2163d48aa7263c37f99b857e841129c6974af93e1cc5ee7b3",
+      "git_blob_sha": "e28aac8004c7a6c7323f44cd390b5aef905a8dea",
+      "bytes": 3015,
+      "recovered_from": "/workspace/scratch/8168d2185cf7/repo/research/nine/ACCEPTED_ROOF_AB_D_CHECKPOINT_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/RECOVERED_SIX_BODY_ACCEPTED_SOURCE_ALLOWLIST_2026_10_27.json",
+      "sha256": "44293ed180617edb4a11a11447cf9dad4e612509aa3109ff09a45c8f5009f67e",
+      "git_blob_sha": "7fd7a8a728a0c4b28f89118f63e23fff9846584b",
+      "bytes": 86436,
+      "recovered_from": "/workspace/scratch/7d553350ce2a/six_body/recovered_8168_accepted_allowlist.json"
+    },
+    {
+      "path": "research/nine/REVIEW_RECOVERED_SIX_BODY_CONTINUATION_2026_10_28.md",
+      "sha256": "00c698aee0d55d8afe15dc271db5f3f4331c8360de3518e11bd245c56bc9ed10",
+      "git_blob_sha": "e38b6c2651c26671627c217011786b00d19d2337",
+      "bytes": 10359,
+      "recovered_from": "/workspace/scratch/7d553350ce2a/six_body/REVIEW_RECOVERED_SIX_BODY_CONTINUATION_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/C2_44_B2_PUBLICATION_ALLOWLIST_2026_10_27.json",
+      "sha256": "8d7932e4ec468b6697bf5ba95528ea1b17726eb4379df58779db49a9081e8cde",
+      "git_blob_sha": "ac7c51be9d2f3f362e156582c6dc23f138fd72b7",
+      "bytes": 82015,
+      "recovered_from": "/workspace/scratch/7d553350ce2a/two_blocks/C2_44_B2_PUBLICATION_ALLOWLIST.json"
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_LEAF_DIAMOND_FRESH_CURRENT_INDEPENDENT_2026_10_27.md",
+      "sha256": "c55ba4ceea0b4dc1db0a13044db7e01a0943498afe19f248f44492c63f7cb04d",
+      "git_blob_sha": "067140f7efaf2395cb86e52c140d02dc672a8e5f",
+      "bytes": 11788,
+      "recovered_from": "/workspace/scratch/7d553350ce2a/diamond/REVIEW_THREE_LEAF_DIAMOND_FRESH_CURRENT_INDEPENDENT_2026_10_27.md"
+    },
+    {
+      "path": "research/nine/DIAMOND_FRESH_CURRENT_REVIEW_EXACT_RECORD.json",
+      "sha256": "06b0cbe88eaae1369eabce6b96f6e28a10293beeb436d45966ad76ff8037af45",
+      "git_blob_sha": "8323e4137c7942896bfc4df25496d82bb3b6b283",
+      "bytes": 2864,
+      "recovered_from": "/workspace/scratch/7d553350ce2a/diamond/DIAMOND_FRESH_CURRENT_REVIEW_EXACT_RECORD.json"
+    },
+    {
+      "path": "research/nine/D_LEAF_ROOT_REQUIRES_PHYSICALLY_CLEAR_NONLEAF_NEIGHBOR.md",
+      "sha256": "72632128582b60411187d891c224bfd085b8483a70632775b5a4f7c9786fe08c",
+      "git_blob_sha": "f6c50e9cea88fb979c6bbe4f10ff5eeb0251186c",
+      "bytes": 14574,
+      "recovered_from": "/workspace/scratch/a35548aa44c3/continuation_d579/research/nine/D_LEAF_ROOT_REQUIRES_PHYSICALLY_CLEAR_NONLEAF_NEIGHBOR.md"
+    },
+    {
+      "path": "research/nine/REVIEW_D_LEAF_CLEAR_POSITIVE_NEIGHBOR_AND_TWO_HOUSE_JOINS_INDEPENDENT_703_2026_10_28.md",
+      "sha256": "d321f41eaf9cc2981ecd83a1dd5cfb63f016e0182daaa877166039739f7bb79d",
+      "git_blob_sha": "78903e8120f13cd0f75f9829dd8be9f0d79a6010",
+      "bytes": 16179,
+      "recovered_from": "/workspace/scratch/a35548aa44c3/continuation_d579/research/nine/REVIEW_D_LEAF_CLEAR_POSITIVE_NEIGHBOR_AND_TWO_HOUSE_JOINS_INDEPENDENT_703_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/INDEPENDENT_D_LEAF_CLEAR_POSITIVE_NEIGHBOR_TWO_HOUSE_JOINS_EXACT_RECORD_703_2026_10_28.json",
+      "sha256": "476edb0f9e21e2200dc01cc53c4911e561deff628dd3fe8a4a7cc6046abbddbb",
+      "git_blob_sha": "bfe568fc411e4c4c5cc6aa58fc3cb2af42ebe4b7",
+      "bytes": 23388,
+      "recovered_from": "/workspace/scratch/a35548aa44c3/continuation_d579/research/nine/INDEPENDENT_D_LEAF_CLEAR_POSITIVE_NEIGHBOR_TWO_HOUSE_JOINS_EXACT_RECORD_703_2026_10_28.json"
+    },
+    {
+      "path": "research/nine/UNLOADED_TRIANGLE_HUB_CHANNEL_BYPASS_EXCLUSION.md",
+      "sha256": "824aa9fe810ca4049a2d6a583a3a15cb9934841c03fa0aee5a6cabbf9337956e",
+      "git_blob_sha": "e4d733bf5bf95e40d2a64d74136a62a2f738184e",
+      "bytes": 20337,
+      "recovered_from": "/workspace/scratch/a35548aa44c3/continuation_d579/research/nine/UNLOADED_TRIANGLE_HUB_CHANNEL_BYPASS_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/REVIEW_UNLOADED_TRIANGLE_HUB_CHANNEL_BYPASS_AND_HOUSE_JOINS_INDEPENDENT_703_2026_10_28.md",
+      "sha256": "6c2340d0fc820f615aa72a98a592c6f4644a176b2a041aca5824cf5b8863b207",
+      "git_blob_sha": "8581819fd0da3debdb3ad83f27dab5acb28a2418",
+      "bytes": 14053,
+      "recovered_from": "/workspace/scratch/a35548aa44c3/continuation_d579/research/nine/REVIEW_UNLOADED_TRIANGLE_HUB_CHANNEL_BYPASS_AND_HOUSE_JOINS_INDEPENDENT_703_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/D_LEAF_THREE_FORCE_ROOT_CHANNEL_OTHER_NEIGHBOR_BYPASS_EXCLUSION.md",
+      "sha256": "d897ddb82c2f34423f5a2f9312ec149134aec0b5b449ae77762c35388b405274",
+      "git_blob_sha": "083e6691a3490f22e2e901a5cad41250f62fec42",
+      "bytes": 12488,
+      "recovered_from": "/workspace/scratch/a35548aa44c3/continuation_d579/research/nine/D_LEAF_THREE_FORCE_ROOT_CHANNEL_OTHER_NEIGHBOR_BYPASS_EXCLUSION.md"
+    },
+    {
+      "path": "research/nine/REVIEW_D_LEAF_D3_CHANNEL_BYPASS_COMPLETE_INDEPENDENT_703_2026_10_28.md",
+      "sha256": "278a09df9f3418c35f215607675f3d40ac67e719e3246802bac23ed73974019a",
+      "git_blob_sha": "f528e65dc64e05685c108356b09676f28d1077db",
+      "bytes": 11500,
+      "recovered_from": "/workspace/scratch/a35548aa44c3/continuation_d579/research/nine/REVIEW_D_LEAF_D3_CHANNEL_BYPASS_COMPLETE_INDEPENDENT_703_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_UNIFORM_HOUSE_EXCLUSIONS_CURRENT_2026_10_28.md",
+      "sha256": "ea4afec730dd56842823dd3370dbbf969d44ac77832460a1ed920775aa59510e",
+      "git_blob_sha": "b7afaf5c86c89b34a093cb8f85bd6fe332d2265b",
+      "bytes": 6335,
+      "recovered_from": "/workspace/scratch/7d553350ce2a/six_body/REVIEW_TWO_UNIFORM_HOUSE_EXCLUSIONS_CURRENT_2026_10_28.md"
+    },
+    {
+      "path": "research/nine/RECOVERED_UNIFORM_HOUSE_SUPPLEMENT_ALLOWLIST_2026_10_27.json",
+      "sha256": "772d86c3b8723b9f0195d2948871c9bfd4b7e49a10ccc0391e550a4dcd2030ec",
+      "git_blob_sha": "c12b56d79660d15c63eb3bc11058bd46d57a3499",
+      "bytes": 7505,
+      "recovered_from": "six_body/recovered_a355_uniform_house_allowlist.json"
+    }
+  ],
+  "preserved_dependency_terminal_lf_equivalences": [
+    {
+      "path": "research/nine/CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "published_sha256": "e54df61d3134c5709bee5ac1a250fdd51084828da114d896f14c7e6337c4e8c5",
+      "recovered_sha256": "2625b3a2b730525a6397bc90232e78c5e1aac8091381c1f5e5fc8a71ef1da449",
+      "equivalence": "Only terminal LF bytes differ; published bytes preserved unchanged."
+    },
+    {
+      "path": "research/nine/END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+      "published_sha256": "20a845eff8bee3e9c533162df0b32ea96f9dd104a3cfec41efb3b0cf92d6e9cf",
+      "recovered_sha256": "6f3459eaf4ca425ee2001ddb27e1ba7a1b5eb0003548498f48c610776554d3bb",
+      "equivalence": "Only terminal LF bytes differ; published bytes preserved unchanged."
+    },
+    {
+      "path": "research/nine/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "published_sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "recovered_sha256": "7ba98ef149c1faff4ef4baeaf0b0305a38cf1153f883a3fe4bfa92087d33622d",
+      "equivalence": "Only terminal LF bytes differ; published bytes preserved unchanged."
+    },
+    {
+      "path": "research/nine/FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "published_sha256": "164d08bb2c4dfe8510247e44298d309920cb88a780221252d833f51aa654225f",
+      "recovered_sha256": "6c38d162e1f2c435cf65a8b4a58a7001fe9489c65b3510159fee2687b9753708",
+      "equivalence": "Only terminal LF bytes differ; published bytes preserved unchanged."
+    },
+    {
+      "path": "research/nine/NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "published_sha256": "46220c8a3eb3f539c682bf6a6fa932edf003e37484e0f6004d321e7cb14d7957",
+      "recovered_sha256": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c",
+      "equivalence": "Only terminal LF bytes differ; published bytes preserved unchanged."
+    },
+    {
+      "path": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "published_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "recovered_sha256": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a",
+      "equivalence": "Only terminal LF bytes differ; published bytes preserved unchanged."
+    },
+    {
+      "path": "research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "published_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "recovered_sha256": "6154eee2ab1114d063b0dbd1a2800c3522cbb1b46ec44a258c1c89d8ffb9e975",
+      "equivalence": "Only terminal LF bytes differ; published bytes preserved unchanged."
+    },
+    {
+      "path": "research/nine/SIX_BODY_INNER_PENTAGON_LOAD_COVER.md",
+      "published_sha256": "cfe85a201b09182200d5270f0dcdc0e590bf99eded19aaf6d56f86830e959c0a",
+      "recovered_sha256": "fa877c9d7d25c57a7c8cf438a429465b5952cb8db6628c57d9d93695b33dd434",
+      "equivalence": "Only terminal LF bytes differ; published bytes preserved unchanged."
+    },
+    {
+      "path": "research/nine/UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "published_sha256": "db073cd024a4f2e763e7cd0a21bf5cb6a2a8be67069f3f9d3aff638b8a40b258",
+      "recovered_sha256": "d6008ceb18b2c8921c1f3711e6babfea3a01761487352ef4dca60579a83353b8",
+      "equivalence": "Only terminal LF bytes differ; published bytes preserved unchanged."
+    },
+    {
+      "path": "research/nine/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "published_sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "recovered_sha256": "ee865704904a8b2a5cab7649bdfd928008c253631abf1eb346d4950411c3afac",
+      "equivalence": "Only terminal LF bytes differ; published bytes preserved unchanged."
+    }
+  ],
+  "open_coarse_cells": [
+    "C1.5.b1",
+    "C1.5.b2",
+    "C1.5.b3",
+    "C1.5.b4",
+    "C1.6.b0",
+    "C1.6.b1",
+    "C1.6.b2",
+    "C1.6.b3",
+    "C1.7.b0",
+    "C1.7.b1",
+    "C1.7.b2",
+    "C1.8.b0",
+    "C1.8.b1",
+    "C1.9.b0",
+    "C2.35.b0",
+    "C2.35.b1",
+    "C2.35.b2",
+    "C2.36.b0",
+    "C2.36.b1",
+    "C2.37.b0",
+    "C2.45.b0",
+    "C2.45.b1",
+    "C2.46.b0",
+    "C2.55.b0"
+  ],
+  "historical_checkpoints": [
+    {
+      "name": "ACCEPTED_THREE_BRIDGES_HOUSE_PENTAGON_CHECKPOINT_2026_10_28.json",
+      "sha256": "5243ff54e3182fee2e44ac12d2c985d4e0a5fa953af46c311cabf0f55f405185",
+      "scope": "Original local acceptance record; its metadata pins describe its historical local snapshot."
+    },
+    {
+      "name": "ACCEPTED_LOWER_TD_D_AND_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+      "sha256": "b2f3aaa116a096e79bab66adc9b8fb270bb6db79638997cdc8ba6326c3ecd287",
+      "scope": "Original local acceptance record; its metadata pins describe its historical local snapshot."
+    },
+    {
+      "name": "ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+      "sha256": "32d2d301dc00d36ed0c4b6204ebb7704869d01988f73ae6d20828292d9059e78",
+      "scope": "Original local acceptance record; its metadata pins describe its historical local snapshot."
+    },
+    {
+      "name": "ACCEPTED_HOUSE_S_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+      "sha256": "92d9b488fc0fc409796ba4c47b5f515ec80e04318990c98057dd8733a81e0111",
+      "scope": "Original local acceptance record; its metadata pins describe its historical local snapshot."
+    },
+    {
+      "name": "ACCEPTED_ROOF_AB_D_CHECKPOINT_2026_10_28.json",
+      "sha256": "d25a70160877328d7362f0d489bef3e9ead9b6c42f467abc395bd47d7e1f37de",
+      "scope": "Original local acceptance record; its metadata pins describe its historical local snapshot."
+    }
+  ],
+  "not_claimed": [
+    "unrestricted sharp theorem",
+    "all equality packings",
+    "full transitive prerequisite audit",
+    "Lean formalization or kernel verification",
+    "closure of any other original coarse cell"
+  ],
+  "constraints": [
+    "all nine physical units retained",
+    "all actual degrees, forces, normals, means and masks retained",
+    "no Lean compilation",
+    "no CI dispatch",
+    "no merge",
+    "expected-head lease for publication"
+  ],
+  "metadata": [
+    {
+      "path": "research/nine/CYCLIC_CELL_LEDGER.md",
+      "base_sha256": "905bc314231cafb4a239242d30fdd4503f4cefd3bc01332ab8439ce0b0abb664",
+      "sha256": "da4bd24086599c75e6ca451882c565e3b783b7a4325df26b1a6b2a707df2ed8d"
+    },
+    {
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "base_sha256": "c6fd513602e15bb6c46e5fed1d701002f0934bd8619787cd7b897b506a5c0ab2",
+      "sha256": "18df807137505329924642913960606013b675477e17b5473bdba83c32506a98"
+    },
+    {
+      "path": "research/nine/HANDOFF_PR11_2026_10_27_CURRENT.md",
+      "base_sha256": "e82c44bcd2abcf30d5b4c962812b5361f17d858a849e33bffc3b8f2f0039b7df",
+      "sha256": "0e2a8bebedbd31887ca066b3199762df01587fc02af59c57dd7d4c8ede9efdb3"
+    },
+    {
+      "path": "research/nine/HANDOFF_PR11_2026_10_27_PUSHED.md",
+      "base_sha256": "691d182f18b5d70cb8ef5acb40843cafd4490c1ffe3e4b0777c00646f0dd18db",
+      "sha256": "342dcf2171bbaffddc808378aab6d7cf0a119a62b8d0b11c3677fd303e342798"
+    },
+    {
+      "path": "research/nine/README.md",
+      "base_sha256": "0c3a070a34013eb2f7c287b66a055820f486724b5a0770c11b5581b279463e73",
+      "sha256": "cd231fe98f5868be47b4b44cf552fbd29d99b86acf91a1c53a7ebb82c18292b9"
+    }
+  ],
+  "supplemental_uniform_house_allowlist": "RECOVERED_UNIFORM_HOUSE_SUPPLEMENT_ALLOWLIST_2026_10_27.json"
+}

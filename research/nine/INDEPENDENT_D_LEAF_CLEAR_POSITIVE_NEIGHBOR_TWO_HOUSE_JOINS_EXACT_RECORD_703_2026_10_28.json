@@ -1,0 +1,413 @@
+{
+  "record_type": "Independent full mathematics and two whole original house-family joins for D-leaf clear-positive-neighbor theorem",
+  "date": "2026-10-28",
+  "reviewer": "side_return_review",
+  "mathematical_author": "aligned_upper_close",
+  "comparison_commit": "703cfc0e079b93fc860a4f32cbb5ce5f70458b4b",
+  "verdict": "PASS unchanged: complete generic arbitrary-root-degree theorem, full force-free cap, and both complete original D house families. No defect or unresolved gap.",
+  "new_complete_source": {
+    "path": "continuation_d579/research/nine/D_LEAF_ROOT_REQUIRES_PHYSICALLY_CLEAR_NONLEAF_NEIGHBOR.md",
+    "repository_path": "research/nine/D_LEAF_ROOT_REQUIRES_PHYSICALLY_CLEAR_NONLEAF_NEIGHBOR.md",
+    "bytes": 14574,
+    "sha256": "72632128582b60411187d891c224bfd085b8483a70632775b5a4f7c9786fe08c",
+    "git_blob_sha1": "f6c50e9cea88fb979c6bbe4f10ff5eeb0251186c",
+    "operative_scope": "Whole new force-free outward cap; generic arbitrary-degree original D-root necessary condition; two complete house D-family joins.",
+    "reading_status": "All seven sections freshly fullread and mathematically reconstructed."
+  },
+  "new_complete_review_report": {
+    "path": "continuation_d579/research/nine/REVIEW_D_LEAF_CLEAR_POSITIVE_NEIGHBOR_AND_TWO_HOUSE_JOINS_INDEPENDENT_703_2026_10_28.md",
+    "repository_path": "research/nine/REVIEW_D_LEAF_CLEAR_POSITIVE_NEIGHBOR_AND_TWO_HOUSE_JOINS_INDEPENDENT_703_2026_10_28.md",
+    "bytes": 16179,
+    "sha256": "d321f41eaf9cc2981ecd83a1dd5cfb63f016e0182daaa877166039739f7bb79d",
+    "git_blob_sha1": "78903e8120f13cd0f75f9829dd8be9f0d79a6010"
+  },
+  "fresh_fullread_exact_published_mathematical_inputs": [
+    {
+      "path": "current_703_base/research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "repository_path": "research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "bytes": 14902,
+      "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "git_blob_sha1": "8f935773421d3d6bcc8a7a6387a85851b27a1771",
+      "operative_scope": "Complete radial bridge/leaf geometry and physical clearance, compatible original off-origin point-contact convention; no post-extraction selection.",
+      "reading_status": "Fresh complete full-text read; scoped older proof dependencies inherited as stated.",
+      "exact_comparison_commit": "703cfc0e079b93fc860a4f32cbb5ce5f70458b4b",
+      "complete_local_bytes_match_exact_tree_blob": true
+    },
+    {
+      "path": "current_703_base/research/nine/D_LEAF_SHALLOW_SIDE_BOUNDARY_EXCLUSION.md",
+      "repository_path": "research/nine/D_LEAF_SHALLOW_SIDE_BOUNDARY_EXCLUSION.md",
+      "bytes": 7803,
+      "sha256": "79ddc3bc94613ba34b30ea3b1e4176a14d644b08887020cbc38f9ef9d785d8a8",
+      "git_blob_sha1": "dc8f7f6a02cf9c0aef9a7509a9441a3a8551a1c7",
+      "operative_scope": "Complete force-free actual triple H,L,T, R>2 and shallow margin<=1/4; arbitrary neighbor degree/mask and every normal/mean.",
+      "reading_status": "Fresh complete full-text read; scoped older proof dependencies inherited as stated.",
+      "exact_comparison_commit": "703cfc0e079b93fc860a4f32cbb5ce5f70458b4b",
+      "complete_local_bytes_match_exact_tree_blob": true
+    },
+    {
+      "path": "current_703_base/research/nine/GENERAL_SIDE_CHANNEL_CAP_INNER_ARC.md",
+      "repository_path": "research/nine/GENERAL_SIDE_CHANNEL_CAP_INNER_ARC.md",
+      "bytes": 8258,
+      "sha256": "f76d76ef2feccc80098fb6d10d6316af4e393d3ae34d4953846dd27b80c137cb",
+      "git_blob_sha1": "f2fa2c977196d519e74735aec7f745a1627951dd",
+      "operative_scope": "Force-free Section 1 only: whole square beyond any actual support height>1/4 has a connected open radius5/4 arc longer thanpi/4. Later channel scope not used.",
+      "reading_status": "Fresh complete full-text read; scoped older proof dependencies inherited as stated.",
+      "exact_comparison_commit": "703cfc0e079b93fc860a4f32cbb5ce5f70458b4b",
+      "complete_local_bytes_match_exact_tree_blob": true
+    },
+    {
+      "path": "current_703_base/research/nine/NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "repository_path": "research/nine/NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "bytes": 18215,
+      "sha256": "46220c8a3eb3f539c682bf6a6fa932edf003e37484e0f6004d321e7cb14d7957",
+      "git_blob_sha1": "453091c80f23e0e1630f3351f139c7f50418c03d",
+      "operative_scope": "Accepted same-nine R>2 theorem; current five fixed mass checks and one derivative enclosure plus displayed analytic arithmetic remain inherited.",
+      "reading_status": "Fresh complete full-text read; scoped older proof dependencies inherited as stated.",
+      "exact_comparison_commit": "703cfc0e079b93fc860a4f32cbb5ce5f70458b4b",
+      "complete_local_bytes_match_exact_tree_blob": true
+    },
+    {
+      "path": "current_703_base/research/nine/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "repository_path": "research/nine/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "bytes": 17789,
+      "sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "git_blob_sha1": "a04c76e0a2ef54535e54006b584c656e0d6417c7",
+      "operative_scope": "Exact original house block, root-preserving load orbits, true degrees, complete S/D mask/mean/radius/three-extra contract.",
+      "reading_status": "Fresh complete full-text read; scoped older proof dependencies inherited as stated.",
+      "exact_comparison_commit": "703cfc0e079b93fc860a4f32cbb5ce5f70458b4b",
+      "complete_local_bytes_match_exact_tree_blob": true
+    }
+  ],
+  "fresh_scoped_physical_margin_input": {
+    "path": "current_703_base/research/nine/D_LEAF_BOUNDARY_FAN_COMPLETE_EXCLUSION.md",
+    "repository_path": "research/nine/D_LEAF_BOUNDARY_FAN_COMPLETE_EXCLUSION.md",
+    "bytes": 12883,
+    "sha256": "ab7f91fab2d8223466646640bd7fee0bf3678479e9b25b1cf28a583ebc11ad17",
+    "git_blob_sha1": "70df48b61a64da1de502fc30f7972cfa10ea3e2c",
+    "operative_scope": "Section 2 actual D-root chart and rational margins only. No boundary-fan/path or occupied-face theorem imported.",
+    "reading_status": "Fresh operative Section2 read; no claim of fresh complete source review.",
+    "exact_comparison_commit": "703cfc0e079b93fc860a4f32cbb5ce5f70458b4b",
+    "complete_local_bytes_match_exact_tree_blob": true
+  },
+  "fresh_fullread_exact_current_root_and_independent_acceptance_reports": [
+    {
+      "path": "current_703_base/research/nine/REVIEW_ARTICULATION_SPLITTING_AND_CAP_ARCS_ROOT_2026_10_26.md",
+      "repository_path": "research/nine/REVIEW_ARTICULATION_SPLITTING_AND_CAP_ARCS_ROOT_2026_10_26.md",
+      "bytes": 5582,
+      "sha256": "a6a9fac71ad085f715f8b60b68f6eda9cc0b072d6a3cb8810bd4cbf4d87e0eeb",
+      "git_blob_sha1": "cf4ab4b6006a7c7b017db3e9a513ba518a603bbc",
+      "operative_scope": "Complete root acceptance of force-free cap theorem; unrelated articulation statements not a premise.",
+      "reading_status": "Fresh complete full-text read after exact703 read-only fetch; not merely hash/status inspection.",
+      "exact_comparison_commit": "703cfc0e079b93fc860a4f32cbb5ce5f70458b4b",
+      "complete_local_bytes_match_exact_tree_blob": true
+    },
+    {
+      "path": "current_703_base/research/nine/REVIEW_GENERAL_SIDE_CHANNEL_CAP_INNER_ARC_GLOBAL_2026_10_26.md",
+      "repository_path": "research/nine/REVIEW_GENERAL_SIDE_CHANNEL_CAP_INNER_ARC_GLOBAL_2026_10_26.md",
+      "bytes": 4622,
+      "sha256": "900c82ba768a33cfe1803eeaaab3d3551bd9c45ef105f9462d78dacce0d6f5c7",
+      "git_blob_sha1": "48172a2c9c7fb008ec4924b66ec3b5992c7c7c2a",
+      "operative_scope": "Complete independent acceptance of force-free full-orientation cap arc.",
+      "reading_status": "Fresh complete full-text read after exact703 read-only fetch; not merely hash/status inspection.",
+      "exact_comparison_commit": "703cfc0e079b93fc860a4f32cbb5ce5f70458b4b",
+      "complete_local_bytes_match_exact_tree_blob": true
+    },
+    {
+      "path": "current_703_base/research/nine/REVIEW_D_LEAF_SHALLOW_GEOMETRY_AND_CYCLE_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_D_LEAF_SHALLOW_GEOMETRY_AND_CYCLE_ROOT_2026_10_27.md",
+      "bytes": 5156,
+      "sha256": "41621a32c787b89e48b7be8aad60140de59e2ce0cb4170059616a08f47699c5b",
+      "git_blob_sha1": "580bde11b92fc28b0b1d1930846e220aed26353c",
+      "operative_scope": "Complete root acceptance of force-free shallow lemma; later cycle-moment caller not a premise.",
+      "reading_status": "Fresh complete full-text read after exact703 read-only fetch; not merely hash/status inspection.",
+      "exact_comparison_commit": "703cfc0e079b93fc860a4f32cbb5ce5f70458b4b",
+      "complete_local_bytes_match_exact_tree_blob": true
+    },
+    {
+      "path": "current_703_base/research/nine/REVIEW_D_LEAF_SHALLOW_SIDE_BOUNDARY_HEXAGON_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_D_LEAF_SHALLOW_SIDE_BOUNDARY_HEXAGON_2026_10_27.md",
+      "bytes": 5841,
+      "sha256": "b6c91f5c33d6f00f2a68661a6d97f71fd091350d19d0cc02135726d0b0b0bac7",
+      "git_blob_sha1": "ca677cb13093c6232b176a166b2240aeacf48115",
+      "operative_scope": "Complete independent all-owner/side/vertex/normal/mean geometric review.",
+      "reading_status": "Fresh complete full-text read after exact703 read-only fetch; not merely hash/status inspection.",
+      "exact_comparison_commit": "703cfc0e079b93fc860a4f32cbb5ce5f70458b4b",
+      "complete_local_bytes_match_exact_tree_blob": true
+    },
+    {
+      "path": "current_703_base/research/nine/REVIEW_NINE_MEASURE_FIVE_POINT_ASSEMBLY_ROOT_2026_10_26.md",
+      "repository_path": "research/nine/REVIEW_NINE_MEASURE_FIVE_POINT_ASSEMBLY_ROOT_2026_10_26.md",
+      "bytes": 5570,
+      "sha256": "6aa33d0fbccdede04d909b770496fcac8d061e184d46d890f2394b484c6b4b5b",
+      "git_blob_sha1": "3388d4009cb0c39c8a78710d9abbd1aed966d666",
+      "operative_scope": "Complete root acceptance of original continuous domain and current five-charge implementation/assembly.",
+      "reading_status": "Fresh complete full-text read after exact703 read-only fetch; not merely hash/status inspection.",
+      "exact_comparison_commit": "703cfc0e079b93fc860a4f32cbb5ce5f70458b4b",
+      "complete_local_bytes_match_exact_tree_blob": true
+    },
+    {
+      "path": "current_703_base/research/nine/REVIEW_NINE_MEASURE_FIVE_POINT_ASSEMBLY_C6_2026_10_26.md",
+      "repository_path": "research/nine/REVIEW_NINE_MEASURE_FIVE_POINT_ASSEMBLY_C6_2026_10_26.md",
+      "bytes": 3890,
+      "sha256": "68e17f92fbc87b7484d3dcdef206ba0e5f0b7014eb0f06ec707919cbe44e00a2",
+      "git_blob_sha1": "31852a9b1ce91e983795947c6a612ed05eab47df",
+      "operative_scope": "Complete independent original-domain assembly acceptance at unchanged same-nine scope.",
+      "reading_status": "Fresh complete full-text read after exact703 read-only fetch; not merely hash/status inspection.",
+      "exact_comparison_commit": "703cfc0e079b93fc860a4f32cbb5ce5f70458b4b",
+      "complete_local_bytes_match_exact_tree_blob": true
+    }
+  ],
+  "unchanged_R_gt_2_transitive_dependencies_inherited_not_reaudited": [
+    {
+      "repository_path": "research/nine/NINE_RADIUS_TWO_MEASURE_FIVE_POINT_REDUCTION.md",
+      "bytes": 9634,
+      "git_blob_sha1": "ecf79060dee88a377a248f27fdb182cd10c11f12",
+      "status": "Exact unchanged current source/code dependency inherited through full accepted radius theorem and fullread root/independent assembly reports; no fresh transitive code audit or checker run claimed."
+    },
+    {
+      "repository_path": "research/nine/NINE_RADIUS_TWO_MEASURE_LINE_ANALYTIC_REDUCTION.md",
+      "bytes": 8667,
+      "git_blob_sha1": "278924e9cde3087e52b67bdad6ccdb2cfd53c917",
+      "status": "Exact unchanged current source/code dependency inherited through full accepted radius theorem and fullread root/independent assembly reports; no fresh transitive code audit or checker run claimed."
+    },
+    {
+      "repository_path": "research/nine/NINE_RADIUS_TWO_MEASURE_RECTANGLES_ANALYTIC_REDUCTION.md",
+      "bytes": 12636,
+      "git_blob_sha1": "30e2cd8f1a576bc60d608acef8f2c24fc9504cd0",
+      "status": "Exact unchanged current source/code dependency inherited through full accepted radius theorem and fullread root/independent assembly reports; no fresh transitive code audit or checker run claimed."
+    },
+    {
+      "repository_path": "research/nine/NINE_RADIUS_TWO_MEASURE_OUTER_CURVE_ANALYTIC_REDUCTION.md",
+      "bytes": 13351,
+      "git_blob_sha1": "eb92e320d141bc00dd1aa2d30d9759e7e3c43a3e",
+      "status": "Exact unchanged current source/code dependency inherited through full accepted radius theorem and fullread root/independent assembly reports; no fresh transitive code audit or checker run claimed."
+    },
+    {
+      "repository_path": "research/nine/NINE_RADIUS_TWO_MEASURE_FIVE_CHARGE_CHECK.py",
+      "bytes": 10705,
+      "git_blob_sha1": "d23e52ca1df0ffb71a3625a8b63b23c5761334fe",
+      "status": "Exact unchanged current source/code dependency inherited through full accepted radius theorem and fullread root/independent assembly reports; no fresh transitive code audit or checker run claimed."
+    },
+    {
+      "repository_path": "research/nine/NINE_RADIUS_TWO_MEASURE_FIVE_CHARGE_INDEPENDENT_CHECK.py",
+      "bytes": 4979,
+      "git_blob_sha1": "d686e41316d4d67bb9e62c4fd795886c6986c55b",
+      "status": "Exact unchanged current source/code dependency inherited through full accepted radius theorem and fullread root/independent assembly reports; no fresh transitive code audit or checker run claimed."
+    }
+  ],
+  "foundational_boundary": {
+    "common_certificate": "Original compatible physical minimizing certificate with radial bridge/leaf laws and original nonradial normal choice at off-origin point-only vertex/vertex pairs.",
+    "no_new_selector": true,
+    "all_nine_units": "Every actual completion square remains; a positive support of fewer than nine bodies is not treated as the whole packing.",
+    "older_global_audit": "Not re-proved or declared complete by this local source or review.",
+    "R_gt_2": "Accepted whole geometric theorem for nine physical units, independent of graph, load, mask and means; current arithmetic explicitly retained."
+  },
+  "generic_cap_domain": {
+    "radius": "79/40<=R<=sqrt(1105)/16",
+    "actual_radial_D_leaf": "center(r+sigma)e, inward vertex r e, r=R-sqrt(2), sigma=1/sqrt(2)",
+    "forbidden_actual_T": "Any distinct contained unit, interior-disjoint from L, wholly in e.x>=r",
+    "no_premises_on_T": [
+      "No force or graph",
+      "No true degree",
+      "No physical circle contact",
+      "No positive load",
+      "No frame or normal-owner restriction"
+    ],
+    "full_center_bound": "|c|<=sqrt(R^2-1/4)-1/2 from exact farthest corner norm",
+    "actual_projection_bound": "c_T.e>=r+1/2 from minimum unit projection halfwidth",
+    "exact_squared_distance_bound": "|c_T-c_L|^2<6691/6720=1-29/6720",
+    "physical_contradiction": "Two actual unit centers have separation>=1 by open incircles",
+    "original_outward_normal_corollary": "No positive root edge other than actual L can have original outward direction e; its whole unchanged neighbor would lie in forbidden cap."
+  },
+  "generic_root_domain": {
+    "genuine_leaf": "Actual true degree-one D leaf L",
+    "root_degree": "Arbitrary actual positive degree, every positive edge retained",
+    "other_neighbor_degrees": "Arbitrary, with no equations used at them",
+    "graph_among_other_neighbors": "Arbitrary; no connected path or pair contact required",
+    "original_radius": "79/40<=R<=sqrt(1105)/16",
+    "R_le_2_exit": "Accepted same-nine radius theorem, including equalityR=2",
+    "actual_chart": "H=[-s,r]x[-b,a], r=R-sqrt(2), s=1-r, a,b>0,a+b=1; actual leaf mean(r,0), outward e_x",
+    "physical_clearance": "O in int H forces physical circle clearance at R>2, so no H circle term omitted artificially",
+    "complete_equations": [
+      "alpha e_x + sum mu_i n_i=0, all mu_i>0 and alpha>0",
+      "sum mu_i det(p_i,n_i)=0; real leaf has exactly zero origin moment"
+    ],
+    "conclusion": "At least one original positive neighbor other than L is physically circle-clear, not merely zero-loaded."
+  },
+  "complete_root_partition": [
+    {
+      "domain": "a>1/4 and b>1/4",
+      "proof": "All four H margins>1/4; closed D_eta lies in int H for eta>1/4; every one of the other eight actual units has nearest support height>1/4; eight disjoint open radius5/4 arcs each>pi/4 are impossible.",
+      "all_actual_units_used": 9,
+      "graph_or_boundary_assumptions_on_eight": "None"
+    },
+    {
+      "domain": "min(a,b)<=1/4, reflected wholly so0<a<=1/4,b>=3/4",
+      "proof": "Full physical shallow lemma gives every original nonleaf n_y<=0; full root y balance gives n_y=0; new cap rules out east; all original normals west with full mean interval. Physical boundary floor forces every original y_i<-1/4; full positive weighted torque sum is strictly negative.",
+      "endpoint": "a=1/4 retained, all side means and normal-cone endpoints included"
+    }
+  ],
+  "whole_original_join_1": {
+    "fine_id": "M6.B5L.HOUSE.HUB.LTDB.D",
+    "block_edges": [
+      "AT",
+      "DT",
+      "AD",
+      "AB",
+      "BC",
+      "CD"
+    ],
+    "actual_leaf_edge": "AL",
+    "root": "A",
+    "root_positive_neighbors": [
+      "T",
+      "D",
+      "B",
+      "L"
+    ],
+    "complete_nonleaf_neighbor_loads": {
+      "T": "positive",
+      "D": "positive",
+      "B": "positive"
+    },
+    "actual_true_degrees": {
+      "A": 4,
+      "D": 3,
+      "T": 2,
+      "B": 2,
+      "C": 2,
+      "L": 1
+    },
+    "unloaded_body_retained": "C remains original true2 with bothBC/CD forces and means; physical zero-weight boundary status not excluded.",
+    "physical_completion_units": 3,
+    "whole_scope": "All root-preserving images, original D-root sliders, radius endpoints, masks, weights, owners, means and all three arbitrary extras."
+  },
+  "whole_original_join_2": {
+    "fine_id": "M6.B5L.HOUSE.LOWER.LTAC.D",
+    "block_edges": [
+      "AT",
+      "DT",
+      "AD",
+      "AB",
+      "BC",
+      "CD"
+    ],
+    "actual_leaf_edge": "BL",
+    "root": "B",
+    "root_positive_neighbors": [
+      "A",
+      "C",
+      "L"
+    ],
+    "complete_nonleaf_neighbor_loads": {
+      "A": "positive",
+      "C": "positive"
+    },
+    "actual_true_degrees": {
+      "B": 3,
+      "A": 3,
+      "D": 3,
+      "T": 2,
+      "C": 2,
+      "L": 1
+    },
+    "unloaded_body_retained": "D remains original true3 withAD/DT/DC forces; no degree2 replacement. Loaded roofT and complete masks remain.",
+    "physical_completion_units": 3,
+    "whole_scope": "All root-preserving images, original D-root sliders, radius endpoints, masks, weights, owners, means and all three arbitrary extras."
+  },
+  "physical_mask_and_mean_cover": [
+    "All physical circle corners, including zero individual weights",
+    "Other zero-total boundary bodies retained",
+    "No zero-loaded=>physically-clear inference",
+    "All original positive magnitudes strictly retained",
+    "All weighted shared-side means and endpoints retained",
+    "All normal-owner and vertex/vertex endpoint forms covered by force-free input",
+    "Additional genuine positive leaves permitted in generic theorem",
+    "All arbitrary extras retained in deep and shallow cases"
+  ],
+  "exact_arithmetic_checked": {
+    "radical_lower_reserve": "2/225",
+    "radius_upper_squared_reserve": "9/4096",
+    "sqrt2_upper99_70_squared_reserve": "1/4900",
+    "cap_bound": "6691/6720",
+    "cap_reserve": "29/6720",
+    "r_upper_reserve": "17/6336",
+    "sqrt2_lower140_99_squared_reserve": "2/9801",
+    "check_role": "Exact fraction consistency checks of displayed elementary proof; no new external certificate."
+  },
+  "current_original_accounting": {
+    "exact_read_only_roadmap_snapshot": {
+      "path": "current_703_base/research/nine/DEEP_GATED_ROADMAP.md",
+      "repository_path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "bytes": 920685,
+      "sha256": "c6fd513602e15bb6c46e5fed1d701002f0934bd8619787cd7b897b506a5c0ab2",
+      "git_blob_sha1": "d9c51fd7e38d7903d90c27225af5a93481fe0a0b",
+      "operative_scope": "Exact read-only comparison snapshot; complete ordered fine state and literal retained contract/target rows inspected.",
+      "reading_status": "Full text parsed for ordered IDs; only relevant original contract/frontier text freshly read.",
+      "exact_comparison_commit": "703cfc0e079b93fc860a4f32cbb5ce5f70458b4b",
+      "complete_local_bytes_match_exact_tree_blob": true
+    },
+    "state_encoding": "UTF8 json.dumps ordered [{id,checked},...] with ensure_ascii=False,separators=(comma,colon), original order and object keys id then checked.",
+    "ordered_current_state_sha256": "c8a2b2cced607e77738174c754b2d596999cb52a48e88e4509f4f0a193c27a52",
+    "current_fine_total": 2513,
+    "current_fine_checked": 2319,
+    "current_fine_unchecked": 194,
+    "exact_existing_target_ids": [
+      "M6.B5L.HOUSE.HUB.LTDB.D",
+      "M6.B5L.HOUSE.LOWER.LTAC.D"
+    ],
+    "both_currently_unchecked": true,
+    "new_fine_ids": [],
+    "prospective_checked_after_only_these_two": 2321,
+    "prospective_unchecked_after_only_these_two": 192,
+    "prospective_ordered_state_sha256_no_mutation": "f38c2e52e9673448f9669b1828d38278241239552617597cceebabe20382e873",
+    "house_fan_current_unfinished_S_D": 26,
+    "house_fan_prospective_unfinished_S_D": 24,
+    "house_fan_load_orbits_current_and_after": 13,
+    "five_rooted_types_still_open": [
+      "M6.B5L.FAN.ENDPOINT",
+      "M6.B5L.FAN.INNER",
+      "M6.B5L.HOUSE.HUB",
+      "M6.B5L.HOUSE.LOWER",
+      "M6.B5L.HOUSE.ROOF"
+    ],
+    "S_partners_remain_open": [
+      "M6.B5L.HOUSE.HUB.LTDB.S",
+      "M6.B5L.HOUSE.LOWER.LTAC.S"
+    ],
+    "coarse_parent": "C1.5.b1",
+    "coarse_parent_remains_open": true,
+    "fine_or_coarse_state_changed_by_reviewer": false,
+    "root_adoption_required": true
+  },
+  "certificate_accounting": {
+    "new_external_computational_certificates": 0,
+    "inherited_current_same_nine_R_gt_2": "Five fixed mass checks and one fixed derivative enclosure, plus transparent displayed rational/Taylor comparisons, at frozen703 input source.",
+    "fourteen_Taylor_comparisons": "Explicit analytic arithmetic, not fourteen new external computational certificates.",
+    "analytic_replacement_package": "Separate already reviewed publication work may replace the fixed checks through exact caller updates. This source/review does not silently change its frozen dependency."
+  },
+  "independence": {
+    "reviewer_contributed_mathematics": false,
+    "reviewer_supplied_fixes": false,
+    "mathematical_source_edited_by_reviewer": false,
+    "defects_found": [],
+    "unresolved_gaps": [],
+    "complete_generic_and_original_domains_reviewed": true
+  },
+  "actions": {
+    "read_only_exact_GitHub_fetches": true,
+    "local_cache_and_review_artifacts_written": true,
+    "exact_hash_and_rational_checks": true,
+    "authoritative_gate_or_ledger_edits": false,
+    "remote_writes": false,
+    "Lean_compilation": false,
+    "CI_or_workflow": false,
+    "merge": false
+  },
+  "limits": [
+    "Generic theorem accepted at original compatible certificate and same-nine scope",
+    "Only two named original whole D-family joins claimed",
+    "No corresponding S-family, whole rooted type or C1.5.b1 coarse closure",
+    "No unrestricted sharp theorem, equality classification, older global prerequisite audit or Lean integration closure"
+  ]
+}

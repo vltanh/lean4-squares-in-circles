@@ -1,0 +1,320 @@
+{
+  "checkpoint": "occupied-arc cycle cap seven and global positive-load structure",
+  "date_utc": "2026-10-30",
+  "input_head": "e6eb16bf2bc05012e913407953107c87236ce0be",
+  "files": [
+    {
+      "path": "research/nine/OCCUPIED_INNER_ARCS_AND_TRUE_CHANNEL_GAPS_BOUND_EVERY_COMPATIBLE_CYCLE_BY_SEVEN_2026_10_30.md",
+      "bytes": 18761,
+      "sha256": "369dca0e938754dc7336af7734c7cc916d3ed34894b8fe35a19eb4482fce7403",
+      "git_blob": "19f068ec0c046073e04d461b6f9e57937c4155d1"
+    },
+    {
+      "path": "research/nine/UNIVERSAL_CONTACT_RADIUS_AND_POSITIVELY_LOADED_LONG_CHANNEL_ENDPOINTS_2026_10_30.md",
+      "bytes": 10904,
+      "sha256": "d6adb49263e0c2ffb3c1dc58477bef25ed2d0ae83bde59089c33d76c2d23b705",
+      "git_blob": "dc386733b03fb00d3f165b7e4dca897a091da7ce"
+    },
+    {
+      "path": "research/nine/DIRECT_CONTACT_COMPONENTS_OF_RETAINED_STRESS_CONTAIN_POSITIVE_LOADS_2026_10_30.md",
+      "bytes": 10397,
+      "sha256": "5b91a3b7e7f55317c706bdc6c1b65fd2bd0e99ce823411d5cbe73378dc8e151d",
+      "git_blob": "52aa3897aabd140b91109ceb26ee0b97df2d77c2"
+    },
+    {
+      "path": "research/nine/LONG_RUN_RETURN_MARKS_WHOLE_SIDE_CLEARANCE_AND_SHORT_NORMAL_CONE_2026_10_30.md",
+      "bytes": 12450,
+      "sha256": "c10361ea546b8e5681b4ac38c09b1b2e9b14fa0a2621c541f689857c73acbd1e",
+      "git_blob": "5dccc93c746e357d0b65547d2299fb7e6cac174c"
+    },
+    {
+      "path": "research/nine/TRANSLATED_FOUR_SQUARE_JUNCTION_CAPACITY_EIGHT_BY_TWO_CAPS_PER_AXIS_2026_10_30.md",
+      "bytes": 9167,
+      "sha256": "17f78403de1ab75d0de0aba42bf1344dd82e9c64822bf8743bd1e9f2d2ea5260",
+      "git_blob": "6fec6447b4c37f34a5ce6635669c51ee9715b704"
+    },
+    {
+      "path": "research/nine/BOUNDARY_UNIT_GAP_FORCES_OBTUSE_CENTER_ANGLE_AND_FOUR_LOAD_EIGHT_CYCLE_EXCLUSION_2026_10_30.md",
+      "bytes": 11921,
+      "sha256": "fa63e0ef4a0d94d47ff05e848b46792ac2861d0504b8369bc109beb3fd7d5e5a",
+      "git_blob": "60f27e3eb723dbb6782fd07f6357ee59bb230d9d"
+    },
+    {
+      "path": "research/nine/COMBINED_MARKED_CYCLE_BUDGET_AND_EIGHT_BODY_FIVE_LOAD_SIDE_REDUCTION_2026_10_30.md",
+      "bytes": 5885,
+      "sha256": "dbb9eaeee362c2148a6ada5319a05e0b962b5fdd2ea5ed36772e8175c8af005f",
+      "git_blob": "350b8dcf921629506708b24e432a96488dd4222f"
+    },
+    {
+      "path": "research/nine/BOUNDARY_ARCS_41_AND_UNIT_GAPS_93_DEGREES_EXCLUDE_FIVE_LOAD_EIGHT_CYCLES_2026_10_30.md",
+      "bytes": 16429,
+      "sha256": "aec4e482006c95ceadb6e3c9456c900ff6321511ea7bf61b1f7db2468c6c4c09",
+      "git_blob": "ed35a105b97ed7988841259230e8a8c794f75210"
+    },
+    {
+      "path": "research/nine/REVIEW_OCCUPIED_ARCS_TRUE_GAPS_CYCLE_BOUND_SEVEN_ROOT_2026_10_30.md",
+      "bytes": 9007,
+      "sha256": "0243295db34f789a5b30eab9e155f32e4ab321a63662c20bb2aca835dba5af43",
+      "git_blob": "4dcb677a88dd26e925ad5adba94a7792f82cd159"
+    },
+    {
+      "path": "research/nine/REVIEW_OCCUPIED_ARC_METRIC_AND_COMPLETE_CYCLE_BOUND_ANNULAR_INDEPENDENT_2026_10_30.md",
+      "bytes": 8792,
+      "sha256": "19c63f8b900b7c57cb13048c3e58ea546c94a3acd51dc3aae674dda95fe209dd",
+      "git_blob": "88cfc17a871d3e50e35fc652d93119d1e2a0136c"
+    },
+    {
+      "path": "research/nine/REVIEW_LOADED_LONG_ENDPOINTS_RETURN_LOCALIZATION_AND_TRANSLATED_JUNCTION_ROOT_2026_10_30.md",
+      "bytes": 9482,
+      "sha256": "2c8158e2a5b72be0a7490e2afef6ed577e3b98a82f87cb1977a2fbd83e785d46",
+      "git_blob": "8cd98d8a741bf75455500795464aa4183b88ac10"
+    },
+    {
+      "path": "research/nine/REVIEW_CONTACT_RADIUS_AND_POSITIVE_LONG_ENDPOINTS_ANNULAR_INDEPENDENT_2026_10_30.md",
+      "bytes": 5376,
+      "sha256": "fdbb7aec7159620f6694aa88db290f45014de2d5df68339f7f002acd6234567f",
+      "git_blob": "cfb5faaa967d053c6eb66dfa0ab2d2371af68c7e"
+    },
+    {
+      "path": "research/nine/REVIEW_UNIVERSAL_CONTACT_RADIUS_AND_LOADED_LONG_ENDPOINTS_AXIAL_INDEPENDENT_2026_10_30.md",
+      "bytes": 6724,
+      "sha256": "c35fcff5f82d48df2465e18a048f8d3e431dae7ccd5b8f9a99a46a21bd0f9cb9",
+      "git_blob": "096933b2fc7f46681cf7713d793d6c5d00dcc30e"
+    },
+    {
+      "path": "research/nine/REVIEW_LONG_RUN_RETURN_SIDE_AND_NORMAL_CONE_BLOCK_EARS_2026_10_30.md",
+      "bytes": 6275,
+      "sha256": "c9a3d092e292e36d8746d22e5a47c2f69a805101cbaca197d6434f0f24cbe8c9",
+      "git_blob": "45b5fd0d7f6592cfef0981ebc0f79858717da195"
+    },
+    {
+      "path": "research/nine/REVIEW_TRANSLATED_JUNCTION_CAPACITY_AXIAL_INDEPENDENT_2026_10_30.md",
+      "bytes": 5255,
+      "sha256": "e5b552e4efd2ee7c6e0aeafdbb1e04fe06dc53d28f75d0fdb7f9a50a3dc2f52d",
+      "git_blob": "c262d8a32ab06712d7e0b049fe040464238ba8c5"
+    },
+    {
+      "path": "research/nine/REVIEW_DIRECT_CONTACT_COMPONENT_LOAD_THEOREM_ROOT_2026_10_30.md",
+      "bytes": 4798,
+      "sha256": "d6269f9eeca5bddc9f7052331f35541a696ab85fc844d2036580748d6b2f7cd0",
+      "git_blob": "7ddbf5e37d6212800a809ad0f2fc9433fa5b27ab"
+    },
+    {
+      "path": "research/nine/REVIEW_DIRECT_CONTACT_COMPONENT_LOAD_THEOREM_ANNULAR_INDEPENDENT_2026_10_30.md",
+      "bytes": 5520,
+      "sha256": "46242bacb6e7a034b5683625e0d039504613bf40bc58a6f4eeb98f51be4a6e13",
+      "git_blob": "1b301d56cd32610709fa3ada24acc065f99e6087"
+    },
+    {
+      "path": "research/nine/REVIEW_BOUNDARY_UNIT_GAP_AND_COMBINED_CYCLE_BUDGET_ROOT_2026_10_30.md",
+      "bytes": 6895,
+      "sha256": "f1cb5cb7aa231a3e67bc22e8bdc2d8c0b2e05a0bba427ce96d04b9b538e42da2",
+      "git_blob": "eebc58eb259b9e495eb0af47ee76098b24434f1a"
+    },
+    {
+      "path": "research/nine/REVIEW_BOUNDARY_UNIT_GAP_OBTUSE_ANGLE_AND_EIGHT_CYCLE_BLOCK_EARS_2026_10_30.md",
+      "bytes": 6651,
+      "sha256": "88be37080d6da8f29f173a42b0c04737cae401da31375320ec53da5e0465b2e7",
+      "git_blob": "8788a5878df728a362d231e5afce60405acefe3d"
+    },
+    {
+      "path": "research/nine/REVIEW_COMBINED_MARKED_CYCLE_BUDGET_BLOCK_EARS_2026_10_30.md",
+      "bytes": 3378,
+      "sha256": "c197b68810045bfc60fd072073e9681f9badd1c241383d2e5787d59aed9f89b4",
+      "git_blob": "21b58bab5d44c3c9d908e506c19e8c1c8c2087c4"
+    },
+    {
+      "path": "research/nine/REVIEW_BOUNDARY_ARCS_41_AND_UNIT_GAPS_93_ROOT_2026_10_30.md",
+      "bytes": 6399,
+      "sha256": "b54b1f91597ce5d6398d8b6cf708a92c3df2eb97ad0c603653536ca6e50aa4a0",
+      "git_blob": "527ad93e0925a9dce87a315b2cbdad955afd19d8"
+    },
+    {
+      "path": "research/nine/REVIEW_BOUNDARY_ARCS_41_AND_UNIT_GAPS_93_BLOCK_EARS_2026_10_30.md",
+      "bytes": 8497,
+      "sha256": "af9dfd0062a6e0461f120fdfec367ac532f813ac5fea99882d127b911022910f",
+      "git_blob": "f9902a3b74db2cae300bcdc88a36b435703fe42b"
+    },
+    {
+      "path": "research/nine/REVIEW_OCCUPIED_INNER_ARCS_AND_SEVEN_BODY_CYCLE_BOUND_BLOCK_EARS_2026_10_30.md",
+      "bytes": 9395,
+      "sha256": "6b962c5185462e081ee6be567d4072327ff7239edd5f1e5de10fa765308b5361",
+      "git_blob": "f51ae0b13986e42056d8672ddace443edd74060f"
+    },
+    {
+      "path": "research/nine/ADOPTION_OCCUPIED_ARC_CYCLE_CAP_SEVEN_AND_GLOBAL_LOAD_STRUCTURE_2026_10_30.md",
+      "bytes": 14817,
+      "sha256": "0042f708ef1b0ec03c106c2e6d348181926920a1fafe5c82aa5c478604c934ea",
+      "git_blob": "4e57e043140e1f4af40cf3378c5c10eb0ba17404"
+    },
+    {
+      "path": "research/nine/README.md",
+      "bytes": 117247,
+      "sha256": "be878967e5aef8fcac7b18e4a6b4c1641b917554a8ee97595ecdecbac0ee57df",
+      "git_blob": "cb1346965740fae7a7e93217feb265eba592f554"
+    },
+    {
+      "path": "research/nine/ROADMAP.md",
+      "bytes": 95993,
+      "sha256": "6f1d866d35af3eb2e5fe716c81e087aece2bf9018db9a3a3deaf816f076d06f0",
+      "git_blob": "ae8f38c2360a8766d63fac06ed1d7858a9abcce2"
+    },
+    {
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "bytes": 1099638,
+      "sha256": "69d66831a7b1841871f7e099ec917c99aee3ac59b455217fbdf94686d05906fc",
+      "git_blob": "47298e6dfdeb571ea11807a4593bb011d60a45c1"
+    },
+    {
+      "path": "research/nine/CYCLIC_CELL_LEDGER.md",
+      "bytes": 353787,
+      "sha256": "0622dfe923f3d9ea1203f052557465d573820db836230bf877e8aaf5c1e75ced",
+      "git_blob": "d33e0baae53029e255395088cb7d5756661eebd5"
+    }
+  ],
+  "source_table_hash_occurrences_verified": 22,
+  "distinct_source_table_pins_verified": 13,
+  "exact_arithmetic": {
+    "rational_checks": {
+      "contact_radius_reserve": "1/240",
+      "outward_own_axis_reserve": "47/900",
+      "boundary_point_radical_reserve": "1/19602",
+      "boundary_point_coordinate_order": "23/7920",
+      "boundary_point_lower_cubic_margin": "373/140800",
+      "boundary_point_upper_cubic_value": "2107/330000",
+      "boundary_point_upper_initial_derivative": "43517/396000",
+      "boundary_point_upper_second_derivative_lower_bound": "9/80",
+      "return_tangent_input_reserve": "9/6230",
+      "return_triple_tangent_reserve": "55/12579",
+      "return_height_reserve": "1/400",
+      "return_whole_square_clearance": "1/120",
+      "return_cap_width_reserve": "13/420",
+      "junction_shallow_half_cap_squared_diameter": "7189/7200",
+      "junction_shallow_half_cap_reserve": "11/7200",
+      "junction_symmetric_box_reserve": "107/3600",
+      "junction_asymmetric_box_reserve": "713/57600",
+      "arc41_radius_squared": "1561621/1000000",
+      "arc41_radius_reserve": "879/1000000",
+      "arc93_radius_squared": "2381/2000",
+      "arc93_radius_reserve": "93/250",
+      "radial_tangent_value_squared": "1089/256",
+      "radial_tangent_intercept": "355/176",
+      "positive_cosine_coefficient": "117/2200",
+      "arc41_quadratic_coefficient": "6434/20625",
+      "arc41_full_interval_margin": "580337/275000000",
+      "arc93_quadratic_coefficient": "25309/118800",
+      "arc93_full_interval_margin": "359/285120",
+      "arc93_second_coordinate_at_half": "17437/35200",
+      "arc93_second_coordinate_zero_reserve": "57/4400",
+      "arc93_second_coordinate_half_reserve": "163/35200",
+      "arc93_upper_orientation_radius_reserve": "39/6400",
+      "cos20_lower_triple_value": "17887/35937",
+      "cos20_upper_triple_value": "7849/15625",
+      "sin20_upper_triple_reserve": "5941/48000000",
+      "cos20_5_lower_bound": "981141437/1047816000",
+      "sin20_5_upper_bound": "44189/126000",
+      "tan20_5_comparison_reserve": "1206173/349272000",
+      "arc41_halfwidth_ratio_reserve": "1/4680",
+      "gap93_trig_rational_upper": "29669/420",
+      "gap93_trig_rational_reserve": "5/84",
+      "gap93_sqrt2_squared_reserve": "151/250000",
+      "pi_integrand_polynomial_integral": "22/7",
+      "occupied_arc_radius_upper_reserve": "55/2304",
+      "occupied_arc_lower_a_squared_reserve": "191/3200",
+      "occupied_arc_upper_a_squared_reserve": "149/14400",
+      "occupied_arc_connectedness_reserve": "419/1600",
+      "occupied_arc_inner_face_quadratic_endpoint": "933/1600",
+      "occupied_arc_equal_axis_squared_reserve": "3937",
+      "occupied_arc_metric_rational_factor": "55/56",
+      "occupied_arc_metric_factor_reserve": "1/56",
+      "occupied_arc_center_point_offset_bound": "4/15"
+    },
+    "polynomial_checks": {
+      "fixed_point_lower_cubic_shift_identity": true,
+      "fixed_point_upper_initial_value": true,
+      "fixed_point_upper_initial_derivative": true,
+      "arc41_quartic_shift": true,
+      "arc93_quartic_shift": true,
+      "pi_integrand_polynomial_division": true
+    },
+    "historical_90_degree_budget_rows": [
+      {
+        "marks": 5,
+        "singletons": 3,
+        "diagonals_max": 0
+      },
+      {
+        "marks": 6,
+        "singletons": 2,
+        "diagonals_max": 1
+      },
+      {
+        "marks": 7,
+        "singletons": 1,
+        "diagonals_max": 1
+      },
+      {
+        "marks": 8,
+        "singletons": 0,
+        "diagonals_max": 0
+      }
+    ],
+    "historical_41_93_degree_budget_rows": [
+      {
+        "marks": 6,
+        "singletons": 2,
+        "diagonals_max": 0
+      },
+      {
+        "marks": 7,
+        "singletons": 1,
+        "diagonals_max": 1
+      },
+      {
+        "marks": 8,
+        "singletons": 0,
+        "diagonals_max": 0
+      }
+    ],
+    "arithmetic_verification_method": "Exact fractions and polynomial coefficient identities; no packing search, angle grid or numerical certificate.",
+    "current_compatible_marked_cycle_bound": "m <= 7, uniformly in all marked counts and internal widths; all historical C8 count rows are superseded.",
+    "current_metric_budget": "sum consecutive actual boundary-square set distances < (5*pi/16)*(8-t), and sum true internal widths <= sum distances."
+  },
+  "original_fine_inventory": {
+    "total": 2513,
+    "checked": 2373,
+    "open": 140,
+    "identifiers_order_flags_unchanged": true
+  },
+  "original_coarse_inventory": {
+    "total": 58,
+    "closed": 36,
+    "open": 22,
+    "identifiers_order_flags_unchanged": true
+  },
+  "complete_conclusions": [
+    "Consecutive actual boundary-square set distances obey sum D_i < (5*pi/16)*(8-t), a force-free metric theorem with full occupied-arc proof.",
+    "Every compatible physical marked cycle has m<=7; all compatible eight- and nine-body simple positive components are excluded across all load counts. Additional marked-boundary edges remain allowed.",
+    "Every genuine two-internal-body channel has positively circle-loaded endpoints. Combined with the preceding two-channel capacity theorem, all such channels in a nine-square packing use at most one distinct loaded endpoint pair; same-pair parallel channels remain.",
+    "Every connected component of the retained direct-contact subgraph contains a positive circle load; e0>=h for unloaded retained hubs h.",
+    "Long-run return boundary units lie wholly on one common side with clearance 1/120; every nonempty return run normal is within 45 degrees of the long axis.",
+    "The exact translated four-junction capacity-eight region includes both coordinates <= 1/5 and the stated 1/20-by-5/16 rectangles; a genuine long middle junction among nine units has 5/16 < |t| <= 9/16.",
+    "The complete 90-degree and 41/93-degree pair-angle theorems remain valid, while their C8 count tables are superseded by the occupied-arc cap seven."
+  ],
+  "remaining": [
+    "All 22 original coarse parents, including arbitrary chorded or interior-vertex blocks",
+    "Circle-clear full-degree branching vertices on large cycles",
+    "Sharp seven-body long/side-short core and two arbitrary physical completions",
+    "Other smaller stressed-core and attachment completion domains",
+    "Unrestricted lower bound and equality classification",
+    "G4.2.c common-selection audit for remaining downstream callers"
+  ],
+  "verification_limits": {
+    "lean_compilation": false,
+    "ci_dispatch": false,
+    "numerical_pose_search": false,
+    "mesh": false,
+    "new_packing_certificate": false,
+    "merge": false
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "status": "accepted general full-star and radial-channel theorems with complete Type II physical-mask reductions; both whole side rows remain open",
+  "parent_commit": "ecaeb91566cee0023b4146f67eb29a5f8ab1fce3",
+  "parent_tree": "04c6e8e6e3bd64b4c66531ef07f7d265e8d4bf0e",
+  "sources_and_reviews": {
+    "LOADED_FULL_STAR_CLOSED_SIDE_CONE_WITH_GENUINE_AXIS_PORT_FORCES_RADIAL_ALIGNMENT_2026_10_29.md": {
+      "size_bytes": 23193,
+      "sha256": "3d188352bb57e31ab6865f3ef608343afa5868c111e3450af1e3030216c2c7ae",
+      "git_blob": "dd255e381c78fba0077b7b75a3003416bbd76734"
+    },
+    "DEGREE_FREE_RADIAL_SIDE_CHANNEL_AXIS_EXCLUSION_AND_COMPLETE_TYPE_II_PARALLEL_ENDPOINT_EXIT_2026_10_29.md": {
+      "size_bytes": 15603,
+      "sha256": "53f7c87f71d155b0f2f11dc429c9725376d11f47e181b779f4aca2c8628c0e4c",
+      "git_blob": "11925c84b4271aaee2f3c7a099c62f8173f65096"
+    },
+    "TYPE_II_FAR_SIDE_COMPLETE_PHYSICAL_RADIAL_ENDPOINT_MASK_ALTERNATIVE_2026_10_29.md": {
+      "size_bytes": 10568,
+      "sha256": "b002cbf7521c44b67c9bac13e048aac9961ea04ab1717f78c312e2eb0c36708c",
+      "git_blob": "59672d7bd2d6dbb6e67a7fd62b6849866b2ef524"
+    },
+    "REVIEW_LOADED_FULL_STAR_CLOSED_CONE_AND_COMPLETE_A_ONLY_MASK_ALTERNATIVE_ROOT_2026_10_29.md": {
+      "size_bytes": 9982,
+      "sha256": "b81bf7869827593197f3aac1296f9bbfb56159058be747f37f63e18a3240141b",
+      "git_blob": "7ab21ee217a7625f0b9679b938f0e230f865b82e"
+    },
+    "REVIEW_RADIAL_SIDE_CHANNEL_AXIS_EXCLUSION_AND_FAR_MASK_ALTERNATIVE_ROOT_2026_10_29.md": {
+      "size_bytes": 12490,
+      "sha256": "9ac33bbaaf1f53793a187b3d1ca711a440cb1f3cca6540ab21f0d9fc2fcdf891",
+      "git_blob": "fd05398665be0eeab872e1159473704f36fac01c"
+    },
+    "ADOPTION_CLOSED_FORCE_CONES_RADIAL_AXIS_CHANNELS_AND_COMPLETE_TYPE_II_MASK_REDUCTIONS_2026_10_29.md": {
+      "size_bytes": 9219,
+      "sha256": "d04891f45bf0c17fa1a1548391c60978b5d39994b9c5854f73e4827aa508b3fa",
+      "git_blob": "d5a40f7e5275ca7854acf23da407998c6bf36bed"
+    }
+  },
+  "independent_gates": [
+    {
+      "source": "LOADED_FULL_STAR_CLOSED_SIDE_CONE_WITH_GENUINE_AXIS_PORT_FORCES_RADIAL_ALIGNMENT_2026_10_29.md",
+      "source_sha256": "3d188352bb57e31ab6865f3ef608343afa5868c111e3450af1e3030216c2c7ae",
+      "review": "REVIEW_LOADED_FULL_STAR_CLOSED_CONE_AND_COMPLETE_A_ONLY_MASK_ALTERNATIVE_ROOT_2026_10_29.md",
+      "review_sha256": "b81bf7869827593197f3aac1296f9bbfb56159058be747f37f63e18a3240141b",
+      "scope": "complete arbitrary-degree closed-cone and same-side theorems; full radial true2 torque; entire A-only physical-mask alternative"
+    },
+    {
+      "source": "DEGREE_FREE_RADIAL_SIDE_CHANNEL_AXIS_EXCLUSION_AND_COMPLETE_TYPE_II_PARALLEL_ENDPOINT_EXIT_2026_10_29.md",
+      "source_sha256": "53f7c87f71d155b0f2f11dc429c9725376d11f47e181b779f4aca2c8628c0e4c",
+      "review": "REVIEW_RADIAL_SIDE_CHANNEL_AXIS_EXCLUSION_AND_FAR_MASK_ALTERNATIVE_ROOT_2026_10_29.md",
+      "review_sha256": "9ac33bbaaf1f53793a187b3d1ca711a440cb1f3cca6540ab21f0d9fc2fcdf891",
+      "scope": "degree-free radial axis geometry, complete four-axis cover, arbitrary-degree parallel-star channel exit, both entire Type II parallel-endpoint joins"
+    },
+    {
+      "source": "TYPE_II_FAR_SIDE_COMPLETE_PHYSICAL_RADIAL_ENDPOINT_MASK_ALTERNATIVE_2026_10_29.md",
+      "source_sha256": "b002cbf7521c44b67c9bac13e048aac9961ea04ab1717f78c312e2eb0c36708c",
+      "review": "REVIEW_RADIAL_SIDE_CHANNEL_AXIS_EXCLUSION_AND_FAR_MASK_ALTERNATIVE_ROOT_2026_10_29.md",
+      "review_sha256": "9ac33bbaaf1f53793a187b3d1ca711a440cb1f3cca6540ab21f0d9fc2fcdf891",
+      "scope": "entire far-side actual common-side lemma and physical-mask alternative; whole both-unique B/C feature excluded"
+    }
+  ],
+  "explicit_direct_source_table_pins_verified": {
+    "PHYSICAL_CONTACT_STRESS.md": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+    "LOADED_FULL_STAR_OPEN_SIDE_CONE_FORCES_PHYSICAL_RADIAL_ALIGNMENT_2026_10_29.md": "dcbd7f5339899052dd8237858778c0bfb53c7a2f087a44d6edcd7db3a6c96952",
+    "LOADED_ENDPOINTS_FORCE_TRANSMITTER_CONE_AND_PHYSICAL_CORNER_CAP_2026_10_29.md": "5f44ef77812f5626e69f70963f55d6b820bfdb8b1f51e3d1e54110cf695753e1",
+    "TYPE_II_A_ONLY_COMPLETE_SIDE_FORCE_SIGNS_AND_TWO_PHYSICAL_CIRCLE_CORNER_BUDGET_2026_10_29.md": "00e18446bab3fc7b97484fc33d700363ea41f415af5b1746ee4c020c87830033",
+    "LOADED_PARALLEL_FULL_STAR_WITH_DISTINCT_NEIGHBORS_FORCES_RADIAL_S_2026_10_29.md": "f0e7b44a8d7e0eff5654384bf20bb5a99c3809d57a92bbb16afba6ee7ac1c96c",
+    "RADIAL_LOAD_SIDE_CHANNEL_POCKET_CAPACITY.md": "2d78bc2892c11e58007881ff84d57cc6606dce201bb46d412ef216c12577191e",
+    "TYPE_II_FAR_RETURN_SIDE_CHANNEL_EXCLUDES_BOTH_PARALLEL_LOADED_ENDPOINTS_2026_10_29.md": "e573ec4e567bb3e255ddbc9348b24dd4780651beebd1f3ea713e949930929b68",
+    "TYPE_II_FAR_SIDE_RETURN_COMPLETE_COINCIDENT_C_APPLICATION_EXCLUSION_2026_10_29.md": "c803a178538c87924d866ee65ed95a7c2403a35203d5a7f5bf85bbc794ccc93c",
+    "LOADED_FULL_STAR_CLOSED_SIDE_CONE_WITH_GENUINE_AXIS_PORT_FORCES_RADIAL_ALIGNMENT_2026_10_29.md": "3d188352bb57e31ab6865f3ef608343afa5868c111e3450af1e3030216c2c7ae",
+    "DEGREE_FREE_RADIAL_SIDE_CHANNEL_AXIS_EXCLUSION_AND_COMPLETE_TYPE_II_PARALLEL_ENDPOINT_EXIT_2026_10_29.md": "53f7c87f71d155b0f2f11dc429c9725376d11f47e181b779f4aca2c8628c0e4c",
+    "TYPE_II_FAR_SIDE_COMPLETE_PHYSICAL_RADIAL_ENDPOINT_MASK_ALTERNATIVE_2026_10_29.md": "b002cbf7521c44b67c9bac13e048aac9961ea04ab1717f78c312e2eb0c36708c",
+    "REVIEW_LOADED_FULL_STAR_CLOSED_CONE_AND_COMPLETE_A_ONLY_MASK_ALTERNATIVE_ROOT_2026_10_29.md": "b81bf7869827593197f3aac1296f9bbfb56159058be747f37f63e18a3240141b",
+    "REVIEW_RADIAL_SIDE_CHANNEL_AXIS_EXCLUSION_AND_FAR_MASK_ALTERNATIVE_ROOT_2026_10_29.md": "9ac33bbaaf1f53793a187b3d1ca711a440cb1f3cca6540ab21f0d9fc2fcdf891"
+  },
+  "explicit_direct_source_table_pin_occurrences": 33,
+  "exact_checks": {
+    "full_mean_inner_axis_squared_difference": "2*(1+sqrt(2)*R-2*sqrt(R^2-1/4))",
+    "strict_radius_threshold": "sqrt(2+sqrt(3))",
+    "lower_window_squared_reserve": "241/1600",
+    "sqrt3_comparison_squared_reserve": "1/16",
+    "upper_window_squared_reserve": "495/256",
+    "complete_closed_cone_boundaries_masks_and_full_means": "independently reconstructed in full current-source review",
+    "complete_far_support_arc_and_physical_mask_join": "independently reconstructed without unfinished scalar tangent bound"
+  },
+  "inventory": {
+    "fine": {
+      "total": 2513,
+      "checked": 2373,
+      "open": 140,
+      "original_ids_order_flags_unchanged": true
+    },
+    "coarse": {
+      "total": 58,
+      "closed": 36,
+      "open": 22,
+      "original_ids_order_flags_unchanged": true
+    },
+    "fine_sequence_sha256": "feda561e85056c0bae48f2f33b8df7814c44d983ca4f1cc3e422391525106f1f",
+    "coarse_sequence_sha256": "99e0b788a73379a719f331d43581ef02c76ea2e8622a8c8f43bbf21e9ea241bd"
+  },
+  "metadata": {
+    "research/nine/DEEP_GATED_ROADMAP.md": {
+      "size_bytes": 1088432,
+      "sha256": "c2cde30477cb206aa292d3f57d21b28d39a9dda1c54990624f465e196a5c44b3",
+      "git_blob": "ac65fb6f0dff22317944c5882fcc4717ed50c76a"
+    },
+    "research/nine/CYCLIC_CELL_LEDGER.md": {
+      "size_bytes": 344926,
+      "sha256": "f6d0aaf03099095172c8200c4de3f284c0d62fd77ac1c8059380546ad6b784db",
+      "git_blob": "cc8935fc79988b3f41ab84a2d56fb2a852e485a8"
+    },
+    "research/nine/README.md": {
+      "size_bytes": 108616,
+      "sha256": "3ca9265909cb5194947afa6ef7eadba94c9e25c85f55a94f1db8ff4936dff300",
+      "git_blob": "a908b48abcde36ab17eff3ccf7111ded0e561a75"
+    },
+    "research/nine/ROADMAP.md": {
+      "size_bytes": 87362,
+      "sha256": "8b2f74fecc4f8d6ecc0922474351d4b6270e2a35a39851f83973f48a3c91322d",
+      "git_blob": "b52163b83cefa8411be3947c0db152a157daa72f"
+    },
+    "research/nine/HANDOFF_PR11_2026_10_28_CURRENT.md": {
+      "size_bytes": 170408,
+      "sha256": "53492b805728fc8101490dfc32809af5b665b2fc24428bb753d0dba12769add4",
+      "git_blob": "1615dc6ce6680c699ddbcbbd37c0701a61e1a28f"
+    }
+  },
+  "remaining": {
+    "far_side": "B radial along f OR C radial along actual common-side inward axis; both endpoints nonparallel, C applications distinct; full original constraints retained",
+    "a_only_side": "B exterior-axis radial OR C exterior-axis radial OR both physically unique with m<v and both incoming channel angles above45 degrees; full original constraints retained",
+    "parents": "both whole Type II L135 side rows, loaded/physical-two domains, other graph/load and forest residuals, full downstream audit, sharp bound, equality, Lean integration"
+  },
+  "prohibited_operations_performed": {
+    "Lean_Lake_build": false,
+    "CI_workflow_dispatch": false,
+    "numerical_pose_search": false,
+    "angle_mesh": false,
+    "new_packing_certificate": false,
+    "merge": false
+  }
+}

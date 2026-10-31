@@ -1,0 +1,150 @@
+{
+  "date": "2026-10-28",
+  "reviewer": "triangle_bridges",
+  "verdict": "complete original-family join accepted unchanged",
+  "source": {
+    "file": "HOUSE_LOWER_TAC_S_COMPLETE_EXCLUSION.md",
+    "sha256": "de3565cda8f47022376c115c26f50061fc67e10e320c9f389dcce1c99d8a568b",
+    "bytes": 18815
+  },
+  "original_family": "M6.B5L.HOUSE.LOWER.LTAC.S",
+  "edges": [
+    "AT",
+    "DT",
+    "AD",
+    "AB",
+    "BC",
+    "CD",
+    "BL"
+  ],
+  "degrees": {
+    "A": 3,
+    "B": 3,
+    "C": 2,
+    "D": 3,
+    "T": 2,
+    "L": 1
+  },
+  "positive_block_loads": [
+    "T",
+    "A",
+    "C"
+  ],
+  "actual_units": 9,
+  "component_units": 6,
+  "arbitrary_extras": 3,
+  "radius_endpoint_checks": {
+    "R_equal_2": "first row",
+    "d_equal_1": "aligned high or tilted rows",
+    "U_equal_4_over_5": "closed physical capacity rows",
+    "lower_d_squared_reserve": "11/900",
+    "sqrt2_upper_squared_reserve": "1/4900"
+  },
+  "rows": [
+    "R<=2",
+    "R>2, tilted B",
+    "R>2, aligned B, d>=1",
+    "R>2, aligned B, d<1, A upper/C lower",
+    "R>2, aligned B, d<1, C upper/A lower"
+  ],
+  "all_19_pins_match": true,
+  "pins": [
+    {
+      "file": "REVIEW_HOUSE_LOWER_TAC_S_TILTED_ROOT_ROOT_2026_10_28.md",
+      "sha256": "5b7950398a451bbbeae6497ddb2f14742df707476b21e5491f0207f92af7146f",
+      "bytes": 10127
+    },
+    {
+      "file": "REVIEW_HOUSE_LOWER_TAC_S_TILTED_ROOT_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "a0a5c243b67f18c6941f981eac6afc90bb36fb3ac55c8b7d0ecfa5d35cf5de86",
+      "bytes": 10699
+    },
+    {
+      "file": "REVIEW_LOWER_TAC_S_ALIGNED_UPPER_A_ROOT_2026_10_28.md",
+      "sha256": "6a0854accf176563cb83461fe3d0d328c978611e7fdddf6f08e880ceb35f18f3",
+      "bytes": 9077
+    },
+    {
+      "file": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_A_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "98355c7ee0a865b919330af7bc8b1094d0cb56118188a0e1fab2a59b587e9ab9",
+      "bytes": 16026
+    },
+    {
+      "file": "REVIEW_ALIGNED_LOW_S_LOWER_RETURN_HEIGHT_SEPARATION_HEXAGON_2026_10_28.md",
+      "sha256": "cf5f599682c976732df9ef591518f309f68d4babc7747b6d1f080f4683c7173c",
+      "bytes": 11444
+    },
+    {
+      "file": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_ROOTED_BLOCKS_2026_10_28.md",
+      "sha256": "8fbc107ca79a3e8e9a747f501a4ed1b272aa5c23b662da4641a2a20fea186554",
+      "bytes": 17225
+    },
+    {
+      "file": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_HEXAGON_2026_10_28.md",
+      "sha256": "4b5aafac6605f488a3ee63d3d4c453200f0b27fb472b26d2ab3c11da3643c394",
+      "bytes": 20454
+    },
+    {
+      "file": "REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "e8c69725a44711eaebb674a4f82778ce687a5c9d29f418f2a4cd15e0b1673fb4",
+      "bytes": 15794
+    },
+    {
+      "file": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "sha256": "7ba98ef149c1faff4ef4baeaf0b0305a38cf1153f883a3fe4bfa92087d33622d",
+      "bytes": 17790
+    },
+    {
+      "file": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "sha256": "6154eee2ab1114d063b0dbd1a2800c3522cbb1b46ec44a258c1c89d8ffb9e975",
+      "bytes": 14903
+    },
+    {
+      "file": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "sha256": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c",
+      "bytes": 18216
+    },
+    {
+      "file": "HOUSE_LOWER_TAC_S_TILTED_ROOT_COMPLETE_EXCLUSION.md",
+      "sha256": "ab0e50c96ee74b50afe2f094e4ae20f3467880c54a807dcc4b36d754b35e52da",
+      "bytes": 17411
+    },
+    {
+      "file": "ALIGNED_S_LEAF_ROOT_TWO_BOUNDARY_NEIGHBORS_EXCLUSION.md",
+      "sha256": "7c0e55bc75013f14d667a85635cd743361b325f7180f4710fd832c4f14ab9873",
+      "bytes": 12473
+    },
+    {
+      "file": "S_LEAF_C5_ALIGNED_LOW_RADIUS_EXCLUSION.md",
+      "sha256": "02fd37d94d14f8342365160064cff63d91b572e9e162944e9551590fc8f535a1",
+      "bytes": 17848
+    },
+    {
+      "file": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_A_EXCLUSION.md",
+      "sha256": "975b2ab626aa30b06decdf068fd0667c7badee83e6711ec489de0daab673c773",
+      "bytes": 14578
+    },
+    {
+      "file": "ALIGNED_LOW_S_LOWER_RETURN_HEIGHT_SEPARATION.md",
+      "sha256": "93bb8e2d6dc3f2965c1a1868ba4a7552f63c5326cbe05cab5381950f4db765be",
+      "bytes": 8973
+    },
+    {
+      "file": "certificates/aligned_low_s_lower_return_height_separation.py",
+      "sha256": "bd92d1895f240805a78ea5160b0b7ed56f6948a4ec6ce88ff870bb55a6472f15",
+      "bytes": 4391
+    },
+    {
+      "file": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_EXCLUSION.md",
+      "sha256": "b773da381ac721c0f3c06083c9da6258ea1142353fd4a6e000edaff1d8398125",
+      "bytes": 16294
+    },
+    {
+      "file": "certificates/aligned_low_s_upper_c_visibility_separation.py",
+      "sha256": "d57e7506d4f6e1dd92c991c8579fcfcd03377703863b0d42d50f417267fe2c4c",
+      "bytes": 4744
+    }
+  ],
+  "pending_direct_mathematics": [],
+  "pending_direct_independent_reviews": []
+}

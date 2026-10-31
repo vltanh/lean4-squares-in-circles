@@ -1,0 +1,180 @@
+{
+  "status": "accepted broad full-chain theorem and complete Type II side feature reductions; neither whole remaining side family closed",
+  "parent_commit": "c1c7979e97d2bcf68fbae47cb174286a79cba583",
+  "parent_tree": "834e6968a494178f2ccc138c39cd87ade5819cdb",
+  "sources_and_reviews": {
+    "LOADED_ENDPOINTS_FORCE_TRANSMITTER_CONE_AND_PHYSICAL_CORNER_CAP_2026_10_29.md": {
+      "size_bytes": 20291,
+      "sha256": "5f44ef77812f5626e69f70963f55d6b820bfdb8b1f51e3d1e54110cf695753e1",
+      "git_blob": "1b9641c8f386edcd9d52beb999840c28b5dfad56"
+    },
+    "REVIEW_LOADED_ENDPOINT_TRANSMITTER_CONE_CIRCLE_CORNER_AND_FAR_SIDE_A_OWNER_2026_10_29.md": {
+      "size_bytes": 11327,
+      "sha256": "076871cd5912bb7f02e659faab3b8c77a4174ff630ae01cba0802e0c7dcc203b",
+      "git_blob": "a22b575e2fcb06bdc08388de28076de2ac14b38c"
+    },
+    "REVIEW_LOADED_ENDPOINT_FULL_CHAIN_EXTENSION_A_OWNER_2026_10_29.md": {
+      "size_bytes": 5835,
+      "sha256": "5d80402406d3778e2612dea9ca216dbb728782b320f2c7095acac7cb1325b822",
+      "git_blob": "ef11ae9398d31e6997e8ebe0775d7c8d3daee29c"
+    },
+    "TYPE_II_FAR_RETURN_SIDE_CHANNEL_EXCLUDES_BOTH_PARALLEL_LOADED_ENDPOINTS_2026_10_29.md": {
+      "size_bytes": 14251,
+      "sha256": "e573ec4e567bb3e255ddbc9348b24dd4780651beebd1f3ea713e949930929b68",
+      "git_blob": "f97cb246a491339a2daee75eba6c90b61e969fe0"
+    },
+    "TYPE_II_FAR_SIDE_RETURN_COMPLETE_COINCIDENT_C_APPLICATION_EXCLUSION_2026_10_29.md": {
+      "size_bytes": 12921,
+      "sha256": "c803a178538c87924d866ee65ed95a7c2403a35203d5a7f5bf85bbc794ccc93c",
+      "git_blob": "9c08c06a6e8ed0fa614ddecd409931bbaa1fef23"
+    },
+    "REVIEW_TYPE_II_FAR_SIDE_PARALLEL_AND_COINCIDENT_C_EXITS_A_OWNER_2026_10_29.md": {
+      "size_bytes": 13371,
+      "sha256": "29caeb9b9475aa996c4feda1aba1b606436f90a800b30d960ba6e55550b0d81c",
+      "git_blob": "498e37c914a4719fe12c8c09c35e1c15c8f76b61"
+    },
+    "REVIEW_TYPE_II_FAR_SIDE_BOTH_PARALLEL_ENDPOINT_EXITS_ROOT_2026_10_29.md": {
+      "size_bytes": 8650,
+      "sha256": "7252f41a597f8b6fffb54a0e6c3c413f4d7832a47747b33e304b97535edd7846",
+      "git_blob": "0f196325798ab54d3a8b1348ca69ec5a91954554"
+    },
+    "TYPE_II_A_ONLY_COMPLETE_SIDE_FORCE_SIGNS_AND_TWO_PHYSICAL_CIRCLE_CORNER_BUDGET_2026_10_29.md": {
+      "size_bytes": 16435,
+      "sha256": "00e18446bab3fc7b97484fc33d700363ea41f415af5b1746ee4c020c87830033",
+      "git_blob": "264814dc01cdeb45163613b4be45c9afbb04285e"
+    },
+    "REVIEW_TYPE_II_A_ONLY_COMPLETE_SIDE_SIGNS_AND_CORNER_BUDGET_FAR_VERTEX_2026_10_29.md": {
+      "size_bytes": 8463,
+      "sha256": "3b1e5f4bbf9644cc46f1fff1ee216b0ddeb6fa748a0384365cd75d1de74290bc",
+      "git_blob": "38ac14e2e127c8aed68afbe5fac520156b022dbe"
+    },
+    "ADOPTION_LOADED_CHAIN_CORNER_THEOREM_AND_COMPLETE_TYPE_II_SIDE_REDUCTIONS_2026_10_29.md": {
+      "size_bytes": 9188,
+      "sha256": "e3315e4db09deefd053d7a7cb81ec0a6a4add92138c61803bef008702fdd418f",
+      "git_blob": "5610693e86f3153882bf28919c4104311d4e5edd"
+    }
+  },
+  "independent_gates": [
+    {
+      "source": "LOADED_ENDPOINTS_FORCE_TRANSMITTER_CONE_AND_PHYSICAL_CORNER_CAP_2026_10_29.md",
+      "review": "REVIEW_LOADED_ENDPOINT_FULL_CHAIN_EXTENSION_A_OWNER_2026_10_29.md",
+      "scope": "complete nonacute loaded-endpoint cone, physical-mask corner theorem and full retained unloaded-chain extension",
+      "source_sha256": "5f44ef77812f5626e69f70963f55d6b820bfdb8b1f51e3d1e54110cf695753e1",
+      "review_sha256": "5d80402406d3778e2612dea9ca216dbb728782b320f2c7095acac7cb1325b822"
+    },
+    {
+      "source": "TYPE_II_FAR_RETURN_SIDE_CHANNEL_EXCLUDES_BOTH_PARALLEL_LOADED_ENDPOINTS_2026_10_29.md",
+      "review": "REVIEW_TYPE_II_FAR_SIDE_PARALLEL_AND_COINCIDENT_C_EXITS_A_OWNER_2026_10_29.md",
+      "scope": "both complete parallel loaded endpoint exits and exact finite/finite far-side remainder",
+      "source_sha256": "e573ec4e567bb3e255ddbc9348b24dd4780651beebd1f3ea713e949930929b68",
+      "review_sha256": "29caeb9b9475aa996c4feda1aba1b606436f90a800b30d960ba6e55550b0d81c"
+    },
+    {
+      "source": "TYPE_II_FAR_SIDE_RETURN_COMPLETE_COINCIDENT_C_APPLICATION_EXCLUSION_2026_10_29.md",
+      "review": "REVIEW_TYPE_II_FAR_SIDE_PARALLEL_AND_COINCIDENT_C_EXITS_A_OWNER_2026_10_29.md",
+      "scope": "entire original coincident C far-side application across both physical circle masks",
+      "source_sha256": "c803a178538c87924d866ee65ed95a7c2403a35203d5a7f5bf85bbc794ccc93c",
+      "review_sha256": "29caeb9b9475aa996c4feda1aba1b606436f90a800b30d960ba6e55550b0d81c"
+    },
+    {
+      "source": "TYPE_II_A_ONLY_COMPLETE_SIDE_FORCE_SIGNS_AND_TWO_PHYSICAL_CIRCLE_CORNER_BUDGET_2026_10_29.md",
+      "review": "REVIEW_TYPE_II_A_ONLY_COMPLETE_SIDE_SIGNS_AND_CORNER_BUDGET_FAR_VERTEX_2026_10_29.md",
+      "scope": "entire A-only side support/force sign cover, both physical corners and exact coupled coordinate elimination; final cap remains open",
+      "source_sha256": "00e18446bab3fc7b97484fc33d700363ea41f415af5b1746ee4c020c87830033",
+      "review_sha256": "3b1e5f4bbf9644cc46f1fff1ee216b0ddeb6fa748a0384365cd75d1de74290bc"
+    }
+  ],
+  "explicit_direct_source_table_pins_verified": {
+    "PHYSICAL_CONTACT_STRESS.md": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+    "NONPARALLEL_TWO_APPLICATION_LOADED_STAR_HAS_PROPER_CONCURRENCE.md": "4aeba77a0f964597a40ce290f4a0f9d6d7dc802f83a024f3497cfdb6bb97359d",
+    "LOADED_PARALLEL_FULL_STAR_WITH_DISTINCT_NEIGHBORS_FORCES_RADIAL_S_2026_10_29.md": "f0e7b44a8d7e0eff5654384bf20bb5a99c3809d57a92bbb16afba6ee7ac1c96c",
+    "UNIVERSAL_UNIT_SQUARE_CAP_AND_COMPLETE_TYPE_II_FAR_RETURN_DIAGONAL_EXCLUSION_2026_10_29.md": "f4f2f293e038ea9f42dc8572cb8f216c9b9718a8fb14c4ac215232efcaf34e3c",
+    "NONACUTE_SUPPORT_CONE_DIAGONAL_BRIDGE_GAP_AND_COMPLETE_A_ONLY_CONE_REDUCTION_2026_10_29.md": "6c07437cf008c1d9c5f89532d1ba080cfed4cc7fdea5e5b332317ae0be44c7e1",
+    "TYPE_II_A_ONLY_H_OWNER_COMPLETE_DIAGONAL_RETURN_EXCLUSION_BY_ORIGINAL_ENDPOINT_AXES_2026_10_29.md": "a38780b72988e3f1628ba751d955bfc8a09e9c06f55764e0699b88506d175eb8",
+    "LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78",
+    "TYPE_II_FAR_RETURN_SIDE_CHANNEL_EXCLUDES_BOTH_PARALLEL_LOADED_ENDPOINTS_2026_10_29.md": "e573ec4e567bb3e255ddbc9348b24dd4780651beebd1f3ea713e949930929b68",
+    "UNIQUE_CIRCLE_TYPE_II_SINGLETON_WEST_COMPLETE_HUB_OWNER_AND_EXTERNAL_RETURN_DOMAIN_2026_10_29.md": "e63a1e1d14c50363a244dae4d8927b2113a4222ca1064777660a366b092f351c",
+    "LOADED_ENDPOINTS_FORCE_TRANSMITTER_CONE_AND_PHYSICAL_CORNER_CAP_2026_10_29.md": "5f44ef77812f5626e69f70963f55d6b820bfdb8b1f51e3d1e54110cf695753e1",
+    "TYPE_II_FAR_SIDE_RETURN_COMPLETE_COINCIDENT_C_APPLICATION_EXCLUSION_2026_10_29.md": "c803a178538c87924d866ee65ed95a7c2403a35203d5a7f5bf85bbc794ccc93c",
+    "TYPE_II_A_ONLY_COMPLETE_SIDE_FORCE_SIGNS_AND_TWO_PHYSICAL_CIRCLE_CORNER_BUDGET_2026_10_29.md": "00e18446bab3fc7b97484fc33d700363ea41f415af5b1746ee4c020c87830033",
+    "REVIEW_LOADED_ENDPOINT_FULL_CHAIN_EXTENSION_A_OWNER_2026_10_29.md": "5d80402406d3778e2612dea9ca216dbb728782b320f2c7095acac7cb1325b822",
+    "REVIEW_LOADED_ENDPOINT_TRANSMITTER_CONE_CIRCLE_CORNER_AND_FAR_SIDE_A_OWNER_2026_10_29.md": "076871cd5912bb7f02e659faab3b8c77a4174ff630ae01cba0802e0c7dcc203b",
+    "REVIEW_TYPE_II_FAR_SIDE_PARALLEL_AND_COINCIDENT_C_EXITS_A_OWNER_2026_10_29.md": "29caeb9b9475aa996c4feda1aba1b606436f90a800b30d960ba6e55550b0d81c",
+    "REVIEW_TYPE_II_A_ONLY_COMPLETE_SIDE_SIGNS_AND_CORNER_BUDGET_FAR_VERTEX_2026_10_29.md": "3b1e5f4bbf9644cc46f1fff1ee216b0ddeb6fa748a0384365cd75d1de74290bc",
+    "REVIEW_TYPE_II_FAR_SIDE_BOTH_PARALLEL_ENDPOINT_EXITS_ROOT_2026_10_29.md": "7252f41a597f8b6fffb54a0e6c3c413f4d7832a47747b33e304b97535edd7846"
+  },
+  "explicit_direct_source_table_pin_occurrences": 40,
+  "exact_checks": {
+    "parallel_C_continuous_cap_polynomial_identity_zero": true,
+    "parallel_C_concave_quadratic_reserve": "653/7500",
+    "coincident_C_P6_identity_zero": true,
+    "coincident_C_P8_identity_zero": true,
+    "coincident_C_P6_derivative_upper": "-108831/128",
+    "coincident_C_P6_endpoint": "345825/4096",
+    "coincident_C_P8_concavity_upper": "-21532/5",
+    "coincident_C_P8_endpoints": [
+      "152737/4096",
+      "32102272/78125"
+    ],
+    "coincident_C_square_completion_reserve": 36800000,
+    "coincident_C_fifth_term_reserve": "9388/125",
+    "coincident_C_exact_radius_squared_reserve": "33511/2509056",
+    "all_full_continuous_joins_means_masks": "independently reconstructed in complete current-source reviews"
+  },
+  "inventory": {
+    "fine": {
+      "total": 2513,
+      "checked": 2373,
+      "open": 140,
+      "original_ids_order_flags_unchanged": true
+    },
+    "coarse": {
+      "total": 58,
+      "closed": 36,
+      "open": 22,
+      "original_ids_order_flags_unchanged": true
+    },
+    "fine_sequence_sha256": "feda561e85056c0bae48f2f33b8df7814c44d983ca4f1cc3e422391525106f1f",
+    "coarse_sequence_sha256": "99e0b788a73379a719f331d43581ef02c76ea2e8622a8c8f43bbf21e9ea241bd"
+  },
+  "metadata": {
+    "research/nine/DEEP_GATED_ROADMAP.md": {
+      "size_bytes": 1085108,
+      "sha256": "9676bd1c226cdb8e2e990a5e580fb4e3da4bcc4d29bf30c0d466902ba9b87e7a",
+      "git_blob": "be3b21df4d482da680c8e2d70dddcc0c5280eb57"
+    },
+    "research/nine/CYCLIC_CELL_LEDGER.md": {
+      "size_bytes": 342540,
+      "sha256": "d06606807edb896aa6362fa96fcebdf0531593b3ab6210387aa2c4ac2f0ad235",
+      "git_blob": "d649503b5a0a52e8db8e02d0af59c26906f7e9cd"
+    },
+    "research/nine/README.md": {
+      "size_bytes": 106230,
+      "sha256": "104bf9b0e659e3512783f842ddd111fc8f41de5a0d42011d02b8c9f122b88ab9",
+      "git_blob": "04d90acc1fac6773ec92e501c26475822a94273c"
+    },
+    "research/nine/ROADMAP.md": {
+      "size_bytes": 84976,
+      "sha256": "c9010fdfcf35539d96b05112c2e35c7c77b9af12dbed90c316f1f0930d543fc4",
+      "git_blob": "eb63f0db5c86b875f0b153aef58d512f39610c67"
+    },
+    "research/nine/HANDOFF_PR11_2026_10_28_CURRENT.md": {
+      "size_bytes": 168022,
+      "sha256": "8650d9b3bd36ad436433608c9cf9d9140cdf36118dfba2f089e3da6e1db8c78a",
+      "git_blob": "f66148b3684bd88e2010f678030bce22b0474861"
+    }
+  },
+  "remaining": {
+    "far_side": "both endpoints finite; C applications distinct on one actual C side; full means, physical masks and unused equations retained",
+    "a_only_side": "two specific actual physical circle corners and a coupled exact radical budget; universal contradictory comparison not proved",
+    "parents": "both full Type II L135 side families, loaded Type I/II, physical-two domains, other graph/forest parents, full downstream audit, sharp bound, equality, Lean integration"
+  },
+  "prohibited_operations_performed": {
+    "Lean_Lake_build": false,
+    "CI_workflow_dispatch": false,
+    "numerical_pose_search": false,
+    "angle_mesh": false,
+    "new_packing_certificate": false,
+    "merge": false
+  }
+}

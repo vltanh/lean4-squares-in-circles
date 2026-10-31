@@ -1,0 +1,170 @@
+{
+  "checkpoint": "long-gap triangle and pair capacity",
+  "date_utc": "2026-10-30",
+  "input_head": "168aadd76f975804b9c698b155554907026a55d6",
+  "verdict": "complete stated family theorems and route diagnostics adopted; unrestricted theorem remains open",
+  "files": [
+    {
+      "path": "research/nine/TWO_ENDPOINT_EXPANDED_SQUARE_COVER_AND_LONG_CHANNEL_TRIANGLE_EXCLUSION_2026_10_30.md",
+      "bytes": 15789,
+      "sha256": "78dfc5ed83b1538b2484007fc6d60d047c078b7f124944c0aef4dce6593558f6",
+      "git_blob": "caec34a338a6622da37c6ac0b0d2452b4db590a1"
+    },
+    {
+      "path": "research/nine/TRANSLATIONAL_LONG_CHANNEL_DOMINATING_PAIR_AND_THREE_LOAD_CYCLE_BOUND_2026_10_30.md",
+      "bytes": 9943,
+      "sha256": "5b3c31c3aae5afc91cb2bbba0cabfdd9fcb6ff9f7893b5bd8673f43852a471b0",
+      "git_blob": "628436e91669a9a44704725552e8c3c56ac54ed5"
+    },
+    {
+      "path": "research/nine/NEAR_CENTRAL_DOMINO_FOUR_NONPOLAR_COMPLETION_CAPACITY_2026_10_30.md",
+      "bytes": 10144,
+      "sha256": "33168fb5ab4605739746348d1425b47da33c6f2a64803357f1f0608515a160b8",
+      "git_blob": "ebf4ff9ac31a2bf176fd69dcedfe02e3b8956eb3"
+    },
+    {
+      "path": "research/nine/STAGGERED_CENTRAL_PAIR_FOUR_NONPOLAR_COMPLETION_CAPACITY_2026_10_30.md",
+      "bytes": 4803,
+      "sha256": "8cce720d62d361f02912c49962d0da51aac4de382ac2294defc2f67e313ed98f",
+      "git_blob": "78d397b17275cedeb2c58bad5319da3cd502cd9d"
+    },
+    {
+      "path": "research/nine/ALL_RADII_NINE_PROFILE_OBSTRUCTION_AND_PAIR_DEPENDENCE_2026_10_30.md",
+      "bytes": 4437,
+      "sha256": "001070964ef60f1ff93852fbee25ea45439f48757ed7a8d390a2968c5d557a3c",
+      "git_blob": "71ca734ce6f683627679d48e388327607590bd2a"
+    },
+    {
+      "path": "research/nine/LARGE_BLOCK_LONG_EAR_OBSTRUCTION_AND_SUBCRITICAL_SEVEN_CORE_2026_10_30.md",
+      "bytes": 10696,
+      "sha256": "c2206265e00022a2b3fab3523ea5dd9ed5e258d80c49baece4e6f10d4e352b16",
+      "git_blob": "c1ddbf902d1ef0b1dadb391089870c1674198457"
+    },
+    {
+      "path": "research/nine/NEAR_CENTRAL_FOUR_SQUARE_JUNCTION_CAPACITY_EIGHT_2026_10_30.md",
+      "bytes": 4827,
+      "sha256": "f9f2e43ce31d3275d0f111b1ef8b48592607cc03920c3610ef8fefcff9b7bda0",
+      "git_blob": "9c3b83296bc21f86f5519cd0462903d58ac7fee5"
+    },
+    {
+      "path": "research/nine/NEAR_ANTIPODAL_ENDPOINTS_HAVE_PROTECTED_OUTWARD_RAYS_2026_10_30.md",
+      "bytes": 4555,
+      "sha256": "82ff38f0d73045652c517a10f70f86d93bc0d55d540f3b67c99b04896cc049de",
+      "git_blob": "377a83999326f26b4a37ce6702860af08e0d34c0"
+    },
+    {
+      "path": "research/nine/REVIEW_UNIFORM_FOUR_SQUARE_AXIAL_CHAIN_NEAR_DIAMETER_AXIAL_INDEPENDENT_2026_10_30.md",
+      "bytes": 3354,
+      "sha256": "3f1834030a057346b56ad017023174a40ca855989acfecddaf17089076b61f1c",
+      "git_blob": "ee819e93b26d2d3d9ee0e9fc007cdfd17aa54541"
+    },
+    {
+      "path": "research/nine/REVIEW_EXPANDED_ENDPOINT_COVER_AND_COMPLETE_THREE_LOAD_SEVEN_CYCLE_BLOCK_EARS_2026_10_30.md",
+      "bytes": 12178,
+      "sha256": "23912c057e39586ef21ab6e5ad5d3065a41ea62d17a97f0189382adbbf621ad6",
+      "git_blob": "83da870fcd2da776bbe89d37632992ad9cc7f75c"
+    },
+    {
+      "path": "research/nine/REVIEW_EXPANDED_ENDPOINT_COVER_AND_CHANNEL_TRIANGLE_ROOT_2026_10_30.md",
+      "bytes": 6999,
+      "sha256": "401229c5f0cbfa64a2c736a253a0c7450bc4fa09bd9b1b2d4f0949b9fb5c86e0",
+      "git_blob": "edcc013d3b6bcba723be8cfc2d813b8394c37f4c"
+    },
+    {
+      "path": "research/nine/REVIEW_TRANSLATIONAL_LONG_GAP_DOMINATION_AND_THREE_LOAD_BOUND_BLOCK_EARS_2026_10_30.md",
+      "bytes": 8171,
+      "sha256": "b0c3dee4a1f86eba9c205f0f4709750d76986055789b998578cc63915a342840",
+      "git_blob": "afedfcf5ed4d6e7726a9cc80921892b78e2b2553"
+    },
+    {
+      "path": "research/nine/REVIEW_PAIR_CAPACITY_AND_LARGE_BLOCK_DIAGNOSTICS_ROOT_2026_10_30.md",
+      "bytes": 6633,
+      "sha256": "4b7bbc647b645afc95b19d975db70f19841306f00835f14c5b8a43af6b6854fd",
+      "git_blob": "d44a8dcf37a0770f957b1a506316e92e9b6acc98"
+    },
+    {
+      "path": "research/nine/REVIEW_STAGGERED_PAIR_NEAR_JUNCTION_AND_PROTECTED_RAYS_ROOT_2026_10_30.md",
+      "bytes": 6461,
+      "sha256": "4d2d582a5e353982d94b4b2ba739e594d7c125d8cbc5d5198894fc978f7308bb",
+      "git_blob": "55158639a801f0a62d784561cddf5b6caf40df82"
+    },
+    {
+      "path": "research/nine/REVIEW_PROTECTED_OUTWARD_RAYS_AND_NEAR_CENTRAL_JUNCTION_CAPACITY_AXIAL_INDEPENDENT_2026_10_30.md",
+      "bytes": 6217,
+      "sha256": "b79e97d72f1f9958e253e95f94046b632ee1805b557171788af8eab98da293bd",
+      "git_blob": "c386a2ce2185e974e034a99bec10f621e518dcdc"
+    },
+    {
+      "path": "research/nine/ADOPTION_LONG_GAP_TRIANGLE_AND_PAIR_CAPACITY_2026_10_30.md",
+      "bytes": 10427,
+      "sha256": "97f00926a62eac0fb20d30f716f1772fe44f623d5d8cdade707481af99bacc3d",
+      "git_blob": "89cad4df181a905a0e1925f6db0aa6acfb9029a3"
+    },
+    {
+      "path": "research/nine/README.md",
+      "bytes": 113403,
+      "sha256": "92bee4b0d8c93f49570241d89e81457c7c40d9b1538015c6be4e98d6d48940db",
+      "git_blob": "56e3929a29b5beca6cc5c4ea290ec24f71b6b984"
+    },
+    {
+      "path": "research/nine/ROADMAP.md",
+      "bytes": 92149,
+      "sha256": "a0e54a84fe3ba204a605d97f293b476185be525d8a9fe8fcf26a24a089ab273e",
+      "git_blob": "6d1d9e580cfc2948ede1bc7c204d6c5acf69138d"
+    },
+    {
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "bytes": 1093744,
+      "sha256": "4216c0e4ad49d4bdd7dec57a793a59b1066810c7be0683624896a27c416bc11b",
+      "git_blob": "66a0e16273b0a39804e930525af4224bca3af2d1"
+    },
+    {
+      "path": "research/nine/CYCLIC_CELL_LEDGER.md",
+      "bytes": 348747,
+      "sha256": "2ad0eede9e5e1ecc56a5423324523018049eb919326ebef0240f407e3afd5170",
+      "git_blob": "a2fe175096849e0225ef4a6f5cc215508d24a2c7"
+    }
+  ],
+  "source_table_hash_occurrences_verified": 20,
+  "exact_rational_checks": {
+    "center_radius_reserve": "31/57600",
+    "endpoint_transverse_square_bound": "1/10",
+    "cover_height_mean_reserve": "127/870480",
+    "cover_height_difference_reserve": "73/56160",
+    "cover_lower_band_reserve": "11399/14400",
+    "cover_radical_C": "3671983/1729800",
+    "cover_radical_comparison": "2473200289/374026005000",
+    "horizontal_separator_squared_reserve": "1/144",
+    "junction_corner_sector_reserve": "3121/3600",
+    "junction_cap_squared_diameter": "361/900",
+    "protected_ray_center_squared_bound": "9/16"
+  },
+  "original_fine_inventory": {
+    "total": 2513,
+    "checked": 2373,
+    "open": 140,
+    "identifiers_order_flags_unchanged": true
+  },
+  "original_coarse_inventory": {
+    "total": 58,
+    "closed": 36,
+    "open": 22,
+    "identifiers_order_flags_unchanged": true
+  },
+  "new_complete_family": "Entire simple translational-stress cycles with exactly three loaded bodies have at most six bodies; whole seven-body run (2,1,1) excluded.",
+  "not_claimed": [
+    "Any original coarse parent closure",
+    "Full unrestricted n=9 lower bound",
+    "Equality classification",
+    "G4.2.c",
+    "A two-long-channel assembly, which is separate ongoing work"
+  ],
+  "verification_limits": {
+    "lean_compilation": false,
+    "ci_dispatch": false,
+    "numerical_pose_search": false,
+    "mesh": false,
+    "new_packing_certificate": false,
+    "merge": false
+  }
+}

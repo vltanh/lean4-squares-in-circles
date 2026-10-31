@@ -1,0 +1,195 @@
+{
+  "date_utc": "2026-10-29",
+  "published_parent": "f744cf79f749a331113e5efb534d85d83c335b70",
+  "fine_total": 2513,
+  "fine_checked": 2365,
+  "fine_open": 148,
+  "coarse_total": 58,
+  "coarse_closed": 34,
+  "coarse_open": 24,
+  "changed_original_fine_ids": [],
+  "changed_original_coarse_ids": [],
+  "original_inventory_exactly_unchanged": true,
+  "original_inventory_checkpoint": {
+    "path": "research/nine/COMPLETE_D02_L014_AND_FULL_STAR_CONE_CHECKPOINT_2026_10_29.json",
+    "bytes": 460143,
+    "sha256": "78d58b3cf8c6f9e4aa7dc3947db6f5fc220c3d4612447f3cf2616449d37b3d98",
+    "git_blob": "43d6e438321f94b3b95c7bed7e1e1642efa25b38"
+  },
+  "source": {
+    "path": "research/nine/LOW_ALIGNED_TCB_ENTIRE_ANNULUS_DOMAIN_EXCLUSION_2026_10_29_CONTINUATION.md",
+    "bytes": 24433,
+    "sha256": "e34fb8684a94518bdd3a56873f8558c54f348941bb67b3509815523ef83e87c5",
+    "git_blob": "4e5deb74734ce4e583790472cb310b231212cfcf"
+  },
+  "independent_review": {
+    "path": "research/nine/REVIEW_LOW_ALIGNED_TCB_ENTIRE_ANNULUS_DOMAIN_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+    "bytes": 21322,
+    "sha256": "438e22ee6c0c1b7b082e2c8c169de24438a2719330bcd4a5e7860f355c8fc179",
+    "git_blob": "319160c3a95e765bb1a13855a8d9e80110a330e2"
+  },
+  "root_adoption": {
+    "path": "research/nine/ADOPTION_LOW_ALIGNED_TCB_WHOLE_ANNULUS_DOMAIN_ROOT_2026_10_29.md",
+    "bytes": 5356,
+    "sha256": "e5310d10afdb2bc4f357c454fb40b8ebb127795c51a0b010e2eea5495db5393a",
+    "git_blob": "f1b721fb04b11bb2b889eef076b589c76d332f48"
+  },
+  "direct_pin_audit": {
+    "checks": [
+      {
+        "source": "LOW_ALIGNED_TCB_ENTIRE_ANNULUS_DOMAIN_EXCLUSION_2026_10_29_CONTINUATION.md",
+        "path": "ALIGNED_GENUINE_S_ROOT_BOUNDARY_RAYS_AND_TRIANGLE_PAGE_CLOSING_POCKET.md",
+        "sha256": "7eccbcc7814e2e6ab0129d1cd24016687edf59cb6b4299385d683c3a77597a4f",
+        "matches": true
+      },
+      {
+        "source": "LOW_ALIGNED_TCB_ENTIRE_ANNULUS_DOMAIN_EXCLUSION_2026_10_29_CONTINUATION.md",
+        "path": "BALANCED_ALIGNED_S_ROOT_FIXED_INNER_POINT_AND_EMPTY_LEAF_POCKETS.md",
+        "sha256": "b1a15d99b0374bdf74c717bdfe781fb1e93c83c0c28b46b53cd485ae9b280e1e",
+        "matches": true
+      },
+      {
+        "source": "LOW_ALIGNED_TCB_ENTIRE_ANNULUS_DOMAIN_EXCLUSION_2026_10_29_CONTINUATION.md",
+        "path": "HIGH_BALANCED_ALIGNED_HOUSE_TCB_ALL_ENDPOINTS_CLOSING_CAPACITY_TWO.md",
+        "sha256": "ea2d727131fcfbfe99f597080fffb49e26b36d00e23e043deaebb5625b316abd",
+        "matches": true
+      },
+      {
+        "source": "LOW_ALIGNED_TCB_ENTIRE_ANNULUS_DOMAIN_EXCLUSION_2026_10_29_CONTINUATION.md",
+        "path": "POSITIVE_PROPER_BOUNDARY_PORT_CAP_FLOOR_AND_THREE_UNIT_EXCLUSION.md",
+        "sha256": "9b249477acaa721bac7afcde5123772f808a851337f51ebc1ea5087159564b6d",
+        "matches": true
+      },
+      {
+        "source": "LOW_ALIGNED_TCB_ENTIRE_ANNULUS_DOMAIN_EXCLUSION_2026_10_29_CONTINUATION.md",
+        "path": "ANNULAR_CENTER_ARC_AT_23_25.md",
+        "sha256": "7628a82b3639f1e75680fec3e85baf62368a611d397b2ac01ae936ec07a14290",
+        "matches": true
+      },
+      {
+        "source": "LOW_ALIGNED_TCB_ENTIRE_ANNULUS_DOMAIN_EXCLUSION_2026_10_29_CONTINUATION.md",
+        "path": "GENERAL_SIDE_CHANNEL_CAP_INNER_ARC.md",
+        "sha256": "f76d76ef2feccc80098fb6d10d6316af4e393d3ae34d4953846dd27b80c137cb",
+        "matches": true
+      },
+      {
+        "source": "LOW_ALIGNED_TCB_ENTIRE_ANNULUS_DOMAIN_EXCLUSION_2026_10_29_CONTINUATION.md",
+        "path": "LEAF_ANYWHERE_TWO_BOUNDARY_FOUR_RING_EXCLUSION.md",
+        "sha256": "9db8a26928788aed477e7be8be0984a78ceb64f6b8499fbec52dfba12fdbe824",
+        "matches": true
+      },
+      {
+        "source": "LOW_ALIGNED_TCB_ENTIRE_ANNULUS_DOMAIN_EXCLUSION_2026_10_29_CONTINUATION.md",
+        "path": "CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md",
+        "sha256": "b61b0dec7ded00984c687e353fd3f3bfb5a5a7ade45d87d69aaeade09f23d80b",
+        "matches": true
+      },
+      {
+        "source": "LOW_ALIGNED_TCB_ENTIRE_ANNULUS_DOMAIN_EXCLUSION_2026_10_29_CONTINUATION.md",
+        "path": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+        "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+        "matches": true
+      },
+      {
+        "source": "LOW_ALIGNED_TCB_ENTIRE_ANNULUS_DOMAIN_EXCLUSION_2026_10_29_CONTINUATION.md",
+        "path": "END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+        "sha256": "20a845eff8bee3e9c533162df0b32ea96f9dd104a3cfec41efb3b0cf92d6e9cf",
+        "matches": true
+      },
+      {
+        "source": "LOW_ALIGNED_TCB_ENTIRE_ANNULUS_DOMAIN_EXCLUSION_2026_10_29_CONTINUATION.md",
+        "path": "ADAPTIVE_THREE_UNIT_CAP_RADIUS_OVER_SQRT_TWO_2026_10_29_CONTINUATION.md",
+        "sha256": "7baa4831abdfa1ec97d3e504fa70a00b0b5763e371016a52b67e0b25b54cf6ae",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_LOW_ALIGNED_TCB_ENTIRE_ANNULUS_DOMAIN_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "path": "ALIGNED_GENUINE_S_ROOT_BOUNDARY_RAYS_AND_TRIANGLE_PAGE_CLOSING_POCKET.md",
+        "sha256": "7eccbcc7814e2e6ab0129d1cd24016687edf59cb6b4299385d683c3a77597a4f",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_LOW_ALIGNED_TCB_ENTIRE_ANNULUS_DOMAIN_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "path": "BALANCED_ALIGNED_S_ROOT_FIXED_INNER_POINT_AND_EMPTY_LEAF_POCKETS.md",
+        "sha256": "b1a15d99b0374bdf74c717bdfe781fb1e93c83c0c28b46b53cd485ae9b280e1e",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_LOW_ALIGNED_TCB_ENTIRE_ANNULUS_DOMAIN_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "path": "HIGH_BALANCED_ALIGNED_HOUSE_TCB_ALL_ENDPOINTS_CLOSING_CAPACITY_TWO.md",
+        "sha256": "ea2d727131fcfbfe99f597080fffb49e26b36d00e23e043deaebb5625b316abd",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_LOW_ALIGNED_TCB_ENTIRE_ANNULUS_DOMAIN_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "path": "POSITIVE_PROPER_BOUNDARY_PORT_CAP_FLOOR_AND_THREE_UNIT_EXCLUSION.md",
+        "sha256": "9b249477acaa721bac7afcde5123772f808a851337f51ebc1ea5087159564b6d",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_LOW_ALIGNED_TCB_ENTIRE_ANNULUS_DOMAIN_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "path": "ANNULAR_CENTER_ARC_AT_23_25.md",
+        "sha256": "7628a82b3639f1e75680fec3e85baf62368a611d397b2ac01ae936ec07a14290",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_LOW_ALIGNED_TCB_ENTIRE_ANNULUS_DOMAIN_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "path": "GENERAL_SIDE_CHANNEL_CAP_INNER_ARC.md",
+        "sha256": "f76d76ef2feccc80098fb6d10d6316af4e393d3ae34d4953846dd27b80c137cb",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_LOW_ALIGNED_TCB_ENTIRE_ANNULUS_DOMAIN_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "path": "LEAF_ANYWHERE_TWO_BOUNDARY_FOUR_RING_EXCLUSION.md",
+        "sha256": "9db8a26928788aed477e7be8be0984a78ceb64f6b8499fbec52dfba12fdbe824",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_LOW_ALIGNED_TCB_ENTIRE_ANNULUS_DOMAIN_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "path": "CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md",
+        "sha256": "b61b0dec7ded00984c687e353fd3f3bfb5a5a7ade45d87d69aaeade09f23d80b",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_LOW_ALIGNED_TCB_ENTIRE_ANNULUS_DOMAIN_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "path": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+        "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_LOW_ALIGNED_TCB_ENTIRE_ANNULUS_DOMAIN_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "path": "END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+        "sha256": "20a845eff8bee3e9c533162df0b32ea96f9dd104a3cfec41efb3b0cf92d6e9cf",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_LOW_ALIGNED_TCB_ENTIRE_ANNULUS_DOMAIN_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "path": "ADAPTIVE_THREE_UNIT_CAP_RADIUS_OVER_SQRT_TWO_2026_10_29_CONTINUATION.md",
+        "sha256": "7baa4831abdfa1ec97d3e504fa70a00b0b5763e371016a52b67e0b25b54cf6ae",
+        "matches": true
+      }
+    ],
+    "failures": []
+  },
+  "remaining_tcb_domain": "Low aligned 2<R<sqrt(17)/2 and epsilon^2+max(a^2,b^2)>=(R-sqrt(2))^2; equality retained",
+  "metadata_files": [
+    {
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "bytes": 1012952,
+      "sha256": "9a105220fdb7b7ff8e30ee4ba7b2924461ec58d9776fd46d03bb05f1dc4fdfa1",
+      "git_blob": "7a5ab299011dc04bef45863e0e134af33d95bc87"
+    },
+    {
+      "path": "research/nine/HANDOFF_PR11_2026_10_28_CURRENT.md",
+      "bytes": 105201,
+      "sha256": "a0fac5ed8bf0e5557a5b54c728866a866e68b24fe8c2e437506734c745f4c747",
+      "git_blob": "3895580931dd732277ea46907f24f2e136b7a054"
+    }
+  ],
+  "global_sharp_theorem_closed": false,
+  "equality_closed": false,
+  "global_prerequisite_audit_closed": false,
+  "lean_compilation_run": false,
+  "ci_or_workflow_dispatched": false,
+  "merge_run": false
+}

@@ -1,0 +1,210 @@
+{
+  "input_commit": "4d2b3d62ce489b3251f0241d6c592e868fd7a410",
+  "scope": "Hand theorems and exact fixed rational checks; unrestricted n=9 theorem remains open.",
+  "adoption": {
+    "file": "ADOPTION_UNIFORM_UNLOADED_MODULES_COMMON_STRESS_AND_SCREENED_CYCLES_2026_10_30.md",
+    "sha256": "fc1285a96ca1cc0fb4ce22cda670bcba9c81d7e68900e57e656bf3b7c06f7dcd"
+  },
+  "composition_review": {
+    "file": "REVIEW_UNIFORM_MODULES_STRESS_AND_CYCLE_ADOPTION_COMPOSITION_BRANCH_BUDGET_2026_10_30.md",
+    "sha256": "961c3ab0be20ba37d7f9ed522e9b926dd4dfad59ef42a6edaee6cae42ecdaca9"
+  },
+  "fine_inventory": {
+    "total": 2513,
+    "checked": 2373,
+    "open": 140,
+    "before_ordered_id_flag_sha256": "8b1b9a1cc43a90d4839ea477f0e8017aeb4f3df321c79a0fe1d949f4062fb3f8",
+    "after_ordered_id_flag_sha256": "8b1b9a1cc43a90d4839ea477f0e8017aeb4f3df321c79a0fe1d949f4062fb3f8",
+    "exact_ordered_list_equal": true
+  },
+  "coarse_inventory": {
+    "total": 58,
+    "closed": 36,
+    "open": 22,
+    "before_ordered_id_flag_sha256": "99e0b788a73379a719f331d43581ef02c76ea2e8622a8c8f43bbf21e9ea241bd",
+    "after_ordered_id_flag_sha256": "99e0b788a73379a719f331d43581ef02c76ea2e8622a8c8f43bbf21e9ea241bd",
+    "exact_ordered_list_equal": true
+  },
+  "fixed_rational_checks": {
+    "construction_corners": 16,
+    "pairwise_support_checks": 6,
+    "circle_q": "29660753/6914880",
+    "Q_minus_q": "746713/27659520",
+    "center_distance_squared_minus_two": "520669/1382976",
+    "pocket_crosscut_upper_height": "53077/99960",
+    "nine_halves_minus_Q": "47/256",
+    "twenty_five_quarters_minus_Q": "495/256",
+    "scope": "Only the printed fixed example and displayed exact constants, not a search or packing exclusion certificate."
+  },
+  "review_pins_match_current_sources": true,
+  "new_markdown_display_delimiters_balanced": true,
+  "new_relative_markdown_links_exist": true,
+  "original_flags_changed": 0,
+  "lean_or_lake_invoked": false,
+  "ci_dispatched": false,
+  "numerical_pose_or_angle_search_used": false,
+  "global_theorem_closed": false,
+  "files_excluding_this_checkpoint": [
+    {
+      "path": "research/nine/ADOPTION_UNIFORM_UNLOADED_MODULES_COMMON_STRESS_AND_SCREENED_CYCLES_2026_10_30.md",
+      "bytes": 30903,
+      "sha256": "fc1285a96ca1cc0fb4ce22cda670bcba9c81d7e68900e57e656bf3b7c06f7dcd",
+      "git_blob_sha": "d7609c7a38f63efa12abaa977f25b53c31cc8c5d",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/AUDIT_EXISTING_COMMON_PHYSICAL_PLANAR_CERTIFICATE_AND_EXACT_SELECTION_BOUNDARY_2026_10_30.md",
+      "bytes": 15133,
+      "sha256": "19ebb38d4b8fab87d0ad06dcc5617b1db3caae6ac71aaaa4107dbe17395c2877",
+      "git_blob_sha": "49b076809ec251e0144063061e417862aeafdf6d",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/CANONICAL_ROTATION_OF_UNBLOCKED_UNIQUE_CIRCLE_TWO_FORCE_BODIES_2026_10_30.md",
+      "bytes": 18815,
+      "sha256": "94f4d2ed11af153196d7e68644c5a21b0f3e4619abcb2b042d54a00d1450bda3",
+      "git_blob_sha": "77bdbb8689c5dffcd030ec40befffb462ba08da9",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/CYCLIC_CELL_LEDGER.md",
+      "bytes": 364470,
+      "sha256": "d4ddc360677411ed4669cc9fdd9bffe3a74eeffd86c0385cc6b4a961978b8245",
+      "git_blob_sha": "f9928f194c91ccf70cd6e2ea41d414875d673127",
+      "base_blob_sha": "e99f3d9c42de689101f4fef224893cfe6e287340"
+    },
+    {
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "bytes": 1110152,
+      "sha256": "8d9baaa76775db43c4ace19f4328a6d34a7fc791e03954c8bc788809d44cf4dc",
+      "git_blob_sha": "96aac94001f6ef428334ef57ef677b2fe54fb4b0",
+      "base_blob_sha": "f8aa4ed129057738a8794f9dbe03f92b4b10724b"
+    },
+    {
+      "path": "research/nine/EVERY_UNLOADED_TWO_PORT_MODULE_IS_A_ONE_OR_TWO_SQUARE_CHANNEL_2026_10_30.md",
+      "bytes": 17323,
+      "sha256": "686e49bdd41e6c105cfc0af956a7b294227e62f4332e8b317b3177b0b003fa8a",
+      "git_blob_sha": "87210ec0410113f53fca6e03b2f97068d55fb85c",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/EXACT_OCCUPIED_SIDE_POCKET_OBSTRUCTION_TO_VIRTUAL_CONTACT_REROUTING_2026_10_30.md",
+      "bytes": 4222,
+      "sha256": "aefac8b75f7e8727ca37e343628cb44caceada5a4ddb13372819e7701aa9fdf1",
+      "git_blob_sha": "d3503010f50fe5cca2164d7d72b174134b2496c4",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/GENERIC_MINIMAL_PHYSICAL_STRESSES_HAVE_RATIONAL_WEIGHTS_AND_SHARED_MEANS_2026_10_30.md",
+      "bytes": 17257,
+      "sha256": "fa459e3713c3dc244111528ed65be230dd718a00f388f38f13b6519bb85fa049",
+      "git_blob_sha": "db13406a5f1de2c5925a92e5742bc71981fe37d2",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/GENERIC_TWO_AND_THREE_PORT_CUT_RULES_FOR_ARBITRARY_UNLOADED_BODY_MODULES_2026_10_30.md",
+      "bytes": 15984,
+      "sha256": "f6b12507086fd284e99b637748ef3b40c994c56aba44264a2c3a408338181251",
+      "git_blob_sha": "dabf0eb10ee887dd1cdd33211f03826c2a7aa761",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/HANDOFF_PR11_2026_10_30_PUSH_CURRENT.md",
+      "bytes": 17819,
+      "sha256": "15a4f6487752a2b516615eb135d512a8308160671e011b680beea19900952a3c",
+      "git_blob_sha": "cb5f3321ef2c5afa91c325773f5ba0ae7a3384b9",
+      "base_blob_sha": "72626e4d9ac81d4f360f3ccbfde41da76ea4fbae"
+    },
+    {
+      "path": "research/nine/RADIAL_DIAGONAL_CANONICAL_SURVIVORS_CANNOT_BORDER_A_TRANSMITTER_CHANNEL_2026_10_30.md",
+      "bytes": 11945,
+      "sha256": "1391bc7d07817c3cc38e3aca152aa909ae354749e4702a9fec462d3a77e87434",
+      "git_blob_sha": "b1a8a52b715ec7dfe0cb48c7a200507ef0b31c8a",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/README.md",
+      "bytes": 125914,
+      "sha256": "347dc9230c217f694866c0649965328330afe9b886613f86fa0ade4b07f67350",
+      "git_blob_sha": "50f5d20de4b51a8d1ca13bcf5fcae1796372640d",
+      "base_blob_sha": "4db7dc4c7c6c26708e9bd43dcc8221e585eef830"
+    },
+    {
+      "path": "research/nine/REVIEW_CANONICAL_COMPLETE_CONTACT_ROTATION_AND_RADIAL_DIAGONAL_SURVIVOR_COMMON_CERTIFICATE_2026_10_30.md",
+      "bytes": 10084,
+      "sha256": "e97e32165bf8dac5919efa76f273192c008497ec28f5bbc98ccd012893aab3e3",
+      "git_blob_sha": "afa43ddfe91ba2f3cf4081884f6dd44a533b7c9d",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/REVIEW_CANONICAL_RADIAL_PORT_CHANNEL_EXCLUSION_COMMON_CERTIFICATE_2026_10_30.md",
+      "bytes": 6783,
+      "sha256": "bc116ff46069bc353a9351c0cf3413624535dcd2ee4bf77d6d5a9561efa0794d",
+      "git_blob_sha": "26304fd9b3bde964dd75b2b022d8cb4b340038d9",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/REVIEW_COMPLETE_UNLOADED_TWO_PORT_MODULE_REDUCTION_COMMON_CERTIFICATE_2026_10_30.md",
+      "bytes": 11919,
+      "sha256": "59d238d2423b021c9c33fab26acbcb80979bb7c90e853b5dcd1686390c183e2e",
+      "git_blob_sha": "0a4dac59c5949d547b1035d7c37aae06b9f5866f",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/REVIEW_GENERIC_MINIMAL_PHYSICAL_RATIONAL_STRESS_JOINT_POCKETS_INDEPENDENT_2026_10_30.md",
+      "bytes": 13870,
+      "sha256": "aaee006049a42aba1f401f624c76252573597c21bd2af4d079831858209f0465",
+      "git_blob_sha": "038674c2cbab5109622339aa5ea2e4db52b9ff25",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/REVIEW_GENERIC_TWO_THREE_PORT_UNLOADED_MODULE_CUTS_BRANCH_BUDGET_INDEPENDENT_2026_10_30.md",
+      "bytes": 14664,
+      "sha256": "b8c0e97d822da38d43bf5577ec9a85bea75eec059751a1afcc020ecd6e4e4dcd",
+      "git_blob_sha": "eb6c4d704c169ceaf8399afcda93699a113060cd",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/REVIEW_SIMULTANEOUS_SINGLETON_CYCLE_ROTATIONS_COMMON_CERTIFICATE_2026_10_30.md",
+      "bytes": 14076,
+      "sha256": "95f03709839153e6ec80537937bcb60a972e1a08c3b70cc5322128e4167ea052",
+      "git_blob_sha": "85672617887dfb5fe66f2c4767b75a5f29f5ef8e",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/REVIEW_UNIFORM_MODULES_STRESS_AND_CYCLE_ADOPTION_COMPOSITION_BRANCH_BUDGET_2026_10_30.md",
+      "bytes": 8490,
+      "sha256": "961c3ab0be20ba37d7f9ed522e9b926dd4dfad59ef42a6edaee6cae42ecdaca9",
+      "git_blob_sha": "962a1064e767673f793be9c926402bc99673ef0a",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/REVIEW_UNLOADED_NETWORK_TERMINAL_DISTANCE_AND_BRANCH_CUT_BUDGET_COMMON_CERTIFICATE_2026_10_30.md",
+      "bytes": 9152,
+      "sha256": "1a5d3d4d19def8064e0d31a5b483b8ba8399557e46b132e9b17197e02e501881",
+      "git_blob_sha": "a2c61ea49da400be2031a95794dca565d4050629",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/ROADMAP.md",
+      "bytes": 104660,
+      "sha256": "663a89958c01b0d5ee7a02535386dbdeb94570461b6ff48e893fdb1ed1fae809",
+      "git_blob_sha": "0005a28626d1ef4028b0928be88d54f2678f3d38",
+      "base_blob_sha": "06c57858a3cb44354d88cf745272c8f3fff9b224"
+    },
+    {
+      "path": "research/nine/SIMULTANEOUS_ROTATIONS_EXCLUDE_SINGLETON_CYCLES_WITH_PHYSICALLY_ISOLATED_MOVING_STARS_2026_10_30.md",
+      "bytes": 21628,
+      "sha256": "d3688215df65fbfa810b0a357119cf0a5787151b53f773607e53c4d2032c0997",
+      "git_blob_sha": "975cf9fb1750c1e12a46cad18c63a769970a7db7",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/UNLOADED_NETWORK_TERMINAL_DISTANCE_AND_FULL_BRANCH_CUT_BUDGET_2026_10_30.md",
+      "bytes": 18087,
+      "sha256": "28506dbf70ccc567765d98f9a4021c79dc46acb5c40fa682993886ab1fca4e46",
+      "git_blob_sha": "69d4b186e84011c90c9d2df39d04bf0648d335b0",
+      "base_blob_sha": null
+    }
+  ]
+}

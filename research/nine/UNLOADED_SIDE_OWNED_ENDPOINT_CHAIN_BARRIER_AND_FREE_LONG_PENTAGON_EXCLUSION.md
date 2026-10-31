@@ -1,0 +1,500 @@
+# An unloaded owned endpoint cannot join an upper contact chain to a one-unit outer barrier
+
+Date: October 28, 2026 UTC. Author: pentagon continuation.
+
+**Status: complete proposed uniform radius-free theorem and complete
+free-long-end pentagon interface, frozen for full independent and root
+review.** The local theorem needs an unloaded true degree-three A.
+The degrees, loads and all other forces at H,B,C,E are arbitrary.
+Its full proof is printed below; no D-owned premise is transferred
+from the preceding parallel-return theorem.
+
+The original consequence excludes a free HD whenever the two entire
+physical CD and DE contact sets are more than one unit apart. Together
+with the complete same-axis exit, a compulsory long end in the original
+three-load pentagon must therefore be externally owned with a genuinely
+nonparallel return. This is a necessary-domain reduction, not a whole
+H4_D0.L124 closure.
+
+## 1. Exact general theorem with arbitrary other degrees
+
+Let H,A,B,C,E be distinct actual closed unit squares with pairwise
+disjoint open interiors. Retain actual contacts
+
+    HA, HB, HC, AB, BC, AE,
+
+and their unchanged separating normals and original application means.
+A is unloaded and its entire positive neighborhood is H,B,E, with all
+three magnitudes positive. H,B,C,E may have any true degrees and loads;
+none of their original equations is replaced by a smaller star.
+
+Use the common compatible strict point-normal certificate and the
+pre-extraction rule for an unloaded true degree-three star with three
+distinct physical singleton ports. No normal is changed subsequently.
+
+Normalize a local geometric point P of H to (0,0); this does not
+identify P with any containing-circle origin. Assume
+
+    e=(-a,-b), f=(-b,a), a,b>0, a^2+b^2=1,
+    H=[0,1]e+[0,1]f,
+    V=e, W=f, Z=e+f.                                  (1)
+
+The unchanged HA normal strictly exposes V in H and is a side axis
+owned by A, whose actual application V is relative side-interior.
+The unchanged HC normal strictly exposes W in H. The actual HB
+contact has its original support normal, and
+
+    P does not belong to B.                            (2)
+
+The entire real C and E obey the actual barriers
+
+    C subset {y>0},
+    E subset {x>=1},
+    Q=(1,u) belongs to E for some u>=0.                (3)
+
+The point Q is an actual minimum-x support point, permitted to be
+an unchanged shared-side mean. No force or degree assumption is
+made there.
+
+**Theorem.** The complete domain (1)--(3) is impossible.
+
+This is the radius-free argument underlying Sections 3--7 of the
+complete D-owned parallel-return exclusion. Its statement here
+isolates exactly the local hypotheses that that argument uses,
+removes all other-body degree assumptions, and derives the needed
+AE force sign directly from (3).
+
+## 2. Two complete actual-unit support facts
+
+### 2.1. The sharp span with all side means
+
+If an actual unit K has minimum-n support at a real point S, where
+n is unit, and v is unit with n.v<0, then
+
+    max_(X in K) v.(X-S)<=sqrt(1-(n.v)^2).              (4)
+
+At a vertex S choose the actual inward orthonormal axes. Their n
+components are nonnegative. Both v components cannot be positive,
+since that would give n.v>0. The sole possible positive component
+is at most the maximum of v.r over the closed unit semicircle
+n.r>=0, namely sqrt(1-(n.v)^2). At a side support the normal
+displacement has nonpositive v projection, while the actual unit
+tangent interval contributes at most the absolute perpendicular
+v component. This proves (4) for every actual mean and endpoint.
+
+Two familiar physical consequences will be used. First, if one
+normal in an actual three-unit triangle is an own side axis of the
+central unit, its dot product with the other original normal is
+nonnegative. Normalize that axis to East on [0,1]^2: its neighbor
+lies in x>=1, whereas a negative-x normal at x=0 would put the
+whole other neighbor in x<1 by (4).
+
+Second, neighbors at two opposite strict vertices of a unit cannot
+touch. At the strict Southeast vertex (1,0), (4) puts the external
+neighbor wholly in x>0,y<1. At the strict Northwest vertex (0,1)
+it puts the other wholly in x<1,y>0. A common point would lie in
+the central unit's open interior, which is impossible for another
+actual closed unit with disjoint open interior. Reflections cover
+the other opposite pair. These are complete physical corollaries
+of (4), not assumptions about positive force degrees.
+
+### 2.2. An inward support below a left port points weakly up
+
+Let K be any actual unit with minimum-x support Q_0=(q,z). If an
+actual support point T of K has
+
+    T_y<z, T_x<q+1,                                   (5)
+
+then every inward supporting unit normal g of K at T satisfies
+
+    g_y>=0.                                          (6)
+
+For aligned K=[q,q+1] times [r,r+1], the conditions exclude its
+right and top sides. Every remaining inward support cone is
+generated by East and North, so (6) follows at every mean endpoint.
+
+For nonaligned K, Q_0 is its unique leftmost vertex. Write the
+actual inward axes as (c,-d),(d,c), with c,d>0 and c^2+d^2=1.
+The upper vertex has height z+c>z and the opposite vertex has
+x coordinate q+c+d>q+1. The lower vertex and the two open sides
+incident there have inward normal generators (-c,d) and (d,c),
+whose y components are positive. The side from Q_0 to the upper
+vertex has y>=z. The only remaining side is
+
+    Q_0+(d,c)+lambda*(c,-d), 0<=lambda<=1.
+
+If a point there has height below z, lambda>c/d and its x
+coordinate exceeds q+d+c^2/d=q+1/d>q+1, contrary to (5).
+The point Q_0 itself does not meet the strict height condition.
+This covers every feature and proves (6) for all original means.
+
+## 3. Every original AE point is below P and its force points weakly up
+
+Take any actual T in A intersect E. Both V=(-a,-b) and T belong
+to the same unit A. From (3) and its diameter,
+
+    1+a<=sqrt(2),
+    0<a<=sqrt(2)-1<1/2,
+    b>sqrt(3)/2>4/5,
+    1<=T_x<=-a+sqrt(2)<2.                             (7)
+
+If T_y>=0, its distance from V would satisfy
+
+    |T-V|^2>=(1+a)^2+b^2=2+2*a>2.
+
+Thus every actual AE point has T_y<0<=u. Section 2.2 applies to
+the unchanged E at its real Q=(1,u) and the original AE application.
+Consequently its full original A-to-E force has
+
+    (F_AE)_y>=0.                                      (8)
+
+This is proved for the actual AE support, not for a chosen point
+normal or a replacement of an original mean.
+
+## 4. The complete A-owned frame and full A3 equation
+
+Let n be the unchanged unit normal from H into A. Its strict H
+support at V makes n_y<0. Also n_x>0: if n_x<=0, its owned inward
+axis contributes nonpositively to rightward reach from V, and the
+actual tangent interval contributes at most one. This contradicts
+the reach of more than one to T_x>=1. Therefore
+
+    n=(c,-d), j=(d,c), c,d>0, c^2+d^2=1,
+    A=V+[0,1]n+[-kappa,1-kappa]j,
+    0<kappa<1.                                        (9)
+
+The full A-to-H vector is -Gamma*n, Gamma>0. In the H frame,
+
+    n=delta*e-eta*f,
+    delta=b*d-a*c>0,
+    eta=b*c+a*d>0,
+    delta^2+eta^2=1.                                  (10)
+
+The A-owned AH axis and the actual A-H-B triangle imply F_AB.n<=0.
+Full A3 and (8) imply (F_AB)_y<0, since (F_AH)_y=Gamma*d>0.
+Thus the exact original force components have the form
+
+    F_AB=-rho*n-sigma*j,
+    F_AE=(Gamma+rho)*n+sigma*j,
+    rho>=0, sigma>0.                                  (11)
+
+Their actual A applications are
+
+    R=P_AB=V+tau*n-kappa*j, 0<=tau<=1,
+    rho>0 implies tau=0,
+    T=P_AE=V+n+(1-kappa)j.                             (12)
+
+The whole A3 moment equation about V is
+
+    sigma*(1-tau)=(1-kappa)*Gamma+rho.                 (13)
+
+Indeed its AB and AE moments are -tau*sigma-kappa*rho and
+sigma-(1-kappa)*(Gamma+rho), respectively; AH has zero moment.
+
+The actual T_x>=1 gives
+
+    -a+c+(1-kappa)*d>=1,
+    c+d>1+a,
+    c>a, d<b.                                        (14)
+
+If c<=a the middle inequality would fail because d<1. The last
+inequality then follows from the two unit identities. Every original
+AB side mean in (12) remains in these equations.
+
+## 5. The entire A-owned-axis AB return is below C
+
+If rho=0, B has its unchanged minimum-(-j) support at R. Apply
+the sharp span (4) upward, with -j=(-d,-c). The whole B satisfies
+
+    max_B y<=R_y+d=-b+(1-tau)*d-kappa*c<0              (15)
+
+by d<b. This includes any actual shared AB side, both mean endpoints,
+and every frame of B. It contradicts BC and C subset {y>0} in (3).
+
+Thus only rho>0 remains.
+
+## 6. A strict AB vertex forces the original HB normal southwest
+
+For rho>0, equations (12)--(13) give
+
+    R=V-kappa*j,
+    sigma=(1-kappa)*Gamma+rho<Gamma+rho.
+
+The nonnegative vertical AE component in (8), written using (11),
+now gives d/c<=sigma/(Gamma+rho)<1. In particular
+
+    c>d, c>1/sqrt(2)>1/2.                             (16)
+
+We cover the entire original HB feature. P is unavailable by (2).
+V is also unavailable: the actual side-interior A half-plane there
+and the strict H vertex quadrant leave two angular gaps each smaller
+than pi/2, so no third actual square can contain V. A strict HB at
+W is opposite strict HA and contradicts AB by Section 2.1.
+
+For an H-owned HB axis, +e or -f has negative dot product with
+the strict HC direction at W, and -e or +f has negative dot product
+with the strict HA direction at V. The respective physical H-B-C
+and H-A-B triangles exclude all four axes. Hence HB is strict at Z,
+and its original unit normal is
+
+    n_HB=x*e+y*f, x,y>0, x^2+y^2=1.                    (17)
+
+Apply (4) to A at V in direction f, and to B at Z in direction
+-f. They give max_A f.(X-V)<=delta and
+min_B f.(X-V)>=1-x. The actual AB contact therefore requires
+
+    delta+x>=1.                                      (18)
+
+But (10), (16) and Cauchy--Schwarz give
+
+    delta+a=b*d+a*(1-c)
+             <=sqrt(d^2+(1-c)^2)
+             =sqrt(2-2*c)<1.
+
+Thus x>a and y<b. In the actual world coordinates (1),
+
+    (n_HB)_x=-a*x-b*y<0,
+    (n_HB)_y=-b*x+a*y<0.                              (19)
+
+No full H force or moment equation was used: its degree and load
+are arbitrary throughout this local theorem.
+
+## 7. Actual B ownership contradicts its unchanged two support points
+
+The three A contacts in this rho>0 case are physical singletons
+at the distinct points V, R=V-kappa*j and
+T=V+n+(1-kappa)j. AH is side-interior on A and strict on H;
+AB and AE strictly expose actual A vertices. Each separating
+support therefore gives precisely a singleton intersection, not
+a point-valued mean on a longer shared side.
+
+The common pre-extraction theorem for the full unloaded A3
+excludes a free AB normal. It is not A-owned because rho,sigma>0,
+so it must be an actual B axis. No normal has been reselected.
+
+Write that unchanged inward unit normal of B as
+
+    n_AB=(-k,-h), k,h>0, k^2+h^2=1.                    (20)
+
+The original R is on its minimum-n_AB side. By (19), the inward
+HB direction is also strictly southwest, and n_HB.n_AB>0.
+In B's actual own coordinates its minimum-n_HB support at Z must
+therefore have minimum n_AB coordinate. Consequently
+
+    n_AB.(Z-R)=0.                                    (21)
+
+The actual BC contact and (3) give max_B y>0. Applying (4) upward
+at R under (20), whose upward span is at most k, gives
+
+    k>b+kappa*c>b,
+    h<a,
+    kappa*c<1-b,
+    kappa*d<1-b.                                     (22)
+
+The final inequality uses c>d. Since
+
+    Z-R=f+kappa*j=(-b+kappa*d,a+kappa*c),
+
+these unchanged support points satisfy
+
+    n_AB.(Z-R)
+      =k*(b-kappa*d)-h*(a+kappa*c)
+      >b*(2*b-1)-a*(a+1-b)
+      >(4/5)*(3/5)-(1/2)*(1/2+1/5)
+      =13/100>0.                                    (23)
+
+Every factor being compared is positive; (7) supplies a<1/2
+and b>4/5. Equation (23) contradicts (21). This excludes the
+last rho>0 feature and completes the entire general theorem.
+
+## 8. Literal original free-long-HD pentagon entry
+
+Now retain the original nine-unit H4_D0.L124 domain, with all
+six-body forces and all three additional real units, in
+
+    79/40<=R<=sqrt(1105)/16.
+
+Its graph is HA,HB,HC,HD,AB,BC,CD,DE,EA, with genuine unloaded
+H4,A3,D3 and positively loaded B3,C3,E2. Suppose HD is free and
+the two complete actual contact sets satisfy
+
+    |X-Y|>1 for every X in C intersect D and Y in D intersect E.
+                                                               (24)
+
+**Original interface theorem.** This entire free-HD domain is
+impossible, regardless of the opposite end's original owner.
+
+The complete local conclusion of Sections 2--8 of
+INNER_PENTAGON_TWO_UNLOADED_ENDS_BOTH_FREE_COMPLETE_EXCLUSION.md
+applies to precisely (24): a free HD with (24) forces genuine
+A ownership of HA, after the complete H-owner exit. That local
+argument does not require HA to be free until its final free-HA
+subcase; it excludes that subcase and explicitly leaves only
+A-side ownership. We retain that complete conclusion.
+
+For clarity, its full unchanged entry is as follows. Normalize
+the actual free D/H vertex to the local origin and use the legitimate
+whole diagonal reflection made in that source:
+
+    D=[0,1]^2,
+    P_HD=0,
+    F_DH=(-alpha,-beta), alpha,beta>0,
+    F_DC=(-gamma,beta), P_CD=(0,1), gamma>0,
+    F_DE=(alpha+gamma,0), P_DE=(1,s),
+    s=gamma/(alpha+gamma), 0<s<1,
+    E=[1,2] times [r,r+1], -1<r<0,
+    0<s<=r+1<1.                                      (25)
+
+Every displayed mean is the original one. The entire shared-CD
+alternative was excluded there using (24) at the actual points
+(0,1) and (1,1); this was not a replacement of its original mean.
+The coincident free CD/HD endpoint and the all-singleton alternative
+were excluded with the full original stars and common preselection.
+Thus the shared-DE chart (25) covers the entire current free-HD
+domain under (24), including the mean endpoint s=r+1.
+
+The same complete source, Sections 5--6, proves before using a
+free-HA hypothesis that
+
+    e=(-a,-b), f=(-b,a), a,b>0, a^2+b^2=1,
+    H=[0,1]e+[0,1]f,
+    P_HA=V=e,
+    a<=sqrt(2)-1,
+    C subset {y>0}.                                  (26)
+
+Both original HD and HA normals strictly expose their stated H
+vertices. Its whole four-neighbor common-corner theorem excludes
+HA at 0; the diameter and actual A/D segment argument exclude
+the other H vertices. All of these are literal local conclusions
+with an A-owned HA permitted. No equation at B,C,E is shortened.
+
+To apply the general theorem, it remains to prove its missing
+conditions P not in B and the strict original HC support at W=f.
+These are proved next, without an extra normal choice.
+
+## 9. Every third unit at the free HD corner lies below C
+
+Suppose the actual B contains P=0. At this point D has its
+Northeast quadrant. Put a=sin(theta), b=cos(theta), with
+0<theta<pi/2. The actual H quadrant in (26) has angular interval
+
+    [pi-theta, 3*pi/2-theta].
+
+The two remaining closed angular gaps have lengths
+pi/2-theta and pi/2+theta. The first is smaller than a square's
+right angle and cannot contain B's tangent sector. The second
+is smaller than pi and lies entirely in the lower half-plane,
+between angles 3*pi/2-theta and 2*pi.
+
+Thus B could only have a vertex there, with both inward axes
+in that lower gap. Its whole actual square would satisfy y<=0.
+An edge-interior or interior tangent sector is too large to fit
+either gap. Closed equality directions on the gap boundaries
+do not alter the weak y<=0 conclusion.
+
+But (26) gives C subset {y>0}, contradicting the actual BC
+contact. Therefore P does not belong to B, proving (2).
+
+## 10. The complete original HC feature is the upper H vertex
+
+Let N be the unchanged unit normal H-to-C and S its actual
+application or original shared mean. The actual points P=0 of H
+and Q_C=(0,1) of C give
+
+    N.P<=N.S<=N.Q_C,
+    N_y>=0.
+
+Equality is impossible. An East normal would apply at H's unique
+rightmost P=0, which is not in C by (26). A West normal would
+give H support a+b>1 while N.Q_C=0. Thus N_y>0.
+
+We cover every actual H support. Strict P is impossible because
+C avoids y=0. A strict V=e support has negative world y component.
+The -f axis also has negative world y component. At the opposite
+strict H vertex Z=e+f, both own components would be positive and
+the support value would exceed one, whereas N.Q_C=N_y<=1.
+The +e and +f axes have support value one but respective Q_C
+projections -b and a, both strictly below one. They too are
+impossible. The complete remaining cover is
+
+    F_HC=(-C0,D0) in (e,f), C0>0, D0>=0,
+    S=tau*f, 0<tau<=1,
+    D0>0 implies tau=1.                               (27)
+
+The zero mean endpoint S=0 is physically unavailable, not moved.
+
+If D0=0, the H-owned HC axis -e and the actual H-B-C triangle
+force the HB e component to be nonpositive. A strict HB at W=f
+is opposite HA at V and contradicts AB. The axes -e and +f
+have negative dot product with the strict HA direction, so H-A-B
+excludes them. A strict negative/negative HB would apply at P,
+excluded by Section 9. The only remaining nonzero HB feature
+is the -f axis.
+
+But HA has strictly negative f component, HB then has strictly
+negative f component, and HD also has strictly negative f
+component because its original H support at P is strict. HC
+has zero f component. The entire genuine H4 force equation
+therefore cannot sum to zero. No original term is omitted.
+
+Consequently D0>0 and S=W=f in (27). This is exactly the strict
+HC premise of the general theorem.
+
+## 11. Full join and the compulsory-long-end consequence
+
+Equations (25)--(26), Sections 9--10, and the inherited genuine
+A ownership now satisfy every hypothesis of Sections 1--7:
+
+* the actual H frame and HA/HC vertices are (1);
+* Section 9 gives P not in B;
+* the whole C lies in y>0;
+* the real E is in x>=1 and contains its unchanged original
+  point Q=(1,s), with s>0;
+* A retains its entire unloaded positive three-force star.
+
+The general theorem gives a contradiction. This proves the
+entire free-HD interface under (24), including all CD/DE physical
+features, both endpoints of every surviving side mean, the full
+opposite-end owner cover, and every physical circle mask.
+
+For the original H4_D0.L124 family, summing all six full force
+equations gives F_B+F_C+F_E=0. The actual BC contact and the
+complete balanced-three-boundary metric theorem imply that at
+least one of the two ends has its two entire physical return
+sets more than one apart. Apply the graph-preserving whole
+reflection A<->D, B<->C if necessary to name that end D.
+
+H ownership of HD is already excluded. The present theorem
+excludes free HD at this actual long end. The complete parallel
+return theorem excludes D-owned HD with a same-D-axis DC return.
+The owned-axis D-H-C triangle excludes the opposite D axis.
+Hence the compulsory long end must be genuinely D-owned, and
+its original DC return is either a perpendicular D axis or a
+strict non-D-axis vertex normal. These are entire remaining
+contact-feature classes with all original means retained.
+
+No conclusion is asserted here for those two remaining classes,
+or for the opposite short end's owner. The whole original L124
+family and its coarse parent remain open.
+
+## 12. Exact direct sources and verification boundary
+
+| Source | SHA-256 | Exact operative use |
+| --- | --- | --- |
+| INNER_PENTAGON_TWO_UNLOADED_ENDS_D_OWNED_PARALLEL_RETURN_COMPLETE_EXCLUSION.md | 1aa7d4e964ecdcc1311e00419531a76f7eb8e877a255f8aeca68e2b5d1de54e8 | Local endpoint argument generalized and completely rederived in Sections 1--7; whole same-axis exit used only in the final original-family reduction |
+| INNER_PENTAGON_TWO_UNLOADED_ENDS_BOTH_FREE_COMPLETE_EXCLUSION.md | d534f80fa11c3fe8db5c1a22fedaae0cf529ab879759742f9dc8f71f17ceb1b3 | Complete Sections 2--8 local free-long-end chart and explicit A-owned opposite-end conclusion, with every shared return and mean |
+| GENERAL_UNLOADED_THREE_DISTINCT_SINGLETON_PORTS_HAVE_NO_FREE_NORMAL_SELECTION.md | 7700a4547542af9fc25b0e0b3d14f2113529069df0b007443c18d690da1137bb | Common compatible pre-extraction restriction, applied only at the full actual A3 with three proved distinct physical singletons |
+| INNER_PENTAGON_H_OWNED_UNLOADED_END_FIXED_OPPOSITE_RETURN_VERTICES.md | bc1b08bc93401e25891f1307139c465409e4a3e260670513087b658c210e0f8c | Sharp support-span lemma, fully rederived in Section 2.1 |
+| INNER_PENTAGON_D_OWNED_PARALLEL_RETURN_FORCES_OWNED_OPPOSITE_END.md | 708f169478c51fdda0ff8d4dff61a0d113bf88ac80c5f6fa3ab9efcaee4d47da | Force-free below-port support-normal lemma, fully rederived in Section 2.2 |
+| INNER_PENTAGON_TWO_UNLOADED_ENDS_EAST_RETURN_AND_WHOLE_H_OWNER_EXCLUSION.md | fcd6217a246b06e39ed34eb4bbd94c8e12ab47dd958cbf8de04859b2815f5d96 | Entire original H-owned end exclusion, inherited at the free-long-end entry and used in Section 11 |
+| INNER_PENTAGON_FOUR_SPOKE_NO_CHORD_OCCUPIED_POCKETS_AND_LONG_PORT_REDUCTION.md | ad0a8e658d303d7527a383c4688fa4bfdae1a04f46cecfb59c424cc4028e02a6 | Complete literal three-load full-force-sum and all-contact-set compulsory-long-end reduction |
+| PHYSICAL_BODY_GRAPH_UNCROSSING.md | bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe | Common unchanged strict point-normal and physical contact conventions |
+| PHYSICAL_CONTACT_STRESS.md | d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5 | Original full force, moment, application and shared-mean conventions |
+
+The general theorem retains arbitrary true degrees and every
+original force at H,B,C,E. Its original caller restores genuine
+H4/A3/B3/C3/D3/E2 without changing any equation. All nine actual
+units, complete physical contact sets and circle masks remain.
+No endpoint mean, normal, circle origin or physical square is
+moved. No computation, sampled cover, Lean edit, build, CI,
+metadata, commit or remote action enters the proof.

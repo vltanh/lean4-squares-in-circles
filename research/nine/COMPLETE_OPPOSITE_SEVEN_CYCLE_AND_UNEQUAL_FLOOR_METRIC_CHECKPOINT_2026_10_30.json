@@ -1,0 +1,209 @@
+{
+  "checkpoint": "complete sharp opposite seven-cycle and unequal-floor metric",
+  "date_utc": "2026-10-30",
+  "input_head": "af242719a9ade0111f2f8a3805b428417ec8e7e8",
+  "files": [
+    {
+      "path": "research/nine/UNIFORM_FLOOR_POSITIVE_TILT_LEFT_SECTION_BOUND_2026_10_30.md",
+      "bytes": 6342,
+      "sha256": "5029d8729481ff2a461fa1e3fd0aef05c1c89b1a555f9443f76fd5b8f3ffdbf0",
+      "git_blob": "ac14fc093fbf56221a9f8187dcda2ffe79c0f968"
+    },
+    {
+      "path": "research/nine/UNIFORM_UNEQUAL_FLOOR_SECTION_PROFILE_AND_TWO_UNIT_CAP_METRIC_2026_10_30.md",
+      "bytes": 19344,
+      "sha256": "abfb4887037851d2715c8ff746ff11dc238109692b2cc0fbc42598bb4dae9d94",
+      "git_blob": "b6b0386cc7ea56c0b25a4946f845ca9554043fc4"
+    },
+    {
+      "path": "research/nine/ALIGNED_ENDPOINT_CORNER_WRAPPERS_OBEY_THE_UNEQUAL_FLOOR_SECTION_BOUND_2026_10_30.md",
+      "bytes": 10936,
+      "sha256": "55607f2ab5a25c056fcc12e893b3d4c7e60814c6d2e607c21b806277d29de5bc",
+      "git_blob": "9188bd15f6f9c008f3cbdfa70d721b0bde78c138"
+    },
+    {
+      "path": "research/nine/OBLIQUE_ALIGNED_ENDPOINT_RETURN_SECTION_BOUND_BY_ACTUAL_UPPER_CORNER_TANGENT_2026_10_30.md",
+      "bytes": 15777,
+      "sha256": "a43df2c0bdf368d43c5858829e9a5594b8ac202fcfcf5b59e10d9282f8572bea",
+      "git_blob": "76c79a5c915fb41232b81fcaee1efa8cf81e6bfc"
+    },
+    {
+      "path": "research/nine/COMPLETE_OPPOSITE_LONG_SHORT_SEVEN_CYCLE_SHARP_RADIUS_AND_FOUR_ANCHOR_RIGIDITY_2026_10_30.md",
+      "bytes": 17582,
+      "sha256": "4b094c6e45c844ee804db13ed1bde76f0be8e30db037b9fc5c97b59be025a670",
+      "git_blob": "c3dc667e8fae4ad20a1de08b03abaa042b8a1247"
+    },
+    {
+      "path": "research/nine/REVIEW_UNIFORM_FLOOR_POSITIVE_TILT_SECTION_AXIAL_INDEPENDENT_2026_10_30.md",
+      "bytes": 2895,
+      "sha256": "bd6bd4ee7617f0d459b23903b28a62f08298daed0a0feff4913b2adea7694a6f",
+      "git_blob": "22cc1fd6b2bf110965eb80532db399b8322e0c12"
+    },
+    {
+      "path": "research/nine/REVIEW_UNIFORM_FLOOR_POSITIVE_TILT_SECTION_BLOCK_EARS_2026_10_30.md",
+      "bytes": 4343,
+      "sha256": "c79126b5999e87d2378a1fdcb9b1339cabdb16c9c14c60fe685afe045dbba0f5",
+      "git_blob": "0d8d778971ccd5ca762a301b580517709218f2e7"
+    },
+    {
+      "path": "research/nine/REVIEW_UNIFORM_UNEQUAL_FLOOR_PROFILE_AND_CAP_METRIC_ANNULAR_INDEPENDENT_2026_10_30.md",
+      "bytes": 10402,
+      "sha256": "18c49ad88fd80b30deb733c0b8f3b53ce15ca591734c4f7ff0263fb50796d6ce",
+      "git_blob": "de18628959eaee62849f541815e1e80a7ae04e37"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_INDEPENDENT_ALIGNED_RETURN_WRAPPERS_AXIAL_2026_10_30.md",
+      "bytes": 8594,
+      "sha256": "e683cfd1141834130898ddf16bf9a4f3028f408f6239583a0d7722fd3b34257a",
+      "git_blob": "92d2c560e45724708ca074e9babe9500c36df256"
+    },
+    {
+      "path": "research/nine/REVIEW_OBLIQUE_RETURN_ACTUAL_CORNER_TANGENT_ANNULAR_INDEPENDENT_2026_10_30.md",
+      "bytes": 8644,
+      "sha256": "104247cd0f95d444d4253ab96db4334c96ea9a7798861e902c4f090debf53aa5",
+      "git_blob": "21466fefa815bf519f3020a4388b2846020c7987"
+    },
+    {
+      "path": "research/nine/REVIEW_COMPLETE_UNEQUAL_FLOOR_PROFILE_AND_OBLIQUE_RETURN_WRAPPER_BLOCK_EARS_2026_10_30.md",
+      "bytes": 11098,
+      "sha256": "0166d0a3d27366d17e50876a5575f2a61a333510ae28f70fdfb02bf36536b86f",
+      "git_blob": "53f85bce97f4aa5c4bcb6d9f798521f10ad51418"
+    },
+    {
+      "path": "research/nine/REVIEW_UNEQUAL_FLOOR_SECTION_METRIC_AND_BOTH_WRAPPER_PROOFS_ROOT_2026_10_30.md",
+      "bytes": 12166,
+      "sha256": "fdfd64e137776908dd0fda68678f57e60592ffb075ee0ecd7334bb8fb30a25de",
+      "git_blob": "0dc9725839e67e4fddcdf142160b72cc74717e3d"
+    },
+    {
+      "path": "research/nine/REVIEW_COMPLETE_OPPOSITE_LONG_SHORT_SEVEN_CYCLE_ANNULAR_INDEPENDENT_2026_10_30.md",
+      "bytes": 10972,
+      "sha256": "d22bf3d82fccb45edbac8f9339ff7d11ac5560327919a3ab1b506af219de2cf1",
+      "git_blob": "703ab6041063eba6f756a636a5e49d757945f25f"
+    },
+    {
+      "path": "research/nine/REVIEW_COMPLETE_OPPOSITE_SEVEN_CYCLE_AND_FOUR_ANCHOR_RIGIDITY_BLOCK_EARS_2026_10_30.md",
+      "bytes": 11460,
+      "sha256": "eed849d7f0cb7a879323a22763542eeac517bb8e62e1fd8881fbb836290b8b2e",
+      "git_blob": "7658023bf02a3927e72dbd9fce716e33e78f1e07"
+    },
+    {
+      "path": "research/nine/ADOPTION_COMPLETE_OPPOSITE_SEVEN_CYCLE_AND_UNEQUAL_FLOOR_METRIC_2026_10_30.md",
+      "bytes": 9770,
+      "sha256": "fac7828c432ff52fa7dd2e7351a6190b3d7367d7b956268bd6516ddc63837bed",
+      "git_blob": "cd0305dd9517964d354a881c50344d7eedea2036"
+    },
+    {
+      "path": "research/nine/README.md",
+      "bytes": 120886,
+      "sha256": "dc4cb776e7c490f6f35431e3426b67dc8ac59def64a10470c41fb6875a0e558c",
+      "git_blob": "fdcc24911a69330558e1e676b79895408dd61291"
+    },
+    {
+      "path": "research/nine/ROADMAP.md",
+      "bytes": 99632,
+      "sha256": "1df0ed8f9877af9db7624cf382f59db42b80b7b1cf87b60c80372cc9b10ba665",
+      "git_blob": "c4f0bbfd06b177e7c9f3c3e0f50fa80e263e916d"
+    },
+    {
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "bytes": 1104381,
+      "sha256": "2153f137516edfc986cba5b1b59de0a056b389d7a266fbec2952f0d7375e2154",
+      "git_blob": "fc0dd16dccaacdab9959bee2b021d3496271eeb7"
+    },
+    {
+      "path": "research/nine/CYCLIC_CELL_LEDGER.md",
+      "bytes": 358156,
+      "sha256": "912b74c1359850f58d603e2014fed02817ceb5cbe629b4954feb2c201f75fca7",
+      "git_blob": "6139aa606884ecb58f95523d8728f85621c8bd3f"
+    }
+  ],
+  "source_table_hash_occurrences_verified": 24,
+  "distinct_source_table_pins_verified": 10,
+  "exact_arithmetic": {
+    "method": "Exact rational arithmetic and full polynomial coefficient identities; no numerical pose samples or search.",
+    "rational_checks": {
+      "floor_ratio_margin": "2155/9936",
+      "positive_second_derivative_margin": "341/320",
+      "positive_diagonal_first_radical_margin": "149/6400",
+      "positive_diagonal_reserve": "1/80",
+      "negative_floor_derivative_margin": "1141/24334",
+      "negative_tangent_curvature_square_reserve": "13583/32768",
+      "negative_tangent_slope_square_reserve": "80261/38812500",
+      "bernstein_uniform_lower": "24119/115200",
+      "wrapper_no_section_radius_gap": "737/1200",
+      "wrapper_no_section_reach_square_margin": "1415",
+      "wrapper_opposite_face_sqrt621_margin": "99/100",
+      "wrapper_opposite_face_sqrt15_margin": "71/400",
+      "wrapper_opposite_face_reserve": "1/48",
+      "wrapper_tangent_beta_coefficient": "67/320",
+      "wrapper_tangent_first_term": "281/1280",
+      "wrapper_J_lower_endpoint_bound": "11929/6400",
+      "wrapper_J_upper_endpoint_exact": "7333/3840",
+      "wrapper_J_lower_endpoint_reserve": "89/6400",
+      "wrapper_J_upper_endpoint_reserve": "229/3840",
+      "wrapper_tangent_bracket_reserve": "19/140",
+      "average_floor_equality_circle": "9/4",
+      "aligned_long_endpoint_equality_circle": "1105/256",
+      "wrapper_squared_first_term_lower": "7/15",
+      "wrapper_squared_mixed_coefficient": "37/960",
+      "wrapper_squared_quadratic_reserve": "1471/57600",
+      "wrapper_squared_full_braces_reserve": "67/240",
+      "wrapper_corner_sum_denominator_reserve": "1/112",
+      "wrapper_corner_quadratic_lower_floor": "245/256",
+      "wrapper_corner_quadratic_upper_floor": "65/72",
+      "wrapper_corner_quadratic_gap": "11/256",
+      "cycle_derived_lower_radius_reserve": "1/40",
+      "section_reversed_order_width_square_margin": "721/3600"
+    },
+    "polynomial_identities": {
+      "negative_tilt_half_angle_expansion": true,
+      "complete_degree_five_bernstein_identity": true,
+      "wrapper_full_squared_difference_identity": true,
+      "wrapper_full_tangent_identity": true
+    },
+    "bernstein_coefficients": [
+      "1",
+      "404/375",
+      "16409/18000",
+      "142987/216000",
+      "343139/864000",
+      "24119/115200"
+    ]
+  },
+  "original_fine_inventory": {
+    "total": 2513,
+    "checked": 2373,
+    "open": 140,
+    "identifiers_order_flags_unchanged": true
+  },
+  "original_coarse_inventory": {
+    "total": 58,
+    "closed": 36,
+    "open": 22,
+    "identifiers_order_flags_unchanged": true
+  },
+  "complete_conclusions": [
+    "Every orientation and floor in [3/8,1/2] obeys the sharp horizontal section profile at height5/4, with strictness for every nonzero tilt and complete aligned equality.",
+    "Two independently oriented actual units above unequal floors obey dist<=sqrt(Q-(f1+1)^2)+sqrt(Q-(f2+1)^2)-2. The metric is sharp on the full continuous floor domain.",
+    "Every actual below-floor oblique return at an aligned long endpoint obeys the same strict one-sided section bound, with full vertex/side contact cover and genuine section existence. Two independent complete continuous proofs are adopted.",
+    "The entire opposite (2,0,1,0) positive seven-cycle with the stated full true degrees and compatible physical embedding forces q>=Q. Extra positive edges at the two return marks and all completing units remain.",
+    "At q=Q the four actual boundary anchors are (+/-3/2,-1/16),(+/-1,15/16); the original direct normals are vertical and the original short direction horizontal. Internal transverse heights and means are retained rather than fixed.",
+    "The broader separated-return local theorem requires no embedding or independent lower-radius window. The cycle derives q>=4 from its actual long normal-chord points before invoking the return-side input."
+  ],
+  "remaining": [
+    "Other simple-C7 load/run families including the adjacent long/short orbit",
+    "All22 original coarse parents including arbitrary chorded/branching blocks",
+    "Smaller-core and attachment physical completions",
+    "Unrestricted lower bound and complete equality classification",
+    "G4.2.c common-selection audit for remaining downstream callers"
+  ],
+  "verification_limits": {
+    "lean_compilation": false,
+    "ci_dispatch": false,
+    "merge": false,
+    "proof_uses_pose_grid": false,
+    "unpublished_exploratory_grid_ran_earlier": true,
+    "exploratory_grid_disclosure": "The prior checkpoint discloses one off-scope exploratory grid. Further searches were stopped. No grid observation supplies a premise, verification substitute or closure credit in these complete continuous proofs."
+  }
+}

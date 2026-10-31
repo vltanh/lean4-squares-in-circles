@@ -1,0 +1,187 @@
+{
+  "status": "exact arithmetic and named-source verification; mathematical audit in accompanying review",
+  "sources": [
+    {
+      "filename": "INNER_PENTAGON_FOUR_SPOKE_NO_CHORD_OCCUPIED_POCKETS_AND_LONG_PORT_REDUCTION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/diamond/INNER_PENTAGON_FOUR_SPOKE_NO_CHORD_OCCUPIED_POCKETS_AND_LONG_PORT_REDUCTION.md",
+      "sha256": "ad0a8e658d303d7527a383c4688fa4bfdae1a04f46cecfb59c424cc4028e02a6"
+    },
+    {
+      "filename": "INNER_PENTAGON_OCCUPIED_HUB_AND_EXTERIOR_POCKET_LOCALIZATION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/INNER_PENTAGON_OCCUPIED_HUB_AND_EXTERIOR_POCKET_LOCALIZATION.md",
+      "sha256": "37fad266560ea5e2bca29723f4db00617c35a67be2e82b70fbf743b75006a502"
+    },
+    {
+      "filename": "GENERAL_BALANCED_THREE_BOUNDARY_FULL_WINDOW_METRIC_EXCLUSION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/diamond/GENERAL_BALANCED_THREE_BOUNDARY_FULL_WINDOW_METRIC_EXCLUSION.md",
+      "sha256": "5da69931a63ac7cbf93ec3ff494489dc05d2245017da1c4dcddf1b4a8a6c956e"
+    },
+    {
+      "filename": "CONTACT_RING_HOLE_AREA.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/CONTACT_RING_HOLE_AREA.md",
+      "sha256": "50034e7eabf4812c6a9f87a801f07dabe7a444d723c62fdc63d096c6ceb0ec6f"
+    },
+    {
+      "filename": "CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md",
+      "sha256": "b61b0dec7ded00984c687e353fd3f3bfb5a5a7ade45d87d69aaeade09f23d80b"
+    },
+    {
+      "filename": "CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "sha256": "e54df61d3134c5709bee5ac1a250fdd51084828da114d896f14c7e6337c4e8c5"
+    },
+    {
+      "filename": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe"
+    },
+    {
+      "filename": "SIX_BODY_INNER_PENTAGON_LOAD_COVER.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/SIX_BODY_INNER_PENTAGON_LOAD_COVER.md",
+      "sha256": "cfe85a201b09182200d5270f0dcdc0e590bf99eded19aaf6d56f86830e959c0a"
+    },
+    {
+      "filename": "FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "sha256": "164d08bb2c4dfe8510247e44298d309920cb88a780221252d833f51aa654225f"
+    },
+    {
+      "filename": "UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "sha256": "db073cd024a4f2e763e7cd0a21bf5cb6a2a8be67069f3f9d3aff638b8a40b258"
+    },
+    {
+      "filename": "SIX_BODY_CYCLIC_FRONTIER.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/SIX_BODY_CYCLIC_FRONTIER.md",
+      "sha256": "bba1a13de5bc91fefde2911782817e9127d77ce05699e9adec781f7d8fed6af0"
+    }
+  ],
+  "printed_pin_checks": [
+    {
+      "parent": "INNER_PENTAGON_FOUR_SPOKE_NO_CHORD_OCCUPIED_POCKETS_AND_LONG_PORT_REDUCTION.md",
+      "dependency": "SIX_BODY_INNER_PENTAGON_LOAD_COVER.md",
+      "sha256": "cfe85a201b09182200d5270f0dcdc0e590bf99eded19aaf6d56f86830e959c0a",
+      "matches": true
+    },
+    {
+      "parent": "INNER_PENTAGON_FOUR_SPOKE_NO_CHORD_OCCUPIED_POCKETS_AND_LONG_PORT_REDUCTION.md",
+      "dependency": "INNER_PENTAGON_OCCUPIED_HUB_AND_EXTERIOR_POCKET_LOCALIZATION.md",
+      "sha256": "37fad266560ea5e2bca29723f4db00617c35a67be2e82b70fbf743b75006a502",
+      "matches": true
+    },
+    {
+      "parent": "INNER_PENTAGON_FOUR_SPOKE_NO_CHORD_OCCUPIED_POCKETS_AND_LONG_PORT_REDUCTION.md",
+      "dependency": "GENERAL_BALANCED_THREE_BOUNDARY_FULL_WINDOW_METRIC_EXCLUSION.md",
+      "sha256": "5da69931a63ac7cbf93ec3ff494489dc05d2245017da1c4dcddf1b4a8a6c956e",
+      "matches": true
+    },
+    {
+      "parent": "INNER_PENTAGON_FOUR_SPOKE_NO_CHORD_OCCUPIED_POCKETS_AND_LONG_PORT_REDUCTION.md",
+      "dependency": "FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "sha256": "164d08bb2c4dfe8510247e44298d309920cb88a780221252d833f51aa654225f",
+      "matches": true
+    },
+    {
+      "parent": "INNER_PENTAGON_OCCUPIED_HUB_AND_EXTERIOR_POCKET_LOCALIZATION.md",
+      "dependency": "SIX_BODY_INNER_PENTAGON_LOAD_COVER.md",
+      "sha256": "cfe85a201b09182200d5270f0dcdc0e590bf99eded19aaf6d56f86830e959c0a",
+      "matches": true
+    },
+    {
+      "parent": "INNER_PENTAGON_OCCUPIED_HUB_AND_EXTERIOR_POCKET_LOCALIZATION.md",
+      "dependency": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "matches": true
+    },
+    {
+      "parent": "INNER_PENTAGON_OCCUPIED_HUB_AND_EXTERIOR_POCKET_LOCALIZATION.md",
+      "dependency": "CONTACT_RING_HOLE_AREA.md",
+      "sha256": "50034e7eabf4812c6a9f87a801f07dabe7a444d723c62fdc63d096c6ceb0ec6f",
+      "matches": true
+    },
+    {
+      "parent": "INNER_PENTAGON_OCCUPIED_HUB_AND_EXTERIOR_POCKET_LOCALIZATION.md",
+      "dependency": "CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md",
+      "sha256": "b61b0dec7ded00984c687e353fd3f3bfb5a5a7ade45d87d69aaeade09f23d80b",
+      "matches": true
+    },
+    {
+      "parent": "INNER_PENTAGON_OCCUPIED_HUB_AND_EXTERIOR_POCKET_LOCALIZATION.md",
+      "dependency": "CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "sha256": "e54df61d3134c5709bee5ac1a250fdd51084828da114d896f14c7e6337c4e8c5",
+      "matches": true
+    }
+  ],
+  "exact_identities": [
+    {
+      "name": "upper center reserve",
+      "exact_value": "31/57600"
+    },
+    {
+      "name": "lower center bound",
+      "exact_value": "19/15"
+    },
+    {
+      "name": "corner radius rational reserve",
+      "exact_value": "1/576"
+    },
+    {
+      "name": "corner angle lower radius reserve",
+      "exact_value": "27/200"
+    },
+    {
+      "name": "sqrt3 upper rational reserve",
+      "exact_value": "1/225"
+    },
+    {
+      "name": "cosine lower rational reserve",
+      "exact_value": "3/196"
+    },
+    {
+      "name": "center corner mm",
+      "exact_value": "722/1575"
+    },
+    {
+      "name": "center corner mM",
+      "exact_value": "2201/3600"
+    },
+    {
+      "name": "center corner MM",
+      "exact_value": "1183/1800"
+    },
+    {
+      "name": "sqrt2 rational reserve",
+      "exact_value": "1/4900"
+    },
+    {
+      "name": "small arc argument",
+      "exact_value": "297/532"
+    },
+    {
+      "name": "large arc argument",
+      "exact_value": "507/532"
+    },
+    {
+      "name": "sin2u greater than sinv reserve",
+      "exact_value": "1742127084"
+    },
+    {
+      "name": "cotangent square reserve",
+      "exact_value": "5105"
+    }
+  ],
+  "graph_checks": {
+    "H4_reflection_preserves_original_edges_and_L124": true,
+    "H4_complete_degree_sum": 18,
+    "complete_pocket_path_partitions": [
+      "H4.L124",
+      "H4.L0124",
+      "H2.L013",
+      "H2.L1234",
+      "H3.L024",
+      "H3.L1234",
+      "H3.L0124"
+    ]
+  }
+}

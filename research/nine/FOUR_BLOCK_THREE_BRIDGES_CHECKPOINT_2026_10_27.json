@@ -1,0 +1,116 @@
+{
+  "base_head": "3ab01d0c60aca0125e7700f7c8575be81828a09b",
+  "coarse_closed": 32,
+  "coarse_open": 26,
+  "coarse_total": 58,
+  "fine_checked": 2319,
+  "fine_total": 2513,
+  "changed_fine_ids": [],
+  "same_ordered_original_fine_states": true,
+  "b3_total_original_placements": 24,
+  "b3_complete_placements": 22,
+  "b3_remaining_original_rows": [
+    7,
+    9
+  ],
+  "b3_remaining_whole_domains": [
+    "Three direct leaves at three C4 vertices",
+    "Three direct leaves at both diamond hubs and one tip"
+  ],
+  "b3_coarse_status": "OPEN",
+  "source_and_review_pins": [
+    {
+      "path": "research/nine/BOUNDARY_UNIT_THREE_NEAR_NEIGHBORS_FRESH_EXCLUSION.md",
+      "sha256": "ba49bbf678dfecdadbd120328de745253c8e5a45a5f7635d7044fc784179f156",
+      "git_blob_sha": "3f1aba292efc71d963131303797718122a3e0e1d",
+      "size": 6263
+    },
+    {
+      "path": "research/nine/FOUR_BODY_BLOCK_DISTINCT_ROOT_SHORT_ARM_AND_LEAF_COMPLETE_EXCLUSION.md",
+      "sha256": "0a1f76aeb2c48410da4161a2654fa12f04e39c6e6e478c58dc93e39fe910c17f",
+      "git_blob_sha": "e1b535ca713d22f2902e325efe6a0cbd5dc8cb0c",
+      "size": 21408
+    },
+    {
+      "path": "research/nine/FOUR_BODY_BLOCK_HIGH_SIDE_ARM_AND_DISTINCT_LEAF_EXCLUSION.md",
+      "sha256": "a8d64410422fe481d39dc077b19cb6c9fcad6315ae412fc05c71a3c18bb76826",
+      "git_blob_sha": "97e33a1fbc4f449ae8fa424e6a616b613df4ca17",
+      "size": 14763
+    },
+    {
+      "path": "research/nine/FOUR_BODY_BLOCK_SHORT_ARM_AND_SAME_ROOT_LEAF_EXCLUSION.md",
+      "sha256": "16c90ef5920f0664e8cfc5c5d8cd11bac667f9444e4e66d5e3f9726740e104a9",
+      "git_blob_sha": "687496384664711113310547d4a43a1104728e9d",
+      "size": 14449
+    },
+    {
+      "path": "research/nine/ONE_FOUR_BODY_BLOCK_THREE_BRIDGES_ATTACHMENT_COVER.md",
+      "sha256": "8cd2cce347c8fe157f9a97ae262dcfed012dbad215b86b5d8f1f4bed7a452fca",
+      "git_blob_sha": "4c8d4ec23f0e3b741fa091faec4fbfd1fa5ab3bd",
+      "size": 17380
+    },
+    {
+      "path": "research/nine/REVIEW_DISTINCT_ROOT_SHORT_ARM_COMPLETE_ROOT_2026_10_27.md",
+      "sha256": "203c1c154d292130bab33e30db8db02c75e64f21bb358f23fadabb9ceff90f54",
+      "git_blob_sha": "2c95a9b6e76ed2d0ef7423838a136540dfe3cf67",
+      "size": 7581
+    },
+    {
+      "path": "research/nine/REVIEW_DOUBLE_GENUINE_LEAF_ROOT_DISTINCT_ROOT_FULL_SIX_BODY_2026_10_27.md",
+      "sha256": "da0c89674c9cc3b0531456557c0083576f28e45d134bf254c46c8604324baff0",
+      "git_blob_sha": "5c9f0c2c44c088ac2b188ed683bfef6368232d35",
+      "size": 11381
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BLOCK_DISTINCT_ARM_LEAF_COMPLETE_JOIN_SIX_BODY_2026_10_27.md",
+      "sha256": "313bce16df8acd3938175d10ed2bb3dc5b220af06e9e01adc286929e56ce791b",
+      "git_blob_sha": "6898ea366594de26e60f32a36daf38dcac243dea",
+      "size": 16763
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BLOCK_HIGH_SIDE_DISTINCT_LEAF_SIX_BODY_2026_10_27.md",
+      "sha256": "63cbdb3438fab027759b980d8d060e0b42d69a06ee2e29e7fbe11bed1332c203",
+      "git_blob_sha": "f00133ab2f93eb8ea130636e646ba47c8623c4a0",
+      "size": 11754
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BLOCK_THREE_BRIDGES_SEVENTEEN_JOINS_ROOT_2026_10_27.md",
+      "sha256": "dadede5f45b9e67d0b400d62cd0f3fa8d2edeebc4b404f2b59b3e84c2c230dc0",
+      "git_blob_sha": "5f9da4796f80c25dad2668001f2b01bfae5ab705",
+      "size": 12505
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BLOCK_THREE_BRIDGES_TWENTY_FOUR_JOIN_SIX_BODY_2026_10_27.md",
+      "sha256": "0713fff19f8016a7d4dafa8406ad2aa423263b9e82472c03e216ab3781dd017b",
+      "git_blob_sha": "14e4546c260ce3a46858a62c547a706ec041fd47",
+      "size": 14266
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BODY_SHORT_ARM_SAME_ROOT_FULL_SIX_BODY_2026_10_27.md",
+      "sha256": "c7f4898ca296c3c1ce6ece103ecf940a0390f07cbf5e7ee4c28400f61325c09d",
+      "git_blob_sha": "500d48c9d377d03fd2c03240ec378664559628c3",
+      "size": 12844
+    },
+    {
+      "path": "research/nine/REVIEW_HIGH_SIDE_DISTINCT_LEAF_ROOT_2026_10_27.md",
+      "sha256": "d0557c71aa3044a1fdc5005d898ccf4c0c1961463729e69f1029efc52b069ea3",
+      "git_blob_sha": "247dde00ac53af00554362e6c244b0c20e06847a",
+      "size": 6782
+    },
+    {
+      "path": "research/nine/TWO_GENUINE_LEAVES_AT_ONE_ROOT_AND_A_DISTINCT_GENUINE_ROOT_EXCLUSION.md",
+      "sha256": "c810d66cb1babc60dc759364692ca5ba8ef4cdfa78875c56d859ae7a58fc9783",
+      "git_blob_sha": "7e50b96ed086ff73e5ac23373b6e10a110605b9a",
+      "size": 12168
+    }
+  ],
+  "optional_unadopted": [
+    "BOUNDARY_UNIT_THREE_NEAR_NEIGHBORS_FRESH_EXCLUSION.md"
+  ],
+  "unrestricted_theorem": "OPEN",
+  "original_equality_classification": "OPEN",
+  "older_global_prerequisite_audit": "OPEN",
+  "lean_integration": "OPEN",
+  "lean_compilation_run": false,
+  "ci_run": false
+}

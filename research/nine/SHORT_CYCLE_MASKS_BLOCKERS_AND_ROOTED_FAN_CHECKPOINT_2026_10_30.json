@@ -1,0 +1,233 @@
+{
+  "input_commit": "3132896f3c306faecfdd69daafb0b577bf7d70a1",
+  "scope": "Eight complete hand sources, exact family joins and original-domain endpoint-fan exclusion; unrestricted n=9 proof remains open.",
+  "adoption": {
+    "file": "ADOPTION_SHORT_CYCLE_MASKS_PHYSICAL_BLOCKERS_AND_ROOTED_FAN_EXCLUSION_2026_10_30.md",
+    "sha256": "a7a9a8b4a3286a65a6dd6c1af0b0ade8c255cbcd7d496254ed156366f8cf5d67"
+  },
+  "composition_review": {
+    "file": "REVIEW_ADOPTION_SHORT_CYCLE_MASKS_BLOCKERS_AND_ROOTED_FAN_COMPOSITION_JOINT_POCKETS_2026_10_30.md",
+    "sha256": "37aed3c051273670aa0859892bdbd4d23fa91d283e8c3bff089d2120c456f2d0"
+  },
+  "separate_contributed_mask_join_review": {
+    "file": "REVIEW_OCCUPIED_SIDE_POCKET_UNIQUE_ENDPOINT_JOIN_ROOT_2026_10_30.md",
+    "sha256": "9bc15bc821dbbf37ca98a46d72e00ba859aa31199b324dc41b8d24df31c46ecf"
+  },
+  "fine_inventory": {
+    "total": 2513,
+    "checked": 2373,
+    "open": 140,
+    "before_ordered_id_flag_sha256": "8b1b9a1cc43a90d4839ea477f0e8017aeb4f3df321c79a0fe1d949f4062fb3f8",
+    "after_ordered_id_flag_sha256": "8b1b9a1cc43a90d4839ea477f0e8017aeb4f3df321c79a0fe1d949f4062fb3f8",
+    "exact_ordered_list_equal": true
+  },
+  "coarse_inventory": {
+    "total": 58,
+    "closed": 36,
+    "open": 22,
+    "before_ordered_id_flag_sha256": "99e0b788a73379a719f331d43581ef02c76ea2e8622a8c8f43bbf21e9ea241bd",
+    "after_ordered_id_flag_sha256": "99e0b788a73379a719f331d43581ef02c76ea2e8622a8c8f43bbf21e9ea241bd",
+    "exact_ordered_list_equal": true
+  },
+  "original_flags_changed": 0,
+  "same_root_C1_5_b3_remaining_rows": [
+    "HOUSE.ROOF",
+    "HOUSE.HUB",
+    "HOUSE.LOWER",
+    "FAN.INNER"
+  ],
+  "newly_excluded_whole_rooted_row": "FAN.ENDPOINT under the original same-root short arm plus direct leaf",
+  "mathematical_sources": 8,
+  "separate_full_source_reviews": 8,
+  "additional_independent_mask_join_reviews": 1,
+  "review_pins_match_current_sources": true,
+  "direct_source_table_pins_checked": 47,
+  "fixed_rational_checks": {
+    "four_minus_forced_shared_radius_squared": "47/576",
+    "lower_d_window_squared_margin": "13/320",
+    "upper_d_window_squared_margin": "31/57600",
+    "radial_tangent_comparison_margin": "29/3600",
+    "upper_phi_comparison_margin": "2/81",
+    "seventh_power_sine_factor": "-3191/15625",
+    "radial_inward_application_gap": "67/1250",
+    "high_root_Y_upper_squared_margin": "7/7500",
+    "sqrt_two_upper_rational_margin": "1/4900",
+    "far_body_r_lower_margin": "1/1400",
+    "Q_below_twenty_five_fourths": "495/256",
+    "high_root_vertical_margin_above_epsilon": "217/300",
+    "private_triangle_radius_comparison": "3479/3600"
+  },
+  "formal_printed_motion_polynomial_identities": 2,
+  "verification_scope": "Current-byte integrity and fixed printed exact arithmetic/algebra only; no numerical pose, angle or packing search.",
+  "new_markdown_display_delimiters_balanced": true,
+  "relative_markdown_links_exist": true,
+  "lean_or_lake_invoked": false,
+  "ci_dispatched": false,
+  "numerical_pose_or_angle_search_used": false,
+  "new_computational_packing_certificate_used": false,
+  "global_theorem_closed": false,
+  "equality_classification_closed": false,
+  "files_excluding_this_checkpoint": [
+    {
+      "path": "research/nine/ADOPTION_SHORT_CYCLE_MASKS_PHYSICAL_BLOCKERS_AND_ROOTED_FAN_EXCLUSION_2026_10_30.md",
+      "bytes": 22141,
+      "sha256": "a7a9a8b4a3286a65a6dd6c1af0b0ade8c255cbcd7d496254ed156366f8cf5d67",
+      "git_blob_sha": "87bd9cfd05528d8df5b92092e9b46236e1718ed8",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/ALL_RADIAL_SHORT_SEVEN_CYCLES_EXCLUDED_BY_EXACT_CENTER_GAPS_2026_10_30.md",
+      "bytes": 17542,
+      "sha256": "8da022d6dc6f432981d2f348e808f81a67fc00b95af620170117ac5e847e0e7d",
+      "git_blob_sha": "9ad31af06397496bfde1e86a98f31a3712941356",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/ALL_SHARED_SHORT_SEVEN_CYCLES_FORCE_RADIUS_BELOW_TWO_2026_10_30.md",
+      "bytes": 15078,
+      "sha256": "af037e1ef7f9fe1a26d662f4b226d3bb446bd8e93cb48b0d7a32e78d141047cb",
+      "git_blob_sha": "31cb2b64d76d87ff5b4c24b154c293d23937eed8",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/CANONICAL_TRANSMITTER_CENTERING_AND_TWO_CIRCLE_CHANNEL_PHYSICAL_BLOCKERS_2026_10_30.md",
+      "bytes": 18994,
+      "sha256": "6b98f1ab4bf1a28b6dc8f4dd233caaf8c14fae6565757e4e9ea82563938d0aa0",
+      "git_blob_sha": "a2b0593ebcef6c3316973b7c6da8760fca58ea34",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/CYCLIC_CELL_LEDGER.md",
+      "bytes": 367052,
+      "sha256": "3cb078eb8990edfe9eb2a97b65ebb0e28c8b3b3dbae45d2875208ed73b23a6b1",
+      "git_blob_sha": "f398007ae31d2551a4f39621ba2c5afa751405a3",
+      "base_blob_sha": "f9928f194c91ccf70cd6e2ea41d414875d673127"
+    },
+    {
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "bytes": 1112338,
+      "sha256": "6f7123603812bfff9d04f6ed562ceabf45c3455207996d7a42ce8196135feb06",
+      "git_blob_sha": "037a47f1dd6be4351689b75b000ff9babc1b65f9",
+      "base_blob_sha": "96aac94001f6ef428334ef57ef677b2fe54fb4b0"
+    },
+    {
+      "path": "research/nine/HANDOFF_PR11_2026_10_30_PUSH_CURRENT.md",
+      "bytes": 21257,
+      "sha256": "d419d1456ad9c5995799f36b7d9a6228fbfd3f4a148d4711adbf8ec802c449a9",
+      "git_blob_sha": "ede544df009be8ab515fdcf5f8f28f519992bc67",
+      "base_blob_sha": "cb5f3321ef2c5afa91c325773f5ba0ae7a3384b9"
+    },
+    {
+      "path": "research/nine/INWARD_CORRECTED_CANONICAL_ROTATION_EXCLUDES_THE_FULL_UNIQUE_CORNER_VERTEX_SCREEN_2026_10_30.md",
+      "bytes": 12567,
+      "sha256": "532af1f5caab560afea6a9c7b20e7503c85417a6692322d55f9adf45917b6742",
+      "git_blob_sha": "7162ec2b6cefdd6bc2ecd03ec88cc5392d1f9d8a",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/MIXED_SHARED_BLOCK_GENERICITY_AND_COMPLETE_PARALLEL_SHORT_C7_EXCLUSION_2026_10_30.md",
+      "bytes": 21867,
+      "sha256": "e5761145e8f5f83fe4cfab2ddee8be20c75058ef25f8923cc052807a6f52ad77",
+      "git_blob_sha": "08937458f56c0034c1066de8e99d45b7e528982f",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/PROGRESS.md",
+      "bytes": 5232,
+      "sha256": "539ad2efd05afe0b9f96e10935edca704901187729771d92380afee0b958e196",
+      "git_blob_sha": "0918ecfd774cdcdc31008a602e39ca75078b445a",
+      "base_blob_sha": "9d7ed85a733888d7031bc70f895449f385d5fa33"
+    },
+    {
+      "path": "research/nine/RADIAL_SIDE_TRANSMITTER_INWARD_BLOCKERS_ARE_CENTRAL_OR_NONCONSECUTIVE_CORE_BODIES_2026_10_30.md",
+      "bytes": 20010,
+      "sha256": "017f05bfc067cb2dff2cfb10d8a16bcb2236c78cfa1eb6a5f06cfdc2badf729e",
+      "git_blob_sha": "32ec466413711de1c21afeb6e1d9b85aeec302e7",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/REVIEW_ADOPTION_SHORT_CYCLE_MASKS_BLOCKERS_AND_ROOTED_FAN_COMPOSITION_JOINT_POCKETS_2026_10_30.md",
+      "bytes": 10545,
+      "sha256": "37aed3c051273670aa0859892bdbd4d23fa91d283e8c3bff089d2120c456f2d0",
+      "git_blob_sha": "1cf3ba68786869c7fc31acd2d1dc2972299c6c4d",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/REVIEW_ALL_RADIAL_SHORT_CYCLE_EXACT_CENTER_GAPS_COMMON_CERTIFICATE_2026_10_30.md",
+      "bytes": 6520,
+      "sha256": "1e47816ce91409d5d95eb5ce16420d178ff4b7ba84133b1f35ceaef891819199",
+      "git_blob_sha": "42031d81b6f5458274c8c37e0a522e77cc053f1f",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/REVIEW_ALL_SHARED_SHORT_SEVEN_CYCLES_ROOT_2026_10_30.md",
+      "bytes": 7680,
+      "sha256": "3e737ad72a939c14a07a581b4b4c8a5456f5f91c66faab18a338f9b36572247f",
+      "git_blob_sha": "431e46ce71946ac4b826474251a3194128107ee8",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/REVIEW_CANONICAL_TRANSMITTER_CENTERING_BLOCKERS_AND_CLEAN_C7_BRANCH_BUDGET_2026_10_30.md",
+      "bytes": 9016,
+      "sha256": "fc4c4a3922f35df05ef377340202d5e1ea2366eddf4a05086e10ec8c028f0750",
+      "git_blob_sha": "24ac67a9477fee25654b911be5f8a5044e29c263",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/REVIEW_INWARD_CORRECTED_UNIQUE_CORNER_ROTATION_BRANCH_BUDGET_2026_10_30.md",
+      "bytes": 7004,
+      "sha256": "d62e6902dea22f2d97660964056fc5572e9b1ae9ba87b1029cab18d56a7050d9",
+      "git_blob_sha": "84286e1c120e291f54284c860a52521a9b4ad84c",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/REVIEW_MIXED_SHARED_BLOCK_GENERICITY_AND_COMMON_FRAME_SHORT_C7_COMMON_CERTIFICATE_2026_10_30.md",
+      "bytes": 12761,
+      "sha256": "3e70f1ae896bfd15df1b4186663a916ce3f2ff658a371cb6c37c93b66a16ff50",
+      "git_blob_sha": "195d08a00a237015c9494c2feb0205337ebdd667",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/REVIEW_OCCUPIED_SIDE_POCKET_UNIQUE_ENDPOINT_JOIN_ROOT_2026_10_30.md",
+      "bytes": 3518,
+      "sha256": "9bc15bc821dbbf37ca98a46d72e00ba859aa31199b324dc41b8d24df31c46ecf",
+      "git_blob_sha": "a7ebb6b1fbfd729b048a81e1f6c8dd19e3019a2c",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/REVIEW_RADIAL_SIDE_INWARD_BLOCKER_ROUTING_JOINT_POCKETS_2026_10_30.md",
+      "bytes": 12379,
+      "sha256": "dacba8eb7b8e0b4ea21b691ec8ff0ffbbd001a54d277cb8585ffc902334ac072",
+      "git_blob_sha": "5db4c0db6b4930f7ddce71002e0febb0dc930a87",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/REVIEW_SAME_ROOT_ENDPOINT_FAN_COMPLETE_MOMENT_EXCLUSION_ROOT_2026_10_30.md",
+      "bytes": 10367,
+      "sha256": "45abbfd52d8ad997712894b1f08ded560cb5636f43bdbfd136e2a28122ad01ab",
+      "git_blob_sha": "1673944085bb48477e7d573957d4e7046f863bc8",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/REVIEW_SAME_ROOT_STRICT_TERMINAL_GAPS_AND_FIVE_BLOCK_REMAINDER_JOINT_POCKETS_2026_10_30.md",
+      "bytes": 12179,
+      "sha256": "702c1afabb962b95d63cdd22c16109f12cf06cbfeafbd1508f0c13da5ef44da8",
+      "git_blob_sha": "05939ab55ba0d365321f4f510d17d1884ce95ae3",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/SAME_ROOT_ARM_LEAF_STRICT_TERMINAL_GAPS_AND_FIVE_BLOCK_REMAINDER_2026_10_30.md",
+      "bytes": 18737,
+      "sha256": "d0d1079a4f4621beda42cfba1f25d8ba0d6d3fdb5f7d0a18b87e5c733dbd1b63",
+      "git_blob_sha": "4619a19aa14a44c745382e34bd2f972336bcd265",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/SAME_ROOT_SHORT_ARM_AND_LEAF_ENDPOINT_FAN_COMPLETE_MOMENT_EXCLUSION_2026_10_30.md",
+      "bytes": 22448,
+      "sha256": "f1d6ad3a95cc24a5d33697380e30d725f9cacaea945b0fe2972a9b478e51035b",
+      "git_blob_sha": "55291eae985713de96c56319f1317cd10781f13a",
+      "base_blob_sha": null
+    }
+  ]
+}

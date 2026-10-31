@@ -1,0 +1,352 @@
+{
+  "date_utc": "2026-10-29",
+  "published_parent": "4bac6267048978508fd9f003efc559a904ca6594",
+  "fine_total": 2513,
+  "fine_checked": 2365,
+  "fine_open": 148,
+  "coarse_total": 58,
+  "coarse_closed": 34,
+  "coarse_open": 24,
+  "changed_original_fine_ids": [],
+  "changed_original_coarse_ids": [],
+  "original_inventory_checkpoint": {
+    "path": "research/nine/COMPLETE_D02_L014_AND_FULL_STAR_CONE_CHECKPOINT_2026_10_29.json",
+    "bytes": 460143,
+    "sha256": "78d58b3cf8c6f9e4aa7dc3947db6f5fc220c3d4612447f3cf2616449d37b3d98",
+    "git_blob": "43d6e438321f94b3b95c7bed7e1e1642efa25b38"
+  },
+  "current_roadmap_identity": {
+    "path": "research/nine/DEEP_GATED_ROADMAP.md",
+    "bytes": 1011926,
+    "sha256": "c254590c78560611be185e156090fa68878082d551ef056a30981e71a6eed44a",
+    "git_blob": "71dba30fd4c6748d333fb47a92f6c2786f05d71f"
+  },
+  "original_fine_inventory_exactly_unchanged": true,
+  "source_review_pairs": [
+    {
+      "source": {
+        "path": "research/nine/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+        "bytes": 20196,
+        "sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334",
+        "git_blob": "75fa5e0b4a97ec854ecd4a3af0ef03799c78a5cb"
+      },
+      "review": {
+        "path": "research/nine/REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "bytes": 13485,
+        "sha256": "167e5f8a305f33944e798668394d1d3efd92b4626968f3ad75dea494f371c154",
+        "git_blob": "ebc03976c208188226e8745d4ea2d2f9ea9e53b8"
+      }
+    },
+    {
+      "source": {
+        "path": "research/nine/ADAPTIVE_THREE_UNIT_CAP_RADIUS_OVER_SQRT_TWO_2026_10_29_CONTINUATION.md",
+        "bytes": 9573,
+        "sha256": "7baa4831abdfa1ec97d3e504fa70a00b0b5763e371016a52b67e0b25b54cf6ae",
+        "git_blob": "66ac9f3094d307fccbd6ce978c461e167f29330c"
+      },
+      "review": {
+        "path": "research/nine/REVIEW_ADAPTIVE_THREE_UNIT_CAP_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "bytes": 8676,
+        "sha256": "ee2bd980f186ce68519c117bfaa3607dbc1fbc31910d49706badc10896ad705f",
+        "git_blob": "a84c228212da2dfddcaefe1818279f6ca88d1db1"
+      }
+    },
+    {
+      "source": {
+        "path": "research/nine/PARALLEL_INCOMING_HUB_AXIS_UNLOADED_TERMINAL_ALL_NONZERO_SHIFTS_EXCLUSION.md",
+        "bytes": 26456,
+        "sha256": "074a99386129712c440516a6d0f70bd887cfe208c37ba449762bbee7c291707e",
+        "git_blob": "bb79562d22f5704499e38c3b3a992caa73a65930"
+      },
+      "review": {
+        "path": "research/nine/REVIEW_ALL_NONZERO_PARALLEL_INCOMING_SHIFTS_HEXAGON_2026_10_29_CONTINUATION.md",
+        "bytes": 13141,
+        "sha256": "5c14c3ca6b593201af5a168e821ab9024e7d15f071d3afaec2c8fd5074fdd41a",
+        "git_blob": "5d379b6b604201395ad934b238825d27e6251837"
+      }
+    },
+    {
+      "source": {
+        "path": "research/nine/UNLOADED_TERMINAL_BRIDGE_SPAN_AND_FREE_RETURN_AXIS_EXCLUSIONS.md",
+        "bytes": 23922,
+        "sha256": "946ed94b0b9156f1bc54cefa4d7384ef3f36be09f60a94af398f5a7278289204",
+        "git_blob": "7c75ccff50db273b7042ec54337d19551c68d6a1"
+      },
+      "review": {
+        "path": "research/nine/REVIEW_UNLOADED_TERMINAL_BRIDGE_SPAN_FREE_RETURN_AXIS_EXCLUSIONS_REVIEW_RESUME_2026_10_29.md",
+        "bytes": 25926,
+        "sha256": "47f0bc25c5dc94abe3a549bcca651b83c323356ba73df81b9cc2c09f3296373f",
+        "git_blob": "80f20a63bca58fed1e49d8282eae2d5d07f11711"
+      }
+    }
+  ],
+  "direct_pin_audit": {
+    "checks": [
+      {
+        "source": "ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+        "path": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+        "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+        "matches": true
+      },
+      {
+        "source": "ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+        "path": "TWO_OPPOSING_SHALLOW_CENTERS_FORCE_WHOLE_UNIT_HALFPLANE.md",
+        "sha256": "53cfc1a53daddc7efae7b0cdd3ff982db9732af02e5167ab200bcc6300956af2",
+        "matches": true
+      },
+      {
+        "source": "ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+        "path": "HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+        "sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143",
+        "matches": true
+      },
+      {
+        "source": "ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+        "path": "ALIGNED_RADIAL_C_GENUINE_S_HOUSE_OWNED_AD_UPPER_MEAN_INTERVAL_EXCLUSION.md",
+        "sha256": "80bf0a971d264ccaeacbcf27facd819ebe0feb803d3b7ccbd42cb314d7364cc1",
+        "matches": true
+      },
+      {
+        "source": "ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+        "path": "PHYSICAL_CONTACT_STRESS.md",
+        "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "path": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+        "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "path": "TWO_OPPOSING_SHALLOW_CENTERS_FORCE_WHOLE_UNIT_HALFPLANE.md",
+        "sha256": "53cfc1a53daddc7efae7b0cdd3ff982db9732af02e5167ab200bcc6300956af2",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "path": "HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+        "sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "path": "ALIGNED_RADIAL_C_GENUINE_S_HOUSE_OWNED_AD_UPPER_MEAN_INTERVAL_EXCLUSION.md",
+        "sha256": "80bf0a971d264ccaeacbcf27facd819ebe0feb803d3b7ccbd42cb314d7364cc1",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "path": "PHYSICAL_CONTACT_STRESS.md",
+        "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+        "matches": true
+      },
+      {
+        "source": "PARALLEL_INCOMING_HUB_AXIS_UNLOADED_TERMINAL_ALL_NONZERO_SHIFTS_EXCLUSION.md",
+        "path": "PHYSICAL_CONTACT_STRESS.md",
+        "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+        "matches": true
+      },
+      {
+        "source": "PARALLEL_INCOMING_HUB_AXIS_UNLOADED_TERMINAL_ALL_NONZERO_SHIFTS_EXCLUSION.md",
+        "path": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+        "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+        "matches": true
+      },
+      {
+        "source": "PARALLEL_INCOMING_HUB_AXIS_UNLOADED_TERMINAL_ALL_NONZERO_SHIFTS_EXCLUSION.md",
+        "path": "BOUNDARY_TRIANGLE_UNLOADED_TERMINAL_CHAIN_COMPLETE_RADIUS_REDUCTION.md",
+        "sha256": "a967bb48602466727c2b28208f8884d50be96f03a553abaaa42d960661e9ee33",
+        "matches": true
+      },
+      {
+        "source": "PARALLEL_INCOMING_HUB_AXIS_UNLOADED_TERMINAL_ALL_NONZERO_SHIFTS_EXCLUSION.md",
+        "path": "REVIEW_BOUNDARY_TRIANGLE_UNLOADED_TERMINAL_COMPLETE_RADIUS_REDUCTION_REVIEW_RESUME_2026_10_29.md",
+        "sha256": "f0493ed4912561f48f61a806d7ad20cb832a094a2ff1b43f0258a566bac04623",
+        "matches": true
+      },
+      {
+        "source": "PARALLEL_INCOMING_HUB_AXIS_UNLOADED_TERMINAL_ALL_NONZERO_SHIFTS_EXCLUSION.md",
+        "path": "UNLOADED_TERMINAL_BRIDGE_SPAN_AND_FREE_RETURN_AXIS_EXCLUSIONS.md",
+        "sha256": "946ed94b0b9156f1bc54cefa4d7384ef3f36be09f60a94af398f5a7278289204",
+        "matches": true
+      },
+      {
+        "source": "PARALLEL_INCOMING_HUB_AXIS_UNLOADED_TERMINAL_ALL_NONZERO_SHIFTS_EXCLUSION.md",
+        "path": "SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+        "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1",
+        "matches": true
+      },
+      {
+        "source": "PARALLEL_INCOMING_HUB_AXIS_UNLOADED_TERMINAL_ALL_NONZERO_SHIFTS_EXCLUSION.md",
+        "path": "PARALLEL_INCOMING_HUB_AXIS_CHAIN_POCKET_NEAR_ORIGIN_AND_FOUR_LOAD_FEATURES.md",
+        "sha256": "ae4e518534c911e778d81db0a6a3a644e186066e29edd1b1ba2a60819c1371da",
+        "matches": true
+      },
+      {
+        "source": "PARALLEL_INCOMING_HUB_AXIS_UNLOADED_TERMINAL_ALL_NONZERO_SHIFTS_EXCLUSION.md",
+        "path": "REVIEW_PARALLEL_INCOMING_HUB_AXIS_CHAIN_FOUR_LOAD_ROOF_RESUME_2026_10_28.md",
+        "sha256": "5f2049d2078ca83d6a24a477169799eb1dc8f01e4f0dae5ab64c16fab0d8c9d3",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_ALL_NONZERO_PARALLEL_INCOMING_SHIFTS_HEXAGON_2026_10_29_CONTINUATION.md",
+        "path": "PHYSICAL_CONTACT_STRESS.md",
+        "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_ALL_NONZERO_PARALLEL_INCOMING_SHIFTS_HEXAGON_2026_10_29_CONTINUATION.md",
+        "path": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+        "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_ALL_NONZERO_PARALLEL_INCOMING_SHIFTS_HEXAGON_2026_10_29_CONTINUATION.md",
+        "path": "BOUNDARY_TRIANGLE_UNLOADED_TERMINAL_CHAIN_COMPLETE_RADIUS_REDUCTION.md",
+        "sha256": "a967bb48602466727c2b28208f8884d50be96f03a553abaaa42d960661e9ee33",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_ALL_NONZERO_PARALLEL_INCOMING_SHIFTS_HEXAGON_2026_10_29_CONTINUATION.md",
+        "path": "REVIEW_BOUNDARY_TRIANGLE_UNLOADED_TERMINAL_COMPLETE_RADIUS_REDUCTION_REVIEW_RESUME_2026_10_29.md",
+        "sha256": "f0493ed4912561f48f61a806d7ad20cb832a094a2ff1b43f0258a566bac04623",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_ALL_NONZERO_PARALLEL_INCOMING_SHIFTS_HEXAGON_2026_10_29_CONTINUATION.md",
+        "path": "UNLOADED_TERMINAL_BRIDGE_SPAN_AND_FREE_RETURN_AXIS_EXCLUSIONS.md",
+        "sha256": "946ed94b0b9156f1bc54cefa4d7384ef3f36be09f60a94af398f5a7278289204",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_ALL_NONZERO_PARALLEL_INCOMING_SHIFTS_HEXAGON_2026_10_29_CONTINUATION.md",
+        "path": "REVIEW_UNLOADED_TERMINAL_BRIDGE_SPAN_FREE_RETURN_AXIS_EXCLUSIONS_REVIEW_RESUME_2026_10_29.md",
+        "sha256": "47f0bc25c5dc94abe3a549bcca651b83c323356ba73df81b9cc2c09f3296373f",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_ALL_NONZERO_PARALLEL_INCOMING_SHIFTS_HEXAGON_2026_10_29_CONTINUATION.md",
+        "path": "SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+        "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_ALL_NONZERO_PARALLEL_INCOMING_SHIFTS_HEXAGON_2026_10_29_CONTINUATION.md",
+        "path": "PARALLEL_INCOMING_HUB_AXIS_CHAIN_POCKET_NEAR_ORIGIN_AND_FOUR_LOAD_FEATURES.md",
+        "sha256": "ae4e518534c911e778d81db0a6a3a644e186066e29edd1b1ba2a60819c1371da",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_ALL_NONZERO_PARALLEL_INCOMING_SHIFTS_HEXAGON_2026_10_29_CONTINUATION.md",
+        "path": "REVIEW_PARALLEL_INCOMING_HUB_AXIS_CHAIN_FOUR_LOAD_ROOF_RESUME_2026_10_28.md",
+        "sha256": "5f2049d2078ca83d6a24a477169799eb1dc8f01e4f0dae5ab64c16fab0d8c9d3",
+        "matches": true
+      },
+      {
+        "source": "UNLOADED_TERMINAL_BRIDGE_SPAN_AND_FREE_RETURN_AXIS_EXCLUSIONS.md",
+        "path": "PHYSICAL_CONTACT_STRESS.md",
+        "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+        "matches": true
+      },
+      {
+        "source": "UNLOADED_TERMINAL_BRIDGE_SPAN_AND_FREE_RETURN_AXIS_EXCLUSIONS.md",
+        "path": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+        "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+        "matches": true
+      },
+      {
+        "source": "UNLOADED_TERMINAL_BRIDGE_SPAN_AND_FREE_RETURN_AXIS_EXCLUSIONS.md",
+        "path": "SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+        "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1",
+        "matches": true
+      },
+      {
+        "source": "UNLOADED_TERMINAL_BRIDGE_SPAN_AND_FREE_RETURN_AXIS_EXCLUSIONS.md",
+        "path": "FREE_BOUNDARY_VERTEX_ADJACENT_HUB_PORTS_ALL_RETURN_NEAR_ORIGIN.md",
+        "sha256": "e5515892f7b1f12ef6884c293eb668069ef1b7dd32582ca996eea00471e4188f",
+        "matches": true
+      },
+      {
+        "source": "UNLOADED_TERMINAL_BRIDGE_SPAN_AND_FREE_RETURN_AXIS_EXCLUSIONS.md",
+        "path": "REVIEW_FREE_BOUNDARY_VERTEX_ALL_RETURN_NEAR_ORIGIN_ROOF_RESUME_2026_10_29.md",
+        "sha256": "7312346a1ab4a926c23bd8bf3c734fef394593069f975874c8af139f727551d4",
+        "matches": true
+      },
+      {
+        "source": "UNLOADED_TERMINAL_BRIDGE_SPAN_AND_FREE_RETURN_AXIS_EXCLUSIONS.md",
+        "path": "PARALLEL_INCOMING_HUB_AXIS_CHAIN_POCKET_NEAR_ORIGIN_AND_FOUR_LOAD_FEATURES.md",
+        "sha256": "ae4e518534c911e778d81db0a6a3a644e186066e29edd1b1ba2a60819c1371da",
+        "matches": true
+      },
+      {
+        "source": "UNLOADED_TERMINAL_BRIDGE_SPAN_AND_FREE_RETURN_AXIS_EXCLUSIONS.md",
+        "path": "REVIEW_PARALLEL_INCOMING_HUB_AXIS_CHAIN_FOUR_LOAD_ROOF_RESUME_2026_10_28.md",
+        "sha256": "5f2049d2078ca83d6a24a477169799eb1dc8f01e4f0dae5ab64c16fab0d8c9d3",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_UNLOADED_TERMINAL_BRIDGE_SPAN_FREE_RETURN_AXIS_EXCLUSIONS_REVIEW_RESUME_2026_10_29.md",
+        "path": "PHYSICAL_CONTACT_STRESS.md",
+        "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_UNLOADED_TERMINAL_BRIDGE_SPAN_FREE_RETURN_AXIS_EXCLUSIONS_REVIEW_RESUME_2026_10_29.md",
+        "path": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+        "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_UNLOADED_TERMINAL_BRIDGE_SPAN_FREE_RETURN_AXIS_EXCLUSIONS_REVIEW_RESUME_2026_10_29.md",
+        "path": "SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+        "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_UNLOADED_TERMINAL_BRIDGE_SPAN_FREE_RETURN_AXIS_EXCLUSIONS_REVIEW_RESUME_2026_10_29.md",
+        "path": "FREE_BOUNDARY_VERTEX_ADJACENT_HUB_PORTS_ALL_RETURN_NEAR_ORIGIN.md",
+        "sha256": "e5515892f7b1f12ef6884c293eb668069ef1b7dd32582ca996eea00471e4188f",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_UNLOADED_TERMINAL_BRIDGE_SPAN_FREE_RETURN_AXIS_EXCLUSIONS_REVIEW_RESUME_2026_10_29.md",
+        "path": "REVIEW_FREE_BOUNDARY_VERTEX_ALL_RETURN_NEAR_ORIGIN_ROOF_RESUME_2026_10_29.md",
+        "sha256": "7312346a1ab4a926c23bd8bf3c734fef394593069f975874c8af139f727551d4",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_UNLOADED_TERMINAL_BRIDGE_SPAN_FREE_RETURN_AXIS_EXCLUSIONS_REVIEW_RESUME_2026_10_29.md",
+        "path": "PARALLEL_INCOMING_HUB_AXIS_CHAIN_POCKET_NEAR_ORIGIN_AND_FOUR_LOAD_FEATURES.md",
+        "sha256": "ae4e518534c911e778d81db0a6a3a644e186066e29edd1b1ba2a60819c1371da",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_UNLOADED_TERMINAL_BRIDGE_SPAN_FREE_RETURN_AXIS_EXCLUSIONS_REVIEW_RESUME_2026_10_29.md",
+        "path": "REVIEW_PARALLEL_INCOMING_HUB_AXIS_CHAIN_FOUR_LOAD_ROOF_RESUME_2026_10_28.md",
+        "sha256": "5f2049d2078ca83d6a24a477169799eb1dc8f01e4f0dae5ab64c16fab0d8c9d3",
+        "matches": true
+      }
+    ],
+    "failures": []
+  },
+  "root_adoption": {
+    "path": "research/nine/ADOPTION_THREE_BROAD_CONTINUOUS_CAP_OWNER_AND_SHIFT_TOOLS_ROOT_2026_10_29.md",
+    "bytes": 8044,
+    "sha256": "865db6ecd1b9ee6774a11be75edd4f73b59e132a21bc9df1708cc3169183c36e",
+    "git_blob": "4c1a4718606ec73576d039a4e91ae1401f7def57"
+  },
+  "handoff": {
+    "path": "research/nine/HANDOFF_PR11_2026_10_28_CURRENT.md",
+    "bytes": 103979,
+    "sha256": "b5ab5b4dbff26c08d62ca80cda2904b2893259b8bd51ad9c2756853beaed2fa7",
+    "git_blob": "6046a30cd4c19c1f4d6c1c134f4a7a4ef9d5d417"
+  },
+  "global_sharp_theorem_closed": false,
+  "equality_closed": false,
+  "global_prerequisite_audit_closed": false,
+  "lean_compilation_run": false,
+  "ci_or_workflow_dispatched": false,
+  "merge_run": false
+}

@@ -1,0 +1,65 @@
+{
+  "date_utc": "2026-10-28",
+  "reviewer_agent": "diamond",
+  "author_agent": "two_blocks",
+  "verdict": "PASS unchanged after complete independent original-domain mathematical reconstruction",
+  "source": {
+    "path": "/workspace/scratch/7d553350ce2a/two_blocks/D_LEAF_ROOT_AT_MOST_ONE_OTHER_UNIT_IN_THREE_125_DISK.md",
+    "sha256": "34385a647c1889564b3423ecfff03a7a75747275e45f68346c3f8a9f06abfaaf"
+  },
+  "author_exact_record": {
+    "path": "/workspace/scratch/7d553350ce2a/two_blocks/D_LEAF_THREE_125_DISK_EXACT_RECORD.json",
+    "sha256": "c145410ac52eb9779c4bd1b4cc52b4b3a57fdfd43221504423dd445ce8a9e17b"
+  },
+  "independent_review": {
+    "path": "/workspace/scratch/7d553350ce2a/diamond/REVIEW_D_THREE_125_DISK_PHYSICAL_EXCLUSION_INDEPENDENT_2026_10_28.md",
+    "sha256": "4276bd260df77d44d3b92e8843fdb9790f205520eb598add94fcf5f3af7cbd71"
+  },
+  "operative_dependency": {
+    "path": "/workspace/scratch/7d553350ce2a/baseline/research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+    "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+    "scope": "Original genuine D chart only; no root-degree restriction or radius-two lower bound."
+  },
+  "independently_recomputed_rational_identities": {
+    "R_upper_square_reserve": "1599/160000",
+    "sqrt2_upper_square_reserve": "49/1600",
+    "sqrt2_lower_square_reserve": "2/9801",
+    "r_upper_reserve": "2/2475",
+    "arc_positive_reserve": "1/1000",
+    "arc_halfunit_reserve": "107/750",
+    "cos2beta": "791/800",
+    "sin3beta": "3573/16000",
+    "cos3beta_squared_reserve": "339/40000",
+    "north_projection_reserve": "1763/8000",
+    "left_face_lower_bound": "-552/19775",
+    "right_face_lower_bound": "19223/19775",
+    "q_first_lower": "361/500",
+    "q_first_upper": "364/375",
+    "q_second_lower": "531/20000",
+    "q_second_upper": "357/800",
+    "q_first_lower_reserve": "349/500",
+    "q_first_upper_reserve": "421/296625",
+    "q_second_lower_reserve": "51/20000",
+    "q_second_upper_reserve": "119/4000",
+    "sqrt2_36_25_squared_reserve": "46/625",
+    "sigma_vs_36_25_times_1_60": "0"
+  },
+  "all_author_rational_values_match": true,
+  "full_geometric_review": [
+    "actual root semicircle containment and exhaustive shallow reflection",
+    "half-unit own-frame rectangles at arbitrary closed near points",
+    "strict closed-arc inclusion in actual open square interiors",
+    "complete upper-semicircle order and all angular bounds",
+    "both possible separator owners and weak contact",
+    "actual left-face inequality with full near square retained",
+    "strict original physical D-leaf witness overlap",
+    "closed-disk and far-body distance consequence"
+  ],
+  "accepted_scope": "At most one actual unit other than genuine D root G meets closed D_(3/125); if K is that unit, every actual unit other than G and K has distance >3/125>sqrt(2)*epsilon. Full radius window, all original actual squares/forces/degrees/means retained.",
+  "fine_delta": 0,
+  "coarse_delta": 0,
+  "proof_source_changed": false,
+  "ledger_changed": false,
+  "lean_or_ci_run": false,
+  "numeric_pose_search_run": false
+}

@@ -1,0 +1,1080 @@
+{
+  "date_utc": "2026-10-28",
+  "status": "Accepted whole original D02 two-circle-tip feature and whole-height mixed-degree H4 pocket features; zero original fine/coarse changes.",
+  "local_integration_base": "90f57a527e4ce9a6aa3f012f53f5d75baa57f260",
+  "latest_verified_published_head": "709f670c79fcabdc651d7d8aca2f43632950ad92",
+  "remote_publication_succeeded": false,
+  "publication_limitation": "Authenticated GitHub writes stalled; local Git push has no credentials. These exact current sources and reviews are preserved locally, not claimed remotely published.",
+  "predecessor_published_checkpoint": {
+    "path": "research/nine/COMPLETE_TERMINAL_RETURN_COVER_CHECKPOINT_2026_10_28.json",
+    "sha256": "2fb8e84248e9f241367776db2d2830a91410fe78d0ead0fba311d423faba7156",
+    "bytes": 257503
+  },
+  "previous_local_critical_arc_checkpoint": {
+    "path": "research/nine/CRITICAL_ARC_SUPPORT_CAP_AND_PARALLEL_RETURN_CHECKPOINT_2026_10_28.json",
+    "sha256": "ae6c238389c811ddf687df0af98a6d7d89029c049cd31a97f8ae2f68a778e3bf",
+    "bytes": 17200
+  },
+  "original_fine_total": 2513,
+  "fine_checked": 2352,
+  "fine_open": 161,
+  "original_coarse_total": 58,
+  "coarse_closed": 34,
+  "coarse_open": 24,
+  "changed_original_fine_ids": [],
+  "changed_original_coarse_ids": [],
+  "all_original_ids_order_and_flags_preserved": true,
+  "inventory_encoding": "Complete ordered arrays remain in the byte-pinned published predecessor. Digests use UTF-8 JSON with ensure_ascii=False,sort_keys=True,separators=(comma,colon). Both actual original Markdown inventories were parsed and compared entry-for-entry and are byte-identical to the published head.",
+  "fine_gates_sha256": "78ae4d1b47e1262e71bc081aa7079a21ee5fb0a1c1e4ea51bb891111f809c6bf",
+  "coarse_gates_sha256": "0e4c1e41ac5ef7607ad69ee56fbb57572d2ec64dc9d93249add8dfd241d8978f",
+  "open_original_fine_ids": [
+    "T1.EXTRACT:",
+    "CAP.4",
+    "ROW.4",
+    "POCKET.ROUTING",
+    "QCAP.GLOBAL",
+    "CY.B5 GEOMETRY",
+    "CY.MULTILOAD",
+    "CY.MIXED.COMPLETE",
+    "C.1 GRAPH",
+    "C.2 LOAD",
+    "C.3 GEOMETRY",
+    "C.4 COMPLETION",
+    "C.5 SHARPNESS",
+    "C.6 EQUALITY",
+    "G3.0.ANNULAR.ROUTING",
+    "G3.0.DISTRIBUTED_ARTICULATIONS",
+    "G3.0.SHARP",
+    "G3.M.F.1 GRAPH",
+    "G3.M.F.1.a",
+    "G3.M.F.1.b",
+    "G3.M.F.1.c",
+    "G3.M.F.2 LOADS",
+    "G3.M.F.2.a",
+    "G3.M.F.2.b",
+    "G3.M.F.3 CONTACT FEATURES",
+    "G3.M.F.3.a",
+    "G3.M.F.3.b",
+    "G3.M.F.3.c",
+    "G3.M.F.4 JUNCTIONS",
+    "G3.M.F.5 COMPLETION ROUTING",
+    "G3.M.F.5.a",
+    "G3.M.F.5.b",
+    "G3.M.F.5.c",
+    "G3.M.F.5.d",
+    "G3.M.F.COVER",
+    "C.0 DOMAIN",
+    "C.1 EQUILIBRIUM",
+    "C.2 ROUTING",
+    "C.3 BOUND",
+    "C.3.a",
+    "C.3.b",
+    "C.3.c",
+    "C.4 EQUALITY",
+    "C.5 AUDIT",
+    "C.ALL",
+    "M6.B5L.HOUSE.ROOF.LABC.S",
+    "M6.B5L.HOUSE.HUB.LTC.S",
+    "M6.B5L.HOUSE.HUB.LTCB.S",
+    "M6.B5L.FAN.ENDPOINT.L234.S",
+    "M6.B5L.FAN.INNER.L134.S",
+    "M6.B5L.HOUSE.ROOF",
+    "M6.B5L.HOUSE.HUB",
+    "M6.B5L.FAN.ENDPOINT",
+    "M6.B5L.FAN.INNER",
+    "M6.B5L.ALL",
+    "M6.B6.HEXAGON.TWO_OPPOSITE_EARS.BOUND",
+    "M6.B6.HEXAGON.D02.L014",
+    "M6.B6.HEXAGON.D02.L134",
+    "M6.B6.HEXAGON.D02.L135",
+    "M6.B6.HEXAGON.D02.L0134",
+    "M6.B6.HEXAGON.D02.L0135",
+    "M6.B6.HEXAGON.D02.L0145",
+    "M6.B6.HEXAGON.D02.L1345",
+    "M6.B6.HEXAGON.D02.L01345",
+    "M6.B6.HEXAGON.D02.ALL",
+    "M6.B6.HEXAGON.D03.L014",
+    "M6.B6.HEXAGON.D03.L024",
+    "M6.B6.HEXAGON.D03.L124",
+    "M6.B6.HEXAGON.D03.L0124",
+    "M6.B6.HEXAGON.D03.L0125",
+    "M6.B6.HEXAGON.D03.L1245",
+    "M6.B6.HEXAGON.D03.ALL",
+    "M6.B6.HEXAGON.D0203.L124",
+    "M6.B6.HEXAGON.D0203.L1234",
+    "M6.B6.HEXAGON.D0203.L1235",
+    "M6.B6.HEXAGON.D0203.L1245",
+    "M6.B6.HEXAGON.D0203.ALL",
+    "M6.B6.HEXAGON.D0204.L135",
+    "M6.B6.HEXAGON.D0204.L0135",
+    "M6.B6.HEXAGON.D0204.L1235",
+    "M6.B6.HEXAGON.D0204.L1245",
+    "M6.B6.HEXAGON.D0204.ALL",
+    "M6.B6.HEXAGON.D0235.L0134",
+    "M6.B6.HEXAGON.D0235.ALL",
+    "M6.B6.HEXAGON.CHORD_PATH.L1245",
+    "M6.B6.HEXAGON.CHORD_PATH.ALL",
+    "M6.B6.HEXAGON.CENTRAL_TRIANGLE.L135",
+    "M6.B6.HEXAGON.CENTRAL_TRIANGLE.L0135",
+    "M6.B6.HEXAGON.CENTRAL_TRIANGLE.ALL",
+    "M6.B6.HEXAGON.BOUND",
+    "M6.B6.PENTAGON.H4_D0.L124",
+    "M6.B6.PENTAGON.H4_D0.L0124",
+    "M6.B6.PENTAGON.H4_D0_EXIT",
+    "M6.B6.ALL",
+    "G3.M6.ASSEMBLE",
+    "G3.M6.ALL",
+    "G3.M7.ALL",
+    "G3.M8.ALL",
+    "G3.M9.ALL",
+    "G3.M.ALL",
+    "G3.ALL.1",
+    "G3.ALL.3",
+    "G3.ALL.4",
+    "G3.ALL",
+    "O3.3.SHARP",
+    "O4.1",
+    "O4.2",
+    "O4.3 alternative",
+    "O5",
+    "X.3",
+    "G4.2",
+    "G4.2.a",
+    "G4.2.b",
+    "G4.2.c",
+    "G4.2.d",
+    "G4.2.e",
+    "G4.2.f",
+    "G4.3",
+    "G4.3.a",
+    "G4.3.b",
+    "G4.3.c",
+    "G5.1",
+    "G5.2",
+    "G5.3",
+    "G5.1.a",
+    "G5.1.b",
+    "G5.2.a",
+    "G5.2.b",
+    "G5.2.c",
+    "G5.3.a",
+    "G5.3.b",
+    "G5.3.c",
+    "G5.3.d",
+    "G5.4",
+    "G5.4.a",
+    "G5.4.b",
+    "G5.ALL",
+    "G6.1",
+    "G6.2",
+    "G6.3",
+    "G6.TL1 NEW",
+    "G6.TL2 NEW",
+    "G6.TL3 NEW",
+    "G6.TL4 NEW",
+    "G6.4",
+    "G6.5",
+    "G6.5.a",
+    "G6.5.b",
+    "G6.5.c",
+    "G6.5.d",
+    "G6.5.e",
+    "G6.5.f",
+    "G7.1",
+    "G7.2",
+    "G7.3",
+    "G7.4",
+    "G7.5 DEFERRED",
+    "G8.1",
+    "G8.2",
+    "G8.3",
+    "G8.4"
+  ],
+  "open_original_coarse_ids": [
+    "C1.5.b1",
+    "C1.5.b2",
+    "C1.5.b3",
+    "C1.5.b4",
+    "C1.6.b0",
+    "C1.6.b1",
+    "C1.6.b2",
+    "C1.6.b3",
+    "C1.7.b0",
+    "C1.7.b1",
+    "C1.7.b2",
+    "C1.8.b0",
+    "C1.8.b1",
+    "C1.9.b0",
+    "C2.35.b0",
+    "C2.35.b1",
+    "C2.35.b2",
+    "C2.36.b0",
+    "C2.36.b1",
+    "C2.37.b0",
+    "C2.45.b0",
+    "C2.45.b1",
+    "C2.46.b0",
+    "C2.55.b0"
+  ],
+  "adopted_mathematical_sources": [
+    {
+      "path": "research/nine/SINGLETON_TERMINAL_AXIS_TIP_OWNED_RETURN_TWO_CIRCLE_POCKET_EXCLUSION.md",
+      "sha256": "6afadc3f6e74933e4ac36073ef2d5c243c4cbe91198a9c90b2be68ad368ed73d",
+      "bytes": 24248
+    },
+    {
+      "path": "research/nine/TERMINAL_HUB_AXIS_DISTINCT_RETURN_SIDE_TWO_CIRCLE_TIP_EXCLUSION.md",
+      "sha256": "b2a641d04909abad6e99885e2485c2af0845d3ee05ad43a19664d6a93e4891fb",
+      "bytes": 21311
+    },
+    {
+      "path": "research/nine/D02_ENTIRE_TWO_CIRCLE_TIP_EXCLUSION_AND_EXACT_UNIQUE_TIP_RESIDUAL.md",
+      "sha256": "8aba649f47a66527beff0a0a12db6fdcb7f8782b54f734baf190d8b8523732b8",
+      "bytes": 9850
+    },
+    {
+      "path": "research/nine/BALANCED_BOUNDARY_FAR_PAIR_AND_OPPOSITE_PORT_ORIGIN_STRIP.md",
+      "sha256": "72a915beaee37b435d993c6e77bd9833d717479b7b07ac014783d764cffa8605",
+      "bytes": 15801
+    },
+    {
+      "path": "research/nine/ONE_PROPER_ENDPOINT_OPPOSITE_PORT_HIGH_ROOF_POCKET_CAPACITY_TWO.md",
+      "sha256": "16c46d4fe283c5bfb086cb4266ea81a35d422c66904b981b8eeac199173ac008",
+      "bytes": 16216
+    },
+    {
+      "path": "research/nine/ONE_PROPER_ENDPOINT_OPPOSITE_PORT_COMPLETE_POCKET_CAPACITY_TWO.md",
+      "sha256": "d5ac1acc11a7a555f88fff55aa3bcb914af6a74a98016e30b9011a2cd6892f6a",
+      "bytes": 19196
+    },
+    {
+      "path": "research/nine/UNLOADED_THREE_FORCE_LONG_EXTERNAL_RETURN_PORTS_MIXED_DEGREE_POCKET_CAPACITY_TWO.md",
+      "sha256": "d06936aea26a8c8fe1263f7475853f689965657d810616d957b62aa1b78b2bf6",
+      "bytes": 14622
+    }
+  ],
+  "current_independent_review_count": 5,
+  "current_reviews_and_adoptions": [
+    {
+      "path": "research/nine/REVIEW_SINGLETON_TERMINAL_TIP_OWNED_TWO_CIRCLE_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "sha256": "11458eaf7d0a147fa50711c81d6ea6e7996510baa474288bbf2183a59ca5099c",
+      "bytes": 12323
+    },
+    {
+      "path": "research/nine/REVIEW_TERMINAL_DISTINCT_RETURN_TWO_CIRCLE_W_INDEPENDENT_2026_10_28.md",
+      "sha256": "64984519e31a665801ffeb3fa758a133c5814de5359b28df45decd6f6ea9f6db",
+      "bytes": 12978
+    },
+    {
+      "path": "research/nine/REVIEW_D02_ENTIRE_TWO_CIRCLE_JOIN_W_INDEPENDENT_2026_10_28.md",
+      "sha256": "b000c6db6de7420f6d4db699000d11cb059761d93e01085d07988c9e559b3fae",
+      "bytes": 10790
+    },
+    {
+      "path": "research/nine/REVIEW_BALANCED_FAR_PAIR_OPPOSITE_PORT_STRIP_H4_INDEPENDENT_2026_10_28.md",
+      "sha256": "0b12724894db809969aac2777508bdeed669e0cd6d9fc4da4249fc9f1cca0814",
+      "bytes": 8821
+    },
+    {
+      "path": "research/nine/REVIEW_ONE_PROPER_ENDPOINT_MIXED_DEGREE_CAPACITY_AND_LONG_PORTS_INDEPENDENT_2026_10_28.md",
+      "sha256": "20fd98896fb509a474059188533ce0772a57ae52ba574c09e0cc1ad75c2b84ea",
+      "bytes": 17526
+    },
+    {
+      "path": "research/nine/ADOPTION_COMPLETE_TWO_CIRCLE_TIP_AND_MIXED_ENDPOINT_POCKETS_ROOT_2026_10_28.md",
+      "sha256": "77fa22d7bd8faee6a269431c9736bd1e5c736f00a153f78f28d44e38369672af",
+      "bytes": 17483
+    }
+  ],
+  "matching_direct_table_pin_count": 127,
+  "matching_direct_table_pins": [
+    {
+      "owner": "research/nine/SINGLETON_TERMINAL_AXIS_TIP_OWNED_RETURN_TWO_CIRCLE_POCKET_EXCLUSION.md",
+      "line": 576,
+      "source": "research/nine/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207"
+    },
+    {
+      "owner": "research/nine/SINGLETON_TERMINAL_AXIS_TIP_OWNED_RETURN_TWO_CIRCLE_POCKET_EXCLUSION.md",
+      "line": 577,
+      "source": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "owner": "research/nine/SINGLETON_TERMINAL_AXIS_TIP_OWNED_RETURN_TWO_CIRCLE_POCKET_EXCLUSION.md",
+      "line": 578,
+      "source": "research/nine/GENERAL_SINGLE_HUB_BOUNDARY_PATH_POCKET.md",
+      "sha256": "958bb122342783a824d023c221ccc2c93a68300b00b0ffc3496c25ad394aec84"
+    },
+    {
+      "owner": "research/nine/SINGLETON_TERMINAL_AXIS_TIP_OWNED_RETURN_TWO_CIRCLE_POCKET_EXCLUSION.md",
+      "line": 579,
+      "source": "research/nine/GENERAL_SIDE_CHANNEL_CAP_INNER_ARC.md",
+      "sha256": "f76d76ef2feccc80098fb6d10d6316af4e393d3ae34d4953846dd27b80c137cb"
+    },
+    {
+      "owner": "research/nine/SINGLETON_TERMINAL_AXIS_TIP_OWNED_RETURN_TWO_CIRCLE_POCKET_EXCLUSION.md",
+      "line": 580,
+      "source": "research/nine/UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+      "sha256": "406fce53d22cc20eec43a373a877798dab583a6bd93f684ff124293016c44c87"
+    },
+    {
+      "owner": "research/nine/SINGLETON_TERMINAL_AXIS_TIP_OWNED_RETURN_TWO_CIRCLE_POCKET_EXCLUSION.md",
+      "line": 581,
+      "source": "research/nine/D02_ENTIRE_INCOMING_HUB_AXIS_AND_SHARED_TERMINAL_EXCLUSION.md",
+      "sha256": "0b0e8b90ff7535e6e80f429e10ff7535190c2a74220022d1a9ad3676a8595c7f"
+    },
+    {
+      "owner": "research/nine/SINGLETON_TERMINAL_AXIS_TIP_OWNED_RETURN_TWO_CIRCLE_POCKET_EXCLUSION.md",
+      "line": 582,
+      "source": "research/nine/CHORDED_HEXAGON_CENTRAL_CAPACITY_ONE.md",
+      "sha256": "0b787eae6efe36d2ca6c40dbb079d3262192125fffe58026bacbfd657d1a9a34"
+    },
+    {
+      "owner": "research/nine/SINGLETON_TERMINAL_AXIS_TIP_OWNED_RETURN_TWO_CIRCLE_POCKET_EXCLUSION.md",
+      "line": 583,
+      "source": "research/nine/CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md",
+      "sha256": "b61b0dec7ded00984c687e353fd3f3bfb5a5a7ade45d87d69aaeade09f23d80b"
+    },
+    {
+      "owner": "research/nine/SINGLETON_TERMINAL_AXIS_TIP_OWNED_RETURN_TWO_CIRCLE_POCKET_EXCLUSION.md",
+      "line": 584,
+      "source": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe"
+    },
+    {
+      "owner": "research/nine/SINGLETON_TERMINAL_AXIS_TIP_OWNED_RETURN_TWO_CIRCLE_POCKET_EXCLUSION.md",
+      "line": 585,
+      "source": "research/nine/SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1"
+    },
+    {
+      "owner": "research/nine/SINGLETON_TERMINAL_AXIS_TIP_OWNED_RETURN_TWO_CIRCLE_POCKET_EXCLUSION.md",
+      "line": 586,
+      "source": "research/nine/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "sha256": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90"
+    },
+    {
+      "owner": "research/nine/TERMINAL_HUB_AXIS_DISTINCT_RETURN_SIDE_TWO_CIRCLE_TIP_EXCLUSION.md",
+      "line": 534,
+      "source": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "owner": "research/nine/TERMINAL_HUB_AXIS_DISTINCT_RETURN_SIDE_TWO_CIRCLE_TIP_EXCLUSION.md",
+      "line": 535,
+      "source": "research/nine/LOADED_TWO_FORCE_BOUNDARY_NEIGHBOR_COMMON_POINT_EXCLUSION.md",
+      "sha256": "5a95c3255a634f603a47c8311971902f2b8b699e4ebf2d076b21b01fddf941ba"
+    },
+    {
+      "owner": "research/nine/TERMINAL_HUB_AXIS_DISTINCT_RETURN_SIDE_TWO_CIRCLE_TIP_EXCLUSION.md",
+      "line": 536,
+      "source": "research/nine/UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+      "sha256": "406fce53d22cc20eec43a373a877798dab583a6bd93f684ff124293016c44c87"
+    },
+    {
+      "owner": "research/nine/TERMINAL_HUB_AXIS_DISTINCT_RETURN_SIDE_TWO_CIRCLE_TIP_EXCLUSION.md",
+      "line": 537,
+      "source": "research/nine/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207"
+    },
+    {
+      "owner": "research/nine/TERMINAL_HUB_AXIS_DISTINCT_RETURN_SIDE_TWO_CIRCLE_TIP_EXCLUSION.md",
+      "line": 538,
+      "source": "research/nine/RADIAL_INNER_CORNER_BOUNDARY_NEIGHBOR_QUARTER_SIDE_BOUND.md",
+      "sha256": "37f0f207a86a9d2c4ead42edcfaac01c5dbdd4f08bc66e98e41f985adedc4011"
+    },
+    {
+      "owner": "research/nine/TERMINAL_HUB_AXIS_DISTINCT_RETURN_SIDE_TWO_CIRCLE_TIP_EXCLUSION.md",
+      "line": 539,
+      "source": "research/nine/GENERAL_SINGLE_HUB_BOUNDARY_PATH_POCKET.md",
+      "sha256": "958bb122342783a824d023c221ccc2c93a68300b00b0ffc3496c25ad394aec84"
+    },
+    {
+      "owner": "research/nine/TERMINAL_HUB_AXIS_DISTINCT_RETURN_SIDE_TWO_CIRCLE_TIP_EXCLUSION.md",
+      "line": 540,
+      "source": "research/nine/FAN_TIP_OWNED_ENDPOINT_EXCLUSION.md",
+      "sha256": "aef2fc2adfda6168d7e2c2f824b373d6beafb12c8937e0f6bc93f7f36b464a67"
+    },
+    {
+      "owner": "research/nine/TERMINAL_HUB_AXIS_DISTINCT_RETURN_SIDE_TWO_CIRCLE_TIP_EXCLUSION.md",
+      "line": 541,
+      "source": "research/nine/D02_ENTIRE_INCOMING_HUB_AXIS_AND_SHARED_TERMINAL_EXCLUSION.md",
+      "sha256": "0b0e8b90ff7535e6e80f429e10ff7535190c2a74220022d1a9ad3676a8595c7f"
+    },
+    {
+      "owner": "research/nine/TERMINAL_HUB_AXIS_DISTINCT_RETURN_SIDE_TWO_CIRCLE_TIP_EXCLUSION.md",
+      "line": 542,
+      "source": "research/nine/SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1"
+    },
+    {
+      "owner": "research/nine/D02_ENTIRE_TWO_CIRCLE_TIP_EXCLUSION_AND_EXACT_UNIQUE_TIP_RESIDUAL.md",
+      "line": 174,
+      "source": "research/nine/D02_SINGLETON_TERMINAL_AXIS_TWO_NONPARALLEL_RETURN_COVER.md",
+      "sha256": "7997a9a7eacc0aedf85801eda33b5e7a0ca2e4ce37b86b95f7cb1ba3b6c28ce9"
+    },
+    {
+      "owner": "research/nine/D02_ENTIRE_TWO_CIRCLE_TIP_EXCLUSION_AND_EXACT_UNIQUE_TIP_RESIDUAL.md",
+      "line": 175,
+      "source": "research/nine/SINGLETON_TERMINAL_AXIS_TIP_OWNED_RETURN_TWO_CIRCLE_POCKET_EXCLUSION.md",
+      "sha256": "6afadc3f6e74933e4ac36073ef2d5c243c4cbe91198a9c90b2be68ad368ed73d"
+    },
+    {
+      "owner": "research/nine/D02_ENTIRE_TWO_CIRCLE_TIP_EXCLUSION_AND_EXACT_UNIQUE_TIP_RESIDUAL.md",
+      "line": 176,
+      "source": "research/nine/TERMINAL_HUB_AXIS_DISTINCT_RETURN_SIDE_TWO_CIRCLE_TIP_EXCLUSION.md",
+      "sha256": "b2a641d04909abad6e99885e2485c2af0845d3ee05ad43a19664d6a93e4891fb"
+    },
+    {
+      "owner": "research/nine/D02_ENTIRE_TWO_CIRCLE_TIP_EXCLUSION_AND_EXACT_UNIQUE_TIP_RESIDUAL.md",
+      "line": 177,
+      "source": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "owner": "research/nine/D02_ENTIRE_TWO_CIRCLE_TIP_EXCLUSION_AND_EXACT_UNIQUE_TIP_RESIDUAL.md",
+      "line": 178,
+      "source": "research/nine/CHORDED_HEXAGON_CENTRAL_CAPACITY_ONE.md",
+      "sha256": "0b787eae6efe36d2ca6c40dbb079d3262192125fffe58026bacbfd657d1a9a34"
+    },
+    {
+      "owner": "research/nine/D02_ENTIRE_TWO_CIRCLE_TIP_EXCLUSION_AND_EXACT_UNIQUE_TIP_RESIDUAL.md",
+      "line": 179,
+      "source": "research/nine/CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md",
+      "sha256": "b61b0dec7ded00984c687e353fd3f3bfb5a5a7ade45d87d69aaeade09f23d80b"
+    },
+    {
+      "owner": "research/nine/D02_ENTIRE_TWO_CIRCLE_TIP_EXCLUSION_AND_EXACT_UNIQUE_TIP_RESIDUAL.md",
+      "line": 180,
+      "source": "research/nine/SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1"
+    },
+    {
+      "owner": "research/nine/D02_ENTIRE_TWO_CIRCLE_TIP_EXCLUSION_AND_EXACT_UNIQUE_TIP_RESIDUAL.md",
+      "line": 181,
+      "source": "research/nine/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "sha256": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90"
+    },
+    {
+      "owner": "research/nine/BALANCED_BOUNDARY_FAR_PAIR_AND_OPPOSITE_PORT_ORIGIN_STRIP.md",
+      "line": 433,
+      "source": "research/nine/GENERAL_BALANCED_THREE_BOUNDARY_FULL_WINDOW_METRIC_EXCLUSION.md",
+      "sha256": "5da69931a63ac7cbf93ec3ff494489dc05d2245017da1c4dcddf1b4a8a6c956e"
+    },
+    {
+      "owner": "research/nine/BALANCED_BOUNDARY_FAR_PAIR_AND_OPPOSITE_PORT_ORIGIN_STRIP.md",
+      "line": 434,
+      "source": "research/nine/FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "sha256": "164d08bb2c4dfe8510247e44298d309920cb88a780221252d833f51aa654225f"
+    },
+    {
+      "owner": "research/nine/BALANCED_BOUNDARY_FAR_PAIR_AND_OPPOSITE_PORT_ORIGIN_STRIP.md",
+      "line": 435,
+      "source": "research/nine/INNER_PENTAGON_H_OWNED_UNLOADED_END_FIXED_OPPOSITE_RETURN_VERTICES.md",
+      "sha256": "bc1b08bc93401e25891f1307139c465409e4a3e260670513087b658c210e0f8c"
+    },
+    {
+      "owner": "research/nine/BALANCED_BOUNDARY_FAR_PAIR_AND_OPPOSITE_PORT_ORIGIN_STRIP.md",
+      "line": 436,
+      "source": "research/nine/INNER_PENTAGON_FOUR_SPOKE_NO_CHORD_OCCUPIED_POCKETS_AND_LONG_PORT_REDUCTION.md",
+      "sha256": "ad0a8e658d303d7527a383c4688fa4bfdae1a04f46cecfb59c424cc4028e02a6"
+    },
+    {
+      "owner": "research/nine/BALANCED_BOUNDARY_FAR_PAIR_AND_OPPOSITE_PORT_ORIGIN_STRIP.md",
+      "line": 437,
+      "source": "research/nine/FAN_TIP_OWNED_ENDPOINT_EXCLUSION.md",
+      "sha256": "aef2fc2adfda6168d7e2c2f824b373d6beafb12c8937e0f6bc93f7f36b464a67"
+    },
+    {
+      "owner": "research/nine/BALANCED_BOUNDARY_FAR_PAIR_AND_OPPOSITE_PORT_ORIGIN_STRIP.md",
+      "line": 438,
+      "source": "research/nine/TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md",
+      "sha256": "29e38d3f641fe16c6db587e51245f92ad4c447f9536db7d14c221f56b5357e82"
+    },
+    {
+      "owner": "research/nine/BALANCED_BOUNDARY_FAR_PAIR_AND_OPPOSITE_PORT_ORIGIN_STRIP.md",
+      "line": 439,
+      "source": "research/nine/FIXED_SINGLETON_THREE_FORCE_OFF_LINE_NORMAL_SELECTION_AND_H4_OWNED_END_REDUCTION.md",
+      "sha256": "d5e02f317ecbfdbd3d948fd27f5f78d6eda8803fb679c435ef3101780e1f47b1"
+    },
+    {
+      "owner": "research/nine/BALANCED_BOUNDARY_FAR_PAIR_AND_OPPOSITE_PORT_ORIGIN_STRIP.md",
+      "line": 440,
+      "source": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe"
+    },
+    {
+      "owner": "research/nine/ONE_PROPER_ENDPOINT_OPPOSITE_PORT_HIGH_ROOF_POCKET_CAPACITY_TWO.md",
+      "line": 358,
+      "source": "research/nine/BALANCED_BOUNDARY_FAR_PAIR_AND_OPPOSITE_PORT_ORIGIN_STRIP.md",
+      "sha256": "72a915beaee37b435d993c6e77bd9833d717479b7b07ac014783d764cffa8605"
+    },
+    {
+      "owner": "research/nine/ONE_PROPER_ENDPOINT_OPPOSITE_PORT_HIGH_ROOF_POCKET_CAPACITY_TWO.md",
+      "line": 359,
+      "source": "research/nine/GENERAL_BALANCED_THREE_BOUNDARY_FULL_WINDOW_METRIC_EXCLUSION.md",
+      "sha256": "5da69931a63ac7cbf93ec3ff494489dc05d2245017da1c4dcddf1b4a8a6c956e"
+    },
+    {
+      "owner": "research/nine/ONE_PROPER_ENDPOINT_OPPOSITE_PORT_HIGH_ROOF_POCKET_CAPACITY_TWO.md",
+      "line": 360,
+      "source": "research/nine/TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md",
+      "sha256": "29e38d3f641fe16c6db587e51245f92ad4c447f9536db7d14c221f56b5357e82"
+    },
+    {
+      "owner": "research/nine/ONE_PROPER_ENDPOINT_OPPOSITE_PORT_HIGH_ROOF_POCKET_CAPACITY_TWO.md",
+      "line": 361,
+      "source": "research/nine/GENERAL_SIDE_CHANNEL_CAP_INNER_ARC.md",
+      "sha256": "f76d76ef2feccc80098fb6d10d6316af4e393d3ae34d4953846dd27b80c137cb"
+    },
+    {
+      "owner": "research/nine/ONE_PROPER_ENDPOINT_OPPOSITE_PORT_HIGH_ROOF_POCKET_CAPACITY_TWO.md",
+      "line": 362,
+      "source": "research/nine/INNER_PENTAGON_H_OWNED_UNLOADED_END_FIXED_OPPOSITE_RETURN_VERTICES.md",
+      "sha256": "bc1b08bc93401e25891f1307139c465409e4a3e260670513087b658c210e0f8c"
+    },
+    {
+      "owner": "research/nine/ONE_PROPER_ENDPOINT_OPPOSITE_PORT_HIGH_ROOF_POCKET_CAPACITY_TWO.md",
+      "line": 363,
+      "source": "research/nine/FIXED_SINGLETON_THREE_FORCE_OFF_LINE_NORMAL_SELECTION_AND_H4_OWNED_END_REDUCTION.md",
+      "sha256": "d5e02f317ecbfdbd3d948fd27f5f78d6eda8803fb679c435ef3101780e1f47b1"
+    },
+    {
+      "owner": "research/nine/ONE_PROPER_ENDPOINT_OPPOSITE_PORT_HIGH_ROOF_POCKET_CAPACITY_TWO.md",
+      "line": 364,
+      "source": "research/nine/INNER_PENTAGON_FOUR_SPOKE_NO_CHORD_OCCUPIED_POCKETS_AND_LONG_PORT_REDUCTION.md",
+      "sha256": "ad0a8e658d303d7527a383c4688fa4bfdae1a04f46cecfb59c424cc4028e02a6"
+    },
+    {
+      "owner": "research/nine/ONE_PROPER_ENDPOINT_OPPOSITE_PORT_HIGH_ROOF_POCKET_CAPACITY_TWO.md",
+      "line": 365,
+      "source": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe"
+    },
+    {
+      "owner": "research/nine/ONE_PROPER_ENDPOINT_OPPOSITE_PORT_HIGH_ROOF_POCKET_CAPACITY_TWO.md",
+      "line": 366,
+      "source": "research/nine/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "sha256": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90"
+    },
+    {
+      "owner": "research/nine/ONE_PROPER_ENDPOINT_OPPOSITE_PORT_COMPLETE_POCKET_CAPACITY_TWO.md",
+      "line": 525,
+      "source": "research/nine/ONE_PROPER_ENDPOINT_OPPOSITE_PORT_HIGH_ROOF_POCKET_CAPACITY_TWO.md",
+      "sha256": "16c46d4fe283c5bfb086cb4266ea81a35d422c66904b981b8eeac199173ac008"
+    },
+    {
+      "owner": "research/nine/ONE_PROPER_ENDPOINT_OPPOSITE_PORT_COMPLETE_POCKET_CAPACITY_TWO.md",
+      "line": 526,
+      "source": "research/nine/BALANCED_BOUNDARY_FAR_PAIR_AND_OPPOSITE_PORT_ORIGIN_STRIP.md",
+      "sha256": "72a915beaee37b435d993c6e77bd9833d717479b7b07ac014783d764cffa8605"
+    },
+    {
+      "owner": "research/nine/ONE_PROPER_ENDPOINT_OPPOSITE_PORT_COMPLETE_POCKET_CAPACITY_TWO.md",
+      "line": 527,
+      "source": "research/nine/GENERAL_SIDE_CHANNEL_CAP_INNER_ARC.md",
+      "sha256": "f76d76ef2feccc80098fb6d10d6316af4e393d3ae34d4953846dd27b80c137cb"
+    },
+    {
+      "owner": "research/nine/ONE_PROPER_ENDPOINT_OPPOSITE_PORT_COMPLETE_POCKET_CAPACITY_TWO.md",
+      "line": 528,
+      "source": "research/nine/INNER_PENTAGON_FOUR_SPOKE_NO_CHORD_OCCUPIED_POCKETS_AND_LONG_PORT_REDUCTION.md",
+      "sha256": "ad0a8e658d303d7527a383c4688fa4bfdae1a04f46cecfb59c424cc4028e02a6"
+    },
+    {
+      "owner": "research/nine/ONE_PROPER_ENDPOINT_OPPOSITE_PORT_COMPLETE_POCKET_CAPACITY_TWO.md",
+      "line": 529,
+      "source": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe"
+    },
+    {
+      "owner": "research/nine/ONE_PROPER_ENDPOINT_OPPOSITE_PORT_COMPLETE_POCKET_CAPACITY_TWO.md",
+      "line": 530,
+      "source": "research/nine/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "sha256": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90"
+    },
+    {
+      "owner": "research/nine/UNLOADED_THREE_FORCE_LONG_EXTERNAL_RETURN_PORTS_MIXED_DEGREE_POCKET_CAPACITY_TWO.md",
+      "line": 265,
+      "source": "research/nine/ONE_PROPER_ENDPOINT_OPPOSITE_PORT_COMPLETE_POCKET_CAPACITY_TWO.md",
+      "sha256": "d5ac1acc11a7a555f88fff55aa3bcb914af6a74a98016e30b9011a2cd6892f6a"
+    },
+    {
+      "owner": "research/nine/UNLOADED_THREE_FORCE_LONG_EXTERNAL_RETURN_PORTS_MIXED_DEGREE_POCKET_CAPACITY_TWO.md",
+      "line": 266,
+      "source": "research/nine/BALANCED_BOUNDARY_FAR_PAIR_AND_OPPOSITE_PORT_ORIGIN_STRIP.md",
+      "sha256": "72a915beaee37b435d993c6e77bd9833d717479b7b07ac014783d764cffa8605"
+    },
+    {
+      "owner": "research/nine/UNLOADED_THREE_FORCE_LONG_EXTERNAL_RETURN_PORTS_MIXED_DEGREE_POCKET_CAPACITY_TWO.md",
+      "line": 267,
+      "source": "research/nine/FAN_TIP_OWNED_ENDPOINT_EXCLUSION.md",
+      "sha256": "aef2fc2adfda6168d7e2c2f824b373d6beafb12c8937e0f6bc93f7f36b464a67"
+    },
+    {
+      "owner": "research/nine/UNLOADED_THREE_FORCE_LONG_EXTERNAL_RETURN_PORTS_MIXED_DEGREE_POCKET_CAPACITY_TWO.md",
+      "line": 268,
+      "source": "research/nine/TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md",
+      "sha256": "29e38d3f641fe16c6db587e51245f92ad4c447f9536db7d14c221f56b5357e82"
+    },
+    {
+      "owner": "research/nine/UNLOADED_THREE_FORCE_LONG_EXTERNAL_RETURN_PORTS_MIXED_DEGREE_POCKET_CAPACITY_TWO.md",
+      "line": 269,
+      "source": "research/nine/INNER_PENTAGON_FOUR_SPOKE_NO_CHORD_OCCUPIED_POCKETS_AND_LONG_PORT_REDUCTION.md",
+      "sha256": "ad0a8e658d303d7527a383c4688fa4bfdae1a04f46cecfb59c424cc4028e02a6"
+    },
+    {
+      "owner": "research/nine/UNLOADED_THREE_FORCE_LONG_EXTERNAL_RETURN_PORTS_MIXED_DEGREE_POCKET_CAPACITY_TWO.md",
+      "line": 270,
+      "source": "research/nine/FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "sha256": "164d08bb2c4dfe8510247e44298d309920cb88a780221252d833f51aa654225f"
+    },
+    {
+      "owner": "research/nine/UNLOADED_THREE_FORCE_LONG_EXTERNAL_RETURN_PORTS_MIXED_DEGREE_POCKET_CAPACITY_TWO.md",
+      "line": 271,
+      "source": "research/nine/INNER_PENTAGON_FOUR_SPOKE_SHARED_UNLOADED_END_EXCLUSION.md",
+      "sha256": "ab1882057cc4d5bc0be2929c0c926543a92fbbbc4f8f74598c2238707d17f9f6"
+    },
+    {
+      "owner": "research/nine/UNLOADED_THREE_FORCE_LONG_EXTERNAL_RETURN_PORTS_MIXED_DEGREE_POCKET_CAPACITY_TWO.md",
+      "line": 272,
+      "source": "research/nine/RECOVERED_H4_END_OWNER_INTERFACES_DEPENDENCY_AUDIT_2026_10_28.json",
+      "sha256": "8f056eb6823a8c0bc87d9b2c8b3d6fe105f6457985dd0e85a9bdae5dc96d8e8e"
+    },
+    {
+      "owner": "research/nine/UNLOADED_THREE_FORCE_LONG_EXTERNAL_RETURN_PORTS_MIXED_DEGREE_POCKET_CAPACITY_TWO.md",
+      "line": 273,
+      "source": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe"
+    },
+    {
+      "owner": "research/nine/UNLOADED_THREE_FORCE_LONG_EXTERNAL_RETURN_PORTS_MIXED_DEGREE_POCKET_CAPACITY_TWO.md",
+      "line": 274,
+      "source": "research/nine/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "sha256": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90"
+    },
+    {
+      "owner": "research/nine/REVIEW_SINGLETON_TERMINAL_TIP_OWNED_TWO_CIRCLE_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 15,
+      "source": "research/nine/SINGLETON_TERMINAL_AXIS_TIP_OWNED_RETURN_TWO_CIRCLE_POCKET_EXCLUSION.md",
+      "sha256": "6afadc3f6e74933e4ac36073ef2d5c243c4cbe91198a9c90b2be68ad368ed73d"
+    },
+    {
+      "owner": "research/nine/REVIEW_SINGLETON_TERMINAL_TIP_OWNED_TWO_CIRCLE_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 195,
+      "source": "research/nine/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207"
+    },
+    {
+      "owner": "research/nine/REVIEW_SINGLETON_TERMINAL_TIP_OWNED_TWO_CIRCLE_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 196,
+      "source": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "owner": "research/nine/REVIEW_SINGLETON_TERMINAL_TIP_OWNED_TWO_CIRCLE_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 197,
+      "source": "research/nine/GENERAL_SINGLE_HUB_BOUNDARY_PATH_POCKET.md",
+      "sha256": "958bb122342783a824d023c221ccc2c93a68300b00b0ffc3496c25ad394aec84"
+    },
+    {
+      "owner": "research/nine/REVIEW_SINGLETON_TERMINAL_TIP_OWNED_TWO_CIRCLE_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 198,
+      "source": "research/nine/GENERAL_SIDE_CHANNEL_CAP_INNER_ARC.md",
+      "sha256": "f76d76ef2feccc80098fb6d10d6316af4e393d3ae34d4953846dd27b80c137cb"
+    },
+    {
+      "owner": "research/nine/REVIEW_SINGLETON_TERMINAL_TIP_OWNED_TWO_CIRCLE_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 199,
+      "source": "research/nine/UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+      "sha256": "406fce53d22cc20eec43a373a877798dab583a6bd93f684ff124293016c44c87"
+    },
+    {
+      "owner": "research/nine/REVIEW_SINGLETON_TERMINAL_TIP_OWNED_TWO_CIRCLE_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 200,
+      "source": "research/nine/D02_ENTIRE_INCOMING_HUB_AXIS_AND_SHARED_TERMINAL_EXCLUSION.md",
+      "sha256": "0b0e8b90ff7535e6e80f429e10ff7535190c2a74220022d1a9ad3676a8595c7f"
+    },
+    {
+      "owner": "research/nine/REVIEW_SINGLETON_TERMINAL_TIP_OWNED_TWO_CIRCLE_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 201,
+      "source": "research/nine/CHORDED_HEXAGON_CENTRAL_CAPACITY_ONE.md",
+      "sha256": "0b787eae6efe36d2ca6c40dbb079d3262192125fffe58026bacbfd657d1a9a34"
+    },
+    {
+      "owner": "research/nine/REVIEW_SINGLETON_TERMINAL_TIP_OWNED_TWO_CIRCLE_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 202,
+      "source": "research/nine/CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md",
+      "sha256": "b61b0dec7ded00984c687e353fd3f3bfb5a5a7ade45d87d69aaeade09f23d80b"
+    },
+    {
+      "owner": "research/nine/REVIEW_SINGLETON_TERMINAL_TIP_OWNED_TWO_CIRCLE_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 203,
+      "source": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe"
+    },
+    {
+      "owner": "research/nine/REVIEW_SINGLETON_TERMINAL_TIP_OWNED_TWO_CIRCLE_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 204,
+      "source": "research/nine/SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1"
+    },
+    {
+      "owner": "research/nine/REVIEW_SINGLETON_TERMINAL_TIP_OWNED_TWO_CIRCLE_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 205,
+      "source": "research/nine/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "sha256": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90"
+    },
+    {
+      "owner": "research/nine/REVIEW_TERMINAL_DISTINCT_RETURN_TWO_CIRCLE_W_INDEPENDENT_2026_10_28.md",
+      "line": 234,
+      "source": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "owner": "research/nine/REVIEW_TERMINAL_DISTINCT_RETURN_TWO_CIRCLE_W_INDEPENDENT_2026_10_28.md",
+      "line": 235,
+      "source": "research/nine/LOADED_TWO_FORCE_BOUNDARY_NEIGHBOR_COMMON_POINT_EXCLUSION.md",
+      "sha256": "5a95c3255a634f603a47c8311971902f2b8b699e4ebf2d076b21b01fddf941ba"
+    },
+    {
+      "owner": "research/nine/REVIEW_TERMINAL_DISTINCT_RETURN_TWO_CIRCLE_W_INDEPENDENT_2026_10_28.md",
+      "line": 236,
+      "source": "research/nine/UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+      "sha256": "406fce53d22cc20eec43a373a877798dab583a6bd93f684ff124293016c44c87"
+    },
+    {
+      "owner": "research/nine/REVIEW_TERMINAL_DISTINCT_RETURN_TWO_CIRCLE_W_INDEPENDENT_2026_10_28.md",
+      "line": 237,
+      "source": "research/nine/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207"
+    },
+    {
+      "owner": "research/nine/REVIEW_TERMINAL_DISTINCT_RETURN_TWO_CIRCLE_W_INDEPENDENT_2026_10_28.md",
+      "line": 238,
+      "source": "research/nine/RADIAL_INNER_CORNER_BOUNDARY_NEIGHBOR_QUARTER_SIDE_BOUND.md",
+      "sha256": "37f0f207a86a9d2c4ead42edcfaac01c5dbdd4f08bc66e98e41f985adedc4011"
+    },
+    {
+      "owner": "research/nine/REVIEW_TERMINAL_DISTINCT_RETURN_TWO_CIRCLE_W_INDEPENDENT_2026_10_28.md",
+      "line": 239,
+      "source": "research/nine/GENERAL_SINGLE_HUB_BOUNDARY_PATH_POCKET.md",
+      "sha256": "958bb122342783a824d023c221ccc2c93a68300b00b0ffc3496c25ad394aec84"
+    },
+    {
+      "owner": "research/nine/REVIEW_TERMINAL_DISTINCT_RETURN_TWO_CIRCLE_W_INDEPENDENT_2026_10_28.md",
+      "line": 240,
+      "source": "research/nine/FAN_TIP_OWNED_ENDPOINT_EXCLUSION.md",
+      "sha256": "aef2fc2adfda6168d7e2c2f824b373d6beafb12c8937e0f6bc93f7f36b464a67"
+    },
+    {
+      "owner": "research/nine/REVIEW_TERMINAL_DISTINCT_RETURN_TWO_CIRCLE_W_INDEPENDENT_2026_10_28.md",
+      "line": 241,
+      "source": "research/nine/D02_ENTIRE_INCOMING_HUB_AXIS_AND_SHARED_TERMINAL_EXCLUSION.md",
+      "sha256": "0b0e8b90ff7535e6e80f429e10ff7535190c2a74220022d1a9ad3676a8595c7f"
+    },
+    {
+      "owner": "research/nine/REVIEW_TERMINAL_DISTINCT_RETURN_TWO_CIRCLE_W_INDEPENDENT_2026_10_28.md",
+      "line": 242,
+      "source": "research/nine/SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1"
+    },
+    {
+      "owner": "research/nine/REVIEW_D02_ENTIRE_TWO_CIRCLE_JOIN_W_INDEPENDENT_2026_10_28.md",
+      "line": 177,
+      "source": "research/nine/D02_SINGLETON_TERMINAL_AXIS_TWO_NONPARALLEL_RETURN_COVER.md",
+      "sha256": "7997a9a7eacc0aedf85801eda33b5e7a0ca2e4ce37b86b95f7cb1ba3b6c28ce9"
+    },
+    {
+      "owner": "research/nine/REVIEW_D02_ENTIRE_TWO_CIRCLE_JOIN_W_INDEPENDENT_2026_10_28.md",
+      "line": 178,
+      "source": "research/nine/SINGLETON_TERMINAL_AXIS_TIP_OWNED_RETURN_TWO_CIRCLE_POCKET_EXCLUSION.md",
+      "sha256": "6afadc3f6e74933e4ac36073ef2d5c243c4cbe91198a9c90b2be68ad368ed73d"
+    },
+    {
+      "owner": "research/nine/REVIEW_D02_ENTIRE_TWO_CIRCLE_JOIN_W_INDEPENDENT_2026_10_28.md",
+      "line": 179,
+      "source": "research/nine/TERMINAL_HUB_AXIS_DISTINCT_RETURN_SIDE_TWO_CIRCLE_TIP_EXCLUSION.md",
+      "sha256": "b2a641d04909abad6e99885e2485c2af0845d3ee05ad43a19664d6a93e4891fb"
+    },
+    {
+      "owner": "research/nine/REVIEW_D02_ENTIRE_TWO_CIRCLE_JOIN_W_INDEPENDENT_2026_10_28.md",
+      "line": 180,
+      "source": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "owner": "research/nine/REVIEW_D02_ENTIRE_TWO_CIRCLE_JOIN_W_INDEPENDENT_2026_10_28.md",
+      "line": 181,
+      "source": "research/nine/CHORDED_HEXAGON_CENTRAL_CAPACITY_ONE.md",
+      "sha256": "0b787eae6efe36d2ca6c40dbb079d3262192125fffe58026bacbfd657d1a9a34"
+    },
+    {
+      "owner": "research/nine/REVIEW_D02_ENTIRE_TWO_CIRCLE_JOIN_W_INDEPENDENT_2026_10_28.md",
+      "line": 182,
+      "source": "research/nine/CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md",
+      "sha256": "b61b0dec7ded00984c687e353fd3f3bfb5a5a7ade45d87d69aaeade09f23d80b"
+    },
+    {
+      "owner": "research/nine/REVIEW_D02_ENTIRE_TWO_CIRCLE_JOIN_W_INDEPENDENT_2026_10_28.md",
+      "line": 183,
+      "source": "research/nine/SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1"
+    },
+    {
+      "owner": "research/nine/REVIEW_D02_ENTIRE_TWO_CIRCLE_JOIN_W_INDEPENDENT_2026_10_28.md",
+      "line": 184,
+      "source": "research/nine/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "sha256": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90"
+    },
+    {
+      "owner": "research/nine/REVIEW_BALANCED_FAR_PAIR_OPPOSITE_PORT_STRIP_H4_INDEPENDENT_2026_10_28.md",
+      "line": 15,
+      "source": "research/nine/BALANCED_BOUNDARY_FAR_PAIR_AND_OPPOSITE_PORT_ORIGIN_STRIP.md",
+      "sha256": "72a915beaee37b435d993c6e77bd9833d717479b7b07ac014783d764cffa8605"
+    },
+    {
+      "owner": "research/nine/REVIEW_BALANCED_FAR_PAIR_OPPOSITE_PORT_STRIP_H4_INDEPENDENT_2026_10_28.md",
+      "line": 16,
+      "source": "research/nine/GENERAL_BALANCED_THREE_BOUNDARY_FULL_WINDOW_METRIC_EXCLUSION.md",
+      "sha256": "5da69931a63ac7cbf93ec3ff494489dc05d2245017da1c4dcddf1b4a8a6c956e"
+    },
+    {
+      "owner": "research/nine/REVIEW_BALANCED_FAR_PAIR_OPPOSITE_PORT_STRIP_H4_INDEPENDENT_2026_10_28.md",
+      "line": 17,
+      "source": "research/nine/FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "sha256": "164d08bb2c4dfe8510247e44298d309920cb88a780221252d833f51aa654225f"
+    },
+    {
+      "owner": "research/nine/REVIEW_BALANCED_FAR_PAIR_OPPOSITE_PORT_STRIP_H4_INDEPENDENT_2026_10_28.md",
+      "line": 18,
+      "source": "research/nine/INNER_PENTAGON_H_OWNED_UNLOADED_END_FIXED_OPPOSITE_RETURN_VERTICES.md",
+      "sha256": "bc1b08bc93401e25891f1307139c465409e4a3e260670513087b658c210e0f8c"
+    },
+    {
+      "owner": "research/nine/REVIEW_BALANCED_FAR_PAIR_OPPOSITE_PORT_STRIP_H4_INDEPENDENT_2026_10_28.md",
+      "line": 19,
+      "source": "research/nine/INNER_PENTAGON_FOUR_SPOKE_NO_CHORD_OCCUPIED_POCKETS_AND_LONG_PORT_REDUCTION.md",
+      "sha256": "ad0a8e658d303d7527a383c4688fa4bfdae1a04f46cecfb59c424cc4028e02a6"
+    },
+    {
+      "owner": "research/nine/REVIEW_BALANCED_FAR_PAIR_OPPOSITE_PORT_STRIP_H4_INDEPENDENT_2026_10_28.md",
+      "line": 20,
+      "source": "research/nine/FAN_TIP_OWNED_ENDPOINT_EXCLUSION.md",
+      "sha256": "aef2fc2adfda6168d7e2c2f824b373d6beafb12c8937e0f6bc93f7f36b464a67"
+    },
+    {
+      "owner": "research/nine/REVIEW_BALANCED_FAR_PAIR_OPPOSITE_PORT_STRIP_H4_INDEPENDENT_2026_10_28.md",
+      "line": 21,
+      "source": "research/nine/TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md",
+      "sha256": "29e38d3f641fe16c6db587e51245f92ad4c447f9536db7d14c221f56b5357e82"
+    },
+    {
+      "owner": "research/nine/REVIEW_BALANCED_FAR_PAIR_OPPOSITE_PORT_STRIP_H4_INDEPENDENT_2026_10_28.md",
+      "line": 22,
+      "source": "research/nine/FIXED_SINGLETON_THREE_FORCE_OFF_LINE_NORMAL_SELECTION_AND_H4_OWNED_END_REDUCTION.md",
+      "sha256": "d5e02f317ecbfdbd3d948fd27f5f78d6eda8803fb679c435ef3101780e1f47b1"
+    },
+    {
+      "owner": "research/nine/REVIEW_BALANCED_FAR_PAIR_OPPOSITE_PORT_STRIP_H4_INDEPENDENT_2026_10_28.md",
+      "line": 23,
+      "source": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe"
+    },
+    {
+      "owner": "research/nine/REVIEW_ONE_PROPER_ENDPOINT_MIXED_DEGREE_CAPACITY_AND_LONG_PORTS_INDEPENDENT_2026_10_28.md",
+      "line": 20,
+      "source": "research/nine/ONE_PROPER_ENDPOINT_OPPOSITE_PORT_HIGH_ROOF_POCKET_CAPACITY_TWO.md",
+      "sha256": "16c46d4fe283c5bfb086cb4266ea81a35d422c66904b981b8eeac199173ac008"
+    },
+    {
+      "owner": "research/nine/REVIEW_ONE_PROPER_ENDPOINT_MIXED_DEGREE_CAPACITY_AND_LONG_PORTS_INDEPENDENT_2026_10_28.md",
+      "line": 21,
+      "source": "research/nine/ONE_PROPER_ENDPOINT_OPPOSITE_PORT_COMPLETE_POCKET_CAPACITY_TWO.md",
+      "sha256": "d5ac1acc11a7a555f88fff55aa3bcb914af6a74a98016e30b9011a2cd6892f6a"
+    },
+    {
+      "owner": "research/nine/REVIEW_ONE_PROPER_ENDPOINT_MIXED_DEGREE_CAPACITY_AND_LONG_PORTS_INDEPENDENT_2026_10_28.md",
+      "line": 22,
+      "source": "research/nine/UNLOADED_THREE_FORCE_LONG_EXTERNAL_RETURN_PORTS_MIXED_DEGREE_POCKET_CAPACITY_TWO.md",
+      "sha256": "d06936aea26a8c8fe1263f7475853f689965657d810616d957b62aa1b78b2bf6"
+    },
+    {
+      "owner": "research/nine/REVIEW_ONE_PROPER_ENDPOINT_MIXED_DEGREE_CAPACITY_AND_LONG_PORTS_INDEPENDENT_2026_10_28.md",
+      "line": 26,
+      "source": "research/nine/BALANCED_BOUNDARY_FAR_PAIR_AND_OPPOSITE_PORT_ORIGIN_STRIP.md",
+      "sha256": "72a915beaee37b435d993c6e77bd9833d717479b7b07ac014783d764cffa8605"
+    },
+    {
+      "owner": "research/nine/REVIEW_ONE_PROPER_ENDPOINT_MIXED_DEGREE_CAPACITY_AND_LONG_PORTS_INDEPENDENT_2026_10_28.md",
+      "line": 27,
+      "source": "research/nine/GENERAL_BALANCED_THREE_BOUNDARY_FULL_WINDOW_METRIC_EXCLUSION.md",
+      "sha256": "5da69931a63ac7cbf93ec3ff494489dc05d2245017da1c4dcddf1b4a8a6c956e"
+    },
+    {
+      "owner": "research/nine/REVIEW_ONE_PROPER_ENDPOINT_MIXED_DEGREE_CAPACITY_AND_LONG_PORTS_INDEPENDENT_2026_10_28.md",
+      "line": 28,
+      "source": "research/nine/FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "sha256": "164d08bb2c4dfe8510247e44298d309920cb88a780221252d833f51aa654225f"
+    },
+    {
+      "owner": "research/nine/REVIEW_ONE_PROPER_ENDPOINT_MIXED_DEGREE_CAPACITY_AND_LONG_PORTS_INDEPENDENT_2026_10_28.md",
+      "line": 29,
+      "source": "research/nine/TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md",
+      "sha256": "29e38d3f641fe16c6db587e51245f92ad4c447f9536db7d14c221f56b5357e82"
+    },
+    {
+      "owner": "research/nine/REVIEW_ONE_PROPER_ENDPOINT_MIXED_DEGREE_CAPACITY_AND_LONG_PORTS_INDEPENDENT_2026_10_28.md",
+      "line": 30,
+      "source": "research/nine/GENERAL_SIDE_CHANNEL_CAP_INNER_ARC.md",
+      "sha256": "f76d76ef2feccc80098fb6d10d6316af4e393d3ae34d4953846dd27b80c137cb"
+    },
+    {
+      "owner": "research/nine/REVIEW_ONE_PROPER_ENDPOINT_MIXED_DEGREE_CAPACITY_AND_LONG_PORTS_INDEPENDENT_2026_10_28.md",
+      "line": 31,
+      "source": "research/nine/INNER_PENTAGON_H_OWNED_UNLOADED_END_FIXED_OPPOSITE_RETURN_VERTICES.md",
+      "sha256": "bc1b08bc93401e25891f1307139c465409e4a3e260670513087b658c210e0f8c"
+    },
+    {
+      "owner": "research/nine/REVIEW_ONE_PROPER_ENDPOINT_MIXED_DEGREE_CAPACITY_AND_LONG_PORTS_INDEPENDENT_2026_10_28.md",
+      "line": 32,
+      "source": "research/nine/FIXED_SINGLETON_THREE_FORCE_OFF_LINE_NORMAL_SELECTION_AND_H4_OWNED_END_REDUCTION.md",
+      "sha256": "d5e02f317ecbfdbd3d948fd27f5f78d6eda8803fb679c435ef3101780e1f47b1"
+    },
+    {
+      "owner": "research/nine/REVIEW_ONE_PROPER_ENDPOINT_MIXED_DEGREE_CAPACITY_AND_LONG_PORTS_INDEPENDENT_2026_10_28.md",
+      "line": 33,
+      "source": "research/nine/INNER_PENTAGON_FOUR_SPOKE_NO_CHORD_OCCUPIED_POCKETS_AND_LONG_PORT_REDUCTION.md",
+      "sha256": "ad0a8e658d303d7527a383c4688fa4bfdae1a04f46cecfb59c424cc4028e02a6"
+    },
+    {
+      "owner": "research/nine/REVIEW_ONE_PROPER_ENDPOINT_MIXED_DEGREE_CAPACITY_AND_LONG_PORTS_INDEPENDENT_2026_10_28.md",
+      "line": 34,
+      "source": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe"
+    },
+    {
+      "owner": "research/nine/REVIEW_ONE_PROPER_ENDPOINT_MIXED_DEGREE_CAPACITY_AND_LONG_PORTS_INDEPENDENT_2026_10_28.md",
+      "line": 35,
+      "source": "research/nine/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "sha256": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90"
+    },
+    {
+      "owner": "research/nine/REVIEW_ONE_PROPER_ENDPOINT_MIXED_DEGREE_CAPACITY_AND_LONG_PORTS_INDEPENDENT_2026_10_28.md",
+      "line": 36,
+      "source": "research/nine/FAN_TIP_OWNED_ENDPOINT_EXCLUSION.md",
+      "sha256": "aef2fc2adfda6168d7e2c2f824b373d6beafb12c8937e0f6bc93f7f36b464a67"
+    },
+    {
+      "owner": "research/nine/REVIEW_ONE_PROPER_ENDPOINT_MIXED_DEGREE_CAPACITY_AND_LONG_PORTS_INDEPENDENT_2026_10_28.md",
+      "line": 37,
+      "source": "research/nine/INNER_PENTAGON_FOUR_SPOKE_SHARED_UNLOADED_END_EXCLUSION.md",
+      "sha256": "ab1882057cc4d5bc0be2929c0c926543a92fbbbc4f8f74598c2238707d17f9f6"
+    },
+    {
+      "owner": "research/nine/REVIEW_ONE_PROPER_ENDPOINT_MIXED_DEGREE_CAPACITY_AND_LONG_PORTS_INDEPENDENT_2026_10_28.md",
+      "line": 38,
+      "source": "research/nine/RECOVERED_H4_END_OWNER_INTERFACES_DEPENDENCY_AUDIT_2026_10_28.json",
+      "sha256": "8f056eb6823a8c0bc87d9b2c8b3d6fe105f6457985dd0e85a9bdae5dc96d8e8e"
+    },
+    {
+      "owner": "research/nine/ADOPTION_COMPLETE_TWO_CIRCLE_TIP_AND_MIXED_ENDPOINT_POCKETS_ROOT_2026_10_28.md",
+      "line": 18,
+      "source": "research/nine/SINGLETON_TERMINAL_AXIS_TIP_OWNED_RETURN_TWO_CIRCLE_POCKET_EXCLUSION.md",
+      "sha256": "6afadc3f6e74933e4ac36073ef2d5c243c4cbe91198a9c90b2be68ad368ed73d"
+    },
+    {
+      "owner": "research/nine/ADOPTION_COMPLETE_TWO_CIRCLE_TIP_AND_MIXED_ENDPOINT_POCKETS_ROOT_2026_10_28.md",
+      "line": 19,
+      "source": "research/nine/TERMINAL_HUB_AXIS_DISTINCT_RETURN_SIDE_TWO_CIRCLE_TIP_EXCLUSION.md",
+      "sha256": "b2a641d04909abad6e99885e2485c2af0845d3ee05ad43a19664d6a93e4891fb"
+    },
+    {
+      "owner": "research/nine/ADOPTION_COMPLETE_TWO_CIRCLE_TIP_AND_MIXED_ENDPOINT_POCKETS_ROOT_2026_10_28.md",
+      "line": 20,
+      "source": "research/nine/D02_ENTIRE_TWO_CIRCLE_TIP_EXCLUSION_AND_EXACT_UNIQUE_TIP_RESIDUAL.md",
+      "sha256": "8aba649f47a66527beff0a0a12db6fdcb7f8782b54f734baf190d8b8523732b8"
+    },
+    {
+      "owner": "research/nine/ADOPTION_COMPLETE_TWO_CIRCLE_TIP_AND_MIXED_ENDPOINT_POCKETS_ROOT_2026_10_28.md",
+      "line": 21,
+      "source": "research/nine/BALANCED_BOUNDARY_FAR_PAIR_AND_OPPOSITE_PORT_ORIGIN_STRIP.md",
+      "sha256": "72a915beaee37b435d993c6e77bd9833d717479b7b07ac014783d764cffa8605"
+    },
+    {
+      "owner": "research/nine/ADOPTION_COMPLETE_TWO_CIRCLE_TIP_AND_MIXED_ENDPOINT_POCKETS_ROOT_2026_10_28.md",
+      "line": 22,
+      "source": "research/nine/ONE_PROPER_ENDPOINT_OPPOSITE_PORT_HIGH_ROOF_POCKET_CAPACITY_TWO.md",
+      "sha256": "16c46d4fe283c5bfb086cb4266ea81a35d422c66904b981b8eeac199173ac008"
+    },
+    {
+      "owner": "research/nine/ADOPTION_COMPLETE_TWO_CIRCLE_TIP_AND_MIXED_ENDPOINT_POCKETS_ROOT_2026_10_28.md",
+      "line": 23,
+      "source": "research/nine/ONE_PROPER_ENDPOINT_OPPOSITE_PORT_COMPLETE_POCKET_CAPACITY_TWO.md",
+      "sha256": "d5ac1acc11a7a555f88fff55aa3bcb914af6a74a98016e30b9011a2cd6892f6a"
+    },
+    {
+      "owner": "research/nine/ADOPTION_COMPLETE_TWO_CIRCLE_TIP_AND_MIXED_ENDPOINT_POCKETS_ROOT_2026_10_28.md",
+      "line": 24,
+      "source": "research/nine/UNLOADED_THREE_FORCE_LONG_EXTERNAL_RETURN_PORTS_MIXED_DEGREE_POCKET_CAPACITY_TWO.md",
+      "sha256": "d06936aea26a8c8fe1263f7475853f689965657d810616d957b62aa1b78b2bf6"
+    },
+    {
+      "owner": "research/nine/ADOPTION_COMPLETE_TWO_CIRCLE_TIP_AND_MIXED_ENDPOINT_POCKETS_ROOT_2026_10_28.md",
+      "line": 37,
+      "source": "research/nine/REVIEW_SINGLETON_TERMINAL_TIP_OWNED_TWO_CIRCLE_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "sha256": "11458eaf7d0a147fa50711c81d6ea6e7996510baa474288bbf2183a59ca5099c"
+    },
+    {
+      "owner": "research/nine/ADOPTION_COMPLETE_TWO_CIRCLE_TIP_AND_MIXED_ENDPOINT_POCKETS_ROOT_2026_10_28.md",
+      "line": 38,
+      "source": "research/nine/REVIEW_TERMINAL_DISTINCT_RETURN_TWO_CIRCLE_W_INDEPENDENT_2026_10_28.md",
+      "sha256": "64984519e31a665801ffeb3fa758a133c5814de5359b28df45decd6f6ea9f6db"
+    },
+    {
+      "owner": "research/nine/ADOPTION_COMPLETE_TWO_CIRCLE_TIP_AND_MIXED_ENDPOINT_POCKETS_ROOT_2026_10_28.md",
+      "line": 39,
+      "source": "research/nine/REVIEW_D02_ENTIRE_TWO_CIRCLE_JOIN_W_INDEPENDENT_2026_10_28.md",
+      "sha256": "b000c6db6de7420f6d4db699000d11cb059761d93e01085d07988c9e559b3fae"
+    },
+    {
+      "owner": "research/nine/ADOPTION_COMPLETE_TWO_CIRCLE_TIP_AND_MIXED_ENDPOINT_POCKETS_ROOT_2026_10_28.md",
+      "line": 40,
+      "source": "research/nine/REVIEW_BALANCED_FAR_PAIR_OPPOSITE_PORT_STRIP_H4_INDEPENDENT_2026_10_28.md",
+      "sha256": "0b12724894db809969aac2777508bdeed669e0cd6d9fc4da4249fc9f1cca0814"
+    },
+    {
+      "owner": "research/nine/ADOPTION_COMPLETE_TWO_CIRCLE_TIP_AND_MIXED_ENDPOINT_POCKETS_ROOT_2026_10_28.md",
+      "line": 41,
+      "source": "research/nine/REVIEW_ONE_PROPER_ENDPOINT_MIXED_DEGREE_CAPACITY_AND_LONG_PORTS_INDEPENDENT_2026_10_28.md",
+      "sha256": "20fd98896fb509a474059188533ce0772a57ae52ba574c09e0cc1ad75c2b84ea"
+    }
+  ],
+  "current_source_repairs": [],
+  "metadata_files": [
+    {
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "sha256": "114dad0d9f86e9c190cdc1530d7efefaf2220b7dc62d88e0d04adc4e385d008a",
+      "bytes": 974946
+    },
+    {
+      "path": "research/nine/CYCLIC_CELL_LEDGER.md",
+      "sha256": "b1ec4dfeb25fb3c9e0ad45984e6db8f162174d5b3f171c85d169019cdd43fd03",
+      "bytes": 247598
+    },
+    {
+      "path": "research/nine/HANDOFF_PR11_2026_10_28_CURRENT.md",
+      "sha256": "11648d5c06efce659902d27340bea590cd36974d38f408a694d1e16f00c546f6",
+      "bytes": 81912
+    }
+  ],
+  "scope_limits": [
+    "The original D02 row remains open exactly in its two nonparallel singleton return interfaces, now with unique physical V circle corner; no remaining parameter is deleted.",
+    "Whole H-owned HD and all double-external-return singleton HD owners close as proper L0124 features. Other D-owned/shared/free return features and the L124 all-clear end refinement remain.",
+    "All nine actual squares, true degrees, complete original equations, selected normals, actual applications, full shared means, physical masks and individual zero coefficients remain.",
+    "No new computational exclusion certificate and no additional historical packet retirement. Exact arithmetic checks transcribe printed continuous proofs; hashes record provenance.",
+    "No Lean/Lake compilation, CI/workflow dispatch or pull request merge. All commits use [skip ci].",
+    "Global sharp inequality, complete equality classification, remaining prerequisite audit and Lean integration remain open."
+  ]
+}

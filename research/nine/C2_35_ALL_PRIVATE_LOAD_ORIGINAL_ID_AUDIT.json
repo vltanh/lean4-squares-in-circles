@@ -1,0 +1,82 @@
+{
+  "status": "literal original ID audit; zero fine/coarse delta",
+  "proof": {
+    "filename": "C2_35_HIGH_RADIUS_D_LEAF_EXITS_AND_EXACT_NEAR_BODY_REMAINDER.md",
+    "sha256": "63e44f05da9d55fef3f1d4276c862d3ffa7ccfebe2d399c7cad0a22bc0625f3e"
+  },
+  "inventory_sources": [
+    {
+      "filename": "DEEP_GATED_ROADMAP.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/DEEP_GATED_ROADMAP.md",
+      "sha256": "204165a228086459035a7b8d06cdeed9825e657a80159c75084facdd75ceed24"
+    },
+    {
+      "filename": "CYCLIC_CELL_LEDGER.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/CYCLIC_CELL_LEDGER.md",
+      "sha256": "0195d32039113ef47ced95b9252f3cc0666708d31128a1c953e37cc34c0843c8"
+    }
+  ],
+  "original_fine_count": 2513,
+  "open_at_audit": 176,
+  "explicit_C235_or_TB5_fine_identifiers": [],
+  "relevant_original_parent_contracts": [
+    {
+      "id": "G3.M.F.1.a",
+      "checked": false,
+      "line": 3973,
+      "contract": "- [ ] **G3.M.F.1.a** Cover every internal biconnected block adjacency and articulation placement allowed by the coarse profile."
+    },
+    {
+      "id": "G3.M.F.2 LOADS",
+      "checked": false,
+      "line": 3976,
+      "contract": "- [ ] **G3.M.F.2 LOADS** Specify physical boundary set B and positive load set L subset B, retaining B\\L and physically clear positive bodies."
+    },
+    {
+      "id": "C.3 BOUND",
+      "checked": false,
+      "line": 3996,
+      "contract": "- [ ] **C.3 BOUND** Prove R^2>=Q on the entire domain, or prove no9-body completion exists. A core-only radius bound cannot be substituted when a smaller core genuinely fits below Q."
+    },
+    {
+      "id": "C.ALL",
+      "checked": false,
+      "line": 4002,
+      "contract": "- [ ] **C.ALL** Tick the coarse row only after C.0\u2013C.5 are complete. A uniform theorem may discharge several rows at once with explicit instantiations."
+    },
+    {
+      "id": "G3.M9.ALL",
+      "checked": false,
+      "line": 6339,
+      "contract": "- [ ] **G3.M9.ALL** Eleven original nine-body coarse cells remain: C1.5.b4, C1.6.b3, C1.7.b2, C1.8.b1, C1.9.b0, C2.35.b2, C2.36.b1, C2.37.b0, C2.45.b1, C2.46.b0 and C2.55.b0. C2.44.b2 is now closed by its complete original bridge cover and all 21 rooted-type pairs. The other accepted mixed and simple-cycle exclusions remain unchanged."
+    },
+    {
+      "id": "G3.M.ALL",
+      "checked": false,
+      "line": 6340,
+      "contract": "- [ ] **G3.M.ALL** Combine the completed four-body cell and M5\u2013M9, preserving every equality survivor."
+    }
+  ],
+  "original_coarse_row": [
+    "| C2.35.b2 | 3,5 | 2 | 9 | 0 | [ ] OPEN |"
+  ],
+  "full_domain_mapping": [
+    {
+      "proved_domain": "Disjoint C235 triangle/five-block with all four Q-private bodies positively loaded, all original root marks/chords/physical masks",
+      "original_fine_match": null,
+      "enclosing_original_coarse": "C2.35.b2",
+      "enclosing_original_fine": "G3.M9.ALL",
+      "reason_no_credit": "The existing enclosing IDs also contain all other C235 masks and attachments, and G3.M9.ALL contains all remaining nine-body coarse cells."
+    },
+    {
+      "proved_domain": "Shared-H private/private C235 triangle/five-block with all four Q-private bodies positively loaded, all original root marks/chords/physical masks",
+      "original_fine_match": null,
+      "enclosing_original_coarse": "C2.35.b2",
+      "enclosing_original_fine": "G3.M9.ALL",
+      "reason_no_credit": "No existing fine ID isolates this original load/attachment domain; the enclosing coarse and fine IDs retain the other full families."
+    }
+  ],
+  "different_existing_domains": "M6.B5L.* IDs concern one five-body block plus one genuine leaf, total six positive bodies and three arbitrary completion squares. The C235 proof requires the distinct genuine triangle and its full branch equations, total nine positive bodies. Those M6 contracts are not implied by this reduction.",
+  "fine_delta": 0,
+  "coarse_delta": 0
+}

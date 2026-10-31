@@ -1,0 +1,69 @@
+{
+  "schema": "independent-hand-proof-review-v1",
+  "reviewer": "six_body",
+  "date": "2026-10-28",
+  "verdict": "PASS unchanged",
+  "source": {
+    "path": "/workspace/scratch/7d553350ce2a/diamond/GENERAL_BALANCED_THREE_BOUNDARY_FULL_WINDOW_METRIC_EXCLUSION.md",
+    "name": "GENERAL_BALANCED_THREE_BOUNDARY_FULL_WINDOW_METRIC_EXCLUSION.md",
+    "sha256": "5da69931a63ac7cbf93ec3ff494489dc05d2245017da1c4dcddf1b4a8a6c956e",
+    "bytes": 8541
+  },
+  "independent_review": {
+    "path": "/workspace/scratch/7d553350ce2a/six_body/REVIEW_BALANCED_THREE_BOUNDARY_FULL_WINDOW_INDEPENDENT_2026_10_28.md",
+    "name": "REVIEW_BALANCED_THREE_BOUNDARY_FULL_WINDOW_INDEPENDENT_2026_10_28.md",
+    "sha256": "5f862d70c040324ce4904553605a7663316624ad86e69fd99e53c7985a29da73",
+    "bytes": 4901
+  },
+  "direct_caller_dependencies": [
+    {
+      "path": "/workspace/scratch/7d553350ce2a/baseline/research/nine/UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "name": "UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "sha256": "db073cd024a4f2e763e7cd0a21bf5cb6a2a8be67069f3f9d3aff638b8a40b258",
+      "bytes": 6573
+    },
+    {
+      "path": "/workspace/scratch/7d553350ce2a/baseline/research/nine/SIX_BODY_INNER_PENTAGON_LOAD_COVER.md",
+      "name": "SIX_BODY_INNER_PENTAGON_LOAD_COVER.md",
+      "sha256": "cfe85a201b09182200d5270f0dcdc0e590bf99eded19aaf6d56f86830e959c0a",
+      "bytes": 10870
+    }
+  ],
+  "comparison_sources": [
+    {
+      "path": "/workspace/scratch/7d553350ce2a/baseline/research/nine/GENERAL_BALANCED_THREE_BOUNDARY_CENTER_DISTANCE_EXCLUSION.md",
+      "name": "GENERAL_BALANCED_THREE_BOUNDARY_CENTER_DISTANCE_EXCLUSION.md",
+      "sha256": "3d0127ae38e7f14580bada72b1a39f8c9115c496a871a75b256f24ca1386fc46",
+      "bytes": 8171
+    },
+    {
+      "path": "/workspace/scratch/7d553350ce2a/baseline/research/nine/CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "name": "CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "sha256": "e54df61d3134c5709bee5ac1a250fdd51084828da114d896f14c7e6337c4e8c5",
+      "bytes": 12813
+    }
+  ],
+  "exact_arithmetic": {
+    "upper_annulus_reserve": "31/57600",
+    "lower_annulus_radical_reserve": "1/576",
+    "corner_angle_reserve": "27/200",
+    "tan_comparison_reserve": "1/225",
+    "cos_comparison_reserve": "3/196",
+    "center_distance_corner_values": [
+      "722/1575",
+      "2201/3600",
+      "1183/1800"
+    ],
+    "sqrt2_reserve": "1/4900",
+    "small_half_angle_ratio": "297/532",
+    "large_half_angle_ratio": "507/532",
+    "squared_sine_comparison_integer": 1742127084,
+    "u_above_pi_over_four_reserve": "115537/283024",
+    "v_above_pi_over_six_reserve": "31/532"
+  },
+  "scope": "All physical boundary masks, positive actual total circle loads, full original window 79/40 <= R <= sqrt(1105)/16, balanced precisely three actual circle resultants; whole already checked H3.L013 caller.",
+  "fine_gate_delta": 0,
+  "coarse_gate_delta": 0,
+  "unresolved": "No exclusion claimed for H4 pentagon or any open gate.",
+  "validation": "Read and reconstructed whole proof; exact rational identities evaluated. No Lean compilation, CI, remote edits, ledger edits or substitutions of physical bodies/forces."
+}

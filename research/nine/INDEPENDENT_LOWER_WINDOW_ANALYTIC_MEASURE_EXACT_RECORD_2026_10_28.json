@@ -1,0 +1,342 @@
+{
+  "status": "PASS independent exact rational corroboration; source hand proofs remain primary",
+  "source": {
+    "path": "/workspace/scratch/7d553350ce2a/six_body/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+    "sha256": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90"
+  },
+  "active_dependencies": [
+    {
+      "name": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "path": "/workspace/scratch/a35548aa44c3/publication_d579/research/nine/NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "sha256": "4c9e708945938c3f9df575e76f7573903d6b5a0ce4eccb5bcea760353a47458a"
+    },
+    {
+      "name": "NINE_RADIUS_TWO_MEASURE_LINE_ANALYTIC_REDUCTION.md",
+      "path": "/workspace/scratch/a35548aa44c3/publication_d579/research/nine/NINE_RADIUS_TWO_MEASURE_LINE_ANALYTIC_REDUCTION.md",
+      "sha256": "714e2a092af516fad1450d2aeb38a6529418ef72070b5184d462a3f4b8a8f18d"
+    },
+    {
+      "name": "NINE_RADIUS_TWO_MEASURE_RECTANGLES_ANALYTIC_REDUCTION.md",
+      "path": "/workspace/scratch/a35548aa44c3/publication_d579/research/nine/NINE_RADIUS_TWO_MEASURE_RECTANGLES_ANALYTIC_REDUCTION.md",
+      "sha256": "8b749abf2792e022b2a3bb79ea275ebc02000707c864a4ae41f5b6410edeb780"
+    },
+    {
+      "name": "NINE_RADIUS_TWO_MEASURE_OUTER_CURVE_ANALYTIC_REDUCTION.md",
+      "path": "/workspace/scratch/a35548aa44c3/publication_d579/research/nine/NINE_RADIUS_TWO_MEASURE_OUTER_CURVE_ANALYTIC_REDUCTION.md",
+      "sha256": "9258e4d00c0935a4deee1942159b88a7474e95169443d1ed966da3156a336eba"
+    },
+    {
+      "name": "NINE_RADIUS_TWO_MEASURE_ANALYTIC_FIXED_VALUES.md",
+      "path": "/workspace/scratch/a35548aa44c3/publication_d579/research/nine/NINE_RADIUS_TWO_MEASURE_ANALYTIC_FIXED_VALUES.md",
+      "sha256": "9a4656cc90ab81200847c8b6958fc6e089fc4b807b401705663304be4f782c4b"
+    },
+    {
+      "name": "NINE_RADIUS_TWO_MEASURE_FIVE_POINT_REDUCTION.md",
+      "path": "/workspace/scratch/a35548aa44c3/publication_d579/research/nine/NINE_RADIUS_TWO_MEASURE_FIVE_POINT_REDUCTION.md",
+      "sha256": "c316fbce9320918ba88e46c4cd53b5c70c8ccdb2cc585171204f28385905929f"
+    }
+  ],
+  "checked_arithmetic_count": 49,
+  "arithmetic": [
+    {
+      "name": "fixed Taylor row 1",
+      "exact_value": "166887312566449581954559/40320000000000000000",
+      "expected": null,
+      "strict_lower": "4139"
+    },
+    {
+      "name": "fixed Taylor row 2",
+      "exact_value": "143511812091669416691752959/10321920000000000000000",
+      "expected": null,
+      "strict_lower": "13903"
+    },
+    {
+      "name": "fixed Taylor row 3",
+      "exact_value": "13853090429908301272185440615794817502278045687/360593856000000000000000000000000000000000",
+      "expected": null,
+      "strict_lower": "38417"
+    },
+    {
+      "name": "fixed Taylor row 4",
+      "exact_value": "61346222481772883310963265804134853/1113750000000000000000000000000",
+      "expected": null,
+      "strict_lower": "55080"
+    },
+    {
+      "name": "fixed Taylor row 5",
+      "exact_value": "1656743195244488771364600200898696293/440725824000000000000000000000000",
+      "expected": null,
+      "strict_lower": "3759"
+    },
+    {
+      "name": "fixed Taylor row 6",
+      "exact_value": "12862851297281933102832218780362595279/437500000000000000000000000000000",
+      "expected": null,
+      "strict_lower": "29400"
+    },
+    {
+      "name": "fixed Taylor row 7",
+      "exact_value": "725605127730387711085069655192369/101250000000000000000000000000",
+      "expected": null,
+      "strict_lower": "7166"
+    },
+    {
+      "name": "fixed Taylor row 8",
+      "exact_value": "2545287637073147142618282170621431871122151/36288000000000000000000000000000000000",
+      "expected": null,
+      "strict_lower": "70141"
+    },
+    {
+      "name": "fixed Taylor row 9",
+      "exact_value": "25140265626796090779335305027070652028387789/399168000000000000000000000000000000000",
+      "expected": null,
+      "strict_lower": "62981"
+    },
+    {
+      "name": "fixed Taylor row 10",
+      "exact_value": "3071676106583568323368313110698181/236250000000000000000000000000",
+      "expected": null,
+      "strict_lower": "13001"
+    },
+    {
+      "name": "fixed Taylor row 11",
+      "exact_value": "52101440913807192153564850610137194725190748529/3991680000000000000000000000000000000000000",
+      "expected": null,
+      "strict_lower": "13052"
+    },
+    {
+      "name": "fixed Taylor row 12",
+      "exact_value": "726941154266384932577996084569437558617398019/49280000000000000000000000000000000000000",
+      "expected": null,
+      "strict_lower": "14751"
+    },
+    {
+      "name": "fixed Taylor row 13",
+      "exact_value": "151240273532324656650002741250992677630144637681/3991680000000000000000000000000000000000000",
+      "expected": null,
+      "strict_lower": "37888"
+    },
+    {
+      "name": "rectangle lower sine 1",
+      "exact_value": "64180522657/38400000000000",
+      "expected": "64180522657/38400000000000",
+      "strict_lower": "0"
+    },
+    {
+      "name": "rectangle lower sine 2",
+      "exact_value": "729120878539/422400000000000",
+      "expected": "729120878539/422400000000000",
+      "strict_lower": "0"
+    },
+    {
+      "name": "rectangle lower sine 3",
+      "exact_value": "880201511023/422400000000000",
+      "expected": "880201511023/422400000000000",
+      "strict_lower": "0"
+    },
+    {
+      "name": "rectangle lower sine 4",
+      "exact_value": "203016009/137500000000",
+      "expected": "203016009/137500000000",
+      "strict_lower": "0"
+    },
+    {
+      "name": "rectangle lower sine 5",
+      "exact_value": "1063804/146484375",
+      "expected": "1063804/146484375",
+      "strict_lower": "0"
+    },
+    {
+      "name": "rectangle lower sine 6",
+      "exact_value": "2229221653/3600000000000",
+      "expected": "2229221653/3600000000000",
+      "strict_lower": "0"
+    },
+    {
+      "name": "rectangle lower sine 7",
+      "exact_value": "29765234213/10800000000000",
+      "expected": "29765234213/10800000000000",
+      "strict_lower": "0"
+    },
+    {
+      "name": "rectangle lower sine 8",
+      "exact_value": "4363109/3456000000",
+      "expected": "4363109/3456000000",
+      "strict_lower": "0"
+    },
+    {
+      "name": "rectangle lower sine 9",
+      "exact_value": "6858681353/3600000000000",
+      "expected": "6858681353/3600000000000",
+      "strict_lower": "0"
+    },
+    {
+      "name": "rectangle upper sine 1",
+      "exact_value": "119/10935",
+      "expected": "119/10935",
+      "strict_lower": "0"
+    },
+    {
+      "name": "rectangle upper sine 2",
+      "exact_value": "139/62500",
+      "expected": "139/62500",
+      "strict_lower": "0"
+    },
+    {
+      "name": "rectangle upper sine 3",
+      "exact_value": "16913/2000000",
+      "expected": "16913/2000000",
+      "strict_lower": "0"
+    },
+    {
+      "name": "rectangle upper sine 4",
+      "exact_value": "464551/66000000",
+      "expected": "464551/66000000",
+      "strict_lower": "0"
+    },
+    {
+      "name": "rectangle upper sine 5",
+      "exact_value": "4633/4224000",
+      "expected": "4633/4224000",
+      "strict_lower": "0"
+    },
+    {
+      "name": "Machin lower pi reserve",
+      "exact_value": "21011/12547500000",
+      "expected": "21011/12547500000",
+      "strict_lower": "0"
+    },
+    {
+      "name": "total measure",
+      "exact_value": "8997/1000",
+      "expected": "8997/1000",
+      "strict_lower": null
+    },
+    {
+      "name": "left minimum reserve",
+      "exact_value": "785291/314159000",
+      "expected": "785291/314159000",
+      "strict_lower": "0"
+    },
+    {
+      "name": "right minimum reserve",
+      "exact_value": "575589/110000000",
+      "expected": "575589/110000000",
+      "strict_lower": "0"
+    },
+    {
+      "name": "outer initial reserve",
+      "exact_value": "539069/110000000",
+      "expected": "539069/110000000",
+      "strict_lower": "0"
+    },
+    {
+      "name": "outer tangent reserve",
+      "exact_value": "207622367/65340000000",
+      "expected": "207622367/65340000000",
+      "strict_lower": "0"
+    },
+    {
+      "name": "outer diagonal reserve",
+      "exact_value": "847269/1256636000",
+      "expected": "847269/1256636000",
+      "strict_lower": "0"
+    },
+    {
+      "name": "rectangle mass 1",
+      "exact_value": "11613/2200000",
+      "expected": "11613/2200000",
+      "strict_lower": "0"
+    },
+    {
+      "name": "rectangle mass 2",
+      "exact_value": "5761/90000",
+      "expected": "5761/90000",
+      "strict_lower": "0"
+    },
+    {
+      "name": "rectangle mass 3",
+      "exact_value": "14681/4400000",
+      "expected": "14681/4400000",
+      "strict_lower": "0"
+    },
+    {
+      "name": "rectangle mass 4",
+      "exact_value": "2423/550000",
+      "expected": "2423/550000",
+      "strict_lower": "0"
+    },
+    {
+      "name": "rectangle mass 5",
+      "exact_value": "19681/550000",
+      "expected": "19681/550000",
+      "strict_lower": "0"
+    },
+    {
+      "name": "rectangle mass 6",
+      "exact_value": "2897/75000",
+      "expected": "2897/75000",
+      "strict_lower": "0"
+    },
+    {
+      "name": "strip sine",
+      "exact_value": "21887804923/13200000000000",
+      "expected": "21887804923/13200000000000",
+      "strict_lower": "0"
+    },
+    {
+      "name": "strip mass",
+      "exact_value": "189/34375",
+      "expected": "189/34375",
+      "strict_lower": "0"
+    },
+    {
+      "name": "convexity quadratic discriminant reserve",
+      "exact_value": "1799/1600",
+      "expected": "1799/1600",
+      "strict_lower": "0"
+    },
+    {
+      "name": "outer h second derivative reserve",
+      "exact_value": "585083/115316136",
+      "expected": "585083/115316136",
+      "strict_lower": "0"
+    },
+    {
+      "name": "outer M second derivative reserve",
+      "exact_value": "689/1056000",
+      "expected": "689/1056000",
+      "strict_lower": "0"
+    },
+    {
+      "name": "outer tangent complete square",
+      "exact_value": "3013/3000",
+      "expected": "3013/3000",
+      "strict_lower": null
+    },
+    {
+      "name": "weighted derivative lower",
+      "exact_value": "-19917/500",
+      "expected": "-19917/500",
+      "strict_lower": null
+    },
+    {
+      "name": "weighted derivative upper",
+      "exact_value": "-1629/200",
+      "expected": "-1629/200",
+      "strict_lower": null
+    },
+    {
+      "name": "W3 strict surplus",
+      "exact_value": "1/40",
+      "expected": "1/40",
+      "strict_lower": "0"
+    }
+  ],
+  "independent_scope": "Complete new W.3 join and full active six-module logical graph read; actual physical normalization, open-atom boundaries, continuous domain cover, line minima, rectangle inclusions, outer branch/convexity and analytic target replacement reconstructed. These exact checks corroborate every 13+14 displayed Taylor comparison and selected assembly arithmetic. No inverse-trigonometric evaluation, historical checker, Lean or CI used.",
+  "gate_delta": {
+    "fine": 1,
+    "coarse": 0
+  },
+  "original_fine_id": "W.3"
+}

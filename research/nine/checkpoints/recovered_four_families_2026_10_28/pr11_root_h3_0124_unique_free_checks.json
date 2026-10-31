@@ -1,0 +1,93 @@
+{
+  "source": "INNER_PENTAGON_H3_0124_UNIQUE_FREE_ENDPOINT_EXCLUSION.md",
+  "sha256": "76ba586f7147908f4f2eaf738285f4324871fa223c5663c58d533476e9bbb3a1",
+  "full_root_review": true,
+  "corrected_zero_concurrence_endpoint_fully_checked": true,
+  "positive_exact_reserves": {
+    "actual_inward_point_outside": "47/256",
+    "sqrt_two_above_seven_fifths_squared": "1/25",
+    "sqrt_two_below_ten_sevenths_squared": "2/49",
+    "center_lower_radius_derivative_reserve": "104071/78400",
+    "contact_tangent_below_seven_thirds_squared": "343/9216",
+    "seven_thirds_below_one_plus_sqrt_two_squared": "2/9",
+    "improved_contact_cosine_squared": "18695",
+    "improved_two_link_tangent_comparison": "4/143",
+    "radial_D_far_return_beyond_circle": "3/10",
+    "opposite_inner_u_small_C_contradiction": "179/100",
+    "opposite_inner_u_large_C_squared": "3/100",
+    "opposite_outer_v_B_bound_squared": "3/50",
+    "opposite_outer_v_far_projection": "1/5",
+    "adjacent_small_A_B_guard_squared": "2/75",
+    "adjacent_small_A_radius_contradiction": "27/50",
+    "adjacent_B_below_three_halves": "1/16",
+    "adjacent_C_above_thirteen_tenths_squared": "3/50",
+    "adjacent_bad_endpoint_B_guard": "3/50",
+    "adjacent_bad_endpoint_A_guard_squared": "131/10000",
+    "adjacent_full_affine_domain_reserve": "157/10500"
+  },
+  "identities": [
+    "Improved center cosine988/2205",
+    "Two exact arctangent addition rational arguments",
+    "Physical B23/16 squared endpoint",
+    "Complete adjacent-return affine polynomial",
+    "Original eight-edge true degrees"
+  ],
+  "analytic_checks": [
+    "Existing initial fixed-tip selection, with actual boundary-neighbor exclusion of its radial-D exception",
+    "Entire common K3 geometry and coincident lower-arc groups",
+    "Degree-free center signs for every physical endpoint mask",
+    "Two-link minor-angle bounds and actual physical path lifts",
+    "Full ell=0 shared-return four-axis exclusion",
+    "Every opposite unique-corner shared-side return and all its means",
+    "Every adjacent unique-corner shared mean including endpoint coupling",
+    "Full affine negative-endpoint region and157/10500 reserve"
+  ],
+  "pins": [
+    {
+      "path": "SIX_BODY_INNER_PENTAGON_LOAD_COVER.md",
+      "sha256": "fa877c9d7d25c57a7c8cf438a429465b5952cb8db6628c57d9d93695b33dd434"
+    },
+    {
+      "path": "FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "sha256": "6c38d162e1f2c435cf65a8b4a58a7001fe9489c65b3510159fee2687b9753708"
+    },
+    {
+      "path": "BOUNDARY_CONTACT_ORIGIN_MOMENT_ORIENTATION.md",
+      "sha256": "851417d7fcd12ccb93a6f7f09ba7d7b2bf9bccc61c82fee3457b5ee4cee47e9a"
+    },
+    {
+      "path": "TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md",
+      "sha256": "0d61292a0aa57084b88b4a72754fc78e123e8b684dac09be966fb074ab58e877"
+    },
+    {
+      "path": "GENERAL_FIXED_TIP_NORMAL_SELECTION.md",
+      "sha256": "e94305229333f45afdbd94e6dddf08485e62005a865afe697759cc36161cf753"
+    },
+    {
+      "path": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "sha256": "6154eee2ab1114d063b0dbd1a2800c3522cbb1b46ec44a258c1c89d8ffb9e975"
+    },
+    {
+      "path": "CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "sha256": "2625b3a2b730525a6397bc90232e78c5e1aac8091381c1f5e5fc8a71ef1da449"
+    },
+    {
+      "path": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a"
+    },
+    {
+      "path": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "sha256": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c"
+    },
+    {
+      "path": "REVIEW_NINE_MEASURE_FIVE_POINT_ASSEMBLY_ROOT_2026_10_26.md",
+      "sha256": "6aa33d0fbccdede04d909b770496fcac8d061e184d46d890f2394b484c6b4b5b"
+    },
+    {
+      "path": "REVIEW_NINE_MEASURE_FIVE_POINT_ASSEMBLY_C6_2026_10_26.md",
+      "sha256": "68e17f92fbc87b7484d3dcdef206ba0e5f0b7014eb0f06ec707919cbe44e00a2"
+    }
+  ],
+  "no_pose_samples": true,
+  "no_compilation": true
+}

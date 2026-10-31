@@ -1,0 +1,458 @@
+{
+  "date_utc": "2026-10-28",
+  "status": "Accepted exact critical arc obstruction, uniform four-sevenths cap, full parallel-return chart and boundary-terminal angle theorem; zero original gate changes.",
+  "publication_base": "a67ff01a9bc496bbfdaa96a6a970b816aa094c56",
+  "precritical_source_history_commit": "a145bc89a1e261e3d79066e9cccefae26c79831d",
+  "predecessor_checkpoint": {
+    "path": "research/nine/COMPLETE_SOLE_UV_AND_SHARED_TERMINAL_CHECKPOINT_2026_10_28.json",
+    "sha256": "8134d42553f7f956d6c15f5e2f4389200a13c24d23523a2b3593209e5adfd7d9",
+    "bytes": 284731
+  },
+  "original_fine_total": 2513,
+  "fine_checked": 2352,
+  "fine_open": 161,
+  "original_coarse_total": 58,
+  "coarse_closed": 34,
+  "coarse_open": 24,
+  "changed_original_fine_ids": [],
+  "changed_original_coarse_ids": [],
+  "all_original_ids_order_and_flags_preserved": true,
+  "original_inventory_encoding": "Full ordered arrays are retained in the byte-pinned predecessor. Digests below use UTF-8 JSON, ensure_ascii=False, sort_keys=True, separators=(comma,colon). The unchanged original Markdown inventories were parsed and compared entry-for-entry.",
+  "fine_gates_sha256": "78ae4d1b47e1262e71bc081aa7079a21ee5fb0a1c1e4ea51bb891111f809c6bf",
+  "coarse_gates_sha256": "0e4c1e41ac5ef7607ad69ee56fbb57572d2ec64dc9d93249add8dfd241d8978f",
+  "open_original_fine_ids": [
+    "T1.EXTRACT:",
+    "CAP.4",
+    "ROW.4",
+    "POCKET.ROUTING",
+    "QCAP.GLOBAL",
+    "CY.B5 GEOMETRY",
+    "CY.MULTILOAD",
+    "CY.MIXED.COMPLETE",
+    "C.1 GRAPH",
+    "C.2 LOAD",
+    "C.3 GEOMETRY",
+    "C.4 COMPLETION",
+    "C.5 SHARPNESS",
+    "C.6 EQUALITY",
+    "G3.0.ANNULAR.ROUTING",
+    "G3.0.DISTRIBUTED_ARTICULATIONS",
+    "G3.0.SHARP",
+    "G3.M.F.1 GRAPH",
+    "G3.M.F.1.a",
+    "G3.M.F.1.b",
+    "G3.M.F.1.c",
+    "G3.M.F.2 LOADS",
+    "G3.M.F.2.a",
+    "G3.M.F.2.b",
+    "G3.M.F.3 CONTACT FEATURES",
+    "G3.M.F.3.a",
+    "G3.M.F.3.b",
+    "G3.M.F.3.c",
+    "G3.M.F.4 JUNCTIONS",
+    "G3.M.F.5 COMPLETION ROUTING",
+    "G3.M.F.5.a",
+    "G3.M.F.5.b",
+    "G3.M.F.5.c",
+    "G3.M.F.5.d",
+    "G3.M.F.COVER",
+    "C.0 DOMAIN",
+    "C.1 EQUILIBRIUM",
+    "C.2 ROUTING",
+    "C.3 BOUND",
+    "C.3.a",
+    "C.3.b",
+    "C.3.c",
+    "C.4 EQUALITY",
+    "C.5 AUDIT",
+    "C.ALL",
+    "M6.B5L.HOUSE.ROOF.LABC.S",
+    "M6.B5L.HOUSE.HUB.LTC.S",
+    "M6.B5L.HOUSE.HUB.LTCB.S",
+    "M6.B5L.FAN.ENDPOINT.L234.S",
+    "M6.B5L.FAN.INNER.L134.S",
+    "M6.B5L.HOUSE.ROOF",
+    "M6.B5L.HOUSE.HUB",
+    "M6.B5L.FAN.ENDPOINT",
+    "M6.B5L.FAN.INNER",
+    "M6.B5L.ALL",
+    "M6.B6.HEXAGON.TWO_OPPOSITE_EARS.BOUND",
+    "M6.B6.HEXAGON.D02.L014",
+    "M6.B6.HEXAGON.D02.L134",
+    "M6.B6.HEXAGON.D02.L135",
+    "M6.B6.HEXAGON.D02.L0134",
+    "M6.B6.HEXAGON.D02.L0135",
+    "M6.B6.HEXAGON.D02.L0145",
+    "M6.B6.HEXAGON.D02.L1345",
+    "M6.B6.HEXAGON.D02.L01345",
+    "M6.B6.HEXAGON.D02.ALL",
+    "M6.B6.HEXAGON.D03.L014",
+    "M6.B6.HEXAGON.D03.L024",
+    "M6.B6.HEXAGON.D03.L124",
+    "M6.B6.HEXAGON.D03.L0124",
+    "M6.B6.HEXAGON.D03.L0125",
+    "M6.B6.HEXAGON.D03.L1245",
+    "M6.B6.HEXAGON.D03.ALL",
+    "M6.B6.HEXAGON.D0203.L124",
+    "M6.B6.HEXAGON.D0203.L1234",
+    "M6.B6.HEXAGON.D0203.L1235",
+    "M6.B6.HEXAGON.D0203.L1245",
+    "M6.B6.HEXAGON.D0203.ALL",
+    "M6.B6.HEXAGON.D0204.L135",
+    "M6.B6.HEXAGON.D0204.L0135",
+    "M6.B6.HEXAGON.D0204.L1235",
+    "M6.B6.HEXAGON.D0204.L1245",
+    "M6.B6.HEXAGON.D0204.ALL",
+    "M6.B6.HEXAGON.D0235.L0134",
+    "M6.B6.HEXAGON.D0235.ALL",
+    "M6.B6.HEXAGON.CHORD_PATH.L1245",
+    "M6.B6.HEXAGON.CHORD_PATH.ALL",
+    "M6.B6.HEXAGON.CENTRAL_TRIANGLE.L135",
+    "M6.B6.HEXAGON.CENTRAL_TRIANGLE.L0135",
+    "M6.B6.HEXAGON.CENTRAL_TRIANGLE.ALL",
+    "M6.B6.HEXAGON.BOUND",
+    "M6.B6.PENTAGON.H4_D0.L124",
+    "M6.B6.PENTAGON.H4_D0.L0124",
+    "M6.B6.PENTAGON.H4_D0_EXIT",
+    "M6.B6.ALL",
+    "G3.M6.ASSEMBLE",
+    "G3.M6.ALL",
+    "G3.M7.ALL",
+    "G3.M8.ALL",
+    "G3.M9.ALL",
+    "G3.M.ALL",
+    "G3.ALL.1",
+    "G3.ALL.3",
+    "G3.ALL.4",
+    "G3.ALL",
+    "O3.3.SHARP",
+    "O4.1",
+    "O4.2",
+    "O4.3 alternative",
+    "O5",
+    "X.3",
+    "G4.2",
+    "G4.2.a",
+    "G4.2.b",
+    "G4.2.c",
+    "G4.2.d",
+    "G4.2.e",
+    "G4.2.f",
+    "G4.3",
+    "G4.3.a",
+    "G4.3.b",
+    "G4.3.c",
+    "G5.1",
+    "G5.2",
+    "G5.3",
+    "G5.1.a",
+    "G5.1.b",
+    "G5.2.a",
+    "G5.2.b",
+    "G5.2.c",
+    "G5.3.a",
+    "G5.3.b",
+    "G5.3.c",
+    "G5.3.d",
+    "G5.4",
+    "G5.4.a",
+    "G5.4.b",
+    "G5.ALL",
+    "G6.1",
+    "G6.2",
+    "G6.3",
+    "G6.TL1 NEW",
+    "G6.TL2 NEW",
+    "G6.TL3 NEW",
+    "G6.TL4 NEW",
+    "G6.4",
+    "G6.5",
+    "G6.5.a",
+    "G6.5.b",
+    "G6.5.c",
+    "G6.5.d",
+    "G6.5.e",
+    "G6.5.f",
+    "G7.1",
+    "G7.2",
+    "G7.3",
+    "G7.4",
+    "G7.5 DEFERRED",
+    "G8.1",
+    "G8.2",
+    "G8.3",
+    "G8.4"
+  ],
+  "open_original_coarse_ids": [
+    "C1.5.b1",
+    "C1.5.b2",
+    "C1.5.b3",
+    "C1.5.b4",
+    "C1.6.b0",
+    "C1.6.b1",
+    "C1.6.b2",
+    "C1.6.b3",
+    "C1.7.b0",
+    "C1.7.b1",
+    "C1.7.b2",
+    "C1.8.b0",
+    "C1.8.b1",
+    "C1.9.b0",
+    "C2.35.b0",
+    "C2.35.b1",
+    "C2.35.b2",
+    "C2.36.b0",
+    "C2.36.b1",
+    "C2.37.b0",
+    "C2.45.b0",
+    "C2.45.b1",
+    "C2.46.b0",
+    "C2.55.b0"
+  ],
+  "adopted_mathematical_sources": [
+    {
+      "path": "research/nine/UNIFORM_INNER_CIRCLE_ARC_FAMILY_AND_SMALL_CENTRAL_DISK_EXCLUSION.md",
+      "sha256": "c8c9dc223e11dbcd7be9063818d546a3d3c0bc77b66cdac181b9ea97d51bae69",
+      "bytes": 22917
+    },
+    {
+      "path": "research/nine/UNIT_SUPPORT_CAP_FOUR_SEVENTHS_UNIFORM_BOUND.md",
+      "sha256": "0b7e13116e4da9136d9cb55ed73da22005b59ec74c3a713f675ddb5c1a33c606",
+      "bytes": 7901
+    },
+    {
+      "path": "research/nine/SOLE_THIRD_AXIS_PARALLEL_BOUNDARY_RETURNS_EXACT_SHARED_CHART.md",
+      "sha256": "857d05210c2529c86595bffd547b712de4ef1a697e5403229aeb2f7077a56500",
+      "bytes": 15677
+    },
+    {
+      "path": "research/nine/BOUNDARY_TERMINAL_CENTER_LOW_PORT_ARC_ANGLE_BOUND.md",
+      "sha256": "d94502aed4091098a1fa23801284a734f9f42989f130a5f0d9b0f464bb7497e6",
+      "bytes": 5279
+    }
+  ],
+  "current_reviews_and_adoptions": [
+    {
+      "path": "research/nine/REVIEW_UNIFORM_INNER_CIRCLE_CRITICAL_CLEARANCE_UNIFORM_REMAINING_2026_10_28.md",
+      "sha256": "f260756292251dc6e097f4165402b968dd505dc64934647abe9e52cecc64e6ee",
+      "bytes": 9351
+    },
+    {
+      "path": "research/nine/REVIEW_UNIT_SUPPORT_CAP_FOUR_SEVENTHS_ROOT_2026_10_28.md",
+      "sha256": "03fe1f27dbd91d6f178b1dbd587a7358ca29c52428da80e666a45124bef59112",
+      "bytes": 5681
+    },
+    {
+      "path": "research/nine/REVIEW_UNIT_SUPPORT_CAP_FOUR_SEVENTHS_SOLE_UT_INDEPENDENT_2026_10_28.md",
+      "sha256": "b7b56703b8b1f03419025773cb14359aa7b3051649d6f9a229fe3bf854ff8b74",
+      "bytes": 6769
+    },
+    {
+      "path": "research/nine/REVIEW_SOLE_THIRD_AXIS_PARALLEL_RETURNS_ROOT_2026_10_28.md",
+      "sha256": "c9028949fda5ecd3c3c52bd70d6da76122153c38d805ef547deb587f9b808ec5",
+      "bytes": 7148
+    },
+    {
+      "path": "research/nine/REVIEW_SOLE_THIRD_AXIS_PARALLEL_RETURNS_UNIFORM_REMAINING_2026_10_28.md",
+      "sha256": "25d1e5bb812f075ca81b3fbac7cfa031f5632e641d29e2a685a11078b99bf9f1",
+      "bytes": 12502
+    },
+    {
+      "path": "research/nine/REVIEW_BOUNDARY_TERMINAL_LOW_PORT_ARC_ANGLE_ROOT_2026_10_28.md",
+      "sha256": "db6fffbdf083823c2c6bf51f763131cf3e32c221ee3563cec6583f645a3529e8",
+      "bytes": 3945
+    },
+    {
+      "path": "research/nine/REVIEW_BOUNDARY_TERMINAL_LOW_PORT_ANGLE_SOLE_UT_INDEPENDENT_2026_10_28.md",
+      "sha256": "05aeff0afe2af98cbd63a84f212392ad4a3b6b3f679bd4a471bcb58f8d668042",
+      "bytes": 4975
+    },
+    {
+      "path": "research/nine/ADOPTION_CRITICAL_INNER_ARC_AND_FOUR_SEVENTHS_CAP_ROOT_2026_10_28.md",
+      "sha256": "a480bed2cea142a6b6d486d510d7420ebf61ffdfbeef64dc95be129fedddde82",
+      "bytes": 6829
+    }
+  ],
+  "historical_precritical_review": {
+    "path": "research/nine/REVIEW_UNIFORM_INNER_CIRCLE_ARC_FAMILY_UNIFORM_REMAINING_2026_10_28.md",
+    "sha256": "e7836f79f4fe821fabdd5917855954f2a4e687560528bc148434aa4660d5266d",
+    "bytes": 11874
+  },
+  "historical_precritical_source_sha256": "a8e38f8fa30e50933a0548ddd61fc831531249bf68b1a918a67ad6a6b0bc95f0",
+  "matching_direct_table_pin_count": 23,
+  "matching_direct_table_pins": [
+    {
+      "owner": "research/nine/UNIFORM_INNER_CIRCLE_ARC_FAMILY_AND_SMALL_CENTRAL_DISK_EXCLUSION.md",
+      "line": 481,
+      "source": "research/nine/GENERAL_SIDE_CHANNEL_CAP_INNER_ARC.md",
+      "sha256": "f76d76ef2feccc80098fb6d10d6316af4e393d3ae34d4953846dd27b80c137cb"
+    },
+    {
+      "owner": "research/nine/UNIT_SUPPORT_CAP_FOUR_SEVENTHS_UNIFORM_BOUND.md",
+      "line": 203,
+      "source": "research/nine/UNIT_SUPPORT_CAP_AND_SHARED_S_ROOT_ROOF_RETURN_SEPARATION.md",
+      "sha256": "2b90b565591b3c9bbc30c2c1af48cf117771b96bbc58ad81441f9e99497067d6"
+    },
+    {
+      "owner": "research/nine/SOLE_THIRD_AXIS_PARALLEL_BOUNDARY_RETURNS_EXACT_SHARED_CHART.md",
+      "line": 362,
+      "source": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "owner": "research/nine/SOLE_THIRD_AXIS_PARALLEL_BOUNDARY_RETURNS_EXACT_SHARED_CHART.md",
+      "line": 363,
+      "source": "research/nine/LOADED_TWO_FORCE_BOUNDARY_NEIGHBOR_COMMON_POINT_EXCLUSION.md",
+      "sha256": "5a95c3255a634f603a47c8311971902f2b8b699e4ebf2d076b21b01fddf941ba"
+    },
+    {
+      "owner": "research/nine/SOLE_THIRD_AXIS_PARALLEL_BOUNDARY_RETURNS_EXACT_SHARED_CHART.md",
+      "line": 364,
+      "source": "research/nine/UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+      "sha256": "406fce53d22cc20eec43a373a877798dab583a6bd93f684ff124293016c44c87"
+    },
+    {
+      "owner": "research/nine/SOLE_THIRD_AXIS_PARALLEL_BOUNDARY_RETURNS_EXACT_SHARED_CHART.md",
+      "line": 365,
+      "source": "research/nine/D02_ALL_MASK_FREE_UV_EXCLUSION_AND_EXACT_SINGLE_HUB_AXIS_COVER.md",
+      "sha256": "214475cb4a6fe839b6589a346e12f2aea9be97b958a5229e1c1ff4344740e670"
+    },
+    {
+      "owner": "research/nine/SOLE_THIRD_AXIS_PARALLEL_BOUNDARY_RETURNS_EXACT_SHARED_CHART.md",
+      "line": 366,
+      "source": "research/nine/SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1"
+    },
+    {
+      "owner": "research/nine/SOLE_THIRD_AXIS_PARALLEL_BOUNDARY_RETURNS_EXACT_SHARED_CHART.md",
+      "line": 367,
+      "source": "research/nine/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "sha256": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90"
+    },
+    {
+      "owner": "research/nine/REVIEW_UNIFORM_INNER_CIRCLE_CRITICAL_CLEARANCE_UNIFORM_REMAINING_2026_10_28.md",
+      "line": 15,
+      "source": "research/nine/UNIFORM_INNER_CIRCLE_ARC_FAMILY_AND_SMALL_CENTRAL_DISK_EXCLUSION.md",
+      "sha256": "c8c9dc223e11dbcd7be9063818d546a3d3c0bc77b66cdac181b9ea97d51bae69"
+    },
+    {
+      "owner": "research/nine/REVIEW_UNIFORM_INNER_CIRCLE_CRITICAL_CLEARANCE_UNIFORM_REMAINING_2026_10_28.md",
+      "line": 16,
+      "source": "research/nine/REVIEW_UNIFORM_INNER_CIRCLE_ARC_FAMILY_UNIFORM_REMAINING_2026_10_28.md",
+      "sha256": "e7836f79f4fe821fabdd5917855954f2a4e687560528bc148434aa4660d5266d"
+    },
+    {
+      "owner": "research/nine/REVIEW_UNIFORM_INNER_CIRCLE_CRITICAL_CLEARANCE_UNIFORM_REMAINING_2026_10_28.md",
+      "line": 17,
+      "source": "research/nine/GENERAL_SIDE_CHANNEL_CAP_INNER_ARC.md",
+      "sha256": "f76d76ef2feccc80098fb6d10d6316af4e393d3ae34d4953846dd27b80c137cb"
+    },
+    {
+      "owner": "research/nine/REVIEW_UNIT_SUPPORT_CAP_FOUR_SEVENTHS_SOLE_UT_INDEPENDENT_2026_10_28.md",
+      "line": 16,
+      "source": "research/nine/UNIT_SUPPORT_CAP_FOUR_SEVENTHS_UNIFORM_BOUND.md",
+      "sha256": "0b7e13116e4da9136d9cb55ed73da22005b59ec74c3a713f675ddb5c1a33c606"
+    },
+    {
+      "owner": "research/nine/REVIEW_UNIT_SUPPORT_CAP_FOUR_SEVENTHS_SOLE_UT_INDEPENDENT_2026_10_28.md",
+      "line": 17,
+      "source": "research/nine/UNIT_SUPPORT_CAP_AND_SHARED_S_ROOT_ROOF_RETURN_SEPARATION.md",
+      "sha256": "2b90b565591b3c9bbc30c2c1af48cf117771b96bbc58ad81441f9e99497067d6"
+    },
+    {
+      "owner": "research/nine/REVIEW_SOLE_THIRD_AXIS_PARALLEL_RETURNS_UNIFORM_REMAINING_2026_10_28.md",
+      "line": 15,
+      "source": "research/nine/SOLE_THIRD_AXIS_PARALLEL_BOUNDARY_RETURNS_EXACT_SHARED_CHART.md",
+      "sha256": "857d05210c2529c86595bffd547b712de4ef1a697e5403229aeb2f7077a56500"
+    },
+    {
+      "owner": "research/nine/REVIEW_SOLE_THIRD_AXIS_PARALLEL_RETURNS_UNIFORM_REMAINING_2026_10_28.md",
+      "line": 250,
+      "source": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "owner": "research/nine/REVIEW_SOLE_THIRD_AXIS_PARALLEL_RETURNS_UNIFORM_REMAINING_2026_10_28.md",
+      "line": 251,
+      "source": "research/nine/LOADED_TWO_FORCE_BOUNDARY_NEIGHBOR_COMMON_POINT_EXCLUSION.md",
+      "sha256": "5a95c3255a634f603a47c8311971902f2b8b699e4ebf2d076b21b01fddf941ba"
+    },
+    {
+      "owner": "research/nine/REVIEW_SOLE_THIRD_AXIS_PARALLEL_RETURNS_UNIFORM_REMAINING_2026_10_28.md",
+      "line": 252,
+      "source": "research/nine/UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+      "sha256": "406fce53d22cc20eec43a373a877798dab583a6bd93f684ff124293016c44c87"
+    },
+    {
+      "owner": "research/nine/REVIEW_SOLE_THIRD_AXIS_PARALLEL_RETURNS_UNIFORM_REMAINING_2026_10_28.md",
+      "line": 253,
+      "source": "research/nine/D02_ALL_MASK_FREE_UV_EXCLUSION_AND_EXACT_SINGLE_HUB_AXIS_COVER.md",
+      "sha256": "214475cb4a6fe839b6589a346e12f2aea9be97b958a5229e1c1ff4344740e670"
+    },
+    {
+      "owner": "research/nine/REVIEW_SOLE_THIRD_AXIS_PARALLEL_RETURNS_UNIFORM_REMAINING_2026_10_28.md",
+      "line": 254,
+      "source": "research/nine/SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1"
+    },
+    {
+      "owner": "research/nine/REVIEW_SOLE_THIRD_AXIS_PARALLEL_RETURNS_UNIFORM_REMAINING_2026_10_28.md",
+      "line": 255,
+      "source": "research/nine/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "sha256": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90"
+    },
+    {
+      "owner": "research/nine/ADOPTION_CRITICAL_INNER_ARC_AND_FOUR_SEVENTHS_CAP_ROOT_2026_10_28.md",
+      "line": 16,
+      "source": "research/nine/UNIFORM_INNER_CIRCLE_ARC_FAMILY_AND_SMALL_CENTRAL_DISK_EXCLUSION.md",
+      "sha256": "c8c9dc223e11dbcd7be9063818d546a3d3c0bc77b66cdac181b9ea97d51bae69"
+    },
+    {
+      "owner": "research/nine/ADOPTION_CRITICAL_INNER_ARC_AND_FOUR_SEVENTHS_CAP_ROOT_2026_10_28.md",
+      "line": 17,
+      "source": "research/nine/UNIT_SUPPORT_CAP_FOUR_SEVENTHS_UNIFORM_BOUND.md",
+      "sha256": "0b7e13116e4da9136d9cb55ed73da22005b59ec74c3a713f675ddb5c1a33c606"
+    },
+    {
+      "owner": "research/nine/REVIEW_UNIFORM_INNER_CIRCLE_ARC_FAMILY_UNIFORM_REMAINING_2026_10_28.md",
+      "line": 17,
+      "source": "research/nine/GENERAL_SIDE_CHANNEL_CAP_INNER_ARC.md",
+      "sha256": "f76d76ef2feccc80098fb6d10d6316af4e393d3ae34d4953846dd27b80c137cb"
+    }
+  ],
+  "explicit_historical_source_pins": [
+    {
+      "owner": "research/nine/REVIEW_UNIFORM_INNER_CIRCLE_ARC_FAMILY_UNIFORM_REMAINING_2026_10_28.md",
+      "line": 16,
+      "source": "research/nine/UNIFORM_INNER_CIRCLE_ARC_FAMILY_AND_SMALL_CENTRAL_DISK_EXCLUSION.md",
+      "sha256": "a8e38f8fa30e50933a0548ddd61fc831531249bf68b1a918a67ad6a6b0bc95f0",
+      "operative_version_commit": "a145bc89a1e261e3d79066e9cccefae26c79831d",
+      "scope": "Historical precritical source only; not a review of the critical endpoint extension."
+    }
+  ],
+  "metadata_files": [
+    {
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "sha256": "114dad0d9f86e9c190cdc1530d7efefaf2220b7dc62d88e0d04adc4e385d008a",
+      "bytes": 974946
+    },
+    {
+      "path": "research/nine/CYCLIC_CELL_LEDGER.md",
+      "sha256": "b1ec4dfeb25fb3c9e0ad45984e6db8f162174d5b3f171c85d169019cdd43fd03",
+      "bytes": 247598
+    },
+    {
+      "path": "research/nine/HANDOFF_PR11_2026_10_28_CURRENT.md",
+      "sha256": "1a1dddca4da66b0ef3a73afb8b607cc590487b4482cbba808fcff62160b00b77",
+      "bytes": 71328
+    }
+  ],
+  "scope_limits": [
+    "All nine actual squares, true degrees, complete original force and torque equations, original normals and applications, full shared means, physical masks and individual zero coefficients remain.",
+    "The original D02 row remains open at its singleton sole-UT interface. The complete sole-UV and shared-UT exclusions from a67ff01 remain accepted.",
+    "The terminal angle theorem is not a routing theorem, and the parallel-return chart is a necessary reduction rather than a complete contradiction.",
+    "No new computational exclusion certificate is introduced. No additional historical packet is counted as retired by this checkpoint.",
+    "No Lean compilation, Lake invocation, CI/workflow dispatch, merge or message to another person. Publication commits use [skip ci].",
+    "Global sharp inequality, complete equality classification, remaining prerequisite audit and Lean integration remain open."
+  ]
+}

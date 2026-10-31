@@ -1,0 +1,607 @@
+{
+  "date_utc": "2026-10-29",
+  "comparison_head": "0e86e630479924cc8ca582145271f20a2c3c4f70",
+  "comparison_tree": "869e837eb48b4a4c17be4040ddea347675f4a858",
+  "adoption_file": "ADOPTION_UNIFORM_OUTER_ROOT_FREE_ROOF_AND_HOUSE_PARALLEL_EXITS_2026_10_29.md",
+  "source_and_review_records": [
+    {
+      "path": "research/nine/OUTER_BLOCK_GENUINE_ROOT_BOUNDARY_NEIGHBORS_CENTRAL_DISK_OR_BALANCED_ALIGNMENT_2026_10_29.md",
+      "bytes": 21426,
+      "lines": 415,
+      "sha256": "177ae1085ff09f3322bc68612104f238c0bad62158f05b70814fa86e2b732560",
+      "git_blob_sha1": "80ab55ab4b382439c6bc9bf8405bd460008fc906"
+    },
+    {
+      "path": "research/nine/REVIEW_OUTER_BLOCK_ROOT_BOUNDARY_NEIGHBORS_FULL_COMPONENT_ROOT_2026_10_29.md",
+      "bytes": 13329,
+      "lines": 237,
+      "sha256": "a38f0810aeb1a7dfb215d39144f9aebfa466c73cb68ff8df632da2c4ae8768bd",
+      "git_blob_sha1": "a34ea0b8643f6658f63195cdae2a7822666b6d03"
+    },
+    {
+      "path": "research/nine/PARALLEL_ROOF_TILTED_HUB_DISTINCT_APPLICATIONS_AND_FULL_RETURN_OWNER_COVER_2026_10_29.md",
+      "bytes": 12595,
+      "lines": 267,
+      "sha256": "ce5219a2ee26f86a57a7e237582858f64f6b05646b600be52e73de7b2f43ab6a",
+      "git_blob_sha1": "3e091354b474fdf7e7142c92358a8964ef1fbaec"
+    },
+    {
+      "path": "research/nine/REVIEW_PARALLEL_ROOF_TILTED_HUB_DISTINCTNESS_OWNER_COVER_SHARED_TERMINAL_2026_10_29.md",
+      "bytes": 9715,
+      "lines": 194,
+      "sha256": "bbc80f3996d8d6b78e56ccc04d6ceeb422672d02b4bf0b9d9556c10407b59827",
+      "git_blob_sha1": "2d1a6e2f032a8c16b2c02a5a2b5bfb93bc4905dd"
+    },
+    {
+      "path": "research/nine/PARALLEL_RADIAL_ROOF_FREE_HUB_INTERFACE_BOTH_D02_ROWS_COMPLETE_EXCLUSION_2026_10_29.md",
+      "bytes": 27971,
+      "lines": 598,
+      "sha256": "43cf17e3606f0897a14f090463eb9fa819c84b9d7fd53ab67898261eb24178f8",
+      "git_blob_sha1": "694e18de49dc60bff032803510d33b466ee23e9d"
+    },
+    {
+      "path": "research/nine/REVIEW_PARALLEL_RADIAL_ROOF_FREE_INTERFACE_COMPLETE_BLOCK_FORESTS_2026_10_29.md",
+      "bytes": 21483,
+      "lines": 440,
+      "sha256": "50e589cc53b36591435f89a23e7543333f70d101ccbb6f181f988c925dadbbda",
+      "git_blob_sha1": "550078bb711b12c5397678ffc3859f22b27b906a"
+    },
+    {
+      "path": "research/nine/HOUSE_TC_BOTH_LEAF_INNER_RETURN_PARALLEL_C_COMPLETE_EXCLUSION_2026_10_29.md",
+      "bytes": 16084,
+      "lines": 463,
+      "sha256": "20b72246941bd23e5ec951012c49f7030be4f6eb04cac8c7350bdc53fcb7b5ff",
+      "git_blob_sha1": "6aaf43f49f459cbbec7a6f2bfce751d675e8e7fe"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_INNER_RETURN_PARALLEL_C_SHARED_TERMINAL_2026_10_29.md",
+      "bytes": 11433,
+      "lines": 289,
+      "sha256": "809edcb485f6d2ea47c40065e9aebc72a192b4a5c435426fafe7e8d6561d6dac",
+      "git_blob_sha1": "605e32d24e7488023a80ba4c9f124c2c7403fe9c"
+    },
+    {
+      "path": "research/nine/ADOPTION_UNIFORM_OUTER_ROOT_FREE_ROOF_AND_HOUSE_PARALLEL_EXITS_2026_10_29.md",
+      "bytes": 10945,
+      "lines": 185,
+      "sha256": "7c373d184c12686bcbaccfe2acbbddd06cca89597ca21eec239f32322563af1a",
+      "git_blob_sha1": "35bbb75adccafc8b92b8814321fc6f5a1f95b188"
+    }
+  ],
+  "direct_named_table_pins": [
+    {
+      "source": "OUTER_BLOCK_GENUINE_ROOT_BOUNDARY_NEIGHBORS_CENTRAL_DISK_OR_BALANCED_ALIGNMENT_2026_10_29.md",
+      "dependency": "SHALLOW_TILTED_S_ROOT_BOUNDARY_NEIGHBORS_ONE_SIDE.md",
+      "expected_sha256": "c8e399293ee684fa21a4d5028dc56ab9234007db2b7e1b3a35ad9e214efc45a3",
+      "actual_sha256": "c8e399293ee684fa21a4d5028dc56ab9234007db2b7e1b3a35ad9e214efc45a3",
+      "match": true
+    },
+    {
+      "source": "OUTER_BLOCK_GENUINE_ROOT_BOUNDARY_NEIGHBORS_CENTRAL_DISK_OR_BALANCED_ALIGNMENT_2026_10_29.md",
+      "dependency": "ALIGNED_S_LEAF_ROOT_TWO_BOUNDARY_NEIGHBORS_EXCLUSION.md",
+      "expected_sha256": "7c0e55bc75013f14d667a85635cd743361b325f7180f4710fd832c4f14ab9873",
+      "actual_sha256": "7c0e55bc75013f14d667a85635cd743361b325f7180f4710fd832c4f14ab9873",
+      "match": true
+    },
+    {
+      "source": "OUTER_BLOCK_GENUINE_ROOT_BOUNDARY_NEIGHBORS_CENTRAL_DISK_OR_BALANCED_ALIGNMENT_2026_10_29.md",
+      "dependency": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "expected_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "actual_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "match": true
+    },
+    {
+      "source": "OUTER_BLOCK_GENUINE_ROOT_BOUNDARY_NEIGHBORS_CENTRAL_DISK_OR_BALANCED_ALIGNMENT_2026_10_29.md",
+      "dependency": "PHYSICAL_CONTACT_STRESS.md",
+      "expected_sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "actual_sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "match": true
+    },
+    {
+      "source": "OUTER_BLOCK_GENUINE_ROOT_BOUNDARY_NEIGHBORS_CENTRAL_DISK_OR_BALANCED_ALIGNMENT_2026_10_29.md",
+      "dependency": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "expected_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "actual_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "match": true
+    },
+    {
+      "source": "OUTER_BLOCK_GENUINE_ROOT_BOUNDARY_NEIGHBORS_CENTRAL_DISK_OR_BALANCED_ALIGNMENT_2026_10_29.md",
+      "dependency": "THREE_GENUINE_LEAF_ROOTS_HIGH_S_REDUCTION.md",
+      "expected_sha256": "41c6686127871c7c99ab69c84292f04c995a8530eb02cde0235cdacc181ae73f",
+      "actual_sha256": "41c6686127871c7c99ab69c84292f04c995a8530eb02cde0235cdacc181ae73f",
+      "match": true
+    },
+    {
+      "source": "OUTER_BLOCK_GENUINE_ROOT_BOUNDARY_NEIGHBORS_CENTRAL_DISK_OR_BALANCED_ALIGNMENT_2026_10_29.md",
+      "dependency": "THREE_GENUINE_ROOTS_BLOCK_TWO_TERMINAL_NETWORK_COVER_AND_DENSE_FIVE_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "3aed6244d69913b6eecb61ff9b8985688e723da3ec4a57ffaadc8e5d92dd7b66",
+      "actual_sha256": "3aed6244d69913b6eecb61ff9b8985688e723da3ec4a57ffaadc8e5d92dd7b66",
+      "match": true
+    },
+    {
+      "source": "OUTER_BLOCK_GENUINE_ROOT_BOUNDARY_NEIGHBORS_CENTRAL_DISK_OR_BALANCED_ALIGNMENT_2026_10_29.md",
+      "dependency": "THREE_GENUINE_ROOTS_ARBITRARY_PRIVATE_NETWORK_LOAD_AND_UNIQUE_PAIR_CLASS_2026_10_29.md",
+      "expected_sha256": "be54ef6e20015c3841606d0b7779ba17fe319d2aa886ad9adfd376e985995a20",
+      "actual_sha256": "be54ef6e20015c3841606d0b7779ba17fe319d2aa886ad9adfd376e985995a20",
+      "match": true
+    },
+    {
+      "source": "REVIEW_OUTER_BLOCK_ROOT_BOUNDARY_NEIGHBORS_FULL_COMPONENT_ROOT_2026_10_29.md",
+      "dependency": "SHALLOW_TILTED_S_ROOT_BOUNDARY_NEIGHBORS_ONE_SIDE.md",
+      "expected_sha256": "c8e399293ee684fa21a4d5028dc56ab9234007db2b7e1b3a35ad9e214efc45a3",
+      "actual_sha256": "c8e399293ee684fa21a4d5028dc56ab9234007db2b7e1b3a35ad9e214efc45a3",
+      "match": true
+    },
+    {
+      "source": "REVIEW_OUTER_BLOCK_ROOT_BOUNDARY_NEIGHBORS_FULL_COMPONENT_ROOT_2026_10_29.md",
+      "dependency": "ALIGNED_S_LEAF_ROOT_TWO_BOUNDARY_NEIGHBORS_EXCLUSION.md",
+      "expected_sha256": "7c0e55bc75013f14d667a85635cd743361b325f7180f4710fd832c4f14ab9873",
+      "actual_sha256": "7c0e55bc75013f14d667a85635cd743361b325f7180f4710fd832c4f14ab9873",
+      "match": true
+    },
+    {
+      "source": "REVIEW_OUTER_BLOCK_ROOT_BOUNDARY_NEIGHBORS_FULL_COMPONENT_ROOT_2026_10_29.md",
+      "dependency": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "expected_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "actual_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "match": true
+    },
+    {
+      "source": "REVIEW_OUTER_BLOCK_ROOT_BOUNDARY_NEIGHBORS_FULL_COMPONENT_ROOT_2026_10_29.md",
+      "dependency": "PHYSICAL_CONTACT_STRESS.md",
+      "expected_sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "actual_sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "match": true
+    },
+    {
+      "source": "REVIEW_OUTER_BLOCK_ROOT_BOUNDARY_NEIGHBORS_FULL_COMPONENT_ROOT_2026_10_29.md",
+      "dependency": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "expected_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "actual_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "match": true
+    },
+    {
+      "source": "REVIEW_OUTER_BLOCK_ROOT_BOUNDARY_NEIGHBORS_FULL_COMPONENT_ROOT_2026_10_29.md",
+      "dependency": "THREE_GENUINE_LEAF_ROOTS_HIGH_S_REDUCTION.md",
+      "expected_sha256": "41c6686127871c7c99ab69c84292f04c995a8530eb02cde0235cdacc181ae73f",
+      "actual_sha256": "41c6686127871c7c99ab69c84292f04c995a8530eb02cde0235cdacc181ae73f",
+      "match": true
+    },
+    {
+      "source": "REVIEW_OUTER_BLOCK_ROOT_BOUNDARY_NEIGHBORS_FULL_COMPONENT_ROOT_2026_10_29.md",
+      "dependency": "THREE_GENUINE_ROOTS_BLOCK_TWO_TERMINAL_NETWORK_COVER_AND_DENSE_FIVE_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "3aed6244d69913b6eecb61ff9b8985688e723da3ec4a57ffaadc8e5d92dd7b66",
+      "actual_sha256": "3aed6244d69913b6eecb61ff9b8985688e723da3ec4a57ffaadc8e5d92dd7b66",
+      "match": true
+    },
+    {
+      "source": "REVIEW_OUTER_BLOCK_ROOT_BOUNDARY_NEIGHBORS_FULL_COMPONENT_ROOT_2026_10_29.md",
+      "dependency": "THREE_GENUINE_ROOTS_ARBITRARY_PRIVATE_NETWORK_LOAD_AND_UNIQUE_PAIR_CLASS_2026_10_29.md",
+      "expected_sha256": "be54ef6e20015c3841606d0b7779ba17fe319d2aa886ad9adfd376e985995a20",
+      "actual_sha256": "be54ef6e20015c3841606d0b7779ba17fe319d2aa886ad9adfd376e985995a20",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_ROOF_TILTED_HUB_DISTINCT_APPLICATIONS_AND_FULL_RETURN_OWNER_COVER_2026_10_29.md",
+      "dependency": "PHYSICAL_CONTACT_STRESS.md",
+      "expected_sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "actual_sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_ROOF_TILTED_HUB_DISTINCT_APPLICATIONS_AND_FULL_RETURN_OWNER_COVER_2026_10_29.md",
+      "dependency": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "expected_sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "actual_sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_ROOF_TILTED_HUB_DISTINCT_APPLICATIONS_AND_FULL_RETURN_OWNER_COVER_2026_10_29.md",
+      "dependency": "GENERAL_UNLOADED_THREE_DISTINCT_SINGLETON_PORTS_HAVE_NO_FREE_NORMAL_SELECTION.md",
+      "expected_sha256": "7700a4547542af9fc25b0e0b3d14f2113529069df0b007443c18d690da1137bb",
+      "actual_sha256": "7700a4547542af9fc25b0e0b3d14f2113529069df0b007443c18d690da1137bb",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_ROOF_TILTED_HUB_DISTINCT_APPLICATIONS_AND_FULL_RETURN_OWNER_COVER_2026_10_29.md",
+      "dependency": "LOADED_PARALLEL_FULL_STAR_WITH_DISTINCT_NEIGHBORS_FORCES_RADIAL_S_2026_10_29.md",
+      "expected_sha256": "f0e7b44a8d7e0eff5654384bf20bb5a99c3809d57a92bbb16afba6ee7ac1c96c",
+      "actual_sha256": "f0e7b44a8d7e0eff5654384bf20bb5a99c3809d57a92bbb16afba6ee7ac1c96c",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_ROOF_TILTED_HUB_DISTINCT_APPLICATIONS_AND_FULL_RETURN_OWNER_COVER_2026_10_29.md",
+      "dependency": "SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "expected_sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1",
+      "actual_sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1",
+      "match": true
+    },
+    {
+      "source": "REVIEW_PARALLEL_ROOF_TILTED_HUB_DISTINCTNESS_OWNER_COVER_SHARED_TERMINAL_2026_10_29.md",
+      "dependency": "PHYSICAL_CONTACT_STRESS.md",
+      "expected_sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "actual_sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "match": true
+    },
+    {
+      "source": "REVIEW_PARALLEL_ROOF_TILTED_HUB_DISTINCTNESS_OWNER_COVER_SHARED_TERMINAL_2026_10_29.md",
+      "dependency": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "expected_sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "actual_sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "match": true
+    },
+    {
+      "source": "REVIEW_PARALLEL_ROOF_TILTED_HUB_DISTINCTNESS_OWNER_COVER_SHARED_TERMINAL_2026_10_29.md",
+      "dependency": "GENERAL_UNLOADED_THREE_DISTINCT_SINGLETON_PORTS_HAVE_NO_FREE_NORMAL_SELECTION.md",
+      "expected_sha256": "7700a4547542af9fc25b0e0b3d14f2113529069df0b007443c18d690da1137bb",
+      "actual_sha256": "7700a4547542af9fc25b0e0b3d14f2113529069df0b007443c18d690da1137bb",
+      "match": true
+    },
+    {
+      "source": "REVIEW_PARALLEL_ROOF_TILTED_HUB_DISTINCTNESS_OWNER_COVER_SHARED_TERMINAL_2026_10_29.md",
+      "dependency": "LOADED_PARALLEL_FULL_STAR_WITH_DISTINCT_NEIGHBORS_FORCES_RADIAL_S_2026_10_29.md",
+      "expected_sha256": "f0e7b44a8d7e0eff5654384bf20bb5a99c3809d57a92bbb16afba6ee7ac1c96c",
+      "actual_sha256": "f0e7b44a8d7e0eff5654384bf20bb5a99c3809d57a92bbb16afba6ee7ac1c96c",
+      "match": true
+    },
+    {
+      "source": "REVIEW_PARALLEL_ROOF_TILTED_HUB_DISTINCTNESS_OWNER_COVER_SHARED_TERMINAL_2026_10_29.md",
+      "dependency": "SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "expected_sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1",
+      "actual_sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_RADIAL_ROOF_FREE_HUB_INTERFACE_BOTH_D02_ROWS_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "LOADED_PARALLEL_FULL_STAR_WITH_DISTINCT_NEIGHBORS_FORCES_RADIAL_S_2026_10_29.md",
+      "expected_sha256": "f0e7b44a8d7e0eff5654384bf20bb5a99c3809d57a92bbb16afba6ee7ac1c96c",
+      "actual_sha256": "f0e7b44a8d7e0eff5654384bf20bb5a99c3809d57a92bbb16afba6ee7ac1c96c",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_RADIAL_ROOF_FREE_HUB_INTERFACE_BOTH_D02_ROWS_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "PARALLEL_ROOF_TILTED_HUB_DISTINCT_APPLICATIONS_AND_FULL_RETURN_OWNER_COVER_2026_10_29.md",
+      "expected_sha256": "ce5219a2ee26f86a57a7e237582858f64f6b05646b600be52e73de7b2f43ab6a",
+      "actual_sha256": "ce5219a2ee26f86a57a7e237582858f64f6b05646b600be52e73de7b2f43ab6a",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_RADIAL_ROOF_FREE_HUB_INTERFACE_BOTH_D02_ROWS_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "PARALLEL_RADIAL_ROOF_WITH_ANY_ALIGNED_HUB_COMPLETE_D02_FEATURE_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "5089e790d324a645db72b85d9ecdf54a1e1d90f638d7a4ac4b48f6e4dca1bb37",
+      "actual_sha256": "5089e790d324a645db72b85d9ecdf54a1e1d90f638d7a4ac4b48f6e4dca1bb37",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_RADIAL_ROOF_FREE_HUB_INTERFACE_BOTH_D02_ROWS_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "PHYSICAL_CONTACT_STRESS.md",
+      "expected_sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "actual_sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_RADIAL_ROOF_FREE_HUB_INTERFACE_BOTH_D02_ROWS_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "expected_sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "actual_sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_RADIAL_ROOF_FREE_HUB_INTERFACE_BOTH_D02_ROWS_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "expected_sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78",
+      "actual_sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_RADIAL_ROOF_FREE_HUB_INTERFACE_BOTH_D02_ROWS_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "SHARP_QUARTER_CLEAR_RADIUS_FIVE_QUARTERS_ARC_AND_INTERVAL_CAPACITY.md",
+      "expected_sha256": "bca528af5320cc8314839eb0d53cf6f15ec381ac42d5bd353f62a27a47101f67",
+      "actual_sha256": "bca528af5320cc8314839eb0d53cf6f15ec381ac42d5bd353f62a27a47101f67",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_RADIAL_ROOF_FREE_HUB_INTERFACE_BOTH_D02_ROWS_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "CHORDED_HEXAGON_CENTRAL_CAPACITY_ONE.md",
+      "expected_sha256": "0b787eae6efe36d2ca6c40dbb079d3262192125fffe58026bacbfd657d1a9a34",
+      "actual_sha256": "0b787eae6efe36d2ca6c40dbb079d3262192125fffe58026bacbfd657d1a9a34",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_RADIAL_ROOF_FREE_HUB_INTERFACE_BOTH_D02_ROWS_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md",
+      "expected_sha256": "b61b0dec7ded00984c687e353fd3f3bfb5a5a7ade45d87d69aaeade09f23d80b",
+      "actual_sha256": "b61b0dec7ded00984c687e353fd3f3bfb5a5a7ade45d87d69aaeade09f23d80b",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_RADIAL_ROOF_FREE_HUB_INTERFACE_BOTH_D02_ROWS_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "recovered_variants/parallel_diagonal_2026_10_29/FULL_PARALLEL_RETURN_STARS_DIAGONAL_CHANNEL_EXTERIOR_POCKET_EMPTY.md",
+      "expected_sha256": "60aafee1c86633dd2a384d703425d9b60369f0b522c7ef0f85fe5eac4472b078",
+      "actual_sha256": "60aafee1c86633dd2a384d703425d9b60369f0b522c7ef0f85fe5eac4472b078",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_RADIAL_ROOF_FREE_HUB_INTERFACE_BOTH_D02_ROWS_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "expected_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "actual_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_RADIAL_ROOF_FREE_HUB_INTERFACE_BOTH_D02_ROWS_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "expected_sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1",
+      "actual_sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1",
+      "match": true
+    },
+    {
+      "source": "REVIEW_PARALLEL_RADIAL_ROOF_FREE_INTERFACE_COMPLETE_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "LOADED_PARALLEL_FULL_STAR_WITH_DISTINCT_NEIGHBORS_FORCES_RADIAL_S_2026_10_29.md",
+      "expected_sha256": "f0e7b44a8d7e0eff5654384bf20bb5a99c3809d57a92bbb16afba6ee7ac1c96c",
+      "actual_sha256": "f0e7b44a8d7e0eff5654384bf20bb5a99c3809d57a92bbb16afba6ee7ac1c96c",
+      "match": true
+    },
+    {
+      "source": "REVIEW_PARALLEL_RADIAL_ROOF_FREE_INTERFACE_COMPLETE_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "PARALLEL_ROOF_TILTED_HUB_DISTINCT_APPLICATIONS_AND_FULL_RETURN_OWNER_COVER_2026_10_29.md",
+      "expected_sha256": "ce5219a2ee26f86a57a7e237582858f64f6b05646b600be52e73de7b2f43ab6a",
+      "actual_sha256": "ce5219a2ee26f86a57a7e237582858f64f6b05646b600be52e73de7b2f43ab6a",
+      "match": true
+    },
+    {
+      "source": "REVIEW_PARALLEL_RADIAL_ROOF_FREE_INTERFACE_COMPLETE_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "PARALLEL_RADIAL_ROOF_WITH_ANY_ALIGNED_HUB_COMPLETE_D02_FEATURE_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "5089e790d324a645db72b85d9ecdf54a1e1d90f638d7a4ac4b48f6e4dca1bb37",
+      "actual_sha256": "5089e790d324a645db72b85d9ecdf54a1e1d90f638d7a4ac4b48f6e4dca1bb37",
+      "match": true
+    },
+    {
+      "source": "REVIEW_PARALLEL_RADIAL_ROOF_FREE_INTERFACE_COMPLETE_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "PHYSICAL_CONTACT_STRESS.md",
+      "expected_sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "actual_sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "match": true
+    },
+    {
+      "source": "REVIEW_PARALLEL_RADIAL_ROOF_FREE_INTERFACE_COMPLETE_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "expected_sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "actual_sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "match": true
+    },
+    {
+      "source": "REVIEW_PARALLEL_RADIAL_ROOF_FREE_INTERFACE_COMPLETE_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "expected_sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78",
+      "actual_sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78",
+      "match": true
+    },
+    {
+      "source": "REVIEW_PARALLEL_RADIAL_ROOF_FREE_INTERFACE_COMPLETE_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "SHARP_QUARTER_CLEAR_RADIUS_FIVE_QUARTERS_ARC_AND_INTERVAL_CAPACITY.md",
+      "expected_sha256": "bca528af5320cc8314839eb0d53cf6f15ec381ac42d5bd353f62a27a47101f67",
+      "actual_sha256": "bca528af5320cc8314839eb0d53cf6f15ec381ac42d5bd353f62a27a47101f67",
+      "match": true
+    },
+    {
+      "source": "REVIEW_PARALLEL_RADIAL_ROOF_FREE_INTERFACE_COMPLETE_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "CHORDED_HEXAGON_CENTRAL_CAPACITY_ONE.md",
+      "expected_sha256": "0b787eae6efe36d2ca6c40dbb079d3262192125fffe58026bacbfd657d1a9a34",
+      "actual_sha256": "0b787eae6efe36d2ca6c40dbb079d3262192125fffe58026bacbfd657d1a9a34",
+      "match": true
+    },
+    {
+      "source": "REVIEW_PARALLEL_RADIAL_ROOF_FREE_INTERFACE_COMPLETE_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md",
+      "expected_sha256": "b61b0dec7ded00984c687e353fd3f3bfb5a5a7ade45d87d69aaeade09f23d80b",
+      "actual_sha256": "b61b0dec7ded00984c687e353fd3f3bfb5a5a7ade45d87d69aaeade09f23d80b",
+      "match": true
+    },
+    {
+      "source": "REVIEW_PARALLEL_RADIAL_ROOF_FREE_INTERFACE_COMPLETE_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "recovered_variants/parallel_diagonal_2026_10_29/FULL_PARALLEL_RETURN_STARS_DIAGONAL_CHANNEL_EXTERIOR_POCKET_EMPTY.md",
+      "expected_sha256": "60aafee1c86633dd2a384d703425d9b60369f0b522c7ef0f85fe5eac4472b078",
+      "actual_sha256": "60aafee1c86633dd2a384d703425d9b60369f0b522c7ef0f85fe5eac4472b078",
+      "match": true
+    },
+    {
+      "source": "REVIEW_PARALLEL_RADIAL_ROOF_FREE_INTERFACE_COMPLETE_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "expected_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "actual_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "match": true
+    },
+    {
+      "source": "REVIEW_PARALLEL_RADIAL_ROOF_FREE_INTERFACE_COMPLETE_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "expected_sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1",
+      "actual_sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1",
+      "match": true
+    },
+    {
+      "source": "HOUSE_TC_BOTH_LEAF_INNER_RETURN_PARALLEL_C_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "expected_sha256": "0c67d5578a73ec36fd9b79c509c3e158cb9a218fac8666256ab2ca1f9505cb45",
+      "actual_sha256": "0c67d5578a73ec36fd9b79c509c3e158cb9a218fac8666256ab2ca1f9505cb45",
+      "match": true
+    },
+    {
+      "source": "HOUSE_TC_BOTH_LEAF_INNER_RETURN_PARALLEL_C_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "expected_sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "actual_sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "match": true
+    },
+    {
+      "source": "HOUSE_TC_BOTH_LEAF_INNER_RETURN_PARALLEL_C_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "expected_sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334",
+      "actual_sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334",
+      "match": true
+    },
+    {
+      "source": "HOUSE_TC_BOTH_LEAF_INNER_RETURN_PARALLEL_C_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "PHYSICAL_CONTACT_STRESS.md",
+      "expected_sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "actual_sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_INNER_RETURN_PARALLEL_C_SHARED_TERMINAL_2026_10_29.md",
+      "dependency": "STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "expected_sha256": "0c67d5578a73ec36fd9b79c509c3e158cb9a218fac8666256ab2ca1f9505cb45",
+      "actual_sha256": "0c67d5578a73ec36fd9b79c509c3e158cb9a218fac8666256ab2ca1f9505cb45",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_INNER_RETURN_PARALLEL_C_SHARED_TERMINAL_2026_10_29.md",
+      "dependency": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "expected_sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "actual_sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_INNER_RETURN_PARALLEL_C_SHARED_TERMINAL_2026_10_29.md",
+      "dependency": "ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "expected_sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334",
+      "actual_sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_INNER_RETURN_PARALLEL_C_SHARED_TERMINAL_2026_10_29.md",
+      "dependency": "PHYSICAL_CONTACT_STRESS.md",
+      "expected_sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "actual_sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "match": true
+    },
+    {
+      "source": "ADOPTION_UNIFORM_OUTER_ROOT_FREE_ROOF_AND_HOUSE_PARALLEL_EXITS_2026_10_29.md",
+      "dependency": "OUTER_BLOCK_GENUINE_ROOT_BOUNDARY_NEIGHBORS_CENTRAL_DISK_OR_BALANCED_ALIGNMENT_2026_10_29.md",
+      "expected_sha256": "177ae1085ff09f3322bc68612104f238c0bad62158f05b70814fa86e2b732560",
+      "actual_sha256": "177ae1085ff09f3322bc68612104f238c0bad62158f05b70814fa86e2b732560",
+      "match": true
+    },
+    {
+      "source": "ADOPTION_UNIFORM_OUTER_ROOT_FREE_ROOF_AND_HOUSE_PARALLEL_EXITS_2026_10_29.md",
+      "dependency": "REVIEW_OUTER_BLOCK_ROOT_BOUNDARY_NEIGHBORS_FULL_COMPONENT_ROOT_2026_10_29.md",
+      "expected_sha256": "a38f0810aeb1a7dfb215d39144f9aebfa466c73cb68ff8df632da2c4ae8768bd",
+      "actual_sha256": "a38f0810aeb1a7dfb215d39144f9aebfa466c73cb68ff8df632da2c4ae8768bd",
+      "match": true
+    },
+    {
+      "source": "ADOPTION_UNIFORM_OUTER_ROOT_FREE_ROOF_AND_HOUSE_PARALLEL_EXITS_2026_10_29.md",
+      "dependency": "PARALLEL_ROOF_TILTED_HUB_DISTINCT_APPLICATIONS_AND_FULL_RETURN_OWNER_COVER_2026_10_29.md",
+      "expected_sha256": "ce5219a2ee26f86a57a7e237582858f64f6b05646b600be52e73de7b2f43ab6a",
+      "actual_sha256": "ce5219a2ee26f86a57a7e237582858f64f6b05646b600be52e73de7b2f43ab6a",
+      "match": true
+    },
+    {
+      "source": "ADOPTION_UNIFORM_OUTER_ROOT_FREE_ROOF_AND_HOUSE_PARALLEL_EXITS_2026_10_29.md",
+      "dependency": "REVIEW_PARALLEL_ROOF_TILTED_HUB_DISTINCTNESS_OWNER_COVER_SHARED_TERMINAL_2026_10_29.md",
+      "expected_sha256": "bbc80f3996d8d6b78e56ccc04d6ceeb422672d02b4bf0b9d9556c10407b59827",
+      "actual_sha256": "bbc80f3996d8d6b78e56ccc04d6ceeb422672d02b4bf0b9d9556c10407b59827",
+      "match": true
+    },
+    {
+      "source": "ADOPTION_UNIFORM_OUTER_ROOT_FREE_ROOF_AND_HOUSE_PARALLEL_EXITS_2026_10_29.md",
+      "dependency": "PARALLEL_RADIAL_ROOF_FREE_HUB_INTERFACE_BOTH_D02_ROWS_COMPLETE_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "43cf17e3606f0897a14f090463eb9fa819c84b9d7fd53ab67898261eb24178f8",
+      "actual_sha256": "43cf17e3606f0897a14f090463eb9fa819c84b9d7fd53ab67898261eb24178f8",
+      "match": true
+    },
+    {
+      "source": "ADOPTION_UNIFORM_OUTER_ROOT_FREE_ROOF_AND_HOUSE_PARALLEL_EXITS_2026_10_29.md",
+      "dependency": "REVIEW_PARALLEL_RADIAL_ROOF_FREE_INTERFACE_COMPLETE_BLOCK_FORESTS_2026_10_29.md",
+      "expected_sha256": "50e589cc53b36591435f89a23e7543333f70d101ccbb6f181f988c925dadbbda",
+      "actual_sha256": "50e589cc53b36591435f89a23e7543333f70d101ccbb6f181f988c925dadbbda",
+      "match": true
+    },
+    {
+      "source": "ADOPTION_UNIFORM_OUTER_ROOT_FREE_ROOF_AND_HOUSE_PARALLEL_EXITS_2026_10_29.md",
+      "dependency": "HOUSE_TC_BOTH_LEAF_INNER_RETURN_PARALLEL_C_COMPLETE_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "20b72246941bd23e5ec951012c49f7030be4f6eb04cac8c7350bdc53fcb7b5ff",
+      "actual_sha256": "20b72246941bd23e5ec951012c49f7030be4f6eb04cac8c7350bdc53fcb7b5ff",
+      "match": true
+    },
+    {
+      "source": "ADOPTION_UNIFORM_OUTER_ROOT_FREE_ROOF_AND_HOUSE_PARALLEL_EXITS_2026_10_29.md",
+      "dependency": "REVIEW_HOUSE_INNER_RETURN_PARALLEL_C_SHARED_TERMINAL_2026_10_29.md",
+      "expected_sha256": "809edcb485f6d2ea47c40065e9aebc72a192b4a5c435426fafe7e8d6561d6dac",
+      "actual_sha256": "809edcb485f6d2ea47c40065e9aebc72a192b4a5c435426fafe7e8d6561d6dac",
+      "match": true
+    }
+  ],
+  "exact_rational_checks": {
+    "balanced_margin_reserve": "1019/9000000",
+    "south_port_reserve": "2791/1000000",
+    "roof_l_square_reserve": "71/40000",
+    "roof_endpoint_margin": "1/600",
+    "roof_circle_tangent_square": "5199/160000",
+    "roof_vertical_gap_reserve": "11857/120000",
+    "roof_positive_halfplane": "957/4000",
+    "roof_negative_marker": "62977/4000",
+    "roof_quadrant_reserve": "1879/6400",
+    "roof_cap_angle_reserve": "23/1250",
+    "house_nonaxis_tilt_reserve": "3/680",
+    "house_interval_one": "393/5600",
+    "house_interval_two": "1667/40000",
+    "house_interval_three": "44527/7680000",
+    "house_actual_support_lower": "5/42",
+    "house_owned_ratio_gap": "5/154",
+    "house_upper_ratio_gap": "2635/83118"
+  },
+  "original_inventories": {
+    "fine_total": 2513,
+    "fine_checked": 2370,
+    "fine_open": 143,
+    "coarse_total": 58,
+    "coarse_closed": 35,
+    "coarse_open": 23,
+    "all_identifiers_order_and_flags_unchanged": true,
+    "fine_inventory_sha256": "3289a566e446837ba51a5929a00759808a35763f86cf8023ac92b14625412ffb",
+    "coarse_inventory_sha256": "e13fb3f8fcf38adbf7c76702b3088adb70a0411b77f07a67c2422adcb94d1374",
+    "encoding": "sha256 of Python json.dumps ordered regex tuples with separators=(',',':')"
+  },
+  "newly_closed_original_flags": [],
+  "newly_excluded_features": [
+    "Whole three-genuine-root C5 spacing (2,2,1)",
+    "Parallel roof with free AD in D02.L135 and D02.L1345",
+    "Owned-AD strict-inner-AT house feature with parallel C forces in both genuine-leaf charts"
+  ],
+  "uniform_reductions": [
+    "Outer-block-neighbor arbitrary-degree root theorem, with true3 central-disk corollary",
+    "Radius-free tilted-hub distinctness and full owner cover"
+  ],
+  "remaining_scope": [
+    "Six five-body three-root graph/root families",
+    "Both-tilted owned-AD parallel roofs and nonparallel roofs",
+    "Owned-AD strict-inner-AT house nonparallel-C feature",
+    "Other original graph cells, global sharp theorem, equality and full prerequisite audit"
+  ],
+  "publication_allowlist": [
+    "research/nine/OUTER_BLOCK_GENUINE_ROOT_BOUNDARY_NEIGHBORS_CENTRAL_DISK_OR_BALANCED_ALIGNMENT_2026_10_29.md",
+    "research/nine/REVIEW_OUTER_BLOCK_ROOT_BOUNDARY_NEIGHBORS_FULL_COMPONENT_ROOT_2026_10_29.md",
+    "research/nine/PARALLEL_ROOF_TILTED_HUB_DISTINCT_APPLICATIONS_AND_FULL_RETURN_OWNER_COVER_2026_10_29.md",
+    "research/nine/REVIEW_PARALLEL_ROOF_TILTED_HUB_DISTINCTNESS_OWNER_COVER_SHARED_TERMINAL_2026_10_29.md",
+    "research/nine/PARALLEL_RADIAL_ROOF_FREE_HUB_INTERFACE_BOTH_D02_ROWS_COMPLETE_EXCLUSION_2026_10_29.md",
+    "research/nine/REVIEW_PARALLEL_RADIAL_ROOF_FREE_INTERFACE_COMPLETE_BLOCK_FORESTS_2026_10_29.md",
+    "research/nine/HOUSE_TC_BOTH_LEAF_INNER_RETURN_PARALLEL_C_COMPLETE_EXCLUSION_2026_10_29.md",
+    "research/nine/REVIEW_HOUSE_INNER_RETURN_PARALLEL_C_SHARED_TERMINAL_2026_10_29.md",
+    "research/nine/ADOPTION_UNIFORM_OUTER_ROOT_FREE_ROOF_AND_HOUSE_PARALLEL_EXITS_2026_10_29.md",
+    "research/nine/UNIFORM_OUTER_ROOT_FREE_ROOF_AND_HOUSE_PARALLEL_EXITS_CHECKPOINT_2026_10_29.json",
+    "research/nine/CYCLIC_CELL_LEDGER.md",
+    "research/nine/DEEP_GATED_ROADMAP.md",
+    "research/nine/HANDOFF_PR11_2026_10_28_CURRENT.md",
+    "research/nine/README.md",
+    "research/nine/ROADMAP.md"
+  ],
+  "forbidden_actions_not_performed": [
+    "Lean/Lake compilation",
+    "CI/workflow dispatch",
+    "merge",
+    "physical pose sampling",
+    "new numerical packing certificate",
+    "original normal or mean change"
+  ]
+}

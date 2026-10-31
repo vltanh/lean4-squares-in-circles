@@ -1,0 +1,68 @@
+{
+  "source": "INNER_PENTAGON_H3_0124_NONHUB_OWNED_OR_RADIAL_ENDPOINTS_EXCLUSION.md",
+  "sha256": "c72a8bc51f9c76bd5b6c2d44ad05b6e96f5c8807aab257c27baef8f5a15d5c44",
+  "full_root_review": true,
+  "pose_sampling": false,
+  "compilation": false,
+  "exact_positive_reserves": {
+    "real_inward_point_exceeds_circle": "47/256",
+    "whole_radius_gives_d_above_nine_tenths": "13/320",
+    "cos_alpha_above_89_percent": "211/62500",
+    "sin_alpha_below_nine_twentieths_squared": "2424521/3906250000",
+    "alpha_below_pi_over_six_squared": "46992849/976562500",
+    "sqrt_three_slope_bound_squared": "26/147",
+    "g_positive_whole_angle_guard": "21/50",
+    "endpoint_sum_above_ten_sevenths": "17/7000",
+    "ten_sevenths_above_sqrt_two_squared": "2/49"
+  },
+  "identities": [
+    "exact triple-angle cosine",
+    "scalar-square polynomial modulo c^2+s^2=1",
+    "1431/1000 and 17/7000 final reserves"
+  ],
+  "complete_analytic_checks": [
+    "Full original K3/H3 and two loaded3 internal stars",
+    "Opposite actual K vertices and weak coincident lower-arc group order",
+    "Origin between endpoint abscissae by actual inward unit points",
+    "True endpoint loaded2 properness with actual boundary neighbors",
+    "Entire owned-side slider, physical two-corner limit and arbitrary circle weights",
+    "Two-physical-corner free endpoint actual moment and inner-vertex sign",
+    "Whole three-link lower-arc angle bound before applying the scalar estimate",
+    "Strict concave two-endpoint sum on the entire angular simplex"
+  ],
+  "pins": [
+    {
+      "path": "SIX_BODY_INNER_PENTAGON_LOAD_COVER.md",
+      "sha256": "fa877c9d7d25c57a7c8cf438a429465b5952cb8db6628c57d9d93695b33dd434"
+    },
+    {
+      "path": "FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "sha256": "6c38d162e1f2c435cf65a8b4a58a7001fe9489c65b3510159fee2687b9753708"
+    },
+    {
+      "path": "BOUNDARY_CONTACT_ORIGIN_MOMENT_ORIENTATION.md",
+      "sha256": "851417d7fcd12ccb93a6f7f09ba7d7b2bf9bccc61c82fee3457b5ee4cee47e9a"
+    },
+    {
+      "path": "TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md",
+      "sha256": "0d61292a0aa57084b88b4a72754fc78e123e8b684dac09be966fb074ab58e877"
+    },
+    {
+      "path": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "sha256": "6154eee2ab1114d063b0dbd1a2800c3522cbb1b46ec44a258c1c89d8ffb9e975"
+    },
+    {
+      "path": "CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "sha256": "2625b3a2b730525a6397bc90232e78c5e1aac8091381c1f5e5fc8a71ef1da449"
+    },
+    {
+      "path": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a"
+    },
+    {
+      "path": "FAN_TIP_OWNED_ENDPOINT_EXCLUSION.md",
+      "sha256": "32dcd0afd0883e4272e95b26278d8c90af0c02639b522fd5c960941bb34dba02"
+    }
+  ],
+  "remaining": "Neither-K-owned with at least one free unique-physical-circle-corner endpoint; variable shared return retained"
+}

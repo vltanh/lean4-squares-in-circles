@@ -1,0 +1,24 @@
+{
+  "reviewer": "frontier_audit",
+  "date": "2026-10-28",
+  "scope": "Full continuous boundary-origin port-order lemma, complete weak critical unloaded U3 star, uniform boundary-triangle third-support theorem, and entire LTDC.S low/critical original-domain join plus uniform high support and shallow remainder. Zero whole fine gate.",
+  "pins": {
+    "UNLOADED_BOUNDARY_TRIANGLE_HUB_THIRD_SUPPORT_AND_CRITICAL_EXCLUSION.md": "d8661132bd2d97911116373d22968bbde2ff3c4c4a63c962c72d722ec3d5b089",
+    "UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md": "406fce53d22cc20eec43a373a877798dab583a6bd93f684ff124293016c44c87",
+    "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+    "D_LEAF_ROOT_BELONGS_TO_EVERY_CYCLIC_BLOCK.md": "9dd28b72bf8a837747c39c50c1d30f3f6d405f4442e39eda47d38d4485acb743",
+    "UNLOADED_OPPOSED_MOMENT_STAR_AND_LOWER_HOUSE_TDC_D_SMALL_SUPPORT_REDUCTION.md": "008acc8485e591b34604bf3e0b0cdcb03b7220aa249fc8e49552a065770ca129",
+    "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+    "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md": "4c9e708945938c3f9df575e76f7573903d6b5a0ce4eccb5bcea760353a47458a",
+    "LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90",
+    "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+    "LOWER_HOUSE_TDC_S_CLOSED_ORIGIN_SUPPORT_AND_SHALLOW_REDUCTION.md": "53a1f33837c353088f83b5226c2e37dfef6434037cd149755af4f24758cbfad6",
+    "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b"
+  },
+  "exact_positive_reserves": {
+    "r_gt_11_over_20_entire_inherited_window": "49/1600",
+    "upper_d_lt_61_over_60": "31/57600",
+    "high_V_lt_31_over_120": "1/14400"
+  },
+  "validation": "Independent complete hand reconstruction and exact current pins/scalar reserves. No source mutation, Lean, CI, numerical pose, geometric grid or historical certificate replay."
+}

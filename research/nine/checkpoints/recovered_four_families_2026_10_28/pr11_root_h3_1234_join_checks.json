@@ -1,0 +1,38 @@
+{
+  "source_pin_checks": [
+    {
+      "source": "INNER_PENTAGON_THREE_SPOKE_EQUAL_ROOF_HUB_OWNER_EXCLUSION.md",
+      "sha256": "f97aa1d60b33072b378ab01fb2d1251fb3d1f0ad063fdfc8020fd4710953f5ee",
+      "all_table_pins_checked": 4
+    },
+    {
+      "source": "INNER_PENTAGON_THREE_SPOKE_FOUR_LOAD_1234_COMPLETE_EXCLUSION.md",
+      "sha256": "208b73829e2b571b6ffda875fb7fc276de08eb2862fab518af21675848dffabc",
+      "all_table_pins_checked": 16
+    }
+  ],
+  "original_fine_total": 2513,
+  "original_checked_before_join": 2332,
+  "original_join_target_open": true,
+  "reflection": {
+    "0": 1,
+    "1": 0,
+    "2": 4,
+    "3": 3,
+    "4": 2
+  },
+  "load_image": [
+    0,
+    2,
+    3,
+    4
+  ],
+  "all_force_degrees": {
+    "H": 3,
+    "0": 3,
+    "1": 3,
+    "2": 2,
+    "3": 3,
+    "4": 2
+  }
+}

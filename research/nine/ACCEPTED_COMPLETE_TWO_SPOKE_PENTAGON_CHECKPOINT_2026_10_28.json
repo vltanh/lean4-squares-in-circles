@@ -1,0 +1,271 @@
+{
+  "date_utc": "2026-10-28",
+  "status": "Fully reviewed local whole-family and graph-parent increment; no successful remote mutation claimed.",
+  "parent_checkpoint": {
+    "path": "research/nine/ACCEPTED_LOWER_TD_D_AND_PARTIAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+    "sha256": "b2f3aaa116a096e79bab66adc9b8fb270bb6db79638997cdc8ba6326c3ecd287",
+    "accepted_archive_sha256": "eff91d9f891e19409ad0747bb7882993025f25888b710c4174a85cb06981863b"
+  },
+  "last_verified_remote_head": "703cfc0e079b93fc860a4f32cbb5ce5f70458b4b",
+  "coarse_total": 58,
+  "coarse_closed": 33,
+  "coarse_open": 25,
+  "fine_total": 2513,
+  "fine_checked": 2330,
+  "fine_open": 183,
+  "coarse_changes": [],
+  "fine_changes": [
+    {
+      "id": "M6.B6.PENTAGON.H2_D0.L1234",
+      "from": "open",
+      "to": "checked"
+    },
+    {
+      "id": "M6.B6.PENTAGON.H2_D0_EXIT",
+      "from": "open",
+      "to": "checked"
+    }
+  ],
+  "original_ids_preserved_in_order": true,
+  "accepted_sources_and_reviews": [
+    {
+      "path": "research/nine/THREE_BOUNDARY_PATH_MIDDLE_CENTER_OBTUSE.md",
+      "sha256": "c2fb1f360163a513724c5388a5eca77b1ecadef40f39b7f6b3e46ea52335623b",
+      "bytes": 4238
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_FOUR_LOAD_OBLIQUE_BYPASS_EXCLUSION.md",
+      "sha256": "c97050fd440b02a5aa71849c603132d9b37cb479a58e183102ce3f4d5a3dc6e3",
+      "bytes": 17664
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_TWO_SPOKE_FOUR_LOAD_1234_COMPLETE_EXCLUSION.md",
+      "sha256": "e3c93d69a9c3a046ff2a21545887b0bf292adee9289e42606abe83ac815fa238",
+      "bytes": 11991
+    },
+    {
+      "path": "research/nine/REVIEW_INNER_PENTAGON_FOUR_LOAD_OBLIQUE_AND_JOIN_ROOT_2026_10_28.md",
+      "sha256": "039688d53af57dd0b9aa356b117b84b09596497a068d62031c683ac1a0cd1197",
+      "bytes": 12501
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_LOAD_OBLIQUE_BYPASS_AND_OBTUSE_CENTER_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "4251f4816fd237aa818ab4603994603b346bc87d3901f25518384c24c61d38aa",
+      "bytes": 14896
+    },
+    {
+      "path": "research/nine/REVIEW_INNER_PENTAGON_FOUR_LOAD_1234_COMPLETE_JOIN_ROOTED_BLOCKS_2026_10_28.md",
+      "sha256": "d6794cb6c00876a360adecafd47ec07666065536ec9bfb8b632c75d05dbcf796",
+      "bytes": 9589
+    },
+    {
+      "path": "research/nine/REVIEW_INNER_PENTAGON_FOUR_LOAD_1234_FINAL_INTEGRATION_ROOT_2026_10_28.md",
+      "sha256": "fbaacd867714592473e6cac98c8f2b90906844e7eb833c7760938855fcf54bd5",
+      "bytes": 4274
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_TWO_SPOKE_NO_CHORD_COMPLETE_EXCLUSION.md",
+      "sha256": "aac5b85cf106560e75af9a06375f8f3572eec6f53b1855c8253bd0afe5b50661",
+      "bytes": 18710
+    },
+    {
+      "path": "research/nine/REVIEW_INNER_PENTAGON_TWO_SPOKE_NO_CHORD_COMPLETE_ROOT_2026_10_28.md",
+      "sha256": "f9aabdc30dff589dd171ca7f13669da9cf8d9b93bae3856fc1727239263e86c8",
+      "bytes": 12775
+    },
+    {
+      "path": "research/nine/REVIEW_INNER_PENTAGON_TWO_SPOKE_NO_CHORD_COMPLETE_JOIN_ROOTED_BLOCKS_2026_10_28.md",
+      "sha256": "3beff0a5203f5470a351a63f27c70eb85d6f21e8fd8b813b51c1d6ad69f616cd",
+      "bytes": 14269
+    }
+  ],
+  "retained_direct_chain_sources_and_reviews": [
+    {
+      "path": "research/nine/SIX_BODY_INNER_PENTAGON_LOAD_COVER.md",
+      "sha256": "fa877c9d7d25c57a7c8cf438a429465b5952cb8db6628c57d9d93695b33dd434",
+      "bytes": 10871
+    },
+    {
+      "path": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a",
+      "bytes": 14122
+    },
+    {
+      "path": "research/nine/UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "sha256": "d6008ceb18b2c8921c1f3711e6babfea3a01761487352ef4dca60579a83353b8",
+      "bytes": 6574
+    },
+    {
+      "path": "research/nine/FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "sha256": "6c38d162e1f2c435cf65a8b4a58a7001fe9489c65b3510159fee2687b9753708",
+      "bytes": 8496
+    },
+    {
+      "path": "research/nine/NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "sha256": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c",
+      "bytes": 18216
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_TWO_SPOKE_THREE_LOAD_013_COMPLETE_EXCLUSION.md",
+      "sha256": "178c40e8dbb0cccd9b5ce8fd04dde9f1367007dda944736bbcfe13f777ad790a",
+      "bytes": 8851
+    },
+    {
+      "path": "research/nine/CHORDED_HEXAGON_DOUBLE_CHANNEL_THREE_LOAD_THETA_EXCLUSION.md",
+      "sha256": "0af7a3d68597ff0ca166d9d014e5026787dc3905fdef73b17cf7935cca919615",
+      "bytes": 20370
+    },
+    {
+      "path": "research/nine/CHORDED_HEXAGON_SIDE_TRANSMITTER_BYPASS_UNLOADED_ENDPOINT_SEPARATION.md",
+      "sha256": "4a979638b562040455e3058351db24358e7ecb093e5c0c1635dcd6438492eecd",
+      "bytes": 13267
+    },
+    {
+      "path": "research/nine/CHORDED_HEXAGON_ONE_PROPER_DIAGONAL_ANGLE_AND_PENTAGON_EXCLUSION.md",
+      "sha256": "ff76e6a5f21b49c7a46036c1b4535457c342cf19710fb8bbac83d67cf078c979",
+      "bytes": 12839
+    },
+    {
+      "path": "research/nine/REVIEW_OBLIQUE_BYPASS_AND_INNER_PENTAGON_013_JOIN_TRIANGLE_BRIDGES_2026_10_27.md",
+      "sha256": "279562e2dd6e6f83987a8efbffe21d86b52599f96f19dfde13c12cc2e74adb33",
+      "bytes": 14199
+    },
+    {
+      "path": "research/nine/REVIEW_DOUBLE_CHANNEL_THREE_LOAD_THETA_ROOTED_BLOCKS_2026_10_27.md",
+      "sha256": "37862dc097330056fdd6dba1fd07630e08aa89cf081baf39c1ee328cc121f78f",
+      "bytes": 10132
+    },
+    {
+      "path": "research/nine/REVIEW_SIDE_TRANSMITTER_UNLOADED_ENDPOINT_SEPARATION_ROOTED_BLOCKS_2026_10_27.md",
+      "sha256": "0ee225e71d43495f66a126b382bffe3e75cc40d2c93d3031604dc69ebd047574",
+      "bytes": 9932
+    },
+    {
+      "path": "research/nine/REVIEW_ONE_PROPER_DIAGONAL_ANGLE_AND_PENTAGON_GLOBAL_2026_10_27.md",
+      "sha256": "36036e8d3cebd7e8ead33f43f0b5997c8441495afb2902a6e0c0e30949daaa37",
+      "bytes": 8664
+    },
+    {
+      "path": "research/nine/REVIEW_PARALLEL_OBLIQUE_BYPASS_AND_PENTAGON_013_ROOT_2026_10_28.md",
+      "sha256": "026d2c05b157d98d912cb86e8a1cc270d8a24996885229f9c57b3cbf7df25328",
+      "bytes": 10604
+    },
+    {
+      "path": "research/nine/REVIEW_DOUBLE_CHANNEL_THREE_LOAD_THETA_ROOT_2026_10_27.md",
+      "sha256": "29279dd7a104b562bd402dd881d9145d52d75730a6817d66033f73f2be727f74",
+      "bytes": 7027
+    },
+    {
+      "path": "research/nine/REVIEW_SIDE_TRANSMITTER_UNLOADED_ENDPOINT_SEPARATION_ROOT_2026_10_27.md",
+      "sha256": "5a01ca79842745c78e8b98e039cec4ebd8c0f0dad1f4c8ed7140837ee47ec046",
+      "bytes": 5024
+    },
+    {
+      "path": "research/nine/REVIEW_ONE_PROPER_DIAGONAL_ANGLE_AND_PENTAGON_ROOT_2026_10_27.md",
+      "sha256": "3e561b25653419e7b282017c9d6ddb449bbd7146b87a56bf3b0e5e8752d67198",
+      "bytes": 5892
+    },
+    {
+      "path": "research/nine/REVIEW_SIX_BODY_SEVEN_RECOVERED_SOURCES_2026_10_27.md",
+      "sha256": "9480e81d87479e93da45dbd3bf1db2533efe835011a8160038d58d325f5abbf7",
+      "bytes": 10863
+    },
+    {
+      "path": "research/nine/CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "sha256": "2625b3a2b730525a6397bc90232e78c5e1aac8091381c1f5e5fc8a71ef1da449",
+      "bytes": 12814
+    },
+    {
+      "path": "research/nine/END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+      "sha256": "6f3459eaf4ca425ee2001ddb27e1ba7a1b5eb0003548498f48c610776554d3bb",
+      "bytes": 8687
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_FOUR_LOAD_PARALLEL_BYPASS_EXCLUSION.md",
+      "sha256": "46a853de32bca6a4198c3305fea1f9cdba56744da86712d07ae0b812f93b8494",
+      "bytes": 11328
+    },
+    {
+      "path": "research/nine/REVIEW_INNER_PENTAGON_FOUR_LOAD_PARALLEL_BYPASS_ROOTED_BLOCKS_2026_10_28.md",
+      "sha256": "6ddd107d4eefc855ebce9bc9ff784d7655eeb491352872e52ddc1b57b202c48e",
+      "bytes": 9484
+    },
+    {
+      "path": "research/nine/REVIEW_INNER_PENTAGON_FOUR_LOAD_PARALLEL_BYPASS_ROOT_2026_10_28.md",
+      "sha256": "67d2aaecd3310b016805a9ab90a74d469ac43f0bf1a4baba9a2d35c1802aa82c",
+      "bytes": 7426
+    }
+  ],
+  "metadata": [
+    {
+      "path": "research/nine/CYCLIC_CELL_LEDGER.md",
+      "previous_sha256": "9b846e0d51e784f26bf539cc67fedf637854ea2c101626848046ff5a17601003",
+      "sha256": "9b921eac9b831646625c6d81024d0fa745c4aae185392fd1ff4a64aa5e9d5180",
+      "bytes": 216563
+    },
+    {
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "previous_sha256": "f18f3a6dde51ddf4e22925ed73597d88cb77b1f8cd04738fd2830728a3f3418d",
+      "sha256": "0d443b7c05c4e534d4c95d8f54e558374505bec719122e6f6e3439249d3d49fb",
+      "bytes": 933642
+    },
+    {
+      "path": "research/nine/HANDOFF_PR11_2026_10_25.md",
+      "previous_sha256": "8344436536b4398064a546e9fe1d9a23747864f18bbc0d9e51f4c827b3a37cd5",
+      "sha256": "0ee33de19ca0d7570c877ac988fa4b47cbe0379ce0753808d1a673c674e17417",
+      "bytes": 133979
+    },
+    {
+      "path": "research/nine/HANDOFF_PR11_2026_10_27_CURRENT.md",
+      "previous_sha256": "1a900e62e238ac62a4295c427292c70d645a4a96e15159601d4d5123fc45ede2",
+      "sha256": "5b4b334f83caea7b64fbfc1080949fc56d69b5923ae2cf1e0610419fa23c6380",
+      "bytes": 33478
+    },
+    {
+      "path": "research/nine/TWO_LOAD_PROGRESS.md",
+      "previous_sha256": "6dbd1f50dc5c20b3e6e23c264ea4112d4dbe53fdf9ac596020dfb91fa359f8c5",
+      "sha256": "bc33aae39d6ec9dd1eb926d6519e710f0514ca3fc6272abf9a6de91c006e8721",
+      "bytes": 549792
+    }
+  ],
+  "exact_check_records": [
+    {
+      "path": "/tmp/pr11_root_h2_graph_exact_cover_and_pins.json",
+      "sha256": "557c3b8aa64a729364b2698bbb6d667ca3ab24a8824458b2ce8acd7901357849"
+    },
+    {
+      "path": "/tmp/pr11_root_restored_h2_three_old_families_checks.json",
+      "sha256": "03847389bed15ccf71044a59fd47af906053eb69c110002d386a4cd902e90da4"
+    },
+    {
+      "path": "/tmp/pr11_root_pentagon_1234_oblique_center_checks.json",
+      "sha256": "6d90fa6fd0ad89d7f678713e243d6f0eb0e50a0f9ca7a36fe84528bde1fd3d8e"
+    }
+  ],
+  "historical_current_equivalence_record": {
+    "path": "/tmp/pr11-restored-h2-inputs/current_equivalence.json",
+    "sha256": "0b9a944d29e86d95f1cc4b5205c1e9b91ce8163b88e8c44336cb4730606f6453"
+  },
+  "not_claimed": [
+    "unrestricted sharp inequality",
+    "all original equality packings",
+    "older complete transitive prerequisite audit",
+    "Lean integration",
+    "house hub-TC S companion",
+    "any C2.44.b2 whole family",
+    "successful remote mutation",
+    "whole H3 or H4_D0 pentagon graph",
+    "house lower-TD S companion"
+  ],
+  "constraints": [
+    "all nine actual units",
+    "true positive degrees and all forces",
+    "original selected normals and means",
+    "physical circle masks and individual zero weights",
+    "PR draft",
+    "no Lean compilation",
+    "no CI or workflow dispatch",
+    "no merge",
+    "future commits require skip-ci message, expected-head lease and exact committed readback"
+  ]
+}

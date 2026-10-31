@@ -1,0 +1,81 @@
+{
+  "status": "complete proposed original-attachment reduction frozen for full root and independent review",
+  "source": "/workspace/scratch/7d553350ce2a/two_blocks/C2_35_HIGH_RADIUS_D_LEAF_EXITS_AND_EXACT_NEAR_BODY_REMAINDER.md",
+  "source_sha256": "63e44f05da9d55fef3f1d4276c862d3ffa7ccfebe2d399c7cad0a22bc0625f3e",
+  "operative_dependencies": [
+    {
+      "filename": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "path": "/workspace/scratch/7d553350ce2a/two_blocks/C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "sha256": "28810d74517a6f6a4a4e5b2972c5359bdf41559957bd7e33bcb5fb4b358685d5",
+      "operative_scope": "Entire original C2.35.b2 cover, strict high-radius reduction, private/private H avoidance and private/block S type."
+    },
+    {
+      "filename": "NEAR_ORIGIN_BOUNDARY_ACCESS_TRANSFERS_TO_EVERY_CYCLIC_BLOCK.md",
+      "path": "/workspace/scratch/7d553350ce2a/two_blocks/NEAR_ORIGIN_BOUNDARY_ACCESS_TRANSFERS_TO_EVERY_CYCLIC_BLOCK.md",
+      "sha256": "49065116bfd526abf3826ae8bbaa6fd9ad43b7bcdbdc0e0653b959fa84359549",
+      "operative_scope": "Full maximal-block near transfer from the actual outside genuine leaf root."
+    },
+    {
+      "filename": "D_LEAF_ROOT_AT_MOST_ONE_OTHER_UNIT_IN_THREE_125_DISK.md",
+      "path": "/workspace/scratch/7d553350ce2a/two_blocks/D_LEAF_ROOT_AT_MOST_ONE_OTHER_UNIT_IN_THREE_125_DISK.md",
+      "sha256": "34385a647c1889564b3423ecfff03a7a75747275e45f68346c3f8a9f06abfaaf",
+      "operative_scope": "Complete physical fixed-disk exclusion; no neighbor or degree premise on the two near units."
+    },
+    {
+      "filename": "D_ROOT_EXCLUDES_SEPARATE_CYCLIC_BLOCK_CONTAINING_A_LEAF_ROOT.md",
+      "path": "/workspace/scratch/7d553350ce2a/two_blocks/D_ROOT_EXCLUDES_SEPARATE_CYCLIC_BLOCK_CONTAINING_A_LEAF_ROOT.md",
+      "sha256": "c71d7c384700c563477ea8535af327c5e5bd53411e3452a5c083bd0e8a3334f2",
+      "operative_scope": "Complete arbitrary-degree whole-block exclusion for the private/common and private/block D choices."
+    },
+    {
+      "filename": "D_LEAF_ROOT_REQUIRES_PHYSICALLY_CLEAR_NONLEAF_NEIGHBOR.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/D_LEAF_ROOT_REQUIRES_PHYSICALLY_CLEAR_NONLEAF_NEIGHBOR.md",
+      "sha256": "72632128582b60411187d891c224bfd085b8483a70632775b5a4f7c9786fe08c",
+      "operative_scope": "Full actual-root clear-neighbor proof; R>2 is supplied by the original high-radius reduction, so its separate radius-two derivation is unused here."
+    },
+    {
+      "filename": "D_LEAF_COMMON_TRIANGLE_NEIGHBOR_FULL_WINDOW_QUARTER_DISK.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/D_LEAF_COMMON_TRIANGLE_NEIGHBOR_FULL_WINDOW_QUARTER_DISK.md",
+      "sha256": "c39605b955d98f7fbe8499cf0a06dc4cc780a7dada4ee83c05ffc627f6d866bc",
+      "operative_scope": "Complete full-window theorem at A3, boundary page B and arbitrary-degree H."
+    },
+    {
+      "filename": "TERMINAL_FOUR_BLOCK_NEAR_ORIGIN_TRANSFER_AND_BROKEN_TRIANGLE_CHAIN_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/TERMINAL_FOUR_BLOCK_NEAR_ORIGIN_TRANSFER_AND_BROKEN_TRIANGLE_CHAIN_EXCLUSION.md",
+      "sha256": "9ea7708ee24b2d17b0a17d9cf67d67f547023fe68e1cafdf4d1be525e81844ea",
+      "operative_scope": "Section 3 only: true S-root A3, boundary B2 and arbitrary H are cleared by any distinct actual near Z; no four-block theorem is transferred."
+    },
+    {
+      "filename": "TRIANGLE_EXTERNAL_RAY_INTERSECTS_BODY.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/TRIANGLE_EXTERNAL_RAY_INTERSECTS_BODY.md",
+      "sha256": "4c9c2616a298460666622847a606b7c7837917d449249e6f53a3d884dc38bee8",
+      "operative_scope": "Full closed external-ray theorem, including the complete parallel alternative."
+    },
+    {
+      "filename": "TRIANGLE_SMALL_RADIAL_EXTERNAL_SUPPORT_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/TRIANGLE_SMALL_RADIAL_EXTERNAL_SUPPORT_EXCLUSION.md",
+      "sha256": "d77935c0d0754d87666c02c64b808673718c81990ded9f5d9d5566ba2b01ba48",
+      "operative_scope": "Complete support exclusion on 0<=rho<=1/60, with the true single bridge as H's full external system."
+    },
+    {
+      "filename": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "operative_scope": "Original radial bridge and genuine S/D leaf forms, physical root clearance and full origin-torque cancellation."
+    },
+    {
+      "filename": "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+      "operative_scope": "Section 1 only: complete contained-neighbor support bound rho<=d."
+    }
+  ],
+  "fine_delta": 0,
+  "coarse_delta": 0,
+  "whole_physical_exits": [
+    "Every private-A genuine D leaf in all four residual C2.35.b2 attachments",
+    "Every private-B genuine D leaf in the private/private attachment",
+    "Every all-four-private-loaded Q mask in the disjoint and private/private attachments"
+  ],
+  "remaining_scope": "Four original attachment families remain with the exact S/D and near-body restrictions printed; no geometric subdomain counted as a whole original fine family."
+}

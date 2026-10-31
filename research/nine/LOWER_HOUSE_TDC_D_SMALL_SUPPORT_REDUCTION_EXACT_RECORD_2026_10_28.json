@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-28",
+  "author": "six_body",
+  "status": "FROZEN_COMPLETE_PARTIAL_REDUCTION_PENDING_REVIEW",
+  "source": {
+    "name": "UNLOADED_OPPOSED_MOMENT_STAR_AND_LOWER_HOUSE_TDC_D_SMALL_SUPPORT_REDUCTION.md",
+    "path": "/workspace/scratch/7d553350ce2a/six_body/UNLOADED_OPPOSED_MOMENT_STAR_AND_LOWER_HOUSE_TDC_D_SMALL_SUPPORT_REDUCTION.md",
+    "bytes": 14907,
+    "sha256": "008acc8485e591b34604bf3e0b0cdcb03b7220aa249fc8e49552a065770ca129"
+  },
+  "direct_dependencies": [
+    {
+      "name": "D_LEAF_ONE_CLEAR_COMMON_NEIGHBOR_BOUNDARY_REMAINDER_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/D_LEAF_ONE_CLEAR_COMMON_NEIGHBOR_BOUNDARY_REMAINDER_EXCLUSION.md",
+      "bytes": 20109,
+      "sha256": "4e4e6e09bcb61f8e9a4de8cc75341b99914136369f807936c0351c1aff8f85b5",
+      "expected_sha256": "4e4e6e09bcb61f8e9a4de8cc75341b99914136369f807936c0351c1aff8f85b5",
+      "match": true
+    },
+    {
+      "name": "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "bytes": 16597,
+      "sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+      "expected_sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+      "match": true
+    },
+    {
+      "name": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "bytes": 14121,
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "expected_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "match": true
+    },
+    {
+      "name": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "bytes": 14902,
+      "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "expected_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "match": true
+    },
+    {
+      "name": "D_LEAF_SHALLOW_SIDE_BOUNDARY_FULL_WINDOW_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/D_LEAF_SHALLOW_SIDE_BOUNDARY_FULL_WINDOW_EXCLUSION.md",
+      "bytes": 9842,
+      "sha256": "ca7c3f4b32e45fc0c118bd766f438fce3019b0b44220604e33bc842a504ac670",
+      "expected_sha256": "ca7c3f4b32e45fc0c118bd766f438fce3019b0b44220604e33bc842a504ac670",
+      "match": true
+    },
+    {
+      "name": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "bytes": 17789,
+      "sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "expected_sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "match": true
+    }
+  ],
+  "uniform_theorem": "Any full unloaded actual star with one positive origin moment at support below -epsilon and all other moments strictly negative is impossible, without a separate distance or intact-root premise.",
+  "original_fine_id_still_open": "M6.B5L.HOUSE.LOWER.LTDC.D",
+  "original_true_degrees": {
+    "B": 3,
+    "A": 3,
+    "D": 3,
+    "T": 2,
+    "C": 2,
+    "L": 1
+  },
+  "positive_block_loads": [
+    "T",
+    "D",
+    "C"
+  ],
+  "necessary_survivor_conditions": [
+    "d>1, R>sqrt(17)/2",
+    "0<h_B(n_BA)<=epsilon<1/60",
+    "After one entire reflection, 0<a<=epsilon and b=1-a>59/60",
+    "n_BA,y>19/20 and |n_BA,x|<1/20",
+    "The original B-to-C normal has strictly negative y component"
+  ],
+  "unresolved_premises_not_inferred": [
+    "No A--C physical contact",
+    "No quarter-disk avoidance or epsilon-disk meeting asserted for A",
+    "No unloaded channel at loaded C2",
+    "No whole-family contradiction in the remaining thin support domain"
+  ],
+  "whole_fine_ids": [],
+  "fine_delta": 0,
+  "coarse_delta": 0,
+  "all_nine_actual_units_preserved": true,
+  "no_lean_ci_remote_or_ledger_mutation": true
+}

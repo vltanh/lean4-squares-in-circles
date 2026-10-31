@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-28",
+  "reviewer": "frontier_audit",
+  "source": "OPEN_ORIGIN_S_ROOT_UNLOADED_THREE_FORCE_HUB_OWNED_SINGLETON_EXCLUSION.md",
+  "sha256": "725e7f7060f53dd0e778dc094620c4c4887f938eb5eab23e2e42e26ae4dbea5e",
+  "pins": [
+    {
+      "source": "OPEN_ORIGIN_S_ROOT_NEAR_STRIP_OWNED_SINGLETON_NORMAL_FORM.md",
+      "declared_sha256": "c98e9109ed299911d7c5fab5ef6cf16777fcc9eda74b3138aba57029e1d97a39",
+      "actual_sha256": "c98e9109ed299911d7c5fab5ef6cf16777fcc9eda74b3138aba57029e1d97a39",
+      "match": true
+    },
+    {
+      "source": "ONE_UNLOADED_RETURN_HUB_ACTUAL_WEAK_MOMENT_STRIP.md",
+      "declared_sha256": "382e06b874e41cf582b17374a122c7e4f289472f00cd6d02d926b680f15c1ed5",
+      "actual_sha256": "382e06b874e41cf582b17374a122c7e4f289472f00cd6d02d926b680f15c1ed5",
+      "match": true
+    },
+    {
+      "source": "S_LEAF_ROOT_FIXED_NONLEAF_CONTACT_SELECTION.md",
+      "declared_sha256": "499e6d42632a811bcb7bef6596b8585c11fbb5f59f36551d02fd05c080387a43",
+      "actual_sha256": "499e6d42632a811bcb7bef6596b8585c11fbb5f59f36551d02fd05c080387a43",
+      "match": true
+    },
+    {
+      "source": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "declared_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "actual_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "match": true
+    },
+    {
+      "source": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "declared_sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "actual_sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "match": true
+    }
+  ],
+  "exact_arithmetic": {
+    "L_lower_squared_reserve": 98,
+    "bracket_left_endpoint_reserve": "163/50400",
+    "bracket_right_endpoint_reserve": "2099/14400",
+    "epsilon_sqrt_upper_squared_reserve": "1/57600",
+    "q0_upper_value": "1333/4800",
+    "q0_final_reserve": "11/4800",
+    "A_width_squared_reserve": "6141/743125",
+    "A_height_radius_squared_reserve": "1599/160000"
+  },
+  "selector_scope": {
+    "source": "S_LEAF_ROOT_FIXED_NONLEAF_CONTACT_SELECTION.md",
+    "actual_root": "X, true degree three, real S leaf",
+    "near_neighbor": "actual H with (h,0) in the closed epsilon disk",
+    "boundary_neighbor": "actual A",
+    "physical_intersections": "both actual XH and XA singletons, with Q uniquely exposed in X",
+    "conclusion": "XA has side owner; X is excluded as owner by the original strict singleton convention, leaving A only",
+    "new_selection_condition": false,
+    "H3_selector_invoked": false
+  },
+  "whole_original_gate_credit": 0,
+  "local_scope": "Complete H-owned-singleton XH exclusion in the open-origin true H3 domain; literal roof AC.S and ABC.S joins only. Shared, X-owned, origin-free/high-aligned and H4 fan domains remain."
+}

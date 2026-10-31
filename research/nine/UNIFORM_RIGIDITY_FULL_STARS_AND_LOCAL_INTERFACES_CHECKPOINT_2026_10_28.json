@@ -1,0 +1,839 @@
+{
+  "date_utc": "2026-10-28",
+  "read_base_head": "477ab2ba2242299eb4ede4353b1af0e6ae6bae3a",
+  "status": "accepted ten general theorems and complete local-interface reductions/exclusions; no original whole-family flag changed",
+  "coarse_total": 58,
+  "coarse_closed": 34,
+  "coarse_open": 24,
+  "fine_total": 2513,
+  "fine_checked": 2349,
+  "fine_open": 164,
+  "fine_changes": [],
+  "coarse_changes": [],
+  "original_ids_preserved_in_order": true,
+  "all_original_checkbox_states_preserved": true,
+  "accepted_sources": [
+    {
+      "source": "OPEN_ORIGIN_S_ROOT_NORTHWEST_OPPOSITE_HUB_RETURNS_EXCLUSION.md",
+      "source_sha256": "e46f43bf8b902711caa5aebc6041f62b71870463884193bfa3d3f14fc02a1b00",
+      "independent_review": "REVIEW_S_ROOT_NORTHWEST_OPPOSITE_RETURNS_FRONTIER_2026_10_28.md",
+      "independent_review_sha256": "60b55db2dbe5a30b320d673621ec9fc51da565c320558509e2ae677cfdb7c7cc",
+      "root_review": "REVIEW_S_ROOT_NORTHWEST_OPPOSITE_RETURNS_ROOT_2026_10_28.md"
+    },
+    {
+      "source": "OPEN_ORIGIN_S_ROOT_NORTHWEST_HUB_SIDE_RETURN_EXCLUSION.md",
+      "source_sha256": "09bd79005a42b0af16e72917ef99ced9c1e35eadd3090fa525c6523dbdeb15ae",
+      "independent_review": "REVIEW_S_ROOT_NORTHWEST_HUB_SIDE_RETURN_FRONTIER_2026_10_28.md",
+      "independent_review_sha256": "fa42a7e99fafed776e15336d862b57e6b2a1f890fd6cdba1f30360eb003f71c9",
+      "root_review": "REVIEW_S_ROOT_NORTHWEST_HUB_SIDE_RETURN_ROOT_2026_10_28.md"
+    },
+    {
+      "source": "PHYSICAL_SIDE_GAP_CLOSED_BY_TOUCHING_NEIGHBORS_EXCLUDES_UNIT.md",
+      "source_sha256": "f209207b7aed6ae2bbf8c6fb92dc81d855721173c88060f08a00fb69fdf81492",
+      "independent_review": "REVIEW_PHYSICAL_SIDE_GAP_EXCLUSION_THIN_D_2026_10_28.md",
+      "independent_review_sha256": "e2d86f88273207e907cd511491b8f45c8de675803f2603dbd58a00f8a519201a",
+      "root_review": "REVIEW_PHYSICAL_SIDE_GAP_ROOT_ADOPTION_2026_10_28.md"
+    },
+    {
+      "source": "INNER_PENTAGON_OWNED_END_RETURN_HEIGHT_AND_OPPOSITE_END_OWNER_REDUCTION.md",
+      "source_sha256": "23bb6edea9c4988b64636070ebe53acca5ca6617ddf7f595054948fdb8453c4b",
+      "independent_review": "REVIEW_H4_OWNED_END_HEIGHT_AND_OPPOSITE_OWNER_SHARED_S_2026_10_28.md",
+      "independent_review_sha256": "906c9e2dfa27dfbe62ae51f577e090425cbea8c79e76896156fe6b7f8770c826",
+      "root_review": "REVIEW_H4_OWNED_END_HEIGHT_AND_OPPOSITE_OWNER_ROOT_2026_10_28.md"
+    },
+    {
+      "source": "LOWER_HOUSE_TDC_S_PARALLEL_INWARD_FACE_REQUIRES_BOUNDARY_OWNER.md",
+      "source_sha256": "864c8298d7322b794a97673006dbb3cf01fb6f8f68c16c27e97b70e96d18ae13",
+      "independent_review": "REVIEW_LOWER_TDC_S_PARALLEL_INWARD_OWNER_FRONTIER_2026_10_28.md",
+      "independent_review_sha256": "a464517e0623bc6faad6ed021eb4192010f458e2b382f3022b40a11611cbaba1",
+      "root_review": "REVIEW_LOWER_TDC_S_PARALLEL_INWARD_OWNER_ROOT_2026_10_28.md"
+    },
+    {
+      "source": "FULL_LOADED_STAR_TWO_DIRECTION_AGGREGATION_AND_PROPER_CONCURRENCE.md",
+      "source_sha256": "da53589e53d4bb702f2ffc7c6ff5c12efd7e3f22fd74adaf70dc4241fbe0e74a",
+      "independent_review": "REVIEW_FULL_STAR_TWO_DIRECTION_PROPER_CONCURRENCE_THIN_D_2026_10_28.md",
+      "independent_review_sha256": "728d2862e109cb6024c523e838b774ac6b02379f2efa90246732bb06d4bb6bde",
+      "root_review": "REVIEW_FULL_LOADED_STAR_TWO_DIRECTION_ROOT_2026_10_28.md"
+    },
+    {
+      "source": "OPEN_ORIGIN_S_ROOT_NORTH_RETURN_PARALLEL_HUB_SIDE_AND_DOUBLE_CORNER_REDUCTION.md",
+      "source_sha256": "63a4f444aa098ba450321380aaea39e2a136f5dc1aabf94eab8d8b6b6d55d789",
+      "independent_review": "REVIEW_OPEN_ORIGIN_S_NORTH_RETURN_RIGIDITY_THIN_D_2026_10_28.md",
+      "independent_review_sha256": "f977160e4bec395bef0d2b207bb4dd373fbd6d880500666b756dc4ead1456d2c",
+      "root_review": "REVIEW_S_ROOT_NORTH_RETURN_RIGIDITY_AND_DOUBLE_CORNER_ROOT_2026_10_28.md"
+    },
+    {
+      "source": "LOWER_HOUSE_TDC_S_THREE_PARALLEL_CORE_UNITS_EXCLUSION.md",
+      "source_sha256": "ef29261c8bf6e98d5523e00b2a79e7c1cdf17c693da38155c2ce4f329f1c0f0f",
+      "independent_review": "REVIEW_LOWER_TDC_S_THREE_PARALLEL_CORE_FRONTIER_2026_10_28.md",
+      "independent_review_sha256": "2783e39fd27c519730ffd7de999aa078b7fa9cb0b8346d5fb4b7757311af0ea8",
+      "root_review": "REVIEW_LOWER_TDC_S_THREE_PARALLEL_CORE_ROOT_2026_10_28.md"
+    },
+    {
+      "source": "INNER_PENTAGON_TWO_UNLOADED_ENDS_POSITIVE_C_RETURN_EXCLUSION.md",
+      "source_sha256": "50c72f0ead283c957fa466ff6a368d4d4be7e4473791645609975117a444bed1",
+      "independent_review": "REVIEW_H4_TWO_UNLOADED_ENDS_POSITIVE_C_RETURN_SHARED_S_2026_10_28.md",
+      "independent_review_sha256": "2e75d48e0a50040478fdc96301bbeaa4cd940d026188bac931bc8594ee87d0c5",
+      "root_review": "REVIEW_H4_TWO_UNLOADED_ENDS_POSITIVE_C_RETURN_ROOT_2026_10_28.md"
+    },
+    {
+      "source": "UNIT_SUPPORT_POINT_RADIUS_RIGIDITY_AND_SIDE_CHANNEL_MASK_REDUCTION.md",
+      "source_sha256": "6d979ed8d53ac8ebf3fe2d8f9110c908aeee1c6c9b5a27f1993266c45585b80a",
+      "independent_review": "REVIEW_GENERAL_SUPPORT_POINT_RIGIDITY_AND_CHANNEL_MASK_SHARED_S_2026_10_28.md",
+      "independent_review_sha256": "bec1af1595d83d319aec0c630f07f3aef81b628fceb2d5cacac9f48868a6fcfa",
+      "root_review": "REVIEW_GENERAL_SUPPORT_POINT_RIGIDITY_ROOT_AUTHOR_ADOPTION_2026_10_28.md"
+    }
+  ],
+  "source_files_and_reviews": [
+    {
+      "path": "research/nine/FULL_LOADED_STAR_TWO_DIRECTION_AGGREGATION_AND_PROPER_CONCURRENCE.md",
+      "sha256": "da53589e53d4bb702f2ffc7c6ff5c12efd7e3f22fd74adaf70dc4241fbe0e74a",
+      "git_blob_sha": "16b69316cc70d35faaf23b75ad20b0aeaf2c57ca",
+      "bytes": 17311
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_OWNED_END_RETURN_HEIGHT_AND_OPPOSITE_END_OWNER_REDUCTION.md",
+      "sha256": "23bb6edea9c4988b64636070ebe53acca5ca6617ddf7f595054948fdb8453c4b",
+      "git_blob_sha": "26267396ab95e38ef93306e07b2ce01b7ebfee64",
+      "bytes": 12256
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_TWO_UNLOADED_ENDS_POSITIVE_C_RETURN_EXCLUSION.md",
+      "sha256": "50c72f0ead283c957fa466ff6a368d4d4be7e4473791645609975117a444bed1",
+      "git_blob_sha": "af36f3d9427a7b712df196b7b2e61b82b2c729f9",
+      "bytes": 8809
+    },
+    {
+      "path": "research/nine/LOWER_HOUSE_TDC_S_PARALLEL_INWARD_FACE_REQUIRES_BOUNDARY_OWNER.md",
+      "sha256": "864c8298d7322b794a97673006dbb3cf01fb6f8f68c16c27e97b70e96d18ae13",
+      "git_blob_sha": "c79b8adcb31570953393cf15fa105e782087150c",
+      "bytes": 20666
+    },
+    {
+      "path": "research/nine/LOWER_HOUSE_TDC_S_THREE_PARALLEL_CORE_UNITS_EXCLUSION.md",
+      "sha256": "ef29261c8bf6e98d5523e00b2a79e7c1cdf17c693da38155c2ce4f329f1c0f0f",
+      "git_blob_sha": "23639f6ce0231c0b7970e1d58a63fc2c13265055",
+      "bytes": 8413
+    },
+    {
+      "path": "research/nine/OPEN_ORIGIN_S_ROOT_NORTHWEST_HUB_SIDE_RETURN_EXCLUSION.md",
+      "sha256": "09bd79005a42b0af16e72917ef99ced9c1e35eadd3090fa525c6523dbdeb15ae",
+      "git_blob_sha": "355e3e3242f03408ee037e3f5bccb38976b7d1b3",
+      "bytes": 10604
+    },
+    {
+      "path": "research/nine/OPEN_ORIGIN_S_ROOT_NORTHWEST_OPPOSITE_HUB_RETURNS_EXCLUSION.md",
+      "sha256": "e46f43bf8b902711caa5aebc6041f62b71870463884193bfa3d3f14fc02a1b00",
+      "git_blob_sha": "b5e93fedbbbcbd0686de5944d4db6af9203a608a",
+      "bytes": 7390
+    },
+    {
+      "path": "research/nine/OPEN_ORIGIN_S_ROOT_NORTH_RETURN_PARALLEL_HUB_SIDE_AND_DOUBLE_CORNER_REDUCTION.md",
+      "sha256": "63a4f444aa098ba450321380aaea39e2a136f5dc1aabf94eab8d8b6b6d55d789",
+      "git_blob_sha": "2d539808574ab6881cb69e261aff076cb057a213",
+      "bytes": 14607
+    },
+    {
+      "path": "research/nine/PHYSICAL_SIDE_GAP_CLOSED_BY_TOUCHING_NEIGHBORS_EXCLUDES_UNIT.md",
+      "sha256": "f209207b7aed6ae2bbf8c6fb92dc81d855721173c88060f08a00fb69fdf81492",
+      "git_blob_sha": "1fcdf63cb5891db785b175ece7e05d48d9d10ca0",
+      "bytes": 8306
+    },
+    {
+      "path": "research/nine/REVIEW_FULL_LOADED_STAR_TWO_DIRECTION_ROOT_2026_10_28.md",
+      "sha256": "3f51bd93a5f2c131013a71ea688d6a9346ee5894ebca316beed8f1c62bb31837",
+      "git_blob_sha": "6c4cf35ea8592d4d85dce2f96b710f1a0772296c",
+      "bytes": 6755
+    },
+    {
+      "path": "research/nine/REVIEW_FULL_STAR_TWO_DIRECTION_PROPER_CONCURRENCE_THIN_D_2026_10_28.md",
+      "sha256": "728d2862e109cb6024c523e838b774ac6b02379f2efa90246732bb06d4bb6bde",
+      "git_blob_sha": "347416276c972122bc5db3c72e942eac6e619707",
+      "bytes": 7891
+    },
+    {
+      "path": "research/nine/REVIEW_GENERAL_SUPPORT_POINT_RIGIDITY_AND_CHANNEL_MASK_SHARED_S_2026_10_28.md",
+      "sha256": "bec1af1595d83d319aec0c630f07f3aef81b628fceb2d5cacac9f48868a6fcfa",
+      "git_blob_sha": "79c80c503b99f291387e30d2b626df186b47b420",
+      "bytes": 4955
+    },
+    {
+      "path": "research/nine/REVIEW_GENERAL_SUPPORT_POINT_RIGIDITY_ROOT_AUTHOR_ADOPTION_2026_10_28.md",
+      "sha256": "22bc9cca0f76afc719de7d5bccb14b81de56cc51810dd4f0a7611a66c079cf45",
+      "git_blob_sha": "c2186cef7a52f828a2975a488745f9b1d529ddd2",
+      "bytes": 2535
+    },
+    {
+      "path": "research/nine/REVIEW_H4_OWNED_END_HEIGHT_AND_OPPOSITE_OWNER_ROOT_2026_10_28.md",
+      "sha256": "2fb784b9bf8269440a273c921cdf8902497223e510405fd1d5c936da7e0fbe36",
+      "git_blob_sha": "e363ae33c5440d45f868067cb52975a2360ddd45",
+      "bytes": 4467
+    },
+    {
+      "path": "research/nine/REVIEW_H4_OWNED_END_HEIGHT_AND_OPPOSITE_OWNER_SHARED_S_2026_10_28.md",
+      "sha256": "906c9e2dfa27dfbe62ae51f577e090425cbea8c79e76896156fe6b7f8770c826",
+      "git_blob_sha": "676ca37223b0f0e762d1df97a4b130e05b1aff22",
+      "bytes": 6377
+    },
+    {
+      "path": "research/nine/REVIEW_H4_TWO_UNLOADED_ENDS_POSITIVE_C_RETURN_ROOT_2026_10_28.md",
+      "sha256": "7ce202dfc7cfaa08c38c52630182994183acfe546f867d51d13cfc546a1543cd",
+      "git_blob_sha": "f46f49d46e38a0c06a0db8702ba599f2f7215d60",
+      "bytes": 3871
+    },
+    {
+      "path": "research/nine/REVIEW_H4_TWO_UNLOADED_ENDS_POSITIVE_C_RETURN_SHARED_S_2026_10_28.md",
+      "sha256": "2e75d48e0a50040478fdc96301bbeaa4cd940d026188bac931bc8594ee87d0c5",
+      "git_blob_sha": "c9396f79024ca47aac71d80ad8f0d8395f7a8615",
+      "bytes": 5913
+    },
+    {
+      "path": "research/nine/REVIEW_LOWER_TDC_S_PARALLEL_INWARD_OWNER_FRONTIER_2026_10_28.md",
+      "sha256": "a464517e0623bc6faad6ed021eb4192010f458e2b382f3022b40a11611cbaba1",
+      "git_blob_sha": "2c43d4a343cdad7f942f2e2770400d8ed30b0fbe",
+      "bytes": 10501
+    },
+    {
+      "path": "research/nine/REVIEW_LOWER_TDC_S_PARALLEL_INWARD_OWNER_ROOT_2026_10_28.md",
+      "sha256": "d563eb5e1b9ce46302cf2da454dea8423be7a2de69677a9f02e352cb759bbd32",
+      "git_blob_sha": "69aa0bd210f70656277f34765fe503598d8cf6f9",
+      "bytes": 7012
+    },
+    {
+      "path": "research/nine/REVIEW_LOWER_TDC_S_THREE_PARALLEL_CORE_FRONTIER_2026_10_28.md",
+      "sha256": "2783e39fd27c519730ffd7de999aa078b7fa9cb0b8346d5fb4b7757311af0ea8",
+      "git_blob_sha": "848d084d9628e0fb7425fcf5cc834ba4a783013d",
+      "bytes": 7504
+    },
+    {
+      "path": "research/nine/REVIEW_LOWER_TDC_S_THREE_PARALLEL_CORE_ROOT_2026_10_28.md",
+      "sha256": "8a15f7cae4eebf74c133f52b523c90f9eb29895fab90c6a6d369378413489e71",
+      "git_blob_sha": "3c59b25f1d8a1acc976871be306ea7555855cf8f",
+      "bytes": 3712
+    },
+    {
+      "path": "research/nine/REVIEW_OPEN_ORIGIN_S_NORTH_RETURN_RIGIDITY_THIN_D_2026_10_28.md",
+      "sha256": "f977160e4bec395bef0d2b207bb4dd373fbd6d880500666b756dc4ead1456d2c",
+      "git_blob_sha": "9fcd75b562fdb54a279431efa5871c675ba6d44a",
+      "bytes": 7122
+    },
+    {
+      "path": "research/nine/REVIEW_PHYSICAL_SIDE_GAP_EXCLUSION_THIN_D_2026_10_28.md",
+      "sha256": "e2d86f88273207e907cd511491b8f45c8de675803f2603dbd58a00f8a519201a",
+      "git_blob_sha": "0e73a90aaa205d3421ad5c463dcf65914c9264d5",
+      "bytes": 4982
+    },
+    {
+      "path": "research/nine/REVIEW_PHYSICAL_SIDE_GAP_ROOT_ADOPTION_2026_10_28.md",
+      "sha256": "68cc6a4431d2bb3e752b93649e19a485277bc4f8ee976bd9a625003881dfa65b",
+      "git_blob_sha": "c09d74270d52527960317d554c2f5d30ef24fbb7",
+      "bytes": 2494
+    },
+    {
+      "path": "research/nine/REVIEW_S_ROOT_NORTHWEST_HUB_SIDE_RETURN_FRONTIER_2026_10_28.md",
+      "sha256": "fa42a7e99fafed776e15336d862b57e6b2a1f890fd6cdba1f30360eb003f71c9",
+      "git_blob_sha": "c504479fe6b3cfcb7ac123b6decb5ce8c0744828",
+      "bytes": 6981
+    },
+    {
+      "path": "research/nine/REVIEW_S_ROOT_NORTHWEST_HUB_SIDE_RETURN_ROOT_2026_10_28.md",
+      "sha256": "769aec2b49f290f38676ef7cad5dbd7c8086657e053c532b67a41a1f70ea9807",
+      "git_blob_sha": "2f75526bbde8424f47b907d7ad718f86734e4395",
+      "bytes": 4636
+    },
+    {
+      "path": "research/nine/REVIEW_S_ROOT_NORTHWEST_OPPOSITE_RETURNS_FRONTIER_2026_10_28.md",
+      "sha256": "60b55db2dbe5a30b320d673621ec9fc51da565c320558509e2ae677cfdb7c7cc",
+      "git_blob_sha": "ac92cc0dde43a5d5b1ec1530708cd72cdb46a679",
+      "bytes": 6383
+    },
+    {
+      "path": "research/nine/REVIEW_S_ROOT_NORTHWEST_OPPOSITE_RETURNS_ROOT_2026_10_28.md",
+      "sha256": "411eb73a3ce4c9502738cc3c38a5bcd70d9110505ee77e113e66b8fa3a63a609",
+      "git_blob_sha": "0ba475e83e9d49a996c66bff53802039286af2e3",
+      "bytes": 4165
+    },
+    {
+      "path": "research/nine/REVIEW_S_ROOT_NORTH_RETURN_RIGIDITY_AND_DOUBLE_CORNER_ROOT_2026_10_28.md",
+      "sha256": "0f4339af1b1c3cce50c066abdb8a7946cb540e161ef4cfd5ccfa917f4888d6ca",
+      "git_blob_sha": "4d63357c27a99802a6943550027458a2d4186fef",
+      "bytes": 6270
+    },
+    {
+      "path": "research/nine/UNIT_SUPPORT_POINT_RADIUS_RIGIDITY_AND_SIDE_CHANNEL_MASK_REDUCTION.md",
+      "sha256": "6d979ed8d53ac8ebf3fe2d8f9110c908aeee1c6c9b5a27f1993266c45585b80a",
+      "git_blob_sha": "dd1c5cd0ee720b2b1f0da981b01724c4ee6ba1e1",
+      "bytes": 8520
+    },
+    {
+      "path": "research/nine/checkpoints/S_root_northwest_hub_side_return_frontier_review_2026_10_28.json",
+      "sha256": "0816babf8b08188742b031ea278bad7ee723e9df1b99659943c5e1cd7e641326",
+      "git_blob_sha": "e7cc7b1534d4b0c606dbe86fd8467d97aab2e71a",
+      "bytes": 4706
+    },
+    {
+      "path": "research/nine/checkpoints/S_root_northwest_opposite_returns_frontier_review_2026_10_28.json",
+      "sha256": "fab6acdea999277162e2230d0d5f6d6cb38971affa81da12fe29723e0f2e6d8b",
+      "git_blob_sha": "7a104d517cf3c47b5682498047c23ce1ad158559",
+      "bytes": 4269
+    },
+    {
+      "path": "research/nine/checkpoints/lower_TDC_S_parallel_inward_owner_frontier_review_2026_10_28.json",
+      "sha256": "1d8a110b730f5d23c1a5fe66fe54de9ae48057be70c720936adf5a4075908cd9",
+      "git_blob_sha": "95f899a10135046a82ee18ced93893c20cab1fa4",
+      "bytes": 8007
+    },
+    {
+      "path": "research/nine/checkpoints/lower_TDC_S_three_parallel_core_frontier_review_2026_10_28.json",
+      "sha256": "d71aa7a0c0c8fc9ec0abff9b3db6322ce5c89d6842b9fe359370451d9096ec94",
+      "git_blob_sha": "86d299583d14b3149c03e7601901d4f87e62584a",
+      "bytes": 3476
+    }
+  ],
+  "direct_table_pin_checks": [
+    {
+      "source": "OPEN_ORIGIN_S_ROOT_NORTHWEST_OPPOSITE_HUB_RETURNS_EXCLUSION.md",
+      "dependency": "OPEN_ORIGIN_S_ROOT_OWNED_SINGLETON_OPPOSITE_HUB_RETURN_REDUCTION.md",
+      "expected": "b567e96efdc5d1cb56102b7460a33de2d6e83c5c17af1bd03f3a04aa8a4c6e0f",
+      "actual": "b567e96efdc5d1cb56102b7460a33de2d6e83c5c17af1bd03f3a04aa8a4c6e0f"
+    },
+    {
+      "source": "OPEN_ORIGIN_S_ROOT_NORTHWEST_OPPOSITE_HUB_RETURNS_EXCLUSION.md",
+      "dependency": "OPEN_ORIGIN_S_ROOT_OWNED_AXIS_POSITIVE_CONCURRENCE_FROM_ACTUAL_HUB_STRIP.md",
+      "expected": "8fb2124065fbc37b4746e94bf45611f2dbd3bb29990391256ddd15d5c15bb917",
+      "actual": "8fb2124065fbc37b4746e94bf45611f2dbd3bb29990391256ddd15d5c15bb917"
+    },
+    {
+      "source": "OPEN_ORIGIN_S_ROOT_NORTHWEST_OPPOSITE_HUB_RETURNS_EXCLUSION.md",
+      "dependency": "ONE_UNLOADED_RETURN_HUB_ACTUAL_WEAK_MOMENT_STRIP.md",
+      "expected": "382e06b874e41cf582b17374a122c7e4f289472f00cd6d02d926b680f15c1ed5",
+      "actual": "382e06b874e41cf582b17374a122c7e4f289472f00cd6d02d926b680f15c1ed5"
+    },
+    {
+      "source": "OPEN_ORIGIN_S_ROOT_NORTHWEST_OPPOSITE_HUB_RETURNS_EXCLUSION.md",
+      "dependency": "FIXED_SINGLETON_THREE_FORCE_OFF_LINE_NORMAL_SELECTION_AND_H4_OWNED_END_REDUCTION.md",
+      "expected": "d5e02f317ecbfdbd3d948fd27f5f78d6eda8803fb679c435ef3101780e1f47b1",
+      "actual": "d5e02f317ecbfdbd3d948fd27f5f78d6eda8803fb679c435ef3101780e1f47b1"
+    },
+    {
+      "source": "OPEN_ORIGIN_S_ROOT_NORTHWEST_OPPOSITE_HUB_RETURNS_EXCLUSION.md",
+      "dependency": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "expected": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "actual": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b"
+    },
+    {
+      "source": "OPEN_ORIGIN_S_ROOT_NORTHWEST_HUB_SIDE_RETURN_EXCLUSION.md",
+      "dependency": "OPEN_ORIGIN_S_ROOT_OWNED_SINGLETON_OPPOSITE_HUB_RETURN_REDUCTION.md",
+      "expected": "b567e96efdc5d1cb56102b7460a33de2d6e83c5c17af1bd03f3a04aa8a4c6e0f",
+      "actual": "b567e96efdc5d1cb56102b7460a33de2d6e83c5c17af1bd03f3a04aa8a4c6e0f"
+    },
+    {
+      "source": "OPEN_ORIGIN_S_ROOT_NORTHWEST_HUB_SIDE_RETURN_EXCLUSION.md",
+      "dependency": "OPEN_ORIGIN_S_ROOT_OWNED_AXIS_POSITIVE_CONCURRENCE_FROM_ACTUAL_HUB_STRIP.md",
+      "expected": "8fb2124065fbc37b4746e94bf45611f2dbd3bb29990391256ddd15d5c15bb917",
+      "actual": "8fb2124065fbc37b4746e94bf45611f2dbd3bb29990391256ddd15d5c15bb917"
+    },
+    {
+      "source": "OPEN_ORIGIN_S_ROOT_NORTHWEST_HUB_SIDE_RETURN_EXCLUSION.md",
+      "dependency": "ONE_UNLOADED_RETURN_HUB_ACTUAL_WEAK_MOMENT_STRIP.md",
+      "expected": "382e06b874e41cf582b17374a122c7e4f289472f00cd6d02d926b680f15c1ed5",
+      "actual": "382e06b874e41cf582b17374a122c7e4f289472f00cd6d02d926b680f15c1ed5"
+    },
+    {
+      "source": "OPEN_ORIGIN_S_ROOT_NORTHWEST_HUB_SIDE_RETURN_EXCLUSION.md",
+      "dependency": "OPEN_ORIGIN_S_ROOT_NORTHWEST_OPPOSITE_HUB_RETURNS_EXCLUSION.md",
+      "expected": "e46f43bf8b902711caa5aebc6041f62b71870463884193bfa3d3f14fc02a1b00",
+      "actual": "e46f43bf8b902711caa5aebc6041f62b71870463884193bfa3d3f14fc02a1b00"
+    },
+    {
+      "source": "OPEN_ORIGIN_S_ROOT_NORTHWEST_HUB_SIDE_RETURN_EXCLUSION.md",
+      "dependency": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "expected": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "actual": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b"
+    },
+    {
+      "source": "PHYSICAL_SIDE_GAP_CLOSED_BY_TOUCHING_NEIGHBORS_EXCLUDES_UNIT.md",
+      "dependency": "CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md",
+      "expected": "b61b0dec7ded00984c687e353fd3f3bfb5a5a7ade45d87d69aaeade09f23d80b",
+      "actual": "b61b0dec7ded00984c687e353fd3f3bfb5a5a7ade45d87d69aaeade09f23d80b"
+    },
+    {
+      "source": "PHYSICAL_SIDE_GAP_CLOSED_BY_TOUCHING_NEIGHBORS_EXCLUDES_UNIT.md",
+      "dependency": "INNER_PENTAGON_H_OWNED_UNLOADED_END_FIXED_OPPOSITE_RETURN_VERTICES.md",
+      "expected": "bc1b08bc93401e25891f1307139c465409e4a3e260670513087b658c210e0f8c",
+      "actual": "bc1b08bc93401e25891f1307139c465409e4a3e260670513087b658c210e0f8c"
+    },
+    {
+      "source": "PHYSICAL_SIDE_GAP_CLOSED_BY_TOUCHING_NEIGHBORS_EXCLUDES_UNIT.md",
+      "dependency": "INNER_PENTAGON_FOUR_SPOKE_SHARED_UNLOADED_END_EXCLUSION.md",
+      "expected": "ab1882057cc4d5bc0be2929c0c926543a92fbbbc4f8f74598c2238707d17f9f6",
+      "actual": "ab1882057cc4d5bc0be2929c0c926543a92fbbbc4f8f74598c2238707d17f9f6"
+    },
+    {
+      "source": "PHYSICAL_SIDE_GAP_CLOSED_BY_TOUCHING_NEIGHBORS_EXCLUDES_UNIT.md",
+      "dependency": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "expected": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "actual": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207"
+    },
+    {
+      "source": "INNER_PENTAGON_OWNED_END_RETURN_HEIGHT_AND_OPPOSITE_END_OWNER_REDUCTION.md",
+      "dependency": "INNER_PENTAGON_H_OWNED_UNLOADED_END_FIXED_OPPOSITE_RETURN_VERTICES.md",
+      "expected": "bc1b08bc93401e25891f1307139c465409e4a3e260670513087b658c210e0f8c",
+      "actual": "bc1b08bc93401e25891f1307139c465409e4a3e260670513087b658c210e0f8c"
+    },
+    {
+      "source": "INNER_PENTAGON_OWNED_END_RETURN_HEIGHT_AND_OPPOSITE_END_OWNER_REDUCTION.md",
+      "dependency": "FIXED_SINGLETON_THREE_FORCE_OFF_LINE_NORMAL_SELECTION_AND_H4_OWNED_END_REDUCTION.md",
+      "expected": "d5e02f317ecbfdbd3d948fd27f5f78d6eda8803fb679c435ef3101780e1f47b1",
+      "actual": "d5e02f317ecbfdbd3d948fd27f5f78d6eda8803fb679c435ef3101780e1f47b1"
+    },
+    {
+      "source": "INNER_PENTAGON_OWNED_END_RETURN_HEIGHT_AND_OPPOSITE_END_OWNER_REDUCTION.md",
+      "dependency": "PHYSICAL_SIDE_GAP_CLOSED_BY_TOUCHING_NEIGHBORS_EXCLUDES_UNIT.md",
+      "expected": "f209207b7aed6ae2bbf8c6fb92dc81d855721173c88060f08a00fb69fdf81492",
+      "actual": "f209207b7aed6ae2bbf8c6fb92dc81d855721173c88060f08a00fb69fdf81492"
+    },
+    {
+      "source": "INNER_PENTAGON_OWNED_END_RETURN_HEIGHT_AND_OPPOSITE_END_OWNER_REDUCTION.md",
+      "dependency": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "expected": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "actual": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207"
+    },
+    {
+      "source": "LOWER_HOUSE_TDC_S_PARALLEL_INWARD_FACE_REQUIRES_BOUNDARY_OWNER.md",
+      "dependency": "LOWER_HOUSE_TDC_S_CLOSED_ORIGIN_SUPPORT_AND_SHALLOW_REDUCTION.md",
+      "expected": "53a1f33837c353088f83b5226c2e37dfef6434037cd149755af4f24758cbfad6",
+      "actual": "53a1f33837c353088f83b5226c2e37dfef6434037cd149755af4f24758cbfad6"
+    },
+    {
+      "source": "LOWER_HOUSE_TDC_S_PARALLEL_INWARD_FACE_REQUIRES_BOUNDARY_OWNER.md",
+      "dependency": "UNLOADED_BOUNDARY_TRIANGLE_HUB_THIRD_SUPPORT_AND_CRITICAL_EXCLUSION.md",
+      "expected": "d8661132bd2d97911116373d22968bbde2ff3c4c4a63c962c72d722ec3d5b089",
+      "actual": "d8661132bd2d97911116373d22968bbde2ff3c4c4a63c962c72d722ec3d5b089"
+    },
+    {
+      "source": "LOWER_HOUSE_TDC_S_PARALLEL_INWARD_FACE_REQUIRES_BOUNDARY_OWNER.md",
+      "dependency": "UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+      "expected": "406fce53d22cc20eec43a373a877798dab583a6bd93f684ff124293016c44c87",
+      "actual": "406fce53d22cc20eec43a373a877798dab583a6bd93f684ff124293016c44c87"
+    },
+    {
+      "source": "LOWER_HOUSE_TDC_S_PARALLEL_INWARD_FACE_REQUIRES_BOUNDARY_OWNER.md",
+      "dependency": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "expected": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "actual": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207"
+    },
+    {
+      "source": "LOWER_HOUSE_TDC_S_PARALLEL_INWARD_FACE_REQUIRES_BOUNDARY_OWNER.md",
+      "dependency": "INNER_PENTAGON_FOUR_SPOKE_SHARED_UNLOADED_END_EXCLUSION.md",
+      "expected": "ab1882057cc4d5bc0be2929c0c926543a92fbbbc4f8f74598c2238707d17f9f6",
+      "actual": "ab1882057cc4d5bc0be2929c0c926543a92fbbbc4f8f74598c2238707d17f9f6"
+    },
+    {
+      "source": "LOWER_HOUSE_TDC_S_PARALLEL_INWARD_FACE_REQUIRES_BOUNDARY_OWNER.md",
+      "dependency": "D_LEAF_ROOT_BELONGS_TO_EVERY_CYCLIC_BLOCK.md",
+      "expected": "9dd28b72bf8a837747c39c50c1d30f3f6d405f4442e39eda47d38d4485acb743",
+      "actual": "9dd28b72bf8a837747c39c50c1d30f3f6d405f4442e39eda47d38d4485acb743"
+    },
+    {
+      "source": "LOWER_HOUSE_TDC_S_PARALLEL_INWARD_FACE_REQUIRES_BOUNDARY_OWNER.md",
+      "dependency": "GENERAL_SMALL_ORIGIN_CORNER_CONTACT_KERNELS.md",
+      "expected": "b977be65217728c0363e8bab030bdb3d11b1b8ef75cc32d295a8337c4ea01477",
+      "actual": "b977be65217728c0363e8bab030bdb3d11b1b8ef75cc32d295a8337c4ea01477"
+    },
+    {
+      "source": "LOWER_HOUSE_TDC_S_PARALLEL_INWARD_FACE_REQUIRES_BOUNDARY_OWNER.md",
+      "dependency": "ROOTED_SMALL_ORIGIN_CORNER_TWO_BOUNDARY_NEIGHBORS.md",
+      "expected": "6ebda6299f692af6380ad36b98420aeb3155cf95a6b586e1df3848807d4cf467",
+      "actual": "6ebda6299f692af6380ad36b98420aeb3155cf95a6b586e1df3848807d4cf467"
+    },
+    {
+      "source": "LOWER_HOUSE_TDC_S_PARALLEL_INWARD_FACE_REQUIRES_BOUNDARY_OWNER.md",
+      "dependency": "TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md",
+      "expected": "29e38d3f641fe16c6db587e51245f92ad4c447f9536db7d14c221f56b5357e82",
+      "actual": "29e38d3f641fe16c6db587e51245f92ad4c447f9536db7d14c221f56b5357e82"
+    },
+    {
+      "source": "LOWER_HOUSE_TDC_S_PARALLEL_INWARD_FACE_REQUIRES_BOUNDARY_OWNER.md",
+      "dependency": "THREE_BOUNDARY_PATH_RESULTANT_CONE.md",
+      "expected": "9789d4cf5dc456512fd2713e78b722c94325c51f93ac973c535f4249a1a68d9e",
+      "actual": "9789d4cf5dc456512fd2713e78b722c94325c51f93ac973c535f4249a1a68d9e"
+    },
+    {
+      "source": "LOWER_HOUSE_TDC_S_PARALLEL_INWARD_FACE_REQUIRES_BOUNDARY_OWNER.md",
+      "dependency": "C7_FORCE_POLYGON.md",
+      "expected": "d50d8ca48ea19156175e651bfa74be30ef3e58065ec14d8d1834670a41559089",
+      "actual": "d50d8ca48ea19156175e651bfa74be30ef3e58065ec14d8d1834670a41559089"
+    },
+    {
+      "source": "LOWER_HOUSE_TDC_S_PARALLEL_INWARD_FACE_REQUIRES_BOUNDARY_OWNER.md",
+      "dependency": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "expected": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "actual": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676"
+    },
+    {
+      "source": "LOWER_HOUSE_TDC_S_PARALLEL_INWARD_FACE_REQUIRES_BOUNDARY_OWNER.md",
+      "dependency": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "expected": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "actual": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b"
+    },
+    {
+      "source": "FULL_LOADED_STAR_TWO_DIRECTION_AGGREGATION_AND_PROPER_CONCURRENCE.md",
+      "dependency": "PHYSICAL_CONTACT_STRESS.md",
+      "expected": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "actual": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "source": "FULL_LOADED_STAR_TWO_DIRECTION_AGGREGATION_AND_PROPER_CONCURRENCE.md",
+      "dependency": "PARALLEL_TRANSMISSION_AND_FOUR_CYCLES.md",
+      "expected": "ec8be96131806c998d8a768526d2deb644c28be72559d34e033c8d07d917ffab",
+      "actual": "ec8be96131806c998d8a768526d2deb644c28be72559d34e033c8d07d917ffab"
+    },
+    {
+      "source": "FULL_LOADED_STAR_TWO_DIRECTION_AGGREGATION_AND_PROPER_CONCURRENCE.md",
+      "dependency": "C7_FORCE_POLYGON.md",
+      "expected": "d50d8ca48ea19156175e651bfa74be30ef3e58065ec14d8d1834670a41559089",
+      "actual": "d50d8ca48ea19156175e651bfa74be30ef3e58065ec14d8d1834670a41559089"
+    },
+    {
+      "source": "FULL_LOADED_STAR_TWO_DIRECTION_AGGREGATION_AND_PROPER_CONCURRENCE.md",
+      "dependency": "TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md",
+      "expected": "29e38d3f641fe16c6db587e51245f92ad4c447f9536db7d14c221f56b5357e82",
+      "actual": "29e38d3f641fe16c6db587e51245f92ad4c447f9536db7d14c221f56b5357e82"
+    },
+    {
+      "source": "FULL_LOADED_STAR_TWO_DIRECTION_AGGREGATION_AND_PROPER_CONCURRENCE.md",
+      "dependency": "INNER_PENTAGON_OWNED_END_RETURN_HEIGHT_AND_OPPOSITE_END_OWNER_REDUCTION.md",
+      "expected": "23bb6edea9c4988b64636070ebe53acca5ca6617ddf7f595054948fdb8453c4b",
+      "actual": "23bb6edea9c4988b64636070ebe53acca5ca6617ddf7f595054948fdb8453c4b"
+    },
+    {
+      "source": "FULL_LOADED_STAR_TWO_DIRECTION_AGGREGATION_AND_PROPER_CONCURRENCE.md",
+      "dependency": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "expected": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "actual": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b"
+    },
+    {
+      "source": "OPEN_ORIGIN_S_ROOT_NORTH_RETURN_PARALLEL_HUB_SIDE_AND_DOUBLE_CORNER_REDUCTION.md",
+      "dependency": "OPEN_ORIGIN_S_ROOT_OWNED_SINGLETON_OPPOSITE_HUB_RETURN_REDUCTION.md",
+      "expected": "b567e96efdc5d1cb56102b7460a33de2d6e83c5c17af1bd03f3a04aa8a4c6e0f",
+      "actual": "b567e96efdc5d1cb56102b7460a33de2d6e83c5c17af1bd03f3a04aa8a4c6e0f"
+    },
+    {
+      "source": "OPEN_ORIGIN_S_ROOT_NORTH_RETURN_PARALLEL_HUB_SIDE_AND_DOUBLE_CORNER_REDUCTION.md",
+      "dependency": "OPEN_ORIGIN_S_ROOT_OWNED_AXIS_POSITIVE_CONCURRENCE_FROM_ACTUAL_HUB_STRIP.md",
+      "expected": "8fb2124065fbc37b4746e94bf45611f2dbd3bb29990391256ddd15d5c15bb917",
+      "actual": "8fb2124065fbc37b4746e94bf45611f2dbd3bb29990391256ddd15d5c15bb917"
+    },
+    {
+      "source": "OPEN_ORIGIN_S_ROOT_NORTH_RETURN_PARALLEL_HUB_SIDE_AND_DOUBLE_CORNER_REDUCTION.md",
+      "dependency": "FIXED_SINGLETON_THREE_FORCE_OFF_LINE_NORMAL_SELECTION_AND_H4_OWNED_END_REDUCTION.md",
+      "expected": "d5e02f317ecbfdbd3d948fd27f5f78d6eda8803fb679c435ef3101780e1f47b1",
+      "actual": "d5e02f317ecbfdbd3d948fd27f5f78d6eda8803fb679c435ef3101780e1f47b1"
+    },
+    {
+      "source": "OPEN_ORIGIN_S_ROOT_NORTH_RETURN_PARALLEL_HUB_SIDE_AND_DOUBLE_CORNER_REDUCTION.md",
+      "dependency": "TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md",
+      "expected": "29e38d3f641fe16c6db587e51245f92ad4c447f9536db7d14c221f56b5357e82",
+      "actual": "29e38d3f641fe16c6db587e51245f92ad4c447f9536db7d14c221f56b5357e82"
+    },
+    {
+      "source": "LOWER_HOUSE_TDC_S_THREE_PARALLEL_CORE_UNITS_EXCLUSION.md",
+      "dependency": "LOWER_HOUSE_TDC_S_PARALLEL_INWARD_FACE_REQUIRES_BOUNDARY_OWNER.md",
+      "expected": "864c8298d7322b794a97673006dbb3cf01fb6f8f68c16c27e97b70e96d18ae13",
+      "actual": "864c8298d7322b794a97673006dbb3cf01fb6f8f68c16c27e97b70e96d18ae13"
+    },
+    {
+      "source": "LOWER_HOUSE_TDC_S_THREE_PARALLEL_CORE_UNITS_EXCLUSION.md",
+      "dependency": "TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md",
+      "expected": "29e38d3f641fe16c6db587e51245f92ad4c447f9536db7d14c221f56b5357e82",
+      "actual": "29e38d3f641fe16c6db587e51245f92ad4c447f9536db7d14c221f56b5357e82"
+    },
+    {
+      "source": "LOWER_HOUSE_TDC_S_THREE_PARALLEL_CORE_UNITS_EXCLUSION.md",
+      "dependency": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "expected": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "actual": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b"
+    },
+    {
+      "source": "INNER_PENTAGON_TWO_UNLOADED_ENDS_POSITIVE_C_RETURN_EXCLUSION.md",
+      "dependency": "INNER_PENTAGON_OWNED_END_RETURN_HEIGHT_AND_OPPOSITE_END_OWNER_REDUCTION.md",
+      "expected": "23bb6edea9c4988b64636070ebe53acca5ca6617ddf7f595054948fdb8453c4b",
+      "actual": "23bb6edea9c4988b64636070ebe53acca5ca6617ddf7f595054948fdb8453c4b"
+    },
+    {
+      "source": "INNER_PENTAGON_TWO_UNLOADED_ENDS_POSITIVE_C_RETURN_EXCLUSION.md",
+      "dependency": "FIXED_SINGLETON_THREE_FORCE_OFF_LINE_NORMAL_SELECTION_AND_H4_OWNED_END_REDUCTION.md",
+      "expected": "d5e02f317ecbfdbd3d948fd27f5f78d6eda8803fb679c435ef3101780e1f47b1",
+      "actual": "d5e02f317ecbfdbd3d948fd27f5f78d6eda8803fb679c435ef3101780e1f47b1"
+    },
+    {
+      "source": "INNER_PENTAGON_TWO_UNLOADED_ENDS_POSITIVE_C_RETURN_EXCLUSION.md",
+      "dependency": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "expected": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "actual": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207"
+    },
+    {
+      "source": "INNER_PENTAGON_TWO_UNLOADED_ENDS_POSITIVE_C_RETURN_EXCLUSION.md",
+      "dependency": "SIX_BODY_INNER_PENTAGON_LOAD_COVER.md",
+      "expected": "cfe85a201b09182200d5270f0dcdc0e590bf99eded19aaf6d56f86830e959c0a",
+      "actual": "cfe85a201b09182200d5270f0dcdc0e590bf99eded19aaf6d56f86830e959c0a"
+    },
+    {
+      "source": "UNIT_SUPPORT_POINT_RADIUS_RIGIDITY_AND_SIDE_CHANNEL_MASK_REDUCTION.md",
+      "dependency": "SIDE_CHANNEL_UNLOADED_TRIANGLE_BYPASS_POSITIVE_MEAN.md",
+      "expected": "5a1607a588e45d0702c46c3d74074561f31109dccc0b8f94c665991cd4a9f5ee",
+      "actual": "5a1607a588e45d0702c46c3d74074561f31109dccc0b8f94c665991cd4a9f5ee"
+    },
+    {
+      "source": "UNIT_SUPPORT_POINT_RADIUS_RIGIDITY_AND_SIDE_CHANNEL_MASK_REDUCTION.md",
+      "dependency": "UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "expected": "db073cd024a4f2e763e7cd0a21bf5cb6a2a8be67069f3f9d3aff638b8a40b258",
+      "actual": "db073cd024a4f2e763e7cd0a21bf5cb6a2a8be67069f3f9d3aff638b8a40b258"
+    },
+    {
+      "source": "UNIT_SUPPORT_POINT_RADIUS_RIGIDITY_AND_SIDE_CHANNEL_MASK_REDUCTION.md",
+      "dependency": "OPEN_ORIGIN_S_ROOT_NORTH_RETURN_PARALLEL_HUB_SIDE_AND_DOUBLE_CORNER_REDUCTION.md",
+      "expected": "63a4f444aa098ba450321380aaea39e2a136f5dc1aabf94eab8d8b6b6d55d789",
+      "actual": "63a4f444aa098ba450321380aaea39e2a136f5dc1aabf94eab8d8b6b6d55d789"
+    }
+  ],
+  "updated_metadata": [
+    {
+      "path": "research/nine/CYCLIC_CELL_LEDGER.md",
+      "sha256": "1affcdd11a184199c20cbaab7ce830dada4bcad13dfcb1b6c76fe036c2496013",
+      "git_blob_sha": "dc2858cd92b5aafea3151d1fd56fb843d89d120d",
+      "bytes": 248968
+    },
+    {
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "sha256": "7f452c41d22eaf7e8d9412f02c058ce10c4bcbda66b0294794c1ff50a81ca14e",
+      "git_blob_sha": "218f6e247080c3c51e9fb0f561c7d5045af68c04",
+      "bytes": 973385
+    },
+    {
+      "path": "research/nine/HANDOFF_PR11_2026_10_28_CURRENT.md",
+      "sha256": "816cc9352ea376b821b56b139ab8aae1a1c098b000f44c5426e4076d0820d05a",
+      "git_blob_sha": "9e61453c6a8d325e5c76934f07ccd2e7a4e7b867",
+      "bytes": 43595
+    }
+  ],
+  "open_coarse_ids": [
+    "C1.5.b1",
+    "C1.5.b2",
+    "C1.5.b3",
+    "C1.5.b4",
+    "C1.6.b0",
+    "C1.6.b1",
+    "C1.6.b2",
+    "C1.6.b3",
+    "C1.7.b0",
+    "C1.7.b1",
+    "C1.7.b2",
+    "C1.8.b0",
+    "C1.8.b1",
+    "C1.9.b0",
+    "C2.35.b0",
+    "C2.35.b1",
+    "C2.35.b2",
+    "C2.36.b0",
+    "C2.36.b1",
+    "C2.37.b0",
+    "C2.45.b0",
+    "C2.45.b1",
+    "C2.46.b0",
+    "C2.55.b0"
+  ],
+  "open_fine_ids": [
+    "T1.EXTRACT:",
+    "CAP.4",
+    "ROW.4",
+    "POCKET.ROUTING",
+    "QCAP.GLOBAL",
+    "CY.B5 GEOMETRY",
+    "CY.MULTILOAD",
+    "CY.MIXED.COMPLETE",
+    "C.1 GRAPH",
+    "C.2 LOAD",
+    "C.3 GEOMETRY",
+    "C.4 COMPLETION",
+    "C.5 SHARPNESS",
+    "C.6 EQUALITY",
+    "G3.0.ANNULAR.ROUTING",
+    "G3.0.DISTRIBUTED_ARTICULATIONS",
+    "G3.0.SHARP",
+    "G3.M.F.1 GRAPH",
+    "G3.M.F.1.a",
+    "G3.M.F.1.b",
+    "G3.M.F.1.c",
+    "G3.M.F.2 LOADS",
+    "G3.M.F.2.a",
+    "G3.M.F.2.b",
+    "G3.M.F.3 CONTACT FEATURES",
+    "G3.M.F.3.a",
+    "G3.M.F.3.b",
+    "G3.M.F.3.c",
+    "G3.M.F.4 JUNCTIONS",
+    "G3.M.F.5 COMPLETION ROUTING",
+    "G3.M.F.5.a",
+    "G3.M.F.5.b",
+    "G3.M.F.5.c",
+    "G3.M.F.5.d",
+    "G3.M.F.COVER",
+    "C.0 DOMAIN",
+    "C.1 EQUILIBRIUM",
+    "C.2 ROUTING",
+    "C.3 BOUND",
+    "C.3.a",
+    "C.3.b",
+    "C.3.c",
+    "C.4 EQUALITY",
+    "C.5 AUDIT",
+    "C.ALL",
+    "M6.B5L.HOUSE.ROOF.LABC.S",
+    "M6.B5L.HOUSE.HUB.LTC.S",
+    "M6.B5L.HOUSE.HUB.LTCB.S",
+    "M6.B5L.HOUSE.LOWER.LTDC.S",
+    "M6.B5L.FAN.ENDPOINT.L234.S",
+    "M6.B5L.FAN.INNER.L134.S",
+    "M6.B5L.HOUSE.ROOF",
+    "M6.B5L.HOUSE.HUB",
+    "M6.B5L.HOUSE.LOWER",
+    "M6.B5L.FAN.ENDPOINT",
+    "M6.B5L.FAN.INNER",
+    "M6.B5L.ALL",
+    "M6.B6.HEXAGON.TWO_OPPOSITE_EARS.BOUND",
+    "M6.B6.HEXAGON.D02.L014",
+    "M6.B6.HEXAGON.D02.L134",
+    "M6.B6.HEXAGON.D02.L135",
+    "M6.B6.HEXAGON.D02.L0134",
+    "M6.B6.HEXAGON.D02.L0135",
+    "M6.B6.HEXAGON.D02.L0145",
+    "M6.B6.HEXAGON.D02.L1345",
+    "M6.B6.HEXAGON.D02.L01345",
+    "M6.B6.HEXAGON.D02.ALL",
+    "M6.B6.HEXAGON.D03.L014",
+    "M6.B6.HEXAGON.D03.L024",
+    "M6.B6.HEXAGON.D03.L124",
+    "M6.B6.HEXAGON.D03.L0124",
+    "M6.B6.HEXAGON.D03.L0125",
+    "M6.B6.HEXAGON.D03.L1245",
+    "M6.B6.HEXAGON.D03.ALL",
+    "M6.B6.HEXAGON.D0203.L124",
+    "M6.B6.HEXAGON.D0203.L1234",
+    "M6.B6.HEXAGON.D0203.L1235",
+    "M6.B6.HEXAGON.D0203.L1245",
+    "M6.B6.HEXAGON.D0203.ALL",
+    "M6.B6.HEXAGON.D0204.L135",
+    "M6.B6.HEXAGON.D0204.L0135",
+    "M6.B6.HEXAGON.D0204.L1235",
+    "M6.B6.HEXAGON.D0204.L1245",
+    "M6.B6.HEXAGON.D0204.ALL",
+    "M6.B6.HEXAGON.D0235.L0134",
+    "M6.B6.HEXAGON.D0235.L0145",
+    "M6.B6.HEXAGON.D0235.ALL",
+    "M6.B6.HEXAGON.CHORD_PATH.L1245",
+    "M6.B6.HEXAGON.CHORD_PATH.ALL",
+    "M6.B6.HEXAGON.CENTRAL_TRIANGLE.L135",
+    "M6.B6.HEXAGON.CENTRAL_TRIANGLE.L0135",
+    "M6.B6.HEXAGON.CENTRAL_TRIANGLE.ALL",
+    "M6.B6.HEXAGON.BOUND",
+    "M6.B6.PENTAGON.H4_D0.L124",
+    "M6.B6.PENTAGON.H4_D0.L0124",
+    "M6.B6.PENTAGON.H4_D0_EXIT",
+    "M6.B6.ALL",
+    "G3.M6.ASSEMBLE",
+    "G3.M6.ALL",
+    "G3.M7.ALL",
+    "G3.M8.ALL",
+    "G3.M9.ALL",
+    "G3.M.ALL",
+    "G3.ALL.1",
+    "G3.ALL.3",
+    "G3.ALL.4",
+    "G3.ALL",
+    "O3.3.SHARP",
+    "O4.1",
+    "O4.2",
+    "O4.3 alternative",
+    "O5",
+    "X.3",
+    "G4.2",
+    "G4.2.a",
+    "G4.2.b",
+    "G4.2.c",
+    "G4.2.d",
+    "G4.2.e",
+    "G4.2.f",
+    "G4.3",
+    "G4.3.a",
+    "G4.3.b",
+    "G4.3.c",
+    "G5.1",
+    "G5.2",
+    "G5.3",
+    "G5.1.a",
+    "G5.1.b",
+    "G5.2.a",
+    "G5.2.b",
+    "G5.2.c",
+    "G5.3.a",
+    "G5.3.b",
+    "G5.3.c",
+    "G5.3.d",
+    "G5.4",
+    "G5.4.a",
+    "G5.4.b",
+    "G5.ALL",
+    "G6.1",
+    "G6.2",
+    "G6.3",
+    "G6.TL1 NEW",
+    "G6.TL2 NEW",
+    "G6.TL3 NEW",
+    "G6.TL4 NEW",
+    "G6.4",
+    "G6.5",
+    "G6.5.a",
+    "G6.5.b",
+    "G6.5.c",
+    "G6.5.d",
+    "G6.5.e",
+    "G6.5.f",
+    "G7.1",
+    "G7.2",
+    "G7.3",
+    "G7.4",
+    "G7.5 DEFERRED",
+    "G8.1",
+    "G8.2",
+    "G8.3",
+    "G8.4"
+  ],
+  "new_original_gate_credit": 0,
+  "new_coarse_gate_credit": 0,
+  "necessary_reduction_credit": 0,
+  "local_interface_exclusion_whole_family_credit": 0,
+  "new_computational_exclusion_certificates": 0,
+  "root_author_contributions_disclosed": [
+    "physical triangular side-gap theorem",
+    "general exact support-point radius inequality and side-channel mask reductions",
+    "strengthened North-return support interval",
+    "explicit scalar comparisons in L124 local contradiction"
+  ],
+  "execution": {
+    "lean_compilation": false,
+    "ci_dispatch": false,
+    "workflow_execution": false,
+    "merge": false
+  },
+  "scope_limits": [
+    "unrestricted sharp bound open",
+    "complete original equality classification open",
+    "remaining global prerequisite audit open",
+    "Lean integration open",
+    "six whole house/fan S families open",
+    "both whole H4_D0 load families open",
+    "no original gate credited for a partial interface"
+  ]
+}

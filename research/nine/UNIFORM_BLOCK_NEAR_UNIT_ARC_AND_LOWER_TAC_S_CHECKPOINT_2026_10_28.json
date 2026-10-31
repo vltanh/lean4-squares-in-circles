@@ -1,0 +1,642 @@
+{
+  "date_utc": "2026-10-28",
+  "read_base_head": "c008ac1997afd39b6dfd7e5576bdf8133047f656",
+  "status": "accepted complete lower TAC.S recovery and four uniform hand theorems",
+  "coarse_total": 58,
+  "coarse_closed": 34,
+  "coarse_open": 24,
+  "fine_total": 2513,
+  "fine_checked": 2347,
+  "fine_open": 166,
+  "fine_changes": [
+    {
+      "id": "M6.B5L.HOUSE.LOWER.LTAC.S",
+      "from": " ",
+      "to": "x",
+      "original_line": "- [ ] **M6.B5L.HOUSE.LOWER.LTAC.S** Entire S-leaf type at house lower B with block loadsTAC; close its full actual physical domain and three-extra completion under M6.B5L.RETAINED_CONTRACT.",
+      "accepted_line": "- [x] **M6.B5L.HOUSE.LOWER.LTAC.S** CLOSED by HOUSE_LOWER_TAC_S_COMPLETE_EXCLUSION.md. The full five-row radius/root/placement join retains B3/A3/D3/T2/C2/L1, actual T,A,C loads, the AD chord, all physical masks, zero weights, selected normals and original means, and three completing units. Both entire aligned-low placements and tilted/high-aligned rows have complete proofs and separate direct and original-family reviews. Exact recovery, current root and independent adoption reconcile the analytic same-nine radius export and preserve all historical arithmetic evidence; TDC alternatives and lower-house parent remain open."
+    }
+  ],
+  "coarse_changes": [],
+  "original_ids_preserved_in_order": true,
+  "source_files_and_reviews": [
+    {
+      "path": "research/nine/ALIGNED_LOW_S_LOWER_RETURN_HEIGHT_SEPARATION.md",
+      "sha256": "93bb8e2d6dc3f2965c1a1868ba4a7552f63c5326cbe05cab5381950f4db765be",
+      "git_blob_sha": "e42632cd6a91964dae42b28b51fc626b0bed1ca3",
+      "bytes": 8973,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/ALL_UNITS_CENTER_RADIUS_THREE_QUARTERS_CENTERED_FORTY_DEGREE_ARC.md",
+      "sha256": "d575e6632c7181fc8803e7c9dc73b222cdce055eca1c636b3f15eb9d5f2279b9",
+      "git_blob_sha": "10ec0dbfe31961da48a4544ef2323eb845f7d297",
+      "bytes": 13045,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/D_LEAF_ROOT_BELONGS_TO_EVERY_CYCLIC_BLOCK.md",
+      "sha256": "9dd28b72bf8a837747c39c50c1d30f3f6d405f4442e39eda47d38d4485acb743",
+      "git_blob_sha": "212b363f3744940e9c7de65b7321482ffe252fee",
+      "bytes": 23699,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/HOUSE_LOWER_TAC_S_ALIGNED_UPPER_A_EXCLUSION.md",
+      "sha256": "975b2ab626aa30b06decdf068fd0667c7badee83e6711ec489de0daab673c773",
+      "git_blob_sha": "18f15c235346374ada13e64717b02b8cb02a0337",
+      "bytes": 14578,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_EXCLUSION.md",
+      "sha256": "b773da381ac721c0f3c06083c9da6258ea1142353fd4a6e000edaff1d8398125",
+      "git_blob_sha": "01115fe2a7dd3e3b9bb48f7628d6142044eb7aa5",
+      "bytes": 16294,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/HOUSE_LOWER_TAC_S_COMPLETE_EXCLUSION.md",
+      "sha256": "de3565cda8f47022376c115c26f50061fc67e10e320c9f389dcce1c99d8a568b",
+      "git_blob_sha": "c141828e99a42e881d0d34edd8fbacaa73b8e309",
+      "bytes": 18815,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/HOUSE_LOWER_TAC_S_TILTED_ROOT_COMPLETE_EXCLUSION.md",
+      "sha256": "ab0e50c96ee74b50afe2f094e4ae20f3467880c54a807dcc4b36d754b35e52da",
+      "git_blob_sha": "4e88dd7a84c027a9d2c0ff914b25d55604c4535c",
+      "bytes": 17411,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/INWARD_OPPOSED_FULL_STAR_WITH_FAR_RETURNS_REQUIRES_NEAR_UNIT.md",
+      "sha256": "609770d7d3d4d707d354cc0d100f80b79d19961edc1f94378e403132ed711d08",
+      "git_blob_sha": "342ce1aa14b426238df4659b792a7035c3d8e5d5",
+      "bytes": 17293,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/INWARD_OPPOSED_TRIANGLE_STAR_REQUIRES_THIN_ORIGIN_STRIP.md",
+      "sha256": "7138bdbddf0ba5b944869f5f422434eb22ed0f0f1e382f3f22cc74e33bed1152",
+      "git_blob_sha": "1dcc6738d997bf45ced8d51588b0936b198b91e5",
+      "bytes": 20690,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/RECOVERED_LOWER_TAC_S_DEPENDENCY_AUDIT_2026_10_28.json",
+      "sha256": "ed15f559e93f96ea8e5e335a42db5f4615aab8ecc2cfc33b4881e6b78b89093a",
+      "git_blob_sha": "23ca852cebecd10d96256e0f13275fda70fdf888",
+      "bytes": 62739,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/REVIEW_ALIGNED_LOW_S_LOWER_RETURN_HEIGHT_SEPARATION_HEXAGON_2026_10_28.md",
+      "sha256": "cf5f599682c976732df9ef591518f309f68d4babc7747b6d1f080f4683c7173c",
+      "git_blob_sha": "75f721cae9488f9412b66559a7f6eea6dc3ae99b",
+      "bytes": 11444,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/REVIEW_CENTERED_FORTY_DEGREE_THREE_QUARTERS_FRONTIER_2026_10_28.md",
+      "sha256": "37ed46006f52797428d34ba20c7f8e58d1790f916fbf61a447321de3f1b808d9",
+      "git_blob_sha": "abf73c4dd30eea3bfb2e2f10d7afa453037b459a",
+      "bytes": 7923,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/REVIEW_D_ROOT_EVERY_CYCLIC_BLOCK_FRONTIER_2026_10_28.md",
+      "sha256": "189ceeff9399e9e410f42fca5b334ba7504662b7b16bae5d0e2ffa494da490b0",
+      "git_blob_sha": "6276560e919022823c0eda9f97405797a66bee33",
+      "bytes": 9439,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_A_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "98355c7ee0a865b919330af7bc8b1094d0cb56118188a0e1fab2a59b587e9ab9",
+      "git_blob_sha": "481951b7acc67063bdaffa8d4824cd62af6bd811",
+      "bytes": 16026,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_HEXAGON_2026_10_28.md",
+      "sha256": "4b5aafac6605f488a3ee63d3d4c453200f0b27fb472b26d2ab3c11da3643c394",
+      "git_blob_sha": "58ae282c43796f3ebd9de221320addbc2cae94a5",
+      "bytes": 20454,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_ROOTED_BLOCKS_2026_10_28.md",
+      "sha256": "8fbc107ca79a3e8e9a747f501a4ed1b272aa5c23b662da4641a2a20fea186554",
+      "git_blob_sha": "69ca68eed0ac3b5161c975fc02173d2eaca5a6d2",
+      "bytes": 17225,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "e8c69725a44711eaebb674a4f82778ce687a5c9d29f418f2a4cd15e0b1673fb4",
+      "git_blob_sha": "7977a0ed74f0c6db8d2025cec7198caa6f8c0298",
+      "bytes": 15794,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_LOWER_TAC_S_COMPLETE_JOIN_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "5aeda0e622fa3d89edd778b6cb81c7b0eeed112e80a7a3e3b46bb68bbd91ac38",
+      "git_blob_sha": "33e3364073d965499b429c007a2a38224aa93a06",
+      "bytes": 14553,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_LOWER_TAC_S_COMPLETE_ROOT_2026_10_28.md",
+      "sha256": "dcd0fa7b2579cad478c53f58e4ba63e7cb5b7b779ee33d9fc7b723661bfa1d95",
+      "git_blob_sha": "e8de3c6d319c0f39ede48671c16acaa35f21c26c",
+      "bytes": 9750,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_LOWER_TAC_S_TILTED_ROOT_ROOT_2026_10_28.md",
+      "sha256": "5b7950398a451bbbeae6497ddb2f14742df707476b21e5491f0207f92af7146f",
+      "git_blob_sha": "78b9619f76e3372c5cd7a6bc7c57a23e89bf7cf1",
+      "bytes": 10127,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_LOWER_TAC_S_TILTED_ROOT_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "a0a5c243b67f18c6941f981eac6afc90bb36fb3ac55c8b7d0ecfa5d35cf5de86",
+      "git_blob_sha": "0f005b1568e7ac51bb92f46fbf0af54b3612cc9f",
+      "bytes": 10699,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/REVIEW_INWARD_OPPOSED_FULL_STAR_WITH_FAR_RETURNS_THIN_D_INDEPENDENT_2026_10_28.md",
+      "sha256": "353048b4124ece587617988135c717ca8fc7e11fd7b8dd94e720a8d283e25389",
+      "git_blob_sha": "96089929322f97101b75c4ff938d9b793b5eb2ea",
+      "bytes": 8135,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/REVIEW_INWARD_TRIANGLE_STAR_AND_TDC_NEAR_UNIT_SHARED_S_2026_10_28.md",
+      "sha256": "5650d75f6e5675ddd08ff7103e25b96a07c6199c1bbafa14a1257c75c44cb965",
+      "git_blob_sha": "eddd63af5b71ed7f70714d362b60e8224e2d8a6e",
+      "bytes": 11380,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/REVIEW_LOWER_TAC_S_ALIGNED_UPPER_A_ROOT_2026_10_28.md",
+      "sha256": "6a0854accf176563cb83461fe3d0d328c978611e7fdddf6f08e880ceb35f18f3",
+      "git_blob_sha": "1c2f28a0fc1a1e2aba6a70d5c1f9b24739cad745",
+      "bytes": 9077,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/REVIEW_RECOVERED_LOWER_TAC_S_FRONTIER_2026_10_28.md",
+      "sha256": "d3d8a3dc90183ecda32944e421c29bc85552cfce0bcc9fe4fb32412bc2668f9a",
+      "git_blob_sha": "2a6119a8a4fba11836eb86c2a8ded95dbe8bb9de",
+      "bytes": 11346,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/REVIEW_RECOVERED_LOWER_TAC_S_ROOT_CONTINUATION_2026_10_28.md",
+      "sha256": "a4db2def0233aba567558adf514fa06286618939887c07bbc0365999a274c60a",
+      "git_blob_sha": "6999ee16709ba1b65a10dbf3a372d41b0db3db3a",
+      "bytes": 8720,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/REVIEW_UNIFORM_BLOCK_NEAR_UNIT_AND_FORTY_DEGREE_ARC_ROOT_2026_10_28.md",
+      "sha256": "57ddb0cd6a67cedc3a2d64a02a506f357182e2a9f4707dec3b6f36fd91a81e62",
+      "git_blob_sha": "e1a99e4fcf9c0dc1c03e105b17f22c798c4a499e",
+      "bytes": 14733,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/certificates/aligned_low_s_lower_return_height_separation.py",
+      "sha256": "bd92d1895f240805a78ea5160b0b7ed56f6948a4ec6ce88ff870bb55a6472f15",
+      "git_blob_sha": "0e5d8671d2c50ee1892cc15d5e5b566abcf466ba",
+      "bytes": 4391,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/certificates/aligned_low_s_upper_c_visibility_separation.py",
+      "sha256": "d57e7506d4f6e1dd92c991c8579fcfcd03377703863b0d42d50f417267fe2c4c",
+      "git_blob_sha": "6a23213b8b21618b20a6850724c38b5b823c153f",
+      "bytes": 4744,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/certificates/review_aligned_low_s_lower_return_height_separation_hexagon.py",
+      "sha256": "c8ced658818cb45978c14964337e2fdbcb43c9ab3aad623667bf77d9029e25b0",
+      "git_blob_sha": "c7010c812f1674c9164349309c6931f21f53ad0d",
+      "bytes": 9436,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/certificates/review_aligned_low_s_upper_c_visibility_hexagon.py",
+      "sha256": "dd657ff02b1061590ff19533babe0e56c68d68d68452c00aef2b1c2ece7ae588",
+      "git_blob_sha": "2555cb51b3bd5feb3065d0ea48073fca3075b90b",
+      "bytes": 12761,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/certificates/review_lower_tac_upper_a_height_triangle_bridges.py",
+      "sha256": "cb248f5417d2c43b67291106f896ac97e9dae5cef23e56aac46316a2963f5654",
+      "git_blob_sha": "fae3617802e870a80649916457ae26d09e6a64f2",
+      "bytes": 6805,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/certificates/review_lower_tac_upper_c_visibility_triangle_bridges.py",
+      "sha256": "417a832c7ba660850b1a2f9abf92dd2ea68b5504536875d772f41ad168575180",
+      "git_blob_sha": "7069a1c22906992c5db2b205308984d9f6b74485",
+      "bytes": 7355,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/checkpoints/broad_D_and_centered_forty_degree_frontier_review_2026_10_28.json",
+      "sha256": "eadb333bed9d966bc579398d8ee3f66918d511de4eb10ac0bb52bee8c59fc60d",
+      "git_blob_sha": "6998da36a4ed4a5f01cc5a9442c1ce98fffdb86d",
+      "bytes": 8925,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_lower_TAC_S_2026_10_28/aligned_low_s_upper_c_visibility_certificate.json.gz",
+      "sha256": "23a6bcfe18fd33425537ccf262692843dca9e2a6f3f71d0f952bbcca7712ba89",
+      "git_blob_sha": "ac578c04179a987a92a30813876b9477bf564edc",
+      "bytes": 3403466,
+      "encoding": "gzip"
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_lower_TAC_S_2026_10_28/current_recovery_graph_and_archive_checks.json",
+      "sha256": "47635c28cbc80b71d1eea3bfec99c7d018f3de71e1e357aff2eb5cc750a69564",
+      "git_blob_sha": "826ff08f9ac6626146045d7733e1d46a0d24397e",
+      "bytes": 6326,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_lower_TAC_S_2026_10_28/hexagon_aligned_low_s_lower_return_height_independent_checks_2026_10_28.json.gz",
+      "sha256": "d5af372e49812a863563f8e7ccfd5788d3e83f41742bed18cd59d9a9e9b5e8dc",
+      "git_blob_sha": "9cfdd49cea86160ac290981ba768c6f3679a2110",
+      "bytes": 206557,
+      "encoding": "gzip"
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_lower_TAC_S_2026_10_28/hexagon_aligned_low_s_upper_c_visibility_independent_checks_2026_10_28.json.gz",
+      "sha256": "975a2c76b5fe443cd1a2d3ae7b07174f7adac7d42d3c9ec8dcf456953bdfd990",
+      "git_blob_sha": "39748e2b98445a8a8067c70a8906cc4520774962",
+      "bytes": 7759020,
+      "encoding": "gzip"
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_lower_TAC_S_2026_10_28/pr11_root_lower_tac_s_complete_join_checks_20261028.json",
+      "sha256": "235650953425d959d6c10a987ecab146eda69aa5e439c13bcafca6f7e87af85f",
+      "git_blob_sha": "4ed9193040181c20a9849dedd900bd96c37a2f2a",
+      "bytes": 5211,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_lower_TAC_S_2026_10_28/pr11_root_lower_tac_s_complete_join_checks_20261028.py",
+      "sha256": "c7bef2d2710c512d16b34392a0e502e5ab7fbe5e231c9f8705c141ec86a3215b",
+      "git_blob_sha": "4426480c22356c411f8145c3ff714413035d1932",
+      "bytes": 2803,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_lower_TAC_S_2026_10_28/pr11_root_lower_tac_s_tilted_checks.json",
+      "sha256": "9911a7635a4f0c1e1656930dcd32778cfda3e08d1f326970444062f5764ac858",
+      "git_blob_sha": "6ae4bd253bba63839c50b020890a285abb5eb8b0",
+      "bytes": 2357,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_lower_TAC_S_2026_10_28/pr11_root_lower_tac_s_upper_a_checks.json",
+      "sha256": "62fe61bb75f4a567fa411c1d4fe9bbf23725a2f6e6a7a1677c205a5be62954db",
+      "git_blob_sha": "21d1c94ebc840b796951f493047183142eba2b81",
+      "bytes": 3771,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_lower_TAC_S_2026_10_28/pr11_root_replay_aligned_low_s_lower_return_height_separation_certificate.json.gz",
+      "sha256": "ca314fd0706fe616f7ada3a3206cfe06d3f0058f52b7f66dec5cf302849e1391",
+      "git_blob_sha": "861b3feeeeb0b148f595b42b09f6984405795eda",
+      "bytes": 136678,
+      "encoding": "gzip"
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_lower_TAC_S_2026_10_28/rooted_blocks_lower_tac_upper_c_visibility_independent.py",
+      "sha256": "07e42d3e87574df13ce29abab92af2a9bf6e5792e334cd3b4b47c0d7c71401ea",
+      "git_blob_sha": "7726caa6d9ec100805df17b924db13ce5f6105bf",
+      "bytes": 4508,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_lower_TAC_S_2026_10_28/rooted_blocks_lower_tac_upper_c_visibility_independent_2026_10_28.json.gz",
+      "sha256": "3526a393761ec3d9d000da8e6ff3a4ace5c82e231d62a7e8a74da76b384e16c8",
+      "git_blob_sha": "a5fb30d97b4dd9e1bb9c714a3859e83291cba042",
+      "bytes": 4772781,
+      "encoding": "gzip"
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_lower_TAC_S_2026_10_28/rooted_blocks_upper_C_visibility_exact_checks_2026_10_28.json",
+      "sha256": "33e5c6d367aa58b5c361274ab0a02ff6fd60e029f0a30deb83221eb536ca8bef",
+      "git_blob_sha": "47df931369ecc764b421fffde9d63db541d5c61d",
+      "bytes": 2302,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_lower_TAC_S_2026_10_28/triangle_bridges_lower_tac_s_complete_join_checks_2026_10_28.json",
+      "sha256": "264ba2234a5832c9066009b8355bc18def3f8c92ecb0baf261a80f885f84122d",
+      "git_blob_sha": "0050c5885f823e2813d79372d64a4c8517de72f4",
+      "bytes": 4821,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_lower_TAC_S_2026_10_28/triangle_bridges_lower_tac_s_tilted_independent_checks_2026_10_28.json",
+      "sha256": "a8ceb22687524f4458d8e94839f069496e4759c9e0979b355c504ba09b7f9472",
+      "git_blob_sha": "07de76212982232446342f6c33dd6b748d8f0012",
+      "bytes": 3305,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_lower_TAC_S_2026_10_28/triangle_bridges_lower_tac_upper_a_independent_scalar_2026_10_28.json.gz",
+      "sha256": "f83034e230b030aa972501f9dbb26223d5404a61f601a587e90f7dd45c05c583",
+      "git_blob_sha": "baff7a990093e7bbdf239fa53c06c9a96f49d359",
+      "bytes": 208531,
+      "encoding": "gzip"
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_lower_TAC_S_2026_10_28/triangle_bridges_lower_tac_upper_a_physical_checks_2026_10_28.json",
+      "sha256": "f0e18f8c188f058ce509ee73b31072870587564f2b85861ace29898c39c42680",
+      "git_blob_sha": "0e9dc029ac94355d87748039125d041a76369a48",
+      "bytes": 2169,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_lower_TAC_S_2026_10_28/triangle_bridges_lower_tac_upper_c_independent_scalar_2026_10_28.json.gz",
+      "sha256": "23324f821d91a41e9d4e7f28a24f14d1ef3845c74a6bd3765532637b9aa2e5b7",
+      "git_blob_sha": "95ba60b33a3405aca901543160cbc85e4f9c318d",
+      "bytes": 9359403,
+      "encoding": "gzip"
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_lower_TAC_S_2026_10_28/triangle_bridges_lower_tac_upper_c_physical_checks_2026_10_28.json",
+      "sha256": "c62068ade4a9a81a0fceabc24e38133d050702f0306bfae2ae8e814f5c073281",
+      "git_blob_sha": "bab761ee54deb081e6662c002bc7a10744176b50",
+      "bytes": 2256,
+      "encoding": "utf-8"
+    }
+  ],
+  "updated_metadata": [
+    {
+      "path": "research/nine/CYCLIC_CELL_LEDGER.md",
+      "sha256": "8db2b2c186feabda98282cd3598ceac5c5b8db9e326535ee2577960fd85ebb64",
+      "git_blob_sha": "68ac4c7b6fa163290b8ad0c853a69c010203c32f",
+      "bytes": 226779,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "sha256": "1b1665370c1c1ea20f75da95433dda0fcaed40174e588e47f5a3da1640b05307",
+      "git_blob_sha": "8e9eba74ae2f52d026af9487a60f5af33f7f7721",
+      "bytes": 949677,
+      "encoding": "utf-8"
+    },
+    {
+      "path": "research/nine/HANDOFF_PR11_2026_10_28_CURRENT.md",
+      "sha256": "731ba36a42901338c031e97a0773124e273df44298b23bf049afd6beb1b6dc4d",
+      "git_blob_sha": "7c79923ae6b5b6620277694f9ebf6dadf2ab2295",
+      "bytes": 21406,
+      "encoding": "utf-8"
+    }
+  ],
+  "open_coarse_ids": [
+    "C1.5.b1",
+    "C1.5.b2",
+    "C1.5.b3",
+    "C1.5.b4",
+    "C1.6.b0",
+    "C1.6.b1",
+    "C1.6.b2",
+    "C1.6.b3",
+    "C1.7.b0",
+    "C1.7.b1",
+    "C1.7.b2",
+    "C1.8.b0",
+    "C1.8.b1",
+    "C1.9.b0",
+    "C2.35.b0",
+    "C2.35.b1",
+    "C2.35.b2",
+    "C2.36.b0",
+    "C2.36.b1",
+    "C2.37.b0",
+    "C2.45.b0",
+    "C2.45.b1",
+    "C2.46.b0",
+    "C2.55.b0"
+  ],
+  "open_fine_ids": [
+    "T1.EXTRACT:",
+    "CAP.4",
+    "ROW.4",
+    "POCKET.ROUTING",
+    "QCAP.GLOBAL",
+    "CY.B5 GEOMETRY",
+    "CY.MULTILOAD",
+    "CY.MIXED.COMPLETE",
+    "C.1 GRAPH",
+    "C.2 LOAD",
+    "C.3 GEOMETRY",
+    "C.4 COMPLETION",
+    "C.5 SHARPNESS",
+    "C.6 EQUALITY",
+    "G3.0.ANNULAR.ROUTING",
+    "G3.0.DISTRIBUTED_ARTICULATIONS",
+    "G3.0.SHARP",
+    "G3.M.F.1 GRAPH",
+    "G3.M.F.1.a",
+    "G3.M.F.1.b",
+    "G3.M.F.1.c",
+    "G3.M.F.2 LOADS",
+    "G3.M.F.2.a",
+    "G3.M.F.2.b",
+    "G3.M.F.3 CONTACT FEATURES",
+    "G3.M.F.3.a",
+    "G3.M.F.3.b",
+    "G3.M.F.3.c",
+    "G3.M.F.4 JUNCTIONS",
+    "G3.M.F.5 COMPLETION ROUTING",
+    "G3.M.F.5.a",
+    "G3.M.F.5.b",
+    "G3.M.F.5.c",
+    "G3.M.F.5.d",
+    "G3.M.F.COVER",
+    "C.0 DOMAIN",
+    "C.1 EQUILIBRIUM",
+    "C.2 ROUTING",
+    "C.3 BOUND",
+    "C.3.a",
+    "C.3.b",
+    "C.3.c",
+    "C.4 EQUALITY",
+    "C.5 AUDIT",
+    "C.ALL",
+    "M6.B5L.HOUSE.ROOF.LAC.S",
+    "M6.B5L.HOUSE.ROOF.LABC.S",
+    "M6.B5L.HOUSE.HUB.LTC.S",
+    "M6.B5L.HOUSE.HUB.LTCB.S",
+    "M6.B5L.HOUSE.LOWER.LTDC.S",
+    "M6.B5L.HOUSE.LOWER.LTDC.D",
+    "M6.B5L.FAN.ENDPOINT.L234.S",
+    "M6.B5L.FAN.INNER.L134.S",
+    "M6.B5L.HOUSE.ROOF",
+    "M6.B5L.HOUSE.HUB",
+    "M6.B5L.HOUSE.LOWER",
+    "M6.B5L.FAN.ENDPOINT",
+    "M6.B5L.FAN.INNER",
+    "M6.B5L.ALL",
+    "M6.B6.HEXAGON.TWO_OPPOSITE_EARS.BOUND",
+    "M6.B6.HEXAGON.D02.L014",
+    "M6.B6.HEXAGON.D02.L134",
+    "M6.B6.HEXAGON.D02.L135",
+    "M6.B6.HEXAGON.D02.L0134",
+    "M6.B6.HEXAGON.D02.L0135",
+    "M6.B6.HEXAGON.D02.L0145",
+    "M6.B6.HEXAGON.D02.L1345",
+    "M6.B6.HEXAGON.D02.L01345",
+    "M6.B6.HEXAGON.D02.ALL",
+    "M6.B6.HEXAGON.D03.L014",
+    "M6.B6.HEXAGON.D03.L024",
+    "M6.B6.HEXAGON.D03.L124",
+    "M6.B6.HEXAGON.D03.L0124",
+    "M6.B6.HEXAGON.D03.L0125",
+    "M6.B6.HEXAGON.D03.L1245",
+    "M6.B6.HEXAGON.D03.ALL",
+    "M6.B6.HEXAGON.D0203.L124",
+    "M6.B6.HEXAGON.D0203.L1234",
+    "M6.B6.HEXAGON.D0203.L1235",
+    "M6.B6.HEXAGON.D0203.L1245",
+    "M6.B6.HEXAGON.D0203.ALL",
+    "M6.B6.HEXAGON.D0204.L135",
+    "M6.B6.HEXAGON.D0204.L0135",
+    "M6.B6.HEXAGON.D0204.L1235",
+    "M6.B6.HEXAGON.D0204.L1245",
+    "M6.B6.HEXAGON.D0204.ALL",
+    "M6.B6.HEXAGON.D0235.L0134",
+    "M6.B6.HEXAGON.D0235.L0145",
+    "M6.B6.HEXAGON.D0235.ALL",
+    "M6.B6.HEXAGON.CHORD_PATH.L1245",
+    "M6.B6.HEXAGON.CHORD_PATH.ALL",
+    "M6.B6.HEXAGON.CENTRAL_TRIANGLE.L135",
+    "M6.B6.HEXAGON.CENTRAL_TRIANGLE.L0135",
+    "M6.B6.HEXAGON.CENTRAL_TRIANGLE.ALL",
+    "M6.B6.HEXAGON.BOUND",
+    "M6.B6.PENTAGON.H4_D0.L124",
+    "M6.B6.PENTAGON.H4_D0.L0124",
+    "M6.B6.PENTAGON.H4_D0_EXIT",
+    "M6.B6.ALL",
+    "G3.M6.ASSEMBLE",
+    "G3.M6.ALL",
+    "G3.M7.ALL",
+    "G3.M8.ALL",
+    "G3.M9.ALL",
+    "G3.M.ALL",
+    "G3.ALL.1",
+    "G3.ALL.3",
+    "G3.ALL.4",
+    "G3.ALL",
+    "O3.3.SHARP",
+    "O4.1",
+    "O4.2",
+    "O4.3 alternative",
+    "O5",
+    "X.3",
+    "G4.2",
+    "G4.2.a",
+    "G4.2.b",
+    "G4.2.c",
+    "G4.2.d",
+    "G4.2.e",
+    "G4.2.f",
+    "G4.3",
+    "G4.3.a",
+    "G4.3.b",
+    "G4.3.c",
+    "G5.1",
+    "G5.2",
+    "G5.3",
+    "G5.1.a",
+    "G5.1.b",
+    "G5.2.a",
+    "G5.2.b",
+    "G5.2.c",
+    "G5.3.a",
+    "G5.3.b",
+    "G5.3.c",
+    "G5.3.d",
+    "G5.4",
+    "G5.4.a",
+    "G5.4.b",
+    "G5.ALL",
+    "G6.1",
+    "G6.2",
+    "G6.3",
+    "G6.TL1 NEW",
+    "G6.TL2 NEW",
+    "G6.TL3 NEW",
+    "G6.TL4 NEW",
+    "G6.4",
+    "G6.5",
+    "G6.5.a",
+    "G6.5.b",
+    "G6.5.c",
+    "G6.5.d",
+    "G6.5.e",
+    "G6.5.f",
+    "G7.1",
+    "G7.2",
+    "G7.3",
+    "G7.4",
+    "G7.5 DEFERRED",
+    "G8.1",
+    "G8.2",
+    "G8.3",
+    "G8.4"
+  ],
+  "new_computational_exclusion_certificates": 0,
+  "uniform_new_theorem_credit": 0,
+  "historical_arithmetic_records_retained": 21,
+  "recovery_counts": {
+    "LF-only-preserve": 5,
+    "copy": 21,
+    "exact": 9,
+    "same-export-adopt-current-analytic": 1,
+    "total_files": 36,
+    "old_declared_pin_checks": 81,
+    "old_declared_pin_disagreements": 0,
+    "historical_audit_records": 21,
+    "audit_original_bytes": 62305104,
+    "audit_preserved_bytes": 25916296
+  },
+  "explicit_same_export_adoptions": [
+    {
+      "path": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "old_sha256": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c",
+      "current_sha256": "4c9e708945938c3f9df575e76f7573903d6b5a0ce4eccb5bcea760353a47458a",
+      "rule": "Preserve current accepted complete same-nine R>2 theorem with analytic fixed-value prerequisite. Old five-fixed-value certificate was replaced by an accepted analytic proof; identical unconditional hypotheses/conclusion. Do not copy old theorem or silently rewrite historical pins.",
+      "operative_analytic_source": "LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "previous_full_reconciliation": "REVIEW_RECOVERED_FOUR_ORIGINAL_FAMILIES_FRONTIER_2026_10_28.md"
+    }
+  ],
+  "execution": {
+    "lean_compilation": false,
+    "ci_dispatch": false,
+    "workflow_execution": false,
+    "merge": false
+  },
+  "scope_limits": [
+    "unrestricted sharp bound open",
+    "all original equality packings open",
+    "remaining global prerequisite audit open",
+    "Lean integration open"
+  ]
+}

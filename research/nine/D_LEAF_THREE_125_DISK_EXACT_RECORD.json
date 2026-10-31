@@ -1,0 +1,38 @@
+{
+  "status": "complete proposed theorem; full root and independent review requested; no gate count",
+  "source": "/workspace/scratch/7d553350ce2a/two_blocks/D_LEAF_ROOT_AT_MOST_ONE_OTHER_UNIT_IN_THREE_125_DISK.md",
+  "source_sha256": "34385a647c1889564b3423ecfff03a7a75747275e45f68346c3f8a9f06abfaaf",
+  "operative_dependencies": [
+    {
+      "filename": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "scope": "Selected genuine D leaf/root chart only"
+    }
+  ],
+  "exact_arithmetic": {
+    "R_upper_square_reserve": "1599/160000",
+    "sqrt2_upper_square_reserve": "49/1600",
+    "sqrt2_lower_square_reserve": "2/9801",
+    "r_upper_reserve": "2/2475",
+    "arc_positive_reserve": "1/1000",
+    "arc_halfunit_reserve": "107/750",
+    "cos2beta": "791/800",
+    "sin3beta": "3573/16000",
+    "cos3beta_squared_reserve": "339/40000",
+    "north_projection_reserve": "1763/8000",
+    "left_face_lower_bound": "-552/19775",
+    "right_face_lower_bound": "19223/19775",
+    "q_first_lower": "361/500",
+    "q_first_upper": "364/375",
+    "q_second_lower": "531/20000",
+    "q_second_upper": "357/800",
+    "q_first_lower_reserve": "349/500",
+    "q_first_upper_reserve": "421/296625",
+    "q_second_lower_reserve": "51/20000",
+    "q_second_upper_reserve": "119/4000",
+    "sqrt2_36_25_squared_reserve": "46/625",
+    "sigma_vs_36_25_times_1_60": "0"
+  },
+  "scope": "All actual unit squares retained, genuine D root arbitrary degree, full radius window; at most one other actual closed unit meets D_(3/125)."
+}

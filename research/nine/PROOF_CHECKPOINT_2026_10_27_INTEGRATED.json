@@ -1,0 +1,151 @@
+{
+  "baseline_head": "ec7c584d0e83e33f07b6dd9a7b32d2d8997c40a3",
+  "proof_recovery_commits": [
+    "251df53d89a8bc4a73a7c8b20730deb4d1d1f276",
+    "cff4d4658d705c477eee71f313b0236167b4bfeb"
+  ],
+  "coarse_before": {
+    "closed": 23,
+    "open": 35,
+    "total": 58
+  },
+  "coarse_after": {
+    "closed": 32,
+    "open": 26,
+    "total": 58
+  },
+  "fine_before": {
+    "checked": 2293,
+    "total": 2513
+  },
+  "fine_after": {
+    "checked": 2316,
+    "unchecked": 197,
+    "total": 2513
+  },
+  "new_coarse": [
+    {
+      "id": "C1.4.b2",
+      "source": "FOUR_BODY_BLOCK_TWO_BRIDGES_CELL_CLOSED.md",
+      "sha256": "1eb60a491f1ee49f158ba89f23fd1b31e337704dfed9659808d052069980ef3b"
+    },
+    {
+      "id": "C1.4.b4",
+      "source": "ONE_FOUR_BODY_BLOCK_FOUR_BRIDGES_CELL_CLOSED.md",
+      "sha256": "258c3349bbe31f6b5b7700bca02084236c6f39819383c9d2c4f6d238bef7fecc"
+    },
+    {
+      "id": "C1.4.b5",
+      "source": "ONE_CYCLIC_BLOCK_FIVE_BRIDGES_EXCLUDED.md",
+      "sha256": "72948b5bc968b39645470730106c143dd3841199e72c63e571e1173b5f0bd39c"
+    },
+    {
+      "id": "C2.34.b1",
+      "source": "ROOTED_C2_34_ONE_BRIDGE_CELL_CLOSED.md",
+      "sha256": "0b25b417525bcd4452d45a5bf63b65cf370b6c8d96105428b9cb7882eb85e418"
+    },
+    {
+      "id": "C2.34.b2",
+      "source": "ROOTED_C2_34_TWO_BRIDGES_BOUNDARY_BRANCH_ASSEMBLY.md",
+      "sha256": "ce8dba07b8676659c6f75c1b42e08314cbd9f819df35ade225c0cc9434fb62e5"
+    },
+    {
+      "id": "C2.34.b3",
+      "source": "ROOTED_C2_34_THREE_BRIDGES_CELL_CLOSED.md",
+      "sha256": "ee445e42af13085207c298902778c3025b47e2527ef5d27ad7430966ef694ca8"
+    },
+    {
+      "id": "C2.44.b1",
+      "source": "ROOTED_C2_44_ONE_BRIDGE_NONNEGATIVE_PRESSURE_ASSEMBLY.md",
+      "sha256": "78a3ddcf3acf7021e90fcad6fa3d13e2915c682b7a6f896f80ebd944b5fd234f"
+    },
+    {
+      "id": "C3.334.b1",
+      "source": "ROOTED_C3_334_ONE_BRIDGE_CELL_CLOSED.md",
+      "sha256": "73c9072c74f6e744552e85e304160ddfaba860e5bc03bbf38b04d59abf9226c7"
+    },
+    {
+      "id": "C3.335.b0",
+      "source": "GLOBAL_NEXT_C3_335_COMPLETE_CELL_CLOSED.md",
+      "sha256": "5cadcbfbcc504ab3c44e953803a6047e1c625d55e68ccb97ff74e68789f1d4ff"
+    }
+  ],
+  "new_original_fine_ids": [
+    "M6.B4L2.C4.ADJACENT.LC.SS",
+    "M6.B4L2.C4.ADJACENT.LCD.SS",
+    "M6.B4L2.C4.ADJACENT",
+    "M6.B4L2.C4.OPPOSITE.LBD.SS",
+    "M6.B4L2.C4.OPPOSITE",
+    "M6.B4L2.DIAMOND.HUB_TIP.LKC.SS",
+    "M6.B4L2.DIAMOND.HUB_TIP",
+    "M6.B4L2.ALL",
+    "M6.B5L.C5.L123.S",
+    "M6.B5L.C5.L124.S",
+    "M6.B5L.C5.L1234.S",
+    "M6.B5L.C5",
+    "M6.B6.PENTAGON.H2_D1.L124",
+    "M6.B6.PENTAGON.H2_D1.L134",
+    "M6.B6.PENTAGON.H2_D1.L1234",
+    "M6.B6.PENTAGON.H2_D1.L0124",
+    "M6.B6.PENTAGON.H2_D1_EXIT",
+    "M6.B6.PENTAGON.H2_D0.L023",
+    "M6.B6.PENTAGON.H2_D0.L134",
+    "M6.B6.PENTAGON.H2_D0.L0124",
+    "M6.B6.HEXAGON.D03.L0134",
+    "M6.B6.PENTAGON.H3.L013",
+    "M6.B6.PENTAGON.H3.L023"
+  ],
+  "open_coarse_by_positive_size": {
+    "7": [
+      "C1.4.b3",
+      "C1.5.b2",
+      "C1.6.b1",
+      "C1.7.b0",
+      "C2.35.b0"
+    ],
+    "6": [
+      "C1.5.b1",
+      "C1.6.b0"
+    ],
+    "8": [
+      "C1.5.b3",
+      "C1.6.b2",
+      "C1.7.b1",
+      "C1.8.b0",
+      "C2.35.b1",
+      "C2.36.b0",
+      "C2.45.b0"
+    ],
+    "9": [
+      "C1.5.b4",
+      "C1.6.b3",
+      "C1.7.b2",
+      "C1.8.b1",
+      "C1.9.b0",
+      "C2.35.b2",
+      "C2.36.b1",
+      "C2.37.b0",
+      "C2.44.b2",
+      "C2.45.b1",
+      "C2.46.b0",
+      "C2.55.b0"
+    ]
+  },
+  "same_ordered_original_ids": true,
+  "no_unchecked_regressions": true,
+  "new_long_arm_full_review": [
+    "REVIEW_FOUR_BODY_LONG_ARM_AND_FOUR_BRIDGES_ROOT_2026_10_27.md",
+    "REVIEW_FOUR_BODY_LONG_ARM_ADJACENT_GENUINE_ROOT_MIXED_GLOBAL_2026_10_27.md",
+    "REVIEW_ONE_FOUR_BODY_BLOCK_FOUR_BRIDGES_CELL_MIXED_GLOBAL_2026_10_27.md"
+  ],
+  "new_two_bridge_parent_full_review": [
+    "REVIEW_FOUR_BODY_TWO_BRIDGES_WHOLE_CELL_ROOT_2026_10_27.md",
+    "REVIEW_FOUR_BODY_TWO_BRIDGES_FULL_ORIGINAL_JOIN_SIX_BODY_2026_10_27.md"
+  ],
+  "unrestricted_theorem": "OPEN",
+  "original_equality_classification": "OPEN",
+  "older_global_prerequisite_audit": "OPEN",
+  "lean_integration": "OPEN",
+  "lean_compilation_run": false,
+  "ci_run": false
+}

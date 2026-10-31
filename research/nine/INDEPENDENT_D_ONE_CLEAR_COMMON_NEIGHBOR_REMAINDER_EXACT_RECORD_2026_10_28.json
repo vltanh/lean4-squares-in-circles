@@ -1,0 +1,81 @@
+{
+  "status": "PASS independent full original-domain hand review",
+  "source": {
+    "name": "D_LEAF_ONE_CLEAR_COMMON_NEIGHBOR_BOUNDARY_REMAINDER_EXCLUSION.md",
+    "path": "/workspace/scratch/7d553350ce2a/six_body/D_LEAF_ONE_CLEAR_COMMON_NEIGHBOR_BOUNDARY_REMAINDER_EXCLUSION.md",
+    "sha256": "4e4e6e09bcb61f8e9a4de8cc75341b99914136369f807936c0351c1aff8f85b5"
+  },
+  "exact_direct_inputs": [
+    {
+      "name": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "path": "/workspace/scratch/7d553350ce2a/baseline/research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676"
+    },
+    {
+      "name": "D_LEAF_SHALLOW_SIDE_BOUNDARY_FULL_WINDOW_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/diamond/D_LEAF_SHALLOW_SIDE_BOUNDARY_FULL_WINDOW_EXCLUSION.md",
+      "sha256": "ca7c3f4b32e45fc0c118bd766f438fce3019b0b44220604e33bc842a504ac670"
+    },
+    {
+      "name": "D_LEAF_COMMON_TRIANGLE_NEIGHBOR_FULL_WINDOW_QUARTER_DISK.md",
+      "path": "/workspace/scratch/7d553350ce2a/diamond/D_LEAF_COMMON_TRIANGLE_NEIGHBOR_FULL_WINDOW_QUARTER_DISK.md",
+      "sha256": "c39605b955d98f7fbe8499cf0a06dc4cc780a7dada4ee83c05ffc627f6d866bc"
+    },
+    {
+      "name": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "path": "/workspace/scratch/7d553350ce2a/baseline/research/nine/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207"
+    },
+    {
+      "name": "END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+      "path": "/workspace/scratch/7d553350ce2a/baseline/research/nine/END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+      "sha256": "20a845eff8bee3e9c533162df0b32ea96f9dd104a3cfec41efb3b0cf92d6e9cf"
+    },
+    {
+      "name": "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "path": "/workspace/scratch/6f604094721b/squares/research/nine/GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49"
+    },
+    {
+      "name": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "path": "/workspace/scratch/7d553350ce2a/baseline/research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe"
+    },
+    {
+      "name": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "path": "/workspace/scratch/7d553350ce2a/baseline/research/nine/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b"
+    }
+  ],
+  "arithmetic_corroboration": {
+    "d_lower_square_reserve": "13/320",
+    "d_upper_square_reserve": "31/57600",
+    "normal_vertical_square_reserve": "3/16",
+    "physical_span_deficit": "5/18",
+    "return_support_margin": "3/20",
+    "quarter_to_far_interval_margin_using_sqrt2_lt2": "13/60"
+  },
+  "accepted_original_ids": [
+    "M6.B5L.HOUSE.ROOF.LABC.D",
+    "M6.B5L.FAN.ENDPOINT.L234.D"
+  ],
+  "gate_delta": {
+    "fine": 2,
+    "coarse": 0
+  },
+  "scope": "Whole original D alternatives; all9units, true H3 and K3/K4 stars, all masks/normals/means, physical-only AK and full positive private graph. No intact-root, radius2 or external arithmetic checker is operative.",
+  "reviewed_proof_parts": [
+    "Entire new Sections1\u20138",
+    "Original port-order source8def Sections1\u20133: all support features, small-corner endpoints, strict physical cap, nonnegative angular chord order and cycle-winding equality case",
+    "Original103a Sections2\u20133 only to verify extraction history; new theoremreproves complete needed farintervalkernel and does not depend on intact-root scope",
+    "Full actual return-support proof at H3 including bothhorizontalandNW/SWoriginalnormalcases",
+    "Allprivateunits avoid D_epsilon, radial-edge exclusion, realH-Lboundaryaccess, acyclicprivateorientation, source/sinktorqueforcing, literaloriginalcallers"
+  ],
+  "no_closure_for": [
+    "Roof AC.D",
+    "Other roof masks without exact stated boundary remainder",
+    "Fan inner-root L134.D",
+    "Either corresponding S alternative",
+    "Whole C1.5.b1 coarse cell"
+  ]
+}

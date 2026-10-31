@@ -1,0 +1,28 @@
+{
+  "status": "accepted_audit_provenance_supplement_only",
+  "baseline_commit": "53d326511bd6280f18a14555922351ec15942b3d",
+  "supplements": "C2_35_C2_36_PUBLICATION_ALLOWLIST.json",
+  "files": [
+    {
+      "filename": "REVIEW_INTACT_ROOT_FOUR_BLOCK_ORDER_FIVE_GLOBAL_NEXT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_INTACT_ROOT_FOUR_BLOCK_ORDER_FIVE_GLOBAL_NEXT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_INTACT_ROOT_FOUR_BLOCK_ORDER_FIVE_GLOBAL_NEXT_2026_10_27.md",
+      "sha256": "df149e6119fee61970613dabe357192279b545d35b177da1d73e1b7c005ccb47",
+      "bytes": 10899,
+      "kind": "reused_audit_provenance_record",
+      "operative_scope": "Reused audit provenance only: e776 independent review Sections 1 and 4 reuses the full graph, physical boundary-triangle and selected-K4 reads. Its fresh strict C4/diamond pressure acceptance and d480 assembly are not operative dependencies."
+    },
+    {
+      "filename": "REVIEW_TWO_INTACT_PETALS_COMPLETE_EXCLUSION_C6_NEXT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_TWO_INTACT_PETALS_COMPLETE_EXCLUSION_C6_NEXT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_INTACT_PETALS_COMPLETE_EXCLUSION_C6_NEXT_2026_10_27.md",
+      "sha256": "aceba0387b6f8a3a79c0f17aed8f51e3666bbb588188419f5d6b89dc25477cc0",
+      "bytes": 12123,
+      "kind": "reused_audit_provenance_record",
+      "operative_scope": "Reused audit provenance only: 103a independent review Section 6 refers to this record for the exact physical/pressure input pins and prior read scopes. Its entire stronger two-intact-petal theorem is not an additional operative mathematical premise of 103a."
+    }
+  ],
+  "no_additional_mathematical_source_required": true,
+  "new_coarse_cells": 0,
+  "new_fine_identifiers": 0
+}

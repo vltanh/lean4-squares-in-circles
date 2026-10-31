@@ -1,0 +1,568 @@
+{
+  "date_utc": "2026-10-28",
+  "status": "Full mathematical acceptances integrated locally; no successful remote save or commit claimed.",
+  "read_base_head": "703cfc0e079b93fc860a4f32cbb5ce5f70458b4b",
+  "coarse_total": 58,
+  "coarse_closed": 33,
+  "coarse_open": 25,
+  "fine_total": 2513,
+  "fine_checked": 2327,
+  "fine_open": 186,
+  "coarse_changes": [
+    {
+      "id": "C1.4.b3",
+      "from": "open",
+      "to": "closed",
+      "whole_source": "ONE_FOUR_BODY_BLOCK_THREE_BRIDGES_COMPLETE_JOIN.md",
+      "sha256": "18873439b72582bda3ae79550d316b87236bc3d43983d6805381b8596354cca8"
+    }
+  ],
+  "fine_changes": [
+    {
+      "id": "M6.B5L.HOUSE.ROOF.LBC.S",
+      "from": "open",
+      "to": "checked",
+      "evidence": "CLOSED by HOUSE_ROOF_GENUINE_LEAF_TWO_UNLOADED_HUBS_EXCLUSION.md, with full root review REVIEW_HOUSE_ROOF_TWO_UNLOADED_HUBS_ROOT_2026_10_27.md and separate full review REVIEW_HOUSE_ROOF_TWO_UNLOADED_HUBS_TRIANGLE_BRIDGES_2026_10_27.md. The entire original leaf type, true A3/D3/T3 stars, all masks, means and all nine actual units are retained; no fake two-force roof is used. The complete original M6.B5L.RETAINED_CONTRACT is covered."
+    },
+    {
+      "id": "M6.B5L.HOUSE.ROOF.LBC.D",
+      "from": "open",
+      "to": "checked",
+      "evidence": "CLOSED by HOUSE_ROOF_GENUINE_LEAF_TWO_UNLOADED_HUBS_EXCLUSION.md, with full root review REVIEW_HOUSE_ROOF_TWO_UNLOADED_HUBS_ROOT_2026_10_27.md and separate full review REVIEW_HOUSE_ROOF_TWO_UNLOADED_HUBS_TRIANGLE_BRIDGES_2026_10_27.md. The entire original leaf type, true A3/D3/T3 stars, all masks, means and all nine actual units are retained; no fake two-force roof is used. The complete original M6.B5L.RETAINED_CONTRACT is covered."
+    },
+    {
+      "id": "M6.B5L.HOUSE.HUB.LTC.D",
+      "from": "open",
+      "to": "checked",
+      "evidence": "CLOSED by HOUSE_HUB_TC_D_COMPLETE_EXCLUSION.md, with full root review REVIEW_HOUSE_HUB_TC_D_COMPLETE_ROOT_2026_10_28.md and separate full review REVIEW_HOUSE_HUB_TC_D_COMPLETE_TRIANGLE_BRIDGES_2026_10_28.md. The complete D-root, channel-sign, bypass-side, loaded-C2 mask, zero-mean and actual D-frame cover retains true A4 and unloaded D3. The all-nine canonical B slide and full roof-height screen preserve every force and original mean, including rho=k. The entire D family under M6.B5L.RETAINED_CONTRACT is covered; its S companion remains separate."
+    },
+    {
+      "id": "M6.B5L.HOUSE.HUB.LTB.S",
+      "from": "open",
+      "to": "checked",
+      "evidence": "CLOSED by HOUSE_HUB_TB_CANONICAL_CONTACT_EXCLUSION.md, with full root review REVIEW_HOUSE_HUB_TB_CANONICAL_CONTACT_ROOT_2026_10_28.md and separate full review REVIEW_HOUSE_HUB_TB_CANONICAL_CONTACT_TRIANGLE_BRIDGES_2026_10_27.md. The actual unloaded C2 channel, complete C4 empty-hole and all-nine canonical slide give physical AC contact; the entire true unloaded D3 obstruction then applies. Full A4/T2/D3/B2/C2/L1, every original mean, circle mask, weight endpoint and all three extras remain under M6.B5L.RETAINED_CONTRACT."
+    },
+    {
+      "id": "M6.B5L.HOUSE.HUB.LTB.D",
+      "from": "open",
+      "to": "checked",
+      "evidence": "CLOSED by HOUSE_HUB_TB_CANONICAL_CONTACT_EXCLUSION.md, with full root review REVIEW_HOUSE_HUB_TB_CANONICAL_CONTACT_ROOT_2026_10_28.md and separate full review REVIEW_HOUSE_HUB_TB_CANONICAL_CONTACT_TRIANGLE_BRIDGES_2026_10_27.md. The actual unloaded C2 channel, complete C4 empty-hole and all-nine canonical slide give physical AC contact; the entire true unloaded D3 obstruction then applies. Full A4/T2/D3/B2/C2/L1, every original mean, circle mask, weight endpoint and all three extras remain under M6.B5L.RETAINED_CONTRACT."
+    },
+    {
+      "id": "M6.B5L.HOUSE.HUB.LTDB.S",
+      "from": "open",
+      "to": "checked",
+      "evidence": "CLOSED by HOUSE_HUB_TDB_COMPLETE_ATTACHMENT_EXCLUSION.md, with full direct root review REVIEW_HOUSE_HUB_TDB_COMPLETE_ROOT_2026_10_28.md, separate full direct triangle_bridges reviews, and complete parent review REVIEW_HOUSE_HUB_TDB_COMPLETE_JOIN_HEXAGON_2026_10_27.md. The exhaustive S/D sources retain A4/T2/D3/B2/C2/L1, every circle mask and original mean, all nine physical squares and the initial radius/Phi minimizer. The low-S owned return uses two explicit exact polynomial inequalities with all thirty positive Bernstein coefficients. The full original M6.B5L.RETAINED_CONTRACT is covered."
+    },
+    {
+      "id": "M6.B5L.HOUSE.HUB.LTDB.D",
+      "from": "open",
+      "to": "checked",
+      "evidence": "CLOSED by HOUSE_HUB_TDB_COMPLETE_ATTACHMENT_EXCLUSION.md, with full direct root review REVIEW_HOUSE_HUB_TDB_COMPLETE_ROOT_2026_10_28.md, separate full direct triangle_bridges reviews, and complete parent review REVIEW_HOUSE_HUB_TDB_COMPLETE_JOIN_HEXAGON_2026_10_27.md. The exhaustive S/D sources retain A4/T2/D3/B2/C2/L1, every circle mask and original mean, all nine physical squares and the initial radius/Phi minimizer. The low-S owned return uses two explicit exact polynomial inequalities with all thirty positive Bernstein coefficients. The full original M6.B5L.RETAINED_CONTRACT is covered."
+    },
+    {
+      "id": "M6.B6.PENTAGON.H2_D0.L013",
+      "from": "open",
+      "to": "checked",
+      "evidence": "CLOSED by INNER_PENTAGON_TWO_SPOKE_THREE_LOAD_013_COMPLETE_EXCLUSION.md, with full direct root review REVIEW_PARALLEL_OBLIQUE_BYPASS_AND_PENTAGON_013_ROOT_2026_10_28.md, separate parallel review REVIEW_PARALLEL_BYPASS_UNLOADED_THREE_FORCE_TRIANGLE_BRIDGES_2026_10_27.md, and full oblique/join review REVIEW_OBLIQUE_BYPASS_AND_INNER_PENTAGON_013_JOIN_TRIANGLE_BRIDGES_2026_10_27.md. Both actual bypass frames, all owners, side means, physical masks and original reflection124 are covered at the true A3/B2/V3/C2/X2/Y2 stars. All nine units and M6.B6.PENTAGON.LOAD_CONTRACT remain."
+    }
+  ],
+  "original_ids_preserved_in_order": true,
+  "accepted_sources_and_reviews": [
+    {
+      "path": "research/nine/HOUSE_ROOF_GENUINE_LEAF_TWO_UNLOADED_HUBS_EXCLUSION.md",
+      "sha256": "db32526e04e2101bb72e38a461ab6d7e82b4fbb35b7647b70cbcd4825796da3b",
+      "bytes": 27054
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_ROOF_TWO_UNLOADED_HUBS_ROOT_2026_10_27.md",
+      "sha256": "05579d7f8cb2a11ed0d2c18369cc316e942d0f3b59815c6c85f37d471323c339",
+      "bytes": 12547
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_ROOF_TWO_UNLOADED_HUBS_TRIANGLE_BRIDGES_2026_10_27.md",
+      "sha256": "98e82958c90a39712d25a63e1493235a5ab2b4fc2f33b25ed352769104581750",
+      "bytes": 10901
+    },
+    {
+      "path": "research/nine/TWO_GENUINE_LEAVES_AT_ONE_ROOT_AND_A_DISTINCT_GENUINE_ROOT_EXCLUSION.md",
+      "sha256": "c810d66cb1babc60dc759364692ca5ba8ef4cdfa78875c56d859ae7a58fc9783",
+      "bytes": 12168
+    },
+    {
+      "path": "research/nine/REVIEW_DOUBLE_GENUINE_ROOT_AND_DISTINCT_GENUINE_ROOT_ROOT_2026_10_27.md",
+      "sha256": "513e7c0c0bcbfdef267dc4459295bea50b37aff824b2a4bc92982ad99f14c345",
+      "bytes": 8866
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_GENUINE_LEAVES_AND_DISTINCT_ROOT_ROOTED_BLOCKS_2026_10_27.md",
+      "sha256": "c1a6a2d4839b9ac461865623d4608757ca134aea1a3c49b901d4a3fb799aa62c",
+      "bytes": 13217
+    },
+    {
+      "path": "research/nine/BOUNDARY_UNIT_THREE_NEAR_NEIGHBORS_FRESH_EXCLUSION.md",
+      "sha256": "ba49bbf678dfecdadbd120328de745253c8e5a45a5f7635d7044fc784179f156",
+      "bytes": 6263
+    },
+    {
+      "path": "research/nine/REVIEW_BOUNDARY_THREE_NEAR_NEIGHBORS_FRESH_ROOT_2026_10_27.md",
+      "sha256": "a5d5d5802353b08cd3247f8e2a2ae15e3a135f5fdfb6b79be3b21c5fd52ddfed",
+      "bytes": 5406
+    },
+    {
+      "path": "research/nine/REVIEW_BOUNDARY_THREE_NEAR_NEIGHBORS_FRESH_HEXAGON_2026_10_27.md",
+      "sha256": "8ae31e5cc651ab151a65df358fed675379801e1f514eda69a7d010e05771ca85",
+      "bytes": 4803
+    },
+    {
+      "path": "research/nine/FOUR_BODY_BLOCK_ZERO_APPLICATION_BRIDGE_FRESH_EXCLUSION.md",
+      "sha256": "5e9f44b9ae62fd5c81e4b7c347bdee06d6000ca2ecbe5cf8ac7afe8a5cd72c57",
+      "bytes": 20401
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BODY_ZERO_APPLICATION_BRIDGE_FRESH_ROOT_2026_10_27.md",
+      "sha256": "9dfdfdf582f415cd4918202d4f7265f20cc877541c77d242745ec5a25891b5f1",
+      "bytes": 11998
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BODY_ZERO_APPLICATION_BRIDGE_FRESH_HEXAGON_2026_10_27.md",
+      "sha256": "50dd37cf38c6dc0d6f31c90f0fe8ff1014764ac4195c9884f8f97724cf1bfd8c",
+      "bytes": 14877
+    },
+    {
+      "path": "research/nine/SHORT_ARM_DISTINCT_GENUINE_ROOT_LOW_CRITICAL_AND_TYPE_FRESH_EXCLUSION.md",
+      "sha256": "fa43c1e85ac5f290430c0440f2c36dca1333058df6a0b0fda272fa3d0469a729",
+      "bytes": 11696
+    },
+    {
+      "path": "research/nine/REVIEW_SHORT_ARM_DISTINCT_ROOT_LOW_CRITICAL_TYPES_ROOT_2026_10_27.md",
+      "sha256": "9d3a4a0ae6796f66fb6bfaf817852b5d2c611fd612c73ef1f1e15086a8dac0ba",
+      "bytes": 9437
+    },
+    {
+      "path": "research/nine/REVIEW_SHORT_ARM_DISTINCT_ROOT_LOW_CRITICAL_TYPES_HEXAGON_2026_10_27.md",
+      "sha256": "e045669a10fa1a1d41f86a350d910790339976da5d8401c028e09e30db4de39d",
+      "bytes": 10197
+    },
+    {
+      "path": "research/nine/FOUR_BODY_BLOCK_SAME_ROOT_LEAF_AND_SHORT_ARM_FRESH_EXCLUSION.md",
+      "sha256": "6dcf79aa2c3bce2adb7d5ce35d67ee1ac9522beb26e693af0a9c4bf920641071",
+      "bytes": 26524
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BODY_SAME_ROOT_LEAF_SHORT_ARM_FRESH_ROOT_2026_10_27.md",
+      "sha256": "654fb06acdc92112404992af81586c517d88bf950dc5cb40a9ef1fe7d83195c0",
+      "bytes": 12927
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BODY_SAME_ROOT_LEAF_SHORT_ARM_FRESH_HEXAGON_2026_10_27.md",
+      "sha256": "c83c49dba69d2a0a89ec09fa03b117955cdc2111021c710d011930229ed648a1",
+      "bytes": 18790
+    },
+    {
+      "path": "research/nine/SHORT_ARM_THREE_FORCE_TRIANGLE_PARENT_NEAR_ROOT_FRESH_EXCLUSION.md",
+      "sha256": "0347f02721a7457aabb90840535f4e6b67bd0a6955a23bb0836fe46a34f437b0",
+      "bytes": 10736
+    },
+    {
+      "path": "research/nine/REVIEW_SHORT_ARM_TRIANGLE_PARENT_NEAR_ROOT_FRESH_ROOT_2026_10_27.md",
+      "sha256": "b5660fa8f2e5691eec1adf0b9403a318a551369665b6baadbfe7c13579017521",
+      "bytes": 7589
+    },
+    {
+      "path": "research/nine/REVIEW_SHORT_ARM_TRIANGLE_PARENT_NEAR_ROOT_FRESH_HEXAGON_2026_10_27.md",
+      "sha256": "6366a7c122af9853355f7a69e0a64abdcb7cdf04198ac8921ba2115a67858483",
+      "bytes": 10606
+    },
+    {
+      "path": "research/nine/SHORT_ARM_THREE_FORCE_PARENT_ADJACENT_GENUINE_ROOT_FRESH_EXCLUSION.md",
+      "sha256": "5a6c6180c5fb22973352f4cb94a97daf43b38e1f25bb2756eb6366f2ddeccc1c",
+      "bytes": 13514
+    },
+    {
+      "path": "research/nine/REVIEW_SHORT_ARM_THREE_FORCE_ADJACENT_GENUINE_ROOT_FRESH_ROOT_2026_10_27.md",
+      "sha256": "b2b2b6e6e474507bd8c507ebb24c4b9de2a8c42f79b5c892f3e72da1bc5a2c6d",
+      "bytes": 10086
+    },
+    {
+      "path": "research/nine/REVIEW_SHORT_ARM_THREE_FORCE_ADJACENT_GENUINE_ROOT_FRESH_HEXAGON_2026_10_27.md",
+      "sha256": "79a2ad9b00ab4d2e1eab2dc4134a049f737a3b72bb9a62ffbbcd3e1d2b098e2e",
+      "bytes": 12233
+    },
+    {
+      "path": "research/nine/ONE_FOUR_BODY_BLOCK_THREE_BRIDGES_FRESH_ATTACHMENT_COVER.md",
+      "sha256": "fe7cd59246d06d4ac2386d15525c3e00a48cbed2829de88741d9344e9beb9ca0",
+      "bytes": 16525
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BODY_THREE_BRIDGES_SEVENTEEN_JOIN_ROOT_2026_10_27.md",
+      "sha256": "9e1e897cf1cd752b09406957ced31fc7297b481e5df0483efc98965ae4d663d1",
+      "bytes": 5960
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BODY_THREE_BRIDGES_SEVENTEEN_JOIN_HEXAGON_2026_10_27.md",
+      "sha256": "572113471a79a0999051323ee0d22860655b09c69d2400c6b0ec300c118dcac9",
+      "bytes": 6771
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BODY_THREE_BRIDGES_FRESH_COVER_ROOT_2026_10_27.md",
+      "sha256": "9482d829b1a44a2664177cd602baa8fef87f79764b65b8af9b8ca5f6444a337c",
+      "bytes": 7470
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BODY_THREE_BRIDGES_FRESH_COVER_HEXAGON_2026_10_27.md",
+      "sha256": "18f2d9cb0694ef9475783a94bc26c910be1e3073a39079292cfade14355697b5",
+      "bytes": 9572
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BRIDGE_NEGATIVE_BRIDGE_AND_SINGLE_TREE_ROOT_2026_10_27.md",
+      "sha256": "7b3d23987bcba9db71944c82c9b04501442d484c51388c7ddd65a2410e55d3e4",
+      "bytes": 15801
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BRIDGE_C4_LONG_ARM_OPPOSITE_LEAF_ROOT_2026_10_27.md",
+      "sha256": "23cba25df24327f386128e610097d9187c85fe621643c893c1fd6fcac7c389cb",
+      "bytes": 8288
+    },
+    {
+      "path": "research/nine/REVIEW_PUBLISHED_AND_FRESH_THREE_BRIDGES_RECONCILIATION_ROOT_2026_10_27.md",
+      "sha256": "6556fd9a1604632a30235375d53f64cd64a5e8be324e58ce35b1d2a4541e2274",
+      "bytes": 6658
+    },
+    {
+      "path": "research/nine/GENUINE_S_THREE_FORCE_ROOT_TWO_NEAR_NEIGHBORS_FRESH_DOMAIN.md",
+      "sha256": "5dba416ea7bfd8500daf6f33bcecd56521dd7013f2357b9442964d2c49edb480",
+      "bytes": 9841
+    },
+    {
+      "path": "research/nine/CLOSE_SUPPORT_PORTS_STRADDLING_NORMALS_FRESH_EXCLUSION.md",
+      "sha256": "f3c83072e2e09bc844bbd1a79813ab76b7979d008980ce9b2be07f25b85811d2",
+      "bytes": 3986
+    },
+    {
+      "path": "research/nine/REVIEW_GENUINE_S_TWO_NEAR_AND_CLOSE_PORTS_ROOT_2026_10_27.md",
+      "sha256": "9457b77e2f8ebc42892a8b7d2f9dd27be52ae6fe6266e762fc71fb5fa23ab539",
+      "bytes": 8049
+    },
+    {
+      "path": "research/nine/REVIEW_GENUINE_S_THREE_FORCE_TWO_NEAR_FRESH_DOMAIN_HEXAGON_2026_10_27.md",
+      "sha256": "2595b9050f97e3af62ef950f1c214a9f2f94fc0de8f0c4c26356f61d1587d1e5",
+      "bytes": 7638
+    },
+    {
+      "path": "research/nine/REVIEW_TRANSVERSE_OWNED_NEAR_ROOT_NORMAL_TRIANGLE_BRIDGES_2026_10_27.md",
+      "sha256": "855474649d7bfc34f58c324f7b7fa94fcc0ccca9e3a865c21eb870ba0682faf2",
+      "bytes": 3302
+    },
+    {
+      "path": "research/nine/REVIEW_CLOSE_SUPPORT_PORTS_STRADDLING_FRESH_ROOTED_BLOCKS_2026_10_27.md",
+      "sha256": "81ce471afe1f69d9f6aa0495750cbdcf0c1084e1c6f18d4731ad2ab7821f9b38",
+      "bytes": 3979
+    },
+    {
+      "path": "research/nine/THREE_LEAF_C4_OWNED_NEIGHBORS_FRESH_EXCLUSION.md",
+      "sha256": "1bdfc293d44dbf81c1cb40280b46e362ee878ceb5887ac8652093d11f2f4fd93",
+      "bytes": 17491
+    },
+    {
+      "path": "research/nine/THREE_LEAF_C4_PARALLEL_TILTED_NEIGHBORS_FRESH_EXCLUSION.md",
+      "sha256": "5f37a10ef2f445ded295779394e6057d0a64f0365e73abda2c1006d3047e66ab",
+      "bytes": 18432
+    },
+    {
+      "path": "research/nine/THREE_GENUINE_LEAVES_C4_COMPLETE_FRESH_EXCLUSION.md",
+      "sha256": "d4f7c0fbde651c76d1e8dd9b679e9acbcbfc154091cf0c38444c942a013d82e7",
+      "bytes": 9960
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_GENUINE_LEAVES_C4_FRESH_COMPLETE_ROOT_2026_10_27.md",
+      "sha256": "5fb827878405f6ad9feea9a2d6eb878fd25a3fdd7cfdfc15f5a619333a80b317",
+      "bytes": 11800
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_LEAF_C4_OWNED_NEIGHBORS_FRESH_ROOTED_BLOCKS_2026_10_27.md",
+      "sha256": "8c1e98c735100a97194ec0f2c488ecadc1da9ba86d80d780bfee01a614c1c84b",
+      "bytes": 8211
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_LEAF_C4_PARALLEL_TILTED_FRESH_HEXAGON_2026_10_27.md",
+      "sha256": "ca19a7af1c6282759f0ff514a6c6734e5a44627b27b7d6535ad8476e6e29d00b",
+      "bytes": 11320
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_GENUINE_LEAVES_C4_COMPLETE_FRESH_HEXAGON_2026_10_27.md",
+      "sha256": "0e841b32a1cfacfdee9da4b8f3b9c399a67eb8eef156d9c53af87e37c67c0299",
+      "bytes": 9421
+    },
+    {
+      "path": "research/nine/THREE_LEAF_DIAMOND_NONPARALLEL_AND_OWNED_PARALLEL_FRESH_EXCLUSION.md",
+      "sha256": "80bd0ad1a120592a0cc4c0509c12898f697094cc1fd7142b117b7f7477494357",
+      "bytes": 16825
+    },
+    {
+      "path": "research/nine/THREE_LEAF_DIAMOND_PARALLEL_ONE_TILTED_HUB_FRESH_EXCLUSION.md",
+      "sha256": "51ccbcfd5681d6be4e8ab6f5583769ea07e6a06101f031c5cfe6cba52f1df086",
+      "bytes": 14578
+    },
+    {
+      "path": "research/nine/THREE_LEAF_DIAMOND_PARALLEL_TWO_TILTED_HUBS_FRESH_EXCLUSION.md",
+      "sha256": "11530ae9f40f09ff0d6d868ed10b492fb99bd737e9f8769be829fda307bc452b",
+      "bytes": 19160
+    },
+    {
+      "path": "research/nine/THREE_GENUINE_LEAVES_DIAMOND_FRESH_COMPLETE_EXCLUSION.md",
+      "sha256": "ecdedce6af9577138972daff2bdae610dbe18279826853eb1424aa01fca492cf",
+      "bytes": 10168
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_GENUINE_LEAVES_DIAMOND_FRESH_COMPLETE_ROOT_2026_10_27.md",
+      "sha256": "049a851fb7214e87a1b5e3e379832111499d18bf78a38b7285115256e27edafb",
+      "bytes": 14455
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_LEAF_DIAMOND_NONPARALLEL_AND_OWNED_PARALLEL_FRESH_ROOTED_BLOCKS_2026_10_27.md",
+      "sha256": "576cdb2c46ad653bb5f7598c21eb54c5d9b1c47f394fb386dce2f646296f23d0",
+      "bytes": 8091
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_LEAF_DIAMOND_ONE_TILTED_FRESH_TRIANGLE_BRIDGES_2026_10_27.md",
+      "sha256": "4ae3a2f47d80333542491667c912c5664a9762050e83a4e505a68dd7596d3525",
+      "bytes": 10105
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_LEAF_DIAMOND_TWO_TILTED_FRESH_ROOTED_BLOCKS_2026_10_27.md",
+      "sha256": "391415d31fc52b96ac44bff0b42c664842c50a2217afe8c94a09c1c83decad4c",
+      "bytes": 9410
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_GENUINE_LEAVES_DIAMOND_FRESH_COMPLETE_JOIN_ROOTED_BLOCKS_2026_10_27.md",
+      "sha256": "0bd47b3dd7575ac4c1710f06ced5e8196a47bc2e13b02c5bf2d4410f4fe0a1da",
+      "bytes": 5343
+    },
+    {
+      "path": "research/nine/ONE_FOUR_BODY_BLOCK_THREE_BRIDGES_COMPLETE_JOIN.md",
+      "sha256": "18873439b72582bda3ae79550d316b87236bc3d43983d6805381b8596354cca8",
+      "bytes": 10741
+    },
+    {
+      "path": "research/nine/REVIEW_ONE_FOUR_BODY_THREE_BRIDGES_COMPLETE_JOIN_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "85292f2225a7b595008a311faff14592f22182043e9b753afb80aa6cc4e0e9b5",
+      "bytes": 17691
+    },
+    {
+      "path": "research/nine/REVIEW_ONE_FOUR_BLOCK_THREE_BRIDGES_COMPLETE_JOIN_ROOTED_BLOCKS_2026_10_28.md",
+      "sha256": "017079f9663b39056fb409129205c85e9b1557dcd4f6ab97f19c4326f1e877ce",
+      "bytes": 17050
+    },
+    {
+      "path": "research/nine/REVIEW_ONE_FOUR_BODY_THREE_BRIDGES_INTEGRATION_ROOT_2026_10_28.md",
+      "sha256": "07f902609465c235142be1f1f01ed9d25e35f06d53161c66f7ec42f34c88d78a",
+      "bytes": 2673
+    },
+    {
+      "path": "research/nine/HOUSE_HUB_TB_CANONICAL_CONTACT_EXCLUSION.md",
+      "sha256": "0a23b1dc8db0910147077ec114ebd4e8db40d08b6166f69c8400c5f7b6192d6f",
+      "bytes": 9349
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_HUB_TB_CANONICAL_CONTACT_ROOT_2026_10_28.md",
+      "sha256": "7af1f1a43fd5e703ce6468e5ed68cbceb8305cdc278e980ac4bb6f9cc1b5ee37",
+      "bytes": 7392
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_HUB_TB_CANONICAL_CONTACT_TRIANGLE_BRIDGES_2026_10_27.md",
+      "sha256": "f72805162088a6024a6e4818106cbcdd7214b2cf1425f4fa32fb3143e149f7e2",
+      "bytes": 10207
+    },
+    {
+      "path": "research/nine/PARALLEL_BYPASS_AT_UNLOADED_THREE_FORCE_ENDPOINT_EXCLUSION.md",
+      "sha256": "0643b1ea0c6cd66724f2ad130c9cbd3fb2ffdbb53979e43170d7b58b2023e3be",
+      "bytes": 10556
+    },
+    {
+      "path": "research/nine/OBLIQUE_BYPASS_AT_UNLOADED_THREE_FORCE_ENDPOINT_EXCLUSION.md",
+      "sha256": "95cdc83959d7a93b5788c9678d0c8bda5f2f0298df27a9c1d4920a4c9cf126ee",
+      "bytes": 17292
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_TWO_SPOKE_THREE_LOAD_013_COMPLETE_EXCLUSION.md",
+      "sha256": "178c40e8dbb0cccd9b5ce8fd04dde9f1367007dda944736bbcfe13f777ad790a",
+      "bytes": 8851
+    },
+    {
+      "path": "research/nine/REVIEW_PARALLEL_BYPASS_UNLOADED_THREE_FORCE_TRIANGLE_BRIDGES_2026_10_27.md",
+      "sha256": "b55b55650640951b94d100b607b9e7c46be1512b343ed28e8a5c797c85a353dc",
+      "bytes": 9564
+    },
+    {
+      "path": "research/nine/REVIEW_OBLIQUE_BYPASS_AND_INNER_PENTAGON_013_JOIN_TRIANGLE_BRIDGES_2026_10_27.md",
+      "sha256": "279562e2dd6e6f83987a8efbffe21d86b52599f96f19dfde13c12cc2e74adb33",
+      "bytes": 14199
+    },
+    {
+      "path": "research/nine/REVIEW_PARALLEL_OBLIQUE_BYPASS_AND_PENTAGON_013_ROOT_2026_10_28.md",
+      "sha256": "026d2c05b157d98d912cb86e8a1cc270d8a24996885229f9c57b3cbf7df25328",
+      "bytes": 10604
+    },
+    {
+      "path": "research/nine/HOUSE_HUB_TDB_S_ROOT_COMPLETE_DOMAIN.md",
+      "sha256": "f9461dd33f28e0419fd023583ecff96c95d7076b53d47b8cc6236ab9ab7c4dec",
+      "bytes": 17653
+    },
+    {
+      "path": "research/nine/HOUSE_HUB_TDB_ALIGNED_LOW_S_EXCLUSION.md",
+      "sha256": "250e0626130e6259442873113e9ae3b4c7085c43630dec864ee25a235a7482d4",
+      "bytes": 14531
+    },
+    {
+      "path": "research/nine/OWNED_SOUTH_BOUNDARY_CHANNEL_HEIGHT_BOUND.md",
+      "sha256": "550cb41f99ecb61408fa71272eb45dc9461cfa50aebf1cf2be4d7b533ddb5f7d",
+      "bytes": 4853
+    },
+    {
+      "path": "research/nine/HOUSE_HUB_TDB_S_COMPLETE_EXCLUSION.md",
+      "sha256": "458665f78aa025a44bb3fa989481be2d8fe5f0446a17409435490b8af1188434",
+      "bytes": 4801
+    },
+    {
+      "path": "research/nine/HOUSE_HUB_TDB_D_COMPLETE_EXCLUSION.md",
+      "sha256": "29c7bd6db5e8ac60631f9669a1446df959e33d9ed887819b48128396c0a957f7",
+      "bytes": 11792
+    },
+    {
+      "path": "research/nine/HOUSE_HUB_TDB_COMPLETE_ATTACHMENT_EXCLUSION.md",
+      "sha256": "5b0300286fd5aa65a4e968a06aedce20d4b783018aa10043cb4289f02f4619ff",
+      "bytes": 5670
+    },
+    {
+      "path": "research/nine/certificates/house_tdb_owned_south_channel_height_check.py",
+      "sha256": "589814e33139f431e222c9e8da16291fb3893998f27d6e64df6d2d9fb72bf005",
+      "bytes": 2877
+    },
+    {
+      "path": "research/nine/certificates/review_house_tdb_owned_south_channel_height_independent.py",
+      "sha256": "a228c00c7374fb1ced950b015597062b567ad7bd0bf3e3a119a6bb86bd88bd20",
+      "bytes": 4125
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_HUB_TDB_S_ROOT_DOMAIN_TRIANGLE_BRIDGES_2026_10_27.md",
+      "sha256": "6720c8c09e46051b1a6d6b4a631f16ebec111107f565d10172ff9cf4cb105d10",
+      "bytes": 10391
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_HUB_TDB_LOW_SCALAR_AND_COMPLETE_S_TRIANGLE_BRIDGES_2026_10_27.md",
+      "sha256": "8ff8386d21ab4555f7540058cde686fe584a88e82238b59c9a3a17590b6d5b65",
+      "bytes": 13024
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_HUB_TDB_D_COMPLETE_TRIANGLE_BRIDGES_2026_10_27.md",
+      "sha256": "cd1d562356fe2dc437221ba6c445bf2faa200b610126dc99176ad8813b665ff2",
+      "bytes": 9580
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_HUB_TDB_COMPLETE_JOIN_HEXAGON_2026_10_27.md",
+      "sha256": "1eef8ba6dce28e0a362ff06475daa8c3d0eab1895ded2d141eedb009262d6f45",
+      "bytes": 9303
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_HUB_TDB_COMPLETE_ROOT_2026_10_28.md",
+      "sha256": "458f4342e6b32acdb36e57ddd9ec23f7933797cdccbbbaebccf1d3eaaa051eef",
+      "bytes": 18476
+    },
+    {
+      "path": "research/nine/HOUSE_HUB_TC_D_COMPLETE_EXCLUSION.md",
+      "sha256": "4dee13debeaab5009adec437202f7697e3d5fc53515524aa1f8610a3af39397b",
+      "bytes": 25955
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_HUB_TC_D_COMPLETE_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "8d132348216554e089cf5a3106983feafe778e56f7117fcb995058eff84ed7f0",
+      "bytes": 17510
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_HUB_TC_D_COMPLETE_ROOT_2026_10_28.md",
+      "sha256": "34041598838ca9ab3d5be54c4c389decbacb0ed5ee75d42e0e3cd0cab10b51a2",
+      "bytes": 14049
+    }
+  ],
+  "metadata": [
+    {
+      "path": "research/nine/CYCLIC_CELL_LEDGER.md",
+      "base_sha256": "905bc314231cafb4a239242d30fdd4503f4cefd3bc01332ab8439ce0b0abb664",
+      "sha256": "fa4f94582f04113154271eaff24be307e6bfdef8df67ccd56ff7163eee62ea50",
+      "bytes": 211370
+    },
+    {
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "base_sha256": "c6fd513602e15bb6c46e5fed1d701002f0934bd8619787cd7b897b506a5c0ab2",
+      "sha256": "7468f0b86f5274dc77e9ea7454533823afb5b82b726a775a9a4712c5fe1b7bce",
+      "bytes": 926872
+    },
+    {
+      "path": "research/nine/HANDOFF_PR11_2026_10_25.md",
+      "base_sha256": "a532fa998616fa09a034fb8790b57727b926efa824a7ec770a3c4e4d4e46d9ae",
+      "sha256": "2d9c4656d27d0466f5f5ea8ebd33b678a607c2a31f71d544e401b34f160b4afa",
+      "bytes": 128786
+    },
+    {
+      "path": "research/nine/HANDOFF_PR11_2026_10_27_CURRENT.md",
+      "base_sha256": "e82c44bcd2abcf30d5b4c962812b5361f17d858a849e33bffc3b8f2f0039b7df",
+      "sha256": "056b10093b595894c09cfa2318bb143c2e21f7d10b95d612c91666881d976f26",
+      "bytes": 28285
+    },
+    {
+      "path": "research/nine/TWO_LOAD_PROGRESS.md",
+      "base_sha256": "7ef6676186b9b598d3f372d3a8460b72fa1bda6326a30bd06ecdef9db5c05044",
+      "sha256": "8d569dcd3cac7518dcac0215528d3400b5e1e15ecd32b27a5f6df617444eacaa",
+      "bytes": 544599
+    }
+  ],
+  "open_coarse_cells": [
+    "C1.5.b1",
+    "C1.5.b2",
+    "C1.5.b3",
+    "C1.5.b4",
+    "C1.6.b0",
+    "C1.6.b1",
+    "C1.6.b2",
+    "C1.6.b3",
+    "C1.7.b0",
+    "C1.7.b1",
+    "C1.7.b2",
+    "C1.8.b0",
+    "C1.8.b1",
+    "C1.9.b0",
+    "C2.35.b0",
+    "C2.35.b1",
+    "C2.35.b2",
+    "C2.36.b0",
+    "C2.36.b1",
+    "C2.37.b0",
+    "C2.44.b2",
+    "C2.45.b0",
+    "C2.45.b1",
+    "C2.46.b0",
+    "C2.55.b0"
+  ],
+  "not_claimed": [
+    "unrestricted sharp inequality",
+    "all original equality packings",
+    "older complete transitive prerequisite audit",
+    "Lean integration",
+    "whole H2_D0.L1234",
+    "house hub-TC S companion",
+    "any C2.44.b2 whole family",
+    "successful remote mutation"
+  ],
+  "constraints": [
+    "all nine actual units",
+    "true positive degrees and all forces",
+    "original selected normals and means",
+    "physical circle masks and individual zero weights",
+    "PR draft",
+    "no Lean compilation",
+    "no CI or workflow dispatch",
+    "no merge",
+    "future commits require skip-ci message, expected-head lease and exact committed readback"
+  ]
+}

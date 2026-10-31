@@ -1,0 +1,86 @@
+{
+  "date": "2026-10-28",
+  "reviewer": "two_blocks independent of six_body",
+  "verdict": "PASS unchanged, complete uniform theorem and exact partial original-family reduction",
+  "source": {
+    "path": "/workspace/scratch/7d553350ce2a/six_body/UNLOADED_OPPOSED_MOMENT_STAR_AND_LOWER_HOUSE_TDC_D_SMALL_SUPPORT_REDUCTION.md",
+    "sha256": "008acc8485e591b34604bf3e0b0cdcb03b7220aa249fc8e49552a065770ca129"
+  },
+  "review": {
+    "path": "/workspace/scratch/7d553350ce2a/two_blocks/REVIEW_UNLOADED_OPPOSED_STAR_AND_LOWER_HOUSE_TDC_D_INDEPENDENT_2026_10_28.md",
+    "sha256": "a4a1293b8da5c11e325075576398106355d782e345c0afe0c4fc22ed06a9312f"
+  },
+  "author_record": {
+    "path": "/workspace/scratch/7d553350ce2a/six_body/LOWER_HOUSE_TDC_D_SMALL_SUPPORT_REDUCTION_EXACT_RECORD_2026_10_28.json",
+    "sha256": "b1aa75ac730c505eb40e52416de32d8264f6fe4a1b2c5c09da6fcafbb4b9f73a"
+  },
+  "direct_dependency_checks": [
+    {
+      "filename": "D_LEAF_ONE_CLEAR_COMMON_NEIGHBOR_BOUNDARY_REMAINDER_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/D_LEAF_ONE_CLEAR_COMMON_NEIGHBOR_BOUNDARY_REMAINDER_EXCLUSION.md",
+      "sha256": "4e4e6e09bcb61f8e9a4de8cc75341b99914136369f807936c0351c1aff8f85b5",
+      "match": true
+    },
+    {
+      "filename": "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+      "match": true
+    },
+    {
+      "filename": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "match": true
+    },
+    {
+      "filename": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "match": true
+    },
+    {
+      "filename": "D_LEAF_SHALLOW_SIDE_BOUNDARY_FULL_WINDOW_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/D_LEAF_SHALLOW_SIDE_BOUNDARY_FULL_WINDOW_EXCLUSION.md",
+      "sha256": "ca7c3f4b32e45fc0c118bd766f438fce3019b0b44220604e33bc842a504ac670",
+      "match": true
+    },
+    {
+      "filename": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "match": true
+    }
+  ],
+  "independently_recomputed_exact_arithmetic": {
+    "center_upper_radius_reserve": "31/57600",
+    "point_transverse_squared_lower": "3479/3600",
+    "center_transverse_squared_upper": "181/3600",
+    "sqrt_3479_lower_58_reserve": "115",
+    "sqrt_181_upper_14_reserve": "15",
+    "cap_distance_squared_reserve": "17/450",
+    "sqrt2_upper_57_40_reserve": "49/1600",
+    "radius_upper_133_64_reserve": "9/4096",
+    "sqrt2_lower_140_99_reserve": "2/9801",
+    "r_upper_2_3_reserve": "17/6336",
+    "thin_normal_vertical_reserve": "19/200",
+    "three_epsilon_upper_endpoint": "1/20"
+  },
+  "full_mathematical_checks": [
+    "positive own-frame construction using proper rotations",
+    "all exceptional normal quadrants",
+    "full far-interval projection feature cover",
+    "lower-right support linearity on actual vertex cone",
+    "near-corner proper quarter-turn and exceptional Southwest necessity",
+    "whole near-corner vertical contradiction including epsilon=0 exclusion",
+    "literal B3,A3,D3,T2,C2,L1 and full load set T,D,C",
+    "all nonzero private moments with actual radial support proof",
+    "one compatible cycle/path embedding with compact clearance",
+    "complete private source/sink and A moment polarity argument",
+    "strict high-radius and surviving h=epsilon,a=epsilon endpoints",
+    "no missing A-C contact, physical A clearance, or disk-meeting assertion"
+  ],
+  "original_fine_still_open": "M6.B5L.HOUSE.LOWER.LTDC.D",
+  "fine_delta": 0,
+  "coarse_delta": 0
+}

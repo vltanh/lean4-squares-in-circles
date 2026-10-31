@@ -1,0 +1,102 @@
+{
+  "status": "accepted local hand theorems; global theorem open",
+  "parent_commit": "192d5ab21aae04c859eb632614db272c52dce542",
+  "parent_tree": "fe46c0c6a7c10f67fbd8eeee23eb5c624f223d74",
+  "sources_and_reviews": {
+    "THREE_GENUINE_ROOT_TRIANGLE_PARALLEL_LARGE_TILT_PRIVATE_RETURN_EXCLUSION_2026_10_29.md": {
+      "sha256": "eb2819a5002855494837e3afd565cb1108e49c40e50f297053a8647294ca703c",
+      "git_blob": "c8bfef27140d6f83aba6feb66d6a303899307c45"
+    },
+    "REVIEW_PARALLEL_ROOT_TRIANGLE_LARGE_TILT_COMPLETE_ROOT_2026_10_29.md": {
+      "sha256": "86bb2d66133fff94f1fed9b52bc4b2f5a3828b75e957e79b002ae88783586118",
+      "git_blob": "5f83bc6408faa1fbfce91b236def94e2d0dc146f"
+    },
+    "BALANCED_MIDDLE_TWO_SMALL_NORTH_SOUTH_ROOTS_FORCE_FREE_NINE_UNIT_EXCLUSION_2026_10_29.md": {
+      "sha256": "c3978aecc0dbe3f3ff0645f224d7d8e9f18d9353059862d3618deb7ec451afbf",
+      "git_blob": "283b0c5907fc3cc3559e4729f6baa0eb3307d465"
+    },
+    "REVIEW_BALANCED_MIDDLE_SMALL_NORTH_SOUTH_CAPACITY_ROOT_TRIANGLES_2026_10_29.md": {
+      "sha256": "5bcabf309eb5cf8c691eded6db6fd356f56a0a2e860aab7c4ae27c1813ef1d06",
+      "git_blob": "be24f61da8c262c4c3841c4193175efc76a1a83f"
+    },
+    "ADOPTION_PARALLEL_LARGE_ROOT_TRIANGLES_AND_BALANCED_CAPACITY_2026_10_29.md": {
+      "sha256": "bffba8d2f8b62858bd345268b7604f6a625766b3aedfa02ebc37b965b516b489",
+      "git_blob": "7b0c8f40f6f71cb1117ced8c45cdd536a4661094"
+    }
+  },
+  "fine_count": 2513,
+  "fine_checked": 2373,
+  "coarse_count": 58,
+  "coarse_closed": 36,
+  "fine_flag_sha256": "feda561e85056c0bae48f2f33b8df7814c44d983ca4f1cc3e422391525106f1f",
+  "coarse_flag_sha256": "99e0b788a73379a719f331d43581ef02c76ea2e8622a8c8f43bbf21e9ea241bd",
+  "metadata": {
+    "CYCLIC_CELL_LEDGER.md": {
+      "before_sha256": "5ffb4413b448134035e71081de970aaca072d6b5d5d8dc862057af7120483260",
+      "after_sha256": "a1f23b2c72c95a28bc336609cf4843e975d91898b225e51c9c93c91400ab2ebf",
+      "git_blob": "c574c8a19b6b60fc1d81ca6310bf1f990cbb0160",
+      "header_reversible": true
+    },
+    "DEEP_GATED_ROADMAP.md": {
+      "before_sha256": "c2b0b2cd5e91d4d6b52f0718fc3d54e6e1d08a18537da0e3f53a1c5f7238ad74",
+      "after_sha256": "bd0d89a14d622717b79fea999c0a17052da74bf9e6ce12ed0754e9350a883428",
+      "git_blob": "674c14684ca1d51d6f53e6e23d806bcd8c4e395e",
+      "header_reversible": true
+    },
+    "README.md": {
+      "before_sha256": "39641b68e6ed292cf85d3874209926d415f8114ccad409dd4a5c97db93289fe2",
+      "after_sha256": "9869df1c433bfd5bb46250c89954af6cbe65231f604b36dd42001dd8c4721d97",
+      "git_blob": "aa872fe2e310c22c071555646cc359ccd31038da",
+      "header_reversible": true
+    },
+    "ROADMAP.md": {
+      "before_sha256": "857b3760af73f3c46d8ccf0a5cb160019c81743fd64b39c1be230fd65a063ae7",
+      "after_sha256": "6522a13772759a7eb4ada3f2dbe798a12b6286cf952e4d97cbd18869c552dd7e",
+      "git_blob": "dce815695006d165a048b777f823833b0401a936",
+      "header_reversible": true
+    },
+    "HANDOFF_PR11_2026_10_28_CURRENT.md": {
+      "before_sha256": "ac8f3b1ab5c3fff8ae4c417904f4dc4b11911cf406c4c0c31454c2d017d6f47e",
+      "after_sha256": "ed51d11da86c5f2fc2f0e5b0e5b94a73db9a0295272d79518cb097ac2bab68f5",
+      "git_blob": "0d1add3e6526f75d3f6b5cd2f7ba3fd96ab22c00",
+      "header_reversible": true
+    }
+  },
+  "exact_rational_corroboration": {
+    "one_tilt_refinement": "137/1188",
+    "cos_small_frame": "2371/4000000",
+    "sin_one_ninth_one_tilt": "12839/174960",
+    "sin_one_ninth_two_tilt": "1453/21870",
+    "large_two_refined_u": "991/89910",
+    "near_p_bound": "1/900",
+    "boundary_center_radical": "1/144",
+    "far_actual_point_radius": "663/6400",
+    "west_center_vertical": "37/30000",
+    "west_leaf_center_cap": "2527/3600",
+    "northwest_first_coordinate": "17/7500",
+    "northwest_center_cap": "179/3600",
+    "external_slope": "733463/3533463000",
+    "one_support_to_three_fifths": "7/180",
+    "two_support_to_three_fifths": "23/600",
+    "far_neighbor_support": "7/12"
+  },
+  "publication_allowlist": [
+    "research/nine/THREE_GENUINE_ROOT_TRIANGLE_PARALLEL_LARGE_TILT_PRIVATE_RETURN_EXCLUSION_2026_10_29.md",
+    "research/nine/REVIEW_PARALLEL_ROOT_TRIANGLE_LARGE_TILT_COMPLETE_ROOT_2026_10_29.md",
+    "research/nine/BALANCED_MIDDLE_TWO_SMALL_NORTH_SOUTH_ROOTS_FORCE_FREE_NINE_UNIT_EXCLUSION_2026_10_29.md",
+    "research/nine/REVIEW_BALANCED_MIDDLE_SMALL_NORTH_SOUTH_CAPACITY_ROOT_TRIANGLES_2026_10_29.md",
+    "research/nine/ADOPTION_PARALLEL_LARGE_ROOT_TRIANGLES_AND_BALANCED_CAPACITY_2026_10_29.md",
+    "research/nine/PARALLEL_LARGE_ROOT_TRIANGLES_AND_BALANCED_CAPACITY_CHECKPOINT_2026_10_29.json",
+    "research/nine/CYCLIC_CELL_LEDGER.md",
+    "research/nine/DEEP_GATED_ROADMAP.md",
+    "research/nine/README.md",
+    "research/nine/ROADMAP.md",
+    "research/nine/HANDOFF_PR11_2026_10_28_CURRENT.md"
+  ],
+  "limits": [
+    "No original flag changes",
+    "Unbalanced middle slider remains at this checkpoint",
+    "No Lean/Lake or CI",
+    "No global selector audit or equality closure"
+  ]
+}

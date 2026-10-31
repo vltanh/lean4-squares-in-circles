@@ -1,0 +1,24 @@
+# Hand-proof reviews — 2026-10-31
+
+**Historical review manuscripts, not current gate statuses.** 6 original review documents are preserved unchanged (same Git blobs) in this date folder. Use [the central ledger](../../PROGRESS.md) for the actual open/closed state. Review texts mention main source filenames relative to `research/nine/`; the original proof manuscripts remain there. No audit or proof has been rerun in this file reorganization.
+
+[Review archive](../README.md) · [Research directory map](../../ORGANIZATION.md)
+
+
+## A
+
+- [ANNULAR GLOBAL ANTIRADIAL ACCESS ENDBLOCK 2026 10 31](REVIEW_ANNULAR_GLOBAL_ANTIRADIAL_ACCESS_ENDBLOCK_2026_10_31.md)
+
+## E
+
+- [ENDBLOCK GLOBAL CONTACT MARGIN AND COMMON SIDE ANNULAR 2026 10 31](REVIEW_ENDBLOCK_GLOBAL_CONTACT_MARGIN_AND_COMMON_SIDE_ANNULAR_2026_10_31.md)
+
+## G
+
+- [GLOBAL UNLOADED TREE CUT BUDGET ROOT 2026 10 31](REVIEW_GLOBAL_UNLOADED_TREE_CUT_BUDGET_ROOT_2026_10_31.md)
+
+## P
+
+- [PHYSICAL CAP NEGATIVE HALF AND EQUALITY ENDBLOCK 2026 10 31](REVIEW_PHYSICAL_CAP_NEGATIVE_HALF_AND_EQUALITY_ENDBLOCK_2026_10_31.md)
+- [PHYSICAL CAP POSITIVE NORMAL AND RECTANGLE REDUCTION INDEPENDENT 2026 10 31](REVIEW_PHYSICAL_CAP_POSITIVE_NORMAL_AND_RECTANGLE_REDUCTION_INDEPENDENT_2026_10_31.md)
+- [PHYSICAL CAP REDUCTION AND CHAIN APPLICATION ANNULAR 2026 10 31](REVIEW_PHYSICAL_CAP_REDUCTION_AND_CHAIN_APPLICATION_ANNULAR_2026_10_31.md)

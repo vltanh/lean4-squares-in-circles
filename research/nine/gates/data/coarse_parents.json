@@ -1,0 +1,1001 @@
+{
+  "version": 2,
+  "kind": "coarse_parents",
+  "refinement_policy": "One child is a scoped proposed proof obligation, not an independently accepted new original fine ID. Historical completed proper subfeatures are excluded from this plan.",
+  "leaves": [
+    {
+      "id": "P-C1-5-b2-FOREST",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.5.b2"
+      ],
+      "scope": "Cyclic block of size 5 with 2 genuine bridges, all rooted attachment-forest placements",
+      "task": "Classify the surviving original rooted S/D leaf placements without shortening the cyclic block's true degrees",
+      "done_when": "Produce a finite exhaustive original attachment/owner cover with each prior already closed root feature cited",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C1-5-b2-STRESS",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.5.b2"
+      ],
+      "scope": "Same 5-block, 2-bridge original graph with every positive/zero circle load and actual side mean",
+      "task": "Exclude the remaining full root/private stress star configurations or prove a single sharp necessary geometry",
+      "done_when": "No automatic transfer of force equations from an unbridged or physically unique tip",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C1-5-b2-EXTRAS",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.5.b2"
+      ],
+      "scope": "Same original surviving core and 2 additional physically real squares",
+      "task": "Derive a joint whole-square capacity, routing both central and exterior completions",
+      "done_when": "All 9 original units and their mutual SAT separations retained",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C1-6-b1-FOREST",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.6.b1"
+      ],
+      "scope": "Cyclic block of size 6 with 1 genuine bridges, all rooted attachment-forest placements",
+      "task": "Classify the surviving original rooted S/D leaf placements without shortening the cyclic block's true degrees",
+      "done_when": "Produce a finite exhaustive original attachment/owner cover with each prior already closed root feature cited",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C1-6-b1-STRESS",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.6.b1"
+      ],
+      "scope": "Same 6-block, 1-bridge original graph with every positive/zero circle load and actual side mean",
+      "task": "Exclude the remaining full root/private stress star configurations or prove a single sharp necessary geometry",
+      "done_when": "No automatic transfer of force equations from an unbridged or physically unique tip",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C1-6-b1-EXTRAS",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.6.b1"
+      ],
+      "scope": "Same original surviving core and 2 additional physically real squares",
+      "task": "Derive a joint whole-square capacity, routing both central and exterior completions",
+      "done_when": "All 9 original units and their mutual SAT separations retained",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C1-6-b2-FOREST",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.6.b2"
+      ],
+      "scope": "Cyclic block of size 6 with 2 genuine bridges, all rooted attachment-forest placements",
+      "task": "Classify the surviving original rooted S/D leaf placements without shortening the cyclic block's true degrees",
+      "done_when": "Produce a finite exhaustive original attachment/owner cover with each prior already closed root feature cited",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C1-6-b2-STRESS",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.6.b2"
+      ],
+      "scope": "Same 6-block, 2-bridge original graph with every positive/zero circle load and actual side mean",
+      "task": "Exclude the remaining full root/private stress star configurations or prove a single sharp necessary geometry",
+      "done_when": "No automatic transfer of force equations from an unbridged or physically unique tip",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C1-6-b2-EXTRAS",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.6.b2"
+      ],
+      "scope": "Same original surviving core and 1 additional physically real square",
+      "task": "Derive a joint whole-square capacity, routing both central and exterior completions",
+      "done_when": "All 9 original units and their mutual SAT separations retained",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C1-6-b3-TYPE_I",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.6.b3"
+      ],
+      "scope": "Three genuine leaves, disconnected private roots, original Type-I clear Q and loaded P; both optional original AB/BC edges retained",
+      "task": "Exclude the complete Type-I original source/torque and all positive/private degrees",
+      "done_when": "No use of the closed connected-private B3 theorem outside its exact middle star",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C1-6-b3-TYPE_II",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.6.b3"
+      ],
+      "scope": "Three genuine leaves, disconnected clear Q with loaded P and N, AB absent and BC optional",
+      "task": "Exclude the complete independent Type-II original force/torque and all true clear/private stars",
+      "done_when": "Both BC-present/absent and every actual contact mean retained",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C1-6-b3-WEAK",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.6.b3"
+      ],
+      "scope": "Survivors of disconnected Type-I or Type-II with physical zero weights or contact-owner ties",
+      "task": "Prove a single original-domain limit/owner cover for these disconnected branches",
+      "done_when": "A complete case join respecting original root/star and 9 actual bodies",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C1-7-b0-ONE_RR",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.7.b0"
+      ],
+      "scope": "Entire short/simple C7 with exactly one genuine RR transmitter and two actual extras",
+      "task": "Complete the U/T critical-near joint center and side-pocket capacity after legitimate RR promotion",
+      "done_when": "One original same-nine contradiction for all side-owner and physical mask possibilities",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C1-7-b0-ZERO_RR",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.7.b0"
+      ],
+      "scope": "Entire short/simple C7 with zero genuine RR transmitter and two actual extras",
+      "task": "Complete the non-RR all-loaded/isolated-transmitter support and whole-pocket coupling",
+      "done_when": "Do not infer a long channel or apply the closed two-RR theorem",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C1-7-b0-CHORD",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.7.b0"
+      ],
+      "scope": "Seven-body biconnected positive graph with circle-clear branching/chords, including added edges at boundary marks",
+      "task": "Exclude all non-simple graph/load/contact features under their full original degrees",
+      "done_when": "The original connectedness and every positive chord are retained",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C1-7-b0-COMP",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.7.b0"
+      ],
+      "scope": "Any surviving seven-body positive core and two other physical squares",
+      "task": "Prove a joint central/exterior allocation excluding both extras below Q",
+      "done_when": "Physical clear is distinct from unstressed; all 9 squares retained",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C1-7-b1-BRANCH",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.7.b1"
+      ],
+      "scope": "Order-7 biconnected block with 1 bridges, any physical circle-clear vertex of additional true degree",
+      "task": "Reduce or exclude every residual non-simple cycle/chord/branching block geometry",
+      "done_when": "The simple marked m≤7 cycle theorem applies only where every internal true degree is two",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C1-7-b1-LOAD",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.7.b1"
+      ],
+      "scope": "Same order-7 original block with arbitrary physical corner mask and positive endblock loads",
+      "task": "Prove one uniform force/torque/angular obstruction across the remaining genuine branching load arrangements",
+      "done_when": "Neither zero physical multiplier nor a tiny positive edge erases an actual contact",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C1-7-b1-BRIDGE",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.7.b1"
+      ],
+      "scope": "Order-7 block with all 1 positive bridge edges and actual S/D leaves",
+      "task": "Close the extra bridge-root side and loaded-degree alternatives at complete original root stars",
+      "done_when": "No bridge is discarded when simplifying the outer face",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C1-7-b1-EXTRA",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.7.b1"
+      ],
+      "scope": "Same original core with 1 physical completion square",
+      "task": "Prove the joint exterior/inner packing capacity under arbitrary orientation",
+      "done_when": "Use the same original nine physical squares and account for every nonstress contact",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C1-7-b2-BRANCH",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.7.b2"
+      ],
+      "scope": "Order-7 biconnected block with 2 bridges, any physical circle-clear vertex of additional true degree",
+      "task": "Reduce or exclude every residual non-simple cycle/chord/branching block geometry",
+      "done_when": "The simple marked m≤7 cycle theorem applies only where every internal true degree is two",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C1-7-b2-LOAD",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.7.b2"
+      ],
+      "scope": "Same order-7 original block with arbitrary physical corner mask and positive endblock loads",
+      "task": "Prove one uniform force/torque/angular obstruction across the remaining genuine branching load arrangements",
+      "done_when": "Neither zero physical multiplier nor a tiny positive edge erases an actual contact",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C1-7-b2-BRIDGE",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.7.b2"
+      ],
+      "scope": "Order-7 block with all 2 positive bridge edges and actual S/D leaves",
+      "task": "Close the extra bridge-root side and loaded-degree alternatives at complete original root stars",
+      "done_when": "No bridge is discarded when simplifying the outer face",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C1-8-b0-BRANCH",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.8.b0"
+      ],
+      "scope": "Order-8 biconnected block with 0 bridges, any physical circle-clear vertex of additional true degree",
+      "task": "Reduce or exclude every residual non-simple cycle/chord/branching block geometry",
+      "done_when": "The simple marked m≤7 cycle theorem applies only where every internal true degree is two",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C1-8-b0-LOAD",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.8.b0"
+      ],
+      "scope": "Same order-8 original block with arbitrary physical corner mask and positive endblock loads",
+      "task": "Prove one uniform force/torque/angular obstruction across the remaining genuine branching load arrangements",
+      "done_when": "Neither zero physical multiplier nor a tiny positive edge erases an actual contact",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C1-8-b0-EXTRA",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.8.b0"
+      ],
+      "scope": "Same original core with 1 physical completion square",
+      "task": "Prove the joint exterior/inner packing capacity under arbitrary orientation",
+      "done_when": "Use the same original nine physical squares and account for every nonstress contact",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C1-8-b1-BRANCH",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.8.b1"
+      ],
+      "scope": "Order-8 biconnected block with 1 bridges, any physical circle-clear vertex of additional true degree",
+      "task": "Reduce or exclude every residual non-simple cycle/chord/branching block geometry",
+      "done_when": "The simple marked m≤7 cycle theorem applies only where every internal true degree is two",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C1-8-b1-LOAD",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.8.b1"
+      ],
+      "scope": "Same order-8 original block with arbitrary physical corner mask and positive endblock loads",
+      "task": "Prove one uniform force/torque/angular obstruction across the remaining genuine branching load arrangements",
+      "done_when": "Neither zero physical multiplier nor a tiny positive edge erases an actual contact",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C1-8-b1-BRIDGE",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.8.b1"
+      ],
+      "scope": "Order-8 block with all 1 positive bridge edges and actual S/D leaves",
+      "task": "Close the extra bridge-root side and loaded-degree alternatives at complete original root stars",
+      "done_when": "No bridge is discarded when simplifying the outer face",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C1-9-b0-BRANCH",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.9.b0"
+      ],
+      "scope": "Order-9 biconnected block with 0 bridges, any physical circle-clear vertex of additional true degree",
+      "task": "Reduce or exclude every residual non-simple cycle/chord/branching block geometry",
+      "done_when": "The simple marked m≤7 cycle theorem applies only where every internal true degree is two",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C1-9-b0-LOAD",
+      "group": "coarse_parents",
+      "area": "one_block",
+      "coarse": [
+        "C1.9.b0"
+      ],
+      "scope": "Same order-9 original block with arbitrary physical corner mask and positive endblock loads",
+      "task": "Prove one uniform force/torque/angular obstruction across the remaining genuine branching load arrangements",
+      "done_when": "Neither zero physical multiplier nor a tiny positive edge erases an actual contact",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-35-b0-MIXED",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.35.b0"
+      ],
+      "scope": "Two genuine cyclic blocks of orders 3,5, 0 bridge(s), root interface on different actual root sides",
+      "task": "Exclude or sharply classify moment-balanced opposite-side contact pairs with all original means",
+      "done_when": "A full side-owner and endpoint-normal cone theorem; the common-side pressure lemma is not misapplied",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-35-b0-CLEAR",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.35.b0"
+      ],
+      "scope": "Same two-block original parent with at least one physically circle-clear positive neighbor of a real articulation",
+      "task": "Bound the full original root cut pressure and side applications with this clear neighbor included",
+      "done_when": "The original physical circle-clear neighbor cannot be dropped even when unloaded",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-35-b0-FAR",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.35.b0"
+      ],
+      "scope": "Same 3,5 blocks with positive circle load at a private body not physically touching the articulation",
+      "task": "Transfer actual nonnegative radial load to a cut-wrench restriction without assuming adjacency",
+      "done_when": "Allows original internal chords and arbitrary true degrees",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-35-b0-EXTRA",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.35.b0"
+      ],
+      "scope": "Same original 7-body positive component and 2 other actual unit squares",
+      "task": "Derive one simultaneous whole-square completion capacity for all articulation-region pockets",
+      "done_when": "No separate pocket bound is summed without a common pose/force constraint",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-35-b0-TRIANGLE",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.35.b0"
+      ],
+      "scope": "Actual triangle block and pentagon/house/fan private block with true attachment root and possible intact petal",
+      "task": "Distinguish intact and nonintact original root triangles and all nonadjacent positive loaded tips",
+      "done_when": "One complete original graph/load root-type exit valid at this bridge count",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-35-b1-MIXED",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.35.b1"
+      ],
+      "scope": "Two genuine cyclic blocks of orders 3,5, 1 bridge(s), root interface on different actual root sides",
+      "task": "Exclude or sharply classify moment-balanced opposite-side contact pairs with all original means",
+      "done_when": "A full side-owner and endpoint-normal cone theorem; the common-side pressure lemma is not misapplied",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-35-b1-CLEAR",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.35.b1"
+      ],
+      "scope": "Same two-block original parent with at least one physically circle-clear positive neighbor of a real articulation",
+      "task": "Bound the full original root cut pressure and side applications with this clear neighbor included",
+      "done_when": "The original physical circle-clear neighbor cannot be dropped even when unloaded",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-35-b1-FAR",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.35.b1"
+      ],
+      "scope": "Same 3,5 blocks with positive circle load at a private body not physically touching the articulation",
+      "task": "Transfer actual nonnegative radial load to a cut-wrench restriction without assuming adjacency",
+      "done_when": "Allows original internal chords and arbitrary true degrees",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-35-b1-EXTRA",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.35.b1"
+      ],
+      "scope": "Same original 8-body positive component and 1 other actual unit square",
+      "task": "Derive one simultaneous whole-square completion capacity for all articulation-region pockets",
+      "done_when": "No separate pocket bound is summed without a common pose/force constraint",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-35-b1-TRIANGLE",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.35.b1"
+      ],
+      "scope": "Actual triangle block and pentagon/house/fan private block with true attachment root and possible intact petal",
+      "task": "Distinguish intact and nonintact original root triangles and all nonadjacent positive loaded tips",
+      "done_when": "One complete original graph/load root-type exit valid at this bridge count",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-35-b2-MIXED",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.35.b2"
+      ],
+      "scope": "Two genuine cyclic blocks of orders 3,5, 2 bridge(s), root interface on different actual root sides",
+      "task": "Exclude or sharply classify moment-balanced opposite-side contact pairs with all original means",
+      "done_when": "A full side-owner and endpoint-normal cone theorem; the common-side pressure lemma is not misapplied",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-35-b2-CLEAR",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.35.b2"
+      ],
+      "scope": "Same two-block original parent with at least one physically circle-clear positive neighbor of a real articulation",
+      "task": "Bound the full original root cut pressure and side applications with this clear neighbor included",
+      "done_when": "The original physical circle-clear neighbor cannot be dropped even when unloaded",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-35-b2-FAR",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.35.b2"
+      ],
+      "scope": "Same 3,5 blocks with positive circle load at a private body not physically touching the articulation",
+      "task": "Transfer actual nonnegative radial load to a cut-wrench restriction without assuming adjacency",
+      "done_when": "Allows original internal chords and arbitrary true degrees",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-35-b2-TRIANGLE",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.35.b2"
+      ],
+      "scope": "Actual triangle block and pentagon/house/fan private block with true attachment root and possible intact petal",
+      "task": "Distinguish intact and nonintact original root triangles and all nonadjacent positive loaded tips",
+      "done_when": "One complete original graph/load root-type exit valid at this bridge count",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-36-b0-MIXED",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.36.b0"
+      ],
+      "scope": "Two genuine cyclic blocks of orders 3,6, 0 bridge(s), root interface on different actual root sides",
+      "task": "Exclude or sharply classify moment-balanced opposite-side contact pairs with all original means",
+      "done_when": "A full side-owner and endpoint-normal cone theorem; the common-side pressure lemma is not misapplied",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-36-b0-CLEAR",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.36.b0"
+      ],
+      "scope": "Same two-block original parent with at least one physically circle-clear positive neighbor of a real articulation",
+      "task": "Bound the full original root cut pressure and side applications with this clear neighbor included",
+      "done_when": "The original physical circle-clear neighbor cannot be dropped even when unloaded",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-36-b0-FAR",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.36.b0"
+      ],
+      "scope": "Same 3,6 blocks with positive circle load at a private body not physically touching the articulation",
+      "task": "Transfer actual nonnegative radial load to a cut-wrench restriction without assuming adjacency",
+      "done_when": "Allows original internal chords and arbitrary true degrees",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-36-b0-EXTRA",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.36.b0"
+      ],
+      "scope": "Same original 8-body positive component and 1 other actual unit square",
+      "task": "Derive one simultaneous whole-square completion capacity for all articulation-region pockets",
+      "done_when": "No separate pocket bound is summed without a common pose/force constraint",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-36-b1-MIXED",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.36.b1"
+      ],
+      "scope": "Two genuine cyclic blocks of orders 3,6, 1 bridge(s), root interface on different actual root sides",
+      "task": "Exclude or sharply classify moment-balanced opposite-side contact pairs with all original means",
+      "done_when": "A full side-owner and endpoint-normal cone theorem; the common-side pressure lemma is not misapplied",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-36-b1-CLEAR",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.36.b1"
+      ],
+      "scope": "Same two-block original parent with at least one physically circle-clear positive neighbor of a real articulation",
+      "task": "Bound the full original root cut pressure and side applications with this clear neighbor included",
+      "done_when": "The original physical circle-clear neighbor cannot be dropped even when unloaded",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-36-b1-FAR",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.36.b1"
+      ],
+      "scope": "Same 3,6 blocks with positive circle load at a private body not physically touching the articulation",
+      "task": "Transfer actual nonnegative radial load to a cut-wrench restriction without assuming adjacency",
+      "done_when": "Allows original internal chords and arbitrary true degrees",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-37-b0-MIXED",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.37.b0"
+      ],
+      "scope": "Two genuine cyclic blocks of orders 3,7, 0 bridge(s), root interface on different actual root sides",
+      "task": "Exclude or sharply classify moment-balanced opposite-side contact pairs with all original means",
+      "done_when": "A full side-owner and endpoint-normal cone theorem; the common-side pressure lemma is not misapplied",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-37-b0-CLEAR",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.37.b0"
+      ],
+      "scope": "Same two-block original parent with at least one physically circle-clear positive neighbor of a real articulation",
+      "task": "Bound the full original root cut pressure and side applications with this clear neighbor included",
+      "done_when": "The original physical circle-clear neighbor cannot be dropped even when unloaded",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-37-b0-FAR",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.37.b0"
+      ],
+      "scope": "Same 3,7 blocks with positive circle load at a private body not physically touching the articulation",
+      "task": "Transfer actual nonnegative radial load to a cut-wrench restriction without assuming adjacency",
+      "done_when": "Allows original internal chords and arbitrary true degrees",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-45-b0-MIXED",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.45.b0"
+      ],
+      "scope": "Two genuine cyclic blocks of orders 4,5, 0 bridge(s), root interface on different actual root sides",
+      "task": "Exclude or sharply classify moment-balanced opposite-side contact pairs with all original means",
+      "done_when": "A full side-owner and endpoint-normal cone theorem; the common-side pressure lemma is not misapplied",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-45-b0-CLEAR",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.45.b0"
+      ],
+      "scope": "Same two-block original parent with at least one physically circle-clear positive neighbor of a real articulation",
+      "task": "Bound the full original root cut pressure and side applications with this clear neighbor included",
+      "done_when": "The original physical circle-clear neighbor cannot be dropped even when unloaded",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-45-b0-FAR",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.45.b0"
+      ],
+      "scope": "Same 4,5 blocks with positive circle load at a private body not physically touching the articulation",
+      "task": "Transfer actual nonnegative radial load to a cut-wrench restriction without assuming adjacency",
+      "done_when": "Allows original internal chords and arbitrary true degrees",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-45-b0-EXTRA",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.45.b0"
+      ],
+      "scope": "Same original 8-body positive component and 1 other actual unit square",
+      "task": "Derive one simultaneous whole-square completion capacity for all articulation-region pockets",
+      "done_when": "No separate pocket bound is summed without a common pose/force constraint",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-45-b0-WRENCH",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.45.b0"
+      ],
+      "scope": "Five-body endblock at a true common articulation in 4,5 profile",
+      "task": "Prove the full higher-degree effective wrench cone for house, fan, C5 and chorded five-block types",
+      "done_when": "The same theorem covers both high-degree and side-mean degeneracies at their literal scopes",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-45-b1-MIXED",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.45.b1"
+      ],
+      "scope": "Two genuine cyclic blocks of orders 4,5, 1 bridge(s), root interface on different actual root sides",
+      "task": "Exclude or sharply classify moment-balanced opposite-side contact pairs with all original means",
+      "done_when": "A full side-owner and endpoint-normal cone theorem; the common-side pressure lemma is not misapplied",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-45-b1-CLEAR",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.45.b1"
+      ],
+      "scope": "Same two-block original parent with at least one physically circle-clear positive neighbor of a real articulation",
+      "task": "Bound the full original root cut pressure and side applications with this clear neighbor included",
+      "done_when": "The original physical circle-clear neighbor cannot be dropped even when unloaded",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-45-b1-FAR",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.45.b1"
+      ],
+      "scope": "Same 4,5 blocks with positive circle load at a private body not physically touching the articulation",
+      "task": "Transfer actual nonnegative radial load to a cut-wrench restriction without assuming adjacency",
+      "done_when": "Allows original internal chords and arbitrary true degrees",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-45-b1-WRENCH",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.45.b1"
+      ],
+      "scope": "Five-body endblock at a true common articulation in 4,5 profile",
+      "task": "Prove the full higher-degree effective wrench cone for house, fan, C5 and chorded five-block types",
+      "done_when": "The same theorem covers both high-degree and side-mean degeneracies at their literal scopes",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-46-b0-MIXED",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.46.b0"
+      ],
+      "scope": "Two genuine cyclic blocks of orders 4,6, 0 bridge(s), root interface on different actual root sides",
+      "task": "Exclude or sharply classify moment-balanced opposite-side contact pairs with all original means",
+      "done_when": "A full side-owner and endpoint-normal cone theorem; the common-side pressure lemma is not misapplied",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-46-b0-CLEAR",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.46.b0"
+      ],
+      "scope": "Same two-block original parent with at least one physically circle-clear positive neighbor of a real articulation",
+      "task": "Bound the full original root cut pressure and side applications with this clear neighbor included",
+      "done_when": "The original physical circle-clear neighbor cannot be dropped even when unloaded",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-46-b0-FAR",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.46.b0"
+      ],
+      "scope": "Same 4,6 blocks with positive circle load at a private body not physically touching the articulation",
+      "task": "Transfer actual nonnegative radial load to a cut-wrench restriction without assuming adjacency",
+      "done_when": "Allows original internal chords and arbitrary true degrees",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-55-b0-MIXED",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.55.b0"
+      ],
+      "scope": "Two genuine cyclic blocks of orders 5,5, 0 bridge(s), root interface on different actual root sides",
+      "task": "Exclude or sharply classify moment-balanced opposite-side contact pairs with all original means",
+      "done_when": "A full side-owner and endpoint-normal cone theorem; the common-side pressure lemma is not misapplied",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-55-b0-CLEAR",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.55.b0"
+      ],
+      "scope": "Same two-block original parent with at least one physically circle-clear positive neighbor of a real articulation",
+      "task": "Bound the full original root cut pressure and side applications with this clear neighbor included",
+      "done_when": "The original physical circle-clear neighbor cannot be dropped even when unloaded",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-55-b0-FAR",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.55.b0"
+      ],
+      "scope": "Same 5,5 blocks with positive circle load at a private body not physically touching the articulation",
+      "task": "Transfer actual nonnegative radial load to a cut-wrench restriction without assuming adjacency",
+      "done_when": "Allows original internal chords and arbitrary true degrees",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "P-C2-55-b0-WRENCH",
+      "group": "coarse_parents",
+      "area": "two_block",
+      "coarse": [
+        "C2.55.b0"
+      ],
+      "scope": "Five-body endblock at a true common articulation in 5,5 profile",
+      "task": "Prove the full higher-degree effective wrench cone for house, fan, C5 and chorded five-block types",
+      "done_when": "The same theorem covers both high-degree and side-mean degeneracies at their literal scopes",
+      "kind": "physical-parent-subfamily",
+      "status": "OPEN",
+      "priority": "P1"
+    }
+  ]
+}

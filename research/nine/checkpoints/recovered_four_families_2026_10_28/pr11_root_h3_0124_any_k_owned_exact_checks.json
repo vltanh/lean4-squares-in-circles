@@ -1,0 +1,32 @@
+{
+  "source": "INNER_PENTAGON_H3_0124_ANY_OUTER_HUB_OWNED_ENDPOINT_EXCLUSION.md",
+  "sha256": "05948c932dbb32fb34534ce7486e295a8a3764a6cd6814e65aca209a9f5b9a09",
+  "all_five_literal_pins": {
+    "INNER_PENTAGON_H3_0124_BOTH_OUTER_HUB_OWNED_ENDPOINTS_EXCLUSION.md": "d266281a14e433bb690117a088f118ac05a00e7d6cff3936f21ec820edf74564",
+    "FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md": "6c38d162e1f2c435cf65a8b4a58a7001fe9489c65b3510159fee2687b9753708",
+    "BOUNDARY_CONTACT_ORIGIN_MOMENT_ORIENTATION.md": "851417d7fcd12ccb93a6f7f09ba7d7b2bf9bccc61c82fee3457b5ee4cee47e9a",
+    "TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md": "0d61292a0aa57084b88b4a72754fc78e123e8b684dac09be966fb074ab58e877",
+    "PHYSICAL_BODY_GRAPH_UNCROSSING.md": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a"
+  },
+  "retained_center_bound_record": {
+    "path": "/tmp/pr11_root_h3_0124_both_k_owned_exact_checks.json",
+    "sha256": "5bdb4076fd0d1f50b149e24a04f9de8aec2350ad36ea345fd4226f5808cf67a9"
+  },
+  "exact_resultant_and_center_angle_intervals_in_pi": {
+    "first_resultant_min_pi": "1/2",
+    "first_resultant_max_pi": "5/6",
+    "last_resultant_min_pi": "7/6",
+    "last_resultant_max_pi": "3/2",
+    "last_center_min_pi": "13/12",
+    "last_center_max_pi": "19/12"
+  },
+  "strict_unit_height_gap": "1/700",
+  "new_complete_cases": [
+    "p<1 and distinct actual inner-spoke right support",
+    "p=1 actual coincident right tangent-sector order, vertex or side-interior E1",
+    "E4 application in relative interior of its own side, all physical circle masks",
+    "E4 application at any vertex: rightmost or topmost, all physical masks including unique/free/shared-other-side"
+  ],
+  "scope": "Exactly-one-K-owned proof joined to unchanged both-owned proof; neither-K-owned rows excluded from claim",
+  "root_authored_review_gate": "Two full independent reviews required; no current metadata or family flag changed"
+}

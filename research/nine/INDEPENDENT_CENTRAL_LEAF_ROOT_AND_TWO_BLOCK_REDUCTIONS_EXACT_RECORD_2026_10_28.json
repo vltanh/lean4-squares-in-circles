@@ -1,0 +1,255 @@
+{
+  "schema": "independent-hand-proof-review-v1",
+  "date": "2026-10-28",
+  "reviewer": "six_body",
+  "verdict": "PASS unchanged at stated scopes",
+  "sources": [
+    {
+      "name": "CENTRAL_DISK_LEAF_ROOT_AND_DOUBLE_LEAF_TRIANGLE_BLOCK_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/two_blocks/CENTRAL_DISK_LEAF_ROOT_AND_DOUBLE_LEAF_TRIANGLE_BLOCK_EXCLUSION.md",
+      "sha256": "dd03214ab5e0100bd35211993591baabd5fd0578191cc2ad2d4c1e344b8a5411",
+      "bytes": 12273,
+      "verdict": "PASS unchanged",
+      "dependency_names": [
+        "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+        "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+        "TRIANGLE_THREE_BRIDGES_DOUBLE_LEAF_ROOT_EXCLUSION.md",
+        "DOUBLE_LEAF_TRIANGLE_ROOT_WITH_ANOTHER_LEAF_ROOT_EXCLUSION.md",
+        "C7_FORCE_POLYGON.md",
+        "ACUTE_LOADED_CONTACT_GRAPH.md"
+      ]
+    },
+    {
+      "name": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "path": "/workspace/scratch/7d553350ce2a/two_blocks/C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "sha256": "28810d74517a6f6a4a4e5b2972c5359bdf41559957bd7e33bcb5fb4b358685d5",
+      "bytes": 21371,
+      "verdict": "PASS unchanged",
+      "dependency_names": [
+        "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+        "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+        "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+        "CENTRAL_DISK_LEAF_ROOT_AND_DOUBLE_LEAF_TRIANGLE_BLOCK_EXCLUSION.md",
+        "TRIANGLE_SMALL_RADIAL_EXTERNAL_SUPPORT_EXCLUSION.md",
+        "CLOSED_ORIGIN_OUTSIDE_LEAF_DECORATED_TRIANGLE_EXCLUSION.md",
+        "TWO_LEAF_TRIANGLE_NEAR_THIRD_VERTEX_EXCLUSION.md",
+        "TWO_LEAF_TRIANGLE_CLOSED_ORIGIN_AND_DISJOINT_FOUR_BLOCK_EXCLUSION.md",
+        "TWO_S_TIP_TRIANGLES_LOW_RADIUS_EXCLUSION.md",
+        "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+        "ACUTE_LOADED_CONTACT_GRAPH.md",
+        "P_ALL_COMPLETION.md",
+        "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md"
+      ]
+    }
+  ],
+  "independent_review": {
+    "name": "REVIEW_CENTRAL_LEAF_ROOT_AND_LARGER_TWO_BLOCK_REDUCTIONS_INDEPENDENT_2026_10_28.md",
+    "path": "/workspace/scratch/7d553350ce2a/six_body/REVIEW_CENTRAL_LEAF_ROOT_AND_LARGER_TWO_BLOCK_REDUCTIONS_INDEPENDENT_2026_10_28.md",
+    "sha256": "266dc4b409514057f48a4773956bdbb470dbd7c67f824ef4df0c05cff6d9f3a6",
+    "bytes": 11853
+  },
+  "direct_dependency_occurrences": 19,
+  "unique_direct_dependencies": [
+    {
+      "name": "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+      "bytes": 16597,
+      "source_pin_matches": true,
+      "exact_available_paths": [
+        "/workspace/scratch/7d553350ce2a/repo/research/nine/GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+        "/workspace/scratch/7d553350ce2a/baseline/research/nine/GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+        "/workspace/scratch/6f604094721b/squares/research/nine/GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md"
+      ]
+    },
+    {
+      "name": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "bytes": 14121,
+      "source_pin_matches": true,
+      "exact_available_paths": [
+        "/workspace/scratch/7d553350ce2a/repo/research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+        "/workspace/scratch/7d553350ce2a/baseline/research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+        "/workspace/scratch/6f604094721b/squares/research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md"
+      ]
+    },
+    {
+      "name": "TRIANGLE_THREE_BRIDGES_DOUBLE_LEAF_ROOT_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/TRIANGLE_THREE_BRIDGES_DOUBLE_LEAF_ROOT_EXCLUSION.md",
+      "sha256": "0cb8877bc74397213f4bf5a0768037a6e2650b812e55a41c2b793410c9f964de",
+      "bytes": 10338,
+      "source_pin_matches": true,
+      "exact_available_paths": [
+        "/workspace/scratch/7d553350ce2a/repo/research/nine/TRIANGLE_THREE_BRIDGES_DOUBLE_LEAF_ROOT_EXCLUSION.md",
+        "/workspace/scratch/7d553350ce2a/baseline/research/nine/TRIANGLE_THREE_BRIDGES_DOUBLE_LEAF_ROOT_EXCLUSION.md",
+        "/workspace/scratch/6f604094721b/squares/research/nine/TRIANGLE_THREE_BRIDGES_DOUBLE_LEAF_ROOT_EXCLUSION.md"
+      ]
+    },
+    {
+      "name": "DOUBLE_LEAF_TRIANGLE_ROOT_WITH_ANOTHER_LEAF_ROOT_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/DOUBLE_LEAF_TRIANGLE_ROOT_WITH_ANOTHER_LEAF_ROOT_EXCLUSION.md",
+      "sha256": "800fdfcc586ccfa586373360f6e402eeac6a05fe7f45eda86c7b398a45b58952",
+      "bytes": 7928,
+      "source_pin_matches": true,
+      "exact_available_paths": [
+        "/workspace/scratch/7d553350ce2a/repo/research/nine/DOUBLE_LEAF_TRIANGLE_ROOT_WITH_ANOTHER_LEAF_ROOT_EXCLUSION.md",
+        "/workspace/scratch/7d553350ce2a/baseline/research/nine/DOUBLE_LEAF_TRIANGLE_ROOT_WITH_ANOTHER_LEAF_ROOT_EXCLUSION.md",
+        "/workspace/scratch/6f604094721b/squares/research/nine/DOUBLE_LEAF_TRIANGLE_ROOT_WITH_ANOTHER_LEAF_ROOT_EXCLUSION.md"
+      ]
+    },
+    {
+      "name": "C7_FORCE_POLYGON.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/C7_FORCE_POLYGON.md",
+      "sha256": "d50d8ca48ea19156175e651bfa74be30ef3e58065ec14d8d1834670a41559089",
+      "bytes": 18062,
+      "source_pin_matches": true,
+      "exact_available_paths": [
+        "/workspace/scratch/7d553350ce2a/repo/research/nine/C7_FORCE_POLYGON.md",
+        "/workspace/scratch/7d553350ce2a/baseline/research/nine/C7_FORCE_POLYGON.md",
+        "/workspace/scratch/6f604094721b/squares/research/nine/C7_FORCE_POLYGON.md"
+      ]
+    },
+    {
+      "name": "ACUTE_LOADED_CONTACT_GRAPH.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/ACUTE_LOADED_CONTACT_GRAPH.md",
+      "sha256": "e6ce319da0dfb6b3d885584e521edc15834132a349674a3b580771e54d236f59",
+      "bytes": 6886,
+      "source_pin_matches": true,
+      "exact_available_paths": [
+        "/workspace/scratch/7d553350ce2a/repo/research/nine/ACUTE_LOADED_CONTACT_GRAPH.md",
+        "/workspace/scratch/7d553350ce2a/baseline/research/nine/ACUTE_LOADED_CONTACT_GRAPH.md"
+      ]
+    },
+    {
+      "name": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "path": "/workspace/scratch/6f604094721b/squares/research/nine/GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "sha256": "103a0f4ceccba044c132a45c632bd64df57540feb70fd69d6159c52759e449c6",
+      "bytes": 17543,
+      "source_pin_matches": true,
+      "exact_available_paths": [
+        "/workspace/scratch/6f604094721b/squares/research/nine/GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md"
+      ]
+    },
+    {
+      "name": "CENTRAL_DISK_LEAF_ROOT_AND_DOUBLE_LEAF_TRIANGLE_BLOCK_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/two_blocks/CENTRAL_DISK_LEAF_ROOT_AND_DOUBLE_LEAF_TRIANGLE_BLOCK_EXCLUSION.md",
+      "sha256": "dd03214ab5e0100bd35211993591baabd5fd0578191cc2ad2d4c1e344b8a5411",
+      "bytes": 12273,
+      "source_pin_matches": true,
+      "exact_available_paths": [
+        "/workspace/scratch/7d553350ce2a/two_blocks/CENTRAL_DISK_LEAF_ROOT_AND_DOUBLE_LEAF_TRIANGLE_BLOCK_EXCLUSION.md"
+      ]
+    },
+    {
+      "name": "TRIANGLE_SMALL_RADIAL_EXTERNAL_SUPPORT_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/TRIANGLE_SMALL_RADIAL_EXTERNAL_SUPPORT_EXCLUSION.md",
+      "sha256": "d77935c0d0754d87666c02c64b808673718c81990ded9f5d9d5566ba2b01ba48",
+      "bytes": 12545,
+      "source_pin_matches": true,
+      "exact_available_paths": [
+        "/workspace/scratch/7d553350ce2a/repo/research/nine/TRIANGLE_SMALL_RADIAL_EXTERNAL_SUPPORT_EXCLUSION.md",
+        "/workspace/scratch/7d553350ce2a/baseline/research/nine/TRIANGLE_SMALL_RADIAL_EXTERNAL_SUPPORT_EXCLUSION.md",
+        "/workspace/scratch/6f604094721b/squares/research/nine/TRIANGLE_SMALL_RADIAL_EXTERNAL_SUPPORT_EXCLUSION.md"
+      ]
+    },
+    {
+      "name": "CLOSED_ORIGIN_OUTSIDE_LEAF_DECORATED_TRIANGLE_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/CLOSED_ORIGIN_OUTSIDE_LEAF_DECORATED_TRIANGLE_EXCLUSION.md",
+      "sha256": "8eb35af704981de87df91a3f8507abbbb5406251176c7370442f3795e97dbff5",
+      "bytes": 18050,
+      "source_pin_matches": true,
+      "exact_available_paths": [
+        "/workspace/scratch/7d553350ce2a/repo/research/nine/CLOSED_ORIGIN_OUTSIDE_LEAF_DECORATED_TRIANGLE_EXCLUSION.md",
+        "/workspace/scratch/7d553350ce2a/baseline/research/nine/CLOSED_ORIGIN_OUTSIDE_LEAF_DECORATED_TRIANGLE_EXCLUSION.md",
+        "/workspace/scratch/6f604094721b/squares/research/nine/CLOSED_ORIGIN_OUTSIDE_LEAF_DECORATED_TRIANGLE_EXCLUSION.md"
+      ]
+    },
+    {
+      "name": "TWO_LEAF_TRIANGLE_NEAR_THIRD_VERTEX_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/TWO_LEAF_TRIANGLE_NEAR_THIRD_VERTEX_EXCLUSION.md",
+      "sha256": "993d53527970e67ff5120c41369bb867d775df2ad4197b570d2b580c1134439d",
+      "bytes": 17918,
+      "source_pin_matches": true,
+      "exact_available_paths": [
+        "/workspace/scratch/7d553350ce2a/repo/research/nine/TWO_LEAF_TRIANGLE_NEAR_THIRD_VERTEX_EXCLUSION.md",
+        "/workspace/scratch/7d553350ce2a/baseline/research/nine/TWO_LEAF_TRIANGLE_NEAR_THIRD_VERTEX_EXCLUSION.md",
+        "/workspace/scratch/6f604094721b/squares/research/nine/TWO_LEAF_TRIANGLE_NEAR_THIRD_VERTEX_EXCLUSION.md"
+      ]
+    },
+    {
+      "name": "TWO_LEAF_TRIANGLE_CLOSED_ORIGIN_AND_DISJOINT_FOUR_BLOCK_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/TWO_LEAF_TRIANGLE_CLOSED_ORIGIN_AND_DISJOINT_FOUR_BLOCK_EXCLUSION.md",
+      "sha256": "2034492eb8863f348cac660ea83f6c67ccc10b226a449e6cd8fb8cd54ec11980",
+      "bytes": 18097,
+      "source_pin_matches": true,
+      "exact_available_paths": [
+        "/workspace/scratch/7d553350ce2a/repo/research/nine/TWO_LEAF_TRIANGLE_CLOSED_ORIGIN_AND_DISJOINT_FOUR_BLOCK_EXCLUSION.md",
+        "/workspace/scratch/7d553350ce2a/baseline/research/nine/TWO_LEAF_TRIANGLE_CLOSED_ORIGIN_AND_DISJOINT_FOUR_BLOCK_EXCLUSION.md",
+        "/workspace/scratch/6f604094721b/squares/research/nine/TWO_LEAF_TRIANGLE_CLOSED_ORIGIN_AND_DISJOINT_FOUR_BLOCK_EXCLUSION.md"
+      ]
+    },
+    {
+      "name": "TWO_S_TIP_TRIANGLES_LOW_RADIUS_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/TWO_S_TIP_TRIANGLES_LOW_RADIUS_EXCLUSION.md",
+      "sha256": "9436e1385fd537863eb96d29da1b06c42ac827c0e3aa83cb9f6a46bcdcf91ad1",
+      "bytes": 10281,
+      "source_pin_matches": true,
+      "exact_available_paths": [
+        "/workspace/scratch/7d553350ce2a/repo/research/nine/TWO_S_TIP_TRIANGLES_LOW_RADIUS_EXCLUSION.md",
+        "/workspace/scratch/7d553350ce2a/baseline/research/nine/TWO_S_TIP_TRIANGLES_LOW_RADIUS_EXCLUSION.md",
+        "/workspace/scratch/6f604094721b/squares/research/nine/TWO_S_TIP_TRIANGLES_LOW_RADIUS_EXCLUSION.md"
+      ]
+    },
+    {
+      "name": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "bytes": 14902,
+      "source_pin_matches": true,
+      "exact_available_paths": [
+        "/workspace/scratch/7d553350ce2a/repo/research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+        "/workspace/scratch/7d553350ce2a/baseline/research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+        "/workspace/scratch/6f604094721b/squares/research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md"
+      ]
+    },
+    {
+      "name": "P_ALL_COMPLETION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/P_ALL_COMPLETION.md",
+      "sha256": "d5bf389eb4e129eead6019aa975b75b9e33dfe6760c2c27899c69b49691efc32",
+      "bytes": 11805,
+      "source_pin_matches": true,
+      "exact_available_paths": [
+        "/workspace/scratch/7d553350ce2a/repo/research/nine/P_ALL_COMPLETION.md",
+        "/workspace/scratch/7d553350ce2a/baseline/research/nine/P_ALL_COMPLETION.md",
+        "/workspace/scratch/6f604094721b/squares/research/nine/P_ALL_COMPLETION.md"
+      ]
+    },
+    {
+      "name": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "path": "/workspace/scratch/6f604094721b/squares/research/nine/C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "sha256": "80d239a76dd632a3b982c6ef9b2a52028fc9c418e1f0c221852047a180efc238",
+      "bytes": 23354,
+      "source_pin_matches": true,
+      "exact_available_paths": [
+        "/workspace/scratch/6f604094721b/squares/research/nine/C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md"
+      ]
+    }
+  ],
+  "full_new_scope_audited": [
+    "Central disk in actual leaf root implies every cyclic block contains the root and all bridges are direct genuine leaves.",
+    "Actual A4/B2 double-leaf triangle excludes any second cyclic block avoiding A, including the complete R^2=17/4 corner exception.",
+    "Whole-Q closed disk avoidance excludes an outside actual closed-origin genuine-leaf root.",
+    "Exhaustive original C2.35.b2 and C2.36.b1 bridge attachment covers.",
+    "All four C2.35.b2 remaining structural families require d>1, preserving every actual marked Q.",
+    "C2.36.b1 non-intact critical case retains the exact complementary aligned root chart with two strict transverse sliders."
+  ],
+  "fine_gate_delta": 0,
+  "coarse_gate_delta": 0,
+  "transitive_scope": "Earlier accepted dependencies are used only at their explicit operative scopes; original radius-two, P-cage and all earlier prerequisite audit limitations are retained. This record does not claim a fresh complete transitive audit.",
+  "publication_requirements": [
+    "Include the exact recovered GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md and its accepted prerequisite/review chain.",
+    "Include the exact recovered C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md and its accepted prerequisite/review chain."
+  ],
+  "validation": "Complete direct hand read and reconstruction; exact file/source-pin integrity check. No Lean compilation, CI, scalar pose search, original degree/force/mask substitution, ledger edit or remote action."
+}

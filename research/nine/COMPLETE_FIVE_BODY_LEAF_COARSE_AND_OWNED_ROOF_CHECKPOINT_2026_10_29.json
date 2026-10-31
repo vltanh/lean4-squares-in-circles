@@ -1,0 +1,2035 @@
+{
+  "status": "ROOT_ADOPTED_COMPLETE_ORIGINAL_COARSE_CELL_AND_FEATURE_THEOREMS",
+  "date_utc": "2026-10-29",
+  "compared_published_head": "deafebc5db0afcb59842eb3ed9b6c7caf4cbab1b",
+  "compared_published_tree": "ca6424e9ec4b05a6c1541770e03f846de9b8457a",
+  "new_complete_sources_and_reviews": [
+    {
+      "path": "research/nine/HOUSE_TC_BOTH_LEAF_INNER_NONPARALLEL_UNIQUE_T_PERPENDICULAR_OWNER_REDUCTION_2026_10_29.md",
+      "bytes": 17623,
+      "lf_lines": 432,
+      "sha256": "d79bb4a7a43016e50e23c9878bbcfef27a48487373ee06136a9143d1c4544ce0",
+      "git_blob_sha1": "6c19a49b8b6564eccc4f2aa7993c6bfa65aae6ae"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_TC_INNER_NONPARALLEL_PERPENDICULAR_T_BLOCK_FORESTS_2026_10_29.md",
+      "bytes": 16088,
+      "lf_lines": 382,
+      "sha256": "b96c8f566fac489077a467395cd78b8bc9fe8d2cefd3744a40c831d21b7d45a7",
+      "git_blob_sha1": "869326ae3f389c4247292ca3f890151ac0b73591"
+    },
+    {
+      "path": "research/nine/HOUSE_TC_UPPER_LEAF_INNER_PERPENDICULAR_T_COMPLETE_EXCLUSION_2026_10_29.md",
+      "bytes": 12795,
+      "lf_lines": 362,
+      "sha256": "1cffbacb603e04f7e15054f672d9e7f3c6f85a4cc6326dc209b65c047f86e71a",
+      "git_blob_sha1": "e396ae6439b9f1c8bb8e09da06d7e32158e3980a"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_TC_UPPER_LEAF_INNER_PERPENDICULAR_T_BLOCK_FORESTS_2026_10_29.md",
+      "bytes": 11622,
+      "lf_lines": 300,
+      "sha256": "f4bc7383754f06d2e3da3376b322cdcbbf119ba9d30845d047825c5af6198a2a",
+      "git_blob_sha1": "b9f9e1c63e7151948fcde55a0650d27e2961188f"
+    },
+    {
+      "path": "research/nine/HOUSE_TC_OWNED_LEAF_INNER_STEEP_PERPENDICULAR_T_COMPLETE_EXCLUSION_2026_10_29.md",
+      "bytes": 8449,
+      "lf_lines": 240,
+      "sha256": "79184f6a82ae7afd55a3f16cdc4c7088c8f34b5819bb0f09fb574ad7f5094d9a",
+      "git_blob_sha1": "9a7ab5a72bbeb57b99b69fae928d5c9d12ab9f92"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_TC_OWNED_LEAF_STEEP_PERPENDICULAR_T_BLOCK_FORESTS_2026_10_29.md",
+      "bytes": 8778,
+      "lf_lines": 214,
+      "sha256": "36284d64913251bc6f9626f6acf3b98431e108f6206cc7683860db2b277bbfd4",
+      "git_blob_sha1": "413d16707640b568b9f73084597211d249a7778f"
+    },
+    {
+      "path": "research/nine/LOADED_PERPENDICULAR_OWNED_SIDE_CONTACTS_NEAR_VERTICAL_POINT_HORIZONTAL_GAP_BOUND_2026_10_29.md",
+      "bytes": 9383,
+      "lf_lines": 273,
+      "sha256": "1b172bcef958085c7260015dea7979505767f14da492b3b2e572e5df920da453",
+      "git_blob_sha1": "5e4a97a1dc6d177fb79c7d2e73e35f4b1d187c1b"
+    },
+    {
+      "path": "research/nine/REVIEW_LOADED_PERPENDICULAR_SIDE_NEAR_VERTICAL_GAP_BLOCK_FORESTS_2026_10_29.md",
+      "bytes": 9339,
+      "lf_lines": 227,
+      "sha256": "6064116b08485ecaf701d0f9b611849c2c4d42fab6753287d5be2f4f76f17b59",
+      "git_blob_sha1": "04eeb4d08c695f99f915e1a64643a0b6afc9a722"
+    },
+    {
+      "path": "research/nine/HOUSE_TC_OWNED_LEAF_INNER_SHALLOW_PERPENDICULAR_T_COMPLETE_EXCLUSION_2026_10_29.md",
+      "bytes": 15043,
+      "lf_lines": 450,
+      "sha256": "855c4883b7e8e12a8a3af5aea0dae5d5a16f280ee5b83ffee59a4794af0c6af4",
+      "git_blob_sha1": "0c9b7baa805402e38fd79f4aae1bd88b8e8e87b7"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_TC_OWNED_LEAF_SHALLOW_PERPENDICULAR_T_BLOCK_FORESTS_2026_10_29.md",
+      "bytes": 14082,
+      "lf_lines": 382,
+      "sha256": "7d03d8dab6f5f24db4346f1c32e17d140e47a8cd7b387008e51fc2656240cc5d",
+      "git_blob_sha1": "73c81703a602870ecc607b4ea5be05f040bcdd59"
+    },
+    {
+      "path": "research/nine/HOUSE_HUB_TC_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_EXCLUSION_2026_10_29.md",
+      "bytes": 25150,
+      "lf_lines": 501,
+      "sha256": "fc5075937fa3a7aa785749c0a80c18666d41a3306ce8caed4ca5a4a9e22a18af",
+      "git_blob_sha1": "5a296d348838e5fe4fb18007a25fa4fdcb58c509"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_HUB_TC_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_BLOCK_FORESTS_2026_10_29.md",
+      "bytes": 29679,
+      "lf_lines": 513,
+      "sha256": "2dd88e044fadd894eab1cc45f3d46e3040e1811dde82c2b552ef1fa9e6356c67",
+      "git_blob_sha1": "9674162555a23d83dba07b701fdfce6adee6e705"
+    },
+    {
+      "path": "research/nine/HOUSE_HUB_ALL_ORIGINAL_LOADS_AND_LEAF_TYPES_COMPLETE_EXCLUSION_2026_10_29.md",
+      "bytes": 16665,
+      "lf_lines": 304,
+      "sha256": "132d41d1bb698bed5f37c5cf27cf8f7cc12edca40cf91a4077be5aaabd5c2661",
+      "git_blob_sha1": "adce5ff056e49f606c368785158350258ee2a3eb"
+    },
+    {
+      "path": "research/nine/FIVE_BODY_BLOCK_WITH_ONE_GENUINE_LEAF_COMPLETE_COARSE_CELL_EXCLUSION_2026_10_29.md",
+      "bytes": 18212,
+      "lf_lines": 320,
+      "sha256": "1765b2044010429d4bc523791ff81db528a53e3247b71313ed5aff62c5bc6b1c",
+      "git_blob_sha1": "5c8ca9cd88196976db7925a653fa930c436b0b62"
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_HUB_AND_FIVE_BODY_LEAF_COARSE_COMPLETE_JOINS_HOUSE_2026_10_29.md",
+      "bytes": 30500,
+      "lf_lines": 564,
+      "sha256": "bd331b9aab91a7d6103a1e81176bd9c0dd40ffb67c4400e55fa6585621511603",
+      "git_blob_sha1": "13be83addd828e9dc57460ee42fa0264eccaad3d"
+    },
+    {
+      "path": "research/nine/PARALLEL_RADIAL_ROOF_OWNED_INTERFACE_NONADJACENT_RETURN_COMPLETE_D02_EXCLUSION_2026_10_29.md",
+      "bytes": 29943,
+      "lf_lines": 671,
+      "sha256": "917cbabedb116b370d3c3216967f5f64a2da0f6824aef0d17c9fc8ae0dc4b0fa",
+      "git_blob_sha1": "0c920df40fd73ce5a368b7a386a2e08c089717df"
+    },
+    {
+      "path": "research/nine/REVIEW_PARALLEL_ROOF_OWNED_NONADJACENT_RETURN_COMPLETE_ROOT_2026_10_29.md",
+      "bytes": 19861,
+      "lf_lines": 458,
+      "sha256": "e6f400d47a7523f95025f8e92538e5e54bff820cc061ce8d2738d26745619e38",
+      "git_blob_sha1": "07e71f66ff426e8cb74103dd3e5b8dfe83ff91cc"
+    }
+  ],
+  "adoption": {
+    "path": "research/nine/ADOPTION_COMPLETE_FIVE_BODY_LEAF_COARSE_AND_OWNED_ROOF_2026_10_29.md",
+    "bytes": 17274,
+    "lf_lines": 324,
+    "sha256": "71c9066a1aa2977369559be76905359b0353f36816c0103990987575d2c390b2",
+    "git_blob_sha1": "1f166332f6cb8f36057cdf1333a5c17676d33d2b"
+  },
+  "full_independent_review_required_and_completed": true,
+  "proof_contract": {
+    "all_nine_physical_units_retained": true,
+    "original_positive_forces_true_degrees_normals_full_means_physical_masks_and_zero_coefficients_retained": true,
+    "no_lean_lake_or_ci_workflow_or_merge": true,
+    "no_pose_sampling_or_new_packing_certificate": true,
+    "old_scalar_analytic_canonical_selection_prerequisites_retained": true,
+    "global_prerequisite_audit_and_unrestricted_sharp_theorem_and_equality_open": true
+  },
+  "original_inventory": {
+    "fine_denominator": 2513,
+    "fine_before_checked": 2370,
+    "fine_after_checked": 2373,
+    "fine_after_open": 140,
+    "coarse_denominator": 58,
+    "coarse_before_closed": 35,
+    "coarse_after_closed": 36,
+    "coarse_after_open": 22,
+    "fine_before_sha256": "3289a566e446837ba51a5929a00759808a35763f86cf8023ac92b14625412ffb",
+    "fine_after_sha256": "feda561e85056c0bae48f2f33b8df7814c44d983ca4f1cc3e422391525106f1f",
+    "coarse_before_sha256": "e13fb3f8fcf38adbf7c76702b3088adb70a0411b77f07a67c2422adcb94d1374",
+    "coarse_after_sha256": "99e0b788a73379a719f331d43581ef02c76ea2e8622a8c8f43bbf21e9ea241bd",
+    "identifiers_and_order_preserved": true,
+    "fine_changes": [
+      {
+        "id": "M6.B5L.HOUSE.HUB.LTC.S",
+        "before": " ",
+        "after": "x"
+      },
+      {
+        "id": "M6.B5L.HOUSE.HUB",
+        "before": " ",
+        "after": "x"
+      },
+      {
+        "id": "M6.B5L.ALL",
+        "before": " ",
+        "after": "x"
+      }
+    ],
+    "coarse_changes": [
+      {
+        "id": "C1.5.b1",
+        "before": " ",
+        "after": "x"
+      }
+    ]
+  },
+  "direct_named_table_pins": [
+    {
+      "source": "HOUSE_TC_BOTH_LEAF_INNER_NONPARALLEL_UNIQUE_T_PERPENDICULAR_OWNER_REDUCTION_2026_10_29.md",
+      "dependency": "STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "expected_sha256": "0c67d5578a73ec36fd9b79c509c3e158cb9a218fac8666256ab2ca1f9505cb45",
+      "actual_sha256": "0c67d5578a73ec36fd9b79c509c3e158cb9a218fac8666256ab2ca1f9505cb45",
+      "match": true
+    },
+    {
+      "source": "HOUSE_TC_BOTH_LEAF_INNER_NONPARALLEL_UNIQUE_T_PERPENDICULAR_OWNER_REDUCTION_2026_10_29.md",
+      "dependency": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "expected_sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "actual_sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "match": true
+    },
+    {
+      "source": "HOUSE_TC_BOTH_LEAF_INNER_NONPARALLEL_UNIQUE_T_PERPENDICULAR_OWNER_REDUCTION_2026_10_29.md",
+      "dependency": "HOUSE_TC_BOTH_LEAF_INNER_RETURN_PARALLEL_C_COMPLETE_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "20b72246941bd23e5ec951012c49f7030be4f6eb04cac8c7350bdc53fcb7b5ff",
+      "actual_sha256": "20b72246941bd23e5ec951012c49f7030be4f6eb04cac8c7350bdc53fcb7b5ff",
+      "match": true
+    },
+    {
+      "source": "HOUSE_TC_BOTH_LEAF_INNER_NONPARALLEL_UNIQUE_T_PERPENDICULAR_OWNER_REDUCTION_2026_10_29.md",
+      "dependency": "GENERAL_UNLOADED_THREE_DISTINCT_SINGLETON_PORTS_HAVE_NO_FREE_NORMAL_SELECTION.md",
+      "expected_sha256": "7700a4547542af9fc25b0e0b3d14f2113529069df0b007443c18d690da1137bb",
+      "actual_sha256": "7700a4547542af9fc25b0e0b3d14f2113529069df0b007443c18d690da1137bb",
+      "match": true
+    },
+    {
+      "source": "HOUSE_TC_BOTH_LEAF_INNER_NONPARALLEL_UNIQUE_T_PERPENDICULAR_OWNER_REDUCTION_2026_10_29.md",
+      "dependency": "GENERAL_FIXED_TIP_NORMAL_SELECTION.md",
+      "expected_sha256": "ef8ae8a219af9fa15a70698e485bbb337925e5caf2cd64b6b5c2619d9c4bd194",
+      "actual_sha256": "ef8ae8a219af9fa15a70698e485bbb337925e5caf2cd64b6b5c2619d9c4bd194",
+      "match": true
+    },
+    {
+      "source": "HOUSE_TC_BOTH_LEAF_INNER_NONPARALLEL_UNIQUE_T_PERPENDICULAR_OWNER_REDUCTION_2026_10_29.md",
+      "dependency": "LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "expected_sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78",
+      "actual_sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78",
+      "match": true
+    },
+    {
+      "source": "HOUSE_TC_BOTH_LEAF_INNER_NONPARALLEL_UNIQUE_T_PERPENDICULAR_OWNER_REDUCTION_2026_10_29.md",
+      "dependency": "PHYSICAL_CONTACT_STRESS.md",
+      "expected_sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "actual_sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_TC_INNER_NONPARALLEL_PERPENDICULAR_T_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "expected_sha256": "0c67d5578a73ec36fd9b79c509c3e158cb9a218fac8666256ab2ca1f9505cb45",
+      "actual_sha256": "0c67d5578a73ec36fd9b79c509c3e158cb9a218fac8666256ab2ca1f9505cb45",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_TC_INNER_NONPARALLEL_PERPENDICULAR_T_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "expected_sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "actual_sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_TC_INNER_NONPARALLEL_PERPENDICULAR_T_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "HOUSE_TC_BOTH_LEAF_INNER_RETURN_PARALLEL_C_COMPLETE_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "20b72246941bd23e5ec951012c49f7030be4f6eb04cac8c7350bdc53fcb7b5ff",
+      "actual_sha256": "20b72246941bd23e5ec951012c49f7030be4f6eb04cac8c7350bdc53fcb7b5ff",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_TC_INNER_NONPARALLEL_PERPENDICULAR_T_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "GENERAL_UNLOADED_THREE_DISTINCT_SINGLETON_PORTS_HAVE_NO_FREE_NORMAL_SELECTION.md",
+      "expected_sha256": "7700a4547542af9fc25b0e0b3d14f2113529069df0b007443c18d690da1137bb",
+      "actual_sha256": "7700a4547542af9fc25b0e0b3d14f2113529069df0b007443c18d690da1137bb",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_TC_INNER_NONPARALLEL_PERPENDICULAR_T_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "GENERAL_FIXED_TIP_NORMAL_SELECTION.md",
+      "expected_sha256": "ef8ae8a219af9fa15a70698e485bbb337925e5caf2cd64b6b5c2619d9c4bd194",
+      "actual_sha256": "ef8ae8a219af9fa15a70698e485bbb337925e5caf2cd64b6b5c2619d9c4bd194",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_TC_INNER_NONPARALLEL_PERPENDICULAR_T_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "expected_sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78",
+      "actual_sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_TC_INNER_NONPARALLEL_PERPENDICULAR_T_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "PHYSICAL_CONTACT_STRESS.md",
+      "expected_sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "actual_sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "match": true
+    },
+    {
+      "source": "HOUSE_TC_UPPER_LEAF_INNER_PERPENDICULAR_T_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "HOUSE_TC_BOTH_LEAF_INNER_NONPARALLEL_UNIQUE_T_PERPENDICULAR_OWNER_REDUCTION_2026_10_29.md",
+      "expected_sha256": "d79bb4a7a43016e50e23c9878bbcfef27a48487373ee06136a9143d1c4544ce0",
+      "actual_sha256": "d79bb4a7a43016e50e23c9878bbcfef27a48487373ee06136a9143d1c4544ce0",
+      "match": true
+    },
+    {
+      "source": "HOUSE_TC_UPPER_LEAF_INNER_PERPENDICULAR_T_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "HOUSE_TC_BOTH_LEAF_INNER_RETURN_PARALLEL_C_COMPLETE_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "20b72246941bd23e5ec951012c49f7030be4f6eb04cac8c7350bdc53fcb7b5ff",
+      "actual_sha256": "20b72246941bd23e5ec951012c49f7030be4f6eb04cac8c7350bdc53fcb7b5ff",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_TC_UPPER_LEAF_INNER_PERPENDICULAR_T_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "HOUSE_TC_BOTH_LEAF_INNER_NONPARALLEL_UNIQUE_T_PERPENDICULAR_OWNER_REDUCTION_2026_10_29.md",
+      "expected_sha256": "d79bb4a7a43016e50e23c9878bbcfef27a48487373ee06136a9143d1c4544ce0",
+      "actual_sha256": "d79bb4a7a43016e50e23c9878bbcfef27a48487373ee06136a9143d1c4544ce0",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_TC_UPPER_LEAF_INNER_PERPENDICULAR_T_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "HOUSE_TC_BOTH_LEAF_INNER_RETURN_PARALLEL_C_COMPLETE_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "20b72246941bd23e5ec951012c49f7030be4f6eb04cac8c7350bdc53fcb7b5ff",
+      "actual_sha256": "20b72246941bd23e5ec951012c49f7030be4f6eb04cac8c7350bdc53fcb7b5ff",
+      "match": true
+    },
+    {
+      "source": "LOADED_PERPENDICULAR_OWNED_SIDE_CONTACTS_NEAR_VERTICAL_POINT_HORIZONTAL_GAP_BOUND_2026_10_29.md",
+      "dependency": "HOUSE_TC_BOTH_LEAF_INNER_NONPARALLEL_UNIQUE_T_PERPENDICULAR_OWNER_REDUCTION_2026_10_29.md",
+      "expected_sha256": "d79bb4a7a43016e50e23c9878bbcfef27a48487373ee06136a9143d1c4544ce0",
+      "actual_sha256": "d79bb4a7a43016e50e23c9878bbcfef27a48487373ee06136a9143d1c4544ce0",
+      "match": true
+    },
+    {
+      "source": "LOADED_PERPENDICULAR_OWNED_SIDE_CONTACTS_NEAR_VERTICAL_POINT_HORIZONTAL_GAP_BOUND_2026_10_29.md",
+      "dependency": "PHYSICAL_CONTACT_STRESS.md",
+      "expected_sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "actual_sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "match": true
+    },
+    {
+      "source": "REVIEW_LOADED_PERPENDICULAR_SIDE_NEAR_VERTICAL_GAP_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "PHYSICAL_CONTACT_STRESS.md",
+      "expected_sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "actual_sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "match": true
+    },
+    {
+      "source": "REVIEW_LOADED_PERPENDICULAR_SIDE_NEAR_VERTICAL_GAP_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "HOUSE_TC_BOTH_LEAF_INNER_NONPARALLEL_UNIQUE_T_PERPENDICULAR_OWNER_REDUCTION_2026_10_29.md",
+      "expected_sha256": "d79bb4a7a43016e50e23c9878bbcfef27a48487373ee06136a9143d1c4544ce0",
+      "actual_sha256": "d79bb4a7a43016e50e23c9878bbcfef27a48487373ee06136a9143d1c4544ce0",
+      "match": true
+    },
+    {
+      "source": "HOUSE_TC_OWNED_LEAF_INNER_SHALLOW_PERPENDICULAR_T_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "HOUSE_TC_BOTH_LEAF_INNER_NONPARALLEL_UNIQUE_T_PERPENDICULAR_OWNER_REDUCTION_2026_10_29.md",
+      "expected_sha256": "d79bb4a7a43016e50e23c9878bbcfef27a48487373ee06136a9143d1c4544ce0",
+      "actual_sha256": "d79bb4a7a43016e50e23c9878bbcfef27a48487373ee06136a9143d1c4544ce0",
+      "match": true
+    },
+    {
+      "source": "HOUSE_TC_OWNED_LEAF_INNER_SHALLOW_PERPENDICULAR_T_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "LOADED_PERPENDICULAR_OWNED_SIDE_CONTACTS_NEAR_VERTICAL_POINT_HORIZONTAL_GAP_BOUND_2026_10_29.md",
+      "expected_sha256": "1b172bcef958085c7260015dea7979505767f14da492b3b2e572e5df920da453",
+      "actual_sha256": "1b172bcef958085c7260015dea7979505767f14da492b3b2e572e5df920da453",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_TC_OWNED_LEAF_SHALLOW_PERPENDICULAR_T_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "HOUSE_TC_BOTH_LEAF_INNER_NONPARALLEL_UNIQUE_T_PERPENDICULAR_OWNER_REDUCTION_2026_10_29.md",
+      "expected_sha256": "d79bb4a7a43016e50e23c9878bbcfef27a48487373ee06136a9143d1c4544ce0",
+      "actual_sha256": "d79bb4a7a43016e50e23c9878bbcfef27a48487373ee06136a9143d1c4544ce0",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_TC_OWNED_LEAF_SHALLOW_PERPENDICULAR_T_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "LOADED_PERPENDICULAR_OWNED_SIDE_CONTACTS_NEAR_VERTICAL_POINT_HORIZONTAL_GAP_BOUND_2026_10_29.md",
+      "expected_sha256": "1b172bcef958085c7260015dea7979505767f14da492b3b2e572e5df920da453",
+      "actual_sha256": "1b172bcef958085c7260015dea7979505767f14da492b3b2e572e5df920da453",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_TC_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_EXCLUSION_2026_10_29.md",
+      "dependency": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "expected_sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "actual_sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_TC_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_EXCLUSION_2026_10_29.md",
+      "dependency": "ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "expected_sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334",
+      "actual_sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_TC_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_EXCLUSION_2026_10_29.md",
+      "dependency": "OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_AND_FOUR_ORIGINAL_TC_RESIDUALS.md",
+      "expected_sha256": "dc28061e32ed9bb4b32c062b7ffbaa9e46733d1002d01dbb769441324ec70d04",
+      "actual_sha256": "dc28061e32ed9bb4b32c062b7ffbaa9e46733d1002d01dbb769441324ec70d04",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_TC_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_EXCLUSION_2026_10_29.md",
+      "dependency": "UPPER_ADJACENT_GENUINE_LEAF_SIGNED_PORT_FULL_JUNCTION_AND_FOUR_RETURN_REDUCTION.md",
+      "expected_sha256": "dc7542f5b58121e5c5e85ca82fe40373ea021d035d647eb2d6110e078661ffaf",
+      "actual_sha256": "dc7542f5b58121e5c5e85ca82fe40373ea021d035d647eb2d6110e078661ffaf",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_TC_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_EXCLUSION_2026_10_29.md",
+      "dependency": "HOUSE_TC_BOTH_LEAF_CHARTS_STRICT_OUTER_RETURN_COMPLETE_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "dc8da06b5af96a4942cf1e23aa54238f37e5a4bcae1a7b0c077ea4ae50eab0be",
+      "actual_sha256": "dc8da06b5af96a4942cf1e23aa54238f37e5a4bcae1a7b0c077ea4ae50eab0be",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_TC_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_EXCLUSION_2026_10_29.md",
+      "dependency": "HOUSE_TC_BOTH_LEAF_OWNED_AD_NORTH_UNIQUE_T_AND_WHOLE_NORTH_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "96b0fbcf0c5f871dd2a6220d4f75eb2a31e204215c9ca33440297822374bc47e",
+      "actual_sha256": "96b0fbcf0c5f871dd2a6220d4f75eb2a31e204215c9ca33440297822374bc47e",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_TC_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_EXCLUSION_2026_10_29.md",
+      "dependency": "HOUSE_TC_BOTH_LEAF_INNER_RETURN_PARALLEL_C_COMPLETE_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "20b72246941bd23e5ec951012c49f7030be4f6eb04cac8c7350bdc53fcb7b5ff",
+      "actual_sha256": "20b72246941bd23e5ec951012c49f7030be4f6eb04cac8c7350bdc53fcb7b5ff",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_TC_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_EXCLUSION_2026_10_29.md",
+      "dependency": "HOUSE_TC_BOTH_LEAF_INNER_NONPARALLEL_UNIQUE_T_PERPENDICULAR_OWNER_REDUCTION_2026_10_29.md",
+      "expected_sha256": "d79bb4a7a43016e50e23c9878bbcfef27a48487373ee06136a9143d1c4544ce0",
+      "actual_sha256": "d79bb4a7a43016e50e23c9878bbcfef27a48487373ee06136a9143d1c4544ce0",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_TC_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_EXCLUSION_2026_10_29.md",
+      "dependency": "HOUSE_TC_UPPER_LEAF_INNER_PERPENDICULAR_T_COMPLETE_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "1cffbacb603e04f7e15054f672d9e7f3c6f85a4cc6326dc209b65c047f86e71a",
+      "actual_sha256": "1cffbacb603e04f7e15054f672d9e7f3c6f85a4cc6326dc209b65c047f86e71a",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_TC_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_EXCLUSION_2026_10_29.md",
+      "dependency": "HOUSE_TC_OWNED_LEAF_INNER_STEEP_PERPENDICULAR_T_COMPLETE_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "79184f6a82ae7afd55a3f16cdc4c7088c8f34b5819bb0f09fb574ad7f5094d9a",
+      "actual_sha256": "79184f6a82ae7afd55a3f16cdc4c7088c8f34b5819bb0f09fb574ad7f5094d9a",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_TC_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_EXCLUSION_2026_10_29.md",
+      "dependency": "HOUSE_TC_OWNED_LEAF_INNER_SHALLOW_PERPENDICULAR_T_COMPLETE_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "855c4883b7e8e12a8a3af5aea0dae5d5a16f280ee5b83ffee59a4794af0c6af4",
+      "actual_sha256": "855c4883b7e8e12a8a3af5aea0dae5d5a16f280ee5b83ffee59a4794af0c6af4",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_TC_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "expected_sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "actual_sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_TC_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "expected_sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334",
+      "actual_sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_TC_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_AND_FOUR_ORIGINAL_TC_RESIDUALS.md",
+      "expected_sha256": "dc28061e32ed9bb4b32c062b7ffbaa9e46733d1002d01dbb769441324ec70d04",
+      "actual_sha256": "dc28061e32ed9bb4b32c062b7ffbaa9e46733d1002d01dbb769441324ec70d04",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_TC_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "UPPER_ADJACENT_GENUINE_LEAF_SIGNED_PORT_FULL_JUNCTION_AND_FOUR_RETURN_REDUCTION.md",
+      "expected_sha256": "dc7542f5b58121e5c5e85ca82fe40373ea021d035d647eb2d6110e078661ffaf",
+      "actual_sha256": "dc7542f5b58121e5c5e85ca82fe40373ea021d035d647eb2d6110e078661ffaf",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_TC_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "HOUSE_TC_BOTH_LEAF_CHARTS_STRICT_OUTER_RETURN_COMPLETE_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "dc8da06b5af96a4942cf1e23aa54238f37e5a4bcae1a7b0c077ea4ae50eab0be",
+      "actual_sha256": "dc8da06b5af96a4942cf1e23aa54238f37e5a4bcae1a7b0c077ea4ae50eab0be",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_TC_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "HOUSE_TC_BOTH_LEAF_OWNED_AD_NORTH_UNIQUE_T_AND_WHOLE_NORTH_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "96b0fbcf0c5f871dd2a6220d4f75eb2a31e204215c9ca33440297822374bc47e",
+      "actual_sha256": "96b0fbcf0c5f871dd2a6220d4f75eb2a31e204215c9ca33440297822374bc47e",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_TC_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "HOUSE_TC_BOTH_LEAF_INNER_RETURN_PARALLEL_C_COMPLETE_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "20b72246941bd23e5ec951012c49f7030be4f6eb04cac8c7350bdc53fcb7b5ff",
+      "actual_sha256": "20b72246941bd23e5ec951012c49f7030be4f6eb04cac8c7350bdc53fcb7b5ff",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_TC_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "HOUSE_TC_BOTH_LEAF_INNER_NONPARALLEL_UNIQUE_T_PERPENDICULAR_OWNER_REDUCTION_2026_10_29.md",
+      "expected_sha256": "d79bb4a7a43016e50e23c9878bbcfef27a48487373ee06136a9143d1c4544ce0",
+      "actual_sha256": "d79bb4a7a43016e50e23c9878bbcfef27a48487373ee06136a9143d1c4544ce0",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_TC_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "HOUSE_TC_UPPER_LEAF_INNER_PERPENDICULAR_T_COMPLETE_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "1cffbacb603e04f7e15054f672d9e7f3c6f85a4cc6326dc209b65c047f86e71a",
+      "actual_sha256": "1cffbacb603e04f7e15054f672d9e7f3c6f85a4cc6326dc209b65c047f86e71a",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_TC_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "HOUSE_TC_OWNED_LEAF_INNER_STEEP_PERPENDICULAR_T_COMPLETE_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "79184f6a82ae7afd55a3f16cdc4c7088c8f34b5819bb0f09fb574ad7f5094d9a",
+      "actual_sha256": "79184f6a82ae7afd55a3f16cdc4c7088c8f34b5819bb0f09fb574ad7f5094d9a",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_TC_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_BLOCK_FORESTS_2026_10_29.md",
+      "dependency": "HOUSE_TC_OWNED_LEAF_INNER_SHALLOW_PERPENDICULAR_T_COMPLETE_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "855c4883b7e8e12a8a3af5aea0dae5d5a16f280ee5b83ffee59a4794af0c6af4",
+      "actual_sha256": "855c4883b7e8e12a8a3af5aea0dae5d5a16f280ee5b83ffee59a4794af0c6af4",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_ALL_ORIGINAL_LOADS_AND_LEAF_TYPES_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "expected_sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "actual_sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_ALL_ORIGINAL_LOADS_AND_LEAF_TYPES_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "expected_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "actual_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_ALL_ORIGINAL_LOADS_AND_LEAF_TYPES_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "HOUSE_HUB_TC_D_COMPLETE_EXCLUSION.md",
+      "expected_sha256": "4dee13debeaab5009adec437202f7697e3d5fc53515524aa1f8610a3af39397b",
+      "actual_sha256": "4dee13debeaab5009adec437202f7697e3d5fc53515524aa1f8610a3af39397b",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_ALL_ORIGINAL_LOADS_AND_LEAF_TYPES_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "HOUSE_HUB_TB_CANONICAL_CONTACT_EXCLUSION.md",
+      "expected_sha256": "0a23b1dc8db0910147077ec114ebd4e8db40d08b6166f69c8400c5f7b6192d6f",
+      "actual_sha256": "0a23b1dc8db0910147077ec114ebd4e8db40d08b6166f69c8400c5f7b6192d6f",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_ALL_ORIGINAL_LOADS_AND_LEAF_TYPES_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "LEAF_ROOT_BOUNDARY_DETOUR_HOUSE_LOAD_EXCLUSIONS.md",
+      "expected_sha256": "adf30178a90797bde25c8d6bbb206ada3cbba0f594b45c3c57e0279f8cf70a88",
+      "actual_sha256": "adf30178a90797bde25c8d6bbb206ada3cbba0f594b45c3c57e0279f8cf70a88",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_ALL_ORIGINAL_LOADS_AND_LEAF_TYPES_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "HOUSE_HUB_TDB_COMPLETE_ATTACHMENT_EXCLUSION.md",
+      "expected_sha256": "5b0300286fd5aa65a4e968a06aedce20d4b783018aa10043cb4289f02f4619ff",
+      "actual_sha256": "5b0300286fd5aa65a4e968a06aedce20d4b783018aa10043cb4289f02f4619ff",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_ALL_ORIGINAL_LOADS_AND_LEAF_TYPES_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "HOUSE_HUB_TCB_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_EXCLUSION_2026_10_29_CONTINUATION.md",
+      "expected_sha256": "86d591029688f07e01d95acdb0592aeec9d3deda9091fbd344a0fbe818d149fc",
+      "actual_sha256": "86d591029688f07e01d95acdb0592aeec9d3deda9091fbd344a0fbe818d149fc",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_ALL_ORIGINAL_LOADS_AND_LEAF_TYPES_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "D_LEAF_TWO_BOUNDARY_THETA_BRANCHES_AND_HOUSE_HUB_TCB_COMPLETE_EXCLUSION.md",
+      "expected_sha256": "c70101e72eb09566b54d7a997149b1acedac8049f58e10ccce5f259c81e2d810",
+      "actual_sha256": "c70101e72eb09566b54d7a997149b1acedac8049f58e10ccce5f259c81e2d810",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_ALL_ORIGINAL_LOADS_AND_LEAF_TYPES_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "S_LEAF_BOUNDARY_PATH_SHORT_GAPS_EXCLUSION.md",
+      "expected_sha256": "13ad650ba3cc4b5ad3a3c51a95e5ff7ae4420e74c512d147b5242f20402918e5",
+      "actual_sha256": "13ad650ba3cc4b5ad3a3c51a95e5ff7ae4420e74c512d147b5242f20402918e5",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_ALL_ORIGINAL_LOADS_AND_LEAF_TYPES_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "D_LEAF_BOUNDARY_PATH_SHORT_FACES_EXCLUSION.md",
+      "expected_sha256": "6b9f9876a66ade8164c6eca9b3dcc6e1d80cf02de6235cf7e96171b9552a2fa7",
+      "actual_sha256": "6b9f9876a66ade8164c6eca9b3dcc6e1d80cf02de6235cf7e96171b9552a2fa7",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_ALL_ORIGINAL_LOADS_AND_LEAF_TYPES_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "HOUSE_HUB_TC_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "fc5075937fa3a7aa785749c0a80c18666d41a3306ce8caed4ca5a4a9e22a18af",
+      "actual_sha256": "fc5075937fa3a7aa785749c0a80c18666d41a3306ce8caed4ca5a4a9e22a18af",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_ALL_ORIGINAL_LOADS_AND_LEAF_TYPES_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "REVIEW_HOUSE_HUB_TC_D_COMPLETE_ROOT_2026_10_28.md",
+      "expected_sha256": "34041598838ca9ab3d5be54c4c389decbacb0ed5ee75d42e0e3cd0cab10b51a2",
+      "actual_sha256": "34041598838ca9ab3d5be54c4c389decbacb0ed5ee75d42e0e3cd0cab10b51a2",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_ALL_ORIGINAL_LOADS_AND_LEAF_TYPES_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "REVIEW_HOUSE_HUB_TC_D_COMPLETE_TRIANGLE_BRIDGES_2026_10_28.md",
+      "expected_sha256": "8d132348216554e089cf5a3106983feafe778e56f7117fcb995058eff84ed7f0",
+      "actual_sha256": "8d132348216554e089cf5a3106983feafe778e56f7117fcb995058eff84ed7f0",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_ALL_ORIGINAL_LOADS_AND_LEAF_TYPES_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "REVIEW_HOUSE_HUB_TB_CANONICAL_CONTACT_ROOT_2026_10_28.md",
+      "expected_sha256": "7af1f1a43fd5e703ce6468e5ed68cbceb8305cdc278e980ac4bb6f9cc1b5ee37",
+      "actual_sha256": "7af1f1a43fd5e703ce6468e5ed68cbceb8305cdc278e980ac4bb6f9cc1b5ee37",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_ALL_ORIGINAL_LOADS_AND_LEAF_TYPES_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "REVIEW_HOUSE_HUB_TB_CANONICAL_CONTACT_TRIANGLE_BRIDGES_2026_10_27.md",
+      "expected_sha256": "f72805162088a6024a6e4818106cbcdd7214b2cf1425f4fa32fb3143e149f7e2",
+      "actual_sha256": "f72805162088a6024a6e4818106cbcdd7214b2cf1425f4fa32fb3143e149f7e2",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_ALL_ORIGINAL_LOADS_AND_LEAF_TYPES_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "REVIEW_LEAF_ROOT_HOUSE_DETOURS_ROOT_2026_10_26.md",
+      "expected_sha256": "08a6df076ed00e27d7db6c0c2e7ee3b126096602cdeaa0b9f9af1ee2174d431c",
+      "actual_sha256": "08a6df076ed00e27d7db6c0c2e7ee3b126096602cdeaa0b9f9af1ee2174d431c",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_ALL_ORIGINAL_LOADS_AND_LEAF_TYPES_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "REVIEW_LEAF_ROOT_BOUNDARY_DETOUR_HOUSE_C6_2026_10_26.md",
+      "expected_sha256": "9d2ec74f70ef06edb07d01a0ba111bd23cac5b25578923b8f37d1a208793bb6e",
+      "actual_sha256": "9d2ec74f70ef06edb07d01a0ba111bd23cac5b25578923b8f37d1a208793bb6e",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_ALL_ORIGINAL_LOADS_AND_LEAF_TYPES_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "REVIEW_HOUSE_HUB_TDB_COMPLETE_ROOT_2026_10_28.md",
+      "expected_sha256": "458f4342e6b32acdb36e57ddd9ec23f7933797cdccbbbaebccf1d3eaaa051eef",
+      "actual_sha256": "458f4342e6b32acdb36e57ddd9ec23f7933797cdccbbbaebccf1d3eaaa051eef",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_ALL_ORIGINAL_LOADS_AND_LEAF_TYPES_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "REVIEW_HOUSE_HUB_TDB_COMPLETE_JOIN_HEXAGON_2026_10_27.md",
+      "expected_sha256": "1eef8ba6dce28e0a362ff06475daa8c3d0eab1895ded2d141eedb009262d6f45",
+      "actual_sha256": "1eef8ba6dce28e0a362ff06475daa8c3d0eab1895ded2d141eedb009262d6f45",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_ALL_ORIGINAL_LOADS_AND_LEAF_TYPES_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "REVIEW_HOUSE_HUB_TCB_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_ROOT_2026_10_29.md",
+      "expected_sha256": "e8fefa9aac64a754da6f883396310e3230972c8a9e528ec637e44fcfbf5c0e19",
+      "actual_sha256": "e8fefa9aac64a754da6f883396310e3230972c8a9e528ec637e44fcfbf5c0e19",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_ALL_ORIGINAL_LOADS_AND_LEAF_TYPES_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "REVIEW_D_THETA_BRANCHES_HOUSE_HUB_TCB_INDEPENDENT_2026_10_28.md",
+      "expected_sha256": "acf10346c2805a2589c0d3ed6081a2ae5f71dea436a5ecc94ed25530094cf006",
+      "actual_sha256": "acf10346c2805a2589c0d3ed6081a2ae5f71dea436a5ecc94ed25530094cf006",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_ALL_ORIGINAL_LOADS_AND_LEAF_TYPES_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "REVIEW_D_THETA_BRANCHES_HOUSE_HUB_TCB_ROOT_2026_10_28.md",
+      "expected_sha256": "150693b3257493873b88814cfc20ddfaf023f66c78c8c998df6a5d375c193f34",
+      "actual_sha256": "150693b3257493873b88814cfc20ddfaf023f66c78c8c998df6a5d375c193f34",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_ALL_ORIGINAL_LOADS_AND_LEAF_TYPES_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "REVIEW_S_LEAF_BOUNDARY_PATH_SHORT_GAPS_HEXAGON_2026_10_26.md",
+      "expected_sha256": "8c92aed4f956670c92ba8bb678392620fa6508222aa849ebd079c321702ba767",
+      "actual_sha256": "8c92aed4f956670c92ba8bb678392620fa6508222aa849ebd079c321702ba767",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_ALL_ORIGINAL_LOADS_AND_LEAF_TYPES_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "REVIEW_S_LEAF_BOUNDARY_PATH_SHORT_GAPS_ROOT_2026_10_26.md",
+      "expected_sha256": "7c05443f484ba5396b6b8e2073bb2a1f5fba1158291062a8097e3d3f1490b88c",
+      "actual_sha256": "7c05443f484ba5396b6b8e2073bb2a1f5fba1158291062a8097e3d3f1490b88c",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_ALL_ORIGINAL_LOADS_AND_LEAF_TYPES_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "REVIEW_D_LEAF_BOUNDARY_PATH_SHORT_FACES_HEXAGON_2026_10_26.md",
+      "expected_sha256": "4db19bfb908f31ea037d7de429083a80ed122c35d48aab8fc26b8201284507c2",
+      "actual_sha256": "4db19bfb908f31ea037d7de429083a80ed122c35d48aab8fc26b8201284507c2",
+      "match": true
+    },
+    {
+      "source": "HOUSE_HUB_ALL_ORIGINAL_LOADS_AND_LEAF_TYPES_COMPLETE_EXCLUSION_2026_10_29.md",
+      "dependency": "REVIEW_D_LEAF_BOUNDARY_PATH_SHORT_FACES_ROOT_2026_10_26.md",
+      "expected_sha256": "60e5c146b2897e8161b440a920a77b2051f826dbc50edb17ba41ae4ddc7b7f83",
+      "actual_sha256": "60e5c146b2897e8161b440a920a77b2051f826dbc50edb17ba41ae4ddc7b7f83",
+      "match": true
+    },
+    {
+      "source": "FIVE_BODY_BLOCK_WITH_ONE_GENUINE_LEAF_COMPLETE_COARSE_CELL_EXCLUSION_2026_10_29.md",
+      "dependency": "CYCLIC_BLOCK_INVENTORY.md",
+      "expected_sha256": "7ddbc3087979afcd818f72daae569cdec28567c463086b260acc1ff34af5695b",
+      "actual_sha256": "7ddbc3087979afcd818f72daae569cdec28567c463086b260acc1ff34af5695b",
+      "match": true
+    },
+    {
+      "source": "FIVE_BODY_BLOCK_WITH_ONE_GENUINE_LEAF_COMPLETE_COARSE_CELL_EXCLUSION_2026_10_29.md",
+      "dependency": "FIVE_BODY_BICONNECTED_REDUCTION.md",
+      "expected_sha256": "136ec9698facebe1d6e26ea611f9605020000fb5851e5506dad50b619bea1b56",
+      "actual_sha256": "136ec9698facebe1d6e26ea611f9605020000fb5851e5506dad50b619bea1b56",
+      "match": true
+    },
+    {
+      "source": "FIVE_BODY_BLOCK_WITH_ONE_GENUINE_LEAF_COMPLETE_COARSE_CELL_EXCLUSION_2026_10_29.md",
+      "dependency": "NO_POSITIVE_K4_SUBGRAPH.md",
+      "expected_sha256": "2920da7e2ce89a02781fa7b2edc7fedd52c0c0a6eb64859c7c611ce1d133fece",
+      "actual_sha256": "2920da7e2ce89a02781fa7b2edc7fedd52c0c0a6eb64859c7c611ce1d133fece",
+      "match": true
+    },
+    {
+      "source": "FIVE_BODY_BLOCK_WITH_ONE_GENUINE_LEAF_COMPLETE_COARSE_CELL_EXCLUSION_2026_10_29.md",
+      "dependency": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "expected_sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "actual_sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "match": true
+    },
+    {
+      "source": "FIVE_BODY_BLOCK_WITH_ONE_GENUINE_LEAF_COMPLETE_COARSE_CELL_EXCLUSION_2026_10_29.md",
+      "dependency": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "expected_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "actual_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "match": true
+    },
+    {
+      "source": "FIVE_BODY_BLOCK_WITH_ONE_GENUINE_LEAF_COMPLETE_COARSE_CELL_EXCLUSION_2026_10_29.md",
+      "dependency": "SPANNING_K23_LEAF_BLOCK_EXCLUSION.md",
+      "expected_sha256": "fa644d37e9cefaadf4af8de6fd66ef16d22409a946e53f0404a980217904f9ba",
+      "actual_sha256": "fa644d37e9cefaadf4af8de6fd66ef16d22409a946e53f0404a980217904f9ba",
+      "match": true
+    },
+    {
+      "source": "FIVE_BODY_BLOCK_WITH_ONE_GENUINE_LEAF_COMPLETE_COARSE_CELL_EXCLUSION_2026_10_29.md",
+      "dependency": "ROOTED_FIVE_CYCLE_WITH_ONE_LEAF_COMPLETE_EXCLUSION.md",
+      "expected_sha256": "8f9e5d7882b0bdbf30208a032588958b1b5ccc75bc276e98fb16df60d4adfd1c",
+      "actual_sha256": "8f9e5d7882b0bdbf30208a032588958b1b5ccc75bc276e98fb16df60d4adfd1c",
+      "match": true
+    },
+    {
+      "source": "FIVE_BODY_BLOCK_WITH_ONE_GENUINE_LEAF_COMPLETE_COARSE_CELL_EXCLUSION_2026_10_29.md",
+      "dependency": "HOUSE_ROOF_GENUINE_LEAF_COMPLETE_ORIGINAL_FAMILY_ASSEMBLY.md",
+      "expected_sha256": "e75f757eeaad89a2f412eee1f860b19aefe015749dab47bdba8280984f1ac6f9",
+      "actual_sha256": "e75f757eeaad89a2f412eee1f860b19aefe015749dab47bdba8280984f1ac6f9",
+      "match": true
+    },
+    {
+      "source": "FIVE_BODY_BLOCK_WITH_ONE_GENUINE_LEAF_COMPLETE_COARSE_CELL_EXCLUSION_2026_10_29.md",
+      "dependency": "HOUSE_LOWER_COMPLETE_ORIGINAL_LOAD_AND_LEAF_EXCLUSION.md",
+      "expected_sha256": "db3244373a87b6a8c92d537a29e7edb0b573ad2dd8adf489a85cbeb93e4e1fcc",
+      "actual_sha256": "db3244373a87b6a8c92d537a29e7edb0b573ad2dd8adf489a85cbeb93e4e1fcc",
+      "match": true
+    },
+    {
+      "source": "FIVE_BODY_BLOCK_WITH_ONE_GENUINE_LEAF_COMPLETE_COARSE_CELL_EXCLUSION_2026_10_29.md",
+      "dependency": "S_LEAF_CONNECTED_BOUNDARY_NEIGHBORS.md",
+      "expected_sha256": "70a3488bb613b1ce1cb4ac778d6f2b2acb2e04bae226741a0665378d096e28ec",
+      "actual_sha256": "70a3488bb613b1ce1cb4ac778d6f2b2acb2e04bae226741a0665378d096e28ec",
+      "match": true
+    },
+    {
+      "source": "FIVE_BODY_BLOCK_WITH_ONE_GENUINE_LEAF_COMPLETE_COARSE_CELL_EXCLUSION_2026_10_29.md",
+      "dependency": "D_LEAF_BOUNDARY_FAN_COMPLETE_EXCLUSION.md",
+      "expected_sha256": "ab7f91fab2d8223466646640bd7fee0bf3678479e9b25b1cf28a583ebc11ad17",
+      "actual_sha256": "ab7f91fab2d8223466646640bd7fee0bf3678479e9b25b1cf28a583ebc11ad17",
+      "match": true
+    },
+    {
+      "source": "FIVE_BODY_BLOCK_WITH_ONE_GENUINE_LEAF_COMPLETE_COARSE_CELL_EXCLUSION_2026_10_29.md",
+      "dependency": "FAN_ENDPOINT_COMPLETE_ORIGINAL_ROOTED_FAMILY_ASSEMBLY.md",
+      "expected_sha256": "355d962c3d830d5f688101a8aa6125a57cb05daae7d9d65b2b553d142ad11e69",
+      "actual_sha256": "355d962c3d830d5f688101a8aa6125a57cb05daae7d9d65b2b553d142ad11e69",
+      "match": true
+    },
+    {
+      "source": "FIVE_BODY_BLOCK_WITH_ONE_GENUINE_LEAF_COMPLETE_COARSE_CELL_EXCLUSION_2026_10_29.md",
+      "dependency": "LOW_RADIUS_ALIGNED_S_ROOT_TWO_COMMON_BOUNDARY_PAGES_COMPLETE_EXCLUSION.md",
+      "expected_sha256": "539b8b99a11cc91c8190b1d240a9fec080123fbb6d0046df6524291c8bde4959",
+      "actual_sha256": "539b8b99a11cc91c8190b1d240a9fec080123fbb6d0046df6524291c8bde4959",
+      "match": true
+    },
+    {
+      "source": "FIVE_BODY_BLOCK_WITH_ONE_GENUINE_LEAF_COMPLETE_COARSE_CELL_EXCLUSION_2026_10_29.md",
+      "dependency": "D_LEAF_TWO_BOUNDARY_THETA_PAGES_COMPLETE_EXCLUSION.md",
+      "expected_sha256": "a6f96f0ac277af8f978e03e7f1e7208f073958165addb113a8dab19183e5136d",
+      "actual_sha256": "a6f96f0ac277af8f978e03e7f1e7208f073958165addb113a8dab19183e5136d",
+      "match": true
+    },
+    {
+      "source": "FIVE_BODY_BLOCK_WITH_ONE_GENUINE_LEAF_COMPLETE_COARSE_CELL_EXCLUSION_2026_10_29.md",
+      "dependency": "HOUSE_HUB_ALL_ORIGINAL_LOADS_AND_LEAF_TYPES_COMPLETE_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "132d41d1bb698bed5f37c5cf27cf8f7cc12edca40cf91a4077be5aaabd5c2661",
+      "actual_sha256": "132d41d1bb698bed5f37c5cf27cf8f7cc12edca40cf91a4077be5aaabd5c2661",
+      "match": true
+    },
+    {
+      "source": "FIVE_BODY_BLOCK_WITH_ONE_GENUINE_LEAF_COMPLETE_COARSE_CELL_EXCLUSION_2026_10_29.md",
+      "dependency": "REVIEW_K23_LEAF_AND_BOOK_EXCLUSIONS_2026_10_25.md",
+      "expected_sha256": "049deca64603b49709278d7a6f3bb1bdca2c83e4ceaf4860e69719d4898dc8cf",
+      "actual_sha256": "049deca64603b49709278d7a6f3bb1bdca2c83e4ceaf4860e69719d4898dc8cf",
+      "match": true
+    },
+    {
+      "source": "FIVE_BODY_BLOCK_WITH_ONE_GENUINE_LEAF_COMPLETE_COARSE_CELL_EXCLUSION_2026_10_29.md",
+      "dependency": "REVIEW_ROOTED_C5_ONE_LEAF_COMPLETE_ROOT_2026_10_27.md",
+      "expected_sha256": "fb5e1fe30b503f7be2095ffee2ec64a236f2573d3ac6986c0c50a12be24ce28f",
+      "actual_sha256": "fb5e1fe30b503f7be2095ffee2ec64a236f2573d3ac6986c0c50a12be24ce28f",
+      "match": true
+    },
+    {
+      "source": "FIVE_BODY_BLOCK_WITH_ONE_GENUINE_LEAF_COMPLETE_COARSE_CELL_EXCLUSION_2026_10_29.md",
+      "dependency": "REVIEW_ROOTED_C5_ONE_LEAF_COMPLETE_JOIN_ROOTED_BLOCKS_2026_10_27.md",
+      "expected_sha256": "aba8c9536e58f7bd6cbf5e0dab8d6b01051884b9de9b89cca13ebb8d89907a64",
+      "actual_sha256": "aba8c9536e58f7bd6cbf5e0dab8d6b01051884b9de9b89cca13ebb8d89907a64",
+      "match": true
+    },
+    {
+      "source": "FIVE_BODY_BLOCK_WITH_ONE_GENUINE_LEAF_COMPLETE_COARSE_CELL_EXCLUSION_2026_10_29.md",
+      "dependency": "REVIEW_COMPLETE_ORIGINAL_HOUSE_ROOF_FAMILY_ASSEMBLY_INDEPENDENT_2026_10_28.md",
+      "expected_sha256": "cf65f4b3ef6ee3b0606e2bb48dd197f01bb2e5ea833b25058fb3a87066a3f9ae",
+      "actual_sha256": "cf65f4b3ef6ee3b0606e2bb48dd197f01bb2e5ea833b25058fb3a87066a3f9ae",
+      "match": true
+    },
+    {
+      "source": "FIVE_BODY_BLOCK_WITH_ONE_GENUINE_LEAF_COMPLETE_COARSE_CELL_EXCLUSION_2026_10_29.md",
+      "dependency": "REVIEW_RECOVERED_LOWER_HOUSE_FAMILY_AND_PARENT_CYCLES_2026_10_28.md",
+      "expected_sha256": "e8c4f2e4f3a049625de0aab9a9737e16b1d669e2c6108a9e90d7e33f7987ce2d",
+      "actual_sha256": "e8c4f2e4f3a049625de0aab9a9737e16b1d669e2c6108a9e90d7e33f7987ce2d",
+      "match": true
+    },
+    {
+      "source": "FIVE_BODY_BLOCK_WITH_ONE_GENUINE_LEAF_COMPLETE_COARSE_CELL_EXCLUSION_2026_10_29.md",
+      "dependency": "REVIEW_D_LEAF_BOUNDARY_FAN_AND_DIRECT_LEAVES_ROOT_2026_10_26.md",
+      "expected_sha256": "192c48dff6a93e89826b556f96091fa5c05d09f65feb1394a198cd0b64b0a23d",
+      "actual_sha256": "192c48dff6a93e89826b556f96091fa5c05d09f65feb1394a198cd0b64b0a23d",
+      "match": true
+    },
+    {
+      "source": "FIVE_BODY_BLOCK_WITH_ONE_GENUINE_LEAF_COMPLETE_COARSE_CELL_EXCLUSION_2026_10_29.md",
+      "dependency": "REVIEW_D_LEAF_BOUNDARY_FAN_AND_DIRECT_LEAVES_HEXAGON_2026_10_26.md",
+      "expected_sha256": "a36afdf621da5f44b2c2578d31313e46d84bfc1bcd881d4d6676b730e60dc77d",
+      "actual_sha256": "a36afdf621da5f44b2c2578d31313e46d84bfc1bcd881d4d6676b730e60dc77d",
+      "match": true
+    },
+    {
+      "source": "FIVE_BODY_BLOCK_WITH_ONE_GENUINE_LEAF_COMPLETE_COARSE_CELL_EXCLUSION_2026_10_29.md",
+      "dependency": "REVIEW_FAN_ENDPOINT_COMPLETE_PARENT_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "expected_sha256": "67d2a0953769b415e7ec5b8baa1b227fc3533a190895a2c60b6f357b223919ce",
+      "actual_sha256": "67d2a0953769b415e7ec5b8baa1b227fc3533a190895a2c60b6f357b223919ce",
+      "match": true
+    },
+    {
+      "source": "FIVE_BODY_BLOCK_WITH_ONE_GENUINE_LEAF_COMPLETE_COARSE_CELL_EXCLUSION_2026_10_29.md",
+      "dependency": "REVIEW_FAN_INNER_COMPLETE_ORIGINAL_PARENT_JOIN_PENTAGON_2026_10_28.md",
+      "expected_sha256": "a850fb9a9640a8f58153e9eaadde83d8dca67259ee03cf3df7d5609041181133",
+      "actual_sha256": "a850fb9a9640a8f58153e9eaadde83d8dca67259ee03cf3df7d5609041181133",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_AND_FIVE_BODY_LEAF_COARSE_COMPLETE_JOINS_HOUSE_2026_10_29.md",
+      "dependency": "HOUSE_HUB_ALL_ORIGINAL_LOADS_AND_LEAF_TYPES_COMPLETE_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "132d41d1bb698bed5f37c5cf27cf8f7cc12edca40cf91a4077be5aaabd5c2661",
+      "actual_sha256": "132d41d1bb698bed5f37c5cf27cf8f7cc12edca40cf91a4077be5aaabd5c2661",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_AND_FIVE_BODY_LEAF_COARSE_COMPLETE_JOINS_HOUSE_2026_10_29.md",
+      "dependency": "FIVE_BODY_BLOCK_WITH_ONE_GENUINE_LEAF_COMPLETE_COARSE_CELL_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "1765b2044010429d4bc523791ff81db528a53e3247b71313ed5aff62c5bc6b1c",
+      "actual_sha256": "1765b2044010429d4bc523791ff81db528a53e3247b71313ed5aff62c5bc6b1c",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_AND_FIVE_BODY_LEAF_COARSE_COMPLETE_JOINS_HOUSE_2026_10_29.md",
+      "dependency": "REVIEW_HOUSE_HUB_TC_D_COMPLETE_ROOT_2026_10_28.md",
+      "expected_sha256": "34041598838ca9ab3d5be54c4c389decbacb0ed5ee75d42e0e3cd0cab10b51a2",
+      "actual_sha256": "34041598838ca9ab3d5be54c4c389decbacb0ed5ee75d42e0e3cd0cab10b51a2",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_AND_FIVE_BODY_LEAF_COARSE_COMPLETE_JOINS_HOUSE_2026_10_29.md",
+      "dependency": "REVIEW_HOUSE_HUB_TB_CANONICAL_CONTACT_ROOT_2026_10_28.md",
+      "expected_sha256": "7af1f1a43fd5e703ce6468e5ed68cbceb8305cdc278e980ac4bb6f9cc1b5ee37",
+      "actual_sha256": "7af1f1a43fd5e703ce6468e5ed68cbceb8305cdc278e980ac4bb6f9cc1b5ee37",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_AND_FIVE_BODY_LEAF_COARSE_COMPLETE_JOINS_HOUSE_2026_10_29.md",
+      "dependency": "REVIEW_LEAF_ROOT_HOUSE_DETOURS_ROOT_2026_10_26.md",
+      "expected_sha256": "08a6df076ed00e27d7db6c0c2e7ee3b126096602cdeaa0b9f9af1ee2174d431c",
+      "actual_sha256": "08a6df076ed00e27d7db6c0c2e7ee3b126096602cdeaa0b9f9af1ee2174d431c",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_AND_FIVE_BODY_LEAF_COARSE_COMPLETE_JOINS_HOUSE_2026_10_29.md",
+      "dependency": "REVIEW_HOUSE_HUB_TDB_COMPLETE_ROOT_2026_10_28.md",
+      "expected_sha256": "458f4342e6b32acdb36e57ddd9ec23f7933797cdccbbbaebccf1d3eaaa051eef",
+      "actual_sha256": "458f4342e6b32acdb36e57ddd9ec23f7933797cdccbbbaebccf1d3eaaa051eef",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_AND_FIVE_BODY_LEAF_COARSE_COMPLETE_JOINS_HOUSE_2026_10_29.md",
+      "dependency": "REVIEW_HOUSE_HUB_TCB_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_ROOT_2026_10_29.md",
+      "expected_sha256": "e8fefa9aac64a754da6f883396310e3230972c8a9e528ec637e44fcfbf5c0e19",
+      "actual_sha256": "e8fefa9aac64a754da6f883396310e3230972c8a9e528ec637e44fcfbf5c0e19",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_AND_FIVE_BODY_LEAF_COARSE_COMPLETE_JOINS_HOUSE_2026_10_29.md",
+      "dependency": "REVIEW_D_THETA_BRANCHES_HOUSE_HUB_TCB_ROOT_2026_10_28.md",
+      "expected_sha256": "150693b3257493873b88814cfc20ddfaf023f66c78c8c998df6a5d375c193f34",
+      "actual_sha256": "150693b3257493873b88814cfc20ddfaf023f66c78c8c998df6a5d375c193f34",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_AND_FIVE_BODY_LEAF_COARSE_COMPLETE_JOINS_HOUSE_2026_10_29.md",
+      "dependency": "REVIEW_S_LEAF_BOUNDARY_PATH_SHORT_GAPS_ROOT_2026_10_26.md",
+      "expected_sha256": "7c05443f484ba5396b6b8e2073bb2a1f5fba1158291062a8097e3d3f1490b88c",
+      "actual_sha256": "7c05443f484ba5396b6b8e2073bb2a1f5fba1158291062a8097e3d3f1490b88c",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_AND_FIVE_BODY_LEAF_COARSE_COMPLETE_JOINS_HOUSE_2026_10_29.md",
+      "dependency": "REVIEW_D_LEAF_BOUNDARY_PATH_SHORT_FACES_ROOT_2026_10_26.md",
+      "expected_sha256": "60e5c146b2897e8161b440a920a77b2051f826dbc50edb17ba41ae4ddc7b7f83",
+      "actual_sha256": "60e5c146b2897e8161b440a920a77b2051f826dbc50edb17ba41ae4ddc7b7f83",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_AND_FIVE_BODY_LEAF_COARSE_COMPLETE_JOINS_HOUSE_2026_10_29.md",
+      "dependency": "REVIEW_K23_LEAF_AND_BOOK_EXCLUSIONS_2026_10_25.md",
+      "expected_sha256": "049deca64603b49709278d7a6f3bb1bdca2c83e4ceaf4860e69719d4898dc8cf",
+      "actual_sha256": "049deca64603b49709278d7a6f3bb1bdca2c83e4ceaf4860e69719d4898dc8cf",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_AND_FIVE_BODY_LEAF_COARSE_COMPLETE_JOINS_HOUSE_2026_10_29.md",
+      "dependency": "REVIEW_ROOTED_C5_ONE_LEAF_COMPLETE_ROOT_2026_10_27.md",
+      "expected_sha256": "fb5e1fe30b503f7be2095ffee2ec64a236f2573d3ac6986c0c50a12be24ce28f",
+      "actual_sha256": "fb5e1fe30b503f7be2095ffee2ec64a236f2573d3ac6986c0c50a12be24ce28f",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_AND_FIVE_BODY_LEAF_COARSE_COMPLETE_JOINS_HOUSE_2026_10_29.md",
+      "dependency": "REVIEW_ROOTED_C5_ONE_LEAF_COMPLETE_JOIN_ROOTED_BLOCKS_2026_10_27.md",
+      "expected_sha256": "aba8c9536e58f7bd6cbf5e0dab8d6b01051884b9de9b89cca13ebb8d89907a64",
+      "actual_sha256": "aba8c9536e58f7bd6cbf5e0dab8d6b01051884b9de9b89cca13ebb8d89907a64",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_AND_FIVE_BODY_LEAF_COARSE_COMPLETE_JOINS_HOUSE_2026_10_29.md",
+      "dependency": "REVIEW_COMPLETE_ORIGINAL_HOUSE_ROOF_FAMILY_ASSEMBLY_INDEPENDENT_2026_10_28.md",
+      "expected_sha256": "cf65f4b3ef6ee3b0606e2bb48dd197f01bb2e5ea833b25058fb3a87066a3f9ae",
+      "actual_sha256": "cf65f4b3ef6ee3b0606e2bb48dd197f01bb2e5ea833b25058fb3a87066a3f9ae",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_AND_FIVE_BODY_LEAF_COARSE_COMPLETE_JOINS_HOUSE_2026_10_29.md",
+      "dependency": "REVIEW_RECOVERED_LOWER_HOUSE_FAMILY_AND_PARENT_CYCLES_2026_10_28.md",
+      "expected_sha256": "e8c4f2e4f3a049625de0aab9a9737e16b1d669e2c6108a9e90d7e33f7987ce2d",
+      "actual_sha256": "e8c4f2e4f3a049625de0aab9a9737e16b1d669e2c6108a9e90d7e33f7987ce2d",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_AND_FIVE_BODY_LEAF_COARSE_COMPLETE_JOINS_HOUSE_2026_10_29.md",
+      "dependency": "REVIEW_D_LEAF_BOUNDARY_FAN_AND_DIRECT_LEAVES_ROOT_2026_10_26.md",
+      "expected_sha256": "192c48dff6a93e89826b556f96091fa5c05d09f65feb1394a198cd0b64b0a23d",
+      "actual_sha256": "192c48dff6a93e89826b556f96091fa5c05d09f65feb1394a198cd0b64b0a23d",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_AND_FIVE_BODY_LEAF_COARSE_COMPLETE_JOINS_HOUSE_2026_10_29.md",
+      "dependency": "REVIEW_FAN_ENDPOINT_COMPLETE_PARENT_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "expected_sha256": "67d2a0953769b415e7ec5b8baa1b227fc3533a190895a2c60b6f357b223919ce",
+      "actual_sha256": "67d2a0953769b415e7ec5b8baa1b227fc3533a190895a2c60b6f357b223919ce",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_AND_FIVE_BODY_LEAF_COARSE_COMPLETE_JOINS_HOUSE_2026_10_29.md",
+      "dependency": "REVIEW_FAN_INNER_COMPLETE_ORIGINAL_PARENT_JOIN_PENTAGON_2026_10_28.md",
+      "expected_sha256": "a850fb9a9640a8f58153e9eaadde83d8dca67259ee03cf3df7d5609041181133",
+      "actual_sha256": "a850fb9a9640a8f58153e9eaadde83d8dca67259ee03cf3df7d5609041181133",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_AND_FIVE_BODY_LEAF_COARSE_COMPLETE_JOINS_HOUSE_2026_10_29.md",
+      "dependency": "REVIEW_ENDPOINT_FAN_GENUINE_S_COMPLETE_TC_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "expected_sha256": "38b0f15c18405104d0408591954b3367915ec089b253682bb4600bf6ef721dae",
+      "actual_sha256": "38b0f15c18405104d0408591954b3367915ec089b253682bb4600bf6ef721dae",
+      "match": true
+    },
+    {
+      "source": "REVIEW_HOUSE_HUB_AND_FIVE_BODY_LEAF_COARSE_COMPLETE_JOINS_HOUSE_2026_10_29.md",
+      "dependency": "REVIEW_HOUSE_HUB_TC_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_BLOCK_FORESTS_2026_10_29.md",
+      "expected_sha256": "2dd88e044fadd894eab1cc45f3d46e3040e1811dde82c2b552ef1fa9e6356c67",
+      "actual_sha256": "2dd88e044fadd894eab1cc45f3d46e3040e1811dde82c2b552ef1fa9e6356c67",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_RADIAL_ROOF_OWNED_INTERFACE_NONADJACENT_RETURN_COMPLETE_D02_EXCLUSION_2026_10_29.md",
+      "dependency": "LOADED_PARALLEL_FULL_STAR_WITH_DISTINCT_NEIGHBORS_FORCES_RADIAL_S_2026_10_29.md",
+      "expected_sha256": "f0e7b44a8d7e0eff5654384bf20bb5a99c3809d57a92bbb16afba6ee7ac1c96c",
+      "actual_sha256": "f0e7b44a8d7e0eff5654384bf20bb5a99c3809d57a92bbb16afba6ee7ac1c96c",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_RADIAL_ROOF_OWNED_INTERFACE_NONADJACENT_RETURN_COMPLETE_D02_EXCLUSION_2026_10_29.md",
+      "dependency": "PARALLEL_ROOF_TILTED_HUB_DISTINCT_APPLICATIONS_AND_FULL_RETURN_OWNER_COVER_2026_10_29.md",
+      "expected_sha256": "ce5219a2ee26f86a57a7e237582858f64f6b05646b600be52e73de7b2f43ab6a",
+      "actual_sha256": "ce5219a2ee26f86a57a7e237582858f64f6b05646b600be52e73de7b2f43ab6a",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_RADIAL_ROOF_OWNED_INTERFACE_NONADJACENT_RETURN_COMPLETE_D02_EXCLUSION_2026_10_29.md",
+      "dependency": "PARALLEL_RADIAL_ROOF_WITH_ANY_ALIGNED_HUB_COMPLETE_D02_FEATURE_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "5089e790d324a645db72b85d9ecdf54a1e1d90f638d7a4ac4b48f6e4dca1bb37",
+      "actual_sha256": "5089e790d324a645db72b85d9ecdf54a1e1d90f638d7a4ac4b48f6e4dca1bb37",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_RADIAL_ROOF_OWNED_INTERFACE_NONADJACENT_RETURN_COMPLETE_D02_EXCLUSION_2026_10_29.md",
+      "dependency": "PHYSICAL_CONTACT_STRESS.md",
+      "expected_sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "actual_sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_RADIAL_ROOF_OWNED_INTERFACE_NONADJACENT_RETURN_COMPLETE_D02_EXCLUSION_2026_10_29.md",
+      "dependency": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "expected_sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "actual_sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_RADIAL_ROOF_OWNED_INTERFACE_NONADJACENT_RETURN_COMPLETE_D02_EXCLUSION_2026_10_29.md",
+      "dependency": "SHARP_QUARTER_CLEAR_RADIUS_FIVE_QUARTERS_ARC_AND_INTERVAL_CAPACITY.md",
+      "expected_sha256": "bca528af5320cc8314839eb0d53cf6f15ec381ac42d5bd353f62a27a47101f67",
+      "actual_sha256": "bca528af5320cc8314839eb0d53cf6f15ec381ac42d5bd353f62a27a47101f67",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_RADIAL_ROOF_OWNED_INTERFACE_NONADJACENT_RETURN_COMPLETE_D02_EXCLUSION_2026_10_29.md",
+      "dependency": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "expected_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "actual_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_RADIAL_ROOF_OWNED_INTERFACE_NONADJACENT_RETURN_COMPLETE_D02_EXCLUSION_2026_10_29.md",
+      "dependency": "SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "expected_sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1",
+      "actual_sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_RADIAL_ROOF_OWNED_INTERFACE_NONADJACENT_RETURN_COMPLETE_D02_EXCLUSION_2026_10_29.md",
+      "dependency": "CHORDED_HEXAGON_CENTRAL_CAPACITY_ONE.md",
+      "expected_sha256": "0b787eae6efe36d2ca6c40dbb079d3262192125fffe58026bacbfd657d1a9a34",
+      "actual_sha256": "0b787eae6efe36d2ca6c40dbb079d3262192125fffe58026bacbfd657d1a9a34",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_RADIAL_ROOF_OWNED_INTERFACE_NONADJACENT_RETURN_COMPLETE_D02_EXCLUSION_2026_10_29.md",
+      "dependency": "CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md",
+      "expected_sha256": "b61b0dec7ded00984c687e353fd3f3bfb5a5a7ade45d87d69aaeade09f23d80b",
+      "actual_sha256": "b61b0dec7ded00984c687e353fd3f3bfb5a5a7ade45d87d69aaeade09f23d80b",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_RADIAL_ROOF_OWNED_INTERFACE_NONADJACENT_RETURN_COMPLETE_D02_EXCLUSION_2026_10_29.md",
+      "dependency": "FORCE_FREE_BOUNDARY_SIDE_CHANNEL_OUTER_POCKET_CAPACITY_ONE.md",
+      "expected_sha256": "418229089de594515bbb60da5bdcdb4cd044bd4e9396aacfa47d27de96194055",
+      "actual_sha256": "418229089de594515bbb60da5bdcdb4cd044bd4e9396aacfa47d27de96194055",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_RADIAL_ROOF_OWNED_INTERFACE_NONADJACENT_RETURN_COMPLETE_D02_EXCLUSION_2026_10_29.md",
+      "dependency": "FORCE_FREE_OCCUPIED_SIDE_CHANNEL_ONE_FORTIETH_PROXIMITY.md",
+      "expected_sha256": "5e8f69ad14c78b6ad99a1ba46855fc3627df5ccc1d5451f295826d2b06709abb",
+      "actual_sha256": "5e8f69ad14c78b6ad99a1ba46855fc3627df5ccc1d5451f295826d2b06709abb",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_RADIAL_ROOF_OWNED_INTERFACE_NONADJACENT_RETURN_COMPLETE_D02_EXCLUSION_2026_10_29.md",
+      "dependency": "C7_INNER_SIDE_CORNER_RESTRICTIONS.md",
+      "expected_sha256": "b9329b7a81b57cd0fef4b62c69c26388face02b8b985c79624aa285416284733",
+      "actual_sha256": "b9329b7a81b57cd0fef4b62c69c26388face02b8b985c79624aa285416284733",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_RADIAL_ROOF_OWNED_INTERFACE_NONADJACENT_RETURN_COMPLETE_D02_EXCLUSION_2026_10_29.md",
+      "dependency": "SHARED_HUB_PARALLEL_ROOF_COMPLETE_D02_L135_L1345_FEATURE_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "315b5af77c055aff089ac86d0de430a2e1307af3e1f8454f0f3c7ad0db0dc7e8",
+      "actual_sha256": "315b5af77c055aff089ac86d0de430a2e1307af3e1f8454f0f3c7ad0db0dc7e8",
+      "match": true
+    },
+    {
+      "source": "PARALLEL_RADIAL_ROOF_OWNED_INTERFACE_NONADJACENT_RETURN_COMPLETE_D02_EXCLUSION_2026_10_29.md",
+      "dependency": "recovered_variants/parallel_diagonal_2026_10_29/FULL_PARALLEL_RETURN_STARS_DIAGONAL_CHANNEL_EXTERIOR_POCKET_EMPTY.md",
+      "expected_sha256": "60aafee1c86633dd2a384d703425d9b60369f0b522c7ef0f85fe5eac4472b078",
+      "actual_sha256": "60aafee1c86633dd2a384d703425d9b60369f0b522c7ef0f85fe5eac4472b078",
+      "match": true
+    },
+    {
+      "source": "ADOPTION_COMPLETE_FIVE_BODY_LEAF_COARSE_AND_OWNED_ROOF_2026_10_29.md",
+      "dependency": "HOUSE_TC_BOTH_LEAF_INNER_NONPARALLEL_UNIQUE_T_PERPENDICULAR_OWNER_REDUCTION_2026_10_29.md",
+      "expected_sha256": "d79bb4a7a43016e50e23c9878bbcfef27a48487373ee06136a9143d1c4544ce0",
+      "actual_sha256": "d79bb4a7a43016e50e23c9878bbcfef27a48487373ee06136a9143d1c4544ce0",
+      "match": true
+    },
+    {
+      "source": "ADOPTION_COMPLETE_FIVE_BODY_LEAF_COARSE_AND_OWNED_ROOF_2026_10_29.md",
+      "dependency": "REVIEW_HOUSE_TC_INNER_NONPARALLEL_PERPENDICULAR_T_BLOCK_FORESTS_2026_10_29.md",
+      "expected_sha256": "b96c8f566fac489077a467395cd78b8bc9fe8d2cefd3744a40c831d21b7d45a7",
+      "actual_sha256": "b96c8f566fac489077a467395cd78b8bc9fe8d2cefd3744a40c831d21b7d45a7",
+      "match": true
+    },
+    {
+      "source": "ADOPTION_COMPLETE_FIVE_BODY_LEAF_COARSE_AND_OWNED_ROOF_2026_10_29.md",
+      "dependency": "HOUSE_TC_UPPER_LEAF_INNER_PERPENDICULAR_T_COMPLETE_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "1cffbacb603e04f7e15054f672d9e7f3c6f85a4cc6326dc209b65c047f86e71a",
+      "actual_sha256": "1cffbacb603e04f7e15054f672d9e7f3c6f85a4cc6326dc209b65c047f86e71a",
+      "match": true
+    },
+    {
+      "source": "ADOPTION_COMPLETE_FIVE_BODY_LEAF_COARSE_AND_OWNED_ROOF_2026_10_29.md",
+      "dependency": "REVIEW_HOUSE_TC_UPPER_LEAF_INNER_PERPENDICULAR_T_BLOCK_FORESTS_2026_10_29.md",
+      "expected_sha256": "f4bc7383754f06d2e3da3376b322cdcbbf119ba9d30845d047825c5af6198a2a",
+      "actual_sha256": "f4bc7383754f06d2e3da3376b322cdcbbf119ba9d30845d047825c5af6198a2a",
+      "match": true
+    },
+    {
+      "source": "ADOPTION_COMPLETE_FIVE_BODY_LEAF_COARSE_AND_OWNED_ROOF_2026_10_29.md",
+      "dependency": "HOUSE_TC_OWNED_LEAF_INNER_STEEP_PERPENDICULAR_T_COMPLETE_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "79184f6a82ae7afd55a3f16cdc4c7088c8f34b5819bb0f09fb574ad7f5094d9a",
+      "actual_sha256": "79184f6a82ae7afd55a3f16cdc4c7088c8f34b5819bb0f09fb574ad7f5094d9a",
+      "match": true
+    },
+    {
+      "source": "ADOPTION_COMPLETE_FIVE_BODY_LEAF_COARSE_AND_OWNED_ROOF_2026_10_29.md",
+      "dependency": "REVIEW_HOUSE_TC_OWNED_LEAF_STEEP_PERPENDICULAR_T_BLOCK_FORESTS_2026_10_29.md",
+      "expected_sha256": "36284d64913251bc6f9626f6acf3b98431e108f6206cc7683860db2b277bbfd4",
+      "actual_sha256": "36284d64913251bc6f9626f6acf3b98431e108f6206cc7683860db2b277bbfd4",
+      "match": true
+    },
+    {
+      "source": "ADOPTION_COMPLETE_FIVE_BODY_LEAF_COARSE_AND_OWNED_ROOF_2026_10_29.md",
+      "dependency": "LOADED_PERPENDICULAR_OWNED_SIDE_CONTACTS_NEAR_VERTICAL_POINT_HORIZONTAL_GAP_BOUND_2026_10_29.md",
+      "expected_sha256": "1b172bcef958085c7260015dea7979505767f14da492b3b2e572e5df920da453",
+      "actual_sha256": "1b172bcef958085c7260015dea7979505767f14da492b3b2e572e5df920da453",
+      "match": true
+    },
+    {
+      "source": "ADOPTION_COMPLETE_FIVE_BODY_LEAF_COARSE_AND_OWNED_ROOF_2026_10_29.md",
+      "dependency": "REVIEW_LOADED_PERPENDICULAR_SIDE_NEAR_VERTICAL_GAP_BLOCK_FORESTS_2026_10_29.md",
+      "expected_sha256": "6064116b08485ecaf701d0f9b611849c2c4d42fab6753287d5be2f4f76f17b59",
+      "actual_sha256": "6064116b08485ecaf701d0f9b611849c2c4d42fab6753287d5be2f4f76f17b59",
+      "match": true
+    },
+    {
+      "source": "ADOPTION_COMPLETE_FIVE_BODY_LEAF_COARSE_AND_OWNED_ROOF_2026_10_29.md",
+      "dependency": "HOUSE_TC_OWNED_LEAF_INNER_SHALLOW_PERPENDICULAR_T_COMPLETE_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "855c4883b7e8e12a8a3af5aea0dae5d5a16f280ee5b83ffee59a4794af0c6af4",
+      "actual_sha256": "855c4883b7e8e12a8a3af5aea0dae5d5a16f280ee5b83ffee59a4794af0c6af4",
+      "match": true
+    },
+    {
+      "source": "ADOPTION_COMPLETE_FIVE_BODY_LEAF_COARSE_AND_OWNED_ROOF_2026_10_29.md",
+      "dependency": "REVIEW_HOUSE_TC_OWNED_LEAF_SHALLOW_PERPENDICULAR_T_BLOCK_FORESTS_2026_10_29.md",
+      "expected_sha256": "7d03d8dab6f5f24db4346f1c32e17d140e47a8cd7b387008e51fc2656240cc5d",
+      "actual_sha256": "7d03d8dab6f5f24db4346f1c32e17d140e47a8cd7b387008e51fc2656240cc5d",
+      "match": true
+    },
+    {
+      "source": "ADOPTION_COMPLETE_FIVE_BODY_LEAF_COARSE_AND_OWNED_ROOF_2026_10_29.md",
+      "dependency": "HOUSE_HUB_TC_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "fc5075937fa3a7aa785749c0a80c18666d41a3306ce8caed4ca5a4a9e22a18af",
+      "actual_sha256": "fc5075937fa3a7aa785749c0a80c18666d41a3306ce8caed4ca5a4a9e22a18af",
+      "match": true
+    },
+    {
+      "source": "ADOPTION_COMPLETE_FIVE_BODY_LEAF_COARSE_AND_OWNED_ROOF_2026_10_29.md",
+      "dependency": "REVIEW_HOUSE_HUB_TC_GENUINE_S_COMPLETE_ORIGINAL_FAMILY_BLOCK_FORESTS_2026_10_29.md",
+      "expected_sha256": "2dd88e044fadd894eab1cc45f3d46e3040e1811dde82c2b552ef1fa9e6356c67",
+      "actual_sha256": "2dd88e044fadd894eab1cc45f3d46e3040e1811dde82c2b552ef1fa9e6356c67",
+      "match": true
+    },
+    {
+      "source": "ADOPTION_COMPLETE_FIVE_BODY_LEAF_COARSE_AND_OWNED_ROOF_2026_10_29.md",
+      "dependency": "HOUSE_HUB_ALL_ORIGINAL_LOADS_AND_LEAF_TYPES_COMPLETE_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "132d41d1bb698bed5f37c5cf27cf8f7cc12edca40cf91a4077be5aaabd5c2661",
+      "actual_sha256": "132d41d1bb698bed5f37c5cf27cf8f7cc12edca40cf91a4077be5aaabd5c2661",
+      "match": true
+    },
+    {
+      "source": "ADOPTION_COMPLETE_FIVE_BODY_LEAF_COARSE_AND_OWNED_ROOF_2026_10_29.md",
+      "dependency": "FIVE_BODY_BLOCK_WITH_ONE_GENUINE_LEAF_COMPLETE_COARSE_CELL_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "1765b2044010429d4bc523791ff81db528a53e3247b71313ed5aff62c5bc6b1c",
+      "actual_sha256": "1765b2044010429d4bc523791ff81db528a53e3247b71313ed5aff62c5bc6b1c",
+      "match": true
+    },
+    {
+      "source": "ADOPTION_COMPLETE_FIVE_BODY_LEAF_COARSE_AND_OWNED_ROOF_2026_10_29.md",
+      "dependency": "REVIEW_HOUSE_HUB_AND_FIVE_BODY_LEAF_COARSE_COMPLETE_JOINS_HOUSE_2026_10_29.md",
+      "expected_sha256": "bd331b9aab91a7d6103a1e81176bd9c0dd40ffb67c4400e55fa6585621511603",
+      "actual_sha256": "bd331b9aab91a7d6103a1e81176bd9c0dd40ffb67c4400e55fa6585621511603",
+      "match": true
+    },
+    {
+      "source": "ADOPTION_COMPLETE_FIVE_BODY_LEAF_COARSE_AND_OWNED_ROOF_2026_10_29.md",
+      "dependency": "PARALLEL_RADIAL_ROOF_OWNED_INTERFACE_NONADJACENT_RETURN_COMPLETE_D02_EXCLUSION_2026_10_29.md",
+      "expected_sha256": "917cbabedb116b370d3c3216967f5f64a2da0f6824aef0d17c9fc8ae0dc4b0fa",
+      "actual_sha256": "917cbabedb116b370d3c3216967f5f64a2da0f6824aef0d17c9fc8ae0dc4b0fa",
+      "match": true
+    },
+    {
+      "source": "ADOPTION_COMPLETE_FIVE_BODY_LEAF_COARSE_AND_OWNED_ROOF_2026_10_29.md",
+      "dependency": "REVIEW_PARALLEL_ROOF_OWNED_NONADJACENT_RETURN_COMPLETE_ROOT_2026_10_29.md",
+      "expected_sha256": "e6f400d47a7523f95025f8e92538e5e54bff820cc061ce8d2738d26745619e38",
+      "actual_sha256": "e6f400d47a7523f95025f8e92538e5e54bff820cc061ce8d2738d26745619e38",
+      "match": true
+    },
+    {
+      "source": "ADOPTION_COMPLETE_FIVE_BODY_LEAF_COARSE_AND_OWNED_ROOF_2026_10_29.md",
+      "dependency": "OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_AND_FOUR_ORIGINAL_TC_RESIDUALS.md",
+      "expected_sha256": "dc28061e32ed9bb4b32c062b7ffbaa9e46733d1002d01dbb769441324ec70d04",
+      "actual_sha256": "dc28061e32ed9bb4b32c062b7ffbaa9e46733d1002d01dbb769441324ec70d04",
+      "match": true
+    },
+    {
+      "source": "ADOPTION_COMPLETE_FIVE_BODY_LEAF_COARSE_AND_OWNED_ROOF_2026_10_29.md",
+      "dependency": "UPPER_ADJACENT_GENUINE_LEAF_SIGNED_PORT_FULL_JUNCTION_AND_FOUR_RETURN_REDUCTION.md",
+      "expected_sha256": "dc7542f5b58121e5c5e85ca82fe40373ea021d035d647eb2d6110e078661ffaf",
+      "actual_sha256": "dc7542f5b58121e5c5e85ca82fe40373ea021d035d647eb2d6110e078661ffaf",
+      "match": true
+    },
+    {
+      "source": "ADOPTION_COMPLETE_FIVE_BODY_LEAF_COARSE_AND_OWNED_ROOF_2026_10_29.md",
+      "dependency": "NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_OBSTRUCTION_AND_STRICT_HOUSE_RETURN_EXCLUSION.md",
+      "expected_sha256": "d92ec80546d6ae608494626e6f05c52c5f8ff2c7548be0bd98b93bbbc892c8ff",
+      "actual_sha256": "d92ec80546d6ae608494626e6f05c52c5f8ff2c7548be0bd98b93bbbc892c8ff",
+      "match": true
+    },
+    {
+      "source": "ADOPTION_COMPLETE_FIVE_BODY_LEAF_COARSE_AND_OWNED_ROOF_2026_10_29.md",
+      "dependency": "STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_DIAGONAL_AND_HOUSE_RETURN_EXCLUSION.md",
+      "expected_sha256": "44fa42fa2f33468495fb00d6d0c82287afc25cbd0416b28cd81e6d96ba0a6a71",
+      "actual_sha256": "44fa42fa2f33468495fb00d6d0c82287afc25cbd0416b28cd81e6d96ba0a6a71",
+      "match": true
+    },
+    {
+      "source": "OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_AND_FOUR_ORIGINAL_TC_RESIDUALS.md",
+      "dependency": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "expected_sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "actual_sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "match": true
+    },
+    {
+      "source": "OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_AND_FOUR_ORIGINAL_TC_RESIDUALS.md",
+      "dependency": "ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "expected_sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334",
+      "actual_sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334",
+      "match": true
+    },
+    {
+      "source": "OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_AND_FOUR_ORIGINAL_TC_RESIDUALS.md",
+      "dependency": "HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "expected_sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143",
+      "actual_sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143",
+      "match": true
+    },
+    {
+      "source": "OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_AND_FOUR_ORIGINAL_TC_RESIDUALS.md",
+      "dependency": "STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "expected_sha256": "0c67d5578a73ec36fd9b79c509c3e158cb9a218fac8666256ab2ca1f9505cb45",
+      "actual_sha256": "0c67d5578a73ec36fd9b79c509c3e158cb9a218fac8666256ab2ca1f9505cb45",
+      "match": true
+    },
+    {
+      "source": "OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_AND_FOUR_ORIGINAL_TC_RESIDUALS.md",
+      "dependency": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "expected_sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "actual_sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "match": true
+    },
+    {
+      "source": "OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_AND_FOUR_ORIGINAL_TC_RESIDUALS.md",
+      "dependency": "NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_OBSTRUCTION_AND_STRICT_HOUSE_RETURN_EXCLUSION.md",
+      "expected_sha256": "d92ec80546d6ae608494626e6f05c52c5f8ff2c7548be0bd98b93bbbc892c8ff",
+      "actual_sha256": "d92ec80546d6ae608494626e6f05c52c5f8ff2c7548be0bd98b93bbbc892c8ff",
+      "match": true
+    },
+    {
+      "source": "OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_AND_FOUR_ORIGINAL_TC_RESIDUALS.md",
+      "dependency": "STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_DIAGONAL_AND_HOUSE_RETURN_EXCLUSION.md",
+      "expected_sha256": "44fa42fa2f33468495fb00d6d0c82287afc25cbd0416b28cd81e6d96ba0a6a71",
+      "actual_sha256": "44fa42fa2f33468495fb00d6d0c82287afc25cbd0416b28cd81e6d96ba0a6a71",
+      "match": true
+    },
+    {
+      "source": "UPPER_ADJACENT_GENUINE_LEAF_SIGNED_PORT_FULL_JUNCTION_AND_FOUR_RETURN_REDUCTION.md",
+      "dependency": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "expected_sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "actual_sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "match": true
+    },
+    {
+      "source": "UPPER_ADJACENT_GENUINE_LEAF_SIGNED_PORT_FULL_JUNCTION_AND_FOUR_RETURN_REDUCTION.md",
+      "dependency": "HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "expected_sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143",
+      "actual_sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143",
+      "match": true
+    },
+    {
+      "source": "UPPER_ADJACENT_GENUINE_LEAF_SIGNED_PORT_FULL_JUNCTION_AND_FOUR_RETURN_REDUCTION.md",
+      "dependency": "LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "expected_sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78",
+      "actual_sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78",
+      "match": true
+    },
+    {
+      "source": "UPPER_ADJACENT_GENUINE_LEAF_SIGNED_PORT_FULL_JUNCTION_AND_FOUR_RETURN_REDUCTION.md",
+      "dependency": "STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "expected_sha256": "0c67d5578a73ec36fd9b79c509c3e158cb9a218fac8666256ab2ca1f9505cb45",
+      "actual_sha256": "0c67d5578a73ec36fd9b79c509c3e158cb9a218fac8666256ab2ca1f9505cb45",
+      "match": true
+    },
+    {
+      "source": "UPPER_ADJACENT_GENUINE_LEAF_SIGNED_PORT_FULL_JUNCTION_AND_FOUR_RETURN_REDUCTION.md",
+      "dependency": "UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+      "expected_sha256": "406fce53d22cc20eec43a373a877798dab583a6bd93f684ff124293016c44c87",
+      "actual_sha256": "406fce53d22cc20eec43a373a877798dab583a6bd93f684ff124293016c44c87",
+      "match": true
+    },
+    {
+      "source": "UPPER_ADJACENT_GENUINE_LEAF_SIGNED_PORT_FULL_JUNCTION_AND_FOUR_RETURN_REDUCTION.md",
+      "dependency": "STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_DIAGONAL_AND_HOUSE_RETURN_EXCLUSION.md",
+      "expected_sha256": "44fa42fa2f33468495fb00d6d0c82287afc25cbd0416b28cd81e6d96ba0a6a71",
+      "actual_sha256": "44fa42fa2f33468495fb00d6d0c82287afc25cbd0416b28cd81e6d96ba0a6a71",
+      "match": true
+    },
+    {
+      "source": "UPPER_ADJACENT_GENUINE_LEAF_SIGNED_PORT_FULL_JUNCTION_AND_FOUR_RETURN_REDUCTION.md",
+      "dependency": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "expected_sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "actual_sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "match": true
+    },
+    {
+      "source": "UPPER_ADJACENT_GENUINE_LEAF_SIGNED_PORT_FULL_JUNCTION_AND_FOUR_RETURN_REDUCTION.md",
+      "dependency": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "expected_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "actual_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "match": true
+    },
+    {
+      "source": "NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_OBSTRUCTION_AND_STRICT_HOUSE_RETURN_EXCLUSION.md",
+      "dependency": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "expected_sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "actual_sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "match": true
+    },
+    {
+      "source": "NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_OBSTRUCTION_AND_STRICT_HOUSE_RETURN_EXCLUSION.md",
+      "dependency": "ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "expected_sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334",
+      "actual_sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334",
+      "match": true
+    },
+    {
+      "source": "NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_OBSTRUCTION_AND_STRICT_HOUSE_RETURN_EXCLUSION.md",
+      "dependency": "HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "expected_sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143",
+      "actual_sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143",
+      "match": true
+    },
+    {
+      "source": "NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_OBSTRUCTION_AND_STRICT_HOUSE_RETURN_EXCLUSION.md",
+      "dependency": "LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "expected_sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78",
+      "actual_sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78",
+      "match": true
+    },
+    {
+      "source": "STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_DIAGONAL_AND_HOUSE_RETURN_EXCLUSION.md",
+      "dependency": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "expected_sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "actual_sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "match": true
+    },
+    {
+      "source": "STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_DIAGONAL_AND_HOUSE_RETURN_EXCLUSION.md",
+      "dependency": "ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "expected_sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334",
+      "actual_sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334",
+      "match": true
+    },
+    {
+      "source": "STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_DIAGONAL_AND_HOUSE_RETURN_EXCLUSION.md",
+      "dependency": "HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "expected_sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143",
+      "actual_sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143",
+      "match": true
+    },
+    {
+      "source": "STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_DIAGONAL_AND_HOUSE_RETURN_EXCLUSION.md",
+      "dependency": "LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "expected_sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78",
+      "actual_sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78",
+      "match": true
+    },
+    {
+      "source": "STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_DIAGONAL_AND_HOUSE_RETURN_EXCLUSION.md",
+      "dependency": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "expected_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "actual_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "match": true
+    }
+  ],
+  "exact_house_cover_recovery": {
+    "manifest": {
+      "path": "research/nine/recovered_variants/house_full_tc_cover_2026_10_29/RECOVERY_MANIFEST.json",
+      "bytes": 75539,
+      "lf_lines": 1160,
+      "sha256": "891a23d807de8135d67bb1d9fc069b62b48ade5bc589bc0258c1b07ff1169358",
+      "git_blob_sha1": "b70cc6bb5b63c8407be3795465a333e8352f3f12"
+    },
+    "payload_count": 59,
+    "canonical_copies_checked": 58,
+    "new_canonical_objects": [
+      "ADDENDUM_NEAR_SIDE_RETURN_RECORD_SUMMAND_ORDER_A5F_2026_10_29.md",
+      "ADOPTION_NEAR_SIDE_BOUNDARY_RETURN_AXIS_STRICT_HOUSE_ROOT_A5F_2026_10_29.md",
+      "ADOPTION_OWNED_GENUINE_S_ROOT_FULL_AT_FOUR_CELL_COVER_ROOT_A5F_2026_10_29.md",
+      "ADOPTION_STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_HOUSE_ROOT_A5F_2026_10_29.md",
+      "ADOPTION_UPPER_ADJACENT_SIGNED_FULL_JUNCTION_FOUR_CELL_ROOT_A5F_2026_10_29.md",
+      "AUTHOR_NEAR_SIDE_BOUNDARY_RETURN_AXIS_OBSTRUCTION_STRICT_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+      "AUTHOR_OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_EXACT_RECORD_A5F_2026_10_29.json",
+      "AUTHOR_STRICT_COMMON_ROOT_CORNER_JUNCTION_DIAGONAL_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+      "AUTHOR_UPPER_ADJACENT_SIGNED_PORT_FULL_JUNCTION_FOUR_RETURN_EXACT_RECORD_A5F_2026_10_29.json",
+      "INDEPENDENT_NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_STRICT_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+      "INDEPENDENT_OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_EXACT_RECORD_A5F_2026_10_29.json",
+      "INDEPENDENT_STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+      "INDEPENDENT_UPPER_ADJACENT_SIGNED_PORT_FULL_JUNCTION_FOUR_RETURN_EXACT_RECORD_A5F_2026_10_29.json",
+      "NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_OBSTRUCTION_AND_STRICT_HOUSE_RETURN_EXCLUSION.md",
+      "OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_AND_FOUR_ORIGINAL_TC_RESIDUALS.md",
+      "REVIEW_NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_STRICT_HOUSE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "REVIEW_OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "REVIEW_STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_HOUSE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "REVIEW_UPPER_ADJACENT_SIGNED_PORT_FULL_JUNCTION_FOUR_RETURN_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_DIAGONAL_AND_HOUSE_RETURN_EXCLUSION.md",
+      "UPPER_ADJACENT_GENUINE_LEAF_SIGNED_PORT_FULL_JUNCTION_AND_FOUR_RETURN_REDUCTION.md"
+    ],
+    "existing_canonical_preimages_not_overwritten": true,
+    "objects": [
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/ADDENDUM_NEAR_SIDE_RETURN_RECORD_SUMMAND_ORDER_A5F_2026_10_29.md",
+        "sha256": "a6ff9379b10b6e9d885fb1f47656844a71de598cc10089deaaa819ae7d722adf",
+        "bytes": 3175,
+        "canonical_path": "ADDENDUM_NEAR_SIDE_RETURN_RECORD_SUMMAND_ORDER_A5F_2026_10_29.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/ADOPTION_BROADER_CENTERED_ARCS_AND_TWO_FULL_STAR_REDUCTIONS_ROOT_2026_10_28.md",
+        "sha256": "cf84585f5eba59a6df2e61a657f65a62248f74d0064d8a43907947ba9f4dc503",
+        "bytes": 9911,
+        "canonical_path": "ADOPTION_BROADER_CENTERED_ARCS_AND_TWO_FULL_STAR_REDUCTIONS_ROOT_2026_10_28.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/ADOPTION_COMPLETE_ROOF_INTERFACES_AND_BOUNDARY_FREE_STAR_ROOT_2026_10_28.md",
+        "sha256": "aa52da0dee41ff228f68e9e4b9d8982f6d5ab89cfd0f58c62b53f84158a77678",
+        "bytes": 13739,
+        "canonical_path": "ADOPTION_COMPLETE_ROOF_INTERFACES_AND_BOUNDARY_FREE_STAR_ROOT_2026_10_28.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+        "sha256": "fb99b163e4450df464fcc095ac6aea0a3294624fcb329ffbc515efda6a0bea28",
+        "bytes": 17104,
+        "canonical_path": "ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/ADOPTION_NEAR_SIDE_BOUNDARY_RETURN_AXIS_STRICT_HOUSE_ROOT_A5F_2026_10_29.md",
+        "sha256": "5b82dea0252963c0c55b85ae0d1f41061f38f1a9beab98e5228a3bd54b5fec38",
+        "bytes": 14287,
+        "canonical_path": "ADOPTION_NEAR_SIDE_BOUNDARY_RETURN_AXIS_STRICT_HOUSE_ROOT_A5F_2026_10_29.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/ADOPTION_OWNED_GENUINE_S_ROOT_FULL_AT_FOUR_CELL_COVER_ROOT_A5F_2026_10_29.md",
+        "sha256": "dced6e8226b421a855a14c8b4a4a320b19eba4f90270df7773c5a724b33b26bb",
+        "bytes": 14032,
+        "canonical_path": "ADOPTION_OWNED_GENUINE_S_ROOT_FULL_AT_FOUR_CELL_COVER_ROOT_A5F_2026_10_29.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/ADOPTION_STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_HOUSE_ROOT_A5F_2026_10_29.md",
+        "sha256": "34c7ffd6f52bcd62fa7115711360375567d74bba93923bf26e9d3bed82af0541",
+        "bytes": 15366,
+        "canonical_path": "ADOPTION_STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_HOUSE_ROOT_A5F_2026_10_29.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/ADOPTION_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_ROOT_A5F_2026_10_29.md",
+        "sha256": "b91387e036acae1af2390d31ea31c333f569430122aa2bd3177706d4dc09c7d5",
+        "bytes": 11537,
+        "canonical_path": "ADOPTION_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_ROOT_A5F_2026_10_29.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/ADOPTION_THREE_BROAD_CONTINUOUS_CAP_OWNER_AND_SHIFT_TOOLS_ROOT_2026_10_29.md",
+        "sha256": "865db6ecd1b9ee6774a11be75edd4f73b59e132a21bc9df1708cc3169183c36e",
+        "bytes": 8044,
+        "canonical_path": "ADOPTION_THREE_BROAD_CONTINUOUS_CAP_OWNER_AND_SHIFT_TOOLS_ROOT_2026_10_29.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/ADOPTION_TILTED_CHANNEL_LOWER_RETURN_SUPPORT_FACE_ROOT_A5F_2026_10_29.md",
+        "sha256": "95b663f447e13350801c0be9f7252cf9a6a8ad72260905ec9de388409681632e",
+        "bytes": 11917,
+        "canonical_path": "ADOPTION_TILTED_CHANNEL_LOWER_RETURN_SUPPORT_FACE_ROOT_A5F_2026_10_29.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/ADOPTION_UPPER_ADJACENT_SIGNED_FULL_JUNCTION_FOUR_CELL_ROOT_A5F_2026_10_29.md",
+        "sha256": "6f23a5737798b69f1d192dff97888845b5e143dfcdd58aab573e13c04457d340",
+        "bytes": 19419,
+        "canonical_path": "ADOPTION_UPPER_ADJACENT_SIGNED_FULL_JUNCTION_FOUR_CELL_ROOT_A5F_2026_10_29.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/ALIGNED_RADIAL_C_GENUINE_S_HOUSE_OWNED_AD_UPPER_MEAN_INTERVAL_EXCLUSION.md",
+        "sha256": "80bf0a971d264ccaeacbcf27facd819ebe0feb803d3b7ccbd42cb314d7364cc1",
+        "bytes": 17937,
+        "canonical_path": "ALIGNED_RADIAL_C_GENUINE_S_HOUSE_OWNED_AD_UPPER_MEAN_INTERVAL_EXCLUSION.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+        "sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334",
+        "bytes": 20196,
+        "canonical_path": "ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/exact_records/AUTHOR_NEAR_SIDE_BOUNDARY_RETURN_AXIS_OBSTRUCTION_STRICT_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+        "sha256": "6aaa23d2db54f4c05e788335820bc2d526cb71f0a7a4980ee5b4220cdd8182d6",
+        "bytes": 27890,
+        "canonical_path": "AUTHOR_NEAR_SIDE_BOUNDARY_RETURN_AXIS_OBSTRUCTION_STRICT_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/exact_records/AUTHOR_OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_EXACT_RECORD_A5F_2026_10_29.json",
+        "sha256": "352562501999bc9d6c9a8ff391fa6ac485b62511418335c0ac81516b4ee030ea",
+        "bytes": 29935,
+        "canonical_path": "AUTHOR_OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_EXACT_RECORD_A5F_2026_10_29.json",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/exact_records/AUTHOR_STRICT_COMMON_ROOT_CORNER_JUNCTION_DIAGONAL_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+        "sha256": "e90448e0451f255dde3ddef10c3594c75dc5273a3522296488a2cc2e1ecbbdb8",
+        "bytes": 28670,
+        "canonical_path": "AUTHOR_STRICT_COMMON_ROOT_CORNER_JUNCTION_DIAGONAL_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/exact_records/AUTHOR_UPPER_ADJACENT_SIGNED_PORT_FULL_JUNCTION_FOUR_RETURN_EXACT_RECORD_A5F_2026_10_29.json",
+        "sha256": "3003a3076843912dbca2a807f671f35fbee39f7cc9994d46a0dbf24d9f0affd7",
+        "bytes": 99532,
+        "canonical_path": "AUTHOR_UPPER_ADJACENT_SIGNED_PORT_FULL_JUNCTION_FOUR_RETURN_EXACT_RECORD_A5F_2026_10_29.json",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+        "sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+        "bytes": 17789,
+        "canonical_path": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+        "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+        "bytes": 13651,
+        "canonical_path": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+        "sha256": "4f8da84dcc3f1fa9b8f5e231486751b134b3438905e8271f6f3484a3f10d275a",
+        "bytes": 15961,
+        "canonical_path": "GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+        "sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143",
+        "bytes": 17930,
+        "canonical_path": "HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/exact_records/INDEPENDENT_NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_STRICT_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+        "sha256": "3703439b6b26131b9fe00381aabfa44792ded2113f32491fef3210dff8671439",
+        "bytes": 75306,
+        "canonical_path": "INDEPENDENT_NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_STRICT_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/exact_records/INDEPENDENT_OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_EXACT_RECORD_A5F_2026_10_29.json",
+        "sha256": "497ef4cd16c9d6b3968a19ef3c0ba69bd99174383c71f762b3332d0daec5211e",
+        "bytes": 118361,
+        "canonical_path": "INDEPENDENT_OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_EXACT_RECORD_A5F_2026_10_29.json",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/exact_records/INDEPENDENT_STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+        "sha256": "f06804d38ded98247b7f69bc36e8541c99a2f3d39206331da27d5eb76748b757",
+        "bytes": 79242,
+        "canonical_path": "INDEPENDENT_STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/exact_records/INDEPENDENT_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_EXACT_RECORD_A5F_2026_10_29.json",
+        "sha256": "6504d2ec0cb300a2dfa52ac7c6ecffce1489638bf6364591ddcd67ef3bd28ced",
+        "bytes": 48292,
+        "canonical_path": "INDEPENDENT_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_EXACT_RECORD_A5F_2026_10_29.json",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/exact_records/INDEPENDENT_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_EXACT_RECORD_A5F_2026_10_29.json",
+        "sha256": "b6d131f0adb918d36f15c4330532455af4d2a7ea9cfe1ecc9903ccd674776c33",
+        "bytes": 46547,
+        "canonical_path": "INDEPENDENT_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_EXACT_RECORD_A5F_2026_10_29.json",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/exact_records/INDEPENDENT_UPPER_ADJACENT_SIGNED_PORT_FULL_JUNCTION_FOUR_RETURN_EXACT_RECORD_A5F_2026_10_29.json",
+        "sha256": "340cc5e088e1c202ee33821fa500a7dcf0ffa679a3b62ada5dad99ec5508c293",
+        "bytes": 163850,
+        "canonical_path": "INDEPENDENT_UPPER_ADJACENT_SIGNED_PORT_FULL_JUNCTION_FOUR_RETURN_EXACT_RECORD_A5F_2026_10_29.json",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+        "sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78",
+        "bytes": 23353,
+        "canonical_path": "LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_OBSTRUCTION_AND_STRICT_HOUSE_RETURN_EXCLUSION.md",
+        "sha256": "d92ec80546d6ae608494626e6f05c52c5f8ff2c7548be0bd98b93bbbc892c8ff",
+        "bytes": 20560,
+        "canonical_path": "NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_OBSTRUCTION_AND_STRICT_HOUSE_RETURN_EXCLUSION.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_AND_FOUR_ORIGINAL_TC_RESIDUALS.md",
+        "sha256": "dc28061e32ed9bb4b32c062b7ffbaa9e46733d1002d01dbb769441324ec70d04",
+        "bytes": 15523,
+        "canonical_path": "OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_AND_FOUR_ORIGINAL_TC_RESIDUALS.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/PARALLEL_TRANSMISSION_AND_FOUR_CYCLES.md",
+        "sha256": "ec8be96131806c998d8a768526d2deb644c28be72559d34e033c8d07d917ffab",
+        "bytes": 12165,
+        "canonical_path": "PARALLEL_TRANSMISSION_AND_FOUR_CYCLES.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+        "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+        "bytes": 14121,
+        "canonical_path": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/PHYSICAL_CONTACT_STRESS.md",
+        "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+        "bytes": 17993,
+        "canonical_path": "PHYSICAL_CONTACT_STRESS.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+        "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+        "bytes": 14902,
+        "canonical_path": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/descriptive_provenance_only/RESEARCH_UPPER_ADJACENT_FULL_STAR_RETURN_REDUCTION_CHECKPOINT_2026_10_29.md",
+        "sha256": "7cb7891bada8e451dcdea4023c4a9a61b5409dae7449899fa2672bec4937dc56",
+        "bytes": 18961,
+        "canonical_path": null,
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/REVIEW_ALIGNED_RADIAL_C_OWNED_AD_UPPER_INTERVAL_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+        "sha256": "605967b4ac3c17e984517625ef680075ce7d37a5ab12a20caa613e7053378110",
+        "bytes": 13624,
+        "canonical_path": "REVIEW_ALIGNED_RADIAL_C_OWNED_AD_UPPER_INTERVAL_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "sha256": "167e5f8a305f33944e798668394d1d3efd92b4626968f3ad75dea494f371c154",
+        "bytes": 13485,
+        "canonical_path": "REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/REVIEW_GENERAL_THREE_FORCE_TOUCHING_RETURN_SEPARATION_THIN_D_2026_10_28.md",
+        "sha256": "bc4a2c79adbdb2715df4f29da48c7cb432eef38efd1e4d55a051ec152bcafb1c",
+        "bytes": 9102,
+        "canonical_path": "REVIEW_GENERAL_THREE_FORCE_TOUCHING_RETURN_SEPARATION_THIN_D_2026_10_28.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/REVIEW_GENERAL_TOUCHING_RETURN_SUPPORT_ROOT_2026_10_28.md",
+        "sha256": "a7f6b5c5451834b3fe18a8dbdfda672f0746b40367ac0c1b93f7f14c831d06b2",
+        "bytes": 7648,
+        "canonical_path": "REVIEW_GENERAL_TOUCHING_RETURN_SUPPORT_ROOT_2026_10_28.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+        "sha256": "9a0c704df3817a413639a98fbae8864ef58c583811735ac5c6816f69e1b0f636",
+        "bytes": 12841,
+        "canonical_path": "REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+        "sha256": "f917697f13c574c533658ea108b0c770d4c1c949fc463ba996511e890e2d62ae",
+        "bytes": 16080,
+        "canonical_path": "REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/REVIEW_LOADED_TWO_APPLICATION_BOUNDARY_FREE_DICHOTOMY_INDEPENDENT_2026_10_28.md",
+        "sha256": "0d71302c571280dd0df9f9b16470d668580ad1fb57ebd306468fb2a8b04d0bc5",
+        "bytes": 21488,
+        "canonical_path": "REVIEW_LOADED_TWO_APPLICATION_BOUNDARY_FREE_DICHOTOMY_INDEPENDENT_2026_10_28.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/REVIEW_NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_STRICT_HOUSE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+        "sha256": "454fbb5a0d12ed5f3ee144e61da53e8118d689aa4d96af4d44335a573db65a30",
+        "bytes": 32512,
+        "canonical_path": "REVIEW_NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_STRICT_HOUSE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/REVIEW_OPPOSING_SHALLOW_CENTERS_TC_FINISH_V2_INDEPENDENT_2026_10_29.md",
+        "sha256": "b9885dd614692bb59888152bf1c1bb52f8b0de5359f01dd73a0322993f8c5700",
+        "bytes": 11103,
+        "canonical_path": "REVIEW_OPPOSING_SHALLOW_CENTERS_TC_FINISH_V2_INDEPENDENT_2026_10_29.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/REVIEW_OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+        "sha256": "b96c12549a9aac0a2fa331dff4f5504871fa0d687b116a7331ad310cda9a7c4e",
+        "bytes": 31286,
+        "canonical_path": "REVIEW_OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/REVIEW_STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_HOUSE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+        "sha256": "6b01f3d1c830f49811202810cd25d941f34ec760e543993fba8d5df421c4fca7",
+        "bytes": 29770,
+        "canonical_path": "REVIEW_STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_HOUSE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/REVIEW_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+        "sha256": "a7f5cf85d5e7275ae7c9f0452fd2c1bcb25452d42298fa4e2a9f8b58986ec31c",
+        "bytes": 28830,
+        "canonical_path": "REVIEW_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/REVIEW_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+        "sha256": "e2c3f5e72f7877b404db1db7e3b136d79a5690553df0808a757f528701b8b8fb",
+        "bytes": 23886,
+        "canonical_path": "REVIEW_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/REVIEW_UPPER_ADJACENT_SIGNED_PORT_FULL_JUNCTION_FOUR_RETURN_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+        "sha256": "ac9040b2612d54a05a06f141bfd3b6ead607e7d4c226c6ad021958b970a50cc1",
+        "bytes": 30640,
+        "canonical_path": "REVIEW_UPPER_ADJACENT_SIGNED_PORT_FULL_JUNCTION_FOUR_RETURN_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/SIDE_CHANNEL_UNLOADED_TRIANGLE_BYPASS_POSITIVE_MEAN.md",
+        "sha256": "5a1607a588e45d0702c46c3d74074561f31109dccc0b8f94c665991cd4a9f5ee",
+        "bytes": 11411,
+        "canonical_path": "SIDE_CHANNEL_UNLOADED_TRIANGLE_BYPASS_POSITIVE_MEAN.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_DIAGONAL_AND_HOUSE_RETURN_EXCLUSION.md",
+        "sha256": "44fa42fa2f33468495fb00d6d0c82287afc25cbd0416b28cd81e6d96ba0a6a71",
+        "bytes": 17221,
+        "canonical_path": "STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_DIAGONAL_AND_HOUSE_RETURN_EXCLUSION.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+        "sha256": "0c67d5578a73ec36fd9b79c509c3e158cb9a218fac8666256ab2ca1f9505cb45",
+        "bytes": 11473,
+        "canonical_path": "STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+        "sha256": "be0af78eefcfba0b4c00c62c748bcd6c6dc8a294128c1f13272c5c2d7ea8bb5c",
+        "bytes": 12803,
+        "canonical_path": "TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/TWO_OPPOSING_SHALLOW_CENTERS_FORCE_WHOLE_UNIT_HALFPLANE.md",
+        "sha256": "53cfc1a53daddc7efae7b0cdd3ff982db9732af02e5167ab200bcc6300956af2",
+        "bytes": 12062,
+        "canonical_path": "TWO_OPPOSING_SHALLOW_CENTERS_FORCE_WHOLE_UNIT_HALFPLANE.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/UNIT_BYPASS_NORMAL_CHANNEL.md",
+        "sha256": "db073cd024a4f2e763e7cd0a21bf5cb6a2a8be67069f3f9d3aff638b8a40b258",
+        "bytes": 6573,
+        "canonical_path": "UNIT_BYPASS_NORMAL_CHANNEL.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+        "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+        "bytes": 4431,
+        "canonical_path": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/UNLOADED_THREE_FORCE_PERPENDICULAR_TRIANGLE_STRICT_SUPPORT_SEPARATION.md",
+        "sha256": "6630675274998befc40e87bfe67e15f0bdf0d74b7b814f82ccbc42b71dea4b24",
+        "bytes": 11594,
+        "canonical_path": "UNLOADED_THREE_FORCE_PERPENDICULAR_TRIANGLE_STRICT_SUPPORT_SEPARATION.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+        "sha256": "406fce53d22cc20eec43a373a877798dab583a6bd93f684ff124293016c44c87",
+        "bytes": 16935,
+        "canonical_path": "UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+        "all_identity_checks_pass": true
+      },
+      {
+        "path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/UPPER_ADJACENT_GENUINE_LEAF_SIGNED_PORT_FULL_JUNCTION_AND_FOUR_RETURN_REDUCTION.md",
+        "sha256": "dc7542f5b58121e5c5e85ca82fe40373ea021d035d647eb2d6110e078661ffaf",
+        "bytes": 35022,
+        "canonical_path": "UPPER_ADJACENT_GENUINE_LEAF_SIGNED_PORT_FULL_JUNCTION_AND_FOUR_RETURN_REDUCTION.md",
+        "all_identity_checks_pass": true
+      }
+    ],
+    "descriptive_unadopted_checkpoint_nonoperative": true,
+    "named_summand_addendum_retained": true
+  },
+  "metadata": [
+    {
+      "path": "research/nine/CYCLIC_CELL_LEDGER.md",
+      "bytes": 309842,
+      "lf_lines": 4404,
+      "sha256": "4bf19650a1ab6a45bab9468aedc6279a951d7a817bb085740cc8049e2a879240",
+      "git_blob_sha1": "80b6d2c8da9e155028e7b4cde8b935a46f1f74a3",
+      "before_sha256": "18f1e7636de4e876be3d440dc4de8a3b6d709fa7ebd74dae8311c9cc4cf8a811"
+    },
+    {
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "bytes": 1051368,
+      "lf_lines": 7380,
+      "sha256": "8a99d085fe0ed50383ad57fa626383d76a2125723937dc38835b6843bfeb0c3a",
+      "git_blob_sha1": "89e594522df650cc246b7004cfc71b550bbf734e",
+      "before_sha256": "74002aa7c7bf3af1839ee4b7768eb3c8bb11bd76524665d0e93100f5fc98526d"
+    },
+    {
+      "path": "research/nine/HANDOFF_PR11_2026_10_28_CURRENT.md",
+      "bytes": 136864,
+      "lf_lines": 1640,
+      "sha256": "f4b53acb34f35bea355f0d0715eb4f3dc67b46b81196c47152d53ce2dbbadef5",
+      "git_blob_sha1": "6374666431238e1116bb6199fdeb83f57b0e118d",
+      "before_sha256": "08720684717e8fcff58ac567b5481324f7a6cb3d0a8e74ab39438ad5550c5e65"
+    },
+    {
+      "path": "research/nine/README.md",
+      "bytes": 75072,
+      "lf_lines": 1062,
+      "sha256": "fd1a6216dda1cc4bc1d4a735d10b83384d1748577c095e4f4c8c06803b805bca",
+      "git_blob_sha1": "370d73b4eaaa55c5ccc8095955606572f1215800",
+      "before_sha256": "a4e974c9ace311f13464a61bf7a11678581445d0729c34f9cc34708e3bd1469d"
+    },
+    {
+      "path": "research/nine/ROADMAP.md",
+      "bytes": 53818,
+      "lf_lines": 695,
+      "sha256": "5821d56d62846021cfb526d215baa5c3625819e4821d1210703fa9a4e792688d",
+      "git_blob_sha1": "da10edfa00e98639064ff3eb56829c40f1049086",
+      "before_sha256": "5173e9ab20d2e81b8f863513c85c8c4d38d7158a3f81825504b9195eac294783"
+    }
+  ],
+  "open_scope": [
+    "G3.M6.ASSEMBLE",
+    "G3.M6.ALL",
+    "C1.6.b0",
+    "D02.L135 and D02.L1345 whole original rows",
+    "owned parallel-roof p>0 adjacent return",
+    "nonparallel roof",
+    "other original larger-component and global prerequisites"
+  ],
+  "verification_summary": {
+    "direct_pin_count": 178,
+    "direct_pin_mismatches": 0,
+    "recovery_mismatches": 0,
+    "exact_rational_checks": 23,
+    "original_inventory_delta_verified_exactly": true
+  },
+  "exact_rational_corroboration": {
+    "roof_ratio_function_margin": {
+      "value": "9/2500",
+      "strictly_positive": true
+    },
+    "roof_first_support_bootstrap_gap": {
+      "value": "11/1680",
+      "strictly_positive": true
+    },
+    "roof_lambda_denominator_margin": {
+      "value": "163/27000",
+      "strictly_positive": true
+    },
+    "roof_one_eighteenth_coefficient_reserve": {
+      "value": "1291/69600",
+      "strictly_positive": true
+    },
+    "roof_one_fortyninth_coefficient_reserve": {
+      "value": "226967/367513200",
+      "strictly_positive": true
+    },
+    "roof_final_tilt_reserve": {
+      "value": "11/59535",
+      "strictly_positive": true
+    },
+    "roof_C_support_reserve": {
+      "value": "23607/2695000",
+      "strictly_positive": true
+    },
+    "roof_C_whole_height_reserve": {
+      "value": "7/1320",
+      "strictly_positive": true
+    },
+    "roof_B_physical_corner_height_reserve": {
+      "value": "71/1200",
+      "strictly_positive": true
+    },
+    "roof_C_physical_corner_height_reserve": {
+      "value": "381/26950",
+      "strictly_positive": true
+    },
+    "roof_corner_x_reserve": {
+      "value": "1879/6400",
+      "strictly_positive": true
+    },
+    "roof_quadrant_corner_reserve": {
+      "value": "1879/6400",
+      "strictly_positive": true
+    },
+    "roof_owning_cap_angle_reserve": {
+      "value": "3977/31250",
+      "strictly_positive": true
+    },
+    "roof_small_circle_strip_margin": {
+      "value": "167/47040",
+      "strictly_positive": true
+    },
+    "roof_ring_center_reserve": {
+      "value": "31/57600",
+      "strictly_positive": true
+    },
+    "roof_central_extra_distance_square_reserve": {
+      "value": "1559/25920000",
+      "strictly_positive": true
+    },
+    "roof_central_extra_vertex_margin": {
+      "value": "1/75",
+      "strictly_positive": true
+    },
+    "gap_right_endpoint_reserve": {
+      "value": "11/3570",
+      "strictly_positive": true
+    },
+    "house_upper_large_interval_reserve": {
+      "value": "1/880",
+      "strictly_positive": true
+    },
+    "house_steep_large_interval_reserve": {
+      "value": "1/450",
+      "strictly_positive": true
+    },
+    "house_shallow_ratio_endpoint_zero": {
+      "value": "1437/370000",
+      "strictly_positive": true
+    },
+    "house_shallow_ratio_endpoint_one_sixth": {
+      "value": "11/6275",
+      "strictly_positive": true
+    },
+    "house_shallow_low_c_contradiction": {
+      "value": "7/400",
+      "strictly_positive": true
+    }
+  }
+}
+

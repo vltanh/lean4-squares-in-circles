@@ -1,0 +1,444 @@
+{
+  "status": "PROPOSED_COMPLETE_AUTHOR_RECORD_NOT_INDEPENDENT_REVIEW",
+  "author": "/root",
+  "date_utc": "2026-10-29",
+  "contributions": {
+    "root": "Discovered selected AB endpoint exclusion and strict whole-D barrier; authored complete theorem and literal caller",
+    "broad_s_families": "Confirmed literal original AB normal and chart",
+    "review_load_union_c62": "Confirmed literal original AB normal and chart; separately supplied the owned-AD endpoint consequence"
+  },
+  "independent_review_required": true,
+  "exact_comparison_commit": "a5f3922a9c12830b76f2a7ee9dd4dbf1024f85b5",
+  "actual_comparison_git_tree": "2617ed629140d69171c86bfa68b0ee5784ab8c8c",
+  "later_read_only_commit": "604160e7913fc96827721d35c678923edfc1dcfb",
+  "later_actual_comparison_git_tree": "ceab269ddc12c734a45128c0921319433b2c9b2d",
+  "target": {
+    "path": "continuation_broad_c62/research/nine/STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+    "bytes": 11473,
+    "lines": 211,
+    "sha256": "0c67d5578a73ec36fd9b79c509c3e158cb9a218fac8666256ab2ca1f9505cb45",
+    "git_blob": "4126f326474c762221d71355190f9e0112815354",
+    "role": "Complete new proposed mathematical source",
+    "read_scope": "Complete text; full source reconstruction or complete acceptance provenance as distinguished in role"
+  },
+  "input_identities": [
+    {
+      "path": "current_a67_base/research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "bytes": 17993,
+      "lines": 399,
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "git_blob": "fd91cf5e38a8b9eb877710cab9d4dd1575f9bc22",
+      "role": "Operative original strict vertex/vertex singleton selection and actual physical contact/mean convention",
+      "read_scope": "Complete text; full source reconstruction or complete acceptance provenance as distinguished in role",
+      "exact_a5f_tree_blob_and_size_match": true,
+      "exact_604_tree_blob_and_size_match": true,
+      "published_path": "research/nine/PHYSICAL_CONTACT_STRESS.md"
+    },
+    {
+      "path": "continuation_broad_c62/research/nine/TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+      "bytes": 12803,
+      "lines": 305,
+      "sha256": "be0af78eefcfba0b4c00c62c748bcd6c6dc8a294128c1f13272c5c2d7ea8bb5c",
+      "git_blob": "4bd9aefa121164dffe191b3167ec1ef05d0f1055",
+      "role": "Operative radius-free Theorems A-C in Sections 1-5 only; whole support-face cover and owned-return D tilt; no later original mean/tilt scalar imported",
+      "read_scope": "Complete text; full source reconstruction or complete acceptance provenance as distinguished in role"
+    },
+    {
+      "path": "current_315_base/research/nine/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "bytes": 13651,
+      "lines": 302,
+      "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "git_blob": "f1e09cf1f62a2bb6305bd2c20e7d49be2fffc0ae",
+      "role": "Operative complete original strict-high aligned-C caller; both genuine-leaf charts, both C-force rows and original graph",
+      "read_scope": "Complete text; full source reconstruction or complete acceptance provenance as distinguished in role",
+      "exact_a5f_tree_blob_and_size_match": true,
+      "exact_604_tree_blob_and_size_match": true,
+      "published_path": "research/nine/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md"
+    },
+    {
+      "path": "current_703_base/research/nine/UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "bytes": 6573,
+      "lines": 186,
+      "sha256": "db073cd024a4f2e763e7cd0a21bf5cb6a2a8be67069f3f9d3aff638b8a40b258",
+      "git_blob": "8c08b57321074c57fbbac76025883fd888994e0f",
+      "role": "Operative literal original unloaded B2 reserve-one side normal and whole transverse bypass separation",
+      "read_scope": "Complete text; full source reconstruction or complete acceptance provenance as distinguished in role",
+      "exact_a5f_tree_blob_and_size_match": true,
+      "exact_604_tree_blob_and_size_match": true,
+      "published_path": "research/nine/UNIT_BYPASS_NORMAL_CHANNEL.md"
+    },
+    {
+      "path": "continuation_broad_c62/research/nine/REVIEW_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "bytes": 23886,
+      "lines": 140,
+      "sha256": "e2c3f5e72f7877b404db1db7e3b136d79a5690553df0808a757f528701b8b8fb",
+      "git_blob": "5dfd48c0d79420bba547824ca370bff77ccc4600",
+      "role": "Complete accepted be0 provenance: independent_review; not a new mathematical premise",
+      "read_scope": "Complete text; full source reconstruction or complete acceptance provenance as distinguished in role"
+    },
+    {
+      "path": "continuation_broad_c62/research/nine/INDEPENDENT_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_EXACT_RECORD_A5F_2026_10_29.json",
+      "bytes": 46547,
+      "lines": 1199,
+      "sha256": "b6d131f0adb918d36f15c4330532455af4d2a7ea9cfe1ecc9903ccd674776c33",
+      "git_blob": "88c8f619ff4dc9e650381cb679126c214f643d5d",
+      "role": "Complete accepted be0 provenance: exact_review_record; not a new mathematical premise",
+      "read_scope": "Complete text; full source reconstruction or complete acceptance provenance as distinguished in role"
+    },
+    {
+      "path": "continuation_broad_c62/research/nine/ADOPTION_TILTED_CHANNEL_LOWER_RETURN_SUPPORT_FACE_ROOT_A5F_2026_10_29.md",
+      "bytes": 11917,
+      "lines": 216,
+      "sha256": "95b663f447e13350801c0be9f7252cf9a6a8ad72260905ec9de388409681632e",
+      "git_blob": "52e8bb4c42a562bb85b4246fa6b542352f7842f6",
+      "role": "Complete accepted be0 provenance: root_adoption; not a new mathematical premise",
+      "read_scope": "Complete text; full source reconstruction or complete acceptance provenance as distinguished in role"
+    },
+    {
+      "path": "current_315_base/research/nine/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 12841,
+      "lines": 275,
+      "sha256": "9a0c704df3817a413639a98fbae8864ef58c583811735ac5c6816f69e1b0f636",
+      "git_blob": "d007b7ee912a045bc525ad5bb45e3d80683b1aa1",
+      "role": "Complete published 6f original-domain acceptance provenance; not a new mathematical premise",
+      "read_scope": "Complete text; full source reconstruction or complete acceptance provenance as distinguished in role",
+      "exact_a5f_tree_blob_and_size_match": true,
+      "exact_604_tree_blob_and_size_match": true,
+      "published_path": "research/nine/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md"
+    },
+    {
+      "path": "current_315_base/research/nine/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "bytes": 17104,
+      "lines": 345,
+      "sha256": "fb99b163e4450df464fcc095ac6aea0a3294624fcb329ffbc515efda6a0bea28",
+      "git_blob": "73cfd49b7ba738e5cd85a057d98358ea1c3b36d4",
+      "role": "Complete published 6f original-domain acceptance provenance; not a new mathematical premise",
+      "read_scope": "Complete text; full source reconstruction or complete acceptance provenance as distinguished in role",
+      "exact_a5f_tree_blob_and_size_match": true,
+      "exact_604_tree_blob_and_size_match": true,
+      "published_path": "research/nine/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md"
+    }
+  ],
+  "complete_math_exports": [
+    "Radius-, degree-, and force-balance-free relative-interior lemma for an original side-axis positive contact whose entire physical intersection is singleton",
+    "Strict original channel mean z<q<z+1 and positive physical clearance of P from every point of the actual bypass D",
+    "Exactly two complete remaining AD features, with owned full open mean interval 0<sigma<1 and strict lower vertex retaining n_x=0",
+    "Entire both-chart and both-C original high aligned-C TC caller without an extra q<3/8 restriction"
+  ],
+  "mathematical_reconstructions": [
+    {
+      "name": "orthonormal axes",
+      "statement": "u.v=0 and det(u,v)=a^2+t^2=1"
+    },
+    {
+      "name": "unique channel vertex",
+      "statement": "u_x=-a<0 and v_x=-t<0 imply max_A x={P}"
+    },
+    {
+      "name": "entire singleton first",
+      "statement": "Every actual K-intersect-H point lies on the original supporting line, whose K-face is {P}"
+    },
+    {
+      "name": "strict original convention",
+      "statement": "A vertex/vertex physical singleton has a selected normal exposing both vertices uniquely"
+    },
+    {
+      "name": "first endpoint contradiction",
+      "statement": "AB=East exposes the whole left B side; if q=z or q=z+1 the physical singleton is vertex/vertex, contrary to the unchanged selected normal"
+    },
+    {
+      "name": "strict vertical clearance",
+      "statement": "For every Z in D, q-Z_y>=q-z>0 and |P-Z|>=q-z"
+    },
+    {
+      "name": "weaker full-face entry",
+      "statement": "max_D y<=z<q supplies max_D y<=q to the accepted radius-free be0 theorem"
+    },
+    {
+      "name": "all original AD normals",
+      "statement": "n_x>=0,n_y<=0,n.u<0; the exact three signs of n.v give initial vertex, owned side, or strict lower vertex"
+    },
+    {
+      "name": "initial return point removed",
+      "statement": "n.v<0 implies original S=P, whereas P not in D"
+    },
+    {
+      "name": "owned coefficient",
+      "statement": "n.v=0 and n.u<0 give the original force -rho*u with rho>0"
+    },
+    {
+      "name": "strict-corner coefficient",
+      "statement": "n.v>0 gives -rho*u+omega*v with rho,omega>0"
+    },
+    {
+      "name": "weak corner slope",
+      "statement": "n_x=rho*a-omega*t>=0 is exactly omega/rho<=a/t"
+    },
+    {
+      "name": "owned entire singleton",
+      "statement": "D unique maximum-u at S and A full minimum-u side imply A-intersect-D={S}"
+    },
+    {
+      "name": "reversed normal legitimacy",
+      "statement": "Reverse pair labels and -u to u; the identical positive selected pair now has D unique maximum-u and A entire minimum-u side"
+    },
+    {
+      "name": "second two-endpoint contradiction",
+      "statement": "sigma=0 or sigma=1 makes S a vertex of A and D; original u exposes an A side, contrary to strict singleton selection"
+    },
+    {
+      "name": "owned world signs",
+      "statement": "-rho*u=(rho*a,-rho*t), with first component >0 and second <0"
+    },
+    {
+      "name": "strict-corner world signs",
+      "statement": "-rho*u+omega*v=(rho*a-omega*t,-rho*t-omega*a), with first >=0 and second <0"
+    },
+    {
+      "name": "same C contact in parallel row",
+      "statement": "Q=(d,y) with d=epsilon+1 and -1/2<=y<0 remains an actual point of this D"
+    },
+    {
+      "name": "same C contact in nonparallel row",
+      "statement": "Q=(d,-1/2) remains an actual point of this D; no D-side-axis assumption is made"
+    },
+    {
+      "name": "whole original caller",
+      "statement": "Original B2 AB/BC transmission and actual bypass D establish unchanged AB=East and max_D y<=z; same orientation/reflection is used throughout"
+    },
+    {
+      "name": "two leaf charts",
+      "statement": "The upper-adjacent and owned-u genuine-leaf alternatives both retain tilted A and the same complete B-channel geometry"
+    },
+    {
+      "name": "degree-independent geometric theorem",
+      "statement": "No degree, load, circle, force-balance, torque, T or C premise is used in Lemma1 or Theorem2"
+    }
+  ],
+  "original_graph": {
+    "edges": [
+      "AT",
+      "DT",
+      "AD",
+      "AB",
+      "BC",
+      "CD",
+      "AL"
+    ],
+    "degrees": {
+      "A": 4,
+      "D": 3,
+      "B": 2,
+      "C": 2,
+      "T": 2,
+      "L": 1
+    },
+    "loaded": [
+      "T",
+      "C",
+      "L"
+    ],
+    "unloaded": [
+      "A",
+      "D",
+      "B"
+    ],
+    "genuine_leaf": "L",
+    "all_actual_units": 9,
+    "component_units": 6,
+    "arbitrary_completion_units": 3,
+    "no_BD": true
+  },
+  "section_dag": {
+    "nodes": [
+      "strict_selected_singleton",
+      "actual_tilted_AB",
+      "first_relative_interior",
+      "strict_whole_D_separation",
+      "be0_full_face",
+      "initial_vertex_removed",
+      "be0_owned_D_vertex",
+      "owned_physical_singleton",
+      "second_relative_interior",
+      "two_feature_cover",
+      "world_force_signs",
+      "complete6f_entry",
+      "original_B2_bypass",
+      "literal_both_chart_both_C_application"
+    ],
+    "edges": [
+      [
+        "strict_selected_singleton",
+        "first_relative_interior"
+      ],
+      [
+        "actual_tilted_AB",
+        "first_relative_interior"
+      ],
+      [
+        "first_relative_interior",
+        "strict_whole_D_separation"
+      ],
+      [
+        "strict_whole_D_separation",
+        "be0_full_face"
+      ],
+      [
+        "strict_whole_D_separation",
+        "initial_vertex_removed"
+      ],
+      [
+        "be0_full_face",
+        "initial_vertex_removed"
+      ],
+      [
+        "be0_full_face",
+        "be0_owned_D_vertex"
+      ],
+      [
+        "be0_owned_D_vertex",
+        "owned_physical_singleton"
+      ],
+      [
+        "owned_physical_singleton",
+        "second_relative_interior"
+      ],
+      [
+        "strict_selected_singleton",
+        "second_relative_interior"
+      ],
+      [
+        "initial_vertex_removed",
+        "two_feature_cover"
+      ],
+      [
+        "be0_full_face",
+        "two_feature_cover"
+      ],
+      [
+        "second_relative_interior",
+        "two_feature_cover"
+      ],
+      [
+        "two_feature_cover",
+        "world_force_signs"
+      ],
+      [
+        "complete6f_entry",
+        "literal_both_chart_both_C_application"
+      ],
+      [
+        "original_B2_bypass",
+        "literal_both_chart_both_C_application"
+      ],
+      [
+        "two_feature_cover",
+        "literal_both_chart_both_C_application"
+      ]
+    ],
+    "dependency_first_order": [
+      "strict_selected_singleton",
+      "actual_tilted_AB",
+      "complete6f_entry",
+      "original_B2_bypass",
+      "first_relative_interior",
+      "strict_whole_D_separation",
+      "be0_full_face",
+      "initial_vertex_removed",
+      "be0_owned_D_vertex",
+      "owned_physical_singleton",
+      "second_relative_interior",
+      "two_feature_cover",
+      "world_force_signs",
+      "literal_both_chart_both_C_application"
+    ]
+  },
+  "scope_and_endpoint_guards": [
+    "Original strict selected singleton convention is an explicit premise; no geometric endpoint exclusion without it",
+    "The entire physical intersection is proved singleton before invoking any vertex/vertex rule",
+    "A force mean at an endpoint of a positive-length common segment is not a singleton and is not excluded",
+    "No selected normal or application is replaced or chosen anew",
+    "Both original AB endpoint cases are explicitly included in the contradiction",
+    "Both original owned-AD endpoint cases are explicitly included in the reversed-pair contradiction",
+    "The strict-corner AD vertex remains a distinct allowed feature despite removal of the owned sigma=1 case",
+    "The owned original contact is an actual singleton because D is tilted and uniquely supports S",
+    "Whole-D clearance is physical and holds even for points other than the AD force application",
+    "q-z is a configuration-dependent positive gap, with no uniform numerical reserve asserted",
+    "A strictly tilted a,t>0 is required; aligned endpoint frames remain within their existing separate closures",
+    "Original complete be0 normal cover is used, including n_x=0",
+    "Q belongs to the same actual D; its horizontal reach is not supplied by a virtual force resultant",
+    "No strict NE normal is used to infer ownership by a D axis",
+    "Parallel-C full mean y and original moment mu*q+nu*y=0 are retained",
+    "Nonparallel-C exact actual lower-left corner and strict normal are retained",
+    "The original B2 side normal is provided by the complete physical bypass channel and fixed positive equations",
+    "Both original genuine-leaf charts are retained in their complete high aligned-C ranges",
+    "No ea076 upper-mean exit is needed or imported by this theorem",
+    "No proposed a813 parallel-T or d92 strict-AD theorem is needed or imported",
+    "The be0 radius-free geometric theorem remains unchanged and has its broader original closed geometric scope",
+    "This selected-contact strengthening does not misdescribe the old be0 parallel-C coincidence as previously excluded",
+    "All actual units, true degrees, positive pair forces, torque equations, circle masks and individual zero coefficients remain",
+    "No degree-two equation is imposed on true A4 or D3",
+    "No physical unit is contracted, no BD edge manufactured, and no weighted radial mean is put in another unit",
+    "The new theorem does not close either remaining AD feature by itself",
+    "Original TC.S, house-hub parent and coarse gates remain open",
+    "No numerical geometric sampling, finite pose/angle certificate, Lean/Lake, CI/workflow or remote mutation"
+  ],
+  "accepted_upstream_boundaries": {
+    "be0": {
+      "scope": "Radius-free complete lower-return support face, exact whole coincidence rectangle and owned-return D tilt, with literal both-chart originalTC reduction and strict-corner bounds; no whole original row closure.",
+      "comparison_head": "a5f3922a9c12830b76f2a7ee9dd4dbf1024f85b5",
+      "later_read_only_head": "604160e7913fc96827721d35c678923edfc1dcfb",
+      "complete_root_and_independent_mathematical_acceptance": true,
+      "mathematical_source": {
+        "name": "TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+        "local_path": "continuation_broad_c62/research/nine/TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+        "bytes": 12803,
+        "sha256": "be0af78eefcfba0b4c00c62c748bcd6c6dc8a294128c1f13272c5c2d7ea8bb5c",
+        "git_blob": "4bd9aefa121164dffe191b3167ec1ef05d0f1055"
+      },
+      "independent_review": {
+        "name": "REVIEW_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+        "local_path": "continuation_broad_c62/research/nine/REVIEW_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+        "bytes": 23886,
+        "sha256": "e2c3f5e72f7877b404db1db7e3b136d79a5690553df0808a757f528701b8b8fb",
+        "git_blob": "5dfd48c0d79420bba547824ca370bff77ccc4600"
+      },
+      "exact_review_record": {
+        "name": "INDEPENDENT_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_EXACT_RECORD_A5F_2026_10_29.json",
+        "local_path": "continuation_broad_c62/research/nine/INDEPENDENT_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_EXACT_RECORD_A5F_2026_10_29.json",
+        "bytes": 46547,
+        "sha256": "b6d131f0adb918d36f15c4330532455af4d2a7ea9cfe1ecc9903ccd674776c33",
+        "git_blob": "88c8f619ff4dc9e650381cb679126c214f643d5d"
+      },
+      "root_adoption": {
+        "name": "ADOPTION_TILTED_CHANNEL_LOWER_RETURN_SUPPORT_FACE_ROOT_A5F_2026_10_29.md",
+        "local_path": "continuation_broad_c62/research/nine/ADOPTION_TILTED_CHANNEL_LOWER_RETURN_SUPPORT_FACE_ROOT_A5F_2026_10_29.md",
+        "bytes": 11917,
+        "sha256": "95b663f447e13350801c0be9f7252cf9a6a8ad72260905ec9de388409681632e",
+        "git_blob": "52e8bb4c42a562bb85b4246fa6b542352f7842f6"
+      },
+      "supporting_records": [
+        {
+          "name": "AUTHOR_TILTED_CHANNEL_LOWER_RETURN_SUPPORT_FACE_EXACT_RECORD_A5F_2026_10_29.json",
+          "local_path": "continuation_broad_c62/research/nine/AUTHOR_TILTED_CHANNEL_LOWER_RETURN_SUPPORT_FACE_EXACT_RECORD_A5F_2026_10_29.json",
+          "bytes": 13346,
+          "sha256": "5b6925b52e80995683b91e56f10187c4711cda38525e10b4838cfb9264177169",
+          "git_blob": "7b225fbe0dbb31a736bc09741e4cfef502a0bc05"
+        }
+      ],
+      "new_whole_fine_flags": 0,
+      "new_coarse_flags": 0,
+      "new_certificates": 0,
+      "new_retirements": 0,
+      "full_root_read_and_reconstruction": true,
+      "independent_reviewer_noncontributor": true,
+      "whole_original_TC_S_remains_open": true
+    },
+    "6f": "Published full source, separate review and root adoption pinned above; no new recursive global selector audit claimed"
+  },
+  "new_whole_original_flags": 0,
+  "new_coarse_flags": 0,
+  "new_computational_certificates": 0,
+  "certificate_retirements": 0,
+  "remaining": "Both complete surviving AD features still need their whole nonparallel-T geometric contradictions in the relevant original leaf charts; global inequality/equality/selection/Lean open"
+}

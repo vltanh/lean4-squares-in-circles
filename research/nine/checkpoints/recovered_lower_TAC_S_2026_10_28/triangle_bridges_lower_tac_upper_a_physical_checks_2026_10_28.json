@@ -1,0 +1,36 @@
+{
+  "source": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_A_EXCLUSION.md",
+  "sha256": "975b2ab626aa30b06decdf068fd0667c7badee83e6711ec489de0daab673c773",
+  "source_pins": {
+    "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md": "7ba98ef149c1faff4ef4baeaf0b0305a38cf1153f883a3fe4bfa92087d33622d",
+    "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md": "6154eee2ab1114d063b0dbd1a2800c3522cbb1b46ec44a258c1c89d8ffb9e975",
+    "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c",
+    "S_LEAF_C5_ALIGNED_LOW_RADIUS_EXCLUSION.md": "02fd37d94d14f8342365160064cff63d91b572e9e162944e9551590fc8f535a1",
+    "ALIGNED_LOW_S_ROOT_LOWER_BOUNDARY_UNIQUE_CORNER_AND_CENTER.md": "c32b99ad24da76907f2e3eaa4d4e7c88b9b2d2599a0eefe50234fae493441c48",
+    "ALIGNED_LOW_S_ROOT_UPPER_BOUNDARY_RETURN_EXCLUSION.md": "843e9afce21baa487804740b3aa7505cac254ef2904e525819960302505dace2",
+    "FIVE_CYCLE_FORCE_POLYGON_DOMAIN.md": "7d0c4092ba133a832cf963f329b1c3a6442a3260576f16319293835b39e6d282",
+    "PHYSICAL_BODY_GRAPH_UNCROSSING.md": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a",
+    "ALIGNED_LOW_S_LOWER_RETURN_HEIGHT_SEPARATION.md": "93bb8e2d6dc3f2965c1a1868ba4a7552f63c5326cbe05cab5381950f4db765be",
+    "certificates/aligned_low_s_lower_return_height_separation.py": "bd92d1895f240805a78ea5160b0b7ed56f6948a4ec6ce88ff870bb55a6472f15"
+  },
+  "strict_exact_values": {
+    "d_low_from_radius": "11/900",
+    "positive_far_x": "1589/2500",
+    "east_of_origin": "53/5000",
+    "phi_sqrt5_bound": "1/16",
+    "root_A_lowest": "91/200",
+    "lower_far_side_depth": "31/30",
+    "vertical_distance_diameter": "77449/360000",
+    "parallel_D_height_gap": "311/4200",
+    "lower_t_sqrt_comparison": "1/98",
+    "rho_triangle_squared": "3666721"
+  },
+  "polynomial_identities": {
+    "circle_moment": "zero",
+    "actual_C2_mean_factor": "zero",
+    "positive_far_x_upper": "zero"
+  },
+  "independent_scalar_lower_bound_above": "1/15000",
+  "independent_scalar_json_sha256": "8f6c15e57acfdd998ccf753a45aa7c39efb9950316b3b36c7524d0ef3171e0a1",
+  "author_reproduction_json_sha256": "ce034bcdca30eb79e8ea0e1647885f71614af2da138ebf58d5856978e41d9470"
+}

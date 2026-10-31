@@ -1,0 +1,60 @@
+{
+  "physical_sha256": "9fa0a94b1ba2825ba4bd0b8909a0d94aa654bd8ba3b0befce4c7276501b0f1c2",
+  "full_identity_checks": [
+    "whole coupled derivative v numerator",
+    "H at p0 equals 1/(a+b)",
+    "endpoint v comparison equals L*S^2<1",
+    "C0 minus S1 numerator",
+    "full H upper endpoint half-angle comparison",
+    "actual S-v projection gives -M",
+    "M at p0 is strictly positive",
+    "g and h unit identity",
+    "A0*h+B0*g cancellation",
+    "unchanged lambda elimination identity",
+    "unique physical C radius excess",
+    "D sector determinant sign has positive half"
+  ],
+  "positive_fraction_reserves": {
+    "ab radical comparison": "113",
+    "L cubic reserve": "2/125",
+    "L cubic derivative lower bound": "23/25",
+    "C0 comparison squared reserve": "1/18",
+    "R upper squared reserve": "55/2304",
+    "near C face exclusion reserve": "1/12",
+    "circle bracket reserve": "3/80",
+    "circle excess floor": "3/50",
+    "half-angle upper squared reserve": "1/144",
+    "half-angle lower guard": "5213921/129538521"
+  },
+  "direct_source_pins": [
+    {
+      "name": "INNER_PENTAGON_THREE_SPOKE_FOUR_LOAD_HUB_DOMAIN.md",
+      "sha256": "62887583e18e218aca4cbb23a06a0a73aadb8139035a502a0f9cf63b8a54e4d5"
+    },
+    {
+      "name": "BOUNDARY_CONTACT_ORIGIN_MOMENT_ORIENTATION.md",
+      "sha256": "851417d7fcd12ccb93a6f7f09ba7d7b2bf9bccc61c82fee3457b5ee4cee47e9a"
+    },
+    {
+      "name": "TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md",
+      "sha256": "0d61292a0aa57084b88b4a72754fc78e123e8b684dac09be966fb074ab58e877"
+    },
+    {
+      "name": "C7_FORCE_POLYGON.md",
+      "sha256": "d50d8ca48ea19156175e651bfa74be30ef3e58065ec14d8d1834670a41559089"
+    },
+    {
+      "name": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a"
+    },
+    {
+      "name": "CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "sha256": "2625b3a2b730525a6397bc90232e78c5e1aac8091381c1f5e5fc8a71ef1da449"
+    },
+    {
+      "name": "SIX_BODY_INNER_PENTAGON_LOAD_COVER.md",
+      "sha256": "fa877c9d7d25c57a7c8cf438a429465b5952cb8db6628c57d9d93695b33dd434"
+    }
+  ],
+  "scalar_replay_sha256": "be71e6d6a0002b2abda31d66f35f62d4b914f6e169e987df62e25d17a132b936"
+}

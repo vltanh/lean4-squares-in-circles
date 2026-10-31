@@ -1,0 +1,45 @@
+{
+  "source": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_C_EXCLUSION.md",
+  "sha256": "b773da381ac721c0f3c06083c9da6258ea1142353fd4a6e000edaff1d8398125",
+  "source_pins": {
+    "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md": "7ba98ef149c1faff4ef4baeaf0b0305a38cf1153f883a3fe4bfa92087d33622d",
+    "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md": "6154eee2ab1114d063b0dbd1a2800c3522cbb1b46ec44a258c1c89d8ffb9e975",
+    "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c",
+    "S_LEAF_C5_ALIGNED_LOW_RADIUS_EXCLUSION.md": "02fd37d94d14f8342365160064cff63d91b572e9e162944e9551590fc8f535a1",
+    "ALIGNED_LOW_S_ROOT_LOWER_BOUNDARY_UNIQUE_CORNER_AND_CENTER.md": "c32b99ad24da76907f2e3eaa4d4e7c88b9b2d2599a0eefe50234fae493441c48",
+    "ALIGNED_LOW_S_ROOT_UPPER_BOUNDARY_RETURN_EXCLUSION.md": "843e9afce21baa487804740b3aa7505cac254ef2904e525819960302505dace2",
+    "FIVE_CYCLE_FORCE_POLYGON_DOMAIN.md": "7d0c4092ba133a832cf963f329b1c3a6442a3260576f16319293835b39e6d282",
+    "PHYSICAL_BODY_GRAPH_UNCROSSING.md": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a",
+    "certificates/aligned_low_s_upper_c_visibility_separation.py": "d57e7506d4f6e1dd92c991c8579fcfcd03377703863b0d42d50f417267fe2c4c"
+  },
+  "rational_values": {
+    "positive_X_circle_gap": "1589/2500",
+    "whole_A_east_gap": "53/5000",
+    "eigenvalue_radical_reserve": "1/16",
+    "small_b_gives_large_t": "1/50",
+    "large_t_above_domain_lower": "31/50",
+    "proper_numerator_factor": "197/400",
+    "proper_lambda_upper": "197/925",
+    "proper_lambda_below_quarter": "137/3700",
+    "sqrt2_rational_strict": "1/4900"
+  },
+  "polynomial_identities": {
+    "quadratic_target_expansion": "zero",
+    "factorized_target": "zero"
+  },
+  "author_reproduction_sha256": "a960dd73c0ed3084e4dfe4cf34a3f749e2a2ca2fef962e247c46cc3ffc405691",
+  "author_complete_counts": {
+    "nodes": 38701,
+    "leaf_count": 19351,
+    "reason_counts": {
+      "strict target": 17438,
+      "R>2": 234,
+      "upper proper concurrence": 226,
+      "actual leaf screen": 1024,
+      "x in (3/10,d)": 359,
+      "upper actual mean rho": 70
+    },
+    "max_depth": 18,
+    "canonical_leaf_sha256": "c8abdb83f97e69fd9445b3733df9fd2fcd77eaf357a69eea23fe63d3800397ad"
+  }
+}

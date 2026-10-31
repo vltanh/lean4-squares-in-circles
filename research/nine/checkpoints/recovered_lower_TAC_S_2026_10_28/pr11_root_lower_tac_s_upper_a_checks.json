@@ -1,0 +1,87 @@
+{
+  "full_physical_source": "HOUSE_LOWER_TAC_S_ALIGNED_UPPER_A_EXCLUSION.md",
+  "source_sha256": "975b2ab626aa30b06decdf068fd0667c7badee83e6711ec489de0daab673c773",
+  "scalar_source": "ALIGNED_LOW_S_LOWER_RETURN_HEIGHT_SEPARATION.md",
+  "scalar_sha256": "93bb8e2d6dc3f2965c1a1868ba4a7552f63c5326cbe05cab5381950f4db765be",
+  "checker_sha256": "bd92d1895f240805a78ea5160b0b7ed56f6948a4ec6ce88ff870bb55a6472f15",
+  "root_contributed_initial_scalar_proof": true,
+  "two_separate_complete_scalar_peer_reviews_required": true,
+  "all_complete_physical_source_scalar_and_checker_read_by_root": true,
+  "full_operative_common_inputs_read_by_root": true,
+  "positive_exact_reserves": {
+    "X_nonpositive_radius_contradiction": "1589/2500",
+    "x_at_most_t_radius_contradiction": "53/5000",
+    "sqrt_five_below_nine_fourths_squared": "1/16",
+    "sqrt_two_below_ninety_nine_seventieths_squared": "1/4900",
+    "sigma_above_seven_tenths_squared": "1/100",
+    "upper_minimum_height": "91/200",
+    "far_return_exceeds_diameter_squared": "77449/360000",
+    "parallel_D_cannot_reach_upper_A": "311/4200",
+    "t_upper_enlargement_squared": "1/98",
+    "rho_geometry_triangle_squared": "3666721"
+  },
+  "return_moment_identity_modulo_unit_axes": true,
+  "full_exact_replay": {
+    "path": "/tmp/pr11_root_replay_aligned_low_s_lower_return_height_separation_certificate.json",
+    "sha256": "ce034bcdca30eb79e8ea0e1647885f71614af2da138ebf58d5856978e41d9470",
+    "nodes": 3135,
+    "leaves": 1568,
+    "complete_prefix_cover": true,
+    "uniform_floor": "1/25000"
+  },
+  "literal_pins": [
+    {
+      "path": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "sha256": "7ba98ef149c1faff4ef4baeaf0b0305a38cf1153f883a3fe4bfa92087d33622d"
+    },
+    {
+      "path": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "sha256": "6154eee2ab1114d063b0dbd1a2800c3522cbb1b46ec44a258c1c89d8ffb9e975"
+    },
+    {
+      "path": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "sha256": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c"
+    },
+    {
+      "path": "S_LEAF_C5_ALIGNED_LOW_RADIUS_EXCLUSION.md",
+      "sha256": "02fd37d94d14f8342365160064cff63d91b572e9e162944e9551590fc8f535a1"
+    },
+    {
+      "path": "ALIGNED_LOW_S_ROOT_LOWER_BOUNDARY_UNIQUE_CORNER_AND_CENTER.md",
+      "sha256": "c32b99ad24da76907f2e3eaa4d4e7c88b9b2d2599a0eefe50234fae493441c48"
+    },
+    {
+      "path": "ALIGNED_LOW_S_ROOT_UPPER_BOUNDARY_RETURN_EXCLUSION.md",
+      "sha256": "843e9afce21baa487804740b3aa7505cac254ef2904e525819960302505dace2"
+    },
+    {
+      "path": "FIVE_CYCLE_FORCE_POLYGON_DOMAIN.md",
+      "sha256": "7d0c4092ba133a832cf963f329b1c3a6442a3260576f16319293835b39e6d282"
+    },
+    {
+      "path": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a"
+    },
+    {
+      "path": "ALIGNED_LOW_S_LOWER_RETURN_HEIGHT_SEPARATION.md",
+      "sha256": "93bb8e2d6dc3f2965c1a1868ba4a7552f63c5326cbe05cab5381950f4db765be"
+    },
+    {
+      "path": "certificates/aligned_low_s_lower_return_height_separation.py",
+      "sha256": "bd92d1895f240805a78ea5160b0b7ed56f6948a4ec6ce88ff870bb55a6472f15"
+    }
+  ],
+  "full_features": [
+    "Physical unique lower corner with no force shortcut",
+    "Degree-free X>0 and x>t",
+    "True C2 nonparallel properness without a boundary D",
+    "All four CD sides and all four CD vertices",
+    "Parallel D and all actual side means",
+    "Strict bottom-vertex D and its original root-crossing edge",
+    "Entire remaining right-vertex D frame",
+    "Every exact coupled scalar domain condition and weak endpoint"
+  ],
+  "remaining": "C-upper/A-lower placement and whole LTAC.S join remain separate from this review",
+  "no_pose_sampling": true,
+  "no_Lean_compilation": true
+}

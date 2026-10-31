@@ -1,0 +1,125 @@
+{
+  "date_utc": "2026-10-28",
+  "reviewer_agent": "diamond",
+  "author_agent": "two_blocks",
+  "verdict": "PASS unchanged after full independent original-domain reconstruction",
+  "source": {
+    "path": "/workspace/scratch/7d553350ce2a/two_blocks/D_ROOT_EXCLUDES_SEPARATE_CYCLIC_BLOCK_CONTAINING_A_LEAF_ROOT.md",
+    "sha256": "c71d7c384700c563477ea8535af327c5e5bd53411e3452a5c083bd0e8a3334f2"
+  },
+  "author_exact_record": {
+    "path": "/workspace/scratch/7d553350ce2a/two_blocks/D_ROOT_SEPARATE_CYCLIC_LEAF_ROOT_EXACT_RECORD.json",
+    "sha256": "899f24685b483dbdb94933ec9d650cbaeb9ed3e1b6adfa8fbcbbbfe6fc8dbf97"
+  },
+  "independent_review": {
+    "path": "/workspace/scratch/7d553350ce2a/diamond/REVIEW_D_ROOT_SEPARATE_CYCLIC_LEAF_ROOT_INDEPENDENT_2026_10_28.md",
+    "sha256": "e9f5fcb3d74f0607fc254b30896b849a472168fcae2ff08536ebd9eccdd3ecc0"
+  },
+  "independently_verified_direct_dependencies": [
+    {
+      "name": "D_LEAF_ROOT_AT_MOST_ONE_OTHER_UNIT_IN_THREE_125_DISK.md",
+      "path": "/workspace/scratch/7d553350ce2a/two_blocks/D_LEAF_ROOT_AT_MOST_ONE_OTHER_UNIT_IN_THREE_125_DISK.md",
+      "sha256": "34385a647c1889564b3423ecfff03a7a75747275e45f68346c3f8a9f06abfaaf"
+    },
+    {
+      "name": "ORIGIN_FREE_GENUINE_S_ROOT_DEGREE_FREE_PORT_ORDER.md",
+      "path": "/workspace/scratch/7d553350ce2a/two_blocks/ORIGIN_FREE_GENUINE_S_ROOT_DEGREE_FREE_PORT_ORDER.md",
+      "sha256": "7867c149b6276733c3fcb4c74c89920047319f1253e76673b5b02bb005f07b70"
+    },
+    {
+      "name": "HOUSE_ROOF_AC_D_COMPLETE_MOMENT_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/HOUSE_ROOF_AC_D_COMPLETE_MOMENT_EXCLUSION.md",
+      "sha256": "db795b7a1a287d7e8e422bd80f3ea04e714d9d98af88226e9c16ad757b7e0f5a"
+    },
+    {
+      "name": "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49"
+    },
+    {
+      "name": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe"
+    },
+    {
+      "name": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676"
+    },
+    {
+      "name": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "path": "/workspace/scratch/7d553350ce2a/two_blocks/C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "sha256": "28810d74517a6f6a4a4e5b2972c5359bdf41559957bd7e33bcb5fb4b358685d5"
+    }
+  ],
+  "prior_independent_reviews_of_operative_inputs": [
+    {
+      "path": "/workspace/scratch/7d553350ce2a/diamond/REVIEW_D_THREE_125_DISK_PHYSICAL_EXCLUSION_INDEPENDENT_2026_10_28.md",
+      "sha256": "4276bd260df77d44d3b92e8843fdb9790f205520eb598add94fcf5f3af7cbd71"
+    },
+    {
+      "path": "/workspace/scratch/7d553350ce2a/diamond/REVIEW_ORIGIN_FREE_S_ROOT_PORT_ORDER_INDEPENDENT_2026_10_28.md",
+      "sha256": "ba790f67e114fcec571a6eb1261db027acce4c043bab15283bdbde48c8f450f3"
+    },
+    {
+      "path": "/workspace/scratch/7d553350ce2a/diamond/REVIEW_HOUSE_ROOF_AC_D_MOMENT_EXCLUSION_INDEPENDENT_2026_10_28.md",
+      "sha256": "e79176507f6d8f22c9ba1e27d76f82606aea6b6f5417cb9a6a8ae1e95f2bd0d8"
+    }
+  ],
+  "recomputed_exact_comparisons": {
+    "sigma_minus_one_sixtieth": "11/1500",
+    "sqrt2_rational_upper_squared_reserve": "46/625",
+    "sigma_minus_rational_far_threshold": "0"
+  },
+  "cycle_cases": [
+    {
+      "cycle_contains_X": false,
+      "premises": "All cycle units and both actual neighbors at each cycle vertex avoid closed D_epsilon.",
+      "operative_result": "8def789e Sections1-3 full degree-free cycle theorem.",
+      "strictness": "All-zero advances would make at least3 actual units have one common nonzero nearest point and tangent sectors inside one half-plane, impossible."
+    },
+    {
+      "cycle_contains_X": true,
+      "premises": "X is an origin-free genuine S root; every other cycle body has distance >3/125>sqrt(2)*epsilon.",
+      "at_X": "7867c149 strict actual nonleaf port advance, arbitrary true degree.",
+      "at_others": "db795b7a Section1.2 nonnegative far-body port advance; neighbors may meet D_epsilon.",
+      "strictness": "At least the X passage is strict; actual chord homotopies avoid O, so the positive total is an integer multiple of2pi."
+    }
+  ],
+  "outside_torque_scope": "Every entire connected outside component has one Q attachment at most. Summing its full original torques gives zero total outside moment at that attachment; Q circulation uses original weights mu*abs(det(p,n)) and does not delete outside forces from any body-force equation.",
+  "preserved_external_path": {
+    "vertices": [
+      "E",
+      "L_E"
+    ],
+    "original_positive_edge": true,
+    "both_vertices_outside_Q": true,
+    "reason": "E outside by hypothesis; genuine degree-one leaf is not a cyclic-block vertex.",
+    "embedding": "One sufficiently close compatible embedding preserves O clearance, [O,c_E] clearance, all graph edges and the actual leaf exterior-access spoke."
+  },
+  "whole_scope": "No maximal cyclic block Q avoiding genuine D root E can contain another genuine leaf root X. Arbitrary block size/chords/true degrees/load masks/outside branches, full radius window and all9actualunits.",
+  "original_subdomain_maps": [
+    {
+      "cell": "C2.35.b2",
+      "attachment": "private/common shared-H triangle/five-block with genuine leaves at A,H",
+      "E": "private triangle A with genuine D leaf",
+      "X": "common H with genuine S leaf",
+      "true_X_degree": "3+deg_Q(H)"
+    },
+    {
+      "cell": "C2.35.b2",
+      "attachment": "private/block shared-H triangle/five-block with genuine leaves at A and private Q vertex X",
+      "E": "private triangle A with genuine D leaf",
+      "X": "actual private Q leaf root",
+      "true_X_degree": "1+deg_Q(X)"
+    }
+  ],
+  "fine_delta": 0,
+  "coarse_delta": 0,
+  "new_ids": [],
+  "source_changed": false,
+  "ledger_changed": false,
+  "lean_or_ci_run": false,
+  "numeric_pose_search_run": false,
+  "remote_write_performed": false
+}

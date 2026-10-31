@@ -1,0 +1,33 @@
+{
+  "status": "complete proposed physical theorem; frozen for full root and independent review",
+  "source": "/workspace/scratch/7d553350ce2a/two_blocks/ORIGIN_FREE_GENUINE_S_ROOT_DEGREE_FREE_PORT_ORDER.md",
+  "source_sha256": "7867c149b6276733c3fcb4c74c89920047319f1253e76673b5b02bb005f07b70",
+  "operative_dependencies": [
+    {
+      "filename": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676"
+    },
+    {
+      "filename": "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49"
+    }
+  ],
+  "exact_arithmetic": {
+    "cap_diameter_squared": "52124381/53582400",
+    "cap_diameter_reserve": "1458019/53582400",
+    "leaf_projection_reserve": "139/2440",
+    "forbidden_neighbor_projection": "3501/2440",
+    "transverse_square_bound": "181/3600",
+    "transverse_rational_reserve": "1/2880",
+    "tilt_square_bound": "121/3600",
+    "normal_transverse_square": "121/3721"
+  },
+  "unused_comparison_scopes": [
+    "true X3 two-cycle-force concurrence",
+    "boundary-neighbor hypotheses",
+    "force equation at the root or its nonleaf neighbors"
+  ],
+  "scope": "Strict negative-to-positive actual nonleaf moment-port order at every origin-free genuine S leaf root, arbitrary degree; no radial contact from that root to any other origin-free unit except its actual leaf."
+}

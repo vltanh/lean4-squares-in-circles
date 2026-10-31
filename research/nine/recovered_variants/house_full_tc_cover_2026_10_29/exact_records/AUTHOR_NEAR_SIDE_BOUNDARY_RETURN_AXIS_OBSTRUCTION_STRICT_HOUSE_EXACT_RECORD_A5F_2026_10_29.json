@@ -1,0 +1,707 @@
+{
+  "status": "PROPOSED_COMPLETE_AUTHOR_RECORD_NOT_INDEPENDENT_REVIEW",
+  "author": "broad_s_families continuation",
+  "contribution": "New physical all-corner A1/A2 bounds, full radius-free D3 proper-ray axis obstruction, and entire literal original strict-house feature proof by this author. Root corroborated the threshold sign in the continuous q/r identity after receiving the derivation; that contribution is disclosed and is not independent review.",
+  "exact_comparison_commit": "a5f3922a9c12830b76f2a7ee9dd4dbf1024f85b5",
+  "actual_comparison_git_tree": "2617ed629140d69171c86bfa68b0ee5784ab8c8c",
+  "tree_payload_sha_field_semantics": "recursive tree-by-commit API identifier; actual Git tree given separately",
+  "target": {
+    "path": "continuation_broad_c62/research/nine/NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_OBSTRUCTION_AND_STRICT_HOUSE_RETURN_EXCLUSION.md",
+    "bytes": 20560,
+    "lines": 526,
+    "sha256": "d92ec80546d6ae608494626e6f05c52c5f8ff2c7548be0bd98b93bbbc892c8ff",
+    "git_blob": "1238d2c529554d1b13a93538d262218e3ccbf143",
+    "role": "complete new mathematical source",
+    "read_scope": "complete source text"
+  },
+  "input_identities": [
+    {
+      "path": "current_315_base/research/nine/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "bytes": 13651,
+      "lines": 302,
+      "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "git_blob": "f1e09cf1f62a2bb6305bd2c20e7d49be2fffc0ae",
+      "role": "operative entire original-domain residual, graph, actual leaf and C force cover",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_a5f_base/research/nine/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "bytes": 20196,
+      "lines": 511,
+      "sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334",
+      "git_blob": "75fa5e0b4a97ec854ecd4a3af0ef03799c78a5cb",
+      "role": "operative entire original q>=3/8 exit, used only for the complementary q<3/8 domain",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "bytes": 17930,
+      "lines": 427,
+      "sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143",
+      "git_blob": "4625dfa796aa6a8eb1166efd326b55f0b87afda1",
+      "role": "operative complete actual C mask/force cover and true D3 touching-return strict whole-body support",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "bytes": 23353,
+      "lines": 555,
+      "sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78",
+      "git_blob": "f6afbca0c7607933fe807064a02bc512d921a9e0",
+      "role": "operative actual one-application and two-distinct-nonparallel alternatives, including physical-two exterior concurrence",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 12841,
+      "lines": 275,
+      "sha256": "9a0c704df3817a413639a98fbae8864ef58c583811735ac5c6816f69e1b0f636",
+      "git_blob": "d007b7ee912a045bc525ad5bb45e3d80683b1aa1",
+      "role": "complete separate upstream independent review, not a replacement for the mathematical source read",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_a5f_base/research/nine/REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+      "bytes": 13485,
+      "lines": 294,
+      "sha256": "167e5f8a305f33944e798668394d1d3efd92b4626968f3ad75dea494f371c154",
+      "git_blob": "ebc03976c208188226e8745d4ea2d2f9ea9e53b8",
+      "role": "complete separate upstream independent review, not a replacement for the mathematical source read",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+      "bytes": 16080,
+      "lines": 332,
+      "sha256": "f917697f13c574c533658ea108b0c770d4c1c949fc463ba996511e890e2d62ae",
+      "git_blob": "a35d7aa4fe1e422aa109ab9414dc5e5c6e08fe84",
+      "role": "complete separate upstream independent review, including original degrees, force masks and both zero coefficients",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/REVIEW_LOADED_TWO_APPLICATION_BOUNDARY_FREE_DICHOTOMY_INDEPENDENT_2026_10_28.md",
+      "bytes": 21488,
+      "lines": 494,
+      "sha256": "0d71302c571280dd0df9f9b16470d668580ad1fb57ebd306468fb2a8b04d0bc5",
+      "git_blob": "ef6bc56db4c37b7c3fde3bfe5d1a2e0197aa487c",
+      "role": "complete separate upstream independent review, including one-application and both physical masks",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/REVIEW_LOADED_TWO_APPLICATION_BOUNDARY_FREE_DICHOTOMY_INDEPENDENT_2026_10_28.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "bytes": 17104,
+      "lines": 345,
+      "sha256": "fb99b163e4450df464fcc095ac6aea0a3294624fcb329ffbc515efda6a0bea28",
+      "git_blob": "73cfd49b7ba738e5cd85a057d98358ea1c3b36d4",
+      "role": "complete published adoption of the exact full original-domain entry",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_a5f_base/research/nine/ADOPTION_THREE_BROAD_CONTINUOUS_CAP_OWNER_AND_SHIFT_TOOLS_ROOT_2026_10_29.md",
+      "bytes": 8044,
+      "lines": 43,
+      "sha256": "865db6ecd1b9ee6774a11be75edd4f73b59e132a21bc9df1708cc3169183c36e",
+      "git_blob": "4c1a4718606ec73576d039a4e91ae1401f7def57",
+      "role": "complete published adoption of the exact whole upper-mean owner union",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/ADOPTION_THREE_BROAD_CONTINUOUS_CAP_OWNER_AND_SHIFT_TOOLS_ROOT_2026_10_29.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/ADOPTION_BROADER_CENTERED_ARCS_AND_TWO_FULL_STAR_REDUCTIONS_ROOT_2026_10_28.md",
+      "bytes": 9911,
+      "lines": 186,
+      "sha256": "cf84585f5eba59a6df2e61a657f65a62248f74d0064d8a43907947ba9f4dc503",
+      "git_blob": "df552f0a8f51898f5c76c8f7739ac24fa55294de",
+      "role": "complete published adoption of the high-support physical-mask and original full-star reduction",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/ADOPTION_BROADER_CENTERED_ARCS_AND_TWO_FULL_STAR_REDUCTIONS_ROOT_2026_10_28.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/ADOPTION_COMPLETE_ROOF_INTERFACES_AND_BOUNDARY_FREE_STAR_ROOT_2026_10_28.md",
+      "bytes": 13739,
+      "lines": 254,
+      "sha256": "aa52da0dee41ff228f68e9e4b9d8982f6d5ab89cfd0f58c62b53f84158a77678",
+      "git_blob": "689687ea7118aa552b8eb9d7f2740fb0c1826181",
+      "role": "complete published adoption of the boundary-free two-application theorem",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/ADOPTION_COMPLETE_ROOF_INTERFACES_AND_BOUNDARY_FREE_STAR_ROOT_2026_10_28.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_c62_base/research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "bytes": 17993,
+      "lines": 399,
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "git_blob": "fd91cf5e38a8b9eb877710cab9d4dd1575f9bc22",
+      "role": "published force-contract provenance; the entire operative original equations are printed in the new source",
+      "read_scope": "identity and force-contract provenance only; no new global stress/selector audit claimed",
+      "published_path": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "exact_a5f_tree_blob_match": true
+    }
+  ],
+  "operative_mathematical_inputs": 4,
+  "complete_upstream_reviews_read": 4,
+  "complete_upstream_adoptions_read": 4,
+  "mathematical_exports": [
+    {
+      "name": "A1",
+      "scope": "Every physical circle corner of an actual near-axis unit lies strictly inside the positive vertical forty-five-degree cone, at the full closed R0 to R1 radius interval; arbitrary degree and all zero individual coefficients."
+    },
+    {
+      "name": "A2",
+      "scope": "An actual supporting near-side port with -3/8<=w<=1 forces w>1/2 and every physical circle corner to have negative horizontal coordinate and larger positive vertical coordinate; full nonnegative resultant follows."
+    },
+    {
+      "name": "B",
+      "scope": "Radius-free impossibility for the complete actual unloaded D3 with positive-negative DA, negative-negative DC, actual |Q-S|>1, an original DA/DC side axis, and the literal proper return ray at height at most S."
+    },
+    {
+      "name": "C",
+      "scope": "Entire literal owned genuine-S-leaf, strict (-u,+v) AD corner and original A-owned AT=-u feature, both complete C force rows, all actual D/T owners, masks, means, coincidences and zero coefficients; not the whole original TC family."
+    }
+  ],
+  "exact_scalar_checks": [
+    {
+      "name": "near-axis horizontal cone: 17/8 - (2+1/20+1/3600)",
+      "exact_value": "269/3600",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "closed radius upper comparison: (25/12)^2 - 1105/256",
+      "exact_value": "55/2304",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "opposite circle-halfplane distance: 301/72 - 2",
+      "exact_value": "157/72",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "boundary point annulus: (35/6)^2 - 34",
+      "exact_value": "1/36",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "negative-height port exclusion: 5/12 - 1/3600 - 9/64",
+      "exact_value": "3971/14400",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "positive half-height: 5/12 - 1/3600 - 1/4",
+      "exact_value": "599/3600",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "nonnegative horizontal circle corner exclusion: 17/4 - 4 - 1/3600",
+      "exact_value": "899/3600",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "r upper comparison: 4/225 - 1/60",
+      "exact_value": "1/900",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "a lower comparison: 1 - (4/15)^2 - (24/25)^2",
+      "exact_value": "41/5625",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "complete W upper value",
+      "exact_value": "1607/2450",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "W strictly below two-thirds",
+      "exact_value": "79/7350",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "complete actual point distance upper value",
+      "exact_value": "1769/900",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "actual point distance strictly below diagonal",
+      "exact_value": "31/900",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "whole actual W positive floor: 1-3/8-1/2",
+      "exact_value": "1/8",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "properness radius lower: 17/4 - 2",
+      "exact_value": "9/4",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "properness upper squared comparison using sqrt2>7/5: 29/5 - 1105/256",
+      "exact_value": "1899/1280",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "exact lower sqrt2 comparison: 2-(7/5)^2",
+      "exact_value": "1/25",
+      "positive": true,
+      "expected_exact_match": true
+    }
+  ],
+  "exact_symbolic_checks": [
+    {
+      "name": "owned leaf axes are unit",
+      "left": "4*r**2/(r**2 + 1)**2 + (1 - r**2)**2/(r**2 + 1)**2",
+      "right": "1",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "owned leaf first port identity",
+      "left": "q*r*((1 - r**2)/(r**2 + 1) + 1)",
+      "right": "2*q*r/(r**2 + 1)",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "owned leaf second port identity",
+      "left": "2*q*r**2/(r**2 + 1)",
+      "right": "q*(-(1 - r**2)/(r**2 + 1) + 1)",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "actual P_AB u coordinate",
+      "left": "-q*r*(1 - r**2)/(r**2 + 1) + 2*q*r/(r**2 + 1)",
+      "right": "q*r",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "actual P_AB v coordinate",
+      "left": "-2*q*r**2/(r**2 + 1) - q*(1 - r**2)/(r**2 + 1)",
+      "right": "-q",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "actual strict AD world x",
+      "left": "-q*r*(1 - r**2)/(r**2 + 1) - 2*r*(1 - q)/(r**2 + 1)",
+      "right": "q*r - 2*r/(r**2 + 1)",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "actual strict AD world y",
+      "left": "2*q*r**2/(r**2 + 1) - (1 - q)*(1 - r**2)/(r**2 + 1)",
+      "right": "q - (1 - r**2)/(r**2 + 1)",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "actual Q-S horizontal displacement",
+      "left": "-q*r - r/(r**2 + 1) - (1 - r**2)*(q*r + 1)/(r**2 + 1)",
+      "right": "-2*r*(q + 1/2)/(r**2 + 1) - (1 - r**2)/(r**2 + 1)",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "actual Q-S vertical displacement",
+      "left": "q - 2*r*(q*r + 1)/(r**2 + 1) + (1 - r**2)/(2*(r**2 + 1)) - 1",
+      "right": "q - 2*r*(q*r + 1)/(r**2 + 1) + (1 - r**2)/(2*(r**2 + 1)) - 1",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "full A4 y balance",
+      "left": "0",
+      "right": "0",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "full four-term A origin moment after omega=mu*t",
+      "left": "eta*w - mu*q*(1 - r**2)/(r**2 + 1) + rho*(1 - q)",
+      "right": "eta*w - mu*q*(1 - r**2)/(r**2 + 1) + rho*(1 - q)",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "full nonparallel-C continuous identity",
+      "left": "q*(1 - r**2)*(2*r*(q + 1/2)/(r**2 + 1) + (1 - r**2)/(r**2 + 1))/(r**2 + 1) - 2*r*(1 - q)*(-q + 2*r*(q*r + 1)/(r**2 + 1) - (1 - r**2)/(2*(r**2 + 1)) + 1)/(r**2 + 1)",
+      "right": "(r + 1)*(q*(r**3 - r**2 + 3*r + 1) - r*(3*r + 1))/(r**2 + 1)**2",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "coefficient comparison D0",
+      "left": "r**3 - r**2 + 3*r + 1",
+      "right": "-r**2*(1 - r) + 3*r + 1",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "threshold sign at q=r",
+      "left": "-r*(3*r + 1) + r*(r**3 - r**2 + 3*r + 1)",
+      "right": "r**3*(r - 1)",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "actual K strict lower decomposition",
+      "left": "2*r*(q + 1/2)/(r**2 + 1) + (1 - r**2)/(r**2 + 1) - 1",
+      "right": "2*r*(q - 2*r/((r**2 + 1)*((1 - r**2)/(r**2 + 1) + 1)) + 1/2)/(r**2 + 1)",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "actual W decomposition",
+      "left": "-q + 2*r*(q*r + 1)/(r**2 + 1) - (1 - r**2)/(2*(r**2 + 1)) + 1",
+      "right": "-q + 4*r**2/((r**2 + 1)**2*(2*(1 - r**2)/(r**2 + 1) + 2)) + 2*r*(q*r + 1)/(r**2 + 1) + 1/2",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "world and leaf actual point distance agree",
+      "left": "(2*r*(q + 1/2)/(r**2 + 1) + (1 - r**2)/(r**2 + 1))**2 + (-q + 2*r*(q*r + 1)/(r**2 + 1) - (1 - r**2)/(2*(r**2 + 1)) + 1)**2",
+      "right": "(2*r/(r**2 + 1) + 1)**2 + (-q + (1 - r**2)/(r**2 + 1) - 1/2)**2",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "diameter support algebra",
+      "left": "(2*r/(r**2 + 1) + 1)**2 + (-q + (1 - r**2)/(r**2 + 1) - 1/2)**2",
+      "right": "4*r/(r**2 + 1) - 2*(1 - r**2)*(q + 1/2)/(r**2 + 1) + (q + 1/2)**2 + 2",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "radius-free D axes oriented determinant",
+      "left": "c**2 + s**2",
+      "right": "1",
+      "constraint": "c^2+s^2=1",
+      "exact_symbolic_difference": "0 modulo the circle identity"
+    },
+    {
+      "name": "DA projections on D-owned DC frame",
+      "left": "-c*omega - rho*s",
+      "right": "-c*omega - rho*s",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "DA second projection on D-owned DC frame",
+      "left": "-c*rho + omega*s",
+      "right": "-c*rho + omega*s",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "strict ratio comparison for complete D3",
+      "left": "c*(c*omega + rho*s) - s*(c*rho - omega*s)",
+      "right": "omega",
+      "constraint": "c^2+s^2=1",
+      "exact_symbolic_difference": "0 modulo the circle identity"
+    },
+    {
+      "name": "full D3 torque about actual S",
+      "left": "c*rho - lambda*(c*omega + rho*s) + nu*sigma - nu - omega*s",
+      "right": "c*rho - lambda*(c*omega + rho*s) + nu*sigma - nu - omega*s",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "full zero-DT-projection torque rearrangement",
+      "left": "-lambda*(c*omega + rho*s) + sigma*(c*rho - omega*s)",
+      "right": "-lambda*(c*omega + rho*s) + sigma*(c*rho - omega*s)",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "parallel C full T horizontal force",
+      "left": "a*nu - eta - rho",
+      "right": "a*nu - eta - rho",
+      "exact_symbolic_difference": "0"
+    }
+  ],
+  "literal_original_graph": {
+    "vertices": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "T",
+      "L"
+    ],
+    "edges": [
+      [
+        "A",
+        "T"
+      ],
+      [
+        "D",
+        "T"
+      ],
+      [
+        "A",
+        "D"
+      ],
+      [
+        "A",
+        "B"
+      ],
+      [
+        "B",
+        "C"
+      ],
+      [
+        "C",
+        "D"
+      ],
+      [
+        "A",
+        "L"
+      ]
+    ],
+    "true_degrees": {
+      "A": 4,
+      "B": 2,
+      "C": 2,
+      "D": 3,
+      "T": 2,
+      "L": 1
+    },
+    "positive_circle_loads": [
+      "T",
+      "C",
+      "L"
+    ],
+    "unloaded": [
+      "A",
+      "B",
+      "D"
+    ],
+    "all_physical_units": 9,
+    "other_actual_units": 3,
+    "BD_edge": false
+  },
+  "section_dependency_dag": {
+    "nodes": [
+      "actual physical unit",
+      "real near-axis port",
+      "A1 physical corner cone",
+      "actual max-u port",
+      "A2 half-height and negative-u resultant",
+      "full original residual",
+      "full A4 balance and torque",
+      "complete C force cover",
+      "true D3 strict return support",
+      "full boundary-free T2 alternatives",
+      "actual proper negative-u return ray",
+      "parallel C torque contradiction",
+      "nonparallel C strict scalar inequality",
+      "q^2>epsilon",
+      "actual AD/DC distance window",
+      "original D-axis cover",
+      "both leaf components of g negative",
+      "B full D3 proper-ray axis obstruction",
+      "complete stated strict-house feature exclusion"
+    ],
+    "edges": [
+      [
+        "actual physical unit",
+        "A1 physical corner cone"
+      ],
+      [
+        "real near-axis port",
+        "A1 physical corner cone"
+      ],
+      [
+        "A1 physical corner cone",
+        "A2 half-height and negative-u resultant"
+      ],
+      [
+        "actual max-u port",
+        "A2 half-height and negative-u resultant"
+      ],
+      [
+        "full original residual",
+        "full A4 balance and torque"
+      ],
+      [
+        "full original residual",
+        "complete C force cover"
+      ],
+      [
+        "full original residual",
+        "true D3 strict return support"
+      ],
+      [
+        "full original residual",
+        "actual max-u port"
+      ],
+      [
+        "A2 half-height and negative-u resultant",
+        "actual proper negative-u return ray"
+      ],
+      [
+        "full boundary-free T2 alternatives",
+        "actual proper negative-u return ray"
+      ],
+      [
+        "complete C force cover",
+        "actual proper negative-u return ray"
+      ],
+      [
+        "full A4 balance and torque",
+        "parallel C torque contradiction"
+      ],
+      [
+        "complete C force cover",
+        "parallel C torque contradiction"
+      ],
+      [
+        "A2 half-height and negative-u resultant",
+        "parallel C torque contradiction"
+      ],
+      [
+        "full A4 balance and torque",
+        "nonparallel C strict scalar inequality"
+      ],
+      [
+        "complete C force cover",
+        "nonparallel C strict scalar inequality"
+      ],
+      [
+        "A2 half-height and negative-u resultant",
+        "nonparallel C strict scalar inequality"
+      ],
+      [
+        "nonparallel C strict scalar inequality",
+        "q^2>epsilon"
+      ],
+      [
+        "q^2>epsilon",
+        "actual AD/DC distance window"
+      ],
+      [
+        "actual AD/DC distance window",
+        "original D-axis cover"
+      ],
+      [
+        "true D3 strict return support",
+        "both leaf components of g negative"
+      ],
+      [
+        "complete C force cover",
+        "both leaf components of g negative"
+      ],
+      [
+        "actual proper negative-u return ray",
+        "B full D3 proper-ray axis obstruction"
+      ],
+      [
+        "original D-axis cover",
+        "B full D3 proper-ray axis obstruction"
+      ],
+      [
+        "both leaf components of g negative",
+        "B full D3 proper-ray axis obstruction"
+      ],
+      [
+        "parallel C torque contradiction",
+        "complete stated strict-house feature exclusion"
+      ],
+      [
+        "B full D3 proper-ray axis obstruction",
+        "complete stated strict-house feature exclusion"
+      ]
+    ],
+    "node_count": 19,
+    "edge_count": 27,
+    "acyclic": true,
+    "topological_order": [
+      "actual physical unit",
+      "full boundary-free T2 alternatives",
+      "full original residual",
+      "real near-axis port",
+      "A1 physical corner cone",
+      "actual max-u port",
+      "complete C force cover",
+      "full A4 balance and torque",
+      "true D3 strict return support",
+      "A2 half-height and negative-u resultant",
+      "both leaf components of g negative",
+      "actual proper negative-u return ray",
+      "nonparallel C strict scalar inequality",
+      "parallel C torque contradiction",
+      "q^2>epsilon",
+      "actual AD/DC distance window",
+      "original D-axis cover",
+      "B full D3 proper-ray axis obstruction",
+      "complete stated strict-house feature exclusion"
+    ]
+  },
+  "complete_domain_guards": [
+    "All nine actual physical units are retained; the three extras are not deleted or assigned a region.",
+    "The literal graph has no BD edge; B remains the true unloaded degree-two transmitter.",
+    "A retains four original positive pair forces; D retains all three; C and T retain true degree two.",
+    "Every original force normal and full support mean is unchanged.",
+    "Theorem A1 assumes only an actual near-axis point and the closed printed radius/epsilon bounds.",
+    "Theorem A2 separately allows its actual port height down to -3/8 and proves w>1/2.",
+    "Physical circle corners include zero-coefficient corners; the resultant keeps the full nonnegative combination.",
+    "Theorem A2 needs max_K x=epsilon, not mere proximity to a side.",
+    "Theorem B is radius-free, but requires the exact full unloaded D3, one actual proper ray, and at least one actual DA/DC axis.",
+    "No D-axis ownership follows merely from C nonaxis status; the actual distance window supplies the exhaustive owner cover.",
+    "D-owned DA includes every original theta endpoint and every DT zero-projection mean.",
+    "D-owned DC retains sigma=0,1 and all lambda in [0,1] at B0=nu.",
+    "The B0<0 same-face case uses the actual |Q-S|>1 premise; B0=0 joins the already excluded DA-axis class.",
+    "The strict B0/A0<c/s comparison uses omega>0 and the full moment, not a thinned two-force equation.",
+    "A1 and A2 include epsilon=0 and epsilon=1/60; the literal TC caller is strictly epsilon>0.",
+    "The properness import needs sqrt2<R<1+sqrt2, verified throughout the actual strict-high interval.",
+    "Actual coincident AT/DT applications are separately contradicted by the one-application theorem.",
+    "Distinct T forces are nonparallel by the complete D3 and g_v<0; no pending parallel-T source is needed.",
+    "The proper-ray coefficients may vanish and physical-two concurrence may be exterior to T.",
+    "The parallel C branch retains y=-1/2 and all y<0, and uses the actual C2 torque.",
+    "The parallel C contradiction does not need a proper-ray premise.",
+    "The nonparallel C branch uses its actual world Q=(d,-1/2); no parallel-row mean is substituted.",
+    "The q^2>epsilon inequality uses the positive AT term eta*w in the full A4 torque.",
+    "The original geometric inequality at Q is weak, but the full A4 inequality is strict.",
+    "The sign comparison uses 0<r<1, positive D0, and strict D0<3r+1.",
+    "The actual AD/DC distance is strictly between side and diagonal lengths, with positive exact reserve.",
+    "No finite pose or angle sample is an operative premise.",
+    "The full D3 return separator is applied at actual P_AB and on the original whole A,T returns.",
+    "The full original radius and circle do not change under the orthonormal leaf coordinates.",
+    "Neither pending be0af78e nor pending a813f3cc is an operative import.",
+    "The whole original TC row remains open outside the stated strict-AD / AT=-u feature.",
+    "No fine/coarse flag, certificate, retirement, Lean/Lake/CI or remote write is performed.",
+    "The author record is corroboration only and is not a separate independent review.",
+    "Exact A5F tree comparison is historical; the fresh current604 head does not change this frozen scope."
+  ],
+  "counts": {
+    "input_identities": 13,
+    "scalar_checks": 17,
+    "symbolic_checks": 25,
+    "domain_guards": 34
+  },
+  "accounting": {
+    "whole_original_flags": 0,
+    "new_computational_certificates": 0,
+    "certificate_retirements": 0,
+    "remaining": "Other original AD/AT pairings, the upper-adjacent genuine-leaf chart, and the entire original TC.S family remain open."
+  }
+}
