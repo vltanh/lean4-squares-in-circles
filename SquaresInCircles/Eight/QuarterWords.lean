@@ -17,9 +17,9 @@ squares.
 
 The classification runs through all `3 ^ 7` words as digit vectors: the kernel evaluates
 Boolean checks on the seven digits and never enumerates the function type itself. The summed
-cost bound of the words with a digit `2` then follows from the classification
-(`double_word_cost_numerator`), because sums over positions are invariant under rotation and
-reflection.
+cost bound of words with a digit `2` follows instead by counting
+(`double_word_cost_numerator`): no three consecutive zeros forces at least three occupied
+positions, so a word of total sum four with a `2` has exactly one `2`, two `1`s and four zeros.
 
 If the frames lie in an interval shorter than `7/10` and the gaps exceed `19/25`, the word of the
 cycle is admissible (`QuarterLift.word_admissible`): a digit below `0` or above `2` would make a
@@ -139,14 +139,6 @@ theorem quarter_word_complete_classification :
   rw [QuarterWords.admissible_vec] at hw
   exact QuarterWords.isImage_spec
     (by simpa [hw] using key (w 0) (w 1) (w 2) (w 3) (w 4) (w 5) (w 6))
-
-/-- Sums over the positions of a word do not see rotation or reflection. -/
-private theorem QuarterWords.sum_dihedral {β : Type*} [AddCommMonoid β] (f : Fin 3 → β)
-    (s : Vertex) (r : Bool) (w : QuarterWord) :
-    ∑ i, f (quarterDihedral s r w i) = ∑ i, f (w i) := by
-  cases r
-  · exact Equiv.sum_comp (Equiv.addRight s) (fun i => f (w i))
-  · exact Equiv.sum_comp (Equiv.subLeft s) (fun i => f (w i))
 
 /-- The integer increment of the quarter offsets on the edge `i`, with the winding of four
 quarter turns added on the last edge, so that the increments add up to `4`
@@ -298,16 +290,52 @@ theorem QuarterLift.word_admissible {q : ℝ} {C : BoundaryCycle q} (F : Quarter
 `2`, in units of `10⁻⁴`. -/
 def doubleWordCostNumerator : Fin 3 → ℕ := ![9775, 7850, 8150]
 
+/-- Count occupied positions in the seven overlapping triples. Their total is at least seven,
+so there are at least three occupied positions. The digit sum four and the presence of a `2`
+then force three occupied positions, one of them double, which determines the total cost. -/
 theorem double_word_cost_numerator :
     ∀ w : QuarterWord, w.Admissible → (∃ i, w i = 2) →
       (∑ i, doubleWordCostNumerator (w i)) = 62950 := by
-  intro w hw ⟨i, hi⟩
-  obtain ⟨j, s, r, rfl⟩ := quarter_word_complete_classification w hw
-  have key : ∀ j : Fin 7, (∃ i, quarterRepresentatives j i = 2) →
-      ∑ i, doubleWordCostNumerator (quarterRepresentatives j i) = 62950 := by
-    decide
-  rw [QuarterWords.sum_dihedral doubleWordCostNumerator]
-  exact key j ⟨_, hi⟩
+  intro w hw hd
+  let occupied (i : Vertex) : ℕ := if w i = 0 then 0 else 1
+  let doubles (i : Vertex) : ℕ := if w i = 2 then 1 else 0
+  -- Each cyclic triple contains an occupied position.
+  have hthree (i : Vertex) : 1 ≤ occupied i + occupied (next i) + occupied (next (next i)) := by
+    have h := hw.2 i
+    dsimp [occupied]
+    split_ifs <;> omega
+  have htotal := Finset.sum_le_sum (s := Finset.univ) (fun i _ => hthree i)
+  simp only [Finset.sum_add_distrib, sum_next] at htotal
+  have hnext2 : (∑ i, occupied (next (next i))) = ∑ i, occupied i :=
+    (sum_next (fun i => occupied (next i))).trans (sum_next occupied)
+  rw [hnext2] at htotal
+  norm_num at htotal
+  -- Each occupied position contributes one, with one extra for every digit `2`.
+  have hsplit (i : Vertex) : (w i).val = occupied i + doubles i := by
+    dsimp [occupied, doubles]
+    generalize w i = d
+    fin_cases d <;> norm_num
+  have hdigits : (∑ i, occupied i) + (∑ i, doubles i) = 4 := by
+    rw [← Finset.sum_add_distrib]
+    simpa only [← hsplit] using hw.1
+  have hdouble : 1 ≤ ∑ i, doubles i := by
+    obtain ⟨i, hi⟩ := hd
+    have h := Finset.single_le_sum (f := doubles) (fun j _ => Nat.zero_le _) (Finset.mem_univ i)
+    simpa [doubles, hi] using h
+  have hoc : (∑ i, occupied i) = 3 := by omega
+  have hdc : (∑ i, doubles i) = 1 := by omega
+  -- A zero costs 9775; an occupied position saves 1925, and a `2` adds 300.
+  have hcost (i : Vertex) : doubleWordCostNumerator (w i) + 1925 * occupied i =
+      9775 + 300 * doubles i := by
+    dsimp [occupied, doubles]
+    generalize w i = d
+    fin_cases d <;> norm_num [doubleWordCostNumerator]
+  have hsum : (∑ i, (doubleWordCostNumerator (w i) + 1925 * occupied i)) =
+      ∑ i, (9775 + 300 * doubles i) := Finset.sum_congr rfl (fun i _ => hcost i)
+  simp only [Finset.sum_add_distrib, ← Finset.mul_sum] at hsum
+  rw [hoc,hdc] at hsum
+  norm_num at hsum
+  omega
 
 /-- Summing the cost bounds of the common table round the cycle excludes every word with a
 digit `2` at once: the bounds add up to `6.295 > 2π`. The cost inequalities are hypotheses

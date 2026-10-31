@@ -180,6 +180,9 @@ automation:
         Subsequently replaced nine central-band Bernstein rows with a shared
         quadratic lower bound and completed-square argument, preserving the
         three positivity statements and documenting the argument in Appendix K.
+        Replaced the word-cost classification step with a count of occupied
+        positions in overlapping cyclic triples, preserving its statement
+        and explaining the argument in Chapter 11.
     - method: "agent"
       models: ["ChatGPT 6 Pro", "ChatGPT (its latest model, September 2026)"]
       framework: "ChatGPT"

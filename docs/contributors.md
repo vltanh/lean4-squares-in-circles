@@ -296,3 +296,19 @@ Times are rough commit times, in US Central time (UTC−5).
   Local validation passed the full build, the audit of all 26,541 project
   declarations, sanity checks, documentation checks and exact regeneration of
   the remaining rows. Only the three standard axioms occur.
+
+* **Word costs by counting occupied positions.** Continuing the same proof
+  cleanup, Codex (GPT-6) replaced the classification-based proof of
+  `double_word_cost_numerator` with a direct count of the seven overlapping
+  cyclic triples. No three consecutive zeros gives at least three occupied
+  positions. The total digit sum four and the presence of a `2` force exactly
+  one `2`, two `1`s and four zeros, which determines the total cost. The
+  statement and hypotheses are unchanged. The unused symmetry-sum helper was
+  removed, and Chapter 11 now explains the counting argument.
+
+  The full build, axiom audit of all 26,550 project declarations, sanity
+  checks and documentation checks passed locally, with only the standard
+  axioms. Comparator accepted the updated proofs in con-ron, NanoDa and Lean's
+  default kernel, finishing with `Your solution is okay!` in 59 minutes and
+  20 seconds. At the owner's request, the existing remote CI and preflight runs
+  were left to finish without launching further runs.

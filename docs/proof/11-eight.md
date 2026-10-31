@@ -1377,10 +1377,10 @@ With $d_i = \theta_{i+1} - \theta_i$,
 ```
 
 *Lean:
-[`Eight.QuarterLift`](../../SquaresInCircles/Eight/QuarterWords.lean#L164),
-[`Eight.QuarterLift.word`](../../SquaresInCircles/Eight/QuarterWords.lean#L263),
-[`Eight.QuarterLift.edge_identity`](../../SquaresInCircles/Eight/QuarterWords.lean#L180),
-[`Eight.integerQuarterIncrement_sum`](../../SquaresInCircles/Eight/QuarterWords.lean#L157).*
+[`Eight.QuarterLift`](../../SquaresInCircles/Eight/QuarterWords.lean#L156),
+[`Eight.QuarterLift.word`](../../SquaresInCircles/Eight/QuarterWords.lean#L255),
+[`Eight.QuarterLift.edge_identity`](../../SquaresInCircles/Eight/QuarterWords.lean#L172),
+[`Eight.integerQuarterIncrement_sum`](../../SquaresInCircles/Eight/QuarterWords.lean#L149).*
 
 The words are read up to the symmetries of the cycle: a cyclic shift of the
 indices, and a reflection of the plane, which reverses the order of the
@@ -1423,9 +1423,9 @@ two positions next to the 2 are exchanged by the reflection. This gives the
 four words $0010012$, $0010102$, $0010201$ and $0011002$. $\square$
 
 *Lean:
-[`Eight.QuarterLift.digit_range`](../../SquaresInCircles/Eight/QuarterWords.lean#L216),
-[`Eight.QuarterLift.no_three_zero_increments`](../../SquaresInCircles/Eight/QuarterWords.lean#L243),
-[`Eight.QuarterLift.word_admissible`](../../SquaresInCircles/Eight/QuarterWords.lean#L273),
+[`Eight.QuarterLift.digit_range`](../../SquaresInCircles/Eight/QuarterWords.lean#L208),
+[`Eight.QuarterLift.no_three_zero_increments`](../../SquaresInCircles/Eight/QuarterWords.lean#L235),
+[`Eight.QuarterLift.word_admissible`](../../SquaresInCircles/Eight/QuarterWords.lean#L265),
 [`Eight.quarter_word_complete_classification`](../../SquaresInCircles/Eight/QuarterWords.lean#L130).*
 
 ![Top: the seven quarter words of Lemma 11.25 drawn as necklaces of seven beads, the digits 0, 1 and 2 shown as white, light and dark beads, with the last one, 0101011, highlighted. Below: the exterior squares of the optimal packing with the canonical axis of each square drawn as an arrow near its centre direction; the arrows of H and G, A and B, T and D, and E point in the directions minus a quarter turn, 0, a quarter turn and a half turn from the frame of A, and each edge of the cycle is labelled with its digit 0 or 1](figures/11-eight/words.svg)
@@ -1458,8 +1458,13 @@ L_{\mathcal O}(a, b) = -\tfrac9{100} + \tfrac{13}{200}a + \tfrac{203}{200}b, \qq
 
 $\ell_i = \sigma_i L_{\mathcal O}$ or $\sigma_i L_{\mathcal C}$ as $S_i$ is on
 $\mathcal O$ or on $\mathcal C$. The cost of a pair exceeds $\frac{391}{400}$,
-$\frac{157}{200}$, $\frac{163}{200}$ when its digit is 0, 1, 2. A word with
-one 2, two 1s and four 0s therefore has costs adding up to more than
+$\frac{157}{200}$, $\frac{163}{200}$ when its digit is 0, 1, 2.
+Count occupied positions, those with a nonzero digit. Every cyclic triple
+contains an occupied position; summing over the seven triples counts each
+occupied position three times, so there are at least three. The total digit
+sum is four, and a digit 2 contributes one extra beyond being occupied.
+Thus a word with a 2 has exactly three occupied positions and exactly one 2:
+one 2, two 1s and four 0s. Its costs therefore add up to more than
 $4 \cdot \frac{391}{400} + 2 \cdot \frac{157}{200} + \frac{163}{200} = \frac{1259}{200}$,
 which exceeds $\frac{44}7 > 2\pi$ by $\frac{13}{1400}$.
 
@@ -1474,11 +1479,12 @@ $\frac{125671}{20000}$, which exceeds $\frac{710}{113}$ by
 $\frac{823}{2260000}$. $\square$
 
 *Lean:
+[`Eight.double_word_cost_numerator`](../../SquaresInCircles/Eight/QuarterWords.lean#L296),
 [`Eight.WordGeometry.no_double`](../../SquaresInCircles/Eight/WordGeometry.lean#L506),
 [`Eight.WordGeometry.wrong_word_impossible`](../../SquaresInCircles/Eight/WordGeometry.lean#L602),
 [`Eight.WordGeometry.six_exclusions`](../../SquaresInCircles/Eight/WordGeometry.lean#L657),
 [`Eight.quarter_word_candidate`](../../SquaresInCircles/Eight/WordGeometry.lean#L686),
-[`Eight.candidate_word_after_six_exclusions`](../../SquaresInCircles/Eight/QuarterWords.lean#L329),
+[`Eight.candidate_word_after_six_exclusions`](../../SquaresInCircles/Eight/QuarterWords.lean#L357),
 [`Eight.WordGeometry.commonPairProblem`](../../SquaresInCircles/Eight/Arithmetic/WordProblems.lean#L190),
 [`Eight.WordGeometry.wrongPairProblem`](../../SquaresInCircles/Eight/Arithmetic/WordProblems.lean#L197),
 [`Eight.WordGeometry.word_pair`](../../SquaresInCircles/Eight/WordGeometry.lean#L389).*
