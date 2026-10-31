@@ -14,21 +14,21 @@
 
 ## New source proved at exact scope
 
-Let \(K\) be a connected all-unloaded set with exactly three original positive cut edges. Assume every member has original true positive degree 2 or 3, with no member carrying more than one cut edge, and \(K\) contains at least two independent cycles. At the record upper squared radius, the original full degree sum and the two-loaded-body requirement give:
+Let \(K\) be a connected all-unloaded set with exactly three original positive cut edges. Assume every member has original true positive degree 2 or 3, with at most **one reduced exit arm per branching hub** (not merely at most one direct cut edge per physical body), and \(K\) contains at least two independent cycles. A full-degree-two body may lie on an exit arm; all three original cut edges remain. At the record upper squared radius, the original full degree sum and the two-loaded-body requirement give:
 
-* Cycle rank 2: five full-degree-3 hubs, zero to two full-degree-2 transmitters, reduced internal graph exactly **house** or **\(K_{2,3}\)**, three exits at the reduced degree-2 hub positions.
+* Cycle rank 2: five full-degree-3 hubs, zero to two full-degree-2 transmitters, reduced internal graph exactly **house** or **\(K_{2,3}\)**, three reduced exit arms at the reduced internal-degree-2 hub positions. The up to two genuine transmitters may lie on internal links or on the exit arms.
 * Cycle rank 3: seven full-degree-3 hubs, no transmitters; the other two original physical squares are both circle-loaded, in the same complete positive component.
 * Cycle rank at least 4: impossible under the same hypotheses and nine-square budget.
-* Literal unsubdivided \(K_{2,3}\): excluded in the full nine-square model by the accepted physical occupied-cross capacity theorem.
+* Literal six-internal-edge \(K_{2,3}\) (even with transmitted exit arms): excluded in the full nine-square model by the accepted physical occupied-cross capacity theorem.
 
 Proof is self-contained except for the explicitly named two-force transmission/parallel-channel and positive-component load theorems; no new normal choices, circle weights or contact means are made. Its independent review remains outstanding.
 
 ## Important unresolved domains — do NOT silently promote the reduction
 
-1. All five-hub house graphs with 0–2 true transmitters, arbitrary original support owners and actual nine-square completions.
-2. Subdivided five-hub \(K_{2,3}\) with 1–2 transmitters; the existing physical \(K_{2,3}\) obstruction applies to literal, NOT subdivided, edges.
+1. All five-hub house graphs with 0–2 true transmitters on internal links **or exit arms**, arbitrary original support owners and actual nine-square completions.
+2. Five-hub \(K_{2,3}\) with 1–2 transmitters on an **internal** edge; the existing physical \(K_{2,3}\) obstruction applies to literal six-edge internal skeletons, even when an exit arm is subdivided, but not to subdivided internal edges.
 3. Seven-hub three-cycle rank-3 trivalent graphs with exactly two actual loaded external bodies.
-4. Full three-edge-cut modules with true degree at least 4 or two or more cut edges incident to the same square.
+4. Full three-edge-cut modules with true degree at least 4 or **two or more reduced exit arms at one branching hub** (including paths through transmitters).
 5. All four-edge-and-higher cuts, mixed-side articulations and arbitrary circle-clear-positive neighbors. These are not reduced by a three-edge-cut theorem.
 
 During exploration there were suggestions that house graphs or all rank-3 graphs could be excluded, and that the remaining three-port unicyclic cases reduce to a triangle or a side-transmitter four-cycle. **These stronger suggestions are NOT certified by the new manuscript; do not check them as proofs without complete original force/torque and same-nine geometric derivations.** The existing unicyclic source retains five necessary \((t,s)\) rows until such a proof is written.
@@ -49,7 +49,7 @@ For one-exit-per-branch reduced graph, the existing global internal work inequal
 \[
 N+A+\Delta/2<C/60,\qquad D>29N+30A+(31/2)\Delta.
 \]
-Do not set a merely small positive subdivided-edge magnitude to zero. For the present three-port subcubic rank-2 reduction all exits occur directly at hubs, so \(A=0\).
+Do not set a merely small positive subdivided-edge magnitude to zero. For the present three-port subcubic rank-2 reduction, exit arms can be transmitted; \(A\) remains in the inequality unless all three exit arms are proved direct.
 
 For the next articulation route, keep the complete two-vector cut *wrench*: the external cut force resultant equals the sum of original private radial forces (with the chosen sign convention), and the sum of external cut moments about \(O\) is zero. A common-side nonnegative pressure theorem cannot be extended to mixed-sided roots without additional geometry.
 
