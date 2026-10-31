@@ -1,0 +1,195 @@
+{
+  "input_commit": "791c0711f6b8bde9c03bc17d35ff3b4337347562",
+  "scope": "Full common-witness return obstruction, whole true-three root chain and simple-C6 (4,1,1) exclusion, all actual simple-cycle pocket contacts and full side-pocket midpoint dilation; unrestricted n=9 remains open.",
+  "adoption": {
+    "file": "ADOPTION_COMMON_WITNESS_ROOT_CHAINS_AND_FULL_POCKET_DILATION_2026_10_30.md",
+    "sha256": "a10683b3324c6cc844ac58db896aae606d18e5e0d771f5123a4a893546409280"
+  },
+  "composition_review": {
+    "file": "REVIEW_ADOPTION_COMMON_WITNESS_ROOT_CHAINS_AND_POCKET_DILATION_COMPOSITION_COMMON_CERTIFICATE_2026_10_30.md",
+    "sha256": "c3f08fe2c3c7dcdab5ebbfe8b53d14abf47b4b7109f38501192694169322840a"
+  },
+  "supplementary_reviews": [
+    {
+      "file": "REVIEW_OCCUPIED_RADIAL_SIDE_POCKET_STRICT_HEIGHT_AND_ANGLE_BRANCH_BUDGET_2026_10_30.md",
+      "sha256": "275371351b547e762401e60eee6da41d0d2384f7b5e9eab0114619509bf005e8"
+    },
+    {
+      "file": "REVIEW_POCKET_LOCALIZATION_CRITICAL_NEAR_CALLER_ROOT_2026_10_30.md",
+      "sha256": "d68f4bdd3d2a1d46b1a8e7f11a6332d9fc11b8911275f8eb3e60f2fa00691d64"
+    }
+  ],
+  "fine_inventory": {
+    "total": 2513,
+    "checked": 2373,
+    "open": 140,
+    "before_ordered_id_flag_sha256": "8b1b9a1cc43a90d4839ea477f0e8017aeb4f3df321c79a0fe1d949f4062fb3f8",
+    "after_ordered_id_flag_sha256": "8b1b9a1cc43a90d4839ea477f0e8017aeb4f3df321c79a0fe1d949f4062fb3f8",
+    "exact_ordered_list_equal": true
+  },
+  "coarse_inventory": {
+    "total": 58,
+    "closed": 37,
+    "open": 21,
+    "before_ordered_id_flag_sha256": "7aa5b1932f4650075f69ca101d692fdd8d812dead9eb99a3bf5d6ac4967d27ff",
+    "after_ordered_id_flag_sha256": "7aa5b1932f4650075f69ca101d692fdd8d812dead9eb99a3bf5d6ac4967d27ff",
+    "exact_ordered_list_equal": true
+  },
+  "original_flags_changed": 0,
+  "new_original_coarse_cells_closed": [],
+  "entire_Type_I_boundary_Q_feature_excluded_with_optional_root_chords": true,
+  "entire_true_three_genuine_root_chain_with_physical_boundary_returns_excluded": true,
+  "entire_simple_C6_genuine_root_spacing_4_1_1_excluded": true,
+  "all_actual_simple_cycle_completion_contacts_localized": true,
+  "full_side_pocket_midpoint_dilation_to_circle": true,
+  "physical_boundary_core_count_plus_occupied_side_pocket_count_at_most_seven": true,
+  "canonical_secondary_minimum_transferred_to_dilated_packing": false,
+  "mathematical_sources": 3,
+  "separate_full_source_reviews": 3,
+  "supplementary_reviews_count": 2,
+  "direct_source_table_pins_checked": 26,
+  "review_input_table_pins_checked": 34,
+  "fixed_rational_checks": {
+    "common_witness_leaf_longitudinal": "1041/3920",
+    "common_witness_cap_lower": "271/1000",
+    "common_witness_cap_upper": "13/600",
+    "common_witness_B_near_face": "413/5745",
+    "common_witness_B_near_face_bound": "263/22980",
+    "common_witness_B_transverse_margin": "35799/383000",
+    "common_witness_C_quarter_mu": "121/5745",
+    "common_witness_C_three_quarter_mu": "131/11490",
+    "common_witness_C_quarter_negative": "2161/23520",
+    "common_witness_C_three_quarter_left": "211/23520",
+    "common_witness_actual_section_gap": "17/35",
+    "common_witness_unit_section_reserve": "1/70",
+    "common_witness_East_leaf_distance": "79/120",
+    "common_witness_East_leaf_distance_reserve": "41/120",
+    "common_witness_SE_transverse_margin": "1513/21000",
+    "common_witness_SE_normal_margin": "1/210",
+    "common_witness_SE_depth_parameter": "8/19",
+    "common_witness_SE_actual_point": "83/570",
+    "common_witness_SW_midpoint_error": "1/36",
+    "common_witness_SW_left_center": "-46/45",
+    "common_witness_real_leaf_rectangle": "863/2880",
+    "chain_real_leaf_angle_reserve": "1/250",
+    "chain_real_leaf_continuous_factor_endpoint": "101/100",
+    "chain_parallel_sine_reserve": "17/132",
+    "chain_mixed_sine_reserve": "25/132",
+    "chain_parallel_height_reserve": "13/330",
+    "chain_tilt_angle_reserve": "4/1975",
+    "chain_nu_upper_rational": "1431/39942400",
+    "chain_far_boundary_norm_lower": "16/25",
+    "chain_return_norm_reserve": "3/25",
+    "chain_both_sign_large_gap_reserve": "1403/248850",
+    "pocket_critical_slider_upper": "93/128"
+  },
+  "verification_scope": "Byte integrity, exact original ordered inventories, source/review pins and fixed printed rational arithmetic only; no numerical pose/angle/packing search.",
+  "new_markdown_display_delimiters_balanced": true,
+  "relative_markdown_links_exist": true,
+  "lean_or_lake_invoked": false,
+  "ci_dispatched": false,
+  "numerical_pose_or_angle_search_used": false,
+  "new_computational_packing_certificate_used": false,
+  "global_theorem_closed": false,
+  "equality_classification_closed": false,
+  "files_excluding_this_checkpoint": [
+    {
+      "path": "research/nine/ADOPTION_COMMON_WITNESS_ROOT_CHAINS_AND_FULL_POCKET_DILATION_2026_10_30.md",
+      "bytes": 15164,
+      "sha256": "a10683b3324c6cc844ac58db896aae606d18e5e0d771f5123a4a893546409280",
+      "git_blob_sha": "c3542a4fcb3f3df37d9a40046dc0f46ee2ced978",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/CYCLIC_CELL_LEDGER.md",
+      "bytes": 374450,
+      "sha256": "978fce98897f1d780532fe8a961aedf24c66b2c2490f22d1a42c03c7b379924e",
+      "git_blob_sha": "2131438682f83b763a10042af32eea3cd9a5f988",
+      "base_blob_sha": "c852fb82a5ddc7828884623d0dd953cae03678cb"
+    },
+    {
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "bytes": 1120639,
+      "sha256": "ae25a65dd53aa6436b87a022f28b16b03a041d39a29389b8767b13534e02fcd7",
+      "git_blob_sha": "c0eb05419ecab9028285f95a08572aa4080706a2",
+      "base_blob_sha": "d8e1a7f6541b81ab087619d3489c98c452a7ad78"
+    },
+    {
+      "path": "research/nine/HANDOFF_PR11_2026_10_30_PUSH_CURRENT.md",
+      "bytes": 26427,
+      "sha256": "283db2c30c989145260246ea41b328ada2267e34bc992fdd86663e84b88774f8",
+      "git_blob_sha": "ba7b0fba05ba5e801f1d1d5124aedbf2fa06664f",
+      "base_blob_sha": "2a199230ec9e9751ca020896106ee28209a0200b"
+    },
+    {
+      "path": "research/nine/ONE_COMMON_BOUNDARY_WITNESS_BLOCKS_OTHER_ROOT_BOUNDARY_NEIGHBORS_AND_UNLOADED_CHANNELS_2026_10_30.md",
+      "bytes": 20788,
+      "sha256": "df7a1897f528c9216280d085cac44c3927908341b98f51b6b167097cf681258d",
+      "git_blob_sha": "22888dd4e80d3f515e02b8de1a3f7c8ce654f92b",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/PROGRESS.md",
+      "bytes": 5952,
+      "sha256": "23fc3391c4bf19a60e990ec1746845c736313f0fd4275551acc7e338cf432d4e",
+      "git_blob_sha": "0164f4ef7c1f1724444b6a68e4b059f7692af26b",
+      "base_blob_sha": "5126dcb35c0b3d953f69c27a2b4b95227e2af5e2"
+    },
+    {
+      "path": "research/nine/REVIEW_ADOPTION_COMMON_WITNESS_ROOT_CHAINS_AND_POCKET_DILATION_COMPOSITION_COMMON_CERTIFICATE_2026_10_30.md",
+      "bytes": 14772,
+      "sha256": "c3f08fe2c3c7dcdab5ebbfe8b53d14abf47b4b7109f38501192694169322840a",
+      "git_blob_sha": "71df868722223dfa566c91e869dcaada0544c1f3",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/REVIEW_OCCUPIED_RADIAL_SIDE_POCKET_STRICT_HEIGHT_AND_ANGLE_BRANCH_BUDGET_2026_10_30.md",
+      "bytes": 5368,
+      "sha256": "275371351b547e762401e60eee6da41d0d2384f7b5e9eab0114619509bf005e8",
+      "git_blob_sha": "665813c51b8a2ae35c1544271a762d51737c9871",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/REVIEW_ONE_COMMON_BOUNDARY_WITNESS_CAP_AND_CHANNEL_EXCLUSIONS_JOINT_POCKETS_2026_10_30.md",
+      "bytes": 15333,
+      "sha256": "db261adb95524817931d9cff969a3168b4084fbdee1e26c134bc05116c947da5",
+      "git_blob_sha": "c0cfa333f58394bc292b56d36c6d7c34c853ebcb",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/REVIEW_POCKET_LOCALIZATION_CRITICAL_NEAR_CALLER_ROOT_2026_10_30.md",
+      "bytes": 11061,
+      "sha256": "d68f4bdd3d2a1d46b1a8e7f11a6332d9fc11b8911275f8eb3e60f2fa00691d64",
+      "git_blob_sha": "0abad142e833b30867a0e871e470b6949f26428d",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/REVIEW_SIMPLE_CYCLE_POCKET_LOCALIZATION_AND_MIDPOINT_DILATION_JOINT_POCKETS_2026_10_30.md",
+      "bytes": 21889,
+      "sha256": "aca2a5a80daae59897166c7c5e1148cd8c4834b9ad70fa9a63c0f8636eb3a2bc",
+      "git_blob_sha": "041e00df7bc73f96126898aadd5242f1c59e7713",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_GENUINE_TRUE_THREE_ROOT_CHAIN_AND_COMPLETE_SIMPLE_C6_JOINT_POCKETS_2026_10_30.md",
+      "bytes": 23704,
+      "sha256": "b7000b8a4f86609923f8dd04bd57362b396821a2b4fc75dda48909e4b123814c",
+      "git_blob_sha": "c821ed9daebdd21769f963cc4017800f3860b550",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/SIMPLE_CYCLE_POCKET_CONTACT_LOCALIZATION_AND_SIDE_POCKET_MIDPOINT_DILATION_2026_10_30.md",
+      "bytes": 24831,
+      "sha256": "6843aa6a6735bc90395cac8baf7d60105a60aa625d05c811cc867bf4c5ef2b2c",
+      "git_blob_sha": "8e88a8b96de4da691f2b8c83413a666b5128ac1d",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/THREE_GENUINE_TRUE_THREE_ROOT_CHAIN_WITH_BOUNDARY_RETURNS_AND_COMPLETE_SIMPLE_C6_EXCLUSION_2026_10_30.md",
+      "bytes": 22233,
+      "sha256": "5a13a862ea4eaa4608929b875efce9b773b9afb515bd1308263f450870290d94",
+      "git_blob_sha": "c24f31f6fded666b02f920357693fc7c5e517f8c",
+      "base_blob_sha": null
+    }
+  ]
+}

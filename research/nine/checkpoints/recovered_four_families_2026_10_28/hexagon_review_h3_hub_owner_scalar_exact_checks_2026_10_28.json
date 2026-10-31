@@ -1,0 +1,47 @@
+{
+  "author_leaf_sha256": "1d6b388ad701b0a625f14c94a4b3daf7afa8d49f31f99954d414dc9b64604357",
+  "independent_result_sha256": "f2994e3a8a6f3f78af58d51cadb3c8d333031cba3a443c79e0e918ff51d62e60",
+  "independent_strict_row_floors": [
+    "1/13000",
+    "1/4000",
+    "7/50",
+    "3/5000"
+  ],
+  "lower_rectangle_reserve": "5213921/129538521",
+  "upper_rectangle_reserve": "1/144",
+  "root_scaled_endpoints": [
+    53480245575024,
+    117281240296107,
+    0,
+    281474976710656
+  ],
+  "author_counts": {
+    "scale": 281474976710656,
+    "root": [
+      53480245575024,
+      117281240296107,
+      0,
+      281474976710656
+    ],
+    "counts": {
+      "split": 474,
+      "empty_p_gt_p0": 115,
+      "empty_k1_positive": 109,
+      "pass": 219,
+      "empty_p_lt_b_a": 27,
+      "empty_t_positive": 3,
+      "empty_x_positive": 2
+    },
+    "visits": 949,
+    "terminal_boxes": 475,
+    "max_depth": 20,
+    "minimum_scaled_margins": [
+      5702628015,
+      39611230475,
+      41648853359044,
+      195083550495
+    ],
+    "tree_digest": "2fa607a00554e12f173e2b44108fbf20c0b102a224262239bb96487f8f779d62"
+  },
+  "status": "all complete source and exact coverage checks pass"
+}

@@ -1,0 +1,1229 @@
+{
+  "date": "2026-10-28",
+  "timezone": "UTC",
+  "read_base_head": "53d326511bd6280f18a14555922351ec15942b3d",
+  "status": "accepted complete standalone lower-window implication and geometric implications; sharp theorem remains open",
+  "coarse_total": 58,
+  "coarse_closed": 34,
+  "coarse_open": 24,
+  "fine_total": 2513,
+  "fine_checked": 2334,
+  "fine_open": 179,
+  "coarse_changes": [],
+  "fine_changes": [
+    {
+      "id": "W.3",
+      "from": " ",
+      "to": "x"
+    }
+  ],
+  "original_ids_preserved_in_order": true,
+  "active_lower_window_proof": [
+    {
+      "id": "measure_and_physical_domain",
+      "depends_on": [],
+      "sources": [
+        "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md Sections 1-2"
+      ]
+    },
+    {
+      "id": "global_geometric_reductions",
+      "depends_on": [
+        "measure_and_physical_domain"
+      ],
+      "sources": [
+        "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md Sections 3.1-3.4"
+      ]
+    },
+    {
+      "id": "line_formulas_and_minima",
+      "depends_on": [
+        "measure_and_physical_domain"
+      ],
+      "sources": [
+        "NINE_RADIUS_TWO_MEASURE_LINE_ANALYTIC_REDUCTION.md Sections 1-3 excluding historical fixed checker"
+      ]
+    },
+    {
+      "id": "rectangle_regions",
+      "depends_on": [
+        "measure_and_physical_domain"
+      ],
+      "sources": [
+        "NINE_RADIUS_TWO_MEASURE_RECTANGLES_ANALYTIC_REDUCTION.md Sections 1-3"
+      ]
+    },
+    {
+      "id": "outer_branch_and_convexity",
+      "depends_on": [
+        "measure_and_physical_domain"
+      ],
+      "sources": [
+        "NINE_RADIUS_TWO_MEASURE_OUTER_CURVE_ANALYTIC_REDUCTION.md Sections 1-4 excluding historical fixed checker"
+      ]
+    },
+    {
+      "id": "printed_fixed_values",
+      "depends_on": [
+        "line_formulas_and_minima",
+        "outer_branch_and_convexity"
+      ],
+      "sources": [
+        "NINE_RADIUS_TWO_MEASURE_ANALYTIC_FIXED_VALUES.md Sections 2-5"
+      ]
+    },
+    {
+      "id": "all_contained_units_mass_at_least_one",
+      "depends_on": [
+        "global_geometric_reductions",
+        "line_formulas_and_minima",
+        "rectangle_regions",
+        "outer_branch_and_convexity",
+        "printed_fixed_values"
+      ],
+      "sources": [
+        "NINE_RADIUS_TWO_MEASURE_FIVE_POINT_REDUCTION.md Sections 1-3 with current fixed-value dependency update"
+      ]
+    },
+    {
+      "id": "same_nine_radius_two_contradiction",
+      "depends_on": [
+        "all_contained_units_mass_at_least_one",
+        "measure_and_physical_domain"
+      ],
+      "sources": [
+        "LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md Sections 1,5"
+      ]
+    },
+    {
+      "id": "original_W3",
+      "depends_on": [
+        "same_nine_radius_two_contradiction"
+      ],
+      "sources": [
+        "LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md Section 5, exact 2-79/40=1/40"
+      ]
+    }
+  ],
+  "inactive_lower_window_routes": [
+    "Eight-square optimality theorem and its generated arithmetic tables",
+    "LOWER_WINDOW_FROM_EIGHT.md",
+    "Original 208-charge angle checkers and stored margins",
+    "Later five-charge fixed-mass checkers and stored margins",
+    "Original derivative-enclosure checker",
+    "Any window-dependent stress/contact/block/cycle packing theorem"
+  ],
+  "new_source_review_and_recovery_files": [
+    {
+      "filename": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "repository_path": "research/nine/C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/two_blocks/C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "sha256": "28810d74517a6f6a4a4e5b2972c5359bdf41559957bd7e33bcb5fb4b358685d5",
+      "git_blob_sha": "4dbf88f2874a001fcd3178ff2e93e889a0312ecb",
+      "bytes": 21371,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "C6_NEXT_EQUAL_PARALLEL_ROOT_PAIR_NEGATIVE_PRESSURE_EXCLUSION.md",
+      "repository_path": "research/nine/C6_NEXT_EQUAL_PARALLEL_ROOT_PAIR_NEGATIVE_PRESSURE_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/C6_NEXT_EQUAL_PARALLEL_ROOT_PAIR_NEGATIVE_PRESSURE_EXCLUSION.md",
+      "sha256": "0d534b2399f6d01d59c2caa121bc440957bb66bf08840e9e6da5bbff7a990f72",
+      "git_blob_sha": "f524120b6f933d8e8ba730e292bb56581df1a54e",
+      "bytes": 8057,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_EXCLUSION.md",
+      "repository_path": "research/nine/C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_EXCLUSION.md",
+      "sha256": "6a1a37c6ed825ef1cea0bebf503e894e3ca9d4777fe23e3cf508b188e4898aa5",
+      "git_blob_sha": "67f19fa9da05d55a636ae3609176842d63ba47da",
+      "bytes": 18645,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_EXCLUSION.md",
+      "repository_path": "research/nine/C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_EXCLUSION.md",
+      "sha256": "7c8f58d14aab1540bf71de95d51df3c531f1832a282dd53b00df9f9752fa1f49",
+      "git_blob_sha": "d22a483c0fadccf2c4432023c19960fa9e3a9892",
+      "bytes": 21548,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "repository_path": "research/nine/C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/C6_NEXT_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_EXCLUSION.md",
+      "sha256": "80d239a76dd632a3b982c6ef9b2a52028fc9c418e1f0c221852047a180efc238",
+      "git_blob_sha": "9600151cfe095e5e7af66d197dd4095bf7df3b39",
+      "bytes": 23354,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "C6_NEXT_INTACT_ROOT_ORDER_FIVE_FROM_PUBLISHED_NONNEGATIVE_PRESSURE.md",
+      "repository_path": "research/nine/C6_NEXT_INTACT_ROOT_ORDER_FIVE_FROM_PUBLISHED_NONNEGATIVE_PRESSURE.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/C6_NEXT_INTACT_ROOT_ORDER_FIVE_FROM_PUBLISHED_NONNEGATIVE_PRESSURE.md",
+      "sha256": "e7760977ee91d09c5c672e5db11f0010934650cfe292d63d7132220f8e59b164",
+      "git_blob_sha": "6cdf83a7256369643c55d2a95fc16a301748094e",
+      "bytes": 8841,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "repository_path": "research/nine/C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_NEGATIVE_CONCURRENCE.md",
+      "sha256": "5e49f162076ce7e699e5013e8e5d6354e907a343bcc4520aa08f1beef78fda42",
+      "git_blob_sha": "8fb52bf2ae6e6c35ee120453a3597189d23907f4",
+      "bytes": 18029,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_OPPOSITE_PARALLEL_EXCLUSION.md",
+      "repository_path": "research/nine/C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_OPPOSITE_PARALLEL_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/C6_NEXT_INTACT_ROOT_SIMPLE_CYCLE_OPPOSITE_PARALLEL_EXCLUSION.md",
+      "sha256": "fc07a3b7dd840b17eb13caba1d36193724afdea68c9c0acd23bfdc66a574017f",
+      "git_blob_sha": "8cfad53b84991145ce221a6439d754d72b20f76d",
+      "bytes": 15629,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "repository_path": "research/nine/C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/C6_NEXT_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS.md",
+      "sha256": "402d147ca6f0eb417a2c0e039409b2309fca61495ccda409a13708c47d190135",
+      "git_blob_sha": "f50d6d6ab4b58f607cec01fdeba6cb344e8c456f",
+      "bytes": 20063,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "CENTRAL_DISK_LEAF_ROOT_AND_DOUBLE_LEAF_TRIANGLE_BLOCK_EXCLUSION.md",
+      "repository_path": "research/nine/CENTRAL_DISK_LEAF_ROOT_AND_DOUBLE_LEAF_TRIANGLE_BLOCK_EXCLUSION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/two_blocks/CENTRAL_DISK_LEAF_ROOT_AND_DOUBLE_LEAF_TRIANGLE_BLOCK_EXCLUSION.md",
+      "sha256": "dd03214ab5e0100bd35211993591baabd5fd0578191cc2ad2d4c1e344b8a5411",
+      "git_blob_sha": "e0e91a1a62d22c37078cda593261f82bc36a12f3",
+      "bytes": 12273,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "repository_path": "research/nine/GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/GLOBAL_NEXT_INTACT_ROOT_UNLOADED_MOMENT_AND_BLOCK_REDUCTION.md",
+      "sha256": "103a0f4ceccba044c132a45c632bd64df57540feb70fd69d6159c52759e449c6",
+      "git_blob_sha": "7767edc2a72f0848648e6a16cb9b86960da6bd5e",
+      "bytes": 17543,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "INDEPENDENT_CENTRAL_LEAF_ROOT_AND_TWO_BLOCK_REDUCTIONS_EXACT_RECORD_2026_10_28.json",
+      "repository_path": "research/nine/INDEPENDENT_CENTRAL_LEAF_ROOT_AND_TWO_BLOCK_REDUCTIONS_EXACT_RECORD_2026_10_28.json",
+      "source_path": "/workspace/scratch/7d553350ce2a/six_body/INDEPENDENT_CENTRAL_LEAF_ROOT_AND_TWO_BLOCK_REDUCTIONS_EXACT_RECORD_2026_10_28.json",
+      "sha256": "b3bb243320f643d686c95c551babd01772587129e19d689e583a22b22c691be5",
+      "git_blob_sha": "9315eb68c0603bb5086f45512540e82e3460c97a",
+      "bytes": 14719,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "REVIEW_C2_35_C2_36_ACCEPTED_DEPENDENCY_ASSEMBLY_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_C2_35_C2_36_ACCEPTED_DEPENDENCY_ASSEMBLY_2026_10_28.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/two_blocks/REVIEW_C2_35_C2_36_ACCEPTED_DEPENDENCY_ASSEMBLY_2026_10_28.md",
+      "sha256": "0a15669b8dc9cfeacc1c6b7645735b41d4273afd61724e93a55dda2c8fadfea4",
+      "git_blob_sha": "033982f205431f5bdafe220c2af5eb053465874b",
+      "bytes": 7759,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "REVIEW_CENTRAL_LEAF_ROOT_AND_LARGER_TWO_BLOCK_REDUCTIONS_INDEPENDENT_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_CENTRAL_LEAF_ROOT_AND_LARGER_TWO_BLOCK_REDUCTIONS_INDEPENDENT_2026_10_28.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/six_body/REVIEW_CENTRAL_LEAF_ROOT_AND_LARGER_TWO_BLOCK_REDUCTIONS_INDEPENDENT_2026_10_28.md",
+      "sha256": "266dc4b409514057f48a4773956bdbb470dbd7c67f824ef4df0c05cff6d9f3a6",
+      "git_blob_sha": "6128ea883b7242b9a303bd1b278fa4b9f6d7b730",
+      "bytes": 11853,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "REVIEW_EQUAL_PARALLEL_ROOT_PAIR_PRESSURE_GLOBAL_NEXT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_EQUAL_PARALLEL_ROOT_PAIR_PRESSURE_GLOBAL_NEXT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_EQUAL_PARALLEL_ROOT_PAIR_PRESSURE_GLOBAL_NEXT_2026_10_27.md",
+      "sha256": "56b30ce7630d78ea910b03c9d607bc2312b8f8b454b2b0568797ba9a2de50455",
+      "git_blob_sha": "6be79df9597e262444746aad5f7ea4e13fa8701d",
+      "bytes": 6585,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "REVIEW_EQUAL_PARALLEL_ROOT_PAIR_PRESSURE_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_EQUAL_PARALLEL_ROOT_PAIR_PRESSURE_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_EQUAL_PARALLEL_ROOT_PAIR_PRESSURE_ROOT_2026_10_27.md",
+      "sha256": "58170b4c492b97bb283435692ac2939759c6d0458b9180fa1c84519358a4c5ec",
+      "git_blob_sha": "9cbec66e21f35e8b60b7a12083265d1c88d03823",
+      "bytes": 4680,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "REVIEW_INTACT_ROOT_CYCLE_NEGATIVE_CONCURRENCE_GLOBAL_NEXT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_INTACT_ROOT_CYCLE_NEGATIVE_CONCURRENCE_GLOBAL_NEXT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_INTACT_ROOT_CYCLE_NEGATIVE_CONCURRENCE_GLOBAL_NEXT_2026_10_27.md",
+      "sha256": "52165c83ba86707f50ce8715ce1a55c7d16eefd62535a3de8a8631794d6bcb25",
+      "git_blob_sha": "7c624b9281d5b749963e1cbc14119bb09c0e38bc",
+      "bytes": 11050,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "REVIEW_INTACT_ROOT_CYCLE_NEGATIVE_CONCURRENCE_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_INTACT_ROOT_CYCLE_NEGATIVE_CONCURRENCE_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_INTACT_ROOT_CYCLE_NEGATIVE_CONCURRENCE_ROOT_2026_10_27.md",
+      "sha256": "bd0351ec775bb78c2fbec52e35911802d70ea5e632b01e25d93983294b3f8439",
+      "git_blob_sha": "f2acf77940c5b24f03f5bb769cc7d61f31ef1b18",
+      "bytes": 9347,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "REVIEW_INTACT_ROOT_CYCLE_OPPOSITE_PARALLEL_GLOBAL_NEXT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_INTACT_ROOT_CYCLE_OPPOSITE_PARALLEL_GLOBAL_NEXT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_INTACT_ROOT_CYCLE_OPPOSITE_PARALLEL_GLOBAL_NEXT_2026_10_27.md",
+      "sha256": "48140f9b1161d9d869bad9ea4b2dc030ca6be017d71b2e49b89e2588e96c9a38",
+      "git_blob_sha": "f329013e38d64e296ec2f2e7df3c6f1f2c75560a",
+      "bytes": 12037,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "REVIEW_INTACT_ROOT_CYCLE_OPPOSITE_PARALLEL_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_INTACT_ROOT_CYCLE_OPPOSITE_PARALLEL_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_INTACT_ROOT_CYCLE_OPPOSITE_PARALLEL_ROOT_2026_10_27.md",
+      "sha256": "cbf0ac0f1bf28a9f0872503af70e1636714f0f0915673ebb45ad397f7c0f15e3",
+      "git_blob_sha": "b54a40c76c39398b57d401cbb5928dff50ac6286",
+      "bytes": 8962,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "REVIEW_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_GLOBAL_NEXT_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_GLOBAL_NEXT_2026_10_28.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_GLOBAL_NEXT_2026_10_28.md",
+      "sha256": "0713aa41839b0d84a2087ba0596045056d654947f96f5176a9fd84d2a621cc23",
+      "git_blob_sha": "7a128a435f14e5879e29b014931e0ad1133c0536",
+      "bytes": 12838,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "REVIEW_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_ROOT_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_ROOT_2026_10_28.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_INTACT_ROOT_GENUINE_CYCLE_ALIGNED_S_LEAF_ROOT_2026_10_28.md",
+      "sha256": "e79a4a070d11d07d803ade5212a606efd83ab5bdf7a48177757062d17663f1bc",
+      "git_blob_sha": "9833d8b9a23b3f483124e09b53179a8f7a1d9919",
+      "bytes": 7261,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "REVIEW_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_MIXED_BLOCKS_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_MIXED_BLOCKS_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_MIXED_BLOCKS_2026_10_27.md",
+      "sha256": "96050848f380944f70a32d6aa783c69c64d174f4345f68600800b86fabbfbc64",
+      "git_blob_sha": "a1627d0a4e8ac43a544cb85c3686dac2bf291d5d",
+      "bytes": 12990,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "REVIEW_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_INTACT_ROOT_GENUINE_CYCLE_D_LEAF_ROOT_2026_10_27.md",
+      "sha256": "a3ea7af11fb0cafe682c4fd5ae2e1b3f07bfe7353dc38b249610845276288de3",
+      "git_blob_sha": "946715dcb83c9edf65dd678a7c9d11c5cb839b36",
+      "bytes": 7377,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "REVIEW_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_GLOBAL_NEXT_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_GLOBAL_NEXT_2026_10_28.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_GLOBAL_NEXT_2026_10_28.md",
+      "sha256": "131e0c4a53c5dc1d61fe527a54dd4663d5adbf7a2d191213a44a709cdd87409b",
+      "git_blob_sha": "0f03dc6ce64c4a8397244a0be565e346d85e69c0",
+      "bytes": 17446,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "REVIEW_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_ROOT_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_ROOT_2026_10_28.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_INTACT_ROOT_GENUINE_CYCLE_TILTED_S_LEAF_ROOT_2026_10_28.md",
+      "sha256": "9ef87a99420d103cd9f4ba833059af7b8375b22f13b2ab9dbfd4eae1f99e3e6b",
+      "git_blob_sha": "48a77754f45d08958cc8632af7fd4727e2979b4a",
+      "bytes": 8446,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "REVIEW_INTACT_ROOT_ORDER_FIVE_PUBLISHED_PRESSURE_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_INTACT_ROOT_ORDER_FIVE_PUBLISHED_PRESSURE_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_INTACT_ROOT_ORDER_FIVE_PUBLISHED_PRESSURE_ROOT_2026_10_27.md",
+      "sha256": "0b35354afa658b33a7ada3a1e97342089ef2d69611b945d58853d3227c5a6f07",
+      "git_blob_sha": "6963b3bbcad9e56d4c9c63b001f644307f56b19f",
+      "bytes": 5012,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "REVIEW_INTACT_ROOT_PUBLISHED_PRESSURE_ORDER_FIVE_GLOBAL_NEXT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_INTACT_ROOT_PUBLISHED_PRESSURE_ORDER_FIVE_GLOBAL_NEXT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_INTACT_ROOT_PUBLISHED_PRESSURE_ORDER_FIVE_GLOBAL_NEXT_2026_10_27.md",
+      "sha256": "9667532851b0fd30ca4339a5829ba44c44756543f760475acf5fad965c11f021",
+      "git_blob_sha": "5c76101aca09fde6ea0702ee0b506c7b9822a286",
+      "bytes": 9661,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "REVIEW_INTACT_ROOT_UNLOADED_MOMENT_AND_COMPONENT_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_INTACT_ROOT_UNLOADED_MOMENT_AND_COMPONENT_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_INTACT_ROOT_UNLOADED_MOMENT_AND_COMPONENT_ROOT_2026_10_27.md",
+      "sha256": "27b8e71cd4aebd35e0bfc6dfa6c17438bbd5fc758a00d9afd14e1ccf49245e79",
+      "git_blob_sha": "b4d19b32aca38d309959b23ee00b25ae39a91944",
+      "bytes": 7378,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "REVIEW_INTACT_ROOT_UNLOADED_MOMENT_BLOCK_REDUCTION_C6_NEXT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_INTACT_ROOT_UNLOADED_MOMENT_BLOCK_REDUCTION_C6_NEXT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_INTACT_ROOT_UNLOADED_MOMENT_BLOCK_REDUCTION_C6_NEXT_2026_10_27.md",
+      "sha256": "4bde800a7d74b1af0f82bdf48b673abfcc672ba2968a0e530fc0b9ff0a3426f1",
+      "git_blob_sha": "07dd8ade9a221b975fcaddf24e4d0050ffcd4384",
+      "bytes": 11884,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "REVIEW_NEW_UNIFORM_GEOMETRY_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_NEW_UNIFORM_GEOMETRY_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/REVIEW_NEW_UNIFORM_GEOMETRY_ROOT_2026_10_27.md",
+      "sha256": "5cf9ea7615730b838cbc1f43a1a636c9a503cc2bd67fa2daa15294287e7d651f",
+      "git_blob_sha": "92973db3ffa3b20bb1594ccb771cafd4a4ea2238",
+      "bytes": 11914,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "REVIEW_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS_GLOBAL_NEXT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS_GLOBAL_NEXT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS_GLOBAL_NEXT_2026_10_27.md",
+      "sha256": "49c51d6864ff6e99eda83d16d429560c685479286b6f569bcdafff9632455748",
+      "git_blob_sha": "bf49a97f90c7d7c96d91a40875f853564465fb14",
+      "bytes": 11075,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "REVIEW_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_RADIAL_LEAF_RAY_AND_INTACT_CYCLE_S_LEAF_PROPERNESS_ROOT_2026_10_27.md",
+      "sha256": "2d5156be26e48ce5b1b81136eda2fdb36590b681a9c7ca0d0e65e602c15a47bb",
+      "git_blob_sha": "1e913e4bf7879c05b3dcb8f0b1e09bdc3a96fd09",
+      "bytes": 6931,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "ROOT_NEW_UNIFORM_EXACT_RECORD_2026_10_27.json",
+      "repository_path": "research/nine/ROOT_NEW_UNIFORM_EXACT_RECORD_2026_10_27.json",
+      "source_path": "/workspace/scratch/7d553350ce2a/root_new_uniform_exact_record.json",
+      "sha256": "7aef2ff33492153d24996db40fc982f6ddfccd03933dc2626a92549add8d8e94",
+      "git_blob_sha": "1832bd51f09eee788773c5124541d6a65bb9922e",
+      "bytes": 1205,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "C2_35_C2_36_PUBLICATION_ALLOWLIST.json",
+      "repository_path": "research/nine/C2_35_C2_36_PUBLICATION_ALLOWLIST.json",
+      "source_path": "/workspace/scratch/7d553350ce2a/two_blocks/C2_35_C2_36_PUBLICATION_ALLOWLIST.json",
+      "sha256": "20819ac4a849e167226c770540d5aeba44050bf55a69c90a918f961de2f8feaa",
+      "git_blob_sha": "78c72d8d1df1d74dbcdb8fd09c044e41636fab06",
+      "bytes": 109336,
+      "groups": [
+        "two_block_reductions"
+      ]
+    },
+    {
+      "filename": "GENERAL_BALANCED_THREE_BOUNDARY_FULL_WINDOW_METRIC_EXCLUSION.md",
+      "repository_path": "research/nine/GENERAL_BALANCED_THREE_BOUNDARY_FULL_WINDOW_METRIC_EXCLUSION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/diamond/GENERAL_BALANCED_THREE_BOUNDARY_FULL_WINDOW_METRIC_EXCLUSION.md",
+      "sha256": "5da69931a63ac7cbf93ec3ff494489dc05d2245017da1c4dcddf1b4a8a6c956e",
+      "git_blob_sha": "6e9e332a06ce0b0aa31057b09ea7a76ee6b9613b",
+      "bytes": 8541,
+      "groups": [
+        "new_geometry"
+      ]
+    },
+    {
+      "filename": "INNER_PENTAGON_FOUR_SPOKE_NO_CHORD_OCCUPIED_POCKETS_AND_LONG_PORT_REDUCTION.md",
+      "repository_path": "research/nine/INNER_PENTAGON_FOUR_SPOKE_NO_CHORD_OCCUPIED_POCKETS_AND_LONG_PORT_REDUCTION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/diamond/INNER_PENTAGON_FOUR_SPOKE_NO_CHORD_OCCUPIED_POCKETS_AND_LONG_PORT_REDUCTION.md",
+      "sha256": "ad0a8e658d303d7527a383c4688fa4bfdae1a04f46cecfb59c424cc4028e02a6",
+      "git_blob_sha": "1980fccaf6511a841d51e2424a0de159c81bbdfd",
+      "bytes": 8787,
+      "groups": [
+        "new_geometry"
+      ]
+    },
+    {
+      "filename": "D_LEAF_COMMON_TRIANGLE_NEIGHBOR_AVOIDS_QUARTER_DISK.md",
+      "repository_path": "research/nine/D_LEAF_COMMON_TRIANGLE_NEIGHBOR_AVOIDS_QUARTER_DISK.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/six_body/D_LEAF_COMMON_TRIANGLE_NEIGHBOR_AVOIDS_QUARTER_DISK.md",
+      "sha256": "2330462d457e8f6eaedae3f8d6c8d535379742a213e033c438827f86b4d31288",
+      "git_blob_sha": "bfe3664e9a3d57bac86d595ffa8562cc5c97d8d3",
+      "bytes": 9303,
+      "groups": [
+        "new_geometry"
+      ]
+    },
+    {
+      "filename": "D_LEAF_SHALLOW_SIDE_BOUNDARY_FULL_WINDOW_EXCLUSION.md",
+      "repository_path": "research/nine/D_LEAF_SHALLOW_SIDE_BOUNDARY_FULL_WINDOW_EXCLUSION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/diamond/D_LEAF_SHALLOW_SIDE_BOUNDARY_FULL_WINDOW_EXCLUSION.md",
+      "sha256": "ca7c3f4b32e45fc0c118bd766f438fce3019b0b44220604e33bc842a504ac670",
+      "git_blob_sha": "2e2d0ac67b538bf2e2ed9b29952d8b59a949738f",
+      "bytes": 9842,
+      "groups": [
+        "new_geometry"
+      ]
+    },
+    {
+      "filename": "D_LEAF_COMMON_TRIANGLE_NEIGHBOR_FULL_WINDOW_QUARTER_DISK.md",
+      "repository_path": "research/nine/D_LEAF_COMMON_TRIANGLE_NEIGHBOR_FULL_WINDOW_QUARTER_DISK.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/diamond/D_LEAF_COMMON_TRIANGLE_NEIGHBOR_FULL_WINDOW_QUARTER_DISK.md",
+      "sha256": "c39605b955d98f7fbe8499cf0a06dc4cc780a7dada4ee83c05ffc627f6d866bc",
+      "git_blob_sha": "a39982cb267f161723b319a2e2f33371404e9408",
+      "bytes": 9919,
+      "groups": [
+        "new_geometry"
+      ]
+    },
+    {
+      "filename": "INNER_PENTAGON_OCCUPIED_HUB_AND_EXTERIOR_POCKET_LOCALIZATION.md",
+      "repository_path": "research/nine/INNER_PENTAGON_OCCUPIED_HUB_AND_EXTERIOR_POCKET_LOCALIZATION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/INNER_PENTAGON_OCCUPIED_HUB_AND_EXTERIOR_POCKET_LOCALIZATION.md",
+      "sha256": "37fad266560ea5e2bca29723f4db00617c35a67be2e82b70fbf743b75006a502",
+      "git_blob_sha": "83858e2e5f062899c2507f10f9203c02f2b576ac",
+      "bytes": 15920,
+      "groups": [
+        "new_geometry"
+      ]
+    },
+    {
+      "filename": "REVIEW_BALANCED_THREE_BOUNDARY_FULL_WINDOW_INDEPENDENT_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_BALANCED_THREE_BOUNDARY_FULL_WINDOW_INDEPENDENT_2026_10_28.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/six_body/REVIEW_BALANCED_THREE_BOUNDARY_FULL_WINDOW_INDEPENDENT_2026_10_28.md",
+      "sha256": "5f862d70c040324ce4904553605a7663316624ad86e69fd99e53c7985a29da73",
+      "git_blob_sha": "b62608e5d42a1095227a95c3fd8add7ed6b7b524",
+      "bytes": 4901,
+      "groups": [
+        "new_geometry"
+      ]
+    },
+    {
+      "filename": "INDEPENDENT_BALANCED_THREE_BOUNDARY_FULL_WINDOW_EXACT_RECORD_2026_10_28.json",
+      "repository_path": "research/nine/INDEPENDENT_BALANCED_THREE_BOUNDARY_FULL_WINDOW_EXACT_RECORD_2026_10_28.json",
+      "source_path": "/workspace/scratch/7d553350ce2a/six_body/INDEPENDENT_BALANCED_THREE_BOUNDARY_FULL_WINDOW_EXACT_RECORD_2026_10_28.json",
+      "sha256": "16ec381cab651127247a00cafaa6b5c3d3a1ae8f271f9b323fb38521100973dc",
+      "git_blob_sha": "e468b49bd5a5e7ab4ac19781728f2f8c9a709bb3",
+      "bytes": 3129,
+      "groups": [
+        "new_geometry"
+      ]
+    },
+    {
+      "filename": "REVIEW_D_COMMON_TRIANGLE_NEIGHBOR_QUARTER_DISK_INDEPENDENT_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_D_COMMON_TRIANGLE_NEIGHBOR_QUARTER_DISK_INDEPENDENT_2026_10_28.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/diamond/REVIEW_D_COMMON_TRIANGLE_NEIGHBOR_QUARTER_DISK_INDEPENDENT_2026_10_28.md",
+      "sha256": "1b90ccdec4831c8bcde9643ca4dae79cf8a0aeb22dc789884f63327c9ffba16c",
+      "git_blob_sha": "c88cf8acb6b9a0f3c927277984e1cc096815e566",
+      "bytes": 5783,
+      "groups": [
+        "new_geometry"
+      ]
+    },
+    {
+      "filename": "REVIEW_OCCUPIED_INNER_PENTAGON_LOCALIZATION_INDEPENDENT_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_OCCUPIED_INNER_PENTAGON_LOCALIZATION_INDEPENDENT_2026_10_28.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/diamond/REVIEW_OCCUPIED_INNER_PENTAGON_LOCALIZATION_INDEPENDENT_2026_10_28.md",
+      "sha256": "bb8b92d96c29d399235da1f1cbd653210c00157d458e6f8f571aa70608f9bb27",
+      "git_blob_sha": "2d0155fa8a934d9a19658c96f4c5919fec304dae",
+      "bytes": 5779,
+      "groups": [
+        "new_geometry"
+      ]
+    },
+    {
+      "filename": "REVIEW_OCCUPIED_PENTAGON_FOUR_SPOKE_AND_FULL_WINDOW_METRIC_INDEPENDENT_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_OCCUPIED_PENTAGON_FOUR_SPOKE_AND_FULL_WINDOW_METRIC_INDEPENDENT_2026_10_28.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/two_blocks/REVIEW_OCCUPIED_PENTAGON_FOUR_SPOKE_AND_FULL_WINDOW_METRIC_INDEPENDENT_2026_10_28.md",
+      "sha256": "aadfddf8b304352e0fb503d2f1c279ca88843297c76762ba937fea296964ac0b",
+      "git_blob_sha": "ee67849138537a0890aa26dca28921a8d6023191",
+      "bytes": 15238,
+      "groups": [
+        "new_geometry"
+      ]
+    },
+    {
+      "filename": "PENTAGON_OCCUPIED_POCKET_METRIC_INDEPENDENT_EXACT_RECORD.json",
+      "repository_path": "research/nine/PENTAGON_OCCUPIED_POCKET_METRIC_INDEPENDENT_EXACT_RECORD.json",
+      "source_path": "/workspace/scratch/7d553350ce2a/two_blocks/PENTAGON_OCCUPIED_POCKET_METRIC_INDEPENDENT_EXACT_RECORD.json",
+      "sha256": "ffda09a521a1e146759077765601e99dcf54407919fb640208371232033eeeae",
+      "git_blob_sha": "4ef4905437b30b06c0cf95880f49e3b426d37f9a",
+      "bytes": 7194,
+      "groups": [
+        "new_geometry"
+      ]
+    },
+    {
+      "filename": "REVIEW_FULL_WINDOW_D_KERNEL_AND_QUARTER_DISK_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_FULL_WINDOW_D_KERNEL_AND_QUARTER_DISK_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/REVIEW_FULL_WINDOW_D_KERNEL_AND_QUARTER_DISK_ROOT_2026_10_27.md",
+      "sha256": "cc612a45454d24734a167e167d81737ff2a4561b7ae454c0086c94e6b0bc68fd",
+      "git_blob_sha": "a7250c9f3badef3d8bed8d4b58a93e031c023816",
+      "bytes": 5544,
+      "groups": [
+        "new_geometry"
+      ]
+    },
+    {
+      "filename": "REVIEW_D_SHALLOW_AND_COMMON_NEIGHBOR_FULL_WINDOW_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_D_SHALLOW_AND_COMMON_NEIGHBOR_FULL_WINDOW_2026_10_28.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/six_body/REVIEW_D_SHALLOW_AND_COMMON_NEIGHBOR_FULL_WINDOW_2026_10_28.md",
+      "sha256": "730e50c7a8b348d1bcf20ad6110e645586f0073097e6c8d372a000c058b14a5e",
+      "git_blob_sha": "c562871ac3c63484f1a0a14d8901c1d62b0c1251",
+      "bytes": 8602,
+      "groups": [
+        "new_geometry"
+      ]
+    },
+    {
+      "filename": "D_SHALLOW_COMMON_NEIGHBOR_FULL_WINDOW_REVIEW_EXACT_RECORD_2026_10_28.json",
+      "repository_path": "research/nine/D_SHALLOW_COMMON_NEIGHBOR_FULL_WINDOW_REVIEW_EXACT_RECORD_2026_10_28.json",
+      "source_path": "/workspace/scratch/7d553350ce2a/six_body/D_SHALLOW_COMMON_NEIGHBOR_FULL_WINDOW_REVIEW_EXACT_RECORD_2026_10_28.json",
+      "sha256": "b593d717e470cd10ca3357678b6e205da205a323da782fc6e6dce4169ddf087f",
+      "git_blob_sha": "dc5b3b87febc24bf340661f50d9b214290a33fdb",
+      "bytes": 4018,
+      "groups": [
+        "new_geometry"
+      ]
+    },
+    {
+      "filename": "LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "repository_path": "research/nine/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/six_body/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "sha256": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90",
+      "git_blob_sha": "1ce11dbcb6157959aeb705a7182d141aace3426d",
+      "bytes": 13069,
+      "groups": [
+        "independent_lower_window"
+      ]
+    },
+    {
+      "filename": "W3_ANALYTIC_DEPENDENCY_RATIONAL_IDENTITIES_2026_10_28.json",
+      "repository_path": "research/nine/W3_ANALYTIC_DEPENDENCY_RATIONAL_IDENTITIES_2026_10_28.json",
+      "source_path": "/workspace/scratch/7d553350ce2a/six_body/W3_ANALYTIC_DEPENDENCY_RATIONAL_IDENTITIES_2026_10_28.json",
+      "sha256": "77ee5102278330c92cf1e58617644c380d6d5a0a23962a3ead774cb25f704580",
+      "git_blob_sha": "2a048d8a21678e6e967a3af99ea0f06034cd2a52",
+      "bytes": 7375,
+      "groups": [
+        "independent_lower_window"
+      ]
+    },
+    {
+      "filename": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "repository_path": "research/nine/NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "source_path": "/workspace/scratch/a35548aa44c3/publication_d579/research/nine/NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "sha256": "4c9e708945938c3f9df575e76f7573903d6b5a0ce4eccb5bcea760353a47458a",
+      "git_blob_sha": "1f13a74598e9f5170b7bf57e8fc750f1f11850f0",
+      "bytes": 18500,
+      "groups": [
+        "independent_lower_window"
+      ]
+    },
+    {
+      "filename": "NINE_RADIUS_TWO_MEASURE_LINE_ANALYTIC_REDUCTION.md",
+      "repository_path": "research/nine/NINE_RADIUS_TWO_MEASURE_LINE_ANALYTIC_REDUCTION.md",
+      "source_path": "/workspace/scratch/a35548aa44c3/publication_d579/research/nine/NINE_RADIUS_TWO_MEASURE_LINE_ANALYTIC_REDUCTION.md",
+      "sha256": "714e2a092af516fad1450d2aeb38a6529418ef72070b5184d462a3f4b8a8f18d",
+      "git_blob_sha": "2ceada6d2c86c63b4b463d475c01196e7a2aa8fa",
+      "bytes": 9134,
+      "groups": [
+        "independent_lower_window"
+      ]
+    },
+    {
+      "filename": "NINE_RADIUS_TWO_MEASURE_RECTANGLES_ANALYTIC_REDUCTION.md",
+      "repository_path": "research/nine/NINE_RADIUS_TWO_MEASURE_RECTANGLES_ANALYTIC_REDUCTION.md",
+      "source_path": "/workspace/scratch/a35548aa44c3/publication_d579/research/nine/NINE_RADIUS_TWO_MEASURE_RECTANGLES_ANALYTIC_REDUCTION.md",
+      "sha256": "8b749abf2792e022b2a3bb79ea275ebc02000707c864a4ae41f5b6410edeb780",
+      "git_blob_sha": "c70bc40e6c238781887abcf3a510f3d4876f8083",
+      "bytes": 13049,
+      "groups": [
+        "independent_lower_window"
+      ]
+    },
+    {
+      "filename": "NINE_RADIUS_TWO_MEASURE_OUTER_CURVE_ANALYTIC_REDUCTION.md",
+      "repository_path": "research/nine/NINE_RADIUS_TWO_MEASURE_OUTER_CURVE_ANALYTIC_REDUCTION.md",
+      "source_path": "/workspace/scratch/a35548aa44c3/publication_d579/research/nine/NINE_RADIUS_TWO_MEASURE_OUTER_CURVE_ANALYTIC_REDUCTION.md",
+      "sha256": "9258e4d00c0935a4deee1942159b88a7474e95169443d1ed966da3156a336eba",
+      "git_blob_sha": "850b1aecb1ff28bcded8212ee36607a544d0edbd",
+      "bytes": 13887,
+      "groups": [
+        "independent_lower_window"
+      ]
+    },
+    {
+      "filename": "NINE_RADIUS_TWO_MEASURE_ANALYTIC_FIXED_VALUES.md",
+      "repository_path": "research/nine/NINE_RADIUS_TWO_MEASURE_ANALYTIC_FIXED_VALUES.md",
+      "source_path": "/workspace/scratch/a35548aa44c3/publication_d579/research/nine/NINE_RADIUS_TWO_MEASURE_ANALYTIC_FIXED_VALUES.md",
+      "sha256": "9a4656cc90ab81200847c8b6958fc6e089fc4b807b401705663304be4f782c4b",
+      "git_blob_sha": "6e6e36766baf8fdbf38213de90a867fa79066b19",
+      "bytes": 17900,
+      "groups": [
+        "independent_lower_window"
+      ]
+    },
+    {
+      "filename": "NINE_RADIUS_TWO_MEASURE_FIVE_POINT_REDUCTION.md",
+      "repository_path": "research/nine/NINE_RADIUS_TWO_MEASURE_FIVE_POINT_REDUCTION.md",
+      "source_path": "/workspace/scratch/a35548aa44c3/publication_d579/research/nine/NINE_RADIUS_TWO_MEASURE_FIVE_POINT_REDUCTION.md",
+      "sha256": "c316fbce9320918ba88e46c4cd53b5c70c8ccdb2cc585171204f28385905929f",
+      "git_blob_sha": "152b69f2e75a688091ed9dc2015f674e9228ab7c",
+      "bytes": 10287,
+      "groups": [
+        "independent_lower_window"
+      ]
+    },
+    {
+      "filename": "REVIEW_NINE_RADIUS_TWO_MEASURE_ANALYTIC_FIXED_VALUES_INDEPENDENT_CURRENT_50C0_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_NINE_RADIUS_TWO_MEASURE_ANALYTIC_FIXED_VALUES_INDEPENDENT_CURRENT_50C0_2026_10_27.md",
+      "source_path": "/workspace/scratch/a35548aa44c3/publication_d579/research/nine/REVIEW_NINE_RADIUS_TWO_MEASURE_ANALYTIC_FIXED_VALUES_INDEPENDENT_CURRENT_50C0_2026_10_27.md",
+      "sha256": "f6348d01f97f7c237c234976dabbb06327fa69153bcc7cda86c7c851a3cf7864",
+      "git_blob_sha": "4936a222e90c41b934d7a8218c2a48b5e84239a7",
+      "bytes": 17569,
+      "groups": [
+        "independent_lower_window"
+      ]
+    },
+    {
+      "filename": "REVIEW_NINE_RADIUS_TWO_ANALYTIC_VALUES_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_NINE_RADIUS_TWO_ANALYTIC_VALUES_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/a35548aa44c3/publication_d579/research/nine/REVIEW_NINE_RADIUS_TWO_ANALYTIC_VALUES_ROOT_2026_10_27.md",
+      "sha256": "cffa5e27f65722aded9ea872279569fbd77eb320d0b8412c6bf53277bcfe0fd9",
+      "git_blob_sha": "d60a8a5699007ab8513476318074b42c91ce169d",
+      "bytes": 10043,
+      "groups": [
+        "independent_lower_window"
+      ]
+    },
+    {
+      "filename": "ANALYTIC_CERTIFICATE_CHECKPOINT_2026_10_27.md",
+      "repository_path": "research/nine/ANALYTIC_CERTIFICATE_CHECKPOINT_2026_10_27.md",
+      "source_path": "/workspace/scratch/a35548aa44c3/publication_d579/research/nine/ANALYTIC_CERTIFICATE_CHECKPOINT_2026_10_27.md",
+      "sha256": "611795e4c2899aa3197287bb55b998b51322a573f4f57e32178835f4c255b2de",
+      "git_blob_sha": "d6c41b48c933a20932da203d426c56b6912c5458",
+      "bytes": 8503,
+      "groups": [
+        "independent_lower_window"
+      ]
+    },
+    {
+      "filename": "REVIEW_ANALYTIC_CERTIFICATE_CHECKPOINT_CURRENT_D579_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_ANALYTIC_CERTIFICATE_CHECKPOINT_CURRENT_D579_2026_10_27.md",
+      "source_path": "/workspace/scratch/a35548aa44c3/publication_d579/research/nine/REVIEW_ANALYTIC_CERTIFICATE_CHECKPOINT_CURRENT_D579_2026_10_27.md",
+      "sha256": "7135f0814fd73116e890b202b5abea9fd6dd3ca08e3a95474d291074aa2977cf",
+      "git_blob_sha": "b1f951fe8d8b7a014310ce562322a4ce2e6df6d6",
+      "bytes": 15195,
+      "groups": [
+        "independent_lower_window"
+      ]
+    },
+    {
+      "filename": "REVIEW_ANALYTIC_CERTIFICATE_PACKAGE_ROOT_CURRENT_D579_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_ANALYTIC_CERTIFICATE_PACKAGE_ROOT_CURRENT_D579_2026_10_27.md",
+      "source_path": "/workspace/scratch/a35548aa44c3/publication_d579/research/nine/REVIEW_ANALYTIC_CERTIFICATE_PACKAGE_ROOT_CURRENT_D579_2026_10_27.md",
+      "sha256": "966ea2e5d2803c8ba206e893947e3748b25cc65d3c30682813f75d06e38278d8",
+      "git_blob_sha": "ca9495627593f8a88f6c97c5745d61989ccd8bb2",
+      "bytes": 5269,
+      "groups": [
+        "independent_lower_window"
+      ]
+    },
+    {
+      "filename": "LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE_EXACT_RECORD_2026_10_28.json",
+      "repository_path": "research/nine/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE_EXACT_RECORD_2026_10_28.json",
+      "source_path": "/workspace/scratch/7d553350ce2a/six_body/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE_EXACT_RECORD_2026_10_28.json",
+      "sha256": "5f18021d9d62ecb9c87e4fe0d1fd83f090dde5d44045150ec2c0288f26cbd74e",
+      "git_blob_sha": "b295715ff1dffb2b92a81a542fe4e4bc700de4d3",
+      "bytes": 9292,
+      "groups": [
+        "independent_lower_window"
+      ]
+    },
+    {
+      "filename": "REVIEW_INDEPENDENT_LOWER_WINDOW_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_INDEPENDENT_LOWER_WINDOW_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/REVIEW_INDEPENDENT_LOWER_WINDOW_ROOT_2026_10_27.md",
+      "sha256": "993825f1901ecd929d4f249de6b9a7495068d62987883ca4476996cca2830e92",
+      "git_blob_sha": "7634975c0a33136452f1d4239799fcf58c0aa536",
+      "bytes": 6215,
+      "groups": [
+        "independent_lower_window"
+      ]
+    },
+    {
+      "filename": "REVIEW_LOWER_WINDOW_ANALYTIC_MEASURE_INDEPENDENT_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_LOWER_WINDOW_ANALYTIC_MEASURE_INDEPENDENT_2026_10_28.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/diamond/REVIEW_LOWER_WINDOW_ANALYTIC_MEASURE_INDEPENDENT_2026_10_28.md",
+      "sha256": "f218cbe8c9ee24da7e1c8b347eff3ebc030aa0eb6f2056aa5c4fd31b7ead90af",
+      "git_blob_sha": "b6ae8e774db6d6a0f68d0af48d5fc28819859cb9",
+      "bytes": 10324,
+      "groups": [
+        "independent_lower_window"
+      ]
+    },
+    {
+      "filename": "INDEPENDENT_LOWER_WINDOW_ANALYTIC_MEASURE_EXACT_RECORD_2026_10_28.json",
+      "repository_path": "research/nine/INDEPENDENT_LOWER_WINDOW_ANALYTIC_MEASURE_EXACT_RECORD_2026_10_28.json",
+      "source_path": "/workspace/scratch/7d553350ce2a/diamond/INDEPENDENT_LOWER_WINDOW_ANALYTIC_MEASURE_EXACT_RECORD_2026_10_28.json",
+      "sha256": "2f031c184d371bc85d9d6a5cae8482ede59d71ccd910a5a62ff79db70d8b199f",
+      "git_blob_sha": "d647837b55901560d7b238ac90bf1e9db46bbbb2",
+      "bytes": 10938,
+      "groups": [
+        "independent_lower_window"
+      ]
+    },
+    {
+      "filename": "REVIEW_INTACT_ROOT_FOUR_BLOCK_ORDER_FIVE_GLOBAL_NEXT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_INTACT_ROOT_FOUR_BLOCK_ORDER_FIVE_GLOBAL_NEXT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_INTACT_ROOT_FOUR_BLOCK_ORDER_FIVE_GLOBAL_NEXT_2026_10_27.md",
+      "sha256": "df149e6119fee61970613dabe357192279b545d35b177da1d73e1b7c005ccb47",
+      "git_blob_sha": "6067d65660c5e421aa4460dc696d88453da39c89",
+      "bytes": 10899,
+      "groups": [
+        "two_block_reused_audit_provenance"
+      ]
+    },
+    {
+      "filename": "REVIEW_TWO_INTACT_PETALS_COMPLETE_EXCLUSION_C6_NEXT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_TWO_INTACT_PETALS_COMPLETE_EXCLUSION_C6_NEXT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_INTACT_PETALS_COMPLETE_EXCLUSION_C6_NEXT_2026_10_27.md",
+      "sha256": "aceba0387b6f8a3a79c0f17aed8f51e3666bbb588188419f5d6b89dc25477cc0",
+      "git_blob_sha": "3080e455621ced8cbe9aa762d60a4ac332f686a0",
+      "bytes": 12123,
+      "groups": [
+        "two_block_reused_audit_provenance"
+      ]
+    },
+    {
+      "filename": "C2_35_C2_36_REUSED_AUDIT_RECORDS_ALLOWLIST.json",
+      "repository_path": "research/nine/C2_35_C2_36_REUSED_AUDIT_RECORDS_ALLOWLIST.json",
+      "source_path": "/workspace/scratch/7d553350ce2a/two_blocks/C2_35_C2_36_REUSED_AUDIT_RECORDS_ALLOWLIST.json",
+      "sha256": "85c9274ad6151d1af2933413208520a699559058b31e4442ed1daf4f967501fb",
+      "git_blob_sha": "2ffbb8f59c9881a749356d01439c2a0757280521",
+      "bytes": 1878,
+      "groups": [
+        "two_block_reused_audit_provenance"
+      ]
+    }
+  ],
+  "approved_prior_source_updates": [
+    {
+      "filename": "NINE_RADIUS_TWO_MEASURE_FIVE_POINT_REDUCTION.md",
+      "old_commit": "53d326511bd6280f18a14555922351ec15942b3d",
+      "old_sha256": "317457da1c0215aa6e6341f5766c5cac6ae7978ae5433126bef3c92ae8a130f5",
+      "new_sha256": "c316fbce9320918ba88e46c4cd53b5c70c8ccdb2cc585171204f28385905929f",
+      "old_git_blob_sha": "ecf79060dee88a377a248f27fdb182cd10c11f12",
+      "new_git_blob_sha": "152b69f2e75a688091ed9dc2015f674e9228ab7c",
+      "classification": "Explicit reviewed analytic dependency/status update; mathematical continuous reductions and physical domains unchanged.",
+      "authorization_review": "REVIEW_INDEPENDENT_LOWER_WINDOW_ROOT_2026_10_27.md",
+      "diff": "--- 53d326511bd6280f18a14555922351ec15942b3d/NINE_RADIUS_TWO_MEASURE_FIVE_POINT_REDUCTION.md\n+++ analytic/NINE_RADIUS_TWO_MEASURE_FIVE_POINT_REDUCTION.md\n@@ -1,6 +1,17 @@\n # The global radius-two measure proof reduces to five fixed charges\n \n Date: October 26, 2026.\n+\n+**Current dependency update, October 27:**\n+NINE_RADIUS_TWO_MEASURE_ANALYTIC_FIXED_VALUES.md now proves all five\n+actual mass targets and the derivative target directly. Its full root\n+and separate independent reviews are joined in\n+ANALYTIC_CERTIFICATE_CHECKPOINT_2026_10_27.md. The complete geometry\n+and continuous-domain assembly below are unchanged. Its fixed values\n+now use that analytic source; the five common-rectangle enclosures,\n+checker entry points and counts below record the accepted October 26\n+stage and remain historical alternatives. Explicit finite Taylor,\n+radical and rational arithmetic remains in the current proof.\n \n **Status: accepted complete assembly and standalone integrated checkers**\n after full reviews in REVIEW_NINE_MEASURE_FIVE_POINT_ASSEMBLY_ROOT_2026_10_26.md\n@@ -165,9 +176,9 @@\n alternative audit of the same witness, not five additional proof\n obligations or a second certificate.\n \n-## 5. Current count and retained limits\n-\n-After acceptance, the current global-measure dependencies consist of\n+## 5. Historical five-point count and retained limits\n+\n+At the October 26 checkpoint, the global-measure dependencies consisted of\n five fixed whole-box mass checks, one fixed derivative enclosure,\n and the explicitly displayed analytic Taylor/rational comparisons.\n There are zero adaptive splits and zero empty-domain tests.\n"
+    },
+    {
+      "filename": "NINE_RADIUS_TWO_MEASURE_LINE_ANALYTIC_REDUCTION.md",
+      "old_commit": "53d326511bd6280f18a14555922351ec15942b3d",
+      "old_sha256": "8c76a2a3c79786ee41f36df3ea0259583aeba4e1a04cba29aed76439af001e94",
+      "new_sha256": "714e2a092af516fad1450d2aeb38a6529418ef72070b5184d462a3f4b8a8f18d",
+      "old_git_blob_sha": "278924e9cde3087e52b67bdad6ccdb2cfd53c917",
+      "new_git_blob_sha": "2ceada6d2c86c63b4b463d475c01196e7a2aa8fa",
+      "classification": "Explicit reviewed analytic dependency/status update; mathematical continuous reductions and physical domains unchanged.",
+      "authorization_review": "REVIEW_INDEPENDENT_LOWER_WINDOW_ROOT_2026_10_27.md",
+      "diff": "--- 53d326511bd6280f18a14555922351ec15942b3d/NINE_RADIUS_TWO_MEASURE_LINE_ANALYTIC_REDUCTION.md\n+++ analytic/NINE_RADIUS_TWO_MEASURE_LINE_ANALYTIC_REDUCTION.md\n@@ -1,6 +1,14 @@\n # The measure's entire inner line reduces to two fixed critical enclosures\n \n Date: October 26, 2026.\n+\n+**Current dependency update, October 27:** the complete derivative and\n+minimum-location arguments below are unchanged. Their two fixed mass\n+targets are now proved directly at the actual minima in\n+NINE_RADIUS_TWO_MEASURE_ANALYTIC_FIXED_VALUES.md, Section 3, after\n+the full reviews recorded in ANALYTIC_CERTIFICATE_CHECKPOINT_2026_10_27.md.\n+The two-box checker and its margins below remain a historical\n+alternative and are not required on this current analytic route.\n \n **Status: accepted complete analytic reduction and exact two-box check**\n after full reviews in REVIEW_NINE_MEASURE_LINE_REDUCTION_ROOT_2026_10_26.md\n"
+    },
+    {
+      "filename": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "old_commit": "53d326511bd6280f18a14555922351ec15942b3d",
+      "old_sha256": "46220c8a3eb3f539c682bf6a6fa932edf003e37484e0f6004d321e7cb14d7957",
+      "new_sha256": "4c9e708945938c3f9df575e76f7573903d6b5a0ce4eccb5bcea760353a47458a",
+      "old_git_blob_sha": "453091c80f23e0e1630f3351f139c7f50418c03d",
+      "new_git_blob_sha": "1f13a74598e9f5170b7bf57e8fc750f1f11850f0",
+      "classification": "Explicit reviewed analytic dependency/status update; mathematical continuous reductions and physical domains unchanged.",
+      "authorization_review": "REVIEW_INDEPENDENT_LOWER_WINDOW_ROOT_2026_10_27.md",
+      "diff": "--- 53d326511bd6280f18a14555922351ec15942b3d/NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md\n+++ analytic/NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md\n@@ -2,25 +2,27 @@\n \n Date: October 26, 2026.\n \n-**Status: complete geometric theorem with a reviewed five-charge proof.**\n-The original208-charge proof passed two separate full-source, arithmetic\n-and scope reviews. The complete current replacement is\n-NINE_RADIUS_TWO_MEASURE_FIVE_POINT_REDUCTION.md, with full assembly\n-reviews in REVIEW_NINE_MEASURE_FIVE_POINT_ASSEMBLY_ROOT_2026_10_26.md\n-and REVIEW_NINE_MEASURE_FIVE_POINT_ASSEMBLY_C6_2026_10_26.md.\n-All three analytic replacement sources also have separate full reviews.\n-\n-The current entry points are NINE_RADIUS_TWO_MEASURE_FIVE_CHARGE_CHECK.py\n-and NINE_RADIUS_TWO_MEASURE_FIVE_CHARGE_INDEPENDENT_CHECK.py.\n-They evaluate the same **five fixed mass charges**, with one fixed\n-derivative enclosure and explicitly displayed analytic rational/Taylor\n-bounds. No adaptive subdivision or empty-domain test remains.\n-The two original208-charge checkers are retained as historical alternatives.\n-\n-This is one uniform finite certificate for arbitrary square orientations;\n-it is not a table-free theorem. It does not use a force graph, equilibrium,\n-any chosen contact type, a smaller packing theorem or numerical root\n-isolation. No Lean compilation, CI or workflow dispatch is used.\n+**Status: complete geometric theorem with an independently reviewed\n+analytic proof of all remaining fixed values.** The complete continuous\n+domain assembly is NINE_RADIUS_TWO_MEASURE_FIVE_POINT_REDUCTION.md.\n+Its five mass targets and derivative target now follow directly from\n+NINE_RADIUS_TWO_MEASURE_ANALYTIC_FIXED_VALUES.md, with full root and\n+separate independent acceptance in\n+ANALYTIC_CERTIFICATE_CHECKPOINT_2026_10_27.md.\n+\n+The new proof uses one signed Taylor lemma, thirteen displayed rational\n+angle comparisons, and explicit radical and rational inequalities.\n+No high-precision inverse-angle checker or stored charge margin is a\n+current dependency. The earlier rectangle Taylor comparisons and other\n+analytic arithmetic remain. Both the five-charge checkers and the\n+original 208-charge checkers are preserved as historical alternatives.\n+No adaptive subdivision or empty-domain test is required.\n+\n+This remains one uniform proof for arbitrary square orientations,\n+with its finite arithmetic displayed. It does not use a force graph,\n+equilibrium, any chosen contact type, a smaller packing theorem or\n+numerical root isolation. No Lean compilation, CI or workflow dispatch\n+is used.\n \n **Theorem.** Nine closed unit squares with pairwise disjoint open\n interiors cannot all be contained in the closed disk of radius two.\n@@ -231,7 +233,7 @@\n For a<=9/10 use (5), and for a>=27/20 use (13). This proves\n exhaustiveness directly from (4); no sampled pose supplies a cover.\n \n-### 3.6 Current analytic reductions leave only five fixed charges\n+### 3.6 Complete analytic reductions and the current fixed-value proof\n \n NINE_RADIUS_TWO_MEASURE_LINE_ANALYTIC_REDUCTION.md locates the\n minimum on each side of a=1 by an exact derivative sign. Two fixed\n@@ -255,13 +257,15 @@\n and one fixed derivative enclosure. The complete outer charge exceeds\n 3013/3000. This replaces97 charges and three empty tests.\n \n-The full exact normalized-domain assembly and five coordinate enclosures\n-are in NINE_RADIUS_TWO_MEASURE_FIVE_POINT_REDUCTION.md. Both integrated\n-exact checkers pass; the independent one uses a different inverse-angle\n-construction at2^80 precision. They audit the same five obligations.\n-The comparison and inverse-angle theory in Sections4--5 remains valid\n-for those fixed common rectangles. The old Section6 adaptive forest\n-is a historical alternative, not a current dependency.\n+The full exact normalized-domain assembly and historical five coordinate\n+enclosures are in NINE_RADIUS_TWO_MEASURE_FIVE_POINT_REDUCTION.md.\n+The subsequent NINE_RADIUS_TWO_MEASURE_ANALYTIC_FIXED_VALUES.md proves\n+the two actual scalar minima, all three actual outer values and the\n+derivative target directly. Its proof covers the complete closed domains\n+and the actual atom-free endpoints. The five-point checkers, the\n+comparison and inverse-angle theory in Sections4--5, and the old\n+Section6 adaptive forest remain valid historical alternatives. Their\n+stored margins and execution are not current proof dependencies.\n \n ## 4. Exact lower charge on an entire parameter rectangle\n \n@@ -450,10 +454,12 @@\n SIX_CYCLE_ALL_UNIQUE_SIDE_COMPLETE_EXCLUSION.md and\n REVIEW_C6_ALL_UNIQUE_SIDE_COMPLETE_EXCLUSION_2026_10_26.md.\n \n-The current uniform certificate has five fixed mass checks, one fixed\n-derivative enclosure and displayed analytic rational/Taylor comparisons.\n-It supersedes203 of the original208 charge obligations and all adaptive\n-splits and empty tests, with unchanged physical scope.\n+The current uniform proof replaces all five remaining mass-checker\n+dependencies and the derivative-checker dependency by displayed\n+analytic rational/Taylor comparisons. Its earlier complete continuous\n+reductions already removed all adaptive splits and empty tests.\n+Finite Taylor, radical and rational arithmetic remains, with unchanged\n+physical scope; no claim of an arithmetic-free theorem is made.\n The four earlier coefficient packets remain replaced by analytic\n proofs with zero coefficient-sign checks; this source does not claim\n that the repository has become certificate-free. The global lower\n"
+    },
+    {
+      "filename": "NINE_RADIUS_TWO_MEASURE_OUTER_CURVE_ANALYTIC_REDUCTION.md",
+      "old_commit": "53d326511bd6280f18a14555922351ec15942b3d",
+      "old_sha256": "4475c45658c7535f62f81b7da4aac258a14e887ab5c0d4c015102483633b987e",
+      "new_sha256": "9258e4d00c0935a4deee1942159b88a7474e95169443d1ed966da3156a336eba",
+      "old_git_blob_sha": "eb92e320d141bc00dd1aa2d30d9759e7e3c43a3e",
+      "new_git_blob_sha": "850b1aecb1ff28bcded8212ee36607a544d0edbd",
+      "classification": "Explicit reviewed analytic dependency/status update; mathematical continuous reductions and physical domains unchanged.",
+      "authorization_review": "REVIEW_INDEPENDENT_LOWER_WINDOW_ROOT_2026_10_27.md",
+      "diff": "--- 53d326511bd6280f18a14555922351ec15942b3d/NINE_RADIUS_TWO_MEASURE_OUTER_CURVE_ANALYTIC_REDUCTION.md\n+++ analytic/NINE_RADIUS_TWO_MEASURE_OUTER_CURVE_ANALYTIC_REDUCTION.md\n@@ -1,6 +1,15 @@\n # The whole outer measure curve reduces to three fixed charges\n \n Date: October 26, 2026.\n+\n+**Current dependency update, October 27:** all three fixed mass targets\n+and the derivative target below now have direct analytic proofs in\n+NINE_RADIUS_TWO_MEASURE_ANALYTIC_FIXED_VALUES.md, Sections 4--5.\n+The complete branch cover, monotonicity, convexity and tangent assembly\n+below are unchanged. The full acceptance is recorded in\n+ANALYTIC_CERTIFICATE_CHECKPOINT_2026_10_27.md. The checker, rounded\n+common rectangles and stored margins remain historical alternatives;\n+explicit rational/Taylor arithmetic remains in the current proof.\n \n **Status: accepted complete analytic monotonicity/convexity reduction and\n exact fixed checks**, after full reviews in\n"
+    },
+    {
+      "filename": "NINE_RADIUS_TWO_MEASURE_RECTANGLES_ANALYTIC_REDUCTION.md",
+      "old_commit": "53d326511bd6280f18a14555922351ec15942b3d",
+      "old_sha256": "d3a4e570e8c672b89ac57081a1cc2efad78a49b5cc27ca7367a367ddcc7deebe",
+      "new_sha256": "8b749abf2792e022b2a3bb79ea275ebc02000707c864a4ae41f5b6410edeb780",
+      "old_git_blob_sha": "30e2cd8f1a576bc60d608acef8f2c24fc9504cd0",
+      "new_git_blob_sha": "c70bc40e6c238781887abcf3a510f3d4876f8083",
+      "classification": "Explicit reviewed analytic dependency/status update; mathematical continuous reductions and physical domains unchanged.",
+      "authorization_review": "REVIEW_INDEPENDENT_LOWER_WINDOW_ROOT_2026_10_27.md",
+      "diff": "--- 53d326511bd6280f18a14555922351ec15942b3d/NINE_RADIUS_TWO_MEASURE_RECTANGLES_ANALYTIC_REDUCTION.md\n+++ analytic/NINE_RADIUS_TWO_MEASURE_RECTANGLES_ANALYTIC_REDUCTION.md\n@@ -1,6 +1,13 @@\n # Both residual measure rectangles have direct analytic charges\n \n Date: October 26, 2026.\n+\n+**Current dependency update, October 27:** this complete rectangle proof\n+and its fourteen displayed Taylor comparisons are unchanged. The five\n+mass-checker and one derivative-checker dependencies left by the\n+historical assembly described below are now replaced by\n+NINE_RADIUS_TWO_MEASURE_ANALYTIC_FIXED_VALUES.md. Full acceptance and\n+the exact current scope are in ANALYTIC_CERTIFICATE_CHECKPOINT_2026_10_27.md.\n \n **Status: accepted complete whole-domain analytic proof**, after full\n reviews in REVIEW_NINE_MEASURE_RECTANGLES_ROOT_2026_10_26.md and\n"
+    }
+  ],
+  "terminal_linefeed_equivalences": [],
+  "source_review_scope": {
+    "analytic_checkpoint_records": "Only the radius-two analytic measure portions are operative here. Their separate diagonal-cap historical references are not used in W.3.",
+    "two_block_dependency_scope": [
+      "402d is included as an unchanged complete source, but only its Sections 2--3 original five-neighbor/angular-order extraction is operative in these callers. The positive-q-sector, physical-ray, root-port properness and closed-root conclusions are not invoked. The source records its broader dependencies honestly; publication of this closure does not newly support those unused conclusions.",
+      "80d final full direct-leaf genuine-cycle union is accompanied by the explicit e776 published weak-pressure order-five refinement appearing in both full acceptance records. For the present C2.36 caller q=6 is also given by its original graph. The separate d480 fresh strict-pressure assembly and its dependencies are not used or published.",
+      "Review records are terminal acceptance/context records, not new theorem dependencies. Root review covers three additional independently published geometric implications; their sources and separate reviews belong to the root/diamond manifests.",
+      "Historical metadata and abandoned source versions are not copied. Baseline ACUTE_LOADED_CONTACT_GRAPH.md e6ce319d is retained; the recovered newline-only 95a737 version is not published.",
+      "The unused 402d-to-ed8 branch would import 7e510 and a differing PARALLEL_TRANSMISSION_AND_FOUR_CYCLES.md pin. That branch is not operative and no baseline source is overwritten.",
+      "The root exact record is intentionally renamed on publication to ROOT_NEW_UNIFORM_EXACT_RECORD_2026_10_27.json, matching the frozen root review; its source bytes are unchanged."
+    ],
+    "reused_audit_records": {
+      "REVIEW_INTACT_ROOT_FOUR_BLOCK_ORDER_FIVE_GLOBAL_NEXT_2026_10_27.md": "Reused audit provenance only: e776 independent review Sections 1 and 4 reuses the full graph, physical boundary-triangle and selected-K4 reads. Its fresh strict C4/diamond pressure acceptance and d480 assembly are not operative dependencies.",
+      "REVIEW_TWO_INTACT_PETALS_COMPLETE_EXCLUSION_C6_NEXT_2026_10_27.md": "Reused audit provenance only: 103a independent review Section 6 refers to this record for the exact physical/pressure input pins and prior read scopes. Its entire stronger two-intact-petal theorem is not an additional operative mathematical premise of 103a."
+    }
+  },
+  "nonoperative_bibliographic_references": {
+    "C6_NEXT_INTACT_PETAL_PHYSICAL_RAY_AND_CYCLE_ROOT_PROPERNESS.md": "Unused later 402d branch; only Sections 2–3 angular order are imported.",
+    "C6_NEXT_COMMON_ROOT_SIDE_NEGATIVE_CONCURRENCE_PRESSURE_EXCLUSION.md": "Unused later 402d branch; only Sections 2–3 angular order are imported.",
+    "C6_SHARED_T_CURRENT_CALLER_CERTIFICATE_AUDIT_2026_10_27.md": "Unrelated diagonal-cap package portion in the preserved broader analytic checkpoint.",
+    "DIAGONAL_CAP_THREE_CERTIFICATES_ANALYTIC_REPLACEMENT.md": "Unrelated diagonal-cap package portion in the preserved broader analytic checkpoint.",
+    "REVIEW_DIAGONAL_CAP_ALL_202_AND_SCOPED_1080_INDEPENDENT_2026_10_27.md": "Unrelated diagonal-cap package review in the preserved broader analytic checkpoint.",
+    "REVIEW_ANALYTIC_CERTIFICATE_CHECKPOINT_CURRENT_8955_2026_10_27.md": "Earlier whole-package historical review, superseded for the operative radius-two route by the retained exact reviews and fresh W.3 reviews.",
+    "REVIEW_DIAGONAL_CAP_ALL_202_ANALYTIC_ROOT_2026_10_27.md": "Unrelated diagonal-cap package review in the preserved broader analytic checkpoint.",
+    "DIAGONAL_CAP_VERTICAL_ANALYTIC_REPLACEMENT.md": "Unrelated diagonal-cap package portion in the preserved broader analytic checkpoint.",
+    "ANALYTIC_CERTIFICATE_CURRENT_D579_LOGICAL_PUBLICATION_MANIFEST_2026_10_27.json": "Prior whole-package publication inventory; current exact active source pins and acyclic logical order are independently recorded here and in the W.3 source/reviews."
+  },
+  "open_coarse_cells": [
+    "C1.5.b1",
+    "C1.5.b2",
+    "C1.5.b3",
+    "C1.5.b4",
+    "C1.6.b0",
+    "C1.6.b1",
+    "C1.6.b2",
+    "C1.6.b3",
+    "C1.7.b0",
+    "C1.7.b1",
+    "C1.7.b2",
+    "C1.8.b0",
+    "C1.8.b1",
+    "C1.9.b0",
+    "C2.35.b0",
+    "C2.35.b1",
+    "C2.35.b2",
+    "C2.36.b0",
+    "C2.36.b1",
+    "C2.37.b0",
+    "C2.45.b0",
+    "C2.45.b1",
+    "C2.46.b0",
+    "C2.55.b0"
+  ],
+  "open_fine_identifiers": [
+    "T1.EXTRACT:",
+    "CAP.4",
+    "ROW.4",
+    "POCKET.ROUTING",
+    "QCAP.GLOBAL",
+    "CY.B5 GEOMETRY",
+    "CY.MULTILOAD",
+    "CY.MIXED.COMPLETE",
+    "C.1 GRAPH",
+    "C.2 LOAD",
+    "C.3 GEOMETRY",
+    "C.4 COMPLETION",
+    "C.5 SHARPNESS",
+    "C.6 EQUALITY",
+    "G3.0.ANNULAR.ROUTING",
+    "G3.0.DISTRIBUTED_ARTICULATIONS",
+    "G3.0.SHARP",
+    "G3.M.F.1 GRAPH",
+    "G3.M.F.1.a",
+    "G3.M.F.1.b",
+    "G3.M.F.1.c",
+    "G3.M.F.2 LOADS",
+    "G3.M.F.2.a",
+    "G3.M.F.2.b",
+    "G3.M.F.3 CONTACT FEATURES",
+    "G3.M.F.3.a",
+    "G3.M.F.3.b",
+    "G3.M.F.3.c",
+    "G3.M.F.4 JUNCTIONS",
+    "G3.M.F.5 COMPLETION ROUTING",
+    "G3.M.F.5.a",
+    "G3.M.F.5.b",
+    "G3.M.F.5.c",
+    "G3.M.F.5.d",
+    "G3.M.F.COVER",
+    "C.0 DOMAIN",
+    "C.1 EQUILIBRIUM",
+    "C.2 ROUTING",
+    "C.3 BOUND",
+    "C.3.a",
+    "C.3.b",
+    "C.3.c",
+    "C.4 EQUALITY",
+    "C.5 AUDIT",
+    "C.ALL",
+    "M6.B5L.HOUSE.ROOF.LAC.S",
+    "M6.B5L.HOUSE.ROOF.LAC.D",
+    "M6.B5L.HOUSE.ROOF.LABC.S",
+    "M6.B5L.HOUSE.ROOF.LABC.D",
+    "M6.B5L.HOUSE.HUB.LTC.S",
+    "M6.B5L.HOUSE.HUB.LTCB.S",
+    "M6.B5L.HOUSE.HUB.LTCB.D",
+    "M6.B5L.HOUSE.LOWER.LTD.S",
+    "M6.B5L.HOUSE.LOWER.LTAC.S",
+    "M6.B5L.HOUSE.LOWER.LTDC.S",
+    "M6.B5L.HOUSE.LOWER.LTDC.D",
+    "M6.B5L.FAN.ENDPOINT.L234.S",
+    "M6.B5L.FAN.ENDPOINT.L234.D",
+    "M6.B5L.FAN.INNER.L134.S",
+    "M6.B5L.FAN.INNER.L134.D",
+    "M6.B5L.HOUSE.ROOF",
+    "M6.B5L.HOUSE.HUB",
+    "M6.B5L.HOUSE.LOWER",
+    "M6.B5L.FAN.ENDPOINT",
+    "M6.B5L.FAN.INNER",
+    "M6.B5L.ALL",
+    "M6.B6.HEXAGON.TWO_OPPOSITE_EARS.BOUND",
+    "M6.B6.HEXAGON.D02.L014",
+    "M6.B6.HEXAGON.D02.L134",
+    "M6.B6.HEXAGON.D02.L135",
+    "M6.B6.HEXAGON.D02.L0134",
+    "M6.B6.HEXAGON.D02.L0135",
+    "M6.B6.HEXAGON.D02.L0145",
+    "M6.B6.HEXAGON.D02.L1345",
+    "M6.B6.HEXAGON.D02.L01345",
+    "M6.B6.HEXAGON.D02.ALL",
+    "M6.B6.HEXAGON.D03.L014",
+    "M6.B6.HEXAGON.D03.L024",
+    "M6.B6.HEXAGON.D03.L124",
+    "M6.B6.HEXAGON.D03.L0124",
+    "M6.B6.HEXAGON.D03.L0125",
+    "M6.B6.HEXAGON.D03.L1245",
+    "M6.B6.HEXAGON.D03.ALL",
+    "M6.B6.HEXAGON.D0203.L124",
+    "M6.B6.HEXAGON.D0203.L125",
+    "M6.B6.HEXAGON.D0203.L1234",
+    "M6.B6.HEXAGON.D0203.L1235",
+    "M6.B6.HEXAGON.D0203.L1245",
+    "M6.B6.HEXAGON.D0203.ALL",
+    "M6.B6.HEXAGON.D0204.L125",
+    "M6.B6.HEXAGON.D0204.L135",
+    "M6.B6.HEXAGON.D0204.L0135",
+    "M6.B6.HEXAGON.D0204.L1235",
+    "M6.B6.HEXAGON.D0204.L1245",
+    "M6.B6.HEXAGON.D0204.ALL",
+    "M6.B6.HEXAGON.D0235.L0134",
+    "M6.B6.HEXAGON.D0235.L0145",
+    "M6.B6.HEXAGON.D0235.ALL",
+    "M6.B6.HEXAGON.CHORD_PATH.L1245",
+    "M6.B6.HEXAGON.CHORD_PATH.ALL",
+    "M6.B6.HEXAGON.CENTRAL_TRIANGLE.L135",
+    "M6.B6.HEXAGON.CENTRAL_TRIANGLE.L0135",
+    "M6.B6.HEXAGON.CENTRAL_TRIANGLE.ALL",
+    "M6.B6.HEXAGON.BOUND",
+    "M6.B6.PENTAGON.H3.L024",
+    "M6.B6.PENTAGON.H3.L1234",
+    "M6.B6.PENTAGON.H3.L0124",
+    "M6.B6.PENTAGON.H4_D0.L124",
+    "M6.B6.PENTAGON.H4_D0.L0124",
+    "M6.B6.PENTAGON.H3_EXIT",
+    "M6.B6.PENTAGON.H4_D0_EXIT",
+    "M6.B6.ALL",
+    "G3.M6.ASSEMBLE",
+    "G3.M6.ALL",
+    "G3.M7.ALL",
+    "G3.M8.ALL",
+    "G3.M9.ALL",
+    "G3.M.ALL",
+    "G3.ALL.1",
+    "G3.ALL.3",
+    "G3.ALL.4",
+    "G3.ALL",
+    "O3.3.SHARP",
+    "O4.1",
+    "O4.2",
+    "O4.3 alternative",
+    "O5",
+    "X.3",
+    "G4.2",
+    "G4.2.a",
+    "G4.2.b",
+    "G4.2.c",
+    "G4.2.d",
+    "G4.2.e",
+    "G4.2.f",
+    "G4.3",
+    "G4.3.a",
+    "G4.3.b",
+    "G4.3.c",
+    "G5.1",
+    "G5.2",
+    "G5.3",
+    "G5.1.a",
+    "G5.1.b",
+    "G5.2.a",
+    "G5.2.b",
+    "G5.2.c",
+    "G5.3.a",
+    "G5.3.b",
+    "G5.3.c",
+    "G5.3.d",
+    "G5.4",
+    "G5.4.a",
+    "G5.4.b",
+    "G5.ALL",
+    "G6.1",
+    "G6.2",
+    "G6.3",
+    "G6.TL1 NEW",
+    "G6.TL2 NEW",
+    "G6.TL3 NEW",
+    "G6.TL4 NEW",
+    "G6.4",
+    "G6.5",
+    "G6.5.a",
+    "G6.5.b",
+    "G6.5.c",
+    "G6.5.d",
+    "G6.5.e",
+    "G6.5.f",
+    "G7.1",
+    "G7.2",
+    "G7.3",
+    "G7.4",
+    "G7.5 DEFERRED",
+    "G8.1",
+    "G8.2",
+    "G8.3",
+    "G8.4"
+  ],
+  "historical_checkpoint": "RECOVERED_TWO_CELLS_FOURTEEN_FINE_GATES_2026_10_27.json",
+  "not_claimed": [
+    "sharp nine-square lower bound",
+    "all original equality configurations",
+    "complete remaining prerequisite audit",
+    "new coarse closure",
+    "additional geometric fine closure",
+    "Lean integration"
+  ],
+  "constraints": {
+    "all_nine_physical_units_retained": true,
+    "original_forces_normals_means_degrees_masks_zero_weights_retained": true,
+    "Lean_compilation": false,
+    "CI_dispatch": false,
+    "workflow_dispatch": false,
+    "merge": false,
+    "PR_remains_draft": true
+  },
+  "metadata": [
+    {
+      "filename": "CYCLIC_CELL_LEDGER.md",
+      "sha256": "f42d8562a6464ba9b849cb2ac7ab301bd0caa4cfae57f2a0cccf22eda7d26c58",
+      "bytes": 212230
+    },
+    {
+      "filename": "DEEP_GATED_ROADMAP.md",
+      "sha256": "b75eadd26fdf56f7503a73484408a63f60db6a4471575713eaab6500430edc06",
+      "bytes": 930336
+    },
+    {
+      "filename": "HANDOFF_PR11_2026_10_27_CURRENT.md",
+      "sha256": "3d32b0c383faca66cd0ea5a0a4aaf68c5d3238ff2da005e0efca77afc7be7774",
+      "bytes": 29137
+    },
+    {
+      "filename": "HANDOFF_PR11_2026_10_27_PUSHED.md",
+      "sha256": "5550ad43e9340946bcedc1d171793f625a1f54294c42c4f6ad9f3e50ea2dc522",
+      "bytes": 7338
+    },
+    {
+      "filename": "README.md",
+      "sha256": "e6b5d7e0f1c96b1cd915bf4b03ef59f399b2b97177cc2ff0087d45d0b6e6931e",
+      "bytes": 54151
+    },
+    {
+      "filename": "HANDOFF_PR11_2026_10_28_CURRENT.md",
+      "sha256": "9a0b1682ef55c0a3c451ea91adba716f9ce1cf6790e3277a3f86f79903e5c99d",
+      "bytes": 6759
+    }
+  ]
+}

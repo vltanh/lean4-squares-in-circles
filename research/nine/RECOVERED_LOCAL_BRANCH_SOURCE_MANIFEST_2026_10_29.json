@@ -1,0 +1,3148 @@
+{
+  "published_parent": "6af62057e590fa3d350947ae12fcc3d8bb0e0031",
+  "recovered_heads": [
+    "f442c69a9ca6b954b564386a25c240a0efc53d74",
+    "1641554c60a4013a16d67d8192016424d384e150"
+  ],
+  "preserved_files": [
+    {
+      "path": "research/nine/ADJACENT_HUB_PORTS_EXTERNAL_OR_FREE_BOUNDARY_RETURN_COMPLETE_NEAR_ORIGIN.md",
+      "bytes": 19314,
+      "git_blob": "14ab523610e973947b3336aded62b9c6bba37cd2",
+      "sha256": "151991f6d4a263be4a393a1dda5a9acc21f95c419d6b83bbd8e79d773aec0ffe"
+    },
+    {
+      "path": "research/nine/ADJACENT_LEFT_VERTEX_BOUNDARY_DIAMOND_NEGATIVE_SUPPORT_EXCLUSION.md",
+      "bytes": 15485,
+      "git_blob": "a0aed683a7d629c60123a7d09353e4f1063b9c47",
+      "sha256": "381fa4a31b27e620025e21eaa39f14342bea8114e926dc1d7f91d6c54da34a13"
+    },
+    {
+      "path": "research/nine/ADOPTION_BROADER_CENTERED_ARCS_AND_TWO_FULL_STAR_REDUCTIONS_ROOT_2026_10_28.md",
+      "bytes": 9911,
+      "git_blob": "df552f0a8f51898f5c76c8f7739ac24fa55294de",
+      "sha256": "cf84585f5eba59a6df2e61a657f65a62248f74d0064d8a43907947ba9f4dc503"
+    },
+    {
+      "path": "research/nine/ADOPTION_CHAIN_ENDPOINTS_COMMON_AXES_AND_LOW_HOUSE_UNIFORM_FEATURES_ROOT_2026_10_28.md",
+      "bytes": 18825,
+      "git_blob": "9a6b03c62686d9c87e4dbb23f5c80cbf18f7f680",
+      "sha256": "9017d984afea662e5450b004a3959d8bc6347e856057e1d5153239c66f8183d1"
+    },
+    {
+      "path": "research/nine/ADOPTION_COMPLETE_ENDPOINT_FAN_CHANNEL_ALIGNED_HOUSE_AND_NEAR_RETURN_HAND_ROOT_2026_10_29.md",
+      "bytes": 25633,
+      "git_blob": "0cb45a6596042d405ba72e20381fdb72ff5633f6",
+      "sha256": "7973cef3dd48a3071bc6050c1590ef61ecaa76389cba7cd1d08956b6372cb516"
+    },
+    {
+      "path": "research/nine/ADOPTION_COMPLETE_H4_FOUR_LOAD_AND_UNIFORM_NEAR_HUB_ROOT_2026_10_28.md",
+      "bytes": 20871,
+      "git_blob": "e1215499325d053151f25ba10b269845acc5035b",
+      "sha256": "1550197517e0919b56e15f005e49e989e093d195bc94accd69557bec70fe57a7"
+    },
+    {
+      "path": "research/nine/ADOPTION_COMPLETE_OPEN_ORIGIN_FAN_WEAK_RETURN_GRAPH_AND_HOUSE_GAP_ROOT_2026_10_28.md",
+      "bytes": 13125,
+      "git_blob": "c506d905ab20061eaa73071165c0284ed42e203d",
+      "sha256": "4d2ccb4fe68c5de03ebac229ac787becd3beac9825f0e2fdb21302c0289cfcbb"
+    },
+    {
+      "path": "research/nine/ADOPTION_COMPLETE_ORIGINAL_FOUR_SPOKE_PENTAGON_ROOT_2026_10_28.md",
+      "bytes": 11305,
+      "git_blob": "9bdd4f2356ad7e0309f7405097d4581295545dd8",
+      "sha256": "03547da88f844314e0d8e9d277d6827ba635f66ce16f6086dcccd75779641e6a"
+    },
+    {
+      "path": "research/nine/ADOPTION_COMPLETE_ORIGINAL_HOUSE_ROOF_FAMILY_ROOT_2026_10_28.md",
+      "bytes": 12035,
+      "git_blob": "b23c169e561eb4ba393cea0db604409c8a522791",
+      "sha256": "f20a81e287eb901704df4ffc7d08bb1aaaf4d11334d3d05190d341788f22b243"
+    },
+    {
+      "path": "research/nine/ADOPTION_COMPLETE_ORIGINAL_INNER_FAN_AND_ACTUAL_RETURN_BARRIERS_ROOT_2026_10_28.md",
+      "bytes": 18820,
+      "git_blob": "11f352657d9866460c5e517a193212cb31582ac6",
+      "sha256": "628e63c60c5b3a20cfc5b119ac68d5305d8255dc2d112b65091ea5952ddb6d51"
+    },
+    {
+      "path": "research/nine/ADOPTION_COMPLETE_ORIGINAL_INNER_FAN_AND_CONTINUOUS_SCREEN_ROOT_2026_10_28.md",
+      "bytes": 11470,
+      "git_blob": "9b569cfe7d0defc5d897f9b0a3b10a1aab8b7a9e",
+      "sha256": "2cf4f7da5d618ef29442ef1094d283b632276ac25980f6c08282054f28cd8521"
+    },
+    {
+      "path": "research/nine/ADOPTION_COMPLETE_ORIGINAL_INNER_PENTAGON_AND_UNIT_EDGE_PROJECTIONS_ROOT_2026_10_28.md",
+      "bytes": 21228,
+      "git_blob": "21c44c08b261ee832af23c572556434e59ed0404",
+      "sha256": "eca277187175cef61d4bec7f4a2f9954ed08ee327f41173c624da34a37382d3c"
+    },
+    {
+      "path": "research/nine/ADOPTION_COMPLETE_ROOF_INTERFACES_AND_BOUNDARY_FREE_STAR_ROOT_2026_10_28.md",
+      "bytes": 13739,
+      "git_blob": "689687ea7118aa552b8eb9d7f2740fb0c1826181",
+      "sha256": "aa52da0dee41ff228f68e9e4b9d8982f6d5ab89cfd0f58c62b53f84158a77678"
+    },
+    {
+      "path": "research/nine/ADOPTION_COMPLETE_ROOF_PARENT_AND_UNIFORM_FULL_STAR_ROOT_2026_10_28.md",
+      "bytes": 27797,
+      "git_blob": "e5b9ab6b1def4621c7078f12e86302e89d3c4b9f",
+      "sha256": "250677cc8b88f8907322ac407d3547b5860fa2598f450a5a2981a9ef64acc392"
+    },
+    {
+      "path": "research/nine/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "bytes": 17104,
+      "git_blob": "73cfd49b7ba738e5cd85a057d98358ea1c3b36d4",
+      "sha256": "fb99b163e4450df464fcc095ac6aea0a3294624fcb329ffbc515efda6a0bea28"
+    },
+    {
+      "path": "research/nine/ADOPTION_COMPLETE_TWO_CIRCLE_TIP_AND_MIXED_ENDPOINT_POCKETS_ROOT_2026_10_28.md",
+      "bytes": 17483,
+      "git_blob": "d3d4d8a59c6f46d8fbe4bbc41850c86aa8b30761",
+      "sha256": "77fa22d7bd8faee6a269431c9736bd1e5c736f00a153f78f28d44e38369672af"
+    },
+    {
+      "path": "research/nine/ADOPTION_CONTINUOUS_EQUAL_ROOF_RETIREMENT_AND_THREE_TENTHS_POCKETS_ROOT_2026_10_28.md",
+      "bytes": 12554,
+      "git_blob": "aefb025495a4ffdbb3774f8646655076e39df38a",
+      "sha256": "ba8b0f5d4a7ab671ad3b7e94146185cfeafafae85e8026d33105a140beef590e"
+    },
+    {
+      "path": "research/nine/ADOPTION_CONTINUOUS_RETURN_CERTIFICATE_RETIREMENT_AND_FAR_PARALLEL_ENDS_ROOT_2026_10_28.md",
+      "bytes": 21847,
+      "git_blob": "1ffc0bb432786ef5c72a2808dce1f16c78aedbfb",
+      "sha256": "5c253c7f213d953146400f7091a1c2212e2b64fbf8a40fd1989cc7a5c033cbc6"
+    },
+    {
+      "path": "research/nine/ADOPTION_CRITICAL_FAN_CHANNEL_REDUCTIONS_AND_S123_HAND_REPLACEMENT_ROOT_2026_10_28.md",
+      "bytes": 17880,
+      "git_blob": "c80608c10542cb20274e136507be2b6379d7dfd9",
+      "sha256": "6fb1f677c07a049ed544f9ceb2c4c275a8d1e02877dc83b86b3c14b3da74fac9"
+    },
+    {
+      "path": "research/nine/ADOPTION_CRITICAL_INNER_ARC_AND_FOUR_SEVENTHS_CAP_ROOT_2026_10_28.md",
+      "bytes": 6829,
+      "git_blob": "36cae1ee80062e524b44e466a1019dc67b8449d3",
+      "sha256": "a480bed2cea142a6b6d486d510d7420ebf61ffdfbeef64dc95be129fedddde82"
+    },
+    {
+      "path": "research/nine/ADOPTION_EXACT_RESTORATION_UNIFORM_GEOMETRY_ROOT_2026_10_28.md",
+      "bytes": 4968,
+      "git_blob": "f0561eb946f9286c0d1cafbc057f253149b804c0",
+      "sha256": "992171b8ef9f4eabba2cebb2c6c63004c2b6dddc9fa82d19ad064957eecb82f4"
+    },
+    {
+      "path": "research/nine/ADOPTION_RADIUS_FREE_PENTAGON_EXTERNAL_OWNERS_AND_LOW_SUPPORT_ROOT_2026_10_28.md",
+      "bytes": 12598,
+      "git_blob": "8b71b484995d4589ad17854ac82b9628eb7d5a0a",
+      "sha256": "0969ed276196f64ea93a219d792e30ee6977d36ed7c6f2c0688b3da12938f826"
+    },
+    {
+      "path": "research/nine/ADOPTION_RECOVERED_COMPLETE_H4_AND_CENTERED_BOUNDARY_ARC_ROOT_2026_10_28.md",
+      "bytes": 13683,
+      "git_blob": "72140f1c415230f039306143da30e70f4ce4a82d",
+      "sha256": "7ff03d91ef8b560a1fec6c5953f8eeed8fe021147b936cf31804cba2af4867db"
+    },
+    {
+      "path": "research/nine/ADOPTION_RECOVERED_RADIUS_FREE_PENTAGON_TOOLS_AND_ALIGNED_HIGH_FAN_ROOT_2026_10_28.md",
+      "bytes": 14065,
+      "git_blob": "72beab57c15bb9ff303195e43c9fbc4449252715",
+      "sha256": "0e3386de4905053a7aca57ff8ba35e3c5c1f283fb8dc34d5e173ae438e3ddac9"
+    },
+    {
+      "path": "research/nine/ADOPTION_REUSABLE_UNLOADED_FOUR_SPOKE_COMMON_RETURN_MOTIF_ROOT_2026_10_28.md",
+      "bytes": 7464,
+      "git_blob": "717c5d090d878685422673ebe4f84147097a4152",
+      "sha256": "7f5422e9b965f3278fa19b16dc299e653c6288d9e9b9c8d75364bcb375f3881b"
+    },
+    {
+      "path": "research/nine/ADOPTION_S123_UNIQUE_PACKET_HAND_REPLACEMENT_AND_FULL_STAR_HOUSE_REDUCTIONS_ROOT_2026_10_29.md",
+      "bytes": 17781,
+      "git_blob": "61b8dfc9160e924b8687501bcdb5a9eddc0c205b",
+      "sha256": "b32171d23f8061ccb355f8ea74a5a5124baf46cb3312e62043132ec8c73c5a06"
+    },
+    {
+      "path": "research/nine/ADOPTION_SHARED_UNIQUE_TIP_SHARP_ARC_AND_NEAR_HUB_ROOT_2026_10_28.md",
+      "bytes": 17949,
+      "git_blob": "6f53b19adafca2d39037a473f02762e895003fee",
+      "sha256": "162c071c4d3c4cb57c67c44b22131417e8ed4f54952fd71a0f973255c5c0584b"
+    },
+    {
+      "path": "research/nine/ADOPTION_SHIFTED_COLUMNS_PARALLEL_HOUSE_AND_STRICT_VERTEX_FAN_ROOT_2026_10_28.md",
+      "bytes": 16147,
+      "git_blob": "b757b1da5b518e5b19f3e444a6c505245d78d294",
+      "sha256": "9127e1f1175d0195b2d67a0cba3eeb87187658d8e6df14009996837cb1598fee"
+    },
+    {
+      "path": "research/nine/ADOPTION_TWO_ORIGINAL_FOUR_LOAD_ROWS_AND_FORWARD_WIDTH_CHAINS_ROOT_2026_10_29.md",
+      "bytes": 24188,
+      "git_blob": "f83fb2d8605104c7216a9bbfa9c0173b67ca9bd4",
+      "sha256": "30c732c290928d8aaaab6c27016879804b02ec72952f76e47c48451293db92b2"
+    },
+    {
+      "path": "research/nine/ADOPTION_UNIFORM_BOUNDARY_PATH_AND_COMPLETE_OPEN_ORIGIN_ROOF_ROOT_2026_10_28.md",
+      "bytes": 23949,
+      "git_blob": "485a008af2bd82162e890286eae75ac1837a93b4",
+      "sha256": "2c904de12b0d292d58ba100bbc92bd01804e79f3b1ae1eb3fac029effd911854"
+    },
+    {
+      "path": "research/nine/ADOPTION_UNIFORM_ORIGINAL_STAR_INTERFACES_AND_LOW_WALL_GEOMETRY_ROOT_2026_10_28.md",
+      "bytes": 23303,
+      "git_blob": "e870a5bd5b96693772312a0c88de21e9660f8953",
+      "sha256": "77d34c77abf73b1bfcc8e8d9b22e55b54ca24a28c586063a228363a6061c8e56"
+    },
+    {
+      "path": "research/nine/ALIGNED_CHANNEL_LOWER_BYPASS_COMMON_NEIGHBOR_VERTICAL_NORMAL_OBSTRUCTION.md",
+      "bytes": 14534,
+      "git_blob": "2bd553232216877d16f6aa665be060e5fe850d6e",
+      "sha256": "2f5514f91ba10b88d0703802eca3b459e82e0d639533d3b178f56a00fd7367cd"
+    },
+    {
+      "path": "research/nine/ALIGNED_HIGH_S_ROOT_BOUNDARY_DIAMOND_AND_INNER_FAN_EXCLUSION.md",
+      "bytes": 24015,
+      "git_blob": "b77abae75c6eec81cea3b740b80f18da8dd74316",
+      "sha256": "1a24db5b769f320bc330169bde52ab3e3fde0e08bfdcf7e5cf431317d6ee272c"
+    },
+    {
+      "path": "research/nine/ALIGNED_LOW_S_ROOT_INNER_FAN_COMPLETE_EXCLUSION.md",
+      "bytes": 19294,
+      "git_blob": "9d65223f19bdb42dc58fd89544ee480b7a57494f",
+      "sha256": "39fe3c706c5d86881f1a1f6d262500d470db402ee55aa9f4d8eaee5b7130b5ff"
+    },
+    {
+      "path": "research/nine/ALIGNED_RADIAL_C_GENUINE_S_HOUSE_OWNED_AD_UPPER_MEAN_INTERVAL_EXCLUSION.md",
+      "bytes": 17937,
+      "git_blob": "3a925464bdac8649829341475908ac84723ce15c",
+      "sha256": "80bf0a971d264ccaeacbcf27facd819ebe0feb803d3b7ccbd42cb314d7364cc1"
+    },
+    {
+      "path": "research/nine/ALIGNED_S_ROOF_PARALLEL_WEST_SINGLETON_INTERFACE_EXCLUSION.md",
+      "bytes": 16389,
+      "git_blob": "c2fd6d68a6a02ec48cef8a9d490bd35af7189814",
+      "sha256": "33b692df5df680beea10f46bfba05e3f0cb581f7176e2dfb64dc356037381eda"
+    },
+    {
+      "path": "research/nine/ALIGNED_S_ROOF_SHARED_HUB_AND_COMPLETE_CRITICAL_RADIUS_EXCLUSION.md",
+      "bytes": 16535,
+      "git_blob": "bb5cbe3a262a93435a7ebb0619ed8842b921e7b6",
+      "sha256": "72dcf8e9c9e87a2d40b844151d625bf505f0d3fd534f8f7aab9c49e272f14751"
+    },
+    {
+      "path": "research/nine/ALIGNED_S_ROOF_STRICT_VERTEX_SINGLETON_INTERFACE_EXCLUSION.md",
+      "bytes": 27937,
+      "git_blob": "1b82214f80a7e95c739a28bd2fbf45f1866b1906",
+      "sha256": "d288c039a43aaa75c7b02aa89682e1e953cb5833b40b561b3fcf63dab42d4223"
+    },
+    {
+      "path": "research/nine/ALIGNED_S_ROOT_FOUR_FORCE_FAN_SHARED_HUB_INTERFACE_EXCLUSION.md",
+      "bytes": 19336,
+      "git_blob": "dc0b7e849b3b41c3c7a8d30119aee261a2fea893",
+      "sha256": "51182b8fb39656f1f2522b145fd9059d85e4c1d62d962923099e8e44059ffe03"
+    },
+    {
+      "path": "research/nine/ALIGNED_S_ROOT_SHALLOW_BOUNDARY_PAGE_EMPTY_CENTER_GAP.md",
+      "bytes": 20709,
+      "git_blob": "102643d3c8dbc3dbb32446771df1abc10d38cf33",
+      "sha256": "5681926e8705af07ab4cde28d16e859c42ed8bab71f69e01641844efab47ae0a"
+    },
+    {
+      "path": "research/nine/ALIGNED_VERTEX_ROOT_RETURN_UNIFORM_HEIGHT_BOUND.md",
+      "bytes": 12384,
+      "git_blob": "49cbcf39f40aba59de3249229324a62e95b33e93",
+      "sha256": "f7ec694f0f617d772db2d3173d93560690bf3532373aea4a3df47d42d6595b9d"
+    },
+    {
+      "path": "research/nine/ALL_ACUTE_RETURN_FRAMES_LARGE_COORDINATE_INTERIOR_AND_TERMINAL_TILT_REDUCTION.md",
+      "bytes": 16183,
+      "git_blob": "ba95b5bad7be0f914e8bcae67e16c82bea21a71e",
+      "sha256": "533c90b4120cb08c9b73257eed5483d53569e2177be145807bb695d1d2923b1c"
+    },
+    {
+      "path": "research/nine/BALANCED_BOUNDARY_FAR_PAIR_AND_OPPOSITE_PORT_ORIGIN_STRIP.md",
+      "bytes": 15801,
+      "git_blob": "8e5106616d131147ba19376ea313111202a8b039",
+      "sha256": "72a915beaee37b435d993c6e77bd9833d717479b7b07ac014783d764cffa8605"
+    },
+    {
+      "path": "research/nine/BOUNDARY_CORNER_RETURN_AND_RADIAL_SIDE_TWO_PORT_DIAMETER_EXCLUSION.md",
+      "bytes": 8110,
+      "git_blob": "1f91f3ddae9be88a51733bf769a9d9a862d24ed8",
+      "sha256": "40b4d692d48b172bca4320a9da98a34239007a61ebcff1fa7811291548086974"
+    },
+    {
+      "path": "research/nine/BOUNDARY_PAIR_OWNED_SIDE_TANGENT_MONOTONICITY.md",
+      "bytes": 9179,
+      "git_blob": "d810f7ed87af784ddc501f7ec94c2fd07261519a",
+      "sha256": "e780594b818d44ceceb26c93aae229c243b736a328f289fdef474f0d08e6db4d"
+    },
+    {
+      "path": "research/nine/BOUNDARY_SUPPORT_POINT_HALF_PLANE_MOMENT_MONOTONICITY.md",
+      "bytes": 11558,
+      "git_blob": "38c01e797f75743e959bc8a6dd5b2ef1e0057a1f",
+      "sha256": "c1694bb4265871e2f2c499e16a2e7ac01173b436966558a90e245e79856fbe9b"
+    },
+    {
+      "path": "research/nine/BOUNDARY_TERMINAL_CENTER_LOW_PORT_ARC_ANGLE_BOUND.md",
+      "bytes": 5279,
+      "git_blob": "37aca51af92f06c3b16863b1ebd5114912747072",
+      "sha256": "d94502aed4091098a1fa23801284a734f9f42989f130a5f0d9b0f464bb7497e6"
+    },
+    {
+      "path": "research/nine/BOUNDARY_UNIT_CENTERED_RADIUS_FIVE_QUARTERS_ARC.md",
+      "bytes": 8281,
+      "git_blob": "bcd87a2622e696574207a45940cf2cd9689263e7",
+      "sha256": "a431e5073be53ccc82dfc0e9924ca55db2cd51f53cbef1dad52fd90d890116e1"
+    },
+    {
+      "path": "research/nine/BOUNDARY_UNIT_UPPER_SUPPORT_WITH_INNER_RIGHT_PORT_HEIGHT_BOUND.md",
+      "bytes": 7766,
+      "git_blob": "edda9818d07cec842c8a1e0df1a5bd6f1dad3a0b",
+      "sha256": "450a64e84fe1b55a8102eee744757b8d8d47d8c04339c8b62d812b54487bd1eb"
+    },
+    {
+      "path": "research/nine/BROADER_CENTERED_ARCS_AND_TWO_FULL_STAR_REDUCTIONS_CHECKPOINT_2026_10_28.json",
+      "bytes": 244177,
+      "git_blob": "f5338cac14577b6bcde3daa87130e1b99b305409",
+      "sha256": "856b4df0f8de66e29c95c017b10e535ee39a450af3fa1b57bbf423f9ccf8939c"
+    },
+    {
+      "path": "research/nine/CHAIN_ENDPOINTS_COMMON_AXES_AND_LOW_HOUSE_UNIFORM_FEATURES_CHECKPOINT_2026_10_28.json",
+      "bytes": 616913,
+      "git_blob": "a7c3218ba2397e10de17f11047a98f6d6d9f3066",
+      "sha256": "172833b393fdccd4ddbce4cf5a1b2d6627202afc37aa7729e932053460602c95"
+    },
+    {
+      "path": "research/nine/CHANNEL_ALIGNED_GENUINE_S_HOUSE_AD_EAST_AT_SOUTH_COMPLETE_EXCLUSION.md",
+      "bytes": 17545,
+      "git_blob": "6cddc027ad68d3b8f18ac4554eb7ca2fbd400adb",
+      "sha256": "f67e0c711f81c78702a1675abd085f630940475ec67672107c6a79bfeaa6e80e"
+    },
+    {
+      "path": "research/nine/CHANNEL_ALIGNED_GENUINE_S_HOUSE_AD_EAST_COMPLETE_EXCLUSION.md",
+      "bytes": 17730,
+      "git_blob": "f835f7ccc3197359ca4dabe5e2a856e0e42e1ece",
+      "sha256": "8373613dadea5af6758bc517fd7f323f5c3f6960d66c5471f57fa692163385ba"
+    },
+    {
+      "path": "research/nine/CHANNEL_ALIGNED_GENUINE_S_HOUSE_COMPLETE_EXCLUSION.md",
+      "bytes": 15395,
+      "git_blob": "6dd3c533f6e2b4526ecd022333423ae715a0fd09",
+      "sha256": "ba458508b344185f734b5748a841cee3dee950bd1a95edbffd08fcd7f29bd17b"
+    },
+    {
+      "path": "research/nine/CHANNEL_ALIGNED_GENUINE_S_HOUSE_NONPARALLEL_C_ALIGNED_D_COMPLETE_EXCLUSION.md",
+      "bytes": 15524,
+      "git_blob": "8662f110d874876c3eeee0dcb23e383620f2902f",
+      "sha256": "c57a3f83436fe0914f1167f855612338d6cf47147c0cca1745ecfa2d2a878711"
+    },
+    {
+      "path": "research/nine/CHANNEL_ALIGNED_GENUINE_S_HOUSE_PARALLEL_C_COMPLETE_EXCLUSION.md",
+      "bytes": 15577,
+      "git_blob": "ea6283c59173a690e8bb629831a60e115a7f1dfe",
+      "sha256": "27626f0749d70ae593e6b1f3f295892403be615f29c9ca3542609aeaa2cb3c02"
+    },
+    {
+      "path": "research/nine/CHANNEL_ALIGNED_GENUINE_S_HOUSE_ROOT_FORCES_ALIGNED_C_AND_UPPER_LEFT_LEAF.md",
+      "bytes": 12751,
+      "git_blob": "d8de5de1ab2cfc5ce0de64e792ac92c48e12b7a6",
+      "sha256": "b2fbc91d89592e04838d0d88f3fe6866f73eea5e140b84d7ee800151099f87b0"
+    },
+    {
+      "path": "research/nine/CLOSED_BOUNDARY_SIDE_ADJACENT_TIP_OWNED_RETURN_NEAR_ORIGIN.md",
+      "bytes": 39385,
+      "git_blob": "fd42fdb279e68527ebc4aa7aac2d0f71b5a06a95",
+      "sha256": "5244546aacf0d40546ff4661a9f23e160a950c8a35b12f2733b432df794d5bbe"
+    },
+    {
+      "path": "research/nine/COINCIDENT_TRIANGLE_BOUNDARY_RETURN_DIAGONAL_BIAS_SELECTION.md",
+      "bytes": 14004,
+      "git_blob": "403374d71a60c0eeaa054d0a8c65ab7e1fa0dae1",
+      "sha256": "ba1f280d0f833aef26511b06895a2847dacbb4a348dc56adbacac2b871c3563d"
+    },
+    {
+      "path": "research/nine/COMMON_HUB_AXIS_TRANSMITTER_ENDPOINT_POCKETS_AND_D02_L0135_COMPLETE_FEATURE.md",
+      "bytes": 31467,
+      "git_blob": "172a616bbcd2722bf9f6a1f9a920df079b605abd",
+      "sha256": "16c4e31820c1bf6bd1f877d97859b4eda5aca60d37947cd28136571727617d9a"
+    },
+    {
+      "path": "research/nine/COMMON_HUB_AXIS_UNLOADED_TRANSMITTER_FORWARD_WIDTH_AND_D02_LOW_LOAD_FEATURES.md",
+      "bytes": 17896,
+      "git_blob": "aa5f7036b92d4c30d777d1a513e671310ae0d35e",
+      "sha256": "0dc10eb8bab23c9866b71ba25b9c6c280e9439f7c5407e69d386732cc1365538"
+    },
+    {
+      "path": "research/nine/COMMON_W_SIDE_HUB_NEAR_ORIGIN_CHAIN_POCKET_AND_BOTH_FOUR_LOAD_FEATURES.md",
+      "bytes": 54459,
+      "git_blob": "60cb612a979fc3485376bd250b60938a7de18079",
+      "sha256": "1949007faaf470520f3eef582ff122246e31e020eea8b3793353bb1c706e993d"
+    },
+    {
+      "path": "research/nine/COMPLETE_H4_FOUR_LOAD_AND_UNIFORM_NEAR_HUB_CHECKPOINT_2026_10_28.json",
+      "bytes": 303231,
+      "git_blob": "6bfd104737b0c0445d43ae0f2548b407b510badd",
+      "sha256": "511968c416e57036e60f63e9bbc5adb2402f8d2f476ab153842042ce0ca760d2"
+    },
+    {
+      "path": "research/nine/COMPLETE_OPEN_ORIGIN_FAN_WEAK_RETURN_GRAPH_AND_HOUSE_GAP_CHECKPOINT_2026_10_28.json",
+      "bytes": 279453,
+      "git_blob": "3740f7e3c39c11c5e552f2d517112ac0d21f21a0",
+      "sha256": "6d723fa7706d2a296935b71cadff614a0d3c20641d35de665e0207bfb7f220eb"
+    },
+    {
+      "path": "research/nine/COMPLETE_ORIGINAL_ENDPOINT_FAN_CHANNEL_ALIGNED_HOUSE_AND_NEAR_RETURN_HAND_CHECKPOINT_2026_10_29.json",
+      "bytes": 338777,
+      "git_blob": "7d9608dda00a78c0b660de0359b953c5551cc59b",
+      "sha256": "2e60dc3632a72bf3b0a0b7d8c4a4cbfc719f434bfaf5aa6b9a04901b663cf532"
+    },
+    {
+      "path": "research/nine/COMPLETE_ORIGINAL_HOUSE_ROOF_AND_RADIUS_FREE_TOOLS_CHECKPOINT_2026_10_28.json",
+      "bytes": 269505,
+      "git_blob": "34ab75d96680a32a0cf8dbe40e67b843d38f3b0e",
+      "sha256": "6dd8bff2d540472bdbc5a727aa03850b8dbe24476be8a030d6202df37ee41627"
+    },
+    {
+      "path": "research/nine/COMPLETE_ORIGINAL_INNER_FAN_AND_ACTUAL_RETURN_BARRIERS_CHECKPOINT_2026_10_28.json",
+      "bytes": 507187,
+      "git_blob": "79d4428656953740a24a22d6c98a84328afbc1f7",
+      "sha256": "b86f581e009592bd73388d5977a6de80147ad00b31baad815ba371585ad30b41"
+    },
+    {
+      "path": "research/nine/COMPLETE_ORIGINAL_INNER_FAN_AND_FOUR_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+      "bytes": 267463,
+      "git_blob": "4598857f763c9d238c36aa95b05cba7eb527966d",
+      "sha256": "8833b867665b055e7e31f8ca95849a39fc68da399c50f21cd82ac0ad64c48bf2"
+    },
+    {
+      "path": "research/nine/COMPLETE_ORIGINAL_INNER_PENTAGON_AND_UNIT_EDGE_PROJECTIONS_CHECKPOINT_2026_10_28.json",
+      "bytes": 537289,
+      "git_blob": "a7a357619955a2db3eb9332c15aa57f094459d60",
+      "sha256": "f53710fadd1ecdef483de49eef3e18d4f81e26d3a87b07d4cda584408abd497b"
+    },
+    {
+      "path": "research/nine/COMPLETE_ROOF_INTERFACES_AND_BOUNDARY_FREE_STAR_CHECKPOINT_2026_10_28.json",
+      "bytes": 256596,
+      "git_blob": "3298279640021ea4e3d93291068f02d0e97a90f3",
+      "sha256": "35fadf95512b3973ba3ce4ec3b06432a2e473b4553fe064c4ecc64525cba196b"
+    },
+    {
+      "path": "research/nine/COMPLETE_ROOF_PARENT_AND_UNIFORM_FULL_STAR_CHECKPOINT_2026_10_28.json",
+      "bytes": 540205,
+      "git_blob": "dd4f111dfdf24b7c6d055f86bbeac188bf5d28f0",
+      "sha256": "fb76abae2576391129266edad8604725b1d1335dbe7ff5f85d65089f21acad7f"
+    },
+    {
+      "path": "research/nine/COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_CHECKPOINT_2026_10_29.json",
+      "bytes": 254896,
+      "git_blob": "33f736edc7d8757f3254bf1c29028521115958ed",
+      "sha256": "a16c6fe2537045a172f9f8af8aab67fab37709af6bf7b9c2f5094bb894bd5b2e"
+    },
+    {
+      "path": "research/nine/COMPLETE_TWO_CIRCLE_TIP_AND_MIXED_ENDPOINT_POCKETS_CHECKPOINT_2026_10_28.json",
+      "bytes": 49480,
+      "git_blob": "0cf66dd71993f66588a934f5f2550577d4d75202",
+      "sha256": "c1afda10224a4fe5c9ac8c42bec4d36951a67dc2fad834bc3661151aaf5dfece"
+    },
+    {
+      "path": "research/nine/CONTINUOUS_EQUAL_ROOF_CERTIFICATE_RETIREMENT_AND_THREE_TENTHS_POCKETS_CHECKPOINT_2026_10_28.json",
+      "bytes": 32702,
+      "git_blob": "2ab4cdcd5f202ff17064992c5d67e2d5fdc673c6",
+      "sha256": "2bd57f683df67be29dc1f3910d6818fab9f58c586ee3eb380441cf1ffb8e2c95"
+    },
+    {
+      "path": "research/nine/CONTINUOUS_RETURN_RETIREMENT_AND_H4_UNIFORM_ENDS_CHECKPOINT_2026_10_28.json",
+      "bytes": 62862,
+      "git_blob": "cb99f1b7e3807592b6a26474504cbd36a22fd83a",
+      "sha256": "4ce21f3e67b20f089d674a53a4f0483180694f3087a9568238db6a7a6d6df433"
+    },
+    {
+      "path": "research/nine/CONTINUOUS_SMALL_CENTER_THREE_NEIGHBOR_RADIUS_OBSTRUCTION.md",
+      "bytes": 11954,
+      "git_blob": "24b2c60d8f0f0fda13247e4847745b687fa08115",
+      "sha256": "5dc6820cdc19844cbf6472d8913bbef83a43397bc6324e3b1e46427b4c13b63c"
+    },
+    {
+      "path": "research/nine/CORRELATED_UNIQUE_TIP_EXIT_AND_TERMINAL_CENTER_POCKET_CAPACITY.md",
+      "bytes": 21747,
+      "git_blob": "6a7788e28452c2a13342af675bf2b4098c424538",
+      "sha256": "dcb45c83d3a61478042fd2dee93634a3558fb358d48b76205523fd5d92982d7a"
+    },
+    {
+      "path": "research/nine/CRITICAL_ARC_SUPPORT_CAP_AND_PARALLEL_RETURN_CHECKPOINT_2026_10_28.json",
+      "bytes": 17200,
+      "git_blob": "066cb85190819c64ecc7e266e54133b407e41ddb",
+      "sha256": "ae6c238389c811ddf687df0af98a6d7d89029c049cd31a97f8ae2f68a778e3bf"
+    },
+    {
+      "path": "research/nine/CRITICAL_FAN_CHANNEL_REDUCTIONS_AND_S123_HAND_REPLACEMENT_CHECKPOINT_2026_10_28.json",
+      "bytes": 286809,
+      "git_blob": "62df4bf482cc4e067b854b50ad1fe278a5bc27ad",
+      "sha256": "f53b7421bdccfe24b188700d6d14a7f130e08c035eede508a8f51c8e19649eed"
+    },
+    {
+      "path": "research/nine/CRITICAL_NEAR_HUB_CENTRAL_OCCUPANCY_AND_D02_TWO_SUPPORT_STRIPS.md",
+      "bytes": 20254,
+      "git_blob": "1ef8b2bb118a8e2a7e79502e347c51752d8b3062",
+      "sha256": "46810a719f06c5153f1340f5fbc846427a1c1d5d2e50fb69dac9f1e067806e41"
+    },
+    {
+      "path": "research/nine/D02_BOTH_FOUR_LOADS_COMPLETE_HUB_AXIS_OWNER_COVER_AND_SINGLETON_UW_REDUCTION.md",
+      "bytes": 30541,
+      "git_blob": "c84b3839ddbdc8e554afad06eb3044f5938df698",
+      "sha256": "6adc65ae0b17f4c80b8d6ffd657af4758eedb787300a8683f3ac38e6612d5130"
+    },
+    {
+      "path": "research/nine/D02_ENTIRE_TWO_CIRCLE_TIP_EXCLUSION_AND_EXACT_UNIQUE_TIP_RESIDUAL.md",
+      "bytes": 9850,
+      "git_blob": "07f053667ed0dde0b7541c889cedcec4720162f4",
+      "sha256": "8aba649f47a66527beff0a0a12db6fdcb7f8782b54f734baf190d8b8523732b8"
+    },
+    {
+      "path": "research/nine/D02_FIVE_LOAD_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "bytes": 13998,
+      "git_blob": "e20e377701f4489578933a84623c52d215d21860",
+      "sha256": "2603c02c0ba28e278ee7b1867930d6d41713a118f9bed85fb6d9a861d7d798bf"
+    },
+    {
+      "path": "research/nine/D02_FOUR_LOADS_PERPENDICULAR_TRIANGLE_HUB_AXES_COMPLETE_FEATURE_EXCLUSION.md",
+      "bytes": 26927,
+      "git_blob": "50b143c7278d57b7c0014f55f675297b3c7769f2",
+      "sha256": "f440277901fad66f0de80a1ee69941fca60215c018c24aa701576d17c6353e2d"
+    },
+    {
+      "path": "research/nine/D02_FOUR_LOADS_SINGLETON_SOLE_TERMINAL_AXIS_COMPLETE_FEATURE_EXCLUSION.md",
+      "bytes": 35914,
+      "git_blob": "723ad5f9ac0b33b5928b53c78437711f9b24d471",
+      "sha256": "bc22fc0ed74945f9d5e8552609e370c3e356ab91c38126b9f6bc93655c163a80"
+    },
+    {
+      "path": "research/nine/D02_L0134_AND_L0135_COMPLETE_ORIGINAL_DOMAIN_CLOSURE.md",
+      "bytes": 18204,
+      "git_blob": "6cef1028a90275ea004dc4e14a0418e65492e7fd",
+      "sha256": "ab6e26886fa3b96dd5b2f2fb0cb3d876eb4402ae9016b7fe148908df3e919c1f"
+    },
+    {
+      "path": "research/nine/D02_L0134_AND_L0135_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "bytes": 16831,
+      "git_blob": "efbfa898c3a680b4198c86aa32493f25b8e13e83",
+      "sha256": "1798a7bbfdd49528b3d739462a25c0f21afde3a606a01b1b317d8aee452d6038"
+    },
+    {
+      "path": "research/nine/DISTINCT_W_SIDE_CHAIN_ENDPOINT_CAPACITY_AND_BOTH_FOUR_LOAD_FEATURES.md",
+      "bytes": 32449,
+      "git_blob": "1cdffc413cf895ac7accd44fca7595379ee38e5b",
+      "sha256": "686e8a699ea51b9d6a7df86a84d8e553e25a0bd5053e2f74a279314b070b02a3"
+    },
+    {
+      "path": "research/nine/ENDPOINT_FAN_GENUINE_S_LEAF_COMPLETE_ALIGNED_ROOT_ASSEMBLY.md",
+      "bytes": 14463,
+      "git_blob": "b73f3182f60894ae36a3de6c12f444f62d2a6a21",
+      "sha256": "da31a61469026b224fe58321d4929e0e673addb0f915fef3136701542875616f"
+    },
+    {
+      "path": "research/nine/ENDPOINT_FAN_GENUINE_S_LEAF_COMPLETE_CRITICAL_RADIUS_EXCLUSION.md",
+      "bytes": 18565,
+      "git_blob": "52c0f48d0920d161a9b4fe21abe70f83ecdfe086",
+      "sha256": "05adecc7cbdecfa8f3ec454edf76e5ec5a838e1694b577c53be12b0cf3b980f3"
+    },
+    {
+      "path": "research/nine/ENDPOINT_FAN_GENUINE_S_LEAF_COMPLETE_EXCLUSION.md",
+      "bytes": 17108,
+      "git_blob": "e29e348a5ae5099ffe2cd7b3fa114d3d6fabcb39",
+      "sha256": "1ab5d6a2ba9f21e9a3c13e74814c7a8dae2ad08b921f2caa30af426c26ca5a42"
+    },
+    {
+      "path": "research/nine/ENDPOINT_FAN_GENUINE_S_LEAF_COMPLETE_OPEN_ORIGIN_ASSEMBLY.md",
+      "bytes": 17250,
+      "git_blob": "ef5c1d318d17d36a330646e2fa4a80329c90c760",
+      "sha256": "bf7926ab2f5a4cae91e6dc9153004abd176f2593eab5c4942819c6a83b30f934"
+    },
+    {
+      "path": "research/nine/EQUAL_CIRCLE_HEIGHT_COMPARISON_AND_PERPENDICULAR_ADJACENT_TIP_NEAR_ORIGIN.md",
+      "bytes": 30228,
+      "git_blob": "f4f04d8479abc5ab85e0b155c2d123347c9dd0dc",
+      "sha256": "66ac183e666a008390f27c650b5d4107d7ac920eb9b8a94049d8da727053abcf"
+    },
+    {
+      "path": "research/nine/EXACT_RESTORATION_UNIFORM_GEOMETRY_CHECKPOINT_2026_10_28.json",
+      "bytes": 253660,
+      "git_blob": "653bb24e58c917727962c7265a52a0f5865ad418",
+      "sha256": "258ab6b83cc8efcc5e10a987db31837838cd9541707cc1b778aa30cfd8496c1d"
+    },
+    {
+      "path": "research/nine/FAN_ENDPOINT_COMPLETE_ORIGINAL_ROOTED_FAMILY_ASSEMBLY.md",
+      "bytes": 10159,
+      "git_blob": "365ab56be57b45a3d52ac0603c8d59937ef5826b",
+      "sha256": "355d962c3d830d5f688101a8aa6125a57cb05daae7d9d65b2b553d142ad11e69"
+    },
+    {
+      "path": "research/nine/FAR_BOUNDARY_CENTER_PAIR_ALL_CONTACT_PORTS_STRADDLE_ORIGIN.md",
+      "bytes": 10270,
+      "git_blob": "34ee707c1a7d856a2001de8c077f6725043ef351",
+      "sha256": "73aac9b69b62aabaf94971abf97a1b2903cf3a0fed1cab9e8fc380fbf96678ee"
+    },
+    {
+      "path": "research/nine/FIVE_SIXTHS_CENTER_UNIT_CENTERED_NINE_EIGHTHS_ARC.md",
+      "bytes": 8827,
+      "git_blob": "ca44a0eae03eb0a6726e7445b2846c25f0d037d9",
+      "sha256": "261dec786c74ecd8eddf3daaff7a627f703ef1b4f7c06c773f5e9d98d373022b"
+    },
+    {
+      "path": "research/nine/FORWARD_UNIT_WIDTH_CHAIN_BARRIER_AND_SINGLE_HUB_AXIS_TRUE_TWO_NEIGHBOR_EXCLUSION.md",
+      "bytes": 20226,
+      "git_blob": "4437a87656024364ed7dfa81a88f6bb999fa6c1b",
+      "sha256": "d13597d0a24df7c0ee2ac38ae1c5e893d088717b0f5705bad7e14481ac6caf4a"
+    },
+    {
+      "path": "research/nine/FOUR_BOUNDARY_PATH_OWNED_ENDPOINT_TANGENT_SIGN_OBSTRUCTION.md",
+      "bytes": 10381,
+      "git_blob": "43ffa98a61a5cfc3bd4bbb95bb20b9820a02d806",
+      "sha256": "5e8cba82367da03c15710cd6060c3a009323413465a78acaf965f4b07ff29536"
+    },
+    {
+      "path": "research/nine/FOUR_FORCE_FAN_INCOMING_SIDE_RADIUS_BOUND_EXCLUSION.md",
+      "bytes": 11237,
+      "git_blob": "bf77ef2d831a3a942dd8f0bab0851ea095d9bef5",
+      "sha256": "4367a648c322df3da5a5ab2137b26e94bfa45a04a032b8f3ab65f182cd431523"
+    },
+    {
+      "path": "research/nine/FREE_BOUNDARY_VERTEX_ADJACENT_HUB_PORTS_ALL_RETURN_NEAR_ORIGIN.md",
+      "bytes": 35739,
+      "git_blob": "c6b36c0693d2dedca01b11fb45b8f205c2b9f115",
+      "sha256": "e5515892f7b1f12ef6884c293eb668069ef1b7dd32582ca996eea00471e4188f"
+    },
+    {
+      "path": "research/nine/FREE_INCOMING_RADIAL_HUB_NEAR_ORIGIN_CHAIN_CAPACITY_AND_FOUR_LOAD_EXCLUSION.md",
+      "bytes": 50547,
+      "git_blob": "edecbb1c2ab972dda0b402c24c7411fcbb4ae253",
+      "sha256": "c1c64776d0f6b88950fa010feaac374503c333a6c8b579dc90dbe7995ef8ea07"
+    },
+    {
+      "path": "research/nine/FULL_LOADED_STAR_TWO_DIRECTION_AGGREGATION_AND_PROPER_CONCURRENCE.md",
+      "bytes": 17311,
+      "git_blob": "16b69316cc70d35faaf23b75ad20b0aeaf2c57ca",
+      "sha256": "da53589e53d4bb702f2ffc7c6ff5c12efd7e3f22fd74adaf70dc4241fbe0e74a"
+    },
+    {
+      "path": "research/nine/GENERAL_SINGLE_HUB_BOUNDARY_PATH_POCKET_THREE_TENTHS_CLEARANCE.md",
+      "bytes": 11561,
+      "git_blob": "2bbf996366c4c04ae4cee529aeaf01b16a1b89c7",
+      "sha256": "e9da91e0b483823838208e9dcca2798afdadbff6451c7c785a6b64599e8a1326"
+    },
+    {
+      "path": "research/nine/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "bytes": 13651,
+      "git_blob": "f1e09cf1f62a2bb6305bd2c20e7d49be2fffc0ae",
+      "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2"
+    },
+    {
+      "path": "research/nine/GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+      "bytes": 15961,
+      "git_blob": "69eb2e51f2a8fe607dbac1d58ae6be85fbb6eaa2",
+      "sha256": "4f8da84dcc3f1fa9b8f5e231486751b134b3438905e8271f6f3484a3f10d275a"
+    },
+    {
+      "path": "research/nine/HIGH_ALIGNED_ENDPOINT_FAN_PARALLEL_WEST_SINGLETON_INTERFACE_EXCLUSION.md",
+      "bytes": 19464,
+      "git_blob": "c12f05b8e28ca075395b4b62a4582abf773255f1",
+      "sha256": "8b0ec4322ba9b5f2e521bc843bddad41a93723017084f10504683ab0b507e9ce"
+    },
+    {
+      "path": "research/nine/HIGH_ALIGNED_ENDPOINT_FAN_STRICT_VERTEX_SINGLETON_INTERFACE_EXCLUSION.md",
+      "bytes": 30253,
+      "git_blob": "6255d61b55ff0b9093f9d0ab3b52ad4abe20e641",
+      "sha256": "72231a31e807b5a482d3fa4af92efd28b3d1e83248a67a284bf0c44c9f32c27b"
+    },
+    {
+      "path": "research/nine/HIGH_ALIGNED_HOUSE_TCB_NORTHWEST_ROOT_NORTH_PAGE_COMPLETE_EXCLUSION.md",
+      "bytes": 22108,
+      "git_blob": "dd1b9915484ac164adf69ef72527db4751a56fbb",
+      "sha256": "f0f6ccba99b1c4117e69e18aa72cb9913fab1c947489e3de87f155693a1e27ca"
+    },
+    {
+      "path": "research/nine/HIGH_ALIGNED_HOUSE_TCB_PARALLEL_D_COMPLETE_CONTACT_COVER_EXCLUSION.md",
+      "bytes": 14766,
+      "git_blob": "6324e17b0ab16200fe703370fc8f8144e39fdd54",
+      "sha256": "379a05409c3f15b595da095b0500f793a78684dca52aa2aa299c4928aadbfe24"
+    },
+    {
+      "path": "research/nine/HIGH_ALIGNED_HOUSE_TCB_PARALLEL_D_WEST_ROOT_CONTACT_EXCLUSION.md",
+      "bytes": 18225,
+      "git_blob": "85c7f09655371056ab455f28cf13f7945773eabf",
+      "sha256": "e2d7282b9a9b94bda7a18ff453954b296937ba7736f5dd3e8e5941734913aaeb"
+    },
+    {
+      "path": "research/nine/HIGH_ALIGNED_HOUSE_TCB_WEST_ROOT_CONTACT_COMPLETE_EXCLUSION.md",
+      "bytes": 23244,
+      "git_blob": "620284b12f24cb28088b50d917ce22c6118db746",
+      "sha256": "1a1207e5d0d3396cc03cc10ca65bdf921adc174b2ed9a8bb1307182b964151c5"
+    },
+    {
+      "path": "research/nine/HIGH_ALIGNED_S_ROOT_UPPER_BOUNDARY_PAGE_EMPTY_CENTER_GAP.md",
+      "bytes": 13829,
+      "git_blob": "23e22f8f5efcf9fe0a5739d4eb7bcca7f0619378",
+      "sha256": "be3da93064ebbd6d364e4cda0f431cb5f4a933198d8ef3f561ed82adf05bcff8"
+    },
+    {
+      "path": "research/nine/HIGH_NONOPEN_TILTED_ENDPOINT_FAN_HUB_OWNED_SINGLETON_INTERFACE_EXCLUSION.md",
+      "bytes": 18019,
+      "git_blob": "c512331cb0ff40104091ce6c600d06d7d259b989",
+      "sha256": "eacfa6e612491adafe4399f5819aeeccfb8317bf9b6e101399857aaabb2afbd5"
+    },
+    {
+      "path": "research/nine/HIGH_NONOPEN_TILTED_ENDPOINT_FAN_ROOT_OWNED_SINGLETON_INTERFACE_EXCLUSION.md",
+      "bytes": 18848,
+      "git_blob": "4313da9cc8e7a57b37993b911cc98c73bb45f2b9",
+      "sha256": "c052cab3395f93e03f33afd2a0fdd0f0effdfe3f148873ee309dc808df2af7a5"
+    },
+    {
+      "path": "research/nine/HIGH_NONOPEN_TILTED_ENDPOINT_FAN_SHARED_HUB_INTERFACE_EXCLUSION.md",
+      "bytes": 13738,
+      "git_blob": "5b8ad4ac0968844d02b4e5ecf2571959111de0df",
+      "sha256": "9b0ac32ff818cda29547d521256ce35bdb88f3cd57dca08395fccb99ea294dbc"
+    },
+    {
+      "path": "research/nine/HIGH_NORTH_INCOMING_UNIQUE_BOUNDARY_COMPLETE_NEAR_RETURN_HAND_EXCLUSION.md",
+      "bytes": 11923,
+      "git_blob": "015ddb23e10012cd910ff1a51f5c24897bce4f62",
+      "sha256": "ba55f1ddb18cb9d170c13a3efa6d5d734fe16a3092c13235653efb7b1058445f"
+    },
+    {
+      "path": "research/nine/HIGH_NORTH_INCOMING_UNIQUE_BOUNDARY_NEAR_RETURN_UNIFORM_SLOPE.md",
+      "bytes": 9719,
+      "git_blob": "c26c4ce1f6d8ecb121302c42efcfdd9b8f62f06f",
+      "sha256": "8c10695486945dee271aace4151e4983ee6119b6e084dfc89c433ca93122c1a0"
+    },
+    {
+      "path": "research/nine/HIGH_SQUARE_CHORD_BARRIER_WITH_EXACT_LOW_PORT_CAP.md",
+      "bytes": 8180,
+      "git_blob": "56fd52416278692ce9e447de9759393e1cd25751",
+      "sha256": "4e04f9fd6e9b3bae2206333817744ae0f3e624819eb6ffd125929b973782b18e"
+    },
+    {
+      "path": "research/nine/HIGH_SQUARE_CHORD_BARRIER_WITH_LOWER_ROUTE_LENGTH.md",
+      "bytes": 4873,
+      "git_blob": "113de84e2c514f7048ce873d3e68d3812376ccca",
+      "sha256": "11e9eb7ba47bb8e8042aed44536046dba6c98f50961e663986935e0ea41cd9a1"
+    },
+    {
+      "path": "research/nine/HIGH_SQUARE_CORNER_AND_LOW_LEFT_PORT_CIRCLE_BARRIER.md",
+      "bytes": 6881,
+      "git_blob": "df3cee44a5af43e44d8bcca4ab80e0547633ed4e",
+      "sha256": "f69af5d923356a063c25b108586b9a1905acfa924d244cd25622bcc0273d4176"
+    },
+    {
+      "path": "research/nine/HIGH_SQUARE_LOW_LEFT_PORT_BARRIER_WITH_SIGNED_SMALL_SUPPORT.md",
+      "bytes": 6516,
+      "git_blob": "e776392a70481bf60cad4835e82245082b826b8f",
+      "sha256": "e2463dea33c2e66b97046c5727562be354e09f3f065e3dc04028e3a79a79dc58"
+    },
+    {
+      "path": "research/nine/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "bytes": 17930,
+      "git_blob": "4625dfa796aa6a8eb1166efd326b55f0b87afda1",
+      "sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143"
+    },
+    {
+      "path": "research/nine/HOUSE_ROOF_ABC_S_COMPLETE_ORIGINAL_FAMILY_JOIN.md",
+      "bytes": 21441,
+      "git_blob": "afc1d8fe526ee061ee2f69f489f6dbe23ab89e98",
+      "sha256": "b3cb3ef2fac08fa563f2056dbafa469e3e6176f4a80207bf4a31a464ef28cdd1"
+    },
+    {
+      "path": "research/nine/HOUSE_ROOF_COMPLETE_ORIGINAL_TEN_FAMILY_PARENT_JOIN.md",
+      "bytes": 21137,
+      "git_blob": "108e23bdcacf6c104ddc5134e84389517a384eda",
+      "sha256": "28782e75962f0677a69bed89fcd4f5bd83808145fddae6b9c11ffcf04cef588a"
+    },
+    {
+      "path": "research/nine/HOUSE_ROOF_GENUINE_LEAF_COMPLETE_ORIGINAL_FAMILY_ASSEMBLY.md",
+      "bytes": 23089,
+      "git_blob": "f542e584fae556a475559175396e4e359ce17735",
+      "sha256": "e75f757eeaad89a2f412eee1f860b19aefe015749dab47bdba8280984f1ac6f9"
+    },
+    {
+      "path": "research/nine/INNER_CIRCLE_CROSSCUT_CAPACITY_AND_D02_L0134_SAME_HUB_AXIS_EXCLUSION.md",
+      "bytes": 31096,
+      "git_blob": "a77e8d0aeb006fdf5291c73d327832a03be7fc66",
+      "sha256": "10414fee2da3e18cd05218b99ccea05c3fe7f7eaf3f0ae47b34010fb868cdc96"
+    },
+    {
+      "path": "research/nine/INNER_FAN_134_S_COMPLETE_ORIGINAL_FAMILY_JOIN.md",
+      "bytes": 24402,
+      "git_blob": "4e26f72bdf7fc7e1baf2d574f2e4db69a0eb01b9",
+      "sha256": "77a00b7365feb01d01b4382f90ffc2f280001e75e56a0f73d19001be564342f1"
+    },
+    {
+      "path": "research/nine/INNER_FAN_COMPLETE_ORIGINAL_LOAD_AND_LEAF_PARENT_JOIN.md",
+      "bytes": 14261,
+      "git_blob": "6d7cc49dd516bfaed1872855bb6ae799b13cefab",
+      "sha256": "20924e794a0f7dc35fe7b71457dde4eeede80552d133e7c68ab89c97f6de0e9a"
+    },
+    {
+      "path": "research/nine/INNER_FAN_GENUINE_LEAF_COMPLETE_ORIGINAL_PARENT_ASSEMBLY.md",
+      "bytes": 9167,
+      "git_blob": "292a29ac826df0e2f5f85a5f1654f2a81c38379e",
+      "sha256": "3b3ed093ff57ef9432e5cc19b08699c999ceef4603d8e8deb1b26b28a65cec96"
+    },
+    {
+      "path": "research/nine/INNER_FAN_GENUINE_S_LEAF_COMPLETE_ORIGINAL_FAMILY_ASSEMBLY.md",
+      "bytes": 11549,
+      "git_blob": "a6f917b630855d8a01b75537f09a8013e43d247d",
+      "sha256": "c5b9b23b0870310ac77136cbffbeca6a3c64fb08660d2a0255c138568b4d8a50"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_ADJACENT_ENDS_ANY_SHARED_INNER_RETURN_EXCLUSION.md",
+      "bytes": 15431,
+      "git_blob": "5db2c1e8f6e316bdf64793d87d4f1d6a689e610b",
+      "sha256": "20225f7fade5c1e4534b8f8efc780cfd8e736efc281af83d51909afa4b2a7004"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_ADJACENT_ENDS_TWO_E_OWNED_OUTER_RETURNS_EXCLUSION.md",
+      "bytes": 13284,
+      "git_blob": "53582db39a12e6af69b33f6cbe973f3cbebf2536",
+      "sha256": "c1ffa54fbc67e5118eb4a6819ce74d6f81a205f11569277cfd3e844316b195ea"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_ADJACENT_EXTERNAL_ENDS_FOUR_CORNER_AND_OUTER_RETURN_CHART.md",
+      "bytes": 13726,
+      "git_blob": "ccc0a1d12555f5c10ed8dde78a5a221a1c218d4e",
+      "sha256": "4d789a72e56cba5b4416f5231cf97fc3145488cfdaec0482ba9fabd808036db3"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_COINCIDENT_FREE_END_SINGLETON_RETURN_COMPLETE_EXCLUSION.md",
+      "bytes": 18095,
+      "git_blob": "007628d6e5a221111744cc846cce05d454267fe6",
+      "sha256": "323c78cf18b3863f5d7f8218da7457c96a69b23dda59b99ebbb5e50ee21be9a1"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_D_OWNED_END_NONAXIS_C_RETURN_EXCLUSION.md",
+      "bytes": 14713,
+      "git_blob": "9454d54af1aabefacd65edf9fd793ff529bfc316",
+      "sha256": "74013228a4c4d762938fa5f7fe72c1c9d447508bbfae14b11c7f9902220bffd0"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_D_OWNED_END_PERPENDICULAR_RETURN_COMPLETE_EXCLUSION.md",
+      "bytes": 19590,
+      "git_blob": "e6bb495a9ad4d745ee3fee03f334b75562df8b9c",
+      "sha256": "d9a723f10d7d36fd4f818c85a9133094519bde38882b24defc4b40d0ced401cc"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_D_OWNED_END_SAME_AXIS_RETURN_COMPLETE_EXCLUSION.md",
+      "bytes": 17377,
+      "git_blob": "b5d8c1e58dab7748f98c92abdac9b077753993f6",
+      "sha256": "1ea45fff7d584312dfd41f004e56f8ca5da805c7c17d6622c39bacad2f77779a"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_D_OWNED_NONAXIS_RETURN_FREE_OPPOSITE_END_EXCLUSION.md",
+      "bytes": 24359,
+      "git_blob": "20b1ad87d77f77033ae0854f7855db17e01cf7fc",
+      "sha256": "98e0507f001d8845873082b32cf55b792e86edc9a1faf4eb2c62ece05db1f3e5"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_D_OWNED_PARALLEL_RETURN_FORCES_OWNED_OPPOSITE_END.md",
+      "bytes": 18266,
+      "git_blob": "5e78f41527637f6e74ee3a692f5f7ad2f2b95733",
+      "sha256": "708f169478c51fdda0ff8d4dff61a0d113bf88ac80c5f6fa3ab9efcaee4d47da"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_D_OWNED_PERPENDICULAR_RETURN_FREE_OPPOSITE_END_EXCLUSION.md",
+      "bytes": 21437,
+      "git_blob": "0326a2e523b92ef3d37f074d8c8dfed36586377a",
+      "sha256": "29313ff2e949204eb7264b35c13738e5c6449ad2ae8e5ac353701999cc65154e"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_FOUR_BOUNDARY_H_OWNED_END_STRICT_NORTHEAST_EXCLUSION.md",
+      "bytes": 15359,
+      "git_blob": "16e6c422037d09e7e5fd32ec7657ec2a6ba42d1b",
+      "sha256": "d35d1d95347becdf45f4381db0f2d7cd16ff8dac92a525ff1979bb3c76e4759f"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_FOUR_SPOKE_D_OWNED_BOUNDARY_RETURN_COMPLETE_INTERFACE_JOIN.md",
+      "bytes": 15806,
+      "git_blob": "52e20bd2f8e471e6a265e4ac6c1265edf94c8c45",
+      "sha256": "a4df2ac2089b14cd50d478db4f41e0ea213127a9735f68277fae064b1774275f"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_FOUR_SPOKE_FOUR_BOUNDARY_COMPLETE_EXCLUSION.md",
+      "bytes": 19116,
+      "git_blob": "069b0df999e077a71942424f71a623c22a880147",
+      "sha256": "330b93ea0f0fd22ed1179b0a54af9ec63974e85d86618749e3bfd85292ad5384"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_FOUR_SPOKE_NO_CHORD_COMPLETE_EXCLUSION.md",
+      "bytes": 11326,
+      "git_blob": "895879e5307731ef038c58d1de77671a7af57e57",
+      "sha256": "b7372fd040308a7f6419859a62a45c9443e039f5792daf69ff2aaac1dc673d22"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_FOUR_SPOKE_PARALLEL_UNLOADED_END_COMPLETE_INTERFACE_EXCLUSION.md",
+      "bytes": 20038,
+      "git_blob": "57a1626b54d3ff0a2b5ad8aa26676f2c619e9124",
+      "sha256": "b8bc5e9ab0f9f17c06966b228fdeeffe2f71f49e3a9b446c76898cb6b39d2dec"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_FOUR_SPOKE_SHARED_BOUNDARY_RETURN_COMPLETE_INTERFACE_EXCLUSION.md",
+      "bytes": 20463,
+      "git_blob": "f796690b3187cdfc328da1d3004e901566878b00",
+      "sha256": "3983425195e3fc2df33a9f9390e812de6e5742f3aa54bcdba46a47b90dc9d7ce"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_FOUR_SPOKE_THREE_LOAD_124_COMPLETE_EXCLUSION.md",
+      "bytes": 28255,
+      "git_blob": "52c14db6edd563656ae5add769659d0b9aeb27d5",
+      "sha256": "58602d4977aacd7b05610319b87037f627327e147d80e637fac4e6dc2ef91c3c"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_FREE_END_SHARED_C_RETURN_COMPLETE_EXCLUSION.md",
+      "bytes": 16433,
+      "git_blob": "a24212940081ea577dbfbbe367220bd8a35d91a3",
+      "sha256": "bfe146ae4ba73a824f01b6b9bf4c34776e3a63923c417a36c6b104da3225991a"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_FREE_END_SHARED_E_RETURN_COMPLETE_EXCLUSION.md",
+      "bytes": 16785,
+      "git_blob": "0acaa2ed81ca458cc2dc3e0b6d37f8e22c55e21c",
+      "sha256": "a8a5174abe4dfec1f597fc7658b5843152f6bfa4b166ea6cd3960d3a1732fac2"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_FREE_HUB_END_FORCES_SHARED_OUTER_RETURN.md",
+      "bytes": 22760,
+      "git_blob": "71928eaa589507c884b36b6bd549d90bbcc8103a",
+      "sha256": "2b86930b184209c1f121285c2e5a8ce6a919394a82c77e2d38c2b274a2af0895"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_FREE_HUB_END_UNIFORM_SHARED_OUTER_AND_OPPOSITE_OWNER_CHART.md",
+      "bytes": 25347,
+      "git_blob": "f81d9e5c29fe6a1f880bd9e0885bf026b3630caf",
+      "sha256": "3f819428f346fd88aa13f700baf46ae3759951c65db64ca32e7580df626a6808"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_H_OWNED_END_EAST_RETURN_TANGENT_AND_COMPLETE_FOUR_LOAD_EXCLUSION.md",
+      "bytes": 14292,
+      "git_blob": "6920883591c03c516835b1b3bbc0798ff1792b7c",
+      "sha256": "413a3ba7229f4685dff19253337d86bc89c0d30b18d8cda7a9f0bcc51f720c6a"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_NONAXIS_OWNED_END_OPPOSITE_SHARED_RETURN_PROJECTION_EXCLUSION.md",
+      "bytes": 16141,
+      "git_blob": "08a581cc16e0a3b0ec8bad825799673af6dfa3f7",
+      "sha256": "b09460d2f1d9e0c90c9f903fdb3597c955372944a9484084606fcb06015300c8"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_OWNED_END_RETURN_HEIGHT_AND_OPPOSITE_END_OWNER_REDUCTION.md",
+      "bytes": 12256,
+      "git_blob": "26267396ab95e38ef93306e07b2ce01b7ebfee64",
+      "sha256": "23bb6edea9c4988b64636070ebe53acca5ca6617ddf7f595054948fdb8453c4b"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_TWO_OWNED_ENDS_BOTH_NONAXIS_RETURNS_COMPLETE_EXCLUSION.md",
+      "bytes": 25490,
+      "git_blob": "cb416271de94653d6c883b2a2b0e118a191b77fc",
+      "sha256": "98a6b481cc01fd04a5a286ccd26af445e871633a909dd057b6ea09ffa8d6761d"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_TWO_OWNED_ENDS_COMMON_E_SIDE_UNIFORM_RETURN_EXCLUSION.md",
+      "bytes": 22584,
+      "git_blob": "53f0870a6fb223f9fc26bbaa7c9c1333f647176e",
+      "sha256": "33d9958cdef256210426996b29b3c0d520b6c8364c385a948ebe16477e8951e5"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_TWO_OWNED_ENDS_COMPLETE_E_OWNER_AND_DOUBLE_SHARED_EXCLUSION.md",
+      "bytes": 19836,
+      "git_blob": "33cfc97e649d4eb5c0178524e693b1d7c4c8da66",
+      "sha256": "a57aab09dd95f2f70b24384ac9546b455a07bcd25cba7bc145f6d76e2c37a8b0"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_TWO_UNLOADED_ENDS_BOTH_FREE_COMPLETE_EXCLUSION.md",
+      "bytes": 18110,
+      "git_blob": "ca25bc1840adf6e6997758605055b6a970ed2944",
+      "sha256": "d534f80fa11c3fe8db5c1a22fedaae0cf529ab879759742f9dc8f71f17ceb1b3"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_TWO_UNLOADED_ENDS_COINCIDENT_FREE_RETURN_COMPLETE_EXCLUSION.md",
+      "bytes": 13466,
+      "git_blob": "eba8fc6242daabf86360b56dc39a0842987339cd",
+      "sha256": "aa8efe6f8dd6d9da5fbd1c0dcb8955255b0c9ace6bb71c8d1f4c57eaae5e9422"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_TWO_UNLOADED_ENDS_COMPLETE_EXCLUSION.md",
+      "bytes": 17572,
+      "git_blob": "d3c7fec43ffb9f6386886e0e219cb75ab234fe9c",
+      "sha256": "6a4ade40ce610982f899f0dfe5ae97058bbe29e67c75e4009b07f4446ea61217"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_TWO_UNLOADED_ENDS_D_OWNED_PARALLEL_RETURN_COMPLETE_EXCLUSION.md",
+      "bytes": 17987,
+      "git_blob": "f6a8ed48c8695c72797e9293724dbc0cc7754736",
+      "sha256": "1aa7d4e964ecdcc1311e00419531a76f7eb8e877a255f8aeca68e2b5d1de54e8"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_TWO_UNLOADED_ENDS_EAST_RETURN_AND_WHOLE_H_OWNER_EXCLUSION.md",
+      "bytes": 17619,
+      "git_blob": "ab1c91bd8d2acdff771c805a927708eafed47357",
+      "sha256": "fcd6217a246b06e39ed34eb4bbd94c8e12ab47dd958cbf8de04859b2815f5d96"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_TWO_UNLOADED_ENDS_FREE_HUB_END_COMPLETE_EXCLUSION.md",
+      "bytes": 14856,
+      "git_blob": "ac318919193b9fc31ec4f6dafc44c007e511331c",
+      "sha256": "2308420df74ae3c7ae202d8af8d1d6f69faee3ee83e2d542bfaceb91a50d88ce"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_TWO_UNLOADED_ENDS_NEGATIVE_C_RETURN_EXCLUSION.md",
+      "bytes": 14069,
+      "git_blob": "ce525c14ef2ed6d1cca3cfdd6c394a9cdd802399",
+      "sha256": "9081f3b2d5288a21f416eafb7b812a3cf1d37df4fa840be73274d52bb7632117"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_TWO_UNLOADED_ENDS_POSITIVE_C_RETURN_EXCLUSION.md",
+      "bytes": 8809,
+      "git_blob": "af36f3d9427a7b712df196b7b2e61b82b2c729f9",
+      "sha256": "50c72f0ead283c957fa466ff6a368d4d4be7e4473791645609975117a444bed1"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_TWO_UNLOADED_ENDS_SAME_AXIS_RETURN_COMPLETE_EXCLUSION.md",
+      "bytes": 13632,
+      "git_blob": "48f1bf7f830d7ebd64bf3c7282e84d28af0aad31",
+      "sha256": "06db7377d2f6818fd73c9e684a64fd1b9691a051c0303721d41e96d225f85fd0"
+    },
+    {
+      "path": "research/nine/LOADED_MIDDLE_UNIT_UPPER_RADIAL_SIDE_WIDE_PORT_SLOPE_EXCLUSION.md",
+      "bytes": 8963,
+      "git_blob": "bdd7fcd135eede99a611c0aab54f3414139ce20c",
+      "sha256": "034b5dafd508f00079912e407d6c16c7cf90ba0fed949586d012b8bdc4631ba7"
+    },
+    {
+      "path": "research/nine/LOADED_TIP_TRANSMITTER_CHAIN_MOMENT_ORDER_AND_GENERAL_HUB_POCKET.md",
+      "bytes": 31155,
+      "git_blob": "cd53318e00a7400d07add3162cc4d6e0e2536ac6",
+      "sha256": "3196ae6e6c74f13eee3db3d4783b7863f5b610e8d88d96becfd413ae03c74a49"
+    },
+    {
+      "path": "research/nine/LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "bytes": 23353,
+      "git_blob": "f6afbca0c7607933fe807064a02bc512d921a9e0",
+      "sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78"
+    },
+    {
+      "path": "research/nine/LOADED_TWO_APPLICATION_FULL_STAR_PROPER_CONCURRENCE.md",
+      "bytes": 15874,
+      "git_blob": "cf33907206c49db9ce95dfe279822bcdcf7bea25",
+      "sha256": "942ed38a7452f35e95839cc79ea15ed97091114495e9a3ab9c232ae8255a0ea0"
+    },
+    {
+      "path": "research/nine/LOWER_HOUSE_TDC_S_PARALLEL_INWARD_FACE_REQUIRES_BOUNDARY_OWNER.md",
+      "bytes": 20666,
+      "git_blob": "c79b8adcb31570953393cf15fa105e782087150c",
+      "sha256": "864c8298d7322b794a97673006dbb3cf01fb6f8f68c16c27e97b70e96d18ae13"
+    },
+    {
+      "path": "research/nine/LOWER_HOUSE_TDC_S_THREE_PARALLEL_CORE_UNITS_EXCLUSION.md",
+      "bytes": 8413,
+      "git_blob": "23639f6ce0231c0b7970e1d58a63fc2c13265055",
+      "sha256": "ef29261c8bf6e98d5523e00b2a79e7c1cdf17c693da38155c2ce4f329f1c0f0f"
+    },
+    {
+      "path": "research/nine/LOW_ALIGNED_INNER_FAN_SOUTHWEST_HUB_COMPLETE_EXCLUSION.md",
+      "bytes": 21693,
+      "git_blob": "37e8a7d7c40aa93f438e15e903595ed87ef1078f",
+      "sha256": "82a6efff001ed3d7d49ee2cd668b447df1aad1de9cbbcb9a215ecc6cc9bd3398"
+    },
+    {
+      "path": "research/nine/LOW_ALIGNED_INNER_FAN_STRICT_VERTEX_OWNERSHIP_REDUCTION.md",
+      "bytes": 23691,
+      "git_blob": "1adadcf4b0aa2307baedaa94b9c2a5761dc09bf5",
+      "sha256": "c7d92e16004d8599d16e5c65ddd06bc1db92b94882264bac08e08ab067b32dd6"
+    },
+    {
+      "path": "research/nine/LOW_ALIGNED_INNER_FAN_WEST_HUB_COMPLETE_EXCLUSION.md",
+      "bytes": 27079,
+      "git_blob": "ba5e5fdf582d99a61737a434e86918410a8fd110",
+      "sha256": "561936431f29ba4bf09824dd88e4b3c7538fe246de44efdafb41b2c1bdb54e55"
+    },
+    {
+      "path": "research/nine/LOW_ALIGNED_ROOT_UPPER_VERTEX_BOUNDARY_CHAIN_TWO_SHARED_RETURNS_EXCLUSION.md",
+      "bytes": 21817,
+      "git_blob": "2d550302afdd55b1af660ce1499842ef3fb081cd",
+      "sha256": "ee387743511e30a23de0eff60714c4b787f1c886dcb869cf93b0aec394b61202"
+    },
+    {
+      "path": "research/nine/LOW_ALIGNED_S_ROOT_NINE_TWENTY_FIFTHS_DEPTH_AND_ONE_THIRD_RETURN_BOUND.md",
+      "bytes": 14017,
+      "git_blob": "01c4f9fa21bea5db8bd80c90789aa9220443572b",
+      "sha256": "2ec526fdeac85ff3949bfa891932a9a229b2cc464267dbbd7d874cc6f33cdd7e"
+    },
+    {
+      "path": "research/nine/LOW_ALIGNED_S_ROOT_SOUTH_BOUNDARY_DEPTH_AND_WALL_SPAN_BARRIER.md",
+      "bytes": 11449,
+      "git_blob": "0f0a542744d343401453974c1db3a1222e7618dc",
+      "sha256": "4e4967d248c5d0d7375622297913fa9c166cbd8a8328c798bae7680a84bcb2ce"
+    },
+    {
+      "path": "research/nine/LOW_LEFT_LOADED_FULL_STAR_TWO_AXIS_NORMALS_FORCE_ALIGNED_UNIT.md",
+      "bytes": 9147,
+      "git_blob": "fe5f0b63aa1f5644d0c11aa62373331a0f61b9d7",
+      "sha256": "2fae45df2a6736976a899f8502049b761fecba7d6fcdbde5cd9c42bae0e92b95"
+    },
+    {
+      "path": "research/nine/LOW_SUPPORT_WEST_BOUNDARY_PAGE_COMPLETE_GEOMETRIC_EXCLUSION.md",
+      "bytes": 7344,
+      "git_blob": "7cd9e875346f5bbeb5e73ee8c2f58a7ce02cf2a6",
+      "sha256": "0ee3d3fc9895a610d72f5b42ef63f5d0d704ddea6a6504fd422f5e9841c5c4c7"
+    },
+    {
+      "path": "research/nine/LOW_TOP_STRIP_FOUR_FORCE_CONTACT_CHAIN_ADJACENT_VERTEX_EXCLUSION.md",
+      "bytes": 14310,
+      "git_blob": "1f522d07638990cd8c77ed4db0377d6f4d7b98a3",
+      "sha256": "f557fbb3bdf774fc772f4375adff1f57e36703f781612a8a31cd21955d93d24d"
+    },
+    {
+      "path": "research/nine/LOW_TOP_STRIP_WEAK_RETURN_GRAPH_NO_ISOLATED_VERTEX_EXCLUSION.md",
+      "bytes": 16375,
+      "git_blob": "3c328a490c5c06fbaf98ddc579bc803daa081339",
+      "sha256": "0d95d2df9bc2ffbead2a916986291fd1c1d5266eb4b438debe08c35cdcac804e"
+    },
+    {
+      "path": "research/nine/NEAR_HUB_UNIQUE_TIP_SHORT_INCOMING_COORDINATE_POCKET_CAPACITY_ONE.md",
+      "bytes": 29100,
+      "git_blob": "23969f60d861798e967744323274ce552548c64c",
+      "sha256": "39aab92a25208217ff2fb7439142634d7cceb78eedf4e235575a648833621cce"
+    },
+    {
+      "path": "research/nine/NEGATIVE_SUPPORT_LOW_TRANSVERSE_BOUNDARY_NEIGHBOR_EXCLUSION.md",
+      "bytes": 14265,
+      "git_blob": "df7b818bae695467e2f7ae1ed5b20d6dd6747e5d",
+      "sha256": "396fd7179233f37906d4d1db5b2d00f48d7824066ce21867e091c85776ef998a"
+    },
+    {
+      "path": "research/nine/NINE_UNIT_BOUNDARY_TRIANGLES_ZERO_ORIGIN_WINDING.md",
+      "bytes": 13202,
+      "git_blob": "4200d9bc6aa5c989b510ecf528d12ea3336c1310",
+      "sha256": "cb5ec72a1199615b5f25293ef6280b6ad456ec94f0d7c495d275fc7be79c87aa"
+    },
+    {
+      "path": "research/nine/NONPARALLEL_TWO_APPLICATION_LOADED_STAR_HAS_PROPER_CONCURRENCE.md",
+      "bytes": 14124,
+      "git_blob": "731ca21d9ef23953baf1e80f721b464a7e8d93fa",
+      "sha256": "4aeba77a0f964597a40ce290f4a0f9d6d7dc802f83a024f3497cfdb6bb97359d"
+    },
+    {
+      "path": "research/nine/OBLIQUE_SUPPORT_WITH_LOWER_AND_RIGHT_POINTS_FORCES_SIDE_OWNERSHIP.md",
+      "bytes": 8346,
+      "git_blob": "4ef0c36b9d72e0b03a297118500c941c3baec249",
+      "sha256": "43cf46d235fa6175403150a763cc435be7c2421847f249f72ab1787f28b40739"
+    },
+    {
+      "path": "research/nine/ONE_HUB_AXIS_EXTERNAL_TIP_ALL_OWNER_NEAR_ORIGIN_AND_D02_FOUR_LOAD_FEATURES.md",
+      "bytes": 34812,
+      "git_blob": "47aa4d2299ad9b6332083dad386ffb7c0c41729c",
+      "sha256": "b1fbc607baef6e3d24fc00b4dd52d1a7f91efa1ab022379ad79ebfb2bd66f6d3"
+    },
+    {
+      "path": "research/nine/ONE_PROPER_ENDPOINT_OPPOSITE_PORT_COMPLETE_POCKET_CAPACITY_TWO.md",
+      "bytes": 19196,
+      "git_blob": "8c367f8818afcde903937c4d95f75344412a0a20",
+      "sha256": "d5ac1acc11a7a555f88fff55aa3bcb914af6a74a98016e30b9011a2cd6892f6a"
+    },
+    {
+      "path": "research/nine/ONE_PROPER_ENDPOINT_OPPOSITE_PORT_HIGH_ROOF_POCKET_CAPACITY_TWO.md",
+      "bytes": 16216,
+      "git_blob": "ab54c8a451923d709812d83a548defd6bf07536a",
+      "sha256": "16c46d4fe283c5bfb086cb4266ea81a35d422c66904b981b8eeac199173ac008"
+    },
+    {
+      "path": "research/nine/OPEN_ORIGIN_FOUR_FORCE_FAN_ROOT_OWNED_SINGLETON_HUB_SIDE_EXCLUSION.md",
+      "bytes": 12895,
+      "git_blob": "323daf4d468f5ce5147ef006768018257976029d",
+      "sha256": "f4476408f3e0d248c3ed6cd6f39f79da7531897676f591c14dfb1e00a7394d0d"
+    },
+    {
+      "path": "research/nine/OPEN_ORIGIN_S_ROOF_COMPLETE_SHARED_HUB_INTERFACE_EXCLUSION.md",
+      "bytes": 15699,
+      "git_blob": "4a3ac4c14afc22007d3ec9d2a4b5f96efa421a5a",
+      "sha256": "c491b72e2fccfb8ec3ae4ccf1be611e29fc8f75a59d08b3b2d35b4e234d5fae7"
+    },
+    {
+      "path": "research/nine/OPEN_ORIGIN_S_ROOF_COMPLETE_SINGLETON_HUB_INTERFACE_JOIN.md",
+      "bytes": 8890,
+      "git_blob": "f01b7334a4c7868f62a4c56e8e716fb729a17eed",
+      "sha256": "42706deb11bf1cc4bd0f4a6ef69f874493e7926e2adc4323df8e7ef5c8e5d644"
+    },
+    {
+      "path": "research/nine/OPEN_ORIGIN_S_ROOT_FOUR_FORCE_FAN_HUB_OWNED_SINGLETON_EXCLUSION.md",
+      "bytes": 18657,
+      "git_blob": "3f1802573b12decf7d294c3093145d9acd7b54d1",
+      "sha256": "675149086695b164b661db2cef56ac25b4c2e8d471c011c76423d488aa3834a9"
+    },
+    {
+      "path": "research/nine/OPEN_ORIGIN_S_ROOT_FOUR_FORCE_FAN_SHARED_HUB_INTERFACE_EXCLUSION.md",
+      "bytes": 19988,
+      "git_blob": "1e6322faa716feb7ce39a96720f076d59109d271",
+      "sha256": "7a68bc8807f61b0bd6d0fd8e087a97cae129b2e4ecd7885b576499379d51020d"
+    },
+    {
+      "path": "research/nine/OPEN_ORIGIN_S_ROOT_NORTHWEST_HUB_SIDE_RETURN_EXCLUSION.md",
+      "bytes": 10604,
+      "git_blob": "355e3e3242f03408ee037e3f5bccb38976b7d1b3",
+      "sha256": "09bd79005a42b0af16e72917ef99ced9c1e35eadd3090fa525c6523dbdeb15ae"
+    },
+    {
+      "path": "research/nine/OPEN_ORIGIN_S_ROOT_NORTHWEST_OPPOSITE_HUB_RETURNS_EXCLUSION.md",
+      "bytes": 7390,
+      "git_blob": "b5e93fedbbbcbd0686de5944d4db6af9203a608a",
+      "sha256": "e46f43bf8b902711caa5aebc6041f62b71870463884193bfa3d3f14fc02a1b00"
+    },
+    {
+      "path": "research/nine/OPEN_ORIGIN_S_ROOT_NORTH_ALL_MASKS_NEGATIVE_TRANSVERSE_RETURN_EXCLUSION.md",
+      "bytes": 16132,
+      "git_blob": "e0a11de36ac69df510bfd987fa0919a2facaa8cd",
+      "sha256": "e97a96393322d9a680677314069017a9eb3d6a6204187f13c1cc7d8b20f61fdf"
+    },
+    {
+      "path": "research/nine/OPEN_ORIGIN_S_ROOT_NORTH_COMPLETE_HUB_CHORD_BARRIER_EXCLUSION.md",
+      "bytes": 13266,
+      "git_blob": "a037c43c0aff20f88d3e451edeb7d8c2a05d6561",
+      "sha256": "89834bfea0e1ce1ff439f680cb5989583618d05929fc71de07ad72db726fd0e7"
+    },
+    {
+      "path": "research/nine/OPEN_ORIGIN_S_ROOT_NORTH_RADIAL_RETURN_UNIQUE_FAR_A_CORNER_REDUCTION.md",
+      "bytes": 11101,
+      "git_blob": "4707a46453b01a8ef6da66d239f01d3628a6401d",
+      "sha256": "74fa5a6ffc854cf1f04e230baa77495c49debb570ef80c9f40c9bf6a25c2ab94"
+    },
+    {
+      "path": "research/nine/OPEN_ORIGIN_S_ROOT_NORTH_RETURN_PARALLEL_HUB_SIDE_AND_DOUBLE_CORNER_REDUCTION.md",
+      "bytes": 14607,
+      "git_blob": "2d539808574ab6881cb69e261aff076cb057a213",
+      "sha256": "63a4f444aa098ba450321380aaea39e2a136f5dc1aabf94eab8d8b6b6d55d789"
+    },
+    {
+      "path": "research/nine/OPPOSED_FULL_STAR_ACTUAL_NEAR_NEIGHBOR_FORCES_NEAR_HUB.md",
+      "bytes": 20287,
+      "git_blob": "772e24f0820e45bfc230525f2068f06a6d5e4970",
+      "sha256": "ff4cb3a9b01c37723f8f71a618298921040f7e46bae01e7a5e0956feb2daabdb"
+    },
+    {
+      "path": "research/nine/OPPOSITE_OWNED_BOUNDARY_STAR_WHOLE_INTERVAL_HAND_INEQUALITIES.md",
+      "bytes": 19699,
+      "git_blob": "e4ea984608ca94e9ec08515ac005b6764c862bd2",
+      "sha256": "b662f7e6dcd4640eb1fa12929822f01959cdf8e3bf2adf3c4505cc56396474c5"
+    },
+    {
+      "path": "research/nine/OWNED_OPPOSITE_HUB_VERTICES_COMMON_RETURN_WIDTH_EXCLUSION.md",
+      "bytes": 10696,
+      "git_blob": "745ef1d3c669844a8b6deae5d6daed8f7ab8c0a4",
+      "sha256": "09ec49fe91ffeec448d0eda4498452c57c3cad1c951c030536505f2814a17034"
+    },
+    {
+      "path": "research/nine/OWNED_RETURN_NORMAL_SPAN_UNIFORM_HAND_EXCLUSION.md",
+      "bytes": 9198,
+      "git_blob": "91076fc1a15b73788172284a5eb394fdab088f77",
+      "sha256": "ed55b3876bfb75a11ac3465b3008965eed42d8cff466a81634829bd71b16185b"
+    },
+    {
+      "path": "research/nine/OWNED_STEEP_JUNCTION_FULL_STAR_OPPOSITE_SUPPORT_CHAIN_EXCLUSION.md",
+      "bytes": 12233,
+      "git_blob": "0218dd7403e6c2e3a572cf5ac163010def837013",
+      "sha256": "31520a05fa0289d2ef08f32e2401ed32466fe081f7772439551e26e4e233160f"
+    },
+    {
+      "path": "research/nine/OWN_AXIS_FULL_STAR_TOUCHING_RETURN_CHAIN_EXCLUSION.md",
+      "bytes": 9756,
+      "git_blob": "f3f472129dcd716a517e4760131d7d2601a66af9",
+      "sha256": "f8ea15fc886b10bd5b530cb3f998b72a91f53a4e9cc7369c9662673825f063c8"
+    },
+    {
+      "path": "research/nine/PARALLEL_INCOMING_HUB_AXIS_CHAIN_POCKET_NEAR_ORIGIN_AND_FOUR_LOAD_FEATURES.md",
+      "bytes": 42756,
+      "git_blob": "772f100c8e05d66269523c29f71a288ee3699908",
+      "sha256": "ae4e518534c911e778d81db0a6a3a644e186066e29edd1b1ba2a60819c1371da"
+    },
+    {
+      "path": "research/nine/PERPENDICULAR_ADJACENT_TIP_CHAIN_CAPACITY_AND_BOTH_FOUR_LOAD_FEATURES.md",
+      "bytes": 38055,
+      "git_blob": "ee7916ce03c1b26eda938d23dcb76ffe54ddb08c",
+      "sha256": "9b261eed5817ff589ebe5df2c0fe4606443796136662f016619a002233627f30"
+    },
+    {
+      "path": "research/nine/PERPENDICULAR_HUB_TWO_CIRCLE_TIP_ALL_OWNER_NEAR_ORIGIN.md",
+      "bytes": 27338,
+      "git_blob": "bd89111bfcfccea4850ee15a93b7a9120cc1a06b",
+      "sha256": "1458e073a4b9174e3b239115594383e740dd0d9af090b8b9c194c383944ea8b8"
+    },
+    {
+      "path": "research/nine/PERPENDICULAR_PARALLEL_UNIQUE_TIP_NEAR_ORIGIN_CHAIN_CAPACITY_AND_FOUR_LOAD_FEATURES.md",
+      "bytes": 42187,
+      "git_blob": "5bcc7850ce555176e1688e48bc7cefc206469ad6",
+      "sha256": "592b6968e21d5817f89543bece01529aae210ad203939501e8cbb643dedbf6f9"
+    },
+    {
+      "path": "research/nine/PERPENDICULAR_TWO_CIRCLE_HUB_POCKET_WITH_CHAIN_ENDPOINTS_AND_FOUR_LOAD_EXCLUSION.md",
+      "bytes": 39615,
+      "git_blob": "08992dbb0618cc92ca3c98888b73ef0cf210627d",
+      "sha256": "06c54acba2edc48c5a742157366b4ff7445e8ec837d9db47a2a42a2badd043c8"
+    },
+    {
+      "path": "research/nine/PHYSICAL_SIDE_GAP_CLOSED_BY_TOUCHING_NEIGHBORS_EXCLUDES_UNIT.md",
+      "bytes": 8306,
+      "git_blob": "1fcdf63cb5891db785b175ece7e05d48d9d10ca0",
+      "sha256": "f209207b7aed6ae2bbf8c6fb92dc81d855721173c88060f08a00fb69fdf81492"
+    },
+    {
+      "path": "research/nine/POSITIVE_NORMAL_TWO_PORT_EDGE_AND_LOW_SOUTH_OVERHANG_BARRIER.md",
+      "bytes": 13864,
+      "git_blob": "ef181e1f1b1a249bf1459cbc89ba7264bda4f343",
+      "sha256": "1c346a591e060fcb5b64ee0d68bc0c3137861fae5b09459fcc9e7a30e466907b"
+    },
+    {
+      "path": "research/nine/RADIUS_FREE_PENTAGON_EXTERNAL_OWNERS_AND_LOW_SUPPORT_CHECKPOINT_2026_10_28.json",
+      "bytes": 245823,
+      "git_blob": "d61b3f89d3641f85f2e5fd657fe48a83c232f207",
+      "sha256": "822ada9a9d08f34801aa4d71835400f647540cea9d70c2ce73e3c3f8ab0bb8c4"
+    },
+    {
+      "path": "research/nine/RECONCILED_COMPLETE_ROOF_AND_PUBLISHED_DIAGONAL_TOOLS_CHECKPOINT_2026_10_28.json",
+      "bytes": 296463,
+      "git_blob": "77e44f54529d0b91c556dc2179f2d7589cdbc061",
+      "sha256": "a8f74979c2b724473127f08a70d8f58ce9f18b0be416f4f4cdde71b702583a9b"
+    },
+    {
+      "path": "research/nine/RECONCILIATION_COMPLETE_ROOF_AND_PUBLISHED_DIAGONAL_TOOLS_ROOT_2026_10_28.md",
+      "bytes": 6496,
+      "git_blob": "c21301e8c16ae204d0ce54afca920f86c2e21684",
+      "sha256": "79093a4a9f2d8816e8bc58f84b75b622ed39bed59b0d13daf3700a2db847535b"
+    },
+    {
+      "path": "research/nine/RECONCILIATION_PUBLISHED_UNIFORM_CHANNELS_WITH_LOCAL_CONTINUOUS_PROOFS_2026_10_28.json",
+      "bytes": 9248,
+      "git_blob": "316589c7dcd98cca70582455163e26735370975e",
+      "sha256": "a8d97d1a3a4af8ce5fc270ffb4c6879cd6b1c5f3b34c08fe2d5a5ef64a47464b"
+    },
+    {
+      "path": "research/nine/RECOVERED_COMPLETE_H4_AND_CENTERED_BOUNDARY_ARC_CHECKPOINT_2026_10_28.json",
+      "bytes": 313372,
+      "git_blob": "0f6e0fdaa9581b94583247ac8ce86e047c32c314",
+      "sha256": "735feea35ef685d6b53a3b79a26072b9e6065079b397bed929790da26c1cd0ee"
+    },
+    {
+      "path": "research/nine/REMAINING_UNIT_EDGE_SPAN_AND_PERPENDICULAR_PENTAGON_SHARED_RETURN_EXCLUSION.md",
+      "bytes": 17506,
+      "git_blob": "1d6a487fc520d83c66a31ff79276ec81fab2a72d",
+      "sha256": "7ad02a7c02df46d9b95b97df2f5d1394306104fe54422232dcd5c43e06d8e2bd"
+    },
+    {
+      "path": "research/nine/REMOTE_COMPLETE_INNER_FAN_BROAD_HUB_CONTEXT_IMPORT_2026_10_28.json",
+      "bytes": 11198,
+      "git_blob": "81c27876838bd5927c69c326f9ca4d199dbc8114",
+      "sha256": "0622b03d0aa188c18dd15e32858e7a241b6f0091a475af16abbf7331e6baec85"
+    },
+    {
+      "path": "research/nine/REMOTE_DIAGONAL_ORIGIN_CONTEXT_IMPORT_2026_10_28.json",
+      "bytes": 18092,
+      "git_blob": "7f3adddd121037c418ba2f5cb9471817516c8e56",
+      "sha256": "c89551f1103073798c8a8401423a577c7cda479b62b2803ddc4e6963e5ed85c6"
+    },
+    {
+      "path": "research/nine/REMOTE_PARTIALLY_UNLOADED_POCKETS_ZERO_AXIS_UNIQUE_C_CONTEXT_IMPORT_2026_10_28.json",
+      "bytes": 12480,
+      "git_blob": "d63ab1e1f7b02935bef9f8b2b7a45ff3347e4b56",
+      "sha256": "3ce76f67c42a112c41c40d612f94e0f0388b1dc1329080bcc0b001c332b11a90"
+    },
+    {
+      "path": "research/nine/REMOTE_UNIFORM_CHANNEL_CONTEXT_IMPORT_2026_10_28.json",
+      "bytes": 23800,
+      "git_blob": "b797ebab8a94d303d560ff6d8874f7b7a1266566",
+      "sha256": "4b66a5ab76033b7629a85c60d43031f5c6891c875d49277956d1ca832f4a8a58"
+    },
+    {
+      "path": "research/nine/REUSABLE_UNLOADED_FOUR_SPOKE_COMMON_RETURN_MOTIF_CHECKPOINT_2026_10_28.json",
+      "bytes": 247396,
+      "git_blob": "4e48075aada09ee070d96cb1ce075ece212ffa97",
+      "sha256": "5f4b77baf4aace7b67dc4ae22a047cdc294021d31571497d8527a38d845ac929"
+    },
+    {
+      "path": "research/nine/REVIEW_ADJACENT_EXTERNAL_ENDS_FOUR_CORNER_AND_OUTER_RETURN_CHART_INDEPENDENT_2026_10_28.md",
+      "bytes": 13122,
+      "git_blob": "e7a03c6f72836c198101730b87d9f124203ac1a7",
+      "sha256": "f263d0e8360980b8ba722179a5192973e1afbb2a25878dfb8337881a0bd9ba72"
+    },
+    {
+      "path": "research/nine/REVIEW_ADJACENT_EXTERNAL_OR_FREE_NEAR_ORIGIN_UNION_ROOF_RESUME_2026_10_29.md",
+      "bytes": 25013,
+      "git_blob": "527eccd36fa8c9daa2f671938e51c1399c3ba1c7",
+      "sha256": "6177fb9acded35c5c23aa8aa82eaa0343b6c6fd00465e5ebf7bd5906a52a8eef"
+    },
+    {
+      "path": "research/nine/REVIEW_ADJACENT_LEFT_VERTEX_BOUNDARY_DIAMOND_NEGATIVE_SUPPORT_INDEPENDENT_2026_10_28.md",
+      "bytes": 15661,
+      "git_blob": "c430332e309e51deb66dbc92d361c7125ff2926a",
+      "sha256": "bba67a506a155404d53d7edd9f0cdb03c27ce401b908b0609d8e0eee3647096e"
+    },
+    {
+      "path": "research/nine/REVIEW_ALIGNED_CHANNEL_LOWER_BYPASS_COMMON_NEIGHBOR_FAN_FINISH_V2_INDEPENDENT_2026_10_28.md",
+      "bytes": 12640,
+      "git_blob": "3685803174155c292e59eea1e2ec3a2768d3aa44",
+      "sha256": "9d75654f7b71edc57f271da4255483a5e8e75a3739661aa2d6d5d03cf6f5ac21"
+    },
+    {
+      "path": "research/nine/REVIEW_ALIGNED_HIGH_BOUNDARY_DIAMOND_INNER_FAN_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 21716,
+      "git_blob": "f4f81564a3bc847c6c070a94e608faec3d7deb56",
+      "sha256": "679c74f3de0bafb895aafea55316ca3bdfd6054072d9913cb924f330cd7fce55"
+    },
+    {
+      "path": "research/nine/REVIEW_ALIGNED_LOW_S_ROOT_INNER_FAN_COMPLETE_EXCLUSION_INDEPENDENT_2026_10_28.md",
+      "bytes": 16041,
+      "git_blob": "d6dcd72a09d295689b7380148c71469decb4f196",
+      "sha256": "722e2a2b465f6d7d6ee5aa1651af80025216251f12dc3b951763394ce020ad1a"
+    },
+    {
+      "path": "research/nine/REVIEW_ALIGNED_RADIAL_C_OWNED_AD_UPPER_INTERVAL_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 13624,
+      "git_blob": "faf14f89170a9e1958ccab707bded2bd19f651f2",
+      "sha256": "605967b4ac3c17e984517625ef680075ce7d37a5ab12a20caa613e7053378110"
+    },
+    {
+      "path": "research/nine/REVIEW_ALIGNED_SHARED_S_ROOF_AND_COMPLETE_CRITICAL_RADIUS_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 18939,
+      "git_blob": "0f51afa8031985248adf771ecbb38b5ebfa8a849",
+      "sha256": "e10137104bf50d74fd904d5ddabe9dfd4e50361730a230c5ed55f485216f6944"
+    },
+    {
+      "path": "research/nine/REVIEW_ALIGNED_STRICT_VERTEX_ROOF_AND_TWO_CHART_HEIGHT_FRESH_2026_10_28.md",
+      "bytes": 31084,
+      "git_blob": "309695ca4fdd12810c16861b606886421274c79f",
+      "sha256": "499a1892630fe88e7ebe5ac1dce4b8bfc6394b5f94cd54195df5652f59f0b19d"
+    },
+    {
+      "path": "research/nine/REVIEW_ALIGNED_S_ROOF_PARALLEL_WEST_SINGLETON_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 19589,
+      "git_blob": "3a7529dd13afa5c3715c3a1bd4c7f75924b9eca0",
+      "sha256": "59871b166bb71fc657f0c59d157d2673b2be0d79e852f0d6fe2ddf5c1873e9ac"
+    },
+    {
+      "path": "research/nine/REVIEW_ALIGNED_S_ROOF_STRICT_VERTEX_SINGLETON_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 25403,
+      "git_blob": "0c0a04fb9c99b8b143dcdcbd43c7e3ba40b36a0c",
+      "sha256": "ba69df798b8e02c3fbaf479524d3d5682b9ab4ab578717de1ae8eaac60d5e5e1"
+    },
+    {
+      "path": "research/nine/REVIEW_ALIGNED_S_ROOT_FOUR_FORCE_FAN_SHARED_HX_HOUSE_FINISH_V2_INDEPENDENT_2026_10_28.md",
+      "bytes": 14535,
+      "git_blob": "1e76e07ea8eac318571a3c42b3ca8ea340bdf42c",
+      "sha256": "de69249b552e08587eae167d76006ba3e23fbd8410804edb0461329ebfb2edc8"
+    },
+    {
+      "path": "research/nine/REVIEW_ALIGNED_S_ROOT_SHALLOW_PAGE_CENTER_GAP_FAN_FINISH_INDEPENDENT_2026_10_28.md",
+      "bytes": 15223,
+      "git_blob": "38a4715a8a6ff9a98f993567bb4bfd1c73feea6f",
+      "sha256": "4355fb6e42ffecfaa8d9185a8a9467e32bc9ff58d67a25ed7af5873718faa621"
+    },
+    {
+      "path": "research/nine/REVIEW_ALIGNED_VERTEX_RETURN_UNIFORM_HEIGHT_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 15976,
+      "git_blob": "dff2f38393bb4bac2e86376b21342019a0d8b420",
+      "sha256": "ac6fbefc11004db3280ea05a5875643d62b69ce7b6b1eb7ebf12b437bfe2fe5f"
+    },
+    {
+      "path": "research/nine/REVIEW_ALL_ACUTE_RETURN_FRAMES_LARGE_COORDINATE_INTERIOR_AND_TERMINAL_TILT_INDEPENDENT_2026_10_28.md",
+      "bytes": 19487,
+      "git_blob": "5cb269d528fc3a8198f0b6ab88494bd43ee0b8b7",
+      "sha256": "b19e4e0b05f2f820c24ae71891a7ed0db62877bc283d7592fead62c72e34db88"
+    },
+    {
+      "path": "research/nine/REVIEW_BALANCED_FAR_PAIR_OPPOSITE_PORT_STRIP_H4_INDEPENDENT_2026_10_28.md",
+      "bytes": 8821,
+      "git_blob": "83538c071589f6642c001cf103491ef1a7c9878c",
+      "sha256": "0b12724894db809969aac2777508bdeed669e0cd6d9fc4da4249fc9f1cca0814"
+    },
+    {
+      "path": "research/nine/REVIEW_BOUNDARY_OWNED_SIDE_TANGENT_MONOTONICITY_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 7118,
+      "git_blob": "576f51c2f0138629c32e04ddda43a8e511ddf17c",
+      "sha256": "d6d287d148113a01068dd3f12a8e504fedc864e9eab5be28aad96a4032f05e7d"
+    },
+    {
+      "path": "research/nine/REVIEW_BOUNDARY_RETURN_RADIAL_SIDE_DIAMETER_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 5758,
+      "git_blob": "e136b4ac1f665be0b2488a6f2e783cd78e5ec881",
+      "sha256": "d9d66537efc3df28164f1c1f9b2725d75d3b9aaccf6297bdcb9047d6e9f5c471"
+    },
+    {
+      "path": "research/nine/REVIEW_BOUNDARY_SUPPORT_HALF_PLANE_MOMENT_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 8315,
+      "git_blob": "044c8601b9325f40749e2555cc70adbe676f006f",
+      "sha256": "4fd4c5a6f309c7ca450fef19aa81565a16845ff801d75c97d8f2a3aa4ac4c96f"
+    },
+    {
+      "path": "research/nine/REVIEW_BOUNDARY_TERMINAL_LOW_PORT_ANGLE_SOLE_UT_INDEPENDENT_2026_10_28.md",
+      "bytes": 4975,
+      "git_blob": "64cbc3c44668d56a6d98d8ba461dd9f3cfdc6ab1",
+      "sha256": "05aeff0afe2af98cbd63a84f212392ad4a3b6b3f679bd4a471bcb58f8d668042"
+    },
+    {
+      "path": "research/nine/REVIEW_BOUNDARY_TERMINAL_LOW_PORT_ARC_ANGLE_ROOT_2026_10_28.md",
+      "bytes": 3945,
+      "git_blob": "8da273bfec51873da2922e4694dc889c239ace3d",
+      "sha256": "db6fffbdf083823c2c6bf51f763131cf3e32c221ee3563cec6583f645a3529e8"
+    },
+    {
+      "path": "research/nine/REVIEW_BOUNDARY_UNIT_CENTERED_RADIUS_FIVE_QUARTERS_ARC_INDEPENDENT_2026_10_28.md",
+      "bytes": 7957,
+      "git_blob": "30fc8fa16a6027823f9ab4879b8b1b3a58962d0c",
+      "sha256": "ed731607602ded9d62b9d4289a99dd43dbdbdc0ad0b88fb44f503aad41c51e3c"
+    },
+    {
+      "path": "research/nine/REVIEW_BOUNDARY_UNIT_UPPER_SUPPORT_INNER_RIGHT_PORT_TC_FINISH_V2_INDEPENDENT_2026_10_28.md",
+      "bytes": 8352,
+      "git_blob": "3c827d24b6d025cf129d070576cecd1d6ee3a39c",
+      "sha256": "8518b70138994a62635d5af55eb5e289348f9213ecf994b33c24edb4e4859be6"
+    },
+    {
+      "path": "research/nine/REVIEW_BROADER_CENTERED_ARCS_PENTAGON_OWNED_INDEPENDENT_2026_10_28.md",
+      "bytes": 13646,
+      "git_blob": "9b9f0c0711e795167fe7eb1b9d6e4397970c9901",
+      "sha256": "c197c9b4747449b76bc2382c7bbf0afb0fdf3a1744ecc10f5315f0282c7ab9e4"
+    },
+    {
+      "path": "research/nine/REVIEW_CHANNEL_ALIGNED_AD_EAST_AT_SOUTH_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 14077,
+      "git_blob": "3e885666bf2df4d5c1e1b8722ae106c274840121",
+      "sha256": "1cdf59088719ac6dad1ea408518a4fff6f35ee55ac919ca34d46fffdcf683b63"
+    },
+    {
+      "path": "research/nine/REVIEW_CHANNEL_ALIGNED_COMPLETE_AD_EAST_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 13143,
+      "git_blob": "07e80b25ee64efb40a5dfcf7f12fdce5d7b8c5d7",
+      "sha256": "4eb0b855a55aabb5b4e26660c6c3e3fc0cca4ca0326e1aadf796af8d8cb902a3"
+    },
+    {
+      "path": "research/nine/REVIEW_CHANNEL_ALIGNED_HOUSE_PARALLEL_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_28.md",
+      "bytes": 16880,
+      "git_blob": "b975dc2233b969bb68788e5034915f8835bc6bd9",
+      "sha256": "1a0f6492cffb560da50b529a5b72a6b6cc0a0b73bebd86bad080023c3ff7cbad"
+    },
+    {
+      "path": "research/nine/REVIEW_CHANNEL_ALIGNED_NONPARALLEL_C_ALIGNED_D_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 11186,
+      "git_blob": "761b82b63fed1f7b6fd550eef00c5e2948d274d6",
+      "sha256": "b3545de7831e7862791fbdf7aecff44b63b074fccbe73121914e318eb3bec6d1"
+    },
+    {
+      "path": "research/nine/REVIEW_CHANNEL_ALIGNED_S_HOUSE_ROOT_UPPER_LEFT_REDUCTION_FAN_FINISH_V2_INDEPENDENT_2026_10_28.md",
+      "bytes": 11347,
+      "git_blob": "22d29f6ff4c688c351733f400556349627e3cf37",
+      "sha256": "75ad9a99c2fdea0d0eb1078d99113a0cd097a2fa32b3c740e69dff19b45fc2a3"
+    },
+    {
+      "path": "research/nine/REVIEW_CLOSED_BOUNDARY_SIDE_TIP_OWNED_NEAR_ORIGIN_ROOF_RESUME_2026_10_29.md",
+      "bytes": 22763,
+      "git_blob": "cda838e9a91b241fba07568a630e78f3ef7f1022",
+      "sha256": "e02e1c1fa399f52b3a6511c23e90f8f560c1ecddfb1f0226939433004dad8879"
+    },
+    {
+      "path": "research/nine/REVIEW_COINCIDENT_TRIANGLE_DIAGONAL_BIAS_SELECTION_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 17227,
+      "git_blob": "85df09a65a90fb0487e69020775b3b13d75504c6",
+      "sha256": "2e401ea74cba50d40b0460955c3391cf60ec8c954f5910bea99beeec5f94e5c3"
+    },
+    {
+      "path": "research/nine/REVIEW_COMMON_HUB_AXIS_CHAIN_ENDPOINTS_L0135_ROOF_RESUME_2026_10_28.md",
+      "bytes": 39336,
+      "git_blob": "9893bcac8679ba2e1f8dd2b2230f07621de4a2a1",
+      "sha256": "3d319e5dcd0577f763212353b866b032fa4be056b5538c904fa9eeac1cb71c5f"
+    },
+    {
+      "path": "research/nine/REVIEW_COMMON_HUB_AXIS_UNLOADED_CHAIN_LOW_LOAD_FEATURES_ROOT_2026_10_29.md",
+      "bytes": 14927,
+      "git_blob": "6c84953bc3ac00250bcc32a4a9b9ab3f8aaa6085",
+      "sha256": "dc1f518bd84320d9e54644648bc95c33cc792d779465ef6e3bc1639a9a172e4a"
+    },
+    {
+      "path": "research/nine/REVIEW_COMMON_W_SIDE_NEAR_ORIGIN_CHAIN_CAPACITY_BOTH_FOUR_LOADS_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 46772,
+      "git_blob": "666f051a417a9f0b72e7d9f59553c72eeb8e8ac0",
+      "sha256": "d9ad21edcead2fa09ef82e6bfd3f78c00eecaace29409e01e66fac1ce1e0235f"
+    },
+    {
+      "path": "research/nine/REVIEW_COMPLETE_CHANNEL_ALIGNED_TC_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 13337,
+      "git_blob": "75642cdc508bf3ec73e3b266d4bf5551fb29250c",
+      "sha256": "d1153c76c95f4f6716a623b4bd05b4d607ed9665437e00dc3589e6ef148428fe"
+    },
+    {
+      "path": "research/nine/REVIEW_COMPLETE_ORIGINAL_HOUSE_ROOF_FAMILY_ASSEMBLY_INDEPENDENT_2026_10_28.md",
+      "bytes": 51370,
+      "git_blob": "f449f77e89a8668a04cc9a409f7701b8a61cb4b6",
+      "sha256": "cf65f4b3ef6ee3b0606e2bb48dd197f01bb2e5ea833b25058fb3a87066a3f9ae"
+    },
+    {
+      "path": "research/nine/REVIEW_COMPLETE_UNIQUE_NEAR_RETURN_AND_SHALLOW_NE_MIDDLE_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 13320,
+      "git_blob": "be6f02f8105c747f945a66c018c1f7a9a8cb9fa7",
+      "sha256": "b28987099cfc5711e4d53fabacd3aab5b3d84054a7875f566afb8a7f157b7186"
+    },
+    {
+      "path": "research/nine/REVIEW_CONTINUOUS_SMALL_CENTER_RADIUS_OBSTRUCTION_HOUSE_FINISH_V2_INDEPENDENT_2026_10_28.md",
+      "bytes": 12003,
+      "git_blob": "d3bcb647b061fff0c64dc8810dfc974c4d9bb044",
+      "sha256": "c4269431ac1f752dd80241c99bf68c63be886c506ff2847a2b14fbf842159a59"
+    },
+    {
+      "path": "research/nine/REVIEW_CORRELATED_UNIQUE_TIP_TERMINAL_CENTER_WHOLE_UNIQUE_W_INDEPENDENT_2026_10_28.md",
+      "bytes": 24454,
+      "git_blob": "a6490857191ea39c30c2690a3f3814fa26c057ec",
+      "sha256": "7c286ef3c51e3083309feb282cd52ab2e88e6ba2edf5adbdaa27485870a3edf3"
+    },
+    {
+      "path": "research/nine/REVIEW_CRITICAL_NEAR_HUB_TWO_SUPPORT_STRIPS_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "bytes": 14561,
+      "git_blob": "127ffc1942923cf51484e0c9e0f5680718ca8c50",
+      "sha256": "f69e3ac07e327228508c16a464763bf4ffad6be54193d71ee7fc23976fffa64d"
+    },
+    {
+      "path": "research/nine/REVIEW_D02_BOTH_FOUR_LOADS_COMPLETE_AXIS_OWNER_COVER_REVIEW_RESUME_2026_10_29.md",
+      "bytes": 33763,
+      "git_blob": "69f8bddb87bf0b2921e15fff00ba3e337aaf4a42",
+      "sha256": "50105068e432b07aa85c3641cab83dc8168e29147b1afdfb7ea18ed1bfa67a84"
+    },
+    {
+      "path": "research/nine/REVIEW_D02_BOTH_FOUR_LOADS_COMPLETE_PERPENDICULAR_FEATURE_UNION_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 46001,
+      "git_blob": "96a05cd71d225f8c45599a4f506e9f4e5a28e2d2",
+      "sha256": "7e55ba221ede81a3a537063bcfe0d020b337201cfd83ca5dd971a6f325dac609"
+    },
+    {
+      "path": "research/nine/REVIEW_D02_BOTH_FOUR_LOADS_SINGLETON_TERMINAL_FEATURE_ROOT_2026_10_28.md",
+      "bytes": 28083,
+      "git_blob": "9d395d1d3cb271c36a87c1f81edcd1a9d5b08ceb",
+      "sha256": "633bc6d46524f38c5dfa101f28e7f5ab18191407c4e7bfdef0117f9c2978abe9"
+    },
+    {
+      "path": "research/nine/REVIEW_D02_ENTIRE_TWO_CIRCLE_JOIN_W_INDEPENDENT_2026_10_28.md",
+      "bytes": 10790,
+      "git_blob": "5173777299718c37a2fe6e82ecf3bfacb66689be",
+      "sha256": "b000c6db6de7420f6d4db699000d11cb059761d93e01085d07988c9e559b3fae"
+    },
+    {
+      "path": "research/nine/REVIEW_D02_FIVE_LOAD_COMPLETE_ALTERNATIVE_ORIGINAL_JOIN_INDEPENDENT_2026_10_28.md",
+      "bytes": 26463,
+      "git_blob": "962251c5367fa55d8482cb5a7e0221390995494c",
+      "sha256": "279cd59992363c6e480814f7cd1627a0c682c99c7439e503384e87f849468eac"
+    },
+    {
+      "path": "research/nine/REVIEW_D02_L0134_L0135_COMPLETE_ORIGINAL_DOMAIN_CLOSURE_REVIEW_RESUME_2026_10_29.md",
+      "bytes": 23564,
+      "git_blob": "c3161708afea0670ab779cb3c65ed798f04bbb8b",
+      "sha256": "1e5b15ec62bb3c9a0e1ca68ba6149564e742188baf86300c36c556e4324fe698"
+    },
+    {
+      "path": "research/nine/REVIEW_DISTINCT_W_SIDE_CHAIN_CAPACITY_BOTH_FOUR_LOADS_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 39172,
+      "git_blob": "ac9c3cbfc78a1a32294412300c78ceb2092acfdd",
+      "sha256": "f9cfbffae43ceaed4b640d90bd980d660c3fe4bcdda829462103fd634b9fd6e9"
+    },
+    {
+      "path": "research/nine/REVIEW_ENDPOINT_FAN_COMPLETE_ALIGNED_ROOT_ASSEMBLY_TC_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 16698,
+      "git_blob": "b7b6ad53a9ec654cd4a7cd22015a9ff21807cfe0",
+      "sha256": "3a5976b85682b6515f6e4b05b6ef0e9f8ba5523d716c56019833b35cbea69217"
+    },
+    {
+      "path": "research/nine/REVIEW_ENDPOINT_FAN_COMPLETE_CRITICAL_RADIUS_TC_FINISH_V2_INDEPENDENT_2026_10_28.md",
+      "bytes": 13913,
+      "git_blob": "7d6c4be1c3f05b7183360a1cc7692b64fea078d1",
+      "sha256": "e243ab05b5cc627d35e4d45a60e7dfee00a70b78d456952fe83ff586ae46a881"
+    },
+    {
+      "path": "research/nine/REVIEW_ENDPOINT_FAN_COMPLETE_OPEN_ORIGIN_ASSEMBLY_FAN_TC_INDEPENDENT_2026_10_28.md",
+      "bytes": 20238,
+      "git_blob": "4870f831575ed1bfca87bad1e332158fece65b2e",
+      "sha256": "b50b37218e075a97c51a4e1e6d5bd63c3b8a5b7c252199233435b01a93d3ba08"
+    },
+    {
+      "path": "research/nine/REVIEW_ENDPOINT_FAN_GENUINE_S_COMPLETE_TC_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 16140,
+      "git_blob": "11b6a8bfa61a814f100d042d813ee9276c51ae8e",
+      "sha256": "38b0f15c18405104d0408591954b3367915ec089b253682bb4600bf6ef721dae"
+    },
+    {
+      "path": "research/nine/REVIEW_EQUAL_CIRCLE_HEIGHT_PERPENDICULAR_ADJACENT_NEAR_ORIGIN_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 22743,
+      "git_blob": "9777a898bb0a9c55a00194693b306b4e207b1d4d",
+      "sha256": "3217165ee08c63c06181597dec87db51d478f8e711f8cb71e3cb778333f68e56"
+    },
+    {
+      "path": "research/nine/REVIEW_EXACT_LOW_PORT_HIGH_SQUARE_BARRIER_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 14141,
+      "git_blob": "e78d00f53008a4fe2fb07bceb5b6530a25ee1e3f",
+      "sha256": "86a9bbad75f73add88bb2cb56d8694ef0e3d40690658ca40951f0de6bf6097e5"
+    },
+    {
+      "path": "research/nine/REVIEW_FAN_ENDPOINT_COMPLETE_PARENT_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 14197,
+      "git_blob": "da4eaf81678b0fca4f08e0285790a931caada212",
+      "sha256": "67d2a0953769b415e7ec5b8baa1b227fc3533a190895a2c60b6f357b223919ce"
+    },
+    {
+      "path": "research/nine/REVIEW_FAR_BOUNDARY_CENTER_ALL_CONTACT_PORTS_STRIP_INDEPENDENT_2026_10_28.md",
+      "bytes": 16343,
+      "git_blob": "07b11e3f7a0468b60e0bed64927340928647cb8c",
+      "sha256": "bcf78f312dcfdc83db62e295fcba99d43fad330bbc519adf72230a0ef2ba0b04"
+    },
+    {
+      "path": "research/nine/REVIEW_FORWARD_WIDTH_CHAIN_AND_SINGLE_HUB_AXIS_TRUE_TWO_ROOT_2026_10_29.md",
+      "bytes": 17587,
+      "git_blob": "165234893918b29e9b2394c5f63efad5cc19d277",
+      "sha256": "da593764db115f8632d981764440069941c937d3a5f740521c478d6182d15fb6"
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_BOUNDARY_ENDPOINT_TANGENT_SIGN_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 5252,
+      "git_blob": "01a0d1071e768a515dc3c3425bbd2a5cae3119c0",
+      "sha256": "5c4f533b4e1fe46de69403c1a541ed9acd73a75f8216fc3386cd3de81eab8a35"
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_FORCE_FAN_INCOMING_RADIUS_TC_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 9351,
+      "git_blob": "e20bf2a344a0a596b15e3c6432a03fbb5cd1d2ab",
+      "sha256": "cf44565371636a259bb74b114974294e381da845d28dda741be8aaf583333e90"
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_SPOKE_D_OWNED_BOUNDARY_RETURN_INTERFACE_JOIN_INDEPENDENT_2026_10_28.md",
+      "bytes": 13826,
+      "git_blob": "eb9f0a7867d318a3704f5104bffb93b0ef1468e6",
+      "sha256": "2197a9f44beff411b10671201a9d202062519fe35671c2f2cea2f2e21041df6c"
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_SPOKE_PARALLEL_UNLOADED_END_COMPLETE_INTERFACE_INDEPENDENT_2026_10_28.md",
+      "bytes": 19376,
+      "git_blob": "ff2098704389bd675d9e570614f99d03a6bfc068",
+      "sha256": "93b974ab5718ba624eeaf63138afbe9d777839b55031f603e7fff1db1de44b1e"
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_SPOKE_SHARED_BOUNDARY_RETURN_COMPLETE_INTERFACE_INDEPENDENT_2026_10_28.md",
+      "bytes": 19742,
+      "git_blob": "64299273f448f804a91a89ac0801d692716048ca",
+      "sha256": "884051bc63ffbc6e0cc45cd233929d7c69f2c10cf2d410c2436a82b53961254f"
+    },
+    {
+      "path": "research/nine/REVIEW_FREE_BOUNDARY_VERTEX_ALL_RETURN_NEAR_ORIGIN_ROOF_RESUME_2026_10_29.md",
+      "bytes": 23650,
+      "git_blob": "ef0b1d6cf22984fc75c98ea102ee512448e567f2",
+      "sha256": "7312346a1ab4a926c23bd8bf3c734fef394593069f975874c8af139f727551d4"
+    },
+    {
+      "path": "research/nine/REVIEW_FREE_HUB_END_SHARED_OUTER_FORCING_INDEPENDENT_2026_10_28.md",
+      "bytes": 30488,
+      "git_blob": "3cb93c013b942586e462fb3c54dbb43a271b3ab0",
+      "sha256": "50c8d791ebdf86a344febcca03a72315a4e4f6723cb0ae843b2091cfbc7f162b"
+    },
+    {
+      "path": "research/nine/REVIEW_FREE_HUB_END_UNIFORM_SHARED_OUTER_CHART_INDEPENDENT_2026_10_28.md",
+      "bytes": 20061,
+      "git_blob": "5cc88a2b9df68ad77f8ee5ae40c5cb6879fcd555",
+      "sha256": "f040c4fcb6f3af1f08a171158d45f00f4cc23d84210be17b15268701a11a3bd5"
+    },
+    {
+      "path": "research/nine/REVIEW_FREE_INCOMING_RADIAL_CHAIN_FOUR_LOAD_ROOF_RESUME_2026_10_28.md",
+      "bytes": 39050,
+      "git_blob": "e17143fe01db90002dcf74b31b776a362a732910",
+      "sha256": "825d85d241c0ebd245747c7fedb658b01244b9b34fe2f456828d4d4555b8ae86"
+    },
+    {
+      "path": "research/nine/REVIEW_FULL_LOADED_STAR_TWO_DIRECTION_ROOT_2026_10_28.md",
+      "bytes": 6755,
+      "git_blob": "6c4cf35ea8592d4d85dce2f96b710f1a0772296c",
+      "sha256": "3f51bd93a5f2c131013a71ea688d6a9346ee5894ebca316beed8f1c62bb31837"
+    },
+    {
+      "path": "research/nine/REVIEW_FULL_STAR_TWO_DIRECTION_PROPER_CONCURRENCE_THIN_D_2026_10_28.md",
+      "bytes": 7891,
+      "git_blob": "347416276c972122bc5db3c72e942eac6e619707",
+      "sha256": "728d2862e109cb6024c523e838b774ac6b02379f2efa90246732bb06d4bb6bde"
+    },
+    {
+      "path": "research/nine/REVIEW_GENERAL_SUPPORT_POINT_RIGIDITY_AND_CHANNEL_MASK_SHARED_S_2026_10_28.md",
+      "bytes": 4955,
+      "git_blob": "79c80c503b99f291387e30d2b626df186b47b420",
+      "sha256": "bec1af1595d83d319aec0c630f07f3aef81b628fceb2d5cacac9f48868a6fcfa"
+    },
+    {
+      "path": "research/nine/REVIEW_GENERAL_SUPPORT_POINT_RIGIDITY_ROOT_AUTHOR_ADOPTION_2026_10_28.md",
+      "bytes": 2535,
+      "git_blob": "c2186cef7a52f828a2975a488745f9b1d529ddd2",
+      "sha256": "22bc9cca0f76afc719de7d5bccb14b81de56cc51810dd4f0a7611a66c079cf45"
+    },
+    {
+      "path": "research/nine/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 12841,
+      "git_blob": "d007b7ee912a045bc525ad5bb45e3d80683b1aa1",
+      "sha256": "9a0c704df3817a413639a98fbae8864ef58c583811735ac5c6816f69e1b0f636"
+    },
+    {
+      "path": "research/nine/REVIEW_GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_LEAF_FEATURE_HOUSE_FINISH_V2_INDEPENDENT_2026_10_28.md",
+      "bytes": 11989,
+      "git_blob": "c3d62e4e74fc2dd2b7d01bea483e273c34e244ad",
+      "sha256": "8361272b9999a249d3fa3a58f4d732474bb2fd4247e8d1b0b3284972a05ad108"
+    },
+    {
+      "path": "research/nine/REVIEW_H4_COINCIDENT_SINGLETON_RETURN_COMPLETE_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 16224,
+      "git_blob": "030b5726c8a61b4f41f171c20653c5146873dddb",
+      "sha256": "79bdb6d7fb2e0152baada61191d80983f43603c0140c17abb411d6dc5bf09c63"
+    },
+    {
+      "path": "research/nine/REVIEW_H4_D_OWNED_NONAXIS_C_RETURN_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 12168,
+      "git_blob": "ece0659a9ba1a59aa912800c41bf1c7d1fedc7e8",
+      "sha256": "fe54b6a7ea6e2494bcc5499a65f3a6c81b03db79d5778750788fc7da945b2cf6"
+    },
+    {
+      "path": "research/nine/REVIEW_H4_D_OWNED_NONAXIS_FREE_OPPOSITE_END_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 22604,
+      "git_blob": "6fd46dc0dd146d2861e8b9478ee92ff56fc38072",
+      "sha256": "3ef5a03e599292e7e86ccc047c5cbf79e1b76613558ee44f8fb7469e16701233"
+    },
+    {
+      "path": "research/nine/REVIEW_H4_D_OWNED_PARALLEL_RETURN_OPPOSITE_OWNER_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 20651,
+      "git_blob": "efbf8fa811c5c608d6db94c32d78a9c2733ccace",
+      "sha256": "de2f8bddf3a825d5e5a351aebe637fa9f7883b7e63057f4cc367f1af0aa85408"
+    },
+    {
+      "path": "research/nine/REVIEW_H4_D_OWNED_PERPENDICULAR_AND_WHOLE_OWNER_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 15801,
+      "git_blob": "6eca0639301d22540913ff5850d32613137eb58d",
+      "sha256": "25be5dc587884f3e0e7e9831f0d143466ba467c04bc71d3240ce6c1502d9fda4"
+    },
+    {
+      "path": "research/nine/REVIEW_H4_D_OWNED_PERPENDICULAR_FREE_OPPOSITE_END_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 19765,
+      "git_blob": "879419277264419542d5673c319448c075b121c8",
+      "sha256": "d0357430fe97489a125723c745af1c1436a74693e309cef5a97efcff470a0414"
+    },
+    {
+      "path": "research/nine/REVIEW_H4_D_OWNED_SAME_AXIS_COMPLETE_RETURN_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 14404,
+      "git_blob": "e71b022f589a4b74fecbd8892595b2fa52592e72",
+      "sha256": "89aceaaf7d6482e03ae7e2cad94b981b975edeff9d781b57f5429285ab80f6be"
+    },
+    {
+      "path": "research/nine/REVIEW_H4_EAST_RETURN_AND_FULL_H_OWNED_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 6116,
+      "git_blob": "9f0b4f674460ad493961abc4440979ff2f3b10bf",
+      "sha256": "b3022cd56631c23fadc5823cbfbfa3945445eaa41d03d4a36df7cb58e1cec1b5"
+    },
+    {
+      "path": "research/nine/REVIEW_H4_FOUR_BOUNDARY_COMPLETE_ASSEMBLY_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 25168,
+      "git_blob": "0f08aa91fca9bf0b7eca097d889768a03692237c",
+      "sha256": "31a8f899f3a6ba45d05dec8550bdbf051ff6092483ec758394c6a49d6748f08f"
+    },
+    {
+      "path": "research/nine/REVIEW_H4_FREE_END_SHARED_C_RETURN_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 14382,
+      "git_blob": "7f7b6c2ebc01dcc141a1afde1dfd0a9b9950af73",
+      "sha256": "331c9a789af23cfed099c42e52813c52ede8f7e82a91dab1f89c8751f7643b54"
+    },
+    {
+      "path": "research/nine/REVIEW_H4_FREE_END_SHARED_E_RETURN_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 14668,
+      "git_blob": "af46844e68f1bd43cd8224f1d422afe8980a18f7",
+      "sha256": "9eafa6e2ce0eee3e28539f4ae79ee29ffcdfc8f5ff4e67cac06a7c985c92eb44"
+    },
+    {
+      "path": "research/nine/REVIEW_H4_NONAXIS_OWNED_END_SHARED_RETURN_PROJECTION_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 16791,
+      "git_blob": "3cf0fbce4ac39a40ff0c7c5156e0faf509dacc39",
+      "sha256": "f83f9ca28d791f2903ba597b5ec714860fb3af2633abc789d517f7943b4e1ab3"
+    },
+    {
+      "path": "research/nine/REVIEW_H4_NO_CHORD_COMPLETE_ORIGINAL_PARENT_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 19672,
+      "git_blob": "1cd5e4ed496bc360e7e102c424a01e28911e00e1",
+      "sha256": "99486443e0ad461d31fcede48034e9b2914f125b789eece88cde93826a2a8c2c"
+    },
+    {
+      "path": "research/nine/REVIEW_H4_OWNED_END_HEIGHT_AND_OPPOSITE_OWNER_ROOT_2026_10_28.md",
+      "bytes": 4467,
+      "git_blob": "e363ae33c5440d45f868067cb52975a2360ddd45",
+      "sha256": "2fb784b9bf8269440a273c921cdf8902497223e510405fd1d5c936da7e0fbe36"
+    },
+    {
+      "path": "research/nine/REVIEW_H4_OWNED_END_HEIGHT_AND_OPPOSITE_OWNER_SHARED_S_2026_10_28.md",
+      "bytes": 6377,
+      "git_blob": "676ca37223b0f0e762d1df97a4b130e05b1aff22",
+      "sha256": "906c9e2dfa27dfbe62ae51f577e090425cbea8c79e76896156fe6b7f8770c826"
+    },
+    {
+      "path": "research/nine/REVIEW_H4_STRICT_NORTHEAST_ALL_SIGNS_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 6160,
+      "git_blob": "c019a917564ec10646fcb0175e0d9c3962b21ae6",
+      "sha256": "bf116776b8f6d6e4ba2c259b741ac391cc850565f8ec4c887411cf8d726419db"
+    },
+    {
+      "path": "research/nine/REVIEW_H4_THREE_LOAD_124_COMPLETE_ORIGINAL_FAMILY_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 32736,
+      "git_blob": "342af21ffeaf4541816447d3d00ef972c794f353",
+      "sha256": "cba3df8fe493978cc2ed157a83f38da76bc06a4303835d22851e36ca9c59fdfd"
+    },
+    {
+      "path": "research/nine/REVIEW_H4_TWO_OWNED_ENDS_BOTH_NONAXIS_RETURNS_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 25866,
+      "git_blob": "02d5bf3198b0ccddbf724693e951804201f1891d",
+      "sha256": "c97536f900ddb955fd47f4c6d98af381c859ca3ce3285eac0f67bad18fc78804"
+    },
+    {
+      "path": "research/nine/REVIEW_H4_TWO_OWNED_ENDS_COMMON_E_SIDE_UNIFORM_RETURN_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 21407,
+      "git_blob": "49652ea8b96678d68ff4ad596b5f4f3ca027158e",
+      "sha256": "a96fb227eb9e01774040f811769cf1560b4d59f7baec44e0179f66b21d36f4d3"
+    },
+    {
+      "path": "research/nine/REVIEW_H4_TWO_OWNED_ENDS_COMPLETE_E_OWNER_DOUBLE_SHARED_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 20691,
+      "git_blob": "0d231fac65d0327df043ca4df7827ecf4c40c978",
+      "sha256": "c9729a4b5f9cf848ef0720c5db824da0c7a1c9e24d52b1c9f26785965bcef7f9"
+    },
+    {
+      "path": "research/nine/REVIEW_H4_TWO_UNLOADED_ENDS_BOTH_FREE_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 19752,
+      "git_blob": "c38c928a83a9831ba408e44be7a03f4749f7e855",
+      "sha256": "1df96863012644e5563188dad8810ff0bbac43cd32ed3910e7d7a7d134829fbf"
+    },
+    {
+      "path": "research/nine/REVIEW_H4_TWO_UNLOADED_ENDS_COINCIDENT_FREE_RETURN_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 15032,
+      "git_blob": "e51405944dc38cfb0e9503d4617515ce470bbf49",
+      "sha256": "31ac244d57ddf8038520a52d70d7ea789cf079e10415a5a5fdd7d8a78699e339"
+    },
+    {
+      "path": "research/nine/REVIEW_H4_TWO_UNLOADED_ENDS_D_OWNED_PARALLEL_COMPLETE_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 19454,
+      "git_blob": "c7c67a6dcf9080d5b586a7e4b8ed4dcb532e64ba",
+      "sha256": "551e9fe1f8b18b28db5ba09b4966b1c92cc7b473b9f1cfa3954e900076eb81fd"
+    },
+    {
+      "path": "research/nine/REVIEW_H4_TWO_UNLOADED_ENDS_EAST_AND_WHOLE_H_OWNER_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 14565,
+      "git_blob": "26f59707776acd2c9ee69f29ef9aeb73bd9f01df",
+      "sha256": "77c9595f9f6d021690062538dd3a4bc23fd2394837a5c8664a6ea44a28a81a6e"
+    },
+    {
+      "path": "research/nine/REVIEW_H4_TWO_UNLOADED_ENDS_NEGATIVE_RETURN_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 15161,
+      "git_blob": "9ee0c6bcc89bcf6d8bcd35c0af15890ca075f668",
+      "sha256": "e7234accfc51575213d2aaf60ed81a78232a6e9876e0e2800d8db6a9ac090efc"
+    },
+    {
+      "path": "research/nine/REVIEW_H4_TWO_UNLOADED_ENDS_POSITIVE_C_RETURN_ROOT_2026_10_28.md",
+      "bytes": 3871,
+      "git_blob": "f46f49d46e38a0c06a0db8702ba599f2f7215d60",
+      "sha256": "7ce202dfc7cfaa08c38c52630182994183acfe546f867d51d13cfc546a1543cd"
+    },
+    {
+      "path": "research/nine/REVIEW_H4_TWO_UNLOADED_ENDS_POSITIVE_C_RETURN_SHARED_S_2026_10_28.md",
+      "bytes": 5913,
+      "git_blob": "c9396f79024ca47aac71d80ad8f0d8395f7a8615",
+      "sha256": "2e75d48e0a50040478fdc96301bbeaa4cd940d026188bac931bc8594ee87d0c5"
+    },
+    {
+      "path": "research/nine/REVIEW_HIGH_ALIGNED_ENDPOINT_FAN_PARALLEL_WEST_TC_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 13655,
+      "git_blob": "b1b4b9aa74fbbc6b31f315aeef595a09fea8eaa9",
+      "sha256": "25b075722a484945eae20abc8229514d32fec48910dd600a1d5e117865b35d5f"
+    },
+    {
+      "path": "research/nine/REVIEW_HIGH_ALIGNED_ENDPOINT_FAN_STRICT_VERTEX_TC_FINISH_V2_INDEPENDENT_2026_10_28.md",
+      "bytes": 22741,
+      "git_blob": "173fcc617e2154e22bb8d5a3ce4180407fe63be4",
+      "sha256": "6581eb94bdad5098b227c8d488bd2c306c1f01825340db40fd20577ddbe1b391"
+    },
+    {
+      "path": "research/nine/REVIEW_HIGH_ALIGNED_HOUSE_TCB_COMPLETE_WEST_TC_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 15139,
+      "git_blob": "55fb0effb1b88dcb6f5243b7443dbabda22e99e9",
+      "sha256": "30a269a2352e738334681a9f73975322b740e89e51901fc7ef1e9e9cab91f8e1"
+    },
+    {
+      "path": "research/nine/REVIEW_HIGH_ALIGNED_HOUSE_TCB_NORTHWEST_NORTH_FAN_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 15586,
+      "git_blob": "68da0f4117b009ea19657b410830e9fc6d325d2a",
+      "sha256": "f51fbe9d27534274bdc89c147e57ae2b6cebdbda8f86af3d5aca73be02bd29be"
+    },
+    {
+      "path": "research/nine/REVIEW_HIGH_ALIGNED_HOUSE_TCB_PARALLEL_D_CONTACT_COVER_TC_FINISH_V2_INDEPENDENT_2026_10_28.md",
+      "bytes": 12900,
+      "git_blob": "4cdb601eee818dae79351132227526e64db3313d",
+      "sha256": "c0023c2cff3bff8dc7f9ae1fcaca7f31aa5b733a3e8eab81043fd83bb90ffb84"
+    },
+    {
+      "path": "research/nine/REVIEW_HIGH_ALIGNED_HOUSE_TCB_PARALLEL_D_WEST_FAN_FINISH_V2_INDEPENDENT_2026_10_28.md",
+      "bytes": 11719,
+      "git_blob": "735e300937dbebd91f67616fdd044366b7ecebd6",
+      "sha256": "60e6126b63684875b9344055d6d6d6da9199551e8860c2c0d077fd1f627c5c09"
+    },
+    {
+      "path": "research/nine/REVIEW_HIGH_ALIGNED_UPPER_PAGE_CENTER_GAP_FAN_FINISH_INDEPENDENT_2026_10_28.md",
+      "bytes": 13081,
+      "git_blob": "d671a050ef3a73503f6af5a898123b5569d55edf",
+      "sha256": "82cd18d04801dd55a3ccfcde1934ce4513e14ee977d940fb1ea7f77cb9e51ea8"
+    },
+    {
+      "path": "research/nine/REVIEW_HIGH_NONOPEN_TILTED_FAN_HUB_OWNED_TC_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 12169,
+      "git_blob": "e84142520408376451c9403f6fc9eaf504eeb312",
+      "sha256": "9da45c8cff46a7fd74b375a83df1811069c723894ebac60bec1859ba7af18dbf"
+    },
+    {
+      "path": "research/nine/REVIEW_HIGH_NONOPEN_TILTED_FAN_ROOT_OWNED_TC_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 11538,
+      "git_blob": "82ffc68c48fd776c29b4aa72c1ada0d63b4f93ad",
+      "sha256": "20e667b0ee9b7e2c9197c7c4a1c3dbff1078dfd3c34b187327612ab4bc886706"
+    },
+    {
+      "path": "research/nine/REVIEW_HIGH_NONOPEN_TILTED_FAN_SHARED_HX_TC_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 11169,
+      "git_blob": "e621bb247a578c85fae78d96862eefd974b94b65",
+      "sha256": "de45bf16d96694404beb72b24a664e3cf175ab2bdaf7c227466c809f38821e74"
+    },
+    {
+      "path": "research/nine/REVIEW_HIGH_NORTH_UNIQUE_NEAR_RETURN_SLOPE_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 12878,
+      "git_blob": "6aacb9841333425d1da9e5b1a3db055949a8a7f8",
+      "sha256": "e84be32203843fa11a422d5719b2f9aff0dd4211c221a8ae380346cb2be66ffb"
+    },
+    {
+      "path": "research/nine/REVIEW_HIGH_SQUARE_LOWER_ROUTE_CHORD_BARRIER_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 6399,
+      "git_blob": "8ca3d6adf256b272f7ab0a9322b177e5a71de2f8",
+      "sha256": "9cc608e46af54e68285dfbdaf58bdaf4a7376cf53cd061d6b120010f73a3d5ce"
+    },
+    {
+      "path": "research/nine/REVIEW_HIGH_SQUARE_LOW_LEFT_PORT_BARRIER_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 7159,
+      "git_blob": "adf6dd06f3a0c2d7f59b77d75b54a0458bb7def3",
+      "sha256": "f407b921ea2d54278e30b6ecf33c3756f8d28e9e6614c5c0f108575564e022ba"
+    },
+    {
+      "path": "research/nine/REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+      "bytes": 16080,
+      "git_blob": "a35d7aa4fe1e422aa109ab9414dc5e5c6e08fe84",
+      "sha256": "f917697f13c574c533658ea108b0c770d4c1c949fc463ba996511e890e2d62ae"
+    },
+    {
+      "path": "research/nine/REVIEW_INNER_CIRCLE_CROSSCUT_COMMON_HUB_AXIS_L0134_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 35283,
+      "git_blob": "e1b73592dbb9ae7919e9168b866f190daa819739",
+      "sha256": "8d0f41cf0c621a132a1f16e0305f440283ddeae0c6f965301c53d6fe50a58a0e"
+    },
+    {
+      "path": "research/nine/REVIEW_INNER_FAN_134_S_COMPLETE_ORIGINAL_FAMILY_JOIN_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 24766,
+      "git_blob": "b8e0ef79d4a2c7418967aa53ea51f2310157948f",
+      "sha256": "d4936d24978051288172f35cfa06813eeef6db34c81abe082c53c8b34e76416c"
+    },
+    {
+      "path": "research/nine/REVIEW_INNER_FAN_COMPLETE_ORIGINAL_PARENT_JOIN_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 20612,
+      "git_blob": "980229946d50df66ccba401f3e284e9de4dda416",
+      "sha256": "57bf2b5dacf307d398e91af32e295cf6b40f3269aa58462b4de5f2fa6c82e189"
+    },
+    {
+      "path": "research/nine/REVIEW_INNER_FAN_GENUINE_LEAF_COMPLETE_ORIGINAL_PARENT_INDEPENDENT_2026_10_28.md",
+      "bytes": 13911,
+      "git_blob": "a77559956ade36c667b26492c69529050bd96f56",
+      "sha256": "04a05a5f5fd0cc38a59b1f238025404a688bca18061c8488c4eb8d430f55fe40"
+    },
+    {
+      "path": "research/nine/REVIEW_INNER_FAN_GENUINE_S_LEAF_COMPLETE_ORIGINAL_FAMILY_INDEPENDENT_2026_10_28.md",
+      "bytes": 18589,
+      "git_blob": "984f4e08bb71eadb10e868b35090c5a4bf845370",
+      "sha256": "7c78e9af0384aaa6ddb2fdd07b4006058879388fb6ba313634b8d6518b2f1f94"
+    },
+    {
+      "path": "research/nine/REVIEW_INNER_PENTAGON_FOUR_SPOKE_NO_CHORD_COMPLETE_FAN_LOW_INDEPENDENT_2026_10_28.md",
+      "bytes": 10040,
+      "git_blob": "91bebd73606153d966fceca51a60ea49f56fee67",
+      "sha256": "0d1479dd412d7339e2ac7db0e0c2b0185bfa988c2d4a25c94dac6a0721f5e922"
+    },
+    {
+      "path": "research/nine/REVIEW_INNER_PENTAGON_ONE_SHARED_INNER_RETURN_FAN_LOW_INDEPENDENT_2026_10_28.md",
+      "bytes": 9242,
+      "git_blob": "9348eecee6b60d0ef9aad5f80ec7986b5a30127f",
+      "sha256": "4a979b6a4f47fb8fc1ae9c63648594faeb0d4e72eb51d7a173c175e0910e71c6"
+    },
+    {
+      "path": "research/nine/REVIEW_INNER_PENTAGON_TWO_E_OWNED_RETURNS_FAN_LOW_INDEPENDENT_2026_10_28.md",
+      "bytes": 8223,
+      "git_blob": "b6aaf595100ded15edd47a85a498332a7c2949bf",
+      "sha256": "152b6cde807d0064a560cf17fb8271619a9b97c0d7a4153b025ad98ef171bb88"
+    },
+    {
+      "path": "research/nine/REVIEW_INNER_PENTAGON_TWO_UNLOADED_ENDS_COMPLETE_FAN_LOW_INDEPENDENT_2026_10_28.md",
+      "bytes": 11814,
+      "git_blob": "cd80c5d8ecf2e8149959a0c0d777fc52d1d0cfa9",
+      "sha256": "88c5d1246797bafdf6eb9184cd16f748021fa5bb332941dd50eb8619c88587b3"
+    },
+    {
+      "path": "research/nine/REVIEW_LOADED_MIDDLE_WIDE_PORT_SLOPE_HOUSE_FINISH_V2_INDEPENDENT_2026_10_28.md",
+      "bytes": 9662,
+      "git_blob": "e389d7883518720d40889a92a57367b39300b8dd",
+      "sha256": "d206743cb65107c1fca163c462a3f3e3f971ba925c7e9137fd97dcc884bfee42"
+    },
+    {
+      "path": "research/nine/REVIEW_LOADED_TIP_TRANSMITTER_CHAIN_GENERAL_HUB_POCKET_ROOF_RESUME_2026_10_28.md",
+      "bytes": 32942,
+      "git_blob": "0bd990e8e39c462193f9606ea46cd25e567b284f",
+      "sha256": "c013ef69420179c6cc47a38d7ea0f4ee110382823237457c6ce75dbb73ad86cc"
+    },
+    {
+      "path": "research/nine/REVIEW_LOADED_TWO_APPLICATION_BOUNDARY_FREE_DICHOTOMY_INDEPENDENT_2026_10_28.md",
+      "bytes": 21488,
+      "git_blob": "ef6bc56db4c37b7c3fde3bfe5d1a2e0197aa487c",
+      "sha256": "0d71302c571280dd0df9f9b16470d668580ad1fb57ebd306468fb2a8b04d0bc5"
+    },
+    {
+      "path": "research/nine/REVIEW_LOADED_TWO_APPLICATION_FULL_STAR_PROPER_CONCURRENCE_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 18127,
+      "git_blob": "9fc8b4aeab1c9202ba38b8d034f07ecf5a21600d",
+      "sha256": "b91f1283a238615a9a05fb849add9dd0823a9a60c4b95e3351d2512c214b6e4b"
+    },
+    {
+      "path": "research/nine/REVIEW_LOWER_TDC_S_PARALLEL_INWARD_OWNER_FRONTIER_2026_10_28.md",
+      "bytes": 10501,
+      "git_blob": "2c43d4a343cdad7f942f2e2770400d8ed30b0fbe",
+      "sha256": "a464517e0623bc6faad6ed021eb4192010f458e2b382f3022b40a11611cbaba1"
+    },
+    {
+      "path": "research/nine/REVIEW_LOWER_TDC_S_PARALLEL_INWARD_OWNER_ROOT_2026_10_28.md",
+      "bytes": 7012,
+      "git_blob": "69aa0bd210f70656277f34765fe503598d8cf6f9",
+      "sha256": "d563eb5e1b9ce46302cf2da454dea8423be7a2de69677a9f02e352cb759bbd32"
+    },
+    {
+      "path": "research/nine/REVIEW_LOWER_TDC_S_THREE_PARALLEL_CORE_FRONTIER_2026_10_28.md",
+      "bytes": 7504,
+      "git_blob": "848d084d9628e0fb7425fcf5cc834ba4a783013d",
+      "sha256": "2783e39fd27c519730ffd7de999aa078b7fa9cb0b8346d5fb4b7757311af0ea8"
+    },
+    {
+      "path": "research/nine/REVIEW_LOWER_TDC_S_THREE_PARALLEL_CORE_ROOT_2026_10_28.md",
+      "bytes": 3712,
+      "git_blob": "3c59b25f1d8a1acc976871be306ea7555855cf8f",
+      "sha256": "8a15f7cae4eebf74c133f52b523c90f9eb29895fab90c6a6d369378413489e71"
+    },
+    {
+      "path": "research/nine/REVIEW_LOW_ALIGNED_INNER_FAN_SOUTHWEST_HUB_COMPLETE_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 25082,
+      "git_blob": "a1d6adb1cf7d59582da642b649c34df97dcf2e22",
+      "sha256": "96554ac842f08e89457c8d47307afe1a8812850b61eb5e21147a42fd86459d8c"
+    },
+    {
+      "path": "research/nine/REVIEW_LOW_ALIGNED_INNER_FAN_VERTEX_OWNERSHIP_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 24158,
+      "git_blob": "9a080339f88d2640613506705f179437f92846d5",
+      "sha256": "ddabf6339a143a970732b8ff67a5ab970d1fefffbde0cdddf6f91a956e95beb6"
+    },
+    {
+      "path": "research/nine/REVIEW_LOW_ALIGNED_INNER_FAN_WEST_HUB_COMPLETE_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 24368,
+      "git_blob": "a003e2e24a4a5899df9e3413e0f5e19d4f89fb54",
+      "sha256": "63a11fb309faeb07f4fa89b05adaedde676334d9ab69ef504c4e60360dbe285b"
+    },
+    {
+      "path": "research/nine/REVIEW_LOW_ALIGNED_UPPER_VERTEX_TWO_SHARED_RETURNS_ROOT_2026_10_28.md",
+      "bytes": 22302,
+      "git_blob": "7ba6829ba5e7c8a5607bcaf3bff77b567962757d",
+      "sha256": "1fcaf39d21b0f0257dfb4864a9d596ac2f2aec6fbcc348f114db047a6b3c8c3f"
+    },
+    {
+      "path": "research/nine/REVIEW_LOW_LEFT_LOADED_FULL_STAR_AXIS_RIGIDITY_FAN_FINISH_V2_INDEPENDENT_2026_10_28.md",
+      "bytes": 7751,
+      "git_blob": "f009e1625fa8de58da0d73dc29aa981b2913bfef",
+      "sha256": "3a306c0d7d73fdf1ff6fa08985b0ceb92a829c4d78bcea5f4ceb13eba94461c5"
+    },
+    {
+      "path": "research/nine/REVIEW_LOW_SOUTH_BOUNDARY_DEPTH_WALL_SPAN_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 12855,
+      "git_blob": "f981d52c54dafb28e25381d9bcadfc67fb057b97",
+      "sha256": "ee505b6e54aa35d39474696558f2368e9b2e98716f3a9728d10362edfe920b3b"
+    },
+    {
+      "path": "research/nine/REVIEW_LOW_SOUTH_NINE_TWENTY_FIFTHS_DEPTH_ONE_THIRD_RETURN_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 16352,
+      "git_blob": "ceb52204bdb3da8b87a2ebc969b6c940d1163059",
+      "sha256": "dc0a9ab33a02ed8a5e43ac747a92e55af44ecf485a79c8c8597fef59da074c85"
+    },
+    {
+      "path": "research/nine/REVIEW_LOW_SUPPORT_WEST_BOUNDARY_PAGE_TC_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 6899,
+      "git_blob": "3e20777869801b94bdc053af7e9958ff79876a3a",
+      "sha256": "1b454c3b6cabe7f4a4ae042797f0f3e117e928954249aa60b0aa398212e1375c"
+    },
+    {
+      "path": "research/nine/REVIEW_LOW_TOP_STRIP_AND_ZERO_REST_MOMENT_HOUSE_ALIGNED_INDEPENDENT_2026_10_28.md",
+      "bytes": 14917,
+      "git_blob": "ea221449c1a9ae7324ea8f7b5ba756a95d93c969",
+      "sha256": "6cec9a9d3bf6d7aef8983598ab999af2629fcb9fe8a6d034253ba897ad99d151"
+    },
+    {
+      "path": "research/nine/REVIEW_LOW_TOP_STRIP_WEAK_RETURN_GRAPH_HOUSE_ALIGNED_INDEPENDENT_2026_10_28.md",
+      "bytes": 14241,
+      "git_blob": "6149070baac12373fa45dc99f29a9cc805a1e4cc",
+      "sha256": "edba7b5ab331df3d41d5bdf428211fc45d766a2896a3cfa57e1de27de70f0292"
+    },
+    {
+      "path": "research/nine/REVIEW_NEAR_HUB_UNIQUE_TIP_SHARED_KERNEL_W_INDEPENDENT_2026_10_28.md",
+      "bytes": 23452,
+      "git_blob": "56a55657fe84051ad13c5c96408c752bc4e4e2df",
+      "sha256": "9ac9138bcaebcfa34ab1c63d6754c864329fd8ddfb3b79ee1fd86940298435e1"
+    },
+    {
+      "path": "research/nine/REVIEW_NEGATIVE_SUPPORT_LOW_TRANSVERSE_BOUNDARY_NEIGHBOR_INDEPENDENT_2026_10_28.md",
+      "bytes": 11855,
+      "git_blob": "f12f68e163e3eef260473b86d15eba16a4cf1ea5",
+      "sha256": "a5602582afe909670c2a83bdb9d9c21d6a98fbed5bf2d6b034425ab0592eeac4"
+    },
+    {
+      "path": "research/nine/REVIEW_NINE_UNIT_BOUNDARY_TRIANGLES_ZERO_WINDING_PENTAGON_UNIFORM_2026_10_28.md",
+      "bytes": 14986,
+      "git_blob": "b1ee2201101f355c4bdc91b72970c7ab6e9b75f4",
+      "sha256": "99dc8c8e3d0aa0407dbb42a248a7c48863b3f6ea67d7025657b933fba7d8660b"
+    },
+    {
+      "path": "research/nine/REVIEW_NONPARALLEL_TWO_APPLICATION_LOADED_STAR_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 17011,
+      "git_blob": "99915aea102398eec09924e25d0f64cd22357908",
+      "sha256": "7dbd82131c9c809dbb68f6c3a3bb82f6ab1ce0a3697a03ddd34a2fd3460e96e1"
+    },
+    {
+      "path": "research/nine/REVIEW_NORTH_ALL_MASKS_NEGATIVE_RETURN_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 13108,
+      "git_blob": "6f10ef51c1a28b3eee9db98032411fdb82ab968e",
+      "sha256": "a10e016a4c860c9d928a9b2469ab64292eab1c7a695f8d552db3b45070407e9e"
+    },
+    {
+      "path": "research/nine/REVIEW_NORTH_COMPLETE_HUB_CHORD_BARRIER_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 11388,
+      "git_blob": "65fcd18b6b42a5200f4bbf0448fd9773c64f1d7f",
+      "sha256": "63e91dfc902f0bac87052ffccd1c485b701950fe8e09c52a0f2ef6e267e3759e"
+    },
+    {
+      "path": "research/nine/REVIEW_NORTH_RADIAL_RETURN_UNIQUE_A_CORNER_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 7967,
+      "git_blob": "f5c340c5ddd88495eecfcafbed89a8e9f3970525",
+      "sha256": "265f7f40b36547ee2cccefa62fa2c0d3f90d6b34b08b3f36c826d0e52abf1947"
+    },
+    {
+      "path": "research/nine/REVIEW_OBLIQUE_SUPPORT_SIDE_OWNERSHIP_FAN_LOW_INDEPENDENT_2026_10_28.md",
+      "bytes": 5749,
+      "git_blob": "6ca1167f3d0db66879c97ccc9e4516ba92172f50",
+      "sha256": "44677997b09e11565cd004e184469806e27cda9af2a1eaf9d975f65fea785670"
+    },
+    {
+      "path": "research/nine/REVIEW_ONE_HUB_AXIS_ALL_OWNER_NEAR_ORIGIN_BOTH_FOUR_LOADS_REVIEW_RESUME_2026_10_29.md",
+      "bytes": 38119,
+      "git_blob": "20d63bd8271cc7c3d4e2790d8f052261a632c750",
+      "sha256": "22b36a75adca0daee0ae31c8f0ba7b17630b19189e80369d37bdbf658e8df7ea"
+    },
+    {
+      "path": "research/nine/REVIEW_ONE_PROPER_ENDPOINT_MIXED_DEGREE_CAPACITY_AND_LONG_PORTS_INDEPENDENT_2026_10_28.md",
+      "bytes": 17526,
+      "git_blob": "7fc1c613f61ebad16e7f30d581a88cc3075b0595",
+      "sha256": "20fd98896fb509a474059188533ce0772a57ae52ba574c09e0cc1ad75c2b84ea"
+    },
+    {
+      "path": "research/nine/REVIEW_OPEN_ORIGIN_FAN_HUB_OWNED_SINGLETON_FAN_LOW_INDEPENDENT_2026_10_28.md",
+      "bytes": 14002,
+      "git_blob": "4fa0d10c54d315f338df1ba3aeedb1e04584cfb1",
+      "sha256": "81ec3b9a0aa00da0a9d55c3ddefa09b1a57de0e5bc1d923bf7c801d0a8635109"
+    },
+    {
+      "path": "research/nine/REVIEW_OPEN_ORIGIN_FAN_ROOT_OWNED_HUB_SIDE_FAN_LOW_INDEPENDENT_2026_10_28.md",
+      "bytes": 11257,
+      "git_blob": "80b97e056af38fdbad93573903bcf5609360fbbb",
+      "sha256": "a23bd3b6d37c34c97f6e952a0c2876a75708dd65c37031afb4b43498f3e1a07e"
+    },
+    {
+      "path": "research/nine/REVIEW_OPEN_ORIGIN_FAN_SHARED_HUB_INTERFACE_FAN_LOW_INDEPENDENT_2026_10_28.md",
+      "bytes": 15740,
+      "git_blob": "0152033023be60dd48c5c662be471a689e33866b",
+      "sha256": "e3bec2b7b5a77e847577ef015ba0dd81a164dd6d971bf81c38386da6e4b299e9"
+    },
+    {
+      "path": "research/nine/REVIEW_OPEN_ORIGIN_ROOF_WHOLE_SHARED_HUB_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 13462,
+      "git_blob": "fc0571114a687e0e83e2d2f02ef14c4647b86f54",
+      "sha256": "6fce0b121fb5b480cb3ac978351a8e5512f335dfaf9c7abff097f8024a778d4a"
+    },
+    {
+      "path": "research/nine/REVIEW_OPEN_ORIGIN_ROOF_WHOLE_SINGLETON_JOIN_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 18821,
+      "git_blob": "15d803b4504fa0d2439d69fe921f357ffd38847d",
+      "sha256": "1761c18e9f7f1e5e375304cf15a013f46cde1d9030c623a8d0b81f2cfcd5bb81"
+    },
+    {
+      "path": "research/nine/REVIEW_OPEN_ORIGIN_S_NORTH_RETURN_RIGIDITY_THIN_D_2026_10_28.md",
+      "bytes": 7122,
+      "git_blob": "9fcd75b562fdb54a279431efa5871c675ba6d44a",
+      "sha256": "f977160e4bec395bef0d2b207bb4dd373fbd6d880500666b756dc4ead1456d2c"
+    },
+    {
+      "path": "research/nine/REVIEW_OPPOSED_FULL_STAR_NEAR_NEIGHBOR_AND_ALL_ROOT_POSITIONS_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 19051,
+      "git_blob": "8e64873c3ee62556245e4970339de773ddb024a5",
+      "sha256": "d5c74c1fecd5feb9a504cb67aef24a34ca212634a7ed23d163e8b6b26d036ecf"
+    },
+    {
+      "path": "research/nine/REVIEW_OPPOSING_SHALLOW_CENTERS_TC_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 11103,
+      "git_blob": "db17a874fdd6bcc139490e7cbc88209ef86c8356",
+      "sha256": "b9885dd614692bb59888152bf1c1bb52f8b0de5359f01dd73a0322993f8c5700"
+    },
+    {
+      "path": "research/nine/REVIEW_OPPOSITE_OWNED_S123_HAND_SCALARS_AND_FULL_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_28.md",
+      "bytes": 22351,
+      "git_blob": "9f510f1196d91f7b38ee5e110fda058ef9bb881f",
+      "sha256": "831f60bb45ea98b53e5dba3162b8e7ea95462139a2bccb89393109c92c54d743"
+    },
+    {
+      "path": "research/nine/REVIEW_OWNED_OPPOSITE_HUB_VERTICES_COMMON_RETURN_WIDTH_INDEPENDENT_2026_10_28.md",
+      "bytes": 11537,
+      "git_blob": "b1af0f4d989abcc95b4cf1fd77010b2b7a6637f9",
+      "sha256": "fd9c84b558013501edc95cd80d975cce2ec655953ab0675f66f6620778c5ac3e"
+    },
+    {
+      "path": "research/nine/REVIEW_OWNED_RETURN_NORMAL_SPAN_TC_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 10127,
+      "git_blob": "bd4c9436878003c1ce0431c042c1e9433b41e739",
+      "sha256": "4ef2c50f1567da385d1f411dee7cc60e3022b98b97266a8195d44f114935d686"
+    },
+    {
+      "path": "research/nine/REVIEW_OWNED_STEEP_JUNCTION_FULL_STAR_FAN_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 10617,
+      "git_blob": "c85c66a2d5ab941d147aa4bf253c1709a90dd2dd",
+      "sha256": "fe5992065922a5955e2a94e0790a2b963eefc0f99d2b41c58b6ec0bae05fec5c"
+    },
+    {
+      "path": "research/nine/REVIEW_OWN_AXIS_FULL_STAR_TOUCHING_CHAIN_TC_FINISH_V2_INDEPENDENT_2026_10_28.md",
+      "bytes": 8615,
+      "git_blob": "af6f17d14e8ee8899c17b505cf9f7e359a9832d1",
+      "sha256": "6a23a9924024c93d67f5bfc20195d6dd674d84b10297419fb418171ed5678fd7"
+    },
+    {
+      "path": "research/nine/REVIEW_PARALLEL_INCOMING_HUB_AXIS_CHAIN_FOUR_LOAD_ROOF_RESUME_2026_10_28.md",
+      "bytes": 33456,
+      "git_blob": "3640bf873a6d1932866fcbf7ff6057a240bb3af8",
+      "sha256": "5f2049d2078ca83d6a24a477169799eb1dc8f01e4f0dae5ab64c16fab0d8c9d3"
+    },
+    {
+      "path": "research/nine/REVIEW_PERPENDICULAR_ADJACENT_CHAIN_CAPACITY_BOTH_FOUR_LOADS_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 39320,
+      "git_blob": "3b2ac68486908eadabec567c91259e8f64b5ac48",
+      "sha256": "29afe29aec7206d01c506a5c3b5f72e964bd81cf99b3f987df2113f91faac506"
+    },
+    {
+      "path": "research/nine/REVIEW_PERPENDICULAR_PARALLEL_UNIQUE_NEAR_ORIGIN_CHAIN_BOTH_FOUR_LOADS_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 49118,
+      "git_blob": "353058e6531e7c232929263d8e377662904cd1ee",
+      "sha256": "1084c651185a63202b13aee185703917c836586def4a820ff2be1fcb96f8f107"
+    },
+    {
+      "path": "research/nine/REVIEW_PERPENDICULAR_TWO_CIRCLE_ALL_OWNER_NEAR_ORIGIN_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 34041,
+      "git_blob": "7278a01535989b2861fe9c128170a17a71939c5b",
+      "sha256": "0c63f30732a3ca0f165a41a5234cc865092d47dfff4c1acafdbe5d46fb4923ff"
+    },
+    {
+      "path": "research/nine/REVIEW_PERPENDICULAR_TWO_CIRCLE_CHAIN_CAPACITY_BOTH_FOUR_LOADS_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 42548,
+      "git_blob": "d63081365c83b8aacf63fd8917c1e548d2d39957",
+      "sha256": "0264bbaa21d61903501ef0e7747a04e92f318814683387c801eb1faf322950dd"
+    },
+    {
+      "path": "research/nine/REVIEW_PHYSICAL_SIDE_GAP_EXCLUSION_THIN_D_2026_10_28.md",
+      "bytes": 4982,
+      "git_blob": "0e73a90aaa205d3421ad5c463dcf65914c9264d5",
+      "sha256": "e2d86f88273207e907cd511491b8f45c8de675803f2603dbd58a00f8a519201a"
+    },
+    {
+      "path": "research/nine/REVIEW_PHYSICAL_SIDE_GAP_ROOT_ADOPTION_2026_10_28.md",
+      "bytes": 2494,
+      "git_blob": "c09d74270d52527960317d554c2f5d30ef24fbb7",
+      "sha256": "68cc6a4431d2bb3e752b93649e19a485277bc4f8ee976bd9a625003881dfa65b"
+    },
+    {
+      "path": "research/nine/REVIEW_POSITIVE_NORMAL_TWO_PORT_LOW_SOUTH_OVERHANG_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 15435,
+      "git_blob": "879f692845d11aacbed05d23ff01cef872a57758",
+      "sha256": "e6509b589a9e43541047e8fd4a07beeeb183422699aa08ff27bb356cdcab7273"
+    },
+    {
+      "path": "research/nine/REVIEW_RECOVERED_FULL_STAR_MOMENT_AND_SHORT_PATH_PERPENDICULAR_JOIN_FRESH_2026_10_28.md",
+      "bytes": 20716,
+      "git_blob": "779958065c5ffc423a43c33c65b1601271b7e4f6",
+      "sha256": "28e3670bfc36f9eb96e2d0aa86ce2eb9c90ce9f6acf4ff05fcb50bbf7a26a41c"
+    },
+    {
+      "path": "research/nine/REVIEW_RECOVERED_SHARED_AND_COINCIDENT_SELECTION_COMPATIBILITY_INDEPENDENT_2026_10_28.md",
+      "bytes": 33041,
+      "git_blob": "9aa6b126468fa1fd57476a391fe810d2199ed0a9",
+      "sha256": "1086ed38e813fa9f3099522105020c5f9406119e94b0aa0ee598bfa73c2d2809"
+    },
+    {
+      "path": "research/nine/REVIEW_RECOVERED_UNIFORM_GEOMETRY_THREE_GENERAL_LEMMAS_2026_10_28.md",
+      "bytes": 12152,
+      "git_blob": "42b96817e508b84870a8b5785266b3bd9ca972fd",
+      "sha256": "b2c4bdfd929fb42bc1a04626f5810f834c8d5b9440dc224b4ff08bd4920d108a"
+    },
+    {
+      "path": "research/nine/REVIEW_REMAINING_EDGE_SPAN_PERPENDICULAR_PENTAGON_SHARED_RETURN_ROOF_RESUME_2026_10_28.md",
+      "bytes": 20978,
+      "git_blob": "d80ccb0d797b3a611eb92eacfb413c2e21e8c903",
+      "sha256": "763daa366c15762c0a6ec66bd98aee673027cf7cce19f80e32b4e2d2c943be3b"
+    },
+    {
+      "path": "research/nine/REVIEW_S123_UNIQUE_STRICT_INCOMING_HAND_REPLACEMENT_TC_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 16861,
+      "git_blob": "02d3c3863f6eaed5bfa9a53eccfa40135c23c10a",
+      "sha256": "9f009efba9b67d8d015c7621f2328314adb5681585c94ed9777ae2f0d619069e"
+    },
+    {
+      "path": "research/nine/REVIEW_SAME_FACE_PARTIALLY_UNLOADED_POCKET_ORIGIN_L0134_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 30392,
+      "git_blob": "4ed5fc28a8ad634f7ab25785f56cce24c91e8cb0",
+      "sha256": "217bfa575739cb6f09c17ada3696921424ab1921d86b31a9d1536333ecaa8ad8"
+    },
+    {
+      "path": "research/nine/REVIEW_SHALLOW_ALIGNED_S_LEAF_BOUNDARY_SCREEN_CONTINUOUS_EXPORT_INDEPENDENT_2026_10_28.md",
+      "bytes": 13500,
+      "git_blob": "60a1096a8ca370492a1b431f7e136b7a21631909",
+      "sha256": "dd85d6d4181b6c1b65b8e82bc20f2f7c790599a5ead4bd32b5d42da33ae459d4"
+    },
+    {
+      "path": "research/nine/REVIEW_SHARED_RETURN_JUNCTION_SELECTION_AND_PENTAGON_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 20367,
+      "git_blob": "2bfd18197ea5fb9a234c92c17823df29a7cdbb18",
+      "sha256": "2e151167d684713c9ea297f8c73b08ce25bfa77af08722f130ccacdbb6581c2d"
+    },
+    {
+      "path": "research/nine/REVIEW_SHARED_TERMINAL_SIDE_CHAIN_CAPACITY_BOTH_FOUR_LOADS_REVIEW_RESUME_2026_10_29.md",
+      "bytes": 44912,
+      "git_blob": "db756adc871aa9d1d429a61671e188bbfb38868e",
+      "sha256": "f6fa79b9c1a80f6031edc0ecb2c44216e55a38a7b83c486bf6a44046a288ded0"
+    },
+    {
+      "path": "research/nine/REVIEW_SHARP_QUARTER_CLEAR_ARC_INTERVAL_CAPACITY_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "bytes": 11998,
+      "git_blob": "2d3f2580e05705ae6bd504cd2efb822bf78a6b1a",
+      "sha256": "214c46e0985bb55999a57b8c17a0afb495ce47f6647b3cf98d8c0501d7dcc655"
+    },
+    {
+      "path": "research/nine/REVIEW_SHIFTED_TWO_COLUMN_SIX_UNIT_CAPACITY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_28.md",
+      "bytes": 13266,
+      "git_blob": "772a87f8193dd9aa5f7e53583a7bbba5b3681296",
+      "sha256": "ba1f626d59e8b88887b1b551cad4fda1db047a4b5bfe41ad1b68eddf22f2fd76"
+    },
+    {
+      "path": "research/nine/REVIEW_SHORT_BOUNDARY_PATH_FULL_RADIUS_ARBITRARY_FRAMES_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 10041,
+      "git_blob": "63a3026ab40e2706dc1cd0ad3a834ae1bbe89024",
+      "sha256": "ed608360c4b15b269cf37921fecff34b025197a7089cb49d38345dbdcd63e277"
+    },
+    {
+      "path": "research/nine/REVIEW_SHORT_BOUNDARY_PATH_INDEPENDENT_HEIGHTS_AND_AXES_PENTAGON_UNIFORM_2026_10_28.md",
+      "bytes": 7530,
+      "git_blob": "d90ec76f6de73a52d0829cb66c2e1cfe660ca10e",
+      "sha256": "e1b55d843fc8548f4566b619a7a45db6648cb644d1aaa5736642c6667436219b"
+    },
+    {
+      "path": "research/nine/REVIEW_SHORT_BOUNDARY_PATH_UNOWNED_OPPOSITE_SUPPORTS_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 8036,
+      "git_blob": "690d3a3647fba03c2aa850e44ce5b64000417ea3",
+      "sha256": "fcc7b5f4e1cf832560eba4bd0c62656cc507a4f5376daf570fc4a0973da312ea"
+    },
+    {
+      "path": "research/nine/REVIEW_SIGNED_SMALL_SUPPORT_HIGH_SQUARE_BARRIER_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 10172,
+      "git_blob": "942e63616173903718feb259f4922346417ce1d3",
+      "sha256": "4caf67fb8ff68e431eb000f3829aa26a7610cc5e0e3e08d38a114ce7b5931967"
+    },
+    {
+      "path": "research/nine/REVIEW_SINGLETON_TERMINAL_CHAIN_ALL_RETURN_CAPACITY_ROOT_2026_10_28.md",
+      "bytes": 29115,
+      "git_blob": "e360cf3e95726b7bb19939b28047bfcc3e07917b",
+      "sha256": "720b8f988c22c41390f5dd4342531c9175302bb76cb3d89cc6e41a0466f1018a"
+    },
+    {
+      "path": "research/nine/REVIEW_SINGLETON_TERMINAL_TIP_OWNED_TWO_CIRCLE_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "bytes": 12323,
+      "git_blob": "adab413d9d6969cf73024603098c3bc9767397c6",
+      "sha256": "11458eaf7d0a147fa50711c81d6ea6e7996510baa474288bbf2183a59ca5099c"
+    },
+    {
+      "path": "research/nine/REVIEW_SINGLE_HUB_AXIS_EXTERNAL_TIP_OWNED_ALL_MASKS_ROOF_RESUME_2026_10_29.md",
+      "bytes": 25397,
+      "git_blob": "e97ad82f9a4c5c21bd57762e79d5d353b21fff22",
+      "sha256": "983e057a287ae09a0469c50ddefe0cea9eb97237c74f7e9916e5cec5d2a4279f"
+    },
+    {
+      "path": "research/nine/REVIEW_SINGLE_HUB_AXIS_EXTERNAL_UNIQUE_W_OWNED_RETURN_REVIEW_RESUME_2026_10_29.md",
+      "bytes": 26829,
+      "git_blob": "e3b1eef0a02335f4f91233a724e1cf85b5ee3085",
+      "sha256": "112c89116208aa221e2a052d76723ab6aea3eb9868ae422b2e60908e0fccbc34"
+    },
+    {
+      "path": "research/nine/REVIEW_SINGLE_HUB_AXIS_RADIAL_NONOWNED_RETURNS_FREE_AND_BOUNDARY_T_REVIEW_RESUME_2026_10_29.md",
+      "bytes": 30188,
+      "git_blob": "61d04a99f303ba93714c0025d69a5106b7b23bb1",
+      "sha256": "575a288e90f378a32b56a95f809662c8c0e3faaf9178f88e1c0201b307c0400a"
+    },
+    {
+      "path": "research/nine/REVIEW_SINGLE_HUB_BOUNDARY_PATH_THREE_TENTHS_CLEARANCE_INDEPENDENT_2026_10_28.md",
+      "bytes": 22172,
+      "git_blob": "b7d54b97aa1d16353ecf2c3fc7d9a2e69252feac",
+      "sha256": "e260e527986506edc4b3bf47cfbc584f9fa67a8ca6b1bac83625ac1ec1ec2d4a"
+    },
+    {
+      "path": "research/nine/REVIEW_SMALL_CENTRAL_UNIT_THREE_QUARTER_CENTER_COUNT_FAN_FINISH_INDEPENDENT_2026_10_28.md",
+      "bytes": 9255,
+      "git_blob": "ea6f0b7a3bc15be89e24684c59530624fd8450b5",
+      "sha256": "6922f5f3e4f791901c8712178c1c824ea8a13da3315ec8bdca4c0bc032410868"
+    },
+    {
+      "path": "research/nine/REVIEW_SMALL_OWNED_INCOMING_PORT_BOUNDARY_RETURN_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 21454,
+      "git_blob": "2b01b20e7e72e6ae0a390289efd064bd3263a8fd",
+      "sha256": "00a83d15a8d1424d89ac92bb1e423812e31b96dcc66011d5739566625bf1a3fb"
+    },
+    {
+      "path": "research/nine/REVIEW_SOLE_THIRD_AXIS_PARALLEL_RETURNS_ROOT_2026_10_28.md",
+      "bytes": 7148,
+      "git_blob": "ba99041e5e7f21990b41deed113160c785cb8d9a",
+      "sha256": "c9028949fda5ecd3c3c52bd70d6da76122153c38d805ef547deb587f9b808ec5"
+    },
+    {
+      "path": "research/nine/REVIEW_SOLE_THIRD_AXIS_PARALLEL_RETURNS_UNIFORM_REMAINING_2026_10_28.md",
+      "bytes": 12502,
+      "git_blob": "b9212c85f54639685fdfe8618f68dd7c1e87e20b",
+      "sha256": "25d1e5bb812f075ca81b3fbac7cfa031f5632e641d29e2a685a11078b99bf9f1"
+    },
+    {
+      "path": "research/nine/REVIEW_S_ROOT_NORTHWEST_HUB_SIDE_RETURN_FRONTIER_2026_10_28.md",
+      "bytes": 6981,
+      "git_blob": "c504479fe6b3cfcb7ac123b6decb5ce8c0744828",
+      "sha256": "fa42a7e99fafed776e15336d862b57e6b2a1f890fd6cdba1f30360eb003f71c9"
+    },
+    {
+      "path": "research/nine/REVIEW_S_ROOT_NORTHWEST_HUB_SIDE_RETURN_ROOT_2026_10_28.md",
+      "bytes": 4636,
+      "git_blob": "2f75526bbde8424f47b907d7ad718f86734e4395",
+      "sha256": "769aec2b49f290f38676ef7cad5dbd7c8086657e053c532b67a41a1f70ea9807"
+    },
+    {
+      "path": "research/nine/REVIEW_S_ROOT_NORTHWEST_OPPOSITE_RETURNS_FRONTIER_2026_10_28.md",
+      "bytes": 6383,
+      "git_blob": "ac92cc0dde43a5d5b1ec1530708cd72cdb46a679",
+      "sha256": "60b55db2dbe5a30b320d673621ec9fc51da565c320558509e2ae677cfdb7c7cc"
+    },
+    {
+      "path": "research/nine/REVIEW_S_ROOT_NORTHWEST_OPPOSITE_RETURNS_ROOT_2026_10_28.md",
+      "bytes": 4165,
+      "git_blob": "0ba475e83e9d49a996c66bff53802039286af2e3",
+      "sha256": "411eb73a3ce4c9502738cc3c38a5bcd70d9110505ee77e113e66b8fa3a63a609"
+    },
+    {
+      "path": "research/nine/REVIEW_S_ROOT_NORTH_RETURN_RIGIDITY_AND_DOUBLE_CORNER_ROOT_2026_10_28.md",
+      "bytes": 6270,
+      "git_blob": "4d63357c27a99802a6943550027458a2d4186fef",
+      "sha256": "0f4339af1b1c3cce50c066abdb8a7946cb540e161ef4cfd5ccfa917f4888d6ca"
+    },
+    {
+      "path": "research/nine/REVIEW_TERMINAL_DISTINCT_RETURN_TWO_CIRCLE_W_INDEPENDENT_2026_10_28.md",
+      "bytes": 12978,
+      "git_blob": "29fa17204b5dcb84b8b9a6119719a0786a1eca37",
+      "sha256": "64984519e31a665801ffeb3fa758a133c5814de5359b28df45decd6f6ea9f6db"
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_ALIGNED_BYPASS_SHARED_ROOF_HORIZONTAL_HUB_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 8486,
+      "git_blob": "8e0c2c3c54cc42d28eebd6d3d8628058f3e49068",
+      "sha256": "b7ad2e217737fd0865685a0f3142c25c7fad3ef3961146d185e9561f5efd792d"
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_BOUNDARY_FAN_ARC_NORMAL_ORDER_TC_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 12924,
+      "git_blob": "c165069720988f2cf286e3edf8f7bdfce5ea8d0e",
+      "sha256": "0ac41fea67a766c24c9c18e7e14a25658fdb0a2b475c926a2894251355794663"
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_SPOKE_EQUAL_ROOF_CONTINUOUS_HAND_BOUND_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "bytes": 11784,
+      "git_blob": "d8063813d780cf59d2ab15408e722614bd515df6",
+      "sha256": "639c37b28fff4a3fd15b8dd0576eb76b1a86e4eda82bac6ced5cfe4101cd5839"
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_SPOKE_EQUAL_ROOF_CONTINUOUS_REPLACEMENT_JOIN_INDEPENDENT_2026_10_28.md",
+      "bytes": 25786,
+      "git_blob": "138d5248be962d550a73f2ec869d0b94acd7b874",
+      "sha256": "d993306f5fa112856b1f61f778486c077712c435ac8666968958c1d7b818e9d0"
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_SPOKE_HUB_OWNER_RETURN_CONTINUOUS_HAND_BOUNDS_INDEPENDENT_2026_10_28.md",
+      "bytes": 19250,
+      "git_blob": "c1c51693f9005b779298cb84c867d00f102a8ea0",
+      "sha256": "a5b024a06a8853c30331c869cdb317dc56596a3f5c11bc5303867b3c133b27aa"
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_SPOKE_HUB_OWNER_RETURN_CONTINUOUS_REPLACEMENT_JOIN_INDEPENDENT_2026_10_28.md",
+      "bytes": 23996,
+      "git_blob": "b9a62dea62f825b1b01860316f6ff92571ff0732",
+      "sha256": "bc3f3fa5a763d905ce97b45b32e6d5d2ec4c37a1dcd6bdeeaf5b9697552e8925"
+    },
+    {
+      "path": "research/nine/REVIEW_TILTED_NONOPEN_HUB_OWNED_SINGLETON_S_ROOF_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 20426,
+      "git_blob": "87bac45fb6078a092b9e688a967065e6a325d8ec",
+      "sha256": "7c926502a5ab25e16cf7a7099c57528614d769b53ed34dc8bac9bb05054f9375"
+    },
+    {
+      "path": "research/nine/REVIEW_TILTED_NONOPEN_ROOT_OWNED_SINGLETON_S_ROOF_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 25474,
+      "git_blob": "d2f03db740d3d9465c187cb9b69983ad0a3abb75",
+      "sha256": "b24124335760ec1ab736f606a92f02fa41885d907f3e6724677fb242825236e0"
+    },
+    {
+      "path": "research/nine/REVIEW_TILTED_NONOPEN_SHARED_S_ROOF_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 19504,
+      "git_blob": "972d88311273773ce687baab3b17bce97cb037cb",
+      "sha256": "328c983d86a55e69f7c7123e5f73670bd65859098ace3d4bac0212c6f7ecec3a"
+    },
+    {
+      "path": "research/nine/REVIEW_TILTED_RADIAL_C_OWNED_AD_EXIT_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 12954,
+      "git_blob": "93cad03ac1b8d33c87a43decc2c5d6dd670cbe9f",
+      "sha256": "2db509bb038e13b5f9c10180a409250838ed165ac3b34cbe03d4707b5e3e2730"
+    },
+    {
+      "path": "research/nine/REVIEW_TILTED_RADIAL_C_OWNED_LOWER_T_RETURN_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 19187,
+      "git_blob": "052799b77382ab37400882df4cd2c1590586ab14",
+      "sha256": "e61887f3a26ef880a64953b6e981c65c0e1f2fc94bc736dc6b0d0342e4af8b2c"
+    },
+    {
+      "path": "research/nine/REVIEW_TILTED_RADIAL_C_STRICT_AD_CORNER_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 10586,
+      "git_blob": "e07a34cff8781ea81faab55cca495c02694cbe69",
+      "sha256": "7f1f9948a7ca237dfd999cbdec48944750a114398001eb877b24258a65ebe89d"
+    },
+    {
+      "path": "research/nine/REVIEW_TIP_OWNED_TRANSMITTER_CHAIN_CAPACITY_ZERO_AXIS_L0135_ROOF_RESUME_2026_10_28.md",
+      "bytes": 40340,
+      "git_blob": "d4ed6e866e60062acfe6e10aea3241396c63502e",
+      "sha256": "71b47d36580cb52375ec4471115dc0c04daa990d1fcce69b4de1323b76e1c931"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_ORIGIN_OPPOSITE_BOUNDARY_FOUR_RING_PENTAGON_UNIFORM_2026_10_28.md",
+      "bytes": 22870,
+      "git_blob": "b83f73a95f67498863d99a71dd8d39bf6d519c57",
+      "sha256": "f79e97154c39f5915705c4feeffa120d9497f0f2e340d6e8159dec9dbf1d77a4"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_RADIAL_CONTACT_TRANSVERSE_BARRIER_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 8226,
+      "git_blob": "7a2299e818add5d789939fde213538e073d8f94a",
+      "sha256": "fda36190ed07b145a17693073cdc524edfb92776a5557120adcc876e72195628"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_UNIQUE_TIPS_SHARED_EDGE_SINGLETON_SELECTION_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 22490,
+      "git_blob": "f640d0627666a686bd85e5a303219671e339b937",
+      "sha256": "c9b78d20490e9c720ba9aac7f9b755132eaf3ed623ee1c5515bc77304a926efd"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_UNLOADED_ENDS_FREE_HUB_END_COMPLETE_EXCLUSION_INDEPENDENT_2026_10_28.md",
+      "bytes": 13416,
+      "git_blob": "6cb3918329f1ff60bb05951d953e8f34db7ab866",
+      "sha256": "2a8a41c75b67fb9aef3a93f77c32536c4f80cd2b86fb8ecb35a32c839d626447"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_UNLOADED_ENDS_SAME_AXIS_RETURN_COMPLETE_EXCLUSION_INDEPENDENT_2026_10_28.md",
+      "bytes": 13738,
+      "git_blob": "9a1469b80272e9e7a28d0665588a7e4ed6532f5b",
+      "sha256": "60cfaa763c2856b6cf761504cbce07901c9049dc670f7048a9ebbf5a1ea3174a"
+    },
+    {
+      "path": "research/nine/REVIEW_UNIFORM_INNER_CIRCLE_ARC_FAMILY_UNIFORM_REMAINING_2026_10_28.md",
+      "bytes": 11874,
+      "git_blob": "941f784a5a9e30105488b190373090faf68a8f18",
+      "sha256": "e7836f79f4fe821fabdd5917855954f2a4e687560528bc148434aa4660d5266d"
+    },
+    {
+      "path": "research/nine/REVIEW_UNIFORM_INNER_CIRCLE_CRITICAL_CLEARANCE_UNIFORM_REMAINING_2026_10_28.md",
+      "bytes": 9351,
+      "git_blob": "6b17422cfc52654f7845b7ed960dbe6a1630712e",
+      "sha256": "f260756292251dc6e097f4165402b968dd505dc64934647abe9e52cecc64e6ee"
+    },
+    {
+      "path": "research/nine/REVIEW_UNIQUE_TIP_DISTINCT_W_RETURN_ORIGIN_MARGIN_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "bytes": 10611,
+      "git_blob": "b113f881ce71f107084058951dc214e5abcdbbd2",
+      "sha256": "2e5e43ffc01b2348276a4d97a6ae6fbd75fb24ff18d2d1fffcc6aee3cd165977"
+    },
+    {
+      "path": "research/nine/REVIEW_UNIQUE_W_CLOSED_LEFT_STRIP_POCKET_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "bytes": 15705,
+      "git_blob": "b1dd75e4343bf7fb4a298d81162baded0afdf86c",
+      "sha256": "d5391e43d30868a71caa48ab6bb46ca75a108fab6041bc7dac1a572c4e954435"
+    },
+    {
+      "path": "research/nine/REVIEW_UNIT_SUPPORT_CAP_FOUR_SEVENTHS_ROOT_2026_10_28.md",
+      "bytes": 5681,
+      "git_blob": "27220cd4125c14adbcdbf01830fbe1e747797d01",
+      "sha256": "03fe1f27dbd91d6f178b1dbd587a7358ca29c52428da80e666a45124bef59112"
+    },
+    {
+      "path": "research/nine/REVIEW_UNIT_SUPPORT_CAP_FOUR_SEVENTHS_SOLE_UT_INDEPENDENT_2026_10_28.md",
+      "bytes": 6769,
+      "git_blob": "bbedbf8d866342e8dea2a32e7003bb199bce3ff8",
+      "sha256": "b7b56703b8b1f03419025773cb14359aa7b3051649d6f9a229fe3bf854ff8b74"
+    },
+    {
+      "path": "research/nine/REVIEW_UNLOADED_COMMON_CORNER_CHAIN_VERTEX_FORCING_RECOVERY_AUDIT_2026_10_28.md",
+      "bytes": 8854,
+      "git_blob": "8691de200d230edc62b0a4300e3919eecd900443",
+      "sha256": "e1c6ca9fbd592b9d234542c8f7c20a3346df75c4057f5337466b1df980057ef9"
+    },
+    {
+      "path": "research/nine/REVIEW_UNLOADED_COMMON_CORNER_FOUR_NEIGHBOR_CHAIN_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 7872,
+      "git_blob": "41a71f4e409ff5e68a446ab6fdf9f8b31463b9da",
+      "sha256": "6765cfe63b4baa6f1d61bd2068dc1f829a684bbf0cd53ca2c65d1b60b2984fac"
+    },
+    {
+      "path": "research/nine/REVIEW_UNLOADED_ENDPOINT_CHAIN_BARRIER_FREE_LONG_PENTAGON_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 21015,
+      "git_blob": "9572d6a1a58fb564230db1b421af0564e36a4683",
+      "sha256": "e0c58715ef841c2195fb87ffe7f203f6c25262c5c2eb15e5012afedfb3513f55"
+    },
+    {
+      "path": "research/nine/REVIEW_UNLOADED_FOUR_SPOKE_COMMON_RETURN_MOTIF_FAN_LOW_INDEPENDENT_2026_10_28.md",
+      "bytes": 17310,
+      "git_blob": "4a7ecc242317414217083a661ceb68af0435ef7d",
+      "sha256": "435edf61e0626fa9ec5f32086d1b671ff9e8aa182c8d8a9fc66d2ae2ddd769e5"
+    },
+    {
+      "path": "research/nine/REVIEW_WHOLE_ROOF_ABC_S_ORIGINAL_FAMILY_JOIN_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 20453,
+      "git_blob": "b2f3b8b7e7bf2a123d3a5836397b96abe38eee04",
+      "sha256": "eaa88f29fd3a12ac263773b4d376f45646fb912e340db1eb7feb111ab435dc85"
+    },
+    {
+      "path": "research/nine/REVIEW_WHOLE_ROOF_TEN_FAMILY_PARENT_JOIN_REVIEW_RESUME_2026_10_28.md",
+      "bytes": 21183,
+      "git_blob": "f392e1ec5e9596b62881e44346da75a4486781a9",
+      "sha256": "4ec428927393cfbe796a56e61c0c6afd6210128cefe5ecee51e6832c56101902"
+    },
+    {
+      "path": "research/nine/S123_OPPOSITE_OWNED_BOUNDARY_STAR_CERTIFICATE_FREE_ASSEMBLY.md",
+      "bytes": 11853,
+      "git_blob": "6d60c258fccb42dab2cefee94db5f14ff9def206",
+      "sha256": "0a70babc3229965d4ea4e727f3dcb9014342fac55957045eec0a3f489a1ab7f7"
+    },
+    {
+      "path": "research/nine/S123_UNIQUE_PACKET_HAND_REPLACEMENT_AND_FULL_STAR_HOUSE_REDUCTIONS_CHECKPOINT_2026_10_29.json",
+      "bytes": 253318,
+      "git_blob": "c6c966ac91043c65402ccf62edd57e9763128a5d",
+      "sha256": "789a1997d333b3cf639ccd1780ff6d0aed633860acd4370538dc188c3233261d"
+    },
+    {
+      "path": "research/nine/S123_UNIQUE_STRICT_INCOMING_COMPLETE_HAND_REPLACEMENT.md",
+      "bytes": 13601,
+      "git_blob": "cbfb4f3c503212dda01fd81e27794260aba8861e",
+      "sha256": "1b90539a64c95fe42ef8215fc0a911b783cc97491cc3a58171aa4132259e1b83"
+    },
+    {
+      "path": "research/nine/SAME_FACE_SHARED_TRIANGLE_PARTIALLY_UNLOADED_POCKET_AND_ORIGIN_EXCLUSION.md",
+      "bytes": 30633,
+      "git_blob": "5503339dae3cdc29aeade6cb9eec923fa4b4c48b",
+      "sha256": "29cc0e27f93f46d97d479213baaf0e6770de304cb567e68b77b920406663ba01"
+    },
+    {
+      "path": "research/nine/SHALLOW_ALIGNED_S_LEAF_BOUNDARY_SCREEN_CONTINUOUS_HAND_EXPORT.md",
+      "bytes": 12081,
+      "git_blob": "2c562e4430e4963916d79427cfb2468d5b786639",
+      "sha256": "9be417f4061addef70bd911d403a1cdb96f62a3a609dd1e21809c7e47751aa95"
+    },
+    {
+      "path": "research/nine/SHALLOW_NORTHEAST_OWNED_MIDDLE_LOW_SUPPORT_RADIAL_TOP_EXCLUSION.md",
+      "bytes": 7280,
+      "git_blob": "baa301c37bbd4fe075e9dfb41909aabc4f4749ee",
+      "sha256": "f8081f075efa4a19c72754910ab2fafa534024b5798d03953f8446e4f12d4374"
+    },
+    {
+      "path": "research/nine/SHARED_RETURN_JUNCTION_COMPATIBLE_SELECTION_AND_PENTAGON_EXCLUSION.md",
+      "bytes": 17401,
+      "git_blob": "cfeea9e200a8d66725bc893497ab7b3afa466ab1",
+      "sha256": "00b93e6146b0686dc2d3bc0fe580058eb919de2a32c7df88fe546c4379846fda"
+    },
+    {
+      "path": "research/nine/SHARED_TERMINAL_HUB_SIDE_CHAIN_CAPACITY_AND_BOTH_FOUR_LOAD_FEATURES.md",
+      "bytes": 49549,
+      "git_blob": "aba8003bba6ccfe4c6c2fa35e8dccb5cf7bc4da8",
+      "sha256": "b1e594c445f348e79927f2d6a88f649a4dab716bbd4fdc412f99b061b6da0967"
+    },
+    {
+      "path": "research/nine/SHARED_UNIQUE_TIP_SHARP_ARC_AND_NEAR_HUB_CHECKPOINT_2026_10_28.json",
+      "bytes": 64056,
+      "git_blob": "40d31df4bc097353612c01cf191fd3ce42b849b9",
+      "sha256": "b6f01efac500ec414f44ca73f2f08080b250220d04c271642f7ae3ca374a065e"
+    },
+    {
+      "path": "research/nine/SHARP_QUARTER_CLEAR_RADIUS_FIVE_QUARTERS_ARC_AND_INTERVAL_CAPACITY.md",
+      "bytes": 16614,
+      "git_blob": "c3f237ffbca6db97dca284cabf68a6e06b811ea6",
+      "sha256": "bca528af5320cc8314839eb0d53cf6f15ec381ac42d5bd353f62a27a47101f67"
+    },
+    {
+      "path": "research/nine/SHIFTED_COLUMNS_PARALLEL_HOUSE_AND_STRICT_VERTEX_FAN_CHECKPOINT_2026_10_28.json",
+      "bytes": 269402,
+      "git_blob": "4c3126f24cf2c5b09510dfa43ae382df1c334e58",
+      "sha256": "2863b3b3762a297af576abdbb6c5a92a1679a70071786d575e22411224549a90"
+    },
+    {
+      "path": "research/nine/SHORT_BOUNDARY_PATH_ARBITRARY_FRAMES_FULL_RADIUS_OPPOSITE_SUPPORT_EXCLUSION.md",
+      "bytes": 11659,
+      "git_blob": "7acffbf54f622b53d310168207ca9ba6d28164f1",
+      "sha256": "34c9a02388146c9e085f66831eb3be49bd577cf1ec47ff7948f7306c0f4c24f1"
+    },
+    {
+      "path": "research/nine/SHORT_BOUNDARY_PATH_OPPOSITE_SUPPORTS_WITHOUT_SIDE_OWNERSHIP.md",
+      "bytes": 7430,
+      "git_blob": "e1ab7db4be53b706cee719b0f10529b50664c2e9",
+      "sha256": "699995c7434d2b448c16831f874bc2b36a2df356532bbd1c085cc8c15c9b96d9"
+    },
+    {
+      "path": "research/nine/SHORT_BOUNDARY_PATH_OWNED_ENDPOINTS_INDEPENDENT_HEIGHTS_AND_AXES.md",
+      "bytes": 6862,
+      "git_blob": "d94a9c9d5addaf2fa28d66c854b3e670c8f31071",
+      "sha256": "0bb8e0d45fc6f4e664e4fd9a58532d6db44d654ae3533231672556b4e41229cb"
+    },
+    {
+      "path": "research/nine/SINGLETON_TERMINAL_AXIS_TIP_OWNED_RETURN_TWO_CIRCLE_POCKET_EXCLUSION.md",
+      "bytes": 24248,
+      "git_blob": "1461280fc7f56b3de3af98d62b25108cec14130b",
+      "sha256": "6afadc3f6e74933e4ac36073ef2d5c243c4cbe91198a9c90b2be68ad368ed73d"
+    },
+    {
+      "path": "research/nine/SINGLETON_TERMINAL_HUB_AXIS_CHAIN_ENDPOINT_ALL_RETURN_CLOSING_CAPACITY.md",
+      "bytes": 47461,
+      "git_blob": "eb9ebbd4841120ff9258753013416a5fcc86dede",
+      "sha256": "2e5611f4739d303cc10de1a8a05d1e9ba8bad199e914b604f7ac8384bb53adf4"
+    },
+    {
+      "path": "research/nine/SINGLE_HUB_AXIS_EXTERNAL_RADIAL_TIP_NONOWNED_RETURNS_AND_FREE_EXCLUSION.md",
+      "bytes": 30810,
+      "git_blob": "d3fc329d360f6fa8908debdfc869b6205caeb107",
+      "sha256": "f9e569bca58d270cad3a55f4d02d84b6826526899ef3a3917fd840f61d73379a"
+    },
+    {
+      "path": "research/nine/SINGLE_HUB_AXIS_EXTERNAL_TIP_OWNED_RETURN_ALL_MASKS_NEAR_ORIGIN.md",
+      "bytes": 23595,
+      "git_blob": "56db8d2dfcbcaede2d94e0b8030e4e28bea8559b",
+      "sha256": "c2608a36b39027be4aa0d6addf6b33da03afad421687ca5383b265723ed9235d"
+    },
+    {
+      "path": "research/nine/SINGLE_HUB_AXIS_EXTERNAL_UNIQUE_TIP_W_OWNED_RETURN_EXCLUSION.md",
+      "bytes": 19566,
+      "git_blob": "393b7a8c1c9ae2b3a0b819e8425d36eb5220cac4",
+      "sha256": "c15ef9c4f10423ed26267b776bd75e5b1d88a5b6e07e263626a50e351baf0de4"
+    },
+    {
+      "path": "research/nine/SMALL_CENTRAL_UNIT_EXCLUDES_THREE_OTHER_THREE_QUARTER_CENTERS.md",
+      "bytes": 9098,
+      "git_blob": "ac74340a01781635ebe66d60de264147dbe2fbf7",
+      "sha256": "5ec9509ff5e2e79c25a4bd9d59d3ee2a53dd2fcf5c0ddd039c93add3552e2a14"
+    },
+    {
+      "path": "research/nine/SMALL_OWNED_INCOMING_PORT_LOADED_TIP_NO_BOUNDARY_RETURN.md",
+      "bytes": 17080,
+      "git_blob": "68183b6b39e848a83dd0cac5519b60cd248849ee",
+      "sha256": "721b2040f95abb3506031dd832cf05fead51b900666884e8d7c057bbf02ceacd"
+    },
+    {
+      "path": "research/nine/SOLE_THIRD_AXIS_PARALLEL_BOUNDARY_RETURNS_EXACT_SHARED_CHART.md",
+      "bytes": 15677,
+      "git_blob": "5df42e00ad7b40aaaca328d200e54a03844c07ee",
+      "sha256": "857d05210c2529c86595bffd547b712de4ef1a697e5403229aeb2f7077a56500"
+    },
+    {
+      "path": "research/nine/TERMINAL_HUB_AXIS_DISTINCT_RETURN_SIDE_TWO_CIRCLE_TIP_EXCLUSION.md",
+      "bytes": 21311,
+      "git_blob": "b544f874eebf5f9537b32566d3ad90f6477f8d22",
+      "sha256": "b2a641d04909abad6e99885e2485c2af0845d3ee05ad43a19664d6a93e4891fb"
+    },
+    {
+      "path": "research/nine/THIRTY_SEVEN_FIFTIETHS_CENTER_UNIT_CENTERED_FORTY_DEGREE_ARC.md",
+      "bytes": 10415,
+      "git_blob": "179870e16b85308275f0afd3ae9df7ca1cb48a00",
+      "sha256": "aef1a6c7a6ac6631c5b236f50301b31db2f87441b1f9e22883686d8f70032282"
+    },
+    {
+      "path": "research/nine/THREE_ALIGNED_UNITS_CORNER_BYPASS_AND_SHARED_ROOF_HORIZONTAL_HUB_EXCLUSION.md",
+      "bytes": 11375,
+      "git_blob": "6ac3d9dad188147e78fd45aac420977720c3fd54",
+      "sha256": "215cbe339382fadd2edce7a4741acb01d43380946a2a126bfe2b0fb1f17872dd"
+    },
+    {
+      "path": "research/nine/THREE_BOUNDARY_FAN_PHYSICAL_ARC_AND_NORMAL_ORDER.md",
+      "bytes": 12743,
+      "git_blob": "d849c63859aa6dbaf1acc468edb1b48cb101bfd0",
+      "sha256": "f9739f14e4b92fc5b80d968ec846023171d7b72cb682134a34d6a338cf3c4f07"
+    },
+    {
+      "path": "research/nine/THREE_QUARTERS_CENTER_UNIT_CENTERED_NINE_EIGHTHS_ARC.md",
+      "bytes": 9988,
+      "git_blob": "9efaf4d41a1eb176154fe5c11f6dcfd7d60bd738",
+      "sha256": "c511df67ca7857c3aa85d62c768cb87da428c7eaedd4328d6a9d6bf36dcba16a"
+    },
+    {
+      "path": "research/nine/THREE_SPOKE_EQUAL_ROOF_SEPARATION_CONTINUOUS_HAND_BOUND.md",
+      "bytes": 14541,
+      "git_blob": "ef5fa100cd7b3d800de3877b3a1cd4d29f7845fa",
+      "sha256": "495ffa7f6214724d9be9a02974e4729708d7eb9a057c94d8e11dbbe0f5733143"
+    },
+    {
+      "path": "research/nine/THREE_SPOKE_EQUAL_ROOF_SEPARATION_CONTINUOUS_PROOF_REPLACEMENT_JOIN.md",
+      "bytes": 19818,
+      "git_blob": "6c3ffdd5a52973e1b53286cd0c0c9b5de067f580",
+      "sha256": "b58751e7f848eb38301f5645f3e90be466e7730961d5c39667653e5624a8bf9a"
+    },
+    {
+      "path": "research/nine/THREE_SPOKE_HUB_OWNER_RETURN_CONTINUOUS_HAND_BOUNDS.md",
+      "bytes": 26470,
+      "git_blob": "1b20d3795081c6e9f96c17acab5714e8b59ef7f6",
+      "sha256": "7ce73e2445b0047ed40b12b103e5999be8e3afabdcdf5033f0f727c10bf2498c"
+    },
+    {
+      "path": "research/nine/THREE_SPOKE_HUB_OWNER_RETURN_CONTINUOUS_PROOF_REPLACEMENT_JOIN.md",
+      "bytes": 20793,
+      "git_blob": "55ac106b6c7665c4a638ac645427c0e4df495dee",
+      "sha256": "862917ba37685667109e3efd659a412f5f73e40582064e9b1b71438d13ddd8c4"
+    },
+    {
+      "path": "research/nine/TILTED_NONOPEN_S_ROOF_HUB_OWNED_SINGLETON_INTERFACE_EXCLUSION.md",
+      "bytes": 22373,
+      "git_blob": "0a7ec62da583f1ea830b17789e48a47a4e42c485",
+      "sha256": "baf83a93309f0e07384f5e14ed44fe3e55689b891625f737b4321ac24f1a5f82"
+    },
+    {
+      "path": "research/nine/TILTED_NONOPEN_S_ROOF_ROOT_OWNED_SINGLETON_INTERFACE_EXCLUSION.md",
+      "bytes": 27387,
+      "git_blob": "8b7917049035052a7049d4af78e36abb0251a399",
+      "sha256": "01459e8a6c22971e00e1c61495a77e5110059414dde5f192d2eb824d50fa18df"
+    },
+    {
+      "path": "research/nine/TILTED_NONOPEN_S_ROOF_SHARED_HUB_INTERFACE_EXCLUSION.md",
+      "bytes": 21303,
+      "git_blob": "2b24504361792c9133619059abf49dddeab12010",
+      "sha256": "f093012d1526374a4327942dfc3ba6477e448749295679a8a73954dd4b763aa9"
+    },
+    {
+      "path": "research/nine/TILTED_RADIAL_C_GENUINE_S_HOUSE_FORCES_OWNED_LOWER_T_RETURN.md",
+      "bytes": 18509,
+      "git_blob": "37fce49fe0cf28c671f76c94011e8739b409d9c1",
+      "sha256": "fcb6e591a90e4ba1f39fbc7b26bd46975ab3368c2f0cd208ef652b287a2fb2c5"
+    },
+    {
+      "path": "research/nine/TILTED_RADIAL_C_GENUINE_S_HOUSE_OWNED_AD_COMPLETE_EXCLUSION.md",
+      "bytes": 14292,
+      "git_blob": "c81c06d28bfb8f88e3d4e7505e3e7c6ca48282a1",
+      "sha256": "6036ecde49c45a4d5d63d4b9b69dc8bf5f587a68ea70e2314c5072d3aecf11f0"
+    },
+    {
+      "path": "research/nine/TILTED_RADIAL_C_GENUINE_S_HOUSE_STRICT_AD_CORNER_COMPLETE_EXCLUSION.md",
+      "bytes": 14276,
+      "git_blob": "c14689a9950866e8fdf2591d3d1614fa21c84718",
+      "sha256": "a6e03b7134821d5f29bb6906f83a261c04c6a448d51bdd48423bbfcf96663c22"
+    },
+    {
+      "path": "research/nine/TIP_OWNED_TRANSMITTER_CHAIN_ENDPOINTS_CAPACITY_AND_D02_L0135_ZERO_AXIS_EXCLUSION.md",
+      "bytes": 37032,
+      "git_blob": "3461b33e2116cb2f14c37c020f4c4ddb1ad3b4a3",
+      "sha256": "1ed1ad065db1b6815751a10e505385251a9432502a3357a84aa41c9ab8044ecb"
+    },
+    {
+      "path": "research/nine/TWO_OPPOSING_SHALLOW_CENTERS_FORCE_WHOLE_UNIT_HALFPLANE.md",
+      "bytes": 12062,
+      "git_blob": "081b12f0154862b98b53f419cbaf400ae061f44f",
+      "sha256": "53cfc1a53daddc7efae7b0cdd3ff982db9732af02e5167ab200bcc6300956af2"
+    },
+    {
+      "path": "research/nine/TWO_ORIGINAL_FOUR_LOAD_ROWS_AND_FORWARD_WIDTH_CHAINS_CHECKPOINT_2026_10_29.json",
+      "bytes": 1041465,
+      "git_blob": "730e84e3ba82b91bc4b04fc6540d1feea293e65d",
+      "sha256": "83c88f58e55a3db4183a2207b65afb0ba6554a778198e4e1b93b39fd73042212"
+    },
+    {
+      "path": "research/nine/TWO_ORIGIN_UNITS_OPPOSITE_BOUNDARY_FOUR_RING_EXCLUSION.md",
+      "bytes": 21032,
+      "git_blob": "4fbfc7e18a874fedd0e05abba77e2d7abb8939f7",
+      "sha256": "62b763fc99e1aa03d418befc6b1d0c8753240fa5d40a85ecc78e40e62777fa58"
+    },
+    {
+      "path": "research/nine/TWO_RADIAL_BOUNDARY_UNITS_EXACT_CONTACT_AND_TRANSVERSE_RETURN_BARRIER.md",
+      "bytes": 11811,
+      "git_blob": "8047ca4915e0ea6329bfff5915a89b80ed8a09ff",
+      "sha256": "a0a4f1f25dd4ae6658be21bddcca75b21a851c7fc6696672f8c8ac8426478aac"
+    },
+    {
+      "path": "research/nine/TWO_RADIAL_TERMINALS_SHIFTED_TWO_COLUMN_SIX_UNIT_CAPACITY_TWO.md",
+      "bytes": 12105,
+      "git_blob": "2d0d9370e5f128b5c69256d8191116b77226e764",
+      "sha256": "1a9cc8be18de4a5a0c281faa0b99ec0ff1d7174cb8d1377fc34f8cb123dbec96"
+    },
+    {
+      "path": "research/nine/TWO_UNIQUE_BOUNDARY_TIPS_SHARED_EDGE_EXTERNAL_SINGLETON_NORMAL_SELECTION.md",
+      "bytes": 18771,
+      "git_blob": "53c4b2522c427394031c1dd99d28935619444bbc",
+      "sha256": "3670e88492fbf5878e68eff8df5cf48f3dbbfae9d6a88b39e3991492b29dab2a"
+    },
+    {
+      "path": "research/nine/UNIFORM_BOUNDARY_PATH_AND_COMPLETE_OPEN_ORIGIN_ROOF_CHECKPOINT_2026_10_28.json",
+      "bytes": 317697,
+      "git_blob": "8836bf468ae3a1ccd9dd874c4e3600efbb619887",
+      "sha256": "82374c7a2ee9cc211f08aedf336fb67bff56aa0bb4a794ebd7e48bf645eb6231"
+    },
+    {
+      "path": "research/nine/UNIFORM_INNER_CIRCLE_ARC_FAMILY_AND_SMALL_CENTRAL_DISK_EXCLUSION.md",
+      "bytes": 22917,
+      "git_blob": "b7f7cb95a4b47840e60cb2d4626952788839a5e4",
+      "sha256": "c8c9dc223e11dbcd7be9063818d546a3d3c0bc77b66cdac181b9ea97d51bae69"
+    },
+    {
+      "path": "research/nine/UNIFORM_ORIGINAL_STAR_INTERFACES_AND_LOW_WALL_GEOMETRY_CHECKPOINT_2026_10_28.json",
+      "bytes": 514312,
+      "git_blob": "093baa315df860a48391152d1f04465e22411963",
+      "sha256": "25d18097f8980d539f10fa79072e4bbecbfc893562ac2494bbf48058264d51b4"
+    },
+    {
+      "path": "research/nine/UNIFORM_RIGIDITY_FULL_STARS_AND_LOCAL_INTERFACES_CHECKPOINT_2026_10_28.json",
+      "bytes": 38102,
+      "git_blob": "1ac48aa5fa554b72f6d022c32453e25fcfcede69",
+      "sha256": "b4ee0d8843c9ae5f71d700f400494d2e55af927266bcb014c39f0a5ffd98631f"
+    },
+    {
+      "path": "research/nine/UNIQUE_TIP_DISTINCT_W_RETURN_FULL_MASK_AND_ORIGIN_MARGIN.md",
+      "bytes": 14945,
+      "git_blob": "4dca55c5c746628c5d962de3916d5c8c01f5ef49",
+      "sha256": "83b0b942ad474befbf9fca3315337df2116809b32e3f9015820a9c8783660785"
+    },
+    {
+      "path": "research/nine/UNIQUE_W_RETURN_LOW_ROOF_AND_CLOSED_LEFT_STRIP_POCKET_EXCLUSION.md",
+      "bytes": 19307,
+      "git_blob": "a28e6861bef0ffa8cd17d156e41fe75d71a623e2",
+      "sha256": "cb55c18601447c3238ce3c275320c11f708cf4f39c12ec88c6c80ea9680aea02"
+    },
+    {
+      "path": "research/nine/UNIT_SUPPORT_CAP_FOUR_SEVENTHS_UNIFORM_BOUND.md",
+      "bytes": 7901,
+      "git_blob": "a7d58cea175de90143256259221a2850676df46b",
+      "sha256": "0b7e13116e4da9136d9cb55ed73da22005b59ec74c3a713f675ddb5c1a33c606"
+    },
+    {
+      "path": "research/nine/UNIT_SUPPORT_POINT_RADIUS_RIGIDITY_AND_SIDE_CHANNEL_MASK_REDUCTION.md",
+      "bytes": 8520,
+      "git_blob": "dd1c5cd0ee720b2b1f0da981b01724c4ee6ba1e1",
+      "sha256": "6d979ed8d53ac8ebf3fe2d8f9110c908aeee1c6c9b5a27f1993266c45585b80a"
+    },
+    {
+      "path": "research/nine/UNLOADED_COMMON_CORNER_FOUR_NEIGHBOR_CONTACT_CHAIN_EXCLUSION.md",
+      "bytes": 6964,
+      "git_blob": "3bf230c868f215dcfd342c9538b8868cfc69c233",
+      "sha256": "96ab1fde361d3967d035b080f6c00dcfb2163b03538b878889a9c4e291d94115"
+    },
+    {
+      "path": "research/nine/UNLOADED_COMMON_CORNER_STAR_CONTACT_CHAIN_OPPOSITE_VERTEX_FORCING.md",
+      "bytes": 8005,
+      "git_blob": "9f7167387e108f056c40c27fddc164cbd35de93f",
+      "sha256": "d1c6f5fe17b89a0660fcea7c67446ecd845b6bf45b582fd35be263536c68a277"
+    },
+    {
+      "path": "research/nine/UNLOADED_FOUR_SPOKE_HUB_TWO_THREE_FORCE_ENDS_COMMON_RETURN_EXCLUSION.md",
+      "bytes": 15935,
+      "git_blob": "43e0648a6eb5d12ad464cc5dc39110c2e04ce892",
+      "sha256": "29bd6d283eef1d748501ff8443281802d2f9dae5f857fc7678be41f84477e39a"
+    },
+    {
+      "path": "research/nine/UNLOADED_SIDE_OWNED_ENDPOINT_CHAIN_BARRIER_AND_FREE_LONG_PENTAGON_EXCLUSION.md",
+      "bytes": 21742,
+      "git_blob": "8b22236a90669173bf2caa30f88e099811201c2d",
+      "sha256": "9e8ae73d84a40f7a8bbee43a18324039cb9e09d88cb6328d9ba45adbdd645501"
+    },
+    {
+      "path": "research/nine/UNLOADED_THREE_FORCE_LONG_EXTERNAL_RETURN_PORTS_MIXED_DEGREE_POCKET_CAPACITY_TWO.md",
+      "bytes": 14622,
+      "git_blob": "65f9743494812857eb2d5a6c33eb3d82290e92c9",
+      "sha256": "d06936aea26a8c8fe1263f7475853f689965657d810616d957b62aa1b78b2bf6"
+    },
+    {
+      "path": "research/nine/ZERO_REST_MOMENT_LOW_TOP_STRIP_CONTACT_CHAIN_EXCLUSION.md",
+      "bytes": 6722,
+      "git_blob": "c3cc264f836c6ca2370eae55fbf2e49fbdbf8c2a",
+      "sha256": "c964eb12aec708267755cf532c85f469fc4457e89d551408c5f0f03ae489b347"
+    },
+    {
+      "path": "research/nine/checkpoints/S_root_northwest_hub_side_return_frontier_review_2026_10_28.json",
+      "bytes": 4706,
+      "git_blob": "e7cc7b1534d4b0c606dbe86fd8467d97aab2e71a",
+      "sha256": "0816babf8b08188742b031ea278bad7ee723e9df1b99659943c5e1cd7e641326"
+    },
+    {
+      "path": "research/nine/checkpoints/S_root_northwest_opposite_returns_frontier_review_2026_10_28.json",
+      "bytes": 4269,
+      "git_blob": "7a104d517cf3c47b5682498047c23ce1ad158559",
+      "sha256": "fab6acdea999277162e2230d0d5f6d6cb38971affa81da12fe29723e0f2e6d8b"
+    },
+    {
+      "path": "research/nine/checkpoints/lower_TDC_S_parallel_inward_owner_frontier_review_2026_10_28.json",
+      "bytes": 8007,
+      "git_blob": "95f899a10135046a82ee18ced93893c20cab1fa4",
+      "sha256": "1d8a110b730f5d23c1a5fe66fe54de9ae48057be70c720936adf5a4075908cd9"
+    },
+    {
+      "path": "research/nine/checkpoints/lower_TDC_S_three_parallel_core_frontier_review_2026_10_28.json",
+      "bytes": 3476,
+      "git_blob": "86d299583d14b3149c03e7601901d4f87e62584a",
+      "sha256": "d71aa7a0c0c8fc9ec0abff9b3db6322ce5c89d6842b9fe359370451d9096ec94"
+    },
+    {
+      "path": "research/nine/historical_2026_10_28/REVIEW_UNIQUE_W_CLOSED_LEFT_STRIP_POCKET_BEFORE_WEAK_ENDPOINT_REPAIR.md",
+      "bytes": 14918,
+      "git_blob": "fb4b3dc30be50daaffe246a3f25a9a6fba76ba48",
+      "sha256": "349882e9992f8ca009dfdcd60af417884aa3c95643a23c7fd9fdd689b4110ea8"
+    },
+    {
+      "path": "research/nine/historical_2026_10_28/UNIQUE_W_RETURN_LOW_ROOF_AND_CLOSED_LEFT_STRIP_POCKET_EXCLUSION_BEFORE_WEAK_ENDPOINT_REPAIR.md",
+      "bytes": 19306,
+      "git_blob": "a6a54a32b1f9238208a832bae992e22f14a7348c",
+      "sha256": "eff3bead6a2a1f4672b6818c7bde7b1f050b395f8e6c1926f218b563f13cf053"
+    },
+    {
+      "path": "research/nine/recovered_variants/INNER_PENTAGON_FOUR_SPOKE_NO_CHORD_COMPLETE_EXCLUSION_E75FA8A8.md",
+      "bytes": 15641,
+      "git_blob": "e976e194f596b3101665ac67ac1c7d2a3044cadb",
+      "sha256": "e75fa8a83b7657f57f8b8634d8fae89c0a2ffa5afc9ff4f566d5639a65a10a56"
+    }
+  ],
+  "canonical_collision": {
+    "path": "research/nine/INNER_PENTAGON_FOUR_SPOKE_NO_CHORD_COMPLETE_EXCLUSION.md",
+    "canonical_sha256": "b7372fd040308a7f6419859a62a45c9443e039f5792daf69ff2aaac1dc673d22",
+    "alternate_path": "research/nine/recovered_variants/INNER_PENTAGON_FOUR_SPOKE_NO_CHORD_COMPLETE_EXCLUSION_E75FA8A8.md",
+    "alternate_sha256": "e75fa8a83b7657f57f8b8634d8fae89c0a2ffa5afc9ff4f566d5639a65a10a56"
+  },
+  "flag_changes": []
+}

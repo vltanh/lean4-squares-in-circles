@@ -1,0 +1,319 @@
+{
+  "date": "2026-10-28",
+  "reviewer": "frontier_audit",
+  "purpose": "Exact rational identity and dependency-byte audit of two complete hand proofs; no pose sample, interval search, scalar exclusion certificate, Lean compilation or CI.",
+  "checks": [
+    {
+      "check": "D_cap_C",
+      "exact_value": "3501/2440",
+      "result": "equal"
+    },
+    {
+      "check": "D_cap_rectangle_squared_diameter",
+      "exact_value": "52124381/53582400",
+      "result": "equal"
+    },
+    {
+      "check": "D_cap_diameter_reserve",
+      "exact_value": "1458019/53582400",
+      "result": "positive"
+    },
+    {
+      "check": "D_center_transverse_square",
+      "exact_value": "181/3600",
+      "result": "equal"
+    },
+    {
+      "check": "D_contact_transverse_square",
+      "exact_value": "3479/3600",
+      "result": "equal"
+    },
+    {
+      "check": "D_contact_lower_radical",
+      "exact_value": "115",
+      "result": "positive"
+    },
+    {
+      "check": "D_contact_upper_radical",
+      "exact_value": "15",
+      "result": "positive"
+    },
+    {
+      "check": "D_contact_corner_reserve",
+      "exact_value": "17/450",
+      "result": "positive"
+    },
+    {
+      "check": "D_cap_transverse_27_over_120_reserve",
+      "exact_value": "1/2880",
+      "result": "positive"
+    },
+    {
+      "check": "D_sigma_over_sqrt2_epsilon_reserve",
+      "exact_value": "23/1125000",
+      "result": "positive"
+    },
+    {
+      "check": "D_d_upper_from_Q",
+      "exact_value": "31/57600",
+      "result": "positive"
+    },
+    {
+      "check": "arc_affine_P_quadratic",
+      "exact_value": "-29591/129600",
+      "result": "equal"
+    },
+    {
+      "check": "arc_affine_P_linear",
+      "exact_value": "35669/64800",
+      "result": "equal"
+    },
+    {
+      "check": "arc_affine_P_constant",
+      "exact_value": "-166709/518400",
+      "result": "equal"
+    },
+    {
+      "check": "arc_affine_P_at_one",
+      "exact_value": "31/57600",
+      "result": "equal"
+    },
+    {
+      "check": "arc_affine_P_at_sqrt2_constant",
+      "exact_value": "-134479/172800",
+      "result": "equal"
+    },
+    {
+      "check": "arc_sqrt2_lower_reserve",
+      "exact_value": "100759/10000000000",
+      "result": "equal"
+    },
+    {
+      "check": "arc_P_sqrt2_lower_reserve",
+      "exact_value": "1383149/6480000000",
+      "result": "equal"
+    },
+    {
+      "check": "arc_cos_triple_reserve",
+      "exact_value": "2964331/2847656250",
+      "result": "equal"
+    },
+    {
+      "check": "arc_sin_triple_value",
+      "exact_value": "9868243/11390625",
+      "result": "equal"
+    },
+    {
+      "check": "arc_sin_triple_square_reserve",
+      "exact_value": "289865956321/518985351562500",
+      "result": "equal"
+    },
+    {
+      "check": "arc_cos_over_15_16",
+      "exact_value": "37/18000",
+      "result": "positive"
+    },
+    {
+      "check": "arc_SOS_expanded_xx",
+      "exact_value": "167/360",
+      "result": "equal"
+    },
+    {
+      "check": "arc_SOS_expanded_xy",
+      "exact_value": "127/360",
+      "result": "equal"
+    },
+    {
+      "check": "arc_SOS_expanded_yy",
+      "exact_value": "1/9",
+      "result": "equal"
+    },
+    {
+      "check": "arc_SOS_expanded_x",
+      "exact_value": "-13/16",
+      "result": "equal"
+    },
+    {
+      "check": "arc_SOS_expanded_y",
+      "exact_value": "-77/200",
+      "result": "equal"
+    },
+    {
+      "check": "arc_SOS_expanded_const",
+      "exact_value": "7/18",
+      "result": "equal"
+    },
+    {
+      "check": "arc_SOS_first_square_coefficient",
+      "exact_value": "167/360",
+      "result": "positive"
+    },
+    {
+      "check": "arc_SOS_second_square_coefficient",
+      "exact_value": "10591/240480",
+      "result": "positive"
+    },
+    {
+      "check": "arc_SOS_remainder",
+      "exact_value": "53509/190638000",
+      "result": "positive"
+    },
+    {
+      "check": "arc_low_center_at_3_4",
+      "exact_value": "63/256",
+      "result": "equal"
+    },
+    {
+      "check": "arc_low_center_at_9_8",
+      "exact_value": "81/512",
+      "result": "equal"
+    },
+    {
+      "check": "arc_incirc_at_3_4_reserve",
+      "exact_value": "1/256",
+      "result": "positive"
+    },
+    {
+      "check": "arc_incirc_at_9_8_reserve",
+      "exact_value": "47/512",
+      "result": "positive"
+    },
+    {
+      "check": "arc_high_coefficient",
+      "exact_value": "914/1125",
+      "result": "equal"
+    },
+    {
+      "check": "arc_high_coefficient_reserve",
+      "exact_value": "1/18000",
+      "result": "equal"
+    },
+    {
+      "check": "arc_boundary_1sqrt2_upper_reserve",
+      "exact_value": "1/576",
+      "result": "equal"
+    },
+    {
+      "check": "arc_fullwindow_boundary_center_lower",
+      "exact_value": "19/15",
+      "result": "equal"
+    },
+    {
+      "check": "arc_center_M_polynomial_reserve",
+      "exact_value": "31/57600",
+      "result": "equal"
+    },
+    {
+      "check": "arc_high_boundary_radius_square_reserve",
+      "exact_value": "4/625",
+      "result": "equal"
+    },
+    {
+      "check": "arc_high_boundary_corner_square_reserve",
+      "exact_value": "41/10000",
+      "result": "equal"
+    },
+    {
+      "check": "arc_contact_cos_endpoint",
+      "exact_value": "77/405",
+      "result": "equal"
+    },
+    {
+      "check": "arc_contact_derivative_r_lower",
+      "exact_value": "137/90",
+      "result": "positive"
+    },
+    {
+      "check": "arc_contact_derivative_s_lower",
+      "exact_value": "71/400",
+      "result": "positive"
+    },
+    {
+      "check": "arc_cos_80_at_3_16",
+      "exact_value": "-549/1024",
+      "result": "equal"
+    },
+    {
+      "check": "arc_cos_80_contact_reserve",
+      "exact_value": "17/6480",
+      "result": "equal"
+    },
+    {
+      "check": "arc_three_S_callers_remaining_gap_pi_coefficient",
+      "exact_value": "11/72",
+      "result": "equal"
+    },
+    {
+      "check": "arc_three_S_gap_reserve_pi_coefficient",
+      "exact_value": "5/72",
+      "result": "positive"
+    },
+    {
+      "check": "arc_central_S_tangent_difference",
+      "exact_value": "28/17",
+      "result": "equal"
+    },
+    {
+      "check": "arc_central_S_tan_pi3_reserve",
+      "exact_value": "83/289",
+      "result": "positive"
+    },
+    {
+      "check": "arc_alpha_above_theta_square_reserve",
+      "exact_value": "1/45",
+      "result": "positive"
+    }
+  ],
+  "D_source_sha256": "9dd28b72bf8a837747c39c50c1d30f3f6d405f4442e39eda47d38d4485acb743",
+  "D_dependency_pins": [
+    {
+      "source": "ORIGIN_FREE_RADIAL_INNER_UNIT_DEGREE_FREE_PORT_ORDER.md",
+      "sha256": "7142244039afad69773c04ce9e8d7b798075e6ed638ff9d1493da7cc2cfc91db",
+      "result": "exact"
+    },
+    {
+      "source": "D_LEAF_ROOT_AT_MOST_ONE_OTHER_UNIT_IN_THREE_125_DISK.md",
+      "sha256": "34385a647c1889564b3423ecfff03a7a75747275e45f68346c3f8a9f06abfaaf",
+      "result": "exact"
+    },
+    {
+      "source": "NEAR_ORIGIN_BOUNDARY_ACCESS_TRANSFERS_TO_EVERY_CYCLIC_BLOCK.md",
+      "sha256": "49065116bfd526abf3826ae8bbaa6fd9ad43b7bcdbdc0e0653b959fa84359549",
+      "result": "exact"
+    },
+    {
+      "source": "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+      "result": "exact"
+    },
+    {
+      "source": "HOUSE_ROOF_AC_D_COMPLETE_MOMENT_EXCLUSION.md",
+      "sha256": "db795b7a1a287d7e8e422bd80f3ea04e714d9d98af88226e9c16ad757b7e0f5a",
+      "result": "exact"
+    },
+    {
+      "source": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "result": "exact"
+    },
+    {
+      "source": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "result": "exact"
+    },
+    {
+      "source": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "sha256": "28810d74517a6f6a4a4e5b2972c5359bdf41559957bd7e33bcb5fb4b358685d5",
+      "result": "exact"
+    }
+  ],
+  "arc_source_sha256": "d575e6632c7181fc8803e7c9dc73b222cdce055eca1c636b3f15eb9d5f2279b9",
+  "arc_editorial_correction": "Section4.2 positive part is at most rho sin(theta); its next strict comparison still gives less than 1/2, including x=0,y=1,tau=-theta.",
+  "arc_literal_callers": {
+    "NEAR_CENTER_UNIT_CENTERED_NINE_EIGHTHS_ARC.md": "727deebc984dfbf06dffa9aa2da5532fd9a0f2a7b2b46322fc7da7cc229fdee3",
+    "CENTRAL_S_ROOT_THREE_BOUNDARY_PATH_CAPACITY.md": "91b34cfb58f69565d75e87ebc95fb92a6ed0226588292379cb380daae87efd3f",
+    "S123_POSITIVE_CHANNEL_RADIAL_MIDDLE_COMPLETE_EXCLUSION.md": "318cc6b8ab688d54ddcccdc4c8e18ba09ff3107a67f5ca29b1c016ad150ed595",
+    "S123_POSITIVE_CHANNEL_UNIQUE_MIDDLE_COMPLETE_EXCLUSION.md": "a80e59199bce2584a7544a6d13f4d2cdecb81def9947bdee1dcd1f468b7d50a1",
+    "S123_ZERO_CHANNEL_STRICT_MIDDLE_COMPLETE_EXCLUSION.md": "631119bba6eedb0e66b78d7a7a9e73cb7ece2f47956f50d255d47bfd47ec04fa"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "status": "submitted_for_full_review_no_count",
+  "source": {
+    "filename": "HIGH_RADIUS_PARALLEL_DECORATED_TRIANGLE_DISJOINT_BLOCK_EXCLUSION.md",
+    "source_path": "/workspace/scratch/7d553350ce2a/two_blocks/HIGH_RADIUS_PARALLEL_DECORATED_TRIANGLE_DISJOINT_BLOCK_EXCLUSION.md",
+    "sha256": "f7355fdbe12322e6926b169c4039d4124c3f2db37fc03983d175bef2e03a3293",
+    "bytes": 11637
+  },
+  "direct_pins": [
+    {
+      "filename": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/two_blocks/C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "expected_sha256": "28810d74517a6f6a4a4e5b2972c5359bdf41559957bd7e33bcb5fb4b358685d5",
+      "actual_sha256": "28810d74517a6f6a4a4e5b2972c5359bdf41559957bd7e33bcb5fb4b358685d5",
+      "matches": true
+    },
+    {
+      "filename": "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "expected_sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+      "actual_sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+      "matches": true
+    },
+    {
+      "filename": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "expected_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "actual_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "matches": true
+    },
+    {
+      "filename": "ROOTED_C3_334_PRIVATE_ADJACENT_LEAF_TWO_LOAD_C4_EXCLUSION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/ROOTED_C3_334_PRIVATE_ADJACENT_LEAF_TWO_LOAD_C4_EXCLUSION.md",
+      "expected_sha256": "9036a1a8c2b1c7e0f713eef3e0dc3bacbecb42d588332120cf9e04c27ffa98c5",
+      "actual_sha256": "9036a1a8c2b1c7e0f713eef3e0dc3bacbecb42d588332120cf9e04c27ffa98c5",
+      "matches": true
+    },
+    {
+      "filename": "ROOTED_PARALLEL_DECORATED_TRIANGLE_THIRD_NEAR_UNIT_EXCLUSION.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/repo/research/nine/ROOTED_PARALLEL_DECORATED_TRIANGLE_THIRD_NEAR_UNIT_EXCLUSION.md",
+      "expected_sha256": "989eae4dd32e7c48617b3e908b149daf847ed1292f484e48eb1e87fb75561426",
+      "actual_sha256": "989eae4dd32e7c48617b3e908b149daf847ed1292f484e48eb1e87fb75561426",
+      "matches": true
+    }
+  ],
+  "full_mathematical_review_pending": true,
+  "new_coarse_cells": 0,
+  "new_fine_identifiers": 0
+}

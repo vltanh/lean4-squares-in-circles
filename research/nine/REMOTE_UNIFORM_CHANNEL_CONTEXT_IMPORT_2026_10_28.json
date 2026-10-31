@@ -1,0 +1,501 @@
+{
+  "date_utc": "2026-10-28",
+  "status": "exact published remote context preserved; no new mathematical root-review claim for its separate chain",
+  "remote_head": "0ab519314fa12ce955257acddd364a9bb3451d41",
+  "remote_tree": "e309e390839fdec891272f06328256a879b2fd91",
+  "remote_parent": "234b4f0d03d772031dfc90a739fbe5b45351a3b8",
+  "local_parent": "312e0710d7cbe71cfa26f07d6db1ebae980e1c2f",
+  "accepted_local_checkpoint": {
+    "path": "research/nine/COMPLETE_H4_FOUR_LOAD_AND_UNIFORM_NEAR_HUB_CHECKPOINT_2026_10_28.json",
+    "bytes": 303231,
+    "sha256": "511968c416e57036e60f63e9bbc5adb2402f8d2f476ab153842042ce0ca760d2",
+    "git_blob": "6bfd104737b0c0445d43ae0f2548b407b510badd"
+  },
+  "remote_checkpoint": {
+    "path": "research/nine/UNIFORM_CHANNELS_AND_COMPLETE_TILTED_ROOT_DOMAINS_CHECKPOINT_2026_10_28.json",
+    "bytes": 263401,
+    "sha256": "0f648bba53ef025e362758f90d8e604cc99e3b6aab6aed52113632886ea33573",
+    "git_blob": "9cf9626456a9dd6900580dcfdbedc4215dc93c68"
+  },
+  "files": [
+    {
+      "remote": {
+        "path": "research/nine/ADAPTIVE_CLOSING_POCKET_OCCUPANCY_FORCES_SMALL_HUB_CENTER.md",
+        "bytes": 9319,
+        "sha256": "182705c297ed3a52a525206b673b293dff1cc7cf6de76430fad52ed1797b1e3d",
+        "git_blob": "a7ffd7eafc605b786e5dcd431b60980a3897a05b"
+      },
+      "integration": "exact newly published bytes",
+      "local_after": {
+        "path": "research/nine/ADAPTIVE_CLOSING_POCKET_OCCUPANCY_FORCES_SMALL_HUB_CENTER.md",
+        "bytes": 9319,
+        "sha256": "182705c297ed3a52a525206b673b293dff1cc7cf6de76430fad52ed1797b1e3d",
+        "git_blob": "a7ffd7eafc605b786e5dcd431b60980a3897a05b"
+      }
+    },
+    {
+      "remote": {
+        "path": "research/nine/ADAPTIVE_CLOSING_POCKET_OCCUPANCY_FORCES_SMALL_HUB_DISTANCE.md",
+        "bytes": 9044,
+        "sha256": "c3957435ba1886e1fb27158c00915a96b1aa29250f42bdde682e6f25a2ef3f8b",
+        "git_blob": "146ea7bbfd57a128b174cca1405f135b9a765b82"
+      },
+      "integration": "exact newly published bytes",
+      "local_after": {
+        "path": "research/nine/ADAPTIVE_CLOSING_POCKET_OCCUPANCY_FORCES_SMALL_HUB_DISTANCE.md",
+        "bytes": 9044,
+        "sha256": "c3957435ba1886e1fb27158c00915a96b1aa29250f42bdde682e6f25a2ef3f8b",
+        "git_blob": "146ea7bbfd57a128b174cca1405f135b9a765b82"
+      }
+    },
+    {
+      "remote": {
+        "path": "research/nine/ADOPTION_UNIFORM_CHANNELS_AND_COMPLETE_TILTED_ROOT_DOMAINS_ROOT_2026_10_28.md",
+        "bytes": 14914,
+        "sha256": "1c54dd18933c807d55157e4a2096d9afdabe1716bb74b35685c9fabcc5b3f91a",
+        "git_blob": "79faf3234162abf8d0a34dbd7b69c25a26279a09"
+      },
+      "integration": "exact newly published bytes",
+      "local_after": {
+        "path": "research/nine/ADOPTION_UNIFORM_CHANNELS_AND_COMPLETE_TILTED_ROOT_DOMAINS_ROOT_2026_10_28.md",
+        "bytes": 14914,
+        "sha256": "1c54dd18933c807d55157e4a2096d9afdabe1716bb74b35685c9fabcc5b3f91a",
+        "git_blob": "79faf3234162abf8d0a34dbd7b69c25a26279a09"
+      }
+    },
+    {
+      "remote": {
+        "path": "research/nine/ALL_UNITS_CENTER_RADIUS_FOUR_FIFTHS_CENTERED_RATIONAL_SINE_ARC.md",
+        "bytes": 8926,
+        "sha256": "1c6389ca1d16472451b118f5b0c220589d52f9006416f1f6faf4854af63df262",
+        "git_blob": "f286f845d10dcab0ddefaf8c3229ddcce857ba40"
+      },
+      "integration": "exact newly published bytes",
+      "local_after": {
+        "path": "research/nine/ALL_UNITS_CENTER_RADIUS_FOUR_FIFTHS_CENTERED_RATIONAL_SINE_ARC.md",
+        "bytes": 8926,
+        "sha256": "1c6389ca1d16472451b118f5b0c220589d52f9006416f1f6faf4854af63df262",
+        "git_blob": "f286f845d10dcab0ddefaf8c3229ddcce857ba40"
+      }
+    },
+    {
+      "remote": {
+        "path": "research/nine/ALL_UNITS_CENTER_RADIUS_FOUR_FIFTHS_CENTERED_THIRTY_SIX_DEGREE_ARC.md",
+        "bytes": 8915,
+        "sha256": "cd72561bd5221a47c8c47aa34d5913b988e83d895725d64529a3428181967ffc",
+        "git_blob": "0bcec37dc9ba22d9bc07b41fa9bc3da1e56ab757"
+      },
+      "integration": "exact newly published bytes",
+      "local_after": {
+        "path": "research/nine/ALL_UNITS_CENTER_RADIUS_FOUR_FIFTHS_CENTERED_THIRTY_SIX_DEGREE_ARC.md",
+        "bytes": 8915,
+        "sha256": "cd72561bd5221a47c8c47aa34d5913b988e83d895725d64529a3428181967ffc",
+        "git_blob": "0bcec37dc9ba22d9bc07b41fa9bc3da1e56ab757"
+      }
+    },
+    {
+      "remote": {
+        "path": "research/nine/CYCLIC_CELL_LEDGER.md",
+        "bytes": 252974,
+        "sha256": "eb74722d7cf0cc4b3e5671335af88e5c52a841ad4e94476d988a26ba33330a19",
+        "git_blob": "a2b8f71c0a54bc8f004cf83fc9f689e61bae1689"
+      },
+      "local_before": {
+        "path": "research/nine/CYCLIC_CELL_LEDGER.md",
+        "bytes": 253008,
+        "sha256": "0de66b6b26878195db9a0077326a4a5cb536269f1a4d6cd5fb38af360469daec",
+        "git_blob": "5b89ca4760262acd1320b5d878bdb7ec07662e4d"
+      },
+      "integration": "insert only the exact published 18-line context with explicit provenance/count labels; preserve all preceding local sources, reviews and flags",
+      "local_after": {
+        "path": "research/nine/CYCLIC_CELL_LEDGER.md",
+        "bytes": 255908,
+        "sha256": "128ee1152166d522117d78808d5e8749d4d211765e06bfa27ccbdf63fe290bcd",
+        "git_blob": "3b98c207171a2574464db38084715aaa7707e4f4"
+      }
+    },
+    {
+      "remote": {
+        "path": "research/nine/DEEP_GATED_ROADMAP.md",
+        "bytes": 980842,
+        "sha256": "cda2ddc90c9327b3c741175ee451475b95db3e346ea412674464c4c97de15e4c",
+        "git_blob": "b502c3191154a0a056d2783c203b2bb69163fe32"
+      },
+      "local_before": {
+        "path": "research/nine/DEEP_GATED_ROADMAP.md",
+        "bytes": 981278,
+        "sha256": "42452f6fe2fab546889198a0b1bc4a25dc91238e63156698a280b062e65d66ba",
+        "git_blob": "5852993c0923b270f2c66517c40d7c32891b43ab"
+      },
+      "integration": "insert only the exact published 18-line context with explicit provenance/count labels; preserve all preceding local sources, reviews and flags",
+      "local_after": {
+        "path": "research/nine/DEEP_GATED_ROADMAP.md",
+        "bytes": 984178,
+        "sha256": "f2cc14377b5dbf2565311a4cb3d4db5b0a295ebfa02d73995ed6b875fd9f51aa",
+        "git_blob": "bee507d9256388b8207346f2c6186e8dd2db4b51"
+      }
+    },
+    {
+      "remote": {
+        "path": "research/nine/EXACT_OBSTRUCTION_TO_SEPARATE_SHORT_CIRCLE_MERGED_INTERVAL_BOUND.md",
+        "bytes": 5487,
+        "sha256": "670ea0d965c62e869e40cf9e94b3154ee1f85ececa47748476f31f0ab7b5949c",
+        "git_blob": "ed11273ea71c133784ead64f151fdafff57dc132"
+      },
+      "integration": "exact newly published bytes",
+      "local_after": {
+        "path": "research/nine/EXACT_OBSTRUCTION_TO_SEPARATE_SHORT_CIRCLE_MERGED_INTERVAL_BOUND.md",
+        "bytes": 5487,
+        "sha256": "670ea0d965c62e869e40cf9e94b3154ee1f85ececa47748476f31f0ab7b5949c",
+        "git_blob": "ed11273ea71c133784ead64f151fdafff57dc132"
+      }
+    },
+    {
+      "remote": {
+        "path": "research/nine/FORCE_FREE_BOUNDARY_SIDE_CHANNEL_CENTER_HEIGHT_AND_PORT_MARGIN.md",
+        "bytes": 16323,
+        "sha256": "1a40004509d14eaa228ab52a4eb3280ed0f96df60e3891666f380124b5cacf9c",
+        "git_blob": "45267e4aa51f9993d62fbc95761e7d21ee4ea386"
+      },
+      "integration": "exact newly published bytes",
+      "local_after": {
+        "path": "research/nine/FORCE_FREE_BOUNDARY_SIDE_CHANNEL_CENTER_HEIGHT_AND_PORT_MARGIN.md",
+        "bytes": 16323,
+        "sha256": "1a40004509d14eaa228ab52a4eb3280ed0f96df60e3891666f380124b5cacf9c",
+        "git_blob": "45267e4aa51f9993d62fbc95761e7d21ee4ea386"
+      }
+    },
+    {
+      "remote": {
+        "path": "research/nine/FORCE_FREE_BOUNDARY_SIDE_CHANNEL_OUTER_POCKET_CAPACITY_ONE.md",
+        "bytes": 25977,
+        "sha256": "418229089de594515bbb60da5bdcdb4cd044bd4e9396aacfa47d27de96194055",
+        "git_blob": "bfb78ac1e4eb50069135e71f56d2a043d4c4de26"
+      },
+      "integration": "exact newly published bytes",
+      "local_after": {
+        "path": "research/nine/FORCE_FREE_BOUNDARY_SIDE_CHANNEL_OUTER_POCKET_CAPACITY_ONE.md",
+        "bytes": 25977,
+        "sha256": "418229089de594515bbb60da5bdcdb4cd044bd4e9396aacfa47d27de96194055",
+        "git_blob": "bfb78ac1e4eb50069135e71f56d2a043d4c4de26"
+      }
+    },
+    {
+      "remote": {
+        "path": "research/nine/FORCE_FREE_BOUNDARY_SIDE_CHANNEL_TENTH_HEIGHT_AND_SHORT_CIRCLE_ANGLE.md",
+        "bytes": 16076,
+        "sha256": "6cb29db695cb1e351c50aaedb5253825da24b7e280500147e7adcc88c2dd32be",
+        "git_blob": "c99369ba87a848217da750be7832e39fc3f8f761"
+      },
+      "integration": "exact newly published bytes",
+      "local_after": {
+        "path": "research/nine/FORCE_FREE_BOUNDARY_SIDE_CHANNEL_TENTH_HEIGHT_AND_SHORT_CIRCLE_ANGLE.md",
+        "bytes": 16076,
+        "sha256": "6cb29db695cb1e351c50aaedb5253825da24b7e280500147e7adcc88c2dd32be",
+        "git_blob": "c99369ba87a848217da750be7832e39fc3f8f761"
+      }
+    },
+    {
+      "remote": {
+        "path": "research/nine/FORCE_FREE_OCCUPIED_SIDE_CHANNEL_ONE_EIGHTH_PROXIMITY.md",
+        "bytes": 12636,
+        "sha256": "633b6b4a790187ba46d9b89001a3abf816ddb78e91fbed432ea81283c208620e",
+        "git_blob": "9ee531ea9a57c7efa253a988f5696ab4aaa50234"
+      },
+      "integration": "exact newly published bytes",
+      "local_after": {
+        "path": "research/nine/FORCE_FREE_OCCUPIED_SIDE_CHANNEL_ONE_EIGHTH_PROXIMITY.md",
+        "bytes": 12636,
+        "sha256": "633b6b4a790187ba46d9b89001a3abf816ddb78e91fbed432ea81283c208620e",
+        "git_blob": "9ee531ea9a57c7efa253a988f5696ab4aaa50234"
+      }
+    },
+    {
+      "remote": {
+        "path": "research/nine/FORCE_FREE_OCCUPIED_SIDE_CHANNEL_ONE_FORTIETH_PROXIMITY.md",
+        "bytes": 25347,
+        "sha256": "5e8f69ad14c78b6ad99a1ba46855fc3627df5ccc1d5451f295826d2b06709abb",
+        "git_blob": "1583950c09f63fb6c7a4b6f74d42e081792af746"
+      },
+      "integration": "exact newly published bytes",
+      "local_after": {
+        "path": "research/nine/FORCE_FREE_OCCUPIED_SIDE_CHANNEL_ONE_FORTIETH_PROXIMITY.md",
+        "bytes": 25347,
+        "sha256": "5e8f69ad14c78b6ad99a1ba46855fc3627df5ccc1d5451f295826d2b06709abb",
+        "git_blob": "1583950c09f63fb6c7a4b6f74d42e081792af746"
+      }
+    },
+    {
+      "remote": {
+        "path": "research/nine/HANDOFF_PR11_2026_10_28_CURRENT.md",
+        "bytes": 76759,
+        "sha256": "9e5dfb806fb0264b046a75efd3aaade932feb38c4e6c03d468a9addb26b43028",
+        "git_blob": "376c9f1061aa283242721d7505112bf45c6df9c8"
+      },
+      "local_before": {
+        "path": "research/nine/HANDOFF_PR11_2026_10_28_CURRENT.md",
+        "bytes": 79550,
+        "sha256": "4da82313a8ec807bae231397dad5e9f6486d9b94601f4ca99b042b6e71972de4",
+        "git_blob": "a3fb40f735bbe253403813e8a431ba76bc9c9f5f"
+      },
+      "integration": "insert only the exact published 18-line context with explicit provenance/count labels; preserve all preceding local sources, reviews and flags",
+      "local_after": {
+        "path": "research/nine/HANDOFF_PR11_2026_10_28_CURRENT.md",
+        "bytes": 82450,
+        "sha256": "dd5072e978accb7f4d37f4195c80d447aa5cacc211f3fc04f46d05c22682ff97",
+        "git_blob": "8d0d1d7dc11cc5427e3a1e7063e594a32bd3ae2f"
+      }
+    },
+    {
+      "remote": {
+        "path": "research/nine/HIGH_COORDINATE_TILTED_S_ROOT_ALL_BOUNDARY_NEIGHBORS_ONE_SIDE.md",
+        "bytes": 20217,
+        "sha256": "96b83e1c002cf7b2535be832e9187b7220597b57b764820305d19705690c72f9",
+        "git_blob": "22f1bcd2e00fe903f79e99516baac64b322e3016"
+      },
+      "integration": "exact newly published bytes",
+      "local_after": {
+        "path": "research/nine/HIGH_COORDINATE_TILTED_S_ROOT_ALL_BOUNDARY_NEIGHBORS_ONE_SIDE.md",
+        "bytes": 20217,
+        "sha256": "96b83e1c002cf7b2535be832e9187b7220597b57b764820305d19705690c72f9",
+        "git_blob": "22f1bcd2e00fe903f79e99516baac64b322e3016"
+      }
+    },
+    {
+      "remote": {
+        "path": "research/nine/REVIEW_ADAPTIVE_POCKET_SMALL_HUB_CENTER_PENTAGON_2026_10_28.md",
+        "bytes": 11532,
+        "sha256": "796f5ed7a0c69d0257dd9ef5f4012669adc97b42687aa6bbdf53d97304ba4369",
+        "git_blob": "68831d65fb79450260d8bc93e87a52e3d6147ce5"
+      },
+      "integration": "exact newly published bytes",
+      "local_after": {
+        "path": "research/nine/REVIEW_ADAPTIVE_POCKET_SMALL_HUB_CENTER_PENTAGON_2026_10_28.md",
+        "bytes": 11532,
+        "sha256": "796f5ed7a0c69d0257dd9ef5f4012669adc97b42687aa6bbdf53d97304ba4369",
+        "git_blob": "68831d65fb79450260d8bc93e87a52e3d6147ce5"
+      }
+    },
+    {
+      "remote": {
+        "path": "research/nine/REVIEW_ADAPTIVE_POCKET_SMALL_HUB_DISTANCE_PENTAGON_2026_10_28.md",
+        "bytes": 10671,
+        "sha256": "095a33f972cf4c5a1b578a631b7fa1f5b6f3aa6ac9a70dd4726912e750d07c11",
+        "git_blob": "8a764523d7ca14d5124b0c4e32d9535fbf0a6c36"
+      },
+      "integration": "exact newly published bytes",
+      "local_after": {
+        "path": "research/nine/REVIEW_ADAPTIVE_POCKET_SMALL_HUB_DISTANCE_PENTAGON_2026_10_28.md",
+        "bytes": 10671,
+        "sha256": "095a33f972cf4c5a1b578a631b7fa1f5b6f3aa6ac9a70dd4726912e750d07c11",
+        "git_blob": "8a764523d7ca14d5124b0c4e32d9535fbf0a6c36"
+      }
+    },
+    {
+      "remote": {
+        "path": "research/nine/REVIEW_CENTERED_RATIONAL_SINE_ARC_CYCLES_2026_10_28.md",
+        "bytes": 9761,
+        "sha256": "e1efb4d3ada9fd738e8f4db13875f35d63282867ecf6ffdc10f6526384d89617",
+        "git_blob": "166b54078fa8f33513985f9442893792fda660c0"
+      },
+      "integration": "exact newly published bytes",
+      "local_after": {
+        "path": "research/nine/REVIEW_CENTERED_RATIONAL_SINE_ARC_CYCLES_2026_10_28.md",
+        "bytes": 9761,
+        "sha256": "e1efb4d3ada9fd738e8f4db13875f35d63282867ecf6ffdc10f6526384d89617",
+        "git_blob": "166b54078fa8f33513985f9442893792fda660c0"
+      }
+    },
+    {
+      "remote": {
+        "path": "research/nine/REVIEW_CENTERED_THIRTY_SIX_DEGREE_FOUR_FIFTHS_PENTAGON_2026_10_28.md",
+        "bytes": 9411,
+        "sha256": "fe4276dd9a441cbfdb00e62a042dda716fb9b4e35fa9cf54246bccc32805b243",
+        "git_blob": "eb76a23a4c3400b4677d4ee94a153a00864c7179"
+      },
+      "integration": "exact newly published bytes",
+      "local_after": {
+        "path": "research/nine/REVIEW_CENTERED_THIRTY_SIX_DEGREE_FOUR_FIFTHS_PENTAGON_2026_10_28.md",
+        "bytes": 9411,
+        "sha256": "fe4276dd9a441cbfdb00e62a042dda716fb9b4e35fa9cf54246bccc32805b243",
+        "git_blob": "eb76a23a4c3400b4677d4ee94a153a00864c7179"
+      }
+    },
+    {
+      "remote": {
+        "path": "research/nine/REVIEW_FORCE_FREE_BOUNDARY_SIDE_CHANNEL_CAPACITY_PENTAGON_2026_10_28.md",
+        "bytes": 21682,
+        "sha256": "b03120174dad7f893b711c4e127fc9cb38614eff6bb931814ff93d0735101a34",
+        "git_blob": "01c19acf0e227aa1f620e366f31f40b244e5efbc"
+      },
+      "integration": "exact newly published bytes",
+      "local_after": {
+        "path": "research/nine/REVIEW_FORCE_FREE_BOUNDARY_SIDE_CHANNEL_CAPACITY_PENTAGON_2026_10_28.md",
+        "bytes": 21682,
+        "sha256": "b03120174dad7f893b711c4e127fc9cb38614eff6bb931814ff93d0735101a34",
+        "git_blob": "01c19acf0e227aa1f620e366f31f40b244e5efbc"
+      }
+    },
+    {
+      "remote": {
+        "path": "research/nine/REVIEW_FORCE_FREE_BOUNDARY_SIDE_CHANNEL_PORTS_PENTAGON_2026_10_28.md",
+        "bytes": 14029,
+        "sha256": "29d24ea50aad0d880ff5558862ef9ede551c3fd703478c66c65fdff1e844f6e1",
+        "git_blob": "26d0c243e9871d98da47944ab509267a638f04a4"
+      },
+      "integration": "exact newly published bytes",
+      "local_after": {
+        "path": "research/nine/REVIEW_FORCE_FREE_BOUNDARY_SIDE_CHANNEL_PORTS_PENTAGON_2026_10_28.md",
+        "bytes": 14029,
+        "sha256": "29d24ea50aad0d880ff5558862ef9ede551c3fd703478c66c65fdff1e844f6e1",
+        "git_blob": "26d0c243e9871d98da47944ab509267a638f04a4"
+      }
+    },
+    {
+      "remote": {
+        "path": "research/nine/REVIEW_FORCE_FREE_CHANNEL_TENTH_HEIGHT_SHORT_CIRCLE_PENTAGON_2026_10_28.md",
+        "bytes": 15475,
+        "sha256": "03f73c2439f3cac3aee1931a58046fdc6ed6322eb30ac93cd004e97b5b4bb4c8",
+        "git_blob": "1ea7a8f06a9493675dd6e6b57e91e80178898d2b"
+      },
+      "integration": "exact newly published bytes",
+      "local_after": {
+        "path": "research/nine/REVIEW_FORCE_FREE_CHANNEL_TENTH_HEIGHT_SHORT_CIRCLE_PENTAGON_2026_10_28.md",
+        "bytes": 15475,
+        "sha256": "03f73c2439f3cac3aee1931a58046fdc6ed6322eb30ac93cd004e97b5b4bb4c8",
+        "git_blob": "1ea7a8f06a9493675dd6e6b57e91e80178898d2b"
+      }
+    },
+    {
+      "remote": {
+        "path": "research/nine/REVIEW_FORCE_FREE_OCCUPIED_SIDE_CHANNEL_PROXIMITY_PENTAGON_2026_10_28.md",
+        "bytes": 11830,
+        "sha256": "f02c3fc24626af425cf44b4c34158b7ada5bdc3271f5e3cfd05c2989c925dbb1",
+        "git_blob": "83e68adfacd43a83a5e08f87b04a4b66b0a83a1b"
+      },
+      "integration": "exact newly published bytes",
+      "local_after": {
+        "path": "research/nine/REVIEW_FORCE_FREE_OCCUPIED_SIDE_CHANNEL_PROXIMITY_PENTAGON_2026_10_28.md",
+        "bytes": 11830,
+        "sha256": "f02c3fc24626af425cf44b4c34158b7ada5bdc3271f5e3cfd05c2989c925dbb1",
+        "git_blob": "83e68adfacd43a83a5e08f87b04a4b66b0a83a1b"
+      }
+    },
+    {
+      "remote": {
+        "path": "research/nine/REVIEW_FORCE_FREE_ONE_FORTIETH_CHANNEL_PROXIMITY_ROOT_2026_10_28.md",
+        "bytes": 18720,
+        "sha256": "2a099d9115acd5e01acb3fb929b9e80c31257c5b942591c21407d94cb6477ade",
+        "git_blob": "988605442a47afb1b8c4caed578414342a30a11d"
+      },
+      "integration": "exact newly published bytes",
+      "local_after": {
+        "path": "research/nine/REVIEW_FORCE_FREE_ONE_FORTIETH_CHANNEL_PROXIMITY_ROOT_2026_10_28.md",
+        "bytes": 18720,
+        "sha256": "2a099d9115acd5e01acb3fb929b9e80c31257c5b942591c21407d94cb6477ade",
+        "git_blob": "988605442a47afb1b8c4caed578414342a30a11d"
+      }
+    },
+    {
+      "remote": {
+        "path": "research/nine/REVIEW_HIGH_COORDINATE_TILTED_S_ROOT_ONE_SIDE_PENTAGON_2026_10_28.md",
+        "bytes": 16819,
+        "sha256": "c35e0e84911e3c2915e59f40d0e5e5f658251ac80bf75c8de72df0653c1a2292",
+        "git_blob": "c97d303437c12783bed5b2b420bedc0192aac27e"
+      },
+      "integration": "exact newly published bytes",
+      "local_after": {
+        "path": "research/nine/REVIEW_HIGH_COORDINATE_TILTED_S_ROOT_ONE_SIDE_PENTAGON_2026_10_28.md",
+        "bytes": 16819,
+        "sha256": "c35e0e84911e3c2915e59f40d0e5e5f658251ac80bf75c8de72df0653c1a2292",
+        "git_blob": "c97d303437c12783bed5b2b420bedc0192aac27e"
+      }
+    },
+    {
+      "remote": {
+        "path": "research/nine/REVIEW_TILTED_HOUSE_TCB_INNER_FAN_FULL_ASSEMBLY_ROOT_2026_10_28.md",
+        "bytes": 14305,
+        "sha256": "53aa9a734afea89c7848297a59d6f2edf86f43d65619fcde097b45453dea60a8",
+        "git_blob": "fbdedb9195a63b9d3c0460b4a6baf9b2e7c47059"
+      },
+      "integration": "exact newly published bytes",
+      "local_after": {
+        "path": "research/nine/REVIEW_TILTED_HOUSE_TCB_INNER_FAN_FULL_ASSEMBLY_ROOT_2026_10_28.md",
+        "bytes": 14305,
+        "sha256": "53aa9a734afea89c7848297a59d6f2edf86f43d65619fcde097b45453dea60a8",
+        "git_blob": "fbdedb9195a63b9d3c0460b4a6baf9b2e7c47059"
+      }
+    },
+    {
+      "remote": {
+        "path": "research/nine/TILTED_S_ROOT_HOUSE_TCB_AND_INNER_FAN_COMPLETE_DOMAIN_EXCLUSION.md",
+        "bytes": 20628,
+        "sha256": "4550f191a5c3d93eed4ca8516f9ecff4932e53be4019e1cd54d54ca83425a802",
+        "git_blob": "e8bdd8af95d5d10a8e06cadf3e0df82463ba517a"
+      },
+      "integration": "exact newly published bytes",
+      "local_after": {
+        "path": "research/nine/TILTED_S_ROOT_HOUSE_TCB_AND_INNER_FAN_COMPLETE_DOMAIN_EXCLUSION.md",
+        "bytes": 20628,
+        "sha256": "4550f191a5c3d93eed4ca8516f9ecff4932e53be4019e1cd54d54ca83425a802",
+        "git_blob": "e8bdd8af95d5d10a8e06cadf3e0df82463ba517a"
+      }
+    },
+    {
+      "remote": {
+        "path": "research/nine/UNIFORM_CHANNELS_AND_COMPLETE_TILTED_ROOT_DOMAINS_CHECKPOINT_2026_10_28.json",
+        "bytes": 263401,
+        "sha256": "0f648bba53ef025e362758f90d8e604cc99e3b6aab6aed52113632886ea33573",
+        "git_blob": "9cf9626456a9dd6900580dcfdbedc4215dc93c68"
+      },
+      "integration": "exact newly published bytes",
+      "local_after": {
+        "path": "research/nine/UNIFORM_CHANNELS_AND_COMPLETE_TILTED_ROOT_DOMAINS_CHECKPOINT_2026_10_28.json",
+        "bytes": 263401,
+        "sha256": "0f648bba53ef025e362758f90d8e604cc99e3b6aab6aed52113632886ea33573",
+        "git_blob": "9cf9626456a9dd6900580dcfdbedc4215dc93c68"
+      }
+    }
+  ],
+  "fine_checked": 2354,
+  "fine_open": 159,
+  "fine_total": 2513,
+  "coarse_closed": 34,
+  "coarse_open": 24,
+  "coarse_total": 58,
+  "all_original_ids_order_and_flags_preserved": true,
+  "changed_original_fine_ids": [],
+  "changed_original_coarse_ids": [],
+  "scope": [
+    "25 new published files imported byte-for-byte from the verified remote Git tree.",
+    "Three published metadata prefixes are integrated additively with explicit external/provenance/count labels.",
+    "The local complete H4_D0.L0124 closure and every local earlier source/review/checkpoint are preserved.",
+    "Remote new sources retain their separate existing complete reviews/adoption; this import is a byte/provenance operation, not a fresh root mathematical adoption.",
+    "All untracked local ongoing mathematical work is untouched.",
+    "No Lean compilation, CI/workflow dispatch, merge or remote write was performed.",
+    "No publication of the local continuation is claimed."
+  ],
+  "inherited_whitespace_diagnostics": {
+    "kind": "17 already-published terminal blank lines preserved to keep exact reviewed bytes",
+    "diagnostics": [
+      "research/nine/EXACT_OBSTRUCTION_TO_SEPARATE_SHORT_CIRCLE_MERGED_INTERVAL_BOUND.md:114: new blank line at EOF.",
+      "research/nine/FORCE_FREE_BOUNDARY_SIDE_CHANNEL_CENTER_HEIGHT_AND_PORT_MARGIN.md:335: new blank line at EOF.",
+      "research/nine/FORCE_FREE_BOUNDARY_SIDE_CHANNEL_OUTER_POCKET_CAPACITY_ONE.md:405: new blank line at EOF.",
+      "research/nine/FORCE_FREE_BOUNDARY_SIDE_CHANNEL_TENTH_HEIGHT_AND_SHORT_CIRCLE_ANGLE.md:395: new blank line at EOF.",
+      "research/nine/FORCE_FREE_OCCUPIED_SIDE_CHANNEL_ONE_EIGHTH_PROXIMITY.md:207: new blank line at EOF.",
+      "research/nine/FORCE_FREE_OCCUPIED_SIDE_CHANNEL_ONE_FORTIETH_PROXIMITY.md:475: new blank line at EOF.",
+      "research/nine/HIGH_COORDINATE_TILTED_S_ROOT_ALL_BOUNDARY_NEIGHBORS_ONE_SIDE.md:441: new blank line at EOF.",
+      "research/nine/REVIEW_ADAPTIVE_POCKET_SMALL_HUB_CENTER_PENTAGON_2026_10_28.md:139: new blank line at EOF.",
+      "research/nine/REVIEW_ADAPTIVE_POCKET_SMALL_HUB_DISTANCE_PENTAGON_2026_10_28.md:178: new blank line at EOF.",
+      "research/nine/REVIEW_CENTERED_RATIONAL_SINE_ARC_CYCLES_2026_10_28.md:177: new blank line at EOF.",
+      "research/nine/REVIEW_CENTERED_THIRTY_SIX_DEGREE_FOUR_FIFTHS_PENTAGON_2026_10_28.md:205: new blank line at EOF.",
+      "research/nine/REVIEW_FORCE_FREE_BOUNDARY_SIDE_CHANNEL_CAPACITY_PENTAGON_2026_10_28.md:293: new blank line at EOF.",
+      "research/nine/REVIEW_FORCE_FREE_BOUNDARY_SIDE_CHANNEL_PORTS_PENTAGON_2026_10_28.md:227: new blank line at EOF.",
+      "research/nine/REVIEW_FORCE_FREE_CHANNEL_TENTH_HEIGHT_SHORT_CIRCLE_PENTAGON_2026_10_28.md:321: new blank line at EOF.",
+      "research/nine/REVIEW_FORCE_FREE_OCCUPIED_SIDE_CHANNEL_PROXIMITY_PENTAGON_2026_10_28.md:185: new blank line at EOF.",
+      "research/nine/REVIEW_HIGH_COORDINATE_TILTED_S_ROOT_ONE_SIDE_PENTAGON_2026_10_28.md:279: new blank line at EOF.",
+      "research/nine/TILTED_S_ROOT_HOUSE_TCB_AND_INNER_FAN_COMPLETE_DOMAIN_EXCLUSION.md:238: new blank line at EOF."
+    ],
+    "source_bytes_changed": false
+  }
+}

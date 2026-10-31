@@ -1,0 +1,22 @@
+{
+  "source_sha256": {
+    "CENTRAL_DISK_LEAF_ROOT_AND_DOUBLE_LEAF_TRIANGLE_BLOCK_EXCLUSION.md": "dd03214ab5e0100bd35211993591baabd5fd0578191cc2ad2d4c1e344b8a5411",
+    "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md": "28810d74517a6f6a4a4e5b2972c5359bdf41559957bd7e33bcb5fb4b358685d5",
+    "GENERAL_BALANCED_THREE_BOUNDARY_FULL_WINDOW_METRIC_EXCLUSION.md": "5da69931a63ac7cbf93ec3ff494489dc05d2245017da1c4dcddf1b4a8a6c956e",
+    "D_LEAF_COMMON_TRIANGLE_NEIGHBOR_AVOIDS_QUARTER_DISK.md": "2330462d457e8f6eaedae3f8d6c8d535379742a213e033c438827f86b4d31288",
+    "INNER_PENTAGON_FOUR_SPOKE_NO_CHORD_OCCUPIED_POCKETS_AND_LONG_PORT_REDUCTION.md": "ad0a8e658d303d7527a383c4688fa4bfdae1a04f46cecfb59c424cc4028e02a6"
+  },
+  "exact_values": {
+    "cos_pi6_vs6_7": "3/196",
+    "centerbound": "31/57600",
+    "boundaryradius": "0",
+    "sqrt_half_upper": "1/576",
+    "cornercone": "27/200",
+    "tan_small": "1/225",
+    "sqrt2_upper": "1/4900",
+    "anglesquared": "1742127084",
+    "D_cubic_endpoint": "63/64",
+    "D_cubic_derivative_bound": "-69/16"
+  },
+  "scope": "Exact displayed estimates and source pins; no sampled pose proof and no replacement of the mathematical arguments."
+}

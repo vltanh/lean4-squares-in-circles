@@ -1,0 +1,1199 @@
+{
+  "title": "Complete independent tilted-channel lower-return support-face review",
+  "date_utc": "2026-10-29",
+  "reviewer": "/root/broad_load_channels",
+  "verdict": "PASS_UNCHANGED",
+  "independence": {
+    "contribution_to_new_target": false,
+    "author": "/root/broad_s_families",
+    "root_reconstruction_is_separate": true
+  },
+  "target": {
+    "path": "continuation_broad_c62/research/nine/TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+    "file": "TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+    "bytes": 12803,
+    "lines": 305,
+    "sha256": "be0af78eefcfba0b4c00c62c748bcd6c6dc8a294128c1f13272c5c2d7ea8bb5c",
+    "git_blob": "4bd9aefa121164dffe191b3167ec1ef05d0f1055"
+  },
+  "author_record_corroboration_only": {
+    "path": "continuation_broad_c62/research/nine/AUTHOR_TILTED_CHANNEL_LOWER_RETURN_SUPPORT_FACE_EXACT_RECORD_A5F_2026_10_29.json",
+    "file": "AUTHOR_TILTED_CHANNEL_LOWER_RETURN_SUPPORT_FACE_EXACT_RECORD_A5F_2026_10_29.json",
+    "bytes": 13346,
+    "lines": 328,
+    "sha256": "5b6925b52e80995683b91e56f10187c4711cda38525e10b4838cfb9264177169",
+    "git_blob": "7b225fbe0dbb31a736bc09741e4cfef502a0bc05"
+  },
+  "full_report": {
+    "path": "continuation_broad_c62/research/nine/REVIEW_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+    "file": "REVIEW_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+    "bytes": 23886,
+    "lines": 140,
+    "sha256": "e2c3f5e72f7877b404db1db7e3b136d79a5690553df0808a757f528701b8b8fb",
+    "git_blob": "5dfd48c0d79420bba547824ca370bff77ccc4600"
+  },
+  "comparison": {
+    "head": "a5f3922a9c12830b76f2a7ee9dd4dbf1024f85b5",
+    "tree": "2617ed629140d69171c86bfa68b0ee5784ab8c8c",
+    "tree_file": {
+      "path": "current_a5f_base/TREE_A5F.json",
+      "file": "TREE_A5F.json",
+      "bytes": 1617758,
+      "lines": 37100,
+      "sha256": "3cd96d6aa26dda433b9ebaa3718c6ffa1ce62ea8cb37a69844004a43ac1306d7",
+      "git_blob": "fbb782a29b3d20ca73043d6825c8ecaea58e4c21"
+    },
+    "nontruncated": true,
+    "no_silent_rebase": true
+  },
+  "fully_read_registry": [
+    {
+      "path": "current_315_base/research/nine/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "file": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "bytes": 13651,
+      "lines": 302,
+      "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "git_blob": "f1e09cf1f62a2bb6305bd2c20e7d49be2fffc0ae",
+      "role": "operative original-domain entry; whole source, both leaf charts and C force alternatives",
+      "independent_read_scope": "entire source or complete review/adoption read; operative mathematical domain reconstructed",
+      "literal_scope": "operative original-domain entry; whole source, both leaf charts and C force alternatives",
+      "current_a5f_blob_size_match": true,
+      "published_path": "research/nine/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md"
+    },
+    {
+      "path": "current_a5f_base/research/nine/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "file": "ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "bytes": 20196,
+      "lines": 511,
+      "sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334",
+      "git_blob": "75fa5e0b4a97ec854ecd4a3af0ef03799c78a5cb",
+      "role": "operative whole q>=3/8 exit and reproduced geometric reach provenance",
+      "independent_read_scope": "entire source or complete review/adoption read; operative mathematical domain reconstructed",
+      "literal_scope": "operative whole q>=3/8 exit and reproduced geometric reach provenance",
+      "current_a5f_blob_size_match": true,
+      "published_path": "research/nine/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md"
+    },
+    {
+      "path": "current_315_base/research/nine/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "file": "REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 12841,
+      "lines": 275,
+      "sha256": "9a0c704df3817a413639a98fbae8864ef58c583811735ac5c6816f69e1b0f636",
+      "git_blob": "d007b7ee912a045bc525ad5bb45e3d80683b1aa1",
+      "role": "complete separate upstream independent review; not a substitute for source read",
+      "independent_read_scope": "entire source or complete review/adoption read; operative mathematical domain reconstructed",
+      "literal_scope": "complete separate upstream independent review; not a substitute for source read",
+      "current_a5f_blob_size_match": true,
+      "published_path": "research/nine/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md"
+    },
+    {
+      "path": "current_a5f_base/research/nine/REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+      "file": "REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+      "bytes": 13485,
+      "lines": 294,
+      "sha256": "167e5f8a305f33944e798668394d1d3efd92b4626968f3ad75dea494f371c154",
+      "git_blob": "ebc03976c208188226e8745d4ea2d2f9ea9e53b8",
+      "role": "complete separate upstream independent review; not a substitute for source read",
+      "independent_read_scope": "entire source or complete review/adoption read; operative mathematical domain reconstructed",
+      "literal_scope": "complete separate upstream independent review; not a substitute for source read",
+      "current_a5f_blob_size_match": true,
+      "published_path": "research/nine/REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md"
+    },
+    {
+      "path": "current_315_base/research/nine/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "file": "ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "bytes": 17104,
+      "lines": 345,
+      "sha256": "fb99b163e4450df464fcc095ac6aea0a3294624fcb329ffbc515efda6a0bea28",
+      "git_blob": "73cfd49b7ba738e5cd85a057d98358ea1c3b36d4",
+      "role": "published full original-domain adoption",
+      "independent_read_scope": "entire source or complete review/adoption read; operative mathematical domain reconstructed",
+      "literal_scope": "published full original-domain adoption",
+      "current_a5f_blob_size_match": true,
+      "published_path": "research/nine/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md"
+    },
+    {
+      "path": "current_a5f_base/research/nine/ADOPTION_THREE_BROAD_CONTINUOUS_CAP_OWNER_AND_SHIFT_TOOLS_ROOT_2026_10_29.md",
+      "file": "ADOPTION_THREE_BROAD_CONTINUOUS_CAP_OWNER_AND_SHIFT_TOOLS_ROOT_2026_10_29.md",
+      "bytes": 8044,
+      "lines": 43,
+      "sha256": "865db6ecd1b9ee6774a11be75edd4f73b59e132a21bc9df1708cc3169183c36e",
+      "git_blob": "4c1a4718606ec73576d039a4e91ae1401f7def57",
+      "role": "published entire upper-mean owner-union adoption",
+      "independent_read_scope": "entire source or complete review/adoption read; operative mathematical domain reconstructed",
+      "literal_scope": "published entire upper-mean owner-union adoption",
+      "current_a5f_blob_size_match": true,
+      "published_path": "research/nine/ADOPTION_THREE_BROAD_CONTINUOUS_CAP_OWNER_AND_SHIFT_TOOLS_ROOT_2026_10_29.md"
+    },
+    {
+      "path": "current_315_base/research/nine/ALIGNED_CHANNEL_LOWER_BYPASS_COMMON_NEIGHBOR_VERTICAL_NORMAL_OBSTRUCTION.md",
+      "file": "ALIGNED_CHANNEL_LOWER_BYPASS_COMMON_NEIGHBOR_VERTICAL_NORMAL_OBSTRUCTION.md",
+      "bytes": 14534,
+      "lines": 296,
+      "sha256": "2f5514f91ba10b88d0703802eca3b459e82e0d639533d3b178f56a00fd7367cd",
+      "git_blob": "2bd553232216877d16f6aa665be060e5fe850d6e",
+      "role": "full provenance only; old aligned-A theorem not imported into tilted caller",
+      "independent_read_scope": "entire source or complete review/adoption read; operative mathematical domain reconstructed",
+      "literal_scope": "full provenance only; old aligned-A theorem not imported into tilted caller",
+      "current_a5f_blob_size_match": true,
+      "published_path": "research/nine/ALIGNED_CHANNEL_LOWER_BYPASS_COMMON_NEIGHBOR_VERTICAL_NORMAL_OBSTRUCTION.md"
+    },
+    {
+      "path": "current_315_base/research/nine/GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+      "file": "GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+      "bytes": 15961,
+      "lines": 383,
+      "sha256": "4f8da84dcc3f1fa9b8f5e231486751b134b3438905e8271f6f3484a3f10d275a",
+      "git_blob": "69eb2e51f2a8fe607dbac1d58ae6be85fbb6eaa2",
+      "role": "full corroborating provenance for literal two leaf charts; already encapsulated by operative entry",
+      "independent_read_scope": "entire source or complete review/adoption read; operative mathematical domain reconstructed",
+      "literal_scope": "full corroborating provenance for literal two leaf charts; already encapsulated by operative entry",
+      "current_a5f_blob_size_match": true,
+      "published_path": "research/nine/GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md"
+    },
+    {
+      "path": "current_315_base/research/nine/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "file": "HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "bytes": 17930,
+      "lines": 427,
+      "sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143",
+      "git_blob": "4625dfa796aa6a8eb1166efd326b55f0b87afda1",
+      "role": "full corroborating provenance for C masks, positive coefficients and actual Q interval; encapsulated by operative entry",
+      "independent_read_scope": "entire source or complete review/adoption read; operative mathematical domain reconstructed",
+      "literal_scope": "full corroborating provenance for C masks, positive coefficients and actual Q interval; encapsulated by operative entry",
+      "current_a5f_blob_size_match": true,
+      "published_path": "research/nine/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md"
+    },
+    {
+      "path": "current_315_base/research/nine/TWO_OPPOSING_SHALLOW_CENTERS_FORCE_WHOLE_UNIT_HALFPLANE.md",
+      "file": "TWO_OPPOSING_SHALLOW_CENTERS_FORCE_WHOLE_UNIT_HALFPLANE.md",
+      "bytes": 12062,
+      "lines": 287,
+      "sha256": "53cfc1a53daddc7efae7b0cdd3ff982db9732af02e5167ab200bcc6300956af2",
+      "git_blob": "081b12f0154862b98b53f419cbaf400ae061f44f",
+      "role": "complete actual-center theorem and whole-T sign entry to upper owner union",
+      "independent_read_scope": "entire source or complete review/adoption read; operative mathematical domain reconstructed",
+      "literal_scope": "complete actual-center theorem and whole-T sign entry to upper owner union",
+      "current_a5f_blob_size_match": true,
+      "published_path": "research/nine/TWO_OPPOSING_SHALLOW_CENTERS_FORCE_WHOLE_UNIT_HALFPLANE.md"
+    },
+    {
+      "path": "current_315_base/research/nine/ALIGNED_RADIAL_C_GENUINE_S_HOUSE_OWNED_AD_UPPER_MEAN_INTERVAL_EXCLUSION.md",
+      "file": "ALIGNED_RADIAL_C_GENUINE_S_HOUSE_OWNED_AD_UPPER_MEAN_INTERVAL_EXCLUSION.md",
+      "bytes": 17937,
+      "lines": 497,
+      "sha256": "80bf0a971d264ccaeacbcf27facd819ebe0feb803d3b7ccbd42cb314d7364cc1",
+      "git_blob": "3a925464bdac8649829341475908ac84723ce15c",
+      "role": "complete owned-AD upper-mean exit with full reprinted D3/T2 mask/mean fork",
+      "independent_read_scope": "entire source or complete review/adoption read; operative mathematical domain reconstructed",
+      "literal_scope": "complete owned-AD upper-mean exit with full reprinted D3/T2 mask/mean fork",
+      "current_a5f_blob_size_match": true,
+      "published_path": "research/nine/ALIGNED_RADIAL_C_GENUINE_S_HOUSE_OWNED_AD_UPPER_MEAN_INTERVAL_EXCLUSION.md"
+    },
+    {
+      "path": "current_315_base/research/nine/REVIEW_OPPOSING_SHALLOW_CENTERS_TC_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "file": "REVIEW_OPPOSING_SHALLOW_CENTERS_TC_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 11103,
+      "lines": 259,
+      "sha256": "b9885dd614692bb59888152bf1c1bb52f8b0de5359f01dd73a0322993f8c5700",
+      "git_blob": "db17a874fdd6bcc139490e7cbc88209ef86c8356",
+      "role": "complete separate 53cf acceptance",
+      "independent_read_scope": "entire source or complete review/adoption read; operative mathematical domain reconstructed",
+      "literal_scope": "complete separate 53cf acceptance",
+      "current_a5f_blob_size_match": true,
+      "published_path": "research/nine/REVIEW_OPPOSING_SHALLOW_CENTERS_TC_FINISH_V2_INDEPENDENT_2026_10_29.md"
+    },
+    {
+      "path": "current_315_base/research/nine/REVIEW_ALIGNED_RADIAL_C_OWNED_AD_UPPER_INTERVAL_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "file": "REVIEW_ALIGNED_RADIAL_C_OWNED_AD_UPPER_INTERVAL_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 13624,
+      "lines": 329,
+      "sha256": "605967b4ac3c17e984517625ef680075ce7d37a5ab12a20caa613e7053378110",
+      "git_blob": "faf14f89170a9e1958ccab707bded2bd19f651f2",
+      "role": "complete separate 80bf acceptance",
+      "independent_read_scope": "entire source or complete review/adoption read; operative mathematical domain reconstructed",
+      "literal_scope": "complete separate 80bf acceptance",
+      "current_a5f_blob_size_match": true,
+      "published_path": "research/nine/REVIEW_ALIGNED_RADIAL_C_OWNED_AD_UPPER_INTERVAL_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md"
+    },
+    {
+      "path": "current_315_base/research/nine/REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+      "file": "REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+      "bytes": 16080,
+      "lines": 332,
+      "sha256": "f917697f13c574c533658ea108b0c770d4c1c949fc463ba996511e890e2d62ae",
+      "git_blob": "a35d7aa4fe1e422aa109ab9414dc5e5c6e08fe84",
+      "role": "complete separate C2 physical-mask and coefficient acceptance",
+      "independent_read_scope": "entire source or complete review/adoption read; operative mathematical domain reconstructed",
+      "literal_scope": "complete separate C2 physical-mask and coefficient acceptance",
+      "current_a5f_blob_size_match": true,
+      "published_path": "research/nine/REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md"
+    },
+    {
+      "path": "current_315_base/research/nine/REVIEW_GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_LEAF_FEATURE_HOUSE_FINISH_V2_INDEPENDENT_2026_10_28.md",
+      "file": "REVIEW_GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_LEAF_FEATURE_HOUSE_FINISH_V2_INDEPENDENT_2026_10_28.md",
+      "bytes": 11989,
+      "lines": 241,
+      "sha256": "8361272b9999a249d3fa3a58f4d732474bb2fd4247e8d1b0b3284972a05ad108",
+      "git_blob": "c3d62e4e74fc2dd2b7d01bea483e273c34e244ad",
+      "role": "complete separate eight-feature/low-critical leaf acceptance",
+      "independent_read_scope": "entire source or complete review/adoption read; operative mathematical domain reconstructed",
+      "literal_scope": "complete separate eight-feature/low-critical leaf acceptance",
+      "current_a5f_blob_size_match": true,
+      "published_path": "research/nine/REVIEW_GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_LEAF_FEATURE_HOUSE_FINISH_V2_INDEPENDENT_2026_10_28.md"
+    }
+  ],
+  "nine_author_identity_checks": [
+    {
+      "declared": {
+        "path": "current_315_base/research/nine/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+        "bytes": 13651,
+        "lines": 302,
+        "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+        "git_blob": "f1e09cf1f62a2bb6305bd2c20e7d49be2fffc0ae",
+        "role": "operative original-domain entry; whole source, both leaf charts and C force alternatives",
+        "read_scope": "complete source text",
+        "published_path": "research/nine/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+        "exact_a5f_tree_blob_match": true
+      },
+      "independently_rehashed": {
+        "path": "current_315_base/research/nine/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+        "file": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+        "bytes": 13651,
+        "lines": 302,
+        "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+        "git_blob": "f1e09cf1f62a2bb6305bd2c20e7d49be2fffc0ae"
+      },
+      "pass": true
+    },
+    {
+      "declared": {
+        "path": "current_a5f_base/research/nine/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+        "bytes": 20196,
+        "lines": 511,
+        "sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334",
+        "git_blob": "75fa5e0b4a97ec854ecd4a3af0ef03799c78a5cb",
+        "role": "operative whole q>=3/8 exit and reproduced geometric reach provenance",
+        "read_scope": "complete source text",
+        "published_path": "research/nine/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+        "exact_a5f_tree_blob_match": true
+      },
+      "independently_rehashed": {
+        "path": "current_a5f_base/research/nine/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+        "file": "ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+        "bytes": 20196,
+        "lines": 511,
+        "sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334",
+        "git_blob": "75fa5e0b4a97ec854ecd4a3af0ef03799c78a5cb"
+      },
+      "pass": true
+    },
+    {
+      "declared": {
+        "path": "current_315_base/research/nine/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+        "bytes": 12841,
+        "lines": 275,
+        "sha256": "9a0c704df3817a413639a98fbae8864ef58c583811735ac5c6816f69e1b0f636",
+        "git_blob": "d007b7ee912a045bc525ad5bb45e3d80683b1aa1",
+        "role": "complete separate upstream independent review; not a substitute for source read",
+        "read_scope": "complete source text",
+        "published_path": "research/nine/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+        "exact_a5f_tree_blob_match": true
+      },
+      "independently_rehashed": {
+        "path": "current_315_base/research/nine/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+        "file": "REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+        "bytes": 12841,
+        "lines": 275,
+        "sha256": "9a0c704df3817a413639a98fbae8864ef58c583811735ac5c6816f69e1b0f636",
+        "git_blob": "d007b7ee912a045bc525ad5bb45e3d80683b1aa1"
+      },
+      "pass": true
+    },
+    {
+      "declared": {
+        "path": "current_a5f_base/research/nine/REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "bytes": 13485,
+        "lines": 294,
+        "sha256": "167e5f8a305f33944e798668394d1d3efd92b4626968f3ad75dea494f371c154",
+        "git_blob": "ebc03976c208188226e8745d4ea2d2f9ea9e53b8",
+        "role": "complete separate upstream independent review; not a substitute for source read",
+        "read_scope": "complete source text",
+        "published_path": "research/nine/REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "exact_a5f_tree_blob_match": true
+      },
+      "independently_rehashed": {
+        "path": "current_a5f_base/research/nine/REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "file": "REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "bytes": 13485,
+        "lines": 294,
+        "sha256": "167e5f8a305f33944e798668394d1d3efd92b4626968f3ad75dea494f371c154",
+        "git_blob": "ebc03976c208188226e8745d4ea2d2f9ea9e53b8"
+      },
+      "pass": true
+    },
+    {
+      "declared": {
+        "path": "current_315_base/research/nine/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+        "bytes": 17104,
+        "lines": 345,
+        "sha256": "fb99b163e4450df464fcc095ac6aea0a3294624fcb329ffbc515efda6a0bea28",
+        "git_blob": "73cfd49b7ba738e5cd85a057d98358ea1c3b36d4",
+        "role": "published full original-domain adoption",
+        "read_scope": "complete source text",
+        "published_path": "research/nine/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+        "exact_a5f_tree_blob_match": true
+      },
+      "independently_rehashed": {
+        "path": "current_315_base/research/nine/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+        "file": "ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+        "bytes": 17104,
+        "lines": 345,
+        "sha256": "fb99b163e4450df464fcc095ac6aea0a3294624fcb329ffbc515efda6a0bea28",
+        "git_blob": "73cfd49b7ba738e5cd85a057d98358ea1c3b36d4"
+      },
+      "pass": true
+    },
+    {
+      "declared": {
+        "path": "current_a5f_base/research/nine/ADOPTION_THREE_BROAD_CONTINUOUS_CAP_OWNER_AND_SHIFT_TOOLS_ROOT_2026_10_29.md",
+        "bytes": 8044,
+        "lines": 43,
+        "sha256": "865db6ecd1b9ee6774a11be75edd4f73b59e132a21bc9df1708cc3169183c36e",
+        "git_blob": "4c1a4718606ec73576d039a4e91ae1401f7def57",
+        "role": "published entire upper-mean owner-union adoption",
+        "read_scope": "complete source text",
+        "published_path": "research/nine/ADOPTION_THREE_BROAD_CONTINUOUS_CAP_OWNER_AND_SHIFT_TOOLS_ROOT_2026_10_29.md",
+        "exact_a5f_tree_blob_match": true
+      },
+      "independently_rehashed": {
+        "path": "current_a5f_base/research/nine/ADOPTION_THREE_BROAD_CONTINUOUS_CAP_OWNER_AND_SHIFT_TOOLS_ROOT_2026_10_29.md",
+        "file": "ADOPTION_THREE_BROAD_CONTINUOUS_CAP_OWNER_AND_SHIFT_TOOLS_ROOT_2026_10_29.md",
+        "bytes": 8044,
+        "lines": 43,
+        "sha256": "865db6ecd1b9ee6774a11be75edd4f73b59e132a21bc9df1708cc3169183c36e",
+        "git_blob": "4c1a4718606ec73576d039a4e91ae1401f7def57"
+      },
+      "pass": true
+    },
+    {
+      "declared": {
+        "path": "current_315_base/research/nine/ALIGNED_CHANNEL_LOWER_BYPASS_COMMON_NEIGHBOR_VERTICAL_NORMAL_OBSTRUCTION.md",
+        "bytes": 14534,
+        "lines": 296,
+        "sha256": "2f5514f91ba10b88d0703802eca3b459e82e0d639533d3b178f56a00fd7367cd",
+        "git_blob": "2bd553232216877d16f6aa665be060e5fe850d6e",
+        "role": "full provenance only; old aligned-A theorem not imported into tilted caller",
+        "read_scope": "complete source text",
+        "published_path": "research/nine/ALIGNED_CHANNEL_LOWER_BYPASS_COMMON_NEIGHBOR_VERTICAL_NORMAL_OBSTRUCTION.md",
+        "exact_a5f_tree_blob_match": true
+      },
+      "independently_rehashed": {
+        "path": "current_315_base/research/nine/ALIGNED_CHANNEL_LOWER_BYPASS_COMMON_NEIGHBOR_VERTICAL_NORMAL_OBSTRUCTION.md",
+        "file": "ALIGNED_CHANNEL_LOWER_BYPASS_COMMON_NEIGHBOR_VERTICAL_NORMAL_OBSTRUCTION.md",
+        "bytes": 14534,
+        "lines": 296,
+        "sha256": "2f5514f91ba10b88d0703802eca3b459e82e0d639533d3b178f56a00fd7367cd",
+        "git_blob": "2bd553232216877d16f6aa665be060e5fe850d6e"
+      },
+      "pass": true
+    },
+    {
+      "declared": {
+        "path": "current_315_base/research/nine/GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+        "bytes": 15961,
+        "lines": 383,
+        "sha256": "4f8da84dcc3f1fa9b8f5e231486751b134b3438905e8271f6f3484a3f10d275a",
+        "git_blob": "69eb2e51f2a8fe607dbac1d58ae6be85fbb6eaa2",
+        "role": "full corroborating provenance for literal two leaf charts; already encapsulated by operative entry",
+        "read_scope": "complete source text",
+        "published_path": "research/nine/GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+        "exact_a5f_tree_blob_match": true
+      },
+      "independently_rehashed": {
+        "path": "current_315_base/research/nine/GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+        "file": "GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+        "bytes": 15961,
+        "lines": 383,
+        "sha256": "4f8da84dcc3f1fa9b8f5e231486751b134b3438905e8271f6f3484a3f10d275a",
+        "git_blob": "69eb2e51f2a8fe607dbac1d58ae6be85fbb6eaa2"
+      },
+      "pass": true
+    },
+    {
+      "declared": {
+        "path": "current_315_base/research/nine/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+        "bytes": 17930,
+        "lines": 427,
+        "sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143",
+        "git_blob": "4625dfa796aa6a8eb1166efd326b55f0b87afda1",
+        "role": "full corroborating provenance for C masks, positive coefficients and actual Q interval; encapsulated by operative entry",
+        "read_scope": "complete source text",
+        "published_path": "research/nine/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+        "exact_a5f_tree_blob_match": true
+      },
+      "independently_rehashed": {
+        "path": "current_315_base/research/nine/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+        "file": "HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+        "bytes": 17930,
+        "lines": 427,
+        "sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143",
+        "git_blob": "4625dfa796aa6a8eb1166efd326b55f0b87afda1"
+      },
+      "pass": true
+    }
+  ],
+  "independent_exact_corroborations": [
+    {
+      "id": "axes_dot",
+      "expression": "0",
+      "exact_value": "0",
+      "expected": "0",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "axes_determinant",
+      "expression": "a**2 + t**2",
+      "exact_value": "a**2 + t**2",
+      "expected": "a**2 + t**2",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "normal_u",
+      "expression": "-a*nx + ny*t",
+      "exact_value": "-a*nx + ny*t",
+      "expected": "-a*nx + ny*t",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "normal_v",
+      "expression": "-a*ny - nx*t",
+      "exact_value": "-a*ny - nx*t",
+      "expected": "-a*ny - nx*t",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "initial_force_x",
+      "expression": "a*rho + omega*t",
+      "exact_value": "a*rho + omega*t",
+      "expected": "a*rho + omega*t",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "initial_force_y",
+      "expression": "a*omega - rho*t",
+      "exact_value": "a*omega - rho*t",
+      "expected": "a*omega - rho*t",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "strict_force_x",
+      "expression": "a*rho - omega*t",
+      "exact_value": "a*rho - omega*t",
+      "expected": "a*rho - omega*t",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "strict_force_y",
+      "expression": "-a*omega - rho*t",
+      "exact_value": "-a*omega - rho*t",
+      "expected": "-a*omega - rho*t",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "owned_support_u",
+      "expression": "a*h - a*(h - sigma*t) - q*t + t*(-a*sigma + q)",
+      "exact_value": "0",
+      "expected": "0",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "upper_face_y",
+      "expression": "q + sigma*t",
+      "exact_value": "q + sigma*t",
+      "expected": "q + sigma*t",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "lower_face_y",
+      "expression": "-a*sigma + q",
+      "exact_value": "-a*sigma + q",
+      "expected": "-a*sigma + q",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "parallel_D_height_difference",
+      "expression": "a*b - a*k",
+      "exact_value": "a*(b - k)",
+      "expected": "a*(b - k)",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "parallel_D_x_margin",
+      "expression": "a*p - a*(p - 1) - a + b*t - k*t",
+      "exact_value": "t*(b - k)",
+      "expected": "t*(b - k)",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "P_reconstructed_x",
+      "expression": "-a*p - b*t",
+      "exact_value": "-a*p - b*t",
+      "expected": "-a*p - b*t",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "P_reconstructed_y",
+      "expression": "-a*b + p*t",
+      "exact_value": "-a*b + p*t",
+      "expected": "-a*b + p*t",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "strict_Q_horizontal_span",
+      "expression": "t + 1",
+      "exact_value": "t + 1",
+      "expected": "t + 1",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "tilt_equality_square",
+      "expression": "1 - (-1 + sqrt(2))**2",
+      "exact_value": "-2 + 2*sqrt(2)",
+      "expected": "-2 + 2*sqrt(2)",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "tilt_rational_comparison",
+      "expression": "1039/40000",
+      "exact_value": "1039/40000",
+      "expected": "1039/40000",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "tilt_strict_a_floor",
+      "expression": "-281/100 + 2*sqrt(2)",
+      "exact_value": "-281/100 + 2*sqrt(2)",
+      "relation": ">0",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "vertical_endpoint_reserve",
+      "expression": "1/40",
+      "exact_value": "1/40",
+      "expected": "1/40",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "strict_S_endpoint_upper",
+      "expression": "-21/40",
+      "exact_value": "-21/40",
+      "expected": "-21/40",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "owned_t_derivative",
+      "expression": "-4*k**2/(k**2 + 1)**2 + 2/(k**2 + 1)",
+      "exact_value": "2*(1 - k**2)/(k**4 + 2*k**2 + 1)",
+      "expected": "(2 - 2*k**2)/(k**2 + 1)**2",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "owned_t_threshold",
+      "expression": "36/85",
+      "exact_value": "36/85",
+      "expected": "36/85",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "threshold_radical_squared",
+      "expression": "191/7225",
+      "exact_value": "191/7225",
+      "expected": "191/7225",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "threshold_radical_direct",
+      "expression": "121/85 - sqrt(2)",
+      "exact_value": "121/85 - sqrt(2)",
+      "relation": ">0",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "upper_leaf_vs_new_q",
+      "expression": "7/60",
+      "exact_value": "7/60",
+      "expected": "7/60",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "upper_leaf_sqrt_reserve",
+      "expression": "1/14400",
+      "exact_value": "1/14400",
+      "expected": "1/14400",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "owned_leaf_unit_axes",
+      "expression": "4*ep**2*q**2/(ep**2 + q**2)**2 + (-ep**2 + q**2)**2/(ep**2 + q**2)**2",
+      "exact_value": "1",
+      "expected": "1",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "owned_leaf_actual_x",
+      "expression": "2*ep*q**2/(ep**2 + q**2) - ep*(-ep**2 + q**2)/(ep**2 + q**2)",
+      "exact_value": "ep",
+      "expected": "ep",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "owned_leaf_actual_y",
+      "expression": "2*ep**2*q/(ep**2 + q**2) + q*(-ep**2 + q**2)/(ep**2 + q**2)",
+      "exact_value": "q",
+      "expected": "q",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "owned_leaf_radial_relation",
+      "expression": "2*ep*q**2/(ep**2 + q**2) - ep*((-ep**2 + q**2)/(ep**2 + q**2) + 1)",
+      "exact_value": "0",
+      "expected": "0",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "owned_leaf_k_form",
+      "expression": "2*ep**2*k/(ep**2*k**2 + ep**2)",
+      "exact_value": "2*k/(k**2 + 1)",
+      "expected": "2*k/(k**2 + 1)",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "strict_high_R",
+      "expression": "17/4",
+      "exact_value": "17/4",
+      "expected": "17/4",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "radius_epsilon_reserve",
+      "expression": "31/57600",
+      "exact_value": "31/57600",
+      "expected": "31/57600",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "old_C_q_bound",
+      "expression": "23/60",
+      "exact_value": "23/60",
+      "expected": "23/60",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "old_C_q_less_five_eighths",
+      "expression": "7/960",
+      "exact_value": "7/960",
+      "relation": ">0",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "leaf_opposite_vertex_reserve",
+      "expression": "821/14400",
+      "exact_value": "821/14400",
+      "expected": "821/14400",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "tilted_C_upper_leaf_conflict",
+      "expression": "659/3600",
+      "exact_value": "659/3600",
+      "expected": "659/3600",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "upper_mean_t_bound",
+      "expression": "4/45",
+      "exact_value": "4/45",
+      "expected": "4/45",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "upper_mean_a_gt_99_100",
+      "expression": "9719/810000",
+      "exact_value": "9719/810000",
+      "relation": ">0",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "owned_AD_A0_bound",
+      "expression": "1537/5400",
+      "exact_value": "1537/5400",
+      "expected": "1537/5400",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "shallow_center_halfplane_reserve",
+      "expression": "91/3600",
+      "exact_value": "91/3600",
+      "expected": "91/3600",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "shallow_center_outer_band",
+      "expression": "11/1800",
+      "exact_value": "11/1800",
+      "expected": "11/1800",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "shallow_center_target_norm",
+      "expression": "729/400",
+      "exact_value": "729/400",
+      "expected": "729/400",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "owned_AD_annulus_bound",
+      "expression": "2023/72000",
+      "exact_value": "2023/72000",
+      "relation": ">0",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "owned_AD_sqrt34_bound",
+      "expression": "561/1000000",
+      "exact_value": "561/1000000",
+      "relation": ">0",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "owned_AD_slope_phi_floor",
+      "expression": "31/6400",
+      "exact_value": "31/6400",
+      "expected": "31/6400",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "owned_AD_s_floor",
+      "expression": "23/2304",
+      "exact_value": "23/2304",
+      "expected": "23/2304",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "owned_AD_mean_upper_fraction",
+      "expression": "3660/1537",
+      "exact_value": "3660/1537",
+      "expected": "3660/1537",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "owned_AD_mean_lower_fraction",
+      "expression": "5917/2376",
+      "exact_value": "5917/2376",
+      "expected": "5917/2376",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "owned_AD_mean_gap",
+      "expression": "90869/3651912",
+      "exact_value": "90869/3651912",
+      "expected": "90869/3651912",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "upper_owner_rho_gap_coefficient",
+      "expression": "2033/7200",
+      "exact_value": "2033/7200",
+      "expected": "2033/7200",
+      "scope": "",
+      "pass": true
+    },
+    {
+      "id": "upper_owner_ratio_reserve",
+      "expression": "33/3200",
+      "exact_value": "33/3200",
+      "relation": ">0",
+      "scope": "",
+      "pass": true
+    }
+  ],
+  "full_domain_original_graph_and_endpoint_checks": [
+    {
+      "id": "actual_supports",
+      "statement": "S is in the actual closed A and D and maximizes/minimizes the unchanged original n.",
+      "pass": true
+    },
+    {
+      "id": "no_new_normal",
+      "statement": "No normal selection convention or reselection enters the physical core.",
+      "pass": true
+    },
+    {
+      "id": "strict_tilt",
+      "statement": "a,t>0 is an explicit premise; neither aligned endpoint is silently covered.",
+      "pass": true
+    },
+    {
+      "id": "horizontal_actual_Q",
+      "statement": "Q belongs to the same actual D and has Qx>=h+1; not a radial weighted proxy.",
+      "pass": true
+    },
+    {
+      "id": "whole_height",
+      "statement": "max(Dy)<=q is a whole-unit hypothesis, not a statement about one contact.",
+      "pass": true
+    },
+    {
+      "id": "min_vertex",
+      "statement": "Both inward normal projections may vanish individually; the whole nonzero unit normal is retained.",
+      "pass": true
+    },
+    {
+      "id": "side_interior",
+      "statement": "Full tangential mean interval retained in strict reach.",
+      "pass": true
+    },
+    {
+      "id": "side_endpoints",
+      "statement": "Both side endpoints use the actual vertex proof, not a strict-interior assumption.",
+      "pass": true
+    },
+    {
+      "id": "weak_x",
+      "statement": "nx=0 survives both the physical theorem and strict proper-frame corner row.",
+      "pass": true
+    },
+    {
+      "id": "weak_y",
+      "statement": "ny=0 remains in the initial-point row and does not contradict n.u<0.",
+      "pass": true
+    },
+    {
+      "id": "zero_omega",
+      "statement": "First omega=0 duplicates owned sigma=0 intentionally.",
+      "pass": true
+    },
+    {
+      "id": "owned_endpoints",
+      "statement": "Full sigma in closed[0,1] retained in Theorems A and C.",
+      "pass": true
+    },
+    {
+      "id": "P_membership",
+      "statement": "Theorem B assumes only actual P in D, not P equals the original AD application.",
+      "pass": true
+    },
+    {
+      "id": "top_equality",
+      "statement": "Horizontal reach exactly one forces whole East/South rectangle, not only a point coordinate.",
+      "pass": true
+    },
+    {
+      "id": "NE_original_support",
+      "statement": "Q=(h+1,q) only when g is the actual strict-NE maximum direction of D.",
+      "pass": true
+    },
+    {
+      "id": "parallel_g_retained",
+      "statement": "East g retains the full right face; coincidence row not excluded.",
+      "pass": true
+    },
+    {
+      "id": "D_tilt_scope",
+      "statement": "D is proved tilted only in the actual n=-u row.",
+      "pass": true
+    },
+    {
+      "id": "arbitrary_core_degrees",
+      "statement": "No A/D load or degree or balance premise in A-C.",
+      "pass": true
+    },
+    {
+      "id": "no_third_edge_core",
+      "statement": "No AT,DT,BD or other-contact premise in A-C.",
+      "pass": true
+    },
+    {
+      "id": "original_graph",
+      "statement": "{'A': 4, 'D': 3, 'T': 2, 'B': 2, 'C': 2, 'L': 1}; exact edges AT,DT,AD,AB,BC,CD,AL",
+      "pass": true
+    },
+    {
+      "id": "original_loads",
+      "statement": "Positive loads exactly T,C,L; true unloaded A4,D3,B2 retained.",
+      "pass": true
+    },
+    {
+      "id": "all_nine",
+      "statement": "Same six component units and three arbitrary completion units remain.",
+      "pass": true
+    },
+    {
+      "id": "C_coefficients",
+      "statement": "Both actual C coefficients positive only by whole accepted2a entry; radial C stays true C2.",
+      "pass": true
+    },
+    {
+      "id": "C_parallel",
+      "statement": "Original -1/2<=y<0 and torque mu*q+nu*y=0 retained.",
+      "pass": true
+    },
+    {
+      "id": "C_nonparallel",
+      "statement": "Original gx,gy>0 and actual Q=(d,-1/2) retained.",
+      "pass": true
+    },
+    {
+      "id": "upper_q_closed_exit",
+      "statement": "ea076 excludes full ownedq in[3/8,1/2], including both endpoints.",
+      "pass": true
+    },
+    {
+      "id": "upper_vertex_q",
+      "statement": "Upper vertex q<31/120<3/8 from whole4f input, not upper-mean assumption.",
+      "pass": true
+    },
+    {
+      "id": "rho_endpoint",
+      "statement": "ea076 rho>=rho-xi, equality atxi0 retained; downstream strictness from positive other terms.",
+      "pass": true
+    },
+    {
+      "id": "T_masks_upper",
+      "statement": "Whole53cf sign is physical;80bf excludes two-corner T before unique inside inference.",
+      "pass": true
+    },
+    {
+      "id": "C_masks_entry",
+      "statement": "Physical two-C with a zero coefficient separately excluded; no unique-mask conflation.",
+      "pass": true
+    },
+    {
+      "id": "strict_t_endpoint",
+      "statement": "t=sqrt2-1 excluded by actual vertical gap >1/40, not omitted.",
+      "pass": true
+    },
+    {
+      "id": "qepsilon_ratio",
+      "statement": "Only owned-leaf chart uses k=q/epsilon; epsilon>0 and k>1 are established.",
+      "pass": true
+    },
+    {
+      "id": "provenance_not_input",
+      "statement": "Old aligned2f theorem read but not transferred to tilted A.",
+      "pass": true
+    },
+    {
+      "id": "no_T_parallel_exit",
+      "statement": "Separate a813 parallel-T research is not an input or conclusion.",
+      "pass": true
+    },
+    {
+      "id": "no_capacity",
+      "statement": "No whole-pocket/allocation claim; three extras never assigned away.",
+      "pass": true
+    },
+    {
+      "id": "standing_foundation",
+      "statement": "Accepted original physical certificate and complete6f ancestry are explicit boundaries; no new global foundation audit.",
+      "pass": true
+    },
+    {
+      "id": "no_global_credit",
+      "statement": "Zero whole flags, zero new certificates, zero retirements; currenthead reconciliation separate.",
+      "pass": true
+    }
+  ],
+  "scope_dependency_graph": {
+    "nodes": [
+      "actual_AD_geometry",
+      "strict_negative_normal_reach",
+      "upward_normal_exclusion",
+      "whole_A_face",
+      "top_point_width_equality",
+      "coincident_D_rectangle",
+      "owned_parallel_D_exclusion",
+      "accepted_6f_original_entry",
+      "accepted_ea076_upper_owner_exit",
+      "literal_two_chart_TC_entry",
+      "actual_strict_corner_diameter",
+      "strict_t_bound",
+      "owned_leaf_ratio_bound"
+    ],
+    "edges": [
+      {
+        "caller": "strict_negative_normal_reach",
+        "input": "actual_AD_geometry"
+      },
+      {
+        "caller": "upward_normal_exclusion",
+        "input": "strict_negative_normal_reach"
+      },
+      {
+        "caller": "upward_normal_exclusion",
+        "input": "actual_AD_geometry"
+      },
+      {
+        "caller": "whole_A_face",
+        "input": "upward_normal_exclusion"
+      },
+      {
+        "caller": "top_point_width_equality",
+        "input": "actual_AD_geometry"
+      },
+      {
+        "caller": "coincident_D_rectangle",
+        "input": "top_point_width_equality"
+      },
+      {
+        "caller": "owned_parallel_D_exclusion",
+        "input": "actual_AD_geometry"
+      },
+      {
+        "caller": "literal_two_chart_TC_entry",
+        "input": "accepted_6f_original_entry"
+      },
+      {
+        "caller": "literal_two_chart_TC_entry",
+        "input": "accepted_ea076_upper_owner_exit"
+      },
+      {
+        "caller": "literal_two_chart_TC_entry",
+        "input": "whole_A_face"
+      },
+      {
+        "caller": "literal_two_chart_TC_entry",
+        "input": "coincident_D_rectangle"
+      },
+      {
+        "caller": "literal_two_chart_TC_entry",
+        "input": "owned_parallel_D_exclusion"
+      },
+      {
+        "caller": "actual_strict_corner_diameter",
+        "input": "literal_two_chart_TC_entry"
+      },
+      {
+        "caller": "strict_t_bound",
+        "input": "actual_strict_corner_diameter"
+      },
+      {
+        "caller": "owned_leaf_ratio_bound",
+        "input": "strict_t_bound"
+      }
+    ],
+    "input_first_topological_order": [
+      "actual_AD_geometry",
+      "accepted_6f_original_entry",
+      "accepted_ea076_upper_owner_exit",
+      "strict_negative_normal_reach",
+      "top_point_width_equality",
+      "owned_parallel_D_exclusion",
+      "upward_normal_exclusion",
+      "coincident_D_rectangle",
+      "whole_A_face",
+      "literal_two_chart_TC_entry",
+      "actual_strict_corner_diameter",
+      "strict_t_bound",
+      "owned_leaf_ratio_bound"
+    ],
+    "acyclic": true
+  },
+  "original_accounting": {
+    "inventory": {
+      "path": "current_a5f_base/research/nine/WHOLE_OWNER_UNIONS_AND_ACTIVE_CENTRAL_BLOCKS_CHECKPOINT_2026_10_29.json",
+      "file": "WHOLE_OWNER_UNIONS_AND_ACTIVE_CENTRAL_BLOCKS_CHECKPOINT_2026_10_29.json",
+      "bytes": 264235,
+      "lines": 11039,
+      "sha256": "a32dc38a7388d08027e57eec5883e4171dad4ef908dae490d239bcf3609bf9d4",
+      "git_blob": "57ad47495816e28fa181191138205830bfe92feb"
+    },
+    "fine_total": 2513,
+    "fine_checked": 2365,
+    "fine_open": 148,
+    "coarse_total": 58,
+    "coarse_checked": 35,
+    "coarse_open": 23,
+    "exact_open_TC_row": {
+      "index": 1850,
+      "id": "M6.B5L.HOUSE.HUB.LTC.S",
+      "checked": false
+    },
+    "fine_changes": 0,
+    "coarse_changes": 0,
+    "new_certificates": 0,
+    "retirements": 0
+  },
+  "reading_boundary": {
+    "new_core": "entire radius-free geometric proof reconstructed without force/radius imports",
+    "two_operative_sources": "entire6f andea076 read; their complete separate reports and root adoptions read",
+    "additional_critical_sources": "entire4f2a53cf80bf and their full separate reviews reconstructed",
+    "old_provenance": "entire2f read only as provenance; no aligned-to-tilted transfer",
+    "standing": "global physical certificate/compatibility and old complete6f exits remain explicit accepted boundary; no claim of new recursive global proof",
+    "no_new_T_input": "a813 and author separateTC work not used"
+  },
+  "remaining": "Complete TC row still open after this source; both leaf charts, all remaining T alternatives and parallel-C coincidence remain subject to further full proof. No cap/allocation theorem claimed.",
+  "counts": {
+    "registry_objects": 15,
+    "author_pin_checks": 9,
+    "exact_corroborations": 53,
+    "domain_graph_checks": 37,
+    "DAG_nodes": 13,
+    "DAG_edges": 15
+  },
+  "frozen_source_edited": false,
+  "lean_lake_ci_or_remote_mutation": false,
+  "global_theorem_closed": false
+}

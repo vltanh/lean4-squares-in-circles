@@ -1,0 +1,96 @@
+{
+  "reviewer": "triangle_bridges",
+  "source": "INNER_PENTAGON_H3_0124_UNIQUE_FREE_ENDPOINT_EXCLUSION.md",
+  "source_sha256": "76ba586f7147908f4f2eaf738285f4324871fa223c5663c58d533476e9bbb3a1",
+  "method": "Independent exact Fraction and sparse-polynomial reconstruction; no author checker imported; no numerical pose premise.",
+  "input_pins": [
+    {
+      "file": "SIX_BODY_INNER_PENTAGON_LOAD_COVER.md",
+      "sha256": "fa877c9d7d25c57a7c8cf438a429465b5952cb8db6628c57d9d93695b33dd434"
+    },
+    {
+      "file": "FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "sha256": "6c38d162e1f2c435cf65a8b4a58a7001fe9489c65b3510159fee2687b9753708"
+    },
+    {
+      "file": "BOUNDARY_CONTACT_ORIGIN_MOMENT_ORIENTATION.md",
+      "sha256": "851417d7fcd12ccb93a6f7f09ba7d7b2bf9bccc61c82fee3457b5ee4cee47e9a"
+    },
+    {
+      "file": "TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md",
+      "sha256": "0d61292a0aa57084b88b4a72754fc78e123e8b684dac09be966fb074ab58e877"
+    },
+    {
+      "file": "GENERAL_FIXED_TIP_NORMAL_SELECTION.md",
+      "sha256": "e94305229333f45afdbd94e6dddf08485e62005a865afe697759cc36161cf753"
+    },
+    {
+      "file": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "sha256": "6154eee2ab1114d063b0dbd1a2800c3522cbb1b46ec44a258c1c89d8ffb9e975"
+    },
+    {
+      "file": "CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "sha256": "2625b3a2b730525a6397bc90232e78c5e1aac8091381c1f5e5fc8a71ef1da449"
+    },
+    {
+      "file": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a"
+    },
+    {
+      "file": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "sha256": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c"
+    },
+    {
+      "file": "REVIEW_NINE_MEASURE_FIVE_POINT_ASSEMBLY_ROOT_2026_10_26.md",
+      "sha256": "6aa33d0fbccdede04d909b770496fcac8d061e184d46d890f2394b484c6b4b5b"
+    },
+    {
+      "file": "REVIEW_NINE_MEASURE_FIVE_POINT_ASSEMBLY_C6_2026_10_26.md",
+      "sha256": "68e17f92fbc87b7484d3dcdef206ba0e5f0b7014eb0f06ec707919cbe44e00a2"
+    }
+  ],
+  "polynomial_identities": {
+    "opposite_corner_determinant": true,
+    "adjacent_u_corner_determinant": true,
+    "adjacent_v_corner_determinant": true,
+    "opposite_incoming_component_order": true,
+    "bottom_vertex_own_projection": true,
+    "dot_minus_determinant_expansion": true,
+    "affine_parameter_expansion": true,
+    "actual_lower_parameter_numerator": true,
+    "two_actual_circle_equations_difference": true,
+    "radial_zero_concurrence_cross_equation": true
+  },
+  "strict_reserves": {
+    "outward_port_exceeds_radius_squared": "47/256",
+    "upper_radius_below_21_10": "599/6400",
+    "sqrt2_exceeds_7_5": "1/25",
+    "center_radius_exceeds_9_7": "1/98",
+    "cosine_radius_derivative": "104071/78400",
+    "contact_tangent_below_7_3": "343/9216",
+    "contact_angle_below_3pi8": "2/9",
+    "strong_contact_cosine_squared_integer": "18695",
+    "two_link_tangent_comparison": "4/143",
+    "inner_shared_side_negative_center_radius": "179/100",
+    "large_E2_radius_from_91_25": "3/100",
+    "outer_v_B_lower_bound": "3/50",
+    "outer_v_projection_beyond_R": "1/5",
+    "one_over_sqrt3_below_3_5": "2/75",
+    "adjacent_A_small_radius_contradiction": "27/50",
+    "adjacent_B_below_three_halves": "1/16",
+    "negative_D0_B_below_7_10": "3/50",
+    "negative_D0_A_above_187_100": "131/10000",
+    "negative_D0_strict_affine_reserve": "157/10500",
+    "zero_concurrence_outer_axis_width": "3/10"
+  },
+  "rational_equalities": {
+    "strong_pair_cosine": "988/2205",
+    "small_horizontal_angle_ratio": "1/14",
+    "adjacent_B_radius_cap": "529/256",
+    "negative_D0_L_lower": "37/100",
+    "negative_D0_first_lower": "-1/5",
+    "negative_D0_second_lower": "8/5",
+    "negative_D0_multiplier": "37/420"
+  },
+  "all_passed": true
+}

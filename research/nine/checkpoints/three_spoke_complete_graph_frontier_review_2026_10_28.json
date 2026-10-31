@@ -1,0 +1,208 @@
+{
+  "date_utc": "2026-10-28",
+  "reviewer": "frontier_audit",
+  "assembly_sha256": "15256f1dad919b5a3d0b2390df2eb29de936ac05b8c06ce5734c4fcc8deb1f20",
+  "original_fine_parent": "M6.B6.PENTAGON.H3_EXIT",
+  "degrees": {
+    "0": 3,
+    "1": 3,
+    "2": 2,
+    "3": 3,
+    "4": 2,
+    "H": 3
+  },
+  "necessary_three_load_sets": [
+    "013",
+    "023",
+    "024",
+    "124",
+    "134"
+  ],
+  "all_four_load_sets": [
+    "0123",
+    "0124",
+    "0134",
+    "0234",
+    "1234"
+  ],
+  "original_orbits": {
+    "013": [
+      "013"
+    ],
+    "023": [
+      "023",
+      "134"
+    ],
+    "024": [
+      "024",
+      "124"
+    ],
+    "1234": [
+      "1234",
+      "0234"
+    ],
+    "0134": [
+      "0134",
+      "0123"
+    ],
+    "0124": [
+      "0124"
+    ]
+  },
+  "reflection_preserves_whole_graph": true,
+  "all_25_current_input_pins": [
+    {
+      "path": "research/nine/SIX_BODY_INNER_PENTAGON_LOAD_COVER.md",
+      "historical_sha256": "fa877c9d7d25c57a7c8cf438a429465b5952cb8db6628c57d9d93695b33dd434",
+      "current_sha256": "cfe85a201b09182200d5270f0dcdc0e590bf99eded19aaf6d56f86830e959c0a",
+      "disposition": "terminal_LF_equivalent"
+    },
+    {
+      "path": "research/nine/UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "historical_sha256": "d6008ceb18b2c8921c1f3711e6babfea3a01761487352ef4dca60579a83353b8",
+      "current_sha256": "db073cd024a4f2e763e7cd0a21bf5cb6a2a8be67069f3f9d3aff638b8a40b258",
+      "disposition": "terminal_LF_equivalent"
+    },
+    {
+      "path": "research/nine/FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "historical_sha256": "6c38d162e1f2c435cf65a8b4a58a7001fe9489c65b3510159fee2687b9753708",
+      "current_sha256": "164d08bb2c4dfe8510247e44298d309920cb88a780221252d833f51aa654225f",
+      "disposition": "terminal_LF_equivalent"
+    },
+    {
+      "path": "research/nine/GENERAL_BALANCED_THREE_BOUNDARY_CENTER_DISTANCE_EXCLUSION.md",
+      "historical_sha256": "3d0127ae38e7f14580bada72b1a39f8c9115c496a871a75b256f24ca1386fc46",
+      "current_sha256": "3d0127ae38e7f14580bada72b1a39f8c9115c496a871a75b256f24ca1386fc46",
+      "disposition": "exact"
+    },
+    {
+      "path": "research/nine/REVIEW_BALANCED_THREE_BOUNDARY_METRIC_PENTAGON_ROOT_2026_10_27.md",
+      "historical_sha256": "b953b464df44226e37fe8a27e3a8a018309f6ad4b1e47dfe0f8ce725ddfcca03",
+      "current_sha256": "b953b464df44226e37fe8a27e3a8a018309f6ad4b1e47dfe0f8ce725ddfcca03",
+      "disposition": "exact"
+    },
+    {
+      "path": "research/nine/REVIEW_BALANCED_THREE_BOUNDARY_METRIC_PENTAGON_GLOBAL_2026_10_27.md",
+      "historical_sha256": "f7e4e2ec594be56e05b100f4a45b7f33cd29530b5a876fcf8cf0ac4ba5db8ce2",
+      "current_sha256": "f7e4e2ec594be56e05b100f4a45b7f33cd29530b5a876fcf8cf0ac4ba5db8ce2",
+      "disposition": "exact"
+    },
+    {
+      "path": "research/nine/CHORDED_HEXAGON_CLEAR_HOUSE_ROOF_TRANSMITTER_EXCLUSION.md",
+      "historical_sha256": "deb428a6ceac676ca325e2d0b991a05ececefd1811deec9cadc2ea2baa79b415",
+      "current_sha256": "deb428a6ceac676ca325e2d0b991a05ececefd1811deec9cadc2ea2baa79b415",
+      "disposition": "exact"
+    },
+    {
+      "path": "research/nine/REVIEW_CLEAR_HOUSE_ROOF_TRANSMITTER_ROOT_2026_10_27.md",
+      "historical_sha256": "1b29b502cb454f5b5ee30b6632e36fc73c6c7c0242243419eacbfc9e0df285d5",
+      "current_sha256": "1b29b502cb454f5b5ee30b6632e36fc73c6c7c0242243419eacbfc9e0df285d5",
+      "disposition": "exact"
+    },
+    {
+      "path": "research/nine/REVIEW_CLEAR_HOUSE_ROOF_TRANSMITTER_GLOBAL_2026_10_27.md",
+      "historical_sha256": "051aa609fc2a03281bc5d8e25bb5ee27a0588455eba60d61ddf4c8b37f4335d9",
+      "current_sha256": "051aa609fc2a03281bc5d8e25bb5ee27a0588455eba60d61ddf4c8b37f4335d9",
+      "disposition": "exact"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_THREE_SPOKE_THREE_LOAD_024_COMPLETE_EXCLUSION.md",
+      "historical_sha256": "009f8d50b6923f97634d0a38d80cb59b681efe66bbeb387368498f41e493ceb1",
+      "current_sha256": "009f8d50b6923f97634d0a38d80cb59b681efe66bbeb387368498f41e493ceb1",
+      "disposition": "exact"
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_SPOKE_THREE_LOAD_024_COMPLETE_ROOT_2026_10_28.md",
+      "historical_sha256": "317ad394a89fa6af67f043dcd629b58096a88710f4ca9b34c0af5f20480a6c47",
+      "current_sha256": "317ad394a89fa6af67f043dcd629b58096a88710f4ca9b34c0af5f20480a6c47",
+      "disposition": "exact"
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_SPOKE_THREE_LOAD_024_COMPLETE_ROOTED_BLOCKS_2026_10_28.md",
+      "historical_sha256": "a752b9d6094629da238f6e65011087e6d0d1cb6b6c19c5820cfe7907d7c178c3",
+      "current_sha256": "a752b9d6094629da238f6e65011087e6d0d1cb6b6c19c5820cfe7907d7c178c3",
+      "disposition": "exact"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_THREE_SPOKE_FOUR_LOAD_1234_COMPLETE_EXCLUSION.md",
+      "historical_sha256": "208b73829e2b571b6ffda875fb7fc276de08eb2862fab518af21675848dffabc",
+      "current_sha256": "208b73829e2b571b6ffda875fb7fc276de08eb2862fab518af21675848dffabc",
+      "disposition": "exact"
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_SPOKE_FOUR_LOAD_1234_COMPLETE_ROOT_2026_10_28.md",
+      "historical_sha256": "7453a480b1388c9f2c545a963682dcfc66ada6e847f8ea44727ceb8ae67e776f",
+      "current_sha256": "7453a480b1388c9f2c545a963682dcfc66ada6e847f8ea44727ceb8ae67e776f",
+      "disposition": "exact"
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_SPOKE_FOUR_LOAD_1234_COMPLETE_JOIN_ROOTED_BLOCKS_2026_10_28.md",
+      "historical_sha256": "93944793f0ef04fa6808345a2d4a02a428bdb8fa287ecc192a3e212b11b71fa2",
+      "current_sha256": "93944793f0ef04fa6808345a2d4a02a428bdb8fa287ecc192a3e212b11b71fa2",
+      "disposition": "exact"
+    },
+    {
+      "path": "research/nine/BALANCED_FOUR_BOUNDARY_PATH_ONE_TRANSMITTER_FULL_DOMAIN_JOINS.md",
+      "historical_sha256": "7c930bfb5f44e14d4c22fc728c167561cbee59540264ae2883ec13e2a40d9ed8",
+      "current_sha256": "7c930bfb5f44e14d4c22fc728c167561cbee59540264ae2883ec13e2a40d9ed8",
+      "disposition": "exact"
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_THREE_SPOKE_FOUR_LOAD_0124_COMPLETE_EXCLUSION.md",
+      "historical_sha256": "2928e4eab78b513c020a813ccef306b17af36c1c8a3e5f41a0b40a75120e5488",
+      "current_sha256": "2928e4eab78b513c020a813ccef306b17af36c1c8a3e5f41a0b40a75120e5488",
+      "disposition": "exact"
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_SPOKE_FOUR_LOAD_0124_COMPLETE_ROOT_2026_10_28.md",
+      "historical_sha256": "c1e1fcfe7da19dc6fc148edf7810e70e8e212cb8ba90ebc8fcc2ad2959940526",
+      "current_sha256": "c1e1fcfe7da19dc6fc148edf7810e70e8e212cb8ba90ebc8fcc2ad2959940526",
+      "disposition": "exact"
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_SPOKE_FOUR_LOAD_0124_COMPLETE_JOIN_TRIANGLE_BRIDGES_2026_10_28.md",
+      "historical_sha256": "5e2dd916f2e1d67ca3493c8daafa2268f1effd10beb8bffa72f17fbfe3da971d",
+      "current_sha256": "5e2dd916f2e1d67ca3493c8daafa2268f1effd10beb8bffa72f17fbfe3da971d",
+      "disposition": "exact"
+    },
+    {
+      "path": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "historical_sha256": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a",
+      "current_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "disposition": "terminal_LF_equivalent"
+    },
+    {
+      "path": "research/nine/CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "historical_sha256": "2625b3a2b730525a6397bc90232e78c5e1aac8091381c1f5e5fc8a71ef1da449",
+      "current_sha256": "e54df61d3134c5709bee5ac1a250fdd51084828da114d896f14c7e6337c4e8c5",
+      "disposition": "terminal_LF_equivalent"
+    },
+    {
+      "path": "research/nine/GENERAL_FIXED_TIP_NORMAL_SELECTION.md",
+      "historical_sha256": "e94305229333f45afdbd94e6dddf08485e62005a865afe697759cc36161cf753",
+      "current_sha256": "ef8ae8a219af9fa15a70698e485bbb337925e5caf2cd64b6b5c2619d9c4bd194",
+      "disposition": "terminal_LF_equivalent"
+    },
+    {
+      "path": "research/nine/NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "historical_sha256": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c",
+      "current_sha256": "4c9e708945938c3f9df575e76f7573903d6b5a0ce4eccb5bcea760353a47458a",
+      "disposition": "same_export_analytic_radius_proof_substitution"
+    },
+    {
+      "path": "research/nine/REVIEW_NINE_MEASURE_FIVE_POINT_ASSEMBLY_ROOT_2026_10_26.md",
+      "historical_sha256": "6aa33d0fbccdede04d909b770496fcac8d061e184d46d890f2394b484c6b4b5b",
+      "current_sha256": "6aa33d0fbccdede04d909b770496fcac8d061e184d46d890f2394b484c6b4b5b",
+      "disposition": "exact"
+    },
+    {
+      "path": "research/nine/REVIEW_NINE_MEASURE_FIVE_POINT_ASSEMBLY_C6_2026_10_26.md",
+      "historical_sha256": "68e17f92fbc87b7484d3dcdef206ba0e5f0b7014eb0f06ec707919cbe44e00a2",
+      "current_sha256": "68e17f92fbc87b7484d3dcdef206ba0e5f0b7014eb0f06ec707919cbe44e00a2",
+      "disposition": "exact"
+    }
+  ],
+  "no_new_id": true,
+  "no_coarse_closure": true,
+  "scope": "Finite graph/orbit and exact dependency check supplementing a full handwritten independent assembly review."
+}

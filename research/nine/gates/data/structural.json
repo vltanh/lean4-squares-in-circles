@@ -1,0 +1,282 @@
+{
+  "version": 2,
+  "kind": "structural",
+  "refinement_policy": "One child is a scoped proposed proof obligation, not an independently accepted new original fine ID. Historical completed proper subfeatures are excluded from this plan.",
+  "leaves": [
+    {
+      "id": "R-CHAIN-ENDPOINTS",
+      "group": "structural",
+      "area": "chain",
+      "scope": "A genuine four-chain with original direction e",
+      "task": "Classify the five other squares by their complete projected intervals and exact endpoint-gap relationships",
+      "done_when": "A genuine four-plus-three paired gap is derived or an explicit non-chain alternative is retained, including ties",
+      "kind": "hand-lemma",
+      "status": "OPEN",
+      "priority": "P0"
+    },
+    {
+      "id": "R-CHAIN-T_SHAPE",
+      "group": "structural",
+      "area": "chain",
+      "scope": "A 3+2 allocation beside a four-chain with an upper T-shaped triple",
+      "task": "Derive an actual full-square obstruction or exact pocket for the T's transverse cap",
+      "done_when": "The eight-square cross is admitted as a negative control; no false three-chain assertion",
+      "kind": "hand-lemma",
+      "status": "OPEN",
+      "priority": "P0"
+    },
+    {
+      "id": "R-CHAIN-OPPOSITE",
+      "group": "structural",
+      "area": "chain",
+      "scope": "The same non-chain 3+2 allocation and the two actual squares on the opposite side",
+      "task": "Show that the T-side configuration and opposite-side squares cannot jointly fit below Q",
+      "done_when": "All five distinct actual completion squares and mutual nonoverlap participate in the same inequality",
+      "kind": "hand-lemma",
+      "status": "OPEN",
+      "priority": "P0"
+    },
+    {
+      "id": "R-CHAIN-TILT",
+      "group": "structural",
+      "area": "chain",
+      "scope": "Every remaining pair of arbitrarily oriented completion squares",
+      "task": "Use a legal actual separating axis for each needed pair, including oblique and endpoint owners",
+      "done_when": "No step assumes one globally coordinate-separating frame",
+      "kind": "hand-lemma",
+      "status": "OPEN",
+      "priority": "P0"
+    },
+    {
+      "id": "R-BRANCH-TURN",
+      "group": "structural",
+      "area": "branch",
+      "scope": "An unloaded branching vertex with full original positive force and torque star",
+      "task": "Express the defect between entering and leaving channel projected widths using actual original contact applications",
+      "done_when": "Give a signed inequality retaining all incident chords and nonzero forces",
+      "kind": "hand-lemma",
+      "status": "OPEN",
+      "priority": "P0"
+    },
+    {
+      "id": "R-BRANCH-CENTER",
+      "group": "structural",
+      "area": "branch",
+      "scope": "A turning branch with less than one full unit of channel width",
+      "task": "Prove an actual central-sector occupancy or equivalent necessary geometric witness, instead of charging a fictitious set gap",
+      "done_when": "The five-square cross satisfies the stated dichotomy",
+      "kind": "hand-lemma",
+      "status": "OPEN",
+      "priority": "P0"
+    },
+    {
+      "id": "R-BRANCH-DOUBLE",
+      "group": "structural",
+      "area": "branch",
+      "scope": "Two or more turning or chorded vertices in one positive block",
+      "task": "Show how center/annular defect charges compose without charging one physical square twice",
+      "done_when": "A finite injective assignment or explicit joint inequality covers all branches",
+      "kind": "hand-lemma",
+      "status": "OPEN",
+      "priority": "P0"
+    },
+    {
+      "id": "R-BRANCH-BOUNDRY",
+      "group": "structural",
+      "area": "branch",
+      "scope": "A branching/chorded block with physical boundary marks and arbitrary outside degrees",
+      "task": "Extend marked-cycle gap/arc accounting to its intact full graph and all actual contacts",
+      "done_when": "No positive chord is deleted, and a drawing face is not used as an actual hole",
+      "kind": "hand-lemma",
+      "status": "OPEN",
+      "priority": "P0"
+    },
+    {
+      "id": "R-BRANCH-EXTRAS",
+      "group": "structural",
+      "area": "branch",
+      "scope": "A short/chorded core with m<9 selected positive bodies",
+      "task": "Derive actual barriers and route all 9−m remaining physical squares to their true complementary regions",
+      "done_when": "One joint capacity theorem excludes the full nine-square completion, including zero-stress contacts",
+      "kind": "hand-lemma",
+      "status": "OPEN",
+      "priority": "P0"
+    },
+    {
+      "id": "R-ANN-TWO_NEAR",
+      "group": "structural",
+      "area": "ann",
+      "scope": "Two distinct actual units with center norm below one",
+      "task": "Couple their actual relative placement to the occupied inner-circle angular arcs of the other seven",
+      "done_when": "A pair-dependent angular loss is proved; all-radii independent-profile relaxation witness is not falsely excluded",
+      "kind": "hand-lemma",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "R-ANN-THREE_NEAR",
+      "group": "structural",
+      "area": "ann",
+      "scope": "Exactly three actual near-origin units and up to six remaining units",
+      "task": "Prove an honest three-resource angular/center-sector inequality with original square intersections",
+      "done_when": "The existing three-near and four-near capacity theorems apply at their exact strict distance thresholds",
+      "kind": "hand-lemma",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "R-ANN-ROUTING",
+      "group": "structural",
+      "area": "ann",
+      "scope": "A square whose center radial direction lies inside a proposed annular gap",
+      "task": "Route its actual connected open inner-circle component, not merely its center direction",
+      "done_when": "The entire actual component is in one certified complementary interval; multi-component exceptions retained",
+      "kind": "hand-lemma",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "R-CUT-MOMENT_PAIR",
+      "group": "structural",
+      "area": "cut",
+      "scope": "An origin-containing articulation and an actual boundary-neighbor cut with nonpositive resultant pressure",
+      "task": "Use the unchanged zero origin moment to identify a non-common-side opposite-moment witness pair",
+      "done_when": "Prove the original witness-pair decomposition and its geometrically possible root-side options",
+      "kind": "hand-lemma",
+      "status": "OPEN",
+      "priority": "P0"
+    },
+    {
+      "id": "R-CUT-MIXED",
+      "group": "structural",
+      "area": "cut",
+      "scope": "A genuine endblock whose original root contacts lie on two or more distinct sides",
+      "task": "Prove an exact pressure/wrench cone for each physical root-side configuration",
+      "done_when": "Handles endpoint normals and original means without transferring a common-side theorem",
+      "kind": "hand-lemma",
+      "status": "OPEN",
+      "priority": "P0"
+    },
+    {
+      "id": "R-CUT-CLEAR",
+      "group": "structural",
+      "area": "cut",
+      "scope": "A genuine cut with one or more physically circle-clear positive root neighbors",
+      "task": "Keep their full original contact forces and determine the allowable resultant sign or exit",
+      "done_when": "Does not identify physical circle-clear with zero selected circle multiplier",
+      "kind": "hand-lemma",
+      "status": "OPEN",
+      "priority": "P0"
+    },
+    {
+      "id": "R-CUT-DISTANT",
+      "group": "structural",
+      "area": "cut",
+      "scope": "An endblock with a positive circle load on a square not physically touching its articulation",
+      "task": "Control its radial resultant using an actual physical path/cut and not an invented adjacency",
+      "done_when": "Permits arbitrary internal chords and degrees while bounding the resultant projection",
+      "kind": "hand-lemma",
+      "status": "OPEN",
+      "priority": "P0"
+    },
+    {
+      "id": "R-CUT-ORIGIN",
+      "group": "structural",
+      "area": "cut",
+      "scope": "An articulation root not containing O",
+      "task": "Classify the root support/central access before invoking any origin-containing pressure lemma",
+      "done_when": "Either excludes such a root or proves a separate correct wrench inequality",
+      "kind": "hand-lemma",
+      "status": "OPEN",
+      "priority": "P0"
+    },
+    {
+      "id": "R-CUT-TRIANGLE",
+      "group": "structural",
+      "area": "cut",
+      "scope": "Triangle plus a block of order five or larger sharing a root",
+      "task": "Prove which physical boundary neighbors are forced by each real triangle tip and private loaded structure",
+      "done_when": "Supports 3+5, 3+6 and 3+7 original two-block parents without assuming all loaded members touch H",
+      "kind": "hand-lemma",
+      "status": "OPEN",
+      "priority": "P0"
+    },
+    {
+      "id": "R-MODULE-TRICYCLE",
+      "group": "structural",
+      "area": "module",
+      "scope": "A full three-edge cut around an unloaded connected module with internal cycle rank at least two",
+      "task": "Prove a physical incompatibility or finite topology/width restriction",
+      "done_when": "No cyclic module is treated as a tree and all three original cut edges counted",
+      "kind": "hand-lemma",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "R-MODULE-SMALL_UNI",
+      "group": "structural",
+      "area": "module",
+      "scope": "The five necessary three-port unicyclic (t,s) profiles that survive the proved |K|≤5 theorem",
+      "task": "Derive actual endpoint/stress geometry and the joint nine-square completion obstruction",
+      "done_when": "Original two exit-position classes in (1,1) both covered",
+      "kind": "hand-lemma",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "R-MODULE-SMALL_FORCE",
+      "group": "structural",
+      "area": "module",
+      "scope": "A one-exit-per-hub module satisfying the published 29/30 concentration estimate",
+      "task": "Remove a whole residual topology without discarding arbitrarily small positive force coefficients",
+      "done_when": "The excluded class is stated with true degrees and full original cut",
+      "kind": "hand-lemma",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "R-PHYSICAL-PHYS_REGION",
+      "group": "structural",
+      "area": "physical",
+      "scope": "The selected planar physical stress body graph and its complete physical touching graph",
+      "task": "Distinguish actual Jordan contact rings from topological drawing faces at every multibody junction",
+      "done_when": "An actual whole-square routing theorem, not just a center label",
+      "kind": "hand-lemma",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "R-MODULE-CUT4_UNI",
+      "group": "structural",
+      "area": "module",
+      "scope": "Exactly four full cut edges around an entirely unloaded unicyclic module",
+      "task": "Bound internal subdivided runs and original cut forces without dropping any of four exits",
+      "done_when": "Either exclude a named topology or reduce to a finite original four-port physical profile",
+      "kind": "hand-lemma",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "R-MODULE-CUT4_MULTI",
+      "group": "structural",
+      "area": "module",
+      "scope": "Exactly four full cut edges around a loaded-free module with cycle rank at least two",
+      "task": "Derive one full-cut support/force inequality that retains both cycles and arbitrary chords",
+      "done_when": "Excludes a precisely characterized multi-cycle contact topology",
+      "kind": "hand-lemma",
+      "status": "OPEN",
+      "priority": "P1"
+    },
+    {
+      "id": "R-MODULE-CUT5_UP",
+      "group": "structural",
+      "area": "module",
+      "scope": "An unloaded module with at least five full cut edges among nine actual squares",
+      "task": "Prove a nine-square center/width obstruction for the original full cut, without imposing a tree hypothesis",
+      "done_when": "A finite cut-size/branch-rank restriction with all original exits accounted",
+      "kind": "hand-lemma",
+      "status": "OPEN",
+      "priority": "P1"
+    }
+  ]
+}

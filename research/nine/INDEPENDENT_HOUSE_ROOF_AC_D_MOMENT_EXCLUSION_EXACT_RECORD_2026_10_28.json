@@ -1,0 +1,89 @@
+{
+  "status": "PASS unchanged after complete independent actual-domain hand review",
+  "source": {
+    "name": "HOUSE_ROOF_AC_D_COMPLETE_MOMENT_EXCLUSION.md",
+    "path": "/workspace/scratch/7d553350ce2a/six_body/HOUSE_ROOF_AC_D_COMPLETE_MOMENT_EXCLUSION.md",
+    "sha256": "db795b7a1a287d7e8e422bd80f3ea04e714d9d98af88226e9c16ad757b7e0f5a"
+  },
+  "exact_direct_inputs": [
+    {
+      "name": "D_LEAF_ONE_CLEAR_COMMON_NEIGHBOR_BOUNDARY_REMAINDER_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/six_body/D_LEAF_ONE_CLEAR_COMMON_NEIGHBOR_BOUNDARY_REMAINDER_EXCLUSION.md",
+      "sha256": "4e4e6e09bcb61f8e9a4de8cc75341b99914136369f807936c0351c1aff8f85b5"
+    },
+    {
+      "name": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "path": "/workspace/scratch/7d553350ce2a/baseline/research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676"
+    },
+    {
+      "name": "D_LEAF_SHALLOW_SIDE_BOUNDARY_FULL_WINDOW_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/diamond/D_LEAF_SHALLOW_SIDE_BOUNDARY_FULL_WINDOW_EXCLUSION.md",
+      "sha256": "ca7c3f4b32e45fc0c118bd766f438fce3019b0b44220604e33bc842a504ac670"
+    },
+    {
+      "name": "D_LEAF_COMMON_TRIANGLE_NEIGHBOR_FULL_WINDOW_QUARTER_DISK.md",
+      "path": "/workspace/scratch/7d553350ce2a/diamond/D_LEAF_COMMON_TRIANGLE_NEIGHBOR_FULL_WINDOW_QUARTER_DISK.md",
+      "sha256": "c39605b955d98f7fbe8499cf0a06dc4cc780a7dada4ee83c05ffc627f6d866bc"
+    },
+    {
+      "name": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "path": "/workspace/scratch/7d553350ce2a/baseline/research/nine/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207"
+    },
+    {
+      "name": "END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+      "path": "/workspace/scratch/7d553350ce2a/baseline/research/nine/END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+      "sha256": "20a845eff8bee3e9c533162df0b32ea96f9dd104a3cfec41efb3b0cf92d6e9cf"
+    },
+    {
+      "name": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "path": "/workspace/scratch/7d553350ce2a/baseline/research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe"
+    },
+    {
+      "name": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "path": "/workspace/scratch/7d553350ce2a/baseline/research/nine/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b"
+    }
+  ],
+  "arithmetic": {
+    "cap_lower_radical_reserve": 115,
+    "cap_upper_radical_reserve": 15,
+    "cap_center_distance_squared_reserve": "17/450",
+    "radial_channel_far_support_reserve_using_r_gt_11_20_and_d_lt_61_60": "8/15",
+    "quarter_far_interval_margin_using_sqrt2_lt2": "13/60"
+  },
+  "accepted_original_fine_id": "M6.B5L.HOUSE.ROOF.LAC.D",
+  "gate_delta": {
+    "fine": 1,
+    "coarse": 0
+  },
+  "whole_scope": "All original9physicalunits; T3,D3,A3,B2,loadedC2,L1; originalA/Ccirclemasks includingzeroindividualweights; allpairforces,selectednormals,actualmeansandendpoints; completefullRwindow. B origin-free only, noepsilonavoidanceorphysicalclearancepremise.",
+  "reconstructed": [
+    "Completefarbodyportorderunderarbitrarycontainedneighborstatus,includingallownedsideendpoints",
+    "Fullnewquarter/deepreturnsupportattrueT3withsoleactualboundarypageA",
+    "TrueB2 fullforceandtorquerelationpC-pA=w e,w>=1",
+    "Zerotransmittermomentexcludedbyorigin-freeactualchordandsamesignradialendpointnorms",
+    "StrictforwardangularincrementthroughB2,nonnegativeincrementatfarA/C/D",
+    "WholeoriginalprivateC4windingandactualT-Lprotectedboundaryaccess",
+    "DAGsource/sinkforcingatexactA/DwithB2andloadedC2torqueretained",
+    "CompleteunloadedD3starcontradictionunderexplicitfar/support/momentpremises"
+  ],
+  "nonclaims": [
+    "RoofAB.Dduplicateisnotrecounted",
+    "RoofBC.Dduplicateisnotrecounted",
+    "RoofAC.S",
+    "InnerfanD",
+    "LowerTDC.D",
+    "WholeC1.5.b1"
+  ],
+  "actions_not_performed": [
+    "Leancompilation",
+    "CI",
+    "inverse-angleevaluation",
+    "poseorparametersearch",
+    "ledgeredit",
+    "remotewrite"
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "schema": "pr11-original-fine-window-join-v1",
+  "author": "six_body",
+  "date": "2026-10-28",
+  "status": "complete source submitted for independent acceptance",
+  "new_source": {
+    "name": "LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+    "path": "/workspace/scratch/7d553350ce2a/six_body/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+    "sha256": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90",
+    "bytes": 13069
+  },
+  "exact_arithmetic_corroboration": {
+    "name": "W3_ANALYTIC_DEPENDENCY_RATIONAL_IDENTITIES_2026_10_28.json",
+    "path": "/workspace/scratch/7d553350ce2a/six_body/W3_ANALYTIC_DEPENDENCY_RATIONAL_IDENTITIES_2026_10_28.json",
+    "sha256": "77ee5102278330c92cf1e58617644c380d6d5a0a23962a3ead774cb25f704580",
+    "bytes": 7375
+  },
+  "current_original_roadmap": {
+    "name": "DEEP_GATED_ROADMAP.md",
+    "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/DEEP_GATED_ROADMAP.md",
+    "sha256": "18df807137505329924642913960606013b675477e17b5473bdba83c32506a98",
+    "bytes": 927514
+  },
+  "original_fine_id": "W.3",
+  "exact_original_line": "- [ ] **W.3** Supply an independent hand R>=79/40 argument if standalone table-freedom is required.",
+  "proposed_accepted_line": "- [x] **W.3** LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md proves R>2>79/40 for all nine original squares by the independently reviewed analytic measure, without the n=8 import, an assumed lower window, or external fixed-value checkers; all displayed Taylor/radical/rational hand inequalities remain.",
+  "fine_gate_delta": 1,
+  "coarse_gate_delta": 0,
+  "frozen_mathematical_dependencies": [
+    {
+      "name": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "path": "/workspace/scratch/a35548aa44c3/publication_d579/research/nine/NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "sha256": "4c9e708945938c3f9df575e76f7573903d6b5a0ce4eccb5bcea760353a47458a",
+      "bytes": 18500
+    },
+    {
+      "name": "NINE_RADIUS_TWO_MEASURE_LINE_ANALYTIC_REDUCTION.md",
+      "path": "/workspace/scratch/a35548aa44c3/publication_d579/research/nine/NINE_RADIUS_TWO_MEASURE_LINE_ANALYTIC_REDUCTION.md",
+      "sha256": "714e2a092af516fad1450d2aeb38a6529418ef72070b5184d462a3f4b8a8f18d",
+      "bytes": 9134
+    },
+    {
+      "name": "NINE_RADIUS_TWO_MEASURE_RECTANGLES_ANALYTIC_REDUCTION.md",
+      "path": "/workspace/scratch/a35548aa44c3/publication_d579/research/nine/NINE_RADIUS_TWO_MEASURE_RECTANGLES_ANALYTIC_REDUCTION.md",
+      "sha256": "8b749abf2792e022b2a3bb79ea275ebc02000707c864a4ae41f5b6410edeb780",
+      "bytes": 13049
+    },
+    {
+      "name": "NINE_RADIUS_TWO_MEASURE_OUTER_CURVE_ANALYTIC_REDUCTION.md",
+      "path": "/workspace/scratch/a35548aa44c3/publication_d579/research/nine/NINE_RADIUS_TWO_MEASURE_OUTER_CURVE_ANALYTIC_REDUCTION.md",
+      "sha256": "9258e4d00c0935a4deee1942159b88a7474e95169443d1ed966da3156a336eba",
+      "bytes": 13887
+    },
+    {
+      "name": "NINE_RADIUS_TWO_MEASURE_ANALYTIC_FIXED_VALUES.md",
+      "path": "/workspace/scratch/a35548aa44c3/publication_d579/research/nine/NINE_RADIUS_TWO_MEASURE_ANALYTIC_FIXED_VALUES.md",
+      "sha256": "9a4656cc90ab81200847c8b6958fc6e089fc4b807b401705663304be4f782c4b",
+      "bytes": 17900
+    },
+    {
+      "name": "NINE_RADIUS_TWO_MEASURE_FIVE_POINT_REDUCTION.md",
+      "path": "/workspace/scratch/a35548aa44c3/publication_d579/research/nine/NINE_RADIUS_TWO_MEASURE_FIVE_POINT_REDUCTION.md",
+      "sha256": "c316fbce9320918ba88e46c4cd53b5c70c8ccdb2cc585171204f28385905929f",
+      "bytes": 10287
+    }
+  ],
+  "preserved_full_source_reviews_and_adoption": [
+    {
+      "name": "REVIEW_NINE_RADIUS_TWO_MEASURE_ANALYTIC_FIXED_VALUES_INDEPENDENT_CURRENT_50C0_2026_10_27.md",
+      "path": "/workspace/scratch/a35548aa44c3/publication_d579/research/nine/REVIEW_NINE_RADIUS_TWO_MEASURE_ANALYTIC_FIXED_VALUES_INDEPENDENT_CURRENT_50C0_2026_10_27.md",
+      "sha256": "f6348d01f97f7c237c234976dabbb06327fa69153bcc7cda86c7c851a3cf7864",
+      "bytes": 17569
+    },
+    {
+      "name": "REVIEW_NINE_RADIUS_TWO_ANALYTIC_VALUES_ROOT_2026_10_27.md",
+      "path": "/workspace/scratch/a35548aa44c3/publication_d579/research/nine/REVIEW_NINE_RADIUS_TWO_ANALYTIC_VALUES_ROOT_2026_10_27.md",
+      "sha256": "cffa5e27f65722aded9ea872279569fbd77eb320d0b8412c6bf53277bcfe0fd9",
+      "bytes": 10043
+    },
+    {
+      "name": "ANALYTIC_CERTIFICATE_CHECKPOINT_2026_10_27.md",
+      "path": "/workspace/scratch/a35548aa44c3/publication_d579/research/nine/ANALYTIC_CERTIFICATE_CHECKPOINT_2026_10_27.md",
+      "sha256": "611795e4c2899aa3197287bb55b998b51322a573f4f57e32178835f4c255b2de",
+      "bytes": 8503
+    },
+    {
+      "name": "REVIEW_ANALYTIC_CERTIFICATE_CHECKPOINT_CURRENT_D579_2026_10_27.md",
+      "path": "/workspace/scratch/a35548aa44c3/publication_d579/research/nine/REVIEW_ANALYTIC_CERTIFICATE_CHECKPOINT_CURRENT_D579_2026_10_27.md",
+      "sha256": "7135f0814fd73116e890b202b5abea9fd6dd3ca08e3a95474d291074aa2977cf",
+      "bytes": 15195
+    },
+    {
+      "name": "REVIEW_ANALYTIC_CERTIFICATE_PACKAGE_ROOT_CURRENT_D579_2026_10_27.md",
+      "path": "/workspace/scratch/a35548aa44c3/publication_d579/research/nine/REVIEW_ANALYTIC_CERTIFICATE_PACKAGE_ROOT_CURRENT_D579_2026_10_27.md",
+      "sha256": "966ea2e5d2803c8ba206e893947e3748b25cc65d3c30682813f75d06e38278d8",
+      "bytes": 5269
+    }
+  ],
+  "active_logical_order": [
+    {
+      "id": "measure_and_physical_domain",
+      "depends_on": [],
+      "sources": [
+        "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md Sections 1-2"
+      ]
+    },
+    {
+      "id": "global_geometric_reductions",
+      "depends_on": [
+        "measure_and_physical_domain"
+      ],
+      "sources": [
+        "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md Sections 3.1-3.4"
+      ]
+    },
+    {
+      "id": "line_formulas_and_minima",
+      "depends_on": [
+        "measure_and_physical_domain"
+      ],
+      "sources": [
+        "NINE_RADIUS_TWO_MEASURE_LINE_ANALYTIC_REDUCTION.md Sections 1-3 excluding historical fixed checker"
+      ]
+    },
+    {
+      "id": "rectangle_regions",
+      "depends_on": [
+        "measure_and_physical_domain"
+      ],
+      "sources": [
+        "NINE_RADIUS_TWO_MEASURE_RECTANGLES_ANALYTIC_REDUCTION.md Sections 1-3"
+      ]
+    },
+    {
+      "id": "outer_branch_and_convexity",
+      "depends_on": [
+        "measure_and_physical_domain"
+      ],
+      "sources": [
+        "NINE_RADIUS_TWO_MEASURE_OUTER_CURVE_ANALYTIC_REDUCTION.md Sections 1-4 excluding historical fixed checker"
+      ]
+    },
+    {
+      "id": "printed_fixed_values",
+      "depends_on": [
+        "line_formulas_and_minima",
+        "outer_branch_and_convexity"
+      ],
+      "sources": [
+        "NINE_RADIUS_TWO_MEASURE_ANALYTIC_FIXED_VALUES.md Sections 2-5"
+      ]
+    },
+    {
+      "id": "all_contained_units_mass_at_least_one",
+      "depends_on": [
+        "global_geometric_reductions",
+        "line_formulas_and_minima",
+        "rectangle_regions",
+        "outer_branch_and_convexity",
+        "printed_fixed_values"
+      ],
+      "sources": [
+        "NINE_RADIUS_TWO_MEASURE_FIVE_POINT_REDUCTION.md Sections 1-3 with current fixed-value dependency update"
+      ]
+    },
+    {
+      "id": "same_nine_radius_two_contradiction",
+      "depends_on": [
+        "all_contained_units_mass_at_least_one",
+        "measure_and_physical_domain"
+      ],
+      "sources": [
+        "LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md Sections 1,5"
+      ]
+    },
+    {
+      "id": "original_W3",
+      "depends_on": [
+        "same_nine_radius_two_contradiction"
+      ],
+      "sources": [
+        "LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md Section 5, exact 2-79/40=1/40"
+      ]
+    }
+  ],
+  "not_active_dependencies": [
+    "Eight-square optimality theorem and its generated arithmetic tables",
+    "LOWER_WINDOW_FROM_EIGHT.md",
+    "Original 208-charge angle checkers and stored margins",
+    "Later five-charge fixed-mass checkers and stored margins",
+    "Original derivative-enclosure checker",
+    "Any window-dependent stress/contact/block/cycle packing theorem"
+  ],
+  "scope": "Every nonnegative containing radius R and all nine actual independently oriented physical units, with no force or lower-window premise. R<=2 included by unchanged disk containment, R>2 immediate.",
+  "fresh_work": [
+    "Read complete operative parts of all six analytic source modules and the exact original W.3 requirement.",
+    "Reconstructed the full physical normalization, exhaustive region cover, atom-boundary allocation, geometric monotonicities, line minima and outer convexity join.",
+    "Checked every printed 13 new plus 14 retained rectangle Taylor inequality with exact fractions, all five new mass sums, six rectangle mass reserves, line minimum identities, derivative endpoint fractions and weighted bounds.",
+    "Verified explicit absence of an n=8 or assumed lower-window edge in the operative logical graph."
+  ],
+  "inherited_scope": "Prior complete source-specific independent/root mathematical reviews and later source reconciliation are pinned unchanged; their scope does not purport to resolve other project prerequisites.",
+  "prohibited_actions_performed": {
+    "Lean_compilation": false,
+    "CI": false,
+    "workflow": false,
+    "remote_write": false,
+    "ledger_edit": false,
+    "numeric_inverse_trigonometry": false
+  }
+}

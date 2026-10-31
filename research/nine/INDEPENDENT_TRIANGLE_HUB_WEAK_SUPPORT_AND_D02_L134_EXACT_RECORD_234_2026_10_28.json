@@ -1,0 +1,641 @@
+{
+  "schema": "independent_complete_weak_support_and_original_family_review_v1",
+  "date_utc": "2026-10-28",
+  "reviewer": "/root/broad_s_families",
+  "verdict": "PASS_UNCHANGED",
+  "comparison_commit": "234b4f0d03d772031dfc90a739fbe5b45351a3b8",
+  "comparison_tree_sha1": "234b4f0d03d772031dfc90a739fbe5b45351a3b8",
+  "comparison_tree_file": {
+    "local_path": "current_234_base/TREE_234.json",
+    "bytes": 1355635,
+    "sha256": "45eb4909fd219671af3faea44f1eba0f2a08a42c2c79d9d1d977f90736ba5dd5",
+    "truncated": false
+  },
+  "reviewed_source": {
+    "repository_path": "research/nine/TRIANGLE_HUB_WEAK_SUPPORT_WITHOUT_BOUNDARY_RETURNS_AND_D02_L134.md",
+    "local_path": "continuation_broad_c62/research/nine/TRIANGLE_HUB_WEAK_SUPPORT_WITHOUT_BOUNDARY_RETURNS_AND_D02_L134.md",
+    "absolute_read_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/TRIANGLE_HUB_WEAK_SUPPORT_WITHOUT_BOUNDARY_RETURNS_AND_D02_L134.md",
+    "bytes": 19097,
+    "sha256": "5b3e8eeba5554c66423c25b1b19b512a51ecfb5d70989d65e4c67110d270f6e5",
+    "git_blob_sha1": "7d3597b8273edcae55c0676a23a3b4c6f975d31e",
+    "current_234_git_blob_sha1": null,
+    "current_234_state": "local_addition",
+    "full_read_and_review_scope": "Entire new generic weak-support theorem, channel theorem, all radius endpoints and complete original L134/reflection join independently read and reconstructed"
+  },
+  "complete_independent_report": {
+    "repository_path": "research/nine/REVIEW_TRIANGLE_HUB_WEAK_SUPPORT_AND_D02_L134_INDEPENDENT_234_2026_10_28.md",
+    "local_path": "continuation_broad_c62/research/nine/REVIEW_TRIANGLE_HUB_WEAK_SUPPORT_AND_D02_L134_INDEPENDENT_234_2026_10_28.md",
+    "absolute_read_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/REVIEW_TRIANGLE_HUB_WEAK_SUPPORT_AND_D02_L134_INDEPENDENT_234_2026_10_28.md",
+    "bytes": 23060,
+    "sha256": "1b2fe22afaa975ff1288af9aef6c9e93afa4d12559ec1970991faa0131ba401d",
+    "git_blob_sha1": "845018090fbcc6aa8eb0bca4ab420fad9f4ffcb3",
+    "current_234_git_blob_sha1": null,
+    "current_234_state": "local_addition",
+    "full_read_and_review_scope": "Complete independent mathematical and original-domain report"
+  },
+  "independence": {
+    "mathematical_author": "/root/broad_load_channels",
+    "root_contributed_to_target_and_spanning_input": true,
+    "reviewer_discovery_contribution": false,
+    "reviewer_drafting_contribution": false,
+    "reviewer_proof_repair_contribution": false,
+    "reviewer_source_edits": false,
+    "independent_from_reviewers_own_S_family_authorship": true
+  },
+  "complete_direct_inputs": [
+    {
+      "repository_path": "research/nine/UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+      "local_path": "current_c62_base/research/nine/UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+      "absolute_read_path": "/workspace/scratch/a35548aa44c3/current_c62_base/research/nine/UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+      "bytes": 16935,
+      "sha256": "406fce53d22cc20eec43a373a877798dab583a6bd93f684ff124293016c44c87",
+      "git_blob_sha1": "6062b02e1f02ef735b0f4fa57b21cc56321359cf",
+      "current_234_git_blob_sha1": "6062b02e1f02ef735b0f4fa57b21cc56321359cf",
+      "current_234_state": "exact_current_blob",
+      "full_read_and_review_scope": "Whole source read; entire radius-free full U3 strict whole-return separation used with no neighbor boundary/degree premise"
+    },
+    {
+      "repository_path": "research/nine/GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "local_path": "current_234_base/research/nine/GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "absolute_read_path": "/workspace/scratch/a35548aa44c3/current_234_base/research/nine/GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "bytes": 16597,
+      "sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+      "git_blob_sha1": "a52df273af3a2fdcd4665a1cda0ac51d954013fe",
+      "current_234_git_blob_sha1": "a52df273af3a2fdcd4665a1cda0ac51d954013fe",
+      "current_234_state": "exact_current_blob",
+      "full_read_and_review_scope": "Whole source read; complete Sections2-3 disk-avoiding port order and positive-moment cycle winding reconstructed at the literal negative half-plane triangle"
+    },
+    {
+      "repository_path": "research/nine/UNLOADED_OPPOSED_MOMENT_STAR_AND_LOWER_HOUSE_TDC_D_SMALL_SUPPORT_REDUCTION.md",
+      "local_path": "current_234_base/research/nine/UNLOADED_OPPOSED_MOMENT_STAR_AND_LOWER_HOUSE_TDC_D_SMALL_SUPPORT_REDUCTION.md",
+      "absolute_read_path": "/workspace/scratch/a35548aa44c3/current_234_base/research/nine/UNLOADED_OPPOSED_MOMENT_STAR_AND_LOWER_HOUSE_TDC_D_SMALL_SUPPORT_REDUCTION.md",
+      "bytes": 14907,
+      "sha256": "008acc8485e591b34604bf3e0b0cdcb03b7220aa249fc8e49552a065770ca129",
+      "git_blob_sha1": "b81b8b089763d364576affd8bf20f94d4d123fe7",
+      "current_234_git_blob_sha1": "b81b8b089763d364576affd8bf20f94d4d123fe7",
+      "current_234_state": "exact_current_blob",
+      "full_read_and_review_scope": "Whole source read; entire Section1 strict opposed full-star theorem reconstructed, including far own interval and near corner, without boundary or neighbor-distance premise"
+    },
+    {
+      "repository_path": "research/nine/FAR_WALL_BOUNDARY_NEIGHBOR_SPAN_EXCLUSION_AND_D02_L0145.md",
+      "local_path": "continuation_broad_c62/research/nine/FAR_WALL_BOUNDARY_NEIGHBOR_SPAN_EXCLUSION_AND_D02_L0145.md",
+      "absolute_read_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/FAR_WALL_BOUNDARY_NEIGHBOR_SPAN_EXCLUSION_AND_D02_L0145.md",
+      "bytes": 20190,
+      "sha256": "5a0e6118982b812bf27c831b68334052607920cfdf9a01bffbe85e1c4fc3eb3d",
+      "git_blob_sha1": "bab67f8d52b4c8ff241db292b5b4f1bc5d15d6ca",
+      "current_234_git_blob_sha1": null,
+      "current_234_state": "local_addition",
+      "full_read_and_review_scope": "Whole source read; complete physical Sections1-4 independently reconstructed; its separate boundary-triangle A invocation and L0145 credit are not operative for L134"
+    },
+    {
+      "repository_path": "research/nine/SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "local_path": "continuation_8680/research/nine/SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "absolute_read_path": "/workspace/scratch/a35548aa44c3/continuation_8680/research/nine/SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "bytes": 11952,
+      "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1",
+      "git_blob_sha1": "4b2f8d5978edb58f1cb42eb8e14c9707160e765b",
+      "current_234_git_blob_sha1": "4b2f8d5978edb58f1cb42eb8e14c9707160e765b",
+      "current_234_state": "exact_current_blob",
+      "full_read_and_review_scope": "Whole source read; exact D02 graph, full L134 orbit, true degrees, graph reflection and all-nine contract checked"
+    },
+    {
+      "repository_path": "research/nine/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "local_path": "current_c62_base/research/nine/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "absolute_read_path": "/workspace/scratch/a35548aa44c3/current_c62_base/research/nine/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "bytes": 13069,
+      "sha256": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90",
+      "git_blob_sha1": "1ce11dbcb6157959aeb705a7182d141aace3426d",
+      "current_234_git_blob_sha1": "1ce11dbcb6157959aeb705a7182d141aace3426d",
+      "current_234_state": "exact_current_blob",
+      "full_read_and_review_scope": "Whole source read; unconditional same-nine R>2 entry checked; its accepted earlier full analytic antecedents retained"
+    }
+  ],
+  "direct_pin_audit": {
+    "literal_references": 6,
+    "distinct_inputs": 6,
+    "exact_current_published_inputs": 5,
+    "separate_new_local_spanning_input": 1,
+    "all_pins_and_bytes_match": true,
+    "references": [
+      {
+        "literal_filename": "UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+        "declared_bytes": 16935,
+        "declared_sha256": "406fce53d22cc20eec43a373a877798dab583a6bd93f684ff124293016c44c87",
+        "resolved_local_path": "current_c62_base/research/nine/UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+        "resolved_git_blob_sha1": "6062b02e1f02ef735b0f4fa57b21cc56321359cf",
+        "current_234_state": "exact_current_blob",
+        "matches": true
+      },
+      {
+        "literal_filename": "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+        "declared_bytes": 16597,
+        "declared_sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+        "resolved_local_path": "current_234_base/research/nine/GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+        "resolved_git_blob_sha1": "a52df273af3a2fdcd4665a1cda0ac51d954013fe",
+        "current_234_state": "exact_current_blob",
+        "matches": true
+      },
+      {
+        "literal_filename": "UNLOADED_OPPOSED_MOMENT_STAR_AND_LOWER_HOUSE_TDC_D_SMALL_SUPPORT_REDUCTION.md",
+        "declared_bytes": 14907,
+        "declared_sha256": "008acc8485e591b34604bf3e0b0cdcb03b7220aa249fc8e49552a065770ca129",
+        "resolved_local_path": "current_234_base/research/nine/UNLOADED_OPPOSED_MOMENT_STAR_AND_LOWER_HOUSE_TDC_D_SMALL_SUPPORT_REDUCTION.md",
+        "resolved_git_blob_sha1": "b81b8b089763d364576affd8bf20f94d4d123fe7",
+        "current_234_state": "exact_current_blob",
+        "matches": true
+      },
+      {
+        "literal_filename": "FAR_WALL_BOUNDARY_NEIGHBOR_SPAN_EXCLUSION_AND_D02_L0145.md",
+        "declared_bytes": 20190,
+        "declared_sha256": "5a0e6118982b812bf27c831b68334052607920cfdf9a01bffbe85e1c4fc3eb3d",
+        "resolved_local_path": "continuation_broad_c62/research/nine/FAR_WALL_BOUNDARY_NEIGHBOR_SPAN_EXCLUSION_AND_D02_L0145.md",
+        "resolved_git_blob_sha1": "bab67f8d52b4c8ff241db292b5b4f1bc5d15d6ca",
+        "current_234_state": "local_addition",
+        "matches": true
+      },
+      {
+        "literal_filename": "SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+        "declared_bytes": 11952,
+        "declared_sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1",
+        "resolved_local_path": "continuation_8680/research/nine/SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+        "resolved_git_blob_sha1": "4b2f8d5978edb58f1cb42eb8e14c9707160e765b",
+        "current_234_state": "exact_current_blob",
+        "matches": true
+      },
+      {
+        "literal_filename": "LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+        "declared_bytes": 13069,
+        "declared_sha256": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90",
+        "resolved_local_path": "current_c62_base/research/nine/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+        "resolved_git_blob_sha1": "1ce11dbcb6157959aeb705a7182d141aace3426d",
+        "current_234_state": "exact_current_blob",
+        "matches": true
+      }
+    ]
+  },
+  "further_physical_input_full_read": {
+    "repository_path": "research/nine/GENERAL_FAR_WALL_59_60_SQUARE_BOUNDS.md",
+    "local_path": "current_234_base/research/nine/GENERAL_FAR_WALL_59_60_SQUARE_BOUNDS.md",
+    "absolute_read_path": "/workspace/scratch/a35548aa44c3/current_234_base/research/nine/GENERAL_FAR_WALL_59_60_SQUARE_BOUNDS.md",
+    "bytes": 4515,
+    "sha256": "be4bf3f299be99a0f65e07d3ee9c6ac96d6e5abad88c1ec50598b3ee090c1ff9",
+    "git_blob_sha1": "852d5180b304fcd24e8a23cae53eed3649b29149",
+    "current_234_git_blob_sha1": "852d5180b304fcd24e8a23cae53eed3649b29149",
+    "current_234_state": "exact_current_blob",
+    "full_read_and_review_scope": "Whole source read; full force-free frame bound and both frame signs feeding new spanning theorem checked"
+  },
+  "separate_spanning_acceptance_read_in_full": {
+    "independent_report": {
+      "repository_path": "research/nine/REVIEW_FAR_WALL_SPAN_AND_D02_L0145_COMPLETE_INDEPENDENT_234_2026_10_28.md",
+      "local_path": "continuation_broad_c62/research/nine/REVIEW_FAR_WALL_SPAN_AND_D02_L0145_COMPLETE_INDEPENDENT_234_2026_10_28.md",
+      "absolute_read_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/REVIEW_FAR_WALL_SPAN_AND_D02_L0145_COMPLETE_INDEPENDENT_234_2026_10_28.md",
+      "bytes": 26509,
+      "sha256": "621ae575b418ae0a868f38dee458682f615adccf94b13873f567733a7097bdd8",
+      "git_blob_sha1": "5b04ff4617085443f3f9d2cfdb2f58464474fe53",
+      "current_234_git_blob_sha1": null,
+      "current_234_state": "local_addition",
+      "full_read_and_review_scope": "Entire separate frozen independent report read after my own reconstruction; full physical span and strict critical endpoint agree"
+    },
+    "exact_record": {
+      "repository_path": "research/nine/INDEPENDENT_FAR_WALL_SPAN_AND_D02_L0145_COMPLETE_EXACT_RECORD_234_2026_10_28.json",
+      "local_path": "continuation_broad_c62/research/nine/INDEPENDENT_FAR_WALL_SPAN_AND_D02_L0145_COMPLETE_EXACT_RECORD_234_2026_10_28.json",
+      "absolute_read_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/INDEPENDENT_FAR_WALL_SPAN_AND_D02_L0145_COMPLETE_EXACT_RECORD_234_2026_10_28.json",
+      "bytes": 27392,
+      "sha256": "2bc267bc34ddf0cb524c785e887b3313699b2fc78b0f55807d79b7e7fafcfb0a",
+      "git_blob_sha1": "ba13707fa10509f2b6801cc3de249471a0a3ccb2",
+      "current_234_git_blob_sha1": null,
+      "current_234_state": "local_addition",
+      "full_read_and_review_scope": "Entire separate frozen exact record read; source, scope, original credit and exact arithmetic provenance checked"
+    },
+    "verdict": "PASS_UNCHANGED",
+    "read_after_own_full_physical_reconstruction": true,
+    "original_L0145_credit_imported_here": false
+  },
+  "complete_mathematical_audit": {
+    "weak_support": {
+      "local_full_stars": "U unloaded true3 with V,W,Z; V true2 with U,W; actual positive triangle UVW; W,Z arbitrary full stars",
+      "boundary_premise_at_returns": false,
+      "whole_strict_return_separation_retained": true,
+      "alleged_domain": "h<-epsilon",
+      "all_triangle_units_avoid_closed_small_disk": true,
+      "every_triangle_moment_nonzero_from_actual_radial_argument": true,
+      "V_full_origin_torque": "M_VW=M_UV, including all radial atoms",
+      "opposite_sign_domain": "actual directed positive-moment triangle contradicts zero winding in strict negative half-plane",
+      "same_sign_domain": "full U torque gives opposite UZ moment; complete original force equation invokes strict opposed-star theorem without boundary or distance premise",
+      "whole_coordinate_reflection_only": true,
+      "conclusion": "h>=-epsilon",
+      "critical_zero_support_retained": true
+    },
+    "channel": {
+      "actual_width_classification": [
+        "1",
+        "sqrt(2)"
+      ],
+      "full_original_force_and_torque_used_at_each_Ti": true,
+      "original_application_identity": "P_far=P+w*n, w=sum(actual widths)",
+      "physical_far_Q_support": "h+w<=d",
+      "d_less_1": "impossible because h>=0 and w>=1",
+      "d_equals_1": "h=0,k=1,w=1 retained",
+      "d_greater_1": "w<=1+2epsilon<31/30<sqrt2 forces k=1,w=1",
+      "remaining_domain": "-epsilon<=h<=epsilon, |h|<1/60, Q beyond h+1, whole V/W strictly behind h",
+      "body_contraction": false
+    },
+    "spanning": {
+      "complete_source_read": true,
+      "operative_sections_fully_reconstructed": "1-4",
+      "far_wall_both_frame_signs_and_axis_endpoint": true,
+      "whole_unit_strip": "|y|<13/20 at actual wall >=59/60",
+      "support_reach_all_owners_means": "if g_x>=0 backward reach<=1; strict actual span forces original g_x<0",
+      "actual_frame": "c,s>0,c^2+s^2=1, no order; B=A+tau(c,s) with original 0<=tau<=1",
+      "derived_strict_span": "tau*c+s>beta-h>=1",
+      "tau_zero_excluded_by_proof_tau_one_retained": true,
+      "whole_top_scalar_domain": "0<=s<=1; polynomial regrouping proves <8/7",
+      "whole_right_scalar_domain": "unit circle c^2+s^2=1; exact square identity proves <443/160",
+      "all_four_actual_corners_bounded": true,
+      "whole_closed_unit_from_convexity": true,
+      "strict_fixed_conclusion": "all actual Y points have |z|^2<17/4",
+      "critical_R_squared_17_4_included": true,
+      "Q_or_Y_force_equation_used": false
+    },
+    "literal_channel_bypass": "real Y contact with V or W supplies x<h; real Q/Y support gives B_x>=h+1, |B_y|<13/20; whole Y cannot touch circle R^2>=17/4"
+  },
+  "original_graph": {
+    "positive_edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "entire_positive_loads": [
+      1,
+      3,
+      4
+    ],
+    "full_neighbors": {
+      "0": [
+        1,
+        2,
+        5
+      ],
+      "1": [
+        0,
+        2
+      ],
+      "2": [
+        0,
+        1,
+        3
+      ],
+      "3": [
+        2,
+        4
+      ],
+      "4": [
+        3,
+        5
+      ],
+      "5": [
+        0,
+        4
+      ]
+    },
+    "true_degrees": {
+      "0": 3,
+      "1": 2,
+      "2": 3,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    },
+    "roles": {
+      "U": 0,
+      "V": 1,
+      "W": 2,
+      "T1": 5,
+      "Q": 4,
+      "Y": 3
+    },
+    "reflection": {
+      "0": 2,
+      "1": 1,
+      "2": 0,
+      "3": 5,
+      "4": 4,
+      "5": 3
+    },
+    "reflected_load_set": [
+      1,
+      4,
+      5
+    ],
+    "reflected_roles": {
+      "U": 2,
+      "V": 1,
+      "W": 0,
+      "T1": 3,
+      "Q": 4,
+      "Y": 5
+    },
+    "all_edges_preserved_by_reflection": true,
+    "W2_unloaded_true3_unknown_physical_boundary_status_kept": true,
+    "Q4_Y3_loaded_true2_not_transmitters": true,
+    "all_original_units": 9,
+    "arbitrary_completion_units": 3
+  },
+  "endpoints_and_full_domain": [
+    "Closed original lower and upper radii",
+    "All d<1, d=1 and d>1 alternatives",
+    "d=1,h=0 retained until strict physical span contradiction",
+    "h=+/-epsilon inside strict |h|<1/60",
+    "All original radial and nonradial contact alternatives where claimed",
+    "Every original supporting normal and owner",
+    "All shared-side means and endpoints",
+    "Both signs of h,gamma and both frame signs",
+    "No ordering c>=s imposed on spanning Y",
+    "tau=1 and diagonal orientation c=s retained",
+    "Complete physical circle masks including zero individual weights",
+    "Unknown physical boundary status at unloaded W",
+    "Every graph-reflected original load representative",
+    "All three arbitrary actual extras"
+  ],
+  "hand_arithmetic_checks": {
+    "count": 30,
+    "all_passed": true,
+    "complete_checks": [
+      {
+        "label": "d<61/60 from original upper radius",
+        "exact_value": "31/57600",
+        "expected_value": "31/57600",
+        "passed": true
+      },
+      {
+        "label": "channel width 31/30 threshold",
+        "exact_value": "31/30",
+        "expected_value": "31/30",
+        "passed": true
+      },
+      {
+        "label": "31/30<sqrt2 squared reserve",
+        "exact_value": "839/900",
+        "expected_value": "839/900",
+        "passed": true
+      },
+      {
+        "label": "far-wall original width bound",
+        "exact_value": "1051/960",
+        "expected_value": "1051/960",
+        "passed": true
+      },
+      {
+        "label": "far-wall radius upper comparison",
+        "exact_value": "9/4096",
+        "expected_value": "9/4096",
+        "passed": true
+      },
+      {
+        "label": "far-wall frame radical comparison",
+        "exact_value": "359/921600",
+        "expected_value": "359/921600",
+        "passed": true
+      },
+      {
+        "label": "new far-wall first-sign x lower bound",
+        "exact_value": "148/75",
+        "expected_value": "148/75",
+        "passed": true
+      },
+      {
+        "label": "new far-wall first-sign strict squared reserve",
+        "exact_value": "199/1440000",
+        "expected_value": "199/1440000",
+        "passed": true
+      },
+      {
+        "label": "new far-wall second-sign constant",
+        "exact_value": "7841/1800",
+        "expected_value": "7841/1800",
+        "passed": true
+      },
+      {
+        "label": "new far-wall second-sign linear coefficient",
+        "exact_value": "227/100",
+        "expected_value": "227/100",
+        "passed": true
+      },
+      {
+        "label": "new far-wall second-sign quadratic coefficient",
+        "exact_value": "181/100",
+        "expected_value": "181/100",
+        "passed": true
+      },
+      {
+        "label": "new far-wall second-sign strict squared reserve",
+        "exact_value": "2287/57600",
+        "expected_value": "2287/57600",
+        "passed": true
+      },
+      {
+        "label": "top polynomial first-interval lower bound",
+        "exact_value": "24/7",
+        "expected_value": "24/7",
+        "passed": true
+      },
+      {
+        "label": "complete top polynomial regrouping and squared-comparison identity",
+        "coefficients_increasing": [
+          "15",
+          "1",
+          "-63",
+          "49"
+        ],
+        "squared_comparison_coefficients_increasing": [
+          "15",
+          "1",
+          "-63",
+          "49"
+        ],
+        "passed": true
+      },
+      {
+        "label": "quadratic majorant constant",
+        "exact_value": "7/16",
+        "expected_value": "7/16",
+        "passed": true
+      },
+      {
+        "label": "quadratic majorant linear coefficient",
+        "exact_value": "-1",
+        "expected_value": "-1",
+        "passed": true
+      },
+      {
+        "label": "right-corner combined s squared coefficient",
+        "exact_value": "61/35",
+        "expected_value": "61/35",
+        "passed": true
+      },
+      {
+        "label": "positive completed-square s squared coefficient",
+        "exact_value": "16/35",
+        "expected_value": "16/35",
+        "passed": true
+      },
+      {
+        "label": "right-corner scalar bound",
+        "exact_value": "443/160",
+        "expected_value": "443/160",
+        "passed": true
+      },
+      {
+        "label": "top y bound",
+        "exact_value": "251/140",
+        "expected_value": "251/140",
+        "passed": true
+      },
+      {
+        "label": "sqrt2<17/12",
+        "exact_value": "1/144",
+        "expected_value": "1/144",
+        "passed": true
+      },
+      {
+        "label": "bottom corner upper comparison",
+        "exact_value": "6761/1800",
+        "expected_value": "6761/1800",
+        "passed": true
+      },
+      {
+        "label": "bottom corner strict reserve",
+        "exact_value": "889/1800",
+        "expected_value": "889/1800",
+        "passed": true
+      },
+      {
+        "label": "left corner upper comparison",
+        "exact_value": "10477/3600",
+        "expected_value": "10477/3600",
+        "passed": true
+      },
+      {
+        "label": "left corner strict reserve",
+        "exact_value": "4823/3600",
+        "expected_value": "4823/3600",
+        "passed": true
+      },
+      {
+        "label": "top corner upper comparison",
+        "exact_value": "374669/88200",
+        "expected_value": "374669/88200",
+        "passed": true
+      },
+      {
+        "label": "top corner strict reserve",
+        "exact_value": "181/88200",
+        "expected_value": "181/88200",
+        "passed": true
+      },
+      {
+        "label": "right h cross-term bound",
+        "exact_value": "1/20",
+        "expected_value": "1/20",
+        "passed": true
+      },
+      {
+        "label": "right corner upper comparison",
+        "exact_value": "30539/7200",
+        "expected_value": "30539/7200",
+        "passed": true
+      },
+      {
+        "label": "right corner strict reserve",
+        "exact_value": "61/7200",
+        "expected_value": "61/7200",
+        "passed": true
+      }
+    ],
+    "role": "corroborate printed exact identities and rational reserves; not a geometric certificate",
+    "pose_search": false,
+    "angle_mesh": false,
+    "numerical_optimization": false
+  },
+  "accounting": {
+    "checkpoint": {
+      "repository_path": "research/nine/D02_L01345_COMPLETE_ORIGINAL_CLOSURE_CHECKPOINT_2026_10_28.json",
+      "local_path": "current_234_base/research/nine/D02_L01345_COMPLETE_ORIGINAL_CLOSURE_CHECKPOINT_2026_10_28.json",
+      "absolute_read_path": "/workspace/scratch/a35548aa44c3/current_234_base/research/nine/D02_L01345_COMPLETE_ORIGINAL_CLOSURE_CHECKPOINT_2026_10_28.json",
+      "bytes": 250521,
+      "sha256": "d442064a15a8d85485fe11871afbe030b7d2d4f42e6e044372b6276b0e48a887",
+      "git_blob_sha1": "41115bdb90c42c163bd980f925d2309a41082202",
+      "current_234_git_blob_sha1": "41115bdb90c42c163bd980f925d2309a41082202",
+      "current_234_state": "exact_current_blob"
+    },
+    "fine_total": 2513,
+    "coarse_total": 58,
+    "sole_eligible_changed_index": 2069,
+    "sole_eligible_changed_id": "M6.B6.HEXAGON.D02.L134",
+    "from": false,
+    "to": true,
+    "fine_before_checked": 2353,
+    "fine_after_this_source_only_checked": 2354,
+    "fine_before_open": 160,
+    "fine_after_this_source_only_open": 159,
+    "coarse_closed_unchanged": 34,
+    "coarse_open_unchanged": 24,
+    "all_fine_ids_order_and_other_flags_preserved": true,
+    "all_coarse_ids_order_and_flags_preserved": true,
+    "fine_before_canonical_sha256": "ebdd304a81f6608f2fb86deac0c9faac43034db6c390fe955a3f243b367ff217",
+    "fine_after_only_2069_canonical_sha256": "5e39e5c0f3279959cb3feac1fead889578af786e4cfc506551a5b4cd466c5b66",
+    "fine_id_order_canonical_sha256": "45610bf3528a43a98ba6790357cfc5552147d06de32094ce2de6c9f31520acc5",
+    "coarse_array_canonical_sha256_unchanged": "0e4c1e41ac5ef7607ad69ee56fbb57572d2ec64dc9d93249add8dfd241d8978f",
+    "no_duplicate_L014_L0145_L01345_or_fan_credit": true,
+    "authoritative_array_written": false
+  },
+  "inherited_boundaries": [
+    "Accepted selected-certificate and compatible physical embedding foundations retained; no new complete transitive audit claimed",
+    "Full radius-free U3 predecessor read at exact scope; its earlier separate perpendicular proof acceptance retained",
+    "Same-nine analytic lower-window join read in full; its older complete analytic measure antecedents retain accepted scope",
+    "Older boundary-return strict zero-support theorem is not an operative input",
+    "Spanning source separate Theorem A and L0145 mathematical/original acceptance read through its full independent report, not imported as a premise for L134"
+  ],
+  "credit": {
+    "new_existing_fine_flags": 1,
+    "new_coarse_flags": 0,
+    "new_original_ids": 0,
+    "new_computational_exclusion_certificates": 0,
+    "certificate_retirement_credit": 0
+  },
+  "actions": {
+    "mathematical_source_edit": false,
+    "flag_edit": false,
+    "ledger_or_roadmap_edit": false,
+    "Lean_compilation": false,
+    "CI_or_workflow": false,
+    "remote_mutation": false,
+    "merge": false
+  },
+  "final_boundary": "Entire generic weak-support/channel theorem and original L134 PASS unchanged; root adoption and later current-head publication reconciliation remain separate."
+}

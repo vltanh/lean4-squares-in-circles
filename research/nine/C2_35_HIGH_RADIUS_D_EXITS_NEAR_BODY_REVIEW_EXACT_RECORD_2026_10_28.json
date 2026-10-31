@@ -1,0 +1,128 @@
+{
+  "date": "2026-10-28",
+  "reviewer": "six_body",
+  "author": "two_blocks",
+  "disposition": "PASS_UNCHANGED",
+  "source": {
+    "name": "C2_35_HIGH_RADIUS_D_LEAF_EXITS_AND_EXACT_NEAR_BODY_REMAINDER.md",
+    "path": "/workspace/scratch/7d553350ce2a/two_blocks/C2_35_HIGH_RADIUS_D_LEAF_EXITS_AND_EXACT_NEAR_BODY_REMAINDER.md",
+    "bytes": 11957,
+    "sha256": "63e44f05da9d55fef3f1d4276c862d3ffa7ccfebe2d399c7cad0a22bc0625f3e"
+  },
+  "review": {
+    "name": "REVIEW_C2_35_HIGH_RADIUS_D_EXITS_NEAR_BODY_REMAINDER_INDEPENDENT_2026_10_28.md",
+    "path": "/workspace/scratch/7d553350ce2a/six_body/REVIEW_C2_35_HIGH_RADIUS_D_EXITS_NEAR_BODY_REMAINDER_INDEPENDENT_2026_10_28.md",
+    "bytes": 12092,
+    "sha256": "666015557999c599e19661407f3ce691d23681cbc132e041356a4f4c460e1484"
+  },
+  "direct_dependencies": [
+    {
+      "name": "C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/C2_35_TWO_BRIDGES_AND_C2_36_ONE_BRIDGE_ORIGINAL_ATTACHMENT_REDUCTION.md",
+      "bytes": 21371,
+      "sha256": "28810d74517a6f6a4a4e5b2972c5359bdf41559957bd7e33bcb5fb4b358685d5",
+      "expected_sha256": "28810d74517a6f6a4a4e5b2972c5359bdf41559957bd7e33bcb5fb4b358685d5",
+      "match": true
+    },
+    {
+      "name": "NEAR_ORIGIN_BOUNDARY_ACCESS_TRANSFERS_TO_EVERY_CYCLIC_BLOCK.md",
+      "path": "/workspace/scratch/7d553350ce2a/two_blocks/NEAR_ORIGIN_BOUNDARY_ACCESS_TRANSFERS_TO_EVERY_CYCLIC_BLOCK.md",
+      "bytes": 8382,
+      "sha256": "49065116bfd526abf3826ae8bbaa6fd9ad43b7bcdbdc0e0653b959fa84359549",
+      "expected_sha256": "49065116bfd526abf3826ae8bbaa6fd9ad43b7bcdbdc0e0653b959fa84359549",
+      "match": true
+    },
+    {
+      "name": "D_LEAF_ROOT_AT_MOST_ONE_OTHER_UNIT_IN_THREE_125_DISK.md",
+      "path": "/workspace/scratch/7d553350ce2a/two_blocks/D_LEAF_ROOT_AT_MOST_ONE_OTHER_UNIT_IN_THREE_125_DISK.md",
+      "bytes": 7898,
+      "sha256": "34385a647c1889564b3423ecfff03a7a75747275e45f68346c3f8a9f06abfaaf",
+      "expected_sha256": "34385a647c1889564b3423ecfff03a7a75747275e45f68346c3f8a9f06abfaaf",
+      "match": true
+    },
+    {
+      "name": "D_ROOT_EXCLUDES_SEPARATE_CYCLIC_BLOCK_CONTAINING_A_LEAF_ROOT.md",
+      "path": "/workspace/scratch/7d553350ce2a/two_blocks/D_ROOT_EXCLUDES_SEPARATE_CYCLIC_BLOCK_CONTAINING_A_LEAF_ROOT.md",
+      "bytes": 9899,
+      "sha256": "c71d7c384700c563477ea8535af327c5e5bd53411e3452a5c083bd0e8a3334f2",
+      "expected_sha256": "c71d7c384700c563477ea8535af327c5e5bd53411e3452a5c083bd0e8a3334f2",
+      "match": true
+    },
+    {
+      "name": "D_LEAF_ROOT_REQUIRES_PHYSICALLY_CLEAR_NONLEAF_NEIGHBOR.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/D_LEAF_ROOT_REQUIRES_PHYSICALLY_CLEAR_NONLEAF_NEIGHBOR.md",
+      "bytes": 14574,
+      "sha256": "72632128582b60411187d891c224bfd085b8483a70632775b5a4f7c9786fe08c",
+      "expected_sha256": "72632128582b60411187d891c224bfd085b8483a70632775b5a4f7c9786fe08c",
+      "match": true
+    },
+    {
+      "name": "D_LEAF_COMMON_TRIANGLE_NEIGHBOR_FULL_WINDOW_QUARTER_DISK.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/D_LEAF_COMMON_TRIANGLE_NEIGHBOR_FULL_WINDOW_QUARTER_DISK.md",
+      "bytes": 9919,
+      "sha256": "c39605b955d98f7fbe8499cf0a06dc4cc780a7dada4ee83c05ffc627f6d866bc",
+      "expected_sha256": "c39605b955d98f7fbe8499cf0a06dc4cc780a7dada4ee83c05ffc627f6d866bc",
+      "match": true
+    },
+    {
+      "name": "TERMINAL_FOUR_BLOCK_NEAR_ORIGIN_TRANSFER_AND_BROKEN_TRIANGLE_CHAIN_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/TERMINAL_FOUR_BLOCK_NEAR_ORIGIN_TRANSFER_AND_BROKEN_TRIANGLE_CHAIN_EXCLUSION.md",
+      "bytes": 14967,
+      "sha256": "9ea7708ee24b2d17b0a17d9cf67d67f547023fe68e1cafdf4d1be525e81844ea",
+      "expected_sha256": "9ea7708ee24b2d17b0a17d9cf67d67f547023fe68e1cafdf4d1be525e81844ea",
+      "match": true
+    },
+    {
+      "name": "TRIANGLE_EXTERNAL_RAY_INTERSECTS_BODY.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/TRIANGLE_EXTERNAL_RAY_INTERSECTS_BODY.md",
+      "bytes": 5492,
+      "sha256": "4c9c2616a298460666622847a606b7c7837917d449249e6f53a3d884dc38bee8",
+      "expected_sha256": "4c9c2616a298460666622847a606b7c7837917d449249e6f53a3d884dc38bee8",
+      "match": true
+    },
+    {
+      "name": "TRIANGLE_SMALL_RADIAL_EXTERNAL_SUPPORT_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/TRIANGLE_SMALL_RADIAL_EXTERNAL_SUPPORT_EXCLUSION.md",
+      "bytes": 12545,
+      "sha256": "d77935c0d0754d87666c02c64b808673718c81990ded9f5d9d5566ba2b01ba48",
+      "expected_sha256": "d77935c0d0754d87666c02c64b808673718c81990ded9f5d9d5566ba2b01ba48",
+      "match": true
+    },
+    {
+      "name": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "bytes": 14902,
+      "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "expected_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "match": true
+    },
+    {
+      "name": "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "bytes": 16597,
+      "sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+      "expected_sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+      "match": true
+    }
+  ],
+  "scope": "Entire original four-family high-radius C2.35.b2 attachment reduction, all D exits and exact S near-body/full-mask remainder as stated; no four-block result transferred to Q.",
+  "proven_whole_physical_subdomains": [
+    "Disjoint A D leaf impossible",
+    "Private/private D at either A or B impossible",
+    "Private/common D at A impossible",
+    "Private/block D at A impossible"
+  ],
+  "surviving_types": {
+    "disjoint": "A S",
+    "private_private": "A S, B S",
+    "private_common": "A S, H S or D",
+    "private_block": "A S, X S"
+  },
+  "whole_original_fine_ids": [],
+  "fine_delta": 0,
+  "coarse_delta": 0,
+  "C2_35_b2_remains_open": true,
+  "all_nine_actual_units_true_degrees_normals_means_masks_retained": true,
+  "separate_dependency_acceptance_chain_retained": true,
+  "no_lean_ci_remote_or_ledger_mutation": true
+}

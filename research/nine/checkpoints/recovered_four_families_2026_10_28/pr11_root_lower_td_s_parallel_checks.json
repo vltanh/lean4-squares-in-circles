@@ -1,0 +1,9 @@
+{
+  "strict_positive_differences": {
+    "side_slider": "7/7500",
+    "cap_height": "1/90",
+    "cap_center_collision": "499/900",
+    "actual_D_corner": "237319/1440000"
+  },
+  "sampling_used": false
+}

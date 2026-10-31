@@ -1,0 +1,39 @@
+{
+  "source_sha256": "b773da381ac721c0f3c06083c9da6258ea1142353fd4a6e000edaff1d8398125",
+  "pins": {
+    "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md": "7ba98ef149c1faff4ef4baeaf0b0305a38cf1153f883a3fe4bfa92087d33622d",
+    "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md": "6154eee2ab1114d063b0dbd1a2800c3522cbb1b46ec44a258c1c89d8ffb9e975",
+    "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c",
+    "S_LEAF_C5_ALIGNED_LOW_RADIUS_EXCLUSION.md": "02fd37d94d14f8342365160064cff63d91b572e9e162944e9551590fc8f535a1",
+    "ALIGNED_LOW_S_ROOT_LOWER_BOUNDARY_UNIQUE_CORNER_AND_CENTER.md": "c32b99ad24da76907f2e3eaa4d4e7c88b9b2d2599a0eefe50234fae493441c48",
+    "ALIGNED_LOW_S_ROOT_UPPER_BOUNDARY_RETURN_EXCLUSION.md": "843e9afce21baa487804740b3aa7505cac254ef2904e525819960302505dace2",
+    "FIVE_CYCLE_FORCE_POLYGON_DOMAIN.md": "7d0c4092ba133a832cf963f329b1c3a6442a3260576f16319293835b39e6d282",
+    "PHYSICAL_BODY_GRAPH_UNCROSSING.md": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a",
+    "certificates/aligned_low_s_upper_c_visibility_separation.py": "d57e7506d4f6e1dd92c991c8579fcfcd03377703863b0d42d50f417267fe2c4c"
+  },
+  "strict_fraction_reserves": {
+    "d_lower_from_R_gt_2": "11/900",
+    "sqrt2_upper": "1/4900",
+    "sqrt5_upper": "1/16",
+    "positive_X_radius": "1589/2500",
+    "x_gt_t_radius": "53/5000",
+    "small_b_implies_large_t": "1/50",
+    "sqrt101_majorant": "1/400",
+    "sqrt113_majorant": "18161/1000000",
+    "rho_radius_cap": "9/8000",
+    "lambda_less_quarter": "137/3700"
+  },
+  "exact_lambda_factor": "197/400",
+  "exact_lambda_bound": "197/925",
+  "polynomial_identities": [
+    "full G(u) convex quadratic",
+    "equivalent A*H+L*(H-q) form"
+  ],
+  "author_record_sha256": "a960dd73c0ed3084e4dfe4cf34a3f749e2a2ca2fef962e247c46cc3ffc405691",
+  "author_leaf_digest": "c8abdb83f97e69fd9445b3733df9fd2fcd77eaf357a69eea23fe63d3800397ad",
+  "independent_record_sha256": "af9337817f3f892f953c5c266108ee3b5e40c4f61738bb84c06a5d8166875cb1",
+  "independent_leaf_digest": "2a90f4359b02514e4be5550c4f318539a960daf3491e43cef86d136e33a38eaa",
+  "identical_complete_leaf_paths": true,
+  "independent_strict_floor": "1/200000",
+  "independent_code_sha256": "07e42d3e87574df13ce29abab92af2a9bf6e5792e334cd3b4b47c0d7c71401ea"
+}

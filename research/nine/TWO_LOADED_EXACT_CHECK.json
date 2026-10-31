@@ -1,0 +1,253 @@
+{
+  "status": "PASS",
+  "started_utc": "2026-10-23T20:17:34.771343+00:00",
+  "finished_utc": "2026-10-23T20:17:35.062204+00:00",
+  "python": "3.13.5",
+  "source_commit": "08c985ffb8741680293b89b5b417f0c449cc5a1f",
+  "source_sha256": "1d0194aa4230e3d75a8f6d67689f25b3cc33adac5201ca7669a6a19f1301047f",
+  "source_git_blob_sha1": "014d5a31ab7f2d31c9c73dcd9e85ef6394646fc6",
+  "exact_assertions": 23143,
+  "assertions_by_category": {
+    "quarter_turn_invariance": 305,
+    "support_matrix": 1220,
+    "diagonal_dominance_identity": 610,
+    "outward_face_nonnegative": 6100,
+    "outward_corner_nonnegative": 3660,
+    "generic_face_strict": 6000,
+    "generic_corner_strict": 3600,
+    "diagonal_zero_vertices": 4,
+    "adjacent_horizontal_load": 30,
+    "adjacent_circle_corners": 30,
+    "circle_work_identity": 99,
+    "adjacent_circle_strict_sign": 30,
+    "single_loaded_corner_containment": 69,
+    "actual_circle_corner": 69,
+    "single_corner_strict_sign": 69,
+    "circle_symmetry_sign": 276,
+    "nonparallel_load_negative_control": 1,
+    "contact_membership": 196,
+    "same_frame_contact_power": 147,
+    "support_point": 98,
+    "mixed_frame_contact_strict": 49,
+    "radius_window": 5,
+    "discrete_width_gaps": 4,
+    "candidate_gap": 1,
+    "physical_unit_frame": 29,
+    "physical_corner_containment": 116,
+    "physical_SAT": 74,
+    "physical_circle_atom": 20,
+    "physical_positive_edge": 30,
+    "physical_contact_membership": 30,
+    "physical_contact_support": 30,
+    "nonempty_contact_interval": 30,
+    "positive_length_contact": 21,
+    "physical_virtual_edge_zero": 30,
+    "physical_force_balance": 5,
+    "physical_torque_balance": 5,
+    "physical_virtual_identity": 5,
+    "circle_normalization": 5,
+    "exact_two_loads": 5,
+    "four_body_complete_adjacency_classification": 10,
+    "loaded_noncontact_test": 12,
+    "C4_sanity": 6,
+    "diamond_two_loaded_contradiction": 6,
+    "four_body_labelled_graph_counts": 1,
+    "two_loaded_finite_layer_inventory": 1
+  },
+  "physical_surviving_topology_witnesses": [
+    {
+      "name": "P4_staggered_two_loaded",
+      "bodies": 4,
+      "positive_edges": 3,
+      "circle_atoms": 4,
+      "physical_pairs": 6,
+      "q": "17/4",
+      "all_force_torque_virtual_residuals_zero": true,
+      "requires_strict_point_contact_selection": true,
+      "adjacency": [
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "name": "five_body_four_cycle_plus_bridge",
+      "bodies": 5,
+      "positive_edges": 5,
+      "circle_atoms": 4,
+      "physical_pairs": 10,
+      "q": "17/4",
+      "all_force_torque_virtual_residuals_zero": true,
+      "requires_strict_point_contact_selection": true,
+      "adjacency": [
+        [
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "name": "simple_six_cycle",
+      "bodies": 6,
+      "positive_edges": 6,
+      "circle_atoms": 4,
+      "physical_pairs": 15,
+      "q": "17/4",
+      "all_force_torque_virtual_residuals_zero": true,
+      "requires_strict_point_contact_selection": true,
+      "adjacency": [
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ]
+    },
+    {
+      "name": "six_body_seven_edge_component",
+      "bodies": 6,
+      "positive_edges": 7,
+      "circle_atoms": 4,
+      "physical_pairs": 15,
+      "q": "17/4",
+      "all_force_torque_virtual_residuals_zero": true,
+      "requires_strict_point_contact_selection": true,
+      "adjacency": [
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          0,
+          4,
+          5
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ]
+    },
+    {
+      "name": "negative_control_eight_body_nonstrict_contact_stress",
+      "bodies": 8,
+      "positive_edges": 9,
+      "circle_atoms": 4,
+      "physical_pairs": 28,
+      "q": "17/4",
+      "all_force_torque_virtual_residuals_zero": true,
+      "requires_strict_point_contact_selection": false,
+      "adjacency": [
+        [
+          2,
+          4,
+          6
+        ],
+        [
+          3,
+          5,
+          7
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          1,
+          6
+        ]
+      ]
+    }
+  ],
+  "finite_graph_checks": {
+    "biconnected_labelled_four_body_graphs_by_edge_count": {
+      "4": 3,
+      "5": 6,
+      "6": 1
+    },
+    "acute_rule_survivor_loadings_checked": 12,
+    "layer_inventory_up_to_reflection": [
+      "P4",
+      "C4 plus pendant bridge",
+      "C6",
+      "six vertices seven edges"
+    ],
+    "scope": "All labelled four-body graph/load subsets checked; their physical exclusions rely on the analytic theorems, not graph sampling."
+  },
+  "verification_scope": "Exact finite regressions; NOT a universal proof, independent full audit, Lean compilation or GitHub CI."
+}

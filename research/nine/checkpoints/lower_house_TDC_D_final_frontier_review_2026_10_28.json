@@ -1,0 +1,261 @@
+{
+  "date": "2026-10-28",
+  "reviewer": "frontier_audit",
+  "source": "LOWER_HOUSE_TDC_D_POSITIVE_ROOT_MOMENT_AND_FINAL_RELAY_EXCLUSION.md",
+  "sha256": "e5368cd0761d4f10a203272a0df4fc695604318cfe478d4076cad7c7771a0aef",
+  "verdict": "ACCEPT complete positive sign domain, uniform radius-free relay, and complete original LTDC.D join at the declared hand-proof scope",
+  "pins": [
+    {
+      "source": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "declared_sha256": "4c9e708945938c3f9df575e76f7573903d6b5a0ce4eccb5bcea760353a47458a",
+      "actual_sha256": "4c9e708945938c3f9df575e76f7573903d6b5a0ce4eccb5bcea760353a47458a",
+      "match": true
+    },
+    {
+      "source": "LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "declared_sha256": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90",
+      "actual_sha256": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90",
+      "match": true
+    },
+    {
+      "source": "UNLOADED_OPPOSED_MOMENT_STAR_AND_LOWER_HOUSE_TDC_D_SMALL_SUPPORT_REDUCTION.md",
+      "declared_sha256": "008acc8485e591b34604bf3e0b0cdcb03b7220aa249fc8e49552a065770ca129",
+      "actual_sha256": "008acc8485e591b34604bf3e0b0cdcb03b7220aa249fc8e49552a065770ca129",
+      "match": true
+    },
+    {
+      "source": "LOWER_HOUSE_TDC_D_FULL_MOMENT_AND_NONRADIAL_RETURN_REDUCTION.md",
+      "declared_sha256": "51ecccadb6cebf8cfd0b2d6c6707c9b4387150d47b9be200def1df858e993edd",
+      "actual_sha256": "51ecccadb6cebf8cfd0b2d6c6707c9b4387150d47b9be200def1df858e993edd",
+      "match": true
+    },
+    {
+      "source": "LOWER_HOUSE_TDC_D_NEGATIVE_ROOT_MOMENT_EXCLUSION.md",
+      "declared_sha256": "7274452fc0411a3643b4bfa32d0cacaf748c5a1612165e272b9387d3f3241084",
+      "actual_sha256": "7274452fc0411a3643b4bfa32d0cacaf748c5a1612165e272b9387d3f3241084",
+      "match": true
+    },
+    {
+      "source": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "declared_sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "actual_sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "match": true
+    },
+    {
+      "source": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "declared_sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "actual_sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "match": true
+    }
+  ],
+  "exact_arithmetic_checks": [
+    {
+      "name": "strict high-radius lower bound",
+      "left": "10609/2500",
+      "relation": "<",
+      "right": "17/4",
+      "passed": true
+    },
+    {
+      "name": "upper rational bound for sqrt2",
+      "left": "2",
+      "relation": "<",
+      "right": "9801/4900",
+      "passed": true
+    },
+    {
+      "name": "r lower bound",
+      "left": "16/25",
+      "relation": "<",
+      "right": "113/175",
+      "passed": true
+    },
+    {
+      "name": "d upper bound",
+      "left": "1041/256",
+      "relation": "<",
+      "right": "14641/3600",
+      "passed": true
+    },
+    {
+      "name": "negative B-left-vertex moment bound",
+      "left": "-379/1200",
+      "relation": "<",
+      "right": "0",
+      "passed": true
+    },
+    {
+      "name": "common cap K identity",
+      "left": "3501/2440",
+      "relation": "=",
+      "right": "3501/2440",
+      "passed": true
+    },
+    {
+      "name": "cap transverse center bound",
+      "left": "2588279/10716480",
+      "relation": "<",
+      "right": "1/4",
+      "passed": true
+    },
+    {
+      "name": "cap diameter squared identity",
+      "left": "52124381/53582400",
+      "relation": "=",
+      "right": "52124381/53582400",
+      "passed": true
+    },
+    {
+      "name": "cap diameter squared below one",
+      "left": "52124381/53582400",
+      "relation": "<",
+      "right": "1",
+      "passed": true
+    },
+    {
+      "name": "no-cap oblique endpoint squared",
+      "left": "26798642",
+      "relation": "<",
+      "right": "50993881",
+      "passed": true
+    },
+    {
+      "name": "no-cap diagonal endpoint squared",
+      "left": "7442",
+      "relation": "<",
+      "right": "14161",
+      "passed": true
+    },
+    {
+      "name": "West actual mean lower bound",
+      "left": "3/5",
+      "relation": "<",
+      "right": "3643/6000",
+      "passed": true
+    },
+    {
+      "name": "West positive tilt correction",
+      "left": "1/20",
+      "relation": "<",
+      "right": "3/5",
+      "passed": true
+    },
+    {
+      "name": "negative-half transverse orientation cut",
+      "left": "31/30",
+      "relation": "<",
+      "right": "649/625",
+      "passed": true
+    },
+    {
+      "name": "negative-half parallel axis bound",
+      "left": "249001/250000",
+      "relation": "<",
+      "right": "624/625",
+      "passed": true
+    },
+    {
+      "name": "negative-half two far vertices height",
+      "left": "1297609/4000000",
+      "relation": "<",
+      "right": "3249/10000",
+      "passed": true
+    },
+    {
+      "name": "negative-half C normal u bound",
+      "left": "4665600",
+      "relation": "<",
+      "right": "4835761",
+      "passed": true
+    },
+    {
+      "name": "negative-half C normal difference",
+      "left": "3577",
+      "relation": "<",
+      "right": "3600",
+      "passed": true
+    },
+    {
+      "name": "negative-half frame tilt",
+      "left": "1280000",
+      "relation": "<",
+      "right": "1292769",
+      "passed": true
+    },
+    {
+      "name": "negative-half actual D/C center separation",
+      "left": "2",
+      "relation": "<",
+      "right": "29929/14400",
+      "passed": true
+    },
+    {
+      "name": "negative-half whole C/V height separation",
+      "left": "-19/30",
+      "relation": "<",
+      "right": "-61/100",
+      "passed": true
+    },
+    {
+      "name": "negative-half high W application",
+      "left": "4/9",
+      "relation": "<",
+      "right": "3481/7200",
+      "passed": true
+    }
+  ],
+  "hand_identity_checks": [
+    {
+      "identity": "S-(S-kappa*(1+C))*(S+kappa*C)=S*(1-S)+kappa*S+kappa^2*C*(1+C)",
+      "scope": "C,S>0, C^2+S^2=1, kappa>=0; denominator S+kappa*C positive; numerator strictly positive"
+    },
+    {
+      "identity": "u*(u*k+v*eta)-v*(u*eta-v*k)=k*(u^2+v^2)=k",
+      "scope": "u^2+v^2=1; u>0; e_y>0; proves e_x/e_y-kappa=k/(u*e_y)>=0"
+    },
+    {
+      "identity": "mu*delta-nu*tau=0, mu=lambda*u, nu=lambda*v => delta=(v/u)*tau",
+      "scope": "complete actual unloaded A3 force and torque, both original mean endpoints retained"
+    }
+  ],
+  "original_family": "M6.B5L.HOUSE.LOWER.LTDC.D",
+  "literal_graph_edges": [
+    "AT",
+    "DT",
+    "AD",
+    "AB",
+    "BC",
+    "CD",
+    "BL"
+  ],
+  "positive_block_loads": [
+    "T",
+    "D",
+    "C"
+  ],
+  "true_positive_degrees": {
+    "B": 3,
+    "A": 3,
+    "D": 3,
+    "T": 2,
+    "C": 2,
+    "L": 1
+  },
+  "complete_domains": [
+    "every original R<=2 excluded by unconditional same-nine analytic measure; R>2>79/40 supplied before any radius-window caller",
+    "larger actual BA support",
+    "low and critical radius",
+    "zero BA moment impossible",
+    "canonical negative BA moment",
+    "canonical positive BA moment"
+  ],
+  "fine_gate_credit_available_after_separate_adoption": 1,
+  "coarse_gate_credit": 0,
+  "review_boundary": "Complete hand review; scalar items above check explicit arithmetic identities and constants only. No numerical geometric exclusion, angle mesh, Lean compilation, CI, metadata edit or remote write.",
+  "reviewed_revision": {
+    "previous_sha256": "805fcca60cb2c70ddaf0ef85999d51ad249656e8e075b9b492b20d3659d431da",
+    "current_sha256": "e5368cd0761d4f10a203272a0df4fc695604318cfe478d4076cad7c7771a0aef",
+    "scope": "Explicit unconditional same-nine pre-window entry and its two source pins added; relay and positive-sign mathematics unchanged. Current added sections and both complete entry manuscripts were read."
+  },
+  "accepted_prior_input_boundary": "The complete current radius-two theorem and lower-window assembly were read to verify unconditional same-nine hypotheses and invocation. Their existing full analytic source reviews remain operative; no fresh replay of all fixed-value scalar proofs is claimed."
+}

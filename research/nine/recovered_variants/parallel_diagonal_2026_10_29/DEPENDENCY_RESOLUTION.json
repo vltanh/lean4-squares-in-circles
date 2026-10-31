@@ -1,0 +1,286 @@
+{
+  "date_utc": "2026-10-29",
+  "provenance": "Exact preserved publication_structural_315 historical snapshot. The separate bundle preserves current root cap preimages and every recovered source/review byte.",
+  "files": [
+    {
+      "path": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/ARBITRARY_DEGREE_BOUNDARY_ENDPOINT_SIDE_CHANNEL_PHYSICAL_PORT_BOUNDS.md",
+      "sha256": "6716fb214dbe2115ee5655e0eefc33a3207d63b0db5b9ad3ac20fec976ea0263",
+      "bytes": 13222
+    },
+    {
+      "path": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/C6_SHARED_T_CURRENT_CALLER_CERTIFICATE_AUDIT_2026_10_27.md",
+      "sha256": "ba6da41cb37a5dff9df787695fb46592aa22a26cb9bd3df6449b3fcf1a498805",
+      "bytes": 9355
+    },
+    {
+      "path": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/DIAGONAL_CAP_THREE_CERTIFICATES_ANALYTIC_REPLACEMENT.md",
+      "sha256": "1fd224603a90dbeb14c021a4deea53e90c1dd33596b9d6baec3e00f0b9672f5d",
+      "bytes": 12088
+    },
+    {
+      "path": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/DIAGONAL_CAP_VERTICAL_ANALYTIC_REPLACEMENT.md",
+      "sha256": "d482c3a17acbc0b33a6fff9da5fbabc437b628929cca24965c583108b9934728",
+      "bytes": 14498
+    },
+    {
+      "path": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/FOUR_C6_DIAGONAL_CHANNEL_CAP_EMPTY.md",
+      "sha256": "de0bcaff0a877393672dfef27e5ddf996a5e20cfa0ec72cdb2ae54a21ce09e5e",
+      "bytes": 21840
+    },
+    {
+      "path": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/FULL_PARALLEL_RETURN_STARS_DIAGONAL_CHANNEL_EXTERIOR_POCKET_EMPTY.md",
+      "sha256": "60aafee1c86633dd2a384d703425d9b60369f0b522c7ef0f85fe5eac4472b078",
+      "bytes": 36007
+    },
+    {
+      "path": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/LOADED_SIDE_CHANNEL_PORT_WITH_ENTIRE_PARALLEL_RETURN_GROUP_PROPER_CONCURRENCE.md",
+      "sha256": "58ac4873407ab4eeb56a481433aa4f2abd0ac0d41c220e45867756b3f443795f",
+      "bytes": 19241
+    },
+    {
+      "path": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/REVIEW_DIAGONAL_CAP_ALL_202_ANALYTIC_ROOT_2026_10_27.md",
+      "sha256": "c999c093ae3b9668f3dae1a3c01b94de94c8d1ade3a116eea81ac4c56671157c",
+      "bytes": 10044
+    },
+    {
+      "path": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/REVIEW_DIAGONAL_CAP_ALL_202_AND_SCOPED_1080_INDEPENDENT_2026_10_27.md",
+      "sha256": "93d899027713aea4ec29cd9b71e4df83bdb10030e7467823aab01503df559da5",
+      "bytes": 20685
+    },
+    {
+      "path": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/REVIEW_FULL_PARALLEL_RETURN_DIAGONAL_POCKET_COMPLETE_INDEPENDENT_0AB_2026_10_28.md",
+      "sha256": "3c616db0e9073525471d84f979c08f6c16f8dc24e392e899430a532c447d22f8",
+      "bytes": 31375
+    },
+    {
+      "path": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/SIX_CYCLE_ONE_DIAGONAL_OUTER_CAP_EMPTY.md",
+      "sha256": "c855cdea738224f4e9cc092a53bd75a83c4d7a2a6c381acc4b310d016f47e4b5",
+      "bytes": 22228
+    }
+  ],
+  "matched_named_table_references": [
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/FULL_PARALLEL_RETURN_STARS_DIAGONAL_CHANNEL_EXTERIOR_POCKET_EMPTY.md",
+      "line": 773,
+      "reference": "PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "resolved_path": "research/nine/PHYSICAL_CONTACT_STRESS.md"
+    },
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/FULL_PARALLEL_RETURN_STARS_DIAGONAL_CHANNEL_EXTERIOR_POCKET_EMPTY.md",
+      "line": 774,
+      "reference": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "resolved_path": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md"
+    },
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/FULL_PARALLEL_RETURN_STARS_DIAGONAL_CHANNEL_EXTERIOR_POCKET_EMPTY.md",
+      "line": 775,
+      "reference": "CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "sha256": "e54df61d3134c5709bee5ac1a250fdd51084828da114d896f14c7e6337c4e8c5",
+      "resolved_path": "research/nine/CIRCLE_CONTACT_ANGULAR_ORDER.md"
+    },
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/FULL_PARALLEL_RETURN_STARS_DIAGONAL_CHANNEL_EXTERIOR_POCKET_EMPTY.md",
+      "line": 776,
+      "reference": "FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "sha256": "164d08bb2c4dfe8510247e44298d309920cb88a780221252d833f51aa654225f",
+      "resolved_path": "research/nine/FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md"
+    },
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/FULL_PARALLEL_RETURN_STARS_DIAGONAL_CHANNEL_EXTERIOR_POCKET_EMPTY.md",
+      "line": 777,
+      "reference": "DIAGONAL_CHANNEL_EXTERIOR_CAPACITY_ONE.md",
+      "sha256": "46f8be67b5c447a78f12cefb3f96474973ead5d48d4e65b346a1c77bdd8fee02",
+      "resolved_path": "research/nine/DIAGONAL_CHANNEL_EXTERIOR_CAPACITY_ONE.md"
+    },
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/FULL_PARALLEL_RETURN_STARS_DIAGONAL_CHANNEL_EXTERIOR_POCKET_EMPTY.md",
+      "line": 778,
+      "reference": "SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1",
+      "resolved_path": "research/nine/SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md"
+    },
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/FULL_PARALLEL_RETURN_STARS_DIAGONAL_CHANNEL_EXTERIOR_POCKET_EMPTY.md",
+      "line": 779,
+      "reference": "NINE_RADIUS_TWO_MEASURE_FIVE_POINT_REDUCTION.md",
+      "sha256": "c316fbce9320918ba88e46c4cd53b5c70c8ccdb2cc585171204f28385905929f",
+      "resolved_path": "research/nine/NINE_RADIUS_TWO_MEASURE_FIVE_POINT_REDUCTION.md"
+    },
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/FULL_PARALLEL_RETURN_STARS_DIAGONAL_CHANNEL_EXTERIOR_POCKET_EMPTY.md",
+      "line": 780,
+      "reference": "ANALYTIC_CERTIFICATE_CHECKPOINT_2026_10_27.md",
+      "sha256": "611795e4c2899aa3197287bb55b998b51322a573f4f57e32178835f4c255b2de",
+      "resolved_path": "research/nine/ANALYTIC_CERTIFICATE_CHECKPOINT_2026_10_27.md"
+    },
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/FULL_PARALLEL_RETURN_STARS_DIAGONAL_CHANNEL_EXTERIOR_POCKET_EMPTY.md",
+      "line": 787,
+      "reference": "LOADED_SIDE_CHANNEL_PORT_WITH_ENTIRE_PARALLEL_RETURN_GROUP_PROPER_CONCURRENCE.md",
+      "sha256": "58ac4873407ab4eeb56a481433aa4f2abd0ac0d41c220e45867756b3f443795f",
+      "resolved_path": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/LOADED_SIDE_CHANNEL_PORT_WITH_ENTIRE_PARALLEL_RETURN_GROUP_PROPER_CONCURRENCE.md"
+    },
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/FULL_PARALLEL_RETURN_STARS_DIAGONAL_CHANNEL_EXTERIOR_POCKET_EMPTY.md",
+      "line": 788,
+      "reference": "FOUR_C6_DIAGONAL_CHANNEL_CAP_EMPTY.md",
+      "sha256": "de0bcaff0a877393672dfef27e5ddf996a5e20cfa0ec72cdb2ae54a21ce09e5e",
+      "resolved_path": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/FOUR_C6_DIAGONAL_CHANNEL_CAP_EMPTY.md"
+    },
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/FULL_PARALLEL_RETURN_STARS_DIAGONAL_CHANNEL_EXTERIOR_POCKET_EMPTY.md",
+      "line": 789,
+      "reference": "SIX_CYCLE_ONE_DIAGONAL_OUTER_CAP_EMPTY.md",
+      "sha256": "c855cdea738224f4e9cc092a53bd75a83c4d7a2a6c381acc4b310d016f47e4b5",
+      "resolved_path": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/SIX_CYCLE_ONE_DIAGONAL_OUTER_CAP_EMPTY.md"
+    },
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/FULL_PARALLEL_RETURN_STARS_DIAGONAL_CHANNEL_EXTERIOR_POCKET_EMPTY.md",
+      "line": 790,
+      "reference": "DIAGONAL_CAP_THREE_CERTIFICATES_ANALYTIC_REPLACEMENT.md",
+      "sha256": "1fd224603a90dbeb14c021a4deea53e90c1dd33596b9d6baec3e00f0b9672f5d",
+      "resolved_path": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/DIAGONAL_CAP_THREE_CERTIFICATES_ANALYTIC_REPLACEMENT.md"
+    },
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/FULL_PARALLEL_RETURN_STARS_DIAGONAL_CHANNEL_EXTERIOR_POCKET_EMPTY.md",
+      "line": 791,
+      "reference": "DIAGONAL_CAP_VERTICAL_ANALYTIC_REPLACEMENT.md",
+      "sha256": "d482c3a17acbc0b33a6fff9da5fbabc437b628929cca24965c583108b9934728",
+      "resolved_path": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/DIAGONAL_CAP_VERTICAL_ANALYTIC_REPLACEMENT.md"
+    },
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/LOADED_SIDE_CHANNEL_PORT_WITH_ENTIRE_PARALLEL_RETURN_GROUP_PROPER_CONCURRENCE.md",
+      "line": 495,
+      "reference": "ARBITRARY_DEGREE_BOUNDARY_ENDPOINT_SIDE_CHANNEL_PHYSICAL_PORT_BOUNDS.md",
+      "sha256": "6716fb214dbe2115ee5655e0eefc33a3207d63b0db5b9ad3ac20fec976ea0263",
+      "resolved_path": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/ARBITRARY_DEGREE_BOUNDARY_ENDPOINT_SIDE_CHANNEL_PHYSICAL_PORT_BOUNDS.md"
+    },
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/REVIEW_DIAGONAL_CAP_ALL_202_AND_SCOPED_1080_INDEPENDENT_2026_10_27.md",
+      "line": 24,
+      "reference": "DIAGONAL_CAP_THREE_CERTIFICATES_ANALYTIC_REPLACEMENT.md",
+      "sha256": "1fd224603a90dbeb14c021a4deea53e90c1dd33596b9d6baec3e00f0b9672f5d",
+      "resolved_path": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/DIAGONAL_CAP_THREE_CERTIFICATES_ANALYTIC_REPLACEMENT.md"
+    },
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/REVIEW_DIAGONAL_CAP_ALL_202_AND_SCOPED_1080_INDEPENDENT_2026_10_27.md",
+      "line": 25,
+      "reference": "DIAGONAL_CAP_VERTICAL_ANALYTIC_REPLACEMENT.md",
+      "sha256": "d482c3a17acbc0b33a6fff9da5fbabc437b628929cca24965c583108b9934728",
+      "resolved_path": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/DIAGONAL_CAP_VERTICAL_ANALYTIC_REPLACEMENT.md"
+    },
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/REVIEW_DIAGONAL_CAP_ALL_202_AND_SCOPED_1080_INDEPENDENT_2026_10_27.md",
+      "line": 26,
+      "reference": "C6_SHARED_T_CURRENT_CALLER_CERTIFICATE_AUDIT_2026_10_27.md",
+      "sha256": "ba6da41cb37a5dff9df787695fb46592aa22a26cb9bd3df6449b3fcf1a498805",
+      "resolved_path": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/C6_SHARED_T_CURRENT_CALLER_CERTIFICATE_AUDIT_2026_10_27.md"
+    },
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/REVIEW_FULL_PARALLEL_RETURN_DIAGONAL_POCKET_COMPLETE_INDEPENDENT_0AB_2026_10_28.md",
+      "line": 30,
+      "reference": "FULL_PARALLEL_RETURN_STARS_DIAGONAL_CHANNEL_EXTERIOR_POCKET_EMPTY.md",
+      "sha256": "60aafee1c86633dd2a384d703425d9b60369f0b522c7ef0f85fe5eac4472b078",
+      "resolved_path": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/FULL_PARALLEL_RETURN_STARS_DIAGONAL_CHANNEL_EXTERIOR_POCKET_EMPTY.md"
+    },
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/REVIEW_FULL_PARALLEL_RETURN_DIAGONAL_POCKET_COMPLETE_INDEPENDENT_0AB_2026_10_28.md",
+      "line": 41,
+      "reference": "PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "resolved_path": "research/nine/PHYSICAL_CONTACT_STRESS.md"
+    },
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/REVIEW_FULL_PARALLEL_RETURN_DIAGONAL_POCKET_COMPLETE_INDEPENDENT_0AB_2026_10_28.md",
+      "line": 42,
+      "reference": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "resolved_path": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md"
+    },
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/REVIEW_FULL_PARALLEL_RETURN_DIAGONAL_POCKET_COMPLETE_INDEPENDENT_0AB_2026_10_28.md",
+      "line": 43,
+      "reference": "CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "sha256": "e54df61d3134c5709bee5ac1a250fdd51084828da114d896f14c7e6337c4e8c5",
+      "resolved_path": "research/nine/CIRCLE_CONTACT_ANGULAR_ORDER.md"
+    },
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/REVIEW_FULL_PARALLEL_RETURN_DIAGONAL_POCKET_COMPLETE_INDEPENDENT_0AB_2026_10_28.md",
+      "line": 44,
+      "reference": "FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "sha256": "164d08bb2c4dfe8510247e44298d309920cb88a780221252d833f51aa654225f",
+      "resolved_path": "research/nine/FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md"
+    },
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/REVIEW_FULL_PARALLEL_RETURN_DIAGONAL_POCKET_COMPLETE_INDEPENDENT_0AB_2026_10_28.md",
+      "line": 45,
+      "reference": "DIAGONAL_CHANNEL_EXTERIOR_CAPACITY_ONE.md",
+      "sha256": "46f8be67b5c447a78f12cefb3f96474973ead5d48d4e65b346a1c77bdd8fee02",
+      "resolved_path": "research/nine/DIAGONAL_CHANNEL_EXTERIOR_CAPACITY_ONE.md"
+    },
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/REVIEW_FULL_PARALLEL_RETURN_DIAGONAL_POCKET_COMPLETE_INDEPENDENT_0AB_2026_10_28.md",
+      "line": 46,
+      "reference": "SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1",
+      "resolved_path": "research/nine/SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md"
+    },
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/REVIEW_FULL_PARALLEL_RETURN_DIAGONAL_POCKET_COMPLETE_INDEPENDENT_0AB_2026_10_28.md",
+      "line": 47,
+      "reference": "NINE_RADIUS_TWO_MEASURE_FIVE_POINT_REDUCTION.md",
+      "sha256": "c316fbce9320918ba88e46c4cd53b5c70c8ccdb2cc585171204f28385905929f",
+      "resolved_path": "research/nine/NINE_RADIUS_TWO_MEASURE_FIVE_POINT_REDUCTION.md"
+    },
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/REVIEW_FULL_PARALLEL_RETURN_DIAGONAL_POCKET_COMPLETE_INDEPENDENT_0AB_2026_10_28.md",
+      "line": 48,
+      "reference": "ANALYTIC_CERTIFICATE_CHECKPOINT_2026_10_27.md",
+      "sha256": "611795e4c2899aa3197287bb55b998b51322a573f4f57e32178835f4c255b2de",
+      "resolved_path": "research/nine/ANALYTIC_CERTIFICATE_CHECKPOINT_2026_10_27.md"
+    },
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/REVIEW_FULL_PARALLEL_RETURN_DIAGONAL_POCKET_COMPLETE_INDEPENDENT_0AB_2026_10_28.md",
+      "line": 49,
+      "reference": "LOADED_SIDE_CHANNEL_PORT_WITH_ENTIRE_PARALLEL_RETURN_GROUP_PROPER_CONCURRENCE.md",
+      "sha256": "58ac4873407ab4eeb56a481433aa4f2abd0ac0d41c220e45867756b3f443795f",
+      "resolved_path": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/LOADED_SIDE_CHANNEL_PORT_WITH_ENTIRE_PARALLEL_RETURN_GROUP_PROPER_CONCURRENCE.md"
+    },
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/REVIEW_FULL_PARALLEL_RETURN_DIAGONAL_POCKET_COMPLETE_INDEPENDENT_0AB_2026_10_28.md",
+      "line": 50,
+      "reference": "FOUR_C6_DIAGONAL_CHANNEL_CAP_EMPTY.md",
+      "sha256": "de0bcaff0a877393672dfef27e5ddf996a5e20cfa0ec72cdb2ae54a21ce09e5e",
+      "resolved_path": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/FOUR_C6_DIAGONAL_CHANNEL_CAP_EMPTY.md"
+    },
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/REVIEW_FULL_PARALLEL_RETURN_DIAGONAL_POCKET_COMPLETE_INDEPENDENT_0AB_2026_10_28.md",
+      "line": 51,
+      "reference": "SIX_CYCLE_ONE_DIAGONAL_OUTER_CAP_EMPTY.md",
+      "sha256": "c855cdea738224f4e9cc092a53bd75a83c4d7a2a6c381acc4b310d016f47e4b5",
+      "resolved_path": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/SIX_CYCLE_ONE_DIAGONAL_OUTER_CAP_EMPTY.md"
+    },
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/REVIEW_FULL_PARALLEL_RETURN_DIAGONAL_POCKET_COMPLETE_INDEPENDENT_0AB_2026_10_28.md",
+      "line": 52,
+      "reference": "DIAGONAL_CAP_THREE_CERTIFICATES_ANALYTIC_REPLACEMENT.md",
+      "sha256": "1fd224603a90dbeb14c021a4deea53e90c1dd33596b9d6baec3e00f0b9672f5d",
+      "resolved_path": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/DIAGONAL_CAP_THREE_CERTIFICATES_ANALYTIC_REPLACEMENT.md"
+    },
+    {
+      "source": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/REVIEW_FULL_PARALLEL_RETURN_DIAGONAL_POCKET_COMPLETE_INDEPENDENT_0AB_2026_10_28.md",
+      "line": 53,
+      "reference": "DIAGONAL_CAP_VERTICAL_ANALYTIC_REPLACEMENT.md",
+      "sha256": "d482c3a17acbc0b33a6fff9da5fbabc437b628929cca24965c583108b9934728",
+      "resolved_path": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/DIAGONAL_CAP_VERTICAL_ANALYTIC_REPLACEMENT.md"
+    }
+  ],
+  "unresolved_or_descriptive_references_for_scope_audit": [],
+  "scope_notes": {
+    "ARBITRARY_DEGREE_BOUNDARY_ENDPOINT_SIDE_CHANNEL_PHYSICAL_PORT_BOUNDS.md": "Included to resolve the generic side-channel source pin. Its side-height/margin and Section3 parallel exclusion are not used by the recovered diagonal proof, which consumes only generic Sections2,4 and reproves its own height/parallel entry.",
+    "C6_SHARED_T_CURRENT_CALLER_CERTIFICATE_AUDIT_2026_10_27.md": "Included for historical review provenance. Its separately scoped1080 audit is not used by the present diagonal202 analytic proof route."
+  },
+  "status": "Exact recovery and dependency-resolution record. The new whole-feature source and its independent review supply current mathematical adoption; historical source status is not new original-row closure credit."
+}

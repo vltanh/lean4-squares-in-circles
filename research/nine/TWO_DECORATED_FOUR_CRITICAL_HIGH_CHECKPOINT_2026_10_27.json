@@ -1,0 +1,433 @@
+{
+  "baseline_head": "a92b5e8208ea24201116babc3e4d4e877a2ca1c2",
+  "coarse_before": {
+    "closed": 32,
+    "open": 26,
+    "total": 58
+  },
+  "coarse_after": {
+    "closed": 32,
+    "open": 26,
+    "total": 58
+  },
+  "fine_before": {
+    "checked": 2316,
+    "total": 2513
+  },
+  "fine_after": {
+    "checked": 2319,
+    "unchecked": 194,
+    "total": 2513
+  },
+  "new_original_fine_ids": [
+    "M6.B5L.HOUSE.ROOF.LABD.S",
+    "M6.B5L.HOUSE.ROOF.LABD.D",
+    "M6.B6.PENTAGON.H3.L0134"
+  ],
+  "same_ordered_original_ids": true,
+  "no_unchecked_regressions": true,
+  "c2_44_b2_status": "OPEN",
+  "c2_44_b2_complete_new_domains": [
+    "d=1 all21 original unordered pairs",
+    "d>1 entire boundary-origin alternative"
+  ],
+  "c2_44_b2_residual": {
+    "radius": "d>1",
+    "origin": "O in int H",
+    "original_pairs": [
+      "C_a/C_a",
+      "C_a/D_ht",
+      "C_a/D_th",
+      "D_ht/D_ht",
+      "D_ht/D_th",
+      "D_th/D_th"
+    ]
+  },
+  "operative_genuine_block_route": "ROOTED_C2_44_TWO_BRIDGES_GENUINE_BLOCK_NONNEGATIVE_REDUCTION.md",
+  "new_source_and_review_pins": [
+    {
+      "path": "research/nine/BALANCED_FOUR_BOUNDARY_PATH_ONE_TRANSMITTER_FULL_DOMAIN_JOINS.md",
+      "sha256": "7c930bfb5f44e14d4c22fc728c167561cbee59540264ae2883ec13e2a40d9ed8",
+      "git_blob_sha": "63404b27102c325d6edd20954b5fb8995f0257f6",
+      "size": 14220
+    },
+    {
+      "path": "research/nine/BOUNDARY_EDGE_THETA_LOAD_EXCLUSIONS.md",
+      "sha256": "43949d72bf5131a26152e73b83ba1a997b82de7e1a2cfab619d719c1752493e4",
+      "git_blob_sha": "ac81ce763b9bec13845ce19bdf8ca02c675d521e",
+      "size": 6689
+    },
+    {
+      "path": "research/nine/GENERAL_GENUINE_FOUR_BLOCK_TWO_PRIVATE_LEAF_DIAMOND_COMPLETE_EXCLUSION.md",
+      "sha256": "e20b167fe58f5d34b7927d5ec23d35540152a1d6868801691f57e448cc26e650",
+      "git_blob_sha": "99d71b6a88daefd074e79c227f45d2df112d816c",
+      "size": 12925
+    },
+    {
+      "path": "research/nine/GENERAL_GENUINE_LEAF_FAR_CONTACT_DIRECTION.md",
+      "sha256": "0380dcbb9875bfbef03cc68b4d43e63ffc666c215ef3dcff3d762c9ef4830e06",
+      "git_blob_sha": "8b584d59f46c60e70017876a32115725386ac6c4",
+      "size": 8633
+    },
+    {
+      "path": "research/nine/GENERAL_NEAR_UNIT_OBLIQUE_FACING_CONTACT_SMALL_CORNER.md",
+      "sha256": "9f10979656d694ce78aec002519caa58b792c17ca101d9de38ccea0196fa17ba",
+      "git_blob_sha": "aab872092d5d21e0dc71d2b52c7d1130de84e523",
+      "size": 9612
+    },
+    {
+      "path": "research/nine/GENERAL_PRIVATE_LEAF_FOUR_BLOCK_OUTSIDE_OPEN_ORIGIN_EXCLUSION.md",
+      "sha256": "50a9f89103050ae8b766edc80812cddce2f896f321cf423cd971db2bd9a97e56",
+      "git_blob_sha": "c92873f4950add53cd4a34a5fa1e094e825aa6dd",
+      "size": 15978
+    },
+    {
+      "path": "research/nine/GENERAL_THREE_NEAR_UNITS_COMMON_BOUNDARY_NEIGHBOR_EXCLUSION.md",
+      "sha256": "a4efde5817af8cc06faf4ca83a401f7926dafb0ed31686d6c72e14cd2d8485d7",
+      "git_blob_sha": "69ecfdacba92c8665aa7ab0693929b2763cb4f8e",
+      "size": 8114
+    },
+    {
+      "path": "research/nine/GENERAL_TWO_PRIVATE_LEAF_DIAMOND_OPEN_ORIGIN.md",
+      "sha256": "b6f062b700518677a3cea9e9ee2fbfadbde84c0413ea76ea83352fff98cc4520",
+      "git_blob_sha": "0c46fd44e83e6907791d8fe1ef1edcc4f9f00443",
+      "size": 17855
+    },
+    {
+      "path": "research/nine/GLOBAL_CLOSURE_RADIAL_TRIANGLE_ZERO_MOMENT_AND_FAN_EXCLUSION.md",
+      "sha256": "7b63cf86d12135235340c8bdddacd53061319aad1d4c6901a8a1df056a9afde5",
+      "git_blob_sha": "cc1fdf9109f3405b5976e53498896187e56805f3",
+      "size": 14299
+    },
+    {
+      "path": "research/nine/REVIEW_BOUNDARY_EDGE_THETA_C6_FRESH_2026_10_26.md",
+      "sha256": "389c326e8fdd943d68c7f10316f87ffa6a7b966b5d798e7f90021b5bbb24fc72",
+      "git_blob_sha": "95dcbd679a35c1da83a142b8ffeedee7ccb93057",
+      "size": 5475
+    },
+    {
+      "path": "research/nine/REVIEW_BOUNDARY_EDGE_THETA_ROOT_FRESH_2026_10_26.md",
+      "sha256": "bacf2c16fbb162be4dbe254669e2e43b30c2e4b11b7093fafe8b685b13dd73f1",
+      "git_blob_sha": "556d12ffa0724077055e901773487217ff3909cc",
+      "size": 4331
+    },
+    {
+      "path": "research/nine/REVIEW_C2_44_TWO_BRIDGES_GENUINE_NONNEGATIVE_GLOBAL_NEXT_2026_10_27.md",
+      "sha256": "2681368cadbe52b973aee6ae648dd5d2aae1227ed981422681e911f69933b4a7",
+      "git_blob_sha": "0990ddc17568baaf31778bf9174354fe60efadd0",
+      "size": 12804
+    },
+    {
+      "path": "research/nine/REVIEW_C2_44_TWO_BRIDGES_GENUINE_NONNEGATIVE_ROOT_2026_10_27.md",
+      "sha256": "13725d9de9aaf186dd6fbe098fbd1288b88b9b4b25c0ce1b315232f7fe47bbd9",
+      "git_blob_sha": "7242be429ec7b6227482e055e06d8790eecab4d2",
+      "size": 3980
+    },
+    {
+      "path": "research/nine/REVIEW_C2_44_TWO_BRIDGES_STRUCTURAL_C6_2026_10_27.md",
+      "sha256": "c324c65157f0cc7a9cd54a0fa6e75f9dd53b4801929e18a811e1067ec2cfba4f",
+      "git_blob_sha": "2959dcb38d75794c43122147beaa0f026dc0ae38",
+      "size": 10921
+    },
+    {
+      "path": "research/nine/REVIEW_CRITICAL_DECORATED_DIAMOND_FULL_SIX_BODY_2026_10_27.md",
+      "sha256": "60b731de5bdcfd4ddefb6172d303119f817b6710a0451b8abc94a04118e00d52",
+      "git_blob_sha": "63aa97e49e3afcd7655e446a93ead81094b4e7a4",
+      "size": 11265
+    },
+    {
+      "path": "research/nine/REVIEW_CRITICAL_DECORATED_FOUR_BLOCK_MOMENT_SIX_BODY_2026_10_27.md",
+      "sha256": "2cee09766ca3c971d09ebeab7269bb69ac39d7451af7cb41890e3775902edfb9",
+      "git_blob_sha": "4a80897fa31e561405bd6826057b851044369cbe",
+      "size": 16927
+    },
+    {
+      "path": "research/nine/REVIEW_CRITICAL_TWENTY_ONE_PAIR_JOIN_SIX_BODY_2026_10_27.md",
+      "sha256": "eacd24115b8a5262180032ec8d576aad2624c226dce2d3253df3089bd45156a3",
+      "git_blob_sha": "c0dc99bf572e14ccdf140b9f8ab02f23248ffce8",
+      "size": 7305
+    },
+    {
+      "path": "research/nine/REVIEW_GENUINE_FOUR_SHARED_SIDE_NEAR_PATH_C6_2026_10_27.md",
+      "sha256": "fd462cef01be52b1c9aea36080920472f7cd33afa3277f51c04c0d3560c2e329",
+      "git_blob_sha": "286faad17e9374d76eb717eec91643b2582f4620",
+      "size": 7560
+    },
+    {
+      "path": "research/nine/REVIEW_GENUINE_FOUR_TWO_PRIVATE_LEAF_C4_COMPLETE_GLOBAL_2026_10_27.md",
+      "sha256": "cc257963fa4b0d4b3a683b82045957171bf6c3dae3c1f97ecb2ffe6cceac4d91",
+      "git_blob_sha": "fba81b575d46e0d568d737496efd1aa6e49b1177",
+      "size": 9270
+    },
+    {
+      "path": "research/nine/REVIEW_GENUINE_FOUR_TWO_PRIVATE_LEAF_C4_ROOT_2026_10_27.md",
+      "sha256": "4d6c15e2b9be766b50be69daf9ad59c31c73e12b95f76113223422f044a7ea55",
+      "git_blob_sha": "0406a0801a8a34a532e047e99ae65f8c2f238d2a",
+      "size": 9954
+    },
+    {
+      "path": "research/nine/REVIEW_GENUINE_FOUR_TWO_PRIVATE_LEAF_DIAMOND_COMPLETE_GLOBAL_2026_10_27.md",
+      "sha256": "8ca645d81b7bb8d515fd7837b51dc0ccda2e25a634d28e6fdbbfea9ec203660c",
+      "git_blob_sha": "e22dfd59ba5ad3128f9935c0c88aa820e7d97825",
+      "size": 8857
+    },
+    {
+      "path": "research/nine/REVIEW_GENUINE_FOUR_TWO_PRIVATE_LEAF_DIAMOND_ROOT_2026_10_27.md",
+      "sha256": "1551f300a843946022881fd36a90f2f827aa5e7ef8df4b10aaf3a9ef5ee9568c",
+      "git_blob_sha": "278bf31a668b06ce42fd07ed03c851a31c6c3f1c",
+      "size": 12557
+    },
+    {
+      "path": "research/nine/REVIEW_GENUINE_LEAF_FAR_CONTACT_DIRECTION_GLOBAL_2026_10_27.md",
+      "sha256": "fd0d41035368e5deb4f2b67ed626289228f39bd2a267e373993b4fdfa89c8f26",
+      "git_blob_sha": "6c714373e809b37ac4229df7c5d4efaed2c7b2d4",
+      "size": 5487
+    },
+    {
+      "path": "research/nine/REVIEW_NEAR_UNIT_OBLIQUE_FACING_SMALL_CORNER_GLOBAL_2026_10_27.md",
+      "sha256": "caed6c16829faab392c82f0371e37f5854aa90493da41da327e996343866d3e4",
+      "git_blob_sha": "c4ea05e1bb081cdb5bcc1c66bb8d3b415bce3f2f",
+      "size": 6462
+    },
+    {
+      "path": "research/nine/REVIEW_ONE_PROPER_CHANNEL_AND_TWO_PENTAGON_LOAD_JOINS_ROOT_2026_10_27.md",
+      "sha256": "f68fb171bfddb59320b28d4d1bc76bbb4d4de741b2326457e352c057ee158870",
+      "git_blob_sha": "93fb6acd38db812e73b12a8e096d20930cac3ab0",
+      "size": 12415
+    },
+    {
+      "path": "research/nine/REVIEW_ONE_PROPER_ENDPOINT_AND_BALANCED_PATH_JOINS_INDEPENDENT_CURRENT_8BF_2026_10_27.md",
+      "sha256": "12cc1560c2fb8d5c99cb9ef50b1dd82e767bed03ac6507d4ef9d779e2e0d33a2",
+      "git_blob_sha": "10f8907d43c28b512fcd408321efc8a215c6d5ad",
+      "size": 20780
+    },
+    {
+      "path": "research/nine/REVIEW_PRIVATE_LEAF_FOUR_OUTSIDE_OPEN_ORIGIN_GLOBAL_2026_10_27.md",
+      "sha256": "fc5e0690ab49a0c06e2224f73c81eca7284bbaaa8bcfc86a3944c575ca6debfb",
+      "git_blob_sha": "609baa802f566306d07515ec283b18c73d4eac61",
+      "size": 10171
+    },
+    {
+      "path": "research/nine/REVIEW_PRIVATE_LEAF_FOUR_OUTSIDE_OPEN_ORIGIN_ROOT_2026_10_27.md",
+      "sha256": "66c03550354d7c08cfd9fd925a264aead76286c0bc4bab66ebeda95a3c15d459",
+      "git_blob_sha": "d380613671c71e87f3841fc13c59a105c9827178",
+      "size": 6561
+    },
+    {
+      "path": "research/nine/REVIEW_RADIAL_TRIANGLE_ZERO_MOMENT_AND_FAN_ROOTED_BLOCKS_2026_10_27.md",
+      "sha256": "af136dfd5a061ef25a0f70ac4a9ea21f2f2a53e4b739213e82936f0d62323acb",
+      "git_blob_sha": "54837e6c7e942cf4018244915808327d6e12cb3c",
+      "size": 10880
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_MORE_SIX_BODY_ORIGINAL_DOMAINS_2026_10_27.md",
+      "sha256": "5283ec7a3b9d2bfa48859632def9e745bac160a30c603d45f8c49d8bc8c965b5",
+      "git_blob_sha": "ff35810fbec4087201bb642778d88480581cad0b",
+      "size": 11357
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_NEAR_UNITS_COMMON_BOUNDARY_NEIGHBOR_GLOBAL_2026_10_27.md",
+      "sha256": "5ad7825e136a721d4b6393b5c1cfbd8ee83cdee4984093540a77f799977bc330",
+      "git_blob_sha": "bda7d5268ee1b9ee21d4cd23290ce9788632c15c",
+      "size": 7012
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_DECORATED_FOUR_BOUNDARY_ORIGIN_DIAMOND_C6_NEXT_2026_10_27.md",
+      "sha256": "c51a08dfc1f418c2bc9d3d8f48fb04f92558addb80ee40e948528fe74f6093e4",
+      "git_blob_sha": "a0d6d23493bd384d10fd31db6435c7167303b477",
+      "size": 12332
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_DECORATED_FOUR_BOUNDARY_ORIGIN_DIAMOND_ROOT_2026_10_27.md",
+      "sha256": "937e250cd1f8dd19712acaf8ce59ad39ba2dd92e8a975a91b817c60194630861",
+      "git_blob_sha": "96d3f751ff664db9c0222f8f88580f83701bfb10",
+      "size": 9577
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_DECORATED_FOUR_CRITICAL_ENDPOINT_ROOT_2026_10_27.md",
+      "sha256": "d77e6676c92151088787328904e85afca400995646c607149bd65d068ac97a82",
+      "git_blob_sha": "2554343f4ddc0e3bda15eff44b8f2cd0f054cb29",
+      "size": 11426
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_DECORATED_FOUR_HIGH_BOUNDARY_ORIGIN_MIXED_GLOBAL_2026_10_27.md",
+      "sha256": "83bbea9c8580e598a70ed84e57960bdd10ea51730441fd3fa20561078f078ba1",
+      "git_blob_sha": "90f3611623c178719f312388d8ac0f9535ef9936",
+      "size": 14934
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_DECORATED_FOUR_HIGH_BOUNDARY_ROOT_2026_10_27.md",
+      "sha256": "4b6ab87f4c714b7992454cafcb9517234b604f0107b5937c6c111e0a5f595bbf",
+      "git_blob_sha": "b22f70abdf63578a7014524a873da5ca2970fd55",
+      "size": 9234
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_DECORATED_FOUR_LOW_RADIUS_GLOBAL_2026_10_27.md",
+      "sha256": "eee88c1bf930f580cac8fac48ad1eb3f792b09bab60ce95563feec8e020c859e",
+      "git_blob_sha": "89572c09a6a84108f1e1f77ffb0c205950a56474",
+      "size": 8031
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_DECORATED_FOUR_LOW_RADIUS_ROOT_2026_10_27.md",
+      "sha256": "6f50be586cced14b974c414f2001fee97395901a9620967c48f3f5d03487a9bb",
+      "git_blob_sha": "74ccae87405eb340ce33dd8500c89a7055319d15",
+      "size": 5612
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_PRIVATELY_DECORATED_FOUR_ORIGIN_DICHOTOMY_C6_NEXT_2026_10_27.md",
+      "sha256": "6b00af59f66a33fbe1026ae3f5728eca5f004e24e9674d400204e7598db2395c",
+      "git_blob_sha": "780b05e9129ee3502c82622f8daa3fc870ed631b",
+      "size": 12629
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_PRIVATELY_DECORATED_FOUR_ORIGIN_DICHOTOMY_ROOT_2026_10_27.md",
+      "sha256": "0040fde90c4bf608ee20a78c44ff57e8139acfff20697ecc32c817282736b8a9",
+      "git_blob_sha": "f42f96033301e744de561982bb13333914f40934",
+      "size": 8884
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_PRIVATE_LEAF_C4_OPEN_ORIGIN_GLOBAL_2026_10_27.md",
+      "sha256": "7d6d43519e44b1c69ad60a993c97edecc6dd34e407b1d8be9d4f5731129d0375",
+      "git_blob_sha": "ccb00b436ff78dc5778203959f72c4e4e67b7240",
+      "size": 9511
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_PRIVATE_LEAF_C4_PARALLEL_NEAR_ROOT_C6_2026_10_27.md",
+      "sha256": "bb131f6a518dee2ec991ba16a2384ca9b38f59d4a091359b81ee21323a5b8792",
+      "git_blob_sha": "fd1199c6c056521f93458d7854e95e18ebe9eac2",
+      "size": 7013
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_PRIVATE_LEAF_DIAMOND_OPEN_ORIGIN_GLOBAL_2026_10_27.md",
+      "sha256": "9aa8e21f7be6bf7f64d674e4631d0ef3f934f7e817af24f36e01cb7b6451bf62",
+      "git_blob_sha": "26c0d7518983ae2e76c9e4cb4b4c1da6a56fd158",
+      "size": 11916
+    },
+    {
+      "path": "research/nine/ROOTED_C2_44_TWO_BRIDGES_GENUINE_BLOCK_EXCLUSION.md",
+      "sha256": "6cc55214aec9445da76babbad503682f9c6d49d9243593a13add7785495443c6",
+      "git_blob_sha": "74eb27435c4be02b5501dd3da3397cb1bd4e5cee",
+      "size": 7737
+    },
+    {
+      "path": "research/nine/ROOTED_C2_44_TWO_BRIDGES_GENUINE_BLOCK_NONNEGATIVE_REDUCTION.md",
+      "sha256": "1392defd8058b98bb333ed923f32a1a6982133d7439030d1922a8ca2277399d6",
+      "git_blob_sha": "4e8c823a5dffaf2d0157f1acf154c5d8c1f87964",
+      "size": 14134
+    },
+    {
+      "path": "research/nine/ROOTED_C2_44_TWO_BRIDGES_STRUCTURAL_REDUCTION.md",
+      "sha256": "3a7d5184af8b8282a9e2a2602fa928b7dbea514f85ef27204da4cb8dd0736f0c",
+      "git_blob_sha": "70453b7ffeff8a6aef7f4b15a33c03ec4b8504f0",
+      "size": 11815
+    },
+    {
+      "path": "research/nine/ROOTED_CRITICAL_DECORATED_FOUR_BLOCK_MOMENT_REDUCTION.md",
+      "sha256": "689639c228b251308af0b74f1c9a3443e465479c4bad20c13cf43e1b28e7841b",
+      "git_blob_sha": "d2b0f2d51b49125fad31345931a33dd0f2b06853",
+      "size": 13954
+    },
+    {
+      "path": "research/nine/ROOTED_GENUINE_FOUR_BLOCK_SHARED_SIDE_NEAR_PATH_EXCLUSION.md",
+      "sha256": "cdddf0fbd68d3e22d26ebfd2b1ff1f37b5f2a5d482f91549aa6611a2e9793916",
+      "git_blob_sha": "9d7e640b175c8a3b7ae6c1836345f74a6e04a917",
+      "size": 8721
+    },
+    {
+      "path": "research/nine/ROOTED_GENUINE_FOUR_BLOCK_TWO_PRIVATE_LEAF_C4_COMPLETE_EXCLUSION.md",
+      "sha256": "0f4539613c19c4d34612340dba048b93c55f887fa7beed5ac99f56f1f3f09e69",
+      "git_blob_sha": "f3801f828007c017ff7bebc39b36b271d2d6c2fb",
+      "size": 12087
+    },
+    {
+      "path": "research/nine/ROOTED_TWO_DECORATED_FOUR_BLOCKS_CRITICAL_DIAMOND_EXCLUSION.md",
+      "sha256": "81bef3c02263425ca5e9444a036ea309155c6235b7d61443de4a6c484a9db01e",
+      "git_blob_sha": "b45cd095c715c46cdd86cc119de816038e5348e3",
+      "size": 16497
+    },
+    {
+      "path": "research/nine/ROOTED_TWO_DECORATED_FOUR_BLOCKS_CRITICAL_EXCLUSION.md",
+      "sha256": "91489962ec69fb70c0452d9a838450398823ca7584375c08635dc7a711dfa553",
+      "git_blob_sha": "1ac419b78114c604456354c46b1304dc106558c8",
+      "size": 7623
+    },
+    {
+      "path": "research/nine/ROOTED_TWO_DECORATED_FOUR_BLOCKS_LOW_RADIUS_EXCLUSION.md",
+      "sha256": "756eace33688e42f3dd2817fb01ece3eb326ec480e9c155f634a63b329c3f11b",
+      "git_blob_sha": "5c1d64d06442c060f56e5fa840238e10220c1b8f",
+      "size": 9469
+    },
+    {
+      "path": "research/nine/ROOTED_TWO_DECORATED_FOUR_BOUNDARY_ORIGIN_DIAMOND_REDUCTION.md",
+      "sha256": "f96d650cff41eebb20443926004f187313435bc8c28e6aea6658ecb10ea6b6e1",
+      "git_blob_sha": "a793097d68ae33a89736883d2c39a51982b10de5",
+      "size": 19746
+    },
+    {
+      "path": "research/nine/ROOTED_TWO_DECORATED_FOUR_HIGH_RADIUS_BOUNDARY_ORIGIN_EXCLUSION.md",
+      "sha256": "6c2dca28aec21d0a3efd0c6370a56bbe7d63df4436d4877b7778ac7b73fb79f8",
+      "git_blob_sha": "6f16c7f0ed6c00d7b2ab01e306d1b474e8d4ca50",
+      "size": 26930
+    },
+    {
+      "path": "research/nine/ROOTED_TWO_PRIVATELY_DECORATED_FOUR_BLOCKS_ORIGIN_DICHOTOMY.md",
+      "sha256": "94bd85de0d2bc67d9f95100261b59a9bcb8fb019e26a4b7d68603213dca89523",
+      "git_blob_sha": "e07d7a9edcf1b3043b0b20d27619bedd8f08d582",
+      "size": 22032
+    },
+    {
+      "path": "research/nine/ROOTED_TWO_PRIVATE_LEAF_C4_OPEN_ORIGIN.md",
+      "sha256": "503adb91aacd4bf4f89c32fc944887c743a811f2fb6a4e41834c9d17ad22f3c9",
+      "git_blob_sha": "4f550d4230f8c7bbb15857c80ffae02dde04fd7b",
+      "size": 12484
+    },
+    {
+      "path": "research/nine/ROOTED_TWO_PRIVATE_LEAF_C4_PARALLEL_NEAR_ROOT_EXCLUSION.md",
+      "sha256": "da6df3ea7cac544b2cdca1c44ff13c7125cfb15d50dc3331a51cbfbb7b344c00",
+      "git_blob_sha": "67f11c11d6fc8cec02d0a9584a8aa4ad215aa2a5",
+      "size": 8270
+    }
+  ],
+  "open_coarse_by_positive_size": {
+    "7": [
+      "C1.4.b3",
+      "C1.5.b2",
+      "C1.6.b1",
+      "C1.7.b0",
+      "C2.35.b0"
+    ],
+    "6": [
+      "C1.5.b1",
+      "C1.6.b0"
+    ],
+    "8": [
+      "C1.5.b3",
+      "C1.6.b2",
+      "C1.7.b1",
+      "C1.8.b0",
+      "C2.35.b1",
+      "C2.36.b0",
+      "C2.45.b0"
+    ],
+    "9": [
+      "C1.5.b4",
+      "C1.6.b3",
+      "C1.7.b2",
+      "C1.8.b1",
+      "C1.9.b0",
+      "C2.35.b2",
+      "C2.36.b1",
+      "C2.37.b0",
+      "C2.44.b2",
+      "C2.45.b1",
+      "C2.46.b0",
+      "C2.55.b0"
+    ]
+  },
+  "unrestricted_theorem": "OPEN",
+  "original_equality_classification": "OPEN",
+  "older_global_prerequisite_audit": "OPEN",
+  "lean_integration": "OPEN",
+  "lean_compilation_run": false,
+  "ci_run": false
+}

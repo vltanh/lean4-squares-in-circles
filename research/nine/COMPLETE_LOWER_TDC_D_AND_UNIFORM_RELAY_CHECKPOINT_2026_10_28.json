@@ -1,0 +1,450 @@
+{
+  "date_utc": "2026-10-28",
+  "read_base_head": "ae6fd70959474fd82d7beae262a642678940c42a",
+  "status": "accepted complete lower TDC.D; uniform strict support separation and necessary S/H4 interfaces",
+  "coarse_total": 58,
+  "coarse_closed": 34,
+  "coarse_open": 24,
+  "fine_total": 2513,
+  "fine_checked": 2348,
+  "fine_open": 165,
+  "fine_changes": [
+    {
+      "id": "M6.B5L.HOUSE.LOWER.LTDC.D",
+      "from": " ",
+      "to": "x",
+      "original_line": "- [ ] **M6.B5L.HOUSE.LOWER.LTDC.D** Entire D-leaf type at house lower B with block loadsTDC; retain the full side-interior root slider and every block mask, force, mean and three-extra completion under M6.B5L.RETAINED_CONTRACT.",
+      "accepted_line": "- [x] **M6.B5L.HOUSE.LOWER.LTDC.D** CLOSED by LOWER_HOUSE_TDC_D_POSITIVE_ROOT_MOMENT_AND_FINAL_RELAY_EXCLUSION.md, with the complete actual-domain weak-star/nonradial-return reduction and the whole negative-sign companion. The explicit same-nine analytic R>2 entry, complete large-support/low-radius reduction and exhaustive nonzero canonical sign split cover the entire original domain. The new radius-free perpendicular-port relay excludes the last positive feature, retaining both actual means and every orientation endpoint. Full root and two separate complete final reviews passed. Original B3/A3/D3/T2/C2/L1, all circle masks, zero weights, selected normals and three completing squares remain. The S companion and lower-house parent remain open."
+    }
+  ],
+  "coarse_changes": [],
+  "original_ids_preserved_in_order": true,
+  "open_parent_description_updates": [
+    {
+      "id": "M6.B5L.ALL",
+      "original_line": "- [ ] **M6.B5L.ALL** Eleven of sixteen rooted types remain closed. The five open rooted types are house roof/hub/lower and fan endpoint/inner; they retain 10 original S/D families in nine original load orbits. All nine S alternatives remain open, and lower-house TDC.D is the sole remaining D alternative. The five newly accepted D-family exits across the last two checkpoints do not close any of these original rooted parents. All three arbitrary completion squares and every original force, mask and mean remain. C1.5.b1 remains open.",
+      "accepted_line": "- [ ] **M6.B5L.ALL** Eleven of sixteen rooted types remain closed. The five open rooted types are house roof/hub/lower and fan endpoint/inner, with exactly seven original S families in seven load orbits: roof AC/ABC, hub TC/TCB, lower TDC, fan endpoint234 and inner134. Every original D alternative is now excluded, including the complete lower-house TDC.D join. Both previously open lower TD.S and TAC.S are also closed. Each surviving rooted parent retains all three arbitrary completion squares, original forces, masks and means. C1.5.b1 remains open.",
+      "checkbox_changed": false
+    },
+    {
+      "id": "G3.M6.ASSEMBLE",
+      "original_line": "- [ ] **G3.M6.ASSEMBLE** All original six-body parents except C1.5.b1 and C1.6.b0 are closed at the declared hand-proof prerequisite scope. Finish the 10 house/fan S/D families, remaining chorded-hexagon domains and five H3/H4_D0 inner-pentagon masks with all three physical completion squares. The complete H2_D0 graph is now closed.",
+      "accepted_line": "- [ ] **G3.M6.ASSEMBLE** All original six-body parents except C1.5.b1 and C1.6.b0 are closed at the declared hand-proof prerequisite scope. Finish the seven house/fan S families, remaining chorded-hexagon domains and two H4_D0 inner-pentagon masks with all three actual completion squares. The complete H2_D0 and H3 no-chord graphs are closed. No partial owner interface closes a remaining parent.",
+      "checkbox_changed": false
+    }
+  ],
+  "source_files_and_reviews": [
+    {
+      "path": "research/nine/INNER_PENTAGON_FOUR_SPOKE_BOTH_END_AXES_EXCLUSION.md",
+      "sha256": "e1106b043b8b6b61899177a7e68121fce49c65e3ebf86273ef332cf451f437bf",
+      "git_blob_sha": "ccfe9d6cf27c3caf2253537974e1c63eb7703a84",
+      "bytes": 12008
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_FOUR_SPOKE_OWNED_UNLOADED_END_OPPOSITE_HORIZONTAL_SIGNS.md",
+      "sha256": "8a938f2d49f6307fbf2a21630d419693e675e2c5103b75a949cb0abaf6ceee09",
+      "git_blob_sha": "75b087f7ebb2dc93a993e7145aefa37446b52165",
+      "bytes": 3891
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_FOUR_SPOKE_SHARED_UNLOADED_END_EXCLUSION.md",
+      "sha256": "ab1882057cc4d5bc0be2929c0c926543a92fbbbc4f8f74598c2238707d17f9f6",
+      "git_blob_sha": "24149eabd9902e8b14fd19228c83e1c34a6ca682",
+      "bytes": 8163
+    },
+    {
+      "path": "research/nine/LOWER_HOUSE_TDC_D_FULL_MOMENT_AND_NONRADIAL_RETURN_REDUCTION.md",
+      "sha256": "51ecccadb6cebf8cfd0b2d6c6707c9b4387150d47b9be200def1df858e993edd",
+      "git_blob_sha": "55a88393fce0c4bf884b3fe95ac79b983c691f6f",
+      "bytes": 21903
+    },
+    {
+      "path": "research/nine/LOWER_HOUSE_TDC_D_NEGATIVE_ROOT_MOMENT_EXCLUSION.md",
+      "sha256": "7274452fc0411a3643b4bfa32d0cacaf748c5a1612165e272b9387d3f3241084",
+      "git_blob_sha": "e7815e4f3244a2ebbf6e9d26ec09af7b3b278517",
+      "bytes": 16370
+    },
+    {
+      "path": "research/nine/LOWER_HOUSE_TDC_D_POSITIVE_ROOT_MOMENT_AND_FINAL_RELAY_EXCLUSION.md",
+      "sha256": "e5368cd0761d4f10a203272a0df4fc695604318cfe478d4076cad7c7771a0aef",
+      "git_blob_sha": "280a73009ac96f8e3a86286e3becad5ebcb048e1",
+      "bytes": 20064
+    },
+    {
+      "path": "research/nine/ONE_UNLOADED_RETURN_HUB_ACTUAL_WEAK_MOMENT_STRIP.md",
+      "sha256": "382e06b874e41cf582b17374a122c7e4f289472f00cd6d02d926b680f15c1ed5",
+      "git_blob_sha": "bc2c41c39cea0e3e1db483a2f8ed7594086c7894",
+      "bytes": 16519
+    },
+    {
+      "path": "research/nine/OPEN_ORIGIN_S_ROOT_NEAR_STRIP_OWNED_SINGLETON_NORMAL_FORM.md",
+      "sha256": "c98e9109ed299911d7c5fab5ef6cf16777fcc9eda74b3138aba57029e1d97a39",
+      "git_blob_sha": "2b02919e1335d9b76f51d0fc9fb0dc027018525f",
+      "bytes": 11607
+    },
+    {
+      "path": "research/nine/RECOVERED_H4_END_OWNER_INTERFACES_DEPENDENCY_AUDIT_2026_10_28.json",
+      "sha256": "8f056eb6823a8c0bc87d9b2c8b3d6fe105f6457985dd0e85a9bdae5dc96d8e8e",
+      "git_blob_sha": "0dde128a3056b2d125fde078d37b7c35603e9178",
+      "bytes": 3925
+    },
+    {
+      "path": "research/nine/REVIEW_ACTUAL_WEAK_S_HUB_STRIP_ROOT_2026_10_28.md",
+      "sha256": "731c1c0ed1b8d44453af17490fe9037ff38327b5fce2996c1f30839d0722d138",
+      "git_blob_sha": "69d07945821862863c17e8a95987de305cd3bcfb",
+      "bytes": 4916
+    },
+    {
+      "path": "research/nine/REVIEW_COMPLETE_LOWER_TDC_D_ROOT_2026_10_28.md",
+      "sha256": "f445050a46198b2d46220755438155851586e638496871661d5611fc08bf76ae",
+      "git_blob_sha": "efb498a4f3a051894199d41145e5e1ec7ce60a31",
+      "bytes": 10180
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_SPOKE_BOTH_END_AXES_ROOT_2026_10_28.md",
+      "sha256": "8751fbd2e90f6e005266e5c9c64cd1186f4c0c1a85f062e29561bf36f024978f",
+      "git_blob_sha": "52cd5dafba9130beba7a05646a2b01044134d8b6",
+      "bytes": 9063
+    },
+    {
+      "path": "research/nine/REVIEW_FOUR_SPOKE_END_OWNER_INTERFACES_FRONTIER_2026_10_28.md",
+      "sha256": "151ed3ca09dfc5f9e2ac8dffb143bef5e9450cc6f0fd0289f79244ba119ada7f",
+      "git_blob_sha": "02fb993edf15cd5b9897fcb896b373628799264b",
+      "bytes": 8663
+    },
+    {
+      "path": "research/nine/REVIEW_H4_END_OWNER_INTERFACES_ROOT_CONTINUATION_2026_10_28.md",
+      "sha256": "8dce80f75ad28aee33691fda888ed076aac57c380699d6bfdc004ae9092f2e09",
+      "git_blob_sha": "6e9754ca462983bcc807d75f07cfe18d66a170e1",
+      "bytes": 6458
+    },
+    {
+      "path": "research/nine/REVIEW_H4_OWNED_UNLOADED_END_OPPOSITE_SIGNS_THIN_D_2026_10_28.md",
+      "sha256": "65afeb22e730698338e03de2a371b49a82e245b6fc2185e964a17726e785144c",
+      "git_blob_sha": "8334dd10fbb2be89c98474a1d27461b7656380f6",
+      "bytes": 5367
+    },
+    {
+      "path": "research/nine/REVIEW_LOWER_HOUSE_TDC_D_COMPLETE_FRONTIER_2026_10_28.md",
+      "sha256": "56d0eae06c3e7734453fe17ea263acbbce631d7e7becaabcdf124f942c747417",
+      "git_blob_sha": "6e4eec00e0a4030df07b0d21e9b4573b54e799f8",
+      "bytes": 19049
+    },
+    {
+      "path": "research/nine/REVIEW_LOWER_HOUSE_TDC_D_FULL_MOMENT_AND_NONRADIAL_RETURN_SHARED_S_2026_10_28.md",
+      "sha256": "23f1c87c2d69dba29931c6ee9cbd5f7a804dcaa7958735964650687cc85d9b64",
+      "git_blob_sha": "1f6963416868d967f3c345578728f8ebda54e7cb",
+      "bytes": 18526
+    },
+    {
+      "path": "research/nine/REVIEW_LOWER_HOUSE_TDC_D_NEGATIVE_ROOT_MOMENT_SHARED_S_2026_10_28.md",
+      "sha256": "5766aaaf63b7c5efeb86c27c863f4302d0a2a965e7860f3e96f80a0c5f74587d",
+      "git_blob_sha": "ae2b7ac087f1a970f61f8999ffcd98ebf09d906f",
+      "bytes": 12242
+    },
+    {
+      "path": "research/nine/REVIEW_LOWER_HOUSE_TDC_D_POSITIVE_AND_FINAL_RELAY_SHARED_S_2026_10_28.md",
+      "sha256": "bc4182a4db6c346817e089d01dc213e3a18de5c175abfe1a243f7105ac1abd97",
+      "git_blob_sha": "67cc404f021dbbcef6ccaed68005144faf5b2ff8",
+      "bytes": 15931
+    },
+    {
+      "path": "research/nine/REVIEW_ONE_UNLOADED_HUB_ACTUAL_WEAK_STRIP_FRONTIER_2026_10_28.md",
+      "sha256": "d477b3f464c1a82fe91632b7e4ed5448b86a72df3c7b9ade86af15e642e7cc66",
+      "git_blob_sha": "3e92b3ad1ff0fbaf27329e1e35de4799a17420d1",
+      "bytes": 14114
+    },
+    {
+      "path": "research/nine/REVIEW_OPEN_ORIGIN_S_NEAR_STRIP_NORMAL_FORM_ROOT_2026_10_28.md",
+      "sha256": "551564a00c89da7625dfaa4f6b14b9f27278fa9bb5b7b6dd559130fe20a1e504",
+      "git_blob_sha": "b44dab4b8aa45b48940e2abd5238f802c039c2b2",
+      "bytes": 4762
+    },
+    {
+      "path": "research/nine/REVIEW_OPEN_ORIGIN_S_OWNED_NEAR_STRIP_NORMAL_FORM_THIN_D_2026_10_28.md",
+      "sha256": "9583cfa689d107033f570b11f49b7683b7b6002fc76b56f577fc31dd9d58e01a",
+      "git_blob_sha": "9db2471e5f7703c210a1a9423ccfa880f3e8bdca",
+      "bytes": 8684
+    },
+    {
+      "path": "research/nine/REVIEW_PERPENDICULAR_TRIANGLE_STRICT_SUPPORT_FRONTIER_2026_10_28.md",
+      "sha256": "c59e222d07658ff5da55790395fd53840fc4a29ee7ffe579a84341e34260b069",
+      "git_blob_sha": "e41a00bedbb3bebefbfaa4c829a5f615ef0bfe13",
+      "bytes": 9746
+    },
+    {
+      "path": "research/nine/REVIEW_PERPENDICULAR_TRIANGLE_STRICT_SUPPORT_SHARED_S_2026_10_28.md",
+      "sha256": "26a59225aa31e4eef86d63b24f882c81728afe6ce8143e3839caa750b4f112e2",
+      "git_blob_sha": "f07a3f4e0675286489e9fb1f8083d846e68c8e92",
+      "bytes": 9680
+    },
+    {
+      "path": "research/nine/REVIEW_UNIFORM_PERPENDICULAR_TRIANGLE_SEPARATION_ROOT_2026_10_28.md",
+      "sha256": "2214d557e3adf7082ace6fe4a0d8980c54e3ab9b363708911b827597010a79f2",
+      "git_blob_sha": "ccfe7d7a8f698d5c1fbd052c364e2b3eca9febd7",
+      "bytes": 4577
+    },
+    {
+      "path": "research/nine/UNLOADED_THREE_FORCE_PERPENDICULAR_TRIANGLE_STRICT_SUPPORT_SEPARATION.md",
+      "sha256": "6630675274998befc40e87bfe67e15f0bdf0d74b7b814f82ccbc42b71dea4b24",
+      "git_blob_sha": "655fa5dce3990a10d11d22626184684ecbc48e07",
+      "bytes": 11594
+    },
+    {
+      "path": "research/nine/checkpoints/lower_house_TDC_D_final_frontier_review_2026_10_28.json",
+      "sha256": "474c557c6519099622e8b1431f0f25a493613ace5b0c82c01d4b12f7372071b3",
+      "git_blob_sha": "7224974d0e95d64fd5c771d039b6cb0af8bb6854",
+      "bytes": 8135
+    },
+    {
+      "path": "research/nine/checkpoints/one_unloaded_hub_actual_weak_strip_frontier_review_2026_10_28.json",
+      "sha256": "1d9101eda9f36c67f737b251a39db35dc27c6c286435f1f68f399accc846aa17",
+      "git_blob_sha": "527d45f75e057ddad9564baf43ace4b3d171b977",
+      "bytes": 4598
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_h4_end_owner_interfaces_2026_10_28/pr11_root_h4_both_end_axes_checks_20261028.json",
+      "sha256": "9c0ecd288cfcd50b00be871b8ed00843870294087b425ef2df385afbc71cf1cd",
+      "git_blob_sha": "76f701e43c671204254318adf9e5fcbe179adea5",
+      "bytes": 2220
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_h4_end_owner_interfaces_2026_10_28/pr11_root_h4_both_end_axes_checks_20261028.py",
+      "sha256": "438b438a0989684872f0b20327d74e5d25f09fb5d1602a781d13fa8c84cd854e",
+      "git_blob_sha": "5150b6679516a5ed83fe3e03d8a47ccababd3cd4",
+      "bytes": 4475
+    }
+  ],
+  "updated_metadata": [
+    {
+      "path": "research/nine/CYCLIC_CELL_LEDGER.md",
+      "sha256": "11e617c96b778936c4fcfee68bfbf708bd06a36e6a9a39c948a833f8c51ecd77",
+      "git_blob_sha": "46b124995d92bf288dafa8c4cabbf05b980127fd",
+      "bytes": 231061
+    },
+    {
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "sha256": "eb3b6dc0472910c2f574158b8ee91b56ce77aff3f433d21257b95c42a687675c",
+      "git_blob_sha": "936efded00510c335b6d43aa4a1e31d464547e67",
+      "bytes": 954565
+    },
+    {
+      "path": "research/nine/HANDOFF_PR11_2026_10_28_CURRENT.md",
+      "sha256": "a29f4c214548daf93419f2b1a76ab96e8e37eda6894e415c7c620eb4a5c10bfd",
+      "git_blob_sha": "c2a6091e57830a7ef37839e766b2bf70a2648035",
+      "bytes": 25688
+    }
+  ],
+  "open_coarse_ids": [
+    "C1.5.b1",
+    "C1.5.b2",
+    "C1.5.b3",
+    "C1.5.b4",
+    "C1.6.b0",
+    "C1.6.b1",
+    "C1.6.b2",
+    "C1.6.b3",
+    "C1.7.b0",
+    "C1.7.b1",
+    "C1.7.b2",
+    "C1.8.b0",
+    "C1.8.b1",
+    "C1.9.b0",
+    "C2.35.b0",
+    "C2.35.b1",
+    "C2.35.b2",
+    "C2.36.b0",
+    "C2.36.b1",
+    "C2.37.b0",
+    "C2.45.b0",
+    "C2.45.b1",
+    "C2.46.b0",
+    "C2.55.b0"
+  ],
+  "open_fine_ids": [
+    "T1.EXTRACT:",
+    "CAP.4",
+    "ROW.4",
+    "POCKET.ROUTING",
+    "QCAP.GLOBAL",
+    "CY.B5 GEOMETRY",
+    "CY.MULTILOAD",
+    "CY.MIXED.COMPLETE",
+    "C.1 GRAPH",
+    "C.2 LOAD",
+    "C.3 GEOMETRY",
+    "C.4 COMPLETION",
+    "C.5 SHARPNESS",
+    "C.6 EQUALITY",
+    "G3.0.ANNULAR.ROUTING",
+    "G3.0.DISTRIBUTED_ARTICULATIONS",
+    "G3.0.SHARP",
+    "G3.M.F.1 GRAPH",
+    "G3.M.F.1.a",
+    "G3.M.F.1.b",
+    "G3.M.F.1.c",
+    "G3.M.F.2 LOADS",
+    "G3.M.F.2.a",
+    "G3.M.F.2.b",
+    "G3.M.F.3 CONTACT FEATURES",
+    "G3.M.F.3.a",
+    "G3.M.F.3.b",
+    "G3.M.F.3.c",
+    "G3.M.F.4 JUNCTIONS",
+    "G3.M.F.5 COMPLETION ROUTING",
+    "G3.M.F.5.a",
+    "G3.M.F.5.b",
+    "G3.M.F.5.c",
+    "G3.M.F.5.d",
+    "G3.M.F.COVER",
+    "C.0 DOMAIN",
+    "C.1 EQUILIBRIUM",
+    "C.2 ROUTING",
+    "C.3 BOUND",
+    "C.3.a",
+    "C.3.b",
+    "C.3.c",
+    "C.4 EQUALITY",
+    "C.5 AUDIT",
+    "C.ALL",
+    "M6.B5L.HOUSE.ROOF.LAC.S",
+    "M6.B5L.HOUSE.ROOF.LABC.S",
+    "M6.B5L.HOUSE.HUB.LTC.S",
+    "M6.B5L.HOUSE.HUB.LTCB.S",
+    "M6.B5L.HOUSE.LOWER.LTDC.S",
+    "M6.B5L.FAN.ENDPOINT.L234.S",
+    "M6.B5L.FAN.INNER.L134.S",
+    "M6.B5L.HOUSE.ROOF",
+    "M6.B5L.HOUSE.HUB",
+    "M6.B5L.HOUSE.LOWER",
+    "M6.B5L.FAN.ENDPOINT",
+    "M6.B5L.FAN.INNER",
+    "M6.B5L.ALL",
+    "M6.B6.HEXAGON.TWO_OPPOSITE_EARS.BOUND",
+    "M6.B6.HEXAGON.D02.L014",
+    "M6.B6.HEXAGON.D02.L134",
+    "M6.B6.HEXAGON.D02.L135",
+    "M6.B6.HEXAGON.D02.L0134",
+    "M6.B6.HEXAGON.D02.L0135",
+    "M6.B6.HEXAGON.D02.L0145",
+    "M6.B6.HEXAGON.D02.L1345",
+    "M6.B6.HEXAGON.D02.L01345",
+    "M6.B6.HEXAGON.D02.ALL",
+    "M6.B6.HEXAGON.D03.L014",
+    "M6.B6.HEXAGON.D03.L024",
+    "M6.B6.HEXAGON.D03.L124",
+    "M6.B6.HEXAGON.D03.L0124",
+    "M6.B6.HEXAGON.D03.L0125",
+    "M6.B6.HEXAGON.D03.L1245",
+    "M6.B6.HEXAGON.D03.ALL",
+    "M6.B6.HEXAGON.D0203.L124",
+    "M6.B6.HEXAGON.D0203.L1234",
+    "M6.B6.HEXAGON.D0203.L1235",
+    "M6.B6.HEXAGON.D0203.L1245",
+    "M6.B6.HEXAGON.D0203.ALL",
+    "M6.B6.HEXAGON.D0204.L135",
+    "M6.B6.HEXAGON.D0204.L0135",
+    "M6.B6.HEXAGON.D0204.L1235",
+    "M6.B6.HEXAGON.D0204.L1245",
+    "M6.B6.HEXAGON.D0204.ALL",
+    "M6.B6.HEXAGON.D0235.L0134",
+    "M6.B6.HEXAGON.D0235.L0145",
+    "M6.B6.HEXAGON.D0235.ALL",
+    "M6.B6.HEXAGON.CHORD_PATH.L1245",
+    "M6.B6.HEXAGON.CHORD_PATH.ALL",
+    "M6.B6.HEXAGON.CENTRAL_TRIANGLE.L135",
+    "M6.B6.HEXAGON.CENTRAL_TRIANGLE.L0135",
+    "M6.B6.HEXAGON.CENTRAL_TRIANGLE.ALL",
+    "M6.B6.HEXAGON.BOUND",
+    "M6.B6.PENTAGON.H4_D0.L124",
+    "M6.B6.PENTAGON.H4_D0.L0124",
+    "M6.B6.PENTAGON.H4_D0_EXIT",
+    "M6.B6.ALL",
+    "G3.M6.ASSEMBLE",
+    "G3.M6.ALL",
+    "G3.M7.ALL",
+    "G3.M8.ALL",
+    "G3.M9.ALL",
+    "G3.M.ALL",
+    "G3.ALL.1",
+    "G3.ALL.3",
+    "G3.ALL.4",
+    "G3.ALL",
+    "O3.3.SHARP",
+    "O4.1",
+    "O4.2",
+    "O4.3 alternative",
+    "O5",
+    "X.3",
+    "G4.2",
+    "G4.2.a",
+    "G4.2.b",
+    "G4.2.c",
+    "G4.2.d",
+    "G4.2.e",
+    "G4.2.f",
+    "G4.3",
+    "G4.3.a",
+    "G4.3.b",
+    "G4.3.c",
+    "G5.1",
+    "G5.2",
+    "G5.3",
+    "G5.1.a",
+    "G5.1.b",
+    "G5.2.a",
+    "G5.2.b",
+    "G5.2.c",
+    "G5.3.a",
+    "G5.3.b",
+    "G5.3.c",
+    "G5.3.d",
+    "G5.4",
+    "G5.4.a",
+    "G5.4.b",
+    "G5.ALL",
+    "G6.1",
+    "G6.2",
+    "G6.3",
+    "G6.TL1 NEW",
+    "G6.TL2 NEW",
+    "G6.TL3 NEW",
+    "G6.TL4 NEW",
+    "G6.4",
+    "G6.5",
+    "G6.5.a",
+    "G6.5.b",
+    "G6.5.c",
+    "G6.5.d",
+    "G6.5.e",
+    "G6.5.f",
+    "G7.1",
+    "G7.2",
+    "G7.3",
+    "G7.4",
+    "G7.5 DEFERRED",
+    "G8.1",
+    "G8.2",
+    "G8.3",
+    "G8.4"
+  ],
+  "all_original_five_body_block_plus_leaf_D_alternatives_closed": true,
+  "remaining_house_fan_S_families": 7,
+  "remaining_house_fan_load_orbits": 7,
+  "new_computational_exclusion_certificates": 0,
+  "uniform_new_theorem_credit": 0,
+  "h4_recovery_terminal_LF_equivalences": 3,
+  "h4_historical_algebra_records_preserved": 2,
+  "execution": {
+    "lean_compilation": false,
+    "ci_dispatch": false,
+    "workflow_execution": false,
+    "merge": false
+  },
+  "scope_limits": [
+    "unrestricted sharp bound open",
+    "all original equality packings open",
+    "remaining global prerequisite audit open",
+    "Lean integration open"
+  ]
+}

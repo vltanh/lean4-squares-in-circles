@@ -1,0 +1,27 @@
+{
+  "method": "Independent exact Fraction operations; only radicals outward rounded on 2^80 lattice; complete binary prefix-tree replay; no author imports",
+  "leaf_sha256": "1d6b388ad701b0a625f14c94a4b3daf7afa8d49f31f99954d414dc9b64604357",
+  "root": [
+    53480245575024,
+    117281240296107,
+    0,
+    281474976710656
+  ],
+  "complete_visits": 949,
+  "terminal_boxes": 475,
+  "decisions": {
+    "empty:p_gt_p0": 115,
+    "empty:k1_positive": 109,
+    "pass:all": 219,
+    "empty:p_lt_b_a": 27,
+    "empty:t_positive": 3,
+    "empty:x_positive": 2
+  },
+  "max_depth": 20,
+  "independent_positive_rational_margin_floors": [
+    "5064951/250000000000",
+    "439773/3125000000",
+    "29593290207/200000000000",
+    "346537999/500000000000"
+  ]
+}

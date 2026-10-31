@@ -1,0 +1,1160 @@
+{
+  "status": "EXACT_BYTE_RECOVERY_AND_LITERAL_DEPENDENCY_RESOLUTION_NO_NEW_MATHEMATICAL_ACCEPTANCE",
+  "date_utc": "2026-10-29",
+  "purpose": "Complete original TC.S family cover recovery for the later literal whole-family assembly.",
+  "historical_comparison_commit": "a5f3922a9c12830b76f2a7ee9dd4dbf1024f85b5",
+  "historical_comparison_tree": "2617ed629140d69171c86bfa68b0ee5784ab8c8c",
+  "root_metadata_modified": false,
+  "existing_canonical_bytes_overwritten": false,
+  "new_canonical_objects": [
+    "ADDENDUM_NEAR_SIDE_RETURN_RECORD_SUMMAND_ORDER_A5F_2026_10_29.md",
+    "ADOPTION_NEAR_SIDE_BOUNDARY_RETURN_AXIS_STRICT_HOUSE_ROOT_A5F_2026_10_29.md",
+    "ADOPTION_OWNED_GENUINE_S_ROOT_FULL_AT_FOUR_CELL_COVER_ROOT_A5F_2026_10_29.md",
+    "ADOPTION_STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_HOUSE_ROOT_A5F_2026_10_29.md",
+    "ADOPTION_UPPER_ADJACENT_SIGNED_FULL_JUNCTION_FOUR_CELL_ROOT_A5F_2026_10_29.md",
+    "AUTHOR_NEAR_SIDE_BOUNDARY_RETURN_AXIS_OBSTRUCTION_STRICT_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+    "AUTHOR_OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_EXACT_RECORD_A5F_2026_10_29.json",
+    "AUTHOR_STRICT_COMMON_ROOT_CORNER_JUNCTION_DIAGONAL_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+    "AUTHOR_UPPER_ADJACENT_SIGNED_PORT_FULL_JUNCTION_FOUR_RETURN_EXACT_RECORD_A5F_2026_10_29.json",
+    "INDEPENDENT_NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_STRICT_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+    "INDEPENDENT_OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_EXACT_RECORD_A5F_2026_10_29.json",
+    "INDEPENDENT_STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+    "INDEPENDENT_UPPER_ADJACENT_SIGNED_PORT_FULL_JUNCTION_FOUR_RETURN_EXACT_RECORD_A5F_2026_10_29.json",
+    "NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_OBSTRUCTION_AND_STRICT_HOUSE_RETURN_EXCLUSION.md",
+    "OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_AND_FOUR_ORIGINAL_TC_RESIDUALS.md",
+    "REVIEW_NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_STRICT_HOUSE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+    "REVIEW_OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+    "REVIEW_STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_HOUSE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+    "REVIEW_UPPER_ADJACENT_SIGNED_PORT_FULL_JUNCTION_FOUR_RETURN_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+    "STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_DIAGONAL_AND_HOUSE_RETURN_EXCLUSION.md",
+    "UPPER_ADJACENT_GENUINE_LEAF_SIGNED_PORT_FULL_JUNCTION_AND_FOUR_RETURN_REDUCTION.md"
+  ],
+  "payload_count": 59,
+  "source_target_pins": {
+    "OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_AND_FOUR_ORIGINAL_TC_RESIDUALS.md": "dc28061e32ed9bb4b32c062b7ffbaa9e46733d1002d01dbb769441324ec70d04",
+    "UPPER_ADJACENT_GENUINE_LEAF_SIGNED_PORT_FULL_JUNCTION_AND_FOUR_RETURN_REDUCTION.md": "dc7542f5b58121e5c5e85ca82fe40373ea021d035d647eb2d6110e078661ffaf",
+    "NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_OBSTRUCTION_AND_STRICT_HOUSE_RETURN_EXCLUSION.md": "d92ec80546d6ae608494626e6f05c52c5f8ff2c7548be0bd98b93bbbc892c8ff",
+    "STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_DIAGONAL_AND_HOUSE_RETURN_EXCLUSION.md": "44fa42fa2f33468495fb00d6d0c82287afc25cbd0416b28cd81e6d96ba0a6a71"
+  },
+  "objects": [
+    {
+      "name": "ADDENDUM_NEAR_SIDE_RETURN_RECORD_SUMMAND_ORDER_A5F_2026_10_29.md",
+      "sha256": "a6ff9379b10b6e9d885fb1f47656844a71de598cc10089deaaa819ae7d722adf",
+      "git_blob": "7bbe28af5f4e9c98b69320c0b2237c45aea317f0",
+      "bytes": 3175,
+      "lines": 45,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/ADDENDUM_NEAR_SIDE_RETURN_RECORD_SUMMAND_ORDER_A5F_2026_10_29.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/ADDENDUM_NEAR_SIDE_RETURN_RECORD_SUMMAND_ORDER_A5F_2026_10_29.md",
+      "canonical_relative_path": "ADDENDUM_NEAR_SIDE_RETURN_RECORD_SUMMAND_ORDER_A5F_2026_10_29.md",
+      "canonical_state_at_recovery": "created_absent",
+      "category": "complete_acceptance",
+      "roles": [
+        "d92 unchanged named-summand provenance clarification",
+        "recovered canonical source or its complete historical acceptance chain",
+        "required named-summand clarification accompanying unchanged accepted d92e exact record"
+      ]
+    },
+    {
+      "name": "ADOPTION_BROADER_CENTERED_ARCS_AND_TWO_FULL_STAR_REDUCTIONS_ROOT_2026_10_28.md",
+      "sha256": "cf84585f5eba59a6df2e61a657f65a62248f74d0064d8a43907947ba9f4dc503",
+      "git_blob": "df552f0a8f51898f5c76c8f7739ac24fa55294de",
+      "bytes": 9911,
+      "lines": 186,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/current_315_base/research/nine/ADOPTION_BROADER_CENTERED_ARCS_AND_TWO_FULL_STAR_REDUCTIONS_ROOT_2026_10_28.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/ADOPTION_BROADER_CENTERED_ARCS_AND_TWO_FULL_STAR_REDUCTIONS_ROOT_2026_10_28.md",
+      "canonical_relative_path": "ADOPTION_BROADER_CENTERED_ARCS_AND_TWO_FULL_STAR_REDUCTIONS_ROOT_2026_10_28.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "complete_acceptance",
+      "roles": [
+        "2a6 full root adoption",
+        "complete published adoption of the high-support physical-mask and original full-star reduction",
+        "complete published upstream review/adoption already read in the preceding source work"
+      ]
+    },
+    {
+      "name": "ADOPTION_COMPLETE_ROOF_INTERFACES_AND_BOUNDARY_FREE_STAR_ROOT_2026_10_28.md",
+      "sha256": "aa52da0dee41ff228f68e9e4b9d8982f6d5ab89cfd0f58c62b53f84158a77678",
+      "git_blob": "689687ea7118aa552b8eb9d7f2740fb0c1826181",
+      "bytes": 13739,
+      "lines": 254,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/current_315_base/research/nine/ADOPTION_COMPLETE_ROOF_INTERFACES_AND_BOUNDARY_FREE_STAR_ROOT_2026_10_28.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/ADOPTION_COMPLETE_ROOF_INTERFACES_AND_BOUNDARY_FREE_STAR_ROOT_2026_10_28.md",
+      "canonical_relative_path": "ADOPTION_COMPLETE_ROOF_INTERFACES_AND_BOUNDARY_FREE_STAR_ROOT_2026_10_28.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "complete_acceptance",
+      "roles": [
+        "3808 full root adoption",
+        "3808 root acceptance boundary",
+        "complete published adoption of the boundary-free two-application theorem"
+      ]
+    },
+    {
+      "name": "ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "sha256": "fb99b163e4450df464fcc095ac6aea0a3294624fcb329ffbc515efda6a0bea28",
+      "git_blob": "73cfd49b7ba738e5cd85a057d98358ea1c3b36d4",
+      "bytes": 17104,
+      "lines": 345,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/current_315_base/research/nine/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "canonical_relative_path": "ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "complete_acceptance",
+      "roles": [
+        "6f full root adoption",
+        "complete published adoption of the exact full original-domain entry",
+        "complete published upstream review/adoption already read in the preceding source work"
+      ]
+    },
+    {
+      "name": "ADOPTION_NEAR_SIDE_BOUNDARY_RETURN_AXIS_STRICT_HOUSE_ROOT_A5F_2026_10_29.md",
+      "sha256": "5b82dea0252963c0c55b85ae0d1f41061f38f1a9beab98e5228a3bd54b5fec38",
+      "git_blob": "0f2943281bf6888ce41397cd18314c52f8b80679",
+      "bytes": 14287,
+      "lines": 157,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/ADOPTION_NEAR_SIDE_BOUNDARY_RETURN_AXIS_STRICT_HOUSE_ROOT_A5F_2026_10_29.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/ADOPTION_NEAR_SIDE_BOUNDARY_RETURN_AXIS_STRICT_HOUSE_ROOT_A5F_2026_10_29.md",
+      "canonical_relative_path": "ADOPTION_NEAR_SIDE_BOUNDARY_RETURN_AXIS_STRICT_HOUSE_ROOT_A5F_2026_10_29.md",
+      "canonical_state_at_recovery": "created_absent",
+      "category": "complete_acceptance",
+      "roles": [
+        "d92 provenance adoption only",
+        "recovered canonical source or its complete historical acceptance chain",
+        "separate accepted local adoption"
+      ]
+    },
+    {
+      "name": "ADOPTION_OWNED_GENUINE_S_ROOT_FULL_AT_FOUR_CELL_COVER_ROOT_A5F_2026_10_29.md",
+      "sha256": "dced6e8226b421a855a14c8b4a4a320b19eba4f90270df7773c5a724b33b26bb",
+      "git_blob": "840292e4dc9d3894c4829e624f6ea14bd0f2eabb",
+      "bytes": 14032,
+      "lines": 147,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/ADOPTION_OWNED_GENUINE_S_ROOT_FULL_AT_FOUR_CELL_COVER_ROOT_A5F_2026_10_29.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/ADOPTION_OWNED_GENUINE_S_ROOT_FULL_AT_FOUR_CELL_COVER_ROOT_A5F_2026_10_29.md",
+      "canonical_relative_path": "ADOPTION_OWNED_GENUINE_S_ROOT_FULL_AT_FOUR_CELL_COVER_ROOT_A5F_2026_10_29.md",
+      "canonical_state_at_recovery": "created_absent",
+      "category": "complete_acceptance",
+      "roles": [
+        "recovered canonical source or its complete historical acceptance chain"
+      ]
+    },
+    {
+      "name": "ADOPTION_STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_HOUSE_ROOT_A5F_2026_10_29.md",
+      "sha256": "34c7ffd6f52bcd62fa7115711360375567d74bba93923bf26e9d3bed82af0541",
+      "git_blob": "2497bc4ecfc9dd1797d206c17441999528efecb3",
+      "bytes": 15366,
+      "lines": 174,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/ADOPTION_STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_HOUSE_ROOT_A5F_2026_10_29.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/ADOPTION_STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_HOUSE_ROOT_A5F_2026_10_29.md",
+      "canonical_relative_path": "ADOPTION_STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_HOUSE_ROOT_A5F_2026_10_29.md",
+      "canonical_state_at_recovery": "created_absent",
+      "category": "complete_acceptance",
+      "roles": [
+        "44fa full separate root adoption",
+        "recovered canonical source or its complete historical acceptance chain",
+        "separate accepted local adoption"
+      ]
+    },
+    {
+      "name": "ADOPTION_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_ROOT_A5F_2026_10_29.md",
+      "sha256": "b91387e036acae1af2390d31ea31c333f569430122aa2bd3177706d4dc09c7d5",
+      "git_blob": "70262ae6a1c89c3af7b2fd287a0580e1daae3136",
+      "bytes": 11537,
+      "lines": 216,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/ADOPTION_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_ROOT_A5F_2026_10_29.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/ADOPTION_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_ROOT_A5F_2026_10_29.md",
+      "canonical_relative_path": "ADOPTION_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_ROOT_A5F_2026_10_29.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "complete_acceptance",
+      "roles": [
+        "0c67 full root adoption",
+        "separate accepted local adoption"
+      ]
+    },
+    {
+      "name": "ADOPTION_THREE_BROAD_CONTINUOUS_CAP_OWNER_AND_SHIFT_TOOLS_ROOT_2026_10_29.md",
+      "sha256": "865db6ecd1b9ee6774a11be75edd4f73b59e132a21bc9df1708cc3169183c36e",
+      "git_blob": "4c1a4718606ec73576d039a4e91ae1401f7def57",
+      "bytes": 8044,
+      "lines": 43,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/current_a5f_base/research/nine/ADOPTION_THREE_BROAD_CONTINUOUS_CAP_OWNER_AND_SHIFT_TOOLS_ROOT_2026_10_29.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/ADOPTION_THREE_BROAD_CONTINUOUS_CAP_OWNER_AND_SHIFT_TOOLS_ROOT_2026_10_29.md",
+      "canonical_relative_path": "ADOPTION_THREE_BROAD_CONTINUOUS_CAP_OWNER_AND_SHIFT_TOOLS_ROOT_2026_10_29.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "complete_acceptance",
+      "roles": [
+        "complete published adoption of the exact whole upper-mean owner union",
+        "complete published upstream review/adoption already read in the preceding source work"
+      ]
+    },
+    {
+      "name": "ADOPTION_TILTED_CHANNEL_LOWER_RETURN_SUPPORT_FACE_ROOT_A5F_2026_10_29.md",
+      "sha256": "95b663f447e13350801c0be9f7252cf9a6a8ad72260905ec9de388409681632e",
+      "git_blob": "52e8bb4c42a562bb85b4246fa6b542352f7842f6",
+      "bytes": 11917,
+      "lines": 216,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/ADOPTION_TILTED_CHANNEL_LOWER_RETURN_SUPPORT_FACE_ROOT_A5F_2026_10_29.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/ADOPTION_TILTED_CHANNEL_LOWER_RETURN_SUPPORT_FACE_ROOT_A5F_2026_10_29.md",
+      "canonical_relative_path": "ADOPTION_TILTED_CHANNEL_LOWER_RETURN_SUPPORT_FACE_ROOT_A5F_2026_10_29.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "complete_acceptance",
+      "roles": [
+        "Separate accepted be0 root adoption"
+      ]
+    },
+    {
+      "name": "ADOPTION_UPPER_ADJACENT_SIGNED_FULL_JUNCTION_FOUR_CELL_ROOT_A5F_2026_10_29.md",
+      "sha256": "6f23a5737798b69f1d192dff97888845b5e143dfcdd58aab573e13c04457d340",
+      "git_blob": "62494e81082a7c11306abb5a54effc02f672b3b2",
+      "bytes": 19419,
+      "lines": 192,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/ADOPTION_UPPER_ADJACENT_SIGNED_FULL_JUNCTION_FOUR_CELL_ROOT_A5F_2026_10_29.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/ADOPTION_UPPER_ADJACENT_SIGNED_FULL_JUNCTION_FOUR_CELL_ROOT_A5F_2026_10_29.md",
+      "canonical_relative_path": "ADOPTION_UPPER_ADJACENT_SIGNED_FULL_JUNCTION_FOUR_CELL_ROOT_A5F_2026_10_29.md",
+      "canonical_state_at_recovery": "created_absent",
+      "category": "complete_acceptance",
+      "roles": [
+        "recovered canonical source or its complete historical acceptance chain"
+      ]
+    },
+    {
+      "name": "ALIGNED_RADIAL_C_GENUINE_S_HOUSE_OWNED_AD_UPPER_MEAN_INTERVAL_EXCLUSION.md",
+      "sha256": "80bf0a971d264ccaeacbcf27facd819ebe0feb803d3b7ccbd42cb314d7364cc1",
+      "git_blob": "3a925464bdac8649829341475908ac84723ce15c",
+      "bytes": 17937,
+      "lines": 497,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/current_315_base/research/nine/ALIGNED_RADIAL_C_GENUINE_S_HOUSE_OWNED_AD_UPPER_MEAN_INTERVAL_EXCLUSION.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/ALIGNED_RADIAL_C_GENUINE_S_HOUSE_OWNED_AD_UPPER_MEAN_INTERVAL_EXCLUSION.md",
+      "canonical_relative_path": "ALIGNED_RADIAL_C_GENUINE_S_HOUSE_OWNED_AD_UPPER_MEAN_INTERVAL_EXCLUSION.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "operative_sources",
+      "roles": [
+        "Critical mathematical predecessor of the upper-owner union; full source freshly reconstructed, including the exact boundary-free fork."
+      ]
+    },
+    {
+      "name": "ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334",
+      "git_blob": "75fa5e0b4a97ec854ecd4a3af0ef03799c78a5cb",
+      "bytes": 20196,
+      "lines": 511,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/current_a5f_base/research/nine/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "canonical_relative_path": "ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "operative_sources",
+      "roles": [
+        "entire original q>=3/8 exit; complementary strict interval only",
+        "operative entire original q>=3/8 exit, used only for the complementary q<3/8 domain"
+      ]
+    },
+    {
+      "name": "AUTHOR_NEAR_SIDE_BOUNDARY_RETURN_AXIS_OBSTRUCTION_STRICT_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+      "sha256": "6aaa23d2db54f4c05e788335820bc2d526cb71f0a7a4980ee5b4220cdd8182d6",
+      "git_blob": "2ea49cb254f7dddf7348e06146f213d4eb4d6bbc",
+      "bytes": 27890,
+      "lines": 707,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/AUTHOR_NEAR_SIDE_BOUNDARY_RETURN_AXIS_OBSTRUCTION_STRICT_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/exact_records/AUTHOR_NEAR_SIDE_BOUNDARY_RETURN_AXIS_OBSTRUCTION_STRICT_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+      "canonical_relative_path": "AUTHOR_NEAR_SIDE_BOUNDARY_RETURN_AXIS_OBSTRUCTION_STRICT_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+      "canonical_state_at_recovery": "created_absent",
+      "category": "exact_records",
+      "roles": [
+        "recovered canonical source or its complete historical acceptance chain"
+      ]
+    },
+    {
+      "name": "AUTHOR_OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_EXACT_RECORD_A5F_2026_10_29.json",
+      "sha256": "352562501999bc9d6c9a8ff391fa6ac485b62511418335c0ac81516b4ee030ea",
+      "git_blob": "4147fe4e47c0a4c7d2e8e8483f0c35c94265943c",
+      "bytes": 29935,
+      "lines": 726,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/AUTHOR_OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_EXACT_RECORD_A5F_2026_10_29.json",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/exact_records/AUTHOR_OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_EXACT_RECORD_A5F_2026_10_29.json",
+      "canonical_relative_path": "AUTHOR_OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_EXACT_RECORD_A5F_2026_10_29.json",
+      "canonical_state_at_recovery": "created_absent",
+      "category": "exact_records",
+      "roles": [
+        "recovered canonical source or its complete historical acceptance chain"
+      ]
+    },
+    {
+      "name": "AUTHOR_STRICT_COMMON_ROOT_CORNER_JUNCTION_DIAGONAL_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+      "sha256": "e90448e0451f255dde3ddef10c3594c75dc5273a3522296488a2cc2e1ecbbdb8",
+      "git_blob": "b077985aba0bedfda58aaf34925702e261ddd8c3",
+      "bytes": 28670,
+      "lines": 723,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/AUTHOR_STRICT_COMMON_ROOT_CORNER_JUNCTION_DIAGONAL_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/exact_records/AUTHOR_STRICT_COMMON_ROOT_CORNER_JUNCTION_DIAGONAL_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+      "canonical_relative_path": "AUTHOR_STRICT_COMMON_ROOT_CORNER_JUNCTION_DIAGONAL_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+      "canonical_state_at_recovery": "created_absent",
+      "category": "exact_records",
+      "roles": [
+        "recovered canonical source or its complete historical acceptance chain"
+      ]
+    },
+    {
+      "name": "AUTHOR_UPPER_ADJACENT_SIGNED_PORT_FULL_JUNCTION_FOUR_RETURN_EXACT_RECORD_A5F_2026_10_29.json",
+      "sha256": "3003a3076843912dbca2a807f671f35fbee39f7cc9994d46a0dbf24d9f0affd7",
+      "git_blob": "59f3ad2634a949778a8d6275fcd6ff36a58cc318",
+      "bytes": 99532,
+      "lines": 2567,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/AUTHOR_UPPER_ADJACENT_SIGNED_PORT_FULL_JUNCTION_FOUR_RETURN_EXACT_RECORD_A5F_2026_10_29.json",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/exact_records/AUTHOR_UPPER_ADJACENT_SIGNED_PORT_FULL_JUNCTION_FOUR_RETURN_EXACT_RECORD_A5F_2026_10_29.json",
+      "canonical_relative_path": "AUTHOR_UPPER_ADJACENT_SIGNED_PORT_FULL_JUNCTION_FOUR_RETURN_EXACT_RECORD_A5F_2026_10_29.json",
+      "canonical_state_at_recovery": "created_absent",
+      "category": "exact_records",
+      "roles": [
+        "recovered canonical source or its complete historical acceptance chain"
+      ]
+    },
+    {
+      "name": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "git_blob": "a04c76e0a2ef54535e54006b584c656e0d6417c7",
+      "bytes": 17789,
+      "lines": 376,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/current_a67_base/research/nine/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "canonical_relative_path": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "operative_sources",
+      "roles": [
+        "Complete graph/load source read previously in the immediately preceding a813 proof work; exact house HUB/LTC/S role and degree map reconstructed again.",
+        "Literal original six-body component and load identity",
+        "Original actual graph/load identity"
+      ]
+    },
+    {
+      "name": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "git_blob": "f1e09cf1f62a2bb6305bd2c20e7d49be2fffc0ae",
+      "bytes": 13651,
+      "lines": 302,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/current_315_base/research/nine/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "canonical_relative_path": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "operative_sources",
+      "roles": [
+        "Whole original entry and upper-adjacent actual leaf chart",
+        "complete original TC residual and original graph",
+        "operative entire original-domain residual, graph, actual leaf and C force cover"
+      ]
+    },
+    {
+      "name": "GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+      "sha256": "4f8da84dcc3f1fa9b8f5e231486751b134b3438905e8271f6f3484a3f10d275a",
+      "git_blob": "69eb2e51f2a8fe607dbac1d58ae6be85fbb6eaa2",
+      "bytes": 15961,
+      "lines": 383,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/current_315_base/research/nine/GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+      "canonical_relative_path": "GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "operative_sources",
+      "roles": [
+        "Complete leaf-chart provenance within6f",
+        "Complete original root-feature source read in the preceding a813 proof work; exact owned-leaf chart and original mean relations used here."
+      ]
+    },
+    {
+      "name": "HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143",
+      "git_blob": "4625dfa796aa6a8eb1166efd326b55f0b87afda1",
+      "bytes": 17930,
+      "lines": 427,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/current_315_base/research/nine/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "canonical_relative_path": "HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "operative_sources",
+      "roles": [
+        "Both complete original C2 rows",
+        "complete actual C force/mask cover and its original means",
+        "operative complete actual C mask/force cover and true D3 touching-return strict whole-body support"
+      ]
+    },
+    {
+      "name": "INDEPENDENT_NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_STRICT_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+      "sha256": "3703439b6b26131b9fe00381aabfa44792ded2113f32491fef3210dff8671439",
+      "git_blob": "16d64e271d53e66482f0233e7941b6a949b5b7e9",
+      "bytes": 75306,
+      "lines": 1811,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/INDEPENDENT_NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_STRICT_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/exact_records/INDEPENDENT_NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_STRICT_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+      "canonical_relative_path": "INDEPENDENT_NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_STRICT_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+      "canonical_state_at_recovery": "created_absent",
+      "category": "exact_records",
+      "roles": [
+        "recovered canonical source or its complete historical acceptance chain",
+        "separate accepted local record"
+      ]
+    },
+    {
+      "name": "INDEPENDENT_OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_EXACT_RECORD_A5F_2026_10_29.json",
+      "sha256": "497ef4cd16c9d6b3968a19ef3c0ba69bd99174383c71f762b3332d0daec5211e",
+      "git_blob": "532ff6f97d5e4458fb76cadafc1223e7d50eb0bb",
+      "bytes": 118361,
+      "lines": 3131,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/INDEPENDENT_OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_EXACT_RECORD_A5F_2026_10_29.json",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/exact_records/INDEPENDENT_OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_EXACT_RECORD_A5F_2026_10_29.json",
+      "canonical_relative_path": "INDEPENDENT_OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_EXACT_RECORD_A5F_2026_10_29.json",
+      "canonical_state_at_recovery": "created_absent",
+      "category": "exact_records",
+      "roles": [
+        "recovered canonical source or its complete historical acceptance chain"
+      ]
+    },
+    {
+      "name": "INDEPENDENT_STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+      "sha256": "f06804d38ded98247b7f69bc36e8541c99a2f3d39206331da27d5eb76748b757",
+      "git_blob": "f998d714b751ab368b84f9971545ccba9751b3c0",
+      "bytes": 79242,
+      "lines": 1825,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/INDEPENDENT_STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/exact_records/INDEPENDENT_STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+      "canonical_relative_path": "INDEPENDENT_STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+      "canonical_state_at_recovery": "created_absent",
+      "category": "exact_records",
+      "roles": [
+        "44fa accepted exact independent record",
+        "recovered canonical source or its complete historical acceptance chain",
+        "separate accepted local record"
+      ]
+    },
+    {
+      "name": "INDEPENDENT_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_EXACT_RECORD_A5F_2026_10_29.json",
+      "sha256": "6504d2ec0cb300a2dfa52ac7c6ecffce1489638bf6364591ddcd67ef3bd28ced",
+      "git_blob": "276861dbcbd5cc5d23da85df6dc2f385afc4b6c2",
+      "bytes": 48292,
+      "lines": 1370,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/INDEPENDENT_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_EXACT_RECORD_A5F_2026_10_29.json",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/exact_records/INDEPENDENT_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_EXACT_RECORD_A5F_2026_10_29.json",
+      "canonical_relative_path": "INDEPENDENT_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_EXACT_RECORD_A5F_2026_10_29.json",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "exact_records",
+      "roles": [
+        "0c67 accepted exact independent record",
+        "separate accepted local record"
+      ]
+    },
+    {
+      "name": "INDEPENDENT_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_EXACT_RECORD_A5F_2026_10_29.json",
+      "sha256": "b6d131f0adb918d36f15c4330532455af4d2a7ea9cfe1ecc9903ccd674776c33",
+      "git_blob": "88c8f619ff4dc9e650381cb679126c214f643d5d",
+      "bytes": 46547,
+      "lines": 1199,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/INDEPENDENT_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_EXACT_RECORD_A5F_2026_10_29.json",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/exact_records/INDEPENDENT_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_EXACT_RECORD_A5F_2026_10_29.json",
+      "canonical_relative_path": "INDEPENDENT_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_EXACT_RECORD_A5F_2026_10_29.json",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "exact_records",
+      "roles": [
+        "Accepted be0 exact provenance"
+      ]
+    },
+    {
+      "name": "INDEPENDENT_UPPER_ADJACENT_SIGNED_PORT_FULL_JUNCTION_FOUR_RETURN_EXACT_RECORD_A5F_2026_10_29.json",
+      "sha256": "340cc5e088e1c202ee33821fa500a7dcf0ffa679a3b62ada5dad99ec5508c293",
+      "git_blob": "2e2aac3cbafd2e6474e36fb862964a0619b89444",
+      "bytes": 163850,
+      "lines": 4260,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/INDEPENDENT_UPPER_ADJACENT_SIGNED_PORT_FULL_JUNCTION_FOUR_RETURN_EXACT_RECORD_A5F_2026_10_29.json",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/exact_records/INDEPENDENT_UPPER_ADJACENT_SIGNED_PORT_FULL_JUNCTION_FOUR_RETURN_EXACT_RECORD_A5F_2026_10_29.json",
+      "canonical_relative_path": "INDEPENDENT_UPPER_ADJACENT_SIGNED_PORT_FULL_JUNCTION_FOUR_RETURN_EXACT_RECORD_A5F_2026_10_29.json",
+      "canonical_state_at_recovery": "created_absent",
+      "category": "exact_records",
+      "roles": [
+        "recovered canonical source or its complete historical acceptance chain"
+      ]
+    },
+    {
+      "name": "LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78",
+      "git_blob": "f6afbca0c7607933fe807064a02bc512d921a9e0",
+      "bytes": 23353,
+      "lines": 555,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/current_315_base/research/nine/LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "canonical_relative_path": "LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "operative_sources",
+      "roles": [
+        "Accepted complete 3808 interface consumed inside d92e/44fa",
+        "Complete full-star application dichotomy",
+        "operative actual one-application and two-distinct-nonparallel alternatives, including physical-two exterior concurrence"
+      ]
+    },
+    {
+      "name": "NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_OBSTRUCTION_AND_STRICT_HOUSE_RETURN_EXCLUSION.md",
+      "sha256": "d92ec80546d6ae608494626e6f05c52c5f8ff2c7548be0bd98b93bbbc892c8ff",
+      "git_blob": "1238d2c529554d1b13a93538d262218e3ccbf143",
+      "bytes": 20560,
+      "lines": 526,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_OBSTRUCTION_AND_STRICT_HOUSE_RETURN_EXCLUSION.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_OBSTRUCTION_AND_STRICT_HOUSE_RETURN_EXCLUSION.md",
+      "canonical_relative_path": "NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_OBSTRUCTION_AND_STRICT_HOUSE_RETURN_EXCLUSION.md",
+      "canonical_state_at_recovery": "created_absent",
+      "category": "operative_sources",
+      "roles": [
+        "Method provenance only for expanded signed near-side and low-junction lemmas",
+        "entire actual strict-AD / AT=-u exclusion in both C force branches",
+        "recovered canonical source or its complete historical acceptance chain"
+      ]
+    },
+    {
+      "name": "OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_AND_FOUR_ORIGINAL_TC_RESIDUALS.md",
+      "sha256": "dc28061e32ed9bb4b32c062b7ffbaa9e46733d1002d01dbb769441324ec70d04",
+      "git_blob": "2e732fdc74ece366f218eede86ab2d3888626c7e",
+      "bytes": 15523,
+      "lines": 314,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_AND_FOUR_ORIGINAL_TC_RESIDUALS.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_AND_FOUR_ORIGINAL_TC_RESIDUALS.md",
+      "canonical_relative_path": "OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_AND_FOUR_ORIGINAL_TC_RESIDUALS.md",
+      "canonical_state_at_recovery": "created_absent",
+      "category": "operative_sources",
+      "roles": [
+        "recovered canonical source or its complete historical acceptance chain"
+      ]
+    },
+    {
+      "name": "PARALLEL_TRANSMISSION_AND_FOUR_CYCLES.md",
+      "sha256": "ec8be96131806c998d8a768526d2deb644c28be72559d34e033c8d07d917ffab",
+      "git_blob": "d39302a1765844fe36959739fc5436d26e720e8f",
+      "bytes": 12165,
+      "lines": 133,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_8955/review_inputs/PARALLEL_TRANSMISSION_AND_FOUR_CYCLES.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/PARALLEL_TRANSMISSION_AND_FOUR_CYCLES.md",
+      "canonical_relative_path": "PARALLEL_TRANSMISSION_AND_FOUR_CYCLES.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "operative_sources",
+      "roles": [
+        "Only radius-free normal-transmission Lemma N.1"
+      ]
+    },
+    {
+      "name": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "git_blob": "723228d77626f68c3ded2e3e897a21d4f1ed7ccc",
+      "bytes": 14121,
+      "lines": 326,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/current_a67_base/research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "canonical_relative_path": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "operative_sources",
+      "roles": [
+        "Original prescribed strict singleton contact convention",
+        "Standing prescribed strict vertex/vertex singleton convention",
+        "operative original prescribed strict vertex/vertex convention; no new normal selection, atom thinning, global compatibility claim or embedding operation"
+      ]
+    },
+    {
+      "name": "PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "git_blob": "fd91cf5e38a8b9eb877710cab9d4dd1575f9bc22",
+      "bytes": 17993,
+      "lines": 399,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/current_c62_base/research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/PHYSICAL_CONTACT_STRESS.md",
+      "canonical_relative_path": "PHYSICAL_CONTACT_STRESS.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "operative_sources",
+      "roles": [
+        "Standing actual force/torque/mean and strict singleton contract; actual B2 transmission",
+        "Standing original physical force/torque/mean contract; strict convention",
+        "published force-contract provenance; the entire operative original equations are printed in the new source"
+      ]
+    },
+    {
+      "name": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "git_blob": "8f935773421d3d6bcc8a7a6387a85851b27a1771",
+      "bytes": 14902,
+      "lines": 327,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/current_a67_base/research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "canonical_relative_path": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "operative_sources",
+      "roles": [
+        "Complete source previously read at identical bytes; literal genuine occupied radial-S leaf interface retained, not a new extraction audit."
+      ]
+    },
+    {
+      "name": "RESEARCH_UPPER_ADJACENT_FULL_STAR_RETURN_REDUCTION_CHECKPOINT_2026_10_29.md",
+      "sha256": "7cb7891bada8e451dcdea4023c4a9a61b5409dae7449899fa2672bec4937dc56",
+      "git_blob": "0c610f6aa4e1e6479218e9ebf57907c6fedd8dab",
+      "bytes": 18961,
+      "lines": 329,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/RESEARCH_UPPER_ADJACENT_FULL_STAR_RETURN_REDUCTION_CHECKPOINT_2026_10_29.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/descriptive_provenance_only/RESEARCH_UPPER_ADJACENT_FULL_STAR_RETURN_REDUCTION_CHECKPOINT_2026_10_29.md",
+      "canonical_relative_path": null,
+      "canonical_state_at_recovery": "not_canonical_provenance_only",
+      "category": "descriptive_provenance_only",
+      "roles": [
+        "Prior unadopted discovery checkpoint only"
+      ]
+    },
+    {
+      "name": "REVIEW_ALIGNED_RADIAL_C_OWNED_AD_UPPER_INTERVAL_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "sha256": "605967b4ac3c17e984517625ef680075ce7d37a5ab12a20caa613e7053378110",
+      "git_blob": "faf14f89170a9e1958ccab707bded2bd19f651f2",
+      "bytes": 13624,
+      "lines": 329,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/current_315_base/research/nine/REVIEW_ALIGNED_RADIAL_C_OWNED_AD_UPPER_INTERVAL_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/REVIEW_ALIGNED_RADIAL_C_OWNED_AD_UPPER_INTERVAL_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "canonical_relative_path": "REVIEW_ALIGNED_RADIAL_C_OWNED_AD_UPPER_INTERVAL_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "complete_acceptance",
+      "roles": [
+        "Full separate review of the complete upper-interval owned-AD exit, freshly read."
+      ]
+    },
+    {
+      "name": "REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+      "sha256": "167e5f8a305f33944e798668394d1d3efd92b4626968f3ad75dea494f371c154",
+      "git_blob": "ebc03976c208188226e8745d4ea2d2f9ea9e53b8",
+      "bytes": 13485,
+      "lines": 294,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/current_a5f_base/research/nine/REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+      "canonical_relative_path": "REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "complete_acceptance",
+      "roles": [
+        "complete published upstream review/adoption already read in the preceding source work",
+        "complete separate upstream independent review, not a replacement for the mathematical source read"
+      ]
+    },
+    {
+      "name": "REVIEW_GENERAL_THREE_FORCE_TOUCHING_RETURN_SEPARATION_THIN_D_2026_10_28.md",
+      "sha256": "bc4a2c79adbdb2715df4f29da48c7cb432eef38efd1e4d55a051ec152bcafb1c",
+      "git_blob": "20d9b2b6987bcfc7e98919e423bed9be47130dbf",
+      "bytes": 9102,
+      "lines": 188,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/current_234_base/research/nine/REVIEW_GENERAL_THREE_FORCE_TOUCHING_RETURN_SEPARATION_THIN_D_2026_10_28.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/REVIEW_GENERAL_THREE_FORCE_TOUCHING_RETURN_SEPARATION_THIN_D_2026_10_28.md",
+      "canonical_relative_path": "REVIEW_GENERAL_THREE_FORCE_TOUCHING_RETURN_SEPARATION_THIN_D_2026_10_28.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "complete_acceptance",
+      "roles": [
+        "406f complete independent review",
+        "Full upstream review of the complete additional normal cover, freshly read; its perpendicular premise has separate established acceptance."
+      ]
+    },
+    {
+      "name": "REVIEW_GENERAL_TOUCHING_RETURN_SUPPORT_ROOT_2026_10_28.md",
+      "sha256": "a7f6b5c5451834b3fe18a8dbdfda672f0746b40367ac0c1b93f7f14c831d06b2",
+      "git_blob": "d2ec920f21775ae95c09350a8d8fc0a76372a314",
+      "bytes": 7648,
+      "lines": 148,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/current_234_base/research/nine/REVIEW_GENERAL_TOUCHING_RETURN_SUPPORT_ROOT_2026_10_28.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/REVIEW_GENERAL_TOUCHING_RETURN_SUPPORT_ROOT_2026_10_28.md",
+      "canonical_relative_path": "REVIEW_GENERAL_TOUCHING_RETURN_SUPPORT_ROOT_2026_10_28.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "complete_acceptance",
+      "roles": [
+        "406f full root acceptance",
+        "Complete root adoption of the full strict-return separator, freshly read."
+      ]
+    },
+    {
+      "name": "REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "sha256": "9a0c704df3817a413639a98fbae8864ef58c583811735ac5c6816f69e1b0f636",
+      "git_blob": "d007b7ee912a045bc525ad5bb45e3d80683b1aa1",
+      "bytes": 12841,
+      "lines": 275,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/current_315_base/research/nine/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "canonical_relative_path": "REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "complete_acceptance",
+      "roles": [
+        "6f full independent review",
+        "complete published upstream review/adoption already read in the preceding source work",
+        "complete separate upstream independent review, not a replacement for the mathematical source read"
+      ]
+    },
+    {
+      "name": "REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+      "sha256": "f917697f13c574c533658ea108b0c770d4c1c949fc463ba996511e890e2d62ae",
+      "git_blob": "a35d7aa4fe1e422aa109ab9414dc5e5c6e08fe84",
+      "bytes": 16080,
+      "lines": 332,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/current_315_base/research/nine/REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+      "canonical_relative_path": "REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "complete_acceptance",
+      "roles": [
+        "2a6 full independent review",
+        "complete published upstream review/adoption already read in the preceding source work",
+        "complete separate upstream independent review, including original degrees, force masks and both zero coefficients"
+      ]
+    },
+    {
+      "name": "REVIEW_LOADED_TWO_APPLICATION_BOUNDARY_FREE_DICHOTOMY_INDEPENDENT_2026_10_28.md",
+      "sha256": "0d71302c571280dd0df9f9b16470d668580ad1fb57ebd306468fb2a8b04d0bc5",
+      "git_blob": "ef6bc56db4c37b7c3fde3bfe5d1a2e0197aa487c",
+      "bytes": 21488,
+      "lines": 494,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/current_315_base/research/nine/REVIEW_LOADED_TWO_APPLICATION_BOUNDARY_FREE_DICHOTOMY_INDEPENDENT_2026_10_28.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/REVIEW_LOADED_TWO_APPLICATION_BOUNDARY_FREE_DICHOTOMY_INDEPENDENT_2026_10_28.md",
+      "canonical_relative_path": "REVIEW_LOADED_TWO_APPLICATION_BOUNDARY_FREE_DICHOTOMY_INDEPENDENT_2026_10_28.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "complete_acceptance",
+      "roles": [
+        "3808 full independent review",
+        "Separate complete 3808 independent acceptance",
+        "complete separate upstream independent review, including one-application and both physical masks"
+      ]
+    },
+    {
+      "name": "REVIEW_NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_STRICT_HOUSE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "sha256": "454fbb5a0d12ed5f3ee144e61da53e8118d689aa4d96af4d44335a573db65a30",
+      "git_blob": "059c9a2ac02667c36a629424496276bffa7aae29",
+      "bytes": 32512,
+      "lines": 386,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/REVIEW_NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_STRICT_HOUSE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/REVIEW_NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_STRICT_HOUSE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "canonical_relative_path": "REVIEW_NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_STRICT_HOUSE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "canonical_state_at_recovery": "created_absent",
+      "category": "complete_acceptance",
+      "roles": [
+        "recovered canonical source or its complete historical acceptance chain",
+        "separate accepted local review"
+      ]
+    },
+    {
+      "name": "REVIEW_OPPOSING_SHALLOW_CENTERS_TC_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "sha256": "b9885dd614692bb59888152bf1c1bb52f8b0de5359f01dd73a0322993f8c5700",
+      "git_blob": "db17a874fdd6bcc139490e7cbc88209ef86c8356",
+      "bytes": 11103,
+      "lines": 259,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/current_315_base/research/nine/REVIEW_OPPOSING_SHALLOW_CENTERS_TC_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/REVIEW_OPPOSING_SHALLOW_CENTERS_TC_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "canonical_relative_path": "REVIEW_OPPOSING_SHALLOW_CENTERS_TC_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "complete_acceptance",
+      "roles": [
+        "Full separate acceptance of the complete opposing-center theorem and its original caller; freshly read."
+      ]
+    },
+    {
+      "name": "REVIEW_OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "sha256": "b96c12549a9aac0a2fa331dff4f5504871fa0d687b116a7331ad310cda9a7c4e",
+      "git_blob": "173791118459dc5523e559e2561ea3d1e168a22b",
+      "bytes": 31286,
+      "lines": 234,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/REVIEW_OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/REVIEW_OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "canonical_relative_path": "REVIEW_OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "canonical_state_at_recovery": "created_absent",
+      "category": "complete_acceptance",
+      "roles": [
+        "recovered canonical source or its complete historical acceptance chain"
+      ]
+    },
+    {
+      "name": "REVIEW_STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_HOUSE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "sha256": "6b01f3d1c830f49811202810cd25d941f34ec760e543993fba8d5df421c4fca7",
+      "git_blob": "0a97fa1fa4789402b41e3430b7b150cd720e6b2f",
+      "bytes": 29770,
+      "lines": 316,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/REVIEW_STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_HOUSE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/REVIEW_STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_HOUSE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "canonical_relative_path": "REVIEW_STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_HOUSE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "canonical_state_at_recovery": "created_absent",
+      "category": "complete_acceptance",
+      "roles": [
+        "44fa complete independent review by this author before this new discovery",
+        "recovered canonical source or its complete historical acceptance chain",
+        "separate accepted local review"
+      ]
+    },
+    {
+      "name": "REVIEW_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "sha256": "a7f5cf85d5e7275ae7c9f0452fd2c1bcb25452d42298fa4e2a9f8b58986ec31c",
+      "git_blob": "bd7fe103125d698b82f4845da3ca4ff0947db0fc",
+      "bytes": 28830,
+      "lines": 214,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/REVIEW_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/REVIEW_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "canonical_relative_path": "REVIEW_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "complete_acceptance",
+      "roles": [
+        "0c67 separate noncontributing load full review",
+        "separate accepted local review"
+      ]
+    },
+    {
+      "name": "REVIEW_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "sha256": "e2c3f5e72f7877b404db1db7e3b136d79a5690553df0808a757f528701b8b8fb",
+      "git_blob": "5dfd48c0d79420bba547824ca370bff77ccc4600",
+      "bytes": 23886,
+      "lines": 140,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/REVIEW_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/REVIEW_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "canonical_relative_path": "REVIEW_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "complete_acceptance",
+      "roles": [
+        "Separate accepted be0 full independent report"
+      ]
+    },
+    {
+      "name": "REVIEW_UPPER_ADJACENT_SIGNED_PORT_FULL_JUNCTION_FOUR_RETURN_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "sha256": "ac9040b2612d54a05a06f141bfd3b6ead607e7d4c226c6ad021958b970a50cc1",
+      "git_blob": "904743f3801b6eb286b63dd34c7ecb2debf4eb07",
+      "bytes": 30640,
+      "lines": 289,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/REVIEW_UPPER_ADJACENT_SIGNED_PORT_FULL_JUNCTION_FOUR_RETURN_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/complete_acceptance/REVIEW_UPPER_ADJACENT_SIGNED_PORT_FULL_JUNCTION_FOUR_RETURN_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "canonical_relative_path": "REVIEW_UPPER_ADJACENT_SIGNED_PORT_FULL_JUNCTION_FOUR_RETURN_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "canonical_state_at_recovery": "created_absent",
+      "category": "complete_acceptance",
+      "roles": [
+        "recovered canonical source or its complete historical acceptance chain"
+      ]
+    },
+    {
+      "name": "SIDE_CHANNEL_UNLOADED_TRIANGLE_BYPASS_POSITIVE_MEAN.md",
+      "sha256": "5a1607a588e45d0702c46c3d74074561f31109dccc0b8f94c665991cd4a9f5ee",
+      "git_blob": "07b9d107b2ab7f78d30eb582382fa689fa17d544",
+      "bytes": 11411,
+      "lines": 246,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/current_c62_base/research/nine/SIDE_CHANNEL_UNLOADED_TRIANGLE_BYPASS_POSITIVE_MEAN.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/SIDE_CHANNEL_UNLOADED_TRIANGLE_BYPASS_POSITIVE_MEAN.md",
+      "canonical_relative_path": "SIDE_CHANNEL_UNLOADED_TRIANGLE_BYPASS_POSITIVE_MEAN.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "operative_sources",
+      "roles": [
+        "Entire positive channel-mean proof freshly reconstructed, including q=0; accepted channel entry retained."
+      ]
+    },
+    {
+      "name": "STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_DIAGONAL_AND_HOUSE_RETURN_EXCLUSION.md",
+      "sha256": "44fa42fa2f33468495fb00d6d0c82287afc25cbd0416b28cd81e6d96ba0a6a71",
+      "git_blob": "1cd7951384311653b54e25926e5fb26f546bdaca",
+      "bytes": 17221,
+      "lines": 383,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_DIAGONAL_AND_HOUSE_RETURN_EXCLUSION.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_DIAGONAL_AND_HOUSE_RETURN_EXCLUSION.md",
+      "canonical_relative_path": "STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_DIAGONAL_AND_HOUSE_RETURN_EXCLUSION.md",
+      "canonical_state_at_recovery": "created_absent",
+      "category": "operative_sources",
+      "roles": [
+        "Generic actual common-corner and whole-halfplane interface only",
+        "entire actual strict-AD / strict-common-corner AT exclusion in both C force branches",
+        "recovered canonical source or its complete historical acceptance chain"
+      ]
+    },
+    {
+      "name": "STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "sha256": "0c67d5578a73ec36fd9b79c509c3e158cb9a218fac8666256ab2ca1f9505cb45",
+      "git_blob": "4126f326474c762221d71355190f9e0112815354",
+      "bytes": 11473,
+      "lines": 211,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "canonical_relative_path": "STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "operative_sources",
+      "roles": [
+        "Whole original selected two-feature AD cover",
+        "complete selected singleton proof and exact two-feature AD cover"
+      ]
+    },
+    {
+      "name": "TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+      "sha256": "be0af78eefcfba0b4c00c62c748bcd6c6dc8a294128c1f13272c5c2d7ea8bb5c",
+      "git_blob": "4bd9aefa121164dffe191b3167ec1ef05d0f1055",
+      "bytes": 12803,
+      "lines": 305,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+      "canonical_relative_path": "TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "operative_sources",
+      "roles": [
+        "0c67 operative radius-free Theorems A-C only"
+      ]
+    },
+    {
+      "name": "TWO_OPPOSING_SHALLOW_CENTERS_FORCE_WHOLE_UNIT_HALFPLANE.md",
+      "sha256": "53cfc1a53daddc7efae7b0cdd3ff982db9732af02e5167ab200bcc6300956af2",
+      "git_blob": "081b12f0154862b98b53f419cbaf400ae061f44f",
+      "bytes": 12062,
+      "lines": 287,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/current_315_base/research/nine/TWO_OPPOSING_SHALLOW_CENTERS_FORCE_WHOLE_UNIT_HALFPLANE.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/TWO_OPPOSING_SHALLOW_CENTERS_FORCE_WHOLE_UNIT_HALFPLANE.md",
+      "canonical_relative_path": "TWO_OPPOSING_SHALLOW_CENTERS_FORCE_WHOLE_UNIT_HALFPLANE.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "operative_sources",
+      "roles": [
+        "Critical mathematical predecessor of the upper-owner union; full source freshly reconstructed, all three theorems."
+      ]
+    },
+    {
+      "name": "UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "sha256": "db073cd024a4f2e763e7cd0a21bf5cb6a2a8be67069f3f9d3aff638b8a40b258",
+      "git_blob": "8c08b57321074c57fbbac76025883fd888994e0f",
+      "bytes": 6573,
+      "lines": 186,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/current_703_base/research/nine/UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "canonical_relative_path": "UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "operative_sources",
+      "roles": [
+        "Original B2 normal and whole-D transverse separation"
+      ]
+    },
+    {
+      "name": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "git_blob": "75b6682802b9aebdb29ce0b3b9f8d89d3ebf8d67",
+      "bytes": 4431,
+      "lines": 132,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/current_703_base/research/nine/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "canonical_relative_path": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "operative_sources",
+      "roles": [
+        "Radius-free actual-triangle owned-axis inequality",
+        "entire radius-free owned-axis triangle inequality, with weak equality"
+      ]
+    },
+    {
+      "name": "UNLOADED_THREE_FORCE_PERPENDICULAR_TRIANGLE_STRICT_SUPPORT_SEPARATION.md",
+      "sha256": "6630675274998befc40e87bfe67e15f0bdf0d74b7b814f82ccbc42b71dea4b24",
+      "git_blob": "655fa5dce3990a10d11d22626184684ecbc48e07",
+      "bytes": 11594,
+      "lines": 274,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/current_234_base/research/nine/UNLOADED_THREE_FORCE_PERPENDICULAR_TRIANGLE_STRICT_SUPPORT_SEPARATION.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/UNLOADED_THREE_FORCE_PERPENDICULAR_TRIANGLE_STRICT_SUPPORT_SEPARATION.md",
+      "canonical_relative_path": "UNLOADED_THREE_FORCE_PERPENDICULAR_TRIANGLE_STRICT_SUPPORT_SEPARATION.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "operative_sources",
+      "roles": [
+        "Complete freshly reconstructed operative perpendicular subcase of406f",
+        "Complete perpendicular full-star and geometric relay proof freshly reconstructed; closed return means and both physical directions."
+      ]
+    },
+    {
+      "name": "UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+      "sha256": "406fce53d22cc20eec43a373a877798dab583a6bd93f684ff124293016c44c87",
+      "git_blob": "6062b02e1f02ef735b0f4fa57b21cc56321359cf",
+      "bytes": 16935,
+      "lines": 439,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/current_c62_base/research/nine/UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+      "canonical_relative_path": "UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+      "canonical_state_at_recovery": "existing_exact",
+      "category": "operative_sources",
+      "roles": [
+        "Entire full unloaded D3 strict-return separator freshly reconstructed; actual A/T touching pair, C third neighbor.",
+        "Full original D3 strict return separator"
+      ]
+    },
+    {
+      "name": "UPPER_ADJACENT_GENUINE_LEAF_SIGNED_PORT_FULL_JUNCTION_AND_FOUR_RETURN_REDUCTION.md",
+      "sha256": "dc7542f5b58121e5c5e85ca82fe40373ea021d035d647eb2d6110e078661ffaf",
+      "git_blob": "ed7c728de0fb2d292160ed2ef34b0b1dc28e5553",
+      "bytes": 35022,
+      "lines": 788,
+      "original_absolute_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/UPPER_ADJACENT_GENUINE_LEAF_SIGNED_PORT_FULL_JUNCTION_AND_FOUR_RETURN_REDUCTION.md",
+      "bundle_relative_path": "recovered_variants/house_full_tc_cover_2026_10_29/operative_sources/UPPER_ADJACENT_GENUINE_LEAF_SIGNED_PORT_FULL_JUNCTION_AND_FOUR_RETURN_REDUCTION.md",
+      "canonical_relative_path": "UPPER_ADJACENT_GENUINE_LEAF_SIGNED_PORT_FULL_JUNCTION_AND_FOUR_RETURN_REDUCTION.md",
+      "canonical_state_at_recovery": "created_absent",
+      "category": "operative_sources",
+      "roles": [
+        "recovered canonical source or its complete historical acceptance chain"
+      ]
+    }
+  ],
+  "four_recovered_sources_direct_table_pins": [
+    {
+      "caller": "OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_AND_FOUR_ORIGINAL_TC_RESIDUALS.md",
+      "dependency": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "literal_scope": "Entire original residual, graph, true degrees and original channel",
+      "canonical_exact": true
+    },
+    {
+      "caller": "OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_AND_FOUR_ORIGINAL_TC_RESIDUALS.md",
+      "dependency": "ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334",
+      "literal_scope": "Entire original q>=3/8 exit and hence the strict remaining interval",
+      "canonical_exact": true
+    },
+    {
+      "caller": "OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_AND_FOUR_ORIGINAL_TC_RESIDUALS.md",
+      "dependency": "HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143",
+      "literal_scope": "Both complete C force rows, physical masks and positive original coefficients",
+      "canonical_exact": true
+    },
+    {
+      "caller": "OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_AND_FOUR_ORIGINAL_TC_RESIDUALS.md",
+      "dependency": "STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "sha256": "0c67d5578a73ec36fd9b79c509c3e158cb9a218fac8666256ab2ca1f9505cb45",
+      "literal_scope": "Full selected singleton proof, strict channel mean and exact two-feature AD cover",
+      "canonical_exact": true
+    },
+    {
+      "caller": "OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_AND_FOUR_ORIGINAL_TC_RESIDUALS.md",
+      "dependency": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "literal_scope": "Entire radius-free physical triangle inequality with the actual A-owned AD axis; weak equality retained",
+      "canonical_exact": true
+    },
+    {
+      "caller": "OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_AND_FOUR_ORIGINAL_TC_RESIDUALS.md",
+      "dependency": "NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_OBSTRUCTION_AND_STRICT_HOUSE_RETURN_EXCLUSION.md",
+      "sha256": "d92ec80546d6ae608494626e6f05c52c5f8ff2c7548be0bd98b93bbbc892c8ff",
+      "literal_scope": "Entire strict AD / AT=-u original feature, both C force branches",
+      "canonical_exact": true
+    },
+    {
+      "caller": "OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_AND_FOUR_ORIGINAL_TC_RESIDUALS.md",
+      "dependency": "STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_DIAGONAL_AND_HOUSE_RETURN_EXCLUSION.md",
+      "sha256": "44fa42fa2f33468495fb00d6d0c82287afc25cbd0416b28cd81e6d96ba0a6a71",
+      "literal_scope": "Entire strict AD / strict same-corner AT original feature, both C force branches",
+      "canonical_exact": true
+    },
+    {
+      "caller": "UPPER_ADJACENT_GENUINE_LEAF_SIGNED_PORT_FULL_JUNCTION_AND_FOUR_RETURN_REDUCTION.md",
+      "dependency": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "literal_scope": "Entire original TC necessary-domain entry and actual upper-adjacent genuine-S chart, true graph and radius interval",
+      "canonical_exact": true
+    },
+    {
+      "caller": "UPPER_ADJACENT_GENUINE_LEAF_SIGNED_PORT_FULL_JUNCTION_AND_FOUR_RETURN_REDUCTION.md",
+      "dependency": "HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143",
+      "literal_scope": "Both complete original C2 force/mask/mean rows and actual physical coefficients",
+      "canonical_exact": true
+    },
+    {
+      "caller": "UPPER_ADJACENT_GENUINE_LEAF_SIGNED_PORT_FULL_JUNCTION_AND_FOUR_RETURN_REDUCTION.md",
+      "dependency": "LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78",
+      "literal_scope": "Entire one-point, distinct nonparallel proper-ray, and exact parallel alternatives; no boundary-neighbor premise",
+      "canonical_exact": true
+    },
+    {
+      "caller": "UPPER_ADJACENT_GENUINE_LEAF_SIGNED_PORT_FULL_JUNCTION_AND_FOUR_RETURN_REDUCTION.md",
+      "dependency": "STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "sha256": "0c67d5578a73ec36fd9b79c509c3e158cb9a218fac8666256ab2ca1f9505cb45",
+      "literal_scope": "Complete both-leaf actual selected mean and two-feature AD cover, with world zero-x strict corner retained",
+      "canonical_exact": true
+    },
+    {
+      "caller": "UPPER_ADJACENT_GENUINE_LEAF_SIGNED_PORT_FULL_JUNCTION_AND_FOUR_RETURN_REDUCTION.md",
+      "dependency": "UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+      "sha256": "406fce53d22cc20eec43a373a877798dab583a6bd93f684ff124293016c44c87",
+      "literal_scope": "Entire radius-free full original D3 separator at all actual A/T points; actual returns A,T physically touch",
+      "canonical_exact": true
+    },
+    {
+      "caller": "UPPER_ADJACENT_GENUINE_LEAF_SIGNED_PORT_FULL_JUNCTION_AND_FOUR_RETURN_REDUCTION.md",
+      "dependency": "STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_DIAGONAL_AND_HOUSE_RETURN_EXCLUSION.md",
+      "sha256": "44fa42fa2f33468495fb00d6d0c82287afc25cbd0416b28cd81e6d96ba0a6a71",
+      "literal_scope": "Only complete generic Sections1--2: actual common-corner vertices, full D3 opposite support and whole returned-unit halfplane; no old owned-leaf caller or x>=0 corner estimate imported",
+      "canonical_exact": true
+    },
+    {
+      "caller": "UPPER_ADJACENT_GENUINE_LEAF_SIGNED_PORT_FULL_JUNCTION_AND_FOUR_RETURN_REDUCTION.md",
+      "dependency": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "literal_scope": "Complete radius-free actual-triangle nonobtuse-normal theorem, with weak equality; no A3 force corollary",
+      "canonical_exact": true
+    },
+    {
+      "caller": "UPPER_ADJACENT_GENUINE_LEAF_SIGNED_PORT_FULL_JUNCTION_AND_FOUR_RETURN_REDUCTION.md",
+      "dependency": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "literal_scope": "Existing prescribed strict point-only vertex/vertex convention for the original selected contacts",
+      "canonical_exact": true
+    },
+    {
+      "caller": "NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_OBSTRUCTION_AND_STRICT_HOUSE_RETURN_EXCLUSION.md",
+      "dependency": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "literal_scope": "Exact original aligned-C owned-leaf residual, all units, degrees and original C force alternatives",
+      "canonical_exact": true
+    },
+    {
+      "caller": "NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_OBSTRUCTION_AND_STRICT_HOUSE_RETURN_EXCLUSION.md",
+      "dependency": "ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334",
+      "literal_scope": "Complete original complement q<3/8; no later force/owner claim is imported",
+      "canonical_exact": true
+    },
+    {
+      "caller": "NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_OBSTRUCTION_AND_STRICT_HOUSE_RETURN_EXCLUSION.md",
+      "dependency": "HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143",
+      "literal_scope": "Entire actual C force/mask cover and whole full-D3 strict support inequality at the actual A,T returns",
+      "canonical_exact": true
+    },
+    {
+      "caller": "NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_OBSTRUCTION_AND_STRICT_HOUSE_RETURN_EXCLUSION.md",
+      "dependency": "LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78",
+      "literal_scope": "Complete actual one-application alternative and nonparallel positive radial/proper rays, with no boundary-neighbor assumption and no inside-physical-two conclusion",
+      "canonical_exact": true
+    },
+    {
+      "caller": "STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_DIAGONAL_AND_HOUSE_RETURN_EXCLUSION.md",
+      "dependency": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "literal_scope": "Exact original residual, true graph/degrees, both actual leaf charts and C force rows",
+      "canonical_exact": true
+    },
+    {
+      "caller": "STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_DIAGONAL_AND_HOUSE_RETURN_EXCLUSION.md",
+      "dependency": "ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334",
+      "literal_scope": "Entire original q>=3/8 exit, used only to identify the complementary q<3/8 interval",
+      "canonical_exact": true
+    },
+    {
+      "caller": "STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_DIAGONAL_AND_HOUSE_RETURN_EXCLUSION.md",
+      "dependency": "HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143",
+      "literal_scope": "Complete actual C force/mask cover, both positive original coefficients and original parallel mean equation",
+      "canonical_exact": true
+    },
+    {
+      "caller": "STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_DIAGONAL_AND_HOUSE_RETURN_EXCLUSION.md",
+      "dependency": "LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78",
+      "literal_scope": "Entire actual one-application and two-distinct-nonparallel positive radial/proper-ray alternatives, with both physical masks",
+      "canonical_exact": true
+    },
+    {
+      "caller": "STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_DIAGONAL_AND_HOUSE_RETURN_EXCLUSION.md",
+      "dependency": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "literal_scope": "The prescribed strict point-only vertex/vertex convention retained on the same original selected certificate; no new selector or thinning operation",
+      "canonical_exact": true
+    }
+  ],
+  "scope_guards": [
+    "The four recovered mathematical sources retain their exact frozen bytes; historic proposed/open text is not rewritten.",
+    "Historic independent reviews and adoptions are preserved as full documents, not replaced by this manifest.",
+    "The d92 named-summand addendum accompanies its unchanged exact independent record.",
+    "The upper-adjacent RESEARCH checkpoint is descriptive unadopted provenance only and is not a premise of any new family union.",
+    "The separately mentioned a813 parallel-T theorem is expressly nonoperative in these four sources and is not imported.",
+    "No status field, registry count, author calculation or this recovery manifest substitutes for a mathematical source proof.",
+    "All 24 direct mathematical table references resolve exactly at canonical paths after absent-only recovery.",
+    "The new original TC.S assembly and later parent/coarse joins require separate complete review and root adoption.",
+    "No ledger, roadmap, handoff, original identifier, flag, denominator, Lean file, CI state or remote object was changed."
+  ]
+}

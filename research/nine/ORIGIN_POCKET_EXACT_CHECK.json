@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "source_commit": "607d51b10bb9c96de47d17f984b1632282101b79",
+  "source_sha256": "b10302b888b9f1db3effdf9207c2ea7785b8e4b44da1551e9bd9eafec6d9974c",
+  "source_git_blob_sha1": "6fad0c16edb6ddeaac21d13f3369ab1b6a6f01f7",
+  "started_utc": "2026-10-23T14:29:10.989302+00:00",
+  "finished_utc": "2026-10-23T14:29:11.004341+00:00",
+  "python": "3.13.5",
+  "exact_rational_checks": 1716,
+  "three_vertex_capacity_eight_square_attainment": {"squares":8,"corners":32,"SAT_pairs":28},
+  "right_angle_pocket_attainment": {"squares":3,"corners":12,"SAT_pairs":3},
+  "strict_point_contact_six_square_core": {"squares":6,"corners":24,"SAT_pairs":15,"contacts":5,"circle_atoms":8,"normalized_force_and_torque":"exactly zero"},
+  "shared_edge_boundary_four_square_core": {"squares":4,"corners":16,"SAT_pairs":6,"contacts":3,"circle_atoms":4,"normalized_force_and_torque":"exactly zero"},
+  "nonstrict_normal_negative_control": {"squares":4,"corners":16,"SAT_pairs":6,"contacts":3,"circle_atoms":4,"normalized_force_and_torque":"exactly zero"},
+  "scope": "Finite exact regressions only; not an all-angle proof, independent audit or Lean certificate. Source bytes matched to committed Git blob before execution."
+}

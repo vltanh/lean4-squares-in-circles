@@ -1,0 +1,286 @@
+{
+  "checkpoint": "all genuine long-run seven-cycles and uniform no-long completion remainder",
+  "date_utc": "2026-10-30",
+  "input_head": "2eb4d7be0c5764b23fe2b2c34c00715a07378e6c",
+  "files": [
+    {
+      "path": "research/nine/OCCUPIED_ARC_CHORD_BUDGET_ALLOWS_AT_MOST_ONE_DIAGONAL_IN_EVERY_SEVEN_CYCLE_2026_10_30.md",
+      "bytes": 9449,
+      "sha256": "dd6b92bf76b58869a93fa5ad5ab79142ffb74b4640dd5ee22d275ef170b08970",
+      "git_blob": "b96e8994198ded4ab2e6b4b147f4a1ae9f409740"
+    },
+    {
+      "path": "research/nine/THREE_BOUNDARY_RETURNS_FORCE_A_HIGH_MIDDLE_UNIT_AND_A_UNIT_SECTION_2026_10_30.md",
+      "bytes": 8086,
+      "sha256": "99c6d7fc3bb50cf65f8ee36ef1e041dafb344671a5a09830e691746ef1f7f528",
+      "git_blob": "e674605b2b1969c39d186854ce5d49e426d628e3"
+    },
+    {
+      "path": "research/nine/THREE_RETURN_SECTION_ORDER_AND_ALIGNED_LONG_PAIR_SHARP_COMPLETION_2026_10_30.md",
+      "bytes": 12130,
+      "sha256": "95918400fc3aa701d8e62beff8047f4b01ff4e20a5dd8e234fe37ea319885db8",
+      "git_blob": "009a76cdae4d38e5b5ef26e0acffe3fafcf07ba2"
+    },
+    {
+      "path": "research/nine/ADJACENT_LONG_SHORT_CYCLE_ORIGINAL_NORMAL_CONE_AND_ENDPOINT_VERTEX_REDUCTION_2026_10_30.md",
+      "bytes": 16823,
+      "sha256": "9884cab15c74c2e15e44ad05c5d1665c93a46244aa7321c2b4a8c1675e65611b",
+      "git_blob": "8caf47982711df08a9cee29b806c6da11f213767"
+    },
+    {
+      "path": "research/nine/ALIGNED_ADJACENT_LONG_SHORT_SEVEN_CYCLE_SECTION_OVERLAP_EXCLUSION_2026_10_30.md",
+      "bytes": 12063,
+      "sha256": "f7694cc75e45b49bd05fa106f03267c7465c622d44d6896d8090d3f09704e686",
+      "git_blob": "0c3502f150bf15f2bc5175f816188c48db4b44d1"
+    },
+    {
+      "path": "research/nine/ISOLATED_TRANSMITTER_CYCLES_HAVE_SHORT_CENTER_DIAMETER_AND_CENTRAL_CAPACITY_ONE_2026_10_30.md",
+      "bytes": 18026,
+      "sha256": "e5a4522cad96c419ea0d65eea515557b9118c66e910660cfe4ea873a64a98f6b",
+      "git_blob": "8917a0d5469a763ebbbdd01d501a852097617106"
+    },
+    {
+      "path": "research/nine/NO_LONG_SMALL_CYCLES_REQUIRE_OCCUPIED_SIDE_POCKETS_AND_EXCLUDE_SIX_LOAD_DIAGONAL_SEVEN_CYCLES_2026_10_30.md",
+      "bytes": 10965,
+      "sha256": "243dcc2fd0b87e42c679198b5ea1bb1ac80efe0d82f0256c3db3564ce0307621",
+      "git_blob": "e8de39142647ec49b3e6e0024cc8032624623ca8"
+    },
+    {
+      "path": "research/nine/TILTED_LONG_ENDPOINT_RETURN_WRAPPERS_OBEY_THE_SHARP_SECTION_PROFILE_2026_10_30.md",
+      "bytes": 19575,
+      "sha256": "c7553b418c64c12bda69bcccb565e6f5d7cdd1613dbb8eecfe282ce6126a26c3",
+      "git_blob": "5a8be45d37ef4dc9e1f19179fde46d0ceaeb0e68"
+    },
+    {
+      "path": "research/nine/COMPLETE_ADJACENT_LONG_SHORT_SEVEN_CYCLE_SECTION_OVERLAP_EXCLUSION_2026_10_30.md",
+      "bytes": 16509,
+      "sha256": "bcbf966857e94abebfed751f80170f68229b6e46340c388bb4cc9c7081ff699c",
+      "git_blob": "e10e58b6b5322b6534cbdef75ff1c64a9e983d5c"
+    },
+    {
+      "path": "research/nine/COMPLETE_THREE_RETURN_LONG_CHANNEL_SHARP_RADIUS_AND_FIVE_LOAD_CYCLE_EXCLUSION_2026_10_30.md",
+      "bytes": 19282,
+      "sha256": "052e6c943bd23cb319db8e373e6624a6056e76400912ab79c032953a24911b82",
+      "git_blob": "d30469e0477084c451ce03e270fe3fe8cc60c2ec"
+    },
+    {
+      "path": "research/nine/ALL_LONG_RUN_SEVEN_CYCLES_HAVE_SHARP_RADIUS_AND_UNIFORM_NO_LONG_REMAINDER_2026_10_30.md",
+      "bytes": 18455,
+      "sha256": "378d1d9eb72900bc074a5ffba1c59c5296c8c920e39f979934a6096a0d601ea0",
+      "git_blob": "0d7aac175d2bea5176ccb3a6c290c7e10e9f766b"
+    },
+    {
+      "path": "research/nine/REVIEW_OCCUPIED_ARC_WEIGHTED_DIAGONAL_BUDGET_BLOCK_EARS_2026_10_30.md",
+      "bytes": 7692,
+      "sha256": "f6354a7193be7335843929acd6dc6ae81751fcd23533d8480ac18a0f2ab4768e",
+      "git_blob": "16d6d23aaeaec7b6016a0d880c0aba0bdc249b0e"
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_BOUNDARY_RETURNS_HIGH_MIDDLE_AND_SECTION_AXIAL_INDEPENDENT_2026_10_30.md",
+      "bytes": 6045,
+      "sha256": "bd9cc752964df176bdf69587379d2a7567919833f58cc1119b0fd9810349d38b",
+      "git_blob": "15e718e26ce5d4bf16d0cdde86a1f55825a422f2"
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_RETURN_ORDER_AND_ALIGNED_LONG_PAIR_SHARP_THEOREM_AXIAL_INDEPENDENT_2026_10_30.md",
+      "bytes": 9854,
+      "sha256": "ce2693fe72b8da8ba87cb66cb1709068375aa173475b539376f48a7a1d535cdc",
+      "git_blob": "0a1e279a3a6c9ed998df5e4e75fee15beccee1c1"
+    },
+    {
+      "path": "research/nine/REVIEW_ADJACENT_ORIGINAL_NORMAL_CONE_VERTEX_AND_EXACT_DIAGNOSTIC_ANNULAR_INDEPENDENT_2026_10_30.md",
+      "bytes": 9842,
+      "sha256": "0aff9d9697b3f2af8c826c39327433a8461a9b02474de453afb47f542a3c4eda",
+      "git_blob": "3b88b0ba399956abb31db60549719042b17a836f"
+    },
+    {
+      "path": "research/nine/REVIEW_HIGH_MIDDLE_UNIT_AND_ALIGNED_ADJACENT_SECTION_EXCLUSION_BLOCK_EARS_2026_10_30.md",
+      "bytes": 10624,
+      "sha256": "0d870688d95c425c82b3ddb1302343cddc2ae7d25e25d7e8511131626f7826ae",
+      "git_blob": "7ca8f2d9caacff1915f224e2873bfc6c40175e02"
+    },
+    {
+      "path": "research/nine/REVIEW_ISOLATED_TRANSMITTER_CYCLE_DIAMETER_AND_CENTRAL_CAPACITY_BLOCK_EARS_2026_10_30.md",
+      "bytes": 13405,
+      "sha256": "6cf39e296ef83685866333a7a02a590884762cdcefa558ff51b70bf71e4e12a3",
+      "git_blob": "8fce9e494d30a48f705f01985ec90a740c14414c"
+    },
+    {
+      "path": "research/nine/REVIEW_ISOLATED_TRANSMITTER_DIAMETER_SCOPE_EXTENSION_ROOT_2026_10_30.md",
+      "bytes": 10839,
+      "sha256": "97b95c45557804b61bdfdffad4c0151ddaff4746b5b22d15171781bd9a40ec0d",
+      "git_blob": "d55a92bbbc702a18ee32dc872f7b9cfe89560c28"
+    },
+    {
+      "path": "research/nine/REVIEW_OCCUPIED_SIDE_POCKET_REQUIREMENT_AND_SIX_LOAD_DIAGONAL_EXIT_AXIAL_INDEPENDENT_2026_10_30.md",
+      "bytes": 8163,
+      "sha256": "3d5479edaf195c3184b3406c14931ff94bae5a417ae3185b68373f8c404decc7",
+      "git_blob": "8c6cc9b39bee91cc9133a3727b2f3cb2d0009a7b"
+    },
+    {
+      "path": "research/nine/REVIEW_TILTED_LONG_ENDPOINT_WRAPPER_PROFILE_ANNULAR_INDEPENDENT_2026_10_30.md",
+      "bytes": 13725,
+      "sha256": "666b85ef929a1f435556d263b5e146b4e281a6fbf2926860fc3c5026811f9289",
+      "git_blob": "a8aa919fcd548285aa25fcd743b639bc93b685a4"
+    },
+    {
+      "path": "research/nine/REVIEW_TILTED_LONG_ENDPOINT_WRAPPER_PROFILE_BLOCK_EARS_2026_10_30.md",
+      "bytes": 12669,
+      "sha256": "222c69d8b67066c1e390e19974154ae83ec4d111c5290d63f2e47e227036d131",
+      "git_blob": "4bc85742a299286a0e4631cc3f71c260b78c86ed"
+    },
+    {
+      "path": "research/nine/REVIEW_TILTED_LONG_ENDPOINT_WRAPPER_AND_COUPLED_FLOORS_ROOT_2026_10_30.md",
+      "bytes": 9579,
+      "sha256": "9be46feacb1238b6e9763cc5e68a02fae6873aa61fd96130a60bef0d46fba9c0",
+      "git_blob": "68ccd84c39e956c09a16a97789e79f9997aa727f"
+    },
+    {
+      "path": "research/nine/REVIEW_COMPLETE_ADJACENT_LONG_SHORT_SEVEN_CYCLE_BLOCK_EARS_2026_10_30.md",
+      "bytes": 10607,
+      "sha256": "da71a240f7bfd8fbe1a946d331099297b067e4d910b4feb0c5ac195fc7eb5163",
+      "git_blob": "53a8026f6a5f970adf2ab31613a3f51363f3e21e"
+    },
+    {
+      "path": "research/nine/REVIEW_COMPLETE_THREE_RETURN_LONG_CHANNEL_SHARP_FAMILY_AXIAL_INDEPENDENT_2026_10_30.md",
+      "bytes": 11242,
+      "sha256": "32f804b508c77e3078676f2c868d3c8912211262d1bf6f9e51308bff038a6d06",
+      "git_blob": "5654e01e3710acbdac3abdefd0211de2a91edfe8"
+    },
+    {
+      "path": "research/nine/REVIEW_ALL_LONG_RUN_SEVEN_CYCLE_MASTER_ANNULAR_INDEPENDENT_2026_10_30.md",
+      "bytes": 18576,
+      "sha256": "34a4f641bf4b4daf1bcad080c2b7427d852df89e990214a2c22bb6cd253834fe",
+      "git_blob": "6bfe032141166d361d1dcbb8f206f85849bd0a8c"
+    },
+    {
+      "path": "research/nine/REVIEW_UNIFORM_SEVEN_CYCLE_REDUCTIONS_AND_ADJACENT_TILT_BUDGET_ROOT_2026_10_30.md",
+      "bytes": 15095,
+      "sha256": "6bb2ce79626a9faf62054097d265090ed43c06ecfe2c2352902c62750dbc7385",
+      "git_blob": "0b7a1c414d193381da6a9324709ab9bdce7c21cf"
+    },
+    {
+      "path": "research/nine/ADOPTION_ALL_LONG_SEVEN_CYCLES_AND_UNIFORM_NO_LONG_COMPLETION_REMAINDER_2026_10_30.md",
+      "bytes": 13455,
+      "sha256": "7f27b0c5c574c71088edf5abc0e1a3618ef9c68fc7049e487c920a48aa529ca8",
+      "git_blob": "2ff87038a780b345a8504e2e6683441281053537"
+    },
+    {
+      "path": "research/nine/README.md",
+      "bytes": 123271,
+      "sha256": "96a56a00c462188ce06d7f3033c97ea3d1c53c8b787593b3bbd2c1505e515812",
+      "git_blob": "4db7dc4c7c6c26708e9bd43dcc8221e585eef830"
+    },
+    {
+      "path": "research/nine/ROADMAP.md",
+      "bytes": 102017,
+      "sha256": "37852ac0a4debd85085b874bdde47c2f7e016aca6a75f5a1c263f2987c6ce46d",
+      "git_blob": "06c57858a3cb44354d88cf745272c8f3fff9b224"
+    },
+    {
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "bytes": 1107039,
+      "sha256": "a4114c2914d61458571e21be2fcbe0904d3100defb324ee87aa3b58659469a69",
+      "git_blob": "f8aa4ed129057738a8794f9dbe03f92b4b10724b"
+    },
+    {
+      "path": "research/nine/CYCLIC_CELL_LEDGER.md",
+      "bytes": 360733,
+      "sha256": "5a92436d7310c687ac8789097d1cbe7a1ceee027468358c6bf1e5e646957cdfc",
+      "git_blob": "e99f3d9c42de689101f4fef224893cfe6e287340"
+    }
+  ],
+  "source_table_hash_occurrences_verified": 82,
+  "distinct_source_table_pins_verified": 45,
+  "exact_arithmetic": {
+    "method": "Exact rational arithmetic and complete multivariate coefficient identities over the displayed continuous domains. No numerical pose samples, grids or search.",
+    "positive_rational_checks": {
+      "unit_section_strict_width_radical": "7/64",
+      "middle_unit_whole_floor": "83/160",
+      "middle_sine_square_reserve": "17/5000",
+      "middle_incircle_reserve": "41/14400",
+      "outer_center_section_sign_reserve": "11/288",
+      "near_vertical_radial_lower": "1/24",
+      "tilted_floor_lower": "87/200",
+      "tilted_profile_upper_d_square_reserve": "3667/160000",
+      "tilted_section_x_lower_margin": "1/15",
+      "tilted_section_x_upper_margin": "23/600",
+      "tilted_section_y_lower_margin": "3/50",
+      "tilted_section_box_circle_margin": "63/256",
+      "tilted_first_edge_linear_margin": "49/150",
+      "tilted_first_edge_mixed_margin": "17/4800",
+      "tilted_first_edge_total_margin": "29341/90000",
+      "tilted_chord_radical_margin": "13/800",
+      "tilted_chord_lower_endpoint_reserve": "32243/7617600",
+      "tilted_chord_upper_endpoint_reserve": "321163/23805000",
+      "tilted_inward_face_own_coordinate_gap": "32333/24000",
+      "tilted_original_normal_radical_margin": "19/2880",
+      "tilted_original_normal_slope_reserve": "283/32880",
+      "coupled_floor_positive_excess_factor": "202/117",
+      "adjacent_profile_derivative_square_reserve": "547",
+      "adjacent_scalar_radical_reserve": "71/400",
+      "adjacent_aligned_overlap_reserve": "13/480",
+      "adjacent_complete_overlap_reserve": "461/56160",
+      "five_anchor_middle_side_overlap_square_reserve": "480",
+      "long_endpoint_center_gap_lower_radius_reserve": "1/4",
+      "long_run_cycle_m7_ell2_budget_excess": "7",
+      "long_run_cycle_m7_ell1_diagonal_budget_excess": "1",
+      "weighted_cycle_m7_two_diagonal_budget_excess": "1",
+      "three_transmitter_path_center_gap_reserve": "29/30",
+      "two_edge_center_path_square_reserve": "1"
+    },
+    "exact_identities": {
+      "tilted_first_edge_bracket_lower": true,
+      "tilted_chord_lower_endpoint_L": true,
+      "tilted_chord_upper_endpoint_L": true,
+      "tilted_original_normal_slope": true,
+      "middle_radial_quadratic_lower_endpoint": true,
+      "middle_radial_quadratic_upper_endpoint": true,
+      "sharp_outer_return_circle": true,
+      "sharp_long_endpoint_circle": true,
+      "sharp_middle_return_circle": true,
+      "tilt_loss_quadratic_coefficient": true,
+      "tilt_loss_upper_endpoint": true,
+      "tilted_wrapper_complete_squared_identity": true,
+      "adjacent_full_original_normal_support_identity": true
+    },
+    "all_checks_pass": true
+  },
+  "original_fine_inventory": {
+    "total": 2513,
+    "checked": 2373,
+    "open": 140,
+    "identifiers_order_flags_unchanged": true
+  },
+  "original_coarse_inventory": {
+    "total": 58,
+    "closed": 36,
+    "open": 22,
+    "identifiers_order_flags_unchanged": true
+  },
+  "complete_conclusions": [
+    "Every compatible marked C7 with a genuine two-internal long run and full true-degree-two long endpoints forces q>=1105/256; other boundary marks may have arbitrary extra positive edges.",
+    "The entire adjacent long/short C7 is excluded even at Q, uniformly over all endpoint tilts, with actual section overlap reserve461/56160.",
+    "The complete three-return long family forces five aligned boundary anchors at Q; its five-positive-load full simple-cycle caller is excluded even at equality.",
+    "The only long-run equality survivor for an entire simple positive C7 is the opposite four-load orbit with the previously proved four-anchor rigidity.",
+    "Every no-long whole positive C3-C7 with at least three loads has actual center diameter<3 and whole central free-union capacity1.",
+    "Every same-nine completion of such a no-long cycle needs an actual occupied side-normal singleton pocket; all-direct/all-diagonal families and the whole six-load diagonal C7 are excluded.",
+    "The uniform weighted occupied-arc inequality2m+d<=15 permits at most one actual diagonal singleton in every compatible C7.",
+    "The remaining no-long C7 families share the same joint occupied-side-pocket/central completion obligation; no arbitrary chorded/branching parent is falsely closed."
+  ],
+  "remaining": [
+    "Joint occupied side-pocket and central completion, and multiple occupied side pockets",
+    "All22 original coarse parents including arbitrary chorded/branching blocks",
+    "Smaller-core and attachment physical completions",
+    "Unrestricted lower bound and complete equality classification",
+    "G4.2.c common-selection downstream audit"
+  ],
+  "verification_limits": {
+    "lean_compilation": false,
+    "ci_dispatch": false,
+    "merge": false,
+    "proof_uses_pose_grid": false,
+    "unpublished_exploratory_grid_ran_earlier": true,
+    "exploratory_grid_disclosure": "Prior checkpoint discloses one off-scope exploratory grid, then stopped. No grid observation supplies a premise, validation substitute or closure credit in these continuous proofs."
+  }
+}

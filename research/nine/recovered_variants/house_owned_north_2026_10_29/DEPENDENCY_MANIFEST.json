@@ -1,0 +1,343 @@
+{
+  "date": "2026-10-29",
+  "target_path": "/workspace/scratch/dfd876832224/repo/research/nine/HOUSE_TC_BOTH_LEAF_OWNED_AD_NORTH_PARALLEL_C_EXCLUSION_AND_FULL_OWNER_REDUCTION_2026_10_29.md",
+  "target_sha256": "39421f4b1fd71d153bbb6eb84a28c1759bea6c40712a332cc03743ce611319f6",
+  "policy": "Exact recovered bytes preserved. No existing root preimage was overwritten. Prior ten root-level recovered copies were made only when absent, otherwise equality was required. Descriptive provenance is not a mathematical premise.",
+  "objects": [
+    {
+      "name": "AUTHOR_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_EXACT_RECORD_A5F_2026_10_29.json",
+      "sha256": "f73baeef458ea37194e62a5f3f116d390a0c32ccd21525da691040943adcd8e7",
+      "bytes": 20550,
+      "source_path": "/workspace/scratch/dfd876832224/repo/research/nine/AUTHOR_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_EXACT_RECORD_A5F_2026_10_29.json",
+      "bundle_path": "recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/AUTHOR_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_EXACT_RECORD_A5F_2026_10_29.json",
+      "category": "recovered_acceptance",
+      "roles": [
+        "Exact historical author/independent corroboration, not a new proof premise"
+      ]
+    },
+    {
+      "name": "PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "bytes": 17993,
+      "source_path": "/workspace/scratch/dfd876832224/repo/research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "bundle_path": "recovered_variants/house_owned_north_2026_10_29/operative_sources/PHYSICAL_CONTACT_STRESS.md",
+      "category": "operative_sources",
+      "roles": [
+        "Operative original strict vertex/vertex singleton selection and actual physical contact/mean convention"
+      ]
+    },
+    {
+      "name": "TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+      "sha256": "be0af78eefcfba0b4c00c62c748bcd6c6dc8a294128c1f13272c5c2d7ea8bb5c",
+      "bytes": 12803,
+      "source_path": "/workspace/scratch/dfd876832224/repo/research/nine/TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+      "bundle_path": "recovered_variants/house_owned_north_2026_10_29/operative_sources/TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+      "category": "operative_sources",
+      "roles": [
+        "Operative radius-free Theorems A-C in Sections 1-5 only; whole support-face cover and owned-return D tilt; no later original mean/tilt scalar imported"
+      ]
+    },
+    {
+      "name": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "bytes": 13651,
+      "source_path": "/workspace/scratch/dfd876832224/repo/research/nine/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "bundle_path": "recovered_variants/house_owned_north_2026_10_29/operative_sources/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "category": "operative_sources",
+      "roles": [
+        "Operative complete original strict-high aligned-C caller; both genuine-leaf charts, both C-force rows and original graph",
+        "operative original-domain entry; whole source, both leaf charts and C force alternatives"
+      ]
+    },
+    {
+      "name": "UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "sha256": "db073cd024a4f2e763e7cd0a21bf5cb6a2a8be67069f3f9d3aff638b8a40b258",
+      "bytes": 6573,
+      "source_path": "/workspace/scratch/dfd876832224/repo/research/nine/UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "bundle_path": "recovered_variants/house_owned_north_2026_10_29/operative_sources/UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "category": "operative_sources",
+      "roles": [
+        "Operative literal original unloaded B2 reserve-one side normal and whole transverse bypass separation"
+      ]
+    },
+    {
+      "name": "REVIEW_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "sha256": "e2c3f5e72f7877b404db1db7e3b136d79a5690553df0808a757f528701b8b8fb",
+      "bytes": 23886,
+      "source_path": "/workspace/scratch/dfd876832224/repo/research/nine/REVIEW_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "bundle_path": "recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "category": "recovered_acceptance",
+      "roles": [
+        "Complete accepted be0 provenance: independent_review; not a new mathematical premise"
+      ]
+    },
+    {
+      "name": "INDEPENDENT_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_EXACT_RECORD_A5F_2026_10_29.json",
+      "sha256": "b6d131f0adb918d36f15c4330532455af4d2a7ea9cfe1ecc9903ccd674776c33",
+      "bytes": 46547,
+      "source_path": "/workspace/scratch/dfd876832224/repo/research/nine/INDEPENDENT_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_EXACT_RECORD_A5F_2026_10_29.json",
+      "bundle_path": "recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/INDEPENDENT_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_EXACT_RECORD_A5F_2026_10_29.json",
+      "category": "recovered_acceptance",
+      "roles": [
+        "Complete accepted be0 provenance: exact_review_record; not a new mathematical premise",
+        "Exact historical author/independent corroboration, not a new proof premise"
+      ]
+    },
+    {
+      "name": "ADOPTION_TILTED_CHANNEL_LOWER_RETURN_SUPPORT_FACE_ROOT_A5F_2026_10_29.md",
+      "sha256": "95b663f447e13350801c0be9f7252cf9a6a8ad72260905ec9de388409681632e",
+      "bytes": 11917,
+      "source_path": "/workspace/scratch/dfd876832224/repo/research/nine/ADOPTION_TILTED_CHANNEL_LOWER_RETURN_SUPPORT_FACE_ROOT_A5F_2026_10_29.md",
+      "bundle_path": "recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/ADOPTION_TILTED_CHANNEL_LOWER_RETURN_SUPPORT_FACE_ROOT_A5F_2026_10_29.md",
+      "category": "recovered_acceptance",
+      "roles": [
+        "Complete accepted be0 provenance: root_adoption; not a new mathematical premise"
+      ]
+    },
+    {
+      "name": "REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "sha256": "9a0c704df3817a413639a98fbae8864ef58c583811735ac5c6816f69e1b0f636",
+      "bytes": 12841,
+      "source_path": "/workspace/scratch/dfd876832224/repo/research/nine/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bundle_path": "recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "category": "recovered_acceptance",
+      "roles": [
+        "Complete published 6f original-domain acceptance provenance; not a new mathematical premise",
+        "complete separate upstream independent review; not a substitute for source read"
+      ]
+    },
+    {
+      "name": "ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "sha256": "fb99b163e4450df464fcc095ac6aea0a3294624fcb329ffbc515efda6a0bea28",
+      "bytes": 17104,
+      "source_path": "/workspace/scratch/dfd876832224/repo/research/nine/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "bundle_path": "recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "category": "recovered_acceptance",
+      "roles": [
+        "Complete published 6f original-domain acceptance provenance; not a new mathematical premise",
+        "published full original-domain adoption"
+      ]
+    },
+    {
+      "name": "INDEPENDENT_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_EXACT_RECORD_A5F_2026_10_29.json",
+      "sha256": "6504d2ec0cb300a2dfa52ac7c6ecffce1489638bf6364591ddcd67ef3bd28ced",
+      "bytes": 48292,
+      "source_path": "/workspace/scratch/dfd876832224/repo/research/nine/INDEPENDENT_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_EXACT_RECORD_A5F_2026_10_29.json",
+      "bundle_path": "recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/INDEPENDENT_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_EXACT_RECORD_A5F_2026_10_29.json",
+      "category": "recovered_acceptance",
+      "roles": [
+        "Exact historical author/independent corroboration, not a new proof premise"
+      ]
+    },
+    {
+      "name": "AUTHOR_TILTED_CHANNEL_LOWER_RETURN_SUPPORT_FACE_EXACT_RECORD_A5F_2026_10_29.json",
+      "sha256": "5b6925b52e80995683b91e56f10187c4711cda38525e10b4838cfb9264177169",
+      "bytes": 13346,
+      "source_path": "/workspace/scratch/dfd876832224/repo/research/nine/AUTHOR_TILTED_CHANNEL_LOWER_RETURN_SUPPORT_FACE_EXACT_RECORD_A5F_2026_10_29.json",
+      "bundle_path": "recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/AUTHOR_TILTED_CHANNEL_LOWER_RETURN_SUPPORT_FACE_EXACT_RECORD_A5F_2026_10_29.json",
+      "category": "recovered_acceptance",
+      "roles": [
+        "Exact historical author/independent corroboration, not a new proof premise"
+      ]
+    },
+    {
+      "name": "ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334",
+      "bytes": 20196,
+      "source_path": "/workspace/scratch/dfd876832224/repo/research/nine/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "bundle_path": "recovered_variants/house_owned_north_2026_10_29/operative_sources/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "category": "operative_sources",
+      "roles": [
+        "operative whole q>=3/8 exit and reproduced geometric reach provenance"
+      ]
+    },
+    {
+      "name": "REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+      "sha256": "167e5f8a305f33944e798668394d1d3efd92b4626968f3ad75dea494f371c154",
+      "bytes": 13485,
+      "source_path": "/workspace/scratch/dfd876832224/repo/research/nine/REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+      "bundle_path": "recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+      "category": "recovered_acceptance",
+      "roles": [
+        "complete separate upstream independent review; not a substitute for source read"
+      ]
+    },
+    {
+      "name": "ADOPTION_THREE_BROAD_CONTINUOUS_CAP_OWNER_AND_SHIFT_TOOLS_ROOT_2026_10_29.md",
+      "sha256": "865db6ecd1b9ee6774a11be75edd4f73b59e132a21bc9df1708cc3169183c36e",
+      "bytes": 8044,
+      "source_path": "/workspace/scratch/dfd876832224/repo/research/nine/ADOPTION_THREE_BROAD_CONTINUOUS_CAP_OWNER_AND_SHIFT_TOOLS_ROOT_2026_10_29.md",
+      "bundle_path": "recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/ADOPTION_THREE_BROAD_CONTINUOUS_CAP_OWNER_AND_SHIFT_TOOLS_ROOT_2026_10_29.md",
+      "category": "recovered_acceptance",
+      "roles": [
+        "published entire upper-mean owner-union adoption"
+      ]
+    },
+    {
+      "name": "ALIGNED_CHANNEL_LOWER_BYPASS_COMMON_NEIGHBOR_VERTICAL_NORMAL_OBSTRUCTION.md",
+      "sha256": "2f5514f91ba10b88d0703802eca3b459e82e0d639533d3b178f56a00fd7367cd",
+      "bytes": 14534,
+      "source_path": "/workspace/scratch/dfd876832224/repo/research/nine/ALIGNED_CHANNEL_LOWER_BYPASS_COMMON_NEIGHBOR_VERTICAL_NORMAL_OBSTRUCTION.md",
+      "bundle_path": "recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/ALIGNED_CHANNEL_LOWER_BYPASS_COMMON_NEIGHBOR_VERTICAL_NORMAL_OBSTRUCTION.md",
+      "category": "descriptive_provenance",
+      "roles": [
+        "full provenance only; old aligned-A theorem not imported into tilted caller"
+      ]
+    },
+    {
+      "name": "GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+      "sha256": "4f8da84dcc3f1fa9b8f5e231486751b134b3438905e8271f6f3484a3f10d275a",
+      "bytes": 15961,
+      "source_path": "/workspace/scratch/dfd876832224/repo/research/nine/GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+      "bundle_path": "recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+      "category": "descriptive_provenance",
+      "roles": [
+        "full corroborating provenance for literal two leaf charts; already encapsulated by operative entry"
+      ]
+    },
+    {
+      "name": "HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143",
+      "bytes": 17930,
+      "source_path": "/workspace/scratch/dfd876832224/repo/research/nine/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "bundle_path": "recovered_variants/house_owned_north_2026_10_29/operative_sources/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "category": "operative_sources",
+      "roles": [
+        "full corroborating provenance for C masks, positive coefficients and actual Q interval; encapsulated by operative entry",
+        "Complete operative source for the new owned-AD/North theorem"
+      ]
+    },
+    {
+      "name": "STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "sha256": "0c67d5578a73ec36fd9b79c509c3e158cb9a218fac8666256ab2ca1f9505cb45",
+      "bytes": 11473,
+      "source_path": "/workspace/scratch/dfd876832224/repo/research/nine/STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "bundle_path": "recovered_variants/house_owned_north_2026_10_29/operative_sources/STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "category": "operative_sources",
+      "roles": [
+        "Complete operative source for the new owned-AD/North theorem"
+      ]
+    },
+    {
+      "name": "LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78",
+      "bytes": 23353,
+      "source_path": "/workspace/scratch/dfd876832224/repo/research/nine/LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "bundle_path": "recovered_variants/house_owned_north_2026_10_29/operative_sources/LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "category": "operative_sources",
+      "roles": [
+        "Complete operative source for the new owned-AD/North theorem"
+      ]
+    },
+    {
+      "name": "GENERAL_UNLOADED_THREE_DISTINCT_SINGLETON_PORTS_HAVE_NO_FREE_NORMAL_SELECTION.md",
+      "sha256": "7700a4547542af9fc25b0e0b3d14f2113529069df0b007443c18d690da1137bb",
+      "bytes": 13951,
+      "source_path": "/workspace/scratch/dfd876832224/repo/research/nine/GENERAL_UNLOADED_THREE_DISTINCT_SINGLETON_PORTS_HAVE_NO_FREE_NORMAL_SELECTION.md",
+      "bundle_path": "recovered_variants/house_owned_north_2026_10_29/operative_sources/GENERAL_UNLOADED_THREE_DISTINCT_SINGLETON_PORTS_HAVE_NO_FREE_NORMAL_SELECTION.md",
+      "category": "operative_sources",
+      "roles": [
+        "Complete operative source for the new owned-AD/North theorem"
+      ]
+    },
+    {
+      "name": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "bytes": 14121,
+      "source_path": "/workspace/scratch/dfd876832224/repo/research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "bundle_path": "recovered_variants/house_owned_north_2026_10_29/operative_sources/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "category": "operative_sources",
+      "roles": [
+        "Complete operative source for the new owned-AD/North theorem"
+      ]
+    },
+    {
+      "name": "REVIEW_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "sha256": "a7f5cf85d5e7275ae7c9f0452fd2c1bcb25452d42298fa4e2a9f8b58986ec31c",
+      "bytes": 28830,
+      "source_path": "/workspace/scratch/dfd876832224/repo/research/nine/REVIEW_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "bundle_path": "recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "category": "recovered_acceptance",
+      "roles": [
+        "Complete source review/adoption; preserves its exact scope"
+      ]
+    },
+    {
+      "name": "ADOPTION_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_ROOT_A5F_2026_10_29.md",
+      "sha256": "b91387e036acae1af2390d31ea31c333f569430122aa2bd3177706d4dc09c7d5",
+      "bytes": 11537,
+      "source_path": "/workspace/scratch/dfd876832224/repo/research/nine/ADOPTION_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_ROOT_A5F_2026_10_29.md",
+      "bundle_path": "recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/ADOPTION_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_ROOT_A5F_2026_10_29.md",
+      "category": "recovered_acceptance",
+      "roles": [
+        "Complete source review/adoption; preserves its exact scope"
+      ]
+    },
+    {
+      "name": "REVIEW_LOADED_TWO_APPLICATION_BOUNDARY_FREE_DICHOTOMY_INDEPENDENT_2026_10_28.md",
+      "sha256": "0d71302c571280dd0df9f9b16470d668580ad1fb57ebd306468fb2a8b04d0bc5",
+      "bytes": 21488,
+      "source_path": "/workspace/scratch/dfd876832224/repo/research/nine/REVIEW_LOADED_TWO_APPLICATION_BOUNDARY_FREE_DICHOTOMY_INDEPENDENT_2026_10_28.md",
+      "bundle_path": "recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_LOADED_TWO_APPLICATION_BOUNDARY_FREE_DICHOTOMY_INDEPENDENT_2026_10_28.md",
+      "category": "recovered_acceptance",
+      "roles": [
+        "Complete source review/adoption; preserves its exact scope"
+      ]
+    },
+    {
+      "name": "ADOPTION_COMPLETE_ROOF_INTERFACES_AND_BOUNDARY_FREE_STAR_ROOT_2026_10_28.md",
+      "sha256": "aa52da0dee41ff228f68e9e4b9d8982f6d5ab89cfd0f58c62b53f84158a77678",
+      "bytes": 13739,
+      "source_path": "/workspace/scratch/dfd876832224/repo/research/nine/ADOPTION_COMPLETE_ROOF_INTERFACES_AND_BOUNDARY_FREE_STAR_ROOT_2026_10_28.md",
+      "bundle_path": "recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/ADOPTION_COMPLETE_ROOF_INTERFACES_AND_BOUNDARY_FREE_STAR_ROOT_2026_10_28.md",
+      "category": "recovered_acceptance",
+      "roles": [
+        "Complete source review/adoption; preserves its exact scope"
+      ]
+    },
+    {
+      "name": "REVIEW_GENERAL_UNLOADED_DISTINCT_SINGLETON_SELECTOR_THIN_D_2026_10_28.md",
+      "sha256": "e8e85cae9be3a395cb638bb4d60985662f5d3eeee47b4be0a371071b13075be6",
+      "bytes": 7537,
+      "source_path": "/workspace/scratch/dfd876832224/repo/research/nine/REVIEW_GENERAL_UNLOADED_DISTINCT_SINGLETON_SELECTOR_THIN_D_2026_10_28.md",
+      "bundle_path": "recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_GENERAL_UNLOADED_DISTINCT_SINGLETON_SELECTOR_THIN_D_2026_10_28.md",
+      "category": "recovered_acceptance",
+      "roles": [
+        "Complete source review/adoption; preserves its exact scope"
+      ]
+    },
+    {
+      "name": "REVIEW_GENERAL_UNLOADED_DISTINCT_SINGLETON_SELECTOR_ROOT_ADOPTION_2026_10_28.md",
+      "sha256": "a926e56193f4b287c7dccd4f5104ee6b8d533df84237f55196642d1ffe9e28be",
+      "bytes": 3683,
+      "source_path": "/workspace/scratch/dfd876832224/repo/research/nine/REVIEW_GENERAL_UNLOADED_DISTINCT_SINGLETON_SELECTOR_ROOT_ADOPTION_2026_10_28.md",
+      "bundle_path": "recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_GENERAL_UNLOADED_DISTINCT_SINGLETON_SELECTOR_ROOT_ADOPTION_2026_10_28.md",
+      "category": "recovered_acceptance",
+      "roles": [
+        "Complete source review/adoption; preserves its exact scope"
+      ]
+    },
+    {
+      "name": "REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+      "sha256": "f917697f13c574c533658ea108b0c770d4c1c949fc463ba996511e890e2d62ae",
+      "bytes": 16080,
+      "source_path": "/workspace/scratch/dfd876832224/repo/research/nine/REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+      "bundle_path": "recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+      "category": "recovered_acceptance",
+      "roles": [
+        "Complete source review/adoption; preserves its exact scope"
+      ]
+    },
+    {
+      "name": "NORTH_ROOT_FULL_JUNCTION_OWNED_C_RETURN_UNIQUE_OR_PARALLEL_FRAME_REDUCTION.md",
+      "sha256": "b9bc7a9f1645aefb1ad282ddb021147f59a5042eb41d7078bb2a76e181ed1f71",
+      "bytes": 19521,
+      "source_path": "/workspace/scratch/a35548aa44c3/continuation_broad_c62/research/nine/NORTH_ROOT_FULL_JUNCTION_OWNED_C_RETURN_UNIQUE_OR_PARALLEL_FRAME_REDUCTION.md",
+      "bundle_path": "recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/NORTH_ROOT_FULL_JUNCTION_OWNED_C_RETURN_UNIQUE_OR_PARALLEL_FRAME_REDUCTION.md",
+      "category": "descriptive_provenance",
+      "roles": [
+        "Descriptive predecessor only; its smaller physical-mask result is not an operative premise"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-28",
+  "timezone": "UTC",
+  "read_base": "c31ecd109097dde3c8faa1db11a84655575e87ab",
+  "reviewer": "s_family",
+  "verdict": "PASS",
+  "source": {
+    "path": "research/nine/BOUNDARY_CENTERED_NINE_EIGHTHS_ARC_WITHOUT_COEFFICIENT_TABLES.md",
+    "sha256": "a7227187917d53d0012bc04c002b0d24e33e5419da798381e899477a3861d1ab",
+    "git_blob_sha": "0842ee9f054b5eda452f466fbac71e5cfc3eb017",
+    "bytes": 8850
+  },
+  "old_source": {
+    "path": "research/nine/BOUNDARY_UNIT_CENTERED_NINE_EIGHTHS_ARC.md",
+    "sha256": "1d0be3caa6be9257a6f4a3998281fe0c858229ccffde8ec6fa8942fae31aa8f6",
+    "git_blob_sha": "40e85d28ebef105cb823c4749728f06107eaaa00",
+    "bytes": 6076
+  },
+  "review": {
+    "path": "research/nine/REVIEW_BOUNDARY_CENTERED_ARC_TABLE_FREE_INDEPENDENT_2026_10_28.md",
+    "sha256": "8fc212b3e71cc738ed3bc9013eff2e9fa18e4778a7914920b729686ffaa2df5d",
+    "git_blob_sha": "e5b2ef2d0b5934fc6c6775324ef4bea6e6f11b0b",
+    "bytes": 8119
+  },
+  "exact_direct_callers": [
+    {
+      "path": "research/nine/CENTRAL_S_ROOT_THREE_BOUNDARY_PATH_CAPACITY.md",
+      "sha256": "91b34cfb58f69565d75e87ebc95fb92a6ed0226588292379cb380daae87efd3f",
+      "git_blob_sha": "8f3053734032f9a33fad31a4f245ccba57a2ed18",
+      "bytes": 9634
+    },
+    {
+      "path": "research/nine/S123_POSITIVE_CHANNEL_RADIAL_MIDDLE_COMPLETE_EXCLUSION.md",
+      "sha256": "318cc6b8ab688d54ddcccdc4c8e18ba09ff3107a67f5ca29b1c016ad150ed595",
+      "git_blob_sha": "e4b90ef507ece4ab437373f30ff894bd1489d00c",
+      "bytes": 17615
+    },
+    {
+      "path": "research/nine/S123_POSITIVE_CHANNEL_UNIQUE_MIDDLE_COMPLETE_EXCLUSION.md",
+      "sha256": "a80e59199bce2584a7544a6d13f4d2cdecb81def9947bdee1dcd1f468b7d50a1",
+      "git_blob_sha": "0abd93bfecb3909d22dd9bd67103281788e5f873",
+      "bytes": 10538
+    },
+    {
+      "path": "research/nine/S123_ZERO_CHANNEL_STRICT_MIDDLE_COMPLETE_EXCLUSION.md",
+      "sha256": "631119bba6eedb0e66b78d7a7a9e73cb7ece2f47956f50d255d47bfd47ec04fa",
+      "git_blob_sha": "b19a1a55991b29955db76327efb11529c9da5cc8",
+      "bytes": 12718
+    }
+  ],
+  "exports": [
+    "whole closed radius-9/8 centered arc of halfwidth atan(7/20) lies in open unit when center radius >=27/20 and containing radius squared <=1105/256",
+    "full high-radius physical-boundary corollary including critical radius",
+    "atan(2/5)+atan(7/20)>2pi/9",
+    "atan(6)-atan(2/5)-atan(7/20)<2pi/9"
+  ],
+  "replacement_coefficient_count": 14,
+  "coarse_changes": [],
+  "fine_changes": [],
+  "execution": {
+    "hand_review": true,
+    "computational_exclusion_certificate": false,
+    "lean_compilation": false,
+    "ci": false,
+    "remote_write": false
+  }
+}

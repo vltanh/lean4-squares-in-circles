@@ -1,0 +1,228 @@
+{
+  "status": "accepted common normal-domain construction and both complete remaining Type II L135 diagonal exits; full original side domains and parent flags remain open",
+  "parent_commit": "3722e033d108293b679a0b23ea05504181e4c3fe",
+  "parent_tree": "fac8ae4d4ee0634f761656b10fcdf747e1a8d17e",
+  "sources_and_reviews": {
+    "GLOBAL_COMMON_NORMAL_DOMAIN_AFTER_FORCE_FREE_C7_AND_ALGEBRAIC_SELECTION_2026_10_29.md": {
+      "size_bytes": 35918,
+      "sha256": "557d3f5904a6ba09250a2167c6495cf3555d02536cf016a5ee09c0ccf84cfb20",
+      "git_blob": "36f69d81ac1f16504617280d5fd110c8624cfe61"
+    },
+    "AUDIT_COMMON_NORMAL_NON_DENSE_SOURCE_INVENTORY_AND_MIXED_CALLERS_2026_10_29.md": {
+      "size_bytes": 8513,
+      "sha256": "d1e3af904ef0ee777c076559d41bf1fd0d23810f1f78e3628a1e3127423abe27",
+      "git_blob": "59ad17e57145ec57136acbb4e0fa628b90512d38"
+    },
+    "NONACUTE_SUPPORT_CONE_DIAGONAL_BRIDGE_GAP_AND_COMPLETE_A_ONLY_CONE_REDUCTION_2026_10_29.md": {
+      "size_bytes": 13954,
+      "sha256": "6c07437cf008c1d9c5f89532d1ba080cfed4cc7fdea5e5b332317ae0be44c7e1",
+      "git_blob": "e737e37d2eb1a9ab549107ab144ede4981a74000"
+    },
+    "REVIEW_NONACUTE_SUPPORT_CONE_AND_A_ONLY_LITERAL_ENTRY_COMMON_SELECTION_2026_10_29.md": {
+      "size_bytes": 9109,
+      "sha256": "950999cf9795b48c575b786e1a5c0497dac35c9a14f7b51fb571a7d96bec1dee",
+      "git_blob": "cebcf761b933d4176c20c55eb94aa115c1a20fcc"
+    },
+    "UNIVERSAL_UNIT_SQUARE_CAP_AND_COMPLETE_TYPE_II_FAR_RETURN_DIAGONAL_EXCLUSION_2026_10_29.md": {
+      "size_bytes": 18949,
+      "sha256": "f4f2f293e038ea9f42dc8572cb8f216c9b9718a8fb14c4ac215232efcaf34e3c",
+      "git_blob": "b8e1c966e61edb14e26438fdf6608a28529047c1"
+    },
+    "REVIEW_TYPE_II_FAR_RETURN_COMPLETE_DIAGONAL_CAP_CONE_A_OWNER_2026_10_29.md": {
+      "size_bytes": 10281,
+      "sha256": "308a41f52ead4c9b0e63c3d83eb6ab8b35ec05ad3c05d5bbb756e36d6b944b26",
+      "git_blob": "9494b5134c206b1ffed1ca94ad1a1d44e1b94797"
+    },
+    "TYPE_II_A_ONLY_H_OWNER_COMPLETE_DIAGONAL_RETURN_EXCLUSION_BY_ORIGINAL_ENDPOINT_AXES_2026_10_29.md": {
+      "size_bytes": 16907,
+      "sha256": "a38780b72988e3f1628ba751d955bfc8a09e9c06f55764e0699b88506d175eb8",
+      "git_blob": "86c3e64d260911bc5479277df1f4d03aa30cb28f"
+    },
+    "REVIEW_TYPE_II_A_ONLY_ENTIRE_DIAGONAL_RETURN_COMMON_SELECTION_2026_10_29.md": {
+      "size_bytes": 11576,
+      "sha256": "bbae4707b2b6be55c749be33057cffaca9b6a75ef353cbb350c771873868e4b6",
+      "git_blob": "073f31d81796bc907270c99589afcb2e2880d623"
+    },
+    "REVIEW_COMMON_NORMAL_CONSTRUCTION_AND_FAR_RETURN_DIAGONAL_ROOT_2026_10_29.md": {
+      "size_bytes": 12145,
+      "sha256": "393fd77e03ccf45054c17ae34dd595af4576ef093860a711dec348f9c9b3e60a",
+      "git_blob": "23d09896d188e44fd6bd901d798797eb68cc420f"
+    },
+    "REVIEW_TYPE_II_A_ONLY_COMPLETE_DIAGONAL_ROOT_RECONSTRUCTION_2026_10_29.md": {
+      "size_bytes": 6532,
+      "sha256": "84bbb53c8a25d249844f557c2ddaaa2f2eeea1001cb77a6dd6fc5e866765b5ea",
+      "git_blob": "3f20f40607bd228a11ff18a2496a606ba7cf3d05"
+    },
+    "ADOPTION_COMMON_NORMAL_DOMAIN_AND_BOTH_TYPE_II_DIAGONAL_EXCLUSIONS_2026_10_29.md": {
+      "size_bytes": 9096,
+      "sha256": "1c4d7ff766e5ba3f7741df8f40fae311ad5e9769dfa8b2f5017ea0a569669ddd",
+      "git_blob": "738444ebdf97bd87256e7caa2f50215e993cca45"
+    },
+    "PR11_DESCRIPTION_ARCHIVE_AT_3722E033_2026_10_29.json": {
+      "size_bytes": 9615,
+      "sha256": "83c3703381c10484157165650accf201470cdab926f1be8b6fa1841e8fd88f61",
+      "git_blob": "8aa9dd15ad5abc986f4bd0946922745916a8d5ae"
+    }
+  },
+  "independent_gates": [
+    {
+      "source": "GLOBAL_COMMON_NORMAL_DOMAIN_AFTER_FORCE_FREE_C7_AND_ALGEBRAIC_SELECTION_2026_10_29.md",
+      "review": "REVIEW_COMMON_NORMAL_CONSTRUCTION_AND_FAR_RETURN_DIAGONAL_ROOT_2026_10_29.md",
+      "scope": "all four retained non-dense prelists have a common open matched-parameter product; proper finite polynomial avoidance on that product; complete downstream audit not claimed",
+      "source_sha256": "557d3f5904a6ba09250a2167c6495cf3555d02536cf016a5ee09c0ccf84cfb20",
+      "review_sha256": "393fd77e03ccf45054c17ae34dd595af4576ef093860a711dec348f9c9b3e60a"
+    },
+    {
+      "source": "UNIVERSAL_UNIT_SQUARE_CAP_AND_COMPLETE_TYPE_II_FAR_RETURN_DIAGONAL_EXCLUSION_2026_10_29.md",
+      "review": "REVIEW_TYPE_II_FAR_RETURN_COMPLETE_DIAGONAL_CAP_CONE_A_OWNER_2026_10_29.md",
+      "scope": "entire far-A-vertex diagonal return of original Type II L135; exact original side remainder retained",
+      "source_sha256": "f4f2f293e038ea9f42dc8572cb8f216c9b9718a8fb14c4ac215232efcaf34e3c",
+      "review_sha256": "308a41f52ead4c9b0e63c3d83eb6ab8b35ec05ad3c05d5bbb756e36d6b944b26"
+    },
+    {
+      "source": "NONACUTE_SUPPORT_CONE_DIAGONAL_BRIDGE_GAP_AND_COMPLETE_A_ONLY_CONE_REDUCTION_2026_10_29.md",
+      "review": "REVIEW_NONACUTE_SUPPORT_CONE_AND_A_ONLY_LITERAL_ENTRY_COMMON_SELECTION_2026_10_29.md",
+      "scope": "general nonacute support-cone diagonal trichotomy and whole original A-only strict-cone application",
+      "source_sha256": "6c07437cf008c1d9c5f89532d1ba080cfed4cc7fdea5e5b332317ae0be44c7e1",
+      "review_sha256": "950999cf9795b48c575b786e1a5c0497dac35c9a14f7b51fb571a7d96bec1dee"
+    },
+    {
+      "source": "TYPE_II_A_ONLY_H_OWNER_COMPLETE_DIAGONAL_RETURN_EXCLUSION_BY_ORIGINAL_ENDPOINT_AXES_2026_10_29.md",
+      "review": "REVIEW_TYPE_II_A_ONLY_ENTIRE_DIAGONAL_RETURN_COMMON_SELECTION_2026_10_29.md",
+      "scope": "entire A-only h diagonal return of original Type II L135, including full perpendicular-axis locus and all original means",
+      "source_sha256": "a38780b72988e3f1628ba751d955bfc8a09e9c06f55764e0699b88506d175eb8",
+      "review_sha256": "bbae4707b2b6be55c749be33057cffaca9b6a75ef353cbb350c771873868e4b6"
+    }
+  ],
+  "explicit_source_table_pins_verified": {
+    "BOUNDARY_SEVEN_CYCLE_CAPACITY_ONE.md": "4aaa291b46b668bf1eaa4fc5e007f06646472a17212a42474c932e6e750d4bb9",
+    "CIRCLE_CONTACT_ANGULAR_ORDER.md": "e54df61d3134c5709bee5ac1a250fdd51084828da114d896f14c7e6337c4e8c5",
+    "PHYSICAL_CONTACT_STRESS.md": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+    "PHYSICAL_BODY_GRAPH_UNCROSSING.md": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+    "UNIQUE_POSITIVE_COMPONENT.md": "a971b4f2925c28be1d1e528d3bb01bf0c325e8de87675fe9a114416fab28380c",
+    "D_LEAF_ROOT_REQUIRES_PHYSICALLY_CLEAR_NONLEAF_NEIGHBOR.md": "72632128582b60411187d891c224bfd085b8483a70632775b5a4f7c9786fe08c",
+    "GLOBAL_CLOSURE_ARTICULATION_STRESS_SPLITTING.md": "39aa9e31a6de4ecdff535a8136f5c3330e6bb653903951fde812ee522d128d4a",
+    "ADJACENT_TWO_S_LEAF_C4_BOTH_TWO_CORNER_MASK_EXCLUSION.md": "e55398acb2f544139113cfa30f93f8dd9dd68656c40d9ba0cfc4c20aeb7f870f",
+    "S_ROOT_BOUNDARY_FREE_NORMAL_SIDE_BIAS_SELECTION.md": "48bc30d65e1581f4dc84ac0143b76482738dd46901e9f5384b66f94b34de8343",
+    "SHARED_RETURN_JUNCTION_COMPATIBLE_SELECTION_AND_PENTAGON_EXCLUSION.md": "00b93e6146b0686dc2d3bc0fe580058eb919de2a32c7df88fe546c4379846fda",
+    "COINCIDENT_TRIANGLE_BOUNDARY_RETURN_DIAGONAL_BIAS_SELECTION.md": "ba1f280d0f833aef26511b06895a2847dacbb4a348dc56adbacac2b871c3563d",
+    "NEGATIVE_A_OWNED_SHARED_FREE_UNIQUE_MIDDLE_EXCLUSION.md": "b760fa95af5332ad975ba252a1e01301e07b6d6da311ee306145674a9c63c999",
+    "NEGATIVE_UNIQUE_TRIANGLE_TIP_OWNED_EXCLUSION.md": "9d861f2297082f7e1a0011dd871dd9eea05c3046942647cb81b7af317c9689af",
+    "NEGATIVE_UNIQUE_ENDPOINT_TIP_OWNED_HIGH_RADIUS.md": "dc230615cd6e7772bba4c43540bef71ec620e01dc884b16fa1ab09772913a461",
+    "FOUR_CYCLE_THREE_LOAD_BRANCH_CLOSED.md": "79abb083c1791eacc40baaea9b676d54de6234123999c40d7f79e1714c7b393a",
+    "C7_SHARED_SIDE_BLOCK_GENERIC_SELECTION.md": "61c362679b327cf5fea18b58f60a4d522bdfefd205b241c5f8f91027385a1154",
+    "C7_TWO_FREE_EDGES_EXCLUSION.md": "2ef45f75be3c878544348310ecb3e1549460870081d73cc827f90a961cb24a84",
+    "C7_HIGH_CENTER_CONTACT_TYPES.md": "68e94d3f80274c07f3a4f6c0d01eab753733b1e808838c6abf6e4448cfc481b8",
+    "GENERAL_FIXED_TIP_NORMAL_SELECTION.md": "ef8ae8a219af9fa15a70698e485bbb337925e5caf2cd64b6b5c2619d9c4bd194",
+    "C7_TWO_CIRCLE_CORNER_BLOCKS.md": "6ed5bdde4487a45935c85ecb9ee4556555491047d4739e529bd024f234affddc",
+    "C7_PINNED_VERTEX_CONTACT_TYPES.md": "545e2e30193787a2a374adaf6063053024a717dc6f1bde1084b6c2c20590a51e",
+    "C7_RADIAL_VERTEX_EDGE_EXCLUSION.md": "e850a10e2d03217d7f4a37870dc309f101ddde7fe41b52adb82d7b6c5e7865d2",
+    "C7_MIRROR_VERTEX_EDGE_EXCLUSION.md": "16e73078680111b4479c680f70ceb33d2c3c08801a0055328262bc31e4b27c89",
+    "D_FOUR_CYCLE_SHARED_VERTICAL_EXCLUSION.md": "85a800e4bb4c3cc6f7da33a106c048946dfc7ef85ffdcd02e677e884606e6a5a",
+    "ACUTE_RETURN_SUPPORT_CONE_DIAGONAL_BRIDGE_BOUND_AND_TYPE_II_PERPENDICULAR_SIDE_ONLY_REDUCTION_2026_10_29.md": "ae0ecc5190c6b92116c6f52ee8fccb375598e9152a5385cdc29ade149cfac528",
+    "UNIQUE_CIRCLE_TYPE_II_SINGLETON_WEST_COMPLETE_HUB_OWNER_AND_EXTERNAL_RETURN_DOMAIN_2026_10_29.md": "e63a1e1d14c50363a244dae4d8927b2113a4222ca1064777660a366b092f351c",
+    "SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1",
+    "UNIQUE_CIRCLE_TRIANGLE_TIP_THREE_PORT_TYPES_AND_HUB_INTERFACE_OWNER_COVER_2026_10_29.md": "8266220efbb8ce769de90a90e27e86997400575d0b8bb80f5843af38ca447073",
+    "GENERAL_UNLOADED_THREE_DISTINCT_SINGLETON_PORTS_HAVE_NO_FREE_NORMAL_SELECTION.md": "7700a4547542af9fc25b0e0b3d14f2113529069df0b007443c18d690da1137bb",
+    "TYPE_II_PERPENDICULAR_HUB_OWNER_WHOLE_UNLOADED_BRIDGE_EXCLUSION_BY_CONTINUOUS_OBLIQUE_GAP_2026_10_29.md": "1de9fe2c3ab7d71d13c9dc96a8a036d05200e9e0447704bbae641e974a0dd03a",
+    "QUANTITATIVE_VERTICAL_RETURN_BRIDGE_AND_TYPE_II_D_DIRECTION_FULL_SIDE_MEAN_EXCLUSION_2026_10_29.md": "ea6c1dca78a25b23cc66134259a117a90db8c988c9598eef5d8648c9c0225cf3",
+    "GLOBAL_COMMON_NORMAL_DOMAIN_AFTER_FORCE_FREE_C7_AND_ALGEBRAIC_SELECTION_2026_10_29.md": "557d3f5904a6ba09250a2167c6495cf3555d02536cf016a5ee09c0ccf84cfb20",
+    "UNIVERSAL_UNIT_SQUARE_CAP_AND_COMPLETE_TYPE_II_FAR_RETURN_DIAGONAL_EXCLUSION_2026_10_29.md": "f4f2f293e038ea9f42dc8572cb8f216c9b9718a8fb14c4ac215232efcaf34e3c",
+    "NONACUTE_SUPPORT_CONE_DIAGONAL_BRIDGE_GAP_AND_COMPLETE_A_ONLY_CONE_REDUCTION_2026_10_29.md": "6c07437cf008c1d9c5f89532d1ba080cfed4cc7fdea5e5b332317ae0be44c7e1",
+    "TYPE_II_A_ONLY_H_OWNER_COMPLETE_DIAGONAL_RETURN_EXCLUSION_BY_ORIGINAL_ENDPOINT_AXES_2026_10_29.md": "a38780b72988e3f1628ba751d955bfc8a09e9c06f55764e0699b88506d175eb8",
+    "REVIEW_COMMON_NORMAL_CONSTRUCTION_AND_FAR_RETURN_DIAGONAL_ROOT_2026_10_29.md": "393fd77e03ccf45054c17ae34dd595af4576ef093860a711dec348f9c9b3e60a",
+    "REVIEW_TYPE_II_FAR_RETURN_COMPLETE_DIAGONAL_CAP_CONE_A_OWNER_2026_10_29.md": "308a41f52ead4c9b0e63c3d83eb6ab8b35ec05ad3c05d5bbb756e36d6b944b26",
+    "REVIEW_NONACUTE_SUPPORT_CONE_AND_A_ONLY_LITERAL_ENTRY_COMMON_SELECTION_2026_10_29.md": "950999cf9795b48c575b786e1a5c0497dac35c9a14f7b51fb571a7d96bec1dee",
+    "REVIEW_TYPE_II_A_ONLY_ENTIRE_DIAGONAL_RETURN_COMMON_SELECTION_2026_10_29.md": "bbae4707b2b6be55c749be33057cffaca9b6a75ef353cbb350c771873868e4b6",
+    "AUDIT_COMMON_NORMAL_NON_DENSE_SOURCE_INVENTORY_AND_MIXED_CALLERS_2026_10_29.md": "d1e3af904ef0ee777c076559d41bf1fd0d23810f1f78e3628a1e3127423abe27",
+    "REVIEW_TYPE_II_A_ONLY_COMPLETE_DIAGONAL_ROOT_RECONSTRUCTION_2026_10_29.md": "84bbb53c8a25d249844f557c2ddaaa2f2eeea1001cb77a6dd6fc5e866765b5ea"
+  },
+  "explicit_source_table_pin_occurrences": 80,
+  "operative_input_corpus": {
+    "files": 1750,
+    "all_original_sizes_and_git_blob_identities_verified": true,
+    "ordered_path_gitblob_sha256_records_digest": "815f96f3b5303133b4347b5f81116c51bbf24427a7c20df7f5680d1baf820b38",
+    "scope": "prescription discovery and mixed-caller audit, not a fresh full proof audit of all sources"
+  },
+  "exact_checks": {
+    "far_degree_six_power_expansion_zero": true,
+    "far_bernstein_identity_zero": true,
+    "far_all_bernstein_coefficients_positive": true,
+    "far_bernstein_coefficients": [
+      "33638528",
+      "117841024/5",
+      "1827779296/125",
+      "4956797132/625",
+      "9130086742/3125",
+      "3000127438/3125",
+      "13366307108/15625"
+    ],
+    "a_only_sqrt2_lower_squared_reserve": "2/9801",
+    "a_only_sqrt99_lower_squared_reserve": "99/100",
+    "a_only_sqrt2_upper_squared_reserve": "1/144",
+    "a_only_small_k_bound": "6250/14553 < 12/25",
+    "a_only_small_k_integer_reserve": 18386,
+    "continuous_interval_and_full_original_mean_joins": "hand reconstructed by complete independent and root reports"
+  },
+  "inventory": {
+    "fine": {
+      "total": 2513,
+      "checked": 2373,
+      "open": 140,
+      "original_ids_order_flags_unchanged": true
+    },
+    "coarse": {
+      "total": 58,
+      "closed": 36,
+      "open": 22,
+      "original_ids_order_flags_unchanged": true
+    },
+    "fine_sequence_sha256": "feda561e85056c0bae48f2f33b8df7814c44d983ca4f1cc3e422391525106f1f",
+    "coarse_sequence_sha256": "99e0b788a73379a719f331d43581ef02c76ea2e8622a8c8f43bbf21e9ea241bd"
+  },
+  "metadata": {
+    "research/nine/DEEP_GATED_ROADMAP.md": {
+      "size_bytes": 1081947,
+      "sha256": "299da70ddc7903eb8fd9307ad0d487910920a1e10a86f6cd7ee661b09afe6f4c",
+      "git_blob": "3b8f1483101be24716246822d9c4cc9eaaace5d8"
+    },
+    "research/nine/CYCLIC_CELL_LEDGER.md": {
+      "size_bytes": 340264,
+      "sha256": "0f9d9f6cdfed12dc514cea9de852cc390d4692761f47e352d5ddc3ca501a1962",
+      "git_blob": "45b062c10c9125e52887a9356663731f3365e71a"
+    },
+    "research/nine/README.md": {
+      "size_bytes": 103954,
+      "sha256": "26d572b1df24522ff7d0e36ffb8462995823204408bd9efee22076f814b8564b",
+      "git_blob": "bf4fa4489ed15986d95094d653f2c29fcf257dd7"
+    },
+    "research/nine/ROADMAP.md": {
+      "size_bytes": 82700,
+      "sha256": "f0795bc4d59d7eb598773f06978a5e5b6ae93b2071a636742d550c57d03b70ae",
+      "git_blob": "3ed25139c134f62b553af044c3412aa0126b62c3"
+    },
+    "research/nine/HANDOFF_PR11_2026_10_28_CURRENT.md": {
+      "size_bytes": 165746,
+      "sha256": "9230f9ddac723cbdebbef5fd2ca69fc0a33ad9bda7b56751031df824587665df",
+      "git_blob": "6f0fe2b3491566effca199650e5bbe9503f3eb51"
+    }
+  },
+  "remaining": [
+    "both original Type II L135 side-transmitting domains",
+    "loaded Type I/II",
+    "both physical-two inner-face residuals",
+    "other graph/load and attachment-forest parents",
+    "full G4.2.c downstream prerequisite/nonidentity/true-degree/mask audit",
+    "unrestricted sharp n=9 theorem",
+    "equality classification",
+    "Lean integration"
+  ],
+  "prohibited_operations_performed": {
+    "Lean_Lake_build": false,
+    "CI_workflow_dispatch": false,
+    "numerical_pose_search": false,
+    "angle_mesh": false,
+    "new_packing_certificate": false,
+    "merge": false
+  }
+}

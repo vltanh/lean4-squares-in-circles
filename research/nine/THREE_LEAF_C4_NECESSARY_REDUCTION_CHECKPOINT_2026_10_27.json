@@ -1,0 +1,133 @@
+{
+  "base_head": "856701921882a8b11ef384f512a888ee46fb63ad",
+  "source_and_review_pins": [
+    {
+      "path": "research/nine/REVIEW_THREE_LEAF_C4_LARGE_PORT_REDUCTION_FULL_SIX_BODY_2026_10_27.md",
+      "sha256": "7903bc01464f490d6ed623054ea88224237733b6a6f5c996157ea3163d759134",
+      "git_blob_sha": "cb6be94930a2da16f931e0df055d710f92b9b2ad",
+      "size": 16281
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_LEAF_C4_LARGE_PORT_REDUCTION_ROOT_2026_10_27.md",
+      "sha256": "e06de93814bff475db431324bfaeaa839e1480692d7c2209c9d2f25e68391359",
+      "git_blob_sha": "f595414b3d325b597748ce38cd7da987be03608e",
+      "size": 10388
+    },
+    {
+      "path": "research/nine/THREE_GENUINE_LEAF_C4_MIDDLE_ROOT_AND_LARGE_PORT_REDUCTION.md",
+      "sha256": "7d789ce70b2444aadf0f0a7f1354d7c92ff92085357a91f5eea42a6acbddb1ac",
+      "git_blob_sha": "dd190254a9633a52c7eb6d8942a9bf45c31d7478",
+      "size": 22509
+    }
+  ],
+  "exact_published_dependencies": [
+    {
+      "path": "research/nine/THREE_GENUINE_LEAF_ROOTS_HIGH_S_REDUCTION.md",
+      "local_path": "/workspace/scratch/b37a3970e18c/repo/research/nine/THREE_GENUINE_LEAF_ROOTS_HIGH_S_REDUCTION.md",
+      "sha256": "41c6686127871c7c99ab69c84292f04c995a8530eb02cde0235cdacc181ae73f",
+      "git_blob_sha1": "6b9edeb050169d8e45720bbebd7b9f8758c1ac55",
+      "original_remote_blob": "6b9edeb050169d8e45720bbebd7b9f8758c1ac55",
+      "remote_pin_matches": true
+    },
+    {
+      "path": "research/nine/GENUINE_LEAF_ROOT_SMALL_NONLEAF_SUPPORTS.md",
+      "local_path": "/workspace/scratch/b37a3970e18c/repo/research/nine/GENUINE_LEAF_ROOT_SMALL_NONLEAF_SUPPORTS.md",
+      "sha256": "a729b8ebb0d0aaf2ff0fa3a8b08749faf136b18253a0dbd0c99a91f2a069b358",
+      "git_blob_sha1": "4a835d5c3745db039ec05e89c67303db2033c6ee",
+      "original_remote_blob": "4a835d5c3745db039ec05e89c67303db2033c6ee",
+      "remote_pin_matches": true
+    },
+    {
+      "path": "research/nine/ROOTED_C3_334_PRIVATE_ADJACENT_LEAF_TWO_LOAD_C4_EXCLUSION.md",
+      "local_path": "/workspace/scratch/b37a3970e18c/repo/research/nine/ROOTED_C3_334_PRIVATE_ADJACENT_LEAF_TWO_LOAD_C4_EXCLUSION.md",
+      "sha256": "9036a1a8c2b1c7e0f713eef3e0dc3bacbecb42d588332120cf9e04c27ffa98c5",
+      "git_blob_sha1": "a092f79a048c5fbb65d8b244bd483d8983de6ddd",
+      "original_remote_blob": "a092f79a048c5fbb65d8b244bd483d8983de6ddd",
+      "remote_pin_matches": true
+    },
+    {
+      "path": "research/nine/GENERAL_NEAR_UNIT_OBLIQUE_FACING_CONTACT_SMALL_CORNER.md",
+      "local_path": "/workspace/scratch/b37a3970e18c/repo/research/nine/GENERAL_NEAR_UNIT_OBLIQUE_FACING_CONTACT_SMALL_CORNER.md",
+      "sha256": "9f10979656d694ce78aec002519caa58b792c17ca101d9de38ccea0196fa17ba",
+      "git_blob_sha1": "aab872092d5d21e0dc71d2b52c7d1130de84e523",
+      "original_remote_blob": "aab872092d5d21e0dc71d2b52c7d1130de84e523",
+      "remote_pin_matches": true
+    },
+    {
+      "path": "research/nine/THREE_GENUINE_LEAVES_WITH_A_TRANSMITTER_ROOT_EXCLUSION.md",
+      "local_path": "/workspace/scratch/b37a3970e18c/repo/research/nine/THREE_GENUINE_LEAVES_WITH_A_TRANSMITTER_ROOT_EXCLUSION.md",
+      "sha256": "e9556805bfc116fc1fb4f731e24cc55d415e582e78e6f0bb52f710e57cf146dd",
+      "git_blob_sha1": "66837644873f522c7dfbed1de164d152117bb19d",
+      "original_remote_blob": "66837644873f522c7dfbed1de164d152117bb19d",
+      "remote_pin_matches": true
+    },
+    {
+      "path": "research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "local_path": "/workspace/scratch/b37a3970e18c/repo/research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "git_blob_sha1": "8f935773421d3d6bcc8a7a6387a85851b27a1771",
+      "original_remote_blob": "8f935773421d3d6bcc8a7a6387a85851b27a1771",
+      "remote_pin_matches": true
+    },
+    {
+      "path": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "local_path": "/workspace/scratch/b37a3970e18c/repo/research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "git_blob_sha1": "fd91cf5e38a8b9eb877710cab9d4dd1575f9bc22",
+      "original_remote_blob": "fd91cf5e38a8b9eb877710cab9d4dd1575f9bc22",
+      "remote_pin_matches": true
+    },
+    {
+      "path": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "local_path": "/workspace/scratch/b37a3970e18c/repo/research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "git_blob_sha1": "723228d77626f68c3ded2e3e897a21d4f1ed7ccc",
+      "original_remote_blob": "723228d77626f68c3ded2e3e897a21d4f1ed7ccc",
+      "remote_pin_matches": true
+    },
+    {
+      "path": "research/nine/END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+      "local_path": "/workspace/scratch/b37a3970e18c/repo/research/nine/END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+      "sha256": "20a845eff8bee3e9c533162df0b32ea96f9dd104a3cfec41efb3b0cf92d6e9cf",
+      "git_blob_sha1": "2437407a941e6fc5c3a617f312521f3d3e8e5732",
+      "original_remote_blob": "2437407a941e6fc5c3a617f312521f3d3e8e5732",
+      "remote_pin_matches": true
+    },
+    {
+      "path": "research/nine/ROOTED_ORIGIN_FREE_RADIAL_CONTACT_EXCLUSIONS.md",
+      "local_path": "/workspace/scratch/b37a3970e18c/repo/research/nine/ROOTED_ORIGIN_FREE_RADIAL_CONTACT_EXCLUSIONS.md",
+      "sha256": "4a8f7bf60faecb973abb54096c34a3d8f8c60f0e50a20ae0b035f8e2dee3efd3",
+      "git_blob_sha1": "33676886bbf6550af89cd1829d44a98bdbcdf359",
+      "original_remote_blob": "33676886bbf6550af89cd1829d44a98bdbcdf359",
+      "remote_pin_matches": true
+    }
+  ],
+  "target_original_cell": "C1.4.b3",
+  "target_original_placement": 7,
+  "target_status": "OPEN",
+  "remaining_full_domains": [
+    "Parallel B with actual weighted side means",
+    "Nonparallel B with exact positive A-owned chart and physical single-corner D"
+  ],
+  "complete_b3_placements": 22,
+  "b3_total_placements": 24,
+  "b3_open_placements": [
+    7,
+    9
+  ],
+  "coarse_closed": 32,
+  "coarse_open": 26,
+  "coarse_total": 58,
+  "fine_checked": 2319,
+  "fine_total": 2513,
+  "changed_fine_ids": [],
+  "unchanged_ledger_git_blob": "98fbd6ad6cc587123b1f8d32d0c1d09cf6dacc20",
+  "unchanged_roadmap_git_blob": "d9c51fd7e38d7903d90c27225af5a93481fe0a0b",
+  "same_ordered_original_fine_states": true,
+  "unrestricted_theorem": "OPEN",
+  "original_equality_classification": "OPEN",
+  "older_global_prerequisite_audit": "OPEN",
+  "lean_integration": "OPEN",
+  "lean_compilation_run": false,
+  "ci_run": false
+}

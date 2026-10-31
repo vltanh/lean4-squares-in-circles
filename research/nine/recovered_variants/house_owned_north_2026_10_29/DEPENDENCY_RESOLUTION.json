@@ -1,0 +1,1215 @@
+{
+  "date_utc": "2026-10-29",
+  "manifest_sha256": "046ab9d445596b37d44a68bcedada8f78c5784d8531fe23a0924d3a1fc31e88c",
+  "exact_recovery_objects": 30,
+  "canonical_recovery_objects": 10,
+  "matched_named_table_pins": [
+    {
+      "source": "research/nine/LOADED_PARALLEL_FULL_STAR_WITH_DISTINCT_NEIGHBORS_FORCES_RADIAL_S_2026_10_29.md",
+      "line": 250,
+      "reference": "PHYSICAL_CONTACT_STRESS.md",
+      "resolved_path": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "source": "research/nine/LOADED_PARALLEL_FULL_STAR_WITH_DISTINCT_NEIGHBORS_FORCES_RADIAL_S_2026_10_29.md",
+      "line": 251,
+      "reference": "SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "resolved_path": "research/nine/SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1"
+    },
+    {
+      "source": "research/nine/PARALLEL_RADIAL_ROOF_ONE_ALIGNED_HUB_SINGLETON_INTERFACE_POCKET_EMPTY_2026_10_29.md",
+      "line": 266,
+      "reference": "PHYSICAL_CONTACT_STRESS.md",
+      "resolved_path": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "source": "research/nine/PARALLEL_RADIAL_ROOF_ONE_ALIGNED_HUB_SINGLETON_INTERFACE_POCKET_EMPTY_2026_10_29.md",
+      "line": 267,
+      "reference": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "resolved_path": "research/nine/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207"
+    },
+    {
+      "source": "research/nine/PARALLEL_RADIAL_ROOF_ONE_ALIGNED_HUB_SINGLETON_INTERFACE_POCKET_EMPTY_2026_10_29.md",
+      "line": 268,
+      "reference": "RADIAL_ROOF_STACK_ONE_SIGN_HUB_POCKET_EMPTY_2026_10_29.md",
+      "resolved_path": "research/nine/RADIAL_ROOF_STACK_ONE_SIGN_HUB_POCKET_EMPTY_2026_10_29.md",
+      "sha256": "fbae486a8a481dffb3fee77d41712607d5ca57fb44fe4e3f728d7b14dec62eff"
+    },
+    {
+      "source": "research/nine/PARALLEL_RADIAL_ROOF_ONE_ALIGNED_HUB_SINGLETON_INTERFACE_POCKET_EMPTY_2026_10_29.md",
+      "line": 269,
+      "reference": "SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "resolved_path": "research/nine/SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1"
+    },
+    {
+      "source": "research/nine/PARALLEL_RADIAL_ROOF_WITH_ANY_ALIGNED_HUB_COMPLETE_D02_FEATURE_EXCLUSION_2026_10_29.md",
+      "line": 520,
+      "reference": "PARALLEL_RADIAL_ROOF_ONE_ALIGNED_HUB_SINGLETON_INTERFACE_POCKET_EMPTY_2026_10_29.md",
+      "resolved_path": "research/nine/PARALLEL_RADIAL_ROOF_ONE_ALIGNED_HUB_SINGLETON_INTERFACE_POCKET_EMPTY_2026_10_29.md",
+      "sha256": "77f0de779733353f2e791d0f2f2db54611f0930826917834c43f4146194272c4"
+    },
+    {
+      "source": "research/nine/PARALLEL_RADIAL_ROOF_WITH_ANY_ALIGNED_HUB_COMPLETE_D02_FEATURE_EXCLUSION_2026_10_29.md",
+      "line": 521,
+      "reference": "RADIAL_ROOF_STACK_ONE_SIGN_HUB_POCKET_EMPTY_2026_10_29.md",
+      "resolved_path": "research/nine/RADIAL_ROOF_STACK_ONE_SIGN_HUB_POCKET_EMPTY_2026_10_29.md",
+      "sha256": "fbae486a8a481dffb3fee77d41712607d5ca57fb44fe4e3f728d7b14dec62eff"
+    },
+    {
+      "source": "research/nine/PARALLEL_RADIAL_ROOF_WITH_ANY_ALIGNED_HUB_COMPLETE_D02_FEATURE_EXCLUSION_2026_10_29.md",
+      "line": 522,
+      "reference": "SHARED_TRIANGLE_HUBS_PARALLEL_ROOF_BOTH_EXTERIOR_POCKETS_CAPACITY_ONE_2026_10_29.md",
+      "resolved_path": "research/nine/SHARED_TRIANGLE_HUBS_PARALLEL_ROOF_BOTH_EXTERIOR_POCKETS_CAPACITY_ONE_2026_10_29.md",
+      "sha256": "ccc05fb4a7a8a633b9ba3abf5ad8712f71c50e2f754b75c1b5847297e5e5b1e5"
+    },
+    {
+      "source": "research/nine/PARALLEL_RADIAL_ROOF_WITH_ANY_ALIGNED_HUB_COMPLETE_D02_FEATURE_EXCLUSION_2026_10_29.md",
+      "line": 523,
+      "reference": "SHARED_HUB_PARALLEL_ROOF_COMPLETE_D02_L135_L1345_FEATURE_EXCLUSION_2026_10_29.md",
+      "resolved_path": "research/nine/SHARED_HUB_PARALLEL_ROOF_COMPLETE_D02_L135_L1345_FEATURE_EXCLUSION_2026_10_29.md",
+      "sha256": "315b5af77c055aff089ac86d0de430a2e1307af3e1f8454f0f3c7ad0db0dc7e8"
+    },
+    {
+      "source": "research/nine/PARALLEL_RADIAL_ROOF_WITH_ANY_ALIGNED_HUB_COMPLETE_D02_FEATURE_EXCLUSION_2026_10_29.md",
+      "line": 524,
+      "reference": "PHYSICAL_CONTACT_STRESS.md",
+      "resolved_path": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "source": "research/nine/PARALLEL_RADIAL_ROOF_WITH_ANY_ALIGNED_HUB_COMPLETE_D02_FEATURE_EXCLUSION_2026_10_29.md",
+      "line": 525,
+      "reference": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "resolved_path": "research/nine/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207"
+    },
+    {
+      "source": "research/nine/PARALLEL_RADIAL_ROOF_WITH_ANY_ALIGNED_HUB_COMPLETE_D02_FEATURE_EXCLUSION_2026_10_29.md",
+      "line": 526,
+      "reference": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "resolved_path": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe"
+    },
+    {
+      "source": "research/nine/PARALLEL_RADIAL_ROOF_WITH_ANY_ALIGNED_HUB_COMPLETE_D02_FEATURE_EXCLUSION_2026_10_29.md",
+      "line": 527,
+      "reference": "SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "resolved_path": "research/nine/SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1"
+    },
+    {
+      "source": "research/nine/PARALLEL_RADIAL_ROOF_WITH_ANY_ALIGNED_HUB_COMPLETE_D02_FEATURE_EXCLUSION_2026_10_29.md",
+      "line": 528,
+      "reference": "CHORDED_HEXAGON_CENTRAL_CAPACITY_ONE.md",
+      "resolved_path": "research/nine/CHORDED_HEXAGON_CENTRAL_CAPACITY_ONE.md",
+      "sha256": "0b787eae6efe36d2ca6c40dbb079d3262192125fffe58026bacbfd657d1a9a34"
+    },
+    {
+      "source": "research/nine/PARALLEL_RADIAL_ROOF_WITH_ANY_ALIGNED_HUB_COMPLETE_D02_FEATURE_EXCLUSION_2026_10_29.md",
+      "line": 529,
+      "reference": "CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md",
+      "resolved_path": "research/nine/CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md",
+      "sha256": "b61b0dec7ded00984c687e353fd3f3bfb5a5a7ade45d87d69aaeade09f23d80b"
+    },
+    {
+      "source": "research/nine/PARALLEL_RADIAL_ROOF_WITH_ANY_ALIGNED_HUB_COMPLETE_D02_FEATURE_EXCLUSION_2026_10_29.md",
+      "line": 530,
+      "reference": "FORCE_FREE_BOUNDARY_SIDE_CHANNEL_OUTER_POCKET_CAPACITY_ONE.md",
+      "resolved_path": "research/nine/FORCE_FREE_BOUNDARY_SIDE_CHANNEL_OUTER_POCKET_CAPACITY_ONE.md",
+      "sha256": "418229089de594515bbb60da5bdcdb4cd044bd4e9396aacfa47d27de96194055"
+    },
+    {
+      "source": "research/nine/PARALLEL_RADIAL_ROOF_WITH_ANY_ALIGNED_HUB_COMPLETE_D02_FEATURE_EXCLUSION_2026_10_29.md",
+      "line": 531,
+      "reference": "FORCE_FREE_OCCUPIED_SIDE_CHANNEL_ONE_FORTIETH_PROXIMITY.md",
+      "resolved_path": "research/nine/FORCE_FREE_OCCUPIED_SIDE_CHANNEL_ONE_FORTIETH_PROXIMITY.md",
+      "sha256": "5e8f69ad14c78b6ad99a1ba46855fc3627df5ccc1d5451f295826d2b06709abb"
+    },
+    {
+      "source": "research/nine/PARALLEL_RADIAL_ROOF_WITH_ANY_ALIGNED_HUB_COMPLETE_D02_FEATURE_EXCLUSION_2026_10_29.md",
+      "line": 532,
+      "reference": "C7_INNER_SIDE_CORNER_RESTRICTIONS.md",
+      "resolved_path": "research/nine/C7_INNER_SIDE_CORNER_RESTRICTIONS.md",
+      "sha256": "b9329b7a81b57cd0fef4b62c69c26388face02b8b985c79624aa285416284733"
+    },
+    {
+      "source": "research/nine/PARALLEL_RADIAL_ROOF_WITH_ANY_ALIGNED_HUB_COMPLETE_D02_FEATURE_EXCLUSION_2026_10_29.md",
+      "line": 533,
+      "reference": "recovered_variants/parallel_diagonal_2026_10_29/FULL_PARALLEL_RETURN_STARS_DIAGONAL_CHANNEL_EXTERIOR_POCKET_EMPTY.md",
+      "resolved_path": "research/nine/recovered_variants/parallel_diagonal_2026_10_29/FULL_PARALLEL_RETURN_STARS_DIAGONAL_CHANNEL_EXTERIOR_POCKET_EMPTY.md",
+      "sha256": "60aafee1c86633dd2a384d703425d9b60369f0b522c7ef0f85fe5eac4472b078"
+    },
+    {
+      "source": "research/nine/THREE_GENUINE_ROOTS_ARBITRARY_PRIVATE_NETWORK_LOAD_AND_UNIQUE_PAIR_CLASS_2026_10_29.md",
+      "line": 352,
+      "reference": "PHYSICAL_CONTACT_STRESS.md",
+      "resolved_path": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "source": "research/nine/THREE_GENUINE_ROOTS_ARBITRARY_PRIVATE_NETWORK_LOAD_AND_UNIQUE_PAIR_CLASS_2026_10_29.md",
+      "line": 353,
+      "reference": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "resolved_path": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe"
+    },
+    {
+      "source": "research/nine/THREE_GENUINE_ROOTS_ARBITRARY_PRIVATE_NETWORK_LOAD_AND_UNIQUE_PAIR_CLASS_2026_10_29.md",
+      "line": 354,
+      "reference": "THREE_GENUINE_LEAF_ROOTS_HIGH_S_REDUCTION.md",
+      "resolved_path": "research/nine/THREE_GENUINE_LEAF_ROOTS_HIGH_S_REDUCTION.md",
+      "sha256": "41c6686127871c7c99ab69c84292f04c995a8530eb02cde0235cdacc181ae73f"
+    },
+    {
+      "source": "research/nine/THREE_GENUINE_ROOTS_ARBITRARY_PRIVATE_NETWORK_LOAD_AND_UNIQUE_PAIR_CLASS_2026_10_29.md",
+      "line": 355,
+      "reference": "THREE_GENUINE_LEAF_ROOTS_POSITIVE_THREE_ARM_TREE_EXCLUSION.md",
+      "resolved_path": "research/nine/THREE_GENUINE_LEAF_ROOTS_POSITIVE_THREE_ARM_TREE_EXCLUSION.md",
+      "sha256": "c9ffa9834fbb5e018122552487256693148e0d45d6b69eef21c68bf577b5cf89"
+    },
+    {
+      "source": "research/nine/THREE_GENUINE_ROOTS_ARBITRARY_PRIVATE_NETWORK_LOAD_AND_UNIQUE_PAIR_CLASS_2026_10_29.md",
+      "line": 356,
+      "reference": "THREE_GENUINE_ROOTS_BLOCK_TWO_TERMINAL_NETWORK_COVER_AND_DENSE_FIVE_EXCLUSION_2026_10_29.md",
+      "resolved_path": "research/nine/THREE_GENUINE_ROOTS_BLOCK_TWO_TERMINAL_NETWORK_COVER_AND_DENSE_FIVE_EXCLUSION_2026_10_29.md",
+      "sha256": "3aed6244d69913b6eecb61ff9b8985688e723da3ec4a57ffaadc8e5d92dd7b66"
+    },
+    {
+      "source": "research/nine/THREE_GENUINE_ROOTS_ARBITRARY_PRIVATE_NETWORK_LOAD_AND_UNIQUE_PAIR_CLASS_2026_10_29.md",
+      "line": 357,
+      "reference": "THREE_GENUINE_ROOTS_TWO_SMALL_VERTICES_AND_BOUNDARY_NEIGHBOR_BUDGET_2026_10_29.md",
+      "resolved_path": "research/nine/THREE_GENUINE_ROOTS_TWO_SMALL_VERTICES_AND_BOUNDARY_NEIGHBOR_BUDGET_2026_10_29.md",
+      "sha256": "a81845be499f5eafb45c796cb057a46c6c85f81e59279fdac6859753079bc98b"
+    },
+    {
+      "source": "research/nine/THREE_GENUINE_ROOTS_ARBITRARY_PRIVATE_NETWORK_LOAD_AND_UNIQUE_PAIR_CLASS_2026_10_29.md",
+      "line": 358,
+      "reference": "NO_UNLOADED_DIAMOND_HUB.md",
+      "resolved_path": "research/nine/NO_UNLOADED_DIAMOND_HUB.md",
+      "sha256": "82b546953a927a09d8ccabdefd8ffc10eac3e4efc5d8a122840f1343f80a7e2d"
+    },
+    {
+      "source": "research/nine/HOUSE_TC_BOTH_LEAF_OWNED_AD_NORTH_PARALLEL_C_EXCLUSION_AND_FULL_OWNER_REDUCTION_2026_10_29.md",
+      "line": 464,
+      "reference": "STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "resolved_path": "research/nine/STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "sha256": "0c67d5578a73ec36fd9b79c509c3e158cb9a218fac8666256ab2ca1f9505cb45"
+    },
+    {
+      "source": "research/nine/HOUSE_TC_BOTH_LEAF_OWNED_AD_NORTH_PARALLEL_C_EXCLUSION_AND_FULL_OWNER_REDUCTION_2026_10_29.md",
+      "line": 465,
+      "reference": "TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+      "resolved_path": "research/nine/TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+      "sha256": "be0af78eefcfba0b4c00c62c748bcd6c6dc8a294128c1f13272c5c2d7ea8bb5c"
+    },
+    {
+      "source": "research/nine/HOUSE_TC_BOTH_LEAF_OWNED_AD_NORTH_PARALLEL_C_EXCLUSION_AND_FULL_OWNER_REDUCTION_2026_10_29.md",
+      "line": 466,
+      "reference": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "resolved_path": "research/nine/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2"
+    },
+    {
+      "source": "research/nine/HOUSE_TC_BOTH_LEAF_OWNED_AD_NORTH_PARALLEL_C_EXCLUSION_AND_FULL_OWNER_REDUCTION_2026_10_29.md",
+      "line": 467,
+      "reference": "ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "resolved_path": "research/nine/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334"
+    },
+    {
+      "source": "research/nine/HOUSE_TC_BOTH_LEAF_OWNED_AD_NORTH_PARALLEL_C_EXCLUSION_AND_FULL_OWNER_REDUCTION_2026_10_29.md",
+      "line": 468,
+      "reference": "HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "resolved_path": "research/nine/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143"
+    },
+    {
+      "source": "research/nine/HOUSE_TC_BOTH_LEAF_OWNED_AD_NORTH_PARALLEL_C_EXCLUSION_AND_FULL_OWNER_REDUCTION_2026_10_29.md",
+      "line": 469,
+      "reference": "LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "resolved_path": "research/nine/LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78"
+    },
+    {
+      "source": "research/nine/HOUSE_TC_BOTH_LEAF_OWNED_AD_NORTH_PARALLEL_C_EXCLUSION_AND_FULL_OWNER_REDUCTION_2026_10_29.md",
+      "line": 470,
+      "reference": "GENERAL_UNLOADED_THREE_DISTINCT_SINGLETON_PORTS_HAVE_NO_FREE_NORMAL_SELECTION.md",
+      "resolved_path": "research/nine/GENERAL_UNLOADED_THREE_DISTINCT_SINGLETON_PORTS_HAVE_NO_FREE_NORMAL_SELECTION.md",
+      "sha256": "7700a4547542af9fc25b0e0b3d14f2113529069df0b007443c18d690da1137bb"
+    },
+    {
+      "source": "research/nine/HOUSE_TC_BOTH_LEAF_OWNED_AD_NORTH_PARALLEL_C_EXCLUSION_AND_FULL_OWNER_REDUCTION_2026_10_29.md",
+      "line": 471,
+      "reference": "PHYSICAL_CONTACT_STRESS.md",
+      "resolved_path": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "source": "research/nine/REVIEW_HOUSE_OWNED_AD_NORTH_PARALLEL_AND_TWO_CIRCLE_EXITS_SHARED_TERMINAL_2026_10_29.md",
+      "line": 42,
+      "reference": "STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "resolved_path": "research/nine/STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "sha256": "0c67d5578a73ec36fd9b79c509c3e158cb9a218fac8666256ab2ca1f9505cb45"
+    },
+    {
+      "source": "research/nine/REVIEW_HOUSE_OWNED_AD_NORTH_PARALLEL_AND_TWO_CIRCLE_EXITS_SHARED_TERMINAL_2026_10_29.md",
+      "line": 43,
+      "reference": "TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+      "resolved_path": "research/nine/TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+      "sha256": "be0af78eefcfba0b4c00c62c748bcd6c6dc8a294128c1f13272c5c2d7ea8bb5c"
+    },
+    {
+      "source": "research/nine/REVIEW_HOUSE_OWNED_AD_NORTH_PARALLEL_AND_TWO_CIRCLE_EXITS_SHARED_TERMINAL_2026_10_29.md",
+      "line": 44,
+      "reference": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "resolved_path": "research/nine/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2"
+    },
+    {
+      "source": "research/nine/REVIEW_HOUSE_OWNED_AD_NORTH_PARALLEL_AND_TWO_CIRCLE_EXITS_SHARED_TERMINAL_2026_10_29.md",
+      "line": 45,
+      "reference": "ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "resolved_path": "research/nine/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334"
+    },
+    {
+      "source": "research/nine/REVIEW_HOUSE_OWNED_AD_NORTH_PARALLEL_AND_TWO_CIRCLE_EXITS_SHARED_TERMINAL_2026_10_29.md",
+      "line": 46,
+      "reference": "HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "resolved_path": "research/nine/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143"
+    },
+    {
+      "source": "research/nine/REVIEW_HOUSE_OWNED_AD_NORTH_PARALLEL_AND_TWO_CIRCLE_EXITS_SHARED_TERMINAL_2026_10_29.md",
+      "line": 47,
+      "reference": "LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "resolved_path": "research/nine/LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78"
+    },
+    {
+      "source": "research/nine/REVIEW_HOUSE_OWNED_AD_NORTH_PARALLEL_AND_TWO_CIRCLE_EXITS_SHARED_TERMINAL_2026_10_29.md",
+      "line": 48,
+      "reference": "GENERAL_UNLOADED_THREE_DISTINCT_SINGLETON_PORTS_HAVE_NO_FREE_NORMAL_SELECTION.md",
+      "resolved_path": "research/nine/GENERAL_UNLOADED_THREE_DISTINCT_SINGLETON_PORTS_HAVE_NO_FREE_NORMAL_SELECTION.md",
+      "sha256": "7700a4547542af9fc25b0e0b3d14f2113529069df0b007443c18d690da1137bb"
+    },
+    {
+      "source": "research/nine/REVIEW_HOUSE_OWNED_AD_NORTH_PARALLEL_AND_TWO_CIRCLE_EXITS_SHARED_TERMINAL_2026_10_29.md",
+      "line": 49,
+      "reference": "PHYSICAL_CONTACT_STRESS.md",
+      "resolved_path": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "source": "research/nine/TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+      "line": 283,
+      "reference": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "resolved_path": "research/nine/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2"
+    },
+    {
+      "source": "research/nine/TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+      "line": 284,
+      "reference": "ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "resolved_path": "research/nine/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334"
+    },
+    {
+      "source": "research/nine/STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "line": 185,
+      "reference": "PHYSICAL_CONTACT_STRESS.md",
+      "resolved_path": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "source": "research/nine/STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "line": 186,
+      "reference": "TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+      "resolved_path": "research/nine/TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+      "sha256": "be0af78eefcfba0b4c00c62c748bcd6c6dc8a294128c1f13272c5c2d7ea8bb5c"
+    },
+    {
+      "source": "research/nine/STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "line": 187,
+      "reference": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "resolved_path": "research/nine/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2"
+    },
+    {
+      "source": "research/nine/STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "line": 188,
+      "reference": "UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "resolved_path": "research/nine/UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "sha256": "db073cd024a4f2e763e7cd0a21bf5cb6a2a8be67069f3f9d3aff638b8a40b258"
+    },
+    {
+      "source": "research/nine/REVIEW_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "line": 29,
+      "reference": "PHYSICAL_CONTACT_STRESS.md",
+      "resolved_path": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "source": "research/nine/REVIEW_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "line": 30,
+      "reference": "TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+      "resolved_path": "research/nine/TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+      "sha256": "be0af78eefcfba0b4c00c62c748bcd6c6dc8a294128c1f13272c5c2d7ea8bb5c"
+    },
+    {
+      "source": "research/nine/REVIEW_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "line": 31,
+      "reference": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "resolved_path": "research/nine/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2"
+    },
+    {
+      "source": "research/nine/REVIEW_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "line": 32,
+      "reference": "UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "resolved_path": "research/nine/UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "sha256": "db073cd024a4f2e763e7cd0a21bf5cb6a2a8be67069f3f9d3aff638b8a40b258"
+    },
+    {
+      "source": "research/nine/REVIEW_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "line": 33,
+      "reference": "REVIEW_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "resolved_path": "research/nine/REVIEW_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "sha256": "e2c3f5e72f7877b404db1db7e3b136d79a5690553df0808a757f528701b8b8fb"
+    },
+    {
+      "source": "research/nine/REVIEW_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "line": 35,
+      "reference": "ADOPTION_TILTED_CHANNEL_LOWER_RETURN_SUPPORT_FACE_ROOT_A5F_2026_10_29.md",
+      "resolved_path": "research/nine/ADOPTION_TILTED_CHANNEL_LOWER_RETURN_SUPPORT_FACE_ROOT_A5F_2026_10_29.md",
+      "sha256": "95b663f447e13350801c0be9f7252cf9a6a8ad72260905ec9de388409681632e"
+    },
+    {
+      "source": "research/nine/REVIEW_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "line": 36,
+      "reference": "REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "resolved_path": "research/nine/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "sha256": "9a0c704df3817a413639a98fbae8864ef58c583811735ac5c6816f69e1b0f636"
+    },
+    {
+      "source": "research/nine/REVIEW_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "line": 37,
+      "reference": "ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "resolved_path": "research/nine/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "sha256": "fb99b163e4450df464fcc095ac6aea0a3294624fcb329ffbc515efda6a0bea28"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+      "line": 283,
+      "reference": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+      "line": 284,
+      "reference": "ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "line": 280,
+      "reference": "GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+      "sha256": "4f8da84dcc3f1fa9b8f5e231486751b134b3438905e8271f6f3484a3f10d275a"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "line": 281,
+      "reference": "CHANNEL_ALIGNED_GENUINE_S_HOUSE_COMPLETE_EXCLUSION.md",
+      "resolved_path": "research/nine/CHANNEL_ALIGNED_GENUINE_S_HOUSE_COMPLETE_EXCLUSION.md",
+      "sha256": "ba458508b344185f734b5748a841cee3dee950bd1a95edbffd08fcd7f29bd17b"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "line": 282,
+      "reference": "HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "line": 283,
+      "reference": "TILTED_RADIAL_C_GENUINE_S_HOUSE_FORCES_OWNED_LOWER_T_RETURN.md",
+      "resolved_path": "research/nine/TILTED_RADIAL_C_GENUINE_S_HOUSE_FORCES_OWNED_LOWER_T_RETURN.md",
+      "sha256": "fcb6e591a90e4ba1f39fbc7b26bd46975ab3368c2f0cd208ef652b287a2fb2c5"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "line": 284,
+      "reference": "TILTED_RADIAL_C_GENUINE_S_HOUSE_OWNED_AD_COMPLETE_EXCLUSION.md",
+      "resolved_path": "research/nine/TILTED_RADIAL_C_GENUINE_S_HOUSE_OWNED_AD_COMPLETE_EXCLUSION.md",
+      "sha256": "6036ecde49c45a4d5d63d4b9b69dc8bf5f587a68ea70e2314c5072d3aecf11f0"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "line": 285,
+      "reference": "TILTED_RADIAL_C_GENUINE_S_HOUSE_STRICT_AD_CORNER_COMPLETE_EXCLUSION.md",
+      "resolved_path": "research/nine/TILTED_RADIAL_C_GENUINE_S_HOUSE_STRICT_AD_CORNER_COMPLETE_EXCLUSION.md",
+      "sha256": "a6e03b7134821d5f29bb6906f83a261c04c6a448d51bdd48423bbfcf96663c22"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "line": 286,
+      "reference": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "resolved_path": "research/nine/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "line": 287,
+      "reference": "PHYSICAL_CONTACT_STRESS.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "line": 31,
+      "reference": "GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+      "resolved_path": "research/nine/GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+      "sha256": "4f8da84dcc3f1fa9b8f5e231486751b134b3438905e8271f6f3484a3f10d275a"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "line": 32,
+      "reference": "CHANNEL_ALIGNED_GENUINE_S_HOUSE_COMPLETE_EXCLUSION.md",
+      "resolved_path": "research/nine/CHANNEL_ALIGNED_GENUINE_S_HOUSE_COMPLETE_EXCLUSION.md",
+      "sha256": "ba458508b344185f734b5748a841cee3dee950bd1a95edbffd08fcd7f29bd17b"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "line": 33,
+      "reference": "HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "resolved_path": "research/nine/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "line": 34,
+      "reference": "TILTED_RADIAL_C_GENUINE_S_HOUSE_FORCES_OWNED_LOWER_T_RETURN.md",
+      "resolved_path": "research/nine/TILTED_RADIAL_C_GENUINE_S_HOUSE_FORCES_OWNED_LOWER_T_RETURN.md",
+      "sha256": "fcb6e591a90e4ba1f39fbc7b26bd46975ab3368c2f0cd208ef652b287a2fb2c5"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "line": 35,
+      "reference": "TILTED_RADIAL_C_GENUINE_S_HOUSE_OWNED_AD_COMPLETE_EXCLUSION.md",
+      "resolved_path": "research/nine/TILTED_RADIAL_C_GENUINE_S_HOUSE_OWNED_AD_COMPLETE_EXCLUSION.md",
+      "sha256": "6036ecde49c45a4d5d63d4b9b69dc8bf5f587a68ea70e2314c5072d3aecf11f0"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "line": 36,
+      "reference": "TILTED_RADIAL_C_GENUINE_S_HOUSE_STRICT_AD_CORNER_COMPLETE_EXCLUSION.md",
+      "resolved_path": "research/nine/TILTED_RADIAL_C_GENUINE_S_HOUSE_STRICT_AD_CORNER_COMPLETE_EXCLUSION.md",
+      "sha256": "a6e03b7134821d5f29bb6906f83a261c04c6a448d51bdd48423bbfcf96663c22"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "line": 37,
+      "reference": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "resolved_path": "research/nine/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "line": 38,
+      "reference": "PHYSICAL_CONTACT_STRESS.md",
+      "resolved_path": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "line": 25,
+      "reference": "TILTED_RADIAL_C_GENUINE_S_HOUSE_STRICT_AD_CORNER_COMPLETE_EXCLUSION.md",
+      "resolved_path": "research/nine/TILTED_RADIAL_C_GENUINE_S_HOUSE_STRICT_AD_CORNER_COMPLETE_EXCLUSION.md",
+      "sha256": "a6e03b7134821d5f29bb6906f83a261c04c6a448d51bdd48423bbfcf96663c22"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "line": 26,
+      "reference": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "resolved_path": "research/nine/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "line": 27,
+      "reference": "HIGH_ALIGNED_HOUSE_TCB_NORTHWEST_ROOT_NORTH_PAGE_COMPLETE_EXCLUSION.md",
+      "resolved_path": "research/nine/HIGH_ALIGNED_HOUSE_TCB_NORTHWEST_ROOT_NORTH_PAGE_COMPLETE_EXCLUSION.md",
+      "sha256": "f0f6ccba99b1c4117e69e18aa72cb9913fab1c947489e3de87f155693a1e27ca"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "line": 28,
+      "reference": "ALIGNED_RADIAL_C_GENUINE_S_HOUSE_OWNED_AD_UPPER_MEAN_INTERVAL_EXCLUSION.md",
+      "resolved_path": "research/nine/ALIGNED_RADIAL_C_GENUINE_S_HOUSE_OWNED_AD_UPPER_MEAN_INTERVAL_EXCLUSION.md",
+      "sha256": "80bf0a971d264ccaeacbcf27facd819ebe0feb803d3b7ccbd42cb314d7364cc1"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "line": 29,
+      "reference": "TWO_OPPOSING_SHALLOW_CENTERS_FORCE_WHOLE_UNIT_HALFPLANE.md",
+      "resolved_path": "research/nine/TWO_OPPOSING_SHALLOW_CENTERS_FORCE_WHOLE_UNIT_HALFPLANE.md",
+      "sha256": "53cfc1a53daddc7efae7b0cdd3ff982db9732af02e5167ab200bcc6300956af2"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "line": 33,
+      "reference": "REVIEW_TILTED_RADIAL_C_STRICT_AD_CORNER_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "resolved_path": "research/nine/REVIEW_TILTED_RADIAL_C_STRICT_AD_CORNER_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "sha256": "7f1f9948a7ca237dfd999cbdec48944750a114398001eb877b24258a65ebe89d"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "line": 34,
+      "reference": "REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "sha256": "9a0c704df3817a413639a98fbae8864ef58c583811735ac5c6816f69e1b0f636"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "line": 35,
+      "reference": "REVIEW_HIGH_ALIGNED_HOUSE_TCB_NORTHWEST_NORTH_FAN_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "resolved_path": "research/nine/REVIEW_HIGH_ALIGNED_HOUSE_TCB_NORTHWEST_NORTH_FAN_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "sha256": "f51fbe9d27534274bdc89c147e57ae2b6cebdbda8f86af3d5aca73be02bd29be"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "line": 36,
+      "reference": "REVIEW_ALIGNED_RADIAL_C_OWNED_AD_UPPER_INTERVAL_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "resolved_path": "research/nine/REVIEW_ALIGNED_RADIAL_C_OWNED_AD_UPPER_INTERVAL_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "sha256": "605967b4ac3c17e984517625ef680075ce7d37a5ab12a20caa613e7053378110"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "line": 37,
+      "reference": "REVIEW_OPPOSING_SHALLOW_CENTERS_TC_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "resolved_path": "research/nine/REVIEW_OPPOSING_SHALLOW_CENTERS_TC_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "sha256": "b9885dd614692bb59888152bf1c1bb52f8b0de5359f01dd73a0322993f8c5700"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "line": 487,
+      "reference": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "line": 488,
+      "reference": "TWO_OPPOSING_SHALLOW_CENTERS_FORCE_WHOLE_UNIT_HALFPLANE.md",
+      "resolved_path": "research/nine/TWO_OPPOSING_SHALLOW_CENTERS_FORCE_WHOLE_UNIT_HALFPLANE.md",
+      "sha256": "53cfc1a53daddc7efae7b0cdd3ff982db9732af02e5167ab200bcc6300956af2"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "line": 489,
+      "reference": "HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "line": 490,
+      "reference": "ALIGNED_RADIAL_C_GENUINE_S_HOUSE_OWNED_AD_UPPER_MEAN_INTERVAL_EXCLUSION.md",
+      "resolved_path": "research/nine/ALIGNED_RADIAL_C_GENUINE_S_HOUSE_OWNED_AD_UPPER_MEAN_INTERVAL_EXCLUSION.md",
+      "sha256": "80bf0a971d264ccaeacbcf27facd819ebe0feb803d3b7ccbd42cb314d7364cc1"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "line": 491,
+      "reference": "PHYSICAL_CONTACT_STRESS.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/ALIGNED_CHANNEL_LOWER_BYPASS_COMMON_NEIGHBOR_VERTICAL_NORMAL_OBSTRUCTION.md",
+      "line": 275,
+      "reference": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "resolved_path": "research/nine/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/ALIGNED_CHANNEL_LOWER_BYPASS_COMMON_NEIGHBOR_VERTICAL_NORMAL_OBSTRUCTION.md",
+      "line": 276,
+      "reference": "END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+      "resolved_path": "research/nine/END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+      "sha256": "20a845eff8bee3e9c533162df0b32ea96f9dd104a3cfec41efb3b0cf92d6e9cf"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/ALIGNED_CHANNEL_LOWER_BYPASS_COMMON_NEIGHBOR_VERTICAL_NORMAL_OBSTRUCTION.md",
+      "line": 277,
+      "reference": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "resolved_path": "research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/ALIGNED_CHANNEL_LOWER_BYPASS_COMMON_NEIGHBOR_VERTICAL_NORMAL_OBSTRUCTION.md",
+      "line": 278,
+      "reference": "HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "resolved_path": "research/nine/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/ALIGNED_CHANNEL_LOWER_BYPASS_COMMON_NEIGHBOR_VERTICAL_NORMAL_OBSTRUCTION.md",
+      "line": 279,
+      "reference": "SIDE_CHANNEL_UNLOADED_TRIANGLE_BYPASS_POSITIVE_MEAN.md",
+      "resolved_path": "research/nine/SIDE_CHANNEL_UNLOADED_TRIANGLE_BYPASS_POSITIVE_MEAN.md",
+      "sha256": "5a1607a588e45d0702c46c3d74074561f31109dccc0b8f94c665991cd4a9f5ee"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/ALIGNED_CHANNEL_LOWER_BYPASS_COMMON_NEIGHBOR_VERTICAL_NORMAL_OBSTRUCTION.md",
+      "line": 280,
+      "reference": "UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "resolved_path": "research/nine/UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "sha256": "db073cd024a4f2e763e7cd0a21bf5cb6a2a8be67069f3f9d3aff638b8a40b258"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/ALIGNED_CHANNEL_LOWER_BYPASS_COMMON_NEIGHBOR_VERTICAL_NORMAL_OBSTRUCTION.md",
+      "line": 281,
+      "reference": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "resolved_path": "research/nine/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/ALIGNED_CHANNEL_LOWER_BYPASS_COMMON_NEIGHBOR_VERTICAL_NORMAL_OBSTRUCTION.md",
+      "line": 282,
+      "reference": "PHYSICAL_CONTACT_STRESS.md",
+      "resolved_path": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+      "line": 368,
+      "reference": "HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "resolved_path": "research/nine/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+      "line": 369,
+      "reference": "SIDE_CHANNEL_UNLOADED_TRIANGLE_BYPASS_POSITIVE_MEAN.md",
+      "resolved_path": "research/nine/SIDE_CHANNEL_UNLOADED_TRIANGLE_BYPASS_POSITIVE_MEAN.md",
+      "sha256": "5a1607a588e45d0702c46c3d74074561f31109dccc0b8f94c665991cd4a9f5ee"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+      "line": 370,
+      "reference": "ALIGNED_S_ROOT_PARALLEL_CHANNEL_TRIANGLE_EXCLUSION.md",
+      "resolved_path": "research/nine/ALIGNED_S_ROOT_PARALLEL_CHANNEL_TRIANGLE_EXCLUSION.md",
+      "sha256": "1b1c1572b29b110596afe25ef660b0f264b97d1910f110f287bfddeb9451465a"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+      "line": 371,
+      "reference": "ALIGNED_S_ROOT_PERPENDICULAR_CHANNEL_TRIANGLE_EXCLUSION.md",
+      "resolved_path": "research/nine/ALIGNED_S_ROOT_PERPENDICULAR_CHANNEL_TRIANGLE_EXCLUSION.md",
+      "sha256": "2fe9347a1f4e45653b427d1217db129faeff56e871ef0cdf4cd957c1ba654dd9"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+      "line": 372,
+      "reference": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "resolved_path": "research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+      "line": 373,
+      "reference": "UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "resolved_path": "research/nine/UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "sha256": "db073cd024a4f2e763e7cd0a21bf5cb6a2a8be67069f3f9d3aff638b8a40b258"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+      "line": 374,
+      "reference": "END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+      "resolved_path": "research/nine/END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+      "sha256": "20a845eff8bee3e9c533162df0b32ea96f9dd104a3cfec41efb3b0cf92d6e9cf"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+      "line": 375,
+      "reference": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "resolved_path": "research/nine/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+      "line": 376,
+      "reference": "PHYSICAL_CONTACT_STRESS.md",
+      "resolved_path": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "line": 414,
+      "reference": "SIDE_CHANNEL_UNLOADED_TRIANGLE_BYPASS_POSITIVE_MEAN.md",
+      "resolved_path": "research/nine/SIDE_CHANNEL_UNLOADED_TRIANGLE_BYPASS_POSITIVE_MEAN.md",
+      "sha256": "5a1607a588e45d0702c46c3d74074561f31109dccc0b8f94c665991cd4a9f5ee"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "line": 415,
+      "reference": "LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "line": 416,
+      "reference": "UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+      "resolved_path": "research/nine/UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+      "sha256": "406fce53d22cc20eec43a373a877798dab583a6bd93f684ff124293016c44c87"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "line": 417,
+      "reference": "PHYSICAL_CONTACT_STRESS.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "line": 418,
+      "reference": "C7_FORCE_POLYGON.md",
+      "resolved_path": "research/nine/C7_FORCE_POLYGON.md",
+      "sha256": "d50d8ca48ea19156175e651bfa74be30ef3e58065ec14d8d1834670a41559089"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "line": 419,
+      "reference": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "resolved_path": "research/nine/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "line": 185,
+      "reference": "PHYSICAL_CONTACT_STRESS.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "line": 186,
+      "reference": "TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+      "sha256": "be0af78eefcfba0b4c00c62c748bcd6c6dc8a294128c1f13272c5c2d7ea8bb5c"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "line": 187,
+      "reference": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "line": 188,
+      "reference": "UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "sha256": "db073cd024a4f2e763e7cd0a21bf5cb6a2a8be67069f3f9d3aff638b8a40b258"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/GENERAL_UNLOADED_THREE_DISTINCT_SINGLETON_PORTS_HAVE_NO_FREE_NORMAL_SELECTION.md",
+      "line": 315,
+      "reference": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/GENERAL_UNLOADED_THREE_DISTINCT_SINGLETON_PORTS_HAVE_NO_FREE_NORMAL_SELECTION.md",
+      "line": 316,
+      "reference": "PHYSICAL_CONTACT_STRESS.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/GENERAL_UNLOADED_THREE_DISTINCT_SINGLETON_PORTS_HAVE_NO_FREE_NORMAL_SELECTION.md",
+      "line": 317,
+      "reference": "INNER_PENTAGON_H_OWNED_UNLOADED_END_FIXED_OPPOSITE_RETURN_VERTICES.md",
+      "resolved_path": "research/nine/INNER_PENTAGON_H_OWNED_UNLOADED_END_FIXED_OPPOSITE_RETURN_VERTICES.md",
+      "sha256": "bc1b08bc93401e25891f1307139c465409e4a3e260670513087b658c210e0f8c"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "line": 29,
+      "reference": "PHYSICAL_CONTACT_STRESS.md",
+      "resolved_path": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "line": 30,
+      "reference": "TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+      "resolved_path": "research/nine/TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+      "sha256": "be0af78eefcfba0b4c00c62c748bcd6c6dc8a294128c1f13272c5c2d7ea8bb5c"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "line": 31,
+      "reference": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "resolved_path": "research/nine/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "line": 32,
+      "reference": "UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "resolved_path": "research/nine/UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "sha256": "db073cd024a4f2e763e7cd0a21bf5cb6a2a8be67069f3f9d3aff638b8a40b258"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "line": 33,
+      "reference": "REVIEW_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "sha256": "e2c3f5e72f7877b404db1db7e3b136d79a5690553df0808a757f528701b8b8fb"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "line": 35,
+      "reference": "ADOPTION_TILTED_CHANNEL_LOWER_RETURN_SUPPORT_FACE_ROOT_A5F_2026_10_29.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/ADOPTION_TILTED_CHANNEL_LOWER_RETURN_SUPPORT_FACE_ROOT_A5F_2026_10_29.md",
+      "sha256": "95b663f447e13350801c0be9f7252cf9a6a8ad72260905ec9de388409681632e"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "line": 36,
+      "reference": "REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "sha256": "9a0c704df3817a413639a98fbae8864ef58c583811735ac5c6816f69e1b0f636"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "line": 37,
+      "reference": "ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "sha256": "fb99b163e4450df464fcc095ac6aea0a3294624fcb329ffbc515efda6a0bea28"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_LOADED_TWO_APPLICATION_BOUNDARY_FREE_DICHOTOMY_INDEPENDENT_2026_10_28.md",
+      "line": 40,
+      "reference": "PHYSICAL_CONTACT_STRESS.md",
+      "resolved_path": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_LOADED_TWO_APPLICATION_BOUNDARY_FREE_DICHOTOMY_INDEPENDENT_2026_10_28.md",
+      "line": 41,
+      "reference": "LOADED_TWO_APPLICATION_FULL_STAR_PROPER_CONCURRENCE.md",
+      "resolved_path": "research/nine/LOADED_TWO_APPLICATION_FULL_STAR_PROPER_CONCURRENCE.md",
+      "sha256": "942ed38a7452f35e95839cc79ea15ed97091114495e9a3ab9c232ae8255a0ea0"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_LOADED_TWO_APPLICATION_BOUNDARY_FREE_DICHOTOMY_INDEPENDENT_2026_10_28.md",
+      "line": 42,
+      "reference": "REVIEW_LOADED_TWO_APPLICATION_FULL_STAR_PROPER_CONCURRENCE_RECOVERY_AUDIT_2026_10_28.md",
+      "resolved_path": "research/nine/REVIEW_LOADED_TWO_APPLICATION_FULL_STAR_PROPER_CONCURRENCE_RECOVERY_AUDIT_2026_10_28.md",
+      "sha256": "b91f1283a238615a9a05fb849add9dd0823a9a60c4b95e3351d2512c214b6e4b"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+      "line": 284,
+      "reference": "SIDE_CHANNEL_UNLOADED_TRIANGLE_BYPASS_POSITIVE_MEAN.md",
+      "resolved_path": "research/nine/SIDE_CHANNEL_UNLOADED_TRIANGLE_BYPASS_POSITIVE_MEAN.md",
+      "sha256": "5a1607a588e45d0702c46c3d74074561f31109dccc0b8f94c665991cd4a9f5ee"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+      "line": 285,
+      "reference": "LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "resolved_path": "research/nine/LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+      "line": 286,
+      "reference": "UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+      "resolved_path": "research/nine/UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+      "sha256": "406fce53d22cc20eec43a373a877798dab583a6bd93f684ff124293016c44c87"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+      "line": 287,
+      "reference": "PHYSICAL_CONTACT_STRESS.md",
+      "resolved_path": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+      "line": 288,
+      "reference": "C7_FORCE_POLYGON.md",
+      "resolved_path": "research/nine/C7_FORCE_POLYGON.md",
+      "sha256": "d50d8ca48ea19156175e651bfa74be30ef3e58065ec14d8d1834670a41559089"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+      "line": 289,
+      "reference": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "resolved_path": "research/nine/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+      "line": 297,
+      "reference": "UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "resolved_path": "research/nine/UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "sha256": "db073cd024a4f2e763e7cd0a21bf5cb6a2a8be67069f3f9d3aff638b8a40b258"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+      "line": 298,
+      "reference": "FOUR_CYCLE_ADJACENT_LOAD_EXCLUSION.md",
+      "resolved_path": "research/nine/FOUR_CYCLE_ADJACENT_LOAD_EXCLUSION.md",
+      "sha256": "c1469ef49b39654b61f5d8c3c583aeef1ccca389412b9f616c8c2102a8ca7ba2"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+      "line": 299,
+      "reference": "UNLOADED_THREE_FORCE_PERPENDICULAR_TRIANGLE_STRICT_SUPPORT_SEPARATION.md",
+      "resolved_path": "research/nine/UNLOADED_THREE_FORCE_PERPENDICULAR_TRIANGLE_STRICT_SUPPORT_SEPARATION.md",
+      "sha256": "6630675274998befc40e87bfe67e15f0bdf0d74b7b814f82ccbc42b71dea4b24"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/NORTH_ROOT_FULL_JUNCTION_OWNED_C_RETURN_UNIQUE_OR_PARALLEL_FRAME_REDUCTION.md",
+      "line": 391,
+      "reference": "GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "resolved_path": "research/nine/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/NORTH_ROOT_FULL_JUNCTION_OWNED_C_RETURN_UNIQUE_OR_PARALLEL_FRAME_REDUCTION.md",
+      "line": 392,
+      "reference": "ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "resolved_path": "research/nine/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/NORTH_ROOT_FULL_JUNCTION_OWNED_C_RETURN_UNIQUE_OR_PARALLEL_FRAME_REDUCTION.md",
+      "line": 393,
+      "reference": "HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "resolved_path": "research/nine/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/NORTH_ROOT_FULL_JUNCTION_OWNED_C_RETURN_UNIQUE_OR_PARALLEL_FRAME_REDUCTION.md",
+      "line": 394,
+      "reference": "STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "resolved_path": "research/nine/STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "sha256": "0c67d5578a73ec36fd9b79c509c3e158cb9a218fac8666256ab2ca1f9505cb45"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/NORTH_ROOT_FULL_JUNCTION_OWNED_C_RETURN_UNIQUE_OR_PARALLEL_FRAME_REDUCTION.md",
+      "line": 396,
+      "reference": "LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "resolved_path": "research/nine/LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/DEPENDENCY_MANIFEST.md",
+      "line": 13,
+      "reference": "recovered_variants/house_owned_north_2026_10_29/operative_sources/PHYSICAL_CONTACT_STRESS.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/DEPENDENCY_MANIFEST.md",
+      "line": 14,
+      "reference": "recovered_variants/house_owned_north_2026_10_29/operative_sources/TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_AND_ORIGINAL_TC_REDUCTION.md",
+      "sha256": "be0af78eefcfba0b4c00c62c748bcd6c6dc8a294128c1f13272c5c2d7ea8bb5c"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/DEPENDENCY_MANIFEST.md",
+      "line": 15,
+      "reference": "recovered_variants/house_owned_north_2026_10_29/operative_sources/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/DEPENDENCY_MANIFEST.md",
+      "line": 16,
+      "reference": "recovered_variants/house_owned_north_2026_10_29/operative_sources/UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "sha256": "db073cd024a4f2e763e7cd0a21bf5cb6a2a8be67069f3f9d3aff638b8a40b258"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/DEPENDENCY_MANIFEST.md",
+      "line": 17,
+      "reference": "recovered_variants/house_owned_north_2026_10_29/operative_sources/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/DEPENDENCY_MANIFEST.md",
+      "line": 18,
+      "reference": "recovered_variants/house_owned_north_2026_10_29/operative_sources/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/DEPENDENCY_MANIFEST.md",
+      "line": 19,
+      "reference": "recovered_variants/house_owned_north_2026_10_29/operative_sources/STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "sha256": "0c67d5578a73ec36fd9b79c509c3e158cb9a218fac8666256ab2ca1f9505cb45"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/DEPENDENCY_MANIFEST.md",
+      "line": 20,
+      "reference": "recovered_variants/house_owned_north_2026_10_29/operative_sources/LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/DEPENDENCY_MANIFEST.md",
+      "line": 21,
+      "reference": "recovered_variants/house_owned_north_2026_10_29/operative_sources/GENERAL_UNLOADED_THREE_DISTINCT_SINGLETON_PORTS_HAVE_NO_FREE_NORMAL_SELECTION.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/GENERAL_UNLOADED_THREE_DISTINCT_SINGLETON_PORTS_HAVE_NO_FREE_NORMAL_SELECTION.md",
+      "sha256": "7700a4547542af9fc25b0e0b3d14f2113529069df0b007443c18d690da1137bb"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/DEPENDENCY_MANIFEST.md",
+      "line": 22,
+      "reference": "recovered_variants/house_owned_north_2026_10_29/operative_sources/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/operative_sources/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/DEPENDENCY_MANIFEST.md",
+      "line": 29,
+      "reference": "recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_TILTED_CHANNEL_LOWER_RETURN_FULL_SUPPORT_FACE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "sha256": "e2c3f5e72f7877b404db1db7e3b136d79a5690553df0808a757f528701b8b8fb"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/DEPENDENCY_MANIFEST.md",
+      "line": 31,
+      "reference": "recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/ADOPTION_TILTED_CHANNEL_LOWER_RETURN_SUPPORT_FACE_ROOT_A5F_2026_10_29.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/ADOPTION_TILTED_CHANNEL_LOWER_RETURN_SUPPORT_FACE_ROOT_A5F_2026_10_29.md",
+      "sha256": "95b663f447e13350801c0be9f7252cf9a6a8ad72260905ec9de388409681632e"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/DEPENDENCY_MANIFEST.md",
+      "line": 32,
+      "reference": "recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "sha256": "9a0c704df3817a413639a98fbae8864ef58c583811735ac5c6816f69e1b0f636"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/DEPENDENCY_MANIFEST.md",
+      "line": 33,
+      "reference": "recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "sha256": "fb99b163e4450df464fcc095ac6aea0a3294624fcb329ffbc515efda6a0bea28"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/DEPENDENCY_MANIFEST.md",
+      "line": 36,
+      "reference": "recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+      "sha256": "167e5f8a305f33944e798668394d1d3efd92b4626968f3ad75dea494f371c154"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/DEPENDENCY_MANIFEST.md",
+      "line": 37,
+      "reference": "recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/ADOPTION_THREE_BROAD_CONTINUOUS_CAP_OWNER_AND_SHIFT_TOOLS_ROOT_2026_10_29.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/ADOPTION_THREE_BROAD_CONTINUOUS_CAP_OWNER_AND_SHIFT_TOOLS_ROOT_2026_10_29.md",
+      "sha256": "865db6ecd1b9ee6774a11be75edd4f73b59e132a21bc9df1708cc3169183c36e"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/DEPENDENCY_MANIFEST.md",
+      "line": 38,
+      "reference": "recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "sha256": "a7f5cf85d5e7275ae7c9f0452fd2c1bcb25452d42298fa4e2a9f8b58986ec31c"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/DEPENDENCY_MANIFEST.md",
+      "line": 39,
+      "reference": "recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/ADOPTION_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_ROOT_A5F_2026_10_29.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/ADOPTION_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_ROOT_A5F_2026_10_29.md",
+      "sha256": "b91387e036acae1af2390d31ea31c333f569430122aa2bd3177706d4dc09c7d5"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/DEPENDENCY_MANIFEST.md",
+      "line": 40,
+      "reference": "recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_LOADED_TWO_APPLICATION_BOUNDARY_FREE_DICHOTOMY_INDEPENDENT_2026_10_28.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_LOADED_TWO_APPLICATION_BOUNDARY_FREE_DICHOTOMY_INDEPENDENT_2026_10_28.md",
+      "sha256": "0d71302c571280dd0df9f9b16470d668580ad1fb57ebd306468fb2a8b04d0bc5"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/DEPENDENCY_MANIFEST.md",
+      "line": 41,
+      "reference": "recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/ADOPTION_COMPLETE_ROOF_INTERFACES_AND_BOUNDARY_FREE_STAR_ROOT_2026_10_28.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/ADOPTION_COMPLETE_ROOF_INTERFACES_AND_BOUNDARY_FREE_STAR_ROOT_2026_10_28.md",
+      "sha256": "aa52da0dee41ff228f68e9e4b9d8982f6d5ab89cfd0f58c62b53f84158a77678"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/DEPENDENCY_MANIFEST.md",
+      "line": 42,
+      "reference": "recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_GENERAL_UNLOADED_DISTINCT_SINGLETON_SELECTOR_THIN_D_2026_10_28.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_GENERAL_UNLOADED_DISTINCT_SINGLETON_SELECTOR_THIN_D_2026_10_28.md",
+      "sha256": "e8e85cae9be3a395cb638bb4d60985662f5d3eeee47b4be0a371071b13075be6"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/DEPENDENCY_MANIFEST.md",
+      "line": 43,
+      "reference": "recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_GENERAL_UNLOADED_DISTINCT_SINGLETON_SELECTOR_ROOT_ADOPTION_2026_10_28.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_GENERAL_UNLOADED_DISTINCT_SINGLETON_SELECTOR_ROOT_ADOPTION_2026_10_28.md",
+      "sha256": "a926e56193f4b287c7dccd4f5104ee6b8d533df84237f55196642d1ffe9e28be"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/DEPENDENCY_MANIFEST.md",
+      "line": 44,
+      "reference": "recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/recovered_acceptance/REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+      "sha256": "f917697f13c574c533658ea108b0c770d4c1c949fc463ba996511e890e2d62ae"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/DEPENDENCY_MANIFEST.md",
+      "line": 50,
+      "reference": "recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/ALIGNED_CHANNEL_LOWER_BYPASS_COMMON_NEIGHBOR_VERTICAL_NORMAL_OBSTRUCTION.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/ALIGNED_CHANNEL_LOWER_BYPASS_COMMON_NEIGHBOR_VERTICAL_NORMAL_OBSTRUCTION.md",
+      "sha256": "2f5514f91ba10b88d0703802eca3b459e82e0d639533d3b178f56a00fd7367cd"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/DEPENDENCY_MANIFEST.md",
+      "line": 51,
+      "reference": "recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+      "sha256": "4f8da84dcc3f1fa9b8f5e231486751b134b3438905e8271f6f3484a3f10d275a"
+    },
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/DEPENDENCY_MANIFEST.md",
+      "line": 52,
+      "reference": "recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/NORTH_ROOT_FULL_JUNCTION_OWNED_C_RETURN_UNIQUE_OR_PARALLEL_FRAME_REDUCTION.md",
+      "resolved_path": "research/nine/recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/NORTH_ROOT_FULL_JUNCTION_OWNED_C_RETURN_UNIQUE_OR_PARALLEL_FRAME_REDUCTION.md",
+      "sha256": "b9bc7a9f1645aefb1ad282ddb021147f59a5042eb41d7078bb2a76e181ed1f71"
+    }
+  ],
+  "unresolved_operative_named_table_pins": [],
+  "nonoperative_descriptive_references": [
+    {
+      "source": "research/nine/recovered_variants/house_owned_north_2026_10_29/descriptive_provenance/NORTH_ROOT_FULL_JUNCTION_OWNED_C_RETURN_UNIQUE_OR_PARALLEL_FRAME_REDUCTION.md",
+      "line": 395,
+      "name": "RADIAL_INNER_FACE_CONTACT_RIGIDITY_AND_GENUINE_S_HOUSE_PARALLEL_T_EXCLUSION.md",
+      "sha256": "a813f3cccb7facbe802a25b4bc1b2994a72c4b94eeaab714039b1b933d25eb43"
+    }
+  ],
+  "scope": "Exact path and hash resolution for the listed new sources, full reviews, and recovered payloads. The one missing named reference is inside the older explicitly descriptive NORTH_ROOT predecessor. Neither new target invokes that smaller-mask theorem or its reference; all operative recovered entry pins resolve. It is recorded for provenance, not adopted or credited as a proof premise. This is not a new global prerequisite or numerical-certificate audit."
+}

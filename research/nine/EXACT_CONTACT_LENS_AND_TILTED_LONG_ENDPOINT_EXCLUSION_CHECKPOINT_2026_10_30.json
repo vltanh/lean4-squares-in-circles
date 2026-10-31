@@ -1,0 +1,230 @@
+{
+  "checkpoint": "exact contact lens and complete tilted-long-endpoint exclusion",
+  "date_utc": "2026-10-30",
+  "input_head": "9abcaa2466b05021ebd6324da45817e080281bdc",
+  "files": [
+    {
+      "path": "research/nine/EXACT_CONTACT_LENS_AND_FAR_ENDPOINT_POSITIVE_LOAD_AT_THIRTY_NINE_TWENTIETHS_2026_10_30.md",
+      "bytes": 14415,
+      "sha256": "3e9a96293ae14e5ed3e9f2952c396cbef82d44ddd6a9643e54ab597a63e951e3",
+      "git_blob": "6609f2511edcaf4ab895567d71dbaeb64049d4ca"
+    },
+    {
+      "path": "research/nine/LONG_ENDPOINT_RETURN_CONTACT_LOCUS_FORCE_LINE_SIGN_AND_TILTED_VERTEX_REDUCTION_2026_10_30.md",
+      "bytes": 21325,
+      "sha256": "cf942c1069e451ad043c80c8075fd67c85d2b71faa05c29b9baa3dae32f66fe3",
+      "git_blob": "d54194f5bee84d90071fdf1581ff8154859d8716"
+    },
+    {
+      "path": "research/nine/SEPARATED_BOUNDARY_RETURN_NEIGHBORS_FORCE_ALIGNED_LONG_ENDPOINTS_2026_10_30.md",
+      "bytes": 16456,
+      "sha256": "9c7f47ce87b5a7d548ec76c33f5912adae870211770ea578f15621a78104ca06",
+      "git_blob": "f905286bb1f53922340f49ba580ad105785102ea"
+    },
+    {
+      "path": "research/nine/EXACT_EIGHT_BODY_OUTER_FACE_CYCLE_WITH_UNLOADED_BRANCHING_VERTICES_2026_10_30.md",
+      "bytes": 8261,
+      "sha256": "d04ce78b5bb4656accbef54b0d19cbb94d5480b6e407d697399c0763a9632a4e",
+      "git_blob": "93de6c8244be81e4b1fa7b52840133827cd8f508"
+    },
+    {
+      "path": "research/nine/SEVEN_ATOM_COMPATIBLE_ALTERNATIVE_FOR_THE_EIGHT_UNIT_CROSS_2026_10_30.md",
+      "bytes": 6414,
+      "sha256": "9fb69f52ce84f5acc2b39499eab380eb04419387b9920e935db4bcce42217f29",
+      "git_blob": "52f08cb73827bdb66be2f63ab608e0d5017dd919"
+    },
+    {
+      "path": "research/nine/REVIEW_EXACT_CONTACT_LENS_AND_FAR_ENDPOINT_LOADS_ROOT_2026_10_30.md",
+      "bytes": 6989,
+      "sha256": "00a4fac671b9937c3cfbc2c9d8763f5ddc33308d505c3951f152103acc04c4e7",
+      "git_blob": "3af3d9befd43f8408501a910c6f2f5a18b75394d"
+    },
+    {
+      "path": "research/nine/REVIEW_EXACT_CONTACT_LENS_AND_FAR_ENDPOINT_LOAD_ANNULAR_INDEPENDENT_2026_10_30.md",
+      "bytes": 8809,
+      "sha256": "3172e2c06fd957fa3f516c079bd0380831a81ab8485294b4cf4f216fcc9a1d60",
+      "git_blob": "964bae85a83ea162fd946cd2cd072df2a6cb17a0"
+    },
+    {
+      "path": "research/nine/REVIEW_LONG_ENDPOINT_RETURN_LOCUS_AND_TILTED_VERTEX_REDUCTION_ROOT_2026_10_30.md",
+      "bytes": 7522,
+      "sha256": "ee1f68b1af4db98f40d76948c741a9e9caaeddc94bd87dc59849c99203ab3302",
+      "git_blob": "23439e4187bb01a058c31083d83563e2ce4615df"
+    },
+    {
+      "path": "research/nine/REVIEW_LONG_ENDPOINT_RETURN_LOCUS_AND_TILTED_VERTEX_REDUCTION_ANNULAR_INDEPENDENT_2026_10_30.md",
+      "bytes": 10915,
+      "sha256": "8085eb4ef505922a0e0c9453fe099596c473d9905b8fe9569b5b2a38f39bc70b",
+      "git_blob": "305ca17e651fd3f60ebb9604dfeabd6e0384d6b4"
+    },
+    {
+      "path": "research/nine/REVIEW_LONG_ENDPOINT_RETURN_LOCUS_AND_TILTED_VERTEX_REDUCTION_BLOCK_EARS_2026_10_30.md",
+      "bytes": 8776,
+      "sha256": "b280364c46b922d535bec840821794b7a98c5561507e733c438d49ad8b5cbad6",
+      "git_blob": "b80689b2e0d21e10c3cb8787f09a4f9df005bdb8"
+    },
+    {
+      "path": "research/nine/REVIEW_SEPARATED_RETURN_NEIGHBORS_FORCE_ALIGNED_ENDPOINTS_ANNULAR_INDEPENDENT_2026_10_30.md",
+      "bytes": 10068,
+      "sha256": "5962a345ff5cd90cf6e52066ccc182712740f27599ed6ec2ef8325a9c1af085d",
+      "git_blob": "6e7c90635961222ba485b05be33b004583386f8b"
+    },
+    {
+      "path": "research/nine/REVIEW_SEPARATED_RETURNS_FORCE_ALIGNED_LONG_ENDPOINTS_BLOCK_EARS_2026_10_30.md",
+      "bytes": 9900,
+      "sha256": "8e2c00a521a74ad60c03be71c97b49ace83b56c41a2af38826e87fc8015472fd",
+      "git_blob": "0a5590174607c8b06ef659d428f701b5b45c6f31"
+    },
+    {
+      "path": "research/nine/REVIEW_EXACT_OUTER_FACE_CROSS_AND_SEVEN_ATOM_ALTERNATIVE_ROOT_2026_10_30.md",
+      "bytes": 6594,
+      "sha256": "a179bb5c014d4f1015699b2a1197c8906966baacd80e03454f986f11937e5fca",
+      "git_blob": "6607b113d47352fbe3490defb608187809641bb5"
+    },
+    {
+      "path": "research/nine/REVIEW_EXACT_EIGHT_CROSS_AND_SEVEN_ATOM_ALTERNATIVE_BLOCK_EARS_2026_10_30.md",
+      "bytes": 7147,
+      "sha256": "c225b87eff7f8a86d59ad08195b94eddba13bca528af0684d9374319afeb1ab0",
+      "git_blob": "a3ebd826d2a03e5b2e41f62354589d26c9a79aa9"
+    },
+    {
+      "path": "research/nine/ADOPTION_EXACT_CONTACT_LENS_AND_COMPLETE_TILTED_LONG_ENDPOINT_EXCLUSION_2026_10_30.md",
+      "bytes": 13339,
+      "sha256": "62ee56957b34648e131749c632e7d76d094ccc8c3757370dba4b0804e83a55d5",
+      "git_blob": "7ae5c4f65a9e98ee47ccc4855df7aa2680290884"
+    },
+    {
+      "path": "research/nine/README.md",
+      "bytes": 118981,
+      "sha256": "a6148d5f48cf34b6a76801243d8d9843a644e635885b569e4d646849721f2ef9",
+      "git_blob": "45ed4c6018e767152bc6215885102103745348cf"
+    },
+    {
+      "path": "research/nine/ROADMAP.md",
+      "bytes": 97727,
+      "sha256": "faf26f9b92f066546e5b97a6c4c9f660bdabd6fa8f0d2d3ca718ccac7f9e9caf",
+      "git_blob": "81b23b62aa3b4734dec3ccd984c8720a1e345c06"
+    },
+    {
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "bytes": 1102254,
+      "sha256": "8d27d4280aa1eece2d4b01a6234b5d42c0a48f522743db953d96bc66e6d526f4",
+      "git_blob": "e1a3b2811e26a1388d92bc924604df2d51dd257a"
+    },
+    {
+      "path": "research/nine/CYCLIC_CELL_LEDGER.md",
+      "bytes": 356219,
+      "sha256": "54085daef3304f0c90fc7dbf75bf5c5e6b120aeced0d501bb59455c68ab48c89",
+      "git_blob": "3f45b6f76bb758d27d903f07e9a2861e1e8d45ed"
+    }
+  ],
+  "source_table_hash_occurrences_verified": 12,
+  "distinct_source_table_pins_verified": 9,
+  "exact_arithmetic": {
+    "configuration": "Existing exact eight-unit cross, with two different explicitly specified physical stresses; no nine-unit counterexample.",
+    "units": 8,
+    "pair_nonoverlap_checks": 28,
+    "corner_checks": 32,
+    "q0": "17/4",
+    "target_squared_radius_slack": "17/256",
+    "positive_pairs": 12,
+    "circle_atoms": 8,
+    "aggregate_terms": 20,
+    "endpoint_atom_representation_terms": 32,
+    "all_actual_means_and_supports_verified": true,
+    "all_eight_full_force_equations": true,
+    "all_eight_origin_moment_equations": true,
+    "completion_cap_squared_diameter_bound": "29/144",
+    "completion_cap_diameter_reserve": "115/144",
+    "alternative_certificate": {
+      "positive_pairs": 3,
+      "circle_atoms": 4,
+      "positive_scalar_atoms": 7,
+      "all_eight_force_and_moment_equations": true,
+      "packing_geometry_unchanged": true,
+      "contact_means_explicitly_changed": true
+    },
+    "method": "Exact Fraction arithmetic verifies stated coordinates, forces and moments. The no-ninth conclusion uses the continuous cap proof, not an enumeration of placements.",
+    "contact_lens_rational_checks": {
+      "contact_radius_squared": "849/256",
+      "normal_bound_at_7_over_4": "65/896",
+      "normal_bound_at_9_over_5": "163/7680",
+      "own_side_4_over_3_reserve": "103/2304",
+      "endpoint_projection_threshold": "43/30",
+      "halfwidth_sum_upper": "13/12",
+      "own_axis_difference_square_lower": "23/36",
+      "own_axis_difference_reserve": "7/576",
+      "outward_side_projection_lower": "439/240",
+      "outward_side_contact_disk_squared_reserve": "53/1800"
+    },
+    "endpoint_locus_reduction_checks": {
+      "dominant_own_coordinate_difference_lower": "721/600",
+      "transverse_own_coordinate_upper": "589/1800",
+      "minor_axis_rational_reserve": "37/89100",
+      "major_axis_squared_reserve": "3/32000",
+      "outward_side_contact_radius_reserve": "24271/57600",
+      "lower_transverse_side_height_upper": "-13/40",
+      "upper_circle_corner_height_lower": "27/80",
+      "own_axis_mean_derivative_reserve": "170554543/72000000",
+      "own_axis_mean_function_endpoint": "2603447/3077600",
+      "own_axis_mean_endpoint_reserve": "18263/3077600",
+      "tilted_own_axis_contact_radius_reserve": "11719/1440000",
+      "aligned_own_axis_normal_chord_reserve": "231/6400"
+    },
+    "coupled_return_chord_checks": {
+      "own_axis_difference_37_over_40_reserve": "19/2880",
+      "tilted_normal_slope_lower": "7401/10960",
+      "tilted_normal_slope_reserve": "283/32880",
+      "global_horizontal_normal_component_reserve": "27/5200",
+      "both_tilted_width_sum_reserve": "23/300",
+      "both_tilted_base_squared_distance": "87739/90000",
+      "both_tilted_distance_margin": "5453/360000",
+      "aligned_normal_slope_box_minimum": "358/525",
+      "aligned_normal_slope_reserve": "8/525",
+      "mixed_height_normal_polynomial_endpoint": "9025/9216",
+      "mixed_endpoint_zero_squared_distance": "1418821/1440000",
+      "mixed_endpoint_zero_reserve": "21179/1440000",
+      "mixed_endpoint_theta_squared_distance": "1400489/1440000",
+      "mixed_endpoint_theta_reserve": "39511/1440000"
+    },
+    "coupled_return_polynomial_checks": {
+      "whole_interval_height_normal_polynomial_expansion": true,
+      "positive_derivative_factorization": true
+    }
+  },
+  "original_fine_inventory": {
+    "total": 2513,
+    "checked": 2373,
+    "open": 140,
+    "identifiers_order_flags_unchanged": true
+  },
+  "original_coarse_inventory": {
+    "total": 58,
+    "closed": 36,
+    "open": 22,
+    "identifiers_order_flags_unchanged": true
+  },
+  "complete_conclusions": [
+    "Every actual contact p with common unit normal n satisfies |p|^2+1+2|p.n|<=R^2. The contact radius sqrt(R^2-1) is sharp, and full unloaded nonparallel stars satisfy both stated own-side conditions.",
+    "Support gap at least 39/20 and an original positive inward contact force imply positive circle load at both endpoints, for arbitrary complete endpoint stars.",
+    "A genuine long channel with true-degree-two endpoints and separated above-side boundary return neighbors forces both endpoints to align with the long normal; both-tilted and mixed branches are excluded by whole-interval occupied normal-chord inequalities.",
+    "The entire tilted-endpoint part of the opposite seven-cycle (2,0,1,0) family is excluded. Return-square orientations, all physical circle weights and independent internal heights are retained.",
+    "The exact eight-unit cross has a full stressed compatible outer C8 with unloaded branching vertices; no ninth unit can be added at Q. It also has a different seven-atom physical certificate, while its old fixed twenty-vector aggregate certificate is unique."
+  ],
+  "remaining": [
+    "The aligned-long-endpoint opposite seven-cycle sharp branch, including oblique original direct joins",
+    "All 22 original coarse parents, including arbitrary chorded or interior-vertex blocks",
+    "Adjacent long/short orbit and smaller stressed-core and attachment completion domains",
+    "Unrestricted lower bound and equality classification",
+    "G4.2.c common-selection audit for remaining downstream callers"
+  ],
+  "verification_limits": {
+    "lean_compilation": false,
+    "ci_dispatch": false,
+    "new_universal_packing_certificate": false,
+    "merge": false,
+    "proof_uses_pose_grid": false,
+    "unpublished_exploratory_grid_ran": true,
+    "exploratory_grid_disclosure": "One agent ran one inline off-scope grid during a later unequal-floor investigation: five floors, 501 angles, both signs, 101 center-height samples. No artifact was written. Further numerical searches were stopped. No grid observation is a premise of any adopted proof or receives closure credit."
+  }
+}

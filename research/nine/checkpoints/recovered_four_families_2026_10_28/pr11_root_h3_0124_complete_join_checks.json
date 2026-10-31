@@ -1,0 +1,260 @@
+{
+  "source": "INNER_PENTAGON_THREE_SPOKE_FOUR_LOAD_0124_COMPLETE_EXCLUSION.md",
+  "sha256": "2928e4eab78b513c020a813ccef306b17af36c1c8a3e5f41a0b40a75120e5488",
+  "all_18_pins_match": true,
+  "original_edges": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      0,
+      "H"
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      "H"
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      3,
+      "H"
+    ]
+  ],
+  "true_degrees": {
+    "0": 3,
+    "1": 3,
+    "2": 2,
+    "3": 3,
+    "4": 2,
+    "H": 3
+  },
+  "reflection_preserves_graph_and_loads": true,
+  "full_25_state_owner_mask_partition": [
+    {
+      "E1": "K_owned_any_mask",
+      "E4": "K_owned_any_mask",
+      "complete_row": "any_K_owned"
+    },
+    {
+      "E1": "K_owned_any_mask",
+      "E4": "endpoint_owned_unique",
+      "complete_row": "any_K_owned"
+    },
+    {
+      "E1": "K_owned_any_mask",
+      "E4": "endpoint_owned_two_physical",
+      "complete_row": "any_K_owned"
+    },
+    {
+      "E1": "K_owned_any_mask",
+      "E4": "free_unique",
+      "complete_row": "any_K_owned"
+    },
+    {
+      "E1": "K_owned_any_mask",
+      "E4": "free_two_physical",
+      "complete_row": "any_K_owned"
+    },
+    {
+      "E1": "endpoint_owned_unique",
+      "E4": "K_owned_any_mask",
+      "complete_row": "any_K_owned"
+    },
+    {
+      "E1": "endpoint_owned_unique",
+      "E4": "endpoint_owned_unique",
+      "complete_row": "nonhub_owned_or_radial"
+    },
+    {
+      "E1": "endpoint_owned_unique",
+      "E4": "endpoint_owned_two_physical",
+      "complete_row": "nonhub_owned_or_radial"
+    },
+    {
+      "E1": "endpoint_owned_unique",
+      "E4": "free_unique",
+      "complete_row": "some_unique_free"
+    },
+    {
+      "E1": "endpoint_owned_unique",
+      "E4": "free_two_physical",
+      "complete_row": "nonhub_owned_or_radial"
+    },
+    {
+      "E1": "endpoint_owned_two_physical",
+      "E4": "K_owned_any_mask",
+      "complete_row": "any_K_owned"
+    },
+    {
+      "E1": "endpoint_owned_two_physical",
+      "E4": "endpoint_owned_unique",
+      "complete_row": "nonhub_owned_or_radial"
+    },
+    {
+      "E1": "endpoint_owned_two_physical",
+      "E4": "endpoint_owned_two_physical",
+      "complete_row": "nonhub_owned_or_radial"
+    },
+    {
+      "E1": "endpoint_owned_two_physical",
+      "E4": "free_unique",
+      "complete_row": "some_unique_free"
+    },
+    {
+      "E1": "endpoint_owned_two_physical",
+      "E4": "free_two_physical",
+      "complete_row": "nonhub_owned_or_radial"
+    },
+    {
+      "E1": "free_unique",
+      "E4": "K_owned_any_mask",
+      "complete_row": "any_K_owned"
+    },
+    {
+      "E1": "free_unique",
+      "E4": "endpoint_owned_unique",
+      "complete_row": "some_unique_free"
+    },
+    {
+      "E1": "free_unique",
+      "E4": "endpoint_owned_two_physical",
+      "complete_row": "some_unique_free"
+    },
+    {
+      "E1": "free_unique",
+      "E4": "free_unique",
+      "complete_row": "some_unique_free"
+    },
+    {
+      "E1": "free_unique",
+      "E4": "free_two_physical",
+      "complete_row": "some_unique_free"
+    },
+    {
+      "E1": "free_two_physical",
+      "E4": "K_owned_any_mask",
+      "complete_row": "any_K_owned"
+    },
+    {
+      "E1": "free_two_physical",
+      "E4": "endpoint_owned_unique",
+      "complete_row": "nonhub_owned_or_radial"
+    },
+    {
+      "E1": "free_two_physical",
+      "E4": "endpoint_owned_two_physical",
+      "complete_row": "nonhub_owned_or_radial"
+    },
+    {
+      "E1": "free_two_physical",
+      "E4": "free_unique",
+      "complete_row": "some_unique_free"
+    },
+    {
+      "E1": "free_two_physical",
+      "E4": "free_two_physical",
+      "complete_row": "nonhub_owned_or_radial"
+    }
+  ],
+  "partition_counts": {
+    "any_K_owned": 9,
+    "nonhub_owned_or_radial": 9,
+    "some_unique_free": 7
+  },
+  "new_geometry_or_scalar_lemma": false,
+  "whole_fine_family": "M6.B6.PENTAGON.H3.L0124",
+  "graph_parent_or_coarse_claim": false,
+  "all_complete_direct_sources_and_review_records_read_by_root": true,
+  "source_pins": [
+    {
+      "path": "SIX_BODY_INNER_PENTAGON_LOAD_COVER.md",
+      "sha256": "fa877c9d7d25c57a7c8cf438a429465b5952cb8db6628c57d9d93695b33dd434"
+    },
+    {
+      "path": "INNER_PENTAGON_H3_0124_BOTH_OUTER_HUB_OWNED_ENDPOINTS_EXCLUSION.md",
+      "sha256": "d266281a14e433bb690117a088f118ac05a00e7d6cff3936f21ec820edf74564"
+    },
+    {
+      "path": "REVIEW_H3_0124_BOTH_OUTER_HUB_OWNED_ENDPOINTS_HEXAGON_2026_10_28.md",
+      "sha256": "67adbbf5ece243a6e3e7358b2ca46820a2f4f3a5f88dcd3b286733c63aa48c28"
+    },
+    {
+      "path": "REVIEW_H3_0124_BOTH_OUTER_HUB_OWNED_ENDPOINTS_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "27f618cd6c3f50e1b7c62f9f53ef5460abd459a54c1becb51cfc4da015b0c370"
+    },
+    {
+      "path": "INNER_PENTAGON_H3_0124_ANY_OUTER_HUB_OWNED_ENDPOINT_EXCLUSION.md",
+      "sha256": "05948c932dbb32fb34534ce7486e295a8a3764a6cd6814e65aca209a9f5b9a09"
+    },
+    {
+      "path": "REVIEW_H3_0124_ANY_OUTER_HUB_OWNED_ENDPOINT_HEXAGON_2026_10_28.md",
+      "sha256": "e6d3c761b528a353059029a816b31d524b0c9bcedfe386b105097c0cd86ca689"
+    },
+    {
+      "path": "REVIEW_H3_0124_ANY_OUTER_HUB_OWNED_ENDPOINT_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "0ebf46c69720de5a28195de6f1a5ca6808e62419659dff6b7951ce1e60b1401e"
+    },
+    {
+      "path": "INNER_PENTAGON_H3_0124_NONHUB_OWNED_OR_RADIAL_ENDPOINTS_EXCLUSION.md",
+      "sha256": "c72a8bc51f9c76bd5b6c2d44ad05b6e96f5c8807aab257c27baef8f5a15d5c44"
+    },
+    {
+      "path": "REVIEW_H3_0124_NONHUB_OWNED_OR_RADIAL_ENDPOINTS_ROOT_2026_10_28.md",
+      "sha256": "d9522e44949ac3c9816fd8d09fa9076097de5390b3df2932e6d9d9cbec78ef38"
+    },
+    {
+      "path": "REVIEW_H3_0124_NONHUB_OWNED_OR_RADIAL_ENDPOINTS_ROOTED_BLOCKS_2026_10_28.md",
+      "sha256": "e31d8ade98be96cb2566b0359f37a2b2f6b146ee9ee796615f2e5535ce687d4f"
+    },
+    {
+      "path": "INNER_PENTAGON_H3_0124_UNIQUE_FREE_ENDPOINT_EXCLUSION.md",
+      "sha256": "76ba586f7147908f4f2eaf738285f4324871fa223c5663c58d533476e9bbb3a1"
+    },
+    {
+      "path": "REVIEW_H3_0124_UNIQUE_FREE_ENDPOINT_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "3bb573486c1cff978bf197d0426093761d0e390b47835b045131e26d8b7a2040"
+    },
+    {
+      "path": "GENERAL_FIXED_TIP_NORMAL_SELECTION.md",
+      "sha256": "e94305229333f45afdbd94e6dddf08485e62005a865afe697759cc36161cf753"
+    },
+    {
+      "path": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a"
+    },
+    {
+      "path": "CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "sha256": "2625b3a2b730525a6397bc90232e78c5e1aac8091381c1f5e5fc8a71ef1da449"
+    },
+    {
+      "path": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "sha256": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c"
+    },
+    {
+      "path": "REVIEW_NINE_MEASURE_FIVE_POINT_ASSEMBLY_ROOT_2026_10_26.md",
+      "sha256": "6aa33d0fbccdede04d909b770496fcac8d061e184d46d890f2394b484c6b4b5b"
+    },
+    {
+      "path": "REVIEW_NINE_MEASURE_FIVE_POINT_ASSEMBLY_C6_2026_10_26.md",
+      "sha256": "68e17f92fbc87b7484d3dcdef206ba0e5f0b7014eb0f06ec707919cbe44e00a2"
+    }
+  ],
+  "no_compilation": true,
+  "no_remote_write": true
+}

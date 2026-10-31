@@ -1,0 +1,185 @@
+{
+  "date_utc": "2026-10-28",
+  "reviewer": "frontier_audit",
+  "original_family_id": "M6.B5L.HOUSE.LOWER.LTAC.S",
+  "graph_edges": [
+    "AT",
+    "DT",
+    "AD",
+    "AB",
+    "BC",
+    "CD",
+    "BL"
+  ],
+  "degrees": {
+    "A": 3,
+    "B": 3,
+    "C": 2,
+    "D": 3,
+    "L": 1,
+    "T": 2
+  },
+  "positive_block_circle_loads": [
+    "T",
+    "A",
+    "C"
+  ],
+  "whole_partition": [
+    "R<=2",
+    "R>2 tilted B",
+    "R>2 aligned B and d>=1",
+    "R>2 aligned B and d<1 with A upper",
+    "R>2 aligned B and d<1 with C upper"
+  ],
+  "critical_endpoints": {
+    "R=2": "same-nine measure exclusion",
+    "d=1 aligned": "high-aligned theorem",
+    "d=1 tilted": "both U capacity branches included",
+    "U=4/5 tilted": "closed central-capacity row"
+  },
+  "exact_positive_reserves": {
+    "d_at_R2_lower": "11/900",
+    "d_upper": "31/57600",
+    "sqrt2_upper": "1/4900",
+    "x_positive_circle_reserve": "1589/2500",
+    "x_above_t_circle_reserve": "53/5000"
+  },
+  "historical_archive_structure_checks": [
+    {
+      "record": "checkpoints/recovered_lower_TAC_S_2026_10_28/pr11_root_replay_aligned_low_s_lower_return_height_separation_certificate.json.gz",
+      "decoded_original_hash_checked": true,
+      "compressed_hash_checked": true,
+      "terminal_boxes": 1568,
+      "nodes": 3135,
+      "complete_prefix_tree": true,
+      "exact_Kraft_sum": "1",
+      "target_records": 1194,
+      "every_stored_target_margin_above_floor": true,
+      "floor": "1/25000",
+      "reasons": {
+        "leaf screen": 374,
+        "positive separation": 1194
+      },
+      "scope": "Archive structure and stored rational margins only; no interval-arithmetic replay or reconstructed proof claim."
+    },
+    {
+      "record": "checkpoints/recovered_lower_TAC_S_2026_10_28/aligned_low_s_upper_c_visibility_certificate.json.gz",
+      "decoded_original_hash_checked": true,
+      "compressed_hash_checked": true,
+      "terminal_boxes": 19351,
+      "nodes": 38701,
+      "complete_prefix_tree": true,
+      "exact_Kraft_sum": "1",
+      "target_records": 17438,
+      "every_stored_target_margin_above_floor": true,
+      "floor": "1/1000000",
+      "reasons": {
+        "strict target": 17438,
+        "R>2": 234,
+        "upper proper concurrence": 226,
+        "actual leaf screen": 1024,
+        "x in (3/10,d)": 359,
+        "upper actual mean rho": 70
+      },
+      "scope": "Archive structure and stored rational margins only; no interval-arithmetic replay or reconstructed proof claim."
+    },
+    {
+      "record": "checkpoints/recovered_lower_TAC_S_2026_10_28/rooted_blocks_lower_tac_upper_c_visibility_independent_2026_10_28.json.gz",
+      "decoded_original_hash_checked": true,
+      "compressed_hash_checked": true,
+      "terminal_boxes": 19351,
+      "nodes": 38701,
+      "complete_prefix_tree": true,
+      "exact_Kraft_sum": "1",
+      "target_records": 17438,
+      "every_stored_target_margin_above_floor": true,
+      "floor": "1/1000000",
+      "reasons": {
+        "both visibility targets": 17438,
+        "R>2": 234,
+        "upper proper mean": 226,
+        "real leaf screen": 1024,
+        "actual x": 359,
+        "original rho": 70
+      },
+      "scope": "Archive structure and stored rational margins only; no interval-arithmetic replay or reconstructed proof claim."
+    },
+    {
+      "record": "checkpoints/recovered_lower_TAC_S_2026_10_28/hexagon_aligned_low_s_lower_return_height_independent_checks_2026_10_28.json.gz",
+      "decoded_original_hash_checked": true,
+      "compressed_hash_checked": true,
+      "terminal_boxes": 1568,
+      "nodes": 3135,
+      "complete_prefix_tree": true,
+      "exact_Kraft_sum": "1",
+      "target_records": 1194,
+      "every_stored_target_margin_above_floor": true,
+      "floor": "1/25000",
+      "reasons": {
+        "leaf screen": 374,
+        "positive separation": 1194
+      },
+      "scope": "Archive structure and stored rational margins only; no interval-arithmetic replay or reconstructed proof claim."
+    },
+    {
+      "record": "checkpoints/recovered_lower_TAC_S_2026_10_28/triangle_bridges_lower_tac_upper_a_independent_scalar_2026_10_28.json.gz",
+      "decoded_original_hash_checked": true,
+      "compressed_hash_checked": true,
+      "terminal_boxes": 1292,
+      "nodes": 2583,
+      "complete_prefix_tree": true,
+      "exact_Kraft_sum": "1",
+      "target_records": 966,
+      "every_stored_target_margin_above_floor": true,
+      "floor": "1/25000",
+      "reasons": {
+        "real_leaf_screen": 326,
+        "height": 966
+      },
+      "scope": "Archive structure and stored rational margins only; no interval-arithmetic replay or reconstructed proof claim."
+    },
+    {
+      "record": "checkpoints/recovered_lower_TAC_S_2026_10_28/hexagon_aligned_low_s_upper_c_visibility_independent_checks_2026_10_28.json.gz",
+      "decoded_original_hash_checked": true,
+      "compressed_hash_checked": true,
+      "terminal_boxes": 19351,
+      "nodes": 38701,
+      "complete_prefix_tree": true,
+      "exact_Kraft_sum": "1",
+      "target_records": 17438,
+      "every_stored_target_margin_above_floor": true,
+      "floor": "1/1000000",
+      "reasons": {
+        "strict target": 17438,
+        "R>2": 234,
+        "upper proper concurrence": 226,
+        "actual leaf screen": 1024,
+        "x in (3/10,d)": 359,
+        "upper actual mean rho": 70
+      },
+      "scope": "Archive structure and stored rational margins only; no interval-arithmetic replay or reconstructed proof claim."
+    },
+    {
+      "record": "checkpoints/recovered_lower_TAC_S_2026_10_28/triangle_bridges_lower_tac_upper_c_independent_scalar_2026_10_28.json.gz",
+      "decoded_original_hash_checked": true,
+      "compressed_hash_checked": true,
+      "terminal_boxes": 19351,
+      "nodes": 38701,
+      "complete_prefix_tree": true,
+      "exact_Kraft_sum": "1",
+      "target_records": 17438,
+      "every_stored_target_margin_above_floor": true,
+      "floor": "1/1000000",
+      "reasons": {
+        "targets": 17438,
+        "radius": 234,
+        "proper_concurrence": 226,
+        "leaf_screen": 1024,
+        "x_interval": 359,
+        "upper_mean": 70
+      },
+      "scope": "Archive structure and stored rational margins only; no interval-arithmetic replay or reconstructed proof claim."
+    }
+  ],
+  "new_scalar_replay_performed": false
+}

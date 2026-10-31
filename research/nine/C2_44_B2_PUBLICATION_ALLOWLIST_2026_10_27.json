@@ -1,0 +1,1506 @@
+{
+  "status": "accepted_recovered_whole_original_cell",
+  "coarse_cell": "C2.44.b2",
+  "baseline_commit": "cc143bb36c116590d1de7e7925ad04ca49ea675a",
+  "root_source": "ROOTED_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+  "source_directory": "/workspace/scratch/6f604094721b/squares/research/nine",
+  "files": [
+    {
+      "filename": "REVIEW_ALIGNED_OUTER_LEAF_CHANNEL_THIRD_NEAR_C6_NEXT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_ALIGNED_OUTER_LEAF_CHANNEL_THIRD_NEAR_C6_NEXT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_ALIGNED_OUTER_LEAF_CHANNEL_THIRD_NEAR_C6_NEXT_2026_10_27.md",
+      "sha256": "5ed7f395d3fb88f6eebdfe3a75a5fd2ad640cf1f65851fca9546c32d273a8db1",
+      "bytes": 10189
+    },
+    {
+      "filename": "REVIEW_ALIGNED_OUTER_LEAF_CHANNEL_THIRD_NEAR_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_ALIGNED_OUTER_LEAF_CHANNEL_THIRD_NEAR_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_ALIGNED_OUTER_LEAF_CHANNEL_THIRD_NEAR_ROOT_2026_10_27.md",
+      "sha256": "6cc1fbf912874fc9960bf8c93d1a03dd4c9c43ebee996dccec6f26161c768365",
+      "bytes": 3955
+    },
+    {
+      "filename": "REVIEW_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_GLOBAL_NEXT_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_GLOBAL_NEXT_2026_10_28.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_GLOBAL_NEXT_2026_10_28.md",
+      "sha256": "799cc7974b8232c012370f9af2d411b2102fce128f35b3b763c4ed573f6ebc67",
+      "bytes": 11913
+    },
+    {
+      "filename": "REVIEW_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_ROOT_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_ROOT_2026_10_28.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_ROOT_2026_10_28.md",
+      "sha256": "b31b1abdee956aab5ee58a7b6e1651be950b429cde9ea82c356d7f7e71a8d72b",
+      "bytes": 10182
+    },
+    {
+      "filename": "REVIEW_DECORATED_FOUR_CHANNEL_AND_NORMAL_CONE_EXITS_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_DECORATED_FOUR_CHANNEL_AND_NORMAL_CONE_EXITS_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_DECORATED_FOUR_CHANNEL_AND_NORMAL_CONE_EXITS_ROOT_2026_10_27.md",
+      "sha256": "30109340272470b0daad16a736655a57221019db509e54bb16067aa9346b99e3",
+      "bytes": 9947
+    },
+    {
+      "filename": "REVIEW_DECORATED_FOUR_UNLOADED_ROOT_NEIGHBOR_SMALL_PORT_GLOBAL_NEXT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_DECORATED_FOUR_UNLOADED_ROOT_NEIGHBOR_SMALL_PORT_GLOBAL_NEXT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_DECORATED_FOUR_UNLOADED_ROOT_NEIGHBOR_SMALL_PORT_GLOBAL_NEXT_2026_10_27.md",
+      "sha256": "3640dec86a4a141ea421e9f661166e239add27f83593659e0478d1ebdce47763",
+      "bytes": 9932
+    },
+    {
+      "filename": "REVIEW_GENUINE_S_LEAF_ONE_TENTH_BOUNDARY_CAP_C6_NEXT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_GENUINE_S_LEAF_ONE_TENTH_BOUNDARY_CAP_C6_NEXT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_GENUINE_S_LEAF_ONE_TENTH_BOUNDARY_CAP_C6_NEXT_2026_10_27.md",
+      "sha256": "38f3b928e8b22cefaa6f2cd65272072c74eafafa4eea17082335c5fd5d1428a4",
+      "bytes": 10285
+    },
+    {
+      "filename": "REVIEW_PARALLEL_PRIVATE_LEAF_CHANNEL_DECORATED_HUB_C6_NEXT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_PARALLEL_PRIVATE_LEAF_CHANNEL_DECORATED_HUB_C6_NEXT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_PARALLEL_PRIVATE_LEAF_CHANNEL_DECORATED_HUB_C6_NEXT_2026_10_27.md",
+      "sha256": "89149c5824a055871a12d387df1961406c74813d0786b121327136a0211e1d13",
+      "bytes": 10740
+    },
+    {
+      "filename": "REVIEW_PARALLEL_PRIVATE_LEAF_CHANNEL_DECORATED_HUB_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_PARALLEL_PRIVATE_LEAF_CHANNEL_DECORATED_HUB_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_PARALLEL_PRIVATE_LEAF_CHANNEL_DECORATED_HUB_ROOT_2026_10_27.md",
+      "sha256": "02de452ff7c44ff6624df2cfe65bb40b634a9c4d062fd3f41f511a91392ff5a1",
+      "bytes": 6801
+    },
+    {
+      "filename": "REVIEW_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_MIXED_DIAMOND_C6_NEXT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_MIXED_DIAMOND_C6_NEXT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_MIXED_DIAMOND_C6_NEXT_2026_10_27.md",
+      "sha256": "462e01b8bb8b9fbbbdd63a78e2b5775d3e0e64687333ebc7e7a2b886a4fcedc7",
+      "bytes": 19202
+    },
+    {
+      "filename": "REVIEW_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_MIXED_DIAMOND_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_MIXED_DIAMOND_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_MIXED_DIAMOND_ROOT_2026_10_27.md",
+      "sha256": "634eb40ae340a991d52388516f6d069498d08c2fd04334ced8d5959cdcf47b26",
+      "bytes": 9415
+    },
+    {
+      "filename": "REVIEW_SMALL_PRIVATE_LEAF_ROOT_UNLOADED_CHANNEL_C6_NEXT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_SMALL_PRIVATE_LEAF_ROOT_UNLOADED_CHANNEL_C6_NEXT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_SMALL_PRIVATE_LEAF_ROOT_UNLOADED_CHANNEL_C6_NEXT_2026_10_27.md",
+      "sha256": "92b62f3c0fc26cdd331df3f5a0056b30d65b697e2cedbbd7ee8429c758a5ec50",
+      "bytes": 10569
+    },
+    {
+      "filename": "REVIEW_TILTED_LEAF_ORIGIN_TRANSMITTER_C6_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_TILTED_LEAF_ORIGIN_TRANSMITTER_C6_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TILTED_LEAF_ORIGIN_TRANSMITTER_C6_2026_10_27.md",
+      "sha256": "a54f1c4b135c5b885a40851d6746b4e35d41213f04d542c48f8c0dbd7e3d3bfc",
+      "bytes": 6409
+    },
+    {
+      "filename": "REVIEW_TWICE_EPSILON_H_AND_ONE_TENTH_S_ROOT_CORNERS_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_TWICE_EPSILON_H_AND_ONE_TENTH_S_ROOT_CORNERS_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWICE_EPSILON_H_AND_ONE_TENTH_S_ROOT_CORNERS_ROOT_2026_10_27.md",
+      "sha256": "594a038c52e770b31a843811ae0e00577d7658f769584164dcb5cd27cbf55646",
+      "bytes": 7500
+    },
+    {
+      "filename": "REVIEW_TWO_ADJACENT_LEAF_CYCLES_BOUNDARY_ANGLE_BUDGET_C6_NEXT_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_BOUNDARY_ANGLE_BUDGET_C6_NEXT_2026_10_28.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_BOUNDARY_ANGLE_BUDGET_C6_NEXT_2026_10_28.md",
+      "sha256": "b5418dab4a9e3c0c307412bda496195bc43fb27ba1ade9836924edf65dbaccc3",
+      "bytes": 15603
+    },
+    {
+      "filename": "REVIEW_TWO_ADJACENT_LEAF_CYCLES_BOUNDARY_ANGLE_BUDGET_ROOT_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_BOUNDARY_ANGLE_BUDGET_ROOT_2026_10_28.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_BOUNDARY_ANGLE_BUDGET_ROOT_2026_10_28.md",
+      "sha256": "ee97ec69780b79dd578309bb02f615d77e78235ef90ea7d538d291fdfc167b7d",
+      "bytes": 7696
+    },
+    {
+      "filename": "REVIEW_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_GLOBAL_NEXT_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_GLOBAL_NEXT_2026_10_28.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_GLOBAL_NEXT_2026_10_28.md",
+      "sha256": "c542a11c99b16f8851bde0a7e05b7cf053608b98f9a80ab8b443966462b07357",
+      "bytes": 11891
+    },
+    {
+      "filename": "REVIEW_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_ROOT_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_ROOT_2026_10_28.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_ROOT_2026_10_28.md",
+      "sha256": "ae9f8869c3e5093af56bceb1a739aebc7b057e69d640115f71c18cb85c3d91d5",
+      "bytes": 7863
+    },
+    {
+      "filename": "REVIEW_TWO_ADJACENT_LEAF_CYCLES_OWNED_ROOT_SMALL_VERTEX_MIXED_BLOCKS_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_OWNED_ROOT_SMALL_VERTEX_MIXED_BLOCKS_2026_10_28.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_OWNED_ROOT_SMALL_VERTEX_MIXED_BLOCKS_2026_10_28.md",
+      "sha256": "0546538c6874b06f3041eab51a78be186a23e59962d25a544da77e9fb45e0bae",
+      "bytes": 11602
+    },
+    {
+      "filename": "REVIEW_TWO_ADJACENT_LEAF_CYCLES_OWNED_ROOT_SMALL_VERTEX_ROOT_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_OWNED_ROOT_SMALL_VERTEX_ROOT_2026_10_28.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_OWNED_ROOT_SMALL_VERTEX_ROOT_2026_10_28.md",
+      "sha256": "890a2bf1b8d651b52f47a10a80c13aaca9369fc6b45650378bbcce4e454bcd6e",
+      "bytes": 8142
+    },
+    {
+      "filename": "REVIEW_TWO_ADJACENT_LEAF_CYCLES_SIX_EPSILON_C6_NEXT_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_SIX_EPSILON_C6_NEXT_2026_10_28.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_SIX_EPSILON_C6_NEXT_2026_10_28.md",
+      "sha256": "dd0c26a411c801ab93b8b709846d42817c27902ef8892657f275cae6e5b3db0e",
+      "bytes": 10168
+    },
+    {
+      "filename": "REVIEW_TWO_ADJACENT_LEAF_CYCLES_SIX_EPSILON_ROOT_2026_10_28.md",
+      "repository_path": "research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_SIX_EPSILON_ROOT_2026_10_28.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_SIX_EPSILON_ROOT_2026_10_28.md",
+      "sha256": "85962680ec92cdb5caa4c1244be840fcb6efa28b4eb6946b247a6b27353b14a5",
+      "bytes": 3542
+    },
+    {
+      "filename": "REVIEW_TWO_ADJACENT_LEAF_CYCLES_SMALL_CORNER_NORMAL_CONE_GLOBAL_NEXT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_SMALL_CORNER_NORMAL_CONE_GLOBAL_NEXT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_ADJACENT_LEAF_CYCLES_SMALL_CORNER_NORMAL_CONE_GLOBAL_NEXT_2026_10_27.md",
+      "sha256": "6814054923fb04e05f8cf128cfe1503193bd7a32e645636ccc5823c0ae43b004",
+      "bytes": 12770
+    },
+    {
+      "filename": "REVIEW_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_GLOBAL_NEXT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_GLOBAL_NEXT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_GLOBAL_NEXT_2026_10_27.md",
+      "sha256": "053dad26d6723987c6334490f318de2137a678ada1034d2d5c4747fa9db1a2bb",
+      "bytes": 13740
+    },
+    {
+      "filename": "REVIEW_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_ROOT_2026_10_27.md",
+      "sha256": "ec9571d9737f7dd2c77a21b06df252331403f0cfea644dc1a73d7150f3846e68",
+      "bytes": 7292
+    },
+    {
+      "filename": "REVIEW_TWO_DECORATED_FOUR_CRITICAL_RADIUS_GLOBAL_NEXT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_TWO_DECORATED_FOUR_CRITICAL_RADIUS_GLOBAL_NEXT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_DECORATED_FOUR_CRITICAL_RADIUS_GLOBAL_NEXT_2026_10_27.md",
+      "sha256": "a32444f6d426a174890173c1e15508bf1730f667a84e0d10c779f372940b3ddd",
+      "bytes": 17270
+    },
+    {
+      "filename": "REVIEW_TWO_DECORATED_FOUR_CRITICAL_RADIUS_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_TWO_DECORATED_FOUR_CRITICAL_RADIUS_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_DECORATED_FOUR_CRITICAL_RADIUS_ROOT_2026_10_27.md",
+      "sha256": "9a5c4f64790f4f137ddf82e24c86f69b73b370e52d53052f8005880eaff54e2c",
+      "bytes": 12766
+    },
+    {
+      "filename": "REVIEW_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_GLOBAL_NEXT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_GLOBAL_NEXT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_GLOBAL_NEXT_2026_10_27.md",
+      "sha256": "140871adb7f1247da4f73c2c15a4cbe23f21aacb71f4f3c586a72a86e9c581d9",
+      "bytes": 11069
+    },
+    {
+      "filename": "REVIEW_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_ROOT_2026_10_27.md",
+      "sha256": "b78f6263c11e627b188cfb070c134674eb7fd11033347be982c33d8b52d2a727",
+      "bytes": 5989
+    },
+    {
+      "filename": "REVIEW_TWO_DECORATED_FOUR_TWICE_EPSILON_CORNER_MIXED_BLOCKS_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_TWO_DECORATED_FOUR_TWICE_EPSILON_CORNER_MIXED_BLOCKS_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_DECORATED_FOUR_TWICE_EPSILON_CORNER_MIXED_BLOCKS_2026_10_27.md",
+      "sha256": "ef0d1b13378e8c649822f81baaf67071e1599dd7ec1484cbed072ce622ea891a",
+      "bytes": 8410
+    },
+    {
+      "filename": "REVIEW_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_GLOBAL_NEXT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_GLOBAL_NEXT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_GLOBAL_NEXT_2026_10_27.md",
+      "sha256": "2ad018ff0cd96a5be31b8cd243af2a14833c98354d234d11bee4a2ca25e9d296",
+      "bytes": 16310
+    },
+    {
+      "filename": "REVIEW_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_ROOT_2026_10_27.md",
+      "sha256": "678fe8c81c750666ba80f4d86268fd3b0ce0b800ae5e3a9e8c71313d2b928546",
+      "bytes": 8035
+    },
+    {
+      "filename": "REVIEW_TWO_GENUINE_LEAF_ROOTS_COMMON_OWNED_SIDE_C6_NEXT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_TWO_GENUINE_LEAF_ROOTS_COMMON_OWNED_SIDE_C6_NEXT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_GENUINE_LEAF_ROOTS_COMMON_OWNED_SIDE_C6_NEXT_2026_10_27.md",
+      "sha256": "a7a788c86206132adb7d356a5270318bc906f785a4a6ea9eeef45bab65af2461",
+      "bytes": 11380
+    },
+    {
+      "filename": "REVIEW_TWO_GENUINE_LEAF_ROOTS_COMMON_OWNED_SIDE_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_TWO_GENUINE_LEAF_ROOTS_COMMON_OWNED_SIDE_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_TWO_GENUINE_LEAF_ROOTS_COMMON_OWNED_SIDE_ROOT_2026_10_27.md",
+      "sha256": "bb88591886c3e3e08a4b7c7cab2bcbd4286b0b2f3ce725a86cce0ae4da57b802",
+      "bytes": 6747
+    },
+    {
+      "filename": "ROOTED_ALIGNED_OUTER_LEAF_CHANNEL_THIRD_NEAR_UNIT_EXCLUSION.md",
+      "repository_path": "research/nine/ROOTED_ALIGNED_OUTER_LEAF_CHANNEL_THIRD_NEAR_UNIT_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_ALIGNED_OUTER_LEAF_CHANNEL_THIRD_NEAR_UNIT_EXCLUSION.md",
+      "sha256": "1231c5101ec9fc2f7955aad3a1bc4e0ba0bff74c208162648989c95cdedf7b24",
+      "bytes": 11911
+    },
+    {
+      "filename": "ROOTED_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "repository_path": "research/nine/ROOTED_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "sha256": "1977a8e7b538bb322ce503b20606867a5fde3ea684d17533c32ed00d4b4a0c2f",
+      "bytes": 17749
+    },
+    {
+      "filename": "ROOTED_DECORATED_FOUR_UNLOADED_ROOT_NEIGHBOR_SMALL_PORT_EXCLUSION.md",
+      "repository_path": "research/nine/ROOTED_DECORATED_FOUR_UNLOADED_ROOT_NEIGHBOR_SMALL_PORT_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_DECORATED_FOUR_UNLOADED_ROOT_NEIGHBOR_SMALL_PORT_EXCLUSION.md",
+      "sha256": "0ab059130813827a7b23e7a087fbb5a90c1fc92c75f35d9020b46a996a44f7fc",
+      "bytes": 13067
+    },
+    {
+      "filename": "ROOTED_GENUINE_S_LEAF_ONE_TENTH_CORNER_BOUNDARY_CAP.md",
+      "repository_path": "research/nine/ROOTED_GENUINE_S_LEAF_ONE_TENTH_CORNER_BOUNDARY_CAP.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_GENUINE_S_LEAF_ONE_TENTH_CORNER_BOUNDARY_CAP.md",
+      "sha256": "31058df9d4e4ac6eaff1194d2b0d59565349fca885795f284c891537a1be820d",
+      "bytes": 16477
+    },
+    {
+      "filename": "ROOTED_PARALLEL_PRIVATE_LEAF_CHANNEL_AND_DECORATED_HUB_EXCLUSION.md",
+      "repository_path": "research/nine/ROOTED_PARALLEL_PRIVATE_LEAF_CHANNEL_AND_DECORATED_HUB_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_PARALLEL_PRIVATE_LEAF_CHANNEL_AND_DECORATED_HUB_EXCLUSION.md",
+      "sha256": "e44172ddbabed5d2e88cf848deb74f163abb97cc4433403123c06732e8b55ff0",
+      "bytes": 14684
+    },
+    {
+      "filename": "ROOTED_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_AND_MIXED_DIAMOND_EXCLUSION.md",
+      "repository_path": "research/nine/ROOTED_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_AND_MIXED_DIAMOND_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_AND_MIXED_DIAMOND_EXCLUSION.md",
+      "sha256": "2923e7a39fdb263c1bb49bf79cd847abc6af034c1bfce3c0df9f1420567a035a",
+      "bytes": 24517
+    },
+    {
+      "filename": "ROOTED_SMALL_PRIVATE_LEAF_ROOT_UNLOADED_CHANNEL_EXCLUSION.md",
+      "repository_path": "research/nine/ROOTED_SMALL_PRIVATE_LEAF_ROOT_UNLOADED_CHANNEL_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_SMALL_PRIVATE_LEAF_ROOT_UNLOADED_CHANNEL_EXCLUSION.md",
+      "sha256": "2191da73d3b8bca796e6d69ae4988b7070125677c42478528f1810bf732255fe",
+      "bytes": 9857
+    },
+    {
+      "filename": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_BOUNDARY_ANGLE_BUDGET_EXCLUSION.md",
+      "repository_path": "research/nine/ROOTED_TWO_ADJACENT_LEAF_CYCLES_BOUNDARY_ANGLE_BUDGET_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_TWO_ADJACENT_LEAF_CYCLES_BOUNDARY_ANGLE_BUDGET_EXCLUSION.md",
+      "sha256": "6647d6f0f20b0c183675cfe46cc2fd9ee6a54501d515e9e97525cdcbe0592ef0",
+      "bytes": 23176
+    },
+    {
+      "filename": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_EXCLUSION.md",
+      "repository_path": "research/nine/ROOTED_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_EXCLUSION.md",
+      "sha256": "70f295b704fad5c68ccc7d6866460679b9be09b42263b667a8643acc010c5588",
+      "bytes": 13399
+    },
+    {
+      "filename": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_OWNED_ROOT_SMALL_VERTEX_REDUCTION.md",
+      "repository_path": "research/nine/ROOTED_TWO_ADJACENT_LEAF_CYCLES_OWNED_ROOT_SMALL_VERTEX_REDUCTION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_TWO_ADJACENT_LEAF_CYCLES_OWNED_ROOT_SMALL_VERTEX_REDUCTION.md",
+      "sha256": "68ed9356177d5dc9383b68ee0f280da04b5c1ea244d306c322dc4b2c44722404",
+      "bytes": 16483
+    },
+    {
+      "filename": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_SIX_EPSILON_CORNERS.md",
+      "repository_path": "research/nine/ROOTED_TWO_ADJACENT_LEAF_CYCLES_SIX_EPSILON_CORNERS.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_TWO_ADJACENT_LEAF_CYCLES_SIX_EPSILON_CORNERS.md",
+      "sha256": "c8c80cac934540579cdf07c2cb73fa75effbf2dfa75864d9e630ed40deb43a85",
+      "bytes": 12093
+    },
+    {
+      "filename": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_SMALL_CORNER_NORMAL_CONE_REDUCTION.md",
+      "repository_path": "research/nine/ROOTED_TWO_ADJACENT_LEAF_CYCLES_SMALL_CORNER_NORMAL_CONE_REDUCTION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_TWO_ADJACENT_LEAF_CYCLES_SMALL_CORNER_NORMAL_CONE_REDUCTION.md",
+      "sha256": "2f23eca409fde9924c22cd99e41873060894ed2731470eaafa105acd4620744d",
+      "bytes": 11002
+    },
+    {
+      "filename": "ROOTED_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_EXCLUSION.md",
+      "repository_path": "research/nine/ROOTED_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_EXCLUSION.md",
+      "sha256": "5d458a2425a42cf158e2093192dce768afeea8420d8cda1a6dbeffde0c61eb2e",
+      "bytes": 21084
+    },
+    {
+      "filename": "ROOTED_TWO_DECORATED_FOUR_CRITICAL_RADIUS_EXCLUSION.md",
+      "repository_path": "research/nine/ROOTED_TWO_DECORATED_FOUR_CRITICAL_RADIUS_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_TWO_DECORATED_FOUR_CRITICAL_RADIUS_EXCLUSION.md",
+      "sha256": "d0ce399fd298d0250876ba9898c85aff2b5d605970c12305cc50f0490cf6c4fc",
+      "bytes": 29548
+    },
+    {
+      "filename": "ROOTED_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_EXCLUSION.md",
+      "repository_path": "research/nine/ROOTED_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_EXCLUSION.md",
+      "sha256": "bade040a942812297d1586ad872cee93e22a09b4e96e877e85c8b6e10f70e8ab",
+      "bytes": 18780
+    },
+    {
+      "filename": "ROOTED_TWO_DECORATED_FOUR_TWICE_EPSILON_CORNER_REDUCTION.md",
+      "repository_path": "research/nine/ROOTED_TWO_DECORATED_FOUR_TWICE_EPSILON_CORNER_REDUCTION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_TWO_DECORATED_FOUR_TWICE_EPSILON_CORNER_REDUCTION.md",
+      "sha256": "359f9a77b4f3c7a04e1f8d939f165b8f505ca4534caaddf1b33e932059c420b5",
+      "bytes": 10757
+    },
+    {
+      "filename": "ROOTED_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_REDUCTION.md",
+      "repository_path": "research/nine/ROOTED_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_REDUCTION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_REDUCTION.md",
+      "sha256": "3f52c75b96b249dac86bdfa2cf4438fdf6f4c71ac53231619ca10c6f2bb62f97",
+      "bytes": 24011
+    },
+    {
+      "filename": "ROOTED_TWO_GENUINE_LEAF_ROOTS_COMMON_OWNED_SIDE_EXCLUSION.md",
+      "repository_path": "research/nine/ROOTED_TWO_GENUINE_LEAF_ROOTS_COMMON_OWNED_SIDE_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_TWO_GENUINE_LEAF_ROOTS_COMMON_OWNED_SIDE_EXCLUSION.md",
+      "sha256": "b01eeafba1c4575af86f56aeb2105478569c13c029f37e0d4c190c742e7dcc37",
+      "bytes": 11983
+    },
+    {
+      "filename": "REVIEW_RECOVERED_C2_44_B2_CURRENT_SOURCE_ASSEMBLY_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_RECOVERED_C2_44_B2_CURRENT_SOURCE_ASSEMBLY_2026_10_27.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/two_blocks/REVIEW_RECOVERED_C2_44_B2_CURRENT_SOURCE_ASSEMBLY_2026_10_27.md",
+      "sha256": "ab95903f59e961eb1b5f6e1954568e9e6904d8bd79979f23a4fa2011726bd2a6",
+      "bytes": 8056
+    }
+  ],
+  "original_mathematical_sources": 18,
+  "original_review_records": 34,
+  "fresh_review": {
+    "filename": "REVIEW_RECOVERED_C2_44_B2_CURRENT_SOURCE_ASSEMBLY_2026_10_27.md",
+    "repository_path": "research/nine/REVIEW_RECOVERED_C2_44_B2_CURRENT_SOURCE_ASSEMBLY_2026_10_27.md",
+    "source_path": "/workspace/scratch/7d553350ce2a/two_blocks/REVIEW_RECOVERED_C2_44_B2_CURRENT_SOURCE_ASSEMBLY_2026_10_27.md",
+    "sha256": "ab95903f59e961eb1b5f6e1954568e9e6904d8bd79979f23a4fa2011726bd2a6",
+    "bytes": 8056
+  },
+  "unchanged_baseline_dependencies": [
+    {
+      "filename": "CENTERED_INNER_ARC.md",
+      "repository_path": "research/nine/CENTERED_INNER_ARC.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/CENTERED_INNER_ARC.md",
+      "sha256": "fac240eca4ad3254ba4aafd8c915f9771f7eeb3acea57bd2ee3ddd4eab0ba2e5",
+      "bytes": 4515
+    },
+    {
+      "filename": "CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "repository_path": "research/nine/CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "sha256": "e54df61d3134c5709bee5ac1a250fdd51084828da114d896f14c7e6337c4e8c5",
+      "bytes": 12813
+    },
+    {
+      "filename": "END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+      "repository_path": "research/nine/END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+      "sha256": "20a845eff8bee3e9c533162df0b32ea96f9dd104a3cfec41efb3b0cf92d6e9cf",
+      "bytes": 8686
+    },
+    {
+      "filename": "GENERAL_FAR_WALL_59_60_SQUARE_BOUNDS.md",
+      "repository_path": "research/nine/GENERAL_FAR_WALL_59_60_SQUARE_BOUNDS.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/GENERAL_FAR_WALL_59_60_SQUARE_BOUNDS.md",
+      "sha256": "be4bf3f299be99a0f65e07d3ee9c6ac96d6e5abad88c1ec50598b3ee090c1ff9",
+      "bytes": 4515
+    },
+    {
+      "filename": "GENERAL_GENUINE_FOUR_BLOCK_DECORATED_HUB_DIAMOND_COMPLETE_EXCLUSION.md",
+      "repository_path": "research/nine/GENERAL_GENUINE_FOUR_BLOCK_DECORATED_HUB_DIAMOND_COMPLETE_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/GENERAL_GENUINE_FOUR_BLOCK_DECORATED_HUB_DIAMOND_COMPLETE_EXCLUSION.md",
+      "sha256": "45dcd1b830306b0ab32429e91b8aaeda5561d2ea3c05ef102ef4b5ce1ecab99f",
+      "bytes": 19441
+    },
+    {
+      "filename": "GENERAL_OCCUPIED_CROSS_NINE_UNIT_EXCLUSION.md",
+      "repository_path": "research/nine/GENERAL_OCCUPIED_CROSS_NINE_UNIT_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/GENERAL_OCCUPIED_CROSS_NINE_UNIT_EXCLUSION.md",
+      "sha256": "b261db9c810b91b46a1843717a4aeaefc8b381e10f99015ad660c040cf0809d3",
+      "bytes": 21174
+    },
+    {
+      "filename": "GENERAL_TERMINAL_CYCLE_PRIVATE_LEAF_FORESTS_EXCLUSION.md",
+      "repository_path": "research/nine/GENERAL_TERMINAL_CYCLE_PRIVATE_LEAF_FORESTS_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/GENERAL_TERMINAL_CYCLE_PRIVATE_LEAF_FORESTS_EXCLUSION.md",
+      "sha256": "8f806e480b44eaf2bdcad600158db0c861a5ac3a530ced417f4b64a67194488a",
+      "bytes": 20709
+    },
+    {
+      "filename": "NO_UNLOADED_DIAMOND_HUB.md",
+      "repository_path": "research/nine/NO_UNLOADED_DIAMOND_HUB.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/NO_UNLOADED_DIAMOND_HUB.md",
+      "sha256": "82b546953a927a09d8ccabdefd8ffc10eac3e4efc5d8a122840f1343f80a7e2d",
+      "bytes": 12851
+    },
+    {
+      "filename": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "repository_path": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "bytes": 14121
+    },
+    {
+      "filename": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "repository_path": "research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "bytes": 14902
+    },
+    {
+      "filename": "REVIEW_C2_34_B2_CLOSED_RING_AND_UNLOADED_CHANNEL_ROOT_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_C2_34_B2_CLOSED_RING_AND_UNLOADED_CHANNEL_ROOT_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_C2_34_B2_CLOSED_RING_AND_UNLOADED_CHANNEL_ROOT_2026_10_27.md",
+      "sha256": "2949217e29600a3baa03e122a479114dff809b8e34176fffc183fb8c2d8ad5cd",
+      "bytes": 13683
+    },
+    {
+      "filename": "REVIEW_ORIGIN_ADJACENT_CHANNEL_RADIAL_TIP_C6_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_ORIGIN_ADJACENT_CHANNEL_RADIAL_TIP_C6_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_ORIGIN_ADJACENT_CHANNEL_RADIAL_TIP_C6_2026_10_27.md",
+      "sha256": "883ca4c5badbfc7c8c1aa724268cb9bd1baae2a31e882526ff6a7c2e5d605a15",
+      "bytes": 8852
+    },
+    {
+      "filename": "REVIEW_ROOT_ADJACENT_LEAF_CHANNEL_SMALL_CORNER_GLOBAL_2026_10_27.md",
+      "repository_path": "research/nine/REVIEW_ROOT_ADJACENT_LEAF_CHANNEL_SMALL_CORNER_GLOBAL_2026_10_27.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/REVIEW_ROOT_ADJACENT_LEAF_CHANNEL_SMALL_CORNER_GLOBAL_2026_10_27.md",
+      "sha256": "0ff5113e6ae018b0d7a185b017173d4e4b7063fa42eec5f40cdd12c19c092416",
+      "bytes": 10244
+    },
+    {
+      "filename": "ROOTED_ALIGNED_OUTER_LEAF_CHANNEL_BRANCH_PRESSURE.md",
+      "repository_path": "research/nine/ROOTED_ALIGNED_OUTER_LEAF_CHANNEL_BRANCH_PRESSURE.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_ALIGNED_OUTER_LEAF_CHANNEL_BRANCH_PRESSURE.md",
+      "sha256": "c934cf7c8281f01af552b03f53ea7563ac74b8208e9aed8f92e9db15c47c054b",
+      "bytes": 16277
+    },
+    {
+      "filename": "ROOTED_ASYMMETRIC_SMALL_ORIGIN_CORNER_AND_HUB_DIAMOND_LEAF_EXCLUSION.md",
+      "repository_path": "research/nine/ROOTED_ASYMMETRIC_SMALL_ORIGIN_CORNER_AND_HUB_DIAMOND_LEAF_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_ASYMMETRIC_SMALL_ORIGIN_CORNER_AND_HUB_DIAMOND_LEAF_EXCLUSION.md",
+      "sha256": "d776034db6364645fc071c2dd13cd00e6feea86bfb636a739d0c885a645f9aa1",
+      "bytes": 19566
+    },
+    {
+      "filename": "ROOTED_C2_44_TWO_BRIDGES_GENUINE_BLOCK_NONNEGATIVE_REDUCTION.md",
+      "repository_path": "research/nine/ROOTED_C2_44_TWO_BRIDGES_GENUINE_BLOCK_NONNEGATIVE_REDUCTION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_C2_44_TWO_BRIDGES_GENUINE_BLOCK_NONNEGATIVE_REDUCTION.md",
+      "sha256": "1392defd8058b98bb333ed923f32a1a6982133d7439030d1922a8ca2277399d6",
+      "bytes": 14134
+    },
+    {
+      "filename": "ROOTED_C3_334_PRIVATE_ADJACENT_LEAF_TWO_LOAD_C4_EXCLUSION.md",
+      "repository_path": "research/nine/ROOTED_C3_334_PRIVATE_ADJACENT_LEAF_TWO_LOAD_C4_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_C3_334_PRIVATE_ADJACENT_LEAF_TWO_LOAD_C4_EXCLUSION.md",
+      "sha256": "9036a1a8c2b1c7e0f713eef3e0dc3bacbecb42d588332120cf9e04c27ffa98c5",
+      "bytes": 23810
+    },
+    {
+      "filename": "ROOTED_C4_OPPOSITE_LOAD_ORIGIN_TRIANGLE_COMPLETE_EXCLUSION.md",
+      "repository_path": "research/nine/ROOTED_C4_OPPOSITE_LOAD_ORIGIN_TRIANGLE_COMPLETE_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_C4_OPPOSITE_LOAD_ORIGIN_TRIANGLE_COMPLETE_EXCLUSION.md",
+      "sha256": "8608a7abc8eb8fd8af03132c914ca1134a9b7d09e2e4246defc67b17c8212bdf",
+      "bytes": 18747
+    },
+    {
+      "filename": "ROOTED_GENUINE_FOUR_BLOCK_LEAF_BOUNDARY_CONTINUATION_EXCLUSION.md",
+      "repository_path": "research/nine/ROOTED_GENUINE_FOUR_BLOCK_LEAF_BOUNDARY_CONTINUATION_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_GENUINE_FOUR_BLOCK_LEAF_BOUNDARY_CONTINUATION_EXCLUSION.md",
+      "sha256": "2eadea361baf2f4d10091428bfdd223691fba9c1b8fe7ca89aa5fa226808dd24",
+      "bytes": 9944
+    },
+    {
+      "filename": "ROOTED_GENUINE_FOUR_BLOCK_LEAF_C4_BOUNDARY_ORDER_REDUCTION.md",
+      "repository_path": "research/nine/ROOTED_GENUINE_FOUR_BLOCK_LEAF_C4_BOUNDARY_ORDER_REDUCTION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_GENUINE_FOUR_BLOCK_LEAF_C4_BOUNDARY_ORDER_REDUCTION.md",
+      "sha256": "03f0375fba37e464a95b3978f2e836c4c66314938f433e6043e418656963aeb9",
+      "bytes": 21262
+    },
+    {
+      "filename": "ROOTED_GENUINE_FOUR_BLOCK_LEAF_C4_OPEN_ORIGIN.md",
+      "repository_path": "research/nine/ROOTED_GENUINE_FOUR_BLOCK_LEAF_C4_OPEN_ORIGIN.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_GENUINE_FOUR_BLOCK_LEAF_C4_OPEN_ORIGIN.md",
+      "sha256": "95e445471efc748b14c299ef21227dfb28c4eaf0009e4fed18315e460096fb87",
+      "bytes": 18861
+    },
+    {
+      "filename": "ROOTED_GENUINE_FOUR_BLOCK_LEAF_DIAMOND_OPEN_ORIGIN.md",
+      "repository_path": "research/nine/ROOTED_GENUINE_FOUR_BLOCK_LEAF_DIAMOND_OPEN_ORIGIN.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_GENUINE_FOUR_BLOCK_LEAF_DIAMOND_OPEN_ORIGIN.md",
+      "sha256": "c11df54a8da029734088e7555ea3777b4158f2a842444959f7b8216a9fd4df7d",
+      "bytes": 27343
+    },
+    {
+      "filename": "ROOTED_GEOMETRIC_TRIANGLE_MOMENT_CIRCUIT_EXCLUSION.md",
+      "repository_path": "research/nine/ROOTED_GEOMETRIC_TRIANGLE_MOMENT_CIRCUIT_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_GEOMETRIC_TRIANGLE_MOMENT_CIRCUIT_EXCLUSION.md",
+      "sha256": "5c7bca9ee6df342fd901571322201eca9d7857a1b5bd39459567d31350afc1df",
+      "bytes": 13964
+    },
+    {
+      "filename": "ROOTED_HIGH_RADIUS_TWO_NEAR_BOUNDARY_FOUR_RING_EXCLUSION.md",
+      "repository_path": "research/nine/ROOTED_HIGH_RADIUS_TWO_NEAR_BOUNDARY_FOUR_RING_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_HIGH_RADIUS_TWO_NEAR_BOUNDARY_FOUR_RING_EXCLUSION.md",
+      "sha256": "f31c67f46c3d4318d67c887afbb4ee93997ac8e587c6d7f3d5a7bdc9fcb28b10",
+      "bytes": 13076
+    },
+    {
+      "filename": "ROOTED_ORIGIN_FREE_RADIAL_CONTACT_EXCLUSIONS.md",
+      "repository_path": "research/nine/ROOTED_ORIGIN_FREE_RADIAL_CONTACT_EXCLUSIONS.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_ORIGIN_FREE_RADIAL_CONTACT_EXCLUSIONS.md",
+      "sha256": "4a8f7bf60faecb973abb54096c34a3d8f8c60f0e50a20ae0b035f8e2dee3efd3",
+      "bytes": 14660
+    },
+    {
+      "filename": "ROOTED_ORIGIN_ROOT_ADJACENT_LEAF_CHANNEL_RADIAL_TIP_REDUCTION.md",
+      "repository_path": "research/nine/ROOTED_ORIGIN_ROOT_ADJACENT_LEAF_CHANNEL_RADIAL_TIP_REDUCTION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_ORIGIN_ROOT_ADJACENT_LEAF_CHANNEL_RADIAL_TIP_REDUCTION.md",
+      "sha256": "8d40238d0dad6a0f58534e26592d566c728188fe0820c5bb94aaf41a411e5d7f",
+      "bytes": 19355
+    },
+    {
+      "filename": "ROOTED_ORIGIN_ROOT_PARALLEL_LEAF_SIDE_CHANNEL_EXCLUSION.md",
+      "repository_path": "research/nine/ROOTED_ORIGIN_ROOT_PARALLEL_LEAF_SIDE_CHANNEL_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_ORIGIN_ROOT_PARALLEL_LEAF_SIDE_CHANNEL_EXCLUSION.md",
+      "sha256": "69eaf7777d06ab32d3150c5dd29c8e1e82bf43cbdbfad4f4e1b92d18f3455b81",
+      "bytes": 8680
+    },
+    {
+      "filename": "ROOTED_ORIGIN_TRIANGLE_ALIGNED_NONPARALLEL_SECOND_LEAF_EXCLUSION.md",
+      "repository_path": "research/nine/ROOTED_ORIGIN_TRIANGLE_ALIGNED_NONPARALLEL_SECOND_LEAF_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_ORIGIN_TRIANGLE_ALIGNED_NONPARALLEL_SECOND_LEAF_EXCLUSION.md",
+      "sha256": "b897cade602a3e256516dcf344b122360c256b1bb234ec0417b53bdbe308dab4",
+      "bytes": 12036
+    },
+    {
+      "filename": "ROOTED_ROOT_ADJACENT_LEAF_CHANNEL_SMALL_CORNER_EXCLUSION.md",
+      "repository_path": "research/nine/ROOTED_ROOT_ADJACENT_LEAF_CHANNEL_SMALL_CORNER_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_ROOT_ADJACENT_LEAF_CHANNEL_SMALL_CORNER_EXCLUSION.md",
+      "sha256": "7df1b687bc1a33cb10fdc171857773e9ef7a9b2968232cd146e4422a6d5cbac2",
+      "bytes": 14224
+    },
+    {
+      "filename": "ROOTED_TILTED_LEAF_ORIGIN_NEIGHBOR_TRANSMITTER_EXCLUSION.md",
+      "repository_path": "research/nine/ROOTED_TILTED_LEAF_ORIGIN_NEIGHBOR_TRANSMITTER_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_TILTED_LEAF_ORIGIN_NEIGHBOR_TRANSMITTER_EXCLUSION.md",
+      "sha256": "f96cd79e58ad519040da34815f5075ec94dfd29e4733386ba630aa37280ad47e",
+      "bytes": 10363
+    },
+    {
+      "filename": "ROOTED_TWO_DECORATED_FOUR_BLOCKS_LOW_RADIUS_EXCLUSION.md",
+      "repository_path": "research/nine/ROOTED_TWO_DECORATED_FOUR_BLOCKS_LOW_RADIUS_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_TWO_DECORATED_FOUR_BLOCKS_LOW_RADIUS_EXCLUSION.md",
+      "sha256": "756eace33688e42f3dd2817fb01ece3eb326ec480e9c155f634a63b329c3f11b",
+      "bytes": 9469
+    },
+    {
+      "filename": "ROOTED_TWO_DECORATED_FOUR_HIGH_RADIUS_BOUNDARY_ORIGIN_EXCLUSION.md",
+      "repository_path": "research/nine/ROOTED_TWO_DECORATED_FOUR_HIGH_RADIUS_BOUNDARY_ORIGIN_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_TWO_DECORATED_FOUR_HIGH_RADIUS_BOUNDARY_ORIGIN_EXCLUSION.md",
+      "sha256": "6c2dca28aec21d0a3efd0c6370a56bbe7d63df4436d4877b7778ac7b73fb79f8",
+      "bytes": 26930
+    },
+    {
+      "filename": "ROOTED_TWO_PRIVATELY_DECORATED_FOUR_BLOCKS_ORIGIN_DICHOTOMY.md",
+      "repository_path": "research/nine/ROOTED_TWO_PRIVATELY_DECORATED_FOUR_BLOCKS_ORIGIN_DICHOTOMY.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/ROOTED_TWO_PRIVATELY_DECORATED_FOUR_BLOCKS_ORIGIN_DICHOTOMY.md",
+      "sha256": "94bd85de0d2bc67d9f95100261b59a9bcb8fb019e26a4b7d68603213dca89523",
+      "bytes": 22032
+    },
+    {
+      "filename": "TWO_S_TIP_TRIANGLES_LOW_RADIUS_EXCLUSION.md",
+      "repository_path": "research/nine/TWO_S_TIP_TRIANGLES_LOW_RADIUS_EXCLUSION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/TWO_S_TIP_TRIANGLES_LOW_RADIUS_EXCLUSION.md",
+      "sha256": "9436e1385fd537863eb96d29da1b06c42ac827c0e3aa83cb9f6a46bcdcf91ad1",
+      "bytes": 10281
+    },
+    {
+      "filename": "UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "repository_path": "research/nine/UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "sha256": "db073cd024a4f2e763e7cd0a21bf5cb6a2a8be67069f3f9d3aff638b8a40b258",
+      "bytes": 6573
+    },
+    {
+      "filename": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "repository_path": "research/nine/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "source_path": "/workspace/scratch/6f604094721b/squares/research/nine/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "bytes": 4431
+    }
+  ],
+  "dependency_edges": [
+    {
+      "parent": "ROOTED_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "dependency": "ROOTED_C2_44_TWO_BRIDGES_GENUINE_BLOCK_NONNEGATIVE_REDUCTION.md"
+    },
+    {
+      "parent": "ROOTED_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "dependency": "ROOTED_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_AND_MIXED_DIAMOND_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_DECORATED_FOUR_BLOCKS_LOW_RADIUS_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_DECORATED_FOUR_CRITICAL_RADIUS_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_DECORATED_FOUR_HIGH_RADIUS_BOUNDARY_ORIGIN_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_REDUCTION.md"
+    },
+    {
+      "parent": "ROOTED_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_PRIVATELY_DECORATED_FOUR_BLOCKS_ORIGIN_DICHOTOMY.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_REDUCTION.md",
+      "dependency": "END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_REDUCTION.md",
+      "dependency": "GENERAL_FAR_WALL_59_60_SQUARE_BOUNDS.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_REDUCTION.md",
+      "dependency": "GENERAL_GENUINE_FOUR_BLOCK_DECORATED_HUB_DIAMOND_COMPLETE_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_REDUCTION.md",
+      "dependency": "ROOTED_ASYMMETRIC_SMALL_ORIGIN_CORNER_AND_HUB_DIAMOND_LEAF_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_REDUCTION.md",
+      "dependency": "ROOTED_C2_44_TWO_BRIDGES_GENUINE_BLOCK_NONNEGATIVE_REDUCTION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_REDUCTION.md",
+      "dependency": "ROOTED_C3_334_PRIVATE_ADJACENT_LEAF_TWO_LOAD_C4_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_REDUCTION.md",
+      "dependency": "ROOTED_GENUINE_FOUR_BLOCK_LEAF_BOUNDARY_CONTINUATION_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_REDUCTION.md",
+      "dependency": "ROOTED_ORIGIN_ROOT_PARALLEL_LEAF_SIDE_CHANNEL_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_REDUCTION.md",
+      "dependency": "ROOTED_ORIGIN_TRIANGLE_ALIGNED_NONPARALLEL_SECOND_LEAF_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_REDUCTION.md",
+      "dependency": "ROOTED_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_REDUCTION.md",
+      "dependency": "ROOTED_TWO_DECORATED_FOUR_CRITICAL_RADIUS_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_REDUCTION.md",
+      "dependency": "ROOTED_TWO_DECORATED_FOUR_HIGH_RADIUS_BOUNDARY_ORIGIN_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_REDUCTION.md",
+      "dependency": "ROOTED_TWO_PRIVATELY_DECORATED_FOUR_BLOCKS_ORIGIN_DICHOTOMY.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_CRITICAL_RADIUS_EXCLUSION.md",
+      "dependency": "END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_CRITICAL_RADIUS_EXCLUSION.md",
+      "dependency": "GENERAL_OCCUPIED_CROSS_NINE_UNIT_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_CRITICAL_RADIUS_EXCLUSION.md",
+      "dependency": "GENERAL_TERMINAL_CYCLE_PRIVATE_LEAF_FORESTS_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_CRITICAL_RADIUS_EXCLUSION.md",
+      "dependency": "NO_UNLOADED_DIAMOND_HUB.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_CRITICAL_RADIUS_EXCLUSION.md",
+      "dependency": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_CRITICAL_RADIUS_EXCLUSION.md",
+      "dependency": "ROOTED_C4_OPPOSITE_LOAD_ORIGIN_TRIANGLE_COMPLETE_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_CRITICAL_RADIUS_EXCLUSION.md",
+      "dependency": "ROOTED_GENUINE_FOUR_BLOCK_LEAF_C4_OPEN_ORIGIN.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_CRITICAL_RADIUS_EXCLUSION.md",
+      "dependency": "ROOTED_GENUINE_FOUR_BLOCK_LEAF_DIAMOND_OPEN_ORIGIN.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_CRITICAL_RADIUS_EXCLUSION.md",
+      "dependency": "ROOTED_GEOMETRIC_TRIANGLE_MOMENT_CIRCUIT_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_CRITICAL_RADIUS_EXCLUSION.md",
+      "dependency": "ROOTED_HIGH_RADIUS_TWO_NEAR_BOUNDARY_FOUR_RING_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_CRITICAL_RADIUS_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_PRIVATELY_DECORATED_FOUR_BLOCKS_ORIGIN_DICHOTOMY.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_CRITICAL_RADIUS_EXCLUSION.md",
+      "dependency": "TWO_S_TIP_TRIANGLES_LOW_RADIUS_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_CRITICAL_RADIUS_EXCLUSION.md",
+      "dependency": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_EXCLUSION.md",
+      "dependency": "END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_EXCLUSION.md",
+      "dependency": "GENERAL_GENUINE_FOUR_BLOCK_DECORATED_HUB_DIAMOND_COMPLETE_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_EXCLUSION.md",
+      "dependency": "ROOTED_ASYMMETRIC_SMALL_ORIGIN_CORNER_AND_HUB_DIAMOND_LEAF_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_EXCLUSION.md",
+      "dependency": "ROOTED_C2_44_TWO_BRIDGES_GENUINE_BLOCK_NONNEGATIVE_REDUCTION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_EXCLUSION.md",
+      "dependency": "ROOTED_C3_334_PRIVATE_ADJACENT_LEAF_TWO_LOAD_C4_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_EXCLUSION.md",
+      "dependency": "ROOTED_GENUINE_FOUR_BLOCK_LEAF_BOUNDARY_CONTINUATION_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_EXCLUSION.md",
+      "dependency": "ROOTED_ORIGIN_FREE_RADIAL_CONTACT_EXCLUSIONS.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_EXCLUSION.md",
+      "dependency": "ROOTED_ORIGIN_TRIANGLE_ALIGNED_NONPARALLEL_SECOND_LEAF_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_DECORATED_FOUR_CRITICAL_RADIUS_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_DECORATED_FOUR_HIGH_RADIUS_BOUNDARY_ORIGIN_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_PRIVATELY_DECORATED_FOUR_BLOCKS_ORIGIN_DICHOTOMY.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_EXCLUSION.md",
+      "dependency": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_EXCLUSION.md",
+      "dependency": "GENERAL_GENUINE_FOUR_BLOCK_DECORATED_HUB_DIAMOND_COMPLETE_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_EXCLUSION.md",
+      "dependency": "REVIEW_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_GLOBAL_NEXT_2026_10_27.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_EXCLUSION.md",
+      "dependency": "REVIEW_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_ROOT_2026_10_27.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_EXCLUSION.md",
+      "dependency": "ROOTED_ASYMMETRIC_SMALL_ORIGIN_CORNER_AND_HUB_DIAMOND_LEAF_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_EXCLUSION.md",
+      "dependency": "ROOTED_C2_44_TWO_BRIDGES_GENUINE_BLOCK_NONNEGATIVE_REDUCTION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_EXCLUSION.md",
+      "dependency": "ROOTED_C3_334_PRIVATE_ADJACENT_LEAF_TWO_LOAD_C4_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_REDUCTION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_EXCLUSION.md",
+      "dependency": "ROOTED_ALIGNED_OUTER_LEAF_CHANNEL_THIRD_NEAR_UNIT_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_BOUNDARY_ANGLE_BUDGET_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_OWNED_ROOT_SMALL_VERTEX_REDUCTION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_SIX_EPSILON_CORNERS.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_SMALL_CORNER_NORMAL_CONE_REDUCTION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_DECORATED_FOUR_BLOCKS_LOW_RADIUS_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_DECORATED_FOUR_CRITICAL_RADIUS_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_DECORATED_FOUR_HIGH_RADIUS_BOUNDARY_ORIGIN_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_DECORATED_FOUR_TWICE_EPSILON_CORNER_REDUCTION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_REDUCTION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_PRIVATELY_DECORATED_FOUR_BLOCKS_ORIGIN_DICHOTOMY.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_TWICE_EPSILON_CORNER_REDUCTION.md",
+      "dependency": "ROOTED_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_TWICE_EPSILON_CORNER_REDUCTION.md",
+      "dependency": "ROOTED_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_REDUCTION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_SMALL_CORNER_NORMAL_CONE_REDUCTION.md",
+      "dependency": "GENERAL_FAR_WALL_59_60_SQUARE_BOUNDS.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_SMALL_CORNER_NORMAL_CONE_REDUCTION.md",
+      "dependency": "ROOTED_ALIGNED_OUTER_LEAF_CHANNEL_BRANCH_PRESSURE.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_SMALL_CORNER_NORMAL_CONE_REDUCTION.md",
+      "dependency": "ROOTED_GENUINE_FOUR_BLOCK_LEAF_BOUNDARY_CONTINUATION_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_SMALL_CORNER_NORMAL_CONE_REDUCTION.md",
+      "dependency": "ROOTED_ORIGIN_ROOT_ADJACENT_LEAF_CHANNEL_RADIAL_TIP_REDUCTION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_SMALL_CORNER_NORMAL_CONE_REDUCTION.md",
+      "dependency": "ROOTED_PARALLEL_PRIVATE_LEAF_CHANNEL_AND_DECORATED_HUB_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_SMALL_CORNER_NORMAL_CONE_REDUCTION.md",
+      "dependency": "ROOTED_ROOT_ADJACENT_LEAF_CHANNEL_SMALL_CORNER_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_SMALL_CORNER_NORMAL_CONE_REDUCTION.md",
+      "dependency": "ROOTED_SMALL_PRIVATE_LEAF_ROOT_UNLOADED_CHANNEL_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_SMALL_CORNER_NORMAL_CONE_REDUCTION.md",
+      "dependency": "ROOTED_TILTED_LEAF_ORIGIN_NEIGHBOR_TRANSMITTER_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_SMALL_CORNER_NORMAL_CONE_REDUCTION.md",
+      "dependency": "ROOTED_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_SMALL_CORNER_NORMAL_CONE_REDUCTION.md",
+      "dependency": "ROOTED_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_REDUCTION.md"
+    },
+    {
+      "parent": "ROOTED_SMALL_PRIVATE_LEAF_ROOT_UNLOADED_CHANNEL_EXCLUSION.md",
+      "dependency": "GENERAL_FAR_WALL_59_60_SQUARE_BOUNDS.md"
+    },
+    {
+      "parent": "ROOTED_SMALL_PRIVATE_LEAF_ROOT_UNLOADED_CHANNEL_EXCLUSION.md",
+      "dependency": "REVIEW_TILTED_LEAF_ORIGIN_TRANSMITTER_C6_2026_10_27.md"
+    },
+    {
+      "parent": "ROOTED_SMALL_PRIVATE_LEAF_ROOT_UNLOADED_CHANNEL_EXCLUSION.md",
+      "dependency": "ROOTED_ALIGNED_OUTER_LEAF_CHANNEL_BRANCH_PRESSURE.md"
+    },
+    {
+      "parent": "ROOTED_SMALL_PRIVATE_LEAF_ROOT_UNLOADED_CHANNEL_EXCLUSION.md",
+      "dependency": "ROOTED_C3_334_PRIVATE_ADJACENT_LEAF_TWO_LOAD_C4_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_SMALL_PRIVATE_LEAF_ROOT_UNLOADED_CHANNEL_EXCLUSION.md",
+      "dependency": "ROOTED_C4_OPPOSITE_LOAD_ORIGIN_TRIANGLE_COMPLETE_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_SMALL_PRIVATE_LEAF_ROOT_UNLOADED_CHANNEL_EXCLUSION.md",
+      "dependency": "ROOTED_PARALLEL_PRIVATE_LEAF_CHANNEL_AND_DECORATED_HUB_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_SMALL_PRIVATE_LEAF_ROOT_UNLOADED_CHANNEL_EXCLUSION.md",
+      "dependency": "ROOTED_TILTED_LEAF_ORIGIN_NEIGHBOR_TRANSMITTER_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_SMALL_PRIVATE_LEAF_ROOT_UNLOADED_CHANNEL_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_SMALL_PRIVATE_LEAF_ROOT_UNLOADED_CHANNEL_EXCLUSION.md",
+      "dependency": "UNIT_BYPASS_NORMAL_CHANNEL.md"
+    },
+    {
+      "parent": "ROOTED_PARALLEL_PRIVATE_LEAF_CHANNEL_AND_DECORATED_HUB_EXCLUSION.md",
+      "dependency": "GENERAL_FAR_WALL_59_60_SQUARE_BOUNDS.md"
+    },
+    {
+      "parent": "ROOTED_PARALLEL_PRIVATE_LEAF_CHANNEL_AND_DECORATED_HUB_EXCLUSION.md",
+      "dependency": "GENERAL_GENUINE_FOUR_BLOCK_DECORATED_HUB_DIAMOND_COMPLETE_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_PARALLEL_PRIVATE_LEAF_CHANNEL_AND_DECORATED_HUB_EXCLUSION.md",
+      "dependency": "ROOTED_ASYMMETRIC_SMALL_ORIGIN_CORNER_AND_HUB_DIAMOND_LEAF_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_PARALLEL_PRIVATE_LEAF_CHANNEL_AND_DECORATED_HUB_EXCLUSION.md",
+      "dependency": "ROOTED_C3_334_PRIVATE_ADJACENT_LEAF_TWO_LOAD_C4_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_PARALLEL_PRIVATE_LEAF_CHANNEL_AND_DECORATED_HUB_EXCLUSION.md",
+      "dependency": "ROOTED_C4_OPPOSITE_LOAD_ORIGIN_TRIANGLE_COMPLETE_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_PARALLEL_PRIVATE_LEAF_CHANNEL_AND_DECORATED_HUB_EXCLUSION.md",
+      "dependency": "ROOTED_ORIGIN_FREE_RADIAL_CONTACT_EXCLUSIONS.md"
+    },
+    {
+      "parent": "ROOTED_PARALLEL_PRIVATE_LEAF_CHANNEL_AND_DECORATED_HUB_EXCLUSION.md",
+      "dependency": "ROOTED_ORIGIN_ROOT_PARALLEL_LEAF_SIDE_CHANNEL_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_PARALLEL_PRIVATE_LEAF_CHANNEL_AND_DECORATED_HUB_EXCLUSION.md",
+      "dependency": "UNIT_BYPASS_NORMAL_CHANNEL.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_SIX_EPSILON_CORNERS.md",
+      "dependency": "ROOTED_ALIGNED_OUTER_LEAF_CHANNEL_THIRD_NEAR_UNIT_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_SIX_EPSILON_CORNERS.md",
+      "dependency": "ROOTED_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_AND_MIXED_DIAMOND_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_SIX_EPSILON_CORNERS.md",
+      "dependency": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_SMALL_CORNER_NORMAL_CONE_REDUCTION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_SIX_EPSILON_CORNERS.md",
+      "dependency": "ROOTED_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_SIX_EPSILON_CORNERS.md",
+      "dependency": "ROOTED_TWO_DECORATED_FOUR_TWICE_EPSILON_CORNER_REDUCTION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_SIX_EPSILON_CORNERS.md",
+      "dependency": "ROOTED_TWO_GENUINE_LEAF_ROOTS_COMMON_OWNED_SIDE_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_GENUINE_LEAF_ROOTS_COMMON_OWNED_SIDE_EXCLUSION.md",
+      "dependency": "ROOTED_C3_334_PRIVATE_ADJACENT_LEAF_TWO_LOAD_C4_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_GENUINE_LEAF_ROOTS_COMMON_OWNED_SIDE_EXCLUSION.md",
+      "dependency": "ROOTED_GENUINE_FOUR_BLOCK_LEAF_BOUNDARY_CONTINUATION_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_GENUINE_LEAF_ROOTS_COMMON_OWNED_SIDE_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_REDUCTION.md"
+    },
+    {
+      "parent": "ROOTED_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_AND_MIXED_DIAMOND_EXCLUSION.md",
+      "dependency": "CENTERED_INNER_ARC.md"
+    },
+    {
+      "parent": "ROOTED_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_AND_MIXED_DIAMOND_EXCLUSION.md",
+      "dependency": "CIRCLE_CONTACT_ANGULAR_ORDER.md"
+    },
+    {
+      "parent": "ROOTED_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_AND_MIXED_DIAMOND_EXCLUSION.md",
+      "dependency": "PHYSICAL_BODY_GRAPH_UNCROSSING.md"
+    },
+    {
+      "parent": "ROOTED_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_AND_MIXED_DIAMOND_EXCLUSION.md",
+      "dependency": "REVIEW_DECORATED_FOUR_CHANNEL_AND_NORMAL_CONE_EXITS_ROOT_2026_10_27.md"
+    },
+    {
+      "parent": "ROOTED_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_AND_MIXED_DIAMOND_EXCLUSION.md",
+      "dependency": "ROOTED_ASYMMETRIC_SMALL_ORIGIN_CORNER_AND_HUB_DIAMOND_LEAF_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_AND_MIXED_DIAMOND_EXCLUSION.md",
+      "dependency": "ROOTED_C2_44_TWO_BRIDGES_GENUINE_BLOCK_NONNEGATIVE_REDUCTION.md"
+    },
+    {
+      "parent": "ROOTED_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_AND_MIXED_DIAMOND_EXCLUSION.md",
+      "dependency": "ROOTED_C3_334_PRIVATE_ADJACENT_LEAF_TWO_LOAD_C4_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_AND_MIXED_DIAMOND_EXCLUSION.md",
+      "dependency": "ROOTED_DECORATED_FOUR_UNLOADED_ROOT_NEIGHBOR_SMALL_PORT_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_AND_MIXED_DIAMOND_EXCLUSION.md",
+      "dependency": "ROOTED_GENUINE_FOUR_BLOCK_LEAF_BOUNDARY_CONTINUATION_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_AND_MIXED_DIAMOND_EXCLUSION.md",
+      "dependency": "ROOTED_GENUINE_FOUR_BLOCK_LEAF_C4_BOUNDARY_ORDER_REDUCTION.md"
+    },
+    {
+      "parent": "ROOTED_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_AND_MIXED_DIAMOND_EXCLUSION.md",
+      "dependency": "ROOTED_GENUINE_S_LEAF_ONE_TENTH_CORNER_BOUNDARY_CAP.md"
+    },
+    {
+      "parent": "ROOTED_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_AND_MIXED_DIAMOND_EXCLUSION.md",
+      "dependency": "ROOTED_SMALL_PRIVATE_LEAF_ROOT_UNLOADED_CHANNEL_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_AND_MIXED_DIAMOND_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_DECORATED_FOUR_CRITICAL_RADIUS_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_AND_MIXED_DIAMOND_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_DECORATED_FOUR_HIGH_RADIUS_BOUNDARY_ORIGIN_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_AND_MIXED_DIAMOND_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_AND_MIXED_DIAMOND_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_REDUCTION.md"
+    },
+    {
+      "parent": "ROOTED_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_AND_MIXED_DIAMOND_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_PRIVATELY_DECORATED_FOUR_BLOCKS_ORIGIN_DICHOTOMY.md"
+    },
+    {
+      "parent": "ROOTED_GENUINE_S_LEAF_ONE_TENTH_CORNER_BOUNDARY_CAP.md",
+      "dependency": "GENERAL_GENUINE_FOUR_BLOCK_DECORATED_HUB_DIAMOND_COMPLETE_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_GENUINE_S_LEAF_ONE_TENTH_CORNER_BOUNDARY_CAP.md",
+      "dependency": "ROOTED_C3_334_PRIVATE_ADJACENT_LEAF_TWO_LOAD_C4_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_DECORATED_FOUR_UNLOADED_ROOT_NEIGHBOR_SMALL_PORT_EXCLUSION.md",
+      "dependency": "GENERAL_GENUINE_FOUR_BLOCK_DECORATED_HUB_DIAMOND_COMPLETE_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_DECORATED_FOUR_UNLOADED_ROOT_NEIGHBOR_SMALL_PORT_EXCLUSION.md",
+      "dependency": "REVIEW_C2_34_B2_CLOSED_RING_AND_UNLOADED_CHANNEL_ROOT_2026_10_27.md"
+    },
+    {
+      "parent": "ROOTED_DECORATED_FOUR_UNLOADED_ROOT_NEIGHBOR_SMALL_PORT_EXCLUSION.md",
+      "dependency": "REVIEW_ORIGIN_ADJACENT_CHANNEL_RADIAL_TIP_C6_2026_10_27.md"
+    },
+    {
+      "parent": "ROOTED_DECORATED_FOUR_UNLOADED_ROOT_NEIGHBOR_SMALL_PORT_EXCLUSION.md",
+      "dependency": "REVIEW_ROOT_ADJACENT_LEAF_CHANNEL_SMALL_CORNER_GLOBAL_2026_10_27.md"
+    },
+    {
+      "parent": "ROOTED_DECORATED_FOUR_UNLOADED_ROOT_NEIGHBOR_SMALL_PORT_EXCLUSION.md",
+      "dependency": "ROOTED_GENUINE_FOUR_BLOCK_LEAF_BOUNDARY_CONTINUATION_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_DECORATED_FOUR_UNLOADED_ROOT_NEIGHBOR_SMALL_PORT_EXCLUSION.md",
+      "dependency": "ROOTED_ORIGIN_ROOT_ADJACENT_LEAF_CHANNEL_RADIAL_TIP_REDUCTION.md"
+    },
+    {
+      "parent": "ROOTED_DECORATED_FOUR_UNLOADED_ROOT_NEIGHBOR_SMALL_PORT_EXCLUSION.md",
+      "dependency": "ROOTED_ROOT_ADJACENT_LEAF_CHANNEL_SMALL_CORNER_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_DECORATED_FOUR_UNLOADED_ROOT_NEIGHBOR_SMALL_PORT_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_REDUCTION.md"
+    },
+    {
+      "parent": "ROOTED_ALIGNED_OUTER_LEAF_CHANNEL_THIRD_NEAR_UNIT_EXCLUSION.md",
+      "dependency": "GENERAL_FAR_WALL_59_60_SQUARE_BOUNDS.md"
+    },
+    {
+      "parent": "ROOTED_ALIGNED_OUTER_LEAF_CHANNEL_THIRD_NEAR_UNIT_EXCLUSION.md",
+      "dependency": "ROOTED_ALIGNED_OUTER_LEAF_CHANNEL_BRANCH_PRESSURE.md"
+    },
+    {
+      "parent": "ROOTED_ALIGNED_OUTER_LEAF_CHANNEL_THIRD_NEAR_UNIT_EXCLUSION.md",
+      "dependency": "ROOTED_C3_334_PRIVATE_ADJACENT_LEAF_TWO_LOAD_C4_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_ALIGNED_OUTER_LEAF_CHANNEL_THIRD_NEAR_UNIT_EXCLUSION.md",
+      "dependency": "ROOTED_TILTED_LEAF_ORIGIN_NEIGHBOR_TRANSMITTER_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_ALIGNED_OUTER_LEAF_CHANNEL_THIRD_NEAR_UNIT_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_SMALL_CORNER_NORMAL_CONE_REDUCTION.md"
+    },
+    {
+      "parent": "ROOTED_ALIGNED_OUTER_LEAF_CHANNEL_THIRD_NEAR_UNIT_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_REDUCTION.md"
+    },
+    {
+      "parent": "ROOTED_ALIGNED_OUTER_LEAF_CHANNEL_THIRD_NEAR_UNIT_EXCLUSION.md",
+      "dependency": "UNIT_BYPASS_NORMAL_CHANNEL.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_OWNED_ROOT_SMALL_VERTEX_REDUCTION.md",
+      "dependency": "CENTERED_INNER_ARC.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_OWNED_ROOT_SMALL_VERTEX_REDUCTION.md",
+      "dependency": "PHYSICAL_BODY_GRAPH_UNCROSSING.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_OWNED_ROOT_SMALL_VERTEX_REDUCTION.md",
+      "dependency": "ROOTED_ASYMMETRIC_SMALL_ORIGIN_CORNER_AND_HUB_DIAMOND_LEAF_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_OWNED_ROOT_SMALL_VERTEX_REDUCTION.md",
+      "dependency": "ROOTED_C3_334_PRIVATE_ADJACENT_LEAF_TWO_LOAD_C4_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_OWNED_ROOT_SMALL_VERTEX_REDUCTION.md",
+      "dependency": "ROOTED_GENUINE_FOUR_BLOCK_LEAF_BOUNDARY_CONTINUATION_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_OWNED_ROOT_SMALL_VERTEX_REDUCTION.md",
+      "dependency": "ROOTED_GENUINE_FOUR_BLOCK_LEAF_C4_BOUNDARY_ORDER_REDUCTION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_OWNED_ROOT_SMALL_VERTEX_REDUCTION.md",
+      "dependency": "ROOTED_GENUINE_S_LEAF_ONE_TENTH_CORNER_BOUNDARY_CAP.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_OWNED_ROOT_SMALL_VERTEX_REDUCTION.md",
+      "dependency": "ROOTED_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_AND_MIXED_DIAMOND_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_OWNED_ROOT_SMALL_VERTEX_REDUCTION.md",
+      "dependency": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_SIX_EPSILON_CORNERS.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_OWNED_ROOT_SMALL_VERTEX_REDUCTION.md",
+      "dependency": "ROOTED_TWO_GENUINE_LEAF_ROOTS_COMMON_OWNED_SIDE_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_BOUNDARY_ANGLE_BUDGET_EXCLUSION.md",
+      "dependency": "CENTERED_INNER_ARC.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_BOUNDARY_ANGLE_BUDGET_EXCLUSION.md",
+      "dependency": "PHYSICAL_BODY_GRAPH_UNCROSSING.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_BOUNDARY_ANGLE_BUDGET_EXCLUSION.md",
+      "dependency": "ROOTED_ASYMMETRIC_SMALL_ORIGIN_CORNER_AND_HUB_DIAMOND_LEAF_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_BOUNDARY_ANGLE_BUDGET_EXCLUSION.md",
+      "dependency": "ROOTED_C3_334_PRIVATE_ADJACENT_LEAF_TWO_LOAD_C4_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_BOUNDARY_ANGLE_BUDGET_EXCLUSION.md",
+      "dependency": "ROOTED_GENUINE_FOUR_BLOCK_LEAF_BOUNDARY_CONTINUATION_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_BOUNDARY_ANGLE_BUDGET_EXCLUSION.md",
+      "dependency": "ROOTED_GENUINE_FOUR_BLOCK_LEAF_C4_BOUNDARY_ORDER_REDUCTION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_BOUNDARY_ANGLE_BUDGET_EXCLUSION.md",
+      "dependency": "ROOTED_GENUINE_S_LEAF_ONE_TENTH_CORNER_BOUNDARY_CAP.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_BOUNDARY_ANGLE_BUDGET_EXCLUSION.md",
+      "dependency": "ROOTED_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_AND_MIXED_DIAMOND_EXCLUSION.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_BOUNDARY_ANGLE_BUDGET_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_SIX_EPSILON_CORNERS.md"
+    },
+    {
+      "parent": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_BOUNDARY_ANGLE_BUDGET_EXCLUSION.md",
+      "dependency": "ROOTED_TWO_DECORATED_FOUR_TWICE_EPSILON_CORNER_REDUCTION.md"
+    }
+  ],
+  "review_coverage": [
+    {
+      "source": "ROOTED_ALIGNED_OUTER_LEAF_CHANNEL_THIRD_NEAR_UNIT_EXCLUSION.md",
+      "source_sha256": "1231c5101ec9fc2f7955aad3a1bc4e0ba0bff74c208162648989c95cdedf7b24",
+      "review": "REVIEW_ALIGNED_OUTER_LEAF_CHANNEL_THIRD_NEAR_ROOT_2026_10_27.md",
+      "review_sha256": "6cc1fbf912874fc9960bf8c93d1a03dd4c9c43ebee996dccec6f26161c768365"
+    },
+    {
+      "source": "ROOTED_ALIGNED_OUTER_LEAF_CHANNEL_THIRD_NEAR_UNIT_EXCLUSION.md",
+      "source_sha256": "1231c5101ec9fc2f7955aad3a1bc4e0ba0bff74c208162648989c95cdedf7b24",
+      "review": "REVIEW_ALIGNED_OUTER_LEAF_CHANNEL_THIRD_NEAR_C6_NEXT_2026_10_27.md",
+      "review_sha256": "5ed7f395d3fb88f6eebdfe3a75a5fd2ad640cf1f65851fca9546c32d273a8db1"
+    },
+    {
+      "source": "ROOTED_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "source_sha256": "1977a8e7b538bb322ce503b20606867a5fde3ea684d17533c32ed00d4b4a0c2f",
+      "review": "REVIEW_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_ROOT_2026_10_28.md",
+      "review_sha256": "b31b1abdee956aab5ee58a7b6e1651be950b429cde9ea82c356d7f7e71a8d72b"
+    },
+    {
+      "source": "ROOTED_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "source_sha256": "1977a8e7b538bb322ce503b20606867a5fde3ea684d17533c32ed00d4b4a0c2f",
+      "review": "REVIEW_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_GLOBAL_NEXT_2026_10_28.md",
+      "review_sha256": "799cc7974b8232c012370f9af2d411b2102fce128f35b3b763c4ed573f6ebc67"
+    },
+    {
+      "source": "ROOTED_DECORATED_FOUR_UNLOADED_ROOT_NEIGHBOR_SMALL_PORT_EXCLUSION.md",
+      "source_sha256": "0ab059130813827a7b23e7a087fbb5a90c1fc92c75f35d9020b46a996a44f7fc",
+      "review": "REVIEW_DECORATED_FOUR_CHANNEL_AND_NORMAL_CONE_EXITS_ROOT_2026_10_27.md",
+      "review_sha256": "30109340272470b0daad16a736655a57221019db509e54bb16067aa9346b99e3"
+    },
+    {
+      "source": "ROOTED_DECORATED_FOUR_UNLOADED_ROOT_NEIGHBOR_SMALL_PORT_EXCLUSION.md",
+      "source_sha256": "0ab059130813827a7b23e7a087fbb5a90c1fc92c75f35d9020b46a996a44f7fc",
+      "review": "REVIEW_DECORATED_FOUR_UNLOADED_ROOT_NEIGHBOR_SMALL_PORT_GLOBAL_NEXT_2026_10_27.md",
+      "review_sha256": "3640dec86a4a141ea421e9f661166e239add27f83593659e0478d1ebdce47763"
+    },
+    {
+      "source": "ROOTED_GENUINE_S_LEAF_ONE_TENTH_CORNER_BOUNDARY_CAP.md",
+      "source_sha256": "31058df9d4e4ac6eaff1194d2b0d59565349fca885795f284c891537a1be820d",
+      "review": "REVIEW_TWICE_EPSILON_H_AND_ONE_TENTH_S_ROOT_CORNERS_ROOT_2026_10_27.md",
+      "review_sha256": "594a038c52e770b31a843811ae0e00577d7658f769584164dcb5cd27cbf55646"
+    },
+    {
+      "source": "ROOTED_GENUINE_S_LEAF_ONE_TENTH_CORNER_BOUNDARY_CAP.md",
+      "source_sha256": "31058df9d4e4ac6eaff1194d2b0d59565349fca885795f284c891537a1be820d",
+      "review": "REVIEW_GENUINE_S_LEAF_ONE_TENTH_BOUNDARY_CAP_C6_NEXT_2026_10_27.md",
+      "review_sha256": "38f3b928e8b22cefaa6f2cd65272072c74eafafa4eea17082335c5fd5d1428a4"
+    },
+    {
+      "source": "ROOTED_PARALLEL_PRIVATE_LEAF_CHANNEL_AND_DECORATED_HUB_EXCLUSION.md",
+      "source_sha256": "e44172ddbabed5d2e88cf848deb74f163abb97cc4433403123c06732e8b55ff0",
+      "review": "REVIEW_PARALLEL_PRIVATE_LEAF_CHANNEL_DECORATED_HUB_ROOT_2026_10_27.md",
+      "review_sha256": "02de452ff7c44ff6624df2cfe65bb40b634a9c4d062fd3f41f511a91392ff5a1"
+    },
+    {
+      "source": "ROOTED_PARALLEL_PRIVATE_LEAF_CHANNEL_AND_DECORATED_HUB_EXCLUSION.md",
+      "source_sha256": "e44172ddbabed5d2e88cf848deb74f163abb97cc4433403123c06732e8b55ff0",
+      "review": "REVIEW_PARALLEL_PRIVATE_LEAF_CHANNEL_DECORATED_HUB_C6_NEXT_2026_10_27.md",
+      "review_sha256": "89149c5824a055871a12d387df1961406c74813d0786b121327136a0211e1d13"
+    },
+    {
+      "source": "ROOTED_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_AND_MIXED_DIAMOND_EXCLUSION.md",
+      "source_sha256": "2923e7a39fdb263c1bb49bf79cd847abc6af034c1bfce3c0df9f1420567a035a",
+      "review": "REVIEW_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_MIXED_DIAMOND_ROOT_2026_10_27.md",
+      "review_sha256": "634eb40ae340a991d52388516f6d069498d08c2fd04334ced8d5959cdcf47b26"
+    },
+    {
+      "source": "ROOTED_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_AND_MIXED_DIAMOND_EXCLUSION.md",
+      "source_sha256": "2923e7a39fdb263c1bb49bf79cd847abc6af034c1bfce3c0df9f1420567a035a",
+      "review": "REVIEW_SMALL_ADJACENT_LEAF_CYCLE_FAR_ROOT_MIXED_DIAMOND_C6_NEXT_2026_10_27.md",
+      "review_sha256": "462e01b8bb8b9fbbbdd63a78e2b5775d3e0e64687333ebc7e7a2b886a4fcedc7"
+    },
+    {
+      "source": "ROOTED_SMALL_PRIVATE_LEAF_ROOT_UNLOADED_CHANNEL_EXCLUSION.md",
+      "source_sha256": "2191da73d3b8bca796e6d69ae4988b7070125677c42478528f1810bf732255fe",
+      "review": "REVIEW_DECORATED_FOUR_CHANNEL_AND_NORMAL_CONE_EXITS_ROOT_2026_10_27.md",
+      "review_sha256": "30109340272470b0daad16a736655a57221019db509e54bb16067aa9346b99e3"
+    },
+    {
+      "source": "ROOTED_SMALL_PRIVATE_LEAF_ROOT_UNLOADED_CHANNEL_EXCLUSION.md",
+      "source_sha256": "2191da73d3b8bca796e6d69ae4988b7070125677c42478528f1810bf732255fe",
+      "review": "REVIEW_SMALL_PRIVATE_LEAF_ROOT_UNLOADED_CHANNEL_C6_NEXT_2026_10_27.md",
+      "review_sha256": "92b62f3c0fc26cdd331df3f5a0056b30d65b697e2cedbbd7ee8429c758a5ec50"
+    },
+    {
+      "source": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_BOUNDARY_ANGLE_BUDGET_EXCLUSION.md",
+      "source_sha256": "6647d6f0f20b0c183675cfe46cc2fd9ee6a54501d515e9e97525cdcbe0592ef0",
+      "review": "REVIEW_TWO_ADJACENT_LEAF_CYCLES_BOUNDARY_ANGLE_BUDGET_ROOT_2026_10_28.md",
+      "review_sha256": "ee97ec69780b79dd578309bb02f615d77e78235ef90ea7d538d291fdfc167b7d"
+    },
+    {
+      "source": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_BOUNDARY_ANGLE_BUDGET_EXCLUSION.md",
+      "source_sha256": "6647d6f0f20b0c183675cfe46cc2fd9ee6a54501d515e9e97525cdcbe0592ef0",
+      "review": "REVIEW_TWO_ADJACENT_LEAF_CYCLES_BOUNDARY_ANGLE_BUDGET_C6_NEXT_2026_10_28.md",
+      "review_sha256": "b5418dab4a9e3c0c307412bda496195bc43fb27ba1ade9836924edf65dbaccc3"
+    },
+    {
+      "source": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_EXCLUSION.md",
+      "source_sha256": "70f295b704fad5c68ccc7d6866460679b9be09b42263b667a8643acc010c5588",
+      "review": "REVIEW_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_ROOT_2026_10_28.md",
+      "review_sha256": "ae9f8869c3e5093af56bceb1a739aebc7b057e69d640115f71c18cb85c3d91d5"
+    },
+    {
+      "source": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_EXCLUSION.md",
+      "source_sha256": "70f295b704fad5c68ccc7d6866460679b9be09b42263b667a8643acc010c5588",
+      "review": "REVIEW_TWO_ADJACENT_LEAF_CYCLES_COMPLETE_GLOBAL_NEXT_2026_10_28.md",
+      "review_sha256": "c542a11c99b16f8851bde0a7e05b7cf053608b98f9a80ab8b443966462b07357"
+    },
+    {
+      "source": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_OWNED_ROOT_SMALL_VERTEX_REDUCTION.md",
+      "source_sha256": "68ed9356177d5dc9383b68ee0f280da04b5c1ea244d306c322dc4b2c44722404",
+      "review": "REVIEW_TWO_ADJACENT_LEAF_CYCLES_OWNED_ROOT_SMALL_VERTEX_ROOT_2026_10_28.md",
+      "review_sha256": "890a2bf1b8d651b52f47a10a80c13aaca9369fc6b45650378bbcce4e454bcd6e"
+    },
+    {
+      "source": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_OWNED_ROOT_SMALL_VERTEX_REDUCTION.md",
+      "source_sha256": "68ed9356177d5dc9383b68ee0f280da04b5c1ea244d306c322dc4b2c44722404",
+      "review": "REVIEW_TWO_ADJACENT_LEAF_CYCLES_OWNED_ROOT_SMALL_VERTEX_MIXED_BLOCKS_2026_10_28.md",
+      "review_sha256": "0546538c6874b06f3041eab51a78be186a23e59962d25a544da77e9fb45e0bae"
+    },
+    {
+      "source": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_SIX_EPSILON_CORNERS.md",
+      "source_sha256": "c8c80cac934540579cdf07c2cb73fa75effbf2dfa75864d9e630ed40deb43a85",
+      "review": "REVIEW_TWO_ADJACENT_LEAF_CYCLES_SIX_EPSILON_ROOT_2026_10_28.md",
+      "review_sha256": "85962680ec92cdb5caa4c1244be840fcb6efa28b4eb6946b247a6b27353b14a5"
+    },
+    {
+      "source": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_SIX_EPSILON_CORNERS.md",
+      "source_sha256": "c8c80cac934540579cdf07c2cb73fa75effbf2dfa75864d9e630ed40deb43a85",
+      "review": "REVIEW_TWO_ADJACENT_LEAF_CYCLES_SIX_EPSILON_C6_NEXT_2026_10_28.md",
+      "review_sha256": "dd0c26a411c801ab93b8b709846d42817c27902ef8892657f275cae6e5b3db0e"
+    },
+    {
+      "source": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_SMALL_CORNER_NORMAL_CONE_REDUCTION.md",
+      "source_sha256": "2f23eca409fde9924c22cd99e41873060894ed2731470eaafa105acd4620744d",
+      "review": "REVIEW_DECORATED_FOUR_CHANNEL_AND_NORMAL_CONE_EXITS_ROOT_2026_10_27.md",
+      "review_sha256": "30109340272470b0daad16a736655a57221019db509e54bb16067aa9346b99e3"
+    },
+    {
+      "source": "ROOTED_TWO_ADJACENT_LEAF_CYCLES_SMALL_CORNER_NORMAL_CONE_REDUCTION.md",
+      "source_sha256": "2f23eca409fde9924c22cd99e41873060894ed2731470eaafa105acd4620744d",
+      "review": "REVIEW_TWO_ADJACENT_LEAF_CYCLES_SMALL_CORNER_NORMAL_CONE_GLOBAL_NEXT_2026_10_27.md",
+      "review_sha256": "6814054923fb04e05f8cf128cfe1503193bd7a32e645636ccc5823c0ae43b004"
+    },
+    {
+      "source": "ROOTED_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_EXCLUSION.md",
+      "source_sha256": "5d458a2425a42cf158e2093192dce768afeea8420d8cda1a6dbeffde0c61eb2e",
+      "review": "REVIEW_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_ROOT_2026_10_27.md",
+      "review_sha256": "ec9571d9737f7dd2c77a21b06df252331403f0cfea644dc1a73d7150f3846e68"
+    },
+    {
+      "source": "ROOTED_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_EXCLUSION.md",
+      "source_sha256": "5d458a2425a42cf158e2093192dce768afeea8420d8cda1a6dbeffde0c61eb2e",
+      "review": "REVIEW_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_GLOBAL_NEXT_2026_10_27.md",
+      "review_sha256": "053dad26d6723987c6334490f318de2137a678ada1034d2d5c4747fa9db1a2bb"
+    },
+    {
+      "source": "ROOTED_TWO_DECORATED_FOUR_CRITICAL_RADIUS_EXCLUSION.md",
+      "source_sha256": "d0ce399fd298d0250876ba9898c85aff2b5d605970c12305cc50f0490cf6c4fc",
+      "review": "REVIEW_TWO_DECORATED_FOUR_CRITICAL_RADIUS_ROOT_2026_10_27.md",
+      "review_sha256": "9a5c4f64790f4f137ddf82e24c86f69b73b370e52d53052f8005880eaff54e2c"
+    },
+    {
+      "source": "ROOTED_TWO_DECORATED_FOUR_CRITICAL_RADIUS_EXCLUSION.md",
+      "source_sha256": "d0ce399fd298d0250876ba9898c85aff2b5d605970c12305cc50f0490cf6c4fc",
+      "review": "REVIEW_TWO_DECORATED_FOUR_CRITICAL_RADIUS_GLOBAL_NEXT_2026_10_27.md",
+      "review_sha256": "a32444f6d426a174890173c1e15508bf1730f667a84e0d10c779f372940b3ddd"
+    },
+    {
+      "source": "ROOTED_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_EXCLUSION.md",
+      "source_sha256": "bade040a942812297d1586ad872cee93e22a09b4e96e877e85c8b6e10f70e8ab",
+      "review": "REVIEW_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_ROOT_2026_10_27.md",
+      "review_sha256": "b78f6263c11e627b188cfb070c134674eb7fd11033347be982c33d8b52d2a727"
+    },
+    {
+      "source": "ROOTED_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_EXCLUSION.md",
+      "source_sha256": "bade040a942812297d1586ad872cee93e22a09b4e96e877e85c8b6e10f70e8ab",
+      "review": "REVIEW_TWO_DECORATED_FOUR_SIGNED_SMALL_LEAF_ROOT_GLOBAL_NEXT_2026_10_27.md",
+      "review_sha256": "140871adb7f1247da4f73c2c15a4cbe23f21aacb71f4f3c586a72a86e9c581d9"
+    },
+    {
+      "source": "ROOTED_TWO_DECORATED_FOUR_TWICE_EPSILON_CORNER_REDUCTION.md",
+      "source_sha256": "359f9a77b4f3c7a04e1f8d939f165b8f505ca4534caaddf1b33e932059c420b5",
+      "review": "REVIEW_TWICE_EPSILON_H_AND_ONE_TENTH_S_ROOT_CORNERS_ROOT_2026_10_27.md",
+      "review_sha256": "594a038c52e770b31a843811ae0e00577d7658f769584164dcb5cd27cbf55646"
+    },
+    {
+      "source": "ROOTED_TWO_DECORATED_FOUR_TWICE_EPSILON_CORNER_REDUCTION.md",
+      "source_sha256": "359f9a77b4f3c7a04e1f8d939f165b8f505ca4534caaddf1b33e932059c420b5",
+      "review": "REVIEW_TWO_DECORATED_FOUR_TWICE_EPSILON_CORNER_MIXED_BLOCKS_2026_10_27.md",
+      "review_sha256": "ef0d1b13378e8c649822f81baaf67071e1599dd7ec1484cbed072ce622ea891a"
+    },
+    {
+      "source": "ROOTED_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_REDUCTION.md",
+      "source_sha256": "3f52c75b96b249dac86bdfa2cf4438fdf6f4c71ac53231619ca10c6f2bb62f97",
+      "review": "REVIEW_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_ROOT_2026_10_27.md",
+      "review_sha256": "678fe8c81c750666ba80f4d86268fd3b0ce0b800ae5e3a9e8c71313d2b928546"
+    },
+    {
+      "source": "ROOTED_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_REDUCTION.md",
+      "source_sha256": "3f52c75b96b249dac86bdfa2cf4438fdf6f4c71ac53231619ca10c6f2bb62f97",
+      "review": "REVIEW_TWO_DECORATED_FOUR_UNIFORM_SMALL_CORNER_GLOBAL_NEXT_2026_10_27.md",
+      "review_sha256": "2ad018ff0cd96a5be31b8cd243af2a14833c98354d234d11bee4a2ca25e9d296"
+    },
+    {
+      "source": "ROOTED_TWO_GENUINE_LEAF_ROOTS_COMMON_OWNED_SIDE_EXCLUSION.md",
+      "source_sha256": "b01eeafba1c4575af86f56aeb2105478569c13c029f37e0d4c190c742e7dcc37",
+      "review": "REVIEW_TWO_GENUINE_LEAF_ROOTS_COMMON_OWNED_SIDE_ROOT_2026_10_27.md",
+      "review_sha256": "bb88591886c3e3e08a4b7c7cab2bcbd4286b0b2f3ce725a86cce0ae4da57b802"
+    },
+    {
+      "source": "ROOTED_TWO_GENUINE_LEAF_ROOTS_COMMON_OWNED_SIDE_EXCLUSION.md",
+      "source_sha256": "b01eeafba1c4575af86f56aeb2105478569c13c029f37e0d4c190c742e7dcc37",
+      "review": "REVIEW_TWO_GENUINE_LEAF_ROOTS_COMMON_OWNED_SIDE_C6_NEXT_2026_10_27.md",
+      "review_sha256": "a7a788c86206132adb7d356a5270318bc906f785a4a6ea9eeef45bab65af2461"
+    }
+  ],
+  "conflicts": [],
+  "missing": [],
+  "pin_mismatches": [],
+  "excluded_mentions": [
+    {
+      "parent": "ROOTED_TWO_DECORATED_FOUR_CRITICAL_RADIUS_EXCLUSION.md",
+      "filename": "ROOTED_CRITICAL_DECORATED_FOUR_BLOCK_MOMENT_REDUCTION.md",
+      "reason": "Explicitly excluded or superseded historical input"
+    }
+  ],
+  "scope_limit": "Same existing canonical physical and global-prerequisite scope; not a full new transitive prerequisite audit, unrestricted theorem, equality proof, or Lean verification."
+}

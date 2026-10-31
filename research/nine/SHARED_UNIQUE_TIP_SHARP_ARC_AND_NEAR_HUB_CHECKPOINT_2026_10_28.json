@@ -1,0 +1,1359 @@
+{
+  "date_utc": "2026-10-28",
+  "status": "Accepted shared unique-tip kernel, complete alternative original D02 proof, exact sharp quarter-clear arc, near-hub reductions and separately reviewed auxiliary theorems. Zero additional original credit beyond published234b4f0.",
+  "local_integration_base": "4b39733db31a0f76213d53d37d1a0f71efa68bc9",
+  "latest_reconciled_published_head": "234b4f0d03d772031dfc90a739fbe5b45351a3b8",
+  "remote_publication_succeeded": false,
+  "publication_limitation": "Authenticated GitHub write calls stalled twice; local Git has no push credentials. Additional reviewed local work is preserved in local commits, not claimed remotely published.",
+  "predecessor_published_checkpoint": {
+    "path": "research/nine/D02_L01345_COMPLETE_ORIGINAL_CLOSURE_CHECKPOINT_2026_10_28.json",
+    "sha256": "d442064a15a8d85485fe11871afbe030b7d2d4f42e6e044372b6276b0e48a887",
+    "bytes": 250521
+  },
+  "previous_local_checkpoint": {
+    "path": "research/nine/COMPLETE_TWO_CIRCLE_TIP_AND_MIXED_ENDPOINT_POCKETS_CHECKPOINT_2026_10_28.json",
+    "sha256": "c1afda10224a4fe5c9ac8c42bec4d36951a67dc2fad834bc3661151aaf5dfece",
+    "bytes": 49480
+  },
+  "original_fine_total": 2513,
+  "fine_checked": 2353,
+  "fine_open": 160,
+  "original_coarse_total": 58,
+  "coarse_closed": 34,
+  "coarse_open": 24,
+  "changed_original_fine_ids": [],
+  "changed_original_coarse_ids": [],
+  "all_original_ids_order_and_flags_preserved_from_published_head": true,
+  "inventory_encoding": "Complete ordered arrays are preserved in the byte-pinned published predecessor; both actual Markdown inventories were parsed, compared entry-for-entry, and verified byte-identical to published234b4f0. Digests use UTF-8 JSON ensure_ascii=False,sort_keys=True,separators=(comma,colon).",
+  "fine_gates_sha256": "079c0a4ee9a8486c66a24a5a2101dd11ad203c094fec23043492167a6c6b8967",
+  "coarse_gates_sha256": "0e4c1e41ac5ef7607ad69ee56fbb57572d2ec64dc9d93249add8dfd241d8978f",
+  "open_original_fine_ids": [
+    "T1.EXTRACT:",
+    "CAP.4",
+    "ROW.4",
+    "POCKET.ROUTING",
+    "QCAP.GLOBAL",
+    "CY.B5 GEOMETRY",
+    "CY.MULTILOAD",
+    "CY.MIXED.COMPLETE",
+    "C.1 GRAPH",
+    "C.2 LOAD",
+    "C.3 GEOMETRY",
+    "C.4 COMPLETION",
+    "C.5 SHARPNESS",
+    "C.6 EQUALITY",
+    "G3.0.ANNULAR.ROUTING",
+    "G3.0.DISTRIBUTED_ARTICULATIONS",
+    "G3.0.SHARP",
+    "G3.M.F.1 GRAPH",
+    "G3.M.F.1.a",
+    "G3.M.F.1.b",
+    "G3.M.F.1.c",
+    "G3.M.F.2 LOADS",
+    "G3.M.F.2.a",
+    "G3.M.F.2.b",
+    "G3.M.F.3 CONTACT FEATURES",
+    "G3.M.F.3.a",
+    "G3.M.F.3.b",
+    "G3.M.F.3.c",
+    "G3.M.F.4 JUNCTIONS",
+    "G3.M.F.5 COMPLETION ROUTING",
+    "G3.M.F.5.a",
+    "G3.M.F.5.b",
+    "G3.M.F.5.c",
+    "G3.M.F.5.d",
+    "G3.M.F.COVER",
+    "C.0 DOMAIN",
+    "C.1 EQUILIBRIUM",
+    "C.2 ROUTING",
+    "C.3 BOUND",
+    "C.3.a",
+    "C.3.b",
+    "C.3.c",
+    "C.4 EQUALITY",
+    "C.5 AUDIT",
+    "C.ALL",
+    "M6.B5L.HOUSE.ROOF.LABC.S",
+    "M6.B5L.HOUSE.HUB.LTC.S",
+    "M6.B5L.HOUSE.HUB.LTCB.S",
+    "M6.B5L.FAN.ENDPOINT.L234.S",
+    "M6.B5L.FAN.INNER.L134.S",
+    "M6.B5L.HOUSE.ROOF",
+    "M6.B5L.HOUSE.HUB",
+    "M6.B5L.FAN.ENDPOINT",
+    "M6.B5L.FAN.INNER",
+    "M6.B5L.ALL",
+    "M6.B6.HEXAGON.TWO_OPPOSITE_EARS.BOUND",
+    "M6.B6.HEXAGON.D02.L014",
+    "M6.B6.HEXAGON.D02.L134",
+    "M6.B6.HEXAGON.D02.L135",
+    "M6.B6.HEXAGON.D02.L0134",
+    "M6.B6.HEXAGON.D02.L0135",
+    "M6.B6.HEXAGON.D02.L0145",
+    "M6.B6.HEXAGON.D02.L1345",
+    "M6.B6.HEXAGON.D02.ALL",
+    "M6.B6.HEXAGON.D03.L014",
+    "M6.B6.HEXAGON.D03.L024",
+    "M6.B6.HEXAGON.D03.L124",
+    "M6.B6.HEXAGON.D03.L0124",
+    "M6.B6.HEXAGON.D03.L0125",
+    "M6.B6.HEXAGON.D03.L1245",
+    "M6.B6.HEXAGON.D03.ALL",
+    "M6.B6.HEXAGON.D0203.L124",
+    "M6.B6.HEXAGON.D0203.L1234",
+    "M6.B6.HEXAGON.D0203.L1235",
+    "M6.B6.HEXAGON.D0203.L1245",
+    "M6.B6.HEXAGON.D0203.ALL",
+    "M6.B6.HEXAGON.D0204.L135",
+    "M6.B6.HEXAGON.D0204.L0135",
+    "M6.B6.HEXAGON.D0204.L1235",
+    "M6.B6.HEXAGON.D0204.L1245",
+    "M6.B6.HEXAGON.D0204.ALL",
+    "M6.B6.HEXAGON.D0235.L0134",
+    "M6.B6.HEXAGON.D0235.ALL",
+    "M6.B6.HEXAGON.CHORD_PATH.L1245",
+    "M6.B6.HEXAGON.CHORD_PATH.ALL",
+    "M6.B6.HEXAGON.CENTRAL_TRIANGLE.L135",
+    "M6.B6.HEXAGON.CENTRAL_TRIANGLE.L0135",
+    "M6.B6.HEXAGON.CENTRAL_TRIANGLE.ALL",
+    "M6.B6.HEXAGON.BOUND",
+    "M6.B6.PENTAGON.H4_D0.L124",
+    "M6.B6.PENTAGON.H4_D0.L0124",
+    "M6.B6.PENTAGON.H4_D0_EXIT",
+    "M6.B6.ALL",
+    "G3.M6.ASSEMBLE",
+    "G3.M6.ALL",
+    "G3.M7.ALL",
+    "G3.M8.ALL",
+    "G3.M9.ALL",
+    "G3.M.ALL",
+    "G3.ALL.1",
+    "G3.ALL.3",
+    "G3.ALL.4",
+    "G3.ALL",
+    "O3.3.SHARP",
+    "O4.1",
+    "O4.2",
+    "O4.3 alternative",
+    "O5",
+    "X.3",
+    "G4.2",
+    "G4.2.a",
+    "G4.2.b",
+    "G4.2.c",
+    "G4.2.d",
+    "G4.2.e",
+    "G4.2.f",
+    "G4.3",
+    "G4.3.a",
+    "G4.3.b",
+    "G4.3.c",
+    "G5.1",
+    "G5.2",
+    "G5.3",
+    "G5.1.a",
+    "G5.1.b",
+    "G5.2.a",
+    "G5.2.b",
+    "G5.2.c",
+    "G5.3.a",
+    "G5.3.b",
+    "G5.3.c",
+    "G5.3.d",
+    "G5.4",
+    "G5.4.a",
+    "G5.4.b",
+    "G5.ALL",
+    "G6.1",
+    "G6.2",
+    "G6.3",
+    "G6.TL1 NEW",
+    "G6.TL2 NEW",
+    "G6.TL3 NEW",
+    "G6.TL4 NEW",
+    "G6.4",
+    "G6.5",
+    "G6.5.a",
+    "G6.5.b",
+    "G6.5.c",
+    "G6.5.d",
+    "G6.5.e",
+    "G6.5.f",
+    "G7.1",
+    "G7.2",
+    "G7.3",
+    "G7.4",
+    "G7.5 DEFERRED",
+    "G8.1",
+    "G8.2",
+    "G8.3",
+    "G8.4"
+  ],
+  "open_original_coarse_ids": [
+    "C1.5.b1",
+    "C1.5.b2",
+    "C1.5.b3",
+    "C1.5.b4",
+    "C1.6.b0",
+    "C1.6.b1",
+    "C1.6.b2",
+    "C1.6.b3",
+    "C1.7.b0",
+    "C1.7.b1",
+    "C1.7.b2",
+    "C1.8.b0",
+    "C1.8.b1",
+    "C1.9.b0",
+    "C2.35.b0",
+    "C2.35.b1",
+    "C2.35.b2",
+    "C2.36.b0",
+    "C2.36.b1",
+    "C2.37.b0",
+    "C2.45.b0",
+    "C2.45.b1",
+    "C2.46.b0",
+    "C2.55.b0"
+  ],
+  "adopted_mathematical_sources": [
+    {
+      "path": "research/nine/ALL_ACUTE_RETURN_FRAMES_LARGE_COORDINATE_INTERIOR_AND_TERMINAL_TILT_REDUCTION.md",
+      "sha256": "533c90b4120cb08c9b73257eed5483d53569e2177be145807bb695d1d2923b1c",
+      "bytes": 16183
+    },
+    {
+      "path": "research/nine/UNIQUE_TIP_DISTINCT_W_RETURN_FULL_MASK_AND_ORIGIN_MARGIN.md",
+      "sha256": "83b0b942ad474befbf9fca3315337df2116809b32e3f9015820a9c8783660785",
+      "bytes": 14945
+    },
+    {
+      "path": "research/nine/CRITICAL_NEAR_HUB_CENTRAL_OCCUPANCY_AND_D02_TWO_SUPPORT_STRIPS.md",
+      "sha256": "46810a719f06c5153f1340f5fbc846427a1c1d5d2e50fb69dac9f1e067806e41",
+      "bytes": 20254
+    },
+    {
+      "path": "research/nine/UNIQUE_W_RETURN_LOW_ROOF_AND_CLOSED_LEFT_STRIP_POCKET_EXCLUSION.md",
+      "sha256": "cb55c18601447c3238ce3c275320c11f708cf4f39c12ec88c6c80ea9680aea02",
+      "bytes": 19307
+    },
+    {
+      "path": "research/nine/CORRELATED_UNIQUE_TIP_EXIT_AND_TERMINAL_CENTER_POCKET_CAPACITY.md",
+      "sha256": "dcb45c83d3a61478042fd2dee93634a3558fb358d48b76205523fd5d92982d7a",
+      "bytes": 21747
+    },
+    {
+      "path": "research/nine/NEAR_HUB_UNIQUE_TIP_SHORT_INCOMING_COORDINATE_POCKET_CAPACITY_ONE.md",
+      "sha256": "39aab92a25208217ff2fb7439142634d7cceb78eedf4e235575a648833621cce",
+      "bytes": 29100
+    },
+    {
+      "path": "research/nine/D02_FIVE_LOAD_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "sha256": "2603c02c0ba28e278ee7b1867930d6d41713a118f9bed85fb6d9a861d7d798bf",
+      "bytes": 13998
+    },
+    {
+      "path": "research/nine/SHARP_QUARTER_CLEAR_RADIUS_FIVE_QUARTERS_ARC_AND_INTERVAL_CAPACITY.md",
+      "sha256": "bca528af5320cc8314839eb0d53cf6f15ec381ac42d5bd353f62a27a47101f67",
+      "bytes": 16614
+    }
+  ],
+  "current_independent_review_count": 8,
+  "current_reviews_and_adoptions": [
+    {
+      "path": "research/nine/REVIEW_ALL_ACUTE_RETURN_FRAMES_LARGE_COORDINATE_INTERIOR_AND_TERMINAL_TILT_INDEPENDENT_2026_10_28.md",
+      "sha256": "b19e4e0b05f2f820c24ae71891a7ed0db62877bc283d7592fead62c72e34db88",
+      "bytes": 19487
+    },
+    {
+      "path": "research/nine/REVIEW_UNIQUE_TIP_DISTINCT_W_RETURN_ORIGIN_MARGIN_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "sha256": "2e5e43ffc01b2348276a4d97a6ae6fbd75fb24ff18d2d1fffcc6aee3cd165977",
+      "bytes": 10611
+    },
+    {
+      "path": "research/nine/REVIEW_CRITICAL_NEAR_HUB_TWO_SUPPORT_STRIPS_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "sha256": "f69e3ac07e327228508c16a464763bf4ffad6be54193d71ee7fc23976fffa64d",
+      "bytes": 14561
+    },
+    {
+      "path": "research/nine/REVIEW_UNIQUE_W_CLOSED_LEFT_STRIP_POCKET_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "sha256": "d5391e43d30868a71caa48ab6bb46ca75a108fab6041bc7dac1a572c4e954435",
+      "bytes": 15705
+    },
+    {
+      "path": "research/nine/REVIEW_CORRELATED_UNIQUE_TIP_TERMINAL_CENTER_WHOLE_UNIQUE_W_INDEPENDENT_2026_10_28.md",
+      "sha256": "7c286ef3c51e3083309feb282cd52ab2e88e6ba2edf5adbdaa27485870a3edf3",
+      "bytes": 24454
+    },
+    {
+      "path": "research/nine/REVIEW_NEAR_HUB_UNIQUE_TIP_SHARED_KERNEL_W_INDEPENDENT_2026_10_28.md",
+      "sha256": "9ac9138bcaebcfa34ab1c63d6754c864329fd8ddfb3b79ee1fd86940298435e1",
+      "bytes": 23452
+    },
+    {
+      "path": "research/nine/REVIEW_D02_FIVE_LOAD_COMPLETE_ALTERNATIVE_ORIGINAL_JOIN_INDEPENDENT_2026_10_28.md",
+      "sha256": "279cd59992363c6e480814f7cd1627a0c682c99c7439e503384e87f849468eac",
+      "bytes": 26463
+    },
+    {
+      "path": "research/nine/REVIEW_SHARP_QUARTER_CLEAR_ARC_INTERVAL_CAPACITY_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "sha256": "214c46e0985bb55999a57b8c17a0afb495ce47f6647b3cf98d8c0501d7dcc655",
+      "bytes": 11998
+    },
+    {
+      "path": "research/nine/ADOPTION_SHARED_UNIQUE_TIP_SHARP_ARC_AND_NEAR_HUB_ROOT_2026_10_28.md",
+      "sha256": "162c071c4d3c4cb57c67c44b22131417e8ed4f54952fd71a0f973255c5c0584b",
+      "bytes": 17949
+    }
+  ],
+  "matching_direct_table_pin_count": 166,
+  "matching_direct_table_pins": [
+    {
+      "owner": "research/nine/ALL_ACUTE_RETURN_FRAMES_LARGE_COORDINATE_INTERIOR_AND_TERMINAL_TILT_REDUCTION.md",
+      "line": 397,
+      "source": "research/nine/PARALLEL_TIP_LARGE_X_RETURN_ALL_CORNERS_INSIDE_CIRCLE.md",
+      "sha256": "35ed0820293125307c28d2d6b0e14b841b5578517e67fa7aea90f42bb3544b35"
+    },
+    {
+      "owner": "research/nine/ALL_ACUTE_RETURN_FRAMES_LARGE_COORDINATE_INTERIOR_AND_TERMINAL_TILT_REDUCTION.md",
+      "line": 398,
+      "source": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "owner": "research/nine/ALL_ACUTE_RETURN_FRAMES_LARGE_COORDINATE_INTERIOR_AND_TERMINAL_TILT_REDUCTION.md",
+      "line": 399,
+      "source": "research/nine/D02_SINGLETON_TERMINAL_AXIS_TWO_NONPARALLEL_RETURN_COVER.md",
+      "sha256": "7997a9a7eacc0aedf85801eda33b5e7a0ca2e4ce37b86b95f7cb1ba3b6c28ce9"
+    },
+    {
+      "owner": "research/nine/ALL_ACUTE_RETURN_FRAMES_LARGE_COORDINATE_INTERIOR_AND_TERMINAL_TILT_REDUCTION.md",
+      "line": 400,
+      "source": "research/nine/GENERAL_SINGLE_HUB_BOUNDARY_PATH_POCKET.md",
+      "sha256": "958bb122342783a824d023c221ccc2c93a68300b00b0ffc3496c25ad394aec84"
+    },
+    {
+      "owner": "research/nine/ALL_ACUTE_RETURN_FRAMES_LARGE_COORDINATE_INTERIOR_AND_TERMINAL_TILT_REDUCTION.md",
+      "line": 401,
+      "source": "research/nine/FAN_TIP_OWNED_ENDPOINT_EXCLUSION.md",
+      "sha256": "aef2fc2adfda6168d7e2c2f824b373d6beafb12c8937e0f6bc93f7f36b464a67"
+    },
+    {
+      "owner": "research/nine/ALL_ACUTE_RETURN_FRAMES_LARGE_COORDINATE_INTERIOR_AND_TERMINAL_TILT_REDUCTION.md",
+      "line": 402,
+      "source": "research/nine/SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1"
+    },
+    {
+      "owner": "research/nine/ALL_ACUTE_RETURN_FRAMES_LARGE_COORDINATE_INTERIOR_AND_TERMINAL_TILT_REDUCTION.md",
+      "line": 403,
+      "source": "research/nine/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "sha256": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90"
+    },
+    {
+      "owner": "research/nine/UNIQUE_TIP_DISTINCT_W_RETURN_FULL_MASK_AND_ORIGIN_MARGIN.md",
+      "line": 354,
+      "source": "research/nine/TERMINAL_HUB_AXIS_DISTINCT_RETURN_SIDE_TWO_CIRCLE_TIP_EXCLUSION.md",
+      "sha256": "b2a641d04909abad6e99885e2485c2af0845d3ee05ad43a19664d6a93e4891fb"
+    },
+    {
+      "owner": "research/nine/UNIQUE_TIP_DISTINCT_W_RETURN_FULL_MASK_AND_ORIGIN_MARGIN.md",
+      "line": 355,
+      "source": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "owner": "research/nine/UNIQUE_TIP_DISTINCT_W_RETURN_FULL_MASK_AND_ORIGIN_MARGIN.md",
+      "line": 356,
+      "source": "research/nine/LOADED_TWO_FORCE_BOUNDARY_NEIGHBOR_COMMON_POINT_EXCLUSION.md",
+      "sha256": "5a95c3255a634f603a47c8311971902f2b8b699e4ebf2d076b21b01fddf941ba"
+    },
+    {
+      "owner": "research/nine/UNIQUE_TIP_DISTINCT_W_RETURN_FULL_MASK_AND_ORIGIN_MARGIN.md",
+      "line": 357,
+      "source": "research/nine/UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+      "sha256": "406fce53d22cc20eec43a373a877798dab583a6bd93f684ff124293016c44c87"
+    },
+    {
+      "owner": "research/nine/UNIQUE_TIP_DISTINCT_W_RETURN_FULL_MASK_AND_ORIGIN_MARGIN.md",
+      "line": 358,
+      "source": "research/nine/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207"
+    },
+    {
+      "owner": "research/nine/UNIQUE_TIP_DISTINCT_W_RETURN_FULL_MASK_AND_ORIGIN_MARGIN.md",
+      "line": 359,
+      "source": "research/nine/RADIAL_INNER_CORNER_BOUNDARY_NEIGHBOR_QUARTER_SIDE_BOUND.md",
+      "sha256": "37f0f207a86a9d2c4ead42edcfaac01c5dbdd4f08bc66e98e41f985adedc4011"
+    },
+    {
+      "owner": "research/nine/UNIQUE_TIP_DISTINCT_W_RETURN_FULL_MASK_AND_ORIGIN_MARGIN.md",
+      "line": 360,
+      "source": "research/nine/D02_ENTIRE_TWO_CIRCLE_TIP_EXCLUSION_AND_EXACT_UNIQUE_TIP_RESIDUAL.md",
+      "sha256": "8aba649f47a66527beff0a0a12db6fdcb7f8782b54f734baf190d8b8523732b8"
+    },
+    {
+      "owner": "research/nine/UNIQUE_TIP_DISTINCT_W_RETURN_FULL_MASK_AND_ORIGIN_MARGIN.md",
+      "line": 361,
+      "source": "research/nine/UNIFORM_INNER_CIRCLE_ARC_FAMILY_AND_SMALL_CENTRAL_DISK_EXCLUSION.md",
+      "sha256": "c8c9dc223e11dbcd7be9063818d546a3d3c0bc77b66cdac181b9ea97d51bae69"
+    },
+    {
+      "owner": "research/nine/CRITICAL_NEAR_HUB_CENTRAL_OCCUPANCY_AND_D02_TWO_SUPPORT_STRIPS.md",
+      "line": 412,
+      "source": "research/nine/UNIFORM_INNER_CIRCLE_ARC_FAMILY_AND_SMALL_CENTRAL_DISK_EXCLUSION.md",
+      "sha256": "c8c9dc223e11dbcd7be9063818d546a3d3c0bc77b66cdac181b9ea97d51bae69"
+    },
+    {
+      "owner": "research/nine/CRITICAL_NEAR_HUB_CENTRAL_OCCUPANCY_AND_D02_TWO_SUPPORT_STRIPS.md",
+      "line": 413,
+      "source": "research/nine/GENERAL_SINGLE_HUB_BOUNDARY_PATH_POCKET.md",
+      "sha256": "958bb122342783a824d023c221ccc2c93a68300b00b0ffc3496c25ad394aec84"
+    },
+    {
+      "owner": "research/nine/CRITICAL_NEAR_HUB_CENTRAL_OCCUPANCY_AND_D02_TWO_SUPPORT_STRIPS.md",
+      "line": 414,
+      "source": "research/nine/CHORDED_HEXAGON_CENTRAL_CAPACITY_ONE.md",
+      "sha256": "0b787eae6efe36d2ca6c40dbb079d3262192125fffe58026bacbfd657d1a9a34"
+    },
+    {
+      "owner": "research/nine/CRITICAL_NEAR_HUB_CENTRAL_OCCUPANCY_AND_D02_TWO_SUPPORT_STRIPS.md",
+      "line": 415,
+      "source": "research/nine/D02_SINGLETON_TERMINAL_AXIS_TWO_NONPARALLEL_RETURN_COVER.md",
+      "sha256": "7997a9a7eacc0aedf85801eda33b5e7a0ca2e4ce37b86b95f7cb1ba3b6c28ce9"
+    },
+    {
+      "owner": "research/nine/CRITICAL_NEAR_HUB_CENTRAL_OCCUPANCY_AND_D02_TWO_SUPPORT_STRIPS.md",
+      "line": 416,
+      "source": "research/nine/CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md",
+      "sha256": "b61b0dec7ded00984c687e353fd3f3bfb5a5a7ade45d87d69aaeade09f23d80b"
+    },
+    {
+      "owner": "research/nine/CRITICAL_NEAR_HUB_CENTRAL_OCCUPANCY_AND_D02_TWO_SUPPORT_STRIPS.md",
+      "line": 417,
+      "source": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe"
+    },
+    {
+      "owner": "research/nine/CRITICAL_NEAR_HUB_CENTRAL_OCCUPANCY_AND_D02_TWO_SUPPORT_STRIPS.md",
+      "line": 418,
+      "source": "research/nine/SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1"
+    },
+    {
+      "owner": "research/nine/CRITICAL_NEAR_HUB_CENTRAL_OCCUPANCY_AND_D02_TWO_SUPPORT_STRIPS.md",
+      "line": 419,
+      "source": "research/nine/TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md",
+      "sha256": "29e38d3f641fe16c6db587e51245f92ad4c447f9536db7d14c221f56b5357e82"
+    },
+    {
+      "owner": "research/nine/CRITICAL_NEAR_HUB_CENTRAL_OCCUPANCY_AND_D02_TWO_SUPPORT_STRIPS.md",
+      "line": 420,
+      "source": "research/nine/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "sha256": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90"
+    },
+    {
+      "owner": "research/nine/UNIQUE_W_RETURN_LOW_ROOF_AND_CLOSED_LEFT_STRIP_POCKET_EXCLUSION.md",
+      "line": 408,
+      "source": "research/nine/UNIQUE_TIP_DISTINCT_W_RETURN_FULL_MASK_AND_ORIGIN_MARGIN.md",
+      "sha256": "83b0b942ad474befbf9fca3315337df2116809b32e3f9015820a9c8783660785"
+    },
+    {
+      "owner": "research/nine/UNIQUE_W_RETURN_LOW_ROOF_AND_CLOSED_LEFT_STRIP_POCKET_EXCLUSION.md",
+      "line": 409,
+      "source": "research/nine/BOUNDARY_TERMINAL_CENTER_LOW_PORT_ARC_ANGLE_BOUND.md",
+      "sha256": "d94502aed4091098a1fa23801284a734f9f42989f130a5f0d9b0f464bb7497e6"
+    },
+    {
+      "owner": "research/nine/UNIQUE_W_RETURN_LOW_ROOF_AND_CLOSED_LEFT_STRIP_POCKET_EXCLUSION.md",
+      "line": 410,
+      "source": "research/nine/GENERAL_SINGLE_HUB_BOUNDARY_PATH_POCKET.md",
+      "sha256": "958bb122342783a824d023c221ccc2c93a68300b00b0ffc3496c25ad394aec84"
+    },
+    {
+      "owner": "research/nine/UNIQUE_W_RETURN_LOW_ROOF_AND_CLOSED_LEFT_STRIP_POCKET_EXCLUSION.md",
+      "line": 411,
+      "source": "research/nine/GENERAL_SIDE_CHANNEL_CAP_INNER_ARC.md",
+      "sha256": "f76d76ef2feccc80098fb6d10d6316af4e393d3ae34d4953846dd27b80c137cb"
+    },
+    {
+      "owner": "research/nine/UNIQUE_W_RETURN_LOW_ROOF_AND_CLOSED_LEFT_STRIP_POCKET_EXCLUSION.md",
+      "line": 412,
+      "source": "research/nine/UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+      "sha256": "406fce53d22cc20eec43a373a877798dab583a6bd93f684ff124293016c44c87"
+    },
+    {
+      "owner": "research/nine/UNIQUE_W_RETURN_LOW_ROOF_AND_CLOSED_LEFT_STRIP_POCKET_EXCLUSION.md",
+      "line": 413,
+      "source": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "owner": "research/nine/UNIQUE_W_RETURN_LOW_ROOF_AND_CLOSED_LEFT_STRIP_POCKET_EXCLUSION.md",
+      "line": 414,
+      "source": "research/nine/D02_ENTIRE_TWO_CIRCLE_TIP_EXCLUSION_AND_EXACT_UNIQUE_TIP_RESIDUAL.md",
+      "sha256": "8aba649f47a66527beff0a0a12db6fdcb7f8782b54f734baf190d8b8523732b8"
+    },
+    {
+      "owner": "research/nine/UNIQUE_W_RETURN_LOW_ROOF_AND_CLOSED_LEFT_STRIP_POCKET_EXCLUSION.md",
+      "line": 415,
+      "source": "research/nine/CRITICAL_NEAR_HUB_CENTRAL_OCCUPANCY_AND_D02_TWO_SUPPORT_STRIPS.md",
+      "sha256": "46810a719f06c5153f1340f5fbc846427a1c1d5d2e50fb69dac9f1e067806e41"
+    },
+    {
+      "owner": "research/nine/UNIQUE_W_RETURN_LOW_ROOF_AND_CLOSED_LEFT_STRIP_POCKET_EXCLUSION.md",
+      "line": 416,
+      "source": "research/nine/CHORDED_HEXAGON_CENTRAL_CAPACITY_ONE.md",
+      "sha256": "0b787eae6efe36d2ca6c40dbb079d3262192125fffe58026bacbfd657d1a9a34"
+    },
+    {
+      "owner": "research/nine/UNIQUE_W_RETURN_LOW_ROOF_AND_CLOSED_LEFT_STRIP_POCKET_EXCLUSION.md",
+      "line": 417,
+      "source": "research/nine/CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md",
+      "sha256": "b61b0dec7ded00984c687e353fd3f3bfb5a5a7ade45d87d69aaeade09f23d80b"
+    },
+    {
+      "owner": "research/nine/UNIQUE_W_RETURN_LOW_ROOF_AND_CLOSED_LEFT_STRIP_POCKET_EXCLUSION.md",
+      "line": 418,
+      "source": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe"
+    },
+    {
+      "owner": "research/nine/UNIQUE_W_RETURN_LOW_ROOF_AND_CLOSED_LEFT_STRIP_POCKET_EXCLUSION.md",
+      "line": 419,
+      "source": "research/nine/SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1"
+    },
+    {
+      "owner": "research/nine/UNIQUE_W_RETURN_LOW_ROOF_AND_CLOSED_LEFT_STRIP_POCKET_EXCLUSION.md",
+      "line": 420,
+      "source": "research/nine/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "sha256": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90"
+    },
+    {
+      "owner": "research/nine/CORRELATED_UNIQUE_TIP_EXIT_AND_TERMINAL_CENTER_POCKET_CAPACITY.md",
+      "line": 486,
+      "source": "research/nine/UNIQUE_TIP_DISTINCT_W_RETURN_FULL_MASK_AND_ORIGIN_MARGIN.md",
+      "sha256": "83b0b942ad474befbf9fca3315337df2116809b32e3f9015820a9c8783660785"
+    },
+    {
+      "owner": "research/nine/CORRELATED_UNIQUE_TIP_EXIT_AND_TERMINAL_CENTER_POCKET_CAPACITY.md",
+      "line": 487,
+      "source": "research/nine/UNIQUE_W_RETURN_LOW_ROOF_AND_CLOSED_LEFT_STRIP_POCKET_EXCLUSION.md",
+      "sha256": "cb55c18601447c3238ce3c275320c11f708cf4f39c12ec88c6c80ea9680aea02"
+    },
+    {
+      "owner": "research/nine/CORRELATED_UNIQUE_TIP_EXIT_AND_TERMINAL_CENTER_POCKET_CAPACITY.md",
+      "line": 488,
+      "source": "research/nine/CRITICAL_NEAR_HUB_CENTRAL_OCCUPANCY_AND_D02_TWO_SUPPORT_STRIPS.md",
+      "sha256": "46810a719f06c5153f1340f5fbc846427a1c1d5d2e50fb69dac9f1e067806e41"
+    },
+    {
+      "owner": "research/nine/CORRELATED_UNIQUE_TIP_EXIT_AND_TERMINAL_CENTER_POCKET_CAPACITY.md",
+      "line": 489,
+      "source": "research/nine/GENERAL_SINGLE_HUB_BOUNDARY_PATH_POCKET.md",
+      "sha256": "958bb122342783a824d023c221ccc2c93a68300b00b0ffc3496c25ad394aec84"
+    },
+    {
+      "owner": "research/nine/CORRELATED_UNIQUE_TIP_EXIT_AND_TERMINAL_CENTER_POCKET_CAPACITY.md",
+      "line": 490,
+      "source": "research/nine/GENERAL_SIDE_CHANNEL_CAP_INNER_ARC.md",
+      "sha256": "f76d76ef2feccc80098fb6d10d6316af4e393d3ae34d4953846dd27b80c137cb"
+    },
+    {
+      "owner": "research/nine/CORRELATED_UNIQUE_TIP_EXIT_AND_TERMINAL_CENTER_POCKET_CAPACITY.md",
+      "line": 491,
+      "source": "research/nine/UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+      "sha256": "406fce53d22cc20eec43a373a877798dab583a6bd93f684ff124293016c44c87"
+    },
+    {
+      "owner": "research/nine/CORRELATED_UNIQUE_TIP_EXIT_AND_TERMINAL_CENTER_POCKET_CAPACITY.md",
+      "line": 492,
+      "source": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "owner": "research/nine/CORRELATED_UNIQUE_TIP_EXIT_AND_TERMINAL_CENTER_POCKET_CAPACITY.md",
+      "line": 493,
+      "source": "research/nine/D02_ENTIRE_TWO_CIRCLE_TIP_EXCLUSION_AND_EXACT_UNIQUE_TIP_RESIDUAL.md",
+      "sha256": "8aba649f47a66527beff0a0a12db6fdcb7f8782b54f734baf190d8b8523732b8"
+    },
+    {
+      "owner": "research/nine/CORRELATED_UNIQUE_TIP_EXIT_AND_TERMINAL_CENTER_POCKET_CAPACITY.md",
+      "line": 494,
+      "source": "research/nine/CHORDED_HEXAGON_CENTRAL_CAPACITY_ONE.md",
+      "sha256": "0b787eae6efe36d2ca6c40dbb079d3262192125fffe58026bacbfd657d1a9a34"
+    },
+    {
+      "owner": "research/nine/CORRELATED_UNIQUE_TIP_EXIT_AND_TERMINAL_CENTER_POCKET_CAPACITY.md",
+      "line": 495,
+      "source": "research/nine/CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md",
+      "sha256": "b61b0dec7ded00984c687e353fd3f3bfb5a5a7ade45d87d69aaeade09f23d80b"
+    },
+    {
+      "owner": "research/nine/CORRELATED_UNIQUE_TIP_EXIT_AND_TERMINAL_CENTER_POCKET_CAPACITY.md",
+      "line": 496,
+      "source": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe"
+    },
+    {
+      "owner": "research/nine/CORRELATED_UNIQUE_TIP_EXIT_AND_TERMINAL_CENTER_POCKET_CAPACITY.md",
+      "line": 497,
+      "source": "research/nine/SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1"
+    },
+    {
+      "owner": "research/nine/CORRELATED_UNIQUE_TIP_EXIT_AND_TERMINAL_CENTER_POCKET_CAPACITY.md",
+      "line": 498,
+      "source": "research/nine/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "sha256": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90"
+    },
+    {
+      "owner": "research/nine/NEAR_HUB_UNIQUE_TIP_SHORT_INCOMING_COORDINATE_POCKET_CAPACITY_ONE.md",
+      "line": 662,
+      "source": "research/nine/GENERAL_SINGLE_HUB_BOUNDARY_PATH_POCKET.md",
+      "sha256": "958bb122342783a824d023c221ccc2c93a68300b00b0ffc3496c25ad394aec84"
+    },
+    {
+      "owner": "research/nine/NEAR_HUB_UNIQUE_TIP_SHORT_INCOMING_COORDINATE_POCKET_CAPACITY_ONE.md",
+      "line": 663,
+      "source": "research/nine/GENERAL_SIDE_CHANNEL_CAP_INNER_ARC.md",
+      "sha256": "f76d76ef2feccc80098fb6d10d6316af4e393d3ae34d4953846dd27b80c137cb"
+    },
+    {
+      "owner": "research/nine/NEAR_HUB_UNIQUE_TIP_SHORT_INCOMING_COORDINATE_POCKET_CAPACITY_ONE.md",
+      "line": 664,
+      "source": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "owner": "research/nine/NEAR_HUB_UNIQUE_TIP_SHORT_INCOMING_COORDINATE_POCKET_CAPACITY_ONE.md",
+      "line": 665,
+      "source": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe"
+    },
+    {
+      "owner": "research/nine/NEAR_HUB_UNIQUE_TIP_SHORT_INCOMING_COORDINATE_POCKET_CAPACITY_ONE.md",
+      "line": 666,
+      "source": "research/nine/D02_SINGLETON_TERMINAL_AXIS_TWO_NONPARALLEL_RETURN_COVER.md",
+      "sha256": "7997a9a7eacc0aedf85801eda33b5e7a0ca2e4ce37b86b95f7cb1ba3b6c28ce9"
+    },
+    {
+      "owner": "research/nine/NEAR_HUB_UNIQUE_TIP_SHORT_INCOMING_COORDINATE_POCKET_CAPACITY_ONE.md",
+      "line": 667,
+      "source": "research/nine/CRITICAL_NEAR_HUB_CENTRAL_OCCUPANCY_AND_D02_TWO_SUPPORT_STRIPS.md",
+      "sha256": "46810a719f06c5153f1340f5fbc846427a1c1d5d2e50fb69dac9f1e067806e41"
+    },
+    {
+      "owner": "research/nine/NEAR_HUB_UNIQUE_TIP_SHORT_INCOMING_COORDINATE_POCKET_CAPACITY_ONE.md",
+      "line": 668,
+      "source": "research/nine/UNIQUE_TIP_DISTINCT_W_RETURN_FULL_MASK_AND_ORIGIN_MARGIN.md",
+      "sha256": "83b0b942ad474befbf9fca3315337df2116809b32e3f9015820a9c8783660785"
+    },
+    {
+      "owner": "research/nine/NEAR_HUB_UNIQUE_TIP_SHORT_INCOMING_COORDINATE_POCKET_CAPACITY_ONE.md",
+      "line": 669,
+      "source": "research/nine/PARALLEL_TIP_LARGE_X_RETURN_ALL_CORNERS_INSIDE_CIRCLE.md",
+      "sha256": "35ed0820293125307c28d2d6b0e14b841b5578517e67fa7aea90f42bb3544b35"
+    },
+    {
+      "owner": "research/nine/NEAR_HUB_UNIQUE_TIP_SHORT_INCOMING_COORDINATE_POCKET_CAPACITY_ONE.md",
+      "line": 670,
+      "source": "research/nine/SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1"
+    },
+    {
+      "owner": "research/nine/NEAR_HUB_UNIQUE_TIP_SHORT_INCOMING_COORDINATE_POCKET_CAPACITY_ONE.md",
+      "line": 671,
+      "source": "research/nine/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "sha256": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90"
+    },
+    {
+      "owner": "research/nine/D02_FIVE_LOAD_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "line": 234,
+      "source": "research/nine/D02_SINGLETON_TERMINAL_AXIS_TWO_NONPARALLEL_RETURN_COVER.md",
+      "sha256": "7997a9a7eacc0aedf85801eda33b5e7a0ca2e4ce37b86b95f7cb1ba3b6c28ce9"
+    },
+    {
+      "owner": "research/nine/D02_FIVE_LOAD_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "line": 235,
+      "source": "research/nine/D02_ENTIRE_TWO_CIRCLE_TIP_EXCLUSION_AND_EXACT_UNIQUE_TIP_RESIDUAL.md",
+      "sha256": "8aba649f47a66527beff0a0a12db6fdcb7f8782b54f734baf190d8b8523732b8"
+    },
+    {
+      "owner": "research/nine/D02_FIVE_LOAD_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "line": 236,
+      "source": "research/nine/CRITICAL_NEAR_HUB_CENTRAL_OCCUPANCY_AND_D02_TWO_SUPPORT_STRIPS.md",
+      "sha256": "46810a719f06c5153f1340f5fbc846427a1c1d5d2e50fb69dac9f1e067806e41"
+    },
+    {
+      "owner": "research/nine/D02_FIVE_LOAD_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "line": 237,
+      "source": "research/nine/NEAR_HUB_UNIQUE_TIP_SHORT_INCOMING_COORDINATE_POCKET_CAPACITY_ONE.md",
+      "sha256": "39aab92a25208217ff2fb7439142634d7cceb78eedf4e235575a648833621cce"
+    },
+    {
+      "owner": "research/nine/D02_FIVE_LOAD_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "line": 238,
+      "source": "research/nine/UNIQUE_TIP_DISTINCT_W_RETURN_FULL_MASK_AND_ORIGIN_MARGIN.md",
+      "sha256": "83b0b942ad474befbf9fca3315337df2116809b32e3f9015820a9c8783660785"
+    },
+    {
+      "owner": "research/nine/D02_FIVE_LOAD_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "line": 239,
+      "source": "research/nine/PARALLEL_TIP_LARGE_X_RETURN_ALL_CORNERS_INSIDE_CIRCLE.md",
+      "sha256": "35ed0820293125307c28d2d6b0e14b841b5578517e67fa7aea90f42bb3544b35"
+    },
+    {
+      "owner": "research/nine/D02_FIVE_LOAD_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "line": 240,
+      "source": "research/nine/CHORDED_HEXAGON_CENTRAL_CAPACITY_ONE.md",
+      "sha256": "0b787eae6efe36d2ca6c40dbb079d3262192125fffe58026bacbfd657d1a9a34"
+    },
+    {
+      "owner": "research/nine/D02_FIVE_LOAD_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "line": 241,
+      "source": "research/nine/CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md",
+      "sha256": "b61b0dec7ded00984c687e353fd3f3bfb5a5a7ade45d87d69aaeade09f23d80b"
+    },
+    {
+      "owner": "research/nine/D02_FIVE_LOAD_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "line": 242,
+      "source": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe"
+    },
+    {
+      "owner": "research/nine/D02_FIVE_LOAD_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "line": 243,
+      "source": "research/nine/SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1"
+    },
+    {
+      "owner": "research/nine/D02_FIVE_LOAD_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "line": 244,
+      "source": "research/nine/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "sha256": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90"
+    },
+    {
+      "owner": "research/nine/D02_FIVE_LOAD_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "line": 252,
+      "source": "research/nine/D02_L01345_COMPLETE_ORIGINAL_GRAPH_LOAD_EXCLUSION.md",
+      "sha256": "37e11adb5285df3d9d4cea05ccc317aabbab21f2b5cf2c31fadc4c4497b25536"
+    },
+    {
+      "owner": "research/nine/SHARP_QUARTER_CLEAR_RADIUS_FIVE_QUARTERS_ARC_AND_INTERVAL_CAPACITY.md",
+      "line": 431,
+      "source": "research/nine/UNIFORM_INNER_CIRCLE_ARC_FAMILY_AND_SMALL_CENTRAL_DISK_EXCLUSION.md",
+      "sha256": "c8c9dc223e11dbcd7be9063818d546a3d3c0bc77b66cdac181b9ea97d51bae69"
+    },
+    {
+      "owner": "research/nine/SHARP_QUARTER_CLEAR_RADIUS_FIVE_QUARTERS_ARC_AND_INTERVAL_CAPACITY.md",
+      "line": 432,
+      "source": "research/nine/GENERAL_SIDE_CHANNEL_CAP_INNER_ARC.md",
+      "sha256": "f76d76ef2feccc80098fb6d10d6316af4e393d3ae34d4953846dd27b80c137cb"
+    },
+    {
+      "owner": "research/nine/REVIEW_ALL_ACUTE_RETURN_FRAMES_LARGE_COORDINATE_INTERIOR_AND_TERMINAL_TILT_INDEPENDENT_2026_10_28.md",
+      "line": 40,
+      "source": "research/nine/PARALLEL_TIP_LARGE_X_RETURN_ALL_CORNERS_INSIDE_CIRCLE.md",
+      "sha256": "35ed0820293125307c28d2d6b0e14b841b5578517e67fa7aea90f42bb3544b35"
+    },
+    {
+      "owner": "research/nine/REVIEW_ALL_ACUTE_RETURN_FRAMES_LARGE_COORDINATE_INTERIOR_AND_TERMINAL_TILT_INDEPENDENT_2026_10_28.md",
+      "line": 41,
+      "source": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "owner": "research/nine/REVIEW_ALL_ACUTE_RETURN_FRAMES_LARGE_COORDINATE_INTERIOR_AND_TERMINAL_TILT_INDEPENDENT_2026_10_28.md",
+      "line": 42,
+      "source": "research/nine/D02_SINGLETON_TERMINAL_AXIS_TWO_NONPARALLEL_RETURN_COVER.md",
+      "sha256": "7997a9a7eacc0aedf85801eda33b5e7a0ca2e4ce37b86b95f7cb1ba3b6c28ce9"
+    },
+    {
+      "owner": "research/nine/REVIEW_ALL_ACUTE_RETURN_FRAMES_LARGE_COORDINATE_INTERIOR_AND_TERMINAL_TILT_INDEPENDENT_2026_10_28.md",
+      "line": 43,
+      "source": "research/nine/GENERAL_SINGLE_HUB_BOUNDARY_PATH_POCKET.md",
+      "sha256": "958bb122342783a824d023c221ccc2c93a68300b00b0ffc3496c25ad394aec84"
+    },
+    {
+      "owner": "research/nine/REVIEW_ALL_ACUTE_RETURN_FRAMES_LARGE_COORDINATE_INTERIOR_AND_TERMINAL_TILT_INDEPENDENT_2026_10_28.md",
+      "line": 44,
+      "source": "research/nine/FAN_TIP_OWNED_ENDPOINT_EXCLUSION.md",
+      "sha256": "aef2fc2adfda6168d7e2c2f824b373d6beafb12c8937e0f6bc93f7f36b464a67"
+    },
+    {
+      "owner": "research/nine/REVIEW_ALL_ACUTE_RETURN_FRAMES_LARGE_COORDINATE_INTERIOR_AND_TERMINAL_TILT_INDEPENDENT_2026_10_28.md",
+      "line": 45,
+      "source": "research/nine/SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1"
+    },
+    {
+      "owner": "research/nine/REVIEW_ALL_ACUTE_RETURN_FRAMES_LARGE_COORDINATE_INTERIOR_AND_TERMINAL_TILT_INDEPENDENT_2026_10_28.md",
+      "line": 46,
+      "source": "research/nine/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "sha256": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90"
+    },
+    {
+      "owner": "research/nine/REVIEW_UNIQUE_TIP_DISTINCT_W_RETURN_ORIGIN_MARGIN_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 14,
+      "source": "research/nine/UNIQUE_TIP_DISTINCT_W_RETURN_FULL_MASK_AND_ORIGIN_MARGIN.md",
+      "sha256": "83b0b942ad474befbf9fca3315337df2116809b32e3f9015820a9c8783660785"
+    },
+    {
+      "owner": "research/nine/REVIEW_UNIQUE_TIP_DISTINCT_W_RETURN_ORIGIN_MARGIN_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 179,
+      "source": "research/nine/TERMINAL_HUB_AXIS_DISTINCT_RETURN_SIDE_TWO_CIRCLE_TIP_EXCLUSION.md",
+      "sha256": "b2a641d04909abad6e99885e2485c2af0845d3ee05ad43a19664d6a93e4891fb"
+    },
+    {
+      "owner": "research/nine/REVIEW_UNIQUE_TIP_DISTINCT_W_RETURN_ORIGIN_MARGIN_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 180,
+      "source": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "owner": "research/nine/REVIEW_UNIQUE_TIP_DISTINCT_W_RETURN_ORIGIN_MARGIN_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 181,
+      "source": "research/nine/LOADED_TWO_FORCE_BOUNDARY_NEIGHBOR_COMMON_POINT_EXCLUSION.md",
+      "sha256": "5a95c3255a634f603a47c8311971902f2b8b699e4ebf2d076b21b01fddf941ba"
+    },
+    {
+      "owner": "research/nine/REVIEW_UNIQUE_TIP_DISTINCT_W_RETURN_ORIGIN_MARGIN_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 182,
+      "source": "research/nine/UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+      "sha256": "406fce53d22cc20eec43a373a877798dab583a6bd93f684ff124293016c44c87"
+    },
+    {
+      "owner": "research/nine/REVIEW_UNIQUE_TIP_DISTINCT_W_RETURN_ORIGIN_MARGIN_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 183,
+      "source": "research/nine/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207"
+    },
+    {
+      "owner": "research/nine/REVIEW_UNIQUE_TIP_DISTINCT_W_RETURN_ORIGIN_MARGIN_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 184,
+      "source": "research/nine/RADIAL_INNER_CORNER_BOUNDARY_NEIGHBOR_QUARTER_SIDE_BOUND.md",
+      "sha256": "37f0f207a86a9d2c4ead42edcfaac01c5dbdd4f08bc66e98e41f985adedc4011"
+    },
+    {
+      "owner": "research/nine/REVIEW_UNIQUE_TIP_DISTINCT_W_RETURN_ORIGIN_MARGIN_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 185,
+      "source": "research/nine/D02_ENTIRE_TWO_CIRCLE_TIP_EXCLUSION_AND_EXACT_UNIQUE_TIP_RESIDUAL.md",
+      "sha256": "8aba649f47a66527beff0a0a12db6fdcb7f8782b54f734baf190d8b8523732b8"
+    },
+    {
+      "owner": "research/nine/REVIEW_UNIQUE_TIP_DISTINCT_W_RETURN_ORIGIN_MARGIN_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 186,
+      "source": "research/nine/UNIFORM_INNER_CIRCLE_ARC_FAMILY_AND_SMALL_CENTRAL_DISK_EXCLUSION.md",
+      "sha256": "c8c9dc223e11dbcd7be9063818d546a3d3c0bc77b66cdac181b9ea97d51bae69"
+    },
+    {
+      "owner": "research/nine/REVIEW_CRITICAL_NEAR_HUB_TWO_SUPPORT_STRIPS_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 275,
+      "source": "research/nine/UNIFORM_INNER_CIRCLE_ARC_FAMILY_AND_SMALL_CENTRAL_DISK_EXCLUSION.md",
+      "sha256": "c8c9dc223e11dbcd7be9063818d546a3d3c0bc77b66cdac181b9ea97d51bae69"
+    },
+    {
+      "owner": "research/nine/REVIEW_CRITICAL_NEAR_HUB_TWO_SUPPORT_STRIPS_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 276,
+      "source": "research/nine/GENERAL_SINGLE_HUB_BOUNDARY_PATH_POCKET.md",
+      "sha256": "958bb122342783a824d023c221ccc2c93a68300b00b0ffc3496c25ad394aec84"
+    },
+    {
+      "owner": "research/nine/REVIEW_CRITICAL_NEAR_HUB_TWO_SUPPORT_STRIPS_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 277,
+      "source": "research/nine/CHORDED_HEXAGON_CENTRAL_CAPACITY_ONE.md",
+      "sha256": "0b787eae6efe36d2ca6c40dbb079d3262192125fffe58026bacbfd657d1a9a34"
+    },
+    {
+      "owner": "research/nine/REVIEW_CRITICAL_NEAR_HUB_TWO_SUPPORT_STRIPS_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 278,
+      "source": "research/nine/D02_SINGLETON_TERMINAL_AXIS_TWO_NONPARALLEL_RETURN_COVER.md",
+      "sha256": "7997a9a7eacc0aedf85801eda33b5e7a0ca2e4ce37b86b95f7cb1ba3b6c28ce9"
+    },
+    {
+      "owner": "research/nine/REVIEW_CRITICAL_NEAR_HUB_TWO_SUPPORT_STRIPS_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 279,
+      "source": "research/nine/CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md",
+      "sha256": "b61b0dec7ded00984c687e353fd3f3bfb5a5a7ade45d87d69aaeade09f23d80b"
+    },
+    {
+      "owner": "research/nine/REVIEW_CRITICAL_NEAR_HUB_TWO_SUPPORT_STRIPS_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 280,
+      "source": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe"
+    },
+    {
+      "owner": "research/nine/REVIEW_CRITICAL_NEAR_HUB_TWO_SUPPORT_STRIPS_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 281,
+      "source": "research/nine/SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1"
+    },
+    {
+      "owner": "research/nine/REVIEW_CRITICAL_NEAR_HUB_TWO_SUPPORT_STRIPS_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 282,
+      "source": "research/nine/TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md",
+      "sha256": "29e38d3f641fe16c6db587e51245f92ad4c447f9536db7d14c221f56b5357e82"
+    },
+    {
+      "owner": "research/nine/REVIEW_CRITICAL_NEAR_HUB_TWO_SUPPORT_STRIPS_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 283,
+      "source": "research/nine/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "sha256": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90"
+    },
+    {
+      "owner": "research/nine/REVIEW_UNIQUE_W_CLOSED_LEFT_STRIP_POCKET_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 307,
+      "source": "research/nine/UNIQUE_TIP_DISTINCT_W_RETURN_FULL_MASK_AND_ORIGIN_MARGIN.md",
+      "sha256": "83b0b942ad474befbf9fca3315337df2116809b32e3f9015820a9c8783660785"
+    },
+    {
+      "owner": "research/nine/REVIEW_UNIQUE_W_CLOSED_LEFT_STRIP_POCKET_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 308,
+      "source": "research/nine/BOUNDARY_TERMINAL_CENTER_LOW_PORT_ARC_ANGLE_BOUND.md",
+      "sha256": "d94502aed4091098a1fa23801284a734f9f42989f130a5f0d9b0f464bb7497e6"
+    },
+    {
+      "owner": "research/nine/REVIEW_UNIQUE_W_CLOSED_LEFT_STRIP_POCKET_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 309,
+      "source": "research/nine/GENERAL_SINGLE_HUB_BOUNDARY_PATH_POCKET.md",
+      "sha256": "958bb122342783a824d023c221ccc2c93a68300b00b0ffc3496c25ad394aec84"
+    },
+    {
+      "owner": "research/nine/REVIEW_UNIQUE_W_CLOSED_LEFT_STRIP_POCKET_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 310,
+      "source": "research/nine/GENERAL_SIDE_CHANNEL_CAP_INNER_ARC.md",
+      "sha256": "f76d76ef2feccc80098fb6d10d6316af4e393d3ae34d4953846dd27b80c137cb"
+    },
+    {
+      "owner": "research/nine/REVIEW_UNIQUE_W_CLOSED_LEFT_STRIP_POCKET_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 311,
+      "source": "research/nine/UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+      "sha256": "406fce53d22cc20eec43a373a877798dab583a6bd93f684ff124293016c44c87"
+    },
+    {
+      "owner": "research/nine/REVIEW_UNIQUE_W_CLOSED_LEFT_STRIP_POCKET_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 312,
+      "source": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "owner": "research/nine/REVIEW_UNIQUE_W_CLOSED_LEFT_STRIP_POCKET_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 313,
+      "source": "research/nine/D02_ENTIRE_TWO_CIRCLE_TIP_EXCLUSION_AND_EXACT_UNIQUE_TIP_RESIDUAL.md",
+      "sha256": "8aba649f47a66527beff0a0a12db6fdcb7f8782b54f734baf190d8b8523732b8"
+    },
+    {
+      "owner": "research/nine/REVIEW_UNIQUE_W_CLOSED_LEFT_STRIP_POCKET_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 314,
+      "source": "research/nine/CRITICAL_NEAR_HUB_CENTRAL_OCCUPANCY_AND_D02_TWO_SUPPORT_STRIPS.md",
+      "sha256": "46810a719f06c5153f1340f5fbc846427a1c1d5d2e50fb69dac9f1e067806e41"
+    },
+    {
+      "owner": "research/nine/REVIEW_UNIQUE_W_CLOSED_LEFT_STRIP_POCKET_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 315,
+      "source": "research/nine/CHORDED_HEXAGON_CENTRAL_CAPACITY_ONE.md",
+      "sha256": "0b787eae6efe36d2ca6c40dbb079d3262192125fffe58026bacbfd657d1a9a34"
+    },
+    {
+      "owner": "research/nine/REVIEW_UNIQUE_W_CLOSED_LEFT_STRIP_POCKET_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 316,
+      "source": "research/nine/CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md",
+      "sha256": "b61b0dec7ded00984c687e353fd3f3bfb5a5a7ade45d87d69aaeade09f23d80b"
+    },
+    {
+      "owner": "research/nine/REVIEW_UNIQUE_W_CLOSED_LEFT_STRIP_POCKET_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 317,
+      "source": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe"
+    },
+    {
+      "owner": "research/nine/REVIEW_UNIQUE_W_CLOSED_LEFT_STRIP_POCKET_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 318,
+      "source": "research/nine/SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1"
+    },
+    {
+      "owner": "research/nine/REVIEW_UNIQUE_W_CLOSED_LEFT_STRIP_POCKET_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 319,
+      "source": "research/nine/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "sha256": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90"
+    },
+    {
+      "owner": "research/nine/REVIEW_CORRELATED_UNIQUE_TIP_TERMINAL_CENTER_WHOLE_UNIQUE_W_INDEPENDENT_2026_10_28.md",
+      "line": 52,
+      "source": "research/nine/UNIQUE_TIP_DISTINCT_W_RETURN_FULL_MASK_AND_ORIGIN_MARGIN.md",
+      "sha256": "83b0b942ad474befbf9fca3315337df2116809b32e3f9015820a9c8783660785"
+    },
+    {
+      "owner": "research/nine/REVIEW_CORRELATED_UNIQUE_TIP_TERMINAL_CENTER_WHOLE_UNIQUE_W_INDEPENDENT_2026_10_28.md",
+      "line": 53,
+      "source": "research/nine/UNIQUE_W_RETURN_LOW_ROOF_AND_CLOSED_LEFT_STRIP_POCKET_EXCLUSION.md",
+      "sha256": "cb55c18601447c3238ce3c275320c11f708cf4f39c12ec88c6c80ea9680aea02"
+    },
+    {
+      "owner": "research/nine/REVIEW_CORRELATED_UNIQUE_TIP_TERMINAL_CENTER_WHOLE_UNIQUE_W_INDEPENDENT_2026_10_28.md",
+      "line": 54,
+      "source": "research/nine/CRITICAL_NEAR_HUB_CENTRAL_OCCUPANCY_AND_D02_TWO_SUPPORT_STRIPS.md",
+      "sha256": "46810a719f06c5153f1340f5fbc846427a1c1d5d2e50fb69dac9f1e067806e41"
+    },
+    {
+      "owner": "research/nine/REVIEW_CORRELATED_UNIQUE_TIP_TERMINAL_CENTER_WHOLE_UNIQUE_W_INDEPENDENT_2026_10_28.md",
+      "line": 55,
+      "source": "research/nine/GENERAL_SINGLE_HUB_BOUNDARY_PATH_POCKET.md",
+      "sha256": "958bb122342783a824d023c221ccc2c93a68300b00b0ffc3496c25ad394aec84"
+    },
+    {
+      "owner": "research/nine/REVIEW_CORRELATED_UNIQUE_TIP_TERMINAL_CENTER_WHOLE_UNIQUE_W_INDEPENDENT_2026_10_28.md",
+      "line": 56,
+      "source": "research/nine/GENERAL_SIDE_CHANNEL_CAP_INNER_ARC.md",
+      "sha256": "f76d76ef2feccc80098fb6d10d6316af4e393d3ae34d4953846dd27b80c137cb"
+    },
+    {
+      "owner": "research/nine/REVIEW_CORRELATED_UNIQUE_TIP_TERMINAL_CENTER_WHOLE_UNIQUE_W_INDEPENDENT_2026_10_28.md",
+      "line": 57,
+      "source": "research/nine/UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+      "sha256": "406fce53d22cc20eec43a373a877798dab583a6bd93f684ff124293016c44c87"
+    },
+    {
+      "owner": "research/nine/REVIEW_CORRELATED_UNIQUE_TIP_TERMINAL_CENTER_WHOLE_UNIQUE_W_INDEPENDENT_2026_10_28.md",
+      "line": 58,
+      "source": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "owner": "research/nine/REVIEW_CORRELATED_UNIQUE_TIP_TERMINAL_CENTER_WHOLE_UNIQUE_W_INDEPENDENT_2026_10_28.md",
+      "line": 59,
+      "source": "research/nine/D02_ENTIRE_TWO_CIRCLE_TIP_EXCLUSION_AND_EXACT_UNIQUE_TIP_RESIDUAL.md",
+      "sha256": "8aba649f47a66527beff0a0a12db6fdcb7f8782b54f734baf190d8b8523732b8"
+    },
+    {
+      "owner": "research/nine/REVIEW_CORRELATED_UNIQUE_TIP_TERMINAL_CENTER_WHOLE_UNIQUE_W_INDEPENDENT_2026_10_28.md",
+      "line": 60,
+      "source": "research/nine/CHORDED_HEXAGON_CENTRAL_CAPACITY_ONE.md",
+      "sha256": "0b787eae6efe36d2ca6c40dbb079d3262192125fffe58026bacbfd657d1a9a34"
+    },
+    {
+      "owner": "research/nine/REVIEW_CORRELATED_UNIQUE_TIP_TERMINAL_CENTER_WHOLE_UNIQUE_W_INDEPENDENT_2026_10_28.md",
+      "line": 61,
+      "source": "research/nine/CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md",
+      "sha256": "b61b0dec7ded00984c687e353fd3f3bfb5a5a7ade45d87d69aaeade09f23d80b"
+    },
+    {
+      "owner": "research/nine/REVIEW_CORRELATED_UNIQUE_TIP_TERMINAL_CENTER_WHOLE_UNIQUE_W_INDEPENDENT_2026_10_28.md",
+      "line": 62,
+      "source": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe"
+    },
+    {
+      "owner": "research/nine/REVIEW_CORRELATED_UNIQUE_TIP_TERMINAL_CENTER_WHOLE_UNIQUE_W_INDEPENDENT_2026_10_28.md",
+      "line": 63,
+      "source": "research/nine/SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1"
+    },
+    {
+      "owner": "research/nine/REVIEW_CORRELATED_UNIQUE_TIP_TERMINAL_CENTER_WHOLE_UNIQUE_W_INDEPENDENT_2026_10_28.md",
+      "line": 64,
+      "source": "research/nine/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "sha256": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90"
+    },
+    {
+      "owner": "research/nine/REVIEW_NEAR_HUB_UNIQUE_TIP_SHARED_KERNEL_W_INDEPENDENT_2026_10_28.md",
+      "line": 451,
+      "source": "research/nine/GENERAL_SINGLE_HUB_BOUNDARY_PATH_POCKET.md",
+      "sha256": "958bb122342783a824d023c221ccc2c93a68300b00b0ffc3496c25ad394aec84"
+    },
+    {
+      "owner": "research/nine/REVIEW_NEAR_HUB_UNIQUE_TIP_SHARED_KERNEL_W_INDEPENDENT_2026_10_28.md",
+      "line": 452,
+      "source": "research/nine/GENERAL_SIDE_CHANNEL_CAP_INNER_ARC.md",
+      "sha256": "f76d76ef2feccc80098fb6d10d6316af4e393d3ae34d4953846dd27b80c137cb"
+    },
+    {
+      "owner": "research/nine/REVIEW_NEAR_HUB_UNIQUE_TIP_SHARED_KERNEL_W_INDEPENDENT_2026_10_28.md",
+      "line": 453,
+      "source": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5"
+    },
+    {
+      "owner": "research/nine/REVIEW_NEAR_HUB_UNIQUE_TIP_SHARED_KERNEL_W_INDEPENDENT_2026_10_28.md",
+      "line": 454,
+      "source": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe"
+    },
+    {
+      "owner": "research/nine/REVIEW_NEAR_HUB_UNIQUE_TIP_SHARED_KERNEL_W_INDEPENDENT_2026_10_28.md",
+      "line": 455,
+      "source": "research/nine/D02_SINGLETON_TERMINAL_AXIS_TWO_NONPARALLEL_RETURN_COVER.md",
+      "sha256": "7997a9a7eacc0aedf85801eda33b5e7a0ca2e4ce37b86b95f7cb1ba3b6c28ce9"
+    },
+    {
+      "owner": "research/nine/REVIEW_NEAR_HUB_UNIQUE_TIP_SHARED_KERNEL_W_INDEPENDENT_2026_10_28.md",
+      "line": 456,
+      "source": "research/nine/CRITICAL_NEAR_HUB_CENTRAL_OCCUPANCY_AND_D02_TWO_SUPPORT_STRIPS.md",
+      "sha256": "46810a719f06c5153f1340f5fbc846427a1c1d5d2e50fb69dac9f1e067806e41"
+    },
+    {
+      "owner": "research/nine/REVIEW_NEAR_HUB_UNIQUE_TIP_SHARED_KERNEL_W_INDEPENDENT_2026_10_28.md",
+      "line": 457,
+      "source": "research/nine/UNIQUE_TIP_DISTINCT_W_RETURN_FULL_MASK_AND_ORIGIN_MARGIN.md",
+      "sha256": "83b0b942ad474befbf9fca3315337df2116809b32e3f9015820a9c8783660785"
+    },
+    {
+      "owner": "research/nine/REVIEW_NEAR_HUB_UNIQUE_TIP_SHARED_KERNEL_W_INDEPENDENT_2026_10_28.md",
+      "line": 458,
+      "source": "research/nine/PARALLEL_TIP_LARGE_X_RETURN_ALL_CORNERS_INSIDE_CIRCLE.md",
+      "sha256": "35ed0820293125307c28d2d6b0e14b841b5578517e67fa7aea90f42bb3544b35"
+    },
+    {
+      "owner": "research/nine/REVIEW_NEAR_HUB_UNIQUE_TIP_SHARED_KERNEL_W_INDEPENDENT_2026_10_28.md",
+      "line": 459,
+      "source": "research/nine/SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1"
+    },
+    {
+      "owner": "research/nine/REVIEW_NEAR_HUB_UNIQUE_TIP_SHARED_KERNEL_W_INDEPENDENT_2026_10_28.md",
+      "line": 460,
+      "source": "research/nine/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "sha256": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90"
+    },
+    {
+      "owner": "research/nine/REVIEW_D02_FIVE_LOAD_COMPLETE_ALTERNATIVE_ORIGINAL_JOIN_INDEPENDENT_2026_10_28.md",
+      "line": 56,
+      "source": "research/nine/D02_SINGLETON_TERMINAL_AXIS_TWO_NONPARALLEL_RETURN_COVER.md",
+      "sha256": "7997a9a7eacc0aedf85801eda33b5e7a0ca2e4ce37b86b95f7cb1ba3b6c28ce9"
+    },
+    {
+      "owner": "research/nine/REVIEW_D02_FIVE_LOAD_COMPLETE_ALTERNATIVE_ORIGINAL_JOIN_INDEPENDENT_2026_10_28.md",
+      "line": 57,
+      "source": "research/nine/D02_ENTIRE_TWO_CIRCLE_TIP_EXCLUSION_AND_EXACT_UNIQUE_TIP_RESIDUAL.md",
+      "sha256": "8aba649f47a66527beff0a0a12db6fdcb7f8782b54f734baf190d8b8523732b8"
+    },
+    {
+      "owner": "research/nine/REVIEW_D02_FIVE_LOAD_COMPLETE_ALTERNATIVE_ORIGINAL_JOIN_INDEPENDENT_2026_10_28.md",
+      "line": 58,
+      "source": "research/nine/CRITICAL_NEAR_HUB_CENTRAL_OCCUPANCY_AND_D02_TWO_SUPPORT_STRIPS.md",
+      "sha256": "46810a719f06c5153f1340f5fbc846427a1c1d5d2e50fb69dac9f1e067806e41"
+    },
+    {
+      "owner": "research/nine/REVIEW_D02_FIVE_LOAD_COMPLETE_ALTERNATIVE_ORIGINAL_JOIN_INDEPENDENT_2026_10_28.md",
+      "line": 59,
+      "source": "research/nine/NEAR_HUB_UNIQUE_TIP_SHORT_INCOMING_COORDINATE_POCKET_CAPACITY_ONE.md",
+      "sha256": "39aab92a25208217ff2fb7439142634d7cceb78eedf4e235575a648833621cce"
+    },
+    {
+      "owner": "research/nine/REVIEW_D02_FIVE_LOAD_COMPLETE_ALTERNATIVE_ORIGINAL_JOIN_INDEPENDENT_2026_10_28.md",
+      "line": 60,
+      "source": "research/nine/UNIQUE_TIP_DISTINCT_W_RETURN_FULL_MASK_AND_ORIGIN_MARGIN.md",
+      "sha256": "83b0b942ad474befbf9fca3315337df2116809b32e3f9015820a9c8783660785"
+    },
+    {
+      "owner": "research/nine/REVIEW_D02_FIVE_LOAD_COMPLETE_ALTERNATIVE_ORIGINAL_JOIN_INDEPENDENT_2026_10_28.md",
+      "line": 61,
+      "source": "research/nine/PARALLEL_TIP_LARGE_X_RETURN_ALL_CORNERS_INSIDE_CIRCLE.md",
+      "sha256": "35ed0820293125307c28d2d6b0e14b841b5578517e67fa7aea90f42bb3544b35"
+    },
+    {
+      "owner": "research/nine/REVIEW_D02_FIVE_LOAD_COMPLETE_ALTERNATIVE_ORIGINAL_JOIN_INDEPENDENT_2026_10_28.md",
+      "line": 62,
+      "source": "research/nine/CHORDED_HEXAGON_CENTRAL_CAPACITY_ONE.md",
+      "sha256": "0b787eae6efe36d2ca6c40dbb079d3262192125fffe58026bacbfd657d1a9a34"
+    },
+    {
+      "owner": "research/nine/REVIEW_D02_FIVE_LOAD_COMPLETE_ALTERNATIVE_ORIGINAL_JOIN_INDEPENDENT_2026_10_28.md",
+      "line": 63,
+      "source": "research/nine/CONTACT_TRIANGLE_AND_BOUNDARY_POCKETS.md",
+      "sha256": "b61b0dec7ded00984c687e353fd3f3bfb5a5a7ade45d87d69aaeade09f23d80b"
+    },
+    {
+      "owner": "research/nine/REVIEW_D02_FIVE_LOAD_COMPLETE_ALTERNATIVE_ORIGINAL_JOIN_INDEPENDENT_2026_10_28.md",
+      "line": 64,
+      "source": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe"
+    },
+    {
+      "owner": "research/nine/REVIEW_D02_FIVE_LOAD_COMPLETE_ALTERNATIVE_ORIGINAL_JOIN_INDEPENDENT_2026_10_28.md",
+      "line": 65,
+      "source": "research/nine/SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1"
+    },
+    {
+      "owner": "research/nine/REVIEW_D02_FIVE_LOAD_COMPLETE_ALTERNATIVE_ORIGINAL_JOIN_INDEPENDENT_2026_10_28.md",
+      "line": 66,
+      "source": "research/nine/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md",
+      "sha256": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90"
+    },
+    {
+      "owner": "research/nine/REVIEW_SHARP_QUARTER_CLEAR_ARC_INTERVAL_CAPACITY_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 262,
+      "source": "research/nine/UNIFORM_INNER_CIRCLE_ARC_FAMILY_AND_SMALL_CENTRAL_DISK_EXCLUSION.md",
+      "sha256": "c8c9dc223e11dbcd7be9063818d546a3d3c0bc77b66cdac181b9ea97d51bae69"
+    },
+    {
+      "owner": "research/nine/REVIEW_SHARP_QUARTER_CLEAR_ARC_INTERVAL_CAPACITY_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "line": 263,
+      "source": "research/nine/GENERAL_SIDE_CHANNEL_CAP_INNER_ARC.md",
+      "sha256": "f76d76ef2feccc80098fb6d10d6316af4e393d3ae34d4953846dd27b80c137cb"
+    },
+    {
+      "owner": "research/nine/ADOPTION_SHARED_UNIQUE_TIP_SHARP_ARC_AND_NEAR_HUB_ROOT_2026_10_28.md",
+      "line": 255,
+      "source": "research/nine/ALL_ACUTE_RETURN_FRAMES_LARGE_COORDINATE_INTERIOR_AND_TERMINAL_TILT_REDUCTION.md",
+      "sha256": "533c90b4120cb08c9b73257eed5483d53569e2177be145807bb695d1d2923b1c"
+    },
+    {
+      "owner": "research/nine/ADOPTION_SHARED_UNIQUE_TIP_SHARP_ARC_AND_NEAR_HUB_ROOT_2026_10_28.md",
+      "line": 256,
+      "source": "research/nine/UNIQUE_TIP_DISTINCT_W_RETURN_FULL_MASK_AND_ORIGIN_MARGIN.md",
+      "sha256": "83b0b942ad474befbf9fca3315337df2116809b32e3f9015820a9c8783660785"
+    },
+    {
+      "owner": "research/nine/ADOPTION_SHARED_UNIQUE_TIP_SHARP_ARC_AND_NEAR_HUB_ROOT_2026_10_28.md",
+      "line": 257,
+      "source": "research/nine/CRITICAL_NEAR_HUB_CENTRAL_OCCUPANCY_AND_D02_TWO_SUPPORT_STRIPS.md",
+      "sha256": "46810a719f06c5153f1340f5fbc846427a1c1d5d2e50fb69dac9f1e067806e41"
+    },
+    {
+      "owner": "research/nine/ADOPTION_SHARED_UNIQUE_TIP_SHARP_ARC_AND_NEAR_HUB_ROOT_2026_10_28.md",
+      "line": 258,
+      "source": "research/nine/UNIQUE_W_RETURN_LOW_ROOF_AND_CLOSED_LEFT_STRIP_POCKET_EXCLUSION.md",
+      "sha256": "cb55c18601447c3238ce3c275320c11f708cf4f39c12ec88c6c80ea9680aea02"
+    },
+    {
+      "owner": "research/nine/ADOPTION_SHARED_UNIQUE_TIP_SHARP_ARC_AND_NEAR_HUB_ROOT_2026_10_28.md",
+      "line": 259,
+      "source": "research/nine/CORRELATED_UNIQUE_TIP_EXIT_AND_TERMINAL_CENTER_POCKET_CAPACITY.md",
+      "sha256": "dcb45c83d3a61478042fd2dee93634a3558fb358d48b76205523fd5d92982d7a"
+    },
+    {
+      "owner": "research/nine/ADOPTION_SHARED_UNIQUE_TIP_SHARP_ARC_AND_NEAR_HUB_ROOT_2026_10_28.md",
+      "line": 260,
+      "source": "research/nine/NEAR_HUB_UNIQUE_TIP_SHORT_INCOMING_COORDINATE_POCKET_CAPACITY_ONE.md",
+      "sha256": "39aab92a25208217ff2fb7439142634d7cceb78eedf4e235575a648833621cce"
+    },
+    {
+      "owner": "research/nine/ADOPTION_SHARED_UNIQUE_TIP_SHARP_ARC_AND_NEAR_HUB_ROOT_2026_10_28.md",
+      "line": 261,
+      "source": "research/nine/D02_FIVE_LOAD_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md",
+      "sha256": "2603c02c0ba28e278ee7b1867930d6d41713a118f9bed85fb6d9a861d7d798bf"
+    },
+    {
+      "owner": "research/nine/ADOPTION_SHARED_UNIQUE_TIP_SHARP_ARC_AND_NEAR_HUB_ROOT_2026_10_28.md",
+      "line": 262,
+      "source": "research/nine/SHARP_QUARTER_CLEAR_RADIUS_FIVE_QUARTERS_ARC_AND_INTERVAL_CAPACITY.md",
+      "sha256": "bca528af5320cc8314839eb0d53cf6f15ec381ac42d5bd353f62a27a47101f67"
+    },
+    {
+      "owner": "research/nine/ADOPTION_SHARED_UNIQUE_TIP_SHARP_ARC_AND_NEAR_HUB_ROOT_2026_10_28.md",
+      "line": 268,
+      "source": "research/nine/REVIEW_ALL_ACUTE_RETURN_FRAMES_LARGE_COORDINATE_INTERIOR_AND_TERMINAL_TILT_INDEPENDENT_2026_10_28.md",
+      "sha256": "b19e4e0b05f2f820c24ae71891a7ed0db62877bc283d7592fead62c72e34db88"
+    },
+    {
+      "owner": "research/nine/ADOPTION_SHARED_UNIQUE_TIP_SHARP_ARC_AND_NEAR_HUB_ROOT_2026_10_28.md",
+      "line": 269,
+      "source": "research/nine/REVIEW_UNIQUE_TIP_DISTINCT_W_RETURN_ORIGIN_MARGIN_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "sha256": "2e5e43ffc01b2348276a4d97a6ae6fbd75fb24ff18d2d1fffcc6aee3cd165977"
+    },
+    {
+      "owner": "research/nine/ADOPTION_SHARED_UNIQUE_TIP_SHARP_ARC_AND_NEAR_HUB_ROOT_2026_10_28.md",
+      "line": 270,
+      "source": "research/nine/REVIEW_CRITICAL_NEAR_HUB_TWO_SUPPORT_STRIPS_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "sha256": "f69e3ac07e327228508c16a464763bf4ffad6be54193d71ee7fc23976fffa64d"
+    },
+    {
+      "owner": "research/nine/ADOPTION_SHARED_UNIQUE_TIP_SHARP_ARC_AND_NEAR_HUB_ROOT_2026_10_28.md",
+      "line": 271,
+      "source": "research/nine/REVIEW_UNIQUE_W_CLOSED_LEFT_STRIP_POCKET_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "sha256": "d5391e43d30868a71caa48ab6bb46ca75a108fab6041bc7dac1a572c4e954435"
+    },
+    {
+      "owner": "research/nine/ADOPTION_SHARED_UNIQUE_TIP_SHARP_ARC_AND_NEAR_HUB_ROOT_2026_10_28.md",
+      "line": 272,
+      "source": "research/nine/REVIEW_CORRELATED_UNIQUE_TIP_TERMINAL_CENTER_WHOLE_UNIQUE_W_INDEPENDENT_2026_10_28.md",
+      "sha256": "7c286ef3c51e3083309feb282cd52ab2e88e6ba2edf5adbdaa27485870a3edf3"
+    },
+    {
+      "owner": "research/nine/ADOPTION_SHARED_UNIQUE_TIP_SHARP_ARC_AND_NEAR_HUB_ROOT_2026_10_28.md",
+      "line": 273,
+      "source": "research/nine/REVIEW_NEAR_HUB_UNIQUE_TIP_SHARED_KERNEL_W_INDEPENDENT_2026_10_28.md",
+      "sha256": "9ac9138bcaebcfa34ab1c63d6754c864329fd8ddfb3b79ee1fd86940298435e1"
+    },
+    {
+      "owner": "research/nine/ADOPTION_SHARED_UNIQUE_TIP_SHARP_ARC_AND_NEAR_HUB_ROOT_2026_10_28.md",
+      "line": 274,
+      "source": "research/nine/REVIEW_D02_FIVE_LOAD_COMPLETE_ALTERNATIVE_ORIGINAL_JOIN_INDEPENDENT_2026_10_28.md",
+      "sha256": "279cd59992363c6e480814f7cd1627a0c682c99c7439e503384e87f849468eac"
+    },
+    {
+      "owner": "research/nine/ADOPTION_SHARED_UNIQUE_TIP_SHARP_ARC_AND_NEAR_HUB_ROOT_2026_10_28.md",
+      "line": 275,
+      "source": "research/nine/REVIEW_SHARP_QUARTER_CLEAR_ARC_INTERVAL_CAPACITY_TWO_CIRCLE_V_INDEPENDENT_2026_10_28.md",
+      "sha256": "214c46e0985bb55999a57b8c17a0afb495ce47f6647b3cf98d8c0501d7dcc655"
+    },
+    {
+      "owner": "research/nine/ADOPTION_SHARED_UNIQUE_TIP_SHARP_ARC_AND_NEAR_HUB_ROOT_2026_10_28.md",
+      "line": 281,
+      "source": "research/nine/historical_2026_10_28/UNIQUE_W_RETURN_LOW_ROOF_AND_CLOSED_LEFT_STRIP_POCKET_EXCLUSION_BEFORE_WEAK_ENDPOINT_REPAIR.md",
+      "sha256": "eff3bead6a2a1f4672b6818c7bde7b1f050b395f8e6c1926f218b563f13cf053"
+    },
+    {
+      "owner": "research/nine/ADOPTION_SHARED_UNIQUE_TIP_SHARP_ARC_AND_NEAR_HUB_ROOT_2026_10_28.md",
+      "line": 282,
+      "source": "research/nine/historical_2026_10_28/REVIEW_UNIQUE_W_CLOSED_LEFT_STRIP_POCKET_BEFORE_WEAK_ENDPOINT_REPAIR.md",
+      "sha256": "349882e9992f8ca009dfdcd60af417884aa3c95643a23c7fd9fdd689b4110ea8"
+    }
+  ],
+  "nonoperative_historical_endpoint_repair_bytes": [
+    {
+      "path": "research/nine/historical_2026_10_28/UNIQUE_W_RETURN_LOW_ROOF_AND_CLOSED_LEFT_STRIP_POCKET_EXCLUSION_BEFORE_WEAK_ENDPOINT_REPAIR.md",
+      "sha256": "eff3bead6a2a1f4672b6818c7bde7b1f050b395f8e6c1926f218b563f13cf053",
+      "bytes": 19306
+    },
+    {
+      "path": "research/nine/historical_2026_10_28/REVIEW_UNIQUE_W_CLOSED_LEFT_STRIP_POCKET_BEFORE_WEAK_ENDPOINT_REPAIR.md",
+      "sha256": "349882e9992f8ca009dfdcd60af417884aa3c95643a23c7fd9fdd689b4110ea8",
+      "bytes": 14918
+    }
+  ],
+  "current_source_repairs": [
+    {
+      "path": "research/nine/UNIQUE_W_RETURN_LOW_ROOF_AND_CLOSED_LEFT_STRIP_POCKET_EXCLUSION.md",
+      "before_sha256": "eff3bead6a2a1f4672b6818c7bde7b1f050b395f8e6c1926f218b563f13cf053",
+      "after_sha256": "cb55c18601447c3238ce3c275320c11f708cf4f39c12ec88c6c80ea9680aea02",
+      "change": "The intermediate lower comparison at X=2/3 is equality, so replace its first > by >=. The following expression remains strictly positive; complete theorem domain and conclusion unchanged. Current independent review discloses the old missed literal endpoint; exact old source and review preserved."
+    }
+  ],
+  "preadoption_dependency_simplification": {
+    "source": "research/nine/NEAR_HUB_UNIQUE_TIP_SHORT_INCOMING_COORDINATE_POCKET_CAPACITY_ONE.md",
+    "current_sha256": "39aab92a25208217ff2fb7439142634d7cceb78eedf4e235575a648833621cce",
+    "earlier_unadopted_draft_sha256": "479a9ea8e2ba8b1c90ba40f52973d2996ad1539677efa734a58ab466f44a812d",
+    "change": "Generic Sections1–8 unchanged. Full actual V-owned axis/side/torque mapping now printed; ordered-frame theorem suffices for gamma<=1, near X<23/16 for gamma>1. All-acute9/8 theorem no longer operative. Both final complete reviews check current bytes."
+  },
+  "metadata_files": [
+    {
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "sha256": "f4fc84e42d403a1a48330bc1f65f28b5db96e560712ec9467f76399bb9c632e9",
+      "bytes": 978240
+    },
+    {
+      "path": "research/nine/CYCLIC_CELL_LEDGER.md",
+      "sha256": "830f657eee5323de993e72e8675af6148631224e6ba3cebe70924a8457928978",
+      "bytes": 250372
+    },
+    {
+      "path": "research/nine/HANDOFF_PR11_2026_10_28_CURRENT.md",
+      "sha256": "f50c79bc8a23437b3e31841330115b494340871f3a5911e7e30b49ec71d7b04c",
+      "bytes": 163220
+    }
+  ],
+  "scope_limits": [
+    "The already published original D02.L01345 closure is retained and not counted again. The new shared-kernel original join is a complete alternative proof.",
+    "All nine actual units, true degrees, full original force/torque systems, selected normals, actual applications, full shared means, physical masks and zero individual coefficients remain.",
+    "The sharp arc theorem supplies no caller-specific occupied routing; all such routing remains explicit.",
+    "The local all-acute, stronger X0 bound, closed-left-strip and separate P-inside W theorem remain separately reviewed helpers, omitted from the final shared-kernel operative chain.",
+    "No new computational geometric exclusion certificate or additional historical coefficient-packet retirement.",
+    "No Lean/Lake, CI/workflow dispatch or pull request merge. All commits use [skip ci].",
+    "Remaining H4 boundary-return features, house/fan families, other chorded-hexagon and larger cells, global sharp inequality, complete equality classification and Lean integration remain open."
+  ]
+}

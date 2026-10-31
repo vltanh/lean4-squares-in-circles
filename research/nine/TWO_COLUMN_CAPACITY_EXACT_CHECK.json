@@ -1,0 +1,405 @@
+{
+  "status": "PASS",
+  "started_utc": "2026-10-23T20:51:40.943538+00:00",
+  "finished_utc": "2026-10-23T20:51:42.652318+00:00",
+  "python": "3.13.5",
+  "source_commit": "fa9677fe72331e31691bc479182e4f007176865f",
+  "source_sha256": "25204f040cd5a6f601cb37fa5cc68b3269ad500bbae623467dbd12b64a0c0323",
+  "source_git_blob_sha1": "9548f96ca5f2602deed6327d575fa621b4a3f86a",
+  "exact_assertions": 27752,
+  "assertions_by_category": {
+    "section_length_rational_margin": 1,
+    "section_angle_threshold": 1,
+    "length_threshold_identity": 100,
+    "small_angle_length_identity": 100,
+    "large_angle_length_identity": 100,
+    "upward_endpoint_identity": 66,
+    "upward_endpoint_strict": 66,
+    "downward_endpoint_factorization": 83,
+    "downward_endpoint_positive": 83,
+    "endpoint_lower_bounds": 83,
+    "steep_normal_bound": 17,
+    "steep_equality_floor_exclusion": 1,
+    "sample_section_exists": 6096,
+    "sample_interior_section": 6094,
+    "sample_strict_half_length": 6094,
+    "sample_strict_window": 6094,
+    "unique_north_exception": 2,
+    "near_axis_radial_cap": 1,
+    "negative_control_length_not_one": 1,
+    "larger_radius_negative_control": 1,
+    "larger_radius_window_failure": 1,
+    "unit_frames": 30,
+    "physical_containment": 30,
+    "corner_identity": 30,
+    "physical_SAT": 99,
+    "negative_control_free_square_not_one_quadrant": 2,
+    "exhaustive_finite_slot_regression": 2025,
+    "north_forces_lower_slots_blocked": 225,
+    "south_forces_upper_slots_blocked": 225,
+    "both_exceptions_force_central_block": 1
+  },
+  "cap_section_samples": {
+    "admissible_rational_squares": 6096,
+    "nonaxis_samples": 5610,
+    "minimum_sample_length": "40390781/59656800",
+    "minimum_right_endpoint": "-2/5",
+    "maximum_left_endpoint": "2/5",
+    "scope": "Finite rational regressions, not an angle-cover proof."
+  },
+  "physical_cage_witnesses": [
+    {
+      "name": "central_block_eight_square_equality",
+      "squares": 8,
+      "SAT_pairs": 28,
+      "max_squared_radius": "17/4",
+      "centers": [
+        [
+          "-3/2",
+          "0"
+        ],
+        [
+          "3/2",
+          "0"
+        ],
+        [
+          "-1/2",
+          "-1/2"
+        ],
+        [
+          "-1/2",
+          "1/2"
+        ],
+        [
+          "1/2",
+          "-1/2"
+        ],
+        [
+          "1/2",
+          "1/2"
+        ],
+        [
+          "0",
+          "3/2"
+        ],
+        [
+          "0",
+          "-3/2"
+        ]
+      ],
+      "axes": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ]
+      ]
+    },
+    {
+      "name": "both_columns_up_two_lower_squares",
+      "squares": 8,
+      "SAT_pairs": 28,
+      "max_squared_radius": "17/4",
+      "centers": [
+        [
+          "-3/2",
+          "0"
+        ],
+        [
+          "3/2",
+          "0"
+        ],
+        [
+          "-1/2",
+          "-1/5"
+        ],
+        [
+          "-1/2",
+          "4/5"
+        ],
+        [
+          "1/2",
+          "-1/5"
+        ],
+        [
+          "1/2",
+          "4/5"
+        ],
+        [
+          "-1/2",
+          "-6/5"
+        ],
+        [
+          "1/2",
+          "-6/5"
+        ]
+      ],
+      "axes": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ]
+      ]
+    },
+    {
+      "name": "mixed_columns_oblique_axis_crossing_free_pair",
+      "squares": 8,
+      "SAT_pairs": 28,
+      "max_squared_radius": "17/4",
+      "centers": [
+        [
+          "-3/2",
+          "0"
+        ],
+        [
+          "3/2",
+          "0"
+        ],
+        [
+          "-1/2",
+          "-1/5"
+        ],
+        [
+          "-1/2",
+          "4/5"
+        ],
+        [
+          "1/2",
+          "-4/5"
+        ],
+        [
+          "1/2",
+          "1/5"
+        ],
+        [
+          "13/25",
+          "5/4"
+        ],
+        [
+          "-13/25",
+          "-5/4"
+        ]
+      ],
+      "axes": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "399/401",
+          "40/401"
+        ],
+        [
+          "399/401",
+          "40/401"
+        ]
+      ]
+    },
+    {
+      "name": "six_body_with_positive_internal_hole",
+      "squares": 6,
+      "SAT_pairs": 15,
+      "max_squared_radius": "17/4",
+      "centers": [
+        [
+          "-3/2",
+          "0"
+        ],
+        [
+          "3/2",
+          "0"
+        ],
+        [
+          "-1/2",
+          "-3/5"
+        ],
+        [
+          "-1/2",
+          "3/5"
+        ],
+        [
+          "1/2",
+          "-3/5"
+        ],
+        [
+          "1/2",
+          "3/5"
+        ]
+      ],
+      "axes": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ]
+      ]
+    }
+  ],
+  "slot_regressions": {
+    "column_pairs_checked": 2025,
+    "distinct_slot_states": [
+      [
+        0,
+        0,
+        false,
+        false
+      ],
+      [
+        0,
+        0,
+        false,
+        true
+      ],
+      [
+        0,
+        0,
+        true,
+        false
+      ],
+      [
+        0,
+        0,
+        true,
+        true
+      ],
+      [
+        0,
+        1,
+        false,
+        false
+      ],
+      [
+        0,
+        1,
+        false,
+        true
+      ],
+      [
+        0,
+        2,
+        false,
+        true
+      ],
+      [
+        1,
+        0,
+        false,
+        false
+      ],
+      [
+        1,
+        0,
+        true,
+        false
+      ],
+      [
+        1,
+        1,
+        false,
+        false
+      ],
+      [
+        2,
+        0,
+        true,
+        false
+      ]
+    ],
+    "proof_basis": "General inequality h_i-l_i>=2, not these finite pairs."
+  },
+  "scope": "Exact finite checks only. No universal proof by sampling, independent full audit, Lean or CI."
+}

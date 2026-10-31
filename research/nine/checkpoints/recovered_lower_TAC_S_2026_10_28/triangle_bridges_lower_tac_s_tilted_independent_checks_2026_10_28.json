@@ -1,0 +1,124 @@
+{
+  "date": "2026-10-28",
+  "reviewer": "triangle_bridges",
+  "source": {
+    "file": "HOUSE_LOWER_TAC_S_TILTED_ROOT_COMPLETE_EXCLUSION.md",
+    "sha256": "ab0e50c96ee74b50afe2f094e4ae20f3467880c54a807dcc4b36d754b35e52da"
+  },
+  "literal_pins": [
+    {
+      "file": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "sha256": "7ba98ef149c1faff4ef4baeaf0b0305a38cf1153f883a3fe4bfa92087d33622d",
+      "bytes": 17790
+    },
+    {
+      "file": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "sha256": "6154eee2ab1114d063b0dbd1a2800c3522cbb1b46ec44a258c1c89d8ffb9e975",
+      "bytes": 14903
+    },
+    {
+      "file": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "sha256": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c",
+      "bytes": 18216
+    },
+    {
+      "file": "SMALLER_CENTRAL_DISKS_NINE_UNIT_CAPACITY.md",
+      "sha256": "b0b2858252d2a3bee205d40f97958da445ece0a3a4e05bd693340b2e94884257",
+      "bytes": 9239
+    },
+    {
+      "file": "CENTRAL_S_ROOT_THREE_BOUNDARY_PATH_CAPACITY.md",
+      "sha256": "91b34cfb58f69565d75e87ebc95fb92a6ed0226588292379cb380daae87efd3f",
+      "bytes": 9634
+    },
+    {
+      "file": "S_LEAF_ROOT_HIGH_COORDINATE_NORTH_SCREEN_EXCLUSION.md",
+      "sha256": "acec45db3253b2be2c6b68a85714313da572a8a858e9921431a745cafd889a83",
+      "bytes": 13147
+    },
+    {
+      "file": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a",
+      "bytes": 14122
+    },
+    {
+      "file": "ALIGNED_S_LEAF_ROOT_TWO_BOUNDARY_NEIGHBORS_EXCLUSION.md",
+      "sha256": "7c0e55bc75013f14d667a85635cd743361b325f7180f4710fd832c4f14ab9873",
+      "bytes": 12473
+    }
+  ],
+  "rational_checks": [
+    {
+      "name": "R>2 implies d>14/15",
+      "exact": "11/900",
+      "positive": true
+    },
+    {
+      "name": "radius cap implies d<61/60",
+      "exact": "31/57600",
+      "positive": true
+    },
+    {
+      "name": "sqrt2 upper99/70",
+      "exact": "1/4900",
+      "positive": true
+    },
+    {
+      "name": "closed low central disk V square",
+      "exact": "52/225",
+      "positive": true
+    },
+    {
+      "name": "central V>1/5 guard",
+      "exact": "43/225",
+      "positive": true
+    },
+    {
+      "name": "V<2/3 uniform reserve",
+      "exact": "61/1200",
+      "positive": true
+    },
+    {
+      "name": "Northwest norm square comparison",
+      "exact": "281/3600",
+      "positive": true
+    },
+    {
+      "name": "Southwest physical V screen",
+      "exact": "1/2800",
+      "positive": true
+    },
+    {
+      "name": "West mean Y<-1/2",
+      "exact": "37/700",
+      "positive": true
+    },
+    {
+      "name": "West transverse negative",
+      "exact": "4/15",
+      "positive": true
+    },
+    {
+      "name": "root side radial lower",
+      "exact": "1/210",
+      "positive": true
+    },
+    {
+      "name": "root side radial upper",
+      "exact": "989/3660",
+      "positive": true
+    },
+    {
+      "name": "whole unit diameter radial reserve",
+      "exact": "1/4",
+      "positive": true
+    },
+    {
+      "name": "Southeast port positive radial",
+      "exact": "46/225",
+      "positive": true
+    }
+  ],
+  "independent_polynomial_expansion": "(2d+77/20)^2-8R^2 =1929/400-(3/5)d-4d^2",
+  "status": "full independent source and original-scope acceptance"
+}

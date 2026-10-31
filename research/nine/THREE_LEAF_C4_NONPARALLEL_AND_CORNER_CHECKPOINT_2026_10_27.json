@@ -1,0 +1,116 @@
+{
+  "base_head": "8304072dbc91bcbe726d651c10403351f9566853",
+  "source_and_review_pins": [
+    {
+      "path": "research/nine/GENERAL_TWO_NEAR_UNITS_AT_ONE_ORIGIN_CORNER.md",
+      "sha256": "682b48f2f82b6ae35bfc7ef1a5efa900942fc115f2485048385c5b3403de151d",
+      "git_blob_sha": "b474afa1fe35c942ec3216675b0fd6896fb07054",
+      "size": 8403
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_LEAF_C4_NONPARALLEL_MIDDLE_FULL_SIX_BODY_2026_10_27.md",
+      "sha256": "afa047d70ce28ae3d4bd2e2c005c03a27bc2f76ee38a75bb24bd3f097177b8b6",
+      "git_blob_sha": "20ef12f5a7285338a1a84fe0e43f6cc19ae51534",
+      "size": 14430
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_LEAF_C4_NONPARALLEL_ROOT_2026_10_27.md",
+      "sha256": "6444ef2de423f1e0e1856e48341b78a466dea9365f2551c9718a3f4651748f01",
+      "git_blob_sha": "a997b0fdaf340abdbdb93a8954e770342f550f03",
+      "size": 8207
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_NEAR_UNITS_COMMON_ORIGIN_CORNER_FULL_SIX_BODY_2026_10_27.md",
+      "sha256": "da6771d6fad32e30668768970e33daa87d4583465284eca54e5372084207c56a",
+      "git_blob_sha": "72b689e5195fe27fae1ba17d2173563bc99418cf",
+      "size": 7283
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_NEAR_UNITS_COMMON_ORIGIN_CORNER_ROOT_2026_10_27.md",
+      "sha256": "744eeeb33306c71767bdff2ef413c0fa7c3219650c33a2c58af18cb637f7f27c",
+      "git_blob_sha": "7411838615bb87002072af714016cc57823b870b",
+      "size": 4380
+    },
+    {
+      "path": "research/nine/THREE_GENUINE_LEAF_C4_NONPARALLEL_MIDDLE_EXCLUSION.md",
+      "sha256": "6625c9272389a7576ac9516cb08d3e0db974af52695ad0d3aa89bc83dbe965de",
+      "git_blob_sha": "d9db0b247c8d69f26cbdbaeab40d6649a5254f07",
+      "size": 17083
+    }
+  ],
+  "exact_published_dependencies": [
+    {
+      "path": "research/nine/THREE_GENUINE_LEAF_C4_MIDDLE_ROOT_AND_LARGE_PORT_REDUCTION.md",
+      "sha256": "7d789ce70b2444aadf0f0a7f1354d7c92ff92085357a91f5eea42a6acbddb1ac",
+      "git_blob_sha": "dd190254a9633a52c7eb6d8942a9bf45c31d7478",
+      "remote_match": true
+    },
+    {
+      "path": "research/nine/S_LEAF_ROOT_FIXED_NONLEAF_CONTACT_SELECTION.md",
+      "sha256": "499e6d42632a811bcb7bef6596b8585c11fbb5f59f36551d02fd05c080387a43",
+      "git_blob_sha": "7853aa48be580d64f73212770c8e56e1debebb0b",
+      "remote_match": true
+    },
+    {
+      "path": "research/nine/GENERAL_FIXED_TIP_NORMAL_SELECTION.md",
+      "sha256": "ef8ae8a219af9fa15a70698e485bbb337925e5caf2cd64b6b5c2619d9c4bd194",
+      "git_blob_sha": "d5a81bbc189c22223fa202b02fd9cf1d954b37b7",
+      "remote_match": true
+    },
+    {
+      "path": "research/nine/ROOTED_C3_334_PRIVATE_ADJACENT_LEAF_TWO_LOAD_C4_EXCLUSION.md",
+      "sha256": "9036a1a8c2b1c7e0f713eef3e0dc3bacbecb42d588332120cf9e04c27ffa98c5",
+      "git_blob_sha": "a092f79a048c5fbb65d8b244bd483d8983de6ddd",
+      "remote_match": true
+    },
+    {
+      "path": "research/nine/GENERAL_SMALL_ORIGIN_CORNER_CONTACT_KERNELS.md",
+      "sha256": "b977be65217728c0363e8bab030bdb3d11b1b8ef75cc32d295a8337c4ea01477",
+      "git_blob_sha": "f39d8b401963621f22e1863cb183e113147bc0b6",
+      "remote_match": true
+    },
+    {
+      "path": "research/nine/ROOTED_SMALL_ORIGIN_CORNER_TWO_BOUNDARY_NEIGHBORS.md",
+      "sha256": "6ebda6299f692af6380ad36b98420aeb3155cf95a6b586e1df3848807d4cf467",
+      "git_blob_sha": "18a2ea4c52a3e83a35c222073e2ca2ad52e21742",
+      "remote_match": true
+    }
+  ],
+  "target_original_cell": "C1.4.b3",
+  "target_original_placement": 7,
+  "target_status": "OPEN",
+  "new_complete_domain_exit": "Entire nonparallel middle-B domain of the original three-genuine-leaf C4",
+  "remaining_full_c4_domains": [
+    "Parallel B with original opposite-sign weighted side means and full A3/C3/D2"
+  ],
+  "physical_corner_result": "Complete common-vertex near-unit lemma and conditional owner cover; same-side and mixed-owner interfaces remain open",
+  "complete_b3_placements": 22,
+  "b3_total_placements": 24,
+  "b3_open_placements": [
+    7,
+    9
+  ],
+  "c2_44_b2_remaining_full_load_families": [
+    "Ca11/Ca11",
+    "Ca11/Dht",
+    "Ca11/Dth",
+    "Dht/Dht",
+    "Dht/Dth",
+    "Dth/Dth"
+  ],
+  "coarse_closed": 32,
+  "coarse_open": 26,
+  "coarse_total": 58,
+  "fine_checked": 2319,
+  "fine_total": 2513,
+  "changed_fine_ids": [],
+  "unchanged_ledger_git_blob": "98fbd6ad6cc587123b1f8d32d0c1d09cf6dacc20",
+  "unchanged_roadmap_git_blob": "d9c51fd7e38d7903d90c27225af5a93481fe0a0b",
+  "same_ordered_original_fine_states": true,
+  "unrestricted_theorem": "OPEN",
+  "original_equality_classification": "OPEN",
+  "older_global_prerequisite_audit": "OPEN",
+  "lean_integration": "OPEN",
+  "lean_compilation_run": false,
+  "ci_run": false
+}

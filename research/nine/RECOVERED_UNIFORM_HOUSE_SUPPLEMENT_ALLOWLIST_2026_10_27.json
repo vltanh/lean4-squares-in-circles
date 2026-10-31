@@ -1,0 +1,128 @@
+{
+  "baseline_head": "cc143bb36c116590d1de7e7925ad04ca49ea675a",
+  "new_accepted_files": [
+    {
+      "path": "research/nine/D_LEAF_ROOT_REQUIRES_PHYSICALLY_CLEAR_NONLEAF_NEIGHBOR.md",
+      "source_path": "/workspace/scratch/a35548aa44c3/continuation_d579/research/nine/D_LEAF_ROOT_REQUIRES_PHYSICALLY_CLEAR_NONLEAF_NEIGHBOR.md",
+      "sha256": "72632128582b60411187d891c224bfd085b8483a70632775b5a4f7c9786fe08c",
+      "bytes": 14574,
+      "baseline_exists": false
+    },
+    {
+      "path": "research/nine/REVIEW_D_LEAF_CLEAR_POSITIVE_NEIGHBOR_AND_TWO_HOUSE_JOINS_INDEPENDENT_703_2026_10_28.md",
+      "source_path": "/workspace/scratch/a35548aa44c3/continuation_d579/research/nine/REVIEW_D_LEAF_CLEAR_POSITIVE_NEIGHBOR_AND_TWO_HOUSE_JOINS_INDEPENDENT_703_2026_10_28.md",
+      "sha256": "d321f41eaf9cc2981ecd83a1dd5cfb63f016e0182daaa877166039739f7bb79d",
+      "bytes": 16179,
+      "baseline_exists": false
+    },
+    {
+      "path": "research/nine/INDEPENDENT_D_LEAF_CLEAR_POSITIVE_NEIGHBOR_TWO_HOUSE_JOINS_EXACT_RECORD_703_2026_10_28.json",
+      "source_path": "/workspace/scratch/a35548aa44c3/continuation_d579/research/nine/INDEPENDENT_D_LEAF_CLEAR_POSITIVE_NEIGHBOR_TWO_HOUSE_JOINS_EXACT_RECORD_703_2026_10_28.json",
+      "sha256": "476edb0f9e21e2200dc01cc53c4911e561deff628dd3fe8a4a7cc6046abbddbb",
+      "bytes": 23388,
+      "baseline_exists": false
+    },
+    {
+      "path": "research/nine/UNLOADED_TRIANGLE_HUB_CHANNEL_BYPASS_EXCLUSION.md",
+      "source_path": "/workspace/scratch/a35548aa44c3/continuation_d579/research/nine/UNLOADED_TRIANGLE_HUB_CHANNEL_BYPASS_EXCLUSION.md",
+      "sha256": "824aa9fe810ca4049a2d6a583a3a15cb9934841c03fa0aee5a6cabbf9337956e",
+      "bytes": 20337,
+      "baseline_exists": false
+    },
+    {
+      "path": "research/nine/REVIEW_UNLOADED_TRIANGLE_HUB_CHANNEL_BYPASS_AND_HOUSE_JOINS_INDEPENDENT_703_2026_10_28.md",
+      "source_path": "/workspace/scratch/a35548aa44c3/continuation_d579/research/nine/REVIEW_UNLOADED_TRIANGLE_HUB_CHANNEL_BYPASS_AND_HOUSE_JOINS_INDEPENDENT_703_2026_10_28.md",
+      "sha256": "6c2340d0fc820f615aa72a98a592c6f4644a176b2a041aca5824cf5b8863b207",
+      "bytes": 14053,
+      "baseline_exists": false
+    },
+    {
+      "path": "research/nine/D_LEAF_THREE_FORCE_ROOT_CHANNEL_OTHER_NEIGHBOR_BYPASS_EXCLUSION.md",
+      "source_path": "/workspace/scratch/a35548aa44c3/continuation_d579/research/nine/D_LEAF_THREE_FORCE_ROOT_CHANNEL_OTHER_NEIGHBOR_BYPASS_EXCLUSION.md",
+      "sha256": "d897ddb82c2f34423f5a2f9312ec149134aec0b5b449ae77762c35388b405274",
+      "bytes": 12488,
+      "baseline_exists": false
+    },
+    {
+      "path": "research/nine/REVIEW_D_LEAF_D3_CHANNEL_BYPASS_COMPLETE_INDEPENDENT_703_2026_10_28.md",
+      "source_path": "/workspace/scratch/a35548aa44c3/continuation_d579/research/nine/REVIEW_D_LEAF_D3_CHANNEL_BYPASS_COMPLETE_INDEPENDENT_703_2026_10_28.md",
+      "sha256": "278a09df9f3418c35f215607675f3d40ac67e719e3246802bac23ed73974019a",
+      "bytes": 11500,
+      "baseline_exists": false
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_UNIFORM_HOUSE_EXCLUSIONS_CURRENT_2026_10_28.md",
+      "source_path": "/workspace/scratch/7d553350ce2a/six_body/REVIEW_TWO_UNIFORM_HOUSE_EXCLUSIONS_CURRENT_2026_10_28.md",
+      "sha256": "ea4afec730dd56842823dd3370dbbf969d44ac77832460a1ed920775aa59510e",
+      "bytes": 6335,
+      "baseline_exists": false
+    }
+  ],
+  "direct_dependency_reconciliation": [
+    {
+      "path": "research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "baseline_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "exact_match": true
+    },
+    {
+      "path": "research/nine/D_LEAF_SHALLOW_SIDE_BOUNDARY_EXCLUSION.md",
+      "sha256": "79ddc3bc94613ba34b30ea3b1e4176a14d644b08887020cbc38f9ef9d785d8a8",
+      "baseline_sha256": "79ddc3bc94613ba34b30ea3b1e4176a14d644b08887020cbc38f9ef9d785d8a8",
+      "exact_match": true
+    },
+    {
+      "path": "research/nine/GENERAL_SIDE_CHANNEL_CAP_INNER_ARC.md",
+      "sha256": "f76d76ef2feccc80098fb6d10d6316af4e393d3ae34d4953846dd27b80c137cb",
+      "baseline_sha256": "f76d76ef2feccc80098fb6d10d6316af4e393d3ae34d4953846dd27b80c137cb",
+      "exact_match": true
+    },
+    {
+      "path": "research/nine/NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "sha256": "46220c8a3eb3f539c682bf6a6fa932edf003e37484e0f6004d321e7cb14d7957",
+      "baseline_sha256": "46220c8a3eb3f539c682bf6a6fa932edf003e37484e0f6004d321e7cb14d7957",
+      "exact_match": true
+    },
+    {
+      "path": "research/nine/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "baseline_sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "exact_match": true
+    },
+    {
+      "path": "research/nine/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "baseline_sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "exact_match": true
+    },
+    {
+      "path": "research/nine/NO_UNLOADED_DIAMOND_HUB.md",
+      "sha256": "82b546953a927a09d8ccabdefd8ffc10eac3e4efc5d8a122840f1343f80a7e2d",
+      "baseline_sha256": "82b546953a927a09d8ccabdefd8ffc10eac3e4efc5d8a122840f1343f80a7e2d",
+      "exact_match": true
+    }
+  ],
+  "new_fine_changes": [
+    "M6.B5L.HOUSE.ROOF.LAB.S",
+    "M6.B5L.HOUSE.LOWER.LTAC.D"
+  ],
+  "duplicate_fine_consequences": [
+    "M6.B5L.HOUSE.ROOF.LAB.D",
+    "M6.B5L.HOUSE.HUB.LTB.S",
+    "M6.B5L.HOUSE.HUB.LTB.D",
+    "M6.B5L.HOUSE.HUB.LTDB.D",
+    "M6.B5L.HOUSE.LOWER.LTD.D"
+  ],
+  "exact_cap_arithmetic": {
+    "radical_lower_margin": "2/225",
+    "radius_upper_squared": "9/4096",
+    "sqrt_two_upper_squared": "1/4900",
+    "cap_distance_upper": "6691/6720",
+    "cap_margin": "29/6720"
+  },
+  "mathematical_review": "REVIEW_TWO_UNIFORM_HOUSE_EXCLUSIONS_CURRENT_2026_10_28.md",
+  "fine_lines": {
+    "M6.B5L.HOUSE.ROOF.LAB.S": "- [x] **M6.B5L.HOUSE.ROOF.LAB.S** CLOSED by UNLOADED_TRIANGLE_HUB_CHANNEL_BYPASS_EXCLUSION.md, with full prior independent review REVIEW_UNLOADED_TRIANGLE_HUB_CHANNEL_BYPASS_AND_HOUSE_JOINS_INDEPENDENT_703_2026_10_28.md and fresh current full review REVIEW_TWO_UNIFORM_HOUSE_EXCLUSIONS_CURRENT_2026_10_28.md. The self-contained radius-free true unloaded D3 triangle/channel theorem uses the real D-C-B channel and actual A bypass, retains the full genuine T3 root and all A3/B2/C2/L1 forces, original side means, physical masks, zero weights, both radius endpoints and all three arbitrary completion units. The entire original retained S-family contract and its reflected DC image are covered.",
+    "M6.B5L.HOUSE.LOWER.LTAC.D": "- [x] **M6.B5L.HOUSE.LOWER.LTAC.D** CLOSED by D_LEAF_ROOT_REQUIRES_PHYSICALLY_CLEAR_NONLEAF_NEIGHBOR.md, with full prior independent review REVIEW_D_LEAF_CLEAR_POSITIVE_NEIGHBOR_AND_TWO_HOUSE_JOINS_INDEPENDENT_703_2026_10_28.md and fresh current full review REVIEW_TWO_UNIFORM_HOUSE_EXCLUSIONS_CURRENT_2026_10_28.md. The actual genuine D root B has positive neighbors A,C,L and both A,C are physically boundary. The complete arbitrary-degree D-root theorem excludes this throughout the original radius window with its explicit same-nine R>2 prerequisite retained. Every D-root slider, original mean, mask, zero weight, actual A3/D3/T2/C2 star and all three arbitrary completion units remain; the S companion stays separate."
+  }
+}

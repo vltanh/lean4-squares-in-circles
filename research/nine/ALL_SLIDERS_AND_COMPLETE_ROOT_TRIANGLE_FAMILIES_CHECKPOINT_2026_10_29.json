@@ -1,0 +1,142 @@
+{
+  "status": "accepted complete root-triangle families; global theorem open",
+  "parent_commit": "c63146133b78a3ae84fb71a4b0e959d8bdcad41a",
+  "parent_tree": "e5d8f056e5d509eb9c81961e2785e4d9a5690a0e",
+  "sources_and_reviews": {
+    "TWO_SMALL_NORTH_SOUTH_ROOTS_ALL_MIDDLE_SLIDERS_FORCE_FREE_NINE_UNIT_EXCLUSION_2026_10_29.md": {
+      "sha256": "6b041dd263997d2301b4b4eb7763025eab5d2ba7601d1a4e80257beea23bd1fa",
+      "git_blob": "6a7221aee1b296e44c9b4c73eeebaf64f8a34144"
+    },
+    "REVIEW_ALL_MIDDLE_SLIDERS_SMALL_NORTH_SOUTH_CAPACITY_ROOT_TRIANGLES_2026_10_29.md": {
+      "sha256": "07a81676f231f6911b074653e7d84f844761996b55b1dc52682de3000b422dff",
+      "git_blob": "51612d0d4668073db83d69c8a635cae73a08cb90"
+    },
+    "THREE_GENUINE_ROOT_TRIANGLE_PRIVATE_RETURNS_COMPLETE_HOUSE_ADT_FAN_H12_H34_ASSEMBLY_2026_10_29.md": {
+      "sha256": "977605d252565d8a023e6207cebf80bb461cfe8434ce0d41457e40eed057bdb5",
+      "git_blob": "1c1a546df37781c97b8c4a4aa2483d6e67014406"
+    },
+    "REVIEW_THREE_GENUINE_ROOT_TRIANGLE_COMPLETE_HOUSE_ADT_FAN_ASSEMBLY_ROOFS_2026_10_29.md": {
+      "sha256": "51acf859eb6d824f5dd751cf423608504820df44b6f7ed257f643ff374e55355",
+      "git_blob": "77235b23a608d239346bf01100f2881af1023121"
+    },
+    "THREE_GENUINE_ROOT_TRIANGLE_ALL_SHORT_PARALLEL_PATHS_AND_CHORDED_C6_COMPLETE_EXCLUSION_2026_10_29.md": {
+      "sha256": "842121bc2cc1443c57821c3d7579a471bd562c8dfbb06b717ae4177374a3237b",
+      "git_blob": "398e329ea954cd34240af0a4045dccaa69bba2ff"
+    },
+    "REVIEW_THREE_ROOT_SHORT_PATHS_CHORDED_C6_COMPLETE_ROOFS_2026_10_29.md": {
+      "sha256": "dbd280778605e64372fb561a06d417888d43f1075103d904eab745016205d37f",
+      "git_blob": "b77810d15f935154779111bc628dc7ac63eca941"
+    },
+    "REVIEW_ALL_SLIDERS_AND_ROOT_TRIANGLE_FAMILY_JOINS_COMPLETE_ROOT_2026_10_29.md": {
+      "sha256": "da3d5044b5e47c6ad0902f890b156b49504c757ab73f90207f1863c5b28ad69c",
+      "git_blob": "db739c663f3e92b7dc63d6eb4e53d1ab3191c336"
+    },
+    "ADOPTION_ALL_SLIDERS_AND_COMPLETE_ROOT_TRIANGLE_FAMILIES_2026_10_29.md": {
+      "sha256": "0addb95d18c7de879b150cbb702d962f4c5f4bf8c38b83a5b890bbf216946e74",
+      "git_blob": "6e3a898c589892f820ab751d83459575112fe837"
+    }
+  },
+  "fine_count": 2513,
+  "fine_checked": 2373,
+  "coarse_count": 58,
+  "coarse_closed": 36,
+  "fine_flag_sha256": "feda561e85056c0bae48f2f33b8df7814c44d983ca4f1cc3e422391525106f1f",
+  "coarse_flag_sha256": "99e0b788a73379a719f331d43581ef02c76ea2e8622a8c8f43bbf21e9ea241bd",
+  "metadata": {
+    "CYCLIC_CELL_LEDGER.md": {
+      "before_sha256": "a1f23b2c72c95a28bc336609cf4843e975d91898b225e51c9c93c91400ab2ebf",
+      "after_sha256": "b04d9446c90ea2879829761c8726bb53cf65abbbf377f7c281625f6db69b30ea",
+      "git_blob": "cf7c829e054f7ff7e07c899708bc58718083c83d",
+      "header_reversible": true,
+      "row_replacements": [
+        {
+          "before": "| C1.5.b3 | 5 | 3 | 8 | 1 | [ ] OPEN \u2014 Same-root arm/leaf remains excluded for simple C5 and universal-hub fans. The entire original simple C5 with three distinct genuine leaf roots is now excluded by SIMPLE_C5_THREE_DISTINCT_GENUINE_LEAVES_COMPLETE_ORIGINAL_ASSEMBLY_2026_10_29.md and its full independent original-domain review: both root spacings, both middle-force branches, all initial leaf/load masks, complete means and all nine actual units. The new complete arbitrary-degree physical capacity theorem THREE_REAL_S_LEAF_ROOTS_WITH_TWO_EPSILON_VERTICES_NINE_UNIT_EXCLUSION_2026_10_29.md excludes every feature with an actual vertex within 2epsilon at EACH of the three real-S roots, retaining all nine actual units and weak vertex endpoints. Its complete companion component theorem gives the root-measure and actual-gap budget for every three-near-unit feature. Some root with no vertex in D_(2epsilon) remains possible; two vertices within 4epsilon are not the same premise. The five remaining three-distinct-root graph/root families are house ADT/ADB/ABC and fan H12/H23; distinguished roots in house ADB and fan H23 retain their proven balanced alignment at their true higher degrees. Other same-root block shapes and attached forests remain.  The new complete theorem THREE_GENUINE_ROOT_TRIANGLE_NONPARALLEL_MIDDLE_PRIVATE_RETURN_EXCLUSION_2026_10_29.md (SHA256 232d6afda9cd9a635447039cc1b7b434c8e6b0a2bb59fa0aff90f85106c87346) excludes every nonparallel true3 middle-root triangle whose two outer roots each have all external neighbors physically boundary, at arbitrary degrees, or exactly one external true2 neighbor. Its new full true4 moment forces that true2 neighbor loaded; actual-point and real-leaf center caps then exclude every necessary negative-horizontal force. Its parallel/both-outer-owned companion needs no outer-degree restriction. The complete literal house ADT and fan H12 transfers preserve A4/D4 and H5/2_4 respectively, every private force and all nine squares. The full source and complete original-feature transfers have a separate independent review. Parallel with at least one tilted outer root remains, so neither whole family nor C1.5.b3 is closed by this source. |",
+          "after": "| C1.5.b3 | 5 | 3 | 8 | 1 | [ ] OPEN \u2014 Same-root arm/leaf remains excluded for simple C5 and universal-hub fans. Both original simple-C5 three-distinct-genuine-leaf families remain closed. The arbitrary-degree three-2epsilon-vertex capacity and three-near component budget retain their exact previously accepted scopes. The complete uniform theorem THREE_GENUINE_ROOT_TRIANGLE_PRIVATE_RETURNS_COMPLETE_HOUSE_ADT_FAN_H12_H34_ASSEMBLY_2026_10_29.md (SHA256 977605d252565d8a023e6207cebf80bb461cfe8434ce0d41457e40eed057bdb5) now excludes the whole house ADT and fan H12/H34 three-genuine-root families, retaining A4/D4/T3/B2/C2 and H5/1_3/2_4/3_3/4_2 respectively. Its exhaustive nonparallel, parallel/both-owned, large-tilt and all-middle-slider small-chart join has a separate complete independent review and root reconstruction. All actual forces, original means, physical masks and all nine squares remain. The remaining five-body three-distinct-genuine-root families are house ADB, house ABC and fan H23. Other attachment forests remain; C1.5.b3 stays OPEN. |"
+        },
+        {
+          "before": "| C1.6.b3 | 6 | 3 | 9 | 0 | [ ] OPEN \u2014 Same-root arm/leaf excluded for simple C6 and universal-hub fans. For three genuine direct leaves, private partition 1+1+1 and every repeated root-pair class are excluded. Partition 2+1 has distinct pairs; its both-double-endpoint type is excluded and one triangle type has a physically clear private3 and missing root edge. Type III B is aligned with balanced margins at its full actual degree; in literal C6(3,2,1), the B-adjacent private Q is physically clear and P loaded. The three remaining attachment types, connected private partition 3, and other same-root block shapes remain. |",
+          "after": "| C1.6.b3 | 6 | 3 | 9 | 0 | [ ] OPEN \u2014 Same-root arm/leaf excluded for simple C6 and universal-hub fans. For three genuine direct leaves, private partition 1+1+1 and every repeated root-pair class are excluded. Partition 2+1 has distinct pairs; its both-double-endpoint type is excluded and one triangle type has a physically clear private3 and missing root edge. Type III B is aligned with balanced margins at its full actual degree; in literal C6(3,2,1), the B-adjacent private Q is physically clear and P loaded. The three remaining attachment types, connected private partition 3, and other same-root block shapes remain. The complete short-path corollary THREE_GENUINE_ROOT_TRIANGLE_ALL_SHORT_PARALLEL_PATHS_AND_CHORDED_C6_COMPLETE_EXCLUSION_2026_10_29.md (SHA256 842121bc2cc1443c57821c3d7579a471bd562c8dfbb06b717ae4177374a3237b) excludes the entire rim 01,12,23,34,45,50 plus chord02 feature with three genuine leaves at 0,1,2, throughout every private load and original mean. Its actual full block degrees are 4,3,4,2,2,2, and all nine physical units belong to the component. This is distinct from the six-body D02 load-mask problem. Other six-body root assignments, private networks and attachment forests remain; C1.6.b3 stays OPEN. |"
+        }
+      ]
+    },
+    "DEEP_GATED_ROADMAP.md": {
+      "before_sha256": "bd0d89a14d622717b79fea999c0a17052da74bf9e6ce12ed0754e9350a883428",
+      "after_sha256": "7a745d9a2eb96b2256908a9f7c4ca2557070da9791bc0cfa954ccabe0b9c0931",
+      "git_blob": "d58c9086962e732d2aa23ce72495bc734e9b7bb5",
+      "header_reversible": true,
+      "row_replacements": [
+        {
+          "before": "- [ ] **G3.M8.ALL** Seven original eight-body coarse cells remain: C1.5.b3, C1.6.b2, C1.7.b1, C1.8.b0, C2.35.b1, C2.36.b0 and C2.45.b0. All actual forces, physical masks, original means and the one completion square remain. SIMPLE_C5_THREE_DISTINCT_GENUINE_LEAVES_COMPLETE_ORIGINAL_ASSEMBLY_2026_10_29.md (SHA256 6be498a451a41e3ab0ca585b6e1032ddbd2af02ad48c5aec8eb7330e0d18ff13) now excludes the entire original simple-C5/three-distinct-genuine-leaf feature: both root spacings, all initial D/S assignments, low/critical/high radii, both closed radius endpoints and both complete middle-force branches. The full parallel branch uses a distinct-actual-center cap and the new one-fixed-external strip without replacing its shared mean. The complete sources and original assembly have separate full independent reviews. The new complete physical theorem THREE_REAL_S_LEAF_ROOTS_WITH_TWO_EPSILON_VERTICES_NINE_UNIT_EXCLUSION_2026_10_29.md (SHA256 3eca9443f10f1bb6b3ccb46f5fad25f64951fa0dd8c1fe87e0aed62d2de8931e) excludes every three-real-S-root feature in which EACH root has an actual vertex of norm at most 2epsilon, at arbitrary true root degrees and with all nine actual units. Its complete full-window export retains the low/critical/D exits; a surviving high feature has some root with no vertex in D_(2epsilon). The companion three-near completion theorem gives an exact actual-circle component budget for the other three squares beyond these six roots/leaves, without asserting connectedness of their full intersections. The old two-4epsilon-vertex result does not supply the three-2epsilon premise. In the three-distinct-root five-body part, house ADT/ADB/ABC and fan H12/H23 remain; other attached forests also remain. Higher-degree house/fan roots are not assigned true3 equations. C1.5.b3 stays OPEN. The new complete theorem THREE_GENUINE_ROOT_TRIANGLE_NONPARALLEL_MIDDLE_PRIVATE_RETURN_EXCLUSION_2026_10_29.md (SHA256 232d6afda9cd9a635447039cc1b7b434c8e6b0a2bb59fa0aff90f85106c87346) excludes every nonparallel true3 middle-root triangle whose two outer roots each have all external neighbors physically boundary, at arbitrary degrees, or exactly one external true2 neighbor. Its new full true4 moment forces that true2 neighbor loaded; actual-point and real-leaf center caps then exclude every necessary negative-horizontal force. Its parallel/both-outer-owned companion needs no outer-degree restriction. The complete literal house ADT and fan H12 transfers preserve A4/D4 and H5/2_4 respectively, every private force and all nine squares. The full source and complete original-feature transfers have a separate independent review. Parallel with at least one tilted outer root remains, so neither whole family nor C1.5.b3 is closed by this source.",
+          "after": "- [ ] **G3.M8.ALL** Seven original eight-body coarse cells remain: C1.5.b3, C1.6.b2, C1.7.b1, C1.8.b0, C2.35.b1, C2.36.b0 and C2.45.b0. All actual forces, physical masks, original means and the one completion square remain. Both complete simple-C5 three-distinct-genuine-leaf families and all prior physical capacity reductions remain at their accepted scopes. The complete uniform theorem THREE_GENUINE_ROOT_TRIANGLE_PRIVATE_RETURNS_COMPLETE_HOUSE_ADT_FAN_H12_H34_ASSEMBLY_2026_10_29.md (SHA256 977605d252565d8a023e6207cebf80bb461cfe8434ce0d41457e40eed057bdb5) now excludes the whole house ADT and fan H12/H34 three-genuine-root families, retaining A4/D4/T3/B2/C2 and H5/1_3/2_4/3_3/4_2 respectively. Its exhaustive nonparallel, parallel/both-owned, large-tilt and all-middle-slider small-chart join has a separate complete independent review and root reconstruction. All actual forces, original means, physical masks and all nine squares remain. The remaining five-body three-distinct-genuine-root families are house ADB, house ABC and fan H23. Other attachment forests remain; C1.5.b3 stays OPEN."
+        },
+        {
+          "before": "- [ ] **G3.M9.ALL** Ten original nine-body coarse cells remain: C1.6.b3, C1.7.b2, C1.8.b1, C1.9.b0, C2.35.b2, C2.36.b1, C2.37.b0, C2.45.b1, C2.46.b0 and C2.55.b0. C1.5.b4 is now closed by the complete eight-shape original forest assembly, all root maps and three new arbitrary-block attachment exits, with a separate full original-domain review. C2.44.b2 and all other previous closures remain closed. Every inherited canonical-pose and selected-certificate premise remains. The new complete adjacent-root/unloaded-continuation theorem forces both private endpoints loaded in the actual simple-six-cycle consecutive-root caller A-B-C-Q-U-P-A, and in connected private networks only where both roots are truly degree3 and the actual endpoint truly degree2. Middle U may remain unloaded or loaded; optional chords, higher degrees and 2+1 private Types I--III remain. The complete arbitrary-degree physical theorem THREE_REAL_S_LEAF_ROOTS_WITH_TWO_EPSILON_VERTICES_NINE_UNIT_EXCLUSION_2026_10_29.md (SHA256 3eca9443f10f1bb6b3ccb46f5fad25f64951fa0dd8c1fe87e0aed62d2de8931e) now excludes every applicable three-real-S-root feature with an actual vertex within 2epsilon at EACH root. It retains all nine actual units, including the three other graph units beyond those roots and leaves. Its companion three-near theorem gives the exact full root-measure and actual-gap routing budget even for disconnected completion intersections. A root with no vertex in D_(2epsilon) remains possible; two vertices within 4epsilon do not remove that alternative. C1.6.b3 and all ten original coarse parents stay OPEN. The new complete theorem THREE_GENUINE_ROOT_TRIANGLE_NONPARALLEL_MIDDLE_PRIVATE_RETURN_EXCLUSION_2026_10_29.md (SHA256 232d6afda9cd9a635447039cc1b7b434c8e6b0a2bb59fa0aff90f85106c87346) excludes every nonparallel true3 middle-root triangle whose two outer roots each have all external neighbors physically boundary, at arbitrary degrees, or exactly one external true2 neighbor. Its new full true4 moment forces that true2 neighbor loaded; actual-point and real-leaf center caps then exclude every necessary negative-horizontal force. Its parallel/both-outer-owned companion needs no outer-degree restriction. The complete literal house ADT and fan H12 transfers preserve A4/D4 and H5/2_4 respectively, every private force and all nine squares. The full source and complete original-feature transfers have a separate independent review. Parallel with at least one tilted outer root remains, so neither whole family nor C1.5.b3 is closed by this source.",
+          "after": "- [ ] **G3.M9.ALL** Ten original nine-body coarse cells remain: C1.6.b3, C1.7.b2, C1.8.b1, C1.9.b0, C2.35.b2, C2.36.b1, C2.37.b0, C2.45.b1, C2.46.b0 and C2.55.b0. C1.5.b4 is now closed by the complete eight-shape original forest assembly, all root maps and three new arbitrary-block attachment exits, with a separate full original-domain review. C2.44.b2 and all other previous closures remain closed. Every inherited canonical-pose and selected-certificate premise remains. The new complete adjacent-root/unloaded-continuation theorem forces both private endpoints loaded in the actual simple-six-cycle consecutive-root caller A-B-C-Q-U-P-A, and in connected private networks only where both roots are truly degree3 and the actual endpoint truly degree2. Middle U may remain unloaded or loaded; optional chords, higher degrees and 2+1 private Types I--III remain. The complete arbitrary-degree physical theorem THREE_REAL_S_LEAF_ROOTS_WITH_TWO_EPSILON_VERTICES_NINE_UNIT_EXCLUSION_2026_10_29.md (SHA256 3eca9443f10f1bb6b3ccb46f5fad25f64951fa0dd8c1fe87e0aed62d2de8931e) now excludes every applicable three-real-S-root feature with an actual vertex within 2epsilon at EACH root. It retains all nine actual units, including the three other graph units beyond those roots and leaves. Its companion three-near theorem gives the exact full root-measure and actual-gap routing budget even for disconnected completion intersections. A root with no vertex in D_(2epsilon) remains possible; two vertices within 4epsilon do not remove that alternative. C1.6.b3 and all ten original coarse parents stay OPEN. The complete short-path corollary THREE_GENUINE_ROOT_TRIANGLE_ALL_SHORT_PARALLEL_PATHS_AND_CHORDED_C6_COMPLETE_EXCLUSION_2026_10_29.md (SHA256 842121bc2cc1443c57821c3d7579a471bd562c8dfbb06b717ae4177374a3237b) excludes the entire rim 01,12,23,34,45,50 plus chord02 feature with three genuine leaves at 0,1,2, throughout every private load and original mean. Its actual full block degrees are 4,3,4,2,2,2, and all nine physical units belong to the component. This is distinct from the six-body D02 load-mask problem. Other six-body root assignments, private networks and attachment forests remain; C1.6.b3 stays OPEN."
+        }
+      ]
+    },
+    "README.md": {
+      "before_sha256": "9869df1c433bfd5bb46250c89954af6cbe65231f604b36dd42001dd8c4721d97",
+      "after_sha256": "f0f24101031a9ff1568f1910d2436389b1cc929b076976c67d780b890a6362d3",
+      "git_blob": "e1f89a8556eeaf17861a9048d76cb983047ed84a",
+      "header_reversible": true,
+      "row_replacements": []
+    },
+    "ROADMAP.md": {
+      "before_sha256": "6522a13772759a7eb4ada3f2dbe798a12b6286cf952e4d97cbd18869c552dd7e",
+      "after_sha256": "12c296606efcf5d596060b937e0745f44f04feed4db1661dc7105a386734f17e",
+      "git_blob": "85342a2a69b5c6bb1134884cdf9d2567b41f80ef",
+      "header_reversible": true,
+      "row_replacements": []
+    },
+    "HANDOFF_PR11_2026_10_28_CURRENT.md": {
+      "before_sha256": "ed51d11da86c5f2fc2f0e5b0e5b94a73db9a0295272d79518cb097ac2bab68f5",
+      "after_sha256": "5cfbb4484e9b67b6bd958ddaca98ed2e01baea7dd9f6bd85447a0be0c118fca6",
+      "git_blob": "e2ab64523c483e67d73649fd8ebc61ba1959088e",
+      "header_reversible": true,
+      "row_replacements": []
+    }
+  },
+  "exact_rational_corroboration": {
+    "root_arc_derivative": "5951/15360",
+    "root_cosine_radical_1": "44390",
+    "root_cosine_radical_2": "8738",
+    "western_capacity": "1403/248850",
+    "small_gap_capacity": "13/175",
+    "late_sine_rational": "49/16200",
+    "late_sine_square": "51/10000",
+    "cos_alpha": "724021030871/2149908480000000",
+    "cos_root": "325519225255079/524880000000000000",
+    "cos_phi": "2288951/5120000000"
+  },
+  "publication_allowlist": [
+    "research/nine/TWO_SMALL_NORTH_SOUTH_ROOTS_ALL_MIDDLE_SLIDERS_FORCE_FREE_NINE_UNIT_EXCLUSION_2026_10_29.md",
+    "research/nine/REVIEW_ALL_MIDDLE_SLIDERS_SMALL_NORTH_SOUTH_CAPACITY_ROOT_TRIANGLES_2026_10_29.md",
+    "research/nine/THREE_GENUINE_ROOT_TRIANGLE_PRIVATE_RETURNS_COMPLETE_HOUSE_ADT_FAN_H12_H34_ASSEMBLY_2026_10_29.md",
+    "research/nine/REVIEW_THREE_GENUINE_ROOT_TRIANGLE_COMPLETE_HOUSE_ADT_FAN_ASSEMBLY_ROOFS_2026_10_29.md",
+    "research/nine/THREE_GENUINE_ROOT_TRIANGLE_ALL_SHORT_PARALLEL_PATHS_AND_CHORDED_C6_COMPLETE_EXCLUSION_2026_10_29.md",
+    "research/nine/REVIEW_THREE_ROOT_SHORT_PATHS_CHORDED_C6_COMPLETE_ROOFS_2026_10_29.md",
+    "research/nine/REVIEW_ALL_SLIDERS_AND_ROOT_TRIANGLE_FAMILY_JOINS_COMPLETE_ROOT_2026_10_29.md",
+    "research/nine/ADOPTION_ALL_SLIDERS_AND_COMPLETE_ROOT_TRIANGLE_FAMILIES_2026_10_29.md",
+    "research/nine/ALL_SLIDERS_AND_COMPLETE_ROOT_TRIANGLE_FAMILIES_CHECKPOINT_2026_10_29.json",
+    "research/nine/CYCLIC_CELL_LEDGER.md",
+    "research/nine/DEEP_GATED_ROADMAP.md",
+    "research/nine/README.md",
+    "research/nine/ROADMAP.md",
+    "research/nine/HANDOFF_PR11_2026_10_28_CURRENT.md"
+  ],
+  "closed_features": [
+    "complete small North/South charts at all middle sliders",
+    "whole house ADT three-genuine-root family",
+    "whole fan H12/H34 three-genuine-root orbit",
+    "all private paths of one through three internal true2 units between the two outer roots",
+    "chorded C6 with real leaves at the three consecutive root-triangle vertices"
+  ],
+  "limits": [
+    "No original flag changes",
+    "House ADB, house ABC, fan H23 and other attachment forests remain",
+    "No physical-two or unique-corner roof claim in this checkpoint",
+    "Prior common selection remains conditional",
+    "No global theorem/equality/selector audit or Lean closure"
+  ]
+}

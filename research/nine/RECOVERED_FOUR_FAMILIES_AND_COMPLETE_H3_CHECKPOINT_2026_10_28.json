@@ -1,0 +1,828 @@
+{
+  "date_local": "2026-10-27",
+  "timezone": "America/Chicago",
+  "date_utc": "2026-10-28",
+  "read_base_head": "7b968eef90c218a51e537877820558594c2fc4ae",
+  "status": "accepted four whole original family recoveries and the complete original H3 graph assembly",
+  "coarse_total": 58,
+  "coarse_closed": 34,
+  "coarse_open": 24,
+  "fine_total": 2513,
+  "fine_checked": 2346,
+  "fine_open": 167,
+  "coarse_changes": [],
+  "fine_changes": [
+    {
+      "id": "M6.B5L.HOUSE.LOWER.LTD.S",
+      "from": " ",
+      "to": "x",
+      "original_line": "- [ ] **M6.B5L.HOUSE.LOWER.LTD.S** Entire S-leaf type at house lower B with block loadsTD; close its full actual physical domain and three-extra completion under M6.B5L.RETAINED_CONTRACT.",
+      "accepted_line": "- [x] **M6.B5L.HOUSE.LOWER.LTD.S** CLOSED by HOUSE_LOWER_TD_S_COMPLETE_EXCLUSION.md, with the complete parallel and oblique bypass proofs. Actual A3/B3/C2/D3/T2/L1, full B3/A3 equations, all genuine S frames, both physical D masks, every original side mean, critical radius and three completing units remain. Full direct and original-family reviews are recovered at exact pins; current root and independent recovery acceptance recorded."
+    },
+    {
+      "id": "M6.B6.PENTAGON.H3.L024",
+      "from": " ",
+      "to": "x",
+      "original_line": "- [ ] **M6.B6.PENTAGON.H3.L024** Entire loaded set{0,2,4} for spokes0,1,3 and no chord; close its full physical domain under M6.B6.PENTAGON.LOAD_CONTRACT.",
+      "accepted_line": "- [x] **M6.B6.PENTAGON.H3.L024** CLOSED by INNER_PENTAGON_THREE_SPOKE_THREE_LOAD_024_COMPLETE_EXCLUSION.md, including reflected124. Both complete central owners and both roof features retain unloaded A3/D3 and the actual loaded T3/U2 systems. The H-owned C2 return theorem allows its actual unloaded B3. Every original mask, mean, zero weight, selected normal and completion unit remains; full source and whole-family reviews accepted."
+    },
+    {
+      "id": "M6.B6.PENTAGON.H3.L1234",
+      "from": " ",
+      "to": "x",
+      "original_line": "- [ ] **M6.B6.PENTAGON.H3.L1234** Entire loaded set{1,2,3,4} for spokes0,1,3 and no chord; close its full physical domain under M6.B6.PENTAGON.LOAD_CONTRACT.",
+      "accepted_line": "- [x] **M6.B6.PENTAGON.H3.L1234** CLOSED by INNER_PENTAGON_THREE_SPOKE_FOUR_LOAD_1234_COMPLETE_EXCLUSION.md, including reflected0234. The full common hub cover, both free roofs and both equal-roof owner rows retain original A3/D3/T3 and loaded U2, plus the appropriate B3/C3 star. Whole physical-return and scalar domains, zero weights and mean endpoints remain; full source and original-family reviews accepted."
+    },
+    {
+      "id": "M6.B6.PENTAGON.H3.L0124",
+      "from": " ",
+      "to": "x",
+      "original_line": "- [ ] **M6.B6.PENTAGON.H3.L0124** Entire loaded set{0,1,2,4} for spokes0,1,3 and no chord; close its full physical domain under M6.B6.PENTAGON.LOAD_CONTRACT.",
+      "accepted_line": "- [x] **M6.B6.PENTAGON.H3.L0124** CLOSED by INNER_PENTAGON_THREE_SPOKE_FOUR_LOAD_0124_COMPLETE_EXCLUSION.md. Its exhaustive at-least-one-K-owned, neither-owned side/radial, and unique/free endpoint partition covers all25 refined states9+9+7. The corrected zero-proper-distance four-axis exit precedes every division. True H3/K3, both internal loaded3 stars, original means, masks, zero weights and all nine units remain; complete root and separate original-family reviews accepted."
+    },
+    {
+      "id": "M6.B6.PENTAGON.H3_EXIT",
+      "from": " ",
+      "to": "x",
+      "original_line": "- [ ] **M6.B6.PENTAGON.H3_EXIT** Entire no-chord three-spoke graph, with exact clear-H degree3 and every remaining rim load mask.",
+      "accepted_line": "- [x] **M6.B6.PENTAGON.H3_EXIT** CLOSED by INNER_PENTAGON_THREE_SPOKE_NO_CHORD_COMPLETE_EXCLUSION.md. The unchanged six-orbit cover013,023,024,1234,0134,0124 and all ten original load images have complete exits. The literal0134 width-one bypass contradicts the balanced-four-boundary endpoint bound without a missing helper. All H3/rim degrees, physical masks, means, zero weights and three extras remain. Current root and independent complete graph-parent reviews passed; H4_D0 and coarse C1.6.b0 remain open."
+    }
+  ],
+  "original_ids_preserved_in_order": true,
+  "source_files_and_reviews": [
+    {
+      "path": "research/nine/BOUNDARY_CONTACT_ORIGIN_MOMENT_ORIENTATION.md",
+      "sha256": "851417d7fcd12ccb93a6f7f09ba7d7b2bf9bccc61c82fee3457b5ee4cee47e9a",
+      "git_blob_sha": "7efa967ab6fa410da4b6857ef537742cc0795da8",
+      "bytes": 7684
+    },
+    {
+      "path": "research/nine/HIGH_VERTICAL_STRIP_AND_NEAR_EAST_UNIT_CENTER_EXCLUSION.md",
+      "sha256": "75def83e3a67168eb28014641ddfa3d53372028514facaab09529903ba6090f8",
+      "git_blob_sha": "b01dc5b8a4fbbaad79e28857909a193ab4a8918d",
+      "bytes": 4669
+    },
+    {
+      "path": "research/nine/HOUSE_LOWER_TD_S_COMPLETE_EXCLUSION.md",
+      "sha256": "f0726f1da62b86c346a019eb98489c634618815aa820b2d82e69419059a40172",
+      "git_blob_sha": "2143baf5228f07e4d055bc6f00314a26aa2d9739",
+      "bytes": 11763
+    },
+    {
+      "path": "research/nine/HOUSE_LOWER_TD_S_OBLIQUE_BYPASS_EXCLUSION.md",
+      "sha256": "da1eaab1fd241da9747389e0f0a05dd5646f380ec8b56190dfae578f0be9fff5",
+      "git_blob_sha": "7d10c046530a82bf6e52fbc98a866f806b12767e",
+      "bytes": 26591
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_H3_0124_ANY_OUTER_HUB_OWNED_ENDPOINT_EXCLUSION.md",
+      "sha256": "05948c932dbb32fb34534ce7486e295a8a3764a6cd6814e65aca209a9f5b9a09",
+      "git_blob_sha": "9ca76ec571f471df38b2910b634f6686eb0054ea",
+      "bytes": 12433
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_H3_0124_BOTH_OUTER_HUB_OWNED_ENDPOINTS_EXCLUSION.md",
+      "sha256": "d266281a14e433bb690117a088f118ac05a00e7d6cff3936f21ec820edf74564",
+      "git_blob_sha": "a1658db8d2ea067f3402d7df96a01fc14fd0d71e",
+      "bytes": 13526
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_H3_0124_NONHUB_OWNED_OR_RADIAL_ENDPOINTS_EXCLUSION.md",
+      "sha256": "c72a8bc51f9c76bd5b6c2d44ad05b6e96f5c8807aab257c27baef8f5a15d5c44",
+      "git_blob_sha": "8fac82ec709a7213e6e9c227725ac776cd373e4c",
+      "bytes": 16208
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_H3_0124_UNIQUE_FREE_ENDPOINT_EXCLUSION.md",
+      "sha256": "76ba586f7147908f4f2eaf738285f4324871fa223c5663c58d533476e9bbb3a1",
+      "git_blob_sha": "dd201e27fdfe8055bcd60354be29c825a1b8ebf7",
+      "bytes": 22094
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_THREE_SPOKE_EQUAL_ROOF_HUB_OWNER_EXCLUSION.md",
+      "sha256": "f97aa1d60b33072b378ab01fb2d1251fb3d1f0ad063fdfc8020fd4710953f5ee",
+      "git_blob_sha": "1f2b6fe68d8217b60e1ac4f518f327801d973d7d",
+      "bytes": 7501
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_THREE_SPOKE_EQUAL_ROOF_OUTER_OWNER_EXCLUSION.md",
+      "sha256": "5e003309e6571e35ae9df81b1d57af857ded343e2e2e8cbd06113cbaddec7847",
+      "git_blob_sha": "9d586541107c491cb01efd7d1c904d8ac168ab9d",
+      "bytes": 14261
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_THREE_SPOKE_FOUR_LOAD_0124_COMPLETE_EXCLUSION.md",
+      "sha256": "2928e4eab78b513c020a813ccef306b17af36c1c8a3e5f41a0b40a75120e5488",
+      "git_blob_sha": "50bec5f19c1b36f90fe51080601bf76704403e79",
+      "bytes": 14202
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_THREE_SPOKE_FOUR_LOAD_1234_COMPLETE_EXCLUSION.md",
+      "sha256": "208b73829e2b571b6ffda875fb7fc276de08eb2862fab518af21675848dffabc",
+      "git_blob_sha": "c36f9003ae1f468a377db2a431f4ffb258c7565a",
+      "bytes": 12915
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_THREE_SPOKE_FOUR_LOAD_HUB_DOMAIN.md",
+      "sha256": "62887583e18e218aca4cbb23a06a0a73aadb8139035a502a0f9cf63b8a54e4d5",
+      "git_blob_sha": "2f45b2477b1494e287c81bdd89e94c3b07be8a21",
+      "bytes": 14188
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_THREE_SPOKE_HUB_OWNER_PERPENDICULAR_RETURN_DOMAIN.md",
+      "sha256": "9fa0a94b1ba2825ba4bd0b8909a0d94aa654bd8ba3b0befce4c7276501b0f1c2",
+      "git_blob_sha": "9b60e1fac8f74454cadba351a489ebf7816bc54b",
+      "bytes": 16865
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_THREE_SPOKE_NO_CHORD_COMPLETE_EXCLUSION.md",
+      "sha256": "15256f1dad919b5a3d0b2390df2eb29de936ac05b8c06ce5734c4fcc8deb1f20",
+      "git_blob_sha": "26fb752454c122610193f7ba8ba9583e2b2285d1",
+      "bytes": 18887
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_THREE_SPOKE_THREE_LOAD_024_COMPLETE_EXCLUSION.md",
+      "sha256": "009f8d50b6923f97634d0a38d80cb59b681efe66bbeb387368498f41e493ceb1",
+      "git_blob_sha": "ca3e337a962ce3b705bbf3fda2c4ea95269ba45e",
+      "bytes": 17234
+    },
+    {
+      "path": "research/nine/RECOVERED_FOUR_FAMILIES_DEPENDENCY_AUDIT_2026_10_28.json",
+      "sha256": "3a2626cfb51f03bbf65e16aeea13c74b212609f686e19c04c307e338110668b6",
+      "git_blob_sha": "e3a6e5f9a58383846313838b1b88e065f0955c73",
+      "bytes": 52370
+    },
+    {
+      "path": "research/nine/REVIEW_BOUNDARY_CONTACT_ORIGIN_MOMENT_ROOT_2026_10_28.md",
+      "sha256": "7ab142d656c50ca9bcf6fe7d6696ef99d6116804e4350758fde98fd2273a0bee",
+      "git_blob_sha": "b5b0575e0415377a9513e86e4b676be36dab7022",
+      "bytes": 4643
+    },
+    {
+      "path": "research/nine/REVIEW_BOUNDARY_CONTACT_ORIGIN_MOMENT_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "50d326397d60f5dc2ce9db04b9c5e266705bcad061184559b53c57d06cb1f21f",
+      "git_blob_sha": "7d260bce346497de1db84d2b76e1687cba2e5947",
+      "bytes": 7407
+    },
+    {
+      "path": "research/nine/REVIEW_H3_0124_ANY_OUTER_HUB_OWNED_ENDPOINT_HEXAGON_2026_10_28.md",
+      "sha256": "e6d3c761b528a353059029a816b31d524b0c9bcedfe386b105097c0cd86ca689",
+      "git_blob_sha": "d8a2d75f6d5268928703fbda8e01e968b77b3310",
+      "bytes": 10945
+    },
+    {
+      "path": "research/nine/REVIEW_H3_0124_ANY_OUTER_HUB_OWNED_ENDPOINT_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "0ebf46c69720de5a28195de6f1a5ca6808e62419659dff6b7951ce1e60b1401e",
+      "git_blob_sha": "3b923defa1062975ada225f0b8b650883dcee4a5",
+      "bytes": 10324
+    },
+    {
+      "path": "research/nine/REVIEW_H3_0124_BOTH_OUTER_HUB_OWNED_ENDPOINTS_HEXAGON_2026_10_28.md",
+      "sha256": "67adbbf5ece243a6e3e7358b2ca46820a2f4f3a5f88dcd3b286733c63aa48c28",
+      "git_blob_sha": "dd9c19870556976f93e6a8d073faaae9507c9920",
+      "bytes": 11528
+    },
+    {
+      "path": "research/nine/REVIEW_H3_0124_BOTH_OUTER_HUB_OWNED_ENDPOINTS_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "27f618cd6c3f50e1b7c62f9f53ef5460abd459a54c1becb51cfc4da015b0c370",
+      "git_blob_sha": "5ebaab91b15e952aca803edea8bf58e7e690fcbb",
+      "bytes": 10362
+    },
+    {
+      "path": "research/nine/REVIEW_H3_0124_NONHUB_OWNED_OR_RADIAL_ENDPOINTS_ROOTED_BLOCKS_2026_10_28.md",
+      "sha256": "e31d8ade98be96cb2566b0359f37a2b2f6b146ee9ee796615f2e5535ce687d4f",
+      "git_blob_sha": "ce8aa6e07f11ab11a1aa10e9652af2d204766d4c",
+      "bytes": 14672
+    },
+    {
+      "path": "research/nine/REVIEW_H3_0124_NONHUB_OWNED_OR_RADIAL_ENDPOINTS_ROOT_2026_10_28.md",
+      "sha256": "d9522e44949ac3c9816fd8d09fa9076097de5390b3df2932e6d9d9cbec78ef38",
+      "git_blob_sha": "46a693b2a01a656ab30ea4c024998af2f9d80c1e",
+      "bytes": 9774
+    },
+    {
+      "path": "research/nine/REVIEW_H3_0124_UNIQUE_FREE_ENDPOINT_ROOT_2026_10_28.md",
+      "sha256": "f2b911b9e441f419ab98e3f451f86f52f5d5d937fb8526bb4a35cc0e4f9c3f19",
+      "git_blob_sha": "83f0459f4fa9f165742d68c591f54234e593c945",
+      "bytes": 11670
+    },
+    {
+      "path": "research/nine/REVIEW_H3_0124_UNIQUE_FREE_ENDPOINT_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "3bb573486c1cff978bf197d0426093761d0e390b47835b045131e26d8b7a2040",
+      "git_blob_sha": "97ad8be10cadbd2441ce4c2fca0eb6c6db7acb71",
+      "bytes": 15019
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_LOWER_TD_S_COMPLETE_JOIN_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "ddd224a2c0c247d77b140b6db5e9ade94e5accc58e768b8503467e31ff5787b8",
+      "git_blob_sha": "0707f02e0c8c24a1d225429a6c62384d5c090831",
+      "bytes": 7086
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_LOWER_TD_S_COMPLETE_ROOT_2026_10_28.md",
+      "sha256": "83885e481b4863542602f28f02a9d0a2d8453122ac5499aef2f0696ab19d6e70",
+      "git_blob_sha": "228614eece0473bf9ddf82512c255ac8397eadf2",
+      "bytes": 5875
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_LOWER_TD_S_OBLIQUE_AND_CENTER_CAP_ROOT_2026_10_28.md",
+      "sha256": "fb2f9d8ada25d609e85d029872c832abb5603e73d2f8d7f7cc49a1092d0122f2",
+      "git_blob_sha": "40ee6936dad375ed5a229cca813fdb260456f411",
+      "bytes": 11842
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_LOWER_TD_S_OBLIQUE_AND_CENTER_CAP_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "15be887d0d299976099bf59dc2b7df16eb627c9995d53d8f58f486d389111b96",
+      "git_blob_sha": "fb26bcc17e63f9a510bda985d2bbae5bd0d8a47b",
+      "bytes": 16546
+    },
+    {
+      "path": "research/nine/REVIEW_RECOVERED_FOUR_FAMILIES_AND_H3_GRAPH_ROOT_CONTINUATION_2026_10_28.md",
+      "sha256": "15bf5a9bedb59837994545fea7f5bf25355de5df478efa4c5188849dd2c7927f",
+      "git_blob_sha": "4c490f0e7075ede19a4b4daf8a7db47795be124a",
+      "bytes": 9358
+    },
+    {
+      "path": "research/nine/REVIEW_RECOVERED_FOUR_ORIGINAL_FAMILIES_FRONTIER_2026_10_28.md",
+      "sha256": "402d1b9c6b7f4761b4408cfd42ae650f065caea43973d1434541704dd4fde86b",
+      "git_blob_sha": "d695f3c76088482f384b1eb14a0f5b1e34202a17",
+      "bytes": 10858
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_SPOKE_EQUAL_ROOF_OUTER_OWNER_ROOT_2026_10_28.md",
+      "sha256": "24dae7cd542b624bf442ad72f63a1b6bd102ca04ebceee7e4edf135211cd2a90",
+      "git_blob_sha": "9e2291ef4ed0e1e68eaaf230d2094e6b8ab8b02e",
+      "bytes": 9729
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_SPOKE_FOUR_LOAD_0124_COMPLETE_JOIN_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "5e2dd916f2e1d67ca3493c8daafa2268f1effd10beb8bffa72f17fbfe3da971d",
+      "git_blob_sha": "36e46e0fa6804b66440c855623a337e2ff1716a4",
+      "bytes": 10641
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_SPOKE_FOUR_LOAD_0124_COMPLETE_ROOT_2026_10_28.md",
+      "sha256": "c1e1fcfe7da19dc6fc148edf7810e70e8e212cb8ba90ebc8fcc2ad2959940526",
+      "git_blob_sha": "5d2031ded022f3bc26048121a491bc156dd69298",
+      "bytes": 7360
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_SPOKE_FOUR_LOAD_1234_COMPLETE_JOIN_ROOTED_BLOCKS_2026_10_28.md",
+      "sha256": "93944793f0ef04fa6808345a2d4a02a428bdb8fa287ecc192a3e212b11b71fa2",
+      "git_blob_sha": "f76c2bdff02701d22270cbd6cd9413751df80256",
+      "bytes": 18387
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_SPOKE_FOUR_LOAD_1234_COMPLETE_ROOT_2026_10_28.md",
+      "sha256": "7453a480b1388c9f2c545a963682dcfc66ada6e847f8ea44727ceb8ae67e776f",
+      "git_blob_sha": "6ca3cc8c4c5616ed46eef82463c075be0feca622",
+      "bytes": 9305
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_SPOKE_FOUR_LOAD_HUB_DOMAIN_ROOT_2026_10_28.md",
+      "sha256": "3da57caa91b892a281961e43216c06891fae64b3f47e46f67bd421dc13e44e83",
+      "git_blob_sha": "0810f6deaaa22e580bf9191dcee3071992c5da36",
+      "bytes": 8072
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_SPOKE_HUB_DOMAIN_AND_EQUAL_ROOF_ROOTED_BLOCKS_2026_10_28.md",
+      "sha256": "ec64bcade77e3ca3c05762df8f56f4a0176a9f349372b774017b12036410b190",
+      "git_blob_sha": "ff132dc99738a4abec6b7d9b2dd2fc26460517a9",
+      "bytes": 20309
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_SPOKE_HUB_OWNER_PHYSICAL_RETURN_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "4fc2aa6900aca15dedb0dbe2c939e7f633780a15c6c4793d72a26c27d1fdfd7c",
+      "git_blob_sha": "cb138707784ac0189c9e2e89cb76a7a3a74112b7",
+      "bytes": 15672
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_SPOKE_HUB_OWNER_RETURN_DOMAIN_AND_SCALAR_ROOT_2026_10_28.md",
+      "sha256": "4afbf65098e6750573fd8714db6ca945a3be6c03c6cc40a6e6dec79a862e0fd9",
+      "git_blob_sha": "f880ecbcabde33e320dd533631222f50a7a9a098",
+      "bytes": 13521
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_SPOKE_HUB_OWNER_RETURN_SCALAR_HEXAGON_2026_10_28.md",
+      "sha256": "a1dc72a8f51e4902a736ce1477312d00580d5585fbe1aa216b9a6e07501dacd4",
+      "git_blob_sha": "e3dfefb6fb2f9434ebb6e1cca88c05d31e727c9d",
+      "bytes": 11113
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_SPOKE_NO_CHORD_COMPLETE_FRONTIER_2026_10_28.md",
+      "sha256": "d219ee74d659e9ef354e9d8be4d18fab494fb60d492c97fdaa3861bc9273ba57",
+      "git_blob_sha": "15bb95e7fe8bd932ce29d0b3e50dd491080032e8",
+      "bytes": 11123
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_SPOKE_NO_CHORD_COMPLETE_ROOT_2026_10_28.md",
+      "sha256": "8ec42ab32d2e3c3931a3717522f05709e7b0c26e8ae5139798428f5dda3ca757",
+      "git_blob_sha": "5baed15a437a3f6bd91a3c80541800023568405c",
+      "bytes": 9901
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_SPOKE_THREE_LOAD_024_COMPLETE_ROOTED_BLOCKS_2026_10_28.md",
+      "sha256": "a752b9d6094629da238f6e65011087e6d0d1cb6b6c19c5820cfe7907d7c178c3",
+      "git_blob_sha": "abb52e991344fcb292d12fa59c889ab9dabac245",
+      "bytes": 19372
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_SPOKE_THREE_LOAD_024_COMPLETE_ROOT_2026_10_28.md",
+      "sha256": "317ad394a89fa6af67f043dcd629b58096a88710f4ca9b34c0af5f20480a6c47",
+      "git_blob_sha": "443883bd4d7f06568fa9623a599921011217f2eb",
+      "bytes": 12993
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_UNLOADED_HUBS_FREE_ROOF_FINAL_INTEGRATION_ROOT_2026_10_28.md",
+      "sha256": "5c98da0970f345d9bba56bacae5e02bf61dbac70b33cb62c9104b57e09b44df9",
+      "git_blob_sha": "ea6987faa8f9e2570187b613732f2ce260d3c47b",
+      "bytes": 2965
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_UNLOADED_HUBS_FREE_ROOF_SHARED_RETURN_HEXAGON_2026_10_28.md",
+      "sha256": "472d1d56f63bfe2464587bb3ff9f62b3f66731a3f001597ec55e14eb9c4c14a6",
+      "git_blob_sha": "1fbf15690ba6758a25daa5aec95adf7b36e1992f",
+      "bytes": 7373
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_UNLOADED_HUBS_FREE_ROOF_SHARED_RETURN_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "6a40bfa8ab82a9d323b658308c452a24c6e4196a2e16ed72ec2dbf28643dad3e",
+      "git_blob_sha": "652d970ae7a25b96046807f24ee75769636b0cb7",
+      "bytes": 8644
+    },
+    {
+      "path": "research/nine/THREE_SPOKE_EQUAL_ROOF_SEPARATION_SCALAR.md",
+      "sha256": "1297f7864dd3d629330f9741d7728fe894a3bf6c1beac4192fd1800da38cdeca",
+      "git_blob_sha": "358fba0e5495eb0abd1769273cb6e8051d167849",
+      "bytes": 8522
+    },
+    {
+      "path": "research/nine/THREE_SPOKE_HUB_OWNER_RETURN_SCALAR_BOUNDS.md",
+      "sha256": "dd6ee983deaeac1cf0c02758b2ddb2501a33175fb0281702a18027f869fdbf64",
+      "git_blob_sha": "ea5da020ebb5b1a974145fc21dd8001eb14e83c0",
+      "bytes": 11473
+    },
+    {
+      "path": "research/nine/TWO_UNLOADED_HUBS_EQUAL_ROOF_TWO_FORCE_RETURN_EXCLUSION.md",
+      "sha256": "d3361948f5fe9c779fd1679934b591e56c2378dd08534211e409004e4618016d",
+      "git_blob_sha": "95dec1a16657f3899659667cfe90a0be1d053708",
+      "bytes": 13785
+    },
+    {
+      "path": "research/nine/TWO_UNLOADED_HUBS_FREE_ROOF_SHARED_RETURN_EXCLUSION.md",
+      "sha256": "2e24c112fae2df1c6594da0702c9fd777becc0371e76cb6b732d8d5cbd0dd975",
+      "git_blob_sha": "66a7f473688e82bc6c0c9aa5f71d382fc1abc7ae",
+      "bytes": 8110
+    },
+    {
+      "path": "research/nine/certificates/review_three_spoke_equal_roof_rooted_blocks.py",
+      "sha256": "c165f18e250695340fecf9d568f93791d631991ec923394ec98566167ab3a85a",
+      "git_blob_sha": "d2897720be6f7ee7bb9eb7e42cba40cf7a7ce966",
+      "bytes": 5497
+    },
+    {
+      "path": "research/nine/certificates/review_three_spoke_hub_owner_return_fraction.py",
+      "sha256": "fa997a188f483e06800e8c6a036749fa440fcf1ca0f3bf67d8a5ba3ba9991369",
+      "git_blob_sha": "2a48dfd336b7883d70c162b677d773c13ba05bbc",
+      "bytes": 3385
+    },
+    {
+      "path": "research/nine/certificates/three_spoke_equal_roof_separation_scalar.py",
+      "sha256": "d3db3cf5278af57cac1dd5ddd66a7af88488a4f74d031857b96bb3f3c40707d2",
+      "git_blob_sha": "d98747a3420db7c6812682e1159e7e04d0a5391e",
+      "bytes": 6073
+    },
+    {
+      "path": "research/nine/certificates/three_spoke_hub_owner_return_scalar_bounds.py",
+      "sha256": "d073ebfa7d1c27f8c4272a9d3b5c56e20f8de1a1ae310a8d7d790ff5c91acf99",
+      "git_blob_sha": "fd75eb8c63788f274af7d796b3adfd08e8341f54",
+      "bytes": 7737
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_four_families_2026_10_28/hexagon_h3_0124_any_k_owned_independent_checks_2026_10_28.json",
+      "sha256": "32af2256ccda2b2ec6d33f578de84cfeac26893c7f7387eafbcaee14a685e9f8",
+      "git_blob_sha": "9172d27613038c1e7c97576b28d8fe8cabe09ff5",
+      "bytes": 1957
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_four_families_2026_10_28/hexagon_h3_0124_both_k_owned_independent_checks_2026_10_28.json",
+      "sha256": "fbbe88bc9c3db61a40c5c29323fa872257929dac4597932e807d35c7e434be22",
+      "git_blob_sha": "aefe98e435db5bda0baeafaed465514a9771e64b",
+      "bytes": 2986
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_four_families_2026_10_28/hexagon_review_h3_hub_owner_fraction_results_2026_10_28.json",
+      "sha256": "f2994e3a8a6f3f78af58d51cadb3c8d333031cba3a443c79e0e918ff51d62e60",
+      "git_blob_sha": "63a80423e48137a0c7ece32240d6d835ddbfdc96",
+      "bytes": 1441
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_four_families_2026_10_28/hexagon_review_h3_hub_owner_scalar_exact_checks_2026_10_28.json",
+      "sha256": "61691ded3f18569233d58241f525e9fd528b3bf526957c7b9d473a7a5524979b",
+      "git_blob_sha": "b0d65bd7517be8a922d81dc5c8865b461b97d038",
+      "bytes": 1176
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_four_families_2026_10_28/pr11_restored_radius_two_five_charge_reviews_20261028.json",
+      "sha256": "6caf6245737ec71c1ebda01d9dbf660caf242940e8fcbc98d09167dedf9ea401",
+      "git_blob_sha": "1be14095ae7d7230e00466173dac57de8f957bfc",
+      "bytes": 641
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_four_families_2026_10_28/pr11_root_h3_0124_any_k_owned_exact_checks.json",
+      "sha256": "b66c8eb242135ba11400400ae0fe65dadf3b95b05e02757e3048f89b0df70ea8",
+      "git_blob_sha": "3b02abdc4c9ec23d034ae5c94baf07a581c5ffca",
+      "bytes": 1914
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_four_families_2026_10_28/pr11_root_h3_0124_both_k_owned_exact_checks.json",
+      "sha256": "5bdb4076fd0d1f50b149e24a04f9de8aec2350ad36ea345fd4226f5808cf67a9",
+      "git_blob_sha": "8ed1393667512e23ff5f6dca3f10f6dab0d6896f",
+      "bytes": 2600
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_four_families_2026_10_28/pr11_root_h3_0124_complete_join_checks.json",
+      "sha256": "f48727d43fa0f157d72d2f08b0ea50e61a7afafc473f49758c688e820fac15a5",
+      "git_blob_sha": "ee227fbd25667cf8ba2476386ade46e61c7302f7",
+      "bytes": 7206
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_four_families_2026_10_28/pr11_root_h3_0124_nonhub_owned_radial_checks.json",
+      "sha256": "0b6e9cd5f1b2c6b82aa9b75c860442127d1208f8d962639b79941b373b4e6d5e",
+      "git_blob_sha": "ec725eb33c4294ab90d060fc2ba2259b5a36e67c",
+      "bytes": 2885
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_four_families_2026_10_28/pr11_root_h3_0124_unique_free_checks.json",
+      "sha256": "0e2e117fed9e9a4164b0637eaaa3488c8e2b03a0f2c84813b70fcbe96a610dbf",
+      "git_blob_sha": "b8547ed200d741864a89bcd3470857a36858427a",
+      "bytes": 3940
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_four_families_2026_10_28/pr11_root_h3_024_checks.json",
+      "sha256": "ada78ae3aa2a31ca258d2978112f21768100cda9c6f3e24a95f40a0f70d2058c",
+      "git_blob_sha": "8a274eafa71a88a21f07470d6a63274245887eb0",
+      "bytes": 4301
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_four_families_2026_10_28/pr11_root_h3_1234_join_checks.json",
+      "sha256": "469341962cbeec3a5eba54514aa86eb5bc5f2bf975f1a6b0067a851fa1946138",
+      "git_blob_sha": "9ed5ea91f044e14b39ce7e5dd3a94cc73c8b1dbe",
+      "bytes": 799
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_four_families_2026_10_28/pr11_root_h3_hub_return_checks.json",
+      "sha256": "708a51867128c7c258060409e59605a8701f1b91ba5e7d70e793c4c47097b8bd",
+      "git_blob_sha": "d955fea3f4d216898f1f24728ceb4058828e07e0",
+      "bytes": 2224
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_four_families_2026_10_28/pr11_root_h3_hub_scalar_author_leaves.json",
+      "sha256": "1d6b388ad701b0a625f14c94a4b3daf7afa8d49f31f99954d414dc9b64604357",
+      "git_blob_sha": "52dd5e20446ab4c3fd32d8d498460430eb145ef6",
+      "bytes": 136894
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_four_families_2026_10_28/pr11_root_h3_hub_scalar_replay.json",
+      "sha256": "be71e6d6a0002b2abda31d66f35f62d4b914f6e169e987df62e25d17a132b936",
+      "git_blob_sha": "5098a30faa5ed19711e9f9cc75594468b4ebf6f8",
+      "bytes": 746
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_four_families_2026_10_28/pr11_root_h3_hub_scalar_replay.py",
+      "sha256": "8f37f6bee0df26f4ba9c0043ec070f347bf8e932e413a7b98471cdf6abf9df48",
+      "git_blob_sha": "2739e1aa8f70799038ac68bac6aa97f1929f0486",
+      "bytes": 6189
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_four_families_2026_10_28/pr11_root_lower_td_s_oblique_checks.json",
+      "sha256": "aff0a8679e91baf26195f333ee5b496cc308ebb4110c5568b910a71973970612",
+      "git_blob_sha": "86d1f8f42d2b1b31d63a317fcb7977402732f5b7",
+      "bytes": 3557
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_four_families_2026_10_28/pr11_root_lower_td_s_parallel_checks.json",
+      "sha256": "7dd3aa9a096ae01a7904c4533ce29815f1ac8891735679558dc0d0eee4896dcf",
+      "git_blob_sha": "0bd1089521bf97e4074a0c869b19febb135aea97",
+      "bytes": 203
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_four_families_2026_10_28/rooted_blocks_H3_1234_exact_join_checks_2026_10_28.json",
+      "sha256": "cd972bedfc8adbfef7da8e52d7d5cf4df09faf38472d8ea2570d30a698b56f35",
+      "git_blob_sha": "3fa7f04bf2895ca54cdcc9201b178c8204320866",
+      "bytes": 4252
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_four_families_2026_10_28/rooted_blocks_h3_0124_nonhub_endpoint_exact_checks_2026_10_28.json",
+      "sha256": "7bbd6e826425e1aa9feec7f98055ca742bf7e58f60f3197f1f189f7cccb7b1a8",
+      "git_blob_sha": "df77ed08d10afeeef66c881896cc143a37ecc301",
+      "bytes": 1959
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_four_families_2026_10_28/rooted_blocks_h3_024_exact_checks_2026_10_28.json",
+      "sha256": "dc2d3da57bd7736b00a3b466407e7d87a7971559ebe9b8a47753062732f980e5",
+      "git_blob_sha": "2aeaa594d4d202bc4497ea20c906e11aa3dcebfe",
+      "bytes": 3792
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_four_families_2026_10_28/triangle_bridges_h3_0124_any_outer_owner_independent_checks_2026_10_28.json",
+      "sha256": "6967cbdac2a7b0621515bca6f0b756f080a3caa02b4085cde46cc80726fa49ee",
+      "git_blob_sha": "7409a291a1ea3a9542a496da1b8d61a288f030af",
+      "bytes": 2561
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_four_families_2026_10_28/triangle_bridges_h3_0124_both_outer_owner_independent_checks_2026_10_28.json",
+      "sha256": "09766b85656f1938bcb1c974efc648d864c3a5ebd65ba5c87e1d129f7f04d7a1",
+      "git_blob_sha": "80cdd68437b091f334bd36895a212ed7710d6336",
+      "bytes": 3274
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_four_families_2026_10_28/triangle_bridges_h3_0124_complete_join_checks_2026_10_28.json",
+      "sha256": "849f0af119d5a100828f8ac278b6d783ac7d59e5c170a7951327dde4b89b2d53",
+      "git_blob_sha": "cb5f8de6a4d75c0a00909abb62fd09063195cb77",
+      "bytes": 6471
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_four_families_2026_10_28/triangle_bridges_h3_0124_unique_free_independent_checks_2026_10_28.json",
+      "sha256": "641243e11ecac6cdef6ca1eabd691bfd33dfc7001741366fc1cae57010901210",
+      "git_blob_sha": "300e98da394da93a224a4cf9d5571dfc84a8c47f",
+      "bytes": 3810
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_four_families_2026_10_28/triangle_bridges_h3_0124_unique_free_independent_checks_2026_10_28.py",
+      "sha256": "8d5f0ad4570a8c01137f6524a860fc722a87352d13e5a14de71cf3a7c668b889",
+      "git_blob_sha": "4a7693ea95e581f56cbfe7f13d942bf53f0d7bfc",
+      "bytes": 5561
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_four_families_2026_10_28/triangle_bridges_h3_hub_owner_physical_exact_checks_2026_10_28.json",
+      "sha256": "48a9b4c822034dea0a587c04c1dcabc235cb229006d5b7daacb38c7df1e97abd",
+      "git_blob_sha": "25f62bcea15d8f79cef36f69896c673477636e26",
+      "bytes": 2128
+    },
+    {
+      "path": "research/nine/checkpoints/recovered_four_families_2026_10_28/triangle_bridges_lower_td_s_oblique_exact_checks.json",
+      "sha256": "689f6273a06f6e65fc8131df4ce5e923483e1fab0f295acad74ca80904bca534",
+      "git_blob_sha": "f4168548ded3b06bfd6ff46a996b922b6ef40fe4",
+      "bytes": 2646
+    },
+    {
+      "path": "research/nine/checkpoints/three_spoke_complete_graph_frontier_review_2026_10_28.json",
+      "sha256": "fac27337d1b56c65cb4ce2740a55226ddcd7663d3fa942f006888682d982716e",
+      "git_blob_sha": "fb598547cc8e25b4f92e8b6d6d0f32956c050784",
+      "bytes": 9055
+    },
+    {
+      "path": "research/nine/checkpoints/triangle_bridges_h3_0124_unique_free_independent_checks_2026_10_28.json",
+      "sha256": "641243e11ecac6cdef6ca1eabd691bfd33dfc7001741366fc1cae57010901210",
+      "git_blob_sha": "300e98da394da93a224a4cf9d5571dfc84a8c47f",
+      "bytes": 3810
+    },
+    {
+      "path": "research/nine/checkpoints/triangle_bridges_h3_0124_unique_free_independent_checks_2026_10_28.py",
+      "sha256": "8d5f0ad4570a8c01137f6524a860fc722a87352d13e5a14de71cf3a7c668b889",
+      "git_blob_sha": "4a7693ea95e581f56cbfe7f13d942bf53f0d7bfc",
+      "bytes": 5561
+    }
+  ],
+  "updated_metadata": [
+    {
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "sha256": "3f01c7b02386b17848571be0495cc77bf92967fa99d65a525db6c78f67c290d4",
+      "git_blob_sha": "307558c4bcdfdc47f7c7beef1883db16752df4bb",
+      "bytes": 945433
+    },
+    {
+      "path": "research/nine/CYCLIC_CELL_LEDGER.md",
+      "sha256": "28d86b89b55b0f4491c75e24f26e0f52c84b6357a89f0731186839d668867c3c",
+      "git_blob_sha": "f19d812247b1796be8b26ae9dceaf48abe48b7c5",
+      "bytes": 222974
+    },
+    {
+      "path": "research/nine/HANDOFF_PR11_2026_10_28_CURRENT.md",
+      "sha256": "b8eb9bf706f32cd05cb63c9e6097579d21180ec4c5bd495d373e0a07e390be15",
+      "git_blob_sha": "eb18f6c3383d38468649b72e87d9cca6ae7e522d",
+      "bytes": 17601
+    }
+  ],
+  "open_coarse_ids": [
+    "C1.5.b1",
+    "C1.5.b2",
+    "C1.5.b3",
+    "C1.5.b4",
+    "C1.6.b0",
+    "C1.6.b1",
+    "C1.6.b2",
+    "C1.6.b3",
+    "C1.7.b0",
+    "C1.7.b1",
+    "C1.7.b2",
+    "C1.8.b0",
+    "C1.8.b1",
+    "C1.9.b0",
+    "C2.35.b0",
+    "C2.35.b1",
+    "C2.35.b2",
+    "C2.36.b0",
+    "C2.36.b1",
+    "C2.37.b0",
+    "C2.45.b0",
+    "C2.45.b1",
+    "C2.46.b0",
+    "C2.55.b0"
+  ],
+  "open_fine_ids": [
+    "T1.EXTRACT:",
+    "CAP.4",
+    "ROW.4",
+    "POCKET.ROUTING",
+    "QCAP.GLOBAL",
+    "CY.B5 GEOMETRY",
+    "CY.MULTILOAD",
+    "CY.MIXED.COMPLETE",
+    "C.1 GRAPH",
+    "C.2 LOAD",
+    "C.3 GEOMETRY",
+    "C.4 COMPLETION",
+    "C.5 SHARPNESS",
+    "C.6 EQUALITY",
+    "G3.0.ANNULAR.ROUTING",
+    "G3.0.DISTRIBUTED_ARTICULATIONS",
+    "G3.0.SHARP",
+    "G3.M.F.1 GRAPH",
+    "G3.M.F.1.a",
+    "G3.M.F.1.b",
+    "G3.M.F.1.c",
+    "G3.M.F.2 LOADS",
+    "G3.M.F.2.a",
+    "G3.M.F.2.b",
+    "G3.M.F.3 CONTACT FEATURES",
+    "G3.M.F.3.a",
+    "G3.M.F.3.b",
+    "G3.M.F.3.c",
+    "G3.M.F.4 JUNCTIONS",
+    "G3.M.F.5 COMPLETION ROUTING",
+    "G3.M.F.5.a",
+    "G3.M.F.5.b",
+    "G3.M.F.5.c",
+    "G3.M.F.5.d",
+    "G3.M.F.COVER",
+    "C.0 DOMAIN",
+    "C.1 EQUILIBRIUM",
+    "C.2 ROUTING",
+    "C.3 BOUND",
+    "C.3.a",
+    "C.3.b",
+    "C.3.c",
+    "C.4 EQUALITY",
+    "C.5 AUDIT",
+    "C.ALL",
+    "M6.B5L.HOUSE.ROOF.LAC.S",
+    "M6.B5L.HOUSE.ROOF.LABC.S",
+    "M6.B5L.HOUSE.HUB.LTC.S",
+    "M6.B5L.HOUSE.HUB.LTCB.S",
+    "M6.B5L.HOUSE.LOWER.LTAC.S",
+    "M6.B5L.HOUSE.LOWER.LTDC.S",
+    "M6.B5L.HOUSE.LOWER.LTDC.D",
+    "M6.B5L.FAN.ENDPOINT.L234.S",
+    "M6.B5L.FAN.INNER.L134.S",
+    "M6.B5L.HOUSE.ROOF",
+    "M6.B5L.HOUSE.HUB",
+    "M6.B5L.HOUSE.LOWER",
+    "M6.B5L.FAN.ENDPOINT",
+    "M6.B5L.FAN.INNER",
+    "M6.B5L.ALL",
+    "M6.B6.HEXAGON.TWO_OPPOSITE_EARS.BOUND",
+    "M6.B6.HEXAGON.D02.L014",
+    "M6.B6.HEXAGON.D02.L134",
+    "M6.B6.HEXAGON.D02.L135",
+    "M6.B6.HEXAGON.D02.L0134",
+    "M6.B6.HEXAGON.D02.L0135",
+    "M6.B6.HEXAGON.D02.L0145",
+    "M6.B6.HEXAGON.D02.L1345",
+    "M6.B6.HEXAGON.D02.L01345",
+    "M6.B6.HEXAGON.D02.ALL",
+    "M6.B6.HEXAGON.D03.L014",
+    "M6.B6.HEXAGON.D03.L024",
+    "M6.B6.HEXAGON.D03.L124",
+    "M6.B6.HEXAGON.D03.L0124",
+    "M6.B6.HEXAGON.D03.L0125",
+    "M6.B6.HEXAGON.D03.L1245",
+    "M6.B6.HEXAGON.D03.ALL",
+    "M6.B6.HEXAGON.D0203.L124",
+    "M6.B6.HEXAGON.D0203.L1234",
+    "M6.B6.HEXAGON.D0203.L1235",
+    "M6.B6.HEXAGON.D0203.L1245",
+    "M6.B6.HEXAGON.D0203.ALL",
+    "M6.B6.HEXAGON.D0204.L135",
+    "M6.B6.HEXAGON.D0204.L0135",
+    "M6.B6.HEXAGON.D0204.L1235",
+    "M6.B6.HEXAGON.D0204.L1245",
+    "M6.B6.HEXAGON.D0204.ALL",
+    "M6.B6.HEXAGON.D0235.L0134",
+    "M6.B6.HEXAGON.D0235.L0145",
+    "M6.B6.HEXAGON.D0235.ALL",
+    "M6.B6.HEXAGON.CHORD_PATH.L1245",
+    "M6.B6.HEXAGON.CHORD_PATH.ALL",
+    "M6.B6.HEXAGON.CENTRAL_TRIANGLE.L135",
+    "M6.B6.HEXAGON.CENTRAL_TRIANGLE.L0135",
+    "M6.B6.HEXAGON.CENTRAL_TRIANGLE.ALL",
+    "M6.B6.HEXAGON.BOUND",
+    "M6.B6.PENTAGON.H4_D0.L124",
+    "M6.B6.PENTAGON.H4_D0.L0124",
+    "M6.B6.PENTAGON.H4_D0_EXIT",
+    "M6.B6.ALL",
+    "G3.M6.ASSEMBLE",
+    "G3.M6.ALL",
+    "G3.M7.ALL",
+    "G3.M8.ALL",
+    "G3.M9.ALL",
+    "G3.M.ALL",
+    "G3.ALL.1",
+    "G3.ALL.3",
+    "G3.ALL.4",
+    "G3.ALL",
+    "O3.3.SHARP",
+    "O4.1",
+    "O4.2",
+    "O4.3 alternative",
+    "O5",
+    "X.3",
+    "G4.2",
+    "G4.2.a",
+    "G4.2.b",
+    "G4.2.c",
+    "G4.2.d",
+    "G4.2.e",
+    "G4.2.f",
+    "G4.3",
+    "G4.3.a",
+    "G4.3.b",
+    "G4.3.c",
+    "G5.1",
+    "G5.2",
+    "G5.3",
+    "G5.1.a",
+    "G5.1.b",
+    "G5.2.a",
+    "G5.2.b",
+    "G5.2.c",
+    "G5.3.a",
+    "G5.3.b",
+    "G5.3.c",
+    "G5.3.d",
+    "G5.4",
+    "G5.4.a",
+    "G5.4.b",
+    "G5.ALL",
+    "G6.1",
+    "G6.2",
+    "G6.3",
+    "G6.TL1 NEW",
+    "G6.TL2 NEW",
+    "G6.TL3 NEW",
+    "G6.TL4 NEW",
+    "G6.4",
+    "G6.5",
+    "G6.5.a",
+    "G6.5.b",
+    "G6.5.c",
+    "G6.5.d",
+    "G6.5.e",
+    "G6.5.f",
+    "G7.1",
+    "G7.2",
+    "G7.3",
+    "G7.4",
+    "G7.5 DEFERRED",
+    "G8.1",
+    "G8.2",
+    "G8.3",
+    "G8.4"
+  ],
+  "new_computational_exclusion_certificates": 0,
+  "historical_arithmetic_records_retained": 28,
+  "explicit_current_radius_proof_substitution": [
+    {
+      "path": "research/nine/NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "historical_sha256": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c",
+      "current_sha256": "4c9e708945938c3f9df575e76f7573903d6b5a0ce4eccb5bcea760353a47458a",
+      "historical_bytes": 18216,
+      "current_bytes": 18500,
+      "equivalence": "Same unconditional theorem: nine original unit squares with disjoint open interiors cannot fit in radius two. Current accepted analytic fixed-value proof supersedes historical five-charge checker proof with no change of hypotheses or conclusion.",
+      "adoption": "research/nine/LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md"
+    }
+  ],
+  "execution": {
+    "lean_compilation": false,
+    "ci_dispatch": false,
+    "workflow_execution": false,
+    "merge": false
+  },
+  "scope_limits": [
+    "unrestricted sharp bound open",
+    "all original equality packings open",
+    "remaining global prerequisite audit open",
+    "Lean integration open"
+  ]
+}

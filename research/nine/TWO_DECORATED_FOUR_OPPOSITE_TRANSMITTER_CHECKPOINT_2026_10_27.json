@@ -1,0 +1,205 @@
+{
+  "base_head": "8d983d0e0f8214a44dfa224ef9e02e381cefb048",
+  "source_and_review_pins": [
+    {
+      "path": "research/nine/GENERAL_SMALL_ORIGIN_CORNER_CONTACT_KERNELS.md",
+      "sha256": "b977be65217728c0363e8bab030bdb3d11b1b8ef75cc32d295a8337c4ea01477",
+      "git_blob_sha": "f39d8b401963621f22e1863cb183e113147bc0b6",
+      "size": 6272
+    },
+    {
+      "path": "research/nine/REVIEW_SMALL_CORNER_OPPOSITE_TRANSMITTER_ROOT_2026_10_27.md",
+      "sha256": "356cfc94dd00eaa189d2f5a40968e4850430ec5f81e177ae2e058bde64f84665",
+      "git_blob_sha": "feef420ef8f1a7bfb69dbd079bc0c6bcc1795e44",
+      "size": 9321
+    },
+    {
+      "path": "research/nine/REVIEW_SMALL_ORIGIN_CORNER_KERNELS_FULL_SIX_BODY_2026_10_27.md",
+      "sha256": "f6111940d64c5d5e48a50e6f5dedf1e3160c87919bcd7a81c7bfcad928cdec39",
+      "git_blob_sha": "9171d44cab1cf2f24fe242b69aa794a6a2f1af2b",
+      "size": 6215
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_DECORATED_FOUR_OPPOSITE_TRANSMITTER_FULL_SIX_BODY_2026_10_27.md",
+      "sha256": "931493e4ca7b09b67f6269c88de88dc549e425769d0b7af2357968b1c2cdd73b",
+      "git_blob_sha": "7fab325466f257755dbc52539b9a2b9e769e7cca",
+      "size": 17124
+    },
+    {
+      "path": "research/nine/ROOTED_TWO_DECORATED_FOUR_OPEN_ORIGIN_OPPOSITE_TRANSMITTER_EXCLUSION.md",
+      "sha256": "59a8012f61a46cea4592a99345f0caacf1cdde9f07fb9026e083b19613e915c9",
+      "git_blob_sha": "718b5937139182e118389edd47910144c2f07d7b",
+      "size": 19212
+    }
+  ],
+  "exact_published_dependencies": [
+    {
+      "name": "ROOTED_TILTED_LEAF_ORIGIN_NEIGHBOR_TRANSMITTER_EXCLUSION.md",
+      "path": "research/nine/ROOTED_TILTED_LEAF_ORIGIN_NEIGHBOR_TRANSMITTER_EXCLUSION.md",
+      "local_source": "/workspace/scratch/b37a3970e18c/repo/research/nine/ROOTED_TILTED_LEAF_ORIGIN_NEIGHBOR_TRANSMITTER_EXCLUSION.md",
+      "sha256": "f96cd79e58ad519040da34815f5075ec94dfd29e4733386ba630aa37280ad47e",
+      "git_blob_sha": "5654bc8363e8131c78eb26d13b61a4366767b51f",
+      "bytes": 10363,
+      "status": "exact_remote",
+      "remote_blob_sha": "5654bc8363e8131c78eb26d13b61a4366767b51f",
+      "cited_by": [
+        "ROOTED_TWO_DECORATED_FOUR_OPEN_ORIGIN_OPPOSITE_TRANSMITTER_EXCLUSION.md"
+      ]
+    },
+    {
+      "name": "ROOTED_ROOT_ADJACENT_LEAF_CHANNEL_SMALL_CORNER_EXCLUSION.md",
+      "path": "research/nine/ROOTED_ROOT_ADJACENT_LEAF_CHANNEL_SMALL_CORNER_EXCLUSION.md",
+      "local_source": "/workspace/scratch/b37a3970e18c/repo/research/nine/ROOTED_ROOT_ADJACENT_LEAF_CHANNEL_SMALL_CORNER_EXCLUSION.md",
+      "sha256": "7df1b687bc1a33cb10fdc171857773e9ef7a9b2968232cd146e4422a6d5cbac2",
+      "git_blob_sha": "f8b05fa4520c68542819468ebf0bd9cc80bc42b8",
+      "bytes": 14224,
+      "status": "exact_remote",
+      "remote_blob_sha": "f8b05fa4520c68542819468ebf0bd9cc80bc42b8",
+      "cited_by": [
+        "ROOTED_TWO_DECORATED_FOUR_OPEN_ORIGIN_OPPOSITE_TRANSMITTER_EXCLUSION.md"
+      ]
+    },
+    {
+      "name": "ROOTED_ORIGIN_ROOT_PARALLEL_LEAF_SIDE_CHANNEL_EXCLUSION.md",
+      "path": "research/nine/ROOTED_ORIGIN_ROOT_PARALLEL_LEAF_SIDE_CHANNEL_EXCLUSION.md",
+      "local_source": "/workspace/scratch/b37a3970e18c/repo/research/nine/ROOTED_ORIGIN_ROOT_PARALLEL_LEAF_SIDE_CHANNEL_EXCLUSION.md",
+      "sha256": "69eaf7777d06ab32d3150c5dd29c8e1e82bf43cbdbfad4f4e1b92d18f3455b81",
+      "git_blob_sha": "c9f808839127aa56227b8d233546f0e1ca5c9735",
+      "bytes": 8680,
+      "status": "exact_remote",
+      "remote_blob_sha": "c9f808839127aa56227b8d233546f0e1ca5c9735",
+      "cited_by": [
+        "ROOTED_TWO_DECORATED_FOUR_OPEN_ORIGIN_OPPOSITE_TRANSMITTER_EXCLUSION.md"
+      ]
+    },
+    {
+      "name": "ROOTED_ORIGIN_ROOT_ADJACENT_LEAF_CHANNEL_RADIAL_TIP_REDUCTION.md",
+      "path": "research/nine/ROOTED_ORIGIN_ROOT_ADJACENT_LEAF_CHANNEL_RADIAL_TIP_REDUCTION.md",
+      "local_source": "/workspace/scratch/b37a3970e18c/repo/research/nine/ROOTED_ORIGIN_ROOT_ADJACENT_LEAF_CHANNEL_RADIAL_TIP_REDUCTION.md",
+      "sha256": "8d40238d0dad6a0f58534e26592d566c728188fe0820c5bb94aaf41a411e5d7f",
+      "git_blob_sha": "6db1888de97aa39cc75b5953acc9868e2593565f",
+      "bytes": 19355,
+      "status": "exact_remote",
+      "remote_blob_sha": "6db1888de97aa39cc75b5953acc9868e2593565f",
+      "cited_by": [
+        "ROOTED_TWO_DECORATED_FOUR_OPEN_ORIGIN_OPPOSITE_TRANSMITTER_EXCLUSION.md"
+      ]
+    },
+    {
+      "name": "ROOTED_GENUINE_FOUR_BLOCK_LEAF_BOUNDARY_CONTINUATION_EXCLUSION.md",
+      "path": "research/nine/ROOTED_GENUINE_FOUR_BLOCK_LEAF_BOUNDARY_CONTINUATION_EXCLUSION.md",
+      "local_source": "/workspace/scratch/b37a3970e18c/repo/research/nine/ROOTED_GENUINE_FOUR_BLOCK_LEAF_BOUNDARY_CONTINUATION_EXCLUSION.md",
+      "sha256": "2eadea361baf2f4d10091428bfdd223691fba9c1b8fe7ca89aa5fa226808dd24",
+      "git_blob_sha": "4345be970696576fa447392c098f0ad6be23b956",
+      "bytes": 9944,
+      "status": "exact_remote",
+      "remote_blob_sha": "4345be970696576fa447392c098f0ad6be23b956",
+      "cited_by": [
+        "ROOTED_TWO_DECORATED_FOUR_OPEN_ORIGIN_OPPOSITE_TRANSMITTER_EXCLUSION.md"
+      ]
+    },
+    {
+      "name": "ROOTED_ALIGNED_OUTER_LEAF_CHANNEL_BRANCH_PRESSURE.md",
+      "path": "research/nine/ROOTED_ALIGNED_OUTER_LEAF_CHANNEL_BRANCH_PRESSURE.md",
+      "local_source": "/workspace/scratch/b37a3970e18c/repo/research/nine/ROOTED_ALIGNED_OUTER_LEAF_CHANNEL_BRANCH_PRESSURE.md",
+      "sha256": "c934cf7c8281f01af552b03f53ea7563ac74b8208e9aed8f92e9db15c47c054b",
+      "git_blob_sha": "07c706798364a315f8aff27d4e629e70672ad82b",
+      "bytes": 16277,
+      "status": "exact_remote",
+      "remote_blob_sha": "07c706798364a315f8aff27d4e629e70672ad82b",
+      "cited_by": [
+        "ROOTED_TWO_DECORATED_FOUR_OPEN_ORIGIN_OPPOSITE_TRANSMITTER_EXCLUSION.md"
+      ]
+    },
+    {
+      "name": "NO_UNLOADED_DIAMOND_HUB.md",
+      "path": "research/nine/NO_UNLOADED_DIAMOND_HUB.md",
+      "local_source": "/workspace/scratch/b37a3970e18c/repo/research/nine/NO_UNLOADED_DIAMOND_HUB.md",
+      "sha256": "82b546953a927a09d8ccabdefd8ffc10eac3e4efc5d8a122840f1343f80a7e2d",
+      "git_blob_sha": "999250ad171341b2dd17a2d2c0c6cc40bb5ae2e6",
+      "bytes": 12851,
+      "status": "exact_remote",
+      "remote_blob_sha": "999250ad171341b2dd17a2d2c0c6cc40bb5ae2e6",
+      "cited_by": [
+        "ROOTED_TWO_DECORATED_FOUR_OPEN_ORIGIN_OPPOSITE_TRANSMITTER_EXCLUSION.md"
+      ]
+    },
+    {
+      "name": "ROOTED_SMALL_ORIGIN_CORNER_TWO_BOUNDARY_NEIGHBORS.md",
+      "path": "research/nine/ROOTED_SMALL_ORIGIN_CORNER_TWO_BOUNDARY_NEIGHBORS.md",
+      "local_source": "/workspace/scratch/b37a3970e18c/repo/research/nine/ROOTED_SMALL_ORIGIN_CORNER_TWO_BOUNDARY_NEIGHBORS.md",
+      "sha256": "6ebda6299f692af6380ad36b98420aeb3155cf95a6b586e1df3848807d4cf467",
+      "git_blob_sha": "18a2ea4c52a3e83a35c222073e2ca2ad52e21742",
+      "bytes": 9084,
+      "status": "exact_remote",
+      "remote_blob_sha": "18a2ea4c52a3e83a35c222073e2ca2ad52e21742",
+      "cited_by": [
+        "GENERAL_SMALL_ORIGIN_CORNER_CONTACT_KERNELS.md"
+      ]
+    },
+    {
+      "name": "GENERAL_GENUINE_FOUR_BLOCK_DECORATED_HUB_DIAMOND_COMPLETE_EXCLUSION.md",
+      "path": "research/nine/GENERAL_GENUINE_FOUR_BLOCK_DECORATED_HUB_DIAMOND_COMPLETE_EXCLUSION.md",
+      "local_source": "/workspace/scratch/b37a3970e18c/repo/research/nine/GENERAL_GENUINE_FOUR_BLOCK_DECORATED_HUB_DIAMOND_COMPLETE_EXCLUSION.md",
+      "sha256": "45dcd1b830306b0ab32429e91b8aaeda5561d2ea3c05ef102ef4b5ce1ecab99f",
+      "git_blob_sha": "583f88227a7fd496a901a5af437af164d19abcee",
+      "bytes": 19441,
+      "status": "exact_remote",
+      "remote_blob_sha": "583f88227a7fd496a901a5af437af164d19abcee",
+      "cited_by": [
+        "ROOTED_TWO_DECORATED_FOUR_OPEN_ORIGIN_OPPOSITE_TRANSMITTER_EXCLUSION.md"
+      ]
+    }
+  ],
+  "exact_positive_reserves": {
+    "opposite_corner_outside_Q": "3423/6400",
+    "rectangle_diameter": "191/2880",
+    "boundary_center_separator": "97/200",
+    "epsilon_corner_inside_1_40": "1/14400",
+    "two_small_vertices_distance_below_one": "449/450",
+    "parallel_V_side_margin": "1/60",
+    "parallel_owned_force_contradiction": "253/1200",
+    "parallel_vertex_slope_contradiction": "148/495"
+  },
+  "complete_new_load_families": 5,
+  "previous_formal_load_families": 15,
+  "remaining_formal_load_families": 10,
+  "remaining_original_graph_domains": 6,
+  "remaining_families": {
+    "Ca/Ca": [
+      "01/01",
+      "01/11",
+      "11/11"
+    ],
+    "Ca/Dht": [
+      "01",
+      "11"
+    ],
+    "Ca/Dth": [
+      "01",
+      "11"
+    ],
+    "Dht/Dht": [
+      "entire"
+    ],
+    "Dht/Dth": [
+      "entire"
+    ],
+    "Dth/Dth": [
+      "entire"
+    ]
+  },
+  "coarse_closed": 32,
+  "coarse_open": 26,
+  "coarse_total": 58,
+  "fine_checked": 2319,
+  "fine_total": 2513,
+  "changed_fine_ids": [],
+  "same_ordered_original_fine_states": true,
+  "unrestricted_theorem": "OPEN",
+  "original_equality_classification": "OPEN",
+  "older_global_prerequisite_audit": "OPEN",
+  "lean_integration": "OPEN",
+  "lean_compilation_run": false,
+  "ci_run": false
+}

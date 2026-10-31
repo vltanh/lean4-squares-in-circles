@@ -1,0 +1,40 @@
+{
+  "reviewer": "/root/diamond",
+  "base_head": "cc143bb36c116590d1de7e7925ad04ca49ea675a",
+  "source_root": "/workspace/scratch/8168d2185cf7/repo/research/nine",
+  "sha256": {
+    "THREE_GENUINE_LEAF_ROOTS_LOW_RADIUS_EXCLUSION.md": "ac7a7a0306a508ac59fc1565162c3e0440d9eb1ec703886356cb065dd03bdb02",
+    "D_LEAF_ROOT_TWO_NEAR_ORIGIN_UNITS_EXCLUSION.md": "fb223951d300770f00baaeb33f4c384db990a851cafbd8e5356f3dba3fd11b80",
+    "GENUINE_LEAF_ROOT_SMALL_NONLEAF_SUPPORTS.md": "a729b8ebb0d0aaf2ff0fa3a8b08749faf136b18253a0dbd0c99a91f2a069b358",
+    "GENUINE_S_THREE_FORCE_ROOT_TWO_NEAR_NEIGHBORS_FRESH_DOMAIN.md": "5dba416ea7bfd8500daf6f33bcecd56521dd7013f2357b9442964d2c49edb480",
+    "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md": "ee865704904a8b2a5cab7649bdfd928008c253631abf1eb346d4950411c3afac",
+    "END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md": "6f3459eaf4ca425ee2001ddb27e1ba7a1b5eb0003548498f48c610776554d3bb",
+    "CLOSE_SUPPORT_PORTS_STRADDLING_NORMALS_FRESH_EXCLUSION.md": "f3c83072e2e09bc844bbd1a79813ab76b7979d008980ce9b2be07f25b85811d2",
+    "THREE_LEAF_DIAMOND_NONPARALLEL_AND_OWNED_PARALLEL_FRESH_EXCLUSION.md": "80bd0ad1a120592a0cc4c0509c12898f697094cc1fd7142b117b7f7477494357",
+    "THREE_LEAF_DIAMOND_PARALLEL_ONE_TILTED_HUB_FRESH_EXCLUSION.md": "51ccbcfd5681d6be4e8ab6f5583769ea07e6a06101f031c5cfe6cba52f1df086",
+    "THREE_LEAF_DIAMOND_PARALLEL_TWO_TILTED_HUBS_FRESH_EXCLUSION.md": "11530ae9f40f09ff0d6d868ed10b492fb99bd737e9f8769be829fda307bc452b",
+    "THREE_GENUINE_LEAVES_DIAMOND_FRESH_COMPLETE_EXCLUSION.md": "ecdedce6af9577138972daff2bdae610dbe18279826853eb1424aa01fca492cf",
+    "ONE_FOUR_BODY_BLOCK_THREE_BRIDGES_COMPLETE_JOIN.md": "18873439b72582bda3ae79550d316b87236bc3d43983d6805381b8596354cca8",
+    "REVIEW_THREE_GENUINE_LEAVES_DIAMOND_FRESH_COMPLETE_ROOT_2026_10_27.md": "049a851fb7214e87a1b5e3e379832111499d18bf78a38b7285115256e27edafb",
+    "REVIEW_THREE_GENUINE_LEAVES_DIAMOND_FRESH_COMPLETE_JOIN_ROOTED_BLOCKS_2026_10_27.md": "0bd47b3dd7575ac4c1710f06ced5e8196a47bc2e13b02c5bf2d4410f4fe0a1da"
+  },
+  "positive_exact_reserves": {
+    "close_port_corner": "2959/57600",
+    "nonparallel_leaf_cap": "9553/145800",
+    "parallel_leaf_cap": "179/3600",
+    "center_radius_upper": "31/57600",
+    "boundary_center_radical": "1/144",
+    "small_frame_refinement": "261/2452",
+    "small_frame_cosine": "2371/4000000",
+    "small_leaf_height_lower": "2039/24000",
+    "owned_hub_tilt": "137/1188",
+    "full_force_alpha": "7/114",
+    "full_force_return": "71/9000",
+    "owned_vertex_gap": "462753/500000",
+    "boundary_point_dot": "17/7500",
+    "west_center_height": "37/30000",
+    "nonparallel_center_dot": "169/36000",
+    "direct_far_corner": "663/6400"
+  },
+  "scope": "Independent direct review of full new diamond chain and original row9/parent mapping; accepted earlier canonicalization/capacity prerequisites remain explicit."
+}

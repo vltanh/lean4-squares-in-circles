@@ -1,0 +1,1811 @@
+{
+  "status": "FULL_INDEPENDENT_MATHEMATICAL_AND_ORIGINAL_DOMAIN_PASS_UNCHANGED",
+  "reviewer": "review_load_union_c62",
+  "date": "2026-10-29",
+  "eligibility": "No discovery, drafting or repair contribution to d92e or its new A1/A2/B/C proof. Prior separate own radial-inner-face work and a selected-endpoint observation are not operative premises. Author S and root threshold corroboration are disclosed separately.",
+  "target": {
+    "path": "continuation_broad_c62/research/nine/NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_OBSTRUCTION_AND_STRICT_HOUSE_RETURN_EXCLUSION.md",
+    "bytes": 20560,
+    "lines": 526,
+    "sha256": "d92ec80546d6ae608494626e6f05c52c5f8ff2c7548be0bd98b93bbbc892c8ff",
+    "git_blob": "1238d2c529554d1b13a93538d262218e3ccbf143"
+  },
+  "author_record": {
+    "path": "continuation_broad_c62/research/nine/AUTHOR_NEAR_SIDE_BOUNDARY_RETURN_AXIS_OBSTRUCTION_STRICT_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+    "bytes": 27890,
+    "lines": 707,
+    "sha256": "6aaa23d2db54f4c05e788335820bc2d526cb71f0a7a4980ee5b4220cdd8182d6",
+    "git_blob": "2ea49cb254f7dddf7348e06146f213d4eb4d6bbc"
+  },
+  "author_record_scope": "Read only; inventoried identities and scopes independently checked. No author generator/code was executed or imported. Author checks are not this independent mathematical verdict.",
+  "exact_comparison": {
+    "commit": "a5f3922a9c12830b76f2a7ee9dd4dbf1024f85b5",
+    "actual_git_tree": "2617ed629140d69171c86bfa68b0ee5784ab8c8c",
+    "tree_manifest": {
+      "path": "current_a5f_base/TREE_A5F.json",
+      "bytes": 1617758,
+      "lines": 37100,
+      "sha256": "3cd96d6aa26dda433b9ebaa3718c6ffa1ce62ea8cb37a69844004a43ac1306d7",
+      "git_blob": "fbb782a29b3d20ca73043d6825c8ecaea58e4c21"
+    },
+    "manifest_entry_count": 4652,
+    "manifest_truncated": false,
+    "unique_paths": 4652,
+    "directory_objects_recomputed_including_root": 124,
+    "every_listed_directory_hash_verified": true,
+    "api_sha_field": "a5f3922a9c12830b76f2a7ee9dd4dbf1024f85b5",
+    "scope": "Exact local complete historical a5f manifest. Its recursive-by-commit API sha field is not treated as the actual root tree. No new remote/head or current604 comparison is claimed."
+  },
+  "input_registry": [
+    {
+      "path": "current_315_base/research/nine/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "bytes": 13651,
+      "lines": 302,
+      "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "git_blob": "f1e09cf1f62a2bb6305bd2c20e7d49be2fffc0ae",
+      "published_path": "research/nine/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "role": "operative entire original-domain residual, graph, actual leaf and C force cover",
+      "read_status": "Complete mathematical source/review/adoption read; physical-stress provenance previously fully read at identical bytes.",
+      "exact_a5f_tree_identity": true
+    },
+    {
+      "path": "current_a5f_base/research/nine/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "bytes": 20196,
+      "lines": 511,
+      "sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334",
+      "git_blob": "75fa5e0b4a97ec854ecd4a3af0ef03799c78a5cb",
+      "published_path": "research/nine/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "role": "operative entire original q>=3/8 exit, used only for the complementary q<3/8 domain",
+      "read_status": "Complete mathematical source/review/adoption read; physical-stress provenance previously fully read at identical bytes.",
+      "exact_a5f_tree_identity": true
+    },
+    {
+      "path": "current_315_base/research/nine/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "bytes": 17930,
+      "lines": 427,
+      "sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143",
+      "git_blob": "4625dfa796aa6a8eb1166efd326b55f0b87afda1",
+      "published_path": "research/nine/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "role": "operative complete actual C mask/force cover and true D3 touching-return strict whole-body support",
+      "read_status": "Complete mathematical source/review/adoption read; physical-stress provenance previously fully read at identical bytes.",
+      "exact_a5f_tree_identity": true
+    },
+    {
+      "path": "current_315_base/research/nine/LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "bytes": 23353,
+      "lines": 555,
+      "sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78",
+      "git_blob": "f6afbca0c7607933fe807064a02bc512d921a9e0",
+      "published_path": "research/nine/LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "role": "operative actual one-application and two-distinct-nonparallel alternatives, including physical-two exterior concurrence",
+      "read_status": "Complete mathematical source/review/adoption read; physical-stress provenance previously fully read at identical bytes.",
+      "exact_a5f_tree_identity": true
+    },
+    {
+      "path": "current_315_base/research/nine/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 12841,
+      "lines": 275,
+      "sha256": "9a0c704df3817a413639a98fbae8864ef58c583811735ac5c6816f69e1b0f636",
+      "git_blob": "d007b7ee912a045bc525ad5bb45e3d80683b1aa1",
+      "published_path": "research/nine/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "role": "complete separate upstream independent review, not a replacement for the mathematical source read",
+      "read_status": "Complete mathematical source/review/adoption read; physical-stress provenance previously fully read at identical bytes.",
+      "exact_a5f_tree_identity": true
+    },
+    {
+      "path": "current_a5f_base/research/nine/REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+      "bytes": 13485,
+      "lines": 294,
+      "sha256": "167e5f8a305f33944e798668394d1d3efd92b4626968f3ad75dea494f371c154",
+      "git_blob": "ebc03976c208188226e8745d4ea2d2f9ea9e53b8",
+      "published_path": "research/nine/REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+      "role": "complete separate upstream independent review, not a replacement for the mathematical source read",
+      "read_status": "Complete mathematical source/review/adoption read; physical-stress provenance previously fully read at identical bytes.",
+      "exact_a5f_tree_identity": true
+    },
+    {
+      "path": "current_315_base/research/nine/REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+      "bytes": 16080,
+      "lines": 332,
+      "sha256": "f917697f13c574c533658ea108b0c770d4c1c949fc463ba996511e890e2d62ae",
+      "git_blob": "a35d7aa4fe1e422aa109ab9414dc5e5c6e08fe84",
+      "published_path": "research/nine/REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+      "role": "complete separate upstream independent review, including original degrees, force masks and both zero coefficients",
+      "read_status": "Complete mathematical source/review/adoption read; physical-stress provenance previously fully read at identical bytes.",
+      "exact_a5f_tree_identity": true
+    },
+    {
+      "path": "current_315_base/research/nine/REVIEW_LOADED_TWO_APPLICATION_BOUNDARY_FREE_DICHOTOMY_INDEPENDENT_2026_10_28.md",
+      "bytes": 21488,
+      "lines": 494,
+      "sha256": "0d71302c571280dd0df9f9b16470d668580ad1fb57ebd306468fb2a8b04d0bc5",
+      "git_blob": "ef6bc56db4c37b7c3fde3bfe5d1a2e0197aa487c",
+      "published_path": "research/nine/REVIEW_LOADED_TWO_APPLICATION_BOUNDARY_FREE_DICHOTOMY_INDEPENDENT_2026_10_28.md",
+      "role": "complete separate upstream independent review, including one-application and both physical masks",
+      "read_status": "Complete mathematical source/review/adoption read; physical-stress provenance previously fully read at identical bytes.",
+      "exact_a5f_tree_identity": true
+    },
+    {
+      "path": "current_315_base/research/nine/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "bytes": 17104,
+      "lines": 345,
+      "sha256": "fb99b163e4450df464fcc095ac6aea0a3294624fcb329ffbc515efda6a0bea28",
+      "git_blob": "73cfd49b7ba738e5cd85a057d98358ea1c3b36d4",
+      "published_path": "research/nine/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "role": "complete published adoption of the exact full original-domain entry",
+      "read_status": "Complete mathematical source/review/adoption read; physical-stress provenance previously fully read at identical bytes.",
+      "exact_a5f_tree_identity": true
+    },
+    {
+      "path": "current_a5f_base/research/nine/ADOPTION_THREE_BROAD_CONTINUOUS_CAP_OWNER_AND_SHIFT_TOOLS_ROOT_2026_10_29.md",
+      "bytes": 8044,
+      "lines": 43,
+      "sha256": "865db6ecd1b9ee6774a11be75edd4f73b59e132a21bc9df1708cc3169183c36e",
+      "git_blob": "4c1a4718606ec73576d039a4e91ae1401f7def57",
+      "published_path": "research/nine/ADOPTION_THREE_BROAD_CONTINUOUS_CAP_OWNER_AND_SHIFT_TOOLS_ROOT_2026_10_29.md",
+      "role": "complete published adoption of the exact whole upper-mean owner union",
+      "read_status": "Complete mathematical source/review/adoption read; physical-stress provenance previously fully read at identical bytes.",
+      "exact_a5f_tree_identity": true
+    },
+    {
+      "path": "current_315_base/research/nine/ADOPTION_BROADER_CENTERED_ARCS_AND_TWO_FULL_STAR_REDUCTIONS_ROOT_2026_10_28.md",
+      "bytes": 9911,
+      "lines": 186,
+      "sha256": "cf84585f5eba59a6df2e61a657f65a62248f74d0064d8a43907947ba9f4dc503",
+      "git_blob": "df552f0a8f51898f5c76c8f7739ac24fa55294de",
+      "published_path": "research/nine/ADOPTION_BROADER_CENTERED_ARCS_AND_TWO_FULL_STAR_REDUCTIONS_ROOT_2026_10_28.md",
+      "role": "complete published adoption of the high-support physical-mask and original full-star reduction",
+      "read_status": "Complete mathematical source/review/adoption read; physical-stress provenance previously fully read at identical bytes.",
+      "exact_a5f_tree_identity": true
+    },
+    {
+      "path": "current_315_base/research/nine/ADOPTION_COMPLETE_ROOF_INTERFACES_AND_BOUNDARY_FREE_STAR_ROOT_2026_10_28.md",
+      "bytes": 13739,
+      "lines": 254,
+      "sha256": "aa52da0dee41ff228f68e9e4b9d8982f6d5ab89cfd0f58c62b53f84158a77678",
+      "git_blob": "689687ea7118aa552b8eb9d7f2740fb0c1826181",
+      "published_path": "research/nine/ADOPTION_COMPLETE_ROOF_INTERFACES_AND_BOUNDARY_FREE_STAR_ROOT_2026_10_28.md",
+      "role": "complete published adoption of the boundary-free two-application theorem",
+      "read_status": "Complete mathematical source/review/adoption read; physical-stress provenance previously fully read at identical bytes.",
+      "exact_a5f_tree_identity": true
+    },
+    {
+      "path": "current_c62_base/research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "bytes": 17993,
+      "lines": 399,
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "git_blob": "fd91cf5e38a8b9eb877710cab9d4dd1575f9bc22",
+      "published_path": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "role": "published force-contract provenance; the entire operative original equations are printed in the new source",
+      "read_status": "Complete mathematical source/review/adoption read; physical-stress provenance previously fully read at identical bytes.",
+      "exact_a5f_tree_identity": true
+    },
+    {
+      "path": "current_315_base/research/nine/TWO_OPPOSING_SHALLOW_CENTERS_FORCE_WHOLE_UNIT_HALFPLANE.md",
+      "bytes": 12062,
+      "lines": 287,
+      "sha256": "53cfc1a53daddc7efae7b0cdd3ff982db9732af02e5167ab200bcc6300956af2",
+      "git_blob": "081b12f0154862b98b53f419cbaf400ae061f44f",
+      "published_path": "research/nine/TWO_OPPOSING_SHALLOW_CENTERS_FORCE_WHOLE_UNIT_HALFPLANE.md",
+      "role": "Critical mathematical predecessor of the upper-owner union; full source freshly reconstructed, all three theorems.",
+      "read_status": "Critical mathematical predecessor of the upper-owner union; full source freshly reconstructed, all three theorems.",
+      "exact_a5f_tree_identity": true
+    },
+    {
+      "path": "current_315_base/research/nine/REVIEW_OPPOSING_SHALLOW_CENTERS_TC_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 11103,
+      "lines": 259,
+      "sha256": "b9885dd614692bb59888152bf1c1bb52f8b0de5359f01dd73a0322993f8c5700",
+      "git_blob": "db17a874fdd6bcc139490e7cbc88209ef86c8356",
+      "published_path": "research/nine/REVIEW_OPPOSING_SHALLOW_CENTERS_TC_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "role": "Full separate acceptance of the complete opposing-center theorem and its original caller; freshly read.",
+      "read_status": "Full separate acceptance of the complete opposing-center theorem and its original caller; freshly read.",
+      "exact_a5f_tree_identity": true
+    },
+    {
+      "path": "current_315_base/research/nine/ALIGNED_RADIAL_C_GENUINE_S_HOUSE_OWNED_AD_UPPER_MEAN_INTERVAL_EXCLUSION.md",
+      "bytes": 17937,
+      "lines": 497,
+      "sha256": "80bf0a971d264ccaeacbcf27facd819ebe0feb803d3b7ccbd42cb314d7364cc1",
+      "git_blob": "3a925464bdac8649829341475908ac84723ce15c",
+      "published_path": "research/nine/ALIGNED_RADIAL_C_GENUINE_S_HOUSE_OWNED_AD_UPPER_MEAN_INTERVAL_EXCLUSION.md",
+      "role": "Critical mathematical predecessor of the upper-owner union; full source freshly reconstructed, including the exact boundary-free fork.",
+      "read_status": "Critical mathematical predecessor of the upper-owner union; full source freshly reconstructed, including the exact boundary-free fork.",
+      "exact_a5f_tree_identity": true
+    },
+    {
+      "path": "current_315_base/research/nine/REVIEW_ALIGNED_RADIAL_C_OWNED_AD_UPPER_INTERVAL_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 13624,
+      "lines": 329,
+      "sha256": "605967b4ac3c17e984517625ef680075ce7d37a5ab12a20caa613e7053378110",
+      "git_blob": "faf14f89170a9e1958ccab707bded2bd19f651f2",
+      "published_path": "research/nine/REVIEW_ALIGNED_RADIAL_C_OWNED_AD_UPPER_INTERVAL_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "role": "Full separate review of the complete upper-interval owned-AD exit, freshly read.",
+      "read_status": "Full separate review of the complete upper-interval owned-AD exit, freshly read.",
+      "exact_a5f_tree_identity": true
+    },
+    {
+      "path": "current_c62_base/research/nine/UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+      "bytes": 16935,
+      "lines": 439,
+      "sha256": "406fce53d22cc20eec43a373a877798dab583a6bd93f684ff124293016c44c87",
+      "git_blob": "6062b02e1f02ef735b0f4fa57b21cc56321359cf",
+      "published_path": "research/nine/UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+      "role": "Entire full unloaded D3 strict-return separator freshly reconstructed; actual A/T touching pair, C third neighbor.",
+      "read_status": "Entire full unloaded D3 strict-return separator freshly reconstructed; actual A/T touching pair, C third neighbor.",
+      "exact_a5f_tree_identity": true
+    },
+    {
+      "path": "current_234_base/research/nine/REVIEW_GENERAL_THREE_FORCE_TOUCHING_RETURN_SEPARATION_THIN_D_2026_10_28.md",
+      "bytes": 9102,
+      "lines": 188,
+      "sha256": "bc4a2c79adbdb2715df4f29da48c7cb432eef38efd1e4d55a051ec152bcafb1c",
+      "git_blob": "20d9b2b6987bcfc7e98919e423bed9be47130dbf",
+      "published_path": "research/nine/REVIEW_GENERAL_THREE_FORCE_TOUCHING_RETURN_SEPARATION_THIN_D_2026_10_28.md",
+      "role": "Full upstream review of the complete additional normal cover, freshly read; its perpendicular premise has separate established acceptance.",
+      "read_status": "Full upstream review of the complete additional normal cover, freshly read; its perpendicular premise has separate established acceptance.",
+      "exact_a5f_tree_identity": true
+    },
+    {
+      "path": "current_234_base/research/nine/REVIEW_GENERAL_TOUCHING_RETURN_SUPPORT_ROOT_2026_10_28.md",
+      "bytes": 7648,
+      "lines": 148,
+      "sha256": "a7f6b5c5451834b3fe18a8dbdfda672f0746b40367ac0c1b93f7f14c831d06b2",
+      "git_blob": "d2ec920f21775ae95c09350a8d8fc0a76372a314",
+      "published_path": "research/nine/REVIEW_GENERAL_TOUCHING_RETURN_SUPPORT_ROOT_2026_10_28.md",
+      "role": "Complete root adoption of the full strict-return separator, freshly read.",
+      "read_status": "Complete root adoption of the full strict-return separator, freshly read.",
+      "exact_a5f_tree_identity": true
+    },
+    {
+      "path": "current_234_base/research/nine/UNLOADED_THREE_FORCE_PERPENDICULAR_TRIANGLE_STRICT_SUPPORT_SEPARATION.md",
+      "bytes": 11594,
+      "lines": 274,
+      "sha256": "6630675274998befc40e87bfe67e15f0bdf0d74b7b814f82ccbc42b71dea4b24",
+      "git_blob": "655fa5dce3990a10d11d22626184684ecbc48e07",
+      "published_path": "research/nine/UNLOADED_THREE_FORCE_PERPENDICULAR_TRIANGLE_STRICT_SUPPORT_SEPARATION.md",
+      "role": "Complete perpendicular full-star and geometric relay proof freshly reconstructed; closed return means and both physical directions.",
+      "read_status": "Complete perpendicular full-star and geometric relay proof freshly reconstructed; closed return means and both physical directions.",
+      "exact_a5f_tree_identity": true
+    },
+    {
+      "path": "current_c62_base/research/nine/SIDE_CHANNEL_UNLOADED_TRIANGLE_BYPASS_POSITIVE_MEAN.md",
+      "bytes": 11411,
+      "lines": 246,
+      "sha256": "5a1607a588e45d0702c46c3d74074561f31109dccc0b8f94c665991cd4a9f5ee",
+      "git_blob": "07b9d107b2ab7f78d30eb582382fa689fa17d544",
+      "published_path": "research/nine/SIDE_CHANNEL_UNLOADED_TRIANGLE_BYPASS_POSITIVE_MEAN.md",
+      "role": "Entire positive channel-mean proof freshly reconstructed, including q=0; accepted channel entry retained.",
+      "read_status": "Entire positive channel-mean proof freshly reconstructed, including q=0; accepted channel entry retained.",
+      "exact_a5f_tree_identity": true
+    },
+    {
+      "path": "current_a67_base/research/nine/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "bytes": 17789,
+      "lines": 376,
+      "sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "git_blob": "a04c76e0a2ef54535e54006b584c656e0d6417c7",
+      "published_path": "research/nine/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "role": "Complete graph/load source read previously in the immediately preceding a813 proof work; exact house HUB/LTC/S role and degree map reconstructed again.",
+      "read_status": "Complete graph/load source read previously in the immediately preceding a813 proof work; exact house HUB/LTC/S role and degree map reconstructed again.",
+      "exact_a5f_tree_identity": true
+    },
+    {
+      "path": "current_a67_base/research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "bytes": 14902,
+      "lines": 327,
+      "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "git_blob": "8f935773421d3d6bcc8a7a6387a85851b27a1771",
+      "published_path": "research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "role": "Complete source previously read at identical bytes; literal genuine occupied radial-S leaf interface retained, not a new extraction audit.",
+      "read_status": "Complete source previously read at identical bytes; literal genuine occupied radial-S leaf interface retained, not a new extraction audit.",
+      "exact_a5f_tree_identity": true
+    },
+    {
+      "path": "current_315_base/research/nine/GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+      "bytes": 15961,
+      "lines": 383,
+      "sha256": "4f8da84dcc3f1fa9b8f5e231486751b134b3438905e8271f6f3484a3f10d275a",
+      "git_blob": "69eb2e51f2a8fe607dbac1d58ae6be85fbb6eaa2",
+      "published_path": "research/nine/GENUINE_S_ROOT_HIGH_SIDE_CHANNEL_COMPLETE_LEAF_FEATURE_REDUCTION.md",
+      "role": "Complete original root-feature source read in the preceding a813 proof work; exact owned-leaf chart and original mean relations used here.",
+      "read_status": "Complete original root-feature source read in the preceding a813 proof work; exact owned-leaf chart and original mean relations used here.",
+      "exact_a5f_tree_identity": true
+    }
+  ],
+  "registry_scope": "25 exact published objects: 13 direct source/review/adoption/contract objects plus 12 explicitly read critical predecessors and provenance objects. This is the consumed-scope registry, not the entire global transitive proof ancestry.",
+  "author_input_pin_reconstruction": [
+    {
+      "path": "current_315_base/research/nine/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "four_printed_fields_recomputed": true,
+      "published_blob_and_size_match": true
+    },
+    {
+      "path": "current_a5f_base/research/nine/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "four_printed_fields_recomputed": true,
+      "published_blob_and_size_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "four_printed_fields_recomputed": true,
+      "published_blob_and_size_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md",
+      "four_printed_fields_recomputed": true,
+      "published_blob_and_size_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "four_printed_fields_recomputed": true,
+      "published_blob_and_size_match": true
+    },
+    {
+      "path": "current_a5f_base/research/nine/REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+      "four_printed_fields_recomputed": true,
+      "published_blob_and_size_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+      "four_printed_fields_recomputed": true,
+      "published_blob_and_size_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/REVIEW_LOADED_TWO_APPLICATION_BOUNDARY_FREE_DICHOTOMY_INDEPENDENT_2026_10_28.md",
+      "four_printed_fields_recomputed": true,
+      "published_blob_and_size_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "four_printed_fields_recomputed": true,
+      "published_blob_and_size_match": true
+    },
+    {
+      "path": "current_a5f_base/research/nine/ADOPTION_THREE_BROAD_CONTINUOUS_CAP_OWNER_AND_SHIFT_TOOLS_ROOT_2026_10_29.md",
+      "four_printed_fields_recomputed": true,
+      "published_blob_and_size_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/ADOPTION_BROADER_CENTERED_ARCS_AND_TWO_FULL_STAR_REDUCTIONS_ROOT_2026_10_28.md",
+      "four_printed_fields_recomputed": true,
+      "published_blob_and_size_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/ADOPTION_COMPLETE_ROOF_INTERFACES_AND_BOUNDARY_FREE_STAR_ROOT_2026_10_28.md",
+      "four_printed_fields_recomputed": true,
+      "published_blob_and_size_match": true
+    },
+    {
+      "path": "current_c62_base/research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "four_printed_fields_recomputed": true,
+      "published_blob_and_size_match": true
+    }
+  ],
+  "source_literal_hash_reconciliation": [
+    {
+      "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "line": 499,
+      "resolved_paths": [
+        "current_315_base/research/nine/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md"
+      ]
+    },
+    {
+      "sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334",
+      "line": 500,
+      "resolved_paths": [
+        "current_a5f_base/research/nine/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md"
+      ]
+    },
+    {
+      "sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143",
+      "line": 501,
+      "resolved_paths": [
+        "current_315_base/research/nine/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md"
+      ]
+    },
+    {
+      "sha256": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78",
+      "line": 502,
+      "resolved_paths": [
+        "current_315_base/research/nine/LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md"
+      ]
+    },
+    {
+      "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "line": 506,
+      "resolved_paths": [
+        "current_c62_base/research/nine/PHYSICAL_CONTACT_STRESS.md"
+      ]
+    }
+  ],
+  "independent_exact_checks": [
+    {
+      "kind": "exact_positive_scalar",
+      "name": "A1 horizontal cone reserve",
+      "expression": "269/3600",
+      "exact_value": "269/3600",
+      "strict_positive": true,
+      "scope": "All closed epsilon/radius values; all physical circle corners."
+    },
+    {
+      "kind": "exact_positive_scalar",
+      "name": "A1 upper-radius squared reserve",
+      "expression": "55/2304",
+      "exact_value": "55/2304",
+      "strict_positive": true,
+      "scope": "R<25/12 even at R=R1."
+    },
+    {
+      "kind": "exact_positive_scalar",
+      "name": "A1 opposite-half-plane diameter reserve",
+      "expression": "157/72",
+      "exact_value": "157/72",
+      "strict_positive": true,
+      "scope": "The real same-unit displacement; no averaged point."
+    },
+    {
+      "kind": "exact_positive_scalar",
+      "name": "A2 annulus radical square reserve",
+      "expression": "1/36",
+      "exact_value": "1/36",
+      "strict_positive": true,
+      "scope": "sqrt(34)<35/6 implies 25/4-sqrt(34)>5/12."
+    },
+    {
+      "kind": "exact_positive_scalar",
+      "name": "A2 nonpositive port height reserve",
+      "expression": "3971/14400",
+      "exact_value": "3971/14400",
+      "strict_positive": true,
+      "scope": "The entire original enlarged -3/8<=w<=0 range."
+    },
+    {
+      "kind": "exact_positive_scalar",
+      "name": "A2 half-height reserve",
+      "expression": "599/3600",
+      "exact_value": "599/3600",
+      "strict_positive": true,
+      "scope": "After proving w>0, obtain w>1/2."
+    },
+    {
+      "kind": "exact_positive_scalar",
+      "name": "A2 nonnegative-x physical-corner reserve",
+      "expression": "899/3600",
+      "exact_value": "899/3600",
+      "strict_positive": true,
+      "scope": "w<=1; whole physical corner set, including zero weights."
+    },
+    {
+      "kind": "exact_positive_scalar",
+      "name": "Caller properness lower-radius reserve",
+      "expression": "9/4",
+      "exact_value": "9/4",
+      "strict_positive": true,
+      "scope": "sqrt(2)<R."
+    },
+    {
+      "kind": "exact_positive_scalar",
+      "name": "Caller properness upper-radius reserve",
+      "expression": "1899/1280",
+      "exact_value": "1899/1280",
+      "strict_positive": true,
+      "scope": "R^2<29/5<3+2sqrt(2)."
+    },
+    {
+      "kind": "exact_positive_scalar",
+      "name": "Properness auxiliary radical reserve",
+      "expression": "1/25",
+      "exact_value": "1/25",
+      "strict_positive": true,
+      "scope": "sqrt(2)>7/5."
+    },
+    {
+      "kind": "exact_positive_scalar",
+      "name": "Original epsilon strict upper endpoint",
+      "expression": "31/57600",
+      "exact_value": "31/57600",
+      "strict_positive": true,
+      "scope": "d=sqrt(R^2-1/4)-1<61/60, hence epsilon<1/60."
+    },
+    {
+      "kind": "exact_positive_scalar",
+      "name": "r bound reserve",
+      "expression": "1/900",
+      "exact_value": "1/900",
+      "strict_positive": true,
+      "scope": "r<sqrt(epsilon)<1/sqrt(60)<2/15."
+    },
+    {
+      "kind": "exact_positive_scalar",
+      "name": "a bound reserve",
+      "expression": "41/5625",
+      "exact_value": "41/5625",
+      "strict_positive": true,
+      "scope": "a>24/25 from a^2+t^2=1."
+    },
+    {
+      "kind": "exact_positive_scalar",
+      "name": "W positive floor",
+      "expression": "1/8",
+      "exact_value": "1/8",
+      "strict_positive": true,
+      "scope": "Complete strict q<3/8 interval, a<1 and td>0."
+    },
+    {
+      "kind": "exact_positive_scalar",
+      "name": "W whole-domain upper expression",
+      "expression": "1607/2450",
+      "exact_value": "1607/2450",
+      "strict_positive": true,
+      "scope": "One continuous upper bound; no mean or angle subdivision."
+    },
+    {
+      "kind": "exact_positive_scalar",
+      "name": "W upper gap",
+      "expression": "79/7350",
+      "exact_value": "79/7350",
+      "strict_positive": true,
+      "scope": "W<2/3."
+    },
+    {
+      "kind": "exact_positive_scalar",
+      "name": "Actual point-distance upper expression",
+      "expression": "1769/900",
+      "exact_value": "1769/900",
+      "strict_positive": true,
+      "scope": "Same actual AD/DC points on D."
+    },
+    {
+      "kind": "exact_positive_scalar",
+      "name": "Actual point-distance diagonal reserve",
+      "expression": "31/900",
+      "exact_value": "31/900",
+      "strict_positive": true,
+      "scope": "Strictly less than the squared diagonal length."
+    },
+    {
+      "kind": "exact_positive_scalar",
+      "name": "Inherited upper-interval final reserve",
+      "expression": "90869/3651912",
+      "exact_value": "90869/3651912",
+      "strict_positive": true,
+      "scope": "80bf whole original upper interval, independently rechecked final two bounds."
+    },
+    {
+      "kind": "exact_positive_scalar",
+      "name": "Inherited opposing-center reserve",
+      "expression": "91/3600",
+      "exact_value": "91/3600",
+      "strict_positive": true,
+      "scope": "53cf full opposite shallow center range."
+    },
+    {
+      "kind": "exact_positive_scalar",
+      "name": "Inherited opposing-center height reserve",
+      "expression": "11/1800",
+      "exact_value": "11/1800",
+      "strict_positive": true,
+      "scope": "Actual occupied L center for q>=1/4."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Actual leaf frame is orthonormal",
+      "left": "4*r**2/(r**2 + 1)**2 + (1 - r**2)**2/(r**2 + 1)**2",
+      "right": "1",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Both coordinate rotations keep O unchanged."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Actual leaf frame is proper",
+      "left": "4*r**2/(r**2 + 1)**2 + (1 - r**2)**2/(r**2 + 1)**2",
+      "right": "1",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Origin moments retain orientation."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Actual leaf axes perpendicular",
+      "left": "0",
+      "right": "0",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "No nonorthonormal projected chart."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "First literal leaf-port relation",
+      "left": "2*q*r/(r**2 + 1)",
+      "right": "q*r*((1 - r**2)/(r**2 + 1) + 1)",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Actual owned-leaf chart."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Second literal leaf-port relation",
+      "left": "2*q*r**2/(r**2 + 1) + q*(1 - r**2)/(r**2 + 1)",
+      "right": "q",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Actual owned-leaf chart."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Actual AB point leaf u coordinate",
+      "left": "-q*r*(1 - r**2)/(r**2 + 1) + 2*q*r/(r**2 + 1)",
+      "right": "q*r",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Same physical application, not a replaced mean."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Actual AB point leaf v coordinate",
+      "left": "-2*q*r**2/(r**2 + 1) - q*(1 - r**2)/(r**2 + 1)",
+      "right": "-q",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Same physical application."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Strict AD world x",
+      "left": "-q*r*(1 - r**2)/(r**2 + 1) - 2*r*(1 - q)/(r**2 + 1)",
+      "right": "q*r - 2*r/(r**2 + 1)",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Actual S=epsilon*u+(1-q)*v."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Strict AD world y",
+      "left": "2*q*r**2/(r**2 + 1) - (1 - q)*(1 - r**2)/(r**2 + 1)",
+      "right": "q - (1 - r**2)/(r**2 + 1)",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Actual S, whole original corner."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Full A4 horizontal balance",
+      "left": "-eta + kappa - mu*(1 - r**2)/(r**2 + 1) - rho",
+      "right": "-eta + kappa - mu*(1 - r**2)/(r**2 + 1) - rho",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "All four original pair terms retained."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Full A4 vertical balance",
+      "left": "-2*mu*r/(r**2 + 1) + omega",
+      "right": "-2*mu*r/(r**2 + 1) + omega",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "No positive AT or AD term silently removed."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Actual AB origin moment",
+      "left": "-2*mu*q*r**2/(r**2 + 1) - mu*q*(1 - r**2)/(r**2 + 1)",
+      "right": "-2*mu*q*r**2/(r**2 + 1) - mu*q*(1 - r**2)/(r**2 + 1)",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "B2 transmitted magnitude mu at the actual P_AB."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Actual AD origin moment",
+      "left": "omega*q*r + rho*(1 - q)",
+      "right": "omega*q*r + rho*(1 - q)",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Strict original AD corner."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Actual AT origin moment",
+      "left": "eta*w",
+      "right": "eta*w",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Entire closed actual AT side mean."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Actual occupied leaf origin moment",
+      "left": "0",
+      "right": "0",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Genuine radial leaf, not loaded C2."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Full four-term A4 moment reduction",
+      "left": "eta*w - 2*mu*q*r**2/(r**2 + 1) - mu*q*(1 - r**2)/(r**2 + 1) + omega*q*r + rho*(1 - q)",
+      "right": "eta*w - mu*q*(1 - r**2)/(r**2 + 1) + rho*(1 - q)",
+      "substitutions": {
+        "omega": "2*mu*r/(r**2 + 1)"
+      },
+      "exact_difference": "0",
+      "scope": "Only omega=mu*t is substituted."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Full original D3 vertical force",
+      "left": "-nu*(-2*g_x*r/(r**2 + 1) - g_y*(1 - r**2)/(r**2 + 1)) + omega",
+      "right": "-nu*(-2*g_x*r/(r**2 + 1) - g_y*(1 - r**2)/(r**2 + 1)) + omega",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "G_v>0 from positive omega and g_v<0, preserving DC."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Full original T2 resultant",
+      "left": "-eta - nu*(-g_x*(1 - r**2)/(r**2 + 1) + 2*g_y*r/(r**2 + 1)) - rho",
+      "right": "-eta - nu*(-g_x*(1 - r**2)/(r**2 + 1) + 2*g_y*r/(r**2 + 1)) - rho",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Full pair-force relation with actual AT and DT."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Full parallel-C T u force",
+      "left": "-eta + nu*(1 - r**2)/(r**2 + 1) - rho",
+      "right": "-eta + nu*(1 - r**2)/(r**2 + 1) - rho",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Full C parallel branch; its actual side mean remains independent."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Parallel-C force lower comparison",
+      "left": "-eta + nu*(1 - r**2)/(r**2 + 1) - rho",
+      "right": "-eta + 2*mu*q*(1 - r**2)/(r**2 + 1) - rho + (1 - r**2)*(-2*mu*q + nu)/(r**2 + 1)",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Both terms nonnegative, second strictly positive by A4 and w>1/2."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Same actual Q minus S, u coordinate",
+      "left": "-q*r - r/(r**2 + 1) - (1 - r**2)*(q*r + 1)/(r**2 + 1)",
+      "right": "-2*r*(q + 1/2)/(r**2 + 1) - (1 - r**2)/(r**2 + 1)",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Only the nonparallel C branch supplies Q_world=(d,-1/2)."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Same actual Q minus S, v coordinate",
+      "left": "q - 2*r*(q*r + 1)/(r**2 + 1) + (1 - r**2)/(2*(r**2 + 1)) - 1",
+      "right": "q - 2*r*(q*r + 1)/(r**2 + 1) + (1 - r**2)/(2*(r**2 + 1)) - 1",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "No parallel-C mean substituted."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Actual inward AD support inequality",
+      "left": "2*mu*r*(q - 2*r*(q*r + 1)/(r**2 + 1) + (1 - r**2)/(2*(r**2 + 1)) - 1)/(r**2 + 1) - rho*(-q*r - r/(r**2 + 1) - (1 - r**2)*(q*r + 1)/(r**2 + 1))",
+      "right": "-2*mu*r*(-q + 2*r*(q*r + 1)/(r**2 + 1) - (1 - r**2)/(2*(r**2 + 1)) + 1)/(r**2 + 1) + rho*(2*r*(q + 1/2)/(r**2 + 1) + (1 - r**2)/(r**2 + 1))",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Actual Q in D; original AD points inward into D."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Strict scalar inference decomposition",
+      "left": "mu*(q*(1 - r**2)*(2*r*(q + 1/2)/(r**2 + 1) + (1 - r**2)/(r**2 + 1))/(r**2 + 1) - 2*r*(1 - q)*(-q + 2*r*(q*r + 1)/(r**2 + 1) - (1 - r**2)/(2*(r**2 + 1)) + 1)/(r**2 + 1))",
+      "right": "(1 - q)*(-2*mu*r*(-q + 2*r*(q*r + 1)/(r**2 + 1) - (1 - r**2)/(2*(r**2 + 1)) + 1)/(r**2 + 1) + rho*(2*r*(q + 1/2)/(r**2 + 1) + (1 - r**2)/(r**2 + 1))) + (2*r*(q + 1/2)/(r**2 + 1) + (1 - r**2)/(r**2 + 1))*(mu*q*(1 - r**2)/(r**2 + 1) - rho*(1 - q))",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "First term positive by eta*w; second nonnegative by actual support; K,V>0."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Whole continuous threshold factorization",
+      "left": "q*(1 - r**2)*(2*r*(q + 1/2)/(r**2 + 1) + (1 - r**2)/(r**2 + 1))/(r**2 + 1) - 2*r*(1 - q)*(-q + 2*r*(q*r + 1)/(r**2 + 1) - (1 - r**2)/(2*(r**2 + 1)) + 1)/(r**2 + 1)",
+      "right": "(r + 1)*(q*(r**3 - r**2 + 3*r + 1) - r*(3*r + 1))/(r**2 + 1)**2",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Independent expansion of the new two-variable rational expression."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Positive threshold coefficient decomposition",
+      "left": "r**3 - r**2 + 3*r + 1",
+      "right": "r**3 - r**2 + 3*r + 1",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "0<r<1 makes every displayed component positive."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Strict coefficient deficit",
+      "left": "-r**3 + r**2",
+      "right": "r**2*(1 - r)",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Strict for the entire 0<r<1 interval."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Threshold value at q=r",
+      "left": "-r*(3*r + 1) + r*(r**3 - r**2 + 3*r + 1)",
+      "right": "-r**3*(1 - r)",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Negative across the full interval; no point sampling."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Actual q-squared consequence",
+      "left": "q**2 - q*r",
+      "right": "q*(q - r)",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "q>r and q>0 give q^2>epsilon."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Half-angle relation",
+      "left": "2*r/((r**2 + 1)*((1 - r**2)/(r**2 + 1) + 1))",
+      "right": "r",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Denominator positive; genuine leaf chart."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Small-r relation",
+      "left": "r**2",
+      "right": "r**2",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "q>r gives r^2<epsilon."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "One-minus-a relation",
+      "left": "-(1 - r**2)/(r**2 + 1) + 1",
+      "right": "4*r**2/((r**2 + 1)**2*((1 - r**2)/(r**2 + 1) + 1))",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "All denominators positive."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "K strict side-distance lower decomposition",
+      "left": "2*r*(q + 1/2)/(r**2 + 1) + (1 - r**2)/(r**2 + 1) - 1",
+      "right": "2*r*(q - 2*r/((r**2 + 1)*((1 - r**2)/(r**2 + 1) + 1)) + 1/2)/(r**2 + 1)",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "q>r gives K-1>t/2>0."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "W exact continuous decomposition",
+      "left": "-q + 2*r*(q*r + 1)/(r**2 + 1) - (1 - r**2)/(2*(r**2 + 1)) + 1",
+      "right": "-q + 4*r**2/((r**2 + 1)**2*(2*(1 - r**2)/(r**2 + 1) + 2)) + 2*r*(q*r + 1)/(r**2 + 1) + 1/2",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "All original actual coordinates retained."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Actual world displacement x",
+      "left": "q*r*(1 - r**2)/(r**2 + 1) + q*r + 2*r*(1 - q)/(r**2 + 1) + 1",
+      "right": "2*r/(r**2 + 1) + 1",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "One and the same D segment."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Actual world displacement y",
+      "left": "-2*q*r**2/(r**2 + 1) + (1 - q)*(1 - r**2)/(r**2 + 1) - 1/2",
+      "right": "-q + (1 - r**2)/(r**2 + 1) - 1/2",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "One and the same D segment."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Rotation preserves actual D-point squared distance",
+      "left": "(2*r*(q + 1/2)/(r**2 + 1) + (1 - r**2)/(r**2 + 1))**2 + (-q + 2*r*(q*r + 1)/(r**2 + 1) - (1 - r**2)/(2*(r**2 + 1)) + 1)**2",
+      "right": "(-2*q*r**2/(r**2 + 1) + (1 - q)*(1 - r**2)/(r**2 + 1) - 1/2)**2 + (q*r*(1 - r**2)/(r**2 + 1) + q*r + 2*r*(1 - q)/(r**2 + 1) + 1)**2",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Not two unrelated component estimates."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Whole unit diameter expansion",
+      "left": "(-2*q*r**2/(r**2 + 1) + (1 - q)*(1 - r**2)/(r**2 + 1) - 1/2)**2 + (q*r*(1 - r**2)/(r**2 + 1) + q*r + 2*r*(1 - q)/(r**2 + 1) + 1)**2",
+      "right": "4*r/(r**2 + 1) - 2*(1 - r**2)*(q + 1/2)/(r**2 + 1) + (q + 1/2)**2 + 2",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Uses only actual unit axes a^2+t^2=1."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Projection from actual AB to actual DC",
+      "left": "g_x + g_y*(-q - 1/2)",
+      "right": "g_x - g_y*(q + 1/2)",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Strict whole D3 return separator at an unchanged A point."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Strict g_u sign decomposition",
+      "left": "-g_x*(1 - r**2)/(r**2 + 1) + 2*g_y*r/(r**2 + 1)",
+      "right": "g_x*(2*r/((q + 1/2)*(r**2 + 1)) - (1 - r**2)/(r**2 + 1)) - 2*r*(g_x/(q + 1/2) - g_y)/(r**2 + 1)",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Both terms strictly negative under diameter and whole-return inequalities."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Strict g_v sign form",
+      "left": "-2*g_x*r/(r**2 + 1) - g_y*(1 - r**2)/(r**2 + 1)",
+      "right": "-2*g_x*r/(r**2 + 1) - g_y*(1 - r**2)/(r**2 + 1)",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Both world normal components positive in the nonparallel C row."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "D-owned DA transverse full force",
+      "left": "b*(-alpha*p - g_xb*nu) + p*(alpha*b - g_yb*nu)",
+      "right": "-nu*(b*g_xb + g_yb*p)",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "alpha*n is the negative original DA force; n dot m=0."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "D-owned DA complete DT height",
+      "left": "b*lambda + p*(1 - theta)",
+      "right": "b*lambda + p*(1 - theta)",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Includes every theta/lambda endpoint and zero projection."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "D-owned DC proper basis determinant",
+      "left": "c**2 + s**2",
+      "right": "1",
+      "substitutions": {
+        "c**2": "1 - s**2"
+      },
+      "exact_difference": "0",
+      "scope": "Exact own axes of the same D."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Original DA j projection",
+      "left": "-c*omega - rho*s",
+      "right": "-c*omega - rho*s",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Actual original force, no resultant replacement."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Original DA k projection",
+      "left": "-c*rho + omega*s",
+      "right": "-c*rho + omega*s",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "The B0 sign controls the entire original support face."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "D-owned DC full D3 reconstructed x",
+      "left": "-c*(c*rho - nu - omega*s) - s*(c*omega + rho*s)",
+      "right": "c*nu - rho",
+      "substitutions": {
+        "c**2": "1 - s**2"
+      },
+      "exact_difference": "0",
+      "scope": "Three original positive pair forces."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "D-owned DC full D3 reconstructed y",
+      "left": "c*(c*omega + rho*s) - s*(c*rho - nu - omega*s)",
+      "right": "nu*s + omega",
+      "substitutions": {
+        "c**2": "1 - s**2"
+      },
+      "exact_difference": "0",
+      "scope": "Three original positive pair forces."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "D-owned DC entire DT mean height",
+      "left": "c - lambda*s",
+      "right": "c - lambda*s",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Every lambda in [0,1] retained when the normal projection vanishes."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Actual DC torque about S",
+      "left": "c*nu*(c*sigma - s) - nu*s*(-c - s*sigma)",
+      "right": "nu*sigma",
+      "substitutions": {
+        "c**2": "1 - s**2"
+      },
+      "exact_difference": "0",
+      "scope": "Entire sigma in [0,1]."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Actual DT torque about S",
+      "left": "-(c - lambda*s)*(-c*(c*rho - nu - omega*s) - s*(c*omega + rho*s)) + (-c*lambda - s)*(c*(c*omega + rho*s) - s*(c*rho - nu - omega*s))",
+      "right": "c*rho - lambda*(c*omega + rho*s) - nu - omega*s",
+      "substitutions": {
+        "c**2": "1 - s**2"
+      },
+      "exact_difference": "0",
+      "scope": "Original DT mean and full force."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Full unloaded D3 moment about S",
+      "left": "c*nu*(c*sigma - s) - nu*s*(-c - s*sigma) - (c - lambda*s)*(-c*(c*rho - nu - omega*s) - s*(c*omega + rho*s)) + (-c*lambda - s)*(c*(c*omega + rho*s) - s*(c*rho - nu - omega*s))",
+      "right": "c*rho - lambda*(c*omega + rho*s) + nu*sigma - nu - omega*s",
+      "substitutions": {
+        "c**2": "1 - s**2"
+      },
+      "exact_difference": "0",
+      "scope": "DA moment is zero at the actual S; DC and DT both remain."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Strict B0/A0 versus c/s comparison",
+      "left": "c*(c*omega + rho*s) - s*(c*rho - omega*s)",
+      "right": "omega",
+      "substitutions": {
+        "c**2": "1 - s**2"
+      },
+      "exact_difference": "0",
+      "scope": "The positive original omega supplies strictness."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "Full zero-projection torque",
+      "left": "-lambda*(c*omega + rho*s) + sigma*(c*rho - omega*s)",
+      "right": "-lambda*(c*omega + rho*s) + sigma*(c*rho - omega*s)",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "At B0=nu the full side interval remains, no endpoint selection."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "High projection branch moment rearrangement",
+      "left": "-c*omega + c*rho + nu*sigma - nu - omega*s - rho*s",
+      "right": "-c*omega + c*rho - nu*(1 - sigma) - omega*s - rho*s",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "sigma<=1 forces B0>=A0, contrary to the strict ratio."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "3808 whole coefficient support expansion",
+      "left": "(bb**2 + ee**2 + ee*(bb + 1))*(2*bb**2 + 2*ee**2 + 2*ee*(bb + 1)) - (bb**2 + 2*bb*ee + 2*ee**2)*(2*bb**2 + 2*bb*ee + ee**2)",
+      "right": "ee**3*(4 - 2*bb) + ee**2*(-3*bb**2 + 4*bb + 2) + ee*(-2*bb**3 + 4*bb**2)",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Full arbitrary-group properness support bound over the enlarged radius domain."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "663 complete weak-mean relay reserve",
+      "left": "SS - (SS - rr*(CC + 1))*(CC*rr + SS)",
+      "right": "CC*rr**2*(CC + 1) + SS*rr + SS*(1 - SS)",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Full perpendicular actual-return relay; no orientation subdivision."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "406f one-owned-axis full moment",
+      "left": "-mm*(pmean - 1) + ss - ww",
+      "right": "mm*(1 - pmean) + ss - ww",
+      "substitutions": {},
+      "exact_difference": "0",
+      "scope": "Whole original East-side mean, no selected endpoint."
+    },
+    {
+      "kind": "independent_symbolic_identity",
+      "name": "2a6 adjacent-corner strict separator expression",
+      "left": "-a_tilt**2 + (-s_tilt + (-H*s_tilt + a_tilt*q_tilt)/(q_tilt + s_tilt))*(s_tilt + 1)",
+      "right": "(-1 + (-H*s_tilt + a_tilt*q_tilt)/(q_tilt + s_tilt))*(s_tilt + 1)",
+      "substitutions": {
+        "a_tilt**2": "1 - s_tilt**2"
+      },
+      "exact_difference": "0",
+      "scope": "Uses the actual eta=1 endpoint; eta=0 and interior handled separately."
+    }
+  ],
+  "full_mathematical_reconstruction": [
+    {
+      "id": "A1",
+      "scope": "Complete actual-point/circle-corner cone",
+      "reconstruction": "Diameter bounds |Z_x|; exact scalar reserve puts it below R/sqrt(2). If Z_y<=0, the same actual P gives a distance greater than the square diameter. No load or degree assumption.",
+      "verdict": "PASS"
+    },
+    {
+      "id": "A2",
+      "scope": "Complete enlarged height range and actual max side",
+      "reconstruction": "The annulus first excludes w<=0 and proves w>1/2. Actual support geometry gives vertical reach at most one, including every side mean. Nonnegative-x circle corners violate containment; A1 then supplies the strict cone.",
+      "verdict": "PASS"
+    },
+    {
+      "id": "A2-resultant",
+      "scope": "Every physical mask and zero coefficient",
+      "reconstruction": "The corner conclusions apply before weights. Positive total with arbitrary nonnegative individual weights yields F_x<0 and F_y>-F_x. No physical two-corner mask is converted to a unique mask.",
+      "verdict": "PASS"
+    },
+    {
+      "id": "B-entry",
+      "scope": "Full unloaded D3 and one actual proper ray",
+      "reconstruction": "G_y>0 gives F_y<=w<=V. F=S forces zero ray and x_*=h>=0, contradicting the supplied x_*<0. The actual axis-owner premise is explicit.",
+      "verdict": "PASS"
+    },
+    {
+      "id": "B-DA",
+      "scope": "Complete original DA-owned side",
+      "reconstruction": "n=(-p,b), m=(b,p), all p,b>0. Negative-negative g has g.m<0, so actual DT lies on the full max-m face. Its height is V+lambda*b+(1-theta)*p. Equality forces the already forbidden F=S.",
+      "verdict": "PASS"
+    },
+    {
+      "id": "B-DC-low",
+      "scope": "B0<0 and B0=0",
+      "reconstruction": "Negative B0 puts the actual S and Q on one physical D side and forces distance<=1. B0=0 is exactly the DA-owned axis already covered, with no free-normal reselection.",
+      "verdict": "PASS"
+    },
+    {
+      "id": "B-DC-positive",
+      "scope": "All positive B0 and all projection signs",
+      "reconstruction": "Actual S is the min/min vertex; Q=sigma*j+k and F=j+lambda*k. Full D3 torque gives B0=nu(1-sigma)+lambda*A0 and A0*c-B0*s=omega>0. The three cases B0<nu, B0>nu and B0=nu contradict lambda*s>=c, including every zero-projection mean.",
+      "verdict": "PASS"
+    },
+    {
+      "id": "C-original",
+      "scope": "Literal original graph/load entry",
+      "reconstruction": "The complete accepted 6f source supplies strict high radius, aligned radial C, tilted A and both real leaf charts. The target selects only the actual owned-leaf and the literal strict AD/AT=-u feature. Full ea076 removes q>=3/8; no other owner conclusion is imported.",
+      "verdict": "PASS"
+    },
+    {
+      "id": "C-A4",
+      "scope": "All original forces and torques",
+      "reconstruction": "AB,AD,AT,AL remain with magnitudes mu,rho/omega,eta,kappa and actual applications. Their complete moment gives mu*a*q=rho*V+eta*w; strict eta*w is essential to the scalar inequality.",
+      "verdict": "PASS"
+    },
+    {
+      "id": "C-C2",
+      "scope": "Both complete physical C rows",
+      "reconstruction": "The exact 2a6 source retains both strictly positive physical C coefficients, the full parallel mean y in [-1/2,0), and the strict-NE normal at Q=(d,-1/2) only in the nonparallel branch. C is never a one-force leaf.",
+      "verdict": "PASS"
+    },
+    {
+      "id": "C-D3-separator",
+      "scope": "Actual touching-return scope",
+      "reconstruction": "The real D has exactly A,C,T, with actual positive AT. The full 406f theorem, including its complete perpendicular relay, gives strict separation of every point of actual A union T from the original DC support. A4 and T2 remain unrestricted returned degrees.",
+      "verdict": "PASS"
+    },
+    {
+      "id": "C-T2",
+      "scope": "All masks, coincidences, proper rays",
+      "reconstruction": "A2 gives w>1/2 and full F_T negative u/positive v. Full D3 gives G_v>0, so original T2 is nonparallel. Coincidence is excluded by 3808 positive one-application radiality; distinct applications give exact proper rays, without inside-T for physical-two masks.",
+      "verdict": "PASS"
+    },
+    {
+      "id": "C-parallel",
+      "scope": "Entire C parallel force row",
+      "reconstruction": "Original C torque gives nu>=2muq. The full A4 torque and w<=V,w>1/2 give rho+eta<2muaq<=a*nu. Full T2 then gives positive F_T,u, contradicting A2. All D owners and original mean endpoints remain.",
+      "verdict": "PASS"
+    },
+    {
+      "id": "C-threshold",
+      "scope": "Whole continuous q/r comparison",
+      "reconstruction": "Use the real Q in D against original AD support, together with strict A4, to get a*q*K-t*V*W>0. The exact rational factorization and D0>0,D0<3r+1 force q>r and q^2>epsilon over the entire domain.",
+      "verdict": "PASS"
+    },
+    {
+      "id": "C-distance",
+      "scope": "Original owner cover from same actual segment",
+      "reconstruction": "The threshold gives t<4/15,a>24/25, K>1 and W<2/3, hence 1<|Q-S|^2<1769/900<2. If neither original normal is a D axis, both distinct actual support points are vertices, whose possible squared distances are 1 or 2. Thus an original axis is forced.",
+      "verdict": "PASS"
+    },
+    {
+      "id": "C-signs",
+      "scope": "Actual diameter and real return support",
+      "reconstruction": "The world displacement gives a-t/k0>=k0/2>0. Strict separation at the actual P_AB gives gx-k0*gy>0. These force both original leaf-frame g components negative, with no assumption about normal circular order.",
+      "verdict": "PASS"
+    },
+    {
+      "id": "C-join",
+      "scope": "Every Theorem B hypothesis supplied",
+      "reconstruction": "Use the same S=(epsilon,V), DA=(rho,-omega), actual DC normal g, actual distance>1, proven owner cover, and the exact q_T/F/G proper ray. No actual mean is moved; both D-owned alternatives and their shared endpoints are covered.",
+      "verdict": "PASS"
+    },
+    {
+      "id": "6f-scope",
+      "scope": "Standing whole original assembly",
+      "reconstruction": "Entire source and its full independent review/root adoption read. Its complete accepted entry is inherited; the current review does not claim a fresh recursive global selection/topology audit of all historical ancestors.",
+      "verdict": "PASS"
+    },
+    {
+      "id": "ea076-scope",
+      "scope": "Whole upper-owner complement",
+      "reconstruction": "Entire source, independent review and adoption read; critical 53cf and 80bf proofs also reconstructed at their complete scopes. The target imports only elimination of q>=3/8, preserving the exact q=3/8 joining endpoint.",
+      "verdict": "PASS"
+    },
+    {
+      "id": "2a6-scope",
+      "scope": "Whole mask and positive-mean reduction",
+      "reconstruction": "Entire source, independent review and adoption reconstructed, with full 5a160 positive-mean and 406f/663 separator proofs. All unique and physical-two zero-weight endpoints are included in its standing necessary reduction.",
+      "verdict": "PASS"
+    },
+    {
+      "id": "3808-scope",
+      "scope": "Complete boundary-free original-star theorem",
+      "reconstruction": "Entire source and complete independent review/adoption reconstructed. Exact actual grouping; real neighbor reach; all rectangle normal-line regions; full unique/two-corner masks; one-application, parallel and nonparallel alternatives. Only one-application and proven nonparallel alternatives enter d92e.",
+      "verdict": "PASS"
+    },
+    {
+      "id": "new-independence",
+      "scope": "No operative pending theorem",
+      "reconstruction": "Neither be0 support-face theorem, a813 parallel-T theorem, nor the proposed selected AB-endpoint theorem is used. Nonparallelity and actual owner cover are proved in this source.",
+      "verdict": "PASS"
+    },
+    {
+      "id": "accounting",
+      "scope": "Only exact feature exclusion",
+      "reconstruction": "No complete TC.S, parent, coarse row or allocation/certificate claim follows. All other owned-leaf force pairings and the upper-adjacent genuine-leaf chart remain outside this theorem.",
+      "verdict": "PASS"
+    }
+  ],
+  "literal_original_graph": {
+    "vertices": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "T",
+      "L"
+    ],
+    "edges": [
+      [
+        "A",
+        "T"
+      ],
+      [
+        "D",
+        "T"
+      ],
+      [
+        "A",
+        "D"
+      ],
+      [
+        "A",
+        "B"
+      ],
+      [
+        "B",
+        "C"
+      ],
+      [
+        "C",
+        "D"
+      ],
+      [
+        "A",
+        "L"
+      ]
+    ],
+    "true_degrees": {
+      "A": 4,
+      "B": 2,
+      "C": 2,
+      "D": 3,
+      "T": 2,
+      "L": 1
+    },
+    "circle_loads": [
+      "T",
+      "C",
+      "L"
+    ],
+    "unloaded": [
+      "A",
+      "B",
+      "D"
+    ],
+    "physical_units": 9,
+    "arbitrary_extras": 3
+  },
+  "independent_graph_checks": [
+    {
+      "name": "Actual component vertices",
+      "actual": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "L",
+        "T"
+      ],
+      "expected": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "L",
+        "T"
+      ],
+      "pass": true
+    },
+    {
+      "name": "Original positive edge count",
+      "actual": 7,
+      "expected": 7,
+      "pass": true
+    },
+    {
+      "name": "True degree A",
+      "actual": 4,
+      "expected": 4,
+      "pass": true
+    },
+    {
+      "name": "True degree B",
+      "actual": 2,
+      "expected": 2,
+      "pass": true
+    },
+    {
+      "name": "True degree C",
+      "actual": 2,
+      "expected": 2,
+      "pass": true
+    },
+    {
+      "name": "True degree D",
+      "actual": 3,
+      "expected": 3,
+      "pass": true
+    },
+    {
+      "name": "True degree T",
+      "actual": 2,
+      "expected": 2,
+      "pass": true
+    },
+    {
+      "name": "True degree L",
+      "actual": 1,
+      "expected": 1,
+      "pass": true
+    },
+    {
+      "name": "Full positive neighbors A",
+      "actual": [
+        "B",
+        "D",
+        "L",
+        "T"
+      ],
+      "expected": [
+        "B",
+        "D",
+        "L",
+        "T"
+      ],
+      "pass": true
+    },
+    {
+      "name": "Full positive neighbors B",
+      "actual": [
+        "A",
+        "C"
+      ],
+      "expected": [
+        "A",
+        "C"
+      ],
+      "pass": true
+    },
+    {
+      "name": "Full positive neighbors C",
+      "actual": [
+        "B",
+        "D"
+      ],
+      "expected": [
+        "B",
+        "D"
+      ],
+      "pass": true
+    },
+    {
+      "name": "Full positive neighbors D",
+      "actual": [
+        "A",
+        "C",
+        "T"
+      ],
+      "expected": [
+        "A",
+        "C",
+        "T"
+      ],
+      "pass": true
+    },
+    {
+      "name": "Full positive neighbors T",
+      "actual": [
+        "A",
+        "D"
+      ],
+      "expected": [
+        "A",
+        "D"
+      ],
+      "pass": true
+    },
+    {
+      "name": "Full positive neighbors L",
+      "actual": [
+        "A"
+      ],
+      "expected": [
+        "A"
+      ],
+      "pass": true
+    },
+    {
+      "name": "No invented BD edge",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "name": "Actual AT return contact for D3",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "Actual full ADT triangle",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "Actual B bypass path A-B-C",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "Actual original four-cycle",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "Genuine occupied S leaf at A",
+      "actual": [
+        "A"
+      ],
+      "expected": [
+        "A"
+      ],
+      "pass": true
+    },
+    {
+      "name": "Printed source full load set",
+      "actual": [
+        "C",
+        "L",
+        "T"
+      ],
+      "expected": [
+        "C",
+        "L",
+        "T"
+      ],
+      "pass": true
+    },
+    {
+      "name": "Printed source unloaded set",
+      "actual": [
+        "A",
+        "B",
+        "D"
+      ],
+      "expected": [
+        "A",
+        "B",
+        "D"
+      ],
+      "pass": true
+    },
+    {
+      "name": "All nine units with three arbitrary extras",
+      "actual": 3,
+      "expected": 3,
+      "pass": true
+    },
+    {
+      "name": "Author true degrees match independent graph",
+      "actual": {
+        "A": 4,
+        "B": 2,
+        "C": 2,
+        "D": 3,
+        "T": 2,
+        "L": 1
+      },
+      "expected": {
+        "A": 4,
+        "B": 2,
+        "C": 2,
+        "D": 3,
+        "T": 2,
+        "L": 1
+      },
+      "pass": true
+    },
+    {
+      "name": "Sum of original true degrees",
+      "actual": 14,
+      "expected": 14,
+      "pass": true
+    }
+  ],
+  "source_section_dag_reconstruction": {
+    "scope": "Author section dependency inventory independently reconstructed by Kahn and its supplied topological order checked; not a claim of complete global dependency closure. Mathematical obligations are the separately reconstructed scopes above.",
+    "nodes": [
+      "actual physical unit",
+      "real near-axis port",
+      "A1 physical corner cone",
+      "actual max-u port",
+      "A2 half-height and negative-u resultant",
+      "full original residual",
+      "full A4 balance and torque",
+      "complete C force cover",
+      "true D3 strict return support",
+      "full boundary-free T2 alternatives",
+      "actual proper negative-u return ray",
+      "parallel C torque contradiction",
+      "nonparallel C strict scalar inequality",
+      "q^2>epsilon",
+      "actual AD/DC distance window",
+      "original D-axis cover",
+      "both leaf components of g negative",
+      "B full D3 proper-ray axis obstruction",
+      "complete stated strict-house feature exclusion"
+    ],
+    "edges": [
+      [
+        "actual physical unit",
+        "A1 physical corner cone"
+      ],
+      [
+        "real near-axis port",
+        "A1 physical corner cone"
+      ],
+      [
+        "A1 physical corner cone",
+        "A2 half-height and negative-u resultant"
+      ],
+      [
+        "actual max-u port",
+        "A2 half-height and negative-u resultant"
+      ],
+      [
+        "full original residual",
+        "full A4 balance and torque"
+      ],
+      [
+        "full original residual",
+        "complete C force cover"
+      ],
+      [
+        "full original residual",
+        "true D3 strict return support"
+      ],
+      [
+        "full original residual",
+        "actual max-u port"
+      ],
+      [
+        "A2 half-height and negative-u resultant",
+        "actual proper negative-u return ray"
+      ],
+      [
+        "full boundary-free T2 alternatives",
+        "actual proper negative-u return ray"
+      ],
+      [
+        "complete C force cover",
+        "actual proper negative-u return ray"
+      ],
+      [
+        "full A4 balance and torque",
+        "parallel C torque contradiction"
+      ],
+      [
+        "complete C force cover",
+        "parallel C torque contradiction"
+      ],
+      [
+        "A2 half-height and negative-u resultant",
+        "parallel C torque contradiction"
+      ],
+      [
+        "full A4 balance and torque",
+        "nonparallel C strict scalar inequality"
+      ],
+      [
+        "complete C force cover",
+        "nonparallel C strict scalar inequality"
+      ],
+      [
+        "A2 half-height and negative-u resultant",
+        "nonparallel C strict scalar inequality"
+      ],
+      [
+        "nonparallel C strict scalar inequality",
+        "q^2>epsilon"
+      ],
+      [
+        "q^2>epsilon",
+        "actual AD/DC distance window"
+      ],
+      [
+        "actual AD/DC distance window",
+        "original D-axis cover"
+      ],
+      [
+        "true D3 strict return support",
+        "both leaf components of g negative"
+      ],
+      [
+        "complete C force cover",
+        "both leaf components of g negative"
+      ],
+      [
+        "actual proper negative-u return ray",
+        "B full D3 proper-ray axis obstruction"
+      ],
+      [
+        "original D-axis cover",
+        "B full D3 proper-ray axis obstruction"
+      ],
+      [
+        "both leaf components of g negative",
+        "B full D3 proper-ray axis obstruction"
+      ],
+      [
+        "parallel C torque contradiction",
+        "complete stated strict-house feature exclusion"
+      ],
+      [
+        "B full D3 proper-ray axis obstruction",
+        "complete stated strict-house feature exclusion"
+      ]
+    ],
+    "node_count": 19,
+    "edge_count": 27,
+    "independent_kahn_order": [
+      "actual physical unit",
+      "full boundary-free T2 alternatives",
+      "full original residual",
+      "real near-axis port",
+      "full A4 balance and torque",
+      "complete C force cover",
+      "true D3 strict return support",
+      "actual max-u port",
+      "A1 physical corner cone",
+      "both leaf components of g negative",
+      "A2 half-height and negative-u resultant",
+      "actual proper negative-u return ray",
+      "parallel C torque contradiction",
+      "nonparallel C strict scalar inequality",
+      "q^2>epsilon",
+      "actual AD/DC distance window",
+      "original D-axis cover",
+      "B full D3 proper-ray axis obstruction",
+      "complete stated strict-house feature exclusion"
+    ],
+    "acyclic": true,
+    "author_topological_order_verified": true
+  },
+  "complete_domain_guards": [
+    "Exact radius endpoints R0 and R1 in A1/A2 are included; generic B has no radius premise.",
+    "A1 permits epsilon=0 and epsilon=1/60 and every w>=0; A2 separately starts at -3/8<=w<=1.",
+    "A2 proves positive w before applying A1, and proves w>1/2 before any original torque comparison.",
+    "A2 requires max_K x=epsilon at the actual point, not mere proximity or an artificial mean.",
+    "The geometric cone holds at every physical circle corner, including zero-weight corners.",
+    "Full physical one- and two-corner masks and arbitrary nonnegative positive-total weights are retained.",
+    "Actual tilted max-side vertices and aligned side means, including both endpoints, have vertical reach at most one.",
+    "Generic B retains exactly all three original positive D forces and its zero circle load.",
+    "Generic B explicitly requires at least one of original DA/DC to be a D own axis.",
+    "Generic B requires actual |Q-S|>1, not an inequality between independently averaged or substituted points.",
+    "Generic B uses only one actual proper DT ray, with ell>=0 and actual q_* of negative x.",
+    "Generic B does not require boundary neighbors, extra degree bounds, or a selected strict-normal convention.",
+    "The entire DA-owned case includes theta=0,1 and lambda=0,1 and a whole lambda interval at zero projection.",
+    "The entire DC-owned case includes sigma=0,1 and all lambda in [0,1] at B0=nu.",
+    "B0<0 uses same actual D-side length; B0=0 belongs to the DA-owned case; B0>0 is split exhaustively by comparison with nu.",
+    "The co-owned DA/DC class is already handled by the first branch, so there is no missing overlap.",
+    "The original C caller has strictly epsilon>0; A1/A2 broader epsilon endpoints are not silently assigned to that high residual.",
+    "Original all-nine geometry retains three arbitrary extra units without imposing an unproved capacity region.",
+    "Full A4, D3, unloaded B2, loaded T2/C2 and real L1 remain; no BD edge is inferred.",
+    "Original load set is T,C,L; no boundary load is added to A,B,D.",
+    "The actual genuine S leaf alone supplies AL radial one-force data; loaded C is not converted to a leaf.",
+    "Both actual world and leaf charts are rigid orthonormal changes about the same containing-circle origin.",
+    "The upper-owner q>=3/8 exit covers its closed q=3/8 endpoint; the new proof has q<3/8.",
+    "The original feature is specified literally: strict (-u,+v) AD at (epsilon,V), and A-owned AT=-u at its whole side mean.",
+    "Neither AD support exhaustion over other features nor the upper-adjacent leaf chart is claimed.",
+    "All four A moments are retained; eta*w>0 supplies the strict scalar comparison.",
+    "The full D3 gives G_v>0 and original T2 nonparallelity without the independent pending parallel-T theorem.",
+    "Actual AT/DT coincidence is separately handled by the one-application theorem.",
+    "The exact proper ray allows both ell values zero; physical-two concurrence is allowed outside T.",
+    "No T boundary-neighbor premise is used in the 3808 import.",
+    "The parallel C branch keeps y=-1/2 and every y<0 and uses its own original torque, not Q=(d,-1/2).",
+    "The parallel C exit is valid without any proper-ray assumption or particular D owner.",
+    "The nonparallel C branch alone supplies Q_world=(d,-1/2); its two world normal components are strictly positive.",
+    "Original AD support at Q is weak; strictness comes from the unchanged positive AT term in A4.",
+    "The rational threshold proof covers all 0<r<1, all q in the stated interval and every positive magnitude.",
+    "The point-distance window concerns one actual D segment and forces original ownership without a normal reselection.",
+    "The full touching-return theorem is called at true D3 with actual AT, and at the actual P_AB belonging to A.",
+    "World diameter and separator together establish fixed leaf-frame signs; normal order alone is not used.",
+    "No hypothesis is imported from be0, a813, or any later selected endpoint theorem.",
+    "All four direct mathematical source scopes and their paired full reviews/adoptions are explicit standing inputs.",
+    "Prior full reads at identical bytes are distinguished from fresh complete reads; no fresh recursive global extraction audit is claimed.",
+    "Exact a5f identities are historical; no current604 carryforward or novelty is claimed by this record.",
+    "The author record is identity/scope corroboration only; its generator was neither imported nor executed.",
+    "All exact formulas were independently entered from actual vectors and the printed proof, not from author check expressions.",
+    "No numerical pose search, finite angle subdivision, packing certificate, Lean/Lake, CI or remote operation was used.",
+    "No source, prior review, original flag, metadata count or certificate inventory was edited."
+  ],
+  "counts": {
+    "exact_checks": 80,
+    "positive_scalar_checks": 21,
+    "symbolic_checks": 59,
+    "graph_checks": 25,
+    "full_reconstruction_scopes": 23,
+    "domain_guards": 46,
+    "published_objects": 25,
+    "source_literals": 5,
+    "source_dag_nodes": 19,
+    "source_dag_edges": 27
+  },
+  "accounting": {
+    "new_original_fine_flags": 0,
+    "new_parent_flags": 0,
+    "new_coarse_flags": 0,
+    "new_geometric_certificates": 0,
+    "retired_certificates": 0,
+    "whole_TC_row_closed": false,
+    "source_repair_requested": false,
+    "source_unchanged": true,
+    "all_other_frozen_inputs_unchanged": true
+  },
+  "standing_prerequisite_limit": "The exact original stress/selection framework and already fully accepted necessary-domain assembly are retained as established inputs. This review fully reconstructs the new proof and every consumed interface, with complete main source/review/adoption reads and explicit critical proof reads. It does not manufacture a new global extraction, equality-case, compactness or formalization audit."
+}

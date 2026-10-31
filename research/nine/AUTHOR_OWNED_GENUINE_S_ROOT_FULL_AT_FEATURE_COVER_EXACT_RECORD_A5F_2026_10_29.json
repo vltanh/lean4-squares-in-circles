@@ -1,0 +1,726 @@
+{
+  "status": "PROPOSED_COMPLETE_AUTHOR_RECORD_NOT_INDEPENDENT_REVIEW",
+  "author": "broad_s_families continuation",
+  "contributions": "Root and author independently observed the full-component v sign and lower-outer tangent-quadrant exclusion. The author assembled the literal complete support cover and full remaining A4 equations. The universal support rigidity is reproduced existing mathematics with no novelty credit.",
+  "exact_comparison_commit": "a5f3922a9c12830b76f2a7ee9dd4dbf1024f85b5",
+  "actual_comparison_git_tree": "2617ed629140d69171c86bfa68b0ee5784ab8c8c",
+  "target": {
+    "path": "continuation_broad_c62/research/nine/OWNED_GENUINE_S_ROOT_FULL_AT_FEATURE_COVER_AND_FOUR_ORIGINAL_TC_RESIDUALS.md",
+    "bytes": 15523,
+    "lines": 314,
+    "sha256": "dc28061e32ed9bb4b32c062b7ffbaa9e46733d1002d01dbb769441324ec70d04",
+    "git_blob": "2e732fdc74ece366f218eede86ab2d3888626c7e",
+    "role": "complete new cover source",
+    "read_scope": "complete mathematical source reconstructed"
+  },
+  "input_identities": [
+    {
+      "path": "current_315_base/research/nine/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "bytes": 13651,
+      "lines": 302,
+      "sha256": "6f5634d78b0e217f91898852e721aedbc06a09c4398528c86753f29e4aaf89c2",
+      "git_blob": "f1e09cf1f62a2bb6305bd2c20e7d49be2fffc0ae",
+      "role": "complete original TC residual and original graph",
+      "read_scope": "complete mathematical source reconstructed",
+      "published_path": "research/nine/GENUINE_S_HOUSE_TC_TILTED_RADIAL_C_COMPLETE_ASSEMBLY.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_a5f_base/research/nine/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "bytes": 20196,
+      "lines": 511,
+      "sha256": "ea076feb168f61c9928c2e3d35d6e36e736af04d2068c4f64aac16c32656f334",
+      "git_blob": "75fa5e0b4a97ec854ecd4a3af0ef03799c78a5cb",
+      "role": "entire original q>=3/8 exit; complementary strict interval only",
+      "read_scope": "complete mathematical source reconstructed",
+      "published_path": "research/nine/ALIGNED_RADIAL_C_OWNED_LEAF_WHOLE_UPPER_MEAN_OWNER_UNION_2026_10_29_CONTINUATION.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "bytes": 17930,
+      "lines": 427,
+      "sha256": "2a6f8da941de756abbea77f5c9aac75e5225968efdf278c683295b0dec900143",
+      "git_blob": "4625dfa796aa6a8eb1166efd326b55f0b87afda1",
+      "role": "complete actual C force/mask cover and its original means",
+      "read_scope": "complete mathematical source reconstructed",
+      "published_path": "research/nine/HIGH_SUPPORT_SIDE_CHANNEL_TOUCHING_RETURN_FORCES_TWO_POSITIVE_CIRCLE_CORNERS.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "continuation_broad_c62/research/nine/STRICT_SELECTED_SIDE_CHANNEL_MEAN_AND_TILTED_RETURN_TWO_FEATURE_REDUCTION.md",
+      "bytes": 11473,
+      "lines": 211,
+      "sha256": "0c67d5578a73ec36fd9b79c509c3e158cb9a218fac8666256ab2ca1f9505cb45",
+      "git_blob": "4126f326474c762221d71355190f9e0112815354",
+      "role": "complete selected singleton proof and exact two-feature AD cover",
+      "read_scope": "complete mathematical source reconstructed"
+    },
+    {
+      "path": "current_703_base/research/nine/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "bytes": 4431,
+      "lines": 132,
+      "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "git_blob": "75b6682802b9aebdb29ce0b3b9f8d89d3ebf8d67",
+      "role": "entire radius-free owned-axis triangle inequality, with weak equality",
+      "read_scope": "complete mathematical source reconstructed",
+      "published_path": "research/nine/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "continuation_broad_c62/research/nine/NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_OBSTRUCTION_AND_STRICT_HOUSE_RETURN_EXCLUSION.md",
+      "bytes": 20560,
+      "lines": 526,
+      "sha256": "d92ec80546d6ae608494626e6f05c52c5f8ff2c7548be0bd98b93bbbc892c8ff",
+      "git_blob": "1238d2c529554d1b13a93538d262218e3ccbf143",
+      "role": "entire actual strict-AD / AT=-u exclusion in both C force branches",
+      "read_scope": "complete mathematical source reconstructed"
+    },
+    {
+      "path": "continuation_broad_c62/research/nine/STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_DIAGONAL_AND_HOUSE_RETURN_EXCLUSION.md",
+      "bytes": 17221,
+      "lines": 383,
+      "sha256": "44fa42fa2f33468495fb00d6d0c82287afc25cbd0416b28cd81e6d96ba0a6a71",
+      "git_blob": "1cd7951384311653b54e25926e5fb26f546bdaca",
+      "role": "entire actual strict-AD / strict-common-corner AT exclusion in both C force branches",
+      "read_scope": "complete mathematical source reconstructed"
+    },
+    {
+      "path": "current_315_base/research/nine/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "bytes": 12841,
+      "lines": 275,
+      "sha256": "9a0c704df3817a413639a98fbae8864ef58c583811735ac5c6816f69e1b0f636",
+      "git_blob": "d007b7ee912a045bc525ad5bb45e3d80683b1aa1",
+      "role": "complete published upstream review/adoption already read in the preceding source work",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/REVIEW_GENUINE_S_HOUSE_TC_TILTED_C_ASSEMBLY_HOUSE_FINISH_V2_INDEPENDENT_2026_10_29.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_a5f_base/research/nine/REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+      "bytes": 13485,
+      "lines": 294,
+      "sha256": "167e5f8a305f33944e798668394d1d3efd92b4626968f3ad75dea494f371c154",
+      "git_blob": "ebc03976c208188226e8745d4ea2d2f9ea9e53b8",
+      "role": "complete published upstream review/adoption already read in the preceding source work",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/REVIEW_ALIGNED_RADIAL_C_WHOLE_UPPER_MEAN_OWNER_UNION_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+      "bytes": 16080,
+      "lines": 332,
+      "sha256": "f917697f13c574c533658ea108b0c770d4c1c949fc463ba996511e890e2d62ae",
+      "git_blob": "a35d7aa4fe1e422aa109ab9414dc5e5c6e08fe84",
+      "role": "complete published upstream review/adoption already read in the preceding source work",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/REVIEW_HIGH_SUPPORT_SIDE_CHANNEL_TWO_POSITIVE_CIRCLE_CORNERS_INDEPENDENT_2026_10_28.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "bytes": 17104,
+      "lines": 345,
+      "sha256": "fb99b163e4450df464fcc095ac6aea0a3294624fcb329ffbc515efda6a0bea28",
+      "git_blob": "73cfd49b7ba738e5cd85a057d98358ea1c3b36d4",
+      "role": "complete published upstream review/adoption already read in the preceding source work",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/ADOPTION_COMPLETE_TILTED_C_HOUSE_AND_UNIFORM_ORIGINAL_INTERVALS_ROOT_2026_10_29.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_a5f_base/research/nine/ADOPTION_THREE_BROAD_CONTINUOUS_CAP_OWNER_AND_SHIFT_TOOLS_ROOT_2026_10_29.md",
+      "bytes": 8044,
+      "lines": 43,
+      "sha256": "865db6ecd1b9ee6774a11be75edd4f73b59e132a21bc9df1708cc3169183c36e",
+      "git_blob": "4c1a4718606ec73576d039a4e91ae1401f7def57",
+      "role": "complete published upstream review/adoption already read in the preceding source work",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/ADOPTION_THREE_BROAD_CONTINUOUS_CAP_OWNER_AND_SHIFT_TOOLS_ROOT_2026_10_29.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "current_315_base/research/nine/ADOPTION_BROADER_CENTERED_ARCS_AND_TWO_FULL_STAR_REDUCTIONS_ROOT_2026_10_28.md",
+      "bytes": 9911,
+      "lines": 186,
+      "sha256": "cf84585f5eba59a6df2e61a657f65a62248f74d0064d8a43907947ba9f4dc503",
+      "git_blob": "df552f0a8f51898f5c76c8f7739ac24fa55294de",
+      "role": "complete published upstream review/adoption already read in the preceding source work",
+      "read_scope": "complete source text",
+      "published_path": "research/nine/ADOPTION_BROADER_CENTERED_ARCS_AND_TWO_FULL_STAR_REDUCTIONS_ROOT_2026_10_28.md",
+      "exact_a5f_tree_blob_match": true
+    },
+    {
+      "path": "continuation_broad_c62/research/nine/REVIEW_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "bytes": 28830,
+      "lines": 214,
+      "sha256": "a7f5cf85d5e7275ae7c9f0452fd2c1bcb25452d42298fa4e2a9f8b58986ec31c",
+      "git_blob": "bd7fe103125d698b82f4845da3ca4ff0947db0fc",
+      "role": "separate accepted local review",
+      "read_scope": "exact accepted dependency identity; no new independent review of this acceptance artifact claimed"
+    },
+    {
+      "path": "continuation_broad_c62/research/nine/INDEPENDENT_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_EXACT_RECORD_A5F_2026_10_29.json",
+      "bytes": 48292,
+      "lines": 1370,
+      "sha256": "6504d2ec0cb300a2dfa52ac7c6ecffce1489638bf6364591ddcd67ef3bd28ced",
+      "git_blob": "276861dbcbd5cc5d23da85df6dc2f385afc4b6c2",
+      "role": "separate accepted local record",
+      "read_scope": "exact accepted dependency identity; no new independent review of this acceptance artifact claimed"
+    },
+    {
+      "path": "continuation_broad_c62/research/nine/ADOPTION_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_ROOT_A5F_2026_10_29.md",
+      "bytes": 11537,
+      "lines": 216,
+      "sha256": "b91387e036acae1af2390d31ea31c333f569430122aa2bd3177706d4dc09c7d5",
+      "git_blob": "70262ae6a1c89c3af7b2fd287a0580e1daae3136",
+      "role": "separate accepted local adoption",
+      "read_scope": "complete root-adoption text read"
+    },
+    {
+      "path": "continuation_broad_c62/research/nine/REVIEW_NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_STRICT_HOUSE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "bytes": 32512,
+      "lines": 386,
+      "sha256": "454fbb5a0d12ed5f3ee144e61da53e8118d689aa4d96af4d44335a573db65a30",
+      "git_blob": "059c9a2ac02667c36a629424496276bffa7aae29",
+      "role": "separate accepted local review",
+      "read_scope": "exact accepted dependency identity; no new independent review of this acceptance artifact claimed"
+    },
+    {
+      "path": "continuation_broad_c62/research/nine/INDEPENDENT_NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_STRICT_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+      "bytes": 75306,
+      "lines": 1811,
+      "sha256": "3703439b6b26131b9fe00381aabfa44792ded2113f32491fef3210dff8671439",
+      "git_blob": "16d64e271d53e66482f0233e7941b6a949b5b7e9",
+      "role": "separate accepted local record",
+      "read_scope": "exact accepted dependency identity; no new independent review of this acceptance artifact claimed"
+    },
+    {
+      "path": "continuation_broad_c62/research/nine/ADOPTION_NEAR_SIDE_BOUNDARY_RETURN_AXIS_STRICT_HOUSE_ROOT_A5F_2026_10_29.md",
+      "bytes": 14287,
+      "lines": 157,
+      "sha256": "5b82dea0252963c0c55b85ae0d1f41061f38f1a9beab98e5228a3bd54b5fec38",
+      "git_blob": "0f2943281bf6888ce41397cd18314c52f8b80679",
+      "role": "separate accepted local adoption",
+      "read_scope": "complete root-adoption text read"
+    },
+    {
+      "path": "continuation_broad_c62/research/nine/REVIEW_STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_HOUSE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "bytes": 29770,
+      "lines": 316,
+      "sha256": "6b01f3d1c830f49811202810cd25d941f34ec760e543993fba8d5df421c4fca7",
+      "git_blob": "0a97fa1fa4789402b41e3430b7b150cd720e6b2f",
+      "role": "separate accepted local review",
+      "read_scope": "exact accepted dependency identity; no new independent review of this acceptance artifact claimed"
+    },
+    {
+      "path": "continuation_broad_c62/research/nine/INDEPENDENT_STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+      "bytes": 79242,
+      "lines": 1825,
+      "sha256": "f06804d38ded98247b7f69bc36e8541c99a2f3d39206331da27d5eb76748b757",
+      "git_blob": "f998d714b751ab368b84f9971545ccba9751b3c0",
+      "role": "separate accepted local record",
+      "read_scope": "exact accepted dependency identity; no new independent review of this acceptance artifact claimed"
+    },
+    {
+      "path": "continuation_broad_c62/research/nine/ADOPTION_STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_HOUSE_ROOT_A5F_2026_10_29.md",
+      "bytes": 15366,
+      "lines": 174,
+      "sha256": "34c7ffd6f52bcd62fa7115711360375567d74bba93923bf26e9d3bed82af0541",
+      "git_blob": "2497bc4ecfc9dd1797d206c17441999528efecb3",
+      "role": "separate accepted local adoption",
+      "read_scope": "complete root-adoption text read"
+    },
+    {
+      "path": "continuation_broad_c62/research/nine/ADDENDUM_NEAR_SIDE_RETURN_RECORD_SUMMAND_ORDER_A5F_2026_10_29.md",
+      "bytes": 3175,
+      "lines": 45,
+      "sha256": "a6ff9379b10b6e9d885fb1f47656844a71de598cc10089deaaa819ae7d722adf",
+      "git_blob": "7bbe28af5f4e9c98b69320c0b2237c45aea317f0",
+      "role": "required named-summand clarification accompanying unchanged accepted d92e exact record",
+      "read_scope": "complete addendum read"
+    }
+  ],
+  "operative_math_inputs": 7,
+  "accepted_local_chains": [
+    {
+      "source": "0c67d5578a73ec36fd9b79c509c3e158cb9a218fac8666256ab2ca1f9505cb45",
+      "review": "REVIEW_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "record": "INDEPENDENT_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_EXACT_RECORD_A5F_2026_10_29.json",
+      "adoption": "ADOPTION_STRICT_SELECTED_SIDE_CHANNEL_TWO_FEATURE_REDUCTION_ROOT_A5F_2026_10_29.md",
+      "adoption_sha": "b91387e036acae1af2390d31ea31c333f569430122aa2bd3177706d4dc09c7d5",
+      "review_pin": "a7f5cf85d5e7275ae7c9f0452fd2c1bcb25452d42298fa4e2a9f8b58986ec31c",
+      "record_pin": "6504d2ec0cb300a2dfa52ac7c6ecffce1489638bf6364591ddcd67ef3bd28ced",
+      "adoption_pin": "b91387e036acae1af2390d31ea31c333f569430122aa2bd3177706d4dc09c7d5"
+    },
+    {
+      "source": "d92ec80546d6ae608494626e6f05c52c5f8ff2c7548be0bd98b93bbbc892c8ff",
+      "review": "REVIEW_NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_STRICT_HOUSE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "record": "INDEPENDENT_NEAR_SIDE_BOUNDARY_RETURN_FULL_STAR_AXIS_STRICT_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+      "adoption": "ADOPTION_NEAR_SIDE_BOUNDARY_RETURN_AXIS_STRICT_HOUSE_ROOT_A5F_2026_10_29.md",
+      "adoption_sha": "5b82dea0252963c0c55b85ae0d1f41061f38f1a9beab98e5228a3bd54b5fec38",
+      "review_pin": "454fbb5a0d12ed5f3ee144e61da53e8118d689aa4d96af4d44335a573db65a30",
+      "record_pin": "3703439b6b26131b9fe00381aabfa44792ded2113f32491fef3210dff8671439",
+      "adoption_pin": "5b82dea0252963c0c55b85ae0d1f41061f38f1a9beab98e5228a3bd54b5fec38"
+    },
+    {
+      "source": "44fa42fa2f33468495fb00d6d0c82287afc25cbd0416b28cd81e6d96ba0a6a71",
+      "review": "REVIEW_STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_HOUSE_COMPLETE_INDEPENDENT_A5F_2026_10_29.md",
+      "record": "INDEPENDENT_STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_HOUSE_EXACT_RECORD_A5F_2026_10_29.json",
+      "adoption": "ADOPTION_STRICT_COMMON_ROOT_CORNER_FULL_JUNCTION_HOUSE_ROOT_A5F_2026_10_29.md",
+      "adoption_sha": "34c7ffd6f52bcd62fa7115711360375567d74bba93923bf26e9d3bed82af0541",
+      "review_pin": "6b01f3d1c830f49811202810cd25d941f34ec760e543993fba8d5df421c4fca7",
+      "record_pin": "f06804d38ded98247b7f69bc36e8541c99a2f3d39206331da27d5eb76748b757",
+      "adoption_pin": "34c7ffd6f52bcd62fa7115711360375567d74bba93923bf26e9d3bed82af0541"
+    }
+  ],
+  "exact_scalar_checks": [
+    {
+      "name": "P_AB strict annulus reserve",
+      "exact_value": "3971/14400",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "sqrt34 comparison",
+      "exact_value": "1/36",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "actual lower outer point lies strictly inside L side",
+      "exact_value": "1/8",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "root top lies strictly above lower root interval",
+      "exact_value": "1/4",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "top height positive lower bound",
+      "exact_value": "5/8",
+      "positive": true,
+      "expected_exact_match": true
+    },
+    {
+      "name": "strict radius annulus lower bound reference",
+      "exact_value": "5/12",
+      "positive": true,
+      "expected_exact_match": true
+    }
+  ],
+  "exact_symbolic_checks": [
+    {
+      "name": "full component FT v coordinate",
+      "left": "-g_v*nu + mu*t",
+      "right": "-g_v*nu + mu*t",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "full component FT u coordinate",
+      "left": "a*mu - g_u*nu - kappa",
+      "right": "a*mu - g_u*nu - kappa",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "owned AD / North AT full vector u",
+      "left": "0",
+      "right": "0",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "owned AD / North AT full vector v",
+      "left": "0",
+      "right": "0",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "owned AD / North AT full moment",
+      "left": "-a*mu*q - epsilon*mu*t + mu*t*x + rho*w",
+      "right": "-mu*(a*q + epsilon*t - t*x) + rho*w",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "owned AD / strict-near AT full vector u",
+      "left": "0",
+      "right": "0",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "owned AD / strict-near AT full vector v",
+      "left": "0",
+      "right": "0",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "owned AD / strict-near AT full moment",
+      "left": "V*eta - a*mu*q + rho*w",
+      "right": "V*eta - a*mu*q + rho*w",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "strict AD / upper AT full vector u",
+      "left": "0",
+      "right": "0",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "strict AD / upper AT full vector v",
+      "left": "0",
+      "right": "0",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "strict AD / upper AT full moment",
+      "left": "V*rho - V*xi - a*mu*q + beta*(epsilon + tau) - epsilon*mu*t + epsilon*(-beta + mu*t)",
+      "right": "V*(rho - xi) - a*mu*q + beta*tau",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "strict AD / owned North specialization",
+      "left": "V*rho - a*mu*q + beta*tau",
+      "right": "V*rho - a*mu*q + beta*tau",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "strict AD / outer vertex specialization",
+      "left": "V*(rho - xi) - a*mu*q + beta",
+      "right": "V*(rho - xi) - a*mu*q + beta",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "upper-point side shift",
+      "left": "x",
+      "right": "x",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "lower outer exact unit u interval",
+      "left": "epsilon",
+      "right": "epsilon",
+      "exact_symbolic_difference": "0"
+    },
+    {
+      "name": "original leaf identity used in North row",
+      "left": "a*q+epsilon*t",
+      "right": "q",
+      "constraint": "a=(1-r^2)/(1+r^2),t=2*r/(1+r^2),epsilon=r*q",
+      "exact_symbolic_difference": "0"
+    }
+  ],
+  "complete_original_AT_support_cover": [
+    {
+      "normal": "+u axis",
+      "support": "entire outer side u=d",
+      "outcome": "whole T equals occupied L by support equality"
+    },
+    {
+      "normal": "-u axis",
+      "support": "entire inner side u=epsilon",
+      "outcome": "preliminary survivor; owned AD impossible by full A4 v, strict AD excluded by d92e"
+    },
+    {
+      "normal": "+v axis",
+      "support": "entire top side v=V",
+      "outcome": "remaining in both original AD rows, all means retained"
+    },
+    {
+      "normal": "-v axis",
+      "support": "entire bottom side v=-q",
+      "outcome": "whole T v<=-q contradicts full FT_v>0"
+    },
+    {
+      "normal": "strict (-u,-v)",
+      "support": "lower inner vertex P_AB",
+      "outcome": "actual boundary-unit annulus"
+    },
+    {
+      "normal": "strict (+u,-v)",
+      "support": "lower outer vertex W0",
+      "outcome": "actual occupied L forces entire T below v=-q"
+    },
+    {
+      "normal": "strict (-u,+v)",
+      "support": "upper inner vertex R0",
+      "outcome": "remaining for owned AD; entire strict AD join excluded by44fa"
+    },
+    {
+      "normal": "strict (+u,+v)",
+      "support": "upper outer vertex R1",
+      "outcome": "owned AD excluded by actual triangle; remaining for strict AD"
+    }
+  ],
+  "remaining_four_cells": [
+    {
+      "AD": "owned -u at (epsilon,w), -q<w<V",
+      "AT": "owned +v at (x,V), epsilon<=x<=d",
+      "equations": [
+        "beta=mu*t",
+        "kappa=mu*a+rho",
+        "rho*w=mu*(q-t*x)"
+      ]
+    },
+    {
+      "AD": "owned -u at (epsilon,w), -q<w<V",
+      "AT": "strict (-u,+v) at R0",
+      "equations": [
+        "beta=mu*t",
+        "kappa=mu*a+rho+eta",
+        "mu*a*q=rho*w+eta*V"
+      ]
+    },
+    {
+      "AD": "strict (-u,+v) at R0",
+      "AT": "owned +v at (epsilon+tau,V), 0<=tau<=1",
+      "equations": [
+        "omega+beta=mu*t",
+        "kappa=mu*a+rho",
+        "mu*a*q=V*rho+tau*beta"
+      ]
+    },
+    {
+      "AD": "strict (-u,+v) at R0",
+      "AT": "strict (+u,+v) at R1",
+      "equations": [
+        "omega+beta=mu*t",
+        "kappa+xi=mu*a+rho",
+        "mu*a*q=V*(rho-xi)+beta"
+      ]
+    }
+  ],
+  "literal_original_graph": {
+    "edges": [
+      [
+        "A",
+        "T"
+      ],
+      [
+        "D",
+        "T"
+      ],
+      [
+        "A",
+        "D"
+      ],
+      [
+        "A",
+        "B"
+      ],
+      [
+        "B",
+        "C"
+      ],
+      [
+        "C",
+        "D"
+      ],
+      [
+        "A",
+        "L"
+      ]
+    ],
+    "degrees": {
+      "A": 4,
+      "B": 2,
+      "C": 2,
+      "D": 3,
+      "T": 2,
+      "L": 1
+    },
+    "circle_loads": [
+      "T",
+      "C",
+      "L"
+    ],
+    "all_actual_units": 9,
+    "BD_edge": false
+  },
+  "section_dependency_dag": {
+    "nodes": [
+      "original owned-leaf entry",
+      "complete C force cover",
+      "full-component positive FT_v",
+      "actual boundary-unit annulus",
+      "lower-inner contact exclusion",
+      "occupied radial leaf",
+      "lower-outer whole-unit exclusion",
+      "reproduced support equality",
+      "outer-side exclusion",
+      "bottom-side exclusion",
+      "complete eight-feature support cover",
+      "exact selected two-feature AD cover",
+      "actual owned-axis triangle",
+      "owned-AD A4 vertical balance",
+      "two owned-AD remaining rows",
+      "accepted d92e entire strict-near-side exit",
+      "accepted44fa entire strict-common-corner exit",
+      "two strict-AD remaining rows",
+      "complete four-cell full-equation cover"
+    ],
+    "edges": [
+      [
+        "original owned-leaf entry",
+        "complete C force cover"
+      ],
+      [
+        "complete C force cover",
+        "full-component positive FT_v"
+      ],
+      [
+        "actual boundary-unit annulus",
+        "lower-inner contact exclusion"
+      ],
+      [
+        "occupied radial leaf",
+        "lower-outer whole-unit exclusion"
+      ],
+      [
+        "full-component positive FT_v",
+        "lower-outer whole-unit exclusion"
+      ],
+      [
+        "reproduced support equality",
+        "outer-side exclusion"
+      ],
+      [
+        "occupied radial leaf",
+        "outer-side exclusion"
+      ],
+      [
+        "full-component positive FT_v",
+        "bottom-side exclusion"
+      ],
+      [
+        "lower-inner contact exclusion",
+        "complete eight-feature support cover"
+      ],
+      [
+        "lower-outer whole-unit exclusion",
+        "complete eight-feature support cover"
+      ],
+      [
+        "outer-side exclusion",
+        "complete eight-feature support cover"
+      ],
+      [
+        "bottom-side exclusion",
+        "complete eight-feature support cover"
+      ],
+      [
+        "complete eight-feature support cover",
+        "two owned-AD remaining rows"
+      ],
+      [
+        "exact selected two-feature AD cover",
+        "two owned-AD remaining rows"
+      ],
+      [
+        "actual owned-axis triangle",
+        "two owned-AD remaining rows"
+      ],
+      [
+        "owned-AD A4 vertical balance",
+        "two owned-AD remaining rows"
+      ],
+      [
+        "complete eight-feature support cover",
+        "two strict-AD remaining rows"
+      ],
+      [
+        "exact selected two-feature AD cover",
+        "two strict-AD remaining rows"
+      ],
+      [
+        "accepted d92e entire strict-near-side exit",
+        "two strict-AD remaining rows"
+      ],
+      [
+        "accepted44fa entire strict-common-corner exit",
+        "two strict-AD remaining rows"
+      ],
+      [
+        "two owned-AD remaining rows",
+        "complete four-cell full-equation cover"
+      ],
+      [
+        "two strict-AD remaining rows",
+        "complete four-cell full-equation cover"
+      ]
+    ],
+    "node_count": 19,
+    "edge_count": 22,
+    "acyclic": true,
+    "topological_order": [
+      "accepted d92e entire strict-near-side exit",
+      "accepted44fa entire strict-common-corner exit",
+      "actual boundary-unit annulus",
+      "actual owned-axis triangle",
+      "exact selected two-feature AD cover",
+      "occupied radial leaf",
+      "original owned-leaf entry",
+      "owned-AD A4 vertical balance",
+      "reproduced support equality",
+      "complete C force cover",
+      "lower-inner contact exclusion",
+      "outer-side exclusion",
+      "full-component positive FT_v",
+      "bottom-side exclusion",
+      "lower-outer whole-unit exclusion",
+      "complete eight-feature support cover",
+      "two owned-AD remaining rows",
+      "two strict-AD remaining rows",
+      "complete four-cell full-equation cover"
+    ]
+  },
+  "complete_domain_guards": [
+    "Every actual square and all three extras remain; no region allocation is asserted.",
+    "The original graph keeps all seven edges and true A4,D3,B2,C2,T2,L1; no BD edge is added.",
+    "All original contact normals and full side means remain unchanged.",
+    "Both C force rows retain their original means and both physical coefficients.",
+    "The positive FT_v sign comes from all original component equations, independently of the AD or AT feature.",
+    "A physical T circle point with zero coefficient is not erased; the full positive-total combination is retained.",
+    "The lower outer point is strictly inside the occupied L side because q<3/8<1/2.",
+    "The tangent quadrant determines the entire third unit, not merely its center.",
+    "The universal support cap and exact equality are reproduced existing results and receive no novelty credit.",
+    "The exact support equality forces the actual T to equal occupied L; no hypothetical extra radial leaf is substituted.",
+    "The preliminary AT support table covers all four axes and all four strict vertex cones.",
+    "A side mean at a vertex remains in its actual axis-normal class; it is not relabeled a strict vertex normal.",
+    "The strict selected endpoint theorem first proves singleton physical intersections before removing endpoints.",
+    "The AD-owned mean retains its full open interval -q<w<V; no later positivity of w is assumed.",
+    "The strict AD row retains its permitted zero world-x force component.",
+    "The owned-axis triangle uses the literal three physical contacts A-D,D-T,T-A and preserves equality.",
+    "The full A4 vertical equation is used to remove the -u AT axis in owned AD; no force is dropped.",
+    "The d92e join is the entire strict AD / AT=-u theorem, both C branches and all T masks.",
+    "The44fa join is the entire strict common AD/AT corner theorem, both C branches and all DT means.",
+    "The d92e exact record is accompanied by its accepted named-summand clarification addendum.",
+    "The whole top-side mean interval epsilon<=x<=d or0<=tau<=1 is retained in the remaining rows.",
+    "The first owned-AD row does not assume q-t*x>0 or w>0.",
+    "The strict-AD upper row does not assume rho-xi>0.",
+    "The four remaining rows are mathematical feature cells, not new original fine identifiers.",
+    "None of the four remaining rows is marked excluded by this cover.",
+    "The full upper-adjacent genuine-leaf chart remains outside this owned-leaf theorem.",
+    "The separate a813 parallel-T theorem is not an input and nonparallelity is not a cell premise.",
+    "All new local input acceptance chains are complete at the exact frozen hashes.",
+    "The author is a contributor to0c67 and author ofd92/44fa; this is not independent review of those sources.",
+    "Original selected-stress/global compatibility prerequisites are preserved; no new global audit claimed.",
+    "No original flag, certificate or retirement is credited; no Lean/Lake/CI or remote action is performed."
+  ],
+  "counts": {
+    "input_identities": 23,
+    "scalar_checks": 6,
+    "symbolic_checks": 16,
+    "AT_feature_classes": 8,
+    "remaining_cells": 4,
+    "guards": 31
+  },
+  "accounting": {
+    "new_original_flags": 0,
+    "new_computational_certificates": 0,
+    "certificate_retirements": 0,
+    "remaining": "All four displayed owned-leaf cells and the complete upper-adjacent leaf chart require separate whole-domain proofs."
+  }
+}

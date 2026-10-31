@@ -1,0 +1,137 @@
+{
+  "reviewer": "frontier_audit",
+  "date": "2026-10-28",
+  "source": "ONE_UNLOADED_RETURN_HUB_ACTUAL_WEAK_MOMENT_STRIP.md",
+  "sha256": "382e06b874e41cf582b17374a122c7e4f289472f00cd6d02d926b680f15c1ed5",
+  "review_type": "Complete hand review of the source, relevant full prerequisite proofs and literal interfaces; no computational geometric exclusion",
+  "pins": [
+    {
+      "source": "INWARD_OPPOSED_FULL_STAR_WITH_FAR_RETURNS_REQUIRES_NEAR_UNIT.md",
+      "declared_sha256": "609770d7d3d4d707d354cc0d100f80b79d19961edc1f94378e403132ed711d08",
+      "actual_sha256": "609770d7d3d4d707d354cc0d100f80b79d19961edc1f94378e403132ed711d08",
+      "match": true
+    },
+    {
+      "source": "LOWER_HOUSE_TDC_D_FULL_MOMENT_AND_NONRADIAL_RETURN_REDUCTION.md",
+      "declared_sha256": "51ecccadb6cebf8cfd0b2d6c6707c9b4387150d47b9be200def1df858e993edd",
+      "actual_sha256": "51ecccadb6cebf8cfd0b2d6c6707c9b4387150d47b9be200def1df858e993edd",
+      "match": true
+    },
+    {
+      "source": "D_LEAF_ROOT_BELONGS_TO_EVERY_CYCLIC_BLOCK.md",
+      "declared_sha256": "9dd28b72bf8a837747c39c50c1d30f3f6d405f4442e39eda47d38d4485acb743",
+      "actual_sha256": "9dd28b72bf8a837747c39c50c1d30f3f6d405f4442e39eda47d38d4485acb743",
+      "match": true
+    },
+    {
+      "source": "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "declared_sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+      "actual_sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+      "match": true
+    },
+    {
+      "source": "S_LEAF_ONE_UNLOADED_HUB_MOMENT_REDUCTION.md",
+      "declared_sha256": "94e3a3cec875be191355b1f9baff4ffa597edcae9854d2d557dcb13d631cc157",
+      "actual_sha256": "94e3a3cec875be191355b1f9baff4ffa597edcae9854d2d557dcb13d631cc157",
+      "match": true
+    },
+    {
+      "source": "S_ROOT_TRIANGLE_NEAR_ORIGIN_CONTACT_SIDE_OWNERSHIP.md",
+      "declared_sha256": "51dc1e532e3663d7637c3d22a7053d5b2e8e024d076706f5bbd793f8cc3e42be",
+      "actual_sha256": "51dc1e532e3663d7637c3d22a7053d5b2e8e024d076706f5bbd793f8cc3e42be",
+      "match": true
+    },
+    {
+      "source": "S_LEAF_ROOT_NEAR_ORIGIN_TRIANGLE_OWNER_DIRECTION.md",
+      "declared_sha256": "e612ed13cd2c8621c014b14e898709cf4d4b2305ade9a2b818b9d14be1f066e5",
+      "actual_sha256": "e612ed13cd2c8621c014b14e898709cf4d4b2305ade9a2b818b9d14be1f066e5",
+      "match": true
+    },
+    {
+      "source": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "declared_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "actual_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "match": true
+    },
+    {
+      "source": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "declared_sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "actual_sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "match": true
+    }
+  ],
+  "exact_arithmetic": {
+    "center_cap_M": "91/60",
+    "center_cap_K": "3501/2440",
+    "center_cap_diameter_squared": "52124381/53582400",
+    "center_cap_diameter_squared_less_than_one": true,
+    "sqrt2_epsilon_less_than_11_over_20": true,
+    "two_sqrt_epsilon_less_than_4_over_15": true
+  },
+  "literal_original_joins": [
+    {
+      "id": "M6.B5L.HOUSE.ROOF.LAC.S",
+      "X": "T",
+      "A": "A",
+      "H": "D",
+      "H_true_degree": 3,
+      "H_private_returns": [
+        "A",
+        "C"
+      ],
+      "transmitters": [
+        "B"
+      ],
+      "private_edges": [
+        "AB",
+        "BC",
+        "CD",
+        "DA"
+      ],
+      "open_origin_required": true
+    },
+    {
+      "id": "M6.B5L.HOUSE.ROOF.LABC.S",
+      "X": "T",
+      "A": "A",
+      "H": "D",
+      "H_true_degree": 3,
+      "H_private_returns": [
+        "A",
+        "C"
+      ],
+      "transmitters": [],
+      "private_edges": [
+        "AB",
+        "BC",
+        "CD",
+        "DA"
+      ],
+      "open_origin_required": true
+    },
+    {
+      "id": "M6.B5L.FAN.ENDPOINT.L234.S",
+      "X": "1",
+      "A": "2",
+      "H": "J",
+      "H_true_degree": 4,
+      "H_private_returns": [
+        "2",
+        "3",
+        "4"
+      ],
+      "transmitters": [],
+      "private_edges": [
+        "J2",
+        "J3",
+        "J4",
+        "23",
+        "34"
+      ],
+      "open_origin_required": true
+    }
+  ],
+  "full_original_gate_credit": 0,
+  "coarse_gate_credit": 0,
+  "boundary": "At most one original H radial return is retained; both XH side-owner alternatives remain; aligned d>=1 and tilted U>=1 are outside the open-origin join."
+}

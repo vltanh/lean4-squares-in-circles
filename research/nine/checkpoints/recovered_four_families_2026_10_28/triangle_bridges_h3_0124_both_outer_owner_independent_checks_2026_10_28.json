@@ -1,0 +1,114 @@
+{
+  "date": "2026-10-28",
+  "reviewer": "triangle_bridges",
+  "source": {
+    "file": "INNER_PENTAGON_H3_0124_BOTH_OUTER_HUB_OWNED_ENDPOINTS_EXCLUSION.md",
+    "sha256": "d266281a14e433bb690117a088f118ac05a00e7d6cff3936f21ec820edf74564"
+  },
+  "literal_pins": [
+    {
+      "file": "SIX_BODY_INNER_PENTAGON_LOAD_COVER.md",
+      "sha256": "fa877c9d7d25c57a7c8cf438a429465b5952cb8db6628c57d9d93695b33dd434",
+      "bytes": 10871
+    },
+    {
+      "file": "FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "sha256": "6c38d162e1f2c435cf65a8b4a58a7001fe9489c65b3510159fee2687b9753708",
+      "bytes": 8496
+    },
+    {
+      "file": "CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "sha256": "2625b3a2b730525a6397bc90232e78c5e1aac8091381c1f5e5fc8a71ef1da449",
+      "bytes": 12814
+    },
+    {
+      "file": "BOUNDARY_CONTACT_ORIGIN_MOMENT_ORIENTATION.md",
+      "sha256": "851417d7fcd12ccb93a6f7f09ba7d7b2bf9bccc61c82fee3457b5ee4cee47e9a",
+      "bytes": 7684
+    },
+    {
+      "file": "TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md",
+      "sha256": "0d61292a0aa57084b88b4a72754fc78e123e8b684dac09be966fb074ab58e877",
+      "bytes": 20943
+    },
+    {
+      "file": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a",
+      "bytes": 14122
+    },
+    {
+      "file": "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "sha256": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c",
+      "bytes": 18216
+    },
+    {
+      "file": "REVIEW_NINE_MEASURE_FIVE_POINT_ASSEMBLY_ROOT_2026_10_26.md",
+      "sha256": "6aa33d0fbccdede04d909b770496fcac8d061e184d46d890f2394b484c6b4b5b",
+      "bytes": 5570
+    },
+    {
+      "file": "REVIEW_NINE_MEASURE_FIVE_POINT_ASSEMBLY_C6_2026_10_26.md",
+      "sha256": "68e17f92fbc87b7484d3dcdef206ba0e5f0b7014eb0f06ec707919cbe44e00a2",
+      "bytes": 3890
+    }
+  ],
+  "independent_exact_checks": [
+    {
+      "name": "sigma rational square",
+      "exact": "1/19600",
+      "positive": true
+    },
+    {
+      "name": "sqrt3 rational lower",
+      "exact": "11/62500",
+      "positive": true
+    },
+    {
+      "name": "cos75 squared reserve",
+      "exact": "81/1000000",
+      "positive": true
+    },
+    {
+      "name": "distance monotone t guard",
+      "exact": "24201/40000",
+      "positive": true
+    },
+    {
+      "name": "distance monotone r guard",
+      "exact": "7237/7000",
+      "positive": true
+    },
+    {
+      "name": "K center contradiction reserve",
+      "exact": "109/61250",
+      "positive": true
+    },
+    {
+      "name": "cosalpha stronger rational",
+      "exact": "211/62500",
+      "positive": true
+    },
+    {
+      "name": "alpha less30 square guard",
+      "exact": "46992849/976562500",
+      "positive": true
+    },
+    {
+      "name": "sigma below5/7",
+      "exact": "1/98",
+      "positive": true
+    },
+    {
+      "name": "unit wall exact strict reserve",
+      "exact": "1/700",
+      "positive": true
+    }
+  ],
+  "symbolic_identities": [
+    "cos(3theta-pi)=-4(9/25)^3+3(9/25)=13959/15625",
+    "mu4*x4=mu1*x1+muH*xH, mu4=mu1+muH",
+    "center.u >= s*(y+(c+s)/2), center.v>(1-c)/2",
+    "cos(delta1)+cos(delta4)>=1+cos(delta1+delta4)"
+  ],
+  "status": "full independent geometry, force, scope and exact arithmetic acceptance"
+}

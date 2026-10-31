@@ -1,0 +1,219 @@
+{
+  "status": "accepted general deep-support alignment and complete Type II feature reductions; both whole side rows remain open",
+  "parent_commit": "911d855aea42f78a9bd7ed0204a6d51217a2a4e2",
+  "parent_tree": "7245a0f813bb1e100afd284f446402a1b4c44423",
+  "sources_and_reviews": {
+    "TYPE_II_FAR_SIDE_LINEAR_CAP_AND_STRICT_C_TANGENT_MONOTONIC_REDUCTION_2026_10_29.md": {
+      "size_bytes": 11347,
+      "sha256": "90950427e5f69369fd9bd6a6295552355b2abf33954aa989cacb094ac98a7ffe",
+      "git_blob": "cbe6a7e14ab187cb6170d113c10b6bc389bd1d90"
+    },
+    "TYPE_II_FAR_SIDE_UNIFORM_C_TANGENT_BOUND_AND_COMPLETE_RADIAL_C_AXIS_REDUCTION_2026_10_29.md": {
+      "size_bytes": 16596,
+      "sha256": "ed6a592db738a3fa31c87244415efc668180fbff9397b4511052e8fb3e3269c2",
+      "git_blob": "c11e478c4da8f0923875a89a656629554295e81e"
+    },
+    "LOADED_TWO_APPLICATION_DEEP_SUPPORT_BAND_FORCES_ALIGNMENT_AND_COMPLETE_FAR_C_AXIS_REDUCTION_2026_10_29.md": {
+      "size_bytes": 18747,
+      "sha256": "d261ba8bdf8b59eb302628fb578ff331298bcb8ee0bd618bd297a2198275090f",
+      "git_blob": "170a65d5602d484695947aa07a579a2623aa7377"
+    },
+    "TYPE_II_A_ONLY_WHOLE_TRANSVERSE_GAP_AND_EXACT_BOTH_UNIQUE_SIDE_MATRIX_2026_10_29.md": {
+      "size_bytes": 19113,
+      "sha256": "9e87edfae140550225fc7677169ea49f009b24042ea3151324363d5840f54f60",
+      "git_blob": "a51c2f724a786ad285475c5be2cf17f3f7abcd5f"
+    },
+    "FULL_A_ONLY_HUB_MOMENTS_FORCE_STRICT_CONTACT_SUM_BOUND_2026_10_29.md": {
+      "size_bytes": 6704,
+      "sha256": "a36da90e5ebf45b3e497149c3a893fd98e74cdb92875012bbaf6722968cabdb5",
+      "git_blob": "29e7f49ad19b6982d596bc221cacba2e449e91ed"
+    },
+    "TYPE_II_A_ONLY_ENTIRE_HIGH_ANGLE_SIDE_EXCLUSION_BY_ORIGINAL_SUPPORT_WIDTH_2026_10_29.md": {
+      "size_bytes": 11522,
+      "sha256": "d939e828a38ef94447783dfbf79d5fe6cb33ece862d5f0fce09a78f4e9e28628",
+      "git_blob": "5dbed42db16e238d2b088656f657eb19c3ccd326"
+    },
+    "REVIEW_FAR_SIDE_LINEAR_CAP_AND_STRICT_C_TANGENT_COMMON_SELECTION_2026_10_29.md": {
+      "size_bytes": 11700,
+      "sha256": "c31d305ffbd709d51641d707cc69cff6249e25e27e389351141bb3e4fe4db768",
+      "git_blob": "da5f35857969ed09e7e9ab1ef1a508e3e12e273a"
+    },
+    "REVIEW_FAR_UNIFORM_C_TANGENT_AND_COMMON_SIDE_RADIAL_AXIS_A_OWNER_2026_10_29.md": {
+      "size_bytes": 13433,
+      "sha256": "05a1aa14f2f6dc2353346bf1f0b7f47d83da5c78ec5f65a4af33f29a73f088f8",
+      "git_blob": "7efcb4cde5228c7aa3ff17ef3a62e80509cc34ac"
+    },
+    "REVIEW_DEEP_SUPPORT_BAND_AND_COMPLETE_FAR_C_ALIGNMENT_A_OWNER_2026_10_29.md": {
+      "size_bytes": 15859,
+      "sha256": "b0caf724610fc7df39c5f0d42b8d2491fde269b4a4db36971e8c3527d5c43217",
+      "git_blob": "e907b4c521cd063b253404771ee2aa4527f7a93f"
+    },
+    "REVIEW_A_ONLY_WHOLE_TRANSVERSE_GAP_AND_EXACT_BOTH_UNIQUE_MATRIX_COMMON_SELECTION_2026_10_29.md": {
+      "size_bytes": 15573,
+      "sha256": "59acc0289ab6ae18386bf8a982ac37c9ee128aef234474c353acdab6f04ccf7d",
+      "git_blob": "61e88747da69e3b8c7635cc1e6e89cb199da9e09"
+    },
+    "REVIEW_FULL_A_ONLY_HUB_CONTACT_SUM_BOUND_A_OWNER_2026_10_29.md": {
+      "size_bytes": 5553,
+      "sha256": "c9c6526c1a2d061c219ac38c7abc6a91435421300ee39f25bdc213c46f6d5725",
+      "git_blob": "6c8a25873b8404569dc0b7085a55e9ff29bbbd7f"
+    },
+    "REVIEW_A_ONLY_ENTIRE_HIGH_ANGLE_SUPPORT_WIDTH_EXCLUSION_FAR_VERTEX_2026_10_29.md": {
+      "size_bytes": 10552,
+      "sha256": "9b61c6bc0824e763ced76e89931eceeea63ec346c4202b99f72d1495fb1f632d",
+      "git_blob": "03ad7f8ad2f7ea80d596b231a47ec8782bb8db64"
+    },
+    "ADOPTION_DEEP_SUPPORT_ALIGNMENT_FAR_C_AXIS_AND_A_ONLY_WHOLE_DOMAIN_REDUCTIONS_2026_10_30.md": {
+      "size_bytes": 11943,
+      "sha256": "a6061b0ad704f70a322ee5f5cf29628d8bca458f333be90418266f63bcc7ed99",
+      "git_blob": "5e2eaaa57a226090c0597ef676eab1368b2c28d4"
+    }
+  },
+  "independent_gates": [
+    {
+      "source": "TYPE_II_FAR_SIDE_LINEAR_CAP_AND_STRICT_C_TANGENT_MONOTONIC_REDUCTION_2026_10_29.md",
+      "source_sha256": "90950427e5f69369fd9bd6a6295552355b2abf33954aa989cacb094ac98a7ffe",
+      "review": "REVIEW_FAR_SIDE_LINEAR_CAP_AND_STRICT_C_TANGENT_COMMON_SELECTION_2026_10_29.md",
+      "review_sha256": "c31d305ffbd709d51641d707cc69cff6249e25e27e389351141bb3e4fe4db768",
+      "scope": "entire linear cap, full comparison interval and strict tangent monotonicity; old enlarged endpoint target left open"
+    },
+    {
+      "source": "TYPE_II_FAR_SIDE_UNIFORM_C_TANGENT_BOUND_AND_COMPLETE_RADIAL_C_AXIS_REDUCTION_2026_10_29.md",
+      "source_sha256": "ed6a592db738a3fa31c87244415efc668180fbff9397b4511052e8fb3e3269c2",
+      "review": "REVIEW_FAR_UNIFORM_C_TANGENT_AND_COMMON_SIDE_RADIAL_AXIS_A_OWNER_2026_10_29.md",
+      "review_sha256": "05a1aa14f2f6dc2353346bf1f0b7f47d83da5c78ec5f65a4af33f29a73f088f8",
+      "scope": "entire original tangent bound, all radical branches and degree23 identity, sextic hand positivity and scoped common-side radial application"
+    },
+    {
+      "source": "LOADED_TWO_APPLICATION_DEEP_SUPPORT_BAND_FORCES_ALIGNMENT_AND_COMPLETE_FAR_C_AXIS_REDUCTION_2026_10_29.md",
+      "source_sha256": "d261ba8bdf8b59eb302628fb578ff331298bcb8ee0bd618bd297a2198275090f",
+      "review": "REVIEW_DEEP_SUPPORT_BAND_AND_COMPLETE_FAR_C_ALIGNMENT_A_OWNER_2026_10_29.md",
+      "review_sha256": "b0caf724610fc7df39c5f0d42b8d2491fde269b4a4db36971e8c3527d5c43217",
+      "scope": "general arbitrary-degree at-most-two-application support band, closed endpoint cover, complete far C frame and genuine shared DC join"
+    },
+    {
+      "source": "TYPE_II_A_ONLY_WHOLE_TRANSVERSE_GAP_AND_EXACT_BOTH_UNIQUE_SIDE_MATRIX_2026_10_29.md",
+      "source_sha256": "9e87edfae140550225fc7677169ea49f009b24042ea3151324363d5840f54f60",
+      "review": "REVIEW_A_ONLY_WHOLE_TRANSVERSE_GAP_AND_EXACT_BOTH_UNIQUE_MATRIX_COMMON_SELECTION_2026_10_29.md",
+      "review_sha256": "59acc0289ab6ae18386bf8a982ac37c9ee128aef234474c353acdab6f04ccf7d",
+      "scope": "whole A transverse gap and B side-tie exclusion; exact both-unique matrix with singular cases and full absolute equations"
+    },
+    {
+      "source": "FULL_A_ONLY_HUB_MOMENTS_FORCE_STRICT_CONTACT_SUM_BOUND_2026_10_29.md",
+      "source_sha256": "a36da90e5ebf45b3e497149c3a893fd98e74cdb92875012bbaf6722968cabdb5",
+      "review": "REVIEW_FULL_A_ONLY_HUB_CONTACT_SUM_BOUND_A_OWNER_2026_10_29.md",
+      "review_sha256": "c9c6526c1a2d061c219ac38c7abc6a91435421300ee39f25bdc213c46f6d5725",
+      "scope": "whole original full-cubic contact-sum and coordinate bounds, with unique positive root for fixed actual angles"
+    },
+    {
+      "source": "TYPE_II_A_ONLY_ENTIRE_HIGH_ANGLE_SIDE_EXCLUSION_BY_ORIGINAL_SUPPORT_WIDTH_2026_10_29.md",
+      "source_sha256": "d939e828a38ef94447783dfbf79d5fe6cb33ece862d5f0fce09a78f4e9e28628",
+      "review": "REVIEW_A_ONLY_ENTIRE_HIGH_ANGLE_SUPPORT_WIDTH_EXCLUSION_FAR_VERTEX_2026_10_29.md",
+      "review_sha256": "9b61c6bc0824e763ced76e89931eceeea63ec346c4202b99f72d1495fb1f632d",
+      "scope": "entire coupled scalar support-width theorem and all-mask original high-angle side plus diagonal join"
+    }
+  ],
+  "explicit_direct_source_table_pins_verified": {
+    "TYPE_II_FAR_RETURN_SIDE_CHANNEL_EXCLUDES_BOTH_PARALLEL_LOADED_ENDPOINTS_2026_10_29.md": "e573ec4e567bb3e255ddbc9348b24dd4780651beebd1f3ea713e949930929b68",
+    "UNIVERSAL_UNIT_SQUARE_CAP_AND_COMPLETE_TYPE_II_FAR_RETURN_DIAGONAL_EXCLUSION_2026_10_29.md": "f4f2f293e038ea9f42dc8572cb8f216c9b9718a8fb14c4ac215232efcaf34e3c",
+    "TYPE_II_FAR_SIDE_LINEAR_CAP_AND_STRICT_C_TANGENT_MONOTONIC_REDUCTION_2026_10_29.md": "90950427e5f69369fd9bd6a6295552355b2abf33954aa989cacb094ac98a7ffe",
+    "TYPE_II_FAR_SIDE_COMPLETE_PHYSICAL_RADIAL_ENDPOINT_MASK_ALTERNATIVE_2026_10_29.md": "b002cbf7521c44b67c9bac13e048aac9961ea04ab1717f78c312e2eb0c36708c",
+    "LOADED_TWO_APPLICATION_FULL_STAR_BOUNDARY_FREE_CONCURRENCE_DICHOTOMY.md": "3808b2b767a9e15c7270b50c4fbbb434ae0d69fe42c567d4da01f7d167f7fa78",
+    "TYPE_II_FAR_SIDE_UNIFORM_C_TANGENT_BOUND_AND_COMPLETE_RADIAL_C_AXIS_REDUCTION_2026_10_29.md": "ed6a592db738a3fa31c87244415efc668180fbff9397b4511052e8fb3e3269c2",
+    "TYPE_II_FAR_SIDE_RETURN_COMPLETE_COINCIDENT_C_APPLICATION_EXCLUSION_2026_10_29.md": "c803a178538c87924d866ee65ed95a7c2403a35203d5a7f5bf85bbc794ccc93c",
+    "TYPE_II_A_ONLY_COMPLETE_SIDE_FORCE_SIGNS_AND_TWO_PHYSICAL_CIRCLE_CORNER_BUDGET_2026_10_29.md": "00e18446bab3fc7b97484fc33d700363ea41f415af5b1746ee4c020c87830033",
+    "TYPE_II_A_ONLY_H_OWNER_COMPLETE_DIAGONAL_RETURN_EXCLUSION_BY_ORIGINAL_ENDPOINT_AXES_2026_10_29.md": "a38780b72988e3f1628ba751d955bfc8a09e9c06f55764e0699b88506d175eb8",
+    "LOADED_FULL_STAR_CLOSED_SIDE_CONE_WITH_GENUINE_AXIS_PORT_FORCES_RADIAL_ALIGNMENT_2026_10_29.md": "3d188352bb57e31ab6865f3ef608343afa5868c111e3450af1e3030216c2c7ae",
+    "PHYSICAL_CONTACT_STRESS.md": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+    "TYPE_II_A_ONLY_ENTIRE_HIGH_ANGLE_SIDE_EXCLUSION_BY_ORIGINAL_SUPPORT_WIDTH_2026_10_29.md": "d939e828a38ef94447783dfbf79d5fe6cb33ece862d5f0fce09a78f4e9e28628",
+    "LOADED_TWO_APPLICATION_DEEP_SUPPORT_BAND_FORCES_ALIGNMENT_AND_COMPLETE_FAR_C_AXIS_REDUCTION_2026_10_29.md": "d261ba8bdf8b59eb302628fb578ff331298bcb8ee0bd618bd297a2198275090f",
+    "TYPE_II_A_ONLY_WHOLE_TRANSVERSE_GAP_AND_EXACT_BOTH_UNIQUE_SIDE_MATRIX_2026_10_29.md": "9e87edfae140550225fc7677169ea49f009b24042ea3151324363d5840f54f60",
+    "FULL_A_ONLY_HUB_MOMENTS_FORCE_STRICT_CONTACT_SUM_BOUND_2026_10_29.md": "a36da90e5ebf45b3e497149c3a893fd98e74cdb92875012bbaf6722968cabdb5",
+    "REVIEW_FAR_SIDE_LINEAR_CAP_AND_STRICT_C_TANGENT_COMMON_SELECTION_2026_10_29.md": "c31d305ffbd709d51641d707cc69cff6249e25e27e389351141bb3e4fe4db768",
+    "REVIEW_FAR_UNIFORM_C_TANGENT_AND_COMMON_SIDE_RADIAL_AXIS_A_OWNER_2026_10_29.md": "05a1aa14f2f6dc2353346bf1f0b7f47d83da5c78ec5f65a4af33f29a73f088f8",
+    "REVIEW_DEEP_SUPPORT_BAND_AND_COMPLETE_FAR_C_ALIGNMENT_A_OWNER_2026_10_29.md": "b0caf724610fc7df39c5f0d42b8d2491fde269b4a4db36971e8c3527d5c43217",
+    "REVIEW_A_ONLY_WHOLE_TRANSVERSE_GAP_AND_EXACT_BOTH_UNIQUE_MATRIX_COMMON_SELECTION_2026_10_29.md": "59acc0289ab6ae18386bf8a982ac37c9ee128aef234474c353acdab6f04ccf7d",
+    "REVIEW_FULL_A_ONLY_HUB_CONTACT_SUM_BOUND_A_OWNER_2026_10_29.md": "c9c6526c1a2d061c219ac38c7abc6a91435421300ee39f25bdc213c46f6d5725",
+    "REVIEW_A_ONLY_ENTIRE_HIGH_ANGLE_SUPPORT_WIDTH_EXCLUSION_FAR_VERTEX_2026_10_29.md": "9b61c6bc0824e763ced76e89931eceeea63ec346c4202b99f72d1495fb1f632d"
+  },
+  "explicit_direct_source_table_pin_occurrences": 46,
+  "exact_rational_checks": {
+    "strong_cap_curvature_reserve": "1/882",
+    "radius_133_64_squared_reserve": "9/4096",
+    "sextic_tail_reserve": "57723/512",
+    "sextic_first_interval_derivative_upper": "-4750/81",
+    "sextic_second_interval_quadratic_reserve": "10191/2600",
+    "depth_comparison_upper": "2/3",
+    "depth_reserve": "1/96",
+    "cubic_contact_sum_reserve": "1/1008",
+    "high_angle_q_reserve": "2/9",
+    "high_angle_H_reserve": "1/64",
+    "high_angle_denominator_reserve": "34/225",
+    "high_angle_b0_reserve": "1/576",
+    "high_angle_sum": "4/3"
+  },
+  "complete_identity_and_geometric_checks": [
+    "all24 integer coefficients in D*(S-U)=P23 independently re-expanded in the current tangent review",
+    "entire positive radical branches, chord bounds, exact reciprocal identities and all closed comparison endpoints independently reconstructed",
+    "full original one/two-application and parallel/nonparallel mask cover; unique mask established before inside-square concurrence",
+    "full original D and C application intervals prove genuine shared DC without replacing their mean",
+    "both exact original circles, original hub cubic, true degrees and all zero physical circle coefficients retained in the A-only matrix",
+    "entire high-angle support-width proof and complete unloaded side/diagonal join independently reconstructed"
+  ],
+  "inventory": {
+    "fine": {
+      "total": 2513,
+      "checked": 2373,
+      "open": 140,
+      "original_ids_order_flags_unchanged": true
+    },
+    "coarse": {
+      "total": 58,
+      "closed": 36,
+      "open": 22,
+      "original_ids_order_flags_unchanged": true
+    },
+    "fine_sequence_sha256": "feda561e85056c0bae48f2f33b8df7814c44d983ca4f1cc3e422391525106f1f",
+    "coarse_sequence_sha256": "99e0b788a73379a719f331d43581ef02c76ea2e8622a8c8f43bbf21e9ea241bd"
+  },
+  "metadata": {
+    "research/nine/DEEP_GATED_ROADMAP.md": {
+      "size_bytes": 1091559,
+      "sha256": "f465229eb86daa163aa329ce89b2119650620868191ad8983517e116ea0654c5",
+      "git_blob": "2308d1642546abe7caa43563bb1fbbb244a0a948"
+    },
+    "research/nine/CYCLIC_CELL_LEDGER.md": {
+      "size_bytes": 346969,
+      "sha256": "427efee6add7eacde05a3574e26398c68ed0697f55e12d48195450a33f2828bb",
+      "git_blob": "50190bfcc33d34ba99fa7debd3b23131a4775c9a"
+    },
+    "research/nine/README.md": {
+      "size_bytes": 110659,
+      "sha256": "1bb3f2b0d6bc84eb71fdc7e6143575d865b817c086d5ca4b2aaf1a0322ee1af3",
+      "git_blob": "290b92ca6653a2a133df3968e6ef176083821d0a"
+    },
+    "research/nine/ROADMAP.md": {
+      "size_bytes": 89405,
+      "sha256": "68dd77e3edbffd4e2b8701afe6e4826320fe16fc55bd870e4bc9acbafd078e8e",
+      "git_blob": "f4d41f352e1a5fe9a030bfb3df1746b4467a2b46"
+    },
+    "research/nine/HANDOFF_PR11_2026_10_28_CURRENT.md": {
+      "size_bytes": 172451,
+      "sha256": "03e3c70e976e8f908c16ce61a601c08eeeb7a183735c1bb7c8926d77fb390c0d",
+      "git_blob": "c956ec64ca51d241b32aa732ae4655dc885dd099"
+    }
+  },
+  "remaining": {
+    "far_side": "all C aligned to original frame, genuine shared DC, strict tangent/depth band; both unique and physical-two C cases retain full original equations and remain open",
+    "a_only_side": "strict alpha+beta<120 degrees, d.b>0,d.c>0,u+t<1; radial B, radial C or both unique, with full original absolute equations; not proved empty",
+    "parents": "both whole Type II L135 side rows, loaded/physical-two domains, other graph/load and forest residuals, full downstream audit, sharp bound, equality, Lean integration"
+  },
+  "prohibited_operations_performed": {
+    "Lean_Lake_build": false,
+    "CI_workflow_dispatch": false,
+    "numerical_pose_search": false,
+    "angle_mesh": false,
+    "new_packing_certificate": false,
+    "merge": false
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "date_utc": "2026-10-28",
+  "status": "Full root and separate independent acceptance of three partial interfaces; no whole-family accounting change.",
+  "accepted_sources_and_reviews": [
+    {
+      "path": "research/nine/HOUSE_LOWER_TD_S_PARALLEL_BYPASS_EXCLUSION.md",
+      "sha256": "de2b585692b350e63be7f6f703a04fa9a8725b7dc5293ea0f241d2bac9ed5dec",
+      "bytes": 10186
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_LOWER_TD_S_PARALLEL_BYPASS_ROOT_2026_10_28.md",
+      "sha256": "99d95b9bfefa851835410ddcc5a96634adae2476d672439c88969a767d4c6aba",
+      "bytes": 6709
+    },
+    {
+      "path": "research/nine/REVIEW_HOUSE_LOWER_TD_S_PARALLEL_BYPASS_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "9f8a8e03abcbec5e9ecf6ca3c563e7d6e46d80262ab602982bb2516ab4c3d173",
+      "bytes": 9044
+    },
+    {
+      "path": "research/nine/SIDE_CHANNEL_UNLOADED_TRIANGLE_BYPASS_POSITIVE_MEAN.md",
+      "sha256": "5a1607a588e45d0702c46c3d74074561f31109dccc0b8f94c665991cd4a9f5ee",
+      "bytes": 11411
+    },
+    {
+      "path": "research/nine/REVIEW_SIDE_CHANNEL_UNLOADED_TRIANGLE_POSITIVE_MEAN_HEXAGON_2026_10_28.md",
+      "sha256": "3077224a609df530e0db2887186729bdfd7db0706dde55f8905564d72c6579f6",
+      "bytes": 11380
+    },
+    {
+      "path": "research/nine/ALIGNED_S_ROOT_PARALLEL_CHANNEL_TRIANGLE_EXCLUSION.md",
+      "sha256": "1b1c1572b29b110596afe25ef660b0f264b97d1910f110f287bfddeb9451465a",
+      "bytes": 20320
+    },
+    {
+      "path": "research/nine/REVIEW_ALIGNED_S_ROOT_PARALLEL_CHANNEL_TRIANGLE_ROOTED_BLOCKS_2026_10_28.md",
+      "sha256": "fe76a26b23b83efd1d357ef0c96425e7121b6d698070d4a0da51928f4bb87753",
+      "bytes": 13054
+    },
+    {
+      "path": "research/nine/REVIEW_TC_S_POSITIVE_MEAN_AND_PARALLEL_CHANNEL_ROOT_2026_10_28.md",
+      "sha256": "5703b7b6658ddcdf9356863d63a0966c3a0f489a242ac6e453bfcdcb0aad276e",
+      "bytes": 13781
+    }
+  ],
+  "accepted_interfaces": [
+    "M6.B5L.HOUSE.LOWER.LTD.S: actual A bypass parallel to C, either genuine S-root frame",
+    "M6.B5L.HOUSE.HUB.LTC.S and LTC.D: original transverse channel mean positive after putting the actual D bypass below the channel",
+    "M6.B5L.HOUSE.HUB.LTC.S: actual root aligned to its genuine leaf and original side channel parallel to that leaf"
+  ],
+  "whole_fine_changes": [],
+  "coarse_changes": [],
+  "current_accounting_checkpoint": {
+    "path": "research/nine/ACCEPTED_COMPLETE_TWO_SPOKE_PENTAGON_CHECKPOINT_2026_10_28.json",
+    "sha256": "32d2d301dc00d36ed0c4b6204ebb7704869d01988f73ae6d20828292d9059e78",
+    "fine_checked": 2330,
+    "fine_open": 183,
+    "coarse_closed": 33,
+    "coarse_open": 25
+  },
+  "metadata_unchanged": [
+    {
+      "path": "research/nine/CYCLIC_CELL_LEDGER.md",
+      "previous_sha256": "9b846e0d51e784f26bf539cc67fedf637854ea2c101626848046ff5a17601003",
+      "sha256": "9b921eac9b831646625c6d81024d0fa745c4aae185392fd1ff4a64aa5e9d5180",
+      "bytes": 216563
+    },
+    {
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "previous_sha256": "f18f3a6dde51ddf4e22925ed73597d88cb77b1f8cd04738fd2830728a3f3418d",
+      "sha256": "0d443b7c05c4e534d4c95d8f54e558374505bec719122e6f6e3439249d3d49fb",
+      "bytes": 933642
+    },
+    {
+      "path": "research/nine/HANDOFF_PR11_2026_10_25.md",
+      "previous_sha256": "8344436536b4398064a546e9fe1d9a23747864f18bbc0d9e51f4c827b3a37cd5",
+      "sha256": "0ee33de19ca0d7570c877ac988fa4b47cbe0379ce0753808d1a673c674e17417",
+      "bytes": 133979
+    },
+    {
+      "path": "research/nine/HANDOFF_PR11_2026_10_27_CURRENT.md",
+      "previous_sha256": "1a900e62e238ac62a4295c427292c70d645a4a96e15159601d4d5123fc45ede2",
+      "sha256": "5b4b334f83caea7b64fbfc1080949fc56d69b5923ae2cf1e0610419fa23c6380",
+      "bytes": 33478
+    },
+    {
+      "path": "research/nine/TWO_LOAD_PROGRESS.md",
+      "previous_sha256": "6dbd1f50dc5c20b3e6e23c264ea4112d4dbe53fdf9ac596020dfb91fa359f8c5",
+      "sha256": "bc33aae39d6ec9dd1eb926d6519e710f0514ca3fc6272abf9a6de91c006e8721",
+      "bytes": 549792
+    }
+  ],
+  "exact_check_records": [
+    {
+      "path": "/tmp/pr11_root_lower_td_s_parallel_checks.json",
+      "sha256": "7dd3aa9a096ae01a7904c4533ce29815f1ac8891735679558dc0d0eee4896dcf"
+    },
+    {
+      "path": "/tmp/pr11_root_tc_s_positive_mean_parallel_checks.json",
+      "sha256": "07a6391d4a642441c0f37789cefeffbdb7ca062a63e5a47f8f70e8a01ede55c9"
+    }
+  ],
+  "remaining": [
+    "lower TD.S oblique bypass",
+    "hub TC.S oblique channels and tilted genuine roots",
+    "all other unchanged original open goals"
+  ],
+  "no_remote_mutation": true,
+  "no_lean_compilation_ci_or_merge": true
+}

@@ -1,0 +1,774 @@
+{
+  "date": "2026-10-28",
+  "author": "frontier_audit",
+  "inventory_method": "Read-only exact-name references in research/nine/**/*.md; line references are discovery metadata, not a claim of fresh full mathematical review.",
+  "historical_export": {
+    "source": "NO_UNLOADED_DIAMOND_HUB.md",
+    "sha256": "82b546953a927a09d8ccabdefd8ffc10eac3e4efc5d8a122840f1343f80a7e2d"
+  },
+  "replacement": {
+    "source": "UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+    "sha256": "406fce53d22cc20eec43a373a877798dab583a6bd93f684ff124293016c44c87"
+  },
+  "references": [
+    {
+      "path": "BOUNDARY_EDGE_OUTER_FACE_AND_DIAMOND_EXCLUSION.md",
+      "sha256": "f300682dd063509843547aefa6303edf3de2e1b1bab6233ada08c20f265fe2b5",
+      "reference_lines": [
+        228,
+        287
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "BOUNDARY_TWO_STEP_NEIGHBOR_CLOSURE_AND_COMMON_ROOT_HEAVY_BLOCKS.md",
+      "sha256": "5e6ba0bcad85bf73d9fe709046f9280cd5f57ddb3b9a58a00379446621ad446e",
+      "reference_lines": [
+        127
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "BOUNDARY_UNIT_THREE_NEAR_NEIGHBORS_FRESH_EXCLUSION.md",
+      "sha256": "ba49bbf678dfecdadbd120328de745253c8e5a45a5f7635d7044fc784179f156",
+      "reference_lines": [
+        152
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "COMMON_ROOT_TWO_FOUR_BLOCK_LOAD_PAIR_EXCLUSIONS.md",
+      "sha256": "de280dd89cf09cb901fb3b47bbca71009c9f06c5cad26728fef84f9383ff20e3",
+      "reference_lines": [
+        73
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "DEEP_GATED_ROADMAP.md",
+      "sha256": "eb3b6dc0472910c2f574158b8ee91b56ce77aff3f433d21257b95c42a687675c",
+      "reference_lines": [
+        3521,
+        3522,
+        4496,
+        4789
+      ],
+      "reference_kind": "bookkeeping or historical synthesis"
+    },
+    {
+      "path": "DIAMOND_LEAF_BLOCK_CLOSED.md",
+      "sha256": "f2ae39d09ffa1b781f23d23a49bf20673ed706ab50f231e2c2e93b07a3a466eb",
+      "reference_lines": [
+        25
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "DIAMOND_ROOT_PRESSURE_AND_MIXED_BOUQUET_CLOSURE.md",
+      "sha256": "afec7af10d9b384b4420b588d7a7d6b172ddf2e10b5d84d5db780b97c3b13f2b",
+      "reference_lines": [
+        48
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "DIAMOND_TWO_SHORT_ARMS_SAME_HUB_CLOSED.md",
+      "sha256": "c2e07b404b3218891ee1c32476706b02e8a4b5bc12d8c40e2a895d6ca9e90a3d",
+      "reference_lines": [
+        85
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "D_DIAMOND_PARALLEL_HUB_EXCLUSION.md",
+      "sha256": "8e6680e0e9beeab5dd39b38cdb3fedb6e4d2d1e1a009a5ee7413e991c4d2bb95",
+      "reference_lines": [
+        19
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "D_DIAMOND_RADIAL_HUB_EXCLUSION.md",
+      "sha256": "a1fda912a8633c783aaa04c771ad383c1c013b21effb5df7625ae1eb987944db",
+      "reference_lines": [
+        16,
+        359
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "FIVE_BODY_BICONNECTED_REDUCTION.md",
+      "sha256": "136ec9698facebe1d6e26ea611f9605020000fb5851e5506dad50b619bea1b56",
+      "reference_lines": [
+        155
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "reference_lines": [
+        74
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "FOUR_BODY_BLOCK_HIGH_SIDE_ARM_AND_DISTINCT_LEAF_EXCLUSION.md",
+      "sha256": "a8d64410422fe481d39dc077b19cb6c9fcad6315ae412fc05c71a3c18bb76826",
+      "reference_lines": [
+        258
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "FOUR_BODY_BLOCK_NEGATIVE_BRIDGE_WITH_FULL_ROOT_LOAD_EXCLUSION.md",
+      "sha256": "f2b3b0fc1c41fced68a7f2196ae6261e87b7b2f03d5bfda171da157c5c7887fe",
+      "reference_lines": [
+        303,
+        331
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "FOUR_BODY_BLOCK_SAME_ROOT_LEAF_AND_SHORT_ARM_FRESH_EXCLUSION.md",
+      "sha256": "6dcf79aa2c3bce2adb7d5ce35d67ee1ac9522beb26e693af0a9c4bf920641071",
+      "reference_lines": [
+        216
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "FOUR_BODY_BLOCK_SHORT_ARM_AND_SAME_ROOT_LEAF_EXCLUSION.md",
+      "sha256": "16c90ef5920f0664e8cfc5c5d8cd11bac667f9444e4e66d5e3f9726740e104a9",
+      "reference_lines": [
+        210
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "FOUR_BODY_BLOCK_TWO_BRIDGES_LOAD_COVER.md",
+      "sha256": "bcc40cfcfbfda1aff85d0359ce504621ff750f4051a0f3599ef6287922b84e1d",
+      "reference_lines": [
+        217
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "FOUR_BODY_BLOCK_ZERO_APPLICATION_BRIDGE_FRESH_EXCLUSION.md",
+      "sha256": "5e9f44b9ae62fd5c81e4b7c347bdee06d6000ca2ecbe5cf8ac7afe8a5cd72c57",
+      "reference_lines": [
+        335
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "FOUR_LOAD_FAN_EXCLUSION.md",
+      "sha256": "4ff200b8292bd7468d2c778170b50466aa9c46f2398d7a34bc483b54fb60fd3b",
+      "reference_lines": [
+        33
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "G2_SUBGATES.md",
+      "sha256": "9f8a8b01ebcd967e6e2c6ad1962e9c6250bd217745ab3a57c538e755e70b7399",
+      "reference_lines": [
+        389
+      ],
+      "reference_kind": "bookkeeping or historical synthesis"
+    },
+    {
+      "path": "GENERAL_GENUINE_FOUR_BLOCK_DECORATED_HUB_DIAMOND_COMPLETE_EXCLUSION.md",
+      "sha256": "45dcd1b830306b0ab32429e91b8aaeda5561d2ea3c05ef102ef4b5ce1ecab99f",
+      "reference_lines": [
+        35
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "GENERAL_GENUINE_FOUR_BLOCK_TWO_PRIVATE_LEAF_DIAMOND_COMPLETE_EXCLUSION.md",
+      "sha256": "e20b167fe58f5d34b7927d5ec23d35540152a1d6868801691f57e448cc26e650",
+      "reference_lines": [
+        99
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "GENERAL_PRIVATE_LEAF_FOUR_BLOCK_OUTSIDE_OPEN_ORIGIN_EXCLUSION.md",
+      "sha256": "50a9f89103050ae8b766edc80812cddce2f896f321cf423cd971db2bd9a97e56",
+      "reference_lines": [
+        73
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "GENERAL_THREE_NEAR_UNITS_COMMON_BOUNDARY_NEIGHBOR_EXCLUSION.md",
+      "sha256": "a4efde5817af8cc06faf4ca83a401f7926dafb0ed31686d6c72e14cd2d8485d7",
+      "reference_lines": [
+        207
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "GENERAL_TWO_PRIVATE_LEAF_DIAMOND_OPEN_ORIGIN.md",
+      "sha256": "b6f062b700518677a3cea9e9ee2fbfadbde84c0413ea76ea83352fff98cc4520",
+      "reference_lines": [
+        72
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "GLOBAL_CLOSURE_ORIGIN_FREE_LOADED_RADIAL_TRIANGLE_EXCLUSION.md",
+      "sha256": "7427953b7e387d70246117b26f4bd5d2eeb00297e9419429c0c5c2141a534e07",
+      "reference_lines": [
+        234
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "GLOBAL_CLOSURE_SEVEN_BOUNDARY_NEIGHBORS_EXCLUSION.md",
+      "sha256": "54acd7f4c4bc0d4085739236b59bd820b2fabfeb95c257564fdff18b10f92c84",
+      "reference_lines": [
+        175
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "GLOBAL_CLOSURE_TWO_INTACT_PETALS_FIVE_BLOCK_ROOT_NEIGHBOR_REDUCTION.md",
+      "sha256": "653e4ea3bfd6d7ee5d1552c6bda26ab0519d3a6929083fb7f16b5496b60962a3",
+      "reference_lines": [
+        75
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "HIGH_RADIUS_TRIANGLE_TIP_PRESSURE_AND_DIAMOND_FAMILIES.md",
+      "sha256": "9885736683401bc56a58fd63a82eb38d2c5a315780f6d851f436935dbfad3ccf",
+      "reference_lines": [
+        148
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "HOUSE_HUB_TB_CANONICAL_CONTACT_EXCLUSION.md",
+      "sha256": "0a23b1dc8db0910147077ec114ebd4e8db40d08b6166f69c8400c5f7b6192d6f",
+      "reference_lines": [
+        125,
+        197
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "INTACT_PETAL_NEAR_UNIT_COMMON_BOUNDARY_NEIGHBOR_EXCLUSION.md",
+      "sha256": "12b36cd2947acba0a5e58a619590968bbf28d37e8b89fae3790787b887eb7d25",
+      "reference_lines": [
+        234
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "INTACT_ROOT_BRIDGE_TERMINAL_DIAMOND_EXCLUSION.md",
+      "sha256": "9a8fcceaf16d859636f99075480fcff328e77e08f02d19467c44a95e39ff0eca",
+      "reference_lines": [
+        71
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "JOINT_CLOSURE_LEAF_PAIR_SUPPLEMENT_2026_10_25.md",
+      "sha256": "d35af0085e7396f45db03618fcacc8f89ad73165f2acc48fd79f9be8e1a2a7b1",
+      "reference_lines": [
+        102
+      ],
+      "reference_kind": "bookkeeping or historical synthesis"
+    },
+    {
+      "path": "NINE_SQUARE_CENTRAL_DISK_AND_SIX_BOUNDARY_NEIGHBORS_EXCLUSION.md",
+      "sha256": "3d80e291f2f5c095f91011fbc7e6014dbb4f5abd5441bc4c2a2da64fb14d2058",
+      "reference_lines": [
+        353
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "ONE_FOUR_BODY_BLOCK_THREE_BRIDGES_ATTACHMENT_COVER.md",
+      "sha256": "8cd2cce347c8fe157f9a97ae262dcfed012dbad215b86b5d8f1f4bed7a452fca",
+      "reference_lines": [
+        140,
+        213
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "ONE_FOUR_BODY_BLOCK_THREE_BRIDGES_FRESH_ATTACHMENT_COVER.md",
+      "sha256": "fe7cd59246d06d4ac2386d15525c3e00a48cbed2829de88741d9344e9beb9ca0",
+      "reference_lines": [
+        151
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "REVIEW_ASYMMETRIC_SMALL_CORNER_HUB_DIAMOND_AP_C6_NEXT_2026_10_27.md",
+      "sha256": "71e7dfda74b6b32515cec451ae34b06cc36a364d887e6c4652f6e962d06a6615",
+      "reference_lines": [
+        235
+      ],
+      "reference_kind": "review record"
+    },
+    {
+      "path": "REVIEW_BOUNDARY_EDGE_DIAMOND_EXCLUSION_2026_10_25.md",
+      "sha256": "2a40c147f7d00c57dc449d51b8eaf2a41e0d748645fc2ae2973de4526b1921a2",
+      "reference_lines": [
+        29
+      ],
+      "reference_kind": "review record"
+    },
+    {
+      "path": "REVIEW_BOUNDARY_THREE_NEAR_NEIGHBORS_FRESH_HEXAGON_2026_10_27.md",
+      "sha256": "8ae31e5cc651ab151a65df358fed675379801e1f514eda69a7d010e05771ca85",
+      "reference_lines": [
+        83
+      ],
+      "reference_kind": "review record"
+    },
+    {
+      "path": "REVIEW_BOUNDARY_THREE_NEAR_NEIGHBORS_FRESH_ROOT_2026_10_27.md",
+      "sha256": "a5d5d5802353b08cd3247f8e2a2ae15e3a135f5fdfb6b79be3b21c5fd52ddfed",
+      "reference_lines": [
+        76
+      ],
+      "reference_kind": "review record"
+    },
+    {
+      "path": "REVIEW_BOUNDARY_TWO_STEP_COMMON_ROOT_HEAVY_LEAF_PAIR_2026_10_27.md",
+      "sha256": "a64ecc5999be47deedd40808485d9c8d53ebd8755d6a9ff8a1f2ba5294e53afc",
+      "reference_lines": [
+        118
+      ],
+      "reference_kind": "review record"
+    },
+    {
+      "path": "REVIEW_CENTRAL_DISK_SIX_BOUNDARY_NEIGHBORS_TRIANGLE_BRIDGES_2026_10_27.md",
+      "sha256": "e35e59f160fff3c0149ebaa87f0aca36f5160fbb1a8f39a965737759a2306bfd",
+      "reference_lines": [
+        26
+      ],
+      "reference_kind": "review record"
+    },
+    {
+      "path": "REVIEW_COMPLETE_DIAMOND_ASSEMBLY_2026_10_25.md",
+      "sha256": "20d0ff32faacaeb00cef128ab104b7c67a001992949aa271f184e7c382e1e4fd",
+      "reference_lines": [
+        60,
+        422
+      ],
+      "reference_kind": "review record"
+    },
+    {
+      "path": "REVIEW_DIAMOND_HUB_TIP_ALL_LEAVES_ROOTED_INDEPENDENT_2026_10_27.md",
+      "sha256": "2943c801bd5a1d3391ac4258db802f50fb9f6ccee92a75128121accc11efdb98",
+      "reference_lines": [
+        68,
+        279,
+        284,
+        288
+      ],
+      "reference_kind": "review record"
+    },
+    {
+      "path": "REVIEW_DIAMOND_ROOT_PRESSURE_AND_BOUQUETS_2026_10_25.md",
+      "sha256": "69c2b939dfbcb7899284b9516c8cb6fb7d3fd24e223e8e72652156d8e7978388",
+      "reference_lines": [
+        62
+      ],
+      "reference_kind": "review record"
+    },
+    {
+      "path": "REVIEW_FOUR_BLOCK_HIGH_SIDE_DISTINCT_LEAF_SIX_BODY_2026_10_27.md",
+      "sha256": "63cbdb3438fab027759b980d8d060e0b42d69a06ee2e29e7fbe11bed1332c203",
+      "reference_lines": [
+        80
+      ],
+      "reference_kind": "review record"
+    },
+    {
+      "path": "REVIEW_FOUR_BLOCK_THREE_BRIDGES_TWENTY_FOUR_JOIN_SIX_BODY_2026_10_27.md",
+      "sha256": "0713fff19f8016a7d4dafa8406ad2aa423263b9e82472c03e216ab3781dd017b",
+      "reference_lines": [
+        120
+      ],
+      "reference_kind": "review record"
+    },
+    {
+      "path": "REVIEW_FOUR_BODY_SAME_ROOT_LEAF_SHORT_ARM_FRESH_HEXAGON_2026_10_27.md",
+      "sha256": "c83c49dba69d2a0a89ec09fa03b117955cdc2111021c710d011930229ed648a1",
+      "reference_lines": [
+        313
+      ],
+      "reference_kind": "review record"
+    },
+    {
+      "path": "REVIEW_FOUR_BRIDGE_NEGATIVE_BRIDGE_AND_SINGLE_TREE_ROOT_2026_10_27.md",
+      "sha256": "7b3d23987bcba9db71944c82c9b04501442d484c51388c7ddd65a2410e55d3e4",
+      "reference_lines": [
+        37
+      ],
+      "reference_kind": "review record"
+    },
+    {
+      "path": "REVIEW_GENUINE_FOUR_DECORATED_TIP_DIAMOND_ORDER_C6_2026_10_27.md",
+      "sha256": "e08f72ed8542efecadfd183ed72011f90d69ac81574f570822b6e59ffd43ecba",
+      "reference_lines": [
+        40
+      ],
+      "reference_kind": "review record"
+    },
+    {
+      "path": "REVIEW_HOUSE_HUB_TB_CANONICAL_CONTACT_ROOT_2026_10_28.md",
+      "sha256": "7af1f1a43fd5e703ce6468e5ed68cbceb8305cdc278e980ac4bb6f9cc1b5ee37",
+      "reference_lines": [
+        40
+      ],
+      "reference_kind": "review record"
+    },
+    {
+      "path": "REVIEW_HOUSE_HUB_TB_CANONICAL_CONTACT_TRIANGLE_BRIDGES_2026_10_27.md",
+      "sha256": "f72805162088a6024a6e4818106cbcdd7214b2cf1425f4fa32fb3143e149f7e2",
+      "reference_lines": [
+        115
+      ],
+      "reference_kind": "review record"
+    },
+    {
+      "path": "REVIEW_INTACT_NEAR_UNIT_COMMON_BOUNDARY_ROOT_2026_10_27.md",
+      "sha256": "7241e393189ccfe471ea0acc37998d9c05e0e799a84047a0bb2a71af687bdf90",
+      "reference_lines": [
+        21
+      ],
+      "reference_kind": "review record"
+    },
+    {
+      "path": "REVIEW_INTACT_PETAL_NEAR_COMMON_NEIGHBOR_LEAF_PAIR_2026_10_27.md",
+      "sha256": "6b31a745e1db7b632005f51937680d1cc2afc0e403b2a2ba16c8ac87e639ff37",
+      "reference_lines": [
+        18
+      ],
+      "reference_kind": "review record"
+    },
+    {
+      "path": "REVIEW_TRIANGLE_FOUR_BLOCK_THREE_BRIDGES_COVER_MIXED_BLOCKS_2026_10_27.md",
+      "sha256": "142dc3e334b292bbf263313cf75a7c1345196694fd98cd5e1c5af0953a378779",
+      "reference_lines": [
+        55
+      ],
+      "reference_kind": "review record"
+    },
+    {
+      "path": "REVIEW_TWO_DECORATED_DIAMONDS_SHALLOW_SIDE_AND_HUB_GLOBAL_NEXT_2026_10_27.md",
+      "sha256": "053dad26d6723987c6334490f318de2137a678ada1034d2d5c4747fa9db1a2bb",
+      "reference_lines": [
+        104
+      ],
+      "reference_kind": "review record"
+    },
+    {
+      "path": "REVIEW_TWO_DECORATED_FOUR_OPPOSITE_TRANSMITTER_FULL_SIX_BODY_2026_10_27.md",
+      "sha256": "931493e4ca7b09b67f6269c88de88dc549e425769d0b7af2357968b1c2cdd73b",
+      "reference_lines": [
+        37
+      ],
+      "reference_kind": "review record"
+    },
+    {
+      "path": "REVIEW_TWO_LEAF_CONNECTED_BOUNDARY_2026_10_27.md",
+      "sha256": "57009a0e2785b9852fb502bb6d37bfe7a7fa5f73b4aff38307d6800f5c86ba2e",
+      "reference_lines": [
+        30,
+        72
+      ],
+      "reference_kind": "review record"
+    },
+    {
+      "path": "ROOTED_ASYMMETRIC_SMALL_ORIGIN_CORNER_AND_HUB_DIAMOND_LEAF_EXCLUSION.md",
+      "sha256": "d776034db6364645fc071c2dd13cd00e6feea86bfb636a739d0c885a645f9aa1",
+      "reference_lines": [
+        483
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "ROOTED_BLOCK_ATTACHMENT_OBSTRUCTIONS.md",
+      "sha256": "0aeef27b6bfdc61659c0b0ef224af1889b18c95805e1d92204592357ef2bd9a7",
+      "reference_lines": [
+        24
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "ROOTED_C2_34_TWO_BRIDGES_TWO_DOMAIN_REDUCTION.md",
+      "sha256": "02823e908154eaee500cd826e1564dfa89d3bf7b7d455e164e06973730e5c163",
+      "reference_lines": [
+        136
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "ROOTED_C2_44_ONE_BRIDGE_CELL_CLOSED.md",
+      "sha256": "5f24a9a0c54235760ff38e676b6301adf674755faa9c3fbb888d9d3e5536c1c0",
+      "reference_lines": [
+        125,
+        197
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "ROOTED_C3_334_ONE_BRIDGE_PRIVATE_DIAMOND_EXCLUSION.md",
+      "sha256": "b6a56d7452063d8c443cf40d1b63553cbcb556eed5e94c8092a29bb821832fea",
+      "reference_lines": [
+        151
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "ROOTED_EPSILON_SMALL_CORNER_TERMINAL_FOUR_BLOCK_EXCLUSION.md",
+      "sha256": "d1854ccc9c5a6bb692de990a91b1773bd339a7afe17c85eb7d6e10c5ce6f9ca9",
+      "reference_lines": [
+        334
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "ROOTED_GENUINE_FOUR_BLOCK_DECORATED_TIP_DIAMOND_BOUNDARY_ORDER_EXCLUSION.md",
+      "sha256": "0c545886c3ffe48f75b2d71fe5434134231a3787305d7a2202dd80966040f63b",
+      "reference_lines": [
+        64,
+        99
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "ROOTED_GENUINE_FOUR_BLOCK_LEAF_BOUNDARY_CONTINUATION_EXCLUSION.md",
+      "sha256": "2eadea361baf2f4d10091428bfdd223691fba9c1b8fe7ca89aa5fa226808dd24",
+      "reference_lines": [
+        256
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "ROOTED_GENUINE_FOUR_BLOCK_LEAF_C4_BOUNDARY_ORDER_REDUCTION.md",
+      "sha256": "03f0375fba37e464a95b3978f2e836c4c66314938f433e6043e418656963aeb9",
+      "reference_lines": [
+        72
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "ROOTED_GENUINE_FOUR_BLOCK_LEAF_DIAMOND_OPEN_ORIGIN.md",
+      "sha256": "c11df54a8da029734088e7555ea3777b4158f2a842444959f7b8216a9fd4df7d",
+      "reference_lines": [
+        96
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "ROOTED_GENUINE_FOUR_BLOCK_SHALLOW_SMALL_OUTSIDE_PATH_EXCLUSION.md",
+      "sha256": "af48df7728a18b20f7c3bc0f305bca95762266b6d1fc34cf32e51d5ae912de8c",
+      "reference_lines": [
+        62
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "ROOTED_HIGH_RADIUS_TWO_NEAR_BOUNDARY_FOUR_RING_EXCLUSION.md",
+      "sha256": "f31c67f46c3d4318d67c887afbb4ee93997ac8e587c6d7f3d5a7bdc9fcb28b10",
+      "reference_lines": [
+        288
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "ROOTED_HUB_DIAMOND_ORIGIN_TRIANGLE_COMPLETE_EXCLUSION.md",
+      "sha256": "6dcc304272488c3595a34682ffb934eb5e8f396f937af3122c1d583e6c0d59c7",
+      "reference_lines": [
+        44
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "ROOTED_STRICT_HUB_DIAMOND_PRESSURE.md",
+      "sha256": "3d6ecae2a3f23e968cd584501c659ec909dcb9f0418999af222f2d0fc3872d43",
+      "reference_lines": [
+        51
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "ROOTED_TWO_DECORATED_FOUR_BLOCKS_CRITICAL_DIAMOND_EXCLUSION.md",
+      "sha256": "81bef3c02263425ca5e9444a036ea309155c6235b7d61443de4a6c484a9db01e",
+      "reference_lines": [
+        39
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "ROOTED_TWO_DECORATED_FOUR_BOUNDARY_ORIGIN_DIAMOND_REDUCTION.md",
+      "sha256": "f96d650cff41eebb20443926004f187313435bc8c28e6aea6658ecb10ea6b6e1",
+      "reference_lines": [
+        54
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "ROOTED_TWO_DECORATED_FOUR_CRITICAL_RADIUS_EXCLUSION.md",
+      "sha256": "d0ce399fd298d0250876ba9898c85aff2b5d605970c12305cc50f0490cf6c4fc",
+      "reference_lines": [
+        75
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "ROOTED_TWO_DECORATED_FOUR_OPEN_ORIGIN_OPPOSITE_TRANSMITTER_EXCLUSION.md",
+      "sha256": "59a8012f61a46cea4592a99345f0caacf1cdde9f07fb9026e083b19613e915c9",
+      "reference_lines": [
+        310
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "ROOTED_TWO_PRIVATELY_DECORATED_FOUR_BLOCKS_ORIGIN_DICHOTOMY.md",
+      "sha256": "94bd85de0d2bc67d9f95100261b59a9bcb8fb019e26a4b7d68603213dca89523",
+      "reference_lines": [
+        65
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "SIX_BODY_CYCLIC_FRONTIER.md",
+      "sha256": "bba1a13de5bc91fefde2911782817e9127d77ce05699e9adec781f7d8fed6af0",
+      "reference_lines": [
+        714,
+        749
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "SIX_BODY_INNER_PENTAGON_LOAD_COVER.md",
+      "sha256": "cfe85a201b09182200d5270f0dcdc0e590bf99eded19aaf6d56f86830e959c0a",
+      "reference_lines": [
+        72
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+      "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1",
+      "reference_lines": [
+        67
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "THREE_BOUNDARY_TERMINAL_FOUR_BLOCK_ROOT_ORIGIN_INTERIOR.md",
+      "sha256": "292a5572fff7f8a463dff00654eb9aed3bb73695712947c2dfcfc52bc756b437",
+      "reference_lines": [
+        43
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "TRIANGLE_FOUR_BLOCK_THREE_BRIDGES_COMPLETE_ATTACHMENT_REMAINDER.md",
+      "sha256": "1320243d5711bd982537efae1743598b00873049c580f352ac62473bded08489",
+      "reference_lines": [
+        211
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "TRIANGLE_FOUR_BODY_BLOCK_LOAD_COVER.md",
+      "sha256": "0d235981454977ec0da8b01457af6f8c4f29949fad459911d36ab97e1265acc9",
+      "reference_lines": [
+        485
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "TWO_LEAF_CONNECTED_BOUNDARY_BLOCK_EXCLUSION.md",
+      "sha256": "e959af04c993a105bf1c857fd8c1df94236f16ad1d6c269c3ee9927b63e7dc4b",
+      "reference_lines": [
+        397
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "TWO_LEAF_D_ROOT_NEAR_ROOT_BOUNDARY_TRIANGLE_EXCLUSION.md",
+      "sha256": "3ac3f2f263734ecf468ccdc9f35fbcd8d69cc0dfbfef49cbc70ac677f16894df",
+      "reference_lines": [
+        332
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "TWO_LEAF_D_ROOT_NEAR_ROOT_COMMON_BOUNDARY_EXCLUSION.md",
+      "sha256": "587c681e13e4904f0464b94f3b810d8665f879b49b6a550a4aca416ec455272a",
+      "reference_lines": [
+        329
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "TWO_LEAF_D_SIDE_ARM_FOUR_BODY_BLOCK_EXCLUSION.md",
+      "sha256": "2495580260d210c047f79fee3fdb494e822e4ebaee5e7772d838172c84fbe8ae",
+      "reference_lines": [
+        310
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "TWO_LEAF_S_SIDE_ARM_HUB_DIAMOND_COMPLETE_EXCLUSION.md",
+      "sha256": "ff783c60cba30a92624de3882acd7eb4f5e66d070f8881de025cbca798e5d6b0",
+      "reference_lines": [
+        88
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "TWO_LOAD_PROGRESS.md",
+      "sha256": "7ef6676186b9b598d3f372d3a8460b72fa1bda6326a30bd06ecdef9db5c05044",
+      "reference_lines": [
+        488
+      ],
+      "reference_kind": "bookkeeping or historical synthesis"
+    },
+    {
+      "path": "UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+      "sha256": "406fce53d22cc20eec43a373a877798dab583a6bd93f684ff124293016c44c87",
+      "reference_lines": [
+        340
+      ],
+      "reference_kind": "new stronger theorem provenance"
+    },
+    {
+      "path": "UNLOADED_TRIANGLE_HUB_CHANNEL_BYPASS_EXCLUSION.md",
+      "sha256": "824aa9fe810ca4049a2d6a583a3a15cb9934841c03fa0aee5a6cabbf9337956e",
+      "reference_lines": [
+        438
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    },
+    {
+      "path": "UNLOADED_TRIANGLE_HUB_EXTERNAL_SEPARATION.md",
+      "sha256": "3ae423a7be829695be460459cebed941185d9cb2076e4e3c0e766cb3eff9a287",
+      "reference_lines": [
+        56
+      ],
+      "reference_kind": "mathematical manuscript reference"
+    }
+  ],
+  "counts": {
+    "mathematical manuscript reference": 65,
+    "bookkeeping or historical synthesis": 4,
+    "review record": 22,
+    "new stronger theorem provenance": 1
+  },
+  "mutation_boundary": "No historical source, caller, metadata or pin was changed. The replacement applies only to uses of the declared mathematical export; arbitrary provenance references are not represented as dependent theorem calls."
+}

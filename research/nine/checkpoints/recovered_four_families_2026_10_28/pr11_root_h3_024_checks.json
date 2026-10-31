@@ -1,0 +1,96 @@
+{
+  "full_frozen_sources_checked": [
+    {
+      "source": "TWO_UNLOADED_HUBS_EQUAL_ROOF_TWO_FORCE_RETURN_EXCLUSION.md",
+      "sha256": "d3361948f5fe9c779fd1679934b591e56c2378dd08534211e409004e4618016d",
+      "pins": {
+        "THREE_SPOKE_HUB_OWNER_RETURN_SCALAR_BOUNDS.md": "dd6ee983deaeac1cf0c02758b2ddb2501a33175fb0281702a18027f869fdbf64",
+        "certificates/three_spoke_hub_owner_return_scalar_bounds.py": "d073ebfa7d1c27f8c4272a9d3b5c56e20f8de1a1ae310a8d7d790ff5c91acf99",
+        "REVIEW_THREE_SPOKE_HUB_OWNER_RETURN_SCALAR_HEXAGON_2026_10_28.md": "a1dc72a8f51e4902a736ce1477312d00580d5585fbe1aa216b9a6e07501dacd4",
+        "REVIEW_THREE_SPOKE_HUB_OWNER_RETURN_DOMAIN_AND_SCALAR_ROOT_2026_10_28.md": "4afbf65098e6750573fd8714db6ca945a3be6c03c6cc40a6e6dec79a862e0fd9"
+      }
+    },
+    {
+      "source": "INNER_PENTAGON_THREE_SPOKE_THREE_LOAD_024_COMPLETE_EXCLUSION.md",
+      "sha256": "009f8d50b6923f97634d0a38d80cb59b681efe66bbeb387368498f41e493ceb1",
+      "pins": {
+        "SIX_BODY_INNER_PENTAGON_LOAD_COVER.md": "fa877c9d7d25c57a7c8cf438a429465b5952cb8db6628c57d9d93695b33dd434",
+        "CHORDED_HEXAGON_CLEAR_HOUSE_ROOF_TRANSMITTER_EXCLUSION.md": "deb428a6ceac676ca325e2d0b991a05ececefd1811deec9cadc2ea2baa79b415",
+        "TWO_UNLOADED_HUBS_FREE_ROOF_SHARED_RETURN_EXCLUSION.md": "2e24c112fae2df1c6594da0702c9fd777becc0371e76cb6b732d8d5cbd0dd975",
+        "BOUNDARY_CONTACT_ORIGIN_MOMENT_ORIENTATION.md": "851417d7fcd12ccb93a6f7f09ba7d7b2bf9bccc61c82fee3457b5ee4cee47e9a",
+        "CIRCLE_CONTACT_ANGULAR_ORDER.md": "2625b3a2b730525a6397bc90232e78c5e1aac8091381c1f5e5fc8a71ef1da449",
+        "PHYSICAL_BODY_GRAPH_UNCROSSING.md": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a",
+        "THREE_SPOKE_EQUAL_ROOF_SEPARATION_SCALAR.md": "1297f7864dd3d629330f9741d7728fe894a3bf6c1beac4192fd1800da38cdeca",
+        "certificates/three_spoke_equal_roof_separation_scalar.py": "d3db3cf5278af57cac1dd5ddd66a7af88488a4f74d031857b96bb3f3c40707d2",
+        "TWO_UNLOADED_HUBS_EQUAL_ROOF_TWO_FORCE_RETURN_EXCLUSION.md": "d3361948f5fe9c779fd1679934b591e56c2378dd08534211e409004e4618016d",
+        "THREE_SPOKE_HUB_OWNER_RETURN_SCALAR_BOUNDS.md": "dd6ee983deaeac1cf0c02758b2ddb2501a33175fb0281702a18027f869fdbf64",
+        "certificates/three_spoke_hub_owner_return_scalar_bounds.py": "d073ebfa7d1c27f8c4272a9d3b5c56e20f8de1a1ae310a8d7d790ff5c91acf99",
+        "REVIEW_THREE_SPOKE_HUB_DOMAIN_AND_EQUAL_ROOF_ROOTED_BLOCKS_2026_10_28.md": "ec64bcade77e3ca3c05762df8f56f4a0176a9f349372b774017b12036410b190",
+        "REVIEW_THREE_SPOKE_HUB_OWNER_RETURN_SCALAR_HEXAGON_2026_10_28.md": "a1dc72a8f51e4902a736ce1477312d00580d5585fbe1aa216b9a6e07501dacd4",
+        "REVIEW_THREE_SPOKE_HUB_OWNER_RETURN_DOMAIN_AND_SCALAR_ROOT_2026_10_28.md": "4afbf65098e6750573fd8714db6ca945a3be6c03c6cc40a6e6dec79a862e0fd9"
+      }
+    }
+  ],
+  "nine_strict_rational_reserves": {
+    "nonempty interval b>1/3": "1/9",
+    "whole B transverse bound": "27/1300",
+    "positive radial direction": "3041/1600",
+    "C near-face radius reserve": "1/12",
+    "global rational radius cap": "55/2304",
+    "incoming C angle comparison": "1/18",
+    "endpoint cubic reserve": "2/125",
+    "outer original center distance": "1/60",
+    "unique C radius excess": "3/50"
+  },
+  "literal_original_owner_maps": [
+    {
+      "map": {
+        "A": "1",
+        "D": "H",
+        "T": "0",
+        "U": "4",
+        "C": "3",
+        "B": "2"
+      },
+      "degrees": {
+        "A": 3,
+        "D": 3,
+        "T": 3,
+        "U": 2,
+        "C": 3,
+        "B": 2
+      },
+      "loads": [
+        "B",
+        "T",
+        "U"
+      ]
+    },
+    {
+      "map": {
+        "A": "H",
+        "D": "1",
+        "T": "0",
+        "U": "4",
+        "C": "2",
+        "B": "3"
+      },
+      "degrees": {
+        "A": 3,
+        "D": 3,
+        "T": 3,
+        "U": 2,
+        "C": 2,
+        "B": 3
+      },
+      "loads": [
+        "C",
+        "T",
+        "U"
+      ]
+    }
+  ],
+  "actual_reflected_load_image": "124",
+  "unchanged_hub_identities_root_record_sha256": "708a51867128c7c258060409e59605a8701f1b91ba5e7d70e793c4c47097b8bd",
+  "full_source_reads": "All352 local and355 original-family lines; original true C2 only; B allowed unloaded3; outer row uses original T3 torque and actual TU boundary moment"
+}

@@ -1,0 +1,259 @@
+{
+  "date_utc": "2026-10-28",
+  "type": "exact_remote_context_import",
+  "local_parent": "f627530188ab63215ea3a71b7b7f9535bfdf0320",
+  "remote_head": "bbc1e87f65168bba704d2b21a91faf0e313945c2",
+  "remote_parent": "59dabf78edb61ab75d10176982476296fd6a99f7",
+  "remote_tree": "79fa5f35899928159be105fee6b915a99cfb2ad9",
+  "remote_state": "open draft; not merged",
+  "metadata_policy": "All three remote metadata files verified in cache; none replaces local metadata. Every original local fine/coarse identifier, order and flag is unchanged by this import.",
+  "remote_files_verified": [
+    {
+      "path": "research/nine/ADJACENT_HUB_PORTS_DISTINCT_W_RETURN_ALL_MASK_NEAR_ORIGIN_INJECTION.md",
+      "bytes": 34890,
+      "sha256": "7c6d42c5cedc78123ab1e6a11d0aa689cafd329e55f4748d1ccc7ee60aa5199f",
+      "git_blob": "f3c4fc8e673372d80bac463d894e7a5c23d67695"
+    },
+    {
+      "path": "research/nine/ADJACENT_HUB_PORTS_FREE_AND_ORTHOGONAL_RETURN_NEAR_ORIGIN_INJECTION.md",
+      "bytes": 29327,
+      "sha256": "ecbaeafadc6935c4de3c6ffe3006210c5c3f380cfdb61ade6dbe343f9b5b75a1",
+      "git_blob": "99b22f0eafacbc6401056afea6db8b27fa641bcf"
+    },
+    {
+      "path": "research/nine/ADJACENT_HUB_PORTS_TIP_OWNED_POSITIVE_DOT_ALL_MASK_NEAR_ORIGIN.md",
+      "bytes": 32317,
+      "sha256": "9da02095677cdbf4b85f48a10c42282b874914332d99860c78e14a60da8df904",
+      "git_blob": "80979d3d7c7a747c8b1b7aa17209a59b19566595"
+    },
+    {
+      "path": "research/nine/ADOPTION_PARTIALLY_UNLOADED_POCKETS_ZERO_AXIS_AND_UNIQUE_C_ROOT_2026_10_28.md",
+      "bytes": 21457,
+      "sha256": "37b60d26a514a1709f200781316078abd25187203675287c73405cbcda3ab946",
+      "git_blob": "049e20fe595e657ca2beeae7d78d8de848add436"
+    },
+    {
+      "path": "research/nine/CYCLIC_CELL_LEDGER.md",
+      "bytes": 264639,
+      "sha256": "6d895d61223c5aa36085d8d0dae597d75a7e32f7cfe8bb6ad9b1e0997e0dc1e7",
+      "git_blob": "494c9666bd2c25e10b5e19294e3dcf3f2aa21748"
+    },
+    {
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "bytes": 995125,
+      "sha256": "b3d2c6598caa02343528e273f23890aaa50452170eb3a7de2ce911298b56ec63",
+      "git_blob": "138af49f8bccff7d2437cb725b76b0ab60013743"
+    },
+    {
+      "path": "research/nine/GENUINE_S_UPPER_ROOT_UNIQUE_BOUNDARY_ENDPOINT_TRANSMITTER_EXCLUSION.md",
+      "bytes": 28749,
+      "sha256": "13d3c6447da4eef12d256d31f80547c36e940e5fa57e3f8784d92929eaa9909a",
+      "git_blob": "e9a5794ec0e9aad235bb88a754bd6d1d87ed26b9"
+    },
+    {
+      "path": "research/nine/HANDOFF_PR11_2026_10_28_CURRENT.md",
+      "bytes": 88424,
+      "sha256": "c206672e807e179a9d25114a76ef0f272ee488a32c61ac1d83791c0b93f8b9a5",
+      "git_blob": "7563449b939efab6243fc518f2cca3da8cb558d1"
+    },
+    {
+      "path": "research/nine/PARTIALLY_UNLOADED_HUB_PATH_TIP_OWNED_CAPACITY_AND_D02_ZERO_AXIS_EXCLUSION.md",
+      "bytes": 47898,
+      "sha256": "47c524c9570c516d730721433a07427549e1a67a9e361e62e5b7e2579a018789",
+      "git_blob": "3eeaa9f8fd1c1f39c2e962a3e6f7aae5bc466a83"
+    },
+    {
+      "path": "research/nine/PARTIALLY_UNLOADED_POCKETS_ZERO_AXIS_AND_UNIQUE_C_CHECKPOINT_2026_10_28.json",
+      "bytes": 314808,
+      "sha256": "7f75ae65f936b368a33953b37e0ea3e2f82d3ae79f6a5396163a1a8ce2c86eb0",
+      "git_blob": "11e37c4fe2a8216b57e9fbf3f8d299837df4bd31"
+    },
+    {
+      "path": "research/nine/REVIEW_ADJACENT_DISTINCT_W_ALL_MASK_NEAR_ORIGIN_ROOT_2026_10_28.md",
+      "bytes": 20866,
+      "sha256": "7bac910e4247a6cfc2031903b65cb6a3f6ad3185af1d182924fb57d92ca9475d",
+      "git_blob": "72f083468393264c432a158d393d69ea7784a786"
+    },
+    {
+      "path": "research/nine/REVIEW_ADJACENT_FREE_AND_ORTHOGONAL_RETURN_NEAR_ORIGIN_HOUSE_2026_10_28.md",
+      "bytes": 26225,
+      "sha256": "cf7f9bfad02fb09b5d5ce403b455546698e4bf8d45c31f9ad8d04920fa052578",
+      "git_blob": "10a302434ed74ac23785ab1b9c39c8862589f25d"
+    },
+    {
+      "path": "research/nine/REVIEW_ADJACENT_TIP_OWNED_POSITIVE_DOT_ALL_MASK_NEAR_ORIGIN_HOUSE_2026_10_28.md",
+      "bytes": 26747,
+      "sha256": "3c28d6a43cd0d5751c9ef19b36529955d93db54ce46a9c91b5180fcbffb8aa33",
+      "git_blob": "4052bd2fce25a7c2f90699f276dc12ba857909ef"
+    },
+    {
+      "path": "research/nine/REVIEW_GENUINE_S_UPPER_ROOT_UNIQUE_BOUNDARY_ENDPOINT_PENTAGON_2026_10_28.md",
+      "bytes": 28831,
+      "sha256": "229092ed9eb01b5a4f50dea224056a75d05a0350e782df1b3861199a991cb629",
+      "git_blob": "0deeeb3c25947e247a1e66deb12250c369c2bd97"
+    },
+    {
+      "path": "research/nine/REVIEW_PARTIALLY_UNLOADED_TIP_CAPACITY_AND_ZERO_AXIS_L0134_ROOT_2026_10_28.md",
+      "bytes": 29283,
+      "sha256": "13d6185ac5c7bce376c902b7dbd3bfe2622aa608f1199c9d113eac29cce8dd23",
+      "git_blob": "10a9df9362a512024b7e93d68eebb4e7de877ab3"
+    },
+    {
+      "path": "research/nine/REVIEW_SINGLE_HUB_PARTIALLY_UNLOADED_PATH_POCKET_HOUSE_2026_10_28.md",
+      "bytes": 26691,
+      "sha256": "da39a1c2f92a616b914444f1518833869df5f7d137b00ada1a575c5333949708",
+      "git_blob": "ba29181ce15d0e800064d79c698f399b1de8acde"
+    },
+    {
+      "path": "research/nine/REVIEW_UNLOADED_TRIANGLE_HUB_NO_OWN_AXIS_FULL_UNION_PENTAGON_2026_10_28.md",
+      "bytes": 28687,
+      "sha256": "af93debeeba8aadf08f41306ba54239316d45b1e12aafcc6269da71552c0c254",
+      "git_blob": "2cc38da641fbf9fc877c54af05370b2a494d1033"
+    },
+    {
+      "path": "research/nine/SINGLE_HUB_BOUNDARY_ENDPOINTS_PARTIALLY_UNLOADED_PATH_POCKET.md",
+      "bytes": 26631,
+      "sha256": "f0220431e78cf36c61d2594a5e2aa53aa9cf0d7a2ead4ebc92b0a72d3bd1c572",
+      "git_blob": "43d922e7207e8a902ddf8da1fb06cbe6a7f6b05e"
+    },
+    {
+      "path": "research/nine/UNLOADED_TRIANGLE_HUB_WITH_NO_OWN_AXIS_NEAR_ORIGIN_INJECTION.md",
+      "bytes": 27560,
+      "sha256": "fc22c1b713995a4a32bd06f227c3373f24390471858fb69d93f8b0e073b3732e",
+      "git_blob": "a627971063dd67de67adda4ec7d6311a24a45ee5"
+    }
+  ],
+  "imported_files": [
+    {
+      "path": "research/nine/ADJACENT_HUB_PORTS_DISTINCT_W_RETURN_ALL_MASK_NEAR_ORIGIN_INJECTION.md",
+      "bytes": 34890,
+      "sha256": "7c6d42c5cedc78123ab1e6a11d0aa689cafd329e55f4748d1ccc7ee60aa5199f",
+      "git_blob": "f3c4fc8e673372d80bac463d894e7a5c23d67695"
+    },
+    {
+      "path": "research/nine/ADJACENT_HUB_PORTS_FREE_AND_ORTHOGONAL_RETURN_NEAR_ORIGIN_INJECTION.md",
+      "bytes": 29327,
+      "sha256": "ecbaeafadc6935c4de3c6ffe3006210c5c3f380cfdb61ade6dbe343f9b5b75a1",
+      "git_blob": "99b22f0eafacbc6401056afea6db8b27fa641bcf"
+    },
+    {
+      "path": "research/nine/ADJACENT_HUB_PORTS_TIP_OWNED_POSITIVE_DOT_ALL_MASK_NEAR_ORIGIN.md",
+      "bytes": 32317,
+      "sha256": "9da02095677cdbf4b85f48a10c42282b874914332d99860c78e14a60da8df904",
+      "git_blob": "80979d3d7c7a747c8b1b7aa17209a59b19566595"
+    },
+    {
+      "path": "research/nine/ADOPTION_PARTIALLY_UNLOADED_POCKETS_ZERO_AXIS_AND_UNIQUE_C_ROOT_2026_10_28.md",
+      "bytes": 21457,
+      "sha256": "37b60d26a514a1709f200781316078abd25187203675287c73405cbcda3ab946",
+      "git_blob": "049e20fe595e657ca2beeae7d78d8de848add436"
+    },
+    {
+      "path": "research/nine/GENUINE_S_UPPER_ROOT_UNIQUE_BOUNDARY_ENDPOINT_TRANSMITTER_EXCLUSION.md",
+      "bytes": 28749,
+      "sha256": "13d3c6447da4eef12d256d31f80547c36e940e5fa57e3f8784d92929eaa9909a",
+      "git_blob": "e9a5794ec0e9aad235bb88a754bd6d1d87ed26b9"
+    },
+    {
+      "path": "research/nine/PARTIALLY_UNLOADED_HUB_PATH_TIP_OWNED_CAPACITY_AND_D02_ZERO_AXIS_EXCLUSION.md",
+      "bytes": 47898,
+      "sha256": "47c524c9570c516d730721433a07427549e1a67a9e361e62e5b7e2579a018789",
+      "git_blob": "3eeaa9f8fd1c1f39c2e962a3e6f7aae5bc466a83"
+    },
+    {
+      "path": "research/nine/PARTIALLY_UNLOADED_POCKETS_ZERO_AXIS_AND_UNIQUE_C_CHECKPOINT_2026_10_28.json",
+      "bytes": 314808,
+      "sha256": "7f75ae65f936b368a33953b37e0ea3e2f82d3ae79f6a5396163a1a8ce2c86eb0",
+      "git_blob": "11e37c4fe2a8216b57e9fbf3f8d299837df4bd31"
+    },
+    {
+      "path": "research/nine/REVIEW_ADJACENT_DISTINCT_W_ALL_MASK_NEAR_ORIGIN_ROOT_2026_10_28.md",
+      "bytes": 20866,
+      "sha256": "7bac910e4247a6cfc2031903b65cb6a3f6ad3185af1d182924fb57d92ca9475d",
+      "git_blob": "72f083468393264c432a158d393d69ea7784a786"
+    },
+    {
+      "path": "research/nine/REVIEW_ADJACENT_FREE_AND_ORTHOGONAL_RETURN_NEAR_ORIGIN_HOUSE_2026_10_28.md",
+      "bytes": 26225,
+      "sha256": "cf7f9bfad02fb09b5d5ce403b455546698e4bf8d45c31f9ad8d04920fa052578",
+      "git_blob": "10a302434ed74ac23785ab1b9c39c8862589f25d"
+    },
+    {
+      "path": "research/nine/REVIEW_ADJACENT_TIP_OWNED_POSITIVE_DOT_ALL_MASK_NEAR_ORIGIN_HOUSE_2026_10_28.md",
+      "bytes": 26747,
+      "sha256": "3c28d6a43cd0d5751c9ef19b36529955d93db54ce46a9c91b5180fcbffb8aa33",
+      "git_blob": "4052bd2fce25a7c2f90699f276dc12ba857909ef"
+    },
+    {
+      "path": "research/nine/REVIEW_GENUINE_S_UPPER_ROOT_UNIQUE_BOUNDARY_ENDPOINT_PENTAGON_2026_10_28.md",
+      "bytes": 28831,
+      "sha256": "229092ed9eb01b5a4f50dea224056a75d05a0350e782df1b3861199a991cb629",
+      "git_blob": "0deeeb3c25947e247a1e66deb12250c369c2bd97"
+    },
+    {
+      "path": "research/nine/REVIEW_PARTIALLY_UNLOADED_TIP_CAPACITY_AND_ZERO_AXIS_L0134_ROOT_2026_10_28.md",
+      "bytes": 29283,
+      "sha256": "13d6185ac5c7bce376c902b7dbd3bfe2622aa608f1199c9d113eac29cce8dd23",
+      "git_blob": "10a9df9362a512024b7e93d68eebb4e7de877ab3"
+    },
+    {
+      "path": "research/nine/REVIEW_SINGLE_HUB_PARTIALLY_UNLOADED_PATH_POCKET_HOUSE_2026_10_28.md",
+      "bytes": 26691,
+      "sha256": "da39a1c2f92a616b914444f1518833869df5f7d137b00ada1a575c5333949708",
+      "git_blob": "ba29181ce15d0e800064d79c698f399b1de8acde"
+    },
+    {
+      "path": "research/nine/REVIEW_UNLOADED_TRIANGLE_HUB_NO_OWN_AXIS_FULL_UNION_PENTAGON_2026_10_28.md",
+      "bytes": 28687,
+      "sha256": "af93debeeba8aadf08f41306ba54239316d45b1e12aafcc6269da71552c0c254",
+      "git_blob": "2cc38da641fbf9fc877c54af05370b2a494d1033"
+    },
+    {
+      "path": "research/nine/SINGLE_HUB_BOUNDARY_ENDPOINTS_PARTIALLY_UNLOADED_PATH_POCKET.md",
+      "bytes": 26631,
+      "sha256": "f0220431e78cf36c61d2594a5e2aa53aa9cf0d7a2ead4ebc92b0a72d3bd1c572",
+      "git_blob": "43d922e7207e8a902ddf8da1fb06cbe6a7f6b05e"
+    },
+    {
+      "path": "research/nine/UNLOADED_TRIANGLE_HUB_WITH_NO_OWN_AXIS_NEAR_ORIGIN_INJECTION.md",
+      "bytes": 27560,
+      "sha256": "fc22c1b713995a4a32bd06f227c3373f24390471858fb69d93f8b0e073b3732e",
+      "git_blob": "a627971063dd67de67adda4ec7d6311a24a45ee5"
+    }
+  ],
+  "remote_local_fine_differences": [
+    {
+      "id": "M6.B5L.HOUSE.ROOF.LABC.S",
+      "local": true,
+      "remote": false
+    },
+    {
+      "id": "M6.B5L.HOUSE.ROOF",
+      "local": true,
+      "remote": false
+    },
+    {
+      "id": "M6.B6.PENTAGON.H4_D0.L0124",
+      "local": true,
+      "remote": false
+    }
+  ],
+  "coarse_arrays_equal": true,
+  "root_full_remote_adoption_read": true,
+  "mathematical_acceptance": "Preserve seven exact externally reviewed mathematical sources, seven full independent reviews, adoption and checkpoint as context. Root read the entire new remote adoption; no fresh complete root mathematical audit of these seven new source/review chains is claimed by this import. Their new no-axis L0134 and physical-unique-C house features are partial original domains with no whole-family credit.",
+  "all_original_ids_order_and_flags_unchanged_by_import": true,
+  "exact_extra_terminal_blank_lines_preserved": [
+    "research/nine/ADJACENT_HUB_PORTS_DISTINCT_W_RETURN_ALL_MASK_NEAR_ORIGIN_INJECTION.md",
+    "research/nine/ADJACENT_HUB_PORTS_FREE_AND_ORTHOGONAL_RETURN_NEAR_ORIGIN_INJECTION.md",
+    "research/nine/ADJACENT_HUB_PORTS_TIP_OWNED_POSITIVE_DOT_ALL_MASK_NEAR_ORIGIN.md",
+    "research/nine/GENUINE_S_UPPER_ROOT_UNIQUE_BOUNDARY_ENDPOINT_TRANSMITTER_EXCLUSION.md",
+    "research/nine/REVIEW_ADJACENT_FREE_AND_ORTHOGONAL_RETURN_NEAR_ORIGIN_HOUSE_2026_10_28.md",
+    "research/nine/REVIEW_ADJACENT_TIP_OWNED_POSITIVE_DOT_ALL_MASK_NEAR_ORIGIN_HOUSE_2026_10_28.md",
+    "research/nine/REVIEW_GENUINE_S_UPPER_ROOT_UNIQUE_BOUNDARY_ENDPOINT_PENTAGON_2026_10_28.md",
+    "research/nine/REVIEW_SINGLE_HUB_PARTIALLY_UNLOADED_PATH_POCKET_HOUSE_2026_10_28.md",
+    "research/nine/REVIEW_UNLOADED_TRIANGLE_HUB_NO_OWN_AXIS_FULL_UNION_PENTAGON_2026_10_28.md",
+    "research/nine/UNLOADED_TRIANGLE_HUB_WITH_NO_OWN_AXIS_NEAR_ORIGIN_INJECTION.md"
+  ],
+  "remote_mutations": false,
+  "publication_block": "Earlier write calls stalled and were aborted without successful mutation responses. No write retry. Independently advanced PR head is preserved."
+}

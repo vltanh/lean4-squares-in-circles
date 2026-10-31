@@ -1,0 +1,243 @@
+{
+  "date_utc": "2026-10-28",
+  "type": "exact_remote_context_import",
+  "local_parent": "f0b14dc6919f0802528bc42a48dcb58c0483100d",
+  "remote_head": "59dabf78edb61ab75d10176982476296fd6a99f7",
+  "remote_parent": "c58867a2956c3a638413029e73e18cac7510b1a4",
+  "remote_tree": "abe9ac147e8132521fb9fa55f4e4e79731f565e3",
+  "remote_state": "open draft; not merged",
+  "remote_files_verified": [
+    {
+      "path": "research/nine/ADJACENT_STRICT_HUB_PORTS_DISTINCT_W_RETURN_NEAR_ORIGIN_INJECTION.md",
+      "bytes": 23070,
+      "sha256": "f1598b945a4b0ff7d1d6e55c74b9581250e38a7bc33754108198376892875569",
+      "git_blob": "3adbe1d299907fc72036d0b2774e27a7f0a2e8b9"
+    },
+    {
+      "path": "research/nine/ADOPTION_COMPLETE_INNER_FAN_AND_BROAD_HUB_INJECTIONS_ROOT_2026_10_28.md",
+      "bytes": 22414,
+      "sha256": "39ca199cdda4308017abb4271e85a1cdf43092c62b385f23a8f1ed048c73f015",
+      "git_blob": "729140e704daea68fb8be5b69fe1e15654170760"
+    },
+    {
+      "path": "research/nine/COMMON_HUB_FACE_ALL_TIP_MASKS_NEAR_ORIGIN_INJECTION.md",
+      "bytes": 28637,
+      "sha256": "6a388f0c506ca5733b78f42eb1e7f63469e908ca72d100cfe57cdd6362ce3dde",
+      "git_blob": "c1c6680d3d2689cd13ca65f7645a454bc366c151"
+    },
+    {
+      "path": "research/nine/COMPLETE_INNER_FAN_AND_BROAD_HUB_INJECTIONS_CHECKPOINT_2026_10_28.json",
+      "bytes": 275258,
+      "sha256": "88c2449b82476aca63c7be2f041ea660ee93451b663e058cd99d0f8adac0d690",
+      "git_blob": "d687ebfee181f56b3e58ceaedf6134f575603116"
+    },
+    {
+      "path": "research/nine/CYCLIC_CELL_LEDGER.md",
+      "bytes": 260250,
+      "sha256": "fee6e801023fc5aa78e30f9b3560064193e73d5867919311d2aa4504566e5f31",
+      "git_blob": "163b29d1e49a0249654652e03efc1434811de677"
+    },
+    {
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "bytes": 989249,
+      "sha256": "191fdb30ec1f0817d4d5785565f8159b55fcdf7dfee3f10bf95760329c37b70f",
+      "git_blob": "9900655c329dd1557a544537a389b4b407e9f2fa"
+    },
+    {
+      "path": "research/nine/HANDOFF_PR11_2026_10_28_CURRENT.md",
+      "bytes": 84035,
+      "sha256": "1d1519e6f9621ba1846ae42c7a7d01db315ad3309102e5e8aaa35ac8ea250d17",
+      "git_blob": "f187dccebf71c7b5bbadce5c5e2f23431a01a8e3"
+    },
+    {
+      "path": "research/nine/LOW_RADIUS_ALIGNED_S_ROOT_TWO_COMMON_BOUNDARY_PAGES_COMPLETE_EXCLUSION.md",
+      "bytes": 37059,
+      "sha256": "539b8b99a11cc91c8190b1d240a9fec080123fbb6d0046df6524291c8bde4959",
+      "git_blob": "f18847dddb744d2a030f482ed0b227628ee313dd"
+    },
+    {
+      "path": "research/nine/MIXED_HUB_AXIS_DISTINCT_W_SIDE_NEAR_ORIGIN_INJECTION.md",
+      "bytes": 25268,
+      "sha256": "71a5b91d3a0bc95dd76ae9b663b801aeabc33cc34ffb261402c4f7af224a0242",
+      "git_blob": "e1797333b201e92ed7bb3197ad589bd4388d763f"
+    },
+    {
+      "path": "research/nine/REVIEW_ADJACENT_STRICT_HUB_DISTINCT_W_RETURN_ROOT_2026_10_28.md",
+      "bytes": 19646,
+      "sha256": "2c2a09fcbf02595c703b2fd9f8726fa2c6fa0d89cebda4cb1227678c7de73921",
+      "git_blob": "bd38bf2bb1e063a668369e93f96adb14fc375623"
+    },
+    {
+      "path": "research/nine/REVIEW_COMMON_HUB_FACE_ALL_MASKS_INJECTION_ROOT_2026_10_28.md",
+      "bytes": 23523,
+      "sha256": "24fae6c7c677fe4a40796660642132e521b6e85fddecef21c022adfe4891c70e",
+      "git_blob": "18dd2807b71df4d99a53a096a5da1204fd2f5ff7"
+    },
+    {
+      "path": "research/nine/REVIEW_FAN_INNER_COMPLETE_ORIGINAL_PARENT_JOIN_PENTAGON_2026_10_28.md",
+      "bytes": 9613,
+      "sha256": "a850fb9a9640a8f58153e9eaadde83d8dca67259ee03cf3df7d5609041181133",
+      "git_blob": "51230bf904d64d7563ce6c1343d74ed3e1f89a10"
+    },
+    {
+      "path": "research/nine/REVIEW_LOW_RADIUS_ALIGNED_S_ROOT_COMMON_PAGES_AND_FAN_UNION_PENTAGON_2026_10_28.md",
+      "bytes": 28669,
+      "sha256": "a79690fc5a3cc3d2c6c45d0aac4e01dbc55c30966ee278ff51467a1d916272e0",
+      "git_blob": "2f7ec3a37be5c7228fb512bd84459d94d89ec111"
+    },
+    {
+      "path": "research/nine/REVIEW_MIXED_HUB_DISTINCT_W_NEAR_ORIGIN_ROOT_2026_10_28.md",
+      "bytes": 22020,
+      "sha256": "e27238b3fed5b53d5f590442a12bfbdcf48843bf43035802e5309f17fb7551b3",
+      "git_blob": "747fd645f2eaead8f937db4f786a7a2cee94ba02"
+    },
+    {
+      "path": "research/nine/REVIEW_TERMINAL_HUB_DISTINCT_W_TWO_CIRCLE_INJECTION_CYCLES_2026_10_28.md",
+      "bytes": 20210,
+      "sha256": "2b75ce399856a90d55ab7914ad37d2870a30295cdf3dbebf31e5d96d2b09eddf",
+      "git_blob": "3c3a63d3c7e671425d1cdf639625588d1092a8b4"
+    },
+    {
+      "path": "research/nine/TERMINAL_HUB_DISTINCT_W_RETURN_TWO_CIRCLE_NEAR_ORIGIN_INJECTION.md",
+      "bytes": 17758,
+      "sha256": "0dbf5e8472286c831f0a8518dd59a751bd293e3da968938a946c5df8084b3fbb",
+      "git_blob": "a1d6d4833beda887e57429e89ff0759912f84e9b"
+    }
+  ],
+  "imported_files": [
+    {
+      "path": "research/nine/ADJACENT_STRICT_HUB_PORTS_DISTINCT_W_RETURN_NEAR_ORIGIN_INJECTION.md",
+      "bytes": 23070,
+      "sha256": "f1598b945a4b0ff7d1d6e55c74b9581250e38a7bc33754108198376892875569",
+      "git_blob": "3adbe1d299907fc72036d0b2774e27a7f0a2e8b9",
+      "terminal_blank_line_preserved": true
+    },
+    {
+      "path": "research/nine/ADOPTION_COMPLETE_INNER_FAN_AND_BROAD_HUB_INJECTIONS_ROOT_2026_10_28.md",
+      "bytes": 22414,
+      "sha256": "39ca199cdda4308017abb4271e85a1cdf43092c62b385f23a8f1ed048c73f015",
+      "git_blob": "729140e704daea68fb8be5b69fe1e15654170760",
+      "terminal_blank_line_preserved": false
+    },
+    {
+      "path": "research/nine/COMMON_HUB_FACE_ALL_TIP_MASKS_NEAR_ORIGIN_INJECTION.md",
+      "bytes": 28637,
+      "sha256": "6a388f0c506ca5733b78f42eb1e7f63469e908ca72d100cfe57cdd6362ce3dde",
+      "git_blob": "c1c6680d3d2689cd13ca65f7645a454bc366c151",
+      "terminal_blank_line_preserved": true
+    },
+    {
+      "path": "research/nine/COMPLETE_INNER_FAN_AND_BROAD_HUB_INJECTIONS_CHECKPOINT_2026_10_28.json",
+      "bytes": 275258,
+      "sha256": "88c2449b82476aca63c7be2f041ea660ee93451b663e058cd99d0f8adac0d690",
+      "git_blob": "d687ebfee181f56b3e58ceaedf6134f575603116",
+      "terminal_blank_line_preserved": false
+    },
+    {
+      "path": "research/nine/LOW_RADIUS_ALIGNED_S_ROOT_TWO_COMMON_BOUNDARY_PAGES_COMPLETE_EXCLUSION.md",
+      "bytes": 37059,
+      "sha256": "539b8b99a11cc91c8190b1d240a9fec080123fbb6d0046df6524291c8bde4959",
+      "git_blob": "f18847dddb744d2a030f482ed0b227628ee313dd",
+      "terminal_blank_line_preserved": true
+    },
+    {
+      "path": "research/nine/MIXED_HUB_AXIS_DISTINCT_W_SIDE_NEAR_ORIGIN_INJECTION.md",
+      "bytes": 25268,
+      "sha256": "71a5b91d3a0bc95dd76ae9b663b801aeabc33cc34ffb261402c4f7af224a0242",
+      "git_blob": "e1797333b201e92ed7bb3197ad589bd4388d763f",
+      "terminal_blank_line_preserved": true
+    },
+    {
+      "path": "research/nine/REVIEW_ADJACENT_STRICT_HUB_DISTINCT_W_RETURN_ROOT_2026_10_28.md",
+      "bytes": 19646,
+      "sha256": "2c2a09fcbf02595c703b2fd9f8726fa2c6fa0d89cebda4cb1227678c7de73921",
+      "git_blob": "bd38bf2bb1e063a668369e93f96adb14fc375623",
+      "terminal_blank_line_preserved": false
+    },
+    {
+      "path": "research/nine/REVIEW_COMMON_HUB_FACE_ALL_MASKS_INJECTION_ROOT_2026_10_28.md",
+      "bytes": 23523,
+      "sha256": "24fae6c7c677fe4a40796660642132e521b6e85fddecef21c022adfe4891c70e",
+      "git_blob": "18dd2807b71df4d99a53a096a5da1204fd2f5ff7",
+      "terminal_blank_line_preserved": false
+    },
+    {
+      "path": "research/nine/REVIEW_FAN_INNER_COMPLETE_ORIGINAL_PARENT_JOIN_PENTAGON_2026_10_28.md",
+      "bytes": 9613,
+      "sha256": "a850fb9a9640a8f58153e9eaadde83d8dca67259ee03cf3df7d5609041181133",
+      "git_blob": "51230bf904d64d7563ce6c1343d74ed3e1f89a10",
+      "terminal_blank_line_preserved": true
+    },
+    {
+      "path": "research/nine/REVIEW_LOW_RADIUS_ALIGNED_S_ROOT_COMMON_PAGES_AND_FAN_UNION_PENTAGON_2026_10_28.md",
+      "bytes": 28669,
+      "sha256": "a79690fc5a3cc3d2c6c45d0aac4e01dbc55c30966ee278ff51467a1d916272e0",
+      "git_blob": "2f7ec3a37be5c7228fb512bd84459d94d89ec111",
+      "terminal_blank_line_preserved": true
+    },
+    {
+      "path": "research/nine/REVIEW_MIXED_HUB_DISTINCT_W_NEAR_ORIGIN_ROOT_2026_10_28.md",
+      "bytes": 22020,
+      "sha256": "e27238b3fed5b53d5f590442a12bfbdcf48843bf43035802e5309f17fb7551b3",
+      "git_blob": "747fd645f2eaead8f937db4f786a7a2cee94ba02",
+      "terminal_blank_line_preserved": false
+    },
+    {
+      "path": "research/nine/REVIEW_TERMINAL_HUB_DISTINCT_W_TWO_CIRCLE_INJECTION_CYCLES_2026_10_28.md",
+      "bytes": 20210,
+      "sha256": "2b75ce399856a90d55ab7914ad37d2870a30295cdf3dbebf31e5d96d2b09eddf",
+      "git_blob": "3c3a63d3c7e671425d1cdf639625588d1092a8b4",
+      "terminal_blank_line_preserved": true
+    },
+    {
+      "path": "research/nine/TERMINAL_HUB_DISTINCT_W_RETURN_TWO_CIRCLE_NEAR_ORIGIN_INJECTION.md",
+      "bytes": 17758,
+      "sha256": "0dbf5e8472286c831f0a8518dd59a751bd293e3da968938a946c5df8084b3fbb",
+      "git_blob": "a1d6d4833beda887e57429e89ff0759912f84e9b",
+      "terminal_blank_line_preserved": false
+    }
+  ],
+  "metadata_policy": "All three remote metadata files verified in cache; none replaces local metadata. Original local flags remain unchanged by this context import. The same two inner-fan flags may be adopted once in the separate fully audited local original-family/parent checkpoint.",
+  "remote_local_fine_differences_before_local_fan_adoption": [
+    {
+      "id": "M6.B5L.HOUSE.ROOF.LABC.S",
+      "local": true,
+      "remote": false
+    },
+    {
+      "id": "M6.B5L.FAN.INNER.L134.S",
+      "local": false,
+      "remote": true
+    },
+    {
+      "id": "M6.B5L.HOUSE.ROOF",
+      "local": true,
+      "remote": false
+    },
+    {
+      "id": "M6.B5L.FAN.INNER",
+      "local": false,
+      "remote": true
+    },
+    {
+      "id": "M6.B6.PENTAGON.H4_D0.L0124",
+      "local": true,
+      "remote": false
+    }
+  ],
+  "coarse_arrays_equal": true,
+  "root_full_remote_adoption_read": true,
+  "mathematical_acceptance": "Preserve five exact independently reviewed remote sources, six full reviews including the original-parent supplement, adoption and checkpoint as context. No fresh complete root mathematical audit of those five new sources or their full transitive chains is claimed by this import. Separate local West/Southwest/whole-S/parent proofs have their own full audit boundary.",
+  "all_original_ids_order_and_flags_unchanged_by_import": true,
+  "exact_extra_terminal_blank_lines_preserved": [
+    "research/nine/ADJACENT_STRICT_HUB_PORTS_DISTINCT_W_RETURN_NEAR_ORIGIN_INJECTION.md",
+    "research/nine/COMMON_HUB_FACE_ALL_TIP_MASKS_NEAR_ORIGIN_INJECTION.md",
+    "research/nine/LOW_RADIUS_ALIGNED_S_ROOT_TWO_COMMON_BOUNDARY_PAGES_COMPLETE_EXCLUSION.md",
+    "research/nine/MIXED_HUB_AXIS_DISTINCT_W_SIDE_NEAR_ORIGIN_INJECTION.md",
+    "research/nine/REVIEW_FAN_INNER_COMPLETE_ORIGINAL_PARENT_JOIN_PENTAGON_2026_10_28.md",
+    "research/nine/REVIEW_LOW_RADIUS_ALIGNED_S_ROOT_COMMON_PAGES_AND_FAN_UNION_PENTAGON_2026_10_28.md",
+    "research/nine/REVIEW_TERMINAL_HUB_DISTINCT_W_TWO_CIRCLE_INJECTION_CYCLES_2026_10_28.md"
+  ],
+  "remote_mutations": false,
+  "publication_block": "Earlier write calls stalled and were aborted without successful mutation responses. No write retry. Preserve independently advanced PR head."
+}

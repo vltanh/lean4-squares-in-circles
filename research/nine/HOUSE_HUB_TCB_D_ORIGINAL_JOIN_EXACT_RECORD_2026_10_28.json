@@ -1,0 +1,152 @@
+{
+  "date": "2026-10-28",
+  "author": "six_body",
+  "status": "FROZEN_COMPLETE_PROPOSED_PENDING_ROOT_AND_INDEPENDENT_REVIEW",
+  "source": {
+    "name": "D_LEAF_TWO_BOUNDARY_THETA_BRANCHES_AND_HOUSE_HUB_TCB_COMPLETE_EXCLUSION.md",
+    "path": "/workspace/scratch/7d553350ce2a/six_body/D_LEAF_TWO_BOUNDARY_THETA_BRANCHES_AND_HOUSE_HUB_TCB_COMPLETE_EXCLUSION.md",
+    "bytes": 15900,
+    "sha256": "c70101e72eb09566b54d7a997149b1acedac8049f58e10ccce5f259c81e2d810"
+  },
+  "direct_dependencies": [
+    {
+      "name": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "bytes": 14902,
+      "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "expected_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "match": true
+    },
+    {
+      "name": "D_LEAF_SHALLOW_SIDE_BOUNDARY_FULL_WINDOW_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/D_LEAF_SHALLOW_SIDE_BOUNDARY_FULL_WINDOW_EXCLUSION.md",
+      "bytes": 9842,
+      "sha256": "ca7c3f4b32e45fc0c118bd766f438fce3019b0b44220604e33bc842a504ac670",
+      "expected_sha256": "ca7c3f4b32e45fc0c118bd766f438fce3019b0b44220604e33bc842a504ac670",
+      "match": true
+    },
+    {
+      "name": "D_LEAF_ROOT_REQUIRES_PHYSICALLY_CLEAR_NONLEAF_NEIGHBOR.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/D_LEAF_ROOT_REQUIRES_PHYSICALLY_CLEAR_NONLEAF_NEIGHBOR.md",
+      "bytes": 14574,
+      "sha256": "72632128582b60411187d891c224bfd085b8483a70632775b5a4f7c9786fe08c",
+      "expected_sha256": "72632128582b60411187d891c224bfd085b8483a70632775b5a4f7c9786fe08c",
+      "match": true
+    },
+    {
+      "name": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "bytes": 14121,
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "expected_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "match": true
+    },
+    {
+      "name": "D_LEAF_TWO_BOUNDARY_THETA_PAGES_COMPLETE_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/diamond/D_LEAF_TWO_BOUNDARY_THETA_PAGES_COMPLETE_EXCLUSION.md",
+      "bytes": 16766,
+      "sha256": "a6f96f0ac277af8f978e03e7f1e7208f073958165addb113a8dab19183e5136d",
+      "expected_sha256": "a6f96f0ac277af8f978e03e7f1e7208f073958165addb113a8dab19183e5136d",
+      "match": true
+    },
+    {
+      "name": "GENERAL_SIDE_CHANNEL_CAP_INNER_ARC.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/GENERAL_SIDE_CHANNEL_CAP_INNER_ARC.md",
+      "bytes": 8258,
+      "sha256": "f76d76ef2feccc80098fb6d10d6316af4e393d3ae34d4953846dd27b80c137cb",
+      "expected_sha256": "f76d76ef2feccc80098fb6d10d6316af4e393d3ae34d4953846dd27b80c137cb",
+      "match": true
+    },
+    {
+      "name": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "bytes": 17789,
+      "sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "expected_sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "match": true
+    }
+  ],
+  "original_scope": {
+    "fine_id": "M6.B5L.HOUSE.HUB.LTCB.D",
+    "edges": [
+      "AT",
+      "DT",
+      "AD",
+      "AB",
+      "BC",
+      "CD",
+      "AL"
+    ],
+    "leaf": "genuine D at A",
+    "positive_block_loads": [
+      "T",
+      "C",
+      "B"
+    ],
+    "true_degrees": {
+      "A": 4,
+      "D": 3,
+      "T": 2,
+      "B": 2,
+      "C": 2,
+      "L": 1
+    },
+    "generic_map": {
+      "H": "A",
+      "K": "D",
+      "P": "T",
+      "Q": "B"
+    },
+    "actual_theta_paths": [
+      [
+        "A",
+        "T",
+        "D"
+      ],
+      [
+        "A",
+        "D"
+      ],
+      [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    ],
+    "no_B_D_contact_assumed": true,
+    "arbitrary_completing_squares": 3,
+    "all_nine_actual_squares_retained": true,
+    "full_radius_interval": "79/40 <= R <= sqrt(1105)/16"
+  },
+  "accounting_after_acceptance": {
+    "existing_whole_fine_ids": [
+      "M6.B5L.HOUSE.HUB.LTCB.D"
+    ],
+    "fine_delta": 1,
+    "coarse_delta": 0,
+    "new_ids": []
+  },
+  "roadmap_comparison": {
+    "name": "DEEP_GATED_ROADMAP.md",
+    "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/DEEP_GATED_ROADMAP.md",
+    "bytes": 933301,
+    "sha256": "204165a228086459035a7b8d06cdeed9825e657a80159c75084facdd75ceed24"
+  },
+  "exact_original_unchecked_line": "- [ ] **M6.B5L.HOUSE.HUB.LTCB.D** Entire D-leaf type at house hub A with block loadsTCB; retain the full side-interior root slider and every block mask, force, mean and three-extra completion under M6.B5L.RETAINED_CONTRACT.",
+  "proposed_accepted_line_after_reviews": "- [x] **M6.B5L.HOUSE.HUB.LTCB.D** CLOSED by D_LEAF_TWO_BOUNDARY_THETA_BRANCHES_AND_HOUSE_HUB_TCB_COMPLETE_EXCLUSION.md. The actual theta paths A--T--D, AD and A--B--C--D, with protected exterior access of T,B and the genuine D leaf, contradict the full A4 shallow-root force and moment equations; the full-window outward-cap theorem removes every East nonleaf axis without assuming a B--D contact. All root margins must exceed one quarter, and the eight actual other unit interiors then give disjoint radius-5/4 arcs of total angular length greater than a full turn. The entire original D slider, all A4/D3/T2/B2/C2/L1 forces, original masks, zero weights, normal owners, mean endpoints, both radii and all three arbitrary completing units are retained. Complete root and separate independent reviews passed; no new ID or coarse closure is claimed.",
+  "preserved": [
+    "full true root and neighbor force/torque equations",
+    "every original selected normal and application",
+    "all actual side means and endpoints",
+    "physical circle masks and individual zero weights",
+    "both radius endpoints and full D-root slider",
+    "weak junctions and coincident page applications",
+    "all actual branch and completion squares"
+  ],
+  "operative_exclusions": [
+    "No B--D physical contact or triangle premise is transferred.",
+    "No radius-two analytic theorem is used; only the explicitly full-window outward-cap section and upper-radius cap-arc section are used.",
+    "No new normal selection, force deletion, Lean execution, compilation, CI, remote operation or shared-ledger mutation."
+  ]
+}

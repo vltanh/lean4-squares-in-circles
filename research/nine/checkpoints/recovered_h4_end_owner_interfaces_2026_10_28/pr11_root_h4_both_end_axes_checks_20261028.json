@@ -1,0 +1,89 @@
+{
+  "coefficientwise_identities": [
+    "two-square span identity",
+    "physical common x coordinate",
+    "physical common y coordinate",
+    "zero-slider full D3 x force",
+    "zero-slider full D3 y force"
+  ],
+  "endpoint_scope": [
+    "equal/opposite/perpendicular H end axes",
+    "all weak intermediate axes",
+    "all U,V,R,S in [0,1]",
+    "all outer sliders in [-1,0]",
+    "positive side means including endpoints",
+    "strict point-only D-C normal at slider 0"
+  ],
+  "four_complete_linear_box_maxima": [
+    {
+      "a_ge_b": true,
+      "c_ge_d": true,
+      "max_R": 0,
+      "max_S": 1,
+      "max_U": 1,
+      "max_V": 0
+    },
+    {
+      "a_ge_b": true,
+      "c_ge_d": false,
+      "max_R": 0,
+      "max_S": 0,
+      "max_U": 1,
+      "max_V": 0
+    },
+    {
+      "a_ge_b": false,
+      "c_ge_d": true,
+      "max_R": 0,
+      "max_S": 1,
+      "max_U": 0,
+      "max_V": 0
+    },
+    {
+      "a_ge_b": false,
+      "c_ge_d": false,
+      "max_R": 0,
+      "max_S": 0,
+      "max_U": 0,
+      "max_V": 0
+    }
+  ],
+  "load_sets": [
+    [
+      "1",
+      "2",
+      "4"
+    ],
+    [
+      "0",
+      "1",
+      "2",
+      "4"
+    ]
+  ],
+  "method": "Exact Fraction coefficient identities and graph equalities; no pose sampling, numerical optimization, Lean, CI or remote writes.",
+  "original_degrees": {
+    "0": 3,
+    "1": 3,
+    "2": 3,
+    "3": 3,
+    "4": 2,
+    "H": 4
+  },
+  "pins": {
+    "INNER_PENTAGON_FOUR_SPOKE_BOTH_END_AXES_EXCLUSION.md": "e1106b043b8b6b61899177a7e68121fce49c65e3ebf86273ef332cf451f437bf",
+    "PHYSICAL_BODY_GRAPH_UNCROSSING.md": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a",
+    "SIX_BODY_INNER_PENTAGON_LOAD_COVER.md": "fa877c9d7d25c57a7c8cf438a429465b5952cb8db6628c57d9d93695b33dd434",
+    "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md": "ee865704904a8b2a5cab7649bdfd928008c253631abf1eb346d4950411c3afac"
+  },
+  "reflection": {
+    "0": "3",
+    "1": "2",
+    "2": "1",
+    "3": "0",
+    "4": "4",
+    "H": "H"
+  },
+  "scope": "Only both H-owned end normals in H4_D0.L124 and H4_D0.L0124; neither full family is closed.",
+  "status": "pass: exact identities and full original interface mapping; physical proof is in the complete root review"
+}

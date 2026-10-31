@@ -1,0 +1,76 @@
+{
+  "date_utc": "2026-10-28",
+  "reviewer": "frontier_audit",
+  "status": "Exact prior source recovery; new full independent review supplied separately. No complete original family closure.",
+  "files": [
+    {
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/INNER_PENTAGON_FOUR_SPOKE_BOTH_END_AXES_EXCLUSION.md",
+      "current_path": "INNER_PENTAGON_FOUR_SPOKE_BOTH_END_AXES_EXCLUSION.md",
+      "sha256": "e1106b043b8b6b61899177a7e68121fce49c65e3ebf86273ef332cf451f437bf",
+      "bytes": 12008,
+      "action": "exact source/review copy; no change to mathematical text"
+    },
+    {
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/INNER_PENTAGON_FOUR_SPOKE_SHARED_UNLOADED_END_EXCLUSION.md",
+      "current_path": "INNER_PENTAGON_FOUR_SPOKE_SHARED_UNLOADED_END_EXCLUSION.md",
+      "sha256": "ab1882057cc4d5bc0be2929c0c926543a92fbbbc4f8f74598c2238707d17f9f6",
+      "bytes": 8163,
+      "action": "exact source/review copy; no change to mathematical text"
+    },
+    {
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/REVIEW_FOUR_SPOKE_BOTH_END_AXES_ROOT_2026_10_28.md",
+      "current_path": "REVIEW_FOUR_SPOKE_BOTH_END_AXES_ROOT_2026_10_28.md",
+      "sha256": "8751fbd2e90f6e005266e5c9c64cd1186f4c0c1a85f062e29561bf36f024978f",
+      "bytes": 9063,
+      "action": "exact source/review copy; no change to mathematical text"
+    },
+    {
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "current_path": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "old_sha256": "ee865704904a8b2a5cab7649bdfd928008c253631abf1eb346d4950411c3afac",
+      "current_sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "action": "preserve current; all differences are terminal LF bytes only"
+    },
+    {
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "current_path": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "old_sha256": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a",
+      "current_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "action": "preserve current; all differences are terminal LF bytes only"
+    },
+    {
+      "source_path": "/workspace/scratch/8168d2185cf7/repo/research/nine/SIX_BODY_INNER_PENTAGON_LOAD_COVER.md",
+      "current_path": "SIX_BODY_INNER_PENTAGON_LOAD_COVER.md",
+      "old_sha256": "fa877c9d7d25c57a7c8cf438a429465b5952cb8db6628c57d9d93695b33dd434",
+      "current_sha256": "cfe85a201b09182200d5270f0dcdc0e590bf99eded19aaf6d56f86830e959c0a",
+      "action": "preserve current; all differences are terminal LF bytes only"
+    }
+  ],
+  "historical_audit_records": [
+    {
+      "original_path": "/tmp/pr11_root_h4_both_end_axes_checks_20261028.json",
+      "preserved_path": "checkpoints/recovered_h4_end_owner_interfaces_2026_10_28/pr11_root_h4_both_end_axes_checks_20261028.json",
+      "sha256": "9c0ecd288cfcd50b00be871b8ed00843870294087b425ef2df385afbc71cf1cd",
+      "bytes": 2220
+    },
+    {
+      "original_path": "/tmp/pr11_root_h4_both_end_axes_checks_20261028.py",
+      "preserved_path": "checkpoints/recovered_h4_end_owner_interfaces_2026_10_28/pr11_root_h4_both_end_axes_checks_20261028.py",
+      "sha256": "438b438a0989684872f0b20327d74e5d25f09fb5d1602a781d13fa8c84cd854e",
+      "bytes": 4475
+    }
+  ],
+  "original_family_scope": [
+    "M6.B6.PENTAGON.H4_D0.L124",
+    "M6.B6.PENTAGON.H4_D0.L0124"
+  ],
+  "operative_subdomains": [
+    "Both actual H-to-end normals are H side axes",
+    "Actual positive-length shared side from H to an unloaded end"
+  ],
+  "same_graph_reflection": "i maps to 3-i mod 5; transform all labels and actual load roles together",
+  "fine_increment": 0,
+  "coarse_increment": 0,
+  "current_existing_source_overwritten": false,
+  "metadata_edited": false
+}

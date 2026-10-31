@@ -1,0 +1,24 @@
+{
+  "reviewer": "frontier_audit",
+  "date": "2026-10-28",
+  "scope": "Full continuous hand audit of the entire uniform cap and both shared-root roof physical-order joins; AC-only actual transmitter consequences. No whole gate.",
+  "pins": {
+    "UNIT_SUPPORT_CAP_AND_SHARED_S_ROOT_ROOF_RETURN_SEPARATION.md": "2b90b565591b3c9bbc30c2c1af48cf117771b96bbc58ad81441f9e99497067d6",
+    "OPEN_ORIGIN_S_ROOT_OWNED_AXIS_POSITIVE_CONCURRENCE_FROM_ACTUAL_HUB_STRIP.md": "8fb2124065fbc37b4746e94bf45611f2dbd3bb29990391256ddd15d5c15bb917",
+    "ONE_UNLOADED_RETURN_HUB_ACTUAL_WEAK_MOMENT_STRIP.md": "382e06b874e41cf582b17374a122c7e4f289472f00cd6d02d926b680f15c1ed5",
+    "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+    "UNIT_BYPASS_NORMAL_CHANNEL.md": "db073cd024a4f2e763e7cd0a21bf5cb6a2a8be67069f3f9d3aff638b8a40b258",
+    "PHYSICAL_CONTACT_STRESS.md": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+    "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b"
+  },
+  "exact_positive_reserves": {
+    "upper_radius_to_25_over_12": "55/2304",
+    "sqrt_99_above_59_over_6": "83/36",
+    "first_cap_corner": "279/6400",
+    "second_cap_corner": "19/256",
+    "north_roof_gap": "1/24",
+    "south_parallel_far_corner": "175/256",
+    "root_b_upper_bound": "1/14400"
+  },
+  "validation": "These are exact arithmetic checks of printed hand comparisons and literal current source hashes, not a Lean run, numerical pose, new geometry enumeration or historical certificate replay."
+}

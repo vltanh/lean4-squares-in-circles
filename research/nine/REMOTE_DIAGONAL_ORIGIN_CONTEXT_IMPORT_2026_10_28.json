@@ -1,0 +1,385 @@
+{
+  "date": "2026-10-28",
+  "type": "exact_remote_context_import",
+  "local_parent": "2cf70cf38539b6d1d1dfb150e9f947ac69c76816",
+  "remote_head": "c58867a2956c3a638413029e73e18cac7510b1a4",
+  "remote_parent": "0ab519314fa12ce955257acddd364a9bb3451d41",
+  "remote_tree": "367cdab0a80ab7c94570e5257854be48c6ce10aa",
+  "remote_state": "open draft, not merged",
+  "remote_files_verified": [
+    {
+      "path": "research/nine/ADOPTION_DIAGONAL_ORIGIN_AND_TERMINAL_HUB_NEAR_ORIGIN_DOMAINS_ROOT_2026_10_28.md",
+      "bytes": 22012,
+      "sha256": "d5793cd6393470fd4fbcc56c12f2e1f333f8ce84a930dee0df4d3e7c941288b7",
+      "git_blob": "250f4bf4fe401ab3421c1d650360b3654d4ddd37"
+    },
+    {
+      "path": "research/nine/ALIGNED_S_ROOT_COMMON_BOUNDARY_PAGES_HIGH_RADIUS_FAN_EXCLUSION.md",
+      "bytes": 27920,
+      "sha256": "e36fc1969d34b58813e07fc8a66266ba7ed6b7a15f25a63ffd084fed09609a91",
+      "git_blob": "f06107835eca47ce68ffc3adf1022e183ca736c2"
+    },
+    {
+      "path": "research/nine/CYCLIC_CELL_LEDGER.md",
+      "bytes": 256368,
+      "sha256": "f6696b709f023b95a1952d5ab77a7474b5f86476418def721404531c3fd2ebab",
+      "git_blob": "8bf8d7a5090e4fae158b5e21418a812926c07390"
+    },
+    {
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "bytes": 984236,
+      "sha256": "2b7275b99bedecafaf23470072bb319d7700a6318ed3656979663a9c0b9ef2e2",
+      "git_blob": "42fe5a76ab66bfad9ff3a01369d2e3f29460e84a"
+    },
+    {
+      "path": "research/nine/DIAGONAL_ORIGIN_AND_TERMINAL_HUB_NEAR_ORIGIN_DOMAINS_CHECKPOINT_2026_10_28.json",
+      "bytes": 287948,
+      "sha256": "84305ea680cf5058678a52754d7e4d28507af9500d765d5cd92388343f03075a",
+      "git_blob": "e0adfd6998c7c8c9e458f474c8fd786d760ed899"
+    },
+    {
+      "path": "research/nine/HANDOFF_PR11_2026_10_28_CURRENT.md",
+      "bytes": 80153,
+      "sha256": "5b94366fbcb52ca9c346b51d4fecb61b68bf246569e04b77227063d43c886483",
+      "git_blob": "d72e6c5964c890e1b218e426022bbc980981c713"
+    },
+    {
+      "path": "research/nine/NEGATIVE_LEFT_SUPPORT_VERTICAL_SPANNING_NEIGHBOR_LOADED_TIP_EXCLUSION.md",
+      "bytes": 18720,
+      "sha256": "31f949455417c982cd3c6792007bde27eb311bfdd53bb8ce359d2a8fd386bbb9",
+      "git_blob": "b03f88764c41e0c47e440da1c5e6541a05827a98"
+    },
+    {
+      "path": "research/nine/ONE_PROPER_DIAGONAL_CHANNEL_OUTER_POCKET_CAPACITY_ONE.md",
+      "bytes": 29604,
+      "sha256": "83f60e7c35fdd4c517d27db4d2755ea5e14a4bab2b876c52cdfce7a85d286889",
+      "git_blob": "e632f1e2248154e6743e2f20a1810df281f1b6b3"
+    },
+    {
+      "path": "research/nine/ONE_PROPER_DIAGONAL_NEGATIVE_ENDPOINT_POCKET_EMPTY.md",
+      "bytes": 19606,
+      "sha256": "ff5ac694d57a78a64b77f0cfe40e1ac5c5d544a96d9e086d190319ce992db08a",
+      "git_blob": "6783c597a224e1aa97b5f8ee74ca9009a39d8369"
+    },
+    {
+      "path": "research/nine/ONE_PROPER_DIAGONAL_NONNEGATIVE_ENDPOINT_ORDERED_COORDINATES_POCKET_EMPTY.md",
+      "bytes": 25388,
+      "sha256": "f10e14e9906d0d3b13c7f679141ec74bacc99ce7ee7cf30f827e264ca096c629",
+      "git_blob": "8fdf5ba8530d056cd447b697d09819e1fe920202"
+    },
+    {
+      "path": "research/nine/ONE_PROPER_OCCUPIED_DIAGONAL_CHANNEL_CONTAINS_ORIGIN.md",
+      "bytes": 25436,
+      "sha256": "747357c3033d1d13772e7c989989a28c06fde37c0722a57d3363b8a7bbfdb44a",
+      "git_blob": "7b70cebe0f9ef3c24f8c2783e77f2f6c1159e085"
+    },
+    {
+      "path": "research/nine/REVIEW_HIGH_RADIUS_ALIGNED_S_ROOT_COMMON_PAGES_PENTAGON_2026_10_28.md",
+      "bytes": 22059,
+      "sha256": "f7e58a640e9f090cb31b9d1eddcc4046c03d31f9e5998f930b52e41f3e0e35ed",
+      "git_blob": "bd959f5b36a6f49afd483cc4c083602b7e0d33fc"
+    },
+    {
+      "path": "research/nine/REVIEW_NEGATIVE_LEFT_SUPPORT_SPANNING_NEIGHBOR_TIP_CYCLES_2026_10_28.md",
+      "bytes": 19186,
+      "sha256": "51e5af14d2710d693e3a71f9e6d660a1e11fbf943ed83a9cdaa2e60ca3f60575",
+      "git_blob": "ed2c9375099b8b4599fcb72be26d4e2fa9864b1e"
+    },
+    {
+      "path": "research/nine/REVIEW_ONE_PROPER_DIAGONAL_CHANNEL_CAPACITY_ROOT_2026_10_28.md",
+      "bytes": 22163,
+      "sha256": "fb949e7038d0a8dfe444ba223aef52b0f618abb9cae5e9f637ae120ac4ab523b",
+      "git_blob": "0d0cef570aece600b8d63687534a7f6a16b0a01c"
+    },
+    {
+      "path": "research/nine/REVIEW_ONE_PROPER_NEGATIVE_DIAGONAL_EMPTY_ROOT_2026_10_28.md",
+      "bytes": 13938,
+      "sha256": "1865cbd53443869cb64a64436022950e58fcab8e1d9f0ea22a2e1e2404188f56",
+      "git_blob": "0e2e1a32c68dacb99062ca16a35547803d2c715f"
+    },
+    {
+      "path": "research/nine/REVIEW_ONE_PROPER_OCCUPIED_DIAGONAL_ORIGIN_ROOT_2026_10_28.md",
+      "bytes": 16981,
+      "sha256": "5b071509e0ced1bf3b41626792a70080a4a9c6ff969bc22d980d4f41b6ec8b14",
+      "git_blob": "b363210791a536d8420862a33c8ca0a782b5e45f"
+    },
+    {
+      "path": "research/nine/REVIEW_ONE_PROPER_ORDERED_DIAGONAL_EMPTY_ROOT_2026_10_28.md",
+      "bytes": 16314,
+      "sha256": "50ffa4117852c4c22c4530559a6ad4d5c363710a7b58779dc35b6c1132ee4de4",
+      "git_blob": "c535a88ab5eca090f30de6a32cc4a3289b5f7099"
+    },
+    {
+      "path": "research/nine/REVIEW_TERMINAL_HUB_ORTHOGONAL_SHARED_RETURN_INJECTION_CYCLES_2026_10_28.md",
+      "bytes": 20452,
+      "sha256": "2aa3ccee3f05d9f191176f24c898d5404588158ed615b9ddb71ee8d0c2ab783c",
+      "git_blob": "4c7f5c312c961c7a526b578c06e736f34a57060a"
+    },
+    {
+      "path": "research/nine/REVIEW_TERMINAL_HUB_RADIAL_NEAR_ORIGIN_INJECTION_CYCLES_2026_10_28.md",
+      "bytes": 18908,
+      "sha256": "a68f86733559921f19f8344a926944a5f252b88cf26c4be23233c448ef39816c",
+      "git_blob": "f2e58bdc5e6ea2e44aedcff1ddc5a35cf3d8b13f"
+    },
+    {
+      "path": "research/nine/REVIEW_TERMINAL_HUB_UNIQUE_MINUS_NEAR_ORIGIN_INJECTION_PENTAGON_2026_10_28.md",
+      "bytes": 21144,
+      "sha256": "191bb1b8b82374fa1d5d3d49509ae120bb3a54a059c9d1752c62018a877b72b4",
+      "git_blob": "7c7f1e1b95f3b4b011d09b5663792f7eccb43486"
+    },
+    {
+      "path": "research/nine/REVIEW_TERMINAL_HUB_UNIQUE_PLUS_NEAR_ORIGIN_INJECTION_HOUSE_2026_10_28.md",
+      "bytes": 20576,
+      "sha256": "2e2cd3157fef32d0b60ff386b508bcd71d9ecd106b75adbfb4615eebceb7ca7d",
+      "git_blob": "e0eae05a276dc39c8d3a5cb1451b4f1fcef4adec"
+    },
+    {
+      "path": "research/nine/REVIEW_UNEQUAL_NEAR_ORIGIN_ANGULAR_BUDGET_ROOT_2026_10_28.md",
+      "bytes": 10730,
+      "sha256": "1d44f6d32e3948e4e784247837bc1e575ec0eb3a08ecf386a1660b29387323e1",
+      "git_blob": "47fe216cf02eea5890068bc99b7b803e4438be14"
+    },
+    {
+      "path": "research/nine/TERMINAL_HUB_AXIS_ORTHOGONAL_SHARED_RETURN_NEAR_ORIGIN_INJECTION.md",
+      "bytes": 20366,
+      "sha256": "bce571cee89eeb4c41fdfe192c1115ba1be0ff0b88d9cf78763ad3f4d5be32e1",
+      "git_blob": "735acbdcebb5f941aac1ed5726af9a84e2a6c63c"
+    },
+    {
+      "path": "research/nine/TERMINAL_HUB_AXIS_RADIAL_TIP_NEAR_ORIGIN_INJECTION.md",
+      "bytes": 17726,
+      "sha256": "acd1a2b515779188a9e029d7e9b4a4c0182cde9c43b58fb52cd2a4237094761a",
+      "git_blob": "122664045d3ddc864f4a99a6372552b5fcf9dfa3"
+    },
+    {
+      "path": "research/nine/TERMINAL_HUB_AXIS_UNIQUE_MINUS_NEAR_ORIGIN_INJECTION.md",
+      "bytes": 19128,
+      "sha256": "c597a6c741d686777d99ce09adef682cf64eb156f6eb746f5d2eaad6f09e73dc",
+      "git_blob": "11d01a1966cef6a3cfad49efca5f862c89efd266"
+    },
+    {
+      "path": "research/nine/TERMINAL_HUB_AXIS_UNIQUE_PLUS_NEAR_ORIGIN_INJECTION.md",
+      "bytes": 27391,
+      "sha256": "0a7d1e09191af313b91c9e6b08e2835e163e874624574f869ae81acf0e9fba90",
+      "git_blob": "efa3aa1f0aed8f85ba6681fe87b68c6693a284a4"
+    },
+    {
+      "path": "research/nine/UNEQUAL_NEAR_ORIGIN_UNIT_ANGULAR_BUDGET.md",
+      "bytes": 9973,
+      "sha256": "741ff2415b91fa8d490c601185994b7d947e000003c1ca702e423677eea3684e",
+      "git_blob": "6dcafa7ce8c8771cde15eaa5b912ba9238a57344"
+    }
+  ],
+  "imported_files": [
+    {
+      "path": "research/nine/ADOPTION_DIAGONAL_ORIGIN_AND_TERMINAL_HUB_NEAR_ORIGIN_DOMAINS_ROOT_2026_10_28.md",
+      "bytes": 22012,
+      "sha256": "d5793cd6393470fd4fbcc56c12f2e1f333f8ce84a930dee0df4d3e7c941288b7",
+      "git_blob": "250f4bf4fe401ab3421c1d650360b3654d4ddd37",
+      "terminal_blank_line_preserved": false
+    },
+    {
+      "path": "research/nine/ALIGNED_S_ROOT_COMMON_BOUNDARY_PAGES_HIGH_RADIUS_FAN_EXCLUSION.md",
+      "bytes": 27920,
+      "sha256": "e36fc1969d34b58813e07fc8a66266ba7ed6b7a15f25a63ffd084fed09609a91",
+      "git_blob": "f06107835eca47ce68ffc3adf1022e183ca736c2",
+      "terminal_blank_line_preserved": true
+    },
+    {
+      "path": "research/nine/DIAGONAL_ORIGIN_AND_TERMINAL_HUB_NEAR_ORIGIN_DOMAINS_CHECKPOINT_2026_10_28.json",
+      "bytes": 287948,
+      "sha256": "84305ea680cf5058678a52754d7e4d28507af9500d765d5cd92388343f03075a",
+      "git_blob": "e0adfd6998c7c8c9e458f474c8fd786d760ed899",
+      "terminal_blank_line_preserved": false
+    },
+    {
+      "path": "research/nine/NEGATIVE_LEFT_SUPPORT_VERTICAL_SPANNING_NEIGHBOR_LOADED_TIP_EXCLUSION.md",
+      "bytes": 18720,
+      "sha256": "31f949455417c982cd3c6792007bde27eb311bfdd53bb8ce359d2a8fd386bbb9",
+      "git_blob": "b03f88764c41e0c47e440da1c5e6541a05827a98",
+      "terminal_blank_line_preserved": true
+    },
+    {
+      "path": "research/nine/ONE_PROPER_DIAGONAL_CHANNEL_OUTER_POCKET_CAPACITY_ONE.md",
+      "bytes": 29604,
+      "sha256": "83f60e7c35fdd4c517d27db4d2755ea5e14a4bab2b876c52cdfce7a85d286889",
+      "git_blob": "e632f1e2248154e6743e2f20a1810df281f1b6b3",
+      "terminal_blank_line_preserved": true
+    },
+    {
+      "path": "research/nine/ONE_PROPER_DIAGONAL_NEGATIVE_ENDPOINT_POCKET_EMPTY.md",
+      "bytes": 19606,
+      "sha256": "ff5ac694d57a78a64b77f0cfe40e1ac5c5d544a96d9e086d190319ce992db08a",
+      "git_blob": "6783c597a224e1aa97b5f8ee74ca9009a39d8369",
+      "terminal_blank_line_preserved": true
+    },
+    {
+      "path": "research/nine/ONE_PROPER_DIAGONAL_NONNEGATIVE_ENDPOINT_ORDERED_COORDINATES_POCKET_EMPTY.md",
+      "bytes": 25388,
+      "sha256": "f10e14e9906d0d3b13c7f679141ec74bacc99ce7ee7cf30f827e264ca096c629",
+      "git_blob": "8fdf5ba8530d056cd447b697d09819e1fe920202",
+      "terminal_blank_line_preserved": true
+    },
+    {
+      "path": "research/nine/ONE_PROPER_OCCUPIED_DIAGONAL_CHANNEL_CONTAINS_ORIGIN.md",
+      "bytes": 25436,
+      "sha256": "747357c3033d1d13772e7c989989a28c06fde37c0722a57d3363b8a7bbfdb44a",
+      "git_blob": "7b70cebe0f9ef3c24f8c2783e77f2f6c1159e085",
+      "terminal_blank_line_preserved": true
+    },
+    {
+      "path": "research/nine/REVIEW_HIGH_RADIUS_ALIGNED_S_ROOT_COMMON_PAGES_PENTAGON_2026_10_28.md",
+      "bytes": 22059,
+      "sha256": "f7e58a640e9f090cb31b9d1eddcc4046c03d31f9e5998f930b52e41f3e0e35ed",
+      "git_blob": "bd959f5b36a6f49afd483cc4c083602b7e0d33fc",
+      "terminal_blank_line_preserved": true
+    },
+    {
+      "path": "research/nine/REVIEW_NEGATIVE_LEFT_SUPPORT_SPANNING_NEIGHBOR_TIP_CYCLES_2026_10_28.md",
+      "bytes": 19186,
+      "sha256": "51e5af14d2710d693e3a71f9e6d660a1e11fbf943ed83a9cdaa2e60ca3f60575",
+      "git_blob": "ed2c9375099b8b4599fcb72be26d4e2fa9864b1e",
+      "terminal_blank_line_preserved": true
+    },
+    {
+      "path": "research/nine/REVIEW_ONE_PROPER_DIAGONAL_CHANNEL_CAPACITY_ROOT_2026_10_28.md",
+      "bytes": 22163,
+      "sha256": "fb949e7038d0a8dfe444ba223aef52b0f618abb9cae5e9f637ae120ac4ab523b",
+      "git_blob": "0d0cef570aece600b8d63687534a7f6a16b0a01c",
+      "terminal_blank_line_preserved": false
+    },
+    {
+      "path": "research/nine/REVIEW_ONE_PROPER_NEGATIVE_DIAGONAL_EMPTY_ROOT_2026_10_28.md",
+      "bytes": 13938,
+      "sha256": "1865cbd53443869cb64a64436022950e58fcab8e1d9f0ea22a2e1e2404188f56",
+      "git_blob": "0e2e1a32c68dacb99062ca16a35547803d2c715f",
+      "terminal_blank_line_preserved": false
+    },
+    {
+      "path": "research/nine/REVIEW_ONE_PROPER_OCCUPIED_DIAGONAL_ORIGIN_ROOT_2026_10_28.md",
+      "bytes": 16981,
+      "sha256": "5b071509e0ced1bf3b41626792a70080a4a9c6ff969bc22d980d4f41b6ec8b14",
+      "git_blob": "b363210791a536d8420862a33c8ca0a782b5e45f",
+      "terminal_blank_line_preserved": false
+    },
+    {
+      "path": "research/nine/REVIEW_ONE_PROPER_ORDERED_DIAGONAL_EMPTY_ROOT_2026_10_28.md",
+      "bytes": 16314,
+      "sha256": "50ffa4117852c4c22c4530559a6ad4d5c363710a7b58779dc35b6c1132ee4de4",
+      "git_blob": "c535a88ab5eca090f30de6a32cc4a3289b5f7099",
+      "terminal_blank_line_preserved": false
+    },
+    {
+      "path": "research/nine/REVIEW_TERMINAL_HUB_ORTHOGONAL_SHARED_RETURN_INJECTION_CYCLES_2026_10_28.md",
+      "bytes": 20452,
+      "sha256": "2aa3ccee3f05d9f191176f24c898d5404588158ed615b9ddb71ee8d0c2ab783c",
+      "git_blob": "4c7f5c312c961c7a526b578c06e736f34a57060a",
+      "terminal_blank_line_preserved": true
+    },
+    {
+      "path": "research/nine/REVIEW_TERMINAL_HUB_RADIAL_NEAR_ORIGIN_INJECTION_CYCLES_2026_10_28.md",
+      "bytes": 18908,
+      "sha256": "a68f86733559921f19f8344a926944a5f252b88cf26c4be23233c448ef39816c",
+      "git_blob": "f2e58bdc5e6ea2e44aedcff1ddc5a35cf3d8b13f",
+      "terminal_blank_line_preserved": true
+    },
+    {
+      "path": "research/nine/REVIEW_TERMINAL_HUB_UNIQUE_MINUS_NEAR_ORIGIN_INJECTION_PENTAGON_2026_10_28.md",
+      "bytes": 21144,
+      "sha256": "191bb1b8b82374fa1d5d3d49509ae120bb3a54a059c9d1752c62018a877b72b4",
+      "git_blob": "7c7f1e1b95f3b4b011d09b5663792f7eccb43486",
+      "terminal_blank_line_preserved": true
+    },
+    {
+      "path": "research/nine/REVIEW_TERMINAL_HUB_UNIQUE_PLUS_NEAR_ORIGIN_INJECTION_HOUSE_2026_10_28.md",
+      "bytes": 20576,
+      "sha256": "2e2cd3157fef32d0b60ff386b508bcd71d9ecd106b75adbfb4615eebceb7ca7d",
+      "git_blob": "e0eae05a276dc39c8d3a5cb1451b4f1fcef4adec",
+      "terminal_blank_line_preserved": true
+    },
+    {
+      "path": "research/nine/REVIEW_UNEQUAL_NEAR_ORIGIN_ANGULAR_BUDGET_ROOT_2026_10_28.md",
+      "bytes": 10730,
+      "sha256": "1d44f6d32e3948e4e784247837bc1e575ec0eb3a08ecf386a1660b29387323e1",
+      "git_blob": "47fe216cf02eea5890068bc99b7b803e4438be14",
+      "terminal_blank_line_preserved": false
+    },
+    {
+      "path": "research/nine/TERMINAL_HUB_AXIS_ORTHOGONAL_SHARED_RETURN_NEAR_ORIGIN_INJECTION.md",
+      "bytes": 20366,
+      "sha256": "bce571cee89eeb4c41fdfe192c1115ba1be0ff0b88d9cf78763ad3f4d5be32e1",
+      "git_blob": "735acbdcebb5f941aac1ed5726af9a84e2a6c63c",
+      "terminal_blank_line_preserved": true
+    },
+    {
+      "path": "research/nine/TERMINAL_HUB_AXIS_RADIAL_TIP_NEAR_ORIGIN_INJECTION.md",
+      "bytes": 17726,
+      "sha256": "acd1a2b515779188a9e029d7e9b4a4c0182cde9c43b58fb52cd2a4237094761a",
+      "git_blob": "122664045d3ddc864f4a99a6372552b5fcf9dfa3",
+      "terminal_blank_line_preserved": true
+    },
+    {
+      "path": "research/nine/TERMINAL_HUB_AXIS_UNIQUE_MINUS_NEAR_ORIGIN_INJECTION.md",
+      "bytes": 19128,
+      "sha256": "c597a6c741d686777d99ce09adef682cf64eb156f6eb746f5d2eaad6f09e73dc",
+      "git_blob": "11d01a1966cef6a3cfad49efca5f862c89efd266",
+      "terminal_blank_line_preserved": false
+    },
+    {
+      "path": "research/nine/TERMINAL_HUB_AXIS_UNIQUE_PLUS_NEAR_ORIGIN_INJECTION.md",
+      "bytes": 27391,
+      "sha256": "0a7d1e09191af313b91c9e6b08e2835e163e874624574f869ae81acf0e9fba90",
+      "git_blob": "efa3aa1f0aed8f85ba6681fe87b68c6693a284a4",
+      "terminal_blank_line_preserved": true
+    },
+    {
+      "path": "research/nine/UNEQUAL_NEAR_ORIGIN_UNIT_ANGULAR_BUDGET.md",
+      "bytes": 9973,
+      "sha256": "741ff2415b91fa8d490c601185994b7d947e000003c1ca702e423677eea3684e",
+      "git_blob": "6dcafa7ce8c8771cde15eaa5b912ba9238a57344",
+      "terminal_blank_line_preserved": true
+    }
+  ],
+  "metadata_policy": "All three remote metadata files verified in cache; none replaces current local metadata. Current 2356 fine flags are retained.",
+  "remote_local_fine_differences": [
+    {
+      "id": "M6.B5L.HOUSE.ROOF.LABC.S",
+      "remote": false,
+      "local": true
+    },
+    {
+      "id": "M6.B5L.HOUSE.ROOF",
+      "remote": false,
+      "local": true
+    },
+    {
+      "id": "M6.B6.PENTAGON.H4_D0.L0124",
+      "remote": false,
+      "local": true
+    }
+  ],
+  "coarse_arrays_equal": true,
+  "mathematical_acceptance": "Preserve the exact independently reviewed published context. Current root freshly reads and adopts only the complete negative-left-support source/review at its literal local and low-horizontal fan scopes in the separate current root record. No fresh whole-chain audit is claimed for the other ten mathematical sources.",
+  "root_full_read_remote_adoption": true,
+  "all_original_ids_and_flags_unchanged_by_import": true,
+  "remote_mutations": false,
+  "publication_block": "Earlier write calls stalled and were aborted without successful mutation responses. No write retry is made. The independently advanced current PR head is preserved.",
+  "exact_extra_terminal_blank_lines_preserved": [
+    "research/nine/ALIGNED_S_ROOT_COMMON_BOUNDARY_PAGES_HIGH_RADIUS_FAN_EXCLUSION.md",
+    "research/nine/NEGATIVE_LEFT_SUPPORT_VERTICAL_SPANNING_NEIGHBOR_LOADED_TIP_EXCLUSION.md",
+    "research/nine/ONE_PROPER_DIAGONAL_CHANNEL_OUTER_POCKET_CAPACITY_ONE.md",
+    "research/nine/ONE_PROPER_DIAGONAL_NEGATIVE_ENDPOINT_POCKET_EMPTY.md",
+    "research/nine/ONE_PROPER_DIAGONAL_NONNEGATIVE_ENDPOINT_ORDERED_COORDINATES_POCKET_EMPTY.md",
+    "research/nine/ONE_PROPER_OCCUPIED_DIAGONAL_CHANNEL_CONTAINS_ORIGIN.md",
+    "research/nine/REVIEW_HIGH_RADIUS_ALIGNED_S_ROOT_COMMON_PAGES_PENTAGON_2026_10_28.md",
+    "research/nine/REVIEW_NEGATIVE_LEFT_SUPPORT_SPANNING_NEIGHBOR_TIP_CYCLES_2026_10_28.md",
+    "research/nine/REVIEW_TERMINAL_HUB_ORTHOGONAL_SHARED_RETURN_INJECTION_CYCLES_2026_10_28.md",
+    "research/nine/REVIEW_TERMINAL_HUB_RADIAL_NEAR_ORIGIN_INJECTION_CYCLES_2026_10_28.md",
+    "research/nine/REVIEW_TERMINAL_HUB_UNIQUE_MINUS_NEAR_ORIGIN_INJECTION_PENTAGON_2026_10_28.md",
+    "research/nine/REVIEW_TERMINAL_HUB_UNIQUE_PLUS_NEAR_ORIGIN_INJECTION_HOUSE_2026_10_28.md",
+    "research/nine/TERMINAL_HUB_AXIS_ORTHOGONAL_SHARED_RETURN_NEAR_ORIGIN_INJECTION.md",
+    "research/nine/TERMINAL_HUB_AXIS_RADIAL_TIP_NEAR_ORIGIN_INJECTION.md",
+    "research/nine/TERMINAL_HUB_AXIS_UNIQUE_PLUS_NEAR_ORIGIN_INJECTION.md",
+    "research/nine/UNEQUAL_NEAR_ORIGIN_UNIT_ANGULAR_BUDGET.md"
+  ]
+}

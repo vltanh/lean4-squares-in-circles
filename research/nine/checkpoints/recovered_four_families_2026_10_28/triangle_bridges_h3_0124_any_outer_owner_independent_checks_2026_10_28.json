@@ -1,0 +1,88 @@
+{
+  "date": "2026-10-28",
+  "reviewer": "triangle_bridges",
+  "source": {
+    "path": "INNER_PENTAGON_H3_0124_ANY_OUTER_HUB_OWNED_ENDPOINT_EXCLUSION.md",
+    "sha256": "05948c932dbb32fb34534ce7486e295a8a3764a6cd6814e65aca209a9f5b9a09"
+  },
+  "literal_pins": [
+    {
+      "path": "INNER_PENTAGON_H3_0124_BOTH_OUTER_HUB_OWNED_ENDPOINTS_EXCLUSION.md",
+      "sha256": "d266281a14e433bb690117a088f118ac05a00e7d6cff3936f21ec820edf74564",
+      "bytes": 13526
+    },
+    {
+      "path": "FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "sha256": "6c38d162e1f2c435cf65a8b4a58a7001fe9489c65b3510159fee2687b9753708",
+      "bytes": 8496
+    },
+    {
+      "path": "BOUNDARY_CONTACT_ORIGIN_MOMENT_ORIENTATION.md",
+      "sha256": "851417d7fcd12ccb93a6f7f09ba7d7b2bf9bccc61c82fee3457b5ee4cee47e9a",
+      "bytes": 7684
+    },
+    {
+      "path": "TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md",
+      "sha256": "0d61292a0aa57084b88b4a72754fc78e123e8b684dac09be966fb074ab58e877",
+      "bytes": 20943
+    },
+    {
+      "path": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a",
+      "bytes": 14122
+    }
+  ],
+  "exact_checks": [
+    {
+      "name": "inherited K-center contact reserve",
+      "exact": "109/61250",
+      "positive": true
+    },
+    {
+      "name": "inherited cosalpha reserve",
+      "exact": "211/62500",
+      "positive": true
+    },
+    {
+      "name": "half-arc alpha bound squared",
+      "exact": "46992849/976562500",
+      "positive": true
+    },
+    {
+      "name": "F1 NW upper separation in pi units",
+      "exact": "1/3",
+      "positive": true
+    },
+    {
+      "name": "center4 lower half-plane initial reserve in pi units",
+      "exact": "1/12",
+      "positive": true
+    },
+    {
+      "name": "center4 lower half-plane final reserve in pi units",
+      "exact": "5/12",
+      "positive": true
+    },
+    {
+      "name": "sigma below5/7 squared",
+      "exact": "1/98",
+      "positive": true
+    },
+    {
+      "name": "whole height contradiction",
+      "exact": "1/700",
+      "positive": true
+    }
+  ],
+  "additional_exact_angle_equalities": [
+    "7pi/6-pi/12=13pi/12",
+    "3pi/2+pi/12=19pi/12"
+  ],
+  "independent_full_scope": [
+    "original mixed K3 including coincident E1/H port",
+    "all physical E4 side and vertex normal endpoints",
+    "true loaded2 positive proper concurrence including zero lengths and external radial mask",
+    "actual clockwise boundary path and unit-height wall"
+  ],
+  "status": "full independent acceptance; no correction"
+}

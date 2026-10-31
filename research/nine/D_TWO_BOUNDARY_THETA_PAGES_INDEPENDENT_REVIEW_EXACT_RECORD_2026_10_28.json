@@ -1,0 +1,86 @@
+{
+  "date": "2026-10-28",
+  "reviewer": "six_body",
+  "author": "diamond",
+  "disposition": "PASS_UNCHANGED",
+  "source": {
+    "name": "D_LEAF_TWO_BOUNDARY_THETA_PAGES_COMPLETE_EXCLUSION.md",
+    "path": "/workspace/scratch/7d553350ce2a/diamond/D_LEAF_TWO_BOUNDARY_THETA_PAGES_COMPLETE_EXCLUSION.md",
+    "bytes": 16766,
+    "sha256": "a6f96f0ac277af8f978e03e7f1e7208f073958165addb113a8dab19183e5136d"
+  },
+  "review": {
+    "name": "REVIEW_D_TWO_BOUNDARY_THETA_PAGES_INDEPENDENT_2026_10_28.md",
+    "path": "/workspace/scratch/7d553350ce2a/six_body/REVIEW_D_TWO_BOUNDARY_THETA_PAGES_INDEPENDENT_2026_10_28.md",
+    "bytes": 9412,
+    "sha256": "91cf12b448e0316888f403da440c12356c3e6e8efb84d6417cc463d3f9f6d0a9"
+  },
+  "direct_dependencies": [
+    {
+      "name": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "bytes": 14902,
+      "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "expected_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "match": true
+    },
+    {
+      "name": "D_LEAF_SHALLOW_SIDE_BOUNDARY_FULL_WINDOW_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/D_LEAF_SHALLOW_SIDE_BOUNDARY_FULL_WINDOW_EXCLUSION.md",
+      "bytes": 9842,
+      "sha256": "ca7c3f4b32e45fc0c118bd766f438fce3019b0b44220604e33bc842a504ac670",
+      "expected_sha256": "ca7c3f4b32e45fc0c118bd766f438fce3019b0b44220604e33bc842a504ac670",
+      "match": true
+    },
+    {
+      "name": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "bytes": 4431,
+      "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "expected_sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "match": true
+    },
+    {
+      "name": "END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+      "bytes": 8686,
+      "sha256": "20a845eff8bee3e9c533162df0b32ea96f9dd104a3cfec41efb3b0cf92d6e9cf",
+      "expected_sha256": "20a845eff8bee3e9c533162df0b32ea96f9dd104a3cfec41efb3b0cf92d6e9cf",
+      "match": true
+    },
+    {
+      "name": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "bytes": 14121,
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "expected_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "match": true
+    },
+    {
+      "name": "GENERAL_SIDE_CHANNEL_CAP_INNER_ARC.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/GENERAL_SIDE_CHANNEL_CAP_INNER_ARC.md",
+      "bytes": 8258,
+      "sha256": "f76d76ef2feccc80098fb6d10d6316af4e393d3ae34d4953846dd27b80c137cb",
+      "expected_sha256": "f76d76ef2feccc80098fb6d10d6316af4e393d3ae34d4953846dd27b80c137cb",
+      "match": true
+    },
+    {
+      "name": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "bytes": 17789,
+      "sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "expected_sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "match": true
+    }
+  ],
+  "accepted_scope": "Full true H4 D-root with two physical-boundary theta pages and arbitrary complete K/page stars; every actual ninth-square completion, all original masks, side means, coincidences and radius endpoints.",
+  "whole_existing_fine_ids": [
+    "M6.B5L.FAN.INNER.L134.D"
+  ],
+  "fine_delta": 1,
+  "coarse_delta": 0,
+  "radius_two_dependency": false,
+  "all_nine_actual_units_retained": true,
+  "root_acceptance_required_before_ledger_credit": true,
+  "no_lean_ci_remote_or_ledger_mutation": true
+}

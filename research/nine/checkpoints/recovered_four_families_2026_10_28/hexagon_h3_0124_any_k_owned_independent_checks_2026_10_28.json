@@ -1,0 +1,66 @@
+{
+  "source": "INNER_PENTAGON_H3_0124_ANY_OUTER_HUB_OWNED_ENDPOINT_EXCLUSION.md",
+  "source_sha256": "05948c932dbb32fb34534ce7486e295a8a3764a6cd6814e65aca209a9f5b9a09",
+  "method": "Independent exact Fraction and coefficient reconstruction; no author record imported.",
+  "strict_positive_reserves": {
+    "sigma_bound": "1/98",
+    "cosalpha": "211/62500",
+    "alpha_upper_squared": "46992849/976562500",
+    "height_contradiction": "1/700",
+    "center_lower_interval_to_pi": "1/12",
+    "center_upper_interval_from_2pi": "5/12",
+    "resultant_angle_separation_slack": "1/6"
+  },
+  "identities": {
+    "moment_KE1": {
+      "p": 1,
+      "X": -1
+    },
+    "moment_KE4": {
+      "bX": 1,
+      "aY": -1
+    },
+    "q4_k_projection": {
+      "bX": -1,
+      "aY": 1
+    },
+    "K3_horizontal": {
+      "muH_nHx": 1,
+      "mu4_a": -1
+    },
+    "bottom_vertex_first_projection_remainder": {
+      "one": "1/2",
+      "c2": "-1/2",
+      "s2": "-1/2"
+    },
+    "upper_angle_lower": "13/12",
+    "upper_angle_upper": "19/12"
+  },
+  "input_pins": [
+    {
+      "file": "INNER_PENTAGON_H3_0124_BOTH_OUTER_HUB_OWNED_ENDPOINTS_EXCLUSION.md",
+      "sha256": "d266281a14e433bb690117a088f118ac05a00e7d6cff3936f21ec820edf74564",
+      "bytes": 13526
+    },
+    {
+      "file": "FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "sha256": "6c38d162e1f2c435cf65a8b4a58a7001fe9489c65b3510159fee2687b9753708",
+      "bytes": 8496
+    },
+    {
+      "file": "BOUNDARY_CONTACT_ORIGIN_MOMENT_ORIENTATION.md",
+      "sha256": "851417d7fcd12ccb93a6f7f09ba7d7b2bf9bccc61c82fee3457b5ee4cee47e9a",
+      "bytes": 7684
+    },
+    {
+      "file": "TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md",
+      "sha256": "0d61292a0aa57084b88b4a72754fc78e123e8b684dac09be966fb074ab58e877",
+      "bytes": 20943
+    },
+    {
+      "file": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a",
+      "bytes": 14122
+    }
+  ]
+}

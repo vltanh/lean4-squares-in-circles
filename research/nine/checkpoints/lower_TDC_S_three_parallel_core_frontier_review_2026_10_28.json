@@ -1,0 +1,113 @@
+{
+  "date_utc": "2026-10-28",
+  "reviewer": "frontier_audit",
+  "verdict": "PASS: complete three-parallel-core interface; no whole fine-family closure",
+  "target": {
+    "path": "research/nine/LOWER_HOUSE_TDC_S_THREE_PARALLEL_CORE_UNITS_EXCLUSION.md",
+    "sha256": "ef29261c8bf6e98d5523e00b2a79e7c1cdf17c693da38155c2ce4f329f1c0f0f"
+  },
+  "review": {
+    "path": "research/nine/REVIEW_LOWER_TDC_S_THREE_PARALLEL_CORE_FRONTIER_2026_10_28.md",
+    "sha256": "2783e39fd27c519730ffd7de999aa078b7fa9cb0b8346d5fb4b7757311af0ea8"
+  },
+  "dependency_pins": [
+    {
+      "path": "research/nine/LOWER_HOUSE_TDC_S_PARALLEL_INWARD_FACE_REQUIRES_BOUNDARY_OWNER.md",
+      "expected_sha256": "864c8298d7322b794a97673006dbb3cf01fb6f8f68c16c27e97b70e96d18ae13",
+      "actual_sha256": "864c8298d7322b794a97673006dbb3cf01fb6f8f68c16c27e97b70e96d18ae13",
+      "match": true
+    },
+    {
+      "path": "research/nine/TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md",
+      "expected_sha256": "29e38d3f641fe16c6db587e51245f92ad4c447f9536db7d14c221f56b5357e82",
+      "actual_sha256": "29e38d3f641fe16c6db587e51245f92ad4c447f9536db7d14c221f56b5357e82",
+      "match": true
+    },
+    {
+      "path": "research/nine/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "expected_sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "actual_sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "match": true
+    }
+  ],
+  "prior_complete_parent_review": {
+    "path": "research/nine/REVIEW_LOWER_TDC_S_PARALLEL_INWARD_OWNER_FRONTIER_2026_10_28.md",
+    "sha256": "a464517e0623bc6faad6ed021eb4192010f458e2b382f3022b40a11611cbaba1"
+  },
+  "exact_arithmetic": [
+    {
+      "name": "lower_g_square_reserve",
+      "value": "1/100",
+      "expected": "1/100",
+      "match": true
+    },
+    {
+      "name": "upper_g_square_reserve",
+      "value": "671/57600",
+      "expected": "671/57600",
+      "match": true
+    },
+    {
+      "name": "sqrt2_below_17_over_12_square_reserve",
+      "value": "1/144",
+      "expected": "1/144",
+      "match": true
+    },
+    {
+      "name": "south_corner_norm_bound",
+      "value": "1009/324",
+      "expected": "1009/324",
+      "match": true
+    },
+    {
+      "name": "south_radius_reserve",
+      "value": "92/81",
+      "expected": "92/81",
+      "match": true
+    },
+    {
+      "name": "axis_ratio_u_square_reserve",
+      "value": "137/303120",
+      "expected": "137/303120",
+      "match": true
+    },
+    {
+      "name": "v_linear_bound_sqrt119_reserve",
+      "value": "19/100",
+      "expected": "19/100",
+      "match": true
+    },
+    {
+      "name": "phi_second_base_at_endpoint",
+      "value": "11131/7200",
+      "expected": "11131/7200",
+      "match": true
+    },
+    {
+      "name": "phi_half_derivative_endpoint",
+      "value": "-5109019/21600000",
+      "expected": "-5109019/21600000",
+      "match": true
+    },
+    {
+      "name": "phi_endpoint",
+      "value": "226921661/51840000",
+      "expected": "226921661/51840000",
+      "match": true
+    },
+    {
+      "name": "phi_radius_cap_reserve",
+      "value": "3159161/51840000",
+      "expected": "3159161/51840000",
+      "match": true
+    }
+  ],
+  "full_current_source_read": true,
+  "all_original_CD_rows_checked": true,
+  "original_D_degree_three_retained": true,
+  "actual_C2_equation_and_original_means_retained": true,
+  "whole_fine_family_credit": 0,
+  "lean_compilation": false,
+  "CI": false,
+  "metadata_changes": false
+}

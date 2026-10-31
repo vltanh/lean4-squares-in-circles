@@ -1,0 +1,43 @@
+{
+  "status": "VERIFIED_EXACT_ORIGINAL_FEATURE_CERTIFICATE",
+  "scope": "D02.L135 Type II A-only h owner, unloaded N side, V/B/C physically unique-circle, all nine actual squares retained",
+  "nodes": 216878,
+  "counts": {
+    "split": 104505,
+    "V_corner": 770,
+    "contract_sector": 7867,
+    "equal_circle": 43396,
+    "torque": 39902,
+    "capacity_0": 6489,
+    "sector": 360,
+    "near_0": 905,
+    "capacity_1": 6632,
+    "near_1": 1362,
+    "capacity_2": 3716,
+    "near_2": 89,
+    "radial_moment": 501,
+    "obtuse": 255,
+    "offset": 107,
+    "budget": 7,
+    "empty_range": 7,
+    "angle": 8
+  },
+  "pending": 0,
+  "unresolved": 0,
+  "generation_seconds": 250.61,
+  "independent_tree_replay_seconds": 73.57,
+  "tree_replay_verified": true,
+  "lean_compiled": false,
+  "independent_kernel_replay": false,
+  "original_coarse_flags_changed": false,
+  "original_fine_flags_changed": false,
+  "files": {
+    "scripts/n9_d02_a_only_both_unique_certificate.py": "5aa96c9ed536025bea132ee3ceef5eb2b404f255373ec5306b113878d7e38168",
+    "scripts/n9_five_core_capacity.py": "2a957b37f66242d58a9808611c1651a58826b258ab8505c5433c6a538031b9ca",
+    "research/nine/certificates/d02_l135_a_only_both_unique_cover.json.gz": "732af6da533fb41fa336ab71ee5bcf0a2f5e80e9a0fb3328bafe5ff5d834466c",
+    "research/nine/certificates/d02_type_ii_a_only_five_core_capacity_midpoint_balls.json": "fd7f688aa3914db69cb7270f136dda4288391f210acd8fb7d622f0a9b2f87f94",
+    "research/nine/certificates/d02_type_ii_a_only_five_core_capacity_curve_45.json": "9ef2b8c6d0b1e9b0e6d8e5a2ab1c779962b03a9a5da8de60b2f84c63a8d88365",
+    "research/nine/certificates/d02_type_ii_a_only_five_core_capacity_curve_47.json": "3efb7db7268d5d0c2e7899874b2d2b6f2d71828af8285f8bbac1390c7e32c511",
+    "research/nine/certificates/d02_type_ii_a_only_five_core_capacity_wide.json": "70506365df3bb2814f77f48f49ebac3bedd688b2be59adadd88b4244a1d1dca6"
+  }
+}

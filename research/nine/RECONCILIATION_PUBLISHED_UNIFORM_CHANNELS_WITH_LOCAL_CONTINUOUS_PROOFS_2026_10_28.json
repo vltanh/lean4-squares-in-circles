@@ -1,0 +1,219 @@
+{
+  "date_utc": "2026-10-28",
+  "status": "Exact local integration of independent published and reviewed-local histories; no new mathematical adoption or original gate credit.",
+  "local_parent": "30ff4a165e3dac9502b4160a8a983f945cada53c",
+  "published_parent": "0ab519314fa12ce955257acddd364a9bb3451d41",
+  "previous_published_base": "234b4f0d03d772031dfc90a739fbe5b45351a3b8",
+  "fine_checked": 2353,
+  "fine_open": 160,
+  "coarse_closed": 34,
+  "coarse_open": 24,
+  "changed_original_fine_ids": [],
+  "changed_original_coarse_ids": [],
+  "published_changes": [
+    {
+      "status": "A",
+      "path": "research/nine/ADAPTIVE_CLOSING_POCKET_OCCUPANCY_FORCES_SMALL_HUB_CENTER.md",
+      "published_sha256": "182705c297ed3a52a525206b673b293dff1cc7cf6de76430fad52ed1797b1e3d",
+      "bytes": 9319,
+      "preserved_exact_in_worktree": true
+    },
+    {
+      "status": "A",
+      "path": "research/nine/ADAPTIVE_CLOSING_POCKET_OCCUPANCY_FORCES_SMALL_HUB_DISTANCE.md",
+      "published_sha256": "c3957435ba1886e1fb27158c00915a96b1aa29250f42bdde682e6f25a2ef3f8b",
+      "bytes": 9044,
+      "preserved_exact_in_worktree": true
+    },
+    {
+      "status": "A",
+      "path": "research/nine/ADOPTION_UNIFORM_CHANNELS_AND_COMPLETE_TILTED_ROOT_DOMAINS_ROOT_2026_10_28.md",
+      "published_sha256": "1c54dd18933c807d55157e4a2096d9afdabe1716bb74b35685c9fabcc5b3f91a",
+      "bytes": 14914,
+      "preserved_exact_in_worktree": true
+    },
+    {
+      "status": "A",
+      "path": "research/nine/ALL_UNITS_CENTER_RADIUS_FOUR_FIFTHS_CENTERED_RATIONAL_SINE_ARC.md",
+      "published_sha256": "1c6389ca1d16472451b118f5b0c220589d52f9006416f1f6faf4854af63df262",
+      "bytes": 8926,
+      "preserved_exact_in_worktree": true
+    },
+    {
+      "status": "A",
+      "path": "research/nine/ALL_UNITS_CENTER_RADIUS_FOUR_FIFTHS_CENTERED_THIRTY_SIX_DEGREE_ARC.md",
+      "published_sha256": "cd72561bd5221a47c8c47aa34d5913b988e83d895725d64529a3428181967ffc",
+      "bytes": 8915,
+      "preserved_exact_in_worktree": true
+    },
+    {
+      "status": "M",
+      "path": "research/nine/CYCLIC_CELL_LEDGER.md",
+      "published_sha256": "eb74722d7cf0cc4b3e5671335af88e5c52a841ad4e94476d988a26ba33330a19",
+      "bytes": 252974,
+      "preserved_exact_in_worktree": true
+    },
+    {
+      "status": "M",
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "published_sha256": "cda2ddc90c9327b3c741175ee451475b95db3e346ea412674464c4c97de15e4c",
+      "bytes": 980842,
+      "preserved_exact_in_worktree": true
+    },
+    {
+      "status": "A",
+      "path": "research/nine/EXACT_OBSTRUCTION_TO_SEPARATE_SHORT_CIRCLE_MERGED_INTERVAL_BOUND.md",
+      "published_sha256": "670ea0d965c62e869e40cf9e94b3154ee1f85ececa47748476f31f0ab7b5949c",
+      "bytes": 5487,
+      "preserved_exact_in_worktree": true
+    },
+    {
+      "status": "A",
+      "path": "research/nine/FORCE_FREE_BOUNDARY_SIDE_CHANNEL_CENTER_HEIGHT_AND_PORT_MARGIN.md",
+      "published_sha256": "1a40004509d14eaa228ab52a4eb3280ed0f96df60e3891666f380124b5cacf9c",
+      "bytes": 16323,
+      "preserved_exact_in_worktree": true
+    },
+    {
+      "status": "A",
+      "path": "research/nine/FORCE_FREE_BOUNDARY_SIDE_CHANNEL_OUTER_POCKET_CAPACITY_ONE.md",
+      "published_sha256": "418229089de594515bbb60da5bdcdb4cd044bd4e9396aacfa47d27de96194055",
+      "bytes": 25977,
+      "preserved_exact_in_worktree": true
+    },
+    {
+      "status": "A",
+      "path": "research/nine/FORCE_FREE_BOUNDARY_SIDE_CHANNEL_TENTH_HEIGHT_AND_SHORT_CIRCLE_ANGLE.md",
+      "published_sha256": "6cb29db695cb1e351c50aaedb5253825da24b7e280500147e7adcc88c2dd32be",
+      "bytes": 16076,
+      "preserved_exact_in_worktree": true
+    },
+    {
+      "status": "A",
+      "path": "research/nine/FORCE_FREE_OCCUPIED_SIDE_CHANNEL_ONE_EIGHTH_PROXIMITY.md",
+      "published_sha256": "633b6b4a790187ba46d9b89001a3abf816ddb78e91fbed432ea81283c208620e",
+      "bytes": 12636,
+      "preserved_exact_in_worktree": true
+    },
+    {
+      "status": "A",
+      "path": "research/nine/FORCE_FREE_OCCUPIED_SIDE_CHANNEL_ONE_FORTIETH_PROXIMITY.md",
+      "published_sha256": "5e8f69ad14c78b6ad99a1ba46855fc3627df5ccc1d5451f295826d2b06709abb",
+      "bytes": 25347,
+      "preserved_exact_in_worktree": true
+    },
+    {
+      "status": "M",
+      "path": "research/nine/HANDOFF_PR11_2026_10_28_CURRENT.md",
+      "published_sha256": "9e5dfb806fb0264b046a75efd3aaade932feb38c4e6c03d468a9addb26b43028",
+      "bytes": 76759,
+      "preserved_exact_in_worktree": false
+    },
+    {
+      "status": "A",
+      "path": "research/nine/HIGH_COORDINATE_TILTED_S_ROOT_ALL_BOUNDARY_NEIGHBORS_ONE_SIDE.md",
+      "published_sha256": "96b83e1c002cf7b2535be832e9187b7220597b57b764820305d19705690c72f9",
+      "bytes": 20217,
+      "preserved_exact_in_worktree": true
+    },
+    {
+      "status": "A",
+      "path": "research/nine/REVIEW_ADAPTIVE_POCKET_SMALL_HUB_CENTER_PENTAGON_2026_10_28.md",
+      "published_sha256": "796f5ed7a0c69d0257dd9ef5f4012669adc97b42687aa6bbdf53d97304ba4369",
+      "bytes": 11532,
+      "preserved_exact_in_worktree": true
+    },
+    {
+      "status": "A",
+      "path": "research/nine/REVIEW_ADAPTIVE_POCKET_SMALL_HUB_DISTANCE_PENTAGON_2026_10_28.md",
+      "published_sha256": "095a33f972cf4c5a1b578a631b7fa1f5b6f3aa6ac9a70dd4726912e750d07c11",
+      "bytes": 10671,
+      "preserved_exact_in_worktree": true
+    },
+    {
+      "status": "A",
+      "path": "research/nine/REVIEW_CENTERED_RATIONAL_SINE_ARC_CYCLES_2026_10_28.md",
+      "published_sha256": "e1efb4d3ada9fd738e8f4db13875f35d63282867ecf6ffdc10f6526384d89617",
+      "bytes": 9761,
+      "preserved_exact_in_worktree": true
+    },
+    {
+      "status": "A",
+      "path": "research/nine/REVIEW_CENTERED_THIRTY_SIX_DEGREE_FOUR_FIFTHS_PENTAGON_2026_10_28.md",
+      "published_sha256": "fe4276dd9a441cbfdb00e62a042dda716fb9b4e35fa9cf54246bccc32805b243",
+      "bytes": 9411,
+      "preserved_exact_in_worktree": true
+    },
+    {
+      "status": "A",
+      "path": "research/nine/REVIEW_FORCE_FREE_BOUNDARY_SIDE_CHANNEL_CAPACITY_PENTAGON_2026_10_28.md",
+      "published_sha256": "b03120174dad7f893b711c4e127fc9cb38614eff6bb931814ff93d0735101a34",
+      "bytes": 21682,
+      "preserved_exact_in_worktree": true
+    },
+    {
+      "status": "A",
+      "path": "research/nine/REVIEW_FORCE_FREE_BOUNDARY_SIDE_CHANNEL_PORTS_PENTAGON_2026_10_28.md",
+      "published_sha256": "29d24ea50aad0d880ff5558862ef9ede551c3fd703478c66c65fdff1e844f6e1",
+      "bytes": 14029,
+      "preserved_exact_in_worktree": true
+    },
+    {
+      "status": "A",
+      "path": "research/nine/REVIEW_FORCE_FREE_CHANNEL_TENTH_HEIGHT_SHORT_CIRCLE_PENTAGON_2026_10_28.md",
+      "published_sha256": "03f73c2439f3cac3aee1931a58046fdc6ed6322eb30ac93cd004e97b5b4bb4c8",
+      "bytes": 15475,
+      "preserved_exact_in_worktree": true
+    },
+    {
+      "status": "A",
+      "path": "research/nine/REVIEW_FORCE_FREE_OCCUPIED_SIDE_CHANNEL_PROXIMITY_PENTAGON_2026_10_28.md",
+      "published_sha256": "f02c3fc24626af425cf44b4c34158b7ada5bdc3271f5e3cfd05c2989c925dbb1",
+      "bytes": 11830,
+      "preserved_exact_in_worktree": true
+    },
+    {
+      "status": "A",
+      "path": "research/nine/REVIEW_FORCE_FREE_ONE_FORTIETH_CHANNEL_PROXIMITY_ROOT_2026_10_28.md",
+      "published_sha256": "2a099d9115acd5e01acb3fb929b9e80c31257c5b942591c21407d94cb6477ade",
+      "bytes": 18720,
+      "preserved_exact_in_worktree": true
+    },
+    {
+      "status": "A",
+      "path": "research/nine/REVIEW_HIGH_COORDINATE_TILTED_S_ROOT_ONE_SIDE_PENTAGON_2026_10_28.md",
+      "published_sha256": "c35e0e84911e3c2915e59f40d0e5e5f658251ac80bf75c8de72df0653c1a2292",
+      "bytes": 16819,
+      "preserved_exact_in_worktree": true
+    },
+    {
+      "status": "A",
+      "path": "research/nine/REVIEW_TILTED_HOUSE_TCB_INNER_FAN_FULL_ASSEMBLY_ROOT_2026_10_28.md",
+      "published_sha256": "53aa9a734afea89c7848297a59d6f2edf86f43d65619fcde097b45453dea60a8",
+      "bytes": 14305,
+      "preserved_exact_in_worktree": true
+    },
+    {
+      "status": "A",
+      "path": "research/nine/TILTED_S_ROOT_HOUSE_TCB_AND_INNER_FAN_COMPLETE_DOMAIN_EXCLUSION.md",
+      "published_sha256": "4550f191a5c3d93eed4ca8516f9ecff4932e53be4019e1cd54d54ca83425a802",
+      "bytes": 20628,
+      "preserved_exact_in_worktree": true
+    },
+    {
+      "status": "A",
+      "path": "research/nine/UNIFORM_CHANNELS_AND_COMPLETE_TILTED_ROOT_DOMAINS_CHECKPOINT_2026_10_28.json",
+      "published_sha256": "0f648bba53ef025e362758f90d8e604cc99e3b6aab6aed52113632886ea33573",
+      "bytes": 263401,
+      "preserved_exact_in_worktree": true
+    }
+  ],
+  "handoff_reconciliation": {
+    "previous_local_sha256": "1dae37726f2e1b5d6ffc2261198940ad2562bb332b5b45ce65e7d9a17adcf65b",
+    "published_sha256": "9e5dfb806fb0264b046a75efd3aaade932feb38c4e6c03d468a9addb26b43028",
+    "merged_sha256": "b5440b1b2f25f92348ba1b07169807439db13bc8888306333fad74a97f3806fd",
+    "entire_previous_local_handoff_preserved_as_exact_suffix": true,
+    "published_addition_preserved_verbatim": true
+  },
+  "scope": "Published mathematical acceptance remains its existing explicit source/review/adoption chain. New local proofs remain separately reviewed and are not claimed remotely published. No Lean/Lake, CI/workflow, old checker replay or PR merge."
+}

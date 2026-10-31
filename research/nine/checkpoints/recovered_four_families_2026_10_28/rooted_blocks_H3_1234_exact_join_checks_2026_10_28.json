@@ -1,0 +1,158 @@
+{
+  "source": "INNER_PENTAGON_THREE_SPOKE_FOUR_LOAD_1234_COMPLETE_EXCLUSION.md",
+  "sha256": "208b73829e2b571b6ffda875fb7fc276de08eb2862fab518af21675848dffabc",
+  "all_16_pins": [
+    {
+      "file": "SIX_BODY_INNER_PENTAGON_LOAD_COVER.md",
+      "sha256": "fa877c9d7d25c57a7c8cf438a429465b5952cb8db6628c57d9d93695b33dd434"
+    },
+    {
+      "file": "INNER_PENTAGON_THREE_SPOKE_FOUR_LOAD_HUB_DOMAIN.md",
+      "sha256": "62887583e18e218aca4cbb23a06a0a73aadb8139035a502a0f9cf63b8a54e4d5"
+    },
+    {
+      "file": "TWO_UNLOADED_HUBS_FREE_ROOF_SHARED_RETURN_EXCLUSION.md",
+      "sha256": "2e24c112fae2df1c6594da0702c9fd777becc0371e76cb6b732d8d5cbd0dd975"
+    },
+    {
+      "file": "INNER_PENTAGON_THREE_SPOKE_EQUAL_ROOF_OUTER_OWNER_EXCLUSION.md",
+      "sha256": "5e003309e6571e35ae9df81b1d57af857ded343e2e2e8cbd06113cbaddec7847"
+    },
+    {
+      "file": "THREE_SPOKE_EQUAL_ROOF_SEPARATION_SCALAR.md",
+      "sha256": "1297f7864dd3d629330f9741d7728fe894a3bf6c1beac4192fd1800da38cdeca"
+    },
+    {
+      "file": "certificates/three_spoke_equal_roof_separation_scalar.py",
+      "sha256": "d3db3cf5278af57cac1dd5ddd66a7af88488a4f74d031857b96bb3f3c40707d2"
+    },
+    {
+      "file": "INNER_PENTAGON_THREE_SPOKE_EQUAL_ROOF_HUB_OWNER_EXCLUSION.md",
+      "sha256": "f97aa1d60b33072b378ab01fb2d1251fb3d1f0ad063fdfc8020fd4710953f5ee"
+    },
+    {
+      "file": "INNER_PENTAGON_THREE_SPOKE_HUB_OWNER_PERPENDICULAR_RETURN_DOMAIN.md",
+      "sha256": "9fa0a94b1ba2825ba4bd0b8909a0d94aa654bd8ba3b0befce4c7276501b0f1c2"
+    },
+    {
+      "file": "THREE_SPOKE_HUB_OWNER_RETURN_SCALAR_BOUNDS.md",
+      "sha256": "dd6ee983deaeac1cf0c02758b2ddb2501a33175fb0281702a18027f869fdbf64"
+    },
+    {
+      "file": "certificates/three_spoke_hub_owner_return_scalar_bounds.py",
+      "sha256": "d073ebfa7d1c27f8c4272a9d3b5c56e20f8de1a1ae310a8d7d790ff5c91acf99"
+    },
+    {
+      "file": "BOUNDARY_CONTACT_ORIGIN_MOMENT_ORIENTATION.md",
+      "sha256": "851417d7fcd12ccb93a6f7f09ba7d7b2bf9bccc61c82fee3457b5ee4cee47e9a"
+    },
+    {
+      "file": "REVIEW_THREE_SPOKE_HUB_DOMAIN_AND_EQUAL_ROOF_ROOTED_BLOCKS_2026_10_28.md",
+      "sha256": "ec64bcade77e3ca3c05762df8f56f4a0176a9f349372b774017b12036410b190"
+    },
+    {
+      "file": "REVIEW_TWO_UNLOADED_HUBS_FREE_ROOF_SHARED_RETURN_HEXAGON_2026_10_28.md",
+      "sha256": "472d1d56f63bfe2464587bb3ff9f62b3f66731a3f001597ec55e14eb9c4c14a6"
+    },
+    {
+      "file": "REVIEW_TWO_UNLOADED_HUBS_FREE_ROOF_SHARED_RETURN_TRIANGLE_BRIDGES_2026_10_28.md",
+      "sha256": "6a40bfa8ab82a9d323b658308c452a24c6e4196a2e16ed72ec2dbf28643dad3e"
+    },
+    {
+      "file": "REVIEW_THREE_SPOKE_HUB_OWNER_RETURN_SCALAR_HEXAGON_2026_10_28.md",
+      "sha256": "a1dc72a8f51e4902a736ce1477312d00580d5585fbe1aa216b9a6e07501dacd4"
+    },
+    {
+      "file": "REVIEW_THREE_SPOKE_HUB_OWNER_RETURN_DOMAIN_AND_SCALAR_ROOT_2026_10_28.md",
+      "sha256": "4afbf65098e6750573fd8714db6ca945a3be6c03c6cc40a6e6dec79a862e0fd9"
+    }
+  ],
+  "owner_rows": {
+    "outer": {
+      "map": {
+        "A": "0",
+        "D": "H",
+        "T": "1",
+        "U": "2",
+        "B": "4",
+        "C": "3"
+      },
+      "local_edges": [
+        "AB",
+        "AD",
+        "AT",
+        "BC",
+        "CD",
+        "CU",
+        "DT",
+        "TU"
+      ],
+      "degrees": {
+        "A": 3,
+        "D": 3,
+        "T": 3,
+        "U": 2,
+        "B": 2,
+        "C": 3
+      },
+      "loaded": {
+        "A": false,
+        "D": false,
+        "T": true,
+        "U": true,
+        "B": true,
+        "C": true
+      }
+    },
+    "hub": {
+      "map": {
+        "A": "H",
+        "D": "0",
+        "T": "1",
+        "U": "2",
+        "B": "3",
+        "C": "4"
+      },
+      "local_edges": [
+        "AB",
+        "AD",
+        "AT",
+        "BC",
+        "BU",
+        "CD",
+        "DT",
+        "TU"
+      ],
+      "degrees": {
+        "A": 3,
+        "D": 3,
+        "T": 3,
+        "U": 2,
+        "B": 3,
+        "C": 2
+      },
+      "loaded": {
+        "A": false,
+        "D": false,
+        "T": true,
+        "U": true,
+        "B": true,
+        "C": true
+      }
+    }
+  },
+  "reflection": {
+    "H": "H",
+    "0": "1",
+    "1": "0",
+    "2": "4",
+    "3": "3",
+    "4": "2"
+  },
+  "reflected_loads": [
+    "0",
+    "2",
+    "3",
+    "4"
+  ]
+}

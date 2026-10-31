@@ -1,0 +1,163 @@
+{
+  "date_utc": "2026-10-28",
+  "author_agent": "diamond",
+  "record_type": "Exact direct proof dependency and original-domain record; independent acceptance is recorded separately.",
+  "source": {
+    "path": "/workspace/scratch/7d553350ce2a/diamond/D_LEAF_TWO_BOUNDARY_THETA_PAGES_COMPLETE_EXCLUSION.md",
+    "sha256": "a6f96f0ac277af8f978e03e7f1e7208f073958165addb113a8dab19183e5136d"
+  },
+  "radius_window": "79/40 <= R <= sqrt(1105)/16, both endpoints included",
+  "original_square_count": 9,
+  "root_true_degree": 4,
+  "root_complete_positive_neighbor_list": [
+    "L",
+    "K",
+    "A",
+    "B"
+  ],
+  "required_other_positive_edges": [
+    "KA",
+    "KB"
+  ],
+  "physical_boundary_units": [
+    "L (genuine D leaf)",
+    "A",
+    "B"
+  ],
+  "preserved_domains": [
+    "all physical units including all completion squares",
+    "all original positive forces and true degrees",
+    "all original separating normals",
+    "all actual applications and shared-side means including endpoints",
+    "all physical circle masks and individual zero weights",
+    "all weak or coincident applications",
+    "all original root sliders and both radius endpoints"
+  ],
+  "new_proof_steps": [
+    {
+      "section": 2,
+      "claim": "Physical theta core exterior cycle is HAKBH because both pages have protected exterior access; actual leaf lies outside, forcing HK between the pages after cutting at HL. Distinct ports retain boundary order; coincident page ports are one consecutive strand block."
+    },
+    {
+      "section": "4.1",
+      "claim": "If shallow a<=1/4 and HK is horizontal, all three original nonleaf normals are West; both page means have y<-1/4; complete root torque forces actual HK mean y>0."
+    },
+    {
+      "section": "4.2",
+      "claim": "If shallow a<=1/4 and HK is upward, complete triangle normal cover forces strict Northwest HK and West/Southwest pages; actual HK point y=a>0, both actual page points y<-1/4."
+    },
+    {
+      "section": "4.3",
+      "claim": "Each whole shallow alternative contradicts the physical theta order; reflection also excludes b<=1/4."
+    },
+    {
+      "section": 5,
+      "claim": "All four H own margins exceed 1/4, so all eight other actual units are compactly disjoint from the closed quarter disk. Nearest-point separation supplies the exact accepted cap premise; the eight sets int(T) intersect radius5/4 are disjoint open arcs, each >pi/4."
+    }
+  ],
+  "rational_cross_checks": {
+    "west_page_squared_height_reserve": "3/80",
+    "southwest_page_height_reserve": "1/2",
+    "root_left_margin_reserve": "1/12",
+    "root_right_margin_reserve": "3/10",
+    "eight_arc_threshold_in_pi_units": "2"
+  },
+  "literal_caller": {
+    "fine_id": "M6.B5L.FAN.INNER.L134.D",
+    "mapping": {
+      "H": "2",
+      "K": "fan hub J",
+      "A": "1",
+      "B": "3",
+      "L": "actual D leaf at2"
+    },
+    "original_block_edges": [
+      "12",
+      "23",
+      "34",
+      "J1",
+      "J2",
+      "J3",
+      "J4"
+    ],
+    "additional_original_leaf_edge": "2L",
+    "true_component_degrees": {
+      "2": 4,
+      "J": 4,
+      "1": 2,
+      "3": 3,
+      "4": 2,
+      "L": 1
+    },
+    "positive_block_circle_load_set": [
+      "1",
+      "3",
+      "4"
+    ],
+    "arbitrary_completion_square_count": 3,
+    "prospective_fine_delta_after_root_and_independent_acceptance": 1,
+    "coarse_delta": 0,
+    "no_new_ids_or_repartition": true
+  },
+  "direct_operative_dependencies": [
+    {
+      "name": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "path": "/workspace/scratch/7d553350ce2a/baseline/research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "operative_scope": "Original genuine D chart, physical root clearance, actual radial leaf, zero leaf origin moment."
+    },
+    {
+      "name": "D_LEAF_SHALLOW_SIDE_BOUNDARY_FULL_WINDOW_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/diamond/D_LEAF_SHALLOW_SIDE_BOUNDARY_FULL_WINDOW_EXCLUSION.md",
+      "sha256": "ca7c3f4b32e45fc0c118bd766f438fce3019b0b44220604e33bc842a504ac670",
+      "operative_scope": "Entire full-window shallow physical boundary-page theorem and strict root margins."
+    },
+    {
+      "name": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "path": "/workspace/scratch/7d553350ce2a/baseline/research/nine/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "operative_scope": "Degree-free owned-axis triangle implication with original normals and means."
+    },
+    {
+      "name": "END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+      "path": "/workspace/scratch/7d553350ce2a/baseline/research/nine/END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+      "sha256": "20a845eff8bee3e9c533162df0b32ea96f9dd104a3cfec41efb3b0cf92d6e9cf",
+      "operative_scope": "Only Section 2 physical opposite-vertex obstruction; no loaded-tip force or resultant theorem."
+    },
+    {
+      "name": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "path": "/workspace/scratch/7d553350ce2a/baseline/research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "operative_scope": "Actual selected plane embedding, retained port order, protected physical boundary access."
+    },
+    {
+      "name": "GENERAL_SIDE_CHANNEL_CAP_INNER_ARC.md",
+      "path": "/workspace/scratch/7d553350ce2a/baseline/research/nine/GENERAL_SIDE_CHANNEL_CAP_INNER_ARC.md",
+      "sha256": "f76d76ef2feccc80098fb6d10d6316af4e393d3ae34d4953846dd27b80c137cb",
+      "operative_scope": "Only Section 1: actual int(T) intersection with radius 5/4 is one open arc with angular length >pi/4, for a unit in a cap of height >1/4."
+    },
+    {
+      "name": "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "path": "/workspace/scratch/7d553350ce2a/baseline/research/nine/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "operative_scope": "Original inner-fan graph, load set and true degrees."
+    }
+  ],
+  "explicitly_not_used": [
+    "common-neighbor quarter-disk theorem",
+    "moment-cycle theorem",
+    "unloaded-star theorem",
+    "radius-two or analytic measure lower bound",
+    "force equation at K or either page",
+    "degree-two equation at loaded3",
+    "new root or page normal selection"
+  ],
+  "actions_not_performed": [
+    "Lean compilation",
+    "CI",
+    "numeric pose search",
+    "shared-ledger change",
+    "commit",
+    "push"
+  ]
+}

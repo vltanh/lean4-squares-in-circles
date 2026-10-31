@@ -1,0 +1,31 @@
+{
+  "status": "complete proposed uniform theorem frozen for full root and independent review; zero fine/coarse delta",
+  "source": "/workspace/scratch/7d553350ce2a/two_blocks/NEAR_ORIGIN_BOUNDARY_ACCESS_TRANSFERS_TO_EVERY_CYCLIC_BLOCK.md",
+  "source_sha256": "49065116bfd526abf3826ae8bbaa6fd9ad43b7bcdbdc0e0653b959fa84359549",
+  "operative_dependencies": [
+    {
+      "filename": "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49"
+    },
+    {
+      "filename": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe"
+    },
+    {
+      "filename": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676"
+    }
+  ],
+  "endpoints_explicitly_covered": [
+    "epsilon=0",
+    "p on boundary of E",
+    "p on boundary of closed D_epsilon",
+    "side-mean endpoints",
+    "arbitrary Q vertex positive degree",
+    "outside path of arbitrary length"
+  ],
+  "scope": "Any outside actual unit E meeting D_epsilon with an original positive outside-Q path to a physical boundary unit forces some actual Q unit to meet D_epsilon. Every cyclic block avoiding any genuine leaf root therefore has an actual circle-clear near unit."
+}

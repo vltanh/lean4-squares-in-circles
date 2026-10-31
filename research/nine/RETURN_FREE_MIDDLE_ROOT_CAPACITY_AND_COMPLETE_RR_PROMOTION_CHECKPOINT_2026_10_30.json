@@ -1,0 +1,188 @@
+{
+  "input_commit": "6979ecf3cdddf45a8a47d42b1fa484f73c1a5b2c",
+  "scope": "Complete return-free genuine B3 middle-root capacity and entire original connected-private partition3 exclusion; full RR promotion, simultaneous caps, combined boundary budgets and original U/T near-unit transfer. Unrestricted n=9 remains open.",
+  "adoption": {
+    "file": "ADOPTION_RETURN_FREE_MIDDLE_ROOT_CAPACITY_AND_COMPLETE_RR_PROMOTION_2026_10_30.md",
+    "sha256": "0be59f192a4dbfbbbcf6cfc0b0903bd3388cf529873434ef23bc773d83417597"
+  },
+  "composition_review": {
+    "file": "REVIEW_ADOPTION_RETURN_FREE_MIDDLE_ROOT_AND_RR_PROMOTION_COMPOSITION_COMMON_CERTIFICATE_2026_10_30.md",
+    "sha256": "7995852631227c17746bc54c10de69e5f5221ee4e664b705c14617ed87d2e9f8"
+  },
+  "fine_inventory": {
+    "total": 2513,
+    "checked": 2373,
+    "open": 140,
+    "before_ordered_id_flag_sha256": "8b1b9a1cc43a90d4839ea477f0e8017aeb4f3df321c79a0fe1d949f4062fb3f8",
+    "after_ordered_id_flag_sha256": "8b1b9a1cc43a90d4839ea477f0e8017aeb4f3df321c79a0fe1d949f4062fb3f8",
+    "exact_ordered_list_equal": true
+  },
+  "coarse_inventory": {
+    "total": 58,
+    "closed": 37,
+    "open": 21,
+    "before_ordered_id_flag_sha256": "7aa5b1932f4650075f69ca101d692fdd8d812dead9eb99a3bf5d6ac4967d27ff",
+    "after_ordered_id_flag_sha256": "7aa5b1932f4650075f69ca101d692fdd8d812dead9eb99a3bf5d6ac4967d27ff",
+    "exact_ordered_list_equal": true
+  },
+  "original_flags_changed": 0,
+  "new_original_coarse_cells_closed": [],
+  "complete_return_free_genuine_middle_root_B3_exclusion_arbitrary_outer_degrees": true,
+  "entire_original_connected_private_partition3_excluded": true,
+  "historical_private_triangle_T1_T2_remainders_superseded": true,
+  "C1_6_b3_remaining_families": [
+    "Disconnected Type I, Q physically clear and P positively loaded, optional AB and BC retained",
+    "Disconnected Type II, Q physically clear and P/N positively loaded, AB absent and BC optional"
+  ],
+  "complete_RR_promotion_with_all_nine_actual_units_retained": true,
+  "multiple_RR_caps_by_strict_interior_stages_and_simultaneous_limit": true,
+  "pocket_dilation_precedes_RR_promotion": true,
+  "all_physical_boundary_core_plus_RR_plus_occupied_pocket_count_at_most_seven": true,
+  "positive_core_loads_plus_RR_plus_all_exterior_extras_at_most_seven": true,
+  "one_unpromoted_transmitter_full_caller_original_U_T_strict_nearness": true,
+  "canonical_secondary_minimum_transferred": false,
+  "mathematical_sources": 5,
+  "separate_full_source_reviews": 5,
+  "direct_source_table_pins_checked": 38,
+  "review_input_table_pins_checked": 38,
+  "fixed_exact_rational_checks": {
+    "omega_cosine_taylor_reserve": "724021030871/2149908480000000",
+    "phi_cosine_taylor_reserve": "2288951/5120000000",
+    "omega_pi8_squared_reserve": "2429/72900",
+    "parallel_beta_coefficient": "6419/71874",
+    "parallel_west_south_flank": "19/945",
+    "parallel_south_east_gap": "349/420",
+    "parallel_cstar_endpoint": "81879/121000000",
+    "parallel_arcsine_exact_reserve": "111359430166172203/640000000000000000000",
+    "parallel_top_gap_bound": "2407/2100",
+    "parallel_top_gap_critical_reserve": "1/630",
+    "nonparallel_beta_coefficient": "22/485",
+    "nonparallel_west_eta_squared_reserve": "1789/202500",
+    "nonparallel_south_eta_squared_reserve": "1021/72900",
+    "nonparallel_south_east_reserve": "61/6300",
+    "nonparallel_beta_a_triple_sine_reserve": "251/2916"
+  },
+  "verification_scope": "Full mathematical source reviews and a separate composition review; executable checks only for byte identity, original ordered flags, links and fixed printed rational identities. No pose/angle/packing search.",
+  "new_markdown_display_delimiters_balanced": true,
+  "relative_markdown_links_exist": true,
+  "lean_or_lake_invoked": false,
+  "ci_dispatched": false,
+  "numerical_pose_or_angle_search_used": false,
+  "new_computational_packing_certificate_used": false,
+  "global_theorem_closed": false,
+  "equality_classification_closed": false,
+  "files_excluding_this_checkpoint": [
+    {
+      "path": "research/nine/ADOPTION_RETURN_FREE_MIDDLE_ROOT_CAPACITY_AND_COMPLETE_RR_PROMOTION_2026_10_30.md",
+      "bytes": 17699,
+      "sha256": "0be59f192a4dbfbbbcf6cfc0b0903bd3388cf529873434ef23bc773d83417597",
+      "git_blob_sha": "f383c35adce6eb2332af0be9620beb527d8f845d",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/ARBITRARY_DEGREE_GENUINE_ROOT_CHAIN_PARALLEL_EXCLUSION_AND_COMPLETE_BOUNDARY_RETURN_JOIN_2026_10_30.md",
+      "bytes": 20012,
+      "sha256": "35ff65645031b720bd937611d704eb6dc3e7095d949a4314085205bd8ebaae74",
+      "git_blob_sha": "d3537ea631f92b5505a8b9e5f6d63d85de4a58f8",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/BOUNDARY_ACCESSES_EXCLUDE_DOUBLE_TERMINAL_PRIVATE_TRIANGLES_AND_FORCE_TWO_RESIDUAL_GRAPHS_2026_10_30.md",
+      "bytes": 14466,
+      "sha256": "2eb2a1272f5c3df0e5518806b921ac2197b9a9286796a65f981dd27c15151a02",
+      "git_blob_sha": "0baad18bd51c5a8b758d3ce10ea37b42df98ec0b",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/CYCLIC_CELL_LEDGER.md",
+      "bytes": 373231,
+      "sha256": "1d6d51b004e39cee8ba542b098803080b8478a12ebb692984b743a5e5d5d6e99",
+      "git_blob_sha": "54530923a6679f4e478d4a5a627a9b29510f19bd",
+      "base_blob_sha": "2131438682f83b763a10042af32eea3cd9a5f988"
+    },
+    {
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "bytes": 1117494,
+      "sha256": "065e673491214e66e13856a53a2d9b6ef6c137f06ceab4af64768ac893ca0cb7",
+      "git_blob_sha": "77cf80fd377d7f6a400a15a00fe22e9b66d4b355",
+      "base_blob_sha": "c0eb05419ecab9028285f95a08572aa4080706a2"
+    },
+    {
+      "path": "research/nine/EVERY_RR_SIDE_TRANSMITTER_CAN_REACH_THE_CIRCLE_WITH_ALL_COMPLETIONS_RETAINED_2026_10_30.md",
+      "bytes": 21709,
+      "sha256": "277fef16dfdd902db0206162ca89edf8c925bdffc871f80ff0dba56054b9b87f",
+      "git_blob_sha": "4e28824f4b80691b3c738f94ef45fb5681d7a916",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/GENUINE_MIDDLE_ROOT_SMALL_VERTEX_CAPS_AND_ARBITRARY_DEGREE_NONPARALLEL_BOUNDARY_RETURN_EXCLUSION_2026_10_30.md",
+      "bytes": 20274,
+      "sha256": "aa80a686357dfad5a28e88206016108554d451dc2f2ab6ec27de9ca94775d6bf",
+      "git_blob_sha": "e0328c18767247aa97e0add487b2f02cd58d6f59",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/GENUINE_TRUE_THREE_MIDDLE_ROOT_FULL_NINE_UNIT_CAPACITY_EXCLUSION_AND_CONNECTED_PRIVATE_JOIN_2026_10_30.md",
+      "bytes": 28022,
+      "sha256": "3a88c6efecd0c71ba043d32969862e98b0efea335e5dc399b113b2a6ccaad0b8",
+      "git_blob_sha": "02e0b3c9ac1ba3a63495cf58eb72d26e4e32c85a",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/HANDOFF_PR11_2026_10_30_PUSH_CURRENT.md",
+      "bytes": 26236,
+      "sha256": "427881c39febae7e287a54d531d67d070d2c4db8cd86ba97f830e7fc46d65fef",
+      "git_blob_sha": "6c26298c81506235c8a52a01735db56f476b84e5",
+      "base_blob_sha": "ba7b0fba05ba5e801f1d1d5124aedbf2fa06664f"
+    },
+    {
+      "path": "research/nine/PROGRESS.md",
+      "bytes": 5985,
+      "sha256": "0c826231cb6b4ce9d2a2b9294cca37ed89ccbe81502720c5a3bf9bff3d5023b1",
+      "git_blob_sha": "b614433e1b1857f29955f26ff80dace2d7041b81",
+      "base_blob_sha": "0164f4ef7c1f1724444b6a68e4b059f7692af26b"
+    },
+    {
+      "path": "research/nine/REVIEW_ADOPTION_RETURN_FREE_MIDDLE_ROOT_AND_RR_PROMOTION_COMPOSITION_COMMON_CERTIFICATE_2026_10_30.md",
+      "bytes": 15928,
+      "sha256": "7995852631227c17746bc54c10de69e5f5221ee4e664b705c14617ed87d2e9f8",
+      "git_blob_sha": "480c55ee05eda8b17232a04638a585e06542ffa4",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/REVIEW_ARBITRARY_DEGREE_PARALLEL_ROOT_CHAIN_AND_COMPLETE_RETURN_JOIN_JOINT_POCKETS_2026_10_30.md",
+      "bytes": 19213,
+      "sha256": "63094bf4d19626637fe07fa92c220f8e684b487cff5a7dcfb025b2c4218d3fd8",
+      "git_blob_sha": "6cbceaf04ed9bac9d6ee6f8b4b85295a759eb16e",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/REVIEW_BOUNDARY_ACCESSES_AND_TWO_PRIVATE_TRIANGLE_REMAINDERS_COMMON_CERTIFICATE_2026_10_30.md",
+      "bytes": 12235,
+      "sha256": "ed9c19e9f4c3e8453ccdc25915b77f045faa204c3e77a3781241d2d0c56f09ef",
+      "git_blob_sha": "d830e9843403d1525039e98a5d0bcdcc3ad17adf",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/REVIEW_COMPLETE_RR_PROMOTION_AND_ONE_UNPROMOTED_TRANSMITTER_JOINT_POCKETS_2026_10_30.md",
+      "bytes": 19939,
+      "sha256": "1ffb5ebd8d2d20377fa211eb2f1b9efb25c18b089f0d6082a544564330b571fb",
+      "git_blob_sha": "7de0d002933c2b5cddf871a986c42bec9fc80c65",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/REVIEW_GENUINE_MIDDLE_ROOT_SMALL_CAPS_AND_NONPARALLEL_RETURNS_COMMON_CERTIFICATE_2026_10_30.md",
+      "bytes": 16439,
+      "sha256": "8dd25efbb845045ddd0014be7d29508ce054c3d00e7ceaf7555bb3609568d623",
+      "git_blob_sha": "61605086af7785de5a3d70b7b3be11701c641d4a",
+      "base_blob_sha": null
+    },
+    {
+      "path": "research/nine/REVIEW_RETURN_FREE_GENUINE_MIDDLE_ROOT_CAPACITY_AND_COMPLETE_PARTITION3_JOINT_POCKETS_2026_10_30.md",
+      "bytes": 23634,
+      "sha256": "bd041b907c17224504ef256e0be8a9d1716418b7a0e67740869a6f2ddc8504e9",
+      "git_blob_sha": "81abce1f6bc723efe6ad07f6519e7581d28813b0",
+      "base_blob_sha": null
+    }
+  ]
+}

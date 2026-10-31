@@ -1,0 +1,230 @@
+{
+  "base_head": "d579c05a9ba866b568295adef81e3ad7638f003c",
+  "source_and_review_pins": [
+    {
+      "path": "research/nine/GENERAL_TWO_S_ROOTS_ONE_WALL_FEATURE_KERNEL.md",
+      "sha256": "9002623e4e3c5212964e0067e6166dbaaa9d96483d907cda1126f4181769d3b4",
+      "git_blob_sha": "1f0e0d8e10b34567a5f3e37547a92514162fd308",
+      "size": 14743
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_GENUINE_LEAF_C4_COMPLETE_JOIN_MIXED_GLOBAL_2026_10_27.md",
+      "sha256": "7fb313ad491ad6755baae630fa5315c738161490b87054a006c847cc42478c02",
+      "git_blob_sha": "314e837134f15cb13ca077a63d773b65b7316f42",
+      "size": 6441
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_GENUINE_LEAF_C4_PARALLEL_MIDDLE_MIXED_GLOBAL_2026_10_27.md",
+      "sha256": "388453ec91a6574423f8f430cdeaa8739af264bcf42eda1a3119bb7c4b6e529b",
+      "git_blob_sha": "b78e9a159e374205f12d619aad7c7ee126319c69",
+      "size": 11802
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_LEAF_C4_COMPLETE_ORIGINAL_JOIN_ROOT_2026_10_27.md",
+      "sha256": "04c39a3357a22bf73e831537c573137af8927e504be8638f43672667f3d9bab0",
+      "git_blob_sha": "573cf162d3b8f36574b4cc1f9883f086bc0fd77a",
+      "size": 4852
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_LEAF_C4_COMPLETE_ORIGINAL_JOIN_SIX_BODY_2026_10_27.md",
+      "sha256": "eef00e5591ed791b44ac1c8f88fc4e64528fc4a030f40a83f464b7a408d3b7e8",
+      "git_blob_sha": "1b4ef262c557018551e9a09949db0e2a9e4f1ef0",
+      "size": 7685
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_LEAF_C4_PARALLEL_ROOT_2026_10_27.md",
+      "sha256": "558f1404eda297ffcf92b0619b8e849bd34d3a4da94834d344dc7d2ef357a25b",
+      "git_blob_sha": "cb2fe973da13b3ac97c534e6c3eaffd8767d6e93",
+      "size": 9326
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_LEAF_DIAMOND_NONPARALLEL_FULL_LEAF_PAIR_2026_10_27.md",
+      "sha256": "ad34806c86cfb61b93dd23c9df2b783ce2cdf3f0de0a2243589a363671dda4a8",
+      "git_blob_sha": "0656696391d00cfa5992583dc59b11e759d3acfa",
+      "size": 10578
+    },
+    {
+      "path": "research/nine/REVIEW_THREE_LEAF_DIAMOND_NONPARALLEL_ROOT_2026_10_27.md",
+      "sha256": "5b4593dfeb9c926238262e1784703ea4a7fe0457520780699b0400eacda8c4bd",
+      "git_blob_sha": "4c60f541755ce2318b4348368b73167894d19d44",
+      "size": 9017
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_DECORATED_FOUR_SAME_WALL_DIAMOND_FULL_SIX_BODY_2026_10_27.md",
+      "sha256": "9b79f55bf763c2a62714e15b019e908dd61a829f4c40b1b192aae57e798b26c9",
+      "git_blob_sha": "622dd6a5959ad754719bc339993afcfac4bfef5b",
+      "size": 13913
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_DECORATED_FOUR_SAME_WALL_DIAMOND_ROOT_2026_10_27.md",
+      "sha256": "4e908f9d057dbd31028597f1232a5c88a4ad86654dd3e45540e3a6aecfe255b2",
+      "git_blob_sha": "e8f9539ea4565066b6569bc350cdb28ab1a40bb0",
+      "size": 9337
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_S_ROOTS_ONE_WALL_FEATURE_KERNEL_ROOT_2026_10_27.md",
+      "sha256": "4e408ef2dd6877ddc791eccef895b58feafeedfc1f277d914539b2d24d584449",
+      "git_blob_sha": "2f13e48ad2b5fbb9324a0e4f5be2db91f575204b",
+      "size": 7023
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_S_ROOTS_ONE_WALL_KERNEL_FULL_SIX_BODY_2026_10_27.md",
+      "sha256": "d66ee7f2458ce9a7eb0f349ad7e3e846f44b88410f4906991ac7163dbd3a14f6",
+      "git_blob_sha": "7cb7097baf46bada902a6e3a84780bc75913ed6e",
+      "size": 9762
+    },
+    {
+      "path": "research/nine/ROOTED_TWO_DECORATED_FOUR_SAME_WALL_DIAMOND_EXCLUSION.md",
+      "sha256": "acbec7a762cc431e16cf45313e9912ee42af7018f1f7dd817daac487083d2bba",
+      "git_blob_sha": "148e031fe7eaba6a1deb882c29783cc38c74e301",
+      "size": 17177
+    },
+    {
+      "path": "research/nine/THREE_GENUINE_LEAF_C4_PARALLEL_MIDDLE_EXCLUSION.md",
+      "sha256": "9f34a57936827ee27235ea209131787cc610d027e6a6fbe8311a725029685f35",
+      "git_blob_sha": "a8f63fe4a87be571823ad7f3a32d8dcf2e7b530c",
+      "size": 20992
+    },
+    {
+      "path": "research/nine/THREE_GENUINE_LEAF_DIAMOND_NONPARALLEL_TIP_EXCLUSION.md",
+      "sha256": "38e455c9f60af4f7842af03e4f2656857dd776bae193dd3c79d2f9e5c259dce6",
+      "git_blob_sha": "8a5d3d4f0d62f068490f5302347116580e390811",
+      "size": 17480
+    },
+    {
+      "path": "research/nine/THREE_GENUINE_LEAVES_AT_DISTINCT_C4_VERTICES_COMPLETE_EXCLUSION.md",
+      "sha256": "362bce40e19f651299f8001da0bef639c96975b5ec05fc8253850c9634e332c2",
+      "git_blob_sha": "f91f70afc4abfc874eb898deca243d13904c2770",
+      "size": 9898
+    }
+  ],
+  "exact_published_dependencies": [
+    {
+      "path": "research/nine/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "git_blob_sha": "75b6682802b9aebdb29ce0b3b9f8d89d3ebf8d67",
+      "remote_match": true
+    },
+    {
+      "path": "research/nine/ROOTED_GENUINE_FOUR_BLOCK_LEAF_BOUNDARY_CONTINUATION_EXCLUSION.md",
+      "sha256": "2eadea361baf2f4d10091428bfdd223691fba9c1b8fe7ca89aa5fa226808dd24",
+      "git_blob_sha": "4345be970696576fa447392c098f0ad6be23b956",
+      "remote_match": true
+    },
+    {
+      "path": "research/nine/GENERAL_GENUINE_FOUR_BLOCK_DECORATED_HUB_DIAMOND_COMPLETE_EXCLUSION.md",
+      "sha256": "45dcd1b830306b0ab32429e91b8aaeda5561d2ea3c05ef102ef4b5ce1ecab99f",
+      "git_blob_sha": "583f88227a7fd496a901a5af437af164d19abcee",
+      "remote_match": true
+    },
+    {
+      "path": "research/nine/GENERAL_TWO_NEAR_UNITS_AT_ONE_ORIGIN_CORNER.md",
+      "sha256": "682b48f2f82b6ae35bfc7ef1a5efa900942fc115f2485048385c5b3403de151d",
+      "git_blob_sha": "b474afa1fe35c942ec3216675b0fd6896fb07054",
+      "remote_match": true
+    },
+    {
+      "path": "research/nine/GENERAL_SMALL_ORIGIN_CORNER_CONTACT_KERNELS.md",
+      "sha256": "b977be65217728c0363e8bab030bdb3d11b1b8ef75cc32d295a8337c4ea01477",
+      "git_blob_sha": "f39d8b401963621f22e1863cb183e113147bc0b6",
+      "remote_match": true
+    },
+    {
+      "path": "research/nine/THREE_GENUINE_LEAF_C4_MIDDLE_ROOT_AND_LARGE_PORT_REDUCTION.md",
+      "sha256": "7d789ce70b2444aadf0f0a7f1354d7c92ff92085357a91f5eea42a6acbddb1ac",
+      "git_blob_sha": "dd190254a9633a52c7eb6d8942a9bf45c31d7478",
+      "remote_match": true
+    },
+    {
+      "path": "research/nine/ROOTED_C3_334_PRIVATE_ADJACENT_LEAF_TWO_LOAD_C4_EXCLUSION.md",
+      "sha256": "9036a1a8c2b1c7e0f713eef3e0dc3bacbecb42d588332120cf9e04c27ffa98c5",
+      "git_blob_sha": "a092f79a048c5fbb65d8b244bd483d8983de6ddd",
+      "remote_match": true
+    },
+    {
+      "path": "research/nine/THREE_GENUINE_LEAF_ROOTS_HIGH_S_REDUCTION.md",
+      "sha256": "41c6686127871c7c99ab69c84292f04c995a8530eb02cde0235cdacc181ae73f",
+      "git_blob_sha": "6b9edeb050169d8e45720bbebd7b9f8758c1ac55",
+      "remote_match": true
+    },
+    {
+      "path": "research/nine/GENUINE_LEAF_ROOT_SMALL_NONLEAF_SUPPORTS.md",
+      "sha256": "a729b8ebb0d0aaf2ff0fa3a8b08749faf136b18253a0dbd0c99a91f2a069b358",
+      "git_blob_sha": "4a835d5c3745db039ec05e89c67303db2033c6ee",
+      "remote_match": true
+    },
+    {
+      "path": "research/nine/ADJACENT_C4_SINGLE_LOAD_S_LEAVES_EXCLUSION.md",
+      "sha256": "86f153f7dee4cee2b343185073a442c4a929984d30649be5c5976f3f5f112b67",
+      "git_blob_sha": "04e01f28b5ed6f5a6e7c7c8f34a7e5f131cdc3a5",
+      "remote_match": true
+    },
+    {
+      "path": "research/nine/S_LEAF_ROOT_FIXED_NONLEAF_CONTACT_SELECTION.md",
+      "sha256": "499e6d42632a811bcb7bef6596b8585c11fbb5f59f36551d02fd05c080387a43",
+      "git_blob_sha": "7853aa48be580d64f73212770c8e56e1debebb0b",
+      "remote_match": true
+    },
+    {
+      "path": "research/nine/ONE_FOUR_BODY_BLOCK_THREE_BRIDGES_ATTACHMENT_COVER.md",
+      "sha256": "8cd2cce347c8fe157f9a97ae262dcfed012dbad215b86b5d8f1f4bed7a452fca",
+      "git_blob_sha": "4c8d4ec23f0e3b741fa091faec4fbfd1fa5ab3bd",
+      "remote_match": true
+    },
+    {
+      "path": "research/nine/THREE_GENUINE_LEAF_C4_NONPARALLEL_MIDDLE_EXCLUSION.md",
+      "sha256": "6625c9272389a7576ac9516cb08d3e0db974af52695ad0d3aa89bc83dbe965de",
+      "git_blob_sha": "d9db0b247c8d69f26cbdbaeab40d6649a5254f07",
+      "remote_match": true
+    },
+    {
+      "path": "research/nine/FOUR_BODY_BLOCK_DISTINCT_ROOT_SHORT_ARM_AND_LEAF_COMPLETE_EXCLUSION.md",
+      "sha256": "0a1f76aeb2c48410da4161a2654fa12f04e39c6e6e478c58dc93e39fe910c17f",
+      "git_blob_sha": "e1b535ca713d22f2902e325efe6a0cbd5dc8cb0c",
+      "remote_match": true
+    },
+    {
+      "path": "research/nine/ROOTED_C3_334_PRIVATE_OPPOSITE_LEAF_C4_EXCLUSION.md",
+      "sha256": "fbb9cc76a54a72771366c36f810f505d7b557be5f6fd607713fae4e1e0f5e6b8",
+      "git_blob_sha": "3c5e6a72a8ca9d8e0d202dbf0ba716931e553432",
+      "remote_match": true
+    }
+  ],
+  "target_original_cell": "C1.4.b3",
+  "target_status": "OPEN",
+  "new_complete_original_placement": 7,
+  "complete_b3_placements": 23,
+  "b3_total_placements": 24,
+  "b3_open_placements": [
+    9
+  ],
+  "new_diamond_domain_exit": "Entire original nonparallel middle-B domain at true H4/K4/B3/C2",
+  "remaining_full_diamond_domains": [
+    "Parallel B with original west normals and full weighted means; true H4/K4/B3/C2"
+  ],
+  "new_two_block_interface_exit": "Whole physical same-wall interface whenever either private block is a diamond",
+  "dht_pair_remaining_owner_interface": "One H-owned normal; other private-root-owned normal at an H vertex in the relative interior of that private side",
+  "c2_44_b2_remaining_full_load_families": [
+    "Ca11/Ca11",
+    "Ca11/Dht",
+    "Ca11/Dth",
+    "Dht/Dht",
+    "Dht/Dth",
+    "Dth/Dth"
+  ],
+  "coarse_closed": 32,
+  "coarse_open": 26,
+  "coarse_total": 58,
+  "fine_checked": 2319,
+  "fine_total": 2513,
+  "changed_fine_ids": [],
+  "unchanged_ledger_git_blob": "98fbd6ad6cc587123b1f8d32d0c1d09cf6dacc20",
+  "unchanged_roadmap_git_blob": "d9c51fd7e38d7903d90c27225af5a93481fe0a0b",
+  "same_ordered_original_fine_states": true,
+  "unrestricted_theorem": "OPEN",
+  "original_equality_classification": "OPEN",
+  "older_global_prerequisite_audit": "OPEN",
+  "lean_integration": "OPEN",
+  "lean_compilation_run": false,
+  "ci_run": false
+}

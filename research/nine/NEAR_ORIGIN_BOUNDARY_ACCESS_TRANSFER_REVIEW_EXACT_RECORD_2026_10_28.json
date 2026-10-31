@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-28",
+  "reviewer": "six_body",
+  "source_author": "two_blocks",
+  "disposition": "PASS_UNCHANGED",
+  "source": {
+    "name": "NEAR_ORIGIN_BOUNDARY_ACCESS_TRANSFERS_TO_EVERY_CYCLIC_BLOCK.md",
+    "path": "/workspace/scratch/7d553350ce2a/two_blocks/NEAR_ORIGIN_BOUNDARY_ACCESS_TRANSFERS_TO_EVERY_CYCLIC_BLOCK.md",
+    "bytes": 8382,
+    "sha256": "49065116bfd526abf3826ae8bbaa6fd9ad43b7bcdbdc0e0653b959fa84359549"
+  },
+  "review": {
+    "name": "REVIEW_NEAR_ORIGIN_BOUNDARY_ACCESS_TRANSFER_INDEPENDENT_2026_10_28.md",
+    "path": "/workspace/scratch/7d553350ce2a/six_body/REVIEW_NEAR_ORIGIN_BOUNDARY_ACCESS_TRANSFER_INDEPENDENT_2026_10_28.md",
+    "bytes": 7262,
+    "sha256": "2c72ba2ad2528ef52b96156b493c2b0b0cb68867249da3871d1146498bf5b383"
+  },
+  "direct_dependencies": [
+    {
+      "name": "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+      "bytes": 16597,
+      "sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+      "expected_sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+      "match": true
+    },
+    {
+      "name": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "bytes": 14121,
+      "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "expected_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "match": true
+    },
+    {
+      "name": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "path": "/workspace/scratch/7d553350ce2a/repo/research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "bytes": 14902,
+      "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "expected_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "match": true
+    }
+  ],
+  "scope": {
+    "full_radius": "79/40 <= R <= sqrt(1105)/16",
+    "theorem": "An actual near-origin unit with an original positive boundary path outside a maximal cyclic block forces some actual block unit to meet closed D_epsilon.",
+    "corollary": "Every maximal cyclic block avoiding an actual genuine leaf root has a physically clear near-origin unit.",
+    "origin_containment_at_E_required": false,
+    "epsilon_zero_and_boundary_points_included": true,
+    "all_original_degrees_forces_masks_means_completions_retained": true
+  },
+  "existing_whole_fine_ids": [],
+  "fine_delta": 0,
+  "coarse_delta": 0,
+  "no_lean_ci_remote_or_ledger_mutation": true
+}

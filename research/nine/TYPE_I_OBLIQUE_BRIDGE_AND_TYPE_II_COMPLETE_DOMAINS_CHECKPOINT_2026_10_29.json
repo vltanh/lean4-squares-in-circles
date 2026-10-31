@@ -1,0 +1,138 @@
+{
+  "status": "accepted complete stated Type I/II feature theorems and domains; global theorem open",
+  "parent_commit": "02d0c4e21adb03ab35cbdd2327e1b489a9d7a3b0",
+  "parent_tree": "b3bee0903ec71eaf466b334c7c9f0f7b96335f02",
+  "sources_and_reviews": {
+    "UNIQUE_CIRCLE_TYPE_II_SHARED_WEST_ROOF_ALL_HUB_OWNERS_COMPLETE_EXCLUSION_2026_10_29.md": {
+      "sha256": "03380f74aafd103b3cb3f61f4eedfddf4f3258b2a96d3f398d281e2c6506e44a",
+      "git_blob": "27d36fa0ac6aab597a5209c2e16481a0e7d32c51"
+    },
+    "UNIQUE_CIRCLE_TYPE_II_SINGLETON_WEST_COMPLETE_HUB_OWNER_AND_EXTERNAL_RETURN_DOMAIN_2026_10_29.md": {
+      "sha256": "e63a1e1d14c50363a244dae4d8927b2113a4222ca1064777660a366b092f351c",
+      "git_blob": "0d12e3b607b68bedc06e87e8e4513ecab5f6031e"
+    },
+    "ACTUAL_OBLIQUE_SUPPORT_BRIDGE_AND_TYPE_I_BOTH_SHARED_ROOFS_COMPLETE_UNLOADED_EXCLUSION_2026_10_29.md": {
+      "sha256": "a6fa97604073de0eca72491632aa6936f0a919075946de8dde92b099152aae51",
+      "git_blob": "577a58ddfa9a1ae2b99636e531cd4584542f55cd"
+    },
+    "REVIEW_TYPE_II_SHARED_WEST_ALL_HUB_OWNERS_COMPLETE_CAPACITY_2026_10_29.md": {
+      "sha256": "c014096d7795173d701da4ae1354e1abad4fe15129eb4d7ad8870f02a80ac3ef",
+      "git_blob": "e3fd39863ebf853ce4fcc888f86b8b4ba3724784"
+    },
+    "REVIEW_TYPE_II_SINGLETON_WEST_COMPLETE_OWNER_RETURN_DOMAIN_CAPACITY_2026_10_29.md": {
+      "sha256": "3331a37bd6683b31a6e1fb9cc979dc98728e17a3c584d1f8cf2aca5cfe381a63",
+      "git_blob": "9e2d9afd32a95abb2f89b69a34d2f8f13113969a"
+    },
+    "REVIEW_ACTUAL_OBLIQUE_SUPPORT_BRIDGE_TYPE_I_TWO_SHARED_COMPLETE_ROOT_TRIANGLES_2026_10_29.md": {
+      "sha256": "18d5d3321ae1cd4ce30f7748b10c8bc2d0ec02b858f6459d77951ded41ffeac1",
+      "git_blob": "d5f373cb7a323193d36a84542ee108c1606a723d"
+    },
+    "REVIEW_TYPE_II_FULL_DOMAINS_AND_TYPE_I_SHARED_ROOF_JOIN_ROOT_2026_10_29.md": {
+      "sha256": "a82a4746d3fb18d29bfe13798f54e5ae86388f381bef9e40b53438bf328c2688",
+      "git_blob": "08859adea2c4fa710814fc179125078d82825c0f"
+    },
+    "ADOPTION_TYPE_I_OBLIQUE_BRIDGE_AND_TYPE_II_COMPLETE_DOMAINS_2026_10_29.md": {
+      "sha256": "b591aa62e7a2ef6e8092d35b4344f6b7bd9dc73a48ad26d5303c2ad3fca78c9f",
+      "git_blob": "e14f71fd0fdf2fd59ac8c028d396442ce7d9bfe1"
+    }
+  },
+  "direct_pins_verified": {
+    "UNIQUE_CIRCLE_TRIANGLE_TIP_THREE_PORT_TYPES_AND_HUB_INTERFACE_OWNER_COVER_2026_10_29.md": "8266220efbb8ce769de90a90e27e86997400575d0b8bb80f5843af38ca447073",
+    "D02_BOTH_UNLOADED_HUBS_UNIQUE_CIRCLE_ROOF_COMPLETE_NORMAL_OWNER_ASSEMBLY_2026_10_29.md": "97148714d460095f7e9c80332f01abdc45b5c9ad36950309973fe21b006972e7",
+    "PHYSICAL_CONTACT_STRESS.md": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+    "SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1",
+    "UNIQUE_CIRCLE_TYPE_II_SHARED_WEST_ROOF_ALL_HUB_OWNERS_COMPLETE_EXCLUSION_2026_10_29.md": "03380f74aafd103b3cb3f61f4eedfddf4f3258b2a96d3f398d281e2c6506e44a",
+    "VERTICALLY_SEPARATED_RETURN_SUPPORTS_NO_UNLOADED_TRUE_TWO_BRIDGE_AND_SHARED_D_L135_EXCLUSION_2026_10_29.md": "112510ba9d1ec141443b19bbcf4212879a628e2eab083335c3252640f32f36bd",
+    "PHYSICAL_BODY_GRAPH_UNCROSSING.md": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe"
+  },
+  "fine_count": 2513,
+  "fine_checked": 2373,
+  "coarse_count": 58,
+  "coarse_closed": 36,
+  "fine_flag_sha256": "feda561e85056c0bae48f2f33b8df7814c44d983ca4f1cc3e422391525106f1f",
+  "coarse_flag_sha256": "99e0b788a73379a719f331d43581ef02c76ea2e8622a8c8f43bbf21e9ea241bd",
+  "metadata": {
+    "CYCLIC_CELL_LEDGER.md": {
+      "before_sha256": "bc0cff1a7b068f6c22878eb53f1fc2f7cf67ef80816b821e7cee56592852b397",
+      "after_sha256": "08e5009a49179c7640ee8c6b8437905f97d53814027c31edcd1d6aa13dcf6a5f",
+      "git_blob": "e90477f3af945abea6572cb8abaec6b37261b87c",
+      "header_reversible": true,
+      "row_replacements": []
+    },
+    "DEEP_GATED_ROADMAP.md": {
+      "before_sha256": "036a5ecc29478c39db8f4fdf820e6a63b4ed088554d7c983f76acb9519788ccd",
+      "after_sha256": "77f1cc32a05e0ce29cd9aad94b9fd472deae273442304937b6c4dd8323057a1e",
+      "git_blob": "ec3d61f194bd2c648d5bdde4e408053279df24d4",
+      "header_reversible": true,
+      "row_replacements": [
+        {
+          "before": "- [ ] **M6.B6.HEXAGON.D02.L135** The entire original positive-load row remains OPEN under M6.B6.HEXAGON.LOAD_CONTRACT. The whole parallel-V2 feature remains excluded by D02_L135_L1345_WHOLE_PARALLEL_V2_ALL_MASKS_ALL_INTERFACES_COMPLETE_ASSEMBLY_2026_10_29.md (SHA256 dbe6b1f78599fe496c2405e1f77b8846e31e95f8bb8b095487be2822446b65d1). The entire unique-PHYSICAL-circle Type III feature is now excluded by D02_BOTH_UNLOADED_HUBS_UNIQUE_CIRCLE_TYPE_III_ALL_ORIGINAL_OWNER_ROWS_COMPLETE_EXCLUSION_2026_10_29.md (SHA256 513bd24fa3d35696c7428b71f01f04619833cc1a7aaa29d0606afbe1e8fb7474), with all six original owner alternatives, both distinct shared-mean intervals, every genuine tilt and radial ratio, and the actual unloaded true2 N=4 role. The radius-free return-support theorem handles the unloaded column; whole genuine/shared D clearances handle the loaded column; complete A projections and perpendicular-owner exclusions apply to both. The initial common-open owner selection and diagonal avoidance remain at their explicitly conditional prior scopes, and their global compatibility audit remains open. Unique-circle Types I/II retain all three actual triangle owners; their complete residual domains remain. The physical-two mask retains both individual-zero circle endpoints and the two inner-face charts; its previously excluded whole free/shared, same strict-hub-axis and positive-shared perpendicular AD features remain excluded. Its residual singleton/owned alternatives remain. All nine physical squares, full unloaded A3/D3 and loaded V2/B2/C2 stars, original normals, full shared means, exterior stars and three completion squares remain. This is a complete Type III feature closure, not a whole D02 row closure; the original flag stays OPEN.",
+          "after": "- [ ] **M6.B6.HEXAGON.D02.L135** The entire original positive-load row remains OPEN under M6.B6.HEXAGON.LOAD_CONTRACT. The whole parallel-V2 feature remains excluded by D02_L135_L1345_WHOLE_PARALLEL_V2_ALL_MASKS_ALL_INTERFACES_COMPLETE_ASSEMBLY_2026_10_29.md (SHA256 dbe6b1f78599fe496c2405e1f77b8846e31e95f8bb8b095487be2822446b65d1). The entire unique-PHYSICAL-circle Type III feature is now excluded by D02_BOTH_UNLOADED_HUBS_UNIQUE_CIRCLE_TYPE_III_ALL_ORIGINAL_OWNER_ROWS_COMPLETE_EXCLUSION_2026_10_29.md (SHA256 513bd24fa3d35696c7428b71f01f04619833cc1a7aaa29d0606afbe1e8fb7474), with all six original owner alternatives, both distinct shared-mean intervals, every genuine tilt and radial ratio, and the actual unloaded true2 N=4 role. The radius-free return-support theorem handles the unloaded column; whole genuine/shared D clearances handle the loaded column; complete A projections and perpendicular-owner exclusions apply to both. The initial common-open owner selection and diagonal avoidance remain at their explicitly conditional prior scopes, and their global compatibility audit remains open. Unique-circle Types I/II retain all three actual triangle owners; their complete residual domains remain. The physical-two mask retains both individual-zero circle endpoints and the two inner-face charts; its previously excluded whole free/shared, same strict-hub-axis and positive-shared perpendicular AD features remain excluded. Its residual singleton/owned alternatives remain. All nine physical squares, full unloaded A3/D3 and loaded V2/B2/C2 stars, original normals, full shared means, exterior stars and three completion squares remain. This is a complete Type III feature closure, not a whole D02 row closure; the original flag stays OPEN. The complete Type I/II adoption ADOPTION_TYPE_I_OBLIQUE_BRIDGE_AND_TYPE_II_COMPLETE_DOMAINS_2026_10_29.md now excludes all shared-West Type II roofs and prints the entire surviving genuine owner/return table. Every shared AD direction, the entire A-owned transverse row, and both strict returns in the D-perpendicular row are excluded. The whole Type I two-physically-shared-roof feature and the whole Type II D-roof-direction upper return are also excluded, using the actual unloaded N2 and the same conditional prior diagonal avoidance. Remaining genuine Type I/II rows and physical-two features are not declared closed."
+        },
+        {
+          "before": "- [ ] **M6.B6.HEXAGON.D02.L1345** The entire original positive-load row remains OPEN under M6.B6.HEXAGON.LOAD_CONTRACT. The whole parallel-V2 feature remains excluded by D02_L135_L1345_WHOLE_PARALLEL_V2_ALL_MASKS_ALL_INTERFACES_COMPLETE_ASSEMBLY_2026_10_29.md (SHA256 dbe6b1f78599fe496c2405e1f77b8846e31e95f8bb8b095487be2822446b65d1). The entire unique-PHYSICAL-circle Type III feature is now excluded by D02_BOTH_UNLOADED_HUBS_UNIQUE_CIRCLE_TYPE_III_ALL_ORIGINAL_OWNER_ROWS_COMPLETE_EXCLUSION_2026_10_29.md (SHA256 513bd24fa3d35696c7428b71f01f04619833cc1a7aaa29d0606afbe1e8fb7474), with all six original owner alternatives, both distinct shared-mean intervals, every genuine tilt and radial ratio, and the actual loaded true2 N=4 role. The radius-free return-support theorem handles the unloaded column; whole genuine/shared D clearances handle the loaded column; complete A projections and perpendicular-owner exclusions apply to both. The initial common-open owner selection and diagonal avoidance remain at their explicitly conditional prior scopes, and their global compatibility audit remains open. Unique-circle Types I/II retain all three actual triangle owners; their complete residual domains remain. The physical-two mask retains both individual-zero circle endpoints and the two inner-face charts; its previously excluded whole free/shared, same strict-hub-axis and positive-shared perpendicular AD features remain excluded. Its residual singleton/owned alternatives remain. All nine physical squares, full unloaded A3/D3 and loaded V2/B2/C2 stars, original normals, full shared means, exterior stars and three completion squares remain. This is a complete Type III feature closure, not a whole D02 row closure; the original flag stays OPEN.",
+          "after": "- [ ] **M6.B6.HEXAGON.D02.L1345** The entire original positive-load row remains OPEN under M6.B6.HEXAGON.LOAD_CONTRACT. The whole parallel-V2 feature remains excluded by D02_L135_L1345_WHOLE_PARALLEL_V2_ALL_MASKS_ALL_INTERFACES_COMPLETE_ASSEMBLY_2026_10_29.md (SHA256 dbe6b1f78599fe496c2405e1f77b8846e31e95f8bb8b095487be2822446b65d1). The entire unique-PHYSICAL-circle Type III feature is now excluded by D02_BOTH_UNLOADED_HUBS_UNIQUE_CIRCLE_TYPE_III_ALL_ORIGINAL_OWNER_ROWS_COMPLETE_EXCLUSION_2026_10_29.md (SHA256 513bd24fa3d35696c7428b71f01f04619833cc1a7aaa29d0606afbe1e8fb7474), with all six original owner alternatives, both distinct shared-mean intervals, every genuine tilt and radial ratio, and the actual loaded true2 N=4 role. The radius-free return-support theorem handles the unloaded column; whole genuine/shared D clearances handle the loaded column; complete A projections and perpendicular-owner exclusions apply to both. The initial common-open owner selection and diagonal avoidance remain at their explicitly conditional prior scopes, and their global compatibility audit remains open. Unique-circle Types I/II retain all three actual triangle owners; their complete residual domains remain. The physical-two mask retains both individual-zero circle endpoints and the two inner-face charts; its previously excluded whole free/shared, same strict-hub-axis and positive-shared perpendicular AD features remain excluded. Its residual singleton/owned alternatives remain. All nine physical squares, full unloaded A3/D3 and loaded V2/B2/C2 stars, original normals, full shared means, exterior stars and three completion squares remain. This is a complete Type III feature closure, not a whole D02 row closure; the original flag stays OPEN. The complete Type I/II adoption ADOPTION_TYPE_I_OBLIQUE_BRIDGE_AND_TYPE_II_COMPLETE_DOMAINS_2026_10_29.md now excludes all shared-West Type II roofs and prints the entire surviving genuine owner/return table. Every shared AD direction, the entire A-owned transverse row, and both strict returns in the D-perpendicular row are excluded. The whole Type I two-shared-roof point-only AD alternative is also excluded by the selection-free oblique support theorem. Its positive-shared AD alternative retains loaded N and remains open. Remaining genuine Type I/II rows and physical-two features are not declared closed."
+        }
+      ]
+    },
+    "README.md": {
+      "before_sha256": "7f99bb8097d06a3c83f260d93c537cf46d10f80f5e4d722936f5844ed6bce345",
+      "after_sha256": "53683979c45d7dc2fd4f10644f2af2e384ec61a5d4af6f049bfc177ed171bd13",
+      "git_blob": "571aef79563231630061e24a2e92d86b38ea32db",
+      "header_reversible": true,
+      "row_replacements": []
+    },
+    "ROADMAP.md": {
+      "before_sha256": "fdef1aafd47380e78f6de0e229f8dbc9a40b3d4144f89cb761105816fd913905",
+      "after_sha256": "d981be8aa80faf9c8dc2f655778a58ab824966fb840573a8b6fd75673b8ac3b7",
+      "git_blob": "1f7a5b09860eec41411d2c3b6e43e9f24ea0ff99",
+      "header_reversible": true,
+      "row_replacements": []
+    },
+    "HANDOFF_PR11_2026_10_28_CURRENT.md": {
+      "before_sha256": "f58f6e26f83e3ba618959e21cfbad31b331486b88a1de4c3f27eb255749591e3",
+      "after_sha256": "98db40cf42599a04ef43d788e6ef51baaa4f986e4574ed646292f31f325a2898",
+      "git_blob": "74adebbe92eb3184549953c2912595e0d4a5fe3b",
+      "header_reversible": true,
+      "row_replacements": []
+    }
+  },
+  "publication_allowlist": [
+    "research/nine/UNIQUE_CIRCLE_TYPE_II_SHARED_WEST_ROOF_ALL_HUB_OWNERS_COMPLETE_EXCLUSION_2026_10_29.md",
+    "research/nine/UNIQUE_CIRCLE_TYPE_II_SINGLETON_WEST_COMPLETE_HUB_OWNER_AND_EXTERNAL_RETURN_DOMAIN_2026_10_29.md",
+    "research/nine/ACTUAL_OBLIQUE_SUPPORT_BRIDGE_AND_TYPE_I_BOTH_SHARED_ROOFS_COMPLETE_UNLOADED_EXCLUSION_2026_10_29.md",
+    "research/nine/REVIEW_TYPE_II_SHARED_WEST_ALL_HUB_OWNERS_COMPLETE_CAPACITY_2026_10_29.md",
+    "research/nine/REVIEW_TYPE_II_SINGLETON_WEST_COMPLETE_OWNER_RETURN_DOMAIN_CAPACITY_2026_10_29.md",
+    "research/nine/REVIEW_ACTUAL_OBLIQUE_SUPPORT_BRIDGE_TYPE_I_TWO_SHARED_COMPLETE_ROOT_TRIANGLES_2026_10_29.md",
+    "research/nine/REVIEW_TYPE_II_FULL_DOMAINS_AND_TYPE_I_SHARED_ROOF_JOIN_ROOT_2026_10_29.md",
+    "research/nine/ADOPTION_TYPE_I_OBLIQUE_BRIDGE_AND_TYPE_II_COMPLETE_DOMAINS_2026_10_29.md",
+    "research/nine/TYPE_I_OBLIQUE_BRIDGE_AND_TYPE_II_COMPLETE_DOMAINS_CHECKPOINT_2026_10_29.json",
+    "research/nine/CYCLIC_CELL_LEDGER.md",
+    "research/nine/DEEP_GATED_ROADMAP.md",
+    "research/nine/README.md",
+    "research/nine/ROADMAP.md",
+    "research/nine/HANDOFF_PR11_2026_10_28_CURRENT.md"
+  ],
+  "closed_features": [
+    "whole Type I two-physically-shared-roof feature in unloaded-N L135",
+    "whole Type I two-shared-roof point-only AD feature in either load",
+    "whole Type II physically shared West roof in either load",
+    "whole Type II shared AD axes, A transverse axis, wrong D owner signs and both strict D-perpendicular return rows",
+    "whole Type II D-roof-direction upper exterior return in unloaded-N L135"
+  ],
+  "limits": [
+    "Type I loaded positive-shared AD and genuine singleton roof domains remain",
+    "Remaining exact Type II genuine table and physical-two domains remain",
+    "No original flag changes",
+    "Prior common initial selection and diagonal avoidance remain conditional",
+    "No unrestricted theorem, equality or Lean closure"
+  ],
+  "review_provenance": {
+    "sources": 3,
+    "separate_full_independent_reports": 3,
+    "root_independent_type_II_review": true,
+    "root_type_I_contributor": true,
+    "roofs_type_I_contributor": true,
+    "root_triangles_type_I_independent_noncontributor": true
+  }
+}

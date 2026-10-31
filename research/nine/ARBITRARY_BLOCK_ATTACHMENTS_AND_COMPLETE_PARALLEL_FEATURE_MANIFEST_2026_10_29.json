@@ -1,0 +1,358 @@
+{
+  "date_utc": "2026-10-29",
+  "published_parent": "b2ca34a2451eb8167f37594dbf1b9d2dcc97d441",
+  "fine_total": 2513,
+  "fine_checked": 2365,
+  "fine_open": 148,
+  "coarse_total": 58,
+  "coarse_closed": 34,
+  "coarse_open": 24,
+  "changed_original_fine_ids": [],
+  "changed_original_coarse_ids": [],
+  "original_inventory_exactly_unchanged": true,
+  "original_inventory_checkpoint": {
+    "path": "research/nine/COMPLETE_D02_L014_AND_FULL_STAR_CONE_CHECKPOINT_2026_10_29.json",
+    "bytes": 460143,
+    "sha256": "78d58b3cf8c6f9e4aa7dc3947db6f5fc220c3d4612447f3cf2616449d37b3d98",
+    "git_blob": "43d6e438321f94b3b95c7bed7e1e1642efa25b38"
+  },
+  "sources_and_reviews": [
+    {
+      "path": "research/nine/TWO_GENUINE_SHORT_ARMS_SAME_ROOT_ARBITRARY_CYCLIC_BLOCK_EXCLUSION_2026_10_29_CONTINUATION.md",
+      "bytes": 17627,
+      "sha256": "b22e96eecb7852756036a7b324b28bd2e0b2a675a93ab727fdb360959d873b1c",
+      "git_blob": "444219831c8ace9c3601fbe739cf6c6eafe94265"
+    },
+    {
+      "path": "research/nine/EARLY_FORK_DIRECT_LEAF_SHORT_ARM_ARBITRARY_CYCLIC_BLOCK_EXCLUSION_2026_10_29.md",
+      "bytes": 20025,
+      "sha256": "5d079ddd9791c89bec1bb3cdc3afcb83efa3dccad258ebde00f602ea24db4644",
+      "git_blob": "b23c9de88bf3812e8c8d84d5842d57eea538f91e"
+    },
+    {
+      "path": "research/nine/REVIEW_EARLY_FORK_ARBITRARY_CYCLIC_BLOCK_HOUSE_2026_10_29_CONTINUATION.md",
+      "bytes": 16467,
+      "sha256": "fcbb81aac6bdb7fb5c96e1b0e7648db79b57dfc78b24160742c8dbed81c67673",
+      "git_blob": "d53caa466d09cbc57a1d8b7812464ba2e87c4ebf"
+    },
+    {
+      "path": "research/nine/PARALLEL_BOUNDARY_TRIANGLE_TERMINAL_BRIDGE_CLEARANCE_AND_D02_L0145_FEATURE_EXCLUSION_2026_10_29_CONTINUATION.md",
+      "bytes": 20680,
+      "sha256": "afb1c5aeb44ae8667a96ad6feac9b2fc67966a103d14a04359f30b57fa01aaba",
+      "git_blob": "1e95e558ab2b7c96d507f819af3b441e44dd3b94"
+    },
+    {
+      "path": "research/nine/REVIEW_PARALLEL_BOUNDARY_TRIANGLE_BRIDGE_CLEARANCE_L0145_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+      "bytes": 15691,
+      "sha256": "f3a743763aa8ea36099607a47b23a9c4d2aaad34c337e517689cabf7739965e5",
+      "git_blob": "d329a576b03ec2b76f24538ce812f5c12ef6dac8"
+    },
+    {
+      "path": "research/nine/REVIEW_TWO_GENUINE_SHORT_ARMS_ARBITRARY_CYCLIC_BLOCK_ROOT_2026_10_29.md",
+      "bytes": 13778,
+      "sha256": "0927913182912cdf03cb484d80a663694df1475a6eb9743f553b7d2c3b57d5c6",
+      "git_blob": "942b9422ff82d0293122a8d402e4871e2f85a7a0"
+    }
+  ],
+  "root_adoption": {
+    "path": "research/nine/ADOPTION_ARBITRARY_BLOCK_ATTACHMENTS_AND_COMPLETE_PARALLEL_FEATURE_ROOT_2026_10_29.md",
+    "bytes": 8211,
+    "sha256": "50889549d9104a452a4a025b6838931f812c1f59281c631c7a8f4838fd118a9c",
+    "git_blob": "f468b9d08d4153d68feaae7261e4a229873954e8"
+  },
+  "direct_pin_audit": {
+    "checks": [
+      {
+        "source": "TWO_GENUINE_SHORT_ARMS_SAME_ROOT_ARBITRARY_CYCLIC_BLOCK_EXCLUSION_2026_10_29_CONTINUATION.md",
+        "path": "FOUR_CYCLE_TWO_SHORT_ARMS_SAME_ROOT_CLOSED.md",
+        "sha256": "e0237e3a8de4ab3a61035201c3eb35b4fb977efe1ca9c7f6a14f89d947fb144c",
+        "matches": true
+      },
+      {
+        "source": "TWO_GENUINE_SHORT_ARMS_SAME_ROOT_ARBITRARY_CYCLIC_BLOCK_EXCLUSION_2026_10_29_CONTINUATION.md",
+        "path": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+        "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+        "matches": true
+      },
+      {
+        "source": "TWO_GENUINE_SHORT_ARMS_SAME_ROOT_ARBITRARY_CYCLIC_BLOCK_EXCLUSION_2026_10_29_CONTINUATION.md",
+        "path": "PHYSICAL_CONTACT_STRESS.md",
+        "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+        "matches": true
+      },
+      {
+        "source": "TWO_GENUINE_SHORT_ARMS_SAME_ROOT_ARBITRARY_CYCLIC_BLOCK_EXCLUSION_2026_10_29_CONTINUATION.md",
+        "path": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+        "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+        "matches": true
+      },
+      {
+        "source": "EARLY_FORK_DIRECT_LEAF_SHORT_ARM_ARBITRARY_CYCLIC_BLOCK_EXCLUSION_2026_10_29.md",
+        "path": "FOUR_BODY_BLOCK_DIRECT_LEAF_AND_SHORT_ARM_FORK_CLOSED.md",
+        "sha256": "8cd72d77b3f4f8554d88d39060e198bca7bacbd932ac5627eedbae7cecbb66c5",
+        "matches": true
+      },
+      {
+        "source": "EARLY_FORK_DIRECT_LEAF_SHORT_ARM_ARBITRARY_CYCLIC_BLOCK_EXCLUSION_2026_10_29.md",
+        "path": "GLOBAL_CLOSURE_ARTICULATION_STRESS_SPLITTING.md",
+        "sha256": "39aa9e31a6de4ecdff535a8136f5c3330e6bb653903951fde812ee522d128d4a",
+        "matches": true
+      },
+      {
+        "source": "EARLY_FORK_DIRECT_LEAF_SHORT_ARM_ARBITRARY_CYCLIC_BLOCK_EXCLUSION_2026_10_29.md",
+        "path": "GLOBAL_CLOSURE_OFF_ORIGIN_BRIDGE_TRANSMITTERS.md",
+        "sha256": "ef623b16310b6b253f71771c6c3c339be905d9555fa06228aa92f25868d945a8",
+        "matches": true
+      },
+      {
+        "source": "EARLY_FORK_DIRECT_LEAF_SHORT_ARM_ARBITRARY_CYCLIC_BLOCK_EXCLUSION_2026_10_29.md",
+        "path": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+        "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+        "matches": true
+      },
+      {
+        "source": "EARLY_FORK_DIRECT_LEAF_SHORT_ARM_ARBITRARY_CYCLIC_BLOCK_EXCLUSION_2026_10_29.md",
+        "path": "PHYSICAL_CONTACT_STRESS.md",
+        "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+        "matches": true
+      },
+      {
+        "source": "EARLY_FORK_DIRECT_LEAF_SHORT_ARM_ARBITRARY_CYCLIC_BLOCK_EXCLUSION_2026_10_29.md",
+        "path": "END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+        "sha256": "20a845eff8bee3e9c533162df0b32ea96f9dd104a3cfec41efb3b0cf92d6e9cf",
+        "matches": true
+      },
+      {
+        "source": "EARLY_FORK_DIRECT_LEAF_SHORT_ARM_ARBITRARY_CYCLIC_BLOCK_EXCLUSION_2026_10_29.md",
+        "path": "NEAR_ORIGIN_BOUNDARY_ACCESS_TRANSFERS_TO_EVERY_CYCLIC_BLOCK.md",
+        "sha256": "49065116bfd526abf3826ae8bbaa6fd9ad43b7bcdbdc0e0653b959fa84359549",
+        "matches": true
+      },
+      {
+        "source": "EARLY_FORK_DIRECT_LEAF_SHORT_ARM_ARBITRARY_CYCLIC_BLOCK_EXCLUSION_2026_10_29.md",
+        "path": "ORIGIN_FREE_RADIAL_INNER_UNIT_DEGREE_FREE_PORT_ORDER.md",
+        "sha256": "7142244039afad69773c04ce9e8d7b798075e6ed638ff9d1493da7cc2cfc91db",
+        "matches": true
+      },
+      {
+        "source": "EARLY_FORK_DIRECT_LEAF_SHORT_ARM_ARBITRARY_CYCLIC_BLOCK_EXCLUSION_2026_10_29.md",
+        "path": "HOUSE_ROOF_AC_D_COMPLETE_MOMENT_EXCLUSION.md",
+        "sha256": "db795b7a1a287d7e8e422bd80f3ea04e714d9d98af88226e9c16ad757b7e0f5a",
+        "matches": true
+      },
+      {
+        "source": "EARLY_FORK_DIRECT_LEAF_SHORT_ARM_ARBITRARY_CYCLIC_BLOCK_EXCLUSION_2026_10_29.md",
+        "path": "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+        "sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+        "matches": true
+      },
+      {
+        "source": "EARLY_FORK_DIRECT_LEAF_SHORT_ARM_ARBITRARY_CYCLIC_BLOCK_EXCLUSION_2026_10_29.md",
+        "path": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+        "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_EARLY_FORK_ARBITRARY_CYCLIC_BLOCK_HOUSE_2026_10_29_CONTINUATION.md",
+        "path": "FOUR_BODY_BLOCK_DIRECT_LEAF_AND_SHORT_ARM_FORK_CLOSED.md",
+        "sha256": "8cd72d77b3f4f8554d88d39060e198bca7bacbd932ac5627eedbae7cecbb66c5",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_EARLY_FORK_ARBITRARY_CYCLIC_BLOCK_HOUSE_2026_10_29_CONTINUATION.md",
+        "path": "GLOBAL_CLOSURE_ARTICULATION_STRESS_SPLITTING.md",
+        "sha256": "39aa9e31a6de4ecdff535a8136f5c3330e6bb653903951fde812ee522d128d4a",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_EARLY_FORK_ARBITRARY_CYCLIC_BLOCK_HOUSE_2026_10_29_CONTINUATION.md",
+        "path": "GLOBAL_CLOSURE_OFF_ORIGIN_BRIDGE_TRANSMITTERS.md",
+        "sha256": "ef623b16310b6b253f71771c6c3c339be905d9555fa06228aa92f25868d945a8",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_EARLY_FORK_ARBITRARY_CYCLIC_BLOCK_HOUSE_2026_10_29_CONTINUATION.md",
+        "path": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+        "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_EARLY_FORK_ARBITRARY_CYCLIC_BLOCK_HOUSE_2026_10_29_CONTINUATION.md",
+        "path": "PHYSICAL_CONTACT_STRESS.md",
+        "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_EARLY_FORK_ARBITRARY_CYCLIC_BLOCK_HOUSE_2026_10_29_CONTINUATION.md",
+        "path": "END_TRIANGLE_RESULTANT_SUPPORT_BOUND.md",
+        "sha256": "20a845eff8bee3e9c533162df0b32ea96f9dd104a3cfec41efb3b0cf92d6e9cf",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_EARLY_FORK_ARBITRARY_CYCLIC_BLOCK_HOUSE_2026_10_29_CONTINUATION.md",
+        "path": "NEAR_ORIGIN_BOUNDARY_ACCESS_TRANSFERS_TO_EVERY_CYCLIC_BLOCK.md",
+        "sha256": "49065116bfd526abf3826ae8bbaa6fd9ad43b7bcdbdc0e0653b959fa84359549",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_EARLY_FORK_ARBITRARY_CYCLIC_BLOCK_HOUSE_2026_10_29_CONTINUATION.md",
+        "path": "ORIGIN_FREE_RADIAL_INNER_UNIT_DEGREE_FREE_PORT_ORDER.md",
+        "sha256": "7142244039afad69773c04ce9e8d7b798075e6ed638ff9d1493da7cc2cfc91db",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_EARLY_FORK_ARBITRARY_CYCLIC_BLOCK_HOUSE_2026_10_29_CONTINUATION.md",
+        "path": "HOUSE_ROOF_AC_D_COMPLETE_MOMENT_EXCLUSION.md",
+        "sha256": "db795b7a1a287d7e8e422bd80f3ea04e714d9d98af88226e9c16ad757b7e0f5a",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_EARLY_FORK_ARBITRARY_CYCLIC_BLOCK_HOUSE_2026_10_29_CONTINUATION.md",
+        "path": "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md",
+        "sha256": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_EARLY_FORK_ARBITRARY_CYCLIC_BLOCK_HOUSE_2026_10_29_CONTINUATION.md",
+        "path": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+        "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+        "matches": true
+      },
+      {
+        "source": "PARALLEL_BOUNDARY_TRIANGLE_TERMINAL_BRIDGE_CLEARANCE_AND_D02_L0145_FEATURE_EXCLUSION_2026_10_29_CONTINUATION.md",
+        "path": "PHYSICAL_CONTACT_STRESS.md",
+        "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+        "matches": true
+      },
+      {
+        "source": "PARALLEL_BOUNDARY_TRIANGLE_TERMINAL_BRIDGE_CLEARANCE_AND_D02_L0145_FEATURE_EXCLUSION_2026_10_29_CONTINUATION.md",
+        "path": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+        "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+        "matches": true
+      },
+      {
+        "source": "PARALLEL_BOUNDARY_TRIANGLE_TERMINAL_BRIDGE_CLEARANCE_AND_D02_L0145_FEATURE_EXCLUSION_2026_10_29_CONTINUATION.md",
+        "path": "BOUNDARY_TRIANGLE_UNLOADED_TERMINAL_CHAIN_COMPLETE_RADIUS_REDUCTION.md",
+        "sha256": "a967bb48602466727c2b28208f8884d50be96f03a553abaaa42d960661e9ee33",
+        "matches": true
+      },
+      {
+        "source": "PARALLEL_BOUNDARY_TRIANGLE_TERMINAL_BRIDGE_CLEARANCE_AND_D02_L0145_FEATURE_EXCLUSION_2026_10_29_CONTINUATION.md",
+        "path": "PARALLEL_INCOMING_HUB_AXIS_UNLOADED_TERMINAL_ALL_NONZERO_SHIFTS_EXCLUSION.md",
+        "sha256": "074a99386129712c440516a6d0f70bd887cfe208c37ba449762bbee7c291707e",
+        "matches": true
+      },
+      {
+        "source": "PARALLEL_BOUNDARY_TRIANGLE_TERMINAL_BRIDGE_CLEARANCE_AND_D02_L0145_FEATURE_EXCLUSION_2026_10_29_CONTINUATION.md",
+        "path": "SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+        "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_PARALLEL_BOUNDARY_TRIANGLE_BRIDGE_CLEARANCE_L0145_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "path": "PHYSICAL_CONTACT_STRESS.md",
+        "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_PARALLEL_BOUNDARY_TRIANGLE_BRIDGE_CLEARANCE_L0145_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "path": "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+        "sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_PARALLEL_BOUNDARY_TRIANGLE_BRIDGE_CLEARANCE_L0145_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "path": "BOUNDARY_TRIANGLE_UNLOADED_TERMINAL_CHAIN_COMPLETE_RADIUS_REDUCTION.md",
+        "sha256": "a967bb48602466727c2b28208f8884d50be96f03a553abaaa42d960661e9ee33",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_PARALLEL_BOUNDARY_TRIANGLE_BRIDGE_CLEARANCE_L0145_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "path": "REVIEW_BOUNDARY_TRIANGLE_UNLOADED_TERMINAL_COMPLETE_RADIUS_REDUCTION_REVIEW_RESUME_2026_10_29.md",
+        "sha256": "f0493ed4912561f48f61a806d7ad20cb832a094a2ff1b43f0258a566bac04623",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_PARALLEL_BOUNDARY_TRIANGLE_BRIDGE_CLEARANCE_L0145_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "path": "PARALLEL_INCOMING_HUB_AXIS_UNLOADED_TERMINAL_ALL_NONZERO_SHIFTS_EXCLUSION.md",
+        "sha256": "074a99386129712c440516a6d0f70bd887cfe208c37ba449762bbee7c291707e",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_PARALLEL_BOUNDARY_TRIANGLE_BRIDGE_CLEARANCE_L0145_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "path": "REVIEW_ALL_NONZERO_PARALLEL_INCOMING_SHIFTS_HEXAGON_2026_10_29_CONTINUATION.md",
+        "sha256": "5c14c3ca6b593201af5a168e821ab9024e7d15f071d3afaec2c8fd5074fdd41a",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_PARALLEL_BOUNDARY_TRIANGLE_BRIDGE_CLEARANCE_L0145_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "path": "UNLOADED_TERMINAL_BRIDGE_SPAN_AND_FREE_RETURN_AXIS_EXCLUSIONS.md",
+        "sha256": "946ed94b0b9156f1bc54cefa4d7384ef3f36be09f60a94af398f5a7278289204",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_PARALLEL_BOUNDARY_TRIANGLE_BRIDGE_CLEARANCE_L0145_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "path": "REVIEW_UNLOADED_TERMINAL_BRIDGE_SPAN_FREE_RETURN_AXIS_EXCLUSIONS_REVIEW_RESUME_2026_10_29.md",
+        "sha256": "47f0bc25c5dc94abe3a549bcca651b83c323356ba73df81b9cc2c09f3296373f",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_PARALLEL_BOUNDARY_TRIANGLE_BRIDGE_CLEARANCE_L0145_PENTAGON_GLOBAL_2026_10_29_CONTINUATION.md",
+        "path": "SIX_BODY_OUTER_HEXAGON_GRAPH_LOAD_COVER.md",
+        "sha256": "cd5fa69e4257898360f0d740d26369bdab51828c49d61d831e6ecb6646fafcc1",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_TWO_GENUINE_SHORT_ARMS_ARBITRARY_CYCLIC_BLOCK_ROOT_2026_10_29.md",
+        "path": "TWO_GENUINE_SHORT_ARMS_SAME_ROOT_ARBITRARY_CYCLIC_BLOCK_EXCLUSION_2026_10_29_CONTINUATION.md",
+        "sha256": "b22e96eecb7852756036a7b324b28bd2e0b2a675a93ab727fdb360959d873b1c",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_TWO_GENUINE_SHORT_ARMS_ARBITRARY_CYCLIC_BLOCK_ROOT_2026_10_29.md",
+        "path": "FOUR_CYCLE_TWO_SHORT_ARMS_SAME_ROOT_CLOSED.md",
+        "sha256": "e0237e3a8de4ab3a61035201c3eb35b4fb977efe1ca9c7f6a14f89d947fb144c",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_TWO_GENUINE_SHORT_ARMS_ARBITRARY_CYCLIC_BLOCK_ROOT_2026_10_29.md",
+        "path": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+        "sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_TWO_GENUINE_SHORT_ARMS_ARBITRARY_CYCLIC_BLOCK_ROOT_2026_10_29.md",
+        "path": "PHYSICAL_CONTACT_STRESS.md",
+        "sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+        "matches": true
+      },
+      {
+        "source": "REVIEW_TWO_GENUINE_SHORT_ARMS_ARBITRARY_CYCLIC_BLOCK_ROOT_2026_10_29.md",
+        "path": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+        "sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+        "matches": true
+      }
+    ],
+    "failures": []
+  },
+  "metadata_files": [
+    {
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "bytes": 1014695,
+      "sha256": "a023cc89ff84cfe5b435857c8f24d87a3107fe435226529ed43842c30e4869a0",
+      "git_blob": "75481b6ecf285a2b75ddc660270a7742df452e76"
+    },
+    {
+      "path": "research/nine/HANDOFF_PR11_2026_10_28_CURRENT.md",
+      "bytes": 106944,
+      "sha256": "c516a89888fae1466a24214205383096ebdff7b053193a590a1366387be36b52",
+      "git_blob": "1f0f5c2840cf88c42d92722da9d64fcd0dde5f6d"
+    }
+  ],
+  "global_sharp_theorem_closed": false,
+  "equality_closed": false,
+  "global_prerequisite_audit_closed": false,
+  "lean_compilation_run": false,
+  "ci_or_workflow_dispatched": false,
+  "merge_run": false
+}

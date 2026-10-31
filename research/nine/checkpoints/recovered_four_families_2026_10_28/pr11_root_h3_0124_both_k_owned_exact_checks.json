@@ -1,0 +1,81 @@
+{
+  "source": "INNER_PENTAGON_H3_0124_BOTH_OUTER_HUB_OWNED_ENDPOINTS_EXCLUSION.md",
+  "sha256": "d266281a14e433bb690117a088f118ac05a00e7d6cff3936f21ec820edf74564",
+  "nine_complete_input_pins": {
+    "SIX_BODY_INNER_PENTAGON_LOAD_COVER.md": "fa877c9d7d25c57a7c8cf438a429465b5952cb8db6628c57d9d93695b33dd434",
+    "FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md": "6c38d162e1f2c435cf65a8b4a58a7001fe9489c65b3510159fee2687b9753708",
+    "CIRCLE_CONTACT_ANGULAR_ORDER.md": "2625b3a2b730525a6397bc90232e78c5e1aac8091381c1f5e5fc8a71ef1da449",
+    "BOUNDARY_CONTACT_ORIGIN_MOMENT_ORIENTATION.md": "851417d7fcd12ccb93a6f7f09ba7d7b2bf9bccc61c82fee3457b5ee4cee47e9a",
+    "TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md": "0d61292a0aa57084b88b4a72754fc78e123e8b684dac09be966fb074ab58e877",
+    "PHYSICAL_BODY_GRAPH_UNCROSSING.md": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a",
+    "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c",
+    "REVIEW_NINE_MEASURE_FIVE_POINT_ASSEMBLY_ROOT_2026_10_26.md": "6aa33d0fbccdede04d909b770496fcac8d061e184d46d890f2394b484c6b4b5b",
+    "REVIEW_NINE_MEASURE_FIVE_POINT_ASSEMBLY_C6_2026_10_26.md": "68e17f92fbc87b7484d3dcdef206ba0e5f0b7014eb0f06ec707919cbe44e00a2"
+  },
+  "exact_positive_reserves": {
+    "sigma below99/140": "1/19600",
+    "sqrt3 above433/250": "11/62500",
+    "cos75 below259/1000": "81/1000000",
+    "center-distance monotonic t at t1": "24201/40000",
+    "center-distance monotonic r at r181/140": "7237/7000",
+    "actual endpoint center distance exceeds2": "109/61250",
+    "cos alpha above89/100": "211/62500",
+    "sigma below5/7": "1/98",
+    "unit wall support contradiction": "1/700"
+  },
+  "original_edges": [
+    [
+      "K",
+      "E1"
+    ],
+    [
+      "E1",
+      "E2"
+    ],
+    [
+      "E2",
+      "E3"
+    ],
+    [
+      "E3",
+      "E4"
+    ],
+    [
+      "E4",
+      "K"
+    ],
+    [
+      "K",
+      "H"
+    ],
+    [
+      "H",
+      "E2"
+    ],
+    [
+      "H",
+      "E3"
+    ]
+  ],
+  "original_degrees": {
+    "K": 3,
+    "H": 3,
+    "E1": 2,
+    "E2": 3,
+    "E3": 3,
+    "E4": 2
+  },
+  "positive_circle_loads": [
+    "E1",
+    "E2",
+    "E3",
+    "E4"
+  ],
+  "owner_cover": [
+    "equal axes: all-pairs endpoint separation",
+    "perpendicular axes: full K3 fixes interior arc; both endpoints NE",
+    "opposite axes: full K3 wall, original means, center bound and unit-gap contradiction"
+  ],
+  "review_gate": "Root-authored complete new math requires two separate full independent reviews; no adoption before both complete records read",
+  "fine_changes": []
+}

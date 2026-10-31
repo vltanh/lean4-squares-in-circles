@@ -1,0 +1,119 @@
+{
+  "date_utc": "2026-10-28",
+  "reviewer": "frontier_audit",
+  "verdict": "PASS of complete declared original interface",
+  "target": {
+    "path": "research/nine/OPEN_ORIGIN_S_ROOT_NORTHWEST_OPPOSITE_HUB_RETURNS_EXCLUSION.md",
+    "sha256": "e46f43bf8b902711caa5aebc6041f62b71870463884193bfa3d3f14fc02a1b00"
+  },
+  "review": {
+    "path": "research/nine/REVIEW_S_ROOT_NORTHWEST_OPPOSITE_RETURNS_FRONTIER_2026_10_28.md",
+    "sha256": "60b55db2dbe5a30b320d673621ec9fc51da565c320558509e2ae677cfdb7c7cc"
+  },
+  "dependency_pins": [
+    {
+      "path": "research/nine/OPEN_ORIGIN_S_ROOT_OWNED_SINGLETON_OPPOSITE_HUB_RETURN_REDUCTION.md",
+      "expected_sha256": "b567e96efdc5d1cb56102b7460a33de2d6e83c5c17af1bd03f3a04aa8a4c6e0f",
+      "actual_sha256": "b567e96efdc5d1cb56102b7460a33de2d6e83c5c17af1bd03f3a04aa8a4c6e0f",
+      "match": true
+    },
+    {
+      "path": "research/nine/OPEN_ORIGIN_S_ROOT_OWNED_AXIS_POSITIVE_CONCURRENCE_FROM_ACTUAL_HUB_STRIP.md",
+      "expected_sha256": "8fb2124065fbc37b4746e94bf45611f2dbd3bb29990391256ddd15d5c15bb917",
+      "actual_sha256": "8fb2124065fbc37b4746e94bf45611f2dbd3bb29990391256ddd15d5c15bb917",
+      "match": true
+    },
+    {
+      "path": "research/nine/ONE_UNLOADED_RETURN_HUB_ACTUAL_WEAK_MOMENT_STRIP.md",
+      "expected_sha256": "382e06b874e41cf582b17374a122c7e4f289472f00cd6d02d926b680f15c1ed5",
+      "actual_sha256": "382e06b874e41cf582b17374a122c7e4f289472f00cd6d02d926b680f15c1ed5",
+      "match": true
+    },
+    {
+      "path": "research/nine/FIXED_SINGLETON_THREE_FORCE_OFF_LINE_NORMAL_SELECTION_AND_H4_OWNED_END_REDUCTION.md",
+      "expected_sha256": "d5e02f317ecbfdbd3d948fd27f5f78d6eda8803fb679c435ef3101780e1f47b1",
+      "actual_sha256": "d5e02f317ecbfdbd3d948fd27f5f78d6eda8803fb679c435ef3101780e1f47b1",
+      "match": true
+    },
+    {
+      "path": "research/nine/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "expected_sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "actual_sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "match": true
+    }
+  ],
+  "dependency_pin_count": 5,
+  "exact_positive_reserves": {
+    "epsilon_sqrt_below_thirteen_hundredths": {
+      "numerator": 7,
+      "denominator": 30000,
+      "positive": true
+    },
+    "chart_z_below_one_fifth": {
+      "numerator": 1,
+      "denominator": 445,
+      "positive": true
+    },
+    "full_face_polynomial_bracket_lower_reserve": {
+      "numerator": 22,
+      "denominator": 35,
+      "positive": true
+    },
+    "full_face_first_squared_norm_reserve": {
+      "numerator": 5927,
+      "denominator": 11200,
+      "positive": true
+    },
+    "full_face_second_squared_norm_reserve": {
+      "numerator": 103,
+      "denominator": 11200,
+      "positive": true
+    },
+    "full_face_origin_radius_squared_reserve": {
+      "numerator": 191,
+      "denominator": 14400,
+      "positive": true
+    },
+    "sqrt_two_minus_one_below_five_twelfths_squared": {
+      "numerator": 1,
+      "denominator": 144,
+      "positive": true
+    },
+    "contradictory_z_bounds_gap": {
+      "numerator": 3,
+      "denominator": 40,
+      "positive": true
+    }
+  },
+  "scope": [
+    "actual open-origin genuine S X3 root",
+    "root-owned singleton HX",
+    "strict Northwest XA at its original A-owned axis",
+    "original H3 opposite return vertices with all forces and weak HC moment",
+    "both original roof AC.S and roof ABC.S",
+    "all original tangent-side applications, masks, zero individual weights and nine actual units"
+  ],
+  "remaining_interfaces": [
+    "XA North",
+    "HC genuine side",
+    "shared HX",
+    "origin-free roots",
+    "aligned-high roots",
+    "fan true H4"
+  ],
+  "checks": [
+    "entire target read",
+    "entire b567 opposite-return source read",
+    "full imported full-face proof independently rederived",
+    "actual fixed-port off-line selector at H3",
+    "strict positivity identifies actual HA A-axis with m",
+    "actual side identity without reselection",
+    "full HC moment signed expansion",
+    "t>b/2 from the original weak moment",
+    "z<5/12 and z>59/120 with exact positive gap"
+  ],
+  "no_new_gate_credit": true,
+  "metadata_edited": false,
+  "lean_or_ci_run": false,
+  "loaded_A_B_C_force_equation_used": false
+}

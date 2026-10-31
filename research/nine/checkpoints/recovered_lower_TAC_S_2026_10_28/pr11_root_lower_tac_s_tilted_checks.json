@@ -1,0 +1,36 @@
+{
+  "source": "HOUSE_LOWER_TAC_S_TILTED_ROOT_COMPLETE_EXCLUSION.md",
+  "sha256": "ab0e50c96ee74b50afe2f094e4ae20f3467880c54a807dcc4b36d754b35e52da",
+  "all_eight_literal_pins": {
+    "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md": "7ba98ef149c1faff4ef4baeaf0b0305a38cf1153f883a3fe4bfa92087d33622d",
+    "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md": "6154eee2ab1114d063b0dbd1a2800c3522cbb1b46ec44a258c1c89d8ffb9e975",
+    "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md": "6e2279b627754fe6ba3c7d9a9779308ee8133223b09f5374803797cb41f3d96c",
+    "SMALLER_CENTRAL_DISKS_NINE_UNIT_CAPACITY.md": "b0b2858252d2a3bee205d40f97958da445ece0a3a4e05bd693340b2e94884257",
+    "CENTRAL_S_ROOT_THREE_BOUNDARY_PATH_CAPACITY.md": "91b34cfb58f69565d75e87ebc95fb92a6ed0226588292379cb380daae87efd3f",
+    "S_LEAF_ROOT_HIGH_COORDINATE_NORTH_SCREEN_EXCLUSION.md": "acec45db3253b2be2c6b68a85714313da572a8a858e9921431a745cafd889a83",
+    "PHYSICAL_BODY_GRAPH_UNCROSSING.md": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a",
+    "ALIGNED_S_LEAF_ROOT_TWO_BOUNDARY_NEIGHBORS_EXCLUSION.md": "7c0e55bc75013f14d667a85635cd743361b325f7180f4710fd832c4f14ab9873"
+  },
+  "twelve_exact_positive_reserves": {
+    "d low squared": "11/900",
+    "central V lower squared": "43/225",
+    "high V upper squared": "61/1200",
+    "NW physical squared comparison": "281/3600",
+    "North SW port radius gap": "1/2800",
+    "West actual Y magnitude": "37/700",
+    "West negative f bound": "4/15",
+    "West radial lower margin": "1/210",
+    "West radial upper margin": "989/3660",
+    "SW radial upper margin": "29/60",
+    "generic physical diameter gap": "1/4",
+    "SE positive radial numerator": "46/225"
+  },
+  "complete_root_derivation": [
+    "All416source lines, complete true B3 about actual SW vertex; no A3/D3 force deletion",
+    "Read full SMALLER_CENTRAL_DISKS_NINE_UNIT_CAPACITY and full operative CENTRAL_S_ROOT_THREE_BOUNDARY_PATH_CAPACITY Sections1-5",
+    "Read full force-free S_LEAF_ROOT_HIGH_COORDINATE_NORTH_SCREEN_EXCLUSION Sections1-4; no ordered-moment Section5 imported",
+    "Entire W/S/SE/SW mean/owner cover with every physical circle corner",
+    "Actual exterior house order uses positive-f S-leaf corner; full leaf resultant has zero f component"
+  ],
+  "remaining": "Original aligned strict-low genuine S-root domain remains; no original fine or coarse increment"
+}

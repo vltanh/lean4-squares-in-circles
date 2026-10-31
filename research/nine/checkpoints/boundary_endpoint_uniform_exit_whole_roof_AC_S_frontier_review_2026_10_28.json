@@ -1,0 +1,241 @@
+{
+  "date_utc": "2026-10-28",
+  "reviewer": "frontier_audit",
+  "verdict": "PASS: complete general theorem and whole original roof-AC S gate",
+  "target": {
+    "path": "research/nine/BOUNDARY_ENDPOINT_TRANSMITTER_THREE_FORCE_HUB_UNIFORM_EXIT_SUPPORT.md",
+    "sha256": "72f7919d9b8105f5c816807b14bc54f9b703271154d2a6cc846b1fffce1262ae"
+  },
+  "review": {
+    "path": "research/nine/REVIEW_BOUNDARY_ENDPOINT_UNIFORM_EXIT_WHOLE_ROOF_AC_S_FRONTIER_2026_10_28.md",
+    "sha256": "d550b9a2ecb4a06013e82044cd4debd3bce62386971891bc89c54630b73d663e"
+  },
+  "original_gate": "M6.B5L.HOUSE.ROOF.LAC.S",
+  "scope": {
+    "pre_extraction_common_certificate": true,
+    "C_true_loaded_degree": 2,
+    "U_true_unloaded_degree": 2,
+    "H_true_unloaded_degree": 3,
+    "A_physical_boundary_only": true,
+    "A_force_equation_used": false,
+    "X_degree_or_load_assumption": false,
+    "X_force_equation_used": false,
+    "HX_owned_axis_assumption": false,
+    "all_original_means_retained": true,
+    "all_C_physical_masks_and_circle_weights_retained": true,
+    "all_nine_actual_units_retained": true,
+    "genuine_S_root_all_positions": true,
+    "whole_original_gate_join": true
+  },
+  "dependency_pin_count": 17,
+  "dependency_pins": [
+    {
+      "path": "research/nine/UNIT_BYPASS_NORMAL_CHANNEL.md",
+      "expected_sha256": "db073cd024a4f2e763e7cd0a21bf5cb6a2a8be67069f3f9d3aff638b8a40b258",
+      "actual_sha256": "db073cd024a4f2e763e7cd0a21bf5cb6a2a8be67069f3f9d3aff638b8a40b258",
+      "match": true
+    },
+    {
+      "path": "research/nine/HOUSE_END_TRIPLE_PARALLEL_BYPASS_EXCLUSION.md",
+      "expected_sha256": "d8351b5eb394a2d0a1324b1992d848865946303a4ad3bb4d884d206d6222394f",
+      "actual_sha256": "d8351b5eb394a2d0a1324b1992d848865946303a4ad3bb4d884d206d6222394f",
+      "match": true
+    },
+    {
+      "path": "research/nine/HOUSE_END_TRIPLE_TILTED_BYPASS_DOMAIN.md",
+      "expected_sha256": "73b54547dfc5b04ece8aa137533ace68179b05cdc412bb7305074503cdc14cbf",
+      "actual_sha256": "73b54547dfc5b04ece8aa137533ace68179b05cdc412bb7305074503cdc14cbf",
+      "match": true
+    },
+    {
+      "path": "research/nine/HOUSE_END_TRIPLE_UNIQUE_TILTED_TIP_EXCLUSION.md",
+      "expected_sha256": "23baa17e19c4bd5b8722ceb79b718eb310cfb717817d0eb879b7c75888469ffd",
+      "actual_sha256": "23baa17e19c4bd5b8722ceb79b718eb310cfb717817d0eb879b7c75888469ffd",
+      "match": true
+    },
+    {
+      "path": "research/nine/GENERAL_FIXED_TIP_NORMAL_SELECTION.md",
+      "expected_sha256": "ef8ae8a219af9fa15a70698e485bbb337925e5caf2cd64b6b5c2619d9c4bd194",
+      "actual_sha256": "ef8ae8a219af9fa15a70698e485bbb337925e5caf2cd64b6b5c2619d9c4bd194",
+      "match": true
+    },
+    {
+      "path": "research/nine/HOUSE_END_TRIPLE_RADIAL_HUB_OWNER_EXCLUSION.md",
+      "expected_sha256": "6ee367eca974a62c495eb9d8eda4ac3afb75ff5cf64a34581e43590780e0b144",
+      "actual_sha256": "6ee367eca974a62c495eb9d8eda4ac3afb75ff5cf64a34581e43590780e0b144",
+      "match": true
+    },
+    {
+      "path": "research/nine/HOUSE_END_TRIPLE_RADIAL_LOWER_TIP_EXCLUSION.md",
+      "expected_sha256": "a0bab9ed546b22f17f18e6d3dd4f07354d6a8f859ce5f172c4353ec2905522cf",
+      "actual_sha256": "a0bab9ed546b22f17f18e6d3dd4f07354d6a8f859ce5f172c4353ec2905522cf",
+      "match": true
+    },
+    {
+      "path": "research/nine/HOUSE_END_TRIPLE_PARALLEL_UNIQUE_FREE_EXCLUSION.md",
+      "expected_sha256": "d83d0938ca639e5712c3d910d35890fc823227262d7364f1110d73937c7f5784",
+      "actual_sha256": "d83d0938ca639e5712c3d910d35890fc823227262d7364f1110d73937c7f5784",
+      "match": true
+    },
+    {
+      "path": "research/nine/BOUNDARY_ENDPOINT_TRANSMITTER_OBLIQUE_HUB_OWNED_EXIT_POSITIVE_SUPPORT.md",
+      "expected_sha256": "81ff70e50d96bee07e2f1612df700b9bb1fcf7b783387f856d6db71fb04c2cea",
+      "actual_sha256": "81ff70e50d96bee07e2f1612df700b9bb1fcf7b783387f856d6db71fb04c2cea",
+      "match": true
+    },
+    {
+      "path": "research/nine/HOUSE_END_TRIPLE_PARALLEL_UNIQUE_HUB_EXCLUSION.md",
+      "expected_sha256": "e69f54f988f4b955774da429079f7c6da59096ea763899cf73053f82e4a1345b",
+      "actual_sha256": "e69f54f988f4b955774da429079f7c6da59096ea763899cf73053f82e4a1345b",
+      "match": true
+    },
+    {
+      "path": "research/nine/FIXED_SINGLETON_THREE_FORCE_OFF_LINE_NORMAL_SELECTION_AND_H4_OWNED_END_REDUCTION.md",
+      "expected_sha256": "d5e02f317ecbfdbd3d948fd27f5f78d6eda8803fb679c435ef3101780e1f47b1",
+      "actual_sha256": "d5e02f317ecbfdbd3d948fd27f5f78d6eda8803fb679c435ef3101780e1f47b1",
+      "match": true
+    },
+    {
+      "path": "research/nine/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "expected_sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "actual_sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "match": true
+    },
+    {
+      "path": "research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "expected_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "actual_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "match": true
+    },
+    {
+      "path": "research/nine/NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md",
+      "expected_sha256": "4c9e708945938c3f9df575e76f7573903d6b5a0ce4eccb5bcea760353a47458a",
+      "actual_sha256": "4c9e708945938c3f9df575e76f7573903d6b5a0ce4eccb5bcea760353a47458a",
+      "match": true
+    },
+    {
+      "path": "research/nine/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "expected_sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "actual_sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "match": true
+    },
+    {
+      "path": "research/nine/PHYSICAL_CONTACT_STRESS.md",
+      "expected_sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "actual_sha256": "d3a8d06a7ea8446585f765086f175ad3e165095a885b9c20631cbc55fcf14fc5",
+      "match": true
+    },
+    {
+      "path": "research/nine/PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "expected_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "actual_sha256": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+      "match": true
+    }
+  ],
+  "previous_complete_radial_and_owned_exit_audit": {
+    "review_path": "research/nine/REVIEW_BOUNDARY_ENDPOINT_OWNED_EXIT_POSITIVE_SUPPORT_FRONTIER_2026_10_28.md",
+    "review_sha256": "56aebb6fb98f1f079b6b471dfed3d042f87d73aeb5cf2d5fa5b77cfedd28d6f9",
+    "record_path": "research/nine/checkpoints/oblique_hub_owned_exit_positive_support_frontier_review_2026_10_28.json",
+    "record_sha256": "24dc1a07272b330087b231ec943863db2b687671be7e1d6cc296aa026d5c0cfb",
+    "previous_exact_reserve_count": 18,
+    "reused_identical_source_bytes": true
+  },
+  "newly_checked_legacy_scope": [
+    "entire HOUSE_END_TRIPLE_PARALLEL_BYPASS_EXCLUSION.md",
+    "HOUSE_END_TRIPLE_UNIQUE_TILTED_TIP_EXCLUSION.md Section 4, complete H-owned unique-C branch",
+    "HOUSE_END_TRIPLE_RADIAL_HUB_OWNER_EXCLUSION.md H-owned chart and containment prefix; full scalar proof already audited",
+    "HOUSE_END_TRIPLE_PARALLEL_UNIQUE_HUB_EXCLUSION.md Sections 1 through 3.1 and actual angle Equation 20; later A3 and loaded-X2 arguments unused",
+    "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md Lemma 3.1, Theorem 6.1 and Corollary 6.2",
+    "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md original graph table and roof-root AC row"
+  ],
+  "exact_positive_reserves": {
+    "parallel_radial_A_corner_radius_gap": {
+      "numerator": 141,
+      "denominator": 320,
+      "positive": true
+    },
+    "radial_height_above_nineteen_tenths": {
+      "numerator": 13,
+      "denominator": 320,
+      "positive": true
+    },
+    "radial_height_below_five_halves": {
+      "numerator": 559,
+      "denominator": 256,
+      "positive": true
+    },
+    "radius_cap_below_twenty_one_tenths_squared": {
+      "numerator": 599,
+      "denominator": 6400,
+      "positive": true
+    },
+    "sqrt_two_above_seven_fifths_squared": {
+      "numerator": 1,
+      "denominator": 25,
+      "positive": true
+    },
+    "unique_tilted_chord_three_vs_two_sqrt_two_squared": {
+      "numerator": 1,
+      "denominator": 1,
+      "positive": true
+    },
+    "free_halfangle_sum_below_one_at_one_third": {
+      "numerator": 1,
+      "denominator": 15,
+      "positive": true
+    },
+    "free_exit_support_reserve": {
+      "numerator": 3,
+      "denominator": 10,
+      "positive": true
+    },
+    "owned_exit_support_threshold_squared_gap": {
+      "numerator": 1,
+      "denominator": 100,
+      "positive": true
+    },
+    "S_root_epsilon_bound_squared_gap": {
+      "numerator": 31,
+      "denominator": 57600,
+      "positive": true
+    },
+    "uniform_exit_vs_near_root_support_gap": {
+      "numerator": 11,
+      "denominator": 60,
+      "positive": true
+    },
+    "parallel_radial_all_A_radius_reserve": {
+      "numerator": 71,
+      "denominator": 1400,
+      "positive": true
+    }
+  },
+  "hand_checks": [
+    "complete parallel/tilted H/U partition",
+    "complete unique/radial and parallel/tilted C partition",
+    "all free/C-owned/H-owned CH features",
+    "fixed-tip and block-selection external-point scope",
+    "full original H3 equations and negative frame orientation",
+    "new fixed-port selection at Q_C,V,W and strict 0<t<1",
+    "actual origin projections U0 and V0",
+    "complete variable-k chord monotonicity and endpoint inequality",
+    "actual physical AX support comparison and 0<alpha<delta<pi/4",
+    "m.u>1/sqrt(2), m.v>0 and exit support>1/5",
+    "actual original S inward unit segment in every root frame",
+    "unconditional same-nine pre-window entry",
+    "literal original graph/load and three-extra completion contract"
+  ],
+  "excluded_methods": {
+    "lean_compilation": false,
+    "ci_or_workflow_dispatch": false,
+    "pose_sampling": false,
+    "fresh_analytic_measure_replay": false,
+    "metadata_edits": false,
+    "post_extraction_normal_changes": false
+  },
+  "unchanged_limitations": [
+    "no ABC.S closure: B is loaded",
+    "no endpoint-fan closure: H has true degree four",
+    "general theorem concerns common preselected necessary certificates, not arbitrary originally chosen normals"
+  ]
+}

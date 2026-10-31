@@ -1,0 +1,205 @@
+{
+  "date_utc": "2026-10-28",
+  "reviewer": "frontier_audit",
+  "verdict": "PASS: complete necessary-domain reduction; D-owned AD row remains",
+  "target": {
+    "path": "research/nine/LOWER_HOUSE_TDC_S_PARALLEL_INWARD_FACE_REQUIRES_BOUNDARY_OWNER.md",
+    "sha256": "864c8298d7322b794a97673006dbb3cf01fb6f8f68c16c27e97b70e96d18ae13"
+  },
+  "review": {
+    "path": "research/nine/REVIEW_LOWER_TDC_S_PARALLEL_INWARD_OWNER_FRONTIER_2026_10_28.md",
+    "sha256": "a464517e0623bc6faad6ed021eb4192010f458e2b382f3022b40a11611cbaba1"
+  },
+  "source_precision_correction": {
+    "old_sha256": "686943c874e1a6085b31bbb780dc80b00e978b60a8d9669631e9ad44a2f7ca4f",
+    "change": "Boundary clearance is >=R-sqrt(2), preserving radial-D equality; all uses have strict reserves beyond it.",
+    "current_statement_checked": true
+  },
+  "dependency_pin_count": 13,
+  "dependency_pins": [
+    {
+      "path": "research/nine/LOWER_HOUSE_TDC_S_CLOSED_ORIGIN_SUPPORT_AND_SHALLOW_REDUCTION.md",
+      "expected_sha256": "53a1f33837c353088f83b5226c2e37dfef6434037cd149755af4f24758cbfad6",
+      "actual_sha256": "53a1f33837c353088f83b5226c2e37dfef6434037cd149755af4f24758cbfad6",
+      "match": true
+    },
+    {
+      "path": "research/nine/UNLOADED_BOUNDARY_TRIANGLE_HUB_THIRD_SUPPORT_AND_CRITICAL_EXCLUSION.md",
+      "expected_sha256": "d8661132bd2d97911116373d22968bbde2ff3c4c4a63c962c72d722ec3d5b089",
+      "actual_sha256": "d8661132bd2d97911116373d22968bbde2ff3c4c4a63c962c72d722ec3d5b089",
+      "match": true
+    },
+    {
+      "path": "research/nine/UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md",
+      "expected_sha256": "406fce53d22cc20eec43a373a877798dab583a6bd93f684ff124293016c44c87",
+      "actual_sha256": "406fce53d22cc20eec43a373a877798dab583a6bd93f684ff124293016c44c87",
+      "match": true
+    },
+    {
+      "path": "research/nine/UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md",
+      "expected_sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "actual_sha256": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+      "match": true
+    },
+    {
+      "path": "research/nine/INNER_PENTAGON_FOUR_SPOKE_SHARED_UNLOADED_END_EXCLUSION.md",
+      "expected_sha256": "ab1882057cc4d5bc0be2929c0c926543a92fbbbc4f8f74598c2238707d17f9f6",
+      "actual_sha256": "ab1882057cc4d5bc0be2929c0c926543a92fbbbc4f8f74598c2238707d17f9f6",
+      "match": true
+    },
+    {
+      "path": "research/nine/D_LEAF_ROOT_BELONGS_TO_EVERY_CYCLIC_BLOCK.md",
+      "expected_sha256": "9dd28b72bf8a837747c39c50c1d30f3f6d405f4442e39eda47d38d4485acb743",
+      "actual_sha256": "9dd28b72bf8a837747c39c50c1d30f3f6d405f4442e39eda47d38d4485acb743",
+      "match": true
+    },
+    {
+      "path": "research/nine/GENERAL_SMALL_ORIGIN_CORNER_CONTACT_KERNELS.md",
+      "expected_sha256": "b977be65217728c0363e8bab030bdb3d11b1b8ef75cc32d295a8337c4ea01477",
+      "actual_sha256": "b977be65217728c0363e8bab030bdb3d11b1b8ef75cc32d295a8337c4ea01477",
+      "match": true
+    },
+    {
+      "path": "research/nine/ROOTED_SMALL_ORIGIN_CORNER_TWO_BOUNDARY_NEIGHBORS.md",
+      "expected_sha256": "6ebda6299f692af6380ad36b98420aeb3155cf95a6b586e1df3848807d4cf467",
+      "actual_sha256": "6ebda6299f692af6380ad36b98420aeb3155cf95a6b586e1df3848807d4cf467",
+      "match": true
+    },
+    {
+      "path": "research/nine/TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md",
+      "expected_sha256": "29e38d3f641fe16c6db587e51245f92ad4c447f9536db7d14c221f56b5357e82",
+      "actual_sha256": "29e38d3f641fe16c6db587e51245f92ad4c447f9536db7d14c221f56b5357e82",
+      "match": true
+    },
+    {
+      "path": "research/nine/THREE_BOUNDARY_PATH_RESULTANT_CONE.md",
+      "expected_sha256": "9789d4cf5dc456512fd2713e78b722c94325c51f93ac973c535f4249a1a68d9e",
+      "actual_sha256": "9789d4cf5dc456512fd2713e78b722c94325c51f93ac973c535f4249a1a68d9e",
+      "match": true
+    },
+    {
+      "path": "research/nine/C7_FORCE_POLYGON.md",
+      "expected_sha256": "d50d8ca48ea19156175e651bfa74be30ef3e58065ec14d8d1834670a41559089",
+      "actual_sha256": "d50d8ca48ea19156175e651bfa74be30ef3e58065ec14d8d1834670a41559089",
+      "match": true
+    },
+    {
+      "path": "research/nine/RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "expected_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "actual_sha256": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+      "match": true
+    },
+    {
+      "path": "research/nine/FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md",
+      "expected_sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "actual_sha256": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b",
+      "match": true
+    }
+  ],
+  "exact_positive_reserves": {
+    "center_radius_reserve": {
+      "numerator": 31,
+      "denominator": 57600,
+      "positive": true
+    },
+    "R_below_twenty_five_twelfths_squared": {
+      "numerator": 55,
+      "denominator": 2304,
+      "positive": true
+    },
+    "perpendicular_center_one_third_squared_reserve": {
+      "numerator": 1,
+      "denominator": 90,
+      "positive": true
+    },
+    "horizontal_two_neighbor_rectangle_diameter_reserve": {
+      "numerator": 539,
+      "denominator": 900,
+      "positive": true
+    },
+    "lower_return_support_point_radius_gap": {
+      "numerator": 551,
+      "denominator": 3600,
+      "positive": true
+    },
+    "small_origin_vertex_threshold_squared_gap": {
+      "numerator": 1,
+      "denominator": 14400,
+      "positive": true
+    },
+    "parallel_C_top_height_squared_gap": {
+      "numerator": 1,
+      "denominator": 100,
+      "positive": true
+    },
+    "adjacent_C_corner_radius_squared_gap": {
+      "numerator": 659,
+      "denominator": 3600,
+      "positive": true
+    },
+    "tilted_C_wrong_frame_squared_radius_gap": {
+      "numerator": 4499,
+      "denominator": 3600,
+      "positive": true
+    },
+    "D_min_side_one_eighth_threshold_squared_gap": {
+      "numerator": 54,
+      "denominator": 25,
+      "positive": true
+    },
+    "D_max_side_above_fifty_nine_sixtieths_squared_gap": {
+      "numerator": 251,
+      "denominator": 14400,
+      "positive": true
+    },
+    "left_wall_strict_reserve": {
+      "numerator": 1,
+      "denominator": 120,
+      "positive": true
+    },
+    "parallel_C_vs_D_top_height_gap": {
+      "numerator": 1,
+      "denominator": 10,
+      "positive": true
+    },
+    "boundary_clearance_conservative_sqrt_two_gap": {
+      "numerator": 41,
+      "denominator": 400,
+      "positive": true
+    }
+  },
+  "exact_rational_identities_checked": [
+    "(61/60)^2+(53/60)^2=6530/3600",
+    "(59/60)^2+1=7081/3600",
+    "(91/60)^2-(89/60)^2=1/10"
+  ],
+  "full_hand_checks": [
+    "entire current source read and every step rederived",
+    "true B3 opposite West returns and nonzero moments",
+    "full A3 axis/strict-feature cover",
+    "force-free actual support cap with all means",
+    "actual triangle winding and zero-ray obstruction without D2",
+    "complete small-origin kernel and underlying physical feature proof",
+    "true C2/T2 properness and degree-free T-D-C resultant cone",
+    "unique physical C corner and whole parallel/tilted C contact cover",
+    "full physical D-vertex tangent-sector cover",
+    "strict D-side component estimates",
+    "all negative/positive/zero D support dot-product cases",
+    "genuine shared CD line-equality endpoint",
+    "full stated D-owned residual preserved"
+  ],
+  "scope": {
+    "original_family": "lower-house TDC.S",
+    "high_aligned_B_root": true,
+    "original_BA_West": true,
+    "A_and_B_parallel": true,
+    "all_nine_actual_units_retained": true,
+    "full_loaded_D3_retained": true,
+    "true_T2_and_C2_only": true,
+    "actual_means_and_endpoints_retained": true,
+    "new_original_gate_credit": 0
+  },
+  "remaining": "D-owned strict Northwest AD at upper A vertex in D-side relative interior; all other high interfaces remain outside this reduction",
+  "metadata_edited": false,
+  "lean_or_ci_run": false
+}

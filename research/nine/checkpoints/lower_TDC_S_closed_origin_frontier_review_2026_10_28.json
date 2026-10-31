@@ -1,0 +1,28 @@
+{
+  "reviewer": "frontier_audit",
+  "date": "2026-10-28",
+  "scope": "Full closed-origin support theorem, unconditional BA/BC nonzero moments, owned-root exit, all strict-low and tilted-critical domains, critical aligned endpoints, and entire high-tilted shallow implication. Critical aligned interior and all high domains retain the listed residues; zero full gate.",
+  "pins": {
+    "LOWER_HOUSE_TDC_S_CLOSED_ORIGIN_SUPPORT_AND_SHALLOW_REDUCTION.md": "53a1f33837c353088f83b5226c2e37dfef6434037cd149755af4f24758cbfad6",
+    "NINE_RADIUS_TWO_MEASURE_LOWER_BOUND.md": "4c9e708945938c3f9df575e76f7573903d6b5a0ce4eccb5bcea760353a47458a",
+    "LOWER_WINDOW_FROM_NINE_ANALYTIC_MEASURE.md": "3b3f40af8f62beee8a55b8d4c8d26398097362d88e91d32116885b4ceea96e90",
+    "S_LEAF_ONE_UNLOADED_HUB_MOMENT_REDUCTION.md": "94e3a3cec875be191355b1f9baff4ffa597edcae9854d2d557dcb13d631cc157",
+    "UNLOADED_OPPOSED_MOMENT_STAR_AND_LOWER_HOUSE_TDC_D_SMALL_SUPPORT_REDUCTION.md": "008acc8485e591b34604bf3e0b0cdcb03b7220aa249fc8e49552a065770ca129",
+    "GLOBAL_NEXT_DEGREE_FREE_MOMENT_PORT_ORDER_AND_INTACT_BLOCK_EXCLUSION.md": "8def789e0cde632795f81d8ecf92d6dd3642b37fd4ca6e79cc4890594264fd49",
+    "UNLOADED_THREE_FORCE_TOUCHING_RETURNS_STRICT_SUPPORT_SEPARATION.md": "406fce53d22cc20eec43a373a877798dab583a6bd93f684ff124293016c44c87",
+    "UNIT_TRIANGLE_SIDE_NORMAL_OBSTRUCTION.md": "b4c0a2895debb403a52603e4243351dbb9a98f04bc2d051c54c33ce6cacf9207",
+    "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md": "faf453b3c519b10590cf9d6f6dbf9282233bd2ff04c90aa0cd8cd89e060bc676",
+    "PHYSICAL_BODY_GRAPH_UNCROSSING.md": "bc98e6b6df24b88a05c1a50c1968f2f20d9a3c49cf3c6f067d1e6123aeb580fe",
+    "FIVE_BODY_BLOCK_LEAF_GRAPH_LOAD_COVER.md": "e5c84071363e8dc43b09f9033c7cb3a7684f1de19bcd169d53c9eab55d51963b"
+  },
+  "exact_positive_reserves": {
+    "R_gt_2_enters_original_lower_window": "1/40",
+    "d_gt_9_over_10_from_R_gt_2": "7/50",
+    "r_gt_11_over_20_from_R_gt_2": "41/400",
+    "upper_d_lt_61_over_60": "31/57600",
+    "high_V_lt_3_over_4": "329/3600",
+    "high_V_lt_31_over_120": "1/14400"
+  },
+  "revision_adoption": "Initial full read at 9aa924 was followed by explicit current positive-component scope and self-contained critical East-neighbor equality additions, frozen at 53a1f338. These clarification proofs were independently checked.",
+  "validation": "Hand continuous proof review plus exact displayed scalar comparisons and current source pins only; no Lean, CI, numerical pose search, geometric mesh or historical certificate replay."
+}

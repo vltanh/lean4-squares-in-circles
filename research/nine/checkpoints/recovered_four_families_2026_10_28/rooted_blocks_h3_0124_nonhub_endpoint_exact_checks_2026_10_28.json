@@ -1,0 +1,53 @@
+{
+  "source": "INNER_PENTAGON_H3_0124_NONHUB_OWNED_OR_RADIAL_ENDPOINTS_EXCLUSION.md",
+  "source_sha256": "c72a8bc51f9c76bd5b6c2d44ad05b6e96f5c8807aab257c27baef8f5a15d5c44",
+  "pin_count": 8,
+  "pins": [
+    {
+      "name": "SIX_BODY_INNER_PENTAGON_LOAD_COVER.md",
+      "sha256": "fa877c9d7d25c57a7c8cf438a429465b5952cb8db6628c57d9d93695b33dd434"
+    },
+    {
+      "name": "FOUR_BOUNDARY_PATH_ENDPOINT_SEPARATION.md",
+      "sha256": "6c38d162e1f2c435cf65a8b4a58a7001fe9489c65b3510159fee2687b9753708"
+    },
+    {
+      "name": "BOUNDARY_CONTACT_ORIGIN_MOMENT_ORIENTATION.md",
+      "sha256": "851417d7fcd12ccb93a6f7f09ba7d7b2bf9bccc61c82fee3457b5ee4cee47e9a"
+    },
+    {
+      "name": "TRIANGLE_TWO_BRIDGES_CHAIN_EXCLUSION.md",
+      "sha256": "0d61292a0aa57084b88b4a72754fc78e123e8b684dac09be966fb074ab58e877"
+    },
+    {
+      "name": "RADIAL_BRIDGE_AND_LEAF_REDUCTION.md",
+      "sha256": "6154eee2ab1114d063b0dbd1a2800c3522cbb1b46ec44a258c1c89d8ffb9e975"
+    },
+    {
+      "name": "CIRCLE_CONTACT_ANGULAR_ORDER.md",
+      "sha256": "2625b3a2b730525a6397bc90232e78c5e1aac8091381c1f5e5fc8a71ef1da449"
+    },
+    {
+      "name": "PHYSICAL_BODY_GRAPH_UNCROSSING.md",
+      "sha256": "eb26f19b27dc7327f80a64ccfd1febb542c5915aadcf95227e35765b20d3509a"
+    },
+    {
+      "name": "FAN_TIP_OWNED_ENDPOINT_EXCLUSION.md",
+      "sha256": "32dcd0afd0883e4272e95b26278d8c90af0c02639b522fd5c960941bb34dba02"
+    }
+  ],
+  "strict_fraction_reserves": {
+    "inward_segment_corner": "47/256",
+    "radial_d_gt_nine_tenths": "13/320",
+    "center_radius_gt_five_fourths": "41/1600",
+    "alpha_lt_pi_six_square": "46992849/976562500",
+    "cos_alpha_floor": "211/62500",
+    "sin_alpha_ceiling_square": "2424521/3906250000",
+    "tan_endpoint_guard": "26/147",
+    "final_diagonal_rational": "17/7000",
+    "final_diagonal_radical": "2/49"
+  },
+  "triple_angle_and_final_value_identities": "exact",
+  "original_graph_and_reflection": "exact",
+  "no_sampling": true
+}
