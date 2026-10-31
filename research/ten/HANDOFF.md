@@ -12,7 +12,7 @@ claimed. This PR changes only research artifacts under `research/ten/`.
 ## Start here
 
 <!-- CASE_PROGRESS_START -->
-**Fixed strict-lower-bound master ledger:** `███████████████████▊░░░░` **277/336 closed; 59 open.** (277 hand; 0 computer-only.) [All stable IDs and the exact remaining obligations](MASTER_CASES.md).
+**Fixed strict-lower-bound master ledger:** `███████████████████▊░░░░` **278/336 closed; 58 open.** (278 hand; 0 computer-only.) [All stable IDs and the exact remaining obligations](MASTER_CASES.md).
 
 The denominator is frozen: 19 other terminal families + 38 branching families + 279 cycle signatures. A branching family includes every permitted graph and continuous realization for its fixed `(k,b)`. These are proof-family counts, **not a percentage of effort or of the full n=10 deliverable**. Equality and Lean verification have separate gates.
 <!-- CASE_PROGRESS_END -->
@@ -38,13 +38,15 @@ five inner centers by an explicit finite-table argument. Thus a hypothetical
 smaller ten-packing must have **exactly three or four inner centers**.
 The equality classification remains open outside the completed classes.
 
-## Resumed checkpoint — 2026-10-31
+## Pushed handoff — 2026-10-31
 
-Research has resumed. Exact finite tables are permitted; every table must
-cover its full stated parameter domain and use exact, reviewable inequalities.
+Research is paused at the user's request after the completed fork proof and
+all certificate data were pushed. Exact finite tables are permitted; every
+table must cover its full stated parameter domain and use exact, reviewable
+inequalities.
 The unrestricted proof is still open.
-The fixed master denominator is **336**, with **277 reviewed hand closures
-and 59 open families**. No additional master ID should be created for a
+The fixed master denominator is **336**, with **278 reviewed hand closures
+and 58 open families**. No additional master ID should be created for a
 research refinement. The earlier seven-loaded one-D closure was committed as
 `cb58d3bf81ba71afe156cf883c32de0eefa93a96`. The new
 [coupled loaded-ray theorem](LOADED_JOINT_ANGLE_BOUND.md) closes both
@@ -68,13 +70,13 @@ now completes that last endpoint class without classifying the remaining
 source. Its 42 parameter rows, one radius-impossible row and all 7,604
 center-cover leaves have passed both exact arithmetic backends. Hence the
 entire LSLSLD signature, C20-M06-L03-B02-T02, is closed. The master count
-is 277/336 with 59 open, and C20 is 250/279 with 29 open.
+is 278/336 with 58 open, and C20 is 251/279 with 28 open.
 
 | All open IDs, grouped for shared arguments | Count | Next common obligation |
 | --- | ---: | --- |
 | C05 branching families | 30 | Use force/torque or completion geometry on regions with at least three terminals. Exposure and topology alone are insufficient. |
 | C20 with SS | 5 | A uniform barrier/capacity theorem for arbitrary loaded SS endpoints and transmitter slides; include extra endpoint forces where possible. |
-| C20 with D but no SS | 10 | Combine the new D-endpoint direction theorem with exhaustive endpoint support/circle signs and a uniform completion bound. |
+| C20 with D but no SS | 9 | Combine the new D-endpoint direction theorem with exhaustive endpoint support/circle signs and a uniform completion bound. |
 | C20 with only single S paths | 14 | Stress-dependent loaded-run restrictions or uniform completion bounds; geometric angular estimates alone do not yet suffice. |
 
 For branching, the reviewed minimum-active-body class has a simple
@@ -149,7 +151,7 @@ Unfinished routes are preserved without closure claims:
   realization or completion certificate. Its JSON was reproduced identically.
 
 Validation at handoff: the master renderer and its independent audit agree
-on all 336 IDs and 59 open rows; the frozen-manifest mutation check rejects
+on all 336 IDs and 58 open rows; the frozen-manifest mutation check rejects
 changed obligations. The cycle checker agrees by independent enumerations
 on all 279 signatures. The seven-body exact checker verifies all 28 cells
 (11 empty), with maximum assigned squared distance 197/200. The saved
@@ -182,16 +184,25 @@ by the published arbitrary-terminal theorem; it contains no unique pending
 result. Do not restart a b=2, b=3, ... catalog sequence or a loaded-count
 sequence. Use the fixed master list and aim for shared arguments.
 
-## Current resumed checkpoint
+## Completed results at this handoff
 
-Research resumed from handoff commit `fb91a0517a0eedf192e11759f9bdec2a60ab46af`.
-The unrestricted proof is still open. The main case ledger has **19 reviewed
+The unrestricted proof is still open. All completed source, radial-D,
+opposite-sign and fork results described here are committed with their
+full exact data and checkers. The main case ledger has **19 reviewed
 hand closures and 2 open
-families out of 21**; the larger-cycle subledger has **250 reviewed hand
-closures and 29 open cases out of 279**. Main gates remain **3/7 closed**.
+families out of 21**; the larger-cycle subledger has **251 reviewed hand
+closures and 28 open cases out of 279**. Main gates remain **3/7 closed**.
 The closed counts do not measure the fraction of mathematical effort.
 
 Latest completed work:
+
+- The [loaded double-D fork theorem](LOADED_DOUBLE_DIAGONAL_FORK_CAPACITY.md)
+  bounds the five-square core by nine total squares, independently of the
+  remaining graph and all added orientations. It covers all 61 fixed
+  cyclic-DLD signatures and newly closes LLLDLD, C20-M06-L04-B02-T03.
+  Both backends pass all 358 capacity rows, 79 impossible parameter rows
+  and 44,567 center cells. Every surviving cycle's D paths now form a
+  matching on loaded vertices. The master is 278/336 closed; 58 open.
 
 - The [uniform opposite-sign D-core capacity theorem](OPPOSITE_DIAGONAL_CAPACITY.md)
   proves total capacity at most nine for every selected loaded-to-loaded D
@@ -199,8 +210,8 @@ Latest completed work:
   254 capacity rows, 26 radius-impossible rows and all 50,607 strict center
   cells pass both exact backends. Together with radial-D capacity, every
   loaded D path now has unique same-sign endpoint circle vertices, regardless
-  of loaded count, endpoint degree or branching count. No further master
-  closure is claimed from this shared feature reduction.
+  of loaded count, endpoint degree or branching count. That feature reduction alone does not add a closure; the subsequent
+  fork theorem supplies the further whole-case closure above.
 
 - The [universal radial-D three-body capacity theorem](RADIAL_DIAGONAL_THREE_BODY_CAPACITY.md)
   bounds every normalized radial-D core by nine total squares, independently
@@ -211,15 +222,15 @@ Latest completed work:
   loaded-to-loaded D path, regardless of endpoint degree, loaded count or
   branching count. [Two fixed parameter modes](LOADED_DIAGONAL_PARAMETER_BOX.md)
   cover unique/unique three-body D geometries; the opposite-sign mode is
-  now completely excluded above, leaving only the same-sign mode. The master is 277/336 closed
-  with 59 open.
+  now completely excluded above, leaving only the same-sign mode. The master is 278/336 closed
+  with 58 open.
 
 - The [coupled loaded-ray theorem](LOADED_JOINT_ANGLE_BOUND.md) proves
   the two-gap bound pi/2-atan(1/45) and closes both five-loaded/two-D
   signatures C20-M07-L05-B02-T03 and C20-M07-L05-B03-T03. Its 332 frame
   intervals and all 28,000 rational leaf inequalities are explicit; two
   exact implementations verify every bound and full coverage. The master
-  now has 277/336 hand closures and 59 open entries; C20 has 250/279 closed.
+  now has 278/336 hand closures and 58 open entries; C20 has 251/279 closed.
 - The [strict side-source rational reduction](STRICT_SIDE_SOURCE_RATIONAL_REDUCTION.md)
   gives five exhaustive C circle-feature rows and reduces all E_A core
   coordinates, squared radius and force height to two S half-angle variables.
@@ -247,8 +258,8 @@ Latest completed work:
 - The [24-row loaded-ray theorem](LOADED_THREE_RAY_ANGLE_BOUND.md) closes
   the whole seven-loaded one-D signature C20-M08-L07-B01-T02. Its 72
   endpoint bounds were independently verified with dyadic radical bounds
-  and exact radical elimination. The master now has 277/336 hand closures
-  and 59 open entries; C20 has 250/279 closed and 29 open.
+  and exact radical elimination. The master now has 278/336 hand closures
+  and 58 open entries; C20 has 251/279 closed and 28 open.
 - [Generic consolidation compatibility](GENERIC_CONSOLIDATION_COMPATIBILITY.md)
   now preserves the original selection conventions using finitely many
   added corner factors and a generic choice of slides. The simpler
@@ -291,7 +302,7 @@ Latest completed work:
   noncontact clearance. It is not an exact existence proof or a ten-packing.
   These results do not close a whole master entry.
 - The [master ledger](MASTER_CASES.md) is frozen at 336 explicit proof families,
-  with 277 hand closed and 59 open. The 30 open branching families cover all
+  with 278 hand closed and 58 open. The 30 open branching families cover all
   k and b simultaneously; the other 32 are explicit cycle signatures.
   New refinements cannot increase the denominator.
 - The [three-interior-body theorem](THREE_INTERIOR_BODY_REDUCTION.md) exposes
@@ -317,7 +328,7 @@ Latest completed work:
 - Every whole five-cycle is hand excluded for the selected certificate.
   [C19](DIAGONAL_FIVE_CYCLE_EXCLUSION.md) uses generic contact normals
   and the reviewed nearer-endpoint obstruction.
-- C20 has 250/279 hand closures. The cap budget supplies 234; the
+- C20 has 251/279 hand closures. The cap budget supplies 234; the
   [SS/D](SS_DIAGONAL_SIX_CYCLE_EXCLUSION.md),
   [SS/S](SS_SIDE_SIX_CYCLE_EXCLUSION.md),
   [all-D](DIAGONAL_PATH_GRAPH_RESTRICTIONS.md), and
@@ -647,3 +658,62 @@ arguments. No n=10 Lean compilation or kernel verification is claimed.
 
 Keep the unrestricted lower bound and equality obligations visibly open
 until every remaining physical case is covered.
+
+## Exact restart point after this push
+
+The fixed remaining list is **58**: 30 branching families, 5 SS cycles,
+9 D cycles without SS and 14 single-S cycles. Main gates remain 3/7;
+the original terminal tree remains 19/21, with C05 and C20 open.
+[MASTER_CASES.md](MASTER_CASES.md) lists every remaining stable ID.
+The denominator 336 and all immutable obligations are unchanged.
+
+The new completed proof chain is:
+
+| Result | Exact finite coverage |
+| --- | --- |
+| Strict E_A/E_B source capacity | 1,133 parameter leaves, both boundary roots excluded by injectivity, 161 center cells |
+| Remaining V_V sources with unique D endpoints | Analytic unique-circle torque exclusion; radial source 216 parameter leaves and 120 center cells |
+| Radial-D three-body capacity | 42 capacity rows, 1 impossible radius row, 7,604 center cells |
+| Opposite-sign loaded-D capacity | 254 capacity rows, 26 impossible radius rows, 50,607 center cells |
+| Loaded degree-two double-D fork | 358 capacity rows, 79 impossible parameter rows, 44,567 center cells |
+
+[The validation record](HANDOFF_VALIDATION_2026_10_31.json) records the final
+replay of all ten checker bodies and the synchronized ledger counts.
+Every completed certificate has full closed-domain coverage and zero
+unresolved rows. All five pairs of 44-bit/60-bit arithmetic bodies were
+executed in V8. They use separate interval arithmetic backends; radical steps use checked
+integer brackets or integer-square-root bounds. Logical predicates are shared. No independent
+agent review is claimed for these new results.
+
+The execution workspace was unavailable. Node entry points, the Python
+roadmap generator, and Lean were not run. Generated status pages were
+synchronized and cross-checked in JavaScript: 336 fixed entries, 278 hand
+closures, 58 open; 279 cycle entries, 251 closures, 28 open; all original
+obligation text unchanged. Git blob hashes were checked after pushing.
+No n=10 Lean theorem or kernel verification is claimed.
+
+When the workspace is available, run the paired *.mjs checkers named in
+the five proof notes, then `python update_case_roadmap.py` and
+`python check_cycle_cases.py`. The Node checkers replay the same bodies
+already tested in V8; their only additional step reads their committed JSON.
+
+The key new shared restrictions are:
+
+- Every selected D path between loaded neighbors has unique same-sign
+  endpoint circle vertices, regardless of endpoint degree or branch count.
+- A loaded degree-two body cannot have two D paths to loaded neighbors.
+  Thus D paths in any remaining whole cycle form a matching.
+- These restrictions do not apply unchanged to D paths with unloaded
+  retained terminals, or to a loaded source with further positive contacts.
+
+A useful next D target is the remaining disjoint-two-D cycle LLDLLD.
+The general same-sign three-body D parameter box remains open; successful
+radial and opposite-sign covers cannot be transferred to that larger box.
+The unfinished generic three-body clustering and fractional-disk probes
+supply no proof or counterexample. Pure-S, SS and branching completion
+bounds remain independent major obligations.
+
+Do not restart an unbounded b=0,b=1,... catalog or a loaded-count sequence.
+The master list already includes every allowed b and loaded count.
+Research refinements never add master entries or advance its count until
+a whole listed family is closed.

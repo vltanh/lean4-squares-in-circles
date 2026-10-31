@@ -5,7 +5,7 @@ normal selection and the universal radial-D capacity exclusion. This
 is a shared reduction. The subsequent [opposite-sign capacity theorem](OPPOSITE_DIAGONAL_CAPACITY.md)
 now closes the entire opposite-sign mode, leaving only the same-sign mode.
 It is not a further whole-family exclusion. The master
-ledger remains 277/336 closed, 59 open.
+ledger remains 278/336 closed, 58 open.
 
 ## 1. The shared circle-feature class is now unique/unique
 
@@ -115,3 +115,10 @@ one endpoint's two circle vertices impose R^2=u^2+1/4. Its success must
 not be transferred to these larger unique/unique modes without a new
 uniform certificate. A proof may also use further force/torque equations,
 additional loaded bodies, or the finite cycle word to narrow these boxes.
+
+
+The subsequent [loaded double-D fork theorem](LOADED_DOUBLE_DIAGONAL_FORK_CAPACITY.md)
+excludes a loaded degree-two source with two D paths to loaded terminals.
+D paths in any surviving whole cycle therefore form a matching. This
+still does not supply a capacity bound for the entire same-sign three-body
+parameter box above.

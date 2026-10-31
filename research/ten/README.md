@@ -67,7 +67,7 @@ the known bound, not a lower-bound proof.
 | The entire three-loaded five-cycle is impossible | [Final S-S exclusion](SIDE_SIDE_EXCLUSION.md), [complete case index](MIXED_FIVE_CYCLE_STATUS.md) | Reviewed hand closure of all ordered transmitter choices and both central circle-contact types |
 | The unique-circle S-D three-loaded five-cycle is impossible | [S-D exclusion](SIDE_DIAGONAL_EXCLUSION.md) | Reviewed hand closure by torque and elementary analytic clearance; no finite interval table |
 | A four-loaded diagonal five-cycle permits at most one other square wholly inside the test disk | [Inner trace restriction](DIAGONAL_FIVE_CYCLE_INNER_TRACE.md) | Reviewed hand restriction used in the nearer-endpoint exclusion below |
-| Every whole mixed simple cycle follows loaded radial order; the strip cap gives stronger angle bounds | [D-D uncrossing](DIAGONAL_PATH_UNCROSSING.md), [cap-angle theorem](TRANSMISSION_CAP_ANGLE_BOUND.md), [234-case budget](SHARP_TRANSMISSION_CYCLE_BUDGET.md) | Reviewed hand structural theorem and exclusions; with the six-cycle results, 250 cases are closed and 29 shorter signatures remain |
+| Every whole mixed simple cycle follows loaded radial order; the strip cap gives stronger angle bounds | [D-D uncrossing](DIAGONAL_PATH_UNCROSSING.md), [cap-angle theorem](TRANSMISSION_CAP_ANGLE_BOUND.md), [234-case budget](SHARP_TRANSMISSION_CYCLE_BUDGET.md) | Reviewed hand structural theorem and exclusions; with the six-cycle results, 251 cases are closed and 28 shorter signatures remain |
 | Three-loaded six-cycles with an SS path are excluded | [SS/D exclusion](SS_DIAGONAL_SIX_CYCLE_EXCLUSION.md), [SS/S exclusion](SS_SIDE_SIX_CYCLE_EXCLUSION.md) | Reviewed hand closures of `LLDLSS` and `LLSLSS` for the selected certificate |
 | Three-loaded six-cycles with at least two D paths are excluded | [D-path forest](DIAGONAL_PATH_GRAPH_RESTRICTIONS.md), [two-D/one-S exclusion](TWO_DIAGONAL_ONE_SIDE_SIX_CYCLE_EXCLUSION.md) | Reviewed hand closures of `LDLDLD` and `LSLDLD`; every D-path graph is a forest of paths |
 | The remaining one-D/two-S six-body equations have a reproducible high-precision candidate | [Exploratory component](ONE_DIAGONAL_TWO_SIDE_COMPONENT_CANDIDATE.md) | Numerical research only: no exact existence certificate, no ten-square completion, and no case closure; investigate completion capacity |
@@ -110,6 +110,7 @@ the known bound, not a lower-bound proof.
 | All LSLSLD sources with both D endpoints uniquely circle-loaded have total capacity at most nine | [Complete source closure](STRICT_VERTEX_SOURCE_CAPACITY_CLOSURE.md), [full exact table](strict_vertex_source_closure_certificate.json) | Unique V_V sources fail a same-sign torque test; radial V_V sources have complete 216-leaf parameter and 120-cell capacity tables; the radial-D branch is now completed below |
 | Every normalized radial-D three-square core has total capacity at most nine; the entire LSLSLD signature is excluded | [Uniform radial-D capacity and full LSLSLD assembly](RADIAL_DIAGONAL_THREE_BODY_CAPACITY.md) | Complete 42-row parameter cover and 7,604 physical-square/slot inequalities, independent of the remaining source and slides; stable ID C20-M06-L03-B02-T02 closed |
 | Every selected loaded-to-loaded D path has unique same-sign circle vertices at both endpoints | [Radial-D corollary](RADIAL_DIAGONAL_THREE_BODY_CAPACITY.md), [complete opposite-sign capacity](OPPOSITE_DIAGONAL_CAPACITY.md), [remaining parameter mode](LOADED_DIAGONAL_PARAMETER_BOX.md) | Independent of loaded count, endpoint degree and branch count; the opposite mode has complete 254+26 parameter rows and 50,607 center cells; only the same-sign three-body box remains |
+| A loaded degree-two double-D fork has total capacity at most nine | [Shared fork capacity](LOADED_DOUBLE_DIAGONAL_FORK_CAPACITY.md), [complete data](loaded_double_diagonal_fork_certificate.json) | Covers all 61 fixed cyclic-DLD signatures; newly closes C20-M06-L04-B02-T03; 358 capacity rows, 79 impossible rows and 44,567 center cells checked by both exact backends |
 | The coupled angle of three loaded rays exceeds pi/2-atan(1/45), excluding both five-loaded/two-D cycles | [Complete geometric/table proof](LOADED_JOINT_ANGLE_BOUND.md), [exact checker](check_loaded_joint_angle_bound.py), [independent verifier](independent_loaded_joint_angle_check.py) | 332 frame intervals and all 28,000 rational leaves checked; closes two fixed master entries |
 | Any two loaded squares have center-ray separation at least 2 atan(1/(sqrt(14)-1)) | [Loaded-pair angle](LOADED_PAIR_ANGLE_BOUND.md) | Reviewed hand theorem for arbitrary orientations and all separator offsets; stronger than the previous generic angular bound |
 | A five-cycle with four loaded squares cannot use a side transmitter | [Four-loaded five-cycle](MIXED_FIVE_FOUR_LOADED.md) | Side transmitter excluded by hand in the explicitly imported radius window; the diagonal branch is now excluded above for the chosen certificate |
@@ -146,7 +147,7 @@ certificates remain computational results with their own stated scope.
 ## Roadmap and next obligation
 
 <!-- CASE_PROGRESS_START -->
-**Fixed strict-lower-bound master ledger:** `███████████████████▊░░░░` **277/336 closed; 59 open.** (277 hand; 0 computer-only.) [All stable IDs and the exact remaining obligations](MASTER_CASES.md).
+**Fixed strict-lower-bound master ledger:** `███████████████████▊░░░░` **278/336 closed; 58 open.** (278 hand; 0 computer-only.) [All stable IDs and the exact remaining obligations](MASTER_CASES.md).
 
 The denominator is frozen: 19 other terminal families + 38 branching families + 279 cycle signatures. A branching family includes every permitted graph and continuous realization for its fixed `(k,b)`. These are proof-family counts, **not a percentage of effort or of the full n=10 deliverable**. Equality and Lean verification have separate gates.
 
@@ -155,7 +156,7 @@ The denominator is frozen: 19 other terminal families + 38 branching families + 
 **G3 lower-bound case ledger:** `███████████████████░░`
 **19 hand closed · 0 computer closed · 2 open / 21 terminal families.**
 
-**C20 larger-cycle subcases:** `█████████████████████▌░░` **250/279 closed; 29 open.**
+**C20 larger-cycle subcases:** `█████████████████████▌░░` **251/279 closed; 28 open.**
 
 C05 optional b=0 drilldown: 42,532/45,666 raw records excluded; 3,134 remain. [Catalog and certificates](BRANCHING_SELECTED_GRAPH_FILTERS.md). 
 

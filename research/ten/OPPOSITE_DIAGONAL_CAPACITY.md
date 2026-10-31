@@ -221,5 +221,6 @@ loaded count, branching count and endpoint degree.
 
 The remaining same-sign three-body mode still needs force/torque,
 additional-body or completion arguments. No additional whole master
-entry is closed solely by this feature reduction. The fixed ledger
-stays **277/336 closed; 59 open**.
+entry is closed solely by this feature reduction. The subsequent [loaded double-D fork theorem](LOADED_DOUBLE_DIAGONAL_FORK_CAPACITY.md)
+closes one additional whole entry; the current fixed ledger is
+**278/336 closed; 58 open**.

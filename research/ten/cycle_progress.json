@@ -1000,6 +1000,10 @@
     "C20-M06-L03-B02-T02": {
       "status": "hand",
       "evidence": "RADIAL_DIAGONAL_THREE_BODY_CAPACITY.md"
+    },
+    "C20-M06-L04-B02-T03": {
+      "status": "hand",
+      "evidence": "LOADED_DOUBLE_DIAGONAL_FORK_CAPACITY.md"
     }
   }
 }

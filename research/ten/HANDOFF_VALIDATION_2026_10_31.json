@@ -1,0 +1,82 @@
+{
+  "date": "2026-10-31",
+  "scope": "Exact replay of committed finite certificate checker bodies; analytic arguments remain in the proof notes.",
+  "runtime": "V8 via functions.exec; Node file-reading footers replaced by the committed JSON inputs.",
+  "all_ten_checker_bodies_passed": true,
+  "checker_results": [
+    {
+      "file": "check_strict_side_source_closure.mjs",
+      "passed": true,
+      "parameterRows": 1133,
+      "centerLeaves": 161
+    },
+    {
+      "file": "check_strict_side_source_closure_60bit.mjs",
+      "passed": true,
+      "parameterRows": 1133,
+      "centerLeaves": 161
+    },
+    {
+      "file": "check_strict_vertex_source_closure.mjs",
+      "passed": true,
+      "parameterRows": 216,
+      "centerLeaves": 120
+    },
+    {
+      "file": "check_strict_vertex_source_closure_60bit.mjs",
+      "passed": true,
+      "parameterRows": 216,
+      "centerLeaves": 120
+    },
+    {
+      "file": "check_radial_diagonal_three_body.mjs",
+      "passed": true,
+      "parameterRows": 42,
+      "centerLeaves": 7604
+    },
+    {
+      "file": "check_radial_diagonal_three_body_60bit.mjs",
+      "passed": true,
+      "parameterRows": 42,
+      "centerLeaves": 7604
+    },
+    {
+      "file": "check_opposite_diagonal_capacity.mjs",
+      "passed": true,
+      "parameterRows": 254,
+      "centerLeaves": 50607
+    },
+    {
+      "file": "check_opposite_diagonal_capacity_60bit.mjs",
+      "passed": true,
+      "parameterRows": 254,
+      "centerLeaves": 50607
+    },
+    {
+      "file": "check_loaded_double_diagonal_fork.mjs",
+      "passed": true,
+      "parameterRows": 358,
+      "centerLeaves": 44567
+    },
+    {
+      "file": "check_loaded_double_diagonal_fork_60bit.mjs",
+      "passed": true,
+      "parameterRows": 358,
+      "centerLeaves": 44567
+    }
+  ],
+  "bookkeeping": {
+    "fixed_entries": 336,
+    "hand_closed": 278,
+    "open": 58,
+    "cycle_entries": 279,
+    "cycle_closed": 251,
+    "cycle_open": 28,
+    "original_obligation_text_unchanged": true
+  },
+  "complete_certificates_have_unresolved_rows": false,
+  "node_command_line_entrypoints_executed": false,
+  "python_roadmap_generator_executed": false,
+  "lean_theorem_or_kernel_verification_claimed": false,
+  "independent_agent_review_claimed": false
+}
