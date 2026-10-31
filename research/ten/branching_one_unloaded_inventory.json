@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "status": "Independently reviewed necessary-condition overclassification, 2026-10-29; complete C++ and Python code sets agree",
+  "scope": "C05 b=1; k=2..7 loaded vertices in prescribed circular order; one retained unloaded vertex; quotient only D_k fixing unloaded vertex",
+  "stable_ids": "C05-B1-Kkk-code; kk is loaded count, code is the canonical digit string itself, preserving leading zeros",
+  "edge_order": "Lexicographic unordered pairs on vertices 0,...,k, with unloaded retained vertex k",
+  "raw_rule_version": 1,
+  "cost": [
+    0,
+    0,
+    1,
+    2,
+    1,
+    2,
+    4
+  ],
+  "multiplicity": [
+    0,
+    1,
+    1,
+    2,
+    1,
+    1,
+    2
+  ],
+  "alphabet": [
+    "absent",
+    "direct",
+    "S",
+    "double-S",
+    "D",
+    "SS",
+    "double-SS"
+  ],
+  "rules": [
+    "Total bodies k+1+sum(cost)<=10",
+    "Connected, at least k+1 multiedges, maximum multidegree<=8",
+    "Unloaded retained degree>=3; distinct-neighbor count>=3 or exactly two with types direct and double-S",
+    "Loaded-loaded direct edges only between circular neighbors; none at k=2, at most one at k=3",
+    "No two present loaded-loaded chords have alternating endpoints",
+    "No present loaded-loaded chord has an unloaded-vertex neighbor strictly in each complementary open boundary arc"
+  ],
+  "strata": [
+    {
+      "loaded_vertices": 2,
+      "retained_unloaded_vertices": 1,
+      "canonical_count": 6,
+      "labeled_count": 12,
+      "canonical_counts_by_total_bodies": {
+        "5": 1,
+        "6": 2,
+        "7": 2,
+        "9": 1
+      },
+      "labeled_counts_by_total_bodies": {
+        "5": 2,
+        "6": 4,
+        "7": 4,
+        "9": 2
+      },
+      "catalog_bytes": 24,
+      "catalog_sha256": "2b3e00811915180ee5acee5390bcf3054c06e127b3b4a67d4f3d3b83b4d76b36"
+    },
+    {
+      "loaded_vertices": 3,
+      "retained_unloaded_vertices": 1,
+      "canonical_count": 2331,
+      "labeled_count": 13017,
+      "canonical_counts_by_total_bodies": {
+        "4": 1,
+        "5": 8,
+        "6": 44,
+        "7": 154,
+        "8": 381,
+        "9": 694,
+        "10": 1049
+      },
+      "labeled_counts_by_total_bodies": {
+        "4": 3,
+        "5": 36,
+        "6": 219,
+        "7": 836,
+        "8": 2106,
+        "9": 3918,
+        "10": 5899
+      },
+      "catalog_bytes": 16317,
+      "catalog_sha256": "c2d842f28bdb1e9d4e8aa74985cf7934d7ad2e6fa6d34f741f5281e540dff52c"
+    },
+    {
+      "loaded_vertices": 4,
+      "retained_unloaded_vertices": 1,
+      "canonical_count": 35124,
+      "labeled_count": 276529,
+      "canonical_counts_by_total_bodies": {
+        "5": 11,
+        "6": 102,
+        "7": 661,
+        "8": 2838,
+        "9": 9086,
+        "10": 22426
+      },
+      "labeled_counts_by_total_bodies": {
+        "5": 55,
+        "6": 728,
+        "7": 4952,
+        "8": 22096,
+        "9": 71266,
+        "10": 177432
+      },
+      "catalog_bytes": 386364,
+      "catalog_sha256": "4cf169c7b9c8718aba7ffd1231b80cf1f60c1db08772396eda888a0148fe99d6"
+    },
+    {
+      "loaded_vertices": 5,
+      "retained_unloaded_vertices": 1,
+      "canonical_count": 139992,
+      "labeled_count": 1388401,
+      "canonical_counts_by_total_bodies": {
+        "6": 37,
+        "7": 530,
+        "8": 4543,
+        "9": 25876,
+        "10": 109006
+      },
+      "labeled_counts_by_total_bodies": {
+        "6": 276,
+        "7": 4970,
+        "8": 44140,
+        "9": 255920,
+        "10": 1083095
+      },
+      "catalog_bytes": 2239872,
+      "catalog_sha256": "1ba72c8e50c600b2ebc55511072bf3a384bd70aedd3e6ab65cea7a540f8d7e17"
+    },
+    {
+      "loaded_vertices": 6,
+      "retained_unloaded_vertices": 1,
+      "canonical_count": 212853,
+      "labeled_count": 2540653,
+      "canonical_counts_by_total_bodies": {
+        "7": 117,
+        "8": 2298,
+        "9": 25516,
+        "10": 184922
+      },
+      "labeled_counts_by_total_bodies": {
+        "7": 1151,
+        "8": 26772,
+        "9": 302406,
+        "10": 2210324
+      },
+      "catalog_bytes": 4682766,
+      "catalog_sha256": "a0efce82ed52a87e5a89c524402be948878886cd0db4cc1e0a648e405e0d9406"
+    },
+    {
+      "loaded_vertices": 7,
+      "retained_unloaded_vertices": 1,
+      "canonical_count": 134564,
+      "labeled_count": 1870758,
+      "canonical_counts_by_total_bodies": {
+        "8": 352,
+        "9": 9110,
+        "10": 125102
+      },
+      "labeled_counts_by_total_bodies": {
+        "8": 4390,
+        "9": 125440,
+        "10": 1740928
+      },
+      "catalog_bytes": 3902356,
+      "catalog_sha256": "5081ed3d078fae3cdfda9b77044d76119afad743ec6677e5897707f6474283d4"
+    }
+  ],
+  "total_canonical": 524870,
+  "total_labeled": 6089370,
+  "verification": [
+    "Independent C++ U-incidence-first and Python loaded-edge-first enumeration matched every canonical code at k=2..7",
+    "Independent Python checked every stored code against all predicates and dihedral canonicality",
+    "Full Cartesian-product enumeration independently matched k=2 and k=3"
+  ]
+}

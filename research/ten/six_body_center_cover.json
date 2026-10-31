@@ -1,0 +1,727 @@
+{
+  "schema_version": 1,
+  "status": "independently_reviewed_conditional_exact_hand_center_cover",
+  "containing_squared_radius_upper_bound": "17/4",
+  "center_disk_radius": "3/2",
+  "meaning": "A conditional six-center obstruction; does not close a full C20 signature.",
+  "center_regions": [
+    {
+      "name": "A",
+      "meaning": "convex hull of these rational points",
+      "vertices": [
+        [
+          "-13/10",
+          "-9/20"
+        ],
+        [
+          "-13/10",
+          "-11/25"
+        ],
+        [
+          "-129/100",
+          "-9/20"
+        ],
+        [
+          "-129/100",
+          "-11/25"
+        ]
+      ]
+    },
+    {
+      "name": "B",
+      "meaning": "convex hull of these rational points",
+      "vertices": [
+        [
+          "111/100",
+          "-37/50"
+        ],
+        [
+          "111/100",
+          "-73/100"
+        ],
+        [
+          "28/25",
+          "-37/50"
+        ],
+        [
+          "28/25",
+          "-73/100"
+        ]
+      ]
+    },
+    {
+      "name": "C",
+      "meaning": "convex hull of these rational points",
+      "vertices": [
+        [
+          "-3/100",
+          "133/100"
+        ],
+        [
+          "-3/100",
+          "67/50"
+        ],
+        [
+          "-1/50",
+          "133/100"
+        ],
+        [
+          "-1/50",
+          "67/50"
+        ]
+      ]
+    },
+    {
+      "name": "D",
+      "meaning": "convex hull of these rational points",
+      "vertices": [
+        [
+          "-1/10",
+          "-63/100"
+        ],
+        [
+          "-1/10",
+          "-31/50"
+        ],
+        [
+          "-9/100",
+          "-63/100"
+        ],
+        [
+          "-9/100",
+          "-31/50"
+        ]
+      ]
+    },
+    {
+      "name": "S_A",
+      "meaning": "convex hull of these rational points",
+      "vertices": [
+        [
+          "-14/25",
+          "12/25"
+        ],
+        [
+          "-14/25",
+          "49/100"
+        ],
+        [
+          "-11/20",
+          "12/25"
+        ],
+        [
+          "-11/20",
+          "49/100"
+        ],
+        [
+          "-99/100",
+          "73/100"
+        ],
+        [
+          "-99/100",
+          "37/50"
+        ],
+        [
+          "-49/50",
+          "73/100"
+        ],
+        [
+          "-49/50",
+          "37/50"
+        ]
+      ]
+    },
+    {
+      "name": "S_B",
+      "meaning": "convex hull of these rational points",
+      "vertices": [
+        [
+          "83/100",
+          "11/25"
+        ],
+        [
+          "83/100",
+          "9/20"
+        ],
+        [
+          "21/25",
+          "11/25"
+        ],
+        [
+          "21/25",
+          "9/20"
+        ],
+        [
+          "14/25",
+          "3/10"
+        ],
+        [
+          "14/25",
+          "31/100"
+        ],
+        [
+          "57/100",
+          "3/10"
+        ],
+        [
+          "57/100",
+          "31/100"
+        ]
+      ]
+    }
+  ],
+  "outer_halfplanes": [
+    {
+      "normal": [
+        1,
+        0
+      ],
+      "bound": "3/2"
+    },
+    {
+      "normal": [
+        -1,
+        0
+      ],
+      "bound": "3/2"
+    },
+    {
+      "normal": [
+        0,
+        1
+      ],
+      "bound": "3/2"
+    },
+    {
+      "normal": [
+        0,
+        -1
+      ],
+      "bound": "3/2"
+    },
+    {
+      "normal": [
+        1,
+        1
+      ],
+      "bound": "15/7"
+    },
+    {
+      "normal": [
+        -1,
+        -1
+      ],
+      "bound": "15/7"
+    },
+    {
+      "normal": [
+        1,
+        -1
+      ],
+      "bound": "15/7"
+    },
+    {
+      "normal": [
+        -1,
+        1
+      ],
+      "bound": "15/7"
+    },
+    {
+      "normal": [
+        2,
+        1
+      ],
+      "bound": "17/5"
+    },
+    {
+      "normal": [
+        -2,
+        -1
+      ],
+      "bound": "17/5"
+    },
+    {
+      "normal": [
+        2,
+        -1
+      ],
+      "bound": "17/5"
+    },
+    {
+      "normal": [
+        -2,
+        1
+      ],
+      "bound": "17/5"
+    },
+    {
+      "normal": [
+        1,
+        2
+      ],
+      "bound": "17/5"
+    },
+    {
+      "normal": [
+        -1,
+        -2
+      ],
+      "bound": "17/5"
+    },
+    {
+      "normal": [
+        1,
+        -2
+      ],
+      "bound": "17/5"
+    },
+    {
+      "normal": [
+        -1,
+        2
+      ],
+      "bound": "17/5"
+    },
+    {
+      "normal": [
+        1,
+        3
+      ],
+      "bound": "19/4"
+    },
+    {
+      "normal": [
+        -1,
+        -3
+      ],
+      "bound": "19/4"
+    },
+    {
+      "normal": [
+        1,
+        -3
+      ],
+      "bound": "19/4"
+    },
+    {
+      "normal": [
+        -1,
+        3
+      ],
+      "bound": "19/4"
+    },
+    {
+      "normal": [
+        3,
+        1
+      ],
+      "bound": "19/4"
+    },
+    {
+      "normal": [
+        -3,
+        -1
+      ],
+      "bound": "19/4"
+    },
+    {
+      "normal": [
+        3,
+        -1
+      ],
+      "bound": "19/4"
+    },
+    {
+      "normal": [
+        -3,
+        1
+      ],
+      "bound": "19/4"
+    },
+    {
+      "normal": [
+        1,
+        4
+      ],
+      "bound": "31/5"
+    },
+    {
+      "normal": [
+        -1,
+        -4
+      ],
+      "bound": "31/5"
+    },
+    {
+      "normal": [
+        1,
+        -4
+      ],
+      "bound": "31/5"
+    },
+    {
+      "normal": [
+        -1,
+        4
+      ],
+      "bound": "31/5"
+    },
+    {
+      "normal": [
+        4,
+        1
+      ],
+      "bound": "31/5"
+    },
+    {
+      "normal": [
+        -4,
+        -1
+      ],
+      "bound": "31/5"
+    },
+    {
+      "normal": [
+        4,
+        -1
+      ],
+      "bound": "31/5"
+    },
+    {
+      "normal": [
+        -4,
+        1
+      ],
+      "bound": "31/5"
+    }
+  ],
+  "quadrants": {
+    "0": "southwest",
+    "1": "southeast",
+    "2": "northwest",
+    "3": "northeast"
+  },
+  "cells": [
+    {
+      "path": "000",
+      "region": null,
+      "maximum_squared_distance": null
+    },
+    {
+      "path": "0010",
+      "region": null,
+      "maximum_squared_distance": null
+    },
+    {
+      "path": "0011",
+      "region": "D",
+      "maximum_squared_distance": "30361/32000"
+    },
+    {
+      "path": "0012",
+      "region": "A",
+      "maximum_squared_distance": "2811337/3920000"
+    },
+    {
+      "path": "00130",
+      "region": "A",
+      "maximum_squared_distance": "2331181/2560000"
+    },
+    {
+      "path": "001310",
+      "region": "A",
+      "maximum_squared_distance": "10193149/10240000"
+    },
+    {
+      "path": "001311",
+      "region": "D",
+      "maximum_squared_distance": "1974681/2048000"
+    },
+    {
+      "path": "001312",
+      "region": "A",
+      "maximum_squared_distance": "1196533/1280000"
+    },
+    {
+      "path": "001313",
+      "region": "D",
+      "maximum_squared_distance": "1877/2048"
+    },
+    {
+      "path": "00132",
+      "region": "A",
+      "maximum_squared_distance": "260677/320000"
+    },
+    {
+      "path": "00133",
+      "region": "A",
+      "maximum_squared_distance": "581729/640000"
+    },
+    {
+      "path": "002",
+      "region": "A",
+      "maximum_squared_distance": "357253/980000"
+    },
+    {
+      "path": "003",
+      "region": "A",
+      "maximum_squared_distance": "30869/40000"
+    },
+    {
+      "path": "01",
+      "region": "D",
+      "maximum_squared_distance": "7461/8000"
+    },
+    {
+      "path": "02",
+      "region": "A",
+      "maximum_squared_distance": "101/200"
+    },
+    {
+      "path": "03",
+      "region": "D",
+      "maximum_squared_distance": "333/400"
+    },
+    {
+      "path": "100",
+      "region": "D",
+      "maximum_squared_distance": "591961/640000"
+    },
+    {
+      "path": "10100",
+      "region": "D",
+      "maximum_squared_distance": "2807597/2880000"
+    },
+    {
+      "path": "10101",
+      "region": "B",
+      "maximum_squared_distance": "2620949/2880000"
+    },
+    {
+      "path": "10102",
+      "region": "D",
+      "maximum_squared_distance": "301333/320000"
+    },
+    {
+      "path": "10103",
+      "region": "B",
+      "maximum_squared_distance": "282061/320000"
+    },
+    {
+      "path": "1011",
+      "region": "B",
+      "maximum_squared_distance": "542981/720000"
+    },
+    {
+      "path": "1012",
+      "region": "B",
+      "maximum_squared_distance": "143093/160000"
+    },
+    {
+      "path": "1013",
+      "region": "B",
+      "maximum_squared_distance": "52009/80000"
+    },
+    {
+      "path": "102",
+      "region": "D",
+      "maximum_squared_distance": "9613/20000"
+    },
+    {
+      "path": "103",
+      "region": "B",
+      "maximum_squared_distance": "14221/20000"
+    },
+    {
+      "path": "11",
+      "region": "B",
+      "maximum_squared_distance": "19637/40000"
+    },
+    {
+      "path": "120",
+      "region": "D",
+      "maximum_squared_distance": "5813/20000"
+    },
+    {
+      "path": "121",
+      "region": "B",
+      "maximum_squared_distance": "2753/4000"
+    },
+    {
+      "path": "122",
+      "region": "D",
+      "maximum_squared_distance": "24901/40000"
+    },
+    {
+      "path": "123",
+      "region": "S_B",
+      "maximum_squared_distance": "17937/20000"
+    },
+    {
+      "path": "13",
+      "region": "B",
+      "maximum_squared_distance": "6997/10000"
+    },
+    {
+      "path": "200",
+      "region": "A",
+      "maximum_squared_distance": "569/800"
+    },
+    {
+      "path": "201",
+      "region": "S_A",
+      "maximum_squared_distance": "1513/2500"
+    },
+    {
+      "path": "202",
+      "region": "S_A",
+      "maximum_squared_distance": "534089/640000"
+    },
+    {
+      "path": "203",
+      "region": "S_A",
+      "maximum_squared_distance": "16141/40000"
+    },
+    {
+      "path": "210",
+      "region": "S_A",
+      "maximum_squared_distance": "37033/40000"
+    },
+    {
+      "path": "2110",
+      "region": "D",
+      "maximum_squared_distance": "4797/6400"
+    },
+    {
+      "path": "2111",
+      "region": "D",
+      "maximum_squared_distance": "108529/160000"
+    },
+    {
+      "path": "2112",
+      "region": "S_A",
+      "maximum_squared_distance": "75941/80000"
+    },
+    {
+      "path": "21130",
+      "region": "D",
+      "maximum_squared_distance": "21501/25600"
+    },
+    {
+      "path": "21131",
+      "region": "D",
+      "maximum_squared_distance": "537841/640000"
+    },
+    {
+      "path": "211320",
+      "region": "D",
+      "maximum_squared_distance": "94977/102400"
+    },
+    {
+      "path": "211321",
+      "region": "D",
+      "maximum_squared_distance": "47133/51200"
+    },
+    {
+      "path": "211322",
+      "region": "S_A",
+      "maximum_squared_distance": "1140581/1280000"
+    },
+    {
+      "path": "211323",
+      "region": "S_A",
+      "maximum_squared_distance": "2490637/2560000"
+    },
+    {
+      "path": "21133",
+      "region": "S_B",
+      "maximum_squared_distance": "288117/320000"
+    },
+    {
+      "path": "212",
+      "region": "S_A",
+      "maximum_squared_distance": "10229/20000"
+    },
+    {
+      "path": "2130",
+      "region": "S_A",
+      "maximum_squared_distance": "124357/160000"
+    },
+    {
+      "path": "2131",
+      "region": "C",
+      "maximum_squared_distance": "30697/32000"
+    },
+    {
+      "path": "2132",
+      "region": "S_A",
+      "maximum_squared_distance": "54041/80000"
+    },
+    {
+      "path": "2133",
+      "region": "C",
+      "maximum_squared_distance": "10121/16000"
+    },
+    {
+      "path": "22",
+      "region": "S_A",
+      "maximum_squared_distance": "30161/40000"
+    },
+    {
+      "path": "23",
+      "region": "C",
+      "maximum_squared_distance": "881/1000"
+    },
+    {
+      "path": "30",
+      "region": "S_B",
+      "maximum_squared_distance": "9081/10000"
+    },
+    {
+      "path": "31",
+      "region": "S_B",
+      "maximum_squared_distance": "9797/10000"
+    },
+    {
+      "path": "32",
+      "region": "C",
+      "maximum_squared_distance": "1913/2000"
+    },
+    {
+      "path": "330",
+      "region": "S_B",
+      "maximum_squared_distance": "872453/980000"
+    },
+    {
+      "path": "331",
+      "region": "S_B",
+      "maximum_squared_distance": "817853/980000"
+    },
+    {
+      "path": "3320",
+      "region": "C",
+      "maximum_squared_distance": "31433/32000"
+    },
+    {
+      "path": "3321",
+      "region": "S_B",
+      "maximum_squared_distance": "3771737/3920000"
+    },
+    {
+      "path": "3322",
+      "region": "C",
+      "maximum_squared_distance": "20761/32000"
+    },
+    {
+      "path": "3323",
+      "region": null,
+      "maximum_squared_distance": null
+    },
+    {
+      "path": "333",
+      "region": null,
+      "maximum_squared_distance": null
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "raw_rule_version": 1,
+  "scope": "Fixed C05 b=1 catalog, selected generic planar stress; b>=2 remains outside.",
+  "evidence": "BRANCHING_ONE_UNLOADED_FILTERS.md",
+  "raw_cases": 524870,
+  "hand_closed": 385071,
+  "remaining": 139799,
+  "closed_by_first_witness": {
+    "two_loaded": 6,
+    "loaded_bridge": 358764,
+    "ss_bundle": 178,
+    "d_forest": 4246,
+    "loaded_angle": 21877
+  },
+  "proofs": {
+    "two_loaded": "ONE_UNLOADED_TWO_LOADED_EXCLUSION.md",
+    "loaded_bridge": "BRANCHING_LOADED_BRIDGE_EXCLUSIONS.md",
+    "ss_bundle": "BRANCHING_SS_BRIDGE_ENDPOINTS.md",
+    "d_forest": "DIAGONAL_PATH_GRAPH_RESTRICTIONS.md",
+    "loaded_angle": "BRANCHING_ONE_UNLOADED_FILTERS.md"
+  },
+  "by_loaded_count": [
+    {
+      "loaded_vertices": 2,
+      "raw_cases": 6,
+      "hand_closed": 6,
+      "remaining": 0,
+      "closed_by_first_witness": {
+        "two_loaded": 6
+      }
+    },
+    {
+      "loaded_vertices": 3,
+      "raw_cases": 2331,
+      "hand_closed": 266,
+      "remaining": 2065,
+      "closed_by_first_witness": {
+        "loaded_bridge": 36,
+        "ss_bundle": 7,
+        "d_forest": 118,
+        "loaded_angle": 105
+      }
+    },
+    {
+      "loaded_vertices": 4,
+      "raw_cases": 35124,
+      "hand_closed": 15024,
+      "remaining": 20100,
+      "closed_by_first_witness": {
+        "loaded_bridge": 11864,
+        "ss_bundle": 103,
+        "d_forest": 1172,
+        "loaded_angle": 1885
+      }
+    },
+    {
+      "loaded_vertices": 5,
+      "raw_cases": 139992,
+      "hand_closed": 92042,
+      "remaining": 47950,
+      "closed_by_first_witness": {
+        "loaded_bridge": 80549,
+        "ss_bundle": 68,
+        "d_forest": 2110,
+        "loaded_angle": 9315
+      }
+    },
+    {
+      "loaded_vertices": 6,
+      "raw_cases": 212853,
+      "hand_closed": 163597,
+      "remaining": 49256,
+      "closed_by_first_witness": {
+        "loaded_bridge": 155787,
+        "d_forest": 846,
+        "loaded_angle": 6964
+      }
+    },
+    {
+      "loaded_vertices": 7,
+      "raw_cases": 134564,
+      "hand_closed": 114136,
+      "remaining": 20428,
+      "closed_by_first_witness": {
+        "loaded_bridge": 110528,
+        "loaded_angle": 3608
+      }
+    }
+  ]
+}

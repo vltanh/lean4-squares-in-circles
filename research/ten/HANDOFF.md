@@ -1,0 +1,719 @@
+# n=10 research handoff — updated 2026-10-31
+
+PR: <https://github.com/vltanh/lean4-squares-in-circles/pull/12>  
+Branch: `research/ten-exact-start`  
+Original base: `4bea747b3efa13c869b956cb28435efaf21526fa`
+
+**The unrestricted n=10 lower bound remains open.** The target is squared
+radius `Q=9/2`, for arbitrary independently oriented unit squares with
+disjoint open interiors. No n=10 Lean theorem, build, or kernel check is
+claimed. This PR changes only research artifacts under `research/ten/`.
+
+## Start here
+
+<!-- CASE_PROGRESS_START -->
+**Fixed strict-lower-bound master ledger:** `███████████████████▊░░░░` **278/336 closed; 58 open.** (278 hand; 0 computer-only.) [All stable IDs and the exact remaining obligations](MASTER_CASES.md).
+
+The denominator is frozen: 19 other terminal families + 38 branching families + 279 cycle signatures. A branching family includes every permitted graph and continuous realization for its fixed `(k,b)`. These are proof-family counts, **not a percentage of effort or of the full n=10 deliverable**. Equality and Lean verification have separate gates.
+<!-- CASE_PROGRESS_END -->
+
+[CASE_ROADMAP.md](CASE_ROADMAP.md) gives the ordered coverage tree and separate gates.
+[CYCLE_CASES.md](CYCLE_CASES.md) gives the 279 cycle signatures.
+
+[README.md](README.md) indexes the completed arguments and their hypotheses.
+[UNRESTRICTED_MODEL.md](UNRESTRICTED_MODEL.md) states the physical model and
+exact finite formulation. The exact construction at `Q` is checked by
+[check_construction.py](check_construction.py); it is an upper bound.
+
+The sharp bound and complete equality family are proved for the entire
+common-coordinate-separated class, including independently oriented
+squares. See [COORDINATE_RECTIFICATION.md](COORDINATE_RECTIFICATION.md) and
+[ALL_PARALLEL_THEOREM.md](ALL_PARALLEL_THEOREM.md). A physical packing need
+not have that separation property.
+
+[CENTER_RADIUS_REDUCTION.md](CENTER_RADIUS_REDUCTION.md) closes the
+unrestricted case with at least eight centers outside the open unit disk.
+The completed [five-center moment proof](FIVE_CENTER_LARGE_TURNS.md) excludes
+five inner centers by an explicit finite-table argument. Thus a hypothetical
+smaller ten-packing must have **exactly three or four inner centers**.
+The equality classification remains open outside the completed classes.
+
+## Pushed handoff — 2026-10-31
+
+Research is paused at the user's request after the completed fork proof and
+all certificate data were pushed. Exact finite tables are permitted; every
+table must cover its full stated parameter domain and use exact, reviewable
+inequalities.
+The unrestricted proof is still open.
+The fixed master denominator is **336**, with **278 reviewed hand closures
+and 58 open families**. No additional master ID should be created for a
+research refinement. The earlier seven-loaded one-D closure was committed as
+`cb58d3bf81ba71afe156cf883c32de0eefa93a96`. The new
+[coupled loaded-ray theorem](LOADED_JOINT_ANGLE_BOUND.md) closes both
+five-loaded/two-D signatures using a complete 332-frame rational certificate.
+No denominator growth or conditional-core promotion is involved.
+
+The [uniform E_A/E_B side-source closure](STRICT_SIDE_SOURCE_CAPACITY_CLOSURE.md)
+now completes both reflected strict side-source rows of LSLSLD. Its 1,133-leaf
+exact parameter table retains one interior rectangle and two boundary boxes;
+strict Jacobian norm bounds exclude both boundary limits. A 161-cell uniform
+four-center cover then puts all added centers in five disks of diameter 9/10.
+Both full transmitter slide intervals are included. Two arithmetic backends
+(44 and 60 bits) pass every leaf and exact Q(sqrt(2)) checks verify both
+boundary identities. No independent agent review or Lean check is claimed.
+The subsequent [complete unique-D-endpoint source closure](STRICT_VERTEX_SOURCE_CAPACITY_CLOSURE.md)
+now also excludes both unique-circle V_V sources by a same-sign torque
+argument, and the radial V_V source by a complete 216-leaf parameter table
+and 120-cell physical capacity cover. Both 44-bit and 60-bit backends pass
+all leaves. The [uniform radial-D three-body capacity theorem](RADIAL_DIAGONAL_THREE_BODY_CAPACITY.md)
+now completes that last endpoint class without classifying the remaining
+source. Its 42 parameter rows, one radius-impossible row and all 7,604
+center-cover leaves have passed both exact arithmetic backends. Hence the
+entire LSLSLD signature, C20-M06-L03-B02-T02, is closed. The master count
+is 278/336 with 58 open, and C20 is 251/279 with 28 open.
+
+| All open IDs, grouped for shared arguments | Count | Next common obligation |
+| --- | ---: | --- |
+| C05 branching families | 30 | Use force/torque or completion geometry on regions with at least three terminals. Exposure and topology alone are insufficient. |
+| C20 with SS | 5 | A uniform barrier/capacity theorem for arbitrary loaded SS endpoints and transmitter slides; include extra endpoint forces where possible. |
+| C20 with D but no SS | 9 | Combine the new D-endpoint direction theorem with exhaustive endpoint support/circle signs and a uniform completion bound. |
+| C20 with only single S paths | 14 | Stress-dependent loaded-run restrictions or uniform completion bounds; geometric angular estimates alone do not yet suffice. |
+
+For branching, the reviewed minimum-active-body class has a simple
+suppressed skeleton, every unloaded retained vertex has at least three
+distinct retained neighbors, and every connected unloaded two-terminal
+region is S, D, or SS. This is an existence normalization over packing and
+stress pairs. It does not exclude every original realization or preserve
+its raw case ID. The [generic compatibility theorem](GENERIC_CONSOLIDATION_COMPATIBILITY.md)
+now resolves the earlier selection gap for the exact conventions listed in
+the seven-ring theorem. It augments the initial finite factors and selects
+slide parameters outside finitely many proper affine hyperplanes, preserving
+all remaining geometric VV directions and both normal-interval prescriptions.
+It does not cover arbitrary additional future generic conditions.
+
+The [D-endpoint restriction](DIAGONAL_ENDPOINT_NONEMPTY_PATH_DIRECTION.md),
+which passed root and independent full reviews at handoff, forbids an outward second path of any width W>=1 at a degree-two loaded D
+endpoint. Its single-S corollary retains only inner-corner or opposite
+horizontal-side support, including radial circle-load splits. Direct
+neighbors (W=0) are outside its scope. The whole LSLSLD signature remains
+open and has a reproducible numerical six-body positive-stress candidate;
+no internal-component impossibility should be inferred from the new lemma.
+
+The [same-sign normalization](ONE_DIAGONAL_TWO_SIDE_SAME_SIGN_NORMALIZATION.md)
+now proves the opposite-sign exclusion with both unique and radial D
+endpoints. The [common-source-edge table](ONE_DIAGONAL_TWO_SIDE_COMMON_SOURCE_EDGE.md)
+parameterizes the entire both-unique branch with three source rows, all
+endpoint side-normal alternatives and both full S slide intervals. These
+are uniform inputs for a completion table, not a whole-case exclusion.
+
+The [16-interval vertical-source table](ONE_DIAGONAL_VERTICAL_SOURCE_SIDE_EXCLUSION.md)
+and [further torque exclusions](ONE_DIAGONAL_VERTICAL_SOURCE_TORQUE_EXCLUSIONS.md)
+now combine with the [complete radial-source certificate](RADIAL_VERTICAL_SOURCE_EXCLUSION.md)
+to remove every vertical-D-endpoint source row. All 30 formerly unresolved
+cells are resolved by a full 248-leaf rational certificate. Both unique
+D endpoints must use strict inner-corner S supports; the three common-source
+rows and all S slides still require uniform completion bounds. The
+[focused diagonal handoff](DIAGONAL_CYCLE_RESEARCH_HANDOFF_2026_10_31.md)
+records all remaining radial and uniform completion obligations.
+
+For LSLSLSS, the remaining central forms are U-EE, U-VV-A,
+and radial R-VV with mixed or two-vertex SS endpoint support. U-EE requires
+R²>13/3 and both source coordinates above one. U-VE-I, R-VE and radial
+R-VV with E/E SS endpoints are hand excluded. The new
+[nonincident-source](NONINCIDENT_SIDE_SOURCE_EXCLUSION.md) two-row table
+and [opposite-vertex-source](OPPOSITE_VERTEX_SOURCE_EXCLUSION.md) theorem
+also exclude U-VE-N and U-VV-O for any two positive-width paths, even with
+extra far-endpoint contacts. The [radial transmission-angle theorem](RADIAL_SOURCE_TRANSMISSION_ANGLE.md)
+now additionally requires both SS endpoints to have unique circle vertices
+whenever central C is radial-side. The existing center-cover
+certificates cover their stated center regions only. Establishing uniform
+regions for every realization is still the missing step.
+
+The [degree-two loaded VV support table](LOADED_DEGREE_TWO_VV_SUPPORT_TABLE.md)
+is also reviewed. Off the load ray, the other contact must be an interior
+shared-side aggregate. The on-ray exception forces coincident applications,
+two inner circle-clear neighbors, and an unloaded branching VV neighbor;
+it is therefore impossible in a whole simple-cycle component.
+
+Unfinished routes are preserved without closure claims:
+
+- [Stronger coupled loaded-run angle](LOADED_RUN_STRONGER_ANGLE_HANDOFF.md):
+  the target is now proved by [LOADED_JOINT_ANGLE_BOUND.md](LOADED_JOINT_ANGLE_BOUND.md),
+  with complete coverage of larger-offset separators. It closes both
+  five-loaded/two-D signatures. The old handoff preserves its development.
+- The [diagonal-block lead](DIAGONAL_TRANSLATED_BLOCK_RESEARCH.md) is now
+  completed by the [quadrant-straddler lemma](QUADRANT_STRADDLER_LEMMA.md)
+  and [two-parameter outward block capacity theorem](OUTWARD_INSCRIBED_BLOCK_CAPACITY.md).
+  At most five squares can be added, including the sharp boundary. This
+  excludes the four-square-junction on-ray residual; three-square junctions remain.
+- [The 27-row numerical D survey](ONE_DIAGONAL_TWO_SIDE_NORMAL_FORM_EXPLORATION.md)
+  reproduces three filtered roots, but is neither exhaustive nor a physical
+  realization or completion certificate. Its JSON was reproduced identically.
+
+Validation at handoff: the master renderer and its independent audit agree
+on all 336 IDs and 58 open rows; the frozen-manifest mutation check rejects
+changed obligations. The cycle checker agrees by independent enumerations
+on all 279 signatures. The seven-body exact checker verifies all 28 cells
+(11 empty), with maximum assigned squared distance 197/200. The saved
+seven-body numerical candidate JSON was reproduced identically. The new
+24-row loaded-ray checker verifies all 72 bounds, and the 16-interval
+vertical-source checker verifies all 32 bounds, each positive. Published
+files were compared with their remote Git blob hashes. No Lean compilation
+or kernel check was run or claimed.
+
+From this directory, regenerate/verify the research bookkeeping with:
+
+```sh
+python update_case_roadmap.py
+python check_cycle_cases.py
+python check_seven_body_central_hole_cover.py
+python check_loaded_three_ray_angle_bound.py
+python check_loaded_joint_angle_bound.py
+python independent_loaded_joint_angle_check.py
+python check_diagonal_vertical_source_side.py
+python check_radial_vertical_source_exclusion.py
+```
+
+The [reciprocal-tiling research note](RECIPROCAL_TILING_RESEARCH_HANDOFF.md)
+is preserved as an unreviewed draft. It records why a convex reciprocal
+tiling alone does not bound unloaded cells by k−2; further physical or
+minimum-active hypotheses are needed. This note changes no status.
+
+The old local `EXPOSED_TWO_TERMINAL_UNLOADED_PATCH.md` draft is superseded
+by the published arbitrary-terminal theorem; it contains no unique pending
+result. Do not restart a b=2, b=3, ... catalog sequence or a loaded-count
+sequence. Use the fixed master list and aim for shared arguments.
+
+## Completed results at this handoff
+
+The unrestricted proof is still open. All completed source, radial-D,
+opposite-sign and fork results described here are committed with their
+full exact data and checkers. The main case ledger has **19 reviewed
+hand closures and 2 open
+families out of 21**; the larger-cycle subledger has **251 reviewed hand
+closures and 28 open cases out of 279**. Main gates remain **3/7 closed**.
+The closed counts do not measure the fraction of mathematical effort.
+
+Latest completed work:
+
+- The [loaded double-D fork theorem](LOADED_DOUBLE_DIAGONAL_FORK_CAPACITY.md)
+  bounds the five-square core by nine total squares, independently of the
+  remaining graph and all added orientations. It covers all 61 fixed
+  cyclic-DLD signatures and newly closes LLLDLD, C20-M06-L04-B02-T03.
+  Both backends pass all 358 capacity rows, 79 impossible parameter rows
+  and 44,567 center cells. Every surviving cycle's D paths now form a
+  matching on loaded vertices. The master is 278/336 closed; 58 open.
+
+- The [uniform opposite-sign D-core capacity theorem](OPPOSITE_DIAGONAL_CAPACITY.md)
+  proves total capacity at most nine for every selected loaded-to-loaded D
+  path whose unique circle vertices have opposite transverse signs. Its
+  254 capacity rows, 26 radius-impossible rows and all 50,607 strict center
+  cells pass both exact backends. Together with radial-D capacity, every
+  loaded D path now has unique same-sign endpoint circle vertices, regardless
+  of loaded count, endpoint degree or branching count. That feature reduction alone does not add a closure; the subsequent
+  fork theorem supplies the further whole-case closure above.
+
+- The [universal radial-D three-body capacity theorem](RADIAL_DIAGONAL_THREE_BODY_CAPACITY.md)
+  bounds every normalized radial-D core by nine total squares, independently
+  of the remaining source or slides. Together with the complete unique-D-endpoint
+  source arguments it closes the whole LSLSLD signature. All 42 parameter
+  rows, the one impossible radius row and 7,604 cover leaves passed both
+  exact backends. Its shared corollary removes radial endpoints from every
+  loaded-to-loaded D path, regardless of endpoint degree, loaded count or
+  branching count. [Two fixed parameter modes](LOADED_DIAGONAL_PARAMETER_BOX.md)
+  cover unique/unique three-body D geometries; the opposite-sign mode is
+  now completely excluded above, leaving only the same-sign mode. The master is 278/336 closed
+  with 58 open.
+
+- The [coupled loaded-ray theorem](LOADED_JOINT_ANGLE_BOUND.md) proves
+  the two-gap bound pi/2-atan(1/45) and closes both five-loaded/two-D
+  signatures C20-M07-L05-B02-T03 and C20-M07-L05-B03-T03. Its 332 frame
+  intervals and all 28,000 rational leaf inequalities are explicit; two
+  exact implementations verify every bound and full coverage. The master
+  now has 278/336 hand closures and 58 open entries; C20 has 251/279 closed.
+- The [strict side-source rational reduction](STRICT_SIDE_SOURCE_RATIONAL_REDUCTION.md)
+  gives five exhaustive C circle-feature rows and reduces all E_A core
+  coordinates, squared radius and force height to two S half-angle variables.
+  Two residual scalar equations remain, with all denominator conditions
+  explicit. E_B is its reflection. The subsequent
+  [uniform side-source capacity theorem](STRICT_SIDE_SOURCE_CAPACITY_CLOSURE.md)
+  closes both rows with a complete exact parameter table, boundary injectivity
+  and a four-center cover. The [historical completion note](STRICT_SIDE_SOURCE_COMPLETION_RESEARCH.md)
+  preserves floating prototypes; their unresolved cells are not proof inputs.
+- The [radial vertical-source theorem](RADIAL_VERTICAL_SOURCE_EXCLUSION.md)
+  closes the last vertical-endpoint form in the both-unique-D-endpoint branch.
+  Its complete 248-leaf certificate covers every closed parameter rectangle,
+  with no unresolved cells. A second interval implementation checked every
+  rejection and a separate prefix/Kraft calculation checked coverage.
+  Both S supports are now strict inner corners throughout that branch.
+  The subsequent complete source and radial-D capacity theorems now close
+  the entire LSLSLD signature.
+- The [quadrant-straddler theorem](QUADRANT_STRADDLER_LEMMA.md) proves
+  at most one unit square can straddle an empty quadrant, and an anchored
+  southwest unit square excludes every straddler. It completes the earlier
+  separator-coverage gap. The [outward inscribed block theorem](OUTWARD_INSCRIBED_BLOCK_CAPACITY.md)
+  now bounds completion by nine for all shifts s,t in [0,1/2] when the
+  outer corner is on the circle. Its proof retains arbitrary orientations
+  and handles the equality boundary. No full master entry closes from it.
+- The [24-row loaded-ray theorem](LOADED_THREE_RAY_ANGLE_BOUND.md) closes
+  the whole seven-loaded one-D signature C20-M08-L07-B01-T02. Its 72
+  endpoint bounds were independently verified with dyadic radical bounds
+  and exact radical elimination. The master now has 278/336 hand closures
+  and 58 open entries; C20 has 251/279 closed and 28 open.
+- [Generic consolidation compatibility](GENERIC_CONSOLIDATION_COMPATIBILITY.md)
+  now preserves the original selection conventions using finitely many
+  added corner factors and a generic choice of slides. The simpler
+  minimum-active representative can be used with the original case proofs.
+- The [same-sign LSLSLD theorem](ONE_DIAGONAL_TWO_SIDE_SAME_SIGN_NORMALIZATION.md)
+  includes radial D endpoints; the [three-row common-edge table](ONE_DIAGONAL_TWO_SIDE_COMMON_SOURCE_EDGE.md)
+  covers its entire unique-D-endpoint branch with exact center formulas.
+- The [two-row nonincident-source exclusion](NONINCIDENT_SIDE_SOURCE_EXCLUSION.md)
+  and [opposite-vertex exclusion](OPPOSITE_VERTEX_SOURCE_EXCLUSION.md) apply
+  to any two positive-width paths and prune LSLSLSS to U-EE, U-VV-A and
+  its surviving radial R-VV forms. These local restrictions alone do not
+  close another whole signature.
+- [Parallel patch consolidation](PARALLEL_SIDE_PATCH_CONSOLIDATION.md)
+  replaces any three/four-body two-column patch or double-SS bundle by
+  one SS stress path, keeping every physical square and terminal wrench.
+  Combined with double-S consolidation, the stated minimum-active-body
+  class has a simple skeleton and no unloaded branching region behind
+  two terminals. This is a normalization, not a raw-family exclusion.
+- The entire [incident U-VE-I source](INCIDENT_SIDE_SOURCE_SS_EXCLUSION.md)
+  is excluded when two S paths lead to SS-separated endpoints. Arbitrary
+  extra endpoint contacts are allowed, so the theorem also applies to
+  branching substructures. The whole LSLSLSS signature remains open.
+- [Exact obstructions](UNIVERSAL_BRANCHING_REDUCTION_OBSTRUCTIONS.md)
+  show that topology and exposure alone cannot finish C05. An outerplanar
+  three-sun survives the graph reductions; an explicit eight-square stress
+  has exposed unloaded branches with nonparallel forces. Neither is a
+  ten-square counterexample.
+- The [shared completion criterion](FINITE_CENTER_COVER_CAPACITY.md) bounds
+  any m-body core plus q remaining center regions by m+q squares. A reviewed
+  [28-cell rational cover](SEVEN_BODY_CENTRAL_HOLE_EXCLUSION.md) gives a
+  robust seven-core example, with no eighth square after an orientation
+  argument. Uniform hypotheses for all realizations are still missing.
+- [LSLSLSS support normalization](LSLSLSS_SUPPORT_NORMALIZATION.md) gives
+  seven necessary central forms inside its existing fixed ID. R-VE is
+  excluded, as is the radial R-VV subcase with E/E SS endpoint supports.
+  The [U-EE source bounds](TWO_SIDE_SOURCE_WITH_SS_ENDPOINTS.md) require
+  R²>13/3 and both source coordinates above one, for every slide.
+- A [seven-body numerical candidate](TWO_SIDE_ONE_DOUBLE_SIDE_COMPONENT_CANDIDATE.md)
+  at R²≈4.478903 has reproduced JSON, positive numerical stress and
+  noncontact clearance. It is not an exact existence proof or a ten-packing.
+  These results do not close a whole master entry.
+- The [master ledger](MASTER_CASES.md) is frozen at 336 explicit proof families,
+  with 278 hand closed and 58 open. The 30 open branching families cover all
+  k and b simultaneously; the other 32 are explicit cycle signatures.
+  New refinements cannot increase the denominator.
+- The [three-interior-body theorem](THREE_INTERIOR_BODY_REDUCTION.md) exposes
+  every center of norm at least 1/sqrt(2); at most three physical bodies
+  remain inside the planar disk drawing, independently of k and b.
+- The [two-terminal patch theorem](TWO_TERMINAL_UNLOADED_PATCH_REDUCTION.md)
+  reduces every connected unloaded region with exactly two outside neighbors
+  to one S, one D, or two to four S bodies in two columns. Its terminals
+  need not be loaded or exposed in the original graph.
+- [Double-S consolidation](DOUBLE_SIDE_BUNDLE_CONSOLIDATION.md) preserves
+  the packing radius and all endpoint wrenches while removing one active
+  transmitter. Its minimum-active-body normalization has a precisely stated
+  certificate class; it does not silently extend old unused generic-polynomial
+  conditions, nor close any fixed master family on its own.
+- A [universal two-loaded exclusion](TWO_LOADED_COMPONENT_EXCLUSION.md)
+  covers every graph and every b. A planar reciprocal-force argument
+  forces all contact forces parallel; torque and the radius window give
+  two S columns at squared radius 17/4, whose total capacity is at most
+  nine. Remaining components have at least three loaded bodies.
+- [Outer-center exposure](OUTER_CENTER_EXPOSURE_AND_WIDTH_TWO_UNIQUENESS.md)
+  permits at most one distinct actual-SS or effective-width-two endpoint
+  pair in the whole selected graph, independent of loaded count.
+- Every whole five-cycle is hand excluded for the selected certificate.
+  [C19](DIAGONAL_FIVE_CYCLE_EXCLUSION.md) uses generic contact normals
+  and the reviewed nearer-endpoint obstruction.
+- C20 has 251/279 hand closures. The cap budget supplies 234; the
+  [SS/D](SS_DIAGONAL_SIX_CYCLE_EXCLUSION.md),
+  [SS/S](SS_SIDE_SIX_CYCLE_EXCLUSION.md),
+  [all-D](DIAGONAL_PATH_GRAPH_RESTRICTIONS.md), and
+  [two-D/one-S](TWO_DIAGONAL_ONE_SIDE_SIX_CYCLE_EXCLUSION.md) six-cycle
+  arguments supply four more, and the
+  [stronger loaded-pair angle](STRONG_DIRECT_CYCLE_BUDGET.md) adds eight.
+  The 30 open IDs comprise 11 length-six,
+  15 length-seven, and 6 length-eight signatures.
+- C04 is [hand closed](SEVEN_RING_COMPLETE_CAPACITY.md), including every
+  ownership row and radial load split. The new outer-corner theorem gives
+  squared radius below 33/20; the complete enlarged-core and contact-cap
+  argument places all three inner squares below 83/50, contradicting
+  their exact minimum 425/256. The corner selection, cap bounds, and
+  global winding argument passed root and independent reviews.
+- C05's [loaded-branch catalog](BRANCHING_LOADED_SKELETON_INVENTORY.md)
+  has 45,666 fixed records. [Exact graph certificates](BRANCHING_SELECTED_GRAPH_FILTERS.md)
+  exclude 42,532 and leave 3,134. Independent enumerators agree on every
+  record, and independent checkers validate the finite witnesses.
+- C05 now also has a [one-unloaded-branch catalog](BRANCHING_ONE_UNLOADED_INVENTORY.md)
+  with 524,870 fixed records. The [compact proof ledger](BRANCHING_ONE_UNLOADED_FILTERS.md)
+  excludes 385,071 and leaves 139,799. Codes are stable IDs, so an
+  on-demand decoder prints the case and its proof witness. Raw catalogs
+  and exact remaining-case lists can be regenerated without committing
+  hundreds of thousands of rows.
+- The entire [two-loaded, one-unloaded-branch stratum](ONE_UNLOADED_TWO_LOADED_EXCLUSION.md)
+  is hand excluded. A forced five-square core has squared radius 17/4;
+  a sealed-cavity and two-half-plane capacity argument bounds its total
+  completion by nine squares, with arbitrary additional orientations.
+- [Planar stress selection](PLANAR_SELECTED_PHYSICAL_STRESS.md) is
+  compatible with the normal restrictions used above. Select the new
+  certificate before classifying its graph; an arbitrary earlier stress
+  graph need not retain its edges, degrees, or components.
+
+| Open family | Concrete next work |
+| --- | --- |
+| C05: branching mixed components | Close the 30 fixed open branching families in MASTER_CASES.md using structural or completion arguments across k and b. |
+| C20: 32 larger-cycle entries | Prove completion bounds or contact exclusions for the explicit remaining signatures in CYCLE_CASES.md. |
+
+The fixed open branching range is `3<=k<=7`, `0<=b<=10-k`: exactly
+30 families, including every larger b without extending the denominator. Work is focused on structural arguments
+covering all these pairs, rather than adding larger catalogs. The
+[two-neighbor branch theorem](TWO_NEIGHBOR_UNLOADED_BRANCH_RESTRICTIONS.md)
+is such a universal restriction: at most one unloaded retained vertex
+has only two distinct retained neighbors. It is not a closure of C05. There is no plan to handle successive loaded
+counts as separate catalogs; the priority is one structural or completion
+argument for the remaining mixed family.
+
+The open `LSLSLD` signature now has a
+[reproducible numerical six-body candidate](ONE_DIAGONAL_TWO_SIDE_COMPONENT_CANDIDATE.md)
+at radius about 2.03253, with positive stress and numerical clearance.
+It is neither a certified exact component nor a ten-square packing. It
+suggests that this branch needs a bound on the four additional squares,
+and it changes no progress count.
+
+The former D-D crossing lead is now a reviewed theorem. A crossing
+forces a lower loaded square's other contact to the opposite end of its
+top side; its neighbor is then a fixed northwest unit square with a vertex
+outside the containing circle by squared-radius excess `2(1+v)>0`.
+This proof uses degree two at the loaded endpoint and must not be applied
+to branching components without that hypothesis.
+
+The [ownership alphabet](SEVEN_RING_OWNERSHIP_ALPHABET.md) now has two
+full integrated reviews, including its radial-side tables, coarse schemes,
+and strict side-endpoint reduction for pure chirality. It gives 25 local
+candidates; the complete capacity theorem now excludes all seven-ring
+ownership families, including U4/U5 and every pair-support type. The
+[branching skeleton](BRANCHING_COMPONENT_SKELETON_DRAFT.md) also passed two
+full mathematical reviews of its suppression, degree, bundle, and effective
+contact reductions. Both remain necessary classifications, not global
+exclusion theorems.
+The [opposite-vertex restriction](LOADED_DIAGONAL_VERTEX_RESTRICTION.md)
+has two completed independent reviews: its opposite corner has squared
+norm below `49/64`; the double-side bound is `53/64`. Their combination
+is a local tool, not a general ring exclusion.
+The former [S-S handoff candidate](SIDE_SIDE_SIDE_INTERIOR_HANDOFF.md)
+has now passed full root and independent audits. Its promoted proof closes
+C15; the earlier draft remains available in the handoff commit's history.
+No new n=10 Lean theorem or kernel check was attempted.
+
+## Resumed checkpoint
+
+Work resumed from commit `9b90c5e` on 2026-10-29. Both pending two-row
+extensions passed independent mathematical review; the explicit review is
+recorded in [TWO_ROW_EXTENSION_AUDIT.md](TWO_ROW_EXTENSION_AUDIT.md).
+No proof of the unrestricted n=10 optimum is claimed.
+
+| Manuscript | Current status |
+| --- | --- |
+| [Extreme upper asymmetry](EXTREME_ASYMMETRIC_TWO_ROW.md) | Independent full mathematical review passed; removes the quarter-offset restriction for the stated touching-lower-pair core with `0<t<=5/12` |
+| [Seven-angle action](SEVEN_RING_ANGLE_ACTION.md) | Independent full mathematical review passed; exact reduction; its separate global classification is now computer-assisted |
+| [Wider row displacement](WIDE_DISPLACEMENT_TWO_ROW.md) | Independent full mathematical review passed; interval is `0<t<3/2-2^(-1/4)` |
+| [Separated lower pair](SEPARATED_LOWER_TWO_ROW.md) | Independent full mathematical review passed; extension removes lower-pair touching under the displayed bounds |
+
+The [combined theorem](SEPARATED_WIDE_TWO_ROW.md), independently reviewed
+on 2026-10-29, permits a separated lower pair throughout the full wider
+displacement interval. Its proof checks the virtual slot, center clearance,
+and arc counts under both extensions at once.
+
+Both extensions cover specified common-frame two-row cores. There is still
+no argument reducing every four-inner-square core to those arrangements.
+
+The strict one-chirality seven-ring is now excluded **by hand**. The
+[chord-endpoint bound](SEVEN_RING_CAP_CHORD_BOUND.md) and
+[radial cap theorem](SEVEN_RING_RADIAL_CAP_BOUND.md), both independently
+reviewed, put all three inner squares in a disk of squared radius
+`33/20<425/256`, below their established minimum. The independently audited
+[computer-assisted angle-action theorem](SEVEN_RING_GLOBAL_ACTION.md)
+remains a separate result proving uniformity in this ownership pattern;
+its interval proof is no longer needed to close the hand completion case.
+Other ownership patterns remain open.
+
+The [full radial-side D-D proof](RADIAL_SIDE_DD_EXCLUSION.md) now excludes
+its asymmetric smaller-radius branch too. Together with S-S and S-D, this
+closes the radial-side central-body case of the three-loaded five-cycle.
+The [D-S closure](DIAGONAL_SIDE_EXCLUSION.md),
+[S-D closure](SIDE_DIAGONAL_EXCLUSION.md), and
+[final S-S closure](SIDE_SIDE_EXCLUSION.md) close that component type. The
+four-loaded diagonal five-cycle is also now excluded for the generic
+selected certificate by [its nearer endpoint](DIAGONAL_FIVE_CYCLE_EXCLUSION.md).
+The earlier [inner trace restriction](DIAGONAL_FIVE_CYCLE_INNER_TRACE.md)
+remains one input to that proof.
+
+The resumed work also proves a [parallel-core graph dichotomy and narrow-channel
+filling lemma](FOUR_CORE_GENERALIZATION.md), with an exact localized pinwheel
+showing why raw two-row normalization fails. The [four-loaded five-cycle
+theorem](MIXED_FIVE_FOUR_LOADED.md) excludes its side transmitter throughout
+the imported radius window. For loaded rings, [force ratios and physical
+neighbor containment](SEVEN_RING_FORCE_RATIO.md) give new necessary bounds,
+including `R cos(alpha)>1` in the one-chirality pattern. The reviewed
+[spike reduction](SEVEN_RING_SPIKE_REDUCTION.md) confines protruding
+inner-square vertices to explicit contact triangles cut by diameter disks.
+The weaker physical cap bound now closes the one-chirality completion;
+the earlier sharper target is no longer a required step for that case.
+
+## Remaining obligations
+
+1. **Three inner centers.** Seven outer squares consume at least `7pi/4`
+   on the test circle of radius `sqrt(1+1/sqrt(2))`. Their interaction with
+   the three inner squares remains open.
+   [THREE_CORE_INNER_STABILITY.md](THREE_CORE_INNER_STABILITY.md) requires
+   all three squares to lie wholly inside the test circle; center norms
+   below one do not supply that hypothesis. Pure radial additive weights
+   did not close this case in numerical exploration.
+2. **Four inner centers.** Six outer arcs each have length at least `pi/4`.
+   [FOUR_CENTER_WIDTH.md](FOUR_CENTER_WIDTH.md) gives core-hull width at
+   least two in every direction. The separate computational
+   [radial localization](RADIAL_COUNT_LOCALIZATION.md) forces two center
+   norms at most `.65` and two strictly above `.9`.
+   [LARGE_INNER_ARC.md](LARGE_INNER_ARC.md) proves by hand that at most two
+   of four inner centers, and at most one of three, have norm at least `.9`.
+   Abstract complementary-gap capacity fails even under radial localization:
+   see [FOUR_CORE_GAP_OBSTRUCTION.md](FOUR_CORE_GAP_OBSTRUCTION.md) and
+   [LOCALIZED_FOUR_CORE_GAP_OBSTRUCTION.md](LOCALIZED_FOUR_CORE_GAP_OBSTRUCTION.md).
+   The [general block theorem](GENERAL_TRANSLATED_BLOCK_OBSTRUCTION.md)
+   nevertheless excludes every solid two-by-two core whose centers lie in
+   the closed unit disk, for arbitrary translation and rotation, with no
+   computational radial-count premise.
+   [SYMMETRIC_TWO_ROW_COMPLETION.md](SYMMETRIC_TWO_ROW_COMPLETION.md) excludes
+   the specified symmetric two-row family with two center norms at most
+   `.65` and the other two at most one. Neither result normalizes arbitrary
+   four-square cores to those families. The reviewed
+   [extreme-asymmetry extension](EXTREME_ASYMMETRIC_TWO_ROW.md) now permits
+   all upper offsets satisfying its center bounds when the lower pair
+   touches. The broader extensions in the checkpoint table are now reviewed conditional
+   theorems; the absence of a general core reduction remains the gap.
+3. **Nonuniform loaded rings.** An entirely circle-loaded positive component
+   of a strictly subcritical ten-packing must be a seven-square physical
+   ring enclosing the other three squares:
+   [ALL_LOADED_COMPONENT_RINGS.md](ALL_LOADED_COMPONENT_RINGS.md).
+   Its contact-force polygon is strictly convex and strictly contains zero,
+   by [SEVEN_RING_FORCE_CIRCULATION.md](SEVEN_RING_FORCE_CIRCULATION.md) and
+   [SEVEN_RING_FORCE_ORIGIN.md](SEVEN_RING_FORCE_ORIGIN.md). Each body's
+   two force lines concur on its positive circle-load ray.
+   [SEVEN_RING_INTERNAL_CONCURRENCE.md](SEVEN_RING_INTERNAL_CONCURRENCE.md)
+   now places every such intersection inside its closed square, including
+   the two-circle-vertex case. The actual contact points form a convex
+   polygon containing all three inner squares. A capacity bound for that
+   polygon remains open; it is an enclosure of the free hole, not the hole
+   itself, and their areas must not be confused.
+   [REGULAR_SEVEN_LOADED_RING.md](REGULAR_SEVEN_LOADED_RING.md) excludes
+   common signed frame offsets. The smooth stressed member has hole area
+   below `231/80<3`; the radial-side endpoint has a hole inside a disk of
+   radius below `5/4`; the radial-diagonal endpoint exceeds the target
+   radius. Other contact ownership patterns remain open. For the strict
+   side/vertex one-chirality pattern, the [global action theorem](SEVEN_RING_GLOBAL_ACTION.md)
+   now forces the uniform ring by an exact computer-assisted cone argument.
+   The separate [hand cap theorem](SEVEN_RING_RADIAL_CAP_BOUND.md) now
+   excludes the same completion pattern geometrically, so the finite cone
+   lemma no longer needs a hand replacement for this case. Other ownership
+   patterns still require classification or a general capacity theorem.
+4. **Mixed cyclic stress components.**
+   [CYCLIC_STRESS_REDUCTIONS.md](CYCLIC_STRESS_REDUCTIONS.md) excludes
+   two-terminal components made of transmission paths and several small
+   loaded graphs. Components with branching cyclic blocks and the remaining
+   larger mixed cycles remain open. The four-loaded five-cycle is excluded
+   by the [side theorem](MIXED_FIVE_FOUR_LOADED.md) and the
+   [selected-certificate diagonal theorem](DIAGONAL_FIVE_CYCLE_EXCLUSION.md). For a whole
+   five-cycle `A-U-C-V-B-A` with precisely `A,B,C` loaded, the following
+   patterns are excluded: [parallel transmissions](PARALLEL_MIXED_FIVE_CYCLE.md),
+   [equal-type common-corner contacts](COMMON_CORNER_SIDE_TRANSMISSIONS.md),
+   and [mixed-type common-corner contacts](COMMON_CORNER_MIXED_TRANSMISSIONS.md).
+   When `C` has a unique circle vertex,
+   [both contacts cannot be vertices](VERTEX_CONTACT_MIXED_FIVE_CYCLE.md).
+   [SIDE_NORMAL_MIXED_FIVE_CYCLE.md](SIDE_NORMAL_MIXED_FIVE_CYCLE.md) excludes
+   two side-normal transmissions and derives the remaining opposite-corner
+   and adjacent-side-interior contact form.
+   [DIAGONAL_MIXED_FIVE_CYCLE.md](DIAGONAL_MIXED_FIVE_CYCLE.md) excludes two
+   diagonal transmitters in that form, so at least one must be a side
+   transmitter. The [D-S exclusion](DIAGONAL_SIDE_EXCLUSION.md) now closes
+   the diagonal-then-side case. The reverse side-to-diagonal pattern is
+   now closed by [SIDE_DIAGONAL_EXCLUSION.md](SIDE_DIAGONAL_EXCLUSION.md).
+   When C has two geometric circle vertices,
+   [RADIAL_SIDE_MIXED_TRANSMISSIONS.md](RADIAL_SIDE_MIXED_TRANSMISSIONS.md)
+   and the [full D-D exclusion](RADIAL_SIDE_DD_EXCLUSION.md) now close that
+   branch. They use the slightly sharper imported lower bound
+   `R^2>5/2+sqrt(2)`, with the n=8 bracket dependency explicitly stated.
+   [MIXED_FIVE_CYCLE_STATUS.md](MIXED_FIVE_CYCLE_STATUS.md) indexes these
+   completed five-cycle branches.
+   [PLANAR_CONTACT_TORQUE_CYCLES.md](PLANAR_CONTACT_TORQUE_CYCLES.md) gives a
+   planar junction construction retaining the physical forces; it does not
+   establish that every torque cycle encloses zero. Planarity of the simple
+   body-pair graph must not be assumed.
+
+## Recently completed branches
+
+**Five inner centers.**
+[FIVE_CENTER_LARGE_TURNS.md](FIVE_CENTER_LARGE_TURNS.md) proves
+`sum |c_i|^2>=4` for five disjoint unit squares centered in the closed unit
+disk, with equality only for the aligned plus. The strict inequality for
+non-plus configurations and [INNER_ARC_MOMENT.md](INNER_ARC_MOMENT.md) exclude
+five inner centers in a ten-packing at squared radius at most `9/2`.
+[FIVE_CENTER_MOMENT_REDUCTIONS.md](FIVE_CENTER_MOMENT_REDUCTIONS.md) handles
+nonextreme centers and derives the weighted separator dual.
+[FIVE_CENTER_SMALL_TURNS.md](FIVE_CENTER_SMALL_TURNS.md) closes all normal
+turns at most `pi/2` using three certificates. For larger turns,
+[the complete appendix](FIVE_CENTER_LARGE_TURNS_TABLE.md) prints 78 cells,
+42 covering trees, and 1,193 rational vertex bounds. Concavity and explicit
+rational Taylor enclosures prove the bound. The companion checker verifies
+the printed finite argument, including both singleton cross-references.
+The older [radial-weight exclusion](RADIAL_WEIGHT_EXCLUSION.md) is retained
+as a separate computer-assisted result.
+
+**All positive tree components.**
+[PHYSICAL_TREE_REDUCTIONS.md](PHYSICAL_TREE_REDUCTIONS.md) pins the original
+physical stress certificate and bridge reductions to n=9 research.
+[EXPANDED_TREE_INVENTORY.md](EXPANDED_TREE_INVENTORY.md) classifies the full
+positive-tree branch through `9/2`, including a five-body family near
+squared radius `4.35748`. Its completion is excluded by
+[KAPPA_CORE_COMPLETION.md](KAPPA_CORE_COMPLETION.md), uniformly in the slide
+parameter. [STAGGERED_CHAIN_REDUCTION.md](STAGGERED_CHAIN_REDUCTION.md)
+closes every S-S chain: the barrier and
+[three-point theorem](WIDE_NECK_THREE_POINT_STABBING.md) give three additional
+squares per half-plane, and the slide sign lets the
+[two-point theorem](ONE_NECK_STABBING.md) reduce one group to two.
+If a slide is zero, both groups have capacity two. The stronger upper-triple
+rigidity conjecture remains optional and open.
+
+Together with [origin-vertex bounds](THREE_ORIGIN_VERTEX_SQUARES.md) and
+[one-origin bounds](ONE_ORIGIN_VERTEX_THREE_TERMINALS.md), these results
+exclude every nonzero positive tree component. Every nonzero minimizing
+stress component must contain a cycle. The lower radius window is imported
+explicitly from n=8 at main commit `cd9127ff04e089909cc460d817ea28c4b1eb9ea9`;
+its stated arithmetic dependency is recorded in the inventory. This is
+not a new local Lean build or a fresh table-free derivation of that window.
+
+**Sharper caps and physical cores.**
+[SHARP_TWO_SQUARE_CAP.md](SHARP_TWO_SQUARE_CAP.md) proves that the cap
+beginning at `sqrt(7/2)-1` admits only one possible pair of unit squares;
+any stricter cap admits at most one. It strengthens the rational
+[7/8 cap lemma](SEVEN_EIGHTHS_CAP_STABBING.md). The general block and
+symmetric two-row theorems above supersede their earlier narrower cases.
+
+## Shortcuts already ruled out
+
+- At most five squares meeting `B(0,1/2)` is false:
+  [SIX_CENTRAL_SQUARES.md](SIX_CENTRAL_SQUARES.md) gives an exact six-square
+  counterexample. Distinguish intersection with a disk from a center in it.
+- Four inner centers need not stay away from zero. Parallel centers
+  `(-.01,-.14),(.99,-.14),(-.5,.86),(.5,.86)` are disjoint, all below unit
+  norm, and the first below `.15`.
+- Three inner centers need not surround zero. Parallel squares centered
+  at `(+- .805,.01)` and a `pi/4` square at `(0,.92)` are disjoint with all
+  center norms below one.
+- Five centers strictly inside the unit disk are possible. A regular
+  pentagonal arrangement of radial-diagonal squares supplies examples;
+  center counting alone cannot replace the moment argument.
+- The [diagonally translated block example](DIAGONAL_BLOCK_CENTER_RELAXATION.md)
+  defeats a center-clearance-only capacity proof. The completed block
+  theorem uses the full square geometry.
+- A positive-stress seven-square ring need not have hole area below three.
+  The regular radial-side ring is a counterexample; its exclusion uses
+  circumradius. A radial first-entry integral can underestimate a hole
+  that is not star-shaped and cannot replace its full boundary area.
+- A radial square centered at `(u,0)`, `u<1`, can touch the anchors at
+  `(1,+-1)` along horizontal edges. Use the complete anchored classification,
+  not a claim of strict overlap at those contacts.
+
+## Validation and trust boundary
+
+The hand manuscripts have received separate mathematical review; this is
+not formal verification. The finite-table moment proof, all tree capacity
+bounds, general block and symmetric two-row theorems, loaded-ring results,
+and mixed-cycle reductions have received independent review.
+
+These standard-library checks passed during the work:
+
+```sh
+python3 research/ten/check_construction.py --self-test
+python3 research/ten/check_core_obstruction.py
+python3 research/ten/check_five_center_large_turns.py
+python3 research/ten/check_radial_weight_exclusion.py
+python3 research/ten/check_radial_count_localization.py
+```
+
+The construction check verifies 40 vertices, all 45 pairs, and three rejection
+self-tests. The core-obstruction check uses exact rational arithmetic. The
+large-turn moment checker verifies 78 cases, 1,193 vertices, 42 covering
+roots, and two singleton leaves, with uniform lower bound
+`200007133/50000000>4`. A separate rational evaluator independently checked
+all its vertex inequalities. These are checks of the printed finite proof.
+
+The older five-center radial certificate checks 1,954 parameter boxes. The
+four radial-count cases check respectively 297,949, 126,591, 23,645, and
+607,068 boxes. Those two radial certificates are computer-assisted proofs
+with integer area bounds; they are not silently substituted for hand
+arguments. No n=10 Lean compilation or kernel verification is claimed.
+
+Keep the unrestricted lower bound and equality obligations visibly open
+until every remaining physical case is covered.
+
+## Exact restart point after this push
+
+The fixed remaining list is **58**: 30 branching families, 5 SS cycles,
+9 D cycles without SS and 14 single-S cycles. Main gates remain 3/7;
+the original terminal tree remains 19/21, with C05 and C20 open.
+[MASTER_CASES.md](MASTER_CASES.md) lists every remaining stable ID.
+The denominator 336 and all immutable obligations are unchanged.
+
+The new completed proof chain is:
+
+| Result | Exact finite coverage |
+| --- | --- |
+| Strict E_A/E_B source capacity | 1,133 parameter leaves, both boundary roots excluded by injectivity, 161 center cells |
+| Remaining V_V sources with unique D endpoints | Analytic unique-circle torque exclusion; radial source 216 parameter leaves and 120 center cells |
+| Radial-D three-body capacity | 42 capacity rows, 1 impossible radius row, 7,604 center cells |
+| Opposite-sign loaded-D capacity | 254 capacity rows, 26 impossible radius rows, 50,607 center cells |
+| Loaded degree-two double-D fork | 358 capacity rows, 79 impossible parameter rows, 44,567 center cells |
+
+[The validation record](HANDOFF_VALIDATION_2026_10_31.json) records the final
+replay of all ten checker bodies and the synchronized ledger counts.
+Every completed certificate has full closed-domain coverage and zero
+unresolved rows. All five pairs of 44-bit/60-bit arithmetic bodies were
+executed in V8. They use separate interval arithmetic backends; radical steps use checked
+integer brackets or integer-square-root bounds. Logical predicates are shared. No independent
+agent review is claimed for these new results.
+
+The execution workspace was unavailable. Node entry points, the Python
+roadmap generator, and Lean were not run. Generated status pages were
+synchronized and cross-checked in JavaScript: 336 fixed entries, 278 hand
+closures, 58 open; 279 cycle entries, 251 closures, 28 open; all original
+obligation text unchanged. Git blob hashes were checked after pushing.
+No n=10 Lean theorem or kernel verification is claimed.
+
+When the workspace is available, run the paired *.mjs checkers named in
+the five proof notes, then `python update_case_roadmap.py` and
+`python check_cycle_cases.py`. The Node checkers replay the same bodies
+already tested in V8; their only additional step reads their committed JSON.
+
+The key new shared restrictions are:
+
+- Every selected D path between loaded neighbors has unique same-sign
+  endpoint circle vertices, regardless of endpoint degree or branch count.
+- A loaded degree-two body cannot have two D paths to loaded neighbors.
+  Thus D paths in any remaining whole cycle form a matching.
+- These restrictions do not apply unchanged to D paths with unloaded
+  retained terminals, or to a loaded source with further positive contacts.
+
+A useful next D target is the remaining disjoint-two-D cycle LLDLLD.
+The general same-sign three-body D parameter box remains open; successful
+radial and opposite-sign covers cannot be transferred to that larger box.
+The unfinished generic three-body clustering and fractional-disk probes
+supply no proof or counterexample. Pure-S, SS and branching completion
+bounds remain independent major obligations.
+
+Do not restart an unbounded b=0,b=1,... catalog or a loaded-count sequence.
+The master list already includes every allowed b and loaded count.
+Research refinements never add master entries or advance its count until
+a whole listed family is closed.

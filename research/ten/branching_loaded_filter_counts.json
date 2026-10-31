@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "bridge_types": [
+    1,
+    2,
+    4
+  ],
+  "by_loaded_count": [
+    {
+      "k": 3,
+      "bridge": 6,
+      "union": 9,
+      "total": 35,
+      "retained": 26
+    },
+    {
+      "k": 4,
+      "bridge": 482,
+      "union": 622,
+      "total": 1234,
+      "intersection": 40,
+      "retained": 612
+    },
+    {
+      "k": 5,
+      "bridge": 6971,
+      "union": 7465,
+      "total": 10305,
+      "intersection": 686,
+      "retained": 2840
+    },
+    {
+      "k": 6,
+      "bridge": 18767,
+      "union": 19156,
+      "total": 22407,
+      "intersection": 1265,
+      "retained": 3251
+    },
+    {
+      "k": 7,
+      "bridge": 10602,
+      "union": 10697,
+      "total": 11685,
+      "intersection": 475,
+      "retained": 988
+    }
+  ],
+  "bridge_witness_types": {
+    "1": 28954,
+    "2": 3575,
+    "4": 4299
+  }
+}

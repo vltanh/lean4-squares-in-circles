@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "scope": "C05 subclass b=0: all retained skeleton vertices loaded, k=3..7, modulo dihedral circular relabeling; necessary overclassification only.",
+  "review": "Catalog independently enumerated in Python and C++; bridge and angle elimination proofs independently reviewed on 2026-10-29. See BRANCHING_LOADED_SKELETON_AUDIT.md.",
+  "stable_ids": "C05-B0-Kkk-iiiii: loaded count kk and one-based line number iiiii in lexicographically sorted catalog.",
+  "alphabet": [
+    {
+      "code": 0,
+      "type": "absent",
+      "unloaded_body_cost": 0,
+      "parallel_paths": 0
+    },
+    {
+      "code": 1,
+      "type": "direct",
+      "unloaded_body_cost": 0,
+      "parallel_paths": 1
+    },
+    {
+      "code": 2,
+      "type": "S",
+      "unloaded_body_cost": 1,
+      "parallel_paths": 1
+    },
+    {
+      "code": 3,
+      "type": "double-S",
+      "unloaded_body_cost": 2,
+      "parallel_paths": 2
+    },
+    {
+      "code": 4,
+      "type": "D",
+      "unloaded_body_cost": 1,
+      "parallel_paths": 1
+    },
+    {
+      "code": 5,
+      "type": "SS",
+      "unloaded_body_cost": 2,
+      "parallel_paths": 1
+    },
+    {
+      "code": 6,
+      "type": "double-SS",
+      "unloaded_body_cost": 4,
+      "parallel_paths": 2
+    }
+  ],
+  "edge_order": "Lexicographic unordered pairs (0,1),(0,2),...,(k-2,k-1).",
+  "catalogs": [
+    {
+      "loaded_vertices": 3,
+      "labeled_counts_by_bodies": {
+        "5": 6,
+        "6": 24,
+        "7": 36,
+        "8": 42,
+        "9": 43,
+        "10": 24
+      },
+      "orbit_counts_by_bodies": {
+        "5": 1,
+        "6": 4,
+        "7": 8,
+        "8": 8,
+        "9": 10,
+        "10": 4
+      },
+      "total_orbits": 35,
+      "catalog_sha256": "2e7c57febcd0d07b4989abf83053ef91d068df58a0c1c5371af38697a3580f7f"
+    },
+    {
+      "loaded_vertices": 4,
+      "labeled_counts_by_bodies": {
+        "5": 20,
+        "6": 181,
+        "7": 728,
+        "8": 1720,
+        "9": 2784,
+        "10": 3550
+      },
+      "orbit_counts_by_bodies": {
+        "5": 4,
+        "6": 28,
+        "7": 100,
+        "8": 238,
+        "9": 374,
+        "10": 490
+      },
+      "total_orbits": 1234,
+      "catalog_sha256": "9407faf5b8188167fb0c4f878e40be0467e373d915c4f3e52330777a750c81f0"
+    },
+    {
+      "loaded_vertices": 5,
+      "labeled_counts_by_bodies": {
+        "6": 60,
+        "7": 965,
+        "8": 6555,
+        "9": 25725,
+        "10": 67711
+      },
+      "orbit_counts_by_bodies": {
+        "6": 8,
+        "7": 106,
+        "8": 681,
+        "9": 2639,
+        "10": 6871
+      },
+      "total_orbits": 10305,
+      "catalog_sha256": "ac61e357e89d848eb13c9f214067b97ef601d838bf34ef360ff3579c155fd9c8"
+    },
+    {
+      "loaded_vertices": 6,
+      "labeled_counts_by_bodies": {
+        "7": 126,
+        "8": 3366,
+        "9": 36562,
+        "10": 224127
+      },
+      "orbit_counts_by_bodies": {
+        "7": 14,
+        "8": 305,
+        "9": 3136,
+        "10": 18952
+      },
+      "total_orbits": 22407,
+      "catalog_sha256": "2ee1db1ed5f1313cb68ff2df379522461cefbd645b9337a3a8182938bc40386b"
+    },
+    {
+      "loaded_vertices": 7,
+      "labeled_counts_by_bodies": {
+        "8": 224,
+        "9": 9261,
+        "10": 151809
+      },
+      "orbit_counts_by_bodies": {
+        "8": 20,
+        "9": 691,
+        "10": 10974
+      },
+      "total_orbits": 11685,
+      "catalog_sha256": "94a00501cb4e7539f6876e6410f1d888a8bf6082f739cd988b1f28e10d52023e"
+    }
+  ],
+  "initial_cases": 45666,
+  "angular_exclusions": 3587,
+  "bridge_exclusions": 36828,
+  "intersection": 2466,
+  "distinct_exclusions": 37949,
+  "remaining_cases": 7717,
+  "filters_by_loaded_count": [
+    {
+      "k": 3,
+      "bridge": 6,
+      "union": 9,
+      "total": 35,
+      "retained": 26
+    },
+    {
+      "k": 4,
+      "bridge": 482,
+      "union": 622,
+      "total": 1234,
+      "intersection": 40,
+      "retained": 612
+    },
+    {
+      "k": 5,
+      "bridge": 6971,
+      "union": 7465,
+      "total": 10305,
+      "intersection": 686,
+      "retained": 2840
+    },
+    {
+      "k": 6,
+      "bridge": 18767,
+      "union": 19156,
+      "total": 22407,
+      "intersection": 1265,
+      "retained": 3251
+    },
+    {
+      "k": 7,
+      "bridge": 10602,
+      "union": 10697,
+      "total": 11685,
+      "intersection": 475,
+      "retained": 988
+    }
+  ],
+  "files": {
+    "branching_loaded_skeletons_k3.txt": {
+      "bytes": 140,
+      "sha256": "2e7c57febcd0d07b4989abf83053ef91d068df58a0c1c5371af38697a3580f7f"
+    },
+    "branching_loaded_skeletons_k4.txt": {
+      "bytes": 8638,
+      "sha256": "9407faf5b8188167fb0c4f878e40be0467e373d915c4f3e52330777a750c81f0"
+    },
+    "branching_loaded_skeletons_k5.txt": {
+      "bytes": 113355,
+      "sha256": "ac61e357e89d848eb13c9f214067b97ef601d838bf34ef360ff3579c155fd9c8"
+    },
+    "branching_loaded_skeletons_k6.txt": {
+      "bytes": 358512,
+      "sha256": "2ee1db1ed5f1313cb68ff2df379522461cefbd645b9337a3a8182938bc40386b"
+    },
+    "branching_loaded_skeletons_k7.txt": {
+      "bytes": 257070,
+      "sha256": "94a00501cb4e7539f6876e6410f1d888a8bf6082f739cd988b1f28e10d52023e"
+    }
+  }
+}

@@ -1,0 +1,3285 @@
+{
+  "schema_version": 1,
+  "frozen_on": "2026-10-30",
+  "fixed_total": 336,
+  "scope": "Strict lower bound only: R^2<9/2. Equality classification, Lean verification and public integration are separate gates. Entries classify a selected positive component together with its ambient minimizing ten-packing, not individual geometric realizations.",
+  "selection_convention": "Strictly subcritical n=10 lower bound; choose the jointly generic planar physical stress, including the reviewed loaded-ring polynomial and open-interval normal restrictions, before classifying a nonzero positive component. Use the strict/nonradial/nondiagonal VV normals, loaded-ring concurrence-polynomial exclusions and open intervals, and compatible planar physical replacement described in CASE_ROADMAP.md. All choices precede classification; no assertion about every alternative stress.",
+  "partition_rule": "Use the ordered C00..C20 tree in CASE_ROADMAP.md. Retain its 19 leaves other than C05/C20. In C05 suppress only unloaded degree-two vertices of the whole positive graph and split by (k,b); omit (2,0), which cannot be branching. In C20 use the frozen 279 canonical S/D words. Proven necessary reductions may make entries empty.",
+  "branch_alphabet": {
+    "absent": 0,
+    "direct": 0,
+    "S": 1,
+    "double-S": 2,
+    "D": 1,
+    "SS": 2,
+    "double-SS": 4
+  },
+  "closure_rule": "Close an entry only when a reviewed theorem excludes every realization under its stated hypotheses. Refinements, sample exclusions and conditional core lemmas never add entries or close a whole entry by themselves.",
+  "entries": [
+    {
+      "id": "C00",
+      "kind": "terminal",
+      "parent": "C00",
+      "title": "Acyclic positive component",
+      "scope": "Every nonzero tree component."
+    },
+    {
+      "id": "C01",
+      "kind": "terminal",
+      "parent": "C01",
+      "title": "Entirely loaded cyclic component that is not a seven-body simple cycle",
+      "scope": "The all-loaded reduction forces an enclosing seven-cycle in a strictly subcritical ten-packing."
+    },
+    {
+      "id": "C02",
+      "kind": "terminal",
+      "parent": "C02",
+      "title": "Seven loaded bodies with a common signed frame offset",
+      "scope": "Includes the smooth uniform ring and the radial-side/diagonal endpoints."
+    },
+    {
+      "id": "C03",
+      "kind": "terminal",
+      "parent": "C03",
+      "title": "Nonuniform strict one-chirality seven-ring",
+      "scope": "After C02: the fixed side/vertex pattern, allowing reflection and cyclic relabeling. A hand cap theorem traps all three inner squares below the three-square minimum radius."
+    },
+    {
+      "id": "C04",
+      "kind": "terminal",
+      "parent": "C04",
+      "title": "Other seven-loaded-ring contact ownership",
+      "scope": "For the jointly selected certificate, outer-row extra corners have squared norm below 33/20. The enlarged core boundary and all SS/SV/VS/VV caps place the three inner squares below squared radius 83/50, contradicting 425/256. This closes every loaded seven-ring ownership pattern."
+    },
+    {
+      "id": "C06",
+      "kind": "terminal",
+      "parent": "C06",
+      "title": "Mixed simple cycle of length at most four",
+      "scope": "All load assignments."
+    },
+    {
+      "id": "C07",
+      "kind": "terminal",
+      "parent": "C07",
+      "title": "Mixed simple cycle of length at least five with at most two loads",
+      "scope": "The two-terminal transmission-path theorem applies to a whole simple cycle."
+    },
+    {
+      "id": "C08",
+      "kind": "terminal",
+      "parent": "C08",
+      "title": "Five-cycle with three loads and adjacent unloaded bodies",
+      "scope": "The middle loaded body touches every other loaded body."
+    },
+    {
+      "id": "C09",
+      "kind": "terminal",
+      "parent": "C09",
+      "title": "Three-loaded five-cycle with radial-side central body",
+      "scope": "Nonadjacent unloaded bodies; the central loaded square has two geometric circle vertices. S-S, mixed S-D, and D-D are all excluded."
+    },
+    {
+      "id": "C10",
+      "kind": "terminal",
+      "parent": "C10",
+      "title": "Unique-circle-vertex central body: parallel transmissions",
+      "scope": "Nonadjacent unloaded bodies; apply this predicate before C11\u2013C17."
+    },
+    {
+      "id": "C11",
+      "kind": "terminal",
+      "parent": "C11",
+      "title": "Unique-circle-vertex central body: coincident contacts",
+      "scope": "After C10; equal and mixed transmission types are excluded."
+    },
+    {
+      "id": "C12",
+      "kind": "terminal",
+      "parent": "C12",
+      "title": "Unique-circle-vertex central body: two distinct vertex contacts",
+      "scope": "After C10\u2013C11."
+    },
+    {
+      "id": "C13",
+      "kind": "terminal",
+      "parent": "C13",
+      "title": "Unique-circle-vertex central body: two side-normal transmissions",
+      "scope": "After C10\u2013C12; includes two side-interior contacts."
+    },
+    {
+      "id": "C14",
+      "kind": "terminal",
+      "parent": "C14",
+      "title": "Remaining vertex/side pattern: D-D",
+      "scope": "First letter is the transmitter at the central vertex contact; second is at the side-interior contact."
+    },
+    {
+      "id": "C15",
+      "kind": "terminal",
+      "parent": "C15",
+      "title": "Remaining vertex/side pattern: S-S",
+      "scope": "Same ordered convention as C14; vertex exclusions and an analytic side-interior clearance proof rule out the entire S-S pattern."
+    },
+    {
+      "id": "C16",
+      "kind": "terminal",
+      "parent": "C16",
+      "title": "Remaining vertex/side pattern: S-D",
+      "scope": "Same ordered convention; physical torque balance forces a far vertex to carry circle load, while elementary analytic bounds place it strictly inside the circle."
+    },
+    {
+      "id": "C17",
+      "kind": "terminal",
+      "parent": "C17",
+      "title": "Remaining vertex/side pattern: D-S",
+      "scope": "Same ordered convention; endpoint classification and a printed exact clearance table exclude both remaining circle-load patterns."
+    },
+    {
+      "id": "C18",
+      "kind": "terminal",
+      "parent": "C18",
+      "title": "Five-cycle with four loads: side transmitter",
+      "scope": "Its only unloaded body is a degree-two side transmitter."
+    },
+    {
+      "id": "C19",
+      "kind": "terminal",
+      "parent": "C19",
+      "title": "Five-cycle with four loads: diagonal transmitter",
+      "scope": "For the generic selected certificate, D transmitter neighbors must be contacted in side interiors. The nearer-endpoint theorem forbids side support, excluding the component. The certificate is selected before classification."
+    },
+    {
+      "id": "C05-F-K02-B01",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 2,
+      "unloaded_retained_count": 1,
+      "title": "All C05 skeletons with k=2, b=1",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 2 loaded bodies and 1 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 7, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K02-B02",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 2,
+      "unloaded_retained_count": 2,
+      "title": "All C05 skeletons with k=2, b=2",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 2 loaded bodies and 2 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 6, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K02-B03",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 2,
+      "unloaded_retained_count": 3,
+      "title": "All C05 skeletons with k=2, b=3",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 2 loaded bodies and 3 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 5, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K02-B04",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 2,
+      "unloaded_retained_count": 4,
+      "title": "All C05 skeletons with k=2, b=4",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 2 loaded bodies and 4 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 4, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K02-B05",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 2,
+      "unloaded_retained_count": 5,
+      "title": "All C05 skeletons with k=2, b=5",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 2 loaded bodies and 5 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 3, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K02-B06",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 2,
+      "unloaded_retained_count": 6,
+      "title": "All C05 skeletons with k=2, b=6",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 2 loaded bodies and 6 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 2, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K02-B07",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 2,
+      "unloaded_retained_count": 7,
+      "title": "All C05 skeletons with k=2, b=7",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 2 loaded bodies and 7 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 1, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K02-B08",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 2,
+      "unloaded_retained_count": 8,
+      "title": "All C05 skeletons with k=2, b=8",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 2 loaded bodies and 8 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 0, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K03-B00",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 3,
+      "unloaded_retained_count": 0,
+      "title": "All C05 skeletons with k=3, b=0",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 3 loaded bodies and 0 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 7, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K03-B01",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 3,
+      "unloaded_retained_count": 1,
+      "title": "All C05 skeletons with k=3, b=1",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 3 loaded bodies and 1 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 6, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K03-B02",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 3,
+      "unloaded_retained_count": 2,
+      "title": "All C05 skeletons with k=3, b=2",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 3 loaded bodies and 2 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 5, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K03-B03",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 3,
+      "unloaded_retained_count": 3,
+      "title": "All C05 skeletons with k=3, b=3",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 3 loaded bodies and 3 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 4, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K03-B04",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 3,
+      "unloaded_retained_count": 4,
+      "title": "All C05 skeletons with k=3, b=4",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 3 loaded bodies and 4 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 3, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K03-B05",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 3,
+      "unloaded_retained_count": 5,
+      "title": "All C05 skeletons with k=3, b=5",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 3 loaded bodies and 5 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 2, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K03-B06",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 3,
+      "unloaded_retained_count": 6,
+      "title": "All C05 skeletons with k=3, b=6",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 3 loaded bodies and 6 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 1, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K03-B07",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 3,
+      "unloaded_retained_count": 7,
+      "title": "All C05 skeletons with k=3, b=7",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 3 loaded bodies and 7 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 0, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K04-B00",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 4,
+      "unloaded_retained_count": 0,
+      "title": "All C05 skeletons with k=4, b=0",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 4 loaded bodies and 0 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 6, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K04-B01",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 4,
+      "unloaded_retained_count": 1,
+      "title": "All C05 skeletons with k=4, b=1",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 4 loaded bodies and 1 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 5, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K04-B02",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 4,
+      "unloaded_retained_count": 2,
+      "title": "All C05 skeletons with k=4, b=2",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 4 loaded bodies and 2 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 4, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K04-B03",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 4,
+      "unloaded_retained_count": 3,
+      "title": "All C05 skeletons with k=4, b=3",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 4 loaded bodies and 3 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 3, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K04-B04",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 4,
+      "unloaded_retained_count": 4,
+      "title": "All C05 skeletons with k=4, b=4",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 4 loaded bodies and 4 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 2, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K04-B05",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 4,
+      "unloaded_retained_count": 5,
+      "title": "All C05 skeletons with k=4, b=5",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 4 loaded bodies and 5 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 1, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K04-B06",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 4,
+      "unloaded_retained_count": 6,
+      "title": "All C05 skeletons with k=4, b=6",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 4 loaded bodies and 6 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 0, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K05-B00",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 5,
+      "unloaded_retained_count": 0,
+      "title": "All C05 skeletons with k=5, b=0",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 5 loaded bodies and 0 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 5, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K05-B01",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 5,
+      "unloaded_retained_count": 1,
+      "title": "All C05 skeletons with k=5, b=1",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 5 loaded bodies and 1 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 4, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K05-B02",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 5,
+      "unloaded_retained_count": 2,
+      "title": "All C05 skeletons with k=5, b=2",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 5 loaded bodies and 2 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 3, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K05-B03",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 5,
+      "unloaded_retained_count": 3,
+      "title": "All C05 skeletons with k=5, b=3",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 5 loaded bodies and 3 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 2, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K05-B04",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 5,
+      "unloaded_retained_count": 4,
+      "title": "All C05 skeletons with k=5, b=4",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 5 loaded bodies and 4 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 1, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K05-B05",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 5,
+      "unloaded_retained_count": 5,
+      "title": "All C05 skeletons with k=5, b=5",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 5 loaded bodies and 5 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 0, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K06-B00",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 6,
+      "unloaded_retained_count": 0,
+      "title": "All C05 skeletons with k=6, b=0",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 6 loaded bodies and 0 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 4, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K06-B01",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 6,
+      "unloaded_retained_count": 1,
+      "title": "All C05 skeletons with k=6, b=1",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 6 loaded bodies and 1 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 3, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K06-B02",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 6,
+      "unloaded_retained_count": 2,
+      "title": "All C05 skeletons with k=6, b=2",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 6 loaded bodies and 2 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 2, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K06-B03",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 6,
+      "unloaded_retained_count": 3,
+      "title": "All C05 skeletons with k=6, b=3",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 6 loaded bodies and 3 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 1, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K06-B04",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 6,
+      "unloaded_retained_count": 4,
+      "title": "All C05 skeletons with k=6, b=4",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 6 loaded bodies and 4 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 0, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K07-B00",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 7,
+      "unloaded_retained_count": 0,
+      "title": "All C05 skeletons with k=7, b=0",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 7 loaded bodies and 0 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 3, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K07-B01",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 7,
+      "unloaded_retained_count": 1,
+      "title": "All C05 skeletons with k=7, b=1",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 7 loaded bodies and 1 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 2, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K07-B02",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 7,
+      "unloaded_retained_count": 2,
+      "title": "All C05 skeletons with k=7, b=2",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 7 loaded bodies and 2 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 1, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C05-F-K07-B03",
+      "kind": "branching",
+      "parent": "C05",
+      "loaded_count": 7,
+      "unloaded_retained_count": 3,
+      "title": "All C05 skeletons with k=7, b=3",
+      "scope": "Every mixed cyclic nonsimple whole positive component with exactly 7 loaded bodies and 3 unloaded retained bodies; all seven-symbol skeleton assignments of internal-body cost at most 0, all loaded circular orders, all physical contact ownership and continuous realizations, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M06-L03-B01-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 6,
+      "loaded_count": 3,
+      "word": "LLSLSS",
+      "title": "LLSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M06-L03-B01-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 6,
+      "loaded_count": 3,
+      "word": "LLDLSS",
+      "title": "LLDLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M06-L03-B02-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 6,
+      "loaded_count": 3,
+      "word": "LSLSLS",
+      "title": "LSLSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LSLSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M06-L03-B02-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 6,
+      "loaded_count": 3,
+      "word": "LSLSLD",
+      "title": "LSLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LSLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M06-L03-B02-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 6,
+      "loaded_count": 3,
+      "word": "LSLDLD",
+      "title": "LSLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LSLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M06-L03-B02-T04",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 6,
+      "loaded_count": 3,
+      "word": "LDLDLD",
+      "title": "LDLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LDLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M06-L04-B01-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 6,
+      "loaded_count": 4,
+      "word": "LLLLSS",
+      "title": "LLLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M06-L04-B02-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 6,
+      "loaded_count": 4,
+      "word": "LLLSLS",
+      "title": "LLLSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M06-L04-B02-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 6,
+      "loaded_count": 4,
+      "word": "LLLSLD",
+      "title": "LLLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M06-L04-B02-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 6,
+      "loaded_count": 4,
+      "word": "LLLDLD",
+      "title": "LLLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M06-L04-B03-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 6,
+      "loaded_count": 4,
+      "word": "LLSLLS",
+      "title": "LLSLLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M06-L04-B03-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 6,
+      "loaded_count": 4,
+      "word": "LLSLLD",
+      "title": "LLSLLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M06-L04-B03-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 6,
+      "loaded_count": 4,
+      "word": "LLDLLD",
+      "title": "LLDLLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M06-L05-B01-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 6,
+      "loaded_count": 5,
+      "word": "LLLLLS",
+      "title": "LLLLLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M06-L05-B01-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 6,
+      "loaded_count": 5,
+      "word": "LLLLLD",
+      "title": "LLLLLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M07-L03-B01-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 7,
+      "loaded_count": 3,
+      "word": "LLSSLSS",
+      "title": "LLSSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M07-L03-B02-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 7,
+      "loaded_count": 3,
+      "word": "LSLSLSS",
+      "title": "LSLSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LSLSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M07-L03-B02-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 7,
+      "loaded_count": 3,
+      "word": "LSLDLSS",
+      "title": "LSLDLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LSLDLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M07-L03-B02-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 7,
+      "loaded_count": 3,
+      "word": "LDLDLSS",
+      "title": "LDLDLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LDLDLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M07-L04-B01-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 7,
+      "loaded_count": 4,
+      "word": "LLLSLSS",
+      "title": "LLLSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M07-L04-B01-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 7,
+      "loaded_count": 4,
+      "word": "LLLDLSS",
+      "title": "LLLDLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLDLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M07-L04-B02-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 7,
+      "loaded_count": 4,
+      "word": "LLSLLSS",
+      "title": "LLSLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M07-L04-B02-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 7,
+      "loaded_count": 4,
+      "word": "LLDLLSS",
+      "title": "LLDLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M07-L04-B03-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 7,
+      "loaded_count": 4,
+      "word": "LLSLSLS",
+      "title": "LLSLSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M07-L04-B03-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 7,
+      "loaded_count": 4,
+      "word": "LLSLSLD",
+      "title": "LLSLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M07-L04-B03-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 7,
+      "loaded_count": 4,
+      "word": "LLSLDLS",
+      "title": "LLSLDLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLDLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M07-L04-B03-T04",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 7,
+      "loaded_count": 4,
+      "word": "LLSLDLD",
+      "title": "LLSLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M07-L04-B03-T05",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 7,
+      "loaded_count": 4,
+      "word": "LLDLSLD",
+      "title": "LLDLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M07-L04-B03-T06",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 7,
+      "loaded_count": 4,
+      "word": "LLDLDLD",
+      "title": "LLDLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M07-L05-B01-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 7,
+      "loaded_count": 5,
+      "word": "LLLLLSS",
+      "title": "LLLLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M07-L05-B02-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 7,
+      "loaded_count": 5,
+      "word": "LLLLSLS",
+      "title": "LLLLSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M07-L05-B02-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 7,
+      "loaded_count": 5,
+      "word": "LLLLSLD",
+      "title": "LLLLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M07-L05-B02-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 7,
+      "loaded_count": 5,
+      "word": "LLLLDLD",
+      "title": "LLLLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M07-L05-B03-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 7,
+      "loaded_count": 5,
+      "word": "LLLSLLS",
+      "title": "LLLSLLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M07-L05-B03-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 7,
+      "loaded_count": 5,
+      "word": "LLLSLLD",
+      "title": "LLLSLLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M07-L05-B03-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 7,
+      "loaded_count": 5,
+      "word": "LLLDLLD",
+      "title": "LLLDLLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLDLLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M07-L06-B01-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 7,
+      "loaded_count": 6,
+      "word": "LLLLLLS",
+      "title": "LLLLLLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M07-L06-B01-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 7,
+      "loaded_count": 6,
+      "word": "LLLLLLD",
+      "title": "LLLLLLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L03-B01-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 3,
+      "word": "LSLSSLSS",
+      "title": "LSLSSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LSLSSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L03-B01-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 3,
+      "word": "LDLSSLSS",
+      "title": "LDLSSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LDLSSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L04-B01-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 4,
+      "word": "LLLSSLSS",
+      "title": "LLLSSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L04-B02-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 4,
+      "word": "LLSLSLSS",
+      "title": "LLSLSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L04-B02-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 4,
+      "word": "LLSLDLSS",
+      "title": "LLSLDLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLDLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L04-B02-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 4,
+      "word": "LLDLSLSS",
+      "title": "LLDLSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L04-B02-T04",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 4,
+      "word": "LLDLDLSS",
+      "title": "LLDLDLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLDLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L04-B03-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 4,
+      "word": "LLSLSSLS",
+      "title": "LLSLSSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLSSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L04-B03-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 4,
+      "word": "LLSLSSLD",
+      "title": "LLSLSSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLSSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L04-B03-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 4,
+      "word": "LLDLSSLD",
+      "title": "LLDLSSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLSSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L04-B04-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 4,
+      "word": "LLSSLLSS",
+      "title": "LLSSLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSSLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L04-B05-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 4,
+      "word": "LSLSLSLS",
+      "title": "LSLSLSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LSLSLSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L04-B05-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 4,
+      "word": "LSLSLSLD",
+      "title": "LSLSLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LSLSLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L04-B05-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 4,
+      "word": "LSLSLDLD",
+      "title": "LSLSLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LSLSLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L04-B05-T04",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 4,
+      "word": "LSLDLSLD",
+      "title": "LSLDLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LSLDLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L04-B05-T05",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 4,
+      "word": "LSLDLDLD",
+      "title": "LSLDLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LSLDLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L04-B05-T06",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 4,
+      "word": "LDLDLDLD",
+      "title": "LDLDLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LDLDLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L05-B01-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 5,
+      "word": "LLLLSLSS",
+      "title": "LLLLSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L05-B01-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 5,
+      "word": "LLLLDLSS",
+      "title": "LLLLDLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLDLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L05-B02-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 5,
+      "word": "LLLSLLSS",
+      "title": "LLLSLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L05-B02-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 5,
+      "word": "LLLDLLSS",
+      "title": "LLLDLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLDLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L05-B03-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 5,
+      "word": "LLLSLSLS",
+      "title": "LLLSLSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L05-B03-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 5,
+      "word": "LLLSLSLD",
+      "title": "LLLSLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L05-B03-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 5,
+      "word": "LLLSLDLS",
+      "title": "LLLSLDLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLDLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L05-B03-T04",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 5,
+      "word": "LLLSLDLD",
+      "title": "LLLSLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L05-B03-T05",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 5,
+      "word": "LLLDLSLD",
+      "title": "LLLDLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLDLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L05-B03-T06",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 5,
+      "word": "LLLDLDLD",
+      "title": "LLLDLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLDLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L05-B04-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 5,
+      "word": "LLSLLSLS",
+      "title": "LLSLLSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLLSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L05-B04-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 5,
+      "word": "LLSLLSLD",
+      "title": "LLSLLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L05-B04-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 5,
+      "word": "LLSLLDLD",
+      "title": "LLSLLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L05-B04-T04",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 5,
+      "word": "LLDLLSLS",
+      "title": "LLDLLSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLLSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L05-B04-T05",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 5,
+      "word": "LLDLLSLD",
+      "title": "LLDLLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L05-B04-T06",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 5,
+      "word": "LLDLLDLD",
+      "title": "LLDLLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L06-B01-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 6,
+      "word": "LLLLLLSS",
+      "title": "LLLLLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L06-B02-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 6,
+      "word": "LLLLLSLS",
+      "title": "LLLLLSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L06-B02-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 6,
+      "word": "LLLLLSLD",
+      "title": "LLLLLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L06-B02-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 6,
+      "word": "LLLLLDLD",
+      "title": "LLLLLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L06-B03-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 6,
+      "word": "LLLLSLLS",
+      "title": "LLLLSLLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLSLLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L06-B03-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 6,
+      "word": "LLLLSLLD",
+      "title": "LLLLSLLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLSLLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L06-B03-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 6,
+      "word": "LLLLDLLD",
+      "title": "LLLLDLLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLDLLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L06-B04-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 6,
+      "word": "LLLSLLLS",
+      "title": "LLLSLLLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLLLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L06-B04-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 6,
+      "word": "LLLSLLLD",
+      "title": "LLLSLLLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLLLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L06-B04-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 6,
+      "word": "LLLDLLLD",
+      "title": "LLLDLLLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLDLLLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L07-B01-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 7,
+      "word": "LLLLLLLS",
+      "title": "LLLLLLLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLLLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M08-L07-B01-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 8,
+      "loaded_count": 7,
+      "word": "LLLLLLLD",
+      "title": "LLLLLLLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLLLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L03-B01-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 3,
+      "word": "LSSLSSLSS",
+      "title": "LSSLSSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LSSLSSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L04-B01-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 4,
+      "word": "LLSLSSLSS",
+      "title": "LLSLSSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLSSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L04-B01-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 4,
+      "word": "LLDLSSLSS",
+      "title": "LLDLSSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLSSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L04-B02-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 4,
+      "word": "LLSSLSLSS",
+      "title": "LLSSLSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSSLSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L04-B02-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 4,
+      "word": "LLSSLDLSS",
+      "title": "LLSSLDLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSSLDLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L04-B03-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 4,
+      "word": "LSLSLSLSS",
+      "title": "LSLSLSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LSLSLSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L04-B03-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 4,
+      "word": "LSLSLDLSS",
+      "title": "LSLSLDLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LSLSLDLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L04-B03-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 4,
+      "word": "LSLDLSLSS",
+      "title": "LSLDLSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LSLDLSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L04-B03-T04",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 4,
+      "word": "LSLDLDLSS",
+      "title": "LSLDLDLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LSLDLDLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L04-B03-T05",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 4,
+      "word": "LDLSLDLSS",
+      "title": "LDLSLDLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LDLSLDLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L04-B03-T06",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 4,
+      "word": "LDLDLDLSS",
+      "title": "LDLDLDLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LDLDLDLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L05-B01-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "word": "LLLLSSLSS",
+      "title": "LLLLSSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLSSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L05-B02-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "word": "LLLSLSLSS",
+      "title": "LLLSLSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L05-B02-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "word": "LLLSLDLSS",
+      "title": "LLLSLDLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLDLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L05-B02-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "word": "LLLDLSLSS",
+      "title": "LLLDLSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLDLSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L05-B02-T04",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "word": "LLLDLDLSS",
+      "title": "LLLDLDLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLDLDLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L05-B03-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "word": "LLLSLSSLS",
+      "title": "LLLSLSSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLSSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L05-B03-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "word": "LLLSLSSLD",
+      "title": "LLLSLSSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLSSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L05-B03-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "word": "LLLDLSSLD",
+      "title": "LLLDLSSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLDLSSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L05-B04-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "word": "LLLSSLLSS",
+      "title": "LLLSSLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSSLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L05-B05-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "word": "LLSLLSLSS",
+      "title": "LLSLLSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLLSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L05-B05-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "word": "LLSLLDLSS",
+      "title": "LLSLLDLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLLDLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L05-B05-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "word": "LLDLLSLSS",
+      "title": "LLDLLSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLLSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L05-B05-T04",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "word": "LLDLLDLSS",
+      "title": "LLDLLDLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLLDLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L05-B06-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "word": "LLSLSLLSS",
+      "title": "LLSLSLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLSLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L05-B06-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "word": "LLSLDLLSS",
+      "title": "LLSLDLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLDLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L05-B06-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "word": "LLDLDLLSS",
+      "title": "LLDLDLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLDLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L05-B07-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "word": "LLSLSLSLS",
+      "title": "LLSLSLSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLSLSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L05-B07-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "word": "LLSLSLSLD",
+      "title": "LLSLSLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLSLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L05-B07-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "word": "LLSLSLDLS",
+      "title": "LLSLSLDLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLSLDLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L05-B07-T04",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "word": "LLSLSLDLD",
+      "title": "LLSLSLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLSLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L05-B07-T05",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "word": "LLSLDLSLD",
+      "title": "LLSLDLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLDLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L05-B07-T06",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "word": "LLSLDLDLS",
+      "title": "LLSLDLDLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLDLDLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L05-B07-T07",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "word": "LLSLDLDLD",
+      "title": "LLSLDLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLDLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L05-B07-T08",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "word": "LLDLSLSLD",
+      "title": "LLDLSLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLSLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L05-B07-T09",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "word": "LLDLSLDLD",
+      "title": "LLDLSLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLSLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L05-B07-T10",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 5,
+      "word": "LLDLDLDLD",
+      "title": "LLDLDLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLDLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L06-B01-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 6,
+      "word": "LLLLLSLSS",
+      "title": "LLLLLSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L06-B01-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 6,
+      "word": "LLLLLDLSS",
+      "title": "LLLLLDLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLDLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L06-B02-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 6,
+      "word": "LLLLSLLSS",
+      "title": "LLLLSLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLSLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L06-B02-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 6,
+      "word": "LLLLDLLSS",
+      "title": "LLLLDLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLDLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L06-B03-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 6,
+      "word": "LLLLSLSLS",
+      "title": "LLLLSLSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLSLSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L06-B03-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 6,
+      "word": "LLLLSLSLD",
+      "title": "LLLLSLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLSLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L06-B03-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 6,
+      "word": "LLLLSLDLS",
+      "title": "LLLLSLDLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLSLDLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L06-B03-T04",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 6,
+      "word": "LLLLSLDLD",
+      "title": "LLLLSLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLSLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L06-B03-T05",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 6,
+      "word": "LLLLDLSLD",
+      "title": "LLLLDLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLDLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L06-B03-T06",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 6,
+      "word": "LLLLDLDLD",
+      "title": "LLLLDLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLDLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L06-B04-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 6,
+      "word": "LLLSLLLSS",
+      "title": "LLLSLLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L06-B04-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 6,
+      "word": "LLLDLLLSS",
+      "title": "LLLDLLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLDLLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L06-B05-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 6,
+      "word": "LLLSLLSLS",
+      "title": "LLLSLLSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLLSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L06-B05-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 6,
+      "word": "LLLSLLSLD",
+      "title": "LLLSLLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L06-B05-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 6,
+      "word": "LLLSLLDLS",
+      "title": "LLLSLLDLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLLDLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L06-B05-T04",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 6,
+      "word": "LLLSLLDLD",
+      "title": "LLLSLLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L06-B05-T05",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 6,
+      "word": "LLLDLLSLS",
+      "title": "LLLDLLSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLDLLSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L06-B05-T06",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 6,
+      "word": "LLLDLLSLD",
+      "title": "LLLDLLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLDLLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L06-B05-T07",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 6,
+      "word": "LLLDLLDLS",
+      "title": "LLLDLLDLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLDLLDLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L06-B05-T08",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 6,
+      "word": "LLLDLLDLD",
+      "title": "LLLDLLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLDLLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L06-B06-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 6,
+      "word": "LLSLLSLLS",
+      "title": "LLSLLSLLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLLSLLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L06-B06-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 6,
+      "word": "LLSLLSLLD",
+      "title": "LLSLLSLLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLLSLLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L06-B06-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 6,
+      "word": "LLSLLDLLD",
+      "title": "LLSLLDLLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLLDLLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L06-B06-T04",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 6,
+      "word": "LLDLLDLLD",
+      "title": "LLDLLDLLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLLDLLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L07-B01-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 7,
+      "word": "LLLLLLLSS",
+      "title": "LLLLLLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L07-B02-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 7,
+      "word": "LLLLLLSLS",
+      "title": "LLLLLLSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLLSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L07-B02-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 7,
+      "word": "LLLLLLSLD",
+      "title": "LLLLLLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L07-B02-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 7,
+      "word": "LLLLLLDLD",
+      "title": "LLLLLLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L07-B03-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 7,
+      "word": "LLLLLSLLS",
+      "title": "LLLLLSLLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLSLLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L07-B03-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 7,
+      "word": "LLLLLSLLD",
+      "title": "LLLLLSLLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLSLLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L07-B03-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 7,
+      "word": "LLLLLDLLD",
+      "title": "LLLLLDLLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLDLLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L07-B04-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 7,
+      "word": "LLLLSLLLS",
+      "title": "LLLLSLLLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLSLLLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L07-B04-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 7,
+      "word": "LLLLSLLLD",
+      "title": "LLLLSLLLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLSLLLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M09-L07-B04-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 9,
+      "loaded_count": 7,
+      "word": "LLLLDLLLD",
+      "title": "LLLLDLLLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLDLLLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L04-B01-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 4,
+      "word": "LLSSLSSLSS",
+      "title": "LLSSLSSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSSLSSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L04-B02-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 4,
+      "word": "LSLSLSSLSS",
+      "title": "LSLSLSSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LSLSLSSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L04-B02-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 4,
+      "word": "LSLDLSSLSS",
+      "title": "LSLDLSSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LSLDLSSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L04-B02-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 4,
+      "word": "LDLDLSSLSS",
+      "title": "LDLDLSSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LDLDLSSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L04-B03-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 4,
+      "word": "LSLSSLSLSS",
+      "title": "LSLSSLSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LSLSSLSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L04-B03-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 4,
+      "word": "LSLSSLDLSS",
+      "title": "LSLSSLDLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LSLSSLDLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L04-B03-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 4,
+      "word": "LDLSSLDLSS",
+      "title": "LDLSSLDLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LDLSSLDLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B01-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LLLSLSSLSS",
+      "title": "LLLSLSSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLSSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B01-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LLLDLSSLSS",
+      "title": "LLLDLSSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLDLSSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B02-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LLLSSLSLSS",
+      "title": "LLLSSLSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSSLSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B02-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LLLSSLDLSS",
+      "title": "LLLSSLDLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSSLDLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B03-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LLSLLSSLSS",
+      "title": "LLSLLSSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLLSSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B03-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LLDLLSSLSS",
+      "title": "LLDLLSSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLLSSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B04-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LLSLSLSLSS",
+      "title": "LLSLSLSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLSLSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B04-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LLSLSLDLSS",
+      "title": "LLSLSLDLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLSLDLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B04-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LLSLDLSLSS",
+      "title": "LLSLDLSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLDLSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B04-T04",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LLSLDLDLSS",
+      "title": "LLSLDLDLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLDLDLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B04-T05",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LLDLSLSLSS",
+      "title": "LLDLSLSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLSLSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B04-T06",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LLDLSLDLSS",
+      "title": "LLDLSLDLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLSLDLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B04-T07",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LLDLDLSLSS",
+      "title": "LLDLDLSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLDLSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B04-T08",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LLDLDLDLSS",
+      "title": "LLDLDLDLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLDLDLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B05-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LLSLSLSSLS",
+      "title": "LLSLSLSSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLSLSSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B05-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LLSLSLSSLD",
+      "title": "LLSLSLSSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLSLSSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B05-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LLSLDLSSLS",
+      "title": "LLSLDLSSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLDLSSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B05-T04",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LLSLDLSSLD",
+      "title": "LLSLDLSSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLDLSSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B05-T05",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LLDLSLSSLS",
+      "title": "LLDLSLSSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLSLSSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B05-T06",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LLDLSLSSLD",
+      "title": "LLDLSLSSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLSLSSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B05-T07",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LLDLDLSSLS",
+      "title": "LLDLDLSSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLDLSSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B05-T08",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LLDLDLSSLD",
+      "title": "LLDLDLSSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLDLSSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B06-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LLSLSSLLSS",
+      "title": "LLSLSSLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLSSLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B06-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LLDLSSLLSS",
+      "title": "LLDLSSLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLSSLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B07-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LSLSLSLSLS",
+      "title": "LSLSLSLSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LSLSLSLSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B07-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LSLSLSLSLD",
+      "title": "LSLSLSLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LSLSLSLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B07-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LSLSLSLDLD",
+      "title": "LSLSLSLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LSLSLSLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B07-T04",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LSLSLDLSLD",
+      "title": "LSLSLDLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LSLSLDLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B07-T05",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LSLSLDLDLD",
+      "title": "LSLSLDLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LSLSLDLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B07-T06",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LSLDLSLDLD",
+      "title": "LSLDLSLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LSLDLSLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B07-T07",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LSLDLDLDLD",
+      "title": "LSLDLDLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LSLDLDLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L05-B07-T08",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 5,
+      "word": "LDLDLDLDLD",
+      "title": "LDLDLDLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LDLDLDLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B01-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLLLSSLSS",
+      "title": "LLLLLSSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLSSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B02-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLLSLSLSS",
+      "title": "LLLLSLSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLSLSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B02-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLLSLDLSS",
+      "title": "LLLLSLDLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLSLDLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B02-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLLDLSLSS",
+      "title": "LLLLDLSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLDLSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B02-T04",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLLDLDLSS",
+      "title": "LLLLDLDLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLDLDLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B03-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLLSLSSLS",
+      "title": "LLLLSLSSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLSLSSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B03-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLLSLSSLD",
+      "title": "LLLLSLSSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLSLSSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B03-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLLDLSSLD",
+      "title": "LLLLDLSSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLDLSSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B04-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLLSSLLSS",
+      "title": "LLLLSSLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLSSLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B05-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLSLLSLSS",
+      "title": "LLLSLLSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLLSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B05-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLSLLDLSS",
+      "title": "LLLSLLDLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLLDLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B05-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLDLLSLSS",
+      "title": "LLLDLLSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLDLLSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B05-T04",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLDLLDLSS",
+      "title": "LLLDLLDLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLDLLDLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B06-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLSLLSSLS",
+      "title": "LLLSLLSSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLLSSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B06-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLSLLSSLD",
+      "title": "LLLSLLSSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLLSSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B06-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLDLLSSLS",
+      "title": "LLLDLLSSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLDLLSSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B06-T04",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLDLLSSLD",
+      "title": "LLLDLLSSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLDLLSSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B07-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLSLSLLSS",
+      "title": "LLLSLSLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLSLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B07-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLSLDLLSS",
+      "title": "LLLSLDLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLDLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B07-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLDLSLLSS",
+      "title": "LLLDLSLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLDLSLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B07-T04",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLDLDLLSS",
+      "title": "LLLDLDLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLDLDLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B08-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLSLSLSLS",
+      "title": "LLLSLSLSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLSLSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B08-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLSLSLSLD",
+      "title": "LLLSLSLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLSLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B08-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLSLSLDLS",
+      "title": "LLLSLSLDLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLSLDLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B08-T04",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLSLSLDLD",
+      "title": "LLLSLSLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLSLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B08-T05",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLSLDLSLD",
+      "title": "LLLSLDLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLDLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B08-T06",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLSLDLDLS",
+      "title": "LLLSLDLDLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLDLDLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B08-T07",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLSLDLDLD",
+      "title": "LLLSLDLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLDLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B08-T08",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLDLSLSLD",
+      "title": "LLLDLSLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLDLSLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B08-T09",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLDLSLDLD",
+      "title": "LLLDLSLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLDLSLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B08-T10",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLDLDLDLD",
+      "title": "LLLDLDLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLDLDLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B09-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLLSSLLLSS",
+      "title": "LLLSSLLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSSLLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B10-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLSLLSLLSS",
+      "title": "LLSLLSLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLLSLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B10-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLSLLDLLSS",
+      "title": "LLSLLDLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLLDLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B10-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLDLLDLLSS",
+      "title": "LLDLLDLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLLDLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B11-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLSLLSLSLS",
+      "title": "LLSLLSLSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLLSLSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B11-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLSLLSLSLD",
+      "title": "LLSLLSLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLLSLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B11-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLSLLSLDLS",
+      "title": "LLSLLSLDLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLLSLDLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B11-T04",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLSLLSLDLD",
+      "title": "LLSLLSLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLLSLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B11-T05",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLSLLDLSLD",
+      "title": "LLSLLDLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLLDLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B11-T06",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLSLLDLDLD",
+      "title": "LLSLLDLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLLDLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B11-T07",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLDLLSLSLS",
+      "title": "LLDLLSLSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLLSLSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B11-T08",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLDLLSLSLD",
+      "title": "LLDLLSLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLLSLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B11-T09",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLDLLSLDLS",
+      "title": "LLDLLSLDLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLLSLDLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B11-T10",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLDLLSLDLD",
+      "title": "LLDLLSLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLLSLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B11-T11",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLDLLDLSLD",
+      "title": "LLDLLDLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLLDLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B11-T12",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLDLLDLDLD",
+      "title": "LLDLLDLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLLDLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B12-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLSLSLLSLS",
+      "title": "LLSLSLLSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLSLLSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B12-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLSLSLLSLD",
+      "title": "LLSLSLLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLSLLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B12-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLSLSLLDLD",
+      "title": "LLSLSLLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLSLLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B12-T04",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLSLDLLSLD",
+      "title": "LLSLDLLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLDLLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B12-T05",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLSLDLLDLS",
+      "title": "LLSLDLLDLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLDLLDLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B12-T06",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLSLDLLDLD",
+      "title": "LLSLDLLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLSLDLLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L06-B12-T07",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 6,
+      "word": "LLDLDLLDLD",
+      "title": "LLDLDLLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLDLDLLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B01-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLLLLSLSS",
+      "title": "LLLLLLSLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLLSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B01-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLLLLDLSS",
+      "title": "LLLLLLDLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLLDLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B02-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLLLSLLSS",
+      "title": "LLLLLSLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLSLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B02-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLLLDLLSS",
+      "title": "LLLLLDLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLDLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B03-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLLLSLSLS",
+      "title": "LLLLLSLSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLSLSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B03-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLLLSLSLD",
+      "title": "LLLLLSLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLSLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B03-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLLLSLDLS",
+      "title": "LLLLLSLDLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLSLDLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B03-T04",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLLLSLDLD",
+      "title": "LLLLLSLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLSLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B03-T05",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLLLDLSLD",
+      "title": "LLLLLDLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLDLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B03-T06",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLLLDLDLD",
+      "title": "LLLLLDLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLLDLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B04-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLLSLLLSS",
+      "title": "LLLLSLLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLSLLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B04-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLLDLLLSS",
+      "title": "LLLLDLLLSS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLDLLLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B05-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLLSLLSLS",
+      "title": "LLLLSLLSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLSLLSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B05-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLLSLLSLD",
+      "title": "LLLLSLLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLSLLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B05-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLLSLLDLS",
+      "title": "LLLLSLLDLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLSLLDLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B05-T04",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLLSLLDLD",
+      "title": "LLLLSLLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLSLLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B05-T05",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLLDLLSLS",
+      "title": "LLLLDLLSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLDLLSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B05-T06",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLLDLLSLD",
+      "title": "LLLLDLLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLDLLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B05-T07",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLLDLLDLS",
+      "title": "LLLLDLLDLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLDLLDLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B05-T08",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLLDLLDLD",
+      "title": "LLLLDLLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLLDLLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B06-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLSLLLSLS",
+      "title": "LLLSLLLSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLLLSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B06-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLSLLLSLD",
+      "title": "LLLSLLLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLLLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B06-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLSLLLDLD",
+      "title": "LLLSLLLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLLLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B06-T04",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLDLLLSLS",
+      "title": "LLLDLLLSLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLDLLLSLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B06-T05",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLDLLLSLD",
+      "title": "LLLDLLLSLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLDLLLSLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B06-T06",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLDLLLDLD",
+      "title": "LLLDLLLDLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLDLLLDLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B07-T01",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLSLLSLLS",
+      "title": "LLLSLLSLLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLLSLLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B07-T02",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLSLLSLLD",
+      "title": "LLLSLLSLLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLLSLLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B07-T03",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLSLLDLLS",
+      "title": "LLLSLLDLLS",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLLDLLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B07-T04",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLSLLDLLD",
+      "title": "LLLSLLDLLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLSLLDLLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B07-T05",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLDLLSLLD",
+      "title": "LLLDLLSLLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLDLLSLLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    },
+    {
+      "id": "C20-M10-L07-B07-T06",
+      "kind": "cycle",
+      "parent": "C20",
+      "cycle_length": 10,
+      "loaded_count": 7,
+      "word": "LLLDLLDLLD",
+      "title": "LLLDLLDLLD",
+      "scope": "Every whole mixed simple-cycle component with canonical cyclic word LLLDLLDLLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion."
+    }
+  ]
+}
