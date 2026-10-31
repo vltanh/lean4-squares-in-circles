@@ -4,9 +4,10 @@
 
 ## Latest hand-only continuation (2026-10-31)
 
-- [Finite but heterogeneous proof-milestone ledger](gates/SESSION_CHECKPOINTS.md): **15/57 written source-scoped hand milestones ticked, 42 open**. The ratio is **not mathematical effort remaining**, and some items are major full-family proofs or assembly objectives; some sources await independent audit. The 57 cross-index but do not add to the existing 296 refined records.
+- **[ONE live original-case and proof-evidence ledger](gates/SESSION_CHECKPOINTS.md):** all **21 original open nine-square cases**, separate hand-written/reviewed/applied/closed states, finite rank-two original-graph subclasses, small audit/graph tasks and genuine continuous-geometry blockers. **No 15/57 progress bar.** [Old heterogeneous list archived](gates/HISTORICAL_57_MILESTONES_2026_10_31.md).
 - [Exact full-cut and three-port degree census](THREE_PORT_DEGREE_SIGNATURE_CENSUS_2026_10_31.md): an elementary original-degree hand proof; exactly seven necessary degree-excess signatures at `p=3,b=2`, before physical exclusion.
-- [Uniform low-hub physical exclusion and three-hub remainder](THREE_PORT_RANK_TWO_LOW_HUB_UNIFORM_EXCLUSION_2026_10_31.md): one hand argument eliminates the first three signatures (all one/two hub cases), eliminates the `(3,1,1)` case, and reduces `(2,2,1)` to three real transmitter patterns. **M28 checked; M29 open; independent review pending.**
+- [Uniform low-hub physical exclusion and three-hub remainder](THREE_PORT_RANK_TWO_LOW_HUB_UNIFORM_EXCLUSION_2026_10_31.md): one hand argument excludes the one/two-hub original structural subfamilies and `(3,1,1)`. **No complete original coarse/fine gate was closed; independent review pending.**
+- [Three-hub five-orbit hand census](THREE_PORT_RANK_TWO_THREE_HUB_FIVE_ORBITS_2026_10_31.md), [four-hub diamond/exit census](THREE_PORT_RANK_TWO_FOUR_HUB_DIAMOND_CENSUS_2026_10_31.md), and [subdivided-K23 six-orbit census](THREE_PORT_SUBDIVIDED_K23_SIX_ORBITS_2026_10_31.md): necessary finite physical original-graph profiles, **not physical exclusions**. The live ledger tracks all residual original geometry.
 - [Three-port multicycle subcubic reduction](THREE_PORT_MULTICYCLE_SUBCUBIC_REDUCTION_2026_10_31.md): a full-cut, one-reduced-exit-per-hub theorem classifying rank-two modules into house or \(K_{2,3}\) skeletons, and rank-three modules into a seven-hub/two-loaded-body extreme. It excludes only the literal internally unsubdivided \(K_{2,3}\) subfamily; transmitted exit arms are retained. **Not** a completed coarse or fine gate.
 - [Handoff and exact outstanding exceptions](HANDOFF_THREE_PORT_MULTICYCLE_2026_10_31.md): separates proved reductions from unverified proposed stronger exclusions and identifies the next same-nine tests.
 
@@ -14,6 +15,7 @@ The original canonical ledger is unchanged; no Lean, CI or computer-assisted exc
 
 ## Start here
 
+- **[ONE live 21-parent proof frontier and evidence ledger](gates/SESSION_CHECKPOINTS.md)** — current work; source-level hand proofs, independent audit state, true geometry blockers, canonical case matrix
 - **[Refined original-open-gate hierarchy](gates/README.md)** — 296 scoped child records with all 140 original open parents mapped; [full parent map](gates/PARENT_MAP.md)
 - **[Central progress ledger](PROGRESS.md)** — only live status index; all 58 original coarse cases, 140 open fine obligations and conditions for a valid closure
 - **[Organized file map](ORGANIZATION.md)** — explains the source library and browsable subfolders
