@@ -90,9 +90,9 @@ applies. $\square$
 
 *Lean:
 [`Four.model_packing`](../../SquaresInCircles/Four/Construction.lean#L26),
-[`Four.model`](../../SquaresInCircles/Geometry.lean#L169),
-[`Four.centers`](../../SquaresInCircles/Geometry.lean#L166),
-[`Four.radius`](../../SquaresInCircles/Geometry.lean#L163).*
+[`Four.model`](../../SquaresInCircles/Geometry.lean#L178),
+[`Four.centers`](../../SquaresInCircles/Geometry.lean#L175),
+[`Four.radius`](../../SquaresInCircles/Geometry.lean#L172).*
 
 ## 7.2 The diamond
 
@@ -154,7 +154,7 @@ $a + b - 1 \le 0$ (Figure 7.4). If moreover $a + b \ge 1$, then
 $0 \ge \varphi(a, b) - 2 \ge (a - \frac12)^2 + (b - \frac12)^2$, so both
 squares vanish. $\square$
 
-*Lean: [`Four.diamond`](../../SquaresInCircles/Four/Exterior.lean#L21).*
+*Lean: [`Four.diamond`](../../SquaresInCircles/Four/Bounds/Exterior.lean#L21).*
 
 ## 7.3 Arcs of the squares
 
@@ -233,7 +233,8 @@ a quarter circle.
    least $\frac\pi4$, so $w \ge \frac\pi4$. If $a_S + b_S < 1$, both terms are
    greater than $\frac\pi4$, and so is $w$ (Figure 7.6). $\square$
 
-*Lean: [`Four.exterior_arc`](../../SquaresInCircles/Four/Exterior.lean#L29).*
+*Lean:
+[`Four.exterior_arc`](../../SquaresInCircles/Four/Bounds/Exterior.lean#L29).*
 
 ![The (a, b)-plane right of a = 1/2: the orange quadrilateral where the cap of an exterior square on the circle of radius 1/2 is at least a quarter circle, bounded by the dashed line a = (2 + root 2)/4, where A = pi/4, and the line a + b = 1, where A + V = pi/2; the blue part of the disk where phi is at most 2 lies inside it and meets the line a + b = 1 only at (1/2, 1/2), while the point (0.9, 0.05) lies below the line a + b = 1 but right of the dashed line](figures/07-four/arc-region.svg)
 
@@ -303,8 +304,9 @@ $\Gamma_{1/2}$ (Figure 7.9), and
 gives the arc of half-width $\frac\pi4$ and centre
 $\theta_S + \varepsilon_S\frac\pi4 = \mu_S$. $\square$
 
-*Lean: [`Four.quarter_arc`](../../SquaresInCircles/Four/Containing.lean#L26),
-[`Four.vertexMid`](../../SquaresInCircles/Four/Containing.lean#L21).*
+*Lean:
+[`Four.quarter_arc`](../../SquaresInCircles/Four/Bounds/Containing.lean#L26),
+[`Four.vertexMid`](../../SquaresInCircles/Four/Bounds/Containing.lean#L21).*
 
 ## 7.4 The block
 

@@ -187,7 +187,8 @@ $s\,\ell(a, b)$, because the closed square contains the arc (Figure G.2).
 *Proof.* Part (1) is [Lemma 10.11](10-seven.md#lemma-1011-the-support-function) (3). In part (2), $|sb| = b$, and the
 inequality is Lemma 10.11 (2). $\square$
 
-*Lean: [`Seven.support_lower`](../../SquaresInCircles/Seven/Exterior.lean#L233),
+*Lean:
+[`Seven.support_lower`](../../SquaresInCircles/Seven/Bounds/Exterior.lean#L233),
 [`Seven.sign_admissible`](../../SquaresInCircles/Seven/Pair/Frame.lean#L49),
 [`Seven.marker_arc_support`](../../SquaresInCircles/Seven/Pair/Frame.lean#L55).*
 
@@ -367,9 +368,9 @@ $a + b < \frac{31}{20}$. Moreover $1.73 < \sqrt3 < 1.733$.
 *Proof.* This is part of [Lemma 10.5](10-seven.md#lemma-105-admissible-states) (2). $\square$
 
 *Lean:
-[`Seven.Admissible.a_le_sqrt_three_sub_half`](../../SquaresInCircles/Seven/Exterior.lean#L67),
-[`Seven.Admissible.sum_lt`](../../SquaresInCircles/Seven/Exterior.lean#L74),
-[`Seven.sqrt_three_bounds`](../../SquaresInCircles/Seven/Exterior.lean#L227).*
+[`Seven.Admissible.a_le_sqrt_three_sub_half`](../../SquaresInCircles/Seven/Bounds/Exterior.lean#L67),
+[`Seven.Admissible.sum_lt`](../../SquaresInCircles/Seven/Bounds/Exterior.lean#L74),
+[`Seven.sqrt_three_bounds`](../../SquaresInCircles/Seven/Bounds/Exterior.lean#L227).*
 
 ### Lemma G.8 (axial and side labels)
 
@@ -385,13 +386,13 @@ Let $(a, b)$ be admissible and $\ell = \ell(a, b)$.
 [Lemma 10.7](10-seven.md#lemma-107-the-label) (3). $\square$
 
 *Lean:
-[`Seven.axial_tie_line`](../../SquaresInCircles/Seven/Exterior.lean#L167),
-[`Seven.axial_sum_lt`](../../SquaresInCircles/Seven/Exterior.lean#L177),
-[`Seven.side_selected_label_gt`](../../SquaresInCircles/Seven/Exterior.lean#L136),
-[`Seven.side_selected_a_gt`](../../SquaresInCircles/Seven/Exterior.lean#L159),
-[`Seven.side_selected_a_lt`](../../SquaresInCircles/Seven/Exterior.lean#L148),
-[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Exterior.lean#L190),
-[`Seven.Admissible.radial_label_bound`](../../SquaresInCircles/Seven/Exterior.lean#L115).*
+[`Seven.axial_tie_line`](../../SquaresInCircles/Seven/Bounds/Exterior.lean#L167),
+[`Seven.axial_sum_lt`](../../SquaresInCircles/Seven/Bounds/Exterior.lean#L177),
+[`Seven.side_selected_label_gt`](../../SquaresInCircles/Seven/Bounds/Exterior.lean#L136),
+[`Seven.side_selected_a_gt`](../../SquaresInCircles/Seven/Bounds/Exterior.lean#L159),
+[`Seven.side_selected_a_lt`](../../SquaresInCircles/Seven/Bounds/Exterior.lean#L148),
+[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Bounds/Exterior.lean#L190),
+[`Seven.Admissible.radial_label_bound`](../../SquaresInCircles/Seven/Bounds/Exterior.lean#L115).*
 
 ### Definition G.9 (boundary curves and special states)
 

@@ -939,7 +939,7 @@ $0.707\cdot 2\cdot 0.921 = 1.302294$. $\square$
 
 *Lean:
 [`Six.Wings.WestSide.trig_two_fifths`](../../SquaresInCircles/Six/Wings/WestSide.lean#L169),
-[`Six.trig_bracket_half`](../../SquaresInCircles/Six/Constants.lean#L45),
+[`Six.trig_bracket_half`](../../SquaresInCircles/Six/Bounds/Constants.lean#L45),
 [`Six.Wings.WestSide.trig_nine_tenths`](../../SquaresInCircles/Six/Wings/WestSide.lean#L175),
 [`Six.Wings.WestSide.trig_tenth`](../../SquaresInCircles/Six/Wings/WestSide.lean#L179),
 [`Six.Wings.WestSide.half_root_bounds`](../../SquaresInCircles/Six/Wings/WestSide.lean#L183),

@@ -15,6 +15,59 @@ Needs Elan and network access for mathlib. Lean and mathlib are at
 which the Palomar registry uses. Every proof is complete and rests on
 `propext`, `Classical.choice` and `Quot.sound` alone.
 
+For eight squares, the active proof restores the checked-table strategy of
+`4bea747b3efa13c869b956cb28435efaf21526fa`. The table-free case analysis has
+been retired. The geometric five-corner radius and the five-parameter optimal
+family remain the public statement. `Eight/Construction.lean` proves that
+these models pack the disk and reach its circle. `Eight/Rigidity/Classification.lean`
+classifies optimal packings in stationary coordinates, and
+`Eight/Uniqueness.lean` transfers that classification through the geometric
+bridges into one `Optimum`, as in the other seven cases. Its lower bound and
+packing equivalence follow from the shared `Optimum` theorems. Full verification includes
+these bridges and all three kernels below.
+
+The central-square estimates now use geometric supports and one-variable
+calculus. Both rectangle widths follow from radial projection, circular arcs
+and elementary angle bounds; their former 230 interval rows are gone.
+The central-band polynomial bounds use positive quadratic lower bounds and
+square completion. The core angle estimates use tangent addition and a cubic
+bound, while the seven-step type budget follows from coloring an odd cycle
+and counting its boundary crossings. The final pullback uses corner containment and linear implications from the
+retained separating axes. The global capture still uses the
+checked tables described in [Chapter 11](proof/11-eight.md). The stationary
+coordinate bounds follow directly from circle equations and short decimal
+brackets. The local Hessian follows from circle curvatures, monotone frame
+projections and a shear by `3/5`; its former sixteen grid checks are gone.
+The radius-slope bound also follows by differentiating the circle equations.
+Circle-coordinate comparisons give opposite signs at the extreme corners of the pose box;
+monotonicity and the intermediate value theorem give the adaptive root at every tilt.
+Root existence uses only the broad radius interval, with no refined root-sign certificates.
+The root moves at speed between `2/3` and `13/6`; height loses at most `0.7` per unit of
+position and gains at least `1.8` per unit of tilt. It therefore increases along the family.
+Comparison with the known stationary root bounds the endpoint positions. Two circle
+equations then bound their heights; no root-bracket or height certificates remain. The HE
+factor in reserve 5 also increases along the roots: its position gain `0.91 * 2/3` exceeds its tilt
+loss `0.6`. At the lower tilt, coarse circle bounds give `L ≥ 1.023`, `V/Y ≥ 0.9088` and
+`E ≤ 0.9564`. Thus the margin is at least `1/40` on that whole face, giving reserve 5 and
+then the larger reserve 0, with no margin certificate.
+
+Force balance makes ED the largest raw contact weight, and the circle-weight mass is at
+least `6/5` of ED. Normalization bounds every contact by `5/6`, replacing all 224 contact
+checks. The same estimate gives `epsilon ≥ 2/3` and contact proportions; these bound five
+owner reserves by `1/80`. The last two reserves share an unnormalized cut that decreases
+with position. Bounded tilt curvature extends two midpoint values and two slopes to
+`0.412 ≤ N₀ ≤ 0.44` on the entire pose rectangle. Since `omega ≥ 3/5`, these reserves
+are at least `3/250 > rho`. Circle equations at the middle tilt supply the cut values and
+slopes, so all nine reserves follow from geometry and calculus. The adaptive interval
+certificates, their generator, the graph cover and its numbered formula nodes are gone. The cut identities are algebraic; the force identities for reserves 0
+and 5 are applied at position-stationary chains.
+Positivity of the radicands and structural differentiation replace
+the former regularity checks. The quadratic and cubic terminal remainders use
+coordinate and weight bounds at the endpoints of the tilt interval, replacing
+64 interval checks on graph hulls. The family box is admissible by half-angle
+formulas, Cauchy–Schwarz and separating projections; it has no separate
+interval-expression generator.
+
 - `lake build` must succeed without warnings; an unfinished proof would show as
   `declaration uses 'sorry'`.
 - Every `#print axioms` line in the audit must read

@@ -1126,9 +1126,9 @@ $\sin\theta < \frac{u+v}2$ lies left of $\mu$, since the sine increases.
 [`arcsin_le_self_of_nonpos`](../../SquaresInCircles/Common/Trigonometry.lean#L739),
 [`arcsin_le_cubic`](../../SquaresInCircles/Common/Trigonometry.lean#L744),
 [`arcsin_sum_gt_of_sin_lt`](../../SquaresInCircles/Common/Trigonometry.lean#L756),
-[`Five.sqrt_five_gt`](../../SquaresInCircles/Five/Exterior.lean#L41),
-[`Five.arc_length`](../../SquaresInCircles/Five/Exterior.lean#L70). (The value
-of the cosine in (5) comes from mathlib.)*
+[`Five.sqrt_five_gt`](../../SquaresInCircles/Five/Bounds/Exterior.lean#L41),
+[`Five.arc_length`](../../SquaresInCircles/Five/Bounds/Exterior.lean#L70). (The
+value of the cosine in (5) comes from mathlib.)*
 
 ## 3.9 Recognizing a model
 

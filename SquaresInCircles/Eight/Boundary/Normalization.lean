@@ -1,7 +1,9 @@
 module
 
-public import SquaresInCircles.Eight.Stationary.System
-public import SquaresInCircles.Eight.Words.QuarterWordSelection
+public import SquaresInCircles.Eight.Boundary.Actions
+public import SquaresInCircles.Eight.Arithmetic.FourTypePairs
+public import SquaresInCircles.Eight.Boundary.Pairs
+public import SquaresInCircles.Eight.ExactFamily.EqualityGeometry
 
 /-!
 # Eight squares: the global normalization
@@ -9,8 +11,8 @@ public import SquaresInCircles.Eight.Words.QuarterWordSelection
 A packing of eight squares at a squared radius `q ≤ Q1` is congruent, up to the reflection in the
 diagonal, to a packing in a normal form (`GlobalNormalization`, `global_normalization_exists`).
 Its square `0` contains the core disk, and the seven others, in the order of their centre
-directions, form a neighbour cycle at the level `max q qMinus` (`RadiusTransfer.lean`). The
-boundary reduction of that cycle (`BoundaryReduction.lean`) is expanded to a boundary cycle at
+directions, form a neighbour cycle at the level `max q qMinus` (`Boundary/RadiusTransfer.lean`). The
+boundary reduction of that cycle (`Boundary/Reduction.lean`) is expanded to a boundary cycle at
 the level `Q1` with a candidate frame and `τ_E ≤ 0`. The original centres are kept in the cycle
 `source`: a square is determined by its centre and its physical frame, and the threshold of a
 pair by the physical frames (`sameSquare_of_physical_center`, `threshold_same_physical`), so the
@@ -19,10 +21,10 @@ original squares, with the frames of the expanded cycle, keep its witnesses
 
 The candidate frame comes from the quarter word. The boundary cycle at `Q1` is expanded once more,
 to `Q0`, where the four-type pair bounds (`Arithmetic/FourTypePairs.lean`) and the budget of
-`Frames.lean` bound the frame charges, which gives a quarter lift (`quarterLift_of_cost`), and its
-word is equivalent to `0101011` (`WordGeometry.lean`). The lift is read on the cycle at `Q1`,
+`Boundary/Frames.lean` bound the frame charges, which gives a quarter lift (`quarterLift_of_cost`), and its
+word is equivalent to `0101011` (`Boundary/Pairs.lean`). The lift is read on the cycle at `Q1`,
 whose rays, tangents and frames are the same (`QuarterLift.pullback`). A rotation or reflection
-of the cycle (`CycleActions.lean`) then takes the word to `0101011` itself, and a rotation of the
+of the cycle (`Boundary/Actions.lean`) then takes the word to `0101011` itself, and a rotation of the
 plane makes `θ_A = 0` (`candidateFrameOfWordAction`); of the two orientations that keep the
 candidate word (`candidate_word_mirror`), one has `τ_E ≤ 0` (`candidate_normalization_of_word`,
 `boundary_candidate_normalization`). These motions act on the packing, the source cycle and the
@@ -384,7 +386,7 @@ lemma normalizedCandidateAction_tangent {q : ℝ} {C : BoundaryCycle q} (F : Qua
 /-- If the action `G` turns the quarter increments into the digits of the candidate word, the
 representatives `θᵢ - θ_A` of the moved lift are a candidate frame of the normalized cycle: the
 word fixes the quarter offsets (`quarter_eq_offsets`), and the gaps and the forward axes come
-from `BoundaryGeometry.lean`. -/
+from `Boundary/Geometry.lean`. -/
 def candidateFrameOfWordAction {q : ℝ} {C : BoundaryCycle q} (F : QuarterLift C)
     (hq : q ≤ Q0) (G : CycleAction)
     (hword : ∀ i,integerQuarterIncrement (G.quarter F.quarter) i=Candidate.word i) :
@@ -461,21 +463,53 @@ is equivalent to `0101011` (`quarter_word_candidate`); the lift is read on the c
 the same word. -/
 theorem boundary_candidate_normalization (C : BoundaryCycle Q1) :
     Nonempty (CandidateNormalization C) := by
-  have hQ1 : Q1 ∈ Set.Icc (5/2) Q0 :=
+  have hQ1 : Q1 ∈ Set.Icc (5/2) 4 :=
     ⟨radius_levels.1.le.trans radius_levels.2.1.le,
-      radius_levels.2.2.1.le⟩
-  obtain ⟨F⟩ := Eight.FramePhysicalTransport.quarter_lift C hQ1
-  let D := Eight.FramePhysicalTransport.auxiliary C hQ1
-  have hR : RadiusExpansion C D :=
-    Eight.FramePhysicalTransport.auxiliary_expansion C hQ1
-  let FD := Eight.FramePhysicalTransport.quarterPushforward F hR
+      (radius_levels.2.2.1.trans radius_levels.2.2.2).le⟩
+  have hQ0 : Q0 ∈ Set.Icc (5/2) 4 :=
+    ⟨hQ1.1.trans radius_levels.2.2.1.le,radius_levels.2.2.2.le⟩
+  let D := C.expand hQ1 hQ0 radius_levels.2.2.1.le
+  have hR : RadiusExpansion C D := C.expand_spec hQ1 hQ0 radius_levels.2.2.1.le
+  obtain ⟨τ,ψ,hpair⟩ := four_type_pair_bound D
+  have hcost := physical_cycle_width_bound τ D.beta
+    (fun i => periodicFrameCost (D.canonicalAngle (next i)-D.canonicalAngle i)) ψ hpair
+    (by linarith [Arithmetic.two_pi_lt_710_over_113])
+  obtain ⟨F⟩ := quarterLift_of_cost D hcost
   have hgapD := boundary_gap_lower D le_rfl
-  have hwordD := QuarterWordGeometry.quarter_word_candidate D FD hgapD
+  have hwordD := quarter_word_candidate D F hgapD
+  let F' := F.pullback hR
   have hgapC := boundary_gap_lower C radius_levels.2.2.1.le
-  have hw : FD.word hgapD pi_lt_22_over_7=F.word hgapC pi_lt_22_over_7 :=
-    Eight.FramePhysicalTransport.quarterPushforward_word F hR hgapC hgapD
-  apply candidate_normalization_of_word C F radius_levels.2.2.1.le hgapC
+  have hw : F'.word hgapC pi_lt_22_over_7=F.word hgapD pi_lt_22_over_7 := by
+    funext i
+    apply Fin.ext
+    rfl
+  apply candidate_normalization_of_word C F' radius_levels.2.2.1.le hgapC
   simpa only [hw] using hwordD
+
+/-- Every packing at a squared radius `q ≤ Q1` has a global normalization. -/
+theorem global_normalization_exists {S : Fin 8 → UnitSquare} {q : ℝ}
+    (hp : SqPacking S (0,0) q) (hq : q ≤ Q1) : Nonempty (GlobalNormalization S q) := by
+  obtain ⟨B⟩ := boundary_normalization_exists hp hq
+  let N := B.data hp
+  obtain ⟨K⟩ := boundary_candidate_normalization N.expanded
+  let M := N.act K.action
+  obtain ⟨b,hb⟩ := M.congruent
+  exact ⟨{
+    squares := M.squares
+    packing := M.packing
+    central_core := M.central_core
+    reflected := b
+    congruent := hb
+    source := M.source
+    source_square := M.source_square
+    source_order := M.source_order
+    recovered := M.recovered
+    expanded := M.expanded
+    expansion := M.expansion
+    frame := K.frame
+    eHalf := K.eHalf
+    source_frames := M.source_frames
+    source_selected := M.source_selected }⟩
 
 /-! ## The sides of the sliding squares in the equality case -/
 
@@ -552,7 +586,7 @@ lemma core_primary_of_small_secondary {K : UnitSquare} {a b : ℝ}
   rw [max_eq_left (by linarith)] at hc
   nlinarith
 
-open Stationary Stationary.Coordinates in
+open ExactFamily ExactFamily.Coordinates in
 /-- In the equality case, if the original centres are `sharpData.exteriorCenters Z η` and `T` and
 `G` have their stationary frames, then `7/12 ≤ Z` and `η ≤ etaMax`: the polar order of the
 original centres places `T` between `B` and `D` and `G` between `H` and `A`, which fixes the side

@@ -262,3 +262,93 @@ Times are rough commit times, in US Central time (UTC−5).
   independent kernel of the comparator, which had rejected one proof and spent
   minutes on others. Chapter 11 and Appendices J to M were rewritten for the
   proof as it now stands.
+
+## 30 October 2026
+
+* **The checked tables restored; the geometric family retained.** At the
+  owner's request, Codex (GPT-6), using the `formalize-math-paper` skill
+  version 3.0.0, restored the proof, certificate inputs and generators of
+  `4bea747b`. The table-free case analysis was retired; its geometric
+  five-corner radius, unique selected configuration and parameterization of
+  the optimal family were retained. The bridge proofs were adapted to the
+  restored stationary chart, and `Rigidity/Classification.lean` now supplies the lower
+  bound and classification used by the geometric public interface.
+  Chapter 11 and Appendices J to M again describe the table proof, with the
+  geometric statement and its bridges documented alongside it. No sub-agents
+  were used.
+
+  Local validation passed: the full library build, the axiom audit of all
+  26,581 project declarations, the sanity checks and the documentation checks.
+  Comparator accepted the public theorems in con-ron, NanoDa and Lean's
+  default kernel, finishing with `Your solution is okay!`; its local run took
+  1 hour, 1 minute and 14 seconds. The allowed axioms are `propext`, `Classical.choice` and
+  `Quot.sound`.
+
+* **Three central-band inequalities by completing a square.** At the owner's
+  request for more explicit mathematical arguments, Codex (GPT-6), using the
+  same skill and no sub-agents, replaced nine generated Bernstein rows for
+  `centralBandV` with a shared quadratic lower bound at `u = 1/4`. A positive
+  completed square then proves all three inequalities. The statements and
+  hypotheses of those inequalities are unchanged. The generator and Appendix K
+  now retain only the ten rows for `centralBandP`; Appendix K gives the new
+  argument and its figure shows the quadratic lower bound.
+
+  Local validation passed the full build, the audit of all 26,541 project
+  declarations, sanity checks, documentation checks and exact regeneration of
+  the remaining rows. Only the three standard axioms occur.
+
+* **Word costs by counting occupied positions.** Continuing the same proof
+  cleanup, Codex (GPT-6) replaced the classification-based proof of
+  `double_word_cost_numerator` with a direct count of the seven overlapping
+  cyclic triples. No three consecutive zeros gives at least three occupied
+  positions. The total digit sum four and the presence of a `2` force exactly
+  one `2`, two `1`s and four zeros, which determines the total cost. The
+  statement and hypotheses are unchanged. The unused symmetry-sum helper was
+  removed, and Chapter 11 now explains the counting argument.
+
+  The full build, axiom audit of all 26,550 project declarations, sanity
+  checks and documentation checks passed locally, with only the standard
+  axioms. Comparator accepted the updated proofs in con-ron, NanoDa and Lean's
+  default kernel, finishing with `Your solution is okay!` in 59 minutes and
+  20 seconds. At the owner's request, the existing remote CI and preflight runs
+  were left to finish without launching further runs.
+
+## 31 October 2026
+
+* **Around midnight — the family box and terminal estimates simplified.**
+  Codex (GPT-6), using `formalize-math-paper` 3.0.0 without sub-agents,
+  replaced all eighteen generated interval expressions for the admissible
+  parameter box with direct proofs from half-angle formulas,
+  Cauchy–Schwarz, separating projections and squared coordinate bounds.
+  The generated module and its generator were removed. Five terminal
+  corner calculations now share one rotated-corner argument; seven
+  contact-gap calculations use a common support-width identity. The
+  first-variation identity uses linear interpolation in each owner choice
+  instead of checking all 32 assignments. The public theorem statements
+  and geometric model definitions are unchanged.
+
+  The targeted n=8 build passed, rebuilding fifteen affected modules in
+  54 seconds. An audit of the imported n=8 proof graph checked 20,857 project
+  declarations and found only the three standard axioms; the root theorem
+  file and documentation checks passed locally. The existing remote CI and
+  preflight runs were left alone, and no further full Comparator run was
+  started.
+
+* **Stationary coordinate bounds and regularity by direct arguments.**
+  Continuing the same local proof cleanup, Codex (GPT-6), with the same skill
+  and no sub-agents, replaced six local and eight sharp coordinate
+  certificates by squared-endpoint circle bounds and products in the
+  half-angle frame. The sharp coordinate bounds now use six-decimal input
+  brackets. A structural induction proves that a regular formula has regular
+  symbolic derivatives, replacing three further interval checks. The unused
+  regularity checker, coordinate aliases and sharp coordinate box were removed.
+  The existing coordinate and regularity theorem statements are unchanged.
+
+  The targeted n=8 build, axiom audit of 20,814 imported project declarations,
+  root theorem check, exact regeneration and documentation checks passed.
+  The thirty remaining generated theorem bodies are unchanged. A focused
+  export of the new generic arguments and their dependencies passed Lean,
+  NanoDa and verified con-ron in 6.12, 2.77 and 10.15 seconds respectively;
+  peak checker RSS was below 269 MiB. These checks cover the new arguments,
+  and do not replace the full-project Comparator. The existing remote runs
+  were left alone. Overall build speed was not established by this pass.

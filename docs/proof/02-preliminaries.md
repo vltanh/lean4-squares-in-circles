@@ -413,7 +413,7 @@ holds below the radius $R_8$, and then (c).
 *Figure 2.16.* Conditions (a) and (b) for the optimal models of Chapters 4
 to 11, for seven squares the column packing with the heights $(-1, 0, 1)$
 and for eight squares the model at the centre of the box of
-[Proposition 11.7](11-eight.md#proposition-117-a-box-of-admissible-parameters),
+[Proposition 11.7](11-eight.md#proposition-117-a-box-of-different-packings),
 whose marked corner is the corner $(x_1, y_*)$ of its square $A$: each model
 lies in its closed disk of radius $R_n$, and the marked corner $p$ reaches the
 circle, with $|p|^2 = R_n^2$.

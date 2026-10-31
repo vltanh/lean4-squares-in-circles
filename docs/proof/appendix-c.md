@@ -590,11 +590,11 @@ claims of Lemma B.16 (1) and (2); (3) is the first claim of Lemma B.16 (2),
 and (4) is Lemma B.16 (4). $\square$
 
 *Lean:
-[`Six.vertex_linear_upper`](../../SquaresInCircles/Six/Supports.lean#L48),
-[`Six.local_vertex_support`](../../SquaresInCircles/Six/Supports.lean#L32),
-[`Six.cap_linear_upper`](../../SquaresInCircles/Six/Supports.lean#L105),
-[`Six.chart_radial_work`](../../SquaresInCircles/Six/Supports.lean#L117),
-[`Six.coarse_central_work`](../../SquaresInCircles/Six/Supports.lean#L257).*
+[`Six.vertex_linear_upper`](../../SquaresInCircles/Six/Bounds/Supports.lean#L48),
+[`Six.local_vertex_support`](../../SquaresInCircles/Six/Bounds/Supports.lean#L32),
+[`Six.cap_linear_upper`](../../SquaresInCircles/Six/Bounds/Supports.lean#L105),
+[`Six.chart_radial_work`](../../SquaresInCircles/Six/Bounds/Supports.lean#L117),
+[`Six.coarse_central_work`](../../SquaresInCircles/Six/Bounds/Supports.lean#L257).*
 
 ### Lemma C.8 (three harmonics)
 
@@ -1360,8 +1360,8 @@ the claim. $\square$
 
 *Lean:
 [`Six.core_secondary_projection`](../../SquaresInCircles/Six/Separators/SmallAngle.lean#L29),
-[`Six.circle_support_above_primary`](../../SquaresInCircles/Six/Supports.lean#L138),
-[`Six.disk_corner_support`](../../SquaresInCircles/Six/Supports.lean#L89).*
+[`Six.circle_support_above_primary`](../../SquaresInCircles/Six/Bounds/Supports.lean#L138),
+[`Six.disk_corner_support`](../../SquaresInCircles/Six/Bounds/Supports.lean#L89).*
 
 ![The plane of a + 1/2 against |b| + 1/2: the dashed circle of radius R0, the vertical line a + 1/2 = l with l = a0 + 1/2, and between them the shaded region where the far corners of the charts with a at least a0 lie. At its corner (l, B0) on the circle, three orange arrows point straight up, up and to the right, and diagonally, all above a dotted ray along the radius through the corner; two dashed orange lines through the corner, a horizontal one labelled q = 0 and a falling diagonal one labelled q = pi over 4, leave the whole region below them](figures/appendix-c/core-support.svg)
 

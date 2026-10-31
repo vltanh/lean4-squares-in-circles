@@ -49,7 +49,7 @@ $-f$. (3) For $x > 0$, (1) on $[0, x]$ gives $f(x) \ge f(0) = 0$. $\square$
 *Lean:
 [`monoOn_of_hasDeriv_nonneg`](../../SquaresInCircles/Common/Analysis.lean#L34),
 [`antiOn_of_hasDeriv_nonpos`](../../SquaresInCircles/Common/Analysis.lean#L42),
-[`nonneg_of_deriv_nonneg`](../../SquaresInCircles/Common/Analysis.lean#L52).*
+[`nonneg_of_deriv_nonneg`](../../SquaresInCircles/Common/Analysis.lean#L68).*
 
 ### Lemma A.2 (tangent parabolas)
 
@@ -75,7 +75,7 @@ $g_1 \le 0$ on $[l, t]$ and $g_1 \ge 0$ on $[t, u]$. By Lemma A.1 again, $g$ is
 nonincreasing on $[l, t]$ and nondecreasing on $[t, u]$. As $g(t) = 0$, we get
 $g \ge 0$ on $[l, u]$, and $g(x) \ge 0$ is the claim. $\square$
 
-*Lean: [`curvature_tangent`](../../SquaresInCircles/Common/Analysis.lean#L153).*
+*Lean: [`curvature_tangent`](../../SquaresInCircles/Common/Analysis.lean#L169).*
 
 With $\kappa = 0$, Lemma A.2 says that a function with a nonnegative second
 derivative lies above its tangent lines; applied to $-f$, that a function with
@@ -104,7 +104,7 @@ value of the parabola, $f(t) - d(t)^2/2\kappa$ (green), is positive.
 ```
 
 *Lean:
-[`positive_of_curvature`](../../SquaresInCircles/Common/Analysis.lean#L183).*
+[`positive_of_curvature`](../../SquaresInCircles/Common/Analysis.lean#L199).*
 
 ### Lemma A.4 (positivity from concavity)
 
@@ -128,7 +128,7 @@ f(x) \ge \frac{(u - x) f(l) + (x - l) f(u)}{u - l} \ge \min\left(f(l), f(u)\righ
 ```
 
 *Lean:
-[`positive_of_second_nonpos`](../../SquaresInCircles/Common/Analysis.lean#L144).*
+[`positive_of_second_nonpos`](../../SquaresInCircles/Common/Analysis.lean#L160).*
 
 ### Lemma A.5 (concave trigonometric sums)
 
@@ -269,7 +269,7 @@ $x \in [l, u]$. If $x \le c$, then $f$ is nondecreasing on $[l, c]$ by
 Lemma A.1 (1), so $f(x) \le f(c)$. If $x \ge c$, then $f$ is nonincreasing on
 $[c, u]$ by Lemma A.1 (2), so again $f(x) \le f(c)$ (Figure A.5). $\square$
 
-*Lean: [`le_at_peak`](../../SquaresInCircles/Common/Analysis.lean#L59).*
+*Lean: [`le_at_peak`](../../SquaresInCircles/Common/Analysis.lean#L75).*
 
 In use, $d(y)$ is a product of factors of constant sign on $[l, u]$ and one
 affine factor that vanishes at $c$; Lemma F.5 is an example (Figure F.7).
@@ -328,11 +328,11 @@ $\alpha((1 - \lambda)x + \lambda y) + \beta = (1 - \lambda)(\alpha x + \beta) + 
 and $f(u, y) > 0$; by (2) again, along the segment from $(l, y)$ to $(u, y)$,
 $f(x, y) > 0$ (Figure A.6). $\square$
 
-*Lean: [`concave_of_deriv2`](../../SquaresInCircles/Common/Analysis.lean#L74),
-[`concave_gt_of_endpoints`](../../SquaresInCircles/Common/Analysis.lean#L86),
-[`affine_concave`](../../SquaresInCircles/Common/Analysis.lean#L123),
-[`concave_affine_argument`](../../SquaresInCircles/Common/Analysis.lean#L112),
-[`positive_on_separately_concave_rectangle`](../../SquaresInCircles/Common/Analysis.lean#L132),
+*Lean: [`concave_of_deriv2`](../../SquaresInCircles/Common/Analysis.lean#L90),
+[`concave_gt_of_endpoints`](../../SquaresInCircles/Common/Analysis.lean#L102),
+[`affine_concave`](../../SquaresInCircles/Common/Analysis.lean#L139),
+[`concave_affine_argument`](../../SquaresInCircles/Common/Analysis.lean#L128),
+[`positive_on_separately_concave_rectangle`](../../SquaresInCircles/Common/Analysis.lean#L148),
 [`monoOn_of_hasDeriv_nonneg`](../../SquaresInCircles/Common/Analysis.lean#L34),
 [`antiOn_of_hasDeriv_nonpos`](../../SquaresInCircles/Common/Analysis.lean#L42).*
 

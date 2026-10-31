@@ -1,6 +1,8 @@
 module
 
-public import SquaresInCircles.Eight.Containing
+public import SquaresInCircles.Eight.Boundary.Reduction
+public import SquaresInCircles.Eight.Bounds.Containing
+public import SquaresInCircles.Common.Analysis
 
 /-!
 # Eight squares: radius expansion and the ordered exterior squares
@@ -38,7 +40,7 @@ namespace SquaresInCircles.Eight.RadiusTransfer
 def outerRadius (q B : ℝ) : ℝ :=
   (Real.sqrt (B ^ 2 + 4 * q - 2) - B) / 2
 
-/-- The range `1 ≤ B ≤ √2` of the coefficient `B = cos α + |sin α|` of a nearest-axis frame. -/
+/-- The entire range of coefficients supplied by a nearest-axis frame. -/
 def FrameCoefficient (B : ℝ) : Prop := 1 ≤ B ∧ B ≤ Real.sqrt 2
 
 lemma sqrt_two_lt_three_halves : Real.sqrt 2 < (3 : ℝ) / 2 := by
@@ -124,8 +126,7 @@ lemma secant_denominator_bounds {qa qb B : ℝ}
   dsimp [outerRadius]
   constructor <;> linarith
 
-/-- For `5/2 ≤ qa ≤ qb ≤ 4`, the outer radius grows by between `(qb - qa)/4` and
-`(qb - qa)/3`. -/
+/-- Both travel estimates, with the original radius retained explicitly. -/
 lemma outerRadius_increment {qa qb B : ℝ}
     (ha : qa ∈ Set.Icc (5 / 2) 4) (hb : qb ∈ Set.Icc (5 / 2) 4)
     (hab : qa ≤ qb) (hB : FrameCoefficient B) :
@@ -149,8 +150,7 @@ lemma outerRadius_monotone {qa qb B : ℝ}
   have h := (outerRadius_increment ha hb hab hB).1
   linarith
 
-/-- With radii below `3/2` and nonnegative coefficients, a projection `u r + v s ≥ 1` has
-`u + v ≥ 2/3`. -/
+/-- The nonnegative-coefficient case of an active outer/outer projection. -/
 lemma nonnegative_projection_reserve {r s u v : ℝ}
     (hr : r < 3 / 2) (hs : s < 3 / 2)
     (hu : 0 ≤ u) (hv : 0 ≤ v) (hfeas : 1 ≤ u * r + v * s) :
@@ -159,9 +159,8 @@ lemma nonnegative_projection_reserve {r s u v : ℝ}
   have h₂ := mul_le_mul_of_nonneg_left hs.le hv
   nlinarith
 
-/-- With `r < 3/2`, `s > 4/5`, `0 ≤ u ≤ 1` and `v ≥ 0`, a projection `u r - v s ≥ 1` has
-`u ≥ 2/3 + (8/15) v`, `v ≤ 5/8` and `u/4 - v/3 ≥ 1/24`. These inequalities concern the
-coefficients only, so they are proved once, at the level before the expansion. -/
+/-- The coefficient inequalities are deduced at the original feasible state.
+They need not be reproved, or assumed, at intermediate radii. -/
 lemma mixed_projection_reserve {r s u v : ℝ}
     (hr : r < 3 / 2) (hs : 4 / 5 < s)
     (hu : 0 ≤ u ∧ u ≤ 1) (hv : 0 ≤ v)
@@ -174,10 +173,9 @@ lemma mixed_projection_reserve {r s u v : ℝ}
   have hb : v ≤ 5 / 8 := by nlinarith
   exact ⟨ha, hb, by linarith⟩
 
-/-- For two outer states with radii in `(4/5, 3/2)` and coefficients in `[-1, 1]`, a feasible
-projection `u r₁ + v r₂ ≥ 1` grows by at least `Δ/24` when each radius grows by between `Δ/4` and
-`Δ/3`: the lower bound of the growth serves a nonnegative coefficient, the upper bound a
-negative one. The margin `Δ/24` holds for every separating axis, ties included. -/
+/-- Pure scalar transport for every feasible pair projection with two outer
+states. The lower and upper increment estimates preserve negative coefficients.
+The additional reserve is uniform and is useful at an owner tie. -/
 lemma outer_outer_increment {r₁ r₂ dr₁ dr₂ Δ u v : ℝ}
     (hr₁ : 4 / 5 < r₁ ∧ r₁ < 3 / 2)
     (hr₂ : 4 / 5 < r₂ ∧ r₂ < 3 / 2)
@@ -251,10 +249,9 @@ def RadialState.radius (s : RadialState) (q : ℝ) : ℝ :=
   | .outer B _ => outerRadius q B
   | .core r _ => r
 
-/-- A projection `u r₁ + v r₂` with coefficients in `[-1, 1]` that reaches a width `≥ 1` at the
-level `qa` still reaches it at every level `qb ≥ qa` of `[5/2, 4]`. The coefficients are the dot
-products of the unit axis with the two centre directions, and the width is the sum of the support
-half-widths; neither changes with the level. -/
+/-- Every initially feasible signed projection remains feasible. Coefficients
+are fixed dot products of the retained unit axis with the two retained rays.
+The threshold is the unchanged sum of support half-widths. -/
 theorem every_feasible_projection_preserved
     (s₁ s₂ : RadialState) {qa qb u v width : ℝ}
     (ha : qa ∈ Set.Icc (5 / 2) 4) (hb : qb ∈ Set.Icc (5 / 2) 4)

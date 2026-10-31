@@ -1,7 +1,7 @@
 module
 
-public import Mathlib.Algebra.Order.Star.Real
-public import Mathlib.Tactic
+public import SquaresInCircles.Common.Trigonometry
+public import Mathlib
 
 /-!
 # Eight squares: rational intervals
@@ -14,8 +14,9 @@ product lies between the four products of the endpoints (`product_between_corner
 nonnegative interval whose endpoints square to bounds of the interval of `x` contains `√x`
 (`mem_sqrt`).
 
-`ScalarExpr.lean` evaluates expressions in these intervals, `ClosedCover.lean` builds boxes of
-them, and the fixed-point evaluation of `Stationary/FixedEval.lean` lands in them.
+`ScalarExpr.lean` evaluates expressions in these intervals, `Fixed.lean` encloses them by
+fixed-point intervals, and the arcs, cuts and angle intervals of the affine tables are given as
+such intervals (`AffineTableData.lean`).
 -/
 
 @[expose] public section

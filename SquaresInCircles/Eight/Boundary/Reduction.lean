@@ -1,10 +1,10 @@
 module
 
+public import SquaresInCircles.Eight.Boundary.SeparatingAxis
+public import SquaresInCircles.Eight.Boundary.Frames
 public import Mathlib.Topology.Order.IntermediateValue
 public import Mathlib.Topology.Instances.Real.Lemmas
 public import Mathlib.Analysis.SpecialFunctions.Complex.Arg
-public import SquaresInCircles.Eight.Frames.Basic
-public import SquaresInCircles.Eight.Frames.SeparatingAxis
 
 /-!
 # Eight squares: the boundary reduction

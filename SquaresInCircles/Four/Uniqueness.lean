@@ -1,7 +1,7 @@
 module
 
-public import SquaresInCircles.Four.Exterior
-public import SquaresInCircles.Four.Containing
+public import SquaresInCircles.Four.Bounds.Exterior
+public import SquaresInCircles.Four.Bounds.Containing
 public import SquaresInCircles.Four.Construction
 public import SquaresInCircles.Common.Sweep
 public import SquaresInCircles.Common.Angles
@@ -11,10 +11,10 @@ public import SquaresInCircles.Common.Optimum
 # Four squares: uniqueness
 
 On the circle of radius `1/2` about the disk centre, a square whose closed
-square contains the disk centre holds a quarter circle (`Containing.lean`), and
+square contains the disk centre holds a quarter circle (`Bounds/Containing.lean`), and
 every other square of a packing in the disk of radius `sqrt 2` holds at least a
 quarter circle, more unless the disk centre is one of its vertices
-(`Exterior.lean`). The angular budget leaves
+(`Bounds/Exterior.lean`). The angular budget leaves
 the disk centre a vertex of every square, and the four quarter circles form the
 2×2 block.
 

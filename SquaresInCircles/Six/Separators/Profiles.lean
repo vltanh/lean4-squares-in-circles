@@ -1,7 +1,7 @@
 module
 
 public import SquaresInCircles.Six.Separators.DiagonalAngle
-public import SquaresInCircles.Six.Supports
+public import SquaresInCircles.Six.Bounds.Supports
 
 /-!
 # Six squares: radial profiles and transverse coordinates

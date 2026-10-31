@@ -30,13 +30,14 @@ project:
     angles of the squares, forces the optimal radius. For seven squares, each
     square avoiding the disk centre gets a direction from it, and in the
     optimal disk two disjoint such squares get directions at least π/3 apart.
-    For eight squares a central square is found, a case analysis of the
-    frames of the seven others, written by hand, excludes every boundary
-    configuration but the stationary one, with its leaf inequalities proved
-    by hand where the degree is low and otherwise checked as exact polynomial
-    certificates in Lean's kernel, and a completion of
-    squares with the weights of the stationary packing forces the optimal
-    radius.
+    For eight squares a central square is found, checked pair, affine and
+    owner tables capture the frames of the seven exterior squares near the
+    stationary configuration, and a completion of squares with the weights
+    of the stationary packing forces the optimal radius. Lean verifies the
+    table bounds and their coverage. The public radius and optimal family
+    retain their geometric five-corner description, proved equivalent to the
+    stationary description used by the tables. The table-free case analysis
+    is deprecated and is absent from the active library.
     We found no earlier proof for five, six, seven or eight squares, and no
     exact one for three, where a computer-assisted enclosure of the radius and
     the optimal arrangements was known. Four squares, uniqueness included,
@@ -165,6 +166,62 @@ status:
 automation:
   methods:
     - method: "agent"
+      models: ["GPT-6"]
+      framework: "Codex"
+      tool_setup: >-
+        Local Lean and Lake, using the formalize-math-paper skill, version
+        3.0.0. At the maintainer's request, restored the checked-table proof
+        from 4bea747b, retired the table-free case analysis, and retained the
+        geometric radius and optimal-family definitions with their proved
+        bridges to the stationary chart. No sub-agents were used.
+        Local verification passed the full build, the audit of all 26,581
+        project declarations, sanity and documentation checks, and Comparator
+        with con-ron, NanoDa and Lean's default kernel.
+        Subsequently replaced nine central-band Bernstein rows with a shared
+        quadratic lower bound and completed-square argument, preserving the
+        three positivity statements and documenting the argument in Appendix K.
+        Replaced the word-cost classification step with a count of occupied
+        positions in overlapping cyclic triples, preserving its statement
+        and explaining the argument in Chapter 11.
+        Further simplification replaces the remaining ten central-band
+        Bernstein certificates by quadratic supports and completed squares,
+        using short decimal bounds. Both forbidden rectangle widths now use
+        supporting points, radial projection and angle derivatives, replacing
+        all 230 interval rows. Tangent addition and a cubic bound replace the
+        degree-49 and degree-51 core angle expansions. The seven-step matrix
+        budget follows from an odd-cycle coloring and boundary crossings;
+        its variation bound uses two telescoping paths and the triangle
+        inequality. Existence of the stationary zero now uses the short trial
+        pose (-0.92066, 0.0619); the refined pose is used for numerical bounds.
+        The final pullback uses a shared corner containment argument and linear
+        separating-axis implications with the default heartbeat limit.
+        Public theorem statements and the geometric family model
+        are preserved. The global capture retains its checked tables.
+        This round passed the full local build, the all-declaration audit
+        (24,436 project declarations, only the three standard axioms), sanity
+        checks, generator reproduction and documentation checks. CI and
+        Palomar preflight were not rerun, as requested by the maintainer.
+        A further local pass on 31 October replaced all eighteen family-box
+        interval expressions with half-angle formulas, Cauchy–Schwarz,
+        separating projections and squared coordinate bounds. It removed
+        their generated module and generator, shared the terminal corner and
+        support-width arguments, and replaced a 32-case owner split with
+        one linear interpolation identity. The targeted n=8 build and the
+        audit of its imported proof graph (20,857 project declarations) passed,
+        using only the standard axioms. The existing remote runs were left
+        alone; no further CI, preflight or full Comparator run was started.
+        The next pass replaced fourteen local and sharp coordinate certificates
+        with squared-endpoint circle bounds and half-angle product estimates.
+        A structural proof that regularity survives symbolic differentiation
+        replaces three further interval checks. The unused regularity checker,
+        coordinate formula aliases and sharp coordinate box were removed.
+        The n=8 build, audit of 20,814 imported project declarations, exact
+        regeneration of the remaining numerical bounds and documentation
+        checks passed locally. Lean, NanoDa and verified con-ron accepted a
+        focused export of the new generic arguments and their dependencies;
+        peak checker RSS was at most 268.1 MiB. This was not a full-project
+        Comparator run. No overall build-speed improvement is claimed.
+    - method: "agent"
       models: ["ChatGPT 6 Pro", "ChatGPT (its latest model, September 2026)"]
       framework: "ChatGPT"
       tool_setup: >-
@@ -187,9 +244,9 @@ automation:
         (pull request #8). For eight squares, ChatGPT 6 Pro wrote the proof,
         with its finite tables checked by computer (pull request #9), and the
         whole Lean proof (pull request #10), first with the tables and then
-        without them: the table-free proof, in mathematics and in Lean, is the
-        one formalized here, with the optimum stated by its five-corner
-        minimum.
+        without them. The active library uses the table proof and retains the
+        five-corner minimum and geometric optimal-family description from the
+        table-free development.
     - method: "agent"
       models: ["Claude Opus 5.5"]
       framework: "Claude"

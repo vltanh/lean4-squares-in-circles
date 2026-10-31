@@ -90,15 +90,17 @@ trusts the compiler, would add `Lean.ofReduceBool`.
 #print axioms SquaresInCircles.Seven.classification_by_slots
 
 -- Eight squares: the stationary packing and the five-parameter family, the
--- five corners and their radius, the boundary source exclusion, the lower bound
+-- five corners and their radius, the checked-table lower bound
 -- and the classification.
-#print axioms SquaresInCircles.Eight.Stationary.exact_stationary_existsUnique
-#print axioms SquaresInCircles.Eight.Stationary.model_sqPacking
+#print axioms SquaresInCircles.Eight.ExactFamily.exact_stationary_existsUnique
+#print axioms SquaresInCircles.Eight.ExactFamily.model_sqPacking
 #print axioms SquaresInCircles.Eight.FiveCorner.existsUnique_minimizer
 #print axioms SquaresInCircles.Eight.FiveCorner.radius_eq_stationary
 #print axioms SquaresInCircles.Eight.GeometricModel.models_eq_stationary
-#print axioms SquaresInCircles.Eight.GeometricModel.sharp_radius_lower_bound
-#print axioms SquaresInCircles.Eight.GeometricModel.sharp_uniqueness
+#print axioms SquaresInCircles.Eight.squared_radius_lower_bound
+#print axioms SquaresInCircles.Eight.stationary_classification
+#print axioms SquaresInCircles.Eight.model_packing
+#print axioms SquaresInCircles.Eight.model_reaches
 #print axioms SquaresInCircles.Eight.lower_bound
 #print axioms SquaresInCircles.Eight.uniqueness
 

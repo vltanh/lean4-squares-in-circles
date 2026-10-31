@@ -143,9 +143,9 @@ Let $(a, b)$ be admissible and $\ell = \ell(a, b)$.
 [Lemma 10.8](10-seven.md#lemma-108-side-and-axial-labels) (1). $\square$
 
 *Lean:
-[`Seven.Admissible.radial_label_bound`](../../SquaresInCircles/Seven/Exterior.lean#L115),
-[`Seven.side_selected_a_gt`](../../SquaresInCircles/Seven/Exterior.lean#L159),
-[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Exterior.lean#L190).*
+[`Seven.Admissible.radial_label_bound`](../../SquaresInCircles/Seven/Bounds/Exterior.lean#L115),
+[`Seven.side_selected_a_gt`](../../SquaresInCircles/Seven/Bounds/Exterior.lean#L159),
+[`Seven.side_remainder_quadratic`](../../SquaresInCircles/Seven/Bounds/Exterior.lean#L190).*
 
 ## H.2 Two profiles of the turn
 

@@ -1,6 +1,6 @@
 module
 
-public import SquaresInCircles.Five.Containing
+public import SquaresInCircles.Five.Bounds.Containing
 public import SquaresInCircles.Five.Construction
 public import SquaresInCircles.Common.Sweep
 public import SquaresInCircles.Common.Contacts

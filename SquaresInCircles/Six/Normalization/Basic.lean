@@ -6,7 +6,7 @@ public import SquaresInCircles.Common.ExteriorCharts
 public import SquaresInCircles.Common.DiskSupport
 public import SquaresInCircles.Common.Trigonometry
 public import SquaresInCircles.Common.Congruence
-public import SquaresInCircles.Six.Constants
+public import SquaresInCircles.Six.Bounds.Constants
 public import SquaresInCircles.Common.SeparatingAxes
 public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse
 

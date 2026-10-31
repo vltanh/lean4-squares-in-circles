@@ -1,7 +1,7 @@
 module
 
-public import SquaresInCircles.Seven.Ring
-public import SquaresInCircles.Seven.Containing
+public import SquaresInCircles.Seven.Rigidity.Ring
+public import SquaresInCircles.Seven.Bounds.Containing
 public import SquaresInCircles.Common.Optimum
 
 /-!
@@ -14,9 +14,9 @@ on the middle axis, at least 1 from the others and inside the disk. Conversely
 every such configuration is an optimal packing (`Optimum.packing_iff`).
 
 Some square contains the disk centre, and it is pinned between the side
-columns (`Containing.lean`). The markers of the other six form a regular
+columns (`Bounds/Containing.lean`). The markers of the other six form a regular
 hexagon, and neighbouring squares touch as in the optimal packing
-(`Ring.lean`). The three squares of the middle column have centres at least 1
+(`Rigidity/Ring.lean`). The three squares of the middle column have centres at least 1
 apart, which gives a column packing.
 
 The file ends with `optimum`: the case as an `Optimum`, which also gives the
@@ -74,7 +74,7 @@ theorem uniqueness (S : Fin 7 → UnitSquare) (o : Point)
 configurations congruent to a column packing. -/
 def optimum : Optimum 7 where
   radius := radius
-  models := Set.range columnModel
+  models := models
   models_nonempty := ⟨_,centeredColumn,rfl⟩
   model_packing := by
     rintro _ ⟨c,rfl⟩

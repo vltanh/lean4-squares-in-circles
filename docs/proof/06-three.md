@@ -38,8 +38,8 @@ c_1 = \left(-\tfrac12, -\tfrac5{16}\right), \qquad c_2 = \left(\tfrac12, -\tfrac
 $o$ (dashed). The circle $\Gamma_{3/8}$ about $o$ splits into three arcs of
 exactly $\frac{2\pi}3$, one in each square.
 
-*Lean: [`Three.radius`](../../SquaresInCircles/Geometry.lean#L148),
-[`Three.model`](../../SquaresInCircles/Geometry.lean#L155),
+*Lean: [`Three.radius`](../../SquaresInCircles/Geometry.lean#L154),
+[`Three.model`](../../SquaresInCircles/Geometry.lean#L161),
 [`Three.model_packing`](../../SquaresInCircles/Three/Construction.lean#L27),
 [`Three.uniqueness`](../../SquaresInCircles/Three/Uniqueness.lean#L126),
 [`Three.optimum`](../../SquaresInCircles/Three/Uniqueness.lean#L199).*
@@ -135,7 +135,7 @@ Let $b \le a$. The point $(a, b)$ lies in the *16-gon* $P_3$ if
 16a + 13b \le \tfrac{193}{16} \qquad \text{and} \qquad 19a + 8b \le \tfrac{209}{16} . \tag{6.1}
 ```
 
-*Lean: [`Three.P3`](../../SquaresInCircles/Three/Exterior.lean#L24).*
+*Lean: [`Three.P3`](../../SquaresInCircles/Three/Bounds/Exterior.lean#L24).*
 
 The two lines $16a + 13b = \frac{193}{16}$ and $19a + 8b = \frac{209}{16}$ are
 the tangents to the circle $\varphi = \frac{425}{256}$ at
@@ -184,7 +184,8 @@ squares are nonnegative, so both brackets are at most $0$; and the first
 bracket is negative when $a \ne \frac12$, because then
 $(a - \frac12)^2 > 0$. $\square$
 
-*Lean: [`Three.p3_of_phi`](../../SquaresInCircles/Three/Exterior.lean#L27),
+*Lean:
+[`Three.p3_of_phi`](../../SquaresInCircles/Three/Bounds/Exterior.lean#L27),
 [`tangent_le`](../../SquaresInCircles/Common/Tangents.lean#L24),
 [`tangent_lt`](../../SquaresInCircles/Common/Tangents.lean#L30).*
 
@@ -225,7 +226,8 @@ $b \le \frac{57}{64}(\frac12 - u)$ (Figure 6.6).
 An exterior square $S$ is of *type A* if $(a_S, b_S) = (\frac{11}{16}, 0)$,
 and of *type B* if $(a_S, b_S) = (\frac12, \frac5{16})$.
 
-*Lean: [`Three.cap_bounds`](../../SquaresInCircles/Three/Exterior.lean#L69),
+*Lean:
+[`Three.cap_bounds`](../../SquaresInCircles/Three/Bounds/Exterior.lean#L69),
 [`Three.cap_types`](../../SquaresInCircles/Three/Uniqueness.lean#L32).*
 
 In the T the upper square is of type A and the two lower squares are of
@@ -289,7 +291,8 @@ and $v = \sin(\arcsin v) = \sin x$, and every inequality in (6.3) is an
 equality. The middle one, $u + \frac12 \le \frac12 + \frac{16}{13}u$, is an
 equality only if $u = 0$, and then $v = \sin\frac\pi6 = \frac12$. $\square$
 
-*Lean: [`Three.truncated_gap`](../../SquaresInCircles/Three/Exterior.lean#L35).*
+*Lean:
+[`Three.truncated_gap`](../../SquaresInCircles/Three/Bounds/Exterior.lean#L35).*
 
 ### Lemma 6.8 (exterior caps)
 
@@ -348,8 +351,9 @@ half-width. If $A_S \le V_S$, then $w_S = A_S \ge \frac\pi3$ by (2), and the
 centre is $\theta_S$. If $V_S < A_S$, then
 $w_S = \frac12(A_S + V_S) \ge \frac\pi3$ by (3) (Figure 6.7). $\square$
 
-*Lean: [`Three.cap_bounds`](../../SquaresInCircles/Three/Exterior.lean#L69),
-[`Three.exterior_cap`](../../SquaresInCircles/Three/Exterior.lean#L91).*
+*Lean:
+[`Three.cap_bounds`](../../SquaresInCircles/Three/Bounds/Exterior.lean#L69),
+[`Three.exterior_cap`](../../SquaresInCircles/Three/Bounds/Exterior.lean#L91).*
 
 ### Lemma 6.9 (caps of a third)
 
@@ -444,9 +448,9 @@ The interval has length $L_S$, with $0 < L_S \le \frac{3\pi}2$, so the arc has
 half-width $\frac12 L_S$. $\square$
 
 *Lean:
-[`Three.containing_arc`](../../SquaresInCircles/Three/Containing.lean#L56),
-[`Three.containing_mem`](../../SquaresInCircles/Three/Containing.lean#L43),
-[`Three.neg_lt_sin`](../../SquaresInCircles/Three/Containing.lean#L31).*
+[`Three.containing_arc`](../../SquaresInCircles/Three/Bounds/Containing.lean#L56),
+[`Three.containing_mem`](../../SquaresInCircles/Three/Bounds/Containing.lean#L43),
+[`Three.neg_lt_sin`](../../SquaresInCircles/Three/Bounds/Containing.lean#L31).*
 
 ### Lemma 6.11 (the radial gap)
 
@@ -504,7 +508,7 @@ $S$ and $T$ overlap (shaded).
   $\square$
 
 *Lean:
-[`Three.gap_from_containing`](../../SquaresInCircles/Three/Containing.lean#L71).*
+[`Three.gap_from_containing`](../../SquaresInCircles/Three/Bounds/Containing.lean#L71).*
 
 ### Lemma 6.12 (an increasing difference)
 
@@ -532,7 +536,7 @@ $f'(t) > (\frac{16}{13} - 1)\frac1{\sqrt{1 - t^2}} > 0$. By the mean value
 theorem, $f$ is increasing on $[0, \frac{13}{32})$. $\square$
 
 *Lean:
-[`Three.asin_increment_mono`](../../SquaresInCircles/Three/Containing.lean#L96).*
+[`Three.asin_increment_mono`](../../SquaresInCircles/Three/Bounds/Containing.lean#L96).*
 
 ### Lemma 6.13 (compensation)
 
@@ -566,7 +570,7 @@ $\arcsin(\frac12 + \frac{16}{13}P) + \arcsin Q > \frac\pi3$. Adding this to the
 previous display proves the lemma. $\square$
 
 *Lean:
-[`Three.compensation`](../../SquaresInCircles/Three/Containing.lean#L118).*
+[`Three.compensation`](../../SquaresInCircles/Three/Bounds/Containing.lean#L118).*
 
 In the proof of Proposition 6.15, $P$ and $Q$ are $P_S$ and $Q_S$ for the
 square $S$ that contains $o$, and $u$ and $v$ are $u_T$ and $v_T$ for a square
@@ -639,9 +643,9 @@ half-widths of the two arcs of (2), which is at least
 $\frac{2\pi}3 + \frac17$ (Figure 6.13). $\square$
 
 *Lean:
-[`Three.third_le_arccos`](../../SquaresInCircles/Three/Containing.lean#L132),
-[`Three.wide_arc`](../../SquaresInCircles/Three/Containing.lean#L141),
-[`Three.axial_pair_impossible`](../../SquaresInCircles/Three/Containing.lean#L155).*
+[`Three.third_le_arccos`](../../SquaresInCircles/Three/Bounds/Containing.lean#L132),
+[`Three.wide_arc`](../../SquaresInCircles/Three/Bounds/Containing.lean#L141),
+[`Three.axial_pair_impossible`](../../SquaresInCircles/Three/Bounds/Containing.lean#L155).*
 
 ### Proposition 6.15 (no square contains the disk centre)
 
@@ -786,7 +790,7 @@ by $\pi < \frac{22}7$ and the second as $3 \cdot 29 < 13 \cdot 7$. This
 contradicts step 4. $\square$
 
 *Lean:
-[`Three.no_containing`](../../SquaresInCircles/Three/Containing.lean#L170).*
+[`Three.no_containing`](../../SquaresInCircles/Three/Bounds/Containing.lean#L170).*
 
 ## 6.5 The T
 

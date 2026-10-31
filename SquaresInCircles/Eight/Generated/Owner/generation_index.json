@@ -1,0 +1,317 @@
+{
+  "schema": "eight-owner-lines-v1",
+  "source": "the rows of SquaresInCircles/Eight/Generated/Owner at commit 65e4060, converted by scripts/eight/owner_rows.py",
+  "inputs": [
+    {
+      "input": "candidate_quarter_owner_large_mismatch_dual_data.json",
+      "sha256": "a4a86562adf04d833a48eafcfd6a2b98fb344d7b32926d1ce5b0926afd70e1ee",
+      "mode": "quarter",
+      "groups": 48,
+      "rows": 1545
+    },
+    {
+      "input": "candidate_mixed_owner_shared_mismatch_hand_data.json",
+      "sha256": "19038e85e57c80c3423666acca47f1548c6aebdc953445cabd4f81b1ee8c58e1",
+      "mode": "mixed",
+      "groups": 15,
+      "rows": 729
+    },
+    {
+      "input": "candidate_tilt_signed_error_hand_data.json",
+      "sha256": "bc5305ef2b0b00e62b89259da64d8eedadfa93c71fcf1269110b29aeaae28bc1",
+      "mode": "tilt",
+      "groups": 59,
+      "rows": 1239
+    }
+  ],
+  "data": [
+    {
+      "file": "data/eight/owner/mixed000.txt",
+      "table": "mixedTable000",
+      "rows": 33,
+      "sha256": "4ddeb0fb36368200083895355468c77e74b399b4c6242f17b3908891b5ff23c0"
+    },
+    {
+      "file": "data/eight/owner/mixed003.txt",
+      "table": "mixedTable003",
+      "rows": 49,
+      "sha256": "21f1673d7e5a297f7d04125888014aa91cc6fd3bd88fec9be1df438cb46e94cd"
+    },
+    {
+      "file": "data/eight/owner/mixed004.txt",
+      "table": "mixedTable004",
+      "rows": 281,
+      "sha256": "15cb2aceb27caef7f76f91e1342b3400fa24bcc2e1948c56eb1f1965396ac390"
+    },
+    {
+      "file": "data/eight/owner/mixed007.txt",
+      "table": "mixedTable007",
+      "rows": 30,
+      "sha256": "4f40c2dbf26290664c5afd58d43daedb5d3e9413f89100a3ee126ec834dfe2d7"
+    },
+    {
+      "file": "data/eight/owner/mixed008.txt",
+      "table": "mixedTable008",
+      "rows": 30,
+      "sha256": "2fb43c9ab71c99992dbac2d52a9c78dbad83bdfa910cb6179bcab7988d4547e1"
+    },
+    {
+      "file": "data/eight/owner/mixed011.txt",
+      "table": "mixedTable011",
+      "rows": 31,
+      "sha256": "b708d99d9988aa282e2e87aa83ef77c412b1fcf73b1c260badb80ab07e8e9c22"
+    },
+    {
+      "file": "data/eight/owner/mixed012.txt",
+      "table": "mixedTable012",
+      "rows": 35,
+      "sha256": "94377af7c238ca29c4dc741cc353941f36312a103b6666bd417ccd18680049ad"
+    },
+    {
+      "file": "data/eight/owner/tilt018.txt",
+      "table": "tiltBundle018",
+      "rows": 21,
+      "sha256": "ab29a8355632e77fd3084586d49a94d86ac7ddeb0a13fb7a7b054802f0cb6065"
+    },
+    {
+      "file": "data/eight/owner/tilt019.txt",
+      "table": "tiltBundle019",
+      "rows": 21,
+      "sha256": "293314133ddaebdeb8d4c0ccd2c9171e314b78c25dcafb504fa71439dce37ed7"
+    },
+    {
+      "file": "data/eight/owner/tilt020.txt",
+      "table": "tiltBundle020",
+      "rows": 21,
+      "sha256": "e9c741d77aab7886a7ef8937afb55f3c68e331262caf47ce62db747115eb3739"
+    },
+    {
+      "file": "data/eight/owner/tilt021.txt",
+      "table": "tiltBundle021",
+      "rows": 21,
+      "sha256": "3b5938a3cf0dfb0caf934b545f6bc60b98c3b3cce6c05b30692c63677e6e6b0f"
+    },
+    {
+      "file": "data/eight/owner/tilt022.txt",
+      "table": "tiltBundle022",
+      "rows": 21,
+      "sha256": "15768414507d833902dfb8a91940dc0638cfc5202b4320ed9306220a67b868a7"
+    },
+    {
+      "file": "data/eight/owner/tilt023.txt",
+      "table": "tiltBundle023",
+      "rows": 21,
+      "sha256": "200d07a778996e1f3f54e6e856c870f7ab90399dfdfb87b985c650f1a9e1ade6"
+    },
+    {
+      "file": "data/eight/owner/tilt024.txt",
+      "table": "tiltBundle024",
+      "rows": 21,
+      "sha256": "acb866f9d8429b32c807efec360094d902ab54832e3a476249d44e691eb7c165"
+    },
+    {
+      "file": "data/eight/owner/tilt025.txt",
+      "table": "tiltBundle025",
+      "rows": 21,
+      "sha256": "67e21ef0ede482b717f20f6c7b9ab303c58b30d1f86feb66349ef34f9a66d64a"
+    },
+    {
+      "file": "data/eight/owner/tilt026.txt",
+      "table": "tiltBundle026",
+      "rows": 21,
+      "sha256": "46c7b851c5cbe1fa05a23be14a20e247bf0d7f95eab0490d42c2a26d8211e7a9"
+    },
+    {
+      "file": "data/eight/owner/tilt027.txt",
+      "table": "tiltBundle027",
+      "rows": 21,
+      "sha256": "2fd9c6b2c640e716fb5ec6508de5d1390e3dad53e1f4c3ce7dc11acac764f690"
+    },
+    {
+      "file": "data/eight/owner/tilt028.txt",
+      "table": "tiltBundle028",
+      "rows": 21,
+      "sha256": "0875e76a91eb895c806c2ed3554e57fa2c154748671b023076a18eca91d0e1e2"
+    },
+    {
+      "file": "data/eight/owner/tilt029.txt",
+      "table": "tiltBundle029",
+      "rows": 21,
+      "sha256": "88f3722b30f7f120f9a32e3a6dabdc22185ef5c10f10c8e28e17f51d180295a4"
+    },
+    {
+      "file": "data/eight/owner/tilt030.txt",
+      "table": "tiltBundle030",
+      "rows": 21,
+      "sha256": "03998aeaf7d03145e2726f39d70f24642ea68328c103a39bfe3c07ddffafdc8c"
+    },
+    {
+      "file": "data/eight/owner/tilt031.txt",
+      "table": "tiltBundle031",
+      "rows": 21,
+      "sha256": "f8e72a27ad943c40a890411cc3da187e6b664ebf9f0478cdda77ad62aed0ee9f"
+    },
+    {
+      "file": "data/eight/owner/tilt032.txt",
+      "table": "tiltBundle032",
+      "rows": 21,
+      "sha256": "74ca9b610907063eba2724266d9864a9f532968e9d8377a77a2c3fd1cdde1bf3"
+    },
+    {
+      "file": "data/eight/owner/tilt033.txt",
+      "table": "tiltBundle033",
+      "rows": 21,
+      "sha256": "df23f0d188ec5efeadf004d4314fb999e492d818b2f82ca0d6a8cf6fc74a0342"
+    },
+    {
+      "file": "data/eight/owner/tilt034.txt",
+      "table": "tiltBundle034",
+      "rows": 21,
+      "sha256": "5c4be96e40f4a5abed46cead7c5075308e3572ecadf49eb7543747d0a1279473"
+    },
+    {
+      "file": "data/eight/owner/tilt035.txt",
+      "table": "tiltBundle035",
+      "rows": 21,
+      "sha256": "b6777774e815351f88db3f2fe15fba3803c06ab880563f066d24f74a8bd1b9cd"
+    },
+    {
+      "file": "data/eight/owner/tilt036.txt",
+      "table": "tiltBundle036",
+      "rows": 21,
+      "sha256": "8c12f0454b0a11f09686f8c84b784896dddfa554884a5c271b55631bd212de28"
+    },
+    {
+      "file": "data/eight/owner/tilt037.txt",
+      "table": "tiltBundle037",
+      "rows": 21,
+      "sha256": "5d8f7de905cf6ebe8fa2bd20cd9e681a6b559a3962a501005751b88c357dbb44"
+    },
+    {
+      "file": "data/eight/owner/tilt038.txt",
+      "table": "tiltBundle038",
+      "rows": 21,
+      "sha256": "bc5d69a61254b8faa848d60953522ac62d69f59e37e72899020b8b14fe3cc4f3"
+    },
+    {
+      "file": "data/eight/owner/tilt039.txt",
+      "table": "tiltBundle039",
+      "rows": 21,
+      "sha256": "1f072e99f419f358756da842f55f2e4599735c89b8e5bb2cbff10ef9cd78f61d"
+    },
+    {
+      "file": "data/eight/owner/tilt040.txt",
+      "table": "tiltBundle040",
+      "rows": 21,
+      "sha256": "3092998da1883d60c3fd6df765fad8443513db7e281d29c2d26890c25b8304ca"
+    },
+    {
+      "file": "data/eight/owner/tilt041.txt",
+      "table": "tiltBundle041",
+      "rows": 21,
+      "sha256": "06cdecf653fe7650334e4e6b4b76e0027eb01a6d9f98d916de097ca7577bb56a"
+    },
+    {
+      "file": "data/eight/owner/tilt042.txt",
+      "table": "tiltBundle042",
+      "rows": 21,
+      "sha256": "eb6e9867c58f528ad0b034f0c75026a8aaad1e0e3de010bf3d3a497fe46b2b5a"
+    },
+    {
+      "file": "data/eight/owner/tilt043.txt",
+      "table": "tiltBundle043",
+      "rows": 21,
+      "sha256": "602632313da9b21e51e89ef8f7d5da71e5561694c2cea0c100de508026300cad"
+    },
+    {
+      "file": "data/eight/owner/tilt044.txt",
+      "table": "tiltBundle044",
+      "rows": 21,
+      "sha256": "f38124b1527eee5b330f91c50f23278757812379bc93cac5fa951ee62f118d84"
+    },
+    {
+      "file": "data/eight/owner/tilt045.txt",
+      "table": "tiltBundle045",
+      "rows": 21,
+      "sha256": "002a3486e34ad479743b3c0b80023e812649014bd7ba9dd6025efa05600e0445"
+    },
+    {
+      "file": "data/eight/owner/tilt046.txt",
+      "table": "tiltBundle046",
+      "rows": 21,
+      "sha256": "6e6e45ca4b254e951270417fd5014e80a0adf96506bb9924d417ed4818d44848"
+    },
+    {
+      "file": "data/eight/owner/tilt047.txt",
+      "table": "tiltBundle047",
+      "rows": 21,
+      "sha256": "a1abe45cee35d3899656389b359b0c6a740729cf4384a680f7d759e7890db8bb"
+    },
+    {
+      "file": "data/eight/owner/tilt048.txt",
+      "table": "tiltBundle048",
+      "rows": 21,
+      "sha256": "cf89a690066c98210a9d8e44ba08bd36ff57bcc9fc3279569b765befc5ef59a5"
+    },
+    {
+      "file": "data/eight/owner/tilt049.txt",
+      "table": "tiltBundle049",
+      "rows": 21,
+      "sha256": "48969adbe3f2294561089069344dd99beb726cadde8ef876f20734d1f563294a"
+    },
+    {
+      "file": "data/eight/owner/tilt050.txt",
+      "table": "tiltBundle050",
+      "rows": 21,
+      "sha256": "2f8b9e8cd3ff9eadfc65faddf06b39afec25563a240e347567621c2ff2b2408b"
+    },
+    {
+      "file": "data/eight/owner/tilt051.txt",
+      "table": "tiltBundle051",
+      "rows": 21,
+      "sha256": "51ff7f05140322a8bb8f57824ea0ad3c84e8ba560720d91c0df9084342837ad5"
+    },
+    {
+      "file": "data/eight/owner/tilt052.txt",
+      "table": "tiltBundle052",
+      "rows": 21,
+      "sha256": "733c2a4fc1dbed965812c91360c6034802c60238b3df061e9b526b0ea6997178"
+    },
+    {
+      "file": "data/eight/owner/tilt053.txt",
+      "table": "tiltBundle053",
+      "rows": 21,
+      "sha256": "f2f6c68a927d1d82171771023cac256c55dcc9833975330a160dffb29b0817ec"
+    },
+    {
+      "file": "data/eight/owner/tilt054.txt",
+      "table": "tiltBundle054",
+      "rows": 21,
+      "sha256": "f57f97e6d1a2efab149551819d765bdfe3c21f312ac29bdb2ca68da50b206e97"
+    },
+    {
+      "file": "data/eight/owner/tilt055.txt",
+      "table": "tiltBundle055",
+      "rows": 21,
+      "sha256": "e1b5d8890b7f156f3bfcc395e50ef027d9e28854cd003d437908efafb02b6f5c"
+    },
+    {
+      "file": "data/eight/owner/tilt056.txt",
+      "table": "tiltBundle056",
+      "rows": 21,
+      "sha256": "24bddeaf476ef59e15cd485d44645f4fa187e5ab68732ca82bf9d3b0331bbaae"
+    },
+    {
+      "file": "data/eight/owner/tilt057.txt",
+      "table": "tiltBundle057",
+      "rows": 21,
+      "sha256": "cc5b8adb3ca0f303acc66afc6998fd84c203379b66fbee2e2063497ce7c30be1"
+    },
+    {
+      "file": "data/eight/owner/tilt058.txt",
+      "table": "tiltBundle058",
+      "rows": 21,
+      "sha256": "dcb763b77665be4e69a4efea719be5f1f6343adea0aa507bc3ee4529d039a19c"
+    }
+  ]
+}

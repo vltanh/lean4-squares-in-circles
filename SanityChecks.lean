@@ -50,14 +50,14 @@ example : optimalPackings 8 = {M | ∃ p : Eight.Parameters,
 -- Eight squares: the radius of the five-corner problem is the stationary radius
 -- `√qStar` of the proof, `qStar` lies between the radius levels `7831/2000` and
 -- `1957767069/500000000`, and the radius is `1.97877…`.
-example : Eight.radius = Real.sqrt Eight.Stationary.qStar := Eight.radius_eq_stationary
-example : (7831:ℝ)/2000 < Eight.Stationary.qStar ∧
-    Eight.Stationary.qStar < 1957767069/500000000 :=
-  ⟨Eight.Stationary.qStar_limits.1,Eight.Stationary.qStar_limits.2.1⟩
+example : Eight.radius = Real.sqrt Eight.ExactFamily.qStar := Eight.radius_eq_stationary
+example : (7831:ℝ)/2000 < Eight.ExactFamily.qStar ∧
+    Eight.ExactFamily.qStar < 1957767069/500000000 :=
+  ⟨Eight.ExactFamily.qStar_limits.1,Eight.ExactFamily.qStar_limits.2.1⟩
 example : (197877:ℝ)/100000 < Eight.radius ∧ Eight.radius < 197878/100000 := by
-  obtain ⟨hl,hu⟩ := Eight.Stationary.qStar_bracket
-  norm_num [Eight.Stationary.Generated.sharpLower,
-    Eight.Stationary.Generated.sharpUpper] at hl hu
+  obtain ⟨hl,hu⟩ := Eight.ExactFamily.qStar_bracket
+  norm_num [Eight.ExactFamily.Generated.sharpLower,
+    Eight.ExactFamily.Generated.sharpUpper] at hl hu
   rw [Eight.radius_eq_stationary,Eight.stationaryRadius]
   constructor
   · rw [Real.lt_sqrt (by norm_num)]; linarith

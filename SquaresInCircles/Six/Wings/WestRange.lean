@@ -1,6 +1,6 @@
 module
 
-public import SquaresInCircles.Six.Supports
+public import SquaresInCircles.Six.Bounds.Supports
 public import SquaresInCircles.Six.Wings.Chart
 
 /-!

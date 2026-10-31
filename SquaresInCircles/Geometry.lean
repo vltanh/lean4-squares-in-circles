@@ -125,6 +125,9 @@ def centers : Fin 1 → Point := ![(0,0)]
 /-- The unit square centred at the origin. -/
 def model : Fin 1 → UnitSquare := fun i => axisSquare (centers i)
 
+/-- The optimal models: the single square at the origin. -/
+def models : Set (Fin 1 → UnitSquare) := {model}
+
 end One
 
 namespace Two
@@ -138,6 +141,9 @@ def centers : Fin 2 → Point := ![(-1/2,0),(1/2,0)]
 
 /-- The 2 × 1 rectangle, centred at the origin. -/
 def model : Fin 2 → UnitSquare := fun i => axisSquare (centers i)
+
+/-- The optimal models: the rectangle. -/
+def models : Set (Fin 2 → UnitSquare) := {model}
 
 end Two
 
@@ -154,6 +160,9 @@ def centers : Fin 3 → Point := ![(-1/2,-5/16),(1/2,-5/16),(0,11/16)]
 /-- The T. -/
 def model : Fin 3 → UnitSquare := fun i => axisSquare (centers i)
 
+/-- The optimal models: the T. -/
+def models : Set (Fin 3 → UnitSquare) := {model}
+
 end Three
 
 namespace Four
@@ -167,6 +176,9 @@ def centers : Fin 4 → Point := ![(1/2,1/2),(-1/2,1/2),(-1/2,-1/2),(1/2,-1/2)]
 
 /-- The 2 × 2 block, centred at the origin. -/
 def model : Fin 4 → UnitSquare := fun i => axisSquare (centers i)
+
+/-- The optimal models: the block. -/
+def models : Set (Fin 4 → UnitSquare) := {model}
 
 end Four
 
@@ -182,6 +194,9 @@ def centers : Fin 5 → Point := ![(0,0),(1,0),(0,1),(-1,0),(0,-1)]
 
 /-- The plus, centred at the origin. -/
 def model : Fin 5 → UnitSquare := fun i => axisSquare (centers i)
+
+/-- The optimal models: the plus. -/
+def models : Set (Fin 5 → UnitSquare) := {model}
 
 end Five
 
@@ -236,6 +251,9 @@ def model : Fin 6 → UnitSquare :=
     axisSquare (sStar + 1, sStar), axisSquare (sStar - 1, tStar),
     axisSquare (tStar, sStar - 1), diagonalSquare]
 
+/-- The optimal models: the configuration with one turned square. -/
+def models : Set (Fin 6 → UnitSquare) := {model}
+
 end Six
 
 namespace Seven
@@ -271,6 +289,9 @@ def columnCenters (c : Column) : Fin 7 → Point :=
 `columnCenters c`. -/
 def columnModel (c : Column) : Fin 7 → UnitSquare :=
   fun i => axisSquare (columnCenters c i)
+
+/-- The optimal models: all admissible positions of the middle column. -/
+def models : Set (Fin 7 → UnitSquare) := Set.range columnModel
 
 end Seven
 
@@ -410,13 +431,13 @@ packing for `n ≤ 6`, for `n = 7` every position of the three middle squares,
 and for `n = 8` the five-parameter family and its reflections. Every other `n`
 gets the placeholder `∅`, about which nothing is claimed. -/
 def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
-  | 1 => {One.model}
-  | 2 => {Two.model}
-  | 3 => {Three.model}
-  | 4 => {Four.model}
-  | 5 => {Five.model}
-  | 6 => {Six.model}
-  | 7 => Set.range Seven.columnModel
+  | 1 => One.models
+  | 2 => Two.models
+  | 3 => Three.models
+  | 4 => Four.models
+  | 5 => Five.models
+  | 6 => Six.models
+  | 7 => Seven.models
   | 8 => Eight.models
   | _ => ∅
 

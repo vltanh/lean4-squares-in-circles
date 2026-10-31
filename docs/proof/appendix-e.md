@@ -564,7 +564,7 @@ $\sigma = -1$, $x = \frac25$, $s = \frac23$, $d = \frac12$ negative.
 [`Six.SouthTail.diagonal_root_upper`](../../SquaresInCircles/Six/Tails/South.lean#L99),
 [`Six.SouthTail.diagonal_vertex_support`](../../SquaresInCircles/Six/Tails/South.lean#L107),
 [`Six.SouthTail.d_coefficients`](../../SquaresInCircles/Six/Tails/South.lean#L131),
-[`Six.center_face`](../../SquaresInCircles/Six/Supports.lean#L279).*
+[`Six.center_face`](../../SquaresInCircles/Six/Bounds/Supports.lean#L279).*
 
 ### Lemma E.6 (the south stress, W on its own axis)
 
@@ -722,7 +722,7 @@ $\frac1{160}$.
 [`Six.SouthTail.Own.force_rotation`](../../SquaresInCircles/Six/Tails/South.lean#L488),
 [`Six.SouthTail.Own.rotation_bounds`](../../SquaresInCircles/Six/Tails/South.lean#L494),
 [`Six.SouthTail.Own.force_cone`](../../SquaresInCircles/Six/Tails/South.lean#L516),
-[`Six.narrow_support`](../../SquaresInCircles/Six/Supports.lean#L227),
+[`Six.narrow_support`](../../SquaresInCircles/Six/Bounds/Supports.lean#L227),
 [`Six.SouthTail.Own.specialTerm`](../../SquaresInCircles/Six/Tails/South.lean#L541),
 [`Six.SouthTail.Own.specialFirst`](../../SquaresInCircles/Six/Tails/South.lean#L544),
 [`Six.SouthTail.Own.special_derivative_nonpositive`](../../SquaresInCircles/Six/Tails/South.lean#L558),
@@ -1424,8 +1424,8 @@ gap of the two facets of the model on the domain where it is smallest.
 [`Six.Stress.Pair.gap_vertices`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L458),
 [`Six.Stress.Pair.gap_origin`](../../SquaresInCircles/Six/Stress/PairEstimate/Vertices.lean#L447),
 [`Six.Stress.Pair.value_origin`](../../SquaresInCircles/Six/Stress/PairStress.lean#L131),
-[`Six.radius_mul_north_length`](../../SquaresInCircles/Six/Constants.lean#L285),
-[`Six.radius_mul_west_length`](../../SquaresInCircles/Six/Constants.lean#L298).*
+[`Six.radius_mul_north_length`](../../SquaresInCircles/Six/Bounds/Constants.lean#L285),
+[`Six.radius_mul_west_length`](../../SquaresInCircles/Six/Bounds/Constants.lean#L298).*
 
 ![Two heat maps of the gap over the domain of the pair for N and W on their own axes, n from -3/10 to 5/12 horizontally and w from -11/25 to 0 vertically, with a colour scale below: white where the gap is below 0.01 and darker blue where it is larger, with contour lines; for the facet -e^W_1 (left) the gap vanishes at the origin, at the top edge, and grows away from it; for -e^N_2 (right) it also vanishes at the origin and nearly vanishes at the point n = 0, w = -11/25 at the bottom edge, marked with a dot](figures/appendix-e/pair-gap.svg)
 
@@ -1586,7 +1586,7 @@ Proposition 9.27 (3). $\square$
 [`Six.Stress.line_sum`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L199),
 [`Six.Stress.twice_beta_abs_le`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L192),
 [`Six.Stress.pairBase_eq_diagonal_scale`](../../SquaresInCircles/Six/Stress/DiagonalEstimate.lean#L213),
-[`Six.pairBase_diagonal_identity`](../../SquaresInCircles/Six/Constants.lean#L314).*
+[`Six.pairBase_diagonal_identity`](../../SquaresInCircles/Six/Bounds/Constants.lean#L314).*
 
 ### Lemma E.19 (the cap case)
 

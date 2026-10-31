@@ -1,7 +1,7 @@
 module
 
 public import SquaresInCircles.Six.Normalization.Complete
-public import SquaresInCircles.Six.Containing
+public import SquaresInCircles.Six.Bounds.Containing
 
 /-!
 # Six squares: the diagonal reflection of the model

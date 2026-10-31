@@ -1,6 +1,6 @@
 module
 
-public import SquaresInCircles.Seven.Exterior
+public import SquaresInCircles.Seven.Bounds.Exterior
 
 /-!
 # Seven squares: the boundary of the label regions

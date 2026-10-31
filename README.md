@@ -210,6 +210,14 @@ def Eight.models : Set (Fin 8 → UnitSquare) :=
 
 All of it is in `Geometry.lean`.
 
+The proof uses the checked pair, affine and owner tables of commit
+[`4bea747b`](https://github.com/vltanh/lean4-squares-in-circles/commit/4bea747b3efa13c869b956cb28435efaf21526fa).
+The table-free case analysis is deprecated and removed from the active library
+([archived version](https://github.com/vltanh/lean4-squares-in-circles/tree/321390eeae26eeb60590dacbb2007b410864adbb));
+its geometric definition of the radius and optimal family is retained. The
+bridge proofs identify that family with the stationary family used by the
+tables, so the public statements keep the five-corner description above.
+
 ## Results
 
 More on each theorem: [docs/results.md](docs/results.md).
@@ -235,16 +243,20 @@ disk, and its reflection:
 
 ```lean
 def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
-  | 1 => {One.model}
-  | 2 => {Two.model}
-  | 3 => {Three.model}
-  | 4 => {Four.model}
-  | 5 => {Five.model}
-  | 6 => {Six.model}
-  | 7 => Set.range Seven.columnModel
+  | 1 => One.models
+  | 2 => Two.models
+  | 3 => Three.models
+  | 4 => Four.models
+  | 5 => Five.models
+  | 6 => Six.models
+  | 7 => Seven.models
   | 8 => Eight.models
   | _ => ∅
 ```
+
+Every case exposes `models : Set (Fin n → UnitSquare)`. For `n ≤ 6`,
+`models = {model}`; `Seven.models = Set.range Seven.columnModel`; and
+`Eight.models` is the five-parameter family with its reflections.
 
 Each of `One.model`, …, `Five.model` is `fun i => axisSquare (centers i)`,
 the axis-parallel squares at the `centers` of its case, and `Six.model` has
@@ -317,13 +329,11 @@ one-variable estimates, then four each for six, seven and eight squares.
   of the stationary packing. In a disk of that radius, arcs on two circles
   about the disk centre give a central square and seven exterior squares
   around it, and a boundary construction moves the exterior squares to the
-  circle while keeping a separating axis on each neighbouring pair. A case
-  analysis of their frames and quarter turns, written by hand, excludes every
-  boundary cycle except the stationary one. Its leaf inequalities are
-  polynomial bounds on intervals, triangles and rectangles: the low-degree
-  ones are proved by hand, and the others, in about 670 checks, exactly in
-  Lean's kernel by integer arithmetic whose soundness is proved. At
-  the stationary frames a completion of squares with positive weights forces
+  circle while keeping a separating axis on each neighbouring pair. Checked
+  pair tables bound the frames and quarter turns, and checked affine and
+  owner tables capture the cycle near the stationary configuration. Lean
+  proves both the bounds in the tables and the coverage of every relevant
+  case. At the stationary frames a completion of squares with positive weights forces
   the radius: five squares are fixed, two slide along their contact lines, and
   the central square moves and turns.
 - **The lower bound** is shared by all cases: a packing in a smaller disk also
@@ -370,24 +380,21 @@ SquaresInCircles/
 │                          the optimal radii and models
 ├── Common/                tools shared by several cases
 ├── One/  Two/             Construction, Uniqueness
-├── Three/ Four/ Five/     Construction, Exterior, Containing, Uniqueness
-├── Six/                   Construction, Exterior, Containing, Uniqueness, and
-│                          Normalization/, Separators/, Wings/, Tails/,
-│                          Stress/, Equality/ in between
-├── Seven/                 Construction, Exterior, Containing, Uniqueness, and
-│                          the pair theorem (Pair, Pair/) and the Ring
-└── Eight/                 Construction, Exterior, Containing, Uniqueness, and
-                           Model (levels, signed axes, cycles); Corners/ (the
-                           five-corner radius), Stationary/ (the stationary
-                           packing), Boundary/ (the boundary cycle), Frames/,
-                           Words/ and Owners/ (every other boundary cycle
-                           excluded), Equality/ (the lower bound and the
-                           equality), Arithmetic/ (the exact checks)
-scripts/eight/             the generators of Stationary/Generated/ and of the
-                           arctangent kernel
+├── Three/ Four/ Five/     Construction, Uniqueness; Bounds/
+├── Six/                   Construction, Uniqueness; Bounds/, Normalization/,
+│                          Separators/, Wings/, Tails/, Stress/, Equality/
+├── Seven/                 Construction, Uniqueness; Bounds/, Pair/, Rigidity/
+└── Eight/                 Construction, Uniqueness; Bounds/, Boundary/,
+                           Rigidity/, Corners/, Equality/, ExactFamily/;
+                           Candidate/, Generated/, Arithmetic/ and
+                           Certificates/ (the tables and their checks)
+data/eight/                pair, affine and owner certificate inputs
+scripts/eight/             the certificate and stationary-formula generators
 ```
 
-Each case imports only `Common/` and its own folder.
+Every case has just `Construction.lean` and `Uniqueness.lean` at its root;
+supporting proofs live in subdirectories. Each case imports only `Common/`
+and its own folder.
 
 ## Verification
 

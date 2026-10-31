@@ -127,9 +127,9 @@ $2(1 - L)x + 1 - 2L > \frac75(1 - L) + 1 - 2L = \frac{12 - 17L}5 > 0$.
 $\square$
 
 *Lean:
-[`Six.Normalization.first_quadrant_steep`](../../SquaresInCircles/Six/Containing.lean#L67),
-[`Six.Normalization.fourth_quadrant_steep`](../../SquaresInCircles/Six/Containing.lean#L81),
-[`Six.Normalization.fourth_quadrant_flat`](../../SquaresInCircles/Six/Containing.lean#L99).*
+[`Six.Normalization.first_quadrant_steep`](../../SquaresInCircles/Six/Bounds/Containing.lean#L67),
+[`Six.Normalization.fourth_quadrant_steep`](../../SquaresInCircles/Six/Bounds/Containing.lean#L81),
+[`Six.Normalization.fourth_quadrant_flat`](../../SquaresInCircles/Six/Bounds/Containing.lean#L99).*
 
 So in regime (i) a shallow support line with a normal in the first quadrant
 has its normal within $\arcsin\frac{21}{100} \approx 12°$ of the north, and one
@@ -202,8 +202,8 @@ $-\frac12 < -c_y \le q_2 - c_y \le \frac35 - c_0 < 0.49$.
    ```
 
 *Lean:
-[`Six.Normalization.shallow_support`](../../SquaresInCircles/Six/Containing.lean#L124),
-[`Six.Normalization.FreeRegime`](../../SquaresInCircles/Six/Containing.lean#L117).*
+[`Six.Normalization.shallow_support`](../../SquaresInCircles/Six/Bounds/Containing.lean#L124),
+[`Six.Normalization.FreeRegime`](../../SquaresInCircles/Six/Bounds/Containing.lean#L117).*
 
 ## B.2 Proof of Lemma 9.17
 
@@ -299,7 +299,7 @@ $\eta \le \mathrm{cap}(s)$. $\square$
 
 *Lean:
 [`Six.Normalization.cap_support_bound_signed`](../../SquaresInCircles/Six/Normalization/Caps.lean#L109),
-[`Six.disk_corner_support`](../../SquaresInCircles/Six/Supports.lean#L89).*
+[`Six.disk_corner_support`](../../SquaresInCircles/Six/Bounds/Supports.lean#L89).*
 
 The bound is sharp: for $s \le \vartheta$ the square with $(a, b) = (\rho_0, 0)$,
 whose far edge has both corners on the circle, attains it, and for
@@ -1070,16 +1070,16 @@ $Yc_y \le \bar cY$, and $y = \bar c$ will do; if $Y < 0$, then
 $Yc_y \le 0$, and $y = 0$ will do. $\square$
 
 *Lean:
-[`Six.radial_transverse_quadratic`](../../SquaresInCircles/Six/Supports.lean#L168),
-[`Six.cone_support`](../../SquaresInCircles/Six/Supports.lean#L180),
-[`Six.soft_support`](../../SquaresInCircles/Six/Supports.lean#L191),
-[`Six.wide_support`](../../SquaresInCircles/Six/Supports.lean#L209),
-[`Six.narrow_support`](../../SquaresInCircles/Six/Supports.lean#L227),
-[`Six.chordMajorant`](../../SquaresInCircles/Six/Supports.lean#L59),
-[`Six.chord_support`](../../SquaresInCircles/Six/Supports.lean#L64),
-[`Six.vertex_support`](../../SquaresInCircles/Six/Supports.lean#L38),
-[`Six.center_corner`](../../SquaresInCircles/Six/Supports.lean#L271),
-[`Six.center_face`](../../SquaresInCircles/Six/Supports.lean#L279).*
+[`Six.radial_transverse_quadratic`](../../SquaresInCircles/Six/Bounds/Supports.lean#L168),
+[`Six.cone_support`](../../SquaresInCircles/Six/Bounds/Supports.lean#L180),
+[`Six.soft_support`](../../SquaresInCircles/Six/Bounds/Supports.lean#L191),
+[`Six.wide_support`](../../SquaresInCircles/Six/Bounds/Supports.lean#L209),
+[`Six.narrow_support`](../../SquaresInCircles/Six/Bounds/Supports.lean#L227),
+[`Six.chordMajorant`](../../SquaresInCircles/Six/Bounds/Supports.lean#L59),
+[`Six.chord_support`](../../SquaresInCircles/Six/Bounds/Supports.lean#L64),
+[`Six.vertex_support`](../../SquaresInCircles/Six/Bounds/Supports.lean#L38),
+[`Six.center_corner`](../../SquaresInCircles/Six/Bounds/Supports.lean#L271),
+[`Six.center_face`](../../SquaresInCircles/Six/Bounds/Supports.lean#L279).*
 
 The number $\frac{31}{100}$ is just below the slope
 $\frac{1/2}{\rho_0 + 1/2} > 0.31001$ of the circle at the tip, where the
@@ -1155,15 +1155,15 @@ as + b\gamma \le sA + \gamma B - \tfrac12(s + \gamma) \le \left(l - \tfrac12\rig
 most $0$ if $v < 0$ and at most $\kappa v$ if $v \ge 0$. $\square$
 
 *Lean:
-[`Six.local_vertex_support`](../../SquaresInCircles/Six/Supports.lean#L32),
-[`Six.vertex_support`](../../SquaresInCircles/Six/Supports.lean#L38),
-[`Six.vertex_linear_upper`](../../SquaresInCircles/Six/Supports.lean#L48),
-[`Six.chart_radial_work`](../../SquaresInCircles/Six/Supports.lean#L117),
-[`Six.cap_linear_upper`](../../SquaresInCircles/Six/Supports.lean#L105),
-[`Six.disk_corner_support`](../../SquaresInCircles/Six/Supports.lean#L89),
-[`Six.circle_support_above_primary`](../../SquaresInCircles/Six/Supports.lean#L138),
-[`Six.coarse_central_work`](../../SquaresInCircles/Six/Supports.lean#L257),
-[`Six.scalar_box_support`](../../SquaresInCircles/Six/Supports.lean#L248).*
+[`Six.local_vertex_support`](../../SquaresInCircles/Six/Bounds/Supports.lean#L32),
+[`Six.vertex_support`](../../SquaresInCircles/Six/Bounds/Supports.lean#L38),
+[`Six.vertex_linear_upper`](../../SquaresInCircles/Six/Bounds/Supports.lean#L48),
+[`Six.chart_radial_work`](../../SquaresInCircles/Six/Bounds/Supports.lean#L117),
+[`Six.cap_linear_upper`](../../SquaresInCircles/Six/Bounds/Supports.lean#L105),
+[`Six.disk_corner_support`](../../SquaresInCircles/Six/Bounds/Supports.lean#L89),
+[`Six.circle_support_above_primary`](../../SquaresInCircles/Six/Bounds/Supports.lean#L138),
+[`Six.coarse_central_work`](../../SquaresInCircles/Six/Bounds/Supports.lean#L257),
+[`Six.scalar_box_support`](../../SquaresInCircles/Six/Bounds/Supports.lean#L248).*
 
 Part (3) is the analogue of Lemma 9.25 (3) for the part $A \ge l$ of the disk:
 a force at the angle $\arcsin s$ from the secondary axis does the most work at
@@ -1557,8 +1557,8 @@ diagonal $t = u$, where $F(u, u) = K + J(u) + H(u) + G(0)$. We use Lemma A.10
 
 *Lean:
 [`Six.triangle_positive`](../../SquaresInCircles/Six/Normalization/WestStress.lean#L117),
-[`concave_gt_of_endpoints`](../../SquaresInCircles/Common/Analysis.lean#L86),
-[`concave_affine_argument`](../../SquaresInCircles/Common/Analysis.lean#L112).*
+[`concave_gt_of_endpoints`](../../SquaresInCircles/Common/Analysis.lean#L102),
+[`concave_affine_argument`](../../SquaresInCircles/Common/Analysis.lean#L128).*
 
 ![The region of the angles (t, u) with -2/3 at most t, t at most u, and u between -2/5 and 2/5, cut by the lines u = 0 and t = 0 into three parts, shaded differently: u negative, t negative and u positive, and t positive. The seven vertices v1 to v7 of the parts are marked, each labelled with the values of the two west stresses there, Phi_W first and Phi_D second, all positive; dotted horizontal segments inside the parts indicate directions in which the stresses are concave](figures/appendix-b/region.svg)
 

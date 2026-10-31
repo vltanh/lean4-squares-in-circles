@@ -1,7 +1,7 @@
 module
 
 public import SquaresInCircles.Six.Normalization.Caps
-public import SquaresInCircles.Six.Containing
+public import SquaresInCircles.Six.Bounds.Containing
 public import SquaresInCircles.Common.Trigonometry
 
 /-!

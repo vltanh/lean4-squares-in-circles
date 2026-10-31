@@ -1,7 +1,7 @@
 module
 
 public import SquaresInCircles.Six.Wings.WestSign
-public import SquaresInCircles.Six.Supports
+public import SquaresInCircles.Six.Bounds.Supports
 
 /-!
 # Six squares: the angle of D with W on its own axis

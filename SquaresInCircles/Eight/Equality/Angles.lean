@@ -2,13 +2,14 @@ module
 
 public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Arctan
 public import SquaresInCircles.Common.Basic
-public import SquaresInCircles.Eight.Stationary.FixedEval
+public import SquaresInCircles.Eight.ExactFamily.Envelope
+public import SquaresInCircles.Eight.ExactFamily.CentralParameters
 
 /-!
 # Eight squares: the angle of the central square and its half-angle coordinate
 
 The parameters of the statement describe the frame of the central square by an angle `θ`
-(`Parameters`), those of `Stationary/Coordinates.lean` by the half-angle coordinate
+(`Parameters`), those of `ExactFamily/Coordinates.lean` by the half-angle coordinate
 `w = tan (θ/2)` (`EqualityParameters`). The maps `angleToHalf θ = sin θ / (1 + cos θ)` and
 `halfToAngle w = 2 arctan w` are inverse to each other between the representatives
 `-π/4 ≤ θ < π/4` (`Parameters.AngleRepresentative`) and the interval `1 - √2 ≤ w < √2 - 1`
@@ -210,7 +211,7 @@ section
 noncomputable section
 
 namespace SquaresInCircles.Eight.GeometricModel
-open Stationary
+open ExactFamily
 
 def angleToHalf (θ : ℝ) : ℝ := Real.sin θ/(1+Real.cos θ)
 def halfToAngle (w : ℝ) : ℝ := 2*Real.arctan w
@@ -330,7 +331,7 @@ private theorem unitSquare_eq {K L : UnitSquare} (h1 : K.center=L.center)
 end SquaresInCircles.Eight.GeometricModel
 
 namespace SquaresInCircles.Eight.Parameters
-open GeometricModel Stationary
+open GeometricModel ExactFamily
 
 /-- The parameters with the half-angle coordinate `angleToHalf θ` in place of the angle; only the
 equivalence of the two families uses it. -/

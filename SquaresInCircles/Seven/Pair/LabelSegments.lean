@@ -1,7 +1,7 @@
 module
 
 public import SquaresInCircles.Seven.Pair.LabelBoundary
-public import SquaresInCircles.Seven.Exterior
+public import SquaresInCircles.Seven.Bounds.Exterior
 public import SquaresInCircles.Common.Trigonometry
 
 /-!

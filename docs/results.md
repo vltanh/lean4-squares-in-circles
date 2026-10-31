@@ -18,12 +18,12 @@ theorem optimal_packings (n : ℕ) (hn : 1 ≤ n ∧ n ≤ 8)
 `optimal_radius` says both that some packing of `n` unit squares fits in a disk
 of radius `optimalRadius n` and that none fits in a smaller one.
 `optimal_packings` says that the packings of that radius are exactly the
-configurations congruent to an optimal model. `optimalPackings n` is
-`{X.model}` for the case `X` of `n ≤ 6`, so the optimal packing is unique up to
-a rotation about the disk centre and a relabelling, the set of all column
-packings `Set.range Seven.columnModel` for `n = 7`, and for `n = 8` the set
-`Eight.models` of the models of parameters that pack the disk and their
-reflections ([Definitions](definitions.md#the-optimal-packings)). The statements use only
+configurations congruent to an optimal model. `optimalPackings n` selects the
+`models` set of the corresponding case. For `n ≤ 6`, `X.models = {X.model}`,
+so the optimal packing is unique up to a rotation about the disk centre and a
+relabelling. `Seven.models = Set.range Seven.columnModel` contains all column
+packings, and `Eight.models` contains the models of parameters that pack the
+disk and their reflections ([Definitions](definitions.md#the-optimal-packings)). The statements use only
 the definitions in [Definitions](definitions.md).
 
 `optimal_packings_rigid` restates the forward direction of `optimal_packings`
@@ -40,6 +40,7 @@ model.
 | --- | --- |
 | `Three.radius`, `Three.centers` | the optimal radius and the centres of the optimal model |
 | `Three.model` | the axis-parallel squares at `Three.centers` |
+| `Three.models` | the singleton set `{Three.model}` |
 | `Three.model_packing` | `Three.model` is a packing in the closed disk of radius `Three.radius` about the origin |
 | `Three.uniqueness` | `Packing S o Three.radius → Congruent S o Three.model` |
 | `Three.optimum` | the two above and a point of `Three.model` on the circle of radius `Three.radius`, as an `Optimum 3` |
@@ -58,7 +59,7 @@ For seven squares the optimum is not unique: `Seven.column_packing` shows that
 the three middle squares of the optimal packing can take any heights at least
 1 apart within `√3 - 1/2` of the centre, a range of total slack `2√3 - 3`, and
 `Seven.uniqueness` shows that these column packings are all the optimal
-packings, so `Seven.optimum` has the models `Set.range Seven.columnModel`.
+packings, so `Seven.optimum` has the models `Seven.models`.
 `Seven.classification_by_slots` parametrizes the family by the four gaps of the
 column, nonnegative with sum `2√3 - 3`. The pair theorem of
 [seven squares](proof/10-seven.md#theorem-1024-marker-separation) is about just two
@@ -72,20 +73,20 @@ family. The radius of the statement, the least radius of a disk about the
 origin that holds five corners with the spans of the family, is the radius
 `√qStar` of the stationary packing (`Eight.radius_eq_stationary`), and the
 minimizing corners are unique (`Eight.FiveCorner.existsUnique_minimizer`).
-`Eight.lower_bound` and `Eight.uniqueness` chain the central core
+`Eight.uniqueness` chains the central core
 (`Eight.central_core_and_exteriors`), the boundary reduction of the seven
 exterior squares (`Eight.boundary_reduction_exists`), the budget of their frames
 (`Eight.four_type_cycle_budget`), the classification of their quarter words
-(`Eight.quarter_word_complete_classification`) and the exclusion of every
-boundary cycle without the stationary frames (`Eight.sharp_source_entry`). The
+(`Eight.quarter_word_complete_classification`) and the checked-table capture
+near the stationary frames (`Eight.Candidate.capture`). The
 completed identity of the stationary chain, evaluated at the centres of the
-packing, then gives the lower bound
-(`Eight.GeometricModel.sharp_radius_lower_bound`) and, at the optimal radius, a
-model of the family (`Eight.GeometricModel.sharp_uniqueness`): five squares are
+packing, then gives a model of the family (`Eight.stationary_classification`): five squares are
 fixed, `T` and `G` slide, and the central square moves and turns. The models of
 the stationary chart are those of the statement
 (`Eight.GeometricModel.models_eq_stationary`), and each packs the disk
-(`Eight.GeometricModel.model_packing`).
+(`Eight.model_packing`). `Eight.optimum` assembles these facts, and
+`Eight.lower_bound` follows from the shared `Optimum.optimality`, as in the
+other seven cases.
 
 For [six squares](proof/09-six.md) `Six.model` has five axis-parallel squares and
 one turned by `π / 4`, `Six.diagonalSquare`, so there are no `Six.centers`.

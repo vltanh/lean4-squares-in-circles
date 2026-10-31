@@ -2,7 +2,7 @@ module
 
 public import SquaresInCircles.Six.Separators.Walls
 public import SquaresInCircles.Six.Separators.Profiles
-public import SquaresInCircles.Six.Supports
+public import SquaresInCircles.Six.Bounds.Supports
 
 /-!
 # Six squares: W and D along the secondary axis of D

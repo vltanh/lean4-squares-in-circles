@@ -47,6 +47,22 @@ lemma antiOn_of_hasDeriv_nonpos {l u : ℝ} {f d : ℝ → ℝ}
     (by simpa only [interior_Icc] using fun x hx => (hd x hx).hasDerivWithinAt)
     (by simpa only [interior_Icc] using hs)
 
+/-- A lower derivative bound bounds every forward secant. -/
+theorem slope_lower_bound {f d : ℝ → ℝ} {l u a b m : ℝ}
+    (hd : ∀ x ∈ Icc l u, HasDerivAt f (d x) x)
+    (hm : ∀ x ∈ Icc l u, m ≤ d x)
+    (ha : a ∈ Icc l u) (hb : b ∈ Icc l u) (hab : a ≤ b) :
+    m*(b-a) ≤ f b-f a := by
+  have h := monoOn_of_hasDeriv_nonneg
+    (f:=fun x => f x-m*x) (d:=fun x => d x-m)
+    (fun x hx => ((hd x hx).sub ((hasDerivAt_id' x).const_mul m)).continuousAt.continuousWithinAt)
+    (fun x hx => by
+      convert (hd x ⟨hx.1.le,hx.2.le⟩).sub ((hasDerivAt_id' x).const_mul m) using 1
+      ring)
+    (fun x hx => sub_nonneg.mpr (hm x ⟨hx.1.le,hx.2.le⟩)) ha hb hab
+  dsimp only at h
+  linarith only [h]
+
 /-- A function that vanishes at `0` and has a nonnegative derivative on `[0, ∞)`
 is nonnegative there. -/
 lemma nonneg_of_deriv_nonneg (f : ℝ → ℝ) (hf : Differentiable ℝ f)

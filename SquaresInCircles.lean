@@ -25,9 +25,10 @@ of the statement, in `Geometry.lean`.
 
 Every case proves the same statement, an `Optimum` (`Common/Optimum.lean`): its
 models pack the disk and reach its circle, and every packing of that radius is
-congruent to one of them. The rest follows once for all cases. Each case can
-also be imported on its own, from its folder `SquaresInCircles/One/` to
-`SquaresInCircles/Eight/`.
+congruent to one of them. Each case defines its own `radius` and `models`;
+`optimalRadius` and `optimalPackings` select them uniformly. The rest follows
+once for all cases. Each case can also be imported on its own, from its folder
+`SquaresInCircles/One/` to `SquaresInCircles/Eight/`.
 -/
 
 @[expose] public section

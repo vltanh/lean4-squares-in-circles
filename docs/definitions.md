@@ -373,17 +373,20 @@ does the same, while the five squares on the circle are fixed by
 
 `optimalPackings` collects the optimal models, and uniqueness
 (`SquaresInCircles.lean`) says that every optimal packing is congruent to one
-of them:
+of them. Every case defines `models : Set (Fin n → UnitSquare)`: for `n ≤ 6`
+it is the singleton `{model}`, for seven squares it is `Set.range columnModel`,
+and for eight squares it is the family above. The common definition selects
+these sets uniformly:
 
 ```lean
 def optimalPackings : (n : ℕ) → Set (Fin n → UnitSquare)
-  | 1 => {One.model}
-  | 2 => {Two.model}
-  | 3 => {Three.model}
-  | 4 => {Four.model}
-  | 5 => {Five.model}
-  | 6 => {Six.model}
-  | 7 => Set.range Seven.columnModel
+  | 1 => One.models
+  | 2 => Two.models
+  | 3 => Three.models
+  | 4 => Four.models
+  | 5 => Five.models
+  | 6 => Six.models
+  | 7 => Seven.models
   | 8 => Eight.models
   | _ => ∅
 ```

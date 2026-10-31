@@ -1,6 +1,6 @@
 module
 
-public import SquaresInCircles.Six.Constants
+public import SquaresInCircles.Six.Bounds.Constants
 public import SquaresInCircles.Common.Constructions
 
 /-!

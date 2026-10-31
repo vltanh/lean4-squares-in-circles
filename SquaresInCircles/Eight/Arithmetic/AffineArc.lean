@@ -1,12 +1,9 @@
 module
 
-public import Mathlib.Algebra.Order.Star.Real
-public import Mathlib.RingTheory.Etale.Weakly
-public import Mathlib.RingTheory.Flat.TorsionFree
-public import Mathlib.RingTheory.TotallySplit
-public import Mathlib.Tactic
-public import Mathlib.Topology.Algebra.Module.ModuleTopology
-public import SquaresInCircles.Common.Analysis
+public import SquaresInCircles.Eight.Arithmetic.Taylor
+public import SquaresInCircles.Eight.Arithmetic.Bernstein
+public import SquaresInCircles.Common.Basic
+public import SquaresInCircles.Eight.Boundary.SeparatingAxis
 
 /-!
 # Eight squares: margins, charged costs and supports on arcs
@@ -14,7 +11,7 @@ public import SquaresInCircles.Common.Analysis
 On an edge of a boundary cycle, from a source square with state `(a, b)` and sign `σ` to a target
 square with state `(A, B)` and sign `τ`, with the angle `φ` between their frames, each of the four
 forward axes (`ForwardAxis`) separates the two squares exactly where its margin `forwardMargin`
-is nonnegative; `forwardMargin_actual` identifies the margins with those of `SeparatingAxis.lean`.
+is nonnegative; `forwardMargin_actual` identifies the margins with those of `Boundary/SeparatingAxis.lean`.
 With an affine label `L(a, b) = c + p a + q b` on each square (`AffineLabel`), the charged cost of
 the edge is `φ + L_s(a, b) - L_t(A, B) - β h(φ)` with the frame charge
 `h(φ) = (|sin φ| + |cos φ| - 1) / 2` (`chargedCost`, `frameCharge`).
@@ -79,12 +76,30 @@ def forwardMargin (axis : ForwardAxis) (σ τ a b A B φ : ℝ) : ℝ :=
   | .three => a*Real.sin φ+σ*b*Real.cos φ-τ*B-frameWidth φ
   | .four => a-A*Real.cos φ-τ*B*Real.sin φ-frameWidth φ
 
+/-- The margins are those of `Boundary/SeparatingAxis.lean`, with the axes numbered from zero. -/
+theorem forwardMargin_actual (axis : ForwardAxis) (σ τ a b A B φ : ℝ) :
+    forwardMargin axis σ τ a b A B φ =
+      SquaresInCircles.Eight.forwardMargin axis.index a b A B σ τ φ := by
+  cases axis <;> simp [ForwardAxis.index,forwardMargin,
+    SquaresInCircles.Eight.forwardMargin,frameWidth,pairWidth]
+
+/-- The charged cost `φ + L_s(a, b) - L_t(A, B) - β h(φ)` of an edge. -/
+def chargedCost (Ls Lt : AffineLabel) (β a b A B φ : ℝ) : ℝ :=
+  φ+Ls.eval a b-Lt.eval A B-β*frameCharge φ
+
 /-- Exchanging the source and the target and negating both signs keeps the margin of the
 reversed axis. -/
 theorem margin_reverse (axis : ForwardAxis) (σ τ a b A B φ : ℝ) :
     forwardMargin axis.reverse (-τ) (-σ) A B a b φ =
       forwardMargin axis σ τ a b A B φ := by
   cases axis <;> simp only [ForwardAxis.reverse,forwardMargin] <;> ring
+
+/-- Exchanging the source and the target and negating both labels keeps the charged cost. -/
+theorem charge_reverse (Ls Lt : AffineLabel) (β a b A B φ : ℝ) :
+    chargedCost Lt.neg Ls.neg β A B a b φ = chargedCost Ls Lt β a b A B φ := by
+  simp only [chargedCost,AffineLabel.eval,AffineLabel.neg]
+  push_cast
+  ring
 
 /-- The coefficient of `a` in the charged cost less `λ` times the margin of an axis
 (`lagrangian_identity`); `sourceY`, `targetX` and `targetY` are those of `b`, `A` and `B`. -/
@@ -112,6 +127,18 @@ def targetY (axis : ForwardAxis) (Lt : AffineLabel) (lam τ φ : ℝ) : ℝ :=
 def lagrangianBase (Ls Lt : AffineLabel) (lam β φ : ℝ) : ℝ :=
   φ+(Ls.c : ℝ)-Lt.c+lam*frameWidth φ-β*frameCharge φ
 
+/-- The charged cost less `λ` times a margin is a constant plus linear functions of the source
+and the target state. -/
+theorem lagrangian_identity (axis : ForwardAxis) (Ls Lt : AffineLabel)
+    (lam β σ τ a b A B φ : ℝ) :
+    chargedCost Ls Lt β a b A B φ-lam*forwardMargin axis σ τ a b A B φ =
+      lagrangianBase Ls Lt lam β φ + sourceX axis Ls lam φ*a +
+      sourceY axis Ls lam σ φ*b + targetX axis Lt lam φ*A +
+      targetY axis Lt lam τ φ*B := by
+  cases axis <;>
+    simp only [chargedCost,forwardMargin,lagrangianBase,sourceX,sourceY,
+      targetX,targetY,AffineLabel.eval] <;> ring
+
 /-- On the circle `(a - v)² + (b - v)² = ρ²`, `X a + Y b ≥ v (X + Y) - ρ √(X² + Y²)`, by
 Cauchy–Schwarz. -/
 theorem full_circle_lower {v ρ a b X Y : ℝ} (hρ : 0 ≤ ρ)
@@ -126,6 +153,16 @@ theorem full_circle_lower {v ρ a b X Y : ℝ} (hρ : 0 ≤ ρ)
   have hl : -ρ*Real.sqrt (X^2+Y^2) ≤ X*(a-v)+Y*(b-v) := by
     nlinarith [sq_nonneg (X*(b-v)-Y*(a-v))]
   nlinarith only [hl]
+
+/-- A lower bound of `X a + Y b` at the two ends of a segment `b ∈ [l, u]` holds on the whole
+segment. -/
+theorem side_endpoint_lower {a b l u X Y m : ℝ} (hb : l ≤ b ∧ b ≤ u)
+    (hl : m ≤ X*a+Y*l) (hu : m ≤ X*a+Y*u) : m ≤ X*a+Y*b := by
+  by_cases hY : 0 ≤ Y
+  · have h := mul_le_mul_of_nonneg_left hb.1 hY
+    linarith
+  · have h := mul_le_mul_of_nonpos_left hb.2 (le_of_not_ge hY)
+    linarith
 
 /-- The right half of the circle with centre `(v, v)` and radius `ρ`:
 `a = v + √(ρ² - (b - v)²)` as a function of `b`. -/
@@ -158,6 +195,16 @@ theorem circleRatio_deriv {v ρ b : ℝ} (hb : 0 < ρ^2-(b-v)^2) :
     field_simp [ne_of_gt hr]
     nlinarith [Real.sq_sqrt hb.le]
 
+/-- The ratio increases along an arc of the right half. -/
+theorem circleRatio_mono {v ρ l u : ℝ}
+    (hpos : ∀ b ∈ Icc l u, 0 < ρ^2-(b-v)^2) :
+    MonotoneOn (circleRatio v ρ) (Icc l u) := by
+  apply monoOn_of_hasDeriv_nonneg
+    (fun b hb => (circleRatio_deriv (hpos b hb)).continuousAt.continuousWithinAt)
+    (fun b hb => circleRatio_deriv (hpos b ⟨hb.1.le,hb.2.le⟩))
+  intro b hb
+  exact div_nonneg (sq_nonneg ρ) (by positivity)
+
 theorem circle_functional_deriv {v ρ X Y b : ℝ} (hb : 0 < ρ^2-(b-v)^2) :
     HasDerivAt (fun z => X*circleX v ρ z+Y*z) (Y-X*circleRatio v ρ b) b := by
   convert ((circleX_deriv hb).const_mul X).fun_add ((hasDerivAt_id' b).const_mul Y) using 1
@@ -184,5 +231,56 @@ theorem circle_endpoints_lower {v ρ X Y l u b m : ℝ} (hX : 0 ≤ X)
   have hc := circle_functional_concave (Y := Y) hX hpos
   exact (le_min hl hu).trans
     (hc.min_le_of_mem_Icc ⟨le_rfl,hb.1.trans hb.2⟩ ⟨hb.1.trans hb.2,le_rfl⟩ hb)
+
+/-- `Y - X r ≥ 0` at the two ends of an interval of `r` gives it on the whole interval, for
+either sign of `X`. -/
+theorem affine_of_endpoint_bounds {X Y r rl ru : ℝ} (hr : rl ≤ r ∧ r ≤ ru)
+    (hl : 0 ≤ Y-X*rl) (hu : 0 ≤ Y-X*ru) : 0 ≤ Y-X*r := by
+  by_cases hX : 0 ≤ X
+  · have h := mul_le_mul_of_nonneg_left hr.2 hX
+    linarith
+  · have h := mul_le_mul_of_nonpos_left hr.1 (le_of_not_ge hX)
+    linarith
+
+/-- If the slope `Y - X r` is nonnegative at both ends of an arc of the right half, `X a + Y b`
+is least at the lower end. -/
+theorem circle_lower_endpoint {v ρ X Y l u b : ℝ}
+    (hpos : ∀ z ∈ Icc l u, 0 < ρ^2-(z-v)^2) (hb : b ∈ Icc l u)
+    (hl : 0 ≤ Y-X*circleRatio v ρ l) (hu : 0 ≤ Y-X*circleRatio v ρ u) :
+    X*circleX v ρ l+Y*l ≤ X*circleX v ρ b+Y*b := by
+  have hlu := hb.1.trans hb.2
+  have hr := circleRatio_mono hpos
+  have hf : MonotoneOn (fun z => X*circleX v ρ z+Y*z) (Icc l u) := by
+    apply monoOn_of_hasDeriv_nonneg
+      (fun z hz => (circle_functional_deriv (X := X) (Y := Y) (hpos z hz)).continuousAt.continuousWithinAt)
+      (fun z hz => circle_functional_deriv (X := X) (Y := Y) (hpos z ⟨hz.1.le,hz.2.le⟩))
+    intro z hz
+    exact affine_of_endpoint_bounds
+      ⟨hr ⟨le_rfl,hlu⟩ ⟨hz.1.le,hz.2.le⟩ hz.1.le,
+       hr ⟨hz.1.le,hz.2.le⟩ ⟨hlu,le_rfl⟩ hz.2.le⟩ hl hu
+  exact hf ⟨le_rfl,hlu⟩ hb hb.1
+
+/-- If the slope `Y - X r` is nonpositive at both ends of an arc of the right half, `X a + Y b`
+is least at the upper end. -/
+theorem circle_upper_endpoint {v ρ X Y l u b : ℝ}
+    (hpos : ∀ z ∈ Icc l u, 0 < ρ^2-(z-v)^2) (hb : b ∈ Icc l u)
+    (hl : Y-X*circleRatio v ρ l ≤ 0) (hu : Y-X*circleRatio v ρ u ≤ 0) :
+    X*circleX v ρ u+Y*u ≤ X*circleX v ρ b+Y*b := by
+  have h := circle_lower_endpoint (X := -X) (Y := -Y) hpos hb
+    (by linarith) (by linarith)
+  have hlu := hb.1.trans hb.2
+  have hr := circleRatio_mono hpos
+  have hf : AntitoneOn (fun z => X*circleX v ρ z+Y*z) (Icc l u) := by
+    apply antiOn_of_hasDeriv_nonpos
+      (fun z hz => (circle_functional_deriv (X := X) (Y := Y) (hpos z hz)).continuousAt.continuousWithinAt)
+      (fun z hz => circle_functional_deriv (X := X) (Y := Y) (hpos z ⟨hz.1.le,hz.2.le⟩))
+    intro z hz
+    have hh := affine_of_endpoint_bounds (X := -X) (Y := -Y)
+      ⟨hr ⟨le_rfl,hlu⟩ ⟨hz.1.le,hz.2.le⟩ hz.1.le,
+       hr ⟨hz.1.le,hz.2.le⟩ ⟨hlu,le_rfl⟩ hz.2.le⟩
+      (by linarith : 0 ≤ -Y-(-X)*circleRatio v ρ l)
+      (by linarith : 0 ≤ -Y-(-X)*circleRatio v ρ u)
+    linarith
+  exact hf hb ⟨hlu,le_rfl⟩ hb.2
 
 end SquaresInCircles.Eight.Arithmetic

@@ -2,7 +2,7 @@ module
 
 public import SquaresInCircles.Six.Normalization.WestPair
 public import SquaresInCircles.Common.Trigonometry
-public import SquaresInCircles.Six.Supports
+public import SquaresInCircles.Six.Bounds.Supports
 
 /-!
 # Six squares: D is not separated along the west side of C

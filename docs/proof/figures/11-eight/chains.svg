@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="338" viewBox="0 0 860 338" role="img" aria-label="The angle chains of one pair of arcs in the table that excludes tau_G at most -4/5: for each of the four margins the closed angle intervals of the rows meet at common endpoints and cover the required range">
+<title>The angle chains of one pair of arcs in the table that excludes tau_G at most -4/5: for each of the four margins the closed angle intervals of the rows meet at common endpoints and cover the required range</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2937"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<polygon points="139.8,91.9 777.8,91.9 777.8,48.4 139.8,48.4" fill="#e5e7eb" stroke="none" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="139.8,84.7 162.1,84.7 162.1,55.7 139.8,55.7" fill="#dbeafe" stroke="#1f2937" stroke-width="1" fill-opacity="1"/>
+<text x="151.0" y="70.2" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">e</text>
+<polygon points="162.1,84.7 777.8,84.7 777.8,55.7 162.1,55.7" fill="#ffedd5" stroke="#1f2937" stroke-width="1" fill-opacity="1"/>
+<text x="470.0" y="70.2" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">upper</text>
+<text x="122.4" y="70.2" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">1</text>
+<polygon points="139.8,149.9 777.8,149.9 777.8,106.4 139.8,106.4" fill="#e5e7eb" stroke="none" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="139.8,142.7 162.1,142.7 162.1,113.7 139.8,113.7" fill="#dbeafe" stroke="#1f2937" stroke-width="1" fill-opacity="1"/>
+<text x="151.0" y="128.2" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">e</text>
+<polygon points="162.1,142.7 777.8,142.7 777.8,113.7 162.1,113.7" fill="#ffedd5" stroke="#1f2937" stroke-width="1" fill-opacity="1"/>
+<text x="470.0" y="128.2" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">endpoints</text>
+<text x="122.4" y="128.2" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">2</text>
+<polygon points="139.8,207.9 777.8,207.9 777.8,164.4 139.8,164.4" fill="#e5e7eb" stroke="none" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="139.8,200.7 162.1,200.7 162.1,171.7 139.8,171.7" fill="#dbeafe" stroke="#1f2937" stroke-width="1" fill-opacity="1"/>
+<text x="151.0" y="186.2" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">e</text>
+<polygon points="162.1,200.7 239.1,200.7 239.1,171.7 162.1,171.7" fill="#ffedd5" stroke="#1f2937" stroke-width="1" fill-opacity="1"/>
+<text x="200.6" y="186.2" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">lower</text>
+<polygon points="239.1,200.7 277.6,200.7 277.6,171.7 239.1,171.7" fill="#dbeafe" stroke="#1f2937" stroke-width="1" fill-opacity="1"/>
+<text x="258.3" y="186.2" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">l</text>
+<polygon points="277.6,200.7 316.1,200.7 316.1,171.7 277.6,171.7" fill="#ffedd5" stroke="#1f2937" stroke-width="1" fill-opacity="1"/>
+<text x="296.8" y="186.2" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">c</text>
+<polygon points="316.1,200.7 354.5,200.7 354.5,171.7 316.1,171.7" fill="#dbeafe" stroke="#1f2937" stroke-width="1" fill-opacity="1"/>
+<text x="335.3" y="186.2" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">c</text>
+<polygon points="354.5,200.7 393.0,200.7 393.0,171.7 354.5,171.7" fill="#ffedd5" stroke="#1f2937" stroke-width="1" fill-opacity="1"/>
+<text x="373.8" y="186.2" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">c</text>
+<polygon points="393.0,200.7 431.5,200.7 431.5,171.7 393.0,171.7" fill="#dbeafe" stroke="#1f2937" stroke-width="1" fill-opacity="1"/>
+<text x="412.3" y="186.2" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">u</text>
+<polygon points="431.5,200.7 470.0,200.7 470.0,171.7 431.5,171.7" fill="#ffedd5" stroke="#1f2937" stroke-width="1" fill-opacity="1"/>
+<text x="450.7" y="186.2" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">u</text>
+<polygon points="470.0,200.7 777.8,200.7 777.8,171.7 470.0,171.7" fill="#dbeafe" stroke="#1f2937" stroke-width="1" fill-opacity="1"/>
+<text x="623.9" y="186.2" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">endpoints</text>
+<text x="122.4" y="186.2" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">3</text>
+<polygon points="139.8,265.9 777.8,265.9 777.8,222.5 139.8,222.5" fill="#e5e7eb" stroke="none" stroke-width="1.5" fill-opacity="1"/>
+<polygon points="139.8,258.7 162.1,258.7 162.1,229.7 139.8,229.7" fill="#dbeafe" stroke="#1f2937" stroke-width="1" fill-opacity="1"/>
+<text x="151.0" y="244.2" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">e</text>
+<polygon points="162.1,258.7 777.8,258.7 777.8,229.7 162.1,229.7" fill="#ffedd5" stroke="#1f2937" stroke-width="1" fill-opacity="1"/>
+<text x="470.0" y="244.2" font-size="11" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">endpoints</text>
+<text x="122.4" y="244.2" font-size="14" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">4</text>
+<text x="122.4" y="32.5" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">margin</text>
+<line x1="139.8" y1="279.0" x2="801.0" y2="279.0" stroke="#1f2937" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="139.8" y1="279.0" x2="139.8" y2="287.7" stroke="#1f2937" stroke-width="1"/>
+<text x="136.9" y="302.2" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="end" dominant-baseline="middle">−0.0254</text>
+<line x1="162.1" y1="279.0" x2="162.1" y2="287.7" stroke="#1f2937" stroke-width="1"/>
+<text x="165.0" y="302.2" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle">0</text>
+<line x1="470.0" y1="279.0" x2="470.0" y2="287.7" stroke="#1f2937" stroke-width="1"/>
+<text x="470.0" y="302.2" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">0.35</text>
+<line x1="777.8" y1="279.0" x2="777.8" y2="287.7" stroke="#1f2937" stroke-width="1"/>
+<text x="777.8" y="302.2" font-size="12" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="middle" dominant-baseline="middle">0.7</text>
+<text x="806.8" y="264.5" font-size="15" font-family="Georgia, 'Times New Roman', serif" fill="#1f2937" text-anchor="start" dominant-baseline="middle" font-style="italic"><tspan font-style="italic">φ</tspan></text>
+</svg>

@@ -1,7 +1,7 @@
 module
 
 public import SquaresInCircles.Eight.Arithmetic.Arctangent
-public import SquaresInCircles.Eight.Boundary.RadiusTransfer
+public import SquaresInCircles.Eight.Boundary.Geometry
 
 /-!
 # Eight squares: pairs of two core squares
@@ -21,7 +21,7 @@ of `arctan` at `3/4` and `6/7` are bounded in `Arctangent.lean`. So the cost of 
 two core squares, with the signed markers of its ends, exceeds `4/3 - 354/1000 > 979/1000`
 (`core_cost`), for all signs and separating axes at once. With the bound `21/100` of the frame
 charge (`charge_upper`) this gives the pairs of two core charts in `FourTypePairs.lean` and in
-`WordGeometry.lean`; `Candidate/GeometricCoreMarker.lean` uses `core_gap` and `charge_upper`.
+`Boundary/Pairs.lean`; `Candidate/GeometricCoreMarker.lean` uses `core_gap` and `charge_upper`.
 -/
 
 @[expose] public section
@@ -72,31 +72,24 @@ theorem arctan_tangent {x t : ℝ} (hx : 0 ≤ x) (ht : 0 ≤ t) :
   have he : (x-t)/(1+t^2)=(1/(1+t^2))*x-(1/(1+t^2))*t := by ring
   linarith
 
-theorem arctan_lower_three {x : ℝ} (hx : 0 ≤ x) : x-x^3/3 ≤ Real.arctan x := by
-  have hh := nonneg_of_deriv_nonneg (fun z : ℝ => Real.arctan z-(z-z^3/3))
-    (Real.differentiable_arctan.sub (by fun_prop)) (by norm_num) (fun y _ => by
-      have hy : (0:ℝ) < 1+y^2 := by positivity
-      have hd : deriv (fun z : ℝ => Real.arctan z-(z-z^3/3)) y = y^4/(1+y^2) := by
-        rw [deriv_fun_sub (Real.differentiableAt_arctan y) (by fun_prop), Real.deriv_arctan]
-        simp (disch := fun_prop)
-        field_simp
-        ring
-      rw [hd]
-      positivity) hx
-  linarith
+theorem arctan_lower_three {x : ℝ} (hx : 0 ≤ x) : x-x^3/3 ≤ Real.arctan x :=
+  Arithmetic.arctan_lower_cubic hx
 
 theorem arctan_six_sevenths : (2/3:ℝ) < Real.arctan (6/7:ℝ) := by
-  have h := Arithmetic.atanLower_le (x := (6/7:ℝ)) (by norm_num)
-  norm_num [Arithmetic.atanLower] at h
-  linarith
+  have h := Arithmetic.arctan_complement (x := (6/7:ℝ)) (by norm_num)
+  have hu := arctan_tangent (x := (1/13:ℝ)) (t := 0) (by norm_num) (by norm_num)
+  norm_num at h hu
+  linarith [Real.pi_gt_three]
 
 /-- On `[0, ∞)`, `x - x³/3 ≤ arctan x < 161/250 + (16/25)(x - 3/4)`: the tangent at `3/4`, with
 `arctan (3/4) < 161/250`. -/
 theorem side_angle {x : ℝ} (hx : 0 ≤ x) :
     x-x^3/3 ≤ Real.arctan x ∧ Real.arctan x < 161/250+(16/25)*(x-3/4) := by
   have hu := arctan_tangent hx (show (0:ℝ) ≤ 3/4 by norm_num)
-  have h := Arithmetic.arctan_le_atanUpper (x := (3/4:ℝ)) (by norm_num)
-  norm_num [Arithmetic.atanUpper] at h hu
+  have h := Arithmetic.arctan_complement (x := (3/4:ℝ)) (by norm_num)
+  have hl := arctan_lower_three (x := (1/7:ℝ)) (by norm_num)
+  have hp := pi_lt_22_over_7
+  norm_num at h hl hu
   exact ⟨arctan_lower_three hx, by linarith⟩
 
 /-- The circle equation of the core corner bounds its primary coordinate and gives a quadratic

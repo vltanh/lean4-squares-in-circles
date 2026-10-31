@@ -1,6 +1,6 @@
 module
 
-public import SquaresInCircles.Seven.Exterior
+public import SquaresInCircles.Seven.Bounds.Exterior
 public import SquaresInCircles.Common.SeparatingAxes
 
 /-!
