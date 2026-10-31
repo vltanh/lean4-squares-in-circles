@@ -238,3 +238,12 @@ applied after uniform center regions are derived from any combination
 of these necessary forms. The goal is a finite family of capacity
 certificates valid over all orientations and transmitter slides in each
 family. No such complete family is claimed by this normalization note.
+
+## Radial circle-multiplicity refinement, 2026-10-31
+
+The reviewed [radial transmission-angle theorem](RADIAL_SOURCE_TRANSMISSION_ANGLE.md)
+excludes radial central C whenever either SS endpoint is also radial-side.
+Thus the remaining R-VV family has unique circle vertices at both SS
+endpoints, with mixed or two-vertex SS supports; E/E remains excluded by
+the earlier radial-central theorem. This refinement changes no whole-case
+status.

@@ -38,18 +38,17 @@ five inner centers by an explicit finite-table argument. Thus a hypothetical
 smaller ten-packing must have **exactly three or four inner centers**.
 The equality classification remains open outside the completed classes.
 
-## Resumed checkpoint — 2026-10-31
+## Final handoff checkpoint — 2026-10-31
 
-Research has resumed. Exact finite tables are permitted; every table must
+Research is paused at the user's handoff request. Exact finite tables are permitted; every table must
 cover its full stated parameter domain and use exact, reviewable inequalities.
 The unrestricted proof is still open.
 The fixed master denominator is **336**, with **274 reviewed hand closures
 and 62 open families**. No additional master ID should be created for a
-research refinement. The latest main research checkpoints are
-`e67bbc1fbcbfba829bb1c9044c15b4486ef683fb` (frozen master and universal patch
-reductions) and `c7b306f86b82162a6b2865108a22c634a76e43f7` (shared capacity,
-SS reductions, numerical research and exact obstruction examples). This
-handoff commit preserves the final D-endpoint result and next obligations.
+research refinement. The latest whole-case closure was committed as
+`cb58d3bf81ba71afe156cf883c32de0eefa93a96`: the 24-row loaded-ray table
+excludes C20-M08-L07-B01-T02. This handoff preserves the subsequent reviewed
+local tables, numerical surveys, and explicitly unreviewed continuation notes.
 
 | All open IDs, grouped for shared arguments | Count | Next common obligation |
 | --- | ---: | --- |
@@ -85,6 +84,14 @@ parameterizes the entire both-unique branch with three source rows, all
 endpoint side-normal alternatives and both full S slide intervals. These
 are uniform inputs for a completion table, not a whole-case exclusion.
 
+The [16-interval vertical-source table](ONE_DIAGONAL_VERTICAL_SOURCE_SIDE_EXCLUSION.md)
+and [further torque exclusions](ONE_DIAGONAL_VERTICAL_SOURCE_TORQUE_EXCLUSIONS.md)
+remove every vertical-D-endpoint source row except V_V with radial C.
+The unfinished [radial-source interval exploration](RADIAL_VERTICAL_SOURCE_RESEARCH_HANDOFF.md)
+leaves 30 unresolved cells and is **not** a proof. The
+[focused diagonal handoff](DIAGONAL_CYCLE_RESEARCH_HANDOFF_2026_10_31.md)
+records all remaining radial and uniform completion obligations.
+
 For LSLSLSS, the remaining central forms are U-EE, U-VV-A,
 and radial R-VV with mixed or two-vertex SS endpoint support. U-EE requires
 R²>13/3 and both source coordinates above one. U-VE-I, R-VE and radial
@@ -92,16 +99,38 @@ R-VV with E/E SS endpoints are hand excluded. The new
 [nonincident-source](NONINCIDENT_SIDE_SOURCE_EXCLUSION.md) two-row table
 and [opposite-vertex-source](OPPOSITE_VERTEX_SOURCE_EXCLUSION.md) theorem
 also exclude U-VE-N and U-VV-O for any two positive-width paths, even with
-extra far-endpoint contacts. The existing center-cover
+extra far-endpoint contacts. The [radial transmission-angle theorem](RADIAL_SOURCE_TRANSMISSION_ANGLE.md)
+now additionally requires both SS endpoints to have unique circle vertices
+whenever central C is radial-side. The existing center-cover
 certificates cover their stated center regions only. Establishing uniform
 regions for every realization is still the missing step.
+
+The [degree-two loaded VV support table](LOADED_DEGREE_TWO_VV_SUPPORT_TABLE.md)
+is also reviewed. Off the load ray, the other contact must be an interior
+shared-side aggregate. The on-ray exception forces coincident applications,
+two inner circle-clear neighbors, and an unloaded branching VV neighbor;
+it is therefore impossible in a whole simple-cycle component.
+
+Unfinished routes are preserved without closure claims:
+
+- [Stronger coupled loaded-run angle](LOADED_RUN_STRONGER_ANGLE_HANDOFF.md):
+  a joint bound above pi/2-atan(1/45) may close two more D signatures;
+  no complete table exists, and larger-offset separators remain a gap.
+- [Diagonal block completion](DIAGONAL_TRANSLATED_BLOCK_RESEARCH.md):
+  a proposed quadrant-straddler lemma and 2+2+1 capacity argument need
+  review of separator coverage. The three-square-junction case remains.
+- [The 27-row numerical D survey](ONE_DIAGONAL_TWO_SIDE_NORMAL_FORM_EXPLORATION.md)
+  reproduces three filtered roots, but is neither exhaustive nor a physical
+  realization or completion certificate. Its JSON was reproduced identically.
 
 Validation at handoff: the master renderer and its independent audit agree
 on all 336 IDs and 62 open rows; the frozen-manifest mutation check rejects
 changed obligations. The cycle checker agrees by independent enumerations
 on all 279 signatures. The seven-body exact checker verifies all 28 cells
 (11 empty), with maximum assigned squared distance 197/200. The saved
-seven-body numerical candidate JSON was reproduced identically. Published
+seven-body numerical candidate JSON was reproduced identically. The new
+24-row loaded-ray checker verifies all 72 bounds, and the 16-interval
+vertical-source checker verifies all 32 bounds, each positive. Published
 files were compared with their remote Git blob hashes. No Lean compilation
 or kernel check was run or claimed.
 
@@ -111,6 +140,8 @@ From this directory, regenerate/verify the research bookkeeping with:
 python update_case_roadmap.py
 python check_cycle_cases.py
 python check_seven_body_central_hole_cover.py
+python check_loaded_three_ray_angle_bound.py
+python check_diagonal_vertical_source_side.py
 ```
 
 The [reciprocal-tiling research note](RECIPROCAL_TILING_RESEARCH_HANDOFF.md)

@@ -1,0 +1,242 @@
+{
+  "status": "exploratory_not_exhaustive_not_a_proof",
+  "warning": "No exact roots, parameter coverage, nonoverlap, or completion certified.",
+  "seed": 20261031,
+  "starts_per_row": 24,
+  "rows": [
+    {
+      "endpoints": "VV",
+      "source": "E_A",
+      "circle": "left",
+      "roots": [
+        {
+          "parameters": [
+            2.0325299468783515,
+            1.7976025298772547,
+            0.6225256300649568
+          ],
+          "residual": 1.7763568394002505e-15,
+          "source_center": [
+            -0.028036237289002286,
+            1.3394175592072162
+          ],
+          "normals": [
+            [
+              0.4932175720140603,
+              0.8699059872518152
+            ],
+            [
+              -0.45630306216596506,
+              0.8898244295690939
+            ]
+          ],
+          "source_edge_length": 0.5341875271615448
+        }
+      ]
+    },
+    {
+      "endpoints": "VV",
+      "source": "E_A",
+      "circle": "right",
+      "roots": []
+    },
+    {
+      "endpoints": "VV",
+      "source": "E_A",
+      "circle": "radial",
+      "roots": []
+    },
+    {
+      "endpoints": "VV",
+      "source": "E_B",
+      "circle": "left",
+      "roots": []
+    },
+    {
+      "endpoints": "VV",
+      "source": "E_B",
+      "circle": "right",
+      "roots": [
+        {
+          "parameters": [
+            2.032529946878354,
+            1.6166110324958491,
+            0.6225256300649713
+          ],
+          "residual": 1.630086460497151e-14,
+          "source_center": [
+            0.02803623728900312,
+            1.339417559207217
+          ],
+          "normals": [
+            [
+              0.4563030621659803,
+              0.8898244295690861
+            ],
+            [
+              -0.49321757201406724,
+              0.8699059872518111
+            ]
+          ],
+          "source_edge_length": 0.5341875271615125
+        }
+      ]
+    },
+    {
+      "endpoints": "VV",
+      "source": "E_B",
+      "circle": "radial",
+      "roots": []
+    },
+    {
+      "endpoints": "VV",
+      "source": "V_V",
+      "circle": "left",
+      "roots": []
+    },
+    {
+      "endpoints": "VV",
+      "source": "V_V",
+      "circle": "right",
+      "roots": []
+    },
+    {
+      "endpoints": "VV",
+      "source": "V_V",
+      "circle": "radial",
+      "roots": [
+        {
+          "parameters": [
+            1.9999376419249972,
+            1.7071067811865475,
+            0.4893831521539678
+          ],
+          "residual": 2.220446049250313e-15,
+          "source_center": [
+            -2.220446049250313e-16,
+            1.4364272698938425
+          ],
+          "normals": [
+            [
+              0.20710678118654718,
+              0.9783183434785161
+            ],
+            [
+              -0.20710678118654718,
+              0.9783183434785161
+            ]
+          ],
+          "source_edge_length": 1.0000000000000004
+        }
+      ]
+    },
+    {
+      "endpoints": "EV",
+      "source": "E_A",
+      "circle": "left",
+      "roots": []
+    },
+    {
+      "endpoints": "EV",
+      "source": "E_A",
+      "circle": "right",
+      "roots": []
+    },
+    {
+      "endpoints": "EV",
+      "source": "E_A",
+      "circle": "radial",
+      "roots": []
+    },
+    {
+      "endpoints": "EV",
+      "source": "E_B",
+      "circle": "left",
+      "roots": []
+    },
+    {
+      "endpoints": "EV",
+      "source": "E_B",
+      "circle": "right",
+      "roots": []
+    },
+    {
+      "endpoints": "EV",
+      "source": "E_B",
+      "circle": "radial",
+      "roots": []
+    },
+    {
+      "endpoints": "EV",
+      "source": "V_V",
+      "circle": "left",
+      "roots": []
+    },
+    {
+      "endpoints": "EV",
+      "source": "V_V",
+      "circle": "right",
+      "roots": []
+    },
+    {
+      "endpoints": "EV",
+      "source": "V_V",
+      "circle": "radial",
+      "roots": []
+    },
+    {
+      "endpoints": "VE",
+      "source": "E_A",
+      "circle": "left",
+      "roots": []
+    },
+    {
+      "endpoints": "VE",
+      "source": "E_A",
+      "circle": "right",
+      "roots": []
+    },
+    {
+      "endpoints": "VE",
+      "source": "E_A",
+      "circle": "radial",
+      "roots": []
+    },
+    {
+      "endpoints": "VE",
+      "source": "E_B",
+      "circle": "left",
+      "roots": []
+    },
+    {
+      "endpoints": "VE",
+      "source": "E_B",
+      "circle": "right",
+      "roots": []
+    },
+    {
+      "endpoints": "VE",
+      "source": "E_B",
+      "circle": "radial",
+      "roots": []
+    },
+    {
+      "endpoints": "VE",
+      "source": "V_V",
+      "circle": "left",
+      "roots": []
+    },
+    {
+      "endpoints": "VE",
+      "source": "V_V",
+      "circle": "right",
+      "roots": []
+    },
+    {
+      "endpoints": "VE",
+      "source": "V_V",
+      "circle": "radial",
+      "roots": []
+    }
+  ]
+}
