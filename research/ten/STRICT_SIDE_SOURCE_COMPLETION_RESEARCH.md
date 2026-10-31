@@ -1,6 +1,10 @@
 # Unfinished completion work after the strict side-source reduction
 
-**Status: exploratory continuation, not a proof or case closure.** The
+**Historical floating prototypes; the E_A/E_B completion is now proved in
+[STRICT_SIDE_SOURCE_CAPACITY_CLOSURE.md](STRICT_SIDE_SOURCE_CAPACITY_CLOSURE.md).**
+The floating scans below remain non-proof artifacts. The later exact argument
+covers both boundary limits and the full admissible E_A/E_B parameter domain.
+No whole master case is closed. The
 necessary-form argument in
 [STRICT_SIDE_SOURCE_RATIONAL_REDUCTION.md](STRICT_SIDE_SOURCE_RATIONAL_REDUCTION.md)
 is complete. The computational enclosures described here are unfinished.
@@ -69,7 +73,7 @@ assertion of a selected physical stress or a ten-square packing. A future
 proof must isolate and exclude the boundary root with valid strictness
 arguments, or give a completion bound on a neighborhood that includes it.
 
-## Capacity route still requiring proof
+## Capacity route, subsequently completed for E_A/E_B
 
 A prospective sufficient condition is to use only A,B,C,D as a four-square
 core and cover the remaining possible center domain by at most five
@@ -78,8 +82,9 @@ including the two S transmitters, and total capacity is at most nine.
 The [finite center-cover criterion](FINITE_CENTER_COVER_CAPACITY.md) supplies
 the inference once a uniform exact cover is established.
 
-No such four-core certificate is provided here. In particular the full
-transmitter slides cannot be discarded from an argument that needs them
-to seal a cavity. The V_V source rows and radial D endpoints also remain
-open. None of these numerical or algebraic explorations changes a master
-status.
+The [exact side-source closure](STRICT_SIDE_SOURCE_CAPACITY_CLOSURE.md)
+now supplies that uniform four-core certificate for E_A/E_B, after complete
+necessary-parameter coverage. It uses a 161-cell cover and five disks of
+diameter 9/10, and does not use either S transmitter to seal a cavity.
+The V_V source rows and radial D endpoints remain open. The fixed master
+status is unchanged because the complete LSLSLD family is not yet excluded.

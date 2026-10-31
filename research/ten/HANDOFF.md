@@ -51,6 +51,17 @@ research refinement. The earlier seven-loaded one-D closure was committed as
 five-loaded/two-D signatures using a complete 332-frame rational certificate.
 No denominator growth or conditional-core promotion is involved.
 
+The [uniform E_A/E_B side-source closure](STRICT_SIDE_SOURCE_CAPACITY_CLOSURE.md)
+now completes both reflected strict side-source rows of LSLSLD. Its 1,133-leaf
+exact parameter table retains one interior rectangle and two boundary boxes;
+strict Jacobian norm bounds exclude both boundary limits. A 161-cell uniform
+four-center cover then puts all added centers in five disks of diameter 9/10.
+Both full transmitter slide intervals are included. Two arithmetic backends
+(44 and 60 bits) pass every leaf and exact Q(sqrt(2)) checks verify both
+boundary identities. No independent agent review or Lean check is claimed.
+The V_V source rows and radial D endpoints remain open, so the fixed master
+count remains 276/336. This is a branch closure, not another whole-cycle closure.
+
 | All open IDs, grouped for shared arguments | Count | Next common obligation |
 | --- | ---: | --- |
 | C05 branching families | 30 | Use force/torque or completion geometry on regions with at least three terminals. Exposure and topology alone are insufficient. |
@@ -184,10 +195,11 @@ Latest completed work:
   gives five exhaustive C circle-feature rows and reduces all E_A core
   coordinates, squared radius and force height to two S half-angle variables.
   Two residual scalar equations remain, with all denominator conditions
-  explicit. E_B is its reflection. The [completion research note](STRICT_SIDE_SOURCE_COMPLETION_RESEARCH.md)
-  preserves floating interval prototypes and their unresolved cells; they
-  are not exact enclosures or proof inputs. The zero-contact-length boundary
-  cannot simply be discarded.
+  explicit. E_B is its reflection. The subsequent
+  [uniform side-source capacity theorem](STRICT_SIDE_SOURCE_CAPACITY_CLOSURE.md)
+  closes both rows with a complete exact parameter table, boundary injectivity
+  and a four-center cover. The [historical completion note](STRICT_SIDE_SOURCE_COMPLETION_RESEARCH.md)
+  preserves floating prototypes; their unresolved cells are not proof inputs.
 - The [radial vertical-source theorem](RADIAL_VERTICAL_SOURCE_EXCLUSION.md)
   closes the last vertical-endpoint form in the both-unique-D-endpoint branch.
   Its complete 248-leaf certificate covers every closed parameter rectangle,

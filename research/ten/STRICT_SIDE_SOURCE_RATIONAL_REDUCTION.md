@@ -2,7 +2,7 @@
 
 **Status:** complete necessary-form argument checked in this session; no
 independent agent review or Lean verification is claimed. This is a uniform
-reduction inside LSLSLD. No root count or completion bound is asserted.
+reduction inside LSLSLD. The subsequent [uniform side-source closure](STRICT_SIDE_SOURCE_CAPACITY_CLOSURE.md) now completes the E_A/E_B rows; V_V sources and radial D endpoints remain open.
 
 Use [ONE_DIAGONAL_TWO_SIDE_COMMON_SOURCE_EDGE.md](ONE_DIAGONAL_TWO_SIDE_COMMON_SOURCE_EDGE.md)
 after the [complete vertical-endpoint exclusion](RADIAL_VERTICAL_SOURCE_EXCLUSION.md).
@@ -189,7 +189,7 @@ Q(sqrt(2)). Reflection swaps the two endpoints and gives the same reduction
 for E_B. This avoids the square roots and the extra force-height variable
 in the previous three-dimensional interval exploration.
 
-## 4. Remaining proof obligation
+## 4. Subsequent completion and remaining proof obligation
 
 Equations (6)--(7) are necessary, not sufficient. Every actual core also
 satisfies the radius window, strict D contact heights, positive force
@@ -197,9 +197,9 @@ magnitudes, `0<(sqrt(2)-p-r)/q<=1`, source containment, all pairwise
 nonoverlap conditions, and both complete S slide constraints. Any use of
 polynomial numerators must retain the nonzero denominator conditions.
 
-A complete root enclosure outside finitely many capacity regions, or a
-capacity bound uniform over a larger containing family, would advance
-this entire side-source branch. No such global enclosure or completion
-certificate is asserted here. Degenerate boundary solutions must be
-covered or explicitly excluded; deleting them numerically is invalid.
-The V_V source rows and radial D endpoints also remain separate obligations.
+The [subsequent E_A/E_B closure](STRICT_SIDE_SOURCE_CAPACITY_CLOSURE.md)
+provides a complete 1,133-leaf necessary-parameter enclosure, excludes both
+retained degenerate boundary roots by injectivity, and proves total capacity
+at most nine uniformly over the retained interior rectangle with a 161-cell
+four-center cover. Both transmitter slides remain unrestricted. The V_V
+source rows and radial D endpoints remain separate open obligations.
