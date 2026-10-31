@@ -18,6 +18,8 @@ Use [ONE original-caller and hand-proof evidence ledger](gates/SESSION_CHECKPOIN
 
 New exact hand necessary graph classification sources: [four hubs ⇒ two diamond/exit forms](THREE_PORT_RANK_TWO_FOUR_HUB_DIAMOND_CENSUS_2026_10_31.md); [three hubs ⇒ five remaining genuine transmitter/exit locations](THREE_PORT_RANK_TWO_THREE_HUB_FIVE_ORBITS_2026_10_31.md); [subdivided five-hub K23 ⇒ six remaining genuine transmitter/exit locations](THREE_PORT_SUBDIVIDED_K23_SIX_ORBITS_2026_10_31.md). All **continuous physical force/torque and nine-square completion** exclusions for those classes remain open. Source manuscripts are self-checked, not independently reviewed.
 
+New physical source: [parallel true-degree-two original transmitters occupy a real two-square transverse strip](PARALLEL_TRANSMITTERS_FORCE_A_REAL_TRANSVERSE_TWO_SQUARE_STRIP_2026_10_31.md), with actual disk-corner bounds. This is a genuine necessary physical inequality for each three-hub H1–H5, but does **not** yet exclude a full nine-square family. Independent review pending.
+
 **Next hand-proof move:** verify common original-certificate scope of the low-hub and three-/four-/five-hub graph reductions, then seek a **single physical inequality** covering multiple true-transmitter patterns (B29, B30, BK23), rather than generating more nested graph-category gates. The house finite transmitted-placement table is a legitimate short *combinatorial* next item, not a promise that house physical exclusion is easy.
 
 ## New source proved at exact scope
