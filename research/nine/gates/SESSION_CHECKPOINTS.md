@@ -4,14 +4,22 @@
 
 **Unrestricted sharp lower bound $R^2\ge1105/256$: OPEN.** Complete equality classification: OPEN. G4.2.c same-certificate audit: OPEN. Formalization: DEFERRED (hand proof only, no Lean/Lake/CI). The record construction supplies the candidate upper bound; global necessity is not proved.
 
+## Current adopted canonical change
+
+**C2.35.b0, C2.36.b0, C2.37.b0 are CLOSED.** See the [complete original-domain
+adoption](../ADOPTION_INTACT_TRIANGLE_THREE_ORIGINAL_CASES_2026_10_31.md), preserved full sources, explicit common-domain
+replacement, and independent final composition/caller review. All nine units
+remain in each application. This changes exactly three coarse flags and no
+original fine flag. There are **18** remaining original coarse parents.
+
 ## 1. What is actually closed (no invented percent of effort)
 
 | Canonical source inventory | Closed | Open | Total | Meaning |
 |---|---:|---:|---:|---|
-| Original **whole nine-square** coarse graph/block parents | **37** | **21** | **58** | One original case completely excluded or proved sharp, including every real square |
+| Original **whole nine-square** coarse graph/block parents | **40** | **18** | **58** | One original case completely excluded or proved sharp, including every real square |
 | Original unique fine-gate flags | **2,373** | **140** | **2,513** | Historical original source ID registry, mixed in difficulty |
 | Nested six-body exterior rows | **18** | **20** | **38** | Nested in the six-body parent; not extra original fine gates |
-| Additional full original parent closures since the previous canonical adoption | **0** | — | — | New structural sources do not close an entire old case |
+| Additional full original parent closures in this adoption | **3** | — | — | Entire intact triangle: C2.35.b0, C2.36.b0, C2.37.b0; see [proof and review](../ADOPTION_INTACT_TRIANGLE_THREE_ORIGINAL_CASES_2026_10_31.md) |
 
 **There is deliberately NO fourth progress fraction for structural lemmas.** A one-page integer partition and a complete unrestricted geometric exclusion cannot be summed as equal gates. The former 15/57 figure is a [historical source-written checklist](HISTORICAL_57_MILESTONES_2026_10_31.md), **retired as a progress measure**. The 296 [refined records](README.md) remain the complete map of 140 original open labels; this file is the **work surface** over that map, not a competing denominator.
 
@@ -106,13 +114,13 @@ These are the actual unsolved mathematical burdens. An "attempt" does not become
 | **BHIGH** | Three-port higher-degree rank $b\ge3$ (up to the finite nine-square bound), including repeated exit hubs | Full-degree-excess budgets followed by a genuinely common force or area theorem | No unproved extrapolation of subcubic $b\le3$ |
 | **BCUT4+** | Every original positive cut with $4\le p\le20$, every internal rank | A **full-cut** width/stress/center theorem; never keep just three convenient exits | A legitimate complete family reduction or exclusion under the complete original cut |
 | **BCHAIN** | The 11 one-block original parents, especially C7/C8/C9 branching/chorded and the eight-cross **T** negative control | Joint four-chain–T/opposite-side/central completion, or original full-degree branch-turn defect | An actual theorem that also preserves every physical extra and original positive chord |
-| **BWRENCH** | The 10 two-block original parents, mixed root sides, circle-clear positive neighbors and distant loaded members | Exact full articulation cut **force-plus-origin-moment** inequality on both root sides | One original endblock theorem covering *mixed*, not merely common-side, contacts |
+| **BWRENCH** | The 7 remaining two-block original parents: decorated triangles and the 4+5/4+6/5+5 profiles, with mixed root sides, clear neighbors and distant loads | Exact full articulation cut **force-plus-origin-moment** inequality on both root sides | The three no-bridge triangle rows are closed by the entire intact theorem; retain every extra force in the remaining decorated stars |
 | **BSIX** | 20 open six-body exterior hexagon rows (notably D02.L135 and loaded-N L1345), plus other original six-body domains | A joint central/exterior three-actual-extra capacity with original owner/corner masks | Exact original full six-body stress and all three other physical squares, for each actual load orbit |
 | **BAUDIT/EQ** | All original caller joins; G4.2.c; all equality configurations; final theorem | Common selected-certificate dependency proof and equality propagation | Only after sharp unrestricted necessity: complete independent audit, equality necessity/sufficiency; Lean deferred |
 
 This table is the **research blocker index**, not a list of 11 purported quick leaf proofs. No unsolved continuous domain is silently rendered finite just by enumerating graph names or force-owner headings.
 
-## 6. The 21 ORIGINAL open whole-nine-square callers (complete, no fictional parent closure)
+## 6. The original frontier: 18 OPEN callers and three newly CLOSED rows
 
 Every row below is one actual original coarse case, not an extra mathematical theorem. "Positive component + extras" always totals **nine actual units**. The remaining refined per-parent IDs are specified by the named suffixes in the [71 parent-specific gates](COARSE_PARENTS.md), with the exceptional six-body parent in the [122 explicit six-body refined leaves](SIX_BODY.md).
 
@@ -132,16 +140,16 @@ Every row below is one actual original coarse case, not an extra mathematical th
 | `C1.8.b1` | 9+0 | BRANCH / LOAD / BRIDGE | Non-simple eight-body block with original bridge and full loads | **OPEN** |
 | `C1.9.b0` | 9+0 | BRANCH / LOAD | Nine-body non-simple chorded/branching positive block | **OPEN** |
  
-### Two cyclic blocks — exactly 10 original open rows
+### Two cyclic blocks — 7 original open rows plus three newly closed rows
 
 | Original parent | Bodies + real extras | Original refined outstanding scopes (suffixes) | Concrete missing whole-nine responsibility | Status |
 |---|---:|---|---|---|
-| `C2.35.b0` | 7+2 | MIXED / CLEAR / FAR / EXTRA / TRIANGLE | Mixed root sides, clear positive neighbor, distant loaded member, two extras | **OPEN** |
+| `C2.35.b0` | 7+2 | MIXED / CLEAR / FAR / EXTRA / TRIANGLE | Mixed root sides, clear positive neighbor, distant loaded member, two extras | **C — CLOSED by entire intact triangle** |
 | `C2.35.b1` | 8+1 | MIXED / CLEAR / FAR / EXTRA / TRIANGLE | Same with one genuine bridge and one extra | **OPEN** |
 | `C2.35.b2` | 9+0 | MIXED / CLEAR / FAR / TRIANGLE | Same with two original bridges, no physical extras | **OPEN** |
-| `C2.36.b0` | 8+1 | MIXED / CLEAR / FAR / EXTRA | Triangle plus order-six block and one extra | **OPEN** |
+| `C2.36.b0` | 8+1 | MIXED / CLEAR / FAR / EXTRA | Triangle plus order-six block and one extra | **C — CLOSED by entire intact triangle** |
 | `C2.36.b1` | 9+0 | MIXED / CLEAR / FAR | Triangle plus order-six block and one bridge | **OPEN** |
-| `C2.37.b0` | 9+0 | MIXED / CLEAR / FAR | Triangle plus order-seven block, all nine in component | **OPEN** |
+| `C2.37.b0` | 9+0 | MIXED / CLEAR / FAR | Triangle plus order-seven block, all nine in component | **C — CLOSED by entire intact triangle** |
 | `C2.45.b0` | 8+1 | MIXED / CLEAR / FAR / EXTRA / WRENCH | Full 4+5 articulation root wrench and extra | **OPEN** |
 | `C2.45.b1` | 9+0 | MIXED / CLEAR / FAR / WRENCH | 4+5 articulation plus original bridge | **OPEN** |
 | `C2.46.b0` | 9+0 | MIXED / CLEAR / FAR | 4+6 two-block articulation with full side means | **OPEN** |
@@ -156,9 +164,9 @@ Every row below is one actual original coarse case, not an extra mathematical th
 | `C1.7.b0` | Original long-run/4+3 and full two-RR short-simple-C7 exits already proved at exact prior scopes | Genuine one-RR and zero-RR short arrangements, positive chords/branching and joint placement of **two** extras |
 | `C1.8.b0` | All *compatible genuine simple* C8 positive cycles ruled out | Eight-body **chorded or branching** positive graphs and the ninth real square |
 | `C1.9.b0` | All *compatible genuine simple* C9 positive cycles ruled out | **Chorded or branching** nine-body positive graphs; no automatic reduction to a simple cycle |
-| `C2.*` (10 rows) | The earlier reviewed **origin-containing/common-side** endblock pressure lemma is available as an imported conditional tool | **No** original full two-block caller mapped or closed; mixed-side roots, circle-clear positive neighbors and distant loads remain |
+| Remaining `C2.*` (7 rows) | Three no-bridge triangle rows are now closed by the entire intact-triangle theorem; conditional common-side pressure remains available | Decorated triangles and the 4+5/4+6/5+5 whole interfaces remain; the intact theorem does not drop a private triangle leaf |
 
-**Coverage contract:** The 58-row [original source table](../CYCLIC_CELL_LEDGER.md) retains **37 CLOSED, 21 OPEN**. The [140 currently unchecked original fine IDs](../PROGRESS.md#5-all-140-currently-unchecked-detailed-roadmap-entries), their [296 refined child records and parent map](PARENT_MAP.md), and the [18/38 nested six-body exterior reconciliation](../PROGRESS.md#1-single-reconciled-progress-snapshot) are kept intact. A proof of B29, BK23 or another structural feature gets **zero** original-parent credit until an explicit original-graph caller map shows it exhausts **all** of a named original row, including all its sibling masks, attachments and full nine-square completion. The new graph subdivisions are not asserted to cover the 21 parent cases.
+**Coverage contract:** The 58-row [original source table](../CYCLIC_CELL_LEDGER.md) retains **40 CLOSED, 18 OPEN**. The [140 currently unchecked original fine IDs](../PROGRESS.md#5-all-140-currently-unchecked-detailed-roadmap-entries), their [296 refined child records and parent map](PARENT_MAP.md), and the [18/38 nested six-body exterior reconciliation](../PROGRESS.md#1-single-reconciled-progress-snapshot) are kept intact. A proof of B29, BK23 or another structural feature gets **zero** original-parent credit until an explicit original-graph caller map shows it exhausts **all** of a named original row, including all its sibling masks, attachments and full nine-square completion. The new graph subdivisions are not asserted to cover the remaining 18 parent cases.
 
 ## 7. Mandatory hand-proof acceptance checks (apply before *every* status change)
 
@@ -183,3 +191,4 @@ A legitimate source-level exclusion or sharp necessary inequality must identify:
 **Next operational move:** complete one independent review A01–A04 or A07 *and/or* a bona fide hand finite-house table A05. Then attack a genuinely shared physical obstruction, with B29, BK23, B30 as the concrete full-cut test cases. If that hard physical lemma fails, report the exact failed inequality or counterexample and **zero new canonical gates** rather than inventing another case class. An open parent remains open regardless of how many narrow necessary lemmas have accumulated.
 
 **Archival note:** [the former 57-checkpoint list](HISTORICAL_57_MILESTONES_2026_10_31.md) remains available unchanged for provenance. It is **not** a current progress bar or a work guarantee. This replacement deliberately consolidates all future session tracking here without adding another live ledger.
+

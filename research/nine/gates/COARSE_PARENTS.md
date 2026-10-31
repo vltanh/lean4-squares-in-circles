@@ -68,11 +68,14 @@
 
 ## `C2.35.b0` (5)
 
-- [ ] **`P-C2-35-b0-MIXED`** — **Domain:** Two genuine cyclic blocks of orders 3,5, 0 bridge(s), root interface on different actual root sides. **Prove:** Exclude or sharply classify moment-balanced opposite-side contact pairs with all original means. **Exit:** A full side-owner and endpoint-normal cone theorem; the common-side pressure lemma is not misapplied.
-- [ ] **`P-C2-35-b0-CLEAR`** — **Domain:** Same two-block original parent with at least one physically circle-clear positive neighbor of a real articulation. **Prove:** Bound the full original root cut pressure and side applications with this clear neighbor included. **Exit:** The original physical circle-clear neighbor cannot be dropped even when unloaded.
-- [ ] **`P-C2-35-b0-FAR`** — **Domain:** Same 3,5 blocks with positive circle load at a private body not physically touching the articulation. **Prove:** Transfer actual nonnegative radial load to a cut-wrench restriction without assuming adjacency. **Exit:** Allows original internal chords and arbitrary true degrees.
-- [ ] **`P-C2-35-b0-EXTRA`** — **Domain:** Same original 7-body positive component and 2 other actual unit squares. **Prove:** Derive one simultaneous whole-square completion capacity for all articulation-region pockets. **Exit:** No separate pocket bound is summed without a common pose/force constraint.
-- [ ] **`P-C2-35-b0-TRIANGLE`** — **Domain:** Actual triangle block and pentagon/house/fan private block with true attachment root and possible intact petal. **Prove:** Distinguish intact and nonintact original root triangles and all nonadjacent positive loaded tips. **Exit:** One complete original graph/load root-type exit valid at this bridge count.
+**CLOSED by the [entire intact-triangle theorem](../ADOPTION_INTACT_TRIANGLE_THREE_ORIGINAL_CASES_2026_10_31.md).** The whole original domain is excluded with every real extra retained; the local wrench/region obligations below are discharged by that stronger common theorem, not separately asserted as generic interface lemmas.
+
+
+- [x] **`P-C2-35-b0-MIXED`** — **Domain:** Two genuine cyclic blocks of orders 3,5, 0 bridge(s), root interface on different actual root sides. **Prove:** Exclude or sharply classify moment-balanced opposite-side contact pairs with all original means. **Exit:** A full side-owner and endpoint-normal cone theorem; the common-side pressure lemma is not misapplied.
+- [x] **`P-C2-35-b0-CLEAR`** — **Domain:** Same two-block original parent with at least one physically circle-clear positive neighbor of a real articulation. **Prove:** Bound the full original root cut pressure and side applications with this clear neighbor included. **Exit:** The original physical circle-clear neighbor cannot be dropped even when unloaded.
+- [x] **`P-C2-35-b0-FAR`** — **Domain:** Same 3,5 blocks with positive circle load at a private body not physically touching the articulation. **Prove:** Transfer actual nonnegative radial load to a cut-wrench restriction without assuming adjacency. **Exit:** Allows original internal chords and arbitrary true degrees.
+- [x] **`P-C2-35-b0-EXTRA`** — **Domain:** Same original 7-body positive component and 2 other actual unit squares. **Prove:** Derive one simultaneous whole-square completion capacity for all articulation-region pockets. **Exit:** No separate pocket bound is summed without a common pose/force constraint.
+- [x] **`P-C2-35-b0-TRIANGLE`** — **Domain:** Actual triangle block and pentagon/house/fan private block with true attachment root and possible intact petal. **Prove:** Distinguish intact and nonintact original root triangles and all nonadjacent positive loaded tips. **Exit:** One complete original graph/load root-type exit valid at this bridge count.
 
 ## `C2.35.b1` (5)
 
@@ -91,10 +94,13 @@
 
 ## `C2.36.b0` (4)
 
-- [ ] **`P-C2-36-b0-MIXED`** — **Domain:** Two genuine cyclic blocks of orders 3,6, 0 bridge(s), root interface on different actual root sides. **Prove:** Exclude or sharply classify moment-balanced opposite-side contact pairs with all original means. **Exit:** A full side-owner and endpoint-normal cone theorem; the common-side pressure lemma is not misapplied.
-- [ ] **`P-C2-36-b0-CLEAR`** — **Domain:** Same two-block original parent with at least one physically circle-clear positive neighbor of a real articulation. **Prove:** Bound the full original root cut pressure and side applications with this clear neighbor included. **Exit:** The original physical circle-clear neighbor cannot be dropped even when unloaded.
-- [ ] **`P-C2-36-b0-FAR`** — **Domain:** Same 3,6 blocks with positive circle load at a private body not physically touching the articulation. **Prove:** Transfer actual nonnegative radial load to a cut-wrench restriction without assuming adjacency. **Exit:** Allows original internal chords and arbitrary true degrees.
-- [ ] **`P-C2-36-b0-EXTRA`** — **Domain:** Same original 8-body positive component and 1 other actual unit square. **Prove:** Derive one simultaneous whole-square completion capacity for all articulation-region pockets. **Exit:** No separate pocket bound is summed without a common pose/force constraint.
+**CLOSED by the [entire intact-triangle theorem](../ADOPTION_INTACT_TRIANGLE_THREE_ORIGINAL_CASES_2026_10_31.md).** The whole original domain is excluded with every real extra retained; the local wrench/region obligations below are discharged by that stronger common theorem, not separately asserted as generic interface lemmas.
+
+
+- [x] **`P-C2-36-b0-MIXED`** — **Domain:** Two genuine cyclic blocks of orders 3,6, 0 bridge(s), root interface on different actual root sides. **Prove:** Exclude or sharply classify moment-balanced opposite-side contact pairs with all original means. **Exit:** A full side-owner and endpoint-normal cone theorem; the common-side pressure lemma is not misapplied.
+- [x] **`P-C2-36-b0-CLEAR`** — **Domain:** Same two-block original parent with at least one physically circle-clear positive neighbor of a real articulation. **Prove:** Bound the full original root cut pressure and side applications with this clear neighbor included. **Exit:** The original physical circle-clear neighbor cannot be dropped even when unloaded.
+- [x] **`P-C2-36-b0-FAR`** — **Domain:** Same 3,6 blocks with positive circle load at a private body not physically touching the articulation. **Prove:** Transfer actual nonnegative radial load to a cut-wrench restriction without assuming adjacency. **Exit:** Allows original internal chords and arbitrary true degrees.
+- [x] **`P-C2-36-b0-EXTRA`** — **Domain:** Same original 8-body positive component and 1 other actual unit square. **Prove:** Derive one simultaneous whole-square completion capacity for all articulation-region pockets. **Exit:** No separate pocket bound is summed without a common pose/force constraint.
 
 ## `C2.36.b1` (3)
 
@@ -104,9 +110,12 @@
 
 ## `C2.37.b0` (3)
 
-- [ ] **`P-C2-37-b0-MIXED`** — **Domain:** Two genuine cyclic blocks of orders 3,7, 0 bridge(s), root interface on different actual root sides. **Prove:** Exclude or sharply classify moment-balanced opposite-side contact pairs with all original means. **Exit:** A full side-owner and endpoint-normal cone theorem; the common-side pressure lemma is not misapplied.
-- [ ] **`P-C2-37-b0-CLEAR`** — **Domain:** Same two-block original parent with at least one physically circle-clear positive neighbor of a real articulation. **Prove:** Bound the full original root cut pressure and side applications with this clear neighbor included. **Exit:** The original physical circle-clear neighbor cannot be dropped even when unloaded.
-- [ ] **`P-C2-37-b0-FAR`** — **Domain:** Same 3,7 blocks with positive circle load at a private body not physically touching the articulation. **Prove:** Transfer actual nonnegative radial load to a cut-wrench restriction without assuming adjacency. **Exit:** Allows original internal chords and arbitrary true degrees.
+**CLOSED by the [entire intact-triangle theorem](../ADOPTION_INTACT_TRIANGLE_THREE_ORIGINAL_CASES_2026_10_31.md).** The whole original domain is excluded with every real extra retained; the local wrench/region obligations below are discharged by that stronger common theorem, not separately asserted as generic interface lemmas.
+
+
+- [x] **`P-C2-37-b0-MIXED`** — **Domain:** Two genuine cyclic blocks of orders 3,7, 0 bridge(s), root interface on different actual root sides. **Prove:** Exclude or sharply classify moment-balanced opposite-side contact pairs with all original means. **Exit:** A full side-owner and endpoint-normal cone theorem; the common-side pressure lemma is not misapplied.
+- [x] **`P-C2-37-b0-CLEAR`** — **Domain:** Same two-block original parent with at least one physically circle-clear positive neighbor of a real articulation. **Prove:** Bound the full original root cut pressure and side applications with this clear neighbor included. **Exit:** The original physical circle-clear neighbor cannot be dropped even when unloaded.
+- [x] **`P-C2-37-b0-FAR`** — **Domain:** Same 3,7 blocks with positive circle load at a private body not physically touching the articulation. **Prove:** Transfer actual nonnegative radial load to a cut-wrench restriction without assuming adjacency. **Exit:** Allows original internal chords and arbitrary true degrees.
 
 ## `C2.45.b0` (5)
 
@@ -135,3 +144,4 @@
 - [ ] **`P-C2-55-b0-CLEAR`** — **Domain:** Same two-block original parent with at least one physically circle-clear positive neighbor of a real articulation. **Prove:** Bound the full original root cut pressure and side applications with this clear neighbor included. **Exit:** The original physical circle-clear neighbor cannot be dropped even when unloaded.
 - [ ] **`P-C2-55-b0-FAR`** — **Domain:** Same 5,5 blocks with positive circle load at a private body not physically touching the articulation. **Prove:** Transfer actual nonnegative radial load to a cut-wrench restriction without assuming adjacency. **Exit:** Allows original internal chords and arbitrary true degrees.
 - [ ] **`P-C2-55-b0-WRENCH`** — **Domain:** Five-body endblock at a true common articulation in 5,5 profile. **Prove:** Prove the full higher-degree effective wrench cone for house, fan, C5 and chorded five-block types. **Exit:** The same theorem covers both high-degree and side-mean degeneracies at their literal scopes.
+

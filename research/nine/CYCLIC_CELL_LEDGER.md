@@ -1,3 +1,15 @@
+## Current adoption — three complete original triangle/block cases, October 31, 2026
+
+The [whole intact-triangle theorem and original caller review](ADOPTION_INTACT_TRIANGLE_THREE_ORIGINAL_CASES_2026_10_31.md) close
+**C2.35.b0, C2.36.b0, and C2.37.b0**. The current canonical totals are
+**40/58 coarse closed, 18 open; 2373/2513 fine checked, 140 open; 18/38 six-body
+exterior rows checked**. All original identifiers and all original fine flags
+are preserved. The unrestricted theorem, equality classification, downstream
+G4.2.c audit, and Lean verification remain open. No Lean or CI was run.
+
+Older dated continuation paragraphs below retain their historical counts;
+the current notice and original 58-row flags take precedence.
+
 > **CANONICAL ORIGINAL 58-CELL SOURCE RECORD.** For the single current status index, concise 58-row mirror and 140 open detailed obligations, read [PROGRESS.md](PROGRESS.md). Dated narrative sections below are historical; the original **All 58 coarse cells** table and its flags remain authoritative for case IDs and are **unchanged** by the squash.
 
 ## Current continuation — return-free middle-root capacity and complete RR promotion, October 30, 2026 UTC
@@ -4427,12 +4439,12 @@ Each open row quantifies over every block adjacency, articulation arrangement, a
 | C2.34.b1 | 3,4 | 1 | 7 | 2 | [x] CLOSED — ROOTED_C2_34_ONE_BRIDGE_CELL_CLOSED.md; complete original attachment/load/force/completion join with full root and separate independent reviews |
 | C2.34.b2 | 3,4 | 2 | 8 | 1 | [x] CLOSED — ROOTED_C2_34_TWO_BRIDGES_BOUNDARY_BRANCH_ASSEMBLY.md; complete original attachment/load/force/completion join with full root and separate independent reviews |
 | C2.34.b3 | 3,4 | 3 | 9 | 0 | [x] CLOSED — ROOTED_C2_34_THREE_BRIDGES_CELL_CLOSED.md; complete original attachment/load/force/completion join with full root and separate independent reviews |
-| C2.35.b0 | 3,5 | 0 | 7 | 2 | [ ] OPEN |
+| C2.35.b0 | 3,5 | 0 | 7 | 2 | [x] CLOSED — entire intact triangle |
 | C2.35.b1 | 3,5 | 1 | 8 | 1 | [ ] OPEN |
 | C2.35.b2 | 3,5 | 2 | 9 | 0 | [ ] OPEN |
-| C2.36.b0 | 3,6 | 0 | 8 | 1 | [ ] OPEN |
+| C2.36.b0 | 3,6 | 0 | 8 | 1 | [x] CLOSED — entire intact triangle |
 | C2.36.b1 | 3,6 | 1 | 9 | 0 | [ ] OPEN |
-| C2.37.b0 | 3,7 | 0 | 9 | 0 | [ ] OPEN |
+| C2.37.b0 | 3,7 | 0 | 9 | 0 | [x] CLOSED — entire intact triangle |
 | C2.44.b0 | 4,4 | 0 | 7 | 2 | [x] CLOSED — complete original15-pair load cover; final adjacent/opposite C4 winding proof and whole assembly have full root and two independent reviews; same canonical necessary-certificate scope and both arbitrary extras retained |
 | C2.44.b1 | 4,4 | 1 | 8 | 1 | [x] CLOSED — ROOTED_C2_44_ONE_BRIDGE_NONNEGATIVE_PRESSURE_ASSEMBLY.md; complete original attachment/load/force/completion join with full root and separate independent reviews |
 | C2.44.b2 | 4,4 | 2 | 9 | 0 | [x] CLOSED — ROOTED_C2_44_TWO_BRIDGES_COMPLETE_ORIGINAL_DOMAIN_EXCLUSION.md; entire original bridge/forest cover, all 21 original rooted-type pairs, low/critical/high radius and all origin alternatives, true H4/H5/H6 equations, all loads and side means. Root and independent full reviews and the fresh recovery audit are pinned in the recovery checkpoint. |
@@ -4694,6 +4706,7 @@ ABC keeps true H4/A2/B2/C2, every HC return owner and mean, the intact HXY petal
 ## Earlier checkpoint provenance
 
 The current live status replaces the superseded checkpoint summaries formerly repeated here. Their full text remains in [the prior saved revision](https://github.com/vltanh/lean4-squares-in-circles/tree/4f44a0b66e85bbbea6cc76c6571c5b101c2797ca/research/nine) and the chronological [TWO_LOAD_PROGRESS.md](TWO_LOAD_PROGRESS.md). The complete detailed proof obligations and every existing gate are retained in DEEP_GATED_ROADMAP.md; no proof manuscript or physical case has been removed.
+
 
 
 

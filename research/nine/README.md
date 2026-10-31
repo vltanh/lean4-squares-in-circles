@@ -1,35 +1,49 @@
 # Nine unit squares — hand-proof research (PR #11)
 
-**Unrestricted theorem: OPEN.** The target is `R² ≥ 1105/256`. A sharp construction is known, but the global lower-bound argument, all equality packings and the final common-certificate audit are not closed. This directory contains hand-proof research, **not a completed Lean proof**.
+**Unrestricted theorem: OPEN.** The target is `R² ≥ 1105/256`. A sharp
+construction is known. Global necessity, the classification of all equality
+packings, and the downstream common-certificate audit remain open.
 
-## Latest hand-only continuation (2026-10-31)
+## Latest hand-proof adoption — October 31, 2026
 
-- **[ONE live original-case and proof-evidence ledger](gates/SESSION_CHECKPOINTS.md):** all **21 original open nine-square cases**, separate hand-written/reviewed/applied/closed states, finite rank-two original-graph subclasses, small audit/graph tasks and genuine continuous-geometry blockers. **No 15/57 progress bar.** [Old heterogeneous list archived](gates/HISTORICAL_57_MILESTONES_2026_10_31.md).
-- [Exact full-cut and three-port degree census](THREE_PORT_DEGREE_SIGNATURE_CENSUS_2026_10_31.md): an elementary original-degree hand proof; exactly seven necessary degree-excess signatures at `p=3,b=2`, before physical exclusion.
-- [Uniform low-hub physical exclusion and three-hub remainder](THREE_PORT_RANK_TWO_LOW_HUB_UNIFORM_EXCLUSION_2026_10_31.md): one hand argument excludes the one/two-hub original structural subfamilies and `(3,1,1)`. **No complete original coarse/fine gate was closed; independent review pending.**
-- [Real parallel-transmitter transverse-strip hand lemma](PARALLEL_TRANSMITTERS_FORCE_A_REAL_TRANSVERSE_TWO_SQUARE_STRIP_2026_10_31.md): actual same-longitudinal center, at least 2 (side) or $2\sqrt2$ (diagonal) transverse occupancy for two genuine transmitted paths; original nine-square completion remains open, independent review pending.
-- [Three-hub five-orbit hand census](THREE_PORT_RANK_TWO_THREE_HUB_FIVE_ORBITS_2026_10_31.md), [four-hub diamond/exit census](THREE_PORT_RANK_TWO_FOUR_HUB_DIAMOND_CENSUS_2026_10_31.md), and [subdivided-K23 six-orbit census](THREE_PORT_SUBDIVIDED_K23_SIX_ORBITS_2026_10_31.md): necessary finite physical original-graph profiles, **not physical exclusions**. The live ledger tracks all residual original geometry.
-- [Three-port multicycle subcubic reduction](THREE_PORT_MULTICYCLE_SUBCUBIC_REDUCTION_2026_10_31.md): a full-cut, one-reduced-exit-per-hub theorem classifying rank-two modules into house or \(K_{2,3}\) skeletons, and rank-three modules into a seven-hub/two-loaded-body extreme. It excludes only the literal internally unsubdivided \(K_{2,3}\) subfamily; transmitted exit arms are retained. **Not** a completed coarse or fine gate.
-- [Handoff and exact outstanding exceptions](HANDOFF_THREE_PORT_MULTICYCLE_2026_10_31.md): separates proved reductions from unverified proposed stronger exclusions and identifies the next same-nine tests.
+**Three complete original coarse cases now close together:** `C2.35.b0`,
+`C2.36.b0`, and `C2.37.b0`. The entire intact-triangle theorem covers a
+triangle plus any maximal block of order 5, 6, or 7, with no bridge, arbitrary
+private chords and loads, and all 2/1/0 physical completing squares retained.
 
-The original canonical ledger is unchanged; no Lean, CI or computer-assisted exclusion was run.
+- [Complete adoption and exact remaining cases](ADOPTION_INTACT_TRIANGLE_THREE_ORIGINAL_CASES_2026_10_31.md).
+- [Compact whole theorem and literal callers](INTACT_TRIANGLE_UNIFORM_EXCLUSION_AND_THREE_COARSE_CLOSURES_2026_10_31.md).
+- [Preserved full union](ENTIRE_ORIGINAL_INTACT_TRIANGLE_EXCLUSION_BY_COMPLETE_PARALLEL_FREE_AND_OWNED_UNION_WITH_LITERAL_MAXIMAL_BLOCK_CALLERS_2026_10_31.md).
+- [Explicit common-domain prerequisite reconciliation](INTACT_COMMON_DOMAIN_DEPENDENCY_RECONCILIATION_2026_10_31.md).
+- [Independent final composition/caller review](reviews/2026-10-31/REVIEW_INTACT_TRIANGLE_FINAL_UNION_AND_ORIGINAL_CALLERS_2026_10_31.md).
+- [Dependency manifest](INTACT_TRIANGLE_DEPENDENCY_MANIFEST_2026_10_31.md).
+
+| Original inventory | Closed / checked | Open | Total |
+|---|---:|---:|---:|
+| Whole nine-square coarse cases | **40** | **18** | 58 |
+| Original labeled fine gates | **2,373** | **140** | 2,513 |
+| Nested six-body exterior rows | **18** | **20** | 38 |
+
+These counts measure source coverage, not remaining effort. The aggregate
+fine parents still contain other unresolved coarse cases, so their flags do
+not change. The bridge-bearing decorated triangles remain separate.
 
 ## Start here
 
-- **[ONE live 21-parent proof frontier and evidence ledger](gates/SESSION_CHECKPOINTS.md)** — current work; source-level hand proofs, independent audit state, true geometry blockers, canonical case matrix
-- **[Refined original-open-gate hierarchy](gates/README.md)** — 296 scoped child records with all 140 original open parents mapped; [full parent map](gates/PARENT_MAP.md)
-- **[Central progress ledger](PROGRESS.md)** — only live status index; all 58 original coarse cases, 140 open fine obligations and conditions for a valid closure
-- **[Organized file map](ORGANIZATION.md)** — explains the source library and browsable subfolders
-- **[Topic indexes](areas/README.md)** — geometry, stress, cycles, articulation, six-body D02 and equality
-- **[Dated reviews](reviews/README.md)** — 1,739 review files relocated from this root, with links to the original documents
-- **[Historical notes](history/README.md)** — handoff/adoption indexes and [archived full chronology](history/CHRONOLOGICAL_RESEARCH_README_2026_10_31.md)
+- [Central authoritative progress ledger](PROGRESS.md).
+- [Live original-caller and proof-evidence ledger](gates/SESSION_CHECKPOINTS.md).
+- [Refined hierarchy and complete parent mapping](gates/README.md).
+- [Original 58 coarse flags](CYCLIC_CELL_LEDGER.md) and [original fine roadmap](DEEP_GATED_ROADMAP.md).
+- [Organized file map](ORGANIZATION.md), [topic indexes](areas/README.md), and [review archive](reviews/README.md).
+- [Historical chronology](history/CHRONOLOGICAL_RESEARCH_README_2026_10_31.md).
 
-## Original registers (kept at stable paths)
+## Broad structural work
 
-- [Original 58 coarse-cell flags and case descriptions](CYCLIC_CELL_LEDGER.md): **37 closed, 21 open**
-- [Detailed fine-gate roadmap](DEEP_GATED_ROADMAP.md): **2,373 checked of 2,513; 140 open**
-- [Nested six-body exterior table](PROGRESS.md): **18/38 checked**
+The original three-port degree census, low-hub reductions and physical
+transmitter-strip theorem remain available. New complete full-cut module
+arguments are recorded separately from original coarse closures. A local
+lemma changes a canonical flag only after its full original caller is proved.
 
-The root-level proof manuscripts and paired checker/certificate artifacts remain at their original relative paths. Moving them en masse would invalidate existing references and dependencies. The **1,739 dated review Markdown files** were moved into `reviews/YYYY-MM-DD/` without changing their content. Use the [review index](reviews/README.md) to resolve old review filenames.
-
-**Working contract:** hand proof, no Lean/Lake or CI runs, and no external scripts as proof of exclusions. This file organization does not change any mathematical gate.
+**Working contract:** hand proof, exact printed tables allowed, no Lean/Lake,
+no CI, and no external mathematical scripts as proof of exclusions. File
+preservation and status consistency checks are documentary. The PR stays draft.
