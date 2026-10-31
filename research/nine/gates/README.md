@@ -5,11 +5,13 @@
 The [parent map](PARENT_MAP.md) maps **all 140 original unchecked entries** to **296 unique refined records**; the full relationship, including very broad shared parents, is stored in [data/parent_map.json](data/parent_map.json).
 
 
-## Fixed 57-milestone research ledger — NOT uniformly easy (15 checked / 42 open)
+## ONE active original-caller proof ledger — no fake equal-work fraction
 
-The [fixed proof-milestone ledger](SESSION_CHECKPOINTS.md) cross-indexes **57 deliberately heterogeneous proof milestones** against the existing 296-entry inventory and records precise manuscript closures and partial results. As of 2026-10-31, **15** are written at their literal scope (12 reconcile older manuscripts, 2 are the [new full-cut hand census](../THREE_PORT_DEGREE_SIGNATURE_CENSUS_2026_10_31.md), and **M28** is a [new whole low-hub structural-family exclusion](../THREE_PORT_RANK_TWO_LOW_HUB_UNIFORM_EXCLUSION_2026_10_31.md)); **42 remain open**. M29 is narrowed but unclosed. Some sources are still self-checked only; no broad `R-*` / `F-*` / `P-*` caller automatically closes.
+**[LIVE PROOF LEDGER](SESSION_CHECKPOINTS.md)** is the active session record, featuring a complete matrix of the **21 original open whole-nine-square parents**, source statements labeled **H** (written hand), **V** (independently reviewed), **J** (joined to a full original caller), or **C** (canonical closed), and a separate list of genuine unresolved continuous physical proof blockers. Small audit/finite-graph work cards have exact output tests; large geometric research questions are **not presented as uniformly easy "gates."**
 
-This is a **nonadditive cross-index**, not a new canonical denominator, an equal-effort progress bar, or a replacement for the 296 refined entries. **Some milestones are major new continuous geometric theorems or all-parent assemblies; nobody can guarantee a completed gate every session.** All **21** original coarse parents, **140** original fine flags and **20** six-body exterior rows remain open. Record fully proved source-scoped milestones, or partial advances inside their existing ID; log zero when nothing fully closes. The 57 IDs remain frozen rather than indefinitely proliferating.
+The previous **15/57 milestone fraction has been retired**. Its original detailed [historical snapshot](HISTORICAL_57_MILESTONES_2026_10_31.md) is preserved solely for source provenance. No new original fine/coarse flag was checked in this ledger reorganization. Current canonical counts remain **37/58** whole coarse cases, **2,373/2,513** fine labels, **18/38** nested six-body exterior rows.
+
+New hand-only exact graph results are linked there: [three-hub five orbits](../THREE_PORT_RANK_TWO_THREE_HUB_FIVE_ORBITS_2026_10_31.md), [four-hub two diamond/exit distributions](../THREE_PORT_RANK_TWO_FOUR_HUB_DIAMOND_CENSUS_2026_10_31.md), [five-hub six internally subdivided K23 orbits](../THREE_PORT_SUBDIVIDED_K23_SIX_ORBITS_2026_10_31.md). They are **finite necessary classifications**, not new full nine-square exclusions. Independent reviews remain pending.
 
 ## Work records by role
 
