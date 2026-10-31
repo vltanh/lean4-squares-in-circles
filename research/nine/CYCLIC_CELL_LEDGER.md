@@ -1,11 +1,18 @@
-## Current adoption — three complete original triangle/block cases, October 31, 2026
+## Current adoption — four complete original cases and uniform module exclusions, October 31, 2026
 
-The [whole intact-triangle theorem and original caller review](ADOPTION_INTACT_TRIANGLE_THREE_ORIGINAL_CASES_2026_10_31.md) close
-**C2.35.b0, C2.36.b0, and C2.37.b0**. The current canonical totals are
-**40/58 coarse closed, 18 open; 2373/2513 fine checked, 140 open; 18/38 six-body
-exterior rows checked**. All original identifiers and all original fine flags
-are preserved. The unrestricted theorem, equality classification, downstream
-G4.2.c audit, and Lean verification remain open. No Lean or CI was run.
+The [complete six-body/three-bridge assembly](ADOPTION_C1_6_B3_AND_UNIFORM_UNLOADED_MODULES_2026_10_31.md)
+closes **C1.6.b3**. Together with the [entire intact-triangle theorem](ADOPTION_INTACT_TRIANGLE_THREE_ORIGINAL_CASES_2026_10_31.md),
+which closes **C2.35.b0, C2.36.b0, C2.37.b0**, the current totals are
+**41/58 coarse closed, 17 open; 2373/2513 fine checked, 140 open; 18/38 six-body
+exterior rows checked**. Exactly four original coarse flags change; all original
+fine identifiers and flags remain. The original C1.6.b0 exterior domain is separate.
+
+The new full-cut hand theorem excludes every unloaded three-port rank-two module
+at arbitrary degree, every subcubic three-port multicycle module, and the whole
+unicyclic `(t,s)=(2,0)` row. A separate D-root theorem excludes every triangular-ear
+placement. These structural results do not claim additional whole coarse rows.
+The unrestricted theorem, equality classification and downstream G4.2.c audit
+remain open. No Lean/Lake, CI or mathematical proof script was used.
 
 Older dated continuation paragraphs below retain their historical counts;
 the current notice and original 58-row flags take precedence.
@@ -4423,7 +4430,7 @@ Each open row quantifies over every block adjacency, articulation arrangement, a
 | C1.6.b0 | 6 | 0 | 6 | 3 | [ ] OPEN — Both D02.L135/L1345 now exclude their whole parallel-V2 and whole unique-PHYSICAL-circle Type III features. The complete six-owner, two-load Type III assembly retains all nine actual squares, full original stars and shared means, and the explicitly conditional common initial selection. Unique-circle Types I/II, both physical-two residual charts, the other original six-body graph/load domains and joint completion obligations remain. See ADOPTION_COMPLETE_UNIQUE_CIRCLE_TYPE_III_ROOF_FEATURE_2026_10_29.md; no whole D02 or coarse flag closes. |
 | C1.6.b1 | 6 | 1 | 7 | 2 | [ ] OPEN |
 | C1.6.b2 | 6 | 2 | 8 | 1 | [ ] OPEN |
-| C1.6.b3 | 6 | 3 | 9 | 0 | [ ] OPEN — The entire same-root short-arm/direct-leaf forest is excluded for arbitrary cyclic blocks. In the three-distinct-genuine-leaf forest, private partition 1+1+1, repeated root-pair classes, and complete Types III and IV of partition 2+1 are excluded. The full return-free genuine B3 theorem now excludes the ENTIRE connected-private partition3: all paths, triangles, original attachments, private degrees, loads, physical masks and optional AC. Its exact middle star is B:A,C,L_B; outer degrees are arbitrary and no boundary return is assumed. This subsumes every prior connected-private boundary-return/short-path family and both historical triangle remainders T1/T2. Only disconnected Types I and II remain. Type I has clear Q and loaded P with both optional AB and BC retained; Type II has clear Q, loaded P and N, AB absent and BC optional. Their larger middle stars remain intact. See ADOPTION_RETURN_FREE_MIDDLE_ROOT_CAPACITY_AND_COMPLETE_RR_PROMOTION_2026_10_30.md and its five full source reviews. No original flag changes. |
+| C1.6.b3 | 6 | 3 | 9 | 0 | [x] CLOSED — entire original six-body/three-bridge forest and Types I–IV, including both complete Type I/II exits, all means, masks and nine actual units; [full adoption and current independent caller review](ADOPTION_C1_6_B3_AND_UNIFORM_UNLOADED_MODULES_2026_10_31.md) |
 | C1.7.b0 | 7 | 0 | 7 | 2 | [ ] OPEN — The complete sharp long-run C7 theorem holds at full true-degree-two long endpoints, allowing extra forces at other boundary marks. The opposite four-load cycle is the sole long-run simple-component equality survivor with four exact anchors. Below Q a remaining entire simple C7 has isolated transmitters, center diameter<3, central capacity1, at most one diagonal singleton and an occupied side pocket. The whole two-RR no-long mask is excluded across shared, free-VV and both singleton owners. Full actual-contact localization separates all coarse pockets and nonincident core contacts. Every remaining original RR transmitter can reach its circle cap; full pocket dilation FIRST then RR promotion gives b+r+k<=7 for all physical boundary core units, promoted RR units and occupied side pockets. With extras fixed, t+r+e<=7 for positive core loads and exterior extras. The complete one-unpromoted caller forces one central T, exactly 8-m exterior extras and original U/T strictly critical-near, including five-load one-RR C7 at RU/UU. Strict occupied-RU h<d and the old six-load bound b_slider<93/128 remain. See ADOPTION_RETURN_FREE_MIDDLE_ROOT_CAPACITY_AND_COMPLETE_RR_PROMOTION_2026_10_30.md. The preceding simultaneous-rotation exclusion remains operative at its full moving-star premise. Remaining one-/zero-RR shared/second-circle/additional-contact alternatives, joint completions and arbitrary chorded/branching blocks keep this original parent OPEN. All original means, masks, actual units and positive degrees remain; no secondary-selector transfer is claimed. |
 | C1.7.b1 | 7 | 1 | 8 | 1 | [ ] OPEN |
 | C1.7.b2 | 7 | 2 | 9 | 0 | [ ] OPEN |

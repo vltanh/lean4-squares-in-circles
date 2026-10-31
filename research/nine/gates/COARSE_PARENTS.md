@@ -25,9 +25,11 @@
 
 ## `C1.6.b3` (3)
 
-- [ ] **`P-C1-6-b3-TYPE_I`** — **Domain:** Three genuine leaves, disconnected private roots, original Type-I clear Q and loaded P; both optional original AB/BC edges retained. **Prove:** Exclude the complete Type-I original source/torque and all positive/private degrees. **Exit:** No use of the closed connected-private B3 theorem outside its exact middle star.
-- [ ] **`P-C1-6-b3-TYPE_II`** — **Domain:** Three genuine leaves, disconnected clear Q with loaded P and N, AB absent and BC optional. **Prove:** Exclude the complete independent Type-II original force/torque and all true clear/private stars. **Exit:** Both BC-present/absent and every actual contact mean retained.
-- [ ] **`P-C1-6-b3-WEAK`** — **Domain:** Survivors of disconnected Type-I or Type-II with physical zero weights or contact-owner ties. **Prove:** Prove a single original-domain limit/owner cover for these disconnected branches. **Exit:** A complete case join respecting original root/star and 9 actual bodies.
+**All three original child scopes are discharged by the [complete original parent assembly](../ADOPTION_C1_6_B3_AND_UNIFORM_UNLOADED_MODULES_2026_10_31.md), including every weak mask and contact-owner alternative. Its new current composition review preserves all nine actual units.**
+
+- [x] **`P-C1-6-b3-TYPE_I`** — **Domain:** Three genuine leaves, disconnected private roots, original Type-I clear Q and loaded P; both optional original AB/BC edges retained. **Prove:** Exclude the complete Type-I original source/torque and all positive/private degrees. **Exit:** No use of the closed connected-private B3 theorem outside its exact middle star.
+- [x] **`P-C1-6-b3-TYPE_II`** — **Domain:** Three genuine leaves, disconnected clear Q with loaded P and N, AB absent and BC optional. **Prove:** Exclude the complete independent Type-II original force/torque and all true clear/private stars. **Exit:** Both BC-present/absent and every actual contact mean retained.
+- [x] **`P-C1-6-b3-WEAK`** — **Domain:** Survivors of disconnected Type-I or Type-II with physical zero weights or contact-owner ties. **Prove:** Prove a single original-domain limit/owner cover for these disconnected branches. **Exit:** A complete case join respecting original root/star and 9 actual bodies.
 
 ## `C1.7.b0` (4)
 

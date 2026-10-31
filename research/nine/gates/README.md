@@ -7,30 +7,30 @@ The [parent map](PARENT_MAP.md) maps **all 140 original unchecked entries** to *
 
 ## ONE active original-caller proof ledger — no fake equal-work fraction
 
-**[LIVE PROOF LEDGER](SESSION_CHECKPOINTS.md)** is the active session record, featuring a complete matrix of the **18 remaining original open whole-nine-square parents**, with three newly closed rows retained, source statements labeled **H** (written hand), **V** (independently reviewed), **J** (joined to a full original caller), or **C** (canonical closed), and a separate list of genuine unresolved continuous physical proof blockers. Small audit/finite-graph work cards have exact output tests; large geometric research questions are **not presented as uniformly easy "gates."**
+**[LIVE PROOF LEDGER](SESSION_CHECKPOINTS.md)** is the active session record, featuring a complete matrix of the **17 remaining original open whole-nine-square parents**, with four newly closed rows retained, source statements labeled **H** (written hand), **V** (independently reviewed), **J** (joined to a full original caller), or **C** (canonical closed), and a separate list of genuine unresolved continuous physical proof blockers. Small audit/finite-graph work cards have exact output tests; large geometric research questions are **not presented as uniformly easy "gates."**
 
-The previous **15/57 milestone fraction has been retired**. Its original detailed [historical snapshot](HISTORICAL_57_MILESTONES_2026_10_31.md) is preserved solely for source provenance. No new original fine/coarse flag was checked in this ledger reorganization. After the [entire intact-triangle adoption](../ADOPTION_INTACT_TRIANGLE_THREE_ORIGINAL_CASES_2026_10_31.md), current canonical counts are **40/58** whole coarse cases, **2,373/2,513** fine labels, **18/38** nested six-body exterior rows.
+The previous **15/57 milestone fraction has been retired**. Its original detailed [historical snapshot](HISTORICAL_57_MILESTONES_2026_10_31.md) is preserved solely for source provenance. No new original fine/coarse flag was checked in this ledger reorganization. After the [intact-triangle adoption](../ADOPTION_INTACT_TRIANGLE_THREE_ORIGINAL_CASES_2026_10_31.md) and [complete C1.6.b3 adoption](../ADOPTION_C1_6_B3_AND_UNIFORM_UNLOADED_MODULES_2026_10_31.md), current canonical counts are **41/58** whole coarse cases, **2,373/2,513** fine labels, **18/38** nested six-body exterior rows.
 
-New hand-only exact graph results are linked there: [three-hub five orbits](../THREE_PORT_RANK_TWO_THREE_HUB_FIVE_ORBITS_2026_10_31.md), [four-hub two diamond/exit distributions](../THREE_PORT_RANK_TWO_FOUR_HUB_DIAMOND_CENSUS_2026_10_31.md), [five-hub six internally subdivided K23 orbits](../THREE_PORT_SUBDIVIDED_K23_SIX_ORBITS_2026_10_31.md). They are **finite necessary classifications**, not new full nine-square exclusions. Independent reviews remain pending.
+The [new uniform hand theorem](../THREE_PORT_RANK_TWO_AND_ALL_SUBCUBIC_MULTICYCLE_EXCLUSION_2026_10_31.md) and its complete independent review now exclude every rank-two and every subcubic multicycle three-port module. The H1–H5, diamond, house and K1–K6 taxonomy remains useful source history; its geometric obstruction is now discharged uniformly. The same proof excludes the entire unicyclic `(2,0)` row, completing `R-MODULE-SMALL_FORCE`. The other four unicyclic profiles and arbitrary-degree higher-rank modules remain open.
 
 ## Work records by role
 
 | Refined group | Records | Status and links |
 |---|---:|---|
-| Reusable sharp geometric/branch/cut lemmas | 25 | **Proposed proof leaves** — [STRUCTURAL](STRUCTURAL.md) |
+| Reusable sharp geometric/branch/cut lemmas | 25 | **One discharged (`R-MODULE-SMALL_FORCE`); 24 retain broader obligations** — [STRUCTURAL](STRUCTURAL.md) |
 | Fixed six-body exterior load and physical-mask subfamilies | 122 | **Proposed proof leaves** — [SIX_BODY](SIX_BODY.md) |
-| Original one-/two-block coarse-parent subfamilies | 71 | **12 discharged by the whole intact-triangle theorem; 59 remain** — [COARSE_PARENTS](COARSE_PARENTS.md) |
+| Original one-/two-block coarse-parent subfamilies | 71 | **15 discharged by the four complete coarse closures; 56 remain** — [COARSE_PARENTS](COARSE_PARENTS.md) |
 | Common-certificate selection, final joins, equality, independent audits | 69 | **Blocked work items**, mostly awaiting geometric closure — [INTEGRATION](INTEGRATION.md) |
 | Future Lean/registry tasks | 9 | **Deferred**, under the user's no-Lean/no-CI rule — [INTEGRATION](INTEGRATION.md) |
 | **Total distinct refined records** | **296** | **218 proposed mathematical / 69 blocked / 9 deferred** |
 
-These are **not** 296 new canonical fine gates, and **not** 296 equally difficult proof problems. They are normalized in *verification granularity*: each proposed proof leaf names a concrete physical graph/load/mask or geometric premise, one mathematical deliverable, and one falsifiable completion criterion. A hard uniform theorem may prove dozens at once. Some proposed child subfamilies may already be covered in older manuscripts; reconcile exact source scopes before claiming completion. The organizational action itself accepted no leaf. The later intact-triangle adoption discharges the twelve existing child records for its three whole original callers; it creates no new IDs.
+These are **not** 296 new canonical fine gates, and **not** 296 equally difficult proof problems. They are normalized in *verification granularity*: each proposed proof leaf names a concrete physical graph/load/mask or geometric premise, one mathematical deliverable, and one falsifiable completion criterion. A hard uniform theorem may prove dozens at once. Some proposed child subfamilies may already be covered in older manuscripts; reconcile exact source scopes before claiming completion. The organizational action itself accepted no leaf. The later intact-triangle and C1.6.b3 adoptions discharge fifteen existing coarse-child records for their four whole original callers; the module theorem also discharges one existing structural record. No new IDs or canonical fine flags are created.
 
 ## How to use a leaf
 
 A leaf must have a **specific domain**, a **single theorem/physical exclusion or packing-capacity claim**, and a **done-when test**. For a stressed contact problem the domain must retain every original square (nine total), all true positive degrees, original pair applications and shared means, actual one-/two-*physical*-circle-corner masks including zero individual coefficients, and exactly one legitimate common normal selection. An apparent proof in a smaller or stricter chart does not complete the leaf.
 
-A broad parent marked `C.ALL`, `G3.M.ALL`, `M6.*.ALL` or `G5.ALL` is an **assembly milestone**, not an additional independent geometric leaf. Multiple parents may point to the same refined leaf. Never sum their child counts or treat this count as an estimate of proof completion. The old 2,513 original ID denominator and 40/58 coarse, 2,373/2,513 fine and 18/38 exterior inventories remain authoritative.
+A broad parent marked `C.ALL`, `G3.M.ALL`, `M6.*.ALL` or `G5.ALL` is an **assembly milestone**, not an additional independent geometric leaf. Multiple parents may point to the same refined leaf. Never sum their child counts or treat this count as an estimate of proof completion. The old 2,513 original ID denominator and 41/58 coarse, 2,373/2,513 fine and 18/38 exterior inventories remain authoritative.
 
 ## Examples of real splits
 
