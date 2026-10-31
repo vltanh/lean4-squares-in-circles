@@ -54,6 +54,28 @@ Each square has transverse projected width $w$ in both the side and diagonal cas
 
 The original physical touches and all nine actual bodies remain; no center has been moved and no force direction has been replaced. The lemma is compatible with both possible support-face corner ties, since it uses only true physical support extremes and open interiors.
 
+## Disk-center corollary (actual farthest corners, no virtual width)
+
+Let $m=n\cdot c_U=n\cdot c_V$, with the actual containing disk centered at $O=0$. The two transmitters' transverse center coordinates differ by at least $w$, so at least one transmitter $T\in\{U,V\}$ has $|t\cdot c_T|\ge w/2$.
+
+- **Side-normal $w=1$.** In its actual side-aligned $(n,t)$ square frame, $T$ has a farthest actual corner with squared radius
+  \[
+  (|m|+\tfrac12)^2+(|t\cdot c_T|+\tfrac12)^2
+  \ge (|m|+\tfrac12)^2+1.
+  \]
+  Disk containment therefore forces $(|m|+\tfrac12)^2+1\le R^2$.
+- **Diagonal-normal $w=\sqrt2$.** In $(n,t)$ coordinates, one actual vertex of $T$ is the tangentially outer diamond vertex
+  \[
+  (m,\ t\cdot c_T+\operatorname{sgn}(t\cdot c_T)\,\tfrac{\sqrt2}{2}),
+  \]
+  with the sign chosen arbitrarily if its transverse center coordinate vanishes. Its squared norm is at least
+  \[
+  m^2+\left(\tfrac{\sqrt2}{2}+\tfrac{\sqrt2}{2}\right)^2=m^2+2.
+  \]
+  Thus $m^2+2\le R^2$.
+
+These are real radius constraints shared by both parallel-channel transmitters. They hold independently of the endpoint hubs' orientations and any other contacts. They still do **not** exclude a complete nine-square configuration without a joint bound involving the other seven bodies.
+
 ## Scope boundary and next use
 
 This lemma applies to the **compulsory two genuine parallel $AB$ transmitters** in *each* of the five H1–H5 three-hub rank-two cases, and to the analogous pair in any other original positive graph satisfying this same two-channel premise. It supplies a real transverse width reserve rather than a made-up projection gap. A next theorem would have to combine this reserve with the **actual** neighboring hub square(s), the external loaded squares and all the nine-square completion geometry at radius $R^2\le1105/256$. The lemma alone cannot close any canonical coarse/fine cell, any M29 physical case, or G4.2.c.
