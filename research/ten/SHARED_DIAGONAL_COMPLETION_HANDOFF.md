@@ -1,7 +1,10 @@
 # Shared diagonal completion: frozen research handoff
 
-**Status: NOT PROMOTED.** This records an existing, unreviewed local
-argument and the remaining gap. It is not a whole-signature exclusion,
+**Status: historical research handoff.** The opposite-unique-circle
+argument below has now passed review and is incorporated, together with
+the radial cases, in [ONE_DIAGONAL_TWO_SIDE_SAME_SIGN_NORMALIZATION.md](ONE_DIAGONAL_TWO_SIDE_SAME_SIGN_NORMALIZATION.md).
+The whole-signature completion gap remains open. This note records the
+earlier local argument and its original scope. It is not a whole-signature exclusion,
 an exact existence certificate, or a completion-capacity bound. No case
 count changes follow from this note.
 

@@ -1,6 +1,6 @@
 # Fixed master ledger for the strict n=10 lower bound
 
-**Fixed strict-lower-bound master ledger:** `███████████████████▌░░░░` **273/336 closed; 63 open.** (273 hand; 0 computer-only.) [All stable IDs and the exact remaining obligations](MASTER_CASES.md).
+**Fixed strict-lower-bound master ledger:** `███████████████████▌░░░░` **274/336 closed; 62 open.** (274 hand; 0 computer-only.) [All stable IDs and the exact remaining obligations](MASTER_CASES.md).
 
 The denominator is frozen: 19 other terminal families + 38 branching families + 279 cycle signatures. A branching family includes every permitted graph and continuous realization for its fixed `(k,b)`. These are proof-family counts, **not a percentage of effort or of the full n=10 deliverable**. Equality and Lean verification have separate gates.
 
@@ -26,7 +26,7 @@ The b=0 and b=1 raw catalogs remain optional drilldowns. Their exclusions do not
 | --- | ---: | ---: | ---: | ---: |
 | Other terminal families | 19 | 0 | 0 | 19 |
 | All branching families | 8 | 0 | 30 | 38 |
-| All cycle signatures | 246 | 0 | 33 | 279 |
+| All cycle signatures | 247 | 0 | 32 | 279 |
 
 ## Shared arguments covering the remaining list
 
@@ -36,7 +36,7 @@ The following work groups partition the open IDs by a fixed structural feature. 
 | --- | ---: | --- |
 | Branching components | 30 | Use the three-interior-body and two-terminal patch reductions to control regions with at least three terminals or bound their completion capacity. |
 | Cycles containing SS | 5 | Prove a uniform barrier or capacity bound across all endpoint ownership and transmitter slides. |
-| Cycles containing D, without SS | 14 | Extend D-endpoint geometry or completion bounds across the full signatures, retaining every loaded support type. |
+| Cycles containing D, without SS | 13 | Extend D-endpoint geometry or completion bounds across the full signatures, retaining every loaded support type. |
 | Cycles with only single S transmissions | 14 | Use loaded-run force/torque restrictions and completion capacity uniformly over S slides. |
 
 A general tool for these routes is [finite center-cover capacity](FINITE_CENTER_COVER_CAPACITY.md). Its hypotheses must be established for every realization of the entry before it can close that entry.
@@ -109,7 +109,6 @@ Each row below requires exclusion of **every** realization stated in the full le
 | C20-M08-L06-B03-T01 | Every whole mixed simple-cycle component with canonical cyclic word LLLLSLLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion. |
 | C20-M08-L06-B04-T01 | Every whole mixed simple-cycle component with canonical cyclic word LLLSLLLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion. |
 | C20-M08-L07-B01-T01 | Every whole mixed simple-cycle component with canonical cyclic word LLLLLLLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion. |
-| C20-M08-L07-B01-T02 | Every whole mixed simple-cycle component with canonical cyclic word LLLLLLLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion. |
 
 ## All 336 fixed entries
 
@@ -254,7 +253,7 @@ Each row below requires exclusion of **every** realization stated in the full le
 | C20-M08-L06-B04-T02 | [HAND CLOSED](STRONG_DIRECT_CYCLE_BUDGET.md) | Every whole mixed simple-cycle component with canonical cyclic word LLLSLLLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion. |
 | C20-M08-L06-B04-T03 | [HAND CLOSED](SHARP_TRANSMISSION_CYCLE_BUDGET.md) | Every whole mixed simple-cycle component with canonical cyclic word LLLDLLLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion. |
 | C20-M08-L07-B01-T01 | OPEN | Every whole mixed simple-cycle component with canonical cyclic word LLLLLLLS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion. |
-| C20-M08-L07-B01-T02 | OPEN | Every whole mixed simple-cycle component with canonical cyclic word LLLLLLLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion. |
+| C20-M08-L07-B01-T02 | [HAND CLOSED](LOADED_THREE_RAY_ANGLE_BOUND.md) | Every whole mixed simple-cycle component with canonical cyclic word LLLLLLLD, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion. |
 | C20-M09-L03-B01-T01 | [HAND CLOSED](THREE_LOADED_LONG_CYCLES.md) | Every whole mixed simple-cycle component with canonical cyclic word LSSLSSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion. |
 | C20-M09-L04-B01-T01 | [HAND CLOSED](SINGLE_SIDE_TRANSMISSION_UNCROSSING.md) | Every whole mixed simple-cycle component with canonical cyclic word LLSLSSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion. |
 | C20-M09-L04-B01-T02 | [HAND CLOSED](SINGLE_SIDE_TRANSMISSION_UNCROSSING.md) | Every whole mixed simple-cycle component with canonical cyclic word LLDLSSLSS, modulo rotation and reflection; all contact ownership, circle-load splits, continuous geometry and forces, and every ambient ten-square completion. |

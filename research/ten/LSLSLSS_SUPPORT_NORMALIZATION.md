@@ -101,6 +101,14 @@ by [INCIDENT_SIDE_SOURCE_SS_EXCLUSION.md](INCIDENT_SIDE_SOURCE_SS_EXCLUSION.md),
 which also permits extra contacts at the endpoint bodies. Other rows still
 need completion or exclusion arguments.
 
+The further shared exclusions now remove all U-VE-N and U-VV-O forms:
+[nonincident vertex/side theorem](NONINCIDENT_SIDE_SOURCE_EXCLUSION.md)
+and [opposite-vertex theorem](OPPOSITE_VERTEX_SOURCE_EXCLUSION.md). Both
+allow arbitrary far-endpoint contacts and any two transmission widths at
+least one. The remaining LSLSLSS central families are U-EE, U-VV-A, and
+radial R-VV with mixed or two-vertex SS endpoint support. The historical
+seven-row table below remains the exhaustive starting classification.
+
 ## 3. The five unique-circle rows and their exact identities
 
 All forces displayed here are outgoing from C. Their total torque about

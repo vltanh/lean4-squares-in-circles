@@ -1,6 +1,6 @@
 # Ten unit squares in a circle
 
-Research checkpoint: 2026-10-30 (UTC), based on main commit
+Research checkpoint: 2026-10-31 (UTC), based on main commit
 `4bea747b3efa13c869b956cb28435efaf21526fa`.
 
 Start with the [fixed 336-family master ledger](MASTER_CASES.md) for exactly
@@ -67,7 +67,7 @@ the known bound, not a lower-bound proof.
 | The entire three-loaded five-cycle is impossible | [Final S-S exclusion](SIDE_SIDE_EXCLUSION.md), [complete case index](MIXED_FIVE_CYCLE_STATUS.md) | Reviewed hand closure of all ordered transmitter choices and both central circle-contact types |
 | The unique-circle S-D three-loaded five-cycle is impossible | [S-D exclusion](SIDE_DIAGONAL_EXCLUSION.md) | Reviewed hand closure by torque and elementary analytic clearance; no finite interval table |
 | A four-loaded diagonal five-cycle permits at most one other square wholly inside the test disk | [Inner trace restriction](DIAGONAL_FIVE_CYCLE_INNER_TRACE.md) | Reviewed hand restriction used in the nearer-endpoint exclusion below |
-| Every whole mixed simple cycle follows loaded radial order; the strip cap gives stronger angle bounds | [D-D uncrossing](DIAGONAL_PATH_UNCROSSING.md), [cap-angle theorem](TRANSMISSION_CAP_ANGLE_BOUND.md), [234-case budget](SHARP_TRANSMISSION_CYCLE_BUDGET.md) | Reviewed hand structural theorem and exclusions; with the six-cycle results, 246 cases are closed and 33 shorter signatures remain |
+| Every whole mixed simple cycle follows loaded radial order; the strip cap gives stronger angle bounds | [D-D uncrossing](DIAGONAL_PATH_UNCROSSING.md), [cap-angle theorem](TRANSMISSION_CAP_ANGLE_BOUND.md), [234-case budget](SHARP_TRANSMISSION_CYCLE_BUDGET.md) | Reviewed hand structural theorem and exclusions; with the six-cycle results, 247 cases are closed and 33 shorter signatures remain |
 | Three-loaded six-cycles with an SS path are excluded | [SS/D exclusion](SS_DIAGONAL_SIX_CYCLE_EXCLUSION.md), [SS/S exclusion](SS_SIDE_SIX_CYCLE_EXCLUSION.md) | Reviewed hand closures of `LLDLSS` and `LLSLSS` for the selected certificate |
 | Three-loaded six-cycles with at least two D paths are excluded | [D-path forest](DIAGONAL_PATH_GRAPH_RESTRICTIONS.md), [two-D/one-S exclusion](TWO_DIAGONAL_ONE_SIDE_SIX_CYCLE_EXCLUSION.md) | Reviewed hand closures of `LDLDLD` and `LSLDLD`; every D-path graph is a forest of paths |
 | The remaining one-D/two-S six-body equations have a reproducible high-precision candidate | [Exploratory component](ONE_DIAGONAL_TWO_SIDE_COMPONENT_CANDIDATE.md) | Numerical research only: no exact existence certificate, no ten-square completion, and no case closure; investigate completion capacity |
@@ -94,6 +94,12 @@ the known bound, not a lower-bound proof.
 | An incident opposite-vertex/side loaded source cannot feed SS-separated endpoints through two S paths | [Shared source exclusion](INCIDENT_SIDE_SOURCE_SS_EXCLUSION.md) | Reviewed hand theorem allowing arbitrary extra endpoint forces; excludes all U-VE-I realizations inside LSLSLSS |
 | Exposure and graph topology alone do not force branching components to become cycles | [Exact reduction obstructions](UNIVERSAL_BRANCHING_REDUCTION_OBSTRUCTIONS.md) | Reviewed abstract graph and eight-square examples; identifies why force geometry or minimum-active normalization is still needed |
 | A degree-two loaded D endpoint cannot send another nonempty path outward from the D strip | [Shared D-endpoint restriction](DIAGONAL_ENDPOINT_NONEMPTY_PATH_DIRECTION.md) | Hand direction and support reduction for every path width W>=1; direct neighbors are outside scope and whole completion remains open |
+| Side-patch consolidation can preserve the full stated generic normal-selection conventions | [Compatibility theorem](GENERIC_CONSOLIDATION_COMPATIBILITY.md) | Reviewed finite contact table and generic slide selection; resolves the earlier compatibility gap, without excluding original raw IDs |
+| A nonincident vertex/side source cannot feed two positive-width transmission paths | [Two-row hand table](NONINCIDENT_SIDE_SOURCE_EXCLUSION.md) | Reviewed shared exclusion for S/D/SS paths; no far-endpoint loading assumption |
+| Paths from both circle-adjacent source vertices force an exact equality boundary | [Opposite-vertex source theorem](OPPOSITE_VERTEX_SOURCE_EXCLUSION.md) | Reviewed shared exclusion of every strict U-VV-O source |
+| In LSLSLD both S paths leave the D endpoints toward the same vertical side | [Same-sign normalization](ONE_DIAGONAL_TWO_SIDE_SAME_SIGN_NORMALIZATION.md) | Reviewed whole-signature normalization, including arbitrary radial circle-load splits |
+| The unique-D-endpoint branch of LSLSLD has three exhaustive common-source-edge rows | [Finite parameter family](ONE_DIAGONAL_TWO_SIDE_COMMON_SOURCE_EDGE.md) | Reviewed source supports and exact six-center formulas, retaining both complete S slide intervals; uniform completion remains open |
+| Three loaded rays obey a stronger joint angular bound; the seven-loaded one-D cycle is excluded | [24-row hand certificate](LOADED_THREE_RAY_ANGLE_BOUND.md), [exact verifier](check_loaded_three_ray_angle_bound.py) | Reviewed universal geometry; closes C20-M08-L07-B01-T02 and moves the fixed master to 274/336 |
 | Any two loaded squares have center-ray separation at least 2 atan(1/(sqrt(14)-1)) | [Loaded-pair angle](LOADED_PAIR_ANGLE_BOUND.md) | Reviewed hand theorem for arbitrary orientations and all separator offsets; stronger than the previous generic angular bound |
 | A five-cycle with four loaded squares cannot use a side transmitter | [Four-loaded five-cycle](MIXED_FIVE_FOUR_LOADED.md) | Side transmitter excluded by hand in the explicitly imported radius window; the diagonal branch is now excluded above for the chosen certificate |
 | Parallel four-inner cores have a line-separated or pinwheel form; narrow internal channels can be filled as virtual obstacles | [Projection graphs and channel lemma](FOUR_CORE_GENERALIZATION.md) | Hand structural reduction and exact localized pinwheel; no general completion bound |
@@ -129,7 +135,7 @@ certificates remain computational results with their own stated scope.
 ## Roadmap and next obligation
 
 <!-- CASE_PROGRESS_START -->
-**Fixed strict-lower-bound master ledger:** `███████████████████▌░░░░` **273/336 closed; 63 open.** (273 hand; 0 computer-only.) [All stable IDs and the exact remaining obligations](MASTER_CASES.md).
+**Fixed strict-lower-bound master ledger:** `███████████████████▌░░░░` **274/336 closed; 62 open.** (274 hand; 0 computer-only.) [All stable IDs and the exact remaining obligations](MASTER_CASES.md).
 
 The denominator is frozen: 19 other terminal families + 38 branching families + 279 cycle signatures. A branching family includes every permitted graph and continuous realization for its fixed `(k,b)`. These are proof-family counts, **not a percentage of effort or of the full n=10 deliverable**. Equality and Lean verification have separate gates.
 
@@ -138,7 +144,7 @@ The denominator is frozen: 19 other terminal families + 38 branching families + 
 **G3 lower-bound case ledger:** `███████████████████░░`
 **19 hand closed · 0 computer closed · 2 open / 21 terminal families.**
 
-**C20 larger-cycle subcases:** `█████████████████████▏░░` **246/279 closed; 33 open.**
+**C20 larger-cycle subcases:** `█████████████████████▏░░` **247/279 closed; 32 open.**
 
 C05 optional b=0 drilldown: 42,532/45,666 raw records excluded; 3,134 remain. [Catalog and certificates](BRANCHING_SELECTED_GRAPH_FILTERS.md). 
 

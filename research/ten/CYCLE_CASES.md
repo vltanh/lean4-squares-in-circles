@@ -2,13 +2,13 @@
 
 This is the complete current **graph/transmitter overclassification** for C20. It covers whole positive components of lengths 6–10, modulo cyclic rotation and reflection. The inventory itself does not assert geometric feasibility or classify contact ownership. Separately proved exclusions are tracked below for the jointly selected certificate in [CASE_ROADMAP.md](CASE_ROADMAP.md); they need not exclude every alternative choice of physical stress.
 
-**Exclusion progress:** `█████████████████████▏░░` **246/279 transmitter cases closed; 33 open.**
+**Exclusion progress:** `█████████████████████▏░░` **247/279 transmitter cases closed; 32 open.**
 
 | Length | Binary load families | S/D cases | Excluded |
 | --- | ---: | ---: | ---: |
 | 6 | 6 | 15 | 4 |
 | 7 | 9 | 23 | 8 |
-| 8 | 15 | 45 | 38 |
+| 8 | 15 | 45 | 39 |
 | 9 | 21 | 71 | 71 |
 | 10 | 29 | 125 | 125 |
 
@@ -100,7 +100,7 @@ The independent enumerations and Burnside count in [check_cycle_cases.py](check_
 | C20-M08-L06-B04-T02 | `LLLSLLLD` | [HAND CLOSED](STRONG_DIRECT_CYCLE_BUDGET.md) |
 | C20-M08-L06-B04-T03 | `LLLDLLLD` | [HAND CLOSED](SHARP_TRANSMISSION_CYCLE_BUDGET.md) |
 | C20-M08-L07-B01-T01 | `LLLLLLLS` | OPEN |
-| C20-M08-L07-B01-T02 | `LLLLLLLD` | OPEN |
+| C20-M08-L07-B01-T02 | `LLLLLLLD` | [HAND CLOSED](LOADED_THREE_RAY_ANGLE_BOUND.md) |
 | C20-M09-L03-B01-T01 | `LSSLSSLSS` | [HAND CLOSED](THREE_LOADED_LONG_CYCLES.md) |
 | C20-M09-L04-B01-T01 | `LLSLSSLSS` | [HAND CLOSED](SINGLE_SIDE_TRANSMISSION_UNCROSSING.md) |
 | C20-M09-L04-B01-T02 | `LLDLSSLSS` | [HAND CLOSED](SINGLE_SIDE_TRANSMISSION_UNCROSSING.md) |

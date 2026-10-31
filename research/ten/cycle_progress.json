@@ -984,6 +984,10 @@
     "C20-M08-L06-B04-T02": {
       "status": "hand",
       "evidence": "STRONG_DIRECT_CYCLE_BUDGET.md"
+    },
+    "C20-M08-L07-B01-T02": {
+      "status": "hand",
+      "evidence": "LOADED_THREE_RAY_ANGLE_BOUND.md"
     }
   }
 }
