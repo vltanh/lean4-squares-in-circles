@@ -1,0 +1,769 @@
+{
+  "schema": "eleven-axis-exclusion-v1",
+  "q_num": 49013,
+  "q_den": 10000,
+  "scale": 100000000,
+  "scope": "No eleven axis-aligned unit squares pack q<=49013/10000.",
+  "cases": [
+    {
+      "holes": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "cells": [
+        [
+          -2,
+          0
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "initial_binary_pairs": 10,
+      "stats": {
+        "nodes": 3,
+        "leaves": 2
+      },
+      "tree": {
+        "split": [
+          [
+            12,
+            18
+          ],
+          [
+            19,
+            13
+          ]
+        ],
+        "children": [
+          {
+            "closed": true,
+            "reason": "disk-empty",
+            "coordinate": 16,
+            "iteration": 5,
+            "lower": 142575543,
+            "upper": 139161578
+          },
+          {
+            "closed": true,
+            "reason": "disk-empty",
+            "coordinate": 6,
+            "iteration": 5,
+            "lower": -59213829,
+            "upper": -65025639
+          }
+        ]
+      }
+    },
+    {
+      "holes": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "cells": [
+        [
+          -2,
+          0
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "initial_binary_pairs": 10,
+      "stats": {
+        "nodes": 7,
+        "leaves": 4
+      },
+      "tree": {
+        "split": [
+          [
+            4,
+            10
+          ],
+          [
+            11,
+            5
+          ]
+        ],
+        "children": [
+          {
+            "split": [
+              [
+                18,
+                20
+              ],
+              [
+                21,
+                19
+              ]
+            ],
+            "children": [
+              {
+                "closed": true,
+                "reason": "edge-empty",
+                "edge": [
+                  1,
+                  7
+                ],
+                "iteration": 3,
+                "source_lower": -33277349,
+                "target_upper": 59213829
+              },
+              {
+                "closed": true,
+                "reason": "edge-empty",
+                "edge": [
+                  10,
+                  16
+                ],
+                "iteration": 20,
+                "source_lower": 38804165,
+                "target_upper": 138482996
+              }
+            ]
+          },
+          {
+            "split": [
+              [
+                16,
+                20
+              ],
+              [
+                17,
+                21
+              ]
+            ],
+            "children": [
+              {
+                "closed": true,
+                "reason": "edge-empty",
+                "edge": [
+                  3,
+                  1
+                ],
+                "iteration": 3,
+                "source_lower": -59213829,
+                "target_upper": 33277349
+              },
+              {
+                "closed": true,
+                "reason": "edge-empty",
+                "edge": [
+                  0,
+                  4
+                ],
+                "iteration": 19,
+                "source_lower": -162101398,
+                "target_upper": -62472127
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "holes": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "cells": [
+        [
+          -2,
+          0
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "initial_binary_pairs": 10,
+      "stats": {
+        "nodes": 3,
+        "leaves": 2
+      },
+      "tree": {
+        "split": [
+          [
+            4,
+            10
+          ],
+          [
+            11,
+            5
+          ]
+        ],
+        "children": [
+          {
+            "closed": true,
+            "reason": "edge-empty",
+            "edge": [
+              10,
+              16
+            ],
+            "iteration": 22,
+            "source_lower": 38804165,
+            "target_upper": 138464902
+          },
+          {
+            "closed": true,
+            "reason": "edge-empty",
+            "edge": [
+              17,
+              19
+            ],
+            "iteration": 23,
+            "source_lower": -131499975,
+            "target_upper": -32216894
+          }
+        ]
+      }
+    },
+    {
+      "holes": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "cells": [
+        [
+          -2,
+          0
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "initial_binary_pairs": 13,
+      "stats": {
+        "nodes": 11,
+        "leaves": 6
+      },
+      "tree": {
+        "split": [
+          [
+            4,
+            10
+          ],
+          [
+            11,
+            5
+          ]
+        ],
+        "children": [
+          {
+            "split": [
+              [
+                12,
+                18
+              ],
+              [
+                13,
+                19
+              ]
+            ],
+            "children": [
+              {
+                "closed": true,
+                "reason": "edge-empty",
+                "edge": [
+                  21,
+                  19
+                ],
+                "iteration": 1,
+                "source_lower": 27382781,
+                "target_upper": 72617219
+              },
+              {
+                "split": [
+                  [
+                    6,
+                    14
+                  ],
+                  [
+                    7,
+                    15
+                  ]
+                ],
+                "children": [
+                  {
+                    "closed": true,
+                    "reason": "edge-empty",
+                    "edge": [
+                      14,
+                      18
+                    ],
+                    "iteration": 17,
+                    "source_lower": -32351419,
+                    "target_upper": 67605151
+                  },
+                  {
+                    "closed": true,
+                    "reason": "edge-empty",
+                    "edge": [
+                      2,
+                      8
+                    ],
+                    "iteration": 3,
+                    "source_lower": -59213829,
+                    "target_upper": 33277349
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "split": [
+              [
+                12,
+                18
+              ],
+              [
+                13,
+                19
+              ]
+            ],
+            "children": [
+              {
+                "split": [
+                  [
+                    16,
+                    20
+                  ],
+                  [
+                    17,
+                    21
+                  ]
+                ],
+                "children": [
+                  {
+                    "closed": true,
+                    "reason": "edge-empty",
+                    "edge": [
+                      3,
+                      1
+                    ],
+                    "iteration": 3,
+                    "source_lower": -59213829,
+                    "target_upper": 33277349
+                  },
+                  {
+                    "closed": true,
+                    "reason": "edge-empty",
+                    "edge": [
+                      21,
+                      19
+                    ],
+                    "iteration": 17,
+                    "source_lower": -32351419,
+                    "target_upper": 67605151
+                  }
+                ]
+              },
+              {
+                "closed": true,
+                "reason": "edge-empty",
+                "edge": [
+                  14,
+                  18
+                ],
+                "iteration": 1,
+                "source_lower": 27382781,
+                "target_upper": 72617219
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "holes": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "cells": [
+        [
+          -2,
+          0
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "initial_binary_pairs": 12,
+      "stats": {
+        "nodes": 5,
+        "leaves": 3
+      },
+      "tree": {
+        "split": [
+          [
+            12,
+            18
+          ],
+          [
+            13,
+            19
+          ]
+        ],
+        "children": [
+          {
+            "split": [
+              [
+                16,
+                20
+              ],
+              [
+                17,
+                21
+              ]
+            ],
+            "children": [
+              {
+                "closed": true,
+                "reason": "edge-empty",
+                "edge": [
+                  3,
+                  1
+                ],
+                "iteration": 3,
+                "source_lower": -59213829,
+                "target_upper": 33277349
+              },
+              {
+                "closed": true,
+                "reason": "edge-empty",
+                "edge": [
+                  8,
+                  16
+                ],
+                "iteration": 18,
+                "source_lower": -24425811,
+                "target_upper": 75479557
+              }
+            ]
+          },
+          {
+            "closed": true,
+            "reason": "disk-empty",
+            "coordinate": 16,
+            "iteration": 22,
+            "lower": 141127346,
+            "upper": 141121880
+          }
+        ]
+      }
+    },
+    {
+      "holes": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "cells": [
+        [
+          -2,
+          0
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "initial_binary_pairs": 12,
+      "stats": {
+        "nodes": 3,
+        "leaves": 2
+      },
+      "tree": {
+        "split": [
+          [
+            4,
+            10
+          ],
+          [
+            11,
+            5
+          ]
+        ],
+        "children": [
+          {
+            "closed": true,
+            "reason": "edge-empty",
+            "edge": [
+              5,
+              7
+            ],
+            "iteration": 23,
+            "source_lower": -23229502,
+            "target_upper": 76615979
+          },
+          {
+            "closed": true,
+            "reason": "edge-empty",
+            "edge": [
+              10,
+              16
+            ],
+            "iteration": 23,
+            "source_lower": -23229502,
+            "target_upper": 76615979
+          }
+        ]
+      }
+    }
+  ]
+}
