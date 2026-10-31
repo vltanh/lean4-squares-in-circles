@@ -12,6 +12,10 @@
 * Unrestricted \(R^2\ge1105/256\), complete equality classification, and common certificate audit G4.2.c are **OPEN**.
 * Refined 296-record task hierarchy is a planning map, NOT 296 extra canonical gates. Do not tick its R-MODULE-TRICYCLE item until its full arbitrary-degree/three-cut scope is discharged.
 
+## Finite session proof checkpoints (reconciled 2026-10-31)
+
+The [fixed 57-ID proof-step ledger](gates/SESSION_CHECKPOINTS.md) records **14 narrow written hand checkpoints checked / 43 still open** without altering the 296 refined gates or original flags. **M01–M02** were newly proved in the [full-cut hand-counting census](THREE_PORT_DEGREE_SIGNATURE_CENSUS_2026_10_31.md): for any full positive cut, `Σ(deg_full−2)=2b+p−2`, `|K|≤7`, `p≤20`, `b≤15`; at three exits and cycle rank two, exactly seven necessary original-degree signatures occur. The other twelve checked checkpoints link prior conditional or reviewed hand sources. This **does not** exclude any new original full nine-square parent. For next work favor M11–M25 (specific three-port unicyclic, house, subdivided-K₂,₃ subfamilies), M26–M32 (trivalent/higher-degree cores), or a high-leverage G/W shared theorem; do not create a new checkpoint denominator.
+
 ## New source proved at exact scope
 
 Let \(K\) be a connected all-unloaded set with exactly three original positive cut edges. Assume every member has original true positive degree 2 or 3, with at most **one reduced exit arm per branching hub** (not merely at most one direct cut edge per physical body), and \(K\) contains at least two independent cycles. A full-degree-two body may lie on an exit arm; all three original cut edges remain. At the record upper squared radius, the original full degree sum and the two-loaded-body requirement give:
