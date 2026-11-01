@@ -25,8 +25,8 @@ def mul_int(al,au,bl,bu):
 def abs_min(l,h):return max(0,l,-h)
 
 def build(m=M,k=K):
-    if m not in (6,8) or k != 12:
-        raise ValueError("supported meshes are m=6 or 8, k=12")
+    if m not in (6,8) or k not in (12,24):
+        raise ValueError("supported meshes are m=6 or 8, k=12 or 24")
     ts=[]
     for c,(q,r) in enumerate(hc.CELLS):
         cx,cy=3*q*m,(q+2*r)*m

@@ -46,7 +46,7 @@ def neg_range(a):return -a[1],-a[0]
 def amin(a):return max(0,a[0],-a[1])
 
 def reconstruct(m=6,k=12):
-    require(m in (6,8) and k==12,'unsupported certificate mesh')
+    require(m in (6,8) and k in (12,24),'unsupported certificate mesh')
     require(LOW3**2<3<HIGH3**2,'sqrt(3) enclosure')
     d=SCALE;ts=[];low_norm=[];verts=[]
     for c,(q,r) in enumerate(CELLS):
