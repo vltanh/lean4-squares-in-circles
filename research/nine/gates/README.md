@@ -11,20 +11,20 @@ The [parent map](PARENT_MAP.md) maps **all 140 original unchecked entries** to *
 
 The previous **15/57 milestone fraction has been retired**. Its original detailed [historical snapshot](HISTORICAL_57_MILESTONES_2026_10_31.md) is preserved solely for source provenance. No new original fine/coarse flag was checked in this ledger reorganization. After the [intact-triangle adoption](../ADOPTION_INTACT_TRIANGLE_THREE_ORIGINAL_CASES_2026_10_31.md) and [complete C1.6.b3 adoption](../ADOPTION_C1_6_B3_AND_UNIFORM_UNLOADED_MODULES_2026_10_31.md), current canonical counts are **41/58** whole coarse cases, **2,373/2,513** fine labels, **18/38** nested six-body exterior rows.
 
-The [new uniform hand theorem](../THREE_PORT_RANK_TWO_AND_ALL_SUBCUBIC_MULTICYCLE_EXCLUSION_2026_10_31.md) and its complete independent review now exclude every rank-two and every subcubic multicycle three-port module. The H1–H5, diamond, house and K1–K6 taxonomy remains useful source history; its geometric obstruction is now discharged uniformly. The same proof excludes the entire unicyclic `(2,0)` row, completing `R-MODULE-SMALL_FORCE`. The other four unicyclic profiles and arbitrary-degree higher-rank modules remain open.
+The [complete November 1 uniform adoption](../ADOPTION_FULL_THREE_PORT_REDUCTION_AND_GEOMETRIC_ESCAPE_2026_11_01.md) now excludes every cyclic transmitted exit and EVERY multicycle unloaded full-three-cut module, including the final rank-three graph and all leaf placements. The radius-free two-anchor theorem also supplies a full-cut graph-distance bound. Only `(0,0)` and `(1,0)` remain in the unicyclic table. All sources have complete independent reviews; `R-MODULE-TRICYCLE` is discharged, with no additional original coarse/fine flag changes. C1.8.b1 retains its other graph/load domains.
 
 ## Work records by role
 
 | Refined group | Records | Status and links |
 |---|---:|---|
-| Reusable sharp geometric/branch/cut lemmas | 25 | **One discharged (`R-MODULE-SMALL_FORCE`); 24 retain broader obligations** — [STRUCTURAL](STRUCTURAL.md) |
+| Reusable sharp geometric/branch/cut lemmas | 25 | **Two discharged (`R-MODULE-SMALL_FORCE`, `R-MODULE-TRICYCLE`); 23 retain broader obligations** — [STRUCTURAL](STRUCTURAL.md) |
 | Fixed six-body exterior load and physical-mask subfamilies | 122 | **Proposed proof leaves** — [SIX_BODY](SIX_BODY.md) |
 | Original one-/two-block coarse-parent subfamilies | 71 | **15 discharged by the four complete coarse closures; 56 remain** — [COARSE_PARENTS](COARSE_PARENTS.md) |
 | Common-certificate selection, final joins, equality, independent audits | 69 | **Blocked work items**, mostly awaiting geometric closure — [INTEGRATION](INTEGRATION.md) |
 | Future Lean/registry tasks | 9 | **Deferred**, under the user's no-Lean/no-CI rule — [INTEGRATION](INTEGRATION.md) |
 | **Total distinct refined records** | **296** | **218 proposed mathematical / 69 blocked / 9 deferred** |
 
-These are **not** 296 new canonical fine gates, and **not** 296 equally difficult proof problems. They are normalized in *verification granularity*: each proposed proof leaf names a concrete physical graph/load/mask or geometric premise, one mathematical deliverable, and one falsifiable completion criterion. A hard uniform theorem may prove dozens at once. Some proposed child subfamilies may already be covered in older manuscripts; reconcile exact source scopes before claiming completion. The organizational action itself accepted no leaf. The later intact-triangle and C1.6.b3 adoptions discharge fifteen existing coarse-child records for their four whole original callers; the module theorem also discharges one existing structural record. No new IDs or canonical fine flags are created.
+These are **not** 296 new canonical fine gates, and **not** 296 equally difficult proof problems. They are normalized in *verification granularity*: each proposed proof leaf names a concrete physical graph/load/mask or geometric premise, one mathematical deliverable, and one falsifiable completion criterion. A hard uniform theorem may prove dozens at once. Some proposed child subfamilies may already be covered in older manuscripts; reconcile exact source scopes before claiming completion. The organizational action itself accepted no leaf. The later intact-triangle and C1.6.b3 adoptions discharge fifteen existing coarse-child records for their four whole original callers; the complete module theorems also discharge two existing structural records. No new IDs or canonical fine flags are created.
 
 ## How to use a leaf
 

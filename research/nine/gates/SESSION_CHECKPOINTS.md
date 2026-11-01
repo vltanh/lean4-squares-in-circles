@@ -1,6 +1,6 @@
 # N=9 live hand-proof ledger — actual-case coverage and auditable proof frontier
 
-**Updated 2026-10-31 UTC. This is the ONLY active session work ledger for PR #11.** [Authoritative canonical case status](../PROGRESS.md) · [296-record legacy refinement](README.md) · [archive of the misleading 57-milestone progress bar](HISTORICAL_57_MILESTONES_2026_10_31.md).
+**Updated 2026-11-01 UTC. This is the ONLY active session work ledger for PR #11.** [Authoritative canonical case status](../PROGRESS.md) · [296-record legacy refinement](README.md) · [archive of the misleading 57-milestone progress bar](HISTORICAL_57_MILESTONES_2026_10_31.md).
 
 **Unrestricted sharp lower bound $R^2\ge1105/256$: OPEN.** Complete equality classification: OPEN. G4.2.c same-certificate audit: OPEN. Formalization: DEFERRED (hand proof only, no Lean/Lake/CI). The record construction supplies the candidate upper bound; global necessity is not proved.
 
@@ -33,50 +33,51 @@ remain in each application. The [complete C1.6.b3 adoption](../ADOPTION_C1_6_B3_
 
 A **proof-ready small task** has a precise input graph/load/force domain, one verifiable output (finite orbit table, particular original-side identity, or one quantified inequality), named prerequisites, and a source-level verification test. It may still be unexpectedly difficult. A large continuous family is recorded as **BLOCKED**, not disguised as an equally small checkbox. **Do not promise one finished gate per session.** Report a genuine result or zero, and never subdivide merely to inflate a numerator.
 
-## 2. New reviewed source statements and their exact scope
+## 2. Complete current structural proof boundary
 
-| Result | Complete theorem | Evidence state | Whole original coarse closure? |
-|---|---|---|---|
-| **S-DISTINCT / S-CONCENTRATION** | Every cyclic unloaded full-three-cut module has three distinct reduced exit hubs. Complete work forces direct exit-hub contacts to carry almost all internal magnitude; no small positive edge is removed | **V**, [complete source](../THREE_PORT_CYCLIC_DISTINCT_EXITS_AND_FORCE_CONCENTRATION_2026_10_31.md) and [independent reconstruction](../reviews/2026-10-31/REVIEW_DOMINANT_PAIR_AND_THREE_PORT_MODULE_EXCLUSIONS_2026_10_31.md) | No |
-| **S-DOMINANT** | An actual unloaded pair with `(r_A+r_B)/d<2/29` has its original shared application `|p|<15/16`, and `dist(p,Z)<469/240<2` for every actual unit Z | **V**, [full force/torque proof](../DOMINANT_UNLOADED_CONTACT_PAIR_IS_CENTRAL_2026_10_31.md) and the same review | No |
-| **S-RANK2 / S-SUBCUBIC** | Every rank-two three-port unloaded module, at arbitrary full degree, and every subcubic module of rank at least two is excluded. All H1–H5, both diamonds, all house and K1–K6 placements are covered | **V**, [complete composition](../THREE_PORT_RANK_TWO_AND_ALL_SUBCUBIC_MULTICYCLE_EXCLUSION_2026_10_31.md) and the same review | No additional whole coarse caller claimed |
-| **S-UNI-20** | The entire original unicyclic `(t,s)=(2,0)` row is excluded with every original positive coefficient | **V**, Section 8 of the same composition; `R-MODULE-SMALL_FORCE` discharged | No |
-| **S-D-EAR** | Every genuine-D root has a cyclic neighbor nonadjacent to its unique other near vertex. Every full-three-star triangular-ear D root is excluded, including all house-roof and fan-endpoint placements | **V/J**, [complete theorem](../GENUINE_D_ROOT_REQUIRES_A_NONCOMMON_CYCLIC_NEIGHBOR_AND_EXCLUDES_EVERY_TRIANGULAR_EAR_2026_10_31.md) and [independent review](../reviews/2026-10-31/REVIEW_GENUINE_D_NONCOMMON_NEIGHBOR_AND_TRIANGULAR_EAR_EXCLUSION_2026_10_31.md) | No |
-| **C-INTACT** | Entire positive triangle with two full-degree-two tips, arbitrary root/private block and nine actual units | **C**, [full adoption, reconciliation and caller review](../ADOPTION_INTACT_TRIANGLE_THREE_ORIGINAL_CASES_2026_10_31.md) | C2.35.b0, C2.36.b0, C2.37.b0 |
-| **C-SIX-THREE** | Every original six-body cyclic block with three bridges; complete forest/partition/Type I–IV join including all owner and mask limits | **C**, [full adoption and current caller review](../ADOPTION_C1_6_B3_AND_UNIFORM_UNLOADED_MODULES_2026_10_31.md) | C1.6.b3 |
+The [November 1 adoption](../ADOPTION_FULL_THREE_PORT_REDUCTION_AND_GEOMETRIC_ESCAPE_2026_11_01.md) links every complete source, independent review and preserved dependency. Its strongest results apply to whole families at once.
 
-The [exact dependency manifest](../C1_6_B3_AND_MODULE_DEPENDENCY_MANIFEST_2026_10_31.md) preserves the recovered connected-terminal theorem used in the four-hub case. New sources can retain their creation-time “review pending” headers; the current complete reviews above supply their later acceptance. The accepted common-certificate scope remains, and the downstream G4.2.c audit remains open.
+| Whole original domain | Reviewed hand conclusion | Remaining boundary |
+|---|---|---|
+| Any cyclic connected unloaded full-three-cut module, arbitrary degrees/rank | Three distinct direct exit hubs; no transmitted exit; original module biconnected | Only the two unicyclic profiles below |
+| EVERY such module of cycle rank at least two, arbitrary full degree | Entirely excluded: complete hand census plus the final graph's two-anchor contradiction | None in this full domain; `R-MODULE-TRICYCLE` discharged |
+| Arbitrary unloaded region and full cut partition into two terminal groups with actual common anchors p,q | If original inside host distance is ell, then `|q-p|>=ell+1`; anchors less than two apart force an inside host in both groups | Actual common anchors are required; arbitrary outside loads and cut multiplicities allowed |
+| Original unicyclic table | `(2,0),(0,1),(1,1)` excluded, including both latter exit positions | Only `(0,0),(1,0)`; different-side obtuse/perpendicular support feature in the latter |
+| Any actual dominant unloaded pair with total other incidence below `3d/40` | Original application central; its two actual distinguished terminals are closed-disjoint; neither terminal is a genuine D leaf | Does not erase the weak third-host edge or supply an automatic residual distance lower bound |
+| Arbitrary selected physical graph, radius and full degrees | Four-contact cycle encloses at most one other unit center; literal triangular prism impossible | Does not imply outerplanarity |
+| Arbitrary unloaded region, every full cut size k | Adjacent-star escape; `3d<=2n+k-2-e_H`; universal internal hub bound `n<=k+1-e_H` | Higher-cut geometry and actual nine-square completion remain |
+| Genuine D root in any cyclic block | Two-step neighbor escape, no universal root, all previously closed triangular ears | Other D-root geometries and complete original parents remain |
 
-## 3. The rank-two taxonomy is now completely excluded
+These are **V** complete independently reviewed source statements; the final multicycle graph is **J** joined to the entire census domain and excluded. Its optional C1.8.b1 outside-caller classification is unnecessary to that closure. No fifth **C** whole coarse closure follows. The four actual **C** closures remain the three intact-triangle callers and C1.6.b3.
 
-The complete original full-degree excess is five. The previous topology tables remain useful provenance, but no physically open rank-two family remains under the full-three-cut hypotheses.
+## 3. The final multicycle graph is excluded
 
-| Number of hubs | Original excess partitions / historical families | Current complete exit |
-|---:|---|---|
-| 1–2 | `(5)`, `(4+1)`, `(3+2)` | Every cyclic module has three distinct exit hubs |
-| 3 | `(3+1+1)`, `(2+2+1)`, including H1–H5 | Distinct exits; exact parallel-channel graph; unique-direct-pair or literal physical K23 contradiction |
-| 4 | `(2+1+1+1)`, both original diamond forms | Repeated exits excluded; D-central reduced to unique direct pair or the full connected-terminal three-cut theorem |
-| 5 | `(1+1+1+1+1)`, all house and K1–K6 forms | One uniform subcubic argument: direct exit path forces a full two-cut region with an impossible original degree-three hub |
+The [complete hand census](../ALL_MULTICYCLE_THREE_PORT_MODULES_REDUCE_TO_ONE_SIX_BODY_RANK_THREE_GRAPH_2026_11_01.md) reduced the entire family to
 
-The subcubic argument applies at every rank at least two, so it also discharges the prior seven-trivalent-hub rank-three obstruction. No exhaustive orbit table is needed to prove these physical exclusions.
+    vertices A,B,C,X,Y,T;
+    original internal edges AB,BC,AX,BX,XY,CY,AT,TY;
+    one direct original exit at each of A,B,C.
 
-## 4. Disposition of the earlier finite work cards
+Its full degrees are `4,4,3,3,3,2` in that order, and its cycle rank is three. T is the genuine two-force transmitter from A to Y. In the compatible small physical embedding the outer face is A-B-C-Y-T-A and X is inside. This statement describes the six K vertices; it does not assign face positions to the outside units.
 
-The previous A01–A06 taxonomy-review/enumeration cards are **superseded as closing tasks** by the independently reconstructed full physical theorem. They are not reported as six new proofs or as audits of every old manuscript. Their exact historical wording is retained in the preceding Git revision. A07's original transverse-strip audit is not a premise of the new uniform theorem; it is no longer on the critical path. The prior B29, B30, B5H, BK23 and B3C physical families are all excluded by S-RANK2/S-SUBCUBIC.
+The [complete two-anchor theorem](../TWO_COMMON_ANCHOR_TERMINAL_GROUPS_FORCE_SHARED_HOSTS_AND_EXCLUDE_ALL_MULTICYCLE_THREE_PORT_MODULES_2026_11_01.md) now excludes this WHOLE graph. In the original region `L={X,Y,T}`, the full cut is `AX,BX,AT,CY`. The A/B terminal group has inside hosts X,T; the C group has host Y. They are disjoint. Original applications p_AB and p_BC are valid common terminal anchors and belong to the same square B. Full force and support work give their distance at least two, contradicting the diameter sqrt(2) of B. This uses neither dominance nor any leaf type, and retains the weak original BC contact.
+
+The [clean independent review](../reviews/2026-11-01/REVIEW_TWO_COMMON_ANCHOR_TERMINAL_GROUPS_AND_COMPLETE_MULTICYCLE_THREE_PORT_EXCLUSION_2026_11_01.md) covers arbitrary cut multiplicities, cancellations, every graph-distance layer and the entire census join. Hence EVERY multicycle unloaded full-three-cut module is CLOSED at the original compatible physical scope. Its optional outside/canonical caller is not a new prerequisite. C1.8.b1 remains open for its other graph/load domains.
+
+## 4. Disposition of the earlier taxonomy and audit cards
+
+H1–H5, both diamonds, all house and K1–K6 patterns, all three-/four-hub higher-rank modules, the entire six-hub prism alternative, and the final six-body rank-three graph are excluded. The old A01–A07 finite taxonomy/audit work cards and the former BG-S residual are no longer open. Their historical text remains in earlier Git revisions and frozen intermediate sources. No review count or graph subdivision is treated as a fraction of mathematical effort.
 
 ## 5. Remaining physical theorem obstacles
 
-| Obstruction | Exact surviving domain | Required broad mathematical output |
+| Obstruction | Exact surviving domain | Required broad output |
 |---|---|---|
-| **BUNI** | Four original unicyclic profiles `(0,0),(0,1),(1,0),(1,1)`; both exit positions in the last | Joint original force/torque and nine-square completion; `(2,0)` is already excluded |
-| **BHIGH** | Three-port arbitrary-degree rank at least three; three distinct exits; direct exit-hub graph exactly a two-edge path | Exclude its residual unloaded region while retaining its possibly four-or-more-edge full cut |
-| **BCUT4+** | Every original unloaded full cut with at least four edges, arbitrary internal rank | Full-cut width/stress/capacity theorem, with no selected subset of exits replacing the original cut |
-| **BCHAIN** | The ten one-block original parents, including C7/C8/C9 branching/chorded domains and all actual extras | Joint branch-turn and completion obstruction, or a legitimately extracted sharp four-plus-three chain |
-| **BWRENCH** | Seven remaining two-block parents: decorated triangles and 4+5/4+6/5+5 interfaces | Exact mixed-side articulation force/moment or a whole actual terminal-capacity theorem |
-| **BSIX** | Twenty open C1.6.b0 exterior rows plus the other original six-body domains | Complete original six-body graph/load/mask and joint three-extra capacity; C1.6.b3 does not close this parent |
-| **BAUDIT/EQ** | G4.2.c, all final original joins and equality configurations | Complete common-certificate compatibility and equality propagation after unrestricted necessity is proved |
-
-These are research problems of unequal difficulty. No numerical sample, smaller contact chart or accumulated necessary conditions is counted as their complete solution.
+| **BUNI** | Direct unloaded triangle `(0,0)`; one-transmitter four-cycle `(1,0)` with original bypass applications on different sides | Complete full-force, all-owner and all-nine geometric exit |
+| **BCUT4+** | Unloaded full cuts with at least four edges, arbitrary rank | Full-cut physical capacity or valid broad graph reduction; new degree bounds alone do not close this |
+| **BCHAIN** | Ten remaining one-block coarse parents, with original chords/branches and all extras | Complete original caller or legitimate sharp paired-chain extraction |
+| **BWRENCH** | Seven remaining two-block parents: decorated triangles and 4+5/4+6/5+5 interfaces | Exact mixed-side articulation and full-completion theorem |
+| **BSIX** | Twenty open C1.6.b0 exterior rows and its other original six-body domains | Complete joint three-extra capacity; separate from the closed C1.6.b3 |
+| **BAUDIT/EQ** | Common-certificate G4.2.c, final original joins and every equality packing | Complete unrestricted necessity and equality propagation; formalization remains deferred |
 
 ## 6. The original frontier: 17 OPEN callers and four newly CLOSED rows
 
@@ -145,8 +146,9 @@ A legitimate source-level exclusion or sharp necessary inequality must identify:
 | 2026-10-31, physical channel lemma | [Two genuine original parallel degree-two transmitters force an actual side/diagonal transverse two-square strip and disk-corner reserve](../PARALLEL_TRANSMITTERS_FORCE_A_REAL_TRANSVERSE_TWO_SQUARE_STRIP_2026_10_31.md) | **H**, original physical inequality (not complete family exclusion), independent review pending | **0 / 0** | Combine real strip and other seven squares in B29 |
 | 2026-10-31, ledger correction | [Four-hub diamond/exit census](../THREE_PORT_RANK_TWO_FOUR_HUB_DIAMOND_CENSUS_2026_10_31.md); [five three-hub transmitter orbits](../THREE_PORT_RANK_TWO_THREE_HUB_FIVE_ORBITS_2026_10_31.md); [six subdivided-K23 transmitter orbits](../THREE_PORT_SUBDIVIDED_K23_SIX_ORBITS_2026_10_31.md) | **H** necessary finite topologies only, not nine-square exclusions; independent reviews pending | **0 / 0** | B29, B30, B5H, BK23 and broad geometry |
 | 2026-10-31, current complete adoption | Entire intact triangle; complete C1.6.b3 forest and Type I/II; full rank-two/all-subcubic module theorem; unicyclic `(2,0)` and D-ear exclusions | **V/J/C**, complete current independent reviews and preserved prerequisites | **4 / 0** | 17 original parents; BUNI/BHIGH/cuts 4+ and full nine-square completion |
+| 2026-11-01, uniform continuation | EVERY multicycle unloaded full-three-cut module excluded; arbitrary-cut two-anchor and graph-distance theorem; no cyclic transmitted exit; general prism/interior/escape theorems | **V/J**, complete independent hand reviews and exact dependency manifest; `R-MODULE-TRICYCLE` discharged | **0 / 0** | BUNI, cuts 4+ and 17 original coarse parents |
 
-**Current continuation:** preserve the complete reviewed four-case adoption, then attack BUNI/BHIGH and shared whole-parent geometry. The surviving direct exit-hub path is a necessary shape, not a license to discard its other original positive forces. A further coarse flag changes only after a full original caller join.
+**Current continuation:** the complete reviewed four-case adoption is published. The later whole multicycle exclusion leaves only BUNI among cyclic three-port modules, together with the independent higher-cut and whole-parent domains above. A further coarse flag changes only after its full original caller joins; no weak positive force or remaining physical mean is dropped.
 
 **Archival note:** [the former 57-checkpoint list](HISTORICAL_57_MILESTONES_2026_10_31.md) remains available unchanged for provenance. It is **not** a current progress bar or a work guarantee. This replacement deliberately consolidates all future session tracking here without adding another live ledger.
 
