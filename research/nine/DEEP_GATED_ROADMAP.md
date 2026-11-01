@@ -1,146 +1,132 @@
-# n=9 — canonical proof roadmap (v3, A.2 disk-support update)
+# n=9 — canonical roadmap v3: published checkpoints and sharp terminals
 
-**The unrestricted sharp theorem and complete equality classification are OPEN.**
-Target: nine independently oriented, interior-disjoint unit squares in a disk
-have squared radius at least **1105/256**, and classify every attaining packing.
+**Target:** q>=1105/256 for nine independently oriented, interior-disjoint unit
+squares in a disk, all attaining configurations, then a complete hand/table proof.
+**Status:** all three global deliverables OPEN. **Active: A.2.**
+The same 15 registry entries and 7,915 canonical root IDs are retained.
 
-**Active: A.2.** A complete positional root cover is now available: **7,915
-canonical roots, 3,986 EXCLUDED, 3,929 OPEN**. See the
-[containment theorem and exact tables](computer_assisted/DISK_SUPPORT_CERTIFICATES.md)
-and [independent replay summary](computer_assisted/disk_support_verification_summary.json).
-This adds 3,100 exclusions while retaining every previous exclusion and root ID.
-This count is for a fixed explicit cover, not a completion percentage or a
-claim that the remaining roots are uniformly easy.
-
-## Three theorem deliverables — unchanged
-
-| Deliverable | Status | Acceptance test |
+| Deliverable | Status | Acceptance condition |
 |---|---|---|
-| A. Global bound | **OPEN** | Exclude every physical packing at every q<1105/256 |
-| B. Equality | **OPEN** | Explicit necessary-and-sufficient families of all q=1105/256 packings |
-| C. Hand/table proof | **OPEN** | Complete human-checkable manuscript for A and B |
+| A — global lower bound | OPEN | Every physical q<Q packing excluded |
+| B — full equality classification | OPEN | Explicit necessary-and-sufficient families at q=Q |
+| C — final hand/table manuscript | OPEN | Complete and independently checkable arguments for A and B |
 
-The same gate IDs and mathematical goals are retained. Experiments, software
-setup and method choices are not theorem closures. No historical case counters
-are restored. Source proofs and separate exact implementations are available;
-no separate human reviewer or kernel verification is claimed.
+## A — global lower bound
 
-## A — prove the lower bound
+**A.0 — faithful model [SOURCE AVAILABLE].** The original unrestricted emitter
+has nine independent frames, 36 corners and 36 weak pair separations. Its source
+equivalence proof and attaining witness remain available. Final independent human
+source audit is outstanding; no kernel verification is claimed.
 
-**A.0 — Faithful model [SOURCE AVAILABLE; audit required].** The original
-unrestricted emitter has nine independent frames, all 36 original corners,
-and all 36 weak pair separations. Its geometric equivalence source proof and
-attaining witness are in `computer_assisted/UNRESTRICTED_MODEL_AND_ROW_CERTIFICATE.md`.
-A full independent source audit remains part of final acceptance.
+**A.1 — global coverage [EXPLICIT COVER AVAILABLE].** Nineteen closed hexagons
+cover the entire possible center disk. Their diameters are strictly below one,
+so nine physical centers occupy distinct cells. There are 92,378 nine-cell
+subsets and 7,915 canonical representatives under twelve actual disk symmetries.
+Every root retains all continuous orientations and original physical predicates.
 
-**A.1 — Global coverage [EXPLICIT COVER AVAILABLE; exclusions incomplete].**
-The nineteen-hexagon theorem covers every physical q<=Q packing without row,
-common-direction, contact-graph or stress premises. Each root is the original
-physical formula plus nine closed cell assignments. The root models retain
-all continuous orientations and separator alternatives. No claim is made that
-7,915 root models automatically form 7,915 easy solver jobs.
+- **A.1a [SOURCE AVAILABLE]:** exact unrestricted representation and root emitter.
+- **A.1b [PROVED SOURCE + ENUMERATION]:** explicit full root cover with fixed IDs.
+- **A.1c [PROVED FOR THIS COVER]:** closed cells, overlapping boundaries, independent
+  orientations, all weak contacts and degeneracies retained.
 
-- **A.1a — sound representation [SOURCE AVAILABLE].** The original formula
-  still contains every pose, corner and weak pair separation. The root emitter
-  adds six exact quadratic cell inequalities per square and one positive
-  algebraic constant sqrt(3), with no extra frame gauge.
-- **A.1b — exhaustive explicit cover [PROVED SOURCE + EXACT ENUMERATION].**
-  Every center lies inside radius 91/60 and different centers are at least
-  one apart. Nineteen closed hexagons of diameter 49/50 cover that disk, so
-  the centers occupy nine distinct cells. The 92,378 subsets reduce to 7,915
-  canonical subsets under twelve actual disk symmetries. Producer, separate
-  enumeration and Burnside counts agree. Each root has a deterministic ID
-  and an explicit emitted physical predicate.
-- **A.1c — boundary accounting [PROVED FOR THIS COVER].** Closed hex cells,
-  arbitrary tie assignment and diameter strictly below one cover shared
-  cell boundaries. All original weak contacts and independent orientations
-  remain. Fine triangles are discarded only by a strict exact impossibility
-  bound; equality compatibility edges are retained. The argument also works
-  at q=Q and does not discard singular or repeated-normal configurations.
+**A.2 — close every physical root [OPEN / ACTIVE].** The published coupled-
+separator checkpoint supplies **5,838 excluded / 2,077 open** cases. It uses
+247 additional cores, 401 proof nodes, 77 exhaustive splits and 8,777 propagation
+rows, after retaining all previous square-pose and disk-support evidence. The
+complete source and independent replay implementation are now in the branch.
+The earlier local-only publication limitation is resolved for those sources.
 
-**A.2 — Close the finite obligations [OPEN / ACTIVE].** The disk-support
-certificates add 3,100 exclusions, giving 3,986 excluded and 3,929 OPEN roots.
-An exact support formula for the center region of a contained square produces
-necessary halfplanes over whole closed orientation intervals. Contracting each
-state's positional polygon gives stronger square-owned separator bounds. The
-176 new cores have 4,182 propagation rows. The earlier 886 exclusions and their
-proof references are preserved; the same original physical root IDs remain.
-Any further subdivision must cover every child and retain its root linkage.
-No angle sampling, generic position or fixed positive radius gap is used.
+Two distinct kinds of terminal are now available:
 
-**A.3 — Independent global replay [OPEN].** The verifier reconstructs the old
-physical pose graphs, replays all 83 prior square-pose cores, independently
-rebuilds the contracted polygons and every compatibility edge, and checks all
-4,182 new rows and all root transfers. The polygon implementations use distinct
-methods: clipping versus feasible supporting-line intersections. Every proof
-comparison is integer/rational, with explicit bounds on array arithmetic.
-This is complete replay of the present partial certificate, not global closure:
-3,929 physical roots still lack contradictions. Final A.3 needs all-q<Q
-exclusion of every remaining root, including arbitrarily near equality.
+1. **Closed-Q exclusions:** the exact geometric graphs and the separate three-cell
+   rational proof rule out entire specified domains even at q=Q.
+2. **Sharp terminals retaining equality:** the neighborhood theorem and its wider
+   vertical-slide extension prove q-Q>=V/256 plus positive anchor squares. They
+   exclude q<Q while allowing genuine equality poses. The extension keeps the
+   1/64 tilt bound and 1/8 horizontal/anchor tolerances, but permits internal
+   middle-row vertical deviations [-1/8,11/16] and bottom-middle [-19/32,1/8].
+   Its rational seven-row table and original-coordinate guard interface are supplied.
 
-A closes only when the complete physical argument is proved and audited.
-Combine it with the known exact q=Q witness to obtain sharp optimality.
+The new local theorem does NOT close an entire positional root by itself. The
+missing global caller must cover all assignments by exclusions or by proved
+sharp-terminal guards. Every split must preserve the original root linkage and
+all boundary assignments. A failed or incomplete search never changes a root's
+status. No completion percentage or uniform-ease claim is made.
 
-### Method choices, not extra gate trees
+**A.3 — complete global replay [OPEN].** The separate coupled verifier rebuilds
+the full earlier dependency chain and all new graph edges/inferences. Its saved
+complete partial-proof report is pinned by hashes. The new sharp verifier checks
+two physical polynomial identities, four owner telescopes, 14 endpoint layers,
+126 full six-tilt layers, equality controls and corruptions. The guarded emitter
+is separately parsed and checked under common rotations/reflections, relabelings
+and fixed cell assignments. These do not supply the still-missing global caller.
+Final A.3 requires every original q<Q domain, not just all currently supplied
+certificates. No separate human reviewer or Lean verification is claimed.
 
-Primary: exact direct physical certificates. Structural/contact lemmas are
-optional tools, but a stress-based caller must establish one globally valid
-selection and all of its hypotheses. Switching methods is not theorem progress.
-The two-direction summary remains a draft and is not used by the hex cover.
-No separate mandatory direct-versus-stress proof trees are introduced.
+A closes only with the full physical exclusion and its soundness. The existing
+exact attainer then establishes the sharp optimum.
 
-## B — characterize all equality packings
+### Methods are tools, not extra gate trees
 
-**B.1 — Complete equality-domain cover [ROOT COVER SUPPLIED].** The same
-nineteen-cell theorem and closed-Q root emitter cover every physical equality
-packing. The 3,986 current exclusions hold even at q=Q. The known oblique witness
-survives in root 7820. This supplies a starting equality cover, not a list of
-all equality normal forms.
+The direct exact physical route remains primary. Structural/contact lemmas may
+be imported only with a proved caller and compatible hypotheses. The unverified
+two-direction draft is not used. No new mandatory stress proof or replacement
+progress denominator is introduced. A method failure is not a theorem closure.
 
-**B.2 — Necessary normal forms and parameters [OPEN].** Derive every equality
-structure up to common Euclidean isometry and relabeling, with exact ranges
-for all translations, tilts, slides, endpoints and degeneracies. Do not assume
-that the special seven-row equality core is globally necessary.
+## B — complete equality classification
 
-**B.3 — Constructive converse [OPEN].** Prove that every listed parameter
-value satisfies all original corner and pair conditions and that no physical
-equality packing is absent. B closes only with necessity and sufficiency.
+**B.1 [ROOT COVER SUPPLIED].** The same closed positional cover works at q=Q.
+The known attaining root 7820 remains OPEN, as it must under closed-Q pruning.
 
-## C — write the final hand proof with tables
+**B.2 [OPEN].** Prove every equality configuration has one of the eventual
+listed structures, with exact free-position/orientation ranges up to genuine
+common symmetries and relabelings. The widened seven-square chart now has a
+necessary local slide description; it is not asserted globally necessary.
 
-**C.1 — Human reconstruction [OPEN].** The hex-cover proof, exact center-support
-theorem, complete interval-containment derivation and finite core tables are
-written. The four-cell theorem has a four-row summary with explicit integer
-rules for reconstructing each entry. The complete manuscript still requires
-all remaining root exclusions and B's equality classification. Large replayable
-finite tables are not by themselves the requested final compact hand proof.
+**B.3 [OPEN].** Verify every listed global parameter family and prove no equality
+packing is absent. The local converse for the seven-square chart does not classify
+the additional two squares or replace this global obligation.
 
-**C.2 — Audit [OPEN].** Independently check the full mathematical manuscript,
-all exact table comparisons and every boundary implication. The present
-separate arithmetic implementation is not a separate human reviewer.
-Lean, Lake and CI remain deferred.
+## C — complete hand/table proof
 
-## Current evidence and reproduction
+**C.1 [OPEN].** Local readable assets include the center-cover argument,
+admissible-center support formula, coupled separator derivation, the ten-row
+three-cell argument with a generated 1,600-row rational appendix, and the two
+sharp neighborhood theorems with fourteen signed layers. The final manuscript
+still requires the global caller, every remaining exclusion and all of B.
 
-Run from `research/nine/computer_assisted/`:
+**C.2 [OPEN].** Independently audit all final geometric implications, exact
+arithmetic and boundary cases. Separate implementations and finite regression
+controls do not constitute a separate human reviewer. Lean, Lake and CI remain
+deferred and are not extra active mathematical gates.
+
+## Source reproduction
+
+From `research/nine/computer_assisted/`:
 
 ```sh
 python make_hex_cover.py
 python make_square_pose_certificate.py
 python make_disk_support_certificate.py
-python verify_disk_support_certificate.py --negative-controls
-python emit_hex_root.py --root 7820 --radius strict --output /tmp/n9-root.smt2
+python make_coupled_separator_certificate.py
+python verify_coupled_separator_certificate.py --negative-controls
+python make_three_cell_table.py
+python verify_three_cell_table.py --negative-controls
+python render_three_cell_tables.py
+python make_sharp_neighborhood_certificate.py
+python verify_sharp_neighborhood_certificate.py --negative-controls
+python make_wide_slide_certificate.py
+python verify_wide_slide_certificate.py --negative-controls
+python test_sharp_terminal_emitter.py
 ```
 
-The producer and independent graph builder use NumPy only for exact
-bounded-integer operations; polygon and support arithmetic uses Python int
-and Fraction. The final verifier reconstructs its graphs, without trusted caches.
-The complete generated certificate, root manifest and full replay report
-accompany the continuation archive. Their hashes are pinned in the committed
-summary. The source and core list reproduce all results.
+The graph implementations require NumPy with bounded integer arithmetic. The
+small rational table and sharp-terminal checks require only the standard library.
+The full generated forests/manifests/appendix are deterministic outputs, pinned
+by the committed summaries and supplied in the conversation archives; they are
+not asserted checked in as GitHub blobs. No exploratory graph cache is a trusted
+input to the full verifier.
 
-The canonical status is `gates/ACTIVE_ROADMAP.json`. The new finite cover does
-not imply all 3,929 unresolved roots can be solved by uniform pose refinement.
-Closed-Q pruning cannot empty domains containing equality packings. Those
-roots need sharp q<Q inequalities, not a fixed numerical gap.
-A.2 remains the active gate; all existing gate IDs and goals are unchanged.
+Current source publication: `d05959c` (original sharp chart), `d946146` (coupled
+and three-cell checkpoint), `cd1ab86` (wider sharp chart and exact guard interface).
+The authoritative machine-readable status is `gates/ACTIVE_ROADMAP.json`.
