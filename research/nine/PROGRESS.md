@@ -1,28 +1,63 @@
 # n=9 — actual proof progress
 
-**Current proof status: unrestricted lower bound OPEN; equality OPEN; full hand/table proof OPEN.**
+**Unrestricted optimality OPEN. Complete equality classification OPEN.
+Full hand/table manuscript OPEN. Active gate: A.2.**
 
-Canonical roadmap: [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md). Machine-readable gate state: [gates/ACTIVE_ROADMAP.json](gates/ACTIVE_ROADMAP.json).
+[Canonical roadmap](DEEP_GATED_ROADMAP.md) · [gate registry](gates/ACTIVE_ROADMAP.json) ·
+[finite-cover proof and exact exclusions](computer_assisted/HEXAGON_ROOT_COVER_AND_FIRST_EXCLUSIONS.md).
 
-## Known exact inputs
+## What changed in this continuation
 
-- The model `computer_assisted/emit_unrestricted_nine.py` records all nine independent square frames, 36 disk-corner inequalities, 36 pairwise nonoverlap disjunctions. Its geometric equivalence argument and exact finite regression controls are in `computer_assisted/UNRESTRICTED_MODEL_AND_ROW_CERTIFICATE.md`. Full independent source audit is still needed.
-- A q=1105/256 physical witness is checked in the unrestricted emitted formula and an independent rational polygon-clipping oracle.
-- An independently replayed nonnegative polynomial identity proves the sharp bound for the **specific continuous parallel four-over-three row profile**, retaining two arbitrary additional squares. This is not a global cover.
-- Historical hand lemmas on 4+3 projection chains and stress cases are conditional tools. The proposed arbitrary-angle two-direction theorem is **draft pending repair**, not a closed global result.
+The unrestricted center domain is now covered by 19 closed regular hexagons,
+each of diameter 49/50<1. Every physical center has norm <91/60, and different
+centers are at distance >=1. Thus nine squares occupy nine distinct cells.
+The 92,378 nine-cell subsets reduce under actual disk symmetries to exactly
+**7,915 canonical positional roots**. All square orientations remain free;
+all original corner and pair constraints are retained. No row, two-direction
+or stress-selection theorem is assumed.
 
-## Live gates
+The complete root manifest is generated deterministically and checked by a
+separately written implementation. Five exact center-pattern certificates
+exclude **81 roots**, leaving **7,834 OPEN roots**. These counts concern this
+fixed exhaustive cover only. They are not a percentage of proof effort,
+and an OPEN root is not asserted physically feasible or easy to solve.
 
-| Gate | Status | Meaning |
-| --- | --- | --- |
-| A.0 | SOURCE AVAILABLE | Correct unrestricted model; independent audit outstanding |
-| A.1b | **OPEN / ACTIVE** | Obtain a genuinely exhaustive, practical cover of all potential q<Q counterexamples |
-| A.1c | OPEN | Preserve zero/touching and singular faces through the cover |
-| A.2 | OPEN | Prove all the cover's terminal inequalities |
-| A.3 | OPEN | Independently replay all terminals and root coverage uniformly for q<Q |
-| B.1–B.3 | OPEN | Necessary-and-sufficient equality classification |
-| C.1–C.2 | OPEN | Reconstruct and audit the full human/table manuscript |
+| Gate | Current status |
+|---|---|
+| A.0 / A.1a | Original physical-model source available; full independent source audit remains |
+| A.1b | Explicit exhaustive root cover proved in source and independently enumerated |
+| A.1c | Boundary preservation for this cover proved; closed cells and weak contacts retained |
+| A.2 | **ACTIVE: 81 excluded, 7,834 open in the fixed root cover** |
+| A.3 | Full global exclusion replay OPEN; current five-core replay passes |
+| B.1 | Closed-q=Q root cover supplied by the same theorem |
+| B.2 / B.3 | Necessary-and-sufficient equality families OPEN |
+| C.1 / C.2 | Complete hand/table manuscript and independent human audit OPEN |
 
-There is **no defensible finite remaining-case count or completion percentage** yet. A finite exact Boolean encoding is not a solved finite case partition. Do not revive the old numerator/denominator or count special subfamilies as global closures. No global solver UNSAT certificate exists. No Lean/CI runs are claimed.
+The known oblique equality witness survives in root **7820**, mask **177242**.
+It is not discarded by the exclusions. Strict-Q emitted controls reject its
+four attaining corners, while closed-Q accepts it.
 
-**Active work:** A.1b global cover. The alternative direct-vs-stress method selection is an implementation decision under A, not another theorem gate.
+## Actual checks
+
+`verify_hex_cover.py --negative-controls` passes using Python integer/Fraction
+arithmetic, reconstructing the root cover, fine triangulation and compatibility
+relations separately from the producer. It replays 6,416 proof nodes and rejects
+missing roots, false exclusion labels, omitted children and false empty leaves.
+`test_hex_root_emitter.py` passes 24 exact Q(sqrt(3)) emitted-model controls,
+114 closed-cell vertices and 19 outside-cell controls.
+
+The repository contains the source proof, deterministic generators, separate
+verifier, root emitter, test source and saved execution reports. The full
+manifest and decision certificate are regenerated by the listed commands;
+the continuation archive contains the exact generated copies. Their SHA-256
+values are pinned in the reports. No separate human review, global solver
+UNSAT result, Lean, Lake or CI is claimed.
+
+## Next mathematical task — unchanged target, concrete domains
+
+**A.2:** derive orientation-sensitive inequalities or exact certificate cores
+that exclude groups of the remaining 7,834 root predicates. Center separation
+alone is only a necessary relaxation. Each remaining root still contains all
+continuous square poses and separator alternatives. Near-equality roots need
+an all-q<Q argument, not a fixed Q-epsilon search. Keep the root IDs and their
+closure evidence stable; do not replace this cover with another vague roadmap.

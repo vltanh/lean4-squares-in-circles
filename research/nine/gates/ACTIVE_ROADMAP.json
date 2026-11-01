@@ -4,20 +4,37 @@
   "theorem": "OPEN",
   "equality": "OPEN",
   "hand_proof": "OPEN",
-  "active_gate": "A.1b",
+  "active_gate": "A.2",
   "proof_logic": "A.0 AND A.1 AND A.2 AND A.3 => sharp lower bound; B.1..B.3 => complete equality; C.1..C.2 => final hand/table proof",
   "method_preference": "EXACT_COMPUTER_ASSISTED_FIRST_HAND_TABLE_SECOND_NO_LEAN_CI",
-  "honest_counter_policy": "NO_GLOBAL_PERCENTAGE_OR_CASE_COUNT_BEFORE_VERIFIED_FINITE_COVER",
+  "honest_counter_policy": "FIXED_HEX_ROOT_COUNTS_ONLY_NOT_A_COMPLETION_PERCENTAGE",
+  "current_cover": {
+    "source": "computer_assisted/HEXAGON_ROOT_COVER_AND_FIRST_EXCLUSIONS.md",
+    "summary": "computer_assisted/hex_cover_summary.json",
+    "verification": "computer_assisted/hex_verification_report.json",
+    "emitter_controls": "computer_assisted/hex_emitter_test_report.json",
+    "roots": 7915,
+    "excluded": 81,
+    "open": 7834,
+    "certificate_cores": 5,
+    "equality_witness_root": 7820,
+    "all_orientations_retained": true,
+    "all_q_le_Q_covered": true,
+    "all_remaining_roots_tractable": false,
+    "tractability_note": "Explicit root enumeration and current certificate replay execute. Solvability or uniform difficulty of the 7834 continuous open roots is not established.",
+    "separate_human_review_performed": false,
+    "global_lower_bound_proved": false
+  },
   "known_inputs": [
     {
       "asset": "computer_assisted/emit_unrestricted_nine.py",
       "status": "SOURCE_AVAILABLE",
-      "scope": "full unrestricted geometric formula; no global UNSAT result"
+      "scope": "full unrestricted physical formula; no global UNSAT result"
     },
     {
       "asset": "computer_assisted/UNRESTRICTED_MODEL_AND_ROW_CERTIFICATE.md",
       "status": "SOURCE_AVAILABLE",
-      "scope": "model equivalence source argument and only conditional parallel 4+3 row certificate"
+      "scope": "physical model and only conditional parallel 4+3 row proof"
     },
     {
       "asset": "computer_assisted/row43_certificate.json",
@@ -27,7 +44,12 @@
     {
       "asset": "computer_assisted/TWO_DIRECTION_SEPARABLE_NINE_SUMMARY.md",
       "status": "DRAFT_NOT_CLOSED",
-      "scope": "two directions only; Greene-grid and support inequalities need audit"
+      "scope": "not used in this cover"
+    },
+    {
+      "asset": "computer_assisted/HEXAGON_ROOT_COVER_AND_FIRST_EXCLUSIONS.md",
+      "status": "SOURCE_PROOF_AND_SEPARATE_EXACT_REPLAY",
+      "scope": "full root cover and exactly 81 root exclusions; not unrestricted optimality"
     }
   ],
   "gates": [
@@ -45,7 +67,7 @@
     },
     {
       "id": "A.1",
-      "status": "OPEN",
+      "status": "EXPLICIT_COVER_AVAILABLE",
       "goal": "Provably exhaustive and manageable global counterexample cover",
       "exit": "Every original q<Q packing belongs to an explicitly described terminal domain"
     },
@@ -57,13 +79,13 @@
     },
     {
       "id": "A.1b",
-      "status": "OPEN",
+      "status": "PROVED_SOURCE_AND_EXACT_ENUMERATION",
       "goal": "Generate explicit finite root/child/leaf coverage",
       "exit": "Every potential q<Q packing is covered; cover is practically checkable"
     },
     {
       "id": "A.1c",
-      "status": "OPEN",
+      "status": "PROVED_FOR_HEX_COVER",
       "goal": "Prove boundary, singular, weak-contact coverage",
       "exit": "No zero-sign or repeated-normal face discarded"
     },
@@ -87,7 +109,7 @@
     },
     {
       "id": "B.1",
-      "status": "OPEN",
+      "status": "EQUALITY_ROOT_COVER_SUPPLIED",
       "goal": "Complete closed q=Q physical cover",
       "exit": "No equality pose, tangent or oblique case omitted"
     },
@@ -129,7 +151,7 @@
   ],
   "alternatives_not_gates": [
     "Direct exact semialgebraic strategy preferred",
-    "Structural stress strategy is optional fallback under A.1, not simultaneous additional obligation"
+    "Structural stress strategy is optional fallback, not simultaneous additional obligation"
   ],
   "legacy_gate_registry": "SUPERSEDED_NO_ACTIVE_PROGRESS_COUNTER"
 }
