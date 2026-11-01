@@ -8,7 +8,7 @@ from fractions import Fraction as F
 from itertools import combinations,product
 from pathlib import Path
 import hashlib,json
-from emit_sharp_terminal import build_terminal
+from emit_sharp_terminal import build_terminal,build_pruned
 from test_hex_root_emitter import K,parse,evaluate
 from verify_hex_cover import require
 HERE=Path(__file__).resolve().parent
@@ -129,7 +129,30 @@ def main():
         try:build_terminal(selected,mirror)
         except ValueError:rejects+=1
         else:raise ValueError('invalid interface accepted')
-    report={'result':'PASS','arithmetic':'Fraction pairs in Q(sqrt(3))',
+    # The cut is the exact propositional complement of the guard conjunction.
+    # Check its emitted schema, preservation of the base predicates, and exact
+    # evaluation on varied assignments. None are asserted subcritical packings.
+    complement_checks=0
+    for selected,mirror in ((tuple(range(7)),1),((3,2,1,0,6,5,4),-1)):
+        guarded=build_terminal(selected,mirror,'strict')
+        pruned=build_pruned(selected,mirror)
+        variables,Gdefs,G=parse(guarded.smt2());_,Pdefs,P=parse(pruned.smt2())
+        guards=[t for n,t in G.items() if n.startswith('guard_')]
+        expected=[['<' if t[0]=='>=' else '>',*t[1:]] for t in guards]
+        require(P['sharp_terminal_complement']==['or',*expected],'not the complete logical complement')
+        require({n:t for n,t in G.items() if not n.startswith('guard_')}==
+                {n:t for n,t in P.items() if n!='sharp_terminal_complement'},'cut changed original predicate')
+        require(Gdefs==Pdefs and len(P)==82,'cut schema/count')
+        for j in range(20):
+            env=assign(base_poses(F(-9,16) if j%2 else F(0)))
+            if j>=2:
+                env[f'x_{j%9}']=env[f'x_{j%9}']+K(F(j-10,16))
+                env[f'y_{(j+1)%9}']=env[f'y_{(j+1)%9}']+K(F(j-7,13))
+            truth=all(evaluate(t,dict(env),Gdefs) for t in guards)
+            require(evaluate(P['sharp_terminal_complement'],dict(env),Pdefs)==(not truth),'incorrect complement evaluation')
+            complement_checks+=1
+    report={'result':'PASS' ,'arithmetic':'Fraction pairs in Q(sqrt(3))',
+            'strict_cut_complement_controls':complement_checks,'strict_cut_original_predicates_unchanged':True,
             'physical_witness_models_evaluated':count,'fixed_hex_root_models_evaluated':hex_count,
             'closed_vertical_guard_endpoints':endpoints,'invalid_interface_inputs_rejected':rejects,
             'wrong_mirror_and_escaped_guard_rejected':True,'all_original_pairs_retained':36,

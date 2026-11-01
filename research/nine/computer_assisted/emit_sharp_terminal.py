@@ -50,12 +50,31 @@ def build_terminal(selected: Sequence[int] = tuple(range(7)), mirror: int = 1,
     return f
 
 
+def build_pruned(selected: Sequence[int] = tuple(range(7)), mirror: int = 1,
+                 row: dict | None = None, cells: list | None = None):
+    """Add the sharp theorem's forbidden-chart cut to a STRICT-Q root.
+
+    Every physical subcritical packing must violate at least one chart guard.
+    This cuts out a proved terminal without assuming that the rest is empty.
+    Applying this cut to the closed-Q equality model would be unsound.
+    """
+    f=build_terminal(selected,mirror,'strict',row,cells)
+    guards=[predicate for name,predicate in f.assertions if name.startswith('guard_')]
+    if len(guards)!=49 or any(p[0] not in ('>=','<=') for p in guards):
+        raise ValueError('unexpected sharp-guard schema')
+    f.assertions=[(name,p) for name,p in f.assertions if not name.startswith('guard_')]
+    complement=[op('<' if p[0]=='>=' else '>',*p[1:]) for p in guards]
+    f.require('sharp_terminal_complement',op('or',*complement))
+    return f
+
+
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--selected',default='0,1,2,3,4,5,6')
     ap.add_argument('--mirror',type=int,choices=(-1,1),default=1)
     ap.add_argument('--radius',choices=('strict','closed'),default='strict')
     ap.add_argument('--root',type=int)
+    ap.add_argument('--cut',action='store_true',help='Exclude the proved chart from a strict-Q search root')
     ap.add_argument('--manifest',type=Path,default=Path(__file__).with_name('hex_root_manifest.json'))
     ap.add_argument('--output',type=Path)
     args=ap.parse_args()
@@ -66,9 +85,14 @@ def main():
         data=json.loads(args.manifest.read_text());cells=data['cells']
         if not 0<=args.root<len(data['roots']):ap.error('invalid root ID')
         row=data['roots'][args.root]
-    try:f=build_terminal(selected,args.mirror,args.radius,row,cells)
+    if args.cut and args.radius!='strict':ap.error('sharp cuts are sound only for the strict-Q model')
+    try:
+        f=(build_pruned(selected,args.mirror,row,cells) if args.cut else
+           build_terminal(selected,args.mirror,args.radius,row,cells))
     except ValueError as error:ap.error(str(error))
-    text='; Sufficient sharp-terminal chart only; NOT a global packing cover.\n'+f.smt2()
+    header=('; Strict-Q root with a proved forbidden-chart cut; residual root still OPEN.\n' if args.cut else
+            '; Sufficient sharp-terminal chart only; NOT a global packing cover.\n')
+    text=header+f.smt2()
     if args.output:
         args.output.parent.mkdir(parents=True,exist_ok=True);args.output.write_text(text)
     else:print(text,end='')
