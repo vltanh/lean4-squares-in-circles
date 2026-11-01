@@ -6,7 +6,7 @@
 
 > **Unrestricted optimality is OPEN.** The proposed sharp bound is `R² ≥ 1105/256`; an explicit nine-square packing attains equality. Necessity, the classification of **all** equality packings, the downstream common-certificate audit, and a formalized final theorem are not completed. PR #11 remains a draft.
 
-**Current research method:** [Computer-first exact-certification strategy](computer_assisted/STRATEGY_COMPUTER_FIRST_CERTIFICATES_THEN_TABLES_2026_11_01.md) and [active next-session handoff](HANDOFF_COMPUTER_FIRST_NEXT_SESSION_2026_11_01.md). Numerical discovery is permitted; proof requires exact exhaustive certificates followed by compact tables, with hand simplification optional. Do not run Lean, Lake or CI. The new force-triangle screen is a limited, independently unreviewed proper-feature result and does not alter any canonical case flags.
+**Current research method:** [Computer-first exact-certification strategy](computer_assisted/STRATEGY_COMPUTER_FIRST_CERTIFICATES_THEN_TABLES_2026_11_01.md) and [active next-session handoff](HANDOFF_COMPUTER_FIRST_NEXT_SESSION_2026_11_01.md). Numerical discovery is permitted; proof requires exact exhaustive certificates followed by compact tables, with hand simplification optional. Do not run Lean, Lake or CI. The [current reviewed triangle-feature adoption](ADOPTION_TRIANGLE_CONTACT_FEATURES_AND_FULL_PHYSICAL_MODEL_2026_11_01.md) now excludes entire common-junction, internal-shared-side, parallel-pair and all-both-vertex domains, and supplies a stronger analytic force screen and an executable full-nine physical model. No canonical case flags change from these proper-feature results.
 
 ## Original-open-gate coverage inventory (not uniformly easy)
 
@@ -24,6 +24,14 @@ The [single active working ledger](gates/SESSION_CHECKPOINTS.md) retains the **1
 
 The [complete multicycle theorem](ADOPTION_FULL_THREE_PORT_REDUCTION_AND_GEOMETRIC_ESCAPE_2026_11_01.md) excludes EVERY connected entirely unloaded full-three-cut module of cycle rank at least two. The [latest complete adoption](ADOPTION_COMPLETE_UNICYCLIC_FOUR_CYCLE_AND_SHORT_PRISM_EXCLUSION_2026_11_01.md) also excludes the whole one-transmitter unicyclic row `(1,0)`, including every mean/owner boundary. **Only the nonparallel direct triangle `(0,0)` remains cyclic.** The entire parallel-core feature requires `R^2>9/2`, with arbitrary exterior frames and full stars, including both corner endpoints. The resulting all-ranks theorem gives **at most three actual bodies behind three full cut edges**, and **at least four full cut edges for every unloaded connected region of four or more bodies**, with cuts of size zero, one and two explicitly covered. A dominant unloaded pair now has contact radius less than **23/32**; every one-edge-subdivided triangular prism is excluded. The anchor/layer, literal-prism, four-cycle interior and neighbor-escape theorems remain. `R-MODULE-TRICYCLE` is discharged; `R-MODULE-SMALL_UNI` remains open for the direct triangle. **No additional original coarse or fine flag changes.**
 
+### Current contact-feature continuation
+
+The [new complete adoption](ADOPTION_TRIANGLE_CONTACT_FEATURES_AND_FULL_PHYSICAL_MODEL_2026_11_01.md) and linked independent reviews establish the following broad reductions. Every surviving direct unloaded triangle has **no common point, pairwise nonparallel core frames, three internal singleton contacts, and at least one genuine vertex/side contact**. The whole common-junction family, the entire internal-shared-side three-chart family (including its original strict vertex endpoint), any parallel core pair, and the all-both-vertex family are excluded. A separate isosceles owned-exit family has **R>13/6**. The cyclic side-owner family is excluded by one exact incenter support argument, **R²>9/2**.
+
+The old exact vector screen was independently replayed and replaced by the stronger hand inequality **min(a,b,c)/(a+b+c)<(4+2sqrt(3))/93**. The full-nine physical SMT emitter has exact rational validation, including the known equality witness and checks of original means and unstressed-square obstacles. Emission is not an infeasibility proof. **The remaining singleton owner systems and all 17 original parents remain open; original counts are unchanged.**
+
+**New exact reviewed owner feature:** the [perpendicular-owned triangle certificate](computer_assisted/PERPENDICULAR_OWNER_SINGLE_FREE_TRIANGLE_EXACT_EXCLUSION_2026_11_01.md) proves R>25/12 with898 exact tree nodes,441 strict variance leaves,9 order-empty leaves and a separate analytic singular-corner tail. A second verifier imports no generator code and checks every terminal inequality. This is a complete stated-feature exclusion; the full transitive owner domain and original parent joins remain open.
+
 ## 1. Single reconciled progress snapshot
 
 | Canonical inventory | Closed / checked | Open | Total | Interpretation |
@@ -34,7 +42,7 @@ The [complete multicycle theorem](ADOPTION_FULL_THREE_PORT_REDUCTION_AND_GEOMETR
 | Full unrestricted theorem | **0** | **1** | **1** | Sharp radius lower bound over every independently oriented packing |
 | Complete equality classification | **0** | **1** | **1** | Necessary as well as sufficient equality families |
 | Downstream G4.2.c and prerequisite audit | **0** | **1** | **1** | One consistent normal selection, full force/torque, original degrees/means/masks |
-| Lean/kernel proof | **0** | **1** | **1** | Deferred: hand proof only, no Lean/Lake compilation or CI |
+| Lean/kernel proof | **0** | **1** | **1** | Deferred: exact computer-assisted proof permitted; no Lean/Lake compilation or CI |
 
 **Latest complete coarse closures:** `C1.6.b3`, by the [complete original-forest and Type I/II join with independent current review](ADOPTION_C1_6_B3_AND_UNIFORM_UNLOADED_MODULES_2026_10_31.md); and `C2.35.b0`, `C2.36.b0`, and `C2.37.b0`, by [one entire intact-triangle theorem, preserved prerequisites, explicit common-domain reconciliation, and independent original-caller review](ADOPTION_INTACT_TRIANGLE_THREE_ORIGINAL_CASES_2026_10_31.md). The prior `C1.5.b3` closure remains. No original fine flag changes.
 
@@ -371,4 +379,5 @@ The following 140 distinct, currently unchecked labels are copied from the **cur
 7. Maintain the [single live original-caller proof ledger](gates/SESSION_CHECKPOINTS.md) with its complete 21-open-parent matrix, H/V/J/C evidence stages, a strictly scoped hand result index, a small audit/finite-graph queue, a **non-counted difficult geometric blocker list**, and an append-only session log. Keep the old 57-ID checklist [archived](gates/HISTORICAL_57_MILESTONES_2026_10_31.md); do not report 15/57 as progress. These work notes are **not** part of the canonical 2,513-ID count and never substitute for the 296 refined record acceptance criteria.
 
 **Squash note:** This ledger is prepared together with a one-commit rewrite of the PR branch against its original `main` base. The rewrite preserves all proof/review/history files as tree content; old commit links in historical research notes may no longer be reachable through the branch history. Current references in this index use stable repository-relative file paths rather than historical commit SHAs.
+
 

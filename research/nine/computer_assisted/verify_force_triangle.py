@@ -148,7 +148,7 @@ def prove_chart(sy, sz):
 def main():
     total=Counter()
     print('Exact force-triangle interval proof; MIN=1/12, threshold=60/31')
-    print('sy sz | nodes | proved nonempty leaves | empty leaves | max depth | min rational margin')
+    print('sy sz | nodes | bound-certified leaves | empty leaves | max depth | min rational margin')
     for sy in (1,-1):
         for sz in (-1,1):
             stats=prove_chart(sy,sz)

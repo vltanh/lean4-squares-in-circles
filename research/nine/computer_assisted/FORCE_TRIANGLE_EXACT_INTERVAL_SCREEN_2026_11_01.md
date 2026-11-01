@@ -65,7 +65,7 @@ On every other box it computes enclosing component intervals via rational monoto
 
 The following is the checker output, using the default \(1/12\) threshold:
 
-| \(y\)-chart sign | \(z\)-chart sign | Tree nodes | Certified nonempty leaves | Proven empty leaves | Max depth |
+| \(y\)-chart sign | \(z\)-chart sign | Tree nodes | Bound-certified leaves | Proven empty leaves | Max depth |
 |---:|---:|---:|---:|---:|---:|
 | +1 | −1 | 7,661 | 3,351 | 480 | 21 |
 | +1 | +1 | 657 | 268 | 61 | 17 |
@@ -73,7 +73,7 @@ The following is the checker output, using the default \(1/12\) threshold:
 | −1 | +1 | 48,627 | 17,055 | 7,259 | 22 |
 | **Total** | | **175,382** | **65,915** | **21,778** | **25** |
 
-The **least** certified gap at a nonempty leaf is exactly \(29/1,015,808>0\). This is an exhaustive finite computational proof of (3), with a four-row *summary* table. Run:
+The **least** certified gap at a bound-certified leaf is exactly \(29/1,015,808>0\). This is an exhaustive finite computational proof of (3), with a four-row *summary* table. Run:
 
 ```bash
 python verify_force_triangle.py
@@ -96,4 +96,4 @@ Do not try to certify a fixed \(Q-\varepsilon\) and silently infer all \(q<Q\); 
 
 ## Status and verification boundary
 
-This new force screening has been executed in the current environment, but **not independently reviewed** and **not formally verified in Lean**. The proof checker establishes its arithmetic claim assuming its explicit mathematical chart-cover and interval-bound arguments, printed above. It does not settle the direct unloaded triangle or global n=9 sharpness. Canonical status remains **41/58 coarse**, **2,373/2,513 fine**, and **18/38** nested exterior. No original flags should change because of this proper-feature theorem.
+This force screen has now been independently replayed and reviewed, and replaced by the shorter, stronger [analytic force-perimeter inequality](FORCE_TRIANGLE_ANALYTIC_COMPRESSION_AND_AUDIT_2026_11_01.md). The original checker remains reproducible; its leaf counter certifies an upper bound, not feasibility/nonemptiness within each box. It is **not formally verified in Lean**. The proof checker establishes its arithmetic claim assuming its explicit mathematical chart-cover and interval-bound arguments, printed above. It does not settle the direct unloaded triangle or global n=9 sharpness. Canonical status remains **41/58 coarse**, **2,373/2,513 fine**, and **18/38** nested exterior. No original flags should change because of this proper-feature theorem.

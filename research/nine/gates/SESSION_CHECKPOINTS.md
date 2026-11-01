@@ -25,6 +25,7 @@ remain in each application. The [complete C1.6.b3 adoption](../ADOPTION_C1_6_B3_
 ### Proof-state legend (use these terms, not an undifferentiated checkmark)
 
 - **OPEN:** No complete proof of the exact claimed domain.
+- **X — exact computation:** Exhaustive arithmetic certificate with proved root coverage and reproducible terminal checks; does not by itself establish an original caller join.
 - **H — hand-written:** Full stated limited theorem has a manuscript, but its prerequisites or proof have not yet passed an independent reconstruction.
 - **V — independently reviewed:** Source-level hand proof reconstructed with exact common selected-certificate, original bodies/cuts/means and any tables; does **not** imply a full original parent.
 - **J — caller joined:** A reviewed source is proved applicable to a named original physical graph/load/owner domain with its nine real squares; still not enough if sibling domains remain.
@@ -54,6 +55,25 @@ The [complete multicycle adoption](../ADOPTION_FULL_THREE_PORT_REDUCTION_AND_GEO
 
 These are **V** complete independently reviewed source statements; the final multicycle graph is **J** joined to the entire census domain and excluded. Its optional C1.8.b1 outside-caller classification is unnecessary to that closure. No fifth **C** whole coarse closure follows. The four actual **C** closures remain the three intact-triangle callers and C1.6.b3.
 
+### New reviewed direct-triangle contact features
+
+The [current adoption](../ADOPTION_TRIANGLE_CONTACT_FEATURES_AND_FULL_PHYSICAL_MODEL_2026_11_01.md) links complete proofs and independent reconstructions for:
+
+| Complete feature | Result |
+| --- | --- |
+| Every actual common junction, arbitrary original shared-side mean | Excluded; nonparallel branch gives R²>|P-O|²+5 |
+| Every no-common-point internal shared side | Exhaustive three-chart table: torque contradiction, R>25/12, R>25/12 |
+| Any parallel core pair with singleton contact | R²>9/2 |
+| Three distinct applications each vertex of both cores | R>9/4 |
+| Same-C-side isosceles feature with A/B owned exits | R>13/6 |
+| Cyclic internal side ownership | R²>9/2 by full-moment/incenter support |
+| Arbitrary original internal vector triple | min(a,b,c)/W<(4+2sqrt(3))/93 |
+| Full-nine physical constraint encoding | Exact self-check and five terminal roots; no SMT infeasibility claim |
+
+These shrink BUNI to genuine singleton vertex/side owner systems. Exterior shared-side means, repeated terminals and all nine actual squares remain. No original coarse/fine/exterior flags change.
+
+**New exact reviewed owner feature:** the [perpendicular-owned triangle certificate](../computer_assisted/PERPENDICULAR_OWNER_SINGLE_FREE_TRIANGLE_EXACT_EXCLUSION_2026_11_01.md) proves R>25/12 with898 exact tree nodes,441 strict variance leaves,9 order-empty leaves and a separate analytic singular-corner tail. A second verifier imports no generator code and checks every terminal inequality. This is a complete stated-feature exclusion; the full transitive owner domain and original parent joins remain open.
+
 ## 3. The final multicycle graph is excluded
 
 The [complete hand census](../ALL_MULTICYCLE_THREE_PORT_MODULES_REDUCE_TO_ONE_SIX_BODY_RANK_THREE_GRAPH_2026_11_01.md) reduced the entire family to
@@ -76,7 +96,7 @@ H1–H5, both diamonds, all house and K1–K6 patterns, all three-/four-hub high
 
 | Obstruction | Exact surviving domain | Required broad output |
 |---|---|---|
-| **BUNI** | Nonparallel direct unloaded three-body triangle `(0,0)`, with one original direct exit at each full-degree-three hub | Complete full-force, all-owner and all-nine geometric exit |
+| **BUNI** | Pairwise nonparallel direct triangle, all three INTERNAL contacts singleton, no common point, at least one genuine vertex/side contact; common-junction, shared-side, parallel-pair, all-both-vertex and stated owned-exit features excluded | Remaining original owner systems with every EXTERIOR mean retained, then complete direct-triangle join |
 | **BCUT4+** | Unloaded full cuts with at least four edges, arbitrary rank | Full-cut physical capacity or valid broad graph reduction; new degree bounds alone do not close this |
 | **BCHAIN** | Ten remaining one-block coarse parents, with original chords/branches and all extras | Complete original caller or legitimate sharp paired-chain extraction |
 | **BWRENCH** | Seven remaining two-block parents: decorated triangles and 4+5/4+6/5+5 interfaces | Exact mixed-side articulation and full-completion theorem |
@@ -138,7 +158,7 @@ A legitimate source-level exclusion or sharp necessary inequality must identify:
 2. **Every actual physical condition:** nine independently oriented unit squares, actual contact applications and side means, both real physical circle corners with possibly zero individual weights, and the distinction between **physically circle-clear** and **selected-circle-unloaded**.
 3. **An actual terminal:** either a true contradiction for $R^2<1105/256$, a correct weak-sharp conclusion including equality, or a finite *necessary* classification expressly not promoted into physical exclusion. If the goal claims a full nine-square impossibility at $R^2\le Q$, address the equality packing separately rather than silently discarding it.
 4. **Dependencies and negative controls:** do not assert all stresses planar, do not apply common-side pressure to mixed sides, do not turn center-angle inclusion into whole-square routing, do not delete tiny positive coefficients, do not infer four-plus-three chains from the eight-cross T configuration, and do not apply an embedded $K_{2,3}$ theorem to a merely **subdivided** reduced graph.
-5. **Proof and review state:** link a self-contained human derivation, record whether its named prerequisites are source-verified, and separately record independent review. Only then map every original caller and update the original checkbox. No Lean compilation, CI or computer-assisted mathematical exclusion under the current working contract.
+5. **Proof and review state:** link a self-contained human derivation, record whether its named prerequisites are source-verified, and separately record independent review. Only then map every original caller and update the original checkbox. Exact computer-assisted exclusion is permitted with exhaustive coverage and independently checked terminal reasoning; no Lean compilation or CI.
 
 ## 8. Session log — progress without gate inflation
 
@@ -157,3 +177,6 @@ A legitimate source-level exclusion or sharp necessary inequality must identify:
 
 **Archival note:** [the former 57-checkpoint list](HISTORICAL_57_MILESTONES_2026_10_31.md) remains available unchanged for provenance. It is **not** a current progress bar or a work guarantee. This replacement deliberately consolidates all future session tracking here without adding another live ledger.
 
+
+
+| 2026-11-01, contact-feature continuation | Complete common junction, internal shared side, parallel pair, all-both-vertex, stated same-side owned-exit and cyclic-owner exclusions; analytic screen replacement; full-nine exact model | **V** at each stated feature, model independently checked; full triangle still open | **0 / 0** | Remaining singleton owner systems, then original callers |
