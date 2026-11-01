@@ -1,7 +1,7 @@
 # PR #11 handoff: nonparallel direct triangle and original higher-cut frontier
 
 Date: 2026-11-01. Pinned input commit: `d5ff3296c7e5b3964f76ab1fb7cca0a1446f53b6`.
-Latest hand-only checkpoint; PR remains DRAFT. **Do not run Lean, Lake, CI or any mathematical proof/exclusion script.** Exact printed finite tables are allowed. Candidate attacking directions may be checked, but not used as proof.
+**Archived historical mathematical handoff; not the active research strategy.** Its original hand-only instruction has been replaced by the [computer-first exact-certificate strategy](computer_assisted/STRATEGY_COMPUTER_FIRST_CERTIFICATES_THEN_TABLES_2026_11_01.md) and [current session handoff](HANDOFF_COMPUTER_FIRST_NEXT_SESSION_2026_11_01.md). Preserve and use the mathematical results and open-family inventory below at their stated scopes. PR remains DRAFT; no Lean, Lake or CI.
 
 ## Authoritative original status (unchanged by this handoff)
 

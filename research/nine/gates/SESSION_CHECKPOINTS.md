@@ -1,10 +1,8 @@
-# N=9 live hand-proof ledger — actual-case coverage and auditable proof frontier
+# N=9 live proof ledger — actual-case coverage and auditable proof frontier
 
-> **Next-session research workflow (2026-11-01 UTC):** The user now permits numerical discovery and **exhaustively checked exact computer-assisted proof**, with subsequent compression into mathematical tables and optional hand simplification. Read the [computer-first strategy](../computer_assisted/STRATEGY_COMPUTER_FIRST_CERTIFICATES_THEN_TABLES_2026_11_01.md) and [complete handoff](../HANDOFF_COMPUTER_FIRST_NEXT_SESSION_2026_11_01.md) BEFORE applying the older hand-only work instructions below. **Do not run Lean, Lake or CI.** The force-triangle weak-edge screen does not change any original closure flag; its checker awaits independent review.
+**Updated 2026-11-01 UTC. This is the active canonical case-status ledger for PR #11; proof work now follows the [computer-first strategy](../computer_assisted/STRATEGY_COMPUTER_FIRST_CERTIFICATES_THEN_TABLES_2026_11_01.md) and [next-session handoff](../HANDOFF_COMPUTER_FIRST_NEXT_SESSION_2026_11_01.md), replacing the former hand-only workflow.** Numerical exploration and exact exhaustive certificates are permitted; no Lean, Lake or CI. [Authoritative canonical case status](../PROGRESS.md) · [296-record legacy refinement](README.md) · [retired 57-milestone tracker](HISTORICAL_57_MILESTONES_2026_10_31.md).
 
-**Updated 2026-11-01 UTC. This is the ONLY active session work ledger for PR #11.** [Authoritative canonical case status](../PROGRESS.md) · [296-record legacy refinement](README.md) · [archive of the misleading 57-milestone progress bar](HISTORICAL_57_MILESTONES_2026_10_31.md).
-
-**Unrestricted sharp lower bound $R^2\ge1105/256$: OPEN.** Complete equality classification: OPEN. G4.2.c same-certificate audit: OPEN. Formalization: DEFERRED (hand proof only, no Lean/Lake/CI). The record construction supplies the candidate upper bound; global necessity is not proved.
+**Unrestricted sharp lower bound $R^2\ge1105/256$: OPEN.** Complete equality classification: OPEN. G4.2.c same-certificate audit: OPEN. Formalization: DEFERRED (exact computer-assisted proof permitted; no Lean/Lake/CI). The record construction supplies the candidate upper bound; global necessity is not proved.
 
 ## Current adopted canonical change
 
