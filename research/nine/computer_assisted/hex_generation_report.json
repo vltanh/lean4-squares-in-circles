@@ -1,0 +1,18 @@
+{
+  "result": "GENERATED_NOT_INDEPENDENTLY_VERIFIED",
+  "root_count": 7915,
+  "statuses": {
+    "EXCLUDED": 81,
+    "OPEN": 7834
+  },
+  "fine_triangles_retained": 2652,
+  "fine_triangles_discarded": 1452,
+  "proof_nodes": 6416,
+  "producer_recursion_calls": 73487,
+  "core_count": 5,
+  "global_lower_bound_proved": false,
+  "full_equality_classified": false,
+  "separate_human_review_performed": false,
+  "producer_sha256": "17f1dfee031f6ee145eaf739038742fa14376ad63134296474ab9067634ba229",
+  "certificate_sha256": "ecfb66d1fc2b6df76af0396af3234c96532f6ca01fa58906f6237ca898a87c8f"
+}

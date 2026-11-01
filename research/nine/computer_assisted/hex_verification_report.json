@@ -1,0 +1,65 @@
+{
+  "result": "PASS",
+  "arithmetic": "Python int and Fraction; independent verifier",
+  "root_count": 7915,
+  "unquotiented_subsets": 92378,
+  "statuses": {
+    "EXCLUDED": 81,
+    "OPEN": 7834
+  },
+  "burnside_fixed_subset_counts": [
+    92378,
+    0,
+    20,
+    126,
+    20,
+    0,
+    266,
+    546,
+    266,
+    546,
+    266,
+    546
+  ],
+  "fine_triangles_retained": 2652,
+  "fine_triangles_discarded": 1452,
+  "proof_nodes": 6416,
+  "proof_visits": 73487,
+  "distinct_proof_contexts": 6416,
+  "newly_excluded_roots_per_core": [
+    7,
+    10,
+    36,
+    27,
+    1
+  ],
+  "witness_control": {
+    "assigned_cells": [
+      1,
+      5,
+      14,
+      17,
+      3,
+      8,
+      12,
+      6,
+      15
+    ],
+    "canonical_root_id": 7820,
+    "canonical_mask": 177242,
+    "max_squared_corner_norm": "1105/256"
+  },
+  "negative_controls_rejected": [
+    "missing global root",
+    "unproved root marked excluded",
+    "omitted proof child",
+    "false contradiction at the root"
+  ],
+  "certificate_sha256": "ecfb66d1fc2b6df76af0396af3234c96532f6ca01fa58906f6237ca898a87c8f",
+  "manifest_sha256": "43afb230491a9791a8bfd10310b6e8c1c2134c43076abbd2662386715ab63ac6",
+  "verifier_sha256": "b94489079a96dddba420107be7fe09393cc848caf0804cbbd361f6359dd123fc",
+  "global_lower_bound_proved": false,
+  "full_equality_classified": false,
+  "separate_human_review_performed": false,
+  "lean_or_ci_run": false
+}

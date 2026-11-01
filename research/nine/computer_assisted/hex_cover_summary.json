@@ -1,0 +1,23 @@
+{
+  "schema": "n9_hex_cover_summary_v1",
+  "target_q": "1105/256",
+  "cells": [[-2,0],[-2,1],[-2,2],[-1,-1],[-1,0],[-1,1],[-1,2],[0,-2],[0,-1],[0,0],[0,1],[0,2],[1,-2],[1,-1],[1,0],[1,1],[2,-2],[2,-1],[2,0]],
+  "root_count": 7915,
+  "unquotiented_subsets": 92378,
+  "orbit_size_counts": {"2":6,"3":12,"4":2,"6":403,"12":7492},
+  "statuses": {"EXCLUDED":81,"OPEN":7834},
+  "cores": [
+    {"cells":[0,1,2,3,4,5,7,8],"mask":447,"proof_node":224,"newly_excluded_roots":7},
+    {"cells":[0,1,3,4,5,6,7,8],"mask":507,"proof_node":3510,"newly_excluded_roots":10},
+    {"cells":[0,1,2,3,6,7,11],"mask":2255,"proof_node":3566,"newly_excluded_roots":36},
+    {"cells":[0,1,2,3,6,7,12],"mask":4303,"proof_node":3614,"newly_excluded_roots":27},
+    {"cells":[0,1,2,4,5,7,8,10,12],"mask":5559,"proof_node":6416,"newly_excluded_roots":1}
+  ],
+  "proof_nodes":6416,
+  "witness_root_id":7820,
+  "witness_mask":177242,
+  "manifest_sha256":"43afb230491a9791a8bfd10310b6e8c1c2134c43076abbd2662386715ab63ac6",
+  "certificate_sha256":"ecfb66d1fc2b6df76af0396af3234c96532f6ca01fa58906f6237ca898a87c8f",
+  "global_lower_bound_proved":false,
+  "equality_classified":false
+}
