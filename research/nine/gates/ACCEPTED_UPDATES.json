@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "baseline_source": "research/nine/history/roadmap_replacement_2026_11_01/LEGACY_DEEP_GATED_ROADMAP.md",
+  "baseline_source_blob_sha": "207ad5250b25fd479d5208211cc66bbaaacf9069",
+  "baseline_fine_total": 2513,
+  "baseline_fine_checked": 2373,
+  "accepted_new_original_fine_closures": [],
+  "policy": "Original fine gate IDs only, with source and independent review evidence. A new roadmap child never changes this denominator."
+}

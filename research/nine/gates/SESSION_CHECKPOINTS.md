@@ -1,7 +1,3 @@
-# Retired session checkpoint tracker
+# Historical session checkpoint
 
-**NO LONGER A LIVE PROGRESS LEDGER.** Use **[the single n=9 ledger](../PROGRESS.md)** for the current active theorem, complete 17-parent open matrix, exact accepted status, and one chronological activity log.
-
-The entire previous 27,552-character detailed tracker was preserved unchanged in [the dated historical snapshot](../history/ledger_reset_2026_11_01/SESSION_CHECKPOINTS_PRE_RESET.md). Historical H/X/V/J/C labels there are source history, not separate current progress claims.
-
-Do not tick or maintain counters here. Update only [PROGRESS.md](../PROGRESS.md) and the canonical source flags after proof and review.
+Retired as a live ledger. Go to [one progress scoreboard](../PROGRESS.md) and [one active deep roadmap](../DEEP_GATED_ROADMAP.md). See [historical full session tracker](../history/ledger_reset_2026_11_01/SESSION_CHECKPOINTS_PRE_RESET.md). The new machine registry is [ACTIVE_ROADMAP.json](ACTIVE_ROADMAP.json). No current status is maintained here.
