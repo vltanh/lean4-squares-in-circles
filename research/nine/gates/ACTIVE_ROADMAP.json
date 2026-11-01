@@ -1,70 +1,265 @@
 {
-  "schema":"n9_theorem_only_v3",
-  "target_q":"1105/256",
-  "theorem":"OPEN","equality":"OPEN","hand_proof":"OPEN","active_gate":"A.2",
-  "proof_logic":"A.0 AND A.1 AND A.2 AND A.3 => sharp lower bound; B.1..B.3 => complete equality; C.1..C.2 => final hand/table proof",
-  "method_preference":"EXACT_COMPUTER_ASSISTED_FIRST_HAND_TABLE_SECOND_NO_LEAN_CI",
-  "honest_counter_policy":"FIXED_HEX_ROOT_COUNTS_ONLY_NOT_A_COMPLETION_PERCENTAGE",
-  "current_cover":{
-    "source":"computer_assisted/HEXAGON_ROOT_COVER_AND_FIRST_EXCLUSIONS.md",
-    "summary":"computer_assisted/coupled_separator_verification_summary.json",
-    "verification":"computer_assisted/coupled_separator_verification_summary.json",
-    "emitter_controls":"computer_assisted/hex_emitter_test_report.json",
-    "roots":7915,"excluded":5838,"open":2077,"certificate_cores":506,
-    "equality_witness_root":7820,"all_orientations_retained":true,"all_q_le_Q_covered":true,
-    "all_remaining_roots_tractable":false,
-    "tractability_note":"Same 7915 original roots. Present certificates have a complete independent replay. No feasibility or uniform difficulty claim for 2077 OPEN physical roots.",
-    "separate_human_review_performed":false,"global_lower_bound_proved":false,
-    "prior_excluded":3986,"newly_excluded":1852,
-    "exclusion_source":"computer_assisted/COUPLED_SEPARATOR_CERTIFICATES.md",
-    "generated_root_manifest":"computer_assisted/coupled_separator_root_manifest.json",
-    "generated_certificate":"computer_assisted/coupled_separator_certificate.json",
-    "retained_prior_cores":259,"new_certificate_cores":247,"new_propagation_rows":8777,
-    "new_proof_nodes":401,"new_binary_splits":77,
-    "hand_table_source":"computer_assisted/THREE_CELL_HAND_PROOF.md",
-    "hand_table_verification":"computer_assisted/three_cell_table_verification_report.json"
+  "schema": "n9_theorem_only_v3",
+  "target_q": "1105/256",
+  "theorem": "OPEN",
+  "equality": "OPEN",
+  "hand_proof": "OPEN",
+  "active_gate": "A.2",
+  "proof_logic": "A.0 AND A.1 AND A.2 AND A.3 => sharp lower bound; B.1..B.3 => complete equality; C.1..C.2 => final hand/table proof",
+  "method_preference": "HAND_PROOF_TABLES_ALLOWED_SCRIPTS_ONLY_FOR_POTENTIAL_DIRECTIONS_NO_LEAN_CI",
+  "honest_counter_policy": "FIXED_HEX_ROOT_COUNTS_ONLY_NOT_A_COMPLETION_PERCENTAGE",
+  "current_cover": {
+    "source": "computer_assisted/HEXAGON_ROOT_COVER_AND_FIRST_EXCLUSIONS.md",
+    "summary": "computer_assisted/coupled_separator_verification_summary.json",
+    "verification": "computer_assisted/coupled_separator_verification_summary.json",
+    "emitter_controls": "computer_assisted/hex_emitter_test_report.json",
+    "roots": 7915,
+    "excluded": 5838,
+    "open": 2077,
+    "certificate_cores": 506,
+    "equality_witness_root": 7820,
+    "all_orientations_retained": true,
+    "all_q_le_Q_covered": true,
+    "all_remaining_roots_tractable": false,
+    "tractability_note": "Same 7915 original roots. Present certificates have a complete independent replay. No feasibility or uniform difficulty claim for 2077 OPEN physical roots.",
+    "separate_human_review_performed": false,
+    "global_lower_bound_proved": false,
+    "prior_excluded": 3986,
+    "newly_excluded": 1852,
+    "exclusion_source": "computer_assisted/COUPLED_SEPARATOR_CERTIFICATES.md",
+    "generated_root_manifest": "computer_assisted/coupled_separator_root_manifest.json",
+    "generated_certificate": "computer_assisted/coupled_separator_certificate.json",
+    "retained_prior_cores": 259,
+    "new_certificate_cores": 247,
+    "new_propagation_rows": 8777,
+    "new_proof_nodes": 401,
+    "new_binary_splits": 77,
+    "hand_table_source": "computer_assisted/THREE_CELL_HAND_PROOF.md",
+    "hand_table_verification": "computer_assisted/three_cell_table_verification_report.json"
   },
-  "publication":{
-    "status":"SOURCE_CHECKPOINTS_PUSHED",
-    "original_sharp_commit":"d05959c9f4a3347b5725fb2f761b765717593234",
-    "coupled_checkpoint_commit":"d9461466b5495bd92f8f0244f8b7a7c003ae8d05",
-    "wide_slide_commit":"cd1ab86a45d602ced0e133790c90d70cd0307d5c",
-    "generated_artifacts":"Reproducible from committed generators; full exact copies in conversation archives, not all checked in as blobs."
+  "publication": {
+    "status": "SOURCE_CHECKPOINTS_PUSHED",
+    "original_sharp_commit": "d05959c9f4a3347b5725fb2f761b765717593234",
+    "coupled_checkpoint_commit": "d9461466b5495bd92f8f0244f8b7a7c003ae8d05",
+    "wide_slide_commit": "cd1ab86a45d602ced0e133790c90d70cd0307d5c",
+    "generated_artifacts": "Reproducible from committed generators; full exact copies in conversation archives, not all checked in as blobs."
   },
-  "sharp_terminals":[
-    {"source":"computer_assisted/SHARP_NEIGHBORHOOD_THEOREM.md","verification":"computer_assisted/sharp_neighborhood_verification_report.json","scope":"conditional seven-square sharp chart","global_caller_proved":false},
-    {"source":"computer_assisted/WIDE_SLIDE_SHARP_TERMINAL.md","verification":"computer_assisted/wide_slide_verification_report.json","interface":"computer_assisted/emit_sharp_terminal.py","interface_tests":"computer_assisted/sharp_terminal_emitter_test_report.json","scope":"strictly wider local chart; exact q<Q sharpness and local equality slides","global_caller_proved":false,"new_full_root_exclusions":0}
+  "sharp_terminals": [
+    {
+      "source": "computer_assisted/SHARP_NEIGHBORHOOD_THEOREM.md",
+      "verification": "computer_assisted/sharp_neighborhood_verification_report.json",
+      "scope": "conditional seven-square sharp chart",
+      "global_caller_proved": false
+    },
+    {
+      "source": "computer_assisted/WIDE_SLIDE_SHARP_TERMINAL.md",
+      "verification": "computer_assisted/wide_slide_verification_report.json",
+      "interface": "computer_assisted/emit_sharp_terminal.py",
+      "interface_tests": "computer_assisted/sharp_terminal_emitter_test_report.json",
+      "scope": "strictly wider local chart; exact q<Q sharpness and local equality slides",
+      "global_caller_proved": false,
+      "new_full_root_exclusions": 0
+    },
+    {
+      "source": "TWO_STRIP_SEVEN_SQUARE_HAND_PROOF_2026_11_01.md",
+      "verification": "independent agent hand checks of geometry, identities and all fourteen printed sign layers",
+      "scope": "four centers in middle strip plus three below; relative tilts<=1/64 in leftmost middle-square frame",
+      "global_caller_proved": false,
+      "new_full_root_exclusions": 0
+    }
   ],
-  "known_inputs":[
-    {"asset":"computer_assisted/emit_unrestricted_nine.py","status":"SOURCE_AVAILABLE","scope":"full unrestricted physical formula; no global UNSAT result"},
-    {"asset":"computer_assisted/UNRESTRICTED_MODEL_AND_ROW_CERTIFICATE.md","status":"SOURCE_AVAILABLE","scope":"physical model and conditional parallel 4+3 row proof"},
-    {"asset":"computer_assisted/row43_certificate.json","status":"CHECKED_CONDITIONAL","scope":"parallel 4+3 continuous subfamily"},
-    {"asset":"computer_assisted/TWO_DIRECTION_SEPARABLE_NINE_SUMMARY.md","status":"DRAFT_NOT_CLOSED","scope":"not used by the current cover"},
-    {"asset":"computer_assisted/HEXAGON_ROOT_COVER_AND_FIRST_EXCLUSIONS.md","status":"SOURCE_PROOF_AND_SEPARATE_EXACT_REPLAY","scope":"full root cover and first 81 exclusions"},
-    {"asset":"computer_assisted/SQUARE_POSE_CERTIFICATES.md","status":"SOURCE_PROOF_AND_SEPARATE_EXACT_REPLAY","scope":"83 cores exclude 886 closed-Q roots"},
-    {"asset":"computer_assisted/DISK_SUPPORT_CERTIFICATES.md","status":"SOURCE_PROOF_AND_SEPARATE_EXACT_REPLAY","scope":"176 additional cores give 3986 closed-Q exclusions"},
-    {"asset":"computer_assisted/COUPLED_SEPARATOR_CERTIFICATES.md","status":"SOURCE_PROOF_AND_SEPARATE_EXACT_REPLAY","scope":"247 additional cores give 5838 exclusions with all earlier proofs retained"},
-    {"asset":"computer_assisted/SHARP_NEIGHBORHOOD_THEOREM.md","status":"HAND_DERIVATION_AND_EXACT_ARITHMETIC_REPLAY","scope":"conditional sharp terminal, not a global caller"},
-    {"asset":"computer_assisted/WIDE_SLIDE_SHARP_TERMINAL.md","status":"HAND_DERIVATION_AND_EXACT_ARITHMETIC_REPLAY","scope":"strictly wider sharp terminal with local equality slides and original-coordinate guard interface"}
+  "known_inputs": [
+    {
+      "asset": "computer_assisted/emit_unrestricted_nine.py",
+      "status": "SOURCE_AVAILABLE",
+      "scope": "full unrestricted physical formula; no global UNSAT result"
+    },
+    {
+      "asset": "computer_assisted/UNRESTRICTED_MODEL_AND_ROW_CERTIFICATE.md",
+      "status": "SOURCE_AVAILABLE",
+      "scope": "physical model and conditional parallel 4+3 row proof"
+    },
+    {
+      "asset": "computer_assisted/row43_certificate.json",
+      "status": "CHECKED_CONDITIONAL",
+      "scope": "parallel 4+3 continuous subfamily"
+    },
+    {
+      "asset": "computer_assisted/TWO_DIRECTION_SEPARABLE_NINE_SUMMARY.md",
+      "status": "SUPERSEDED_BY_COMPLETE_HAND_THEOREM",
+      "scope": "all two-direction-separable nine-square packings, with arbitrary covering angle; unrestricted coverage still unproved"
+    },
+    {
+      "asset": "computer_assisted/HEXAGON_ROOT_COVER_AND_FIRST_EXCLUSIONS.md",
+      "status": "SOURCE_PROOF_AND_SEPARATE_EXACT_REPLAY",
+      "scope": "full root cover and first 81 exclusions"
+    },
+    {
+      "asset": "computer_assisted/SQUARE_POSE_CERTIFICATES.md",
+      "status": "SOURCE_PROOF_AND_SEPARATE_EXACT_REPLAY",
+      "scope": "83 cores exclude 886 closed-Q roots"
+    },
+    {
+      "asset": "computer_assisted/DISK_SUPPORT_CERTIFICATES.md",
+      "status": "SOURCE_PROOF_AND_SEPARATE_EXACT_REPLAY",
+      "scope": "176 additional cores give 3986 closed-Q exclusions"
+    },
+    {
+      "asset": "computer_assisted/COUPLED_SEPARATOR_CERTIFICATES.md",
+      "status": "SOURCE_PROOF_AND_SEPARATE_EXACT_REPLAY",
+      "scope": "247 additional cores give 5838 exclusions with all earlier proofs retained"
+    },
+    {
+      "asset": "computer_assisted/SHARP_NEIGHBORHOOD_THEOREM.md",
+      "status": "HAND_DERIVATION_AND_EXACT_ARITHMETIC_REPLAY",
+      "scope": "conditional sharp terminal, not a global caller"
+    },
+    {
+      "asset": "computer_assisted/WIDE_SLIDE_SHARP_TERMINAL.md",
+      "status": "HAND_DERIVATION_AND_EXACT_ARITHMETIC_REPLAY",
+      "scope": "strictly wider sharp terminal with local equality slides and original-coordinate guard interface"
+    },
+    {
+      "asset": "TWO_DIRECTION_SEPARABLE_NINE_HAND_PROOF_2026_11_01.md",
+      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
+      "scope": "complete sharp theorem and class equality for every two-direction cover; explicit Greene and physical4+3 dependencies"
+    },
+    {
+      "asset": "TWO_SQUARE_SHARP_CAP_HAND_PROOF.md",
+      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
+      "scope": "universal sharp two-square cap, common point, equality pair, center/arc/boundary corollaries"
+    },
+    {
+      "asset": "TWO_STRIP_SEVEN_SQUARE_HAND_PROOF_2026_11_01.md",
+      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
+      "scope": "sharp two-strip seven-square terminal without horizontal or separate anchor coordinate boxes"
+    },
+    {
+      "asset": "BOUNDARY_NORMALIZATION_WITH_SHARP_CAP_HAND_PROOF.md",
+      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
+      "scope": "global equivalent strict-counterexample domain; boundary square parameter and all other centers x<H; domain emptiness unproved"
+    },
+    {
+      "asset": "CROSSED_SIGN_EQUALITY_EXCLUSION_2026_11_01.md",
+      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
+      "scope": "crossed signed seven-anchor equality configurations admit at most one additional coordinate-separated square; same signs necessary for nine-square two-direction equality"
+    }
   ],
-  "gates":[
-    {"id":"A","status":"OPEN","goal":"Global unrestricted bound q>=Q for every physical nine-square packing","exit":"All q<Q counterexamples excluded in a complete exact argument"},
-    {"id":"A.0","status":"SOURCE_AVAILABLE","goal":"Exact original physical model and q=Q witness","exit":"Independently audit geometric equivalence and known witness"},
-    {"id":"A.1","status":"EXPLICIT_COVER_AVAILABLE","goal":"Provably exhaustive and manageable global counterexample cover","exit":"Every original q<Q packing belongs to an explicitly described terminal domain"},
-    {"id":"A.1a","status":"SOURCE_AVAILABLE","goal":"Complete unrestricted original QF_NRA encoding","exit":"All poses/corners/weak pair separations, no graph or orientation hypotheses"},
-    {"id":"A.1b","status":"PROVED_SOURCE_AND_EXACT_ENUMERATION","goal":"Generate explicit finite root/child/leaf coverage","exit":"Every potential q<Q packing is covered; cover is practically checkable"},
-    {"id":"A.1c","status":"PROVED_FOR_HEX_COVER","goal":"Prove boundary, singular, weak-contact coverage","exit":"No zero-sign or repeated-normal face discarded"},
-    {"id":"A.2","status":"OPEN","goal":"Close every generated finite real leaf","exit":"Each leaf has exact checkable contradiction, no unknown leaves"},
-    {"id":"A.3","status":"OPEN","goal":"Independently replay full certificate and soundness","exit":"Checker proves unrestricted no q<Q, arbitrarily close to Q"},
-    {"id":"B","status":"OPEN","goal":"Full equality classification q=Q","exit":"Necessary-and-sufficient explicit family"},
-    {"id":"B.1","status":"EQUALITY_ROOT_COVER_SUPPLIED","goal":"Complete closed q=Q physical cover","exit":"No equality pose, tangent or oblique case omitted"},
-    {"id":"B.2","status":"OPEN","goal":"Derive all allowed structures and parameter ranges","exit":"All equality packings represented up to exact symmetries"},
-    {"id":"B.3","status":"OPEN","goal":"Verify constructive converse","exit":"Every listed parameter value feasible, no extra physical equality packing"},
-    {"id":"C","status":"OPEN","goal":"Complete human-checkable proof with exact tables","exit":"Paper-level unrestricted bound and equality, independently checkable"},
-    {"id":"C.1","status":"OPEN","goal":"Write complete cover/terminal/equality hand derivation","exit":"No unproved automated black boxes; exact tables allowed"},
-    {"id":"C.2","status":"OPEN","goal":"Independently audit tables and manuscript","exit":"All integer/rational sign checks and boundary implications independently confirmed"}
+  "gates": [
+    {
+      "id": "A",
+      "status": "OPEN",
+      "goal": "Global unrestricted bound q>=Q for every physical nine-square packing",
+      "exit": "All q<Q counterexamples excluded in a complete exact argument"
+    },
+    {
+      "id": "A.0",
+      "status": "SOURCE_AVAILABLE",
+      "goal": "Exact original physical model and q=Q witness",
+      "exit": "Independently audit geometric equivalence and known witness"
+    },
+    {
+      "id": "A.1",
+      "status": "EXPLICIT_COVER_AVAILABLE",
+      "goal": "Provably exhaustive and manageable global counterexample cover",
+      "exit": "Every original q<Q packing belongs to an explicitly described terminal domain"
+    },
+    {
+      "id": "A.1a",
+      "status": "SOURCE_AVAILABLE",
+      "goal": "Complete unrestricted original QF_NRA encoding",
+      "exit": "All poses/corners/weak pair separations, no graph or orientation hypotheses"
+    },
+    {
+      "id": "A.1b",
+      "status": "PROVED_SOURCE_AND_EXACT_ENUMERATION",
+      "goal": "Generate explicit finite root/child/leaf coverage",
+      "exit": "Every potential q<Q packing is covered; cover is practically checkable"
+    },
+    {
+      "id": "A.1c",
+      "status": "PROVED_FOR_HEX_COVER",
+      "goal": "Prove boundary, singular, weak-contact coverage",
+      "exit": "No zero-sign or repeated-normal face discarded"
+    },
+    {
+      "id": "A.2",
+      "status": "OPEN",
+      "goal": "Close every generated finite real leaf",
+      "exit": "Each leaf has exact checkable contradiction, no unknown leaves"
+    },
+    {
+      "id": "A.3",
+      "status": "OPEN",
+      "goal": "Independently replay full certificate and soundness",
+      "exit": "Checker proves unrestricted no q<Q, arbitrarily close to Q"
+    },
+    {
+      "id": "B",
+      "status": "OPEN",
+      "goal": "Full equality classification q=Q",
+      "exit": "Necessary-and-sufficient explicit family"
+    },
+    {
+      "id": "B.1",
+      "status": "EQUALITY_ROOT_COVER_SUPPLIED",
+      "goal": "Complete closed q=Q physical cover",
+      "exit": "No equality pose, tangent or oblique case omitted"
+    },
+    {
+      "id": "B.2",
+      "status": "OPEN",
+      "goal": "Derive all allowed structures and parameter ranges",
+      "exit": "All equality packings represented up to exact symmetries"
+    },
+    {
+      "id": "B.3",
+      "status": "OPEN",
+      "goal": "Verify constructive converse",
+      "exit": "Every listed parameter value feasible, no extra physical equality packing"
+    },
+    {
+      "id": "C",
+      "status": "OPEN",
+      "goal": "Complete human-checkable proof with exact tables",
+      "exit": "Paper-level unrestricted bound and equality, independently checkable"
+    },
+    {
+      "id": "C.1",
+      "status": "OPEN",
+      "goal": "Write complete cover/terminal/equality hand derivation",
+      "exit": "No unproved automated black boxes; exact tables allowed"
+    },
+    {
+      "id": "C.2",
+      "status": "OPEN",
+      "goal": "Independently audit tables and manuscript",
+      "exit": "All integer/rational sign checks and boundary implications independently confirmed"
+    }
   ],
-  "deferred":["Lean","Lake","CI"],
-  "alternatives_not_gates":["Direct exact physical certificates remain primary","Structural stress lemmas require complete callers; no simultaneous extra gate tree"],
-  "legacy_gate_registry":"SUPERSEDED_NO_ACTIVE_PROGRESS_COUNTER"
+  "deferred": [
+    "Lean",
+    "Lake",
+    "CI"
+  ],
+  "alternatives_not_gates": [
+    "Current method is hand proof, exact tables allowed; scripts only test potential directions",
+    "Two-direction family is proved; arbitrary cover existence remains unproved",
+    "Structural stress lemmas require complete callers; no simultaneous extra gate tree",
+    "Earlier computational artifacts remain recorded; no proof programs rerun in this continuation"
+  ],
+  "legacy_gate_registry": "SUPERSEDED_NO_ACTIVE_PROGRESS_COUNTER",
+  "current_hand_continuation": {
+    "date": "2026-11-01",
+    "two_direction_class": "PROVED_SHARP_WITH_CLASS_EQUALITY",
+    "exact_pair_cap": "PROVED_SHARP_H_LT_109_OVER_80",
+    "two_strip_terminal": "PROVED_CONDITIONAL_WITH_SEVEN_SQUARE_EQUALITY",
+    "boundary_normalization": "PROVED_GLOBAL_EQUIVALENCE_WITH_CAP_GUARD",
+    "mathematical_scripts_run": false,
+    "lean_lake_ci_run": false,
+    "independent_agent_hand_reviews": true,
+    "separate_human_review_performed": false,
+    "new_full_root_exclusions": 0,
+    "unrestricted_global_caller_proved": false
+  }
 }

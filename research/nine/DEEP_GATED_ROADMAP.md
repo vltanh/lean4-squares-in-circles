@@ -1,9 +1,12 @@
-# n=9 — canonical roadmap v3: published checkpoints and sharp terminals
+# n=9 — canonical roadmap v3: current hand-proof continuation
 
 **Target:** q>=1105/256 for nine independently oriented, interior-disjoint unit
 squares in a disk, all attaining configurations, then a complete hand/table proof.
 **Status:** all three global deliverables OPEN. **Active: A.2.**
 The same 15 registry entries and 7,915 canonical root IDs are retained.
+Current method: hand proof; exact tables allowed; mathematical scripts only
+for checking potential directions. No mathematical script, Lean, Lake or CI
+was run in the present continuation.
 
 | Deliverable | Status | Acceptance condition |
 |---|---|---|
@@ -35,8 +38,31 @@ separator checkpoint supplies **5,838 excluded / 2,077 open** cases. It uses
 rows, after retaining all previous square-pose and disk-support evidence. The
 complete source and independent replay implementation are now in the branch.
 The earlier local-only publication limitation is resolved for those sources.
+The later archive-only 312-exclusion checkpoint remains unpublished in full;
+it does not change this canonical tally.
 
-Two distinct kinds of terminal are now available:
+The newest broad hand results are:
+
+- The entire two-direction separation-cover class, with arbitrary angle and
+  independent square frames, is proved in
+  [TWO_DIRECTION_SEPARABLE_NINE_HAND_PROOF_2026_11_01.md](TWO_DIRECTION_SEPARABLE_NINE_HAND_PROOF_2026_11_01.md).
+  Its Greene chain/antichain argument and literal rank-grid argument repair
+  the earlier draft. Equality within that class is explicitly parametrized.
+- [TWO_SQUARE_SHARP_CAP_HAND_PROOF.md](TWO_SQUARE_SHARP_CAP_HAND_PROOF.md)
+  proves the exact sharp universal directional cap H<109/80 by hand,
+  strengthening and replacing the earlier 137/100 certificate.
+- [TWO_STRIP_SEVEN_SQUARE_HAND_PROOF_2026_11_01.md](TWO_STRIP_SEVEN_SQUARE_HAND_PROOF_2026_11_01.md)
+  proves the sharp seven-square theorem from two strip occupancies and
+  small relative tilts, removing all horizontal and separate anchor boxes.
+- [BOUNDARY_NORMALIZATION_WITH_SHARP_CAP_HAND_PROOF.md](BOUNDARY_NORMALIZATION_WITH_SHARP_CAP_HAND_PROOF.md)
+  proves a global strict-counterexample normalization and the new guard x_j<H
+  for every center other than the selected boundary square.
+
+These proofs have independent agent hand checks; no independent human review
+or kernel verification is claimed. Their global scope is stated in each
+source. No entire original root is removed without a full caller.
+
+Two distinct kinds of terminal were already available:
 
 1. **Closed-Q exclusions:** the exact geometric graphs and the separate three-cell
    rational proof rule out entire specified domains even at q=Q.
@@ -68,17 +94,23 @@ exact attainer then establishes the sharp optimum.
 
 ### Methods are tools, not extra gate trees
 
-The direct exact physical route remains primary. Structural/contact lemmas may
-be imported only with a proved caller and compatible hypotheses. The unverified
-two-direction draft is not used. No new mandatory stress proof or replacement
-progress denominator is introduced. A method failure is not a theorem closure.
+The current route is direct hand geometry, using exact tables when useful.
+Structural/contact lemmas may be imported only with a proved caller and
+compatible hypotheses. The new two-direction theorem is proved and usable;
+its cover hypothesis is not asserted for arbitrary packings. The earlier
+computational sources remain evidence and optional future tools, not permission
+to run proof enumeration under the current hand-only instruction. No new
+mandatory stress proof or replacement denominator is introduced.
 
 ## B — complete equality classification
 
 **B.1 [ROOT COVER SUPPLIED].** The same closed positional cover works at q=Q.
 The known attaining root 7820 remains OPEN, as it must under closed-Q pruning.
 
-**B.2 [OPEN].** Prove every equality configuration has one of the eventual
+**B.2 [OPEN].** The entire two-direction-cover equality class now has a
+necessary-and-sufficient finite parameter domain, and the wider strip family
+has its exact seven-square sliders. Unrestricted equality is still open.
+Prove every equality configuration has one of the eventual
 listed structures, with exact free-position/orientation ranges up to genuine
 common symmetries and relabelings. The widened seven-square chart now has a
 necessary local slide description; it is not asserted globally necessary.
@@ -89,7 +121,9 @@ the additional two squares or replace this global obligation.
 
 ## C — complete hand/table proof
 
-**C.1 [OPEN].** Local readable assets include the center-cover argument,
+**C.1 [OPEN].** New complete hand assets include the two-direction theorem,
+the exact sharp pair cap, the broader strip terminal, and the normalized
+strict-counterexample reduction. The earlier readable assets include the center-cover argument,
 admissible-center support formula, coupled separator derivation, the ten-row
 three-cell argument with a generated 1,600-row rational appendix, and the two
 sharp neighborhood theorems with fourteen signed layers. The final manuscript
@@ -100,9 +134,11 @@ arithmetic and boundary cases. Separate implementations and finite regression
 controls do not constitute a separate human reviewer. Lean, Lake and CI remain
 deferred and are not extra active mathematical gates.
 
-## Source reproduction
+## Earlier source reproduction — not run in the current hand-only continuation
 
-From `research/nine/computer_assisted/`:
+The following commands document the earlier computational checkpoint. They are
+not the current execution plan; use of mathematical programs as proof evidence
+requires a changed user instruction. From `research/nine/computer_assisted/`:
 
 ```sh
 python make_hex_cover.py
