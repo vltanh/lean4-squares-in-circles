@@ -143,6 +143,16 @@
       "asset": "CROSSED_SIGN_EQUALITY_EXCLUSION_2026_11_01.md",
       "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
       "scope": "crossed signed seven-anchor equality configurations admit at most one additional coordinate-separated square; same signs necessary for nine-square two-direction equality"
+    },
+    {
+      "asset": "ONE_EXCEPTION_PAIR_SPAN_AND_SHARP_TERMINAL_2026_11_01.md",
+      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
+      "scope": "universal quantitative inscribed-square pair inequality; sharp conditional endpoint-span terminal with an oblique internal pair"
+    },
+    {
+      "asset": "ONE_EXCEPTION_RANK_AND_WIDTH_REDUCTIONS_2026_11_01.md",
+      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
+      "scope": "complete width-five lower-bound branch and specified rank patterns for one exceptional pair; full one-exception and unrestricted coverage still open"
     }
   ],
   "gates": [
@@ -260,6 +270,8 @@
     "independent_agent_hand_reviews": true,
     "separate_human_review_performed": false,
     "new_full_root_exclusions": 0,
-    "unrestricted_global_caller_proved": false
+    "unrestricted_global_caller_proved": false,
+    "one_exception_width_five": "PROVED_SHARP_LOWER_BOUND_ENTIRE_BRANCH",
+    "one_exception_global": "OPEN_TWO_REMAINING_DOMAIN_GROUPS"
   }
 }

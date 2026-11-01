@@ -58,6 +58,14 @@ The newest broad hand results are:
   proves a global strict-counterexample normalization and the new guard x_j<H
   for every center other than the selected boundary square.
 
+The hand continuation also proves the entire width-five branch when only one
+pair lacks coordinate separation; see
+[ONE_EXCEPTION_RANK_AND_WIDTH_REDUCTIONS_2026_11_01.md](ONE_EXCEPTION_RANK_AND_WIDTH_REDUCTIONS_2026_11_01.md).
+Its precise two remaining one-exception domains stay open. The
+[pair-span terminal](ONE_EXCEPTION_PAIR_SPAN_AND_SHARP_TERMINAL_2026_11_01.md)
+is based on a universal inscribed-square inequality and admits an oblique
+internal pair. These are theorem scopes, not additional mandatory gate IDs.
+
 These proofs have independent agent hand checks; no independent human review
 or kernel verification is claimed. Their global scope is stated in each
 source. No entire original root is removed without a full caller.

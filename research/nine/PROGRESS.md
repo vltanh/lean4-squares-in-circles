@@ -30,7 +30,11 @@ forces perpendicular covering directions and seven aligned squares; the new
 source supplies an explicit necessary-and-sufficient parameter domain for
 **this entire cover class**. It is not unrestricted equality classification.
 The old conditional-draft warning is superseded for this theorem, while its
-global coverage warning remains necessary.
+global coverage warning remains necessary. A further exact equality argument
+excludes crossed endpoint signs. In the upper-middle-slider branch both
+additional squares are forced onto one vertical line, with a complete
+one-dimensional parameter domain. An explicit equality witness prevents
+incorrectly restricting both additional squares to an upper row.
 
 ### The two-square directional cap is now exact and sharp
 
@@ -75,6 +79,38 @@ square the exact one-parameter form
 The new cap then forces all eight other centers to have x<H. This reduction
 is global: it does not preserve an individual positional root. The resulting
 domain is not proved empty.
+
+### The one-exception width-five branch is also proved
+
+The two-direction premise has been weakened in a new family: fix an
+orthonormal frame and allow **one pair** to require a different separator.
+[ONE_EXCEPTION_RANK_AND_WIDTH_REDUCTIONS_2026_11_01.md](ONE_EXCEPTION_RANK_AND_WIDTH_REDUCTIONS_2026_11_01.md)
+proves the sharp lower bound for this entire family whenever either actual
+projection order has width five. Here width five means five squares whose
+open projections in that coordinate overlap pairwise.
+
+The proof keeps the exceptional pair's actual four-block geometry, switches
+projection direction through Greene's theorem, and eliminates both possible
+damaged antichain placements by the physical span bound or an explicit
+center/separator contradiction. The direct 4+3-chain alternative retains
+equality; no complete equality classification for this wider family is claimed.
+
+The same source closes several entire rank patterns when both heights are
+at most three. The full one-exception class still has two unresolved groups:
+the listed boundary rank patterns, and the damaged antichain alternatives
+when both widths are at most four and some height is four. These are scopes,
+not new roadmap gate IDs.
+
+The elementary tool is
+[ONE_EXCEPTION_PAIR_SPAN_AND_SHARP_TERMINAL_2026_11_01.md](ONE_EXCEPTION_PAIR_SPAN_AND_SHARP_TERMINAL_2026_11_01.md):
+
+    max(|dx|,|dy|)+h1+h2
+      >= 2+(2h1-1)^2/(4h1)+(2h2-1)^2/(4h2).
+
+It follows by inscribing aligned squares of halfwidth 1/(4h_i). If |dy|<=1/2,
+the horizontal span reserve is at least two. This allows a genuinely oblique
+pair to replace the two internal squares of the sharp long-span terminal.
+The relevant four endpoints and short span remain explicit hypotheses.
 
 ## Fixed positional accounting — unchanged
 

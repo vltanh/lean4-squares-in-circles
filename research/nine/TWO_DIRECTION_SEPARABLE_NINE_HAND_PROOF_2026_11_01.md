@@ -387,6 +387,53 @@ one. Thus the table is a direct exact equality witness, with all weak
 contacts retained. Relabeling a lower central square as `B_2` is possible,
 but it does not put both of the remaining squares above the long chain.
 
+### Complete one-dimensional completion in the upper-gamma branch
+
+There is a stronger exact description of this branch. Put
+`U=U_B=(sqrt(1041)-8)/16`. If `gamma>=max(alpha,beta)+1`, then the two
+additional squares must be **aligned and centered on `X=0`**. Label their
+heights `z_1<z_2`. The entire branch is exactly the domain
+
+    -U<=z_1, z_1+1<=z_2,
+    z_2+1<=alpha<=gamma-1,
+    z_2+1<=beta<=gamma-1,
+    gamma<=U.
+
+These inequalities imply `2-U<=alpha,beta<=U-1`, `3-U<=gamma<=U`,
+all five anchor-slider bounds above, and containment of the two
+additional aligned squares.
+
+For necessity, an additional square of halfwidth `h` which is not
+aligned at `X=0` must have `Y>=h-7/16`, by comparison with the two short
+outer anchors. At least one horizontal separation fails, and the
+downward alternatives lie outside the center disk. If it were
+horizontally separated from `(0,gamma)`, it would have `|X|>=h+1/2`;
+comparison with the corresponding long outer anchor then forces
+`Y>=h+9/16`. The individual corner obstruction in the crossed-sign
+addendum would give `q>=1201/256`, impossible. Thus it must be below
+`gamma` in vertical projection, and
+
+    1/16<=Y<=gamma-h-1/2<21/40.
+
+Here `alpha,beta<=gamma-1<21/40` as well. Comparison with the long
+outer anchors forces `h-1<=X<=1-h`; otherwise the upward alternative
+would require `Y>=17/16`. In this horizontal interval the square
+cannot be horizontally separated from both inner M squares:
+separation from the left one would require `X>=h`, and from the right
+one `X<=-h`. At least one inner M square therefore needs vertical
+separation. Both center heights lie in `[1/16,21/40)`, so their
+difference is less than one, impossible. Every additional square is
+consequently aligned at `X=0`.
+
+Each such central square lies below `gamma`. It must also be at least
+one below both `alpha,beta`: an upper alternative conflicts with
+`Y<=gamma-1<21/40`, and an intervening alternative is impossible since
+`|alpha-beta|<2`. The displayed inequalities now follow from vertical
+separation and exact aligned containment `|z_i|<=U`. Conversely those
+inequalities check all inner-M/central and central/central pairs; every
+central square is horizontally separated from each fixed outer anchor.
+Thus they suffice, proving the exact completion domain.
+
 ## 9. Consequence for the global A.2 obligation
 
 Every physical packing with `q<Q`, if one existed, would now necessarily
