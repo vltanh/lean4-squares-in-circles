@@ -1,134 +1,69 @@
-# n=9 — one global proof, no original progress counters
+# n=9 — canonical proof roadmap (replacement v3)
 
-**The unrestricted sharp lower bound and complete equality classification remain OPEN.** The target is R²>=1105/256 for nine independently oriented, interior-disjoint unit squares. The exact attaining construction is available and has been rechecked in the unrestricted model.
+**The unrestricted sharp theorem and complete equality classification are OPEN.**
+Target: nine interior-disjoint, independently oriented closed unit squares in one disk have squared radius at least **1105/256**, and classify every attaining packing.
 
-**Current evidence:** [model equivalence proof, exact controls and sharp row-profile certificate](computer_assisted/UNRESTRICTED_MODEL_AND_ROW_CERTIFICATE.md). **Active next gate: D.3.c.** The [machine-readable registry](gates/ACTIVE_ROADMAP.json) retains every existing gate and its exit contract. Available source artifacts are not a global theorem or a percentage of completion. No separate human review is claimed for this continuation.
+## What counts as progress
 
-## Proof route and current position
+There are exactly **three theorem deliverables**: **A** lower bound, **B** complete equality classification, **C** human-checkable proof with exact tables. A theorem gate closes only when its full quantifiers and geometric scope are proved and checked. Experiments, conditional subfamilies, solver setup, and decisions to switch methods are *research activities*, not theorem closures.
 
-```text
-T  Original unrestricted nine-square statement and exact witness
-C  Complete sound certificate checker
-|
-+-- D  DIRECT full nine-square semialgebraic route [PRIMARY]
-|     D.1   unrestricted emitter/equivalence/controls: SOURCE AVAILABLE
-|     D.2   legal global rotation and sharp q elimination proved;
-|           tractable complete certificate partition still OPEN
-|     D.3   proper continuous-row certificate passed
-|     D.3.c unrestricted orientation coverage / limitation  <-- ACTIVE
-|     D.4   every q<Q packing excluded: OPEN
-|
-+-- S  Complete globally compatible stress route [FALLBACK]
-      S.1 same selected certificate and all physical terms
-      S.2 earlier three-cut result, conditional input only
-      S.3 four-cut, S.4 all remaining actual physical cases
-      S.5 unrestricted nine-square cover
+The exact general nine-square model and one exact seven-row pilot are already available. They are **inputs**, not progress toward a complete unrestricted proof by themselves.
 
-                (D.4 OR S.5) + C
-                         |
-                     Q  Sharp lower bound
-                         |
-                     E  All equality packings
-                         |
-                     H  Later hand/table manuscript
-                         |
-                     L  Lean deferred
-```
+| Deliverable | Current status | Only acceptance test |
+| --- | --- | --- |
+| A. Global bound | **OPEN** | A complete sound proof excludes every physical packing at every squared radius q < 1105/256 |
+| B. Equality | **OPEN** | Every physical q=1105/256 packing belongs to an explicitly characterized family, and every family member is feasible |
+| C. Hand/table proof | **OPEN** | A self-contained manuscript reproduces A and B with human-checkable inequalities or exact finite tables |
 
-A direct proof needs no historical case checklist. The structural fallback requires a genuinely complete physical cover, not accumulated local-case counts. Do not require both alternative routes.
+## A — prove the lower bound
 
-## What D.1 now supplies
+**A.0 — Faithful model [SOURCE AVAILABLE; audit required].** The unrestricted emitter represents all nine center/frame poses, 36 corners and 36 pair separations, including touching/parallel cases. The source proof of equivalence, exact q elimination and legal global rotation is in `computer_assisted/UNRESTRICTED_MODEL_AND_ROW_CERTIFICATE.md`. Independently audit before using it as the final theorem's foundation.
 
-The exact predicate uses independent centers and unit square axes, all 36 vertex-in-disk inequalities, and all 36 pairwise separating-axis disjunctions. It has NO force, torque, contact graph, circle-load or generic-normal premises. Pair separation becomes eight directed alternatives of four quadratic inequalities through |C|+|S|=max(±C±S). All weak touching and parallel boundaries remain.
+**A.1 — Global coverage [OPEN; mathematical bottleneck].** Give either (i) a complete finite certificate partition of the **actual unrestricted** counterexample formula, or (ii) a fully proved global geometric reduction to such a partition. Existing eight-directed-axis pair disjunctions give a syntactically finite Boolean cover, **not** a tractable solved partition. Every arbitrary orientation, contact degeneracy, equality face and disconnected configuration must remain covered. No unproved two-direction frame or stress selection is allowed.
 
-There are 37 independent reals in variable-q mode; removing q by the finite maximum of corner norms and globally rotating square 0 horizontal leaves 34. Both transformations have source proofs and preserve all possible counterexamples. This is not testing one fixed Q-epsilon radius.
+  * **A.1a — sound representation [SOURCE AVAILABLE]:** all original physical constraints exactly, with a bijective or equisatisfiable global normalization.
+  * **A.1b — exhaustive manageable cover [OPEN]:** produce explicit finite root/child/leaf definitions plus a proof that their union contains every potential counterexample. This is not known to have a practical size.
+  * **A.1c — boundary and overlap accounting [OPEN]:** certify all zero, touching, repeated-normal and singular split faces; no generic-position assumptions.
 
-The separately implemented emitted-text tests and polygon-area oracle pass the equality witness, symmetry controls and deliberate invalid examples. The source geometric proof, not the finite samples, establishes equivalence. Available-input status records implementation and the written proof; it is not an independent human-review claim.
+**A.2 — Close the resulting finite obligations [OPEN].** Every leaf of A.1b needs a rigorous contradiction valid for all its real assignments: exact rational/algebraic interval arithmetic, a verified polynomial identity, or a fully proved hand inequality. A solver's bare UNSAT, a floating tolerance, and a fixed q=Q-epsilon computation do not count. Record a number of remaining leaves **only after** the partition is explicitly generated; leaf statuses are `PROVED` or `OPEN`, never silently discarded.
 
-## What the first pilot does and does not prove
+**A.3 — Independent global replay [OPEN].** An independently written verifier checks every node's implication/coverage and each terminal certificate, rejects unknown leaves, and proves that accepted output implies the impossibility of **all** q<Q physical packings. The uniform strict boundary as q approaches Q is included.
 
-The exact row certificate proves q>=1105/256 for every packing with four horizontal squares in one row and three in a second, common-frame row, consecutive horizontal center gaps >=1 and vertical row gap >=1. All offsets, heights, excess gaps and two additional actual squares remain free. The certificate is a sum of ten nonnegative hypothesis multiples and six weighted squares; its independently implemented rational checker finds zero coefficient residual and rejects mutations.
+**A is closed iff A.0–A.3 establish the unrestricted lower bound.** The known q=Q attaining packing is already a source-checked input, so it then establishes the sharp optimum (subject to independent audit).
 
-This is a proper continuous subfamily. **There is no theorem putting every packing into these rows.** No general SMT solver was installed and package download failed through network name-resolution failure; therefore no general SAT/UNSAT/timeout output exists. The generic direct route is still unproved. Do not turn this successful control family into a new case-count scoreboard or repeatedly subdivide it.
+### Operational method, not an extra gate
 
-## One next task and stop rule
+**Primary attempt:** exact semialgebraic/computer-assisted proof using `emit_unrestricted_nine.py`, first with sharp q elimination, exact necessary bounds and certified branch compression. A proof-producing solver or interval/SOS checker must give a replayable certificate. **Fallback:** existing force/contact/graph lemmas, but only after proving a **single globally valid selection** and exhaustively covering the remaining physical cases. These are alternative mechanisms for A, not parallel gate trees. Switching tools is not a theorem completion. Local positive results do not count as A.2 progress until the A.1 cover has a proven caller.
 
-**D.3.c:** obtain a transferable quadratic/interval/physical obstruction over unrestricted relative orientations, or document a concrete remaining domain and a deliberate method choice. The full Boolean separator cover is proved, but producing manageable exact certificate leaves across it remains unresolved. The next result must expand actual universal coverage, not repeat emitter setup or solve more points in the existing row chart.
+The **two-direction theorem draft is not certified**. Its proposed Greene-grid step and support inequalities need an independent proof. Even if repaired, it covers only a special class and cannot by itself close A.1.
 
-A solver UNSAT without a proof object, sampled angular signs, unresolved interval leaves and fixed Q-epsilon bounds do not close the sharp theorem. Preserve every singular/touching/equality face. If a method cannot produce a broader terminal inequality, record its exact limitation and pivot explicitly rather than inventing an endless sequence of small gates.
+## B — characterize all equality packings
 
-## Full gated obligations (same IDs and exit contracts retained)
+**B.1 — Complete equality-domain cover [OPEN].** Start again from the original **closed** q=Q physical formula. A strict q<Q contradiction alone is insufficient; preserve all tangent, zero-slack and oblique configurations.
 
-### T — original statement
+**B.2 — Necessary normal forms and parameters [OPEN].** Prove every equality packing, up to global Euclidean isometries and relabeling, has one of explicitly listed structures. Give exact ranges for all center displacements, square rotations, free slides and endpoint choices. Do not assert that the seven-row pilot's equality core is globally necessary.
 
-- **T:** exact unrestricted sharp-radius theorem interface; no graph/stress assumptions in the conclusion.
-  - **T.1:** represent all original independent unit-square poses. Source available.
-    - **T.1.a:** orthonormal-frame representation, no unproved alignment. Source available.
-    - **T.1.b:** all 36 corner bounds equivalent to entire-square containment. Source available.
-    - **T.1.c:** all 36 weak pair separations equivalent to disjoint interiors. Source available.
-  - **T.2:** exact attaining construction checked by unrestricted geometry. Rechecked.
+**B.3 — Constructive converse [OPEN].** Verify each listed parameter family satisfies all original corner and pair nonoverlap inequalities and exhausts the equality set. Then B closes.
 
-### C — full certificate trust
+## C — write the hand proof with tables
 
-- **C:** every accepted terminal and root covers the actual physical theorem. OPEN globally.
-  - **C.1:** exact rational/algebraic arithmetic and positivity.
-    - **C.1.a:** denominator, square-root and outward-bound soundness; no discarded zero/sign face.
-    - **C.1.b:** finite independently replayable algebraic/interval leaf objects. One quadratic profile demonstrated; general system OPEN.
-  - **C.2:** full real-domain and boundary coverage.
-    - **C.2.a:** exact signed/axis alternatives; direct formula proved, global certificate leaves OPEN.
-    - **C.2.b:** closed splitting and singular faces, with unknown leaves rejected.
-    - **C.2.c:** sharp all-q<Q verification without fixed-epsilon extrapolation.
-  - **C.3:** independent arithmetic implementation plus physical soundness argument.
-    - **C.3.a:** exact equality/invalid controls. Available for the emitted model.
-    - **C.3.b:** human-checkable implication from accepted full certificate to the physical theorem. OPEN globally.
+**C.1 — Human reconstruction [OPEN].** Provide the proof of the full A.1 cover, the exact inequalities for A.2 terminals, and B's necessity and sufficiency. Compact rational tables are permitted. If the global certificate is too large to display, supply a short explicit table schema, full attached table and an independent replay algorithm; do not claim an unreadable black-box solver output is a hand proof.
 
-### D — direct primary route
+**C.2 — Audit [OPEN].** Recalculate table bounds independently and check all implications and degeneracies. Deliver one readable paper-level theorem and equality proof. Lean/CI is **deferred**, not counted as an open mathematical gate.
 
-- **D:** complete unrestricted exclusion, or a documented pilot limitation/pivot.
-  - **D.1:** exact polynomial emitter and bidirectional equivalence. Source available.
-    - **D.1.a:** 9-pose/36-corner/36-pair implementation. Available.
-    - **D.1.b:** signed separator alternatives and weak boundary proof. Available.
-    - **D.1.c:** exact attaining witness and deliberate invalid controls. Passed.
-    - **D.1.d:** actual dimensions and Boolean branching count. Recorded; not a feasible-root count.
-  - **D.2:** justified symmetry/domain reductions.
-    - **D.2.a:** legal global rotation, reflection/relabeling normalization without losing equality families; rotation gauge available, full pruning OPEN.
-    - **D.2.b:** necessary bounds derived from unrestricted square geometry; center norm <91/60 and center separation >=1 available, no sufficiency claim.
-    - **D.2.c:** manageable finite exact certificate partition with all sharp boundary roots. OPEN.
-  - **D.3:** proof-producing pilot and honest GO/NO-GO decision. OPEN beyond the control profile.
-    - **D.3.a:** exact replayable QE/interval/quadratic/SOS method, not a bare solver answer.
-    - **D.3.b:** nontrivial complete full-nine direct root; proper row profile supplied, unrestricted separator domains unresolved.
-    - **D.3.c ACTIVE:** transferable coverage of unrestricted relative orientations, or an exact limitation and route decision. No more microcharts inside the solved rows.
-  - **D.4:** every unrestricted q<Q physical root excluded. OPEN.
-    - **D.4.a:** complete real-packing cover, no fixed generic graph/orientation.
-    - **D.4.b:** exact proof arbitrarily close to equality, no epsilon gap assumption.
-    - **D.4.c:** independent complete certificate replay and soundness.
+## One current task and one honest stop rule
 
-### S — structural fallback, not parallel unchecked work
+**Active: A.1b — construct a provably exhaustive, usable partition of unrestricted counterexamples.** A.1c follows with it. Then A.2 and A.3, then B and C. No percentage of A or case fraction exists until a certificate cover has been generated and validated. Existing special cases may suggest a reduction but do not themselves reduce the remaining total.
 
-- **S:** one full-nine proof, not a count of old cases.
-  - **S.1:** one compatible selected certificate for every relevant extremizer.
-    - **S.1.a:** actual corner/contact stationarity and every nonzero original term.
-    - **S.1.b:** common normal/owner/uncrossing/mean hypotheses, including (S), hold together.
-  - **S.2:** earlier three-cut exclusion only on its proved selected-certificate scope. Available input.
-  - **S.3:** complete four-cut physical reductions or exclusions.
-    - **S.3.a:** degree-(4,3,3) triangle: all common-junction/shared/singleton features and full A4 moments.
-    - **S.3.b:** other four-cut unicyclic/multicycle domains with complete real hosts and means.
-  - **S.4:** all other loaded, higher-cut, branching and articulation configurations; entire actual-nine domain.
-  - **S.5:** complete compatible-stress sharpness argument and global transfer.
+If a direct exact approach fails, record its concrete limitation and pivot to a complete structural approach *within A.1*; do not close a theorem gate by declaring a method unsuccessful.
 
-### Q, E, H, L — actual completion milestones
+## Existing source assets (not new gates)
 
-- **Q:** unrestricted lower bound. OPEN.
-  - **Q.1:** complete D.4 OR complete S.5 plus sound checker C, not both routes required.
-  - **Q.2:** combine lower bound and exact attainer, obtaining optimal squared radius 1105/256.
-- **E:** full necessary-and-sufficient equality classification. OPEN.
-  - **E.1:** all original q=Q roots, never removed by strict-only arguments.
-  - **E.2:** forced saturated equations and complete parameter families.
-  - **E.3:** all slides, zero weights, endpoint contacts and degeneracies.
-  - **E.4:** constructive sufficiency and quotient by actual symmetries.
-- **H:** later compact hand proof or exact rational tables.
-  - **H.1:** compress actual certified branches without losing boundary coverage.
-  - **H.2:** full paper-level theorem/equality and independently checkable tables.
-- **L:** Lean/kernel/CI DEFERRED until authorization. Not a prerequisite for the first exact computer-assisted proof.
+- `computer_assisted/emit_unrestricted_nine.py`: unrestricted 9-pose quadratic QF_NRA model.
+- `computer_assisted/UNRESTRICTED_MODEL_AND_ROW_CERTIFICATE.md`: geometric model proof, source-tested sharp seven-body row certificate.
+- `computer_assisted/row43_certificate.json` and independent checker: complete **conditional** parallel four-over-three row profile.
+- `PHYSICAL_TWO_SQUARE_CAP_SUPPORT_AND_UNRESTRICTED_FOUR_PLUS_THREE_CHAINS_2026_10_31.md`: broader conditional physical 4+3 chain theorem.
+- `computer_assisted/TWO_DIRECTION_SEPARABLE_NINE_SUMMARY.md`: **draft only** after explicit audit caveat.
+- Older graph/stress research files are **supporting material**, not concurrent canonical progress counters.
 
-No old progress counters are restored. The only live mathematical completion milestones remain global necessity, full equality, and later human presentation. No Lean, Lake or CI was run.
+Use `gates/ACTIVE_ROADMAP.json` as the machine-readable status. The superseded D/C/S/T/Q/E/H letters in old manuscripts are historical references, not a second active checklist.
