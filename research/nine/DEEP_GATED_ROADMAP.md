@@ -1,14 +1,14 @@
-# n=9 — canonical proof roadmap (v3, A.2 square-pose update)
+# n=9 — canonical proof roadmap (v3, A.2 disk-support update)
 
 **The unrestricted sharp theorem and complete equality classification are OPEN.**
 Target: nine independently oriented, interior-disjoint unit squares in a disk
 have squared radius at least **1105/256**, and classify every attaining packing.
 
 **Active: A.2.** A complete positional root cover is now available: **7,915
-canonical roots, 886 EXCLUDED, 7,029 OPEN**. See the
-[square-pose proof and exact tables](computer_assisted/SQUARE_POSE_CERTIFICATES.md)
-and [independent replay summary](computer_assisted/square_pose_verification_summary.json).
-This adds 805 exclusions while retaining every previous exclusion and root ID.
+canonical roots, 3,986 EXCLUDED, 3,929 OPEN**. See the
+[containment theorem and exact tables](computer_assisted/DISK_SUPPORT_CERTIFICATES.md)
+and [independent replay summary](computer_assisted/disk_support_verification_summary.json).
+This adds 3,100 exclusions while retaining every previous exclusion and root ID.
 This count is for a fixed explicit cover, not a completion percentage or a
 claim that the remaining roots are uniformly easy.
 
@@ -58,21 +58,25 @@ all continuous orientations and separator alternatives. No claim is made that
   bound; equality compatibility edges are retained. The argument also works
   at q=Q and does not discard singular or repeated-normal configurations.
 
-**A.2 — Close the finite obligations [OPEN / ACTIVE].** The square-pose
-certificates exclude 886 entire roots, including all 81 original exclusions.
-The 83 cores use exact corner containment and square-owned separating axes
-over closed continuous orientation arcs, not sampled angles. Their 2,059
-propagation rows have been independently replayed. The remaining 7,029 roots
-are explicitly OPEN, not asserted feasible. Any further subdivision must
-record all children and its link to the unchanged root manifest. A root closes
-only when its complete q<Q domain has a sound exact contradiction.
+**A.2 — Close the finite obligations [OPEN / ACTIVE].** The disk-support
+certificates add 3,100 exclusions, giving 3,986 excluded and 3,929 OPEN roots.
+An exact support formula for the center region of a contained square produces
+necessary halfplanes over whole closed orientation intervals. Contracting each
+state's positional polygon gives stronger square-owned separator bounds. The
+176 new cores have 4,182 propagation rows. The earlier 886 exclusions and their
+proof references are preserved; the same original physical root IDs remain.
+Any further subdivision must cover every child and retain its root linkage.
+No angle sampling, generic position or fixed positive radius gap is used.
 
-**A.3 — Independent global replay [OPEN].** Two separate implementations
-reconstruct every edge of the current pose graphs, and the verifier rechecks
-every propagation row and root transfer. Arithmetic is integer/rational;
-NumPy int64 operations have explicit no-overflow bounds. This is still partial
-global coverage. Final A.3 requires all remaining root exclusions and an
-all-q<Q argument arbitrarily close to Q, without trusted floating tolerances.
+**A.3 — Independent global replay [OPEN].** The verifier reconstructs the old
+physical pose graphs, replays all 83 prior square-pose cores, independently
+rebuilds the contracted polygons and every compatibility edge, and checks all
+4,182 new rows and all root transfers. The polygon implementations use distinct
+methods: clipping versus feasible supporting-line intersections. Every proof
+comparison is integer/rational, with explicit bounds on array arithmetic.
+This is complete replay of the present partial certificate, not global closure:
+3,929 physical roots still lack contradictions. Final A.3 needs all-q<Q
+exclusion of every remaining root, including arbitrarily near equality.
 
 A closes only when the complete physical argument is proved and audited.
 Combine it with the known exact q=Q witness to obtain sharp optimality.
@@ -89,7 +93,7 @@ No separate mandatory direct-versus-stress proof trees are introduced.
 
 **B.1 — Complete equality-domain cover [ROOT COVER SUPPLIED].** The same
 nineteen-cell theorem and closed-Q root emitter cover every physical equality
-packing. The 886 current exclusions hold even at q=Q. The known oblique witness
+packing. The 3,986 current exclusions hold even at q=Q. The known oblique witness
 survives in root 7820. This supplies a starting equality cover, not a list of
 all equality normal forms.
 
@@ -104,11 +108,12 @@ equality packing is absent. B closes only with necessity and sufficiency.
 
 ## C — write the final hand proof with tables
 
-**C.1 — Human reconstruction [OPEN].** The hex-cover proof, square-pose
-soundness argument and finite core tables are written. The full manuscript still needs all remaining
-root exclusions and B's complete equality proof. A large exact graph decision
-forest is computational evidence with a proved replay interpretation, not by
-itself the requested compact final hand argument.
+**C.1 — Human reconstruction [OPEN].** The hex-cover proof, exact center-support
+theorem, complete interval-containment derivation and finite core tables are
+written. The four-cell theorem has a four-row summary with explicit integer
+rules for reconstructing each entry. The complete manuscript still requires
+all remaining root exclusions and B's equality classification. Large replayable
+finite tables are not by themselves the requested final compact hand proof.
 
 **C.2 — Audit [OPEN].** Independently check the full mathematical manuscript,
 all exact table comparisons and every boundary implication. The present
@@ -122,17 +127,20 @@ Run from `research/nine/computer_assisted/`:
 ```sh
 python make_hex_cover.py
 python make_square_pose_certificate.py
-python verify_square_pose_certificate.py --negative-controls
+python make_disk_support_certificate.py
+python verify_disk_support_certificate.py --negative-controls
 python emit_hex_root.py --root 7820 --radius strict --output /tmp/n9-root.smt2
 ```
 
-The new producer and independent graph builder use NumPy only for exact
-bounded-integer operations; other arithmetic uses Python int and Fraction.
+The producer and independent graph builder use NumPy only for exact
+bounded-integer operations; polygon and support arithmetic uses Python int
+and Fraction. The final verifier reconstructs its graphs, without trusted caches.
 The complete generated certificate, root manifest and full replay report
 accompany the continuation archive. Their hashes are pinned in the committed
 summary. The source and core list reproduce all results.
 
 The canonical status is `gates/ACTIVE_ROADMAP.json`. The new finite cover does
-not imply all 7,029 unresolved roots can be solved by uniform pose refinement.
-Near-equality roots will need a sharp inequality, not a fixed numerical gap.
+not imply all 3,929 unresolved roots can be solved by uniform pose refinement.
+Closed-Q pruning cannot empty domains containing equality packings. Those
+roots need sharp q<Q inequalities, not a fixed numerical gap.
 A.2 remains the active gate; all existing gate IDs and goals are unchanged.

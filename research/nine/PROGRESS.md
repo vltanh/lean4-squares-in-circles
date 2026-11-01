@@ -4,65 +4,73 @@
 Full hand/table manuscript OPEN. Active gate: A.2.**
 
 [Canonical roadmap](DEEP_GATED_ROADMAP.md) · [gate registry](gates/ACTIVE_ROADMAP.json) ·
-[new square-pose proof and tables](computer_assisted/SQUARE_POSE_CERTIFICATES.md) ·
-[actual independent replay summary](computer_assisted/square_pose_verification_summary.json).
+[new containment theorem and tables](computer_assisted/DISK_SUPPORT_CERTIFICATES.md) ·
+[actual independent replay summary](computer_assisted/disk_support_verification_summary.json).
 
-## Fixed cover, new exact exclusions
+## Same cover: 3,100 additional exact exclusions
 
-The 7,915 canonical positional roots and their IDs are unchanged. The nineteen
-closed hexagons still cover every q<=1105/256 packing with arbitrary square
-orientations. The new square-pose certificates exclude **886 entire roots**,
-including all 81 previous exclusions: **805 additional exclusions, 7,029 OPEN**.
-These counts are not a percentage of mathematical effort. OPEN is not a claim
-of physical feasibility or uniform ease.
+The original **7,915** canonical positional root IDs, masks and cell lists are
+unchanged. The new disk-support certificates add **3,100 exclusions** to the
+previous 886: **3,986 EXCLUDED, 3,929 OPEN**. Every previous exclusion retains
+its proof reference. These counts are not a percentage of mathematical effort;
+OPEN does not assert feasibility, uniform difficulty or a completed solver run.
 
-The new relaxation includes exact corner-containment bounds and all candidate
-square-owned separating axes over twelve CLOSED continuous orientation arcs.
-Two independent graph implementations agree on every edge. The separate
-candidate-by-candidate verifier replays **83 cores and 2,059 propagation rows**,
-then checks every transfer to the fixed canonical roots. Each exclusion holds
-for all q<=Q, not merely for a fixed Q-epsilon.
+The new mathematical ingredient is an exact support formula for the center
+region of a square contained in the disk. Maximizing it over a complete closed
+orientation interval gives exact necessary halfplanes. Intersecting them with
+the positional triangle contracts the continuous state before applying the
+square-owned separating-axis tests. Polygon degeneracies and all weak contacts
+are retained. This is stronger containment geometry, not angular sampling.
+
+The selected **176 new cores have 4,182 propagation rows**. A separately written
+implementation reconstructs the contracted polygons by feasible supporting-line
+intersections rather than clipping, reproduces every compatibility edge, and
+checks every propagation row candidate-by-candidate. It also independently
+reconstructs and replays all **83 prior square-pose cores** and the original root
+cover. Every current exclusion holds throughout the closed range q<=1105/256.
 
 | Gate | Current status |
 |---|---|
-| A.0 / A.1a | Physical-model source available; final independent source audit remains |
-| A.1b / A.1c | Same exhaustive closed root cover; all root IDs retained |
-| A.2 | **ACTIVE: 886 excluded, 7,029 open** |
-| A.3 | Global completion OPEN; all current square-pose certificates independently replayed |
-| B.1 | Same closed-q=Q cover; equality root 7820 remains OPEN |
+| A.0 / A.1a | Original physical-model source available; final independent source audit remains |
+| A.1b / A.1c | Same exhaustive closed root cover and all stable IDs retained |
+| A.2 | **ACTIVE: 3,986 excluded, 3,929 open** |
+| A.3 | Global completion OPEN; all current and retained prior core certificates replayed |
+| B.1 | Same equality-domain cover; attaining root 7820 remains OPEN |
 | B.2 / B.3 | Full necessary-and-sufficient equality families OPEN |
 | C.1 / C.2 | Full hand/table manuscript and independent human audit OPEN |
 
-## A reusable five-row obstruction
+## One four-cell obstruction excludes 2,023 roots
 
-Core mask 143 occupies cells 0,1,2,3,7. Five exact propagation steps reduce
-cell 3's complete pose domain from 1,356 possibilities to zero. The full table
-and its soundness proof are in `computer_assisted/SQUARE_POSE_CERTIFICATES.md`.
-The old finite center-distance graph still has a compatible assignment for
-this core; the new square constraints genuinely strengthen that relaxation.
-That center assignment is not asserted to be an actual physical packing.
+Core mask 2118 occupies cells **1,2,6,11**. Four exact propagation rows reduce
+cell 1's complete retained domain from 1,240 states to zero. Its twelve physical
+symmetry images exclude 2,023 canonical roots, including **1,351 previously
+open roots**. This is a theorem about those four specified occupied cells, with
+arbitrary independent square orientations, not an assertion that four squares
+cannot fit anywhere in the disk. The exact table, geometry and soundness proof
+are in `computer_assisted/DISK_SUPPORT_CERTIFICATES.md`.
 
 ## Controls and verification boundary
 
-On each of the two meshes, the known oblique attaining packing survives all
-twelve dihedral symmetries, and 25 genuinely touching pairs survive, including
-every angle-interval endpoint. The verifier rejects nine deliberate mutations,
-including an omitted proof row and a false exclusion of equality root 7820.
-All arithmetic is exact integer/rational, with explicit bounds ruling out int64
-overflow in NumPy operations. No floating-point proof comparison is used.
+All three geometry families preserve the oblique attaining packing under all
+twelve dihedral symmetries. They also preserve 99 genuinely side-touching pair
+controls in total, covering every orientation-interval endpoint and midpoint.
+Additional rational physical-square controls check the support halfplanes.
+Fourteen deliberate certificate/domain mutations are rejected. All proof
+comparisons use integers and rationals; array operations have explicit bounds
+excluding int64 overflow. No numerical solver result is used as a proof.
 
-The repository has the complete producer, separately implemented verifier,
-core list, mathematical derivation, and execution summary. The full generated
-certificate, updated root manifest and full report are supplied in the
-continuation archive and regenerate deterministically from committed sources.
-Their hashes are pinned in the summary. No separate human review, unrestricted
-solver UNSAT result, Lean, Lake or CI is claimed.
+The repository contains the complete source, explicit selected core list,
+mathematical derivation and execution summary. The continuation archive also
+contains the full generated certificate, unchanged-ID root manifest and full
+verification report. Their hashes are pinned in the summary. Reproduction
+reconstructs every graph; exploratory caches are not trusted or required.
+No separate human review, global UNSAT result, Lean, Lake or CI is claimed.
 
-## Next mathematical obligation — A.2 remains active
+## Remaining A.2 task
 
-Close groups of the remaining **7,029 exact physical root predicates**. The
-finite pose graphs are necessary relaxations, not a guarantee that uniform
-refinement will prove sharpness. Roots approaching the known equality family,
-including 7820, need a sharp all-q<Q argument. Preserve the same cover, IDs,
-closed boundary accounting and per-root closure evidence. No new roadmap or
-extra gate tree is introduced.
+Close groups of the **3,929 original physical root predicates** still OPEN.
+The new tests exclude closed-Q domains; they cannot exclude a domain containing
+an attaining packing. Such domains require a sharp proof for every q<Q, not
+endless attempts to make their feasible q=Q portions empty. Preserve the same
+cover, root IDs, exact boundary accounting and closure evidence. No new gates
+or alternative progress denominator are introduced.

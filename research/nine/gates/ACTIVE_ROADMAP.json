@@ -10,25 +10,28 @@
   "honest_counter_policy": "FIXED_HEX_ROOT_COUNTS_ONLY_NOT_A_COMPLETION_PERCENTAGE",
   "current_cover": {
     "source": "computer_assisted/HEXAGON_ROOT_COVER_AND_FIRST_EXCLUSIONS.md",
-    "summary": "computer_assisted/square_pose_verification_summary.json",
-    "verification": "computer_assisted/square_pose_verification_summary.json",
+    "summary": "computer_assisted/disk_support_verification_summary.json",
+    "verification": "computer_assisted/disk_support_verification_summary.json",
     "emitter_controls": "computer_assisted/hex_emitter_test_report.json",
     "roots": 7915,
-    "excluded": 886,
-    "open": 7029,
-    "certificate_cores": 83,
+    "excluded": 3986,
+    "open": 3929,
+    "certificate_cores": 259,
     "equality_witness_root": 7820,
     "all_orientations_retained": true,
     "all_q_le_Q_covered": true,
     "all_remaining_roots_tractable": false,
-    "tractability_note": "The same 7915 roots are retained. All current pose certificates replay exactly; no claim of uniform tractability or full feasibility classification of the 7029 open roots.",
+    "tractability_note": "Same 7915 root IDs. Exact center-support contractions and all prior/current core certificates replay; no global feasibility or uniform difficulty claim for the 3929 OPEN roots.",
     "separate_human_review_performed": false,
     "global_lower_bound_proved": false,
-    "prior_excluded": 81,
-    "newly_excluded": 805,
-    "exclusion_source": "computer_assisted/SQUARE_POSE_CERTIFICATES.md",
-    "generated_root_manifest": "computer_assisted/square_pose_root_manifest.json",
-    "generated_certificate": "computer_assisted/square_pose_certificate.json"
+    "prior_excluded": 886,
+    "newly_excluded": 3100,
+    "exclusion_source": "computer_assisted/DISK_SUPPORT_CERTIFICATES.md",
+    "generated_root_manifest": "computer_assisted/disk_support_root_manifest.json",
+    "generated_certificate": "computer_assisted/disk_support_certificate.json",
+    "retained_prior_cores": 83,
+    "new_certificate_cores": 176,
+    "new_propagation_rows": 4182
   },
   "known_inputs": [
     {
@@ -60,6 +63,11 @@
       "asset": "computer_assisted/SQUARE_POSE_CERTIFICATES.md",
       "status": "SOURCE_PROOF_AND_SEPARATE_EXACT_REPLAY",
       "scope": "83 physical square-pose cores exclude 886 closed-Q roots, including all previous 81; not global optimality"
+    },
+    {
+      "asset": "computer_assisted/DISK_SUPPORT_CERTIFICATES.md",
+      "status": "SOURCE_PROOF_AND_SEPARATE_EXACT_REPLAY",
+      "scope": "Exact admissible-center support theorem; 176 new cores add 3100 closed-Q root exclusions, bringing the preserved-cover total to 3986. Not global optimality."
     }
   ],
   "gates": [
