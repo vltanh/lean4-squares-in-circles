@@ -1,0 +1,19 @@
+{
+  "polynomial_residual_monomials": [0, 0],
+  "layer_rows_checked": 14,
+  "minimum_layer_reserve": "51183/16777216",
+  "wrong_axis_upper_bounds": ["69/256", "197/256"],
+  "correct_axis_positive_lower_bounds": ["47/64", "93/128"],
+  "quadratic_loss_coefficients": ["2623909/524288", "484929/262144", "1647099/524288"],
+  "exact_equality_controls": 27,
+  "genuinely_tilted_controls": 3,
+  "result": "PASS",
+  "arithmetic": "Python Fraction; sparse polynomial expansion",
+  "negative_controls_rejected": ["changed target", "changed weight", "changed span", "inflated bound", "missing layer", "false layer", "lost square factor", "unsupported A2 flag"],
+  "certificate_sha256": "4523d20f0a24759f9c35b14608f4ea24bacb66cfd622d7e5993c0e68b8122e36",
+  "verifier_sha256": "58070a12b5108318aecb6be7b9b6eeef63708f8dae122871dbecadf766c14bda",
+  "global_A2_closed": false,
+  "scope": "conditional sharp neighborhood; global caller not proved",
+  "separate_human_review_performed": false,
+  "lean_or_ci_run": false
+}

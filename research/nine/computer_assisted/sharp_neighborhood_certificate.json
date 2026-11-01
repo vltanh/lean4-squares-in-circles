@@ -1,0 +1,141 @@
+{
+  "anchor_weights": {
+    "0": "23/64",
+    "3": "23/64",
+    "4": "9/64",
+    "6": "9/64"
+  },
+  "claimed_variation_coefficient": "1/256",
+  "global_A2_closed": false,
+  "horizontal_weights": [
+    "23/16",
+    "27/64"
+  ],
+  "layer_table": [
+    {
+      "pattern": [
+        1,
+        0,
+        0
+      ],
+      "reserve": "2719323/33554432"
+    },
+    {
+      "pattern": [
+        0,
+        1,
+        0
+      ],
+      "reserve": "1457599/16777216"
+    },
+    {
+      "pattern": [
+        1,
+        1,
+        0
+      ],
+      "reserve": "5634521/33554432"
+    },
+    {
+      "pattern": [
+        0,
+        0,
+        1
+      ],
+      "reserve": "9610757/33554432"
+    },
+    {
+      "pattern": [
+        1,
+        0,
+        1
+      ],
+      "reserve": "208035/1048576"
+    },
+    {
+      "pattern": [
+        0,
+        1,
+        1
+      ],
+      "reserve": "3056003/33554432"
+    },
+    {
+      "pattern": [
+        1,
+        1,
+        1
+      ],
+      "reserve": "51183/16777216"
+    },
+    {
+      "pattern": [
+        -1,
+        0,
+        0
+      ],
+      "reserve": "30604891/33554432"
+    },
+    {
+      "pattern": [
+        0,
+        -1,
+        0
+      ],
+      "reserve": "5143999/16777216"
+    },
+    {
+      "pattern": [
+        -1,
+        -1,
+        0
+      ],
+      "reserve": "40892889/33554432"
+    },
+    {
+      "pattern": [
+        0,
+        0,
+        -1
+      ],
+      "reserve": "2237957/33554432"
+    },
+    {
+      "pattern": [
+        -1,
+        0,
+        -1
+      ],
+      "reserve": "849059/1048576"
+    },
+    {
+      "pattern": [
+        0,
+        -1,
+        -1
+      ],
+      "reserve": "3056003/33554432"
+    },
+    {
+      "pattern": [
+        -1,
+        -1,
+        -1
+      ],
+      "reserve": "13993967/16777216"
+    }
+  ],
+  "minimum_layer_reserve": "51183/16777216",
+  "pair_variation_coefficient": "15/32",
+  "position_tolerance": "1/8",
+  "quadratic_loss_coefficients": [
+    "2623909/524288",
+    "484929/262144",
+    "1647099/524288"
+  ],
+  "retained_anchor_square_fraction": "1/2",
+  "schema": "n9_sharp_neighborhood_v3",
+  "target_q": "1105/256",
+  "tilt_bound": "1/64",
+  "vertical_weight": "207/512"
+}
