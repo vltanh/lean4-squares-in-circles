@@ -1,0 +1,150 @@
+{
+  "adjusted_linear_coefficients": [
+    "23/2048",
+    "45/4096"
+  ],
+  "anchor_square_fraction": "1/2",
+  "anchor_vertical_tolerance": "1/8",
+  "bottom_row_inner_vertical": [
+    "-19/32",
+    "1/8"
+  ],
+  "global_A2_closed": false,
+  "horizontal_tolerance": "1/8",
+  "layer_table": [
+    {
+      "pattern": [
+        1,
+        0,
+        0
+      ],
+      "reserve": "2719323/33554432"
+    },
+    {
+      "pattern": [
+        0,
+        1,
+        0
+      ],
+      "reserve": "1457599/16777216"
+    },
+    {
+      "pattern": [
+        1,
+        1,
+        0
+      ],
+      "reserve": "5634521/33554432"
+    },
+    {
+      "pattern": [
+        0,
+        0,
+        1
+      ],
+      "reserve": "2975237/33554432"
+    },
+    {
+      "pattern": [
+        1,
+        0,
+        1
+      ],
+      "reserve": "675/1048576"
+    },
+    {
+      "pattern": [
+        0,
+        1,
+        1
+      ],
+      "reserve": "3056003/33554432"
+    },
+    {
+      "pattern": [
+        1,
+        1,
+        1
+      ],
+      "reserve": "51183/16777216"
+    },
+    {
+      "pattern": [
+        -1,
+        0,
+        0
+      ],
+      "reserve": "3472987/33554432"
+    },
+    {
+      "pattern": [
+        0,
+        -1,
+        0
+      ],
+      "reserve": "1826239/16777216"
+    },
+    {
+      "pattern": [
+        -1,
+        -1,
+        0
+      ],
+      "reserve": "7125465/33554432"
+    },
+    {
+      "pattern": [
+        0,
+        0,
+        -1
+      ],
+      "reserve": "2237957/33554432"
+    },
+    {
+      "pattern": [
+        -1,
+        0,
+        -1
+      ],
+      "reserve": "1187/1048576"
+    },
+    {
+      "pattern": [
+        0,
+        -1,
+        -1
+      ],
+      "reserve": "3056003/33554432"
+    },
+    {
+      "pattern": [
+        -1,
+        -1,
+        -1
+      ],
+      "reserve": "428015/16777216"
+    }
+  ],
+  "middle_row_inner_vertical": [
+    "-1/8",
+    "11/16"
+  ],
+  "minimum_layer_reserve": "675/1048576",
+  "quadratic_losses": [
+    "2623909/524288",
+    "484929/262144",
+    "1647099/524288"
+  ],
+  "row_half_ranges": [
+    "13/32",
+    "23/64"
+  ],
+  "row_midpoints": [
+    "9/32",
+    "-15/64"
+  ],
+  "schema": "n9_wide_slide_sharp_v1",
+  "target_q": "1105/256",
+  "tilt_bound": "1/64",
+  "variation_coefficient": "1/256"
+}

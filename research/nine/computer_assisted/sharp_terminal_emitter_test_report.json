@@ -1,0 +1,21 @@
+{
+  "result": "PASS",
+  "arithmetic": "Fraction pairs in Q(sqrt(3))",
+  "physical_witness_models_evaluated": 96,
+  "fixed_hex_root_models_evaluated": 24,
+  "closed_vertical_guard_endpoints": 14,
+  "invalid_interface_inputs_rejected": 3,
+  "wrong_mirror_and_escaped_guard_rejected": true,
+  "all_original_pairs_retained": 36,
+  "chart_guards": 49,
+  "new_real_variables": 0,
+  "polynomial_degree_at_most": 2,
+  "independent_square_gauge_used": false,
+  "global_coverage_proved": false,
+  "scope": "sufficient terminal interface; finite regression tests, not global extraction",
+  "source_sha256": {
+    "emit_sharp_terminal.py": "1dbc674b675f5289e4578d614bed9080edf04d53c8724a2de52377aadc1658c5",
+    "test_sharp_terminal_emitter.py": "30615ff2ecdede010c8d737738e916de2c2560d79ef3bd7732ba64cf90ae7988"
+  },
+  "lean_or_ci_run": false
+}

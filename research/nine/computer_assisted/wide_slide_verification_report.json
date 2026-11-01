@@ -1,0 +1,41 @@
+{
+  "base_polynomial_residual_monomials": [
+    0,
+    0
+  ],
+  "telescoping_owner_cases": 4,
+  "endpoint_layers_checked": 14,
+  "full_tilt_layers_checked": 126,
+  "minimum_layer_reserve": "675/1048576",
+  "full_layer_minimum": "675/1048576",
+  "wrong_horizontal_axis_upper_bounds": [
+    "213/256",
+    "189/256"
+  ],
+  "correct_horizontal_axis_lower_bounds": [
+    "743/1024",
+    "1489/2048"
+  ],
+  "unconditional_downward_margin": "7/480",
+  "rational_equality_controls": 64,
+  "controls_outside_old_neighborhood": 52,
+  "result": "PASS",
+  "arithmetic": "Python Fraction only",
+  "negative_controls_rejected": [
+    "unsupported global closure",
+    "unproved larger upper slide",
+    "wrong row midpoint",
+    "changed endpoint coefficient",
+    "omitted signed layer",
+    "invented reserve",
+    "wrong quadratic cost",
+    "inflated conclusion"
+  ],
+  "certificate_sha256": "b88a878aa91a4e610e867be20bd3ee8d17d09351c73564208a9fc458813c78b1",
+  "verifier_sha256": "ab64b63eee1131ee4b8c98a882958cf1ce29dcdce9539d4ed0d69d6a4c5b7770",
+  "base_certificate_sha256": "4523d20f0a24759f9c35b14608f4ea24bacb66cfd622d7e5993c0e68b8122e36",
+  "global_A2_closed": false,
+  "scope": "widened local sharp terminal; no complete global caller",
+  "separate_human_review_performed": false,
+  "lean_or_ci_run": false
+}
