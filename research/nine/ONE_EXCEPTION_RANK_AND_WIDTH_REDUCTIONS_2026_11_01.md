@@ -1,5 +1,13 @@
 # One exceptional pair: proved rank and width reductions
 
+**Further continuation:** the width-five theorem below remains proved. The
+later [augmented-grid proof](ONE_EXCEPTION_RANK_BOUNDARY_CONTINUATION.md)
+and [two-endpoint reduction](ONE_EXCEPTION_HEIGHT_FOUR_CONTINUATION.md)
+subsume the two frontier descriptions at the end of this checkpoint.
+The whole one-exception theorem is still open; the surviving cases must
+retain all nine squares, as the
+[eight-square obstruction](END_EXCEPTION_EIGHT_SQUARE_OBSTRUCTION.md) shows.
+
 November 1, 2026. Hand arguments only. **The full one-exception class remains
 OPEN.** This note records proved reductions, not a replacement roadmap or a
 claim that the surviving geometric domains have been exhausted.

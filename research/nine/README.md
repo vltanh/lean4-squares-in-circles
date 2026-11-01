@@ -18,6 +18,17 @@ needs no horizontal coordinate or separate anchor-height boxes.
 The [boundary normalization](BOUNDARY_NORMALIZATION_WITH_SHARP_CAP_HAND_PROOF.md)
 is a global strict-counterexample reduction incorporating the cap.
 
+The entire [one-exception width-five branch](ONE_EXCEPTION_RANK_AND_WIDTH_REDUCTIONS_2026_11_01.md)
+is also proved. The [augmented-grid proof](ONE_EXCEPTION_RANK_BOUNDARY_CONTINUATION.md)
+and [height-four reduction](ONE_EXCEPTION_HEIGHT_FOUR_CONTINUATION.md)
+reduce the remaining one-exception family to two weak endpoint patterns,
+with all nine squares retained. The full family remains open.
+
+An exact [eight-square obstruction](END_EXCEPTION_EIGHT_SQUARE_OBSTRUCTION.md)
+shows why a smaller subsystem cannot settle those patterns. An exact
+[nine-square equality example](GLOBAL_GEOMETRIC_CONTINUATION.md) requires
+at least three exceptional pairs for every choice of two directions.
+
 None supplies the remaining unrestricted coverage argument. The fixed
 positional tally remains 5,838 excluded and 2,077 open out of 7,915 roots;
 the earlier archive-only 312 additional exclusions remain separately recorded.

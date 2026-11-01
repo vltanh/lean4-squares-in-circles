@@ -96,10 +96,8 @@ center/separator contradiction. The direct 4+3-chain alternative retains
 equality; no complete equality classification for this wider family is claimed.
 
 The same source closes several entire rank patterns when both heights are
-at most three. The full one-exception class still has two unresolved groups:
-the listed boundary rank patterns, and the damaged antichain alternatives
-when both widths are at most four and some height is four. These are scopes,
-not new roadmap gate IDs.
+at most three. The follow-up below subsumes both former frontier groups in
+two precise endpoint patterns. These are theorem scopes, not new roadmap IDs.
 
 The elementary tool is
 [ONE_EXCEPTION_PAIR_SPAN_AND_SHARP_TERMINAL_2026_11_01.md](ONE_EXCEPTION_PAIR_SPAN_AND_SHARP_TERMINAL_2026_11_01.md):
@@ -111,6 +109,52 @@ It follows by inscribing aligned squares of halfwidth 1/(4h_i). If |dy|<=1/2,
 the horizontal span reserve is at least two. This allows a genuinely oblique
 pair to replace the two internal squares of the sharp long-span terminal.
 The relevant four endpoints and short span remain explicit hypotheses.
+
+### The full one-exception class reduces to two endpoint patterns
+
+[ONE_EXCEPTION_RANK_BOUNDARY_CONTINUATION.md](ONE_EXCEPTION_RANK_BOUNDARY_CONTINUATION.md)
+adds only the exceptional comparison to one actual projection order and
+proves that this relation is already transitive. The other order stays actual.
+Every augmented 3-by-3 grid is excluded. Even a four-corner support sum with
+one coefficient reduced from 2h to h+1/(4h) gives
+
+    q >= (825+200sqrt(2))/256 > Q.
+
+[ONE_EXCEPTION_HEIGHT_FOUR_CONTINUATION.md](ONE_EXCEPTION_HEIGHT_FOUR_CONTINUATION.md)
+then applies Greene's theorem to the completed orders. Actual 4+3 chains and
+an internal exceptional pair are handled by the proved sharp terminals.
+Every remaining one-exception packing has either the pair at an end of a
+weak four-chain beside an actual three-chain, or at an end of a weak
+three-chain beside an actual four-chain. Exact span deficits, exchange
+arguments and same-side overlap constraints are supplied. Actual four-chain
+endpoints satisfy the new bound |y|<1/5 in the chain frame.
+
+**These two endpoint patterns are still open for nine squares.** The remaining
+two physical squares are retained explicitly in each pattern. The earlier
+boundary-rank and damaged-antichain descriptions are now superseded by this
+more precise reduction, not counted as additional open gates.
+
+### Two exact constructions rule out invalid coverage shortcuts
+
+[END_EXCEPTION_EIGHT_SQUARE_OBSTRUCTION.md](END_EXCEPTION_EIGHT_SQUARE_OBSTRUCTION.md)
+gives eight physical squares with one coordinate-exceptional pair and both
+actual projection heights exactly three, including the weak four-chain and
+disjoint actual three-chain. All twenty-eight pairs and all corner norms
+are checked by hand. Their squared radius is
+
+    q0=4351541/1010000,
+    Q-q0=128469/16160000>0.
+
+Thus neither that seven-square subsystem nor the same subsystem with one
+arbitrary additional square yields the missing nine-square terminal.
+
+[GLOBAL_GEOMETRIC_CONTINUATION.md](GLOBAL_GEOMETRIC_CONTINUATION.md)
+gives an exact nine-square attainer for which every pair of projection
+directions leaves at least three exceptional pairs, and the original axes
+leave exactly three. Hence an unconditional closed-Q one- or two-exception
+cover theorem would be false. The example retains an actual 4+3 terminal;
+it does not refute a strict-q<Q-only reduction or a disjunction allowing
+already proved physical terminals.
 
 ## Fixed positional accounting — unchanged
 

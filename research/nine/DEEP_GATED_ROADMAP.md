@@ -61,10 +61,19 @@ The newest broad hand results are:
 The hand continuation also proves the entire width-five branch when only one
 pair lacks coordinate separation; see
 [ONE_EXCEPTION_RANK_AND_WIDTH_REDUCTIONS_2026_11_01.md](ONE_EXCEPTION_RANK_AND_WIDTH_REDUCTIONS_2026_11_01.md).
-Its precise two remaining one-exception domains stay open. The
+The follow-ups [augmented-grid closure](ONE_EXCEPTION_RANK_BOUNDARY_CONTINUATION.md)
+and [height-four reduction](ONE_EXCEPTION_HEIGHT_FOUR_CONTINUATION.md) reduce
+that whole family to two remaining weak endpoint patterns, explicitly
+retaining all nine squares. The grid has a strict four-corner bound, and
+actual four-chain endpoints satisfy |y|<1/5. The
 [pair-span terminal](ONE_EXCEPTION_PAIR_SPAN_AND_SHARP_TERMINAL_2026_11_01.md)
 is based on a universal inscribed-square inequality and admits an oblique
-internal pair. These are theorem scopes, not additional mandatory gate IDs.
+internal pair. The [eight-square obstruction](END_EXCEPTION_EIGHT_SQUARE_OBSTRUCTION.md)
+shows why the ninth square is essential to the remaining endpoint issue.
+The [three-exception equality example](GLOBAL_GEOMETRIC_CONTINUATION.md)
+prevents an unconditional small-exception two-direction cover at q<=Q.
+These are theorem scopes and checked obstructions, not additional mandatory
+gate IDs. The one-exception theorem and unrestricted coverage remain open.
 
 These proofs have independent agent hand checks; no independent human review
 or kernel verification is claimed. Their global scope is stated in each

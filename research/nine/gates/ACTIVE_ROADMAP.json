@@ -153,6 +153,26 @@
       "asset": "ONE_EXCEPTION_RANK_AND_WIDTH_REDUCTIONS_2026_11_01.md",
       "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
       "scope": "complete width-five lower-bound branch and specified rank patterns for one exceptional pair; full one-exception and unrestricted coverage still open"
+    },
+    {
+      "asset": "ONE_EXCEPTION_RANK_BOUNDARY_CONTINUATION.md",
+      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
+      "scope": "single-comparison transitive augmentation; complete augmented-grid exclusion; original height-three reduction; no endpoint closure"
+    },
+    {
+      "asset": "ONE_EXCEPTION_HEIGHT_FOUR_CONTINUATION.md",
+      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
+      "scope": "complete one-exception reduction to two weak endpoint patterns; exact deficits, exchanges and four-chain endpoint localization; full nine-square cases open"
+    },
+    {
+      "asset": "END_EXCEPTION_EIGHT_SQUARE_OBSTRUCTION.md",
+      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
+      "scope": "exact subcritical eight-square one-exception packing with actual heights three and weak end-chain pattern; ninth square essential"
+    },
+    {
+      "asset": "GLOBAL_GEOMETRIC_CONTINUATION.md",
+      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
+      "scope": "exact nine-square equality packing whose minimum exception count over any pair of projection directions is three; no unconditional closed-Q small-exception cover"
     }
   ],
   "gates": [
@@ -272,6 +292,9 @@
     "new_full_root_exclusions": 0,
     "unrestricted_global_caller_proved": false,
     "one_exception_width_five": "PROVED_SHARP_LOWER_BOUND_ENTIRE_BRANCH",
-    "one_exception_global": "OPEN_TWO_REMAINING_DOMAIN_GROUPS"
+    "one_exception_global": "OPEN_TWO_WEAK_ENDPOINT_PATTERNS_WITH_ALL_NINE_RETAINED",
+    "one_exception_augmented_grid": "PROVED_CLOSED_Q_EXCLUSION",
+    "eight_square_endpoint_obstruction": "PROVED_EXACT_SUBCRITICAL_EXAMPLE",
+    "closed_q_small_exception_cover": "DISPROVED_BY_EXACT_THREE_EXCEPTION_EQUALITY_EXAMPLE"
   }
 }
