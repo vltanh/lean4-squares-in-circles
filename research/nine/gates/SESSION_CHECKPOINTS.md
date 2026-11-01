@@ -35,16 +35,20 @@ A **proof-ready small task** has a precise input graph/load/force domain, one ve
 
 ## 2. Complete current structural proof boundary
 
-The [November 1 adoption](../ADOPTION_FULL_THREE_PORT_REDUCTION_AND_GEOMETRIC_ESCAPE_2026_11_01.md) links every complete source, independent review and preserved dependency. Its strongest results apply to whole families at once.
+The [complete multicycle adoption](../ADOPTION_FULL_THREE_PORT_REDUCTION_AND_GEOMETRIC_ESCAPE_2026_11_01.md) and [latest four-cycle/cardinality adoption](../ADOPTION_COMPLETE_UNICYCLIC_FOUR_CYCLE_AND_SHORT_PRISM_EXCLUSION_2026_11_01.md) link every complete source, independent review and preserved dependency. Their strongest results apply to whole families at once.
 
 | Whole original domain | Reviewed hand conclusion | Remaining boundary |
 |---|---|---|
-| Any cyclic connected unloaded full-three-cut module, arbitrary degrees/rank | Three distinct direct exit hubs; no transmitted exit; original module biconnected | Only the two unicyclic profiles below |
+| Any connected entirely unloaded full-three-cut region, arbitrary degrees/rank | At most THREE actual bodies; exactly three necessary tree profiles or one direct triangle | Small-profile geometry and full original completion |
+| Any connected entirely unloaded region of at least four actual bodies | At least FOUR full original cut edges; cuts 0,1,2,3 all accounted for | General higher-cut geometry |
+| Any cyclic connected unloaded full-three-cut module, arbitrary degrees/rank | Exactly the direct three-body triangle; three direct exits at distinct full-degree-three hubs | Only its nonparallel-core feature `(0,0)` |
 | EVERY such module of cycle rank at least two, arbitrary full degree | Entirely excluded: complete hand census plus the final graph's two-anchor contradiction | None in this full domain; `R-MODULE-TRICYCLE` discharged |
 | Arbitrary unloaded region and full cut partition into two terminal groups with actual common anchors p,q | If original inside host distance is ell, then `|q-p|>=ell+1`; anchors less than two apart force an inside host in both groups | Actual common anchors are required; arbitrary outside loads and cut multiplicities allowed |
-| Original unicyclic table | `(2,0),(0,1),(1,1)` excluded, including both latter exit positions | Only `(0,0),(1,0)`; different-side obtuse/perpendicular support feature in the latter |
-| Any actual dominant unloaded pair with total other incidence below `3d/40` | Original application central; its two actual distinguished terminals are closed-disjoint; neither terminal is a genuine D leaf | Does not erase the weak third-host edge or supply an automatic residual distance lower bound |
+| Original unicyclic table | `(1,0),(2,0),(0,1),(1,1)` excluded, including all owners/means and both latter exit positions | Only nonparallel direct triangle `(0,0)` |
+| Direct unloaded three-force triangle with parallel core frames, arbitrary outside frames/loads/degrees | Strict bound `R^2>9/2` on the entire closed T chart, all side means and both corner endpoints | Nonparallel core frames |
+| Any actual dominant unloaded pair with total other incidence below `3d/40` | Original application radius less than `23/32`; its two actual distinguished terminals are closed-disjoint; neither terminal is a genuine D leaf | Does not manufacture the residual-ratio premise or supply an automatic distant square |
 | Arbitrary selected physical graph, radius and full degrees | Four-contact cycle encloses at most one other unit center; literal triangular prism impossible | Does not imply outerplanarity |
+| Selected positive graph in the upper-radius window, arbitrary full degrees and loads | Every triangular prism with one actual subdivision body on any edge is impossible | Longer subdivisions and other seven-/eight-/nine-body graphs |
 | Arbitrary unloaded region, every full cut size k | Adjacent-star escape; `3d<=2n+k-2-e_H`; universal internal hub bound `n<=k+1-e_H` | Higher-cut geometry and actual nine-square completion remain |
 | Genuine D root in any cyclic block | Two-step neighbor escape, no universal root, all previously closed triangular ears | Other D-root geometries and complete original parents remain |
 
@@ -72,7 +76,7 @@ H1–H5, both diamonds, all house and K1–K6 patterns, all three-/four-hub high
 
 | Obstruction | Exact surviving domain | Required broad output |
 |---|---|---|
-| **BUNI** | Direct unloaded triangle `(0,0)`; one-transmitter four-cycle `(1,0)` with original bypass applications on different sides | Complete full-force, all-owner and all-nine geometric exit |
+| **BUNI** | Nonparallel direct unloaded three-body triangle `(0,0)`, with one original direct exit at each full-degree-three hub | Complete full-force, all-owner and all-nine geometric exit |
 | **BCUT4+** | Unloaded full cuts with at least four edges, arbitrary rank | Full-cut physical capacity or valid broad graph reduction; new degree bounds alone do not close this |
 | **BCHAIN** | Ten remaining one-block coarse parents, with original chords/branches and all extras | Complete original caller or legitimate sharp paired-chain extraction |
 | **BWRENCH** | Seven remaining two-block parents: decorated triangles and 4+5/4+6/5+5 interfaces | Exact mixed-side articulation and full-completion theorem |
@@ -147,8 +151,9 @@ A legitimate source-level exclusion or sharp necessary inequality must identify:
 | 2026-10-31, ledger correction | [Four-hub diamond/exit census](../THREE_PORT_RANK_TWO_FOUR_HUB_DIAMOND_CENSUS_2026_10_31.md); [five three-hub transmitter orbits](../THREE_PORT_RANK_TWO_THREE_HUB_FIVE_ORBITS_2026_10_31.md); [six subdivided-K23 transmitter orbits](../THREE_PORT_SUBDIVIDED_K23_SIX_ORBITS_2026_10_31.md) | **H** necessary finite topologies only, not nine-square exclusions; independent reviews pending | **0 / 0** | B29, B30, B5H, BK23 and broad geometry |
 | 2026-10-31, current complete adoption | Entire intact triangle; complete C1.6.b3 forest and Type I/II; full rank-two/all-subcubic module theorem; unicyclic `(2,0)` and D-ear exclusions | **V/J/C**, complete current independent reviews and preserved prerequisites | **4 / 0** | 17 original parents; BUNI/BHIGH/cuts 4+ and full nine-square completion |
 | 2026-11-01, uniform continuation | EVERY multicycle unloaded full-three-cut module excluded; arbitrary-cut two-anchor and graph-distance theorem; no cyclic transmitted exit; general prism/interior/escape theorems | **V/J**, complete independent hand reviews and exact dependency manifest; `R-MODULE-TRICYCLE` discharged | **0 / 0** | BUNI, cuts 4+ and 17 original coarse parents |
+| 2026-11-01, complete four-cycle and cardinality continuation | Entire `(1,0)` row excluded; every unloaded three-cut region has at most three bodies; every unloaded region of four or more bodies has full cut at least four; dominant contact radius `<23/32`; every one-edge-subdivided prism excluded | **V/J**, complete independent hand reviews and all smaller-cut cases retained | **0 / 0** | Direct triangle only in BUNI; general cuts 4+ and 17 original coarse parents |
 
-**Current continuation:** the complete reviewed four-case adoption is published. The later whole multicycle exclusion leaves only BUNI among cyclic three-port modules, together with the independent higher-cut and whole-parent domains above. A further coarse flag changes only after its full original caller joins; no weak positive force or remaining physical mean is dropped.
+**Current continuation:** the complete reviewed four-case and multicycle adoptions are published. The later whole four-cycle exclusion and all-ranks cardinality theorem leave only the direct triangle in BUNI, together with the independent higher-cut and whole-parent domains above. A further coarse flag changes only after its full original caller joins; no weak positive force or remaining physical mean is dropped.
 
 **Archival note:** [the former 57-checkpoint list](HISTORICAL_57_MILESTONES_2026_10_31.md) remains available unchanged for provenance. It is **not** a current progress bar or a work guarantee. This replacement deliberately consolidates all future session tracking here without adding another live ledger.
 

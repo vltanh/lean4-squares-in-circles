@@ -6,21 +6,31 @@ packings, and the downstream common-certificate audit remain open.
 
 ## Latest uniform hand-proof reductions — November 1, 2026
 
-The [complete new adoption](ADOPTION_FULL_THREE_PORT_REDUCTION_AND_GEOMETRIC_ESCAPE_2026_11_01.md)
-excludes **every multicycle unloaded full-three-cut module**, at arbitrary
-full degree, cycle rank and terminal multiplicity. A complete hand table
-leaves one rank-three graph; the new two-anchor force theorem excludes it
-by the contradiction `2<=|p_AB-p_BC|<=sqrt(2)`. Every transmitted cyclic
-exit is also excluded. The only remaining cyclic three-port profiles are
-the direct triangle and the four-cycle with one internal transmitter.
+The [latest complete adoption](ADOPTION_COMPLETE_UNICYCLIC_FOUR_CYCLE_AND_SHORT_PRISM_EXCLUSION_2026_11_01.md)
+proves that **every connected entirely unloaded region with exactly
+three full positive cut edges has at most three actual bodies**, at
+every cycle rank and full degree. Every such region with four or more
+bodies requires at least four full cut edges, including complete checks
+for cuts of size zero, one and two.
+
+Every multicycle module is excluded by the previous complete hand census
+and two-anchor theorem. The entire one-transmitter four-cycle is now
+also excluded, including all support owners and side means. **Only the
+nonparallel direct three-body triangle remains among cyclic three-port modules.**
+The entire parallel-core feature has the stronger strict bound `R^2>9/2`,
+including side contacts and both corner endpoints, with arbitrary
+outside-square frames, loads and degrees.
 
 The radius-free two-anchor theorem covers arbitrary cut sizes and gives
 `|q-p|>=ell+1` when the original inside host sets have graph distance ell.
-New general results also exclude every literal positive triangular prism,
-bound the number of enclosed units in a four-contact cycle, and give an
-all-degree unloaded-neighbor escape theorem with a full-cut degree bound.
-Every complete source has its independent hand review and [dependency
-manifest](CYCLIC_MODULE_CONTINUATION_DEPENDENCY_MANIFEST_2026_11_01.md).
+New general results exclude every literal positive triangular prism and
+every one-edge subdivision of it, and sharpen the original dominant-pair
+contact radius to **less than 23/32**. The four-cycle interior-capacity
+and all-degree unloaded-neighbor escape theorems remain available.
+Every complete source has its independent hand review and [current
+dependency manifest](FOUR_CYCLE_PRISM_AND_SHARPER_LOCALIZATION_DEPENDENCY_MANIFEST_2026_11_01.md),
+with the [previous complete multicycle batch](CYCLIC_MODULE_CONTINUATION_DEPENDENCY_MANIFEST_2026_11_01.md)
+preserved unchanged.
 These structural results do not claim a fifth whole original coarse closure.
 
 ## Latest hand-proof adoption — October 31, 2026
@@ -70,11 +80,13 @@ positive cut edges. This includes the final six-body graph and every S/D
 leaf placement. The proof does not need that graph's optional C1.8.b1
 outside-caller classification or the dominance/leaf-type restrictions.
 
-The remaining cyclic three-port graphs have three or four unloaded
-units: unicyclic `(0,0)` and `(1,0)`. The latter retains only original
-bypass applications on different sides and nonpositive normal dot product.
-Cuts with four or more edges and the 17 coarse parents retain their
-separate full-domain obligations. See the [complete adoption](ADOPTION_FULL_THREE_PORT_REDUCTION_AND_GEOMETRIC_ESCAPE_2026_11_01.md)
+The [whole one-transmitter exclusion](SHARP_UNIT_SUPPORT_TORQUE_AND_COMPLETE_ONE_TRANSMITTER_UNICYCLIC_THREE_PORT_EXCLUSION_2026_11_01.md)
+removes `(1,0)`. Only the direct triangle `(0,0)` remains cyclic, with
+three actual unloaded bodies and one original direct exit at each.
+The [complete all-ranks size theorem](EVERY_UNLOADED_THREE_PORT_MODULE_HAS_AT_MOST_THREE_BODIES_AND_FOUR_BODY_MODULES_NEED_FOUR_CUT_EDGES_2026_11_01.md)
+also preserves the three necessary tree profiles. General cuts of four
+or more and the 17 original coarse parents retain their separate whole
+domains. See the [latest adoption](ADOPTION_COMPLETE_UNICYCLIC_FOUR_CYCLE_AND_SHORT_PRISM_EXCLUSION_2026_11_01.md)
 for every proof, scope and remaining boundary.
 
 **Working contract:** hand proof, exact printed tables allowed, no Lean/Lake,
