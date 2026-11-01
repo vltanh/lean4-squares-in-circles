@@ -1,0 +1,26 @@
+{
+  "arithmetic": "Fraction only",
+  "containment_oracle_cases": 1488,
+  "emitted_models_parsed": 6,
+  "emitted_sha256": {
+    "closed_gauge_False": "15fc9ab4dcbe8e62d218f44b87dc731f3fdfc8480c0a32e5b99c3b5e46d2c530",
+    "closed_gauge_True": "3e0524f4c1796c1c9e3e74b9c418235b057b35e7ab26dbd5e749877c334a7359",
+    "strict_gauge_False": "9e41046227a387b58bf974943fecd028fafe1b56e4d7352cd296de1456a405ce",
+    "strict_gauge_True": "f1f5b0a685b8694e387a33bc80e672de7c56f6bd7852d0064dbe6963e824577f",
+    "variable_gauge_False": "698c65b1bc32f518134b902e141fa7e369637de4b48461af61256fe88db5f772",
+    "variable_gauge_True": "1e5c5aba3ae456b1eaf020f699e14bcd0569439ded79e6d2c0b55f712dec8378"
+  },
+  "emitter_sha256": "41130be1bd97ebcf5296abf8205efd2bb49c892031fd3751f3587e5f992ee2b6",
+  "global_infeasibility_proved": false,
+  "oracle": "independent exact convex-polygon intersection area",
+  "pair_oracle_cases": 744,
+  "result": "PASS",
+  "separate_human_review_performed": false,
+  "witness_active_corners": [
+    "corner_0_1",
+    "corner_3_3",
+    "corner_4_0",
+    "corner_6_2"
+  ],
+  "witness_max_norm_squared": "1105/256"
+}

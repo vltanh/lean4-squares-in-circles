@@ -1,0 +1,13 @@
+{
+  "arbitrary_packing_lower_bound_proved": false,
+  "arithmetic": "exact rational coefficient expansion",
+  "certificate_sha256": "a76a0adabdacd38cfa17252288ac248218a07d34c723da5098559c9cbe8fca5b",
+  "counterexample_mutations_rejected": 2,
+  "identity": "q-1105/256=sum(nonnegative hypotheses and squares)",
+  "nonnegative_squares": 6,
+  "proper_row_family_lower_bound_proved": true,
+  "residual_monomials": 0,
+  "result": "PASS",
+  "separate_human_review_performed": false,
+  "weighted_physical_hypotheses": 10
+}

@@ -1,22 +1,31 @@
 # n=9 — proof status, not a case counter
 
-**[Single proof-first deep roadmap](DEEP_GATED_ROADMAP.md)** · [structured proof gates](gates/ACTIVE_ROADMAP.json) · [draft PR #11](https://github.com/vltanh/lean4-squares-in-circles/pull/11)
+[Single proof-first roadmap](DEEP_GATED_ROADMAP.md) · [structured proof gates](gates/ACTIVE_ROADMAP.json) · [source proof and executable evidence](computer_assisted/UNRESTRICTED_MODEL_AND_ROW_CERTIFICATE.md).
 
 ## Actual mathematical status
 
 | Deliverable | Status |
 |---|---|
-| Attaining nine-square construction at squared radius 1105/256 | **Available as previous source** |
-| Unrestricted lower bound for **all** nine-square packings | **OPEN** |
-| Complete independent exact computer-assisted proof certificate | **OPEN** |
-| All q=1105/256 equality packings classified | **OPEN** |
-| Hand proof or compact exact tables | **LATER** |
-| Lean / CI formalization | **DEFERRED** |
+| Exact attaining nine-square construction at squared radius 1105/256 | Rechecked in the new unrestricted emitter |
+| Unrestricted polynomial model, equivalence proof and boundary controls | Implemented, source proof written, separate exact test implementation passes |
+| Sharp certificate for the entire continuous four-over-three parallel-row subfamily | Exact rational identity verified by a separately implemented checker |
+| Unrestricted lower bound for ALL nine-square packings | **OPEN** |
+| All equality packings classified | **OPEN** |
+| Compact full hand/table manuscript | LATER |
+| Lean / CI | DEFERRED |
 
-**One active gate: `D.1.a`** — an exact direct semialgebraic model of all nine physical unit squares (9 square poses, 36 corner tests, 36 pairwise SAT disjunctions). The immediate deliverable is a faithful polynomial-disjunction emitter and mathematical equivalence proof, **not a claimed global solver result**.
+## What was actually completed
 
-**Primary attempt:** direct exact computer certification of all `R²<1105/256` packings, with a proof-producing feasibility pilot (`D.3`). **Fallback:** globally exhaustive stress/geometry route using the existing three-cut theorem as a conditional input, *not* an original-case scoreboard. Either fully proved route is sufficient; they are alternatives.
+D.1.a-D.1.d now have source artifacts: `emit_unrestricted_nine.py`, the geometric equivalence proof, emitted-text tests, and recorded model dimensions. The formula contains only square geometry: no stresses, graph hypotheses, generic normal choices, or assumed circle loads. All expressions are quadratic after substitution. There are 37 real variables in variable-radius mode, or 34 after exact radius elimination and a legal global rotation gauge.
 
-All old original coarse/fine/exterior progress counts and duplicated trackers are **retired and deleted from this PR branch** (recoverable via Git history). Historical mathematical proofs and certificates are retained for reuse; the [old cyclic case source](CYCLIC_CELL_LEDGER.md) is *not* current progress. No new sharp theorem follows from this bookkeeping change.
+`test_unrestricted_nine.py` independently parses all six emitted variants and compares 744 exact pair predicates with polygon-intersection area, plus 1,488 containment predicates. It accepts the actual oblique equality witness and rejects deliberate overlap, escaped-corner, missing-pair and strict-tangency mutations. These finite tests are regression evidence, not a universal proof by sampling.
 
-An unsat solver report without certificate, finite pose sample, partial branch tree or fixed `Q-ε` bound is not a proof. Preserve any undecided full-nine root; only complete exact coverage with independent verifier can close necessity. Equality is separate. **No Lean, Lake or CI.**
+The first exact pilot reconstructs the sharp bound for EVERY packing in the stated parallel four-over-three row profile, with free gaps, offsets, row heights, and two arbitrary additional squares. Its certificate writes q-1105/256 as ten nonnegative hypothesis multiples plus six weighted squares. The exact independent-implementation checker expands to zero residual. Equality forces the seven-row core inside this profile.
+
+**Neither result proves that arbitrary packings have that row structure.** No separate human reviewer or general SMT run is claimed: a general solver was not installed and installing one failed because network name resolution was unavailable. The exact rational tests and certificate replay DID run successfully. No Lean, Lake or CI ran.
+
+## One active next task
+
+**D.3.c — obtain a transferable certificate covering unrestricted relative orientations, or record a concrete limitation and deliberate pivot.** Do not keep subdividing the already certified parallel-row profile. The full Boolean separator cover exists, but no tractable exhaustive certificate over it has been obtained.
+
+The primary route remains the unrestricted physical model. The selected-stress route is only the documented fallback. The global sharp lower bound and equality classification remain OPEN. Old case-count fractions remain retired.

@@ -3,466 +3,77 @@
   "target_q": "1105/256",
   "theorem": "OPEN",
   "equality": "OPEN",
-  "current_active_gate": "D.1.a",
+  "current_active_gate": "D.3.c",
   "proof_logic": "(D.4 OR S.5) AND C=>Q.2; E later, H later",
   "legacy_case_counts": "DISCARDED_NOT_PROGRESS",
   "method": "COMPUTER_EXACT_FIRST_HAND_TABLE_SECOND_NO_LEAN_CI",
+  "latest_evidence": {
+    "source": "computer_assisted/UNRESTRICTED_MODEL_AND_ROW_CERTIFICATE.md",
+    "model_tests": "computer_assisted/unrestricted_model_test_report.json",
+    "row_certificate": "computer_assisted/row43_certificate.json",
+    "row_verification": "computer_assisted/row43_verification_report.json",
+    "separate_human_review_performed": false,
+    "general_smt_solver_run": false,
+    "global_lower_bound_proved": false,
+    "note": "D.1 implementation, source equivalence proof and exact controls are available. The sharp row-profile certificate covers a proper continuous subfamily, not unrestricted orientations. No old case counters are restored."
+  },
   "gates": [
-    {
-      "id": "T",
-      "parent": null,
-      "status": "OPEN",
-      "goal": "Unrestricted nine-square sharp-radius statement, Q=1105/256.",
-      "exit": "Correct exact physical predicate; final proof has no contact-graph or stress hypotheses.",
-      "source": ""
-    },
-    {
-      "id": "T.1",
-      "parent": "T",
-      "status": "OPEN",
-      "goal": "Nine arbitrary independent unit-square poses in one radius-squared q disk.",
-      "exit": "Each pose uses a unit axis pair; all four corners and all pairwise interior nonoverlap tested.",
-      "source": ""
-    },
-    {
-      "id": "T.1.a",
-      "parent": "T.1",
-      "status": "OPEN",
-      "goal": "Represent all 9 centers and independent orthonormal square frames.",
-      "exit": "No unproved generic orientations or global alignment.",
-      "source": ""
-    },
-    {
-      "id": "T.1.b",
-      "parent": "T.1",
-      "status": "OPEN",
-      "goal": "Exactly 36 original corner norm-squared inequalities.",
-      "exit": "Equivalent to entire-square disk containment by convexity.",
-      "source": ""
-    },
-    {
-      "id": "T.1.c",
-      "parent": "T.1",
-      "status": "OPEN",
-      "goal": "Exactly 36 pairwise separating-axis disjunctions.",
-      "exit": "All 4 candidate square-edge axes per pair, all weak touching boundaries.",
-      "source": ""
-    },
-    {
-      "id": "T.2",
-      "parent": "T",
-      "status": "AVAILABLE_INPUT",
-      "goal": "Exact attaining packing at q=Q.",
-      "exit": "Known algebraic construction tested by all unrestricted constraints.",
-      "source": "Existing exact witness in earlier full physical model; recheck needed in new emitter."
-    },
-    {
-      "id": "C",
-      "parent": null,
-      "status": "OPEN",
-      "goal": "Trustworthy exact computer-assisted proof checker.",
-      "exit": "Full original root coverage and every terminal implication independently verified.",
-      "source": ""
-    },
-    {
-      "id": "C.1",
-      "parent": "C",
-      "status": "OPEN",
-      "goal": "Sound rational/algebraic interval arithmetic and positivity.",
-      "exit": "Outward bounds and every polynomial/strict terminal reproduced without floating error.",
-      "source": ""
-    },
-    {
-      "id": "C.1.a",
-      "parent": "C.1",
-      "status": "OPEN",
-      "goal": "Exact arithmetic kernel including integer square roots and denominators.",
-      "exit": "No excluded zero or sign face and every certificate number checked.",
-      "source": ""
-    },
-    {
-      "id": "C.1.b",
-      "parent": "C.1",
-      "status": "OPEN",
-      "goal": "Exact real algebraic/interval leaf proof encoding.",
-      "exit": "Witness is finite and independently replayable.",
-      "source": ""
-    },
-    {
-      "id": "C.2",
-      "parent": "C",
-      "status": "OPEN",
-      "goal": "Mathematically complete finite root and boundary coverage.",
-      "exit": "Every physical candidate reaches at least one accepted leaf.",
-      "source": ""
-    },
-    {
-      "id": "C.2.a",
-      "parent": "C.2",
-      "status": "OPEN",
-      "goal": "All signed absolute-value branches and SAT or owner alternatives.",
-      "exit": "Complete branch disjunction with touching contacts and singularities.",
-      "source": ""
-    },
-    {
-      "id": "C.2.b",
-      "parent": "C.2",
-      "status": "OPEN",
-      "goal": "Closed box splits, limiting faces and unresolved status.",
-      "exit": "No missing child and no numerical cutoff counted as proof.",
-      "source": ""
-    },
-    {
-      "id": "C.2.c",
-      "parent": "C.2",
-      "status": "OPEN",
-      "goal": "Uniform sharp q<Q verification.",
-      "exit": "No fixed Q-epsilon bound or unproved extrapolation to critical radius.",
-      "source": ""
-    },
-    {
-      "id": "C.3",
-      "parent": "C",
-      "status": "OPEN",
-      "goal": "Independent verifier and actual physical implication.",
-      "exit": "Independent source reconstructs terminals and soundness of their use on all nine squares.",
-      "source": ""
-    },
-    {
-      "id": "C.3.a",
-      "parent": "C.3",
-      "status": "OPEN",
-      "goal": "Known valid q=Q pose and deliberately invalid controls.",
-      "exit": "Checker accepts equality witness and rejects overlap/out-of-disk perturbations.",
-      "source": ""
-    },
-    {
-      "id": "C.3.b",
-      "parent": "C.3",
-      "status": "OPEN",
-      "goal": "Human theorem of checker/root/leaf soundness.",
-      "exit": "The accepted certificate proves the claimed real packing proposition.",
-      "source": ""
-    },
-    {
-      "id": "D",
-      "parent": null,
-      "status": "OPEN",
-      "goal": "PRIMARY: direct graph-free semialgebraic proof that no nine squares fit for q<Q.",
-      "exit": "Exact complete proof or a documented pilot failure and explicit pivot.",
-      "source": ""
-    },
-    {
-      "id": "D.1",
-      "parent": "D",
-      "status": "OPEN",
-      "goal": "Unrestricted nine-square exact polynomial/SAT emitter.",
-      "exit": "Every original packing satisfies the emitter, and every emitter solution gives a real packing.",
-      "source": ""
-    },
-    {
-      "id": "D.1.a",
-      "parent": "D.1",
-      "status": "OPEN",
-      "goal": "ACTIVE: implement exact 9-pose/36-corner/36-pair constraints.",
-      "exit": "Deterministic real-algebraic formula and proof of equivalence; zero conditional stress hypotheses.",
-      "source": ""
-    },
-    {
-      "id": "D.1.b",
-      "parent": "D.1",
-      "status": "OPEN",
-      "goal": "Expand SAT/abs to finite exact signed roots.",
-      "exit": "Prove each signed root is sound and the union is exhaustive.",
-      "source": ""
-    },
-    {
-      "id": "D.1.c",
-      "parent": "D.1",
-      "status": "OPEN",
-      "goal": "Exact equality and negative controls in direct model.",
-      "exit": "Check q=Q attaining construction and deliberate overlap/corner failures.",
-      "source": ""
-    },
-    {
-      "id": "D.1.d",
-      "parent": "D.1",
-      "status": "OPEN",
-      "goal": "Report actual direct formula dimensions/branch counts.",
-      "exit": "Reproducible root count; no assumption that general CAD will finish.",
-      "source": ""
-    },
-    {
-      "id": "D.2",
-      "parent": "D",
-      "status": "OPEN",
-      "goal": "Exact symmetry and domain reductions.",
-      "exit": "Every removed original pose has a valid inverse representative.",
-      "source": ""
-    },
-    {
-      "id": "D.2.a",
-      "parent": "D.2",
-      "status": "OPEN",
-      "goal": "Rotation/reflection/relabeling reductions.",
-      "exit": "A proof each normalization is legal and leaves all equality families representable.",
-      "source": ""
-    },
-    {
-      "id": "D.2.b",
-      "parent": "D.2",
-      "status": "OPEN",
-      "goal": "Useful analytic bounds from complete nine-square geometry.",
-      "exit": "Do not import a selected-circle/multiplier restriction into the direct model.",
-      "source": ""
-    },
-    {
-      "id": "D.2.c",
-      "parent": "D.2",
-      "status": "OPEN",
-      "goal": "Finite exact root partition with sharp q parameter.",
-      "exit": "All roots and singular interfaces covered without fixing epsilon.",
-      "source": ""
-    },
-    {
-      "id": "D.3",
-      "parent": "D",
-      "status": "OPEN",
-      "goal": "Bounded exact proof-producing solver pilot and GO/NO-GO.",
-      "exit": "A fully certified nontrivial root or a documented unresolved obstruction and conscious pivot.",
-      "source": ""
-    },
-    {
-      "id": "D.3.a",
-      "parent": "D.3",
-      "status": "OPEN",
-      "goal": "Select proof-producing QE/interval/SOS/real-algebraic method.",
-      "exit": "Outputs exact replayable certificate, not just UNSAT or timeout.",
-      "source": ""
-    },
-    {
-      "id": "D.3.b",
-      "parent": "D.3",
-      "status": "OPEN",
-      "goal": "Attempt one nontrivial exact full-nine root with q<Q.",
-      "exit": "Close root with independent soundness and no unknown leaves, or retain exact open face.",
-      "source": ""
-    },
-    {
-      "id": "D.3.c",
-      "parent": "D.3",
-      "status": "OPEN",
-      "goal": "Extract a reusable mathematical obstruction or terminate the pilot.",
-      "exit": "No unlimited series of easier microcharts without a route to all roots.",
-      "source": ""
-    },
-    {
-      "id": "D.4",
-      "parent": "D",
-      "status": "OPEN",
-      "goal": "Sharp direct global exclusion for all real q<Q.",
-      "exit": "Every physical root has exact contradiction and checker accepts all leaves.",
-      "source": ""
-    },
-    {
-      "id": "D.4.a",
-      "parent": "D.4",
-      "status": "OPEN",
-      "goal": "Full finite original-packing cover.",
-      "exit": "No implicitly fixed contact graph, generic orientation or selected force system.",
-      "source": ""
-    },
-    {
-      "id": "D.4.b",
-      "parent": "D.4",
-      "status": "OPEN",
-      "goal": "Uniform q→Q sharpness.",
-      "exit": "Explicit all-q<Q proof, including arbitrarily near equality.",
-      "source": ""
-    },
-    {
-      "id": "D.4.c",
-      "parent": "D.4",
-      "status": "OPEN",
-      "goal": "Independent complete certificate replay.",
-      "exit": "All root/leaf/soundness conditions C fully discharged.",
-      "source": ""
-    },
-    {
-      "id": "S",
-      "parent": null,
-      "status": "OPEN",
-      "goal": "FALLBACK structural/stress route, only if direct exact pilot stalls.",
-      "exit": "One global full-nine proof, not a number of 'original cases' checked.",
-      "source": ""
-    },
-    {
-      "id": "S.1",
-      "parent": "S",
-      "status": "OPEN",
-      "goal": "Global existence of ONE compatible selected force/normal/corner system.",
-      "exit": "Every extremal physical packing admits a common certificate satisfying all source theorems.",
-      "source": ""
-    },
-    {
-      "id": "S.1.a",
-      "parent": "S.1",
-      "status": "OPEN",
-      "goal": "Full original contact and actual circle-corner stationarity.",
-      "exit": "No deleted nonzero stress, changed contact application or new mean.",
-      "source": ""
-    },
-    {
-      "id": "S.1.b",
-      "parent": "S.1",
-      "status": "OPEN",
-      "goal": "Uncrossing, owner, common-certificate property (S) and all transfer assumptions.",
-      "exit": "Every imported local exclusion applies to the same selected stress.",
-      "source": ""
-    },
-    {
-      "id": "S.2",
-      "parent": "S",
-      "status": "AVAILABLE_INPUT",
-      "goal": "Reuse existing complete three-cut unloaded theorem only on its proven physical scope.",
-      "exit": "No unloaded full-three-cut cyclic region under the one selected compatible certificate.",
-      "source": "ADOPTION_COMPLETE_DIRECT_TRIANGLE_AND_THREE_CUT_FOREST_2026_11_01.md"
-    },
-    {
-      "id": "S.3",
-      "parent": "S",
-      "status": "OPEN",
-      "goal": "Complete four-cut physical exclusions/reductions.",
-      "exit": "Exact table covers all full degrees, 4 exits, outside identities and nine actual squares.",
-      "source": ""
-    },
-    {
-      "id": "S.3.a",
-      "parent": "S.3",
-      "status": "OPEN",
-      "goal": "Degree-(4,3,3) four-cut direct triangle probe.",
-      "exit": "Common junction, shared sides, singleton owners and all independent A4 moments covered.",
-      "source": ""
-    },
-    {
-      "id": "S.3.b",
-      "parent": "S.3",
-      "status": "OPEN",
-      "goal": "Other four-cut unicyclic and multicycle regions.",
-      "exit": "Exhaustive real graph/mask classification or uniform exclusion.",
-      "source": ""
-    },
-    {
-      "id": "S.4",
-      "parent": "S",
-      "status": "OPEN",
-      "goal": "All higher cut, loaded, branched/chorded and articulation configurations.",
-      "exit": "Entire all-nine physical domain covered, not only stress-subgraphs.",
-      "source": ""
-    },
-    {
-      "id": "S.5",
-      "parent": "S",
-      "status": "OPEN",
-      "goal": "Full mathematical sharpness and certificate integration.",
-      "exit": "One independently reviewed argument excludes every physical q<Q packing.",
-      "source": ""
-    },
-    {
-      "id": "Q",
-      "parent": null,
-      "status": "OPEN",
-      "goal": "Sharp global necessity theorem.",
-      "exit": "Either complete D.4 or complete S.5 and exact soundness C imply q>=Q.",
-      "source": ""
-    },
-    {
-      "id": "Q.1",
-      "parent": "Q",
-      "status": "OPEN",
-      "goal": "Discharge one sufficient proof route (OR logic).",
-      "exit": "D.4 OR S.5, not both, closes all unrestricted q<Q poses.",
-      "source": ""
-    },
-    {
-      "id": "Q.2",
-      "parent": "Q",
-      "status": "OPEN",
-      "goal": "Combine with exact attaining construction.",
-      "exit": "Sharp optimal squared radius exactly 1105/256.",
-      "source": ""
-    },
-    {
-      "id": "E",
-      "parent": null,
-      "status": "OPEN",
-      "goal": "Exhaustive equality classification q=Q.",
-      "exit": "Every equality packing in exact families, and all listed family members physically feasible.",
-      "source": ""
-    },
-    {
-      "id": "E.1",
-      "parent": "E",
-      "status": "OPEN",
-      "goal": "Classify q=Q original physical roots.",
-      "exit": "No strict-only exclusion used to discard q=Q poses.",
-      "source": ""
-    },
-    {
-      "id": "E.2",
-      "parent": "E",
-      "status": "OPEN",
-      "goal": "Derive all forced saturated constraints and parameter families.",
-      "exit": "Necessary full-center/orientation/contact equalities.",
-      "source": ""
-    },
-    {
-      "id": "E.3",
-      "parent": "E",
-      "status": "OPEN",
-      "goal": "Retain sliding degrees, endpoints, tangencies and zero multipliers.",
-      "exit": "Exact semialgebraic allowed parameter ranges.",
-      "source": ""
-    },
-    {
-      "id": "E.4",
-      "parent": "E",
-      "status": "OPEN",
-      "goal": "Prove sufficiency and quotient by actual symmetries.",
-      "exit": "All nine squares satisfy 36 disk and 36 pair tests; correct iff theorem.",
-      "source": ""
-    },
-    {
-      "id": "H",
-      "parent": null,
-      "status": "OPEN",
-      "goal": "LATER: readable hand proof or finite exact rational tables.",
-      "exit": "A complete accepted exact computer-assisted result already exists before humanization.",
-      "source": ""
-    },
-    {
-      "id": "H.1",
-      "parent": "H",
-      "status": "OPEN",
-      "goal": "Compress the certificate into case families and tables.",
-      "exit": "Full root coverage, arithmetic signs and singular faces preserved.",
-      "source": ""
-    },
-    {
-      "id": "H.2",
-      "parent": "H",
-      "status": "OPEN",
-      "goal": "Paper-level source proof with independent table check.",
-      "exit": "Self-contained sharp theorem and equality, no trusted exploratory script.",
-      "source": ""
-    },
-    {
-      "id": "L",
-      "parent": null,
-      "status": "DEFERRED",
-      "goal": "DEFERRED Lean/kernel/CI work.",
-      "exit": "Only after permission; not a prerequisite for first complete exact proof.",
-      "source": ""
-    }
+    {"id":"T","parent":null,"status":"OPEN","goal":"Unrestricted nine-square sharp-radius statement, Q=1105/256.","exit":"Correct exact physical predicate; final proof has no contact-graph or stress hypotheses.","source":""},
+    {"id":"T.1","parent":"T","status":"AVAILABLE_INPUT","goal":"Nine arbitrary independent unit-square poses in one radius-squared q disk.","exit":"Each pose uses a unit axis pair; all four corners and all pairwise interior nonoverlap tested.","source":"computer_assisted/UNRESTRICTED_MODEL_AND_ROW_CERTIFICATE.md Sections 1-4"},
+    {"id":"T.1.a","parent":"T.1","status":"AVAILABLE_INPUT","goal":"Represent all 9 centers and independent orthonormal square frames.","exit":"No unproved generic orientations or global alignment.","source":"computer_assisted/UNRESTRICTED_MODEL_AND_ROW_CERTIFICATE.md Section 1"},
+    {"id":"T.1.b","parent":"T.1","status":"AVAILABLE_INPUT","goal":"Exactly 36 original corner norm-squared inequalities.","exit":"Equivalent to entire-square disk containment by convexity.","source":"computer_assisted/UNRESTRICTED_MODEL_AND_ROW_CERTIFICATE.md Section 2"},
+    {"id":"T.1.c","parent":"T.1","status":"AVAILABLE_INPUT","goal":"Exactly 36 pairwise separating-axis disjunctions.","exit":"All 4 candidate square-edge axes per pair, all weak touching boundaries.","source":"computer_assisted/UNRESTRICTED_MODEL_AND_ROW_CERTIFICATE.md Sections 3-4"},
+    {"id":"T.2","parent":"T","status":"AVAILABLE_INPUT","goal":"Exact attaining packing at q=Q.","exit":"Known algebraic construction tested by all unrestricted constraints.","source":"computer_assisted/unrestricted_model_test_report.json; exact oblique witness rechecked in emitted text and polygon-area oracle"},
+    {"id":"C","parent":null,"status":"OPEN","goal":"Trustworthy exact computer-assisted proof checker.","exit":"Full original root coverage and every terminal implication independently verified.","source":""},
+    {"id":"C.1","parent":"C","status":"OPEN","goal":"Sound rational/algebraic interval arithmetic and positivity.","exit":"Outward bounds and every polynomial/strict terminal reproduced without floating error.","source":""},
+    {"id":"C.1.a","parent":"C.1","status":"OPEN","goal":"Exact arithmetic kernel including integer square roots and denominators.","exit":"No excluded zero or sign face and every certificate number checked.","source":""},
+    {"id":"C.1.b","parent":"C.1","status":"OPEN","goal":"Exact real algebraic/interval leaf proof encoding.","exit":"Witness is finite and independently replayable.","source":"Proper row-profile quadratic certificate implemented; general leaf system remains open."},
+    {"id":"C.2","parent":"C","status":"OPEN","goal":"Mathematically complete finite root and boundary coverage.","exit":"Every physical candidate reaches at least one accepted leaf.","source":""},
+    {"id":"C.2.a","parent":"C.2","status":"OPEN","goal":"All signed absolute-value branches and SAT or owner alternatives.","exit":"Complete branch disjunction with touching contacts and singularities.","source":"Direct model Boolean separator equivalence proved; full certificate leaf coverage still open."},
+    {"id":"C.2.b","parent":"C.2","status":"OPEN","goal":"Closed box splits, limiting faces and unresolved status.","exit":"No missing child and no numerical cutoff counted as proof.","source":""},
+    {"id":"C.2.c","parent":"C.2","status":"OPEN","goal":"Uniform sharp q<Q verification.","exit":"No fixed Q-epsilon bound or unproved extrapolation to critical radius.","source":""},
+    {"id":"C.3","parent":"C","status":"OPEN","goal":"Independent verifier and actual physical implication.","exit":"Independent source reconstructs terminals and soundness of their use on all nine squares.","source":""},
+    {"id":"C.3.a","parent":"C.3","status":"AVAILABLE_INPUT","goal":"Known valid q=Q pose and deliberately invalid controls.","exit":"Checker accepts equality witness and rejects overlap/out-of-disk perturbations.","source":"computer_assisted/test_unrestricted_nine.py; finite regression checks, not universal unsat verification"},
+    {"id":"C.3.b","parent":"C.3","status":"OPEN","goal":"Human theorem of checker/root/leaf soundness.","exit":"The accepted certificate proves the claimed real packing proposition.","source":"Row-profile soundness is written; unrestricted certificate soundness remains open."},
+    {"id":"D","parent":null,"status":"OPEN","goal":"PRIMARY: direct graph-free semialgebraic proof that no nine squares fit for q<Q.","exit":"Exact complete proof or a documented pilot failure and explicit pivot.","source":""},
+    {"id":"D.1","parent":"D","status":"AVAILABLE_INPUT","goal":"Unrestricted nine-square exact polynomial/SAT emitter.","exit":"Every original packing satisfies the emitter, and every emitter solution gives a real packing.","source":"computer_assisted/emit_unrestricted_nine.py and UNRESTRICTED_MODEL_AND_ROW_CERTIFICATE.md; no separate human review"},
+    {"id":"D.1.a","parent":"D.1","status":"AVAILABLE_INPUT","goal":"Implement exact 9-pose/36-corner/36-pair constraints.","exit":"Deterministic real-algebraic formula and proof of equivalence; zero conditional stress hypotheses.","source":"computer_assisted/emit_unrestricted_nine.py"},
+    {"id":"D.1.b","parent":"D.1","status":"AVAILABLE_INPUT","goal":"Expand SAT/abs to finite exact signed roots.","exit":"Prove each signed root is sound and the union is exhaustive.","source":"computer_assisted/UNRESTRICTED_MODEL_AND_ROW_CERTIFICATE.md Section 4; eight directed alternatives of four quadratic inequalities"},
+    {"id":"D.1.c","parent":"D.1","status":"AVAILABLE_INPUT","goal":"Exact equality and negative controls in direct model.","exit":"Check q=Q attaining construction and deliberate overlap/corner failures.","source":"computer_assisted/unrestricted_model_test_report.json"},
+    {"id":"D.1.d","parent":"D.1","status":"AVAILABLE_INPUT","goal":"Report actual direct formula dimensions/branch counts.","exit":"Reproducible root count; no assumption that general CAD will finish.","source":"computer_assisted/UNRESTRICTED_MODEL_AND_ROW_CERTIFICATE.md Section 5; 37 variable-radius reals, 34 strict-Q gauged reals"},
+    {"id":"D.2","parent":"D","status":"OPEN","goal":"Exact symmetry and domain reductions.","exit":"Every removed original pose has a valid inverse representative.","source":""},
+    {"id":"D.2.a","parent":"D.2","status":"OPEN","goal":"Rotation/reflection/relabeling reductions.","exit":"A proof each normalization is legal and leaves all equality families representable.","source":"Global rotation gauge proved and implemented; no exhaustive label/reflection root pruning claimed."},
+    {"id":"D.2.b","parent":"D.2","status":"OPEN","goal":"Useful analytic bounds from complete nine-square geometry.","exit":"Do not import a selected-circle/multiplier restriction into the direct model.","source":"Unconditional center radius <91/60 and center separation >=1 proved in source; not inserted into emitter."},
+    {"id":"D.2.c","parent":"D.2","status":"OPEN","goal":"Finite exact root partition with sharp q parameter.","exit":"All roots and singular interfaces covered without fixing epsilon.","source":"Boolean root cover is exact; tractable global certificate partition remains open."},
+    {"id":"D.3","parent":"D","status":"OPEN","goal":"Bounded exact proof-producing solver pilot and GO/NO-GO.","exit":"A fully certified nontrivial root or a documented unresolved obstruction and conscious pivot.","source":"Proper continuous row-family certificate passed; generic unrestricted-orientation solver not run."},
+    {"id":"D.3.a","parent":"D.3","status":"OPEN","goal":"Select proof-producing QE/interval/SOS/real-algebraic method.","exit":"Outputs exact replayable certificate, not just UNSAT or timeout.","source":"Rational quadratic certificate producer/checker demonstrated on one proper row profile."},
+    {"id":"D.3.b","parent":"D.3","status":"OPEN","goal":"Attempt one nontrivial exact full-nine root with q<Q.","exit":"Close root with independent soundness and no unknown leaves, or retain exact open face.","source":"computer_assisted/row43_certificate.json covers the constrained parallel-row profile, not arbitrary direct-model separator branches."},
+    {"id":"D.3.c","parent":"D.3","status":"OPEN","goal":"ACTIVE: extract a transferable obstruction covering unrestricted relative orientations, or record a concrete limitation and pivot.","exit":"Do not subdivide the already solved parallel-row profile into more microcharts; obtain broader certified coverage or a justified route decision.","source":"computer_assisted/UNRESTRICTED_MODEL_AND_ROW_CERTIFICATE.md Sections 7-8"},
+    {"id":"D.4","parent":"D","status":"OPEN","goal":"Sharp direct global exclusion for all real q<Q.","exit":"Every physical root has exact contradiction and checker accepts all leaves.","source":""},
+    {"id":"D.4.a","parent":"D.4","status":"OPEN","goal":"Full finite original-packing cover.","exit":"No implicitly fixed contact graph, generic orientation or selected force system.","source":""},
+    {"id":"D.4.b","parent":"D.4","status":"OPEN","goal":"Uniform q→Q sharpness.","exit":"Explicit all-q<Q proof, including arbitrarily near equality.","source":""},
+    {"id":"D.4.c","parent":"D.4","status":"OPEN","goal":"Independent complete certificate replay.","exit":"All root/leaf/soundness conditions C fully discharged.","source":""},
+    {"id":"S","parent":null,"status":"OPEN","goal":"FALLBACK structural/stress route, only if direct exact pilot stalls.","exit":"One global full-nine proof, not a number of 'original cases' checked.","source":""},
+    {"id":"S.1","parent":"S","status":"OPEN","goal":"Global existence of ONE compatible selected force/normal/corner system.","exit":"Every extremal physical packing admits a common certificate satisfying all source theorems.","source":""},
+    {"id":"S.1.a","parent":"S.1","status":"OPEN","goal":"Full original contact and actual circle-corner stationarity.","exit":"No deleted nonzero stress, changed contact application or new mean.","source":""},
+    {"id":"S.1.b","parent":"S.1","status":"OPEN","goal":"Uncrossing, owner, common-certificate property (S) and all transfer assumptions.","exit":"Every imported local exclusion applies to the same selected stress.","source":""},
+    {"id":"S.2","parent":"S","status":"AVAILABLE_INPUT","goal":"Reuse existing complete three-cut unloaded theorem only on its proven physical scope.","exit":"No unloaded full-three-cut cyclic region under the one selected compatible certificate.","source":"ADOPTION_COMPLETE_DIRECT_TRIANGLE_AND_THREE_CUT_FOREST_2026_11_01.md"},
+    {"id":"S.3","parent":"S","status":"OPEN","goal":"Complete four-cut physical exclusions/reductions.","exit":"Exact table covers all full degrees, 4 exits, outside identities and nine actual squares.","source":""},
+    {"id":"S.3.a","parent":"S.3","status":"OPEN","goal":"Degree-(4,3,3) four-cut direct triangle probe.","exit":"Common junction, shared sides, singleton owners and all independent A4 moments covered.","source":""},
+    {"id":"S.3.b","parent":"S.3","status":"OPEN","goal":"Other four-cut unicyclic and multicycle regions.","exit":"Exhaustive real graph/mask classification or uniform exclusion.","source":""},
+    {"id":"S.4","parent":"S","status":"OPEN","goal":"All higher cut, loaded, branched/chorded and articulation configurations.","exit":"Entire all-nine physical domain covered, not only stress-subgraphs.","source":""},
+    {"id":"S.5","parent":"S","status":"OPEN","goal":"Full mathematical sharpness and certificate integration.","exit":"One independently reviewed argument excludes every physical q<Q packing.","source":""},
+    {"id":"Q","parent":null,"status":"OPEN","goal":"Sharp global necessity theorem.","exit":"Either complete D.4 or complete S.5 and exact soundness C imply q>=Q.","source":""},
+    {"id":"Q.1","parent":"Q","status":"OPEN","goal":"Discharge one sufficient proof route (OR logic).","exit":"D.4 OR S.5, not both, closes all unrestricted q<Q poses.","source":""},
+    {"id":"Q.2","parent":"Q","status":"OPEN","goal":"Combine with exact attaining construction.","exit":"Sharp optimal squared radius exactly 1105/256.","source":""},
+    {"id":"E","parent":null,"status":"OPEN","goal":"Exhaustive equality classification q=Q.","exit":"Every equality packing in exact families, and all listed family members physically feasible.","source":""},
+    {"id":"E.1","parent":"E","status":"OPEN","goal":"Classify q=Q original physical roots.","exit":"No strict-only exclusion used to discard q=Q poses.","source":""},
+    {"id":"E.2","parent":"E","status":"OPEN","goal":"Derive all forced saturated constraints and parameter families.","exit":"Necessary full-center/orientation/contact equalities.","source":""},
+    {"id":"E.3","parent":"E","status":"OPEN","goal":"Retain sliding degrees, endpoints, tangencies and zero multipliers.","exit":"Exact semialgebraic allowed parameter ranges.","source":""},
+    {"id":"E.4","parent":"E","status":"OPEN","goal":"Prove sufficiency and quotient by actual symmetries.","exit":"All nine squares satisfy 36 disk and 36 pair tests; correct iff theorem.","source":""},
+    {"id":"H","parent":null,"status":"OPEN","goal":"LATER: readable hand proof or finite exact rational tables.","exit":"A complete accepted exact computer-assisted result already exists before humanization.","source":""},
+    {"id":"H.1","parent":"H","status":"OPEN","goal":"Compress the certificate into case families and tables.","exit":"Full root coverage, arithmetic signs and singular faces preserved.","source":""},
+    {"id":"H.2","parent":"H","status":"OPEN","goal":"Paper-level source proof with independent table check.","exit":"Self-contained sharp theorem and equality, no trusted exploratory script.","source":""},
+    {"id":"L","parent":null,"status":"DEFERRED","goal":"DEFERRED Lean/kernel/CI work.","exit":"Only after permission; not a prerequisite for first complete exact proof.","source":""}
   ]
 }

@@ -1,0 +1,67 @@
+{
+  "claim": "q-target is exactly sum(weight*nonnegative_hypothesis)+sum(weight*affine^2)",
+  "global_infeasibility_proved": false,
+  "schema": "row43-quadratic-v1",
+  "scope": "four horizontal unit squares in an upper row, three in a lower row; all five consecutive x gaps >=1, upper-minus-lower y gap >=1; two other physical unit squares arbitrary and retained",
+  "squares": [
+    {
+      "affine": {
+        "x_0": "1/2",
+        "x_3": "1/2"
+      },
+      "weight": "23/32"
+    },
+    {
+      "affine": {
+        "x_4": "1/2",
+        "x_6": "1/2"
+      },
+      "weight": "9/32"
+    },
+    {
+      "affine": {
+        "ONE": "7/32",
+        "ya": "23/32",
+        "yb": "9/32"
+      },
+      "weight": "1"
+    },
+    {
+      "affine": {
+        "ONE": "-3",
+        "x_0": "-1",
+        "x_3": "1"
+      },
+      "weight": "23/128"
+    },
+    {
+      "affine": {
+        "ONE": "-2",
+        "x_4": "-1",
+        "x_6": "1"
+      },
+      "weight": "9/128"
+    },
+    {
+      "affine": {
+        "ONE": "-1",
+        "ya": "1",
+        "yb": "-1"
+      },
+      "weight": "207/1024"
+    }
+  ],
+  "target": "1105/256",
+  "weighted_hypotheses": {
+    "corner_0_1": "23/64",
+    "corner_3_3": "23/64",
+    "corner_4_0": "9/64",
+    "corner_6_2": "9/64",
+    "gap_0_1": "23/16",
+    "gap_1_2": "23/16",
+    "gap_2_3": "23/16",
+    "gap_4_5": "27/64",
+    "gap_5_6": "27/64",
+    "row_gap": "207/256"
+  }
+}
