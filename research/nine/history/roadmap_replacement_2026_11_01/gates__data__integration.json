@@ -1,0 +1,927 @@
+{
+  "version": 1,
+  "kind": "integration",
+  "leaves": [
+    {
+      "id": "I-SEL-DOMAIN",
+      "group": "integration",
+      "area": "sel",
+      "scope": "One fixed actual nine-square packing before multiplier extraction",
+      "task": "Verify all four retained nondense strict singleton-normal interval prescriptions have a common nonempty product after the discarded C7 and D-four-cycle requirements are removed",
+      "done_when": "Identify one same physical contact/normal branch supporting all cited callers",
+      "kind": "integration-audit",
+      "status": "BLOCKED",
+      "priority": "P1"
+    },
+    {
+      "id": "I-SEL-JUNCTION",
+      "group": "integration",
+      "area": "sel",
+      "scope": "Every four-actual-unit common point",
+      "task": "Verify the matched pair parameter and exact SW/NE NW/SE uncrossing identity, including the convention when an edge weight vanishes",
+      "done_when": "The original force and torque and both physical opposite-pair atom meanings are preserved",
+      "kind": "integration-audit",
+      "status": "BLOCKED",
+      "priority": "P1"
+    },
+    {
+      "id": "I-SEL-SINGLETON",
+      "group": "integration",
+      "area": "sel",
+      "scope": "Each original free vertex/vertex pair and its genuine two support cones",
+      "task": "Check every imported generic nonidentity polynomial is not identically zero after actual matching, side geometry and any coincidence conditions",
+      "done_when": "A complete source-specific list; no forbidden normal chosen after stress extraction",
+      "kind": "integration-audit",
+      "status": "BLOCKED",
+      "priority": "P1"
+    },
+    {
+      "id": "I-SEL-SHARED",
+      "group": "integration",
+      "area": "sel",
+      "scope": "Every positive shared side with two original endpoint atoms",
+      "task": "Check the aggregate physical mean lies in its true common segment and is never frozen before the stress coefficients are chosen",
+      "done_when": "All full original origin moments and owner-side limits still hold",
+      "kind": "integration-audit",
+      "status": "BLOCKED",
+      "priority": "P1"
+    },
+    {
+      "id": "I-SEL-SPARSIFY",
+      "group": "integration",
+      "area": "sel",
+      "scope": "Full physical normalized 27-atom circle/contact certificate",
+      "task": "Reconstruct sparse nonnegative thinning in a fixed compatible available-atom universe without creating forbidden new pairs",
+      "done_when": "The same selected normal, force/torque, circle masses and planar graph persist",
+      "kind": "integration-audit",
+      "status": "BLOCKED",
+      "priority": "P1"
+    },
+    {
+      "id": "I-SEL-MIN_SUPPORT",
+      "group": "integration",
+      "area": "sel",
+      "scope": "Canonical minimum-positive-atom certificate in the same fixed normal domain",
+      "task": "Check every support-splitting contradiction retains the prescribed minimum class after extraction",
+      "done_when": "No different certificate or changed circle mass is silently substituted",
+      "kind": "integration-audit",
+      "status": "BLOCKED",
+      "priority": "P1"
+    },
+    {
+      "id": "I-SEL-TRUE_DEG",
+      "group": "integration",
+      "area": "sel",
+      "scope": "All 58 original coarse cells and residual named fine rows",
+      "task": "Reconcile every application of a two-force, three-force, radial or tree law against the actual complete original positive degree",
+      "done_when": "List false dependencies (if any) without flipping gate flags prematurely",
+      "kind": "integration-audit",
+      "status": "BLOCKED",
+      "priority": "P1"
+    },
+    {
+      "id": "I-SEL-PHYS_MASK",
+      "group": "integration",
+      "area": "sel",
+      "scope": "Any case using physically unique, physical-two, or positive circle corner terminology",
+      "task": "Check that actual circle-touching corners with individual zero multiplier are retained in the physical mask",
+      "done_when": "No physically two-corner square reclassified from weight degeneration",
+      "kind": "integration-audit",
+      "status": "BLOCKED",
+      "priority": "P1"
+    },
+    {
+      "id": "I-SEL-POINT_OWNER",
+      "group": "integration",
+      "area": "sel",
+      "scope": "Every selected point-only owner and genuine side/vertex touching feature",
+      "task": "Check strict nonradial and side-bias assumptions against actual original point/side contact and its full angle interval",
+      "done_when": "No free singleton forced to own an unavailable endpoint",
+      "kind": "integration-audit",
+      "status": "BLOCKED",
+      "priority": "P1"
+    },
+    {
+      "id": "I-SEL-PLANAR",
+      "group": "integration",
+      "area": "sel",
+      "scope": "Selected planar body graph and actual full touching graph",
+      "task": "Check actual protected circle spokes, junction routing and exterior-face properties are proved for the same graph and not transferred to all physical contacts",
+      "done_when": "No topological drawing face substituted for a physical packing pocket",
+      "kind": "integration-audit",
+      "status": "BLOCKED",
+      "priority": "P1"
+    },
+    {
+      "id": "I-SEL-ROOTS",
+      "group": "integration",
+      "area": "sel",
+      "scope": "Rooted S/D leaves and articulation endblock cut identities",
+      "task": "Check no force was deleted during root-type, mean, or negative-pressure transfers",
+      "done_when": "Full original moment and force equations are present in every caller",
+      "kind": "integration-audit",
+      "status": "BLOCKED",
+      "priority": "P1"
+    },
+    {
+      "id": "I-SEL-RADIUS",
+      "group": "integration",
+      "area": "sel",
+      "scope": "Minimum radius and 2<R≤sqrt(Q) window",
+      "task": "Verify inherited R>2 input and its lower-/upper-radius comparisons without circular reliance on the unfinished n=9 theorem",
+      "done_when": "One explicit valid common-window chain from the original Packing predicate",
+      "kind": "integration-audit",
+      "status": "BLOCKED",
+      "priority": "P1"
+    },
+    {
+      "id": "I-SEL-EVIDENCE",
+      "group": "integration",
+      "area": "sel",
+      "scope": "Every remaining original conditional-source invocation",
+      "task": "Compile one live source/lemma dependency list with proved hypotheses, review status and exact original caller",
+      "done_when": "Every old historical SHA citation is either resolved to current source or marked historical, no false review claim",
+      "kind": "integration-audit",
+      "status": "BLOCKED",
+      "priority": "P1"
+    },
+    {
+      "id": "I-JOIN-CAP",
+      "group": "integration",
+      "area": "join",
+      "scope": "Every open original physical parent after full hand exclusions",
+      "task": "Instantiate the chosen common sharp terminal or complete alternative without assuming global coordinate stratification",
+      "done_when": "A uniform R²≥Q proof for every surviving nine-square physical packing",
+      "kind": "proof-assembly",
+      "status": "BLOCKED",
+      "priority": "P3"
+    },
+    {
+      "id": "I-JOIN-MIN",
+      "group": "integration",
+      "area": "join",
+      "scope": "Arbitrary packing with q<Q, compact optimal minimizer and original same-nine constraints",
+      "task": "Invoke complete current physical sharp coverage at that minimizer",
+      "done_when": "Contradiction q<Q with no strengthened row, frame or contact hypothesis",
+      "kind": "proof-assembly",
+      "status": "BLOCKED",
+      "priority": "P3"
+    },
+    {
+      "id": "I-JOIN-ZERO",
+      "group": "integration",
+      "area": "join",
+      "scope": "Selected positive component and every unselected other square",
+      "task": "Retain all original unit obstacles and zero-stress physical touches in the final sharp completion",
+      "done_when": "No variable q or radius minimized after changing the physical pose",
+      "kind": "proof-assembly",
+      "status": "BLOCKED",
+      "priority": "P3"
+    },
+    {
+      "id": "I-JOIN-TRANSFER",
+      "group": "integration",
+      "area": "join",
+      "scope": "Minimal radius of a compact packing and original radius parameter",
+      "task": "Transfer the sharp minimum inequality back to every original packing under nonnegative radius semantics",
+      "done_when": "Correct universal ≥ theorem in original Geometry/Challenge meaning",
+      "kind": "proof-assembly",
+      "status": "BLOCKED",
+      "priority": "P3"
+    },
+    {
+      "id": "I-JOIN-CONSTR",
+      "group": "integration",
+      "area": "join",
+      "scope": "Known exact nine-square witness at Q",
+      "task": "Match the lower bound with the original coordinates and all square nonoverlap/circle corners",
+      "done_when": "Exact upper construction and lower bound expressed at same Q in one statement",
+      "kind": "proof-assembly",
+      "status": "BLOCKED",
+      "priority": "P3"
+    },
+    {
+      "id": "I-EQ-SOURCE",
+      "group": "integration",
+      "area": "eq",
+      "scope": "Each actual optimal Q packing",
+      "task": "Apply any necessary-stress reduction to the original Q packing rather than replacing it with another minimizer",
+      "done_when": "Every equality-compatible original physical contact remains",
+      "kind": "equality-proof",
+      "status": "BLOCKED",
+      "priority": "P2"
+    },
+    {
+      "id": "I-EQ-CAP",
+      "group": "integration",
+      "area": "eq",
+      "scope": "Sharp two-square cap and paired four-endpoint equality",
+      "task": "Derive precise aligned endpoint frames, signs, force directions and saturated gap-width equations",
+      "done_when": "All true strict subcritical inequalities have correct nonstrict equality limits",
+      "kind": "equality-proof",
+      "status": "BLOCKED",
+      "priority": "P2"
+    },
+    {
+      "id": "I-EQ-ONEBLOCK",
+      "group": "integration",
+      "area": "eq",
+      "scope": "One-block original coarse families whose sharp q=Q limit survives",
+      "task": "Classify their equality support/contacts without deleting optional chords or positive boundary loads",
+      "done_when": "Either exclude equality or give exact coordinate normal form per survivor",
+      "kind": "equality-proof",
+      "status": "BLOCKED",
+      "priority": "P2"
+    },
+    {
+      "id": "I-EQ-TWOBLOCK",
+      "group": "integration",
+      "area": "eq",
+      "scope": "Two-block original coarse families at q=Q",
+      "task": "Retain original root cut force/moment and zero-resultant alternatives in any equality normal form",
+      "done_when": "Every equality configuration attributed to an actual original domain",
+      "kind": "equality-proof",
+      "status": "BLOCKED",
+      "priority": "P2"
+    },
+    {
+      "id": "I-EQ-ANCHOR",
+      "group": "integration",
+      "area": "eq",
+      "scope": "The known signed 4+3 stress construction",
+      "task": "Derive all allowable inner chain squares and their actual transverse-height interval",
+      "done_when": "Avoid falsely pinning sliding squares or requiring stratification",
+      "kind": "equality-proof",
+      "status": "BLOCKED",
+      "priority": "P2"
+    },
+    {
+      "id": "I-EQ-FREE",
+      "group": "integration",
+      "area": "eq",
+      "scope": "Actual extra squares carrying zero circle and pair stress",
+      "task": "Characterize every allowed center/orientation by original containment and 36 physical pair separations",
+      "done_when": "An explicit reduced exact parameter domain, not the original unrestricted nine-packing predicate",
+      "kind": "equality-proof",
+      "status": "BLOCKED",
+      "priority": "P2"
+    },
+    {
+      "id": "I-EQ-OBLIQUE",
+      "group": "integration",
+      "area": "eq",
+      "scope": "Independent orientations of two unstressed upper extras",
+      "task": "Include valid oblique-only separating axes and nonstratified aligned witness configurations",
+      "done_when": "Known non-global-orthogonal-frame and nonstratified examples belong to some chart",
+      "kind": "equality-proof",
+      "status": "BLOCKED",
+      "priority": "P2"
+    },
+    {
+      "id": "I-EQ-MASK",
+      "group": "integration",
+      "area": "eq",
+      "scope": "Any equality circle corner whose coefficient vanishes",
+      "task": "Retain additional physical circle contacts and shared-side/vertex transitions in equality",
+      "done_when": "A boundary limit does not delete an actual square corner",
+      "kind": "equality-proof",
+      "status": "BLOCKED",
+      "priority": "P2"
+    },
+    {
+      "id": "I-EQ-ENDPOINT",
+      "group": "integration",
+      "area": "eq",
+      "scope": "Every slider, high/low parameter chart and corner-owner transition",
+      "task": "Specify weak/strict parameter endpoints and intersection of adjacent charts",
+      "done_when": "Complete topological closure in the original compact pose space",
+      "kind": "equality-proof",
+      "status": "BLOCKED",
+      "priority": "P2"
+    },
+    {
+      "id": "I-EQ-SYMMETRY",
+      "group": "integration",
+      "area": "eq",
+      "scope": "Rotations, reflections, relabelings and chart overlap",
+      "task": "State the exact equivalence relation without forcing unique chart representatives",
+      "done_when": "All representatives and duplicate charts accounted for",
+      "kind": "equality-proof",
+      "status": "BLOCKED",
+      "priority": "P2"
+    },
+    {
+      "id": "I-EQ-NECESSARY",
+      "group": "integration",
+      "area": "eq",
+      "scope": "Arbitrary optimal nine-square packing",
+      "task": "Prove it is equivalent to one of the declared exact parameter configurations",
+      "done_when": "There is no unclassified sharp packing after coarse/equality audit",
+      "kind": "equality-proof",
+      "status": "BLOCKED",
+      "priority": "P2"
+    },
+    {
+      "id": "I-EQ-SUFFICIENT",
+      "group": "integration",
+      "area": "eq",
+      "scope": "Every parameter in a proposed equality chart",
+      "task": "Check actual circle containment at all 36 corners and pairwise interior disjointness analytically",
+      "done_when": "Each declared chart yields a genuine nine-square q=Q configuration",
+      "kind": "equality-proof",
+      "status": "BLOCKED",
+      "priority": "P2"
+    },
+    {
+      "id": "I-EQ-SIMPLIFY",
+      "group": "integration",
+      "area": "eq",
+      "scope": "All surviving equality charts",
+      "task": "Give a concise explicit geometric skeleton plus independent sliding/rotation inequalities",
+      "done_when": "No merely tautological restatement of original 9-square feasibility",
+      "kind": "equality-proof",
+      "status": "BLOCKED",
+      "priority": "P2"
+    },
+    {
+      "id": "I-EQ-REGRESSION",
+      "group": "integration",
+      "area": "eq",
+      "scope": "The exact two-stack, oblique-only, capless and nonstratified equality controls",
+      "task": "Prove all known examples satisfy at least one final necessary-and-sufficient chart",
+      "done_when": "No valid witnessed equality case is accidentally excluded",
+      "kind": "equality-proof",
+      "status": "BLOCKED",
+      "priority": "P2"
+    },
+    {
+      "id": "I-EQ-IFF",
+      "group": "integration",
+      "area": "eq",
+      "scope": "The canonical original Packing relation and symmetry equivalence",
+      "task": "State the single unrestricted sharp equality iff theorem with necessary and sufficient branches",
+      "done_when": "Final manuscript covers both directions, not only a witness",
+      "kind": "equality-proof",
+      "status": "BLOCKED",
+      "priority": "P2"
+    },
+    {
+      "id": "I-AUD-MINIMIZER",
+      "group": "integration",
+      "area": "aud",
+      "scope": "Compactness, original SAT and selected physical normal cone",
+      "task": "Independently reconstruct actual minimizer/KKT/strict feasible branch including angular gradients",
+      "done_when": "No unexpected axiom, frozen owner or 19-vs-27 stress confusion",
+      "kind": "independent-hand-review",
+      "status": "BLOCKED",
+      "priority": "P3"
+    },
+    {
+      "id": "I-AUD-CAP",
+      "group": "integration",
+      "area": "aud",
+      "scope": "All sharp two-square cap and paired-gap hand comparisons",
+      "task": "Reconstruct every continuous normal-half scalar inequality and full equality cases",
+      "done_when": "Printed finite rational comparisons are independently checked by hand",
+      "kind": "independent-hand-review",
+      "status": "BLOCKED",
+      "priority": "P3"
+    },
+    {
+      "id": "I-AUD-TREE",
+      "group": "integration",
+      "area": "aud",
+      "scope": "The tree, unloaded-cut and cyclic three-port modules",
+      "task": "Reconstruct every true-degree, full-cut, support telescoping and cycle-rank premise",
+      "done_when": "Cyclic modules are not silently treated as trees",
+      "kind": "independent-hand-review",
+      "status": "BLOCKED",
+      "priority": "P3"
+    },
+    {
+      "id": "I-AUD-ANN",
+      "group": "integration",
+      "area": "aud",
+      "scope": "Every inner-circle/near-center/area capacity imported in a final proof",
+      "task": "Audit connectedness, center-point membership, shadow measure and exact gap routing for each caller",
+      "done_when": "No center-angle inference without actual square routing",
+      "kind": "independent-hand-review",
+      "status": "BLOCKED",
+      "priority": "P3"
+    },
+    {
+      "id": "I-AUD-WRENCH",
+      "group": "integration",
+      "area": "aud",
+      "scope": "Common-side and mixed-side endblock cut identities",
+      "task": "Audit origin moments, signs and all actual side means for every original cut degree",
+      "done_when": "No missing bridge force, distant-load adjacency assumption or pseudo leaf",
+      "kind": "independent-hand-review",
+      "status": "BLOCKED",
+      "priority": "P3"
+    },
+    {
+      "id": "I-AUD-D02",
+      "group": "integration",
+      "area": "aud",
+      "scope": "All remaining original six-body exterior load proofs and their roof/mean masks",
+      "task": "Independently verify each complete owner, physical mask and three-extra terminal at exact original stars",
+      "done_when": "No original 18/38 table flag changes without full-branch proof",
+      "kind": "independent-hand-review",
+      "status": "BLOCKED",
+      "priority": "P3"
+    },
+    {
+      "id": "I-AUD-CYCLE",
+      "group": "integration",
+      "area": "aud",
+      "scope": "Simple C7 and higher chorded/branching block reductions",
+      "task": "Check true full degrees, all genuine extra edges, and compatibility of face/arc budgets",
+      "done_when": "A simple-cycle bound is not called on a chorded parent",
+      "kind": "independent-hand-review",
+      "status": "BLOCKED",
+      "priority": "P3"
+    },
+    {
+      "id": "I-AUD-TL1",
+      "group": "integration",
+      "area": "aud",
+      "scope": "Physical normal direction order at each body and shared contact point",
+      "task": "Reconstruct direction and aggregation rules, including normal-cone-boundary means",
+      "done_when": "No orientation signs or selected-normal variables changed",
+      "kind": "independent-hand-review",
+      "status": "BLOCKED",
+      "priority": "P3"
+    },
+    {
+      "id": "I-AUD-TL2",
+      "group": "integration",
+      "area": "aud",
+      "scope": "Outer circle chord cap and external port sphere embedding",
+      "task": "Verify the empty-cap argument and no fictional force on topological spokes",
+      "done_when": "Actual contact/force networks remain physically distinct",
+      "kind": "independent-hand-review",
+      "status": "BLOCKED",
+      "priority": "P3"
+    },
+    {
+      "id": "I-AUD-TL3",
+      "group": "integration",
+      "area": "aud",
+      "scope": "Dual face-potential and signed-area integration",
+      "task": "Check repeated boundary occurrences, zero area, convexity and original pair normal recovery",
+      "done_when": "No false cancellation at repeated junctions",
+      "kind": "independent-hand-review",
+      "status": "BLOCKED",
+      "priority": "P3"
+    },
+    {
+      "id": "I-AUD-TL4",
+      "group": "integration",
+      "area": "aud",
+      "scope": "Layered endpoint quantization and the P family",
+      "task": "Check discrete height, strict contact bands, and full terminal orientation/mean cases",
+      "done_when": "No unproved transfer from a narrower aligned P model",
+      "kind": "independent-hand-review",
+      "status": "BLOCKED",
+      "priority": "P3"
+    },
+    {
+      "id": "I-AUD-CLOSED",
+      "group": "integration",
+      "area": "aud",
+      "scope": "Previously accepted original closed coarse parent proofs",
+      "task": "Verify the final dependency join and every originally closed parent retains a complete physical nine-square caller",
+      "done_when": "Do not over-rely on historical acceptance headings in place of source proofs",
+      "kind": "independent-hand-review",
+      "status": "BLOCKED",
+      "priority": "P3"
+    },
+    {
+      "id": "I-AUD-EQUALITY",
+      "group": "integration",
+      "area": "aud",
+      "scope": "All final equality necessity and sufficiency statements",
+      "task": "Independently check strict vs weak limit passage and every free-square orientation",
+      "done_when": "No false isolated-rigidity conclusion",
+      "kind": "independent-hand-review",
+      "status": "BLOCKED",
+      "priority": "P3"
+    },
+    {
+      "id": "I-AUD-PREREQS",
+      "group": "integration",
+      "area": "aud",
+      "scope": "One consolidated manifest of external existing lemmas and current source tree",
+      "task": "Pin stable current source paths and exact genuine assumptions, including any earlier arithmetic-table prerequisites",
+      "done_when": "No silently assumed independent proof of a historical computed table",
+      "kind": "independent-hand-review",
+      "status": "BLOCKED",
+      "priority": "P3"
+    },
+    {
+      "id": "I-AUD-INTEGRITY",
+      "group": "integration",
+      "area": "aud",
+      "scope": "Every original fine/coarse checkbox and final theorem proof dependency",
+      "task": "Audit status upgrades only after a complete original-domain proof and independent review",
+      "done_when": "Counters and canonical IDs remain stable until actual proof closure",
+      "kind": "independent-hand-review",
+      "status": "BLOCKED",
+      "priority": "P3"
+    },
+    {
+      "id": "I-PARENT-C1-5-b2",
+      "group": "integration",
+      "area": "parent",
+      "scope": "Original full nine-physical-square coarse parent C1.5.b2 after its mathematical closure",
+      "task": "Independent evidence review of the finite graph/load feature cover, all contact/mean cases and final sharp radius or capacity inequality",
+      "done_when": "Only this original parent may then be ticked in the canonical 58-row ledger",
+      "kind": "original-case-audit",
+      "status": "BLOCKED",
+      "priority": "P3",
+      "coarse": [
+        "C1.5.b2"
+      ]
+    },
+    {
+      "id": "I-PARENT-C1-6-b0",
+      "group": "integration",
+      "area": "parent",
+      "scope": "Original full nine-physical-square coarse parent C1.6.b0 after its mathematical closure",
+      "task": "Independent evidence review of the finite graph/load feature cover, all contact/mean cases and final sharp radius or capacity inequality",
+      "done_when": "Only this original parent may then be ticked in the canonical 58-row ledger",
+      "kind": "original-case-audit",
+      "status": "BLOCKED",
+      "priority": "P3",
+      "coarse": [
+        "C1.6.b0"
+      ]
+    },
+    {
+      "id": "I-PARENT-C1-6-b1",
+      "group": "integration",
+      "area": "parent",
+      "scope": "Original full nine-physical-square coarse parent C1.6.b1 after its mathematical closure",
+      "task": "Independent evidence review of the finite graph/load feature cover, all contact/mean cases and final sharp radius or capacity inequality",
+      "done_when": "Only this original parent may then be ticked in the canonical 58-row ledger",
+      "kind": "original-case-audit",
+      "status": "BLOCKED",
+      "priority": "P3",
+      "coarse": [
+        "C1.6.b1"
+      ]
+    },
+    {
+      "id": "I-PARENT-C1-6-b2",
+      "group": "integration",
+      "area": "parent",
+      "scope": "Original full nine-physical-square coarse parent C1.6.b2 after its mathematical closure",
+      "task": "Independent evidence review of the finite graph/load feature cover, all contact/mean cases and final sharp radius or capacity inequality",
+      "done_when": "Only this original parent may then be ticked in the canonical 58-row ledger",
+      "kind": "original-case-audit",
+      "status": "BLOCKED",
+      "priority": "P3",
+      "coarse": [
+        "C1.6.b2"
+      ]
+    },
+    {
+      "id": "I-PARENT-C1-6-b3",
+      "group": "integration",
+      "area": "parent",
+      "scope": "Original full nine-physical-square coarse parent C1.6.b3 after its mathematical closure",
+      "task": "Independent evidence review of the finite graph/load feature cover, all contact/mean cases and final sharp radius or capacity inequality",
+      "done_when": "Only this original parent may then be ticked in the canonical 58-row ledger",
+      "kind": "original-case-audit",
+      "status": "BLOCKED",
+      "priority": "P3",
+      "coarse": [
+        "C1.6.b3"
+      ]
+    },
+    {
+      "id": "I-PARENT-C1-7-b0",
+      "group": "integration",
+      "area": "parent",
+      "scope": "Original full nine-physical-square coarse parent C1.7.b0 after its mathematical closure",
+      "task": "Independent evidence review of the finite graph/load feature cover, all contact/mean cases and final sharp radius or capacity inequality",
+      "done_when": "Only this original parent may then be ticked in the canonical 58-row ledger",
+      "kind": "original-case-audit",
+      "status": "BLOCKED",
+      "priority": "P3",
+      "coarse": [
+        "C1.7.b0"
+      ]
+    },
+    {
+      "id": "I-PARENT-C1-7-b1",
+      "group": "integration",
+      "area": "parent",
+      "scope": "Original full nine-physical-square coarse parent C1.7.b1 after its mathematical closure",
+      "task": "Independent evidence review of the finite graph/load feature cover, all contact/mean cases and final sharp radius or capacity inequality",
+      "done_when": "Only this original parent may then be ticked in the canonical 58-row ledger",
+      "kind": "original-case-audit",
+      "status": "BLOCKED",
+      "priority": "P3",
+      "coarse": [
+        "C1.7.b1"
+      ]
+    },
+    {
+      "id": "I-PARENT-C1-7-b2",
+      "group": "integration",
+      "area": "parent",
+      "scope": "Original full nine-physical-square coarse parent C1.7.b2 after its mathematical closure",
+      "task": "Independent evidence review of the finite graph/load feature cover, all contact/mean cases and final sharp radius or capacity inequality",
+      "done_when": "Only this original parent may then be ticked in the canonical 58-row ledger",
+      "kind": "original-case-audit",
+      "status": "BLOCKED",
+      "priority": "P3",
+      "coarse": [
+        "C1.7.b2"
+      ]
+    },
+    {
+      "id": "I-PARENT-C1-8-b0",
+      "group": "integration",
+      "area": "parent",
+      "scope": "Original full nine-physical-square coarse parent C1.8.b0 after its mathematical closure",
+      "task": "Independent evidence review of the finite graph/load feature cover, all contact/mean cases and final sharp radius or capacity inequality",
+      "done_when": "Only this original parent may then be ticked in the canonical 58-row ledger",
+      "kind": "original-case-audit",
+      "status": "BLOCKED",
+      "priority": "P3",
+      "coarse": [
+        "C1.8.b0"
+      ]
+    },
+    {
+      "id": "I-PARENT-C1-8-b1",
+      "group": "integration",
+      "area": "parent",
+      "scope": "Original full nine-physical-square coarse parent C1.8.b1 after its mathematical closure",
+      "task": "Independent evidence review of the finite graph/load feature cover, all contact/mean cases and final sharp radius or capacity inequality",
+      "done_when": "Only this original parent may then be ticked in the canonical 58-row ledger",
+      "kind": "original-case-audit",
+      "status": "BLOCKED",
+      "priority": "P3",
+      "coarse": [
+        "C1.8.b1"
+      ]
+    },
+    {
+      "id": "I-PARENT-C1-9-b0",
+      "group": "integration",
+      "area": "parent",
+      "scope": "Original full nine-physical-square coarse parent C1.9.b0 after its mathematical closure",
+      "task": "Independent evidence review of the finite graph/load feature cover, all contact/mean cases and final sharp radius or capacity inequality",
+      "done_when": "Only this original parent may then be ticked in the canonical 58-row ledger",
+      "kind": "original-case-audit",
+      "status": "BLOCKED",
+      "priority": "P3",
+      "coarse": [
+        "C1.9.b0"
+      ]
+    },
+    {
+      "id": "I-PARENT-C2-35-b0",
+      "group": "integration",
+      "area": "parent",
+      "scope": "Original full nine-physical-square coarse parent C2.35.b0 after its mathematical closure",
+      "task": "Independent evidence review of the finite graph/load feature cover, all contact/mean cases and final sharp radius or capacity inequality",
+      "done_when": "Only this original parent may then be ticked in the canonical 58-row ledger",
+      "kind": "original-case-audit",
+      "status": "BLOCKED",
+      "priority": "P3",
+      "coarse": [
+        "C2.35.b0"
+      ]
+    },
+    {
+      "id": "I-PARENT-C2-35-b1",
+      "group": "integration",
+      "area": "parent",
+      "scope": "Original full nine-physical-square coarse parent C2.35.b1 after its mathematical closure",
+      "task": "Independent evidence review of the finite graph/load feature cover, all contact/mean cases and final sharp radius or capacity inequality",
+      "done_when": "Only this original parent may then be ticked in the canonical 58-row ledger",
+      "kind": "original-case-audit",
+      "status": "BLOCKED",
+      "priority": "P3",
+      "coarse": [
+        "C2.35.b1"
+      ]
+    },
+    {
+      "id": "I-PARENT-C2-35-b2",
+      "group": "integration",
+      "area": "parent",
+      "scope": "Original full nine-physical-square coarse parent C2.35.b2 after its mathematical closure",
+      "task": "Independent evidence review of the finite graph/load feature cover, all contact/mean cases and final sharp radius or capacity inequality",
+      "done_when": "Only this original parent may then be ticked in the canonical 58-row ledger",
+      "kind": "original-case-audit",
+      "status": "BLOCKED",
+      "priority": "P3",
+      "coarse": [
+        "C2.35.b2"
+      ]
+    },
+    {
+      "id": "I-PARENT-C2-36-b0",
+      "group": "integration",
+      "area": "parent",
+      "scope": "Original full nine-physical-square coarse parent C2.36.b0 after its mathematical closure",
+      "task": "Independent evidence review of the finite graph/load feature cover, all contact/mean cases and final sharp radius or capacity inequality",
+      "done_when": "Only this original parent may then be ticked in the canonical 58-row ledger",
+      "kind": "original-case-audit",
+      "status": "BLOCKED",
+      "priority": "P3",
+      "coarse": [
+        "C2.36.b0"
+      ]
+    },
+    {
+      "id": "I-PARENT-C2-36-b1",
+      "group": "integration",
+      "area": "parent",
+      "scope": "Original full nine-physical-square coarse parent C2.36.b1 after its mathematical closure",
+      "task": "Independent evidence review of the finite graph/load feature cover, all contact/mean cases and final sharp radius or capacity inequality",
+      "done_when": "Only this original parent may then be ticked in the canonical 58-row ledger",
+      "kind": "original-case-audit",
+      "status": "BLOCKED",
+      "priority": "P3",
+      "coarse": [
+        "C2.36.b1"
+      ]
+    },
+    {
+      "id": "I-PARENT-C2-37-b0",
+      "group": "integration",
+      "area": "parent",
+      "scope": "Original full nine-physical-square coarse parent C2.37.b0 after its mathematical closure",
+      "task": "Independent evidence review of the finite graph/load feature cover, all contact/mean cases and final sharp radius or capacity inequality",
+      "done_when": "Only this original parent may then be ticked in the canonical 58-row ledger",
+      "kind": "original-case-audit",
+      "status": "BLOCKED",
+      "priority": "P3",
+      "coarse": [
+        "C2.37.b0"
+      ]
+    },
+    {
+      "id": "I-PARENT-C2-45-b0",
+      "group": "integration",
+      "area": "parent",
+      "scope": "Original full nine-physical-square coarse parent C2.45.b0 after its mathematical closure",
+      "task": "Independent evidence review of the finite graph/load feature cover, all contact/mean cases and final sharp radius or capacity inequality",
+      "done_when": "Only this original parent may then be ticked in the canonical 58-row ledger",
+      "kind": "original-case-audit",
+      "status": "BLOCKED",
+      "priority": "P3",
+      "coarse": [
+        "C2.45.b0"
+      ]
+    },
+    {
+      "id": "I-PARENT-C2-45-b1",
+      "group": "integration",
+      "area": "parent",
+      "scope": "Original full nine-physical-square coarse parent C2.45.b1 after its mathematical closure",
+      "task": "Independent evidence review of the finite graph/load feature cover, all contact/mean cases and final sharp radius or capacity inequality",
+      "done_when": "Only this original parent may then be ticked in the canonical 58-row ledger",
+      "kind": "original-case-audit",
+      "status": "BLOCKED",
+      "priority": "P3",
+      "coarse": [
+        "C2.45.b1"
+      ]
+    },
+    {
+      "id": "I-PARENT-C2-46-b0",
+      "group": "integration",
+      "area": "parent",
+      "scope": "Original full nine-physical-square coarse parent C2.46.b0 after its mathematical closure",
+      "task": "Independent evidence review of the finite graph/load feature cover, all contact/mean cases and final sharp radius or capacity inequality",
+      "done_when": "Only this original parent may then be ticked in the canonical 58-row ledger",
+      "kind": "original-case-audit",
+      "status": "BLOCKED",
+      "priority": "P3",
+      "coarse": [
+        "C2.46.b0"
+      ]
+    },
+    {
+      "id": "I-PARENT-C2-55-b0",
+      "group": "integration",
+      "area": "parent",
+      "scope": "Original full nine-physical-square coarse parent C2.55.b0 after its mathematical closure",
+      "task": "Independent evidence review of the finite graph/load feature cover, all contact/mean cases and final sharp radius or capacity inequality",
+      "done_when": "Only this original parent may then be ticked in the canonical 58-row ledger",
+      "kind": "original-case-audit",
+      "status": "BLOCKED",
+      "priority": "P3",
+      "coarse": [
+        "C2.55.b0"
+      ]
+    },
+    {
+      "id": "I-FUT-G7_1",
+      "group": "integration",
+      "area": "fut",
+      "scope": "Original unit-square packing, circle and exact sharp construction statement",
+      "task": "Draft statements in the same semantics using permitted standard axioms",
+      "done_when": "No strengthening of Packing, new geometric axioms or admitted results",
+      "kind": "future-work",
+      "status": "DEFERRED",
+      "priority": "P3"
+    },
+    {
+      "id": "I-FUT-G7_2",
+      "group": "integration",
+      "area": "fut",
+      "scope": "Exact compactness, conic stress, uncrossing and graph results",
+      "task": "Produce uncompiled standard-kernel Lean 4 drafts faithful to accepted hand arguments",
+      "done_when": "No Lean compiler invoked under present no-Lean contract",
+      "kind": "future-work",
+      "status": "DEFERRED",
+      "priority": "P3"
+    },
+    {
+      "id": "I-FUT-G7_3",
+      "group": "integration",
+      "area": "fut",
+      "scope": "Entire completed sharp n=9 physical case coverage when available",
+      "task": "Draft direct proofs from the eventual hand theorem; no assumed oracle or fake covering theorem",
+      "done_when": "Only after every original coarse caller is mathematically closed",
+      "kind": "future-work",
+      "status": "DEFERRED",
+      "priority": "P3"
+    },
+    {
+      "id": "I-FUT-G7_4",
+      "group": "integration",
+      "area": "fut",
+      "scope": "Complete iff equality hand classification when available",
+      "task": "Draft necessary and sufficient formal statements for every exact free parameter chart",
+      "done_when": "No compile or CI without later explicit instruction",
+      "kind": "future-work",
+      "status": "DEFERRED",
+      "priority": "P3"
+    },
+    {
+      "id": "I-FUT-G7_5",
+      "group": "integration",
+      "area": "fut",
+      "scope": "Finished hand/formal sources and explicit future user instruction to compile",
+      "task": "Run compilation and independent standard-kernel replay only after the no-Lean rule is explicitly lifted",
+      "done_when": "Never claim performed until actually executed",
+      "kind": "future-work",
+      "status": "DEFERRED",
+      "priority": "P3"
+    },
+    {
+      "id": "I-FUT-G8_1",
+      "group": "integration",
+      "area": "fut",
+      "scope": "Kernel-verified original theorem and accepted equality",
+      "task": "Add n=9 to Optimum/registry/Challenge references",
+      "done_when": "No registry claim from a draft hand argument",
+      "kind": "future-work",
+      "status": "DEFERRED",
+      "priority": "P3"
+    },
+    {
+      "id": "I-FUT-G8_2",
+      "group": "integration",
+      "area": "fut",
+      "scope": "Complete proof/equality sources with actual audit and check statuses",
+      "task": "Update public docs with exact mathematical scope and provenance",
+      "done_when": "Current unsupported claims not promoted",
+      "kind": "future-work",
+      "status": "DEFERRED",
+      "priority": "P3"
+    },
+    {
+      "id": "I-FUT-G8_3",
+      "group": "integration",
+      "area": "fut",
+      "scope": "Accepted verified n=9 integration on compatible Lean base",
+      "task": "Run n=1–8 regression and source provenance checks only when allowed",
+      "done_when": "No CI run under present instruction",
+      "kind": "future-work",
+      "status": "DEFERRED",
+      "priority": "P3"
+    },
+    {
+      "id": "I-FUT-G8_4",
+      "group": "integration",
+      "area": "fut",
+      "scope": "All mathematical, equality, audit and permitted verification requirements complete",
+      "task": "Finalize the draft PR and release documentation",
+      "done_when": "Keep draft open until all requested standards met",
+      "kind": "future-work",
+      "status": "DEFERRED",
+      "priority": "P3"
+    }
+  ]
+}
