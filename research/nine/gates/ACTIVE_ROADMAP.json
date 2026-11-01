@@ -10,20 +10,25 @@
   "honest_counter_policy": "FIXED_HEX_ROOT_COUNTS_ONLY_NOT_A_COMPLETION_PERCENTAGE",
   "current_cover": {
     "source": "computer_assisted/HEXAGON_ROOT_COVER_AND_FIRST_EXCLUSIONS.md",
-    "summary": "computer_assisted/hex_cover_summary.json",
-    "verification": "computer_assisted/hex_verification_report.json",
+    "summary": "computer_assisted/square_pose_verification_summary.json",
+    "verification": "computer_assisted/square_pose_verification_summary.json",
     "emitter_controls": "computer_assisted/hex_emitter_test_report.json",
     "roots": 7915,
-    "excluded": 81,
-    "open": 7834,
-    "certificate_cores": 5,
+    "excluded": 886,
+    "open": 7029,
+    "certificate_cores": 83,
     "equality_witness_root": 7820,
     "all_orientations_retained": true,
     "all_q_le_Q_covered": true,
     "all_remaining_roots_tractable": false,
-    "tractability_note": "Explicit root enumeration and current certificate replay execute. Solvability or uniform difficulty of the 7834 continuous open roots is not established.",
+    "tractability_note": "The same 7915 roots are retained. All current pose certificates replay exactly; no claim of uniform tractability or full feasibility classification of the 7029 open roots.",
     "separate_human_review_performed": false,
-    "global_lower_bound_proved": false
+    "global_lower_bound_proved": false,
+    "prior_excluded": 81,
+    "newly_excluded": 805,
+    "exclusion_source": "computer_assisted/SQUARE_POSE_CERTIFICATES.md",
+    "generated_root_manifest": "computer_assisted/square_pose_root_manifest.json",
+    "generated_certificate": "computer_assisted/square_pose_certificate.json"
   },
   "known_inputs": [
     {
@@ -50,6 +55,11 @@
       "asset": "computer_assisted/HEXAGON_ROOT_COVER_AND_FIRST_EXCLUSIONS.md",
       "status": "SOURCE_PROOF_AND_SEPARATE_EXACT_REPLAY",
       "scope": "full root cover and exactly 81 root exclusions; not unrestricted optimality"
+    },
+    {
+      "asset": "computer_assisted/SQUARE_POSE_CERTIFICATES.md",
+      "status": "SOURCE_PROOF_AND_SEPARATE_EXACT_REPLAY",
+      "scope": "83 physical square-pose cores exclude 886 closed-Q roots, including all previous 81; not global optimality"
     }
   ],
   "gates": [

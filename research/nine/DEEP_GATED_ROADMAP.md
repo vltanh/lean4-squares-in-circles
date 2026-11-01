@@ -1,13 +1,14 @@
-# n=9 — canonical proof roadmap (v3, finite-cover update)
+# n=9 — canonical proof roadmap (v3, A.2 square-pose update)
 
 **The unrestricted sharp theorem and complete equality classification are OPEN.**
 Target: nine independently oriented, interior-disjoint unit squares in a disk
 have squared radius at least **1105/256**, and classify every attaining packing.
 
 **Active: A.2.** A complete positional root cover is now available: **7,915
-canonical roots, 81 EXCLUDED, 7,834 OPEN**. See the
-[hand cover proof and exact exclusions](computer_assisted/HEXAGON_ROOT_COVER_AND_FIRST_EXCLUSIONS.md)
-and [separate verifier report](computer_assisted/hex_verification_report.json).
+canonical roots, 886 EXCLUDED, 7,029 OPEN**. See the
+[square-pose proof and exact tables](computer_assisted/SQUARE_POSE_CERTIFICATES.md)
+and [independent replay summary](computer_assisted/square_pose_verification_summary.json).
+This adds 805 exclusions while retaining every previous exclusion and root ID.
 This count is for a fixed explicit cover, not a completion percentage or a
 claim that the remaining roots are uniformly easy.
 
@@ -57,19 +58,21 @@ all continuous orientations and separator alternatives. No claim is made that
   bound; equality compatibility edges are retained. The argument also works
   at q=Q and does not discard singular or repeated-normal configurations.
 
-**A.2 — Close the finite obligations [OPEN / ACTIVE].** Five integer/rational
-center-pattern certificates exclude 81 entire roots. The remaining 7,834
-roots are explicitly OPEN, not sampled feasible. Seek groupwise inequalities
-or exact certificates using the full square geometry, rather than repeatedly
-refining center-distance bounds alone. Any new subdivision must record all
-children and maintain its link to the fixed root manifest. A root closes only
-when its complete q<Q domain has a sound exact contradiction.
+**A.2 — Close the finite obligations [OPEN / ACTIVE].** The square-pose
+certificates exclude 886 entire roots, including all 81 original exclusions.
+The 83 cores use exact corner containment and square-owned separating axes
+over closed continuous orientation arcs, not sampled angles. Their 2,059
+propagation rows have been independently replayed. The remaining 7,029 roots
+are explicitly OPEN, not asserted feasible. Any further subdivision must
+record all children and its link to the unchanged root manifest. A root closes
+only when its complete q<Q domain has a sound exact contradiction.
 
-**A.3 — Independent global replay [OPEN].** A separate standard-library checker
-replays the current five-core forest and verifies its transfers to 81 roots.
-That is partial replay, not acceptance of the global theorem. Final A.3 requires
-proofs for every remaining root, all coverage implications and an all-q<Q
-argument arbitrarily close to Q, without trusted floating tolerances.
+**A.3 — Independent global replay [OPEN].** Two separate implementations
+reconstruct every edge of the current pose graphs, and the verifier rechecks
+every propagation row and root transfer. Arithmetic is integer/rational;
+NumPy int64 operations have explicit no-overflow bounds. This is still partial
+global coverage. Final A.3 requires all remaining root exclusions and an
+all-q<Q argument arbitrarily close to Q, without trusted floating tolerances.
 
 A closes only when the complete physical argument is proved and audited.
 Combine it with the known exact q=Q witness to obtain sharp optimality.
@@ -86,7 +89,7 @@ No separate mandatory direct-versus-stress proof trees are introduced.
 
 **B.1 — Complete equality-domain cover [ROOT COVER SUPPLIED].** The same
 nineteen-cell theorem and closed-Q root emitter cover every physical equality
-packing. The 81 center exclusions hold even at q=Q. The known oblique witness
+packing. The 886 current exclusions hold even at q=Q. The known oblique witness
 survives in root 7820. This supplies a starting equality cover, not a list of
 all equality normal forms.
 
@@ -101,8 +104,8 @@ equality packing is absent. B closes only with necessity and sufficiency.
 
 ## C — write the final hand proof with tables
 
-**C.1 — Human reconstruction [OPEN].** The hex-cover proof and finite orbit
-and core tables are written. The full manuscript still needs all remaining
+**C.1 — Human reconstruction [OPEN].** The hex-cover proof, square-pose
+soundness argument and finite core tables are written. The full manuscript still needs all remaining
 root exclusions and B's complete equality proof. A large exact graph decision
 forest is computational evidence with a proved replay interpretation, not by
 itself the requested compact final hand argument.
@@ -118,16 +121,18 @@ Run from `research/nine/computer_assisted/`:
 
 ```sh
 python make_hex_cover.py
-python verify_hex_cover.py --negative-controls
-python test_hex_root_emitter.py
+python make_square_pose_certificate.py
+python verify_square_pose_certificate.py --negative-controls
 python emit_hex_root.py --root 7820 --radius strict --output /tmp/n9-root.smt2
 ```
 
-The producer uses NumPy only for exact bounded-integer acceleration. The
-separate certificate verifier needs only Python's standard library. The
-manifest and certificate are deterministic generated artifacts; their hashes
-are pinned in the saved reports and copies accompany the continuation archive.
+The new producer and independent graph builder use NumPy only for exact
+bounded-integer operations; other arithmetic uses Python int and Fraction.
+The complete generated certificate, root manifest and full replay report
+accompany the continuation archive. Their hashes are pinned in the committed
+summary. The source and core list reproduce all results.
 
 The canonical status is `gates/ACTIVE_ROADMAP.json`. The new finite cover does
-not imply all 7,834 unresolved roots can be solved by the first center-only
-screen. That specific mathematical task is now visible under A.2.
+not imply all 7,029 unresolved roots can be solved by uniform pose refinement.
+Near-equality roots will need a sharp inequality, not a fixed numerical gap.
+A.2 remains the active gate; all existing gate IDs and goals are unchanged.
