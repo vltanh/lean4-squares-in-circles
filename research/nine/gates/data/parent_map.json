@@ -1,8 +1,0 @@
-{
-  "legacy": true,
-  "archived_full_source": "../../history/roadmap_replacement_2026_11_01/gates__data__parent_map.json",
-  "archived_blob_sha": "183adf7c812492fd09cfe5d88334dbb6f2c22407",
-  "current_deep_roadmap": "../../DEEP_GATED_ROADMAP.md",
-  "current_registry": "../ACTIVE_ROADMAP.json",
-  "message": "Historical data source only: this JSON no longer defines an active or countable gate."
-}
