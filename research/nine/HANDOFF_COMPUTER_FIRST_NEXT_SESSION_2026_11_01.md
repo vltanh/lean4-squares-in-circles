@@ -1,78 +1,94 @@
-# Current handoff — reduced singleton triangle and exact full-nine model
+# Current handoff — complete three-cut closure; next full four-cut families
 
-November 1, 2026 UTC. Continuation began at **ad00eaa16a27e5e1000d1a9dc7be0c4421c54b91**, branch **research/nine-tablefree-hand**, [draft PR #11](https://github.com/vltanh/lean4-squares-in-circles/pull/11).
+November 1, 2026 UTC. Continuation began at **ad00eaa16a27e5e1000d1a9dc7be0c4421c54b91**, branch **research/nine-tablefree-hand**, [draft PR #11](https://github.com/vltanh/lean4-squares-in-circles/pull/11). The intermediate feature checkpoint is **cc373f6fc4ef1cd5b4ae0712d69023b77a49bc93**; subsequent commits complete the owner census, final exact certificates and structural adoption.
 
-**Policy:** computer-assisted discovery → rigorous exact certificates → compact mathematical tables, with shorter analytic proofs whenever available. Previous no-mathematical-scripts prohibitions are superseded. **No Lean, Lake or CI.**
+**Policy:** computer-assisted discovery → rigorous exact certificates → compact mathematical tables, with shorter analytic proofs whenever available. Previous no-mathematical-scripts restrictions are superseded. **No Lean, Lake or CI.** Keep the PR draft.
 
-Read first: [complete current adoption](ADOPTION_TRIANGLE_CONTACT_FEATURES_AND_FULL_PHYSICAL_MODEL_2026_11_01.md) and [active strategy](computer_assisted/STRATEGY_COMPUTER_FIRST_CERTIFICATES_THEN_TABLES_2026_11_01.md). The adoption links all source manuscripts and independent reviews.
+Read first: [complete direct-triangle and three-cut adoption](ADOPTION_COMPLETE_DIRECT_TRIANGLE_AND_THREE_CUT_FOREST_2026_11_01.md), [complete theorem and 11-row table](COMPLETE_DIRECT_UNLOADED_TRIANGLE_EXCLUSION_2026_11_01.md), [active strategy](computer_assisted/STRATEGY_COMPUTER_FIRST_CERTIFICATES_THEN_TABLES_2026_11_01.md), and [authoritative progress](PROGRESS.md).
 
-## 1. Actual global status
+The [independent adoption review](reviews/2026-11-01/REVIEW_COMPLETE_TRIANGLE_THREE_CUT_FOREST_ADOPTION_2026_11_01.md) accepts the exact three-cut join, all smaller-cut consequences and the single refined gate closure.
 
-**41/58 original coarse**, **2,373/2,513 original fine**, **18/38 nested exterior** remain closed/checked. This continuation has closed whole geometric features, with **zero new original parent/fine flags** so far. Unrestricted R²>=1105/256, all equality configurations and the global common-selected-certificate audit remain OPEN.
+## 1. Actual completed result
 
-Previously reviewed structural results remain: every entirely unloaded connected full-three-cut module has at most three actual bodies; the only cyclic possibility is the direct triangle. Larger entirely unloaded regions need at least four full positive cut edges. Do not reopen the superseded multicycle/transmitter census.
+The entire original direct unloaded triangle is excluded at R²<=Q=1105/256, conditional on **(S)** of the one already selected compatible certificate: an unloaded true-degree-three star with three distinct physical singleton contacts has no free vertex/vertex normal. Every original force, strict normal, application, complete shared-side mean, individual circle coefficient and all nine actual squares remain.
 
-## 2. New complete mathematical results
+The exhaustive cover includes common physical junctions, every internal shared side and endpoint, any parallel core pair, all-both-vertex applications, every free-normal pattern, cyclic side ownership and both transitive double-owner directions. The final two transitive branches have independently replayed exact certificates. The [clean final review](reviews/2026-11-01/REVIEW_BOTH_TRANSITIVE_TRIANGLE_CERTIFICATES_AND_COMPLETE_UNION_2026_11_01.md) and [independent selected-census review](reviews/2026-11-01/REVIEW_SELECTED_TRIANGLE_OWNER_CENSUS_ROOT_2026_11_01.md) record the precise scope and source identities.
 
-| Precise full feature | Proved conclusion |
-| --- | --- |
-| General three-vector perimeter, min length m and total W | Perimeter<=2W-(6-3sqrt(3))m |
-| Original three full triangle exits and all original center work | Necessarily m/W<(4+2sqrt(3))/93, stronger than 1/12 |
-| Every common physical junction | Completely excluded, including ORIGINAL shared-side applications away from P |
-| Every distinct-contact INTERNAL shared side | Complete three-type physical chart: TypeII torque contradiction; TypeI and strict-normal endpoint TypeIII give R>25/12 |
-| Any parallel core pair meeting at a singleton corner | R²>9/2, even with a different third frame |
-| Three distinct internal applications all vertices of both incident cores | Exact outward equilateral geometry and R>9/4 |
-| Isosceles contact triangle with A/B owned exits and both C returns on ONE side | R>13/6, all original exterior means retained |
+The literal prior all-ranks census now has only these three necessary full-three-cut profiles:
 
-The common-junction, all-both-vertex, complete internal-shared-side/parallel-pair union, isosceles feature and full model each have independent source-level reviews. The analytic force screen has been independently reconstructed; the original exact checker also replayed successfully.
+| Bodies | Induced original graph | Full degrees | Full cut |
+| ---: | --- | --- | --- |
+| 1 | H | 3 | Three exits at H |
+| 2 | H--T | 3,2 | Two exits at H and one at T |
+| 3 | T_1--H--T_2 | 2,3,2 | One exit at each body |
 
-The old “all common-point applications equal” manuscript is now a weaker historical result. The whole common-junction theorem is stronger and includes the previously missing side mean.
+Thus every connected entirely unloaded region with exactly three full positive cut edges is a tree with at most three bodies. Together with the prior complete smaller-cut arguments, **every unloaded connected cyclic region needs at least four full positive cut edges**. These compositions retain the prior research window 79/40<=R<=sqrt(1105)/16 and all common physical/planar selection prerequisites, including (S). The three surviving tree profiles are not asserted realizable or excluded.
 
-### Further completed owner features
+**R-MODULE-SMALL_UNI is CLOSED.** The prior R-MODULE-TRICYCLE and R-MODULE-SMALL_FORCE remain closed. Do not reopen the direct triangle or the superseded transmitted/multicycle three-cut census.
 
-The cyclic internal side-owner family is now completely excluded by an exact full-moment/incenter support argument, R²>9/2. The perpendicular-C-owned counterpart of the isosceles theorem is also excluded, R>25/12, by an independently checked exact interval certificate:898 nodes,441 variance leaves,9 order-empty leaves and an analytic singular-corner tail. See the [current adoption](ADOPTION_TRIANGLE_CONTACT_FEATURES_AND_FULL_PHYSICAL_MODEL_2026_11_01.md) for the complete source/review/command links. Every compact rational margin is >1/6000 above625/144; the tail reserve is5497/90000. Neither result changes original flags by itself.
+## 2. Canonical status remains unchanged
 
-## 3. Exact remaining direct-triangle geometry
+**41/58 original coarse**, **2,373/2,513 original fine**, **18/38 nested exterior** remain closed/checked. This session closes one existing quantified structural gate, with **zero additional original parent, fine or exterior flags**.
 
-Any survivor at Q has **three pairwise nonparallel core frames, three internal physical singleton intersections, no common point, and at least one genuine internal vertex/side-interior contact**. All three internal magnitudes remain positive and obey the improved weak-edge bound.
+Unrestricted R²>=1105/256, every equality packing and the global same-selected-certificate audit remain OPEN. The known equality construction is feasible and was checked exactly in the full physical base model. A theorem conditional on (S) does not itself discharge the entire global selection construction.
 
-Do not turn this into “every contact is singleton”: EXTERIOR shared-side contacts and their original means remain possible. Outside terminals can coincide. No fourth/sixth/seventh actual unit is deleted.
+## 3. Exact arithmetic evidence
 
-The next work is to join the existing compatible selector to all free internal-normal alternatives, then solve the transitive fixed side-owner patterns (same or perpendicular own sides at the core owning two internal edges). The cyclic owner pattern and both one-free-edge owned-exit features are already excluded; do not redo their proofs.
+All three complete computational features force R>25/12, with squared reserve (25/12)²-Q=55/2304.
 
-The existing compatible three-distinct-singleton selector may restrict a free internal edge, but only after the physical singleton and distinct-application premises are proved using the full touching-return separation theorem. The global compatibility audit is still not complete.
+| Complete physical family | Nodes | Variance-certified leaves | Empty leaves |
+| --- | ---: | ---: | ---: |
+| One free edge, perpendicular double-owner returns | 898 | 441 | 9 |
+| Transitive owners, same double-owner side | 745 | 320 | 54 |
+| Transitive owners, perpendicular double-owner sides | 5,696 | 2,730 | 119 |
+| **Total** | **7,339** | **3,491** | **182** |
 
-## 4. Exact computational artifacts and reproduction
+There are seven complete compact roots and one separate analytic limiting-corner rectangle. Exact rational reserves above 625/144 are respectively >1/6000, >1/3000 and >1/7000 on compact leaves; the analytic rectangle has reserve 5497/90000. There are no unresolved boxes. “Variance-certified” does not assert a leaf is physically feasible.
 
-### Old force-screen audit
+The independent checkers import neither generators nor their interval kernel:
 
-    python research/nine/computer_assisted/verify_force_triangle.py
+    python research/nine/computer_assisted/verify_perpendicular_certificate_independent.py
+    python research/nine/computer_assisted/verify_transitive_certificates_independent.py
 
-Independent replay:175,382 nodes;65,915 **bound-certified** leaves;21,778 provably empty leaves; least rational bound margin 29/1,015,808. The old phrase “certified nonempty” was incorrect as a feasibility claim and has been corrected. The stronger analytic proof now replaces this interval calculation in the mathematical argument.
+Both root executions passed; every stored bound and split cover matched exactly. Full generator reproduction, physical transfer, exact certificate files and all source hashes are linked from the adoption. The final perpendicular proof uses two auxiliary arc endpoints only to lower-bound the **actual** variance; they are never asserted to be actual outside contacts.
 
-### Full physical constraint model
+The older force screen was independently replayed and then replaced by the stronger analytic bound
+
+    C <= 2W-(6-3sqrt(3))m.
+
+For the original full triangle cut this gives m/W<(4+2sqrt(3))/93. The triangle no longer needs screening because its entire domain is now excluded. Retain the general vector inequality as a reusable result, without transferring the triangle-specific full-cut implication to four exits.
+
+## 4. Immediate research target
+
+Move to **R-MODULE-CUT4_UNI**, then R-MODULE-CUT4_MULTI and larger full cuts, together with literal original-parent and joint nine-square completion. The fourth positive exit and its host's full degree are essential: do not reduce a degree-four triangle to the closed degree-three theorem by deleting that force.
+
+The [concrete next-target note](computer_assisted/NEXT_FULL_FOUR_CUT_TARGET_AFTER_TRIANGLE_CLOSURE_2026_11_01.md) starts with the full four-cut direct triangle of degree profile (4,3,3). It proves the four terminal identities are distinct, retains the two separate A4 exit moments, gives the valid full-cut work bound and specifies an original C1.5.b2 house interface to reconcile against existing two-leaf proofs. This is a research plan with necessary reductions, not a new exclusion or complete four-cut census.
+
+For each candidate full-four-cut region, prove the whole original graph/profile cover before claiming an exclusion. Record complete cut incidences, repeated terminal identities, original loads outside the region and all genuine degree-two transmitters. Use full force and torque equations, exact physical contact charts and all actual nonoverlap obstacles. A reduced graph edge cannot silently replace a chain of actual squares.
+
+Numerical exploration may identify a useful inequality or failed relaxation. Proof requires complete closed root coverage, exact outward bounds, verified terminal reasons and every limiting face. Preserve unknowns as unresolved when a certified terminal is missing. The accepted three-cut result supplies a necessary restriction on every proper entirely unloaded cyclic subregion, not a global acyclicity assertion.
+
+## 5. Reusable full-nine physical model
+
+The [full model source](computer_assisted/FULL_PHYSICAL_TRIANGLE_SYSTEM_2026_11_01.md) and [emitter](computer_assisted/emit_full_triangle_system.py) retain all nine square frames, all 36 SAT pairs, all 36 corner inequalities, every pair and circle multiplier, strict singleton ownership, full original means and all nine force/torque equations.
 
     python research/nine/computer_assisted/emit_full_triangle_system.py --self-check
     python research/nine/computer_assisted/emit_full_triangle_system.py --all-cases /tmp/nine_triangle_roots --weak-screen
 
-The base model has 289 real variables,108 definitions and 257 assertions. Each screened triangle root has 290 variables and 293 assertions. All nine squares,36 SAT pairs,36 corner bounds, every pair and circle multiplier, strict singleton owners, shared-side means and full force/torque equations remain. The five identity roots are AAA,AAB,ABA,ABB,ABC.
+The base has 289 real variables, 108 definitions and 257 assertions; screened triangle roots have 290 variables and 293 assertions. Their five terminal-identity roots are AAA, AAB, ABA, ABB, ABC. The exact equality witness, mean perturbation, unstressed-square overlap and strict-normal boundary controls pass. The triangle-specific roots are retained as reproducible evidence, not the next unresolved research target.
 
-The known oblique Q equality packing satisfies the base model exactly. Mean perturbation, unstressed-square overlap and strict-normal boundary checks behave correctly. **No SMT solver has been run; no emitted root is a proof of infeasibility.** This model is a necessary physical overapproximation, omitting later generic-selection, matched-normal and planarity restrictions. A satisfying point does not automatically satisfy those additional original-certificate properties.
+The model omits later generic-selection and planarity restrictions. It is a necessary physical overapproximation, not a selected-certificate characterization. No SMT solver has been run and no general model infeasibility is claimed. Adapt its base only with a proved forward-coverage interface for each new four-cut root.
 
-## 5. Original parents still requiring complete joins
+## 6. Original parents still requiring whole joins
 
-One block:
-C1.5.b2; C1.6.b0,C1.6.b1,C1.6.b2; C1.7.b0,C1.7.b1,C1.7.b2; C1.8.b0,C1.8.b1; C1.9.b0.
+Ten one-block parents:
 
-Two blocks:
-C2.35.b1,C2.35.b2,C2.36.b1; C2.45.b0,C2.45.b1,C2.46.b0,C2.55.b0.
+C1.5.b2; C1.6.b0, C1.6.b1, C1.6.b2; C1.7.b0, C1.7.b1, C1.7.b2; C1.8.b0, C1.8.b1; C1.9.b0.
 
-The 20 open nested exterior rows are in C1.6.b0. Closing the triangle would not itself close these higher-cut/whole-completion and mixed-articulation parents. Preserve the current canonical counts until all siblings and nine actual square constraints are consumed by a literal full-domain proof.
+Seven two-block parents:
 
-## 6. Do not lose these boundaries
+C2.35.b1, C2.35.b2, C2.36.b1; C2.45.b0, C2.45.b1, C2.46.b0, C2.55.b0.
 
-- Preserve one original compatible selected certificate, every positive edge and all complete moments. A tiny positive force is never replaced by zero.
-- Work at closed Q, or prove all exact limiting/equality faces separately. The actual equality construction remains feasible.
-- Solver optimization and floating-point grids are discovery only. Exact exclusions need proved root coverage and every terminal reason checked.
-- An executable model is not an exclusion. A proper feature proof is not an original coarse parent closure.
-- Preserve the complete current source/review links through the adoption and keep the PR draft. Commit further complete results and update this single current handoff; do not stack obsolete hand-only instructions back into the live entry points.
+The 20 open nested exterior rows belong to C1.6.b0. These parents retain mixed loaded/articulation, bridge-root, higher-cut and whole-completion obligations that do not force the excluded unloaded degree-three triangle. Preserve canonical counts until every sibling of a literal original caller is covered.
+
+Commit coherent full sources, independent reviews, exact certificates and this current handoff. Frozen construction-time review headings are historical; the explicit adoption/review links determine current acceptance. No tiny positive force, actual square or original mean may be discarded.

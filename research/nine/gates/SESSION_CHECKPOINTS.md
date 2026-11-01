@@ -4,7 +4,11 @@
 
 **Unrestricted sharp lower bound $R^2\ge1105/256$: OPEN.** Complete equality classification: OPEN. G4.2.c same-certificate audit: OPEN. Formalization: DEFERRED (exact computer-assisted proof permitted; no Lean/Lake/CI). The record construction supplies the candidate upper bound; global necessity is not proved.
 
-## Current adopted canonical change
+## Current adoption and canonical scope
+
+The [complete direct-triangle and three-cut forest adoption](../ADOPTION_COMPLETE_DIRECT_TRIANGLE_AND_THREE_CUT_FOREST_2026_11_01.md) now closes **R-MODULE-SMALL_UNI**. Every connected entirely unloaded full-three-cut region is one of three small tree profiles, under the original compatible selected-certificate hypotheses including (S); every unloaded cyclic region needs at least four full positive cut edges. This is one complete refined structural closure and **zero additional canonical coarse, fine or exterior flags**.
+
+The [independent adoption review](../reviews/2026-11-01/REVIEW_COMPLETE_TRIANGLE_THREE_CUT_FOREST_ADOPTION_2026_11_01.md) accepts the literal original census caller, all smaller cuts, the preserved research window and selection premises, and the exact gate accounting.
 
 **C2.35.b0, C2.36.b0, C2.37.b0 and C1.6.b3 are CLOSED.** See the [complete original-domain
 adoption](../ADOPTION_INTACT_TRIANGLE_THREE_ORIGINAL_CASES_2026_10_31.md), preserved full sources, explicit common-domain
@@ -36,17 +40,17 @@ A **proof-ready small task** has a precise input graph/load/force domain, one ve
 
 ## 2. Complete current structural proof boundary
 
-The [complete multicycle adoption](../ADOPTION_FULL_THREE_PORT_REDUCTION_AND_GEOMETRIC_ESCAPE_2026_11_01.md) and [latest four-cycle/cardinality adoption](../ADOPTION_COMPLETE_UNICYCLIC_FOUR_CYCLE_AND_SHORT_PRISM_EXCLUSION_2026_11_01.md) link every complete source, independent review and preserved dependency. Their strongest results apply to whole families at once.
+The [complete multicycle adoption](../ADOPTION_FULL_THREE_PORT_REDUCTION_AND_GEOMETRIC_ESCAPE_2026_11_01.md), [four-cycle/cardinality adoption](../ADOPTION_COMPLETE_UNICYCLIC_FOUR_CYCLE_AND_SHORT_PRISM_EXCLUSION_2026_11_01.md) and [complete direct-triangle adoption](../ADOPTION_COMPLETE_DIRECT_TRIANGLE_AND_THREE_CUT_FOREST_2026_11_01.md) link every complete source, independent review and preserved dependency. Their strongest results apply to whole families at once, under their exact original research-window and common-selection hypotheses.
 
-| Whole original domain | Reviewed hand conclusion | Remaining boundary |
+| Whole original domain | Reviewed conclusion | Remaining boundary |
 |---|---|---|
-| Any connected entirely unloaded full-three-cut region, arbitrary degrees/rank | At most THREE actual bodies; exactly three necessary tree profiles or one direct triangle | Small-profile geometry and full original completion |
+| Any connected entirely unloaded full-three-cut region, arbitrary degrees/rank, with original common property (S) | Exactly three necessary tree profiles, each with at most THREE actual bodies; the direct triangle is excluded | Small-tree realizability/exclusion, higher cuts and full original completion |
 | Any connected entirely unloaded region of at least four actual bodies | At least FOUR full original cut edges; cuts 0,1,2,3 all accounted for | General higher-cut geometry |
-| Any cyclic connected unloaded full-three-cut module, arbitrary degrees/rank | Exactly the direct three-body triangle; three direct exits at distinct full-degree-three hubs | Only its nonparallel-core feature `(0,0)` |
+| Any cyclic connected unloaded region in the original compatible scope including (S) | At least FOUR full positive cut edges; the prior complete smaller-cut arguments and new direct-triangle theorem exclude every cut of size at most three | General full-four-cut and larger-cut geometry |
 | EVERY such module of cycle rank at least two, arbitrary full degree | Entirely excluded: complete hand census plus the final graph's two-anchor contradiction | None in this full domain; `R-MODULE-TRICYCLE` discharged |
 | Arbitrary unloaded region and full cut partition into two terminal groups with actual common anchors p,q | If original inside host distance is ell, then `|q-p|>=ell+1`; anchors less than two apart force an inside host in both groups | Actual common anchors are required; arbitrary outside loads and cut multiplicities allowed |
-| Original unicyclic table | `(1,0),(2,0),(0,1),(1,1)` excluded, including all owners/means and both latter exit positions | Only nonparallel direct triangle `(0,0)` |
-| Direct unloaded three-force triangle with parallel core frames, arbitrary outside frames/loads/degrees | Strict bound `R^2>9/2` on the entire closed T chart, all side means and both corner endpoints | Nonparallel core frames |
+| Original complete three-cut unicyclic table | Every row `(0,0),(1,0),(2,0),(0,1),(1,1)` excluded, including all owners/means and both latter exit positions | None within this domain; `R-MODULE-SMALL_UNI` discharged |
+| Entire direct unloaded degree-three triangle at R²<=Q, original property (S), arbitrary outside stars | Exhaustive physical/owner union excluded; three exact continuous families give R>25/12 | Loaded or higher-degree triangles, arbitrary differently selected stresses and larger full cuts |
 | Any actual dominant unloaded pair with total other incidence below `3d/40` | Original application radius less than `23/32`; its two actual distinguished terminals are closed-disjoint; neither terminal is a genuine D leaf | Does not manufacture the residual-ratio premise or supply an automatic distant square |
 | Arbitrary selected physical graph, radius and full degrees | Four-contact cycle encloses at most one other unit center; literal triangular prism impossible | Does not imply outerplanarity |
 | Selected positive graph in the upper-radius window, arbitrary full degrees and loads | Every triangular prism with one actual subdivision body on any edge is impossible | Longer subdivisions and other seven-/eight-/nine-body graphs |
@@ -55,9 +59,9 @@ The [complete multicycle adoption](../ADOPTION_FULL_THREE_PORT_REDUCTION_AND_GEO
 
 These are **V** complete independently reviewed source statements; the final multicycle graph is **J** joined to the entire census domain and excluded. Its optional C1.8.b1 outside-caller classification is unnecessary to that closure. No fifth **C** whole coarse closure follows. The four actual **C** closures remain the three intact-triangle callers and C1.6.b3.
 
-### New reviewed direct-triangle contact features
+### Complete reviewed direct-triangle proof
 
-The [current adoption](../ADOPTION_TRIANGLE_CONTACT_FEATURES_AND_FULL_PHYSICAL_MODEL_2026_11_01.md) links complete proofs and independent reconstructions for:
+The [feature checkpoint](../ADOPTION_TRIANGLE_CONTACT_FEATURES_AND_FULL_PHYSICAL_MODEL_2026_11_01.md) and [complete current adoption](../ADOPTION_COMPLETE_DIRECT_TRIANGLE_AND_THREE_CUT_FOREST_2026_11_01.md) link complete proofs and independent reconstructions for:
 
 | Complete feature | Result |
 | --- | --- |
@@ -67,12 +71,15 @@ The [current adoption](../ADOPTION_TRIANGLE_CONTACT_FEATURES_AND_FULL_PHYSICAL_M
 | Three distinct applications each vertex of both cores | R>9/4 |
 | Same-C-side isosceles feature with A/B owned exits | R>13/6 |
 | Cyclic internal side ownership | R²>9/2 by full-moment/incenter support |
+| Exactly one free edge, perpendicular double-owner returns | R>25/12 by complete exact certificate and analytic limiting-corner proof |
+| Transitive owners, same double-owner side | All three original support branches give R>25/12 |
+| Transitive owners, perpendicular double-owner sides | Full-moment reduction and both auxiliary variance endpoints give R>25/12 |
 | Arbitrary original internal vector triple | min(a,b,c)/W<(4+2sqrt(3))/93 |
 | Full-nine physical constraint encoding | Exact self-check and five terminal roots; no SMT infeasibility claim |
 
-These shrink BUNI to genuine singleton vertex/side owner systems. Exterior shared-side means, repeated terminals and all nine actual squares remain. No original coarse/fine/exterior flags change.
+The [complete selected-owner census](../SELECTED_DIRECT_TRIANGLE_NO_FREE_NORMALS_AND_TRANSITIVE_OWNER_REDUCTION_2026_11_01.md), its [independent root review](../reviews/2026-11-01/REVIEW_SELECTED_TRIANGLE_OWNER_CENSUS_ROOT_2026_11_01.md), and the [final transitive/union review](../reviews/2026-11-01/REVIEW_BOTH_TRANSITIVE_TRIANGLE_CERTIFICATES_AND_COMPLETE_UNION_2026_11_01.md) prove that these features exhaust the full direct triangle under (S). **BUNI is CLOSED.** Every exterior mean and all nine actual squares remain; the theorem begins with arbitrary outside-terminal identities and proves any needed distinctness.
 
-**New exact reviewed owner feature:** the [perpendicular-owned triangle certificate](../computer_assisted/PERPENDICULAR_OWNER_SINGLE_FREE_TRIANGLE_EXACT_EXCLUSION_2026_11_01.md) proves R>25/12 with898 exact tree nodes,441 strict variance leaves,9 order-empty leaves and a separate analytic singular-corner tail. A second verifier imports no generator code and checks every terminal inequality. This is a complete stated-feature exclusion; the full transitive owner domain and original parent joins remain open.
+The three exact certificates have **7,339 nodes, 3,491 variance-certified leaves and 182 empty leaves**, on seven complete compact roots plus a separate analytic limiting-corner rectangle. Independent checkers import neither generators nor their interval kernel and recompute every stored bound and split. No unresolved box or presumed-feasible leaf is used. Each whole feature gives R>25/12; no original coarse/fine/exterior flag changes from these proofs or their structural join.
 
 ## 3. The final multicycle graph is excluded
 
@@ -94,9 +101,10 @@ H1–H5, both diamonds, all house and K1–K6 patterns, all three-/four-hub high
 
 ## 5. Remaining physical theorem obstacles
 
+The former BUNI direct-triangle obstacle is completely closed by the reviewed adoption. The remaining domains are:
+
 | Obstruction | Exact surviving domain | Required broad output |
 |---|---|---|
-| **BUNI** | Pairwise nonparallel direct triangle, all three INTERNAL contacts singleton, no common point, at least one genuine vertex/side contact; common-junction, shared-side, parallel-pair, all-both-vertex and stated owned-exit features excluded | Remaining original owner systems with every EXTERIOR mean retained, then complete direct-triangle join |
 | **BCUT4+** | Unloaded full cuts with at least four edges, arbitrary rank | Full-cut physical capacity or valid broad graph reduction; new degree bounds alone do not close this |
 | **BCHAIN** | Ten remaining one-block coarse parents, with original chords/branches and all extras | Complete original caller or legitimate sharp paired-chain extraction |
 | **BWRENCH** | Seven remaining two-block parents: decorated triangles and 4+5/4+6/5+5 interfaces | Exact mixed-side articulation and full-completion theorem |
@@ -150,7 +158,7 @@ Every row below is one actual original coarse case, not an extra mathematical th
 
 **Coverage contract:** The 58-row [original source table](../CYCLIC_CELL_LEDGER.md) retains **41 CLOSED, 17 OPEN**. The [140 currently unchecked original fine IDs](../PROGRESS.md#5-all-140-currently-unchecked-detailed-roadmap-entries), their [296 refined child records and parent map](PARENT_MAP.md), and the [18/38 nested six-body exterior reconciliation](../PROGRESS.md#1-single-reconciled-progress-snapshot) are kept intact. A proof of B29, BK23 or another structural feature gets **zero** original-parent credit until an explicit original-graph caller map shows it exhausts **all** of a named original row, including all its sibling masks, attachments and full nine-square completion. The new graph subdivisions are not asserted to cover the remaining 17 parent cases.
 
-## 7. Mandatory hand-proof acceptance checks (apply before *every* status change)
+## 7. Proof acceptance checks (apply before *every* status change)
 
 A legitimate source-level exclusion or sharp necessary inequality must identify:
 
@@ -172,11 +180,9 @@ A legitimate source-level exclusion or sharp necessary inequality must identify:
 | 2026-10-31, current complete adoption | Entire intact triangle; complete C1.6.b3 forest and Type I/II; full rank-two/all-subcubic module theorem; unicyclic `(2,0)` and D-ear exclusions | **V/J/C**, complete current independent reviews and preserved prerequisites | **4 / 0** | 17 original parents; BUNI/BHIGH/cuts 4+ and full nine-square completion |
 | 2026-11-01, uniform continuation | EVERY multicycle unloaded full-three-cut module excluded; arbitrary-cut two-anchor and graph-distance theorem; no cyclic transmitted exit; general prism/interior/escape theorems | **V/J**, complete independent hand reviews and exact dependency manifest; `R-MODULE-TRICYCLE` discharged | **0 / 0** | BUNI, cuts 4+ and 17 original coarse parents |
 | 2026-11-01, complete four-cycle and cardinality continuation | Entire `(1,0)` row excluded; every unloaded three-cut region has at most three bodies; every unloaded region of four or more bodies has full cut at least four; dominant contact radius `<23/32`; every one-edge-subdivided prism excluded | **V/J**, complete independent hand reviews and all smaller-cut cases retained | **0 / 0** | Direct triangle only in BUNI; general cuts 4+ and 17 original coarse parents |
+| 2026-11-01, contact-feature checkpoint | Complete common junction, internal shared side, parallel pair, all-both-vertex, stated same-side owned-exit and cyclic-owner exclusions; analytic screen replacement; full-nine exact model | **V** at each stated feature; intermediate checkpoint cc373f6 | **0 / 0** | At that checkpoint: remaining singleton owner systems |
+| 2026-11-01, complete direct-triangle and three-cut adoption | Entire direct triangle excluded under (S), all three exact certificates independently reconstructed; every unloaded connected full-three-cut region is one of three small trees | **H/X/V/J**, exhaustive physical/owner cover and literal prior all-ranks census join; `R-MODULE-SMALL_UNI` discharged | **0 / 0** | Full cuts 4+, all 17 original coarse parents, global selection audit and equality |
 
-**Current continuation:** the complete reviewed four-case and multicycle adoptions are published. The later whole four-cycle exclusion and all-ranks cardinality theorem leave only the direct triangle in BUNI, together with the independent higher-cut and whole-parent domains above. A further coarse flag changes only after its full original caller joins; no weak positive force or remaining physical mean is dropped.
+**Current continuation:** the complete direct-triangle theorem now closes BUNI and the final unicyclic three-cut row. Every unloaded cyclic region needs at least four full positive cut edges in the original compatible scope including (S). The next work is the full-four-cut and larger-cut physical families, original-parent joins and full nine-square completion. A further coarse flag changes only after its complete original caller joins; no weak positive force or original physical mean is dropped.
 
 **Archival note:** [the former 57-checkpoint list](HISTORICAL_57_MILESTONES_2026_10_31.md) remains available unchanged for provenance. It is **not** a current progress bar or a work guarantee. This replacement deliberately consolidates all future session tracking here without adding another live ledger.
-
-
-
-| 2026-11-01, contact-feature continuation | Complete common junction, internal shared side, parallel pair, all-both-vertex, stated same-side owned-exit and cyclic-owner exclusions; analytic screen replacement; full-nine exact model | **V** at each stated feature, model independently checked; full triangle still open | **0 / 0** | Remaining singleton owner systems, then original callers |

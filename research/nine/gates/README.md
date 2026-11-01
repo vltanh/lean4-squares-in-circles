@@ -11,20 +11,20 @@ The [parent map](PARENT_MAP.md) maps **all 140 original unchecked entries** to *
 
 The previous **15/57 milestone fraction has been retired**. Its original detailed [historical snapshot](HISTORICAL_57_MILESTONES_2026_10_31.md) is preserved solely for source provenance. No new original fine/coarse flag was checked in this ledger reorganization. After the [intact-triangle adoption](../ADOPTION_INTACT_TRIANGLE_THREE_ORIGINAL_CASES_2026_10_31.md) and [complete C1.6.b3 adoption](../ADOPTION_C1_6_B3_AND_UNIFORM_UNLOADED_MODULES_2026_10_31.md), current canonical counts are **41/58** whole coarse cases, **2,373/2,513** fine labels, **18/38** nested six-body exterior rows.
 
-The [complete multicycle adoption](../ADOPTION_FULL_THREE_PORT_REDUCTION_AND_GEOMETRIC_ESCAPE_2026_11_01.md) excludes every cyclic transmitted exit and EVERY multicycle unloaded full-three-cut module. The [latest complete adoption](../ADOPTION_COMPLETE_UNICYCLIC_FOUR_CYCLE_AND_SHORT_PRISM_EXCLUSION_2026_11_01.md) excludes the entire one-transmitter four-cycle, leaving only the direct triangle `(0,0)` cyclic. Its entire parallel-core feature is also excluded by the strict bound `R^2>9/2`, including both corner endpoints with arbitrary outside frames; only nonparallel core frames remain. Its all-ranks composition proves at most three actual bodies behind a three-edge full cut and at least four cut edges for every unloaded connected region of four or more bodies. The new dominant-contact radius is less than 23/32, and all one-edge-subdivided prisms are excluded. Complete independent reviews accompany the sources. `R-MODULE-TRICYCLE` is discharged and `R-MODULE-SMALL_UNI` stays open for the triangle; no additional original coarse/fine flag changes. C1.8.b1 retains its other graph/load domains.
+The [complete multicycle adoption](../ADOPTION_FULL_THREE_PORT_REDUCTION_AND_GEOMETRIC_ESCAPE_2026_11_01.md) and [four-cycle/cardinality adoption](../ADOPTION_COMPLETE_UNICYCLIC_FOUR_CYCLE_AND_SHORT_PRISM_EXCLUSION_2026_11_01.md) removed every cyclic three-cut profile except the direct triangle. The [complete direct-triangle and three-cut forest adoption](../ADOPTION_COMPLETE_DIRECT_TRIANGLE_AND_THREE_CUT_FOREST_2026_11_01.md) now removes that final row with exhaustive hand and exact computational proofs, independently checked. Every connected entirely unloaded full-three-cut region is one of three small tree profiles, and every unloaded cyclic region needs at least four full positive cut edges, under the original compatible-certificate hypotheses including (S). `R-MODULE-SMALL_UNI`, `R-MODULE-TRICYCLE` and `R-MODULE-SMALL_FORCE` are discharged. No original coarse/fine/exterior count changes. Higher cuts, full original-parent joins and the global common-certificate audit remain open.
 
 ## Work records by role
 
 | Refined group | Records | Status and links |
 |---|---:|---|
-| Reusable sharp geometric/branch/cut lemmas | 25 | **Two discharged (`R-MODULE-SMALL_FORCE`, `R-MODULE-TRICYCLE`); 23 retain broader obligations** — [STRUCTURAL](STRUCTURAL.md) |
+| Reusable sharp geometric/branch/cut lemmas | 25 | **Three discharged (`R-MODULE-SMALL_FORCE`, `R-MODULE-TRICYCLE`, `R-MODULE-SMALL_UNI`); 22 retain broader obligations** — [STRUCTURAL](STRUCTURAL.md) |
 | Fixed six-body exterior load and physical-mask subfamilies | 122 | **Proposed proof leaves** — [SIX_BODY](SIX_BODY.md) |
 | Original one-/two-block coarse-parent subfamilies | 71 | **15 discharged by the four complete coarse closures; 56 remain** — [COARSE_PARENTS](COARSE_PARENTS.md) |
 | Common-certificate selection, final joins, equality, independent audits | 69 | **Blocked work items**, mostly awaiting geometric closure — [INTEGRATION](INTEGRATION.md) |
 | Future Lean/registry tasks | 9 | **Deferred**, under the user's no-Lean/no-CI rule — [INTEGRATION](INTEGRATION.md) |
 | **Total distinct refined records** | **296** | **218 proposed mathematical / 69 blocked / 9 deferred** |
 
-These are **not** 296 new canonical fine gates, and **not** 296 equally difficult proof problems. They are normalized in *verification granularity*: each proposed proof leaf names a concrete physical graph/load/mask or geometric premise, one mathematical deliverable, and one falsifiable completion criterion. A hard uniform theorem may prove dozens at once. Some proposed child subfamilies may already be covered in older manuscripts; reconcile exact source scopes before claiming completion. The organizational action itself accepted no leaf. The later intact-triangle and C1.6.b3 adoptions discharge fifteen existing coarse-child records for their four whole original callers; the complete module theorems also discharge two existing structural records. No new IDs or canonical fine flags are created.
+These are **not** 296 new canonical fine gates, and **not** 296 equally difficult proof problems. They are normalized in *verification granularity*: each proposed proof leaf names a concrete physical graph/load/mask or geometric premise, one mathematical deliverable, and one falsifiable completion criterion. A hard uniform theorem may prove dozens at once. Some proposed child subfamilies may already be covered in older manuscripts; reconcile exact source scopes before claiming completion. The organizational action itself accepted no leaf. The later intact-triangle and C1.6.b3 adoptions discharge fifteen existing coarse-child records for their four whole original callers; the complete module theorems now discharge three existing structural records. No new IDs or canonical fine flags are created.
 
 ## How to use a leaf
 
@@ -59,17 +59,17 @@ A broad parent marked `C.ALL`, `G3.M.ALL`, `M6.*.ALL` or `G5.ALL` is an **assemb
 
 ## Priority
 
-The highest-leverage mathematical targets are [joint four-chain T/cross completion](STRUCTURAL.md), [branch-width versus central occupancy](STRUCTURAL.md), and [genuine mixed-side cut-wrench incompatibility](STRUCTURAL.md). Each must retain **all nine actual physical squares** and have a verifiable full-parent application across several original cases.
+The next structural target is the [complete full-four-cut physical domain](STRUCTURAL.md), with every original exit retained, followed by literal original-parent joins. Broad targets also remain [joint four-chain T/cross completion](STRUCTURAL.md), [branch-width versus central occupancy](STRUCTURAL.md), and [genuine mixed-side cut-wrench incompatibility](STRUCTURAL.md). Each must retain **all nine actual physical squares** and have a verifiable original-domain application.
 
 Use the [20 fixed six-body load-orbit refinements](SIX_BODY.md) only as a finite fallback, not an infinite stream of tiny contact-angle checkpoints. The [one-/two-block parent refinements](COARSE_PARENTS.md) state exact remaining original block contexts. Do not claim original parent closure until *all* load, contact, endpoint and completion alternatives are discharged.
 
 ## Checkpoint and evidence rules
 
-- A refined proposed leaf is checked only with a complete source-level hand proof or an already proved theorem **whose actual premises match the original child scope**, with named physical caller and review state.
+- A refined proposed leaf is checked only with a complete source-level proof, exhaustive exact certificate, or already proved theorem **whose actual premises match the original child scope**, with named physical caller and independent review state.
 - Marking a proposed child checked does **not** alter the 2,513 canonical denominator. Its original source parent remains unchecked until the complete original domain is proved.
 - When one theorem subsumes multiple leaves, cite it against all applicable IDs; do not duplicate manuscripts or create a new fake gate count.
 - Audit the proposed mask subfamilies against older adoption/review sources before asserting mathematical novelty; the refinement makes no new mathematical closure claim.
-- Do not run Lean/Lake, CI, numerical pose exclusions, or external mathematical proof scripts under the current hand-proof contract.
+- Follow the [current computer-first contract](../computer_assisted/STRATEGY_COMPUTER_FIRST_CERTIFICATES_THEN_TABLES_2026_11_01.md): numerical discovery is permitted, but exclusions require rigorous exact coverage and independently checked terminal bounds. Earlier no-script restrictions are superseded. Do not run Lean, Lake or CI.
 
 **The unrestricted n=9 sharp-radius theorem, full equality classification and downstream G4.2.c compatibility audit remain open.**
 

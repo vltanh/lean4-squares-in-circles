@@ -18,14 +18,17 @@ belongs to this chart.
 
 | Source | SHA-256 |
 | --- | --- |
-| [Physical theorem and root contract](../../computer_assisted/PERPENDICULAR_OWNER_SINGLE_FREE_TRIANGLE_EXACT_EXCLUSION_2026_11_01.md) | `9ca6538cc45c757b495e45a838be2f3a662d24e182b0bf20f350ceb4fcfe8c3a` |
+| [Physical theorem and root contract](../../computer_assisted/PERPENDICULAR_OWNER_SINGLE_FREE_TRIANGLE_EXACT_EXCLUSION_2026_11_01.md) | `415287a53b5f90e3c5439161459ede14a71309b29bc4adfd3f62f80631c283ee` |
 | [Certificate generator](../../computer_assisted/verify_perpendicular_single_free_triangle.py) | `7f20ea36c20550d996dbcc3467bdc9ec9f1ff58fd82e4e0472bf503b00d595ad` |
 | [Complete stored certificate](../../computer_assisted/perpendicular_single_free_triangle_certificate.json) | `80163adabea7bd279db5f911f110219bf45ffb9217812f52473c03a05ba5cf70` |
 | [Independent certificate checker](../../computer_assisted/verify_perpendicular_certificate_independent.py) | `104a7cd31c55d49bf698c7d415b881771bda1632f199a7450c76b1dd797853a9` |
 
 The independently regenerated certificate has the same SHA-256 as the stored
-certificate, byte for byte. These pins precede any later evidence-label-only
-adoption changes.
+certificate, byte for byte. The manuscript pin includes the reviewed reporting
+correction from “nonempty” to “variance-certified” leaves and the explicit
+statement that certification does not prove physical feasibility of a leaf.
+Its mathematical argument and executable certificate are unchanged. These
+pins precede any later evidence-label-only adoption changes.
 
 ## 2. Independent physical transfer
 
