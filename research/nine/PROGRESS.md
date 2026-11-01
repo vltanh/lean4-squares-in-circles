@@ -1,5 +1,7 @@
 # PR #11 — central research and proof-closure ledger (n = 9)
 
+> **Active workflow update (2026-11-01 UTC):** The user has authorized **computer-assisted discovery and exhaustive exact arithmetic certificates first, then compact tables, then optional hand simplification**. See the [new computer-first strategy](computer_assisted/STRATEGY_COMPUTER_FIRST_CERTIFICATES_THEN_TABLES_2026_11_01.md) and [next-session handoff](HANDOFF_COMPUTER_FIRST_NEXT_SESSION_2026_11_01.md). Earlier instructions forbidding mathematical scripts are superseded; **no Lean, Lake or CI**. The exact triangle-force screen is a proper-feature reduction awaiting independent review, not a fifth original parent closure. **Canonical status remains 41/58 coarse, 2,373/2,513 fine, 18/38 nested six-body rows.**
+
 [Organized file map](ORGANIZATION.md) · [Review archive](reviews/README.md) · [Topic indexes](areas/README.md) · [Historical chronology](history/CHRONOLOGICAL_RESEARCH_README_2026_10_31.md)
 
 **Authoritative live status index for PR #11.** Snapshot: 2026-11-01 UTC, reconciled against the original 58 coarse rows in [CYCLIC_CELL_LEDGER.md](CYCLIC_CELL_LEDGER.md) and the unchecked gates in [DEEP_GATED_ROADMAP.md](DEEP_GATED_ROADMAP.md). This index replaces chronological README/handoff paragraphs as the place to read or update current progress. The source proofs, original row flags, review manuscripts, and historical timelines remain in their original files. Nothing is newly certified by this bookkeeping consolidation.
