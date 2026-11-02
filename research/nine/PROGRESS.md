@@ -1,5 +1,15 @@
 # n=9: current status and the fixed closure queue
 
+## New computer-first continuation — exact pilot, no global closure
+
+Execution order is now **computer-assisted certificate search → independent exact replay → hand/table presentation**. Lean, Lake and CI remain deferred. The fixed 32-mask frontier is unchanged.
+
+The new [58-leaf exact no-eighth table](computer_assisted/NO_EIGHTH_FIXED_SEVEN_HAND_TABLE.md), independently regenerated and checked by `computer_assisted/make_no_eighth_certificate.py` and `computer_assisted/verify_no_eighth_certificate.py`, proves that the *one fixed seven-square rational negative control* cannot accept an eighth square at or below Q. Its 58 rational center boxes have maximum depth 13, and its final oblique-square cap has squared-distance margin `518311/70560000`. This is an exact **fixed-pose** theorem, not a closure for a moving 9-square mask or canonical positional root.
+
+The new `computer_assisted/emit_fixed_mask.py` emits an exact degree-two QF_NRA predicate for all nine moving physical squares and the entire `000/01` domain (45 real variables; 36 pair branches; 36 corner tests; no square-0 horizontal gauge). `computer_assisted/test_emit_fixed_mask.py` independently evaluates the SMT-LIB assertions at the rational seven-square strict control and the nine-square closed-Q equality witness. Both controls passed locally. No nonlinear UNSAT certificate was obtained; the current runtime has no standalone nonlinear real SMT solver.
+
+**This continuation adds zero complete mask closures and zero root exclusions.** Active `000/01` and reversal `000/10` remain OPEN, as do A.2, unrestricted equality and the final manuscript. The two ledgers remain the previously reported **5,838/7,915 closed-Q root exclusions (2,077 open)** and **2/32 strict-radius mask proofs (30 open)**. An attempted certificate must close the complete moving domain; the 58-leaf pilot is not a global caller.
+
 **Unrestricted lower bound: OPEN. Full equality: OPEN. Final manuscript: OPEN.**
 
 Current instruction: hand proof; exact tables allowed; no Lean, Lake, or CI; mathematical scripts only for testing potential directions, never as proof evidence.

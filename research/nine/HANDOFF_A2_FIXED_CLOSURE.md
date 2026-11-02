@@ -1,5 +1,7 @@
 # Current A.2 handoff: close the fixed full domain 000/01
 
+**Updated computational handoff:** The user authorized computer-assisted proof discovery first. Produce a genuine exact certificate over all moving physical squares for `000/01` (or a canonical original root), independently replay it, and only then write the hand/table proof. `computer_assisted/emit_fixed_mask.py` generates the full target; `test_emit_fixed_mask.py` supplies positive/negative exact controls. The 58-leaf fixed-seven no-eighth certificate and its independent checker are a successful *pipeline* test only, not a nine-square closure. The current runtime lacks an exact nonlinear SMT solver; a solver's unsupported `unsat` answer would not itself be an accepted certificate. No new gate IDs or full-domain closures.
+
 **Global status: OPEN. Latest attempt: OPEN / BLOCKED. New full-domain closures: zero.**
 
 Read `A2_COVERAGE_AND_CLOSURE_CONTRACT.md` and then `A2_000_01_ATTEMPT.md`. The proof sources remain a library, not separate active owner/sign/threshold campaigns. No mandatory subgates were added by the latest attempt.

@@ -8,7 +8,7 @@
   "active_target": "000/01",
   "active_target_reversal_partner": "000/10",
   "proof_logic": "Faithful physical model + exhaustive coverage + complete strict-radius closure + justified global assembly => unrestricted lower bound. Equality and final manuscript remain separate deliverables.",
-  "method_preference": "HAND_PROOF_TABLES_ALLOWED_SCRIPTS_ONLY_FOR_POTENTIAL_DIRECTIONS_NO_LEAN_CI",
+  "method_preference": "COMPUTER_ASSISTED_EXACT_CERTIFICATE_FIRST_INDEPENDENT_REPLAY_SECOND_HAND_TABLE_THIRD_NO_LEAN_LAKE_CI",
   "honest_counter_policy": "FIXED_FULL_DOMAINS_ONLY; CLOSED_Q_EXCLUSIONS_SEPARATE_FROM_STRICT_RADIUS_DISCHARGES; NO_COMPLETION_PERCENTAGE",
   "coverage_contract": "A2_COVERAGE_AND_CLOSURE_CONTRACT.md",
   "mask_frontier": "gates/A2_MASK_FRONTIER.json",
@@ -42,7 +42,10 @@
   },
   "hand_frontier": {
     "fixed_masks": 32,
-    "closed_for_strict_radius": ["000/00", "010/00"],
+    "closed_for_strict_radius": [
+      "000/00",
+      "010/00"
+    ],
     "open_mask_count": 30,
     "all_original_physical_pairs_retained": true,
     "all_nine_squares_retained": true,
@@ -65,21 +68,96 @@
     "dependency_chain_independently_reaudited_in_this_reset": false
   },
   "gates": [
-    {"id":"A","status":"OPEN","goal":"Global unrestricted lower bound q>=Q","exit":"Complete no-strict-counterexample proof with justified assembly"},
-    {"id":"A.0","status":"SOURCE_AVAILABLE","goal":"Faithful physical model and exact attaining witness","exit":"Audit geometric equivalence and witness"},
-    {"id":"A.1","status":"EXPLICIT_COVER_AVAILABLE","goal":"Exhaustive original physical coverage","exit":"Every strict counterexample covered; no tractability assertion"},
-    {"id":"A.1a","status":"SOURCE_AVAILABLE","goal":"Retain all nine frames, 36 corners, and 36 original pair constraints","exit":"No hidden coordinate-cover, graph, or orientation restriction"},
-    {"id":"A.1b","status":"PROVED_SOURCE_AND_EXACT_ENUMERATION","goal":"Preserve original root cover and hand-mask extraction sources","exit":"Every physical counterexample enters a stated fixed domain"},
-    {"id":"A.1c","status":"PROVED_FOR_HEX_COVER","goal":"Retain closed boundaries and weak contacts","exit":"No equality face or degenerate separator omitted"},
-    {"id":"A.2","status":"OPEN","goal":"Close complete fixed strict-radius domains or prove a universal terminal extraction","exit":"No unresolved physical strict counterexample; conditional subdomains do not suffice"},
-    {"id":"A.3","status":"OPEN","goal":"Audit the complete global proof and its dependency assembly","exit":"Full hand/table argument valid for every q<Q, including arbitrarily near Q"},
-    {"id":"B","status":"OPEN","goal":"Full equality classification at Q","exit":"Necessary-and-sufficient unrestricted families"},
-    {"id":"B.1","status":"EQUALITY_ROOT_COVER_SUPPLIED","goal":"Complete closed-Q physical cover","exit":"No equality packing omitted"},
-    {"id":"B.2","status":"OPEN","goal":"Derive all equality structures and parameter ranges","exit":"Every attaining packing represented up to actual common symmetries"},
-    {"id":"B.3","status":"OPEN","goal":"Prove the constructive converse","exit":"Every stated global parameter value feasible"},
-    {"id":"C","status":"OPEN","goal":"Complete human-checkable bound and equality proof","exit":"One fully assembled unrestricted manuscript"},
-    {"id":"C.1","status":"OPEN","goal":"Write the full coverage, terminal, and equality derivation","exit":"No missing caller or automated black-box inference"},
-    {"id":"C.2","status":"OPEN","goal":"Independently audit the final manuscript and exact tables","exit":"Arithmetic, geometry, and boundary implications confirmed"}
+    {
+      "id": "A",
+      "status": "OPEN",
+      "goal": "Global unrestricted lower bound q>=Q",
+      "exit": "Complete no-strict-counterexample proof with justified assembly"
+    },
+    {
+      "id": "A.0",
+      "status": "SOURCE_AVAILABLE",
+      "goal": "Faithful physical model and exact attaining witness",
+      "exit": "Audit geometric equivalence and witness"
+    },
+    {
+      "id": "A.1",
+      "status": "EXPLICIT_COVER_AVAILABLE",
+      "goal": "Exhaustive original physical coverage",
+      "exit": "Every strict counterexample covered; no tractability assertion"
+    },
+    {
+      "id": "A.1a",
+      "status": "SOURCE_AVAILABLE",
+      "goal": "Retain all nine frames, 36 corners, and 36 original pair constraints",
+      "exit": "No hidden coordinate-cover, graph, or orientation restriction"
+    },
+    {
+      "id": "A.1b",
+      "status": "PROVED_SOURCE_AND_EXACT_ENUMERATION",
+      "goal": "Preserve original root cover and hand-mask extraction sources",
+      "exit": "Every physical counterexample enters a stated fixed domain"
+    },
+    {
+      "id": "A.1c",
+      "status": "PROVED_FOR_HEX_COVER",
+      "goal": "Retain closed boundaries and weak contacts",
+      "exit": "No equality face or degenerate separator omitted"
+    },
+    {
+      "id": "A.2",
+      "status": "OPEN",
+      "goal": "Close complete fixed strict-radius domains or prove a universal terminal extraction",
+      "exit": "No unresolved physical strict counterexample; conditional subdomains do not suffice"
+    },
+    {
+      "id": "A.3",
+      "status": "OPEN",
+      "goal": "Audit the complete global proof and its dependency assembly",
+      "exit": "Full hand/table argument valid for every q<Q, including arbitrarily near Q"
+    },
+    {
+      "id": "B",
+      "status": "OPEN",
+      "goal": "Full equality classification at Q",
+      "exit": "Necessary-and-sufficient unrestricted families"
+    },
+    {
+      "id": "B.1",
+      "status": "EQUALITY_ROOT_COVER_SUPPLIED",
+      "goal": "Complete closed-Q physical cover",
+      "exit": "No equality packing omitted"
+    },
+    {
+      "id": "B.2",
+      "status": "OPEN",
+      "goal": "Derive all equality structures and parameter ranges",
+      "exit": "Every attaining packing represented up to actual common symmetries"
+    },
+    {
+      "id": "B.3",
+      "status": "OPEN",
+      "goal": "Prove the constructive converse",
+      "exit": "Every stated global parameter value feasible"
+    },
+    {
+      "id": "C",
+      "status": "OPEN",
+      "goal": "Complete human-checkable bound and equality proof",
+      "exit": "One fully assembled unrestricted manuscript"
+    },
+    {
+      "id": "C.1",
+      "status": "OPEN",
+      "goal": "Write the full coverage, terminal, and equality derivation",
+      "exit": "No missing caller or automated black-box inference"
+    },
+    {
+      "id": "C.2",
+      "status": "OPEN",
+      "goal": "Independently audit the final manuscript and exact tables",
+      "exit": "Arithmetic, geometry, and boundary implications confirmed"
+    }
   ],
   "closure_acceptance": {
     "allowed_mathematical_deliverables": [
@@ -112,6 +190,29 @@
       "Closed-Q root exclusions are not confused with strict-radius sharp proofs"
     ]
   },
-  "deferred": ["Lean", "Lake", "CI"],
-  "legacy_gate_registry": "SUPERSEDED_NO_ACTIVE_PROGRESS_COUNTER"
+  "deferred": [
+    "Lean",
+    "Lake",
+    "CI"
+  ],
+  "legacy_gate_registry": "SUPERSEDED_NO_ACTIVE_PROGRESS_COUNTER",
+  "computer_first": {
+    "active": true,
+    "target": "unrestricted full nine-square 000/01 mask; reversal 000/10",
+    "mask_emitter": "computer_assisted/emit_fixed_mask.py",
+    "exact_controls": "computer_assisted/test_emit_fixed_mask.py",
+    "pilot_hand_table": "computer_assisted/NO_EIGHTH_FIXED_SEVEN_HAND_TABLE.md",
+    "pilot_generator": "computer_assisted/make_no_eighth_certificate.py",
+    "pilot_independent_checker": "computer_assisted/verify_no_eighth_certificate.py",
+    "pilot_proven_scope": "Fixed rational seven square poses have no eighth extension at q<=Q",
+    "pilot_exact_terminal_boxes": 58,
+    "pilot_box_max_depth": 13,
+    "pilot_cap_squared_distance_margin": "518311/70560000",
+    "pilot_new_mask_closures": 0,
+    "pilot_new_root_exclusions": 0,
+    "global_unsat_certificate_found": false,
+    "nonlinear_nra_solver_available_in_current_runtime": false,
+    "output_rule": "A full exact verified closure certificate is required before any new mask or root status; final hand table after exact checker replay.",
+    "lean_lake_ci_run": false
+  }
 }

@@ -1,5 +1,9 @@
 # n=9: fixed-domain roadmap
 
+## Proof method updated: exact computer-assisted certificates first
+
+Use existing source QF_NRA models and finite rational enclosure methods to discover complete contradictions, subject to independent exact certificate replay. `computer_assisted/emit_fixed_mask.py` emits the fixed full nine-square mask predicate, while the 58-leaf `computer_assisted/NO_EIGHTH_FIXED_SEVEN_HAND_TABLE.md` is a verified **fixed-pose** pilot that does not close any active mask. The eventual proof must handle all nine moving squares, strict radius arbitrarily close to Q, and every boundary/contact convention. No new mandatory subgates; the same 15 gate IDs and 32 masks are preserved. Once a whole domain is certified, present its rational leaves as a final human-checkable table. No Lean, Lake or CI.
+
 November 1, 2026, America/Chicago. Supersedes the expanding active research queue; preserves the same 15 roadmap IDs, all 7,915 positional root IDs, and every existing proof source.
 
 **Target:** every nine-square packing has q>=Q=1105/256; then classify every equality packing and assemble a complete hand/table manuscript. **All three global deliverables remain OPEN. Active gate: A.2.**
