@@ -1,440 +1,117 @@
 {
-  "schema": "n9_theorem_only_v3",
+  "schema": "n9_fixed_domain_closure_v4",
   "target_q": "1105/256",
   "theorem": "OPEN",
   "equality": "OPEN",
   "hand_proof": "OPEN",
   "active_gate": "A.2",
-  "proof_logic": "A.0 AND A.1 AND A.2 AND A.3 => sharp lower bound; B.1..B.3 => complete equality; C.1..C.2 => final hand/table proof",
+  "active_target": "000/01",
+  "active_target_reversal_partner": "000/10",
+  "proof_logic": "Faithful physical model + exhaustive coverage + complete strict-radius closure + justified global assembly => unrestricted lower bound. Equality and final manuscript remain separate deliverables.",
   "method_preference": "HAND_PROOF_TABLES_ALLOWED_SCRIPTS_ONLY_FOR_POTENTIAL_DIRECTIONS_NO_LEAN_CI",
-  "honest_counter_policy": "FIXED_HEX_ROOT_COUNTS_ONLY_NOT_A_COMPLETION_PERCENTAGE",
+  "honest_counter_policy": "FIXED_FULL_DOMAINS_ONLY; CLOSED_Q_EXCLUSIONS_SEPARATE_FROM_STRICT_RADIUS_DISCHARGES; NO_COMPLETION_PERCENTAGE",
+  "coverage_contract": "A2_COVERAGE_AND_CLOSURE_CONTRACT.md",
+  "mask_frontier": "gates/A2_MASK_FRONTIER.json",
+  "current_handoff": "HANDOFF_A2_FIXED_CLOSURE.md",
+  "baseline_commit": "ea4ff8bad97a58e2b8633ab69f549acb5352e573",
+  "prior_registry_url": "https://github.com/vltanh/lean4-squares-in-circles/blob/ea4ff8bad97a58e2b8633ab69f549acb5352e573/research/nine/gates/ACTIVE_ROADMAP.json",
   "current_cover": {
     "source": "computer_assisted/HEXAGON_ROOT_COVER_AND_FIRST_EXCLUSIONS.md",
     "summary": "computer_assisted/coupled_separator_verification_summary.json",
-    "verification": "computer_assisted/coupled_separator_verification_summary.json",
-    "emitter_controls": "computer_assisted/hex_emitter_test_report.json",
     "roots": 7915,
     "excluded": 5838,
     "open": 2077,
+    "count_kind": "HISTORICAL_PUBLISHED_CLOSED_Q_EXCLUSIONS",
+    "replayed_in_this_reset": false,
+    "generated_root_manifest": "computer_assisted/coupled_separator_root_manifest.json",
+    "manifest_sha256": "bc2f1dcc4e16b413beb960616793bdb84c20ae51c7fa29617245eb2cb0db9990",
+    "generated_certificate": "computer_assisted/coupled_separator_certificate.json",
+    "certificate_sha256": "9476a646b98cacec92c66aa9bff976975233e52bf8fa66f4905b92bd9b112266",
+    "manifest_recovered_or_regenerated_in_this_reset": false,
     "certificate_cores": 506,
     "equality_witness_root": 7820,
+    "equality_witness_must_remain_nonempty_at_closed_Q": true,
     "all_orientations_retained": true,
     "all_q_le_Q_covered": true,
     "all_remaining_roots_tractable": false,
-    "tractability_note": "Same 7915 original roots. Present certificates have a complete independent replay. No feasibility or uniform difficulty claim for 2077 OPEN physical roots.",
-    "separate_human_review_performed": false,
     "global_lower_bound_proved": false,
-    "prior_excluded": 3986,
-    "newly_excluded": 1852,
-    "exclusion_source": "computer_assisted/COUPLED_SEPARATOR_CERTIFICATES.md",
-    "generated_root_manifest": "computer_assisted/coupled_separator_root_manifest.json",
-    "generated_certificate": "computer_assisted/coupled_separator_certificate.json",
-    "retained_prior_cores": 259,
-    "new_certificate_cores": 247,
-    "new_propagation_rows": 8777,
-    "new_proof_nodes": 401,
-    "new_binary_splits": 77,
-    "hand_table_source": "computer_assisted/THREE_CELL_HAND_PROOF.md",
-    "hand_table_verification": "computer_assisted/three_cell_table_verification_report.json"
+    "new_full_root_exclusions_in_this_reset": 0,
+    "new_strict_root_discharges_in_this_reset": [],
+    "archive_only_312_extra_exclusions_transferred": false,
+    "separate_human_review_performed": false
   },
-  "publication": {
-    "status": "SOURCE_CHECKPOINTS_PUSHED",
-    "original_sharp_commit": "d05959c9f4a3347b5725fb2f761b765717593234",
-    "coupled_checkpoint_commit": "d9461466b5495bd92f8f0244f8b7a7c003ae8d05",
-    "wide_slide_commit": "cd1ab86a45d602ced0e133790c90d70cd0307d5c",
-    "generated_artifacts": "Reproducible from committed generators; full exact copies in conversation archives, not all checked in as blobs."
+  "hand_frontier": {
+    "fixed_masks": 32,
+    "closed_for_strict_radius": ["000/00", "010/00"],
+    "open_mask_count": 30,
+    "all_original_physical_pairs_retained": true,
+    "all_nine_squares_retained": true,
+    "new_mask_closures_in_this_reset": [],
+    "new_roadmap_gate_ids": [],
+    "conditional_lemma_tree_frozen": true,
+    "mandatory_child_gates_allowed": false,
+    "proof_discovery_termination_proved": false,
+    "uniform_leaf_difficulty_claimed": false,
+    "completion_percentage": null
   },
-  "sharp_terminals": [
-    {
-      "source": "computer_assisted/SHARP_NEIGHBORHOOD_THEOREM.md",
-      "verification": "computer_assisted/sharp_neighborhood_verification_report.json",
-      "scope": "conditional seven-square sharp chart",
-      "global_caller_proved": false
-    },
-    {
-      "source": "computer_assisted/WIDE_SLIDE_SHARP_TERMINAL.md",
-      "verification": "computer_assisted/wide_slide_verification_report.json",
-      "interface": "computer_assisted/emit_sharp_terminal.py",
-      "interface_tests": "computer_assisted/sharp_terminal_emitter_test_report.json",
-      "scope": "strictly wider local chart; exact q<Q sharpness and local equality slides",
-      "global_caller_proved": false,
-      "new_full_root_exclusions": 0
-    },
-    {
-      "source": "TWO_STRIP_SEVEN_SQUARE_HAND_PROOF_2026_11_01.md",
-      "verification": "independent agent hand checks of geometry, identities and all fourteen printed sign layers",
-      "scope": "four centers in middle strip plus three below; relative tilts<=1/64 in leftmost middle-square frame",
-      "global_caller_proved": false,
-      "new_full_root_exclusions": 0
-    },
-    {
-      "source": "THREE_SQUARE_SHARP_HALFPLANE_CAP_HAND_PROOF.md",
-      "verification": "root and independent agent hand reconstruction; closed-marker equality and strict-counterexample expansion checked",
-      "scope": "three arbitrary physical unit squares wholly in a half-plane at distance7/16 from the disk center",
-      "global_caller_proved": false,
-      "new_full_root_exclusions": 0,
-      "equality": "Complete for this three-square cap: aligned outer centers(±1,15/16), middle(0,t),15/16<=t<=(sqrt1041-8)/16."
-    }
-  ],
-  "known_inputs": [
-    {
-      "asset": "computer_assisted/emit_unrestricted_nine.py",
-      "status": "SOURCE_AVAILABLE",
-      "scope": "full unrestricted physical formula; no global UNSAT result"
-    },
-    {
-      "asset": "computer_assisted/UNRESTRICTED_MODEL_AND_ROW_CERTIFICATE.md",
-      "status": "SOURCE_AVAILABLE",
-      "scope": "physical model and conditional parallel 4+3 row proof"
-    },
-    {
-      "asset": "computer_assisted/row43_certificate.json",
-      "status": "CHECKED_CONDITIONAL",
-      "scope": "parallel 4+3 continuous subfamily"
-    },
-    {
-      "asset": "computer_assisted/TWO_DIRECTION_SEPARABLE_NINE_SUMMARY.md",
-      "status": "SUPERSEDED_BY_COMPLETE_HAND_THEOREM",
-      "scope": "all two-direction-separable nine-square packings, with arbitrary covering angle; unrestricted coverage still unproved"
-    },
-    {
-      "asset": "computer_assisted/HEXAGON_ROOT_COVER_AND_FIRST_EXCLUSIONS.md",
-      "status": "SOURCE_PROOF_AND_SEPARATE_EXACT_REPLAY",
-      "scope": "full root cover and first 81 exclusions"
-    },
-    {
-      "asset": "computer_assisted/SQUARE_POSE_CERTIFICATES.md",
-      "status": "SOURCE_PROOF_AND_SEPARATE_EXACT_REPLAY",
-      "scope": "83 cores exclude 886 closed-Q roots"
-    },
-    {
-      "asset": "computer_assisted/DISK_SUPPORT_CERTIFICATES.md",
-      "status": "SOURCE_PROOF_AND_SEPARATE_EXACT_REPLAY",
-      "scope": "176 additional cores give 3986 closed-Q exclusions"
-    },
-    {
-      "asset": "computer_assisted/COUPLED_SEPARATOR_CERTIFICATES.md",
-      "status": "SOURCE_PROOF_AND_SEPARATE_EXACT_REPLAY",
-      "scope": "247 additional cores give 5838 exclusions with all earlier proofs retained"
-    },
-    {
-      "asset": "computer_assisted/SHARP_NEIGHBORHOOD_THEOREM.md",
-      "status": "HAND_DERIVATION_AND_EXACT_ARITHMETIC_REPLAY",
-      "scope": "conditional sharp terminal, not a global caller"
-    },
-    {
-      "asset": "computer_assisted/WIDE_SLIDE_SHARP_TERMINAL.md",
-      "status": "HAND_DERIVATION_AND_EXACT_ARITHMETIC_REPLAY",
-      "scope": "strictly wider sharp terminal with local equality slides and original-coordinate guard interface"
-    },
-    {
-      "asset": "TWO_DIRECTION_SEPARABLE_NINE_HAND_PROOF_2026_11_01.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "complete sharp theorem and class equality for every two-direction cover; explicit Greene and physical4+3 dependencies"
-    },
-    {
-      "asset": "TWO_SQUARE_SHARP_CAP_HAND_PROOF.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "universal sharp two-square cap, common point, equality pair, center/arc/boundary corollaries"
-    },
-    {
-      "asset": "TWO_STRIP_SEVEN_SQUARE_HAND_PROOF_2026_11_01.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "sharp two-strip seven-square terminal without horizontal or separate anchor coordinate boxes"
-    },
-    {
-      "asset": "BOUNDARY_NORMALIZATION_WITH_SHARP_CAP_HAND_PROOF.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "global equivalent strict-counterexample domain; boundary square parameter and all other centers x<H; domain emptiness unproved"
-    },
-    {
-      "asset": "CROSSED_SIGN_EQUALITY_EXCLUSION_2026_11_01.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "crossed signed seven-anchor equality configurations admit at most one additional coordinate-separated square; same signs necessary for nine-square two-direction equality"
-    },
-    {
-      "asset": "ONE_EXCEPTION_PAIR_SPAN_AND_SHARP_TERMINAL_2026_11_01.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "universal quantitative inscribed-square pair inequality; sharp conditional endpoint-span terminal with an oblique internal pair"
-    },
-    {
-      "asset": "ONE_EXCEPTION_RANK_AND_WIDTH_REDUCTIONS_2026_11_01.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "Complete width-five branch and rank reductions; full one-exception class now closed by the November 2 synthesis"
-    },
-    {
-      "asset": "ONE_EXCEPTION_RANK_BOUNDARY_CONTINUATION.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "single-comparison transitive augmentation; complete augmented-grid exclusion; original height-three reduction; no endpoint closure"
-    },
-    {
-      "asset": "ONE_EXCEPTION_HEIGHT_FOUR_CONTINUATION.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "Complete reduction to two weak endpoint patterns; both now closed by the November 2 synthesis"
-    },
-    {
-      "asset": "END_EXCEPTION_EIGHT_SQUARE_OBSTRUCTION.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "exact subcritical eight-square one-exception packing with actual heights three and weak end-chain pattern; ninth square essential"
-    },
-    {
-      "asset": "GLOBAL_GEOMETRIC_CONTINUATION.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "exact nine-square equality packing whose minimum exception count over any pair of projection directions is three; no unconditional closed-Q small-exception cover"
-    },
-    {
-      "asset": "ONE_EXCEPTION_NINE_HAND_PROOF_2026_11_02.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "Complete sharp lower bound for every orthogonal cover with at most one exceptional pair; unrestricted cover and wider equality remain open"
-    },
-    {
-      "asset": "ONE_EXCEPTION_TRANSVERSE_GRID_HAND_PROOF.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "Far-endpoint obstruction, outer common point and complete hard original full-grid exclusion"
-    },
-    {
-      "asset": "PATTERN_II_NINE_SQUARE_CONTINUATION.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "Exact actual-four endpoint budget, outsider strip, side capacities and complete one-middle branch"
-    },
-    {
-      "asset": "BROAD_NINE_SQUARE_GEOMETRIC_CONTINUATION.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "Complete Pattern II five-outsider capacity, every middle occupancy and exception location"
-    },
-    {
-      "asset": "DOWNWARD_THREE_SQUARE_CAP_HAND_PROOF.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "Strict downward physical transfer cap with derived floor; all E/N/D scalar branches proved"
-    },
-    {
-      "asset": "UPWARD_THREE_SQUARE_CAP_ORIENTATION_PROOF.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "Strict upward transfer cap from quantitative matched orientation reserve"
-    },
-    {
-      "asset": "PATTERN_I_NINE_SQUARE_CONTINUATION.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "Rank reductions, far-endpoint uniqueness, actual neighbors and owned middle-slope interval exclusion"
-    },
-    {
-      "asset": "PATTERN_I_COMMON_LOWER_CAP_HAND_PROOF.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "Common-lower cap through downward slope 27/46"
-    },
-    {
-      "asset": "PATTERN_I_UPWARD_CAP_HAND_PROOF.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "Actual upper-neighbor cap through upward slope 18/25"
-    },
-    {
-      "asset": "PATTERN_I_STEEP_UPWARD_HAND_PROOF.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "Entire upward-sign closure, both owners, far-edge bound and independently signed aggregate caller"
-    },
-    {
-      "asset": "PATTERN_I_DOWNWARD_OWNER_EXTENSION_HAND_PROOF.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "Both downward owners through slope 18/25; exact side-normal support and retained owner penalty"
-    },
-    {
-      "asset": "PATTERN_I_STEEP_DOWNWARD_HAND_PROOF.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "Large downward owned slopes, outer-edge directional bound and aggregate terminal"
-    },
-    {
-      "asset": "PATTERN_I_ACTUAL_HEIGHT_FOUR_BRIDGE.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "Every original fat-direction actual four-chain in Pattern I reaches a physical sharp terminal"
-    },
-    {
-      "asset": "PATTERN_I_PERPENDICULAR_HEIGHT_FOUR_BRIDGE.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "Every original perpendicular actual four-chain in Pattern I is settled without perpendicular fatness"
-    },
-    {
-      "asset": "PATTERN_I_HEIGHT_THREE_COMPLETE_HAND_PROOF.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "All normalized height-three Pattern I diagrams closed by sharp spans or derived vertical thinness"
-    },
-    {
-      "asset": "UNRESTRICTED_FIVE_PROXY_CHAIN_HAND_PROOF.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "Unconditional selective-order construction, height<=4, and completed3x3 / completed4+3 dichotomy; added edges remain nonphysical"
-    },
-    {
-      "asset": "UNRESTRICTED_ACTUAL_FOUR_CHAIN_OUTSIDER_STRIP_HAND_PROOF.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "Every physical outsider of an actual four-chain has |x|<13/12; no coordinate cover required"
-    },
-    {
-      "asset": "THREE_SQUARE_DIRECTIONAL_CAP_21_OVER_20_HAND_PROOF.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "Universal three-center cap, interior two-point capture, and stronger normalized boundary guard"
-    },
-    {
-      "asset": "THREE_SQUARE_SHARP_HALFPLANE_CAP_HAND_PROOF.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "Sharp physical three-square half-plane terminal beyond distance7/16, with complete equality family; closed-marker and strict-counterexample proof"
-    },
-    {
-      "asset": "UNRESTRICTED_ROTATING_FRAME_EXTRACTION_HAND_PROOF.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "Unconditional rotating-frame completed4+3 extraction by closed comparison sets, locally constant full-grid ranks and half-turn contradiction; added consecutive edges remain weak"
-    },
-    {
-      "asset": "UNRESTRICTED_ACTUAL_FOUR_CHAIN_SIDE_CAPACITY_HAND_PROOF.md",
-      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "Closed three-marker capture on each side of an actual four-chain; at most two outsiders per side in a strict counterexample"
-    }
-  ],
+  "proof_library": {
+    "status": "PRESERVED_REUSABLE_SOURCES_NOT_A_PARALLEL_ACTIVE_QUEUE",
+    "historical_catalogue": "https://github.com/vltanh/lean4-squares-in-circles/blob/ea4ff8bad97a58e2b8633ab69f549acb5352e573/research/nine/PROGRESS.md",
+    "unconditional_extraction": "CENTER_CONE_ROTATION_AND_ADJACENT_FIRST_BIRTH_HAND_PROOF.md",
+    "actual_chain_terminal": "PHYSICAL_TWO_SQUARE_CAP_SUPPORT_AND_UNRESTRICTED_FOUR_PLUS_THREE_CHAINS_2026_10_31.md",
+    "weak_middle_terminal": "COMPLETED_MIDDLE_LINK_SHARP_TERMINAL_HAND_PROOF.md",
+    "latest_conditional_checkpoint": "A2_OUTWARD_OWNER_PERIMETER_AND_EXTREME_ROUTING_CHECKPOINT.md",
+    "scope_rule": "Every imported theorem keeps all printed hypotheses; no missing caller is inferred from an asset title or prior status.",
+    "dependency_chain_independently_reaudited_in_this_reset": false
+  },
   "gates": [
-    {
-      "id": "A",
-      "status": "OPEN",
-      "goal": "Global unrestricted bound q>=Q for every physical nine-square packing",
-      "exit": "All q<Q counterexamples excluded in a complete exact argument"
-    },
-    {
-      "id": "A.0",
-      "status": "SOURCE_AVAILABLE",
-      "goal": "Exact original physical model and q=Q witness",
-      "exit": "Independently audit geometric equivalence and known witness"
-    },
-    {
-      "id": "A.1",
-      "status": "EXPLICIT_COVER_AVAILABLE",
-      "goal": "Provably exhaustive and manageable global counterexample cover",
-      "exit": "Every original q<Q packing belongs to an explicitly described terminal domain"
-    },
-    {
-      "id": "A.1a",
-      "status": "SOURCE_AVAILABLE",
-      "goal": "Complete unrestricted original QF_NRA encoding",
-      "exit": "All poses/corners/weak pair separations, no graph or orientation hypotheses"
-    },
-    {
-      "id": "A.1b",
-      "status": "PROVED_SOURCE_AND_EXACT_ENUMERATION",
-      "goal": "Generate explicit finite root/child/leaf coverage",
-      "exit": "Every potential q<Q packing is covered; cover is practically checkable"
-    },
-    {
-      "id": "A.1c",
-      "status": "PROVED_FOR_HEX_COVER",
-      "goal": "Prove boundary, singular, weak-contact coverage",
-      "exit": "No zero-sign or repeated-normal face discarded"
-    },
-    {
-      "id": "A.2",
-      "status": "OPEN",
-      "goal": "Close every generated finite real leaf",
-      "exit": "Each leaf has exact checkable contradiction, no unknown leaves"
-    },
-    {
-      "id": "A.3",
-      "status": "OPEN",
-      "goal": "Independently replay full certificate and soundness",
-      "exit": "Checker proves unrestricted no q<Q, arbitrarily close to Q"
-    },
-    {
-      "id": "B",
-      "status": "OPEN",
-      "goal": "Full equality classification q=Q",
-      "exit": "Necessary-and-sufficient explicit family"
-    },
-    {
-      "id": "B.1",
-      "status": "EQUALITY_ROOT_COVER_SUPPLIED",
-      "goal": "Complete closed q=Q physical cover",
-      "exit": "No equality pose, tangent or oblique case omitted"
-    },
-    {
-      "id": "B.2",
-      "status": "OPEN",
-      "goal": "Derive all allowed structures and parameter ranges",
-      "exit": "All equality packings represented up to exact symmetries"
-    },
-    {
-      "id": "B.3",
-      "status": "OPEN",
-      "goal": "Verify constructive converse",
-      "exit": "Every listed parameter value feasible, no extra physical equality packing"
-    },
-    {
-      "id": "C",
-      "status": "OPEN",
-      "goal": "Complete human-checkable proof with exact tables",
-      "exit": "Paper-level unrestricted bound and equality, independently checkable"
-    },
-    {
-      "id": "C.1",
-      "status": "OPEN",
-      "goal": "Write complete cover/terminal/equality hand derivation",
-      "exit": "No unproved automated black boxes; exact tables allowed"
-    },
-    {
-      "id": "C.2",
-      "status": "OPEN",
-      "goal": "Independently audit tables and manuscript",
-      "exit": "All integer/rational sign checks and boundary implications independently confirmed"
-    }
+    {"id":"A","status":"OPEN","goal":"Global unrestricted lower bound q>=Q","exit":"Complete no-strict-counterexample proof with justified assembly"},
+    {"id":"A.0","status":"SOURCE_AVAILABLE","goal":"Faithful physical model and exact attaining witness","exit":"Audit geometric equivalence and witness"},
+    {"id":"A.1","status":"EXPLICIT_COVER_AVAILABLE","goal":"Exhaustive original physical coverage","exit":"Every strict counterexample covered; no tractability assertion"},
+    {"id":"A.1a","status":"SOURCE_AVAILABLE","goal":"Retain all nine frames, 36 corners, and 36 original pair constraints","exit":"No hidden coordinate-cover, graph, or orientation restriction"},
+    {"id":"A.1b","status":"PROVED_SOURCE_AND_EXACT_ENUMERATION","goal":"Preserve original root cover and hand-mask extraction sources","exit":"Every physical counterexample enters a stated fixed domain"},
+    {"id":"A.1c","status":"PROVED_FOR_HEX_COVER","goal":"Retain closed boundaries and weak contacts","exit":"No equality face or degenerate separator omitted"},
+    {"id":"A.2","status":"OPEN","goal":"Close complete fixed strict-radius domains or prove a universal terminal extraction","exit":"No unresolved physical strict counterexample; conditional subdomains do not suffice"},
+    {"id":"A.3","status":"OPEN","goal":"Audit the complete global proof and its dependency assembly","exit":"Full hand/table argument valid for every q<Q, including arbitrarily near Q"},
+    {"id":"B","status":"OPEN","goal":"Full equality classification at Q","exit":"Necessary-and-sufficient unrestricted families"},
+    {"id":"B.1","status":"EQUALITY_ROOT_COVER_SUPPLIED","goal":"Complete closed-Q physical cover","exit":"No equality packing omitted"},
+    {"id":"B.2","status":"OPEN","goal":"Derive all equality structures and parameter ranges","exit":"Every attaining packing represented up to actual common symmetries"},
+    {"id":"B.3","status":"OPEN","goal":"Prove the constructive converse","exit":"Every stated global parameter value feasible"},
+    {"id":"C","status":"OPEN","goal":"Complete human-checkable bound and equality proof","exit":"One fully assembled unrestricted manuscript"},
+    {"id":"C.1","status":"OPEN","goal":"Write the full coverage, terminal, and equality derivation","exit":"No missing caller or automated black-box inference"},
+    {"id":"C.2","status":"OPEN","goal":"Independently audit the final manuscript and exact tables","exit":"Arithmetic, geometry, and boundary implications confirmed"}
   ],
-  "deferred": [
-    "Lean",
-    "Lake",
-    "CI"
-  ],
-  "alternatives_not_gates": [
-    "Current method is hand proof, exact tables allowed; scripts only test potential directions",
-    "Two-direction family is proved; arbitrary cover existence remains unproved",
-    "Structural stress lemmas require complete callers; no simultaneous extra gate tree",
-    "Earlier computational artifacts remain recorded; no proof programs rerun in this continuation"
-  ],
-  "legacy_gate_registry": "SUPERSEDED_NO_ACTIVE_PROGRESS_COUNTER",
-  "current_hand_continuation": {
-    "date": "2026-11-02",
-    "two_direction_class": "PROVED_SHARP_WITH_CLASS_EQUALITY",
-    "exact_pair_cap": "PROVED_SHARP_H_LT_109_OVER_80",
-    "two_strip_terminal": "PROVED_CONDITIONAL_WITH_SEVEN_SQUARE_EQUALITY",
-    "boundary_normalization": "PROVED_GLOBAL_EQUIVALENCE_WITH_CAP_GUARD",
-    "mathematical_scripts_run": true,
+  "closure_acceptance": {
+    "allowed_mathematical_deliverables": [
+      "Complete proof of one or more fixed full mask predicates",
+      "Complete strict-radius hand/table proof for named stable original roots",
+      "Complete global terminal-extraction or no-strict-counterexample theorem"
+    ],
+    "nonclosure_deliverables": [
+      "New conditional inequality",
+      "Tighter threshold or smaller orientation interval",
+      "Internal subdivision with unresolved children",
+      "Source recovery, documentation, or proposed proof strategy",
+      "Failure of numerical search to find a packing"
+    ],
+    "internal_splits": "Require exhaustive parent coverage including boundaries and complete proofs for every child before parent closure",
+    "dependencies": "Require an actual finite acyclic proof graph or explicitly decreasing proof rank",
+    "stalled_target": "Keep OPEN/BLOCKED with the exact obstruction; do not create more mandatory gates",
+    "correction_policy": "Retract invalid closures even when that reopens a fixed row"
+  },
+  "this_reset": {
+    "kind": "COVERAGE_AND_ACCOUNTING_REORGANIZATION",
+    "new_mathematical_case_closures": 0,
+    "new_global_gate_closures": 0,
+    "mathematical_scripts_run": false,
     "lean_lake_ci_run": false,
-    "independent_agent_hand_reviews": true,
-    "separate_human_review_performed": false,
-    "new_full_root_exclusions": 0,
-    "unrestricted_global_caller_proved": false,
-    "one_exception_width_five": "PROVED_SHARP_LOWER_BOUND_ENTIRE_BRANCH",
-    "one_exception_global": "PROVED_SHARP_LOWER_BOUND_ENTIRE_ORTHOGONAL_ONE_EXCEPTION_CLASS",
-    "one_exception_augmented_grid": "PROVED_CLOSED_Q_EXCLUSION",
-    "eight_square_endpoint_obstruction": "PROVED_EXACT_SUBCRITICAL_EXAMPLE",
-    "closed_q_small_exception_cover": "DISPROVED_BY_EXACT_THREE_EXCEPTION_EQUALITY_EXAMPLE",
-    "direction_check_scripts_run": true,
-    "proof_scripts_run": false,
-    "numerical_direction_check": "Two exploratory 48-start optimizations tested potential directions: a three-square horizontal cap and a four-square side strip. No numerical output is proof evidence.",
-    "one_exception_pattern_II": "PROVED_COMPLETE_FIVE_OUTSIDER_CAPACITY",
-    "one_exception_pattern_I": "PROVED_ALL_ORIGINAL_HEIGHT_BRANCHES_AND_ALL_RANK_DIAGRAMS",
-    "one_exception_equality": "NOT_CLAIMED_COMPLETE",
-    "one_exception_theorem_source": "ONE_EXCEPTION_NINE_HAND_PROOF_2026_11_02.md",
-    "unrestricted_counterexample_guard": "At least two coordinate-exceptional pairs in every orthonormal frame; no universal cover/terminal extraction proved.",
-    "proof_review_source": "HAND_REVIEW_NINE_SQUARE_CONTINUATION_2026_11_01.md",
-    "unrestricted_structural_reduction": "PROVED_GLOBAL_ROTATING_FRAME_COMPLETED_FOUR_PLUS_THREE_EXTRACTION",
-    "unrestricted_structural_source": "UNRESTRICTED_FIVE_PROXY_CHAIN_HAND_PROOF.md",
-    "physical_three_square_halfplane_cap": "PROVED_SHARP_Q_BOUND_FOR_THREE_WHOLE_SQUARES_BEYOND_DISTANCE_7_OVER_16",
-    "three_center_cap": "PROVED_UNRESTRICTED_MIN_PROJECTION_LT_21_OVER_20",
-    "actual_four_chain_outsider_strip": "PROVED_FOR_EVERY_PHYSICAL_OUTSIDER_ABS_X_LT_13_OVER_12",
-    "normalized_boundary_three_center_guard": "At least seven of the eight other centers have x<21/20; all eight retain x<H.",
-    "unrestricted_remaining_geometry": "Some frame always supplies completed4+3 chains; consecutive added edges remain weak and both extra squares must be retained. Actual-four branch has the outsider strip and side capacities; remaining joint middle/side capacity is open.",
-    "unrestricted_structural_review_source": "HAND_REVIEW_UNRESTRICTED_STRUCTURAL_CONTINUATION_2026_11_02.md",
-    "unrestricted_synthesis_source": "UNRESTRICTED_STRUCTURAL_CONTINUATION_2026_11_02.md",
-    "unrestricted_rotating_frame_source": "UNRESTRICTED_ROTATING_FRAME_EXTRACTION_HAND_PROOF.md",
-    "unrestricted_completed_grid": "REMOVED_AS_MANDATORY_GLOBAL_BRANCH_BY_ROTATING_FRAME",
-    "actual_four_chain_side_capacity": "PROVED_AT_MOST_TWO_OUTSIDERS_PER_SIDE_FOR_STRICT_SUBCRITICAL_PACKINGS",
-    "physical_three_square_halfplane_equality": "COMPLETE_ALIGNED_OUTER_PAIR_AND_FREE_MIDDLE_HEIGHT_FAMILY",
-    "latest_handoff_source": "HANDOFF_A2_POST_89CC4C2_2026_11_01.md",
-    "marked_edge_ledger_source": "UNRESTRICTED_MARKED_CHAIN_EDGE_LEDGER_HAND_PROOF.md",
-    "marked_edge_masks": "32 formal chain-edge masks, all-actual settled, 31 nonzero masks not classified; no proof that each mask is feasible",
-    "actual_four_occupancy_masks": "9 formal L/C/R occupancy groups, all physical subcases not closed",
-    "post_checkpoint_shoulder_work": "RESEARCH_LEADS_ONLY_NO_COMPLETE_SOURCE_PROOF: same-sign joint cap, adjacent barrier, two-square central cap, two-sided 7/20 budget, whole-square 1/10 triple, mixed-sign/oblique normals"
-  }
+    "new_independent_review_claimed": false,
+    "stale_registry_corrected": [
+      "Two treated masks, not one",
+      "Published conditional source proofs are not still described as unarchived leads",
+      "Closed-Q root exclusions are not confused with strict-radius sharp proofs"
+    ]
+  },
+  "deferred": ["Lean", "Lake", "CI"],
+  "legacy_gate_registry": "SUPERSEDED_NO_ACTIVE_PROGRESS_COUNTER"
 }
