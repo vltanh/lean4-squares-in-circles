@@ -123,7 +123,49 @@ This proves an unconditional 4+3 extraction with all five consecutive
 links in maximal center-gap coordinates, even when a selected link is
 already physically actual. It does not make a weak link actual.
 
-## 4. The first-birth premise and the retained full-nine array
+## 4. An unconditional diagonal-tie frame, including the persistent case
+
+The extracted parallel 4+3 chains can always be retained in a frame
+where at least one of their five consecutive center differences is
+diagonal. This does not require the existence of a first-birth frame.
+
+To prove it, start with the frame supplied by Section 3 and orient x
+along the two chains. Let phi_1,...,phi_5 be real representatives of
+the arguments of their five directed consecutive center differences,
+chosen in [theta_0-pi/4,theta_0+pi/4]. Such representatives exist
+because each difference satisfies the x-cone relation at theta_0.
+
+The same five comparisons persist precisely throughout the closed
+angle interval
+
+\[
+ I=\bigcap_{j=1}^{5}[\phi_j-\pi/4,\phi_j+\pi/4]
+   =[\max_j\phi_j-\pi/4,\min_j\phi_j+\pi/4].
+\tag{E}
+\]
+
+It is nonempty since it contains theta_0. At its right endpoint,
+an edge with the least phi_j has Delta y=-Delta x; at its left
+endpoint, an edge with the greatest phi_j has Delta y=Delta x.
+All five designated positive x-gaps remain positive, and the same
+seven labeled squares still form the two cone chains. Their
+nonconsecutive comparisons are actual by (2) in the new frame.
+
+Thus every packing under the hypotheses has such an extraction in
+one of the diagonal-tie frames determined by its center pairs. Each
+unordered pair determines one such frame modulo a quarter-turn,
+so there are at most binomial(9,2)=36 packing-dependent candidate
+frames. The two unselected physical squares and every original
+physical constraint are retained under this coordinate rotation.
+
+This is a finite event-frame reduction, not a positional enumeration:
+the 36 frame angles depend on the continuous unknown centers. It
+does not make the tied edge weak. If its tied coordinate gap is
+at least h_S+h_T, it is actual in both coordinates; otherwise it
+is weak in both. The persistent-height-four alternative is covered
+by this argument as well, but is not geometrically excluded.
+
+## 5. The first-birth premise and the retained full-nine array
 
 Suppose a sequence of frames theta_n tends to theta_0, both cone-order
 heights are at most three at theta_n, and the x-cone order has height
@@ -166,9 +208,9 @@ Thus every selected entering comparison is a diagonal center tie.
 There is no separate entering case with d_x<|d_y| caused by adding
 an actual comparison in a smaller coordinate.
 
-## 5. The two old row labels must be adjacent, without a weakness premise
+## 6. The two old row labels must be adjacent, without a weakness premise
 
-**Lemma.** The entering endpoints in Section 4 always satisfy
+**Lemma.** The entering endpoints in Section 5 always satisfy
 |j-ell|=1, even if their physical projections are actually separated.
 
 Suppose instead they are the two outer rows. The retained old column
@@ -213,7 +255,7 @@ claim that every entering edge is weak or that any physical separator
 must be diagonal. It only proves the diagonal **center** tie and the
 adjacent old row labels in both physical cases.
 
-## 6. Explicit 4+3 chains and the remaining two physical squares
+## 7. Explicit 4+3 chains and the remaining two physical squares
 
 The entering edge E=S_ij\prec_x F=S_iell gives the four-chain
 

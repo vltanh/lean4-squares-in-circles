@@ -315,3 +315,149 @@ a physical sharp terminal from them, remain separate geometric obligations.
 No unrestricted nine-square lower bound or equality classification is
 claimed by this note alone.
 
+## 7. Marker order agrees with the actual order of center heights
+
+In the closed-disjoint normalization used in Section 6, take any two units
+whose centers satisfy (1) and which avoid E. Their center x-gap is at most
+3/5. On the vertical line halfway between those two x-centers, the point
+at each unit's own center height lies strictly inside its radius-1/2 disk.
+Thus both units have nondegenerate sections there, and their vertical
+section order agrees with the order of their center y-coordinates.
+
+The halfway line and the marker line x=3/5 both lie strictly between
+the horizontal extremes of each unit. On every line between them both
+sections remain nondegenerate. The two vertical section intervals cannot
+exchange their order without intersecting: their upper and lower boundary
+functions are continuous on this closed interval of x-coordinates, and
+the units are closed-disjoint. Hence their section order on the marker
+line also agrees with their center-height order.
+
+In particular, when a side contains three units and each must occupy a
+different marker, their increasing marker indices −1,0,1 identify their
+increasing actual center y-coordinates. This does not assert separation
+of their full vertical projections. It is an order statement about the
+centers and the actual sections on the one common line.
+
+## 8. A quantitative height gap next to an internal main square
+
+Every pair of side units has horizontal center gap below 3/5. Their
+inscribed radius-1/2 disks are disjoint, so their center distance is at
+least one. Consequently every such pair has
+\[
+                            |\Delta y|>\frac45.          \tag{22}
+\]
+
+If one member is the corresponding internal main square M1 or M2, the
+bound strengthens to
+\[
+                            |\Delta y|>\frac{29}{30}.    \tag{23}
+\]
+Indeed its main-chain halfwidth is h<31/60, so its inscribed aligned
+square has halfwidth g>15/31. The radius-1/2 disk of the other square
+is disjoint from that aligned square. Since the horizontal gap is less
+than 3/5, the distance from its center to the aligned square forces
+\[
+ |\Delta y|\ge
+ g+\sqrt{\frac14-\max\{3/5-g,0\}^2}
+ \ge\frac{15}{31}+\sqrt{\frac14-\left(\frac{18}{155}\right)^2}
+ >\frac{29}{30}.
+\]
+The middle inequality follows by monotonicity in g on g∈[15/31,1/2].
+For the final positive-root comparison, note
+\[
+ \frac14-\left(\frac{18}{155}\right)^2
+       -\left(\frac{29}{30}-\frac{15}{31}\right)^2
+       =\frac{2960}{864900}>0.
+\]
+
+Every side center also satisfies |y|<36/25, from |x|≥29/60 and
+|c|<91/60; the squared comparison is
+\[
+ \left(\frac{29}{60}\right)^2+\left(\frac{36}{25}\right)^2
+       -\left(\frac{91}{60}\right)^2=\frac{13}{1875}>0.
+\]
+Thus if a full side column has its main square assigned the middle marker,
+the center order in Section 7 and (23) imply
+\[
+                         |y_{M_i}|<\frac{71}{150}.       \tag{24}
+\]
+If its main square has the bottom marker, the two successors instead give
+\(y_{M_i}< -49/150\), by (22)--(23); the top-marker case is the reflected
+bound \(y_{M_i}>49/150\). These are necessary height restrictions, not
+actual projection comparisons or a completed nine-square capacity theorem.
+
+## 9. Equal main-marker indices exclude a middle center between the mains
+
+The stronger physical clearance proved independently in
+`UNRESTRICTED_ACTUAL_FOUR_CHAIN_INNER_CLEARANCE_HAND_PROOF.md` states that
+every middle outsider F, meaning |x_F|<29/60, satisfies
+\[
+ \begin{cases}
+ |y_F-y_{M_2}|>59/60,&x_F\ge0,\\
+ |y_F-y_{M_1}|>59/60,&x_F\le0.
+ \end{cases}                                             \tag{25}
+\]
+Both inequalities apply on x_F=0. Consequently, whenever
+\[
+                         |y_{M_1}-y_{M_2}|<59/60,        \tag{26}
+\]
+every middle outsider is either above both main centers or below both.
+It cannot be between their heights, since its distance in y from the
+main in its own half-plane would then be less than 59/60.
+
+Here are exact marker conditions that imply (26).
+
+First, both internal main centers satisfy
+\[
+                             |y_{M_i}|<\frac{27}{20}.    \tag{27}
+\]
+Their h<31/60 gives
+\[
+ k^2>839/3600>(193/400)^2,
+\]
+the last comparison having positive cross-product difference 143600.
+If |y|≥27/20, then |y|>|x|. An outward-quadrant corner, taking the
+smaller of the two offset orders, would force
+\[
+ q>\left(\frac{59}{60}\right)^2+
+                \left(\frac{733}{400}\right)^2
+   =Q+\frac{1547}{180000}>Q.
+\]
+This proves (27).
+
+If both mains contain their respective bottom marker, marker containment
+and h<31/60 put both heights in
+\((-27/20,-29/60)\). Their difference is therefore below 13/15,
+which is below 59/60. The same conclusion holds when both contain their
+respective top marker, by reflection. These two conclusions do not require
+both side columns to be full.
+
+For the zero-marker case, an internal main square containing its marker
+\((\pm3/5,0)\) has
+\[
+                              |y_{M_i}|<\frac{51}{100}.  \tag{28}
+\]
+To see this, its side-axis components a≥b satisfy
+\[
+ b=h-k<\frac{41}{1200}<\frac7{200},\qquad a>\frac{99}{100}.
+\]
+The horizontal gap from its center to the marker is below 7/60.
+Its nearly vertical physical side inequality therefore gives
+\[
+ a|y_{M_i}|\le\frac12+b\frac7{60},\qquad
+ |y_{M_i}|<\frac{6049}{11880}<\frac{51}{100}.
+\]
+If at least one of the two side columns is full, its zero-marker main
+also satisfies (24). The two height bounds then imply
+\[
+ |y_{M_1}-y_{M_2}|<\frac{71}{150}+\frac{51}{100}
+                         =\frac{59}{60}.                \tag{29}
+\]
+Thus (26) also follows when both mains contain their zero markers and
+at least one side has two outsiders.
+
+In particular, with exactly one middle outsider both side columns are
+full. All three equal-index main-marker patterns j=−1,0,1 force that
+middle outsider to lie above both main centers or below both. The six
+unequal-index patterns are not excluded by this argument, nor is the
+above/below alternative itself a completed physical terminal.

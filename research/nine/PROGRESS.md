@@ -1,4 +1,19 @@
-## Latest continuation — chain closure and complete shoulder slope cover
+## Latest continuation — oblique endpoint transfers and a routed-triple caller
+
+[Current mathematical checkpoint](A2_OBLIQUE_ENDPOINT_AND_ROUTED_TRIPLE_CHECKPOINT.md)
+and [integration hand review](HAND_REVIEW_OBLIQUE_ENDPOINT_AND_ROUTED_TRIPLE_CHECKPOINT.md).
+**A.2 remains OPEN.** Upward nearvertical endpoint separators owned by
+the outer main are now handled in both transfer directions, at every
+slope and with both horizontal signs. Bounded inner-main heights give
+an exact3+2 outsider split and the central whole floor109/930>7/60;
+the complete join closes that explicitly matched-endpoint subclass.
+Full side columns have the main-height alternatives y<-3/5,
+|y|<7/20, or y>3/5. An unconditional diagonal event-frame reduction
+retains the selected4+3 cone chains. The remaining physical endpoint
+domains, extreme-marker patterns, and weak-chain cases are explicit.
+Published canonical roots remain5,838 excluded /2,077 open.
+
+## Previous continuation — chain closure and complete shoulder slope cover
 
 [Current mathematical checkpoint](A2_CHAIN_AND_ALL_SLOPE_SHOULDER_CHECKPOINT.md)
 and [independent hand reconstruction](HAND_REVIEW_CHAIN_AND_ALL_SLOPE_SHOULDER_CHECKPOINT.md).
@@ -29,7 +44,7 @@ no whole canonical root closure was claimed. A.2 remains OPEN.
 **Active gate: A.2. The unrestricted lower bound, global equality classification,
 and complete hand/table manuscript remain OPEN.** The current instruction is
 hand proof, with tables permitted; external mathematical scripts may only test
-potential directions. Two numerical experiments tested possible directions;
+potential directions. Exploratory computations tested possible directions;
 none of their output is proof evidence. All new exclusions below are hand
 derivations. No proof program, Lean, Lake, or CI was run.
 

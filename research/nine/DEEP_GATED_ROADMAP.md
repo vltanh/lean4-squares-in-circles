@@ -5,8 +5,8 @@ squares in a disk, all attaining configurations, then a complete hand/table proo
 **Status:** all three global deliverables OPEN. **Active: A.2.**
 The same 15 registry entries and 7,915 canonical root IDs are retained.
 Current method: hand proof; exact tables allowed; mathematical scripts only
-for checking potential directions. Two numerical direction experiments were
-exploratory only. No mathematical proof program, Lean, Lake or CI was run.
+for checking potential directions. Exploratory computations are not proof
+evidence. No mathematical proof program, Lean, Lake or CI was run.
 
 | Deliverable | Status | Acceptance condition |
 |---|---|---|
@@ -43,6 +43,16 @@ it does not change this canonical tally.
 
 The newest broad hand results are:
 
+- [Oblique endpoint and routed-triple checkpoint](A2_OBLIQUE_ENDPOINT_AND_ROUTED_TRIPLE_CHECKPOINT.md):
+  both transfer directions are proved for every slope when the endpoint
+  separator is upward, nearvertical, and owned by the outer main. The
+  bounded-inner-height extraction supplies a3+2 outsider split,4/5 upper
+  center gaps, and the stronger central whole floor109/930. Their explicit
+  join closes that matched-endpoint subclass. Full side columns have the
+  proved main-height trichotomy below-3/5, within7/20, or above3/5.
+  Every packing also has a retained4+3 extraction in a diagonal event
+  frame. Shoulder-owned and nearly horizontal endpoint cases, extreme
+  marker patterns, and remaining weak-chain cases stay open.
 - [Current chain and all-slope shoulder checkpoint](A2_CHAIN_AND_ALL_SLOPE_SHOULDER_CHECKPOINT.md):
   the full nonzero marked mask(010,00) is excluded at q<=Q; the same
   outsider strip and side capacities hold when only the four-chain's outer
