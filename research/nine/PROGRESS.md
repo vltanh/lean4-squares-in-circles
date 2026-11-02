@@ -1,5 +1,32 @@
 # n=9: current status and fixed closure queue
 
+## 000/11: accepted occupancy proofs; two families remain
+
+November 2, 2026. The continuing actual-four proof now excludes the
+complete normalized outsider counts `(2,3,0)` and `(1,4,0)`, together
+with their horizontal reflections. It also excludes the bottom and top
+full-side-main alternatives of `(2,2,1)`, and the three-upper and
+one-upper alternatives of `(1,3,1)`. The previously accepted `(2,1,2)`
+caller remains in force; `(0,5,0)` is impossible from the selected
+cone span.
+
+The exact remaining families are `(2,2,1)` with the full-side main in
+the middle, and `(1,3,1)` with two upper central units and one lower,
+including the reflected versions. These are internal proof cases;
+**the whole 000/11 mask remains OPEN and the fixed count stays 6/32**.
+
+The new accepted table inputs have **65,852 strict leaves** in total:
+58,500 for the two-central height cap, 7,035 for the selected central
+right endpoint's height, and 317 for the sharper two-low-mains bound.
+Independent exact arithmetic replays and separate physical reviews are
+saved with the complete hand callers. A four-row rational Bernstein
+table proves the coupled cone-loss bound. No optimizer outcome or
+unfinished frontier is accepted as a contradiction.
+
+[Detailed checkpoint and scope](A2_000_11_CERTIFIED_OCCUPANCY_CHECKPOINT_2026_11_02.md)
+· [Complete (2,3,0) caller](ACTUAL_FOUR_230_WHOLE_OCCUPANCY_CLOSED_HAND_PROOF.md)
+· [Complete final (1,4,0) caller](ACTUAL_FOUR_140_THREE_UPPER_ONE_LOWER_CLOSED_HAND_PROOF.md)
+
 ## Complete 010/01 and 010/10 proofs now accepted
 
 November 2, 2026. **010/01 and 010/10 are excluded even at closed
@@ -31,8 +58,9 @@ reversal proves the partner mask.
 The accepted wider five-square cap, complete (2,1,2) actual-four caller,
 central-singleton floor theorem and two-low-mains exclusion also support
 the continuing 000/11 selection argument. They do not close another
-mask by themselves. The remaining selection covers (2,2,1) and
-occupancies with at least three central outsiders, including reflections.
+mask by themselves. The latest accepted and remaining occupancy scopes
+are recorded in the checkpoint at the top of this file, including every
+reflected version.
 
 ## Preceding complete 000/01 and 000/10 proofs
 

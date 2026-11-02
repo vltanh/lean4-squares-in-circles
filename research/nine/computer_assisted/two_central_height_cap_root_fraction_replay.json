@@ -1,0 +1,68 @@
+{
+  "result": "PASS",
+  "certificate": "two_central_height_cap_cover.json.gz",
+  "certificate_sha256": "d7c7ad1d87422c7c258beb3547c5d3d2218958ae86da54dce2b36c5a3eec347f",
+  "root": [
+    [
+      "0",
+      "29/60"
+    ],
+    [
+      "0",
+      "1"
+    ],
+    [
+      "0",
+      "1"
+    ]
+  ],
+  "charts": [
+    {
+      "epsA": -1,
+      "epsB": -1,
+      "leaves": 46772,
+      "counts": {
+        "pair_axes": 41441,
+        "circle": 5331
+      },
+      "max_depth": 32,
+      "least_positive_reserve": "34586026352131114373033899837255214159014006816027/96837221794803085891476905732218920603606734755616726970"
+    },
+    {
+      "epsA": -1,
+      "epsB": 1,
+      "leaves": 7805,
+      "counts": {
+        "pair_axes": 6723,
+        "circle": 1082
+      },
+      "max_depth": 21,
+      "least_positive_reserve": "1710734211435660310378720292467454066779165600456841/678184860439680701233043172523682381599345444049598856928"
+    },
+    {
+      "epsA": 1,
+      "epsB": -1,
+      "leaves": 1248,
+      "counts": {
+        "pair_axes": 723,
+        "circle": 525
+      },
+      "max_depth": 14,
+      "least_positive_reserve": "249931030734192520899587656593264271/5015964732974524498384660458572768870400"
+    },
+    {
+      "epsA": 1,
+      "epsB": 1,
+      "leaves": 2675,
+      "counts": {
+        "pair_axes": 1392,
+        "circle": 1283
+      },
+      "max_depth": 15,
+      "least_positive_reserve": "842989471351425220180772163409378049779578155710751557/53863536222410730837186120082116540366681653316772409726700"
+    }
+  ],
+  "total_leaves": 58500,
+  "arithmetic": "exact Fraction arithmetic with outward 64-bit sqrt bounds; no producer imports or floating point acceptance",
+  "seconds": 63.313295906998974
+}

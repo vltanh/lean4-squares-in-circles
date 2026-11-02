@@ -1,0 +1,29 @@
+{
+  "result": "PASS",
+  "controls": [
+    {
+      "control": "missing_child",
+      "rejected": true,
+      "exit_code": 1,
+      "last_error": "AssertionError"
+    },
+    {
+      "control": "unknown_rule",
+      "rejected": true,
+      "exit_code": 1,
+      "last_error": "AssertionError: ('unknown rule', 'invalid')"
+    },
+    {
+      "control": "false_circle",
+      "rejected": true,
+      "exit_code": 1,
+      "last_error": "AssertionError: (((Fraction(0, 1), Fraction(29, 60)), (Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(1, 1))), -1, -1, 'circle', Fraction(-91, 600))"
+    },
+    {
+      "control": "false_pair_axes",
+      "rejected": true,
+      "exit_code": 1,
+      "last_error": "AssertionError: (((Fraction(0, 1), Fraction(29, 60)), (Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(1, 1))), -1, -1, 'pair_axes', Fraction(-10451677153284733629545338575165983688589, 8166776806102523123309357742045906967500))"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "proof_status": "many_central_caller_exact_arithmetic_passed",
+  "checks": {
+    "low_side_x_bound": "239/4000",
+    "low_side_main_horizontal_inset_reserve": "2639/7440",
+    "global_central_horizontal_overlap": "7/60000",
+    "two_lower_whole_floor_reserve": "221/3720",
+    "same_half_lower_height_squared_reserve": "945821879/384400000000",
+    "same_half_three_center_squared_reserve": "587/11520",
+    "middle_main_upper_center_reserve": "1/30",
+    "selected_central_endpoint_floor_coordinate_reserve": "1/50",
+    "replacement_floor_reserve": "407/24000",
+    "central_five_cone_span_squared_reserve": "959/900"
+  },
+  "checker_sha256": "9aab35d6803226fb95914eedbc03285105beb020aefaaa6c3ea010a65edb39e0"
+}

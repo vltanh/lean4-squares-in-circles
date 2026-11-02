@@ -1,0 +1,40 @@
+{
+  "result": "PASS",
+  "P_coefficients_ascending": [
+    "615",
+    "-2866",
+    "1639",
+    "4096",
+    "1024"
+  ],
+  "Z_coefficients_ascending": [
+    "557399",
+    "-1885202",
+    "807399",
+    "1500000",
+    "250000"
+  ],
+  "positive_reserves": {
+    "endpoint_main_axis_root": "151",
+    "endpoint_diagonal_resource": "1/180000",
+    "P_quarter_negative_derivative": "2429/2",
+    "P_curvature_after_quarter": "190",
+    "P_anchor_lower_bound": "10/81",
+    "P_anchor_derivative_bound": "19/27",
+    "P_complete_tangent_quadratic": "53951/20000",
+    "Z_global_curvature": "14798",
+    "Z_anchor_lower_bound": "3091/4",
+    "Z_anchor_derivative_bound": "803",
+    "Z_complete_tangent_quadratic": "10355/16",
+    "sqrt34_lower": "111/10000",
+    "sqrt34_upper": "2",
+    "J_anchor_value": "1377",
+    "J_anchor_derivative_upper": "2683/408000",
+    "J_anchor_derivative_lower": "11221",
+    "J_complete_concave_quadratic": "1/125000",
+    "replacement_above_seven_sixtieths": "7/24000",
+    "replacement_above_one_tenth": "407/24000",
+    "zero_loss_branch_floor": "169/960",
+    "zero_loss_branch_exact_claim": "703/4000"
+  }
+}

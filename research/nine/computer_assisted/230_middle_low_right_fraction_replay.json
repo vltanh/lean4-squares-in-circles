@@ -1,0 +1,11 @@
+{
+  "result": "PASS",
+  "certificate": "230_middle_low_right_complete_cover.json.gz",
+  "certificate_sha256": "2a170b17eea5b2325941f293ad4f4e3b71b50645728d6a2e7b1350a23ed56320",
+  "nodes": 14069,
+  "leaves": 7035,
+  "max_depth": 25,
+  "largest_upper": "-2990601586744534481772519411449998663815163525673147172773661666853661/39224967236998201060627914125212551607494070578726971109877473141924104400",
+  "arithmetic": "exact Fraction intervals; outward80-bit square roots; no producer imports, derivatives, or floating point acceptance",
+  "seconds": 56.98766656299995
+}

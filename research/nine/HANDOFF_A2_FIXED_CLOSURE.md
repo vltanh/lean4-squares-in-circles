@@ -1,5 +1,26 @@
 # Current A.2 handoff: six masks closed; continue with 000/11
 
+## Latest actual-four occupancy checkpoint
+
+Read `A2_000_11_CERTIFIED_OCCUPANCY_CHECKPOINT_2026_11_02.md` first.
+The complete normalized `(2,3,0)` and `(1,4,0)` families and their
+horizontal reflections are now closed. The bottom/top full-side-main
+patterns of `(2,2,1)` are closed, and `(1,3,1)` is closed when its
+central vertical split is three upper or one upper. `(2,1,2)` remains
+closed, and `(0,5,0)` is excluded by the selected cone span.
+
+The exact remaining cases of 000/11 are `(2,2,1)` with its full-side
+main in the middle, and `(1,3,1)` with two upper and one lower central
+unit. The whole fixed mask stays OPEN; there are still six closed masks
+and 26 open, with no changed positional-root count.
+
+New accepted inputs are the half-width replacement floor, coupled
+cone inset loss, two-central high-floor height cap, sharper two-low-main
+bound, low-side/two-lower exclusion, and central-right-endpoint height
+table. The three new complete covers total 65,852 strict leaves. Their
+exact replays and complete physical reviews are saved. Do not repeat
+those accepted searches without a concrete concern.
+
 ## Latest complete weak-middle closure
 
 The full 010/01 and 010/10 predicates are excluded at closed Q=1105/256.
@@ -26,11 +47,10 @@ For the remaining 000/11 selection, accepted reusable inputs now include
 `CENTRAL_SINGLETON_FLOOR_HAND_TABLE_PROOF.md`,
 `LOW_SIDE_UNIT_FORCES_SAME_SIDE_CENTRAL_FLOOR.md`, and
 `TWO_LOW_MAINS_CENTRAL_EXCLUSION_HAND_TABLE.md`.
-The complete (2,1,2) occupancy is settled; the remaining selection is
-(2,2,1), with full-side main bottom or middle up to reflection, and
-occupancies with at least three central outsiders. These are internal
-proof distinctions, not new mandatory global gates. Every complement
-must close before changing 000/11.
+The complete (2,1,2) occupancy is settled. The later checkpoint at the top
+of this handoff records the new complete cases and exact remaining
+families. These are internal proof distinctions, not new mandatory
+global gates. Every complement must close before changing 000/11.
 
 The preceding accepted 000/01 and 000/10 record follows. Its exact tables
 need no rerun without a concrete new acceptance concern.

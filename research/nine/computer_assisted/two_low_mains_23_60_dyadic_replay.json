@@ -1,0 +1,26 @@
+{
+  "result": "PASS",
+  "theorem": "left main height <= -3/5 and right main height <= -23/60 exclude a central outsider below both",
+  "certificate": "two_low_mains_23_60_cover.json",
+  "certificate_sha256": "1552a4a3480859004732f5f910e739b22992801eac55630a6509690c5efc5f51",
+  "root": [
+    [
+      "1/3",
+      "29/60"
+    ],
+    [
+      "0",
+      "1"
+    ]
+  ],
+  "nodes": 633,
+  "leaves": 317,
+  "max_depth": 14,
+  "counts": {
+    "left_axes": 68,
+    "right_circle": 249
+  },
+  "least_positive_reserve": "276834140688067/18446744073709551616",
+  "arithmetic": "outward 64-bit integer dyadic intervals; no producer imports or floating point acceptance",
+  "seconds": 0.04909535899787443
+}

@@ -1,0 +1,27 @@
+{
+  "result": "PASS",
+  "scope": "complete scalar audit for the companion original-square hand proof",
+  "positive_reserves": {
+    "fixed_proxy_contained": "1/400",
+    "central_above_zero": "241/1488",
+    "left_downward_axis_gap": "89/7440",
+    "left_inward_axis_gap": "1013/19840",
+    "left_upward_axis_assignment": "14203/297600",
+    "horizontal_left_forbids_wrong_right_axis": "149/300",
+    "central_floor_coefficient": "1433/416640",
+    "oblique_tangent_upper_bound": "311/74400",
+    "horizontal_tangent_upper_bound": "326779/3690000",
+    "a_linear_lower_bound_polynomial": "166/125",
+    "a_linear_lower_bound_polynomial_monotonicity": "2/5",
+    "horizontal_gap_oblique": "19/1050",
+    "horizontal_gap_horizontal": "17/150",
+    "right_vertical_radius_bound": "13/1875",
+    "right_positive_vertical_gap": "22/2325",
+    "right_negative_vertical_gap": "17/120",
+    "h_upper_bound": "1/576",
+    "support_maximum_at_x_upper": "169/738",
+    "right_projection_square_root": "43/19200",
+    "oblique_cauchy_reserve": "5134602391/88565760000",
+    "horizontal_cauchy_reserve": "121378519/1383840000"
+  }
+}
