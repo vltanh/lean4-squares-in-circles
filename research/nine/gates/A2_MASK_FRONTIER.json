@@ -7,17 +7,42 @@
   "radius_domain": "Every squared corner norm is strictly less than Q; physical contacts remain weak.",
   "bit_zero": "actual x gap >= sum of physical halfwidths",
   "bit_one": "x gap < sum of physical halfwidths, while the center-cone comparison remains required",
-  "four_chain_edges": [[0,1],[1,2],[2,3]],
-  "three_chain_edges": [[4,5],[5,6]],
-  "other_physical_labels": [7,8],
+  "four_chain_edges": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ]
+  ],
+  "three_chain_edges": [
+    [
+      4,
+      5
+    ],
+    [
+      5,
+      6
+    ]
+  ],
+  "other_physical_labels": [
+    7,
+    8
+  ],
   "mask_count": 32,
-  "closed_for_strict_radius_count": 2,
-  "open_count": 30,
+  "closed_for_strict_radius_count": 4,
+  "open_count": 28,
   "new_closures_in_this_reset": 0,
   "completion_percentage": null,
   "termination_of_proof_discovery_proved": false,
-  "active_target": "000/01",
-  "active_target_reversal_partner": "000/10",
+  "active_target": "000/11",
+  "active_target_reversal_partner": "000/11",
   "reversal_rule": "abc/de <-> cba/ed; reverse both chains and both coordinate basis vectors, retaining all nine physical squares",
   "required_exit": "Complete no-D_m^lt theorem for a fixed full row, a complete stable-root strict theorem, or an actual global terminal-extraction theorem. Conditional subdomains and subdivisions are not closure.",
   "mask_domain_changes_allowed_without_explicit_redefinition": false,
@@ -35,40 +60,154 @@
       "location": "Sections 1-3",
       "scope": "Whole 010/00 mask impossible even in the closed Q-disk",
       "review_status": "Inherited source proof; short span assembly reconstructed in the contract, no new independent review claimed"
+    },
+    "whole_00001": {
+      "source": "../A2_000_01_WHOLE_DOMAIN_HAND_TABLE_PROOF.md",
+      "location": "Sections 1\u20136",
+      "scope": "Complete original nine-square 000/01 and reversed 000/10 predicates impossible even at closed Q",
+      "review_status": "Fresh independent exact replay of all 9 tables plus independent agent analytic and physical-coverage review; no human or kernel verification",
+      "strict_interval_leaves": 137252,
+      "additional_analytic_leaves": 34
     }
   },
   "rows": [
-    {"id":"000/00","status":"CLOSED_STRICT","closed_q":"EQUALITY_RETAINED","proof":"physical_4_plus_3"},
-    {"id":"000/01","status":"OPEN"},
-    {"id":"000/10","status":"OPEN"},
-    {"id":"000/11","status":"OPEN"},
-    {"id":"001/00","status":"OPEN"},
-    {"id":"001/01","status":"OPEN"},
-    {"id":"001/10","status":"OPEN"},
-    {"id":"001/11","status":"OPEN"},
-    {"id":"010/00","status":"CLOSED_STRICT","closed_q":"EXCLUDED","proof":"weak_middle"},
-    {"id":"010/01","status":"OPEN"},
-    {"id":"010/10","status":"OPEN"},
-    {"id":"010/11","status":"OPEN"},
-    {"id":"011/00","status":"OPEN"},
-    {"id":"011/01","status":"OPEN"},
-    {"id":"011/10","status":"OPEN"},
-    {"id":"011/11","status":"OPEN"},
-    {"id":"100/00","status":"OPEN"},
-    {"id":"100/01","status":"OPEN"},
-    {"id":"100/10","status":"OPEN"},
-    {"id":"100/11","status":"OPEN"},
-    {"id":"101/00","status":"OPEN"},
-    {"id":"101/01","status":"OPEN"},
-    {"id":"101/10","status":"OPEN"},
-    {"id":"101/11","status":"OPEN"},
-    {"id":"110/00","status":"OPEN"},
-    {"id":"110/01","status":"OPEN"},
-    {"id":"110/10","status":"OPEN"},
-    {"id":"110/11","status":"OPEN"},
-    {"id":"111/00","status":"OPEN"},
-    {"id":"111/01","status":"OPEN"},
-    {"id":"111/10","status":"OPEN"},
-    {"id":"111/11","status":"OPEN"}
-  ]
+    {
+      "id": "000/00",
+      "status": "CLOSED_STRICT",
+      "closed_q": "EQUALITY_RETAINED",
+      "proof": "physical_4_plus_3"
+    },
+    {
+      "id": "000/01",
+      "status": "CLOSED_STRICT",
+      "closed_q": "EXCLUDED",
+      "proof": "whole_00001"
+    },
+    {
+      "id": "000/10",
+      "status": "CLOSED_STRICT",
+      "closed_q": "EXCLUDED",
+      "proof": "whole_00001"
+    },
+    {
+      "id": "000/11",
+      "status": "OPEN"
+    },
+    {
+      "id": "001/00",
+      "status": "OPEN"
+    },
+    {
+      "id": "001/01",
+      "status": "OPEN"
+    },
+    {
+      "id": "001/10",
+      "status": "OPEN"
+    },
+    {
+      "id": "001/11",
+      "status": "OPEN"
+    },
+    {
+      "id": "010/00",
+      "status": "CLOSED_STRICT",
+      "closed_q": "EXCLUDED",
+      "proof": "weak_middle"
+    },
+    {
+      "id": "010/01",
+      "status": "OPEN"
+    },
+    {
+      "id": "010/10",
+      "status": "OPEN"
+    },
+    {
+      "id": "010/11",
+      "status": "OPEN"
+    },
+    {
+      "id": "011/00",
+      "status": "OPEN"
+    },
+    {
+      "id": "011/01",
+      "status": "OPEN"
+    },
+    {
+      "id": "011/10",
+      "status": "OPEN"
+    },
+    {
+      "id": "011/11",
+      "status": "OPEN"
+    },
+    {
+      "id": "100/00",
+      "status": "OPEN"
+    },
+    {
+      "id": "100/01",
+      "status": "OPEN"
+    },
+    {
+      "id": "100/10",
+      "status": "OPEN"
+    },
+    {
+      "id": "100/11",
+      "status": "OPEN"
+    },
+    {
+      "id": "101/00",
+      "status": "OPEN"
+    },
+    {
+      "id": "101/01",
+      "status": "OPEN"
+    },
+    {
+      "id": "101/10",
+      "status": "OPEN"
+    },
+    {
+      "id": "101/11",
+      "status": "OPEN"
+    },
+    {
+      "id": "110/00",
+      "status": "OPEN"
+    },
+    {
+      "id": "110/01",
+      "status": "OPEN"
+    },
+    {
+      "id": "110/10",
+      "status": "OPEN"
+    },
+    {
+      "id": "110/11",
+      "status": "OPEN"
+    },
+    {
+      "id": "111/00",
+      "status": "OPEN"
+    },
+    {
+      "id": "111/01",
+      "status": "OPEN"
+    },
+    {
+      "id": "111/10",
+      "status": "OPEN"
+    },
+    {
+      "id": "111/11",
+      "status": "OPEN"
+    }
+  ],
+  "latest_closure": "A2_000_01_VERIFIED_CLOSURE_2026_11_02.md",
+  "new_closures_in_this_continuation": 2
 }

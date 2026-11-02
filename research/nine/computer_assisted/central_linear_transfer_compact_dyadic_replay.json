@@ -1,0 +1,19 @@
+{
+  "complete": true,
+  "nodes": 3433,
+  "interval_leaves": 1684,
+  "analytic_leaves": 34,
+  "analytic_reasons": {
+    "signed_sum_strip": 32,
+    "mixed_sign_triangle": 1,
+    "nonpositive_signed_sum": 1
+  },
+  "max_depth": 18,
+  "smallest_replayed_lower": "5007949818049/1152921504606846976",
+  "seconds": 2.6347079900006065,
+  "sha256": "771bf108f5441de0e46810bd924f9fad118d94072f121136f3ed2423f7c0616a",
+  "checker_sha256": "503dfe9d519d47c61bb62aee799e573c0823e93944f721f911f07f11804001b8",
+  "arithmetic_sha256": "e9a077c6ed871e402f5e43604137a011428ffe9f0d5dcf18d2e1651dd1290c1f",
+  "arithmetic": "standalone64-bit directed dyadics",
+  "proof_status": "independent_central_transfer_replay_passed"
+}

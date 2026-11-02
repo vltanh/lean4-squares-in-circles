@@ -1,56 +1,80 @@
-# Current A.2 handoff: close the fixed full domain 000/01
+# Current A.2 handoff: 000/01 and 000/10 closed; continue with 000/11
 
-**Global status: OPEN. New full-domain closures in this continuation: zero.**
+November 2, 2026, America/Chicago.
 
-Computer-assisted proof discovery is authorized; the final result must have a complete pen-and-paper/table proof. No Lean, Lake, or CI. The same 15 roadmap IDs, 32 mask predicates, and 7,915 positional roots are retained.
+**New whole-mask closures: 000/01 and 000/10, both even at closed Q.**
+**Global A.2, unrestricted lower bound, global equality and final global
+manuscript remain OPEN.** No Lean, Lake or CI.
 
-## Resume from the new mathematical and computational work
+## Read first
 
-Read `computer_assisted/CONTINUATION_FREE_INNER_HEIGHT_AND_SOLVER.md` and the new `computer_assisted/ACTUAL_FOUR_FREE_INNER_HEIGHT_TERMINAL.md`.
+1. `A2_000_01_WHOLE_DOMAIN_HAND_TABLE_PROOF.md`: the complete moving
+   nine-square argument, including its closed-radius equality step.
+2. `A2_000_01_VERIFIED_CLOSURE_2026_11_02.md`: fresh exact replays,
+   independent review, precise closure scope and reproduction commands.
+3. `A2_COVERAGE_AND_CLOSURE_CONTRACT.md`: unchanged physical domains,
+   cover, reversal, and acceptance rules.
 
-The new terminal uses an actual four-chain and five small-tilt units M0,M3,L,C,R. It places **no height or tilt guards on M1,M2**. Its remaining guards include |x_C|<=2/5, y_C>=f and |sin(theta)|<=b for those five units, with
+The previous handoff at commit `add3c530` only knew a guarded terminal
+and unfinished computational exploration. The newly adopted recovered
+work closes that coverage gap. Do not restart the old guarded-terminal
+campaign or describe the two masks as open.
 
-    0<b<=1/18, 3/5<=f<=4/5,
-    f>11/24+(51023/10800)b+(47/16)b^2+(47/12)b^3.
+## Why the whole proof works
 
-The endpoint/shoulder position bands are printed in the theorem; for the selected `000/01` shoulders they come from the existing routing. Three usable choices are (1/64,3/5), (1/32,2/3), (1/18,3/4). The central unit can be P or either unselected physical square, but its guards must actually be proved. The hand proof reduces the residual orientation expression to three strictly positive scalar reserves. At equality it supplies actual 4+3 chains. The independent arithmetic reconstruction passed two polynomial identities, all rational bounds, 90 supplementary signed layers and two corrupted-identity controls. No independent human/agent or kernel review is claimed.
+The original selected P either has floor at least 1/10 or has floor at
+most 1/10. In the first branch P is the original central square U.
+In the second branch the complete side barriers, dynamic main-inset
+bound, central placement and two upper-extra tables force one of the
+two extra original squares to have the required high floor. Both
+branches supply all hypotheses of the unrestricted joint five-square
+cap. Its four outer support envelopes and central transfer cancel the
+slope costs and contradict the actual four-chain below Q.
 
-**The five tilt guards and central height are not proved over the whole mask.** The theorem does not close `000/01` or introduce a new mandatory gate. A complete caller or proof of the entire complementary domain is still necessary.
+At Q, equality forces horizontal central separators. Equality in the
+original two-square caps aligns R, and the original L--P actual and
+P--R cone comparisons then align P and make P--R actual. This
+contradicts its strictly weak bit. Exact reversal gives 000/10.
 
-The old solver-unavailability statement was incorrect for this runtime: Z3 4.13.3 is installed as a shared library. `computer_assisted/z3_ctypes.py` runs it without z3py. Five pinned rational SAT/UNSAT controls passed. The full nine-square query actually returned UNKNOWN (timeout), as did a strengthened query. There is no nonlinear global UNSAT certificate. `run_full_mask.py` reproduces the raw query and its output is preserved. Unsupported UNSAT would still require independent certificate replay and a paper argument.
+The proof contains 137,252 strict interval leaves and 34 analytic
+leaves, all freshly replayed. Independent agent reviews checked the
+geometric implications, the support/owner cover, local complements,
+assembly and equality. No human or kernel verification is claimed.
+The nine certificate files, standalone standard-library checkers and
+fresh reports are in `computer_assisted/`; the closure manifest records
+all hashes. Older fork certificates are not hidden dependencies.
 
-The floating-point pose-graph/shared-center-frame LP exploration remains incomplete and is not proof evidence. At its archived conflict-learning checkpoint: 5,056 exploratory nodes, 1,525 floating-point learned conflicts, and 33 unresolved search-frontier nodes. Those are NOT fixed mask counts or certified exclusions. No exact Farkas replay exists. The session archive preserves the prototype code, graph, generated queries, numerical results and local checkpoint; the continuation record distinguishes these from accepted proof files.
+## Exact next target
 
-## Exact target, unchanged
+Close the whole `000/11` strict-radius predicate: all nine original
+physical squares, three actual center-cone main links, two weak
+center-cone short-chain links, all 36 corners and all 36 physical pairs.
+Its reversal is itself. Do not assume it is impossible at closed Q
+without proof.
 
-Prove `D_000/01^lt` empty, retaining all nine physical squares and all 36 pair constraints. Its selected four-chain is actual and center-cone; its selected three-chain has first link actual and second weak center-cone. The two other units and all cross-pair separator types remain arbitrary.
+The completed 000/01 proof requires an actual L--P edge in the
+low-floor reductions. That hypothesis must be replaced by a complete
+argument before transferring it to 000/11. One possible broad route is
+to show that an actual four-chain plus all five outsiders supplies
+another disjoint cone triple with at least one actual link. This is a
+research direction, not an accepted lemma or a new mandatory gate.
 
-`D_000/10^lt` follows by reversing both chains and both coordinate basis vectors. A broader actual-four-chain theorem would also handle `000/11`. None is asserted easy or proved.
+The weak-middle endpoint-reserve theorem is also available for the
+010/* rows, but its two inner main squares have different width and
+center bounds. Do not import the actual-four low-floor caller there
+without deriving its hypotheses or treating the full complement.
 
-Read `A2_COVERAGE_AND_CLOSURE_CONTRACT.md` and `A2_000_01_ATTEMPT.md`. The proof sources remain a library, not separate active owner/sign/threshold campaigns.
+## Fixed accounting
 
-## Preserve the exact obstruction from the previous attempt
+- 32 masks: 4 closed for strict radius, 28 OPEN.
+- Closed masks: 000/00 (equality retained), 000/01, 000/10, 010/00
+  (the latter three excluded at closed Q).
+- 7,915 original positional roots: historical 5,838 closed-Q excluded,
+  2,077 OPEN. No new root manifest or exclusion count is claimed.
+- Same 15 roadmap IDs. A.2 and global equality/manuscript gates remain
+  open. Conditional work creates no new mandatory children.
 
-After vertical reflection, all three selected outsiders lie above both inner main centers, and both main heights are below 7/20. The central outsider has the derived whole-floor bound
-
-    y_P-h_P>min(y_1,y_2)+869/1860.
-
-This does not give the missing lower bounds on both main heights. The old bounded-inner-height caller is not automatic; the new theorem avoids those inner-height guards but retains its own explicit central-height and tilt guards.
-
-The physical endpoint caps leave
-
-    (27/2)*delta_R = 46*W + (27/2)*(eta_P+s+t) + K_L+K_R,
-
-with W,s,t,eta_P nonnegative and K_L,K_R strictly positive at q<Q. No complete nine-square argument yet makes the additional units contradict it.
-
-The exact seven-unit packing at squared radius 273/64<Q has the required selected mask. Its 21 pairs are hand-checked, its span reserves vanish, and its outer tilt deficit pays the cap slacks exactly. It has two coordinate-exceptional pairs. Thus neither a seven-square shortcut nor an automatic one-exception theorem is available. It does not contain an eighth or ninth square. The fixed-pose 58-leaf no-eighth certificate is only a pilot, not a moving-domain exclusion.
-
-## Acceptance boundary and unchanged accounting
-
-A closure must contain a complete full-domain argument. Extra floor, owner, height, orientation, or terminal guards must be derived or have their entire complement treated. An unfinished attempt stays OPEN rather than becoming another mandatory case tree.
-
-Historical published closed-Q exclusions remain 5,838, with 2,077 OPEN roots. The 32-mask table retains two inherited complete strict-radius results (`000/00` and `010/00`) and 30 OPEN domains. Nothing in this continuation reruns or enlarges those counts. They are not percentages.
-
-Root 7820 contains equality and must not be excluded at q=Q. A future q<Q discharge is distinct from a closed-Q exclusion. The pre-reset catalogue is pinned at `ea4ff8bad97a58e2b8633ab69f549acb5352e573`; the fixed-domain reset is `3b68416cfa087d56d737d5af0548ba106117fcc6`.
-
-A.2, global assembly, unrestricted equality, and the complete final manuscript remain OPEN. The fixed frontier is an accounting rule, not a theorem about research termination.
+A complete fixed domain or a valid universal extraction may advance
+closure. Every boundary, terminal premise, and complementary domain
+must be covered. The decreasing mask counter is accounting, not a
+proof that research terminates or that the next row is easy.

@@ -1,0 +1,16 @@
+{
+  "goal": "linear_negative",
+  "nodes": 3397,
+  "interval_leaves": 1700,
+  "analytic_leaves": 0,
+  "unclosed_leaves": 0,
+  "complete": true,
+  "max_depth": 17,
+  "largest_replayed_upper": "-6934341744629233/18446744073709551616",
+  "seconds": 14.585341223995783,
+  "sha256": "10d5ed1ef26b97ecaf86d0149a4840040804d2e31dc5a147b05047629e0852ed",
+  "checker_sha256": "a03dd5b29c7b92b677aa9c3248625b7899ba9e111cc0520c550b27611abdaa81",
+  "arithmetic_sha256": "e9a077c6ed871e402f5e43604137a011428ffe9f0d5dcf18d2e1651dd1290c1f",
+  "proof_status": "independent_outer_scalar_replay_passed",
+  "arithmetic": "independent directed integer intervals,64fractional bits; exact rational root and split coverage"
+}

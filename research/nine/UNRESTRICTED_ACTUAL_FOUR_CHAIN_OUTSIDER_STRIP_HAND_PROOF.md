@@ -34,7 +34,7 @@ The frame and pose of F are arbitrary. In fact the proof only needs F to
 be disjoint from the relevant outer endpoint, after deriving that endpoint's
 bounds from the full actual four-chain.
 
-The argument uses the already proved unconditional four-chain facts
+The argument uses the following elementary four-chain facts
 \[
  \begin{gathered}
  -\rho<x_0<-\frac{89}{60},\qquad
@@ -43,10 +43,46 @@ The argument uses the already proved unconditional four-chain facts
  |y_0|,|y_3|<\frac15,
  \end{gathered}                                             \tag{2}
 \]
-and the endpoint inequality (6) of
-`PATTERN_II_NINE_SQUARE_CONTINUATION.md`. Those facts depend only on the
-actual four-chain and disk containment, not on that note's later cover
-hypothesis. For completeness the endpoint inequality is rederived below.
+which follow only from the actual four-chain and disk containment, as
+verified next. The transverse endpoint inequality is proved in Section2.
+
+### Elementary four-chain bounds
+
+For a square centered at c, choose the corner whose two frame-coordinate
+signs agree with c. Its squared norm is
+
+    |c|^2+1/2+|c dot u|+|c dot v| >= |c|^2+|c|+1/2.
+
+Thus |c|<=sqrt(Q-1/4)-1/2<91/60; the last squared comparison has
+positive reserve 31/57600. The three actual chain edges give
+
+    x3-x0 >= h0+2h1+2h2+h3 >=3.
+
+It follows that x0<-89/60 and x3>89/60. The sum on the right is
+strictly less than 91/30. Since every h_i>=1/2, we obtain
+h0,h3<8/15 and h1,h2<31/60. The same chain and center bound give
+
+    -31/60<x1<-29/60,     29/60<x2<31/60,
+    |x0|-h0>59/60,       x3-h3>59/60.
+
+For either endpoint put X=|x|, Y=|y|. The center bound and X>89/60
+give Y^2<1/10, hence Y<X. One of the actual outward corners has
+offsets (h,k) or (k,h). Since X>Y, its squared norm is at least
+
+    (X+k)^2+(Y+h)^2.
+
+The concave function h+sqrt(1/2-h^2) on [1/2,8/15] is greater than
+149/150: at h=1/2 it equals one, while at h=8/15 its second summand
+is greater than 23/50 because 97/450>(23/50)^2. Therefore
+
+    X+k=(X-h)+(h+k)>59/60+149/150=593/300.
+
+If Y>=1/5, containment would imply
+
+    Q>(593/300)^2+(7/10)^2>Q,
+
+where the positive reserve in the last comparison is 116359/1440000.
+This contradiction gives |y0|,|y3|<1/5 and proves every bound in(2).
 
 ## 2. A transverse budget retaining endpoint tilt
 

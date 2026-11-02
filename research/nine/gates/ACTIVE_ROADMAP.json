@@ -5,8 +5,8 @@
   "equality": "OPEN",
   "hand_proof": "OPEN",
   "active_gate": "A.2",
-  "active_target": "000/01",
-  "active_target_reversal_partner": "000/10",
+  "active_target": "000/11",
+  "active_target_reversal_partner": "000/11",
   "proof_logic": "Faithful physical model + exhaustive coverage + complete strict-radius closure + justified global assembly => unrestricted lower bound. Equality and final manuscript remain separate deliverables.",
   "method_preference": "COMPUTER_ASSISTED_EXACT_CERTIFICATE_FIRST_INDEPENDENT_REPLAY_SECOND_HAND_TABLE_THIRD_NO_LEAN_LAKE_CI",
   "honest_counter_policy": "FIXED_FULL_DOMAINS_ONLY; CLOSED_Q_EXCLUSIONS_SEPARATE_FROM_STRICT_RADIUS_DISCHARGES; NO_COMPLETION_PERCENTAGE",
@@ -44,9 +44,11 @@
     "fixed_masks": 32,
     "closed_for_strict_radius": [
       "000/00",
+      "000/01",
+      "000/10",
       "010/00"
     ],
-    "open_mask_count": 30,
+    "open_mask_count": 28,
     "all_original_physical_pairs_retained": true,
     "all_nine_squares_retained": true,
     "new_mask_closures_in_this_reset": [],
@@ -55,7 +57,11 @@
     "mandatory_child_gates_allowed": false,
     "proof_discovery_termination_proved": false,
     "uniform_leaf_difficulty_claimed": false,
-    "completion_percentage": null
+    "completion_percentage": null,
+    "new_mask_closures_in_this_continuation": [
+      "000/01",
+      "000/10"
+    ]
   },
   "proof_library": {
     "status": "PRESERVED_REUSABLE_SOURCES_NOT_A_PARALLEL_ACTIVE_QUEUE",
@@ -65,7 +71,8 @@
     "weak_middle_terminal": "COMPLETED_MIDDLE_LINK_SHARP_TERMINAL_HAND_PROOF.md",
     "latest_conditional_checkpoint": "A2_OUTWARD_OWNER_PERIMETER_AND_EXTREME_ROUTING_CHECKPOINT.md",
     "scope_rule": "Every imported theorem keeps all printed hypotheses; no missing caller is inferred from an asset title or prior status.",
-    "dependency_chain_independently_reaudited_in_this_reset": false
+    "dependency_chain_independently_reaudited_in_this_reset": false,
+    "whole_00001_terminal": "A2_000_01_WHOLE_DOMAIN_HAND_TABLE_PROOF.md"
   },
   "gates": [
     {
@@ -198,7 +205,7 @@
   "legacy_gate_registry": "SUPERSEDED_NO_ACTIVE_PROGRESS_COUNTER",
   "computer_first": {
     "active": true,
-    "target": "unrestricted full nine-square 000/01 mask; reversal 000/10",
+    "target": "unrestricted full nine-square 000/11 mask",
     "mask_emitter": "computer_assisted/emit_fixed_mask.py",
     "exact_controls": "computer_assisted/test_emit_fixed_mask.py",
     "pilot_hand_table": "computer_assisted/NO_EIGHTH_FIXED_SEVEN_HAND_TABLE.md",
@@ -213,6 +220,26 @@
     "global_unsat_certificate_found": false,
     "nonlinear_nra_solver_available_in_current_runtime": false,
     "output_rule": "A full exact verified closure certificate is required before any new mask or root status; final hand table after exact checker replay.",
+    "lean_lake_ci_run": false,
+    "solver_availability_evidence": "Earlier environment at add3c530 ran Z3 shared-library controls; current executor has no Z3 shared library. No global UNSAT certificate."
+  },
+  "latest_continuation": {
+    "date": "2026-11-02",
+    "kind": "TWO_COMPLETE_FIXED_MASK_CLOSURES",
+    "source": "A2_000_01_WHOLE_DOMAIN_HAND_TABLE_PROOF.md",
+    "closure_record": "A2_000_01_VERIFIED_CLOSURE_2026_11_02.md",
+    "closed_masks": [
+      "000/01",
+      "000/10"
+    ],
+    "closed_q": "EXCLUDED",
+    "strict_interval_leaves": 137252,
+    "analytic_leaves": 34,
+    "all_exact_replays_passed": true,
+    "independent_agent_reviews": 3,
+    "human_or_kernel_verification": false,
+    "new_original_root_exclusions": 0,
+    "new_global_gate_closures": 0,
     "lean_lake_ci_run": false
   }
 }

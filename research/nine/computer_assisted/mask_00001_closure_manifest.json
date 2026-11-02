@@ -1,0 +1,278 @@
+{
+  "type": "complete_00001_mask_closure_v1",
+  "baseline_commit": "add3c530e760ddf15cb936a72ee4761a1fcdbe73",
+  "target_q": "1105/256",
+  "masks": [
+    "000/01",
+    "000/10"
+  ],
+  "radius_domain": "closed Q; hence every strict radius below Q",
+  "all_nine_original_squares_retained": true,
+  "corner_constraints": 36,
+  "physical_pair_constraints": 36,
+  "complete_mask_predicate_unchanged": true,
+  "strict_interval_leaves": 137252,
+  "additional_analytic_leaves": 34,
+  "complete_exact_replays_passed": true,
+  "independent_agent_reviews": 3,
+  "human_or_kernel_verification": false,
+  "lean_lake_ci_run": false,
+  "certificates": [
+    {
+      "path": "computer_assisted/left_above_extra_certificate.json",
+      "sha256": "cc6562d1a5a52a82c83176b1c59838e25e9abffdb860929cc425dc670c9f6fdb",
+      "bytes": 58964,
+      "strict_interval_leaves": 11744,
+      "analytic_leaves": 0
+    },
+    {
+      "path": "computer_assisted/badfloor_mainheight_certificate.json",
+      "sha256": "a9a178d987f8de892b402ca5ca338170c3dd3daef77403a010fd97ce8dcff546",
+      "bytes": 296302,
+      "strict_interval_leaves": 59225,
+      "analytic_leaves": 0
+    },
+    {
+      "path": "computer_assisted/central_upper_below_p_certificate.json",
+      "sha256": "a0fc7559da3e4f94c5a38c1dd4efa0c6bd85c63d560f5eaf84c31e84fbf1657f",
+      "bytes": 310194,
+      "strict_interval_leaves": 62000,
+      "analytic_leaves": 0
+    },
+    {
+      "path": "computer_assisted/upper_extra_floor_certificate.json",
+      "sha256": "1381a04af873ac5cb6736e906409250e251ab718b111a9f79143bc0b404ad333",
+      "bytes": 1962,
+      "strict_interval_leaves": 356,
+      "analytic_leaves": 0
+    },
+    {
+      "path": "computer_assisted/outer_R_linear_negative_cover.json",
+      "sha256": "10d5ed1ef26b97ecaf86d0149a4840040804d2e31dc5a147b05047629e0852ed",
+      "bytes": 433365,
+      "strict_interval_leaves": 1700,
+      "analytic_leaves": 0
+    },
+    {
+      "path": "computer_assisted/outer_R_linear_positive_cover.json",
+      "sha256": "36d29da96f39618b2a74a8fe1c2f7a30e97acc2bfc713e1f41c72999ebc2db66",
+      "bytes": 110636,
+      "strict_interval_leaves": 490,
+      "analytic_leaves": 0
+    },
+    {
+      "path": "computer_assisted/E_variable_k_linear_negative_cover.json",
+      "sha256": "94ddb170a16bf4b222e1ede3e85c6a24537b6fa9c23cceb68f73c210f93c91fc",
+      "bytes": 4796,
+      "strict_interval_leaves": 25,
+      "analytic_leaves": 0
+    },
+    {
+      "path": "computer_assisted/E_variable_k_linear_positive_cover.json",
+      "sha256": "ec1bf64bc56f7fb84485be5c6f40477c3d7e3e65797f1c8f603f3473717c7751",
+      "bytes": 5335,
+      "strict_interval_leaves": 28,
+      "analytic_leaves": 0
+    },
+    {
+      "path": "computer_assisted/central_linear_transfer_compact.json",
+      "sha256": "771bf108f5441de0e46810bd924f9fad118d94072f121136f3ed2423f7c0616a",
+      "bytes": 307892,
+      "strict_interval_leaves": 1684,
+      "analytic_leaves": 34
+    }
+  ],
+  "accepted_sources": [
+    {
+      "path": "A2_000_01_ASSEMBLY_AUDIT.md",
+      "sha256": "b3d91e49b448efb344e6ed6169f5197b6e1bc19ff3fa96540dbc93c55db3567d",
+      "bytes": 8081
+    },
+    {
+      "path": "A2_000_01_ATTEMPT.md",
+      "sha256": "0e112a921138a0c7ae2f23fe84d1ae95877075d93533212e1c67d49163fd4f89",
+      "bytes": 15768
+    },
+    {
+      "path": "A2_000_01_LOW_FLOOR_AUDIT.md",
+      "sha256": "95ea3afef38e0e2eeed4a0500b13aeaa9af6ef703b9b3bac1a65ee0d309daf8c",
+      "bytes": 6057
+    },
+    {
+      "path": "A2_000_01_SUPPORT_TABLE_AUDIT.md",
+      "sha256": "4608cbd638bdc99521c3ec60627727bb1d736cd4e638d83ab95910651d6f3678",
+      "bytes": 4930
+    },
+    {
+      "path": "A2_000_01_VERIFIED_CLOSURE_2026_11_02.md",
+      "sha256": "3bd43de99ca1dac831b1cfffdc364c37103d2a4257213d74a550ab21dd9c2962",
+      "bytes": 5994
+    },
+    {
+      "path": "A2_000_01_WHOLE_DOMAIN_HAND_TABLE_PROOF.md",
+      "sha256": "8ed1e754916cfe27e9d3ac1bb9d47b6808eee91c2830a007b1c31fafaf31be41",
+      "bytes": 11590
+    },
+    {
+      "path": "A2_COVERAGE_AND_CLOSURE_CONTRACT.md",
+      "sha256": "bb2d50c9bd20ed625fd9f769bca739826710b30619d1f2d29563e97664e78201",
+      "bytes": 14508
+    },
+    {
+      "path": "BADFLOOR_INNER_MAINS_AND_CENTRAL_EXTRAS_EXACT_PROOF.md",
+      "sha256": "97b256a6e5cfc3b6895d78d17c7f75c0b93859f6a45a4f9b85207bde35dae191",
+      "bytes": 12419
+    },
+    {
+      "path": "CENTRAL_LINEAR_TRANSFER_HAND_TABLE.md",
+      "sha256": "25ed3a1220a08323451417ebed60bd2406dbd3f808c2e066d94ef09dbe5909ab",
+      "bytes": 8732
+    },
+    {
+      "path": "CENTRAL_UPPER_EXTRA_WHOLE_FLOOR_HAND_TABLE.md",
+      "sha256": "2237912346d0ce336ab0432f12b72008c1efffed7e5818c71eeeeacb06f63200",
+      "bytes": 9854
+    },
+    {
+      "path": "DEEP_GATED_ROADMAP.md",
+      "sha256": "44bda2f358fde879b7f2f5447d42a2dbf197fdba53a15e731f00aaf3f970210d",
+      "bytes": 6717
+    },
+    {
+      "path": "E_OWNED_VARIABLE_K_LINEAR_ENVELOPES.md",
+      "sha256": "80599688e6f7519241a75de9ac2670237ad291cbff0b12bcdc38c57b4ba82692",
+      "bytes": 10071
+    },
+    {
+      "path": "FORK_SEPARATOR_SLOPE_BOUNDS.md",
+      "sha256": "6ded66bcafe975f458653451d064da2efcd980072dcb9367cb2fdbd4ab456006",
+      "bytes": 3103
+    },
+    {
+      "path": "HANDOFF_A2_FIXED_CLOSURE.md",
+      "sha256": "01bd258e522cd1ee3c598c9eed35af33f93b8373fa1b2a16de62e557a59ae23f",
+      "bytes": 3968
+    },
+    {
+      "path": "JOINT_INTERVAL_MEAN_VALUE_AUDIT.md",
+      "sha256": "c6e6be76d068c963d3d2afddc29b27e785a2043e20ba97dde7a2794881594391",
+      "bytes": 10633
+    },
+    {
+      "path": "JOINT_OPPOSITE_NORMAL_LOCAL_HAND_PROOF.md",
+      "sha256": "1727a72caf84b9d39981221f0c0fc570b1cef041f655408fc316a77d53698e66",
+      "bytes": 12273
+    },
+    {
+      "path": "LINEAR_OUTER_SCALAR_ENVELOPES.md",
+      "sha256": "61f59507e3ea9ec3c664ec65463c98b1257e5896d79faf367db338eb993556e9",
+      "bytes": 8016
+    },
+    {
+      "path": "LOCAL_QUADRATIC_JOINT_CAP.md",
+      "sha256": "79c89d8a624755a43c976284c8481ff5293d54dd5275f5641f73bd761b92f370",
+      "bytes": 9112
+    },
+    {
+      "path": "LOW_CENTRAL_FLOOR_LEFT_SIDE_EXTRA_EXACT_PROOF.md",
+      "sha256": "3b8a3a3eaad64d173efdc90347baa63ca3a0dde825a80fd398d37b1546df046b",
+      "bytes": 13454
+    },
+    {
+      "path": "LOW_CENTRAL_FLOOR_RIGHT_SIDE_EXTRA_BARRIER.md",
+      "sha256": "b20c92864bb3602905dfb4d527626d53fce62926224abd5f9bf029dd01efc4e2",
+      "bytes": 7994
+    },
+    {
+      "path": "MAIN_OWNED_ENDPOINT_SLOPE_REDUCTION_HAND_PROOF.md",
+      "sha256": "26333dd9767d7178280cb630c20019ff8f7eb1eecec9e5c57531ab40d262892e",
+      "bytes": 8624
+    },
+    {
+      "path": "PROGRESS.md",
+      "sha256": "3e8bd8d6f43015fdd7d837aaa2a4b021458a1662309b6ca5a8e42c2cc29b5467",
+      "bytes": 4944
+    },
+    {
+      "path": "UNRESTRICTED_ACTUAL_FOUR_CHAIN_OUTSIDER_STRIP_HAND_PROOF.md",
+      "sha256": "30dac85c90940c4c12d11fd7f74ea9dd0538a5e0596da5056e07f22580a17647",
+      "bytes": 12334
+    },
+    {
+      "path": "UNRESTRICTED_JOINT_FIVE_SQUARE_HIGH_FLOOR_CAP.md",
+      "sha256": "ee73139b7f9ea9992778daa62bdf1530a226a65a2d0983c5ce09b63dc2fa480a",
+      "bytes": 11145
+    },
+    {
+      "path": "WHOLE_MASK_SHOULDER_AND_NORMAL_REDUCTIONS.md",
+      "sha256": "74cf1bcc57269e17c388d2d9246a585862834b8a46969ce39ee882bcf7e85ceb",
+      "bytes": 8015
+    },
+    {
+      "path": "computer_assisted/interval_fraction.py",
+      "sha256": "8e33d71d00f5fbee9e6a255a3d0d69dd9fcc721d4f4472b11405129222d1e26d",
+      "bytes": 1616
+    },
+    {
+      "path": "computer_assisted/verify_E_variable_k_linear.py",
+      "sha256": "3ded159b3db0288ee1a00ad549061ea151e9f2d540e3fb7988cd02091ec3be8c",
+      "bytes": 5088
+    },
+    {
+      "path": "computer_assisted/verify_badfloor_mainheight_exact.py",
+      "sha256": "584ad4bf04bd2f8a32d6ac1e1a4dfb80094cb0def51fd89fa3af5de2f1316036",
+      "bytes": 5462
+    },
+    {
+      "path": "computer_assisted/verify_central_linear_transfer.py",
+      "sha256": "503dfe9d519d47c61bb62aee799e573c0823e93944f721f911f07f11804001b8",
+      "bytes": 6236
+    },
+    {
+      "path": "computer_assisted/verify_central_upper_below_p_exact.py",
+      "sha256": "ace557329557f36f5df1e698344be5837e0439a2af38a034a4adb77d0fe84ccf",
+      "bytes": 5694
+    },
+    {
+      "path": "computer_assisted/verify_joint_five_dyadic.py",
+      "sha256": "e9a077c6ed871e402f5e43604137a011428ffe9f0d5dcf18d2e1651dd1290c1f",
+      "bytes": 21373
+    },
+    {
+      "path": "computer_assisted/verify_joint_five_fraction.py",
+      "sha256": "148ae2fa1a26ddb1e288f6345255f3ce2ea564ac1bcda07ad7f20d470d469413",
+      "bytes": 12703
+    },
+    {
+      "path": "computer_assisted/verify_left_table_exact.py",
+      "sha256": "baf6617aef2a3d9f0ab9d5b0a9b1dbe0fbaf990d1b9d8059802dec66cbf8fb0b",
+      "bytes": 5223
+    },
+    {
+      "path": "computer_assisted/verify_negative_fork_certificate.py",
+      "sha256": "6b9b31b3029d3bd5021b347ff73d6ffec317f32b7d943678cba15a96e152115c",
+      "bytes": 8396
+    },
+    {
+      "path": "computer_assisted/verify_outer_scalar_family.py",
+      "sha256": "a03dd5b29c7b92b677aa9c3248625b7899ba9e111cc0520c550b27611abdaa81",
+      "bytes": 5180
+    },
+    {
+      "path": "computer_assisted/verify_upper_extra_floor_exact.py",
+      "sha256": "725a9a7c08e412482dfcbb7e7100dada34920a7f4c6faf674b178916bc99c081",
+      "bytes": 4552
+    }
+  ],
+  "proof_order": [
+    "physical support and original two-square caps",
+    "actual-four bands, inner clearances, and adjacent-proxy barrier",
+    "uniform short-chain routing and shoulder bounds",
+    "complete low-floor side-extra barriers",
+    "dynamic inner-main bound, central placement and upper-extra/P bound",
+    "complete upper-extra whole-floor theorem",
+    "complete outer envelopes and central transfer, independent of the low-floor argument",
+    "joint five-square cap",
+    "whole-domain floor split, closed-Q weak-edge contradiction and exact reversal"
+  ]
+}

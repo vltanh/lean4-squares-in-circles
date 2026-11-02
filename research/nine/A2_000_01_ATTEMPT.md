@@ -1,5 +1,11 @@
 # Fixed target 000/01: uniform routing, exact deficit, and a seven-square obstruction
 
+**Historical attempt, superseded November 2, 2026:** the complete `000/01`
+and reversed `000/10` masks are now excluded even at closed Q by
+[A2_000_01_WHOLE_DOMAIN_HAND_TABLE_PROOF.md](A2_000_01_WHOLE_DOMAIN_HAND_TABLE_PROOF.md).
+The routing and seven-square control below remain reusable. Statements
+that the full mask is open describe the earlier attempt, not current status.
+
 Continuation from `3b68416cfa087d56d737d5af0548ba106117fcc6`.
 
 **Target status: OPEN / BLOCKED. New full-mask closures: zero.** This is an attempt record under the fixed-domain contract, not another roadmap or a collection of new mandatory subgates. The selected nine-square predicate has not been proved empty. The statements below have hand derivations; no independent human, second-agent, or kernel review is claimed for this continuation.

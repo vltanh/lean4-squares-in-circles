@@ -30,12 +30,16 @@ November 1, 2026, America/Chicago. Supersedes the expanding active research queu
 | C.1 | OPEN | One assembled manuscript with the full cover, complete terminal callers, and equality argument |
 | C.2 | OPEN | Independent audit of final arithmetic, geometric implications, and boundary cases |
 
-No gate is newly closed by this reset. Lean, Lake, and CI remain deferred; no computational replay is part of the current execution plan.
+The November 2 continuation closes two complete fixed masks inside A.2;
+no global roadmap gate is claimed complete. Exact computational replay
+is authorized. Lean, Lake, and CI remain deferred.
 
 ## A.2 has one fixed frontier, not a growing tree
 
 The active hand-proof frontier is exactly the existing 32 masks in
-[gates/A2_MASK_FRONTIER.json](gates/A2_MASK_FRONTIER.json). Their quantified physical domains and coverage proof are in Sections 2-5 of the contract. `000/00` and `010/00` have inherited complete proofs; 30 masks remain OPEN. These are continuous domains, not a finite list of sampled geometries.
+[gates/A2_MASK_FRONTIER.json](gates/A2_MASK_FRONTIER.json). Their quantified physical domains and coverage proof are in Sections 2-5 of the contract. `000/00`, `000/01`, `000/10`, and `010/00` have complete proofs; 28 masks remain OPEN.
+The two new proofs are documented in
+[A2_000_01_VERIFIED_CLOSURE_2026_11_02.md](A2_000_01_VERIFIED_CLOSURE_2026_11_02.md). These are continuous domains, not a finite list of sampled geometries.
 
 The original root ledger is separate: 5,838 closed-Q exclusions and 2,077 OPEN roots. These counts are inherited from the published summary, not recomputed. Root 7820 contains equality and must never be labeled a closed-Q exclusion. Strict-radius discharges and closed-Q exclusions must have distinct records.
 
@@ -43,13 +47,17 @@ A complete fixed-root hand/table proof is an alternative route. It must name the
 
 ## Immediate proof target
 
-**Whole `000/01`, with `000/10` by reversal.**
+**Whole `000/11`: the remaining actual-four-chain mask.**
 
-Prove the nine-square lower bound with an actual four-chain and a disjoint cone three-chain whose first link is actual and second weak. The remaining two squares and every cross-pair remain unrestricted physical data. This is not the global one-exception hypothesis.
+Prove the complete strict-radius contradiction with both selected
+short-chain links weak and both additional physical squares retained.
+The completed 000/01 proof uses its actual L--P edge and therefore
+requires a new complete caller here. A universal actual-four-chain
+argument could settle the row directly; neither that extraction nor
+a closed-Q exclusion is asserted.
 
-The most useful common proof would also settle `000/11`, namely the entire actual-four-chain nine-square family. That is a broader possible conclusion, not another gate. No claim of equal difficulty or of a guaranteed small proof is made.
-
-Other masks wait in the same fixed table. New owner signs, floor thresholds, first-birth positions, or orientation intervals are not added to the active queue. Existing corresponding lemmas may be used only with proved hypotheses.
+The other masks stay in the same fixed table. No new owner, slope,
+threshold or marker condition becomes a mandatory child gate.
 
 ## What counts as progress
 
