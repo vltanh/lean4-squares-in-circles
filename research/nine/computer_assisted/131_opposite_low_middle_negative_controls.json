@@ -1,0 +1,21 @@
+{
+  "proof_status": "all_four_corruption_controls_rejected",
+  "controls": [
+    {
+      "control": "changed_root",
+      "rejected": true
+    },
+    {
+      "control": "invalid_split_axis",
+      "rejected": true
+    },
+    {
+      "control": "invalid_terminal_rule",
+      "rejected": true
+    },
+    {
+      "control": "forged_root_exclusion",
+      "rejected": true
+    }
+  ]
+}

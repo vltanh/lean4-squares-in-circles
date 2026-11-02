@@ -1,0 +1,7 @@
+{
+  "result": "ALL_74_PRINTED_ROWS_MATCH_EXACT_REPLAY",
+  "rows": 74,
+  "manuscript_sha256": "478e97d5e5f58d901e26c6707aaa8c4c6d857e01c4ee83a4e1f7c8e48f689bc6",
+  "certificate_sha256": "666faf930b12b03b0c6c762886fd13833d0834fb246b750691b5257033afb876",
+  "checker_sha256": "23ee26378929b6c4abe97c2098d7776a2b99f914c32d5fabd6d5de8c49cd9580"
+}

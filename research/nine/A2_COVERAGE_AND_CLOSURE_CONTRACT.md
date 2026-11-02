@@ -3,8 +3,8 @@
 November 1, 2026, America/Chicago. Replaces the expanding research queue, not the mathematical sources. Baseline: `ea4ff8bad97a58e2b8633ab69f549acb5352e573`.
 
 **A.2 is OPEN. The November 2 continuation closes the full `000/01`,
-`000/10`, `010/01`, and `010/10` domains even at Q; 26 fixed masks
-remain open.** The existing exhaustive covers are retained. The missing result is closure of their continuous domains, not another list of conditional subcases.
+`000/10`, `010/01`, and `010/10` domains even at Q, and now closes
+`000/11` for strict radius. There are 25 fixed masks still open.** The existing exhaustive covers are retained. The missing result is closure of their continuous domains, not another list of conditional subcases.
 
 ## 1. Two different ledgers must not be conflated
 
@@ -13,7 +13,7 @@ The original positional cover has 7,915 stable root IDs. The published `computer
 A closed-Q exclusion asserts that an entire root is impossible even at q=Q. A sharp lower-bound proof asserts only that its q<Q part is impossible. These are different claims. Root 7820 contains an attaining packing, so it cannot be closed by a closed-Q exclusion. It can eventually have its strict-radius obligation discharged while its equality domain remains nonempty. **Do not demand that the historical closed-Q OPEN count reach zero.**
 
 The hand-proof work queue uses the 32 already introduced marked-chain masks. They are exact domains of nine physical squares with a chosen chain witness, not 32 finite sets of poses. The accepted complete source proofs treat `000/00`, `000/01`, `000/10`,
-`010/00`, `010/01`, and `010/10`; the other 26 remain OPEN. This is not a percentage of effort, nor a replacement for the 7,915 root IDs or the 15 roadmap IDs.
+`000/11`, `010/00`, `010/01`, and `010/10`; the other 25 remain OPEN. This is not a percentage of effort, nor a replacement for the 7,915 root IDs or the 15 roadmap IDs.
 
 ## 2. The unchanged unrestricted physical predicate
 
@@ -91,7 +91,7 @@ Here C means closed for q<Q by an existing sharp hand theorem; X means excluded 
 
 | Four-chain bits | Three-chain 00 | Three-chain 01 | Three-chain 10 | Three-chain 11 |
 |---|---|---|---|---|
-| 000 | C | X | X | O |
+| 000 | C | X | X | C |
 | 001 | O | O | O | O |
 | 010 | X | X | X | O |
 | 011 | O | O | O | O |
@@ -102,9 +102,9 @@ Here C means closed for q<Q by an existing sharp hand theorem; X means excluded 
 
 The machine-readable rows are in `gates/A2_MASK_FRONTIER.json`. There are no hidden mandatory owner, angle, occupancy, or slope rows beneath this table.
 
-The C source is `PHYSICAL_TWO_SQUARE_CAP_SUPPORT_AND_UNRESTRICTED_FOUR_PLUS_THREE_CHAINS_2026_10_31.md`, Theorem 2. Actual 4+3 chains are explicit in D_000/00. The remaining two physical squares need no additional hypothesis.
+The 000/00 C source is `PHYSICAL_TWO_SQUARE_CAP_SUPPORT_AND_UNRESTRICTED_FOUR_PLUS_THREE_CHAINS_2026_10_31.md`, Theorem 2. Actual 4+3 chains are explicit in D_000/00. The remaining two physical squares need no additional hypothesis.
 
-The X source is `COMPLETED_MIDDLE_LINK_SHARP_TERMINAL_HAND_PROOF.md`, Sections 1-3. For its two internal main squares B,C, write eta_S=h_S+g_S-1>=0. The actual outer links and weak middle cone link give
+The 010/00 X source is `COMPLETED_MIDDLE_LINK_SHARP_TERMINAL_HAND_PROOF.md`, Sections 1-3. For its two internal main squares B,C, write eta_S=h_S+g_S-1>=0. The actual outer links and weak middle cone link give
 
     x_D-x_A-h_A-h_D >= 2+eta_B+eta_C > 2.
 
@@ -118,8 +118,13 @@ It excludes both full domains at closed Q. The subsequent complete
 `010/01` and `010/10` proof is `A2_010_01_WHOLE_DOMAIN_ASSEMBLY.md`,
 with six new independently replayed covers and the complete physical
 audit recorded in `A2_010_01_VERIFIED_CLOSURE_2026_11_02.md`. Those two
-domains are also excluded at closed Q. Conditional endpoint and capacity
-theorems do not change another O without a complete caller.
+domains are also excluded at closed Q. The complete strict-radius
+`000/11` proof is `A2_000_11_WHOLE_DOMAIN_ASSEMBLY.md`, with exact
+replays and independent physical/assembly reviews recorded in
+`A2_000_11_VERIFIED_CLOSURE_2026_11_02.md`. Its final contradiction uses
+the normalized D>2; its closed-Q status is unclassified. Conditional
+endpoint and capacity theorems do not change another O without a complete
+caller.
 
 ## 6. Exact proof sharing by reversal
 
@@ -137,16 +142,17 @@ published denominator remains 32. Reversing only one chosen chain without the co
 
 ## 7. The single next proof target
 
-**Active target: the whole `000/11` strict-radius domain.** It has an
-actual center-cone four-chain and a disjoint cone three-chain with both
-links strictly weak, plus the two other unrestricted physical squares.
-Its reversal is itself. The completed `000/01` proof uses its actual
-L--P edge, so it does not automatically settle this row.
+**Active target: the whole `010/11` strict-radius domain.** Its long
+chain has actual outer links and a weak middle cone link; the disjoint
+short cone chain has both links strictly weak. The two other original
+squares remain unrestricted. Its reversal is itself.
 
-A universal actual-four-chain theorem would close it directly. That is
-a possible broader argument, not a new prerequisite or a tractability
-claim. No bound on other exceptional pairs, chosen endpoint owner,
-inner height, tilt, or outsider placement may be assumed without proof.
+The larger inner-width range must be retained. The complete actual-four
+argument cannot be imported until every physical premise is derived or
+its complement covered. Parallel searches may address another fixed full
+mask or a universal terminal extraction without adding mandatory gates.
+No bound on another exceptional pair, endpoint owner, inner height, tilt
+or outsider placement may be assumed without proof.
 
 The next accepted checkpoint must name the complete fixed domain or
 stable root it discharges and give its full proof. An unfinished target
@@ -164,7 +170,7 @@ A change of physical coordinates, expansion of centers, or relabeling used in a 
 
 ## 9. Progress invariant and its limitation
 
-Let U be the subset of the fixed 32 masks with no accepted complete strict-radius proof. At the reset |U|=30; after the four complete November 2 closures |U|=26. A mathematical closure update removes one or more specified elements of U; a new conditional lemma, a narrower angle range, a child split, a source recovery, or a documentation change removes none. Incorrect proofs must be retracted even if that increases |U|.
+Let U be the subset of the fixed 32 masks with no accepted complete strict-radius proof. At the reset |U|=30; after the five complete November 2 closures |U|=25. A mathematical closure update removes one or more specified elements of U; a new conditional lemma, a narrower angle range, a child split, a source recovery, or a documentation change removes none. Incorrect proofs must be retracted even if that increases |U|.
 
 This is a monotone accounting rule for valid accepted closures, **not a theorem that proof discovery terminates**. A finite list can contain very hard continuous statements. Compactness, an integer counter, and a finite mask set do not establish tractability or a uniform finite subdivision bound. No claim of uniformly easy leaves or a completion percentage is made.
 

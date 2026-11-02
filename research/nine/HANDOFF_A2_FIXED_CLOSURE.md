@@ -1,135 +1,79 @@
-# Current A.2 handoff: six masks closed; continue with 000/11
+# Current A.2 handoff: seven masks closed; continue with 010/11
 
-## Latest actual-four occupancy checkpoint
-
-Read `A2_000_11_CERTIFIED_OCCUPANCY_CHECKPOINT_2026_11_02.md` first.
-The complete normalized `(2,3,0)` and `(1,4,0)` families and their
-horizontal reflections are now closed. The bottom/top full-side-main
-patterns of `(2,2,1)` are closed, and `(1,3,1)` is closed when its
-central vertical split is three upper or one upper. `(2,1,2)` remains
-closed, and `(0,5,0)` is excluded by the selected cone span.
-
-The exact remaining cases of 000/11 are `(2,2,1)` with its full-side
-main in the middle, and `(1,3,1)` with two upper and one lower central
-unit. The whole fixed mask stays OPEN; there are still six closed masks
-and 26 open, with no changed positional-root count.
-
-New accepted inputs are the half-width replacement floor, coupled
-cone inset loss, two-central high-floor height cap, sharper two-low-main
-bound, low-side/two-lower exclusion, and central-right-endpoint height
-table. The three new complete covers total 65,852 strict leaves. Their
-exact replays and complete physical reviews are saved. Do not repeat
-those accepted searches without a concrete concern.
-
-## Latest complete weak-middle closure
-
-The full 010/01 and 010/10 predicates are excluded at closed Q=1105/256.
-Read `A2_010_01_WHOLE_DOMAIN_ASSEMBLY.md`,
-`A2_010_01_VERIFIED_CLOSURE_2026_11_02.md`, and
-`computer_assisted/mask_01001_closure_manifest.json`.
-
-Six new finite covers passed independent exact replay, with 811,086
-strict leaves and two twelve-row physical-clearance tables. The inherited
-five-square cap contributes 3,927 strict leaves and 34 analytic leaves.
-Twenty-five damaged or false new certificates were rejected. The complete
-physical assembly has independent agent review, with no human or kernel
-verification claimed and no Lean, Lake, or CI.
-
-The complete floor split uses both original extras to produce an original
-upper central unit with whole floor >1/10 when P lacks that floor.
-The cap gives endpoint span <=2, contradicting the weak middle's
-retained span >=2+V>2. The full inner-width range up to 13/20 is retained.
-
-For the remaining 000/11 selection, accepted reusable inputs now include
-`WIDENED_JOINT_FIVE_SQUARE_CAP.md`,
-`UPPER_COLUMN_SEPARATION_HAND_TABLE.md`,
-`ACTUAL_FOUR_FULL_SIDE_OCCUPANCY_CLOSED_HAND_PROOF.md`,
-`CENTRAL_SINGLETON_FLOOR_HAND_TABLE_PROOF.md`,
-`LOW_SIDE_UNIT_FORCES_SAME_SIDE_CENTRAL_FLOOR.md`, and
-`TWO_LOW_MAINS_CENTRAL_EXCLUSION_HAND_TABLE.md`.
-The complete (2,1,2) occupancy is settled. The later checkpoint at the top
-of this handoff records the new complete cases and exact remaining
-families. These are internal proof distinctions, not new mandatory
-global gates. Every complement must close before changing 000/11.
-
-The preceding accepted 000/01 and 000/10 record follows. Its exact tables
-need no rerun without a concrete new acceptance concern.
-
-November 2, 2026, America/Chicago.
-
-**New whole-mask closures: 000/01 and 000/10, both even at closed Q.**
-**Global A.2, unrestricted lower bound, global equality and final global
-manuscript remain OPEN.** No Lean, Lake or CI.
+November 2, 2026. Complete actual-four closure accepted. No Lean, Lake
+or CI. The unrestricted bound, equality and global manuscript remain OPEN.
 
 ## Read first
 
-1. `A2_000_01_WHOLE_DOMAIN_HAND_TABLE_PROOF.md`: the complete moving
-   nine-square argument, including its closed-radius equality step.
-2. `A2_000_01_VERIFIED_CLOSURE_2026_11_02.md`: fresh exact replays,
-   independent review, precise closure scope and reproduction commands.
-3. `A2_COVERAGE_AND_CLOSURE_CONTRACT.md`: unchanged physical domains,
-   cover, reversal, and acceptance rules.
+1. `A2_000_11_WHOLE_DOMAIN_ASSEMBLY.md`: full original-nine strict proof.
+2. `A2_000_11_VERIFIED_CLOSURE_2026_11_02.md`: exact evidence and scope.
+3. `A2_000_11_ROOT_INTEGRATION_REVIEW.md`: root physical/code review and
+   fresh complete replays.
+4. `computer_assisted/mask_00011_closure_manifest.json`: frozen sources,
+   certificates and reports.
 
-The previous handoff at commit `add3c530` only knew a guarded terminal
-and unfinished computational exploration. The newly adopted recovered
-work closes that coverage gap. Do not restart the old guarded-terminal
-campaign or describe the two masks as open.
+## What is now complete
 
-## Why the whole proof works
+Every actual-four outsider occupancy is closed: (2,1,2), (2,2,1),
+(2,3,0), (1,3,1), (1,4,0), (0,5,0), with horizontal reflections.
+No conditional middle-marker or two-upper family remains. The proof
+uses a **small** common expansion preserving both exact weak bits;
+all callers need only containment <=Q, not an attained Q corner.
 
-The original selected P either has floor at least 1/10 or has floor at
-most 1/10. In the first branch P is the original central square U.
-In the second branch the complete side barriers, dynamic main-inset
-bound, central placement and two upper-extra tables force one of the
-two extra original squares to have the required high floor. Both
-branches supply all hypotheses of the unrestricted joint five-square
-cap. Its four outer support envelopes and central transfer cancel the
-slope costs and contradict the actual four-chain below Q.
+The final (2,2,1) middle proof has a complete 19,387-leaf low-right
+table followed by the complete 2,821,264-leaf low-floor table. The latter
+was independently replayed in C++ and freshly replayed by the root, with
+minimum reserve 360606/2^48 and no frontier. All physical signs, owners,
+same-P identities, endpoint resources and finite contractions have
+independent audits. The original lower full-side unit supplies the
+separate 74-row yMain>-17/50 result. The stronger -1/3 local claim is
+false, with an exact six-original obstruction saved; do not reuse it.
 
-At Q, equality forces horizontal central separators. Equality in the
-original two-square caps aligns R, and the original L--P actual and
-P--R cone comparisons then align P and make P--R actual. This
-contradicts its strictly weak bit. Exact reversal gives 000/10.
+The full (1,3,1) two-upper family has both-side-upper and opposite-side
+callers. Their 112-leaf raised-inset gate, 25-row one-main gate and
+9,035-leaf opposite-side cover have fresh exact replays and full physical
+reviews. The universal original-pair linear and curved shoulder tolls
+have complete 511/860-leaf tables and analytic collars, and are independent
+of the widened cap. Their exact effective width is
+psi=min(alpha/2+19 beta/54, 1-alpha/2+beta/18).
 
-The proof contains 137,252 strict interval leaves and 34 analytic
-leaves, all freshly replayed. Independent agent reviews checked the
-geometric implications, the support/owner cover, local complements,
-assembly and equality. No human or kernel verification is claimed.
-The nine certificate files, standalone standard-library checkers and
-fresh reports are in `computer_assisted/`; the closure manifest records
-all hashes. Older fork certificates are not hidden dependencies.
+The final integration contributes 2,851,267 strict leaves, plus the one
+hand v row and printed complements. The earlier 65,852-leaf occupancy
+checkpoint and accepted cap/singleton inputs remain unchanged. No accepted
+search needs repeating without a concrete mathematical or byte-identity
+concern. The partial supplemental 80-bit low-floor run is not full evidence.
 
-## Exact next target
+## Exact next target and parallel work
 
-Close the whole `000/11` strict-radius predicate: all nine original
-physical squares, three actual center-cone main links, two weak
-center-cone short-chain links, all 36 corners and all 36 physical pairs.
-Its reversal is itself. Do not assume it is impossible at closed Q
-without proof.
+Principal target: full **010/11**. Its actual outer long links and weak
+middle imply endpoint span >=2+eta1+eta2>2, but the inner main halfwidths
+can reach 13/20. Derive every required bound afresh before transferring
+an actual-four occupancy argument. Retain the two weak short links, both
+extra originals, all 36 corner and pair conditions, and boundary faces.
 
-The completed 000/01 proof requires an actual L--P edge in the
-low-floor reductions. That hypothesis must be replaced by a complete
-argument before transferring it to 000/11. One possible broad route is
-to show that an actual four-chain plus all five outsiders supplies
-another disjoint cone triple with at least one actual link. This is a
-research direction, not an accepted lemma or a new mandatory gate.
+Parallel fixed-domain search: 001/00 and reversal 100/00. A universal
+endpoint orientation toll alone may be blocked by a genuine subcritical
+eight-square subsystem; the ninth original can be essential. Also seek
+a rigorously justified choice of witness/frame that supplies a proved
+terminal for all remaining configurations. A broad extraction may close
+multiple rows only after its full existential assertion is proved.
 
-The weak-middle endpoint-reserve theorem is also available for the
-010/* rows, but its two inner main squares have different width and
-center bounds. Do not import the actual-four low-floor caller there
-without deriving its hypotheses or treating the full complement.
+Computer-assisted proof discovery comes first where useful. Keep every
+incomplete proposal explicitly open. No additional owner, slope, marker
+or threshold becomes a new mandatory gate.
 
 ## Fixed accounting
 
-- 32 masks: 6 closed for strict radius, 26 OPEN.
-- Closed masks: 000/00 (equality retained), 000/01, 000/10, 010/00,
-  010/01, 010/10 (the latter five excluded at closed Q).
-- 7,915 original positional roots: historical 5,838 closed-Q excluded,
-  2,077 OPEN. No new root manifest or exclusion count is claimed.
-- Same 15 roadmap IDs. A.2 and global equality/manuscript gates remain
-  open. Conditional work creates no new mandatory children.
+- Same 32 masks: 7 strict-radius closed, 25 OPEN.
+- Closed: 000/00, 000/01, 000/10, 000/11, 010/00, 010/01, 010/10.
+- 000/00 retains equality; the five X masks are closed-Q exclusions;
+  000/11 has unclassified closed-Q status and only a C strict proof.
+- Same 7,915 positional roots: historical 5,838 closed-Q exclusions and
+  2,077 open. Equality root 7820 preserved. No new root claim.
+- Same 15 roadmap IDs. A.2 and all remaining global proof/equality/
+  manuscript obligations stay OPEN.
 
-A complete fixed domain or a valid universal extraction may advance
-closure. Every boundary, terminal premise, and complementary domain
-must be covered. The decreasing mask counter is accounting, not a
-proof that research terminates or that the next row is easy.
+The earlier four new whole-mask proofs remain in
+`A2_000_01_WHOLE_DOMAIN_HAND_TABLE_PROOF.md` and
+`A2_010_01_WHOLE_DOMAIN_ASSEMBLY.md`, with their separate exact records.
+The unchanged contract is `A2_COVERAGE_AND_CLOSURE_CONTRACT.md`.

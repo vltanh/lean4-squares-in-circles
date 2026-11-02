@@ -1,0 +1,49 @@
+{
+  "status": "EXACT_REPLAY_PASSED",
+  "kind": "low_right",
+  "nodes": 38773,
+  "leaves": 19387,
+  "max_depth": 28,
+  "leaf_rules": {
+    "0": 579,
+    "1": 4716,
+    "4": 14092
+  },
+  "root": [
+    [
+      "0",
+      "1"
+    ],
+    [
+      "0",
+      "1"
+    ],
+    [
+      "0",
+      "1"
+    ],
+    [
+      "29/60",
+      "13/12"
+    ],
+    [
+      "-23/60",
+      "23/60"
+    ],
+    [
+      "29/60",
+      "49/80"
+    ],
+    [
+      "4421/12000",
+      "1/2"
+    ]
+  ],
+  "scale": 1208925819614629174706176,
+  "minimum_exact_reserve": "6602649188058974793/604462909807314587353088",
+  "certificate_sha256": "723b5864033f3b12cb260dd54685b0c139685a6cefbceec7d187054b96fdfcd9",
+  "checker_sha256": "c1e26b7c6184c2636c3eb66c1f267b076f84b852a9c7fe39e6c26e7a2029fe29",
+  "seconds": 27.759923855002853,
+  "arithmetic": "Directed 80-bit integer dyadics, rational midpoint roots, integer square roots; no floating point",
+  "scope": "Original actual cone four-chain and both-weak cone triple with side endpoints; low-right uses yMain>=-7/20, low-floor uses yMain>=-17/50 from the original lower-side theorem. All original nine-square constraints remain in the caller."
+}

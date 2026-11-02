@@ -1,0 +1,15 @@
+{
+  "status": "EXACT_REPLAY_PASSED",
+  "kind": "low_floor",
+  "nodes": 5642527,
+  "leaves": 2821264,
+  "maximum_depth": 52,
+  "scale": 281474976710656,
+  "minimum_exact_reserve": "360606/281474976710656",
+  "elapsed_ms": 82798,
+  "arithmetic": "48-bit directed dyadics, checked signed __int128 arithmetic, integer-only radicals, exact rational root cells",
+  "scope": "Fresh complete root integration replay after independent physical and implementation review",
+  "certificate_sha256": "faf9cc6967ce02412024f0fe90db6298931d0c243bce6cf345ad78dda2785a9c",
+  "archive_sha256": "ad5275e67b28a15d86cea564cd6221149a9c7cf7e4470dfe4762c296e4f8e76e",
+  "checker_sha256": "96ac00e7069e20dcbf39dfb6e092349773300edc3689549f791f32c6c557bd00"
+}

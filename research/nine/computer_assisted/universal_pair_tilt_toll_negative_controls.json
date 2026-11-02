@@ -1,0 +1,23 @@
+{
+  "status": "ALL_DAMAGED_CONTROLS_REJECTED",
+  "controls": {
+    "changed_root": {
+      "result": "REJECTED",
+      "reason": ""
+    },
+    "invalid_split_tag": {
+      "result": "REJECTED",
+      "reason": ""
+    },
+    "invalid_channel": {
+      "result": "REJECTED",
+      "reason": ""
+    },
+    "forged_leaf": {
+      "result": "REJECTED",
+      "reason": "(2, '-1', '1', '-1807411324864397335541/18446744073709551616')"
+    }
+  },
+  "certificate_sha256": "b9930b443ad91e853d35087cccab68e822a2ba71dcf38654ccadca839512fe2d",
+  "checker_sha256": "81874e3955133a2b3e93515f1165a0dee5fefd19e6231650e614df01f9ea6230"
+}

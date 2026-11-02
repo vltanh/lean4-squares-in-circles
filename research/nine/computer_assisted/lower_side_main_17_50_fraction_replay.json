@@ -1,0 +1,16 @@
+{
+  "result": "PASS",
+  "nodes": 147,
+  "leaves": 74,
+  "maximum_depth": 15,
+  "rules": {
+    "all_axes": 74
+  },
+  "least_exact_reserve": "298391408039568071389050106551180085080756497637330581090815840653224865779799608756075137067/16713346953049181750827769115681688415245548168113716652131871194016626919160529119941272535040000",
+  "main_tangent_cut_squared_reserve": "32371/901040400",
+  "universal_center_squared_reserve": "31/57600",
+  "arithmetic": "Fraction intervals with outward 80-bit radicals; no producer imports or floating arithmetic",
+  "certificate_sha256": "666faf930b12b03b0c6c762886fd13833d0834fb246b750691b5257033afb876",
+  "checker_sha256": "23ee26378929b6c4abe97c2098d7776a2b99f914c32d5fabd6d5de8c49cd9580",
+  "seconds": 0.10139379199972609
+}

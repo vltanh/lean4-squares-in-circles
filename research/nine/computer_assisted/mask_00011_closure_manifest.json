@@ -1,0 +1,659 @@
+{
+  "schema": "n9_complete_mask_00011_closure_v1",
+  "status": "ACCEPTED_COMPLETE_STRICT_RADIUS_PROOF",
+  "mask": "000/11",
+  "closed_q": "NOT_CLASSIFIED",
+  "source": "../A2_000_11_WHOLE_DOMAIN_ASSEMBLY.md",
+  "integration_review": "../A2_000_11_ROOT_INTEGRATION_REVIEW.md",
+  "target_q": "1105/256",
+  "all_nine_original_squares_retained": true,
+  "fixed_masks": 32,
+  "strict_closed_masks": 7,
+  "open_masks": 25,
+  "new_original_root_exclusions": 0,
+  "new_global_gate_closures": 0,
+  "roadmap_gate_ids_unchanged": 15,
+  "no_lean_lake_ci": true,
+  "new_strict_interval_leaves": 2851267,
+  "additional_nonpositive_v_hand_rows": 1,
+  "pair_toll_analytic_collar_cases": 8,
+  "other_hand_complements": "Printed zero-tilt collar and complete physical/occupancy arguments",
+  "complete_new_tables": [
+    {
+      "file": "131_opposite_low_middle_direct_cover.json.gz",
+      "strict_interval_leaves": 9035,
+      "additional_hand_rows": 0,
+      "sha256": "2bf75ca014ec2e9d3718f9014e22ce138387385aee7e28c14819b126306daf90"
+    },
+    {
+      "file": "one_low_main_nine_tenths_cover.json",
+      "strict_interval_leaves": 24,
+      "additional_hand_rows": 1,
+      "sha256": "6df3b4ee545678519f33e15af3cfd9103f35e22eeec7e5ee9620f72fb23ebb8f"
+    },
+    {
+      "file": "right_unit_above_proxy_cover.json",
+      "strict_interval_leaves": 112,
+      "additional_hand_rows": 0,
+      "sha256": "44b526b05af588c2268ff15d73874bb36484c23a0afe3a8c50450a86c2d84e81"
+    },
+    {
+      "file": "lower_side_main_17_50_cover.json",
+      "strict_interval_leaves": 74,
+      "additional_hand_rows": 0,
+      "sha256": "666faf930b12b03b0c6c762886fd13833d0834fb246b750691b5257033afb876"
+    },
+    {
+      "file": "universal_pair_tilt_toll_cover.json",
+      "strict_interval_leaves": 511,
+      "additional_hand_rows": 0,
+      "sha256": "b9930b443ad91e853d35087cccab68e822a2ba71dcf38654ccadca839512fe2d"
+    },
+    {
+      "file": "universal_pair_curved_tilt_toll_cover.json",
+      "strict_interval_leaves": 860,
+      "additional_hand_rows": 0,
+      "sha256": "9ba10374718180ebdc4fe1d95675f898c4b549919785ad2d5f8bf62142617cb0"
+    },
+    {
+      "file": "middle_main_low_right_candidate.json",
+      "strict_interval_leaves": 19387,
+      "additional_hand_rows": 0,
+      "sha256": "723b5864033f3b12cb260dd54685b0c139685a6cefbceec7d187054b96fdfcd9"
+    },
+    {
+      "file": "middle_main_low_floor_candidate.json.gz",
+      "strict_interval_leaves": 2821264,
+      "additional_hand_rows": 0,
+      "sha256": "ad5275e67b28a15d86cea564cd6221149a9c7cf7e4470dfe4762c296e4f8e76e"
+    }
+  ],
+  "canonical_low_floor_certificate_sha256": "faf9cc6967ce02412024f0fe90db6298931d0c243bce6cf345ad78dda2785a9c",
+  "damaged_control_reports": [
+    "research/nine/computer_assisted/131_opposite_low_middle_negative_controls.json",
+    "research/nine/computer_assisted/middle_main_low_floor_cpp_negative_controls.json",
+    "research/nine/computer_assisted/middle_main_side_triple_negative_controls.json",
+    "research/nine/computer_assisted/one_low_main_nine_tenths_negative_controls.json",
+    "research/nine/computer_assisted/universal_pair_curved_tilt_toll_negative_controls.json",
+    "research/nine/computer_assisted/universal_pair_tilt_toll_negative_controls.json"
+  ],
+  "partial_python_low_floor_repeat_is_not_full_evidence": true,
+  "independent_agent_reviews": true,
+  "human_or_kernel_verification": false,
+  "inherited_inputs": [
+    {
+      "path": "research/nine/SMALL_CENTER_EXPANSION_PRESERVES_FIXED_MASKS.md",
+      "sha256": "dc5d72e4554296c98bc2a0dc0c45003e495de54c1c60af0a6e3a31f2d06de8c4"
+    },
+    {
+      "path": "research/nine/UNRESTRICTED_ACTUAL_FOUR_CHAIN_SIDE_CAPACITY_HAND_PROOF.md",
+      "sha256": "507210c596720c26ea2fbe867242b7192247104f6e9e462ad52a6202e65613c7"
+    },
+    {
+      "path": "research/nine/WIDENED_JOINT_FIVE_SQUARE_CAP.md",
+      "sha256": "b8d4f232ad4bfacd3093812add0b16feb30875fd47c2b104aca284ef149abc83"
+    },
+    {
+      "path": "research/nine/ACTUAL_FOUR_CONE_THREE_COMMON_ROUTING.md",
+      "sha256": "15b52a20145aa8cb37225bd20138012c1ad99a5f0cb1ed2d66f4fa18698e12ca"
+    },
+    {
+      "path": "research/nine/ACTUAL_FOUR_FULL_SIDE_OCCUPANCY_CLOSED_HAND_PROOF.md",
+      "sha256": "aeac2f11dc46c37b587b1fbb7b820c7bec42c7284a629660b376503fceab84bb"
+    },
+    {
+      "path": "research/nine/ACTUAL_FOUR_221_FULL_SIDE_BOTTOM_CLOSED_HAND_PROOF.md",
+      "sha256": "85f64907ae269c4d7ca92c282cbdb6f7fcb10c9d8be64fea6e85fe9d67d9a90a"
+    },
+    {
+      "path": "research/nine/ACTUAL_FOUR_230_WHOLE_OCCUPANCY_CLOSED_HAND_PROOF.md",
+      "sha256": "b40a0855f2e1550db1c66998cfabebbc9668893c69f04a4f96a06eb6855ab049"
+    },
+    {
+      "path": "research/nine/ACTUAL_FOUR_140_THREE_UPPER_ONE_LOWER_CLOSED_HAND_PROOF.md",
+      "sha256": "21c5014333a1b89f674cfaf4e61fc7dd6311e9260c62807521e2dfcf2c4e6a09"
+    },
+    {
+      "path": "research/nine/ACTUAL_FOUR_MANY_CENTRAL_EASY_CALLERS.md",
+      "sha256": "aa7e3348b5546f658fb9a5685339f93b849b096e4706adc9576882a4b847de2c"
+    },
+    {
+      "path": "research/nine/COUPLED_CONE_INSET_LOSS_HAND_PROOF.md",
+      "sha256": "ca316584c7a8eb2fe7b2884783e8975898d32172d17edaca1c3e16aade6f2c7b"
+    },
+    {
+      "path": "research/nine/LOW_SIDE_UNIT_FORCES_SAME_SIDE_CENTRAL_FLOOR.md",
+      "sha256": "2871da98e63a416aaa77cd5a5c3dafaed6136e84cbf35b73e5069f52a8f6f48f"
+    },
+    {
+      "path": "research/nine/LOW_FLOOR_RIGHT_CENTRAL_AND_HIGH_RIGHT_SHOULDER_EXCLUSION.md",
+      "sha256": "a66625a8d8c670738bd0d2a9d776fca13315fe5db951554b625169acee538509"
+    },
+    {
+      "path": "research/nine/CENTRAL_RIGHT_CONE_ENDPOINT_HIGH_SHOULDER_HAND_TABLE.md",
+      "sha256": "41b32218ae024ff76787955f86ff7a566c81de33748aff3de48c3d4d8ea0046f"
+    },
+    {
+      "path": "research/nine/TWO_LOW_MAINS_23_60_AND_OPPOSITE_LOW_CENTRALS.md",
+      "sha256": "38ab14ab57d4696213bd65a5bf7f9634e7500ca09a50c8253bb0729c4d5c0a5f"
+    },
+    {
+      "path": "research/nine/UPPER_CENTRAL_PAIR_HALF_WIDTH_REPLACEMENT_HAND_PROOF.md",
+      "sha256": "8a0e6a433e9960dd498c7993fd1dac91b203f9d621eb3f543c6eb389e0deaaa1"
+    },
+    {
+      "path": "research/nine/PHYSICAL_TWO_SQUARE_CAP_SUPPORT_AND_UNRESTRICTED_FOUR_PLUS_THREE_CHAINS_2026_10_31.md",
+      "sha256": "88da0b395e96c11f8e6c67d0b0be01250550fdb5f2a06c3afcb704116a063301"
+    },
+    {
+      "path": "research/nine/computer_assisted/actual_four_occupancy_checkpoint_manifest.json",
+      "sha256": "27fad1f4eff412bcf08c38e3ce576243f730d0908275ab9b7face0cb8807fd56"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "research/nine/A2_000_11_FINAL_ASSEMBLY_INDEPENDENT_REVIEW.md",
+      "bytes": 7385,
+      "sha256": "6d1aca92b7f29b0cc5042529720e870a67c1e71274b034150a980fc18e59249f",
+      "git_blob_sha1": "f07b2a3aa4dc195b07e4f705c46af8caa89748a5"
+    },
+    {
+      "path": "research/nine/A2_000_11_ROOT_INTEGRATION_REVIEW.md",
+      "bytes": 6476,
+      "sha256": "4b006f9e2bb82ea3b846431a9947c1786b0102d14f50fed1d5b0f76387756882",
+      "git_blob_sha1": "74c2228969737854cb81e93185713c63c482d86c"
+    },
+    {
+      "path": "research/nine/A2_000_11_VERIFIED_CLOSURE_2026_11_02.md",
+      "bytes": 8247,
+      "sha256": "e1ae8984ca835be47868fdb8c33df5d0cd1877dc5fe748a5a5409bac6132f608",
+      "git_blob_sha1": "5c763223ea9360b6c65dc5ce5b147eab20f34953"
+    },
+    {
+      "path": "research/nine/A2_000_11_WHOLE_DOMAIN_ASSEMBLY.md",
+      "bytes": 11894,
+      "sha256": "f8a8d16639a273f4c94bd84b5fd39bb71d4344d24f22e87249bb8161ae965ae9",
+      "git_blob_sha1": "c7b8f6eb84ff3ee304ea89ea89a358d9073afb8a"
+    },
+    {
+      "path": "research/nine/A2_COVERAGE_AND_CLOSURE_CONTRACT.md",
+      "bytes": 15277,
+      "sha256": "4ad568e2751350b6cab91db032f2db0a61e7dd2e9372b71d4c6f449767afd81c",
+      "git_blob_sha1": "a69937a459d52b29347a9f56cc2385bd03cbecc7"
+    },
+    {
+      "path": "research/nine/ACTUAL_FOUR_131_BOTH_SIDE_UPPER_CLOSED_HAND_PROOF.md",
+      "bytes": 11286,
+      "sha256": "4e5fe4e4ed71a341d096ae39add470b52c993b0ad6be3ce0e453a02bfd8e5e46",
+      "git_blob_sha1": "0493ee6ad4b9e2b3ca9bf5a3e6ddac35aadb8a1d"
+    },
+    {
+      "path": "research/nine/ACTUAL_FOUR_131_OPPOSITE_SIDES_CLOSURE.md",
+      "bytes": 12879,
+      "sha256": "c7bedcb965866d034fb7ddae0c5488cbd49184413f359c7f79d11a49bac0308c",
+      "git_blob_sha1": "d7fb834ef781b6cec3193af751848110c769d683"
+    },
+    {
+      "path": "research/nine/ACTUAL_FOUR_221_FULL_SIDE_MIDDLE_ASSEMBLY.md",
+      "bytes": 9507,
+      "sha256": "69dc31e5f015cb3e8a3bbc6e5bd0927e9510bd51a4988ad291e0a22dce63177c",
+      "git_blob_sha1": "407b288e857225c1891fa817b6a33c02a3a44386"
+    },
+    {
+      "path": "research/nine/ACTUAL_FOUR_OCCUPANCY_ASSEMBLY_COVER_AUDIT.md",
+      "bytes": 7315,
+      "sha256": "82e227dfae2b3dd28f50d7cd27bb8571976310a488f0ebf4c40e51ceca9c12f0",
+      "git_blob_sha1": "dbaed90cb2a95a5e1abc995b8e621a69e78f3178"
+    },
+    {
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "bytes": 7042,
+      "sha256": "6e540f8631008b76c2bd768c9a3d0b7c2dbde05aa004f783dc0b2a43218e95c6",
+      "git_blob_sha1": "4082bb46e8b1664c0634daab2270faa3898c1638"
+    },
+    {
+      "path": "research/nine/FULL_SIDE_MIDDLE_221_INDEPENDENT_AGENT_REVIEW.md",
+      "bytes": 3854,
+      "sha256": "9cdd2a4a939a1e57fb887273b4704b1e7611bf04875b50d470d4ba90ef5725b5",
+      "git_blob_sha1": "ebb49030d460a86441ed4ce00bfcf2a61c696715"
+    },
+    {
+      "path": "research/nine/FULL_SIDE_MIDDLE_221_INDEPENDENT_ASSEMBLY_REVIEW.md",
+      "bytes": 4220,
+      "sha256": "dd6033ca58b73f549c8e47b9eb3137bc354b06761e3f89412f94bb7e60b142e0",
+      "git_blob_sha1": "5001705d37b1280dbe848e0da75af66ce3cb2c09"
+    },
+    {
+      "path": "research/nine/HANDOFF_A2_FIXED_CLOSURE.md",
+      "bytes": 4089,
+      "sha256": "7660ad05522c23153e3c8ae6f1b7e6e4ac78bcc0ccfae5dab340e90b07bb57bc",
+      "git_blob_sha1": "5aa297212fc17d9909c51e317a111983adf20b45"
+    },
+    {
+      "path": "research/nine/INDEPENDENT_131_BOTH_SIDE_UPPER_REVIEW.md",
+      "bytes": 5323,
+      "sha256": "37cb0a47e32b58e29c55eb19530dc407aabdd59252b8adc23735412815ba2a1a",
+      "git_blob_sha1": "993f31bb20578b0410cf23b049238f57a95771b4"
+    },
+    {
+      "path": "research/nine/LOWER_SIDE_MAIN_SEVENTEEN_FIFTIETHS_HAND_TABLE.md",
+      "bytes": 10931,
+      "sha256": "478e97d5e5f58d901e26c6707aaa8c4c6d857e01c4ee83a4e1f7c8e48f689bc6",
+      "git_blob_sha1": "06fcc55e10fd70942b65df4457a10015b1ce9bcc"
+    },
+    {
+      "path": "research/nine/MIDDLE_MAIN_FAST_EXACT_REPLAY.md",
+      "bytes": 7550,
+      "sha256": "80d83f522a14f5be1586d4154340b0d1c6acc0a66e8a4d9728fd53daef25c535",
+      "git_blob_sha1": "02977bc3393adc526d57f3422db60f7662d4b698"
+    },
+    {
+      "path": "research/nine/MIDDLE_MAIN_LOW_FLOOR_CPP_INDEPENDENT_AUDIT.md",
+      "bytes": 14814,
+      "sha256": "6a34d90f9b2ff4e1039837b0665f4e96981af35d4966cd530454f85e41c3ae52",
+      "git_blob_sha1": "5c55a44b50efe2daffc6d0662ae5cedb3222b65a"
+    },
+    {
+      "path": "research/nine/MIDDLE_MAIN_REFINEMENTS_INDEPENDENT_AGENT_REVIEW.md",
+      "bytes": 9384,
+      "sha256": "1734fb355e13efebfd6baf44e158d99a637f693aff7d14e25ee121c6deec1bb3",
+      "git_blob_sha1": "360c200a710c123e3e5a7fb4631c2d2d02c95476"
+    },
+    {
+      "path": "research/nine/MIDDLE_MAIN_SIDE_CONE_TRIPLE_HAND_TABLE.md",
+      "bytes": 34102,
+      "sha256": "6394490f258cfafd327d0dcdf0716f454193333180eb530765603ee9d4e63a84",
+      "git_blob_sha1": "9836114aa7ec3de5193347c8e79872c930f38c0b"
+    },
+    {
+      "path": "research/nine/ONE_LOW_MAIN_NINE_TENTHS_CENTRAL_EXCLUSION.md",
+      "bytes": 6694,
+      "sha256": "f99893fbb31dcf53d0323524837cc78f197ebce0ca51a88e6463ce921efe4f32",
+      "git_blob_sha1": "bc0511a0d88dc53b5e0d9d481c2a1611c624101b"
+    },
+    {
+      "path": "research/nine/ONE_THIRD_MAIN_HEIGHT_OBSTRUCTION.md",
+      "bytes": 2532,
+      "sha256": "63f429cb9463721e8fbb0cea4b61293f8483b4a3bde789c54089bda08faf6c0e",
+      "git_blob_sha1": "4e4902740d68f517e4a25aeb8650216211c59c06"
+    },
+    {
+      "path": "research/nine/PROGRESS.md",
+      "bytes": 5367,
+      "sha256": "6475e7f417241b9a32ccaea93d9ac448ab643f0c477e560f124df9c40b377fcf",
+      "git_blob_sha1": "d6ed45ab92bfe7eabdcba1c5fc2b69f2193764d7"
+    },
+    {
+      "path": "research/nine/RIGHT_SIDE_UNIT_ABOVE_RAISED_PROXY_HAND_TABLE.md",
+      "bytes": 3835,
+      "sha256": "1b0342faba618a963a14286659fd209cf77b3b869b27dc3f118c09e1649fb72f",
+      "git_blob_sha1": "e033a60ba94e19f4e534c1581c145079ca444583"
+    },
+    {
+      "path": "research/nine/UNIVERSAL_PAIR_CURVED_TILT_TOLL_INDEPENDENT_AGENT_REVIEW.md",
+      "bytes": 3283,
+      "sha256": "709517c50f5f8eff4fc16747712abedb06b8a55d067fc59336a524a0936cb5d8",
+      "git_blob_sha1": "f6be3da1ecca311bb94edd416b5988632e1d25bd"
+    },
+    {
+      "path": "research/nine/UNIVERSAL_PAIR_TILT_TOLL_INDEPENDENT_AGENT_REVIEW.md",
+      "bytes": 4086,
+      "sha256": "e6ef6ae72384886b1d9ca727a0d6393617bfee3618550327affdcd27a6f4d529",
+      "git_blob_sha1": "db46cead31efce7113a04f4045ed006225febbca"
+    },
+    {
+      "path": "research/nine/UNIVERSAL_PHYSICAL_PAIR_CURVED_TILT_TOLL.md",
+      "bytes": 6907,
+      "sha256": "b647ab21e6c5d2cd2d0bade0647a3c952e1b0f6534137de212c8464aba062605",
+      "git_blob_sha1": "2afc63ee9f77bb0d51c2f864b7b0193591b477de"
+    },
+    {
+      "path": "research/nine/UNIVERSAL_PHYSICAL_PAIR_SHOULDER_TILT_TOLL.md",
+      "bytes": 9065,
+      "sha256": "02afe8a821966e6ab8201dd13f0475ea65268d3e0d72a28ffa3c63e1b26b6472",
+      "git_blob_sha1": "b0a8052c317edee2a551970e660b6839a20df74d"
+    },
+    {
+      "path": "research/nine/computer_assisted/00011_root_131_both_upper_scalar_replay.json",
+      "bytes": 1349,
+      "sha256": "53cdd181d4c0d4946a24753ad69563d9e27945a359291c32fd21c52be2e9065e",
+      "git_blob_sha1": "953d87b2eefa5a419723ac6f65e87cd2e2c9e69a"
+    },
+    {
+      "path": "research/nine/computer_assisted/00011_root_curved_toll_integration_replay.json",
+      "bytes": 1938,
+      "sha256": "2d51255f292aa82fcc3c3ea30200438f4421cb9a043d2e198ad4f168c61aeac3",
+      "git_blob_sha1": "91ea00d54f6bbf98bcf36ff7e5d16589b455f2e4"
+    },
+    {
+      "path": "research/nine/computer_assisted/00011_root_linear_toll_integration_replay.json",
+      "bytes": 1953,
+      "sha256": "d45c8a7ead7700b7cd4ebf59a308d098e493efc307a7aaad2d3a85bc51332eff",
+      "git_blob_sha1": "3cc4d746ac53392d1a86fe76a48e1dbfd4a51005"
+    },
+    {
+      "path": "research/nine/computer_assisted/00011_root_lower_side_integration_replay.json",
+      "bytes": 820,
+      "sha256": "fcd33d811fa200df67b1a7a85058bc161a67ba90235435d010bc5ed7f525a985",
+      "git_blob_sha1": "4e8342615d462358729289b2d4f157733b8724eb"
+    },
+    {
+      "path": "research/nine/computer_assisted/00011_root_middle_main_low_floor_exact_replay.json",
+      "bytes": 732,
+      "sha256": "8e5a262b3febbb80c988bbb73a93dae7abf5efddd6a81af633dbfd381beb146a",
+      "git_blob_sha1": "eb57802521e96a31c51287885f81f8d0b2634156"
+    },
+    {
+      "path": "research/nine/computer_assisted/00011_root_middle_main_low_right_integration_replay.json",
+      "bytes": 1164,
+      "sha256": "da93a7a682aa5b1ac2fb507e2b9f55f8608877bdaa650f4842f9843b13b3d48a",
+      "git_blob_sha1": "254fa2eb75ae7a9ca5ef5081bc80a655040c8f48"
+    },
+    {
+      "path": "research/nine/computer_assisted/00011_root_one_low_main_integration_replay.json",
+      "bytes": 629,
+      "sha256": "3971dd9da46323ad0f5191d670c84eb9f7f2c1148abc8ba97602bc7bead7456b",
+      "git_blob_sha1": "1adac9a00f08684bac42226b5086b43b57502025"
+    },
+    {
+      "path": "research/nine/computer_assisted/00011_root_opposite131_integration_replay.json",
+      "bytes": 756,
+      "sha256": "8c811903d7abaad25a1661c8ae684ef8a42bca7d13c3c03f4cdfb722d7619bd5",
+      "git_blob_sha1": "1efd0c63bf71480ade402764cc4a63bb9806b419"
+    },
+    {
+      "path": "research/nine/computer_assisted/00011_root_raised_proxy_integration_replay.json",
+      "bytes": 520,
+      "sha256": "59ccd85b98ac7c09a0a17d1e6d1c221cf713d628760cfd91e505be029efc1fdc",
+      "git_blob_sha1": "3b903f930903919fc80fbca5b700f83bc322ade4"
+    },
+    {
+      "path": "research/nine/computer_assisted/131_both_side_upper_arithmetic_replay.json",
+      "bytes": 1349,
+      "sha256": "53cdd181d4c0d4946a24753ad69563d9e27945a359291c32fd21c52be2e9065e",
+      "git_blob_sha1": "953d87b2eefa5a419723ac6f65e87cd2e2c9e69a"
+    },
+    {
+      "path": "research/nine/computer_assisted/131_opposite_low_middle_direct_cover.json.gz",
+      "bytes": 4569,
+      "sha256": "2bf75ca014ec2e9d3718f9014e22ce138387385aee7e28c14819b126306daf90",
+      "git_blob_sha1": "749279461961fbc4aa2e886fc633a75800410839"
+    },
+    {
+      "path": "research/nine/computer_assisted/131_opposite_low_middle_direct_replay.json",
+      "bytes": 620,
+      "sha256": "cf5c3652a63c3cc08744697409f464c6e8e6d95b5c1ca64c75ee6cbede62b768",
+      "git_blob_sha1": "5dd0e59431fa2743ddb55492fb2d6bb1a2760914"
+    },
+    {
+      "path": "research/nine/computer_assisted/131_opposite_low_middle_negative_controls.json",
+      "bytes": 382,
+      "sha256": "7e4ac2222b61e10781f58810af9701c7e7eb3251c5655b142ea9452d00ab1f10",
+      "git_blob_sha1": "1fbbcfb5cd61e2e072b55ff03279ea68a8538558"
+    },
+    {
+      "path": "research/nine/computer_assisted/certify_one_low_main_nine_tenths.py",
+      "bytes": 2247,
+      "sha256": "2fae69fc4aa462719bce54791c76338f7ef3169c372dfe17afb31115d5574126",
+      "git_blob_sha1": "b0d8cdf60e42193b1c0bc065931a243cb886c638"
+    },
+    {
+      "path": "research/nine/computer_assisted/certify_universal_pair_curved_tilt_toll.py",
+      "bytes": 4614,
+      "sha256": "b186fca65f38b0ddb79e5abcb137e4d9785cfe3cb4e69aee73f53f1bede2af38",
+      "git_blob_sha1": "e13fc47e91c5b83c05370997e7640a464f3829f6"
+    },
+    {
+      "path": "research/nine/computer_assisted/certify_universal_pair_tilt_toll.py",
+      "bytes": 4448,
+      "sha256": "8bb50ee2ccab13e3a9b73f1b95bc354d45cbf1e952b0de01da38ca1fbf2af1cc",
+      "git_blob_sha1": "b5b4e5b991448484bbeb8848fe95beac495a3ad8"
+    },
+    {
+      "path": "research/nine/computer_assisted/discover_131_opposite_low_middle.cpp",
+      "bytes": 4274,
+      "sha256": "5d474324c32344e7c844287c95c4cd2569af42871c5664fce6edaaa2679d45b7",
+      "git_blob_sha1": "42641b4a47ac6795d646e7f0dd3c0391b4184595"
+    },
+    {
+      "path": "research/nine/computer_assisted/discover_middle_main_side_triple.cpp",
+      "bytes": 14385,
+      "sha256": "25eb0a2eca8406cce92d218aa1931ab020d77c8e7cdf94b51354ed96e675e2f7",
+      "git_blob_sha1": "852b476ea554160401a44c9870b701bfe26a63a9"
+    },
+    {
+      "path": "research/nine/computer_assisted/lower_side_main_17_50_cover.json",
+      "bytes": 3800,
+      "sha256": "666faf930b12b03b0c6c762886fd13833d0834fb246b750691b5257033afb876",
+      "git_blob_sha1": "8357825ea512090dd1e815094a14b3224d134242"
+    },
+    {
+      "path": "research/nine/computer_assisted/lower_side_main_17_50_fraction_replay.json",
+      "bytes": 768,
+      "sha256": "3c7426274c8db6f12e98b1c398823ce949425afbd2da197762709ade04f1232a",
+      "git_blob_sha1": "b729c623d0832b82e86d0fd81c3ee117a501ebff"
+    },
+    {
+      "path": "research/nine/computer_assisted/lower_side_main_17_50_independent_replay.json",
+      "bytes": 39293,
+      "sha256": "3ea6987208b6423d1bb31b7b6edb1df1a23b2d943100ed21159a92695cf516b0",
+      "git_blob_sha1": "360508577466c43397fca7827f2a06c8e45aa42d"
+    },
+    {
+      "path": "research/nine/computer_assisted/lower_side_main_17_50_printed_table_audit.json",
+      "bytes": 342,
+      "sha256": "a1ed2659cc3b875ba239db1f5d8fae409389803f527c1b7afe44ef31e69ead2e",
+      "git_blob_sha1": "63dc6362eaa7fc09812cc4c1393ed41922a5de62"
+    },
+    {
+      "path": "research/nine/computer_assisted/lower_side_third_obstruction_replay.json",
+      "bytes": 557,
+      "sha256": "44049a73a77782ba08e2d38d7bef12e6c9f7d8993b012e9021125955e4c8de5b",
+      "git_blob_sha1": "787f2e3d1566acccadbdba49ae9c8a84d4827189"
+    },
+    {
+      "path": "research/nine/computer_assisted/middle_main_low_floor_candidate.json.gz",
+      "bytes": 695692,
+      "sha256": "ad5275e67b28a15d86cea564cd6221149a9c7cf7e4470dfe4762c296e4f8e76e",
+      "git_blob_sha1": "1bed8a2661710ec0809e6f1bc816428f5ff50a43"
+    },
+    {
+      "path": "research/nine/computer_assisted/middle_main_low_floor_cpp_negative_controls.json",
+      "bytes": 917,
+      "sha256": "598900945d81bb1ad6d2bf654b582ec71937a1135c7de1cb085c9a54ba9508d5",
+      "git_blob_sha1": "6933a144b4b8398f2167af32770bb88a19b6c9eb"
+    },
+    {
+      "path": "research/nine/computer_assisted/middle_main_low_floor_cpp_replay.json",
+      "bytes": 2020,
+      "sha256": "a02d9f28def1c8cada3cab17c958ae776a44680ac2164e6970c07b5638a6a779",
+      "git_blob_sha1": "c9418a038bf97f64f41aedaca1280ef7b7489527"
+    },
+    {
+      "path": "research/nine/computer_assisted/middle_main_low_floor_independent_structure_audit.json",
+      "bytes": 680,
+      "sha256": "6ab909918fede60bbb4c7806435dcadb3e123f7b5d27d490aedeecdaef7be6f8",
+      "git_blob_sha1": "e9e6de011cf313c8ac36ce1153e06288b8441672"
+    },
+    {
+      "path": "research/nine/computer_assisted/middle_main_low_right_candidate.json",
+      "bytes": 97056,
+      "sha256": "723b5864033f3b12cb260dd54685b0c139685a6cefbceec7d187054b96fdfcd9",
+      "git_blob_sha1": "977af719b9bb6b689052edd706b4bfffe82e52f5"
+    },
+    {
+      "path": "research/nine/computer_assisted/middle_main_low_right_final_exact_replay.json",
+      "bytes": 1165,
+      "sha256": "61c38c06a322e0387d74bf9b546f5ae8dbf1c5b641f7b8d57da7b59eb1712ee5",
+      "git_blob_sha1": "b015569c2c77df4247ed8e1578ff984113ff088d"
+    },
+    {
+      "path": "research/nine/computer_assisted/middle_main_side_triple_negative_controls.json",
+      "bytes": 1090,
+      "sha256": "f18cc884b8a85074f351ce8d1bfa2d8219b766fba89a43be71540a7651aaf831",
+      "git_blob_sha1": "2a51e1beb8836dada71106ed49b706ed4db913dc"
+    },
+    {
+      "path": "research/nine/computer_assisted/middle_main_side_triple_negative_controls.py",
+      "bytes": 1683,
+      "sha256": "c04b63a8bc3631cb07c00810c620e9b0e9815c02ace582aa777be814b66f597d",
+      "git_blob_sha1": "1ad6116a23cb14bfe6a666e2537ef020f8abd5a3"
+    },
+    {
+      "path": "research/nine/computer_assisted/one_low_main_nine_tenths_cover.json",
+      "bytes": 999,
+      "sha256": "6df3b4ee545678519f33e15af3cfd9103f35e22eeec7e5ee9620f72fb23ebb8f",
+      "git_blob_sha1": "4964150912ca475972b38502575c0340d2da3fdd"
+    },
+    {
+      "path": "research/nine/computer_assisted/one_low_main_nine_tenths_negative_controls.json",
+      "bytes": 393,
+      "sha256": "6c7b620589c9818d3529511f6d51bcfecdaf148623ab4d1920fa9f4b847bc8f3",
+      "git_blob_sha1": "8b5a49b54df4d7415f4ed3eccfd1c03a4c275610"
+    },
+    {
+      "path": "research/nine/computer_assisted/one_low_main_nine_tenths_replay.json",
+      "bytes": 522,
+      "sha256": "6e2282cb2d1c1e5d0ceee9e198bec9745832d23357ae6088099541e001ffce56",
+      "git_blob_sha1": "4c89793fcce4a1ce987d72d2a0bcfd7d51f430ae"
+    },
+    {
+      "path": "research/nine/computer_assisted/right_unit_above_proxy_cover.json",
+      "bytes": 27774,
+      "sha256": "44b526b05af588c2268ff15d73874bb36484c23a0afe3a8c50450a86c2d84e81",
+      "git_blob_sha1": "8e21ac34bc87061f74117b2443557bbf0e905f82"
+    },
+    {
+      "path": "research/nine/computer_assisted/right_unit_above_proxy_dyadic_replay.json",
+      "bytes": 521,
+      "sha256": "8f30a048ce330dc4738d2d5456c0b418b2d22087cc2959e335aa0b11611b773b",
+      "git_blob_sha1": "715746349cae918e11ab732203f86f82f1ba0254"
+    },
+    {
+      "path": "research/nine/computer_assisted/universal_pair_curved_tilt_toll_cover.json",
+      "bytes": 22274,
+      "sha256": "9ba10374718180ebdc4fe1d95675f898c4b549919785ad2d5f8bf62142617cb0",
+      "git_blob_sha1": "05dcbbf9634d50bfb939f5bc11e90b22ddfa4e6a"
+    },
+    {
+      "path": "research/nine/computer_assisted/universal_pair_curved_tilt_toll_independent_replay.json",
+      "bytes": 2116,
+      "sha256": "e5f64bc89f5d293980b38b1b1c148ae9380e36e83d2bc26e23b05a79bae377b8",
+      "git_blob_sha1": "2306ac46cd79d4b0c1dc990b7c053b2b92930680"
+    },
+    {
+      "path": "research/nine/computer_assisted/universal_pair_curved_tilt_toll_negative_controls.json",
+      "bytes": 621,
+      "sha256": "160132ade277c250953d0d8c81aec0367f4a6bfaeae7fa9f95d6c836b54dc40e",
+      "git_blob_sha1": "e5c5dcdb6e39640b9daa8f530a69960b8fe93f5c"
+    },
+    {
+      "path": "research/nine/computer_assisted/universal_pair_curved_tilt_toll_replay.json",
+      "bytes": 2035,
+      "sha256": "3c6c8e80b2dac9f4a748299d90b10965aff8e36bc99f18e441544e76162c749a",
+      "git_blob_sha1": "df5a7e1948304c99422e2e897f633f5ac627d4d2"
+    },
+    {
+      "path": "research/nine/computer_assisted/universal_pair_tilt_toll_cover.json",
+      "bytes": 14234,
+      "sha256": "b9930b443ad91e853d35087cccab68e822a2ba71dcf38654ccadca839512fe2d",
+      "git_blob_sha1": "afe0a24971ac553f7205284421f49e5ed8bf1429"
+    },
+    {
+      "path": "research/nine/computer_assisted/universal_pair_tilt_toll_independent_replay.json",
+      "bytes": 2129,
+      "sha256": "78ddd57435a961212ae7936cc516ce890472f06f3c879f2bf5a60a934a6c3bd5",
+      "git_blob_sha1": "2c0be22bb3c660d58d4339c2b5f2367145474710"
+    },
+    {
+      "path": "research/nine/computer_assisted/universal_pair_tilt_toll_negative_controls.json",
+      "bytes": 621,
+      "sha256": "a5e9aec60b33ee52ce6286401e2a23c4abbefe3a1a2f97c8b0f0c99320f10df9",
+      "git_blob_sha1": "891a0a5a774d0bf78eebcda2066a182fc267ccff"
+    },
+    {
+      "path": "research/nine/computer_assisted/universal_pair_tilt_toll_replay.json",
+      "bytes": 2049,
+      "sha256": "01ad7af266983f312d78a26fee8611b466a1d6af66bc3e5ffccf18949c6b62f2",
+      "git_blob_sha1": "0ea93ccf9f456bd7487e800710cd58b1f8c98a9c"
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_131_both_side_upper_arithmetic.py",
+      "bytes": 2364,
+      "sha256": "a192e093329b22a1b73bf3b817abcef750fec42a7934ede4fdf9c3367675875d",
+      "git_blob_sha1": "bd3f460508706dc8e4c63d3ec2fcf907b3bdb604"
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_131_opposite_low_middle_direct.py",
+      "bytes": 5736,
+      "sha256": "1293a95e46ec7d49056fdd6712fc2150a6231545c1be3fb33402beb347e0f3f8",
+      "git_blob_sha1": "ab84192ef8c913dee97d9f8d0e154e155e2d27c9"
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_lower_side_main_17_50.py",
+      "bytes": 6039,
+      "sha256": "23ee26378929b6c4abe97c2098d7776a2b99f914c32d5fabd6d5de8c49cd9580",
+      "git_blob_sha1": "f623d9be1977350d33ecf18998eb8a95d89a08b4"
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_lower_side_third_obstruction.py",
+      "bytes": 2865,
+      "sha256": "2a44632bde28042530838978fd11ea9c5dac67279a51e0f483a5a2e4a6c71520",
+      "git_blob_sha1": "b529dddcfdb6596e689c1ba4d9a5479327ab2c2c"
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_middle_main_low_floor_exact.cpp",
+      "bytes": 21773,
+      "sha256": "96ac00e7069e20dcbf39dfb6e092349773300edc3689549f791f32c6c557bd00",
+      "git_blob_sha1": "4da513fe4e2cabdb7615f99d14ee7c142af584cc"
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_middle_main_side_triple.py",
+      "bytes": 19165,
+      "sha256": "c1e26b7c6184c2636c3eb66c1f267b076f84b852a9c7fe39e6c26e7a2029fe29",
+      "git_blob_sha1": "5e1816ddf26c3ec3083c1729cf63f17d169f036d"
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_middle_main_side_triple_parallel.py",
+      "bytes": 6760,
+      "sha256": "0747a9e101adead1d1423e080b696e83b1db269b6a7d9be020819f43dbc178f0",
+      "git_blob_sha1": "12457a91a7724f6952e724953dac6145539a0746"
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_one_low_main_nine_tenths.py",
+      "bytes": 3283,
+      "sha256": "6bdeb86cec1185b3a38d5f370d5622171795909154439c844c65da145bf02ace",
+      "git_blob_sha1": "5ae1b62d071932c03f526343f384f479a8984856"
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_right_unit_above_proxy.py",
+      "bytes": 6221,
+      "sha256": "86f0e0a9fee192003e8da9a2804ae94e9180fb7524ecea9a829dcb0c28fdb98d",
+      "git_blob_sha1": "c0e3a7069946274218d18facaec8b6036c3e0f97"
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_universal_pair_curved_tilt_toll.py",
+      "bytes": 4786,
+      "sha256": "e904494852880d9cde3d8d891c880650cad80b8a5e855e7e4e8448d87cae3b86",
+      "git_blob_sha1": "40b2b6247329a2d79275d5ca3d2158e3c4051db8"
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_universal_pair_tilt_toll.py",
+      "bytes": 4718,
+      "sha256": "81874e3955133a2b3e93515f1165a0dee5fefd19e6231650e614df01f9ea6230",
+      "git_blob_sha1": "c5e83b37ea4ac9482fc8ace0cfc1ea6dde5b28e7"
+    },
+    {
+      "path": "research/nine/gates/A2_MASK_FRONTIER.json",
+      "bytes": 6722,
+      "sha256": "71de58361520cb8162580658738d5b039f1f9041cddcaa9b0b29129f0f67a93d",
+      "git_blob_sha1": "87bf27705658cebad6ed0368b979dce1d5ccf492"
+    },
+    {
+      "path": "research/nine/gates/ACTIVE_ROADMAP.json",
+      "bytes": 13056,
+      "sha256": "61ef565c06277ef0c4962fa4dc99f38156bde4ddc7081e66c0424c228bd8e02a",
+      "git_blob_sha1": "b87ff7daaccdd389aa6d340ead49ac3f7f80dfc1"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "nodes": 18069,
+  "strict_interval_leaves": 9035,
+  "rule_leaves": [
+    0,
+    3226,
+    3520,
+    2289,
+    0,
+    0
+  ],
+  "maximum_depth": 24,
+  "largest_replayed_upper": "-5250650345271/9223372036854775808",
+  "complete": true,
+  "seconds": 11.687175863997254,
+  "proof_status": "independent_131_opposite_low_middle_direct_replay_passed",
+  "certificate_sha256": "2bf75ca014ec2e9d3718f9014e22ce138387385aee7e28c14819b126306daf90",
+  "checker_sha256": "1293a95e46ec7d49056fdd6712fc2150a6231545c1be3fb33402beb347e0f3f8",
+  "arithmetic_sha256": "e9a077c6ed871e402f5e43604137a011428ffe9f0d5dcf18d2e1651dd1290c1f"
+}

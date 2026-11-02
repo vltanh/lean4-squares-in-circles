@@ -1,0 +1,31 @@
+{
+  "result": "PASS",
+  "positive_reserves": {
+    "both_side_low_cone_span": "799/1600",
+    "low_side_strips_cover_central": "31/240",
+    "high_side_bad_central_lower_order": "2539/14400",
+    "high_side_bad_central_left_arc": "19271/90000",
+    "high_side_bad_central_right_arc": "67/11520",
+    "high_side_left_arc_root": "13/1875",
+    "high_side_right_arc_root": "43/19200",
+    "both_bad_upper_central_disk": "107/14400",
+    "low_side_near_main_overlap": "2639/7440",
+    "low_side_main_below_23_60": "1/1860",
+    "verylow_side_is_zero": "133/2480",
+    "verylow_side_upper_central_above_v0": "1/1860",
+    "verylow_opposite_main_proxy_top": "1/1860",
+    "moderate_helper_above_endpoint_band": "289/18600",
+    "moderate_helper_left_profile_endpoint": "10171639/5535360000",
+    "moderate_helper_right_profile_endpoint": "2723/1152000",
+    "moderate_helper_F_below_band_endpoint": "1/1860",
+    "moderate_helper_first_vertical_choice": "1577/3720",
+    "moderate_helper_second_vertical_choice": "1/120",
+    "moderate_helper_small_X_left_disk": "27211/2767680",
+    "moderate_helper_small_X_right_disk": "52199/1440000",
+    "inset_halfwidth_above_7_20": "1/400",
+    "own_loss_delta_below_1_60": "7/60000",
+    "raised_proxy_top": "137/139500",
+    "high_side_above_F_order": "6031/14400",
+    "physical_halfwidth_upper": "1/576"
+  }
+}

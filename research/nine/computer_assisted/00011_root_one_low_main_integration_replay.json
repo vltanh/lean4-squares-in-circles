@@ -1,0 +1,20 @@
+{
+  "nodes": 49,
+  "leaves": 25,
+  "leaf_counts": [
+    1,
+    24
+  ],
+  "maximum_depth": 10,
+  "largest_replayed_uppers": [
+    "-76315724121195993/4611686018427387904",
+    "-3469629010161685/18446744073709551616"
+  ],
+  "all_printed_rational_bounds_verified": true,
+  "proof_status": "independent_one_low_main_nine_tenths_replay_passed",
+  "result": "PASS",
+  "scope": "fresh root integration replay",
+  "certificate_sha256": "6df3b4ee545678519f33e15af3cfd9103f35e22eeec7e5ee9620f72fb23ebb8f",
+  "checker_sha256": "6bdeb86cec1185b3a38d5f370d5622171795909154439c844c65da145bf02ace",
+  "elapsed_seconds": 0.012835854999138974
+}

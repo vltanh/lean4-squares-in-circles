@@ -36,13 +36,13 @@
     8
   ],
   "mask_count": 32,
-  "closed_for_strict_radius_count": 6,
-  "open_count": 26,
+  "closed_for_strict_radius_count": 7,
+  "open_count": 25,
   "new_closures_in_this_reset": 0,
   "completion_percentage": null,
   "termination_of_proof_discovery_proved": false,
-  "active_target": "000/11",
-  "active_target_reversal_partner": "000/11",
+  "active_target": "010/11",
+  "active_target_reversal_partner": "010/11",
   "reversal_rule": "abc/de <-> cba/ed; reverse both chains and both coordinate basis vectors, retaining all nine physical squares",
   "required_exit": "Complete no-D_m^lt theorem for a fixed full row, a complete stable-root strict theorem, or an actual global terminal-extraction theorem. Conditional subdomains and subdivisions are not closure.",
   "mask_domain_changes_allowed_without_explicit_redefinition": false,
@@ -78,6 +78,17 @@
       "inherited_cap_strict_interval_leaves": 3927,
       "inherited_cap_analytic_leaves": 34,
       "new_rational_clearance_rows": 24
+    },
+    "whole_00011": {
+      "source": "../A2_000_11_WHOLE_DOMAIN_ASSEMBLY.md",
+      "location": "Sections 1-7",
+      "scope": "Complete original-nine 000/11 predicate impossible for every strict radius below Q; closed-Q status unclassified",
+      "review_status": "Complete original-nine physical and dependency assembly; independent exact cover replays and independent agent reviews; fresh root replays; no human or kernel verification",
+      "new_strict_interval_leaves": 2851267,
+      "additional_nonpositive_v_hand_rows": 1,
+      "pair_toll_analytic_collar_cases": 8,
+      "preceding_occupancy_checkpoint_strict_leaves": 65852,
+      "closure_manifest": "../computer_assisted/mask_00011_closure_manifest.json"
     }
   },
   "rows": [
@@ -101,7 +112,9 @@
     },
     {
       "id": "000/11",
-      "status": "OPEN"
+      "status": "CLOSED_STRICT",
+      "closed_q": "NOT_CLASSIFIED",
+      "proof": "whole_00011"
     },
     {
       "id": "001/00",
@@ -222,6 +235,6 @@
       "status": "OPEN"
     }
   ],
-  "latest_closure": "A2_010_01_VERIFIED_CLOSURE_2026_11_02.md",
-  "new_closures_in_this_continuation": 4
+  "latest_closure": "A2_000_11_VERIFIED_CLOSURE_2026_11_02.md",
+  "new_closures_in_this_continuation": 5
 }

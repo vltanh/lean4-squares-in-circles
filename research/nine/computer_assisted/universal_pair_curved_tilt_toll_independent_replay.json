@@ -1,0 +1,84 @@
+{
+  "status": "EXACT_REPLAY_PASSED",
+  "nodes": 1713,
+  "leaves": 860,
+  "maximum_depth": 16,
+  "minimum_exact_reserve": "21015472069061/576460752303423488",
+  "rows": [
+    {
+      "channel": 0,
+      "root": [
+        "-1",
+        "-1/32"
+      ],
+      "leaves": 17,
+      "minimum_exact_reserve": "44838989451221801/2305843009213693952"
+    },
+    {
+      "channel": 0,
+      "root": [
+        "1/32",
+        "1"
+      ],
+      "leaves": 275,
+      "minimum_exact_reserve": "21015472069061/576460752303423488"
+    },
+    {
+      "channel": 1,
+      "root": [
+        "-1",
+        "-1/32"
+      ],
+      "leaves": 26,
+      "minimum_exact_reserve": "324521826916575525/18446744073709551616"
+    },
+    {
+      "channel": 1,
+      "root": [
+        "1/32",
+        "1"
+      ],
+      "leaves": 19,
+      "minimum_exact_reserve": "939641245426072933/4611686018427387904"
+    },
+    {
+      "channel": 2,
+      "root": [
+        "-1",
+        "1"
+      ],
+      "leaves": 428,
+      "minimum_exact_reserve": "693983907836757/18446744073709551616"
+    },
+    {
+      "channel": 3,
+      "root": [
+        "-1",
+        "1"
+      ],
+      "leaves": 68,
+      "minimum_exact_reserve": "718856768159806561/9223372036854775808"
+    },
+    {
+      "channel": 4,
+      "root": [
+        "-1",
+        "1"
+      ],
+      "leaves": 27,
+      "minimum_exact_reserve": "444790615271125757/9223372036854775808"
+    }
+  ],
+  "analytic_collar_coefficients": [
+    "33/512",
+    "6945/512",
+    "1027/32",
+    "401/32"
+  ],
+  "all_printed_table_bounds_verified": true,
+  "arithmetic": "64-bit directed integer dyadics; support-derived N and D, no producer import",
+  "scope": "Five complete scalar inequalities for the universal original-square weighted pair shoulder-tilt toll; augmented-angle reduction is a separate hand proof.",
+  "reviewer": "root_certificates: separate execution of the independently implemented directed-integer verifier",
+  "certificate_sha256": "9ba10374718180ebdc4fe1d95675f898c4b549919785ad2d5f8bf62142617cb0",
+  "checker_sha256": "e904494852880d9cde3d8d891c880650cad80b8a5e855e7e4e8448d87cae3b86"
+}

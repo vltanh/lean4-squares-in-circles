@@ -1,0 +1,21 @@
+{
+  "result": "PASS",
+  "certificate": "right_unit_above_proxy_cover.json",
+  "certificate_sha256": "44b526b05af588c2268ff15d73874bb36484c23a0afe3a8c50450a86c2d84e81",
+  "root": [
+    [
+      "29/60",
+      "13/12"
+    ],
+    [
+      "0",
+      "1"
+    ]
+  ],
+  "nodes": 223,
+  "leaves": 112,
+  "max_depth": 10,
+  "least_positive_reserve": "45534280734693/576460752303423488",
+  "arithmetic": "outward64-bit integer dyadic intervals; no producer imports or floating point acceptance",
+  "seconds": 0.04241089999413816
+}
