@@ -152,7 +152,7 @@
     {
       "asset": "ONE_EXCEPTION_RANK_AND_WIDTH_REDUCTIONS_2026_11_01.md",
       "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "complete width-five lower-bound branch and specified rank patterns for one exceptional pair; full one-exception and unrestricted coverage still open"
+      "scope": "Complete width-five branch and rank reductions; full one-exception class now closed by the November 2 synthesis"
     },
     {
       "asset": "ONE_EXCEPTION_RANK_BOUNDARY_CONTINUATION.md",
@@ -162,7 +162,7 @@
     {
       "asset": "ONE_EXCEPTION_HEIGHT_FOUR_CONTINUATION.md",
       "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "complete one-exception reduction to two weak endpoint patterns; exact deficits, exchanges and four-chain endpoint localization; full nine-square cases open"
+      "scope": "Complete reduction to two weak endpoint patterns; both now closed by the November 2 synthesis"
     },
     {
       "asset": "END_EXCEPTION_EIGHT_SQUARE_OBSTRUCTION.md",
@@ -173,6 +173,81 @@
       "asset": "GLOBAL_GEOMETRIC_CONTINUATION.md",
       "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
       "scope": "exact nine-square equality packing whose minimum exception count over any pair of projection directions is three; no unconditional closed-Q small-exception cover"
+    },
+    {
+      "asset": "ONE_EXCEPTION_NINE_HAND_PROOF_2026_11_02.md",
+      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
+      "scope": "Complete sharp lower bound for every orthogonal cover with at most one exceptional pair; unrestricted cover and wider equality remain open"
+    },
+    {
+      "asset": "ONE_EXCEPTION_TRANSVERSE_GRID_HAND_PROOF.md",
+      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
+      "scope": "Far-endpoint obstruction, outer common point and complete hard original full-grid exclusion"
+    },
+    {
+      "asset": "PATTERN_II_NINE_SQUARE_CONTINUATION.md",
+      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
+      "scope": "Exact actual-four endpoint budget, outsider strip, side capacities and complete one-middle branch"
+    },
+    {
+      "asset": "BROAD_NINE_SQUARE_GEOMETRIC_CONTINUATION.md",
+      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
+      "scope": "Complete Pattern II five-outsider capacity, every middle occupancy and exception location"
+    },
+    {
+      "asset": "DOWNWARD_THREE_SQUARE_CAP_HAND_PROOF.md",
+      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
+      "scope": "Strict downward physical transfer cap with derived floor; all E/N/D scalar branches proved"
+    },
+    {
+      "asset": "UPWARD_THREE_SQUARE_CAP_ORIENTATION_PROOF.md",
+      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
+      "scope": "Strict upward transfer cap from quantitative matched orientation reserve"
+    },
+    {
+      "asset": "PATTERN_I_NINE_SQUARE_CONTINUATION.md",
+      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
+      "scope": "Rank reductions, far-endpoint uniqueness, actual neighbors and owned middle-slope interval exclusion"
+    },
+    {
+      "asset": "PATTERN_I_COMMON_LOWER_CAP_HAND_PROOF.md",
+      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
+      "scope": "Common-lower cap through downward slope 27/46"
+    },
+    {
+      "asset": "PATTERN_I_UPWARD_CAP_HAND_PROOF.md",
+      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
+      "scope": "Actual upper-neighbor cap through upward slope 18/25"
+    },
+    {
+      "asset": "PATTERN_I_STEEP_UPWARD_HAND_PROOF.md",
+      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
+      "scope": "Entire upward-sign closure, both owners, far-edge bound and independently signed aggregate caller"
+    },
+    {
+      "asset": "PATTERN_I_DOWNWARD_OWNER_EXTENSION_HAND_PROOF.md",
+      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
+      "scope": "Both downward owners through slope 18/25; exact side-normal support and retained owner penalty"
+    },
+    {
+      "asset": "PATTERN_I_STEEP_DOWNWARD_HAND_PROOF.md",
+      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
+      "scope": "Large downward owned slopes, outer-edge directional bound and aggregate terminal"
+    },
+    {
+      "asset": "PATTERN_I_ACTUAL_HEIGHT_FOUR_BRIDGE.md",
+      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
+      "scope": "Every original fat-direction actual four-chain in Pattern I reaches a physical sharp terminal"
+    },
+    {
+      "asset": "PATTERN_I_PERPENDICULAR_HEIGHT_FOUR_BRIDGE.md",
+      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
+      "scope": "Every original perpendicular actual four-chain in Pattern I is settled without perpendicular fatness"
+    },
+    {
+      "asset": "PATTERN_I_HEIGHT_THREE_COMPLETE_HAND_PROOF.md",
+      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
+      "scope": "All normalized height-three Pattern I diagrams closed by sharp spans or derived vertical thinness"
     }
   ],
   "gates": [
@@ -280,21 +355,31 @@
   ],
   "legacy_gate_registry": "SUPERSEDED_NO_ACTIVE_PROGRESS_COUNTER",
   "current_hand_continuation": {
-    "date": "2026-11-01",
+    "date": "2026-11-02",
     "two_direction_class": "PROVED_SHARP_WITH_CLASS_EQUALITY",
     "exact_pair_cap": "PROVED_SHARP_H_LT_109_OVER_80",
     "two_strip_terminal": "PROVED_CONDITIONAL_WITH_SEVEN_SQUARE_EQUALITY",
     "boundary_normalization": "PROVED_GLOBAL_EQUIVALENCE_WITH_CAP_GUARD",
-    "mathematical_scripts_run": false,
+    "mathematical_scripts_run": true,
     "lean_lake_ci_run": false,
     "independent_agent_hand_reviews": true,
     "separate_human_review_performed": false,
     "new_full_root_exclusions": 0,
     "unrestricted_global_caller_proved": false,
     "one_exception_width_five": "PROVED_SHARP_LOWER_BOUND_ENTIRE_BRANCH",
-    "one_exception_global": "OPEN_TWO_WEAK_ENDPOINT_PATTERNS_WITH_ALL_NINE_RETAINED",
+    "one_exception_global": "PROVED_SHARP_LOWER_BOUND_ENTIRE_ORTHOGONAL_ONE_EXCEPTION_CLASS",
     "one_exception_augmented_grid": "PROVED_CLOSED_Q_EXCLUSION",
     "eight_square_endpoint_obstruction": "PROVED_EXACT_SUBCRITICAL_EXAMPLE",
-    "closed_q_small_exception_cover": "DISPROVED_BY_EXACT_THREE_EXCEPTION_EQUALITY_EXAMPLE"
+    "closed_q_small_exception_cover": "DISPROVED_BY_EXACT_THREE_EXCEPTION_EQUALITY_EXAMPLE",
+    "direction_check_scripts_run": true,
+    "proof_scripts_run": false,
+    "numerical_direction_check": "One exploratory 48-start optimization of a possible three-square horizontal-cap direction; no output is proof evidence.",
+    "one_exception_pattern_II": "PROVED_COMPLETE_FIVE_OUTSIDER_CAPACITY",
+    "one_exception_pattern_I": "PROVED_ALL_ORIGINAL_HEIGHT_BRANCHES_AND_ALL_RANK_DIAGRAMS",
+    "one_exception_equality": "NOT_CLAIMED_COMPLETE",
+    "one_exception_theorem_source": "ONE_EXCEPTION_NINE_HAND_PROOF_2026_11_02.md",
+    "unrestricted_counterexample_guard": "At least two coordinate-exceptional pairs in every orthonormal frame; no universal cover/terminal extraction proved.",
+    "proof_review_source": "HAND_REVIEW_NINE_SQUARE_CONTINUATION_2026_11_01.md"
   }
 }
+

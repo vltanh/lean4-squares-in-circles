@@ -5,8 +5,8 @@ squares in a disk, all attaining configurations, then a complete hand/table proo
 **Status:** all three global deliverables OPEN. **Active: A.2.**
 The same 15 registry entries and 7,915 canonical root IDs are retained.
 Current method: hand proof; exact tables allowed; mathematical scripts only
-for checking potential directions. No mathematical script, Lean, Lake or CI
-was run in the present continuation.
+for checking potential directions. One numerical direction experiment was
+exploratory only. No mathematical proof program, Lean, Lake or CI was run.
 
 | Deliverable | Status | Acceptance condition |
 |---|---|---|
@@ -63,7 +63,7 @@ pair lacks coordinate separation; see
 [ONE_EXCEPTION_RANK_AND_WIDTH_REDUCTIONS_2026_11_01.md](ONE_EXCEPTION_RANK_AND_WIDTH_REDUCTIONS_2026_11_01.md).
 The follow-ups [augmented-grid closure](ONE_EXCEPTION_RANK_BOUNDARY_CONTINUATION.md)
 and [height-four reduction](ONE_EXCEPTION_HEIGHT_FOUR_CONTINUATION.md) reduce
-that whole family to two remaining weak endpoint patterns, explicitly
+that whole family to two weak endpoint patterns, explicitly
 retaining all nine squares. The grid has a strict four-corner bound, and
 actual four-chain endpoints satisfy |y|<1/5. The
 [pair-span terminal](ONE_EXCEPTION_PAIR_SPAN_AND_SHARP_TERMINAL_2026_11_01.md)
@@ -73,7 +73,40 @@ shows why the ninth square is essential to the remaining endpoint issue.
 The [three-exception equality example](GLOBAL_GEOMETRIC_CONTINUATION.md)
 prevents an unconditional small-exception two-direction cover at q<=Q.
 These are theorem scopes and checked obstructions, not additional mandatory
-gate IDs. The one-exception theorem and unrestricted coverage remain open.
+gate IDs.
+
+The [Pattern II four-chain proof](PATTERN_II_NINE_SQUARE_CONTINUATION.md)
+and [complete five-outsider capacity argument](BROAD_NINE_SQUARE_GEOMETRIC_CONTINUATION.md)
+now close the entire second endpoint pattern. Its exact endpoint budget is
+|y_0|+|y_3|<=1/8. Every outsider occupancy is treated; the exceptional
+alternatives use the [downward](DOWNWARD_THREE_SQUARE_CAP_HAND_PROOF.md)
+and [upward](UPWARD_THREE_SQUARE_CAP_ORIENTATION_PROOF.md) three-square caps
+and are strictly excluded even at Q. Equality in this class routes to an
+actual physical 4+3 terminal.
+
+The [transverse-grid proof](ONE_EXCEPTION_TRANSVERSE_GRID_HAND_PROOF.md)
+also closes the hard original full-grid case. For Pattern I with both
+original actual heights at most three, the
+[rank continuation](PATTERN_I_NINE_SQUARE_CONTINUATION.md) leaves only a
+duplicated middle exceptional rank, an actual bottom three-chain and an
+actual top two-chain. The
+[common-lower cap](PATTERN_I_COMMON_LOWER_CAP_HAND_PROOF.md) closes all
+right/down exceptional normal slopes at most 27/46. The later
+[upward completion](PATTERN_I_STEEP_UPWARD_HAND_PROOF.md),
+[downward owner extension](PATTERN_I_DOWNWARD_OWNER_EXTENSION_HAND_PROOF.md),
+and [steep downward bounds](PATTERN_I_STEEP_DOWNWARD_HAND_PROOF.md) finish
+the required direction cover. The
+[height-three synthesis](PATTERN_I_HEIGHT_THREE_COMPLETE_HAND_PROOF.md)
+derives its vertical-span premise in every remaining rank diagram.
+
+Both the [fat-direction](PATTERN_I_ACTUAL_HEIGHT_FOUR_BRIDGE.md) and
+[perpendicular](PATTERN_I_PERPENDICULAR_HEIGHT_FOUR_BRIDGE.md) original
+height-four scopes are also proved. Thus the
+[entire one-exception lower-bound theorem](ONE_EXCEPTION_NINE_HAND_PROOF_2026_11_02.md)
+is complete. Every unrestricted q<Q counterexample must now have at least
+two coordinate-exceptional pairs in every orthonormal frame. A global
+terminal-or-cover argument or a complete treatment of that multiple-exception
+complement remains missing; unrestricted A.2 stays OPEN.
 
 These proofs have independent agent hand checks; no independent human review
 or kernel verification is claimed. Their global scope is stated in each
@@ -183,3 +216,4 @@ input to the full verifier.
 Current source publication: `d05959c` (original sharp chart), `d946146` (coupled
 and three-cell checkpoint), `cd1ab86` (wider sharp chart and exact guard interface).
 The authoritative machine-readable status is `gates/ACTIVE_ROADMAP.json`.
+

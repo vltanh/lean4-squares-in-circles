@@ -3,13 +3,43 @@
 **Active gate: A.2. The unrestricted lower bound, global equality classification,
 and complete hand/table manuscript remain OPEN.** The current instruction is
 hand proof, with tables permitted; external mathematical scripts may only test
-potential directions. No mathematical script, Lean, Lake, or CI was run in this
-continuation.
+potential directions. One numerical experiment tested a possible direction;
+none of its output is proof evidence. All new exclusions below are hand
+derivations. No proof program, Lean, Lake, or CI was run.
 
 [Canonical roadmap](DEEP_GATED_ROADMAP.md) · [same gate registry](gates/ACTIVE_ROADMAP.json)
 · [current handoff](HANDOFF_A2_2026_11_01.md)
 
 ## New broad hand results — November 1, 2026
+
+### November 2: the entire one-exception class is now proved
+
+[ONE_EXCEPTION_NINE_HAND_PROOF_2026_11_02.md](ONE_EXCEPTION_NINE_HAND_PROOF_2026_11_02.md)
+proves the sharp lower bound for every nine-square packing admitting an
+orthonormal frame that separates all pairs except possibly one. The squares
+may have independent orientations. The exceptional pair retains its actual
+physical nonoverlap constraint. All nine units remain in the proof.
+
+The synthesis closes both augmented-order endpoint patterns. Pattern II uses
+the exact actual-four-chain endpoint budget and an exhaustive five-outsider
+capacity proof. Pattern I is now complete in each original height branch:
+an [actual four-chain in the fat direction](PATTERN_I_ACTUAL_HEIGHT_FOUR_BRIDGE.md),
+an [actual perpendicular four-chain](PATTERN_I_PERPENDICULAR_HEIGHT_FOUR_BRIDGE.md),
+and [both original heights at most three](PATTERN_I_HEIGHT_THREE_COMPLETE_HAND_PROOF.md).
+The last branch derives the exceptional pair's short vertical span in every
+remaining rank diagram and applies a complete owned-separator direction cover.
+
+The decisive new inequalities are the
+[complete upward-sign proof](PATTERN_I_STEEP_UPWARD_HAND_PROOF.md),
+[downward owner extension through slope 18/25](PATTERN_I_DOWNWARD_OWNER_EXTENSION_HAND_PROOF.md),
+and [large downward-slope bounds](PATTERN_I_STEEP_DOWNWARD_HAND_PROOF.md).
+The finite scalar checks are printed and were reconstructed by hand.
+
+**Global consequence:** any unrestricted q<Q counterexample must have at
+least two coordinate-exceptional pairs in every orthonormal frame. A theorem
+forcing a one-exception frame or an already proved physical terminal is still
+missing. The one-exception lower bound is sharp; a full equality classification
+for this wider class is not claimed.
 
 ### The entire two-direction-separable class is proved
 
@@ -129,10 +159,73 @@ three-chain beside an actual four-chain. Exact span deficits, exchange
 arguments and same-side overlap constraints are supplied. Actual four-chain
 endpoints satisfy the new bound |y|<1/5 in the chain frame.
 
-**These two endpoint patterns are still open for nine squares.** The remaining
-two physical squares are retained explicitly in each pattern. The earlier
-boundary-rank and damaged-antichain descriptions are now superseded by this
-more precise reduction, not counted as additional open gates.
+The continuation below **closes Pattern II** and reduces specified Pattern I
+branches further. All nine physical squares remain present. These are theorem
+scopes within A.2, not additional roadmap gates.
+
+### Pattern II is now proved with all five outsiders retained
+
+[PATTERN_II_NINE_SQUARE_CONTINUATION.md](PATTERN_II_NINE_SQUARE_CONTINUATION.md)
+and [BROAD_NINE_SQUARE_GEOMETRIC_CONTINUATION.md](BROAD_NINE_SQUARE_GEOMETRIC_CONTINUATION.md)
+prove the sharp lower bound when an actual four-chain is disjoint from both
+exceptional squares and its direction is a fat direction of that pair. This
+is the complete Pattern II produced by the augmented-order reduction.
+
+The four-chain's endpoint centers satisfy the exact transverse budget
+
+    |y_0|+|y_3| <= 1/8.
+
+All five outsiders lie in |x|<13/12. Dividing them into a middle strip
+|x|<29/60 and two side columns leaves at most two outsiders on each side.
+The proof treats every middle occupancy from one through five, including
+both possible placements of the exceptional pair when there are two middle
+outsiders. All ordinary alternatives give actual disjoint 4+3 chains.
+
+The exceptional alternatives use two new physical three-square inequalities:
+[downward separator](DOWNWARD_THREE_SQUARE_CAP_HAND_PROOF.md) and
+[upward separator](UPWARD_THREE_SQUARE_CAP_ORIENTATION_PROOF.md). With
+a=46, b=27/2, T=211/4, each supplies the strict bound
+
+    a(-x_M-h_M)+b(1-x_B-h_B) < T.
+
+The downward proof uses a lower-edge bound for B, derived from the other
+physical squares. The upward proof retains an explicit orientation reserve
+in the matched cap. Adding the opposite matched cap contradicts
+2a+b=2T. Every exceptional alternative is excluded even at q=Q; any surviving
+equality configuration in this class reaches an actual physical 4+3 terminal.
+This is an equality reduction, not a new unrestricted classification.
+
+### Pattern I: the hard grid closes and the height-three ranks narrow
+
+[ONE_EXCEPTION_TRANSVERSE_GRID_HAND_PROOF.md](ONE_EXCEPTION_TRANSVERSE_GRID_HAND_PROOF.md)
+proves that the ordinary far endpoint of a weak four-chain cannot be an end
+of an actual perpendicular three-chain. It also proves an orientation-sensitive
+common-point lemma for the outer exceptional square and closes the hard full
+original rank-grid case. The final contradiction is an explicit quadrant
+bound q>=41/9>Q.
+
+[PATTERN_I_NINE_SQUARE_CONTINUATION.md](PATTERN_I_NINE_SQUARE_CONTINUATION.md)
+then handles Pattern I when both original actual projection heights are at
+most three. Every duplicated-top rank diagram is excluded. After recomputing
+ranks under a possible reflection, the remaining diagrams have an actual
+bottom three-chain, a middle weak four-chain A,B,C,D, and an actual top
+two-chain, with one top cell absent. The exceptional pair duplicates the
+middle rank. Uniqueness of the weak four-chain's far endpoint forces the
+inner exceptional square above the middle bottom square and below the first
+top square.
+
+[PATTERN_I_COMMON_LOWER_CAP_HAND_PROOF.md](PATTERN_I_COMMON_LOWER_CAP_HAND_PROOF.md)
+closes the entire subcase with a right/down exceptional separating normal
+of slope at most 27/46. It uses the actual common lower square and a strict
+three-square cap, without imposing an extra floor on the exceptional pair.
+The [upward-sign completion](PATTERN_I_STEEP_UPWARD_HAND_PROOF.md),
+[downward owner extension](PATTERN_I_DOWNWARD_OWNER_EXTENSION_HAND_PROOF.md),
+and [steep downward proof](PATTERN_I_STEEP_DOWNWARD_HAND_PROOF.md) complete
+the needed direction cover when the exceptional vertical span is below two.
+The [height-three synthesis](PATTERN_I_HEIGHT_THREE_COMPLETE_HAND_PROOF.md)
+derives that span condition or a sharp endpoint terminal in all three diagrams.
+The two separate height-four bridges then close the scopes that could not
+be inferred from Pattern II alone.
 
 ### Two exact constructions rule out invalid coverage shortcuts
 
@@ -184,7 +277,8 @@ silently claimed to be GitHub blobs.
 
 A hypothetical q<Q packing must avoid every proved sharp terminal. It has no
 pair of disjoint parallel projection chains of lengths four and three, admits
-no two-direction separation cover, and cannot meet the two-strip terminal.
+no two-direction separation cover, admits no orthogonal one-exception cover,
+and cannot meet the two-strip terminal.
 The original physical constraints and the new universal cap still apply.
 
 The exact remaining obligation is to exclude **all** such configurations,
@@ -195,5 +289,12 @@ global contradiction, or full-root transfer is claimed.
 
 Independent agents and the integrating agent checked the new derivations by
 hand. This is not an independent human review or a kernel verification.
+The [review record](HAND_REVIEW_NINE_SQUARE_CONTINUATION_2026_11_01.md)
+states the accepted scopes and the exact checks reconstructed independently.
+The only numerical direction experiment in this checkpoint was an exploratory
+48-start optimization of a proposed three-square horizontal-cap statement.
+It did not establish that statement or any exclusion. The displayed support,
+rank and scalar arguments are independent of that experiment.
 A.3 global replay, B.2/B.3 unrestricted equality, and C.1/C.2 complete
 manuscript/audit remain open. No new roadmap gate IDs are introduced.
+
