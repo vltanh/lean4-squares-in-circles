@@ -103,7 +103,7 @@ whole-square floor; it does not reuse the rejected assertion.
 
 ## Method and accounting
 
-This agent made eleven exploratory scalar-evaluation calls to test candidate
+This agent made twelve exploratory scalar-evaluation calls to test candidate
 constants and support directions. They were finite floating-point scans
 of conjectured analytic bounds, not physical root enumeration or proof
 verification; one family included a discarded invalid proposed bound.

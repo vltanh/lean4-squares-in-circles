@@ -43,6 +43,15 @@ it does not change this canonical tally.
 
 The newest broad hand results are:
 
+- [Outward-owner, perimeter, and extreme-routing checkpoint](A2_OUTWARD_OWNER_PERIMETER_AND_EXTREME_ROUTING_CHECKPOINT.md):
+  outward shoulder-owned endpoint normals are handled in both transfer
+  directions at every slope. The three-class endpoint union leaves only
+  strictly inward axes at an unresolved bounded-inner matched pair.
+  A retained full-grid perimeter inequality excludes two continuous
+  orientation ranges. Equal extreme side columns supply the lower
+  triple's order, finite signed normals, and a whole-central-floor
+  subcase; a positive-zero remainder is explicit. These results retain
+  their physical caller premises and do not change canonical counts.
 - [Oblique endpoint and routed-triple checkpoint](A2_OBLIQUE_ENDPOINT_AND_ROUTED_TRIPLE_CHECKPOINT.md):
   both transfer directions are proved for every slope when the endpoint
   separator is upward, nearvertical, and owned by the outer main. The

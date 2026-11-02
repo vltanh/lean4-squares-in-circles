@@ -1,4 +1,18 @@
-## Latest continuation — oblique endpoint transfers and a routed-triple caller
+## Latest continuation — outward endpoint closure, perimeter reserve, and extreme routing
+
+[Current mathematical checkpoint](A2_OUTWARD_OWNER_PERIMETER_AND_EXTREME_ROUTING_CHECKPOINT.md)
+and [integration hand review](HAND_REVIEW_OUTWARD_OWNER_PERIMETER_AND_EXTREME_ROUTING_CHECKPOINT.md).
+**A.2 remains OPEN.** The outward shoulder-owned endpoint branch is
+closed for both transfer directions and every slope. Three endpoint
+classes now join independently in the matched-shoulder terminal; any
+remaining bounded-inner counterexample has a matched pair with only
+strictly inward separating axes. A full-grid perimeter inequality
+excludes two continuous orientation domains. Equal extreme side columns
+now supply a fixed lower triple, exact finite signed normals, and a
+whole-central-floor subcase, with an explicit positive-zero remainder.
+Canonical roots remain5,838 excluded /2,077 open of7,915.
+
+## Previous continuation — oblique endpoint transfers and a routed-triple caller
 
 [Current mathematical checkpoint](A2_OBLIQUE_ENDPOINT_AND_ROUTED_TRIPLE_CHECKPOINT.md)
 and [integration hand review](HAND_REVIEW_OBLIQUE_ENDPOINT_AND_ROUTED_TRIPLE_CHECKPOINT.md).

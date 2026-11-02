@@ -117,7 +117,7 @@ It does not assert horizontal projection separation within the triple.
 It also does not assert that each shoulder is actually above its matched
 outer main in vertical projection.
 
-The two endpoint-owned transfer theorems now supply a larger, precisely
+The endpoint transfer theorems now supply a larger, precisely
 stated terminal caller. Suppose, for each matched pair (M0,L) and
 (M3,R), at least one of the following holds independently:
 
@@ -125,9 +125,12 @@ stated terminal caller. Suppose, for each matched pair (M0,L) and
    projection.
 2. There is an upward physical separating unit normal n=(c,s),
    with s>=|c|, owned by a side axis of that outer main.
+3. There is an upward physical separating unit normal n=(c,s),
+   with s>=|c|, owned by the shoulder, and pointing horizontally
+   outward: c<=0 on the left and c>=0 on the right.
 
-The physical supports in the second alternative are essential; it is
-not inferred just from vertical center order. Horizontal reflection
+The physical supports in the two oblique alternatives are essential;
+neither alternative follows just from vertical center order. Horizontal reflection
 changes the sign of c on the right but preserves the stated condition.
 An actual vertical separator need not be owned by the main, so the
 first alternative remains explicitly available.
@@ -155,14 +158,20 @@ For a downward shoulder-to-central transfer use
 `ENDPOINT_OWNED_OBLIQUE_DOWNWARD_CENTER_TRANSFER_HAND_PROOF.md`;
 for an upward transfer use
 `ENDPOINT_OWNED_OBLIQUE_UPWARD_TRANSFER_HAND_PROOF.md`.
+For alternative3 use the corresponding
+`SHOULDER_OWNED_OUTWARD_DOWNWARD_TRANSFER_HAND_PROOF.md` or
+`SHOULDER_OWNED_OUTWARD_UPWARD_TRANSFER_HAND_PROOF.md` instead.
 If an endpoint pair uses alternative1, use the original vertical
 version of the appropriate transfer instead. The whole central floor
 (7) supplies 7/60; the shoulders satisfy the required side columns
 by (6) and the outsider strip. For a mixed pair in which the upward
 endpoint uses only alternative1, the actual-vertical mixed theorem
 uses |x_C|<29/60, already supplied by (6). If its endpoint uses
-alternative2, the stronger owner reserve handles every upward slope
-directly. The downward reserve is valid in either alternative.
+alternative2 or3, the stronger owner reserve handles every upward slope
+directly. The downward reserve is valid in all three alternatives.
+The complete independent choice of endpoint alternatives and all four
+central slope signs is written in
+`MATCHED_SHOULDER_ENDPOINT_OWNER_UNION_HAND_PROOF.md`.
 
 The paired center-cost theorem handles two downward transfers. The
 shared central-orientation estimate and the upward shoulder reserves
@@ -172,15 +181,15 @@ subcritical containment, using the actual-four adjusted span at
 least2 and the same physical central square on both sides.
 
 At q=Q all shoulder-to-central slopes must vanish. Any selected
-nonvertical endpoint-owned normal also makes the appropriate bound
+nonvertical selected endpoint normal also makes the appropriate bound
 strict. Hence the equality case under these premises supplies the
 actual parallel three-chain L<_xC<_xR and routes to the existing
 physical4+3 sharp terminal. No unrestricted equality classification
 is asserted.
 
 Consequently any remaining subcritical configuration satisfying (1)
-must have at least one matched endpoint pair for which neither
-alternative above holds. To make the remaining direction classification
+must have at least one matched endpoint pair for which none of the
+alternatives above holds. To make the remaining direction classification
 explicit, for the left matched pair its center differences satisfy
 \[
   2/5<x_L-x_{M0}<1,\qquad y_L-y_{M0}>31/50-1/8>0.       \tag{9}
@@ -190,9 +199,13 @@ and -91/60<x_{M0}<-89/60. A unit separator toward L with
 nonpositive vertical component would therefore have center projection
 strictly below one, impossible for the two contained radius-1/2 disks.
 Every such physical separator is upward. The reflected reasoning
-applies on the right. The separating-axis theorem now says that the
-remaining axes must be treated in the shoulder-owned or nearly
-horizontal main-owned domains.
+applies on the right. Section4 of the endpoint-owner union further
+excludes every outward nearly horizontal axis using
+149/(120sqrt(2))<1. An outward nearvertical axis is covered by
+alternative2 or3. Consequently the remaining endpoint pair must
+have only strictly inward separating axes, with no main-owned
+nearvertical separator and no actual vertical comparison. Its
+inward shoulder-owned and nearly horizontal main-owned domains remain.
 Those are genuine remaining caller obligations. No coordinate cover
 or finite pose enumeration was introduced here.
 
