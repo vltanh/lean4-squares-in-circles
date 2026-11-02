@@ -5,7 +5,7 @@ squares in a disk, all attaining configurations, then a complete hand/table proo
 **Status:** all three global deliverables OPEN. **Active: A.2.**
 The same 15 registry entries and 7,915 canonical root IDs are retained.
 Current method: hand proof; exact tables allowed; mathematical scripts only
-for checking potential directions. One numerical direction experiment was
+for checking potential directions. Two numerical direction experiments were
 exploratory only. No mathematical proof program, Lean, Lake or CI was run.
 
 | Deliverable | Status | Acceptance condition |
@@ -42,6 +42,22 @@ The later archive-only 312-exclusion checkpoint remains unpublished in full;
 it does not change this canonical tally.
 
 The newest broad hand results are:
+
+- [Unrestricted structural continuation](UNRESTRICTED_STRUCTURAL_CONTINUATION_2026_11_02.md):
+  selective completed coordinate orders have height at most four for every
+  physical packing. Nine squares therefore yield a completed3x3 grid or
+  disjoint completed4+3 chains. Added comparisons retain their weaker
+  status; those complete geometric alternatives remain open.
+- [Sharp physical three-square half-plane cap](THREE_SQUARE_SHARP_HALFPLANE_CAP_HAND_PROOF.md):
+  three whole units beyond a line at distance 7/16 force q>=Q, with no
+  coordinate-cover premise. The proof handles closed-marker equality by
+  a strict-counterexample expansion.
+- [Unrestricted three-center cap](THREE_SQUARE_DIRECTIONAL_CAP_21_OVER_20_HAND_PROOF.md):
+  min(e.c_i)<21/20 for every three units. At least seven of the eight other
+  normalized centers satisfy x<21/20.
+- [Actual-four-chain outsider strip](UNRESTRICTED_ACTUAL_FOUR_CHAIN_OUTSIDER_STRIP_HAND_PROOF.md):
+  every physical outsider satisfies |x|<13/12. A five-outsider capacity
+  theorem is still needed without the old one-exception premise.
 
 - The entire two-direction separation-cover class, with arbitrary angle and
   independent square frames, is proved in

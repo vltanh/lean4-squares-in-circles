@@ -10,6 +10,21 @@ packings.
 **Active gate: A.2.** Current method: hand proof, exact tables permitted;
 mathematical scripts only for checking potential directions. No Lean/Lake/CI.
 
+**New unrestricted structural results:** the
+[November 2 continuation](UNRESTRICTED_STRUCTURAL_CONTINUATION_2026_11_02.md)
+proves that selective completed coordinate orders have height at most four
+for every physical packing. Every nine-square packing therefore has a
+completed three-by-three rank grid or disjoint completed 4+3 chains. Added
+edges remain nonphysical and their remaining geometry is still open.
+
+The new [sharp three-square half-plane cap](THREE_SQUARE_SHARP_HALFPLANE_CAP_HAND_PROOF.md)
+forces q>=Q whenever three whole squares lie beyond a line at distance 7/16
+from the disk center, with arbitrary orientations. The
+[unrestricted center cap](THREE_SQUARE_DIRECTIONAL_CAP_21_OVER_20_HAND_PROOF.md)
+also gives min(e.c_i)<21/20 for any three squares, and the
+[actual-four-chain outsider strip](UNRESTRICTED_ACTUAL_FOUR_CHAIN_OUTSIDER_STRIP_HAND_PROOF.md)
+now holds for every physical outsider without a coordinate-cover premise.
+
 The entire [two-direction-separable class](TWO_DIRECTION_SEPARABLE_NINE_HAND_PROOF_2026_11_01.md),
 including all parallel-square packings, now has a complete sharp hand proof.
 The [exact two-square cap](TWO_SQUARE_SHARP_CAP_HAND_PROOF.md) is a universal
@@ -62,6 +77,6 @@ None supplies the remaining unrestricted coverage argument. The fixed
 positional tally remains 5,838 excluded and 2,077 open out of 7,915 roots;
 the earlier archive-only 312 additional exclusions remain separately recorded.
 
-All new proof evidence is hand-derived. One permitted numerical direction
-experiment was exploratory only; no proof programs, Lean, Lake, or CI ran.
+All new proof evidence is hand-derived. Two permitted numerical direction
+experiments were exploratory only; no proof programs, Lean, Lake, or CI ran.
 

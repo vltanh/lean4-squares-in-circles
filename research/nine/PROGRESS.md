@@ -3,14 +3,55 @@
 **Active gate: A.2. The unrestricted lower bound, global equality classification,
 and complete hand/table manuscript remain OPEN.** The current instruction is
 hand proof, with tables permitted; external mathematical scripts may only test
-potential directions. One numerical experiment tested a possible direction;
-none of its output is proof evidence. All new exclusions below are hand
+potential directions. Two numerical experiments tested possible directions;
+none of their output is proof evidence. All new exclusions below are hand
 derivations. No proof program, Lean, Lake, or CI was run.
 
 [Canonical roadmap](DEEP_GATED_ROADMAP.md) · [same gate registry](gates/ACTIVE_ROADMAP.json)
 · [current handoff](HANDOFF_A2_2026_11_01.md)
 
 ## New broad hand results — November 1, 2026
+
+### November 2: an unrestricted structural reduction and a new sharp cap
+
+[UNRESTRICTED_STRUCTURAL_CONTINUATION_2026_11_02.md](UNRESTRICTED_STRUCTURAL_CONTINUATION_2026_11_02.md)
+joins four new hand theorems, each with independent agent hand review.
+None assumes a bound on the number of coordinate-exceptional pairs.
+
+- [Selective coordinate orders](UNRESTRICTED_FIVE_PROXY_CHAIN_HAND_PROOF.md)
+  retain actual comparisons and assign each uncovered pair to its larger
+  center-gap coordinate. Both resulting orders have height at most four.
+  A five-chain would force incompatible upper and lower center-distance
+  bounds from its endpoint and internal orientations. Greene's theorem
+  then supplies a completed three-by-three rank grid or disjoint completed
+  4+3 chains for every nine-square packing. The added edges remain marked;
+  no physical chain is inferred from an added edge.
+- [Sharp physical half-plane cap](THREE_SQUARE_SHARP_HALFPLANE_CAP_HAND_PROOF.md):
+  three whole unit squares beyond a line at distance 7/16 from the disk
+  center force q>=Q. The arbitrary-orientation proof uses closed two-point
+  capture and a strict-counterexample center expansion. The aligned triple
+  attains Q. This supplies a new unrestricted physical terminal.
+- [Three-center directional cap](THREE_SQUARE_DIRECTIONAL_CAP_21_OVER_20_HAND_PROOF.md):
+  every three physical squares satisfy min(e.c_i)<21/20. An explicit
+  degree-eight polynomial and rational derivative bounds prove the entire
+  owned-normal range by hand. In the normalized boundary domain, at least
+  seven of the eight other centers now satisfy x<21/20.
+- [Actual-four-chain outsider strip](UNRESTRICTED_ACTUAL_FOUR_CHAIN_OUTSIDER_STRIP_HAND_PROOF.md):
+  every physical outsider has |x|<13/12, without a coordinate cover. The
+  stronger endpoint budget is
+  |y_0|+|y_3|+(37/50)(h_0+h_3-1)<=1/8.
+
+The remaining global task is to settle the completed rank-grid and completed
+4+3 alternatives while retaining every physical pair and both extra squares.
+The actual-four branch now localizes all five outsiders but does not yet
+prove their unrestricted capacity. No whole original root has been removed;
+the canonical published tally stays 5,838 excluded / 2,077 open.
+
+The new [review record](HAND_REVIEW_UNRESTRICTED_STRUCTURAL_CONTINUATION_2026_11_02.md)
+includes independent reconstruction of the cap polynomial coefficients,
+rational anchors, endpoint inequalities, and the closed-marker boundary
+argument. Across the continuation, two 48-start optimizations only checked
+potential directions. Neither supplies any proof premise or exclusion.
 
 ### November 2: the entire one-exception class is now proved
 
