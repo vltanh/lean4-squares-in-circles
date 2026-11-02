@@ -1,5 +1,21 @@
 # n=9: current status and fixed closure queue
 
+## Verified weak-middle continuation inputs
+
+The new [accepted component checkpoint](A2_WEAK_MIDDLE_COMPONENT_CHECKPOINT_2026_11_02.md)
+adds **393,755 complete exact leaves** with independent physical/code
+reviews. It proves the wide-main central-pair replacement, two opposite
+height lemmas, upper-central and low-side floor bounds, signed/bracketed
+side-height results, the eight-original low-right consequence, and two
+universal main orientation tolls. The narrow singleton scope extension
+and exact structural frame controls are also included.
+
+These inputs close several complete conditional occupancy families,
+including four upper central outsiders, but **010/11 remains OPEN**.
+The full-side low-floor and wider-singleton searches are incomplete and
+are not acceptance evidence. The fixed mask count remains **7 closed /
+25 open**; historical positional-root accounting is unchanged.
+
 ## Complete 000/11 strict-radius proof accepted
 
 November 2, 2026. **000/11 is closed for every radius strictly below

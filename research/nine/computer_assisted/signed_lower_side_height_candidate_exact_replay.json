@@ -1,0 +1,11 @@
+{
+  "status": "EXACT_FRACTION_REPLAY_PASS",
+  "nodes": 765,
+  "leaves": 383,
+  "maximum_depth": 29,
+  "least_reserve": "17149359252765666636416443049044549295853501488743/2298743311298833287537520542582373834356179095624089600",
+  "seconds": 6.030700832008733,
+  "certificate_sha256": "3dee255b71b158fed2b5ed99d6b456cfe4ba4f2f2d94f352363b63d30b3b4a02",
+  "checker_sha256": "04efe24bc1a48709f3a6d038fecd03504df61c9a2ce9f44ff455dc540bd223fe",
+  "scope": "Signed left-main lower-side height theorem only; no full-mask closure"
+}

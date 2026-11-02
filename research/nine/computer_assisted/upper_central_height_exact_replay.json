@@ -1,0 +1,35 @@
+{
+  "status": "EXACT_REPLAY_PASSED",
+  "nodes": 5377,
+  "leaves": 2689,
+  "maximum_depth": 23,
+  "minimum_exact_reserve": "4079836963653481/553402322211286548480",
+  "leaf_rules": [
+    18,
+    2671
+  ],
+  "root": [
+    [
+      "1/2",
+      "13/20"
+    ],
+    [
+      "1/2",
+      "13/20"
+    ],
+    [
+      "0",
+      "1"
+    ],
+    [
+      "0",
+      "29/60"
+    ]
+  ],
+  "scope": "Outer-actual original cone-four mains and one original central unit above both inner mains in closed Q imply its center height > -7/40. Middle link arbitrary; no full mask closure.",
+  "arithmetic": "64-bit directed integer intervals, exact rational tree endpoints",
+  "certificate_sha256": "007aa80cc2a5f57c18e20d9ee0fd1c9676fbb0fd34c64cff7b28bb74dcdea968",
+  "checker_sha256": "0090523bf3027b674b51089e137f15ba6ee46ee40d9bd59e3d81010ec05b974c",
+  "clearance_checker_sha256": "0348ba026937bd2f213ebc7178e802c78e34ae1b8e9fe485cb272c9f5dbfdf0e",
+  "seconds": 11.172616174007999
+}

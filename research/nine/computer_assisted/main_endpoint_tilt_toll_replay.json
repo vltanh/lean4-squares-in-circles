@@ -1,0 +1,90 @@
+{
+  "status": "EXACT_REPLAY_PASSED",
+  "leaves": 404,
+  "nodes": 801,
+  "maximum_depth": 14,
+  "minimum_exact_reserve": "49504665116902281/9223372036854775808",
+  "rows": [
+    {
+      "channel": 0,
+      "root": [
+        "-1",
+        "-1/32"
+      ],
+      "leaves": 33,
+      "minimum_exact_reserve": "152294094556324645/18446744073709551616",
+      "lower_numerator_over_million": 8255
+    },
+    {
+      "channel": 0,
+      "root": [
+        "1/32",
+        "1"
+      ],
+      "leaves": 19,
+      "minimum_exact_reserve": "752475245768594617/4611686018427387904",
+      "lower_numerator_over_million": 163167
+    },
+    {
+      "channel": 1,
+      "root": [
+        "-1",
+        "-1/32"
+      ],
+      "leaves": 33,
+      "minimum_exact_reserve": "114651697133167377/2305843009213693952",
+      "lower_numerator_over_million": 49722
+    },
+    {
+      "channel": 1,
+      "root": [
+        "1/32",
+        "1"
+      ],
+      "leaves": 21,
+      "minimum_exact_reserve": "1143905697639477603/4611686018427387904",
+      "lower_numerator_over_million": 248045
+    },
+    {
+      "channel": 2,
+      "root": [
+        "-1",
+        "1"
+      ],
+      "leaves": 60,
+      "minimum_exact_reserve": "1856344014809542949/9223372036854775808",
+      "lower_numerator_over_million": 201265
+    },
+    {
+      "channel": 3,
+      "root": [
+        "-1",
+        "1"
+      ],
+      "leaves": 229,
+      "minimum_exact_reserve": "49504665116902281/9223372036854775808",
+      "lower_numerator_over_million": 5367
+    },
+    {
+      "channel": 4,
+      "root": [
+        "-1",
+        "1"
+      ],
+      "leaves": 9,
+      "minimum_exact_reserve": "22352573014459419725/18446744073709551616",
+      "lower_numerator_over_million": 1211735
+    }
+  ],
+  "analytic_collar_coefficients": [
+    "14177/512",
+    "3873/512",
+    "1771/64",
+    "519/64"
+  ],
+  "arithmetic": "64-bit outward integer dyadics; direct support formulas; no producer import",
+  "scope": "Five complete scalar rows for the universal original-main-square tilt toll; owner/frame reduction is a separate hand proof.",
+  "certificate_sha256": "5fa9873f9918be06e08dfaf3bcac6b7962c8494f620ae841e4e2f8a92b4ceaf5",
+  "checker_sha256": "a0d657e227b2aa48db431ed18e41d2dec35ff7b695ee4314bf50ded780bce821",
+  "seconds": 0.2641257399955066
+}

@@ -1,0 +1,36 @@
+{
+  "status": "EXACT_REPLAY_PASSED",
+  "nodes": 44055,
+  "leaves": 22028,
+  "maximum_depth": 26,
+  "minimum_exact_reserve": "91211994366279/92233720368547758080",
+  "leaf_rules": [
+    0,
+    20325,
+    1703
+  ],
+  "root": [
+    [
+      "1/2",
+      "13/20"
+    ],
+    [
+      "0",
+      "1"
+    ],
+    [
+      "0",
+      "1"
+    ],
+    [
+      "29/60",
+      "49/80"
+    ]
+  ],
+  "scope": "Outer-actual original cone-four mains, right-side original S above C with yS<3/5, and original upper right-central F imply F whole floor >1/10 in closed Q. Uses the separately certified upper-central center bound >-7/40; no mask closure.",
+  "arithmetic": "64-bit directed integer intervals, exact rational tree endpoints",
+  "certificate_sha256": "a92bed3c0804b76bcd92679da11826ce2ab1ad0fe57ee1dabb5b7088f222a2d3",
+  "checker_sha256": "cea3a6f8abf3f70f599d7159333e2fbb41c4b2f9352bcf90c9a511fae90b997b",
+  "clearance_checker_sha256": "0348ba026937bd2f213ebc7178e802c78e34ae1b8e9fe485cb272c9f5dbfdf0e",
+  "seconds": 27.717962802998954
+}

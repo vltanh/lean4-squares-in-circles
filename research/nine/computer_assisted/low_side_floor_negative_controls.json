@@ -1,0 +1,25 @@
+{
+  "status": "ALL_DAMAGED_CONTROLS_REJECTED",
+  "controls": [
+    {
+      "control": "omitted_root_face",
+      "status": "REJECTED",
+      "reason": ""
+    },
+    {
+      "control": "unknown_split_axis",
+      "status": "REJECTED",
+      "reason": ""
+    },
+    {
+      "control": "missing_child",
+      "status": "REJECTED",
+      "reason": ""
+    },
+    {
+      "control": "false_unsplit_terminal",
+      "status": "REJECTED",
+      "reason": "(0, 2, '-915631083044000255/9223372036854775808', ((Fraction(1, 2), Fraction(13, 20)), (Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(1, 1)), (Fraction(29, 60), Fraction(49, 80))))"
+    }
+  ]
+}

@@ -3,6 +3,19 @@
 November 2, 2026. Complete actual-four closure accepted. No Lean, Lake
 or CI. The unrestricted bound, equality and global manuscript remain OPEN.
 
+## Accepted continuation checkpoint
+
+Read `A2_WEAK_MIDDLE_COMPONENT_CHECKPOINT_2026_11_02.md` and its hashed
+manifest first for the new 393,755-leaf accepted inputs. The wide-main
+central-pair, opposite-height, low-side, bracketed-height, and low-right
+theorems are available. The universal main tilt tolls and exact structural
+controls are accepted. None changes the fixed 7/25 mask ledger.
+
+The full-side low-floor and wider singleton domains are still OPEN.
+Do not import any incomplete discovery tree into an occupancy assembly.
+The original singleton proof does extend to both inner h<=31/60 under
+actual outer links; its precise input audit is saved separately.
+
 ## Read first
 
 1. `A2_000_11_WHOLE_DOMAIN_ASSEMBLY.md`: full original-nine strict proof.

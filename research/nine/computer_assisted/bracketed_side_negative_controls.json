@@ -1,0 +1,54 @@
+{
+  "status": "ALL_DAMAGED_CONTROLS_REJECTED",
+  "records": [
+    {
+      "certificate": "signed_lower_side_height_candidate.json",
+      "damage": "missing final leaf",
+      "status": "REJECTED",
+      "exception": "AssertionError"
+    },
+    {
+      "certificate": "signed_lower_side_height_candidate.json",
+      "damage": "unknown node tag",
+      "status": "REJECTED",
+      "exception": "AssertionError"
+    },
+    {
+      "certificate": "signed_lower_side_height_candidate.json",
+      "damage": "forged root leaf",
+      "status": "REJECTED",
+      "exception": "AssertionError"
+    },
+    {
+      "certificate": "signed_lower_side_height_candidate.json",
+      "damage": "noninteger node tag",
+      "status": "REJECTED",
+      "exception": "AssertionError"
+    },
+    {
+      "certificate": "bracketed_side_upper_height_candidate.json",
+      "damage": "missing final leaf",
+      "status": "REJECTED",
+      "exception": "AssertionError"
+    },
+    {
+      "certificate": "bracketed_side_upper_height_candidate.json",
+      "damage": "unknown node tag",
+      "status": "REJECTED",
+      "exception": "AssertionError"
+    },
+    {
+      "certificate": "bracketed_side_upper_height_candidate.json",
+      "damage": "forged root leaf",
+      "status": "REJECTED",
+      "exception": "AssertionError"
+    },
+    {
+      "certificate": "bracketed_side_upper_height_candidate.json",
+      "damage": "noninteger node tag",
+      "status": "REJECTED",
+      "exception": "AssertionError"
+    }
+  ],
+  "driver_sha256": "9feeb5778c95cdec9184360d678c25d5007c008b6b3f27d0dfa1002f0b68024d"
+}

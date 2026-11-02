@@ -1,0 +1,20 @@
+{
+  "status": "EXACT_ARITHMETIC_PASS",
+  "scope": "common deductions only; complete 010/11 remains open",
+  "rational_values": {
+    "main_amgm_squared_reserve": "447",
+    "central_nearest_clearance_squared_reserve": "32891/15210000",
+    "central_between_height_reserve": "421/1950",
+    "central_outside_nearest_gap_reserve": "313/780",
+    "wide_main_routing_width_reserve": "9/260",
+    "opposite_routing_cone_reserve": "1/30",
+    "far_endpoint_disk_squared_reserve": "0",
+    "far_endpoint_bad_order_reserve": "9/40",
+    "selected_gap_squared_reserve": "1/100",
+    "selected_span_squared_reserve": "1/25",
+    "all_central_span_squared_reserve": "959/900",
+    "individual_resource_constant": "451/810",
+    "middle_surplus_coefficient": "92/27",
+    "opposite_load_constant": "157/184"
+  }
+}

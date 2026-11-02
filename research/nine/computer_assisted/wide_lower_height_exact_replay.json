@@ -1,0 +1,45 @@
+{
+  "status": "EXACT_REPLAY_PASSED",
+  "own_half_floor": false,
+  "leaves": 4029,
+  "nodes": 8057,
+  "maximum_depth": 62,
+  "minimum_exact_reserve": "848421225106421/23058430092136939520",
+  "leaf_rules": [
+    12,
+    4017
+  ],
+  "root": [
+    [
+      "1/2",
+      "13/20"
+    ],
+    [
+      "1/2",
+      "13/20"
+    ],
+    [
+      "0",
+      "1"
+    ],
+    [
+      "0",
+      "1"
+    ],
+    [
+      "0",
+      "29/60"
+    ],
+    [
+      "-29/60",
+      "29/60"
+    ]
+  ],
+  "strict_center_gap_reserve": "7/60000",
+  "arithmetic": "64-bit directed integer enclosures and exact rational tree endpoints",
+  "scope": "A low-floor upper central original forces every lower central original to have center below -3/5. Outer main links actual; middle arbitrary; closed Q-disk; not a whole-mask closure.",
+  "certificate_sha256": "fb7c85683cd187d62a11ba3595f7bd4c908d3b484737b9f6a89082244daf5f22",
+  "checker_sha256": "d8dac63b533d6df30c0ea34af28fa2308084659ff5df6c3d25b00196d5f101ba",
+  "clearance_checker_sha256": "0348ba026937bd2f213ebc7178e802c78e34ae1b8e9fe485cb272c9f5dbfdf0e",
+  "seconds": 55.91326604099595
+}

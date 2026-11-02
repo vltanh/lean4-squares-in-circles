@@ -1,0 +1,26 @@
+{
+  "status": "ALL_DAMAGED_CONTROLS_REJECTED",
+  "controls": [
+    {
+      "control": "missing_root_interval",
+      "status": "REJECTED",
+      "reason": ""
+    },
+    {
+      "control": "unknown_split_rule",
+      "status": "REJECTED",
+      "reason": ""
+    },
+    {
+      "control": "missing_child",
+      "status": "REJECTED",
+      "reason": ""
+    },
+    {
+      "control": "false_whole_root_leaf",
+      "status": "REJECTED",
+      "reason": "(0, '-1', '-1/32', '-1651817395271805878859/18446744073709551616')"
+    }
+  ],
+  "certificate_sha256": "5fa9873f9918be06e08dfaf3bcac6b7962c8494f620ae841e4e2f8a92b4ceaf5"
+}

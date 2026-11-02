@@ -87,7 +87,16 @@
     "whole_00011_terminal": "A2_000_11_WHOLE_DOMAIN_ASSEMBLY.md",
     "actual_four_final_manifest": "computer_assisted/mask_00011_closure_manifest.json",
     "universal_linear_orientation_toll": "UNIVERSAL_PHYSICAL_PAIR_SHOULDER_TILT_TOLL.md",
-    "universal_curved_orientation_toll": "UNIVERSAL_PHYSICAL_PAIR_CURVED_TILT_TOLL.md"
+    "universal_curved_orientation_toll": "UNIVERSAL_PHYSICAL_PAIR_CURVED_TILT_TOLL.md",
+    "wide_main_central_pair": "WEAK_MIDDLE_UPPER_CENTRAL_PAIR_REPLACEMENT_HAND_PROOF.md",
+    "wide_main_opposite_heights": "WEAK_MIDDLE_LOW_FLOOR_OPPOSITE_HEIGHT_HAND_PROOF.md",
+    "narrow_weak_middle_singleton_extension": "WEAK_MIDDLE_SINGLETON_NARROW_INSET_EXTENSION.md",
+    "wide_main_low_side_floor": "WIDE_MAIN_LOW_SIDE_FORCES_CENTRAL_FLOOR_HAND_TABLE.md",
+    "wide_main_bracketed_side_height": "BRACKETED_WIDE_MAIN_UPPER_SIDE_HEIGHT_HAND_TABLE.md",
+    "wide_main_eight_original_low_right": "WEAK_MIDDLE_BRACKETED_MAIN_SIDE_TRIPLE_HAND_TABLE.md",
+    "universal_main_orientation_toll": "UNIVERSAL_MAIN_ENDPOINT_TILT_TOLL.md",
+    "sharp_small_main_orientation_toll": "SHARP_SMALL_MAIN_ENDPOINT_TILT_TOLL.md",
+    "sharp_boundary_frame_controls": "STRUCTURAL_FRAME_SELECTION_OBSTRUCTIONS.md"
   },
   "gates": [
     {
@@ -300,5 +309,7 @@
     "new_original_root_exclusions": 0,
     "new_global_gate_closures": 0,
     "lean_lake_ci_run": false
-  }
+  },
+  "latest_accepted_component_checkpoint": "A2_WEAK_MIDDLE_COMPONENT_CHECKPOINT_2026_11_02.md",
+  "latest_component_strict_leaves": 393755
 }

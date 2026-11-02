@@ -1,0 +1,53 @@
+{
+  "status": "EXACT_REPLAY_PASSED",
+  "scope": "seven original physical units only; counterexample to importing hM<31/60, not to the nine-square theorem",
+  "physical_pairs": 21,
+  "corners": 28,
+  "minimum_corner_reserve": "19451531776709141659/2296400000000000000000",
+  "minimum_pair_reserve": "1/2000",
+  "inner_width_excess": "239/72060",
+  "P_whole_floor": "-188030093/1000000000",
+  "selected_edges": [
+    {
+      "i": 0,
+      "j": 1,
+      "bit": "0",
+      "dx": "102051/100000",
+      "abs_dy": "102051/100000",
+      "width_sum": "1225/1201"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "bit": "1",
+      "dx": "503897823/500000000",
+      "abs_dy": "331979907/1000000000",
+      "width_sum": "1225/1201"
+    },
+    {
+      "i": 2,
+      "j": 3,
+      "bit": "0",
+      "dx": "2001/2000",
+      "abs_dy": "688530093/1000000000",
+      "width_sum": "1"
+    },
+    {
+      "i": 4,
+      "j": 5,
+      "bit": "1",
+      "dx": "2001/2000",
+      "abs_dy": "688530093/1000000000",
+      "width_sum": "1001000/1000001"
+    },
+    {
+      "i": 5,
+      "j": 6,
+      "bit": "1",
+      "dx": "1759785453/2000000000",
+      "abs_dy": "331227531/400000000",
+      "width_sum": "6930/5741"
+    }
+  ],
+  "source_sha256": "e5bfb3c3a62c3fd10fa99874a651df6dfa7c2778ecaa7c259d7b22eb1a0e2248"
+}

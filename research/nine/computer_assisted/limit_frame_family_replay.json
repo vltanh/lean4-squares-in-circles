@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "arithmetic": "exact integers and Fraction",
+  "event_count": 52,
+  "cone_quad_count": 9,
+  "only_outer_actual_cone_quad": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "only_outer_actual_normal": [
+    1,
+    0
+  ],
+  "max_corner_norm_squared": "1105/256",
+  "physical_pair_count": 36,
+  "minimum_pair_margin": "0",
+  "table_sha256": "bf9f975444d34b251239d32b7c5c0a4b52f0edf0cd0ace91c6d70a732d85226f",
+  "checker_sha256": "98b6e2e935b64dbd881fa2a248102b494b263db5a6a2a14981977e2cf84fb52d"
+}

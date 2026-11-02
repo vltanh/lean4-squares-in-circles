@@ -152,7 +152,9 @@
     },
     {
       "id": "010/11",
-      "status": "OPEN"
+      "status": "OPEN",
+      "accepted_component_checkpoint": "A2_WEAK_MIDDLE_COMPONENT_CHECKPOINT_2026_11_02.md",
+      "full_domain_closed": false
     },
     {
       "id": "011/00",
@@ -236,5 +238,6 @@
     }
   ],
   "latest_closure": "A2_000_11_VERIFIED_CLOSURE_2026_11_02.md",
-  "new_closures_in_this_continuation": 5
+  "new_closures_in_this_continuation": 5,
+  "latest_component_checkpoint": "A2_WEAK_MIDDLE_COMPONENT_CHECKPOINT_2026_11_02.md"
 }
