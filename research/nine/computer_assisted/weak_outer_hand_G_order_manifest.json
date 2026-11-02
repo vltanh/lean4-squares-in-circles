@@ -1,0 +1,40 @@
+{
+  "scope": "Complete original-three necessary-domain proof of yG>yD in normalized001/00 v>=7/30; no whole-mask closure",
+  "files": [
+    {
+      "path": "WEAK_OUTER_LARGE_GAP_SHORT_ENDPOINT_ORDER_HAND_TABLE.md",
+      "sha256": "0a2405aee3123b487dc8eab15d62bf6e194440588633dc4a6556adf7be7085ff",
+      "bytes": 13639
+    },
+    {
+      "path": "computer_assisted/weak_outer_hand_G_order_search.py",
+      "sha256": "ec5373ff54b7976320caf404683f9436230fdb6ece02fd292fb0d89161b931e3",
+      "bytes": 7137
+    },
+    {
+      "path": "computer_assisted/weak_outer_hand_G_order_verify.py",
+      "sha256": "e24d4d3f1206771a1562a3c5ca230dd3864cf99a785ad56b0c49ae50ee1b2d9e",
+      "bytes": 8456
+    },
+    {
+      "path": "computer_assisted/weak_outer_hand_G_order_certificate.json.gz",
+      "sha256": "d5699c099813ad3b078bbd7c91c87081c210d1c8588f348546312a2454500fc8",
+      "bytes": 1102962
+    },
+    {
+      "path": "computer_assisted/weak_outer_hand_G_order_exact_replay.json",
+      "sha256": "1539328e82bc7b3d53dc6f285291660a33cf211d938ef62223bc88308664f90f",
+      "bytes": 535
+    },
+    {
+      "path": "computer_assisted/weak_outer_hand_G_order_controls.py",
+      "sha256": "301d1025b59459dca396012a3991f0623cf35e537b96ec323813620f30403996",
+      "bytes": 1913
+    },
+    {
+      "path": "computer_assisted/weak_outer_hand_G_order_rejection_controls.json",
+      "sha256": "0e1aaf380928bda2750a2eb83af05c022a5821e95935ea43d4bf1a9315bd8e51",
+      "bytes": 1056
+    }
+  ]
+}

@@ -52,8 +52,10 @@ A complete fixed-root hand/table proof is an alternative route. It must name the
 
 **Whole `001/00`, with reversal `100/00`: one weak outer main link.**
 
-The complete 010/11 proof is accepted. The weak-outer hand theorem excludes
-transverse gaps at most 7/30; the larger-gap original-nine complement is
+The complete 010/11 proof is accepted. The independently reviewed weak-outer
+signed hand/table assembly excludes transverse gaps at most 5/8, using
+a complete 34,752-leaf exact endpoint-order table; the larger-gap
+original-nine complement is
 open. Retain all original squares and derive the changed endpoint bounds
 without transferring an actual-outer premise. A possible structural
 extraction may cover several remaining masks only after its complete
@@ -76,3 +78,4 @@ A decreasing count of unresolved fixed rows is an accounting invariant for accep
 
 The current hand sources are a library, not an extra roadmap. Their pre-reset catalogue and detailed history remain at
 [ea4ff8b](https://github.com/vltanh/lean4-squares-in-circles/blob/ea4ff8bad97a58e2b8633ab69f549acb5352e573/research/nine/DEEP_GATED_ROADMAP.md).
+

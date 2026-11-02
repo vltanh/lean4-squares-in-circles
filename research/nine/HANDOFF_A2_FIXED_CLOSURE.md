@@ -62,20 +62,35 @@ nine original frames, 36 corners, 36 physical pairs, the five marked
 cone comparisons and exact bits. The altered outer geometry prevents
 unproved transfer of the actual-outer endpoint reserves.
 
-`WEAK_OUTER_SMALL_TRANSVERSE_GAP_HAND_EXCLUSION.md` proves that the
-weak outer pair has absolute transverse gap greater than 7/30, even at
-closed Q. The independent review is accepted. The hand argument uses
-the original signed physical separator, a universal main orientation
-toll, and a rational half-angle inequality. This is a complete local
-subdomain and earns no whole-mask closure by itself.
+`WEAK_OUTER_LOW_GAP_HAND_TABLE_ASSEMBLY.md` now proves that the weak
+outer pair has absolute transverse gap greater than **5/8**, for both
+original tilt signs, even at closed Q. Its independent review is
+`WEAK_OUTER_SIGNED_LOW_GAP_INDEPENDENT_REVIEW.md`. The earlier 7/30 theorem
+remains an input for one part of the exhaustive three-row assembly.
 
-The larger-gap domain remains open. Numerical exploration suggests that
-the actual short shoulder and the inward member of the weak main pair
-interact strongly. Such discovery observations are not accepted
-inequalities or exclusions. Some seven/eight-original relaxations remain
-subcritically feasible, so the ninth original may be essential. A broad
-selection/frame theorem could close more rows only after its complete
-existential assertion is proved.
+The positive-tilt branch uses the new signed upward-separator cap and
+the complete original C,D,G endpoint-order theorem. The latter proves
+y_G>y_D for every normalized gap at least 7/30. Its eight-root rational
+forest has 62,297 nodes and 34,752 leaves, depth 18, and no frontier.
+Both complete exact replays passed; the root report is
+`computer_assisted/weak_outer_G_order_root_replay.json`. The certificate
+SHA-256 is `d5699c099813ad3b078bbd7c91c87081c210d1c8588f348546312a2454500fc8`.
+Five damaged-certificate controls were rejected. No replay of unchanged
+accepted bytes is needed without a concrete remaining concern.
+
+The larger-gap original-nine domain **|y_D-y_C|>5/8** remains open.
+The endpoint-order theorem also yields a vertical D/G clearance above
+8/15 from the proved horizontal bound and the two inscribed half-disks.
+Keep both extra originals: some seven/eight-original relaxations remain
+subcritically feasible. The exact aligned nine-square control in
+`WEAK_OUTER_NUMERIC_BOUNDARY_CONTROL.md` is a boundary control, not a
+counterexample to a weak mask. A broad selection/frame theorem could
+close more rows only after its complete existential assertion is proved.
+
+This continuation establishes a complete larger continuous subdomain,
+with **zero new whole-mask or positional-root closures**. The frozen
+accepted package is listed in
+`computer_assisted/weak_outer_low_gap_checkpoint_manifest.json`.
 
 ## Fixed accounting
 
@@ -91,3 +106,4 @@ existential assertion is proved.
 The earlier full masks and the 393,755-leaf component checkpoint remain
 accepted with their recorded scopes. The unchanged contract is
 `A2_COVERAGE_AND_CLOSURE_CONTRACT.md`.
+

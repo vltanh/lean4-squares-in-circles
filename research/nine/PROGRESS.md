@@ -79,13 +79,22 @@ domain is **001/00**, with reversal **100/00**. Its weak outer link
 changes the endpoint geometry and requires its own complete physical
 argument; the actual-outer-link family cannot simply be transferred.
 
-The new [weak-outer hand theorem](WEAK_OUTER_SMALL_TRANSVERSE_GAP_HAND_EXCLUSION.md)
-proves that the weak pair's transverse center gap must exceed 7/30 in
-both domains, even at closed Q. Its
-[independent review](WEAK_OUTER_SMALL_TRANSVERSE_GAP_INDEPENDENT_REVIEW.md)
-is accepted. The larger-gap complement remains open. Numerical
-seven/eight-square explorations do not close the original-nine mask;
-the ninth original can be essential.
+The complete [signed low-gap assembly](WEAK_OUTER_LOW_GAP_HAND_TABLE_ASSEMBLY.md)
+now proves that the weak pair's absolute transverse center gap must
+exceed **5/8**, for every original tilt and even at closed Q. This
+strengthens the earlier 7/30 result. The proof combines two analytic
+signed transfer arguments with a complete endpoint-order table:
+**34,752 exact rational leaves, 62,297 nodes, empty frontier**, independently
+replayed by both its author and the root. Five damaged-certificate controls
+were rejected. The [independent mathematical review](WEAK_OUTER_SIGNED_LOW_GAP_INDEPENDENT_REVIEW.md)
+accepts the entire assembly and its acyclic dependencies.
+
+The resulting original-nine complement **|y_D-y_C|>5/8** remains open.
+This component result closes no additional whole mask or positional root.
+Numerical seven/eight-square explorations do not close the original-nine
+mask; the ninth original can be essential. The exact aligned nine-square
+boundary control in `WEAK_OUTER_NUMERIC_BOUNDARY_CONTROL.md` also prevents
+using a fixed numerical margin near the actual-link boundary as a proof.
 
 Continue complete computer-assisted discovery and exact replay for that
 fixed domain, or a proved structural extraction covering several remaining
@@ -126,3 +135,4 @@ The complete actual-four closure is pinned at
 [ddadfdd3](https://github.com/vltanh/lean4-squares-in-circles/blob/ddadfdd3bd2ef39a2e698680f9a2f3b7d73876ab/research/nine/PROGRESS.md).
 Earlier guarded terminals and incomplete research retain their original
 scope; they are not parallel active progress ledgers.
+

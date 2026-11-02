@@ -4,7 +4,7 @@ November 1, 2026, America/Chicago. Replaces the expanding research queue, not th
 
 **A.2 is OPEN. The November 2 continuation closes the full `000/01`,
 `000/10`, `010/01`, and `010/10` domains even at Q, and now closes
-`000/11` for strict radius. There are 25 fixed masks still open.** The existing exhaustive covers are retained. The missing result is closure of their continuous domains, not another list of conditional subcases.
+`000/11` and `010/11` for strict radius. There are 24 fixed masks still open.** The existing exhaustive covers are retained. The missing result is closure of their continuous domains, not another list of conditional subcases.
 
 ## 1. Two different ledgers must not be conflated
 
@@ -13,7 +13,7 @@ The original positional cover has 7,915 stable root IDs. The published `computer
 A closed-Q exclusion asserts that an entire root is impossible even at q=Q. A sharp lower-bound proof asserts only that its q<Q part is impossible. These are different claims. Root 7820 contains an attaining packing, so it cannot be closed by a closed-Q exclusion. It can eventually have its strict-radius obligation discharged while its equality domain remains nonempty. **Do not demand that the historical closed-Q OPEN count reach zero.**
 
 The hand-proof work queue uses the 32 already introduced marked-chain masks. They are exact domains of nine physical squares with a chosen chain witness, not 32 finite sets of poses. The accepted complete source proofs treat `000/00`, `000/01`, `000/10`,
-`000/11`, `010/00`, `010/01`, and `010/10`; the other 25 remain OPEN. This is not a percentage of effort, nor a replacement for the 7,915 root IDs or the 15 roadmap IDs.
+`000/11`, `010/00`, `010/01`, `010/10`, and `010/11`; the other 24 remain OPEN. This is not a percentage of effort, nor a replacement for the 7,915 root IDs or the 15 roadmap IDs.
 
 ## 2. The unchanged unrestricted physical predicate
 
@@ -93,7 +93,7 @@ Here C means closed for q<Q by an existing sharp hand theorem; X means excluded 
 |---|---|---|---|---|
 | 000 | C | X | X | C |
 | 001 | O | O | O | O |
-| 010 | X | X | X | O |
+| 010 | X | X | X | C |
 | 011 | O | O | O | O |
 | 100 | O | O | O | O |
 | 101 | O | O | O | O |
@@ -124,7 +124,12 @@ replays and independent physical/assembly reviews recorded in
 `A2_000_11_VERIFIED_CLOSURE_2026_11_02.md`. Its final contradiction uses
 the normalized D>2; its closed-Q status is unclassified. Conditional
 endpoint and capacity theorems do not change another O without a complete
-caller.
+caller. The complete strict-radius `010/11` proof is
+`A2_010_11_WHOLE_DOMAIN_ASSEMBLY.md`, with its complete exact replays and
+physical assembly review recorded in
+`A2_010_11_VERIFIED_CLOSURE_2026_11_02.md`. Its closed-Q status also remains
+unclassified. This reconciles the contract with that already accepted
+closure; the newer weak-outer subdomain result changes no table entry.
 
 ## 6. Exact proof sharing by reversal
 
@@ -142,17 +147,20 @@ published denominator remains 32. Reversing only one chosen chain without the co
 
 ## 7. The single next proof target
 
-**Active target: the whole `010/11` strict-radius domain.** Its long
-chain has actual outer links and a weak middle cone link; the disjoint
-short cone chain has both links strictly weak. The two other original
-squares remain unrestricted. Its reversal is itself.
+**Active target: the whole `001/00` strict-radius domain, with exact
+reversal `100/00`.** Its long chain has two actual links followed by one
+strictly weak outer cone link, and its disjoint short chain is actual.
+The two other original squares remain unrestricted.
 
-The larger inner-width range must be retained. The complete actual-four
-argument cannot be imported until every physical premise is derived or
-its complement covered. Parallel searches may address another fixed full
-mask or a universal terminal extraction without adding mandatory gates.
-No bound on another exceptional pair, endpoint owner, inner height, tilt
-or outsider placement may be assumed without proof.
+The complete signed hand/table assembly in
+`WEAK_OUTER_LOW_GAP_HAND_TABLE_ASSEMBLY.md` proves that the weak pair's
+absolute transverse gap exceeds 5/8 even at closed Q. That complete
+subdomain exclusion leaves the larger-gap original-nine complement
+open and closes no whole mask. The original mask definition in Section 3
+is unchanged. Parallel searches may address another fixed full mask or
+a universal terminal extraction without adding mandatory gates. No bound
+on another exceptional pair, endpoint owner, inner height, tilt or outsider
+placement may be assumed without proof.
 
 The next accepted checkpoint must name the complete fixed domain or
 stable root it discharges and give its full proof. An unfinished target
@@ -170,7 +178,7 @@ A change of physical coordinates, expansion of centers, or relabeling used in a 
 
 ## 9. Progress invariant and its limitation
 
-Let U be the subset of the fixed 32 masks with no accepted complete strict-radius proof. At the reset |U|=30; after the five complete November 2 closures |U|=25. A mathematical closure update removes one or more specified elements of U; a new conditional lemma, a narrower angle range, a child split, a source recovery, or a documentation change removes none. Incorrect proofs must be retracted even if that increases |U|.
+Let U be the subset of the fixed 32 masks with no accepted complete strict-radius proof. At the reset |U|=30; after the six complete November 2 closures |U|=24. The subsequent weak-outer gap improvement leaves |U|=24. A mathematical closure update removes one or more specified elements of U; a new conditional lemma, a narrower angle range, a child split, a source recovery, or a documentation change removes none. Incorrect proofs must be retracted even if that increases |U|.
 
 This is a monotone accounting rule for valid accepted closures, **not a theorem that proof discovery terminates**. A finite list can contain very hard continuous statements. Compactness, an integer counter, and a finite mask set do not establish tractability or a uniform finite subdivision bound. No claim of uniformly easy leaves or a completion percentage is made.
 
@@ -187,3 +195,4 @@ No fresh conditional-lemma campaign is an accepted next deliverable. Necessary l
 This reset also corrects the stale registry, which still described 31 untreated masks and several now-published sources as unarchived leads. Its historical metadata is preserved by the pinned pre-reset commit rather than copied into another expanding active ledger.
 
 No mathematical program, Lean, Lake, or CI was run for this reset. The new coverage/assembly and reversal arguments are hand deductions from the explicitly cited inputs. No new independent human, agent, or kernel review is claimed. Unrestricted equality and the final manuscript remain separate open deliverables.
+

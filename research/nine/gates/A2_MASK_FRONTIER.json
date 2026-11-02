@@ -251,5 +251,19 @@
   ],
   "latest_closure": "A2_010_11_VERIFIED_CLOSURE_2026_11_02.md",
   "new_closures_in_this_continuation": 6,
-  "latest_component_checkpoint": "A2_WEAK_MIDDLE_COMPONENT_CHECKPOINT_2026_11_02.md"
+  "latest_component_checkpoint": "WEAK_OUTER_LOW_GAP_HAND_TABLE_ASSEMBLY.md",
+  "preceding_component_checkpoint": "A2_WEAK_MIDDLE_COMPONENT_CHECKPOINT_2026_11_02.md",
+  "active_target_remaining_condition": "|y_D-y_C|>5/8; full original-nine predicate unchanged",
+  "latest_component_result": {
+    "scope": "All original tilts in 001/00 and exact reversal 100/00 with absolute transverse gap at most 5/8 excluded even at closed Q",
+    "source": "WEAK_OUTER_LOW_GAP_HAND_TABLE_ASSEMBLY.md",
+    "independent_review": "WEAK_OUTER_SIGNED_LOW_GAP_INDEPENDENT_REVIEW.md",
+    "manifest": "computer_assisted/weak_outer_low_gap_checkpoint_manifest.json",
+    "exact_table_leaves": 34752,
+    "empty_frontier": true,
+    "new_mask_closures": 0,
+    "new_root_exclusions": 0,
+    "global_lower_bound_proved": false,
+    "lean_lake_ci_run": false
+  }
 }

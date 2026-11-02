@@ -1,0 +1,115 @@
+{
+  "scope": "Complete weak-outer low-gap component exclusion; full masks remain OPEN",
+  "target_q": "1105/256",
+  "transverse_interval": "[0,5/8]",
+  "masks": [
+    "001/00",
+    "100/00"
+  ],
+  "new_whole_mask_closures": 0,
+  "new_positional_root_exclusions": 0,
+  "closed_mask_count": 8,
+  "open_mask_count": 24,
+  "exact_table_leaves": 34752,
+  "exact_table_frontier": 0,
+  "complete_replays": 2,
+  "damaged_controls_rejected": 5,
+  "lean_lake_ci_run": false,
+  "files": [
+    {
+      "path": "WEAK_OUTER_LOW_GAP_HAND_TABLE_ASSEMBLY.md",
+      "bytes": 7264,
+      "sha256": "5814a49e8f3894a25ece9741c108bcca1349f9a02e252848929ce1a1bba8868a"
+    },
+    {
+      "path": "WEAK_OUTER_SIGNED_LOW_GAP_INDEPENDENT_REVIEW.md",
+      "bytes": 6274,
+      "sha256": "9054d79fac1abc78652871b1c4639c5246f555eeb8070d4e300468b466279f8c"
+    },
+    {
+      "path": "WEAK_OUTER_SIGNED_SMALL_GAP_TRANSFER.md",
+      "bytes": 8407,
+      "sha256": "6c48bbf54fd15e1fd286f7c79e95d6dfa2e938777d26a2a54a03f3e19498fac0"
+    },
+    {
+      "path": "SIGNED_NEGATIVE_MAIN_UPWARD_SEPARATOR_CAP_INDEPENDENT_PROOF.md",
+      "bytes": 9497,
+      "sha256": "b8503be27b52b7e3d6933a77ca488a7f78f3652e2cdfef0093bd41e578958e3b"
+    },
+    {
+      "path": "WEAK_OUTER_NUMERIC_NEGATIVE_TILT_LOW_GAP_HAND_EXCLUSION.md",
+      "bytes": 8618,
+      "sha256": "7c273b3130c9f4800b634c3a65d85172902394cfcf1c8f05060ef529b742a3e2"
+    },
+    {
+      "path": "WEAK_OUTER_LARGE_GAP_SHORT_ENDPOINT_ORDER_HAND_TABLE.md",
+      "bytes": 13639,
+      "sha256": "0a2405aee3123b487dc8eab15d62bf6e194440588633dc4a6556adf7be7085ff"
+    },
+    {
+      "path": "WEAK_OUTER_NUMERIC_BOUNDARY_CONTROL.md",
+      "bytes": 2270,
+      "sha256": "ce67d95e43c2f63c0fa1d130865231fa19e6d9f291a9f4ec7559486861c5f89f"
+    },
+    {
+      "path": "computer_assisted/verify_weak_outer_signed_transfer_arithmetic.py",
+      "bytes": 1992,
+      "sha256": "9cd8713f01515a05dd30ba99e2cd29f77be6faec9fd81678c5d93b25f55684f2"
+    },
+    {
+      "path": "computer_assisted/extraction_search_signed_cap_arithmetic.py",
+      "bytes": 2766,
+      "sha256": "356410986a2fb6972cceb70cf0aef4ed865d8a9ded407b24d7b0cffdda7f1086"
+    },
+    {
+      "path": "computer_assisted/weak_outer_numeric_negative_tilt_arithmetic.py",
+      "bytes": 1339,
+      "sha256": "6cf5454559b5f8cb38cb4628bc7243da332746bd5feb6705471c8154e4fbdbc1"
+    },
+    {
+      "path": "computer_assisted/weak_outer_numeric_boundary_control.py",
+      "bytes": 1693,
+      "sha256": "c91c47c9dd19606e90c4b2b0a951e57f576062856c68850a0df989c35966081c"
+    },
+    {
+      "path": "computer_assisted/weak_outer_hand_G_order_search.py",
+      "bytes": 7137,
+      "sha256": "ec5373ff54b7976320caf404683f9436230fdb6ece02fd292fb0d89161b931e3"
+    },
+    {
+      "path": "computer_assisted/weak_outer_hand_G_order_verify.py",
+      "bytes": 8456,
+      "sha256": "e24d4d3f1206771a1562a3c5ca230dd3864cf99a785ad56b0c49ae50ee1b2d9e"
+    },
+    {
+      "path": "computer_assisted/weak_outer_hand_G_order_certificate.json.gz",
+      "bytes": 1102962,
+      "sha256": "d5699c099813ad3b078bbd7c91c87081c210d1c8588f348546312a2454500fc8"
+    },
+    {
+      "path": "computer_assisted/weak_outer_hand_G_order_exact_replay.json",
+      "bytes": 535,
+      "sha256": "1539328e82bc7b3d53dc6f285291660a33cf211d938ef62223bc88308664f90f"
+    },
+    {
+      "path": "computer_assisted/weak_outer_G_order_root_replay.json",
+      "bytes": 534,
+      "sha256": "c18bc4493650e957588b950b08610a8f3d4dbea197e0701841592bc7091306ff"
+    },
+    {
+      "path": "computer_assisted/weak_outer_hand_G_order_controls.py",
+      "bytes": 1913,
+      "sha256": "301d1025b59459dca396012a3991f0623cf35e537b96ec323813620f30403996"
+    },
+    {
+      "path": "computer_assisted/weak_outer_hand_G_order_rejection_controls.json",
+      "bytes": 1056,
+      "sha256": "0e1aaf380928bda2750a2eb83af05c022a5821e95935ea43d4bf1a9315bd8e51"
+    },
+    {
+      "path": "computer_assisted/weak_outer_hand_G_order_manifest.json",
+      "bytes": 1484,
+      "sha256": "668a302234596f62ece5e2f0910042ed80bec7ac1078831b435cc2c790089b52"
+    }
+  ]
+}

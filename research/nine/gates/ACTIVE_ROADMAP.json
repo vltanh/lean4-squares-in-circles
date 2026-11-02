@@ -101,7 +101,9 @@
     "sharp_boundary_frame_controls": "STRUCTURAL_FRAME_SELECTION_OBSTRUCTIONS.md",
     "whole_01011_terminal": "A2_010_11_WHOLE_DOMAIN_ASSEMBLY.md",
     "weak_middle_final_manifest": "computer_assisted/mask_01011_closure_manifest.json",
-    "weak_outer_small_transverse_gap": "WEAK_OUTER_SMALL_TRANSVERSE_GAP_HAND_EXCLUSION.md"
+    "weak_outer_small_transverse_gap": "WEAK_OUTER_SMALL_TRANSVERSE_GAP_HAND_EXCLUSION.md",
+    "weak_outer_signed_low_gap": "WEAK_OUTER_LOW_GAP_HAND_TABLE_ASSEMBLY.md",
+    "weak_outer_short_endpoint_order": "WEAK_OUTER_LARGE_GAP_SHORT_ENDPOINT_ORDER_HAND_TABLE.md"
   },
   "gates": [
     {
@@ -234,7 +236,7 @@
   "legacy_gate_registry": "SUPERSEDED_NO_ACTIVE_PROGRESS_COUNTER",
   "computer_first": {
     "active": true,
-    "target": "unrestricted full nine-square 001/00 and reversed 100/00 masks; larger weak-outer transverse-gap complement and structural extraction discovery",
+    "target": "Complete original-nine 001/00 and reversed 100/00 masks beyond transverse gap 5/8, or universal terminal extraction",
     "mask_emitter": "computer_assisted/emit_fixed_mask.py",
     "exact_controls": "computer_assisted/test_emit_fixed_mask.py",
     "pilot_hand_table": "computer_assisted/NO_EIGHTH_FIXED_SEVEN_HAND_TABLE.md",
@@ -316,8 +318,8 @@
     "new_global_gate_closures": 0,
     "lean_lake_ci_run": false
   },
-  "latest_accepted_component_checkpoint": "A2_WEAK_MIDDLE_COMPONENT_CHECKPOINT_2026_11_02.md",
-  "latest_component_strict_leaves": 393755,
+  "latest_accepted_component_checkpoint": "WEAK_OUTER_LOW_GAP_HAND_TABLE_ASSEMBLY.md",
+  "latest_component_strict_leaves": 34752,
   "preceding_actual_four_continuation": {
     "date": "2026-11-02",
     "kind": "COMPLETE_ACTUAL_FOUR_MASK_CLOSURE",
@@ -338,6 +340,25 @@
     "human_or_kernel_verification": false,
     "new_original_root_exclusions": 0,
     "new_global_gate_closures": 0,
+    "lean_lake_ci_run": false
+  },
+  "active_target_remaining_condition": "|y_D-y_C|>5/8; all nine originals and every original physical pair retained",
+  "latest_weak_outer_component": {
+    "source": "WEAK_OUTER_LOW_GAP_HAND_TABLE_ASSEMBLY.md",
+    "independent_review": "WEAK_OUTER_SIGNED_LOW_GAP_INDEPENDENT_REVIEW.md",
+    "manifest": "computer_assisted/weak_outer_low_gap_checkpoint_manifest.json",
+    "closed_transverse_interval": "0<=|y_D-y_C|<=5/8",
+    "closed_q": true,
+    "table_roots": 8,
+    "table_nodes": 62297,
+    "table_leaves": 34752,
+    "table_frontier": 0,
+    "complete_independent_exact_replays": 2,
+    "damaged_certificate_controls_rejected": 5,
+    "new_mask_closures": [],
+    "new_original_root_exclusions": 0,
+    "new_global_gate_closures": 0,
+    "human_or_kernel_verification": false,
     "lean_lake_ci_run": false
   }
 }
