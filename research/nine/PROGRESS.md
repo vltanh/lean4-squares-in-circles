@@ -6,13 +6,21 @@ Current instruction: hand proof; exact tables allowed; no Lean, Lake, or CI; mat
 
 [Closure contract](A2_COVERAGE_AND_CLOSURE_CONTRACT.md) · [Fixed mask table](gates/A2_MASK_FRONTIER.json) · [Roadmap](DEEP_GATED_ROADMAP.md) · [Registry](gates/ACTIVE_ROADMAP.json) · [Current handoff](HANDOFF_A2_FIXED_CLOSURE.md)
 
-## What changed in this reset
+## Latest whole-domain attempt: 000/01 remains OPEN / BLOCKED
+
+[Attempt record](A2_000_01_ATTEMPT.md). The selected short chain has been routed to one common side of the two inner mains by a uniform physical argument. The weighted endpoint caps then leave an exact outer-square orientation deficit; no proof yet shows that the two additional units eliminate it.
+
+An exact rational seven-unit packing with the same selected `000/01` links fits in squared radius 273/64<Q, with margin 13/256. All 21 physical pairs and all farthest-corner bounds are printed. The weak-link inset gap is attained exactly, and the selected seven already have two coordinate-exceptional pairs. This rules out the seven-square shortcut and an automatic one-exception invocation. It is not a nine-square counterexample and does not prove an eight-square shortcut.
+
+**New full-mask or root closures in this attempt: 0.** The active target, fixed frontier, roadmap IDs, and root counts are unchanged. No new mandatory subgates were introduced. Numerical work tested possible directions only; the recorded construction and identities have hand derivations. No new independent reviewer or kernel verification is claimed.
+
+## What changed in the preceding reset
 
 The expanding conditional-lemma queue is frozen. The existing proofs remain available, but separator owners, slopes, marker positions, and successively stronger thresholds are no longer new progress gates. The active task must close a complete fixed domain, not just add another sufficient condition.
 
-The existing exhaustive cover was not missing. What was missing was a complete proof over its remaining continuous domains. The new contract gives the exact all-nine-square mask predicates, every boundary convention, their coverage/assembly argument, and the rule for accepting a whole-domain proof. It does not claim that these proofs are easy or that research termination is guaranteed.
+The existing exhaustive cover was not missing. What was missing was a complete proof over its remaining continuous domains. The contract gives the exact all-nine-square mask predicates, every boundary convention, their coverage/assembly argument, and the rule for accepting a whole-domain proof. It does not claim that these proofs are easy or that research termination is guaranteed.
 
-**New geometric closures in this reset: 0.** The old machine registry was stale: it still recorded 31 untreated masks and described some subsequently published proofs as missing leads. That accounting has been reconciled without promoting any conditional result.
+**New geometric closures in the reset: 0.** The old machine registry was stale: it still recorded 31 untreated masks and described some subsequently published proofs as missing leads. That accounting was reconciled without promoting any conditional result.
 
 ## The two ledgers
 
@@ -23,7 +31,7 @@ The existing exhaustive cover was not missing. What was missing was a complete p
 
 Neither row is a completion percentage. These are different covers and cannot be added together.
 
-The original root counter measures exclusions even at q=Q. It must not be driven to zero: root 7820 contains an equality witness. A future proof of its q<Q obstruction is a strict-radius discharge, not a claim that its closed-Q physical domain is empty. No new per-root manifest or certificate is claimed in this reset.
+The original root counter measures exclusions even at q=Q. It must not be driven to zero: root 7820 contains an equality witness. A future proof of its q<Q obstruction is a strict-radius discharge, not a claim that its closed-Q physical domain is empty. No new per-root manifest or certificate is claimed.
 
 ## Exact active target
 
@@ -45,4 +53,4 @@ The original 15 roadmap IDs are unchanged. Full equality B.2/B.3, global assembl
 
 The detailed pre-reset progress and proof catalogue are pinned at
 [ea4ff8b](https://github.com/vltanh/lean4-squares-in-circles/blob/ea4ff8bad97a58e2b8633ab69f549acb5352e573/research/nine/PROGRESS.md).
-All mathematical manuscripts remain in the branch. Historical checkpoint and handoff files are not additional active instructions. No Lean files or CI configuration were changed by this reset.
+All mathematical manuscripts remain in the branch. Historical checkpoint and handoff files are not additional active instructions. No Lean files or CI configuration were changed in the reset or this continuation.

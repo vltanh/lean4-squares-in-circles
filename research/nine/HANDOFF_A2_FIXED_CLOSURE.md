@@ -1,31 +1,41 @@
-# Current A.2 handoff: close a fixed full domain
+# Current A.2 handoff: close the fixed full domain 000/01
 
-November 1, 2026, America/Chicago. This is the active handoff, superseding the research suggestions in earlier checkpoint files.
+**Global status: OPEN. Latest attempt: OPEN / BLOCKED. New full-domain closures: zero.**
 
-**Global status: OPEN. New geometric closures in the reset: zero.**
+Read `A2_COVERAGE_AND_CLOSURE_CONTRACT.md` and then `A2_000_01_ATTEMPT.md`. The proof sources remain a library, not separate active owner/sign/threshold campaigns. No mandatory subgates were added by the latest attempt.
 
-Read `A2_COVERAGE_AND_CLOSURE_CONTRACT.md` before mathematical continuation. The long existing proof sources remain a library. Do not resume the inward-owner, positive-zero, perimeter-tilt, or other conditional research campaigns as separate progress queues.
+## Exact target, unchanged
 
-## Exact next target
+Prove `D_000/01^lt` empty, retaining all nine physical squares and all 36 pair constraints. Its selected four-chain is actual and center-cone; its selected three-chain has first link actual and second weak center-cone. The two other units and all cross-pair separator types remain arbitrary.
 
-Prove `D_000/01^lt` empty, retaining all nine physical squares and all 36 pair constraints. The contract defines the predicate completely. Its selected four-chain is actual; its selected three-chain has first link actual and second weak. The two other units and all cross-pair separator types are arbitrary.
+`D_000/10^lt` follows by reversing both chains and both coordinate basis vectors. A broader actual-four-chain theorem would also handle `000/11`. None is asserted easy or proved.
 
-`D_000/10^lt` follows by reversing both chains and both coordinate basis vectors. A broader actual-four-chain theorem would also handle `000/11`. No claim that any of these domains is easy is made.
+## What the latest attempt establishes and where it stops
 
-A correct next closure commit must contain the complete whole-domain argument. A lemma requiring additional floors, ownership, main heights, or orientation bounds does not discharge this target unless those premises and every complementary case are proved within the complete argument. In particular the existing one-exception theorem requires a cover of all physical pairs, not merely one weak link in the selected three-chain.
+The uniform routing argument in the attempt record derives, after vertical reflection, that all three selected outsiders lie above both inner main centers; both main heights are below 7/20. The central outsider has the derived whole-floor bound `y_P-h_P>min(y_1,y_2)+869/1860`. This does not give a lower bound on both main heights, so it does not establish the previous bounded-inner caller.
 
-An unfinished attempt remains OPEN/BLOCKED with the exact obstruction. Do not replace it with new mandatory subgates. A global terminal-extraction theorem is an allowed shortcut only when its existential coverage and terminal hypotheses are actually proved.
+The physical endpoint caps leave the exact identity
+
+    (27/2)*delta_R = 46*W + (27/2)*(eta_P+s+t) + K_L+K_R,
+
+with W,s,t,eta_P nonnegative and K_L,K_R strictly positive at q<Q. The definitions and derivation are printed in the attempt record. No proof yet makes the two remaining physical units contradict this identity or forces another sharp terminal on the entire domain.
+
+The same record supplies an exact seven-unit packing at squared radius 273/64<Q with the required selected mask. All 21 pairs are checked by hand. Its span reserves W,s,t,eta_P vanish; the outer tilt deficit pays positive cap slacks exactly. Thus neither the seven-square shortcut nor a presumed improvement of a loose inset step can close this argument. The selected seven already have two coordinate-exceptional pairs, so the one-exception theorem is not an automatic caller.
+
+This counterexample does not contain the eighth or ninth square. It proves only that information beyond the selected seven is needed; it does not prove that both additional squares are individually indispensable. The explored eight-square shortcut remains unproved and undisproved. Do not treat failed numerical searches as exclusions, or import the older different-mask eight-square example without a new valid witness.
+
+## Acceptance boundary
+
+A closure commit must contain a complete full-domain argument. Extra floor, owner, height, or orientation hypotheses must be derived or have their entire complement treated inside that proof. An unfinished attempt stays OPEN/BLOCKED rather than becoming another mandatory case tree. A global extraction is a valid shortcut only when its actual coverage and all terminal premises are proved.
 
 ## Immutable accounting and preserved evidence
 
-The original 7,915 root IDs and 15 roadmap IDs are unchanged. Published historical closed-Q exclusions remain 5,838, with 2,077 OPEN. They are not rerun or regenerated here. The same 32 hand-mask rows have two inherited complete proofs (`000/00` and `010/00`) and 30 OPEN domains. Neither number is a completion percentage.
+The original 7,915 root IDs and 15 roadmap IDs are unchanged. Historical published closed-Q exclusions remain 5,838, with 2,077 OPEN; nothing was rerun or regenerated. The same 32 hand-mask rows have two inherited complete strict-radius proofs (`000/00` and `010/00`) and 30 OPEN domains. These are not completion percentages.
 
-Root 7820 contains equality: its closed-Q domain must remain nonempty. Its future q<Q discharge is a separate kind of result. Do not force the closed-Q OPEN count to zero and do not infer full-root closure from a local sharp chart.
+Root 7820 contains equality and must remain nonempty at q=Q. A future q<Q discharge is distinct from a closed-Q exclusion. The pre-reset catalogue is preserved at `ea4ff8bad97a58e2b8633ab69f549acb5352e573`; the fixed-domain reset is `3b68416cfa087d56d737d5af0548ba106117fcc6`.
 
-The pre-reset proof library and catalogue are preserved at commit `ea4ff8bad97a58e2b8633ab69f549acb5352e573`; source manuscripts remain in the branch. The previous registry's stale one-mask and unarchived-lead entries have been corrected. No new independent review of all inherited mathematical dependencies is claimed.
+## Method and review boundary
 
-## Method
+Hand proof; exact tables allowed; no Lean, Lake, CI, or mathematical proof enumeration. The latest attempt used bounded numerical optimizations and a sampled rotation probe only to test possible directions. No numerical result certifies an exclusion. The accepted construction, routing, and algebraic identities are hand-derived. No new independent second-agent, human, or kernel review is claimed.
 
-Hand proof; exact tables allowed. No Lean, Lake, CI, or mathematical proof enumeration. Scripts are permitted only for exploratory direction checks, and their output cannot establish a proof leaf. A failed search is not a contradiction. No script was run during this reset.
-
-The frozen frontier prevents misleading progress accounting, not mathematical difficulty. Its decreasing unresolved-row count is not a termination theorem. A.2, global equality, and the complete final manuscript remain OPEN until their actual acceptance conditions are met.
+The fixed frontier controls accounting, not difficulty. Its decreasing unresolved-row count is not a termination theorem. A.2, unrestricted equality, and the complete final manuscript remain OPEN.
