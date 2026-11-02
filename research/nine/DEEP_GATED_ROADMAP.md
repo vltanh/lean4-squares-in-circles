@@ -30,18 +30,19 @@ November 1, 2026, America/Chicago. Supersedes the expanding active research queu
 | C.1 | OPEN | One assembled manuscript with the full cover, complete terminal callers, and equality argument |
 | C.2 | OPEN | Independent audit of final arithmetic, geometric implications, and boundary cases |
 
-The November 2 continuation closes five complete fixed masks inside A.2;
+The November 2 continuation closes six complete fixed masks inside A.2;
 no global roadmap gate is claimed complete. Exact computational replay
 is authorized. Lean, Lake, and CI remain deferred.
 
 ## A.2 has one fixed frontier, not a growing tree
 
 The active hand-proof frontier is exactly the existing 32 masks in
-[gates/A2_MASK_FRONTIER.json](gates/A2_MASK_FRONTIER.json). Their quantified physical domains and coverage proof are in Sections 2-5 of the contract. `000/00`, `000/01`, `000/10`, `000/11`, `010/00`, `010/01`, and `010/10` have complete proofs; 25 masks remain OPEN.
-The five new proofs are documented in
+[gates/A2_MASK_FRONTIER.json](gates/A2_MASK_FRONTIER.json). Their quantified physical domains and coverage proof are in Sections 2-5 of the contract. `000/00`, `000/01`, `000/10`, `000/11`, `010/00`, `010/01`, `010/10`, and `010/11` have complete proofs; 24 masks remain OPEN.
+The six new proofs are documented in
 [A2_000_01_VERIFIED_CLOSURE_2026_11_02.md](A2_000_01_VERIFIED_CLOSURE_2026_11_02.md)
 [A2_010_01_VERIFIED_CLOSURE_2026_11_02.md](A2_010_01_VERIFIED_CLOSURE_2026_11_02.md),
-and [A2_000_11_VERIFIED_CLOSURE_2026_11_02.md](A2_000_11_VERIFIED_CLOSURE_2026_11_02.md). The newest result is strict-radius only; its closed-Q status is unclassified. These are continuous domains, not sampled geometries.
+[A2_000_11_VERIFIED_CLOSURE_2026_11_02.md](A2_000_11_VERIFIED_CLOSURE_2026_11_02.md),
+and [A2_010_11_VERIFIED_CLOSURE_2026_11_02.md](A2_010_11_VERIFIED_CLOSURE_2026_11_02.md). The two latest results are strict-radius only; their closed-Q status is unclassified. All masks with actual outer main links are complete. These are continuous domains, not sampled geometries.
 
 The original root ledger is separate: 5,838 closed-Q exclusions and 2,077 OPEN roots. These counts are inherited from the published summary, not recomputed. Root 7820 contains equality and must never be labeled a closed-Q exclusion. Strict-radius discharges and closed-Q exclusions must have distinct records.
 
@@ -49,14 +50,14 @@ A complete fixed-root hand/table proof is an alternative route. It must name the
 
 ## Immediate proof target
 
-**Whole `010/11`: weak middle long link and two weak short links.**
+**Whole `001/00`, with reversal `100/00`: one weak outer main link.**
 
-Retain the full larger inner-width range and both additional originals.
-The completed actual-four theorem supplies useful inputs but does not
-automatically cover these different main-width and center bounds.
-Parallel computer-assisted searches address the weak-outer 001/00 and
-100/00 domains and a possible structural extraction covering several
-remaining masks. Only complete physical proofs advance the same ledger.
+The complete 010/11 proof is accepted. The weak-outer hand theorem excludes
+transverse gaps at most 7/30; the larger-gap original-nine complement is
+open. Retain all original squares and derive the changed endpoint bounds
+without transferring an actual-outer premise. A possible structural
+extraction may cover several remaining masks only after its complete
+physical assertion is proved. Only complete proofs advance the same ledger.
 
 The other masks stay in the same fixed table. No new owner, slope,
 threshold or marker condition becomes a mandatory child gate.

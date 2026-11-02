@@ -1,0 +1,37 @@
+{
+  "result": "PASS",
+  "complete": true,
+  "roots": 4,
+  "nodes": 81554,
+  "strict_leaves": 40779,
+  "leaves_per_root": [
+    8050,
+    3292,
+    4170,
+    25267
+  ],
+  "counts": [
+    3501,
+    4290,
+    0,
+    0,
+    0,
+    329,
+    13,
+    0,
+    0,
+    2317,
+    5460,
+    24869
+  ],
+  "maximum_depth": 31,
+  "largest_replayed_upper": "-27901328088196017400167068520665585295852701689602548144956145960118544859637507642833788003719838778179593666710824973534378303833/10943904801402505067151799366463522545046601824336448325386436197736563411834784076366833396760707094863400883570167166164894183162089250",
+  "arithmetic": "independent Fraction intervals; outward 90-bit radical bounds",
+  "scope": "low opposite side with lower central; no whole-mask assertion",
+  "certificate_file": "low_side_with_lower_central_cover.json",
+  "certificate_sha256": "e835b4dae9685352ad044984ac2cf73992e8fcdfcb1261913c19c2c2ef755888",
+  "checker_sha256": "149675b74bf6083993c532b762ccc4dfa0d4e097ae92df987559c1a77c76aac4",
+  "independent_fraction_kernel_sha256": "a0541942633d3991a1c8fceff3db59f678c696feefc2208fc610d015b04d63b8",
+  "producer_imports": false,
+  "seconds": 148.67583952299992
+}

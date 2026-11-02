@@ -1,0 +1,9 @@
+{
+  "status": "complete_leaf_refinement_pending_fresh_replay",
+  "original_nodes": 12024,
+  "original_leaves": 6016,
+  "added_splits": 286,
+  "final_nodes": 12596,
+  "final_leaves": 6302,
+  "seconds": 30.13903509300144
+}

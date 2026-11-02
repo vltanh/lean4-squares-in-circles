@@ -1,0 +1,1111 @@
+{
+  "schema": "n9_mask_01011_closure_manifest_v1",
+  "date": "2026-11-02",
+  "parent_commit": "3dd2a71988b0b308bcd3ba7a97eb69b033129bb9",
+  "target_q": "1105/256",
+  "closed_masks": [
+    "010/11"
+  ],
+  "radius_scope": "Every strict q<Q with weak physical contacts; closed-Q status NOT_CLASSIFIED",
+  "whole_domain_source": "A2_010_11_WHOLE_DOMAIN_ASSEMBLY.md",
+  "closure_record": "A2_010_11_VERIFIED_CLOSURE_2026_11_02.md",
+  "assembly_review": "A2_010_11_WHOLE_DOMAIN_ASSEMBLY_INDEPENDENT_REVIEW.md",
+  "all_original_nine_squares_retained": true,
+  "all_original_frames_corners_and_physical_pairs_retained": true,
+  "exact_fixed_mask_unchanged": true,
+  "all_primary_inputs_have_complete_independent_exact_replays": true,
+  "primary_new_strict_interval_leaves": 56001065,
+  "preserved_alternative_strict_leaves": 46886,
+  "total_new_primary_and_alternative_strict_leaves": 56047951,
+  "primary_finite_inputs": [
+    {
+      "name": "quarter_main_heights",
+      "strict_leaves": 9688640,
+      "report": "computer_assisted/two_shoulder_mainheight_cover_independent_exact_replay.json"
+    },
+    {
+      "name": "upper_original_order",
+      "strict_leaves": 16294696,
+      "report": "computer_assisted/upper_extra_order_cover_independent_exact_replay.json"
+    },
+    {
+      "name": "distinct_upper_extra_floor",
+      "strict_leaves": 2263632,
+      "report": "computer_assisted/bad_upper_extra_floor_cover_independent_exact_replay.json"
+    },
+    {
+      "name": "low_opposite_order",
+      "strict_leaves": 615,
+      "report": "computer_assisted/low_opposite_original_order_cover_independent_replay.json"
+    },
+    {
+      "name": "endpoint_good_central_position",
+      "strict_leaves": 6302,
+      "report": "computer_assisted/low_endpoint_central_position_cover_replay.json"
+    },
+    {
+      "name": "lower_side_height_bridge",
+      "strict_leaves": 1739,
+      "report": "computer_assisted/lower_side_height_bridge_independent_replay.json"
+    },
+    {
+      "name": "signed_lower_side_height",
+      "strict_leaves": 9072,
+      "report": "computer_assisted/signed_lower_side_envelope_independent_replay.json"
+    },
+    {
+      "name": "no_lower_side",
+      "strict_leaves": 27552502,
+      "report": "computer_assisted/lower_side_no_extra_independent_replay.json"
+    },
+    {
+      "name": "low_side_below_P_with_lower_central",
+      "strict_leaves": 40779,
+      "report": "computer_assisted/low_side_with_lower_central_cover_independent_replay.json"
+    },
+    {
+      "name": "low_side_at_or_above_P_with_lower_central",
+      "strict_leaves": 143088,
+      "report": "computer_assisted/low_side_upper_order_cover_independent_exact_replay.json"
+    }
+  ],
+  "alternative_finite_input": {
+    "name": "own_half_upper_side_exclusion",
+    "strict_leaves": 46886,
+    "report": "computer_assisted/ownhalf_above_side_cover_independent_replay.json",
+    "assembly_uses_short_proof_from_previously_accepted_low_side_input": true
+  },
+  "verification_claims": {
+    "complete_exact_replay_for_every_finite_input": true,
+    "previously_completed_large_mainheight_and_order_replays_preserved_by_byte_identity": true,
+    "distinct_upper_extra_final_six_variable_forest_replayed_completely": true,
+    "upper_order_source_binding_repaired_before_acceptance": true,
+    "upper_order_canonical_fresh_source_full_replay": true,
+    "lower_side_all_128_raw_replays_complete": true,
+    "lower_side_delivered_source_fresh_build_byte_identical_to_replayed_executable": true,
+    "root_archive_identity_check_is_not_an_additional_arithmetic_replay": true,
+    "separate_physical_and_code_reviews": true,
+    "separate_exhaustive_original_nine_assembly_review": true,
+    "human_review": false,
+    "proof_kernel_verification": false,
+    "lean_lake_ci_run": false
+  },
+  "fixed_accounting": {
+    "mask_count": 32,
+    "closed_strict_masks": 8,
+    "open_masks": 24,
+    "new_full_mask_closures": 1,
+    "historical_positional_roots": 7915,
+    "historical_closed_Q_exclusions": 5838,
+    "historical_open_roots": 2077,
+    "equality_root_preserved": 7820,
+    "new_positional_root_claims": 0,
+    "roadmap_gate_count": 15,
+    "new_roadmap_gate_ids": [],
+    "global_bound": "OPEN",
+    "global_equality": "OPEN",
+    "global_manuscript": "OPEN",
+    "next_mask": "001/00",
+    "next_reversal": "100/00"
+  },
+  "additional_hand_result": {
+    "source": "WEAK_OUTER_SMALL_TRANSVERSE_GAP_HAND_EXCLUSION.md",
+    "scope": "001/00 and100/00 weak outer transverse gap must exceed7/30; larger-gap complement remains open",
+    "new_whole_mask_closures": 0
+  },
+  "inherited_inputs_not_counted_again": [
+    {
+      "path": "research/nine/OUTER_ACTUAL_LINK_ENDPOINT_RESERVE_HAND_PROOF.md",
+      "bytes": 10013,
+      "sha256": "344a719868849ea63ba1c50831a76d6f591d565e7f01a1738137e0cb093b5046",
+      "git_blob_sha": "f2a2d58871d86f98a0459e879d4e34f69ff111e8"
+    },
+    {
+      "path": "research/nine/SMALL_CENTER_EXPANSION_PRESERVES_FIXED_MASKS.md",
+      "bytes": 5597,
+      "sha256": "dc5d72e4554296c98bc2a0dc0c45003e495de54c1c60af0a6e3a31f2d06de8c4",
+      "git_blob_sha": "949c35b728969d601cd734373f0c0a502abc2d27"
+    },
+    {
+      "path": "research/nine/WIDENED_JOINT_FIVE_SQUARE_CAP.md",
+      "bytes": 13481,
+      "sha256": "b8d4f232ad4bfacd3093812add0b16feb30875fd47c2b104aca284ef149abc83",
+      "git_blob_sha": "278d2596e27717ea5d6e5705da186a34ffc34b5a"
+    },
+    {
+      "path": "research/nine/UNIVERSAL_PHYSICAL_PAIR_SHOULDER_TILT_TOLL.md",
+      "bytes": 9065,
+      "sha256": "02afe8a821966e6ab8201dd13f0475ea65268d3e0d72a28ffa3c63e1b26b6472",
+      "git_blob_sha": "b0a8052c317edee2a551970e660b6839a20df74d"
+    },
+    {
+      "path": "research/nine/UNIVERSAL_PHYSICAL_PAIR_CURVED_TILT_TOLL.md",
+      "bytes": 6907,
+      "sha256": "b647ab21e6c5d2cd2d0bade0647a3c952e1b0f6534137de212c8464aba062605",
+      "git_blob_sha": "2afc63ee9f77bb0d51c2f864b7b0193591b477de"
+    },
+    {
+      "path": "research/nine/WEAK_MIDDLE_BOTH_WEAK_COMMON_REDUCTIONS.md",
+      "bytes": 9814,
+      "sha256": "97402606878a6b71fe7a4b5a2bb260dd0b160d501e8642c0c69a579f82ee3dcf",
+      "git_blob_sha": "699d2c26f4b6bdc60473f9e165b36ac7cf0e75c4"
+    },
+    {
+      "path": "research/nine/WEAK_MIDDLE_CENTRAL_ROUTING_AND_LOWER_COUNT.md",
+      "bytes": 6170,
+      "sha256": "a6ea8017d4ea707454d4d463bf24ba5fc84ae84f416b115f16c6a6235cb5ffa0",
+      "git_blob_sha": "9be536cda32b5a833971a7039204cf01a37a1002"
+    },
+    {
+      "path": "research/nine/WEAK_MIDDLE_ROUTING_AND_HIGH_FLOOR.md",
+      "bytes": 8194,
+      "sha256": "a345c179753a6bc36a5160fe6af8b88760442608456f65d25e02dbfcfb89ffb7",
+      "git_blob_sha": "8e4152af49c1891afca42b1ff608fed5e4ce44d5"
+    },
+    {
+      "path": "research/nine/WIDE_MAIN_UPPER_CENTRAL_HEIGHT_HAND_TABLE.md",
+      "bytes": 5321,
+      "sha256": "d831b445f5b12cd416110e219afd1e2553c7ca5678353f4d356a9c0bafb97379",
+      "git_blob_sha": "a91dd399314c0ef64bfca2d0a0be49ce09a1f3f2"
+    },
+    {
+      "path": "research/nine/WIDE_MAIN_LOW_SIDE_FORCES_CENTRAL_FLOOR_HAND_TABLE.md",
+      "bytes": 9175,
+      "sha256": "7e14110990cb3a3ec3032efc0c7fe52c9e4982133804e57768bda1a1126bae8a",
+      "git_blob_sha": "6a4654011d1210d53e1650b1c4e3949effa8b592"
+    },
+    {
+      "path": "research/nine/WEAK_MIDDLE_UPPER_CENTRAL_WHOLE_FLOOR.md",
+      "bytes": 11165,
+      "sha256": "d55d64c7cf82239eeafdd49f662de7f085b5c366020ddcd4f44299904524dc17",
+      "git_blob_sha": "602aba63df6037fb78b0370ea0b33507fb9c5de6"
+    },
+    {
+      "path": "research/nine/TWO_SQUARE_CENTRAL_STRIP_CAP_HAND_PROOF.md",
+      "bytes": 10969,
+      "sha256": "2e032710952493592d365eb2b3eab0fdcc0f64b0c86307a8d7b2c58735ae88e4",
+      "git_blob_sha": "06d00646914f91f08174f57e818ca9e4a43802f7"
+    },
+    {
+      "path": "research/nine/TWO_SQUARE_SIDE_STRIP_CENTER_CAP_HAND_PROOF.md",
+      "bytes": 7950,
+      "sha256": "717ac541467f1dc1cf3468de8c23e121b2cc4050e0ef390680bbfb967454b77f",
+      "git_blob_sha": "04ce99830755ee04ae2c73dc30ff6600e656bf00"
+    },
+    {
+      "path": "research/nine/UPPER_COLUMN_SEPARATION_HAND_TABLE.md",
+      "bytes": 4153,
+      "sha256": "bacbf8814be4076c3830418dd945a5afa9f8aef6a5a4123e8a49534e33caf4e1",
+      "git_blob_sha": "540c37e9267e9e8f6752a4762947bf6317e031b0"
+    },
+    {
+      "path": "research/nine/LOWER_SIDE_WIDTH_DEPENDENT_MAIN_HEIGHT.md",
+      "bytes": 8107,
+      "sha256": "c5cdf65824c13e1b6a90b7e6c5c665f75609e14f8eb474baddccfff78f67af8c",
+      "git_blob_sha": "f09f7d2c83a9347f391bb5dae39216a6b6fed119"
+    },
+    {
+      "path": "research/nine/WEAK_MIDDLE_BELOW_SIDE_EXTRA_EXCLUSION.md",
+      "bytes": 9607,
+      "sha256": "8981bbcdc48fc6c5a39203561fbc49910bc8dd96a595a4bd0ff6142cef3ceadd",
+      "git_blob_sha": "6d01fd38b497fd4937eeec33aee92c95b34ad93f"
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_joint_five_dyadic.py",
+      "bytes": 21373,
+      "sha256": "e9a077c6ed871e402f5e43604137a011428ffe9f0d5dcf18d2e1651dd1290c1f",
+      "git_blob_sha": "877dfc51168edfc9f178ad7bca126dba4c480c7c"
+    },
+    {
+      "path": "research/nine/computer_assisted/joint_five_interval.py",
+      "bytes": 8236,
+      "sha256": "f020e35953bd411b528c936db963f2d63ca8c0fb86469a716baf817fd54e7b48",
+      "git_blob_sha": "56fb16ee498240e272bec65ba4375cc329deeb9f"
+    },
+    {
+      "path": "research/nine/computer_assisted/side_height_envelope_bump_plus_1_400_candidate.json",
+      "bytes": 13830,
+      "sha256": "82bacbcb6b7597328fe9b6f2da20c3aa565c5b0688702148fa0843f9e311ee90",
+      "git_blob_sha": "06339f393dc023619fc38148ef9e8b1e7e790229"
+    },
+    {
+      "path": "research/nine/computer_assisted/side_height_envelope_bump_plus_1_400_candidate_exact_replay.json",
+      "bytes": 691,
+      "sha256": "2f96f175987c4580ae50feb7b8cc5d9a6c5886a21af5000a6da3ad363fde501f",
+      "git_blob_sha": "74f95251243c9b8998948ec3ae919eb8c5ad91b4"
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_side_height_envelope.py",
+      "bytes": 4277,
+      "sha256": "4915e445627a16ec892c6a4b55a068eb6d080c7839317610f8c55ebf2a56678e",
+      "git_blob_sha": "32a4c7d4f9b825d78497ccec65b12873a0e996cf"
+    }
+  ],
+  "files": [
+    {
+      "path": "research/nine/A2_010_11_VERIFIED_CLOSURE_2026_11_02.md",
+      "bytes": 8917,
+      "sha256": "db8a1d359652ae93fa9cad7aa6afa246f1c13bc08f76a0c6b1c1d3fb57f81d1e",
+      "git_blob_sha": "f2e8d75b645584e89ffb1e0adf3df3910c130626"
+    },
+    {
+      "path": "research/nine/A2_010_11_WHOLE_DOMAIN_ASSEMBLY.md",
+      "bytes": 11423,
+      "sha256": "e4266d87ceb7b7d1785ecf794f5c539370280421522cf4a19b90bd5192175cc6",
+      "git_blob_sha": "c7b0ca0eb9e86f7db2b340fd0ad7d06f9601ff84"
+    },
+    {
+      "path": "research/nine/A2_010_11_WHOLE_DOMAIN_ASSEMBLY_INDEPENDENT_REVIEW.md",
+      "bytes": 16544,
+      "sha256": "5b8a65b19aa708311d391670b389750262489ae783feae2cad69b6d9f47d2f7d",
+      "git_blob_sha": "8f454eac9b8a9b0358ccee2824e126329b6a689c"
+    },
+    {
+      "path": "research/nine/CENTRAL_SELECTED_LEFT_MIXED_CASE_INDEPENDENT_REVIEW.md",
+      "bytes": 4675,
+      "sha256": "eea6988fe4254cd34a1104fef9af74a05c0831dd4aff5eef5468da2378cc8d07",
+      "git_blob_sha": "f0312e5697e4c12dd7953054e1aecac5013f7818"
+    },
+    {
+      "path": "research/nine/DEEP_GATED_ROADMAP.md",
+      "bytes": 7215,
+      "sha256": "7373e30175759e7e9c782d6a7e86136e6ab12f2a3567b75c75f672b209e6f1e4",
+      "git_blob_sha": "f9de4111ac0a8052f7e200a14c1b56081ddb5b50"
+    },
+    {
+      "path": "research/nine/DISTINCT_UPPER_EXTRA_FLOOR_INDEPENDENT_REVIEW.md",
+      "bytes": 12646,
+      "sha256": "c8406929c496a629c924193450dece7c5d4f93bb464e561f2fae1f3b591ca441",
+      "git_blob_sha": "73bba1c68440304ffe22cfae5c74967f6e244a84"
+    },
+    {
+      "path": "research/nine/ENDPOINT_RECTANGLE_POSITION_LEMMA_TRANSFER_AUDIT.md",
+      "bytes": 5419,
+      "sha256": "a912ecd52bb1411eec3878be17f7eeb08c6bc9c84f8b8865cb1c9250925b3ad9",
+      "git_blob_sha": "14d8e01cae506aab10edad722484b6ec80bb6e8a"
+    },
+    {
+      "path": "research/nine/HANDOFF_A2_FIXED_CLOSURE.md",
+      "bytes": 4903,
+      "sha256": "50ddd85e2d17d46c8f3934cb5b47c40a97246ca559a08dd8441b56cbc49034d6",
+      "git_blob_sha": "64eaa220cd8bcbef9282957eb96e1e98dd622d0b"
+    },
+    {
+      "path": "research/nine/LOWER_CENTRAL_FORCES_NARROWER_INNER_FRAMES.md",
+      "bytes": 4061,
+      "sha256": "bd29690d409f28379f5e51aa57486dc25a277fbcf56d110b043aef4fd72a56da",
+      "git_blob_sha": "6d301f2d53d60eabcbe6ead5891bdde4e597a079"
+    },
+    {
+      "path": "research/nine/LOWER_SIDE_HEIGHT_ENVELOPE_01011_TRANSFER_AUDIT.md",
+      "bytes": 2832,
+      "sha256": "a81672570af50e878317beb3d3ad7744cb2c0c3b0a65d0a91660fe0595f7a584",
+      "git_blob_sha": "7c26b168769b975c1b2dc131d28194c29495b21c"
+    },
+    {
+      "path": "research/nine/LOWER_SIDE_HEIGHT_INPUTS_INDEPENDENT_REVIEW.md",
+      "bytes": 5439,
+      "sha256": "b61f9b2727bfc81d339b502749bb5619a9619606ebbec92085d403e5134e9ad6",
+      "git_blob_sha": "a534a4530f51aff692ff22641b959151c3e1119d"
+    },
+    {
+      "path": "research/nine/LOWER_SIDE_MAIN_PAIR_HEIGHT_BRIDGE.md",
+      "bytes": 6379,
+      "sha256": "5a13b0b7b05b318c0d2b4c5f3b528a21facca81f875855563ca5fc61891d51b3",
+      "git_blob_sha": "56a5e5af832a71baad7075bd9939512154c9baee"
+    },
+    {
+      "path": "research/nine/LOW_OPPOSITE_ORDER_INDEPENDENT_PHYSICAL_REVIEW.md",
+      "bytes": 5154,
+      "sha256": "ed123bc95430d339e40fab261917cb7cfeb254578951bf6f6996d49f99fdc221",
+      "git_blob_sha": "6c9a3090796858b4ab2c8a7174af3646e4738916"
+    },
+    {
+      "path": "research/nine/LOW_OPPOSITE_ORIGINAL_LIES_BELOW_SELECTED_MIDDLE.md",
+      "bytes": 9640,
+      "sha256": "0c77ab89494c2ee22ed18d7504c76e78c47c304c12c0ee935d7c24d670ee1501",
+      "git_blob_sha": "5039ebf346d9ba40caca7de8f89726fc3d5c422d"
+    },
+    {
+      "path": "research/nine/LOW_OPPOSITE_SIDE_AT_OR_ABOVE_P_WITH_LOWER_CENTRAL_HAND_TABLE.md",
+      "bytes": 11897,
+      "sha256": "831ae1c62c97292d0c3c050b53e6513bd33fb57cab7ec67a1b3a02999a4f072a",
+      "git_blob_sha": "252865163adcf0ee4d0db51b73857e6ad735d2e8"
+    },
+    {
+      "path": "research/nine/LOW_OPPOSITE_SIDE_BELOW_P_WITH_LOWER_CENTRAL_HAND_TABLE.md",
+      "bytes": 10996,
+      "sha256": "4126e3605c969cfd87468155eeb969200e00f0cdfc66c8e3011ae1ce4be00237",
+      "git_blob_sha": "fcd780a58778bd1934af81d8863fbb4bf5a4a218"
+    },
+    {
+      "path": "research/nine/LOW_SIDE_AT_OR_ABOVE_P_INDEPENDENT_PHYSICAL_CODE_REVIEW.md",
+      "bytes": 13327,
+      "sha256": "98a36986e8cba704b890f81cc3bb7b3554f39f9acab148a9ec81d7f3964466e5",
+      "git_blob_sha": "99398a91255cc5ab081b80475b5971f468f0dae3"
+    },
+    {
+      "path": "research/nine/LOW_SIDE_LOWER_CENTRAL_INDEPENDENT_PHYSICAL_REVIEW.md",
+      "bytes": 3624,
+      "sha256": "8f60621239ab97530d5801bd0cc5e3508897844f4c2f5517f64500d12d293c99",
+      "git_blob_sha": "57591bfa38d9d6e15b850036a037e833b6c5b669"
+    },
+    {
+      "path": "research/nine/MAINHEIGHT_QUARTER_INDEPENDENT_PHYSICAL_REVIEW.md",
+      "bytes": 11458,
+      "sha256": "a425410db45f65251f488f2f5f99c44b388cd48ee3177650e379dc186f99cab4",
+      "git_blob_sha": "f29f8e9bcb36cf8c9ef04d17a8c228d1ff54c202"
+    },
+    {
+      "path": "research/nine/MAINHEIGHT_QUARTER_ROOT_ARITHMETIC_REVIEW.md",
+      "bytes": 4227,
+      "sha256": "0b59054446155f714580f653b66a53e7bc45ac013cad4e650089fc0ff6128f84",
+      "git_blob_sha": "0356565e9bab14307c92bcbd6a00789c5ad56b2b"
+    },
+    {
+      "path": "research/nine/MIDDLE_PAIR_VERTICAL_GAP_INDEPENDENT_REVIEW.md",
+      "bytes": 4155,
+      "sha256": "4f9fe42dfeeead45c78904ad42e3ae30fd84d72e7628ef372de132a8836fe262",
+      "git_blob_sha": "441a2cbbee7d5d6d691566ecfa768ec620be0514"
+    },
+    {
+      "path": "research/nine/NO_LOWER_SIDE_INDEPENDENT_PHYSICAL_CODE_REVIEW.md",
+      "bytes": 8742,
+      "sha256": "18327b303d51327f2ce649f23948838fe27ad9a17d9be61ad7e8b6157dfe483d",
+      "git_blob_sha": "1b40ef1105397ca96cb6b274b0bd712d87bbda83"
+    },
+    {
+      "path": "research/nine/NO_LOWER_SIDE_SECOND_INDEPENDENT_REVIEW.md",
+      "bytes": 13044,
+      "sha256": "84ee57e39ea494e58e426395adf3f58570ab46906b72c7672cc87ee236543ef3",
+      "git_blob_sha": "e35c3b0001a41f69839e9a8d8396850047daf4ca"
+    },
+    {
+      "path": "research/nine/OWNHALF_ABOVE_SIDE_INDEPENDENT_PHYSICAL_REVIEW.md",
+      "bytes": 6116,
+      "sha256": "7f97bd9798c150023dc6ecf0c2a76f266f1b7a65d82c5d3d93c8fb467fc74fd5",
+      "git_blob_sha": "d783b36a61f0c7445cf08e7913ec584a4d1741f4"
+    },
+    {
+      "path": "research/nine/PROGRESS.md",
+      "bytes": 6810,
+      "sha256": "460a96db077d8d6b21b8bf755c65fa0490f9529f68b53f26ff6987d578b6c164",
+      "git_blob_sha": "de94162e333662ca529808dcc8f2c3b135b80c91"
+    },
+    {
+      "path": "research/nine/SIGNED_LOWER_SIDE_HEIGHT_ENVELOPE.md",
+      "bytes": 6814,
+      "sha256": "b6e98dd34365e3a6c97e9890a11cab96d4190cb66ffc8fb8d2efb65cefe1fd6a",
+      "git_blob_sha": "00baa21efb8531c591d4eb0900d4d6d8764656e2"
+    },
+    {
+      "path": "research/nine/TWO_OPPOSITE_UPPER_SIDE_EXTRAS_CLOSED_HAND_PROOF.md",
+      "bytes": 4660,
+      "sha256": "47211c76d027cf53457b18a22dc000a2d22c0b5bee8172a5ee10f7ccc6094714",
+      "git_blob_sha": "ef7898b9b59dd41f915c69b7ab1d251418101efc"
+    },
+    {
+      "path": "research/nine/UPPER_EXTRA_ORDER_INDEPENDENT_PHYSICAL_REVIEW.md",
+      "bytes": 6560,
+      "sha256": "3eacf4cb2ddfed99b4b8cd3fa19140bcaae20f82720c5760d4b74c3a322a6db1",
+      "git_blob_sha": "734d064d77e65c225f61ebf866bcf4d83c58829f"
+    },
+    {
+      "path": "research/nine/UPPER_SIDE_GOOD_CENTRAL_POSITION_HAND_TABLE.md",
+      "bytes": 9806,
+      "sha256": "a64db03f8e8306637790b09174d86f3804fef6b59dd550ec318e2e0279659e3b",
+      "git_blob_sha": "5298abfe6165cb9044e03f39728dc3ce8668f0b9"
+    },
+    {
+      "path": "research/nine/UPPER_SIDE_GOOD_CENTRAL_POSITION_PHYSICAL_REVIEW.md",
+      "bytes": 4507,
+      "sha256": "19582f906f4637fe6705fad6a1e91d4e8c7bb7355480dd33d54c469492e8c2e5",
+      "git_blob_sha": "67cf5ca5b5b445188c46dd95e5e639d3e0299a85"
+    },
+    {
+      "path": "research/nine/WEAK_MIDDLE_CENTRAL_SELECTED_LEFT_WITH_SIDE_EXTRA.md",
+      "bytes": 3821,
+      "sha256": "86e9f9c503e83d1a7c64c1b7105e7dba06da899dce3d9e104e81de362bf0d3ad",
+      "git_blob_sha": "62af80d74f19991e23900cc27ac77b0b85fefa97"
+    },
+    {
+      "path": "research/nine/WEAK_MIDDLE_DISTINCT_UPPER_EXTRA_GOOD_FLOOR.md",
+      "bytes": 14142,
+      "sha256": "6b9efa4274ef4db2afc8841fc6f2de15571f1aef2cb6501a4fa1408f1414bafe",
+      "git_blob_sha": "870e45508c8402ff98c4a85a446951024637b111"
+    },
+    {
+      "path": "research/nine/WEAK_MIDDLE_NO_LOWER_SIDE_EXTRA_HAND_TABLE.md",
+      "bytes": 18455,
+      "sha256": "1b4bd4182e103a9cb6d065de4097fb54192b8ce514118b92b00d83daa343c329",
+      "git_blob_sha": "e4ab6f7042dae26af50be3ec6b4916494baaf345"
+    },
+    {
+      "path": "research/nine/WEAK_MIDDLE_OPPOSITE_SIDE_SUPPLIES_HIGH_SHOULDER.md",
+      "bytes": 2756,
+      "sha256": "3b3994f2718315296aec124a82d33208dcce4899977a451e939d69f55db6ea2f",
+      "git_blob_sha": "a62e24935c9760a534beb335f874acc27393d669"
+    },
+    {
+      "path": "research/nine/WEAK_MIDDLE_OWN_HALF_ABOVE_SIDE_EXTRA.md",
+      "bytes": 12503,
+      "sha256": "b4b5487e58b1a16f50f785034edf5e9d119dbd81bb2406bdc5d1945947529237",
+      "git_blob_sha": "fe928a930b39ed65b1bdd1c7fe973a9379168348"
+    },
+    {
+      "path": "research/nine/WEAK_MIDDLE_TWO_WEAK_SHORT_MAINHEIGHT_QUARTER.md",
+      "bytes": 12566,
+      "sha256": "bedbaa0ea136b5cad7eba2974b68130f4969f8de3bbea991ef5ac991b68d41cf",
+      "git_blob_sha": "acb0fe872a581796c24958412c42067c6a8960bd"
+    },
+    {
+      "path": "research/nine/WEAK_MIDDLE_TWO_WEAK_SHORT_ROUTING_AND_HIGH_FLOOR.md",
+      "bytes": 7914,
+      "sha256": "e3577e2ad5bcf770bc9b65b7314da3d26e817808adddaab1df5dbbb97888389d",
+      "git_blob_sha": "5041d9180e3d40ffcb16f48436e7254a1bae320d"
+    },
+    {
+      "path": "research/nine/WEAK_MIDDLE_UNCONDITIONAL_CENTRAL_ROUTING.md",
+      "bytes": 5419,
+      "sha256": "a87267ce752ebeca9be929be1f1ff99ab7baf15a30c4f3ee78dac2a09b38eadc",
+      "git_blob_sha": "fe8d1b6bf8915e9eed058349aabd57d6bbff5c29"
+    },
+    {
+      "path": "research/nine/WEAK_MIDDLE_UPPER_EXTRA_ORDER_BY_FOUR_RADICALS.md",
+      "bytes": 10622,
+      "sha256": "e80c5fd28ae549ef36173811eab6fec51320e425f3c4011791601c58f3be57a0",
+      "git_blob_sha": "876f519c28621844331d863e5c06043cf9c11d55"
+    },
+    {
+      "path": "research/nine/WEAK_OUTER_SMALL_TRANSVERSE_GAP_HAND_EXCLUSION.md",
+      "bytes": 10274,
+      "sha256": "71a87adfa8f15855d67935652156c72c69bfe4e8349a28bae68178c6f4c43876",
+      "git_blob_sha": "445976d4558b4c25b60ab36213412d9f95ec485c"
+    },
+    {
+      "path": "research/nine/WEAK_OUTER_SMALL_TRANSVERSE_GAP_INDEPENDENT_REVIEW.md",
+      "bytes": 2923,
+      "sha256": "74b80ed8bee2c99207806fa2352b1186b8418193b43f332b4fa9b6646d61b411",
+      "git_blob_sha": "6e28a9495ab25cd8243d245a3d8f64db92d770a1"
+    },
+    {
+      "path": "research/nine/WIDE_WEAK_MIDDLE_PAIR_VERTICAL_GAP_HAND_PROOF.md",
+      "bytes": 5594,
+      "sha256": "5f282e8e99ff11892995e8cff15258c60fd4cf6597d9165210c822be622ace08",
+      "git_blob_sha": "4ff1af81b66fc7be337bb5453bc0f71e218d37e6"
+    },
+    {
+      "path": "research/nine/computer_assisted/A2_010_11_FINAL_ACCEPTANCE_RECORDS_INDEPENDENT_CHECK.json",
+      "bytes": 1509,
+      "sha256": "e51c5acf24cdf5a3f8a3c13563019df376606c8f82206d1fcf0e100dde31abb8",
+      "git_blob_sha": "bded93856baa66877f05c13544c12fdf2f3efc72"
+    },
+    {
+      "path": "research/nine/computer_assisted/bad_upper_extra_floor_cover.json.gz",
+      "bytes": 785638,
+      "sha256": "0cf9e12c82007b36e93b2567e6c512c96f2ea625b22c8f234dcddc45693d8c41",
+      "git_blob_sha": "1bd398c028cdf32beea85fac37eaea213fdd5d68"
+    },
+    {
+      "path": "research/nine/computer_assisted/bad_upper_extra_floor_cover_independent_exact_replay.json",
+      "bytes": 2283,
+      "sha256": "b565b566df0e8cbb3b2414f62a9b4f50a5a538b1cfe1a3f071399e4c09a510e9",
+      "git_blob_sha": "cae1677e5db3b89f4a3f27408dc716554610b61b"
+    },
+    {
+      "path": "research/nine/computer_assisted/bad_upper_extra_floor_gzip_identity.json",
+      "bytes": 601,
+      "sha256": "233747ba9066f4dc42356c64e9014d55572fc0b53ae1943f27736525dbb25317",
+      "git_blob_sha": "7b44650d09ce3c4fff1e9fe2e7ab64f5b3545f7f"
+    },
+    {
+      "path": "research/nine/computer_assisted/bad_upper_extra_floor_independent_controls.json",
+      "bytes": 2260,
+      "sha256": "2e42a043b08f0192cea081e406fd245538d3314ae1c44c9edfad6a5095b5d13f",
+      "git_blob_sha": "cc868ed0afe94db28e464afeaa9534325d7bf097"
+    },
+    {
+      "path": "research/nine/computer_assisted/bad_upper_extra_floor_raw_json_independent_exact_replay.json",
+      "bytes": 1551,
+      "sha256": "6247705d6153b725d0c684a5a2f14e6b6dd22316a02a86c3280bfecdad14c40b",
+      "git_blob_sha": "63f2d1840c0d18e1ec56ae942834d6d00951d649"
+    },
+    {
+      "path": "research/nine/computer_assisted/bind_lower_side_checker_build.py",
+      "bytes": 1605,
+      "sha256": "93a339e274dab0ef326d078126c3c3056c7e4753a0b4233a2c2e5ac147d9dfa2",
+      "git_blob_sha": "14178fc0ee2bf0092706e08c19f1bce6e981d0cd"
+    },
+    {
+      "path": "research/nine/computer_assisted/bind_two_shoulder_mainheight_gzip.py",
+      "bytes": 2545,
+      "sha256": "d183fbbff7dc2363abc1a3a6bbb6c3e5f2b0bcd14b6758b53a8300f42f1c2654",
+      "git_blob_sha": "06e52196e1fcad37957e197f29200d5f5c993dbd"
+    },
+    {
+      "path": "research/nine/computer_assisted/central_selected_left_hand_arithmetic_replay.json",
+      "bytes": 1097,
+      "sha256": "9c53e35fb7121e41b31c418703c0ce68bc4c35f9abf3e0a02418690292041584",
+      "git_blob_sha": "109034eeabeae22a7938458572bd3a68e33de4f4"
+    },
+    {
+      "path": "research/nine/computer_assisted/certify_low_endpoint_central_position.py",
+      "bytes": 4582,
+      "sha256": "e072f8194df47fea49d2abca833160e2266c6687b7d889cf977ce8f6430dc7bb",
+      "git_blob_sha": "75a7bd6f553047ebf20f218c91deec170d5133a7"
+    },
+    {
+      "path": "research/nine/computer_assisted/certify_low_opposite_original_order.py",
+      "bytes": 2471,
+      "sha256": "2d5960d835f28286c0a718e84a467126c2f97a5161a93d5758fd91deb55f998f",
+      "git_blob_sha": "08094ecfbc03c98ae17a65fedc76c01c70e61366"
+    },
+    {
+      "path": "research/nine/computer_assisted/certify_low_side_with_lower_central.py",
+      "bytes": 5666,
+      "sha256": "02d83d4a10d8c763ff1fc99e9b7150d995e23f6b6dc730a4bed549f0f0fd1bc8",
+      "git_blob_sha": "ea4c7a6aa6a61c7c30ddee8bddb37ea067a8b668"
+    },
+    {
+      "path": "research/nine/computer_assisted/certify_ownhalf_above_side.py",
+      "bytes": 4296,
+      "sha256": "07ba7eaa0e7307a177ecc7bd30bfa9d73a5af0b0563b543d9fed79b08d9f7b64",
+      "git_blob_sha": "b65c99d955a62027cdc9cf51a07096efedc15e32"
+    },
+    {
+      "path": "research/nine/computer_assisted/check_bad_upper_extra_floor_controls.py",
+      "bytes": 3122,
+      "sha256": "99292fed832798d4f8c3cd6c04f58382eaf6b09058bc542601a3cb409f62436e",
+      "git_blob_sha": "c79850f20c9fc19ae83f38a89563519612926afb"
+    },
+    {
+      "path": "research/nine/computer_assisted/check_low_endpoint_central_position_controls.py",
+      "bytes": 1949,
+      "sha256": "397e2a93981fbcbcf7bbbe585612c0be2c578ea1718aeff4cc898769e7776211",
+      "git_blob_sha": "e151c30ed397795d69103091a112d5e279330535"
+    },
+    {
+      "path": "research/nine/computer_assisted/check_low_opposite_original_order_controls.py",
+      "bytes": 3741,
+      "sha256": "e1193b9673df670dd0a6e058f5355bf6406a5b56ebd389a81375503d903f7272",
+      "git_blob_sha": "3cc5dc15df219ccaeb5981a3d2d684649e2465be"
+    },
+    {
+      "path": "research/nine/computer_assisted/check_lower_side_forest_controls.py",
+      "bytes": 2893,
+      "sha256": "2b2385447ebfc51248c640b032e0206102c8b0a5f0480366c890568e21532789",
+      "git_blob_sha": "491dd51e575998aa1989e6936c824acf6d7d72ba"
+    },
+    {
+      "path": "research/nine/computer_assisted/check_lower_side_height_inputs_controls.py",
+      "bytes": 1519,
+      "sha256": "02d9c3c812c09daf31ae28edb206793c681828045aa531cfafed814678ec1f2d",
+      "git_blob_sha": "2617a7cf7d4b9e5733fe19ccd7dcfdf2704a50ab"
+    },
+    {
+      "path": "research/nine/computer_assisted/check_ownhalf_above_side_rejection_controls.py",
+      "bytes": 3706,
+      "sha256": "177eee1bde1453204c443809abad4310a102283637b5904beff072e0d1be31a1",
+      "git_blob_sha": "19d1cd0c338c3d2e8510283d23c5067cb54838f8"
+    },
+    {
+      "path": "research/nine/computer_assisted/check_two_shoulder_mainheight_rejection_controls.py",
+      "bytes": 3687,
+      "sha256": "ebb8842ac6762f4659ced1ceb57920dd9a72e86138315e237988110c2a05e5d2",
+      "git_blob_sha": "e7cb1838caddc538e6e0da9cebd97b5e53ae3f2e"
+    },
+    {
+      "path": "research/nine/computer_assisted/check_upper_extra_order_rejection_controls.py",
+      "bytes": 3678,
+      "sha256": "866aa06bae6ee4dd4169d5c2aad24f058573e8e7e718408e76cd5b561d69c48f",
+      "git_blob_sha": "401ff3cb1c32932d0817d5b39c448f8207ab52fb"
+    },
+    {
+      "path": "research/nine/computer_assisted/create_lower_side_forest_bundle.py",
+      "bytes": 6292,
+      "sha256": "5c242707cebf93787f3c3a2babd9885e3d47c79f7729f78094cfb0384f793864",
+      "git_blob_sha": "daf776b259d13fdf7b936b1c21ad8350a4f1ddab"
+    },
+    {
+      "path": "research/nine/computer_assisted/discover_bad_upper_extra_floor.cpp",
+      "bytes": 10392,
+      "sha256": "36c0631e672f416ab9771eff9a5a1a9f5dfb0566d24d42dda4d9e89836eca848",
+      "git_blob_sha": "1cc86698219923f32d6816556527dec6a80acdf8"
+    },
+    {
+      "path": "research/nine/computer_assisted/discover_low_side_upper_order.cpp",
+      "bytes": 6683,
+      "sha256": "ab0476bfc3c892f22451deb931245938b3838b7d7dc022421bf101b21626dc5d",
+      "git_blob_sha": "0cd789e1f17b01c911e51af07f02b6ca60d51d5f"
+    },
+    {
+      "path": "research/nine/computer_assisted/discover_lower_side_coupled.cpp",
+      "bytes": 12849,
+      "sha256": "ad778f3a07200c4a98a413c4d7818a638aa22d57470bf8c825205557c34added",
+      "git_blob_sha": "e2a8a03e7418bfd3d786fd83e5b703c2fd421c1f"
+    },
+    {
+      "path": "research/nine/computer_assisted/discover_lower_side_height_bridge.py",
+      "bytes": 2557,
+      "sha256": "bc8d42a4fbdbd599d3845a09df681f5e2dbb2971033c94c37088f20ab5b68bdc",
+      "git_blob_sha": "e9ca5d4abac963489ed925d8788b1f5bf323736c"
+    },
+    {
+      "path": "research/nine/computer_assisted/discover_signed_lower_envelope.cpp",
+      "bytes": 5357,
+      "sha256": "1382044d453bae2f8d09f0b4705dec00723b7911330f7a8ab55dcc03996cb5b9",
+      "git_blob_sha": "187f7076eb5d7802cd621e1aa4311fe90e0a10ef"
+    },
+    {
+      "path": "research/nine/computer_assisted/discover_two_shoulder_mainheight.cpp",
+      "bytes": 8372,
+      "sha256": "7c77a715b82395a296438969b55ce62dba30affd211528dd6425ee1e84992533",
+      "git_blob_sha": "51fed16ac043f079157f049f10f32e435f4e226d"
+    },
+    {
+      "path": "research/nine/computer_assisted/discover_upper_extra_order.cpp",
+      "bytes": 8838,
+      "sha256": "c6cad6a7907ea40940fc78d3fb1b7e81c442ef67d905f24c8e2f7f41b20cc2f1",
+      "git_blob_sha": "1cee26461a9a9a6026c431bead2c6649529447f9"
+    },
+    {
+      "path": "research/nine/computer_assisted/low_endpoint_central_position_controls.json",
+      "bytes": 1895,
+      "sha256": "aebf9788038ae9632c356ed322147d436ee2ba7bb263a4b8fa8120fe4cf1ec82",
+      "git_blob_sha": "0bca344eac10bf2b7f3c996ccd958be8448ed2fb"
+    },
+    {
+      "path": "research/nine/computer_assisted/low_endpoint_central_position_cover.json",
+      "bytes": 2022635,
+      "sha256": "794ddb292c0914e2aa5f097fd68f2abea037bcc7bba08cba659de9630cbc8028",
+      "git_blob_sha": "d33a916bcb9aaf3e8f96b95a54566e376081b9f5"
+    },
+    {
+      "path": "research/nine/computer_assisted/low_endpoint_central_position_cover_replay.json",
+      "bytes": 546,
+      "sha256": "9cc7b60d4c6f422a1417540d9f573bbb851363f302ce0fa379976ec3928bdb42",
+      "git_blob_sha": "9157b5b1d151c7e8022e71368bcb32aacc93305a"
+    },
+    {
+      "path": "research/nine/computer_assisted/low_endpoint_central_position_refinement.json",
+      "bytes": 221,
+      "sha256": "4e487a4561a55faa5b1560206820fcdc7ab67cd90efcb7214234c8c50b85690b",
+      "git_blob_sha": "e49e16b61811d2487be666fb937a00de04eba28a"
+    },
+    {
+      "path": "research/nine/computer_assisted/low_opposite_original_order_cover.json",
+      "bytes": 57188,
+      "sha256": "663483bb36473f43bfa7cfe6f61883c281bfa85ae2ceb2d82f8ee5535286e791",
+      "git_blob_sha": "69588b02b9883ca9bbf1860b8a9f463681acb7d6"
+    },
+    {
+      "path": "research/nine/computer_assisted/low_opposite_original_order_cover_independent_replay.json",
+      "bytes": 1058,
+      "sha256": "4e7d09dbc8c9d8f25334809233f120d4a4cfda598a4f61256216bf7b03a0938c",
+      "git_blob_sha": "5e9e3d163a96026286aca754ae4e8153d7499321"
+    },
+    {
+      "path": "research/nine/computer_assisted/low_opposite_original_order_rejection_controls.json",
+      "bytes": 2276,
+      "sha256": "541daf90dd52a41727b4c97ce8d123dd03e83ac1259beb16dee880f41e88b9f2",
+      "git_blob_sha": "69f3ccd41448a1332f2e220fd798cf46f48d868e"
+    },
+    {
+      "path": "research/nine/computer_assisted/low_side_upper_order_agent_independent_exact_replay.json",
+      "bytes": 1552,
+      "sha256": "7e9b11a0cbf285f8f841520c8dc499205c5df9ecd4f6b645a52c20e31599d4a0",
+      "git_blob_sha": "8faff78b254d7e4b9d0f29786229dd126c4109f5"
+    },
+    {
+      "path": "research/nine/computer_assisted/low_side_upper_order_compact_cover.json",
+      "bytes": 742330,
+      "sha256": "53769f5264a76d8991a72f22eaebf882337f1a9fb5f7857c71ffa3652132446b",
+      "git_blob_sha": "9fae38f406d0f63dcb99fc76657c5ab1f2cd6e5d"
+    },
+    {
+      "path": "research/nine/computer_assisted/low_side_upper_order_cover_independent_exact_replay.json",
+      "bytes": 1551,
+      "sha256": "153d5a3c974196a8e927781b44a70fa952f1b2777e5cd5d5bc61480021c4e547",
+      "git_blob_sha": "45ae01c17f2bef34588a08bc7634b46389ede992"
+    },
+    {
+      "path": "research/nine/computer_assisted/low_side_upper_order_rejection_controls.json",
+      "bytes": 2579,
+      "sha256": "d3e57ca7cf99e358dc6583a817632157debd418810dbbf908c08e29b5733c3d2",
+      "git_blob_sha": "97b2e08952bdf6673572964e923139f6556639a4"
+    },
+    {
+      "path": "research/nine/computer_assisted/low_side_with_lower_central_cover.json",
+      "bytes": 3973918,
+      "sha256": "e835b4dae9685352ad044984ac2cf73992e8fcdfcb1261913c19c2c2ef755888",
+      "git_blob_sha": "244fd8bebf910f54db6789f214765b0dceda3bb4"
+    },
+    {
+      "path": "research/nine/computer_assisted/low_side_with_lower_central_cover_independent_replay.json",
+      "bytes": 1186,
+      "sha256": "20e5cc96dd91f69beff5594a98e5d6b4675a1b8a3531555ab068939b5b0e3c4f",
+      "git_blob_sha": "5a7eacbe2bdc75583f80cf3bcf659043c33125f1"
+    },
+    {
+      "path": "research/nine/computer_assisted/low_side_with_lower_central_rejection_controls.json",
+      "bytes": 991,
+      "sha256": "26316aace30385441f6f6f5b8f58b947736b5b721d38f5ac7b63133f856b3c25",
+      "git_blob_sha": "6b6aff63f913c34349a411ac4f8aaaf8a6996e42"
+    },
+    {
+      "path": "research/nine/computer_assisted/lower_side_height_bridge.json",
+      "bytes": 8922,
+      "sha256": "e4288f7dd070af3c133ecf88e45307aefa536bd8f9ebe1f3f4e66b9333500730",
+      "git_blob_sha": "cfe4dfd06980463a10467abc98d033900a7a806a"
+    },
+    {
+      "path": "research/nine/computer_assisted/lower_side_height_bridge_independent_replay.json",
+      "bytes": 1000,
+      "sha256": "df3c500e1b9c54393ef9c18891e13d92be0fe859818cf273100b96ff87cd0ddd",
+      "git_blob_sha": "cd787969013c2501f47d0469b96fc61ed2ac8903"
+    },
+    {
+      "path": "research/nine/computer_assisted/lower_side_height_bridge_negative_controls.json",
+      "bytes": 604,
+      "sha256": "9dae48c81f22d2a64741fe182707d13bb6d8a5d8fcf118f0abb771154564d19c",
+      "git_blob_sha": "d003cb58639979002ac9328546c3e96dbaac8cac"
+    },
+    {
+      "path": "research/nine/computer_assisted/lower_side_no_extra_agent_archive_identity_check.json",
+      "bytes": 922,
+      "sha256": "078072593b29ea0fae2aaecacd12c834dc5fdfbc607ca89f5eec1230a0b46a45",
+      "git_blob_sha": "5c416fd5e80da33a096927d4473bf17c3f1306cf"
+    },
+    {
+      "path": "research/nine/computer_assisted/lower_side_no_extra_archive_identity_check.json",
+      "bytes": 922,
+      "sha256": "078072593b29ea0fae2aaecacd12c834dc5fdfbc607ca89f5eec1230a0b46a45",
+      "git_blob_sha": "5c416fd5e80da33a096927d4473bf17c3f1306cf"
+    },
+    {
+      "path": "research/nine/computer_assisted/lower_side_no_extra_build_binding.json",
+      "bytes": 847,
+      "sha256": "97b3e3aad6ae784f7912c1d11070a1e605559732add9446d4e1d15f297d71fc1",
+      "git_blob_sha": "5c7757228ddf9f8127becef544cf15e1fdab4020"
+    },
+    {
+      "path": "research/nine/computer_assisted/lower_side_no_extra_forest.zip",
+      "bytes": 12441269,
+      "sha256": "a76663f6e8d46af76b5820197e68dacf6ed17deb75792d6cb93d5e6223cb3d90",
+      "git_blob_sha": "c7b18c367860443055e821b45ed10b2116468062"
+    },
+    {
+      "path": "research/nine/computer_assisted/lower_side_no_extra_independent_replay.json",
+      "bytes": 1139,
+      "sha256": "fb54555724acb9d50ab8b6ddb8a6a1149a754af7bc11bcc5473f53c661d6cb26",
+      "git_blob_sha": "868fc94bd2a2eaa29eaa1d80f6f8076f2f850e4b"
+    },
+    {
+      "path": "research/nine/computer_assisted/lower_side_no_extra_manifest.json",
+      "bytes": 104780,
+      "sha256": "e6a29e891f2ba8da58bc867c59b6a0d777cad2c79fd5d03c92b7d26f188e2426",
+      "git_blob_sha": "eb9e851181a368dd771bbd041f6b58bc3c2423cf"
+    },
+    {
+      "path": "research/nine/computer_assisted/lower_side_no_extra_negative_controls.json",
+      "bytes": 3687,
+      "sha256": "4b1538e974bbeec2f4918d081ccdacba6d9f5bf9de5b1ade45c156e8cd977b73",
+      "git_blob_sha": "decc2596754abb0dfcb450e4f9bced848e9e5616"
+    },
+    {
+      "path": "research/nine/computer_assisted/lower_side_no_extra_root_source_build_check.json",
+      "bytes": 503,
+      "sha256": "789f4be8b167af8cb06b715929c8c02c2a2c3dbca6caf654b38a880049d44996",
+      "git_blob_sha": "84a1034e03698f016fc28d9af420e30dcf57e8b3"
+    },
+    {
+      "path": "research/nine/computer_assisted/no_lower_side_second_review_bindings.json",
+      "bytes": 17102,
+      "sha256": "e62f00c0cf74070934a2902c80aafbca203c91e2e37cc7d1cb81061ca8607060",
+      "git_blob_sha": "ecae602dab7c52e74513fb199022e86876ed6e39"
+    },
+    {
+      "path": "research/nine/computer_assisted/ownhalf_above_side_cover.json",
+      "bytes": 4526290,
+      "sha256": "3a631f728e166fce940b2c69d7435c0ca9e191e9b8e5eab927268e12db56a6f3",
+      "git_blob_sha": "9a27746d0aea0866ba76b92a8e77449194eeb303"
+    },
+    {
+      "path": "research/nine/computer_assisted/ownhalf_above_side_cover_independent_replay.json",
+      "bytes": 998,
+      "sha256": "c857a77c60faca5e76e556401eafb49e9949dd1b77d43f2ec11cc4a5f29e972e",
+      "git_blob_sha": "a204eb81d2810c4fd9d3537c75662303477c0fa0"
+    },
+    {
+      "path": "research/nine/computer_assisted/ownhalf_above_side_rejection_controls.json",
+      "bytes": 2337,
+      "sha256": "e996cbd26845854cf88ed6746829c7947f7378317a29df92a3dbfd1334e5bede",
+      "git_blob_sha": "20123371813c76ae39930f16535fc48a5d141e17"
+    },
+    {
+      "path": "research/nine/computer_assisted/ownhalf_interval_kernel.py",
+      "bytes": 4177,
+      "sha256": "a635e86e003c1b05731d79f4228d9f70a9e628f8a3d55cbf0cdd85ae44d23464",
+      "git_blob_sha": "8d2ab3521e11cca17fa360bd41344c3ee0c4728c"
+    },
+    {
+      "path": "research/nine/computer_assisted/package_bad_upper_extra_floor.py",
+      "bytes": 2996,
+      "sha256": "c177d0f9ea825200dd1d99b574c7eef1779baf1da01c0a9291df3ad466ca73a2",
+      "git_blob_sha": "a02b34d605242311c3a63e4b535ce6afdc18f64d"
+    },
+    {
+      "path": "research/nine/computer_assisted/package_upper_extra_order.py",
+      "bytes": 4092,
+      "sha256": "1cc1b70327e56f7ffdbf234d5f784890d069b159d54d31c1dba0fe4863d7f134",
+      "git_blob_sha": "80c66444f76cf17d662420debff97390b0de6505"
+    },
+    {
+      "path": "research/nine/computer_assisted/produce_lower_side_forest.py",
+      "bytes": 4290,
+      "sha256": "8b0fa328b67af81166396b97be256f2e814d4c69b469d915adedb6ed7f5112a7",
+      "git_blob_sha": "9d67694da12243f57a7355681f1f7471b87b663e"
+    },
+    {
+      "path": "research/nine/computer_assisted/refine_low_endpoint_central_position.py",
+      "bytes": 2463,
+      "sha256": "bf4ab9de9d5d3088deee563277d15d8cd37c02ebe5e21f211988eb37227f9821",
+      "git_blob_sha": "f741f86d2f0121634fda9d02f120470754d32088"
+    },
+    {
+      "path": "research/nine/computer_assisted/replay_lower_side_roots.py",
+      "bytes": 2627,
+      "sha256": "53e78e04856f23fb874e155ccd43458179c3fe2d0f544e3aa8a79d2c324e70de",
+      "git_blob_sha": "5144898eb32454c61acf2f1f8b1fe54585aaf4a9"
+    },
+    {
+      "path": "research/nine/computer_assisted/run_low_side_upper_order_exact_replay.py",
+      "bytes": 7960,
+      "sha256": "30b36db32e34a4aeb6e98a548f583c75ce10208c0d7ac2cc42992c57490f2293",
+      "git_blob_sha": "16ed16ef024ad6435f0e5f0526a1741a7b803645"
+    },
+    {
+      "path": "research/nine/computer_assisted/run_low_side_upper_order_rejection_controls.py",
+      "bytes": 3028,
+      "sha256": "f15ea167e09fcd94ef81fbf7d0979096e2f6c1b2149962e05a7beb7cfa85602e",
+      "git_blob_sha": "0a97f8394c44c79dba1e8fd4653185bc1d283147"
+    },
+    {
+      "path": "research/nine/computer_assisted/run_low_side_with_lower_central_rejection_controls.py",
+      "bytes": 2088,
+      "sha256": "57f8f17ebe516b998f8260556644fa61509ece2e9f6c4e90f32e1ede8e0d3481",
+      "git_blob_sha": "3c3b649376616054d95e2b7867c8d8fa62de53dd"
+    },
+    {
+      "path": "research/nine/computer_assisted/selected_seven_exact_control.json",
+      "bytes": 1500,
+      "sha256": "09a24d79a452ac67c7e4a87ea4cd6040c1265d03499bd1d4a908e4a758c4dd7c",
+      "git_blob_sha": "4e0ac80fc56d97807c5f00f8486112589d17c2ca"
+    },
+    {
+      "path": "research/nine/computer_assisted/selected_seven_exact_control_replay.json",
+      "bytes": 5232,
+      "sha256": "98171e6abe1293c3a5036b176a30167784734bd7bf0e4311ce03e940721c1d70",
+      "git_blob_sha": "c98ee654002fd5b532404cc787ac14ff0e3c6795"
+    },
+    {
+      "path": "research/nine/computer_assisted/signed_lower_side_envelope.json",
+      "bytes": 45487,
+      "sha256": "6276930ef4ca999e2c581ef4da84625353b4442b502458272378f907194a2ed5",
+      "git_blob_sha": "113fc303441a2161eb8aa777c4df972f3d8beb5a"
+    },
+    {
+      "path": "research/nine/computer_assisted/signed_lower_side_envelope_independent_replay.json",
+      "bytes": 2514,
+      "sha256": "7446b3d5afc068435db6a11285537f054cd3fa2f6be3142a4e408bdf2e8b8cd9",
+      "git_blob_sha": "955a41e5a926e4d1ded45e73766ce0d544a07902"
+    },
+    {
+      "path": "research/nine/computer_assisted/signed_lower_side_envelope_negative_controls.json",
+      "bytes": 662,
+      "sha256": "4faeccad75f73159d141e793d72be3f84ba155cfd7d4d5f9d2c2b38fc224c956",
+      "git_blob_sha": "527add8de1b455513318b777056d410ef4661cdd"
+    },
+    {
+      "path": "research/nine/computer_assisted/two_shoulder_mainheight_cover.json.gz",
+      "bytes": 3639854,
+      "sha256": "96a56f82b46083b380ad17d85d343cfa20ae56cfbea26e6de6b429de369e5897",
+      "git_blob_sha": "e8be54fa150c18940687e075972dbca3a002d355"
+    },
+    {
+      "path": "research/nine/computer_assisted/two_shoulder_mainheight_cover_independent_exact_replay.json",
+      "bytes": 2261,
+      "sha256": "fc5b7bf6e28f4884383d1f2c526e98a57c17cc9bfcf36d0dcc825d709780c2f7",
+      "git_blob_sha": "dc57c2e4d77a2240c3916911f39e8fe7c1d4d16c"
+    },
+    {
+      "path": "research/nine/computer_assisted/two_shoulder_mainheight_gzip_identity.json",
+      "bytes": 602,
+      "sha256": "7316d071d31a822b919765ef119d793dd553979e7e530c333e93ffdeec1f17ba",
+      "git_blob_sha": "6cdec50e9061c5a7384bbe6a8484731a898de8f4"
+    },
+    {
+      "path": "research/nine/computer_assisted/two_shoulder_mainheight_raw_json_independent_exact_replay.json",
+      "bytes": 1509,
+      "sha256": "784afea99d35444739102a9b92bf526d75aefba7ed0f3853de283565421d5adb",
+      "git_blob_sha": "a458489d1f789385728a73e93c5671796da0c80c"
+    },
+    {
+      "path": "research/nine/computer_assisted/two_shoulder_mainheight_rejection_controls.json",
+      "bytes": 2448,
+      "sha256": "2e800ee18ddcf23823cf25d31817ad98f5aaf95ddb11dd28d2b392bc6cd728cc",
+      "git_blob_sha": "e2e0ff73f2461ac933ddd3745b81bd45d03bbf48"
+    },
+    {
+      "path": "research/nine/computer_assisted/upper_extra_order_cover.json.gz",
+      "bytes": 6122412,
+      "sha256": "87ddb6261f35520aff9c63cdad27272302e15eec52883d4b8e9bd85420d29cab",
+      "git_blob_sha": "8354e0c8348fb8a32024af3284bb93c2dfe2280d"
+    },
+    {
+      "path": "research/nine/computer_assisted/upper_extra_order_cover_independent_exact_replay.json",
+      "bytes": 2252,
+      "sha256": "9508c3fd719e4d92e3bb366c42054dc8e46ff8ad99418019b7bf5333b9c11ed8",
+      "git_blob_sha": "0f21f1e602405c5454b70f7dcd91a43daf1d85a2"
+    },
+    {
+      "path": "research/nine/computer_assisted/upper_extra_order_gzip_identity.json",
+      "bytes": 692,
+      "sha256": "66f63e8dd28b933db0f128a29cf0477e10162e3545e180852cdce055dd88a898",
+      "git_blob_sha": "2743fa03e0a5b1c4b64fc732c99525d34902fc75"
+    },
+    {
+      "path": "research/nine/computer_assisted/upper_extra_order_raw_json_independent_exact_replay.json",
+      "bytes": 1510,
+      "sha256": "1710442728b90d1db893145ef1337e399307230664bc88a1702c4a5d10c593ed",
+      "git_blob_sha": "b389bb833953fb4f9e6ae6d4cc8c4cd1c053aad6"
+    },
+    {
+      "path": "research/nine/computer_assisted/upper_extra_order_raw_json_rejection_controls.json",
+      "bytes": 2449,
+      "sha256": "fcf650c0d6ebc8b0baafa28afe84005cdee1f61c12d190a042f352b7ee2bf095",
+      "git_blob_sha": "3b87da08fa755d96d17b08f5f6cb724923aaf7e1"
+    },
+    {
+      "path": "research/nine/computer_assisted/upper_extra_order_rejection_controls.json",
+      "bytes": 2449,
+      "sha256": "fcf650c0d6ebc8b0baafa28afe84005cdee1f61c12d190a042f352b7ee2bf095",
+      "git_blob_sha": "3b87da08fa755d96d17b08f5f6cb724923aaf7e1"
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_bad_upper_extra_floor_exact.cpp",
+      "bytes": 17350,
+      "sha256": "461a05d87dba9aca9b4963e09c4a4d5553c5c9a56825ab36fa0497cf212714c9",
+      "git_blob_sha": "8322f85b8da4f04b350725cd9b723c8ae182bd1d"
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_bad_upper_extra_floor_exact.py",
+      "bytes": 4514,
+      "sha256": "6593a160dffecd9679adfca4ad5bea7f5631dbdc959d6c56f56950aa92a928df",
+      "git_blob_sha": "0afb2842b1b66940bcca7a70a7438ce3972042f8"
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_central_selected_left_hand_arithmetic.py",
+      "bytes": 1613,
+      "sha256": "b6707ee23490fcb4cfb98c0b5b38e8978a9ae808c711d35ce3be90cf1b056270",
+      "git_blob_sha": "d20d97deb491a2cbb42bf850f39105a6fb537a57"
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_low_endpoint_central_position.py",
+      "bytes": 4544,
+      "sha256": "067dc272bb7715d6f7d4e20c4fd1de6b4a8e41031ba10ddf0fda016ba5699159",
+      "git_blob_sha": "c0ba01840700e2519097920b820bfc6ab36386bf"
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_low_opposite_original_order.py",
+      "bytes": 6911,
+      "sha256": "e6f1c6c5f60cb72ff8e32001f781f6c790d3f3ed081de33ddaadc0893a2cdbcb",
+      "git_blob_sha": "9237bcba2910ae20f18256083e0519c5d6929c81"
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_low_side_upper_order_exact.cpp",
+      "bytes": 13969,
+      "sha256": "d4fab70e53914877a54bbaadfb37e1a413172a5078f33ac31216334c773db453",
+      "git_blob_sha": "774cf669439672e0d8d49d490abc747b1a2c3c78"
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_low_side_with_lower_central.py",
+      "bytes": 7575,
+      "sha256": "149675b74bf6083993c532b762ccc4dfa0d4e097ae92df987559c1a77c76aac4",
+      "git_blob_sha": "5b4de9cd66fd8e9178bca2ee577296216c4e0df3"
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_lower_side_exact.cpp",
+      "bytes": 18804,
+      "sha256": "5211852f38acfa94c3d80d29559042bcb346d9d1751c0c5015152fc0ecc6a424",
+      "git_blob_sha": "cdac659246aa4f80395574a07b290aa8291d4d50"
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_lower_side_forest.py",
+      "bytes": 9953,
+      "sha256": "61d1aa31c400f8e210dd301bbf3ac6b56c94f2c3f1939123e6337ac136ad8e33",
+      "git_blob_sha": "cfcc487eb1e68a3316b69eb049f0a1625945a2a7"
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_lower_side_height_bridge.py",
+      "bytes": 4684,
+      "sha256": "52610515d17e361f4b7436d64c860fc1bf461b574551df4a8f14c7f78b6575a8",
+      "git_blob_sha": "b3cdd926997c3807b00f608edd6e3d04674d439b"
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_ownhalf_above_side.py",
+      "bytes": 10375,
+      "sha256": "a0541942633d3991a1c8fceff3db59f678c696feefc2208fc610d015b04d63b8",
+      "git_blob_sha": "d5f5439c5f30d367b3b196e84449cfcb0417baf8"
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_selected_seven_exact_control.py",
+      "bytes": 2723,
+      "sha256": "430780054509ceeff0c418779dc6c1a69e52fd4b97d6d0916dbce6ce95eec875",
+      "git_blob_sha": "e844d5f30db9f6bb3892520e30f9b1373bd26617"
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_signed_lower_side_envelope.py",
+      "bytes": 5850,
+      "sha256": "8891d92676e24ddd93071e58f9d511c6b12ec1ab52c24ac93bdf3f731022138f",
+      "git_blob_sha": "541aa189627bce085eaeebe936c6c4fe049d9982"
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_two_shoulder_mainheight_exact.cpp",
+      "bytes": 14521,
+      "sha256": "3366f6870300d6fe0d7bd71acf8238d590cb8526bb2ebfeb309e5e6fc6cba40b",
+      "git_blob_sha": "c30ec1fd92b947e34948ec4d345fb54dc4b45788"
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_two_shoulder_mainheight_exact.py",
+      "bytes": 4505,
+      "sha256": "4499ab6164ce779ed75e86071e533815b17dfd05b4b7d14d93cc3a9f86577169",
+      "git_blob_sha": "3da0356ff3c51cb5ddbb723d14f33e7d1becf24b"
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_upper_extra_order_exact.cpp",
+      "bytes": 15338,
+      "sha256": "06b20123206a892ad4625b668d21b5e235faa05e82979b38b5282e321327388a",
+      "git_blob_sha": "cde1c4b537e1037017ac5fe9b5dea28de2f7e559"
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_upper_extra_order_exact.py",
+      "bytes": 4497,
+      "sha256": "a82eb388aa343af9ca8eaccf2e8bd2b35e21607e77cb32434db40e7a4bc1bd88",
+      "git_blob_sha": "1f9522422db25f2c739f05c61039234a9ffb6c2a"
+    },
+    {
+      "path": "research/nine/gates/A2_MASK_FRONTIER.json",
+      "bytes": 7644,
+      "sha256": "a31d55a106370c42a3e0c4f4cb4366216b0f87bacae4e395abecdec2bc3f228f",
+      "git_blob_sha": "75ea9894b14f5c3c48c8455a537cd653af2ec77f"
+    },
+    {
+      "path": "research/nine/gates/ACTIVE_ROADMAP.json",
+      "bytes": 15299,
+      "sha256": "cd3a9f1e394ed2bcb205eabb618c5219b8e5c1bc6780adcd5deb8c5ab552ed12",
+      "git_blob_sha": "242d0e2873f4a9a8387d46e6a63a1fce2496bc32"
+    }
+  ],
+  "manifest_self_hash_excluded": true
+}

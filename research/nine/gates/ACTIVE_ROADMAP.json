@@ -5,8 +5,8 @@
   "equality": "OPEN",
   "hand_proof": "OPEN",
   "active_gate": "A.2",
-  "active_target": "010/11",
-  "active_target_reversal_partner": "010/11",
+  "active_target": "001/00",
+  "active_target_reversal_partner": "100/00",
   "proof_logic": "Faithful physical model + exhaustive coverage + complete strict-radius closure + justified global assembly => unrestricted lower bound. Equality and final manuscript remain separate deliverables.",
   "method_preference": "COMPUTER_ASSISTED_EXACT_CERTIFICATE_FIRST_INDEPENDENT_REPLAY_SECOND_HAND_TABLE_THIRD_NO_LEAN_LAKE_CI",
   "honest_counter_policy": "FIXED_FULL_DOMAINS_ONLY; CLOSED_Q_EXCLUSIONS_SEPARATE_FROM_STRICT_RADIUS_DISCHARGES; NO_COMPLETION_PERCENTAGE",
@@ -49,9 +49,10 @@
       "000/11",
       "010/00",
       "010/01",
-      "010/10"
+      "010/10",
+      "010/11"
     ],
-    "open_mask_count": 25,
+    "open_mask_count": 24,
     "all_original_physical_pairs_retained": true,
     "all_nine_squares_retained": true,
     "new_mask_closures_in_this_reset": [],
@@ -66,7 +67,8 @@
       "000/10",
       "000/11",
       "010/01",
-      "010/10"
+      "010/10",
+      "010/11"
     ]
   },
   "proof_library": {
@@ -96,7 +98,10 @@
     "wide_main_eight_original_low_right": "WEAK_MIDDLE_BRACKETED_MAIN_SIDE_TRIPLE_HAND_TABLE.md",
     "universal_main_orientation_toll": "UNIVERSAL_MAIN_ENDPOINT_TILT_TOLL.md",
     "sharp_small_main_orientation_toll": "SHARP_SMALL_MAIN_ENDPOINT_TILT_TOLL.md",
-    "sharp_boundary_frame_controls": "STRUCTURAL_FRAME_SELECTION_OBSTRUCTIONS.md"
+    "sharp_boundary_frame_controls": "STRUCTURAL_FRAME_SELECTION_OBSTRUCTIONS.md",
+    "whole_01011_terminal": "A2_010_11_WHOLE_DOMAIN_ASSEMBLY.md",
+    "weak_middle_final_manifest": "computer_assisted/mask_01011_closure_manifest.json",
+    "weak_outer_small_transverse_gap": "WEAK_OUTER_SMALL_TRANSVERSE_GAP_HAND_EXCLUSION.md"
   },
   "gates": [
     {
@@ -229,7 +234,7 @@
   "legacy_gate_registry": "SUPERSEDED_NO_ACTIVE_PROGRESS_COUNTER",
   "computer_first": {
     "active": true,
-    "target": "unrestricted full nine-square 010/11 mask; parallel weak-outer and structural extraction discovery",
+    "target": "unrestricted full nine-square 001/00 and reversed 100/00 masks; larger weak-outer transverse-gap complement and structural extraction discovery",
     "mask_emitter": "computer_assisted/emit_fixed_mask.py",
     "exact_controls": "computer_assisted/test_emit_fixed_mask.py",
     "pilot_hand_table": "computer_assisted/NO_EIGHTH_FIXED_SEVEN_HAND_TABLE.md",
@@ -249,21 +254,22 @@
   },
   "latest_continuation": {
     "date": "2026-11-02",
-    "kind": "COMPLETE_ACTUAL_FOUR_MASK_CLOSURE",
-    "source": "A2_000_11_WHOLE_DOMAIN_ASSEMBLY.md",
-    "closure_record": "A2_000_11_VERIFIED_CLOSURE_2026_11_02.md",
+    "kind": "COMPLETE_ACTUAL_OUTER_LINK_FAMILY_CLOSURE",
+    "source": "A2_010_11_WHOLE_DOMAIN_ASSEMBLY.md",
+    "closure_record": "A2_010_11_VERIFIED_CLOSURE_2026_11_02.md",
     "closed_masks": [
-      "000/11"
+      "010/11"
     ],
     "closed_q": "NOT_CLASSIFIED",
-    "new_strict_interval_leaves": 2851267,
-    "additional_nonpositive_v_hand_rows": 1,
-    "pair_toll_analytic_collar_cases": 8,
-    "preceding_occupancy_checkpoint_strict_leaves": 65852,
+    "primary_new_strict_interval_leaves": 56001065,
+    "preserved_alternative_strict_leaves": 46886,
     "all_complete_exact_replays_passed": true,
-    "fresh_root_complete_replays_passed": true,
+    "canonical_saved_source_upper_order_full_replay_passed": true,
+    "lower_side_saved_source_rebuild_byte_identical": true,
+    "complete_archive_identity_checks_passed": true,
     "independent_agent_geometry_and_assembly_review": true,
-    "partial_python_repeat_not_claimed_complete": true,
+    "incomplete_source_binding_corrected_before_acceptance": true,
+    "partial_replays_not_claimed_complete": true,
     "human_or_kernel_verification": false,
     "new_original_root_exclusions": 0,
     "new_global_gate_closures": 0,
@@ -311,5 +317,27 @@
     "lean_lake_ci_run": false
   },
   "latest_accepted_component_checkpoint": "A2_WEAK_MIDDLE_COMPONENT_CHECKPOINT_2026_11_02.md",
-  "latest_component_strict_leaves": 393755
+  "latest_component_strict_leaves": 393755,
+  "preceding_actual_four_continuation": {
+    "date": "2026-11-02",
+    "kind": "COMPLETE_ACTUAL_FOUR_MASK_CLOSURE",
+    "source": "A2_000_11_WHOLE_DOMAIN_ASSEMBLY.md",
+    "closure_record": "A2_000_11_VERIFIED_CLOSURE_2026_11_02.md",
+    "closed_masks": [
+      "000/11"
+    ],
+    "closed_q": "NOT_CLASSIFIED",
+    "new_strict_interval_leaves": 2851267,
+    "additional_nonpositive_v_hand_rows": 1,
+    "pair_toll_analytic_collar_cases": 8,
+    "preceding_occupancy_checkpoint_strict_leaves": 65852,
+    "all_complete_exact_replays_passed": true,
+    "fresh_root_complete_replays_passed": true,
+    "independent_agent_geometry_and_assembly_review": true,
+    "partial_python_repeat_not_claimed_complete": true,
+    "human_or_kernel_verification": false,
+    "new_original_root_exclusions": 0,
+    "new_global_gate_closures": 0,
+    "lean_lake_ci_run": false
+  }
 }

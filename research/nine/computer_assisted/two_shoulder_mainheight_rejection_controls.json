@@ -1,0 +1,102 @@
+{
+  "result": "PASS",
+  "controls_rejected": 18,
+  "controls": [
+    {
+      "name": "wrong_schema",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "unfinished_status",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "wrong_Q",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "wrong_main_threshold",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "wrong_floor_threshold",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "missing_sign_root",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "nonempty_frontier",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "nonempty_python_frontier",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "wrong_node_count",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "wrong_leaf_count",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "unreplayable_depth",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "wrong_root_count_sum",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "wrong_channel_count_sum",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "invalid_split",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "invalid_scalar",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "noninteger_tag",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "boolean_tag",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "false_whole_root_strict_leaves",
+      "rejected": true,
+      "engine_return_code": 2,
+      "failed_event": 0,
+      "failed_root": 0
+    }
+  ],
+  "certificate_sha256": "96a56f82b46083b380ad17d85d343cfa20ae56cfbea26e6de6b429de369e5897",
+  "checker_cpp_sha256": "3366f6870300d6fe0d7bd71acf8238d590cb8526bb2ebfeb309e5e6fc6cba40b",
+  "checker_wrapper_sha256": "4499ab6164ce779ed75e86071e533815b17dfd05b4b7d14d93cc3a9f86577169",
+  "scope": "metadata, complete fixed roots, preorder tags, counts, and false exact scalar leaf rejection"
+}

@@ -36,13 +36,13 @@
     8
   ],
   "mask_count": 32,
-  "closed_for_strict_radius_count": 7,
-  "open_count": 25,
+  "closed_for_strict_radius_count": 8,
+  "open_count": 24,
   "new_closures_in_this_reset": 0,
   "completion_percentage": null,
   "termination_of_proof_discovery_proved": false,
-  "active_target": "010/11",
-  "active_target_reversal_partner": "010/11",
+  "active_target": "001/00",
+  "active_target_reversal_partner": "100/00",
   "reversal_rule": "abc/de <-> cba/ed; reverse both chains and both coordinate basis vectors, retaining all nine physical squares",
   "required_exit": "Complete no-D_m^lt theorem for a fixed full row, a complete stable-root strict theorem, or an actual global terminal-extraction theorem. Conditional subdomains and subdivisions are not closure.",
   "mask_domain_changes_allowed_without_explicit_redefinition": false,
@@ -89,6 +89,17 @@
       "pair_toll_analytic_collar_cases": 8,
       "preceding_occupancy_checkpoint_strict_leaves": 65852,
       "closure_manifest": "../computer_assisted/mask_00011_closure_manifest.json"
+    },
+    "whole_01011": {
+      "source": "../A2_010_11_WHOLE_DOMAIN_ASSEMBLY.md",
+      "location": "Sections 1-7",
+      "scope": "Complete original-nine 010/11 predicate impossible for every strict radius below Q; closed-Q status unclassified",
+      "review_status": "Complete independent exact replays; physical/code and exhaustive assembly reviews; canonical saved-source replay and build/byte identity checks; no human or kernel verification",
+      "primary_new_strict_interval_leaves": 56001065,
+      "preserved_alternative_strict_leaves": 46886,
+      "largest_final_input_leaves": 27552502,
+      "largest_final_input_roots": 128,
+      "closure_manifest": "../computer_assisted/mask_01011_closure_manifest.json"
     }
   },
   "rows": [
@@ -152,9 +163,10 @@
     },
     {
       "id": "010/11",
-      "status": "OPEN",
-      "accepted_component_checkpoint": "A2_WEAK_MIDDLE_COMPONENT_CHECKPOINT_2026_11_02.md",
-      "full_domain_closed": false
+      "status": "CLOSED_STRICT",
+      "closed_q": "NOT_CLASSIFIED",
+      "proof": "whole_01011",
+      "full_domain_closed": true
     },
     {
       "id": "011/00",
@@ -237,7 +249,7 @@
       "status": "OPEN"
     }
   ],
-  "latest_closure": "A2_000_11_VERIFIED_CLOSURE_2026_11_02.md",
-  "new_closures_in_this_continuation": 5,
+  "latest_closure": "A2_010_11_VERIFIED_CLOSURE_2026_11_02.md",
+  "new_closures_in_this_continuation": 6,
   "latest_component_checkpoint": "A2_WEAK_MIDDLE_COMPONENT_CHECKPOINT_2026_11_02.md"
 }

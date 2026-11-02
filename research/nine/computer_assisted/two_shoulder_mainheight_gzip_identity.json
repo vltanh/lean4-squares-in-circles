@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "scope": "lossless byte identity only; arithmetic replay recorded separately",
+  "raw_json_file": "two_shoulder_mainheight_cover.json",
+  "raw_json_sha256": "749759fed4eada8d9fa646d2a1bae6c394cd3c2d4723c33b6951b53fecadcf16",
+  "raw_json_bytes": 56640698,
+  "gzip_file": "two_shoulder_mainheight_cover.json.gz",
+  "gzip_sha256": "96a56f82b46083b380ad17d85d343cfa20ae56cfbea26e6de6b429de369e5897",
+  "gzip_bytes": 3639854,
+  "decompressed_json_sha256": "749759fed4eada8d9fa646d2a1bae6c394cd3c2d4723c33b6951b53fecadcf16",
+  "decompressed_json_bytes": 56640698,
+  "gzip_mtime": 0
+}

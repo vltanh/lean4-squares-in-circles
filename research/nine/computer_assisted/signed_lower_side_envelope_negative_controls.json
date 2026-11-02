@@ -1,0 +1,25 @@
+{
+  "result": "PASS",
+  "controls": [
+    {
+      "name": "changed_schema",
+      "rejected": true,
+      "reason": "wrong schema or incomplete"
+    },
+    {
+      "name": "false_whole_root_forest",
+      "rejected": true,
+      "reason": "('invalid leaf', 0, 1, [(Fraction(1, 2), Fraction(13, 20)), (Fraction(0, 1), Fraction(1, 1)), (Fraction(29, 60), Fraction(13, 12))], '-19474420826455843503234062449/24758800785707605497982484480')"
+    },
+    {
+      "name": "missing_final_child",
+      "rejected": true,
+      "reason": "missing event"
+    },
+    {
+      "name": "unknown_axis",
+      "rejected": true,
+      "reason": "unknown axis or rule"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "result": "PASS",
+  "scope": "Fresh root build of immutable delivered source; executable identity only, no additional full forest arithmetic replay",
+  "checker_source_sha256": "5211852f38acfa94c3d80d29559042bcb346d9d1751c0c5015152fc0ecc6a424",
+  "fresh_executable_sha256": "cd9e51c1328120fe1e45a1fd5c533eca5fa9f172a906fb883b59f0ea729593c0",
+  "matches_original_complete_replay_executable": true,
+  "build_binding_report_sha256": "97b3e3aad6ae784f7912c1d11070a1e605559732add9446d4e1d15f297d71fc1"
+}

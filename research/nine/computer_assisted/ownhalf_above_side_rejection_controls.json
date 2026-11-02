@@ -1,0 +1,99 @@
+{
+  "result": "PASS",
+  "controls_rejected": 18,
+  "controls": [
+    {
+      "name": "wrong_schema",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "unfinished_status",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "nonempty_frontier_count",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "nonempty_frontier",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "wrong_processed_count",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "wrong_leaf_count",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "excessive_depth",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "truncated_main_width_domain",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "missing_sign_family",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "duplicate_sign_family",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "duplicate_root_index",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "boolean_sign",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "invalid_split_dimension",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "boolean_split_dimension",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "cyclic_tree",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "invalid_scalar_rule",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "boolean_scalar_rule",
+      "rejected": true,
+      "exception": "AssertionError"
+    },
+    {
+      "name": "false_whole_root_scalar_leaves",
+      "rejected": true,
+      "exception": "AssertionError"
+    }
+  ],
+  "certificate_sha256": "3a631f728e166fce940b2c69d7435c0ca9e191e9b8e5eab927268e12db56a6f3",
+  "checker_sha256": "a0541942633d3991a1c8fceff3db59f678c696feefc2208fc610d015b04d63b8",
+  "scope": "metadata, root union, original domains, split and scalar tags, cycles, false exact leaves"
+}

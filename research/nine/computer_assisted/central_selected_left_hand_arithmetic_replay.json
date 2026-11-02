@@ -1,0 +1,39 @@
+{
+  "result": "PASS",
+  "arithmetic": "exact Fraction rational identities",
+  "source_file": "WEAK_MIDDLE_CENTRAL_SELECTED_LEFT_WITH_SIDE_EXTRA.md",
+  "source_sha256": "86e9f9c503e83d1a7c64c1b7105e7dba06da899dce3d9e104e81de362bf0d3ad",
+  "checker_sha256": "b6707ee23490fcb4cfb98c0b5b38e8978a9ae808c711d35ce3be90cf1b056270",
+  "rows": [
+    {
+      "interval": [
+        "29/60",
+        "4/5"
+      ],
+      "height": "36/25",
+      "center_radius_reserve": "13/1875",
+      "pair_distance_reserve": "10424/140625"
+    },
+    {
+      "interval": [
+        "4/5",
+        "19/20"
+      ],
+      "height": "129/100",
+      "center_radius_reserve": "43/11250",
+      "pair_distance_reserve": "157867/1125000"
+    },
+    {
+      "interval": [
+        "19/20",
+        "13/12"
+      ],
+      "height": "119/100",
+      "center_radius_reserve": "1649/90000",
+      "pair_distance_reserve": "96067/1125000"
+    }
+  ],
+  "low_side_horizontal_reserve": "17/3000",
+  "original_cone_reserve": "301/3000",
+  "scope": "three printed rows and low-side cone/disk arithmetic; separate physical review retained"
+}

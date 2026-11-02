@@ -1,0 +1,21 @@
+{
+  "result": "PASS",
+  "source": "verify_lower_side_exact.cpp",
+  "source_sha256": "5211852f38acfa94c3d80d29559042bcb346d9d1751c0c5015152fc0ecc6a424",
+  "replayed_executable": "verify_lower_side_exact",
+  "replayed_executable_sha256": "cd9e51c1328120fe1e45a1fd5c533eca5fa9f172a906fb883b59f0ea729593c0",
+  "fresh_executable": "verify_lower_side_exact.delivered",
+  "fresh_executable_sha256": "cd9e51c1328120fe1e45a1fd5c533eca5fa9f172a906fb883b59f0ea729593c0",
+  "entire_delivered_source_compiled": true,
+  "executables_byte_identical": true,
+  "compile_argv": [
+    "g++",
+    "-O3",
+    "-std=c++17",
+    "verify_lower_side_exact.cpp",
+    "-o",
+    "verify_lower_side_exact.delivered"
+  ],
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+  "binding_script_sha256": "93a339e274dab0ef326d078126c3c3056c7e4753a0b4233a2c2e5ac147d9dfa2"
+}
