@@ -1,0 +1,45 @@
+{
+  "geometry_margins": {
+    "horizontal_wrong_axis": "1/1080",
+    "horizontal_correct_sign": "1529/4860",
+    "vertical_wrong_axis": "343/2160",
+    "vertical_correct_sign": "1991/6480",
+    "row_variation": "13/1458",
+    "shoulder_height": "1/30",
+    "uniform_endpoint_reserve": "10499/128000",
+    "uniform_shoulder_reserve": "461/8294400"
+  },
+  "parameter_rows": [
+    {
+      "tilt_bound": "1/64",
+      "center_floor": "3/5",
+      "endpoint_reserve": "1318757539/8388608000",
+      "shoulder_reserve": "122602873/1677721600",
+      "difference_reserve": "47504353/1677721600",
+      "minimum_signed_layer": "47504353/1677721600"
+    },
+    {
+      "tilt_bound": "1/32",
+      "center_floor": "2/3",
+      "endpoint_reserve": "139153883/1048576000",
+      "shoulder_reserve": "9387937/209715200",
+      "difference_reserve": "5105737/209715200",
+      "minimum_signed_layer": "5105737/209715200"
+    },
+    {
+      "tilt_bound": "1/18",
+      "center_floor": "3/4",
+      "endpoint_reserve": "3950801/41472000",
+      "shoulder_reserve": "461/8294400",
+      "difference_reserve": "68111/8294400",
+      "minimum_signed_layer": "461/4147200"
+    }
+  ],
+  "status": "PASS",
+  "polynomial_identities": 2,
+  "signed_layers": 90,
+  "corruptions_rejected": 2,
+  "full_masks_closed": 0,
+  "global_coverage_proved": false,
+  "independent_human_or_kernel_review": false
+}
