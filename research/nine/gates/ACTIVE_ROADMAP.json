@@ -430,7 +430,11 @@
     "unrestricted_rotating_frame_source": "UNRESTRICTED_ROTATING_FRAME_EXTRACTION_HAND_PROOF.md",
     "unrestricted_completed_grid": "REMOVED_AS_MANDATORY_GLOBAL_BRANCH_BY_ROTATING_FRAME",
     "actual_four_chain_side_capacity": "PROVED_AT_MOST_TWO_OUTSIDERS_PER_SIDE_FOR_STRICT_SUBCRITICAL_PACKINGS",
-    "physical_three_square_halfplane_equality": "COMPLETE_ALIGNED_OUTER_PAIR_AND_FREE_MIDDLE_HEIGHT_FAMILY"
+    "physical_three_square_halfplane_equality": "COMPLETE_ALIGNED_OUTER_PAIR_AND_FREE_MIDDLE_HEIGHT_FAMILY",
+    "latest_handoff_source": "HANDOFF_A2_POST_89CC4C2_2026_11_01.md",
+    "marked_edge_ledger_source": "UNRESTRICTED_MARKED_CHAIN_EDGE_LEDGER_HAND_PROOF.md",
+    "marked_edge_masks": "32 formal chain-edge masks, all-actual settled, 31 nonzero masks not classified; no proof that each mask is feasible",
+    "actual_four_occupancy_masks": "9 formal L/C/R occupancy groups, all physical subcases not closed",
+    "post_checkpoint_shoulder_work": "RESEARCH_LEADS_ONLY_NO_COMPLETE_SOURCE_PROOF: same-sign joint cap, adjacent barrier, two-square central cap, two-sided 7/20 budget, whole-square 1/10 triple, mixed-sign/oblique normals"
   }
 }
-

@@ -1,3 +1,13 @@
+## Latest handoff — pushed after 89cc4c2
+
+[Detailed A.2 push-and-handoff](HANDOFF_A2_POST_89CC4C2_2026_11_01.md)
+records the remaining actual-four outsider occupancy, mixed-sign/oblique
+shoulder, and weak-four completed-chain obligations. The
+[marked-link hand ledger](UNRESTRICTED_MARKED_CHAIN_EDGE_LEDGER_HAND_PROOF.md)
+proves exact inequalities for every nonphysical consecutive completed edge.
+The post-commit geometric leads are **not accepted standalone proofs**;
+no whole canonical root closure was claimed. A.2 remains OPEN.
+
 # n=9 — current hand-proof progress
 
 **Active gate: A.2. The unrestricted lower bound, global equality classification,

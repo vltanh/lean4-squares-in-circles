@@ -1,3 +1,11 @@
+## Latest checkpoint and handoff
+
+[New push-and-handoff](HANDOFF_A2_POST_89CC4C2_2026_11_01.md) ·
+[Exact marked-chain hand ledger](UNRESTRICTED_MARKED_CHAIN_EDGE_LEDGER_HAND_PROOF.md).
+The final global geometric caller is not yet proved. The reported
+same-sign shoulder cap, middle-strip capacity and mixed-sign cases are
+recorded as unverified continuation leads, not as a closed A.2 gate.
+
 # n=9 — sharp nine-unit-square packing
 
 **Global goal OPEN:** prove all nine independently oriented, interior-disjoint
