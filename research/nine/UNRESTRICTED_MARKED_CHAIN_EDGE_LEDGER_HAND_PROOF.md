@@ -81,10 +81,15 @@ chains of lengths four and three along one coordinate direction.
 Their three plus two consecutive links may be marked actual (0) or
 weak (1). Lemma 2 makes every other within-chain link actual.
 
-Hence there are at most 2^5=32 formal binary masks before equivalence,
-of which the all-actual mask is settled by the published sharp physical
-4+3-chain theorem. At most 31 nonzero masks remain as a *bookkeeping
-universe*. Many may be geometrically impossible, and the masks do not
+Hence there are at most 2^5=32 formal binary masks before equivalence.
+The all-actual mask (000,00) is settled by the published sharp physical
+4+3-chain theorem. The new
+[middle-link terminal](COMPLETED_MIDDLE_LINK_SHARP_TERMINAL_HAND_PROOF.md)
+also excludes the entire nonzero mask (010,00), even at q=Q: its two
+actual outer links and the middle maximal-coordinate inequality recover
+the sharp long span with a strictly positive orientation reserve.
+Thus at most 30 other masks remain as a *bookkeeping universe*.
+Many may be geometrically impossible, and the masks do not
 replace the continuous orientation, center and physical-separator
 constraints. No distribution of masks by canonical root, and no
 exclusion count, is asserted.
@@ -122,6 +127,14 @@ occupancies (|L|,|C|,|R|) is
 | 2 | 2 | 1 |
 | 2 | 1 | 2 |
 
+The new
+[outer-link endpoint reserve](OUTER_ACTUAL_LINK_ENDPOINT_RESERVE_HAND_PROOF.md)
+extends this same nine-row occupancy cover to a completed four-chain
+whose two outer links are actual, even if its middle link is weak.
+It proves the outsider strip and both side capacities afresh from an
+endpoint budget retaining the middle orientation excess; the internal
+square consumes its marker without an assumed side-band center.
+
 This is only a finite occupancy cover. It does **not** imply y-ordering,
 coordinate separability, or a physical 4+3 terminal, and does not count as
 any newly excluded nine-body configuration. Every row retains all nine
@@ -129,12 +142,19 @@ physical squares and all 36 original pairwise disjointness predicates.
 
 ## 5. Closure obligations
 
-To close A.2 via this ledger, prove for **each physically realizable
-nonzero marked mask**, retaining both unselected squares, either an exact
+To close A.2 via this ledger, prove for **each remaining physically realizable
+marked mask**, retaining both unselected squares, either an exact
 contradiction at q<Q or a derived caller to an already-proved sharp terminal.
 In the actual-four mask, complete the nine occupancy possibilities above
 with all oblique and mixed-sign separating normals. No unproved “row
 alignment,” no replacement of a physical square by only its inset for
 the final sharp terminal, and no imported coordinate cover is permitted.
 
-The sharp target is Q=1105/256. A.2 remains OPEN. 
+The sharper [pure center-cone extraction](CENTER_CONE_ROTATION_AND_ADJACENT_FIRST_BIRTH_HAND_PROOF.md)
+can now be used: every selected edge, including an actual edge, has a
+maximal coordinate center gap. At a first-birth frame the entering tie
+joins adjacent old rows. This strengthens the edge data, not a physical
+separator or a proof of the remaining masks.
+
+The sharp target is Q=1105/256. A.2 remains OPEN.
+

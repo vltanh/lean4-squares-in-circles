@@ -1,4 +1,20 @@
-## Latest handoff — pushed after 89cc4c2
+## Latest continuation — chain closure and complete shoulder slope cover
+
+[Current mathematical checkpoint](A2_CHAIN_AND_ALL_SLOPE_SHOULDER_CHECKPOINT.md)
+and [independent hand reconstruction](HAND_REVIEW_CHAIN_AND_ALL_SLOPE_SHOULDER_CHECKPOINT.md).
+**A.2 remains OPEN.** The complete nonzero mask(010,00) is now excluded,
+so two of the32 structural masks are treated. The outsider-strip and side
+capacities extend to a four-chain with only its outer links actual. All
+shoulder-separator slope signs are covered under the exact actual vertical
+endpoint and central-floor premises printed in the checkpoint. Oblique
+endpoint callers, the joint nine-square geometry, and weak outer links
+remain. Published original roots stay5,838 excluded /2,077 open.
+
+The previously unarchived transfer/capacity leads restored in this
+checkpoint now have complete source proofs and independent hand review;
+the earlier handoff warning below is historical for those named sources.
+
+## Previous handoff — pushed after 89cc4c2
 
 [Detailed A.2 push-and-handoff](HANDOFF_A2_POST_89CC4C2_2026_11_01.md)
 records the remaining actual-four outsider occupancy, mixed-sign/oblique
@@ -366,4 +382,5 @@ It did not establish that statement or any exclusion. The displayed support,
 rank and scalar arguments are independent of that experiment.
 A.3 global replay, B.2/B.3 unrestricted equality, and C.1/C.2 complete
 manuscript/audit remain open. No new roadmap gate IDs are introduced.
+
 

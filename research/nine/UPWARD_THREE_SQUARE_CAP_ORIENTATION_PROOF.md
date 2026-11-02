@@ -1,6 +1,8 @@
 # The upward three-square cap from the matched orientation reserve
 
-November 1, 2026. Complete hand derivation. No scripts, Lean, or CI.
+November 1, 2026 (America/Chicago; November 2 UTC). Reconstructed complete
+hand derivation of the explicitly conditional transfer theorem. No scripts,
+Lean, or CI. Any geometric caller must establish every premise below.
 
 This is a short alternative proof of the upward separating-normal case.
 It retains the orientation reserve in the ordinary matched vertical cap.

@@ -43,6 +43,14 @@ it does not change this canonical tally.
 
 The newest broad hand results are:
 
+- [Current chain and all-slope shoulder checkpoint](A2_CHAIN_AND_ALL_SLOPE_SHOULDER_CHECKPOINT.md):
+  the full nonzero marked mask(010,00) is excluded at q<=Q; the same
+  outsider strip and side capacities hold when only the four-chain's outer
+  links are actual. A stronger center-cone extraction retains maximal-gap
+  information on every selected edge. The shoulder terminal now covers all
+  separator-slope signs under its explicit actual vertical endpoint and
+  central-floor premises. The physical oblique-endpoint caller and remaining
+  nine-square cases stay open; no canonical root count changes.
 - [Unrestricted structural continuation](UNRESTRICTED_STRUCTURAL_CONTINUATION_2026_11_02.md):
   selective completed coordinate orders have height at most four for every
   physical packing. The
@@ -236,4 +244,5 @@ input to the full verifier.
 Current source publication: `d05959c` (original sharp chart), `d946146` (coupled
 and three-cell checkpoint), `cd1ab86` (wider sharp chart and exact guard interface).
 The authoritative machine-readable status is `gates/ACTIVE_ROADMAP.json`.
+
 
