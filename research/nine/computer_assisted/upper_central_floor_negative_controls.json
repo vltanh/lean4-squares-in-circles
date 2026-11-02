@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "certificate_sha256": "942bb4be822f244eb2e7a1df96865997ac32eb1bcbddcde8c369f464fea4d619",
+  "controls": {
+    "missing_subtrees": "REJECTED",
+    "invalid_node_tag": "REJECTED",
+    "false_whole_root_leaf": "REJECTED",
+    "noninteger_tag": "REJECTED"
+  },
+  "scope": "Negative controls for exact table acceptance, not mathematical evidence beyond the independent replay"
+}

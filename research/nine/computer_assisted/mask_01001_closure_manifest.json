@@ -1,0 +1,887 @@
+{
+  "type": "complete_01001_mask_closure_v1",
+  "parent_commit": "1b38bbb646afe3c0eb60b5fbce86287d73a842eb",
+  "target_q": "1105/256",
+  "masks": [
+    "010/01",
+    "010/10"
+  ],
+  "radius_domain": "closed Q; hence every strict radius below Q",
+  "all_nine_original_squares_retained": true,
+  "corner_constraints": 36,
+  "physical_pair_constraints": 36,
+  "complete_mask_predicate_unchanged": true,
+  "new_strict_interval_leaves": 811086,
+  "inherited_cap_strict_interval_leaves": 3927,
+  "total_strict_interval_leaves": 815013,
+  "inherited_cap_analytic_leaves": 34,
+  "new_physical_clearance_hand_rows": 24,
+  "all_new_exact_replays_passed": true,
+  "independent_agent_physical_and_assembly_review": true,
+  "human_or_kernel_verification": false,
+  "lean_lake_ci_run": false,
+  "corruption_controls_rejected": 25,
+  "new_certificates": [
+    {
+      "path": "computer_assisted/weak_middle_mainheight_three_tenths_candidate.json",
+      "sha256": "00016971cd1f58a35dfd16221d8f7baec40d983668fdea33bb6691b2be7c24f7",
+      "bytes": 279726,
+      "role": "main_height",
+      "strict_interval_leaves": 51817,
+      "maximum_depth": 33,
+      "replay_report": "computer_assisted/weak_middle_mainheight_three_tenths_exact_replay_report.json",
+      "least_exact_reserve": "57690775136268411/604462909807314587353088",
+      "strict_simple_lower_bound": "9/100000000"
+    },
+    {
+      "path": "computer_assisted/weak_middle_above_side_physical_candidate.json",
+      "sha256": "9f539289f73dcdca07aca75ec083e9dc96f0bd2db27d1d51e2f3781a22b63c40",
+      "bytes": 927667,
+      "role": "above_side",
+      "strict_interval_leaves": 161236,
+      "maximum_depth": 30,
+      "replay_report": "computer_assisted/weak_middle_above_side_physical_exact_replay_report.json",
+      "least_exact_reserve": "91020787871806855/1208925819614629174706176",
+      "strict_simple_lower_bound": "7/100000000"
+    },
+    {
+      "path": "computer_assisted/side_height_envelope_bump_plus_1_400_candidate.json",
+      "sha256": "82bacbcb6b7597328fe9b6f2da20c3aa565c5b0688702148fa0843f9e311ee90",
+      "bytes": 13830,
+      "role": "lower_side_height_envelope",
+      "strict_interval_leaves": 3387,
+      "maximum_depth": 29,
+      "replay_report": "computer_assisted/side_height_envelope_bump_plus_1_400_candidate_exact_replay.json",
+      "least_exact_reserve": "123379647989217785195315969509872103919897374981745719284791674264445944692257284406208238521918605412091/844943567828326508768648833442287719484082343004085922232427514947066348398415117708160280817679275121652531200",
+      "strict_simple_lower_bound": "1/10000000"
+    },
+    {
+      "path": "computer_assisted/weak_middle_below_side_fast_balanced_candidate.json",
+      "sha256": "db6894140b37c3ffb69a45b2f2fe68e8c928c5b00b562e7601a777dfa5fb45a5",
+      "bytes": 2007438,
+      "role": "below_side_transfer",
+      "strict_interval_leaves": 368125,
+      "maximum_depth": 43,
+      "replay_report": "computer_assisted/weak_middle_below_side_fast_balanced_exact_replay_report.json",
+      "least_exact_reserve": "2193945960125041/151115727451828646838272",
+      "strict_simple_lower_bound": "1/100000000"
+    },
+    {
+      "path": "computer_assisted/weak_middle_central_below_p_candidate.json",
+      "sha256": "ca931848e2f5e76e7fff74a0233dd344fbccde2d11f0611f22de76907482a92a",
+      "bytes": 872724,
+      "role": "upper_central_order",
+      "strict_interval_leaves": 155395,
+      "maximum_depth": 32,
+      "replay_report": "computer_assisted/weak_middle_central_below_p_exact_replay_report.json",
+      "least_exact_reserve": "490502150380008487/1208925819614629174706176",
+      "strict_simple_lower_bound": "1/2500000"
+    },
+    {
+      "path": "computer_assisted/upper_central_floor_candidate.json",
+      "sha256": "942bb4be822f244eb2e7a1df96865997ac32eb1bcbddcde8c369f464fea4d619",
+      "bytes": 350073,
+      "role": "upper_central_floor",
+      "strict_interval_leaves": 71126,
+      "maximum_depth": 38,
+      "replay_report": "computer_assisted/upper_central_floor_candidate_exact_replay.json",
+      "least_exact_reserve": "125370393047317320525648905233660189742879778198046664995285751317314410426153882525197178935607254430792526746678416874010742567478550532272564002101334790732221171715434810755794217216981340301196686220315759145657161703829558960329273814018220369619509839046175753379414204445584000319700336685395222920944172598340165073896439350301167647398344354269500686943727080511/1200831488165676205901592494660451075777808002154193623529305358108149343310867723547309436204186314619254286243023692772970298816790720089701700262375400976094514502132066571107391947523732905790156097589168897974633187013696283258988897812274001281798466227572263102202149988500874183982937347573792900620219532054526781319560470442669127637920658985312179278971586687836160000",
+      "strict_simple_lower_bound": "1/10000000"
+    }
+  ],
+  "inherited_cap_certificates": [
+    {
+      "path": "computer_assisted/outer_R_linear_negative_cover.json",
+      "sha256": "10d5ed1ef26b97ecaf86d0149a4840040804d2e31dc5a147b05047629e0852ed",
+      "bytes": 433365,
+      "strict_interval_leaves": 1700,
+      "analytic_leaves": 0
+    },
+    {
+      "path": "computer_assisted/outer_R_linear_positive_cover.json",
+      "sha256": "36d29da96f39618b2a74a8fe1c2f7a30e97acc2bfc713e1f41c72999ebc2db66",
+      "bytes": 110636,
+      "strict_interval_leaves": 490,
+      "analytic_leaves": 0
+    },
+    {
+      "path": "computer_assisted/E_variable_k_linear_negative_cover.json",
+      "sha256": "94ddb170a16bf4b222e1ede3e85c6a24537b6fa9c23cceb68f73c210f93c91fc",
+      "bytes": 4796,
+      "strict_interval_leaves": 25,
+      "analytic_leaves": 0
+    },
+    {
+      "path": "computer_assisted/E_variable_k_linear_positive_cover.json",
+      "sha256": "ec1bf64bc56f7fb84485be5c6f40477c3d7e3e65797f1c8f603f3473717c7751",
+      "bytes": 5335,
+      "strict_interval_leaves": 28,
+      "analytic_leaves": 0
+    },
+    {
+      "path": "computer_assisted/central_linear_transfer_compact.json",
+      "sha256": "771bf108f5441de0e46810bd924f9fad118d94072f121136f3ed2423f7c0616a",
+      "bytes": 307892,
+      "strict_interval_leaves": 1684,
+      "analytic_leaves": 34
+    }
+  ],
+  "corruption_controls": [
+    {
+      "report": "computer_assisted/weak_middle_mainheight_three_tenths_negative_controls.json",
+      "rejected": 4
+    },
+    {
+      "report": "computer_assisted/weak_middle_above_side_physical_negative_controls.json",
+      "rejected": 4
+    },
+    {
+      "report": "computer_assisted/side_height_envelope_negative_controls.json",
+      "rejected": 4
+    },
+    {
+      "report": "computer_assisted/weak_middle_below_side_weighted_negative_controls.json",
+      "rejected": 5
+    },
+    {
+      "report": "computer_assisted/weak_middle_central_below_p_negative_controls.json",
+      "rejected": 4
+    },
+    {
+      "report": "computer_assisted/upper_central_floor_negative_controls.json",
+      "rejected": 4
+    }
+  ],
+  "accepted_checkpoint_sources": [
+    {
+      "path": "WEAK_MIDDLE_ROUTING_AND_HIGH_FLOOR.md",
+      "sha256": "a345c179753a6bc36a5160fe6af8b88760442608456f65d25e02dbfcfb89ffb7",
+      "bytes": 8194,
+      "group": "weak_middle",
+      "role": "manuscript"
+    },
+    {
+      "path": "computer_assisted/verify_weak_middle_clearance_table.py",
+      "sha256": "4d18088f19498dad9ba0ed3cd01e7acc66c7559d49e45d8e0490d4683188db79",
+      "bytes": 2347,
+      "group": "weak_middle",
+      "role": "exact_checker"
+    },
+    {
+      "path": "computer_assisted/weak_middle_clearance_table.json",
+      "sha256": "2500d06c1c0faf6f0a0de386dd36e70e6a9ffdefd5f6d6b6d6a4084ee1e5aef0",
+      "bytes": 4216,
+      "group": "weak_middle",
+      "role": "exact_hand_table_report"
+    },
+    {
+      "path": "computer_assisted/weak_middle_wide_inner_exact_control.json",
+      "sha256": "69fe64234c908bdde4c6840bf392f1c919f3697bb89cbb038caddc6deb5ebbda",
+      "bytes": 4273,
+      "group": "weak_middle",
+      "role": "rational_negative_control"
+    },
+    {
+      "path": "computer_assisted/verify_weak_middle_wide_inner_control.py",
+      "sha256": "97204f21831c128a60ead0a2d458a7f92591e6b281eba17823a8d204e3d17d14",
+      "bytes": 2276,
+      "group": "weak_middle",
+      "role": "negative_control_checker"
+    },
+    {
+      "path": "computer_assisted/weak_middle_wide_inner_control_replay.json",
+      "sha256": "d752f7be5eb8a30fb9a9231fa2167cb1fd67c9450725e672e980f14eded37de6",
+      "bytes": 1280,
+      "group": "weak_middle",
+      "role": "negative_control_replay_report"
+    },
+    {
+      "path": "WEAK_MIDDLE_LOW_FLOOR_MAINHEIGHT_THREE_TENTHS.md",
+      "sha256": "98c2cf88b2ddf49fbaabaaf7b78e2992c6672809e1f3cf533472c3ea7bd4a676",
+      "bytes": 11546,
+      "group": "weak_middle",
+      "role": "manuscript"
+    },
+    {
+      "path": "computer_assisted/make_weak_middle_mainheight_three_tenths.py",
+      "sha256": "e6cc1d8577fd0493a237475dc519862d89346fde56284e8c4bee97769eb196cd",
+      "bytes": 6248,
+      "group": "weak_middle",
+      "role": "untrusted_discovery_producer"
+    },
+    {
+      "path": "computer_assisted/weak_middle_mainheight_three_tenths_candidate.json",
+      "sha256": "00016971cd1f58a35dfd16221d8f7baec40d983668fdea33bb6691b2be7c24f7",
+      "bytes": 279726,
+      "group": "weak_middle",
+      "role": "accepted_finite_certificate"
+    },
+    {
+      "path": "computer_assisted/verify_weak_middle_mainheight_three_tenths.py",
+      "sha256": "481375199afe15975d89e83d13de167fe0fcc675fdce98470a66758b1b273154",
+      "bytes": 7053,
+      "group": "weak_middle",
+      "role": "independent_exact_checker"
+    },
+    {
+      "path": "computer_assisted/weak_middle_mainheight_three_tenths_exact_replay_report.json",
+      "sha256": "1da640b206f618b4021f0c801b0cdea5cae9b127872160ebbe66076d94702f9c",
+      "bytes": 1030,
+      "group": "weak_middle",
+      "role": "complete_exact_replay_report"
+    },
+    {
+      "path": "computer_assisted/check_weak_middle_mainheight_three_tenths_controls.py",
+      "sha256": "a1b2adca60bee806d8c24b8ed8c853554a4158f835d19fb6ce51d0f4dc9f7d63",
+      "bytes": 1195,
+      "group": "weak_middle",
+      "role": "corruption_control_checker"
+    },
+    {
+      "path": "computer_assisted/weak_middle_mainheight_three_tenths_negative_controls.json",
+      "sha256": "74a8106eab2262b6f2bcf8675a93018436776d59591c762564bbfe65cef79c46",
+      "bytes": 899,
+      "group": "weak_middle",
+      "role": "corruption_control_report"
+    },
+    {
+      "path": "WEAK_MIDDLE_ABOVE_SIDE_EXTRA_EXCLUSION.md",
+      "sha256": "4b561af898f8f77998b45ac672d08805cb4c2e8aba0f128f2bc19895dbe2b469",
+      "bytes": 10335,
+      "group": "weak_middle",
+      "role": "manuscript"
+    },
+    {
+      "path": "computer_assisted/make_weak_middle_above_side_physical_certificate.py",
+      "sha256": "5e138f302e0d50ad1d985f7dcb29d25037e9a674701e9fe0c83e169fc935d8ea",
+      "bytes": 6381,
+      "group": "weak_middle",
+      "role": "untrusted_discovery_producer"
+    },
+    {
+      "path": "computer_assisted/weak_middle_above_side_physical_candidate.json",
+      "sha256": "9f539289f73dcdca07aca75ec083e9dc96f0bd2db27d1d51e2f3781a22b63c40",
+      "bytes": 927667,
+      "group": "weak_middle",
+      "role": "accepted_finite_certificate"
+    },
+    {
+      "path": "computer_assisted/verify_weak_middle_above_side_physical_certificate.py",
+      "sha256": "fc6839fb75a54d6a3f4c5ea2f23905678d3e2a0233e09d20334670d1ebb2b1e6",
+      "bytes": 7118,
+      "group": "weak_middle",
+      "role": "independent_exact_checker"
+    },
+    {
+      "path": "computer_assisted/weak_middle_above_side_physical_exact_replay_report.json",
+      "sha256": "9c0b558199e81d271672483a2edb743e5f4bd8dbf3296cd3b10b7441a9be9a14",
+      "bytes": 1102,
+      "group": "weak_middle",
+      "role": "complete_exact_replay_report"
+    },
+    {
+      "path": "computer_assisted/check_weak_middle_above_side_physical_controls.py",
+      "sha256": "2276c84d0c5660988db4097616da0031bb6e49e5deaed3ed2827e74baa7719ef",
+      "bytes": 1199,
+      "group": "weak_middle",
+      "role": "corruption_control_checker"
+    },
+    {
+      "path": "computer_assisted/weak_middle_above_side_physical_negative_controls.json",
+      "sha256": "a4b0f08ccdfbf562cf570c67819a8f52f30df47df9711cc1ab08b85d77efe679",
+      "bytes": 933,
+      "group": "weak_middle",
+      "role": "corruption_control_report"
+    },
+    {
+      "path": "WEAK_MIDDLE_CENTRAL_ROUTING_AND_LOWER_COUNT.md",
+      "sha256": "a6ea8017d4ea707454d4d463bf24ba5fc84ae84f416b115f16c6a6235cb5ffa0",
+      "bytes": 6170,
+      "group": "weak_middle",
+      "role": "manuscript"
+    },
+    {
+      "path": "computer_assisted/verify_weak_middle_central_clearance_table.py",
+      "sha256": "6d6678f359a61b8d8e5bc9c330c7df950dd713036fa02ff2c3e69002ddf11c49",
+      "bytes": 2436,
+      "group": "weak_middle",
+      "role": "exact_checker"
+    },
+    {
+      "path": "computer_assisted/weak_middle_central_clearance_table.json",
+      "sha256": "77208246adfc2ed7e88eb1c5fb70cdc7536dba009a5411331f487889a919fd8d",
+      "bytes": 4253,
+      "group": "weak_middle",
+      "role": "exact_hand_table_report"
+    },
+    {
+      "path": "WEAK_MIDDLE_UPPER_CENTRAL_EXTRA_ABOVE_P.md",
+      "sha256": "f4f76753ceba00746bf91d80aa9536d1e92c7589483315b6885ad4eb5d818fd1",
+      "bytes": 4866,
+      "group": "weak_middle",
+      "role": "manuscript"
+    },
+    {
+      "path": "computer_assisted/make_weak_middle_central_below_p_certificate.py",
+      "sha256": "6654d214773a50f60e5246af88b87b1f492ea7c9b7a97080bd03a78bef5f6ee3",
+      "bytes": 6389,
+      "group": "weak_middle",
+      "role": "untrusted_discovery_producer"
+    },
+    {
+      "path": "computer_assisted/weak_middle_central_below_p_candidate.json",
+      "sha256": "ca931848e2f5e76e7fff74a0233dd344fbccde2d11f0611f22de76907482a92a",
+      "bytes": 872724,
+      "group": "weak_middle",
+      "role": "accepted_finite_certificate"
+    },
+    {
+      "path": "computer_assisted/verify_weak_middle_central_below_p_certificate.py",
+      "sha256": "7649b8a28ea88954df770ac432254228a0a1031c47dec3476857d809eac31416",
+      "bytes": 7104,
+      "group": "weak_middle",
+      "role": "independent_exact_checker"
+    },
+    {
+      "path": "computer_assisted/weak_middle_central_below_p_exact_replay_report.json",
+      "sha256": "a8918b05ad662b0c8c54ac616bb941a2c80bf3ea05a63210227a9002f7f31f17",
+      "bytes": 1111,
+      "group": "weak_middle",
+      "role": "complete_exact_replay_report"
+    },
+    {
+      "path": "computer_assisted/check_weak_middle_central_below_p_controls.py",
+      "sha256": "53a43b8b026d49e877430d62ca1d25e5dbdbfbe52861680b5b75560546a44316",
+      "bytes": 1196,
+      "group": "weak_middle",
+      "role": "corruption_control_checker"
+    },
+    {
+      "path": "computer_assisted/weak_middle_central_below_p_negative_controls.json",
+      "sha256": "4996d6f5ad53ddf2069819149cbb584f29769f252d6d60729d18e28c4a00144b",
+      "bytes": 969,
+      "group": "weak_middle",
+      "role": "corruption_control_report"
+    },
+    {
+      "path": "WEAK_MIDDLE_UPPER_CENTRAL_WHOLE_FLOOR_AUDIT.md",
+      "sha256": "5ceffe7bd50ba700cd0b11ccfaeb548467f68df37d6fc12fcbe7de63d809ecc9",
+      "bytes": 3267,
+      "group": "weak_middle",
+      "role": "independent_geometry_audit"
+    },
+    {
+      "path": "WEAK_MIDDLE_BELOW_SIDE_EXTRA_EXCLUSION.md",
+      "sha256": "8981bbcdc48fc6c5a39203561fbc49910bc8dd96a595a4bd0ff6142cef3ceadd",
+      "bytes": 9607,
+      "group": "weak_middle",
+      "role": "manuscript"
+    },
+    {
+      "path": "computer_assisted/discover_below_side_fast.cpp",
+      "sha256": "a2f546a66c34cbf4c1cf76357510eaa2ad52a51e60c575d8f2000f0f4827e2b5",
+      "bytes": 7000,
+      "group": "weak_middle",
+      "role": "untrusted_discovery_producer"
+    },
+    {
+      "path": "computer_assisted/weak_middle_below_side_fast_balanced_candidate.json",
+      "sha256": "db6894140b37c3ffb69a45b2f2fe68e8c928c5b00b562e7601a777dfa5fb45a5",
+      "bytes": 2007438,
+      "group": "weak_middle",
+      "role": "accepted_finite_certificate"
+    },
+    {
+      "path": "computer_assisted/verify_weak_middle_below_side_weighted_transfer_certificate.py",
+      "sha256": "cb6d74be70750cc7f46510a37efd0564a2849d45b3ae41298f0d164018f91848",
+      "bytes": 10074,
+      "group": "weak_middle",
+      "role": "independent_exact_checker"
+    },
+    {
+      "path": "computer_assisted/weak_middle_below_side_fast_balanced_exact_replay_report.json",
+      "sha256": "df9df1c3bf2e86f22acf4f041cc4f395d277633a266856dfdaa41a342ed51b3c",
+      "bytes": 1065,
+      "group": "weak_middle",
+      "role": "complete_exact_replay_report"
+    },
+    {
+      "path": "computer_assisted/check_weak_middle_below_side_weighted_controls.py",
+      "sha256": "d02867f16ca65219094d5ba9e17ca401a1080441bdea49742bb472107517cf9c",
+      "bytes": 1238,
+      "group": "weak_middle",
+      "role": "corruption_control_checker"
+    },
+    {
+      "path": "computer_assisted/weak_middle_below_side_weighted_negative_controls.json",
+      "sha256": "957e19008d00fd55b16c4e2aaf6f85533cfd5be88b8cbc567a656d5fefab8b32",
+      "bytes": 1291,
+      "group": "weak_middle",
+      "role": "corruption_control_report"
+    },
+    {
+      "path": "A2_010_01_WHOLE_DOMAIN_ASSEMBLY.md",
+      "sha256": "c067b9889cf42d9fb61e5328d539eaa39daeb1d6d05c0db6342899f9265bf554",
+      "bytes": 6638,
+      "group": "weak_middle",
+      "role": "complete_domain_assembly"
+    },
+    {
+      "path": "CENTRAL_TRANSFER_UNBOUNDED_SLOPES.md",
+      "sha256": "3fc93f2edbe75ba9f25076296c47128ceeec6441f49f391de5d9f04478b15f42",
+      "bytes": 3636,
+      "group": "widened_cap_and_singleton",
+      "role": "manuscript"
+    },
+    {
+      "path": "PIECEWISE_CENTRAL_TRANSFER_UNBOUNDED.md",
+      "sha256": "077759e2e2acdc36fdf5df1c67d2b1ab764860a9ea4ad466a27f2427f265feda",
+      "bytes": 7539,
+      "group": "widened_cap_and_singleton",
+      "role": "manuscript"
+    },
+    {
+      "path": "WIDENED_JOINT_FIVE_SQUARE_CAP.md",
+      "sha256": "b8d4f232ad4bfacd3093812add0b16feb30875fd47c2b104aca284ef149abc83",
+      "bytes": 13481,
+      "group": "widened_cap_and_singleton",
+      "role": "manuscript"
+    },
+    {
+      "path": "CENTRAL_SINGLETON_FLOOR_HAND_TABLE_PROOF.md",
+      "sha256": "8f103545b198e27e6cbdd8e59e7f0117e99d9cd8b07fb80077504c0d8394c962",
+      "bytes": 12331,
+      "group": "widened_cap_and_singleton",
+      "role": "manuscript"
+    },
+    {
+      "path": "computer_assisted/wider_outer_E_up_cover.json",
+      "sha256": "d9a08f01f76922cd8b86f680aaf0d21cbf5f5dde81a5f5432565de8ea7fcc8fe",
+      "bytes": 58870,
+      "group": "widened_cap_and_singleton",
+      "role": "finite_certificate"
+    },
+    {
+      "path": "computer_assisted/wider_outer_E_left_cover.json",
+      "sha256": "0bc3b4b76d972de0cfb025c02ac0e2cfab9311a4610b58093ddec0bf8a2307db",
+      "bytes": 32033,
+      "group": "widened_cap_and_singleton",
+      "role": "finite_certificate"
+    },
+    {
+      "path": "computer_assisted/wider_outer_S_up_cover.json",
+      "sha256": "5666c8f13e63f5abbefc5ba7beb638710ab59871244b0dfadae0b839188b7082",
+      "bytes": 291336,
+      "group": "widened_cap_and_singleton",
+      "role": "finite_certificate"
+    },
+    {
+      "path": "computer_assisted/wider_outer_S_left_cover.json",
+      "sha256": "29c18466f47ce0d614a5b8f5510f0d3e8ab572d6d419831f16adf1533c2aa461",
+      "bytes": 452975,
+      "group": "widened_cap_and_singleton",
+      "role": "finite_certificate"
+    },
+    {
+      "path": "computer_assisted/central_singleton_floor_cover.json",
+      "sha256": "9dd295e9755acfa9087736752fd8d33d4b1c52604fcfd41a43952bb56a0639f9",
+      "bytes": 1369990,
+      "group": "widened_cap_and_singleton",
+      "role": "finite_certificate"
+    },
+    {
+      "path": "computer_assisted/verify_wider_outer.py",
+      "sha256": "2917743ad473fa4919bb304f301fae4f1277993f513f0f83c45b9cca9488f2b4",
+      "bytes": 5758,
+      "group": "widened_cap_and_singleton",
+      "role": "independent_checker"
+    },
+    {
+      "path": "computer_assisted/verify_central_singleton_floor.py",
+      "sha256": "8f43e75fff8bb5a1833a4cd38efc501d37e4a52b29eb9c90ea1bf45d2f61336d",
+      "bytes": 4274,
+      "group": "widened_cap_and_singleton",
+      "role": "independent_checker"
+    },
+    {
+      "path": "computer_assisted/certify_wider_outer.py",
+      "sha256": "ebc15adc31f7f7b179abb8a502b5773f49bcfff5b493cde0169b419d2528fec4",
+      "bytes": 6216,
+      "group": "widened_cap_and_singleton",
+      "role": "producer_or_discovery_helper"
+    },
+    {
+      "path": "computer_assisted/wider_outer_support.py",
+      "sha256": "d2397e9d439d6ac17125ac26d7e7646a2b7e5f64bce10eb0a7d43292f9b31ba7",
+      "bytes": 5136,
+      "group": "widened_cap_and_singleton",
+      "role": "producer_or_discovery_helper"
+    },
+    {
+      "path": "computer_assisted/certify_central_singleton_floor.py",
+      "sha256": "ca5e52ab12a973d81345a8d8038c7773a93595f4bae2aa4f965730ac82e97776",
+      "bytes": 3908,
+      "group": "widened_cap_and_singleton",
+      "role": "producer_or_discovery_helper"
+    },
+    {
+      "path": "computer_assisted/wider_outer_E_up_cover_replay.json",
+      "sha256": "e5a85de058f047dd92ab9e436b85896b1867fdbd2de43e7ebe523189866f5486",
+      "bytes": 577,
+      "group": "widened_cap_and_singleton",
+      "role": "independent_replay_report"
+    },
+    {
+      "path": "computer_assisted/wider_outer_E_left_cover_replay.json",
+      "sha256": "f64aede078a8a8ce7d791b2712e7317f42756e5825e25482e3a71461d023042e",
+      "bytes": 581,
+      "group": "widened_cap_and_singleton",
+      "role": "independent_replay_report"
+    },
+    {
+      "path": "computer_assisted/wider_outer_S_up_cover_replay.json",
+      "sha256": "276f3be1d23e7f772d070842735e9688fe14c8d04e24939a48358dd631851f92",
+      "bytes": 577,
+      "group": "widened_cap_and_singleton",
+      "role": "independent_replay_report"
+    },
+    {
+      "path": "computer_assisted/wider_outer_S_left_cover_replay.json",
+      "sha256": "35a9ede594862a25dc3009c9adcfe95ac9a1b9bea46e6afa06ca8962a9d5c0c1",
+      "bytes": 583,
+      "group": "widened_cap_and_singleton",
+      "role": "independent_replay_report"
+    },
+    {
+      "path": "computer_assisted/central_singleton_floor_cover_replay.json",
+      "sha256": "aca71a76fb8568f3690e7fffb997b46350a2b0260d3fe0c49ed1e6d4a85995ba",
+      "bytes": 540,
+      "group": "widened_cap_and_singleton",
+      "role": "independent_replay_report"
+    },
+    {
+      "path": "SYMMETRIC_CENTRAL_TRANSFER_COUNTEREXAMPLE.md",
+      "sha256": "4235519329b5267ccf1ca7c9b75fa7b0568b95fb4a917a0b69679945c122f304",
+      "bytes": 1881,
+      "group": "widened_cap_and_singleton",
+      "role": "exact_negative_control_not_a_closure_dependency"
+    },
+    {
+      "path": "ACTUAL_FOUR_FULL_SIDE_OCCUPANCY_CLOSED_HAND_PROOF.md",
+      "sha256": "aeac2f11dc46c37b587b1fbb7b820c7bec42c7284a629660b376503fceab84bb",
+      "bytes": 13358,
+      "group": "actual_four_full_sides",
+      "role": "accepted_full_side_dependency"
+    },
+    {
+      "path": "ACTUAL_FOUR_MIXED_FULL_SIDES_LOWER_CENTRAL_EXCLUSION.md",
+      "sha256": "af3fd4bae4232af503d1ae5499d24e71d201bd56f8f7a0af44b29dd76d532d1a",
+      "bytes": 10925,
+      "group": "actual_four_full_sides",
+      "role": "accepted_full_side_dependency"
+    },
+    {
+      "path": "ZERO_SIDE_PROXY_EDGE_AND_TOP_HAND_PROOF.md",
+      "sha256": "54d8e42a4a94ff4a76d8feb8f38dbf4ecc2dce4a653d4a34c7ec24bcf9eb3dcd",
+      "bytes": 5972,
+      "group": "actual_four_full_sides",
+      "role": "accepted_full_side_dependency"
+    },
+    {
+      "path": "LOW_SIDE_UNIT_FORCES_SAME_SIDE_CENTRAL_FLOOR.md",
+      "sha256": "2871da98e63a416aaa77cd5a5c3dafaed6136e84cbf35b73e5069f52a8f6f48f",
+      "bytes": 7126,
+      "group": "actual_four_full_sides",
+      "role": "accepted_full_side_dependency"
+    },
+    {
+      "path": "computer_assisted/verify_mixed_full_side_lower_central.py",
+      "sha256": "b765849f34324a5d6e90581f2cfe52f0ba8bcb88c00aae8427228f0c4d375c3e",
+      "bytes": 2200,
+      "group": "actual_four_full_sides",
+      "role": "accepted_full_side_dependency"
+    },
+    {
+      "path": "computer_assisted/mixed_lower_central_arithmetic_replay.json",
+      "sha256": "d48208ed2d5487bfeace6eef388b0c2ba9d64265d8224c7dcd7323cafcbd3402",
+      "bytes": 778,
+      "group": "actual_four_full_sides",
+      "role": "accepted_full_side_dependency"
+    },
+    {
+      "path": "computer_assisted/verify_full_side_occupancy_arithmetic.py",
+      "sha256": "759adb9e5ce02d8ddcc5f36274c87a1f17ac5410bd502ce34ae8a61efc4ea8fe",
+      "bytes": 4258,
+      "group": "actual_four_full_sides",
+      "role": "accepted_full_side_dependency"
+    },
+    {
+      "path": "computer_assisted/full_side_occupancy_arithmetic_replay.json",
+      "sha256": "b1c92e84e762c1409a29826042c569ddbcac183dc8775acf8cada2e79873d72f",
+      "bytes": 1998,
+      "group": "actual_four_full_sides",
+      "role": "accepted_full_side_dependency"
+    },
+    {
+      "path": "FULL_SIDE_OCCUPANCY_INDEPENDENT_AGENT_REVIEW.md",
+      "sha256": "df6b4c64692a6fb9a135f0a4d16f1df2b570dc68e1b40e46553f8339725660d7",
+      "bytes": 4252,
+      "group": "actual_four_full_sides",
+      "role": "accepted_full_side_dependency"
+    },
+    {
+      "path": "TWO_LOW_MAINS_CENTRAL_EXCLUSION_HAND_TABLE.md",
+      "sha256": "1620f709509e0f45cee4d5b702eef57863556cd22db79d6c66937aa2b22a4b2a",
+      "bytes": 7208,
+      "group": "actual_four_full_sides",
+      "role": "accepted_full_side_dependency"
+    },
+    {
+      "path": "computer_assisted/two_low_mains_central_cover.json",
+      "sha256": "335b6b93fbf15886dc4be240f364fcf8737cb1a9ccbfcdff438b92df7b686346",
+      "bytes": 76450,
+      "group": "actual_four_full_sides",
+      "role": "accepted_full_side_dependency"
+    },
+    {
+      "path": "computer_assisted/verify_two_low_mains_central.py",
+      "sha256": "a35720d6bfbc619f3d2db35382af9d192cb81d5a4e0babc177ebc770a47ad25f",
+      "bytes": 7154,
+      "group": "actual_four_full_sides",
+      "role": "accepted_full_side_dependency"
+    },
+    {
+      "path": "computer_assisted/two_low_mains_central_dyadic_replay.json",
+      "sha256": "486405cf570721684719c556bb0ea6525bad753279d7d002af97765230be24a5",
+      "bytes": 697,
+      "group": "actual_four_full_sides",
+      "role": "accepted_full_side_dependency"
+    },
+    {
+      "path": "UPPER_COLUMN_SEPARATION_HAND_TABLE.md",
+      "sha256": "bacbf8814be4076c3830418dd945a5afa9f8aef6a5a4123e8a49534e33caf4e1",
+      "bytes": 4153,
+      "group": "root_audits_and_tables",
+      "role": "accepted_root_dependency"
+    },
+    {
+      "path": "computer_assisted/verify_upper_column_table.py",
+      "sha256": "0248d9181a065ce60cccfda46917a586a1d78c5d0b45ec5d49212f60ec5f5731",
+      "bytes": 1306,
+      "group": "root_audits_and_tables",
+      "role": "accepted_root_dependency"
+    },
+    {
+      "path": "computer_assisted/upper_column_table_replay.json",
+      "sha256": "027a026b67b52eeafc89408eb73852933238278de7243c6b2fbc5a258818596e",
+      "bytes": 1050,
+      "group": "root_audits_and_tables",
+      "role": "accepted_root_dependency"
+    },
+    {
+      "path": "computer_assisted/verify_wider_outer_fraction.py",
+      "sha256": "4714e81fdf13eabde136b9abfd12658547f3e63b87ad94e8ed83662454b0fdce",
+      "bytes": 1759,
+      "group": "root_audits_and_tables",
+      "role": "accepted_root_dependency"
+    },
+    {
+      "path": "computer_assisted/wider_outer_E_up_cover_fraction_replay.json",
+      "sha256": "bd988929afcddc2cd619908042edcaaa586868d07a5ab56c956e474d6c7f639a",
+      "bytes": 1053,
+      "group": "root_audits_and_tables",
+      "role": "accepted_root_dependency"
+    },
+    {
+      "path": "computer_assisted/wider_outer_E_left_cover_fraction_replay.json",
+      "sha256": "737d2a7185bcf0a35822fcef35a5dda8e3efb3b9194cf0cacda02790f89a33ae",
+      "bytes": 934,
+      "group": "root_audits_and_tables",
+      "role": "accepted_root_dependency"
+    },
+    {
+      "path": "computer_assisted/wider_outer_S_up_cover_fraction_replay.json",
+      "sha256": "0949d386f64b1815283b81da42851bbbf798177dbc34084de0c5224ad9ab4ecd",
+      "bytes": 1010,
+      "group": "root_audits_and_tables",
+      "role": "accepted_root_dependency"
+    },
+    {
+      "path": "computer_assisted/wider_outer_S_left_cover_fraction_replay.json",
+      "sha256": "20e8a53a43bf37bc84a548b88fdd07139193ca27ca94a6a327a8c2675c06f601",
+      "bytes": 1001,
+      "group": "root_audits_and_tables",
+      "role": "accepted_root_dependency"
+    },
+    {
+      "path": "computer_assisted/verify_central_singleton_floor_fraction.py",
+      "sha256": "66822930d1bb38f9d04e3ef257fb06abd421246dfe8ae022aa870f58d013a411",
+      "bytes": 1578,
+      "group": "root_audits_and_tables",
+      "role": "accepted_root_dependency"
+    },
+    {
+      "path": "computer_assisted/central_singleton_floor_cover_fraction_replay.json",
+      "sha256": "b763d1e1e29f60b94d59e2a1a404ca49803ac80a272c3870a69e386d3358df50",
+      "bytes": 724,
+      "group": "root_audits_and_tables",
+      "role": "accepted_root_dependency"
+    },
+    {
+      "path": "computer_assisted/verify_piecewise_central_bernstein.py",
+      "sha256": "26427988fa31ba895c46739b66430314deacbce88eb21f8dbed12edb77042ac8",
+      "bytes": 2353,
+      "group": "root_audits_and_tables",
+      "role": "accepted_root_dependency"
+    },
+    {
+      "path": "computer_assisted/piecewise_central_bernstein_replay.json",
+      "sha256": "e5fc9ca2f15c0d39941b6d51b242ea0d1f3d4cadfac65f2d3ed936b974b11b27",
+      "bytes": 1175,
+      "group": "root_audits_and_tables",
+      "role": "accepted_root_dependency"
+    },
+    {
+      "path": "LOWER_SIDE_WIDTH_DEPENDENT_MAIN_HEIGHT.md",
+      "sha256": "c5cdf65824c13e1b6a90b7e6c5c665f75609e14f8eb474baddccfff78f67af8c",
+      "bytes": 8107,
+      "group": "root_audits_and_tables",
+      "role": "accepted_root_dependency"
+    },
+    {
+      "path": "computer_assisted/certify_side_height_envelope.py",
+      "sha256": "639a6749d742a75c0dfaaf19db0d0c40aee3a5bac5db6de83dc7c91a8cefb577",
+      "bytes": 4538,
+      "group": "root_audits_and_tables",
+      "role": "accepted_root_dependency"
+    },
+    {
+      "path": "computer_assisted/verify_side_height_envelope.py",
+      "sha256": "4915e445627a16ec892c6a4b55a068eb6d080c7839317610f8c55ebf2a56678e",
+      "bytes": 4277,
+      "group": "root_audits_and_tables",
+      "role": "accepted_root_dependency"
+    },
+    {
+      "path": "computer_assisted/side_height_envelope_bump_plus_1_400_candidate.json",
+      "sha256": "82bacbcb6b7597328fe9b6f2da20c3aa565c5b0688702148fa0843f9e311ee90",
+      "bytes": 13830,
+      "group": "root_audits_and_tables",
+      "role": "accepted_root_dependency"
+    },
+    {
+      "path": "computer_assisted/side_height_envelope_bump_plus_1_400_candidate_exact_replay.json",
+      "sha256": "2f96f175987c4580ae50feb7b8cc5d9a6c5886a21af5000a6da3ad363fde501f",
+      "bytes": 691,
+      "group": "root_audits_and_tables",
+      "role": "accepted_root_dependency"
+    },
+    {
+      "path": "computer_assisted/check_side_height_envelope_controls.py",
+      "sha256": "b6f8a807b328fb179adbcc8a466e0b61beed9ded8d2355cf1ce7c154e2e3ab66",
+      "bytes": 891,
+      "group": "root_audits_and_tables",
+      "role": "accepted_root_dependency"
+    },
+    {
+      "path": "computer_assisted/side_height_envelope_negative_controls.json",
+      "sha256": "76c10cb5c63ab74661a35690e1737b92616636be2fd1d3d4c7efffc7bf81cda0",
+      "bytes": 282,
+      "group": "root_audits_and_tables",
+      "role": "accepted_root_dependency"
+    },
+    {
+      "path": "WEAK_MIDDLE_UPPER_CENTRAL_WHOLE_FLOOR.md",
+      "sha256": "d55d64c7cf82239eeafdd49f662de7f085b5c366020ddcd4f44299904524dc17",
+      "bytes": 11165,
+      "group": "root_audits_and_tables",
+      "role": "accepted_root_dependency"
+    },
+    {
+      "path": "computer_assisted/certify_upper_central_floor.py",
+      "sha256": "dcb2a3226a7583132be3e1fbef4b218f3ff8b0e5267ea9e3f8ce53259ece71cf",
+      "bytes": 6133,
+      "group": "root_audits_and_tables",
+      "role": "accepted_root_dependency"
+    },
+    {
+      "path": "computer_assisted/verify_upper_central_floor.py",
+      "sha256": "de816128ad06d5edaccc56d33cdea684ff786a0683a45997b80be91616433d4a",
+      "bytes": 5808,
+      "group": "root_audits_and_tables",
+      "role": "accepted_root_dependency"
+    },
+    {
+      "path": "computer_assisted/upper_central_floor_candidate.json",
+      "sha256": "942bb4be822f244eb2e7a1df96865997ac32eb1bcbddcde8c369f464fea4d619",
+      "bytes": 350073,
+      "group": "root_audits_and_tables",
+      "role": "accepted_root_dependency"
+    },
+    {
+      "path": "computer_assisted/upper_central_floor_candidate_exact_replay.json",
+      "sha256": "a962ef70d21ee67ceec06f4d8bf48c6868d179f1f03bfdd0b1b62d9addff775d",
+      "bytes": 1377,
+      "group": "root_audits_and_tables",
+      "role": "accepted_root_dependency"
+    },
+    {
+      "path": "computer_assisted/check_upper_central_floor_controls.py",
+      "sha256": "75b49fd9a9e8568d2d6219d34ed9ae8743c3db7ae04538a0a40704aa37100fe8",
+      "bytes": 1023,
+      "group": "root_audits_and_tables",
+      "role": "accepted_root_dependency"
+    },
+    {
+      "path": "computer_assisted/upper_central_floor_negative_controls.json",
+      "sha256": "e3b190d370fbb8d6cb98dfef3468a4c6fd89075f386721d10c251d26fe69e281",
+      "bytes": 398,
+      "group": "root_audits_and_tables",
+      "role": "accepted_root_dependency"
+    },
+    {
+      "path": "WEAK_MIDDLE_INDEPENDENT_GEOMETRY_REVIEW.md",
+      "sha256": "1d1f11b2489ef282796c991c9998d39a42354bba413ecd385e59f388e60cb91e",
+      "bytes": 5898,
+      "group": "root_audits_and_tables",
+      "role": "accepted_root_dependency"
+    },
+    {
+      "path": "computer_assisted/weak_middle_mainheight_independent_root_replay.json",
+      "sha256": "a132ad7ab0bb5fd225db513eccd7b8e65deecb2274b94248f83e124f4d137988",
+      "bytes": 1030,
+      "group": "root_audits_and_tables",
+      "role": "accepted_root_dependency"
+    },
+    {
+      "path": "computer_assisted/weak_middle_above_side_independent_root_replay.json",
+      "sha256": "7c1854e1194bb321280a59da2fe67a45b0f8d80fb32cf0cec040eea7f0c3a0b1",
+      "bytes": 1102,
+      "group": "root_audits_and_tables",
+      "role": "accepted_root_dependency"
+    }
+  ],
+  "checkpoint_source_scope": "Includes separately accepted widened-cap and actual-four inputs. Only the stated acyclic closure graph contributes to 010/01 and 010/10.",
+  "proof_order": [
+    "physical support, original endpoint reserve and existing five-square cap",
+    "uniform weak-middle routing and complete high-floor branch",
+    "complete low-floor main-height theorem",
+    "complete above-side exclusion; original lower-side envelope followed by complete below-side transfer",
+    "central physical clearance, exhaustive routing and at-most-one-lower count",
+    "complete upper-central order and original whole-floor theorem",
+    "original endpoint-span V>0 contradiction and exact coordinate/chain reversal"
+  ],
+  "fixed_accounting": {
+    "masks": 32,
+    "closed": 6,
+    "open": 26,
+    "roadmap_ids": 15,
+    "original_roots": 7915,
+    "historical_closed_q_exclusions": 5838,
+    "original_roots_open": 2077,
+    "new_root_exclusions": 0,
+    "unrestricted_theorem": "OPEN",
+    "global_equality": "OPEN",
+    "global_manuscript": "OPEN"
+  }
+}

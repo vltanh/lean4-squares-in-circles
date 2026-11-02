@@ -46,9 +46,11 @@
       "000/00",
       "000/01",
       "000/10",
-      "010/00"
+      "010/00",
+      "010/01",
+      "010/10"
     ],
-    "open_mask_count": 28,
+    "open_mask_count": 26,
     "all_original_physical_pairs_retained": true,
     "all_nine_squares_retained": true,
     "new_mask_closures_in_this_reset": [],
@@ -60,7 +62,9 @@
     "completion_percentage": null,
     "new_mask_closures_in_this_continuation": [
       "000/01",
-      "000/10"
+      "000/10",
+      "010/01",
+      "010/10"
     ]
   },
   "proof_library": {
@@ -72,7 +76,12 @@
     "latest_conditional_checkpoint": "A2_OUTWARD_OWNER_PERIMETER_AND_EXTREME_ROUTING_CHECKPOINT.md",
     "scope_rule": "Every imported theorem keeps all printed hypotheses; no missing caller is inferred from an asset title or prior status.",
     "dependency_chain_independently_reaudited_in_this_reset": false,
-    "whole_00001_terminal": "A2_000_01_WHOLE_DOMAIN_HAND_TABLE_PROOF.md"
+    "whole_00001_terminal": "A2_000_01_WHOLE_DOMAIN_HAND_TABLE_PROOF.md",
+    "whole_01001_terminal": "A2_010_01_WHOLE_DOMAIN_ASSEMBLY.md",
+    "widened_five_cap": "WIDENED_JOINT_FIVE_SQUARE_CAP.md",
+    "actual_four_full_sides": "ACTUAL_FOUR_FULL_SIDE_OCCUPANCY_CLOSED_HAND_PROOF.md",
+    "actual_four_singleton_floor": "CENTRAL_SINGLETON_FLOOR_HAND_TABLE_PROOF.md",
+    "actual_four_two_low_mains": "TWO_LOW_MAINS_CENTRAL_EXCLUSION_HAND_TABLE.md"
   },
   "gates": [
     {
@@ -224,6 +233,28 @@
     "solver_availability_evidence": "Earlier environment at add3c530 ran Z3 shared-library controls; current executor has no Z3 shared library. No global UNSAT certificate."
   },
   "latest_continuation": {
+    "date": "2026-11-02",
+    "kind": "TWO_MORE_COMPLETE_FIXED_MASK_CLOSURES",
+    "source": "A2_010_01_WHOLE_DOMAIN_ASSEMBLY.md",
+    "closure_record": "A2_010_01_VERIFIED_CLOSURE_2026_11_02.md",
+    "closed_masks": [
+      "010/01",
+      "010/10"
+    ],
+    "closed_q": "EXCLUDED",
+    "new_strict_interval_leaves": 811086,
+    "inherited_cap_strict_interval_leaves": 3927,
+    "inherited_cap_analytic_leaves": 34,
+    "new_rational_clearance_rows": 24,
+    "all_exact_replays_passed": true,
+    "independent_agent_geometry_and_assembly_review": true,
+    "corruption_controls_rejected": 25,
+    "human_or_kernel_verification": false,
+    "new_original_root_exclusions": 0,
+    "new_global_gate_closures": 0,
+    "lean_lake_ci_run": false
+  },
+  "preceding_complete_continuation": {
     "date": "2026-11-02",
     "kind": "TWO_COMPLETE_FIXED_MASK_CLOSURES",
     "source": "A2_000_01_WHOLE_DOMAIN_HAND_TABLE_PROOF.md",

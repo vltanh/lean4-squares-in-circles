@@ -1,0 +1,15 @@
+{
+  "owner": "E",
+  "chart": "up",
+  "nodes": 491,
+  "interval_leaves": 243,
+  "analytic_leaves": 3,
+  "maximum_depth": 20,
+  "largest_replayed_upper": "-1014195892802533/2305843009213693952",
+  "complete": true,
+  "seconds": 2.8443631589980214,
+  "proof_status": "independent_wider_outer_replay_passed",
+  "certificate_sha256": "d9a08f01f76922cd8b86f680aaf0d21cbf5f5dde81a5f5432565de8ea7fcc8fe",
+  "checker_sha256": "2917743ad473fa4919bb304f301fae4f1277993f513f0f83c45b9cca9488f2b4",
+  "arithmetic_sha256": "e9a077c6ed871e402f5e43604137a011428ffe9f0d5dcf18d2e1651dd1290c1f"
+}

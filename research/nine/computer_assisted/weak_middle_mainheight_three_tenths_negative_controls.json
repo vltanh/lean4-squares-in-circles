@@ -1,0 +1,29 @@
+{
+  "status": "ALL_INVALID_TREES_REJECTED",
+  "controls": [
+    {
+      "name": "incomplete_tree",
+      "rejected": true,
+      "returncode": 1,
+      "reason": "AssertionError: ('incomplete tree', 2)"
+    },
+    {
+      "name": "invalid_axis",
+      "rejected": true,
+      "returncode": 1,
+      "reason": "AssertionError: ('invalid split', 0, 99)"
+    },
+    {
+      "name": "false_root_leaf",
+      "rejected": true,
+      "returncode": 1,
+      "reason": "AssertionError: ('false leaf', 0, 0, '-532076610731623828126855/1208925819614629174706176', ((Fraction(0, 1), Fraction(1, 1)), (Fraction(0, 1), Fraction(1, 1)), (Fraction(-23, 405), Fraction(23, 60)), (Fraction(23, 30), Fraction(13, 12)), (Fraction(1, 2), Fraction(13, 20))))"
+    },
+    {
+      "name": "noninteger_tag",
+      "rejected": true,
+      "returncode": 1,
+      "reason": "AssertionError: ('noninteger tag', 0)"
+    }
+  ]
+}

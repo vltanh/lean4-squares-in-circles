@@ -1,0 +1,48 @@
+{
+  "status": "EXACT_REPLAY_PASSED",
+  "scope": "010/01 low-floor excludes below-main extras on both sides, conditional on exact side-height bump-plus1/400 envelope; full mask still requires central-extra argument",
+  "nodes": 736249,
+  "leaves": 368125,
+  "max_depth": 43,
+  "leaf_rules": {
+    "0": 24838,
+    "1": 47,
+    "2": 58,
+    "3": 757,
+    "5": 24594,
+    "6": 59854,
+    "8": 91488,
+    "9": 279,
+    "12": 66466,
+    "13": 99744
+  },
+  "root": [
+    [
+      "0",
+      "1"
+    ],
+    [
+      "0",
+      "1"
+    ],
+    [
+      "-23/405",
+      "23/60"
+    ],
+    [
+      "23/30",
+      "13/12"
+    ],
+    [
+      "1/2",
+      "13/20"
+    ]
+  ],
+  "scale": 1208925819614629174706176,
+  "minimum_exact_reserve": "2193945960125041/151115727451828646838272",
+  "certificate_sha256": "db6894140b37c3ffb69a45b2f2fe68e8c928c5b00b562e7601a777dfa5fb45a5",
+  "seconds": 669.2744764730014,
+  "arithmetic": "Directed fixed-point integer arithmetic, rational roots and integer square roots only",
+  "full_masks_closed": 0,
+  "human_or_kernel_verification": false
+}

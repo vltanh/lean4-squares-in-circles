@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "arithmetic": "Python Fraction exact rational arithmetic",
+  "rows": [
+    {
+      "h_interval": [
+        "1/2",
+        "23/40"
+      ],
+      "g_lower": "10/23",
+      "center_height_upper": "91/60",
+      "reserve": "14693/952200"
+    },
+    {
+      "h_interval": [
+        "23/40",
+        "3/5"
+      ],
+      "g_lower": "5/12",
+      "center_height_upper": "481/320",
+      "reserve": "1643/184320"
+    },
+    {
+      "h_interval": [
+        "3/5",
+        "5/8"
+      ],
+      "g_lower": "2/5",
+      "center_height_upper": "473/320",
+      "reserve": "13319/921600"
+    },
+    {
+      "h_interval": [
+        "5/8",
+        "13/20"
+      ],
+      "g_lower": "5/13",
+      "center_height_upper": "93/64",
+      "reserve": "3232367/155750400"
+    },
+    {
+      "h_interval": [
+        "13/20",
+        "17/24"
+      ],
+      "g_lower": "6/17",
+      "center_height_upper": "457/320",
+      "reserve": "1917191/266342400"
+    }
+  ],
+  "scope": "Upper-column pair theorem and arithmetic constants; not a mask closure"
+}

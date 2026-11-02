@@ -1,0 +1,51 @@
+{
+  "status": "EXACT_REPLAY_PASSED",
+  "scope": "010/01 low-floor excludes every above-main extra on both closed side strips, given reviewed routing and inset bootstrap; full mask still requires below-side and central-extra arguments",
+  "nodes": 322471,
+  "leaves": 161236,
+  "max_depth": 30,
+  "leaf_rules": {
+    "0": 7265,
+    "1": 31,
+    "2": 51,
+    "3": 4238,
+    "5": 5473,
+    "6": 14553,
+    "8": 8632,
+    "9": 66,
+    "12": 120927
+  },
+  "root": [
+    [
+      "0",
+      "1"
+    ],
+    [
+      "0",
+      "1"
+    ],
+    [
+      "-23/405",
+      "23/60"
+    ],
+    [
+      "23/30",
+      "13/12"
+    ],
+    [
+      "1/2",
+      "13/20"
+    ],
+    [
+      "0",
+      "1"
+    ]
+  ],
+  "scale": 1208925819614629174706176,
+  "minimum_exact_reserve": "91020787871806855/1208925819614629174706176",
+  "certificate_sha256": "9f539289f73dcdca07aca75ec083e9dc96f0bd2db27d1d51e2f3781a22b63c40",
+  "seconds": 79.24433008600317,
+  "arithmetic": "Directed fixed-point integer arithmetic, rational roots and integer square roots only",
+  "full_masks_closed": 0,
+  "human_or_kernel_verification": false
+}

@@ -1,4 +1,39 @@
-# Current A.2 handoff: 000/01 and 000/10 closed; continue with 000/11
+# Current A.2 handoff: six masks closed; continue with 000/11
+
+## Latest complete weak-middle closure
+
+The full 010/01 and 010/10 predicates are excluded at closed Q=1105/256.
+Read `A2_010_01_WHOLE_DOMAIN_ASSEMBLY.md`,
+`A2_010_01_VERIFIED_CLOSURE_2026_11_02.md`, and
+`computer_assisted/mask_01001_closure_manifest.json`.
+
+Six new finite covers passed independent exact replay, with 811,086
+strict leaves and two twelve-row physical-clearance tables. The inherited
+five-square cap contributes 3,927 strict leaves and 34 analytic leaves.
+Twenty-five damaged or false new certificates were rejected. The complete
+physical assembly has independent agent review, with no human or kernel
+verification claimed and no Lean, Lake, or CI.
+
+The complete floor split uses both original extras to produce an original
+upper central unit with whole floor >1/10 when P lacks that floor.
+The cap gives endpoint span <=2, contradicting the weak middle's
+retained span >=2+V>2. The full inner-width range up to 13/20 is retained.
+
+For the remaining 000/11 selection, accepted reusable inputs now include
+`WIDENED_JOINT_FIVE_SQUARE_CAP.md`,
+`UPPER_COLUMN_SEPARATION_HAND_TABLE.md`,
+`ACTUAL_FOUR_FULL_SIDE_OCCUPANCY_CLOSED_HAND_PROOF.md`,
+`CENTRAL_SINGLETON_FLOOR_HAND_TABLE_PROOF.md`,
+`LOW_SIDE_UNIT_FORCES_SAME_SIDE_CENTRAL_FLOOR.md`, and
+`TWO_LOW_MAINS_CENTRAL_EXCLUSION_HAND_TABLE.md`.
+The complete (2,1,2) occupancy is settled; the remaining selection is
+(2,2,1), with full-side main bottom or middle up to reflection, and
+occupancies with at least three central outsiders. These are internal
+proof distinctions, not new mandatory global gates. Every complement
+must close before changing 000/11.
+
+The preceding accepted 000/01 and 000/10 record follows. Its exact tables
+need no rerun without a concrete new acceptance concern.
 
 November 2, 2026, America/Chicago.
 
@@ -66,9 +101,9 @@ without deriving its hypotheses or treating the full complement.
 
 ## Fixed accounting
 
-- 32 masks: 4 closed for strict radius, 28 OPEN.
-- Closed masks: 000/00 (equality retained), 000/01, 000/10, 010/00
-  (the latter three excluded at closed Q).
+- 32 masks: 6 closed for strict radius, 26 OPEN.
+- Closed masks: 000/00 (equality retained), 000/01, 000/10, 010/00,
+  010/01, 010/10 (the latter five excluded at closed Q).
 - 7,915 original positional roots: historical 5,838 closed-Q excluded,
   2,077 OPEN. No new root manifest or exclusion count is claimed.
 - Same 15 roadmap IDs. A.2 and global equality/manuscript gates remain

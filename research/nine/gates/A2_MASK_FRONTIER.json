@@ -36,8 +36,8 @@
     8
   ],
   "mask_count": 32,
-  "closed_for_strict_radius_count": 4,
-  "open_count": 28,
+  "closed_for_strict_radius_count": 6,
+  "open_count": 26,
   "new_closures_in_this_reset": 0,
   "completion_percentage": null,
   "termination_of_proof_discovery_proved": false,
@@ -68,6 +68,16 @@
       "review_status": "Fresh independent exact replay of all 9 tables plus independent agent analytic and physical-coverage review; no human or kernel verification",
       "strict_interval_leaves": 137252,
       "additional_analytic_leaves": 34
+    },
+    "whole_01001": {
+      "source": "../A2_010_01_WHOLE_DOMAIN_ASSEMBLY.md",
+      "location": "Sections 1-5",
+      "scope": "Complete original nine-square 010/01 and reversed 010/10 predicates impossible even at closed Q",
+      "review_status": "Six new complete independent exact replays, independent agent physical and assembly audits; no human or kernel verification",
+      "new_strict_interval_leaves": 811086,
+      "inherited_cap_strict_interval_leaves": 3927,
+      "inherited_cap_analytic_leaves": 34,
+      "new_rational_clearance_rows": 24
     }
   },
   "rows": [
@@ -117,11 +127,15 @@
     },
     {
       "id": "010/01",
-      "status": "OPEN"
+      "status": "CLOSED_STRICT",
+      "closed_q": "EXCLUDED",
+      "proof": "whole_01001"
     },
     {
       "id": "010/10",
-      "status": "OPEN"
+      "status": "CLOSED_STRICT",
+      "closed_q": "EXCLUDED",
+      "proof": "whole_01001"
     },
     {
       "id": "010/11",
@@ -208,6 +222,6 @@
       "status": "OPEN"
     }
   ],
-  "latest_closure": "A2_000_01_VERIFIED_CLOSURE_2026_11_02.md",
-  "new_closures_in_this_continuation": 2
+  "latest_closure": "A2_010_01_VERIFIED_CLOSURE_2026_11_02.md",
+  "new_closures_in_this_continuation": 4
 }

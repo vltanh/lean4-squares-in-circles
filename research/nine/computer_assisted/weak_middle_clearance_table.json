@@ -1,0 +1,118 @@
+{
+  "status": "EXACT_TABLE_PASSED",
+  "rows": [
+    {
+      "h_low": "1/2",
+      "h_high": "41/80",
+      "k_low": "487179/1000000",
+      "k_high": "1/2",
+      "chirality_plus_distance2_upper": "3808851977369/16000000000000",
+      "chirality_minus_distance2_upper": "23441378396321/100000000000000",
+      "distance2_upper_rounded": "119027/500000"
+    },
+    {
+      "h_low": "41/80",
+      "h_high": "21/40",
+      "k_low": "236841/500000",
+      "k_high": "24359/50000",
+      "chirality_plus_distance2_upper": "932113429381/4000000000000",
+      "chirality_minus_distance2_upper": "356472428293321/1600000000000000",
+      "distance2_upper_rounded": "233029/1000000"
+    },
+    {
+      "h_low": "21/40",
+      "h_high": "43/80",
+      "k_low": "459449/1000000",
+      "k_high": "473683/1000000",
+      "chirality_plus_distance2_upper": "1464836192688349/6400000000000000",
+      "chirality_minus_distance2_upper": "6820796757833/32000000000000",
+      "distance2_upper_rounded": "228881/1000000"
+    },
+    {
+      "h_low": "43/80",
+      "h_high": "11/20",
+      "k_low": "444409/1000000",
+      "k_high": "9189/20000",
+      "chirality_plus_distance2_upper": "14442948196601/64000000000000",
+      "chirality_minus_distance2_upper": "1315686382425341/6400000000000000",
+      "distance2_upper_rounded": "28209/125000"
+    },
+    {
+      "h_low": "11/20",
+      "h_high": "9/16",
+      "k_low": "214239/500000",
+      "k_high": "44441/100000",
+      "chirality_plus_distance2_upper": "14302310480449/64000000000000",
+      "chirality_minus_distance2_upper": "5004718352561/25000000000000",
+      "distance2_upper_rounded": "111737/500000"
+    },
+    {
+      "h_low": "9/16",
+      "h_high": "23/40",
+      "k_low": "411551/1000000",
+      "k_high": "428479/1000000",
+      "chirality_plus_distance2_upper": "284653335749081/1280000000000000",
+      "chirality_minus_distance2_upper": "630819437383109/3200000000000000",
+      "distance2_upper_rounded": "111193/500000"
+    },
+    {
+      "h_low": "23/40",
+      "h_high": "47/80",
+      "k_low": "393501/1000000",
+      "k_high": "12861/31250",
+      "chirality_plus_distance2_upper": "89010288039149/400000000000000",
+      "chirality_minus_distance2_upper": "62903569335181/320000000000000",
+      "distance2_upper_rounded": "111263/500000"
+    },
+    {
+      "h_low": "47/80",
+      "h_high": "3/5",
+      "k_low": "74833/200000",
+      "k_high": "196751/500000",
+      "chirality_plus_distance2_upper": "358488680559601/1600000000000000",
+      "chirality_minus_distance2_upper": "50876508181141/256000000000000",
+      "distance2_upper_rounded": "28007/125000"
+    },
+    {
+      "h_low": "3/5",
+      "h_high": "49/80",
+      "k_low": "88333/250000",
+      "k_high": "187083/500000",
+      "chirality_plus_distance2_upper": "72699449391517/320000000000000",
+      "chirality_minus_distance2_upper": "16311888473/80000000000",
+      "distance2_upper_rounded": "113593/500000"
+    },
+    {
+      "h_low": "49/80",
+      "h_high": "5/8",
+      "k_low": "165359/500000",
+      "k_high": "353333/1000000",
+      "chirality_plus_distance2_upper": "1486129258755077/6400000000000000",
+      "chirality_minus_distance2_upper": "1359564635001197/6400000000000000",
+      "distance2_upper_rounded": "14513/62500"
+    },
+    {
+      "h_low": "5/8",
+      "h_high": "51/80",
+      "k_low": "30593/100000",
+      "k_high": "330719/1000000",
+      "chirality_plus_distance2_upper": "383156704723321/1600000000000000",
+      "chirality_minus_distance2_upper": "359749771759481/1600000000000000",
+      "distance2_upper_rounded": "239473/1000000"
+    },
+    {
+      "h_low": "51/80",
+      "h_high": "13/20",
+      "k_low": "69597/250000",
+      "k_high": "305931/1000000",
+      "chirality_plus_distance2_upper": "1587704592612121/6400000000000000",
+      "chirality_minus_distance2_upper": "6025242801769/25000000000000",
+      "distance2_upper_rounded": "248079/1000000"
+    }
+  ],
+  "maximum_distance2_upper": "248079/1000000",
+  "minimum_reserve": "1921/1000000",
+  "theorem": "For a physical unit square B with1/2<=hB<=13/20 and another disjoint unit S, |xS-xB|<=7/5-hB implies |yS-yB|>3/4.",
+  "full_masks_closed": 0,
+  "human_or_kernel_verification": false
+}

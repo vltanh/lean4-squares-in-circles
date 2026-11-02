@@ -1,6 +1,40 @@
 # n=9: current status and fixed closure queue
 
-## Complete 000/01 and 000/10 proofs now accepted
+## Complete 010/01 and 010/10 proofs now accepted
+
+November 2, 2026. **010/01 and 010/10 are excluded even at closed
+Q=1105/256.** With the preceding 000/01 and 000/10 results, this
+continuation has closed four complete fixed masks. Their physical
+domains and bit conventions are unchanged.
+
+[Complete new assembly](A2_010_01_WHOLE_DOMAIN_ASSEMBLY.md) ·
+[New closure record](A2_010_01_VERIFIED_CLOSURE_2026_11_02.md) ·
+[Exact inventory](computer_assisted/mask_01001_closure_manifest.json)
+
+Six new finite covers passed independent exact replay: 811,086 strict
+leaves. Two twelve-row physical-clearance tables complete the routing.
+The existing five-square cap reuses five accepted tables with 3,927
+strict leaves and 34 analytic leaves. Twenty-five damaged or false new
+certificates were rejected. Independent agents reviewed the physical
+reductions and complete acyclic assembly. No human or proof-kernel
+verification is claimed; no Lean, Lake, or CI was run.
+
+The weak-middle proof retains inner halfwidths up to 13/20. If P has
+high whole floor, the verified five-square cap applies directly.
+Otherwise complete side exclusions put both additional original squares
+in the central strip; one is above both mains, then above P, and has
+whole floor greater than 1/10. This original square supplies every cap
+hypothesis. The weak middle forces original endpoint span >2, while
+the cap gives <=2. The floor split includes its equality face and exact
+reversal proves the partner mask.
+
+The accepted wider five-square cap, complete (2,1,2) actual-four caller,
+central-singleton floor theorem and two-low-mains exclusion also support
+the continuing 000/11 selection argument. They do not close another
+mask by themselves. The remaining selection covers (2,2,1) and
+occupancies with at least three central outsiders, including reflections.
+
+## Preceding complete 000/01 and 000/10 proofs
 
 November 2, 2026, America/Chicago. The complete original nine-square
 `000/01` predicate and its exact reversal `000/10` are excluded even at
@@ -60,10 +94,11 @@ subdomain does not close its parent.
 | Ledger | Established | Still open | Meaning |
 |---|---:|---:|---|
 | Original positional roots | 5,838 closed-Q exclusions | 2,077 | Historical published counts over the same 7,915 stable IDs; not rerun |
-| Fixed hand-proof masks | 4 complete strict-radius proofs | 28 | Same 32 predicates, each retaining all nine physical squares |
+| Fixed hand-proof masks | 6 complete strict-radius proofs | 26 | Same 32 predicates, each retaining all nine physical squares |
 
-The closed masks are `000/00`, `000/01`, `000/10`, and `010/00`.
-The first retains equality; the other three are excluded even at Q.
+The closed masks are `000/00`, `000/01`, `000/10`, `010/00`, `010/01`,
+and `010/10`. The first retains equality; the other five are excluded
+even at Q.
 The ledgers are different covers, are not additive, and are not effort
 percentages. No positional-root closure was inferred from a mask proof.
 Root 7820 contains equality and must not be excluded at closed Q.

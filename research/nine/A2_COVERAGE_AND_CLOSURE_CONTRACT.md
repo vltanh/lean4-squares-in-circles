@@ -2,8 +2,9 @@
 
 November 1, 2026, America/Chicago. Replaces the expanding research queue, not the mathematical sources. Baseline: `ea4ff8bad97a58e2b8633ab69f549acb5352e573`.
 
-**A.2 is OPEN. The November 2 continuation closes the full `000/01` and
-`000/10` domains even at Q; 28 fixed masks remain open.** The existing exhaustive covers are retained. The missing result is closure of their continuous domains, not another list of conditional subcases.
+**A.2 is OPEN. The November 2 continuation closes the full `000/01`,
+`000/10`, `010/01`, and `010/10` domains even at Q; 26 fixed masks
+remain open.** The existing exhaustive covers are retained. The missing result is closure of their continuous domains, not another list of conditional subcases.
 
 ## 1. Two different ledgers must not be conflated
 
@@ -12,7 +13,7 @@ The original positional cover has 7,915 stable root IDs. The published `computer
 A closed-Q exclusion asserts that an entire root is impossible even at q=Q. A sharp lower-bound proof asserts only that its q<Q part is impossible. These are different claims. Root 7820 contains an attaining packing, so it cannot be closed by a closed-Q exclusion. It can eventually have its strict-radius obligation discharged while its equality domain remains nonempty. **Do not demand that the historical closed-Q OPEN count reach zero.**
 
 The hand-proof work queue uses the 32 already introduced marked-chain masks. They are exact domains of nine physical squares with a chosen chain witness, not 32 finite sets of poses. The accepted complete source proofs treat `000/00`, `000/01`, `000/10`,
-and `010/00`; the other 28 remain OPEN. This is not a percentage of effort, nor a replacement for the 7,915 root IDs or the 15 roadmap IDs.
+`010/00`, `010/01`, and `010/10`; the other 26 remain OPEN. This is not a percentage of effort, nor a replacement for the 7,915 root IDs or the 15 roadmap IDs.
 
 ## 2. The unchanged unrestricted physical predicate
 
@@ -92,7 +93,7 @@ Here C means closed for q<Q by an existing sharp hand theorem; X means excluded 
 |---|---|---|---|---|
 | 000 | C | X | X | O |
 | 001 | O | O | O | O |
-| 010 | X | O | O | O |
+| 010 | X | X | X | O |
 | 011 | O | O | O | O |
 | 100 | O | O | O | O |
 | 101 | O | O | O | O |
@@ -113,8 +114,12 @@ The `000/00` and `010/00` results are inherited. The November 2 complete
 proof of `000/01` and its reversal `000/10` is
 `A2_000_01_WHOLE_DOMAIN_HAND_TABLE_PROOF.md`, with fresh exact replay and
 independent review recorded in `A2_000_01_VERIFIED_CLOSURE_2026_11_02.md`.
-It excludes both full domains at closed Q. Conditional endpoint and
-capacity theorems do not change another O without a complete caller.
+It excludes both full domains at closed Q. The subsequent complete
+`010/01` and `010/10` proof is `A2_010_01_WHOLE_DOMAIN_ASSEMBLY.md`,
+with six new independently replayed covers and the complete physical
+audit recorded in `A2_010_01_VERIFIED_CLOSURE_2026_11_02.md`. Those two
+domains are also excluded at closed Q. Conditional endpoint and capacity
+theorems do not change another O without a complete caller.
 
 ## 6. Exact proof sharing by reversal
 
@@ -125,8 +130,9 @@ The map
 
 preserves the physical configuration and converts a witness of mask abc/de into one of mask cba/ed. All relevant halfwidths and inequalities are unchanged. This is an involution and preserves every original pair and corner condition. Thus complete closure of either full domain proves closure of its reversed partner.
 
-In particular `000/01` and `000/10` have equivalent closure obligations.
-The complete November 2 proof closes both by this exact reversal. The
+In particular `000/01` and `000/10` have equivalent closure obligations,
+as do `010/01` and `010/10`. The complete November 2 proofs close both
+pairs by this exact reversal. The
 published denominator remains 32. Reversing only one chosen chain without the corresponding coordinate change is not this argument.
 
 ## 7. The single next proof target
@@ -158,7 +164,7 @@ A change of physical coordinates, expansion of centers, or relabeling used in a 
 
 ## 9. Progress invariant and its limitation
 
-Let U be the subset of the fixed 32 masks with no accepted complete strict-radius proof. At the reset |U|=30; after the two complete November 2 closures |U|=28. A mathematical closure update removes one or more specified elements of U; a new conditional lemma, a narrower angle range, a child split, a source recovery, or a documentation change removes none. Incorrect proofs must be retracted even if that increases |U|.
+Let U be the subset of the fixed 32 masks with no accepted complete strict-radius proof. At the reset |U|=30; after the four complete November 2 closures |U|=26. A mathematical closure update removes one or more specified elements of U; a new conditional lemma, a narrower angle range, a child split, a source recovery, or a documentation change removes none. Incorrect proofs must be retracted even if that increases |U|.
 
 This is a monotone accounting rule for valid accepted closures, **not a theorem that proof discovery terminates**. A finite list can contain very hard continuous statements. Compactness, an integer counter, and a finite mask set do not establish tractability or a uniform finite subdivision bound. No claim of uniformly easy leaves or a completion percentage is made.
 

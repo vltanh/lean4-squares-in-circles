@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "certificate_sha256": "82bacbcb6b7597328fe9b6f2da20c3aa565c5b0688702148fa0843f9e311ee90",
+  "controls": {
+    "missing_subtrees": "REJECTED",
+    "invalid_node_tag": "REJECTED",
+    "false_whole_root_leaf": "REJECTED",
+    "noninteger_tag": "REJECTED"
+  }
+}
