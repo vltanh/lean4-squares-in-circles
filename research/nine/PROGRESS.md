@@ -15,7 +15,7 @@ derivations. No proof program, Lean, Lake, or CI was run.
 ### November 2: an unrestricted structural reduction and a new sharp cap
 
 [UNRESTRICTED_STRUCTURAL_CONTINUATION_2026_11_02.md](UNRESTRICTED_STRUCTURAL_CONTINUATION_2026_11_02.md)
-joins four new hand theorems, each with independent agent hand review.
+joins six new hand theorems, each with independent agent hand review.
 None assumes a bound on the number of coordinate-exceptional pairs.
 
 - [Selective coordinate orders](UNRESTRICTED_FIVE_PROXY_CHAIN_HAND_PROOF.md)
@@ -40,11 +40,29 @@ None assumes a bound on the number of coordinate-exceptional pairs.
   every physical outsider has |x|<13/12, without a coordinate cover. The
   stronger endpoint budget is
   |y_0|+|y_3|+(37/50)(h_0+h_3-1)<=1/8.
+- [Rotating-frame extraction](UNRESTRICTED_ROTATING_FRAME_EXTRACTION_HAND_PROOF.md):
+  retaining both comparison choices at ties gives closed edge sets under
+  rotation. If every frame had both completed heights at most three, the
+  full-grid rank labels would be locally constant and survive a half-turn,
+  contradicting reversal of both orders. Thus some frame always supplies
+  completed4+3 chains. The completed3x3 alternative is no longer a mandatory
+  global branch.
+- [Actual-four side capacity](UNRESTRICTED_ACTUAL_FOUR_CHAIN_SIDE_CAPACITY_HAND_PROOF.md):
+  three closed markers at (3/5,-1), (3/5,0), (3/5,1) capture every right-side
+  square disjoint from the physical endpoint. The internal main square
+  consumes one marker in a closed-disjoint strict-counterexample expansion,
+  leaving at most two outsiders. Reflection gives the left bound, so at
+  least one outsider is central.
 
-The remaining global task is to settle the completed rank-grid and completed
-4+3 alternatives while retaining every physical pair and both extra squares.
-The actual-four branch now localizes all five outsiders but does not yet
-prove their unrestricted capacity. No whole original root has been removed;
+The sharp half-plane cap now also has a complete equality classification:
+all three frames align, the outer centers are (±1,15/16), and the middle
+center is (0,t) with 15/16<=t<=(sqrt(1041)-8)/16.
+
+The remaining global task is to settle the marked completed4+3 chains
+supplied by the rotating-frame theorem, retaining every physical pair and
+both extra squares. The actual-four branch has the narrow outsider strip
+and both side capacities, but the joint five-outsider geometry remains
+open. No whole original root has been removed;
 the canonical published tally stays 5,838 excluded / 2,077 open.
 
 The new [review record](HAND_REVIEW_UNRESTRICTED_STRUCTURAL_CONTINUATION_2026_11_02.md)

@@ -145,9 +145,85 @@ unsupported interior-capture claim or an equality classification.
 The aligned three-square attainer checks exactly. The root agent and a
 second agent independently reviewed the entire derivation.
 
-## 5. Publication boundary
+## 5. Rotating-frame extraction: PASS
 
-All four proofs are accepted as hand theorems in their printed scopes.
+Source: `UNRESTRICTED_ROTATING_FRAME_EXTRACTION_HAND_PROOF.md`.
+
+The orders are explicitly defined only on distinct squares, with no
+self-comparisons. Keeping both choices at a maximal-coordinate tie makes
+each ordered-pair edge set closed in the frame angle. An actual comparison
+in the other coordinate cannot create an additional nonactual edge: maximal
+coordinate dominance would already force an actual comparison in this one.
+Thus the height-at-most-four proof applies unchanged at ties.
+
+Under the temporary hypothesis of height at most three in every frame, all
+nine rank pairs fill the same three-by-three label set. Finite closed edge
+sets give a neighborhood where each order is a subrelation of its value at
+the center angle. Every individual rank can only decrease there. The fixed
+rank sums of 18 force all of them to remain equal. Local constancy on the
+connected half-turn interval is therefore justified, including endpoint
+angles in the relative topology.
+
+The half-turn reverses both orders. The unique (1,1) square would then have
+neither predecessors nor successors in either initial order, contradicting
+the pair cover. This proves the existence of height four. The independently
+checked Greene extraction then yields completed4+3 chains. The nonphysical
+consecutive edges remain marked, and neither extra square is discarded.
+
+The root and an independent agent checked the complete argument. One
+definition precision was corrected before publication: the distinct-square
+condition was made explicit to exclude the tautological zero-gap self-edge.
+
+## 6. Unrestricted actual-four-chain side capacity: PASS
+
+Source: `UNRESTRICTED_ACTUAL_FOUR_CHAIN_SIDE_CAPACITY_HAND_PROOF.md`.
+
+The physical endpoint contains the entire segment at x=503/480 with
+|y|<=221/600 in its interior. Every side unit has a nonextreme section at
+x=3/5. The inscribed-disk and concavity argument correctly rules out a
+section wholly above 1 or below -1. A section avoiding all three markers
+must then be a short left-tip section in one of the two unit gaps.
+
+Both actual side-line formulas and both cross-section gaps were reconstructed
+for each chirality. Their orientation-independent lower bound reduces to
+the printed quartic. All five coefficients were expanded independently
+from its square identity. The exact anchor calculations were also checked:
+
+    P(9/40)=415436159/147456000000,
+    P'(9/40)=-342793/921600000.
+
+The positive second derivative yields the whole-interval bound. The resulting
+open intersection with the endpoint's interior segment is a physical overlap,
+not a comparison of bounding boxes.
+
+For q<Q, common center expansion preserves the actual four-chain and the
+chosen side guard, while the outsider-strip theorem applies afresh. The
+internal main square and three supposed side outsiders would be four
+pairwise closed-disjoint units containing three fixed closed markers. Thus
+the at-most-two-outsiders conclusion is valid with its strict-radius scope.
+The root and another agent independently checked the full proof.
+
+## 7. Complete equality for the sharp three-square cap: PASS
+
+The added Section 8 of `THREE_SQUARE_SHARP_HALFPLANE_CAP_HAND_PROOF.md`
+classifies that terminal's equality without enlarging its global scope.
+Three nonextreme horizontal sections of length at least one, with disjoint
+open intervals and closed captures of two markers, force the middle section
+to be [-1/2,1/2] and both shared endpoints. The strict slice offset makes a
+tilted section strictly longer than one, so the middle square is aligned.
+
+The outer side inequalities can be weak at their captured endpoints. The
+wide-frame and steep-normal exclusions stay strict, and either nonzero
+shallow tilt has a positive linear corner reserve. Thus the outer squares
+also align and their centers are (±1,15/16). The middle center is (0,t),
+where 15/16<=t<=(sqrt(1041)-8)/16. Necessity and sufficiency, including both
+endpoints, were checked by the root and an independent agent. No unrestricted
+nine-square equality classification is inferred.
+
+## 8. Publication boundary
+
+All six proofs and the terminal equality classification are accepted as hand
+theorems in their printed scopes.
 They add no whole canonical-root transfer. The original 15 gates, 7,915
 root IDs, and published 5,838 excluded / 2,077 open tally remain unchanged.
 Unrestricted A.2 and global equality remain open.

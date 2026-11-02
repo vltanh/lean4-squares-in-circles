@@ -13,9 +13,11 @@ mathematical scripts only for checking potential directions. No Lean/Lake/CI.
 **New unrestricted structural results:** the
 [November 2 continuation](UNRESTRICTED_STRUCTURAL_CONTINUATION_2026_11_02.md)
 proves that selective completed coordinate orders have height at most four
-for every physical packing. Every nine-square packing therefore has a
-completed three-by-three rank grid or disjoint completed 4+3 chains. Added
-edges remain nonphysical and their remaining geometry is still open.
+for every physical packing. The new
+[rotating-frame argument](UNRESTRICTED_ROTATING_FRAME_EXTRACTION_HAND_PROOF.md)
+always supplies disjoint completed 4+3 chains in some orthonormal frame.
+Added consecutive edges remain nonphysical; their remaining nine-square
+geometry is still open.
 
 The new [sharp three-square half-plane cap](THREE_SQUARE_SHARP_HALFPLANE_CAP_HAND_PROOF.md)
 forces q>=Q whenever three whole squares lie beyond a line at distance 7/16
@@ -24,6 +26,11 @@ from the disk center, with arbitrary orientations. The
 also gives min(e.c_i)<21/20 for any three squares, and the
 [actual-four-chain outsider strip](UNRESTRICTED_ACTUAL_FOUR_CHAIN_OUTSIDER_STRIP_HAND_PROOF.md)
 now holds for every physical outsider without a coordinate-cover premise.
+The [side-marker theorem](UNRESTRICTED_ACTUAL_FOUR_CHAIN_SIDE_CAPACITY_HAND_PROOF.md)
+further limits a strict counterexample to two outsiders in each side column.
+The three-square half-plane terminal now also has its complete equality
+family, including the free middle height. Global nine-square equality
+remains open.
 
 The entire [two-direction-separable class](TWO_DIRECTION_SEPARABLE_NINE_HAND_PROOF_2026_11_01.md),
 including all parallel-square packings, now has a complete sharp hand proof.

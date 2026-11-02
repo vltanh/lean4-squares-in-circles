@@ -72,7 +72,8 @@
       "verification": "root and independent agent hand reconstruction; closed-marker equality and strict-counterexample expansion checked",
       "scope": "three arbitrary physical unit squares wholly in a half-plane at distance7/16 from the disk center",
       "global_caller_proved": false,
-      "new_full_root_exclusions": 0
+      "new_full_root_exclusions": 0,
+      "equality": "Complete for this three-square cap: aligned outer centers(±1,15/16), middle(0,t),15/16<=t<=(sqrt1041-8)/16."
     }
   ],
   "known_inputs": [
@@ -274,7 +275,17 @@
     {
       "asset": "THREE_SQUARE_SHARP_HALFPLANE_CAP_HAND_PROOF.md",
       "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
-      "scope": "Sharp physical three-square half-plane terminal beyond distance7/16; closed-marker and strict-counterexample proof"
+      "scope": "Sharp physical three-square half-plane terminal beyond distance7/16, with complete equality family; closed-marker and strict-counterexample proof"
+    },
+    {
+      "asset": "UNRESTRICTED_ROTATING_FRAME_EXTRACTION_HAND_PROOF.md",
+      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
+      "scope": "Unconditional rotating-frame completed4+3 extraction by closed comparison sets, locally constant full-grid ranks and half-turn contradiction; added consecutive edges remain weak"
+    },
+    {
+      "asset": "UNRESTRICTED_ACTUAL_FOUR_CHAIN_SIDE_CAPACITY_HAND_PROOF.md",
+      "status": "HAND_PROOF_AND_INDEPENDENT_AGENT_HAND_CHECK",
+      "scope": "Closed three-marker capture on each side of an actual four-chain; at most two outsiders per side in a strict counterexample"
     }
   ],
   "gates": [
@@ -407,15 +418,19 @@
     "one_exception_theorem_source": "ONE_EXCEPTION_NINE_HAND_PROOF_2026_11_02.md",
     "unrestricted_counterexample_guard": "At least two coordinate-exceptional pairs in every orthonormal frame; no universal cover/terminal extraction proved.",
     "proof_review_source": "HAND_REVIEW_NINE_SQUARE_CONTINUATION_2026_11_01.md",
-    "unrestricted_structural_reduction": "PROVED_SELECTIVE_COMPLETED_HEIGHT_AT_MOST_FOUR_AND_GLOBAL_COMPLETED_GRID_OR_FOUR_PLUS_THREE_DICHOTOMY",
+    "unrestricted_structural_reduction": "PROVED_GLOBAL_ROTATING_FRAME_COMPLETED_FOUR_PLUS_THREE_EXTRACTION",
     "unrestricted_structural_source": "UNRESTRICTED_FIVE_PROXY_CHAIN_HAND_PROOF.md",
     "physical_three_square_halfplane_cap": "PROVED_SHARP_Q_BOUND_FOR_THREE_WHOLE_SQUARES_BEYOND_DISTANCE_7_OVER_16",
     "three_center_cap": "PROVED_UNRESTRICTED_MIN_PROJECTION_LT_21_OVER_20",
     "actual_four_chain_outsider_strip": "PROVED_FOR_EVERY_PHYSICAL_OUTSIDER_ABS_X_LT_13_OVER_12",
     "normalized_boundary_three_center_guard": "At least seven of the eight other centers have x<21/20; all eight retain x<H.",
-    "unrestricted_remaining_geometry": "Completed3x3 rank grid and completed4+3 chains retain weak added edges; no complete global terminal extraction or full outsider capacity proved.",
+    "unrestricted_remaining_geometry": "Some frame always supplies completed4+3 chains; consecutive added edges remain weak and both extra squares must be retained. Actual-four branch has the outsider strip and side capacities; remaining joint middle/side capacity is open.",
     "unrestricted_structural_review_source": "HAND_REVIEW_UNRESTRICTED_STRUCTURAL_CONTINUATION_2026_11_02.md",
-    "unrestricted_synthesis_source": "UNRESTRICTED_STRUCTURAL_CONTINUATION_2026_11_02.md"
+    "unrestricted_synthesis_source": "UNRESTRICTED_STRUCTURAL_CONTINUATION_2026_11_02.md",
+    "unrestricted_rotating_frame_source": "UNRESTRICTED_ROTATING_FRAME_EXTRACTION_HAND_PROOF.md",
+    "unrestricted_completed_grid": "REMOVED_AS_MANDATORY_GLOBAL_BRANCH_BY_ROTATING_FRAME",
+    "actual_four_chain_side_capacity": "PROVED_AT_MOST_TWO_OUTSIDERS_PER_SIDE_FOR_STRICT_SUBCRITICAL_PACKINGS",
+    "physical_three_square_halfplane_equality": "COMPLETE_ALIGNED_OUTER_PAIR_AND_FREE_MIDDLE_HEIGHT_FAMILY"
   }
 }
 

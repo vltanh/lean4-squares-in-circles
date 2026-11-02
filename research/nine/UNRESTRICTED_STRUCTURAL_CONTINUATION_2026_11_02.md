@@ -1,7 +1,7 @@
 # Unrestricted structural hand continuation
 
 November 2, 2026. **The unrestricted lower bound and global equality
-classification remain OPEN.** This checkpoint proves four new statements
+classification remain OPEN.** This checkpoint proves six new statements
 without imposing a coordinate cover or limiting the number of exceptional
 pairs. The complete orthogonal one-exception theorem remains available.
 
@@ -60,6 +60,35 @@ All added edges remain marked as nonphysical comparisons. The old physical
 4+3 theorem cannot be applied to an arbitrary completed 4+3 pair of chains.
 The argument does not infer a geometric grid from a Greene partition.
 
+### Rotation always supplies the completed four-plus-three alternative
+
+[UNRESTRICTED_ROTATING_FRAME_EXTRACTION_HAND_PROOF.md](UNRESTRICTED_ROTATING_FRAME_EXTRACTION_HAND_PROOF.md)
+now removes the completed rank grid as a mandatory global case. Retain both
+maximal-coordinate comparisons at a tie. For distinct squares S,T, the
+completed x relation is exactly
+
+\[
+x_T-x_S\ge h_S+h_T\quad\hbox{or}\quad
+x_T-x_S\ge|y_T-y_S|.
+\]
+
+These edge sets are closed as the frame rotates, and the height-at-most-four
+proof still applies. If both heights were at most three for every angle,
+the nine ending-rank pairs would always fill the full three-by-three grid.
+At any fixed angle, every absent comparison remains absent nearby. Thus all
+nearby ranks can only decrease; their fixed coordinate sums of 18 force
+every individual rank to be locally constant. Connectedness makes the labels
+constant through a half-turn. But the square labeled (1,1) would then be
+both minimal and maximal in both original orders, contradicting pair
+coverage with the other eight squares.
+
+Some frame therefore has completed height four, and the same Greene argument
+extracts disjoint completed chains of lengths four and three. **Every
+unrestricted nine-square packing in the Q-disk has such a frame.** Only
+the consecutive chain comparisons may remain added edges. The two other
+physical squares are still retained. The remaining global obligation is now
+the geometric treatment of these marked chains.
+
 ## 2. A sharp physical cap for three whole squares
 
 [THREE_SQUARE_SHARP_HALFPLANE_CAP_HAND_PROOF.md](THREE_SQUARE_SHARP_HALFPLANE_CAP_HAND_PROOF.md)
@@ -69,9 +98,13 @@ proves the following new terminal:
 > e·x >= 7/16, with disjoint open interiors, require squared containing
 > radius at least Q.
 
-The statement is sharp: take aligned centers (-1,15/16), (0,15/16), and
-(1,15/16), in a frame with e vertical. The two outer upper corners have
-squared norm Q.
+The statement is sharp, and its entire three-square equality family is now
+classified: all three frames are aligned, the outer centers are
+(-1,15/16) and (1,15/16), and the middle center is (0,t), with
+15/16<=t<=(sqrt(1041)-8)/16. The three horizontal sections at height 7/6
+force the middle interval to be exactly [-1/2,1/2]; the strict section-length
+and corner reserves then force the stated alignment and outer positions.
+This is equality classification for the three-square terminal only.
 
 The proof establishes a closed two-point capture statement. Every individual
 Q-contained square whose lower edge is at least 7/16 contains at least one
@@ -141,16 +174,30 @@ square gives an exhaustive separating-axis inequality. An outsider with
 |x|>=13/12 would then have an actual corner outside the Q-disk. The scalar
 orientation bound is proved continuously and has a printed rational reserve.
 
-Thus, if an unrestricted nine-square packing has an actual four-chain,
-all five outsiders lie in this strip. Their coordinate comparisons and
-their five-body capacity are still to be established; they are not imported
-from the earlier one-exception argument.
+The follow-up
+[UNRESTRICTED_ACTUAL_FOUR_CHAIN_SIDE_CAPACITY_HAND_PROOF.md](UNRESTRICTED_ACTUAL_FOUR_CHAIN_SIDE_CAPACITY_HAND_PROOF.md)
+proves that any unit with center 29/60<=x<=13/12 and disjoint from the
+right main endpoint contains one of (3/5,-1), (3/5,0), (3/5,1). The exact
+section formula, an endpoint segment inside the physical main square, and
+one quartic prove this closed three-point capture for every orientation.
+
+After a common strict-counterexample expansion, the internal main square
+already consumes one of those three markers. Therefore at most two outsiders
+can lie on that side. Reflection gives the same bound on the left. At least
+one of the five outsiders has |x|<29/60. This is a strict-subcritical capacity
+bound; closed markers are not silently promoted to interior captures at Q.
+
+The remaining middle-occupancy and joint five-body capacities still need
+physical proofs. Coordinate separation among the outsiders is not inferred
+from their marker assignments or imported from the one-exception argument.
 
 ## 5. Remaining original goal and method record
 
 The remaining unrestricted geometry is now concrete: settle the completed
-three-by-three branch and the completed four-plus-three branch, retaining
-all physical pairs and both additional squares. Available exits include
+four-plus-three chains supplied by the rotating-frame theorem, retaining
+all physical pairs and both additional squares. A fixed frame may still have
+a completed rank grid, but this is no longer a necessary global branch.
+Available exits include
 the physical 4+3 terminal, the sharp three-square half-plane cap, the proved
 one-exception theorem, and the earlier two-strip terminal. This document
 does not claim that every completed chain is physical or that one of those
@@ -162,7 +209,7 @@ excluded / 2,077 open**. The earlier archive-only 312 exclusions remain
 separate. A.2, unrestricted equality, and the final complete manuscript stay
 open.
 
-All four accepted proofs have complete hand derivations and independent
+All six accepted proofs have complete hand derivations and independent
 agent hand review. Two numerical direction experiments occurred across the
 current continuation: the earlier 48-start three-square-cap exploration and
 a later 48-start four-square side-strip exploration. Neither experiment is

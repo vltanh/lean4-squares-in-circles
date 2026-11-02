@@ -45,9 +45,11 @@ The newest broad hand results are:
 
 - [Unrestricted structural continuation](UNRESTRICTED_STRUCTURAL_CONTINUATION_2026_11_02.md):
   selective completed coordinate orders have height at most four for every
-  physical packing. Nine squares therefore yield a completed3x3 grid or
-  disjoint completed4+3 chains. Added comparisons retain their weaker
-  status; those complete geometric alternatives remain open.
+  physical packing. The
+  [rotating-frame theorem](UNRESTRICTED_ROTATING_FRAME_EXTRACTION_HAND_PROOF.md)
+  always selects a frame with completed4+3 chains. The completed3x3
+  alternative is no longer required globally. Added consecutive comparisons
+  retain their weaker status and require a physical nine-square argument.
 - [Sharp physical three-square half-plane cap](THREE_SQUARE_SHARP_HALFPLANE_CAP_HAND_PROOF.md):
   three whole units beyond a line at distance 7/16 force q>=Q, with no
   coordinate-cover premise. The proof handles closed-marker equality by
@@ -56,8 +58,10 @@ The newest broad hand results are:
   min(e.c_i)<21/20 for every three units. At least seven of the eight other
   normalized centers satisfy x<21/20.
 - [Actual-four-chain outsider strip](UNRESTRICTED_ACTUAL_FOUR_CHAIN_OUTSIDER_STRIP_HAND_PROOF.md):
-  every physical outsider satisfies |x|<13/12. A five-outsider capacity
-  theorem is still needed without the old one-exception premise.
+  every physical outsider satisfies |x|<13/12. The
+  [side-marker theorem](UNRESTRICTED_ACTUAL_FOUR_CHAIN_SIDE_CAPACITY_HAND_PROOF.md)
+  further bounds each side by two outsiders in a strict counterexample.
+  The remaining joint five-outsider geometry still needs a proof.
 
 - The entire two-direction separation-cover class, with arbitrary angle and
   independent square frames, is proved in

@@ -32,7 +32,8 @@ The bound is attained by three aligned squares centered at
 
 Their lower edges are at 7/16; the outer corners
 \((\pm3/2,23/16)\) have squared norm Q. Thus (1) is sharp.
-No claim of a full equality classification is needed or made here.
+The complete equality family for this three-square terminal is given in
+Section 8. It does not classify unrestricted nine-square equality.
 
 The proof uses the completed unrestricted center-cap theorem
 `THREE_SQUARE_DIRECTIONAL_CAP_21_OVER_20_HAND_PROOF.md` only for an
@@ -307,7 +308,74 @@ No strict-interior claim about the half-unit markers is used in this last
 argument. Equality packings may share them on boundaries, as the attaining
 aligned example demonstrates.
 
-## 8. Rotated form and exact scope
+## 8. Complete equality classification for this cap
+
+Suppose the three squares satisfy the cap hypothesis and fit in the Q-disk.
+Take their horizontal sections at height kappa, and order the resulting
+closed intervals as I_L, I_M, I_R. Each has length at least one, each
+contains a marker from {-1/2,1/2}, and their open intervals are pairwise
+disjoint. The latter follows because the slicing line lies strictly between
+each square's extreme vertical coordinates.
+
+These facts force
+
+\[
+\sup I_L=-\frac12,\qquad
+I_M=[-1/2,1/2],\qquad
+\inf I_R=\frac12.                                      \tag{14}
+\]
+
+Here is the complete interval argument. The first interval cannot contain
+the right marker: otherwise the second must start there to meet either
+marker, and its length at least one leaves no marker for the third.
+Symmetrically the third cannot contain the left marker. If the middle
+contains the left marker, disjoint interiors force its left endpoint and
+the first interval's right endpoint to equal -1/2. Its length at least one
+then forces its right endpoint and the third interval's left endpoint to
+equal 1/2. If it contains the right marker, the reflected argument gives
+the same conclusion.
+
+For a nonaligned frame, the strict offset bound proved in Section 2 makes
+the section length strictly greater than one: in the opposite-side regime
+it equals 1/a>1, and in the adjacent-side regime it is greater than one by
+|t|<h-ab. Hence the middle square is aligned. Equation (14) puts its center
+at (0,t). The cap and corner-containment inequalities are exactly
+
+\[
+\frac{15}{16}\le t\le
+\rho_*:=\sqrt{Q-\frac14}-\frac12
+       =\frac{\sqrt{1041}-8}{16}.                       \tag{15}
+\]
+
+For the right square, (14) gives the side inequality (7) with a weak
+inequality instead of a strict one. The larger-halfwidth case of Section 3
+is still impossible: its section would contain an interior point with
+horizontal coordinate at most 499/1000, although its left endpoint is
+1/2. Both steep-normal cases remain strictly impossible by their unchanged
+center bounds.
+
+In the shallow upward case, (10) is strictly positive whenever s>0. In the
+shallow downward case, (13) is strictly positive whenever u>0 because p>K.
+All remaining squared increments are nonnegative. Thus a nonzero tilt would
+force a corner norm strictly above Q. The right square is aligned. Its left
+section endpoint fixes its center x-coordinate at 1; the cap gives Y>=15/16,
+while the corner (3/2,Y+1/2) has norm at most sqrt(Q). These inequalities
+force Y=15/16. Reflection gives the left center (-1,15/16).
+
+Consequently all equality configurations for the stated cap, up to
+relabeling, are precisely the three aligned squares with centers
+
+\[
+\boxed{(-1,15/16),\quad(0,t),\quad(1,15/16),
+\qquad 15/16\le t\le\rho_*.}                          \tag{16}
+\]
+
+Conversely, every value in (15) gives a valid packing: the open horizontal
+projections are disjoint, all lower edges meet the cap guard, the outer
+squares attain Q, and the middle square is contained exactly by (15).
+This proves necessity and sufficiency, including both endpoints.
+
+## 9. Rotated form and exact scope
 
 For any unit direction e, if three whole physical unit squares lie in
 the half-plane \(e\cdot x\ge7/16\), their enclosing centered disk
@@ -315,8 +383,9 @@ has squared radius at least Q. Reflection gives the corresponding lower
 cap statement. Therefore a strict subcritical nine-square packing has
 at most two whole squares in each such cap.
 
-This supplies an unrestricted physical terminal that can be used without
-first proving coordinate separation among those three squares. It does
-not assert that a full nine-square configuration must contain such a
-triple, and it makes no global equality-classification claim.
+This supplies an unrestricted physical terminal, with its complete
+three-square equality family, that can be used without first proving
+coordinate separation among those three squares. It does not assert that
+a full nine-square configuration must contain such a triple, and it makes
+no unrestricted nine-square equality-classification claim.
 
