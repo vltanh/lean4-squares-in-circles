@@ -2,9 +2,9 @@
 
 ## Highest-priority execution rule: no local-lemma rabbit hole
 
-[Current mandatory handoff protocol](HANDOFF_A2_FIXED_CLOSURE.md). The **exhaustive full-original-nine `001/00` cover is now certified**, with 231 fixed cells at adoption, **152 closed and 79 OPEN**. See the [hand/table assembly](A2_00100_PHYSICAL_PAIR_CLOSURE_CHECKPOINT.md) and [stable register](gates/A2_00100_FIXED_FRONTIER.json). Attach every further argument to a named OPEN original cell, another complete fixed mask, or a global terminal-extraction theorem. An unfinished internal subtree leaves its original parent OPEN. If stalled, document the blocker and pivot to a materially different whole-domain argument.
+[Current mandatory handoff protocol](HANDOFF_A2_FIXED_CLOSURE.md). The **exhaustive full-original-nine `001/00` cover is now certified**, with 231 fixed cells at adoption, **159 closed and 72 OPEN**. See the [latest hand/table assembly](A2_00100_BOUND_PAIR_CONTINUATION.md) and [stable register](gates/A2_00100_FIXED_FRONTIER.json). Attach every further argument to a named OPEN original cell, another complete fixed mask, or a global terminal-extraction theorem. An unfinished internal subtree leaves its original parent OPEN. If stalled, document the blocker and pivot to a materially different whole-domain argument.
 
-**Metric:** count the uncovered original cells of the certified cover: **79**, with all 231 IDs retained. Local proof leaves, solver runs and auxiliary lemmas do not change that count. Track original strict bits and `q<Q` boundary faces. No change to the 8-closed/24-open 32-mask ledger, 5,838/2,077 historical root ledger or 15 gate IDs without the corresponding complete original-domain proof. Computer discovery and independent exact arithmetic replay precede the hand/table argument; no Lean/Lake/CI.
+**Metric:** count the uncovered original cells of the certified cover: **72**, with all 231 IDs retained. Local proof leaves, solver runs and auxiliary lemmas do not change that count. Track original strict bits and `q<Q` boundary faces. No change to the 8-closed/24-open 32-mask ledger, 5,838/2,077 historical root ledger or 15 gate IDs without the corresponding complete original-domain proof. Computer discovery and independent exact arithmetic replay precede the hand/table argument; no Lean/Lake/CI.
 
 ## Proof method updated: exact computer-assisted certificates first
 
@@ -70,7 +70,7 @@ physical assertion is proved. Only complete proofs advance the same ledger.
 The [original fixed-cover checkpoint](A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md)
 established the complete large-gap cover and first 53 whole-cell exclusions.
 The [physical-pair continuation](A2_00100_PHYSICAL_PAIR_CLOSURE_CHECKPOINT.md)
-adds 99 complete original-cell exclusions, leaving 79 exact OPEN paths. Both sign roots and every new
+adds 99 complete original-cell exclusions. The [bound-plus-pair continuation](A2_00100_BOUND_PAIR_CONTINUATION.md) adds seven more, leaving 72 exact OPEN paths. Both sign roots and every new
 whole-cell substitution have independent complete exact replay and
 coverage reviews. The exact [seven-original obstruction](SEVEN_ORIGINAL_ALL_OPEN_MASKS_OBSTRUCTION.md)
 realizes all 24 OPEN masks below Q using A–G alone, so a remaining-mask

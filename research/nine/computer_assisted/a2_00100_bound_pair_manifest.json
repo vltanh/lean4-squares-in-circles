@@ -1,0 +1,51 @@
+{
+  "schema": "a2-00100-bound-pair-delivery-v1",
+  "baseline_commit": "2da31921d94e3868629eea9e36e4f5e286e1ae9e",
+  "target_mask": "001/00",
+  "reversal_partner": "100/00",
+  "strict_q": "1105/256",
+  "archive": "a2_00100_bound_pair_checkpoint.tar.gz",
+  "archive_sha256": "591af4b807090b255af5e95bc208257f95811a10cd2bd31f09a8ae1a97c45168",
+  "archive_bytes": 490868,
+  "archive_directory": "a2_00100_bound_pair_checkpoint",
+  "original_cell_count": 231,
+  "new_closed_original_cells": 7,
+  "cumulative_new_since_53": 106,
+  "before": {
+    "closed": 152,
+    "open": 79
+  },
+  "after": {
+    "closed": 159,
+    "open": 72
+  },
+  "bound_deductions": 245,
+  "terminal_leaves": 279,
+  "weighted_leaves": 159,
+  "printed_rows_across_rounds_and_leaves": 3506,
+  "whole_masks": {
+    "closed": 8,
+    "open": 24,
+    "new": 0
+  },
+  "positional_roots": {
+    "closed_historical": 5838,
+    "open": 2077,
+    "new": 0
+  },
+  "roadmap_gate_count": 15,
+  "new_roadmap_closures": 0,
+  "lean_lake_ci_run": false,
+  "proof": "../A2_00100_BOUND_PAIR_CONTINUATION.md",
+  "register": "../gates/A2_00100_FIXED_FRONTIER.json",
+  "index": "cell_index.json",
+  "arithmetic_reports": [
+    "root_combined_v1.json",
+    "combined_printed_arithmetic.json"
+  ],
+  "inherited_frozen_verifier_sha256": "ec1b7de7b15bcc9d89d12087bff974c68e6d056bdaae26b482d514027ec97993",
+  "old_baseline_arithmetic_repeated": false,
+  "human_or_kernel_verification": false,
+  "additional_hand_theorem": "../WEAK_OUTER_UNIQUE_PENULTIMATE_ORIGINAL_HAND_PROOF.md",
+  "theorem_is_premise_of_these_seven_proofs": false
+}
