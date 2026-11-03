@@ -1,22 +1,14 @@
-## Latest checkpoint and handoff
-
-[New push-and-handoff](HANDOFF_A2_POST_89CC4C2_2026_11_01.md) ·
-[Exact marked-chain hand ledger](UNRESTRICTED_MARKED_CHAIN_EDGE_LEDGER_HAND_PROOF.md).
-The final global geometric caller is not yet proved. The reported
-same-sign shoulder cap, middle-strip capacity and mixed-sign cases are
-recorded as unverified continuation leads, not as a closed A.2 gate.
-
 # n=9 — sharp nine-unit-square packing
 
-**Global goal OPEN:** prove all nine independently oriented, interior-disjoint
-unit squares inside a disk satisfy R²>=1105/256, then classify all equality
-packings.
+**Current original-nine A.2 ledger (2026-11-02): 8/32 full masks CLOSED; 24 OPEN.** The unrestricted sharp bound `R²>=1105/256`, global equality classification and assembled manuscript remain OPEN. Historical positional roots: 5,838 closed-Q exclusions and 2,077 OPEN out of 7,915; the 15 canonical roadmap gate IDs are unchanged. This directive-only update claims no mathematical closure.
 
-[Current proof status](PROGRESS.md) · [canonical roadmap](DEEP_GATED_ROADMAP.md)
-· [current handoff](HANDOFF_A2_2026_11_01.md)
+**Read in this order:** [current operative handoff](HANDOFF_A2_FIXED_CLOSURE.md) · [accepted progress and proof ledger](PROGRESS.md) · [fixed-gate roadmap](DEEP_GATED_ROADMAP.md) · [original mask frontier](gates/A2_MASK_FRONTIER.json) · [historical handoffs](history/handoffs/README.md).
 
-**Active gate: A.2.** Current method: hand proof, exact tables permitted;
-mathematical scripts only for checking potential directions. No Lean/Lake/CI.
+**Execution directive:** Stop recursive local-lemma and certificate refinement. First construct a **proved exhaustive full-original-nine** partition of strict `001/00` (with `100/00` only by justified symmetry); then measure and close its uncovered terminal branches. If that partition is not established, report that explicitly rather than substituting component leaves. Tie every additional lemma to an open full-mask branch, preserve all nine physical squares and the strict weak-bit boundary, and pivot if blocked. Computer-assisted discovery and independent exact replay permitted; final complete hand/table proof; **no Lean/Lake/CI**.
+
+## Historical unrestricted structural evidence (not the active work queue)
+
+The following pre-reset direct-geometry and exceptional-pair results are retained as mathematical leads at their stated scopes. Older words such as "latest", "now", and earlier hand-only workflow descriptions were local to those checkpoints. They do not override the current fixed-mask handoff or indicate closure of A.2.
 
 **New unrestricted structural results:** the
 [November 2 continuation](UNRESTRICTED_STRUCTURAL_CONTINUATION_2026_11_02.md)
@@ -91,7 +83,4 @@ at least three exceptional pairs for every choice of two directions.
 None supplies the remaining unrestricted coverage argument. The fixed
 positional tally remains 5,838 excluded and 2,077 open out of 7,915 roots;
 the earlier archive-only 312 additional exclusions remain separately recorded.
-
-All new proof evidence is hand-derived. Two permitted numerical direction
-experiments were exploratory only; no proof programs, Lean, Lake, or CI ran.
 

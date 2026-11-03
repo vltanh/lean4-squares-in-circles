@@ -1,3 +1,13 @@
+> **ARCHIVED HANDOFF — DO NOT RESUME ITS OLD EXECUTION PLAN (directive updated 2026-11-02).**
+>
+> **Operative sources:** [current A.2 handoff](HANDOFF_A2_FIXED_CLOSURE.md), [status/ledger](PROGRESS.md), and [fixed roadmap](DEEP_GATED_ROADMAP.md). **8/32 original-nine masks closed; 24 OPEN. Positional roots: 5,838 historical closed-Q exclusions, 2,077 OPEN (7,915 stable IDs). All 15 roadmap IDs unchanged; A.2, global lower bound, equality classification and manuscript remain OPEN.**
+>
+> **Mandatory frontier-first directive:** Stop the spiral of ever-smaller stand-alone lemmas and component certificates. Work on a **certified exhaustive cover of the full original-nine `001/00` mask**, with `100/00` transferred only by a proved symmetry. Keep the **original strict weak-bit predicate**, all nine moving squares, all actual physical pairs and every boundary face. Each exhaustive terminal must have its exact parent-derived predicate and be marked **CLOSED** only by a complete hand/table proof (computer-assisted search and independently replayed exact arithmetic allowed), otherwise **OPEN** with a concrete obstruction. Measure **uncovered full-mask branches**, not solver nodes or certificate leaves; if no exhaustive cover is certified, report the branch count as **not established**. Freeze auxiliary lemmas that do not discharge named uncovered branches; if blocked, record the blocker and pivot to another whole-mask/global caller. Never count a finished component tree as a mask or root closure. **No Lean/Lake compilation or CI.**
+>
+> The material below is retained for historical proof provenance only. Its old counts, priorities, methods and "current/next" instructions are **superseded**, not additional active gates.
+
+---
+
 # PR #11 recovery handoff: reviewed candidates not yet published
 
 Date: October 29, 2026 UTC. Branch: `research/nine-tablefree-hand`.

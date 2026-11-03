@@ -1,5 +1,38 @@
 # Current A.2 handoff: eight masks closed; continue with 001/00 and 100/00
 
+## Operative directive — exhaustive original-nine frontier first (2026-11-02)
+
+**This directive supersedes execution instructions and progress estimates in all earlier handoffs.** Mathematical statements in those records retain their documented scope; historical local tables are proof inputs, not new mask closures.
+
+**Nonnegotiable objective:** close **whole original-nine masks**, not an expanding sequence of smaller geometric lemmas. The immediate target is the entire strict `001/00` domain, with `100/00` only after a proved reflection/relabeling transfer. If this route stalls, document the exact obstruction and attempt a different complete mask or a genuinely global terminal-extraction argument. Do not keep narrowing one local frontier merely because its component search stalled.
+
+**Execution and accounting protocol:**
+
+1. **Build one exhaustive finite full-domain case cover first.** Start from the exact original fixed-mask predicate at every `q<Q=1105/256`, with all nine independently oriented unit squares, original frames, corners, 36 physical pairs, marked comparisons and the strict weak outer bit. Every split covers its whole parent, including equality, orientation endpoints and contact faces. A relaxed closed mask is **not** interchangeable with the strict original predicate; the feasible aligned closed-Q boundary control cannot be excluded by inventing positive clearance.
+2. **Maintain an explicit uncovered-terminal register.** For each full-mask terminal record a stable branch ID, complete predicate, ancestor split/coverage proof, status **CLOSED** or **OPEN**, and a concrete proof/certificate or obstruction. Existing hand theorems and independently replayed rational tables may close terminals only after their premises are derived from that terminal. Keep dependencies acyclic. If exhaustive enumeration/coverage has not been validated, say **frontier count NOT ESTABLISHED**; never invent a finite count.
+3. **Make progress legible.** Report (a) whether the *full-mask* case partition is proven exhaustive; (b) number of uncovered terminal branches at start and finish, **only if** partition coverage is certified; (c) which original full masks/positional roots actually closed; and (d) exact blockers and links to replayable hand/table evidence. Component table leaves, nodes, local solver successes and sharpened inequalities are **not** the progress measure.
+4. **Stop speculative auxiliary work.** Do not introduce another threshold, owner subgate, certificate tree or side lemma unless it targets a **named uncovered full-mask terminal** and explains how that terminal will close. If it only tightens a necessary condition, leave it as research, report **zero gate advancement**, and change strategy rather than recursively refining it.
+5. **Computer assistance first; final hand/table proof.** Search/enumerate/check exact contradictions and independently replay rational certificates. Finish with a complete human-checkable geometric proof and finite table if needed. Do **not** compile Lean, run Lake or trigger CI. A closed component table is not a complete original-nine hand/table proof without exhaustive parent-to-terminal coverage.
+
+**Current immutable ledger for this directive-only cleanup:** **8/32 original-nine masks closed; 24 OPEN. Positional roots: 5,838 historical closed-Q exclusions, 2,077 OPEN (7,915 stable IDs). All 15 roadmap IDs unchanged; A.2, global lower bound, equality classification and manuscript remain OPEN.** Closed masks: `000/00`, `000/01`, `000/10`, `000/11`, `010/00`, `010/01`, `010/10`, `010/11`. Root 7820 remains possible at `q=Q`. No mask, root or gate is closed by this documentation revision.
+
+**First next-session deliverable:** a *coverage-qualified* finite branch register for `001/00` (and justified transfer to `100/00`), or a precise report that the partition itself is still unproved; then discharge named uncovered branches. **The exhaustive full-mask terminal count is NOT ESTABLISHED**. The existing 90,533-leaf completed component tables do not constitute that partition.
+
+### Required handoff footer for subsequent proof sessions
+
+| Field | Required evidence |
+|---|---|
+| Whole-mask target and strict original predicate | Exact mask IDs; all-nine-square hypotheses; valid symmetry transfer |
+| Full-mask partition | Complete split/coverage proof, or explicitly **NOT CERTIFIED** |
+| Uncovered terminal frontier | Verified before/after counts **or NOT ESTABLISHED** |
+| Closed terminals | Stable IDs, derived premises, full hand/table proof, independently replayed certificate when used |
+| Still open | Named terminal predicates and concrete blocker; no new compulsory subgates |
+| Ledger changes | Full masks, 7,915 roots, 15 gate IDs, equality boundary; zero unless justified |
+| Restrictions | Computer-assisted discovery/replay permitted; hand/table proof final; no Lean/Lake/CI |
+
+---
+
+
 November 2, 2026. The complete original-nine 010/11 strict-radius proof
 is accepted. No Lean, Lake or CI. The unrestricted bound, equality and
 global manuscript remain OPEN.

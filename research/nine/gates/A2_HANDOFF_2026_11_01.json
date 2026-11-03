@@ -44,5 +44,5 @@
     "report_sha256": "cd44b5e34130f26b053724cf9409d241c9789d79d2a9a0773374be9d70d2b9c1",
     "global_original_root_closures": 0
   },
-  "note": "This handoff commits pointers and exact publication boundaries only. Local source/certificate artifacts are in the conversation archive, not new GitHub proof blobs; do not advance the canonical published count until copied and independently replayed."
+  "note": "This handoff commits pointers and exact publication boundaries only. Local source/certificate artifacts are in the conversation archive, not new GitHub proof blobs; do not advance the canonical published count until copied and independently replayed. Superseded execution policy as of 2026-11-02: this is a frozen-scope historical checkpoint, not a current ledger or active resume instruction. Read research/nine/HANDOFF_A2_FIXED_CLOSURE.md and PROGRESS.md. Stop local-lemma spirals; build an exhaustive original-nine strict 001/00 case cover, prove symmetry before transferring to 100/00, and count only verified uncovered full-mask terminal branches (otherwise NOT ESTABLISHED). Preserve q<Q, original strict weak bit and every boundary face; independently replay exact computer certificates and finish with a hand/table proof. No Lean/Lake/CI. This metadata amendment closes zero masks, positional roots or roadmap gates; current count is 8/32 closed, 24 open."
 }

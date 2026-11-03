@@ -1,5 +1,11 @@
 # n=9: eight fixed masks closed; continue with the weak outer link
 
+## Active work policy: exhaustive full-mask frontier, not local lemma count
+
+**Follow [the operative handoff directive](HANDOFF_A2_FIXED_CLOSURE.md).** Build a coverage-certified finite decomposition of the exact strict original-nine `001/00` mask, justify any transfer to `100/00`, and register every uncovered *full-mask terminal* with its precise predicate. Discharge each by a hand/table argument using independently replayed exact arithmetic if needed. No more free-floating threshold or component-certificate refinement: new work must close named full-mask branches. Keep closed-Q equality/strict-mask boundaries explicit.
+
+**Accounting at this directive-only commit:** 8/32 full masks closed; 24 OPEN; 5,838/7,915 historical closed-Q positional exclusions and 2,077 OPEN; 15 gate IDs unchanged. The exhaustive full-mask terminal partition and its open-branch count are **NOT YET CERTIFIED**. Component-table zero-frontier reports do not change these counts. No Lean/Lake/CI.
+
 ## Complete 010/11 strict-radius proof accepted
 
 November 2, 2026. **The entire original-nine 010/11 mask is closed for
@@ -163,18 +169,14 @@ The ledger stays **8 complete masks / 24 open masks**, with no new
 positional-root or roadmap-gate closures. The same 32 mask predicates
 and 15 gate IDs are unchanged. No Lean, Lake, or CI was run.
 
-## Method and fixed acceptance conditions
+## Acceptance and reporting discipline
 
-Computer-assisted discovery, independent exact replay, then a complete
-physical hand/table argument. Every split covers its parent, every
-terminal premise is derived, and the dependency graph is acyclic.
-Incomplete searches, partial repeated checks and optimizer outcomes do
-not prove a complete domain. The same 15 roadmap IDs remain unchanged.
+Computer-first discovery and independent exact replay are tools; the deliverable is a complete hand/table proof of each original full domain. Check split exhaustiveness, original strict bits and closed faces, all nine original physical squares, and premise discharge at every leaf. Report **verified uncovered full-mask branches** only after constructing a certified partition; otherwise report **NOT ESTABLISHED**. If no full-mask branch closes, say so and pivot rather than generating more standalone lemmas. Local improvements do not create gates or increment the 32-mask or 7,915-root ledgers.
 
 [Coverage contract](A2_COVERAGE_AND_CLOSURE_CONTRACT.md) ·
 [Fixed frontier](gates/A2_MASK_FRONTIER.json) ·
 [Roadmap](DEEP_GATED_ROADMAP.md) · [Registry](gates/ACTIVE_ROADMAP.json) ·
-[Handoff](HANDOFF_A2_FIXED_CLOSURE.md)
+[Current handoff](HANDOFF_A2_FIXED_CLOSURE.md)
 
 ## Preserved history
 

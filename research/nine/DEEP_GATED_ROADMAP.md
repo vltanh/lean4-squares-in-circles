@@ -1,5 +1,11 @@
 # n=9: fixed-domain roadmap
 
+## Highest-priority execution rule: no local-lemma rabbit hole
+
+[Current mandatory handoff protocol](HANDOFF_A2_FIXED_CLOSURE.md). The immediate target is one **exhaustive, coverage-verified full original-nine** `001/00` strict-mask partition (and proved `100/00` symmetry transfer). Attach every old or new component argument to a **named full-mask terminal**; either close that terminal with derived hypotheses and a complete hand/table proof, or retain it explicitly OPEN with its precise predicate. Stop deriving smaller thresholds and local certificates that do not discharge named whole-mask branches. If stalled, document the blocker and pivot to another original full mask or universal full-domain result.
+
+**Metric:** count uncovered *full-mask* terminal branches with a proven exhaustive split, **NOT** local certificate leaves/nodes, solver runs or auxiliary lemmas. Until such a partition is proved, the frontier size is **NOT ESTABLISHED**. Track original strict bits and `q<Q` boundary faces. No change to the 8-closed/24-open 32-mask ledger, 5,838/2,077 historical root ledger or 15 gate IDs without a complete original-domain proof. Computer discovery and independent exact arithmetic replay precede the hand/table argument; no Lean/Lake/CI.
+
 ## Proof method updated: exact computer-assisted certificates first
 
 Use existing source QF_NRA models and finite rational enclosure methods to discover complete contradictions, subject to independent exact certificate replay. `computer_assisted/emit_fixed_mask.py` emits the fixed full nine-square mask predicate, while the 58-leaf `computer_assisted/NO_EIGHTH_FIXED_SEVEN_HAND_TABLE.md` is a verified **fixed-pose** pilot that does not close any active mask. The eventual proof must handle all nine moving squares, strict radius arbitrarily close to Q, and every boundary/contact convention. No new mandatory subgates; the same 15 gate IDs and 32 masks are preserved. Once a whole domain is certified, present its rational leaves as a final human-checkable table. No Lean, Lake or CI.
