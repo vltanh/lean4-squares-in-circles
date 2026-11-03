@@ -1,5 +1,7 @@
 # Current A.2 handoff: eight masks closed; 178 fixed 001/00 cells remain
 
+**Active four-trunk closure plan (November 3):** [A2_00100_FOUR_TRUNK_CLOSURE_PLAN.md](A2_00100_FOUR_TRUNK_CLOSURE_PLAN.md). The existing 178 OPEN original-cell paths fall under four early unresolved trunks (77 inward-row, 39 F-height, 33 and 29 alternative-chain escapes). Use eight preselected full-domain pilot cells before scaling. Prioritize original nine-square pair SAT, shared-frame sharp corner inequalities and exact strict zero-reserve duals at the feasible closed-weak boundary. An LP proposal or an unfinished subtree closes no original cell. All ledgers remain unchanged; no new mandatory gate IDs, no Lean/Lake/CI.
+
 ## Operative directive — exhaustive original-nine frontier first (2026-11-02)
 
 **This directive supersedes execution instructions and progress estimates in all earlier handoffs.** Mathematical statements in those records retain their documented scope; historical local tables are proof inputs, not new mask closures.
