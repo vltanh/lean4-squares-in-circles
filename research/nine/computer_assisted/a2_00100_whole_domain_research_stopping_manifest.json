@@ -1,0 +1,307 @@
+{
+  "schema": "a2_complete_bounded_open_research_stopping_manifest_v1",
+  "date": "2026-11-03",
+  "status": "EXACT_OPEN_RESEARCH_PRESERVED_REQUESTED_MASK_COMPLETION_NOT_ACHIEVED",
+  "accepted_input_commit": "3c1f7527d17b2d983a39b85e5f8327fa70b9594a",
+  "accepted_four_original_closures": {
+    "commit": "3c1f7527d17b2d983a39b85e5f8327fa70b9594a",
+    "assembly": "A2_00100_FOUR_ORIGINAL_SHARED_CLOSURE.md",
+    "manifest": {
+      "file": "computer_assisted/a2_00100_four_original_shared_manifest.json",
+      "bytes": 6243,
+      "sha256": "61effc0dc6b2f224b02a260f18eb23aa43a5b0eab1ead49af0b76f9c8b61f4a9"
+    },
+    "before": {
+      "closed": 193,
+      "open": 38
+    },
+    "after": {
+      "closed": 197,
+      "open": 34
+    },
+    "additional_closures_in_this_open_research_record": 0
+  },
+  "fixed_register": {
+    "mask": "001/00",
+    "reversal_partner": "100/00",
+    "original_cells": 231,
+    "closed": 197,
+    "open": 34,
+    "open_families": {
+      "A": 5,
+      "B": 17,
+      "C": 8,
+      "D": 4
+    },
+    "all_original_ids_paths_and_statuses_unchanged_since_input_commit": true,
+    "whole_mask_closed": false
+  },
+  "whole_masks": {
+    "total": 32,
+    "closed": 8,
+    "open": 24,
+    "new_closures": 0
+  },
+  "historical_positional_roots": {
+    "total": 7915,
+    "closed_q_exclusions": 5838,
+    "open": 2077,
+    "new_exclusions": 0,
+    "equality_witness_root": 7820
+  },
+  "roadmap": {
+    "fixed_ids": 15,
+    "new_gate_closures": 0,
+    "new_mandatory_gates": [],
+    "existing_gates_unchanged": true
+  },
+  "global_deliverables": {
+    "A.2": "OPEN",
+    "unrestricted_lower_bound": "OPEN",
+    "global_equality": "OPEN",
+    "final_manuscript": "OPEN"
+  },
+  "readable_stopping_record": {
+    "file": "A2_00100_WHOLE_DOMAIN_RESEARCH_STOPPING_RECORD.md",
+    "bytes": 9843,
+    "sha256": "3dcb54fc6007480da6714de4d20643f1b286ebd9b1f71ed079f98800c45088de"
+  },
+  "new_hand_derivations_and_reviews": [
+    {
+      "file": "A2_ALL_NINE_CENTRAL_CAPACITY_ROWS.md",
+      "bytes": 7614,
+      "sha256": "fe978d012aa4bf6a3ebfa304c9d0316537801499dd59024f772a8339c5874d4f"
+    },
+    {
+      "file": "A2_CENTRAL_NEAR_ACTUAL_CHAIN_OCCUPANCY.md",
+      "bytes": 3753,
+      "sha256": "362d5e68ff6e2528e353fd9d0ad512c863f2efff5148e779d0cdf2ea0d5249b4"
+    },
+    {
+      "file": "A2_CENTRAL_CAPACITY_NINTH_ORIGINAL_OBSTRUCTION.md",
+      "bytes": 9697,
+      "sha256": "c95d88c7134f6e207fbc7be851e66371820320ac8d15a66f8db5c6b07544674b"
+    },
+    {
+      "file": "A2_SAME_ORIGINAL_QUADRATIC_MOMENT_HAND_PROOF.md",
+      "bytes": 6574,
+      "sha256": "346c22bd8834db44eb498354bb4e33eb8c682205fddd3c207811c00f68016cff"
+    },
+    {
+      "file": "A2_COMPLETE_OWNED_AXIS_QUADRATIC_UNIONS.md",
+      "bytes": 5404,
+      "sha256": "cc02b28ae320a8900a8c480532ea5ca2e72b2f119363ff26be7f58aa0fd5bbe4"
+    },
+    {
+      "file": "A2_ALL_NINE_QUADRATIC_CARDINALITY_HAND_PROOF.md",
+      "bytes": 4151,
+      "sha256": "da975b2c4c3548425bea6ab8f13043a54cdb4ffa00891b2e45f8ae528c5c36b6"
+    },
+    {
+      "file": "A2_ALL_NINE_QUADRATIC_CARDINALITY_INDEPENDENT_REVIEW.md",
+      "bytes": 6912,
+      "sha256": "1cbee1a70b808e8eba633da174e0c60edff165d63cbf90e9fd726d07777a6e0a"
+    }
+  ],
+  "packages": [
+    {
+      "family": "A",
+      "complete_archive_name": "a2_00100_a_remaining_open_checkpoint.tar.xz",
+      "archive_bytes": 7373808,
+      "archive_sha256": "b02f4da1bc4c966e3bbde729cc5c13a7077864e725b5d73bdecdc95af07037b3",
+      "payload_manifest": "a_remaining_open_checkpoint/SHA256_MANIFEST.json",
+      "payload_manifest_sha256": "bc92960d4b59bac7f37184fa160f6184137856c6acab7b52d50706ef3887485d",
+      "frozen_payload_files": 229,
+      "every_archived_payload_hash_checked_by_root": true,
+      "replay_command_after_extraction": "python -B -S a_remaining_open_checkpoint/verify_open_all.py",
+      "exact_replay_report": {
+        "file": "computer_assisted/a2_00100_a_open_exact_replay.json",
+        "bytes": 2020,
+        "sha256": "1e3cbd549a73926018f7ad6e6c4da7e34e136006216d37d8e3535ebf87327f87"
+      },
+      "exact_replay_status": "PASS_PRESERVED_OPEN_WORK_NO_NEW_ORIGINAL_CLOSURE",
+      "new_original_closures": 0,
+      "new_mask_closures": 0,
+      "storage": {
+        "kind": "single_archive",
+        "file": "computer_assisted/a2_00100_a_remaining_open_checkpoint.tar.xz",
+        "bytes": 7373808,
+        "sha256": "b02f4da1bc4c966e3bbde729cc5c13a7077864e725b5d73bdecdc95af07037b3"
+      },
+      "replay_scope": {
+        "fresh_extraction_author_replay": "PASS_WITH_INDEPENDENT_RULE_RECONSTRUCTORS",
+        "root_review": "ARCHIVE_AND_ALL_PAYLOAD_HASHES_CHECKED; NO_SECOND_FULL_ARITHMETIC_REPLAY",
+        "outside_packet_workspace_reads_in_audited_replay": 0,
+        "local_workspace_modules_in_audited_replay": 13,
+        "coordinate_prior_deductions": 155,
+        "canonical_whole_parent_deductions": 3552,
+        "complete_cover_whole_parent_deductions": 123,
+        "static_grid_terminals_checked": 39,
+        "unresolved_grid_tiles": 25,
+        "unresolved_diagnostic_exception_tiles": [
+          2,
+          10
+        ],
+        "complete_open_remainder_tiles": 48,
+        "conditional_remainder_deductions": 145,
+        "moment_rows_compared_by_separate_reconstructor": 57267,
+        "rational_squares": 140,
+        "numerical_psd_state_is_exact_feasibility_certificate": false
+      }
+    },
+    {
+      "family": "B",
+      "complete_archive_name": "a2_00100_b_whole_parent_open_evidence.tar.xz",
+      "archive_bytes": 9558812,
+      "archive_sha256": "3dd8dd712658c70fb6ae4b874076bff657f797af9b07bb3c565f4fb629d85b56",
+      "payload_manifest": "portable_b_open/SHA256_MANIFEST.json",
+      "payload_manifest_sha256": "93327cbb9b28007282a03bcf6db215891d0ddecd7ad82cc6a0f1a41351f5881f",
+      "frozen_payload_files": 308,
+      "every_archived_payload_hash_checked_by_root": true,
+      "replay_command_after_extraction": "python -B -S portable_b_open/verify_all.py",
+      "exact_replay_report": {
+        "file": "computer_assisted/a2_00100_b_open_root_replay.json",
+        "bytes": 2348,
+        "sha256": "093e251be195ec4b1bbb39ac675b2308e7f6904494e70ce95921097f8c292daf"
+      },
+      "exact_replay_status": "PASS_PORTABLE_B_OPEN_STOPPING_EVIDENCE",
+      "new_original_closures": 0,
+      "new_mask_closures": 0,
+      "storage": {
+        "kind": "single_archive",
+        "file": "computer_assisted/a2_00100_b_whole_parent_open_evidence.tar.xz",
+        "bytes": 9558812,
+        "sha256": "3dd8dd712658c70fb6ae4b874076bff657f797af9b07bb3c565f4fb629d85b56"
+      },
+      "replay_scope": {
+        "root_audited_portable_replay": "PASS",
+        "outside_packet_workspace_reads_rejected": true,
+        "complete_original_bound_prefixes_replayed": 3,
+        "complete_four_alternative_union_cuts": 24,
+        "complete_union_physical_alternatives": 96,
+        "subsequent_f14_bound_induction_replayed": true,
+        "combined_final_necessary_rows_reconstructed": [
+          530,
+          533
+        ],
+        "fixed_sat_path_rows_reconstructed": 178,
+        "fixed_sat_registered_paths": 52,
+        "fixed_grid_cover_accounting_checked": true,
+        "fixed_grid_candidate_terminal_arithmetic_replayed": false
+      }
+    },
+    {
+      "family": "CD",
+      "complete_archive_name": "a2_00100_cd_open_research_checkpoint.tar.xz",
+      "archive_bytes": 16480980,
+      "archive_sha256": "6e8aeeeee51028b2c5aa5d860fba48648b7d349db2060219ba50e139db7750ce",
+      "payload_manifest": "cd_family_open_package_20261103/MANIFEST.json",
+      "payload_manifest_sha256": "92bb13fd6c285f830191afaf653d66d5d265b1f0efd5044ded9f83e3fffaabed",
+      "frozen_payload_files": 135,
+      "every_archived_payload_hash_checked_by_root": true,
+      "replay_command_after_extraction": "python -B -S cd_family_open_package_20261103/replay.py",
+      "exact_replay_report": {
+        "file": "computer_assisted/a2_00100_cd_open_exact_replay.json",
+        "bytes": 144345,
+        "sha256": "ba0ec1beb86eed92ddff00ce1e596723da684e063f34a2e5842a19071e2b7430"
+      },
+      "exact_replay_status": "PASS_EXACT_REPLAY_ALL_PARENTS_OPEN",
+      "new_original_closures": 0,
+      "new_mask_closures": 0,
+      "storage": {
+        "kind": "exact_byte_pieces",
+        "reason": "per-call transport size limit",
+        "parts_manifest": {
+          "file": "computer_assisted/a2_00100_cd_open_archive_parts.json",
+          "bytes": 841,
+          "sha256": "d0e2a02f929737e98f6694a085f80e8a2d97908788860e06022ba22a503634f0"
+        },
+        "parts": [
+          {
+            "file": "computer_assisted/a2_00100_cd_open_research_checkpoint.tar.xz.part01",
+            "bytes": 8388608,
+            "sha256": "ec2f969c28a588340706d90333ed5fa8dfaa4f57287306b245f2d5c8e13fded8"
+          },
+          {
+            "file": "computer_assisted/a2_00100_cd_open_research_checkpoint.tar.xz.part02",
+            "bytes": 8092372,
+            "sha256": "72c1c27229a1c35b1ea50cefaa99a77e9aa28c3fa5b7e9fb1c2041d097bd9a72"
+          }
+        ],
+        "reassembly_script": {
+          "file": "computer_assisted/reassemble_cd_open_archive.py",
+          "bytes": 1724,
+          "sha256": "f0624131707da7c100e113601bd76966077e96d14996f9276d5c1634d224d242"
+        },
+        "independent_reassembly_review": {
+          "file": "computer_assisted/a2_00100_cd_open_reassembly_review.json",
+          "bytes": 2355,
+          "sha256": "faaf41ad1de1ab48ccc1beb00f2233d837a6e1c38b1caceb0cc3fcd0d6f36ab1"
+        },
+        "reassembly_command_from_computer_assisted": "python reassemble_cd_open_archive.py",
+        "complete_archive_bytes_unchanged": true
+      },
+      "replay_scope": {
+        "author_full_portable_replay": "PASS_WITH_INDEPENDENT_RULE_RECONSTRUCTORS",
+        "root_review": "ALL_ARCHIVED_PAYLOAD_HASHES_AND_INDEPENDENT_GUARD_MATHEMATICS; NO_SECOND_FULL_ARITHMETIC_REPLAY",
+        "outside_packet_workspace_reads_rejected": true,
+        "complete_physical_pair_alternatives": 72,
+        "excluded_pair_alternatives": 13,
+        "open_pair_alternatives": 59,
+        "literal_necessary_rows_checked": 107586,
+        "reconstructed_affine_rlt_premises": 826,
+        "rational_squares": 897,
+        "root_complete_owned_axis_rows_reconstructed": 1034,
+        "root_signed_alternatives_checked": 576
+      }
+    },
+    {
+      "family": "GLOBAL_CENTRAL",
+      "complete_archive_name": "a2_all_nine_central_capacity_open_evidence.zip",
+      "archive_bytes": 6070395,
+      "archive_sha256": "baf3da1dbcbffdbc9d0a4723bc9ec8db4ef5fc0d62e7d29a455178ac435ce54a",
+      "payload_manifest": "portable_central_capacity/SHA256_MANIFEST.json",
+      "payload_manifest_sha256": "be550d22b313761f6dbf32fd84d0945e4b546942ebd23820ce5a73c4ac2eab55",
+      "frozen_payload_files": 109,
+      "every_archived_payload_hash_checked_by_root": true,
+      "replay_command_after_extraction": "python -B -S portable_central_capacity/verify_all.py",
+      "exact_replay_report": {
+        "file": "computer_assisted/a2_all_nine_central_root_replay.json",
+        "bytes": 637,
+        "sha256": "0ce6a4deadf40fc64147d25b74eacb51ec9e66d643e6d71fb6667be5e14eac5a"
+      },
+      "exact_replay_status": "PASS_PORTABLE_ALL_NINE_CENTRAL_EVIDENCE_OPEN",
+      "new_original_closures": 0,
+      "new_mask_closures": 0,
+      "storage": {
+        "kind": "single_archive",
+        "file": "computer_assisted/a2_all_nine_central_capacity_open_evidence.zip",
+        "bytes": 6070395,
+        "sha256": "baf3da1dbcbffdbc9d0a4723bc9ec8db4ef5fc0d62e7d29a455178ac435ce54a"
+      },
+      "replay_scope": {
+        "root_fresh_extraction_full_exact_replay": "PASS",
+        "complete_f14_near_cover_alternatives": 5,
+        "excluded_near_alternatives": 1,
+        "remaining_near_alternatives": 4,
+        "short_four_row_reserve": "327247/6553600",
+        "support_max_tests_yield_exact_optimality_claim": false,
+        "eight_square_rational_obstruction_checked": true,
+        "eight_square_obstruction_is_nine_square_counterexample": false
+      }
+    }
+  ],
+  "replay_requirements": {
+    "python_standard_library_only": true,
+    "numerical_optimization_rerun": false
+  },
+  "limitations": [
+    "Necessary inequalities and partial internal exclusions do not close a complete original predicate.",
+    "Numerical moment and PSD states are neither exact feasible states nor physical packings.",
+    "No positive exact original-terminal certificate was obtained after the four accepted proofs.",
+    "The central-capacity extraction obstruction contains eight originals, not nine.",
+    "Independent program replay is not human or proof-kernel verification."
+  ],
+  "all_declared_discovery_runs_finished": true,
+  "lean_lake_ci_run": false
+}

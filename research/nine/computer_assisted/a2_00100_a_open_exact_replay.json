@@ -1,0 +1,55 @@
+{
+  "status": "PASS_PRESERVED_OPEN_WORK_NO_NEW_ORIGINAL_CLOSURE",
+  "new_originals_closed": 0,
+  "ids": [
+    "positive-2d5aba857f2f7602",
+    "positive-768264ad71bc8152",
+    "positive-7cdbd39e7dd162bf",
+    "positive-8b53ccaa15bad220",
+    "positive-c744bc031d40ee64"
+  ],
+  "register_before": {
+    "closed": 197,
+    "open": 34
+  },
+  "register_after": {
+    "closed": 197,
+    "open": 34
+  },
+  "whole_masks": {
+    "closed": 8,
+    "open": 24
+  },
+  "coordinate_prior_deductions": 155,
+  "canonical_parent_deductions": 3552,
+  "complete_cover_parent_deductions": 123,
+  "conditional_grid_remainder_deductions": 145,
+  "checked_static_grid_terminals": 39,
+  "unresolved_grid_tiles": 25,
+  "unresolved_grid_exception_tiles": [
+    2,
+    10
+  ],
+  "independent_rational_square_rows": 140,
+  "direct_psd_proof_status": "NUMERICAL_ONLY_NO_POSITIVE_RESERVE",
+  "whole_original_closure_claimed": false,
+  "whole_mask_closed": false,
+  "lean_lake_ci_run": false,
+  "all_source_snapshots_portable": true,
+  "outside_packet_workspace_reads": 0,
+  "local_module_import_audit": {
+    "__main__": "verify_open_all.py",
+    "independent_all_rules": "independent_all_rules.py",
+    "independent_central_rows": "independent_central_rows.py",
+    "independent_fixed_sat_moment_rows": "independent_fixed_sat_moment_rows.py",
+    "independent_moment_rows": "independent_moment_rows.py",
+    "independent_v4_rows": "shared_capacity_three_b_v4/independent_v4_rows.py",
+    "review_tight_bounds_independent": "shared_capacity_three_b_v4/geometry/review_tight_bounds_independent.py",
+    "verify_central_bounds": "verify_central_bounds.py",
+    "verify_central_cover_bounds": "verify_central_cover_bounds.py",
+    "verify_joint_original": "verify_joint_original.py",
+    "verify_open_h_grid": "verify_open_h_grid.py",
+    "verify_shared_bound": "shared_capacity_three_b_v4/verify_shared_bound.py",
+    "weak_outer_numeric_strict_bulk_v14_verify": "shared_capacity_three_b_v4/geometry/weak_outer_numeric_strict_bulk_v14_verify.py"
+  }
+}

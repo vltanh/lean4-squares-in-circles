@@ -8,6 +8,8 @@
 
 **Execution directive:** Close the named OPEN cells of the certified full-original-nine cover, another entire fixed mask, or a global terminal-extraction theorem. Keep the same 231 cell IDs; unfinished internal trials leave their parent OPEN. Tie every additional lemma to a complete original domain, preserve all nine physical squares and the strict weak-bit boundary, and pivot if blocked. Computer-assisted discovery and independent exact replay permitted; final complete hand/table proof; **no Lean/Lake/CI**.
 
+**Completed subsequent investigation:** the [whole-domain stopping record](A2_00100_WHOLE_DOMAIN_RESEARCH_STOPPING_RECORD.md) preserves four portable OPEN-research packages and the exact limits of the all-nine and shared-frame approaches. It adds no further original or mask closure; the current mask and all-mask proof remain unfinished.
+
 ## Historical unrestricted structural evidence (not the active work queue)
 
 The following pre-reset direct-geometry and exceptional-pair results are retained as mathematical leads at their stated scopes. Older words such as "latest", "now", and earlier hand-only workflow descriptions were local to those checkpoints. They do not override the current fixed-mask handoff or indicate closure of A.2.

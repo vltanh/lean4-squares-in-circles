@@ -22755,7 +22755,7 @@
   "new_roadmap_gate_closures": 0,
   "lean_lake_ci_run": false,
   "open_cell_obstruction": "No complete proof is known for this unchanged original path. Physical-pair, bound and original-frame continuation trees retain all unresolved descendants internally; partial trials do not replace this parent.",
-  "open_cell_discovery_report": "../computer_assisted/a2_00100_open_continuation_manifest.json",
+  "open_cell_discovery_report": "../computer_assisted/a2_00100_whole_domain_research_stopping_manifest.json",
   "baseline_assembly": "../A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md",
   "baseline_manifest": "../computer_assisted/a2_00100_fixed_frontier_manifest.json",
   "latest_new_closed_cells": 4,

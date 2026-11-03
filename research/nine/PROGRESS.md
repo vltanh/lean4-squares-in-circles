@@ -29,6 +29,18 @@ existing vertical-extra-pair prefix, with seven original register cells.
 The prefixes' other registered cells and baseline terminals were already
 proved. No full mask, positional root or roadmap gate is newly closed.
 
+### Completed subsequent research: no further closure
+
+The [whole-domain stopping record](A2_00100_WHOLE_DOMAIN_RESEARCH_STOPPING_RECORD.md)
+retains exact all-nine central restrictions, complete physical-union cuts,
+shared-product/frame inequalities and their independently reconstructed rows.
+All bounded A/B/C/D tests finished without another complete original proof.
+The strengthened eight-original construction explains why the two central
+consequences do not alone supply an all-nine extraction. These inputs and
+the complete OPEN-state replays are preserved in four source-bound packages.
+**Current counts remain 197/34 cells and 8/24 masks.** The requested
+complete current-mask and all-mask proof is still unfinished.
+
 ### Preceding C60b checkpoint: 193 CLOSED / 38 OPEN
 
 The [complete C60b proof](A2_00100_C60B_FIXED_H_COVER_CLOSURE.md)

@@ -1,0 +1,18 @@
+{
+  "status": "PASS_PORTABLE_ALL_NINE_CENTRAL_EVIDENCE_OPEN",
+  "new_originals_closed": 0,
+  "new_masks_closed": 0,
+  "f14_parent_rounds": 12,
+  "f14_complete_cover_cases": 5,
+  "f14_excluded_central_pairs": 1,
+  "f14_remaining_central_pairs": 4,
+  "f14_complete_cover_bound_deductions": 0,
+  "f14_exact_exclusion_reserve": "20560678949765551/1441151880758558720",
+  "second_parent_rounds": 13,
+  "eight_original_extraction_barrier_checked": true,
+  "ninth_original_supplied": false,
+  "central_chain_exclusion_reserve": "327247/6553600",
+  "all_sources_local_and_pinned": true,
+  "solver_required": false,
+  "lean_lake_ci_run": false
+}

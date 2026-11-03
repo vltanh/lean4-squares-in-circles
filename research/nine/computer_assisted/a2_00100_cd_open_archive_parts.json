@@ -1,0 +1,22 @@
+{
+  "schema": "exact_archive_byte_pieces_v1",
+  "archive": "a2_00100_cd_open_research_checkpoint.tar.xz",
+  "archive_bytes": 16480980,
+  "archive_sha256": "6e8aeeeee51028b2c5aa5d860fba48648b7d349db2060219ba50e139db7750ce",
+  "parts": [
+    {
+      "file": "a2_00100_cd_open_research_checkpoint.tar.xz.part01",
+      "bytes": 8388608,
+      "sha256": "ec2f969c28a588340706d90333ed5fa8dfaa4f57287306b245f2d5c8e13fded8",
+      "git_blob": "b2eb5036563952d263a125ecbd5f376f795326ab"
+    },
+    {
+      "file": "a2_00100_cd_open_research_checkpoint.tar.xz.part02",
+      "bytes": 8092372,
+      "sha256": "72c1c27229a1c35b1ea50cefaa99a77e9aa28c3fa5b7e9fb1c2041d097bd9a72",
+      "git_blob": "9bc77d0a9073da0c7856bdf5b91408102fb48f09"
+    }
+  ],
+  "reassembly": "python reassemble_cd_open_archive.py",
+  "payload_and_proof_bytes_changed": false
+}

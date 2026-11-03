@@ -77,6 +77,14 @@ The precise unresolved predicates are the unchanged paths of these IDs:
 
 ## Current mathematical obstruction and useful inputs
 
+The [completed whole-domain research record](A2_00100_WHOLE_DOMAIN_RESEARCH_STOPPING_RECORD.md)
+records the bounded A/B/C/D investigations after the four accepted proofs.
+All declared experiments are finished. They add **zero** original-cell or
+mask closures. Their [portable evidence manifest](computer_assisted/a2_00100_whole_domain_research_stopping_manifest.json)
+separates exact OPEN-state and necessary-row replay from numerical results.
+Reuse these sources and stopping conditions; do not restart the exhausted
+passes or turn their unresolved internal alternatives into new gates.
+
 The remaining LP relaxations can mix incompatible frame coordinates or
 separate physical pairs through incompatible alternatives. They are not
 physical nine-square counterexamples. Full-frame norm/arc identities,
@@ -94,7 +102,7 @@ terminals when exploiting either tool.
 
 The [selected-seven obstruction](SEVEN_ORIGINAL_ALL_OPEN_MASKS_OBSTRUCTION.md)
 realizes every one of the 24 OPEN masks below Q using A–G alone. The
-[eight-original control](EIGHT_ORIGINAL_ALL_WEAK_EXTRACTION_OBSTRUCTION.md)
+[strengthened eight-original control](A2_CENTRAL_CAPACITY_NINTH_ORIGINAL_OBSTRUCTION.md)
 also obstructs generic fewer-original relabeling. A proposed universal
 extraction must essentially use the ninth original and prove all claimed
 marked links. The accepted `000/*` and `010/*` full-mask proofs, low-gap

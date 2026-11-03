@@ -616,5 +616,22 @@
     "new_global_gate_closures": 0,
     "human_or_kernel_verification": false,
     "lean_lake_ci_run": false
+  },
+  "latest_open_research": {
+    "date": "2026-11-03",
+    "status": "COMPLETED_BOUNDED_RESEARCH_ALL_REMAINING_PARENTS_OPEN",
+    "assembly": "A2_00100_WHOLE_DOMAIN_RESEARCH_STOPPING_RECORD.md",
+    "manifest": "computer_assisted/a2_00100_whole_domain_research_stopping_manifest.json",
+    "accepted_original_cells": {
+      "closed": 197,
+      "open": 34
+    },
+    "new_original_cell_closures": 0,
+    "new_mask_closures": 0,
+    "new_positional_root_exclusions": 0,
+    "new_roadmap_gate_closures": 0,
+    "all_declared_runs_finished": true,
+    "new_mandatory_gates": [],
+    "lean_lake_ci_run": false
   }
 }
