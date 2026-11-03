@@ -1,4 +1,4 @@
-# Current A.2 handoff: eight masks closed; continue with 001/00 and 100/00
+# Current A.2 handoff: eight masks closed; 178 fixed 001/00 cells remain
 
 ## Operative directive — exhaustive original-nine frontier first (2026-11-02)
 
@@ -14,9 +14,11 @@
 4. **Stop speculative auxiliary work.** Do not introduce another threshold, owner subgate, certificate tree or side lemma unless it targets a **named uncovered full-mask terminal** and explains how that terminal will close. If it only tightens a necessary condition, leave it as research, report **zero gate advancement**, and change strategy rather than recursively refining it.
 5. **Computer assistance first; final hand/table proof.** Search/enumerate/check exact contradictions and independently replay rational certificates. Finish with a complete human-checkable geometric proof and finite table if needed. Do **not** compile Lean, run Lake or trigger CI. A closed component table is not a complete original-nine hand/table proof without exhaustive parent-to-terminal coverage.
 
-**Current immutable ledger for this directive-only cleanup:** **8/32 original-nine masks closed; 24 OPEN. Positional roots: 5,838 historical closed-Q exclusions, 2,077 OPEN (7,915 stable IDs). All 15 roadmap IDs unchanged; A.2, global lower bound, equality classification and manuscript remain OPEN.** Closed masks: `000/00`, `000/01`, `000/10`, `000/11`, `010/00`, `010/01`, `010/10`, `010/11`. Root 7820 remains possible at `q=Q`. No mask, root or gate is closed by this documentation revision.
+**Current immutable ledger (November 3):** **8/32 original-nine masks closed; 24 OPEN. Positional roots: 5,838 historical closed-Q exclusions, 2,077 OPEN (7,915 stable IDs). All 15 roadmap IDs unchanged; A.2, global lower bound, equality classification and manuscript remain OPEN.** Closed masks: `000/00`, `000/01`, `000/10`, `000/11`, `010/00`, `010/01`, `010/10`, `010/11`. Root 7820 remains possible at `q=Q`. The new finite-cover checkpoint closes 53 whole internal cells and no whole mask, positional root, or roadmap gate.
 
-**First next-session deliverable:** a *coverage-qualified* finite branch register for `001/00` (and justified transfer to `100/00`), or a precise report that the partition itself is still unproved; then discharge named uncovered branches. **The exhaustive full-mask terminal count is NOT ESTABLISHED**. The existing 90,533-leaf completed component tables do not constitute that partition.
+**The exhaustive full-mask cover is now CERTIFIED.** The accepted low-gap theorem and two complete normalized D-sign forests cover the entire strict `001/00` domain. The adopted baseline has 11,278 proved leaves and **231 fixed unresolved cells**. Complete whole-cell substitutions, each independently checked, close **53** of those cells; **178 remain OPEN**. Read the [hand/table assembly](A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md), [fixed register](gates/A2_00100_FIXED_FRONTIER.json), and [source-bound manifest](computer_assisted/a2_00100_fixed_frontier_manifest.json). Shared closed faces are retained; no disjoint physical-packing partition is asserted.
+
+**Next deliverable:** close named OPEN original cells with complete parent-domain proofs, close another original full mask, or prove a genuine global terminal-extraction theorem. Keep the same 231 cell IDs: unfinished internal trials leave their original parent OPEN. The previous component tables are inputs to this certified cover, not independent progress counters. The exact [seven-original obstruction](SEVEN_ORIGINAL_ALL_OPEN_MASKS_OBSTRUCTION.md) realizes every one of the 24 OPEN masks below Q with A–G alone; further exclusions need omitted-original information or a proved stronger global selection hypothesis.
 
 ### Required handoff footer for subsequent proof sessions
 
@@ -33,17 +35,20 @@
 ---
 
 
-November 2, 2026. The complete original-nine 010/11 strict-radius proof
-is accepted. No Lean, Lake or CI. The unrestricted bound, equality and
-global manuscript remain OPEN.
-
 ## Read first
 
-1. `A2_010_11_WHOLE_DOMAIN_ASSEMBLY.md`: complete original-nine proof.
-2. `A2_010_11_VERIFIED_CLOSURE_2026_11_02.md`: evidence, corrections and scope.
-3. `A2_010_11_WHOLE_DOMAIN_ASSEMBLY_INDEPENDENT_REVIEW.md`: exhaustive
-   physical/dependency audit and final complete acceptance addendum.
-4. `computer_assisted/mask_01011_closure_manifest.json`: frozen inventory.
+1. `A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md`: full cover, 53 complete cell proofs, and exact remaining obligation.
+2. `gates/A2_00100_FIXED_FRONTIER.json`: immutable 231 paths, with 178 still OPEN.
+3. `A2_00100_FIXED_FRONTIER_PHYSICAL_REVIEW.md`, `A2_00100_V13_COVERAGE_INDEPENDENT_REVIEW.md`, and `A2_00100_V14_CELL_SUBSTITUTION_INDEPENDENT_REVIEW.md`: physical source, exhaustive split, and full-cell proof audits.
+4. `computer_assisted/a2_00100_fixed_frontier_manifest.json`: portable archive, source bindings, exact tables and complete replay evidence.
+
+## Previously completed 010/11 proof
+
+November 2, 2026. The complete original-nine 010/11 strict-radius proof
+is accepted. Its assembly, verified-closure record, independent assembly
+review and `computer_assisted/mask_01011_closure_manifest.json` retain their
+recorded scopes. No Lean, Lake or CI. The unrestricted bound, equality and
+global manuscript remain OPEN.
 
 All eight masks with actual outer main links are now complete. Do not
 restart the old full-side low-floor or lower-central singleton searches:
@@ -156,7 +161,7 @@ The new analytic row terminal excludes a neighborhood of that control.
 The remaining original-nine placement alternatives are still unproved.
 **No whole-mask, positional-root, or roadmap-gate count changes.**
 
-## Latest continuation: extra strip and all-sign row boundary proof
+## Preceding component continuation: extra strip and all-sign row boundary proof
 
 Read [WEAK_OUTER_EXTRA_STRIP_AND_ALL_SIGN_ROW_CHECKPOINT.md](WEAK_OUTER_EXTRA_STRIP_AND_ALL_SIGN_ROW_CHECKPOINT.md)
 and its independent review for the complete next package. Five original
@@ -178,12 +183,13 @@ allows variation `11/30` without an angle-size guard. The recovered deep-B
 cylinder, asymmetric row, and complete vertical-order packages are
 preserved with their original scopes.
 
-The complete original-nine height-placement cover remains open. Partial
-full-nine forests and numerical low-F/capacity experiments are discovery
-work, not accepted whole-mask coverage. Universal cap-column and
-disk/inset/diamond inequalities may strengthen those forests, with all
-guards and closed faces retained. **Zero new whole-mask, positional-root,
-or roadmap closures are claimed.** No Lean, Lake, or CI was run.
+That component checkpoint did not establish the complete original-nine
+height-placement cover. The present fixed-frontier checkpoint now supplies
+the exhaustive cover and accepts 53 whole-cell exclusions, with 178 OPEN.
+The retained forests have fresh source-bound exact replays and independent
+coverage/physical reviews. Numerical low-F/capacity experiments remain
+discovery work. **Zero new whole-mask, positional-root, or roadmap closures
+are claimed.** No Lean, Lake, or CI was run.
 
 ## Fixed accounting
 
@@ -199,5 +205,6 @@ or roadmap closures are claimed.** No Lean, Lake, or CI was run.
 The earlier full masks and the 393,755-leaf component checkpoint remain
 accepted with their recorded scopes. The unchanged contract is
 `A2_COVERAGE_AND_CLOSURE_CONTRACT.md`.
+
 
 

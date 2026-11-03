@@ -1,10 +1,40 @@
-# n=9: eight fixed masks closed; continue with the weak outer link
+# n=9: eight masks closed; certified 001/00 cover has 178 open cells
 
 ## Active work policy: exhaustive full-mask frontier, not local lemma count
 
-**Follow [the operative handoff directive](HANDOFF_A2_FIXED_CLOSURE.md).** Build a coverage-certified finite decomposition of the exact strict original-nine `001/00` mask, justify any transfer to `100/00`, and register every uncovered *full-mask terminal* with its precise predicate. Discharge each by a hand/table argument using independently replayed exact arithmetic if needed. No more free-floating threshold or component-certificate refinement: new work must close named full-mask branches. Keep closed-Q equality/strict-mask boundaries explicit.
+**Follow [the operative handoff directive](HANDOFF_A2_FIXED_CLOSURE.md).** The exact strict original-nine `001/00` domain now has a certified finite cover. Close its named OPEN original cells by complete hand/table arguments using independently replayed exact arithmetic, or prove another complete mask or a global terminal extraction. Preserve the same fixed paths and all closed faces. An unfinished internal subtree leaves its original parent OPEN.
 
-**Accounting at this directive-only commit:** 8/32 full masks closed; 24 OPEN; 5,838/7,915 historical closed-Q positional exclusions and 2,077 OPEN; 15 gate IDs unchanged. The exhaustive full-mask terminal partition and its open-branch count are **NOT YET CERTIFIED**. Component-table zero-frontier reports do not change these counts. No Lean/Lake/CI.
+**Accounting at the November 3 fixed-cover checkpoint:** 8/32 full masks closed; 24 OPEN; 5,838/7,915 historical closed-Q positional exclusions and 2,077 OPEN; 15 gate IDs unchanged. The `001/00` cover is **CERTIFIED**: 231 fixed unresolved cells at adoption, **53 entire cells closed and 178 OPEN** after exact replay. No whole-mask or original-root status changes. No Lean/Lake/CI.
+
+## Latest accepted checkpoint: complete cover and 53 whole-cell exclusions
+
+[Hand/table assembly](A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md) ·
+[Fixed 231-cell register](gates/A2_00100_FIXED_FRONTIER.json) ·
+[Physical source review](A2_00100_FIXED_FRONTIER_PHYSICAL_REVIEW.md) ·
+[Independent coverage review](A2_00100_V13_COVERAGE_INDEPENDENT_REVIEW.md) ·
+[Independent cell review](A2_00100_V14_CELL_SUBSTITUTION_INDEPENDENT_REVIEW.md) ·
+[Source-bound archive manifest](computer_assisted/a2_00100_fixed_frontier_manifest.json)
+
+The accepted low-gap theorem and a common vertical reflection reduce the
+whole strict mask to two closed D-sign roots, retaining all nine originals,
+36 corners and 36 physical pairs. Both baseline forests have fresh exact
+replays: 6,318 positive and 4,960 negative proved leaves, with respectively
+130 and 101 unresolved cells. An independent path/trie audit proves every
+parent-to-child cover, including common faces and analytic complements.
+
+The immutable 231-path register now has 53 complete cell exclusions: 40
+direct contradictions, ten complete bounded subtrees, and three complete
+focused subtrees. All 210 new leaves and all whole-cell unions passed
+independent replay. The final roots retain 106 positive and 72 negative
+OPEN cells. The delivered table prints 2,163 exact rows for 116 weighted
+leaves; the other 94 leaves use exact analytic or interval contradictions.
+Six damaged controls were rejected. This establishes no whole-mask closure.
+
+The separate [selected-seven obstruction](SEVEN_ORIGINAL_ALL_OPEN_MASKS_OBSTRUCTION.md)
+provides exact rational physical realizations of every remaining mask at
+`q=17/4<Q` when only A–G are required. All 882 checks passed fresh root
+replay. No remaining mask can be contradicted from that seven-original
+predicate alone. This is a route obstruction, not a nine-square packing.
 
 ## Complete 010/11 strict-radius proof accepted
 
@@ -142,7 +172,7 @@ retains equality; 000/11 and 010/11 have strict-radius conclusions and
 unclassified closed-Q status. Equality root 7820 remains possible at Q.
 These ledgers are not additive and give no percentage of remaining effort.
 
-## Latest weak-outer continuation: complete inputs, height cover still open
+## Preceding weak-outer component continuation
 
 The [extra-strip and all-sign row checkpoint](WEAK_OUTER_EXTRA_STRIP_AND_ALL_SIGN_ROW_CHECKPOINT.md)
 adds five source-bound complete component tables with fresh independent
@@ -163,8 +193,9 @@ independently reviewed and all 108 exact rational checks passed. Its
 simpler `1/12` precursor and 70 checks are also preserved. The
 inward-endpoint all-angle version now permits variation `11/30`.
 
-These are complete internal inputs. The remaining original-nine height
-placements are **not yet covered**, so `001/00` and `100/00` remain open.
+These are complete internal inputs. The current fixed-frontier checkpoint
+now covers the remaining original-nine height placements and leaves
+**178 original cells OPEN**, so `001/00` and `100/00` remain open.
 The ledger stays **8 complete masks / 24 open masks**, with no new
 positional-root or roadmap-gate closures. The same 32 mask predicates
 and 15 gate IDs are unchanged. No Lean, Lake, or CI was run.
@@ -187,5 +218,6 @@ The complete actual-four closure is pinned at
 [ddadfdd3](https://github.com/vltanh/lean4-squares-in-circles/blob/ddadfdd3bd2ef39a2e698680f9a2f3b7d73876ab/research/nine/PROGRESS.md).
 Earlier guarded terminals and incomplete research retain their original
 scope; they are not parallel active progress ledgers.
+
 
 

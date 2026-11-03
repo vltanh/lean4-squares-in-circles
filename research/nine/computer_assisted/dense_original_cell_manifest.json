@@ -1,0 +1,27 @@
+{
+  "scope": "Complete bounded negative discovery pass; no proof closure",
+  "whole_original_cells_attempted": 178,
+  "whole_original_cells_closed": 0,
+  "files": [
+    {
+      "path": "dense_original_cell_pass.py",
+      "sha256": "7587f3b36b3b8a0ddacdbc3be507f78f9c271b77cdc57546159a8006a087a251",
+      "size": 3967
+    },
+    {
+      "path": "dense_original_cell_report.json",
+      "sha256": "a4e0f735040a8d4816ccd0e1e311dd9c1957d440ac1185b802c3e5a7a8f75c11",
+      "size": 296172
+    },
+    {
+      "path": "dense_original_cell_closed.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "size": 3
+    },
+    {
+      "path": "../A2_00100_FULL_MATRIX_CONTINUATION_OBSTRUCTION.md",
+      "sha256": "9dc2ccac70ef746a7086b86483aa92f20b9214a9602ecc7514e7ac3396a25c25",
+      "size": 3529
+    }
+  ]
+}

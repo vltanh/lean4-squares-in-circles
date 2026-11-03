@@ -1,10 +1,12 @@
 # n=9 — sharp nine-unit-square packing
 
-**Current original-nine A.2 ledger (2026-11-02): 8/32 full masks CLOSED; 24 OPEN.** The unrestricted sharp bound `R²>=1105/256`, global equality classification and assembled manuscript remain OPEN. Historical positional roots: 5,838 closed-Q exclusions and 2,077 OPEN out of 7,915; the 15 canonical roadmap gate IDs are unchanged. This directive-only update claims no mathematical closure.
+**Current original-nine A.2 ledger (2026-11-03): 8/32 full masks CLOSED; 24 OPEN.** The unrestricted sharp bound `R²>=1105/256`, global equality classification and assembled manuscript remain OPEN. The complete `001/00` cover is now certified: **53 of 231 fixed original cells excluded; 178 OPEN**. Historical positional roots: 5,838 closed-Q exclusions and 2,077 OPEN out of 7,915; the 15 canonical roadmap gate IDs are unchanged. No new whole-mask or positional-root closure is claimed.
 
 **Read in this order:** [current operative handoff](HANDOFF_A2_FIXED_CLOSURE.md) · [accepted progress and proof ledger](PROGRESS.md) · [fixed-gate roadmap](DEEP_GATED_ROADMAP.md) · [original mask frontier](gates/A2_MASK_FRONTIER.json) · [historical handoffs](history/handoffs/README.md).
 
-**Execution directive:** Stop recursive local-lemma and certificate refinement. First construct a **proved exhaustive full-original-nine** partition of strict `001/00` (with `100/00` only by justified symmetry); then measure and close its uncovered terminal branches. If that partition is not established, report that explicitly rather than substituting component leaves. Tie every additional lemma to an open full-mask branch, preserve all nine physical squares and the strict weak-bit boundary, and pivot if blocked. Computer-assisted discovery and independent exact replay permitted; final complete hand/table proof; **no Lean/Lake/CI**.
+**Current evidence:** [hand/table assembly](A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md) · [fixed 231-cell register](gates/A2_00100_FIXED_FRONTIER.json) · [exact archive manifest](computer_assisted/a2_00100_fixed_frontier_manifest.json). All baseline leaves, new leaves and full-cell substitutions have complete exact replay and separate coverage/physical reviews. The [selected-seven obstruction](SEVEN_ORIGINAL_ALL_OPEN_MASKS_OBSTRUCTION.md) supplies strict rational realizations for all 24 open masks when only A–G are retained.
+
+**Execution directive:** Close the named OPEN cells of the certified full-original-nine cover, another entire fixed mask, or a global terminal-extraction theorem. Keep the same 231 cell IDs; unfinished internal trials leave their parent OPEN. Tie every additional lemma to a complete original domain, preserve all nine physical squares and the strict weak-bit boundary, and pivot if blocked. Computer-assisted discovery and independent exact replay permitted; final complete hand/table proof; **no Lean/Lake/CI**.
 
 ## Historical unrestricted structural evidence (not the active work queue)
 
@@ -83,4 +85,5 @@ at least three exceptional pairs for every choice of two directions.
 None supplies the remaining unrestricted coverage argument. The fixed
 positional tally remains 5,838 excluded and 2,077 open out of 7,915 roots;
 the earlier archive-only 312 additional exclusions remain separately recorded.
+
 

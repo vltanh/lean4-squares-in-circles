@@ -2,9 +2,9 @@
 
 ## Highest-priority execution rule: no local-lemma rabbit hole
 
-[Current mandatory handoff protocol](HANDOFF_A2_FIXED_CLOSURE.md). The immediate target is one **exhaustive, coverage-verified full original-nine** `001/00` strict-mask partition (and proved `100/00` symmetry transfer). Attach every old or new component argument to a **named full-mask terminal**; either close that terminal with derived hypotheses and a complete hand/table proof, or retain it explicitly OPEN with its precise predicate. Stop deriving smaller thresholds and local certificates that do not discharge named whole-mask branches. If stalled, document the blocker and pivot to another original full mask or universal full-domain result.
+[Current mandatory handoff protocol](HANDOFF_A2_FIXED_CLOSURE.md). The **exhaustive full-original-nine `001/00` cover is now certified**, with 231 fixed cells at adoption, **53 closed and 178 OPEN**. See the [hand/table assembly](A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md) and [stable register](gates/A2_00100_FIXED_FRONTIER.json). Attach every further argument to a named OPEN original cell, another complete fixed mask, or a global terminal-extraction theorem. An unfinished internal subtree leaves its original parent OPEN. If stalled, document the blocker and pivot to a materially different whole-domain argument.
 
-**Metric:** count uncovered *full-mask* terminal branches with a proven exhaustive split, **NOT** local certificate leaves/nodes, solver runs or auxiliary lemmas. Until such a partition is proved, the frontier size is **NOT ESTABLISHED**. Track original strict bits and `q<Q` boundary faces. No change to the 8-closed/24-open 32-mask ledger, 5,838/2,077 historical root ledger or 15 gate IDs without a complete original-domain proof. Computer discovery and independent exact arithmetic replay precede the hand/table argument; no Lean/Lake/CI.
+**Metric:** count the uncovered original cells of the certified cover: **178**, with all 231 IDs retained. Local proof leaves, solver runs and auxiliary lemmas do not change that count. Track original strict bits and `q<Q` boundary faces. No change to the 8-closed/24-open 32-mask ledger, 5,838/2,077 historical root ledger or 15 gate IDs without the corresponding complete original-domain proof. Computer discovery and independent exact arithmetic replay precede the hand/table argument; no Lean/Lake/CI.
 
 ## Proof method updated: exact computer-assisted certificates first
 
@@ -67,12 +67,20 @@ without transferring an actual-outer premise. A possible structural
 extraction may cover several remaining masks only after its complete
 physical assertion is proved. Only complete proofs advance the same ledger.
 
+The [fixed-cover checkpoint](A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md)
+now records the complete large-gap cover, its 53 whole-cell exclusions,
+and the exact 178 OPEN original paths. Both sign roots and every new
+whole-cell substitution have independent complete exact replay and
+coverage reviews. The exact [seven-original obstruction](SEVEN_ORIGINAL_ALL_OPEN_MASKS_OBSTRUCTION.md)
+realizes all 24 OPEN masks below Q using A–G alone, so a remaining-mask
+exclusion requires more than that selected-seven predicate.
+
 The other masks stay in the same fixed table. No new owner, slope,
 threshold or marker condition becomes a mandatory child gate.
 
 ## What counts as progress
 
-A mathematical closure checkpoint contains a complete proof for at least one fixed full mask, a complete strict-radius proof for named original roots, or a valid global terminal-extraction theorem. Necessary internal lemmas and exact tables are allowed inside that proof.
+A whole-mask or roadmap closure checkpoint contains a complete proof for at least one fixed full mask, a complete strict-radius proof for named original roots, or a valid global terminal-extraction theorem. A certified whole-cell checkpoint may separately exclude complete named cells of the fixed full-mask cover; it must preserve the original register and report zero whole-mask/gate advancement unless the entire domain closes. Necessary internal lemmas and exact tables are allowed inside those proofs.
 
 Every internal split must cover its parent, including its complement and boundary faces. Every leaf must close or invoke a proved terminal whose hypotheses have been derived. Dependencies must be acyclic or explicitly well-founded. Splitting alone earns no closure.
 
@@ -107,4 +115,5 @@ cover of the closed weak-bit relaxation cannot finish the strict problem.
 The new analytic row terminal excludes a neighborhood of that control.
 The remaining original-nine placement alternatives are still unproved.
 **No whole-mask, positional-root, or roadmap-gate count changes.**
+
 

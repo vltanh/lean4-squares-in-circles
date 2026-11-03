@@ -162,9 +162,21 @@ a universal terminal extraction without adding mandatory gates. No bound
 on another exceptional pair, endpoint owner, inner height, tilt or outsider
 placement may be assumed without proof.
 
-The next accepted checkpoint must name the complete fixed domain or
-stable root it discharges and give its full proof. An unfinished target
-stays OPEN rather than becoming a list of mandatory conditional gates.
+The November 3 [fixed-cover checkpoint](A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md)
+establishes the exhaustive cover of this full predicate. Its baseline has
+11,278 proved leaves and 231 fixed unresolved original cells; complete
+substitutions exclude 53 of those cells and leave 178 OPEN. The
+[stable register](gates/A2_00100_FIXED_FRONTIER.json) retains every original
+path and its physical caller. Shared closed faces are allowed. This
+coverage-qualified count is separate from all 32 mask statuses.
+
+Under the operative frontier-first directive, a cell checkpoint must name
+each complete original cell it discharges and supply its full hand/table
+proof, exact replay when used, and the complete parent-to-terminal cover.
+An unfinished internal subtree leaves that same original cell OPEN.
+A whole-mask or roadmap closure still requires the entire fixed domain,
+an entire stable original root, or a valid global terminal extraction.
+No incomplete target becomes a list of new mandatory gates.
 
 ## 8. A closing proof must assemble, not merely split
 
@@ -218,4 +230,5 @@ cover of the closed weak-bit relaxation cannot finish the strict problem.
 The new analytic row terminal excludes a neighborhood of that control.
 The remaining original-nine placement alternatives are still unproved.
 **No whole-mask, positional-root, or roadmap-gate count changes.**
+
 
