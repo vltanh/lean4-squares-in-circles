@@ -1,4 +1,4 @@
-> **Latest verified checkpoint:** [Two further complete center covers](A2_00100_TWO_MORE_FIXED_CENTER_COVER_CLOSURES.md), following [nine original-center capacity proofs](A2_00100_ORIGINAL_CENTER_CAPACITY_CLOSURE.md), bring the same register to **185 CLOSED / 46 OPEN**, with A12, B21, C9 and D4 open. The 168/63 and family counts below are the historical status when this strategy directive was issued. Its whole-parent acceptance rules remain operative; the [current handoff](HANDOFF_A2_FIXED_CLOSURE.md) governs live counts.
+> **Latest verified checkpoint:** [Six shared-center remainder proofs](A2_00100_SHARED_CENTER_REMAINDER_CLOSURE.md), following the nine-cell and two-cell center-capacity packets, bring the same register to **191 CLOSED / 40 OPEN**, with A8, B19, C9 and D4 open. The 168/63 and family counts below are historical. Its whole-parent acceptance rules remain operative; the [current handoff](HANDOFF_A2_FIXED_CLOSURE.md) governs live counts.
 
 # A.2 / 001/00: shared whole-domain closure directive (November 3, 2026)
 

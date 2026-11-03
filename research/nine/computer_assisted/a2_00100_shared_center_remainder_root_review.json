@@ -1,0 +1,60 @@
+{
+  "status": "PASS_SIX_COMPLETE_ORIGINALS_AND_CANONICAL_INTEGRATION",
+  "previous_published_commit": "1156f2bcf812495381a4f259f6a39601cb305318",
+  "archive_sha256": "98e2de3cb3e63a747066a6e962ea0e73de064e57e8bf1831441af870fdb2518d",
+  "manifest_sha256": "1bab2869fdf3701d3d9ad86fe497c1147602322889903f4703b9b75e741728bc",
+  "immutable_extracted_files_rechecked": 438,
+  "required_sources_and_prefixes_bound_inside_package": 24,
+  "fresh_extracted_portable_replay_status": "PASS_ALL_COMPLETE_ORIGINAL_PARENTS",
+  "fresh_extracted_portable_summary_sha256": "59f3eef43b8fa4349c8d59d006fd0520e6a8d5089b43c7d81fe3fbf9f98e49e0",
+  "full_original_paths_unchanged": 231,
+  "new_distinct_closed_ids": [
+    "negative-99f578b7bbedf013",
+    "negative-daf08b7f35b70b9a",
+    "positive-5edcabd77ec2e38b",
+    "positive-8e41311b61c89e61",
+    "positive-b4a9a3bc15e37620",
+    "positive-d9e959003493b8f1"
+  ],
+  "before": {
+    "closed": 185,
+    "open": 46
+  },
+  "after": {
+    "closed": 191,
+    "open": 40
+  },
+  "totals": {
+    "prior_coordinate_deductions": 200,
+    "whole_parent_new_deductions": 2906,
+    "rectangle_new_deductions": 822,
+    "new_exact_deductions": 3728,
+    "printed_rows_checked": 8003,
+    "complete_terminal_domains": 315,
+    "fixed_grid_tiles": 320,
+    "static_terminal_domains": 312,
+    "complete_rectangle_domains": 2,
+    "whole_parent_terminal_domains": 1
+  },
+  "completed_existing_domain_assemblies": 3,
+  "exact_scope_maps_replayed": true,
+  "daf_exact_positive_weights": 19,
+  "daf_exact_cancelled_variables": 21,
+  "daf_exact_rhs": "-10097575511680489073266167496518465126478505017997380175649396568473179953834486886416170819091532897/17318634111378535821175801463922538716341845123879053931021975223862141152851512559635563621331763200",
+  "open_by_family": {
+    "A": 8,
+    "B": 19,
+    "C": 9,
+    "D": 4
+  },
+  "global_mask_ledger_byte_unchanged": true,
+  "whole_masks": {
+    "closed": 8,
+    "open": 24
+  },
+  "new_positional_root_exclusions": 0,
+  "new_roadmap_gate_closures": 0,
+  "lean_lake_ci_run": false,
+  "proof_kernel_verification": false,
+  "human_verification": false
+}

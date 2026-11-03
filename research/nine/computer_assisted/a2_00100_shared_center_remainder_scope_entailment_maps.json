@@ -1,0 +1,381 @@
+{
+  "schema": "n9_shared_center_remainder_exact_scope_maps_v1",
+  "status": "PASS_EXACT_EXISTING_PREFIX_ASSEMBLIES",
+  "original_register_sha256": "ea000e84c04675fe22424e5c20d3df9d735d659065349800aef2699170bff604",
+  "baseline_closed_count": 174,
+  "previous_checkpoint_closed_count": 11,
+  "current_checkpoint_closed_count": 6,
+  "resulting_closed_count": 191,
+  "completed_existing_domains": [
+    {
+      "name": "A inward-row child 7",
+      "kind": "complete_existing_prefix",
+      "prefix": [
+        [
+          "angle",
+          3,
+          1
+        ],
+        [
+          "angle_cut",
+          [
+            0,
+            "0"
+          ],
+          0
+        ],
+        [
+          "inward_row_escape",
+          [
+            7,
+            8
+          ],
+          [
+            7
+          ]
+        ]
+      ],
+      "baseline_closed_ids": [
+        "positive-0fc8ffe31daddabf",
+        "positive-4edb1f18b78287ad",
+        "positive-53080a2a10d7a9f9",
+        "positive-55e1a63c28118dc2",
+        "positive-59a81039129632a6",
+        "positive-67979b032ac0c877",
+        "positive-78e45e07e982a439",
+        "positive-8936e1905b27bef7",
+        "positive-8dac2ea84c817188",
+        "positive-99d705c489031b39",
+        "positive-a76638de241e6faf",
+        "positive-ceecf2ef0f2b7214",
+        "positive-d6a34291dc0ff686",
+        "positive-fbac60a51d1e7f99",
+        "positive-fcd8601a4e6460f9"
+      ],
+      "previous_checkpoint_closed_ids": [],
+      "current_checkpoint_closed_ids": [
+        "positive-b4a9a3bc15e37620"
+      ],
+      "all_original_descendant_ids": [
+        "positive-0fc8ffe31daddabf",
+        "positive-4edb1f18b78287ad",
+        "positive-53080a2a10d7a9f9",
+        "positive-55e1a63c28118dc2",
+        "positive-59a81039129632a6",
+        "positive-67979b032ac0c877",
+        "positive-78e45e07e982a439",
+        "positive-8936e1905b27bef7",
+        "positive-8dac2ea84c817188",
+        "positive-99d705c489031b39",
+        "positive-a76638de241e6faf",
+        "positive-b4a9a3bc15e37620",
+        "positive-ceecf2ef0f2b7214",
+        "positive-d6a34291dc0ff686",
+        "positive-fbac60a51d1e7f99",
+        "positive-fcd8601a4e6460f9"
+      ],
+      "complete": true
+    },
+    {
+      "name": "A inward-row child 6, low F, F-H child 6",
+      "kind": "complete_existing_prefix",
+      "prefix": [
+        [
+          "angle",
+          3,
+          1
+        ],
+        [
+          "angle_cut",
+          [
+            0,
+            "0"
+          ],
+          0
+        ],
+        [
+          "inward_row_escape",
+          [
+            7,
+            8
+          ],
+          [
+            6
+          ]
+        ],
+        [
+          "position_cut",
+          [
+            11,
+            "1/2"
+          ],
+          0
+        ],
+        [
+          "f_side_escape",
+          [
+            5,
+            7
+          ],
+          [
+            6
+          ]
+        ]
+      ],
+      "baseline_closed_ids": [
+        "positive-01280957a677dab2",
+        "positive-0930bc6a41c4aba1",
+        "positive-1666e16b44bd111d",
+        "positive-1f1e94c9974fca84",
+        "positive-2603b3b3233db074",
+        "positive-26b2c3e5dc48a8b5",
+        "positive-287aaab64e644dbc",
+        "positive-3821daedc1083e11",
+        "positive-3f9d1b65e33f2d12",
+        "positive-40ae3a067f3cacef",
+        "positive-4147cf4d6d1daef2",
+        "positive-49ede58786417a6e",
+        "positive-4ec25f567b25a395",
+        "positive-52819efddf5292c0",
+        "positive-538bac3b486fd92d",
+        "positive-6a6d3acbfe075c58",
+        "positive-743554c7b9f9d1c2",
+        "positive-76c11ab1a1038b2f",
+        "positive-77ff95e3f1c3ba59",
+        "positive-8f92e2d887c830bb",
+        "positive-9cc839d8f2504bca",
+        "positive-b696531e6d132c9e",
+        "positive-bdb5f431b3fe0cba",
+        "positive-c46210bce1770288",
+        "positive-c5d1d2351fe764c2",
+        "positive-c7a72bc6e6d037d3",
+        "positive-d389f65d47cbb480",
+        "positive-d5ff8b541a1a883e",
+        "positive-ee5847fd7affacb4"
+      ],
+      "previous_checkpoint_closed_ids": [
+        "positive-3da90694b58b6ef7",
+        "positive-8f760b2d708ad21d"
+      ],
+      "current_checkpoint_closed_ids": [
+        "positive-8e41311b61c89e61",
+        "positive-d9e959003493b8f1"
+      ],
+      "all_original_descendant_ids": [
+        "positive-01280957a677dab2",
+        "positive-0930bc6a41c4aba1",
+        "positive-1666e16b44bd111d",
+        "positive-1f1e94c9974fca84",
+        "positive-2603b3b3233db074",
+        "positive-26b2c3e5dc48a8b5",
+        "positive-287aaab64e644dbc",
+        "positive-3821daedc1083e11",
+        "positive-3da90694b58b6ef7",
+        "positive-3f9d1b65e33f2d12",
+        "positive-40ae3a067f3cacef",
+        "positive-4147cf4d6d1daef2",
+        "positive-49ede58786417a6e",
+        "positive-4ec25f567b25a395",
+        "positive-52819efddf5292c0",
+        "positive-538bac3b486fd92d",
+        "positive-6a6d3acbfe075c58",
+        "positive-743554c7b9f9d1c2",
+        "positive-76c11ab1a1038b2f",
+        "positive-77ff95e3f1c3ba59",
+        "positive-8e41311b61c89e61",
+        "positive-8f760b2d708ad21d",
+        "positive-8f92e2d887c830bb",
+        "positive-9cc839d8f2504bca",
+        "positive-b696531e6d132c9e",
+        "positive-bdb5f431b3fe0cba",
+        "positive-c46210bce1770288",
+        "positive-c5d1d2351fe764c2",
+        "positive-c7a72bc6e6d037d3",
+        "positive-d389f65d47cbb480",
+        "positive-d5ff8b541a1a883e",
+        "positive-d9e959003493b8f1",
+        "positive-ee5847fd7affacb4"
+      ],
+      "complete": true
+    },
+    {
+      "name": "F-H routing child 5 across every F height",
+      "kind": "complete_union_of_closed_height_children",
+      "common_prefix": [
+        [
+          "angle",
+          3,
+          0
+        ],
+        [
+          "angle_cut",
+          [
+            0,
+            "0"
+          ],
+          0
+        ]
+      ],
+      "shared_routing_step": [
+        "f_side_escape",
+        [
+          5,
+          7
+        ],
+        [
+          5
+        ]
+      ],
+      "routing_rows": [
+        {
+          "coefficients": [
+            [
+              10,
+              "1"
+            ],
+            [
+              14,
+              "-1"
+            ]
+          ],
+          "rhs": "0"
+        },
+        {
+          "coefficients": [
+            [
+              7,
+              "-1"
+            ],
+            [
+              11,
+              "-1"
+            ],
+            [
+              15,
+              "2"
+            ]
+          ],
+          "rhs": "-3/5"
+        },
+        {
+          "coefficients": [
+            [
+              7,
+              "-1"
+            ],
+            [
+              11,
+              "1"
+            ]
+          ],
+          "rhs": "3/5"
+        }
+      ],
+      "fixed_original_ids": [
+        "negative-daf08b7f35b70b9a",
+        "negative-99f578b7bbedf013"
+      ],
+      "height_variable": 11,
+      "cut": "1/2",
+      "children": [
+        "y_F <= 1/2",
+        "y_F >= 1/2"
+      ],
+      "shared_face_retained": true,
+      "H_target_original": 7,
+      "H_position_indices": [
+        14,
+        15
+      ],
+      "H_I_exchange_used": false,
+      "complete": true
+    }
+  ],
+  "explicitly_open_broader_domain": {
+    "name": "A inward-row child 6, low F",
+    "prefix": [
+      [
+        "angle",
+        3,
+        1
+      ],
+      [
+        "angle_cut",
+        [
+          0,
+          "0"
+        ],
+        0
+      ],
+      [
+        "inward_row_escape",
+        [
+          7,
+          8
+        ],
+        [
+          6
+        ]
+      ],
+      [
+        "position_cut",
+        [
+          11,
+          "1/2"
+        ],
+        0
+      ]
+    ],
+    "all_original_descendant_ids": [
+      "positive-01280957a677dab2",
+      "positive-0930bc6a41c4aba1",
+      "positive-1077638afc8dc284",
+      "positive-1666e16b44bd111d",
+      "positive-1f1e94c9974fca84",
+      "positive-2603b3b3233db074",
+      "positive-26b2c3e5dc48a8b5",
+      "positive-287aaab64e644dbc",
+      "positive-3821daedc1083e11",
+      "positive-3da90694b58b6ef7",
+      "positive-3f9d1b65e33f2d12",
+      "positive-40ae3a067f3cacef",
+      "positive-4147cf4d6d1daef2",
+      "positive-49ede58786417a6e",
+      "positive-4ec25f567b25a395",
+      "positive-52819efddf5292c0",
+      "positive-538bac3b486fd92d",
+      "positive-5edcabd77ec2e38b",
+      "positive-6a6d3acbfe075c58",
+      "positive-7061079552b95849",
+      "positive-743554c7b9f9d1c2",
+      "positive-768264ad71bc8152",
+      "positive-76c11ab1a1038b2f",
+      "positive-77ff95e3f1c3ba59",
+      "positive-8e41311b61c89e61",
+      "positive-8f760b2d708ad21d",
+      "positive-8f92e2d887c830bb",
+      "positive-9cc839d8f2504bca",
+      "positive-b2ead88219ddcb52",
+      "positive-b696531e6d132c9e",
+      "positive-bdb5f431b3fe0cba",
+      "positive-c46210bce1770288",
+      "positive-c5d1d2351fe764c2",
+      "positive-c7a72bc6e6d037d3",
+      "positive-d389f65d47cbb480",
+      "positive-d5ff8b541a1a883e",
+      "positive-d9e959003493b8f1",
+      "positive-dc201c34b4b939b2",
+      "positive-ee5847fd7affacb4"
+    ],
+    "remaining_open_ids": [
+      "positive-768264ad71bc8152"
+    ],
+    "complete": false
+  },
+  "coverage_premise": "The accepted unchanged 231-cell original coverage contract and literal path predicates.",
+  "new_original_ids_created": 0,
+  "new_masks_created": 0,
+  "whole_A_family_closed": false,
+  "whole_B_family_closed": false,
+  "whole_mask_closed": false
+}
