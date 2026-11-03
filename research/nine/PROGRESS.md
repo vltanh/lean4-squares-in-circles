@@ -81,15 +81,15 @@ argument; the actual-outer-link family cannot simply be transferred.
 
 The complete [signed low-gap assembly](WEAK_OUTER_LOW_GAP_HAND_TABLE_ASSEMBLY.md)
 now proves that the weak pair's absolute transverse center gap must
-exceed **5/8**, for every original tilt and even at closed Q. This
-strengthens the earlier 7/30 result. The proof combines two analytic
+exceed **2/3**, for every original tilt and even at closed Q. This
+strengthens the earlier 7/30 and 5/8 results. The proof combines two analytic
 signed transfer arguments with a complete endpoint-order table:
 **34,752 exact rational leaves, 62,297 nodes, empty frontier**, independently
 replayed by both its author and the root. Five damaged-certificate controls
 were rejected. The [independent mathematical review](WEAK_OUTER_SIGNED_LOW_GAP_INDEPENDENT_REVIEW.md)
 accepts the entire assembly and its acyclic dependencies.
 
-The resulting original-nine complement **|y_D-y_C|>5/8** remains open.
+The resulting original-nine complement **|y_D-y_C|>2/3** remains open.
 This component result closes no additional whole mask or positional root.
 Numerical seven/eight-square explorations do not close the original-nine
 mask; the ninth original can be essential. The exact aligned nine-square

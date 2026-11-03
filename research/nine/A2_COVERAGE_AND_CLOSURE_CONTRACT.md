@@ -154,7 +154,7 @@ The two other original squares remain unrestricted.
 
 The complete signed hand/table assembly in
 `WEAK_OUTER_LOW_GAP_HAND_TABLE_ASSEMBLY.md` proves that the weak pair's
-absolute transverse gap exceeds 5/8 even at closed Q. That complete
+absolute transverse gap exceeds 2/3 even at closed Q. That complete
 subdomain exclusion leaves the larger-gap original-nine complement
 open and closes no whole mask. The original mask definition in Section 3
 is unchanged. Parallel searches may address another fixed full mask or

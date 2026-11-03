@@ -53,7 +53,7 @@ A complete fixed-root hand/table proof is an alternative route. It must name the
 **Whole `001/00`, with reversal `100/00`: one weak outer main link.**
 
 The complete 010/11 proof is accepted. The independently reviewed weak-outer
-signed hand/table assembly excludes transverse gaps at most 5/8, using
+signed hand/table assembly excludes transverse gaps at most 2/3, using
 a complete 34,752-leaf exact endpoint-order table; the larger-gap
 original-nine complement is
 open. Retain all original squares and derive the changed endpoint bounds

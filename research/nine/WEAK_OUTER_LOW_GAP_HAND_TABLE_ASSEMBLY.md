@@ -1,4 +1,4 @@
-# Complete weak-outer exclusion through transverse gap 5/8
+# Complete weak-outer exclusion through transverse gap 2/3
 
 November 2, 2026. Complete pen-and-paper assembly, including one finite
 rational table whose entire forest has been independently replayed.
@@ -11,7 +11,7 @@ Retain the complete original-nine `001/00` predicate at closed
 E,F,G. Then
 
 \[
-                         |y_D-y_C|>5/8.                 \tag{1}
+                         |y_D-y_C|>2/3.                 \tag{1}
 \]
 
 The exact simultaneous reversal from the coverage contract gives the
@@ -21,7 +21,7 @@ The proof needs only consequences of the seven selected originals; the
 two unselected squares remain unrestricted physical members of the
 original predicate.
 
-This strengthens the previous threshold 7/30. It is a complete exclusion
+This strengthens the previous thresholds 7/30 and 5/8. It is a complete exclusion
 of a larger continuous subdomain, **not** a complete exclusion of either
 fixed mask. The fixed ledger remains 8 closed and 24 open masks, with
 zero newly closed masks or positional roots in this result.
@@ -42,18 +42,18 @@ alpha>=beta>=0. Its signed tilt is either nonpositive or nonnegative;
 the aligned and diagonal boundary representations are covered by the
 closed union of these two choices.
 
-Suppose for contradiction that v<=5/8.
+Suppose for contradiction that v<=2/3.
 
 ## 2. The complete case union
 
 | Original domain | Complete contradiction |
 |---|---|
 | 0<=v<=7/30, either D chirality | The inherited `WEAK_OUTER_SMALL_TRANSVERSE_GAP_HAND_EXCLUSION.md` |
-| 7/30<=v<=5/8, nonpositive D tilt | `WEAK_OUTER_NUMERIC_NEGATIVE_TILT_LOW_GAP_HAND_EXCLUSION.md`, Sections 2--4 |
-| 7/30<=v<=5/8, nonnegative D tilt | The endpoint-order theorem, then the signed transfer and cap described below |
+| 7/30<=v<=2/3, nonpositive D tilt | `WEAK_OUTER_NUMERIC_NEGATIVE_TILT_TWO_THIRDS_HAND_EXCLUSION.md` |
+| 7/30<=v<=2/3, nonnegative D tilt | The endpoint-order theorem, then `WEAK_OUTER_POSITIVE_TILT_TWO_THIRDS_HAND_TRANSFER.md` and the signed cap described below |
 
 All shared boundary faces are retained. The nonpositive-tilt theorem in
-fact covers the whole interval [0,5/8]; the first row is needed only to
+fact covers the whole interval [0,2/3]; the first row is needed only to
 supply the lower-gap complement for the positive-tilt order-table caller.
 No third chirality case exists for a square modulo its own quarter-turn
 symmetry. No individual physical square is reflected to choose a sign.
@@ -89,7 +89,7 @@ Put
  \qquad \sigma=(a-k)\beta_D-a(1-\alpha_D).
 \]
 
-The positive-chirality transfer theorem, with 0<=v<=5/8 and the true
+The positive-chirality transfer theorem, with 0<=v<=2/3 and the true
 weak C/D bit, proves
 
 \[
@@ -149,7 +149,14 @@ The certificate SHA-256 is
 Five deliberately damaged certificates were rejected. The signed cap,
 positive transfer, and negative-tilt arguments have complete analytic
 domain proofs; their small rational comparisons were also reconstructed
-separately. The independent mathematical review is
+separately. The 2/3 extension first bounds every usable owned C/D normal:
+the positive proof uses slope magnitude below 1/3, and the negative proof
+uses 13/40. Both include every owner, sign, and aligned boundary. The
+positive proof uses global monotonicity of its second transfer branch
+and two exact D-angle endpoint checks; the negative proof uses a concavity
+chord with rational endpoint reserve 6869/15788580. Their independent
+reviews accept the continuous arguments as well as the arithmetic.
+The independent mathematical review is
 `WEAK_OUTER_SIGNED_LOW_GAP_INDEPENDENT_REVIEW.md`.
 
 No human audit, Lean check, or proof-kernel verification is claimed.
@@ -172,7 +179,7 @@ low-gap exclusion. The positive transfer does not assume G-order.
 No result is used to prove itself.
 
 What remains of the original `001/00` predicate is exactly its
-`|y_D-y_C|>5/8` part, still with all nine independent original squares,
+`|y_D-y_C|>2/3` part, still with all nine independent original squares,
 all corners and physical pairs, all five cone comparisons, and the
 same exact bits. The two extra originals may be essential there:
 known subcritical seven/eight-original controls remain valid. The

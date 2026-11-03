@@ -12,6 +12,8 @@ it does not close either full fixed mask.
   `SIGNED_NEGATIVE_MAIN_UPWARD_SEPARATOR_CAP_INDEPENDENT_PROOF.md`.
 - `WEAK_OUTER_LOW_GAP_HAND_TABLE_ASSEMBLY.md`, including the complete
   three-row union and its explicit dependency order.
+- `WEAK_OUTER_POSITIVE_TILT_TWO_THIRDS_HAND_TRANSFER.md`.
+- `WEAK_OUTER_NUMERIC_NEGATIVE_TILT_TWO_THIRDS_HAND_EXCLUSION.md`.
 
 ## Signed transfer and its physical caller: accepted
 
@@ -108,11 +110,58 @@ closed Q, as is its exact simultaneous reversal for 100/00. It is a
 complete continuous subdomain exclusion. The larger-gap original-nine
 complement remains open, so no whole-mask or positional-root count changes.
 
-## Exact scope
+## Complete two-thirds extension: accepted
+
+The two later manuscripts extend the same original physical caller to
+the full closed transverse interval `0<=v<=2/3`. This supersedes the
+5/8 cutoff above, without changing any square, frame, comparison, or bit.
+
+For positive D tilt, the original span bound and the increasing J_V
+function give `t<1/3` for every usable owned normal, with squared reserve
+765110. Both vertical signs remain covered: on this derived range the
+downward D support is at least the upward support used in the transfer.
+The exact identity for A'' shows that A' has global minimum
+`1/(2sqrt(2))` at t=1, so F_+ is increasing for V=2/3. Concavity of F_-
+on `[0,1/3]` leaves only zero and `min(t_D,1/3)`.
+
+If `t_D<=1/3`, the kink surplus factors as beta/alpha times
+`(23/32)alpha+z(1-alpha)-2/3`; alpha>=3/sqrt(10) makes it strictly
+positive with squared reserve 1889. If `t_D>=1/3`, the endpoint surplus
+is the stated positive cosine-sine combination plus a constant, so its
+minimum is at an angular endpoint. Both displayed endpoint comparisons
+are positive. Beta=0 is handled separately: the exact weak bit excludes
+t=0, and the increasing F_+ gives strictness for every remaining normal.
+
+For nonpositive D tilt, the stronger normal cutoff `t<13/40` follows
+from the same J function, with squared reserve 1121887. On that entire
+range the upward support is exactly `ch+sk`. The endpoint contribution
+`(13/80)alpha-(139/1840)beta` decreases with beta and has minimum
+sqrt(2)/23. The two rational radical comparisons then give the strict
+F(13/40) surplus `6869/15788580`. Concavity, together with the weak bit's
+exclusion of a horizontal separator, proves strict transfer even when
+beta=0. The downward reflection has favorable transverse displacement;
+weakening it to zero gives the complete endpoint list
+`1,1/alpha,sqrt(2)+k`. Positive beta supplies strict toll, and the
+aligned case is strictly increasing away from t=0.
+
+The cap caller is unchanged. The positive branch uses the already
+complete G-order theorem only on `[7/30,2/3]`; the inherited small-gap
+result handles `[0,7/30]`. The nonpositive branch needs no G-height
+premise. These two extensions do not use the C-bottom theorem, the
+slanted halfplane, or the new D/G inset clearance. The dependency order
+therefore remains acyclic.
+
+Together they exclude the full original `001/00` domain with
+`|y_D-y_C|<=2/3`, even at closed Q, and simultaneously reversed `100/00`.
+This is a complete continuous subdomain exclusion; the full masks remain
+open on the larger-gap complement.
+
+## Exact current scope
 
 The individual positive-D caller carries its stated vertical-order premise;
 the complete assembly supplies that premise using the accepted G-order
-forest. These arguments do not settle the v>5/8 complement, prove a whole fixed-mask closure, classify
+forest. With the two-thirds extension, these arguments do not settle the
+v>2/3 complement, prove a whole fixed-mask closure, classify
 equality, or modify the 32-mask or positional-root accounting. The separate
 signed-cap proof checks all orientation endpoints, including the aligned
 M-owned normal n=(1,0), which is not in the two unaligned owner arcs.

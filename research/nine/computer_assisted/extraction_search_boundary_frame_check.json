@@ -1,0 +1,204 @@
+{
+  "scope": "Exact boundary-control arithmetic only; no fixed-mask closure.",
+  "controls": [
+    {
+      "control": "numeric boundary control",
+      "status": "PASS",
+      "corner_count": 36,
+      "pair_count": 36,
+      "minimum_corner_reserve": "0",
+      "diameter_x": "3",
+      "diameter_y": "577/240",
+      "diameter_l1": "58/15",
+      "quadratic_coefficient_reserves": [
+        "0",
+        "2/15",
+        "143/240"
+      ],
+      "consequence": "No 001 or 100 main witness in any frame or labeling; no v restriction.",
+      "centers": [
+        [
+          "-3/2",
+          "-1/16"
+        ],
+        [
+          "-1/2",
+          "-1/16"
+        ],
+        [
+          "1/2",
+          "-7/15"
+        ],
+        [
+          "3/2",
+          "-1/16"
+        ],
+        [
+          "-1",
+          "15/16"
+        ],
+        [
+          "0",
+          "15/16"
+        ],
+        [
+          "1",
+          "15/16"
+        ],
+        [
+          "2/15",
+          "-22/15"
+        ],
+        [
+          "-13/15",
+          "-17/16"
+        ]
+      ]
+    },
+    {
+      "control": "three-row 4+3+2 construction",
+      "status": "PASS",
+      "corner_count": 36,
+      "pair_count": 36,
+      "minimum_corner_reserve": "0",
+      "diameter_x": "3",
+      "diameter_y": "2",
+      "diameter_l1": "7/2",
+      "quadratic_coefficient_reserves": [
+        "0",
+        "1/2",
+        "1"
+      ],
+      "consequence": "No 001 or 100 main witness in any frame or labeling; no v restriction.",
+      "centers": [
+        [
+          "-3/2",
+          "-1/16"
+        ],
+        [
+          "-1/2",
+          "-1/16"
+        ],
+        [
+          "1/2",
+          "-1/16"
+        ],
+        [
+          "3/2",
+          "-1/16"
+        ],
+        [
+          "-1",
+          "15/16"
+        ],
+        [
+          "0",
+          "15/16"
+        ],
+        [
+          "1",
+          "15/16"
+        ],
+        [
+          "-1/2",
+          "-17/16"
+        ],
+        [
+          "1/2",
+          "-17/16"
+        ]
+      ]
+    },
+    {
+      "control": "oblique Q-attaining construction",
+      "status": "PASS",
+      "corner_count": 36,
+      "pair_count": 36,
+      "maximum_non_AD_squared_distance": "29/4",
+      "radical_comparison_squared_reserve": "7/64",
+      "inner_table_labels": [
+        "B",
+        "C",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I"
+      ],
+      "minimum_edge_pair_dot_product": [
+        [
+          null,
+          "1",
+          "-9/4",
+          "-1/4",
+          "-1/4",
+          "-2189/1600",
+          "-429/1600"
+        ],
+        [
+          "-2",
+          null,
+          "-19/4",
+          "-7/4",
+          "-3/4",
+          "-5469/1600",
+          "-1949/1600"
+        ],
+        [
+          "-3/4",
+          "-1/4",
+          null,
+          "-1/4",
+          "-3/4",
+          "-19/10",
+          "-27/20"
+        ],
+        [
+          "-7/4",
+          "-1/4",
+          "-5/2",
+          null,
+          "-1/4",
+          "-5629/1600",
+          "-2989/1600"
+        ],
+        [
+          "-19/4",
+          "-9/4",
+          "-5",
+          "-5/2",
+          null,
+          "-6",
+          "-13/4"
+        ],
+        [
+          "-1949/1600",
+          "-429/1600",
+          "-13/4",
+          "-2989/1600",
+          "-27/20",
+          null,
+          "-581/1600"
+        ],
+        [
+          "-5469/1600",
+          "-2189/1600",
+          "-6",
+          "-5629/1600",
+          "-19/10",
+          "-451/200",
+          null
+        ]
+      ],
+      "surviving_A_D_cone_chains": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "consequence": "No one-weak/two-actual main witness in any frame or labeling."
+    }
+  ]
+}

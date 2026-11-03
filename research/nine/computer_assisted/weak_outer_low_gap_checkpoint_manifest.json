@@ -1,7 +1,7 @@
 {
-  "scope": "Complete weak-outer low-gap component exclusion; full masks remain OPEN",
+  "scope": "Complete weak-outer exclusion through2/3 and accepted geometric inputs; whole masks remainOPEN",
   "target_q": "1105/256",
-  "transverse_interval": "[0,5/8]",
+  "transverse_interval": "[0,2/3]",
   "masks": [
     "001/00",
     "100/00"
@@ -18,13 +18,13 @@
   "files": [
     {
       "path": "WEAK_OUTER_LOW_GAP_HAND_TABLE_ASSEMBLY.md",
-      "bytes": 7264,
-      "sha256": "5814a49e8f3894a25ece9741c108bcca1349f9a02e252848929ce1a1bba8868a"
+      "bytes": 7795,
+      "sha256": "67909af48000f4574510f2e35fcac3737252e132e048ffe8a5653196e4e513e6"
     },
     {
       "path": "WEAK_OUTER_SIGNED_LOW_GAP_INDEPENDENT_REVIEW.md",
-      "bytes": 6274,
-      "sha256": "9054d79fac1abc78652871b1c4639c5246f555eeb8070d4e300468b466279f8c"
+      "bytes": 9001,
+      "sha256": "e14d716f22669eed4ca036bf2d29cc95afb6faf4fe46ee78e0e4119397953ae2"
     },
     {
       "path": "WEAK_OUTER_SIGNED_SMALL_GAP_TRANSFER.md",
@@ -110,6 +110,111 @@
       "path": "computer_assisted/weak_outer_hand_G_order_manifest.json",
       "bytes": 1484,
       "sha256": "668a302234596f62ece5e2f0910042ed80bec7ac1078831b435cc2c790089b52"
+    },
+    {
+      "path": "WEAK_OUTER_TWO_THIRDS_ACCEPTED_CHECKPOINT.md",
+      "bytes": 6467,
+      "sha256": "4a4692a1fdef8c89b4e892e5e6cb42e40e9afe82f4ddcaadcd8c17daf10a0da9"
+    },
+    {
+      "path": "WEAK_OUTER_POSITIVE_TILT_TWO_THIRDS_HAND_TRANSFER.md",
+      "bytes": 6498,
+      "sha256": "5ea53cd3bcde7c0c811bcbcc0f5482d46db76514d6a76fe567305ffe713cc12b"
+    },
+    {
+      "path": "WEAK_OUTER_NUMERIC_NEGATIVE_TILT_TWO_THIRDS_HAND_EXCLUSION.md",
+      "bytes": 6315,
+      "sha256": "8cf8978eaf5f36c78b0a44b27584f9e0d2ed7e92e56a6c559e445fb711a1a7f2"
+    },
+    {
+      "path": "WEAK_OUTER_LEFT_MAIN_INSET_BARRIER.md",
+      "bytes": 3565,
+      "sha256": "22db16710c7e8a9e4467730cb48948841e24de5dc9970d17d64945d9d4dd5f12"
+    },
+    {
+      "path": "WEAK_OUTER_NUMERIC_LEFT_ANGLE_BOUND.md",
+      "bytes": 2229,
+      "sha256": "15d4dd5f8cb1a2ee10d8137e75a659e28f417aa787f5c7292104a2b66e8696f3"
+    },
+    {
+      "path": "WEAK_OUTER_NUMERIC_AFFINE_DG_CLEARANCE.md",
+      "bytes": 3499,
+      "sha256": "d65eb1e69f3d8e51d61e57b90237d8b8ea4947bbc01986473c6b540a25327520"
+    },
+    {
+      "path": "WEAK_OUTER_NUMERIC_CONE_SEPARATOR_SIGNS.md",
+      "bytes": 3887,
+      "sha256": "1974774116940c6465cbccc782287f41f2df56f2a8a6d195acc001877c3e4539"
+    },
+    {
+      "path": "WEAK_OUTER_NUMERIC_POSITIVE_TILT_UPWARD_SHALLOW_HAND_REDUCTION.md",
+      "bytes": 7293,
+      "sha256": "97aead51394014a9b126769ee97fb67c17306581acbf9573e2807d0bc9b8c4b7"
+    },
+    {
+      "path": "GLOBAL_OUTER_LINK_EXTRACTION_BOUNDARY_FRAME_SANITY.md",
+      "bytes": 7152,
+      "sha256": "20e0eb76bd83917ed405cc7163b93e8fad752007e8d8c91e8549d3bbcb4a0a91"
+    },
+    {
+      "path": "GLOBAL_OUTER_LINK_EXTRACTION_DG_INSET_AND_SLANT_HAND_REDUCTION.md",
+      "bytes": 5491,
+      "sha256": "3a5f3f04ddb5cc7cd116ae544cee961f6de5828685618b4b99ee5b928267c54b"
+    },
+    {
+      "path": "computer_assisted/verify_weak_outer_positive_two_thirds_arithmetic.py",
+      "bytes": 1336,
+      "sha256": "25a9b987fa4b3ec5496e8e4959fc5b99357e9fb32d4abfafbc04fa2d04fae2ad"
+    },
+    {
+      "path": "computer_assisted/weak_outer_numeric_negative_two_thirds_arithmetic.py",
+      "bytes": 915,
+      "sha256": "eb37313c6ae7bd0722d43e3a2be6bae5b41b71d54ad64e343c178ff748777de4"
+    },
+    {
+      "path": "computer_assisted/verify_weak_outer_left_main_inset_barrier.py",
+      "bytes": 1141,
+      "sha256": "00c895799ed3ad276ec5e1024896a6946bf420806d130790b3dcfb8311dc7ed5"
+    },
+    {
+      "path": "computer_assisted/weak_outer_numeric_left_angle_arithmetic.py",
+      "bytes": 634,
+      "sha256": "d7866ce759f27df9787432de03c2640132824d132f9e20a5d3158ac46c41119e"
+    },
+    {
+      "path": "computer_assisted/weak_outer_numeric_dg_clearance_arithmetic.py",
+      "bytes": 1137,
+      "sha256": "32148bcddef8d84b7a0435a68841e94ac58044788ca98416ff8b092e297d67ef"
+    },
+    {
+      "path": "computer_assisted/weak_outer_numeric_positive_separator_arithmetic.py",
+      "bytes": 1647,
+      "sha256": "7456566042d06ad00b434ea31d120ea7557de071d1b2827b373aa84e6b37c983"
+    },
+    {
+      "path": "computer_assisted/extraction_search_boundary_frame_check.py",
+      "bytes": 4261,
+      "sha256": "928e716cd5250c1d1eb1a12309e02660fbb517a414f7b1c0e5f23b6851a7c3f2"
+    },
+    {
+      "path": "computer_assisted/extraction_search_boundary_frame_check.json",
+      "bytes": 3757,
+      "sha256": "56ca610c2c368203385d65f50ba81432ec841fa57f264f0f6fc0eef01520b109"
+    },
+    {
+      "path": "computer_assisted/extraction_search_inset_slant_arithmetic.py",
+      "bytes": 1243,
+      "sha256": "960f14a0cf512fb8d0577008f0118732779dbe7a374a5550503b107a3883c3a6"
+    },
+    {
+      "path": "computer_assisted/extraction_search_inset_slant_arithmetic.json",
+      "bytes": 849,
+      "sha256": "c7e5c83653a8b802cb9b97cd0c1fea51b4849cd81d82734ca87a43e0085d94b6"
     }
-  ]
+  ],
+  "checkpoint_source": "WEAK_OUTER_TWO_THIRDS_ACCEPTED_CHECKPOINT.md",
+  "preceding_checkpoint_commit": "5ff726377366e0cbead277b5ba077e8a3c69629b",
+  "new_exact_order_table_leaves_in_this_extension": 0,
+  "order_table_reused_without_changes": true,
+  "slant_table_complete": false
 }

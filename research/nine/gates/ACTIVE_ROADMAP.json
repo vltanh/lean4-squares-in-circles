@@ -236,7 +236,7 @@
   "legacy_gate_registry": "SUPERSEDED_NO_ACTIVE_PROGRESS_COUNTER",
   "computer_first": {
     "active": true,
-    "target": "Complete original-nine 001/00 and reversed 100/00 masks beyond transverse gap 5/8, or universal terminal extraction",
+    "target": "Complete original-nine 001/00 and reversed 100/00 masks beyond transverse gap 2/3, or universal terminal extraction",
     "mask_emitter": "computer_assisted/emit_fixed_mask.py",
     "exact_controls": "computer_assisted/test_emit_fixed_mask.py",
     "pilot_hand_table": "computer_assisted/NO_EIGHTH_FIXED_SEVEN_HAND_TABLE.md",
@@ -342,12 +342,12 @@
     "new_global_gate_closures": 0,
     "lean_lake_ci_run": false
   },
-  "active_target_remaining_condition": "|y_D-y_C|>5/8; all nine originals and every original physical pair retained",
+  "active_target_remaining_condition": "|y_D-y_C|>2/3; all nine originals and every original physical pair retained",
   "latest_weak_outer_component": {
     "source": "WEAK_OUTER_LOW_GAP_HAND_TABLE_ASSEMBLY.md",
     "independent_review": "WEAK_OUTER_SIGNED_LOW_GAP_INDEPENDENT_REVIEW.md",
     "manifest": "computer_assisted/weak_outer_low_gap_checkpoint_manifest.json",
-    "closed_transverse_interval": "0<=|y_D-y_C|<=5/8",
+    "closed_transverse_interval": "0<=|y_D-y_C|<=2/3",
     "closed_q": true,
     "table_roots": 8,
     "table_nodes": 62297,

@@ -63,7 +63,7 @@ cone comparisons and exact bits. The altered outer geometry prevents
 unproved transfer of the actual-outer endpoint reserves.
 
 `WEAK_OUTER_LOW_GAP_HAND_TABLE_ASSEMBLY.md` now proves that the weak
-outer pair has absolute transverse gap greater than **5/8**, for both
+outer pair has absolute transverse gap greater than **2/3**, for both
 original tilt signs, even at closed Q. Its independent review is
 `WEAK_OUTER_SIGNED_LOW_GAP_INDEPENDENT_REVIEW.md`. The earlier 7/30 theorem
 remains an input for one part of the exhaustive three-row assembly.
@@ -78,9 +78,17 @@ SHA-256 is `d5699c099813ad3b078bbd7c91c87081c210d1c8588f348546312a2454500fc8`.
 Five damaged-certificate controls were rejected. No replay of unchanged
 accepted bytes is needed without a concrete remaining concern.
 
-The larger-gap original-nine domain **|y_D-y_C|>5/8** remains open.
-The endpoint-order theorem also yields a vertical D/G clearance above
-8/15 from the proved horizontal bound and the two inscribed half-disks.
+The larger-gap original-nine domain **|y_D-y_C|>2/3** remains open.
+The two new signed hand proofs are
+`WEAK_OUTER_POSITIVE_TILT_TWO_THIRDS_HAND_TRANSFER.md` and
+`WEAK_OUTER_NUMERIC_NEGATIVE_TILT_TWO_THIRDS_HAND_EXCLUSION.md`; both have
+independent complete mathematical reviews and exact scalar checks.
+The endpoint-order theorem and proved horizontal bounds also force
+`y_G-y_D>=g_D+g_G` by disjointness of the two original aligned insets.
+The separate width-dependent bound is
+`y_G-y_D>8/15+(7/8)(h_D+h_G-1)`. Both are valid necessary inequalities;
+the former is stronger near aligned originals. The fixed A inset barrier
+and the original A/B angle bound are additional accepted hand inputs.
 Keep both extra originals: some seven/eight-original relaxations remain
 subcritically feasible. The exact aligned nine-square control in
 `WEAK_OUTER_NUMERIC_BOUNDARY_CONTROL.md` is a boundary control, not a

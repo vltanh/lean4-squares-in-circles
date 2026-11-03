@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "scope": "Exact arithmetic only; separate slant theorem still required.",
+  "checks": [
+    {
+      "name": "forward inset overlap",
+      "reserve": "269/1728"
+    },
+    {
+      "name": "reverse horizontal gap versus universal inset sum",
+      "reserve": "1679/3600"
+    },
+    {
+      "name": "C horizontal upper endpoint",
+      "reserve": "2161/102400"
+    },
+    {
+      "name": "C height from slant",
+      "reserve": "1/60"
+    },
+    {
+      "name": "bottom circle endpoint 29/60",
+      "reserve": "11/14400"
+    },
+    {
+      "name": "bottom circle endpoint 4/5",
+      "reserve": "23/9216"
+    },
+    {
+      "name": "rightward further-original radius contradiction",
+      "reserve": "93/320"
+    },
+    {
+      "name": "slant threshold reserve at aligned limiting triple",
+      "reserve": "1/32"
+    }
+  ]
+}
