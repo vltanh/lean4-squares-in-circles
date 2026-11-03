@@ -168,8 +168,9 @@ establishes the exhaustive cover of this full predicate. Its baseline has
 53 substitutions and [99 further complete cell proofs](A2_00100_PHYSICAL_PAIR_CLOSURE_CHECKPOINT.md)
 plus [seven bound-plus-pair proofs](A2_00100_BOUND_PAIR_CONTINUATION.md)
 and [nine distance/frame proofs](A2_00100_ORDERED_DISTANCE_AND_FRAME_CONTINUATION.md),
-followed by [three shared-capacity proofs](A2_00100_SHARED_CAPACITY_WHOLE_CELL_CLOSURE.md),
-now exclude 171 of those cells and leave 60 OPEN. The
+followed by [three shared-capacity proofs](A2_00100_SHARED_CAPACITY_WHOLE_CELL_CLOSURE.md)
+and [three rotated-capacity/frame proofs](A2_00100_ROTATED_CAPACITY_AND_FRAME_CLOSURE.md),
+now exclude 174 of those cells and leave 57 OPEN. The
 [stable register](gates/A2_00100_FIXED_FRONTIER.json) retains every original
 path and its physical caller. Shared closed faces are allowed. This
 coverage-qualified count is separate from all 32 mask statuses.

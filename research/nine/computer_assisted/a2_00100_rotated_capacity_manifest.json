@@ -1,0 +1,52 @@
+{
+  "schema": "a2_00100_rotated_capacity_delivery_v1",
+  "baseline_commit": "90b850619d3fb004a769e1d74c1341b91a3ada01",
+  "target_mask": "001/00",
+  "reversal_partner": "100/00",
+  "strict_q": "1105/256",
+  "archive": "a2_00100_rotated_capacity_checkpoint.tar.gz",
+  "archive_sha256": "c59ee887dec23057d9154a994b231b30cb58226f916298faf1d50784a4f80432",
+  "archive_bytes": 4629197,
+  "archive_directory": "shared_capacity_three_b_v4",
+  "new_closed_original_cells": 3,
+  "new_closed_ids": [
+    "negative-336d2542a912859a",
+    "negative-f9e691c011ecb5af",
+    "negative-364c20a39079cecd"
+  ],
+  "before": {
+    "closed": 171,
+    "open": 60
+  },
+  "after": {
+    "closed": 174,
+    "open": 57
+  },
+  "cumulative_new_since_53": 121,
+  "prior_coordinate_deductions": 124,
+  "new_exact_deductions": 1592,
+  "terminal_paths": 3,
+  "weighted_terminals": 1,
+  "explicit_analytic_frame_terminals": 2,
+  "printed_rows_across_new_rounds_and_terminals": 1931,
+  "new_branch_nodes": 0,
+  "whole_masks": {
+    "closed": 8,
+    "open": 24,
+    "new": 0
+  },
+  "new_original_root_exclusions": 0,
+  "new_roadmap_gate_closures": 0,
+  "original_ids_and_paths_unchanged": true,
+  "lean_lake_ci_run": false,
+  "human_or_kernel_verification": false,
+  "proof": "../A2_00100_ROTATED_CAPACITY_AND_FRAME_CLOSURE.md",
+  "register": "../gates/A2_00100_FIXED_FRONTIER.json",
+  "portable_replay": "verify_shared_bound.py --all",
+  "rejection_controls": "check_rejection_controls.py",
+  "printed_arithmetic_checker": "check_printed_rotated_capacity_sums.py",
+  "printed_arithmetic_report": "rotated_capacity_printed_arithmetic_report.json",
+  "archive_files_bound": 55,
+  "semantic_damaged_controls_rejected": 7,
+  "exact_contact_boundary_controls_passed": 4
+}

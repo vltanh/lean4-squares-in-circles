@@ -1,19 +1,33 @@
-> **CURRENT EXECUTION PRIORITY:** [Shared original-nine macro closure](A2_00100_SHARED_MACRO_CLOSURE_DIRECTIVE_2026_11_03.md). The first shared-capacity continuation closes **three complete originals with no new splits**, including both remaining originals in one early A branch. Current accounting: **171/231 cells CLOSED, 60 OPEN; 8/32 masks CLOSED, 24 OPEN.** Continue shared whole-parent arguments; do not count deeper unfinished trees as progress.
+> **CURRENT EXECUTION PRIORITY:** [Shared original-nine macro closure](A2_00100_SHARED_MACRO_CLOSURE_DIRECTIVE_2026_11_03.md). The shared-capacity continuations close **six complete originals with no new splits**, three in A and three in B. Current accounting: **174/231 cells CLOSED, 57 OPEN; 8/32 masks CLOSED, 24 OPEN.** Continue shared whole-parent arguments; do not count deeper unfinished trees as progress.
 
-# n=9: 171/231 current-mask cells closed; 60 remain OPEN
+# n=9: 174/231 current-mask cells closed; 57 remain OPEN
 
-**Latest verified continuation: three complete original-cell exclusions
-from a shared capacity argument, with zero new case splits.** The fixed
-cover now has **171 CLOSED / 60 OPEN**: 118 new whole cells beyond the
+**Latest verified continuation: three complete B-original exclusions
+using rotated capacity, exact distance gaps and physical frame identities.**
+The fixed cover now has **174 CLOSED / 57 OPEN**: 121 new whole cells beyond the
 original 53. The full-mask ledger remains **8 CLOSED / 24 OPEN**.
 The current mask and its reversal remain OPEN. No Lean, Lake or CI.
 
-[Latest complete hand/table proof](A2_00100_SHARED_CAPACITY_WHOLE_CELL_CLOSURE.md) ·
+[Latest complete hand/table proof](A2_00100_ROTATED_CAPACITY_AND_FRAME_CLOSURE.md) ·
 [Current fixed register](gates/A2_00100_FIXED_FRONTIER.json) ·
-[Latest portable exact evidence](computer_assisted/a2_00100_shared_capacity_manifest.json) ·
+[Latest portable exact evidence](computer_assisted/a2_00100_rotated_capacity_manifest.json) ·
 [Operative handoff](HANDOFF_A2_FIXED_CLOSURE.md)
 
 ## What changed
+
+The [rotated-capacity continuation](A2_00100_ROTATED_CAPACITY_AND_FRAME_CLOSURE.md)
+closes `negative-336d2542a912859a`, `negative-f9e691c011ecb5af` and
+`negative-364c20a39079cecd`, with 1,592 new exact deductions after 124
+inherited deductions and no new splits. All 1,931 printed rows, rational
+rotation guards, forced-distance signs and physical frame terminals
+passed independent replay. Two parents end in the same short hand lemma:
+`|t_D|>=2/7` forces `g_D<13/32`, whereas their complete inductions give
+`g_D>13/32`. Together they close an entire existing B routing combination
+across both F-height alternatives. The third parent forces the same
+original H and I centers to have distance below one. Seven semantic
+damaged controls and four exact contact controls were checked.
+
+### Preceding three A originals
 
 The [shared capacity continuation](A2_00100_SHARED_CAPACITY_WHOLE_CELL_CLOSURE.md)
 closes `positive-033850931bb6d4ef`, `positive-3cd9c2a7981effa2` and
@@ -92,16 +106,16 @@ Fresh replay also accepted six recovered acyclic coordinate-bound
 certificates, with 316 deductions and six final contradictions. One is
 an alternative proof of a physical parent; the other five add IDs.
 That preceding union is **99 new original cells**, with no duplicate
-count; the seven, nine and latest three proofs bring the cumulative addition to **118**. The first 53 cell proofs and the complete baseline cover remain
+count; the seven, nine and latest six proofs bring the cumulative addition to **121**. The first 53 cell proofs and the complete baseline cover remain
 unchanged. All 231 original IDs and exact ancestor paths are preserved.
 
 | Fixed family | Original OPEN baseline | Closed since baseline | Current OPEN |
 |---|---:|---:|---:|
 | A: inward-row escapes | 77 | 63 | 14 |
-| B: F-height branches | 39 | 9 | 30 |
+| B: F-height branches | 39 | 12 | 27 |
 | C: negative-D alternative-chain escapes | 33 | 23 | 10 |
 | D: positive-D alternative-chain escapes | 29 | 23 | 6 |
-| Total | 178 | 118 | 60 |
+| Total | 178 | 121 | 57 |
 
 This is whole-cell progress within a certified full-mask cover. It does
 not estimate remaining effort or discharge a whole mask. Every unfinished
@@ -112,7 +126,7 @@ internal tree leaves its original parent OPEN.
 | Ledger | Established | Still open |
 |---|---:|---:|
 | Original-nine strict-radius masks | 8 | 24 |
-| Current `001/00` fixed cells | 171 | 60 |
+| Current `001/00` fixed cells | 174 | 57 |
 | Historical positional closed-Q exclusions | 5,838 | 2,077 |
 
 The positional ledger retains the same 7,915 IDs and possible equality
@@ -150,7 +164,7 @@ substitutions. That historical package remains immutable.
 The entire strict `001/00` domain is the target; exact whole-witness
 reversal will transfer its eventual complete proof to `100/00`.
 The accepted [low-gap assembly](WEAK_OUTER_LOW_GAP_HAND_TABLE_ASSEMBLY.md)
-handles `|y_D-y_C|<=2/3`. All 60 remaining original cells belong to the
+handles `|y_D-y_C|<=2/3`. All 57 remaining original cells belong to the
 certified large-gap complement and retain all nine squares and strict bits.
 
 Use the proved unique-penultimate implications where their exact cone
@@ -182,5 +196,5 @@ and 21 explicit pending paths, so that original remains OPEN. All retained
 The hard alternative-chain original separately retains ten pending paths.
 The [open continuation manifest](computer_assisted/a2_00100_open_continuation_manifest.json)
 preserves every partial proof's scope. Those partial forests themselves
-change no original-cell status; the three new complete shared-capacity
+change no original-cell status; the six new complete shared-capacity
 proofs are the accepted continuation recorded above.
