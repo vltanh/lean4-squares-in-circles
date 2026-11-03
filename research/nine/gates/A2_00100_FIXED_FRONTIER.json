@@ -9,11 +9,11 @@
   "coverage_kind": "EXHAUSTIVE_FINITE_COVER_WITH_SHARED_CLOSED_FACES",
   "coverage_certified": true,
   "id_rule": "sign + hyphen + first 16 hexadecimal digits of SHA256(json.dumps(path,separators=(comma,colon))); full path retained and checked.",
-  "assembly": "../A2_00100_ORIGINAL_CENTER_CAPACITY_CLOSURE.md",
+  "assembly": "../A2_00100_TWO_MORE_FIXED_CENTER_COVER_CLOSURES.md",
   "physical_review": "../A2_00100_FIXED_FRONTIER_PHYSICAL_REVIEW.md",
   "coverage_review": "../A2_00100_V13_COVERAGE_INDEPENDENT_REVIEW.md",
-  "cell_review": "../A2_00100_ORIGINAL_CENTER_CAPACITY_CLOSURE.md",
-  "manifest": "../computer_assisted/a2_00100_original_center_capacity_manifest.json",
+  "cell_review": "../A2_00100_TWO_MORE_FIXED_CENTER_COVER_CLOSURES.md",
+  "manifest": "../computer_assisted/a2_00100_fixed_center_addendum_manifest.json",
   "payload_register": "fixed_231_register.json",
   "baseline_forest_sha256": {
     "positive": "f6518c23a00c32e1f3d3915d1cd89cd24d162f459a6fc03a721fb843cc878d78",
@@ -22,8 +22,8 @@
   "scope": "Coverage-qualified fixed original full-nine large-gap cells; all 231 IDs and paths immutable.",
   "whole_mask_closed": false,
   "original_cells": 231,
-  "closed_cells": 183,
-  "open_cells": 48,
+  "closed_cells": 185,
+  "open_cells": 46,
   "cells": [
     {
       "id": "positive-655c4b699ba028a1",
@@ -1824,12 +1824,78 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_fixed_center_addendum_checkpoint.tar.gz",
+        "method": "fixed_original_center_cover_and_complete_rectangle",
         "record_id": "positive-2c719a20ef7510de",
-        "whole_cell_exclusion": null
-      }
+        "certificate": "certificates/positive-2c719a20ef7510de.json",
+        "certificate_sha256": "1aeac80cd6813ff17f7b4c023981b89abad99108b749ff7773b0d28f5e0e17c5",
+        "union_certificate": "certificates/positive-2c719a20ef7510de_covering_I_rectangle.json",
+        "union_certificate_sha256": "48f34d5db35230deec711d2ef5a68a5b49f1720a80e7b68de5d33ded34b50dd3",
+        "independent_report": "accepted_reports/positive-2c719a20ef7510de_complete.json",
+        "independent_report_sha256": "3b46b6096e0de843eaf4c66d38293c6eef5c2f6b7bb5ae03fb8d941b0d28c718",
+        "complete_terminal_domains": 17,
+        "bound_induction_branch_nodes": 0,
+        "new_exact_deductions": 1033,
+        "prior_coordinate_deductions": 0,
+        "fixed_grid_tiles": 64,
+        "static_tiles_checked": 16,
+        "covering_rectangle_tiles": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63
+        ],
+        "adaptive_grid_splits": 0,
+        "terminal_kind": "positive_exact_reserve"
+      },
+      "method": "fixed_original_center_cover_and_complete_rectangle",
+      "terminal_leaves": 17
     },
     {
       "id": "positive-802a95042bb7d684",
@@ -17130,12 +17196,31 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_fixed_center_addendum_checkpoint.tar.gz",
+        "method": "fixed_original_center_cover_and_complete_rectangle",
         "record_id": "negative-e0dbb1642ee58e72",
-        "whole_cell_exclusion": null
-      }
+        "certificate": "certificates/negative-e0dbb1642ee58e72.json",
+        "certificate_sha256": "3eb7f4f536b23e6e32c6325616b2f9ce72e39bd402f9f98ea717a4aafd2ea427",
+        "union_certificate": "certificates/negative-e0dbb1642ee58e72_covering_I_rectangle.json",
+        "union_certificate_sha256": "9e0921cb7380bddca47a1d7ffefddd870889058a74c7629e79def240c7398a2e",
+        "independent_report": "accepted_reports/negative-e0dbb1642ee58e72_complete.json",
+        "independent_report_sha256": "a5093c0616b895a9ada46c568c15b915ac6981b15cf67d02039aca5a7844ab64",
+        "complete_terminal_domains": 64,
+        "bound_induction_branch_nodes": 0,
+        "new_exact_deductions": 916,
+        "prior_coordinate_deductions": 69,
+        "fixed_grid_tiles": 64,
+        "static_tiles_checked": 63,
+        "covering_rectangle_tiles": [
+          40
+        ],
+        "adaptive_grid_splits": 0,
+        "terminal_kind": "proved_empty_parent_difference_intersection"
+      },
+      "method": "fixed_original_center_cover_and_complete_rectangle",
+      "terminal_leaves": 64
     },
     {
       "id": "negative-3475db94338c355f",
@@ -22464,8 +22549,8 @@
   "open_cell_discovery_report": "../computer_assisted/a2_00100_open_continuation_manifest.json",
   "baseline_assembly": "../A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md",
   "baseline_manifest": "../computer_assisted/a2_00100_fixed_frontier_manifest.json",
-  "latest_new_closed_cells": 9,
-  "cumulative_new_closed_since_53": 130,
-  "preceding_assembly": "../A2_00100_ROTATED_CAPACITY_AND_FRAME_CLOSURE.md",
-  "preceding_manifest": "../computer_assisted/a2_00100_rotated_capacity_manifest.json"
+  "latest_new_closed_cells": 2,
+  "cumulative_new_closed_since_53": 132,
+  "preceding_assembly": "../A2_00100_ORIGINAL_CENTER_CAPACITY_CLOSURE.md",
+  "preceding_manifest": "../computer_assisted/a2_00100_original_center_capacity_manifest.json"
 }
