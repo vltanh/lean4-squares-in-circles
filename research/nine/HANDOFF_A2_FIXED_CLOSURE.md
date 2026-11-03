@@ -1,3 +1,5 @@
+> **Latest session handoff (November 3):** [A2_00100_SESSION_HANDOFF_2026_11_03.md](A2_00100_SESSION_HANDOFF_2026_11_03.md). The pushed certified ledger is still **159/231 CLOSED, 72 OPEN** within `001/00`, **8/32 masks CLOSED**. An additional reported 458-leaf D-pilot closure and another candidate remain **unintegrated** until their complete source-bound certificates are committed; neither is credited in the repository register.
+
 # Current A.2 handoff: 159/231 current-mask cells closed; 72 OPEN
 
 November 3, 2026. **Seven further whole original cells are proved**, after
