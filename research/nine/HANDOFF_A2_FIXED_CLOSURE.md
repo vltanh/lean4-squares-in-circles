@@ -100,6 +100,29 @@ with **zero new whole-mask or positional-root closures**. The frozen
 accepted package is listed in
 `computer_assisted/weak_outer_low_gap_checkpoint_manifest.json`.
 
+## November 3: complete geometry and strict-boundary inputs
+
+The [accepted geometry checkpoint](WEAK_OUTER_GEOMETRY_AND_STRICT_BOUNDARY_CHECKPOINT.md)
+adds the complete strict C-slant theorem, its exclusion of any other original
+in `x>=0,y<=y_C`, the all-tilts upward-normal reduction, actual vertical
+C/G separation, and the global-angle near-horizontal replacement-row exclusion.
+The latter resolves its closed-Q equality face using the original strict
+weak bit; no positive reserve is invented for a feasible closed relaxation.
+
+The C-slant certificate covers all eight roots with **96,045 exact leaves,
+189,342 nodes, and zero frontier**. Two complete exact replays passed, and
+six damaged controls were rejected. Its source-bound inventory is
+`computer_assisted/weak_outer_hand_C_slant_manifest.json`.
+The replacement-row theorem has a complete independent mathematical review
+and exact scalar checks. A conditional deep-B left-lower exclusion is also
+accepted, without asserting that B must be deep.
+
+The exact `v=1` aligned control demonstrates that a positive-reserve-only
+cover of the closed weak-bit relaxation cannot finish the strict problem.
+The new analytic row terminal excludes a neighborhood of that control.
+The remaining original-nine placement alternatives are still unproved.
+**No whole-mask, positional-root, or roadmap-gate count changes.**
+
 ## Fixed accounting
 
 - Same 32 masks: **8 strict-radius closed, 24 OPEN**.

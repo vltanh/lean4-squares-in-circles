@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "scope": "Exact arithmetic only; separate slant theorem still required.",
+  "scope": "Exact hand-proof arithmetic only; this script does not replay the separate slant forest.",
   "checks": [
     {
       "name": "forward inset overlap",
@@ -33,6 +33,22 @@
     {
       "name": "slant threshold reserve at aligned limiting triple",
       "reserve": "1/32"
+    },
+    {
+      "name": "sqrt two below 99/70",
+      "reserve": "1/4900"
+    },
+    {
+      "name": "actual CG low hD branch",
+      "reserve": "127/2520"
+    },
+    {
+      "name": "actual CG high hD branch",
+      "reserve": "97/4480"
+    },
+    {
+      "name": "common actual CG reserve",
+      "reserve": "1159/40320"
     }
   ]
 }

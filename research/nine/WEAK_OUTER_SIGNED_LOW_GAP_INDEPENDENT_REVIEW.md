@@ -165,3 +165,30 @@ v>2/3 complement, prove a whole fixed-mask closure, classify
 equality, or modify the 32-mask or positional-root accounting. The separate
 signed-cap proof checks all orientation endpoints, including the aligned
 M-owned normal n=(1,0), which is not in the two unaligned owner arcs.
+
+## All-tilts upward-normal reduction: accepted, November 3
+
+The separate manuscript
+`WEAK_OUTER_NUMERIC_ALL_TILTS_UPWARD_NORMAL_HAND_REDUCTION.md`
+is correct on its stated original strict-weak caller with `v>=1/2`.
+The rightmost actual vertex of D has height of absolute value at most
+1/2, regardless of its original chirality. For a downward owned normal
+`(c,-s)`, this gives `H_D(c,-s)>=c*h_D-s/2`. Combining it with the complete
+free-C support comparison yields
+
+    d+h_C-h_D >= A(t)+t*(v-1/2) > 1,
+    t=s/c>0,  A'(t)=(1+t^3)/(2*(1+t^2)^(3/2))>0.
+
+The first two actual main links then give adjusted main span strictly
+greater than two, while the actual short chain gives adjusted span at
+least one. The two ordinary endpoint caps contradict their weighted
+sum. The accepted strict-weak cone sign theorem supplies `c>0`, and a
+horizontal normal is excluded directly by the exact weak comparison.
+Every usable original C,D normal therefore has both components strictly
+positive, for either D tilt.
+
+This argument uses neither G-order nor the signed cap nor any C-bottom
+or C-slant table. Its dependency order is acyclic. It is a reduction of
+the original strict predicate; it does not remove the equality control
+from a closed weak-comparison relaxation, and it does not close a full
+mask.

@@ -1,0 +1,12 @@
+{
+  "diagnostic_only": true,
+  "matrix_rows": 7959,
+  "variables": 222,
+  "originals": 9,
+  "physical_pair_branches": 28,
+  "maximum_float_row_violation": 0,
+  "minimum_dense_corner_slack": 0.00043002646722722915,
+  "strict_weak_defect": 0,
+  "strict_001_predicate_satisfied": false,
+  "producer_sha256": "855ef40405fe8fd136c1c37ca2c9d8da323f0a5e83a016bd68f4688a566cf3ba"
+}

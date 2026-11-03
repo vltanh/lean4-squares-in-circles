@@ -1,0 +1,41 @@
+{
+  "purpose": "Frozen historical floating boundary diagnostic; not a strict-mask proof",
+  "producer_sha256": "855ef40405fe8fd136c1c37ca2c9d8da323f0a5e83a016bd68f4688a566cf3ba",
+  "files": [
+    {
+      "path": "weak_outer_hand_G_order_search.py",
+      "sha256": "ec5373ff54b7976320caf404683f9436230fdb6ece02fd292fb0d89161b931e3",
+      "bytes": 7137
+    },
+    {
+      "path": "weak_outer_numeric_bulk_boundary_matrix_probe.py",
+      "sha256": "9590a6e748eafb3c9f3b34c58001e58fc9c752bb66276365fe053af30e95bab2",
+      "bytes": 1801
+    },
+    {
+      "path": "weak_outer_numeric_bulk_lp.py",
+      "sha256": "2818f68bd3f56ddf3bdbc386e409ed61fdc686dc7efdce891c0f46969f3c1642",
+      "bytes": 11596
+    },
+    {
+      "path": "weak_outer_numeric_bulk_pose_branch.py",
+      "sha256": "6b88d15df7d1996a01f73fb59ce7bfda715bd6485d8d24f3604d0938928e13a6",
+      "bytes": 1737
+    },
+    {
+      "path": "weak_outer_numeric_bulk_pose_lp.py",
+      "sha256": "855ef40405fe8fd136c1c37ca2c9d8da323f0a5e83a016bd68f4688a566cf3ba",
+      "bytes": 14656
+    },
+    {
+      "path": "weak_outer_numeric_bulk_pose_verify.py",
+      "sha256": "012e2281c2471cf32f396ab020b86e384eaf8b157b98ba21f30d595671b4c172",
+      "bytes": 21062
+    },
+    {
+      "path": "weak_outer_numeric_relaxed_boundary_control.py",
+      "sha256": "83945f6b8a3b4bb7b385f71ab63a0a8810539af3111c1fa10989dd64a4af9197",
+      "bytes": 2271
+    }
+  ]
+}

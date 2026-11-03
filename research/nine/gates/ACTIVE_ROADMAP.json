@@ -318,8 +318,8 @@
     "new_global_gate_closures": 0,
     "lean_lake_ci_run": false
   },
-  "latest_accepted_component_checkpoint": "WEAK_OUTER_LOW_GAP_HAND_TABLE_ASSEMBLY.md",
-  "latest_component_strict_leaves": 34752,
+  "latest_accepted_component_checkpoint": "WEAK_OUTER_GEOMETRY_AND_STRICT_BOUNDARY_CHECKPOINT.md",
+  "latest_component_strict_leaves": 96045,
   "preceding_actual_four_continuation": {
     "date": "2026-11-02",
     "kind": "COMPLETE_ACTUAL_FOUR_MASK_CLOSURE",
@@ -356,6 +356,26 @@
     "complete_independent_exact_replays": 2,
     "damaged_certificate_controls_rejected": 5,
     "new_mask_closures": [],
+    "new_original_root_exclusions": 0,
+    "new_global_gate_closures": 0,
+    "human_or_kernel_verification": false,
+    "lean_lake_ci_run": false
+  },
+  "latest_geometry_component": {
+    "date": "2026-11-03",
+    "scope": "Complete original C-slant, geometric corollaries, and strict closed-Q replacement-row exclusion; original full-nine complement remains open",
+    "source": "WEAK_OUTER_GEOMETRY_AND_STRICT_BOUNDARY_CHECKPOINT.md",
+    "manifest": "computer_assisted/weak_outer_geometry_checkpoint_manifest.json",
+    "slant": {
+      "roots": 8,
+      "nodes": 189342,
+      "leaves": 96045,
+      "frontier": 0,
+      "complete_exact_replays": 2,
+      "damaged_controls_rejected": 6
+    },
+    "replacement_row": "all original angles; both new links may be weak; equality contradicts original strict CD bit",
+    "new_mask_closures": 0,
     "new_original_root_exclusions": 0,
     "new_global_gate_closures": 0,
     "human_or_kernel_verification": false,

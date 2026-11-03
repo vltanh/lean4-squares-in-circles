@@ -1,0 +1,211 @@
+{
+  "scope": "Accepted original geometry and strict-boundary components; whole masks remain OPEN",
+  "date": "2026-11-03",
+  "target_q": "1105/256",
+  "masks": [
+    "001/00",
+    "100/00"
+  ],
+  "source": "WEAK_OUTER_GEOMETRY_AND_STRICT_BOUNDARY_CHECKPOINT.md",
+  "preceding_checkpoint_commit": "ecc47546028612294fc576b31877d597d2e84694",
+  "closed_masks": 8,
+  "open_masks": 24,
+  "new_whole_mask_closures": 0,
+  "new_positional_root_exclusions": 0,
+  "new_mandatory_roadmap_ids": 0,
+  "lean_lake_ci_run": false,
+  "slant_complete_exact_leaves": 96045,
+  "slant_frontier": 0,
+  "slant_complete_replays": 2,
+  "slant_damaged_controls_rejected": 6,
+  "row_theorem_complete_independent_review": true,
+  "full_nine_forest_complete": false,
+  "historical_dense_snapshot_is_proof": false,
+  "files": [
+    {
+      "path": "research/nine/WEAK_OUTER_LARGE_GAP_C_SLANT_HAND_TABLE.md",
+      "bytes": 17691,
+      "sha256": "472f77baf319d29f88b0658cc1f5da84b8b161722b461e4d8835caaa6af46789"
+    },
+    {
+      "path": "research/nine/GLOBAL_OUTER_LINK_EXTRACTION_C_SLANT_INDEPENDENT_REVIEW.md",
+      "bytes": 10291,
+      "sha256": "153533f78dd3b54e3286dc1d5589282d5485b668353f754df5d499fff26a4728"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_C_slant_search.py",
+      "bytes": 7359,
+      "sha256": "8b529943401fa18f8e1f73f62ce2e8d5767c45e5c56af8d4d7555aba0265635e"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_right_lower_search.py",
+      "bytes": 9354,
+      "sha256": "943f8db33225e64522054c0092cb36d78ebfa5248447e63cd884c075b6333dad"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_C_slant_verify.py",
+      "bytes": 10770,
+      "sha256": "fafbd5c58250832f56cca1bc3d3c143bf822bb440cbb644b2a725085787d5988"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_right_lower_verify.py",
+      "bytes": 11747,
+      "sha256": "c3c66a1fcfca7d2e0acd8d9b5a32340f8e8d2253e5e802ff1be34f5cbd0e109f"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_C_slant_certificate.json.gz",
+      "bytes": 2281531,
+      "sha256": "a18dd495524d1d92aefb3139bb5804851a19f50184570bab15d7fb1503dea238"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_C_slant_exact_replay.json",
+      "bytes": 1655,
+      "sha256": "85f9cf71f4f29402fe22c86fcf762f0907686d0c5f104ee0293130e6bdba58ae"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_C_slant_global_independent_replay.json",
+      "bytes": 2483,
+      "sha256": "6afd551c4d3d709e5a70dc0109ab2224b6d0efa13c5c1bc9929aa06458fca3ae"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_C_slant_controls.py",
+      "bytes": 2453,
+      "sha256": "87d85a5fee162ee6a9adfd8262694b3a4e2312671917895838b1e57d64176029"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_C_slant_rejection_controls.json",
+      "bytes": 1408,
+      "sha256": "40653a71c3a4a9165fb7e30317270d60b1e7123c16033312567ad75fae07c107"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_C_slant_geometry.py",
+      "bytes": 1226,
+      "sha256": "4dc5d60d65a896747bf8ecb790db55ffee9a2d26077c26532a21fb3fa6e4c6da"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_C_slant_geometry_replay.json",
+      "bytes": 347,
+      "sha256": "23c91f41a59ec4d9268340206de1719492b4e6d76f75465ac7321fc94535ba0f"
+    },
+    {
+      "path": "research/nine/WEAK_OUTER_GEOMETRY_AND_STRICT_BOUNDARY_CHECKPOINT.md",
+      "bytes": 8359,
+      "sha256": "0be93dcb245f49a33611a311b69a488e520f22c79adbc5a69c16e2dc3fbc74a1"
+    },
+    {
+      "path": "research/nine/WEAK_OUTER_SIGNED_LOW_GAP_INDEPENDENT_REVIEW.md",
+      "bytes": 10295,
+      "sha256": "4831fdd2faffab877fbd7f72bd3d7cde56e9fa1e49abb4d15e63d18e6cfc2799"
+    },
+    {
+      "path": "research/nine/GLOBAL_OUTER_LINK_EXTRACTION_DG_INSET_AND_SLANT_HAND_REDUCTION.md",
+      "bytes": 7340,
+      "sha256": "7c9307bf84652adadfe2385ed3bdf539a0acf4e2f827d217310ea78d0c650114"
+    },
+    {
+      "path": "research/nine/GLOBAL_OUTER_LINK_EXTRACTION_REPLACEMENT_ROW_INDEPENDENT_REVIEW.md",
+      "bytes": 6258,
+      "sha256": "30fe871e0b38e02d3270a845317498292c5660e6dd64097642194d4f6ec4ef7d"
+    },
+    {
+      "path": "research/nine/WEAK_OUTER_NUMERIC_ALL_TILTS_UPWARD_NORMAL_HAND_REDUCTION.md",
+      "bytes": 2875,
+      "sha256": "a61946553959c3d33bad84941bce446f5543ead69af3ef97b4cb86dd5e7b7810"
+    },
+    {
+      "path": "research/nine/WEAK_OUTER_NUMERIC_NEAR_HORIZONTAL_REPLACEMENT_ROW_HAND_TERMINAL.md",
+      "bytes": 9935,
+      "sha256": "4dbdc743a9a72207c4ed7b0c43b3c4e4a92cd0b59a28764f8b269494a07c7a8d"
+    },
+    {
+      "path": "research/nine/WEAK_OUTER_NUMERIC_RELAXED_BULK_BOUNDARY_OBSTRUCTION.md",
+      "bytes": 4795,
+      "sha256": "51b8ae3fd83a547b9e5277e1081700c2da8349e41727047becdeecad2ff2a72d"
+    },
+    {
+      "path": "research/nine/WEAK_OUTER_LARGE_GAP_DEEP_B_LEFT_LOWER_HAND_EXCLUSION.md",
+      "bytes": 3964,
+      "sha256": "8ccddd0083334447f9b6897e98a9f1f264b7011179e89e38dec126ebd148030b"
+    },
+    {
+      "path": "research/nine/computer_assisted/extraction_search_inset_slant_arithmetic.py",
+      "bytes": 1566,
+      "sha256": "1026cce20b4d4c5b1654ef08bc3d4ad15f4e625c81206ad8a78314182b1f36d7"
+    },
+    {
+      "path": "research/nine/computer_assisted/extraction_search_inset_slant_arithmetic.json",
+      "bytes": 1202,
+      "sha256": "a2444b8a15e9efbaf2bc041e6602643286be68aa8e5288239a41706084b8ea29"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_numeric_replacement_row_arithmetic.py",
+      "bytes": 1407,
+      "sha256": "58613170c64a640f6832bd85793e31637f3a793a15a5cdb1cd772260abe49cde"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_numeric_relaxed_boundary_control.py",
+      "bytes": 2271,
+      "sha256": "83945f6b8a3b4bb7b385f71ab63a0a8810539af3111c1fa10989dd64a4af9197"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_numeric_relaxed_boundary_control.json",
+      "bytes": 1394,
+      "sha256": "e5fd4fc2e06c65ac025df4dd9ee4324225ba9063a0019fb85565e1b287b97ad5"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_deep_B_left_lower.py",
+      "bytes": 930,
+      "sha256": "f14915287ee3b25014897134be871262c179f52fa7f8b4334e297d11950cdcad"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_C_slant_manifest.json",
+      "bytes": 4579,
+      "sha256": "4f901d020278d9f9860371582d45274661f890029cc90cf64de6b7f66d0bad0b"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_dense_boundary_snapshot/diagnostic.json",
+      "bytes": 374,
+      "sha256": "47290182ae32edd09940c508b304a5b6ed45d30501635f76e78fd8360461fedc"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_dense_boundary_snapshot/manifest.json",
+      "bytes": 1411,
+      "sha256": "138c4d757853cdf1b9abc30e007c7630036b2dc0bbc85ff13cefd2912edd2d2a"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_dense_boundary_snapshot/weak_outer_hand_G_order_search.py",
+      "bytes": 7137,
+      "sha256": "ec5373ff54b7976320caf404683f9436230fdb6ece02fd292fb0d89161b931e3"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_dense_boundary_snapshot/weak_outer_numeric_bulk_boundary_matrix_probe.py",
+      "bytes": 1801,
+      "sha256": "9590a6e748eafb3c9f3b34c58001e58fc9c752bb66276365fe053af30e95bab2"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_dense_boundary_snapshot/weak_outer_numeric_bulk_lp.py",
+      "bytes": 11596,
+      "sha256": "2818f68bd3f56ddf3bdbc386e409ed61fdc686dc7efdce891c0f46969f3c1642"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_dense_boundary_snapshot/weak_outer_numeric_bulk_pose_branch.py",
+      "bytes": 1737,
+      "sha256": "6b88d15df7d1996a01f73fb59ce7bfda715bd6485d8d24f3604d0938928e13a6"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_dense_boundary_snapshot/weak_outer_numeric_bulk_pose_lp.py",
+      "bytes": 14656,
+      "sha256": "855ef40405fe8fd136c1c37ca2c9d8da323f0a5e83a016bd68f4688a566cf3ba"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_dense_boundary_snapshot/weak_outer_numeric_bulk_pose_verify.py",
+      "bytes": 21062,
+      "sha256": "012e2281c2471cf32f396ab020b86e384eaf8b157b98ba21f30d595671b4c172"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_dense_boundary_snapshot/weak_outer_numeric_relaxed_boundary_control.py",
+      "bytes": 2271,
+      "sha256": "83945f6b8a3b4bb7b385f71ab63a0a8810539af3111c1fa10989dd64a4af9197"
+    }
+  ]
+}

@@ -1,9 +1,11 @@
 # D/G inset clearance and a single-line reduction of the lower-right region
 
-November 2, 2026. The D/G clearance lemma and the implication from the
-stated slanted halfplane are complete hand arguments. Establishing that
-halfplane for the entire original caller is a separate finite-table task;
-this file does not assume its completion. No Lean, Lake, or CI.
+November 2--3, 2026. The D/G clearance, actual C/G comparison, and
+implication from the stated slanted halfplane are complete hand
+arguments. The separate C-slant finite table has now passed a complete
+independent exact replay on its stated `v>=2/3` caller; see
+`GLOBAL_OUTER_LINK_EXTRACTION_C_SLANT_INDEPENDENT_REVIEW.md`.
+No Lean, Lake, or CI.
 
 Put `Q=1105/256`, `rho=91/60`, `h_S` for the original coordinate halfwidth,
 and `g_S=1/(4h_S)` for the halfwidth of the aligned square contained in the
@@ -164,16 +166,71 @@ If u>=p, put `z=u-p>=0`, `t=w-q>=0`. Physical center separation gives
 another contradiction. This exhausts H's original placement and
 orientation without introducing an H angle or separator variable.
 
-## 4. Exact arithmetic and acceptance boundary
+## 4. The full original C/G vertical projections are separated
+
+November 3 addition. On the current remaining caller `v>=2/3`, the two
+already proved D/G clearances imply the stronger actual comparison
+
+\[
+ y_G-y_C>h_C+h_G+\frac{97}{4480}.                    \tag{8}
+\]
+
+No orientation-budget lemma or new finite table is needed. Every original
+coordinate halfwidth lies in `[1/2,1/sqrt(2)]`. Split at `h_D=9/16`.
+
+If `h_D<=9/16`, the inset comparison (2) gives
+
+\[
+\begin{aligned}
+ y_G-y_C-(h_C+h_G)
+ &\ge\frac23+g_D+g_G-h_C-h_G\\
+ &\ge\frac{10}{9}-\frac{3\sqrt2}{4}
+ >\frac{127}{2520}>\frac{97}{4480}.
+\end{aligned}
+\]
+
+Here `g_D>=4/9`, `g_G>=sqrt(2)/4`, and
+`h_C+h_G<=sqrt(2)`. The strict rational comparison uses
+`sqrt(2)<99/70`.
+
+If `h_D>=9/16`, the independently proved strict affine clearance in
+`WEAK_OUTER_NUMERIC_AFFINE_DG_CLEARANCE.md` gives
+
+\[
+\begin{aligned}
+ y_G-y_C
+ &>\frac23+\frac78\left(\frac9{16}+h_G\right)
+       -\frac{41}{120}
+ =\frac{523}{640}+\frac78h_G,\\
+ y_G-y_C-(h_C+h_G)
+ &>\frac{523}{640}-h_C-\frac18h_G
+ \ge\frac{523}{640}-\frac{9\sqrt2}{16}
+ >\frac{97}{4480}.
+\end{aligned}
+\]
+
+Both cases include their common endpoint. This is actual separation of
+the **full original** vertical projection intervals, with positive
+reserve, for all C,D,G chiralities. It does not replace the original C,D
+horizontal cone by a vertical comparison. Its only geometric inputs are
+the completed G-order theorem, the D/G inset and affine clearances, and
+the remaining transverse lower bound. In particular it is independent
+of the C-slant forest.
+
+## 5. Exact arithmetic and acceptance boundary
 
 `computer_assisted/extraction_search_inset_slant_arithmetic.py` checks
-all rational constants in (1)--(7) and the two-case elimination. It uses
-only exact fractions.
+all rational constants in (1)--(8), the two-case elimination, and the
+two-case actual C/G comparison. It uses only exact fractions.
 
-The D/G comparison (2) is established unconditionally in its stated
-caller. Sections 2--3 prove a complete implication from (5). The current
-numerical evidence for (5) is not promoted to a theorem here: a separate
-complete original C,D,G proof, with all orientation and physical-owner
-branches retained, must establish it before applying this reduction.
-Neither this file nor the local right-lower exclusion by itself closes
-a whole marked mask or the remaining original-nine placement problem.
+The D/G comparison (2) and actual C/G comparison (8) are established
+unconditionally in their stated callers. Sections 2--3 prove a complete
+implication from (5). The separate original C,D,G finite proof has now
+established the strict version of (5) for `v>=2/3`, with every orientation
+and physically possible owner branch retained. Its complete independent
+replay passed all eight roots and 96,045 leaves; it does not strengthen
+the earlier `5/8` caller. Consequently the right-lower exclusion is
+accepted on the current `v>=2/3` remaining domain.
+
+Neither this file nor that local exclusion by itself closes a whole
+marked mask or the remaining original-nine placement problem.

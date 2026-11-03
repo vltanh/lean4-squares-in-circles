@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "scope": "Exact scalar constants; the complete geometric case argument is in the hand manuscript.",
+  "x_C_upper_squared_reserve": "2161/102400",
+  "height_reserve": "1/60",
+  "bottom_disk_endpoint_reserves": [
+    "11/14400",
+    "23/9216"
+  ],
+  "outward_H_circle_excess": "93/320",
+  "inset_horizontal_K": "3187/1728"
+}

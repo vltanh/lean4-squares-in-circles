@@ -1,0 +1,109 @@
+{
+  "status": "COMPLETE_EXACT_AND_INDEPENDENT_REPLAY_PASS",
+  "date": "2026-11-03",
+  "claim": {
+    "caller": "Full original-nine strict-weak 001/00 predicate, common vertical normalization",
+    "squared_radius_upper": "1105/256",
+    "transverse_gap_lower": "2/3",
+    "conclusion": "y_C+(7/8)*x_C < -7/32",
+    "corollaries": [
+      "y_C < -5/8",
+      "x_C^2+(91/60+y_C)^2 < 1",
+      "No other original H has x_H>=0 and y_H<=y_C"
+    ]
+  },
+  "coverage": {
+    "roots": 8,
+    "nodes": 189342,
+    "leaves": 96045,
+    "angle_splits": 92691,
+    "separator_splits": 606,
+    "farkas_leaves": 95593,
+    "empty_interval_leaves": 452,
+    "max_depth": 32,
+    "frontier": 0,
+    "minimum_reserve": "64011410653445778672404161627136572646598182050611729278051173658224282597669848016179093305631797066300740807178332897/481429617607993367253064593815367989019520056830552602740989843363404995949293264709568301844858412068483067773092607977062400",
+    "minimum_reserve_floor_1e12": "132961/1000000000000"
+  },
+  "fixed_mask_closures": 0,
+  "positional_root_closures": 0,
+  "damaged_controls": 6,
+  "exact_helper_dependency": "weak_outer_hand_right_lower_verify.py supplies only exact Fraction support/radical functions; its unrelated four-original verifier is not called.",
+  "floating_helper_dependency": "weak_outer_hand_right_lower_search.py supplies discovery-only support interval routines.",
+  "inherited_physical_dependencies": [
+    "WEAK_OUTER_LARGE_GAP_SHORT_ENDPOINT_ORDER_HAND_TABLE.md",
+    "UNIVERSAL_MAIN_ENDPOINT_TILT_TOLL.md",
+    "SIGNED_NEGATIVE_MAIN_UPWARD_SEPARATOR_CAP_INDEPENDENT_PROOF.md",
+    "WEAK_OUTER_NUMERIC_AFFINE_DG_CLEARANCE.md",
+    "WEAK_OUTER_NUMERIC_CONE_SEPARATOR_SIGNS.md"
+  ],
+  "files": [
+    {
+      "path": "research/nine/WEAK_OUTER_LARGE_GAP_C_SLANT_HAND_TABLE.md",
+      "bytes": 17691,
+      "sha256": "472f77baf319d29f88b0658cc1f5da84b8b161722b461e4d8835caaa6af46789"
+    },
+    {
+      "path": "research/nine/GLOBAL_OUTER_LINK_EXTRACTION_C_SLANT_INDEPENDENT_REVIEW.md",
+      "bytes": 10291,
+      "sha256": "153533f78dd3b54e3286dc1d5589282d5485b668353f754df5d499fff26a4728"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_C_slant_search.py",
+      "bytes": 7359,
+      "sha256": "8b529943401fa18f8e1f73f62ce2e8d5767c45e5c56af8d4d7555aba0265635e"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_right_lower_search.py",
+      "bytes": 9354,
+      "sha256": "943f8db33225e64522054c0092cb36d78ebfa5248447e63cd884c075b6333dad"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_C_slant_verify.py",
+      "bytes": 10770,
+      "sha256": "fafbd5c58250832f56cca1bc3d3c143bf822bb440cbb644b2a725085787d5988"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_right_lower_verify.py",
+      "bytes": 11747,
+      "sha256": "c3c66a1fcfca7d2e0acd8d9b5a32340f8e8d2253e5e802ff1be34f5cbd0e109f"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_C_slant_certificate.json.gz",
+      "bytes": 2281531,
+      "sha256": "a18dd495524d1d92aefb3139bb5804851a19f50184570bab15d7fb1503dea238"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_C_slant_exact_replay.json",
+      "bytes": 1655,
+      "sha256": "85f9cf71f4f29402fe22c86fcf762f0907686d0c5f104ee0293130e6bdba58ae"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_C_slant_global_independent_replay.json",
+      "bytes": 2483,
+      "sha256": "6afd551c4d3d709e5a70dc0109ab2224b6d0efa13c5c1bc9929aa06458fca3ae"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_C_slant_controls.py",
+      "bytes": 2453,
+      "sha256": "87d85a5fee162ee6a9adfd8262694b3a4e2312671917895838b1e57d64176029"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_C_slant_rejection_controls.json",
+      "bytes": 1408,
+      "sha256": "40653a71c3a4a9165fb7e30317270d60b1e7123c16033312567ad75fae07c107"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_C_slant_geometry.py",
+      "bytes": 1226,
+      "sha256": "4dc5d60d65a896747bf8ecb790db55ffee9a2d26077c26532a21fb3fa6e4c6da"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_C_slant_geometry_replay.json",
+      "bytes": 347,
+      "sha256": "23c91f41a59ec4d9268340206de1719492b4e6d76f75465ac7321fc94535ba0f"
+    }
+  ],
+  "independent_replay_sources_unchanged": true,
+  "independent_replay_report": "research/nine/computer_assisted/weak_outer_C_slant_global_independent_replay.json"
+}

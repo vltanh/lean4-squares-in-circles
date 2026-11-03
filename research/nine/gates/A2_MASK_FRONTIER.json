@@ -251,8 +251,8 @@
   ],
   "latest_closure": "A2_010_11_VERIFIED_CLOSURE_2026_11_02.md",
   "new_closures_in_this_continuation": 6,
-  "latest_component_checkpoint": "WEAK_OUTER_LOW_GAP_HAND_TABLE_ASSEMBLY.md",
-  "preceding_component_checkpoint": "A2_WEAK_MIDDLE_COMPONENT_CHECKPOINT_2026_11_02.md",
+  "latest_component_checkpoint": "WEAK_OUTER_GEOMETRY_AND_STRICT_BOUNDARY_CHECKPOINT.md",
+  "preceding_component_checkpoint": "WEAK_OUTER_TWO_THIRDS_ACCEPTED_CHECKPOINT.md",
   "active_target_remaining_condition": "|y_D-y_C|>2/3; full original-nine predicate unchanged",
   "latest_component_result": {
     "scope": "All original tilts in 001/00 and exact reversal 100/00 with absolute transverse gap at most 2/3 excluded even at closed Q",
@@ -264,6 +264,26 @@
     "new_mask_closures": 0,
     "new_root_exclusions": 0,
     "global_lower_bound_proved": false,
+    "lean_lake_ci_run": false
+  },
+  "latest_geometry_component": {
+    "date": "2026-11-03",
+    "scope": "Complete original C-slant, geometric corollaries, and strict closed-Q replacement-row exclusion; original full-nine complement remains open",
+    "source": "WEAK_OUTER_GEOMETRY_AND_STRICT_BOUNDARY_CHECKPOINT.md",
+    "manifest": "computer_assisted/weak_outer_geometry_checkpoint_manifest.json",
+    "slant": {
+      "roots": 8,
+      "nodes": 189342,
+      "leaves": 96045,
+      "frontier": 0,
+      "complete_exact_replays": 2,
+      "damaged_controls_rejected": 6
+    },
+    "replacement_row": "all original angles; both new links may be weak; equality contradicts original strict CD bit",
+    "new_mask_closures": 0,
+    "new_original_root_exclusions": 0,
+    "new_global_gate_closures": 0,
+    "human_or_kernel_verification": false,
     "lean_lake_ci_run": false
   }
 }

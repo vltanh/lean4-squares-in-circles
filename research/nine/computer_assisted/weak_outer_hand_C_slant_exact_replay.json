@@ -1,0 +1,68 @@
+{
+  "nodes": 189342,
+  "leaves": 96045,
+  "angle_splits": 92691,
+  "separator_splits": 606,
+  "farkas_leaves": 95593,
+  "empty_interval_leaves": 452,
+  "max_depth": 32,
+  "status": "PASS",
+  "frontier": 0,
+  "roots": 8,
+  "minimum_reserve": "64011410653445778672404161627136572646598182050611729278051173658224282597669848016179093305631797066300740807178332897/481429617607993367253064593815367989019520056830552602740989843363404995949293264709568301844858412068483067773092607977062400",
+  "minimum_reserve_floor_1e12": "132961/1000000000000",
+  "by_root": [
+    {
+      "root": 0,
+      "domain": "slant",
+      "nodes": 8815,
+      "leaves": 4664
+    },
+    {
+      "root": 1,
+      "domain": "slant",
+      "nodes": 8855,
+      "leaves": 4618
+    },
+    {
+      "root": 2,
+      "domain": "slant",
+      "nodes": 5323,
+      "leaves": 2816
+    },
+    {
+      "root": 3,
+      "domain": "slant",
+      "nodes": 13635,
+      "leaves": 6948
+    },
+    {
+      "root": 4,
+      "domain": "slant",
+      "nodes": 5435,
+      "leaves": 2944
+    },
+    {
+      "root": 5,
+      "domain": "slant",
+      "nodes": 6429,
+      "leaves": 3381
+    },
+    {
+      "root": 6,
+      "domain": "slant",
+      "nodes": 23239,
+      "leaves": 11756
+    },
+    {
+      "root": 7,
+      "domain": "slant",
+      "nodes": 117611,
+      "leaves": 58918
+    }
+  ],
+  "seconds": 46.93228459358215,
+  "certificate_sha256": "a18dd495524d1d92aefb3139bb5804851a19f50184570bab15d7fb1503dea238",
+  "verifier_sha256": "fafbd5c58250832f56cca1bc3d3c143bf822bb440cbb644b2a725085787d5988",
+  "exact_helper_sha256": "c3c66a1fcfca7d2e0acd8d9b5a32340f8e8d2253e5e802ff1be34f5cbd0e109f"
+}
