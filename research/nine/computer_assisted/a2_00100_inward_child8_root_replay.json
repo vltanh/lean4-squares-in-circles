@@ -1,0 +1,57 @@
+{
+  "status": "PASS_ALL_COMPLETE_ORIGINAL_PARENTS",
+  "complete_original_ids": [
+    "positive-2dcf3464c0e0dafb",
+    "positive-3bf14a18887cabaf"
+  ],
+  "complete_original_count": 2,
+  "before": {
+    "closed": 193,
+    "open": 38
+  },
+  "after": {
+    "closed": 195,
+    "open": 36
+  },
+  "whole_masks": {
+    "closed": 8,
+    "open": 24
+  },
+  "totals": {
+    "prior_coordinate_deductions": 81,
+    "new_exact_deductions": 2109,
+    "printed_rows_checked": 3339,
+    "complete_terminal_domains": 2,
+    "new_internal_case_splits": 0
+  },
+  "existing_prefix": [
+    [
+      "angle",
+      3,
+      1
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      0
+    ],
+    [
+      "inward_row_escape",
+      [
+        7,
+        8
+      ],
+      [
+        8
+      ]
+    ]
+  ],
+  "existing_prefix_original_count": 26,
+  "completed_existing_domains": 1,
+  "whole_mask_closed": false,
+  "lean_lake_ci_run": false,
+  "independent_checker_unchanged": true
+}

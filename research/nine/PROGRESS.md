@@ -1,33 +1,42 @@
-> **CURRENT EXECUTION PRIORITY:** [Shared original-nine macro closure](A2_00100_SHARED_MACRO_CLOSURE_DIRECTIVE_2026_11_03.md). Shared original-center capacity now closes **nineteen more complete originals** across all four families. Current accounting: **193/231 cells CLOSED, 38 OPEN; 8/32 masks CLOSED, 24 OPEN.** Continue shared whole-parent arguments; do not count deeper unfinished trees as progress.
+> **CURRENT EXECUTION PRIORITY:** [Shared original-nine macro closure](A2_00100_SHARED_MACRO_CLOSURE_DIRECTIVE_2026_11_03.md). The latest four whole-parent proofs finish two existing branches with no new subdivisions. Current accounting: **197/231 cells CLOSED, 34 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
-# n=9: 193/231 current-mask cells closed; 38 remain OPEN
+# n=9: 197/231 current-mask cells closed; 34 remain OPEN
 
-**Latest verified continuation: nineteen complete original-cell exclusions
-using exact frame identities, physical pair and strip capacity, and
-complete original-center covers.** The fixed cover now has **193 CLOSED /
-38 OPEN**: 140 new whole cells beyond the original 53. The full-mask ledger
-remains **8 CLOSED / 24 OPEN**. The current mask and its reversal remain
-OPEN. No Lean, Lake or CI.
+**Latest verified continuation: four complete original-cell exclusions.**
+Two A proofs share one 22-row terminal. Two B proofs finish the existing
+vertical-extra-pair prefix, one by exact positive cancellation and one
+by a direct original-unit-frame contradiction. The same fixed cover has
+**197 CLOSED / 34 OPEN**, with **144 additions beyond the first 53**.
+`001/00`, its reversal, the global bound and equality remain OPEN.
+No Lean, Lake or CI.
 
-[Latest complete hand/table proof](A2_00100_C60B_FIXED_H_COVER_CLOSURE.md) ·
+[Latest complete assembly](A2_00100_FOUR_ORIGINAL_SHARED_CLOSURE.md) ·
 [Current fixed register](gates/A2_00100_FIXED_FRONTIER.json) ·
-[Latest portable exact evidence](computer_assisted/a2_00100_c60b_h_center_manifest.json) ·
+[Source-bound evidence and fresh replay](computer_assisted/a2_00100_four_original_shared_manifest.json) ·
 [Operative handoff](HANDOFF_A2_FIXED_CLOSURE.md)
 
 ## What changed
 
-The [latest complete C60b proof](A2_00100_C60B_FIXED_H_COVER_CLOSURE.md)
-closes `negative-60b1043c8c722dd5`. A complete H-center cover uses sixty
-outside tiles and one entire four-tile rectangle, including every closed
-face. Its 31 prior and 629 new deductions, 1,815 printed rows and 61
-terminal domains pass independent full-original replay. The broader
-H-alternate-child-7 prefix still has three OPEN originals.
+The four new IDs are `positive-2dcf3464c0e0dafb`,
+`positive-3bf14a18887cabaf`, `negative-e9388ab13ca6220a` and
+`negative-2ee3f4820947eb83`. They contain 151 inherited and 4,704 new exact
+deductions, 9,140 checked printed rows, four complete terminal domains
+and zero new splits. Fresh independent replay of both portable archives
+passed. The [A proof](A2_00100_A_INWARD_CHILD8_SHARED_CLOSURE.md) finishes
+the existing inward-row child-8 prefix, with 26 original register cells.
+The [B proof](A2_00100_B_VERTICAL_EXTRA_PAIR_CLOSURE.md) finishes the
+existing vertical-extra-pair prefix, with seven original register cells.
+The prefixes' other registered cells and baseline terminals were already
+proved. No full mask, positional root or roadmap gate is newly closed.
 
-Across five immutable packets, nineteen new originals contain 673
-inherited and 11,645 new deductions, 22,509 checked rows and 719 terminal
-domains. They close seven A, eight B, two C and two D originals. The
-[completed bounded-pass record](computer_assisted/a2_00100_bounded_capacity_discovery_status.json)
-keeps unsuccessful discovery separate from those complete proofs.
+### Preceding C60b checkpoint: 193 CLOSED / 38 OPEN
+
+The [complete C60b proof](A2_00100_C60B_FIXED_H_COVER_CLOSURE.md)
+closed `negative-60b1043c8c722dd5`. Its 31 prior and 629 new deductions,
+1,815 printed rows and 61 terminal domains passed independent replay.
+Across the five packets from 174 to 193, nineteen complete originals
+contained 673 inherited and 11,645 new deductions, 22,509 checked rows
+and 719 terminal domains. Their immutable evidence remains accepted.
 
 ### Preceding inward-child-5 proof
 
@@ -183,16 +192,16 @@ Fresh replay also accepted six recovered acyclic coordinate-bound
 certificates, with 316 deductions and six final contradictions. One is
 an alternative proof of a physical parent; the other five add IDs.
 That preceding union is **99 new original cells**, with no duplicate
-count; the preceding seven, nine and six proofs reached **121** additions; the next nine reached **130**, the next two reached **132**, the next six reached **138**, inward child 5 reached **139**, and C60b brings the cumulative addition to **140**. The first 53 cell proofs and the complete baseline cover remain
+count; the preceding seven, nine and six proofs reached **121** additions; the next nine reached **130**, the next two reached **132**, the next six reached **138**, inward child 5 reached **139**, C60b reached **140**, and the four complete originals now bring the cumulative addition to **144**. The first 53 cell proofs and the complete baseline cover remain
 unchanged. All 231 original IDs and exact ancestor paths are preserved.
 
 | Fixed family | Original OPEN baseline | Closed since baseline | Current OPEN |
 |---|---:|---:|---:|
-| A: inward-row escapes | 77 | 70 | 7 |
-| B: F-height branches | 39 | 20 | 19 |
+| A: inward-row escapes | 77 | 72 | 5 |
+| B: F-height branches | 39 | 22 | 17 |
 | C: negative-D alternative-chain escapes | 33 | 25 | 8 |
 | D: positive-D alternative-chain escapes | 29 | 25 | 4 |
-| Total | 178 | 140 | 38 |
+| Total | 178 | 144 | 34 |
 
 This is whole-cell progress within a certified full-mask cover. It does
 not estimate remaining effort or discharge a whole mask. Every unfinished
@@ -203,7 +212,7 @@ internal tree leaves its original parent OPEN.
 | Ledger | Established | Still open |
 |---|---:|---:|
 | Original-nine strict-radius masks | 8 | 24 |
-| Current `001/00` fixed cells | 193 | 38 |
+| Current `001/00` fixed cells | 197 | 34 |
 | Historical positional closed-Q exclusions | 5,838 | 2,077 |
 
 The positional ledger retains the same 7,915 IDs and possible equality
@@ -241,7 +250,7 @@ substitutions. That historical package remains immutable.
 The entire strict `001/00` domain is the target; exact whole-witness
 reversal will transfer its eventual complete proof to `100/00`.
 The accepted [low-gap assembly](WEAK_OUTER_LOW_GAP_HAND_TABLE_ASSEMBLY.md)
-handles `|y_D-y_C|<=2/3`. All 38 remaining original cells belong to the
+handles `|y_D-y_C|<=2/3`. All 34 remaining original cells belong to the
 certified large-gap complement and retain all nine squares and strict bits.
 
 Use the proved unique-penultimate implications where their exact cone

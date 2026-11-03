@@ -9,11 +9,11 @@
   "coverage_kind": "EXHAUSTIVE_FINITE_COVER_WITH_SHARED_CLOSED_FACES",
   "coverage_certified": true,
   "id_rule": "sign + hyphen + first 16 hexadecimal digits of SHA256(json.dumps(path,separators=(comma,colon))); full path retained and checked.",
-  "assembly": "../A2_00100_C60B_FIXED_H_COVER_CLOSURE.md",
+  "assembly": "../A2_00100_FOUR_ORIGINAL_SHARED_CLOSURE.md",
   "physical_review": "../A2_00100_FIXED_FRONTIER_PHYSICAL_REVIEW.md",
   "coverage_review": "../A2_00100_V13_COVERAGE_INDEPENDENT_REVIEW.md",
-  "cell_review": "../A2_00100_C60B_FIXED_H_COVER_CLOSURE.md",
-  "manifest": "../computer_assisted/a2_00100_c60b_h_center_manifest.json",
+  "cell_review": "../A2_00100_FOUR_ORIGINAL_SHARED_CLOSURE.md",
+  "manifest": "../computer_assisted/a2_00100_four_original_shared_manifest.json",
   "payload_register": "fixed_231_register.json",
   "baseline_forest_sha256": {
     "positive": "f6518c23a00c32e1f3d3915d1cd89cd24d162f459a6fc03a721fb843cc878d78",
@@ -22,8 +22,8 @@
   "scope": "Coverage-qualified fixed original full-nine large-gap cells; all 231 IDs and paths immutable.",
   "whole_mask_closed": false,
   "original_cells": 231,
-  "closed_cells": 193,
-  "open_cells": 38,
+  "closed_cells": 197,
+  "open_cells": 34,
   "cells": [
     {
       "id": "positive-655c4b699ba028a1",
@@ -5460,12 +5460,24 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_inward_child8_checkpoint.tar.gz",
+        "archive_sha256": "3ecf7bdae23ed8ef429f2bd5d97e425145757974523d43aec1284a53bee1fbdc",
+        "method": "whole_parent_dual",
+        "certificate": "certificates/positive-2dcf3464c0e0dafb.json",
+        "certificate_sha256": "338c511cadaa77f1b71e166630d49487641edfc23b42b3fa62b5101040d7a68e",
         "record_id": "positive-2dcf3464c0e0dafb",
-        "whole_cell_exclusion": null
-      }
+        "independent_checker": "verify_joint_original.py",
+        "independent_checker_sha256": "09bcfb3f235a5a90464c21caa12d26bbda877c8dcad67dd6f9d0e70fe0493460",
+        "independent_report": "accepted_reports/positive-2dcf3464c0e0dafb.json",
+        "independent_report_sha256": "1009930c87f9d3a878865c525ec4de398cefe8b2d0d888b0fd0a447b0ce71abd",
+        "root_fresh_replay_report": "a2_00100_inward_child8_root_replay.json",
+        "terminal_leaves": 1,
+        "new_internal_case_splits": 0
+      },
+      "method": "whole_parent_dual",
+      "terminal_leaves": 1
     },
     {
       "id": "positive-3bf14a18887cabaf",
@@ -5506,12 +5518,24 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_inward_child8_checkpoint.tar.gz",
+        "archive_sha256": "3ecf7bdae23ed8ef429f2bd5d97e425145757974523d43aec1284a53bee1fbdc",
+        "method": "whole_parent_dual",
+        "certificate": "certificates/positive-3bf14a18887cabaf.json",
+        "certificate_sha256": "6a28d6194118aa50bf028d3fe4500ecb6fad8054eb2ffc336953682397475cad",
         "record_id": "positive-3bf14a18887cabaf",
-        "whole_cell_exclusion": null
-      }
+        "independent_checker": "verify_joint_original.py",
+        "independent_checker_sha256": "09bcfb3f235a5a90464c21caa12d26bbda877c8dcad67dd6f9d0e70fe0493460",
+        "independent_report": "accepted_reports/positive-3bf14a18887cabaf.json",
+        "independent_report_sha256": "a1633d19deeb6a76d8ccf788cdb423f21d1e7cb77dbf2c220ffb55127e62f07f",
+        "root_fresh_replay_report": "a2_00100_inward_child8_root_replay.json",
+        "terminal_leaves": 1,
+        "new_internal_case_splits": 0
+      },
+      "method": "whole_parent_dual",
+      "terminal_leaves": 1
     },
     {
       "id": "positive-c87bdd1304450b65",
@@ -16255,12 +16279,24 @@
           0
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_b_vertical_pair_checkpoint.tar.gz",
+        "archive_sha256": "505254d042a085f1e6b2977fa1cab731c5283c9e1f5c1d6e5a4704486128283d",
+        "method": "whole_parent_dual",
+        "certificate": "certificates/negative-e9388ab13ca6220a.json",
+        "certificate_sha256": "8cf07e1cfccf80ac950f921317bda28eb4916782513d291ad2073f356122abc1",
         "record_id": "negative-e9388ab13ca6220a",
-        "whole_cell_exclusion": null
-      }
+        "independent_checker": "verify_joint_original.py",
+        "independent_checker_sha256": "09bcfb3f235a5a90464c21caa12d26bbda877c8dcad67dd6f9d0e70fe0493460",
+        "independent_report": "accepted_reports/negative-e9388ab13ca6220a.json",
+        "independent_report_sha256": "e00fe7ea611f86e7af3ccf2d95b4e4aed18504280f25ae8233ee3b174bfe1b15",
+        "root_fresh_replay_report": "a2_00100_b_vertical_pair_root_replay.json",
+        "terminal_leaves": 1,
+        "new_internal_case_splits": 0
+      },
+      "method": "whole_parent_dual",
+      "terminal_leaves": 1
     },
     {
       "id": "negative-4b5e7ea05e82b9ac",
@@ -16586,12 +16622,24 @@
           0
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_b_vertical_pair_checkpoint.tar.gz",
+        "archive_sha256": "505254d042a085f1e6b2977fa1cab731c5283c9e1f5c1d6e5a4704486128283d",
+        "method": "whole_parent_original_unit_frame_terminal",
+        "certificate": "certificates/negative-2ee3f4820947eb83.json",
+        "certificate_sha256": "4aaf246526f40d43b30e0c780bdab46ac6848659cbb8e73619d0884292ad03bb",
         "record_id": "negative-2ee3f4820947eb83",
-        "whole_cell_exclusion": null
-      }
+        "independent_checker": "verify_B_unit_frame_terminal.py",
+        "independent_checker_sha256": "1d44d98006617b2261aee0ffd0ffff13a1610901b7a027812e22d3b6b520671a",
+        "independent_report": "accepted_reports/negative-2ee3f4820947eb83.json",
+        "independent_report_sha256": "b19ca8cc8b3a090a55657a53edf009ebc5c8e3b173d5beef64ed6c13d667d201",
+        "root_fresh_replay_report": "a2_00100_b_vertical_pair_root_replay.json",
+        "terminal_leaves": 1,
+        "new_internal_case_splits": 0
+      },
+      "method": "whole_parent_original_unit_frame_terminal",
+      "terminal_leaves": 1
     },
     {
       "id": "negative-0e4fa3209b6f7b12",
@@ -22710,8 +22758,8 @@
   "open_cell_discovery_report": "../computer_assisted/a2_00100_open_continuation_manifest.json",
   "baseline_assembly": "../A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md",
   "baseline_manifest": "../computer_assisted/a2_00100_fixed_frontier_manifest.json",
-  "latest_new_closed_cells": 1,
-  "cumulative_new_closed_since_53": 140,
-  "preceding_assembly": "../A2_00100_A_INWARD_CHILD5_WHOLE_PARENT_CLOSURE.md",
-  "preceding_manifest": "../computer_assisted/a2_00100_inward_child5_manifest.json"
+  "latest_new_closed_cells": 4,
+  "cumulative_new_closed_since_53": 144,
+  "preceding_assembly": "../A2_00100_C60B_FIXED_H_COVER_CLOSURE.md",
+  "preceding_manifest": "../computer_assisted/a2_00100_c60b_h_center_manifest.json"
 }

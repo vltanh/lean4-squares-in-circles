@@ -1,0 +1,295 @@
+{
+  "schema": "n9_b_vertical_pair_delivery_v1",
+  "status": "PASS_ALL_COMPLETE_ORIGINAL_PARENTS",
+  "target_mask": "001/00",
+  "reversal_partner": "100/00",
+  "strict_q_upper": "1105/256",
+  "input_current_commit": "198c3d19d04f34697e6034f112fa8e3100a4204e",
+  "original_register_baseline_commit": "cab1367cd3792ff73034a81e3017cec2779b6cf1",
+  "original_register_sha256": "ea000e84c04675fe22424e5c20d3df9d735d659065349800aef2699170bff604",
+  "input_current_register_sha256": "4fbee967d2721b8865a0c0f3ffaf4a40c94df96d63f2e8ae6e4c8b80b7aa4561",
+  "previous_checkpoint_manifest": "a2_00100_inward_child8_manifest.json",
+  "previous_checkpoint_manifest_sha256": "a254aec9be4f2fa84ed39f3a828fc3e712be56f6818809b70238ce17c7b696f5",
+  "previous_checkpoint_archive_sha256": "3ecf7bdae23ed8ef429f2bd5d97e425145757974523d43aec1284a53bee1fbdc",
+  "previous_checkpoints_unchanged": true,
+  "new_ids_disjoint_from_previous_checkpoints": true,
+  "before": {
+    "closed": 195,
+    "open": 36
+  },
+  "after": {
+    "closed": 197,
+    "open": 34
+  },
+  "whole_masks": {
+    "closed": 8,
+    "open": 24
+  },
+  "complete_original_count": 2,
+  "complete_originals": [
+    {
+      "id": "negative-e9388ab13ca6220a",
+      "kind": "whole_parent_dual",
+      "certificate": "certificates/negative-e9388ab13ca6220a.json",
+      "certificate_sha256": "8cf07e1cfccf80ac950f921317bda28eb4916782513d291ad2073f356122abc1",
+      "checker": "verify_joint_original.py",
+      "checker_sha256": "09bcfb3f235a5a90464c21caa12d26bbda877c8dcad67dd6f9d0e70fe0493460",
+      "accepted_report": "accepted_reports/negative-e9388ab13ca6220a.json",
+      "accepted_report_sha256": "e00fe7ea611f86e7af3ccf2d95b4e4aed18504280f25ae8233ee3b174bfe1b15",
+      "inherited_open_state": "inherited_open_states/negative-e9388ab13ca6220a.json",
+      "inherited_open_state_sha256": "ffba3ca1b69cbbf288bf225492db8c661c8ab8a5c5da02b83512c7b8ce88aa6e",
+      "prior_coordinate_deductions": 36,
+      "new_exact_deductions": 1224,
+      "printed_rows_checked": 2855,
+      "terminal_rows": 37,
+      "rounds": 9,
+      "complete_terminal_domains": 1,
+      "new_internal_case_splits": 0
+    },
+    {
+      "id": "negative-2ee3f4820947eb83",
+      "kind": "whole_parent_original_unit_frame_terminal",
+      "certificate": "certificates/negative-2ee3f4820947eb83.json",
+      "certificate_sha256": "4aaf246526f40d43b30e0c780bdab46ac6848659cbb8e73619d0884292ad03bb",
+      "checker": "verify_B_unit_frame_terminal.py",
+      "checker_sha256": "1d44d98006617b2261aee0ffd0ffff13a1610901b7a027812e22d3b6b520671a",
+      "accepted_report": "accepted_reports/negative-2ee3f4820947eb83.json",
+      "accepted_report_sha256": "b19ca8cc8b3a090a55657a53edf009ebc5c8e3b173d5beef64ed6c13d667d201",
+      "inherited_open_state": "inherited_open_states/negative-2ee3f4820947eb83.json",
+      "inherited_open_state_sha256": "8b234a3099c110980799ad124a822a8582eb7dcf77fa223a25a0cc1984f5a46e",
+      "prior_coordinate_deductions": 34,
+      "new_exact_deductions": 1371,
+      "printed_rows_checked": 2946,
+      "terminal_rows": 2,
+      "rounds": 10,
+      "complete_terminal_domains": 1,
+      "new_internal_case_splits": 0
+    }
+  ],
+  "previously_closed_original_ids": [
+    "positive-8f760b2d708ad21d",
+    "negative-a3ab8823d7fe0fa6",
+    "negative-ab8b276e0338d7f0",
+    "positive-3da90694b58b6ef7",
+    "positive-3b5d35fda8ec4119",
+    "negative-493c2b626cdbf986",
+    "negative-f92d74e712afa6be",
+    "negative-b8e4f47ec1258e16",
+    "negative-1de449e714cf90dd",
+    "positive-2c719a20ef7510de",
+    "negative-e0dbb1642ee58e72",
+    "positive-d9e959003493b8f1",
+    "positive-8e41311b61c89e61",
+    "positive-5edcabd77ec2e38b",
+    "positive-b4a9a3bc15e37620",
+    "negative-daf08b7f35b70b9a",
+    "negative-99f578b7bbedf013",
+    "positive-b819223a03e89ec7",
+    "negative-60b1043c8c722dd5",
+    "positive-2dcf3464c0e0dafb",
+    "positive-3bf14a18887cabaf"
+  ],
+  "cumulative_new_original_ids": [
+    "positive-8f760b2d708ad21d",
+    "negative-a3ab8823d7fe0fa6",
+    "negative-ab8b276e0338d7f0",
+    "positive-3da90694b58b6ef7",
+    "positive-3b5d35fda8ec4119",
+    "negative-493c2b626cdbf986",
+    "negative-f92d74e712afa6be",
+    "negative-b8e4f47ec1258e16",
+    "negative-1de449e714cf90dd",
+    "positive-2c719a20ef7510de",
+    "negative-e0dbb1642ee58e72",
+    "positive-d9e959003493b8f1",
+    "positive-8e41311b61c89e61",
+    "positive-5edcabd77ec2e38b",
+    "positive-b4a9a3bc15e37620",
+    "negative-daf08b7f35b70b9a",
+    "negative-99f578b7bbedf013",
+    "positive-b819223a03e89ec7",
+    "negative-60b1043c8c722dd5",
+    "positive-2dcf3464c0e0dafb",
+    "positive-3bf14a18887cabaf",
+    "negative-e9388ab13ca6220a",
+    "negative-2ee3f4820947eb83"
+  ],
+  "totals": {
+    "prior_coordinate_deductions": 70,
+    "new_exact_deductions": 2595,
+    "printed_rows_checked": 5801,
+    "complete_terminal_domains": 2,
+    "new_internal_case_splits": 0
+  },
+  "completed_existing_domain_assemblies": 1,
+  "completed_existing_domain": [
+    [
+      "angle",
+      3,
+      0
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      0
+    ],
+    [
+      "position_cut",
+      [
+        11,
+        "1/2"
+      ],
+      0
+    ],
+    [
+      "f_side_escape",
+      [
+        5,
+        7
+      ],
+      [
+        6
+      ]
+    ],
+    [
+      "f_side_escape",
+      [
+        5,
+        8
+      ],
+      [
+        6
+      ]
+    ],
+    [
+      "lower_escape",
+      [
+        2,
+        7
+      ],
+      [
+        1
+      ]
+    ],
+    [
+      "lower_escape",
+      [
+        2,
+        8
+      ],
+      [
+        1
+      ]
+    ],
+    [
+      "asymmetric_escape",
+      [
+        1,
+        7
+      ],
+      [
+        3
+      ]
+    ],
+    [
+      "asymmetric_escape",
+      [
+        1,
+        8
+      ],
+      [
+        3
+      ]
+    ],
+    [
+      "angle",
+      4,
+      1
+    ],
+    [
+      "angle",
+      1,
+      1
+    ],
+    [
+      "angle",
+      3,
+      1
+    ],
+    [
+      "sat",
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        1,
+        1
+      ]
+    ],
+    [
+      "angle",
+      7,
+      1
+    ],
+    [
+      "sat",
+      [
+        3,
+        6
+      ],
+      [
+        6,
+        1,
+        1
+      ]
+    ],
+    [
+      "proxy",
+      [
+        7,
+        8
+      ],
+      [
+        1,
+        1
+      ]
+    ]
+  ],
+  "completed_existing_domain_original_count": 7,
+  "remaining_B_originals": 17,
+  "new_internal_case_splits": 0,
+  "terminal_rules": [
+    "positive_exact_reserve",
+    "exact_original_unit_frame_upper_norm_contradiction"
+  ],
+  "terminal_reserve_lower": [
+    "2/125",
+    "1/200"
+  ],
+  "archive": "a2_00100_b_vertical_pair_checkpoint.tar.gz",
+  "archive_sha256": "505254d042a085f1e6b2977fa1cab731c5283c9e1f5c1d6e5a4704486128283d",
+  "archive_bytes": 6065984,
+  "package_directory": "b_inward_pair_checkpoint",
+  "immutable_payload_files": 85,
+  "immutable_payload_bytes": 46715863,
+  "payload_manifest_sha256": "a7801dc35940318653398abd6225835cf1ac2267453eb4b879f73870b5d3e895",
+  "portable_summary_sha256": "4c63bf27a4be4865687c9af1c6713e18c79df50293b089f5b2a5feaca79846c0",
+  "source_bindings_sha256": "86289971154ffee47e4ea3a9ea5a64f8ff641c84242841b5bc4f9f7df3b5b987",
+  "portable_replay_command": "python b_inward_pair_checkpoint/verify_all.py",
+  "replay_dependencies": "Python standard library only",
+  "hand_assembly": "A2_00100_B_VERTICAL_EXTRA_PAIR_CLOSURE.md",
+  "hand_assembly_sha256": "e718b3d1fc548534aba74f1cfc51f01eae52608555880749afc1a6a76ca683a9",
+  "independent_exact_replay": "COMPLETE_FROM_RELOCATED_ARCHIVE",
+  "root_additional_replay": "PENDING",
+  "raw_certificates_unchanged": true,
+  "unit_frame_terminal_adapter_sha256": "1d44d98006617b2261aee0ffd0ffff13a1610901b7a027812e22d3b6b520671a",
+  "lean_lake_ci_run": false,
+  "whole_target_mask_closed": false,
+  "other_masks_newly_closed": 0,
+  "proof_kernel_verification": false
+}
