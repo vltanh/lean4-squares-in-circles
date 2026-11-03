@@ -1,0 +1,14 @@
+{
+  "status": "NUMERICAL_DISCOVERY_ONLY",
+  "grid_pairs": 361201,
+  "min_horizontal_span": 1.8,
+  "minimizer_vertical_gaps": [
+    0.0,
+    0.6
+  ],
+  "necessary_span_upper_left": 1.7822916666666666,
+  "necessary_span_upper_right": 1.7828703703703703,
+  "sampled_original_relaxation_pose": "/workspace/scratch/fef59ce9969b/work_computer/snapshot/computer_assisted/both_above_F_Anegative_Dpositive.json",
+  "right_extra_I_total_variation": 0.0427169618148695,
+  "sample_excluded_by_candidate": true
+}

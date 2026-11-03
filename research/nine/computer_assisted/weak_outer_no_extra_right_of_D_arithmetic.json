@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "scope": "exact fractions in the printed original-center routing argument; finite DG upper-gap input separately required",
+  "separation_reserve": "539/90000",
+  "lower_center_reserve": "67393/360000",
+  "outer_height_reserve": "1/320",
+  "G_separation_reserve": "126503/4665600",
+  "wrong_G_order_reserve": "3/10",
+  "DG_upper_threshold": "79/50",
+  "stronger_extra_x_upper_bound": "5/4",
+  "stronger_D_separation_reserve": "41/5625",
+  "stronger_lower_center_reserve": "11813/72000",
+  "stronger_height_reserve": "401/14400",
+  "stronger_G_separation_reserve": "316559/116640000",
+  "F_low_variation_lower_bound": "3/5",
+  "left_F_span_reserve": "17/960",
+  "right_F_span_reserve": "37/2160"
+}

@@ -1,0 +1,68 @@
+{
+  "nodes": 10397,
+  "leaves": 6197,
+  "angle_splits": 3743,
+  "separator_splits": 457,
+  "farkas_leaves": 6197,
+  "empty_interval_leaves": 0,
+  "max_depth": 12,
+  "status": "PASS",
+  "frontier": 0,
+  "roots": 8,
+  "minimum_reserve": "2769704004092397902164753146677106273575385575610462318193019072767703671838716815025830329838627926701799074064542643253403499573/63967661406829321453971251369638218279427129652456417084166099962494650825672721658179669958056119106136253139981137300903757835403264",
+  "minimum_reserve_floor_1e12": "43298503/1000000000000",
+  "by_root": [
+    {
+      "root": 0,
+      "domain": "F_order",
+      "nodes": 1855,
+      "leaves": 1121
+    },
+    {
+      "root": 1,
+      "domain": "F_order",
+      "nodes": 1771,
+      "leaves": 1038
+    },
+    {
+      "root": 2,
+      "domain": "F_order",
+      "nodes": 603,
+      "leaves": 386
+    },
+    {
+      "root": 3,
+      "domain": "F_order",
+      "nodes": 946,
+      "leaves": 569
+    },
+    {
+      "root": 4,
+      "domain": "F_order",
+      "nodes": 1568,
+      "leaves": 945
+    },
+    {
+      "root": 5,
+      "domain": "F_order",
+      "nodes": 1536,
+      "leaves": 896
+    },
+    {
+      "root": 6,
+      "domain": "F_order",
+      "nodes": 729,
+      "leaves": 455
+    },
+    {
+      "root": 7,
+      "domain": "F_order",
+      "nodes": 1389,
+      "leaves": 787
+    }
+  ],
+  "seconds": 2.8922934532165527,
+  "certificate_sha256": "3dcc723d03f388a05f086e01b8877328aa8d694a2b42a2c3048f7e58c5e1bdd1",
+  "verifier_sha256": "f6ddccb3037e50826af9a10f92dccd1fca332640bcc5eee4b783db061113b953",
+  "exact_helper_sha256": "c3c66a1fcfca7d2e0acd8d9b5a32340f8e8d2253e5e802ff1be34f5cbd0e109f"
+}

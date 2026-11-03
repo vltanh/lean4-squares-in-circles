@@ -1,0 +1,571 @@
+{
+  "status": "accepted complete internal hand/table inputs; original-nine height cover OPEN",
+  "baseline": "831ac93a883d01a08eaf0ea6e386b2edc4bec050",
+  "scope": "original strict001/00 and reversal100/00 with each printed component guard; universal lemmas have their own printed scope",
+  "strict_radius_closed_masks": 8,
+  "open_masks": 24,
+  "new_whole_mask_closures": 0,
+  "new_positional_root_closures": 0,
+  "new_roadmap_gate_closures": 0,
+  "complete_component_table_leaves_replayed_by_root": 90533,
+  "correlated_corner_row_exact_arithmetic_checks": 108,
+  "simpler_all_sign_row_exact_arithmetic_checks": 70,
+  "lean_lake_ci_run": false,
+  "files": [
+    {
+      "path": "research/nine/ALL_SIGN_CORRELATED_CORNER_ROW_HAND_STRENGTHENING.md",
+      "sha256": "0d233bddea414938482cb312519da061a546d26c4ee5a5bb83a14b48c178ed02",
+      "bytes": 14066
+    },
+    {
+      "path": "research/nine/ALL_SIGN_SMALL_ANGLE_THREE_LINK_ROW_HAND_TERMINAL.md",
+      "sha256": "914be8e780fe47293fcef04dac519e42ad652594abbecd19c728458c6a048c0b",
+      "bytes": 13815
+    },
+    {
+      "path": "research/nine/ALTERNATE_FOUR_CHAIN_SATURATION_HAND_REDUCTION.md",
+      "sha256": "93f99f333f836b183c4216db3d662825d2ab2256ddcbd3bbe7b3e88c3fb77f24",
+      "bytes": 5822
+    },
+    {
+      "path": "research/nine/DISK_INSET_AND_DIAMOND_SEPARATION_HAND_PROOF.md",
+      "sha256": "c6b37e136c75787f78d4ed21ae603a3b2269e0066aef06644f95f1e92c29f22e",
+      "bytes": 4976
+    },
+    {
+      "path": "research/nine/GLOBAL_OUTER_LINK_EXTRACTION_ASYMMETRIC_ROW_INDEPENDENT_REVIEW.md",
+      "sha256": "38682c0a50be00a4404161923ca30a8dc8f1c7be71a35e6043bfffa854e65231",
+      "bytes": 7004
+    },
+    {
+      "path": "research/nine/GLOBAL_OUTER_LINK_EXTRACTION_CF_INSET_VERTICAL_HAND_PROOF.md",
+      "sha256": "2f517014ccc8356661500ff72fa4a864e3b0fe5a6d030dd288bad1a821168d1a",
+      "bytes": 4760
+    },
+    {
+      "path": "research/nine/GLOBAL_OUTER_LINK_EXTRACTION_DEEP_BOUNDARY_INDEPENDENT_REVIEW.md",
+      "sha256": "24765d079a102be413d54ad4d4d742ff1b3c697b5cd224d8ec255d066c8b9ff7",
+      "bytes": 6841
+    },
+    {
+      "path": "research/nine/GLOBAL_OUTER_LINK_EXTRACTION_E_ORDER_INDEPENDENT_REVIEW.md",
+      "sha256": "226e8d582b6d7aec0f254f327bc98bcd9dc6d099a7b784fb21ff749c15544f68",
+      "bytes": 18143
+    },
+    {
+      "path": "research/nine/GLOBAL_OUTER_LINK_EXTRACTION_F_ORDER_INDEPENDENT_REVIEW.md",
+      "sha256": "1ebdfdbbebaa31eff4f2bc2325949a7831cabc5fd7e56286960ee4bd43a1380e",
+      "bytes": 4329
+    },
+    {
+      "path": "research/nine/GLOBAL_OUTER_LINK_EXTRACTION_G_EDGE_AND_BF_VERTICAL_HAND_TABLE.md",
+      "sha256": "4cb39d034ae5764bd8ef8654b70b244f411cafdb099ac37aa5d6c81255a687ea",
+      "bytes": 12125
+    },
+    {
+      "path": "research/nine/GLOBAL_OUTER_LINK_EXTRACTION_G_UPPER_INSET_HAND_TABLE.md",
+      "sha256": "582e5aacc381831abbda9cbf29d6348894997edfb5d978f7a35643619a1c0eeb",
+      "bytes": 7956
+    },
+    {
+      "path": "research/nine/GLOBAL_OUTER_LINK_EXTRACTION_REPLACEMENT_ROW_INDEPENDENT_REVIEW.md",
+      "sha256": "0edaa02975961f76a7a6a8b04b4f15900ea483600be6d4a19d7de5bd26270407",
+      "bytes": 9244
+    },
+    {
+      "path": "research/nine/SMALL_TILT_THREE_BY_THREE_GRID_HAND_EXCLUSION.md",
+      "sha256": "1ef3c797e8ab6187e0c3189cde9ca58182e1c1d224c81319e325ea8f69faf2da",
+      "bytes": 5049
+    },
+    {
+      "path": "research/nine/WEAK_OUTER_ADAPTIVE_FOLDED_ANGLE_CHORD.md",
+      "sha256": "898432d97b9889d8b2abe52e4af2473744a8861f7a80cd492faf54f1e5feb511",
+      "bytes": 1430
+    },
+    {
+      "path": "research/nine/WEAK_OUTER_EXTRA_STRIP_AND_ALL_SIGN_ROW_CHECKPOINT.md",
+      "sha256": "0ad4e0af1b813cecdc32cea60b047ac5d34cbcf8e0ee84b05fa1e5d2e6233515",
+      "bytes": 10485
+    },
+    {
+      "path": "research/nine/WEAK_OUTER_EXTRA_STRIP_ROW_INDEPENDENT_REVIEW.md",
+      "sha256": "d4a3f7fa10c7c0f4e60f287bd4ed81556e123aa490d6e48aaecf70b993302bfb",
+      "bytes": 12038
+    },
+    {
+      "path": "research/nine/WEAK_OUTER_INWARD_ENDPOINT_THREE_LINK_ROW_HAND_TERMINAL.md",
+      "sha256": "4e7f4d374a316a45eb0200ec7757f8111679bc4648e51c8c2c621fcea233b55c",
+      "bytes": 10173
+    },
+    {
+      "path": "research/nine/WEAK_OUTER_LARGE_GAP_ASYMMETRIC_REPLACEMENT_ROW_HAND_TERMINAL.md",
+      "sha256": "1c6f21c8ed773477142a2c917618bdb62e23c7331f779d7300046ab89fc9b70f",
+      "bytes": 16007
+    },
+    {
+      "path": "research/nine/WEAK_OUTER_LARGE_GAP_DEEP_BOUNDARY_NONLINEAR_LIFT.md",
+      "sha256": "67ac20ba801bb0474280c2288c71ec605cd50fefea98c520fec827f0f00d0d37",
+      "bytes": 19947
+    },
+    {
+      "path": "research/nine/WEAK_OUTER_LARGE_GAP_G_EDGE_INDEPENDENT_REVIEW.md",
+      "sha256": "74bc1e372dbc05052513067d1aefe8f78a4fd0fffeaded44061ae07045348cb7",
+      "bytes": 5833
+    },
+    {
+      "path": "research/nine/WEAK_OUTER_LARGE_GAP_G_UPPER_INSET_INDEPENDENT_REVIEW.md",
+      "sha256": "f23c88eec0001459bdd6ffa606d4c01e18038c6fb183bc0711910a2e41653485",
+      "bytes": 3909
+    },
+    {
+      "path": "research/nine/WEAK_OUTER_LARGE_GAP_LEFT_ENDPOINT_ORDER_HAND_TABLE.md",
+      "sha256": "28957ea8761654620780c913eedf7e10bd91f7008719fe38a32dff0e4c67867a",
+      "bytes": 19899
+    },
+    {
+      "path": "research/nine/WEAK_OUTER_LARGE_GAP_SHORT_MIDDLE_ORDER_HAND_TABLE.md",
+      "sha256": "a82dead7e12d1eed18913cfd5c8ec1aad2718976f7ad7f2379c76b513bec35c6",
+      "bytes": 10487
+    },
+    {
+      "path": "research/nine/WEAK_OUTER_NO_EXTRA_RIGHT_OF_D_HAND_TABLE.md",
+      "sha256": "c10d5126c23c21462e0aaf118aa1a38e42910377738abbc705fb32233f839e4e",
+      "bytes": 13663
+    },
+    {
+      "path": "research/nine/WEAK_OUTER_NUMERIC_POSITIVE_D_TOTAL_VARIATION_ROW_HAND_TERMINAL.md",
+      "sha256": "e9d22181a03e4f1cce0c161b65856c242753139b367f60b86a9ece57af6d805f",
+      "bytes": 6465
+    },
+    {
+      "path": "research/nine/WEAK_OUTER_THREE_LINK_ELEVEN_THIRTIETHS_HAND_STRENGTHENING.md",
+      "sha256": "061021a7f68bea74a3c4b2618bd087342425a1309a798eaf62e5faa1ca1c2d18",
+      "bytes": 5780
+    },
+    {
+      "path": "research/nine/WEAK_OUTER_UNIQUE_LEFTMOST_ORIGINAL_HAND_PROOF.md",
+      "sha256": "d822cd757bf594e3e0c259086587e8ae50a3621f31ebb882d1da819afaa77129",
+      "bytes": 1907
+    },
+    {
+      "path": "research/nine/computer_assisted/all_sign_correlated_corner_row_arithmetic.py",
+      "sha256": "b67785b140fbdd448bd43d720299491c96649be3fe76c08a4e73fe5725431c4e",
+      "bytes": 7258
+    },
+    {
+      "path": "research/nine/computer_assisted/all_sign_correlated_corner_row_arithmetic_report.json",
+      "sha256": "43249d70b0c2cf4162325389ea99a850b1a5fd9248c2a5dc78add308d7d63868",
+      "bytes": 19975
+    },
+    {
+      "path": "research/nine/computer_assisted/all_sign_small_angle_row_arithmetic.py",
+      "sha256": "6559438b9d9e4ab9e24f561d8dbe63d0d49ececcf2ce768f7245935b1e865ca5",
+      "bytes": 7080
+    },
+    {
+      "path": "research/nine/computer_assisted/all_sign_small_angle_row_arithmetic_report.json",
+      "sha256": "c1ef6367cf7b0b4f72362100c151220ab23287465d30e1b5be6a8d0162e30e35",
+      "bytes": 8512
+    },
+    {
+      "path": "research/nine/computer_assisted/alternate_chain_selector.py",
+      "sha256": "b17375c7338c9c52222c26218e5e27cbcf5d7e34ff28c37b64d85ddb2199f1e5",
+      "bytes": 2159
+    },
+    {
+      "path": "research/nine/computer_assisted/alternate_four_selectors.json",
+      "sha256": "d34e9ff74fae1f05af40e80fa18d632d6225e4724f2246e1a784729f90121294",
+      "bytes": 5299
+    },
+    {
+      "path": "research/nine/computer_assisted/extraction_search_CF_inset_arithmetic.json",
+      "sha256": "f1f740e50f7be21f3dafca45ff7df707db1daa7b58c9f4a6501b33fbc151b635",
+      "bytes": 610
+    },
+    {
+      "path": "research/nine/computer_assisted/extraction_search_CF_inset_arithmetic.py",
+      "sha256": "ac714ff1377123380e6f8cf9edb2c6a391c57dc391cb3e8c5d017b1fb69c4130",
+      "bytes": 1202
+    },
+    {
+      "path": "research/nine/computer_assisted/extraction_search_E_order_independent_exact_replay.json",
+      "sha256": "e546eac838ab9ae3a7d79b517fdf217e87a7925c1936b3711a65fdd33a6bdd06",
+      "bytes": 3097
+    },
+    {
+      "path": "research/nine/computer_assisted/extraction_search_E_order_verify.py",
+      "sha256": "ada5283d34ddc7ea5f6084a626ffc3428a823d82c675cd95bd796f5ba8df8c3b",
+      "bytes": 28842
+    },
+    {
+      "path": "research/nine/computer_assisted/extraction_search_G_edge_certificate.json.gz",
+      "sha256": "2b175fba649fb55265302a9caeccde79f8add1b1a212cd034aea73a47fa3ad6d",
+      "bytes": 134334
+    },
+    {
+      "path": "research/nine/computer_assisted/extraction_search_G_edge_controls.py",
+      "sha256": "79b9bfcd36dff9ebc4f226b624b07cb273b639aac93c946b78b1c09b8fba1490",
+      "bytes": 2462
+    },
+    {
+      "path": "research/nine/computer_assisted/extraction_search_G_edge_exact_replay.json",
+      "sha256": "ee506469bee2c4fc3f10eb367b113e2d480bd92957c33489e8e5bb89fb05d4fc",
+      "bytes": 1626
+    },
+    {
+      "path": "research/nine/computer_assisted/extraction_search_G_edge_geometry_arithmetic.json",
+      "sha256": "643833b983f81a3ed7d18f19003ad70c806e16246da9903a1c9faf57e41e3b5f",
+      "bytes": 695
+    },
+    {
+      "path": "research/nine/computer_assisted/extraction_search_G_edge_geometry_arithmetic.py",
+      "sha256": "ff7eea6f461adfd0f6e51e8ebdb26c4d650497d80a69f3673768638d25564a0e",
+      "bytes": 2530
+    },
+    {
+      "path": "research/nine/computer_assisted/extraction_search_G_edge_manifest.json",
+      "sha256": "e8e37299662fad94b9ce83db1e06e67063fd1c462c8ea08c885aa72a7ccc8d9e",
+      "bytes": 2887
+    },
+    {
+      "path": "research/nine/computer_assisted/extraction_search_G_edge_rejection_controls.json",
+      "sha256": "6c6a4087062cccb9b3b2994c547ad9c00d8aedbeeaeb34581c00242b724aefdf",
+      "bytes": 1408
+    },
+    {
+      "path": "research/nine/computer_assisted/extraction_search_G_edge_search.py",
+      "sha256": "0879404fc911e4f18de8e5130a544713ddc5b1aeb990e84a85b7749fc03e5032",
+      "bytes": 7771
+    },
+    {
+      "path": "research/nine/computer_assisted/extraction_search_G_edge_verify.py",
+      "sha256": "f6be2c66e9132fa55940bad9bacdd4e5eb25d73ad5e6b203c8c7385c19020656",
+      "bytes": 10928
+    },
+    {
+      "path": "research/nine/computer_assisted/extraction_search_G_upper_inset_certificate.json.gz",
+      "sha256": "4afbd090f9baf919fe1a232686965bb57f5b574d5f3c01eca660b30eef3a663b",
+      "bytes": 232988
+    },
+    {
+      "path": "research/nine/computer_assisted/extraction_search_G_upper_inset_controls.py",
+      "sha256": "bdd30e873c8316ba50cc8bd383eb5f15622b6636a264ca3f3676048952950ce6",
+      "bytes": 2491
+    },
+    {
+      "path": "research/nine/computer_assisted/extraction_search_G_upper_inset_exact_replay.json",
+      "sha256": "44b47571962317e5261497a379d349c232b3cf617776f1c477056c3b2842c31e",
+      "bytes": 1616
+    },
+    {
+      "path": "research/nine/computer_assisted/extraction_search_G_upper_inset_manifest.json",
+      "sha256": "f74543c281ea92b3d5a0e383018e3912209ec303b13fc1a6ca35375ea69a04ab",
+      "bytes": 2652
+    },
+    {
+      "path": "research/nine/computer_assisted/extraction_search_G_upper_inset_rejection_controls.json",
+      "sha256": "1a2f34bbb447bf8fb26fcc4ef56a53f4747d18822e62765ea965bf4209a1f6f7",
+      "bytes": 1408
+    },
+    {
+      "path": "research/nine/computer_assisted/extraction_search_G_upper_inset_search.py",
+      "sha256": "f01abb7847ccfb3eaec6b9f41e25ac95c256587d4a3a6194f20dfce1284658de",
+      "bytes": 7897
+    },
+    {
+      "path": "research/nine/computer_assisted/extraction_search_G_upper_inset_verify.py",
+      "sha256": "30ee9c7967b517e6fb0db0a346d5fc1951b6a9d35af9b83780a43be6f945e3ab",
+      "bytes": 11109
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_DG_upper_certificate.json.gz",
+      "sha256": "483050af1ac9fc2b897111c4c3608fee6b467eda5c687c33a30a52f824aae16f",
+      "bytes": 218384
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_DG_upper_controls.py",
+      "sha256": "664011bf989950ed6ece5183a8f59bf01e6283c86bad585ea576da45ac0700db",
+      "bytes": 3300
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_DG_upper_discovery.json.gz",
+      "sha256": "06cacaad49a633726029374a8310767cda134a755ca14edd59bba5614ef2c100",
+      "bytes": 674221
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_DG_upper_exact_replay.json",
+      "sha256": "7f7af6e41091b163de0b7720e91a18a59148068f4df10a9e4cfa59d41f5b7b13",
+      "bytes": 1691
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_DG_upper_rejection_controls.json",
+      "sha256": "dba56959e3d073e062ae05c4e9b729d5f3b84ed462c4757e136c8289e6e8147f",
+      "bytes": 1509
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_DG_upper_root_independent_exact_replay.json",
+      "sha256": "86c7c4da0e8f749a86dadc4e95701c919e5fcee9f771e81206431ea6052ef440",
+      "bytes": 1690
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_DG_upper_search.py",
+      "sha256": "d31b90d09c850892dc30c24e561d15a71133cbd8af04316e3b462dc0644040a0",
+      "bytes": 7795
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_DG_upper_verify.py",
+      "sha256": "310f2859cebc3676790e7f05a1feef0bb70dcec33b851d820f76a003cf245532",
+      "bytes": 10960
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_E_order_root_recovery_replay.json",
+      "sha256": "b2407f67ad6b35e121d576c88f8a19831af0011e77f7f8e7e83d44c2f2f7bba9",
+      "bytes": 3095
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_F_low_routing_discovery.json",
+      "sha256": "b4eef67aa76148f4716030023b3be01e85f866ca6bebffa2c74af676435b1c6d",
+      "bytes": 500
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_F_order_global_independent_replay.json",
+      "sha256": "ec45643ac847bcfd4fb283e551864742117728442ff535cf7527c02089de831d",
+      "bytes": 2500
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_F_order_root_recovery_replay.json",
+      "sha256": "593ead328fbb1830af599a27c54af253160ae3ec30e47c3bae865ae0f3258e7c",
+      "bytes": 1672
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_G_edge_root_recovery_replay.json",
+      "sha256": "6e70cdc0553381b2f31e9068d6fb1803455d1b9e0350766ea62e0f553e57907c",
+      "bytes": 1626
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_G_upper_inset_root_recovery_replay.json",
+      "sha256": "7b6aa9084790738ca24883ecd3aa3e57df2194efc556f6afc7c2b03d60cb3a9d",
+      "bytes": 1616
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_deep_boundary_angle_certificate.json",
+      "sha256": "0a64c08f0e7845a4bf6aa5d5ce43bcb80167a847101b36f903d10554e53a290c",
+      "bytes": 237142
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_deep_boundary_controls.py",
+      "sha256": "749e053a97998d17b46a689acfe0f36af4cc13cf73bf96252a8f36d3a5e5cd01",
+      "bytes": 1771
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_deep_boundary_discover.py",
+      "sha256": "a3ae70257a91ee2e04ba84146cce32f15f0a9e53bb5ac139944435ccb66e77bc",
+      "bytes": 2629
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_deep_boundary_exact_replay.json",
+      "sha256": "a65d6875447910a9627e3f0c19bdb68d68f97315be2f9bc5ae6f118a51396c5c",
+      "bytes": 1977
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_deep_boundary_global_independent_replay.json",
+      "sha256": "162e0d17cbe044cc0ba1d9aa5aa9dd46766e443d102fbbc81ffe0c6760587e26",
+      "bytes": 2653
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_deep_boundary_manifest.json",
+      "sha256": "46c565d5c1ca9d656aab82227f13c0ae0b213e9778b8d879a533ab36d37fc8db",
+      "bytes": 2724
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_deep_boundary_rejection_controls.json",
+      "sha256": "acc8b5ae42d4706208c10119dfa12e09e1c31dc8eef7d5551b5fa7a48b154444",
+      "bytes": 897
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_deep_boundary_verify.py",
+      "sha256": "08d913b7e9adc174e66e2225fe0a05e732cd6fa6fbacb794f39b23f61c6e2aef",
+      "bytes": 6475
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_C_slant_search.py",
+      "sha256": "8b529943401fa18f8e1f73f62ce2e8d5767c45e5c56af8d4d7555aba0265635e",
+      "bytes": 7359
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_E_order_certificate.json.gz",
+      "sha256": "40652b9d74badfe6af54c22c038f7995aeb32c165a042f2303cdf0f1b3c61d31",
+      "bytes": 1383772
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_E_order_controls.py",
+      "sha256": "46031dd5bd9e601ddf650862b877f52dea2f8c465285a43ada48000ea2071b30",
+      "bytes": 3645
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_E_order_exact_replay.json",
+      "sha256": "b53668bfbabe3f4361e3c8e59da7f13d71846ac3d17408d9a76637980a3935bf",
+      "bytes": 3098
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_E_order_manifest.json",
+      "sha256": "f4fc25b499e6003a8685d32ec2b20a617db00a18e6c1aa1f0658054337637faf",
+      "bytes": 9703
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_E_order_rejection_controls.json",
+      "sha256": "5c76ab00f815fb41077229bc1fed7efd4b6bdefd532fb3a2c68b298c86093a1a",
+      "bytes": 1992
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_E_order_search.py",
+      "sha256": "c910296e383c07a2293f1d9277b0832fdc490a61b87397b1f6f0a7421ab2470f",
+      "bytes": 14153
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_F_order_certificate.json.gz",
+      "sha256": "3dcc723d03f388a05f086e01b8877328aa8d694a2b42a2c3048f7e58c5e1bdd1",
+      "bytes": 125529
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_F_order_controls.py",
+      "sha256": "8e49656365f05be912165a10b88cf470e45aaa9992e3f0a3aab02a9b3e3f2654",
+      "bytes": 2453
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_F_order_exact_replay.json",
+      "sha256": "db5f7a953bc4e796bef54b1a638a9da8da907d7349b4af7eaf127b934c3ac2b0",
+      "bytes": 1672
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_F_order_manifest.json",
+      "sha256": "285833489f24a743174aee226a65e5a8e9ba317818bc67550c235f4ffab42c1c",
+      "bytes": 4042
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_F_order_rejection_controls.json",
+      "sha256": "72a530ca11a44fa9e06d968ea573bbbfa7e60080fb47481dfe09ab425a58ba66",
+      "bytes": 1408
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_F_order_search.py",
+      "sha256": "acdd5c1f491c0be8f61ae0c0e0bc3eeaa41dccc03d82dd6baebcdf7a3d53d2a9",
+      "bytes": 7515
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_F_order_verify.py",
+      "sha256": "f6ddccb3037e50826af9a10f92dccd1fca332640bcc5eee4b783db061113b953",
+      "bytes": 10955
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_G_edge_independent_replay.json",
+      "sha256": "5ef11740f16306192c6c42f869d16c0f1f4b3b17b7a51fafebc7c8272e2c3f35",
+      "bytes": 1628
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_G_upper_inset_independent_replay.json",
+      "sha256": "cc034eefabbd33d16b15538dd4a7fe5899eb31effd16b1423756b8a6eb0277cb",
+      "bytes": 1616
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_asymmetric_row_arithmetic.json",
+      "sha256": "e976b38fba068d3e01a63108c765ceeab356cd96a75e99f83890483587683626",
+      "bytes": 1433
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_asymmetric_row_arithmetic.py",
+      "sha256": "f12be0481e36a3faaa9eee52c5adc5e5412234daeccc076cb7bdf9fa9b71e3b3",
+      "bytes": 4319
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_asymmetric_row_manifest.json",
+      "sha256": "5bf451bfe7f3cdf9e8dca7f69b47fdc13247071d7a6dcc9ef14343c4f88fac4e",
+      "bytes": 4546
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_deep_boundary_independent_replay.json",
+      "sha256": "6368ebb978d876b54c010f77803b2035467b9bff1933c1583256a09fb3fb65a3",
+      "bytes": 1978
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_right_lower_search.py",
+      "sha256": "943f8db33225e64522054c0092cb36d78ebfa5248447e63cd884c075b6333dad",
+      "bytes": 9354
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_right_lower_verify.py",
+      "sha256": "c3c66a1fcfca7d2e0acd8d9b5a32340f8e8d2253e5e802ff1be34f5cbd0e109f",
+      "bytes": 11747
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_inward_three_link_row_arithmetic.json",
+      "sha256": "5b5fcdfe03727d08a9949ad6edd68779a2f0b061ad0fd89c4b1d4f1ae5a64eab",
+      "bytes": 447
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_inward_three_link_row_arithmetic.py",
+      "sha256": "9891065506c7fcf1c4d3da1ef02bc83eacc516dbb62c19c1a9872c9914b8ddeb",
+      "bytes": 1581
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_no_extra_right_of_D_arithmetic.json",
+      "sha256": "72d18434d5fcf37dfe5bedf7d4c5539c8b70f818bfa7044c622603bc77685df1",
+      "bytes": 720
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_no_extra_right_of_D_arithmetic.py",
+      "sha256": "afc854f95dbedce7429eb9b693eb5c12a4bb617c1889185127daf35bb59ad18c",
+      "bytes": 2263
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_numeric_positive_total_variation_arithmetic.json",
+      "sha256": "c9ab4144dd7f571ea8db4e20b0712370edf926a2130dd20f8d62f20f95dec96e",
+      "bytes": 233
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_numeric_positive_total_variation_arithmetic.py",
+      "sha256": "4a25d92163b19174ef3207a3ce67be23fc56cafccf6089573f06c92cf86116f4",
+      "bytes": 1744
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_numeric_strict_bulk_v3_boundary_coverage.json",
+      "sha256": "64498c0a010a256c84dfe17f851fd35061fed643704ede2198178bdc28a84d55",
+      "bytes": 423
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_numeric_strict_bulk_v3_boundary_coverage.py",
+      "sha256": "2e5503ce237523ea8e3c9f5bdce8cbc0854f757edb4d54a5c3f9467c43dd4f16",
+      "bytes": 2595
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_rotated_extra_boundary_control.json",
+      "sha256": "f01229e55959a1d8bd8246c05bdd41ce1aaa074d60393dc5077a5abfda559608",
+      "bytes": 466
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_rotated_extra_boundary_control.py",
+      "sha256": "99f627a56e18e72339781fd765a31f95ecda8499b4f1e77c3daf8febc3983dd1",
+      "bytes": 2141
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_three_link_eleven_thirtieths_arithmetic.json",
+      "sha256": "10c9b1a1e57a94a4adcb1e21f52788c2b3ec5aa27c3c9ff18883bf0d9926a16d",
+      "bytes": 377
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_three_link_eleven_thirtieths_arithmetic.py",
+      "sha256": "b3f92e6aa0fb4a8a7cf262128f48cb667268b5a900ab2a2cedc662bfb3851605",
+      "bytes": 2020
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_unique_leftmost_arithmetic.json",
+      "sha256": "ca941013b6d7e3d8249144f9d93c481023b57f4bf5639fb4ccebf033845388d0",
+      "bytes": 220
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_unique_leftmost_arithmetic.py",
+      "sha256": "3b424e762e603521fd14dc5abea01d66d93dbed8430f1e8e0c24ddeb049c8aac",
+      "bytes": 660
+    }
+  ]
+}

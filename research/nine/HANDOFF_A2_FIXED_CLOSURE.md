@@ -123,6 +123,35 @@ The new analytic row terminal excludes a neighborhood of that control.
 The remaining original-nine placement alternatives are still unproved.
 **No whole-mask, positional-root, or roadmap-gate count changes.**
 
+## Latest continuation: extra strip and all-sign row boundary proof
+
+Read [WEAK_OUTER_EXTRA_STRIP_AND_ALL_SIGN_ROW_CHECKPOINT.md](WEAK_OUTER_EXTRA_STRIP_AND_ALL_SIGN_ROW_CHECKPOINT.md)
+and its independent review for the complete next package. Five original
+component tables have fresh complete exact replays, totaling 90,533
+terminal leaves with zero component frontier. The new D/G gap table
+and the unique-leftmost argument force both extras into
+`x_A<x_H<=x_I<5/4<x_D` after sorting their labels. The all-angle F-side
+variation barrier removes additional low-F placements.
+
+The strongest new all-sign seven-original hand theorem excludes a main
+replacement row of total vertical variation at most `11/30` when its
+four frames and E,F,G satisfy `|sin(theta)|<=1/30`; a second specialization
+permits variation `9/20` with sine bound `1/50`. It includes both endpoint
+tilt signs, does not restrict B or C angles, and resolves equality using
+the original strict CD weak bit. Its independent continuous review and
+all 108 exact arithmetic checks passed. The simpler `1/12` precursor and
+its 70 exact checks are retained. A separate inward-endpoint argument
+allows variation `11/30` without an angle-size guard. The recovered deep-B
+cylinder, asymmetric row, and complete vertical-order packages are
+preserved with their original scopes.
+
+The complete original-nine height-placement cover remains open. Partial
+full-nine forests and numerical low-F/capacity experiments are discovery
+work, not accepted whole-mask coverage. Universal cap-column and
+disk/inset/diamond inequalities may strengthen those forests, with all
+guards and closed faces retained. **Zero new whole-mask, positional-root,
+or roadmap closures are claimed.** No Lean, Lake, or CI was run.
+
 ## Fixed accounting
 
 - Same 32 masks: **8 strict-radius closed, 24 OPEN**.
@@ -137,4 +166,5 @@ The remaining original-nine placement alternatives are still unproved.
 The earlier full masks and the 393,755-leaf component checkpoint remain
 accepted with their recorded scopes. The unchanged contract is
 `A2_COVERAGE_AND_CLOSURE_CONTRACT.md`.
+
 

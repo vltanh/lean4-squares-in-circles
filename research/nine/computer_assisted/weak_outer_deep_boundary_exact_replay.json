@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "cases": 8,
+  "signed_angle_identities": 144,
+  "homogeneous_rows_per_case": 65,
+  "radius": "1/64",
+  "maximum_K": "4234/69",
+  "contraction_gap": "91/2208",
+  "unboxed_original_center": "F",
+  "by_case": [
+    {
+      "sign_C": -1,
+      "sign_D": -1,
+      "separator": "horizontal",
+      "signed_angle_identities": 18,
+      "maximum_error_weight": "154357/4968"
+    },
+    {
+      "sign_C": -1,
+      "sign_D": -1,
+      "separator": "vertical",
+      "signed_angle_identities": 18,
+      "maximum_error_weight": "4234/69"
+    },
+    {
+      "sign_C": -1,
+      "sign_D": 1,
+      "separator": "horizontal",
+      "signed_angle_identities": 18,
+      "maximum_error_weight": "154357/4968"
+    },
+    {
+      "sign_C": -1,
+      "sign_D": 1,
+      "separator": "vertical",
+      "signed_angle_identities": 18,
+      "maximum_error_weight": "154357/4968"
+    },
+    {
+      "sign_C": 1,
+      "sign_D": -1,
+      "separator": "horizontal",
+      "signed_angle_identities": 18,
+      "maximum_error_weight": "154357/4968"
+    },
+    {
+      "sign_C": 1,
+      "sign_D": -1,
+      "separator": "vertical",
+      "signed_angle_identities": 18,
+      "maximum_error_weight": "193109/3312"
+    },
+    {
+      "sign_C": 1,
+      "sign_D": 1,
+      "separator": "horizontal",
+      "signed_angle_identities": 18,
+      "maximum_error_weight": "154357/4968"
+    },
+    {
+      "sign_C": 1,
+      "sign_D": 1,
+      "separator": "vertical",
+      "signed_angle_identities": 18,
+      "maximum_error_weight": "154357/4968"
+    }
+  ],
+  "physical_scope": "Original strict001 caller in the stated8-center/all9-angle cylinder",
+  "whole_mask_closed": false,
+  "nonlinear_row_bounds_source": "WEAK_OUTER_LARGE_GAP_DEEP_BOUNDARY_NONLINEAR_LIFT.md",
+  "seconds": 0.1820378303527832,
+  "certificate_sha256": "0a64c08f0e7845a4bf6aa5d5ce43bcb80167a847101b36f903d10554e53a290c",
+  "verifier_sha256": "08d913b7e9adc174e66e2225fe0a05e732cd6fa6fbacb794f39b23f61c6e2aef"
+}

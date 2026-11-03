@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "positive_D_total_variation": "1/2",
+  "small_tilt_squared_reserve": 17,
+  "radical_bound_reserves": [
+    "2/49",
+    "3/49"
+  ],
+  "large_tilt_endpoint_lower_bound": "27/448",
+  "whole_mask_closed": false
+}

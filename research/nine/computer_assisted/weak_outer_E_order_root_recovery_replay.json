@@ -1,0 +1,181 @@
+{
+  "nodes": 96219,
+  "leaves": 48376,
+  "angle_splits": 40034,
+  "pose_splits": 5450,
+  "separator_splits": 2359,
+  "farkas_leaves": 48373,
+  "empty_interval_leaves": 3,
+  "max_depth": 47,
+  "status": "PASS",
+  "frontier": 0,
+  "roots": 32,
+  "minimum_reserve": "45960046773661710199876705216924158708870283472423304961986626013330997/101391473213512050005466804980467838147653337189011806406793626459382690611200",
+  "minimum_reserve_floor_1e12": "453293/1000000000000",
+  "by_root": [
+    {
+      "root": 0,
+      "nodes": 639,
+      "leaves": 330
+    },
+    {
+      "root": 1,
+      "nodes": 920,
+      "leaves": 471
+    },
+    {
+      "root": 2,
+      "nodes": 6400,
+      "leaves": 3227
+    },
+    {
+      "root": 3,
+      "nodes": 6284,
+      "leaves": 3164
+    },
+    {
+      "root": 4,
+      "nodes": 1151,
+      "leaves": 580
+    },
+    {
+      "root": 5,
+      "nodes": 1154,
+      "leaves": 585
+    },
+    {
+      "root": 6,
+      "nodes": 3882,
+      "leaves": 1947
+    },
+    {
+      "root": 7,
+      "nodes": 4495,
+      "leaves": 2255
+    },
+    {
+      "root": 8,
+      "nodes": 967,
+      "leaves": 497
+    },
+    {
+      "root": 9,
+      "nodes": 1514,
+      "leaves": 769
+    },
+    {
+      "root": 10,
+      "nodes": 5838,
+      "leaves": 2941
+    },
+    {
+      "root": 11,
+      "nodes": 6450,
+      "leaves": 3243
+    },
+    {
+      "root": 12,
+      "nodes": 839,
+      "leaves": 423
+    },
+    {
+      "root": 13,
+      "nodes": 937,
+      "leaves": 476
+    },
+    {
+      "root": 14,
+      "nodes": 3699,
+      "leaves": 1862
+    },
+    {
+      "root": 15,
+      "nodes": 13195,
+      "leaves": 6608
+    },
+    {
+      "root": 16,
+      "nodes": 298,
+      "leaves": 163
+    },
+    {
+      "root": 17,
+      "nodes": 370,
+      "leaves": 199
+    },
+    {
+      "root": 18,
+      "nodes": 2702,
+      "leaves": 1361
+    },
+    {
+      "root": 19,
+      "nodes": 2890,
+      "leaves": 1456
+    },
+    {
+      "root": 20,
+      "nodes": 623,
+      "leaves": 326
+    },
+    {
+      "root": 21,
+      "nodes": 799,
+      "leaves": 400
+    },
+    {
+      "root": 22,
+      "nodes": 4093,
+      "leaves": 2056
+    },
+    {
+      "root": 23,
+      "nodes": 4897,
+      "leaves": 2453
+    },
+    {
+      "root": 24,
+      "nodes": 691,
+      "leaves": 333
+    },
+    {
+      "root": 25,
+      "nodes": 813,
+      "leaves": 387
+    },
+    {
+      "root": 26,
+      "nodes": 2585,
+      "leaves": 1274
+    },
+    {
+      "root": 27,
+      "nodes": 2904,
+      "leaves": 1456
+    },
+    {
+      "root": 28,
+      "nodes": 669,
+      "leaves": 344
+    },
+    {
+      "root": 29,
+      "nodes": 903,
+      "leaves": 465
+    },
+    {
+      "root": 30,
+      "nodes": 3648,
+      "leaves": 1832
+    },
+    {
+      "root": 31,
+      "nodes": 8970,
+      "leaves": 4493
+    }
+  ],
+  "certificate_sha256": "40652b9d74badfe6af54c22c038f7995aeb32c165a042f2303cdf0f1b3c61d31",
+  "seconds": 90.353435754776,
+  "verifier_sha256": "ada5283d34ddc7ea5f6084a626ffc3428a823d82c675cd95bd796f5ba8df8c3b",
+  "exact_helper_sha256": "c3c66a1fcfca7d2e0acd8d9b5a32340f8e8d2253e5e802ff1be34f5cbd0e109f"
+}

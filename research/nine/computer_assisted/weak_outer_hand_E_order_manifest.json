@@ -1,0 +1,345 @@
+{
+  "status": "COMPLETE_EXACT_AND_INDEPENDENT_REPLAY_PASS",
+  "date": "2026-11-03",
+  "claim": {
+    "caller": "Unchanged original-nine strict-weak 001/00 predicate, AB/BC and EF/FG actual, all five marked cones, common vertical normalization",
+    "squared_radius_upper": "1105/256",
+    "transverse_gap_lower": "2/3",
+    "contrary_domain_closed": "y_E<=y_A",
+    "conclusion": "y_E>y_A",
+    "hand_consequences": [
+      "y_E-y_A>=g_A+g_E",
+      "y_E-y_A-|x_E-x_A|>3/20",
+      "Every actual A-to-E owned separating normal has positive vertical component",
+      "The signed left cap applies to nonpositive A tilt",
+      "y_E-g_E>3/40",
+      "y_E>17/40",
+      "y_E-y_B>13/480"
+    ],
+    "strict_original_caller_required": true
+  },
+  "finite_model": {
+    "physical_frames": [
+      "A",
+      "C",
+      "D",
+      "E",
+      "G"
+    ],
+    "original_centers": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G"
+    ],
+    "additional_original_quantities": [
+      "h_B",
+      "h_F",
+      "g_B",
+      "g_F"
+    ],
+    "linear_variables": 18,
+    "fixed_rows_before_choices": 2151,
+    "final_rows_after_choices": 9,
+    "total_rows": "2160+number_of_chosen_disjunction_rows",
+    "physical_separator_pairs": [
+      "AE",
+      "CD",
+      "DG"
+    ],
+    "inset_separator_pairs": [
+      "BF",
+      "BE",
+      "AE",
+      "CE",
+      "DF"
+    ],
+    "unit_center_pairs": 21,
+    "root_radical_bits": 48,
+    "normal_midpoint_bits": 30,
+    "multiplier_bits": 40,
+    "pose_cut_bits": 20
+  },
+  "coverage": {
+    "nodes": 96219,
+    "leaves": 48376,
+    "angle_splits": 40034,
+    "pose_splits": 5450,
+    "separator_splits": 2359,
+    "farkas_leaves": 48373,
+    "empty_interval_leaves": 3,
+    "max_depth": 47,
+    "frontier": 0,
+    "roots": 32,
+    "minimum_reserve": "45960046773661710199876705216924158708870283472423304961986626013330997/101391473213512050005466804980467838147653337189011806406793626459382690611200",
+    "minimum_reserve_floor_1e12": "453293/1000000000000",
+    "by_root": [
+      {
+        "root": 0,
+        "nodes": 639,
+        "leaves": 330
+      },
+      {
+        "root": 1,
+        "nodes": 920,
+        "leaves": 471
+      },
+      {
+        "root": 2,
+        "nodes": 6400,
+        "leaves": 3227
+      },
+      {
+        "root": 3,
+        "nodes": 6284,
+        "leaves": 3164
+      },
+      {
+        "root": 4,
+        "nodes": 1151,
+        "leaves": 580
+      },
+      {
+        "root": 5,
+        "nodes": 1154,
+        "leaves": 585
+      },
+      {
+        "root": 6,
+        "nodes": 3882,
+        "leaves": 1947
+      },
+      {
+        "root": 7,
+        "nodes": 4495,
+        "leaves": 2255
+      },
+      {
+        "root": 8,
+        "nodes": 967,
+        "leaves": 497
+      },
+      {
+        "root": 9,
+        "nodes": 1514,
+        "leaves": 769
+      },
+      {
+        "root": 10,
+        "nodes": 5838,
+        "leaves": 2941
+      },
+      {
+        "root": 11,
+        "nodes": 6450,
+        "leaves": 3243
+      },
+      {
+        "root": 12,
+        "nodes": 839,
+        "leaves": 423
+      },
+      {
+        "root": 13,
+        "nodes": 937,
+        "leaves": 476
+      },
+      {
+        "root": 14,
+        "nodes": 3699,
+        "leaves": 1862
+      },
+      {
+        "root": 15,
+        "nodes": 13195,
+        "leaves": 6608
+      },
+      {
+        "root": 16,
+        "nodes": 298,
+        "leaves": 163
+      },
+      {
+        "root": 17,
+        "nodes": 370,
+        "leaves": 199
+      },
+      {
+        "root": 18,
+        "nodes": 2702,
+        "leaves": 1361
+      },
+      {
+        "root": 19,
+        "nodes": 2890,
+        "leaves": 1456
+      },
+      {
+        "root": 20,
+        "nodes": 623,
+        "leaves": 326
+      },
+      {
+        "root": 21,
+        "nodes": 799,
+        "leaves": 400
+      },
+      {
+        "root": 22,
+        "nodes": 4093,
+        "leaves": 2056
+      },
+      {
+        "root": 23,
+        "nodes": 4897,
+        "leaves": 2453
+      },
+      {
+        "root": 24,
+        "nodes": 691,
+        "leaves": 333
+      },
+      {
+        "root": 25,
+        "nodes": 813,
+        "leaves": 387
+      },
+      {
+        "root": 26,
+        "nodes": 2585,
+        "leaves": 1274
+      },
+      {
+        "root": 27,
+        "nodes": 2904,
+        "leaves": 1456
+      },
+      {
+        "root": 28,
+        "nodes": 669,
+        "leaves": 344
+      },
+      {
+        "root": 29,
+        "nodes": 903,
+        "leaves": 465
+      },
+      {
+        "root": 30,
+        "nodes": 3648,
+        "leaves": 1832
+      },
+      {
+        "root": 31,
+        "nodes": 8970,
+        "leaves": 4493
+      }
+    ]
+  },
+  "raw_discovery_candidate_leaves": 94485,
+  "packed_forest_reduction": "Only theorem-excluded original separator subtrees and exact necessary empty-interval subtrees are removed; every omission is rechecked at the rational parent.",
+  "old_multiplier_compatibility": "The seven G-edge consequence rows are appended after the earlier 2153+choices matrix; every older row, context, and secant is unchanged, and older multipliers extend by zero.",
+  "fixed_mask_closures": 0,
+  "positional_root_closures": 0,
+  "damaged_controls": 8,
+  "independent_replay_sources_unchanged": true,
+  "exact_helper_dependency": "weak_outer_hand_right_lower_verify.py supplies only exact Fraction support/radical functions; its unrelated four-original theorem/verifier is not called.",
+  "floating_dependencies": "weak_outer_hand_right_lower_search.py supplies discovery-only support interval routines; weak_outer_hand_C_slant_search.py supplies the fixed direction lists.",
+  "inherited_physical_dependencies": [
+    "PHYSICAL_TWO_SQUARE_CAP_SUPPORT_AND_UNRESTRICTED_FOUR_PLUS_THREE_CHAINS_2026_10_31.md",
+    "UNIVERSAL_MAIN_ENDPOINT_TILT_TOLL.md",
+    "SHARP_SMALL_MAIN_ENDPOINT_TILT_TOLL.md",
+    "SIGNED_NEGATIVE_MAIN_UPWARD_SEPARATOR_CAP_INDEPENDENT_PROOF.md",
+    "WEAK_OUTER_LARGE_GAP_SHORT_ENDPOINT_ORDER_HAND_TABLE.md",
+    "WEAK_OUTER_LARGE_GAP_C_SLANT_HAND_TABLE.md",
+    "GLOBAL_OUTER_LINK_EXTRACTION_DG_INSET_AND_SLANT_HAND_REDUCTION.md",
+    "WEAK_OUTER_LARGE_GAP_SHORT_MIDDLE_ORDER_HAND_TABLE.md",
+    "GLOBAL_OUTER_LINK_EXTRACTION_CF_INSET_VERTICAL_HAND_PROOF.md",
+    "GLOBAL_OUTER_LINK_EXTRACTION_G_EDGE_AND_BF_VERTICAL_HAND_TABLE.md",
+    "WEAK_OUTER_NUMERIC_CONE_SEPARATOR_SIGNS.md",
+    "WEAK_OUTER_NUMERIC_ALL_TILTS_UPWARD_NORMAL_HAND_REDUCTION.md"
+  ],
+  "inherited_component_manifests": [
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_G_order_manifest.json",
+      "sha256": "668a302234596f62ece5e2f0910042ed80bec7ac1078831b435cc2c790089b52"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_C_slant_manifest.json",
+      "sha256": "4f901d020278d9f9860371582d45274661f890029cc90cf64de6b7f66d0bad0b"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_F_order_manifest.json",
+      "sha256": "285833489f24a743174aee226a65e5a8e9ba317818bc67550c235f4ffab42c1c"
+    },
+    {
+      "path": "research/nine/computer_assisted/extraction_search_G_edge_manifest.json",
+      "sha256": "e8e37299662fad94b9ce83db1e06e67063fd1c462c8ea08c885aa72a7ccc8d9e"
+    }
+  ],
+  "files": [
+    {
+      "path": "research/nine/WEAK_OUTER_LARGE_GAP_LEFT_ENDPOINT_ORDER_HAND_TABLE.md",
+      "bytes": 19899,
+      "sha256": "28957ea8761654620780c913eedf7e10bd91f7008719fe38a32dff0e4c67867a"
+    },
+    {
+      "path": "research/nine/GLOBAL_OUTER_LINK_EXTRACTION_E_ORDER_INDEPENDENT_REVIEW.md",
+      "bytes": 18143,
+      "sha256": "226e8d582b6d7aec0f254f327bc98bcd9dc6d099a7b784fb21ff749c15544f68"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_E_order_search.py",
+      "bytes": 14153,
+      "sha256": "c910296e383c07a2293f1d9277b0832fdc490a61b87397b1f6f0a7421ab2470f"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_right_lower_search.py",
+      "bytes": 9354,
+      "sha256": "943f8db33225e64522054c0092cb36d78ebfa5248447e63cd884c075b6333dad"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_C_slant_search.py",
+      "bytes": 7359,
+      "sha256": "8b529943401fa18f8e1f73f62ce2e8d5767c45e5c56af8d4d7555aba0265635e"
+    },
+    {
+      "path": "research/nine/computer_assisted/extraction_search_E_order_verify.py",
+      "bytes": 28842,
+      "sha256": "ada5283d34ddc7ea5f6084a626ffc3428a823d82c675cd95bd796f5ba8df8c3b"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_right_lower_verify.py",
+      "bytes": 11747,
+      "sha256": "c3c66a1fcfca7d2e0acd8d9b5a32340f8e8d2253e5e802ff1be34f5cbd0e109f"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_E_order_certificate.json.gz",
+      "bytes": 1383772,
+      "sha256": "40652b9d74badfe6af54c22c038f7995aeb32c165a042f2303cdf0f1b3c61d31"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_E_order_exact_replay.json",
+      "bytes": 3098,
+      "sha256": "b53668bfbabe3f4361e3c8e59da7f13d71846ac3d17408d9a76637980a3935bf"
+    },
+    {
+      "path": "research/nine/computer_assisted/extraction_search_E_order_independent_exact_replay.json",
+      "bytes": 3097,
+      "sha256": "e546eac838ab9ae3a7d79b517fdf217e87a7925c1936b3711a65fdd33a6bdd06"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_E_order_controls.py",
+      "bytes": 3645,
+      "sha256": "46031dd5bd9e601ddf650862b877f52dea2f8c465285a43ada48000ea2071b30"
+    },
+    {
+      "path": "research/nine/computer_assisted/weak_outer_hand_E_order_rejection_controls.json",
+      "bytes": 1992,
+      "sha256": "5c76ab00f815fb41077229bc1fed7efd4b6bdefd532fb3a2c68b298c86093a1a"
+    }
+  ]
+}

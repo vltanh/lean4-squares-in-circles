@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "controls": [
+    {
+      "control": "missing_orientation_root",
+      "status": "REJECTED",
+      "reason": ""
+    },
+    {
+      "control": "missing_closed_angle_child",
+      "status": "REJECTED",
+      "reason": ""
+    },
+    {
+      "control": "missing_owned_separator_child",
+      "status": "REJECTED",
+      "reason": "('uncovered owned separator', 0, 0, (1, 1, 1), ((Fraction(-1, 2), Fraction(0, 1)), (Fraction(-1, 2), Fraction(0, 1)), (Fraction(-1, 2), Fraction(0, 1))))"
+    },
+    {
+      "control": "false_whole_root_leaf",
+      "status": "REJECTED",
+      "reason": "('nonpositive exact leaf', '0', 0, ((Fraction(-1, 1), Fraction(0, 1)), (Fraction(-1, 1), Fraction(0, 1)), (Fraction(-1, 1), Fraction(0, 1))), (), {'w': []})"
+    },
+    {
+      "control": "negative_multiplier",
+      "status": "REJECTED",
+      "reason": ""
+    },
+    {
+      "control": "false_empty_interval",
+      "status": "REJECTED",
+      "reason": "('false empty interval', 0, ['coordinate', 0], ((Fraction(-1, 1), Fraction(0, 1)), (Fraction(-1, 1), Fraction(0, 1)), (Fraction(-1, 1), Fraction(0, 1))), ())"
+    }
+  ],
+  "certificate_sha256": "2b175fba649fb55265302a9caeccde79f8add1b1a212cd034aea73a47fa3ad6d",
+  "verifier_sha256": "f6be2c66e9132fa55940bad9bacdd4e5eb25d73ad5e6b203c8c7385c19020656",
+  "exact_helper_sha256": "c3c66a1fcfca7d2e0acd8d9b5a32340f8e8d2253e5e802ff1be34f5cbd0e109f"
+}

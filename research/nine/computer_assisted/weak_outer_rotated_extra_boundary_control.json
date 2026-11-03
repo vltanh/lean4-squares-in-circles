@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "scope": "Closed-Q physical boundary control; no strict weak mask counterexample",
+  "reports": [
+    {
+      "H_tilt_sign": -1,
+      "H_tangent": "-32/255",
+      "verified_corners": 36,
+      "verified_pairs": 36,
+      "minimum_H_corner_reserve": "31183/263168",
+      "minimum_H_pair_reserve": "17/4112",
+      "marked_bits": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "strict_CD_weak_bit": false
+    }
+  ]
+}

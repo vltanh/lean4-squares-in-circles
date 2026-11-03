@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "controls": [
+    {
+      "control": "missing_orientation_root",
+      "status": "REJECTED",
+      "reason": ""
+    },
+    {
+      "control": "missing_closed_angle_child",
+      "status": "REJECTED",
+      "reason": ""
+    },
+    {
+      "control": "missing_closed_pose_child",
+      "status": "REJECTED",
+      "reason": ""
+    },
+    {
+      "control": "missing_inset_separator_child",
+      "status": "REJECTED",
+      "reason": "('uncovered physical separator', ['inset', 1, 5], ('inset', 1, 5, 1, 1, -1), ((Fraction(-1, 5), Fraction(0, 1)), (Fraction(-1, 1), Fraction(0, 1)), (Fraction(-1, 1), Fraction(0, 1)), (Fraction(-1, 1), Fraction(0, 1)), (Fraction(-1, 1), Fraction(0, 1))))"
+    },
+    {
+      "control": "pose_cut_outside_parent",
+      "status": "REJECTED",
+      "reason": "('pose cut outside parent', 3, Fraction(100, 1), (Fraction(-91, 60), Fraction(91, 60)))"
+    },
+    {
+      "control": "false_whole_root_leaf",
+      "status": "REJECTED",
+      "reason": ""
+    },
+    {
+      "control": "false_empty_interval",
+      "status": "REJECTED",
+      "reason": "('false empty interval', ['coordinate', 0], ((Fraction(-1, 5), Fraction(0, 1)), (Fraction(-1, 1), Fraction(0, 1)), (Fraction(-1, 1), Fraction(0, 1)), (Fraction(-1, 1), Fraction(0, 1)), (Fraction(-1, 1), Fraction(0, 1))), ((Fraction(-91, 60), Fraction(91, 60)), (Fraction(-91, 60), Fraction(91, 60)), (Fraction(-91, 60), Fraction(91, 60)), (Fraction(-91, 60), Fraction(91, 60)), (Fraction(-91, 60), Fraction(91, 60)), (Fraction(-91, 60), Fraction(91, 60)), (Fraction(-91, 60), Fraction(91, 60)), (Frac"
+    },
+    {
+      "control": "negative_multiplier",
+      "status": "REJECTED",
+      "reason": ""
+    }
+  ],
+  "certificate_sha256": "40652b9d74badfe6af54c22c038f7995aeb32c165a042f2303cdf0f1b3c61d31",
+  "verifier_sha256": "ada5283d34ddc7ea5f6084a626ffc3428a823d82c675cd95bd796f5ba8df8c3b",
+  "exact_helper_sha256": "c3c66a1fcfca7d2e0acd8d9b5a32340f8e8d2253e5e802ff1be34f5cbd0e109f"
+}

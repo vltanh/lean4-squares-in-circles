@@ -131,3 +131,66 @@ A finite proof may use them exhaustively, or apply the accepted
 analytic terminal to a fully enclosed row cell. This review accepts
 neither an unproved placement routing into that region nor an invented
 strict Farkas reserve at an actual closed-weak equality point.
+
+## 6. Positive-D total-variation extension: independently accepted
+
+The later manuscript
+`WEAK_OUTER_NUMERIC_POSITIVE_D_TOTAL_VARIATION_ROW_HAND_TERMINAL.md`
+correctly proves the broader positive-D condition
+
+    |y_X-y_B|+|y_D-y_X|<=1/2.
+
+This statement retains every B and X chirality. Its signed D toll is
+the normalized `sigma=alpha_D-1+(23/32)beta_D`, and the new two-link
+transfer is valid over the complete original angle domain.
+
+Each individual vertical gap is at most 1/2. The original unit center
+distance gives a horizontal gap at least `sqrt(3)/2`, so the physical
+owned support estimate and its steep-axis comparison apply. Taking
+the largest of the two selected owner slopes makes the total vertical
+loss at most half that slope, while the sum of the two nonnegative
+secant surpluses retains at least the larger one. The same width
+variation V pays twice the positive owner-width excess over D.
+
+The resulting two-variable scalar bound is
+
+    q(s)+2*(h(s)-h(t))_+ +sigma(t)>=0,
+    q(s)=sqrt(1+s^2)-1-s/2.
+
+The derivative of q+2h is strictly positive, and q has its unique
+minimum at `1/sqrt(3)`. Splitting at s=t therefore gives precisely
+`q(min(t,1/sqrt(3)))`. For the lower t interval, the displayed exact
+decomposition into `(r-1)^2/r` and
+`t*(23/(32r)-1/2)` is nonnegative, with strictness for t>0 because
+`23^2-2*16^2=17`. For the remaining interval, sigma is unimodal and
+its minimum is at an endpoint. The lower endpoint is already covered;
+the t=1 endpoint has strict rational reserve greater than `27/448`.
+The fresh exact arithmetic replay passed all three radical comparisons.
+
+Equality in this complete scalar reduction requires the endpoint and
+both selected owners to align. As before, zero remaining width
+variation then forces B,X,D all to align even when one middle original
+owns both separators. Both physical horizontal gaps equal one.
+
+For its original caller, the signed-cap prerequisite is supplied by
+both previously established facts `y_G>y_D` and
+
+    -1459/1728 < x_G-x_D < 11/60.
+
+Their horizontal absolute gap is strictly below one. Thus a unit
+owned D/G normal with nonpositive vertical component would have center
+projection less than the support sum, which is at least one. An
+upward owned separator is therefore available for the unchanged pair;
+height order alone is not being used as a replacement premise.
+
+The weighted cap equality and the original C/X argument reviewed in
+Section 4 apply with the larger per-link bound 1/2: it still gives
+`y_X<y_G` and `y_X>y_C` since the original transverse lower bound is
+2/3. The closed horizontal-order endpoints are again impossible by
+unit center distance. Consequently the full closed total-variation
+region is excluded for nonnegative D tilt, including its equality
+face, even at closed Q.
+
+This extension does not use the C-slant table, the F-order table, or
+either new boundary contraction certificate. It does not assert the
+corresponding negative-D extension or a whole-mask closure.

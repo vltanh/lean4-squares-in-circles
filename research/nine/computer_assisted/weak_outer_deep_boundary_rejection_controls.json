@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "controls": [
+    {
+      "control": "missing_sign_separator_case",
+      "status": "REJECTED",
+      "reason": ""
+    },
+    {
+      "control": "missing_signed_angle",
+      "status": "REJECTED",
+      "reason": ""
+    },
+    {
+      "control": "repeated_angle_target",
+      "status": "REJECTED",
+      "reason": ""
+    },
+    {
+      "control": "negative_multiplier",
+      "status": "REJECTED",
+      "reason": ""
+    },
+    {
+      "control": "false_exact_identity",
+      "status": "REJECTED",
+      "reason": "('wrong exact identity', (-1, -1, 'horizontal'), 0, 1)"
+    },
+    {
+      "control": "false_nonlinear_error_cost",
+      "status": "REJECTED",
+      "reason": ""
+    }
+  ],
+  "certificate_sha256": "0a64c08f0e7845a4bf6aa5d5ce43bcb80167a847101b36f903d10554e53a290c",
+  "verifier_sha256": "08d913b7e9adc174e66e2225fe0a05e732cd6fa6fbacb794f39b23f61c6e2aef"
+}

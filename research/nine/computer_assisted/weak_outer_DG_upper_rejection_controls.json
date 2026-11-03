@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "controls_rejected": 6,
+  "controls": [
+    {
+      "name": "missing signed orientation root",
+      "status": "REJECTED",
+      "reason": ""
+    },
+    {
+      "name": "missing closed angle child",
+      "status": "REJECTED",
+      "reason": ""
+    },
+    {
+      "name": "missing possible owned separator child",
+      "status": "REJECTED",
+      "reason": "('uncovered owned separator', 0, 0, (1, 1, 1), ((Fraction(-1, 1), Fraction(-1, 2)), (Fraction(-1, 1), Fraction(-1, 2)), (Fraction(-1, 2), Fraction(0, 1))))"
+    },
+    {
+      "name": "false exact row combination",
+      "status": "REJECTED",
+      "reason": "('nonpositive exact leaf', '-9462787373411839/4642275147320176030871715840', 0, ((Fraction(-1, 1), Fraction(-1, 2)), (Fraction(-1, 1), Fraction(-1, 2)), (Fraction(-1, 1), Fraction(-1, 2))), (), {'w': [[0, 1]]})"
+    },
+    {
+      "name": "negative row multiplier",
+      "status": "REJECTED",
+      "reason": ""
+    },
+    {
+      "name": "false empty-coordinate terminal",
+      "status": "REJECTED",
+      "reason": "('false empty interval', 0, ['coordinate', 0], ((Fraction(-1, 1), Fraction(0, 1)), (Fraction(-1, 1), Fraction(0, 1)), (Fraction(-1, 1), Fraction(0, 1))), ())"
+    }
+  ],
+  "certificate_sha256": "483050af1ac9fc2b897111c4c3608fee6b467eda5c687c33a30a52f824aae16f",
+  "verifier_sha256": "310f2859cebc3676790e7f05a1feef0bb70dcec33b851d820f76a003cf245532",
+  "exact_helper_sha256": "c3c66a1fcfca7d2e0acd8d9b5a32340f8e8d2253e5e802ff1be34f5cbd0e109f"
+}

@@ -1,0 +1,68 @@
+{
+  "nodes": 31100,
+  "leaves": 16505,
+  "angle_splits": 14180,
+  "separator_splits": 415,
+  "farkas_leaves": 16505,
+  "empty_interval_leaves": 0,
+  "max_depth": 19,
+  "status": "PASS",
+  "frontier": 0,
+  "roots": 8,
+  "minimum_reserve": "2004988997914851302034697784851529863325622828324294726336868838524365547131429258401478140103828561739420507872531315762335645061451/562449986339525057802245260316262359750801132374393358393022346211998953131755166892575975286685995938984459573449121662144847718383616000",
+  "minimum_reserve_floor_1e12": "3564741/1000000000000",
+  "by_root": [
+    {
+      "root": 0,
+      "domain": "DG_upper",
+      "nodes": 12903,
+      "leaves": 6634
+    },
+    {
+      "root": 1,
+      "domain": "DG_upper",
+      "nodes": 5741,
+      "leaves": 3049
+    },
+    {
+      "root": 2,
+      "domain": "DG_upper",
+      "nodes": 699,
+      "leaves": 430
+    },
+    {
+      "root": 3,
+      "domain": "DG_upper",
+      "nodes": 225,
+      "leaves": 147
+    },
+    {
+      "root": 4,
+      "domain": "DG_upper",
+      "nodes": 6389,
+      "leaves": 3377
+    },
+    {
+      "root": 5,
+      "domain": "DG_upper",
+      "nodes": 4107,
+      "leaves": 2235
+    },
+    {
+      "root": 6,
+      "domain": "DG_upper",
+      "nodes": 791,
+      "leaves": 476
+    },
+    {
+      "root": 7,
+      "domain": "DG_upper",
+      "nodes": 245,
+      "leaves": 157
+    }
+  ],
+  "seconds": 4.135689973831177,
+  "certificate_sha256": "483050af1ac9fc2b897111c4c3608fee6b467eda5c687c33a30a52f824aae16f",
+  "verifier_sha256": "310f2859cebc3676790e7f05a1feef0bb70dcec33b851d820f76a003cf245532",
+  "exact_helper_sha256": "c3c66a1fcfca7d2e0acd8d9b5a32340f8e8d2253e5e802ff1be34f5cbd0e109f"
+}

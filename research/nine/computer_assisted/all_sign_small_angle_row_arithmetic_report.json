@@ -1,0 +1,363 @@
+{
+  "check_count": 70,
+  "checks": [
+    {
+      "name": "z",
+      "relation": "=",
+      "value": "2499/2500"
+    },
+    {
+      "name": "delta",
+      "relation": "=",
+      "value": "50/4999"
+    },
+    {
+      "name": "pair signed-variation coefficient c",
+      "relation": "=",
+      "value": "61173/125000"
+    },
+    {
+      "name": "main support alpha coefficient P",
+      "relation": "=",
+      "value": "943/32"
+    },
+    {
+      "name": "main support signed coefficient C",
+      "relation": "=",
+      "value": "529/32"
+    },
+    {
+      "name": "shoulder aggregate alpha coefficient J",
+      "relation": "=",
+      "value": "639/32"
+    },
+    {
+      "name": "owner horizontal-drift coefficient lambda",
+      "relation": "=",
+      "value": "215625/26656"
+    },
+    {
+      "name": "positive shoulder coefficient eplus",
+      "relation": "=",
+      "value": "1092825/159968"
+    },
+    {
+      "name": "negative shoulder coefficient eminus",
+      "relation": "=",
+      "value": "1002843/159968"
+    },
+    {
+      "name": "endpoint negative payment p",
+      "relation": "=",
+      "value": "104924920311/9998000000"
+    },
+    {
+      "name": "endpoint positive payment q",
+      "relation": "=",
+      "value": "1921027237/133253344"
+    },
+    {
+      "name": "final positive reserve epsilon",
+      "relation": "=",
+      "value": "6513193240933/74955006000000"
+    },
+    {
+      "name": "strict center-radius squared reserve",
+      "relation": "=",
+      "value": "31/57600"
+    },
+    {
+      "name": "alpha lower bound z",
+      "relation": ">0",
+      "value": "2499/2500"
+    },
+    {
+      "name": "alpha-difference bound b/z <= 2b",
+      "relation": ">0",
+      "value": "1249/62475"
+    },
+    {
+      "name": "frame dot-product positive lower bound",
+      "relation": ">0",
+      "value": "390312/390625"
+    },
+    {
+      "name": "signed determinant coefficient",
+      "relation": "=",
+      "value": "2497/2500"
+    },
+    {
+      "name": "owned-axis support coefficient",
+      "relation": "=",
+      "value": "61173/125000"
+    },
+    {
+      "name": "owned-axis support variation positive",
+      "relation": ">0",
+      "value": "61173/125000"
+    },
+    {
+      "name": "aligned-width minimum valid on beta range",
+      "relation": ">0",
+      "value": "49/50"
+    },
+    {
+      "name": "halfwidth upper bound",
+      "relation": "=",
+      "value": "51/100"
+    },
+    {
+      "name": "row square-root lower-bound reserve",
+      "relation": "=",
+      "value": "79/57600"
+    },
+    {
+      "name": "row horizontal-span rational lower bound",
+      "relation": "=",
+      "value": "719/240"
+    },
+    {
+      "name": "endpoint horizontal-coordinate lower bound",
+      "relation": "=",
+      "value": "71/48"
+    },
+    {
+      "name": "endpoint outward edge lower bound",
+      "relation": "=",
+      "value": "1163/1200"
+    },
+    {
+      "name": "shoulder edge band C0",
+      "relation": "=",
+      "value": "4901/8100"
+    },
+    {
+      "name": "endpoint horizontal-pair upper band",
+      "relation": "=",
+      "value": "1259/2025"
+    },
+    {
+      "name": "horizontal-pair upper-band reserve",
+      "relation": "=",
+      "value": "53/16200"
+    },
+    {
+      "name": "horizontal-pair order reserve",
+      "relation": ">0",
+      "value": "11797/32400"
+    },
+    {
+      "name": "main-row steep projection upper bound",
+      "relation": "=",
+      "value": "18/125"
+    },
+    {
+      "name": "main-row steep-axis rejection reserve",
+      "relation": ">0",
+      "value": "107/125"
+    },
+    {
+      "name": "main-row reversed shallow-axis rejection reserve",
+      "relation": ">0",
+      "value": "599/600"
+    },
+    {
+      "name": "endpoint-pair shallow-axis rejection reserve",
+      "relation": ">0",
+      "value": "943/3000"
+    },
+    {
+      "name": "endpoint-pair downward-axis rejection reserve",
+      "relation": ">0",
+      "value": "79/80"
+    },
+    {
+      "name": "main support shallow dot sign",
+      "relation": ">0",
+      "value": "914457/20000"
+    },
+    {
+      "name": "main support steep dot sign",
+      "relation": ">0",
+      "value": "480493/40000"
+    },
+    {
+      "name": "shoulder support shallow dot sign",
+      "relation": ">0",
+      "value": "264717/20000"
+    },
+    {
+      "name": "shoulder support steep dot sign",
+      "relation": ">0",
+      "value": "506493/40000"
+    },
+    {
+      "name": "main vector squared norm",
+      "relation": "=",
+      "value": "584545/256"
+    },
+    {
+      "name": "shoulder vector squared norm",
+      "relation": "=",
+      "value": "89505/256"
+    },
+    {
+      "name": "total vector length coefficient",
+      "relation": "=",
+      "value": "64"
+    },
+    {
+      "name": "A alpha support",
+      "relation": "=",
+      "value": "943/32"
+    },
+    {
+      "name": "A signed support",
+      "relation": "=",
+      "value": "-529/32"
+    },
+    {
+      "name": "D alpha support",
+      "relation": "=",
+      "value": "943/32"
+    },
+    {
+      "name": "D signed support",
+      "relation": "=",
+      "value": "529/32"
+    },
+    {
+      "name": "E aggregate alpha after short chain",
+      "relation": "=",
+      "value": "639/32"
+    },
+    {
+      "name": "G aggregate alpha after short chain",
+      "relation": "=",
+      "value": "639/32"
+    },
+    {
+      "name": "E positive beta before alpha loss",
+      "relation": "=",
+      "value": "225/32"
+    },
+    {
+      "name": "E negative beta before alpha loss",
+      "relation": "=",
+      "value": "207/32"
+    },
+    {
+      "name": "G reflected positive beta before alpha loss",
+      "relation": "=",
+      "value": "225/32"
+    },
+    {
+      "name": "G reflected negative beta before alpha loss",
+      "relation": "=",
+      "value": "207/32"
+    },
+    {
+      "name": "complete constant in circle support",
+      "relation": "=",
+      "value": "1105/4"
+    },
+    {
+      "name": "x_nonnegative_y_negative_cost",
+      "relation": ">0",
+      "value": "37571237443437/8328334000000"
+    },
+    {
+      "name": "x_nonnegative_zero_to_x_cost",
+      "relation": ">0",
+      "value": "5000170311/9998000000"
+    },
+    {
+      "name": "x_nonnegative_beyond_x_cost",
+      "relation": ">0",
+      "value": "131602954689/9998000000"
+    },
+    {
+      "name": "x_nonpositive_below_x_cost",
+      "relation": ">0",
+      "value": "37571237443437/8328334000000"
+    },
+    {
+      "name": "x_nonpositive_x_to_zero_cost",
+      "relation": ">0",
+      "value": "623704689/9998000000"
+    },
+    {
+      "name": "x_nonpositive_y_positive_cost",
+      "relation": ">0",
+      "value": "131602954689/9998000000"
+    },
+    {
+      "name": "minimum at y=0 for positive x",
+      "relation": "=",
+      "value": "-104924920311/9998000000"
+    },
+    {
+      "name": "minimum at y=x for negative x",
+      "relation": "=",
+      "value": "1921027237/133253344"
+    },
+    {
+      "name": "p positive",
+      "relation": ">0",
+      "value": "104924920311/9998000000"
+    },
+    {
+      "name": "q exceeds p",
+      "relation": ">0",
+      "value": "32661743693437/8328334000000"
+    },
+    {
+      "name": "path coefficient ac at least q",
+      "relation": ">=0",
+      "value": "16855113593819/2082083500000"
+    },
+    {
+      "name": "positive x representation f(x)",
+      "relation": "=",
+      "value": "-104924920311/9998000000"
+    },
+    {
+      "name": "negative x representation f(x)",
+      "relation": "=",
+      "value": "1921027237/133253344"
+    },
+    {
+      "name": "path remaining coefficient",
+      "relation": ">=0",
+      "value": "16855113593819/2082083500000"
+    },
+    {
+      "name": "final near-row reserve",
+      "relation": ">0",
+      "value": "6513193240933/74955006000000"
+    },
+    {
+      "name": "F equality coefficient",
+      "relation": ">0",
+      "value": "133623/9998"
+    },
+    {
+      "name": "E/G positive-beta equality coefficient",
+      "relation": ">0",
+      "value": "131602954689/9998000000"
+    },
+    {
+      "name": "E/G negative-beta equality coefficient",
+      "relation": ">0",
+      "value": "37571237443437/8328334000000"
+    }
+  ],
+  "guards": {
+    "all_seven_abs_signed_beta": "1/50",
+    "endpoint_height_orders": "E above A and G above D, or both reflected below",
+    "row_total_vertical_variation": "1/12",
+    "short_chain": "EF and FG actual horizontal projection separation"
+  },
+  "scope": "Exact arithmetic companion only; all-sign seven-original hand terminal; no mask closure claimed.",
+  "status": "PASS"
+}

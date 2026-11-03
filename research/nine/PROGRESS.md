@@ -136,6 +136,33 @@ retains equality; 000/11 and 010/11 have strict-radius conclusions and
 unclassified closed-Q status. Equality root 7820 remains possible at Q.
 These ledgers are not additive and give no percentage of remaining effort.
 
+## Latest weak-outer continuation: complete inputs, height cover still open
+
+The [extra-strip and all-sign row checkpoint](WEAK_OUTER_EXTRA_STRIP_AND_ALL_SIGN_ROW_CHECKPOINT.md)
+adds five source-bound complete component tables with fresh independent
+exact replays on all **90,533 leaves**, all component frontiers zero.
+The new D/G table proves `y_G-y_D<79/50`; its hand corollary and the
+unique-leftmost proof put both extras strictly in `x_A<x<5/4<x_D`.
+The complete F-order, G-edge, E-order, G upper-inset, and continuous
+vertical-overlap consequences are retained.
+
+The principal new analytic boundary terminal works with **either sign
+of both endpoint tilts**. Seven physical originals in a four-row plus
+actual three-chain, with main-row total vertical variation at most
+`11/30` and all seven `|sin(theta)|<=1/30`, force `R^2>=Q`; another
+specialization permits variation `9/20` with sine bound `1/50`. Equality
+forces alignment and A/D span three. The original strict CD weak bit
+excludes that equality face inside `001/00`. The hand proof was
+independently reviewed and all 108 exact rational checks passed. Its
+simpler `1/12` precursor and 70 checks are also preserved. The
+inward-endpoint all-angle version now permits variation `11/30`.
+
+These are complete internal inputs. The remaining original-nine height
+placements are **not yet covered**, so `001/00` and `100/00` remain open.
+The ledger stays **8 complete masks / 24 open masks**, with no new
+positional-root or roadmap-gate closures. The same 32 mask predicates
+and 15 gate IDs are unchanged. No Lean, Lake, or CI was run.
+
 ## Method and fixed acceptance conditions
 
 Computer-assisted discovery, independent exact replay, then a complete
@@ -158,4 +185,5 @@ The complete actual-four closure is pinned at
 [ddadfdd3](https://github.com/vltanh/lean4-squares-in-circles/blob/ddadfdd3bd2ef39a2e698680f9a2f3b7d73876ab/research/nine/PROGRESS.md).
 Earlier guarded terminals and incomplete research retain their original
 scope; they are not parallel active progress ledgers.
+
 
