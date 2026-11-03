@@ -1,3 +1,9 @@
+> **Subsequent accepted continuation:** [nine complete original parents](A2_00100_ORDERED_DISTANCE_AND_FRAME_CONTINUATION.md)
+> supersede the accounting below: **168 CLOSED / 63 OPEN**. The reported
+> D-pilot and B-cell results now have full source-bound certificates and
+> independent exact replay. The original handoff is retained below as
+> history; current work follows [the operative handoff](HANDOFF_A2_FIXED_CLOSURE.md).
+
 # November 3 session handoff: 001/00 still OPEN, 72 committed open cells
 
 **Branch/PR:** `research/nine-tablefree-hand`, PR #11. Accepted source-bound checkpoint before this handoff: [`cf9851b`](https://github.com/vltanh/lean4-squares-in-circles/commit/cf9851b38e0f2705ea2a6158729c25bba3209b91). Do not construe this handoff-only commit as an additional mathematical closure.
@@ -38,3 +44,4 @@ The remaining cells can admit **nonphysical linear relaxations** even with all 3
 **Execution restrictions:** computation-assisted discovery and independently checked rational certificates first; final pen-and-paper/finite-table proof; **no Lean compilation, Lake, or CI**. Preserve the 32 masks, 7,915 original root IDs and 15 roadmap IDs. Explicitly distinguish independent arithmetic replay, source-byte identity, numerical discovery and human/proof-kernel audit (not claimed).
 
 **Accounting rule:** unchanged fixed 231-ID register. Every handoff must state target original caller, certified whole-domain cover, prior/current *accepted* open original-parent count, the exact newly closed IDs and complete certificates, still-open original predicates, global mask/root/gate changes, and restrictions. Nothing in this document claims to have closed another mask.
+

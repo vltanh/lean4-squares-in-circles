@@ -1,20 +1,23 @@
-> **Latest session handoff (November 3):** [A2_00100_SESSION_HANDOFF_2026_11_03.md](A2_00100_SESSION_HANDOFF_2026_11_03.md). The pushed certified ledger is still **159/231 CLOSED, 72 OPEN** within `001/00`, **8/32 masks CLOSED**. An additional reported 458-leaf D-pilot closure and another candidate remain **unintegrated** until their complete source-bound certificates are committed; neither is credited in the repository register.
+> The [preceding session handoff](A2_00100_SESSION_HANDOFF_2026_11_03.md)
+> records the historical 159/72 checkpoint. Its unintegrated D-pilot and
+> B-cell results now have complete source-bound certificates in the latest
+> continuation. The current accepted accounting is **168 CLOSED / 63 OPEN**.
 
-# Current A.2 handoff: 159/231 current-mask cells closed; 72 OPEN
+# Current A.2 handoff: 168/231 current-mask cells closed; 63 OPEN
 
-November 3, 2026. **Seven further whole original cells are proved**, after
-the preceding 99: **106 additions beyond the original 53**. The fixed
-`001/00` cover has **159 CLOSED / 72 OPEN**. The whole-mask
+November 3, 2026. **Nine further whole original cells are proved**, after
+the preceding 99 and seven: **115 additions beyond the original 53**.
+The fixed `001/00` cover has **168 CLOSED / 63 OPEN**. The whole-mask
 ledger is still **8 CLOSED / 24 OPEN**. `001/00`, `100/00`, A.2, the
 unrestricted bound, equality classification and final manuscript remain
 OPEN. No Lean, Lake or CI.
 
 ## Read first
 
-1. [Current seven-cell hand/table continuation](A2_00100_BOUND_PAIR_CONTINUATION.md),
-   following the [preceding 99-cell checkpoint](A2_00100_PHYSICAL_PAIR_CLOSURE_CHECKPOINT.md).
+1. [Current nine-cell hand/table continuation](A2_00100_ORDERED_DISTANCE_AND_FRAME_CONTINUATION.md),
+   following the seven-cell and 99-cell checkpoints.
 2. [Same 231 original paths and current statuses](gates/A2_00100_FIXED_FRONTIER.json).
-3. [Latest source-bound certificates, rational tables and exact reports](computer_assisted/a2_00100_bound_pair_manifest.json).
+3. [Latest source-bound certificates, rational tables and exact reports](computer_assisted/a2_00100_ordered_distance_frame_manifest.json).
 4. [Original full-domain cover and first 53 proofs](A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md),
    and its physical/coverage reviews. Their mathematical scopes are unchanged.
 
@@ -37,7 +40,7 @@ by inventing positive clearance. Every internal case split must cover its
 entire parent, including ties, orientation endpoints and physical contact.
 
 The full-mask cover is already CERTIFIED. Preserve all 231 IDs and exact
-ancestor paths; the uncovered register is now exactly 72 original IDs.
+ancestor paths; the uncovered register is now exactly 63 original IDs.
 Credit a cell only after every descendant closes and the full parent
 union is independently checked. An incomplete tree remains internal to
 its unchanged OPEN parent. Numerical LP points and necessary inequalities
@@ -51,17 +54,24 @@ Do not compile Lean, run Lake, or trigger CI. Preserve the same 32 masks,
 
 ## What the latest continuation actually closed
 
-Seven previously OPEN family-A parents closed by acyclic original-parent
-coordinate bounds followed by complete physical pair trees: 245 bound
-deductions, 279 terminal leaves, 159 weighted contradictions and 3,506
-printed scalar rows across rounds and leaves. Fresh independent root
-replay and a separate printed-arithmetic implementation both pass.
-Their IDs, full paths, prefix hashes and reports are in the latest
-manifest and fixed register. All seven are distinct from the prior 152.
+Nine previously OPEN originals now have complete proofs: six by ordered
+center-distance trees and three by certified physical frame bounds with
+complete inset trees or local child inductions. They contain 1,492 scalar
+deductions, 1,098 terminal paths, 1,052 weighted contradictions and 19,388
+printed scalar rows. Fresh independent root replay checks all physical
+rows, bound inductions, old retained leaves and complete parent unions.
+A separate implementation verifies all printed rational sums.
 
-The former 53 + preceding 99 + latest 7 give **159 CLOSED / 72 OPEN**.
-The whole-mask count remains eight. The new reviewed unique-penultimate
-theorem earns no separate closure until an entire original parent closes.
+The preceding seven family-A proofs remain accepted and immutable. The
+former 53 + preceding 99 + seven + latest nine give **168 CLOSED / 63
+OPEN**. Every new ID is distinct and was OPEN before this continuation.
+The whole-mask count remains eight. No partial tree is promoted.
+
+The [distance hand proof](A2_00100_ORDERED_DISTANCE_HAND_PROOF.md) derives
+the eight-way octagon union, ordered complements and guarded chain
+selectors. The [frame-bound hand proof](A2_00100_ORIGINAL_FRAME_BOUND_HAND_PROOF.md)
+derives acyclic scalar bounds and rigorous original-slope inversions.
+All three B-family proofs require no newly guarded chain rows.
 
 ### Preceding 99-cell checkpoint
 
@@ -69,7 +79,8 @@ The prescribed eight pilots tested full physical separation on original
 parents. All four deep pilots closed by two complete four-way inset splits
 each, with seven terminal leaves per parent. Shallow C
 `negative-0b5d0bfec10c8526` closed at node 49 with 37 leaves. The shallow
-A, B and D pilots remain OPEN in this checkpoint.
+A, B and D pilots were OPEN at that checkpoint. The latest complete
+458-leaf D proof leaves only shallow A and B OPEN among the eight pilots.
 
 Scaling was authorized by that complete-parent success. The first frozen
 physical package proves 87 original parents with 789 leaves; a second
@@ -85,15 +96,15 @@ deductions and six final contradictions. One duplicates a physical proof
 of `negative-e82c87a207fdb074`. The other five add original IDs. Therefore
 the exact union is **94 physical parents + 5 further bound parents = 99**.
 That preceding checkpoint reached **152 CLOSED / 79 OPEN**; its immutable
-certificates remain in force alongside the latest seven.
+certificates remain in force alongside the later seven and nine.
 
 | Same early branch family | Original OPEN baseline | Cumulative newly closed | Still OPEN |
 |---|---:|---:|---:|
 | A: positive D, nonpositive A, inward-row escapes | 77 | 60 | 17 |
-| B: negative D, nonpositive A, F-height branches | 39 | 6 | 33 |
-| C: negative D, nonnegative A, alternate-chain escapes | 33 | 22 | 11 |
-| D: positive D, nonnegative A, alternate-chain escapes | 29 | 18 | 11 |
-| Total | 178 | 106 | 72 |
+| B: negative D, nonpositive A, F-height branches | 39 | 9 | 30 |
+| C: negative D, nonnegative A, alternate-chain escapes | 33 | 23 | 10 |
+| D: positive D, nonnegative A, alternate-chain escapes | 29 | 23 | 6 |
+| Total | 178 | 115 | 63 |
 
 ## Current attack and its actual limitations
 
@@ -106,9 +117,11 @@ Apply these four necessary rows only after deriving the complete guard.
 The separate hand review checks the hypotheses and strict-radius scope.
 No unfinished selector, radial, or distance-cut tree changes a parent.
 
-Continue the named remaining original parents using certified parent
-coordinate bounds followed by exhaustive physical inset/owned-axis
-alternatives. Regenerate rows only after a coordinate bound has been
+Continue the named remaining original parents using certified original
+frame bounds and complete physical inset, owned-axis or center-distance
+alternatives. If these mechanisms stall, seek a stronger valid geometric
+terminal or full-mask selection theorem rather than endlessly expanding
+internal forests. Regenerate rows only after a coordinate bound has been
 proved for the entire parent. Keep that induction and each subsequent
 subtree explicit and acyclic.
 
@@ -153,7 +166,7 @@ not follow merely from another selected-seven necessary inequality.
 
 - Original-nine masks: 8 CLOSED / 24 OPEN. Closed are `000/00`, `000/01`,
   `000/10`, `000/11`, `010/00`, `010/01`, `010/10`, `010/11`.
-- Current-mask cells: the same 231 IDs, 159 CLOSED / 72 OPEN; coverage
+- Current-mask cells: the same 231 IDs, 168 CLOSED / 63 OPEN; coverage
   certified, all unchanged path identities checked.
 - Positional roots: 5,838 historical closed-Q exclusions / 2,077 OPEN
   among the same 7,915 IDs. Equality root 7820 remains possible at Q.
@@ -166,3 +179,13 @@ any justified changes to the separate mask/root/gate ledgers. Incomplete
 subtrees never become a new external progress denominator. State no
 Lean/Lake/CI and distinguish arithmetic replay, byte identity, numerical
 discovery, and hand proof. No human or proof-kernel verification is claimed.
+
+## Preserved OPEN continuation work
+
+The [open continuation manifest](computer_assisted/a2_00100_open_continuation_manifest.json)
+identifies separate source-bound research packets and their exact review
+scope. `positive-2c719a20ef7510de` retains ten unresolved paths in the mixed
+continuation; `positive-2d5aba857f2f7602` retains 48. For shallow A, 65 of
+163 new V4 candidates were independently checked; 98 were not. Every
+unfinished original remains OPEN. These packets preserve work without
+substituting descendants for the fixed original predicates.

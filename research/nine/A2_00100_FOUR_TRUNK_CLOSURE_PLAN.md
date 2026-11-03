@@ -9,8 +9,9 @@ roadmap gates or equality classification. No Lean, Lake or CI.
 original-parent proofs, and its successful physical separation method was
 scaled. The [accepted continuation](A2_00100_PHYSICAL_PAIR_CLOSURE_CHECKPOINT.md)
 closes 99 additional original cells; the [next seven](A2_00100_BOUND_PAIR_CONTINUATION.md)
-bring the current register to **159 CLOSED / 72 OPEN**, not the original 53/178 planning baseline printed below. Five
-of the eight pilot parents are complete. The original IDs, strict caller,
+and [nine distance/frame proofs](A2_00100_ORDERED_DISTANCE_AND_FRAME_CONTINUATION.md)
+bring the current register to **168 CLOSED / 63 OPEN**. The original 53/178
+planning baseline is preserved below. Six of the eight pilot parents are complete. The original IDs, strict caller,
 full-mask count and all 15 roadmap IDs remain unchanged. The current
 handoff governs continuing work; this document preserves the plan's origin.
 

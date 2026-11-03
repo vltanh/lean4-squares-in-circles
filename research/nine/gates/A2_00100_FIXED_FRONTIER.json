@@ -9,11 +9,11 @@
   "coverage_kind": "EXHAUSTIVE_FINITE_COVER_WITH_SHARED_CLOSED_FACES",
   "coverage_certified": true,
   "id_rule": "sign + hyphen + first 16 hexadecimal digits of SHA256(json.dumps(path,separators=(comma,colon))); full path retained and checked.",
-  "assembly": "../A2_00100_BOUND_PAIR_CONTINUATION.md",
+  "assembly": "../A2_00100_ORDERED_DISTANCE_AND_FRAME_CONTINUATION.md",
   "physical_review": "../A2_00100_FIXED_FRONTIER_PHYSICAL_REVIEW.md",
   "coverage_review": "../A2_00100_V13_COVERAGE_INDEPENDENT_REVIEW.md",
-  "cell_review": "../A2_00100_BOUND_PAIR_CONTINUATION.md",
-  "manifest": "../computer_assisted/a2_00100_bound_pair_manifest.json",
+  "cell_review": "../A2_00100_ORDERED_DISTANCE_AND_FRAME_CONTINUATION.md",
+  "manifest": "../computer_assisted/a2_00100_ordered_distance_frame_manifest.json",
   "payload_register": "fixed_231_register.json",
   "baseline_forest_sha256": {
     "positive": "f6518c23a00c32e1f3d3915d1cd89cd24d162f459a6fc03a721fb843cc878d78",
@@ -22,8 +22,8 @@
   "scope": "Coverage-qualified fixed original full-nine large-gap cells; all 231 IDs and paths immutable.",
   "whole_mask_closed": false,
   "original_cells": 231,
-  "closed_cells": 159,
-  "open_cells": 72,
+  "closed_cells": 168,
+  "open_cells": 63,
   "cells": [
     {
       "id": "positive-655c4b699ba028a1",
@@ -1524,12 +1524,21 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
-        "record_id": "positive-69f6ff1ef1be2b79",
-        "whole_cell_exclusion": null
-      }
+        "archive": "a2_00100_ordered_distance_frame_checkpoint.tar.gz",
+        "id": "positive-69f6ff1ef1be2b79",
+        "method": "ordered_center_octagon_and_original_selector_tree",
+        "certificate": "octagon_cells/positive-69f6ff1ef1be2b79.json",
+        "certificate_sha256": "80b196b1dbaaef6b9ceed9cb3bae32e2de5c46bc61d6c9347de20c35c6abd556",
+        "scalar_deductions": 32,
+        "terminal_leaves": 64,
+        "weighted_leaves": 64,
+        "independent_replay": "replay_complete_cells.py",
+        "whole_mask_closed": false
+      },
+      "method": "ordered_center_octagon_and_original_selector_tree",
+      "terminal_leaves": 64
     },
     {
       "id": "positive-f312768df8c0e949",
@@ -1580,12 +1589,21 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
-        "record_id": "positive-f312768df8c0e949",
-        "whole_cell_exclusion": null
-      }
+        "archive": "a2_00100_ordered_distance_frame_checkpoint.tar.gz",
+        "id": "positive-f312768df8c0e949",
+        "method": "ordered_center_octagon_and_original_selector_tree",
+        "certificate": "octagon_cells/positive-f312768df8c0e949.json",
+        "certificate_sha256": "f28b02803550d43ff18cd14967f9d3faf375355446af4f757fd67d36c588197b",
+        "scalar_deductions": 32,
+        "terminal_leaves": 57,
+        "weighted_leaves": 57,
+        "independent_replay": "replay_complete_cells.py",
+        "whole_mask_closed": false
+      },
+      "method": "ordered_center_octagon_and_original_selector_tree",
+      "terminal_leaves": 57
     },
     {
       "id": "positive-3021787ab7dc5150",
@@ -1942,12 +1960,21 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
-        "record_id": "positive-4b582e8d1ada2f88",
-        "whole_cell_exclusion": null
-      }
+        "archive": "a2_00100_ordered_distance_frame_checkpoint.tar.gz",
+        "id": "positive-4b582e8d1ada2f88",
+        "method": "ordered_center_octagon_and_original_selector_tree",
+        "certificate": "octagon_cells/positive-4b582e8d1ada2f88.json",
+        "certificate_sha256": "734aa55f9192c19a932819585caedf59e7ff8a536fc3d018f9a763bb3a0553cf",
+        "scalar_deductions": 32,
+        "terminal_leaves": 127,
+        "weighted_leaves": 127,
+        "independent_replay": "replay_complete_cells.py",
+        "whole_mask_closed": false
+      },
+      "method": "ordered_center_octagon_and_original_selector_tree",
+      "terminal_leaves": 127
     },
     {
       "id": "positive-ab48a9ab55af0106",
@@ -1988,12 +2015,21 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
-        "record_id": "positive-ab48a9ab55af0106",
-        "whole_cell_exclusion": null
-      }
+        "archive": "a2_00100_ordered_distance_frame_checkpoint.tar.gz",
+        "id": "positive-ab48a9ab55af0106",
+        "method": "ordered_center_octagon_and_original_selector_tree",
+        "certificate": "octagon_cells/positive-ab48a9ab55af0106.json",
+        "certificate_sha256": "b1aa2cfc9a488454b5220b6c6e8b00661b2eb9157d46c58e02a21b47da7fb3d5",
+        "scalar_deductions": 31,
+        "terminal_leaves": 113,
+        "weighted_leaves": 113,
+        "independent_replay": "replay_complete_cells.py",
+        "whole_mask_closed": false
+      },
+      "method": "ordered_center_octagon_and_original_selector_tree",
+      "terminal_leaves": 113
     },
     {
       "id": "positive-6c5f13d07e5538df",
@@ -2173,12 +2209,21 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
-        "record_id": "positive-3622c4448973035b",
-        "whole_cell_exclusion": null
-      }
+        "archive": "a2_00100_ordered_distance_frame_checkpoint.tar.gz",
+        "id": "positive-3622c4448973035b",
+        "method": "ordered_center_octagon_and_original_selector_tree",
+        "certificate": "octagon_cells/positive-3622c4448973035b.json",
+        "certificate_sha256": "f9d1959220fc1f406c0e60771bc8f71f7f913dcd3f15fdb6f894589877bb3bd7",
+        "scalar_deductions": 33,
+        "terminal_leaves": 458,
+        "weighted_leaves": 458,
+        "independent_replay": "replay_complete_cells.py",
+        "whole_mask_closed": false
+      },
+      "method": "ordered_center_octagon_and_original_selector_tree",
+      "terminal_leaves": 458
     },
     {
       "id": "positive-a4979e5f2a7e8734",
@@ -14185,12 +14230,21 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
-        "record_id": "negative-4296ece9afbd18f6",
-        "whole_cell_exclusion": null
-      }
+        "archive": "a2_00100_ordered_distance_frame_checkpoint.tar.gz",
+        "id": "negative-4296ece9afbd18f6",
+        "method": "ordered_center_octagon_and_original_selector_tree",
+        "certificate": "octagon_cells/negative-4296ece9afbd18f6.json",
+        "certificate_sha256": "966ff791c5d85d53e9394476d7fc90468f4ae435026477b31ab059c83588250e",
+        "scalar_deductions": 32,
+        "terminal_leaves": 148,
+        "weighted_leaves": 148,
+        "independent_replay": "replay_complete_cells.py",
+        "whole_mask_closed": false
+      },
+      "method": "ordered_center_octagon_and_original_selector_tree",
+      "terminal_leaves": 148
     },
     {
       "id": "negative-493c2b626cdbf986",
@@ -16114,12 +16168,21 @@
           0
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
-        "record_id": "negative-4b5e7ea05e82b9ac",
-        "whole_cell_exclusion": null
-      }
+        "archive": "a2_00100_ordered_distance_frame_checkpoint.tar.gz",
+        "id": "negative-4b5e7ea05e82b9ac",
+        "method": "certified_original_frame_inductionand_complete_child_inductions",
+        "certificate": "sharp_frame/4b5/local_induction_report.json",
+        "certificate_sha256": "8757e3be9e00e24925142b1d89dc1faf6651432c1f94228d1121a848b75d71e9",
+        "scalar_deductions": 426,
+        "terminal_leaves": 123,
+        "weighted_leaves": 82,
+        "independent_replay": "replay_complete_cells.py",
+        "whole_mask_closed": false
+      },
+      "method": "certified_original_frame_inductionand_complete_child_inductions",
+      "terminal_leaves": 123
     },
     {
       "id": "negative-2ee3f4820947eb83",
@@ -16707,12 +16770,21 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
-        "record_id": "negative-547e512df0c949e9",
-        "whole_cell_exclusion": null
-      }
+        "archive": "a2_00100_ordered_distance_frame_checkpoint.tar.gz",
+        "id": "negative-547e512df0c949e9",
+        "method": "certified_original_frame_induction",
+        "certificate": "root_exploration/guarded_bounds/negative-547e512df0c949e9.json",
+        "certificate_sha256": "aa18eecbb28e6d45a9f4bff611b141ceaccb477da7b7b2348c570d071f6d1334",
+        "scalar_deductions": 227,
+        "terminal_leaves": 1,
+        "weighted_leaves": 1,
+        "independent_replay": "replay_complete_cells.py",
+        "whole_mask_closed": false
+      },
+      "method": "certified_original_frame_induction",
+      "terminal_leaves": 1
     },
     {
       "id": "negative-79cdbfcbed2f1fac",
@@ -17230,12 +17302,21 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
-        "record_id": "negative-685477c369fdc445",
-        "whole_cell_exclusion": null
-      }
+        "archive": "a2_00100_ordered_distance_frame_checkpoint.tar.gz",
+        "id": "negative-685477c369fdc445",
+        "method": "certified_original_frame_inductionand_complete_physical_tree",
+        "certificate": "root_exploration/guarded_trees/negative-685477c369fdc445.json",
+        "certificate_sha256": "d6171634277690ac816663cf7b4e593964262f66b330f06fbb9de7ee4ff7c298",
+        "scalar_deductions": 647,
+        "terminal_leaves": 7,
+        "weighted_leaves": 2,
+        "independent_replay": "replay_complete_cells.py",
+        "whole_mask_closed": false
+      },
+      "method": "certified_original_frame_inductionand_complete_physical_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "negative-054472aeb5484d24",
@@ -22187,11 +22268,11 @@
   "new_roadmap_gate_closures": 0,
   "lean_lake_ci_run": false,
   "open_cell_obstruction": "No complete proof is known for this unchanged original path. Physical-pair, bound and original-frame continuation trees retain all unresolved descendants internally; partial trials do not replace this parent.",
-  "open_cell_discovery_report": "../computer_assisted/a2_00100_bound_pair_manifest.json",
+  "open_cell_discovery_report": "../computer_assisted/a2_00100_open_continuation_manifest.json",
   "baseline_assembly": "../A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md",
   "baseline_manifest": "../computer_assisted/a2_00100_fixed_frontier_manifest.json",
-  "latest_new_closed_cells": 7,
-  "cumulative_new_closed_since_53": 106,
-  "preceding_assembly": "../A2_00100_PHYSICAL_PAIR_CLOSURE_CHECKPOINT.md",
-  "preceding_manifest": "../computer_assisted/a2_00100_physical_pair_closure_manifest.json"
+  "latest_new_closed_cells": 9,
+  "cumulative_new_closed_since_53": 115,
+  "preceding_assembly": "../A2_00100_BOUND_PAIR_CONTINUATION.md",
+  "preceding_manifest": "../computer_assisted/a2_00100_bound_pair_manifest.json"
 }

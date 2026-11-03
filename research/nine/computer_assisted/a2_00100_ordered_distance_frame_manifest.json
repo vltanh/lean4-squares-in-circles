@@ -1,0 +1,40 @@
+{
+  "schema": "a2-00100-ordered-distance-frame-delivery-v1",
+  "baseline_commit": "cf9851b38e0f2705ea2a6158729c25bba3209b91",
+  "target_mask": "001/00",
+  "reversal_partner": "100/00",
+  "strict_q": "1105/256",
+  "archive": "a2_00100_ordered_distance_frame_checkpoint.tar.gz",
+  "archive_sha256": "1d7721c239ecc0489807325d64c94635ba9350b464f2480299732cba38597347",
+  "archive_bytes": 3139149,
+  "archive_directory": "a2_00100_ordered_distance_frame_checkpoint",
+  "new_closed_original_cells": 9,
+  "before": {
+    "closed": 159,
+    "open": 72
+  },
+  "after": {
+    "closed": 168,
+    "open": 63
+  },
+  "cumulative_new_since_53": 115,
+  "exact_scalar_deductions": 1492,
+  "terminal_paths": 1098,
+  "weighted_terminals": 1052,
+  "analytic_or_interval_terminals": 46,
+  "printed_rows_across_rounds_and_terminals": 19388,
+  "whole_masks": {
+    "closed": 8,
+    "open": 24,
+    "new": 0
+  },
+  "new_original_root_exclusions": 0,
+  "new_roadmap_gate_closures": 0,
+  "original_ids_and_paths_unchanged": true,
+  "lean_lake_ci_run": false,
+  "human_or_kernel_verification": false,
+  "proof": "../A2_00100_ORDERED_DISTANCE_AND_FRAME_CONTINUATION.md",
+  "register": "../gates/A2_00100_FIXED_FRONTIER.json",
+  "index": "cell_index.json",
+  "portable_replay": "replay_complete_cells.py"
+}
