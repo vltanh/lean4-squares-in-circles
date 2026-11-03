@@ -1,3 +1,5 @@
+> **NEW PRIMARY EXECUTION DIRECTIVE (November 3, 2026):** [Shared original-nine macro-closure strategy](A2_00100_SHARED_MACRO_CLOSURE_DIRECTIVE_2026_11_03.md). **Stop prioritizing ever-deeper partial certificate trees**; seek a single proved all-nine argument closing **multiple** of the 63 OPEN original cells, initially targeting the 30-cell B family and the omitted squares H/I. Prove all strict/boundary guards before crediting a cell. **Ledger unchanged: 168/231 cells CLOSED, 63 OPEN; 8/32 masks CLOSED, 24 OPEN.** This priority supersedes earlier search schedules, not their established proofs.
+
 # n=9: fixed-domain roadmap
 
 ## Highest-priority execution rule: no local-lemma rabbit hole

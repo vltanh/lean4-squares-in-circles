@@ -1,3 +1,5 @@
+> **NEW PRIMARY EXECUTION DIRECTIVE (November 3, 2026):** [Shared original-nine macro-closure strategy](A2_00100_SHARED_MACRO_CLOSURE_DIRECTIVE_2026_11_03.md). **Stop prioritizing ever-deeper partial certificate trees**; seek a single proved all-nine argument closing **multiple** of the 63 OPEN original cells, initially targeting the 30-cell B family and the omitted squares H/I. Prove all strict/boundary guards before crediting a cell. **Ledger unchanged: 168/231 cells CLOSED, 63 OPEN; 8/32 masks CLOSED, 24 OPEN.** This priority supersedes earlier search schedules, not their established proofs.
+
 > The [preceding session handoff](A2_00100_SESSION_HANDOFF_2026_11_03.md)
 > records the historical 159/72 checkpoint. Its unintegrated D-pilot and
 > B-cell results now have complete source-bound certificates in the latest
