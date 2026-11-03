@@ -77,6 +77,18 @@ The precise unresolved predicates are the unchanged paths of these IDs:
 
 ## Current mathematical obstruction and useful inputs
 
+Two additional independently checked physical tools are available in
+the current continuation: the [planar four-original matching and energy
+theorem](FOUR_ORIGINAL_PLANAR_MATCHING_AND_ENERGY_HAND_PROOF.md), published
+in `e058fd47b521a7f4c97be52e4037bcd512560c98`, and the [subset square-area
+moment theorem](PHYSICAL_SQUARE_AREA_MOMENT_HAND_PROOF.md). The former has
+a complete three-matching cover and 11,390 checked row identities. The
+latter retains the full area and angle-independent inertia of physical
+unit squares and has 16,064 checked affine/quadratic identities. These
+are necessary restrictions, not original-cell exclusions; the counts
+remain **197/34 cells and 8/24 masks** until complete parent certificates
+and coverage are accepted.
+
 The [completed whole-domain research record](A2_00100_WHOLE_DOMAIN_RESEARCH_STOPPING_RECORD.md)
 records the bounded A/B/C/D investigations after the four accepted proofs.
 All declared experiments are finished. They add **zero** original-cell or
