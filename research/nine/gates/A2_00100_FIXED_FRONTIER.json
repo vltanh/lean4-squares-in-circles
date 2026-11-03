@@ -9,11 +9,11 @@
   "coverage_kind": "EXHAUSTIVE_FINITE_COVER_WITH_SHARED_CLOSED_FACES",
   "coverage_certified": true,
   "id_rule": "sign + hyphen + first 16 hexadecimal digits of SHA256(json.dumps(path,separators=(comma,colon))); full path retained and checked.",
-  "assembly": "../A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md",
+  "assembly": "../A2_00100_PHYSICAL_PAIR_CLOSURE_CHECKPOINT.md",
   "physical_review": "../A2_00100_FIXED_FRONTIER_PHYSICAL_REVIEW.md",
   "coverage_review": "../A2_00100_V13_COVERAGE_INDEPENDENT_REVIEW.md",
-  "cell_review": "../A2_00100_V14_CELL_SUBSTITUTION_INDEPENDENT_REVIEW.md",
-  "manifest": "../computer_assisted/a2_00100_fixed_frontier_manifest.json",
+  "cell_review": "../A2_00100_PHYSICAL_PAIR_CLOSURE_CHECKPOINT.md",
+  "manifest": "../computer_assisted/a2_00100_physical_pair_closure_manifest.json",
   "payload_register": "fixed_231_register.json",
   "baseline_forest_sha256": {
     "positive": "f6518c23a00c32e1f3d3915d1cd89cd24d162f459a6fc03a721fb843cc878d78",
@@ -22,8 +22,8 @@
   "scope": "Coverage-qualified fixed original full-nine large-gap cells; all 231 IDs and paths immutable.",
   "whole_mask_closed": false,
   "original_cells": 231,
-  "closed_cells": 53,
-  "open_cells": 178,
+  "closed_cells": 152,
+  "open_cells": 79,
   "cells": [
     {
       "id": "positive-655c4b699ba028a1",
@@ -184,12 +184,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-655c4b699ba028a1",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "positive-28ac470b7e679241",
@@ -339,12 +344,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-28ac470b7e679241",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 10
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 10
     },
     {
       "id": "positive-3f21ac4ad6e91cad",
@@ -450,12 +460,17 @@
           0
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-3f21ac4ad6e91cad",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 13
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 13
     },
     {
       "id": "positive-3248db75df997311",
@@ -556,12 +571,17 @@
           0
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-3248db75df997311",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 10
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 10
     },
     {
       "id": "positive-86be91f3fdec3401",
@@ -657,12 +677,17 @@
           0
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-86be91f3fdec3401",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 13
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 13
     },
     {
       "id": "positive-eb4b372801cf0ae8",
@@ -753,12 +778,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-eb4b372801cf0ae8",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 10
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 10
     },
     {
       "id": "positive-a5b6e23cf3734754",
@@ -849,12 +879,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-a5b6e23cf3734754",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 13
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 13
     },
     {
       "id": "positive-e450172472284b40",
@@ -945,12 +980,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-e450172472284b40",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 10
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 10
     },
     {
       "id": "positive-817d73cda4578d80",
@@ -1031,12 +1071,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-817d73cda4578d80",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 16
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 16
     },
     {
       "id": "positive-43ca3ea780168ba5",
@@ -1205,12 +1250,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-41014f4494307e5b",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 10
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 10
     },
     {
       "id": "positive-3d27387bda4400b2",
@@ -1281,12 +1331,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-3d27387bda4400b2",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 4
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 4
     },
     {
       "id": "positive-5717ad8f8f5f4e41",
@@ -1347,12 +1402,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-5717ad8f8f5f4e41",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 40
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 40
     },
     {
       "id": "positive-6ed5ed58de8c6d92",
@@ -1403,12 +1463,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-6ed5ed58de8c6d92",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 16
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 16
     },
     {
       "id": "positive-69f6ff1ef1be2b79",
@@ -1571,12 +1636,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-3021787ab7dc5150",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 4
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 4
     },
     {
       "id": "positive-3f2f273c7252da5e",
@@ -1627,12 +1697,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-3f2f273c7252da5e",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 37
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 37
     },
     {
       "id": "positive-3b5d35fda8ec4119",
@@ -1765,12 +1840,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-802a95042bb7d684",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 19
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 19
     },
     {
       "id": "positive-82fb3bae6cb9f827",
@@ -1811,12 +1891,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-82fb3bae6cb9f827",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 10
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 10
     },
     {
       "id": "positive-4b582e8d1ada2f88",
@@ -2047,12 +2132,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-d489f0e7875b7d7f",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 4
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 4
     },
     {
       "id": "positive-3622c4448973035b",
@@ -2215,12 +2305,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-7d42322ed3bf449d",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "positive-0ec0340e825a8243",
@@ -2311,12 +2406,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-0ec0340e825a8243",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 10
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 10
     },
     {
       "id": "positive-e08faebf509ef05a",
@@ -2377,12 +2477,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-e08faebf509ef05a",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 4
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 4
     },
     {
       "id": "positive-573d1664ed86415f",
@@ -2443,12 +2548,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-573d1664ed86415f",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 4
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 4
     },
     {
       "id": "positive-c15988920e2223ec",
@@ -2509,12 +2619,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-c15988920e2223ec",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 4
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 4
     },
     {
       "id": "positive-93f4028421e90c52",
@@ -2565,12 +2680,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-93f4028421e90c52",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "positive-f0996387bea84044",
@@ -2621,12 +2741,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-f0996387bea84044",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 4
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 4
     },
     {
       "id": "positive-7073faf75556eb9a",
@@ -2677,12 +2802,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-7073faf75556eb9a",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 4
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 4
     },
     {
       "id": "positive-d73cb0817f9bacf4",
@@ -2733,12 +2863,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-d73cb0817f9bacf4",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "positive-033850931bb6d4ef",
@@ -2871,12 +3006,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-e0b1eb3d636ed3e8",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 4
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 4
     },
     {
       "id": "positive-e5893456bc8e0aad",
@@ -2917,12 +3057,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-e5893456bc8e0aad",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 4
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 4
     },
     {
       "id": "positive-3ccb378385134029",
@@ -2963,12 +3108,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-3ccb378385134029",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 10
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 10
     },
     {
       "id": "positive-e9fc81eb0f6395fe",
@@ -3147,12 +3297,17 @@
           0
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-e9fc81eb0f6395fe",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 4
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 4
     },
     {
       "id": "positive-12f5186d095bc891",
@@ -3307,12 +3462,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-12f5186d095bc891",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "positive-999eba8a9a7a0039",
@@ -3455,12 +3615,17 @@
           0
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-999eba8a9a7a0039",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "positive-d9be24842ab09b83",
@@ -3598,12 +3763,17 @@
           0
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-d9be24842ab09b83",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "positive-1e7ee6c3a5f4ca4b",
@@ -3864,12 +4034,17 @@
           0
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-7f6a45e7177ff3a2",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "positive-0893510da829d8a2",
@@ -3985,12 +4160,17 @@
           0
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-0893510da829d8a2",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "positive-27b86df2ed891656",
@@ -4096,12 +4276,17 @@
           0
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-27b86df2ed891656",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "positive-6822c1aaa654d319",
@@ -4202,12 +4387,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-6822c1aaa654d319",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "positive-e083fb8369f3ce57",
@@ -4298,12 +4488,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-e083fb8369f3ce57",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 4
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 4
     },
     {
       "id": "positive-63c713f138288d40",
@@ -4394,12 +4589,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-63c713f138288d40",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 4
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 4
     },
     {
       "id": "positive-aca2b09e3d6985c1",
@@ -4490,12 +4690,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-aca2b09e3d6985c1",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 4
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 4
     },
     {
       "id": "positive-87c0a077dbcf611a",
@@ -4576,12 +4781,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-87c0a077dbcf611a",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "positive-0cf5b735ec40976e",
@@ -4662,12 +4872,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-0cf5b735ec40976e",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "positive-0a378240777e69ab",
@@ -4738,12 +4953,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-0a378240777e69ab",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 4
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 4
     },
     {
       "id": "positive-ab298560ff471fd2",
@@ -4804,12 +5024,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-ab298560ff471fd2",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 10
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 10
     },
     {
       "id": "positive-d52dd9f57b5bc4c8",
@@ -4860,12 +5085,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-d52dd9f57b5bc4c8",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "positive-34601b9d815f23b8",
@@ -4916,12 +5146,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-34601b9d815f23b8",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 10
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 10
     },
     {
       "id": "positive-f84802f59464e68a",
@@ -4972,12 +5207,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-f84802f59464e68a",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 4
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 4
     },
     {
       "id": "positive-9ceee2ed82fd0f66",
@@ -5028,12 +5268,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-9ceee2ed82fd0f66",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 13
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 13
     },
     {
       "id": "positive-2dcf3464c0e0dafb",
@@ -5166,12 +5411,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-c87bdd1304450b65",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 4
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 4
     },
     {
       "id": "positive-73948d0c7fcb5031",
@@ -5212,12 +5462,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-73948d0c7fcb5031",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 4
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 4
     },
     {
       "id": "positive-80ddb4f1f796fcf4",
@@ -5258,12 +5513,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-80ddb4f1f796fcf4",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 4
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 4
     },
     {
       "id": "positive-51285568a0d38ba4",
@@ -5842,12 +6102,17 @@
           0
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-53080a2a10d7a9f9",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "positive-99d705c489031b39",
@@ -5995,12 +6260,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-99d705c489031b39",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 10
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 10
     },
     {
       "id": "positive-fcd8601a4e6460f9",
@@ -6119,12 +6389,17 @@
           0
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-fcd8601a4e6460f9",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "positive-78e45e07e982a439",
@@ -6238,12 +6513,17 @@
           0
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-78e45e07e982a439",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "positive-d6a34291dc0ff686",
@@ -6347,12 +6627,17 @@
           0
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-d6a34291dc0ff686",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "positive-8dac2ea84c817188",
@@ -6441,12 +6726,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-8dac2ea84c817188",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 4
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 4
     },
     {
       "id": "positive-4edb1f18b78287ad",
@@ -6535,12 +6825,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-4edb1f18b78287ad",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "positive-55e1a63c28118dc2",
@@ -6619,12 +6914,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-55e1a63c28118dc2",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 10
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 10
     },
     {
       "id": "positive-8936e1905b27bef7",
@@ -6693,12 +6993,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-8936e1905b27bef7",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 4
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 4
     },
     {
       "id": "positive-67979b032ac0c877",
@@ -6757,12 +7062,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-67979b032ac0c877",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "positive-a76638de241e6faf",
@@ -6811,12 +7121,18 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "acyclic_derived_coordinate_bounds",
+        "certificate": "derived_bound_certificates/positive-a76638de241e6faf.json",
         "record_id": "positive-a76638de241e6faf",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "derived_bound_exact_review.json",
+        "bound_deductions": 55,
+        "terminal_leaves": 1
+      },
+      "method": "acyclic_derived_coordinate_bounds",
+      "terminal_leaves": 1
     },
     {
       "id": "positive-fbac60a51d1e7f99",
@@ -6865,12 +7181,18 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "acyclic_derived_coordinate_bounds",
+        "certificate": "derived_bound_certificates/positive-fbac60a51d1e7f99.json",
         "record_id": "positive-fbac60a51d1e7f99",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "derived_bound_exact_review.json",
+        "bound_deductions": 94,
+        "terminal_leaves": 1
+      },
+      "method": "acyclic_derived_coordinate_bounds",
+      "terminal_leaves": 1
     },
     {
       "id": "positive-59a81039129632a6",
@@ -6919,12 +7241,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-59a81039129632a6",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "positive-b4a9a3bc15e37620",
@@ -7371,12 +7698,18 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "acyclic_derived_coordinate_bounds",
+        "certificate": "derived_bound_certificates/positive-1077638afc8dc284.json",
         "record_id": "positive-1077638afc8dc284",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "derived_bound_exact_review.json",
+        "bound_deductions": 70,
+        "terminal_leaves": 1
+      },
+      "method": "acyclic_derived_coordinate_bounds",
+      "terminal_leaves": 1
     },
     {
       "id": "positive-5edcabd77ec2e38b",
@@ -7611,12 +7944,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-76c11ab1a1038b2f",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 13
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 13
     },
     {
       "id": "positive-b696531e6d132c9e",
@@ -8027,12 +8365,18 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "acyclic_derived_coordinate_bounds",
+        "certificate": "derived_bound_certificates/positive-9cc839d8f2504bca.json",
         "record_id": "positive-9cc839d8f2504bca",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "derived_bound_exact_review.json",
+        "bound_deductions": 32,
+        "terminal_leaves": 1
+      },
+      "method": "acyclic_derived_coordinate_bounds",
+      "terminal_leaves": 1
     },
     {
       "id": "positive-6a6d3acbfe075c58",
@@ -10817,12 +11161,17 @@
           0
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union_v2_additions.json",
         "record_id": "positive-c7a72bc6e6d037d3",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_v2_exact_review.json",
+        "terminal_leaves": 22
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 22
     },
     {
       "id": "positive-8f92e2d887c830bb",
@@ -11183,12 +11532,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-bdb5f431b3fe0cba",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "positive-c5d1d2351fe764c2",
@@ -11386,12 +11740,17 @@
           0
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "positive-c5d1d2351fe764c2",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "negative-5e9464f36a7e810b",
@@ -11777,12 +12136,17 @@
           0
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "negative-b1a9c1540e73c619",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "negative-e1cdbf012481fd6e",
@@ -11942,12 +12306,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "negative-e1cdbf012481fd6e",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "negative-c58c291540030b90",
@@ -12257,12 +12626,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "negative-da025c74949daf85",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 10
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 10
     },
     {
       "id": "negative-7a38e484a7776e77",
@@ -12388,12 +12762,17 @@
           0
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "negative-7a38e484a7776e77",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "negative-1e2a4199fef732af",
@@ -12514,12 +12893,17 @@
           0
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "negative-1e2a4199fef732af",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 10
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 10
     },
     {
       "id": "negative-4c501be44a5f8095",
@@ -12635,12 +13019,17 @@
           0
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "negative-4c501be44a5f8095",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "negative-6b05fd88ef2ff473",
@@ -12751,12 +13140,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "negative-6b05fd88ef2ff473",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "negative-5c5b87673fcdcc79",
@@ -12857,12 +13251,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "negative-5c5b87673fcdcc79",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "negative-f4acf3107c637b27",
@@ -12963,12 +13362,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "negative-f4acf3107c637b27",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 19
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 19
     },
     {
       "id": "negative-dd9ebb54696ad370",
@@ -13069,12 +13473,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "negative-dd9ebb54696ad370",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "negative-511b99fd4bbd80d5",
@@ -13165,12 +13574,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "negative-511b99fd4bbd80d5",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 13
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 13
     },
     {
       "id": "negative-dbce7542e939cccd",
@@ -13251,12 +13665,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "negative-dbce7542e939cccd",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 19
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 19
     },
     {
       "id": "negative-c9b87d4154eb9fbe",
@@ -13337,12 +13756,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "negative-c9b87d4154eb9fbe",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 16
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 16
     },
     {
       "id": "negative-4acf080355ef24ba",
@@ -13423,12 +13847,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "negative-4acf080355ef24ba",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 10
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 10
     },
     {
       "id": "negative-5ae51ccef883524d",
@@ -13499,12 +13928,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "negative-5ae51ccef883524d",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 4
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 4
     },
     {
       "id": "negative-ce77f4f8b1101c5a",
@@ -13565,12 +13999,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "negative-ce77f4f8b1101c5a",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 16
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 16
     },
     {
       "id": "negative-64094241c36c4fc8",
@@ -13621,12 +14060,18 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "acyclic_derived_coordinate_bounds",
+        "certificate": "derived_bound_certificates/negative-64094241c36c4fc8.json",
         "record_id": "negative-64094241c36c4fc8",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "derived_bound_exact_review.json",
+        "bound_deductions": 33,
+        "terminal_leaves": 1
+      },
+      "method": "acyclic_derived_coordinate_bounds",
+      "terminal_leaves": 1
     },
     {
       "id": "negative-4296ece9afbd18f6",
@@ -13789,12 +14234,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "negative-2de38385985c58c0",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 13
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 13
     },
     {
       "id": "negative-535b888c8917ec4b",
@@ -13845,12 +14295,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union_v2_additions.json",
         "record_id": "negative-535b888c8917ec4b",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_v2_exact_review.json",
+        "terminal_leaves": 28
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 28
     },
     {
       "id": "negative-6181e7007bf6714b",
@@ -13983,12 +14438,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "negative-0f104750eaa951e0",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 4
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 4
     },
     {
       "id": "negative-66014549fb1e3203",
@@ -14029,12 +14489,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "negative-66014549fb1e3203",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 4
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 4
     },
     {
       "id": "negative-573078fc944ce553",
@@ -14265,12 +14730,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "negative-0b5d0bfec10c8526",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 37
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 37
     },
     {
       "id": "negative-2f9ffd3df06e7c5f",
@@ -15238,12 +15708,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union.json",
         "record_id": "negative-31ce871c81b35b54",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_union_exact_review.json",
+        "terminal_leaves": 7
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 7
     },
     {
       "id": "negative-e9388ab13ca6220a",
@@ -18359,12 +18834,17 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union_v2_additions.json",
         "record_id": "negative-b3b509da1ac821ba",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_v2_exact_review.json",
+        "terminal_leaves": 10
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 10
     },
     {
       "id": "negative-085d7956aacf0f5d",
@@ -19236,12 +19716,17 @@
           0
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union_v2_additions.json",
         "record_id": "negative-87c4ac8cfedd3fd9",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_v2_exact_review.json",
+        "terminal_leaves": 4
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 4
     },
     {
       "id": "negative-6bc2e41ffe759906",
@@ -19350,12 +19835,17 @@
           0
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union_v2_additions.json",
         "record_id": "negative-6bc2e41ffe759906",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_v2_exact_review.json",
+        "terminal_leaves": 4
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 4
     },
     {
       "id": "negative-21fae618a4f78a00",
@@ -19474,12 +19964,17 @@
           0
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union_v2_additions.json",
         "record_id": "negative-21fae618a4f78a00",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_v2_exact_review.json",
+        "terminal_leaves": 4
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 4
     },
     {
       "id": "negative-0c9ebcd0384a9f31",
@@ -19915,12 +20410,17 @@
           0
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+        "method": "complete_physical_pair_tree",
+        "certificate": "physical_closed_union_v2_additions.json",
         "record_id": "negative-e82c87a207fdb074",
-        "whole_cell_exclusion": null
-      }
+        "independent_report": "physical_v2_exact_review.json",
+        "terminal_leaves": 4
+      },
+      "method": "complete_physical_pair_tree",
+      "terminal_leaves": 4
     },
     {
       "id": "negative-adfa4132eda82e9f",
@@ -21623,6 +22123,9 @@
   "new_positional_root_exclusions": 0,
   "new_roadmap_gate_closures": 0,
   "lean_lake_ci_run": false,
-  "open_cell_obstruction": "No complete exclusion is known for the full path. Bounded internal trials remain incomplete. A subsequent unguarded full-matrix direct pass returned a relaxed center proposal for each OPEN cell, which is not a physical packing or an exact feasibility certificate.",
-  "open_cell_discovery_report": "../computer_assisted/dense_original_cell_report.json"
+  "open_cell_obstruction": "No complete proof is known for this unchanged original path. Physical-pair, bound and original-frame continuation trees retain all unresolved descendants internally; partial trials do not replace this parent.",
+  "open_cell_discovery_report": "../computer_assisted/a2_00100_physical_pair_closure_manifest.json",
+  "baseline_assembly": "../A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md",
+  "baseline_manifest": "../computer_assisted/a2_00100_fixed_frontier_manifest.json",
+  "latest_new_closed_cells": 99
 }

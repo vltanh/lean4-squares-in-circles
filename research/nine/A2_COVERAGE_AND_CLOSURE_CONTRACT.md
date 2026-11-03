@@ -164,8 +164,9 @@ placement may be assumed without proof.
 
 The November 3 [fixed-cover checkpoint](A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md)
 establishes the exhaustive cover of this full predicate. Its baseline has
-11,278 proved leaves and 231 fixed unresolved original cells; complete
-substitutions exclude 53 of those cells and leave 178 OPEN. The
+11,278 proved leaves and 231 fixed unresolved original cells. The original
+53 substitutions and [99 further complete cell proofs](A2_00100_PHYSICAL_PAIR_CLOSURE_CHECKPOINT.md)
+now exclude 152 of those cells and leave 79 OPEN. The
 [stable register](gates/A2_00100_FIXED_FRONTIER.json) retains every original
 path and its physical caller. Shared closed faces are allowed. This
 coverage-qualified count is separate from all 32 mask statuses.

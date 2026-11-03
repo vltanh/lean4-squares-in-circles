@@ -1,0 +1,57 @@
+{
+  "schema": "a2-00100-physical-pair-closure-delivery-v1",
+  "baseline_commit": "714d2fd0c91a7c8543e63fd10a00a7eaf912cd0d",
+  "target_mask": "001/00",
+  "reversal_partner": "100/00",
+  "strict_q": "1105/256",
+  "archive": "a2_00100_physical_pair_closure_checkpoint.tar.gz",
+  "archive_sha256": "56203e855c020818a43628fab97c7d2d270ca64ee0122b0db41c6ba65da1b869",
+  "archive_bytes": 781609,
+  "archive_directory": "a2_00100_physical_pair_checkpoint",
+  "original_cell_count": 231,
+  "new_closed_original_cells": 99,
+  "before": {
+    "closed": 53,
+    "open": 178
+  },
+  "after": {
+    "closed": 152,
+    "open": 79
+  },
+  "physical_tree_cells": 94,
+  "physical_tree_terminal_leaves": 865,
+  "weighted_leaves": 466,
+  "explicit_weighted_rows": 6027,
+  "additional_derived_bound_cells": 5,
+  "additional_bound_deductions": 284,
+  "bound_certificates_replayed_including_alternative": 6,
+  "bound_deductions_replayed_including_alternative": 316,
+  "duplicated_alternative_cell": "negative-e82c87a207fdb074",
+  "whole_masks": {
+    "closed": 8,
+    "open": 24,
+    "new": 0
+  },
+  "positional_roots": {
+    "closed_historical": 5838,
+    "open": 2077,
+    "new": 0
+  },
+  "roadmap_gate_count": 15,
+  "new_roadmap_closures": 0,
+  "lean_lake_ci_run": false,
+  "proof": "../A2_00100_PHYSICAL_PAIR_CLOSURE_CHECKPOINT.md",
+  "register": "../gates/A2_00100_FIXED_FRONTIER.json",
+  "index": "cell_index.json",
+  "arithmetic_reports": [
+    "physical_union_exact_review.json",
+    "physical_v2_exact_review.json",
+    "derived_bound_exact_review.json",
+    "root_printed_arithmetic.json",
+    "physical_v2_printed_review.json"
+  ],
+  "inherited_frozen_verifier_sha256": "ec1b7de7b15bcc9d89d12087bff974c68e6d056bdaae26b482d514027ec97993",
+  "original_archive_git_blob": "4a104744e1bf439e006a1c034eea284fd22fa8c8",
+  "old_baseline_arithmetic_repeated": false,
+  "human_or_kernel_verification": false
+}

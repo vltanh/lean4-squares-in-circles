@@ -4,6 +4,16 @@ November 3, 2026. This is an EXECUTION PLAN, not a mathematical closure
 certificate. It makes **no** additional claim about masks, original roots,
 roadmap gates or equality classification. No Lean, Lake or CI.
 
+
+**Executed checkpoint:** the prescribed pilot stage has now produced complete
+original-parent proofs, and its successful physical separation method was
+scaled. The [accepted continuation](A2_00100_PHYSICAL_PAIR_CLOSURE_CHECKPOINT.md)
+closes 99 additional original cells: the current register is **152 CLOSED /
+79 OPEN**, not the original 53/178 planning baseline printed below. Five
+of the eight pilot parents are complete. The original IDs, strict caller,
+full-mask count and all 15 roadmap IDs remain unchanged. The current
+handoff governs continuing work; this document preserves the plan's origin.
+
 ## Invariants and the one real exit condition
 
 Use the exact original `D_001/00^lt` from
@@ -209,3 +219,4 @@ If a proof-producing pilot stalls, record the exact original ID,
 unproved branch and obstruction in the same register/handoff. Do not
 promote numerical feasibility or partial trees to claimed progress.
 No new mandatory roadmap subgates; no Lean, Lake or CI. 
+
