@@ -1,4 +1,4 @@
-> **Latest verified checkpoint:** [Complete inward-row child 5](A2_00100_A_INWARD_CHILD5_WHOLE_PARENT_CLOSURE.md), following the preceding seventeen whole-original proofs, brings the same register to **192 CLOSED / 39 OPEN**, with A7, B19, C9 and D4 open. The 168/63 and family counts below are historical. Its whole-parent acceptance rules remain operative; the [current handoff](HANDOFF_A2_FIXED_CLOSURE.md) governs live counts.
+> **Latest verified checkpoint:** [Complete C60b H-center cover](A2_00100_C60B_FIXED_H_COVER_CLOSURE.md), following eighteen complete original proofs, brings the same register to **193 CLOSED / 38 OPEN**, with A7, B19, C8 and D4 open. The 168/63 and family counts below are historical. Its whole-parent acceptance rules remain operative; the [current handoff](HANDOFF_A2_FIXED_CLOSURE.md) governs live counts.
 
 # A.2 / 001/00: shared whole-domain closure directive (November 3, 2026)
 

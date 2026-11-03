@@ -9,11 +9,11 @@
   "coverage_kind": "EXHAUSTIVE_FINITE_COVER_WITH_SHARED_CLOSED_FACES",
   "coverage_certified": true,
   "id_rule": "sign + hyphen + first 16 hexadecimal digits of SHA256(json.dumps(path,separators=(comma,colon))); full path retained and checked.",
-  "assembly": "../A2_00100_A_INWARD_CHILD5_WHOLE_PARENT_CLOSURE.md",
+  "assembly": "../A2_00100_C60B_FIXED_H_COVER_CLOSURE.md",
   "physical_review": "../A2_00100_FIXED_FRONTIER_PHYSICAL_REVIEW.md",
   "coverage_review": "../A2_00100_V13_COVERAGE_INDEPENDENT_REVIEW.md",
-  "cell_review": "../A2_00100_A_INWARD_CHILD5_WHOLE_PARENT_CLOSURE.md",
-  "manifest": "../computer_assisted/a2_00100_inward_child5_manifest.json",
+  "cell_review": "../A2_00100_C60B_FIXED_H_COVER_CLOSURE.md",
+  "manifest": "../computer_assisted/a2_00100_c60b_h_center_manifest.json",
   "payload_register": "fixed_231_register.json",
   "baseline_forest_sha256": {
     "positive": "f6518c23a00c32e1f3d3915d1cd89cd24d162f459a6fc03a721fb843cc878d78",
@@ -22,8 +22,8 @@
   "scope": "Coverage-qualified fixed original full-nine large-gap cells; all 231 IDs and paths immutable.",
   "whole_mask_closed": false,
   "original_cells": 231,
-  "closed_cells": 192,
-  "open_cells": 39,
+  "closed_cells": 193,
+  "open_cells": 38,
   "cells": [
     {
       "id": "positive-655c4b699ba028a1",
@@ -14929,12 +14929,38 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_c60b_h_center_checkpoint.tar.gz",
+        "method": "fixed_original_H_center_cover_and_complete_rectangle",
         "record_id": "negative-60b1043c8c722dd5",
-        "whole_cell_exclusion": null
-      }
+        "certificate": "certificates/negative-60b1043c8c722dd5.json",
+        "certificate_sha256": "cce07c27965d6b507b4365b47003a961f57c43d01008eea13b167cc4bfbdd643",
+        "union_certificate": "certificates/negative-60b1043c8c722dd5_covering_H_rectangle.json",
+        "union_certificate_sha256": "cb98871b0b58c45d276936030786fda8a924a451684cabeb0be3ebc6d06817da",
+        "checker": "verify_fixed_h_canonical_v3_parent.py",
+        "checker_sha256": "417dd8fb48479e8d3c278f31f6d473cd61184b961b2cd44f4b4ea2697ca4f17a",
+        "independent_report": "accepted_reports/c60b_complete_H_independent_replay.json",
+        "independent_report_sha256": "9a6096b9a1500046e6f0eb9fa5e11303aa5d4f88a2649c93ef871ba59b2e4288",
+        "prior_coordinate_deductions": 31,
+        "new_exact_deductions": 629,
+        "printed_rows_checked": 1815,
+        "complete_terminal_domains": 61,
+        "target_original": 7,
+        "fixed_grid_tiles": 64,
+        "static_tiles_checked": 60,
+        "covering_rectangle_tiles": [
+          16,
+          17,
+          24,
+          25
+        ],
+        "adaptive_grid_splits": 0,
+        "bound_induction_branch_nodes": 0,
+        "terminal_kind": "positive_exact_reserve"
+      },
+      "method": "fixed_original_H_center_cover_and_complete_rectangle",
+      "terminal_leaves": 61
     },
     {
       "id": "negative-887236b78100baf3",
@@ -22685,7 +22711,7 @@
   "baseline_assembly": "../A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md",
   "baseline_manifest": "../computer_assisted/a2_00100_fixed_frontier_manifest.json",
   "latest_new_closed_cells": 1,
-  "cumulative_new_closed_since_53": 139,
-  "preceding_assembly": "../A2_00100_SHARED_CENTER_REMAINDER_CLOSURE.md",
-  "preceding_manifest": "../computer_assisted/a2_00100_shared_center_remainder_manifest.json"
+  "cumulative_new_closed_since_53": 140,
+  "preceding_assembly": "../A2_00100_A_INWARD_CHILD5_WHOLE_PARENT_CLOSURE.md",
+  "preceding_manifest": "../computer_assisted/a2_00100_inward_child5_manifest.json"
 }
