@@ -206,5 +206,54 @@ The earlier full masks and the 393,755-leaf component checkpoint remain
 accepted with their recorded scopes. The unchanged contract is
 `A2_COVERAGE_AND_CLOSURE_CONTRACT.md`.
 
+## November 3 continuation: exact proxy targets for all 178 LP proposals (no gate closure)
 
+The 178 saved full-matrix LP center proposals are grossly unphysical:
+the decimals, interpreted exactly as rational numbers, give a distinct
+original pair with both coordinate gaps smaller than 7/10 and squared
+center distance smaller than 1/2 in **every** proposal. A direct
+rational audit selected the pair minimizing its maximum coordinate
+gap, with lexicographic ties. The chosen pairs, grouped across the
+178 unchanged original IDs, are HI 114, FH 25, FI 14, DI 11, CI 4,
+BH 4, GI 4, CH 2.
 
+Why this is a valid attack direction: every physical unit square
+contains an axis-aligned square inset with halfwidth
+g_i=1/(4h_i) >= 1/(2sqrt(2)). Thus for any physical original pair
+one of the four signed x/y center differences is at least
+g_i+g_j >= 1/sqrt(2) > 7/10. The existing four-way proxy branch
+retains exactly these signed alternatives. For each saved candidate,
+all four original-pair proxy alternatives exclude that candidate
+point. This is a **point-level diagnostic**, not a proof that any of
+the four full descendant domains is empty.
+
+The [fixed 178-cell attack schedule](computer_assisted/a2_00100_proxy_attack_schedule.json)
+preserves the exact original OPEN cell IDs and suggests a single
+physical pair for the next exhaustive full-parent split. The
+[Fraction-only checker](computer_assisted/verify_a2_00100_proxy_attack_schedule.py)
+is provided for independent replay of the entire schedule and
+its center inequalities against the current fixed register.
+These two files impose no new roadmap or mandatory subgate.
+
+**Next execution:** for each suggested original ID, split once on
+the already available four signed proxy alternatives for its
+recorded pair, then demand complete exact child exclusions and
+independent subtree coverage. If any child remains unproved, keep
+the original parent OPEN; do not replace it by a partial trial.
+This directly attacks the failed all-178 unguarded LP pass rather
+than repeatedly expanding angle-only or circle-support rows.
+
+Independent exploratory center-only MILPs, and an orientation-binned
+necessary MILP retaining original shared angle-bin choices, all
+36 physical pair alternatives, and the 105 known alternative-chain
+selectors, still returned relaxed feasible points. These are not
+physical nine-square packings. A different six-inset line-capacity
+cut removed only **six** of the original 178 LP proposals at the
+correct width 7/10; earlier rougher counts using a double-width
+window were erroneous and are withdrawn. None of these experiments
+is an exact infeasibility certificate for a complete path.
+
+**Fixed status: 53/231 original cells CLOSED, 178 OPEN; 8/32 masks
+CLOSED, 24 OPEN; 5,838/7,915 positional roots excluded, 2,077 OPEN.
+Zero new mask, positional-root, or roadmap-gate closures.**
+No Lean, Lake, or CI has been run.
