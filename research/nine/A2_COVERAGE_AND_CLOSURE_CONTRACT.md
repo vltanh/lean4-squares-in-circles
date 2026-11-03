@@ -172,8 +172,9 @@ followed by [three shared-capacity proofs](A2_00100_SHARED_CAPACITY_WHOLE_CELL_C
 and [three rotated-capacity/frame proofs](A2_00100_ROTATED_CAPACITY_AND_FRAME_CLOSURE.md),
 then [nine original-center capacity proofs](A2_00100_ORIGINAL_CENTER_CAPACITY_CLOSURE.md),
 [two further complete center covers](A2_00100_TWO_MORE_FIXED_CENTER_COVER_CLOSURES.md),
-and [six shared-center remainder proofs](A2_00100_SHARED_CENTER_REMAINDER_CLOSURE.md),
-now exclude 191 of those cells and leave 40 OPEN. The
+[six shared-center remainder proofs](A2_00100_SHARED_CENTER_REMAINDER_CLOSURE.md),
+and the [complete inward-child-5 proof](A2_00100_A_INWARD_CHILD5_WHOLE_PARENT_CLOSURE.md),
+now exclude 192 of those cells and leave 39 OPEN. The
 [stable register](gates/A2_00100_FIXED_FRONTIER.json) retains every original
 path and its physical caller. Shared closed faces are allowed. This
 coverage-qualified count is separate from all 32 mask statuses.

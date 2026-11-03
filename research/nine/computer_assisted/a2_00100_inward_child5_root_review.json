@@ -1,0 +1,54 @@
+{
+  "status": "PASS_INWARD_CHILD5_COMPLETE_ORIGINAL_AND_CANONICAL_INTEGRATION",
+  "previous_published_commit": "6a5352537ae766743b4e3631f415bb5216bcd214",
+  "archive_sha256": "5932ecb6f98812b302f7368fef6e4303d191278bee1893fb0800c4882666af74",
+  "manifest_sha256": "8fa0f717ea38fd07dc896167c409f843f486f95ee333275108bbea40469edfa9",
+  "immutable_extracted_files_rechecked": 74,
+  "required_sources_and_prefixes_bound_inside_package": 11,
+  "fresh_extracted_portable_replay_status": "PASS_ALL_COMPLETE_ORIGINAL_PARENTS",
+  "fresh_extracted_portable_summary_sha256": "e76c2802b51eb77e7d7abaf95b11893a7ab501edb389591952c1e2525b1c975e",
+  "full_original_paths_unchanged": 231,
+  "new_distinct_closed_ids": [
+    "positive-b819223a03e89ec7"
+  ],
+  "before": {
+    "closed": 191,
+    "open": 40
+  },
+  "after": {
+    "closed": 192,
+    "open": 39
+  },
+  "totals": {
+    "prior_coordinate_deductions": 47,
+    "whole_parent_new_deductions": 506,
+    "rectangle_new_deductions": 0,
+    "new_exact_deductions": 506,
+    "printed_rows_checked": 767,
+    "complete_terminal_domains": 1,
+    "whole_parent_terminal_domains": 1,
+    "fixed_grid_tiles": 0,
+    "static_terminal_domains": 0,
+    "complete_rectangle_domains": 0
+  },
+  "completed_existing_domain_assemblies": 1,
+  "scope_audit_replayed": true,
+  "exact_terminal_reserve": "20811879574899124505286098598197503157525954258395064183852425929415562177040861/1631289337022991579987834092207186986714227496720874477179302485286623117312000000",
+  "hand_terminal_arithmetic_checked_against_certificate": true,
+  "open_by_family": {
+    "A": 7,
+    "B": 19,
+    "C": 9,
+    "D": 4
+  },
+  "global_mask_ledger_byte_unchanged": true,
+  "whole_masks": {
+    "closed": 8,
+    "open": 24
+  },
+  "new_positional_root_exclusions": 0,
+  "new_roadmap_gate_closures": 0,
+  "lean_lake_ci_run": false,
+  "proof_kernel_verification": false,
+  "human_verification": false
+}
