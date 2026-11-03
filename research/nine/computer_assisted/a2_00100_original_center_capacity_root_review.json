@@ -1,0 +1,90 @@
+{
+  "status": "PASS_NINE_COMPLETE_ORIGINALS_AND_CANONICAL_INTEGRATION",
+  "baseline_commit": "cab1367cd3792ff73034a81e3017cec2779b6cf1",
+  "archive_sha256": "98deacea890cad968e8a2b83bc6efb2454dc14057717d072a4753674916aba6b",
+  "immutable_extracted_files_rechecked": 315,
+  "fresh_extracted_complete_parent_replays": [
+    {
+      "id": "positive-8f760b2d708ad21d",
+      "status": "PASS_COMPLETE_ORIGINAL_PARENT",
+      "fresh_report_sha256": "68d2d3eaf157936a2e2e3db63d4783669ac0c0c7249aacbafd943fc26b20e6ce"
+    },
+    {
+      "id": "negative-a3ab8823d7fe0fa6",
+      "status": "PASS_COMPLETE_ORIGINAL_PARENT",
+      "fresh_report_sha256": "fd4fb3115120dbe6d6df0a66fddd416e6491e90535810bee59a06858190dd8de"
+    },
+    {
+      "id": "negative-ab8b276e0338d7f0",
+      "status": "PASS_COMPLETE_ORIGINAL_PARENT",
+      "fresh_report_sha256": "8b1cddacc1107a5e62a76bd57809931dbf6cfa050afb42baa6f4e5bed1920ee9"
+    },
+    {
+      "id": "positive-3da90694b58b6ef7",
+      "status": "PASS_COMPLETE_ORIGINAL_PARENT",
+      "fresh_report_sha256": "12ba4145d1290c2f7802648a12e243b04b2f3efedd89ac0e36f8dd6457793bee"
+    },
+    {
+      "id": "positive-3b5d35fda8ec4119",
+      "status": "PASS_COMPLETE_ORIGINAL_PARENT",
+      "fresh_report_sha256": "86f41cc11bc81f3b663542270b4f0255610b525363853eaef92205e98552b197"
+    },
+    {
+      "id": "negative-493c2b626cdbf986",
+      "status": "PASS_COMPLETE_ORIGINAL_PARENT",
+      "fresh_report_sha256": "cf72cece91321019076ab72bd87ae48cf976d0f48414ce519b54713524af6569"
+    },
+    {
+      "id": "negative-f92d74e712afa6be",
+      "status": "PASS_COMPLETE_ORIGINAL_PARENT",
+      "fresh_report_sha256": "e972bd1d2f5d665450f7a0effc65895409d9cf809b48bb7f270c566c7ac8a773"
+    },
+    {
+      "id": "negative-b8e4f47ec1258e16",
+      "status": "PASS_COMPLETE_ORIGINAL_PARENT",
+      "fresh_report_sha256": "4d4dad67b41128fc55bc185716c19d81913f7bcde4d540b6b56dc95e0aa8d96a"
+    },
+    {
+      "id": "negative-1de449e714cf90dd",
+      "status": "PASS_COMPLETE_ORIGINAL_PARENT",
+      "fresh_report_sha256": "e7b30f739170c9e7d3dc43073dfb110294df93af6f784a09ea2c2adea0d9e7cd"
+    }
+  ],
+  "full_original_paths_unchanged": 231,
+  "new_distinct_closed_ids": [
+    "negative-1de449e714cf90dd",
+    "negative-493c2b626cdbf986",
+    "negative-a3ab8823d7fe0fa6",
+    "negative-ab8b276e0338d7f0",
+    "negative-b8e4f47ec1258e16",
+    "negative-f92d74e712afa6be",
+    "positive-3b5d35fda8ec4119",
+    "positive-3da90694b58b6ef7",
+    "positive-8f760b2d708ad21d"
+  ],
+  "before": {
+    "closed": 174,
+    "open": 57
+  },
+  "after": {
+    "closed": 183,
+    "open": 48
+  },
+  "totals": {
+    "prior_coordinate_deductions": 326,
+    "new_exact_deductions": 4833,
+    "printed_rows_checked": 8588,
+    "complete_terminal_domains": 261
+  },
+  "global_mask_ledger_byte_unchanged": true,
+  "whole_masks": {
+    "closed": 8,
+    "open": 24
+  },
+  "new_positional_root_exclusions": 0,
+  "new_roadmap_gate_closures": 0,
+  "local_proof_links_checked": 18,
+  "lean_lake_ci_run": false,
+  "proof_kernel_verification": false,
+  "human_verification": false
+}

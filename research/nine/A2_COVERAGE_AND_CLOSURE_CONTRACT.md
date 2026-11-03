@@ -170,7 +170,8 @@ plus [seven bound-plus-pair proofs](A2_00100_BOUND_PAIR_CONTINUATION.md)
 and [nine distance/frame proofs](A2_00100_ORDERED_DISTANCE_AND_FRAME_CONTINUATION.md),
 followed by [three shared-capacity proofs](A2_00100_SHARED_CAPACITY_WHOLE_CELL_CLOSURE.md)
 and [three rotated-capacity/frame proofs](A2_00100_ROTATED_CAPACITY_AND_FRAME_CLOSURE.md),
-now exclude 174 of those cells and leave 57 OPEN. The
+then [nine original-center capacity proofs](A2_00100_ORIGINAL_CENTER_CAPACITY_CLOSURE.md),
+now exclude 183 of those cells and leave 48 OPEN. The
 [stable register](gates/A2_00100_FIXED_FRONTIER.json) retains every original
 path and its physical caller. Shared closed faces are allowed. This
 coverage-qualified count is separate from all 32 mask statuses.

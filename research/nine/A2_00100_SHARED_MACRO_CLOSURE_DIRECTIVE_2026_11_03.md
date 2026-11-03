@@ -1,3 +1,5 @@
+> **Latest verified checkpoint:** [Nine original-center capacity proofs](A2_00100_ORIGINAL_CENTER_CAPACITY_CLOSURE.md) bring the same register to **183 CLOSED / 48 OPEN**, with A12, B22, C9 and D5 open. The 168/63 and family counts below are the historical status when this strategy directive was issued. Its whole-parent acceptance rules remain operative; the [current handoff](HANDOFF_A2_FIXED_CLOSURE.md) governs live counts.
+
 # A.2 / 001/00: shared whole-domain closure directive (November 3, 2026)
 
 **OPERATIONAL PRIORITY — supersedes the execution priorities, not the proven mathematical statements, in earlier handoffs and plans. This is a strategy directive, NOT a new theorem or closure certificate.**

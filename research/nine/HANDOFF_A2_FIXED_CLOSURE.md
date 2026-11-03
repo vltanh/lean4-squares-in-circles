@@ -1,27 +1,21 @@
-> **CURRENT EXECUTION PRIORITY:** [Shared original-nine macro closure](A2_00100_SHARED_MACRO_CLOSURE_DIRECTIVE_2026_11_03.md). The shared-capacity continuations close **six complete originals with no new splits**, three in A and three in B. Current accounting: **174/231 cells CLOSED, 57 OPEN; 8/32 masks CLOSED, 24 OPEN.** Continue shared whole-parent arguments; unfinished deeper trees are not accepted advancement.
+> **CURRENT EXECUTION PRIORITY:** [Shared original-nine macro closure](A2_00100_SHARED_MACRO_CLOSURE_DIRECTIVE_2026_11_03.md). The latest shared original-center capacity argument closes **nine complete originals** across A, B, C and D. Current accounting: **183/231 cells CLOSED, 48 OPEN; 8/32 masks CLOSED, 24 OPEN.** Continue shared whole-parent arguments; unfinished deeper trees are not accepted advancement.
 
-> The [preceding session handoff](A2_00100_SESSION_HANDOFF_2026_11_03.md)
-> records the historical 159/72 checkpoint. Its unintegrated D-pilot and
-> B-cell results now have complete source-bound certificates in the latest
-> continuation. A further shared-capacity proof now brings the current
-> accepted accounting to **174 CLOSED / 57 OPEN**.
+# Current A.2 handoff: 183/231 current-mask cells closed; 48 OPEN
 
-# Current A.2 handoff: 174/231 current-mask cells closed; 57 OPEN
-
-November 3, 2026. **Six further whole original cells are proved by shared
-capacity and physical frame arguments**, after the preceding 99, seven and nine:
-**121 additions beyond the original 53**.
-The fixed `001/00` cover has **174 CLOSED / 57 OPEN**. The whole-mask
+November 3, 2026. **Nine further whole original cells are proved by
+shared center capacity and physical frame arguments**, after the previous
+174-cell checkpoint: **130 additions beyond the original 53**.
+The fixed `001/00` cover has **183 CLOSED / 48 OPEN**. The whole-mask
 ledger is still **8 CLOSED / 24 OPEN**. `001/00`, `100/00`, A.2, the
 unrestricted bound, equality classification and final manuscript remain
 OPEN. No Lean, Lake or CI.
 
 ## Read first
 
-1. [Current rotated-capacity/frame continuation](A2_00100_ROTATED_CAPACITY_AND_FRAME_CLOSURE.md),
-   following the three-A, nine-cell, seven-cell and 99-cell checkpoints.
+1. [Current original-center capacity assembly](A2_00100_ORIGINAL_CENTER_CAPACITY_CLOSURE.md),
+   including nine unchanged original paths, their complete proofs and exact scope.
 2. [Same 231 original paths and current statuses](gates/A2_00100_FIXED_FRONTIER.json).
-3. [Latest source-bound certificates, rational tables and exact reports](computer_assisted/a2_00100_rotated_capacity_manifest.json).
+3. [Latest portable certificates, source bindings and reports](computer_assisted/a2_00100_original_center_capacity_manifest.json).
 4. [Original full-domain cover and first 53 proofs](A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md),
    and its physical/coverage reviews. Their mathematical scopes are unchanged.
 
@@ -44,7 +38,7 @@ by inventing positive clearance. Every internal case split must cover its
 entire parent, including ties, orientation endpoints and physical contact.
 
 The full-mask cover is already CERTIFIED. Preserve all 231 IDs and exact
-ancestor paths; the uncovered register is now exactly 57 original IDs.
+ancestor paths; the uncovered register is now exactly 48 original IDs.
 Credit a cell only after every descendant closes and the full parent
 union is independently checked. An incomplete tree remains internal to
 its unchanged OPEN parent. Numerical LP points and necessary inequalities
@@ -58,16 +52,37 @@ Do not compile Lean, run Lake, or trigger CI. Preserve the same 32 masks,
 
 ## What the latest continuation actually closed
 
-The [latest B-family continuation](A2_00100_ROTATED_CAPACITY_AND_FRAME_CLOSURE.md)
-closes `negative-336d2542a912859a`, `negative-f9e691c011ecb5af` and
-`negative-364c20a39079cecd`. Their full independent replay checks 124
-inherited and 1,592 new exact deductions, all projected order/width
-guards, strict forced-sign implications, and 1,931 printed rows. The
-first two derive the same original D-frame contradiction and together
-cover both existing F-height alternatives of one B routing combination.
-The third contradicts the physical H/I center distance. All original
-parents are complete; there are zero new case splits. Seven semantic
-damages were rejected and four exact contact controls passed.
+The [nine-cell original-center capacity assembly](A2_00100_ORIGINAL_CENTER_CAPACITY_CLOSURE.md)
+closes two A originals, five B originals, one C original and one D original.
+The complete proofs contain 326 inherited coordinate deductions, 4,833
+new exact deductions, 8,588 checked printed rows and 261 terminal domains.
+Four whole parents end in exact positive sums. Two use complete 61- and
+11-rectangle center covers. Three use fixed 8-by-8 covers with one complete
+covering rectangle apiece. All closed faces and all original conditions
+are retained. The 70 binary center-cover splits and three fixed grids are
+explicit internal proof regions, not new original cells or masks.
+
+The two B originals `negative-f92d74e712afa6be` and
+`negative-1de449e714cf90dd` differ only in the old F-height alternative.
+Their complete proofs close the common F/H child-6, F/I child-5 routing
+for every F height, including its boundary. The [three-B hand assembly](A2_00100_THREE_B_FIXED_CENTER_COVER_CLOSURE.md)
+records the exact entailment map and a short original D-frame contradiction
+for `negative-b8e4f47ec1258e16`.
+
+Every new original passed independent physical-row, rational-sum, bound
+induction and complete-cover replay. The portable package binds the frozen
+174/57 register and all producer source snapshots; its verifier requires
+only standard-library Python. Seven physical/cover and six fixed-grid
+semantic damaged controls are retained. No human or proof-kernel
+verification is claimed.
+
+### Preceding three B originals
+
+The [preceding rotated-capacity continuation](A2_00100_ROTATED_CAPACITY_AND_FRAME_CLOSURE.md)
+closed `negative-336d2542a912859a`, `negative-f9e691c011ecb5af` and
+`negative-364c20a39079cecd`, reaching 174 CLOSED / 57 OPEN. Their frozen
+proofs, including all 124 inherited and 1,592 new deductions and 1,931
+printed rows, remain accepted without modification.
 
 ### Preceding three A originals
 
@@ -105,8 +120,8 @@ A separate implementation verifies all printed rational sums.
 
 The preceding seven family-A proofs remain accepted and immutable. The
 former 53 + preceding 99 + seven + nine give the historical **168 CLOSED /
-63 OPEN** checkpoint; the latest six bring this to **174 CLOSED / 57
-OPEN**. Every new ID is distinct and was OPEN before its continuation.
+63 OPEN** checkpoint; the preceding six reached **174 CLOSED / 57
+OPEN**, and the current nine bring this to **183 CLOSED / 48 OPEN**. Every new ID is distinct and was OPEN before its continuation.
 The whole-mask count remains eight. No partial tree is promoted.
 
 The [distance hand proof](A2_00100_ORDERED_DISTANCE_HAND_PROOF.md) derives
@@ -142,11 +157,11 @@ certificates remain in force alongside the later seven and nine.
 
 | Same early branch family | Original OPEN baseline | Cumulative newly closed | Still OPEN |
 |---|---:|---:|---:|
-| A: positive D, nonpositive A, inward-row escapes | 77 | 63 | 14 |
-| B: negative D, nonpositive A, F-height branches | 39 | 12 | 27 |
-| C: negative D, nonnegative A, alternate-chain escapes | 33 | 23 | 10 |
-| D: positive D, nonnegative A, alternate-chain escapes | 29 | 23 | 6 |
-| Total | 178 | 121 | 57 |
+| A: positive D, nonpositive A, inward-row escapes | 77 | 65 | 12 |
+| B: negative D, nonpositive A, F-height branches | 39 | 17 | 22 |
+| C: negative D, nonnegative A, alternate-chain escapes | 33 | 24 | 9 |
+| D: positive D, nonnegative A, alternate-chain escapes | 29 | 24 | 5 |
+| Total | 178 | 130 | 48 |
 
 ## Current attack and its actual limitations
 
@@ -208,7 +223,7 @@ not follow merely from another selected-seven necessary inequality.
 
 - Original-nine masks: 8 CLOSED / 24 OPEN. Closed are `000/00`, `000/01`,
   `000/10`, `000/11`, `010/00`, `010/01`, `010/10`, `010/11`.
-- Current-mask cells: the same 231 IDs, 174 CLOSED / 57 OPEN; coverage
+- Current-mask cells: the same 231 IDs, 183 CLOSED / 48 OPEN; coverage
   certified, all unchanged path identities checked.
 - Positional roots: 5,838 historical closed-Q exclusions / 2,077 OPEN
   among the same 7,915 IDs. Equality root 7820 remains possible at Q.
