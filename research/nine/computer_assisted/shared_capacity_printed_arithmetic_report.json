@@ -1,0 +1,32 @@
+{
+  "checker_sha256": "df3e5e54fb0602c82cc80bae21c0343849889f5d0990ab8ca5087c27d75ea6f2",
+  "reports": [
+    {
+      "id": "positive-033850931bb6d4ef",
+      "status": "PASS_PRINTED_RATIONAL_ARITHMETIC",
+      "source_sha256": "793810d2986272e40daa18e3a6992a340ad1f97366a8198e3bd268f21efab4fa",
+      "deductions": 575,
+      "printed_rows": 475,
+      "positive_terminal_reserve": "8929382507225583434487/1511157274518286468382720",
+      "scope": "Arithmetic only; separate original-parent physical/state replay is required."
+    },
+    {
+      "id": "positive-3cd9c2a7981effa2",
+      "status": "PASS_PRINTED_RATIONAL_ARITHMETIC",
+      "source_sha256": "9044084710c58146d05a8598b37ff2a25114758f4003ae1ca969625039a859a3",
+      "deductions": 580,
+      "printed_rows": 484,
+      "positive_terminal_reserve": "8929382507225583434487/1511157274518286468382720",
+      "scope": "Arithmetic only; separate original-parent physical/state replay is required."
+    },
+    {
+      "id": "positive-b696531e6d132c9e",
+      "status": "PASS_PRINTED_RATIONAL_ARITHMETIC",
+      "source_sha256": "dc40a92af77feebf14789f65173208b936a8dc2ef2a4a0c696bf58e15a52a4ef",
+      "deductions": 196,
+      "printed_rows": 327,
+      "positive_terminal_reserve": "33805/262144",
+      "scope": "Arithmetic only; separate original-parent physical/state replay is required."
+    }
+  ]
+}

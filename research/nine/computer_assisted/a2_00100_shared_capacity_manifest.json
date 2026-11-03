@@ -1,0 +1,51 @@
+{
+  "schema": "a2_00100_shared_capacity_delivery_v1",
+  "baseline_commit": "1aa95cfaa186388e5ddc986f18eb288c87b9a264",
+  "target_mask": "001/00",
+  "reversal_partner": "100/00",
+  "strict_q": "1105/256",
+  "archive": "a2_00100_shared_capacity_checkpoint.tar.gz",
+  "archive_sha256": "41f74554ecc077f167b0a222f45e7ba137b21302ff8d98fe736dc8a6ef61f967",
+  "archive_bytes": 980828,
+  "archive_directory": "accepted_v1_aggregate",
+  "new_closed_original_cells": 3,
+  "new_closed_ids": [
+    "positive-033850931bb6d4ef",
+    "positive-3cd9c2a7981effa2",
+    "positive-b696531e6d132c9e"
+  ],
+  "before": {
+    "closed": 168,
+    "open": 63
+  },
+  "after": {
+    "closed": 171,
+    "open": 60
+  },
+  "cumulative_new_since_53": 118,
+  "prior_coordinate_deductions": 185,
+  "new_exact_deductions": 1351,
+  "terminal_paths": 3,
+  "final_weighted_rows": 16,
+  "printed_rows_across_new_rounds_and_terminals": 1286,
+  "new_branch_nodes": 0,
+  "whole_masks": {
+    "closed": 8,
+    "open": 24,
+    "new": 0
+  },
+  "new_original_root_exclusions": 0,
+  "new_roadmap_gate_closures": 0,
+  "original_ids_and_paths_unchanged": true,
+  "lean_lake_ci_run": false,
+  "human_or_kernel_verification": false,
+  "proof": "../A2_00100_SHARED_CAPACITY_WHOLE_CELL_CLOSURE.md",
+  "register": "../gates/A2_00100_FIXED_FRONTIER.json",
+  "portable_replay": "verify_shared_bound.py --all",
+  "rejection_controls": "check_rejection_controls.py",
+  "standalone_hand_table_check": "check_shared_capacity_hand_tables.py a2_00100_shared_capacity_checkpoint.tar.gz",
+  "printed_arithmetic_report": "shared_capacity_printed_arithmetic_report.json",
+  "short_hand_table_report": "shared_capacity_short_hand_table_report.json",
+  "discovery_pass_summary": "shared_capacity_initial_63_pass_summary.json",
+  "archive_files_bound": 44
+}

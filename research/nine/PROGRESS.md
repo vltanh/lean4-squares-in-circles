@@ -1,21 +1,47 @@
-> **NEW PRIMARY EXECUTION DIRECTIVE (November 3, 2026):** [Shared original-nine macro-closure strategy](A2_00100_SHARED_MACRO_CLOSURE_DIRECTIVE_2026_11_03.md). **Stop prioritizing ever-deeper partial certificate trees**; seek a single proved all-nine argument closing **multiple** of the 63 OPEN original cells, initially targeting the 30-cell B family and the omitted squares H/I. Prove all strict/boundary guards before crediting a cell. **Ledger unchanged: 168/231 cells CLOSED, 63 OPEN; 8/32 masks CLOSED, 24 OPEN.** This priority supersedes earlier search schedules, not their established proofs.
+> **CURRENT EXECUTION PRIORITY:** [Shared original-nine macro closure](A2_00100_SHARED_MACRO_CLOSURE_DIRECTIVE_2026_11_03.md). The first shared-capacity continuation closes **three complete originals with no new splits**, including both remaining originals in one early A branch. Current accounting: **171/231 cells CLOSED, 60 OPEN; 8/32 masks CLOSED, 24 OPEN.** Continue shared whole-parent arguments; do not count deeper unfinished trees as progress.
 
-# n=9: 168/231 current-mask cells closed; 63 remain OPEN
+# n=9: 171/231 current-mask cells closed; 60 remain OPEN
 
-**Latest verified continuation: nine further complete original-cell
-exclusions in `001/00`, after the preceding 99 and seven.** The fixed
-cover now has **168 CLOSED / 63 OPEN**: 115 new whole cells beyond the
+**Latest verified continuation: three complete original-cell exclusions
+from a shared capacity argument, with zero new case splits.** The fixed
+cover now has **171 CLOSED / 60 OPEN**: 118 new whole cells beyond the
 original 53. The full-mask ledger remains **8 CLOSED / 24 OPEN**.
 The current mask and its reversal remain OPEN. No Lean, Lake or CI.
 
-[Latest complete hand/table proof](A2_00100_ORDERED_DISTANCE_AND_FRAME_CONTINUATION.md) ·
+[Latest complete hand/table proof](A2_00100_SHARED_CAPACITY_WHOLE_CELL_CLOSURE.md) ·
 [Current fixed register](gates/A2_00100_FIXED_FRONTIER.json) ·
-[Latest portable exact evidence](computer_assisted/a2_00100_ordered_distance_frame_manifest.json) ·
+[Latest portable exact evidence](computer_assisted/a2_00100_shared_capacity_manifest.json) ·
 [Operative handoff](HANDOFF_A2_FIXED_CLOSURE.md)
 
 ## What changed
 
-The [latest nine complete parents](A2_00100_ORDERED_DISTANCE_AND_FRAME_CONTINUATION.md)
+The [shared capacity continuation](A2_00100_SHARED_CAPACITY_WHOLE_CELL_CLOSURE.md)
+closes `positive-033850931bb6d4ef`, `positive-3cd9c2a7981effa2` and
+`positive-b696531e6d132c9e`. A new physical three-square strip theorem
+and a quadratic family retaining every original inset-separation
+alternative supply exact necessary rows. Every strip/order guard is
+proved on its entire original parent. The complete induction has 1,351
+new rational deductions after 185 inherited coordinate deductions.
+
+The first two parents have the same seven final inequalities. Their
+[short hand table](SHARED_CAPACITY_SEVEN_ROW_HAND_TABLE.md) gives a
+positive rational combination with every coordinate coefficient exactly
+zero and a strictly negative right side. These are the last two OPEN
+originals in a common 14-original early A branch; its other 12 originals
+were already closed. The third parent has a two-row contradiction:
+three collinear original centers force span at least 2, but the entire
+parent proves span at most `228339/131072 < 2`.
+
+Every original path, old bound prefix, new row, physical frame inference,
+simultaneous update and terminal sum passed independent exact replay.
+The portable verifier uses only Python's standard library and no
+numerical optimizer. Separate printed arithmetic and five rejected
+damaged controls support the review. No new split, mask, positional-root
+exclusion or roadmap closure is claimed.
+
+### Preceding nine complete parents
+
+The [preceding nine complete parents](A2_00100_ORDERED_DISTANCE_AND_FRAME_CONTINUATION.md)
 combine 1,492 proved scalar deductions with 1,098 complete terminal
 paths: 1,052 positive rational contradictions and 46 interval or analytic
 terminals. Fresh independent replay checked every bound round, original
@@ -66,16 +92,16 @@ Fresh replay also accepted six recovered acyclic coordinate-bound
 certificates, with 316 deductions and six final contradictions. One is
 an alternative proof of a physical parent; the other five add IDs.
 That preceding union is **99 new original cells**, with no duplicate
-count; the seven preceding and nine latest proofs bring the cumulative addition to **115**. The first 53 cell proofs and the complete baseline cover remain
+count; the seven, nine and latest three proofs bring the cumulative addition to **118**. The first 53 cell proofs and the complete baseline cover remain
 unchanged. All 231 original IDs and exact ancestor paths are preserved.
 
 | Fixed family | Original OPEN baseline | Closed since baseline | Current OPEN |
 |---|---:|---:|---:|
-| A: inward-row escapes | 77 | 60 | 17 |
+| A: inward-row escapes | 77 | 63 | 14 |
 | B: F-height branches | 39 | 9 | 30 |
 | C: negative-D alternative-chain escapes | 33 | 23 | 10 |
 | D: positive-D alternative-chain escapes | 29 | 23 | 6 |
-| Total | 178 | 115 | 63 |
+| Total | 178 | 118 | 60 |
 
 This is whole-cell progress within a certified full-mask cover. It does
 not estimate remaining effort or discharge a whole mask. Every unfinished
@@ -86,7 +112,7 @@ internal tree leaves its original parent OPEN.
 | Ledger | Established | Still open |
 |---|---:|---:|
 | Original-nine strict-radius masks | 8 | 24 |
-| Current `001/00` fixed cells | 168 | 63 |
+| Current `001/00` fixed cells | 171 | 60 |
 | Historical positional closed-Q exclusions | 5,838 | 2,077 |
 
 The positional ledger retains the same 7,915 IDs and possible equality
@@ -124,7 +150,7 @@ substitutions. That historical package remains immutable.
 The entire strict `001/00` domain is the target; exact whole-witness
 reversal will transfer its eventual complete proof to `100/00`.
 The accepted [low-gap assembly](WEAK_OUTER_LOW_GAP_HAND_TABLE_ASSEMBLY.md)
-handles `|y_D-y_C|<=2/3`. All 63 remaining original cells belong to the
+handles `|y_D-y_C|<=2/3`. All 60 remaining original cells belong to the
 certified large-gap complement and retain all nine squares and strict bits.
 
 Use the proved unique-penultimate implications where their exact cone
@@ -155,4 +181,6 @@ and 21 explicit pending paths, so that original remains OPEN. All retained
 629 V3 and 163 V4 leaves were fully replayed, superseding the old V4 sample.
 The hard alternative-chain original separately retains ten pending paths.
 The [open continuation manifest](computer_assisted/a2_00100_open_continuation_manifest.json)
-preserves every partial proof's scope. The fixed register is unchanged.
+preserves every partial proof's scope. Those partial forests themselves
+change no original-cell status; the three new complete shared-capacity
+proofs are the accepted continuation recorded above.

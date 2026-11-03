@@ -1,0 +1,661 @@
+{
+  "schema": "fixed_original_shared_rule_pass_summary_v1",
+  "scope": "Initial 63 OPEN original cells, whole-parent v1 pass only",
+  "initial_open_originals": 63,
+  "completed_originals": 63,
+  "maximum_new_rounds_per_original": 3,
+  "new_branch_nodes": 0,
+  "discovery_counts": {
+    "OPEN": 60,
+    "CANDIDATE_CLOSED": 3
+  },
+  "acceptance_rule": "Only independently accepted complete certificates contribute to the mask ledger; OPEN state deductions do not exclude a cell.",
+  "input_location_retry": {
+    "id": "positive-2d5aba857f2f7602",
+    "status": "OPEN",
+    "new_branch_nodes": 0,
+    "seconds": 27.38242732300023,
+    "certificate_file": "positive-2d5aba857f2f7602.json",
+    "certificate_sha256": "07f24101508ef7bbc52b8823e3b08203a57345375dd58948ac6670a02e6cb2a0",
+    "input_location_repair": {
+      "purpose": "Input-location repair only; original prefix bytes and frozen producer unchanged. Retry after one of two batch workers finishes.",
+      "id": "positive-2d5aba857f2f7602",
+      "source": "historical sharp_frame/bounds/positive-2d5aba857f2f7602.json",
+      "copy": "isolated byte-identical input mirror",
+      "sha256": "87cd8c0f78c985302d87d123cbf85c018943fecd3c266e51febb684e275f6914"
+    }
+  },
+  "results": [
+    {
+      "id": "positive-3b5d35fda8ec4119",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 122,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "positive-3b5d35fda8ec4119.json",
+      "certificate_sha256": "a2646240eb50a392db7fdd51f7fd4d3da2679dc71900fbdaf29b6aff4a9f1374"
+    },
+    {
+      "id": "positive-2c719a20ef7510de",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 132,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "positive-2c719a20ef7510de.json",
+      "certificate_sha256": "be2a2f48e1dac7bd9cd1c38c2ac70ef4aec731b2beba7f730a8bb70697b06cce"
+    },
+    {
+      "id": "positive-6c5f13d07e5538df",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 199,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "positive-6c5f13d07e5538df.json",
+      "certificate_sha256": "e1ecd0ee22518f2d45d68429954fc24dae93473f545c0fd6a9b27a98c80d231a"
+    },
+    {
+      "id": "positive-c71dc2feef1abb0b",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 213,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "positive-c71dc2feef1abb0b.json",
+      "certificate_sha256": "ce3251cd31d2edd631e402fc3859dee42f41b2553203819e4303eac23e5ad230"
+    },
+    {
+      "id": "positive-821c9a2debeed0aa",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 206,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "positive-821c9a2debeed0aa.json",
+      "certificate_sha256": "db9de381437ea2368943b5e4933e51ef3300f9fa7d1569e164e98efbc6276976"
+    },
+    {
+      "id": "positive-a4979e5f2a7e8734",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 108,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "positive-a4979e5f2a7e8734.json",
+      "certificate_sha256": "e27d4374d7d5eb24a8b99afc92c7aac8cac35c89de812f2e917a84ee13e3b82f"
+    },
+    {
+      "id": "positive-033850931bb6d4ef",
+      "discovery_status": "CANDIDATE_CLOSED",
+      "rounds": 3,
+      "new_bound_deductions": 575,
+      "terminal": "positive_exact_reserve",
+      "reserve": "8929382507225583434487/1511157274518286468382720",
+      "certificate_file": "positive-033850931bb6d4ef.json",
+      "certificate_sha256": "793810d2986272e40daa18e3a6992a340ad1f97366a8198e3bd268f21efab4fa"
+    },
+    {
+      "id": "positive-3cd9c2a7981effa2",
+      "discovery_status": "CANDIDATE_CLOSED",
+      "rounds": 3,
+      "new_bound_deductions": 580,
+      "terminal": "positive_exact_reserve",
+      "reserve": "8929382507225583434487/1511157274518286468382720",
+      "certificate_file": "positive-3cd9c2a7981effa2.json",
+      "certificate_sha256": "9044084710c58146d05a8598b37ff2a25114758f4003ae1ca969625039a859a3"
+    },
+    {
+      "id": "positive-2dcf3464c0e0dafb",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 237,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "positive-2dcf3464c0e0dafb.json",
+      "certificate_sha256": "e9d70380cb2b62911ca59977a94653abc249dce573b0d6f61cfa10f0ecb1fe80"
+    },
+    {
+      "id": "positive-3bf14a18887cabaf",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 255,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "positive-3bf14a18887cabaf.json",
+      "certificate_sha256": "89f1700c6c79760ca644f2e18ae85ce58a4e35711fbf25949f9abb9397a3ddf8"
+    },
+    {
+      "id": "positive-b4a9a3bc15e37620",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 222,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "positive-b4a9a3bc15e37620.json",
+      "certificate_sha256": "5d2ec9bf9461451be34973b8997d4dd5bf083cd8a2ff1378c7f6d31f681c1ab8"
+    },
+    {
+      "id": "positive-2d5aba857f2f7602",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 395,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "positive-2d5aba857f2f7602.json",
+      "certificate_sha256": "07f24101508ef7bbc52b8823e3b08203a57345375dd58948ac6670a02e6cb2a0"
+    },
+    {
+      "id": "positive-8b53ccaa15bad220",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 167,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "positive-8b53ccaa15bad220.json",
+      "certificate_sha256": "c317d30cd8b713779529bfdb8e20f3891a3613927695ff0674bfa9440508d126"
+    },
+    {
+      "id": "positive-c744bc031d40ee64",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 174,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "positive-c744bc031d40ee64.json",
+      "certificate_sha256": "f7ceb616dbbc57ecadd8e659b90da022032385a895f57fb0f029167518329a5b"
+    },
+    {
+      "id": "positive-b819223a03e89ec7",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 238,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "positive-b819223a03e89ec7.json",
+      "certificate_sha256": "5a84b2b2ff43179a6e001f81dc57ee9745198c0963f9853e14c3eed1887348a1"
+    },
+    {
+      "id": "positive-7cdbd39e7dd162bf",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 174,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "positive-7cdbd39e7dd162bf.json",
+      "certificate_sha256": "8b6f4b9355251aabc0aa0bfbbabd171a2ec6af3c71a1cb868ca9abd437b19c3b"
+    },
+    {
+      "id": "positive-768264ad71bc8152",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 180,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "positive-768264ad71bc8152.json",
+      "certificate_sha256": "c8706329aad3e8d29c51191395f7a1dde24423ec5c604122ae871c9f2b910e1d"
+    },
+    {
+      "id": "positive-5edcabd77ec2e38b",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 223,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "positive-5edcabd77ec2e38b.json",
+      "certificate_sha256": "f89e5c0313b90b5eeb9231f9653e7d066e17aa7ca7a5bc6d1b8b2590b41d656d"
+    },
+    {
+      "id": "positive-b696531e6d132c9e",
+      "discovery_status": "CANDIDATE_CLOSED",
+      "rounds": 2,
+      "new_bound_deductions": 196,
+      "terminal": "positive_exact_reserve",
+      "reserve": "33805/262144",
+      "certificate_file": "positive-b696531e6d132c9e.json",
+      "certificate_sha256": "dc40a92af77feebf14789f65173208b936a8dc2ef2a4a0c696bf58e15a52a4ef"
+    },
+    {
+      "id": "positive-3da90694b58b6ef7",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 226,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "positive-3da90694b58b6ef7.json",
+      "certificate_sha256": "d2e81c6349d95c79a1fbad441076796d7b8bcfeaadf99f1449f4c735738dd257"
+    },
+    {
+      "id": "positive-8f760b2d708ad21d",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 259,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "positive-8f760b2d708ad21d.json",
+      "certificate_sha256": "e28672494a81ce27aa766afb4e9faf5a83c1659d5f706f56f01f07e35e0fc2bd"
+    },
+    {
+      "id": "positive-8e41311b61c89e61",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 234,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "positive-8e41311b61c89e61.json",
+      "certificate_sha256": "8624d36b94b3f26e5496e2d63efc8664aafd57f30af447c95036057671de9d36"
+    },
+    {
+      "id": "positive-d9e959003493b8f1",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 173,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "positive-d9e959003493b8f1.json",
+      "certificate_sha256": "2f0b720caa7791626073375167dd4a2953ea19dba9a7e704d9993706ec7da56d"
+    },
+    {
+      "id": "negative-493c2b626cdbf986",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 374,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-493c2b626cdbf986.json",
+      "certificate_sha256": "e231879766a8af1d8fb0a6c48188a817bbaf079bccbeb0fc07d353373dbfecbb"
+    },
+    {
+      "id": "negative-6181e7007bf6714b",
+      "discovery_status": "OPEN",
+      "rounds": 2,
+      "new_bound_deductions": 80,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-6181e7007bf6714b.json",
+      "certificate_sha256": "585ff58879b160a077a87e312aca84b93903b6e7b094ddd8e3eff0c8254ba91a"
+    },
+    {
+      "id": "negative-95371f658da581d0",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 99,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-95371f658da581d0.json",
+      "certificate_sha256": "644f7a23d07da1c332daedf49c0fff9c9a747ef01c1c06e97258accbb6123f6f"
+    },
+    {
+      "id": "negative-573078fc944ce553",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 99,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-573078fc944ce553.json",
+      "certificate_sha256": "94a56ffe1bc9443cd21056502e044f69af12849239a1842fe2c6901e1fae0ee0"
+    },
+    {
+      "id": "negative-60b1043c8c722dd5",
+      "discovery_status": "OPEN",
+      "rounds": 2,
+      "new_bound_deductions": 85,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-60b1043c8c722dd5.json",
+      "certificate_sha256": "af812d5a241d4122b2917566da8f20ca44e3564eb6e094d23c1889c491ae92e0"
+    },
+    {
+      "id": "negative-887236b78100baf3",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 160,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-887236b78100baf3.json",
+      "certificate_sha256": "9160c8e770aeec198e932e3587dbaf693744723c7fa2eca7ceeaa79d299a00c6"
+    },
+    {
+      "id": "negative-d4021ade840b985c",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 171,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-d4021ade840b985c.json",
+      "certificate_sha256": "328aae08e40e796324683be5569f80facea3b89253cd27a960aa4087ceeff74b"
+    },
+    {
+      "id": "negative-b882d8ade0cf9ea0",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 165,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-b882d8ade0cf9ea0.json",
+      "certificate_sha256": "d14bf892a3f0723cdec5fe247c2fc6cce42ebec71c5a43a212a3729a4f0250c8"
+    },
+    {
+      "id": "negative-2f9ffd3df06e7c5f",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 174,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-2f9ffd3df06e7c5f.json",
+      "certificate_sha256": "7988cd5da46f5c6d74ad78cfb12e388959991e3c059be004faafc7c9e81d3704"
+    },
+    {
+      "id": "negative-aaa42018b92e527c",
+      "discovery_status": "OPEN",
+      "rounds": 2,
+      "new_bound_deductions": 79,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-aaa42018b92e527c.json",
+      "certificate_sha256": "77dd311caffefaed018e0d641772fb506cd5c725e04226499ebf829b719ea80f"
+    },
+    {
+      "id": "negative-e9388ab13ca6220a",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 157,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-e9388ab13ca6220a.json",
+      "certificate_sha256": "c5091858d58ffa21f878d6623f7d0e63bee7c9c4f8df274b6a8680e538e90576"
+    },
+    {
+      "id": "negative-2ee3f4820947eb83",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 130,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-2ee3f4820947eb83.json",
+      "certificate_sha256": "23d7161cfb2002a3f04b03c74d7ab934f07757df14ba0d63dff3854b6eb2e5a1"
+    },
+    {
+      "id": "negative-0e4fa3209b6f7b12",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 138,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-0e4fa3209b6f7b12.json",
+      "certificate_sha256": "01f80b0a82b18f25b1276761a7de1137fa61075dc703e5db623959dc03879535"
+    },
+    {
+      "id": "negative-6ad5eef3b91c1fbd",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 131,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-6ad5eef3b91c1fbd.json",
+      "certificate_sha256": "bd7cb0d1146f2fe4f0ec1fa46eb858d1c1608ba1d54cef03a6d191466a247628"
+    },
+    {
+      "id": "negative-79cdbfcbed2f1fac",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 119,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-79cdbfcbed2f1fac.json",
+      "certificate_sha256": "225fe85e0fbd15caef93170074339c898c94a0f5ad09a1bbacbe66d050d6470a"
+    },
+    {
+      "id": "negative-e0dbb1642ee58e72",
+      "discovery_status": "OPEN",
+      "rounds": 2,
+      "new_bound_deductions": 88,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-e0dbb1642ee58e72.json",
+      "certificate_sha256": "fb8980da2c8c54e0eb33d3ffff3fdeff3ffe0eb7c96393add19fd4e61fad31b3"
+    },
+    {
+      "id": "negative-3475db94338c355f",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 109,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-3475db94338c355f.json",
+      "certificate_sha256": "578928c4db2a46256a778584f162f9b0d099eed8422dc011a2dc057634fe87ba"
+    },
+    {
+      "id": "negative-054472aeb5484d24",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 195,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-054472aeb5484d24.json",
+      "certificate_sha256": "0d7d31be379c2b09613c86fdba516c62f2d342b6de111f47781ec56d1c044787"
+    },
+    {
+      "id": "negative-5d7c9f118e060b2a",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 103,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-5d7c9f118e060b2a.json",
+      "certificate_sha256": "bd0fbc475f8cfcee2ea6182e16c862a209a9831a105eae1c1c8197b2428e3446"
+    },
+    {
+      "id": "negative-61b796e2fa1d59e4",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 146,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-61b796e2fa1d59e4.json",
+      "certificate_sha256": "914f8e511b33cffe0a751115d0f93810c18237c3752287c5d554386d2335cd83"
+    },
+    {
+      "id": "negative-d09093538801d014",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 146,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-d09093538801d014.json",
+      "certificate_sha256": "34581fda8c182c3c1941c6b2665d2d76205ceb9df2efbb239dc9df233326c2a9"
+    },
+    {
+      "id": "negative-ab8b276e0338d7f0",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 189,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-ab8b276e0338d7f0.json",
+      "certificate_sha256": "883078ec958ef465ca7e0241c04794f87adb2377b804ab4785ed70926f571a9a"
+    },
+    {
+      "id": "negative-2652afcd308ef1ea",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 190,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-2652afcd308ef1ea.json",
+      "certificate_sha256": "8c32123a7fed2142456c1f0d8861bf567793b00fe04d95852f1877c8b39d9675"
+    },
+    {
+      "id": "negative-336d2542a912859a",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 270,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-336d2542a912859a.json",
+      "certificate_sha256": "3c6535c845f634187e4ce4bcc97c0d5fde467bf5a14a7353d4ae3f1cf7775332"
+    },
+    {
+      "id": "negative-364c20a39079cecd",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 176,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-364c20a39079cecd.json",
+      "certificate_sha256": "f4baff99f36daf5f4f7862fbfe7bf579dbe5ba556bb6567a1fc6f1ec5aa7677d"
+    },
+    {
+      "id": "negative-1a0e5a68ae364a5e",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 148,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-1a0e5a68ae364a5e.json",
+      "certificate_sha256": "f350b11aaf457bc579b7127ace85dd53ddb7ea5ec05c1de88c927772e7f68275"
+    },
+    {
+      "id": "negative-f92d74e712afa6be",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 150,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-f92d74e712afa6be.json",
+      "certificate_sha256": "5632864632309bd802851ef691a782c5c86b74ed84c0718c037530da0deec6b9"
+    },
+    {
+      "id": "negative-f14f5bc4eafdf50d",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 141,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-f14f5bc4eafdf50d.json",
+      "certificate_sha256": "1a3019d46f52d1efa7ada32244df4a90310f57521b05de30000825d2aa27a5d1"
+    },
+    {
+      "id": "negative-7c60be8b07a358e9",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 144,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-7c60be8b07a358e9.json",
+      "certificate_sha256": "674c5879881598c76959c3ed68063c6ed5fe0bd2f0e8c01d381b4a6645c7d827"
+    },
+    {
+      "id": "negative-a3ab8823d7fe0fa6",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 274,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-a3ab8823d7fe0fa6.json",
+      "certificate_sha256": "b01222a81bcba3fcbc94da0e644e23f041f30c386e9fd98c004f3fe0b336f642"
+    },
+    {
+      "id": "negative-4ce055f43b28d796",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 138,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-4ce055f43b28d796.json",
+      "certificate_sha256": "b69213ad5fa8402c7051d340d6144a27e4f918e130ac06ed956997349006fd46"
+    },
+    {
+      "id": "negative-daf08b7f35b70b9a",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 147,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-daf08b7f35b70b9a.json",
+      "certificate_sha256": "6bbcf5386341e7bb04cd325f2afac37ca58075de851a255a660fc18b2caef3fe"
+    },
+    {
+      "id": "negative-462e78d2e2d8be05",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 140,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-462e78d2e2d8be05.json",
+      "certificate_sha256": "925267fca5864680c82bc72c79774c7bc703b417c144952c9b6077e7513babb5"
+    },
+    {
+      "id": "negative-34029ea8b047982f",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 141,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-34029ea8b047982f.json",
+      "certificate_sha256": "e4f49f6c4f445df03f9a42330dc40f489b0a364e907cf94f3b0029f46036f3a5"
+    },
+    {
+      "id": "negative-16a2fc93c8d133f0",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 146,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-16a2fc93c8d133f0.json",
+      "certificate_sha256": "7390aa3194cd5fec05eab81e2db044b32ca84ff08147d9667601ad076cfd1596"
+    },
+    {
+      "id": "negative-580db3624cf4c2e2",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 137,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-580db3624cf4c2e2.json",
+      "certificate_sha256": "22530888a6cfba21d79e1d243d51c5258a5e37331c5fe0d75e71bf3957cd797c"
+    },
+    {
+      "id": "negative-99f578b7bbedf013",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 256,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-99f578b7bbedf013.json",
+      "certificate_sha256": "ea8e4c0445dd2e92ab8c363a2a691ac57f74715120289c436232753cce48ac30"
+    },
+    {
+      "id": "negative-f9e691c011ecb5af",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 353,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-f9e691c011ecb5af.json",
+      "certificate_sha256": "ef9d7e1538f65bf928880b4e7b8399c8ea8bad0c4da989171d37b2b60bf9b4d4"
+    },
+    {
+      "id": "negative-b8e4f47ec1258e16",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 244,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-b8e4f47ec1258e16.json",
+      "certificate_sha256": "39ef60f2cdb3f981c928662eea01c50a3101c1e079208cb1d6632f5de9e9d0d2"
+    },
+    {
+      "id": "negative-1de449e714cf90dd",
+      "discovery_status": "OPEN",
+      "rounds": 3,
+      "new_bound_deductions": 253,
+      "terminal": null,
+      "reserve": null,
+      "certificate_file": "negative-1de449e714cf90dd.json",
+      "certificate_sha256": "9e43fedbb089e2ec35eb66215db5e90ed0f87390744fead1bfd33059aed52c68"
+    }
+  ],
+  "open_state_payloads": "Discovery records remain separate from the accepted complete-parent proof archive. Their hashes identify the trials; no OPEN deduction chain is promoted to a proof of exclusion."
+}

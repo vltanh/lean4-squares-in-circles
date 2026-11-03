@@ -1,0 +1,24 @@
+{
+  "status": "PASS_FIXED_REGISTER_ASSEMBLY",
+  "baseline_register_sha256": "a7fd0cd7aef32e5231b8ff7a46e504ca13502e72aca1d6cb02c47d5159545d34",
+  "updated_register_sha256": "c90860541f92686c9f1fc8509f89aa4c56a2605e9cba239b13630f09b4d30fbb",
+  "immutable_original_ids_and_paths": 231,
+  "exact_status_changes": [
+    "positive-033850931bb6d4ef",
+    "positive-3cd9c2a7981effa2",
+    "positive-b696531e6d132c9e"
+  ],
+  "unchanged_other_cells": 228,
+  "before": {
+    "closed": 168,
+    "open": 63
+  },
+  "after": {
+    "closed": 171,
+    "open": 60
+  },
+  "whole_mask_ledger_unchanged": true,
+  "common_early_branch_originals": 14,
+  "common_early_branch_closed_before": 12,
+  "common_early_branch_closed_after": 14
+}

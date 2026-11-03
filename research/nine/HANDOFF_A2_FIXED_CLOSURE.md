@@ -1,25 +1,27 @@
-> **NEW PRIMARY EXECUTION DIRECTIVE (November 3, 2026):** [Shared original-nine macro-closure strategy](A2_00100_SHARED_MACRO_CLOSURE_DIRECTIVE_2026_11_03.md). **Stop prioritizing ever-deeper partial certificate trees**; seek a single proved all-nine argument closing **multiple** of the 63 OPEN original cells, initially targeting the 30-cell B family and the omitted squares H/I. Prove all strict/boundary guards before crediting a cell. **Ledger unchanged: 168/231 cells CLOSED, 63 OPEN; 8/32 masks CLOSED, 24 OPEN.** This priority supersedes earlier search schedules, not their established proofs.
+> **CURRENT EXECUTION PRIORITY:** [Shared original-nine macro closure](A2_00100_SHARED_MACRO_CLOSURE_DIRECTIVE_2026_11_03.md). The shared capacity argument has now closed **three complete originals with no new splits**, including both remaining originals in one early A branch. Current accounting: **171/231 cells CLOSED, 60 OPEN; 8/32 masks CLOSED, 24 OPEN.** Continue shared whole-parent arguments; unfinished deeper trees are not accepted advancement.
 
 > The [preceding session handoff](A2_00100_SESSION_HANDOFF_2026_11_03.md)
 > records the historical 159/72 checkpoint. Its unintegrated D-pilot and
 > B-cell results now have complete source-bound certificates in the latest
-> continuation. The current accepted accounting is **168 CLOSED / 63 OPEN**.
+> continuation. A further shared-capacity proof now brings the current
+> accepted accounting to **171 CLOSED / 60 OPEN**.
 
-# Current A.2 handoff: 168/231 current-mask cells closed; 63 OPEN
+# Current A.2 handoff: 171/231 current-mask cells closed; 60 OPEN
 
-November 3, 2026. **Nine further whole original cells are proved**, after
-the preceding 99 and seven: **115 additions beyond the original 53**.
-The fixed `001/00` cover has **168 CLOSED / 63 OPEN**. The whole-mask
+November 3, 2026. **Three further whole original cells are proved by a
+shared capacity argument**, after the preceding 99, seven and nine:
+**118 additions beyond the original 53**.
+The fixed `001/00` cover has **171 CLOSED / 60 OPEN**. The whole-mask
 ledger is still **8 CLOSED / 24 OPEN**. `001/00`, `100/00`, A.2, the
 unrestricted bound, equality classification and final manuscript remain
 OPEN. No Lean, Lake or CI.
 
 ## Read first
 
-1. [Current nine-cell hand/table continuation](A2_00100_ORDERED_DISTANCE_AND_FRAME_CONTINUATION.md),
-   following the seven-cell and 99-cell checkpoints.
+1. [Current shared-capacity hand/table continuation](A2_00100_SHARED_CAPACITY_WHOLE_CELL_CLOSURE.md),
+   following the nine-cell, seven-cell and 99-cell checkpoints.
 2. [Same 231 original paths and current statuses](gates/A2_00100_FIXED_FRONTIER.json).
-3. [Latest source-bound certificates, rational tables and exact reports](computer_assisted/a2_00100_ordered_distance_frame_manifest.json).
+3. [Latest source-bound certificates, rational tables and exact reports](computer_assisted/a2_00100_shared_capacity_manifest.json).
 4. [Original full-domain cover and first 53 proofs](A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md),
    and its physical/coverage reviews. Their mathematical scopes are unchanged.
 
@@ -42,7 +44,7 @@ by inventing positive clearance. Every internal case split must cover its
 entire parent, including ties, orientation endpoints and physical contact.
 
 The full-mask cover is already CERTIFIED. Preserve all 231 IDs and exact
-ancestor paths; the uncovered register is now exactly 63 original IDs.
+ancestor paths; the uncovered register is now exactly 60 original IDs.
 Credit a cell only after every descendant closes and the full parent
 union is independently checked. An incomplete tree remains internal to
 its unchanged OPEN parent. Numerical LP points and necessary inequalities
@@ -56,7 +58,31 @@ Do not compile Lean, run Lake, or trigger CI. Preserve the same 32 masks,
 
 ## What the latest continuation actually closed
 
-Nine previously OPEN originals now have complete proofs: six by ordered
+The new shared argument closes exactly these unchanged original parents:
+
+- `positive-033850931bb6d4ef`: 76 prior and 575 new exact deductions;
+- `positive-3cd9c2a7981effa2`: 76 prior and 580 new exact deductions;
+- `positive-b696531e6d132c9e`: 33 prior and 196 new exact deductions.
+
+There are zero new splits. The complete parent inductions use exact
+inset-separation quadratic rows and a proved three-original narrow-strip
+capacity theorem. The first two certificates derive the same seven-row
+contradiction, with a simpler exact positive dependence whose coordinate
+coefficients all cancel. They finish the common early A branch ending
+in `inward_row_escape(H,I), child 9`, whose other 12 fixed descendants
+were already closed. The third certificate gives a two-row contradiction
+for the original collinear F, I, H centers. All three use the ninth
+original I and derive their full physical guards.
+
+Each passed independent original-path, physical-row, guard, state and
+rational-sum replay. The [new hand/table assembly](A2_00100_SHARED_CAPACITY_WHOLE_CELL_CLOSURE.md)
+contains the precise proofs and acceptance scope. The portable package
+needs only standard-library Python. Five semantic damaged controls were
+rejected. These are three original-cell closures, not a whole-mask proof.
+
+### Preceding nine-cell continuation
+
+Nine previously OPEN originals had complete proofs: six by ordered
 center-distance trees and three by certified physical frame bounds with
 complete inset trees or local child inductions. They contain 1,492 scalar
 deductions, 1,098 terminal paths, 1,052 weighted contradictions and 19,388
@@ -65,8 +91,9 @@ rows, bound inductions, old retained leaves and complete parent unions.
 A separate implementation verifies all printed rational sums.
 
 The preceding seven family-A proofs remain accepted and immutable. The
-former 53 + preceding 99 + seven + latest nine give **168 CLOSED / 63
-OPEN**. Every new ID is distinct and was OPEN before this continuation.
+former 53 + preceding 99 + seven + nine give the historical **168 CLOSED /
+63 OPEN** checkpoint; the latest three bring this to **171 CLOSED / 60
+OPEN**. Every new ID is distinct and was OPEN before its continuation.
 The whole-mask count remains eight. No partial tree is promoted.
 
 The [distance hand proof](A2_00100_ORDERED_DISTANCE_HAND_PROOF.md) derives
@@ -102,11 +129,11 @@ certificates remain in force alongside the later seven and nine.
 
 | Same early branch family | Original OPEN baseline | Cumulative newly closed | Still OPEN |
 |---|---:|---:|---:|
-| A: positive D, nonpositive A, inward-row escapes | 77 | 60 | 17 |
+| A: positive D, nonpositive A, inward-row escapes | 77 | 63 | 14 |
 | B: negative D, nonpositive A, F-height branches | 39 | 9 | 30 |
 | C: negative D, nonnegative A, alternate-chain escapes | 33 | 23 | 10 |
 | D: positive D, nonnegative A, alternate-chain escapes | 29 | 23 | 6 |
-| Total | 178 | 115 | 63 |
+| Total | 178 | 118 | 60 |
 
 ## Current attack and its actual limitations
 
@@ -168,7 +195,7 @@ not follow merely from another selected-seven necessary inequality.
 
 - Original-nine masks: 8 CLOSED / 24 OPEN. Closed are `000/00`, `000/01`,
   `000/10`, `000/11`, `010/00`, `010/01`, `010/10`, `010/11`.
-- Current-mask cells: the same 231 IDs, 168 CLOSED / 63 OPEN; coverage
+- Current-mask cells: the same 231 IDs, 171 CLOSED / 60 OPEN; coverage
   certified, all unchanged path identities checked.
 - Positional roots: 5,838 historical closed-Q exclusions / 2,077 OPEN
   among the same 7,915 IDs. Equality root 7820 remains possible at Q.
@@ -207,8 +234,8 @@ closed or current two-actual-link family. A stronger global extraction
 must use the ninth original essentially. This obstruction is a proof-route
 limit, not a nine-square counterexample or a new closure.
 
-The remaining task is still complete exclusion of the 63 named original
+The remaining task is still complete exclusion of the 60 named original
 predicates, or a valid whole-domain theorem, followed by the other fixed
-masks. No further search is running from this checkpoint. Reuse the frozen
+masks. Reuse the frozen
 proofs and actual surviving predicates; do not count another necessary
 inequality or partial forest as completion.
