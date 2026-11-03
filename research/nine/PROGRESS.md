@@ -128,7 +128,7 @@ certified large-gap complement and retain all nine squares and strict bits.
 Use the proved unique-penultimate implications where their exact cone
 guards hold, together with certified original-frame bounds and complete
 physical pair or distance alternatives. Where these relaxations remain
-inconsistent, derive a stronger original-square invariant or complete
+too weak, derive a stronger original-square invariant or complete
 selection theorem within the same unchanged parent. Every claimed closure needs full coverage and exact arithmetic;
 an LP proposal, an unfinished tree or an extra necessary inequality
 changes no count. The known feasible closed-weak equality control rules
@@ -145,8 +145,12 @@ mandatory owner, threshold, angle or occupancy subgates; unchanged
 original paths; computer-assisted discovery followed by hand/table proof;
 no Lean, Lake or CI. No human or proof-kernel verification is claimed.
 
+The [later pair-support research checkpoint](A2_00100_PAIR_SUPPORT_OPEN_CHECKPOINT.md)
+adds no whole-cell or whole-mask closure. It proves relative-orientation
+pair bounds, exact pair-difference induction and a guarded clipped-disk
+chord. Its final A cover has 819 independently replayed terminal paths
+and 21 explicit pending paths, so that original remains OPEN. All retained
+629 V3 and 163 V4 leaves were fully replayed, superseding the old V4 sample.
+The hard alternative-chain original separately retains ten pending paths.
 The [open continuation manifest](computer_assisted/a2_00100_open_continuation_manifest.json)
-preserves unfinished work separately from accepted proofs. The hard
-alternative-chain parent retains ten pending paths; shallow A retains 48.
-They remain original OPEN cells. The manifest distinguishes candidate
-leaves, independent sample reviews, and complete exact parent proofs.
+preserves every partial proof's scope. The fixed register is unchanged.

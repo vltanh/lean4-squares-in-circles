@@ -182,10 +182,31 @@ discovery, and hand proof. No human or proof-kernel verification is claimed.
 
 ## Preserved OPEN continuation work
 
-The [open continuation manifest](computer_assisted/a2_00100_open_continuation_manifest.json)
-identifies separate source-bound research packets and their exact review
-scope. `positive-2c719a20ef7510de` retains ten unresolved paths in the mixed
-continuation; `positive-2d5aba857f2f7602` retains 48. For shallow A, 65 of
-163 new V4 candidates were independently checked; 98 were not. Every
-unfinished original remains OPEN. These packets preserve work without
-substituting descendants for the fixed original predicates.
+The [later pair-support checkpoint](A2_00100_PAIR_SUPPORT_OPEN_CHECKPOINT.md)
+and [open continuation manifest](computer_assisted/a2_00100_open_continuation_manifest.json)
+identify source-bound research packets and their exact review scope.
+`positive-2c719a20ef7510de` retains ten unresolved paths in its mixed
+continuation. `positive-2d5aba857f2f7602` now has 819 independently proved
+terminal paths and 21 explicit pending paths in the same 840-path cover.
+All 629 retained V3 and 163 V4 leaves were fully replayed. The former 65/163
+V4 sample is historical; no leaf in the latest 819 is credited on that
+sample alone. No new branch was introduced by the later filters.
+
+The new universal pair-support inequality, 339 exact whole-parent A/B
+difference deductions, ordered-octagon interval traces and guarded
+clipped-disk chords are valid inputs. Static tests did not close any of
+the 63 remaining whole originals. Both shallow A/B pilots remain OPEN.
+The other bounded C/D continuations remain attached to their original
+OPEN predicates and do not create additional mandatory gates.
+
+A final exact eight-square control shows that fewer-original relabeling
+and rotation cannot promote every all-weak four-chain into the already
+closed or current two-actual-link family. A stronger global extraction
+must use the ninth original essentially. This obstruction is a proof-route
+limit, not a nine-square counterexample or a new closure.
+
+The remaining task is still complete exclusion of the 63 named original
+predicates, or a valid whole-domain theorem, followed by the other fixed
+masks. No further search is running from this checkpoint. Reuse the frozen
+proofs and actual surviving predicates; do not count another necessary
+inequality or partial forest as completion.

@@ -1,5 +1,5 @@
 {
-  "schema": "a2-00100-unfinished-research-v1",
+  "schema": "a2-00100-unfinished-research-v2",
   "target_mask": "001/00",
   "fixed_original_ids_unchanged": true,
   "whole_mask_closed": false,
@@ -32,9 +32,70 @@
       "pending_paths": 48,
       "entrypoint": "python audit.py",
       "independent_review": "Complete partial cover and source hashes checked; 65 of 163 V4 candidates independently reviewed; every original remains OPEN.",
-      "new_original_closures": 0
+      "new_original_closures": 0,
+      "historical_checkpoint": true,
+      "later_review_and_continuation": "a2_00100_pair_support_open_manifest.json",
+      "later_review_note": "The historical archive is unchanged. The later packet independently replays all 629 retained V3 and all 163 V4 leaves and extends the same original partial cover to819 proved /21 pending paths. The original remains OPEN."
+    },
+    {
+      "archive": "a2_00100_octagon_open15_checkpoint.tar.gz",
+      "bytes": 1081833,
+      "sha256": "59d60bc4fd77a6927d35bb6097ffa7390e3a16715230e8e72523027b7d72d49b",
+      "status": "OPEN_PARTIAL_COVERS",
+      "original_parents": 15,
+      "bound_deductions": 457,
+      "independently_reviewed_terminal_paths": 4036,
+      "pending_paths": 1028,
+      "payload_manifest_sha256": "6b20a30ad0dd70814e51aa4a5fe68aa80aafa902cf912fd693999a51eed27f4e",
+      "entrypoint": "python replay_open.py --out /tmp/open15-fresh-review.json",
+      "archive_root": "octagon_open15_checkpoint_v1",
+      "new_original_closures": 0,
+      "later_two_parent_continuations": "a2_00100_pair_support_open_manifest.json"
+    },
+    {
+      "archive": "a2_00100_pair_support_open_checkpoint.tar.gz",
+      "bytes": 4926471,
+      "sha256": "b0858558af3143bed0c5bc2df4000f3259b3e9acf99ee887dcfaa4b6db0ef464",
+      "status": "INDEPENDENTLY_REPLAYED_PARTIAL_PROOFS_ONLY",
+      "manifest": "a2_00100_pair_support_open_manifest.json",
+      "portable_review": "a2_00100_pair_support_open_portable_review.json",
+      "original_id": "positive-2d5aba857f2f7602",
+      "independently_reviewed_terminal_paths": 819,
+      "pending_paths": 21,
+      "all_retained_V3_and_V4_leaves_independently_replayed": true,
+      "pair_difference_deductions": 339,
+      "whole_parent_static_tests": 63,
+      "C_partial_trees": [
+        {
+          "original_id": "negative-2f9ffd3df06e7c5f",
+          "proved_terminal_paths": 503,
+          "pending_paths": 20,
+          "whole_parent_closed": false,
+          "fresh_independent_replay": true
+        },
+        {
+          "original_id": "negative-573078fc944ce553",
+          "proved_terminal_paths": 511,
+          "pending_paths": 43,
+          "whole_parent_closed": false,
+          "fresh_independent_replay": true
+        }
+      ],
+      "entrypoint": "python replay_partial.py --out /tmp/pair-support-fresh-review.json",
+      "new_original_closures": 0,
+      "whole_parent_closed": false
     }
   ],
   "scope": "These packets preserve exploratory work and explicit review limits. They do not replace any original OPEN predicate or supply a whole-parent closure. Duplicate copies of accepted certificates are not counted again.",
-  "lean_lake_ci_run": false
+  "lean_lake_ci_run": false,
+  "current_original_cells": {
+    "closed": 168,
+    "open": 63
+  },
+  "current_mask_ledger": {
+    "closed": 8,
+    "open": 24
+  },
+  "latest_research_manifest": "a2_00100_pair_support_open_manifest.json",
+  "discovery_running": false
 }

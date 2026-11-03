@@ -546,5 +546,29 @@
     "human_or_kernel_verification": false,
     "lean_lake_ci_run": false
   },
-  "open_continuation_manifest": "computer_assisted/a2_00100_open_continuation_manifest.json"
+  "open_continuation_manifest": "computer_assisted/a2_00100_open_continuation_manifest.json",
+  "later_pair_support_research": {
+    "date": "2026-11-03",
+    "status": "OPEN_PARTIAL_PROOFS_ONLY",
+    "assembly": "A2_00100_PAIR_SUPPORT_OPEN_CHECKPOINT.md",
+    "manifest": "computer_assisted/a2_00100_pair_support_open_manifest.json",
+    "new_original_cell_closures": 0,
+    "new_mask_closures": 0,
+    "new_roadmap_gate_closures": 0,
+    "current_original_cells": {
+      "closed": 168,
+      "open": 63
+    },
+    "A_original": "positive-2d5aba857f2f7602",
+    "A_independently_proved_terminal_paths": 819,
+    "A_pending_paths": 21,
+    "A_whole_parent_closed": false,
+    "A_all_retained_V3_and_V4_leaves_independently_replayed": true,
+    "pair_difference_deductions": 339,
+    "new_branch_nodes_in_filters": 0,
+    "remaining_static_parent_checks": 63,
+    "remaining_static_parent_closures": 0,
+    "eight_original_obstruction": "EIGHT_ORIGINAL_ALL_WEAK_EXTRACTION_OBSTRUCTION.md",
+    "lean_lake_ci_run": false
+  }
 }
