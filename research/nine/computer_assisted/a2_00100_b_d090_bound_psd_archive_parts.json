@@ -1,0 +1,24 @@
+{
+  "schema": "ordered_split_archive_v1",
+  "archive": "a2_00100_b_d090_bound_psd_checkpoint.tar.gz",
+  "bytes": 16920975,
+  "sha256": "5b0e1176f1731cd51aec593f8073b7b4ba38e8d00ba08dd3e6e0fc12f0da44ae",
+  "parts": [
+    {
+      "file": "a2_00100_b_d090_bound_psd_checkpoint.tar.gz.part01",
+      "bytes": 8388608,
+      "sha256": "69c3fd7ae95f358c7568afd87020b653397bfd6e12a8e7aa96c31ad1d2eda9f5"
+    },
+    {
+      "file": "a2_00100_b_d090_bound_psd_checkpoint.tar.gz.part02",
+      "bytes": 8388608,
+      "sha256": "7dc6dfacb331ab77fb16c9f32f2dbe7810a7d27b869a0e3a9448a9793ea939b9"
+    },
+    {
+      "file": "a2_00100_b_d090_bound_psd_checkpoint.tar.gz.part03",
+      "bytes": 143759,
+      "sha256": "59d0cee698c6ab2c45962af7dc6f7025a570a6a3bf9a93ca1f3c7f807bd275c1"
+    }
+  ],
+  "extraction": "Concatenate the listed parts in order, check the full archive hash, extract and run the independent checker."
+}
