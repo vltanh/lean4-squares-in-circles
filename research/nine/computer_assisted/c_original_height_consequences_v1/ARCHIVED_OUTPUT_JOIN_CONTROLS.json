@@ -1,0 +1,15 @@
+{
+  "status": "PASS_C_ARCHIVED_OUTPUT_PATH_JOIN_CONTROLS",
+  "runner_sha256": "d7d9b17da9091cb7920e5964618303c93ae2689a8528381091b35f3ee4c2cb28",
+  "packet_manifest_sha256": "1985ef00bd7333245ff3442a1147753f6e32f1a75252037b2d2601f89bd142f0",
+  "positive_controls": 49,
+  "rejected_raw_packet_writes": 7,
+  "output_roots": 7,
+  "all_output_subtrees_disjoint_from_all_frozen_inputs": true,
+  "all_input_aliases_disjoint_from_output_aliases": true,
+  "direct_construction_and_path_joins_route_to_fresh_output": true,
+  "all_math_inputs_unchanged": true,
+  "note": "Once a known report directory is transported, its generated children live only in output; raw packet paths remain forbidden.",
+  "new_original_cells": 0,
+  "new_masks": 0
+}

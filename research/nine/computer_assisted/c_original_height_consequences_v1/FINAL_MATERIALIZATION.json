@@ -1,0 +1,16 @@
+{
+  "status": "PASS_MATERIALIZED_C_HEIGHT_THIN_PROOF_PACKET",
+  "counts": {
+    "new_delta_files": 180,
+    "A_base_members": 1380,
+    "Cb882_base_members": 456
+  },
+  "proof_inputs": 2015,
+  "proof_input_bytes": 687782645,
+  "delta_manifest_sha256": "297eee1bae8caa4b2dd85d0af9544586773c6fa0cb8e4508629b9481f0f80e30",
+  "assembled_input_manifest_sha256": "06115f494173bc344821932525d7a8522df8ea2ed80b400f735f3b68d4a1b58b",
+  "all_source_bytes_unchanged": true,
+  "no_source_packet_modified": true,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

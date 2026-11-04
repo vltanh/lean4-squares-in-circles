@@ -1,0 +1,2658 @@
+{
+  "status": "PASS_COMPLETE_WHOLE_ORIGINAL_SAT_JOINED_BOUNDS",
+  "original_id": "negative-887236b78100baf3",
+  "original_path": [
+    [
+      "angle",
+      3,
+      0
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      1
+    ],
+    [
+      "alternate_four_escape",
+      [
+        1,
+        7
+      ],
+      [
+        1
+      ]
+    ]
+  ],
+  "ancestor_replay": {
+    "ancestor": {
+      "id": "negative-887236b78100baf3",
+      "status": "PASS_CERTIFIED_PARENT_STATE_OPEN",
+      "prior_report": {
+        "id": "negative-887236b78100baf3",
+        "status": "PASS_CERTIFIED_PARENT_STATE_OPEN",
+        "whole_original_parent_closed": false,
+        "bound_induction_branch_nodes": 0,
+        "prior_coordinate_deductions": 29,
+        "new_deductions": 364,
+        "rounds": 5,
+        "printed_rows_checked": 976,
+        "terminal_rows": 0,
+        "reserve": "None",
+        "center_cover": null,
+        "independently_rebuilt_new_rules": [
+          "physical_inset_perspective_tangent_0_0",
+          "physical_inset_perspective_secant_0_0_24260374932670/138630713900969",
+          "physical_inset_reciprocal_upper_0_1_82498931643999/70368744177664",
+          "physical_inset_reciprocal_tangent_0_1",
+          "physical_inset_reciprocal_tangent_0_152867675821663/140737488355328",
+          "physical_folded_arc_chord_0_0_12130187466335/70368744177664",
+          "physical_inset_perspective_tangent_1_0",
+          "physical_inset_perspective_secant_1_0_24260374932670/138630713900969",
+          "physical_inset_reciprocal_tangent_1_1",
+          "physical_inset_reciprocal_tangent_1_152867675821663/140737488355328",
+          "physical_folded_arc_chord_1_0_12130187466335/70368744177664",
+          "physical_inset_perspective_tangent_2_0",
+          "physical_inset_perspective_secant_2_0_1",
+          "physical_inset_reciprocal_upper_2_1_99/70",
+          "physical_inset_reciprocal_tangent_2_1",
+          "physical_inset_reciprocal_tangent_2_169/140",
+          "physical_inset_reciprocal_tangent_2_99/70",
+          "physical_folded_arc_chord_2_0_199032864766431/281474976710656",
+          "physical_inset_perspective_tangent_3_1/2",
+          "physical_inset_perspective_secant_3_0_1",
+          "physical_inset_reciprocal_tangent_3_169/140",
+          "physical_inset_reciprocal_tangent_3_99/70",
+          "physical_folded_arc_chord_3_0_199032864766431/281474976710656",
+          "physical_inset_perspective_secant_4_0_1",
+          "physical_inset_reciprocal_tangent_4_1",
+          "physical_inset_reciprocal_tangent_4_169/140",
+          "physical_inset_reciprocal_tangent_4_99/70",
+          "physical_folded_arc_chord_4_0_199032864766431/281474976710656",
+          "physical_inset_perspective_tangent_5_0",
+          "physical_inset_perspective_secant_5_0_1",
+          "physical_inset_reciprocal_tangent_5_1",
+          "physical_folded_arc_chord_5_0_199032864766431/281474976710656",
+          "physical_inset_perspective_secant_6_0_1",
+          "physical_inset_reciprocal_upper_6_1_99/70",
+          "physical_inset_reciprocal_tangent_6_1",
+          "physical_inset_reciprocal_tangent_6_169/140",
+          "physical_inset_reciprocal_tangent_6_99/70",
+          "physical_folded_arc_chord_6_0_199032864766431/281474976710656",
+          "physical_inset_reciprocal_tangent_7_1",
+          "physical_folded_arc_chord_7_0_199032864766431/281474976710656",
+          "physical_inset_reciprocal_tangent_8_169/140",
+          "physical_inset_reciprocal_tangent_8_99/70",
+          "physical_folded_arc_chord_8_0_199032864766431/281474976710656",
+          "original_support_height_radius_0_4_-1_-72283551865583/1125899906842624",
+          "original_support_height_radius_1_5_-1_-72283551865583/1125899906842624",
+          "original_support_height_radius_2_3_-1_0",
+          "original_support_height_radius_2_3_1_0",
+          "directional_support_gap_0_4_0_9_1_1_1/5",
+          "directional_support_gap_2_3_3_10_1_1_0",
+          "directional_support_gap_2_3_3_10_1_1_1/5",
+          "original_point_incircle_0_4_0_1_1_0_0",
+          "original_point_incircle_0_4_0_1_1_0_1",
+          "physical_inset_perspective_tangent_0_0",
+          "physical_inset_perspective_secant_0_0_10627024158720/69561674179619",
+          "physical_inset_reciprocal_upper_0_1_1206931/1048576",
+          "physical_inset_reciprocal_tangent_0_1",
+          "physical_inset_reciprocal_tangent_0_2255507/2097152",
+          "physical_folded_arc_chord_0_0_158355/1048576",
+          "physical_inset_perspective_tangent_1_0",
+          "physical_inset_perspective_secant_1_0_13155619045376/140121270034563",
+          "physical_inset_reciprocal_tangent_1_1",
+          "physical_inset_reciprocal_tangent_1_2195169/2097152",
+          "physical_folded_arc_chord_1_0_98017/1048576",
+          "physical_inset_perspective_tangent_2_0",
+          "physical_inset_perspective_secant_2_0_1",
+          "physical_inset_reciprocal_tangent_2_1",
+          "physical_inset_reciprocal_tangent_2_169/140",
+          "physical_folded_arc_chord_2_0_199032864766431/281474976710656",
+          "physical_inset_perspective_tangent_3_1/2",
+          "physical_inset_reciprocal_tangent_3_169/140",
+          "physical_inset_reciprocal_tangent_3_99/70",
+          "physical_folded_arc_chord_3_0_199032864766431/281474976710656",
+          "physical_inset_perspective_secant_4_0_1",
+          "physical_inset_reciprocal_tangent_4_169/140",
+          "physical_folded_arc_chord_4_0_199032864766431/281474976710656",
+          "physical_inset_perspective_tangent_5_0",
+          "physical_inset_perspective_secant_5_0_1",
+          "physical_inset_reciprocal_tangent_5_1",
+          "physical_folded_arc_chord_5_0_199032864766431/281474976710656",
+          "physical_inset_perspective_secant_6_0_1",
+          "physical_folded_arc_chord_6_0_199032864766431/281474976710656",
+          "physical_folded_arc_chord_7_0_199032864766431/281474976710656",
+          "physical_inset_perspective_secant_8_0_1",
+          "original_support_height_radius_0_4_-1_-77310936179505/1125899906842624",
+          "original_support_height_radius_0_4_-1_0",
+          "original_support_height_radius_1_5_-1_-91511951372983/1125899906842624",
+          "original_support_height_radius_2_3_-1_0",
+          "original_support_height_radius_2_3_1_0",
+          "original_support_height_radius_2_5_-1_0",
+          "original_support_height_radius_2_5_1_0",
+          "original_support_height_radius_3_6_-1_0",
+          "original_support_height_radius_3_6_1_0",
+          "directional_support_gap_0_4_4_0_1_1_0",
+          "directional_support_gap_3_6_6_0_1_-1_0",
+          "directional_support_gap_0_4_0_9_1_1_0",
+          "original_point_incircle_0_4_0_1_1_0_0",
+          "original_point_incircle_0_4_0_1_1_0_1",
+          "original_point_incircle_1_5_1_1_1_0_0",
+          "physical_inset_perspective_tangent_0_0",
+          "physical_inset_perspective_secant_0_0_20909645627392/139175527117029",
+          "physical_inset_reciprocal_tangent_0_1",
+          "physical_inset_reciprocal_tangent_0_2252941/2097152",
+          "physical_folded_arc_chord_0_0_155789/1048576",
+          "physical_inset_perspective_tangent_1_0",
+          "physical_inset_reciprocal_upper_1_1_71405/65536",
+          "physical_inset_reciprocal_tangent_1_1",
+          "physical_inset_reciprocal_tangent_1_71405/65536",
+          "physical_folded_arc_chord_1_0_5869/65536",
+          "physical_inset_perspective_tangent_2_0",
+          "physical_inset_perspective_secant_2_0_1",
+          "physical_inset_reciprocal_upper_2_1_99/70",
+          "physical_inset_reciprocal_tangent_2_1",
+          "physical_inset_reciprocal_tangent_2_169/140",
+          "physical_inset_reciprocal_tangent_3_169/140",
+          "physical_folded_arc_chord_3_0_199032864766431/281474976710656",
+          "physical_inset_reciprocal_tangent_4_169/140",
+          "physical_folded_arc_chord_4_0_199032864766431/281474976710656",
+          "physical_inset_perspective_tangent_5_0",
+          "physical_inset_perspective_secant_5_0_1",
+          "physical_inset_reciprocal_upper_5_1_99/70",
+          "physical_inset_reciprocal_tangent_5_1",
+          "physical_folded_arc_chord_5_0_199032864766431/281474976710656",
+          "physical_inset_perspective_secant_6_0_1",
+          "physical_inset_reciprocal_tangent_6_1",
+          "physical_folded_arc_chord_6_0_199032864766431/281474976710656",
+          "physical_inset_reciprocal_upper_7_1_99/70",
+          "original_support_height_radius_0_4_-1_-77895384044019/1125899906842624",
+          "original_support_height_radius_0_4_-1_0",
+          "original_support_height_radius_1_5_-1_-92514560928165/1125899906842624",
+          "original_support_height_radius_2_5_-1_0",
+          "original_support_height_radius_3_6_-1_0",
+          "original_support_height_radius_3_6_1_0",
+          "directional_support_gap_0_4_4_0_1_1_0",
+          "directional_support_gap_3_6_6_0_1_-1_0",
+          "directional_support_gap_0_4_0_9_1_1_0",
+          "directional_support_gap_0_4_0_9_1_1_1/5",
+          "original_point_incircle_0_4_0_1_1_0_0",
+          "original_point_incircle_0_4_0_1_1_0_1",
+          "original_point_incircle_1_5_1_1_1_0_0",
+          "physical_inset_reciprocal_tangent_0_1",
+          "physical_inset_reciprocal_tangent_0_2252941/2097152",
+          "physical_folded_arc_chord_0_0_155789/1048576",
+          "physical_inset_perspective_tangent_1_0",
+          "physical_inset_perspective_secant_1_0_3150895382528/35043000693059",
+          "physical_inset_reciprocal_upper_1_1_71405/65536",
+          "physical_inset_reciprocal_tangent_1_1",
+          "physical_inset_reciprocal_tangent_1_71405/65536",
+          "physical_folded_arc_chord_1_0_5869/65536",
+          "physical_inset_perspective_tangent_2_1/4",
+          "physical_inset_perspective_secant_2_0_1",
+          "physical_inset_reciprocal_tangent_2_1",
+          "physical_inset_reciprocal_tangent_2_169/140",
+          "physical_folded_arc_chord_2_0_199032864766431/281474976710656",
+          "physical_inset_reciprocal_tangent_3_169/140",
+          "physical_folded_arc_chord_3_0_199032864766431/281474976710656",
+          "physical_inset_reciprocal_tangent_4_169/140",
+          "physical_folded_arc_chord_4_0_199032864766431/281474976710656",
+          "physical_inset_perspective_secant_5_0_1",
+          "physical_inset_reciprocal_tangent_5_1",
+          "physical_folded_arc_chord_5_0_199032864766431/281474976710656",
+          "physical_inset_perspective_secant_6_0_1",
+          "physical_folded_arc_chord_6_0_199032864766431/281474976710656",
+          "physical_folded_arc_chord_7_0_199032864766431/281474976710656",
+          "physical_folded_arc_chord_8_0_199032864766431/281474976710656",
+          "original_support_height_radius_0_4_-1_-77895384044019/1125899906842624",
+          "original_support_height_radius_0_4_-1_0",
+          "original_support_height_radius_1_5_-1_-92514560928165/1125899906842624",
+          "original_support_height_radius_3_6_-1_0",
+          "original_support_height_radius_3_6_1_0",
+          "directional_support_gap_0_4_4_0_1_1_0",
+          "directional_support_gap_3_6_6_0_1_-1_0",
+          "directional_support_gap_0_4_0_9_1_1_0",
+          "directional_support_gap_0_4_4_12_1_1_0",
+          "original_point_incircle_0_4_0_1_1_0_0",
+          "original_point_incircle_0_4_0_1_1_0_1",
+          "original_point_incircle_1_5_1_1_1_0_0",
+          "physical_inset_reciprocal_tangent_0_1",
+          "physical_inset_reciprocal_tangent_0_2252941/2097152",
+          "physical_folded_arc_chord_0_0_155789/1048576",
+          "physical_inset_reciprocal_tangent_1_1",
+          "physical_inset_reciprocal_tangent_1_136941/131072",
+          "physical_folded_arc_chord_1_0_5869/65536",
+          "physical_inset_perspective_tangent_2_0",
+          "physical_inset_perspective_secant_2_0_1",
+          "physical_inset_reciprocal_tangent_2_169/140",
+          "physical_folded_arc_chord_2_0_199032864766431/281474976710656",
+          "physical_inset_reciprocal_tangent_3_169/140",
+          "physical_folded_arc_chord_3_0_199032864766431/281474976710656",
+          "physical_inset_reciprocal_tangent_4_169/140",
+          "physical_folded_arc_chord_4_0_199032864766431/281474976710656",
+          "physical_inset_perspective_secant_5_0_1",
+          "physical_inset_reciprocal_tangent_5_1",
+          "physical_folded_arc_chord_5_0_199032864766431/281474976710656",
+          "physical_inset_reciprocal_tangent_6_1",
+          "physical_folded_arc_chord_6_0_199032864766431/281474976710656",
+          "physical_folded_arc_chord_7_0_199032864766431/281474976710656",
+          "original_support_height_radius_0_4_-1_-77895384044019/1125899906842624",
+          "original_support_height_radius_0_4_-1_0",
+          "original_support_height_radius_1_5_-1_-92514560928165/1125899906842624",
+          "original_support_height_radius_3_6_-1_0",
+          "original_support_height_radius_3_6_1_0",
+          "directional_support_gap_0_4_0_9_1_1_0",
+          "directional_support_gap_0_4_0_10_1_1_0",
+          "directional_support_gap_3_6_6_11_1_1_0",
+          "directional_support_gap_0_4_4_12_1_1_0"
+        ],
+        "unsupported_rules_accepted": false,
+        "certificate_sha256": "d7ad68039cefde5580f63db10002a6dcb436381ee20ac04e9955fb5f127a84f0",
+        "reviewer_sha256": "09bcfb3f235a5a90464c21caa12d26bbda877c8dcad67dd6f9d0e70fe0493460",
+        "independent_rules_sha256": "a156f54bf7600a8a743e54083c80b4f7de6faac276774d2e9fd6ff156b6ed84e",
+        "verified_source_bindings": 10,
+        "seconds": 5.743226072998368,
+        "whole_mask_closed": false,
+        "human_or_kernel_verification": false
+      },
+      "rounds": [],
+      "new_exact_deductions": 0,
+      "printed_rows": 0,
+      "terminal_rows": 0,
+      "reserve": "None",
+      "new_original_cells": 0,
+      "whole_mask_closed": false,
+      "certificate_sha256": "9a5c4af1e23964ee661e4e1ae427265a29303b2a6f6bd5a65c5ece14177040a3",
+      "reviewer_sha256": "1bcb12ed95463868eda1e9078650a4dec1139a0bd0ae46dbba8406cf49b7cc60",
+      "independent_rule_sha256": "bfa5cc5448b21e78ebbe46cd79f846fe71a47b8851d2d56cf5d97c21758bb812",
+      "lean_lake_ci_run": false,
+      "seconds": 5.7944837889990595
+    },
+    "whole_parent": {
+      "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+      "rounds": 5,
+      "deductions": 260,
+      "printed_rows_checked": 583,
+      "reserve": null,
+      "numerical_discovery_fields_used": false,
+      "whole_original_credit": 0,
+      "whole_mask_credit": 0
+    },
+    "certificate_sha256": "5b790e2168a6a7c473fedd7f8679d64fed94aba4f6dac45776d7f7c5f4aaa81c"
+  },
+  "complete_union": {
+    "status": "PASS_CERTIFIED_ORIGINAL_BOUNDS_FROM_COMPLETE_SAT_UNION",
+    "complete_cover": {
+      "status": "PASS_PARTIAL_PHYSICAL_SAT_COVER",
+      "pair": [
+        3,
+        6
+      ],
+      "all_eight_physical_alternatives": true,
+      "closed_faces_retained": true,
+      "excluded_alternatives": 5,
+      "children": [
+        {
+          "choice": [
+            3,
+            0,
+            -1
+          ],
+          "audit": {
+            "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+            "rounds": 4,
+            "deductions": 1189,
+            "printed_rows_checked": 1087,
+            "reserve": "7386684157930883238286088368412263074702315765502792389087905664645242928280861490833352298041280433019556623779050909898447/9384968870952128722156075145751788450529650098459787347730571114960683064854649373942902903699323970319357157648422360055808000",
+            "numerical_discovery_fields_used": false,
+            "whole_original_credit": 0,
+            "whole_mask_credit": 0
+          }
+        },
+        {
+          "choice": [
+            3,
+            0,
+            1
+          ],
+          "audit": {
+            "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+            "rounds": 0,
+            "deductions": 0,
+            "printed_rows_checked": 0,
+            "reserve": null,
+            "numerical_discovery_fields_used": false,
+            "whole_original_credit": 0,
+            "whole_mask_credit": 0
+          }
+        },
+        {
+          "choice": [
+            3,
+            1,
+            -1
+          ],
+          "audit": {
+            "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+            "rounds": 0,
+            "deductions": 0,
+            "printed_rows_checked": 0,
+            "reserve": null,
+            "numerical_discovery_fields_used": false,
+            "whole_original_credit": 0,
+            "whole_mask_credit": 0
+          }
+        },
+        {
+          "choice": [
+            3,
+            1,
+            1
+          ],
+          "audit": {
+            "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+            "rounds": 7,
+            "deductions": 461,
+            "printed_rows_checked": 1159,
+            "reserve": null,
+            "numerical_discovery_fields_used": false,
+            "whole_original_credit": 0,
+            "whole_mask_credit": 0
+          }
+        },
+        {
+          "choice": [
+            6,
+            0,
+            -1
+          ],
+          "audit": {
+            "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+            "rounds": 9,
+            "deductions": 2396,
+            "printed_rows_checked": 2459,
+            "reserve": null,
+            "numerical_discovery_fields_used": false,
+            "whole_original_credit": 0,
+            "whole_mask_credit": 0
+          }
+        },
+        {
+          "choice": [
+            6,
+            0,
+            1
+          ],
+          "audit": {
+            "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+            "rounds": 0,
+            "deductions": 0,
+            "printed_rows_checked": 22,
+            "reserve": "430634370535172633876240843701233899631995932575171/160836587489974820621360654293921693696000000000000000",
+            "numerical_discovery_fields_used": false,
+            "whole_original_credit": 0,
+            "whole_mask_credit": 0
+          }
+        },
+        {
+          "choice": [
+            6,
+            1,
+            -1
+          ],
+          "audit": {
+            "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+            "rounds": 0,
+            "deductions": 0,
+            "printed_rows_checked": 0,
+            "reserve": null,
+            "numerical_discovery_fields_used": false,
+            "whole_original_credit": 0,
+            "whole_mask_credit": 0
+          }
+        },
+        {
+          "choice": [
+            6,
+            1,
+            1
+          ],
+          "audit": {
+            "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+            "rounds": 6,
+            "deductions": 119,
+            "printed_rows_checked": 668,
+            "reserve": null,
+            "numerical_discovery_fields_used": false,
+            "whole_original_credit": 0,
+            "whole_mask_credit": 0
+          }
+        }
+      ],
+      "whole_original_credit": 0,
+      "whole_mask_credit": 0
+    },
+    "surviving_alternatives": [
+      [
+        3,
+        1,
+        1
+      ],
+      [
+        6,
+        0,
+        -1
+      ],
+      [
+        6,
+        1,
+        1
+      ]
+    ],
+    "changed_original_intervals": [
+      {
+        "field": "positions",
+        "key": 7,
+        "before": [
+          "-702865/1048576",
+          "220673/1048576"
+        ],
+        "after": [
+          "-702865/1048576",
+          "93453/524288"
+        ]
+      },
+      {
+        "field": "differences",
+        "key": [
+          0,
+          3,
+          1
+        ],
+        "before": [
+          "-747057/1048576",
+          "169231/524288"
+        ],
+        "after": [
+          "-747057/1048576",
+          "20081/65536"
+        ]
+      },
+      {
+        "field": "differences",
+        "key": [
+          0,
+          6,
+          1
+        ],
+        "before": [
+          "252733/1048576",
+          "773133/524288"
+        ],
+        "after": [
+          "16531/65536",
+          "773133/524288"
+        ]
+      },
+      {
+        "field": "differences",
+        "key": [
+          1,
+          3,
+          1
+        ],
+        "before": [
+          "301519/1048576",
+          "1387549/1048576"
+        ],
+        "after": [
+          "301519/1048576",
+          "685543/524288"
+        ]
+      },
+      {
+        "field": "differences",
+        "key": [
+          1,
+          6,
+          1
+        ],
+        "before": [
+          "1301309/1048576",
+          "2602485/1048576"
+        ],
+        "after": [
+          "82067/65536",
+          "2602485/1048576"
+        ]
+      },
+      {
+        "field": "differences",
+        "key": [
+          2,
+          4,
+          1
+        ],
+        "before": [
+          "1449205/1048576",
+          "699469/262144"
+        ],
+        "after": [
+          "1450435/1048576",
+          "699469/262144"
+        ]
+      },
+      {
+        "field": "differences",
+        "key": [
+          2,
+          5,
+          1
+        ],
+        "before": [
+          "782539/1048576",
+          "768485/262144"
+        ],
+        "after": [
+          "783605/1048576",
+          "768485/262144"
+        ]
+      },
+      {
+        "field": "differences",
+        "key": [
+          2,
+          6,
+          1
+        ],
+        "before": [
+          "764031/524288",
+          "1306201/524288"
+        ],
+        "after": [
+          "197031/131072",
+          "1306201/524288"
+        ]
+      },
+      {
+        "field": "differences",
+        "key": [
+          3,
+          4,
+          0
+        ],
+        "before": [
+          "-1476661/524288",
+          "-10356307029724121/5000000000000000"
+        ],
+        "after": [
+          "-1476661/524288",
+          "-1087381/524288"
+        ]
+      },
+      {
+        "field": "differences",
+        "key": [
+          3,
+          4,
+          1
+        ],
+        "before": [
+          "160177/262144",
+          "2017141/1048576"
+        ],
+        "after": [
+          "657633/1048576",
+          "2017141/1048576"
+        ]
+      },
+      {
+        "field": "differences",
+        "key": [
+          3,
+          5,
+          0
+        ],
+        "before": [
+          "-1815819/1048576",
+          "-5356307029724121/5000000000000000"
+        ],
+        "after": [
+          "-1815819/1048576",
+          "-563093/524288"
+        ]
+      },
+      {
+        "field": "differences",
+        "key": [
+          3,
+          5,
+          1
+        ],
+        "before": [
+          "-44413/524288",
+          "2293205/1048576"
+        ],
+        "after": [
+          "-2713/32768",
+          "2293205/1048576"
+        ]
+      },
+      {
+        "field": "differences",
+        "key": [
+          3,
+          6,
+          0
+        ],
+        "before": [
+          "-767243/1048576",
+          "87119/1048576"
+        ],
+        "after": [
+          "-767243/1048576",
+          "78833/1048576"
+        ]
+      },
+      {
+        "field": "differences",
+        "key": [
+          3,
+          6,
+          1
+        ],
+        "before": [
+          "829011/1048576",
+          "1729563/1048576"
+        ],
+        "after": [
+          "438591/524288",
+          "1729563/1048576"
+        ]
+      },
+      {
+        "field": "differences",
+        "key": [
+          3,
+          7,
+          1
+        ],
+        "before": [
+          "-1811013/1048576",
+          "2293205/1048576"
+        ],
+        "after": [
+          "-13329347/7864320",
+          "2293205/1048576"
+        ]
+      },
+      {
+        "field": "differences",
+        "key": [
+          3,
+          8,
+          1
+        ],
+        "before": [
+          "-1811013/1048576",
+          "2293205/1048576"
+        ],
+        "after": [
+          "-13329347/7864320",
+          "2293205/1048576"
+        ]
+      },
+      {
+        "field": "differences",
+        "key": [
+          4,
+          6,
+          0
+        ],
+        "before": [
+          "2",
+          "708713/262144"
+        ],
+        "after": [
+          "2",
+          "350469/131072"
+        ]
+      },
+      {
+        "field": "differences",
+        "key": [
+          5,
+          6,
+          0
+        ],
+        "before": [
+          "1",
+          "846357/524288"
+        ],
+        "after": [
+          "1",
+          "415149/262144"
+        ]
+      },
+      {
+        "field": "differences",
+        "key": [
+          6,
+          7,
+          0
+        ],
+        "before": [
+          "-2941609/1048576",
+          "244003/524288"
+        ],
+        "after": [
+          "-1455867/524288",
+          "244003/524288"
+        ]
+      },
+      {
+        "field": "differences",
+        "key": [
+          6,
+          8,
+          0
+        ],
+        "before": [
+          "-2941609/1048576",
+          "244003/524288"
+        ],
+        "after": [
+          "-1455867/524288",
+          "244003/524288"
+        ]
+      },
+      {
+        "field": "diagonal",
+        "key": [
+          0,
+          3,
+          0
+        ],
+        "before": [
+          "568703/262144",
+          "3376495/1048576"
+        ],
+        "after": [
+          "568703/262144",
+          "3369283/1048576"
+        ]
+      },
+      {
+        "field": "diagonal",
+        "key": [
+          0,
+          3,
+          1
+        ],
+        "before": [
+          "2685055/1048576",
+          "3771699/1048576"
+        ],
+        "after": [
+          "2703237/1048576",
+          "3771699/1048576"
+        ]
+      },
+      {
+        "field": "diagonal",
+        "key": [
+          0,
+          6,
+          0
+        ],
+        "before": [
+          "3086339/1048576",
+          "2028761/524288"
+        ],
+        "after": [
+          "772511/262144",
+          "2028761/524288"
+        ]
+      },
+      {
+        "field": "diagonal",
+        "key": [
+          0,
+          6,
+          1
+        ],
+        "before": [
+          "429217/524288",
+          "687511/262144"
+        ],
+        "after": [
+          "429217/524288",
+          "1346155/524288"
+        ]
+      },
+      {
+        "field": "diagonal",
+        "key": [
+          1,
+          3,
+          0
+        ],
+        "before": [
+          "568703/262144",
+          "3376495/1048576"
+        ],
+        "after": [
+          "568703/262144",
+          "3369283/1048576"
+        ]
+      },
+      {
+        "field": "diagonal",
+        "key": [
+          1,
+          3,
+          1
+        ],
+        "before": [
+          "293907/524288",
+          "1674547/1048576"
+        ],
+        "after": [
+          "606085/1048576",
+          "1674547/1048576"
+        ]
+      },
+      {
+        "field": "diagonal",
+        "key": [
+          1,
+          6,
+          0
+        ],
+        "before": [
+          "3086339/1048576",
+          "2028761/524288"
+        ],
+        "after": [
+          "772511/262144",
+          "2028761/524288"
+        ]
+      },
+      {
+        "field": "diagonal",
+        "key": [
+          1,
+          6,
+          1
+        ],
+        "before": [
+          "-311851/262144",
+          "163223/262144"
+        ],
+        "after": [
+          "-311851/262144",
+          "297579/524288"
+        ]
+      },
+      {
+        "field": "diagonal",
+        "key": [
+          2,
+          4,
+          1
+        ],
+        "before": [
+          "-2174187/524288",
+          "-3002779/1048576"
+        ],
+        "after": [
+          "-2174187/524288",
+          "-377551/131072"
+        ]
+      },
+      {
+        "field": "diagonal",
+        "key": [
+          2,
+          6,
+          0
+        ],
+        "before": [
+          "1853377/1048576",
+          "3145127/1048576"
+        ],
+        "after": [
+          "928445/524288",
+          "3145127/1048576"
+        ]
+      },
+      {
+        "field": "diagonal",
+        "key": [
+          2,
+          6,
+          1
+        ],
+        "before": [
+          "-1141021/524288",
+          "-42515/65536"
+        ],
+        "after": [
+          "-1141021/524288",
+          "-92679/131072"
+        ]
+      },
+      {
+        "field": "diagonal",
+        "key": [
+          3,
+          4,
+          1
+        ],
+        "before": [
+          "-547321/131072",
+          "-1624033/524288"
+        ],
+        "after": [
+          "-547321/131072",
+          "-3288363/1048576"
+        ]
+      },
+      {
+        "field": "diagonal",
+        "key": [
+          3,
+          5,
+          1
+        ],
+        "before": [
+          "-3742281/1048576",
+          "-1311663/1048576"
+        ],
+        "after": [
+          "-3742281/1048576",
+          "-1330933/1048576"
+        ]
+      },
+      {
+        "field": "diagonal",
+        "key": [
+          3,
+          6,
+          0
+        ],
+        "before": [
+          "28283/131072",
+          "379017/262144"
+        ],
+        "after": [
+          "115751/524288",
+          "379017/262144"
+        ]
+      },
+      {
+        "field": "diagonal",
+        "key": [
+          3,
+          6,
+          1
+        ],
+        "before": [
+          "-1141021/524288",
+          "-919279/1048576"
+        ],
+        "after": [
+          "-1141021/524288",
+          "-1033741/1048576"
+        ]
+      },
+      {
+        "field": "diagonal",
+        "key": [
+          3,
+          7,
+          0
+        ],
+        "before": [
+          "-987619/262144",
+          "1525323/1048576"
+        ],
+        "after": [
+          "-3933615/1048576",
+          "1525323/1048576"
+        ]
+      },
+      {
+        "field": "diagonal",
+        "key": [
+          3,
+          7,
+          1
+        ],
+        "before": [
+          "-547321/131072",
+          "1000915/1048576"
+        ],
+        "after": [
+          "-547321/131072",
+          "959931/1048576"
+        ]
+      },
+      {
+        "field": "diagonal",
+        "key": [
+          3,
+          8,
+          0
+        ],
+        "before": [
+          "-987619/262144",
+          "1525323/1048576"
+        ],
+        "after": [
+          "-3933615/1048576",
+          "1525323/1048576"
+        ]
+      },
+      {
+        "field": "diagonal",
+        "key": [
+          3,
+          8,
+          1
+        ],
+        "before": [
+          "-547321/131072",
+          "1000915/1048576"
+        ],
+        "after": [
+          "-547321/131072",
+          "959931/1048576"
+        ]
+      },
+      {
+        "field": "diagonal",
+        "key": [
+          5,
+          6,
+          1
+        ],
+        "before": [
+          "0",
+          "2741983/1048576"
+        ],
+        "after": [
+          "0",
+          "2667051/1048576"
+        ]
+      },
+      {
+        "field": "diagonal",
+        "key": [
+          6,
+          7,
+          0
+        ],
+        "before": [
+          "-2249081/524288",
+          "101803/131072"
+        ],
+        "after": [
+          "-2249081/524288",
+          "807027/1048576"
+        ]
+      },
+      {
+        "field": "diagonal",
+        "key": [
+          6,
+          8,
+          0
+        ],
+        "before": [
+          "-2249081/524288",
+          "101803/131072"
+        ],
+        "after": [
+          "-2249081/524288",
+          "807027/1048576"
+        ]
+      }
+    ],
+    "original_parent_path_preserved": true,
+    "child_auxiliaries_discarded": true,
+    "new_original_cells": 0,
+    "new_masks": 0
+  },
+  "final_state": {
+    "id": "negative-887236b78100baf3",
+    "path": [
+      [
+        "angle",
+        3,
+        0
+      ],
+      [
+        "angle_cut",
+        [
+          0,
+          "0"
+        ],
+        1
+      ],
+      [
+        "alternate_four_escape",
+        [
+          1,
+          7
+        ],
+        [
+          1
+        ]
+      ]
+    ],
+    "angles": [
+      [
+        "0",
+        "21144313723523/140737488355328"
+      ],
+      [
+        "-25308854460927/281474976710656",
+        "25308854460927/281474976710656"
+      ],
+      [
+        "-1",
+        "1"
+      ],
+      [
+        "-1",
+        "0"
+      ],
+      [
+        "-1",
+        "1"
+      ],
+      [
+        "-1",
+        "1"
+      ],
+      [
+        "-1",
+        "1"
+      ],
+      [
+        "-1",
+        "1"
+      ],
+      [
+        "-1",
+        "1"
+      ]
+    ],
+    "positions": [
+      [
+        "-91/60",
+        "-1500701/1048576"
+      ],
+      [
+        "-17481/65536",
+        "34563/131072"
+      ],
+      [
+        "-31/60",
+        "-452125/1048576"
+      ],
+      [
+        "-1356835/1048576",
+        "-96509/131072"
+      ],
+      [
+        "29/60",
+        "750011/1048576"
+      ],
+      [
+        "-92725/65536",
+        "-77/120"
+      ],
+      [
+        "6684432029724121/5000000000000000",
+        "91/60"
+      ],
+      [
+        "-702865/1048576",
+        "93453/524288"
+      ],
+      [
+        "-681677/524288",
+        "-47/64"
+      ],
+      [
+        "665453/1048576",
+        "328569/262144"
+      ],
+      [
+        "-112931/524288",
+        "17/64"
+      ],
+      [
+        "-393103/1048576",
+        "91/60"
+      ],
+      [
+        "411357/524288",
+        "14216117858886719/10000000000000000"
+      ],
+      [
+        "301567639091283/703687441776640",
+        "317055/262144"
+      ],
+      [
+        "-1474347/1048576",
+        "5/4"
+      ],
+      [
+        "-91/60",
+        "91/60"
+      ],
+      [
+        "-1474347/1048576",
+        "5/4"
+      ],
+      [
+        "-91/60",
+        "91/60"
+      ]
+    ],
+    "scalar": [
+      [
+        "139175527117029/140737488355328",
+        "1"
+      ],
+      [
+        "35043000693059/35184372088832",
+        "1"
+      ],
+      [
+        "99516432383215/140737488355328",
+        "1"
+      ],
+      [
+        "99516432383215/140737488355328",
+        "1"
+      ],
+      [
+        "99516432383215/140737488355328",
+        "1"
+      ],
+      [
+        "99516432383215/140737488355328",
+        "1"
+      ],
+      [
+        "99516432383215/140737488355328",
+        "1"
+      ],
+      [
+        "99516432383215/140737488355328",
+        "1"
+      ],
+      [
+        "99516432383215/140737488355328",
+        "1"
+      ],
+      [
+        "0",
+        "155789/1048576"
+      ],
+      [
+        "-5869/65536",
+        "5869/65536"
+      ],
+      [
+        "-199032864766431/281474976710656",
+        "199032864766431/281474976710656"
+      ],
+      [
+        "-199032864766431/281474976710656",
+        "0"
+      ],
+      [
+        "-199032864766431/281474976710656",
+        "199032864766431/281474976710656"
+      ],
+      [
+        "-199032864766431/281474976710656",
+        "199032864766431/281474976710656"
+      ],
+      [
+        "-199032864766431/281474976710656",
+        "199032864766431/281474976710656"
+      ],
+      [
+        "-199032864766431/281474976710656",
+        "199032864766431/281474976710656"
+      ],
+      [
+        "-199032864766431/281474976710656",
+        "199032864766431/281474976710656"
+      ],
+      [
+        "0",
+        "155789/1048576"
+      ],
+      [
+        "0",
+        "5869/65536"
+      ],
+      [
+        "0",
+        "199032864766431/281474976710656"
+      ],
+      [
+        "0",
+        "199032864766431/281474976710656"
+      ],
+      [
+        "0",
+        "199032864766431/281474976710656"
+      ],
+      [
+        "0",
+        "199032864766431/281474976710656"
+      ],
+      [
+        "0",
+        "199032864766431/281474976710656"
+      ],
+      [
+        "0",
+        "199032864766431/281474976710656"
+      ],
+      [
+        "0",
+        "199032864766431/281474976710656"
+      ],
+      [
+        "15466017471359/35184372088832",
+        "1/2"
+      ],
+      [
+        "241527/524288",
+        "1/2"
+      ],
+      [
+        "49758216191607/140737488355328",
+        "1/2"
+      ],
+      [
+        "49758216191607/140737488355328",
+        "1/2"
+      ],
+      [
+        "49758216191607/140737488355328",
+        "1/2"
+      ],
+      [
+        "49758216191607/140737488355328",
+        "1/2"
+      ],
+      [
+        "49758216191607/140737488355328",
+        "1/2"
+      ],
+      [
+        "49758216191607/140737488355328",
+        "1/2"
+      ],
+      [
+        "49758216191607/140737488355328",
+        "1/2"
+      ]
+    ],
+    "differences": [
+      {
+        "pair": [
+          0,
+          1
+        ],
+        "intervals": [
+          [
+            "1048575/1048576",
+            "1138215/1048576"
+          ],
+          [
+            "-1138215/1048576",
+            "-1048575/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          0,
+          2
+        ],
+        "intervals": [
+          [
+            "2097151/1048576",
+            "35105269/15728640"
+          ],
+          [
+            "-1613867/1048576",
+            "-63371/131072"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          0,
+          3
+        ],
+        "intervals": [
+          [
+            "2992167/1048576",
+            "91/30"
+          ],
+          [
+            "-747057/1048576",
+            "20081/65536"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          0,
+          4
+        ],
+        "intervals": [
+          [
+            "4503/32768",
+            "751/960"
+          ],
+          [
+            "919333/1048576",
+            "1584377/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          0,
+          5
+        ],
+        "intervals": [
+          [
+            "1276865/1048576",
+            "1711/960"
+          ],
+          [
+            "-47737/262144",
+            "467509/262144"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          0,
+          6
+        ],
+        "intervals": [
+          [
+            "2325441/1048576",
+            "88148353576660157/30000000000000000"
+          ],
+          [
+            "16531/65536",
+            "773133/524288"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          0,
+          7
+        ],
+        "intervals": [
+          [
+            "26355/1048576",
+            "83/30"
+          ],
+          [
+            "-466711/262144",
+            "467509/262144"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          0,
+          8
+        ],
+        "intervals": [
+          [
+            "26355/1048576",
+            "83/30"
+          ],
+          [
+            "-466711/262144",
+            "467509/262144"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          2
+        ],
+        "intervals": [
+          [
+            "1048575/1048576",
+            "645821/524288"
+          ],
+          [
+            "-565291/1048576",
+            "284395/524288"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          3
+        ],
+        "intervals": [
+          [
+            "1943591/1048576",
+            "61/30"
+          ],
+          [
+            "301519/1048576",
+            "685543/524288"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          4
+        ],
+        "intervals": [
+          [
+            "-911229/1048576",
+            "-209/960"
+          ],
+          [
+            "1983727/1048576",
+            "2660513/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          5
+        ],
+        "intervals": [
+          [
+            "28283/131072",
+            "751/960"
+          ],
+          [
+            "458123/524288",
+            "44207629/15728640"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          6
+        ],
+        "intervals": [
+          [
+            "159355/131072",
+            "58148353576660157/30000000000000000"
+          ],
+          [
+            "82067/65536",
+            "2602485/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          7
+        ],
+        "intervals": [
+          [
+            "-1022221/1048576",
+            "53/30"
+          ],
+          [
+            "-204567/262144",
+            "44207629/15728640"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          8
+        ],
+        "intervals": [
+          [
+            "-1022221/1048576",
+            "53/30"
+          ],
+          [
+            "-204567/262144",
+            "44207629/15728640"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          2,
+          3
+        ],
+        "intervals": [
+          [
+            "193045/262144",
+            "31/30"
+          ],
+          [
+            "349525/524288",
+            "31/30"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          2,
+          4
+        ],
+        "intervals": [
+          [
+            "-2023891/1048576",
+            "-1169/960"
+          ],
+          [
+            "1450435/1048576",
+            "699469/262144"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          2,
+          5
+        ],
+        "intervals": [
+          [
+            "-438669/524288",
+            "-209/960"
+          ],
+          [
+            "783605/1048576",
+            "768485/262144"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          2,
+          6
+        ],
+        "intervals": [
+          [
+            "85619/524288",
+            "28148353576660157/30000000000000000"
+          ],
+          [
+            "197031/131072",
+            "1306201/524288"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          2,
+          7
+        ],
+        "intervals": [
+          [
+            "-266323/131072",
+            "23/30"
+          ],
+          [
+            "-7/8",
+            "768485/262144"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          2,
+          8
+        ],
+        "intervals": [
+          [
+            "-266323/131072",
+            "23/30"
+          ],
+          [
+            "-7/8",
+            "768485/262144"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          3,
+          4
+        ],
+        "intervals": [
+          [
+            "-1476661/524288",
+            "-1087381/524288"
+          ],
+          [
+            "657633/1048576",
+            "2017141/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          3,
+          5
+        ],
+        "intervals": [
+          [
+            "-1815819/1048576",
+            "-563093/524288"
+          ],
+          [
+            "-2713/32768",
+            "2293205/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          3,
+          6
+        ],
+        "intervals": [
+          [
+            "-767243/1048576",
+            "78833/1048576"
+          ],
+          [
+            "438591/524288",
+            "1729563/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          3,
+          7
+        ],
+        "intervals": [
+          [
+            "-3064161/1048576",
+            "-434432029724121/5000000000000000"
+          ],
+          [
+            "-13329347/7864320",
+            "2293205/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          3,
+          8
+        ],
+        "intervals": [
+          [
+            "-3064161/1048576",
+            "-434432029724121/5000000000000000"
+          ],
+          [
+            "-13329347/7864320",
+            "2293205/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          4,
+          5
+        ],
+        "intervals": [
+          [
+            "1",
+            "818545/524288"
+          ],
+          [
+            "-1407899/1048576",
+            "230529/262144"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          4,
+          6
+        ],
+        "intervals": [
+          [
+            "2",
+            "350469/131072"
+          ],
+          [
+            "-418427/524288",
+            "67029/131072"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          4,
+          7
+        ],
+        "intervals": [
+          [
+            "-87191/131072",
+            "1337037/524288"
+          ],
+          [
+            "-10892311/3932160",
+            "924887/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          4,
+          8
+        ],
+        "intervals": [
+          [
+            "-87191/131072",
+            "1337037/524288"
+          ],
+          [
+            "-10892311/3932160",
+            "924887/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          5,
+          6
+        ],
+        "intervals": [
+          [
+            "1",
+            "415149/262144"
+          ],
+          [
+            "-2297074942809863/2111062325329920",
+            "684617/524288"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          5,
+          7
+        ],
+        "intervals": [
+          [
+            "-218263/131072",
+            "768291/524288"
+          ],
+          [
+            "-91/30",
+            "1983443/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          5,
+          8
+        ],
+        "intervals": [
+          [
+            "-218263/131072",
+            "768291/524288"
+          ],
+          [
+            "-91/30",
+            "1983443/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          6,
+          7
+        ],
+        "intervals": [
+          [
+            "-1455867/524288",
+            "244003/524288"
+          ],
+          [
+            "-2831255/1048576",
+            "2297074942809863/2111062325329920"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          6,
+          8
+        ],
+        "intervals": [
+          [
+            "-1455867/524288",
+            "244003/524288"
+          ],
+          [
+            "-2831255/1048576",
+            "2297074942809863/2111062325329920"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          7,
+          8
+        ],
+        "intervals": [
+          [
+            "0",
+            "2785067/1048576"
+          ],
+          [
+            "-91/30",
+            "91/30"
+          ]
+        ]
+      }
+    ],
+    "diagonal": [
+      {
+        "pair": [
+          0,
+          1
+        ],
+        "intervals": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "1048575/524288",
+            "1138215/524288"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          0,
+          2
+        ],
+        "intervals": [
+          [
+            "122697/262144",
+            "1627725/1048576"
+          ],
+          [
+            "2604119/1048576",
+            "1876401/524288"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          0,
+          3
+        ],
+        "intervals": [
+          [
+            "568703/262144",
+            "3369283/1048576"
+          ],
+          [
+            "2703237/1048576",
+            "3771699/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          0,
+          4
+        ],
+        "intervals": [
+          [
+            "151465/131072",
+            "1129913/524288"
+          ],
+          [
+            "-1028075/1048576",
+            "-183215/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          0,
+          5
+        ],
+        "intervals": [
+          [
+            "1287113/1048576",
+            "1816887/524288"
+          ],
+          [
+            "-141195/262144",
+            "1954533/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          0,
+          6
+        ],
+        "intervals": [
+          [
+            "772511/262144",
+            "2028761/524288"
+          ],
+          [
+            "429217/524288",
+            "1346155/524288"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          0,
+          7
+        ],
+        "intervals": [
+          [
+            "-1023589/1048576",
+            "2028761/524288"
+          ],
+          [
+            "-1028075/1048576",
+            "1006905/262144"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          0,
+          8
+        ],
+        "intervals": [
+          [
+            "-1023589/1048576",
+            "2028761/524288"
+          ],
+          [
+            "-1028075/1048576",
+            "1006905/262144"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          2
+        ],
+        "intervals": [
+          [
+            "122697/262144",
+            "1627725/1048576"
+          ],
+          [
+            "479785/1048576",
+            "827825/524288"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          3
+        ],
+        "intervals": [
+          [
+            "568703/262144",
+            "3369283/1048576"
+          ],
+          [
+            "606085/1048576",
+            "1674547/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          4
+        ],
+        "intervals": [
+          [
+            "151465/131072",
+            "1129913/524288"
+          ],
+          [
+            "-1576635/524288",
+            "-2325569/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          5
+        ],
+        "intervals": [
+          [
+            "1287113/1048576",
+            "1816887/524288"
+          ],
+          [
+            "-333691/131072",
+            "-228417/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          6
+        ],
+        "intervals": [
+          [
+            "772511/262144",
+            "2028761/524288"
+          ],
+          [
+            "-311851/262144",
+            "297579/524288"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          7
+        ],
+        "intervals": [
+          [
+            "-1023589/1048576",
+            "2028761/524288"
+          ],
+          [
+            "-1576635/524288",
+            "482617/262144"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          8
+        ],
+        "intervals": [
+          [
+            "-1023589/1048576",
+            "2028761/524288"
+          ],
+          [
+            "-1576635/524288",
+            "482617/262144"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          2,
+          3
+        ],
+        "intervals": [
+          [
+            "739543/524288",
+            "31/15"
+          ],
+          [
+            "0",
+            "2883589/7864320"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          2,
+          4
+        ],
+        "intervals": [
+          [
+            "-351747/1048576",
+            "1363293/1048576"
+          ],
+          [
+            "-2174187/524288",
+            "-377551/131072"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          2,
+          5
+        ],
+        "intervals": [
+          [
+            "42091/524288",
+            "2737241/1048576"
+          ],
+          [
+            "-3737373/1048576",
+            "-1276993/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          2,
+          6
+        ],
+        "intervals": [
+          [
+            "928445/524288",
+            "3145127/1048576"
+          ],
+          [
+            "-1141021/524288",
+            "-92679/131072"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          2,
+          7
+        ],
+        "intervals": [
+          [
+            "-1055657/524288",
+            "3154383/1048576"
+          ],
+          [
+            "-2174187/524288",
+            "1069183/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          2,
+          8
+        ],
+        "intervals": [
+          [
+            "-1055657/524288",
+            "3154383/1048576"
+          ],
+          [
+            "-2174187/524288",
+            "1069183/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          3,
+          4
+        ],
+        "intervals": [
+          [
+            "-1008201/524288",
+            "-132883/524288"
+          ],
+          [
+            "-547321/131072",
+            "-3288363/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          3,
+          5
+        ],
+        "intervals": [
+          [
+            "-880721/524288",
+            "1108181/1048576"
+          ],
+          [
+            "-3742281/1048576",
+            "-1330933/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          3,
+          6
+        ],
+        "intervals": [
+          [
+            "115751/524288",
+            "379017/262144"
+          ],
+          [
+            "-1141021/524288",
+            "-1033741/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          3,
+          7
+        ],
+        "intervals": [
+          [
+            "-3933615/1048576",
+            "1525323/1048576"
+          ],
+          [
+            "-547321/131072",
+            "959931/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          3,
+          8
+        ],
+        "intervals": [
+          [
+            "-3933615/1048576",
+            "1525323/1048576"
+          ],
+          [
+            "-547321/131072",
+            "959931/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          4,
+          5
+        ],
+        "intervals": [
+          [
+            "0",
+            "2391631/1048576"
+          ],
+          [
+            "51967/262144",
+            "2815441/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          4,
+          6
+        ],
+        "intervals": [
+          [
+            "1472043/1048576",
+            "2822427/1048576"
+          ],
+          [
+            "1671851/1048576",
+            "1631163/524288"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          4,
+          7
+        ],
+        "intervals": [
+          [
+            "-2707073/1048576",
+            "2822427/1048576"
+          ],
+          [
+            "-22485/32768",
+            "2249081/524288"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          4,
+          8
+        ],
+        "intervals": [
+          [
+            "-2707073/1048576",
+            "2822427/1048576"
+          ],
+          [
+            "-22485/32768",
+            "2249081/524288"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          5,
+          6
+        ],
+        "intervals": [
+          [
+            "15325/262144",
+            "684617/262144"
+          ],
+          [
+            "0",
+            "2667051/1048576"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          5,
+          7
+        ],
+        "intervals": [
+          [
+            "-1020255/262144",
+            "684617/262144"
+          ],
+          [
+            "-2815441/1048576",
+            "2018239/524288"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          5,
+          8
+        ],
+        "intervals": [
+          [
+            "-1020255/262144",
+            "684617/262144"
+          ],
+          [
+            "-2815441/1048576",
+            "2018239/524288"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          6,
+          7
+        ],
+        "intervals": [
+          [
+            "-2249081/524288",
+            "807027/1048576"
+          ],
+          [
+            "-1631163/524288",
+            "653777/262144"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          6,
+          8
+        ],
+        "intervals": [
+          [
+            "-2249081/524288",
+            "807027/1048576"
+          ],
+          [
+            "-1631163/524288",
+            "653777/262144"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          7,
+          8
+        ],
+        "intervals": [
+          [
+            "-91/30",
+            "2249081/524288"
+          ],
+          [
+            "-91/30",
+            "2249081/524288"
+          ]
+        ]
+      }
+    ]
+  },
+  "input_sha256": {
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/c887_whole_DG_shave/manifest.json": "5ff159e7f52fb027bbef224aad5c245270bea7e6f45feb1113abf89e4b69228c",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/c887_whole_support_caps/record.json": "5b790e2168a6a7c473fedd7f8679d64fed94aba4f6dac45776d7f7c5f4aaa81c",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/c887_whole_DG_shave/child_0.json": "ee1310b0833e93375b242c36f9b8efb316ce8044a8f382a0690aaec4bb4198f3",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/ac_whole_original_sat_shave.py": "14113c7fd6741dd8d679718f28746e9bad8d04beeb48ffb6c0739f9f3283594d",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/geometry/weak_outer_numeric_strict_bulk_v14_verify.py": "ec1b7de7b15bcc9d89d12087bff974c68e6d056bdaae26b482d514027ec97993",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/geometry/review_tight_bounds_independent.py": "fc4afd4c1fa2ae2fabae656f1d55e1289b1cb92212ebd153b9cc20a3f79e7c3a",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/independent_v4_rows.py": "deec1bd3e5bba3a895f69cd824e5ca8dcfad8eaf98515544f592752ef3696efc",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/verify_shared_bound.py": "8ab01fdffa3b8e2404036e8a92adb8c5b63da381c7e4e96b09da477c25e9d1c7",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/altitude_capacity_v2.py": "37860e07b58a12eda6b64f26645d8d1bb0873b01c8751e99b98c0a7ab0ee94cf",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/sharp_strip_rows.py": "4a4147260a8a209f5831e55df6990dda4a566bc6d55b52488fe6077540368542",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/support_height_rows.py": "b1aadbae8111d5395b864b06dc97d59eab8bc8e86e85c6972cea6ab0e7463383",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/b_macro/frame_perspective_rows.py": "d355d9cf651909a159bdf6b7b657160fb1b9744c3d3caf20d1c88f07327e4418",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/b_macro/directional_support_rows.py": "283e4294298b2ff4f3458addb6c5479f02dcbb816bb15beb8d6f6fdd8c5b9be7",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/rounded_support/point_disk_rows.py": "5ddcbcb0b9cc55480e6db86e0ba78860dc89245d9fd50ddfcf512f75b69639bc",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/sources/review_guarded_frame_bounds_independent.py": "9d7fc3680ad1b8bb1035d74deb9ade8501e3ef9989b37a019323f66a92a710e3",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/v3_whole_parent_pass.py": "d7efd0ac9ddcd5a3575e4cfea02348171e42fb7af7e88a11a83381abef147f2c",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/cd_family/diagonal_rows.py": "577bebfd53247f4059420ad0f3f97e0c81c6100f0331c1eadc0292f7a429fd7f",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/cd_family/correlated_capacity_rows.py": "343ef92666381cc82a36086655041812704464a51e8ccf78d83d2b96abff48d3",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/new_producers/four_center_rows.py": "d7f73724af109be932783a0c090f3c8856296e7cb05196f82ccac3c8f88b6f35",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/new_producers/square_area_moment_rows.py": "d4d4b7a9bda2595693ea10e15821eedfb5681b9f1be32381179b20512d2700d1",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/c887/c887_whole_eight_checkpoint_package/energy_proof/three_square_energy_rows.py": "712f594cfd4ec93f57d5c75c4f768592d1a70063fa2573959bfce4b674495547",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/coupled_three_square_energy.py": "693f5bb65c3d2b9930cf4f0d705ed7987ea0465f1da53b1c029289ae03903d2b",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/physical_sat_engine_snapshot.py": "38d1162c40cd6494579f7793c6b10a54432ce999994f86b6726d2ca9e8022bc4",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/active_highs.py": "2ff5cd15804f77e4f394f65b3e5c5b3de419f0e5c1b2809cad6ff4577ade98fe",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/ac_physical_context.py": "0f415e077c8afef5f078fd0f1da5f9af3739b3306c4717815fa32d9e68471c84",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/tightened_sat_products.py": "d9a44a0929989c9c1926e73b10d33e05c7662f09ef7a6c8f4000dd73300e557a",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/shared_frame_triangle_products.py": "da7fa7d71a166a8807798651c58923b7df836ce18283201ed825f64e925eb691",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/ac_physical_context_tight.py": "d7676630397b4b01520982ec04ff036938b46510b1afdf7bc1e3a365f80131e6",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/physical_sat_diagonal_engine.py": "6157eb67662b97f8e13beaa3d3d726e68b8a3871a95cb991825596f47aa9fac5",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/ac_physical_context_diag.py": "4cce42cc4950d4903e3aa558f5c4a2d9e81d8d36452ace699e139f469cb956cc",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/relative_frame_arc_rows.py": "fbcfdfa3d253fdd109613ada16b42b8f46ef94426801ed3d78720fdbeb7a3f3a",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/c887/c887_whole_eight_checkpoint_package/opposite_tilt_theorem/opposite_tilt_four_row_guard.py": "3d1a74e8108f9eb02e431e2e25f9f24aa7bffd55aac8f3a956d2f54a11886c0d",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/ac_physical_context_complete.py": "dfb7baef4ae2e92697fbad15a28eff5082d02db1e2edf94c29b816d055f0d753",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/physical_proxy_branch.py": "4059e490b40df8b712e256f57b423e09cb375e2c4a8d6958aacd1f8ce166a495",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/ac_physical_context_proxy.py": "06675c0b2f98b1826ad959e4549320dda47308ecb85553ed777f0378500f8e03",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/owner_free_relative_support_snapshot.py": "b1445ad4e00a0127b201d784b72e1df2246101f567b0bf952ca46b463595e788",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/ac_physical_context_ownerfree.py": "5e32b752cbd21f50708122c1378b8dd2510c0cf531cf2cdcd85d02fb53dad712",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/active_highs_checked_warning_snapshot.py": "a625f0c0c4aa40e51deb662e60a733b2c5ccd738c199ffe5f6487e3a3418114b",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/ac_physical_context_ownerfree_v2.py": "51499c525e01cdd88d9f8e951be0ed86a0b83a8ee6c2beb06998a037b24e62f8",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/ac_physical_context_caps.py": "f0efbdb2ffd559c69a5fc6344031450b279c229c8d3a938d7f0b2b2d48fd84ec",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/physical_pair_frame_squares.py": "39d917106aa79db506aa1defbb081b404b02c6b54d88d63cae455864f506ffa6",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/physical_frame_square_separation.py": "fdd4bbf142be1cff2c27688b5fd79950e0f105d09dad34a453dcbae50116b39c",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/physical_projection_squares.py": "0a33acc6990ccc5f35439f0f641de987a08466b0e53a3bfa38de1dd2c2c8901d",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/physical_projection_square_separation.py": "6f8ede5eb0853b2615bf27b099017293bf909094364938736f00bf7184b04f87",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/ac_physical_gram_runtime.py": "dcb8adb6a8e11f52c44f565e9752b7444d996495c03044b150b45c740ebcd3cf",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/ac_physical_all_guards_runtime.py": "00d4ec73defa7fbc9c0ddd90b52108ef404ff5b3f63ac28dedabae3e3f15c7a8",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/opposite_abid_row_guard.py": "a1a5cf009d24a1b18e41a2aff258bfa91987ebaf225308cef32212cee9ed0514",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/ac_physical_all_guards_v2.py": "b8256416447af11935f57c97ea72fe856f7f3d69329ba107bf2887292e1ce8dc",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/physical_preflight.py": "1777dff615d22cd0747995f0205cd21f926affdb6401a3539272e4a5d3e27ff8",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/physical_union_bound_hull.py": "826d12b21ad66345dfcfb217f018037655937b80e6f2e5a8e9abe6dd2667fcde",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/c887/c887_whole_eight_checkpoint_package/shared_strict_row_terminal.py": "43a74c66c7c0b91da76e6577ce511e6ae8de7bda9ab6e0adbf81a1cc2b013d43",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/full_angle_common_side_row_v1/full_angle_common_side_four_row_guard.py": "81895c0397f7e7d0a7a411413b5a8fe02e2782569f6e880d349f2eff9c032e2e",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/full_angle_common_side_row_v1/PREMISE_BINDINGS.json": "b462689a9a20b1ef6324a56487c9b4d039c83a8f2387726fcae98060f3c89558",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/OPPOSITE_ABID_PREMISE_BINDINGS.json": "f03bf03f9ef8941c93c3999f8076cb7e4a4b7eb66e9b00c0de289c6f7c5cb78d",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/OPPOSITE_ABID_LITERAL_SUBSTITUTION.md": "2844c7dd6d43afda6239512b6cc9ea055828ef32528cbde1bc07aee20dc7865a",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/c887_whole_DG_shave/child_1.json": "1723e2bf71a55198c219f6ac1aa7b6d97482620bcd351e60b74fe46858f05dbc",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/c887_whole_DG_shave/child_2.json": "0c74ad1abd90aad986eb001b5607a695a478508f50c06609dfa5bb56490918c7",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/c887_whole_DG_shave/child_3.json": "7fabcfb0e6b207153a528dc2a5b03b3cc9fa159afd447c8047b9b702260cfba3",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/c887_whole_DG_shave/child_4.json": "d729d079e83173564a82f4e22ec44c230e0e77da2e694c85d30b4e917330e771",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/c887_whole_DG_shave/child_5.json": "612e7789baa00964a281d04a20ddfcbeaedbde404858503da97392b825117d69",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/c887_whole_DG_shave/child_6.json": "5f6d02ed3a17acefed413a7c7c046ff6536deff575e9b881f3978a1ecbdba18b",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/c887_whole_DG_shave/child_7.json": "bd733b6757cb6999d80cb97b535e1a660d5c708bceab1442430c09082bfb81fb"
+  },
+  "checker_dependency_sha256": {
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/verify_ac_whole_original_sat_shave.py": "21d540545b3827f7f61ec313b1d403650b2d557f359d3063a05ad49823f15d3d",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/verify_c887_all_guards_v2.py": "462fda7117c665170ec9db7823a7c5c4027179928a394a16763db242431bb14a",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/verify_ac_two_link_complement.py": "b19d8b39168283488515b999ac7dfdfb691869dd47ecd4e6380f2a4374e4f8c8",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/independent_physical_union_bounds.py": "b480c0221c93601916b5f7bd634d04081189c1547800c69a53a247c38192e7c9",
+    "/tmp/c_height_portable_packet_v7_20261105/payload/ac_work/tree/independent_physical_sat_diagonal_replay.py": "a96a5ea5890553a7db6a0d22fb6245ec5b9b98851d5afc039d154989aab21301"
+  },
+  "original_parent_path_unchanged": true,
+  "child_auxiliaries_discarded": true,
+  "all_eight_closed_alternatives_checked": true,
+  "all_nine_originals_retained": true,
+  "mask": "001/00",
+  "closed_shared_faces_retained": true,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "numerical_producer_imported": false,
+  "lean_lake_ci_run": false,
+  "owner_free_occurrences": 169,
+  "oriented_cap_occurrences": 0,
+  "frame_square_occurrences": 106,
+  "projection_square_occurrences": 35,
+  "seconds": 46.14011338099954
+}

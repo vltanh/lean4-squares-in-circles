@@ -829,6 +829,29 @@ All24 open masks form14 explicit reversal classes. This is a conditional
 reduction with a portable source map and two reviews; every remaining
 domain still needs its own complete proof. No fixed ledger is changed.
 
+## C original height consequences and shared bounds: fresh portable replay
+
+The [C height package](computer_assisted/c_original_height_consequences_v1/README.md)
+freshly replays the complete archived height exclusions for C887 branch 7
+and Cb882 branches 4 and 7. Their closed weak negations give three necessary
+height inequalities on the unchanged originals. A separate unsplit C887
+root proof yields 414 original-variable bounds without transporting a SAT
+alternative, child predicate or auxiliary variable.
+
+The final isolated replay passed on 2,015 hash-bound inputs. The root source
+checks 416 deductions and 858 printed rows; the 91-node first-use cover
+checks 8,780 deductions and 39,146 printed rows, including 14 weighted
+shared-bound uses. Every original physical hypothesis and all closed cover
+alternatives remain in force. The independent source checkers run afresh;
+saved PASS reports are not used as premises. The archive audit verifies
+all 181 delta members, while two immutable published bases supply the
+remaining input bytes. Python 3.12, assertions and `-B -S` are required.
+
+Both C originals remain OPEN. This reusable partial proof adds zero
+original cells, masks, positional roots or roadmap gates. The exact
+receipt, hand arguments, root review, independent bound review and
+reproduction commands are included. No Lean, Lake or CI was run.
+
 ## Fixed ledgers and next handoff
 
 - Original-nine masks: **8 CLOSED / 24 OPEN**, exactly `000/*` and `010/*` CLOSED.

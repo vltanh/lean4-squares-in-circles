@@ -1,0 +1,741 @@
+{
+  "schema": "C_height_delta_archive_byte_audit_v1",
+  "status": "PASS_COMPLETE_FROZEN_DELTA_ARCHIVE_BYTE_AUDIT",
+  "archive": "c_original_height_consequences_v1_delta.tar.xz",
+  "archive_root": "c_original_height_consequences_v1_delta",
+  "archive_sha256": "d17d9582e5ebfdde535be70dea47853d5a8d2fa4b0bddc0a287b35255caa745b",
+  "archive_bytes": 10303012,
+  "files": {
+    "BINDINGS.json": {
+      "sha256": "e7706717cc9136d2327b2a76a65f5824dad385743757f860863a50d5373b6c10",
+      "bytes": 699287
+    },
+    "DELTA_MANIFEST.json": {
+      "sha256": "297eee1bae8caa4b2dd85d0af9544586773c6fa0cb8e4508629b9481f0f80e30",
+      "bytes": 26892
+    },
+    "INPUT_MANIFEST.json": {
+      "sha256": "06115f494173bc344821932525d7a8522df8ea2ed80b400f735f3b68d4a1b58b",
+      "bytes": 343867
+    },
+    "PUBLICATION_PLAN.json": {
+      "sha256": "b2515b9823aee12d537ecc10f5a3385f8fca16f3ba6ee39f02e1885ce702f876",
+      "bytes": 735473
+    },
+    "PUBLICATION_PROOF.json": {
+      "sha256": "668c8b6d98a24f173e97667546fe94e40ea1fcb86fa6855482debe1b828e8ba3",
+      "bytes": 2639
+    },
+    "README.md": {
+      "sha256": "f4a65ec6f8b93bb22100637a507ca1176b50de9f8da9eeed181b91f51c631349",
+      "bytes": 7476
+    },
+    "build_compact_c_height_packet_v7.py": {
+      "sha256": "972af5d1c764848f17ec0d11200c4610862dee7f22be3bf1c18ee4ac61be746f",
+      "bytes": 5357
+    },
+    "materialize_c_height_publication.py": {
+      "sha256": "584be25ba4d6ec627b88d194861e9f1de78d7cb30dcc49d2e58b66d2d28723d0",
+      "bytes": 4407
+    },
+    "payload/ac_work/tree/C887_ARCHIVED_HEIGHT_EXCLUSIONS_FRESH_REPLAY.json": {
+      "sha256": "95778fb49fc1183a25d04f60a562e91e2f31105858b82d5b8ee1e117e1b169dd",
+      "bytes": 108405
+    },
+    "payload/ac_work/tree/C887_FIRST_WEIGHTED_SHARED_HEIGHT_BOUNDS_REPLAY.json": {
+      "sha256": "ec915e7153afab3fe1b674992f251dccde51e7901602db368c3530f08b278a08",
+      "bytes": 577100
+    },
+    "payload/ac_work/tree/C887_HEIGHT_CONSEQUENCE_ROOT_ATTACHMENT_REPLAY.json": {
+      "sha256": "d7a2aa81ae8c3664af53a3738fa5dd5cdbf4bafee26df4c895542949b67ea6b6",
+      "bytes": 237605
+    },
+    "payload/ac_work/tree/C887_SHARED_HEIGHT_BOUNDS_ROOT_ATTACHMENT_REPLAY.json": {
+      "sha256": "7661a7b31cb1a9bd7edb045e0d144c957e5746c0684e4cf06e832ad3bd5c6544",
+      "bytes": 503972
+    },
+    "payload/ac_work/tree/C887_WHOLE_HEIGHT_BOUND_EXACT_CONTROLS.json": {
+      "sha256": "1b8b3a0bdfb5b8bd51d7e97509592e2fa67cae897c48d325b41d3f37486dc28f",
+      "bytes": 1374
+    },
+    "payload/ac_work/tree/C887_WHOLE_HEIGHT_BOUND_INTEGRATION_BINDING.json": {
+      "sha256": "9db4c7ebb7028f8c624a4bda56021a1c4364f743e5a5f606740c54f179e2c16d",
+      "bytes": 1888
+    },
+    "payload/ac_work/tree/C887_WHOLE_HEIGHT_BOUND_STATE_BINDING.json": {
+      "sha256": "b24a9fa7675eb4d2330518da7481e5bca75700928035d202eeb9bf964a4adf2d",
+      "bytes": 25796
+    },
+    "payload/ac_work/tree/C887_WHOLE_HEIGHT_BOUND_STATE_HAND_PROOF.md": {
+      "sha256": "76d5b4ef0145b94e86d6d34981970ff6a116fcf8a7c0fd9b1cb801632ca3f9ed",
+      "bytes": 3061
+    },
+    "payload/ac_work/tree/C887_WHOLE_HEIGHT_CONSEQUENCE_BOUND3_EXACT_REPLAY.json": {
+      "sha256": "18f2ed68935b725cce067d8bb54d70b7c3a609d8a02906c81e8574208c02751c",
+      "bytes": 237807
+    },
+    "payload/ac_work/tree/CB882_ARCHIVED_HEIGHT_EXCLUSIONS_FRESH_REPLAY.json": {
+      "sha256": "ec48c4a95b92cd217f6ea64633f1b121c24a5a64362d2c727e96dc4a20e09696",
+      "bytes": 224103
+    },
+    "payload/ac_work/tree/CB882_HEIGHT0_CONSEQUENCE_SEED_TREE_REPLAY.json": {
+      "sha256": "39196b87611dd4371add318c7c75fda034c27600278fbcbdbffbc12b6c525962",
+      "bytes": 362141
+    },
+    "payload/ac_work/tree/C_HEIGHT_EXCLUSION_CONSEQUENCES_BINDING.json": {
+      "sha256": "0ba7dd5ecd014197634b57df6c51b1d1fa1f8a258ff44f48464d4b8b0b55eebb",
+      "bytes": 7265
+    },
+    "payload/ac_work/tree/C_HEIGHT_EXCLUSION_CONSEQUENCES_HAND_PROOF.md": {
+      "sha256": "726acd5f7e9ff96941ebf5b77a0a651a804bbc87f03ec5778bd2cef0b93ac845",
+      "bytes": 5758
+    },
+    "payload/ac_work/tree/C_HEIGHT_EXCLUSION_CONSEQUENCE_EXACT_CONTROLS.json": {
+      "sha256": "2ad83b6df172fe5d7d9c240a3e69675f945cf128c176202e6426c1a3e137a8a3",
+      "bytes": 2181
+    },
+    "payload/ac_work/tree/C_HEIGHT_EXCLUSION_INTEGRATION_BINDING.json": {
+      "sha256": "661ca75f36264c1a7f5b80b737c9e56d459cae9fd92cdd40ad8b8f47dd3f8116",
+      "bytes": 2945
+    },
+    "payload/ac_work/tree/ac_c887_global_union_height_consequence_runtime.py": {
+      "sha256": "5d5cab1153de635b0ff565e69c8a27d5761303f1ad7725b08de5fce68aa591b8",
+      "bytes": 976
+    },
+    "payload/ac_work/tree/ac_c887_shared_height_bounds_runtime.py": {
+      "sha256": "fe41f11c3131ae28d3e7a919a5dee2fb373beaa324c7089a2a6c001257cf8fd9",
+      "bytes": 972
+    },
+    "payload/ac_work/tree/c887_after_oom_before_lazy/SOURCE_DISCOVERY_MANIFEST.json": {
+      "sha256": "90293d0c3385a7148a806d5adcc92071a5a91c0ea1c5fd3fd31ae6722f4e7e82",
+      "bytes": 231618
+    },
+    "payload/ac_work/tree/c887_all_guards_continuation/PREVIOUS_COMPLETE_MANIFEST.json": {
+      "sha256": "eeffa52f8c948c99cfc3568ca38e34bbb451b39a3887ed9e53d84427d84cc1ee",
+      "bytes": 185256
+    },
+    "payload/ac_work/tree/c887_before_all_guards_checkpoint/SOURCE_DISCOVERY_MANIFEST.json": {
+      "sha256": "a8f5658714e54be288630a0334e89ffa6b5563d10468fa8f9d9093db2b1255a6",
+      "bytes": 180925
+    },
+    "payload/ac_work/tree/c887_before_four_products/SOURCE_DISCOVERY_MANIFEST.json": {
+      "sha256": "3aebca2f1ffef24b162a51515e72ed21f4302e8721fa393e3e91106e23ab21b5",
+      "bytes": 220426
+    },
+    "payload/ac_work/tree/c887_before_global_DG_checkpoint/SOURCE_DISCOVERY_MANIFEST.json": {
+      "sha256": "3e9edfbc6723f24c0758d938fbd2b28fe337cbb77498f02a30a2a62295d3435e",
+      "bytes": 203641
+    },
+    "payload/ac_work/tree/c887_before_gram_checkpoint/SOURCE_DISCOVERY_MANIFEST.json": {
+      "sha256": "af0212cd2006c8e899a5796f1efe06da2c0f0eb334d48aa15cf0facfaf296b4a",
+      "bytes": 142179
+    },
+    "payload/ac_work/tree/c887_before_height_consequence/SOURCE_DISCOVERY_MANIFEST.json": {
+      "sha256": "7b8e735bc62095fabee14014ea7ad47681236a8b647e4892f7e14250ecb12976",
+      "bytes": 234021
+    },
+    "payload/ac_work/tree/c887_before_normalized_checkpoint_reuse/SOURCE_DISCOVERY_MANIFEST.json": {
+      "sha256": "2dce8847259c6b8701972c77840f5f848b6524e187e7cdce6f0604c2147f1376",
+      "bytes": 228788
+    },
+    "payload/ac_work/tree/c887_before_normalized_four_corner/SOURCE_DISCOVERY_MANIFEST.json": {
+      "sha256": "03781931bd9f6b67d18d4aef1094cc416904fa05db2f37be8279bc9af3dc6742",
+      "bytes": 226855
+    },
+    "payload/ac_work/tree/c887_before_opposite_abid_checkpoint/SOURCE_DISCOVERY_MANIFEST.json": {
+      "sha256": "ded483e6047a2cf56b95680dfc1ab24950a50da1c56bbb156e06c5254c8cba3c",
+      "bytes": 194666
+    },
+    "payload/ac_work/tree/c887_before_unit_corners/SOURCE_DISCOVERY_MANIFEST.json": {
+      "sha256": "6f5712b83fe0398a0b6953846e4a0a659bc90e878f863b1981288a4c610c4edc",
+      "bytes": 209397
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/SOURCE_COMPLETE_MANIFEST.json": {
+      "sha256": "308da404022943441c3192cba59a349eaab9290602e2092100fda0a3b37a0905",
+      "bytes": 237306
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/manifest.json": {
+      "sha256": "a091ad6716ef688cf001857a70f5058acfbb9601a87818de1edb4db4fa9bbe49",
+      "bytes": 133943
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00000.json": {
+      "sha256": "959d74d896bbc90ca663eaee209676ba911f7b794bdad67ef2955f5683850c0c",
+      "bytes": 1313490
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00001.json": {
+      "sha256": "10a23a8da48cddfee352c73949dbdf6d26424b76c42117231ba811ee737c8774",
+      "bytes": 49200
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00002.json": {
+      "sha256": "46cce16aed1dc49bd4fd14f8aec4f953e00d26db1baf98a157a9f989cb61dd2c",
+      "bytes": 51110
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00003.json": {
+      "sha256": "d9d9828f1ff014f43ff8b13b21cf914ba02622286ecc004dbd1e9f04d09a5969",
+      "bytes": 49450
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00004.json": {
+      "sha256": "80cb2fccfab92a3641d5db7d64b77a8eafa710fd7e2d31b30dda2d91e1136fdb",
+      "bytes": 51365
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00005.json": {
+      "sha256": "eef65c6b6577be3a0edd30856f125969b299613fd5a4c0b2f38d9980bdb764e0",
+      "bytes": 49700
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00006.json": {
+      "sha256": "fd97948dc47e6f77f259b3ba1066d185108df0c5a82e3def6cde420327f10174",
+      "bytes": 49698
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00007.json": {
+      "sha256": "ee128aca10303294480fea5898b945bbb3e1faadae94f81dbe071110a93567c0",
+      "bytes": 49700
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00008.json": {
+      "sha256": "831b0912e6396244c562aec14feefea5ba215f68b7c2e0bbfeb3e23094e815b2",
+      "bytes": 51529
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00009.json": {
+      "sha256": "22d797fb45c17e1eab8a11001374904039c8dd0989e56aab8a1eaf2544a65e5d",
+      "bytes": 51791
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00010.json": {
+      "sha256": "6759b472c11f9fb1ab1a559184e8148a6d5c8735bf9f39c8ae8fe5ffc3c30f01",
+      "bytes": 50202
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00011.json": {
+      "sha256": "2d030bdf62c69e0a7630a13f328cd897e0b83211f87a531a220df45e3a720d99",
+      "bytes": 50200
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00012.json": {
+      "sha256": "de2e8807058d840ddd87873760c2d2866e283f7b39f37fa07bc261a97232ad90",
+      "bytes": 50202
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00013.json": {
+      "sha256": "16bab56ecec0f5c7a179310d455ae4d343745302747b5a5b46fba98699b8953e",
+      "bytes": 52102
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00014.json": {
+      "sha256": "c672971af2e310d3430811de75629fbfe6c117544e828bd2c094ecf4ad551458",
+      "bytes": 50474
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00015.json": {
+      "sha256": "0ae924e96db7f75e29130c36e24492c7f7d68b00233db0bc154059fb3b363fc9",
+      "bytes": 675318
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00016.json": {
+      "sha256": "5a6b1e0ef07f26ec0182c22b5d5e6d2e9b9c755242bc69a7764165022322cc0d",
+      "bytes": 50854
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00017.json": {
+      "sha256": "51068bf3fc2da05eb9805c0769f3f247b898f24cc6c80d3f29f1dd710d2ec880",
+      "bytes": 50852
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00018.json": {
+      "sha256": "5016ee99aedc11d74d45788c9b707fdeb0e65eb5b3ce6adf01633b1bda6607d9",
+      "bytes": 52715
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00019.json": {
+      "sha256": "a0cae9b2f763a3c1ab8edcebb0dd4e4aaa951423d0ea688638c85d3e1e547f7f",
+      "bytes": 51106
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00020.json": {
+      "sha256": "29d5cc96d92fe31449ec0859132b6b59b3375fff885d61b8c19c6f05fd84cdd4",
+      "bytes": 51104
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00021.json": {
+      "sha256": "0ca1d942252318ed73c314f97b91cd7aabdbf8093ca6eb37780fcaed4eae9e5f",
+      "bytes": 1028229
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00022.json": {
+      "sha256": "7fc8fd3650c8769c37061108ec89a5bc1f00cf3996be9a78d30a44fb54b71aed",
+      "bytes": 51442
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00023.json": {
+      "sha256": "068c83eafa6708b7ef08fd0571f36927fdd7fb67935da6b0412f5ad743e0af7d",
+      "bytes": 53406
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00024.json": {
+      "sha256": "fcf7bb4c885477e3a3a445eeb5c48f667db511884356081632c8415370fdc930",
+      "bytes": 1223537
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00025.json": {
+      "sha256": "04977d9d2cf04a8d8cd1a6618a04a0ba465ed6d38cb7a339c0a900ea54adfb96",
+      "bytes": 51980
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00026.json": {
+      "sha256": "1b37b76256141ae60a04ef2536878c1cd20af128153e291b991e04a8e8320a23",
+      "bytes": 51978
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00027.json": {
+      "sha256": "01593fda8e72bdedf20f417362617217e2317ac609b4d2c0a9407ecf627f10e7",
+      "bytes": 4940985
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00028.json": {
+      "sha256": "d31780d807c110c19779e7819b675f94515819e46d66cd23a66445afde8a1a35",
+      "bytes": 52260
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00029.json": {
+      "sha256": "f06049652699205a648b0ccb08cd0cfb2922e60d8bed54b316cff56e22b38974",
+      "bytes": 52258
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00030.json": {
+      "sha256": "566914938367b9a4306bbb985e7ed435eb6e25a2a43ac8f080ddd9d7b7e65b20",
+      "bytes": 52260
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00031.json": {
+      "sha256": "18e29f9b05d38e0099d09f0159655ed4f65ceecd6d4cc3b7261717c86b9f5031",
+      "bytes": 4527985
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00032.json": {
+      "sha256": "db739315a5e83890bec4559a477d7cee639fe16f38ce1e5274c4297d77cec04d",
+      "bytes": 6274421
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00033.json": {
+      "sha256": "0d94a6da35fd140c39c5d28cc4e5a25658eff3ff23ce3de7ce536765c37d43a1",
+      "bytes": 8163603
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00034.json": {
+      "sha256": "843b74464a257eeb3974b4170a813a04dc524d6c5f44ccd92def54754c3b0842",
+      "bytes": 53028
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00035.json": {
+      "sha256": "8aff4945d467d5f0983f97affc28845ab3d73a8398957b5d521c90ef2eff1483",
+      "bytes": 53026
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00036.json": {
+      "sha256": "53cfb80a74c49b84db82c474a873347019f9f5ef6e12c8e4c5f45c41f5e59fd5",
+      "bytes": 53028
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00037.json": {
+      "sha256": "8a4b60f7d1b8af5bc1623f95b3a150377b0cace2966ad478a29fc1989d9cbd89",
+      "bytes": 22623151
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00038.json": {
+      "sha256": "7ff964d9fbf88555e31a7f848a4a6af30cfeb1215863a6e3e50a7f2bbb698ff1",
+      "bytes": 21725219
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00039.json": {
+      "sha256": "939572535704feb14cf90afd9fc7e8f4cc653af1e9af95c1c2dfa9486201e547",
+      "bytes": 54030
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00040.json": {
+      "sha256": "7ace78ada35f40b1bee0e7a6b2c0cf4eb25646106050087fabc0820f82abbc34",
+      "bytes": 54028
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00041.json": {
+      "sha256": "f887b279b37b88c5b290393ebd0d6a4205e4e70d4daec42e7e54c5c48a05cabb",
+      "bytes": 54030
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00042.json": {
+      "sha256": "567cfcd85354640d471303a594e740261706a8cc60c9ce04a19755db739acb66",
+      "bytes": 54028
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00043.json": {
+      "sha256": "3d77855858e0536ce63acdda156d49d3c63c441bfcdd6840a256bb79b9c6ce14",
+      "bytes": 54030
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00044.json": {
+      "sha256": "12929465260e70721134d75e3d219fbb3ec929c1c0056a18dd3e8e3f4e9e0d15",
+      "bytes": 54028
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00045.json": {
+      "sha256": "089165e8469324585f0ace4e0246a33c02e7b98732ab31ddbf47190e442eb258",
+      "bytes": 15788963
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00046.json": {
+      "sha256": "44d1c69876e6bb315ea1ee2eaad410fa6310e568b47981b4435e0657920b3885",
+      "bytes": 8363297
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00047.json": {
+      "sha256": "50a0583c3a925681c291fb9c2f56b64ba8f2ae482ef5994fd041d4aeb499edff",
+      "bytes": 54420
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00048.json": {
+      "sha256": "4e17f16e14529d11bcc339d365c876fb5df7d6d81e64ebe4348462079e45779d",
+      "bytes": 54028
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00049.json": {
+      "sha256": "fad5dd7930c98f182e377df87c132541513d13ca92e1eecbc61c78a2df7c6626",
+      "bytes": 53570
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00050.json": {
+      "sha256": "739fceffafa101d56de810b7067cb7b556b62aa7a2b9bf7f830ce742f54a44dd",
+      "bytes": 53572
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00051.json": {
+      "sha256": "006ea6ffa27bc8ed3d63cfc9f199528f619dc416d54fb99057f0eafb7873bad9",
+      "bytes": 53570
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00052.json": {
+      "sha256": "e1f36ccdd854120bd686a5966316ae3cf8f81e8619c23a04da7ee89f91569b94",
+      "bytes": 53572
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00053.json": {
+      "sha256": "0dca579ae70b78f975539a5171293925412395cc9cc156456554edbaa18648af",
+      "bytes": 53570
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00054.json": {
+      "sha256": "70050d36e82f977a178caa834e5490be75aa1dbbb0cd986613e500ccfd313fb3",
+      "bytes": 53572
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00055.json": {
+      "sha256": "6909bcc6238c0b45d8681170654a9dd8b9e7643e25a4b14fb70fa837f9c0f824",
+      "bytes": 53570
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00056.json": {
+      "sha256": "688e0deb788c92fbd6f10e220b60870efe91fe5c4ee932f2264bb685c044a41f",
+      "bytes": 53028
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00057.json": {
+      "sha256": "a23660b3710782af8c70a08ed4ff1843d3574e6c27626cb9cfc8830dd99b2886",
+      "bytes": 53026
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00058.json": {
+      "sha256": "4652d79ce65f899edd67427ceb92a112584f5b6e25bd927a244e44611919bd24",
+      "bytes": 53028
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00059.json": {
+      "sha256": "a83e133239ce6811fb60b40c73067d8f3e86e8e442a276f42e53a78750fbff9d",
+      "bytes": 53026
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00060.json": {
+      "sha256": "599c63adecd64a1c5717a14aea5dd541c5f8bbcf031b1d781895e4053ce88617",
+      "bytes": 52580
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00061.json": {
+      "sha256": "ce6b381bc347d0d6c72d03ef6007f9405af403f856f8cec5d9f202d69804c763",
+      "bytes": 52456
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00062.json": {
+      "sha256": "66143d186e35b8f7f5d61aced9eab99332ca69115e4bea57ce108174b5bd2693",
+      "bytes": 52260
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00063.json": {
+      "sha256": "9be0ab15027fdcac6d4bdc665b033ffc3a4803ec51a28ba912dcfb73dbde5030",
+      "bytes": 52258
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00064.json": {
+      "sha256": "d195cc23c344d2449e61f63b415ad4135c292e58797e92874e6cc17464c2d3b8",
+      "bytes": 52260
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00065.json": {
+      "sha256": "6606c3d96ac2853803cdd6a2f3680de7581d23aea21497d3eb3211b39eae54ae",
+      "bytes": 52258
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00066.json": {
+      "sha256": "086688654d6bfae07a000092adc541d847de6db0da09d8974a6bbbd2f69cbe56",
+      "bytes": 51978
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00067.json": {
+      "sha256": "c9a175a2eed25f28e83ed0c0ce23145826802a6bbac2cc1d7a549414814dcd5c",
+      "bytes": 51980
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00068.json": {
+      "sha256": "ca4bb5f8983d766badbf4e390abab31e9091507ec40d7b42e00b819a89258b13",
+      "bytes": 51978
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00069.json": {
+      "sha256": "bfde25fc29f5fc72c49e4ff80073e6c4e14d2686aefa4337e65f3bc0e28b61db",
+      "bytes": 51980
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00070.json": {
+      "sha256": "e6fca54f81a5da68834c32a644f22121622498bd1a55cc35ad6eb7b414657651",
+      "bytes": 51978
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00071.json": {
+      "sha256": "851d7a2efb2a511d5d2f36446d16292d682e9a283d3a52bcec955ded400e2de7",
+      "bytes": 51690
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00072.json": {
+      "sha256": "96687259e47a27229a6665c78d8be8cd23c3ec79516c44396c6553f78e2c55ab",
+      "bytes": 51692
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00073.json": {
+      "sha256": "3d64bbfbe2c11994b6996f8336ef7a53c9af5eee750fd20118362f770a61bcae",
+      "bytes": 51690
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00074.json": {
+      "sha256": "84a7079609ed2f2948ade4aa85f875eeb9c72b9fde422fcaaa0e3a23ae7e3938",
+      "bytes": 51442
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00075.json": {
+      "sha256": "64053ef70ba7f6042d7edd31b9966579d7b0876776af04329f7d0301642e4c40",
+      "bytes": 51440
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00076.json": {
+      "sha256": "8ec24516f39271cd04568f8684b5b9931880eb0fd116bdcff67b0f1b312afc32",
+      "bytes": 51104
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00077.json": {
+      "sha256": "e3cbfe823f84240552989706d1359be6c3cd7ffbd8fb6b728d43aaf8af82a3ca",
+      "bytes": 50852
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00078.json": {
+      "sha256": "d265b3ea244ad2f1a9ec44681ee340133c15d9010691e9464ec0b8fb1fb3a5a3",
+      "bytes": 50474
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00079.json": {
+      "sha256": "d0cb759be2759cef6e98be3add930f8b7644e1c3bcc66b10e2afa2c9569eea0f",
+      "bytes": 50472
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00080.json": {
+      "sha256": "707bca37eb04845350ba6ce6fc6dcef22ac220ba7a2394bde83f8181077df774",
+      "bytes": 50474
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00081.json": {
+      "sha256": "71a3d06e6de174f24688598b5525b5094a04f26a37135bca2b026099bb1492aa",
+      "bytes": 50472
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00082.json": {
+      "sha256": "3377dda01487da525d867dcd1a3a9594f72183ed0ab0cad19cc7bc97108d5691",
+      "bytes": 50474
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00083.json": {
+      "sha256": "69742bdf0a811bfe51d48148a2d6d86d6cbaa37e5e6f2243ae098577199b5b2d",
+      "bytes": 50472
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00084.json": {
+      "sha256": "faa8dd14d606e8add0a6a68b2ebd6e29fd429af9a6a6ea67de14e9250db64e86",
+      "bytes": 49948
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00085.json": {
+      "sha256": "0b94a63a3c310b6b337cea1f744f8786a951db763aa977835c4566748b20f44f",
+      "bytes": 49950
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00086.json": {
+      "sha256": "9fba9476e9251b9927bbed48a1b5d6bbd8d4ca125516dcb28dd69e13409869a8",
+      "bytes": 49948
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00087.json": {
+      "sha256": "f4e307306d8f9ec5c4ba1b2e20a1e4fd75473f9a2d4a9aa6047131a0fea38d00",
+      "bytes": 49450
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00088.json": {
+      "sha256": "1d42cc2a676e62ae43fd8c0d1c70353bea00386a3e499df192d9671bf8e8384c",
+      "bytes": 49448
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00089.json": {
+      "sha256": "66ec68e546ebe71d6b20d39d97aa80f1d4ca891d39b028fab165ae1e03a4e54c",
+      "bytes": 49200
+    },
+    "payload/ac_work/tree/c887_first_weighted_shared_height_path/node_00090.json": {
+      "sha256": "e8489d214f8d4451bbf6c28a174013193ab13c9f48f1e9b4335c1be99f8c1060",
+      "bytes": 49198
+    },
+    "payload/ac_work/tree/c887_four_normalized_checkpoint1/SOURCE_DISCOVERY_MANIFEST.json": {
+      "sha256": "a06d800eb5d60e33132014ab28053f336f1d90bb8dccd2126277e1d323e16596",
+      "bytes": 230502
+    },
+    "payload/ac_work/tree/c887_global_DG_corner_tree/PREVIOUS_COMPLETE_MANIFEST.json": {
+      "sha256": "b655254efce0c11e242135ccf9ee96ff20007795f8c5857cc6d1c138cc67fb31",
+      "bytes": 205428
+    },
+    "payload/ac_work/tree/c887_global_DG_four_normalized_tree/PREVIOUS_COMPLETE_MANIFEST.json": {
+      "sha256": "7932d1488ccf1b4f63b0a2cee081a4b4ad3050f205a529322e5e1c31f7950b7d",
+      "bytes": 228324
+    },
+    "payload/ac_work/tree/c887_global_DG_four_product_tree/PREVIOUS_COMPLETE_MANIFEST.json": {
+      "sha256": "08f04363c223e725f3521554eb38c8862b60d4a844eb84bc11e854c04ac0866c",
+      "bytes": 221881
+    },
+    "payload/ac_work/tree/c887_global_DG_normalized_checkpoint_reuse_tree/PREVIOUS_COMPLETE_MANIFEST.json": {
+      "sha256": "7dca5664b33f241b218217a3df172cf70dc58e5b672202c88e6d5bd760cfa863",
+      "bytes": 228982
+    },
+    "payload/ac_work/tree/c887_global_DG_unit_corner_tree/PREVIOUS_COMPLETE_MANIFEST.json": {
+      "sha256": "82a43449576f7b4926391027a58a809b6816d79523486b9c83f2efcbb4179caa",
+      "bytes": 209718
+    },
+    "payload/ac_work/tree/c887_global_DG_unit_fast_tree/PREVIOUS_COMPLETE_MANIFEST.json": {
+      "sha256": "4036df7b9f016d719cb22c5cbbb32dc353c6face27e832d08931aee156fc9ea8",
+      "bytes": 216061
+    },
+    "payload/ac_work/tree/c887_gram_continuation/PREVIOUS_COMPLETE_MANIFEST.json": {
+      "sha256": "5576bfa0be8f828b67cebef2c871517fddc4a897a0115c7186fc259d6f3d7083",
+      "bytes": 167503
+    },
+    "payload/ac_work/tree/c887_height_consequence_root_test/PREVIOUS_COMPLETE_MANIFEST.json": {
+      "sha256": "abb29f3b78a7db3918b754ba72ec10eb801d12720de3e728e225f25396321519",
+      "bytes": 73072
+    },
+    "payload/ac_work/tree/c887_height_consequence_root_test_source/SOURCE_COMPLETE_MANIFEST.json": {
+      "sha256": "a50b86649a1eb2e241948e904d0a4001008b6f3db94c44612f5f82925d7bf92d",
+      "bytes": 231018
+    },
+    "payload/ac_work/tree/c887_lazy_normalized_tree/PREVIOUS_COMPLETE_MANIFEST.json": {
+      "sha256": "b8107e110f8e546c12ba9693a2c3b2f87cf93c879d49ba42bbfacefe81c2bc04",
+      "bytes": 232448
+    },
+    "payload/ac_work/tree/c887_opposite_abid_continuation/PREVIOUS_COMPLETE_MANIFEST.json": {
+      "sha256": "c7e2c0be3d12ff5e86e539c1ff196b49c379015329c83ee21c9de4d317ca28f0",
+      "bytes": 197740
+    },
+    "payload/ac_work/tree/c887_proxy_checkpoint_2/SOURCE_DISCOVERY_MANIFEST.json": {
+      "sha256": "f6003b01920956885494e5361f582815c4610e286898f86e724c78c826427739",
+      "bytes": 48742
+    },
+    "payload/ac_work/tree/c887_proxy_ownerfree_continuation/PREVIOUS_COMPLETE_MANIFEST.json": {
+      "sha256": "953bafb8d1620596e236e7983119b86d0c4c94d77b9bfe35dd674549a7c7e3b1",
+      "bytes": 73900
+    },
+    "payload/ac_work/tree/c887_proxy_ownerfree_continuation_v2/PREVIOUS_COMPLETE_MANIFEST.json": {
+      "sha256": "d26130f7e41db2a68533704a8629825a4941b3671bba1c61c07a59c05468427b",
+      "bytes": 75017
+    },
+    "payload/ac_work/tree/c887_shared_height_bounds_lazy_tree/PREVIOUS_COMPLETE_MANIFEST.json": {
+      "sha256": "9cc21a723803a32c0076b2c805ce744b378f05ca4c89b29886bef3378bc9d1e4",
+      "bytes": 234501
+    },
+    "payload/ac_work/tree/c887_unit_checkpoint1/SOURCE_DISCOVERY_MANIFEST.json": {
+      "sha256": "ec271b1f29ba433c6d793968bee47b49449dac36f526326bb7234c0d07177b6b",
+      "bytes": 214603
+    },
+    "payload/ac_work/tree/c887_whole_DG_shave/child_0.json": {
+      "sha256": "ee1310b0833e93375b242c36f9b8efb316ce8044a8f382a0690aaec4bb4198f3",
+      "bytes": 7833697
+    },
+    "payload/ac_work/tree/c887_whole_DG_shave/child_1.json": {
+      "sha256": "1723e2bf71a55198c219f6ac1aa7b6d97482620bcd351e60b74fe46858f05dbc",
+      "bytes": 34163
+    },
+    "payload/ac_work/tree/c887_whole_DG_shave/child_2.json": {
+      "sha256": "0c74ad1abd90aad986eb001b5607a695a478508f50c06609dfa5bb56490918c7",
+      "bytes": 34165
+    },
+    "payload/ac_work/tree/c887_whole_DG_shave/child_3.json": {
+      "sha256": "7fabcfb0e6b207153a528dc2a5b03b3cc9fa159afd447c8047b9b702260cfba3",
+      "bytes": 3404097
+    },
+    "payload/ac_work/tree/c887_whole_DG_shave/child_4.json": {
+      "sha256": "d729d079e83173564a82f4e22ec44c230e0e77da2e694c85d30b4e917330e771",
+      "bytes": 15546701
+    },
+    "payload/ac_work/tree/c887_whole_DG_shave/child_5.json": {
+      "sha256": "612e7789baa00964a281d04a20ddfcbeaedbde404858503da97392b825117d69",
+      "bytes": 69262
+    },
+    "payload/ac_work/tree/c887_whole_DG_shave/child_6.json": {
+      "sha256": "5f6d02ed3a17acefed413a7c7c046ff6536deff575e9b881f3978a1ecbdba18b",
+      "bytes": 34164
+    },
+    "payload/ac_work/tree/c887_whole_DG_shave/child_7.json": {
+      "sha256": "bd733b6757cb6999d80cb97b535e1a660d5c708bceab1442430c09082bfb81fb",
+      "bytes": 1583161
+    },
+    "payload/ac_work/tree/c887_whole_DG_shave/manifest.json": {
+      "sha256": "5ff159e7f52fb027bbef224aad5c245270bea7e6f45feb1113abf89e4b69228c",
+      "bytes": 60592
+    },
+    "payload/ac_work/tree/c887_whole_diag_root/node_00000.json": {
+      "sha256": "959d74d896bbc90ca663eaee209676ba911f7b794bdad67ef2955f5683850c0c",
+      "bytes": 1313490
+    },
+    "payload/ac_work/tree/c887_whole_height_bound_rows.py": {
+      "sha256": "7d354de7d1067f740997079295bd6309fe6c2582551d48b73434d13f61b64ed8",
+      "bytes": 891
+    },
+    "payload/ac_work/tree/c887_whole_height_consequence_bound3/PREVIOUS_COMPLETE_MANIFEST.json": {
+      "sha256": "32c69503efd5057f25080f9bf1b05eee86342026aca72f6e5925845e7ec1b7d1",
+      "bytes": 74291
+    },
+    "payload/ac_work/tree/c887_whole_height_consequence_bound3/manifest.json": {
+      "sha256": "d614fc673cd00d1b14a5e9a636fc95b9a7d831451d5a3fd13598404f0f482145",
+      "bytes": 74484
+    },
+    "payload/ac_work/tree/c887_whole_height_consequence_bound3/node_00000.json": {
+      "sha256": "723b40a74ad4044dd75a664d805de7f7c362d77715e6a24d3f124c3eaafd4755",
+      "bytes": 2583045
+    },
+    "payload/ac_work/tree/c887_whole_support_caps/record.json": {
+      "sha256": "5b790e2168a6a7c473fedd7f8679d64fed94aba4f6dac45776d7f7c5f4aaa81c",
+      "bytes": 2080650
+    },
+    "payload/ac_work/tree/c_height_exclusion_consequence_rows.py": {
+      "sha256": "1e5a53d90bc6744bc6578ea0377c75c0f5fcb618dd2ff0955836f1722d0821a9",
+      "bytes": 1043
+    },
+    "payload/ac_work/tree/cb882_height_consequence_four_runtime.py": {
+      "sha256": "48cc90c9af972af822f46a0bfb03b345a9e2f810bcad86e1d1b8f2827815e3c8",
+      "bytes": 961
+    },
+    "payload/ac_work/tree/check_c887_whole_height_bound_controls.py": {
+      "sha256": "320dabaf5d6b0a9e77714a74b4661c3465ba02e282fdc7aa2766d240a21a720e",
+      "bytes": 2276
+    },
+    "payload/ac_work/tree/check_c_height_consequence_controls.py": {
+      "sha256": "fafae759add680e2ee0bb8cbc919334416877c5292493f9567f9b898819f18a3",
+      "bytes": 4333
+    },
+    "payload/ac_work/tree/independent_c887_whole_height_bound_rows.py": {
+      "sha256": "f8d5766eb0deeb77f38e376741b60846b9e5c8205e490256ece56d19db73ceee",
+      "bytes": 5400
+    },
+    "payload/ac_work/tree/independent_c_height_exclusion_consequences.py": {
+      "sha256": "ab2d110e0332219ba621f80d26da35ec1a51eb92845960e7c658c13a8734c02d",
+      "bytes": 7986
+    },
+    "payload/ac_work/tree/physical_split_normalized_corner_five_proxy.py": {
+      "sha256": "1efbe7bc7760cd12af1c7e1b97c115343cc40cc1dd7262653bb151c56936ebac",
+      "bytes": 1758
+    },
+    "payload/ac_work/tree/replay_c_archived_height_exclusions.py": {
+      "sha256": "937912734bd47b820577eaa4933dbfd4daa049ce2f8721a5002dcdcede69c308",
+      "bytes": 7232
+    },
+    "payload/ac_work/tree/resume_c887_height_consequence_four_normalized_lazy_tree.py": {
+      "sha256": "0e7fa61371e70791020b15cbc007415823b57ae968d1316514cb4d7a6cde4371",
+      "bytes": 10071
+    },
+    "payload/ac_work/tree/resume_c887_shared_height_bounds_lazy_tree.py": {
+      "sha256": "7833264b6174ea555e5a76280946d003ad7edbff363e1a0b05199c12ad373218",
+      "bytes": 9847
+    },
+    "payload/ac_work/tree/resume_cb882_height_consequence_four_normalized_lazy_tree.py": {
+      "sha256": "79f04a28c29b4389494d0438752c6dcd4d35883c39c83db82ccd476c19b3edb2",
+      "bytes": 10268
+    },
+    "payload/ac_work/tree/resume_physical_global_union_four_normalized_lazy_tree.py": {
+      "sha256": "c8a878d57046443685e5428422a933d8d6f7cdbc2da40ca8c4ac4a00020a0363",
+      "bytes": 9970
+    },
+    "payload/ac_work/tree/verify_c887_global_union_height_consequence_tree.py": {
+      "sha256": "c42e9a6b517a2f31fe79cf0280e10fda36966d11d1fdb5dfda546918c6c25e3e",
+      "bytes": 2589
+    },
+    "payload/ac_work/tree/verify_c887_shared_height_bounds_tree.py": {
+      "sha256": "1cc9239ba3862ecab43cd38412f9d127e637e8096996b586115557118c7a34eb",
+      "bytes": 2649
+    },
+    "payload/ac_work/tree/verify_cb882_height_consequence_four_tree.py": {
+      "sha256": "2ddb505fcbdee35427589cce6fdf80b73c06594a9d785e1f320585fe2adc2001",
+      "bytes": 2508
+    },
+    "payload/b_work/C887_WHOLE_HEIGHT_TRANSPORT_INDEPENDENT_REVIEW.json": {
+      "sha256": "8691c388a55a2cc122070157a71af24ffb972b11a221af8418b2b69f243a8ed0",
+      "bytes": 2638
+    },
+    "payload/b_work/C887_WHOLE_HEIGHT_TRANSPORT_INDEPENDENT_REVIEW.md": {
+      "sha256": "311bfbe14dbbd4b39f6316d8278f157e7cfbbc1428599c5a60b1a8cbeb65e518",
+      "bytes": 1891
+    },
+    "payload/d_work/C_HEIGHT_CONSEQUENCES_ROOT_CONTROLS.json": {
+      "sha256": "fc9bf0a507ab00e0650eecd058d605dbb058d02e6f08189a9ceea19cafe3d6f8",
+      "bytes": 419
+    },
+    "payload/d_work/C_HEIGHT_EXCLUSION_CONSEQUENCES_ROOT_REVIEW.md": {
+      "sha256": "e2b1664c7ed901ee6c1c64d09f89245709d1d858ef4b65ed938944626027b11b",
+      "bytes": 2982
+    },
+    "replay_portable_c_height_packet_v3.py": {
+      "sha256": "d7d9b17da9091cb7920e5964618303c93ae2689a8528381091b35f3ee4c2cb28",
+      "bytes": 22640
+    }
+  },
+  "delta_manifest_sha256": "297eee1bae8caa4b2dd85d0af9544586773c6fa0cb8e4508629b9481f0f80e30",
+  "assembled_input_manifest_sha256": "06115f494173bc344821932525d7a8522df8ea2ed80b400f735f3b68d4a1b58b",
+  "raw_tar_intermediate_created": false,
+  "mathematical_arithmetic_repeated": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "seconds": 71.75866666000002
+}
