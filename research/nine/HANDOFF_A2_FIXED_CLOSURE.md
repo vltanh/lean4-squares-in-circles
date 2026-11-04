@@ -8,11 +8,12 @@ No Lean, Lake or CI.
 
 ## Execution recovery — 4 November, 13:28 UTC
 
-Execution access is unavailable. The [recovery checkpoint](EXECUTION_RECOVERY_2026_11_04_1328.md)
-records completed exact components, pending reviews and the last observed worker
-states. Recheck actual files and processes before restarting. Published acceptance
-remains **219/231 original cells and 8/32 masks closed**; D6c5 has fifteen I
-rectangles excluded and I22 OPEN. The recovery index adds no closure credit.
+Execution is restored. The [earlier recovery checkpoint](EXECUTION_RECOVERY_2026_11_04_1328.md)
+is retained as outage history. Published ancestor archives have been recovered
+and hash-checked. The [complete new I22/H01/I-slope-quarter-1 proof](A2_00100_D6C5_I22_H01_I1_COMPLETE_SAT_COVER.md)
+passes independent replay and a fresh portable replay with old workspace reads
+forbidden. Published acceptance remains **219/231 original cells and 8/32 masks closed**;
+D6c5 still has fifteen I rectangles excluded and I22 as a whole OPEN.
 
 ## Read first
 
