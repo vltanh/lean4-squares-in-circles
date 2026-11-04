@@ -17,6 +17,17 @@ D6c5 still has fifteen I rectangles excluded and I22 as a whole OPEN.
 
 ## Read first
 
+The [full-angle common-side row theorem](computer_assisted/full_angle_common_side_row_v1/FULL_ANGLE_SMALL_VARIATION_FOUR_ROW_HAND_TERMINAL.md)
+now removes the endpoint-sign restriction at total height variation at
+most `13/100`. Root physical review and fresh exact replays pass: 6,170
+oriented-cap leaves, 80 scalar domains, 892 scalar leaves and 557,500
+integer coefficient checks. The [oriented pair cap](computer_assisted/full_angle_common_side_row_v1/ORIENTED_GOOD_ENDPOINT_TILT_TOLL_HAND_PROOF.md)
+also supplies a guarded affine row whenever the original pair's horizontal
+gap is strictly inside `(-1,1)` and its vertical/frame signs are proved.
+The [source and premise bindings](computer_assisted/full_angle_common_side_row_v1/PREMISE_BINDINGS.json)
+state every caller obligation. These conditional inputs add **zero cells
+and zero masks**.
+
 The [common-side theorem for the actual EFG row](computer_assisted/short_row_common_side_v1/SHORT_ROW_COMMON_SIDE_HAND_PROOF.md)
 now proves that E,F,G lie on one vertical side of an ordered four-original
 row with total height variation at most `23/100`, retaining both actual

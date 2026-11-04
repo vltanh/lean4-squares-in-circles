@@ -1,0 +1,21 @@
+{
+  "head": "8ac1db9d311ab0319105cd35ce46d2b002216330",
+  "originals": [
+    {
+      "path": "research/nine/computer_assisted/opposite_tilt_ahid_row/discovery/chiral_row_poly.py",
+      "git_blob_sha1": "8743cb0d55b96a55cb1dfd9896b60e745fb2e701",
+      "sha256": "ebfac7e07d8022493fa28fbb7db40ce1200e7da12ac8bc20a250121338b0b48c"
+    },
+    {
+      "path": "research/nine/computer_assisted/opposite_tilt_ahid_row/discovery/build_chiral_cover.py",
+      "git_blob_sha1": "d0cb3be5b530f8cbc45b73502b18878983f47a15",
+      "sha256": "4177e9062070070e94a46d14468ce90afbb010596eb04bebb11afafcf1f20130"
+    },
+    {
+      "path": "research/nine/computer_assisted/opposite_tilt_ahid_row/verify_chiral_cover.py",
+      "git_blob_sha1": "c31bc208acb04d6d68ef746c559ec27b1cef7d7c",
+      "sha256": "781d2cf9849aa3840cb5d6d2aa4f8b3467949bf64a0cb029b171c27241a40c48"
+    }
+  ],
+  "change": "One oriented good endpoint; same endpoint signs; exact scalar coefficient131/1000 and physical variation13/100"
+}

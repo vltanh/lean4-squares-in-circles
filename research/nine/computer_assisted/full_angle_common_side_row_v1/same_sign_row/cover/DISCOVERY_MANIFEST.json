@@ -1,0 +1,1613 @@
+{
+  "schema": "chiral_row_complete_cover_discovery_v1",
+  "root_upper": "5/12",
+  "strict_variation_candidate": "131/1000",
+  "target_variation": "13/100",
+  "domains": [
+    {
+      "file": "spmmp_o012_k0.json",
+      "signs": [
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "owners": [
+        0,
+        1,
+        2
+      ],
+      "k": 0,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.015337374000409909
+    },
+    {
+      "file": "spmmp_o012_k1.json",
+      "signs": [
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "owners": [
+        0,
+        1,
+        2
+      ],
+      "k": 1,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.03015000899995357
+    },
+    {
+      "file": "spmmp_o012_k2.json",
+      "signs": [
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "owners": [
+        0,
+        1,
+        2
+      ],
+      "k": 2,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.004893790999631165
+    },
+    {
+      "file": "spmmp_o013_k0.json",
+      "signs": [
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "owners": [
+        0,
+        1,
+        3
+      ],
+      "k": 0,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.009369349999360566
+    },
+    {
+      "file": "spmmp_o013_k1.json",
+      "signs": [
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "owners": [
+        0,
+        1,
+        3
+      ],
+      "k": 1,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.009443058999750065
+    },
+    {
+      "file": "spmmp_o013_k3.json",
+      "signs": [
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "owners": [
+        0,
+        1,
+        3
+      ],
+      "k": 3,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.013285238999742432
+    },
+    {
+      "file": "spmmp_o022_k0.json",
+      "signs": [
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "owners": [
+        0,
+        2,
+        2
+      ],
+      "k": 0,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.015840230000321753
+    },
+    {
+      "file": "spmmp_o022_k2.json",
+      "signs": [
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "owners": [
+        0,
+        2,
+        2
+      ],
+      "k": 2,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.02498021500014147
+    },
+    {
+      "file": "spmmp_o023_k0.json",
+      "signs": [
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "owners": [
+        0,
+        2,
+        3
+      ],
+      "k": 0,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.013390465999691514
+    },
+    {
+      "file": "spmmp_o023_k2.json",
+      "signs": [
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "owners": [
+        0,
+        2,
+        3
+      ],
+      "k": 2,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.009320056999968074
+    },
+    {
+      "file": "spmmp_o023_k3.json",
+      "signs": [
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "owners": [
+        0,
+        2,
+        3
+      ],
+      "k": 3,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.008859493000272778
+    },
+    {
+      "file": "spmmp_o112_k1.json",
+      "signs": [
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "owners": [
+        1,
+        1,
+        2
+      ],
+      "k": 1,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.008852943000420055
+    },
+    {
+      "file": "spmmp_o112_k2.json",
+      "signs": [
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "owners": [
+        1,
+        1,
+        2
+      ],
+      "k": 2,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.008731033000003663
+    },
+    {
+      "file": "spmmp_o113_k1.json",
+      "signs": [
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "owners": [
+        1,
+        1,
+        3
+      ],
+      "k": 1,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.0093695999994452
+    },
+    {
+      "file": "spmmp_o113_k3.json",
+      "signs": [
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "owners": [
+        1,
+        1,
+        3
+      ],
+      "k": 3,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.005176248999305244
+    },
+    {
+      "file": "spmmp_o122_k1.json",
+      "signs": [
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "owners": [
+        1,
+        2,
+        2
+      ],
+      "k": 1,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.018107252999470802
+    },
+    {
+      "file": "spmmp_o122_k2.json",
+      "signs": [
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "owners": [
+        1,
+        2,
+        2
+      ],
+      "k": 2,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.004862755000431207
+    },
+    {
+      "file": "spmmp_o123_k1.json",
+      "signs": [
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "owners": [
+        1,
+        2,
+        3
+      ],
+      "k": 1,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.013830017999680422
+    },
+    {
+      "file": "spmmp_o123_k2.json",
+      "signs": [
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "owners": [
+        1,
+        2,
+        3
+      ],
+      "k": 2,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.010235945000204083
+    },
+    {
+      "file": "spmmp_o123_k3.json",
+      "signs": [
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "owners": [
+        1,
+        2,
+        3
+      ],
+      "k": 3,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.008856718999595614
+    },
+    {
+      "file": "spmpp_o012_k0.json",
+      "signs": [
+        1,
+        -1,
+        1,
+        1
+      ],
+      "owners": [
+        0,
+        1,
+        2
+      ],
+      "k": 0,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.015805497999281215
+    },
+    {
+      "file": "spmpp_o012_k1.json",
+      "signs": [
+        1,
+        -1,
+        1,
+        1
+      ],
+      "owners": [
+        0,
+        1,
+        2
+      ],
+      "k": 1,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.0077091560006010695
+    },
+    {
+      "file": "spmpp_o012_k2.json",
+      "signs": [
+        1,
+        -1,
+        1,
+        1
+      ],
+      "owners": [
+        0,
+        1,
+        2
+      ],
+      "k": 2,
+      "nodes": 17,
+      "leaves": 9,
+      "open": 0,
+      "depth": 8,
+      "seconds": 0.16305678299977444
+    },
+    {
+      "file": "spmpp_o013_k0.json",
+      "signs": [
+        1,
+        -1,
+        1,
+        1
+      ],
+      "owners": [
+        0,
+        1,
+        3
+      ],
+      "k": 0,
+      "nodes": 7,
+      "leaves": 4,
+      "open": 0,
+      "depth": 3,
+      "seconds": 0.07375259500076936
+    },
+    {
+      "file": "spmpp_o013_k1.json",
+      "signs": [
+        1,
+        -1,
+        1,
+        1
+      ],
+      "owners": [
+        0,
+        1,
+        3
+      ],
+      "k": 1,
+      "nodes": 7,
+      "leaves": 4,
+      "open": 0,
+      "depth": 3,
+      "seconds": 0.0839387270007137
+    },
+    {
+      "file": "spmpp_o013_k3.json",
+      "signs": [
+        1,
+        -1,
+        1,
+        1
+      ],
+      "owners": [
+        0,
+        1,
+        3
+      ],
+      "k": 3,
+      "nodes": 15,
+      "leaves": 8,
+      "open": 0,
+      "depth": 7,
+      "seconds": 0.08895784299966181
+    },
+    {
+      "file": "spmpp_o022_k0.json",
+      "signs": [
+        1,
+        -1,
+        1,
+        1
+      ],
+      "owners": [
+        0,
+        2,
+        2
+      ],
+      "k": 0,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.0044924949997948715
+    },
+    {
+      "file": "spmpp_o022_k2.json",
+      "signs": [
+        1,
+        -1,
+        1,
+        1
+      ],
+      "owners": [
+        0,
+        2,
+        2
+      ],
+      "k": 2,
+      "nodes": 17,
+      "leaves": 9,
+      "open": 0,
+      "depth": 8,
+      "seconds": 0.09025654000015493
+    },
+    {
+      "file": "spmpp_o023_k0.json",
+      "signs": [
+        1,
+        -1,
+        1,
+        1
+      ],
+      "owners": [
+        0,
+        2,
+        3
+      ],
+      "k": 0,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.009487736000664881
+    },
+    {
+      "file": "spmpp_o023_k2.json",
+      "signs": [
+        1,
+        -1,
+        1,
+        1
+      ],
+      "owners": [
+        0,
+        2,
+        3
+      ],
+      "k": 2,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.009581235000041488
+    },
+    {
+      "file": "spmpp_o023_k3.json",
+      "signs": [
+        1,
+        -1,
+        1,
+        1
+      ],
+      "owners": [
+        0,
+        2,
+        3
+      ],
+      "k": 3,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.009579894000125933
+    },
+    {
+      "file": "spmpp_o112_k1.json",
+      "signs": [
+        1,
+        -1,
+        1,
+        1
+      ],
+      "owners": [
+        1,
+        1,
+        2
+      ],
+      "k": 1,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.005866196999704698
+    },
+    {
+      "file": "spmpp_o112_k2.json",
+      "signs": [
+        1,
+        -1,
+        1,
+        1
+      ],
+      "owners": [
+        1,
+        1,
+        2
+      ],
+      "k": 2,
+      "nodes": 17,
+      "leaves": 9,
+      "open": 0,
+      "depth": 8,
+      "seconds": 0.11862564599960024
+    },
+    {
+      "file": "spmpp_o113_k1.json",
+      "signs": [
+        1,
+        -1,
+        1,
+        1
+      ],
+      "owners": [
+        1,
+        1,
+        3
+      ],
+      "k": 1,
+      "nodes": 7,
+      "leaves": 4,
+      "open": 0,
+      "depth": 3,
+      "seconds": 0.03623912900002324
+    },
+    {
+      "file": "spmpp_o113_k3.json",
+      "signs": [
+        1,
+        -1,
+        1,
+        1
+      ],
+      "owners": [
+        1,
+        1,
+        3
+      ],
+      "k": 3,
+      "nodes": 15,
+      "leaves": 8,
+      "open": 0,
+      "depth": 7,
+      "seconds": 0.0723845029997392
+    },
+    {
+      "file": "spmpp_o122_k1.json",
+      "signs": [
+        1,
+        -1,
+        1,
+        1
+      ],
+      "owners": [
+        1,
+        2,
+        2
+      ],
+      "k": 1,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.004575624000608514
+    },
+    {
+      "file": "spmpp_o122_k2.json",
+      "signs": [
+        1,
+        -1,
+        1,
+        1
+      ],
+      "owners": [
+        1,
+        2,
+        2
+      ],
+      "k": 2,
+      "nodes": 17,
+      "leaves": 9,
+      "open": 0,
+      "depth": 8,
+      "seconds": 0.08950066899978992
+    },
+    {
+      "file": "spmpp_o123_k1.json",
+      "signs": [
+        1,
+        -1,
+        1,
+        1
+      ],
+      "owners": [
+        1,
+        2,
+        3
+      ],
+      "k": 1,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.005822373000228254
+    },
+    {
+      "file": "spmpp_o123_k2.json",
+      "signs": [
+        1,
+        -1,
+        1,
+        1
+      ],
+      "owners": [
+        1,
+        2,
+        3
+      ],
+      "k": 2,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.006815769999775512
+    },
+    {
+      "file": "spmpp_o123_k3.json",
+      "signs": [
+        1,
+        -1,
+        1,
+        1
+      ],
+      "owners": [
+        1,
+        2,
+        3
+      ],
+      "k": 3,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.004421796000315226
+    },
+    {
+      "file": "sppmp_o012_k0.json",
+      "signs": [
+        1,
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        0,
+        1,
+        2
+      ],
+      "k": 0,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.004438570000274922
+    },
+    {
+      "file": "sppmp_o012_k1.json",
+      "signs": [
+        1,
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        0,
+        1,
+        2
+      ],
+      "k": 1,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.004499661999943783
+    },
+    {
+      "file": "sppmp_o012_k2.json",
+      "signs": [
+        1,
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        0,
+        1,
+        2
+      ],
+      "k": 2,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.004687039000600635
+    },
+    {
+      "file": "sppmp_o013_k0.json",
+      "signs": [
+        1,
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        0,
+        1,
+        3
+      ],
+      "k": 0,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.005002136999792128
+    },
+    {
+      "file": "sppmp_o013_k1.json",
+      "signs": [
+        1,
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        0,
+        1,
+        3
+      ],
+      "k": 1,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.005606923000414099
+    },
+    {
+      "file": "sppmp_o013_k3.json",
+      "signs": [
+        1,
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        0,
+        1,
+        3
+      ],
+      "k": 3,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.004974124999534979
+    },
+    {
+      "file": "sppmp_o022_k0.json",
+      "signs": [
+        1,
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        0,
+        2,
+        2
+      ],
+      "k": 0,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.004804242999853159
+    },
+    {
+      "file": "sppmp_o022_k2.json",
+      "signs": [
+        1,
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        0,
+        2,
+        2
+      ],
+      "k": 2,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.004827527000088594
+    },
+    {
+      "file": "sppmp_o023_k0.json",
+      "signs": [
+        1,
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        0,
+        2,
+        3
+      ],
+      "k": 0,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.016539051000108884
+    },
+    {
+      "file": "sppmp_o023_k2.json",
+      "signs": [
+        1,
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        0,
+        2,
+        3
+      ],
+      "k": 2,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.005273749000480166
+    },
+    {
+      "file": "sppmp_o023_k3.json",
+      "signs": [
+        1,
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        0,
+        2,
+        3
+      ],
+      "k": 3,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.0047658960002081585
+    },
+    {
+      "file": "sppmp_o112_k1.json",
+      "signs": [
+        1,
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        1,
+        1,
+        2
+      ],
+      "k": 1,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.004668943000069703
+    },
+    {
+      "file": "sppmp_o112_k2.json",
+      "signs": [
+        1,
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        1,
+        1,
+        2
+      ],
+      "k": 2,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.004733508000754227
+    },
+    {
+      "file": "sppmp_o113_k1.json",
+      "signs": [
+        1,
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        1,
+        1,
+        3
+      ],
+      "k": 1,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.0051817619996654685
+    },
+    {
+      "file": "sppmp_o113_k3.json",
+      "signs": [
+        1,
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        1,
+        1,
+        3
+      ],
+      "k": 3,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.004970629000126792
+    },
+    {
+      "file": "sppmp_o122_k1.json",
+      "signs": [
+        1,
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        1,
+        2,
+        2
+      ],
+      "k": 1,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.0046769549999226
+    },
+    {
+      "file": "sppmp_o122_k2.json",
+      "signs": [
+        1,
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        1,
+        2,
+        2
+      ],
+      "k": 2,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.00479232499947102
+    },
+    {
+      "file": "sppmp_o123_k1.json",
+      "signs": [
+        1,
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        1,
+        2,
+        3
+      ],
+      "k": 1,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.005463739999868267
+    },
+    {
+      "file": "sppmp_o123_k2.json",
+      "signs": [
+        1,
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        1,
+        2,
+        3
+      ],
+      "k": 2,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.004967345000295609
+    },
+    {
+      "file": "sppmp_o123_k3.json",
+      "signs": [
+        1,
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        1,
+        2,
+        3
+      ],
+      "k": 3,
+      "nodes": 1,
+      "leaves": 1,
+      "open": 0,
+      "depth": 0,
+      "seconds": 0.004515896000157227
+    },
+    {
+      "file": "spppp_o012_k0.json",
+      "signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        0,
+        1,
+        2
+      ],
+      "k": 0,
+      "nodes": 85,
+      "leaves": 43,
+      "open": 0,
+      "depth": 25,
+      "seconds": 0.5370544850002261
+    },
+    {
+      "file": "spppp_o012_k1.json",
+      "signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        0,
+        1,
+        2
+      ],
+      "k": 1,
+      "nodes": 85,
+      "leaves": 43,
+      "open": 0,
+      "depth": 25,
+      "seconds": 0.5262017439999909
+    },
+    {
+      "file": "spppp_o012_k2.json",
+      "signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        0,
+        1,
+        2
+      ],
+      "k": 2,
+      "nodes": 85,
+      "leaves": 43,
+      "open": 0,
+      "depth": 25,
+      "seconds": 0.5249055430003864
+    },
+    {
+      "file": "spppp_o013_k0.json",
+      "signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        0,
+        1,
+        3
+      ],
+      "k": 0,
+      "nodes": 87,
+      "leaves": 44,
+      "open": 0,
+      "depth": 25,
+      "seconds": 0.5582041970001228
+    },
+    {
+      "file": "spppp_o013_k1.json",
+      "signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        0,
+        1,
+        3
+      ],
+      "k": 1,
+      "nodes": 87,
+      "leaves": 44,
+      "open": 0,
+      "depth": 25,
+      "seconds": 0.5685312670002531
+    },
+    {
+      "file": "spppp_o013_k3.json",
+      "signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        0,
+        1,
+        3
+      ],
+      "k": 3,
+      "nodes": 87,
+      "leaves": 44,
+      "open": 0,
+      "depth": 25,
+      "seconds": 0.6770259099994291
+    },
+    {
+      "file": "spppp_o022_k0.json",
+      "signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        0,
+        2,
+        2
+      ],
+      "k": 0,
+      "nodes": 77,
+      "leaves": 39,
+      "open": 0,
+      "depth": 28,
+      "seconds": 0.4762625980001758
+    },
+    {
+      "file": "spppp_o022_k2.json",
+      "signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        0,
+        2,
+        2
+      ],
+      "k": 2,
+      "nodes": 77,
+      "leaves": 39,
+      "open": 0,
+      "depth": 28,
+      "seconds": 0.4561583659997268
+    },
+    {
+      "file": "spppp_o023_k0.json",
+      "signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        0,
+        2,
+        3
+      ],
+      "k": 0,
+      "nodes": 63,
+      "leaves": 32,
+      "open": 0,
+      "depth": 25,
+      "seconds": 0.35530189300061465
+    },
+    {
+      "file": "spppp_o023_k2.json",
+      "signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        0,
+        2,
+        3
+      ],
+      "k": 2,
+      "nodes": 63,
+      "leaves": 32,
+      "open": 0,
+      "depth": 25,
+      "seconds": 0.3903532889999042
+    },
+    {
+      "file": "spppp_o023_k3.json",
+      "signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        0,
+        2,
+        3
+      ],
+      "k": 3,
+      "nodes": 63,
+      "leaves": 32,
+      "open": 0,
+      "depth": 25,
+      "seconds": 0.31434788500064315
+    },
+    {
+      "file": "spppp_o112_k1.json",
+      "signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        1,
+        1,
+        2
+      ],
+      "k": 1,
+      "nodes": 89,
+      "leaves": 45,
+      "open": 0,
+      "depth": 28,
+      "seconds": 0.5111479789993609
+    },
+    {
+      "file": "spppp_o112_k2.json",
+      "signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        1,
+        1,
+        2
+      ],
+      "k": 2,
+      "nodes": 91,
+      "leaves": 46,
+      "open": 0,
+      "depth": 28,
+      "seconds": 0.46980672200061235
+    },
+    {
+      "file": "spppp_o113_k1.json",
+      "signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        1,
+        1,
+        3
+      ],
+      "k": 1,
+      "nodes": 89,
+      "leaves": 45,
+      "open": 0,
+      "depth": 27,
+      "seconds": 0.5217817220000143
+    },
+    {
+      "file": "spppp_o113_k3.json",
+      "signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        1,
+        1,
+        3
+      ],
+      "k": 3,
+      "nodes": 89,
+      "leaves": 45,
+      "open": 0,
+      "depth": 27,
+      "seconds": 0.3713145470001109
+    },
+    {
+      "file": "spppp_o122_k1.json",
+      "signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        1,
+        2,
+        2
+      ],
+      "k": 1,
+      "nodes": 71,
+      "leaves": 36,
+      "open": 0,
+      "depth": 28,
+      "seconds": 0.4686313430001974
+    },
+    {
+      "file": "spppp_o122_k2.json",
+      "signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        1,
+        2,
+        2
+      ],
+      "k": 2,
+      "nodes": 71,
+      "leaves": 36,
+      "open": 0,
+      "depth": 28,
+      "seconds": 0.46155456099950243
+    },
+    {
+      "file": "spppp_o123_k1.json",
+      "signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        1,
+        2,
+        3
+      ],
+      "k": 1,
+      "nodes": 59,
+      "leaves": 30,
+      "open": 0,
+      "depth": 25,
+      "seconds": 0.34387755900024786
+    },
+    {
+      "file": "spppp_o123_k2.json",
+      "signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        1,
+        2,
+        3
+      ],
+      "k": 2,
+      "nodes": 59,
+      "leaves": 30,
+      "open": 0,
+      "depth": 25,
+      "seconds": 0.3541878659998474
+    },
+    {
+      "file": "spppp_o123_k3.json",
+      "signs": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        1,
+        2,
+        3
+      ],
+      "k": 3,
+      "nodes": 57,
+      "leaves": 29,
+      "open": 0,
+      "depth": 25,
+      "seconds": 0.3478415360004874
+    }
+  ],
+  "nodes": 1704,
+  "leaves": 892,
+  "open": 0,
+  "seconds": 10.709125135999784,
+  "proof_status": "UNVERIFIED_EXACT_REPLAY_REQUIRED"
+}

@@ -1,0 +1,202 @@
+{
+  "schema": "unchanged_original_nine_00100_full_angle_row_closed_escape_cover_v1",
+  "chain": [
+    0,
+    7,
+    8,
+    3
+  ],
+  "variation": "13/100",
+  "retains_all_original_frames_pairs_corners_and_mask_bits": true,
+  "prior_required": "Original-nine001/00 caller, with actual EF and FG and their marked center cones",
+  "branches": [
+    {
+      "name": "full_angle_AHID_order_0",
+      "coefficients": [
+        [
+          14,
+          "1"
+        ],
+        [
+          0,
+          "-1"
+        ]
+      ],
+      "rhs": "0"
+    },
+    {
+      "name": "full_angle_AHID_order_1",
+      "coefficients": [
+        [
+          16,
+          "1"
+        ],
+        [
+          14,
+          "-1"
+        ]
+      ],
+      "rhs": "0"
+    },
+    {
+      "name": "full_angle_AHID_order_2",
+      "coefficients": [
+        [
+          6,
+          "1"
+        ],
+        [
+          16,
+          "-1"
+        ]
+      ],
+      "rhs": "0"
+    },
+    {
+      "name": "full_angle_AHID_variation_0",
+      "coefficients": [
+        [
+          1,
+          "-1"
+        ],
+        [
+          7,
+          "1"
+        ]
+      ],
+      "rhs": "-13/100"
+    },
+    {
+      "name": "full_angle_AHID_variation_1",
+      "coefficients": [
+        [
+          1,
+          "-1"
+        ],
+        [
+          7,
+          "-1"
+        ],
+        [
+          17,
+          "2"
+        ]
+      ],
+      "rhs": "-13/100"
+    },
+    {
+      "name": "full_angle_AHID_variation_2",
+      "coefficients": [
+        [
+          1,
+          "-1"
+        ],
+        [
+          7,
+          "1"
+        ],
+        [
+          15,
+          "2"
+        ],
+        [
+          17,
+          "-2"
+        ]
+      ],
+      "rhs": "-13/100"
+    },
+    {
+      "name": "full_angle_AHID_variation_3",
+      "coefficients": [
+        [
+          1,
+          "-1"
+        ],
+        [
+          7,
+          "-1"
+        ],
+        [
+          15,
+          "2"
+        ]
+      ],
+      "rhs": "-13/100"
+    },
+    {
+      "name": "full_angle_AHID_variation_4",
+      "coefficients": [
+        [
+          1,
+          "1"
+        ],
+        [
+          7,
+          "1"
+        ],
+        [
+          15,
+          "-2"
+        ]
+      ],
+      "rhs": "-13/100"
+    },
+    {
+      "name": "full_angle_AHID_variation_5",
+      "coefficients": [
+        [
+          1,
+          "1"
+        ],
+        [
+          7,
+          "-1"
+        ],
+        [
+          15,
+          "-2"
+        ],
+        [
+          17,
+          "2"
+        ]
+      ],
+      "rhs": "-13/100"
+    },
+    {
+      "name": "full_angle_AHID_variation_6",
+      "coefficients": [
+        [
+          1,
+          "1"
+        ],
+        [
+          7,
+          "1"
+        ],
+        [
+          17,
+          "-2"
+        ]
+      ],
+      "rhs": "-13/100"
+    },
+    {
+      "name": "full_angle_AHID_variation_7",
+      "coefficients": [
+        [
+          1,
+          "1"
+        ],
+        [
+          7,
+          "-1"
+        ]
+      ],
+      "rhs": "-13/100"
+    }
+  ],
+  "new_original_cells": 0,
+  "new_masks": 0
+}

@@ -1,0 +1,97 @@
+{
+  "status": "PASS_COMPLETE_ORIENTED_ENDPOINT_TOLL_COVER",
+  "leaves": 6170,
+  "frontier": 0,
+  "maxdepth": 20,
+  "least_integer_replay_reserve": "2041502494679/72057594037927936",
+  "analytic_rational_checks": 13,
+  "roots": [
+    {
+      "kind": "B_owned",
+      "root": [
+        [
+          "-1",
+          "-1/4"
+        ],
+        [
+          "0",
+          "5/12"
+        ]
+      ],
+      "leaves": 232
+    },
+    {
+      "kind": "B_owned",
+      "root": [
+        [
+          "1/4",
+          "1"
+        ],
+        [
+          "0",
+          "5/12"
+        ]
+      ],
+      "leaves": 2098
+    },
+    {
+      "kind": "B_owned",
+      "root": [
+        [
+          "-1/4",
+          "1/4"
+        ],
+        [
+          "1/20",
+          "5/12"
+        ]
+      ],
+      "leaves": 3713
+    },
+    {
+      "kind": "Mv_D",
+      "root": [
+        [
+          "0",
+          "5/12"
+        ]
+      ],
+      "leaves": 75
+    },
+    {
+      "kind": "Mu_E",
+      "root": [
+        [
+          "0",
+          "5/12"
+        ]
+      ],
+      "leaves": 17
+    },
+    {
+      "kind": "Mu_N",
+      "root": [
+        [
+          "0",
+          "5/12"
+        ]
+      ],
+      "leaves": 17
+    },
+    {
+      "kind": "Mu_D",
+      "root": [
+        [
+          "0",
+          "5/12"
+        ]
+      ],
+      "leaves": 18
+    }
+  ],
+  "seconds": 1.4497618649993456,
+  "sources": {
+    "ORIENTED_GOOD_ENDPOINT_TOLL_COVER.json": "fa35a59fc1e0f034a7bf209e4730a74fc4b5ca5d0038a8d36b32ea792dde2a61",
+    "check_one_sided_good_toll.py": "0b84e52508d89f471d05af3ea4abc0a8e9974879d551e58db9c8ea8d5d231bc3"
+  }
+}
