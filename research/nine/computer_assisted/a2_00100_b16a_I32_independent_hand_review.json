@@ -1,0 +1,163 @@
+{
+  "schema": "independent_B16a_I32_hand_table_physical_premises_review_v1",
+  "status": "PASS_COMPLETE_FIXED_I32_HAND_TABLE_AND_PHYSICAL_PREMISES",
+  "reviewer_sha256": "0f12e255283656a776fac04a793cf4b652a489720b62b39b6d94f67adaf39b11",
+  "frozen_inputs": {
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I32_complete_H_hand_table/HAND_PROOF.md": "33dd134b43b8a4ed6db24aeae585fbf0053d83da9ce154932598f57eaa6bf142",
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I32_complete_H_hand_table/COVER_TABLE.json": "5e3b3776ef363bd1a14cbdcee5a22d6314d92ea8f6eff5ab986bfa5f62fc1ad3",
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I32_complete_H_hand_table/PHYSICAL_PROOF_BINDINGS.json": "a536c6814a167de920a7d9c60bd92f507005a4c04e07e8ae9d7fc4e1bab97b27",
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I32_complete_H_exact_context/SHA256_MANIFEST.json": "33272ed096ceb3f2dab6a16570ebe080a84677a033be5690ee63bfbdbf7bfc72",
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I32_complete_H_exact_context/B16A_I32_COMPLETE_H_REPLAY.json": "69f12c27e86f13f37d02373eecce5834b0601db84f741efa6aee74a9c083a977",
+    "/workspace/scratch/fee12ff81cbd/a_family/other_masks/B16A_I32_COMPLETE_H_ATTACHMENT_SUPPLEMENT.json": "827ad735f6b3269f47c8a3bf9e29ee1e5be16a2e4f8582d4af86ed8a0a0ce162"
+  },
+  "context_input_count": 507,
+  "all_frozen_inputs_unchanged": true,
+  "complete_H_members": 8,
+  "route_counts": {
+    "direct_affine": 3,
+    "exact_affine_induction": 2,
+    "complete_I_slope_cover_with_D_subcovers": 3
+  },
+  "distinct_bound_records": 37,
+  "bound_terminal_records": 29,
+  "shared_OPEN_ancestor_records": 8,
+  "literal_record_totals": {
+    "bound_rounds": 87,
+    "bound_deductions": 15458,
+    "bound_premise_rows": 19419,
+    "terminal_rows": 685
+  },
+  "direct_terminal_rows": 17,
+  "total_local_row_occurrences": 20121,
+  "retained_continuation_prefix_links_checked": 7,
+  "energy_occurrences": 199,
+  "energy_labels": 10,
+  "energy_definitions": 160,
+  "energy_occurrences_by_label": {
+    "three_square_center_energy_3_6_8_000": 22,
+    "three_square_center_energy_0_4_7_000": 62,
+    "three_square_center_energy_5_6_8_000": 15,
+    "three_square_center_energy_4_5_7_000": 38,
+    "three_square_center_energy_5_7_8_000": 47,
+    "three_square_center_energy_2_3_8_000": 7,
+    "three_square_center_energy_1_7_8_000": 4,
+    "three_square_center_energy_0_1_4_000": 1,
+    "three_square_center_energy_1_4_7_000": 1,
+    "three_square_center_energy_0_1_7_000": 2
+  },
+  "independently_checked_nonreserve_witnesses": {
+    "8194437bb95c3f54b8c4391395a1d31207e603560c7cadfa4dee5f1b99c914e4": {
+      "kind": "proved_empty_original_angle_interval",
+      "original": 6,
+      "lower": "198109285768863/281474976710656",
+      "upper": "22852470381045/140737488355328",
+      "gap": "152404345006773/281474976710656",
+      "checked_frame_inferences": 7,
+      "alpha_interval": [
+        "210037/262144",
+        "857483/1048576"
+      ],
+      "beta_interval": [
+        "5321/131072",
+        "168063/1048576"
+      ],
+      "absolute_beta_interval": [
+        "267343/524288",
+        "35777/65536"
+      ],
+      "independent_unit_frame_square_sum_upper": "381761133629/549755813888",
+      "independent_unit_frame_square_sum_gap": "167994680259/549755813888"
+    },
+    "c0912adada0868c1c7c9079f43e91451614c6c9c71ca00bcee449a619085297b": {
+      "kind": "proved_empty_analytic_frame",
+      "index": 24,
+      "lower": "124804882538473/140737488355328",
+      "upper": "906673/1048576",
+      "gap": "3113292439529/140737488355328",
+      "certified_interval": [
+        "807621/1048576",
+        "906673/1048576"
+      ],
+      "analytic_interval": [
+        "124804882538473/140737488355328",
+        "1"
+      ],
+      "derived_slope_interval": [
+        "-34895436167475/140737488355328",
+        "36674022298067/70368744177664"
+      ]
+    },
+    "b5c0ea51308fb97716c0b4fc56bdf342a1ee3bd8697e0b1318e8d2096da57160": {
+      "kind": "proved_empty_analytic_frame",
+      "index": 24,
+      "lower": "249079020269313/281474976710656",
+      "upper": "230421/262144",
+      "gap": "1666355441409/281474976710656",
+      "certified_interval": [
+        "197051/262144",
+        "230421/262144"
+      ],
+      "analytic_interval": [
+        "249079020269313/281474976710656",
+        "1"
+      ],
+      "derived_slope_interval": [
+        "-148153815831837/281474976710656",
+        "141779175684211/281474976710656"
+      ]
+    },
+    "75ef098d16fbe7a62a8df9c15883525045972aafd5eea53646372987bf2bd1b1": {
+      "kind": "proved_empty_analytic_frame",
+      "index": 24,
+      "lower": "17132971997635/17592186044416",
+      "upper": "454153/524288",
+      "gap": "1894126041539/17592186044416",
+      "certified_interval": [
+        "824193/1048576",
+        "454153/524288"
+      ],
+      "analytic_interval": [
+        "17132971997635/17592186044416",
+        "1"
+      ],
+      "derived_slope_interval": [
+        "-43958786262867/281474976710656",
+        "65604976513989/281474976710656"
+      ]
+    },
+    "88003c3c91e12ec0ffa7c694bee136b7a380e6c1b5dfe31c480391bb3db9d105": {
+      "kind": "proved_empty_original_angle_interval",
+      "original": 4,
+      "lower": "-972808593825/2199023255552",
+      "upper": "-42879861290901/70368744177664",
+      "gap": "11749986288501/70368744177664",
+      "checked_frame_inferences": 5,
+      "alpha_interval": [
+        "433043/524288",
+        "223857/262144"
+      ],
+      "beta_interval": [
+        "-424215/1048576",
+        "-160963/1048576"
+      ],
+      "absolute_beta_interval": [
+        "46261/131072",
+        "440857/1048576"
+      ],
+      "independent_unit_frame_square_sum_upper": "981749669409/1099511627776",
+      "independent_unit_frame_square_sum_gap": "117761958367/1099511627776"
+    }
+  },
+  "physical_proof_binding_count": 12,
+  "findings": [
+    "All eight closed H products independently recomputed from the original H box; every shared equality face is retained.",
+    "All displayed hand-table rows, reserves, local counts and source identities match the literal selected records and accepted exact report.",
+    "Three common H6 and five common I3 OPEN states supply bounds only. Continued D records contain their saved rounds literally and their D predecessors are not counted twice.",
+    "Three alpha_G lower bounds independently satisfy exact unit-frame algebra on their printed slope intervals and exceed their certified upper bounds. Both empty-angle cases also have strictly positive independently recomputed unit-circle deficits.",
+    "The full physical caller, original-frame partitions, rational secant bounds and paid-residual reserve proof are correctly stated. All199 energy occurrences and160 literal definitions match the selected raw rows."
+  ],
+  "scope": "Source, hand, table, literal counting and stated witness-algebra review only. Accepted weighted deductions are not replayed; one complete fixed I rectangle is excluded.",
+  "arithmetic_runtime_duplicated": false,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

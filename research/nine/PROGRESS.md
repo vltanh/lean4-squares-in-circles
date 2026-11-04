@@ -46,6 +46,20 @@ physical theorem packets, 3,006 local deductions, 5,018 premise rows and
 21 terminal rows. Every frozen input and literal hand-table entry is checked.
 The original and mask remain OPEN; this checkpoint adds zero closure credit.
 
+## B16a I32 complete fixed-rectangle checkpoint
+
+The [complete I32 proof](A2_00100_B16A_I32_COMPLETE_H_COVER_CHECKPOINT.md)
+excludes all eight closed H products in the original I32 domain. Three direct
+terminals and two ordinary bound terminals join three complete I-angle covers
+with five complete D-angle subcovers. All twenty nested D members are excluded,
+including three completed continuations. The accepted exact replay checks
+37 distinct records, 87 rounds, 15,458 deductions, 19,419 premise rows and 702
+terminal rows. The physical hand and literal table retain all touching faces.
+The source/attachment and hand reviews pass, and the root verified every
+one of the 526 portable archive paths and its original source bytes.
+Fourteen of sixteen I rectangles are excluded; only I21 and I22 remain OPEN.
+B16a itself and all fixed original/mask/positional/roadmap ledgers are unchanged.
+
 ## B16a I10 complete fixed-rectangle checkpoint
 
 The [complete I10 proof](A2_00100_B16A_I10_COMPLETE_H_COVER_CHECKPOINT.md)

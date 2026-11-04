@@ -577,6 +577,17 @@ Root source/hand review and all 430 archived-file checks also pass. Its
 Thirteen of sixteen I rectangles are excluded. I21, I22 and I32 remain OPEN;
 no complete original, mask, positional root or roadmap gate is added.
 
+## B16a: complete I32, with I21 and I22 still open
+
+The [I32 checkpoint](A2_00100_B16A_I32_COMPLETE_H_COVER_CHECKPOINT.md)
+provides the complete eight-H union, three I4 covers and five nested D4
+covers. Its 507-input full exact replay, physical hand/table, actual-input
+attachment review and independent hand review pass. The root checked all
+526 archive paths, including 124 links to identical earlier payloads.
+The 20,121 local row occurrences include 199 three-square energy rows.
+Fourteen original I rectangles are excluded; I21 and I22 remain OPEN.
+This is zero complete-original, mask, positional-root or roadmap credit.
+
 ## Fixed ledgers and next handoff
 
 - Original-nine masks: **8 CLOSED / 24 OPEN**, exactly `000/*` and `010/*` CLOSED.
