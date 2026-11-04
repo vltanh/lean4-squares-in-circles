@@ -1,16 +1,16 @@
-> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **216/231 cells CLOSED, 15 OPEN; 8/32 masks CLOSED, 24 OPEN.**
+> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **217/231 cells CLOSED, 14 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
-# n=9: 216/231 current-mask cells closed; 15 remain OPEN
+# n=9: 217/231 current-mask cells closed; 14 remain OPEN
 
-**Latest verified continuation: the complete A768 original-cell exclusion.**
-The same register now has **216 CLOSED / 15 OPEN**, with
-**163 additions beyond the first 53**. Remaining families:
-**A2, B6, C4, D3**. `001/00`, its reversal, the unrestricted bound and
+**Latest verified continuation: the complete CAAA center/frame original-cell exclusion.**
+The same register now has **217 CLOSED / 14 OPEN**, with
+**164 additions beyond the first 53**. Remaining families:
+**A2, B6, C3, D3**. `001/00`, its reversal, the unrestricted bound and
 equality remain OPEN. No Lean, Lake or CI.
 
-[Latest complete assembly](A2_00100_A768_FIXED_CENTER_ENERGY_CLOSURE.md) ·
+[Latest complete assembly](A2_00100_CAAA_COMPLETE_CENTER_SLOPE_CLOSURE.md) ·
 [Current fixed register](gates/A2_00100_FIXED_FRONTIER.json) ·
-[Source-bound packet and fresh replay](computer_assisted/a2_00100_a_768_fixed_center_energy_manifest.json) ·
+[Source-bound packet and fresh replay](computer_assisted/a2_00100_c_aaa_complete_center_slope_manifest.json) ·
 [Operative handoff](HANDOFF_A2_FIXED_CLOSURE.md)
 
 ## New conditional input: a complete full-angle polynomial row theorem
@@ -32,21 +32,27 @@ and **8 CLOSED / 24 OPEN masks** until a complete original caller passes.
 
 ## What changed
 
-`positive-768264ad71bc8152` is completely excluded by its sixteen
-closed I-quarter products. Twelve exact positive affine reserves exceed
-1/200; three physical interval/separation terminals and one empty
-original-angle terminal close the other members. No H or frame-slope
-subdivision is needed. The sixteen distinct bound records establish
-2,452 bounds in 17 rounds using 3,969 premise rows and 190 terminal rows.
-Two continuations preserve their complete three-round prefixes literally.
-The proof uses 24 independently reconstructed three-square energy rows,
-together with the freshly replayed geometric theorem. Independent
-hand/table review and the relocated complete replay pass. The root checks
-all 128 frozen inputs, mathematical summary agreement, exact accounting
-and the unchanged original caller before integration. All 231 original
-IDs and paths are retained.
+The entire original **`negative-aaa42018b92e527c`** closes with a complete
+fixed center and original-frame cover. Fourteen of the sixteen I rectangles
+close directly or by exact induction. Each of the other two has a complete
+proved-state H cover; three H members use all four closed quarters of a
+proved original-I slope interval. All 39 terminal cases are excluded,
+including every shared face. The proof retains all nine original squares,
+36 corners, 36 physical pairs and strictly weak CD.
+
+Independent rational replay checks 21,219 bound deductions, 26,610 premise
+rows and 617 terminal rows, together with the three-square energy premise
+and the literal hand table. A frozen interrupted five-round prefix is
+preserved exactly and its remaining declared round is fully replayed.
+The remaining families are **A2, B6, C3, D3**.
 
 No whole mask, positional root or roadmap gate is newly closed.
+
+### Preceding checkpoint: 216 CLOSED / 15 OPEN
+
+The [preceding complete assembly](A2_00100_A768_FIXED_CENTER_ENERGY_CLOSURE.md) and its immutable
+mathematical sources remain accepted. Their complete proofs are preserved
+with their original before/after accounting.
 
 ### Preceding checkpoint: 215 CLOSED / 16 OPEN
 

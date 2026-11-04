@@ -1,0 +1,34 @@
+{
+  "schema": "ordered_split_archive_v1",
+  "archive": "a2_00100_c_aaa_complete_center_slope_packet.tar.xz",
+  "bytes": 34897844,
+  "sha256": "fb4cdbc54c82283fd7ce80d0b4f662871124625e6db90ed5d80e9b2816f55825",
+  "parts": [
+    {
+      "file": "a2_00100_c_aaa_complete_center_slope_packet.tar.xz.part01",
+      "bytes": 8388608,
+      "sha256": "d81fd4fec8bf214bb3981260e5569e2c8bee6462fe3d9ef1dcfce02f46d930b9"
+    },
+    {
+      "file": "a2_00100_c_aaa_complete_center_slope_packet.tar.xz.part02",
+      "bytes": 8388608,
+      "sha256": "42547be11391cb39954f15427bb12ed75402d6d0d9c53b5943dddfeb1d93af91"
+    },
+    {
+      "file": "a2_00100_c_aaa_complete_center_slope_packet.tar.xz.part03",
+      "bytes": 8388608,
+      "sha256": "443d4cd705278d4d8fa05421bfe4160f22c2287b5b22232ccc75b6cc5dc0fe1f"
+    },
+    {
+      "file": "a2_00100_c_aaa_complete_center_slope_packet.tar.xz.part04",
+      "bytes": 8388608,
+      "sha256": "2df0ced655deb3df23a519fd87eb81afa783d9397a66d205ef1acca17ce852af"
+    },
+    {
+      "file": "a2_00100_c_aaa_complete_center_slope_packet.tar.xz.part05",
+      "bytes": 1343412,
+      "sha256": "8cc9c2f2d106af9fdec0280270a496fd3ba4b464bc2cad9345790c289add9d08"
+    }
+  ],
+  "extraction": "Concatenate the listed parts in order, check the full archive hash, extract and run the independent checker."
+}
