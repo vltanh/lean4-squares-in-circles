@@ -1,0 +1,199 @@
+{
+  "schema": "prepared_full_strict_011_root_source_design_map_v1",
+  "status": "PREPARED_NOT_INSTALLED_REVIEW_AND_CONTROLS_REQUIRED",
+  "scope": "Entire original strict 011/00; no 001 original-cell ancestry or derived normalization",
+  "sources": [
+    {
+      "path": "repo/research/nine/A2_COVERAGE_AND_CLOSURE_CONTRACT.md",
+      "sha256": "6ad5bd6d8e7cfc43de252db2e8954d0951d6fe0ebf77823f865e196215da5102",
+      "bytes": 20682,
+      "category": "caller_contract",
+      "reuse_boundary": "Use full strict sections 2-3 and exact witness normalization; historical counts are not current counts."
+    },
+    {
+      "path": "global_work/other_mask_entrypoints/emit_fixed_mask.py",
+      "sha256": "c01f8d7a0ddfcb0195b709decfa0118791c2c2321fc200384e94dd5393e8da05",
+      "bytes": 3682,
+      "category": "exact_nonlinear_caller",
+      "reuse_boundary": "Existing generic all-nine strict 011/00 emitter. No solver invocation."
+    },
+    {
+      "path": "b_work/independent_physical_sat_replay.py",
+      "sha256": "1d069c90f289dce136e41afeb5d564ec7016ac06f58eeb733ca7552801b6fafc",
+      "bytes": 12473,
+      "category": "generic_exact_arithmetic",
+      "reuse_boundary": "Keep arithmetic and complete SAT8 cover; supply new independently reviewed geometry adapter and full-mask root."
+    },
+    {
+      "path": "b_work/independent_physical_proxy_cover.py",
+      "sha256": "3b46b8a966c712e23894ae4cd7964355730f2bfe3c58a04871ade9d35ddf1277",
+      "bytes": 1552,
+      "category": "generic_proxy_cover",
+      "reuse_boundary": "Reuse complete four-way inset union only after fresh caller/inset attachment."
+    },
+    {
+      "path": "d_work/adaptive_corner_disk/physical_corner_disk_rows.py",
+      "sha256": "633c549239f1893c37c382e1e6aac2eb54f36feb7332390e26f9bccceac286ba",
+      "bytes": 1085,
+      "category": "universal_producer",
+      "reuse_boundary": "Physical corner support rows; no old Context import."
+    },
+    {
+      "path": "d_work/adaptive_corner_disk/independent_physical_corner_disk_rows.py",
+      "sha256": "924cb2943c161793d516bb44ca796b0659b0d2fb1cd6aafab3162b2e2a59b2aa",
+      "bytes": 1306,
+      "category": "universal_checker",
+      "reuse_boundary": "Exact literal reconstruction for one physical original corner."
+    },
+    {
+      "path": "d_work/adaptive_corner_disk/PREMISE_BINDINGS.json",
+      "sha256": "413cec6bd90907e25002a0a08a34924c7de79e8179ac733ddb45b16a6f1d2271",
+      "bytes": 1318,
+      "category": "accepted_universal_binding",
+      "reuse_boundary": "Accepted identity; new root scope still requires review."
+    },
+    {
+      "path": "global_work/unit_corner_four_rectangles/physical_unit_four_corner_rows.py",
+      "sha256": "87b1807d71442d558fd6eeaaed9b065d953cc6ca58908079e72b745cb2e227ac",
+      "bytes": 1118,
+      "category": "universal_producer",
+      "reuse_boundary": "Four-product corner rows rebuilt on current proved position/frame intervals."
+    },
+    {
+      "path": "global_work/unit_corner_four_rectangles/independent_physical_unit_four_corner_rows.py",
+      "sha256": "bfb6dc614269eaaa2c9f087cc7295c2598648d9349d76006b1e4aa08e66380a6",
+      "bytes": 1506,
+      "category": "universal_checker",
+      "reuse_boundary": "Independent four-product literal and interval reconstruction."
+    },
+    {
+      "path": "global_work/unit_corner_four_rectangles/PREMISE_BINDINGS.json",
+      "sha256": "5fcef62cb21b38dcd42ed3c2bc1e913ff5f9125093eae4be557d92c0a56c2da1",
+      "bytes": 1486,
+      "category": "accepted_universal_binding",
+      "reuse_boundary": "Accepted identity; do not substitute old propagated intervals."
+    },
+    {
+      "path": "b_work/physical_pair_frame_squares.py",
+      "sha256": "39d917106aa79db506aa1defbb081b404b02c6b54d88d63cae455864f506ffa6",
+      "bytes": 1236,
+      "category": "universal_producer",
+      "reuse_boundary": "Requires current physical SAT pair choice/slot; rational weights are parameters."
+    },
+    {
+      "path": "b_work/independent_physical_pair_frame_squares.py",
+      "sha256": "1a0d5a02f7de45491e8dee625b95fe72aa17be66867e202f91e2a354f23d66b0",
+      "bytes": 1293,
+      "category": "universal_checker",
+      "reuse_boundary": "Reconstruct norm-square identity on same selected pair and shared frame variables."
+    },
+    {
+      "path": "b_work/physical_projection_squares.py",
+      "sha256": "0a33acc6990ccc5f35439f0f641de987a08466b0e53a3bfa38de1dd2c2c8901d",
+      "bytes": 1168,
+      "category": "universal_producer",
+      "reuse_boundary": "Requires current choice and proved current difference intervals."
+    },
+    {
+      "path": "b_work/independent_physical_projection_squares.py",
+      "sha256": "c1274d245162b3e57c679039c3d31b6f4faebf25c46903de3649c1b68888df38",
+      "bytes": 1566,
+      "category": "universal_checker",
+      "reuse_boundary": "Reconstruct projection norm identity and secant payment independently."
+    },
+    {
+      "path": "b_work/PHYSICAL_GRAM_SQUARE_SOURCE_PINS.json",
+      "sha256": "e084a8bed463fdefb615e9925734048b987bd39ec5afb450aaa3b445db729b93",
+      "bytes": 1329,
+      "category": "accepted_universal_source_pins",
+      "reuse_boundary": "Pins the accepted Gram helper sources; no numerical suggestion is a premise."
+    },
+    {
+      "path": "b_work/owner_free_relative_support_snapshot.py",
+      "sha256": "b1445ad4e00a0127b201d784b72e1df2246101f567b0bf952ca46b463595e788",
+      "bytes": 5367,
+      "category": "universal_family_candidate",
+      "reuse_boundary": "Reuse only signed/folded rows whose local interval premises are independently reconstructed."
+    },
+    {
+      "path": "b_work/independent_owner_free_relative_support.py",
+      "sha256": "a9279225ec2ee13b263f412b36b6d5de876a8bbdf8059a5bc1e0c12531995377",
+      "bytes": 2307,
+      "category": "universal_family_checker",
+      "reuse_boundary": "Literal reconstruction only; never import its old Context."
+    },
+    {
+      "path": "repo/research/nine/computer_assisted/strict_011_actual_AB_application_v1/PUBLICATION_MANIFEST.json",
+      "sha256": "1469421d4def83019d7d5120fb0fe480d9b0901857c83bd26f22ac4746642d6c",
+      "bytes": 4056,
+      "category": "accepted_conditional_terminal",
+      "reuse_boundary": "Requires independent strict 011 ancestry, fresh scalar replay and all guards."
+    },
+    {
+      "path": "ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/verify_shared_bound.py",
+      "sha256": "8ab01fdffa3b8e2404036e8a92adb8c5b63da381c7e4e96b09da477c25e9d1c7",
+      "bytes": 21665,
+      "category": "legacy_reference_prohibited_import",
+      "reuse_boundary": "Pure sqrt/frame formulas are extraction references only. K imports old geometry and index; rebuild is caller-specific."
+    },
+    {
+      "path": "ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/geometry/weak_outer_numeric_strict_bulk_v14_verify.py",
+      "sha256": "ec1b7de7b15bcc9d89d12087bff974c68e6d056bdaae26b482d514027ec97993",
+      "bytes": 59712,
+      "category": "legacy_reference_prohibited_import",
+      "reuse_boundary": "effective_boxes/center_bounds/difference_bounds contain 001-specific premises, including unconditional restrictions."
+    },
+    {
+      "path": "ac_work/c887/c887_whole_eight_checkpoint_package/ancestry/legacy/current_proof/shared_capacity_three_b_v4/geometry/review_tight_bounds_independent.py",
+      "sha256": "fc4afd4c1fa2ae2fabae656f1d55e1289b1cb92212ebd153b9cc20a3f79e7c3a",
+      "bytes": 17065,
+      "category": "legacy_reference_prohibited_import",
+      "reuse_boundary": "collect_rows invokes old geometry; changing path or context version does not create a fresh full root."
+    },
+    {
+      "path": "ac_work/tree/physical_sat_engine_snapshot.py",
+      "sha256": "38d1162c40cd6494579f7793c6b10a54432ce999994f86b6726d2ca9e8022bc4",
+      "bytes": 16239,
+      "category": "discovery_reference_only",
+      "reuse_boundary": "Numerical Context transitively imports old B ancestry. It must not initialize the new strict 011 caller."
+    },
+    {
+      "path": "d_work/cd402_work/cd402_original_runtime.py",
+      "sha256": "4ddae80bf05087c9dd7205dfe92b684a7df70ad776dbd9b16099bba96d695e56",
+      "bytes": 2442,
+      "category": "fixed_original_reference_only",
+      "reuse_boundary": "Correct for its registered Cd402 path; never a full strict 011 initializer."
+    }
+  ],
+  "prepared_files": {
+    "FRESH_ROOT_SPEC_PREPARED.json": {
+      "sha256": "14ec7613052f657fe3d2d3895b83b578ef0ef92c000e97bd34a582a69cae3d06",
+      "bytes": 71693
+    },
+    "ROOT_ADAPTER_DESIGN.md": {
+      "sha256": "b993709fa1666285671ba4f8aa7be63c98f7f01e5f2b61e41970e32b63727a6c",
+      "bytes": 9044
+    },
+    "prepare_root_spec.py": {
+      "sha256": "cdb198a3729ac151984dd113d7b8533f3904c54cee0df0ee3f6b8f9a1be2b4b1",
+      "bytes": 4649
+    }
+  },
+  "preparation_counts_only": {
+    "physical_frames": 9,
+    "original_corners": 36,
+    "original_pairs": 36,
+    "center_cones": 5,
+    "elementary_rows": 159,
+    "owned_alternatives_per_pair": 8
+  },
+  "root_adapter_installed": false,
+  "geometric_controls_passed": false,
+  "physical_review_passed": false,
+  "solver_called": false,
+  "numerical_worker_started": false,
+  "old_context_imported": false,
+  "new_mask_closures": 0,
+  "new_original_cell_closures": 0,
+  "next_acceptance": "Independent exact literal, physical and complete-union controls, then root physical review before any adapter installation or weighted use"
+}

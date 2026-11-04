@@ -32,6 +32,26 @@ accepted counts were **220/231 original cells and 8/32 masks closed**.
 
 ## Read first
 
+## Remaining-mask plan and prepared strict 011/00 root
+
+The [reviewed continuation and root-design checkpoint](computer_assisted/all_masks_continuation_and_strict011_design_v1/README.md)
+preserves the full plan for 24 OPEN masks in 14 reversal classes, with all
+38 directly pinned source files and independent plan and physical-design
+reviews. Its strict 011/00 specification has 159 elementary rows and all
+288 owned pair alternatives, retaining nine originals, 36 corners,
+36 pairs, five cones and the exact marked bits. The old 001 initializer
+contains caller-specific restrictions; the next mask requires a fresh
+geometry adapter. No adapter or stronger bound is installed here.
+
+The frozen plan's 221/10 counts and pending D821 flags are historical.
+The separate accepted snapshot is 222 CLOSED / 9 OPEN; only D821 changed
+among the 231 original entries. This source checkpoint adds zero original,
+mask, positional-root or roadmap credit. Whole masks remain 8 CLOSED /
+24 OPEN, and eventual 001/00 and 100/00 assembly remains strict-radius.
+
+The [independent publication review](computer_assisted/all_masks_continuation_and_strict011_design_v1_review/ALL_MASK_STRICT011_CHECKPOINT_INDEPENDENT_REVIEW.md)
+checks every source byte and the entire historical/current reconciliation.
+
 ## Complete D821 original: 222 CLOSED / 9 OPEN
 
 `positive-821c9a2debeed0aa` is completely excluded. Its five closed

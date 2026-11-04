@@ -1,0 +1,33 @@
+{
+  "scope": "All 24 open-mask selected-seven relaxations have explicit strict subcritical rational controls; no nine-square counterexample or mask closure.",
+  "replay": "Author and root integrator separately ran the standalone exact checker; 882 rational assertions and 24-mask union passed.",
+  "unit_square_counts": {
+    "per_control": 7,
+    "representatives": 14,
+    "masks_with_reversal": 24
+  },
+  "radius_squared": "17/4",
+  "reserve_to_Q": "17/256",
+  "files": [
+    {
+      "path": "research/nine/SEVEN_ORIGINAL_ALL_OPEN_MASKS_OBSTRUCTION.md",
+      "sha256": "a6027271e7c02150ce60be342990c4fc11d5d141f4ff95a6b8d89d9fb1aa62f9",
+      "bytes": 7515
+    },
+    {
+      "path": "research/nine/computer_assisted/seven_original_all_open_masks_table.json",
+      "sha256": "1e02d0418e341a45b8be88868ead1ba021190e3e9225a3f0b6021b69badaac5b",
+      "bytes": 9283
+    },
+    {
+      "path": "research/nine/computer_assisted/verify_seven_original_table.py",
+      "sha256": "a74a7fc08ea1a0323e893d0b5f7310fe342adc65f4d952f3704185c57e5a1ae3",
+      "bytes": 3138
+    },
+    {
+      "path": "research/nine/computer_assisted/seven_original_table_exact_report.json",
+      "sha256": "6a1981c7e6ea179ae0de3b96e5564a46383b01491c067158be7bc8dc24658b69",
+      "bytes": 2104
+    }
+  ]
+}

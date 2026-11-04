@@ -1,0 +1,31 @@
+{
+  "schema": "independent_publication_review_of_all_mask_design_checkpoint_v1",
+  "checkpoint_manifest_sha256": "9293308c9d23acfaeefe88b6727c293a921a9d6f9384fd22722d5424c5a6821e",
+  "files": {
+    "ALL_MASK_STRICT011_CHECKPOINT_INDEPENDENT_REVIEW.md": {
+      "sha256": "84336de07ab3de68b62206d5160a94503f815e62736021e4908f0b230dfc38ad",
+      "bytes": 2835,
+      "original_path": "b_work/ALL_MASK_STRICT011_CHECKPOINT_INDEPENDENT_REVIEW.md"
+    },
+    "ALL_MASK_STRICT011_CHECKPOINT_INDEPENDENT_REVIEW.json": {
+      "sha256": "9bb86af050441980caaec54d34689cdbb11ea5d32db0ca71555c9e168b1efa60",
+      "bytes": 17298,
+      "original_path": "b_work/ALL_MASK_STRICT011_CHECKPOINT_INDEPENDENT_REVIEW.json"
+    },
+    "review_all_mask_strict011_checkpoint.py": {
+      "sha256": "64dd1f522b037bb5d03b74d45729f7a48edda06fd7c54a620e28d922e29dba07",
+      "bytes": 9134,
+      "original_path": "b_work/review_all_mask_strict011_checkpoint.py"
+    },
+    "FRESH_HISTORICAL_METADATA_REPLAY.json": {
+      "sha256": "91f67927825aa8d27e06753700e53ea1bcd5879e0df3f73b511652a1fca08153",
+      "bytes": 1426,
+      "original_path": "d_work/ALL_MASK_PLAN_HISTORICAL_METADATA_FRESH.json"
+    }
+  },
+  "new_original_closures": 0,
+  "new_mask_closures": 0,
+  "geometric_arithmetic_rerun": false,
+  "historical_metadata_replay_entire_report_equal": true,
+  "original_checkpoint_bytes_unchanged": true
+}

@@ -1,0 +1,141 @@
+{
+  "schema": "read_only_full_mask_continuation_plan_bindings_v1",
+  "status": "METADATA_CHECKED_WORK_PLAN_NO_NEW_PROOF",
+  "repository_head_at_snapshot": "925e1112814a0758889cafa5c975c27414b86570",
+  "source_paths_relative_to": "/workspace/scratch/f9f48fcfb253",
+  "sources": {
+    "contract": {
+      "path": "repo/research/nine/A2_COVERAGE_AND_CLOSURE_CONTRACT.md",
+      "sha256": "6ad5bd6d8e7cfc43de252db2e8954d0951d6fe0ebf77823f865e196215da5102",
+      "bytes": 20682
+    },
+    "mask_frontier": {
+      "path": "repo/research/nine/gates/A2_MASK_FRONTIER.json",
+      "sha256": "c25e3c95b3f6c71463bc21d59a714a7e417bbd366176f8d06f73cb7c45f3f5ed",
+      "bytes": 11313
+    },
+    "fixed_original_frontier": {
+      "path": "repo/research/nine/gates/A2_00100_FIXED_FRONTIER.json",
+      "sha256": "b805df8706151a4eb43bd8c0912205ffbfd67d8dfb582daf441717e04fd023dc",
+      "bytes": 445968
+    },
+    "entrypoint_note": {
+      "path": "global_work/other_mask_entrypoints/NEXT_MASK_ENTRY_POINTS.md",
+      "sha256": "8aa0d10f2b3360237a211456c575274279310cb7c9dca2ebfa064af09cd13e01",
+      "bytes": 9125
+    },
+    "entrypoint_source_binding": {
+      "path": "global_work/other_mask_entrypoints/SOURCE_BINDINGS.json",
+      "sha256": "922b2aec0df9433ed080baf551d4847690c98d0311facd7d585e6e75dbe91ffe",
+      "bytes": 6364
+    },
+    "exact_full_mask_emitter": {
+      "path": "global_work/other_mask_entrypoints/emit_fixed_mask.py",
+      "sha256": "c01f8d7a0ddfcb0195b709decfa0118791c2c2321fc200384e94dd5393e8da05",
+      "bytes": 3682
+    },
+    "original_row_transfer": {
+      "path": "global_work/ORIGINAL_FOUR_ROW_MASK_TRANSFER_AND_CLOSED_ESCAPE_COVER.md",
+      "sha256": "3a957218d94d997af4977e2a62011148e20da66409b1d8c97b81486144d5ad2f",
+      "bytes": 17388
+    },
+    "strict_011_publication_acceptance": {
+      "path": "repo/research/nine/computer_assisted/strict_011_actual_AB_application_v1/PUBLICATION_MANIFEST.json",
+      "sha256": "1469421d4def83019d7d5120fb0fe480d9b0901857c83bd26f22ac4746642d6c",
+      "bytes": 4056
+    },
+    "strict_011_hand": {
+      "path": "global_work/strict_011_actual_ab/STRICT_01100_APPLICATION_HAND_PROOF.md",
+      "sha256": "39cfbd7762d7861f082894bdc6cd5fb906011bf2db599c0faaab7fc2ad5b247d",
+      "bytes": 3081
+    },
+    "strict_011_source_binding": {
+      "path": "global_work/strict_011_actual_ab/PREMISE_BINDINGS.json",
+      "sha256": "ab7b5f0bcd5545a34cefc4ce2bc5424960c16eae9b5fe424bac71656f8ff52f3",
+      "bytes": 2074
+    },
+    "strict_011_accepted_dependencies": {
+      "path": "global_work/strict_011_actual_ab/ACCEPTED_DEPENDENCIES.json",
+      "sha256": "f1d5710c6adcab31313ab5afc3fea0623bbd157a826605c7705235b5945ea149",
+      "bytes": 1673
+    },
+    "selected_seven_table": {
+      "path": "global_work/other_mask_entrypoints/seven_original_all_open_masks_table.json",
+      "sha256": "1e02d0418e341a45b8be88868ead1ba021190e3e9225a3f0b6021b69badaac5b",
+      "bytes": 9283
+    },
+    "selected_seven_checker": {
+      "path": "global_work/other_mask_entrypoints/verify_seven_original_table.py",
+      "sha256": "a74a7fc08ea1a0323e893d0b5f7310fe342adc65f4d952f3704185c57e5a1ae3",
+      "bytes": 3138
+    },
+    "selected_seven_manifest": {
+      "path": "global_work/other_mask_entrypoints/seven_original_all_open_masks_manifest.json",
+      "sha256": "dbdffdc520597a76caa32dab7b972c8aa80d06f1f6d531e9df9da6b6720de0f9",
+      "bytes": 1282
+    },
+    "four_boundary_fresh_exact_report": {
+      "path": "global_work/other_mask_entrypoints/FRESH_FOUR_BOUNDARY_REPLAY.json",
+      "sha256": "67264682fe0f98d220873d90c1f9bb5348cc92936fa0bbf4a7eb9ce2c3fe5e60",
+      "bytes": 14796
+    },
+    "11100_boundary_fresh_exact_report": {
+      "path": "global_work/other_mask_entrypoints/FRESH_11100_BOUNDARY_REPLAY.json",
+      "sha256": "3cf92ede2c2d721284ba5b2d70c342c03e410a8cf1ef9503e502e5c72345c8aa",
+      "bytes": 3189
+    },
+    "D821_native_complete_report": {
+      "path": "global_work/d821_work/D821_COMPLETE_ORIGINAL_EXACT_REPLAY.json",
+      "sha256": "c56785bc3953b85b2c3069bb8bf61ec655d3d174c652595cc6e25928ae0a53b4",
+      "bytes": 1514532
+    },
+    "D821_literal_table_root_audit": {
+      "path": "d_work/D821_COMPLETE_LITERAL_TABLE_ROOT_AUDIT.json",
+      "sha256": "7f5c37538f6836f377c270fb346f5dbbfaa45174f1a69d3d3c49e55558326f1c",
+      "bytes": 63308
+    }
+  },
+  "outputs": {
+    "CONTINUATION_PLAN.md": {
+      "path": "global_work/all_mask_continuation_plan_v1/CONTINUATION_PLAN.md",
+      "sha256": "e12ba3e2c429779354f02263a969f2af19d9f3d00175584677ea28f655c765a5",
+      "bytes": 7489
+    },
+    "PLAN_METADATA_CHECK.json": {
+      "path": "global_work/all_mask_continuation_plan_v1/PLAN_METADATA_CHECK.json",
+      "sha256": "91f67927825aa8d27e06753700e53ea1bcd5879e0df3f73b511652a1fca08153",
+      "bytes": 1426
+    },
+    "check_current_reversal_classes.py": {
+      "path": "global_work/all_mask_continuation_plan_v1/check_current_reversal_classes.py",
+      "sha256": "727444fc8cfc1ea0b13675462c99f89a5f4dadc5369782709abf980914d3b7f3",
+      "bytes": 3902
+    }
+  },
+  "class_count": 14,
+  "open_raw_masks": 24,
+  "closed_strict_raw_masks": 8,
+  "conditional_after_complete_00100_and_exact_reversal": {
+    "classes": 13,
+    "open_raw_masks": 22
+  },
+  "current_fixed_original_register": {
+    "original_cells": 231,
+    "closed": 221,
+    "open": 10
+  },
+  "scope": "Original nine-square strict-radius predicates; exact 36 corner,36 pair,five cone and five bit constraints unchanged",
+  "publication_dependencies": {
+    "recovered_full_mask_entrypoints": "68876d6467b1f86a98725790fc4e8e93cb939618",
+    "strict_011_conditional_actual_AB": "127e8bcc4079cff7ce811cefd534f052ebf60588",
+    "D821_native_only_checkpoint": "b6ad19e31b1fa72235bba8307332fd3dbfaee67a",
+    "A1_component_only_checkpoint": "925e1112814a0758889cafa5c975c27414b86570"
+  },
+  "new_original_cell_closures": 0,
+  "new_mask_closures": 0,
+  "numerical_solver_called": false,
+  "ledger_modified": false,
+  "new_theorem_installed": false,
+  "historical_acceptance_note": "strict_011 source binding retains a historical pending flag; acceptance is established by its published outer manifest and root review. No source bytes were changed.",
+  "D821_status_at_snapshot": "Native and literal table PASS; final cold replay running, no new register credit"
+}

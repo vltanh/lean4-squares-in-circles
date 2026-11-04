@@ -1,0 +1,78 @@
+{
+  "schema": "strict_01100_actual_AB_publication_plan_v1",
+  "recommended_package": "research/nine/computer_assisted/strict_011_actual_AB_application_v1",
+  "status": "ROOT_REVIEW_ACCEPTED_CONDITIONAL_STRICT_APPLICATION",
+  "source_binding_sha256": "ab7b5f0bcd5545a34cefc4ce2bc5424960c16eae9b5fe424bac71656f8ff52f3",
+  "files": [
+    {
+      "source": "/workspace/scratch/f9f48fcfb253/global_work/strict_011_actual_ab/ACCEPTED_DEPENDENCIES.json",
+      "destination": "source/ACCEPTED_DEPENDENCIES.json",
+      "sha256": "f1d5710c6adcab31313ab5afc3fea0623bbd157a826605c7705235b5945ea149"
+    },
+    {
+      "source": "/workspace/scratch/f9f48fcfb253/global_work/strict_011_actual_ab/ACTUAL_AB_ANY_EXTRA_LITERAL_HAND_PROOF.md",
+      "destination": "source/ACTUAL_AB_ANY_EXTRA_LITERAL_HAND_PROOF.md",
+      "sha256": "5800ec66a34b5054c33e240b68d1e0078d7ad767d969dedb06ade7272c50d389"
+    },
+    {
+      "source": "/workspace/scratch/f9f48fcfb253/global_work/strict_011_actual_ab/EXACT_APPLICATION_CONTROLS.json",
+      "destination": "source/EXACT_APPLICATION_CONTROLS.json",
+      "sha256": "bc6b938732f9908a178ff2708eb10bb13c5509eee3f89072df16850e6d4949ee"
+    },
+    {
+      "source": "/workspace/scratch/f9f48fcfb253/global_work/strict_011_actual_ab/STRICT_01100_APPLICATION_HAND_PROOF.md",
+      "destination": "source/STRICT_01100_APPLICATION_HAND_PROOF.md",
+      "sha256": "39cfbd7762d7861f082894bdc6cd5fb906011bf2db599c0faaab7fc2ad5b247d"
+    },
+    {
+      "source": "/workspace/scratch/f9f48fcfb253/global_work/strict_011_actual_ab/accepted_actual_ab_guard.py",
+      "destination": "source/accepted_actual_ab_guard.py",
+      "sha256": "3a965bdcc8fc0f4de55fc5e3a5fef945f584710fa5ff6c339de44abcea640c19"
+    },
+    {
+      "source": "/workspace/scratch/f9f48fcfb253/global_work/strict_011_actual_ab/actual_ab_any_extra_guard.py",
+      "destination": "source/actual_ab_any_extra_guard.py",
+      "sha256": "600763e67222e28451fed47e87c04283be1fa1869fbcf8cc8537e265e2727402"
+    },
+    {
+      "source": "/workspace/scratch/f9f48fcfb253/global_work/strict_011_actual_ab/check_strict_011_actual_ab_guard.py",
+      "destination": "source/check_strict_011_actual_ab_guard.py",
+      "sha256": "454e1d881bda23a1ce9cbe4bba97274b983535c6c64cd0fc64df2e239974989d"
+    },
+    {
+      "source": "/workspace/scratch/f9f48fcfb253/global_work/strict_011_actual_ab/independent_actual_ab_any_extra_guard.py",
+      "destination": "source/independent_actual_ab_any_extra_guard.py",
+      "sha256": "de0123de0071222760abdb8f942a3119ebbb0209574a1cfc22fb511d620b7fbf"
+    },
+    {
+      "source": "/workspace/scratch/f9f48fcfb253/global_work/strict_011_actual_ab/independent_strict_011_actual_ab_guard.py",
+      "destination": "source/independent_strict_011_actual_ab_guard.py",
+      "sha256": "363e991598c54c8ae09e38cdfad624e3bdc3d25352588e2bd7e7ce35ff39d593"
+    },
+    {
+      "source": "/workspace/scratch/f9f48fcfb253/global_work/strict_011_actual_ab/strict_011_actual_ab_guard.py",
+      "destination": "source/strict_011_actual_ab_guard.py",
+      "sha256": "f8437b6d6bb64bf3d96122de8423123297e63e0ef931ac33aead1dfa0b185287"
+    },
+    {
+      "source": "/workspace/scratch/f9f48fcfb253/global_work/strict_011_actual_ab/PREMISE_BINDINGS.json",
+      "destination": "source/PREMISE_BINDINGS.json",
+      "sha256": "ab7b5f0bcd5545a34cefc4ce2bc5424960c16eae9b5fe424bac71656f8ff52f3"
+    },
+    {
+      "source": "/workspace/scratch/f9f48fcfb253/d_work/STRICT_011_ACTUAL_AB_ROOT_REVIEW.md",
+      "destination": "ROOT_PHYSICAL_REVIEW.md",
+      "sha256": "e1154a880f9680fcd10e538457706f44556778c29535696fc8c0d2e7d56f268a"
+    },
+    {
+      "source": "/workspace/scratch/f9f48fcfb253/global_work/strict_011_actual_ab_publication/README.md",
+      "destination": "README.md",
+      "sha256": "657fa98cdedf3d473bf5bb5ba72f8d6bbd7dcf9546d80dfc737d21f114718e58"
+    }
+  ],
+  "strict_011_ancestry_required_on_actual_use": true,
+  "fresh_accepted_scalar_replay_required_on_actual_use": true,
+  "closed_Q_claim": false,
+  "new_original_cells": 0,
+  "new_masks": 0
+}
