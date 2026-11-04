@@ -13,6 +13,23 @@ equality remain OPEN. No Lean, Lake or CI.
 [Source-bound packet and fresh replay](computer_assisted/a2_00100_a_768_fixed_center_energy_manifest.json) ·
 [Operative handoff](HANDOFF_A2_FIXED_CLOSURE.md)
 
+## New conditional input: a complete full-angle polynomial row theorem
+
+The [opposite-endpoint AHID row theorem](OPPOSITE_ENDPOINT_TILTS_FULL_ANGLE_FOUR_ROW_HAND_TERMINAL.md)
+has a complete computer-assisted finite proof: 80 sign/owner domains,
+1,405 closed boxes and 878,125 independently reconstructed exact integer
+Bernstein coefficient checks. It permits total row height variation at
+most `23/100` with opposite endpoint frame signs and no other angle
+restriction. The physical owner reduction, aligned equality face and
+strict original CD contradiction are independently reviewed. A root
+relocated replay also passes all 529 guard/algebra checks and eight
+damaged controls. Its complete closed complement and exact guards are
+delivered with the source-bound portable packet.
+
+This is a conditional physical theorem. It adds zero original-cell or
+mask closures, so the accepted ledger remains **216 CLOSED / 15 OPEN**
+and **8 CLOSED / 24 OPEN masks** until a complete original caller passes.
+
 ## What changed
 
 `positive-768264ad71bc8152` is completely excluded by its sixteen

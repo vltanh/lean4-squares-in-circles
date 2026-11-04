@@ -1,0 +1,39 @@
+{
+  "status": "PASS_EIGHT_DAMAGED_CONTROLS_REJECTED",
+  "controls": [
+    {
+      "control": "omit terminal leaf",
+      "status": "REJECTED"
+    },
+    {
+      "control": "change closed angle root",
+      "status": "REJECTED"
+    },
+    {
+      "control": "change actual owner",
+      "status": "REJECTED"
+    },
+    {
+      "control": "invalid absolute-value weight",
+      "status": "REJECTED"
+    },
+    {
+      "control": "weaken declared scalar margin",
+      "status": "REJECTED"
+    },
+    {
+      "control": "destroy supporting polynomial weights",
+      "status": "REJECTED"
+    },
+    {
+      "control": "unknown split coordinate",
+      "status": "REJECTED"
+    },
+    {
+      "control": "disable assertions with Python -O",
+      "status": "REJECTED"
+    }
+  ],
+  "new_original_cells_closed": 0,
+  "new_masks_closed": 0
+}

@@ -1,0 +1,210 @@
+{
+  "theorem_version": "opposite_endpoint_full_angle_AHID_row_23_100_v1",
+  "row_convention": "sum coefficient*coordinate <= upper",
+  "coordinate_layout": "x_A,y_A,x_B,y_B,...,x_I,y_I",
+  "precondition": "same unchanged original strict001/00 caller and proved opposite signed A/D tilts",
+  "threshold": "23/100",
+  "domains": [
+    {
+      "index": 0,
+      "coefficients": [
+        [
+          14,
+          "1"
+        ],
+        [
+          0,
+          "-1"
+        ]
+      ],
+      "upper": "0",
+      "name": "opposite_tilt_AHID_order_0"
+    },
+    {
+      "index": 1,
+      "coefficients": [
+        [
+          16,
+          "1"
+        ],
+        [
+          14,
+          "-1"
+        ]
+      ],
+      "upper": "0",
+      "name": "opposite_tilt_AHID_order_1"
+    },
+    {
+      "index": 2,
+      "coefficients": [
+        [
+          6,
+          "1"
+        ],
+        [
+          16,
+          "-1"
+        ]
+      ],
+      "upper": "0",
+      "name": "opposite_tilt_AHID_order_2"
+    },
+    {
+      "index": 3,
+      "coefficients": [
+        [
+          1,
+          "-1"
+        ],
+        [
+          7,
+          "1"
+        ]
+      ],
+      "upper": "-23/100",
+      "name": "opposite_tilt_AHID_variation_0"
+    },
+    {
+      "index": 4,
+      "coefficients": [
+        [
+          1,
+          "-1"
+        ],
+        [
+          7,
+          "-1"
+        ],
+        [
+          17,
+          "2"
+        ]
+      ],
+      "upper": "-23/100",
+      "name": "opposite_tilt_AHID_variation_1"
+    },
+    {
+      "index": 5,
+      "coefficients": [
+        [
+          1,
+          "-1"
+        ],
+        [
+          7,
+          "1"
+        ],
+        [
+          15,
+          "2"
+        ],
+        [
+          17,
+          "-2"
+        ]
+      ],
+      "upper": "-23/100",
+      "name": "opposite_tilt_AHID_variation_2"
+    },
+    {
+      "index": 6,
+      "coefficients": [
+        [
+          1,
+          "-1"
+        ],
+        [
+          7,
+          "-1"
+        ],
+        [
+          15,
+          "2"
+        ]
+      ],
+      "upper": "-23/100",
+      "name": "opposite_tilt_AHID_variation_3"
+    },
+    {
+      "index": 7,
+      "coefficients": [
+        [
+          1,
+          "1"
+        ],
+        [
+          7,
+          "1"
+        ],
+        [
+          15,
+          "-2"
+        ]
+      ],
+      "upper": "-23/100",
+      "name": "opposite_tilt_AHID_variation_4"
+    },
+    {
+      "index": 8,
+      "coefficients": [
+        [
+          1,
+          "1"
+        ],
+        [
+          7,
+          "-1"
+        ],
+        [
+          15,
+          "-2"
+        ],
+        [
+          17,
+          "2"
+        ]
+      ],
+      "upper": "-23/100",
+      "name": "opposite_tilt_AHID_variation_5"
+    },
+    {
+      "index": 9,
+      "coefficients": [
+        [
+          1,
+          "1"
+        ],
+        [
+          7,
+          "1"
+        ],
+        [
+          17,
+          "-2"
+        ]
+      ],
+      "upper": "-23/100",
+      "name": "opposite_tilt_AHID_variation_6"
+    },
+    {
+      "index": 10,
+      "coefficients": [
+        [
+          1,
+          "1"
+        ],
+        [
+          7,
+          "-1"
+        ]
+      ],
+      "upper": "-23/100",
+      "name": "opposite_tilt_AHID_variation_7"
+    }
+  ],
+  "domain_count": 11,
+  "scope": "all shared closed faces included; no domain removed without proof",
+  "new_original_cells_closed": 0,
+  "new_masks_closed": 0
+}

@@ -8,6 +8,17 @@ No Lean, Lake or CI.
 
 ## Read first
 
+The [opposite-endpoint full-angle AHID theorem](OPPOSITE_ENDPOINT_TILTS_FULL_ANGLE_FOUR_ROW_HAND_TERMINAL.md)
+now proves a sharp row terminal whenever the A/D frame signs are opposite,
+the original A,H,I,D centers are horizontally ordered, and their total
+height variation is at most `23/100`. All other original angles are
+unrestricted. Its complete polynomial cover has 80 roots, 1,405 leaves
+and 878,125 exact coefficient checks. Root physical review and a fresh
+relocated replay pass. The eleven-domain closed complement is explicit;
+already proved weak orders may instead be bound as hypotheses of an
+eight-domain height complement. This conditional theorem adds **zero
+original cells and zero masks** by itself.
+
 Two full-angle conditional row improvements are available. The
 [positive-D row](A2_00100_POSITIVE_D_THREE_FIFTHS_ROW.md) permits total
 vertical variation at most `3/5`. The independently reviewed
