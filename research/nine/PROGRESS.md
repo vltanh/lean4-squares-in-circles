@@ -58,6 +58,15 @@ in the same cover. Dc71 itself remains OPEN and receives zero original-cell
 credit. A separate finite H-cover search is continuing from the seven
 proved states.
 
+The [complete I12 H cover](A2_00100_DC71_I12_COMPLETE_H_COVER_CHECKPOINT.md)
+now excludes all eight closed H rectangles over one of those seven states.
+Its complete hand table and independent assembly replay check 1,412 local
+deductions, 1,913 premise rows and 25 terminal rows. Two strict difference
+contradictions are reconstructed separately; one uses only a completely
+printed first round of an interrupted discovery record. All shared faces
+and original predicates remain. The committed I-cover total is ten excluded
+rectangles and six remaining obligations; Dc71 itself remains OPEN.
+
 ## New full-caller terminal for the next weak-link masks
 
 The [near-horizontal replacement-row extension](FULL_CALLER_NEAR_HORIZONTAL_REPLACEMENT_ROW_HAND_TERMINAL.md)

@@ -483,6 +483,16 @@ entry pass a separate root relocated replay. Further bound continuations
 are separate work and are not premises of this immutable checkpoint.
 No complete original, mask, positional root or roadmap gate is added.
 
+## Dc71 I12 complete fixed-rectangle checkpoint
+
+The [complete I12 H2-by-4 cover](A2_00100_DC71_I12_COMPLETE_H_COVER_CHECKPOINT.md)
+adds one whole fixed I rectangle to the nine already certified. Six normal
+H terminals, one initial difference contradiction and one finished-prefix
+difference contradiction cover all eight exact closed products of the same
+proved six-round H rectangle. Fresh physical-premise and component replay,
+literal hand-table comparison, separate source reviews and all 402 archived
+member identities pass. The unchanged original Dc71 and its mask remain OPEN.
+
 ## Fixed ledgers and next handoff
 
 - Original-nine masks: **8 CLOSED / 24 OPEN**, exactly `000/*` and `010/*` CLOSED.
