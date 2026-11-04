@@ -1,0 +1,72 @@
+{
+  "schema": "n9_complete_B5d7_fixed_center_quadratic_cover_v1",
+  "date": "2026-11-04",
+  "status": "PASS_COMPLETE_ORIGINAL_PARENT",
+  "input_commit": "cddd05b037fac460806ea74666a4a3552d37cbe4",
+  "input_register_sha256": "6151729baf102affd6960ba4a34cd07e5c6d9708e9f5fdbf975bc8fee5fd665e",
+  "target_mask": "001/00",
+  "reversal_partner": "100/00",
+  "strict_q_upper": "1105/256",
+  "original_cells": 231,
+  "before": {
+    "closed": 200,
+    "open": 31
+  },
+  "after": {
+    "closed": 201,
+    "open": 30
+  },
+  "new_complete_original_ids": [
+    "negative-5d7c9f118e060b2a"
+  ],
+  "original_ids_and_paths_unchanged": true,
+  "remaining_open_families": {
+    "A": 5,
+    "B": 14,
+    "C": 8,
+    "D": 3
+  },
+  "packet": {
+    "id": "negative-5d7c9f118e060b2a",
+    "archive": "a2_00100_b_5d7_psd_checkpoint.tar.xz",
+    "archive_sha256": "0f941605b5f035f2874a8fb61866f0960465a6e19c28a7f9c6c047d11ecb06c1",
+    "method": "fixed_I_H_cover_with_exact_quadratic_sums",
+    "certificate": "SHA256_MANIFEST.json",
+    "certificate_sha256": "30ad14de58a9b3be23e4c7078fa1226bcfac56962afbce96450439c33547fed9",
+    "record_id": "negative-5d7c9f118e060b2a",
+    "independent_checker": "verify_all.py",
+    "independent_checker_sha256": "cccc12fee5b8a5c704df646143b443d9ecfa6ca9342614991b65d54aaac411a0",
+    "independent_report": "COMPLETE_REPLAY.json",
+    "independent_report_sha256": "5765ab1f375c1f64de8a438499ce7f9422d5d103396a44bdec67a331eb3f003a",
+    "root_fresh_replay_report": "a2_00100_b_5d7_psd_root_replay.json",
+    "terminal_leaves": 23,
+    "complete_closed_face_cover": true
+  },
+  "hand_assembly": "A2_00100_B5D7_FIXED_CENTER_PSD_CLOSURE.md",
+  "hand_assembly_sha256": "58280de20c189400f3c6db923cdab9d0db766050d1cd65fab21eab1868d1f5c4",
+  "terminal_domains": 23,
+  "affine_terminals": 13,
+  "interval_terminals": 4,
+  "quadratic_terminals": 6,
+  "printed_terminal_rows": 7693,
+  "checked_rlt_antecedents": 194,
+  "used_negative_rational_squares": 58,
+  "additional_used_all_nine_premise": "Every original center has norm greater than 27/100, by the reviewed central-arc capacity theorem.",
+  "interrupted_discovery_raw_state_preserved": true,
+  "separate_recovery_producer_source_bound": true,
+  "complete_closed_face_covers": true,
+  "all_nine_original_physical_callers": true,
+  "numerical_producer_or_optimizer_imported_by_replay": false,
+  "unbound_external_workspace_reads_allowed": false,
+  "new_original_cells": 1,
+  "new_mask_closures": 0,
+  "whole_mask_closed": false,
+  "global_mask_ledger": {
+    "closed": 8,
+    "open": 24
+  },
+  "new_positional_root_exclusions": 0,
+  "new_roadmap_gate_closures": 0,
+  "lean_lake_ci_run": false,
+  "human_or_kernel_verification": false
+}

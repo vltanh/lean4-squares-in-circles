@@ -1,30 +1,41 @@
-> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **200/231 cells CLOSED, 31 OPEN; 8/32 masks CLOSED, 24 OPEN.**
+> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **201/231 cells CLOSED, 30 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
-# n=9: 200/231 current-mask cells closed; 31 remain OPEN
+# n=9: 201/231 current-mask cells closed; 30 remain OPEN
 
-**Latest verified continuation: two complete B original-cell exclusions.**
-The fixed I-center covers and exact quadratic rational sums close
-`negative-0e4fa3209b6f7b12` and `negative-6ad5eef3b91c1fbd`. The same
-231-cell register now has **200 CLOSED / 31 OPEN**, with **147 additions
-beyond the first 53**. `001/00`, its reversal, the unrestricted bound and
-equality remain OPEN. No Lean, Lake or CI.
+**Latest verified continuation: the complete B5d7 original-cell exclusion.**
+The fixed closed I/H cover and exact quadratic rational sums close
+`negative-5d7c9f118e060b2a`. The same 231-cell register now has
+**201 CLOSED / 30 OPEN**, with **148 additions beyond the first 53**.
+`001/00`, its reversal, the unrestricted bound and equality remain OPEN.
+No Lean, Lake or CI.
 
-[Latest complete assembly](A2_00100_TWO_B_FIXED_CENTER_PSD_CLOSURES.md) ·
+[Latest complete assembly](A2_00100_B5D7_FIXED_CENTER_PSD_CLOSURE.md) ·
 [Current fixed register](gates/A2_00100_FIXED_FRONTIER.json) ·
-[Source-bound packets and fresh replays](computer_assisted/a2_00100_two_b_psd_manifest.json) ·
+[Source-bound packet and fresh replay](computer_assisted/a2_00100_b_5d7_psd_manifest.json) ·
 [Operative handoff](HANDOFF_A2_FIXED_CLOSURE.md)
 
 ## What changed
 
-Each of the two unchanged originals has a complete fixed 4-by-4 closed
-I-center cover. All 32 terminal domains passed independent reconstruction:
-11 exact interval contradictions, 15 affine sums and six quadratic sums.
-The proofs check 7,813 printed terminal rows, 220 RLT antecedents and
-117 used negative rational squares, counted across certificates. Both
-original ancestors and every closed shared face are replayed. Root fresh
-relocated runs passed, rejecting external workspace reads and numerical
-producer imports. The remaining original families are **A5, B15, C8, D3**.
-No whole mask, positional root or roadmap gate is newly closed.
+The unchanged B5d7 original has a fixed 4-by-4 closed I-center cover,
+with a 2-by-4 closed H-center cover only inside I(2,3). All 23 terminal
+domains passed independent reconstruction: four exact interval contradictions,
+13 affine sums and six quadratic sums. The proof checks 7,693 printed
+terminal rows, 194 RLT antecedents and 58 used rational squares. Its
+original ancestor and every shared closed face are replayed. One terminal
+uses the reviewed all-nine central-arc theorem to bound the F-center norm
+below by 27/100. The root fresh relocated replay passed; numerical producer
+imports and external workspace reads are rejected. The remaining families
+are **A5, B14, C8, D3**. No whole mask, positional root or roadmap gate is
+newly closed.
+
+### Preceding two-B checkpoint: 200 CLOSED / 31 OPEN
+
+The [two complete B quadratic covers](A2_00100_TWO_B_FIXED_CENTER_PSD_CLOSURES.md)
+closed `negative-0e4fa3209b6f7b12` and `negative-6ad5eef3b91c1fbd`.
+Their 32 closed I rectangles contain 11 interval, 15 affine and six
+quadratic terminals, with 7,813 checked rows, 220 RLT antecedents and
+117 used rational squares. Both source-bound original ancestors and
+portable complete assemblies remain accepted.
 
 ### Preceding D a497 checkpoint: 198 CLOSED / 33 OPEN
 
