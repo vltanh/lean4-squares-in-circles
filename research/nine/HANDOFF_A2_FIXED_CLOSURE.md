@@ -18,6 +18,14 @@ with a fresh whole-original portable replay. Accepted counts are
 
 ## Read first
 
+The [physical frame and projection square rows](computer_assisted/physical_gram_square_rows_v1/README.md)
+now couple existing SAT auxiliary products through exact nonnegative squared
+norms. Their complete physical proofs, independent literal-row checkers and
+fresh root arithmetic controls pass: 560 reconstructed rows, 32,224 rational
+physical evaluations and 16 damaged-row rejections. No new auxiliary or
+separator is introduced. These conditional rows add **zero cells and masks**;
+every caller must still certify its intervals and complete original cover.
+
 The [complete D6c5 original proof](A2_00100_D6C5_COMPLETE_ORIGINAL_CLOSURE.md)
 closes the last original I rectangle through all eight H members and all
 eighty D-angle components. Its 43 complete SAT trees have 587 nodes and

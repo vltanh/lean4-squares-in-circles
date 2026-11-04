@@ -1,0 +1,14 @@
+{
+  "physical_pair_frame_squares.py": "39d917106aa79db506aa1defbb081b404b02c6b54d88d63cae455864f506ffa6",
+  "independent_physical_pair_frame_squares.py": "1a0d5a02f7de45491e8dee625b95fe72aa17be66867e202f91e2a354f23d66b0",
+  "physical_frame_square_separation.py": "fdd4bbf142be1cff2c27688b5fd79950e0f105d09dad34a453dcbae50116b39c",
+  "PHYSICAL_PAIR_FRAME_SQUARE_HAND_PROOF.md": "237218c4da5b1f5a9991fa24c27d72209913d285b15cbd2e7a3f21d27ef983b8",
+  "PHYSICAL_PAIR_FRAME_SQUARES_EXACT_REPLAY.json": "b3a75e49213ea3d434c852c6b62409a31e78ce2353c533bb2768025f739d9819",
+  "physical_projection_squares.py": "0a33acc6990ccc5f35439f0f641de987a08466b0e53a3bfa38de1dd2c2c8901d",
+  "independent_physical_projection_squares.py": "c1274d245162b3e57c679039c3d31b6f4faebf25c46903de3649c1b68888df38",
+  "physical_projection_square_separation.py": "6f8ede5eb0853b2615bf27b099017293bf909094364938736f00bf7184b04f87",
+  "PHYSICAL_PROJECTION_SQUARE_HAND_PROOF.md": "1a7918b24b3f209aa4b9edc59f8efafd69887d925629288b4a6a2a38c77f6851",
+  "PHYSICAL_PROJECTION_SQUARES_EXACT_REPLAY.json": "876c75c4c3de9f333f8e8864e28c4ae31c51c0ea8b315342b39a7241e6a2c8e5",
+  "b_gram_square_runtime.py": "b0e8e647626b2d0e9698efb3c456d4433661a1fcf90b6ec9c4180c7f769a3516",
+  "b_frame_square_runtime.py": "fbd782d2e2b11c2a8e816ebc8882a597c4eb519cae543f0ae5d1fa55d9d04033"
+}

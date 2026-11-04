@@ -1,0 +1,56 @@
+{
+  "schema": "physical_gram_square_necessary_rows_v1",
+  "status": "PHYSICAL_PROOF_AND_INDEPENDENT_EXACT_CONTROLS_PASS",
+  "families": [
+    "two_original_unit_frames_with_existing_four_cross_products",
+    "original_owned_unit_normal_and_same_center_difference_with_existing_two_projection_products"
+  ],
+  "premises": [
+    "The original caller is reconstructed with all nine independent frames, 36 corners and pairs, five center-cone comparisons and exact marked predicates.",
+    "The chosen SAT owner, axis and sign and all six auxiliary products belong to the same physical original pair.",
+    "Each projection difference interval is already independently proved for this caller.",
+    "Every rational printed row and its use in a nonnegative multiplier certificate is independently checked."
+  ],
+  "parameters": "Arbitrary rational vectors of length six or four, respectively.",
+  "new_auxiliary_variables": 0,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "original_register": {
+    "closed": 220,
+    "open": 11,
+    "total": 231
+  },
+  "mask_register": {
+    "closed": 8,
+    "open": 24,
+    "total": 32
+  },
+  "discovery_only": [
+    "physical_frame_square_separation.py",
+    "physical_projection_square_separation.py",
+    "b_frame_square_runtime.py",
+    "b_gram_square_runtime.py"
+  ],
+  "source_sha256": {
+    "PHYSICAL_GRAM_SQUARE_SOURCE_PINS.json": "e084a8bed463fdefb615e9925734048b987bd39ec5afb450aaa3b445db729b93",
+    "PHYSICAL_PAIR_FRAME_SQUARES_EXACT_REPLAY.json": "b3a75e49213ea3d434c852c6b62409a31e78ce2353c533bb2768025f739d9819",
+    "PHYSICAL_PAIR_FRAME_SQUARE_HAND_PROOF.md": "237218c4da5b1f5a9991fa24c27d72209913d285b15cbd2e7a3f21d27ef983b8",
+    "PHYSICAL_PROJECTION_SQUARES_EXACT_REPLAY.json": "876c75c4c3de9f333f8e8864e28c4ae31c51c0ea8b315342b39a7241e6a2c8e5",
+    "PHYSICAL_PROJECTION_SQUARE_HAND_PROOF.md": "1a7918b24b3f209aa4b9edc59f8efafd69887d925629288b4a6a2a38c77f6851",
+    "README.md": "1bd66eb59c4f54e5a20dae49b0d1f115733a3d997967fdbc123163516ace6f2e",
+    "ROOT_FRAME_REPLAY.json": "aa074af785b651081e7796bd986adaf0d28468949dab14a650fd64bd3ccb5419",
+    "ROOT_PHYSICAL_REVIEW.md": "54200e8665a8fda824b1bdf2897e125dd36ec64d5cd526a757b24b0d9e88d32d",
+    "ROOT_PROJECTION_REPLAY.json": "a90dbfd79a747e1e21095bd593877acc6daba81b85c596bf8d66ac7d85f823a9",
+    "b_frame_square_runtime.py": "fbd782d2e2b11c2a8e816ebc8882a597c4eb519cae543f0ae5d1fa55d9d04033",
+    "b_gram_square_runtime.py": "b0e8e647626b2d0e9698efb3c456d4433661a1fcf90b6ec9c4180c7f769a3516",
+    "check_physical_pair_frame_squares.py": "d76236368b1d2f816c6a9157cf14ce09cb303d4b417fefd82696a13c36a38042",
+    "check_physical_projection_squares.py": "1b9d37ef2b3c44de2b0ee302e1b4bfe05d59723aad5ebefdedb6172354f8b944",
+    "independent_physical_pair_frame_squares.py": "1a0d5a02f7de45491e8dee625b95fe72aa17be66867e202f91e2a354f23d66b0",
+    "independent_physical_projection_squares.py": "c1274d245162b3e57c679039c3d31b6f4faebf25c46903de3649c1b68888df38",
+    "physical_frame_square_separation.py": "fdd4bbf142be1cff2c27688b5fd79950e0f105d09dad34a453dcbae50116b39c",
+    "physical_pair_frame_squares.py": "39d917106aa79db506aa1defbb081b404b02c6b54d88d63cae455864f506ffa6",
+    "physical_projection_square_separation.py": "6f8ede5eb0853b2615bf27b099017293bf909094364938736f00bf7184b04f87",
+    "physical_projection_squares.py": "0a33acc6990ccc5f35439f0f641de987a08466b0e53a3bfa38de1dd2c2c8901d",
+    "verify_all.py": "c662a328b69a01d327a6315ca2f8ca9f6d46df43d8277f6f375bfd7e023a59fc"
+  }
+}

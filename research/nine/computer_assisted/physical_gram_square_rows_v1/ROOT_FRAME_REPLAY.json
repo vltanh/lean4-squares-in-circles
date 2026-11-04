@@ -1,0 +1,13 @@
+{
+  "status": "PASS_EXACT_PHYSICAL_PAIR_FRAME_SQUARE_IDENTITIES",
+  "independently_rebuilt_rows": 376,
+  "exact_physical_evaluations": 18424,
+  "damaged_rows_rejected": 8,
+  "source_sha256": {
+    "/workspace/scratch/f9f48fcfb253/d_work/gram_square_root_review/check_physical_pair_frame_squares.py": "d76236368b1d2f816c6a9157cf14ce09cb303d4b417fefd82696a13c36a38042",
+    "/workspace/scratch/f9f48fcfb253/d_work/gram_square_root_review/physical_pair_frame_squares.py": "39d917106aa79db506aa1defbb081b404b02c6b54d88d63cae455864f506ffa6",
+    "/workspace/scratch/f9f48fcfb253/d_work/gram_square_root_review/independent_physical_pair_frame_squares.py": "1a0d5a02f7de45491e8dee625b95fe72aa17be66867e202f91e2a354f23d66b0"
+  },
+  "new_original_cells": 0,
+  "new_masks": 0
+}

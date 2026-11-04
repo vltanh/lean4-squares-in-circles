@@ -1,0 +1,26 @@
+{
+  "status": "PASS_SOURCE_BOUND_RELOCATED_PHYSICAL_GRAM_ROWS",
+  "source_files_checked": 20,
+  "premise_bindings_sha256": "b934fb4cfcd25e37a337c75cff66d59f85392c6ad443828c6c5793609f447e83",
+  "replays": {
+    "pair_frame": {
+      "status": "PASS_EXACT_PHYSICAL_PAIR_FRAME_SQUARE_IDENTITIES",
+      "independently_rebuilt_rows": 376,
+      "exact_physical_evaluations": 18424,
+      "damaged_rows_rejected": 8,
+      "new_original_cells": 0,
+      "new_masks": 0
+    },
+    "projection": {
+      "status": "PASS_EXACT_PHYSICAL_PROJECTION_SQUARE_IDENTITIES",
+      "independently_rebuilt_rows": 184,
+      "exact_physical_evaluations": 13800,
+      "damaged_rows_rejected": 8,
+      "new_original_cells": 0,
+      "new_masks": 0
+    }
+  },
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "lean_lake_ci_invoked": false
+}
