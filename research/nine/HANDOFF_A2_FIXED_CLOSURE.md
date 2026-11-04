@@ -1,7 +1,7 @@
-# Current A.2 handoff: 211/231 current-mask cells closed; 20 OPEN
+# Current A.2 handoff: 212/231 current-mask cells closed; 19 OPEN
 
-November 4, 2026. The [complete C2f9 proof](A2_00100_C2F9_FIXED_CENTER_BOUND_CLOSURE.md) advances
-`e0de4a69473bf245abff134fdc8e56825c3d6166` from **210 CLOSED / 21 OPEN to 211 CLOSED / 20 OPEN**.
+November 4, 2026. The [complete C953 proof](A2_00100_C953_COMPLETE_FIXED_CENTER_OWNED_SLOPE_CLOSURE.md) advances
+`e174d94e4916bb110db3b7ddccd7e40bbd8584bb` from **211 CLOSED / 20 OPEN to 212 CLOSED / 19 OPEN**.
 The full-mask ledger remains **8 CLOSED / 24 OPEN**. `001/00`, reversal
 `100/00`, A.2, the unrestricted bound and global equality remain OPEN.
 No Lean, Lake or CI.
@@ -18,9 +18,9 @@ original squares. Two exact evaluators and root relocated replay pass.
 It gives energy at least 7/2 and earns zero original or mask closures;
 affine and lifted expansions require their own independent row check.
 
-1. [Current complete proof and scope](A2_00100_C2F9_FIXED_CENTER_BOUND_CLOSURE.md).
+1. [Current complete proof and scope](A2_00100_C953_COMPLETE_FIXED_CENTER_OWNED_SLOPE_CLOSURE.md).
 2. [Same 231 original IDs, paths and current statuses](gates/A2_00100_FIXED_FRONTIER.json).
-3. [Immutable packet and fresh independent replay](computer_assisted/a2_00100_c_2f9_bound_manifest.json).
+3. [Immutable packet and fresh independent replay](computer_assisted/a2_00100_c_953_complete_manifest.json).
 4. [Original coverage and physical caller](A2_COVERAGE_AND_CLOSURE_CONTRACT.md),
    [baseline cover](A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md), and
    [accepted proof history](PROGRESS.md).
@@ -51,6 +51,23 @@ No Lean compilation, Lake or CI; retain the same 32 masks, 7,915 positional
 root IDs and 15 roadmap IDs. No human or proof-kernel verification is claimed.
 
 ## Latest complete original
+
+`negative-95371f658da581d0` is completely excluded. Its sixteen closed
+I-quarter products use five complete original H2-by-4 covers, giving
+51 outer rectangles. Three rectangles require all eight owned-axis
+alternatives and two require all four closed I-frame slope intervals,
+giving 78 terminal cases. Forty-eight exact bound rounds establish
+14,181 necessary bounds using 15,193 premise rows; both common six-round
+slope parents are counted once. The contradictions use 36,052 terminal
+rows, including 1,199 reconstructed affine-product antecedents and 463
+rational negative squares. All 69 positive reserves exceed 1/32768;
+the other nine terminals are exact interval or same-frame contradictions.
+The complete hand table, physical theorem dependencies and outer-cover
+assembly are independently reviewed. The root relocated replay passes
+with all 433 frozen inputs unchanged. All 231 original IDs and paths
+are retained.
+
+## Preceding complete originals
 
 `negative-2f9ffd3df06e7c5f` is completely excluded by its sixteen closed
 I-quarter products. Six direct affine, one direct interval, seven
@@ -217,15 +234,15 @@ both complete prefix covers.
 |---|---:|---:|---:|
 | A: positive D, nonpositive A, inward-row escapes | 77 | 73 | 4 |
 | B: negative D, nonpositive A, F-height branches | 39 | 31 | 8 |
-| C: negative D, nonnegative A, alternate-chain escapes | 33 | 28 | 5 |
+| C: negative D, nonnegative A, alternate-chain escapes | 33 | 29 | 4 |
 | D: positive D, nonnegative A, alternate-chain escapes | 29 | 26 | 3 |
-| **Total** | **178** | **158** | **20** |
+| **Total** | **178** | **159** | **19** |
 
 The precise unresolved predicates are the unchanged paths of these IDs:
 
 - **A:** `positive-8b53ccaa15bad220`, `positive-c744bc031d40ee64`, `positive-7cdbd39e7dd162bf`, `positive-768264ad71bc8152`.
 - **B:** `negative-d09093538801d014`, `negative-1a0e5a68ae364a5e`, `negative-f14f5bc4eafdf50d`, `negative-7c60be8b07a358e9`, `negative-462e78d2e2d8be05`, `negative-34029ea8b047982f`, `negative-16a2fc93c8d133f0`, `negative-580db3624cf4c2e2`.
-- **C:** `negative-95371f658da581d0`, `negative-887236b78100baf3`, `negative-d4021ade840b985c`, `negative-b882d8ade0cf9ea0`, `negative-aaa42018b92e527c`.
+- **C:** `negative-887236b78100baf3`, `negative-d4021ade840b985c`, `negative-b882d8ade0cf9ea0`, `negative-aaa42018b92e527c`.
 - **D:** `positive-6c5f13d07e5538df`, `positive-c71dc2feef1abb0b`, `positive-821c9a2debeed0aa`.
 
 ## Current mathematical obstruction and useful inputs
@@ -250,7 +267,7 @@ a complete three-matching cover and 11,390 checked row identities. The
 latter retains the full area and angle-independent inertia of physical
 unit squares and has 16,064 checked affine/quadratic identities. These
 are necessary restrictions and do not alone exclude an original. The new
-complete original-cell proofs now give **211/20 cells and 8/24 masks**.
+complete original-cell proofs now give **212/19 cells and 8/24 masks**.
 
 The earlier [completed whole-domain research record](A2_00100_WHOLE_DOMAIN_RESEARCH_STOPPING_RECORD.md)
 records the bounded A/B/C/D investigations after the four accepted proofs.
@@ -287,7 +304,7 @@ certificates retain their exact scopes. Do not restart accepted work.
 ## Fixed ledgers and next handoff
 
 - Original-nine masks: **8 CLOSED / 24 OPEN**, exactly `000/*` and `010/*` CLOSED.
-- Current mask: **211 CLOSED / 20 OPEN**, same 231 IDs and certified full cover.
+- Current mask: **212 CLOSED / 19 OPEN**, same 231 IDs and certified full cover.
 - Positional roots: **5,838 historical closed-Q exclusions / 2,077 OPEN**
   among the same 7,915 IDs. Equality root 7820 remains feasible at Q.
 - The same 15 roadmap IDs and all global deliverables retain their statuses.
@@ -299,5 +316,5 @@ blockers, and the separate mask/root/gate ledgers. Distinguish numerical
 discovery, exact replay, source-byte identity and the written proof.
 Earlier partial research remains historical evidence, not a second active
 frontier. The next goal is a complete argument discharging the remaining
-20 original predicates or a theorem subsuming them, followed by the other
+19 original predicates or a theorem subsuming them, followed by the other
 fixed masks. No extra necessary inequality alone completes that goal.

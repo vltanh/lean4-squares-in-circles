@@ -1,0 +1,79 @@
+{
+  "schema": "ordered_split_archive_v1",
+  "archive": "a2_00100_c_953_complete_checkpoint.tar.gz",
+  "bytes": 114709611,
+  "sha256": "5b385196fbab76befcffb986775cf6ce745351c79380665f931702f62c423118",
+  "parts": [
+    {
+      "file": "a2_00100_c_953_complete_checkpoint.tar.gz.part01",
+      "bytes": 8388608,
+      "sha256": "e6b2789c71405865e6c61b4957363996863f2c3915b12d0043445b2645c612cf"
+    },
+    {
+      "file": "a2_00100_c_953_complete_checkpoint.tar.gz.part02",
+      "bytes": 8388608,
+      "sha256": "ecb4df4211a418a8fd36118dcc68dc4d3422159e6f7cb855d20be38aa0baacb3"
+    },
+    {
+      "file": "a2_00100_c_953_complete_checkpoint.tar.gz.part03",
+      "bytes": 8388608,
+      "sha256": "17a2893612fc17e57c4300575cf7a1f036f1d5977a8e26b050ea251d2050493f"
+    },
+    {
+      "file": "a2_00100_c_953_complete_checkpoint.tar.gz.part04",
+      "bytes": 8388608,
+      "sha256": "91db75a63b8e127a390eab0a9b92d6cf62f4b08bf4e80c88d6886c96d7e7e23c"
+    },
+    {
+      "file": "a2_00100_c_953_complete_checkpoint.tar.gz.part05",
+      "bytes": 8388608,
+      "sha256": "a5557e49fcb703a312eade7a0be040705d66a1b93f669b67470a3d954e632bac"
+    },
+    {
+      "file": "a2_00100_c_953_complete_checkpoint.tar.gz.part06",
+      "bytes": 8388608,
+      "sha256": "87ba7bce2e91f3841fa0ad1483b32163de1eeb45d21d5b47965937b8b2958340"
+    },
+    {
+      "file": "a2_00100_c_953_complete_checkpoint.tar.gz.part07",
+      "bytes": 8388608,
+      "sha256": "58667bd3cf1f73502dd60cef190fb45f6827a6d809f21da3b53141888e38d8b3"
+    },
+    {
+      "file": "a2_00100_c_953_complete_checkpoint.tar.gz.part08",
+      "bytes": 8388608,
+      "sha256": "36fc245f17bd2d3b2f3ac6f2c5196099f249320c91562f861047f060fba75d92"
+    },
+    {
+      "file": "a2_00100_c_953_complete_checkpoint.tar.gz.part09",
+      "bytes": 8388608,
+      "sha256": "15f9cadecd4f557da7f6f446e00fce4c6889bcb72ac3967d5bd87369486ecd88"
+    },
+    {
+      "file": "a2_00100_c_953_complete_checkpoint.tar.gz.part10",
+      "bytes": 8388608,
+      "sha256": "00790097ce15ae703b53820f8ffb03f373a3dcb66428b46eca156c0405e71141"
+    },
+    {
+      "file": "a2_00100_c_953_complete_checkpoint.tar.gz.part11",
+      "bytes": 8388608,
+      "sha256": "ad09de08d72617c3009737287785c9ce0411384887ff9adff00cdebed3817399"
+    },
+    {
+      "file": "a2_00100_c_953_complete_checkpoint.tar.gz.part12",
+      "bytes": 8388608,
+      "sha256": "daebd98d8c8f62dab70a9f129a080f64c9514261f7a3e1f03104da5c5825a15c"
+    },
+    {
+      "file": "a2_00100_c_953_complete_checkpoint.tar.gz.part13",
+      "bytes": 8388608,
+      "sha256": "414dfd878ed24b7514d60a0356be825f02e6b6df8f877e97ef17ce306e9e4ff8"
+    },
+    {
+      "file": "a2_00100_c_953_complete_checkpoint.tar.gz.part14",
+      "bytes": 5657707,
+      "sha256": "ed7d312f0518252642b33b79fccf049cea506ee490a83331d2a005545888ba6f"
+    }
+  ],
+  "extraction": "Concatenate the listed parts in order, check the full archive hash, extract and run the independent checker."
+}
