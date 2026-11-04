@@ -257,7 +257,7 @@
   "root_replay": "a2_00100_dc71_i16_six_round_root_replay.json",
   "root_replay_sha256": "4343240ca9bc75fb57af6c761e97f721ac154bc343e7cbdcc4b260a087ca2c35",
   "hand_assembly": "A2_00100_DC71_I16_SIX_ROUND_CHECKPOINT.md",
-  "hand_assembly_sha256": "eb1dbe9a8877f2dba415c4a91740aefc7c2637711cc9fbf147813bdec4dfc347",
+  "hand_assembly_sha256": "a443dd2602cbc502dcbf53ce33f1dc2f4350de1c128e61ae400a4d2a2be2e209",
   "independent_bound_checker_sha256": "e73773f57e99797edcf5ee9726000c57ce212936b853c75247ff63ce9f16e0f4",
   "independent_interval_checker_sha256": "791febc12e94354163d9c2f995ba81506d552cafc18c663312259be9d3f1a493",
   "independent_interval_review_sha256": "812f747bd1f6662c58ac661e44cc1513cafe2127c84735b971524dc3aea65f99",
@@ -335,7 +335,6 @@
   ],
   "local_bound_rounds": 49,
   "local_bound_deductions": 6467,
-  "local_premise_rows": 10479,
   "terminal_rows": 82,
   "direct_interval_terminal_rectangles": 2,
   "direct_strict_interval_witnesses": 3,
@@ -358,5 +357,19 @@
     "roadmap_gates": 15
   },
   "lean_lake_ci_run": false,
-  "human_or_kernel_verification_claimed": false
+  "human_or_kernel_verification_claimed": false,
+  "local_total_printed_row_occurrences": 10479,
+  "local_induction_premise_row_occurrences": 10397,
+  "row_accounting_clarification": {
+    "total_printed_rows_include_terminal_rows": true,
+    "induction_rows": 10397,
+    "terminal_rows": 82,
+    "total_printed_rows": 10479,
+    "archived_hand_terminology_corrected_in_live_hand": true,
+    "mathematical_inputs_or_reports_changed": false
+  },
+  "independent_source_hand_review": "a2_00100_dc71_i16_source_hand_review.json",
+  "independent_source_hand_review_sha256": "f2750ed208c335635d0b2753180a6cc26b8b21ecbfb395b3e754961aa107d3db",
+  "independent_source_hand_evaluator": "review_dc71_i16_checkpoint.py",
+  "independent_source_hand_evaluator_sha256": "1479fbad2749e62be0d869539e1e819c13cad8614e3478ad2da3710874118bff"
 }

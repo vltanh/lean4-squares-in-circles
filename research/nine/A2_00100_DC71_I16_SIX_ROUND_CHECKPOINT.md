@@ -56,7 +56,9 @@ orientation is removed.
 | `3,3` | 2 | 577 | EXCLUDED: positive exact reserve |
 
 The fourteen saved induction records contain 49 completed local rounds,
-6,467 exact deductions, 10,479 premise-row occurrences and 82 terminal rows.
+6,467 exact deductions and 10,479 total printed-row occurrences, including
+82 terminal rows. Equivalently, there are 10,397 induction-premise row
+occurrences and 82 terminal-row occurrences.
 Each six-round record retains its complete original three-round prefix,
 its original source bindings and the exact continuation boundary.
 Only finished rounds are admitted. The complete original ancestor is
@@ -145,3 +147,20 @@ The archive contains 236 frozen inputs and all fresh proof outputs. All
 duplicates represented by safe internal hardlinks. Run
 `python -B -S verify_checkpoint.py` from the extracted
 `dc71_i16_six_round_checkpoint_package` directory.
+
+### Row-count terminology clarification
+
+The immutable archive's earlier hand checkpoint uses “10,479 premise-row
+occurrences and 82 terminal rows.” The verifier's `printed_rows_checked`
+count includes terminal rows: the correct disjoint counts are 10,397
+induction-premise occurrences and 82 terminal-row occurrences, totaling
+10,479. This terminology correction changes no certificate, arithmetic
+replay, source binding, excluded rectangle or fixed ledger.
+
+The [independent source and hand-table review](computer_assisted/a2_00100_dc71_i16_source_hand_review.json)
+checks all sixteen exact closed rectangles, the complete table, shared
+endpoints, unchanged caller, all frozen inputs and all three direct rational
+interval gaps. It explicitly records this terminology correction and does
+not claim a second replay of the 6,467 weighted deductions. Its
+[source evaluator](computer_assisted/review_dc71_i16_checkpoint.py) is
+preserved alongside the review.

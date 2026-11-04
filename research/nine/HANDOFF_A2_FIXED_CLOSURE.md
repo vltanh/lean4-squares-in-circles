@@ -430,7 +430,8 @@ raw bytes and old packets are retained. No original or mask is closed.
 The [portable Dc71 checkpoint](A2_00100_DC71_I16_SIX_ROUND_CHECKPOINT.md)
 contains all sixteen closed I rectangles: nine excluded and seven with
 exact six-round bound states. Its full physical replay checks 49 local
-rounds, 6,467 deductions, 10,479 premise rows and 82 terminal rows.
+rounds, 6,467 deductions and 10,479 total printed-row occurrences, including
+82 terminal rows.
 The two direct interval exclusions are independently reconstructed and
 reviewed, with three strictly positive rational interval gaps. The full
 three-square geometric premise and row identities are included and replayed.
