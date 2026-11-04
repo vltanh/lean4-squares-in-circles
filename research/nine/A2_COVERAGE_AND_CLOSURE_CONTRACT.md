@@ -181,8 +181,9 @@ the [complete D a497 rational-square cover](A2_00100_D_A497_FIXED_CENTER_PSD_CLO
 the [complete B5d7 cover](A2_00100_B5D7_FIXED_CENTER_PSD_CLOSURE.md),
 the [complete B265 bound/quadratic cover](A2_00100_B265_FIXED_CENTER_BOUND_PSD_CLOSURE.md),
 the [complete A2d5 and B79 covers](A2_00100_A2D5_B79_FIXED_CENTER_CLOSURES.md),
-and the [complete B054 cover](A2_00100_B054_FIXED_CENTER_BOUND_CLOSURE.md),
-now exclude 205 of those cells and leave 26 OPEN. The
+the [complete B054 cover](A2_00100_B054_FIXED_CENTER_BOUND_CLOSURE.md),
+and the [complete B347 cover](A2_00100_B347_FIXED_CENTER_BOUND_CLOSURE.md),
+now exclude 206 of those cells and leave 25 OPEN. The
 [stable register](gates/A2_00100_FIXED_FRONTIER.json) retains every original
 path and its physical caller. Shared closed faces are allowed. This
 coverage-qualified count is separate from all 32 mask statuses.

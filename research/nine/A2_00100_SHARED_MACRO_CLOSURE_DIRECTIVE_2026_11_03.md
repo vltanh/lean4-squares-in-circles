@@ -1,4 +1,4 @@
-> **Current verified checkpoint:** [Complete B054 cover](A2_00100_B054_FIXED_CENTER_BOUND_CLOSURE.md). The same register has **205 CLOSED / 26 OPEN**, with A4, B11, C8, D3 open. The [current handoff](HANDOFF_A2_FIXED_CLOSURE.md) governs live evidence and IDs. The November 3 directive below retains its counts at issue.
+> **Current verified checkpoint:** [Complete B347 cover](A2_00100_B347_FIXED_CENTER_BOUND_CLOSURE.md). The same register has **206 CLOSED / 25 OPEN**, with A4, B10, C8, D3 open. The [current handoff](HANDOFF_A2_FIXED_CLOSURE.md) governs live evidence and IDs. The November 3 directive below retains its counts at issue.
 
 # A.2 / 001/00: shared whole-domain closure directive (November 3, 2026)
 
