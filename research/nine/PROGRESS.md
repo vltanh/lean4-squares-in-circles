@@ -26,9 +26,17 @@ relocated replay also passes all 529 guard/algebra checks and eight
 damaged controls. Its complete closed complement and exact guards are
 delivered with the source-bound portable packet.
 
-This is a conditional physical theorem. It adds zero original-cell or
-mask closures, so the accepted ledger remains **216 CLOSED / 15 OPEN**
-and **8 CLOSED / 24 OPEN masks** until a complete original caller passes.
+This is a conditional physical theorem and adds zero original-cell or
+mask closures. Following the separately completed CAAA original, the
+current ledger is **217 CLOSED / 14 OPEN** and **8 CLOSED / 24 OPEN masks**.
+
+The [whole-original C887 eight-height attachment](A2_00100_C887_WHOLE_ORIGINAL_EIGHT_HEIGHT_CHECKPOINT.md)
+now proves this theorem's weak horizontal orders and opposite endpoint
+signs before any center subdivision. Its eight closed height domains cover
+the unchanged original. Branch 7 is excluded by an exact positive reserve;
+the other seven remain OPEN. Fresh portable replay checks all 2,158 local
+deductions and 22 terminal rows, with the whole ancestor and theorem
+replayed independently. This checkpoint adds zero original-cell credit.
 
 ## What changed
 

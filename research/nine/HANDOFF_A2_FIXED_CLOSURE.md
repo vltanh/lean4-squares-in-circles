@@ -413,6 +413,18 @@ reserve, and fourteen remain OPEN. All 49 bound rounds, 3,771 deductions,
 This does not close I21 or the original C887 cell. The old frozen foundation
 and every fixed denominator remain unchanged.
 
+## Whole-original C887 eight-height checkpoint
+
+The [new complete necessary cover](A2_00100_C887_WHOLE_ORIGINAL_EIGHT_HEIGHT_CHECKPOINT.md)
+attaches the full-angle opposite-endpoint theorem to the unchanged original,
+before every I or H subdivision. The horizontal orders and endpoint signs
+are already proved by the exact whole-original prefix. All eight independent
+closed height domains are delivered; branch 7 is excluded and branches
+0 through 6 remain OPEN. The numerical records were recovered read-only
+from completed concurrent work, losslessly translated, independently
+reviewed and freshly replayed. The complete physical caller, shared faces,
+raw bytes and old packets are retained. No original or mask is closed.
+
 ## Fixed ledgers and next handoff
 
 - Original-nine masks: **8 CLOSED / 24 OPEN**, exactly `000/*` and `010/*` CLOSED.
