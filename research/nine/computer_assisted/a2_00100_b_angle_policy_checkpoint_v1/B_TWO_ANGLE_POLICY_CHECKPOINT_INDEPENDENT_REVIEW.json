@@ -1,0 +1,25 @@
+{
+  "status": "PASS_TWO_CONDITIONAL_B_ANGLE_POLICY_TRANSPORT_AND_SCOPE_REVIEW",
+  "reviewer": "independent A/C track",
+  "reviewed_sources": {
+    "/workspace/scratch/f9f48fcfb253/b_work/replay_b_angle_policy_checkpoint.py": "3a8fdf4ffcc369936419eb6846b0b23d91d61eb637663e35f1a32c0022868efa",
+    "/workspace/scratch/f9f48fcfb253/b_work/b_angle_policy_checkpoint/code/replay_b_angle_policy_checkpoint.py": "3a8fdf4ffcc369936419eb6846b0b23d91d61eb637663e35f1a32c0022868efa",
+    "/workspace/scratch/f9f48fcfb253/b_work/b_angle_policy_checkpoint/PHYSICAL_COMPLETE_COVER_ATTACHMENT.md": "f4b0a00fe1f1aa69cf92e6897a10c701a001dff4e2af8ed06f31c5422dbd1dc8",
+    "/workspace/scratch/f9f48fcfb253/b_work/b_angle_policy_checkpoint/CHECKPOINT.json": "994f47e44a23d308c1afebf8088267dfaeb5bef939ffd1ad34e49e4dd9704f54",
+    "/workspace/scratch/f9f48fcfb253/b_work/b_angle_policy_checkpoint/BINDINGS.json": "75fc67092052b78a2f526091a8089bd394e6460365693116bcc8425e438a9079",
+    "/workspace/scratch/f9f48fcfb253/b_work/b_angle_policy_checkpoint/INPUT_MANIFEST.json": "54ec1091fd63c5f9ae7f8fafc268d5a10a8bbad1fdf81aab6fbee84f856ce972"
+  },
+  "scope": "Static code and physical closed-cover attachment; no arithmetic rerun",
+  "findings": [
+    "Both cases are restricted descendants of unchanged original cells, not whole-original exclusions.",
+    "Both closed angle halves are retained with their shared cut; root indices, child choices, exact intervals and positive reserve lower bounds are checked.",
+    "Every native-report source reference resolves to a byte-identified delta, B340 or I32 member. The published manifests and all referenced member hashes are checked.",
+    "The default receipt expressly distinguishes hash/literal controls from weighted arithmetic; saved reports are retained as already completed evidence, not fresh arithmetic oracles.",
+    "Optional arithmetic repeats the unchanged published exact tree checker and retains conditional ancestry. Its common-directory audit is not a strict inventoried cold-isolation guard; the current dedicated-directory wording is appropriate."
+  ],
+  "header_consistency_followup": "B track will attach an outer audit comparing the named native-report hashes and local count fields with CHECKPOINT.json; globally frozen input hashes already bind those bytes.",
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "arithmetic_repeated": false,
+  "lean_lake_ci_run": false
+}

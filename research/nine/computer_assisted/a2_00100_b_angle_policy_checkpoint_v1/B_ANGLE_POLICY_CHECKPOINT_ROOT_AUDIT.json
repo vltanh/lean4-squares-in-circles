@@ -1,0 +1,72 @@
+{
+  "status": "PASS_ROOT_TWO_CONDITIONAL_B_UNIONS_SOURCE_TABLE_AND_ARCHIVE_AUDIT",
+  "archive_sha256": "024d614fa7addb24120b7872641bb78425fa2e402d9e685ec72c5eee38c1f9c4",
+  "archive_bytes": 4881224,
+  "regular_members_checked": 82,
+  "all_archived_bytes_match_literal_source": true,
+  "checkpoint_sha256": "994f47e44a23d308c1afebf8088267dfaeb5bef939ffd1ad34e49e4dd9704f54",
+  "input_manifest_sha256": "54ec1091fd63c5f9ae7f8fafc268d5a10a8bbad1fdf81aab6fbee84f856ce972",
+  "cases": [
+    {
+      "name": "B7C_FIVE_PROXY",
+      "original_id": "negative-7c60be8b07a358e9",
+      "nodes": 3,
+      "excluded_leaves": 2,
+      "complete_closed_angle_union": true,
+      "original_scope": "CONDITIONAL_SELECTED_BRANCH_ONLY",
+      "owner": 6,
+      "parent_interval": [
+        "-1",
+        "1"
+      ],
+      "cut": "0",
+      "reserves": [
+        {
+          "node": 1,
+          "displayed_lower_bound": "1",
+          "exact_reserve": "15939979290526042656663923495412071854460737880191820661174847968600701/11893503459358946375084031669686271987179817033730258161830972809543680"
+        },
+        {
+          "node": 2,
+          "displayed_lower_bound": "1/1000",
+          "exact_reserve": "57203073321009548695363401647150421660079006819384599350358568039232136753/45725826161920599786284955069801380541678375643612091743229256914131170099200"
+        }
+      ],
+      "native_report_sha256": "25e32a98c1edb496e76a315a346e2004c1a24fe926c07648dad2cf9aab2b082d"
+    },
+    {
+      "name": "B16A_AFTER_ROUND_TWO",
+      "original_id": "negative-16a2fc93c8d133f0",
+      "nodes": 3,
+      "excluded_leaves": 2,
+      "complete_closed_angle_union": true,
+      "original_scope": "CONDITIONAL_SELECTED_BRANCH_ONLY",
+      "owner": 2,
+      "parent_interval": [
+        "-89209058596321/140737488355328",
+        "103916687450761/281474976710656"
+      ],
+      "cut": "0",
+      "reserves": [
+        {
+          "node": 1,
+          "displayed_lower_bound": "1/40",
+          "exact_reserve": "2149251176864281046884149084238339753240058226006288628414078246794653294594181495851338294738207/83080825586544029741168296613295914090680127502048125849158899478439589697656849659098373396889600"
+        },
+        {
+          "node": 2,
+          "displayed_lower_bound": "1/40",
+          "exact_reserve": "17012781536930459847151293108795729056598767799144109470346075135104555305898071773347686064091153/606895718342781601566389242517747644013449927048853265537945018863673382033613392998285559673651200"
+        }
+      ],
+      "native_report_sha256": "28b9d8258d1d5e05a43e28cd40032ee4c4dea5382da9b353b8a97c9f30b52316"
+    }
+  ],
+  "weighted_arithmetic_repeated": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "whole_original_proved": false,
+  "no_numerical_optimizer_called": true,
+  "source_sha256": "d2b1bf51dfdb806f626f903da44d4e500f0ee7a07e45fdc8dd79976b70dd4a4f",
+  "seconds": 1.3347451869994984
+}

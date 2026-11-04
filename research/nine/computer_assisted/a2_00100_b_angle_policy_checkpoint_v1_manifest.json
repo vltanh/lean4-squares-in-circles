@@ -1,0 +1,135 @@
+{
+  "schema": "two_conditional_B_angle_unions_source_bound_publication_v1",
+  "status": "ACCEPTED_NATIVE_EXACT_CONDITIONAL_PROOFS_AND_SOURCE_TRANSPORT",
+  "original_ids": [
+    "negative-7c60be8b07a358e9",
+    "negative-16a2fc93c8d133f0"
+  ],
+  "target_mask": "001/00",
+  "target_Q": "1105/256",
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "whole_original_proved": false,
+  "original_ledger": {
+    "closed": 221,
+    "open": 10,
+    "total": 231
+  },
+  "mask_ledger": {
+    "closed": 8,
+    "open": 24,
+    "total": 32
+  },
+  "fixed_register_sha256": "b805df8706151a4eb43bd8c0912205ffbfd67d8dfb582daf441717e04fd023dc",
+  "all_register_entries_unchanged": true,
+  "mathematical_rule_changes": 0,
+  "native_weighted_arithmetic_replayed": true,
+  "weighted_arithmetic_repeated_for_packaging": false,
+  "cold_optional_arithmetic_mode_exercised": false,
+  "archive": {
+    "status": "PASS_COMPACT_ZERO_CREDIT_POLICY_ARCHIVE",
+    "archive": "b_angle_policy_checkpoint.tar.xz",
+    "archive_bytes": 4881224,
+    "archive_sha256": "024d614fa7addb24120b7872641bb78425fa2e402d9e685ec72c5eee38c1f9c4",
+    "parts": [
+      {
+        "file": "b_angle_policy_checkpoint.tar.xz.part001",
+        "bytes": 4881224,
+        "sha256": "024d614fa7addb24120b7872641bb78425fa2e402d9e685ec72c5eee38c1f9c4"
+      }
+    ],
+    "all_regular_members_verified": 82,
+    "all_member_hashes_match": true,
+    "xz_integrity_pass": true,
+    "streaming_compression": true,
+    "raw_tar_intermediate_created": false,
+    "input_manifest_sha256": "54ec1091fd63c5f9ae7f8fafc268d5a10a8bbad1fdf81aab6fbee84f856ce972",
+    "release_manifest_sha256": "d69755253cec8fb6ec6809907d220d80dafcfc4768355baea45f465cbd7df9e6",
+    "archiver_sha256": "946089db7bfbb4a4a13fc73e1841a83ff2711fb88d456ff0ea170ba6cd9d0abe",
+    "weighted_arithmetic_repeated_for_packaging": false,
+    "new_original_cells": 0,
+    "new_masks": 0,
+    "seconds": 62.993594381998264
+  },
+  "root_audit_sha256": "39e90c55ab41b1bebfab6e104e9563ef6480f1e1dc3999599eab261e0fa4dcc9",
+  "files": {
+    "ARCHIVE_READY.json": {
+      "bytes": 1008,
+      "sha256": "eb2964df0ff9c77b75bdcdbcdf670ef95d29da665ae2e0f4a802082301dbe619"
+    },
+    "B16A_FIRST_AFTER_ROUND_TWO_ANGLE_EXACT_REPLAY.json": {
+      "bytes": 93019,
+      "sha256": "28b9d8258d1d5e05a43e28cd40032ee4c4dea5382da9b353b8a97c9f30b52316"
+    },
+    "B340_FINAL_PUBLICATION_INDEPENDENT_REVIEW.json": {
+      "bytes": 1457,
+      "sha256": "2d8570230cde01bc715c5917b384a07056cffac8354d855ee41d62da4d81923e"
+    },
+    "B7C_FIRST_FIVE_PROXY_ROUND_ANGLE_EXACT_REPLAY.json": {
+      "bytes": 83686,
+      "sha256": "25e32a98c1edb496e76a315a346e2004c1a24fe926c07648dad2cf9aab2b082d"
+    },
+    "B_ANGLE_POLICY_CHECKPOINT_ROOT_AUDIT.json": {
+      "bytes": 2915,
+      "sha256": "39e90c55ab41b1bebfab6e104e9563ef6480f1e1dc3999599eab261e0fa4dcc9"
+    },
+    "B_ANGLE_POLICY_HEADER_CONSISTENCY.json": {
+      "bytes": 1091,
+      "sha256": "fcc5d84846b907117f3a4a79471ac5f3f48b20b0a72bfa8d922805e78def7aa7"
+    },
+    "B_TWO_ANGLE_POLICY_CHECKPOINT_INDEPENDENT_REVIEW.json": {
+      "bytes": 2417,
+      "sha256": "0b67d58c60328ed54f7faea7254cdefe5ba5c8230639114b7d8e1cd2357911fe"
+    },
+    "B_TWO_ANGLE_POLICY_CHECKPOINT_INDEPENDENT_REVIEW.md": {
+      "bytes": 1421,
+      "sha256": "adbb1639abf81603df4a54e1244fa3f078a309233e99bc27a91c707cda28dfba"
+    },
+    "CHECKPOINT.json": {
+      "bytes": 5970,
+      "sha256": "994f47e44a23d308c1afebf8088267dfaeb5bef939ffd1ad34e49e4dd9704f54"
+    },
+    "CONCURRENT_REVIEW_RECONCILIATION.json": {
+      "bytes": 2187,
+      "sha256": "b1b2fc62aa90c27c7982b6ec734377ba9dc2a02be0e58c8be3885d299e93cf44"
+    },
+    "INPUT_MANIFEST.json": {
+      "bytes": 10249,
+      "sha256": "54ec1091fd63c5f9ae7f8fafc268d5a10a8bbad1fdf81aab6fbee84f856ce972"
+    },
+    "PHYSICAL_COMPLETE_COVER_ATTACHMENT.md": {
+      "bytes": 6966,
+      "sha256": "f4b0a00fe1f1aa69cf92e6897a10c701a001dff4e2af8ed06f31c5422dbd1dc8"
+    },
+    "README.md": {
+      "bytes": 1184,
+      "sha256": "ceed854629cfee527bc601d5be1935dd1cbd1b069c529485914b8a472a01e789"
+    },
+    "RELEASE_MANIFEST.json": {
+      "bytes": 10734,
+      "sha256": "d69755253cec8fb6ec6809907d220d80dafcfc4768355baea45f465cbd7df9e6"
+    },
+    "ROOT_REVIEW.md": {
+      "bytes": 2804,
+      "sha256": "5ddca54529cbf4e113de0b2a08e03a8575c3b488fd671c1df95e8134d77a06a7"
+    },
+    "TRANSPORT_RECEIPT.json": {
+      "bytes": 1239,
+      "sha256": "ea2a30134afaf2e2d40e7b77d6fe498397a53aa80322374744a1fd1d381b9759"
+    },
+    "audit_b_angle_policy_checkpoint.py": {
+      "bytes": 4954,
+      "sha256": "d2b1bf51dfdb806f626f903da44d4e500f0ee7a07e45fdc8dd79976b70dd4a4f"
+    },
+    "b_angle_policy_checkpoint.tar.xz.part001": {
+      "bytes": 4881224,
+      "sha256": "024d614fa7addb24120b7872641bb78425fa2e402d9e685ec72c5eee38c1f9c4"
+    },
+    "prepare_b_angle_policy_publication.py": {
+      "bytes": 7727,
+      "sha256": "c8fb26e356dc597b7e3e0da8dfb2d01a11a271ce6ca5c1f7578c33dc1c8725ee"
+    }
+  },
+  "lean_lake_ci_run": false,
+  "fixed_register_source_commit": "03fa63eb45e43913f0b38c5c8a0469bdaeb9e4c7"
+}

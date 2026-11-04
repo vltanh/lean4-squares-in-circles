@@ -1,0 +1,25 @@
+{
+  "status": "PASS_COMPACT_ZERO_CREDIT_POLICY_ARCHIVE",
+  "archive": "b_angle_policy_checkpoint.tar.xz",
+  "archive_bytes": 4881224,
+  "archive_sha256": "024d614fa7addb24120b7872641bb78425fa2e402d9e685ec72c5eee38c1f9c4",
+  "parts": [
+    {
+      "file": "b_angle_policy_checkpoint.tar.xz.part001",
+      "bytes": 4881224,
+      "sha256": "024d614fa7addb24120b7872641bb78425fa2e402d9e685ec72c5eee38c1f9c4"
+    }
+  ],
+  "all_regular_members_verified": 82,
+  "all_member_hashes_match": true,
+  "xz_integrity_pass": true,
+  "streaming_compression": true,
+  "raw_tar_intermediate_created": false,
+  "input_manifest_sha256": "54ec1091fd63c5f9ae7f8fafc268d5a10a8bbad1fdf81aab6fbee84f856ce972",
+  "release_manifest_sha256": "d69755253cec8fb6ec6809907d220d80dafcfc4768355baea45f465cbd7df9e6",
+  "archiver_sha256": "946089db7bfbb4a4a13fc73e1841a83ff2711fb88d456ff0ea170ba6cd9d0abe",
+  "weighted_arithmetic_repeated_for_packaging": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "seconds": 62.993594381998264
+}

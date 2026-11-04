@@ -903,6 +903,26 @@ original, mask, positional-root or roadmap credit. The hand arguments,
 source reviews, native controls, cold reports and reproduction commands are
 included. No Lean, Lake or CI was run.
 
+## Exact conditional B angle unions and revised discovery policy
+
+The [source-bound checkpoint](computer_assisted/a2_00100_b_angle_policy_checkpoint_v1/README.md)
+preserves two complete conditional angle unions. In B7c, both closed
+G-slope halves are excluded after the five-proxy policy selected the cut.
+In B16a, both closed C-slope halves are excluded after the second completed
+bound round triggered the callback. The native independent replays retain
+all 10 and 15 selected-branch ancestry records and check 459 and 424 local
+deductions respectively. Both shared zero faces remain in the covers.
+
+The explicit-engine helper and split policy change discovery timing only.
+The full physical attachment, literal reserve bounds, exact reports, peer
+review and root 82-member archive audit are preserved. Shared bytes reuse
+the published B340 and I32 packets by exact hash. Packaging checks source
+transport and literal covers; it does not repeat the already completed
+weighted arithmetic. The optional replay entry point is provided without
+claiming an additional cold run. This checkpoint adds **zero original-cell
+and mask closures**; accepted counts remain **221 CLOSED / 10 OPEN** and
+**8 CLOSED / 24 OPEN**.
+
 ## Fixed ledgers and next handoff
 
 - Original-nine masks: **8 CLOSED / 24 OPEN**, exactly `000/*` and `010/*` CLOSED.
