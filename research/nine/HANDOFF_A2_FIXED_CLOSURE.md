@@ -439,6 +439,18 @@ The seven OPEN I regions are `10,11,12,13,21,22,23`. Their complete H2x4
 subdivisions are continuing separately; no H result is credited in this
 checkpoint. No fixed original, mask, positional root or roadmap ID changes.
 
+## Full-nine replacement input for001/00 and011/00
+
+The [new closed-Q conditional terminal](FULL_CALLER_NEAR_HORIZONTAL_REPLACEMENT_ROW_HAND_TERMINAL.md)
+excludes a B–X–D replacement with X either original extra, both transverse
+gaps at most1/8, and B<=X<=D in horizontal position. All nine originals and
+strict CD are retained; BC may be actual or strictly weak. A complete
+geometric blocker resolves the inherited row/cap equality case without any
+G-side assumption or large-CD normalization. The root independently reran
+the portable exact companions and unchanged review evaluator. The sixteen
+literal closed escapes yield the optional4x6x6 full-caller family for011/00;
+no member is credited as excluded solely from this declaration.
+
 ## Fixed ledgers and next handoff
 
 - Original-nine masks: **8 CLOSED / 24 OPEN**, exactly `000/*` and `010/*` CLOSED.

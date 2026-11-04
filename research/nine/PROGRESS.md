@@ -50,6 +50,18 @@ in the same cover. Dc71 itself remains OPEN and receives zero original-cell
 credit. A separate finite H-cover search is continuing from the seven
 proved states.
 
+## New full-caller terminal for the next weak-link masks
+
+The [near-horizontal replacement-row extension](FULL_CALLER_NEAR_HORIZONTAL_REPLACEMENT_ROW_HAND_TERMINAL.md)
+now applies to both full-nine `001/00` and `011/00`, with their reversals.
+It retains strictly weak CD while removing the old attachment's actual-BC,
+large-CD-height-gap and preselected G-side requirements. Its new continuous
+equality blocker uses the unchanged physical C and three originals already
+proved aligned by accepted cap equalities. The root relocated companion,
+independent continuous review and exact escape rows all pass.
+The optional `4x6x6` closed escape family is complete but remains unexcluded;
+the theorem adds zero original-cell and zero whole-mask credit.
+
 ## What changed
 
 The entire original **`negative-aaa42018b92e527c`** closes with a complete
