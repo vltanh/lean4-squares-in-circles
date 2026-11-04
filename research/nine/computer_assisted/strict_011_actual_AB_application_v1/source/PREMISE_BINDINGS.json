@@ -1,0 +1,65 @@
+{
+  "schema": "strict_01100_actual_AB_conditional_application_bindings_v1",
+  "target": "all_nine_original_strict_radius_01100",
+  "application_scope": "conditional terminal only; independently certified state ancestry and accepted scalar replay required on actual use",
+  "closed_Q_claim": false,
+  "actual_BC_required": false,
+  "required_actual_links": [
+    "AB",
+    "EF",
+    "FG"
+  ],
+  "retained_strict_weak_links": [
+    "BC",
+    "CD"
+  ],
+  "selected_extra_originals": [
+    "H",
+    "I"
+  ],
+  "files": [
+    {
+      "path": "ACCEPTED_DEPENDENCIES.json",
+      "sha256": "f1d5710c6adcab31313ab5afc3fea0623bbd157a826605c7705235b5945ea149"
+    },
+    {
+      "path": "ACTUAL_AB_ANY_EXTRA_LITERAL_HAND_PROOF.md",
+      "sha256": "5800ec66a34b5054c33e240b68d1e0078d7ad767d969dedb06ade7272c50d389"
+    },
+    {
+      "path": "EXACT_APPLICATION_CONTROLS.json",
+      "sha256": "bc6b938732f9908a178ff2708eb10bb13c5509eee3f89072df16850e6d4949ee"
+    },
+    {
+      "path": "STRICT_01100_APPLICATION_HAND_PROOF.md",
+      "sha256": "39cfbd7762d7861f082894bdc6cd5fb906011bf2db599c0faaab7fc2ad5b247d"
+    },
+    {
+      "path": "accepted_actual_ab_guard.py",
+      "sha256": "3a965bdcc8fc0f4de55fc5e3a5fef945f584710fa5ff6c339de44abcea640c19"
+    },
+    {
+      "path": "actual_ab_any_extra_guard.py",
+      "sha256": "600763e67222e28451fed47e87c04283be1fa1869fbcf8cc8537e265e2727402"
+    },
+    {
+      "path": "check_strict_011_actual_ab_guard.py",
+      "sha256": "454e1d881bda23a1ce9cbe4bba97274b983535c6c64cd0fc64df2e239974989d"
+    },
+    {
+      "path": "independent_actual_ab_any_extra_guard.py",
+      "sha256": "de0123de0071222760abdb8f942a3119ebbb0209574a1cfc22fb511d620b7fbf"
+    },
+    {
+      "path": "independent_strict_011_actual_ab_guard.py",
+      "sha256": "363e991598c54c8ae09e38cdfad624e3bdc3d25352588e2bd7e7ce35ff39d593"
+    },
+    {
+      "path": "strict_011_actual_ab_guard.py",
+      "sha256": "f8437b6d6bb64bf3d96122de8423123297e63e0ef931ac33aead1dfa0b185287"
+    }
+  ],
+  "root_review_pending": true,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

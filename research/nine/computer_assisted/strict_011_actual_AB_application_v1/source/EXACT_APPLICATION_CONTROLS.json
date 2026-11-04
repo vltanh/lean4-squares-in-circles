@@ -1,0 +1,25 @@
+{
+  "status": "PASS_CONDITIONAL_STRICT_01100_APPLICATION_CONTROLS",
+  "synthetic_guard_states": 120,
+  "positive_conditional_guards": 12,
+  "damaged_literals_rejected": 72,
+  "wrong_target_calls_rejected": 72,
+  "original_state_unchanged": true,
+  "closed_Q_claim": false,
+  "scalar_replay_performed": false,
+  "accepted_scalar_replay_required_on_actual_use": true,
+  "numerical_search_performed": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "source_sha256": {
+    "ACCEPTED_DEPENDENCIES.json": "f1d5710c6adcab31313ab5afc3fea0623bbd157a826605c7705235b5945ea149",
+    "ACTUAL_AB_ANY_EXTRA_LITERAL_HAND_PROOF.md": "5800ec66a34b5054c33e240b68d1e0078d7ad767d969dedb06ade7272c50d389",
+    "STRICT_01100_APPLICATION_HAND_PROOF.md": "39cfbd7762d7861f082894bdc6cd5fb906011bf2db599c0faaab7fc2ad5b247d",
+    "accepted_actual_ab_guard.py": "3a965bdcc8fc0f4de55fc5e3a5fef945f584710fa5ff6c339de44abcea640c19",
+    "actual_ab_any_extra_guard.py": "600763e67222e28451fed47e87c04283be1fa1869fbcf8cc8537e265e2727402",
+    "check_strict_011_actual_ab_guard.py": "454e1d881bda23a1ce9cbe4bba97274b983535c6c64cd0fc64df2e239974989d",
+    "independent_actual_ab_any_extra_guard.py": "de0123de0071222760abdb8f942a3119ebbb0209574a1cfc22fb511d620b7fbf",
+    "independent_strict_011_actual_ab_guard.py": "363e991598c54c8ae09e38cdfad624e3bdc3d25352588e2bd7e7ce35ff39d593",
+    "strict_011_actual_ab_guard.py": "f8437b6d6bb64bf3d96122de8423123297e63e0ef931ac33aead1dfa0b185287"
+  }
+}

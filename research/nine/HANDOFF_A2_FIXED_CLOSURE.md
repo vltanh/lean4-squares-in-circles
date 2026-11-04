@@ -18,6 +18,15 @@ with a fresh whole-original portable replay. Accepted counts are
 
 ## Read first
 
+The [strict-radius 011/00 application](computer_assisted/strict_011_actual_AB_application_v1/README.md)
+reuses the accepted actual-AB two-link theorem for either original extra H
+or I. It preserves the exact weak BC/CD bits and requires the explicit
+strict-radius caller; the separate 001/00 equality blocker is not used.
+The complete physical argument, independent literal checker and exact
+target-scope controls pass. Actual proof use still requires certified
+all-nine 011/00 ancestry and fresh scalar replay. All guard complements
+remain obligations; this conditional application adds **zero cells or masks**.
+
 The [portable A-c744 OPEN checkpoint](computer_assisted/a2_00100_a_c744_portable_open_checkpoint/README.md)
 preserves the complete first complement, two direct complement exclusions,
 and the resulting three necessary original-domain inequalities. Its fresh
