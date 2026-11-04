@@ -1,0 +1,19 @@
+{
+  "status": "PASS_FRESH_PORTABLE_COMPLETE_ORIGINAL_D6C5",
+  "original_id": "positive-6c5f13d07e5538df",
+  "assembly_sha256": "e3e90d30bd64e22df96f8c77865edde49438f8ecec32cc5c854221d1c3c690fc",
+  "packet_input_manifest_sha256": "36e21737c02c4f767a62cb12d3b1a4d375a555c186124b23c8b5ad07745d3f1e",
+  "prior_manifest_sha256": "6abcc61af5923520746d14b378fee6b4f347b5ea44f77c74c16139a6443d8e57",
+  "core_manifest_sha256": "4d30e61283571ca74986957f047ae848127ea7e65fba0fadebe364d6af708b7d",
+  "packet_inputs": 865,
+  "prior_inputs": 2255,
+  "all_new_I22_arithmetic_repeated": true,
+  "prior_fifteen_I_arithmetic_repeated": false,
+  "prior_fifteen_I_composition_repeated": true,
+  "external_workspace_reads_forbidden": true,
+  "all_inputs_rehashed_at_completion": true,
+  "new_original_cells": 1,
+  "new_masks": 0,
+  "lean_lake_ci_run": false,
+  "seconds": 751.5513690689995
+}

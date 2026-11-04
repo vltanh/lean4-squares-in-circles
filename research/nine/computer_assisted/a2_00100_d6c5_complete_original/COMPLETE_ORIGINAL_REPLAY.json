@@ -1,0 +1,1474 @@
+{
+  "schema": "complete_original_D6c5_physical_exact_assembly_v1",
+  "status": "PASS_COMPLETE_ORIGINAL_D6C5",
+  "original_id": "positive-6c5f13d07e5538df",
+  "original_path": [
+    [
+      "angle",
+      3,
+      1
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      1
+    ],
+    [
+      "alternate_four_escape",
+      [
+        1,
+        7
+      ],
+      [
+        1
+      ]
+    ]
+  ],
+  "original_prefix_sha256": "d247d7e09ee9366a29164a26c3a776a36fd6dc1fbaa6c88e30190dfd8d9fa1df",
+  "prior_exact_I_rectangles": 15,
+  "new_exact_I_rectangle": [
+    2,
+    2
+  ],
+  "complete_original_I_rectangles": 16,
+  "complete_H_rectangle_cover": [
+    2,
+    4
+  ],
+  "direct_H_terminals": 3,
+  "complete_I_slope_covers": 5,
+  "complete_D_slope_covers": 20,
+  "direct_D_terminals": 37,
+  "complete_physical_SAT_trees": 43,
+  "all_original_faces_and_contact_cases_retained": true,
+  "all_nine_original_frames_retained": true,
+  "original_corner_count": 36,
+  "original_pair_count": 36,
+  "original_cone_comparisons": 5,
+  "whole_original_closed": true,
+  "new_original_cells": 1,
+  "new_masks": 0,
+  "whole_mask_closed": false,
+  "exact_report_bindings": {
+    "/workspace/scratch/f9f48fcfb253/d_work/relocated_d6_complete_proof/output/ancestry/COMPLETE_ANCESTRY_AND_COVER.json": "847c0800e696be924325f5a66fb884d6d777e05dcf751775c3723ff7dc7062e2",
+    "/workspace/scratch/f9f48fcfb253/d_work/relocated_d6_complete_proof/output/components/COMPLETE.json": "8125dabb7f06c5cbf46c6e8bf1f1b32cd70557ba54ad50dd24dcd7b615180197",
+    "/workspace/scratch/f9f48fcfb253/d_work/relocated_d6_complete_proof/prior/PORTABLE_FIFTEEN_I_COMPOSITION.json": "cda1eae74971f1f3055283a0e4ee098582c1460162909fa5b332fe23c6e4b2f3"
+  },
+  "counts": {
+    "direct_D_bound_rounds": 59,
+    "direct_D_bound_deductions": 17833,
+    "direct_D_printed_rows_checked": 16294,
+    "direct_D_terminal_rows": 707,
+    "SAT_nodes": 587,
+    "SAT_complete_eight_covers": 68,
+    "SAT_leaf_domains": 519,
+    "SAT_rounds": 220,
+    "SAT_deductions": 41263,
+    "SAT_printed_rows_checked": 64741,
+    "direct_H_terminals": 3
+  },
+  "terminal_kinds": {
+    "positive_exact_reserve": 527,
+    "proved_frame_contradiction": 15,
+    "accepted_interval_terminal": 7,
+    "proved_empty_analytic_frame": 9,
+    "exact_interval_terminal": 1
+  },
+  "complete_terminal_components": [
+    {
+      "H_tile": [
+        0,
+        0
+      ],
+      "kind": "direct_H_terminal",
+      "report": "H00.json",
+      "reserve": "491621852766767440595938681686291215363743543/401805418860244137657552736455431904087244800"
+    },
+    {
+      "name": "H01_I0_D0",
+      "H_tile": [
+        0,
+        1
+      ],
+      "I_interval": [
+        "-1",
+        "-1/2"
+      ],
+      "D_interval": [
+        "0",
+        "1/4"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "78258d6519b80be1ec66b376819d72290174627936a6cd909f525af8dd3481bc"
+    },
+    {
+      "name": "H01_I0_D1",
+      "H_tile": [
+        0,
+        1
+      ],
+      "I_interval": [
+        "-1",
+        "-1/2"
+      ],
+      "D_interval": [
+        "1/4",
+        "1/2"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "5f6e13257142a999be8e078ab78e9846a19a9bec15edad267186ffbdb2048fe6"
+    },
+    {
+      "name": "H01_I0_D2",
+      "H_tile": [
+        0,
+        1
+      ],
+      "I_interval": [
+        "-1",
+        "-1/2"
+      ],
+      "D_interval": [
+        "1/2",
+        "3/4"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "7605f2a21854630c962fee4b590b902de482dc40d4ccf50122d695549526223d"
+    },
+    {
+      "name": "H01_I0_D3",
+      "H_tile": [
+        0,
+        1
+      ],
+      "I_interval": [
+        "-1",
+        "-1/2"
+      ],
+      "D_interval": [
+        "3/4",
+        "1"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "d10733308ad285ff673df42cad79ccda747c8c50ac618f38ccc53381e6180000"
+    },
+    {
+      "name": "H01_I1_D0",
+      "H_tile": [
+        0,
+        1
+      ],
+      "I_interval": [
+        "-1/2",
+        "0"
+      ],
+      "D_interval": [
+        "0",
+        "1/4"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "ffdd265d5896c7c36a786737fd6720a0a5442a4aa347ddf48cd4fdbb3ec3bd43"
+    },
+    {
+      "name": "H01_I1_D1",
+      "H_tile": [
+        0,
+        1
+      ],
+      "I_interval": [
+        "-1/2",
+        "0"
+      ],
+      "D_interval": [
+        "1/4",
+        "1/2"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "9ef790bca6df40cc897960aca1aa06f2ef4431425942e448e74103adc764ab32"
+    },
+    {
+      "name": "H01_I1_D2",
+      "H_tile": [
+        0,
+        1
+      ],
+      "I_interval": [
+        "-1/2",
+        "0"
+      ],
+      "D_interval": [
+        "1/2",
+        "3/4"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "953dc9acaf4fafb8b08b3a9b4f75b06f6454b1439b8762e73da41f6ce4f8dcc2"
+    },
+    {
+      "name": "H01_I1_D3",
+      "H_tile": [
+        0,
+        1
+      ],
+      "I_interval": [
+        "-1/2",
+        "0"
+      ],
+      "D_interval": [
+        "3/4",
+        "1"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "6a5b350f5f30650a5d92c6117909a7f4f2a93bde2f9a56c94f3978c95a99a9ee"
+    },
+    {
+      "name": "H01_I2_D0",
+      "H_tile": [
+        0,
+        1
+      ],
+      "I_interval": [
+        "0",
+        "1/2"
+      ],
+      "D_interval": [
+        "0",
+        "1/4"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "710b01dcbdee9ae62a6add65e3083577afe2c1b445eed4320a510837e77da92a"
+    },
+    {
+      "name": "H01_I2_D1",
+      "H_tile": [
+        0,
+        1
+      ],
+      "I_interval": [
+        "0",
+        "1/2"
+      ],
+      "D_interval": [
+        "1/4",
+        "1/2"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "ee51eeb83f150c9d16f6552c5643531ae813baa6cd9bc43783ea48bda03042f9"
+    },
+    {
+      "name": "H01_I2_D2",
+      "H_tile": [
+        0,
+        1
+      ],
+      "I_interval": [
+        "0",
+        "1/2"
+      ],
+      "D_interval": [
+        "1/2",
+        "3/4"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "5fe9aba8607aa9ae95032596ef827db5b4fedd4b8b5251f7e9bd403ca0682910"
+    },
+    {
+      "name": "H01_I2_D3",
+      "H_tile": [
+        0,
+        1
+      ],
+      "I_interval": [
+        "0",
+        "1/2"
+      ],
+      "D_interval": [
+        "3/4",
+        "1"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "69d970acefbc77be3da1704a41c21759dbe4723d1634d879d150e7a49f787538"
+    },
+    {
+      "name": "H01_I3_D0",
+      "H_tile": [
+        0,
+        1
+      ],
+      "I_interval": [
+        "1/2",
+        "1"
+      ],
+      "D_interval": [
+        "0",
+        "1/4"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "9f61607cf44d25e908e35aad11eb5f0ab237b1983d43fc14ab790c671bb16a27"
+    },
+    {
+      "name": "H01_I3_D1",
+      "H_tile": [
+        0,
+        1
+      ],
+      "I_interval": [
+        "1/2",
+        "1"
+      ],
+      "D_interval": [
+        "1/4",
+        "1/2"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "b0187c32f8070092ffbf47098cc4cdad0532811db155714717c3dea8635df9d4"
+    },
+    {
+      "name": "H01_I3_D2",
+      "H_tile": [
+        0,
+        1
+      ],
+      "I_interval": [
+        "1/2",
+        "1"
+      ],
+      "D_interval": [
+        "1/2",
+        "3/4"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "3bb770f0a37f9e57a1af8ebaa535b3ede2726bd70d609b8936c99ad9d460922e"
+    },
+    {
+      "name": "H01_I3_D3",
+      "H_tile": [
+        0,
+        1
+      ],
+      "I_interval": [
+        "1/2",
+        "1"
+      ],
+      "D_interval": [
+        "3/4",
+        "1"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "a3023913e601345478f4ea6434811ce524e6ed97cf9d299937718ff48ae8a9dc"
+    },
+    {
+      "name": "H02_I0_D0",
+      "H_tile": [
+        0,
+        2
+      ],
+      "I_interval": [
+        "-1",
+        "-1/2"
+      ],
+      "D_interval": [
+        "0",
+        "1/4"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "ca324cd5014edac86584f6eeabc424b9df30455bb7adfb9fd837dfb75831f877"
+    },
+    {
+      "name": "H02_I0_D1",
+      "H_tile": [
+        0,
+        2
+      ],
+      "I_interval": [
+        "-1",
+        "-1/2"
+      ],
+      "D_interval": [
+        "1/4",
+        "1/2"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "03f52b2d8938aa8901e51ba228f87f8e2212160d399ec9173deff52e624162fe"
+    },
+    {
+      "name": "H02_I0_D2",
+      "H_tile": [
+        0,
+        2
+      ],
+      "I_interval": [
+        "-1",
+        "-1/2"
+      ],
+      "D_interval": [
+        "1/2",
+        "3/4"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "a65f867b5a59a9232fbe5733463c8fbaaab614ac6479bf47ba850cecae0d05ce"
+    },
+    {
+      "name": "H02_I0_D3",
+      "H_tile": [
+        0,
+        2
+      ],
+      "I_interval": [
+        "-1",
+        "-1/2"
+      ],
+      "D_interval": [
+        "3/4",
+        "1"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "45c1aa7e2c232dc80f2065de19f77529acb98f9762f321c31581a3284cd8b775"
+    },
+    {
+      "name": "H02_I1_D0",
+      "H_tile": [
+        0,
+        2
+      ],
+      "I_interval": [
+        "-1/2",
+        "0"
+      ],
+      "D_interval": [
+        "0",
+        "1/4"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "48123b8d3849f5e1b1ba7ab502d659f0781415b9693c7f320fff660ce7894c27"
+    },
+    {
+      "name": "H02_I1_D1",
+      "H_tile": [
+        0,
+        2
+      ],
+      "I_interval": [
+        "-1/2",
+        "0"
+      ],
+      "D_interval": [
+        "1/4",
+        "1/2"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "49c9c37e6890b64f18f3c820b6c340174197bb34f4803d54356834fd00efb06c"
+    },
+    {
+      "name": "H02_I1_D2",
+      "H_tile": [
+        0,
+        2
+      ],
+      "I_interval": [
+        "-1/2",
+        "0"
+      ],
+      "D_interval": [
+        "1/2",
+        "3/4"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "d216c8278aaf8c43cecd4bef496616cb514274acd9196b204141778d3a57f637"
+    },
+    {
+      "name": "H02_I1_D3",
+      "H_tile": [
+        0,
+        2
+      ],
+      "I_interval": [
+        "-1/2",
+        "0"
+      ],
+      "D_interval": [
+        "3/4",
+        "1"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "14159183052179f24b6e0731a9f3870ffaf822913df69930f78a31ee1e83afbb"
+    },
+    {
+      "name": "H02_I2_D0",
+      "H_tile": [
+        0,
+        2
+      ],
+      "I_interval": [
+        "0",
+        "1/2"
+      ],
+      "D_interval": [
+        "0",
+        "1/4"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "179ebd9652cc013a67048a1e5200cf4bc25e7ec0d8208df86114761a98b633e4"
+    },
+    {
+      "name": "H02_I2_D1",
+      "H_tile": [
+        0,
+        2
+      ],
+      "I_interval": [
+        "0",
+        "1/2"
+      ],
+      "D_interval": [
+        "1/4",
+        "1/2"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "9610870d94d77b5d7cb0aa21a2cf20cd5fbc864a367a003788d34f93f6c96f84"
+    },
+    {
+      "name": "H02_I2_D2",
+      "H_tile": [
+        0,
+        2
+      ],
+      "I_interval": [
+        "0",
+        "1/2"
+      ],
+      "D_interval": [
+        "1/2",
+        "3/4"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "d4c9ec77ec1995c28015b28d174b25dc08095a3cc4863de855ae379c29d77539"
+    },
+    {
+      "name": "H02_I2_D3",
+      "H_tile": [
+        0,
+        2
+      ],
+      "I_interval": [
+        "0",
+        "1/2"
+      ],
+      "D_interval": [
+        "3/4",
+        "1"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "a69b8ab90d1024d7a87568ffd45d3c39be8fbda3bf1ffb9608741e6046a7acc3"
+    },
+    {
+      "name": "H02_I3_D0",
+      "H_tile": [
+        0,
+        2
+      ],
+      "I_interval": [
+        "1/2",
+        "1"
+      ],
+      "D_interval": [
+        "0",
+        "1/4"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "92d6f0c0ab12883c987c8a7be7dc303fc2ece062dbb6973d239f1f1367fc8f39"
+    },
+    {
+      "name": "H02_I3_D1",
+      "H_tile": [
+        0,
+        2
+      ],
+      "I_interval": [
+        "1/2",
+        "1"
+      ],
+      "D_interval": [
+        "1/4",
+        "1/2"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "dcdda9f846db5baa220b10f4b93cccca36d69c05a272b7fcdf2d651452da7399"
+    },
+    {
+      "name": "H02_I3_D2",
+      "H_tile": [
+        0,
+        2
+      ],
+      "I_interval": [
+        "1/2",
+        "1"
+      ],
+      "D_interval": [
+        "1/2",
+        "3/4"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "1da241f7d9f8ade36fa47390be980a37319198e4884c22457b6b4e7a4a45d12e"
+    },
+    {
+      "name": "H02_I3_D3",
+      "H_tile": [
+        0,
+        2
+      ],
+      "I_interval": [
+        "1/2",
+        "1"
+      ],
+      "D_interval": [
+        "3/4",
+        "1"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "e13717d1bc7035af1f8350183d64e1ecfcc04fb135e5027b796a7cabb0ae59f0"
+    },
+    {
+      "H_tile": [
+        0,
+        3
+      ],
+      "kind": "direct_H_terminal",
+      "report": "H03.json",
+      "reserve": null
+    },
+    {
+      "H_tile": [
+        1,
+        0
+      ],
+      "kind": "direct_H_terminal",
+      "report": "H10.json",
+      "reserve": "15513543167281634307101225365248280128602009/13393513962008137921918424548514396802908160"
+    },
+    {
+      "name": "H11_I0_D0",
+      "H_tile": [
+        1,
+        1
+      ],
+      "I_interval": [
+        "-1",
+        "-1/2"
+      ],
+      "D_interval": [
+        "0",
+        "1/4"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "a996465fb28c28cfd9651b32517a405713f4d4e15a3848a6dcfe8b79650fb035"
+    },
+    {
+      "name": "H11_I0_D1",
+      "H_tile": [
+        1,
+        1
+      ],
+      "I_interval": [
+        "-1",
+        "-1/2"
+      ],
+      "D_interval": [
+        "1/4",
+        "1/2"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "5a2c22e7495b415b7c69eca5e145dc09816a3df83913e3dc78444951a2bb56bb"
+    },
+    {
+      "name": "H11_I0_D2",
+      "H_tile": [
+        1,
+        1
+      ],
+      "I_interval": [
+        "-1",
+        "-1/2"
+      ],
+      "D_interval": [
+        "1/2",
+        "3/4"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "33885d3d8bc2789257e5d1570979081e184041701fa0fbbf2d12d21a6bcde17a"
+    },
+    {
+      "name": "H11_I0_D3",
+      "H_tile": [
+        1,
+        1
+      ],
+      "I_interval": [
+        "-1",
+        "-1/2"
+      ],
+      "D_interval": [
+        "3/4",
+        "1"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "3411435c29ee59a2fc8fbc7a0085882920723ce9abb70023303f616512c06f2d"
+    },
+    {
+      "name": "H11_I1_D0",
+      "H_tile": [
+        1,
+        1
+      ],
+      "I_interval": [
+        "-1/2",
+        "0"
+      ],
+      "D_interval": [
+        "0",
+        "1/4"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "e7462242bb117fc1d96bd9dc5d0e6bf1f53364c35f387673dc79101ff039d564"
+    },
+    {
+      "name": "H11_I1_D1",
+      "H_tile": [
+        1,
+        1
+      ],
+      "I_interval": [
+        "-1/2",
+        "0"
+      ],
+      "D_interval": [
+        "1/4",
+        "1/2"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "5cd9c50eb0299cba7e50cc20cffa4890c6f09cb94e94bfebdbc1cf851a3f6632"
+    },
+    {
+      "name": "H11_I1_D2",
+      "H_tile": [
+        1,
+        1
+      ],
+      "I_interval": [
+        "-1/2",
+        "0"
+      ],
+      "D_interval": [
+        "1/2",
+        "3/4"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "67705259c75621c0da34d3d0121fa92e9c0d8e13a793c134b5e5f1db60cf28d3"
+    },
+    {
+      "name": "H11_I1_D3",
+      "H_tile": [
+        1,
+        1
+      ],
+      "I_interval": [
+        "-1/2",
+        "0"
+      ],
+      "D_interval": [
+        "3/4",
+        "1"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "36bfc99370ad0cb049ce1fa007ea0d5e21358007bea66777e045bf8a7314d63c"
+    },
+    {
+      "name": "H11_I2_D0",
+      "H_tile": [
+        1,
+        1
+      ],
+      "I_interval": [
+        "0",
+        "1/2"
+      ],
+      "D_interval": [
+        "0",
+        "1/4"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "e06c057ee89f3c728554689731de0bea081889027a0bb1e938d292916e4c76ec"
+    },
+    {
+      "name": "H11_I2_D1",
+      "H_tile": [
+        1,
+        1
+      ],
+      "I_interval": [
+        "0",
+        "1/2"
+      ],
+      "D_interval": [
+        "1/4",
+        "1/2"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "e097f27f9dbeed9256aee6f30e7505da0da3f504eb20b71b6898eea0d5e7165a"
+    },
+    {
+      "name": "H11_I2_D2",
+      "H_tile": [
+        1,
+        1
+      ],
+      "I_interval": [
+        "0",
+        "1/2"
+      ],
+      "D_interval": [
+        "1/2",
+        "3/4"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "a78ee12b9f2442b8e60876adeaee35ad6c5ea685f849647c2c9c742e71c5b05b"
+    },
+    {
+      "name": "H11_I2_D3",
+      "H_tile": [
+        1,
+        1
+      ],
+      "I_interval": [
+        "0",
+        "1/2"
+      ],
+      "D_interval": [
+        "3/4",
+        "1"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "2d6f36ab77d92f1eb6fb1ce732db5899523c566f02c2a7d86945289ed760a722"
+    },
+    {
+      "name": "H11_I3_D0",
+      "H_tile": [
+        1,
+        1
+      ],
+      "I_interval": [
+        "1/2",
+        "1"
+      ],
+      "D_interval": [
+        "0",
+        "1/4"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "7cc318035e00944f36715c232f8e20cebcb99f5e18d01d2bbfe0f908da81b46d"
+    },
+    {
+      "name": "H11_I3_D1",
+      "H_tile": [
+        1,
+        1
+      ],
+      "I_interval": [
+        "1/2",
+        "1"
+      ],
+      "D_interval": [
+        "1/4",
+        "1/2"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "6736a88cb271526341c74734fcd8bb34fd8f688f5d589007930887f521a86aa5"
+    },
+    {
+      "name": "H11_I3_D2",
+      "H_tile": [
+        1,
+        1
+      ],
+      "I_interval": [
+        "1/2",
+        "1"
+      ],
+      "D_interval": [
+        "1/2",
+        "3/4"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "225fcf5b6e0b8e736dd9f5369117623a467ad5776e2b5fc5af3cc45781d9303a"
+    },
+    {
+      "name": "H11_I3_D3",
+      "H_tile": [
+        1,
+        1
+      ],
+      "I_interval": [
+        "1/2",
+        "1"
+      ],
+      "D_interval": [
+        "3/4",
+        "1"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "320b68a05d73e21e8391470daed1e358a32fab3cb6f23a451197f3092e2f2596"
+    },
+    {
+      "name": "H12_I0_D0",
+      "H_tile": [
+        1,
+        2
+      ],
+      "I_interval": [
+        "-1",
+        "-1/2"
+      ],
+      "D_interval": [
+        "0",
+        "1/4"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "5f877db5ba0c0def801be1c388099f8ee612a0a15bee8ddef9ce3e0268204f87"
+    },
+    {
+      "name": "H12_I0_D1",
+      "H_tile": [
+        1,
+        2
+      ],
+      "I_interval": [
+        "-1",
+        "-1/2"
+      ],
+      "D_interval": [
+        "1/4",
+        "1/2"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "aeb377849a0ea09ea2bf8d1ea076f75a124fe6e9f2fbd5249d2825ad566b8116"
+    },
+    {
+      "name": "H12_I0_D2",
+      "H_tile": [
+        1,
+        2
+      ],
+      "I_interval": [
+        "-1",
+        "-1/2"
+      ],
+      "D_interval": [
+        "1/2",
+        "3/4"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "41829b27f56d1d54f8437555f73b04ded7d432e5fdf5f964ae4ec0c23219884d"
+    },
+    {
+      "name": "H12_I0_D3",
+      "H_tile": [
+        1,
+        2
+      ],
+      "I_interval": [
+        "-1",
+        "-1/2"
+      ],
+      "D_interval": [
+        "3/4",
+        "1"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "a04f56afc451934ed8132fa0e602634e0ff29fe587c66a19c39d473e6a0449a0"
+    },
+    {
+      "name": "H12_I1_D0",
+      "H_tile": [
+        1,
+        2
+      ],
+      "I_interval": [
+        "-1/2",
+        "0"
+      ],
+      "D_interval": [
+        "0",
+        "1/4"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "4d3ed71c946bafc685cd37a3e6b48f7224d023d28c313372f330e7957f143ad2"
+    },
+    {
+      "name": "H12_I1_D1",
+      "H_tile": [
+        1,
+        2
+      ],
+      "I_interval": [
+        "-1/2",
+        "0"
+      ],
+      "D_interval": [
+        "1/4",
+        "1/2"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "13f2a0bd72c35a3aa8b5daccd227b5ad22dd6cc01612e359f452dfc1f3c9384a"
+    },
+    {
+      "name": "H12_I1_D2",
+      "H_tile": [
+        1,
+        2
+      ],
+      "I_interval": [
+        "-1/2",
+        "0"
+      ],
+      "D_interval": [
+        "1/2",
+        "3/4"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "38a9548f614050278fe4ca70d1c2286ca5406d9c50e9aeefd9c2f66d70971359"
+    },
+    {
+      "name": "H12_I1_D3",
+      "H_tile": [
+        1,
+        2
+      ],
+      "I_interval": [
+        "-1/2",
+        "0"
+      ],
+      "D_interval": [
+        "3/4",
+        "1"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "353c874b3c5ad11bac6d770e658cda0538577583601d89fe85a15faec8e3e544"
+    },
+    {
+      "name": "H12_I2_D0",
+      "H_tile": [
+        1,
+        2
+      ],
+      "I_interval": [
+        "0",
+        "1/2"
+      ],
+      "D_interval": [
+        "0",
+        "1/4"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "f915912c2e7c68f25fd711e268784eb30d87e76363d8f8ca2bafa2a0fb0b1f8a"
+    },
+    {
+      "name": "H12_I2_D1",
+      "H_tile": [
+        1,
+        2
+      ],
+      "I_interval": [
+        "0",
+        "1/2"
+      ],
+      "D_interval": [
+        "1/4",
+        "1/2"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "b1d4d83b725501f81d2a36fc895e2aa68018609048c51b1f2445e7d7ef6ec479"
+    },
+    {
+      "name": "H12_I2_D2",
+      "H_tile": [
+        1,
+        2
+      ],
+      "I_interval": [
+        "0",
+        "1/2"
+      ],
+      "D_interval": [
+        "1/2",
+        "3/4"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "87b4d49332f822c901f26fe6f7d8b271f9ad1a6550ab8f52aa2f01acb443de45"
+    },
+    {
+      "name": "H12_I2_D3",
+      "H_tile": [
+        1,
+        2
+      ],
+      "I_interval": [
+        "0",
+        "1/2"
+      ],
+      "D_interval": [
+        "3/4",
+        "1"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "37f6369a26796982c4568244994a91297c31747bc359fd3054210f0da7062650"
+    },
+    {
+      "name": "H12_I3_D0",
+      "H_tile": [
+        1,
+        2
+      ],
+      "I_interval": [
+        "1/2",
+        "1"
+      ],
+      "D_interval": [
+        "0",
+        "1/4"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "9c383d4078ea231007511e858ba062137334ef27a0c93690e7fabcf2e55070ed"
+    },
+    {
+      "name": "H12_I3_D1",
+      "H_tile": [
+        1,
+        2
+      ],
+      "I_interval": [
+        "1/2",
+        "1"
+      ],
+      "D_interval": [
+        "1/4",
+        "1/2"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "f4751001b414a320461012dbc924ba420ea3817bd4d3da935948a914d42b7736"
+    },
+    {
+      "name": "H12_I3_D2",
+      "H_tile": [
+        1,
+        2
+      ],
+      "I_interval": [
+        "1/2",
+        "1"
+      ],
+      "D_interval": [
+        "1/2",
+        "3/4"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "49e7d7452c3f0fb7dda87c564d0088de4c2a957d5d7db4fe12d0b9b42b924822"
+    },
+    {
+      "name": "H12_I3_D3",
+      "H_tile": [
+        1,
+        2
+      ],
+      "I_interval": [
+        "1/2",
+        "1"
+      ],
+      "D_interval": [
+        "3/4",
+        "1"
+      ],
+      "kind": "complete_physical_SAT_tree",
+      "report_sha256": "de265ae61ecbce192130aa0201b812a21230f91d92a3917d0b6a5325ad4c5f8e"
+    },
+    {
+      "name": "H13_I0_D0",
+      "H_tile": [
+        1,
+        3
+      ],
+      "I_interval": [
+        "-1",
+        "-1/2"
+      ],
+      "D_interval": [
+        "0",
+        "1/4"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "2074c44bcd8f54d847f3f6caa8fd948c2f12d505766c81f645702755b5099f56"
+    },
+    {
+      "name": "H13_I0_D1",
+      "H_tile": [
+        1,
+        3
+      ],
+      "I_interval": [
+        "-1",
+        "-1/2"
+      ],
+      "D_interval": [
+        "1/4",
+        "1/2"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "a08e76f7ede8893155d2eeb260e7be8c75ed14a1bb6c29522772e456faeb622d"
+    },
+    {
+      "name": "H13_I0_D2",
+      "H_tile": [
+        1,
+        3
+      ],
+      "I_interval": [
+        "-1",
+        "-1/2"
+      ],
+      "D_interval": [
+        "1/2",
+        "3/4"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "df5aae62717cf6bebec7611f537c411569f5ddbc7cae9b5607b52eb9fff20116"
+    },
+    {
+      "name": "H13_I0_D3",
+      "H_tile": [
+        1,
+        3
+      ],
+      "I_interval": [
+        "-1",
+        "-1/2"
+      ],
+      "D_interval": [
+        "3/4",
+        "1"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "f71f5c0226789ff8490a4889e23dbfb04e9cd3ac6a2981bd45d943644f2b0eb2"
+    },
+    {
+      "name": "H13_I1_D0",
+      "H_tile": [
+        1,
+        3
+      ],
+      "I_interval": [
+        "-1/2",
+        "0"
+      ],
+      "D_interval": [
+        "0",
+        "1/4"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "982d9591d593c8d0ba90fcb4a9c794add6090e73edcfa461ed613064225dc141"
+    },
+    {
+      "name": "H13_I1_D1",
+      "H_tile": [
+        1,
+        3
+      ],
+      "I_interval": [
+        "-1/2",
+        "0"
+      ],
+      "D_interval": [
+        "1/4",
+        "1/2"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "5f07ffb5eab75f455c2ab3f5dfda533ae3aee9228584a5b53686de51e2d77bf1"
+    },
+    {
+      "name": "H13_I1_D2",
+      "H_tile": [
+        1,
+        3
+      ],
+      "I_interval": [
+        "-1/2",
+        "0"
+      ],
+      "D_interval": [
+        "1/2",
+        "3/4"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "140b2468fa65f93141c6bd07786ae1fa680d95589db958fb5dd529995dd20d6f"
+    },
+    {
+      "name": "H13_I1_D3",
+      "H_tile": [
+        1,
+        3
+      ],
+      "I_interval": [
+        "-1/2",
+        "0"
+      ],
+      "D_interval": [
+        "3/4",
+        "1"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "c2b5286dbf90082710576820f6c8d6cc8836cc2b92e175390c01638a1e016ed4"
+    },
+    {
+      "name": "H13_I2_D0",
+      "H_tile": [
+        1,
+        3
+      ],
+      "I_interval": [
+        "0",
+        "1/2"
+      ],
+      "D_interval": [
+        "0",
+        "1/4"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "4e234dc02abc89d8ffc318bdfa60279f75c0eb6cbde470cbe8558640678cf0a7"
+    },
+    {
+      "name": "H13_I2_D1",
+      "H_tile": [
+        1,
+        3
+      ],
+      "I_interval": [
+        "0",
+        "1/2"
+      ],
+      "D_interval": [
+        "1/4",
+        "1/2"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "6aba442af08118a726a22fcb174ca4830c71b4f0c1c146ec1a40c9e08fccab21"
+    },
+    {
+      "name": "H13_I2_D2",
+      "H_tile": [
+        1,
+        3
+      ],
+      "I_interval": [
+        "0",
+        "1/2"
+      ],
+      "D_interval": [
+        "1/2",
+        "3/4"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "c144c9ce2036178976a83f1f53835d1c83e49ecdfe4d28a5ebe89c899591360c"
+    },
+    {
+      "name": "H13_I2_D3",
+      "H_tile": [
+        1,
+        3
+      ],
+      "I_interval": [
+        "0",
+        "1/2"
+      ],
+      "D_interval": [
+        "3/4",
+        "1"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "7ce09a1cf4cc136fa64c62986d186b6624d811a7c423cdbc09573d33c03b46ec"
+    },
+    {
+      "name": "H13_I3_D0",
+      "H_tile": [
+        1,
+        3
+      ],
+      "I_interval": [
+        "1/2",
+        "1"
+      ],
+      "D_interval": [
+        "0",
+        "1/4"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "ee0a9f3f8018eba35d92c47d3c5ad362b215f6f12c9678ba3e6d29eb3d57d194"
+    },
+    {
+      "name": "H13_I3_D1",
+      "H_tile": [
+        1,
+        3
+      ],
+      "I_interval": [
+        "1/2",
+        "1"
+      ],
+      "D_interval": [
+        "1/4",
+        "1/2"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "1fbd81b99e90aabf5c80eb8730d25581b3c94fa66e2b2db38dab881fa08da597"
+    },
+    {
+      "name": "H13_I3_D2",
+      "H_tile": [
+        1,
+        3
+      ],
+      "I_interval": [
+        "1/2",
+        "1"
+      ],
+      "D_interval": [
+        "1/2",
+        "3/4"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "7602f9f8330f3deb1afafc8d60cef039d85729c46447a9d27fa55eacc6814348"
+    },
+    {
+      "name": "H13_I3_D3",
+      "H_tile": [
+        1,
+        3
+      ],
+      "I_interval": [
+        "1/2",
+        "1"
+      ],
+      "D_interval": [
+        "3/4",
+        "1"
+      ],
+      "kind": "direct_bound_terminal",
+      "report_sha256": "d9eb9485024e85d89d30fcaaea30c3bceff622970c8dd326e3236245d0817360"
+    }
+  ],
+  "prior_arithmetic_repeated": false,
+  "new_component_arithmetic_independently_replayed": true,
+  "checker_sha256": "c9d951370c7d4e2b32ad8e305883bb2f56d78724414918dea0ef764d925242d0",
+  "lean_lake_ci_run": false,
+  "seconds": 5.913304751000396
+}

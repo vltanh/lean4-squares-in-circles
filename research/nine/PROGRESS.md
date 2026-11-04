@@ -1,21 +1,48 @@
-> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **219/231 cells CLOSED, 12 OPEN; 8/32 masks CLOSED, 24 OPEN.**
+> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **220/231 cells CLOSED, 11 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
-> **Execution recovery, 4 November 2026:** The workspace became unavailable during ongoing proof discovery. The [recovery checkpoint](EXECUTION_RECOVERY_2026_11_04_1328.md) records the exact restart state; worker completion after the last observation is unknown. Published counts remain **219/231 cells and 8/32 masks closed**. No new closure is inferred.
+> **Execution restored, 4 November 2026:** Published ancestors were recovered and hash-checked after the [recorded outage](EXECUTION_RECOVERY_2026_11_04_1328.md). New computer-assisted discovery, exact replays and complete physical assembly now close D6c5. All other open originals remain explicit.
 
-# n=9: 219/231 current-mask cells closed; 12 remain OPEN
+# n=9: 220/231 current-mask cells closed; 11 remain OPEN
 
-**Latest verified continuation: the complete Dc71 original-cell exclusion.**
-The same register now has **219 CLOSED / 12 OPEN**, with
-**166 additions beyond the first 53**. Remaining families:
-**A1, B6, C3, D2**. `001/00`, its reversal, the unrestricted bound and
+**Latest verified continuation: the complete D6c5 original-cell exclusion.**
+The same register now has **220 CLOSED / 11 OPEN**, with
+**167 additions beyond the first 53**. Remaining families:
+**A1, B6, C3, D1**. `001/00`, its reversal, the unrestricted bound and
 equality remain OPEN. No Lean, Lake or CI.
 
-[Latest complete assembly](A2_00100_DC71_COMPLETE_ORIGINAL_CLOSURE.md) ·
+[Latest complete assembly](A2_00100_D6C5_COMPLETE_ORIGINAL_CLOSURE.md) ·
 [Current fixed register](gates/A2_00100_FIXED_FRONTIER.json) ·
-[Source-bound packet and native exact replay](computer_assisted/a2_00100_dc71_complete_original_manifest.json) ·
+[Source-bound packet and fresh portable replay](computer_assisted/a2_00100_d6c5_complete_original_manifest.json) ·
 [Operative handoff](HANDOFF_A2_FIXED_CLOSURE.md)
 
-## Complete Dc71 original: 219 CLOSED / 12 OPEN
+## Complete D6c5 original: 220 CLOSED / 11 OPEN
+
+`positive-6c5f13d07e5538df` is completely excluded. The final I22 rectangle
+now has a complete H2-by-4 cover, five I-angle covers, twenty D-angle covers,
+thirty-seven direct D terminals and forty-three complete physical SAT trees.
+All 559 final terminal domains close. The 587 SAT nodes contain 68 complete
+eight-way original-owner/axis/sign unions, with every contact and shared face
+retained. The same original prefix joins this proof to the fifteen already
+excluded I rectangles.
+
+The final I22 records contain 511 local rounds, 103,791 exact deductions and
+142,117 printed-row occurrences. The full row appendix includes every used
+energy and new product-family occurrence. Root physical review, a separate
+closed-union/continuation review, and a fresh portable replay pass. The fresh
+run repeats all new I22 arithmetic, recomposes the accepted fifteen-I proof,
+and rehashes 865 new inputs plus 2,255 prior inputs with old-workspace reads
+forbidden. All 875 members of the 71,018,016-byte proof archive match their
+release hashes. One original cell is newly closed; no mask, positional root
+or roadmap gate is closed by this result.
+
+The new [actual-AB two-link theorem](computer_assisted/actual_AB_two_link_row_v1/ACTUAL_AB_TWO_LINK_ROW_HAND_PROOF.md)
+permits total height variation `3/5` on the two non-actual row links, under
+its proved original D/G guards. Its complete scalar certificate and physical
+reviews pass. The [full-angle common-side row](computer_assisted/full_angle_common_side_row_v1/FULL_ANGLE_SMALL_VARIATION_FOUR_ROW_HAND_TERMINAL.md)
+and its guarded original-pair cap are also accepted conditional inputs.
+These theorems add no original or mask credit by themselves.
+
+## Earlier complete Dc71 original: 219 CLOSED / 12 OPEN
 
 `positive-c71dc2feef1abb0b` is completely excluded. All sixteen closed
 I-quarter products are covered, including the seven complete H2-by-4 covers

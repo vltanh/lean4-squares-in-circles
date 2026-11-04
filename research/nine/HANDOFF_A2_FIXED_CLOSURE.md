@@ -1,7 +1,7 @@
-# Current A.2 handoff: 219/231 current-mask cells closed; 12 OPEN
+# Current A.2 handoff: 220/231 current-mask cells closed; 11 OPEN
 
-November 4, 2026. The [complete Dc71 proof](A2_00100_DC71_COMPLETE_ORIGINAL_CLOSURE.md) advances
-`5db39ea0e37fa7f65af8a427dccb4211ea663dcd` from **218 CLOSED / 13 OPEN to 219 CLOSED / 12 OPEN**.
+November 4, 2026. The [complete D6c5 proof](A2_00100_D6C5_COMPLETE_ORIGINAL_CLOSURE.md) advances
+the unchanged original register from **219 CLOSED / 12 OPEN to 220 CLOSED / 11 OPEN**.
 The full-mask ledger remains **8 CLOSED / 24 OPEN**. `001/00`, reversal
 `100/00`, A.2, the unrestricted bound and global equality remain OPEN.
 No Lean, Lake or CI.
@@ -12,10 +12,20 @@ Execution is restored. The [earlier recovery checkpoint](EXECUTION_RECOVERY_2026
 is retained as outage history. Published ancestor archives have been recovered
 and hash-checked. The [complete new I22/H01/I-slope-quarter-1 proof](A2_00100_D6C5_I22_H01_I1_COMPLETE_SAT_COVER.md)
 passes independent replay and a fresh portable replay with old workspace reads
-forbidden. Published acceptance remains **219/231 original cells and 8/32 masks closed**;
-D6c5 still has fifteen I rectangles excluded and I22 as a whole OPEN.
+forbidden. The subsequent complete I22 proof now closes all of D6c5,
+with a fresh whole-original portable replay. Accepted counts are
+**220/231 original cells and 8/32 masks closed**.
 
 ## Read first
+
+The [complete D6c5 original proof](A2_00100_D6C5_COMPLETE_ORIGINAL_CLOSURE.md)
+closes the last original I rectangle through all eight H members and all
+eighty D-angle components. Its 43 complete SAT trees have 587 nodes and
+519 excluded leaves; with 40 direct H/D terminals, all 559 terminal domains
+close. Root and independent reviews and fresh portable replay pass. The
+new [publication manifest](computer_assisted/a2_00100_d6c5_complete_original_manifest.json)
+binds the full hand/table, exact inputs, 875 archive members and fixed-ledger
+update. Remaining original families are **A1, B6, C3, D1**.
 
 The [actual-AB two-link theorem](computer_assisted/actual_AB_two_link_row_v1/ACTUAL_AB_TWO_LINK_ROW_HAND_PROOF.md)
 uses the actual AB link without charging it a height error. With its
@@ -431,15 +441,15 @@ both complete prefix covers.
 | A: positive D, nonpositive A, inward-row escapes | 77 | 76 | 1 |
 | B: negative D, nonpositive A, F-height branches | 39 | 33 | 6 |
 | C: negative D, nonnegative A, alternate-chain escapes | 33 | 30 | 3 |
-| D: positive D, nonnegative A, alternate-chain escapes | 29 | 27 | 2 |
-| **Total** | **178** | **166** | **12** |
+| D: positive D, nonnegative A, alternate-chain escapes | 29 | 28 | 1 |
+| **Total** | **178** | **167** | **11** |
 
 The precise unresolved predicates are the unchanged paths of these IDs:
 
 - **A:** `positive-c744bc031d40ee64`.
 - **B:** `negative-f14f5bc4eafdf50d`, `negative-7c60be8b07a358e9`, `negative-462e78d2e2d8be05`, `negative-34029ea8b047982f`, `negative-16a2fc93c8d133f0`, `negative-580db3624cf4c2e2`.
 - **C:** `negative-887236b78100baf3`, `negative-d4021ade840b985c`, `negative-b882d8ade0cf9ea0`.
-- **D:** `positive-6c5f13d07e5538df`, `positive-821c9a2debeed0aa`.
+- **D:** `positive-821c9a2debeed0aa`.
 
 ## Current mathematical obstruction and useful inputs
 
@@ -463,7 +473,7 @@ a complete three-matching cover and 11,390 checked row identities. The
 latter retains the full area and angle-independent inertia of physical
 unit squares and has 16,064 checked affine/quadratic identities. These
 are necessary restrictions and do not alone exclude an original. The new
-complete original-cell proofs now give **219/12 cells and 8/24 masks**.
+complete original-cell proofs now give **220/11 cells and 8/24 masks**.
 
 The earlier [completed whole-domain research record](A2_00100_WHOLE_DOMAIN_RESEARCH_STOPPING_RECORD.md)
 records the bounded A/B/C/D investigations after the four accepted proofs.
@@ -682,6 +692,9 @@ unchanged. Whole-original acceptance is a separate remaining obligation.
 
 ## D6c5: I23 complete, only I22 remaining
 
+Historical checkpoint, now superseded by the
+[complete original D6c5 proof](A2_00100_D6C5_COMPLETE_ORIGINAL_CLOSURE.md).
+
 The [complete I23 supplement](A2_00100_D6C5_I23_COMPLETE_H_COVER_CHECKPOINT.md)
 excludes all eight H products by three ordinary terminals, five complete
 I-angle covers and six complete D-angle subcovers. All 41 terminal domains
@@ -735,7 +748,7 @@ domain still needs its own complete proof. No fixed ledger is changed.
 ## Fixed ledgers and next handoff
 
 - Original-nine masks: **8 CLOSED / 24 OPEN**, exactly `000/*` and `010/*` CLOSED.
-- Current mask: **219 CLOSED / 12 OPEN**, same 231 IDs and certified full cover.
+- Current mask: **220 CLOSED / 11 OPEN**, same 231 IDs and certified full cover.
 - Positional roots: **5,838 historical closed-Q exclusions / 2,077 OPEN**
   among the same 7,915 IDs. Equality root 7820 remains feasible at Q.
 - The same 15 roadmap IDs and all global deliverables retain their statuses.
@@ -747,5 +760,5 @@ blockers, and the separate mask/root/gate ledgers. Distinguish numerical
 discovery, exact replay, source-byte identity and the written proof.
 Earlier partial research remains historical evidence, not a second active
 frontier. The next goal is a complete argument discharging the remaining
-12 original predicates or a theorem subsuming them, followed by the other
+11 original predicates or a theorem subsuming them, followed by the other
 fixed masks. No extra necessary inequality alone completes that goal.

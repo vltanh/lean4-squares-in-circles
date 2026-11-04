@@ -9,11 +9,11 @@
   "coverage_kind": "EXHAUSTIVE_FINITE_COVER_WITH_SHARED_CLOSED_FACES",
   "coverage_certified": true,
   "id_rule": "sign + hyphen + first 16 hexadecimal digits of SHA256(json.dumps(path,separators=(comma,colon))); full path retained and checked.",
-  "assembly": "../A2_00100_DC71_COMPLETE_ORIGINAL_CLOSURE.md",
+  "assembly": "../A2_00100_D6C5_COMPLETE_ORIGINAL_CLOSURE.md",
   "physical_review": "../A2_00100_FIXED_FRONTIER_PHYSICAL_REVIEW.md",
   "coverage_review": "../A2_00100_V13_COVERAGE_INDEPENDENT_REVIEW.md",
-  "cell_review": "../A2_00100_DC71_COMPLETE_ORIGINAL_CLOSURE.md",
-  "manifest": "../computer_assisted/a2_00100_dc71_complete_original_manifest.json",
+  "cell_review": "../A2_00100_D6C5_COMPLETE_ORIGINAL_CLOSURE.md",
+  "manifest": "../computer_assisted/a2_00100_d6c5_complete_original_manifest.json",
   "payload_register": "fixed_231_register.json",
   "baseline_forest_sha256": {
     "positive": "f6518c23a00c32e1f3d3915d1cd89cd24d162f459a6fc03a721fb843cc878d78",
@@ -22,8 +22,8 @@
   "scope": "Coverage-qualified fixed original full-nine large-gap cells; all 231 IDs and paths immutable.",
   "whole_mask_closed": false,
   "original_cells": 231,
-  "closed_cells": 219,
-  "open_cells": 12,
+  "closed_cells": 220,
+  "open_cells": 11,
   "cells": [
     {
       "id": "positive-655c4b699ba028a1",
@@ -2138,12 +2138,36 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "method": "complete_original_center_slope_SAT_cover_with_exact_energy_product_rows",
         "record_id": "positive-6c5f13d07e5538df",
-        "whole_cell_exclusion": null
-      }
+        "whole_cell_exclusion": true,
+        "complete_closed_face_cover": true,
+        "all_original_physical_conditions_retained": true,
+        "original_prefix_sha256": "d247d7e09ee9366a29164a26c3a776a36fd6dc1fbaa6c88e30190dfd8d9fa1df",
+        "archive_parts_manifest": "a2_00100_d6c5_complete_original/ARCHIVE_PARTS.json",
+        "archive_sha256": "b8fcfc20fc87913e1b09619bfdb53bd7ac28b6182c71580d0ed032b50d9769ce",
+        "archive_bytes": 71018016,
+        "prior_fifteen_I_archive_sha256": "c58aedd5dd0d5efc3dbc0422703ced905f31667e77de303387ce4b377c34993d",
+        "certificate": "a2_00100_d6c5_complete_original/COMPLETE_ORIGINAL_REPLAY.json",
+        "certificate_sha256": "e3e90d30bd64e22df96f8c77865edde49438f8ecec32cc5c854221d1c3c690fc",
+        "independent_checker": "replay_complete_d6c5_packet.py",
+        "independent_checker_sha256": "8ce5e6c260fa32d11c81cfa1319978ede028ee91996a2ae9b9717b1f326636d0",
+        "independent_report": "a2_00100_d6c5_complete_original/PORTABLE_RECEIPT.json",
+        "independent_report_sha256": "8967c9aa93ee251a4197a1ad35d3afcc4da287966d42bef791b1f40ee658cc4e",
+        "root_hand_table_review": "a2_00100_d6c5_complete_original/ROOT_PHYSICAL_REVIEW.md",
+        "root_hand_table_review_sha256": "34941d6bceab073c8b78f86f7b9e73b13e33dd8568db02a2d7dc6dfb2f94054b",
+        "second_independent_review": "a2_00100_d6c5_complete_original/D6_COMPLETE_ASSEMBLY_INDEPENDENT_REVIEW.json",
+        "second_independent_review_sha256": "1dcd51d2dc08dcf25a0c03052b31fdbd6e424d0d2fe5a8b1579d780bf86e19ff",
+        "new_I22_terminal_domains": 559,
+        "complete_original_I_rectangles": 16,
+        "all_new_I22_arithmetic_repeated": true,
+        "prior_fifteen_I_arithmetic_repeated": false,
+        "prior_fifteen_I_composition_repeated": true
+      },
+      "method": "complete_original_center_slope_SAT_cover_with_exact_energy_product_rows",
+      "new_I22_terminal_leaves": 559
     },
     {
       "id": "positive-c71dc2feef1abb0b",
@@ -23410,7 +23434,7 @@
   "baseline_assembly": "../A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md",
   "baseline_manifest": "../computer_assisted/a2_00100_fixed_frontier_manifest.json",
   "latest_new_closed_cells": 1,
-  "cumulative_new_closed_since_53": 166,
-  "preceding_assembly": "../A2_00100_A7C_FIXED_CENTER_AND_SLOPE_COVER_CLOSURE.md",
-  "preceding_manifest": "../computer_assisted/a2_00100_a_7c_fixed_center_slope_height_manifest.json"
+  "cumulative_new_closed_since_53": 167,
+  "preceding_assembly": "../A2_00100_DC71_COMPLETE_ORIGINAL_CLOSURE.md",
+  "preceding_manifest": "../computer_assisted/a2_00100_dc71_complete_original_manifest.json"
 }

@@ -1,0 +1,32 @@
+{
+  "status": "PASS_ONE_COMPLETE_ORIGINAL_LEDGER_UPDATE",
+  "before_frontier_sha256": "a6ee5a530bc528298200998c1e811604d522c4ef5332d71c932028ef7af0b5ad",
+  "after_frontier_sha256": "37bcd835ed57cb5c9656234a9ca0d4678da655d43e556e58ecc196d187d5a256",
+  "all_231_original_id_sign_index_path_tuples_unchanged": true,
+  "stable_identity_sha256": "c70e695eec82d533a782f8072bd97bf7d0686f1a8416333625146980ea50a1d8",
+  "changed_statuses": [
+    [
+      "positive-6c5f13d07e5538df",
+      "OPEN",
+      "CLOSED"
+    ]
+  ],
+  "original_before": {
+    "closed": 219,
+    "open": 12
+  },
+  "original_after": {
+    "closed": 220,
+    "open": 11
+  },
+  "masks_unchanged": {
+    "closed": 8,
+    "open": 24,
+    "new_mask_closures": 0
+  },
+  "positional_root_count": 7915,
+  "roadmap_id_count": 15,
+  "new_positional_root_exclusions": 0,
+  "new_roadmap_gate_closures": 0,
+  "lean_lake_ci_run": false
+}
