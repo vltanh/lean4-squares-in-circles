@@ -1,0 +1,11 @@
+{
+  "status": "PASS_ALL_REPLAY_FIELDS_AFTER_ONLY_PACKET_ROOT_AND_TIMING_NORMALIZATION",
+  "author_report_sha256": "7b069e79204be466706bd057a869d655c5e7f61825eccb69d50ac279dd607362",
+  "root_report_sha256": "5d146fdd078c13eb32561c34de3178394f8e9ab69e3394a4f427edfd7783fe87",
+  "excluded_keys": [
+    "seconds",
+    "elapsed_seconds"
+  ],
+  "replacement": "only each actual packet root path replaced by <PACKET>",
+  "mathematical_fields_omitted": false
+}

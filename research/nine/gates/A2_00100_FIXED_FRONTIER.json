@@ -9,11 +9,11 @@
   "coverage_kind": "EXHAUSTIVE_FINITE_COVER_WITH_SHARED_CLOSED_FACES",
   "coverage_certified": true,
   "id_rule": "sign + hyphen + first 16 hexadecimal digits of SHA256(json.dumps(path,separators=(comma,colon))); full path retained and checked.",
-  "assembly": "../A2_00100_CAAA_COMPLETE_CENTER_SLOPE_CLOSURE.md",
+  "assembly": "../A2_00100_A7C_FIXED_CENTER_AND_SLOPE_COVER_CLOSURE.md",
   "physical_review": "../A2_00100_FIXED_FRONTIER_PHYSICAL_REVIEW.md",
   "coverage_review": "../A2_00100_V13_COVERAGE_INDEPENDENT_REVIEW.md",
-  "cell_review": "../A2_00100_CAAA_COMPLETE_CENTER_SLOPE_CLOSURE.md",
-  "manifest": "../computer_assisted/a2_00100_c_aaa_complete_center_slope_manifest.json",
+  "cell_review": "../A2_00100_A7C_FIXED_CENTER_AND_SLOPE_COVER_CLOSURE.md",
+  "manifest": "../computer_assisted/a2_00100_a_7c_fixed_center_slope_height_manifest.json",
   "payload_register": "fixed_231_register.json",
   "baseline_forest_sha256": {
     "positive": "f6518c23a00c32e1f3d3915d1cd89cd24d162f459a6fc03a721fb843cc878d78",
@@ -22,8 +22,8 @@
   "scope": "Coverage-qualified fixed original full-nine large-gap cells; all 231 IDs and paths immutable.",
   "whole_mask_closed": false,
   "original_cells": 231,
-  "closed_cells": 217,
-  "open_cells": 14,
+  "closed_cells": 218,
+  "open_cells": 13,
   "cells": [
     {
       "id": "positive-655c4b699ba028a1",
@@ -7792,12 +7792,55 @@
           1
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_a_7c_fixed_center_slope_height_checkpoint.tar.xz",
+        "archive_bytes": 27975288,
+        "archive_sha256": "31e0957be0730bc412310047a1dfe63ff7d2687432870919c8fdb228dc90982c",
+        "archive_parts_manifest": "a2_00100_a_7c_fixed_center_slope_height_parts.json",
+        "archive_parts": [
+          {
+            "file": "a2_00100_a_7c_fixed_center_slope_height_checkpoint.tar.xz.part01",
+            "bytes": 8388608,
+            "sha256": "e34a41b698ad45f6782056634d43ed59856e70c901774cc0ff46e407e2fbe16d"
+          },
+          {
+            "file": "a2_00100_a_7c_fixed_center_slope_height_checkpoint.tar.xz.part02",
+            "bytes": 8388608,
+            "sha256": "7f268e1b4af16199accdc92a8f67a59c04ba2824727407c20869cbc1b9f06db6"
+          },
+          {
+            "file": "a2_00100_a_7c_fixed_center_slope_height_checkpoint.tar.xz.part03",
+            "bytes": 8388608,
+            "sha256": "bdf523db9340da623a553791ab144c567f3ca83941ad1cbce3a735462d2d68b8"
+          },
+          {
+            "file": "a2_00100_a_7c_fixed_center_slope_height_checkpoint.tar.xz.part04",
+            "bytes": 2809464,
+            "sha256": "cb9ccd051bbac12658d5cb75f0680c823bc934b9f02fb946fdb86397714946e7"
+          }
+        ],
+        "method": "complete_fixed_I_H_and_inherited_original_frame_and_center_height_cover",
         "record_id": "positive-7cdbd39e7dd162bf",
-        "whole_cell_exclusion": null
-      }
+        "certificate": "PACKAGE_MANIFEST.json",
+        "certificate_sha256": "70b98d256f401be743fb412243c6d2c8c1c1679a96300548b0e32ad508104877",
+        "independent_checker": "verify_a_fixed_cover.py",
+        "independent_checker_sha256": "2f9f7baaffabda71de6110860e4982a53972b0d7e0098a9beffa6e2210944c3c",
+        "independent_report": "new_reviews/COMPLETE_ORIGINAL_REPLAY.json",
+        "root_fresh_replay_report": "a2_00100_a_7c_fixed_center_slope_height_root_replay.json",
+        "root_fresh_replay_report_sha256": "2f9a747a6bfeed722e7e0433f1f6250ba525ad4558b830bfb25f579c379a9af5",
+        "root_independent_review": "a2_00100_a_7c_fixed_center_slope_height_root_review.json",
+        "root_independent_review_sha256": "d716d0c21ad209c3c7c489f6843dcd8a0237da3f854a7bb07780067180d29c2c",
+        "terminal_leaves": 58,
+        "complete_closed_face_cover": true,
+        "all_leaf_prefix_hashes_identical": true,
+        "additional_recovered_root_acceptance": {
+          "file": "a2_00100_a_7c_recovered_root_acceptance.json",
+          "sha256": "9c03723a9f09318258170441b0b822229095461ca05a7a816be8c6fd5713f1fb"
+        }
+      },
+      "method": "complete_fixed_I_H_and_inherited_original_frame_and_center_height_cover",
+      "terminal_leaves": 58
     },
     {
       "id": "positive-dc201c34b4b939b2",
@@ -23345,7 +23388,7 @@
   "baseline_assembly": "../A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md",
   "baseline_manifest": "../computer_assisted/a2_00100_fixed_frontier_manifest.json",
   "latest_new_closed_cells": 1,
-  "cumulative_new_closed_since_53": 164,
-  "preceding_assembly": "../A2_00100_A768_FIXED_CENTER_ENERGY_CLOSURE.md",
-  "preceding_manifest": "../computer_assisted/a2_00100_a_768_fixed_center_energy_manifest.json"
+  "cumulative_new_closed_since_53": 165,
+  "preceding_assembly": "../A2_00100_CAAA_COMPLETE_CENTER_SLOPE_CLOSURE.md",
+  "preceding_manifest": "../computer_assisted/a2_00100_c_aaa_complete_center_slope_manifest.json"
 }

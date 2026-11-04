@@ -1,0 +1,50 @@
+{
+  "schema": "recovered_A7c_complete_original_root_acceptance_v1",
+  "status": "PASS_RECOVERED_COMPLETE_ORIGINAL_AFTER_FRESH_STRICT_REPLAY",
+  "original_id": "positive-7cdbd39e7dd162bf",
+  "recovered_source_commit": "3e1d3d7c1749c65f596f67205513f3926fa63f53",
+  "input_commit": "7275df4dac5fe7c37437cdf17d0a84e37b01c3d3",
+  "source_packet_modified": false,
+  "source_workspace_modified": false,
+  "original_ids_and_paths_unchanged": true,
+  "only_original_status_changed": "positive-7cdbd39e7dd162bf",
+  "before": {
+    "closed": 217,
+    "open": 14
+  },
+  "after": {
+    "closed": 218,
+    "open": 13
+  },
+  "new_original_cells": 1,
+  "new_masks": 0,
+  "full_replay_and_author_mathematically_identical": true,
+  "all_231_frozen_inputs_rehashed": true,
+  "all_232_archive_members_match_fresh_packet": true,
+  "all_existing_checkpoint_sections_retained": true,
+  "evidence": [
+    {
+      "file": "a2_00100_a_7c_recovered_root_replay.json",
+      "sha256": "5d146fdd078c13eb32561c34de3178394f8e9ab69e3394a4f427edfd7783fe87"
+    },
+    {
+      "file": "a2_00100_a_7c_recovered_independent_review.json",
+      "sha256": "b5d4e3fbaaef9671e7596a597411796df018450da686d2dc00c22fba72eb6305"
+    },
+    {
+      "file": "a2_00100_a_7c_recovered_archive_check.json",
+      "sha256": "a3cd9f4a9e7f40ff72fa4955fb406074ad534a73cbe11d705784c8330c4d219e"
+    },
+    {
+      "file": "a2_00100_a_7c_recovered_replay_comparison.json",
+      "sha256": "fb6415b343cac7a7562212466833e153e299e2e2adbd19c5a6b05c3423d531a1"
+    }
+  ],
+  "fixed_denominators": {
+    "original_cells": 231,
+    "masks": 32,
+    "positional_roots": 7915,
+    "roadmap_gates": 15
+  },
+  "lean_lake_ci_run": false
+}

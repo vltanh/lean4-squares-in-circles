@@ -1,0 +1,8 @@
+{
+  "status": "PASS_ROOT_ARCHIVED_FROZEN_INPUTS",
+  "files": 232,
+  "uncompressed_bytes": 354428553,
+  "archive_sha256": "31e0957be0730bc412310047a1dfe63ff7d2687432870919c8fdb228dc90982c",
+  "all_frozen_source_bytes_identical": true,
+  "safe_relative_paths_only": true
+}

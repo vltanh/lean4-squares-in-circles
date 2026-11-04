@@ -1,0 +1,60 @@
+{
+  "status": "PASS_ROOT_RELOCATED_ORIGINAL_AND_HAND_TABLE_REVIEW",
+  "original_id": "positive-7cdbd39e7dd162bf",
+  "original_path": [
+    [
+      "angle",
+      3,
+      1
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      0
+    ],
+    [
+      "inward_row_escape",
+      [
+        7,
+        8
+      ],
+      [
+        6
+      ]
+    ],
+    [
+      "position_cut",
+      [
+        11,
+        "1/2"
+      ],
+      1
+    ]
+  ],
+  "native_and_relocated_mathematical_records_identical": true,
+  "outer_table_rows": 44,
+  "complete_original_slope_covers": 4,
+  "complete_original_height_covers": 2,
+  "physical_terminal_leaves": 58,
+  "positive_affine_terminals": 40,
+  "all_affine_reserves_above": "1/10000",
+  "distinct_local_bound_records": 64,
+  "local_rounds": 150,
+  "bound_deductions": 17267,
+  "premise_rows": 37435,
+  "terminal_rows": 740,
+  "frozen_inputs_checked": 231,
+  "source_hashes": {
+    "/workspace/scratch/1b414599b857/a_cells_work/a_7c_extended_cover_package/new_reviews/COMPLETE_ORIGINAL_REPLAY.json": "7b069e79204be466706bd057a869d655c5e7f61825eccb69d50ac279dd607362",
+    "/workspace/scratch/1b414599b857/root_a7c_complete_replay/new_reviews/COMPLETE_ORIGINAL_REPLAY.json": "2f9a747a6bfeed722e7e0433f1f6250ba525ad4558b830bfb25f579c379a9af5",
+    "/workspace/scratch/1b414599b857/a_cells_work/A2_00100_A7C_FIXED_CENTER_AND_SLOPE_COVER_CLOSURE.md": "397adc4f249fa26989d758d88e5c794ccdd86d0e07c68828bc40d17abd0cb9c2",
+    "/workspace/scratch/1b414599b857/root_a7c_complete_replay/PACKAGE_MANIFEST.json": "70b98d256f401be743fb412243c6d2c8c1c1679a96300548b0e32ad508104877",
+    "/workspace/scratch/1b414599b857/root_a7c_complete_replay/cover_index.json": "682799e384729f35091647298682c3f13992aef19cac3981e577807849468bcb"
+  },
+  "new_original_cells": 1,
+  "new_masks": 0,
+  "no_lean_lake_ci": true
+}

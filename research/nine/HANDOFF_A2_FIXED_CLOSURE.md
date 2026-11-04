@@ -1,7 +1,7 @@
-# Current A.2 handoff: 217/231 current-mask cells closed; 14 OPEN
+# Current A.2 handoff: 218/231 current-mask cells closed; 13 OPEN
 
-November 4, 2026. The [complete CAAA center/frame proof](A2_00100_CAAA_COMPLETE_CENTER_SLOPE_CLOSURE.md) advances
-`7a1075a0b49eca69d99abed3777e835e2b0bcebc` from **216 CLOSED / 15 OPEN to 217 CLOSED / 14 OPEN**.
+November 4, 2026. The [complete A7c center/frame/height proof](A2_00100_A7C_FIXED_CENTER_AND_SLOPE_COVER_CLOSURE.md) advances
+`7275df4dac5fe7c37437cdf17d0a84e37b01c3d3` from **217 CLOSED / 14 OPEN to 218 CLOSED / 13 OPEN**.
 The full-mask ledger remains **8 CLOSED / 24 OPEN**. `001/00`, reversal
 `100/00`, A.2, the unrestricted bound and global equality remain OPEN.
 No Lean, Lake or CI.
@@ -41,9 +41,9 @@ The [exact affine and lifted row conversions](THREE_SQUARE_ENERGY_ROW_CONVERSION
 all 1,877 polynomial identities in a separate relocated replay. Every
 caller must still certify its original projection intervals.
 
-1. [Current complete proof and scope](A2_00100_CAAA_COMPLETE_CENTER_SLOPE_CLOSURE.md).
+1. [Current complete proof and scope](A2_00100_A7C_FIXED_CENTER_AND_SLOPE_COVER_CLOSURE.md).
 2. [Same 231 original IDs, paths and current statuses](gates/A2_00100_FIXED_FRONTIER.json).
-3. [Immutable packet and fresh independent replay](computer_assisted/a2_00100_c_aaa_complete_center_slope_manifest.json).
+3. [Immutable packet and fresh independent replay](computer_assisted/a2_00100_a_7c_fixed_center_slope_height_manifest.json).
 4. [Original coverage and physical caller](A2_COVERAGE_AND_CLOSURE_CONTRACT.md),
    [baseline cover](A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md), and
    [accepted proof history](PROGRESS.md).
@@ -74,6 +74,25 @@ No Lean compilation, Lake or CI; retain the same 32 masks, 7,915 positional
 root IDs and 15 roadmap IDs. No human or proof-kernel verification is claimed.
 
 ## Latest complete original
+
+`positive-7cdbd39e7dd162bf` is completely excluded. Its sixteen closed
+I-quarter products use four complete H2-by-4 covers, giving 44 outer
+rectangles. Four outer rectangles have complete original-I slope covers;
+two slope members additionally use both closed halves of an independently
+proved original-H height interval. All 58 physical terminal leaves close.
+Forty exact affine reserves exceed 1/10000; eighteen physical interval or
+frame contradictions close the other leaves.
+
+The 64 distinct local bound records establish 17,267 bounds in 150 rounds,
+using 37,435 premise rows and 740 terminal rows. Shared antecedents are
+counted once. The proof uses 340 independently reconstructed three-square
+energy row occurrences and freshly replays their geometric theorem. Root
+physical and source reviews, the complete hand-table comparison and the
+relocated whole-original replay pass with all 231 frozen inputs unchanged.
+The same 231 original IDs and paths are retained. Remaining families:
+**A1, B6, C3, D3**.
+
+## Preceding complete originals
 
 The entire original **`negative-aaa42018b92e527c`** closes with a complete
 fixed center and original-frame cover. Fourteen of the sixteen I rectangles
@@ -334,15 +353,15 @@ both complete prefix covers.
 
 | Existing family | Original OPEN baseline after first 53 proofs | Subsequently CLOSED | Still OPEN |
 |---|---:|---:|---:|
-| A: positive D, nonpositive A, inward-row escapes | 77 | 75 | 2 |
+| A: positive D, nonpositive A, inward-row escapes | 77 | 76 | 1 |
 | B: negative D, nonpositive A, F-height branches | 39 | 33 | 6 |
 | C: negative D, nonnegative A, alternate-chain escapes | 33 | 30 | 3 |
 | D: positive D, nonnegative A, alternate-chain escapes | 29 | 26 | 3 |
-| **Total** | **178** | **164** | **14** |
+| **Total** | **178** | **165** | **13** |
 
 The precise unresolved predicates are the unchanged paths of these IDs:
 
-- **A:** `positive-c744bc031d40ee64`, `positive-7cdbd39e7dd162bf`.
+- **A:** `positive-c744bc031d40ee64`.
 - **B:** `negative-f14f5bc4eafdf50d`, `negative-7c60be8b07a358e9`, `negative-462e78d2e2d8be05`, `negative-34029ea8b047982f`, `negative-16a2fc93c8d133f0`, `negative-580db3624cf4c2e2`.
 - **C:** `negative-887236b78100baf3`, `negative-d4021ade840b985c`, `negative-b882d8ade0cf9ea0`.
 - **D:** `positive-6c5f13d07e5538df`, `positive-c71dc2feef1abb0b`, `positive-821c9a2debeed0aa`.
@@ -369,7 +388,7 @@ a complete three-matching cover and 11,390 checked row identities. The
 latter retains the full area and angle-independent inertia of physical
 unit squares and has 16,064 checked affine/quadratic identities. These
 are necessary restrictions and do not alone exclude an original. The new
-complete original-cell proofs now give **217/14 cells and 8/24 masks**.
+complete original-cell proofs now give **218/13 cells and 8/24 masks**.
 
 The earlier [completed whole-domain research record](A2_00100_WHOLE_DOMAIN_RESEARCH_STOPPING_RECORD.md)
 records the bounded A/B/C/D investigations after the four accepted proofs.
@@ -467,7 +486,7 @@ No complete original, mask, positional root or roadmap gate is added.
 ## Fixed ledgers and next handoff
 
 - Original-nine masks: **8 CLOSED / 24 OPEN**, exactly `000/*` and `010/*` CLOSED.
-- Current mask: **217 CLOSED / 14 OPEN**, same 231 IDs and certified full cover.
+- Current mask: **218 CLOSED / 13 OPEN**, same 231 IDs and certified full cover.
 - Positional roots: **5,838 historical closed-Q exclusions / 2,077 OPEN**
   among the same 7,915 IDs. Equality root 7820 remains feasible at Q.
 - The same 15 roadmap IDs and all global deliverables retain their statuses.
@@ -479,5 +498,5 @@ blockers, and the separate mask/root/gate ledgers. Distinguish numerical
 discovery, exact replay, source-byte identity and the written proof.
 Earlier partial research remains historical evidence, not a second active
 frontier. The next goal is a complete argument discharging the remaining
-14 original predicates or a theorem subsuming them, followed by the other
+13 original predicates or a theorem subsuming them, followed by the other
 fixed masks. No extra necessary inequality alone completes that goal.

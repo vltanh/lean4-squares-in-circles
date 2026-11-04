@@ -1,16 +1,16 @@
-> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **217/231 cells CLOSED, 14 OPEN; 8/32 masks CLOSED, 24 OPEN.**
+> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **218/231 cells CLOSED, 13 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
-# n=9: 217/231 current-mask cells closed; 14 remain OPEN
+# n=9: 218/231 current-mask cells closed; 13 remain OPEN
 
-**Latest verified continuation: the complete CAAA center/frame original-cell exclusion.**
-The same register now has **217 CLOSED / 14 OPEN**, with
-**164 additions beyond the first 53**. Remaining families:
-**A2, B6, C3, D3**. `001/00`, its reversal, the unrestricted bound and
+**Latest verified continuation: the complete A7c center/frame/height original-cell exclusion.**
+The same register now has **218 CLOSED / 13 OPEN**, with
+**165 additions beyond the first 53**. Remaining families:
+**A1, B6, C3, D3**. `001/00`, its reversal, the unrestricted bound and
 equality remain OPEN. No Lean, Lake or CI.
 
-[Latest complete assembly](A2_00100_CAAA_COMPLETE_CENTER_SLOPE_CLOSURE.md) ·
+[Latest complete assembly](A2_00100_A7C_FIXED_CENTER_AND_SLOPE_COVER_CLOSURE.md) ·
 [Current fixed register](gates/A2_00100_FIXED_FRONTIER.json) ·
-[Source-bound packet and fresh replay](computer_assisted/a2_00100_c_aaa_complete_center_slope_manifest.json) ·
+[Source-bound packet and fresh replay](computer_assisted/a2_00100_a_7c_fixed_center_slope_height_manifest.json) ·
 [Operative handoff](HANDOFF_A2_FIXED_CLOSURE.md)
 
 ## New conditional input: a complete full-angle polynomial row theorem
@@ -26,9 +26,9 @@ relocated replay also passes all 529 guard/algebra checks and eight
 damaged controls. Its complete closed complement and exact guards are
 delivered with the source-bound portable packet.
 
-This is a conditional physical theorem and adds zero original-cell or
-mask closures. Following the separately completed CAAA original, the
-current ledger is **217 CLOSED / 14 OPEN** and **8 CLOSED / 24 OPEN masks**.
+This conditional physical theorem adds zero original-cell or mask closures
+by itself. The complete original proofs reported here determine the live
+ledger; the full-mask ledger remains **8 CLOSED / 24 OPEN**.
 
 The [whole-original C887 eight-height attachment](A2_00100_C887_WHOLE_ORIGINAL_EIGHT_HEIGHT_CHECKPOINT.md)
 now proves this theorem's weak horizontal orders and opposite endpoint
@@ -71,6 +71,27 @@ The optional `4x6x6` closed escape family is complete but remains unexcluded;
 the theorem adds zero original-cell and zero whole-mask credit.
 
 ## What changed
+
+`positive-7cdbd39e7dd162bf` is completely excluded. Its sixteen closed
+I-quarter products use four complete H2-by-4 covers, giving 44 outer
+rectangles. Four outer rectangles have complete original-I slope covers;
+two slope members additionally use both closed halves of an independently
+proved original-H height interval. All 58 physical terminal leaves close.
+Forty exact affine reserves exceed 1/10000; eighteen physical interval or
+frame contradictions close the other leaves.
+
+The 64 distinct local bound records establish 17,267 bounds in 150 rounds,
+using 37,435 premise rows and 740 terminal rows. Shared antecedents are
+counted once. The proof uses 340 independently reconstructed three-square
+energy row occurrences and freshly replays their geometric theorem. Root
+physical and source reviews, the complete hand-table comparison and the
+relocated whole-original replay pass with all 231 frozen inputs unchanged.
+The same 231 original IDs and paths are retained. Remaining families:
+**A1, B6, C3, D3**.
+
+No whole mask, positional root or roadmap gate is newly closed.
+
+### Preceding checkpoint: 217 CLOSED / 14 OPEN
 
 The entire original **`negative-aaa42018b92e527c`** closes with a complete
 fixed center and original-frame cover. Fourteen of the sixteen I rectangles

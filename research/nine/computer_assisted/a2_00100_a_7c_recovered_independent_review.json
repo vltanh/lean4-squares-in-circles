@@ -1,0 +1,109 @@
+{
+  "schema": "recovered_A7c_independent_source_caller_closed_cover_hand_review_v1",
+  "status": "PASS_SOURCE_CALLER_COMPLETE_COVER_AND_HAND_TABLE",
+  "reviewer_sha256": "113003cc2cb53e8febfd994739b8ce5393fb94223637b2d534ad980c4b24c367",
+  "exact_input_sha256": {
+    "PACKAGE_MANIFEST.json": "70b98d256f401be743fb412243c6d2c8c1c1679a96300548b0e32ad508104877",
+    "cover_index.json": "682799e384729f35091647298682c3f13992aef19cac3981e577807849468bcb",
+    "A2_00100_A7C_FIXED_CENTER_AND_SLOPE_COVER_CLOSURE.md": "397adc4f249fa26989d758d88e5c794ccdd86d0e07c68828bc40d17abd0cb9c2",
+    "new_reviews/COMPLETE_ORIGINAL_REPLAY.json": "7b069e79204be466706bd057a869d655c5e7f61825eccb69d50ac279dd607362",
+    "verify_a_extended_fixed_cover.py": "32e5ebf11d054e379c8c6f352ea02d3085f40cad3b10822eb4f758c7fae54f41",
+    "verify_a_restricted_tile_bounds.py": "9379fb3da78110a6d4bc14fc0dc9784ebd36bdf28351e2588bba5deeb82e555b",
+    "verify_A_slope_cover.py": "95554772ed2488c3267ea3a44194eba1cac55815ef6a679eda9ff45864b33281",
+    "verify_a_fixed_cover.py": "2f9f7baaffabda71de6110860e4982a53972b0d7e0098a9beffa6e2210944c3c",
+    "ancestry/reviews/ROOT_COORDINATE_COVER_SOURCE_REVIEW.json": "780e562655fef9044766e6f2857818be97bef54ab475a887ba0e250d9b87112c"
+  },
+  "frozen_input_count": 231,
+  "original_id": "positive-7cdbd39e7dd162bf",
+  "original_path": [
+    [
+      "angle",
+      3,
+      1
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      0
+    ],
+    [
+      "inward_row_escape",
+      [
+        7,
+        8
+      ],
+      [
+        6
+      ]
+    ],
+    [
+      "position_cut",
+      [
+        11,
+        "1/2"
+      ],
+      1
+    ]
+  ],
+  "original_prefix_sha256": "c0e1f1d32163a44ab31d004e5e91e39ccfac2e69a373e1c4ac82c55e757ff5b4",
+  "all_predecessor_guards_retained": true,
+  "unchanged_original_count": 9,
+  "unchanged_corner_count": 36,
+  "unchanged_pair_count": 36,
+  "original_strict_weak_CD_retained": true,
+  "complete_outer_rectangles": 44,
+  "direct_outer_terminals": 40,
+  "complete_I_angle_covers": 4,
+  "complete_inherited_H_height_covers": 2,
+  "physical_terminal_leaves": 58,
+  "distinct_bound_records": 64,
+  "terminal_kinds": {
+    "exact_interval_or_accepted_terminal": 15,
+    "positive_exact_reserve": 40,
+    "proved_empty_original_angle_interval": 1,
+    "proved_empty_analytic_frame": 2
+  },
+  "exact_affine_reserve_floor": "1/10000",
+  "accounting": {
+    "bound_rounds": 150,
+    "bound_deductions": 17267,
+    "printed_rows_checked": 38175,
+    "terminal_rows": 740,
+    "independently_rebuilt_three_square_energy_rows": 340
+  },
+  "independent_coordinate_extension_source_review_rechecked": true,
+  "all_closed_boundary_faces_checked": true,
+  "all_hand_outer_rows_and_nested_intervals_checked": true,
+  "physical_proof_and_review_sha256": {
+    "ancestry/proofs/FOUR_ORIGINAL_PLANAR_ENERGY_INDEPENDENT_REVIEW.md": "5808a7fa00f490f508ae2c2612ed6aeb6ec352eff96960ff7be357676260cd28",
+    "ancestry/proofs/FOUR_ORIGINAL_PLANAR_MATCHING_AND_ENERGY_HAND_PROOF.md": "c8e665a2abd2c67df541e612c874bc30b469f817cb6151cd77e21179533b0c18",
+    "ancestry/proofs/GENERAL_SIDE_CHANNEL_CAP_INNER_ARC.md": "f76d76ef2feccc80098fb6d10d6316af4e393d3ae34d4953846dd27b80c137cb",
+    "ancestry/proofs/GLOBAL_NINE_CENTRAL_CAPACITY_ROWS.md": "2eb8c70bc3fb714e39803243b316e76791df0fbe6ff6cbac862f097b0733725b",
+    "ancestry/proofs/PHYSICAL_SQUARE_AREA_MOMENT_HAND_PROOF.md": "86f402efbf135228d2dd0d034fa55f56206c9176f4afe8354c4cf880b3fab293",
+    "ancestry/proofs/SMALLER_CENTRAL_DISKS_NINE_UNIT_CAPACITY.md": "b0b2858252d2a3bee205d40f97958da445ece0a3a4e05bd693340b2e94884257",
+    "ancestry/proofs/THREE_SQUARE_CENTER_ENERGY_HAND_PROOF.md": "9bc240c0c7f1f25f434a6bc74af9ac8796990a7c44f5ce6335527ec015468c22",
+    "ancestry/reviews/A_EMPTY_ANGLE_TERMINAL_EXTENSION_REVIEW.json": "d2097ebcd3b81448f40268fe4468917fa213f5f6a1750d24dfd5a02eb4bdfdb2",
+    "ancestry/reviews/A_EXTENDED_FIXED_SLOPE_ASSEMBLY_SOURCE_REVIEW.json": "05eb3e2a00e02032ed86b36a64e314a3336f68528e51ff99363ac74110ae32b4",
+    "ancestry/reviews/A_INHERITED_SLOPE_COVER_SOURCE_REVIEW.json": "5571eb6288a54a9d715a1a58e8130f012b40c49521853d34d3d125f5f514df1a",
+    "ancestry/reviews/A_RESTRICTED_TRIPLE_ENERGY_CHECKER_SOURCE_REVIEW.json": "92587e6760af98112e22151d4c5b930701823c0cc6fe251fae8de329d623450b",
+    "ancestry/reviews/A_SLOPE_COVER_V2_HASH_GUARD_SUPPLEMENT.json": "401a02836b0e04ca1bdd836a1add148de4f37ea494119a16b8c44892d4532bce",
+    "ancestry/reviews/A_TRIPLE_ENERGY_OUTER_WRAPPER_SOURCE_REVIEW.json": "7fef93a5274e823404cac4509675853c3acb714113b9806d98e81aa692ba16a0",
+    "ancestry/reviews/ROOT_COORDINATE_COVER_SOURCE_REVIEW.json": "780e562655fef9044766e6f2857818be97bef54ab475a887ba0e250d9b87112c",
+    "ancestry/reviews/THREE_SQUARE_CENTER_ENERGY_INDEPENDENT_REVIEW.json": "ce2872aa4e7d14f50e7157ac03a3df7bbab17c7461679650ec76efeae3dc2d30",
+    "ancestry/reviews/THREE_SQUARE_CENTER_ENERGY_INDEPENDENT_REVIEW.md": "772a2569b12f07075eda6f79fbf17df96cdd2d8938dc5ab79d97df04781015a3",
+    "ancestry/reviews/THREE_SQUARE_ENERGY_ROW_REPLAY.json": "ceeee89ab5d06ef7119507c4fb2d870a8aa2f1a6b9abe5e78c536687e75cd45e",
+    "ancestry/reviews/THREE_SQUARE_ENERGY_ROW_REVIEW.md": "53bdf24d5e580c2f1bbb0935a2dec471826a4c5bec3036fb01fb4cdc3b2ce54a",
+    "ancestry/reviews/review_three_square_center_energy.py": "0a6846ec02bb89a51be716af21d69f9b9b6136a6b2cac4b26b26e6b46135a677",
+    "ancestry/reviews/verify_A_slope_cover_reviewed_v1.py": "d5c7d656c73e31dd96ef75965556a040937f700a36ed925f22443fa04d95d229"
+  },
+  "all_frozen_inputs_unchanged": true,
+  "foreign_files_modified": false,
+  "arithmetic_bound_replay_duplicated": false,
+  "scope": "Complete unchanged A7c original is supported, subject to the root fresh exact replay; no whole-mask claim.",
+  "original_credit_from_this_review": 0,
+  "new_masks": 0,
+  "lean_lake_ci_run": false
+}
