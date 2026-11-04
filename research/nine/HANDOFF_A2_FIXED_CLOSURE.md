@@ -109,6 +109,17 @@ The precise unresolved predicates are the unchanged paths of these IDs:
 
 ## Current mathematical obstruction and useful inputs
 
+The [shared ABID/AHID sharp boundary terminals](A2_00100_SHARED_SHARP_BOUNDARY_TERMINALS.md)
+now include the exact `b=1/200, U=53/100` specialization. They cover
+neighborhoods of the aligned slider family, retain the strict CD equality
+argument, and require explicit horizontal and upward-shoulder orders.
+Their fixed complements have 17 ABID or 18 AHID closed domains per
+parameter row (one fewer only if `x_I<x_D` is independently certified).
+The [source-bound review and portable exact replay](computer_assisted/a2_00100_shared_strict_boundary_manifest.json)
+pass. No whole original is closed by this conditional tool alone. Combine
+row guards by covering the intersection of their complements; do not
+silently discard a complement that still contains an aligned Q control.
+
 Two additional independently checked physical tools are available in
 the current continuation: the [planar four-original matching and energy
 theorem](FOUR_ORIGINAL_PLANAR_MATCHING_AND_ENERGY_HAND_PROOF.md), published

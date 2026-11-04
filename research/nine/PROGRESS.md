@@ -28,6 +28,19 @@ imports and external workspace reads are rejected. The remaining families
 are **A5, B14, C8, D3**. No whole mask, positional root or roadmap gate is
 newly closed.
 
+### Shared sharp boundary theorem: conditional tool, zero new closures
+
+The [ABID/AHID boundary theorem](A2_00100_SHARED_SHARP_BOUNDARY_TERMINALS.md)
+retains the original strict CD bit and excludes three explicit small-angle,
+small-height-variation regions, including neighborhoods of the aligned
+slider family. Its new exact specialization is `|beta|<=1/200` and total
+row-height variation at most `53/100`. Both row choices and every order
+hypothesis are explicit. Independent review accepted the continuous proof;
+a fresh portable replay checked 150 exact rational conditions and 512
+signed-variation identities. The complementary domains remain obligations,
+so the register stays **201/30** and the mask ledger stays **8/24**.
+[Immutable evidence](computer_assisted/a2_00100_shared_strict_boundary_manifest.json).
+
 ### Preceding two-B checkpoint: 200 CLOSED / 31 OPEN
 
 The [two complete B quadratic covers](A2_00100_TWO_B_FIXED_CENTER_PSD_CLOSURES.md)

@@ -1,0 +1,56 @@
+{
+  "schema": "a_independent_shared_strict_terminal_review_v1",
+  "status": "PASS_CONDITIONAL_PHYSICAL_THEOREM",
+  "parameter": [
+    "1/200",
+    "53/100",
+    "7/10"
+  ],
+  "independent_formula_reserves": {
+    "b": "1/200",
+    "1/2-b": "99/200",
+    "U": "53/100",
+    "L": "7/10",
+    "c": "1989849/4000000",
+    "1-2b rho-U": "2729/6000",
+    "1-L-2b rho": "1709/6000",
+    "L-rho+3/2-C0": "980929/8999775",
+    "X0-rho-C0-(1+b)/2": "58152193/143996400",
+    "az-kb": "3674733/80000",
+    "kz-ab": "8132593/640000",
+    "Bz-kb": "537399/40000",
+    "kz-Bb": "8236593/640000",
+    "kc-e_minus": "87501541257/5119936000000",
+    "e_plus-kc": "2792462458743/5119936000000",
+    "kc+e_minus-lambda": "259285436725579581/68264106688000000",
+    "p": "52064654458743/5119936000000",
+    "q-p": "249227021525579581/68264106688000000",
+    "A-p": "133416791516419490641027607/327651328921587200064000000",
+    "K": "73603679954/1599920001",
+    "epsilon": "58049449601280546655747607/327651328921587200064000000"
+  },
+  "epsilon": "58049449601280546655747607/327651328921587200064000000",
+  "source_sha256": {
+    "/workspace/scratch/fee12ff81cbd/global_theorem/SHARED_ABID_STRICT_BOUNDARY_TERMINAL.md": "a4b923589a52be57fb84e484c92f4438c275dbc13e5b01a8e9add9d4dd40edcb",
+    "/workspace/scratch/fee12ff81cbd/global_theorem/shared_strict_row_terminal.py": "43a74c66c7c0b91da76e6577ce511e6ae8de7bda9ab6e0adbf81a1cc2b013d43",
+    "/workspace/scratch/fee12ff81cbd/global_theorem/check_shared_strict_row_terminal.py": "9c45d49e003836bbe3de820d0a383842b42770334b1dd6d442140a9038185e17",
+    "/workspace/scratch/fee12ff81cbd/global_theorem/SHARED_ABID_STRICT_TERMINAL_CHECK.json": "24174d47b3871e53f07859241d0e4dc7be024c3db678490558fca1591629b691",
+    "/workspace/scratch/fee12ff81cbd/pr11/research/nine/ALL_SIGN_CORRELATED_CORNER_ROW_HAND_STRENGTHENING.md": "0d233bddea414938482cb312519da061a546d26c4ee5a5bb83a14b48c178ed02",
+    "/workspace/scratch/29af4f6e10bf/current_proof/shared_capacity_three_b_v4/geometry/weak_outer_correlated_corner_row_arithmetic.py": "b67785b140fbdd448bd43d720299491c96649be3fe76c08a4e73fe5725431c4e"
+  },
+  "c744_certified_order_reserves": {
+    "x_D_min-x_I_max": "434432029724121/5000000000000000",
+    "y_E_min-y_A_max": "65295/131072",
+    "y_G_min-y_D_max": "137441/524288"
+  },
+  "c744_prefix": "/workspace/scratch/0220f3e5a56d/a_family/central_cover_bounds/positive-c744bc031d40ee64.json",
+  "c744_prefix_sha256": "ccd730436715dff158a6d99fad5c9b55729c26d111c9b7ba25a78b24808e4638",
+  "ABID_complement_domains": 17,
+  "AHID_complement_domains": 18,
+  "with_certified_I_less_D": [
+    16,
+    17
+  ],
+  "new_original_cells": 0,
+  "new_masks": 0
+}
