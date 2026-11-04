@@ -55,6 +55,17 @@ terminal rows, with the complete hand table and independent assembly review.
 All 174 portable archive members match their frozen bytes. This is a whole
 fixed-rectangle proof; the B16a original remains OPEN and no ledger changes.
 
+## Reviewed exact Dc71 assembly engine
+
+The [source checkpoint](computer_assisted/dc71_original_assembly/README_CODE_CHECKPOINT.md)
+adds a reviewed complete-cover assembler for the unchanged original16-I/56-H
+cover, recursive original-angle covers and the accepted sharp geometric
+terminal on a freshly replayed OPEN state. All53 focused routing and attachment
+checks pass again in a fresh portable copy. A separate literal audit rules out
+double-counting cumulative continuation prefixes. These fixture tests are not
+physical arithmetic replay. The complete frozen proof packet is a separate
+acceptance step; this source checkpoint changes no original or mask ledger.
+
 ## Current Dc71 fixed-grid checkpoint
 
 The [complete sixteen-I declaration](A2_00100_DC71_I16_SIX_ROUND_CHECKPOINT.md)

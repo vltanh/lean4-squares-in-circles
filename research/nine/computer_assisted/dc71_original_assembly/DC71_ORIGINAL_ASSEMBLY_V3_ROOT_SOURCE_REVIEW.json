@@ -1,0 +1,31 @@
+{
+  "schema": "independent_root_source_review_v1",
+  "reviewed_by": "root, separately from the author",
+  "status": "PASS_COVERAGE_ATTACHMENT_AND_SHARP_TERMINAL_SOURCE_REVIEW_PENDING_CONCRETE_REPLAY",
+  "checker": "a_family/other_masks/dc71_original_assembly/verify_dc71_original_cover_v3.py",
+  "checker_sha256": "9d435250cbea7a658cab972f55070e32691904018ca951d2e93796c63a6568b6",
+  "reviewed_assertions": [
+    "All sixteen original closed I rectangles occur once in fixed order and their exact endpoints come from the independently replayed original prefix.",
+    "The seven surviving I parents have fixed completed six-round hashes and the exact original caller; all fifty-six derived H rectangles occur once in their full closed 2 by 4 grids.",
+    "Each H proof is attached to its exact same-label I/H rectangle and independently reconstructed parent-state digest, retaining every other inherited bound.",
+    "A recursive slope cover requires the literal original-slope partition kind, unchanged parent hash/schema/prior, selected original, partition size and every consecutive child index.",
+    "Each slope endpoint is reconstructed with rational arithmetic from its already independently replayed parent; the complete closed sibling union is checked and every child is replayed.",
+    "Only pinned unchanged exact physical checkers, interval primitives and the freshly replayed energy theorem decide arithmetic conclusions.",
+    "The interrupted I12/H00 record is admitted only through its separately reviewed complete-prefix interval terminal and exact frozen hash, without its unfinished suffix.",
+    "Completed OPEN states require their actual final test and remain explicit OPEN leaves; any such leaf prevents whole-original credit.",
+    "Cached states originate only from completed independent replays, are bound to immutable hashes, and all frozen/source dependencies are rehashed through final reporting.",
+    "The full original-nine strict 001/00 caller, 36 original corners and 36 pairs are retained; no slope or center restriction changes the immutable original denominator."
+  ],
+  "accounting_followup": "Author asked to verify cumulative continuation totals do not separately recount their literal prefixes. This does not affect the reviewed coverage or exclusion logic.",
+  "concrete_replay_performed_by_this_review": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "lean_lake_ci_run": false,
+  "previous_source_review_sha256": "30816074e6d215488d8c200f8756e7a9735d516694a299b7cac59e49dee78c68",
+  "reviewed_delta": "Adds only a separately justified sharp geometric terminal on an unchanged completed OPEN state. The exact component and complete closed-domain attachment are replayed first; final_test is reconstructed; all original-nine quantities and scopes remain. The pinned helper proves the chosen complete row guard from independently rebuilt physical bounds, including horizontal orders, upward shoulder gaps, all seven absolute frames and total height variation. The accepted physical hand theorem then excludes q<Q and its strict-CD closed-Q face. The underlying OPEN record and report remain immutable. All three helper/hand dependency hashes are checked on entry and after evaluation and are part of the full frozen inventory.",
+  "physical_helper_sha256": "43a74c66c7c0b91da76e6577ce511e6ae8de7bda9ab6e0adbf81a1cc2b013d43",
+  "physical_hand_sha256": [
+    "a4b923589a52be57fb84e484c92f4438c275dbc13e5b01a8e9add9d4dd40edcb",
+    "0d233bddea414938482cb312519da061a546d26c4ee5a5bb83a14b48c178ed02"
+  ]
+}
