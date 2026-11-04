@@ -1,0 +1,44 @@
+{
+  "schema": "original_row_mask_transfer_root_source_and_hand_review_v1",
+  "status": "PASS_CONDITIONAL_ORIGINAL_ROW_SPECIALIZATION_AND_COMPLETE_ESCAPE_COVER",
+  "source_sha256": {
+    "/workspace/scratch/fee12ff81cbd/global_theorem/FULL_MASK_TRANSFER_AND_ORIGINAL_ROW_REDUCTION_v2.json": "e9090ecd6aeac9de625e6bc44f7cdef049cc9720a05b108c3783a468937cddf3",
+    "/workspace/scratch/fee12ff81cbd/global_theorem/FULL_MASK_TRANSFER_AND_ORIGINAL_ROW_REDUCTION_v2.md": "6d95730bd97d4a69e6f3028b06b8c5bdb1605334f6f86f92e5c599f9bc09ec50",
+    "/workspace/scratch/fee12ff81cbd/global_theorem/ORIGINAL_ROW_SPECIALIZATION_DEPENDENCY_AUDIT.json": "563be496bd3e65958f2cbe4a3125ed7c923d2c384cd2de1a9fdfab8a1ca25136",
+    "/workspace/scratch/fee12ff81cbd/a_family/other_masks/ORIGINAL_ABCD_OPPOSITE_TILT_SPECIALIZATION_INDEPENDENT_REVIEW.json": "246c147cd9e70adf71a61ce8fce5252f40c660e28a37c36f1ea4331bee39a404",
+    "/workspace/scratch/fee12ff81cbd/c887_whole_eight_checkpoint_package/opposite_tilt_theorem/HAND_PROOF.md": "db830ffbebdc807b0e05f78766e0a0509d11418be31b9a7ef0623b212328831a",
+    "/workspace/scratch/fee12ff81cbd/c887_whole_eight_checkpoint_package/opposite_tilt_theorem/MANIFEST.json": "603024e697b2d11b6ef4dc5092cf07df7cccaf5ddefbac1bc4bb04d0338d2104"
+  },
+  "full_normative_note_and_geometric_hand_sections_1_through_7_read": true,
+  "all_independent_review_bound_sources_rehashed": 112,
+  "physical_row_substitution": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "actual_projection_premises_only": [
+    "EF",
+    "FG"
+  ],
+  "pair_caps_on": [
+    "AE",
+    "DG"
+  ],
+  "source_section7_original001_attachment_unused": true,
+  "strict_radius_cap_sum_contradiction_retained": true,
+  "closed_Q_aligned_all_three_unit_main_gaps_contradict_any_strict_weak_main_bit": true,
+  "common_vertical_reflection_covers_both_opposite_endpoint_sign_orientations": true,
+  "complete_closed_height_rows_independently_reconstructed": 8,
+  "complete_closed_same_sign_conjunctions": 2,
+  "max_signed_increment_identity_justified_by_independent_sign_choices": true,
+  "every_threshold_zero_angle_and_contact_face_retained": true,
+  "original_H_I_and_all_36_pair_conjuncts_retained": true,
+  "open_reversal_classes_checked": 14,
+  "open_masks_checked": 24,
+  "conditional_cover_does_not_close_any_member": true,
+  "inherited_polynomial_table_not_replayed_in_this_review": true,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "new_positional_roots": 0
+}

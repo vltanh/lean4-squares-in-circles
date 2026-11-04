@@ -1,0 +1,311 @@
+{
+  "schema": "fixed_mask_transfer_and_original_ABCD_opposite_tilt_reduction_v2",
+  "status": "PROPOSED_EXACT_RELABELING_FOR_INDEPENDENT_REVIEW",
+  "source_sha256": {
+    "/workspace/scratch/fee12ff81cbd/pr11/research/nine/gates/A2_MASK_FRONTIER.json": "c25e3c95b3f6c71463bc21d59a714a7e417bbd366176f8d06f73cb7c45f3f5ed",
+    "/workspace/scratch/fee12ff81cbd/pr11/research/nine/A2_COVERAGE_AND_CLOSURE_CONTRACT.md": "dd4237d8823f1a8b82dd47781e91a859a2684bfdac2b7dfc9f9c8dd73e686520",
+    "/workspace/scratch/fee12ff81cbd/c887_whole_eight_checkpoint_package/opposite_tilt_theorem/HAND_PROOF.md": "db830ffbebdc807b0e05f78766e0a0509d11418be31b9a7ef0623b212328831a",
+    "/workspace/scratch/fee12ff81cbd/a_family/other_masks/aligned_blocker_replacement_packet/FULL_CALLER_NEAR_HORIZONTAL_REPLACEMENT_HAND_PROOF.md": "3b3164cccab5bf09401eb2c3d8e56ac5dfdc9fc6bccb8a0e9a1d9390c188d7f1",
+    "/workspace/scratch/fee12ff81cbd/a_family/other_masks/unit_height_blocker_packet/UNIT_HEIGHT_ALIGNED_ENDPOINT_BLOCKER_HAND_PROOF.md": "376fdc879e70e9ed200ac1a56bdacd822e56bd2c440cb76ac41b107a2eba86d3",
+    "/workspace/scratch/fee12ff81cbd/pr11/research/nine/SEVEN_ORIGINAL_ALL_OPEN_MASKS_OBSTRUCTION.md": "a6027271e7c02150ce60be342990c4fc11d5d141f4ff95a6b8d89d9fb1aa62f9",
+    "/workspace/scratch/fee12ff81cbd/global_theorem/FULL_MASK_TRANSFER_AND_ORIGINAL_ROW_REDUCTION.md": "0dd9f9d4db90d0f891ac0b48fb0cb97ff3a9f9548821efa73303712a05638fe9",
+    "/workspace/scratch/fee12ff81cbd/global_theorem/ORIGINAL_ROW_SPECIALIZATION_PREMISE_MAP.md": "4b5e9ae23515d6e3c3e6613fc177d6f06ca7b7b87bfb69f0cae4dc44c6cebdf7",
+    "/workspace/scratch/fee12ff81cbd/global_theorem/FULL_MASK_TRANSFER_AND_ORIGINAL_ROW_REDUCTION_v2.md": "6d95730bd97d4a69e6f3028b06b8c5bdb1605334f6f86f92e5c599f9bc09ec50",
+    "/workspace/scratch/fee12ff81cbd/global_theorem/ORIGINAL_ROW_SPECIALIZATION_DEPENDENCY_AUDIT.json": "563be496bd3e65958f2cbe4a3125ed7c923d2c384cd2de1a9fdfab8a1ca25136",
+    "/workspace/scratch/fee12ff81cbd/c887_whole_eight_checkpoint_package/opposite_tilt_theorem/MANIFEST.json": "603024e697b2d11b6ef4dc5092cf07df7cccaf5ddefbac1bc4bb04d0338d2104"
+  },
+  "open_mask_count": 24,
+  "open_reversal_classes": [
+    [
+      "001/00",
+      "100/00"
+    ],
+    [
+      "001/01",
+      "100/10"
+    ],
+    [
+      "001/10",
+      "100/01"
+    ],
+    [
+      "001/11",
+      "100/11"
+    ],
+    [
+      "011/00",
+      "110/00"
+    ],
+    [
+      "011/01",
+      "110/10"
+    ],
+    [
+      "011/10",
+      "110/01"
+    ],
+    [
+      "011/11",
+      "110/11"
+    ],
+    [
+      "101/00"
+    ],
+    [
+      "101/01",
+      "101/10"
+    ],
+    [
+      "101/11"
+    ],
+    [
+      "111/00"
+    ],
+    [
+      "111/01",
+      "111/10"
+    ],
+    [
+      "111/11"
+    ]
+  ],
+  "immediate_complete_00100_transfer": "100/00",
+  "original_row": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "actual_short_chain": [
+    "E",
+    "F",
+    "G"
+  ],
+  "main_order_from_original_cones": true,
+  "opposite_sign_guard": [
+    "theta_A>=0 and theta_D<=0",
+    "theta_A<=0 and theta_D>=0"
+  ],
+  "variation_guard": "V_ABCD<=23/100",
+  "closed_Q_exclusion_requires_any_strict_weak_main_bit": true,
+  "strict_radius_exclusion_requires_no_main_bit_assumption": true,
+  "closed_same_sign_escape_domains": [
+    [
+      "theta_A>=0",
+      "theta_D>=0"
+    ],
+    [
+      "theta_A<=0",
+      "theta_D<=0"
+    ]
+  ],
+  "signed_height_escape_rows": [
+    {
+      "signs": [
+        -1,
+        -1,
+        -1
+      ],
+      "coefficient_order": [
+        "y_A",
+        "y_B",
+        "y_C",
+        "y_D"
+      ],
+      "coefficients": [
+        1,
+        0,
+        0,
+        -1
+      ],
+      "relation": ">=",
+      "rhs": "23/100"
+    },
+    {
+      "signs": [
+        -1,
+        -1,
+        1
+      ],
+      "coefficient_order": [
+        "y_A",
+        "y_B",
+        "y_C",
+        "y_D"
+      ],
+      "coefficients": [
+        1,
+        0,
+        -2,
+        1
+      ],
+      "relation": ">=",
+      "rhs": "23/100"
+    },
+    {
+      "signs": [
+        -1,
+        1,
+        -1
+      ],
+      "coefficient_order": [
+        "y_A",
+        "y_B",
+        "y_C",
+        "y_D"
+      ],
+      "coefficients": [
+        1,
+        -2,
+        2,
+        -1
+      ],
+      "relation": ">=",
+      "rhs": "23/100"
+    },
+    {
+      "signs": [
+        -1,
+        1,
+        1
+      ],
+      "coefficient_order": [
+        "y_A",
+        "y_B",
+        "y_C",
+        "y_D"
+      ],
+      "coefficients": [
+        1,
+        -2,
+        0,
+        1
+      ],
+      "relation": ">=",
+      "rhs": "23/100"
+    },
+    {
+      "signs": [
+        1,
+        -1,
+        -1
+      ],
+      "coefficient_order": [
+        "y_A",
+        "y_B",
+        "y_C",
+        "y_D"
+      ],
+      "coefficients": [
+        -1,
+        2,
+        0,
+        -1
+      ],
+      "relation": ">=",
+      "rhs": "23/100"
+    },
+    {
+      "signs": [
+        1,
+        -1,
+        1
+      ],
+      "coefficient_order": [
+        "y_A",
+        "y_B",
+        "y_C",
+        "y_D"
+      ],
+      "coefficients": [
+        -1,
+        2,
+        -2,
+        1
+      ],
+      "relation": ">=",
+      "rhs": "23/100"
+    },
+    {
+      "signs": [
+        1,
+        1,
+        -1
+      ],
+      "coefficient_order": [
+        "y_A",
+        "y_B",
+        "y_C",
+        "y_D"
+      ],
+      "coefficients": [
+        -1,
+        0,
+        2,
+        -1
+      ],
+      "relation": ">=",
+      "rhs": "23/100"
+    },
+    {
+      "signs": [
+        1,
+        1,
+        1
+      ],
+      "coefficient_order": [
+        "y_A",
+        "y_B",
+        "y_C",
+        "y_D"
+      ],
+      "coefficients": [
+        -1,
+        0,
+        0,
+        1
+      ],
+      "relation": ">=",
+      "rhs": "23/100"
+    }
+  ],
+  "all_shared_equality_faces_retained": true,
+  "complete_domains_without_proved_sign_guard": 10,
+  "complete_domains_with_proved_opposite_sign_guard": 8,
+  "new_geometric_polynomial_certificate": false,
+  "numerical_discovery_run": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "literal_dependency_audit": {
+    "file": "/workspace/scratch/fee12ff81cbd/global_theorem/ORIGINAL_ROW_SPECIALIZATION_DEPENDENCY_AUDIT.json",
+    "sha256": "563be496bd3e65958f2cbe4a3125ed7c923d2c384cd2de1a9fdfab8a1ca25136"
+  },
+  "normative_hand_proof": {
+    "file": "/workspace/scratch/fee12ff81cbd/global_theorem/FULL_MASK_TRANSFER_AND_ORIGINAL_ROW_REDUCTION_v2.md",
+    "sha256": "6d95730bd97d4a69e6f3028b06b8c5bdb1605334f6f86f92e5c599f9bc09ec50"
+  },
+  "actual_projection_pairs_required": [
+    [
+      "E",
+      "F"
+    ],
+    [
+      "F",
+      "G"
+    ]
+  ],
+  "closed_Q_requires_some_original_strict_weak_pair_among": [
+    [
+      "A",
+      "B"
+    ],
+    [
+      "B",
+      "C"
+    ],
+    [
+      "C",
+      "D"
+    ]
+  ]
+}

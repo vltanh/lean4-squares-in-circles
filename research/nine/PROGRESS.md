@@ -82,6 +82,22 @@ terminal rows, with the complete hand table and independent assembly review.
 All 174 portable archive members match their frozen bytes. This is a whole
 fixed-rectangle proof; the B16a original remains OPEN and no ledger changes.
 
+## Original ABCD row: complete necessary cover for short-00 masks
+
+The [reviewed mask-transfer note](ORIGINAL_FOUR_ROW_MASK_TRANSFER_AND_CLOSED_ESCAPE_COVER.md)
+applies the accepted opposite-endpoint theorem to the unchanged original
+ABCD row. It requires actual EF/FG and no actual main link. Opposite endpoint
+signs and total main-row height variation at most23/100 exclude strict
+radius; any strict weak main bit also excludes the closed-Q equality case.
+The complete necessary remainder consists of two closed same-sign domains
+and eight signed-height escapes, or the eight height escapes when opposite
+signs are already proved. Both angle constraints in each same-sign domain,
+all shared threshold faces and all nine original squares are retained.
+
+All24 open masks form14 explicit reversal classes. This is a conditional
+reduction with a portable source map and two reviews; every remaining
+domain still needs its own complete proof. No fixed ledger is changed.
+
 ## D6c5: complete I21 H and frame cover
 
 The [complete I21 supplement](A2_00100_D6C5_I21_COMPLETE_H_COVER_CHECKPOINT.md)
