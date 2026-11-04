@@ -1,0 +1,27 @@
+{
+  "status": "PASS_PORTABLE_PHYSICAL_UNIT_CORNER_ROWS",
+  "premise_bindings_sha256": "f5132c24915847a7396c0810dd7adf8d7fd658554d211f706369f327bee543eb",
+  "immutable_inputs_checked": 12,
+  "primary": {
+    "status": "PASS_EXACT_UNIT_FRAME_CORNER_ROWS",
+    "independently_rebuilt_rows": 864,
+    "exact_physical_expansions": 12096,
+    "contained_corner_evaluations": 10044,
+    "zero_width_interval_rows": 432,
+    "damaged_literals_rejected": 1728,
+    "nonunit_relaxation_control_violation": "4623/160000",
+    "new_original_cells": 0,
+    "new_masks": 0
+  },
+  "independent_review": {
+    "status": "PASS_INDEPENDENT_B_UNIT_CORNER_REVIEW",
+    "exact_literal_and_residual_checks": 720,
+    "physical_contained_corner_checks": 720,
+    "original_cells_closed": 0,
+    "masks_closed": 0
+  },
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "numerical_producer_imported": false,
+  "lean_lake_ci_run": false
+}

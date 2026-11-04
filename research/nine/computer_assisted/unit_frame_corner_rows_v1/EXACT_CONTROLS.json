@@ -1,0 +1,17 @@
+{
+  "status": "PASS_EXACT_UNIT_FRAME_CORNER_ROWS",
+  "independently_rebuilt_rows": 864,
+  "exact_physical_expansions": 12096,
+  "contained_corner_evaluations": 10044,
+  "zero_width_interval_rows": 432,
+  "damaged_literals_rejected": 1728,
+  "nonunit_relaxation_control_violation": "4623/160000",
+  "source_sha256": {
+    "/workspace/scratch/f9f48fcfb253/d_work/unit_frame_corner/check_physical_unit_corner_rows.py": "07abc3da40d565c9a9d5064d812a8727657aff68f785790a6b121e76fc1a3df2",
+    "/workspace/scratch/f9f48fcfb253/d_work/unit_frame_corner/physical_unit_corner_rows.py": "cdfe8b1f48f6a84bb929f40de7e05cae35134acbd84cc1b4c95fda84d517d575",
+    "/workspace/scratch/f9f48fcfb253/d_work/unit_frame_corner/independent_physical_unit_corner_rows.py": "8be92fbab72d6761fd51fc75be705b00354e5e14311ca5125693c3f1ee42c2f4",
+    "/workspace/scratch/f9f48fcfb253/d_work/unit_frame_corner/UNIT_FRAME_CORNER_HAND_PROOF.md": "c3064d4954d604fe838241c21ef6c52ae6eedd52799fe128870eb2fbb0ed749f"
+  },
+  "new_original_cells": 0,
+  "new_masks": 0
+}

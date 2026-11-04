@@ -1,0 +1,28 @@
+{
+  "schema": "unit_frame_corner_rows_proof_packet_v1",
+  "status": "PHYSICAL_PROOF_AND_INDEPENDENT_REVIEW_PASS",
+  "source_freeze_sha256": "c49138469a346f35281023548bcf66a50eb3690ba84296478d206fb7bd25409d",
+  "original_variables": 54,
+  "new_auxiliary_variables": 0,
+  "required_premises": [
+    "Same original unit-frame and disk-corner predicates",
+    "Independently proved current center and signed-frame intervals",
+    "Literal-row and exact nonnegative multiplier replay"
+  ],
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "immutable_inputs": {
+    "EXACT_CONTROLS.json": "4e7493d660be7c6259d423891a4e0b4343bacfa059ae53a4d2f6e614c72bcf9d",
+    "README.md": "c79f54d19a5887a5cc5d8401877bb9661cc0ac163968e8366dd5559f874f9414",
+    "SOURCE_PREMISE_BINDINGS.json": "c49138469a346f35281023548bcf66a50eb3690ba84296478d206fb7bd25409d",
+    "UNIT_FRAME_CORNER_B_REVIEW.json": "79d7cacb81c079f9a60c831367e3669e5544da8f9686feb6256f7badc2549848",
+    "UNIT_FRAME_CORNER_B_REVIEW.md": "002920088cb66da8dfbd802b3f7222cbe61b07481bc0c26125ac75a6c02d56a3",
+    "UNIT_FRAME_CORNER_HAND_PROOF.md": "c3064d4954d604fe838241c21ef6c52ae6eedd52799fe128870eb2fbb0ed749f",
+    "check_physical_unit_corner_rows.py": "07abc3da40d565c9a9d5064d812a8727657aff68f785790a6b121e76fc1a3df2",
+    "independent_physical_unit_corner_rows.py": "8be92fbab72d6761fd51fc75be705b00354e5e14311ca5125693c3f1ee42c2f4",
+    "physical_unit_corner_rows.py": "cdfe8b1f48f6a84bb929f40de7e05cae35134acbd84cc1b4c95fda84d517d575",
+    "physical_unit_corner_separation.py": "4688fc598413db859724ed63160ba05dc396d2499eae78652bf19fe6a6c8ac82",
+    "review_physical_unit_corner_b.py": "08ab6a65703a6abf72429797cb91ed238b8040d28564f55759b93c3de4779f15",
+    "verify_all.py": "20ad78b734d6ab8c4ec845170c7bde5df9f0aeb03fb88a2fab95e793a92a39e2"
+  }
+}

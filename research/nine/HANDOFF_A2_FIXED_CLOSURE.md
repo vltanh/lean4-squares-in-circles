@@ -18,6 +18,13 @@ with a fresh whole-original portable replay. Accepted counts are
 
 ## Read first
 
+The [original-corner rows using physical unit frames](computer_assisted/unit_frame_corner_rows_v1/README.md)
+retain the exact square-offset contribution 1/2 before relaxation. The
+four-variable rows follow from one squared-distance slack and two rectangle
+slacks on already certified center/frame intervals. Independent physical
+review and both fresh exact suites pass, including degenerate intervals
+and 1,728 damaged literals. They add no auxiliary or original-cell credit.
+
 The [adaptive original-corner disk rows](computer_assisted/adaptive_original_corner_disk_v1/README.md)
 now supply exact supporting halfplanes in all 36 original corners. Integer
 upward support bounds and an independent squared-inequality checker remove
