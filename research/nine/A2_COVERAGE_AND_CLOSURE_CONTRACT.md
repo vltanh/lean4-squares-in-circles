@@ -190,8 +190,9 @@ the [complete B4ce cover](A2_00100_B4CE_FIXED_CENTER_BOUND_PSD_CLOSURE.md),
 the [complete C2f9 cover](A2_00100_C2F9_FIXED_CENTER_BOUND_CLOSURE.md),
 the [complete C953 cover](A2_00100_C953_COMPLETE_FIXED_CENTER_OWNED_SLOPE_CLOSURE.md),
 the [complete Bd090 cover](A2_00100_BD090_FIXED_CENTER_BOUND_PSD_CLOSURE.md),
-and the [complete B1a0 cover](A2_00100_B1A0_FIXED_CENTER_BOUND_CLOSURE.md),
-now exclude 214 of those cells and leave 17 OPEN. The
+the [complete B1a0 cover](A2_00100_B1A0_FIXED_CENTER_BOUND_CLOSURE.md),
+and the [complete A8b cover](A2_00100_A8B_FIXED_CENTER_AND_SLOPE_COVER_CLOSURE.md),
+now exclude 215 of those cells and leave 16 OPEN. The
 [stable register](gates/A2_00100_FIXED_FRONTIER.json) retains every original
 path and its physical caller. Shared closed faces are allowed. This
 coverage-qualified count is separate from all 32 mask statuses.

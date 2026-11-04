@@ -1,0 +1,64 @@
+{
+  "schema": "ordered_split_archive_v1",
+  "archive": "a2_00100_a_8b_fixed_center_slope_checkpoint.tar.gz",
+  "bytes": 84281062,
+  "sha256": "1345da2280fdb42ade1e11a593a9b888afeaab0d1227439a24c76f87aafef14c",
+  "parts": [
+    {
+      "file": "a2_00100_a_8b_fixed_center_slope_checkpoint.tar.gz.part01",
+      "bytes": 8388608,
+      "sha256": "5d591ab819442b4f1f8f2421c0e14a986dec914defaad093a0ad41fb8c58c708"
+    },
+    {
+      "file": "a2_00100_a_8b_fixed_center_slope_checkpoint.tar.gz.part02",
+      "bytes": 8388608,
+      "sha256": "ebdaa1fa924161c2e75d962f00bc85295ffa9f380abb0da93729d2df9aa67d48"
+    },
+    {
+      "file": "a2_00100_a_8b_fixed_center_slope_checkpoint.tar.gz.part03",
+      "bytes": 8388608,
+      "sha256": "f620479338679d2decf9516283f0def1df4a3d459773fe2f5710c4240a2fb5b2"
+    },
+    {
+      "file": "a2_00100_a_8b_fixed_center_slope_checkpoint.tar.gz.part04",
+      "bytes": 8388608,
+      "sha256": "9ad60870399480e47685b0b64e2fa6424bd7efb8d41c377b043ccd610028acf1"
+    },
+    {
+      "file": "a2_00100_a_8b_fixed_center_slope_checkpoint.tar.gz.part05",
+      "bytes": 8388608,
+      "sha256": "aa02ac335824428d0c20b12b20cb7164ad3cd772c6049b4e65e6df362f62ca6e"
+    },
+    {
+      "file": "a2_00100_a_8b_fixed_center_slope_checkpoint.tar.gz.part06",
+      "bytes": 8388608,
+      "sha256": "88fb359307e690d20db6227070ae798b660bb81edca91e76686edd57ec5bc0bf"
+    },
+    {
+      "file": "a2_00100_a_8b_fixed_center_slope_checkpoint.tar.gz.part07",
+      "bytes": 8388608,
+      "sha256": "9790aa749a147a27539dcd7e1322618051ba3be82ca9671d4e2eda105cd356ac"
+    },
+    {
+      "file": "a2_00100_a_8b_fixed_center_slope_checkpoint.tar.gz.part08",
+      "bytes": 8388608,
+      "sha256": "7f9ead309ca57709366b57d1142229476799330cca40f926cd0daaa18492980a"
+    },
+    {
+      "file": "a2_00100_a_8b_fixed_center_slope_checkpoint.tar.gz.part09",
+      "bytes": 8388608,
+      "sha256": "ac5ec8f05406e04c7ffb41fed886ac0c24fa4aa62f11e3864c925173890414c6"
+    },
+    {
+      "file": "a2_00100_a_8b_fixed_center_slope_checkpoint.tar.gz.part10",
+      "bytes": 8388608,
+      "sha256": "bd4b8d72d3f9f219372ca30cd728f12f8d72c1507d9a6d31d5ccf220b1633fd5"
+    },
+    {
+      "file": "a2_00100_a_8b_fixed_center_slope_checkpoint.tar.gz.part11",
+      "bytes": 394982,
+      "sha256": "514bb4045a4b10e2543c39a013a8bf41c1cdf5b313ac4a7ac58d4dfb722e7c88"
+    }
+  ],
+  "extraction": "Concatenate the listed parts in order, check the full archive hash, extract and run the independent checker."
+}
