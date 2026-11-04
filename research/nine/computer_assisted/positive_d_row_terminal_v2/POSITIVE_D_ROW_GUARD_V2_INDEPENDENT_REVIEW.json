@@ -1,0 +1,15 @@
+{
+  "status": "PASS_INDEPENDENT_POSITIVE_D_V2_GUARD_ARITHMETIC_AND_SOURCE_REVIEW",
+  "exact_checks": 529,
+  "helper_sha256": "6e0889310352649f077bf1b7675641fea873c57e651d4c7c478b29846f9fadab",
+  "reviewer_sha256": "3bfb1ca9b1feedf8eded40c6019df453dd8c84d0515fcf46a1ae8e492116f0e4",
+  "all_twelve_complement_rows_checked": true,
+  "both_original_extra_labels_retained": true,
+  "telescoping_and_reversed_differences_checked": true,
+  "physical_theorem": "POSITIVE_D_TOTAL_VARIATION_3_5_HAND_PROOF.md",
+  "hand_proof_sha256": "4a3a0fd7614545686c3ce2df8a24a38b048d10ec2a420c94ce63677b994e1ca1",
+  "conditional_scope_only": true,
+  "source_unchanged": true,
+  "new_original_cells": 0,
+  "new_masks": 0
+}
