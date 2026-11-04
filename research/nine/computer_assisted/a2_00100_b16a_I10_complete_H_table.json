@@ -1,0 +1,3552 @@
+{
+  "schema": "B16a_fixed_I10_complete_H_angle_hand_table_v1",
+  "status": "SOURCE_BOUND_TO_ACCEPTED_EXACT_REPLAY",
+  "id": "negative-16a2fc93c8d133f0",
+  "original_parent_path": [
+    [
+      "angle",
+      3,
+      0
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      0
+    ],
+    [
+      "position_cut",
+      [
+        11,
+        "1/2"
+      ],
+      1
+    ],
+    [
+      "f_side_escape",
+      [
+        5,
+        7
+      ],
+      [
+        3
+      ]
+    ]
+  ],
+  "original_prefix_sha256": "69ddd2dcc5383c3259187588a890ddadb4a6545e8bdcc11e653bdfb8bb6b3886",
+  "complete_I_tiles": [
+    [
+      1,
+      0
+    ]
+  ],
+  "closed_H_rectangles": [
+    {
+      "full_tile": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "kind": "direct_affine",
+      "I_rectangle": [
+        [
+          "-3112321/4194304",
+          "-163627/2097152"
+        ],
+        [
+          "-91/60",
+          "-91/120"
+        ]
+      ],
+      "H_rectangle": [
+        [
+          "-1474347/1048576",
+          "-1195819/2097152"
+        ],
+        [
+          "-120173/655360",
+          "838597/5242880"
+        ]
+      ],
+      "certificate_sha256": "596bc8d1813a3b771a5a3e0b6d35fd93402c3ae9db1143abb288a26921883308",
+      "packet_certificate": "data/fixed_hi_grid_capacity/negative-16a2fc93c8d133f0/1_0/tile_00.json",
+      "terminal_kind": "positive_exact_reserve",
+      "reserve": "463095920506399488784245659202477424594474307/267870279240162758438368490970287936058163200",
+      "positive_rational_floor": "864403/500000",
+      "bound_rounds": 0,
+      "bound_deductions": 0,
+      "bound_premise_rows": 0,
+      "terminal_rows": 5
+    },
+    {
+      "full_tile": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "kind": "exact_affine_induction",
+      "I_rectangle": [
+        [
+          "-3112321/4194304",
+          "-163627/2097152"
+        ],
+        [
+          "-91/60",
+          "-91/120"
+        ]
+      ],
+      "H_rectangle": [
+        [
+          "-1474347/1048576",
+          "-1195819/2097152"
+        ],
+        [
+          "838597/5242880",
+          "1319289/2621440"
+        ]
+      ],
+      "certificate_sha256": "05b940e65b029a0a9eddc3974b77f85ea183a21d5f9592cd1d0d2ce02fe2e56c",
+      "packet_certificate": "data/ordinary_H/I10_H01.json",
+      "terminal_kind": "positive_exact_reserve",
+      "reserve": "3890402264016810165937530368557632196477/59209131844243292642627181693127668793344",
+      "positive_rational_floor": "32853/500000",
+      "bound_rounds": 1,
+      "bound_deductions": 155,
+      "bound_premise_rows": 220,
+      "terminal_rows": 17
+    },
+    {
+      "full_tile": [
+        1,
+        0,
+        0,
+        2
+      ],
+      "kind": "exact_affine_induction",
+      "I_rectangle": [
+        [
+          "-3112321/4194304",
+          "-163627/2097152"
+        ],
+        [
+          "-91/60",
+          "-91/120"
+        ]
+      ],
+      "H_rectangle": [
+        [
+          "-1474347/1048576",
+          "-1195819/2097152"
+        ],
+        [
+          "1319289/2621440",
+          "4438559/5242880"
+        ]
+      ],
+      "certificate_sha256": "b25c3b3414b2467a9cd12cc72fbf2be83534885064be8708f1e22b0c7346c2eb",
+      "packet_certificate": "data/ordinary_H/I10_H02.json",
+      "terminal_kind": "positive_exact_reserve",
+      "reserve": "11402263532923125946450667603687331/10394734921871481092272966284083200",
+      "positive_rational_floor": "548463/500000",
+      "bound_rounds": 1,
+      "bound_deductions": 122,
+      "bound_premise_rows": 186,
+      "terminal_rows": 4
+    },
+    {
+      "full_tile": [
+        1,
+        0,
+        0,
+        3
+      ],
+      "kind": "direct_affine",
+      "I_rectangle": [
+        [
+          "-3112321/4194304",
+          "-163627/2097152"
+        ],
+        [
+          "-91/60",
+          "-91/120"
+        ]
+      ],
+      "H_rectangle": [
+        [
+          "-1474347/1048576",
+          "-1195819/2097152"
+        ],
+        [
+          "4438559/5242880",
+          "311927/262144"
+        ]
+      ],
+      "certificate_sha256": "7a45f51cf10da02d95bc70207d8202b8a8abeec44db88857d43cbc089f4de2f2",
+      "packet_certificate": "data/fixed_hi_grid_capacity/negative-16a2fc93c8d133f0/1_0/tile_03.json",
+      "terminal_kind": "positive_exact_reserve",
+      "reserve": "46531698210757281228233994193636393/38980255957018054096023623565312000",
+      "positive_rational_floor": "298431/250000",
+      "bound_rounds": 0,
+      "bound_deductions": 0,
+      "bound_premise_rows": 0,
+      "terminal_rows": 4
+    },
+    {
+      "full_tile": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "kind": "direct_affine",
+      "I_rectangle": [
+        [
+          "-3112321/4194304",
+          "-163627/2097152"
+        ],
+        [
+          "-91/60",
+          "-91/120"
+        ]
+      ],
+      "H_rectangle": [
+        [
+          "-1195819/2097152",
+          "17/64"
+        ],
+        [
+          "-120173/655360",
+          "838597/5242880"
+        ]
+      ],
+      "certificate_sha256": "f13d0e0fe58eb2a4222d5e1ffde9adebbe1f2abbf6f623c967350d57b40e988e",
+      "packet_certificate": "data/fixed_hi_grid_capacity/negative-16a2fc93c8d133f0/1_0/tile_04.json",
+      "terminal_kind": "positive_exact_reserve",
+      "reserve": "35213841752814530478313018230292575026191487883824301112733968265921874380773/22595005017168548693328941019838427931192434177263652543256456069120000000000",
+      "positive_rational_floor": "1558479/1000000",
+      "bound_rounds": 0,
+      "bound_deductions": 0,
+      "bound_premise_rows": 0,
+      "terminal_rows": 5
+    },
+    {
+      "full_tile": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "kind": "complete_I_slope_cover",
+      "I_rectangle": [
+        [
+          "-3112321/4194304",
+          "-163627/2097152"
+        ],
+        [
+          "-91/60",
+          "-91/120"
+        ]
+      ],
+      "H_rectangle": [
+        [
+          "-1195819/2097152",
+          "17/64"
+        ],
+        [
+          "838597/5242880",
+          "1319289/2621440"
+        ]
+      ],
+      "specification_sha256": "7a3a4da21c618bd71e1cf46496fd96175786f925aac71b5b3c5678ead878e0d9",
+      "terminal_kind": "complete_closed_angle_union",
+      "reserve": null,
+      "positive_rational_floor": null,
+      "bound_rounds": 9,
+      "bound_deductions": 1328,
+      "bound_premise_rows": 2276,
+      "terminal_rows": 106
+    },
+    {
+      "full_tile": [
+        1,
+        0,
+        1,
+        2
+      ],
+      "kind": "complete_I_slope_cover_with_D_subcovers",
+      "I_rectangle": [
+        [
+          "-3112321/4194304",
+          "-163627/2097152"
+        ],
+        [
+          "-91/60",
+          "-91/120"
+        ]
+      ],
+      "H_rectangle": [
+        [
+          "-1195819/2097152",
+          "17/64"
+        ],
+        [
+          "1319289/2621440",
+          "4438559/5242880"
+        ]
+      ],
+      "specification_sha256": "fc3a0d8168920ce64ac7621301f6542c970417fcae1a7d5b90af0e65c7f08ddd",
+      "terminal_kind": "complete_closed_angle_union",
+      "reserve": null,
+      "positive_rational_floor": null,
+      "bound_rounds": 39,
+      "bound_deductions": 6478,
+      "bound_premise_rows": 10571,
+      "terminal_rows": 355
+    },
+    {
+      "full_tile": [
+        1,
+        0,
+        1,
+        3
+      ],
+      "kind": "direct_affine",
+      "I_rectangle": [
+        [
+          "-3112321/4194304",
+          "-163627/2097152"
+        ],
+        [
+          "-91/60",
+          "-91/120"
+        ]
+      ],
+      "H_rectangle": [
+        [
+          "-1195819/2097152",
+          "17/64"
+        ],
+        [
+          "4438559/5242880",
+          "311927/262144"
+        ]
+      ],
+      "certificate_sha256": "f861db7d6fb1b50a98570a8ae3c4a4dc71272de2a5db5e94ae70ec1f07088d11",
+      "packet_certificate": "data/fixed_hi_grid_capacity/negative-16a2fc93c8d133f0/1_0/tile_07.json",
+      "terminal_kind": "positive_exact_reserve",
+      "reserve": "56298424821156119979091343043504908478293/51042355038140769519506191114765231718400",
+      "positive_rational_floor": "551487/500000",
+      "bound_rounds": 0,
+      "bound_deductions": 0,
+      "bound_premise_rows": 0,
+      "terminal_rows": 4
+    }
+  ],
+  "bound_terminal_leaves": [
+    {
+      "certificate_sha256": "05b940e65b029a0a9eddc3974b77f85ea183a21d5f9592cd1d0d2ce02fe2e56c",
+      "bound_rounds": 1,
+      "bound_deductions": 155,
+      "bound_premise_rows": 220,
+      "terminal_rows": 17,
+      "reserve": "3890402264016810165937530368557632196477/59209131844243292642627181693127668793344",
+      "terminal_kind": "positive_exact_reserve",
+      "roles": [
+        "ordinary_H_bound_terminal"
+      ],
+      "packet_certificate": "data/ordinary_H/I10_H01.json",
+      "full_tile": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "I_quarter": null,
+      "D_quarter": null,
+      "I_slope_interval": null,
+      "D_slope_interval": null,
+      "positive_rational_floor": "32853/500000",
+      "status": "CANDIDATE_CLOSED"
+    },
+    {
+      "certificate_sha256": "b25c3b3414b2467a9cd12cc72fbf2be83534885064be8708f1e22b0c7346c2eb",
+      "bound_rounds": 1,
+      "bound_deductions": 122,
+      "bound_premise_rows": 186,
+      "terminal_rows": 4,
+      "reserve": "11402263532923125946450667603687331/10394734921871481092272966284083200",
+      "terminal_kind": "positive_exact_reserve",
+      "roles": [
+        "ordinary_H_bound_terminal"
+      ],
+      "packet_certificate": "data/ordinary_H/I10_H02.json",
+      "full_tile": [
+        1,
+        0,
+        0,
+        2
+      ],
+      "I_quarter": null,
+      "D_quarter": null,
+      "I_slope_interval": null,
+      "D_slope_interval": null,
+      "positive_rational_floor": "548463/500000",
+      "status": "CANDIDATE_CLOSED"
+    },
+    {
+      "certificate_sha256": "f73c4c3ba6ace56494810b7683b84e6110054762c7293820097fa032cef40570",
+      "bound_rounds": 1,
+      "bound_deductions": 198,
+      "terminal_rows": 27,
+      "bound_premise_rows": 267,
+      "reserve": "77417676700210560616760551021343283432685503618300557025489793879/7980681234598003392277393377099305363483634578595538092761934725120",
+      "terminal_kind": "positive_exact_reserve",
+      "roles": [
+        "angle_cover_1_0_1_1"
+      ],
+      "packet_certificate": "data/local3_slopes/H_1_0_1_1/quarter_0.json",
+      "full_tile": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "I_quarter": 0,
+      "D_quarter": null,
+      "I_slope_interval": [
+        "-27972088718207/140737488355328",
+        "-6912260133211/70368744177664"
+      ],
+      "D_slope_interval": null,
+      "positive_rational_floor": "97/10000",
+      "status": "CANDIDATE_CLOSED"
+    },
+    {
+      "certificate_sha256": "06095b0a68d2bf692dc153600c05e531a33d35e116b6bdc3866ded51ae8ccaea",
+      "bound_rounds": 1,
+      "bound_deductions": 200,
+      "terminal_rows": 25,
+      "bound_premise_rows": 233,
+      "reserve": "5544283805748757387222781192979086700428126516849376606960140439404959/349900694168897899063032534089273317982475146388183926096910410684825600",
+      "terminal_kind": "positive_exact_reserve",
+      "roles": [
+        "angle_cover_1_0_1_1"
+      ],
+      "packet_certificate": "data/local3_slopes/H_1_0_1_1/quarter_1.json",
+      "full_tile": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "I_quarter": 1,
+      "D_quarter": null,
+      "I_slope_interval": [
+        "-6912260133211/70368744177664",
+        "323048185363/140737488355328"
+      ],
+      "D_slope_interval": null,
+      "positive_rational_floor": "3169/200000",
+      "status": "CANDIDATE_CLOSED"
+    },
+    {
+      "certificate_sha256": "e56cc66f8f44760692fce0a9f35022102ece8591df3f298e7e8a902820e37648",
+      "bound_rounds": 1,
+      "bound_deductions": 215,
+      "terminal_rows": 21,
+      "bound_premise_rows": 215,
+      "reserve": "247195704690169564883663061422041125639211/6315640730052617881880232713933618004623360",
+      "terminal_kind": "positive_exact_reserve",
+      "roles": [
+        "angle_cover_1_0_1_1"
+      ],
+      "packet_certificate": "data/local3_slopes/H_1_0_1_1/quarter_2.json",
+      "full_tile": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "I_quarter": 2,
+      "D_quarter": null,
+      "I_slope_interval": [
+        "323048185363/140737488355328",
+        "3617654159287/35184372088832"
+      ],
+      "D_slope_interval": null,
+      "positive_rational_floor": "1957/50000",
+      "status": "CANDIDATE_CLOSED"
+    },
+    {
+      "certificate_sha256": "a20f35fff718b5c748d19fa0d318bdd213569b4a34eba23f3b6bc2f31d561246",
+      "bound_rounds": 0,
+      "bound_deductions": 0,
+      "terminal_rows": 33,
+      "bound_premise_rows": 0,
+      "reserve": "278726017589750380536567210637536394298201099819714895725707939446784974405239/177277091234585088908880743025335384292481977450372757809019628142628669961011200",
+      "terminal_kind": "positive_exact_reserve",
+      "roles": [
+        "angle_cover_1_0_1_1"
+      ],
+      "packet_certificate": "data/slope_I10_H11/quarter_3.json",
+      "full_tile": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "I_quarter": 3,
+      "D_quarter": null,
+      "I_slope_interval": [
+        "3617654159287/35184372088832",
+        "28618185088933/140737488355328"
+      ],
+      "D_slope_interval": null,
+      "positive_rational_floor": "393/250000",
+      "status": "CANDIDATE_CLOSED"
+    },
+    {
+      "certificate_sha256": "aa6378c1cb613ab02a071f985084bc43da42d06bb2e13948b89e99a2a072c4f3",
+      "bound_rounds": 1,
+      "bound_deductions": 194,
+      "terminal_rows": 41,
+      "bound_premise_rows": 259,
+      "reserve": "12803244739637446453270548812461386818361211266809740932724712628300449565934675789326449019195870881798679001731343440977562974655180652782431469249601039/1069873473875160523636418454750713524036292766044949758904579912929965502892661405642289547012285516981645900745267946766883867430156694593036210900136099840",
+      "terminal_kind": "positive_exact_reserve",
+      "roles": [
+        "angle_cover_1_0_1_2"
+      ],
+      "packet_certificate": "data/local3_slopes/H_1_0_1_2/quarter_0.json",
+      "full_tile": [
+        1,
+        0,
+        1,
+        2
+      ],
+      "I_quarter": 0,
+      "D_quarter": null,
+      "I_slope_interval": [
+        "-280766265854629/281474976710656",
+        "-561645955626711/1125899906842624"
+      ],
+      "D_slope_interval": null,
+      "positive_rational_floor": "11967/1000000",
+      "status": "CANDIDATE_CLOSED"
+    },
+    {
+      "certificate_sha256": "5198fc1babd655d0404b5a53c8f59b512dc2fdb4aa739e5505686de6dea37c78",
+      "bound_rounds": 2,
+      "bound_deductions": 366,
+      "terminal_rows": 45,
+      "bound_premise_rows": 471,
+      "reserve": "21974550206773782094111700084471838029685259739431032834204413645114245197142120065802790628973762504597286563213/1846323919735335311184523472745796879646721714256464070543649991939138527995168387057752412213906491602577339187200",
+      "terminal_kind": "positive_exact_reserve",
+      "roles": [
+        "angle_cover_1_0_1_2"
+      ],
+      "packet_certificate": "data/nested_D_bound3/I_quarter_1/D_quarter_0.json",
+      "full_tile": [
+        1,
+        0,
+        1,
+        2
+      ],
+      "I_quarter": 1,
+      "D_quarter": 0,
+      "I_slope_interval": [
+        "-561645955626711/1125899906842624",
+        "-113423917453/562949953421312"
+      ],
+      "D_slope_interval": [
+        "-1",
+        "-3/4"
+      ],
+      "positive_rational_floor": "11901/1000000",
+      "status": "CANDIDATE_CLOSED"
+    },
+    {
+      "certificate_sha256": "3199d5d5085f9e5f7efd76a5180a0bc7fa52de33a80c09ef1fde6d7d72e86490",
+      "bound_rounds": 3,
+      "bound_deductions": 513,
+      "terminal_rows": 44,
+      "bound_premise_rows": 853,
+      "reserve": "56698552540500076748550231879504573015593260180076729005155849964668562585277814194866131483546786029629707198807824265548506509344622963875647/19621667591481738685732692316557274440259695813276729942651852788766472936901919967800955530987624028337127169416933443020640723405343690640588800",
+      "terminal_kind": "positive_exact_reserve",
+      "roles": [
+        "angle_cover_1_0_1_2"
+      ],
+      "packet_certificate": "data/nested_D_bound3/I_quarter_1/D_quarter_1.json",
+      "full_tile": [
+        1,
+        0,
+        1,
+        2
+      ],
+      "I_quarter": 1,
+      "D_quarter": 1,
+      "I_slope_interval": [
+        "-561645955626711/1125899906842624",
+        "-113423917453/562949953421312"
+      ],
+      "D_slope_interval": [
+        "-3/4",
+        "-1/2"
+      ],
+      "positive_rational_floor": "2889/1000000",
+      "status": "CANDIDATE_CLOSED"
+    },
+    {
+      "certificate_sha256": "7603524a1fc1f659b731f022985435a24fdd6e039dbb8af70ff9dec855041017",
+      "bound_rounds": 7,
+      "bound_deductions": 1241,
+      "terminal_rows": 26,
+      "bound_premise_rows": 2017,
+      "reserve": "1632324459002258289544858178433616423189083718336696800045957967742875971096757058250262631989/72208841274941570431126128560898457654665898504884041760963169777462043899340572769614062157824",
+      "terminal_kind": "positive_exact_reserve",
+      "roles": [
+        "angle_cover_1_0_1_2"
+      ],
+      "packet_certificate": "data/nested_D_final/I_quarter_1/D_quarter_2.json",
+      "full_tile": [
+        1,
+        0,
+        1,
+        2
+      ],
+      "I_quarter": 1,
+      "D_quarter": 2,
+      "I_slope_interval": [
+        "-561645955626711/1125899906842624",
+        "-113423917453/562949953421312"
+      ],
+      "D_slope_interval": [
+        "-1/2",
+        "-1/4"
+      ],
+      "positive_rational_floor": "4521/200000",
+      "status": "CANDIDATE_CLOSED"
+    },
+    {
+      "certificate_sha256": "c1938476084e605bc358d8f73caf2a878199b2402f5f424dce4093656e375654",
+      "bound_rounds": 7,
+      "bound_deductions": 1164,
+      "terminal_rows": 34,
+      "bound_premise_rows": 2081,
+      "reserve": "42598749416925342682419002956024183737395086804766401343065005611412825702027657092520118348076127574824425436092156573/16613378590626165101522400540029558806843862758476187638297621959015053306960548197698464306737290895715117980541329080320",
+      "terminal_kind": "positive_exact_reserve",
+      "roles": [
+        "angle_cover_1_0_1_2"
+      ],
+      "packet_certificate": "data/nested_D_final/I_quarter_1/D_quarter_3.json",
+      "full_tile": [
+        1,
+        0,
+        1,
+        2
+      ],
+      "I_quarter": 1,
+      "D_quarter": 3,
+      "I_slope_interval": [
+        "-561645955626711/1125899906842624",
+        "-113423917453/562949953421312"
+      ],
+      "D_slope_interval": [
+        "-1/4",
+        "0"
+      ],
+      "positive_rational_floor": "641/250000",
+      "status": "CANDIDATE_CLOSED"
+    },
+    {
+      "certificate_sha256": "edb1b2978a59527bca8c8cbb7ea562324c3f4877b646837111e62a07252c08db",
+      "bound_rounds": 1,
+      "bound_deductions": 213,
+      "terminal_rows": 39,
+      "bound_premise_rows": 222,
+      "reserve": "334307135978856265219877407440192196254072612757732802145574513337210697409266656135030976975680891110603073017/16587274547998857885281961691311983168273933403136342027617553407047025959180330561134665974832530402382236876800",
+      "terminal_kind": "positive_exact_reserve",
+      "roles": [
+        "angle_cover_1_0_1_2"
+      ],
+      "packet_certificate": "data/nested_D_bound3/I_quarter_2/D_quarter_0.json",
+      "full_tile": [
+        1,
+        0,
+        1,
+        2
+      ],
+      "I_quarter": 2,
+      "D_quarter": 0,
+      "I_slope_interval": [
+        "-113423917453/562949953421312",
+        "561192259956899/1125899906842624"
+      ],
+      "D_slope_interval": [
+        "-1",
+        "-3/4"
+      ],
+      "positive_rational_floor": "10077/500000",
+      "status": "CANDIDATE_CLOSED"
+    },
+    {
+      "certificate_sha256": "bfa034c31bf19fb7c975f57d30f35e8769b40a76a34c93631896cb35ef70d00f",
+      "bound_rounds": 1,
+      "bound_deductions": 206,
+      "terminal_rows": 41,
+      "bound_premise_rows": 258,
+      "reserve": "3698777223288752205901678991550736374080509976798774044740345677651009705360025868561749713188793104873159699333083105611159032849499/551187689067202122036949020679085999142302131077977252298262129509259509425007324962069042233283470377877624281655460538754685258956800",
+      "terminal_kind": "positive_exact_reserve",
+      "roles": [
+        "angle_cover_1_0_1_2"
+      ],
+      "packet_certificate": "data/nested_D_bound3/I_quarter_2/D_quarter_1.json",
+      "full_tile": [
+        1,
+        0,
+        1,
+        2
+      ],
+      "I_quarter": 2,
+      "D_quarter": 1,
+      "I_slope_interval": [
+        "-113423917453/562949953421312",
+        "561192259956899/1125899906842624"
+      ],
+      "D_slope_interval": [
+        "-3/4",
+        "-1/2"
+      ],
+      "positive_rational_floor": "671/100000",
+      "status": "CANDIDATE_CLOSED"
+    },
+    {
+      "certificate_sha256": "ecb464030752c0c3ba8adbb668ce97bbf2fcab111e8eafdfa0366fc7c86c5c23",
+      "bound_rounds": 2,
+      "bound_deductions": 444,
+      "terminal_rows": 0,
+      "bound_premise_rows": 468,
+      "reserve": null,
+      "terminal_kind": "proved_empty_analytic_frame",
+      "roles": [
+        "angle_cover_1_0_1_2"
+      ],
+      "packet_certificate": "data/nested_D_bound3/I_quarter_2/D_quarter_2.json",
+      "full_tile": [
+        1,
+        0,
+        1,
+        2
+      ],
+      "I_quarter": 2,
+      "D_quarter": 2,
+      "I_slope_interval": [
+        "-113423917453/562949953421312",
+        "561192259956899/1125899906842624"
+      ],
+      "D_slope_interval": [
+        "-1/2",
+        "-1/4"
+      ],
+      "positive_rational_floor": null,
+      "status": "CANDIDATE_CLOSED"
+    },
+    {
+      "certificate_sha256": "3cab77917ac946fe6a949509d7de0610c8bb0fd13b433680e684e8f844578caf",
+      "bound_rounds": 2,
+      "bound_deductions": 430,
+      "terminal_rows": 41,
+      "bound_premise_rows": 507,
+      "reserve": "13013330920090165046164052620071542050649007508449783111053396694904605341834120693385871098648719/757310842339238987353096793709505701468196827370109752095733876181113768563344479697293701430640640",
+      "terminal_kind": "positive_exact_reserve",
+      "roles": [
+        "angle_cover_1_0_1_2"
+      ],
+      "packet_certificate": "data/nested_D_bound3/I_quarter_2/D_quarter_3.json",
+      "full_tile": [
+        1,
+        0,
+        1,
+        2
+      ],
+      "I_quarter": 2,
+      "D_quarter": 3,
+      "I_slope_interval": [
+        "-113423917453/562949953421312",
+        "561192259956899/1125899906842624"
+      ],
+      "D_slope_interval": [
+        "-1/4",
+        "0"
+      ],
+      "positive_rational_floor": "17183/1000000",
+      "status": "CANDIDATE_CLOSED"
+    },
+    {
+      "certificate_sha256": "5bfe623540af2d769aede6fc8452d434b36eb5a9c7760171800065fcf3dae6c9",
+      "bound_rounds": 1,
+      "bound_deductions": 209,
+      "terminal_rows": 44,
+      "bound_premise_rows": 251,
+      "reserve": "299992109595707094337124426120179824260535137727407700361985174467076210055683187335279259326765039546697480175160739394799433514086760414404690385229586152655989/13939678623866518621175737526240626464073173112083972659910826901694900085679449500350881917722900673798462583483846854343606278609700434708792793730268350801510400",
+      "terminal_kind": "positive_exact_reserve",
+      "roles": [
+        "angle_cover_1_0_1_2"
+      ],
+      "packet_certificate": "data/local3_slopes/H_1_0_1_2/quarter_3.json",
+      "full_tile": [
+        1,
+        0,
+        1,
+        2
+      ],
+      "I_quarter": 3,
+      "D_quarter": null,
+      "I_slope_interval": [
+        "561192259956899/1125899906842624",
+        "35081605242147/35184372088832"
+      ],
+      "D_slope_interval": null,
+      "positive_rational_floor": "269/12500",
+      "status": "CANDIDATE_CLOSED"
+    }
+  ],
+  "shared_OPEN_ancestor_records": [
+    {
+      "certificate_sha256": "e7a543153634007326c901d6099a6a3052823352ea66f9d8891bcd299490858b",
+      "bound_rounds": 6,
+      "bound_deductions": 715,
+      "terminal_rows": 0,
+      "bound_premise_rows": 1561,
+      "reserve": null,
+      "terminal_kind": null,
+      "roles": [
+        "angle_cover_1_0_1_1"
+      ],
+      "packet_certificate": "ancestry/bound_induction/portable_context_triple_energy_continued_H_bound_B_negative-16a2fc93c8d133f0_1_0_1_1/bound_rounds.json",
+      "full_tile": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "I_quarter": null,
+      "D_quarter": null,
+      "I_slope_interval": null,
+      "D_slope_interval": null,
+      "positive_rational_floor": null,
+      "status": "OPEN"
+    },
+    {
+      "certificate_sha256": "e28a0d9d6dc5e477da8dc79594ed50dd6372c87d4f1ba917afa1f54fd3b3788e",
+      "bound_rounds": 6,
+      "bound_deductions": 662,
+      "terminal_rows": 0,
+      "bound_premise_rows": 1439,
+      "reserve": null,
+      "terminal_kind": null,
+      "roles": [
+        "angle_cover_1_0_1_2"
+      ],
+      "packet_certificate": "ancestry/bound_induction/portable_context_triple_energy_continued_H_bound_B_negative-16a2fc93c8d133f0_1_0_1_2/bound_rounds.json",
+      "full_tile": [
+        1,
+        0,
+        1,
+        2
+      ],
+      "I_quarter": null,
+      "D_quarter": null,
+      "I_slope_interval": null,
+      "D_slope_interval": null,
+      "positive_rational_floor": null,
+      "status": "OPEN"
+    },
+    {
+      "certificate_sha256": "99c0f72457a8044b496cbe9a7f295c00c8805a39d81739604569da83dc58e631",
+      "bound_rounds": 3,
+      "bound_deductions": 383,
+      "terminal_rows": 0,
+      "bound_premise_rows": 863,
+      "reserve": null,
+      "terminal_kind": null,
+      "roles": [
+        "angle_cover_1_0_1_2"
+      ],
+      "packet_certificate": "data/local3_slopes/H_1_0_1_2/quarter_1.json",
+      "full_tile": [
+        1,
+        0,
+        1,
+        2
+      ],
+      "I_quarter": 1,
+      "D_quarter": null,
+      "I_slope_interval": [
+        "-561645955626711/1125899906842624",
+        "-113423917453/562949953421312"
+      ],
+      "D_slope_interval": null,
+      "positive_rational_floor": null,
+      "status": "OPEN"
+    },
+    {
+      "certificate_sha256": "ff13093ba8ad1c6d56e7903507448fb0a3ea0ecf86bd4760491cc99b6f4a758c",
+      "bound_rounds": 3,
+      "bound_deductions": 453,
+      "terminal_rows": 0,
+      "bound_premise_rows": 882,
+      "reserve": null,
+      "terminal_kind": null,
+      "roles": [
+        "angle_cover_1_0_1_2"
+      ],
+      "packet_certificate": "data/local3_slopes/H_1_0_1_2/quarter_2.json",
+      "full_tile": [
+        1,
+        0,
+        1,
+        2
+      ],
+      "I_quarter": 2,
+      "D_quarter": null,
+      "I_slope_interval": [
+        "-113423917453/562949953421312",
+        "561192259956899/1125899906842624"
+      ],
+      "D_slope_interval": null,
+      "positive_rational_floor": null,
+      "status": "OPEN"
+    }
+  ],
+  "exact_frame_terminal": {
+    "kind": "proved_empty_analytic_frame",
+    "index": 53,
+    "lower": "227149/524288",
+    "upper": "60343715044415/140737488355328",
+    "gap": "631130350529/140737488355328",
+    "certified_interval": [
+      "227149/524288",
+      "481349/1048576"
+    ],
+    "analytic_interval": [
+      "120650113472559/281474976710656",
+      "60343715044415/140737488355328"
+    ],
+    "derived_slope_interval": [
+      "6550213113571/35184372088832",
+      "26266523256303/140737488355328"
+    ]
+  },
+  "bound_rounds": 50,
+  "bound_deductions": 8083,
+  "bound_premise_rows": 13253,
+  "bound_terminal_rows": 482,
+  "direct_terminal_rows": 18,
+  "total_local_row_occurrences": 13753,
+  "printed_energy_occurrences": [
+    {
+      "certificate_sha256": "05b940e65b029a0a9eddc3974b77f85ea183a21d5f9592cd1d0d2ce02fe2e56c",
+      "location": "round[0]",
+      "row": {
+        "index": 24355,
+        "name": "three_square_center_energy_0_4_7_000",
+        "coefficients": [
+          [
+            0,
+            "5307576177187517/2111062325329920"
+          ],
+          [
+            1,
+            "16121373/5242880"
+          ],
+          [
+            8,
+            "-139471401461059/2111062325329920"
+          ],
+          [
+            9,
+            "-228189/65536"
+          ],
+          [
+            14,
+            "-2584052387863229/1055531162664960"
+          ],
+          [
+            15,
+            "2133747/5242880"
+          ]
+        ],
+        "rhs": "-183620047141361853694249/33204139332677192908800"
+      }
+    },
+    {
+      "certificate_sha256": "05b940e65b029a0a9eddc3974b77f85ea183a21d5f9592cd1d0d2ce02fe2e56c",
+      "location": "round[0]",
+      "row": {
+        "index": 24368,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "334685774670963/140737488355328"
+          ],
+          [
+            3,
+            "-11287677649586533/4222124650659840"
+          ],
+          [
+            4,
+            "-595596893885325/140737488355328"
+          ],
+          [
+            5,
+            "975280644487123/2111062325329920"
+          ],
+          [
+            16,
+            "130455559607181/70368744177664"
+          ],
+          [
+            17,
+            "9337116360612287/4222124650659840"
+          ]
+        ],
+        "rhs": "-99904530999255342161689990681189/17826336565709475958547388825600"
+      }
+    },
+    {
+      "certificate_sha256": "3199d5d5085f9e5f7efd76a5180a0bc7fa52de33a80c09ef1fde6d7d72e86490",
+      "location": "round[0]",
+      "row": {
+        "index": 24580,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "85756313/31457280"
+          ],
+          [
+            3,
+            "-3438311/1048576"
+          ],
+          [
+            4,
+            "-4088441/1048576"
+          ],
+          [
+            5,
+            "35863/524288"
+          ],
+          [
+            16,
+            "36896917/31457280"
+          ],
+          [
+            17,
+            "3366585/1048576"
+          ]
+        ],
+        "rhs": "-113064051686579/16492674416640"
+      }
+    },
+    {
+      "certificate_sha256": "3199d5d5085f9e5f7efd76a5180a0bc7fa52de33a80c09ef1fde6d7d72e86490",
+      "location": "round[0]",
+      "row": {
+        "index": 24622,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "2331493/524288"
+          ],
+          [
+            9,
+            "932887/3932160"
+          ],
+          [
+            10,
+            "-1706713/524288"
+          ],
+          [
+            11,
+            "-43545509/15728640"
+          ],
+          [
+            14,
+            "-156195/131072"
+          ],
+          [
+            15,
+            "39813961/15728640"
+          ]
+        ],
+        "rhs": "-3722397231223/549755813888"
+      }
+    },
+    {
+      "certificate_sha256": "3199d5d5085f9e5f7efd76a5180a0bc7fa52de33a80c09ef1fde6d7d72e86490",
+      "location": "round[1]",
+      "row": {
+        "index": 24573,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "86115083/31457280"
+          ],
+          [
+            3,
+            "-885978326603497/281474976710656"
+          ],
+          [
+            4,
+            "-3969915/1048576"
+          ],
+          [
+            5,
+            "-134375/1048576"
+          ],
+          [
+            16,
+            "32982367/31457280"
+          ],
+          [
+            17,
+            "922049341003497/281474976710656"
+          ]
+        ],
+        "rhs": "-30286116578181220138321/4427218577690292387840"
+      }
+    },
+    {
+      "certificate_sha256": "3199d5d5085f9e5f7efd76a5180a0bc7fa52de33a80c09ef1fde6d7d72e86490",
+      "location": "round[1]",
+      "row": {
+        "index": 24615,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "283483/65536"
+          ],
+          [
+            9,
+            "2100499/15728640"
+          ],
+          [
+            10,
+            "-3292041/1048576"
+          ],
+          [
+            11,
+            "-43341029/15728640"
+          ],
+          [
+            14,
+            "-1243687/1048576"
+          ],
+          [
+            15,
+            "4124053/1572864"
+          ]
+        ],
+        "rhs": "-37359516092671/5497558138880"
+      }
+    },
+    {
+      "certificate_sha256": "3199d5d5085f9e5f7efd76a5180a0bc7fa52de33a80c09ef1fde6d7d72e86490",
+      "location": "round[2]",
+      "row": {
+        "index": 24485,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "87713783/31457280"
+          ],
+          [
+            3,
+            "-3117007/1048576"
+          ],
+          [
+            4,
+            "-985817/262144"
+          ],
+          [
+            5,
+            "-178085/524288"
+          ],
+          [
+            16,
+            "30584257/31457280"
+          ],
+          [
+            17,
+            "3473177/1048576"
+          ]
+        ],
+        "rhs": "-56734300813933/8246337208320"
+      }
+    },
+    {
+      "certificate_sha256": "3199d5d5085f9e5f7efd76a5180a0bc7fa52de33a80c09ef1fde6d7d72e86490",
+      "location": "round[2]",
+      "row": {
+        "index": 24527,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "4527653/1048576"
+          ],
+          [
+            9,
+            "170897/1048576"
+          ],
+          [
+            10,
+            "-795631/262144"
+          ],
+          [
+            11,
+            "-8947031/3145728"
+          ],
+          [
+            14,
+            "-1345129/1048576"
+          ],
+          [
+            15,
+            "2108585/786432"
+          ]
+        ],
+        "rhs": "-22849552295579/3298534883328"
+      }
+    },
+    {
+      "certificate_sha256": "3cab77917ac946fe6a949509d7de0610c8bb0fd13b433680e684e8f844578caf",
+      "location": "round[0]",
+      "row": {
+        "index": 24086,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "86349023/31457280"
+          ],
+          [
+            3,
+            "-402431/131072"
+          ],
+          [
+            4,
+            "-2058499/524288"
+          ],
+          [
+            5,
+            "32707/1048576"
+          ],
+          [
+            16,
+            "37160917/31457280"
+          ],
+          [
+            17,
+            "3186741/1048576"
+          ]
+        ],
+        "rhs": "-75747737526369/10995116277760"
+      }
+    },
+    {
+      "certificate_sha256": "3cab77917ac946fe6a949509d7de0610c8bb0fd13b433680e684e8f844578caf",
+      "location": "round[0]",
+      "row": {
+        "index": 24128,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "4656143/1048576"
+          ],
+          [
+            9,
+            "143715/524288"
+          ],
+          [
+            10,
+            "-208311/65536"
+          ],
+          [
+            11,
+            "-8921087/3145728"
+          ],
+          [
+            14,
+            "-1323167/1048576"
+          ],
+          [
+            15,
+            "8058797/3145728"
+          ]
+        ],
+        "rhs": "-7547484315945/1099511627776"
+      }
+    },
+    {
+      "certificate_sha256": "5198fc1babd655d0404b5a53c8f59b512dc2fdb4aa739e5505686de6dea37c78",
+      "location": "round[0]",
+      "row": {
+        "index": 24584,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "85756313/31457280"
+          ],
+          [
+            3,
+            "-3438311/1048576"
+          ],
+          [
+            4,
+            "-4088441/1048576"
+          ],
+          [
+            5,
+            "35863/524288"
+          ],
+          [
+            16,
+            "36896917/31457280"
+          ],
+          [
+            17,
+            "3366585/1048576"
+          ]
+        ],
+        "rhs": "-113064051686579/16492674416640"
+      }
+    },
+    {
+      "certificate_sha256": "5198fc1babd655d0404b5a53c8f59b512dc2fdb4aa739e5505686de6dea37c78",
+      "location": "round[1]",
+      "row": {
+        "index": 24552,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "86285873/31457280"
+          ],
+          [
+            3,
+            "-801971/262144"
+          ],
+          [
+            4,
+            "-3904317/1048576"
+          ],
+          [
+            5,
+            "-277541/1048576"
+          ],
+          [
+            16,
+            "30843637/31457280"
+          ],
+          [
+            17,
+            "3485425/1048576"
+          ]
+        ],
+        "rhs": "-75320329349337/10995116277760"
+      }
+    },
+    {
+      "certificate_sha256": "5bfe623540af2d769aede6fc8452d434b36eb5a9c7760171800065fcf3dae6c9",
+      "location": "round[0]",
+      "row": {
+        "index": 24515,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "4667103/1048576"
+          ],
+          [
+            9,
+            "1297093/5242880"
+          ],
+          [
+            10,
+            "-3426813/1048576"
+          ],
+          [
+            11,
+            "-8642117/3145728"
+          ],
+          [
+            14,
+            "-620145/524288"
+          ],
+          [
+            15,
+            "19659653/7864320"
+          ]
+        ],
+        "rhs": "-27784524543917/4123168604160"
+      }
+    },
+    {
+      "certificate_sha256": "7603524a1fc1f659b731f022985435a24fdd6e039dbb8af70ff9dec855041017",
+      "location": "round[0]",
+      "row": {
+        "index": 24595,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "85756313/31457280"
+          ],
+          [
+            3,
+            "-3438311/1048576"
+          ],
+          [
+            4,
+            "-4088441/1048576"
+          ],
+          [
+            5,
+            "35863/524288"
+          ],
+          [
+            16,
+            "36896917/31457280"
+          ],
+          [
+            17,
+            "3366585/1048576"
+          ]
+        ],
+        "rhs": "-113064051686579/16492674416640"
+      }
+    },
+    {
+      "certificate_sha256": "7603524a1fc1f659b731f022985435a24fdd6e039dbb8af70ff9dec855041017",
+      "location": "round[0]",
+      "row": {
+        "index": 24637,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "2331493/524288"
+          ],
+          [
+            9,
+            "932887/3932160"
+          ],
+          [
+            10,
+            "-1706713/524288"
+          ],
+          [
+            11,
+            "-43545509/15728640"
+          ],
+          [
+            14,
+            "-156195/131072"
+          ],
+          [
+            15,
+            "39813961/15728640"
+          ]
+        ],
+        "rhs": "-3722397231223/549755813888"
+      }
+    },
+    {
+      "certificate_sha256": "7603524a1fc1f659b731f022985435a24fdd6e039dbb8af70ff9dec855041017",
+      "location": "round[1]",
+      "row": {
+        "index": 24583,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "85670423/31457280"
+          ],
+          [
+            3,
+            "-3423157/1048576"
+          ],
+          [
+            4,
+            "-2028449/524288"
+          ],
+          [
+            5,
+            "6027/131072"
+          ],
+          [
+            16,
+            "36036517/31457280"
+          ],
+          [
+            17,
+            "3374941/1048576"
+          ]
+        ],
+        "rhs": "-56464423267111/8246337208320"
+      }
+    },
+    {
+      "certificate_sha256": "7603524a1fc1f659b731f022985435a24fdd6e039dbb8af70ff9dec855041017",
+      "location": "round[1]",
+      "row": {
+        "index": 24625,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "1154943/262144"
+          ],
+          [
+            9,
+            "233421/1048576"
+          ],
+          [
+            10,
+            "-846917/262144"
+          ],
+          [
+            11,
+            "-8715107/3145728"
+          ],
+          [
+            14,
+            "-154013/131072"
+          ],
+          [
+            15,
+            "2003711/786432"
+          ]
+        ],
+        "rhs": "-7454926484755/1099511627776"
+      }
+    },
+    {
+      "certificate_sha256": "7603524a1fc1f659b731f022985435a24fdd6e039dbb8af70ff9dec855041017",
+      "location": "round[2]",
+      "row": {
+        "index": 24578,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "86044763/31457280"
+          ],
+          [
+            3,
+            "-905472109418217/281474976710656"
+          ],
+          [
+            4,
+            "-126387/32768"
+          ],
+          [
+            5,
+            "-11937/1048576"
+          ],
+          [
+            16,
+            "35286757/31457280"
+          ],
+          [
+            17,
+            "908676423456489/281474976710656"
+          ]
+        ],
+        "rhs": "-10117041778110872936383/1475739525896764129280"
+      }
+    },
+    {
+      "certificate_sha256": "7603524a1fc1f659b731f022985435a24fdd6e039dbb8af70ff9dec855041017",
+      "location": "round[2]",
+      "row": {
+        "index": 24620,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "2304841/524288"
+          ],
+          [
+            9,
+            "237427/1048576"
+          ],
+          [
+            10,
+            "-1679929/524288"
+          ],
+          [
+            11,
+            "-549455/196608"
+          ],
+          [
+            14,
+            "-39057/32768"
+          ],
+          [
+            15,
+            "8078999/3145728"
+          ]
+        ],
+        "rhs": "-22474182223387/3298534883328"
+      }
+    },
+    {
+      "certificate_sha256": "7603524a1fc1f659b731f022985435a24fdd6e039dbb8af70ff9dec855041017",
+      "location": "round[3]",
+      "row": {
+        "index": 24492,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "86500313/31457280"
+          ],
+          [
+            3,
+            "-822403/262144"
+          ],
+          [
+            4,
+            "-1008863/262144"
+          ],
+          [
+            5,
+            "-2443/32768"
+          ],
+          [
+            16,
+            "34563247/31457280"
+          ],
+          [
+            17,
+            "841947/262144"
+          ]
+        ],
+        "rhs": "-225705586207633/32985348833280"
+      }
+    },
+    {
+      "certificate_sha256": "7603524a1fc1f659b731f022985435a24fdd6e039dbb8af70ff9dec855041017",
+      "location": "round[3]",
+      "row": {
+        "index": 24534,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "1152971/262144"
+          ],
+          [
+            9,
+            "3782869/15728640"
+          ],
+          [
+            10,
+            "-3332123/1048576"
+          ],
+          [
+            11,
+            "-22225717/7864320"
+          ],
+          [
+            14,
+            "-1279761/1048576"
+          ],
+          [
+            15,
+            "8133713/3145728"
+          ]
+        ],
+        "rhs": "-1767832443967/257698037760"
+      }
+    },
+    {
+      "certificate_sha256": "7603524a1fc1f659b731f022985435a24fdd6e039dbb8af70ff9dec855041017",
+      "location": "round[4]",
+      "row": {
+        "index": 24485,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "87004643/31457280"
+          ],
+          [
+            3,
+            "-405229/131072"
+          ],
+          [
+            4,
+            "-2008797/524288"
+          ],
+          [
+            5,
+            "-156679/1048576"
+          ],
+          [
+            16,
+            "33523177/31457280"
+          ],
+          [
+            17,
+            "3398511/1048576"
+          ]
+        ],
+        "rhs": "-226599071426329/32985348833280"
+      }
+    },
+    {
+      "certificate_sha256": "7603524a1fc1f659b731f022985435a24fdd6e039dbb8af70ff9dec855041017",
+      "location": "round[4]",
+      "row": {
+        "index": 24527,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "2312811/524288"
+          ],
+          [
+            9,
+            "1386223/5242880"
+          ],
+          [
+            10,
+            "-1649109/524288"
+          ],
+          [
+            11,
+            "-8994863/3145728"
+          ],
+          [
+            14,
+            "-331851/262144"
+          ],
+          [
+            15,
+            "20407823/7864320"
+          ]
+        ],
+        "rhs": "-38056646431389/5497558138880"
+      }
+    },
+    {
+      "certificate_sha256": "7603524a1fc1f659b731f022985435a24fdd6e039dbb8af70ff9dec855041017",
+      "location": "round[5]",
+      "row": {
+        "index": 24481,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "2316499/524288"
+          ],
+          [
+            9,
+            "1549113/5242880"
+          ],
+          [
+            10,
+            "-3249151/1048576"
+          ],
+          [
+            11,
+            "-4564165/1572864"
+          ],
+          [
+            14,
+            "-1383847/1048576"
+          ],
+          [
+            15,
+            "40994311/15728640"
+          ]
+        ],
+        "rhs": "-57644669402057/8246337208320"
+      }
+    },
+    {
+      "certificate_sha256": "99c0f72457a8044b496cbe9a7f295c00c8805a39d81739604569da83dc58e631",
+      "location": "round[0]",
+      "row": {
+        "index": 24485,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "85050383/31457280"
+          ],
+          [
+            3,
+            "-935211805153001/281474976710656"
+          ],
+          [
+            4,
+            "-1024255/262144"
+          ],
+          [
+            5,
+            "162567/1048576"
+          ],
+          [
+            16,
+            "37860217/31457280"
+          ],
+          [
+            17,
+            "891573058377449/281474976710656"
+          ]
+        ],
+        "rhs": "-2002339103534660546825/295147905179352825856"
+      }
+    },
+    {
+      "certificate_sha256": "99c0f72457a8044b496cbe9a7f295c00c8805a39d81739604569da83dc58e631",
+      "location": "round[0]",
+      "row": {
+        "index": 24527,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "4667103/1048576"
+          ],
+          [
+            9,
+            "1297093/5242880"
+          ],
+          [
+            10,
+            "-3426813/1048576"
+          ],
+          [
+            11,
+            "-8642117/3145728"
+          ],
+          [
+            14,
+            "-620145/524288"
+          ],
+          [
+            15,
+            "19659653/7864320"
+          ]
+        ],
+        "rhs": "-27784524543917/4123168604160"
+      }
+    },
+    {
+      "certificate_sha256": "99c0f72457a8044b496cbe9a7f295c00c8805a39d81739604569da83dc58e631",
+      "location": "round[1]",
+      "row": {
+        "index": 24499,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "85523213/31457280"
+          ],
+          [
+            3,
+            "-3474283/1048576"
+          ],
+          [
+            4,
+            "-1021413/262144"
+          ],
+          [
+            5,
+            "127637/1048576"
+          ],
+          [
+            16,
+            "37046347/31457280"
+          ],
+          [
+            17,
+            "1673323/524288"
+          ]
+        ],
+        "rhs": "-112506904493099/16492674416640"
+      }
+    },
+    {
+      "certificate_sha256": "99c0f72457a8044b496cbe9a7f295c00c8805a39d81739604569da83dc58e631",
+      "location": "round[1]",
+      "row": {
+        "index": 24541,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "291601/65536"
+          ],
+          [
+            9,
+            "1275693/5242880"
+          ],
+          [
+            10,
+            "-1710533/524288"
+          ],
+          [
+            11,
+            "-8661833/3145728"
+          ],
+          [
+            14,
+            "-622275/524288"
+          ],
+          [
+            15,
+            "19741043/7864320"
+          ]
+        ],
+        "rhs": "-111317345189783/16492674416640"
+      }
+    },
+    {
+      "certificate_sha256": "99c0f72457a8044b496cbe9a7f295c00c8805a39d81739604569da83dc58e631",
+      "location": "round[2]",
+      "row": {
+        "index": 24442,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "85644173/31457280"
+          ],
+          [
+            3,
+            "-928165911303913/281474976710656"
+          ],
+          [
+            4,
+            "-2043687/524288"
+          ],
+          [
+            5,
+            "96813/1048576"
+          ],
+          [
+            16,
+            "36977047/31457280"
+          ],
+          [
+            17,
+            "902177869502185/281474976710656"
+          ]
+        ],
+        "rhs": "-15150533322707957429971/2213609288845146193920"
+      }
+    },
+    {
+      "certificate_sha256": "99c0f72457a8044b496cbe9a7f295c00c8805a39d81739604569da83dc58e631",
+      "location": "round[2]",
+      "row": {
+        "index": 24484,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "4663877/1048576"
+          ],
+          [
+            9,
+            "1258973/5242880"
+          ],
+          [
+            10,
+            "-3416371/1048576"
+          ],
+          [
+            11,
+            "-8686853/3145728"
+          ],
+          [
+            14,
+            "-623753/524288"
+          ],
+          [
+            15,
+            "19828673/7864320"
+          ]
+        ],
+        "rhs": "-111499877695763/16492674416640"
+      }
+    },
+    {
+      "certificate_sha256": "aa6378c1cb613ab02a071f985084bc43da42d06bb2e13948b89e99a2a072c4f3",
+      "location": "round[0]",
+      "row": {
+        "index": 24515,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "4667103/1048576"
+          ],
+          [
+            9,
+            "1297093/5242880"
+          ],
+          [
+            10,
+            "-3426813/1048576"
+          ],
+          [
+            11,
+            "-8642117/3145728"
+          ],
+          [
+            14,
+            "-620145/524288"
+          ],
+          [
+            15,
+            "19659653/7864320"
+          ]
+        ],
+        "rhs": "-27784524543917/4123168604160"
+      }
+    },
+    {
+      "certificate_sha256": "b25c3b3414b2467a9cd12cc72fbf2be83534885064be8708f1e22b0c7346c2eb",
+      "location": "round[0]",
+      "row": {
+        "index": 24269,
+        "name": "three_square_center_energy_0_1_7_000",
+        "coefficients": [
+          [
+            0,
+            "96167273/31457280"
+          ],
+          [
+            1,
+            "1280362995282677/1407374883553280"
+          ],
+          [
+            2,
+            "-97954687/31457280"
+          ],
+          [
+            3,
+            "1562819857976587/703687441776640"
+          ],
+          [
+            14,
+            "893707/15728640"
+          ],
+          [
+            15,
+            "-4406002711235851/1407374883553280"
+          ]
+        ],
+        "rhs": "-26437227283578551401039/5534023222112865484800"
+      }
+    },
+    {
+      "certificate_sha256": "bfa034c31bf19fb7c975f57d30f35e8769b40a76a34c93631896cb35ef70d00f",
+      "location": "round[0]",
+      "row": {
+        "index": 24321,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "86349023/31457280"
+          ],
+          [
+            3,
+            "-402431/131072"
+          ],
+          [
+            4,
+            "-2058499/524288"
+          ],
+          [
+            5,
+            "32707/1048576"
+          ],
+          [
+            16,
+            "37160917/31457280"
+          ],
+          [
+            17,
+            "3186741/1048576"
+          ]
+        ],
+        "rhs": "-75747737526369/10995116277760"
+      }
+    },
+    {
+      "certificate_sha256": "bfa034c31bf19fb7c975f57d30f35e8769b40a76a34c93631896cb35ef70d00f",
+      "location": "round[0]",
+      "row": {
+        "index": 24363,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "4656143/1048576"
+          ],
+          [
+            9,
+            "143715/524288"
+          ],
+          [
+            10,
+            "-208311/65536"
+          ],
+          [
+            11,
+            "-8921087/3145728"
+          ],
+          [
+            14,
+            "-1323167/1048576"
+          ],
+          [
+            15,
+            "8058797/3145728"
+          ]
+        ],
+        "rhs": "-7547484315945/1099511627776"
+      }
+    },
+    {
+      "certificate_sha256": "c1938476084e605bc358d8f73caf2a878199b2402f5f424dce4093656e375654",
+      "location": "round[0]",
+      "row": {
+        "index": 24374,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "85756313/31457280"
+          ],
+          [
+            3,
+            "-3438311/1048576"
+          ],
+          [
+            4,
+            "-4088441/1048576"
+          ],
+          [
+            5,
+            "35863/524288"
+          ],
+          [
+            16,
+            "36896917/31457280"
+          ],
+          [
+            17,
+            "3366585/1048576"
+          ]
+        ],
+        "rhs": "-113064051686579/16492674416640"
+      }
+    },
+    {
+      "certificate_sha256": "c1938476084e605bc358d8f73caf2a878199b2402f5f424dce4093656e375654",
+      "location": "round[0]",
+      "row": {
+        "index": 24416,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "2331493/524288"
+          ],
+          [
+            9,
+            "932887/3932160"
+          ],
+          [
+            10,
+            "-1706713/524288"
+          ],
+          [
+            11,
+            "-43545509/15728640"
+          ],
+          [
+            14,
+            "-156195/131072"
+          ],
+          [
+            15,
+            "39813961/15728640"
+          ]
+        ],
+        "rhs": "-3722397231223/549755813888"
+      }
+    },
+    {
+      "certificate_sha256": "c1938476084e605bc358d8f73caf2a878199b2402f5f424dce4093656e375654",
+      "location": "round[1]",
+      "row": {
+        "index": 24394,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "85795553/31457280"
+          ],
+          [
+            3,
+            "-3418185/1048576"
+          ],
+          [
+            4,
+            "-4079341/1048576"
+          ],
+          [
+            5,
+            "33141/1048576"
+          ],
+          [
+            16,
+            "36584677/31457280"
+          ],
+          [
+            17,
+            "846261/262144"
+          ]
+        ],
+        "rhs": "-22658358949315/3298534883328"
+      }
+    },
+    {
+      "certificate_sha256": "c1938476084e605bc358d8f73caf2a878199b2402f5f424dce4093656e375654",
+      "location": "round[1]",
+      "row": {
+        "index": 24436,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "1161121/262144"
+          ],
+          [
+            9,
+            "2091827/7864320"
+          ],
+          [
+            10,
+            "-3398691/1048576"
+          ],
+          [
+            11,
+            "-5502763/1966080"
+          ],
+          [
+            14,
+            "-1245793/1048576"
+          ],
+          [
+            15,
+            "3983845/1572864"
+          ]
+        ],
+        "rhs": "-18694372425653/2748779069440"
+      }
+    },
+    {
+      "certificate_sha256": "c1938476084e605bc358d8f73caf2a878199b2402f5f424dce4093656e375654",
+      "location": "round[2]",
+      "row": {
+        "index": 24397,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "86079833/31457280"
+          ],
+          [
+            3,
+            "-909608162924265/281474976710656"
+          ],
+          [
+            4,
+            "-4075973/1048576"
+          ],
+          [
+            5,
+            "-473/131072"
+          ],
+          [
+            16,
+            "36199357/31457280"
+          ],
+          [
+            17,
+            "910623922689769/281474976710656"
+          ]
+        ],
+        "rhs": "-30460446768101968518199/4427218577690292387840"
+      }
+    },
+    {
+      "certificate_sha256": "c1938476084e605bc358d8f73caf2a878199b2402f5f424dce4093656e375654",
+      "location": "round[2]",
+      "row": {
+        "index": 24439,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "580227/131072"
+          ],
+          [
+            9,
+            "74465/262144"
+          ],
+          [
+            10,
+            "-1688537/524288"
+          ],
+          [
+            11,
+            "-4444465/1572864"
+          ],
+          [
+            14,
+            "-632371/524288"
+          ],
+          [
+            15,
+            "3997675/1572864"
+          ]
+        ],
+        "rhs": "-5637531251125/824633720832"
+      }
+    },
+    {
+      "certificate_sha256": "c1938476084e605bc358d8f73caf2a878199b2402f5f424dce4093656e375654",
+      "location": "round[3]",
+      "row": {
+        "index": 24309,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "86424713/31457280"
+          ],
+          [
+            3,
+            "-3314681/1048576"
+          ],
+          [
+            4,
+            "-2034103/524288"
+          ],
+          [
+            5,
+            "-58877/1048576"
+          ],
+          [
+            16,
+            "35621467/31457280"
+          ],
+          [
+            17,
+            "1686779/524288"
+          ]
+        ],
+        "rhs": "-113216277521359/16492674416640"
+      }
+    },
+    {
+      "certificate_sha256": "c1938476084e605bc358d8f73caf2a878199b2402f5f424dce4093656e375654",
+      "location": "round[3]",
+      "row": {
+        "index": 24351,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "4648219/1048576"
+          ],
+          [
+            9,
+            "1187377/3932160"
+          ],
+          [
+            10,
+            "-3352357/1048576"
+          ],
+          [
+            11,
+            "-44870999/15728640"
+          ],
+          [
+            14,
+            "-647931/524288"
+          ],
+          [
+            15,
+            "40121491/15728640"
+          ]
+        ],
+        "rhs": "-113496628332377/16492674416640"
+      }
+    },
+    {
+      "certificate_sha256": "c1938476084e605bc358d8f73caf2a878199b2402f5f424dce4093656e375654",
+      "location": "round[4]",
+      "row": {
+        "index": 24304,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "86943803/31457280"
+          ],
+          [
+            3,
+            "-877268132927209/281474976710656"
+          ],
+          [
+            4,
+            "-4051543/1048576"
+          ],
+          [
+            5,
+            "-114339/1048576"
+          ],
+          [
+            16,
+            "34602487/31457280"
+          ],
+          [
+            17,
+            "907960774530793/281474976710656"
+          ]
+        ],
+        "rhs": "-30431055076704687884617/4427218577690292387840"
+      }
+    },
+    {
+      "certificate_sha256": "c1938476084e605bc358d8f73caf2a878199b2402f5f424dce4093656e375654",
+      "location": "round[4]",
+      "row": {
+        "index": 24346,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "4667447/1048576"
+          ],
+          [
+            9,
+            "852709/2621440"
+          ],
+          [
+            10,
+            "-1660251/524288"
+          ],
+          [
+            11,
+            "-9073175/3145728"
+          ],
+          [
+            14,
+            "-1346945/1048576"
+          ],
+          [
+            15,
+            "40249621/15728640"
+          ]
+        ],
+        "rhs": "-57270762145403/8246337208320"
+      }
+    },
+    {
+      "certificate_sha256": "c1938476084e605bc358d8f73caf2a878199b2402f5f424dce4093656e375654",
+      "location": "round[5]",
+      "row": {
+        "index": 24266,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "87340343/31457280"
+          ],
+          [
+            3,
+            "-50395/16384"
+          ],
+          [
+            4,
+            "-4032675/1048576"
+          ],
+          [
+            5,
+            "-190713/1048576"
+          ],
+          [
+            16,
+            "33639907/31457280"
+          ],
+          [
+            17,
+            "3415993/1048576"
+          ]
+        ],
+        "rhs": "-9487392169847/1374389534720"
+      }
+    },
+    {
+      "certificate_sha256": "e28a0d9d6dc5e477da8dc79594ed50dd6372c87d4f1ba917afa1f54fd3b3788e",
+      "location": "round[0]",
+      "row": {
+        "index": 24334,
+        "name": "three_square_center_energy_1_4_7_000",
+        "coefficients": [
+          [
+            2,
+            "-13216897/15728640"
+          ],
+          [
+            3,
+            "3185032809017997/703687441776640"
+          ],
+          [
+            8,
+            "10142819/3932160"
+          ],
+          [
+            9,
+            "-4220190928532109/1407374883553280"
+          ],
+          [
+            14,
+            "-27354379/15728640"
+          ],
+          [
+            15,
+            "-429974937900777/281474976710656"
+          ]
+        ],
+        "rhs": "-8119788266519144184162089267681/1485528047142456329878949068800"
+      }
+    },
+    {
+      "certificate_sha256": "e28a0d9d6dc5e477da8dc79594ed50dd6372c87d4f1ba917afa1f54fd3b3788e",
+      "location": "round[1]",
+      "row": {
+        "index": 24362,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "39815749/15728640"
+          ],
+          [
+            3,
+            "-939709/262144"
+          ],
+          [
+            4,
+            "-4270045/1048576"
+          ],
+          [
+            5,
+            "2734863920015449/4222124650659840"
+          ],
+          [
+            16,
+            "12117463/7864320"
+          ],
+          [
+            17,
+            "12400208915322791/4222124650659840"
+          ]
+        ],
+        "rhs": "-9565484886721538980101/1475739525896764129280"
+      }
+    },
+    {
+      "certificate_sha256": "e28a0d9d6dc5e477da8dc79594ed50dd6372c87d4f1ba917afa1f54fd3b3788e",
+      "location": "round[2]",
+      "row": {
+        "index": 24385,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "82841363/31457280"
+          ],
+          [
+            3,
+            "-3679475/1048576"
+          ],
+          [
+            4,
+            "-4134809/1048576"
+          ],
+          [
+            5,
+            "2148512300410969/4222124650659840"
+          ],
+          [
+            16,
+            "41202907/31457280"
+          ],
+          [
+            17,
+            "12667010941573031/4222124650659840"
+          ]
+        ],
+        "rhs": "-14560392050340217782001/2213609288845146193920"
+      }
+    },
+    {
+      "certificate_sha256": "e28a0d9d6dc5e477da8dc79594ed50dd6372c87d4f1ba917afa1f54fd3b3788e",
+      "location": "round[2]",
+      "row": {
+        "index": 24427,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "4670141/1048576"
+          ],
+          [
+            9,
+            "809419/2621440"
+          ],
+          [
+            10,
+            "-3490693/1048576"
+          ],
+          [
+            11,
+            "-8172485/3145728"
+          ],
+          [
+            14,
+            "-147431/131072"
+          ],
+          [
+            15,
+            "36005911/15728640"
+          ]
+        ],
+        "rhs": "-7153818163799/1099511627776"
+      }
+    },
+    {
+      "certificate_sha256": "e28a0d9d6dc5e477da8dc79594ed50dd6372c87d4f1ba917afa1f54fd3b3788e",
+      "location": "round[3]",
+      "row": {
+        "index": 24395,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "83885063/31457280"
+          ],
+          [
+            3,
+            "-969951916562153/281474976710656"
+          ],
+          [
+            4,
+            "-2057895/524288"
+          ],
+          [
+            5,
+            "1696856223918169/4222124650659840"
+          ],
+          [
+            16,
+            "39588637/31457280"
+          ],
+          [
+            17,
+            "6426211262257063/2111062325329920"
+          ]
+        ],
+        "rhs": "-29443592686585260589609/4427218577690292387840"
+      }
+    },
+    {
+      "certificate_sha256": "e28a0d9d6dc5e477da8dc79594ed50dd6372c87d4f1ba917afa1f54fd3b3788e",
+      "location": "round[3]",
+      "row": {
+        "index": 24437,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "9336693/2097152"
+          ],
+          [
+            9,
+            "1477383/5242880"
+          ],
+          [
+            10,
+            "-1733175/524288"
+          ],
+          [
+            11,
+            "-65953/24576"
+          ],
+          [
+            14,
+            "-2403993/2097152"
+          ],
+          [
+            15,
+            "37777771/15728640"
+          ]
+        ],
+        "rhs": "-218746195106153/32985348833280"
+      }
+    },
+    {
+      "certificate_sha256": "e28a0d9d6dc5e477da8dc79594ed50dd6372c87d4f1ba917afa1f54fd3b3788e",
+      "location": "round[4]",
+      "row": {
+        "index": 24420,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "84517583/31457280"
+          ],
+          [
+            3,
+            "-1784389/524288"
+          ],
+          [
+            4,
+            "-2052279/524288"
+          ],
+          [
+            5,
+            "1296631038617689/4222124650659840"
+          ],
+          [
+            16,
+            "38619157/31457280"
+          ],
+          [
+            17,
+            "13073167208273831/4222124650659840"
+          ]
+        ],
+        "rhs": "-29711857288552443188149/4427218577690292387840"
+      }
+    },
+    {
+      "certificate_sha256": "e28a0d9d6dc5e477da8dc79594ed50dd6372c87d4f1ba917afa1f54fd3b3788e",
+      "location": "round[4]",
+      "row": {
+        "index": 24462,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "2333983/524288"
+          ],
+          [
+            9,
+            "690099/2621440"
+          ],
+          [
+            10,
+            "-1723095/524288"
+          ],
+          [
+            11,
+            "-8552579/3145728"
+          ],
+          [
+            14,
+            "-76361/65536"
+          ],
+          [
+            15,
+            "38622301/15728640"
+          ]
+        ],
+        "rhs": "-110324971981601/16492674416640"
+      }
+    },
+    {
+      "certificate_sha256": "e28a0d9d6dc5e477da8dc79594ed50dd6372c87d4f1ba917afa1f54fd3b3788e",
+      "location": "round[5]",
+      "row": {
+        "index": 24394,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "84862523/31457280"
+          ],
+          [
+            3,
+            "-3520133/1048576"
+          ],
+          [
+            4,
+            "-2049303/524288"
+          ],
+          [
+            5,
+            "57319/262144"
+          ],
+          [
+            16,
+            "38095657/31457280"
+          ],
+          [
+            17,
+            "3290857/1048576"
+          ]
+        ],
+        "rhs": "-222779784485509/32985348833280"
+      }
+    },
+    {
+      "certificate_sha256": "e28a0d9d6dc5e477da8dc79594ed50dd6372c87d4f1ba917afa1f54fd3b3788e",
+      "location": "round[5]",
+      "row": {
+        "index": 24436,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "4667961/1048576"
+          ],
+          [
+            9,
+            "1332163/5242880"
+          ],
+          [
+            10,
+            "-3433737/1048576"
+          ],
+          [
+            11,
+            "-8613185/3145728"
+          ],
+          [
+            14,
+            "-77139/65536"
+          ],
+          [
+            15,
+            "9767359/3932160"
+          ]
+        ],
+        "rhs": "-6928044937501/1030792151040"
+      }
+    },
+    {
+      "certificate_sha256": "e7a543153634007326c901d6099a6a3052823352ea66f9d8891bcd299490858b",
+      "location": "round[0]",
+      "row": {
+        "index": 24339,
+        "name": "three_square_center_energy_0_4_7_000",
+        "coefficients": [
+          [
+            0,
+            "49697663/15728640"
+          ],
+          [
+            1,
+            "16121373/5242880"
+          ],
+          [
+            8,
+            "2278499/3932160"
+          ],
+          [
+            9,
+            "-228189/65536"
+          ],
+          [
+            14,
+            "-58811659/15728640"
+          ],
+          [
+            15,
+            "2133747/5242880"
+          ]
+        ],
+        "rhs": "-21645950119127/3435973836800"
+      }
+    },
+    {
+      "certificate_sha256": "e7a543153634007326c901d6099a6a3052823352ea66f9d8891bcd299490858b",
+      "location": "round[0]",
+      "row": {
+        "index": 24352,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "39815749/15728640"
+          ],
+          [
+            3,
+            "-11287677649586533/4222124650659840"
+          ],
+          [
+            4,
+            "-64151441/15728640"
+          ],
+          [
+            5,
+            "975280644487123/2111062325329920"
+          ],
+          [
+            16,
+            "6083923/3932160"
+          ],
+          [
+            17,
+            "9337116360612287/4222124650659840"
+          ]
+        ],
+        "rhs": "-11063234767697236469067929706109/1980704062856608439838598758400"
+      }
+    },
+    {
+      "certificate_sha256": "e7a543153634007326c901d6099a6a3052823352ea66f9d8891bcd299490858b",
+      "location": "round[1]",
+      "row": {
+        "index": 24351,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "81447713/31457280"
+          ],
+          [
+            3,
+            "-862210246022889/281474976710656"
+          ],
+          [
+            4,
+            "-2126897/524288"
+          ],
+          [
+            5,
+            "1122262077286489/4222124650659840"
+          ],
+          [
+            16,
+            "46166107/31457280"
+          ],
+          [
+            17,
+            "5905445806528423/2111062325329920"
+          ]
+        ],
+        "rhs": "-9400425519422950432181/1475739525896764129280"
+      }
+    },
+    {
+      "certificate_sha256": "e7a543153634007326c901d6099a6a3052823352ea66f9d8891bcd299490858b",
+      "location": "round[2]",
+      "row": {
+        "index": 24305,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "85926023/31457280"
+          ],
+          [
+            3,
+            "-871668032444137/281474976710656"
+          ],
+          [
+            4,
+            "-4125347/1048576"
+          ],
+          [
+            5,
+            "850358435194969/4222124650659840"
+          ],
+          [
+            16,
+            "37834387/31457280"
+          ],
+          [
+            17,
+            "6112331025733543/2111062325329920"
+          ]
+        ],
+        "rhs": "-14444734856745449912183/2213609288845146193920"
+      }
+    },
+    {
+      "certificate_sha256": "e7a543153634007326c901d6099a6a3052823352ea66f9d8891bcd299490858b",
+      "location": "round[2]",
+      "row": {
+        "index": 24347,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "8637961/2097152"
+          ],
+          [
+            9,
+            "-110289/262144"
+          ],
+          [
+            10,
+            "-3557831/1048576"
+          ],
+          [
+            11,
+            "-1264757/524288"
+          ],
+          [
+            14,
+            "-1522299/2097152"
+          ],
+          [
+            15,
+            "1485335/524288"
+          ]
+        ],
+        "rhs": "-6708988233345/1099511627776"
+      }
+    },
+    {
+      "certificate_sha256": "e7a543153634007326c901d6099a6a3052823352ea66f9d8891bcd299490858b",
+      "location": "round[3]",
+      "row": {
+        "index": 24288,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "87675443/31457280"
+          ],
+          [
+            3,
+            "-864120969598697/281474976710656"
+          ],
+          [
+            4,
+            "-2033897/524288"
+          ],
+          [
+            5,
+            "28865/524288"
+          ],
+          [
+            16,
+            "34358377/31457280"
+          ],
+          [
+            17,
+            "848624190723817/281474976710656"
+          ]
+        ],
+        "rhs": "-29466431858925689189233/4427218577690292387840"
+      }
+    },
+    {
+      "certificate_sha256": "e7a543153634007326c901d6099a6a3052823352ea66f9d8891bcd299490858b",
+      "location": "round[4]",
+      "row": {
+        "index": 24223,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "88710803/31457280"
+          ],
+          [
+            3,
+            "-844024280749801/281474976710656"
+          ],
+          [
+            4,
+            "-252603/65536"
+          ],
+          [
+            5,
+            "-113675/1048576"
+          ],
+          [
+            16,
+            "32538637/31457280"
+          ],
+          [
+            17,
+            "874538681210601/281474976710656"
+          ]
+        ],
+        "rhs": "-7467757203639017081389/1106804644422573096960"
+      }
+    },
+    {
+      "certificate_sha256": "e7a543153634007326c901d6099a6a3052823352ea66f9d8891bcd299490858b",
+      "location": "round[5]",
+      "row": {
+        "index": 24202,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "89298113/31457280"
+          ],
+          [
+            3,
+            "-821295582254825/281474976710656"
+          ],
+          [
+            4,
+            "-2011205/524288"
+          ],
+          [
+            5,
+            "-34427/131072"
+          ],
+          [
+            16,
+            "31374187/31457280"
+          ],
+          [
+            17,
+            "895227001804521/281474976710656"
+          ]
+        ],
+        "rhs": "-30161461972959497218153/4427218577690292387840"
+      }
+    },
+    {
+      "certificate_sha256": "ecb464030752c0c3ba8adbb668ce97bbf2fcab111e8eafdfa0366fc7c86c5c23",
+      "location": "round[0]",
+      "row": {
+        "index": 24336,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "86349023/31457280"
+          ],
+          [
+            3,
+            "-402431/131072"
+          ],
+          [
+            4,
+            "-2058499/524288"
+          ],
+          [
+            5,
+            "32707/1048576"
+          ],
+          [
+            16,
+            "37160917/31457280"
+          ],
+          [
+            17,
+            "3186741/1048576"
+          ]
+        ],
+        "rhs": "-75747737526369/10995116277760"
+      }
+    },
+    {
+      "certificate_sha256": "ecb464030752c0c3ba8adbb668ce97bbf2fcab111e8eafdfa0366fc7c86c5c23",
+      "location": "round[0]",
+      "row": {
+        "index": 24378,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "4656143/1048576"
+          ],
+          [
+            9,
+            "143715/524288"
+          ],
+          [
+            10,
+            "-208311/65536"
+          ],
+          [
+            11,
+            "-8921087/3145728"
+          ],
+          [
+            14,
+            "-1323167/1048576"
+          ],
+          [
+            15,
+            "8058797/3145728"
+          ]
+        ],
+        "rhs": "-7547484315945/1099511627776"
+      }
+    },
+    {
+      "certificate_sha256": "edb1b2978a59527bca8c8cbb7ea562324c3f4877b646837111e62a07252c08db",
+      "location": "round[0]",
+      "row": {
+        "index": 24326,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "86349023/31457280"
+          ],
+          [
+            3,
+            "-402431/131072"
+          ],
+          [
+            4,
+            "-2058499/524288"
+          ],
+          [
+            5,
+            "32707/1048576"
+          ],
+          [
+            16,
+            "37160917/31457280"
+          ],
+          [
+            17,
+            "3186741/1048576"
+          ]
+        ],
+        "rhs": "-75747737526369/10995116277760"
+      }
+    },
+    {
+      "certificate_sha256": "edb1b2978a59527bca8c8cbb7ea562324c3f4877b646837111e62a07252c08db",
+      "location": "round[0]",
+      "row": {
+        "index": 24368,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "4656143/1048576"
+          ],
+          [
+            9,
+            "143715/524288"
+          ],
+          [
+            10,
+            "-208311/65536"
+          ],
+          [
+            11,
+            "-8921087/3145728"
+          ],
+          [
+            14,
+            "-1323167/1048576"
+          ],
+          [
+            15,
+            "8058797/3145728"
+          ]
+        ],
+        "rhs": "-7547484315945/1099511627776"
+      }
+    },
+    {
+      "certificate_sha256": "ff13093ba8ad1c6d56e7903507448fb0a3ea0ecf86bd4760491cc99b6f4a758c",
+      "location": "round[0]",
+      "row": {
+        "index": 24284,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "85050383/31457280"
+          ],
+          [
+            3,
+            "-935211805153001/281474976710656"
+          ],
+          [
+            4,
+            "-1024255/262144"
+          ],
+          [
+            5,
+            "162567/1048576"
+          ],
+          [
+            16,
+            "37860217/31457280"
+          ],
+          [
+            17,
+            "891573058377449/281474976710656"
+          ]
+        ],
+        "rhs": "-2002339103534660546825/295147905179352825856"
+      }
+    },
+    {
+      "certificate_sha256": "ff13093ba8ad1c6d56e7903507448fb0a3ea0ecf86bd4760491cc99b6f4a758c",
+      "location": "round[0]",
+      "row": {
+        "index": 24326,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "4667103/1048576"
+          ],
+          [
+            9,
+            "1297093/5242880"
+          ],
+          [
+            10,
+            "-3426813/1048576"
+          ],
+          [
+            11,
+            "-8642117/3145728"
+          ],
+          [
+            14,
+            "-620145/524288"
+          ],
+          [
+            15,
+            "19659653/7864320"
+          ]
+        ],
+        "rhs": "-27784524543917/4123168604160"
+      }
+    },
+    {
+      "certificate_sha256": "ff13093ba8ad1c6d56e7903507448fb0a3ea0ecf86bd4760491cc99b6f4a758c",
+      "location": "round[1]",
+      "row": {
+        "index": 24257,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "85563053/31457280"
+          ],
+          [
+            3,
+            "-3419875/1048576"
+          ],
+          [
+            4,
+            "-4080209/1048576"
+          ],
+          [
+            5,
+            "188839/1048576"
+          ],
+          [
+            16,
+            "36843217/31457280"
+          ],
+          [
+            17,
+            "807759/262144"
+          ]
+        ],
+        "rhs": "-7033222370339/1030792151040"
+      }
+    },
+    {
+      "certificate_sha256": "ff13093ba8ad1c6d56e7903507448fb0a3ea0ecf86bd4760491cc99b6f4a758c",
+      "location": "round[1]",
+      "row": {
+        "index": 24299,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "2331287/524288"
+          ],
+          [
+            9,
+            "78903/327680"
+          ],
+          [
+            10,
+            "-851047/262144"
+          ],
+          [
+            11,
+            "-8671385/3145728"
+          ],
+          [
+            14,
+            "-629193/524288"
+          ],
+          [
+            15,
+            "39569581/15728640"
+          ]
+        ],
+        "rhs": "-37124205633261/5497558138880"
+      }
+    },
+    {
+      "certificate_sha256": "ff13093ba8ad1c6d56e7903507448fb0a3ea0ecf86bd4760491cc99b6f4a758c",
+      "location": "round[2]",
+      "row": {
+        "index": 24217,
+        "name": "three_square_center_energy_1_2_8_000",
+        "coefficients": [
+          [
+            2,
+            "85876673/31457280"
+          ],
+          [
+            3,
+            "-3368497/1048576"
+          ],
+          [
+            4,
+            "-1026471/262144"
+          ],
+          [
+            5,
+            "163497/1048576"
+          ],
+          [
+            16,
+            "37299847/31457280"
+          ],
+          [
+            17,
+            "400625/131072"
+          ]
+        ],
+        "rhs": "-22686195873949/3298534883328"
+      }
+    },
+    {
+      "certificate_sha256": "ff13093ba8ad1c6d56e7903507448fb0a3ea0ecf86bd4760491cc99b6f4a758c",
+      "location": "round[2]",
+      "row": {
+        "index": 24259,
+        "name": "three_square_center_energy_4_5_7_000",
+        "coefficients": [
+          [
+            8,
+            "290929/65536"
+          ],
+          [
+            9,
+            "257909/1048576"
+          ],
+          [
+            10,
+            "-843545/262144"
+          ],
+          [
+            11,
+            "-8772263/3145728"
+          ],
+          [
+            14,
+            "-320171/262144"
+          ],
+          [
+            15,
+            "999817/393216"
+          ]
+        ],
+        "rhs": "-7470894917325/1099511627776"
+      }
+    }
+  ],
+  "energy_occurrence_count": 73,
+  "energy_occurrences_by_family": {
+    "three_square_center_energy_": 73
+  },
+  "distinct_energy_row_labels": 5,
+  "distinct_printed_energy_linear_inequalities": 58,
+  "energy_occurrences_by_label": {
+    "three_square_center_energy_0_1_7_000": 1,
+    "three_square_center_energy_0_4_7_000": 2,
+    "three_square_center_energy_1_2_8_000": 38,
+    "three_square_center_energy_1_4_7_000": 1,
+    "three_square_center_energy_4_5_7_000": 31
+  },
+  "source_sha256": {
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I10_complete_H_exact_context_v2/SHA256_MANIFEST.json": "8512984085432357c328d4ef0e1ad939c51e5f23a81ac172421f6c7580fa54fa",
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I10_complete_H_exact_context_v2/B16A_I10_COMPLETE_H_REPLAY.json": "3ece1bd114c1478bac555a8685adbaa0ea690919884d4d03926eb786ceebfbaa",
+    "/workspace/scratch/fee12ff81cbd/b_family/build_b16a_I10_hand_table.py": "43e899526bda74365735d9a2bc42a88b1f10f76daf2832a8e16389d711fe4c99",
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I10_complete_H_exact_context_v2/data/ordinary_H/I10_H01.json": "05b940e65b029a0a9eddc3974b77f85ea183a21d5f9592cd1d0d2ce02fe2e56c",
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I10_complete_H_exact_context_v2/data/local3_slopes/H_1_0_1_1/quarter_1.json": "06095b0a68d2bf692dc153600c05e531a33d35e116b6bdc3866ded51ae8ccaea",
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I10_complete_H_exact_context_v2/data/nested_D_bound3/I_quarter_1/D_quarter_1.json": "3199d5d5085f9e5f7efd76a5180a0bc7fa52de33a80c09ef1fde6d7d72e86490",
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I10_complete_H_exact_context_v2/data/nested_D_bound3/I_quarter_2/D_quarter_3.json": "3cab77917ac946fe6a949509d7de0610c8bb0fd13b433680e684e8f844578caf",
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I10_complete_H_exact_context_v2/data/nested_D_bound3/I_quarter_1/D_quarter_0.json": "5198fc1babd655d0404b5a53c8f59b512dc2fdb4aa739e5505686de6dea37c78",
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I10_complete_H_exact_context_v2/data/local3_slopes/H_1_0_1_2/quarter_3.json": "5bfe623540af2d769aede6fc8452d434b36eb5a9c7760171800065fcf3dae6c9",
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I10_complete_H_exact_context_v2/data/nested_D_final/I_quarter_1/D_quarter_2.json": "7603524a1fc1f659b731f022985435a24fdd6e039dbb8af70ff9dec855041017",
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I10_complete_H_exact_context_v2/data/local3_slopes/H_1_0_1_2/quarter_1.json": "99c0f72457a8044b496cbe9a7f295c00c8805a39d81739604569da83dc58e631",
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I10_complete_H_exact_context_v2/data/slope_I10_H11/quarter_3.json": "a20f35fff718b5c748d19fa0d318bdd213569b4a34eba23f3b6bc2f31d561246",
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I10_complete_H_exact_context_v2/data/local3_slopes/H_1_0_1_2/quarter_0.json": "aa6378c1cb613ab02a071f985084bc43da42d06bb2e13948b89e99a2a072c4f3",
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I10_complete_H_exact_context_v2/data/ordinary_H/I10_H02.json": "b25c3b3414b2467a9cd12cc72fbf2be83534885064be8708f1e22b0c7346c2eb",
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I10_complete_H_exact_context_v2/data/nested_D_bound3/I_quarter_2/D_quarter_1.json": "bfa034c31bf19fb7c975f57d30f35e8769b40a76a34c93631896cb35ef70d00f",
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I10_complete_H_exact_context_v2/data/nested_D_final/I_quarter_1/D_quarter_3.json": "c1938476084e605bc358d8f73caf2a878199b2402f5f424dce4093656e375654",
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I10_complete_H_exact_context_v2/ancestry/bound_induction/portable_context_triple_energy_continued_H_bound_B_negative-16a2fc93c8d133f0_1_0_1_2/bound_rounds.json": "e28a0d9d6dc5e477da8dc79594ed50dd6372c87d4f1ba917afa1f54fd3b3788e",
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I10_complete_H_exact_context_v2/data/local3_slopes/H_1_0_1_1/quarter_2.json": "e56cc66f8f44760692fce0a9f35022102ece8591df3f298e7e8a902820e37648",
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I10_complete_H_exact_context_v2/ancestry/bound_induction/portable_context_triple_energy_continued_H_bound_B_negative-16a2fc93c8d133f0_1_0_1_1/bound_rounds.json": "e7a543153634007326c901d6099a6a3052823352ea66f9d8891bcd299490858b",
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I10_complete_H_exact_context_v2/data/nested_D_bound3/I_quarter_2/D_quarter_2.json": "ecb464030752c0c3ba8adbb668ce97bbf2fcab111e8eafdfa0366fc7c86c5c23",
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I10_complete_H_exact_context_v2/data/nested_D_bound3/I_quarter_2/D_quarter_0.json": "edb1b2978a59527bca8c8cbb7ea562324c3f4877b646837111e62a07252c08db",
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I10_complete_H_exact_context_v2/data/local3_slopes/H_1_0_1_1/quarter_0.json": "f73c4c3ba6ace56494810b7683b84e6110054762c7293820097fa032cef40570",
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I10_complete_H_exact_context_v2/data/local3_slopes/H_1_0_1_2/quarter_2.json": "ff13093ba8ad1c6d56e7903507448fb0a3ea0ecf86bd4760491cc99b6f4a758c",
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I10_complete_H_exact_context_v2/data/fixed_hi_grid_capacity/negative-16a2fc93c8d133f0/1_0/tile_00.json": "596bc8d1813a3b771a5a3e0b6d35fd93402c3ae9db1143abb288a26921883308",
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I10_complete_H_exact_context_v2/data/fixed_hi_grid_capacity/negative-16a2fc93c8d133f0/1_0/tile_03.json": "7a45f51cf10da02d95bc70207d8202b8a8abeec44db88857d43cbc089f4de2f2",
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I10_complete_H_exact_context_v2/data/fixed_hi_grid_capacity/negative-16a2fc93c8d133f0/1_0/tile_04.json": "f13d0e0fe58eb2a4222d5e1ffde9adebbe1f2abbf6f623c967350d57b40e988e",
+    "/workspace/scratch/fee12ff81cbd/b_family/b16a_I10_complete_H_exact_context_v2/data/fixed_hi_grid_capacity/negative-16a2fc93c8d133f0/1_0/tile_07.json": "f861db7d6fb1b50a98570a8ae3c4a4dc71272de2a5db5e94ae70ec1f07088d11",
+    "/workspace/scratch/fee12ff81cbd/a_family/other_masks/B16A_COMPLETE_H_WITH_SLOPES_SOURCE_REVIEW.json": "c41b6526be3ba72bbeca69be4820cdf9ae2a7de8fdeae6f3c69e205c6432d763"
+  },
+  "new_original_cells": 0,
+  "new_masks": 0
+}

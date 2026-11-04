@@ -46,6 +46,19 @@ physical theorem packets, 3,006 local deductions, 5,018 premise rows and
 21 terminal rows. Every frozen input and literal hand-table entry is checked.
 The original and mask remain OPEN; this checkpoint adds zero closure credit.
 
+## B16a I10 complete fixed-rectangle checkpoint
+
+The [complete I10 proof](A2_00100_B16A_I10_COMPLETE_H_COVER_CHECKPOINT.md)
+excludes all eight closed H rectangles of the unchanged original I10 domain.
+Four direct terminals and two ordinary bound terminals join two complete
+I-angle covers; the H12 cover includes two complete four-member D-angle
+subcovers. The exact assembly checks fifty distinct local rounds, 8,083
+deductions, 13,253 premise rows and 500 terminal rows, including the four
+direct terminals. The complete physical hand/table and both independent
+reviews are preserved. The root audited all 430 portable archive members.
+B16a now has thirteen excluded I rectangles, with I21, I22 and I32 OPEN.
+The original itself remains OPEN and all fixed ledgers are unchanged.
+
 ## B16a I11 complete fixed-rectangle checkpoint
 
 The [complete B16a I11 H cover](A2_00100_B16A_I11_COMPLETE_H_COVER_CHECKPOINT.md)

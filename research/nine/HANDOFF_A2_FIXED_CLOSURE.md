@@ -564,6 +564,19 @@ deductions and 16,576 printed rows. The common original whole prefix remains
 separate. Root source/hand review, fresh composition and every archive member
 passed. This adds no whole original or mask closure.
 
+## B16a: complete I10 H and angle assembly
+
+The [I10 checkpoint](A2_00100_B16A_I10_COMPLETE_H_COVER_CHECKPOINT.md)
+attaches all eight original H products to the same prefix and fixed I10
+rectangle. Sixteen bound/angle terminal records and four direct terminals
+exclude the whole rectangle; four shared OPEN states supply necessary
+bounds only. The accepted 409-input exact replay, complete physical hand,
+literal table, source/attachment review and independent hand review pass.
+Root source/hand review and all 430 archived-file checks also pass. Its
+13,753 local row occurrences include 73 three-square energy occurrences.
+Thirteen of sixteen I rectangles are excluded. I21, I22 and I32 remain OPEN;
+no complete original, mask, positional root or roadmap gate is added.
+
 ## Fixed ledgers and next handoff
 
 - Original-nine masks: **8 CLOSED / 24 OPEN**, exactly `000/*` and `010/*` CLOSED.

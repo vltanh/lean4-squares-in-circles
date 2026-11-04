@@ -1,0 +1,126 @@
+{
+  "schema": "B16a_I10_complete_original_I_rectangle_publication_v1",
+  "original_id": "negative-16a2fc93c8d133f0",
+  "original_prefix_sha256": "69ddd2dcc5383c3259187588a890ddadb4a6545e8bdcc11e653bdfb8bb6b3886",
+  "new_complete_I_rectangles": [
+    [
+      1,
+      0
+    ]
+  ],
+  "complete_H_rectangles": 8,
+  "direct_H_terminals": 4,
+  "ordinary_H_bound_terminals": 2,
+  "complete_I_angle_covers": 2,
+  "complete_nested_D_angle_covers": 2,
+  "bound_terminal_leaves": 16,
+  "shared_open_ancestor_records": 4,
+  "excluded_original_I_rectangles": 13,
+  "remaining_original_I_tiles": [
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      3,
+      2
+    ]
+  ],
+  "archive": "a2_00100_b16a_I10_complete_H_checkpoint.tar.xz",
+  "archive_bytes": 48605080,
+  "archive_sha256": "4f224ed9de556fcfbb8fe5146d02ed69b52168067065cedb6f254b95ab72873d",
+  "parts": [
+    {
+      "file": "a2_00100_b16a_I10_complete_H_checkpoint.tar.xz.part01",
+      "bytes": 8388608,
+      "sha256": "c41d075ee078af2ef4d2829676581548d44a6c8fb353deebff6deb334e462d46"
+    },
+    {
+      "file": "a2_00100_b16a_I10_complete_H_checkpoint.tar.xz.part02",
+      "bytes": 8388608,
+      "sha256": "8e57b6dfc357628376298a991be74b58f8c61d2b740c97b044bf3b2bd8e39de6"
+    },
+    {
+      "file": "a2_00100_b16a_I10_complete_H_checkpoint.tar.xz.part03",
+      "bytes": 8388608,
+      "sha256": "6d3850549926af4e20dc3a14ad623797c9d63ae04d5ea23c7a5dadbc39da5d06"
+    },
+    {
+      "file": "a2_00100_b16a_I10_complete_H_checkpoint.tar.xz.part04",
+      "bytes": 8388608,
+      "sha256": "4a07813e1d6f980828cde70fc90f4f9148f53c60d6307e806027a5e1d5115158"
+    },
+    {
+      "file": "a2_00100_b16a_I10_complete_H_checkpoint.tar.xz.part05",
+      "bytes": 8388608,
+      "sha256": "a799edfa79d6ac3f984f080dc5f4a40728cec2efe639b29c07722c53d5613bd8"
+    },
+    {
+      "file": "a2_00100_b16a_I10_complete_H_checkpoint.tar.xz.part06",
+      "bytes": 6662040,
+      "sha256": "ed310d8ef496d0d5578f64eab95c9cc0b0071139ad6501bf4cfc8bff22b28d78"
+    }
+  ],
+  "concatenation_order": [
+    "a2_00100_b16a_I10_complete_H_checkpoint.tar.xz.part01",
+    "a2_00100_b16a_I10_complete_H_checkpoint.tar.xz.part02",
+    "a2_00100_b16a_I10_complete_H_checkpoint.tar.xz.part03",
+    "a2_00100_b16a_I10_complete_H_checkpoint.tar.xz.part04",
+    "a2_00100_b16a_I10_complete_H_checkpoint.tar.xz.part05",
+    "a2_00100_b16a_I10_complete_H_checkpoint.tar.xz.part06"
+  ],
+  "packet_directory": "b16a_I10_complete_H_checkpoint_v2",
+  "entry_point": "verify_b16a_complete_H_with_slope_covers_v2.py",
+  "entry_specification": "I10_COMPLETE_H_COVER.json",
+  "frozen_inputs": 409,
+  "frozen_manifest_sha256": "8512984085432357c328d4ef0e1ad939c51e5f23a81ac172421f6c7580fa54fa",
+  "archive_members": 430,
+  "archive_inventory_sha256": "138b7b8bbb5decbcad4cd19dea73ed4d7bc94acd1a06818b0e024c695cb94df4",
+  "exact_master_sha256": "22a512b2b4aafd10c41d79edf123dbc93ccc540b4c00ee16be8f2803ee957a94",
+  "accepted_exact_report": "a2_00100_b16a_I10_complete_H_replay.json",
+  "accepted_exact_report_sha256": "3ece1bd114c1478bac555a8685adbaa0ea690919884d4d03926eb786ceebfbaa",
+  "literal_cover_table": "a2_00100_b16a_I10_complete_H_table.json",
+  "literal_cover_table_sha256": "76656a65ec004664946ca3f9331f09973b4bbc26d0fc8d0952214f337b01227d",
+  "physical_bindings": "a2_00100_b16a_I10_physical_proof_bindings.json",
+  "physical_bindings_sha256": "223d5c6c19f1bab7f0448de285b51f1b8cffc19acaf642ac82ed18794576af17",
+  "root_review": "a2_00100_b16a_I10_root_review.json",
+  "root_review_sha256": "f4beb6469ed9df8e4832434bb1010800a671920d522dc206552af57d17ef045f",
+  "archive_audit": "a2_00100_b16a_I10_root_archive_audit.json",
+  "archive_audit_sha256": "3bfc9bcaf395a606de46836336332a27a0181f45d0e14d02df1c239f4f866b35",
+  "independent_hand_review": "a2_00100_b16a_I10_independent_hand_review.json",
+  "independent_hand_review_sha256": "7f292a418d6fde4c39498a16fd9b6c6b597e638ce1169451d5935430306d4faf",
+  "original_hand_sha256": "4313bf20b678ea2c06d6eb837dfb3109877465b340bcd8f1b3e0d034838ea639",
+  "committed_hand": "A2_00100_B16A_I10_COMPLETE_H_COVER_CHECKPOINT.md",
+  "committed_hand_sha256": "ccbf8600937c17896325826fc5b30907477129ea245d00e909bb299f54abdb7d",
+  "distinct_bound_records": 20,
+  "local_rounds": 50,
+  "local_deductions": 8083,
+  "local_premise_rows": 13253,
+  "local_bound_terminal_rows": 482,
+  "local_direct_terminal_rows": 18,
+  "local_row_occurrences": 13753,
+  "energy_occurrences": {
+    "three_square": 73,
+    "four_center": 0,
+    "square_area": 0
+  },
+  "same_original_nine_square_caller_retained": true,
+  "all_closed_faces_retained": true,
+  "arithmetic_repeated_for_packaging": false,
+  "whole_original_closed": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "new_positional_roots": 0,
+  "new_roadmap_gates": 0,
+  "fixed_denominators": {
+    "original_cells": 231,
+    "masks": 32,
+    "positional_roots": 7915,
+    "roadmap_gates": 15
+  },
+  "lean_lake_ci_run": false
+}
