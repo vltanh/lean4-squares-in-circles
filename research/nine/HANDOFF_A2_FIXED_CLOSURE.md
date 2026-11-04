@@ -83,11 +83,14 @@ part and all 2,436 archive members. All 2,432 frozen inputs are unchanged.
 The whole-mask ledger remains **8 CLOSED / 24 OPEN**. Eventual 001/00 and
 100/00 assembly remains strict-radius.
 
-The [B16a replayable-cover checkpoint](computer_assisted/a2_00100_b16a_replayable_cover_availability_v1/README.md)
-preserves eleven currently reproducible I-quarter exclusions and explicitly
-queues I20/I21/I22/I31/I33. It distinguishes the historical fourteen-quarter
-claim from recovered evidence, preserves all available earlier proofs and
-the five new terminal records, and changes no original or mask status.
+The [recovered complete B16a complementary-quarter proofs](computer_assisted/a2_00100_b16a_three_complementary_quarters_v1/README.md)
+restore I20, I31 and I33 from local commit `a16650c9656f9b1bc1bb7f45d15e4e2897561098`,
+which was absent from this branch. Together with the unchanged eleven-quarter
+[availability checkpoint](computer_assisted/a2_00100_b16a_replayable_cover_availability_v1/README.md),
+there are now fourteen reproducible exclusions. Only the merged I21/I22 domain
+remains for B16a. The recovered packet includes 31 nodes, 23 excluded leaves,
+2,919 exact deductions and its fresh portable replay. No whole original or mask
+is counted by this recovery.
 
 The [complete A1 portable consequence checkpoint](computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/README.md)
 freshly excludes all 566 terminal domains of component 1 of A-c744 and

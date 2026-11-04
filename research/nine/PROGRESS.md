@@ -1,5 +1,14 @@
 > **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **222/231 cells CLOSED, 9 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
+## Recovered B16a complementary proof packet
+
+The complete I20/I31/I33 proofs from local commit `a16650c9656f9b1bc1bb7f45d15e4e2897561098`
+are now preserved in the [complementary-quarter packet](computer_assisted/a2_00100_b16a_three_complementary_quarters_v1/README.md).
+This restores the reproducible B16a inventory to **14/16 quarters**; the merged
+I21/I22 rectangle remains OPEN. The accepted current-mask ledger remains
+**222/231 CLOSED, 9 OPEN**, and whole masks remain **8/32 CLOSED**.
+
+
 > **Execution restored, 4 November 2026:** Published ancestors were recovered and hash-checked after the [recorded outage](EXECUTION_RECOVERY_2026_11_04_1328.md). Subsequent computer-assisted discovery, exact replays and complete physical assembly close D6c5, B340 and D821. All other open originals remain explicit.
 
 # n=9: 222/231 current-mask cells closed; 9 remain OPEN
