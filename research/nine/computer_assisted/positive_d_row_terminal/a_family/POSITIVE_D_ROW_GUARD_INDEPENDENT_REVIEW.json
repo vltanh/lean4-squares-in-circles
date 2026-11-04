@@ -1,0 +1,14 @@
+{
+  "status": "PASS_INDEPENDENT_POSITIVE_D_GUARD_ARITHMETIC_AND_SOURCE_REVIEW",
+  "exact_checks": 499,
+  "helper_sha256": "a5ee541508c4b284738182827f9c80935afd0c0cc45618de13e96a8b768c82cd",
+  "reviewer_sha256": "cda59afc7fd948ca5dd7ffb33e28b71a1e759ab3c7902d4bbab69c2b52f03f00",
+  "all_twelve_complement_rows_checked": true,
+  "both_original_extra_labels_retained": true,
+  "telescoping_and_reversed_differences_checked": true,
+  "physical_theorem": "WEAK_OUTER_NUMERIC_POSITIVE_D_TOTAL_VARIATION_ROW_HAND_TERMINAL.md sections 1-4",
+  "conditional_scope_only": true,
+  "source_unchanged": true,
+  "new_original_cells": 0,
+  "new_masks": 0
+}
