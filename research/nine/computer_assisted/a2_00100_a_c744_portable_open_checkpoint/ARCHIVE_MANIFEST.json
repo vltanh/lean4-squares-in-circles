@@ -1,0 +1,50 @@
+{
+  "schema": "a_c744_portable_open_archive_v1",
+  "archive": "a_c744_portable_open_checkpoint.tar.xz",
+  "archive_bytes": 42005488,
+  "archive_sha256": "e7ddb4f4e5b943a6f69a0aa861f6721ca49835311fa595ef40a10881b62e4343",
+  "parts": [
+    {
+      "file": "a_c744_portable_open_checkpoint.tar.xz.part001",
+      "bytes": 8388608,
+      "sha256": "dbc8d1d7d0abce82ed1fcac308d34cfc0b6245b02503d3f28ec88fc3ba54251f"
+    },
+    {
+      "file": "a_c744_portable_open_checkpoint.tar.xz.part002",
+      "bytes": 8388608,
+      "sha256": "8b5641c0dc2eea7ecbf5c6abfd1e6d8cbcc1eed36cc688c62be8b16ad28619c4"
+    },
+    {
+      "file": "a_c744_portable_open_checkpoint.tar.xz.part003",
+      "bytes": 8388608,
+      "sha256": "2c6e9da9c6c3192ad4780d91aea2d04db9d6f7f7f611034342953c6e8f27a93f"
+    },
+    {
+      "file": "a_c744_portable_open_checkpoint.tar.xz.part004",
+      "bytes": 8388608,
+      "sha256": "bf0e64dbae1fd9e38e7ab933f63941b2f23a7cc750fb84ae396669e6aa65f816"
+    },
+    {
+      "file": "a_c744_portable_open_checkpoint.tar.xz.part005",
+      "bytes": 8388608,
+      "sha256": "6bccc35c1ca004fe3b2443a734bd3bda83865cf09b34bccfe85f328fdab2e363"
+    },
+    {
+      "file": "a_c744_portable_open_checkpoint.tar.xz.part006",
+      "bytes": 62448,
+      "sha256": "827e39d6c885994c05917e892abfaf360d7eeab8e7568555f848527ae4ad5eab"
+    }
+  ],
+  "extracted_directory": "a_c744_portable_open_checkpoint",
+  "release_manifest_sha256": "35f9c488129aa4a4e8d168de6e07ebc2158f6d8968417ed4020b3b4e510bbbc2",
+  "input_manifest_sha256": "6b730ae5e0dabed264d7e71ba6de72bc15f744d7bba619ed8f6c27a86b9097cf",
+  "every_archive_member_checked": 1431,
+  "all_archive_hashes_match": true,
+  "xz_integrity_pass": true,
+  "original_status": "OPEN",
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "replay_command": "python -B -S packet/replay_portable_a_c744_packet.py --packet packet --output ../fresh_a_c744_open_replay",
+  "lean_lake_ci_run": false,
+  "seconds": 132.6178711279972
+}

@@ -1,0 +1,61 @@
+{
+  "status": "PASS_PORTABLE_A_FILENAME_AND_CHILD_BOUNDARY_CONTROLS",
+  "launcher_sha256": "9a2e8f5ba527f156a7c67ac24e5f201127ecd4a44fb5b942566e6a9c76937c19",
+  "control_source_sha256": "51f39e4c13889980739aed9eb6bb7698b49ab415efc815403b5359cdab878711",
+  "positive_controls": 2,
+  "rejected_damaged_or_disallowed_controls": 8,
+  "controls": [
+    {
+      "case": "valid_aliases",
+      "status": "PASS"
+    },
+    {
+      "case": "isolated_child",
+      "status": "PASS"
+    },
+    {
+      "case": "external_workspace_read",
+      "status": "REJECTED_EXPECTED",
+      "reason": "('external workspace access forbidden', '/workspace/scratch/f9f48fcfb253/ac_work/portable_A_transport_controls/external_workspace_read/outside.json')"
+    },
+    {
+      "case": "unlisted_packet_read",
+      "status": "REJECTED_EXPECTED",
+      "reason": "('unlisted packet read forbidden', '/workspace/scratch/f9f48fcfb253/ac_work/portable_A_transport_controls/unlisted_packet_read/packet/unlisted.json')"
+    },
+    {
+      "case": "frozen_input_write",
+      "status": "REJECTED_EXPECTED",
+      "reason": "('frozen input write forbidden', '/workspace/scratch/f9f48fcfb253/ac_work/portable_A_transport_controls/frozen_input_write/packet/payload/ac_work/tree/input.json')"
+    },
+    {
+      "case": "numerical_import",
+      "status": "REJECTED_EXPECTED",
+      "reason": "('numerical import forbidden', 'numpy')"
+    },
+    {
+      "case": "foreign_subprocess",
+      "status": "REJECTED_EXPECTED",
+      "reason": ""
+    },
+    {
+      "case": "missing_file_alias",
+      "status": "REJECTED_EXPECTED",
+      "reason": "('external workspace access forbidden', '/workspace/portable_A_transport_fixture/original/input.json')"
+    },
+    {
+      "case": "wrong_input_hash",
+      "status": "REJECTED_EXPECTED",
+      "reason": "('changed packet input', 'payload/ac_work/tree/input.json')"
+    },
+    {
+      "case": "escaping_binding",
+      "status": "REJECTED_EXPECTED",
+      "reason": ""
+    }
+  ],
+  "exact_mathematical_sources_or_proofs_modified": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "seconds": 1.2296133830004692
+}

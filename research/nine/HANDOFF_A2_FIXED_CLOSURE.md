@@ -18,6 +18,17 @@ with a fresh whole-original portable replay. Accepted counts are
 
 ## Read first
 
+The [portable A-c744 OPEN checkpoint](computer_assisted/a2_00100_a_c744_portable_open_checkpoint/README.md)
+preserves the complete first complement, two direct complement exclusions,
+and the resulting three necessary original-domain inequalities. Its fresh
+portable replay checks 1,384 immutable inputs, the original five-domain
+declaration and partial complete-domain covers for the two remaining
+complements. The 165-node component-3 cover checks 26,869 deductions and
+46,885 row occurrences. All open alternatives remain explicit. The entire
+compressed archive is member-hash audited; numerical imports and external
+workspace reads are forbidden during exact replay. A-c744 remains OPEN,
+with **zero new original, mask or roadmap credit**.
+
 The [full-mask continuation entry points](computer_assisted/full_mask_continuation_entrypoints/README.md)
 recover the generic strict-radius all-nine model and its exact feasibility
 controls. Fresh root replays preserve the genuine closed-Q witnesses in

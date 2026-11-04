@@ -1,0 +1,43 @@
+{
+  "status": "PASS_FRESH_PORTABLE_A_C744_OPEN_PROTOTYPE",
+  "original_id": "positive-c744bc031d40ee64",
+  "packet_manifest_sha256": "6b730ae5e0dabed264d7e71ba6de72bc15f744d7bba619ed8f6c27a86b9097cf",
+  "input_files": 1384,
+  "input_bytes": 468599561,
+  "exact_mathematical_sources_unchanged": true,
+  "explicit_path_aliases": 1488,
+  "external_workspace_reads_forbidden_in_every_child": true,
+  "numerical_imports_forbidden": true,
+  "all_inputs_rehashed_at_completion": true,
+  "lean_lake_ci_run": false,
+  "seconds": 540.8596718280005,
+  "components": {
+    "0": {
+      "status": "PASS_COMPLETE_TWO_LINK_COMPLEMENT_TREE",
+      "nodes": 41,
+      "excluded_leaves": 31,
+      "open_leaves": 0,
+      "deductions": 1154,
+      "printed_rows_checked": 1385
+    },
+    "1": {
+      "status": "PASS_PARTIAL_TWO_LINK_COMPLEMENT_TREE",
+      "nodes": 49,
+      "excluded_leaves": 0,
+      "open_leaves": 38,
+      "deductions": 2163,
+      "printed_rows_checked": 4343
+    },
+    "3": {
+      "status": "PASS_PARTIAL_TWO_LINK_COMPLEMENT_TREE",
+      "nodes": 165,
+      "excluded_leaves": 115,
+      "open_leaves": 17,
+      "deductions": 26869,
+      "printed_rows_checked": 46885
+    }
+  },
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "whole_original_coverage_not_claimed": true
+}

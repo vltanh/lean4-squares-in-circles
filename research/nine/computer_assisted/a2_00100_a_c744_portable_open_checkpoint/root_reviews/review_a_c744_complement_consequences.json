@@ -1,0 +1,41 @@
+{
+  "status": "PASS_ROOT_PHYSICAL_AND_ATTACHMENT_REVIEW",
+  "binding_sha256": "905634da0a82c25cd25e2d13d31d9a91be4d2556e1d2a38458a233e627108b7f",
+  "original_id": "positive-c744bc031d40ee64",
+  "original_path": [
+    [
+      "angle",
+      3,
+      1
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      0
+    ],
+    [
+      "inward_row_escape",
+      [
+        7,
+        8
+      ],
+      [
+        4
+      ]
+    ]
+  ],
+  "literal_rows": 3,
+  "valid_descendant_callers": 3,
+  "damaged_literals_or_wrong_originals_rejected": 15,
+  "source_report_sha256": "270977b5311fe4f4fc000466b84fa26ddf2e8f320e23f2d03c1e5b66c0ccafc8",
+  "source_exclusions_freshly_replayed_by_attachment": true,
+  "root_repeated_source_arithmetic": false,
+  "first_weighted_consumer_replay_still_required": true,
+  "no_child_sat_choices_or_auxiliaries_transported": true,
+  "acyclic_old_checkers_bound_before_new_consequences": true,
+  "whole_original_or_mask_closure_claimed": false,
+  "lean_lake_ci_run": false
+}
