@@ -1,0 +1,66 @@
+{
+  "status": "PASS_EXACT_TWO_LINK_GUARDS_AND_CLOSED_COMPLEMENT",
+  "guard_controls": 10,
+  "closed_complement_identity_checks": 500,
+  "checks": [
+    {
+      "label": "aligned_guard_t_0",
+      "passed": true,
+      "guard_status": "PASS_ACTUAL_AB_TWO_LINK_TERMINAL_GUARD"
+    },
+    {
+      "label": "aligned_guard_t_1/4",
+      "passed": true,
+      "guard_status": "PASS_ACTUAL_AB_TWO_LINK_TERMINAL_GUARD"
+    },
+    {
+      "label": "aligned_guard_t_13/50",
+      "passed": true,
+      "guard_status": "PASS_ACTUAL_AB_TWO_LINK_TERMINAL_GUARD"
+    },
+    {
+      "label": "aligned_guard_t_3/5",
+      "passed": true,
+      "guard_status": "PASS_ACTUAL_AB_TWO_LINK_TERMINAL_GUARD"
+    },
+    {
+      "label": "variation_outside_closed_face",
+      "passed": true,
+      "guard_status": "GUARD_NOT_IMPLIED"
+    },
+    {
+      "label": "strict_dx_equality_rejected",
+      "passed": true,
+      "guard_status": "GUARD_NOT_IMPLIED"
+    },
+    {
+      "label": "wrong_vertical_side_rejected",
+      "passed": true,
+      "guard_status": "GUARD_NOT_IMPLIED"
+    },
+    {
+      "label": "left_order_rejected",
+      "passed": true,
+      "guard_status": "GUARD_NOT_IMPLIED"
+    },
+    {
+      "label": "right_order_rejected",
+      "passed": true,
+      "guard_status": "GUARD_NOT_IMPLIED"
+    },
+    {
+      "label": "wrong_D_sign_rejected",
+      "passed": true,
+      "guard_status": "GUARD_NOT_IMPLIED"
+    }
+  ],
+  "physical_feasibility_of_controls_not_asserted": true,
+  "theorem_source_binding_required": true,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "source_sha256": {
+    "/workspace/scratch/f9f48fcfb253/global_work/actual_edge_row/review_two_link_guard.py": "781a810f7f2773e1d024164ceb16d6b901ceeb87f78f599657a68d1aea4bacf2",
+    "/workspace/scratch/f9f48fcfb253/global_work/actual_edge_row/two_link_actual_ab_guard.py": "3a965bdcc8fc0f4de55fc5e3a5fef945f584710fa5ff6c339de44abcea640c19",
+    "/workspace/scratch/f9f48fcfb253/global_work/actual_edge_row/check_two_link_actual_ab_guard.py": "4e7205db61c797ebfce283826dba6782351582d6342151d208b52ff0028edbce"
+  }
+}

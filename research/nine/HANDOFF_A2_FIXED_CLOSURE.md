@@ -17,6 +17,15 @@ D6c5 still has fifteen I rectangles excluded and I22 as a whole OPEN.
 
 ## Read first
 
+The [actual-AB two-link theorem](computer_assisted/actual_AB_two_link_row_v1/ACTUAL_AB_TWO_LINK_ROW_HAND_PROOF.md)
+uses the actual AB link without charging it a height error. With its
+proved D/G sign and strict horizontal-gap guards, it permits
+`|y_I-y_B|+|y_D-y_I|<=3/5`. Its complete 28-domain scalar proof has 103
+leaves and 12,875 exact coefficient checks. Root and independent physical
+reviews, fresh scalar replays and all guard/complement controls pass.
+The complete five-domain complement is available when the parent also
+proves `x_I<x_D`. This conditional input adds **zero cells and zero masks**.
+
 The [full-angle common-side row theorem](computer_assisted/full_angle_common_side_row_v1/FULL_ANGLE_SMALL_VARIATION_FOUR_ROW_HAND_TERMINAL.md)
 now removes the endpoint-sign restriction at total height variation at
 most `13/100`. Root physical review and fresh exact replays pass: 6,170

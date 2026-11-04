@@ -1,0 +1,577 @@
+{
+  "status": "PASS_COMPLETE_EXACT_TWO_LINK_SCALAR_COVER",
+  "domains": 28,
+  "leaves": 103,
+  "bernstein_coefficients": 12875,
+  "frontier": 0,
+  "coefficient": "601/1000",
+  "target_variation": "3/5",
+  "strict_except_all_zero": true,
+  "physical_lifting_separately_required": true,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "audits": [
+    {
+      "file": "spmm_o01_k0.json",
+      "sha256": "52bef70edaa6e52eeeac2b1a50bbad3dc77ce92e840838549383b372b484ab37",
+      "signs": [
+        1,
+        -1,
+        -1
+      ],
+      "owners": [
+        0,
+        1
+      ],
+      "selected_owner": 0,
+      "leaves": 1,
+      "nodes": 1,
+      "maxdepth": 0,
+      "bernstein_coefficients": 125,
+      "minimum_positive_rational_coefficient": "6842500/81",
+      "scalar_strict_except_all_zero": true
+    },
+    {
+      "file": "spmm_o01_k1.json",
+      "sha256": "6bdf483a1a188ed495fbd11a672591295852d1f481f2487eee110d7c2175fff5",
+      "signs": [
+        1,
+        -1,
+        -1
+      ],
+      "owners": [
+        0,
+        1
+      ],
+      "selected_owner": 1,
+      "leaves": 4,
+      "nodes": 7,
+      "maxdepth": 3,
+      "bernstein_coefficients": 500,
+      "minimum_positive_rational_coefficient": "80756019785/3359232",
+      "scalar_strict_except_all_zero": true
+    },
+    {
+      "file": "spmm_o02_k0.json",
+      "sha256": "ccee2799ddf40a920e3f99aa4bf4ef97fc08037c43194d440849ddc3137461d5",
+      "signs": [
+        1,
+        -1,
+        -1
+      ],
+      "owners": [
+        0,
+        2
+      ],
+      "selected_owner": 0,
+      "leaves": 3,
+      "nodes": 5,
+      "maxdepth": 2,
+      "bernstein_coefficients": 375,
+      "minimum_positive_rational_coefficient": "158470",
+      "scalar_strict_except_all_zero": true
+    },
+    {
+      "file": "spmm_o02_k2.json",
+      "sha256": "e0aea00a506faf09e972fb495d7742db7ee0aa93702d3e179b1767679b68edb9",
+      "signs": [
+        1,
+        -1,
+        -1
+      ],
+      "owners": [
+        0,
+        2
+      ],
+      "selected_owner": 2,
+      "leaves": 3,
+      "nodes": 5,
+      "maxdepth": 2,
+      "bernstein_coefficients": 375,
+      "minimum_positive_rational_coefficient": "7920625/81",
+      "scalar_strict_except_all_zero": true
+    },
+    {
+      "file": "spmm_o11_k1.json",
+      "sha256": "a5e6440a6a88fcaeeb9bebbc8f537279d28b046ec08b8d957461529ff81e7aa1",
+      "signs": [
+        1,
+        -1,
+        -1
+      ],
+      "owners": [
+        1,
+        1
+      ],
+      "selected_owner": 1,
+      "leaves": 4,
+      "nodes": 7,
+      "maxdepth": 3,
+      "bernstein_coefficients": 500,
+      "minimum_positive_rational_coefficient": "274160/3",
+      "scalar_strict_except_all_zero": true
+    },
+    {
+      "file": "spmm_o12_k1.json",
+      "sha256": "c1472b52da98cb8bcc2053a756edf3210989fcab61f6ab0aac173b9ce78c14fa",
+      "signs": [
+        1,
+        -1,
+        -1
+      ],
+      "owners": [
+        1,
+        2
+      ],
+      "selected_owner": 1,
+      "leaves": 2,
+      "nodes": 3,
+      "maxdepth": 1,
+      "bernstein_coefficients": 250,
+      "minimum_positive_rational_coefficient": "331835220535/1679616",
+      "scalar_strict_except_all_zero": true
+    },
+    {
+      "file": "spmm_o12_k2.json",
+      "sha256": "f259da37fc137403121e694982b10f873599fb3e1b04466afb63d5fa3c752ae0",
+      "signs": [
+        1,
+        -1,
+        -1
+      ],
+      "owners": [
+        1,
+        2
+      ],
+      "selected_owner": 2,
+      "leaves": 1,
+      "nodes": 1,
+      "maxdepth": 0,
+      "bernstein_coefficients": 125,
+      "minimum_positive_rational_coefficient": "230000",
+      "scalar_strict_except_all_zero": true
+    },
+    {
+      "file": "spmp_o01_k0.json",
+      "sha256": "bdf38661821264130a30d3e584e66375a1216810b5c59edc7bb5e58780e37484",
+      "signs": [
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        0,
+        1
+      ],
+      "selected_owner": 0,
+      "leaves": 1,
+      "nodes": 1,
+      "maxdepth": 0,
+      "bernstein_coefficients": 125,
+      "minimum_positive_rational_coefficient": "316940",
+      "scalar_strict_except_all_zero": true
+    },
+    {
+      "file": "spmp_o01_k1.json",
+      "sha256": "5651ca3bdd6919e93f4022908bc204b0ef1289f1c5e0c28c21ac416f0489771e",
+      "signs": [
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        0,
+        1
+      ],
+      "selected_owner": 1,
+      "leaves": 1,
+      "nodes": 1,
+      "maxdepth": 0,
+      "bernstein_coefficients": 125,
+      "minimum_positive_rational_coefficient": "489440",
+      "scalar_strict_except_all_zero": true
+    },
+    {
+      "file": "spmp_o02_k0.json",
+      "sha256": "ba1653f1f6013da04f08fad4ee824657e96df7b7ec30ce5c128f341edee764e5",
+      "signs": [
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        0,
+        2
+      ],
+      "selected_owner": 0,
+      "leaves": 1,
+      "nodes": 1,
+      "maxdepth": 0,
+      "bernstein_coefficients": 125,
+      "minimum_positive_rational_coefficient": "331835220535/1679616",
+      "scalar_strict_except_all_zero": true
+    },
+    {
+      "file": "spmp_o02_k2.json",
+      "sha256": "e1e83ccce7f728cab7af2c1d72177b2863f3b265438bb079f3d22846a1d3b8d7",
+      "signs": [
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        0,
+        2
+      ],
+      "selected_owner": 2,
+      "leaves": 1,
+      "nodes": 1,
+      "maxdepth": 0,
+      "bernstein_coefficients": 125,
+      "minimum_positive_rational_coefficient": "1066184665/419904",
+      "scalar_strict_except_all_zero": true
+    },
+    {
+      "file": "spmp_o11_k1.json",
+      "sha256": "a17bdeea024168569dc647f2b3f1365a4d378e72f056965c49fd88a944e84277",
+      "signs": [
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        1,
+        1
+      ],
+      "selected_owner": 1,
+      "leaves": 1,
+      "nodes": 1,
+      "maxdepth": 0,
+      "bernstein_coefficients": 125,
+      "minimum_positive_rational_coefficient": "489440",
+      "scalar_strict_except_all_zero": true
+    },
+    {
+      "file": "spmp_o12_k1.json",
+      "sha256": "4dd1dbdd2fe5e5eea46408d37fe3006cddeb37226a3935aa59e06f7e9eb93c5a",
+      "signs": [
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        1,
+        2
+      ],
+      "selected_owner": 1,
+      "leaves": 1,
+      "nodes": 1,
+      "maxdepth": 0,
+      "bernstein_coefficients": 125,
+      "minimum_positive_rational_coefficient": "331835220535/1679616",
+      "scalar_strict_except_all_zero": true
+    },
+    {
+      "file": "spmp_o12_k2.json",
+      "sha256": "20eef218b387b0c98b6dd08c098b3adfd39e53981f67e934898aea23949802a5",
+      "signs": [
+        1,
+        -1,
+        1
+      ],
+      "owners": [
+        1,
+        2
+      ],
+      "selected_owner": 2,
+      "leaves": 1,
+      "nodes": 1,
+      "maxdepth": 0,
+      "bernstein_coefficients": 125,
+      "minimum_positive_rational_coefficient": "2603125/81",
+      "scalar_strict_except_all_zero": true
+    },
+    {
+      "file": "sppm_o01_k0.json",
+      "sha256": "7f5c6d659f07233d48ca3f6ddeb3b3906dd8f29adb78c7d0c2493412efe52e6a",
+      "signs": [
+        1,
+        1,
+        -1
+      ],
+      "owners": [
+        0,
+        1
+      ],
+      "selected_owner": 0,
+      "leaves": 1,
+      "nodes": 1,
+      "maxdepth": 0,
+      "bernstein_coefficients": 125,
+      "minimum_positive_rational_coefficient": "1205185/81",
+      "scalar_strict_except_all_zero": true
+    },
+    {
+      "file": "sppm_o01_k1.json",
+      "sha256": "aa825eed608d06d31f551e65d888b4a079a129f6db91f990750cd62234b36467",
+      "signs": [
+        1,
+        1,
+        -1
+      ],
+      "owners": [
+        0,
+        1
+      ],
+      "selected_owner": 1,
+      "leaves": 1,
+      "nodes": 1,
+      "maxdepth": 0,
+      "bernstein_coefficients": 125,
+      "minimum_positive_rational_coefficient": "1066184665/419904",
+      "scalar_strict_except_all_zero": true
+    },
+    {
+      "file": "sppm_o02_k0.json",
+      "sha256": "b41358d9b4d9fe88a37d4a30edad2715c53eeaacbffa9e709d8919c36d9cee8b",
+      "signs": [
+        1,
+        1,
+        -1
+      ],
+      "owners": [
+        0,
+        2
+      ],
+      "selected_owner": 0,
+      "leaves": 7,
+      "nodes": 13,
+      "maxdepth": 5,
+      "bernstein_coefficients": 875,
+      "minimum_positive_rational_coefficient": "32760625/1296",
+      "scalar_strict_except_all_zero": true
+    },
+    {
+      "file": "sppm_o02_k2.json",
+      "sha256": "c4d0e330247db4a6db20a95616629e7fecce38c6a88143337d0ae02875ee2de6",
+      "signs": [
+        1,
+        1,
+        -1
+      ],
+      "owners": [
+        0,
+        2
+      ],
+      "selected_owner": 2,
+      "leaves": 1,
+      "nodes": 1,
+      "maxdepth": 0,
+      "bernstein_coefficients": 125,
+      "minimum_positive_rational_coefficient": "1066184665/419904",
+      "scalar_strict_except_all_zero": true
+    },
+    {
+      "file": "sppm_o11_k1.json",
+      "sha256": "b18fa9a795e3f111d33f2d3a2028a8dada518b2a0a0f9751ac387a8f6774f72c",
+      "signs": [
+        1,
+        1,
+        -1
+      ],
+      "owners": [
+        1,
+        1
+      ],
+      "selected_owner": 1,
+      "leaves": 5,
+      "nodes": 9,
+      "maxdepth": 4,
+      "bernstein_coefficients": 625,
+      "minimum_positive_rational_coefficient": "58399375/1296",
+      "scalar_strict_except_all_zero": true
+    },
+    {
+      "file": "sppm_o12_k1.json",
+      "sha256": "619b6827957cb0c767a5efa93caf183b110810eaf7d0eb08e76c7003e5fbd57b",
+      "signs": [
+        1,
+        1,
+        -1
+      ],
+      "owners": [
+        1,
+        2
+      ],
+      "selected_owner": 1,
+      "leaves": 8,
+      "nodes": 15,
+      "maxdepth": 4,
+      "bernstein_coefficients": 1000,
+      "minimum_positive_rational_coefficient": "13467321466855/429981696",
+      "scalar_strict_except_all_zero": true
+    },
+    {
+      "file": "sppm_o12_k2.json",
+      "sha256": "30c4f9bfa531abded9f5af5eb86395bfc78b73ea5fce237b36923117f4d84734",
+      "signs": [
+        1,
+        1,
+        -1
+      ],
+      "owners": [
+        1,
+        2
+      ],
+      "selected_owner": 2,
+      "leaves": 1,
+      "nodes": 1,
+      "maxdepth": 0,
+      "bernstein_coefficients": 125,
+      "minimum_positive_rational_coefficient": "2603125/81",
+      "scalar_strict_except_all_zero": true
+    },
+    {
+      "file": "sppp_o01_k0.json",
+      "sha256": "36ecada00230251b65c0cbf651bd92392345350b92f100387d819143ebd47f56",
+      "signs": [
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        0,
+        1
+      ],
+      "selected_owner": 0,
+      "leaves": 8,
+      "nodes": 15,
+      "maxdepth": 6,
+      "bernstein_coefficients": 1000,
+      "minimum_positive_rational_coefficient": "57500/3",
+      "scalar_strict_except_all_zero": true
+    },
+    {
+      "file": "sppp_o01_k1.json",
+      "sha256": "f520f73b141084e9195223b84b514785ad323cd491cb75ad13af1abed260ba49",
+      "signs": [
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        0,
+        1
+      ],
+      "selected_owner": 1,
+      "leaves": 8,
+      "nodes": 15,
+      "maxdepth": 6,
+      "bernstein_coefficients": 1000,
+      "minimum_positive_rational_coefficient": "16654375/1296",
+      "scalar_strict_except_all_zero": true
+    },
+    {
+      "file": "sppp_o02_k0.json",
+      "sha256": "a23cf5c76bdaac8f097391c896b2244021bc21f5ec0ab7c13f607293fba10232",
+      "signs": [
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        0,
+        2
+      ],
+      "selected_owner": 0,
+      "leaves": 7,
+      "nodes": 13,
+      "maxdepth": 5,
+      "bernstein_coefficients": 875,
+      "minimum_positive_rational_coefficient": "21735",
+      "scalar_strict_except_all_zero": true
+    },
+    {
+      "file": "sppp_o02_k2.json",
+      "sha256": "1b8558278fe511d2070bdfaab163825ad0dbc0c0844ada24a00fa97ca7550246",
+      "signs": [
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        0,
+        2
+      ],
+      "selected_owner": 2,
+      "leaves": 7,
+      "nodes": 13,
+      "maxdepth": 5,
+      "bernstein_coefficients": 875,
+      "minimum_positive_rational_coefficient": "78542105646095/185752092672",
+      "scalar_strict_except_all_zero": true
+    },
+    {
+      "file": "sppp_o11_k1.json",
+      "sha256": "793bbcdc0c9e2303dd12e0f37073842a0268f06f7a8aa5ab7cc5a3eb5799244e",
+      "signs": [
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        1,
+        1
+      ],
+      "selected_owner": 1,
+      "leaves": 8,
+      "nodes": 15,
+      "maxdepth": 7,
+      "bernstein_coefficients": 1000,
+      "minimum_positive_rational_coefficient": "1462449112932495510095/779100745302540288",
+      "scalar_strict_except_all_zero": true
+    },
+    {
+      "file": "sppp_o12_k1.json",
+      "sha256": "4bafa30add18de6786ead01388a90ef4ae616e33ca8fb3bfd02da70199858e29",
+      "signs": [
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        1,
+        2
+      ],
+      "selected_owner": 1,
+      "leaves": 9,
+      "nodes": 17,
+      "maxdepth": 5,
+      "bernstein_coefficients": 1125,
+      "minimum_positive_rational_coefficient": "7360",
+      "scalar_strict_except_all_zero": true
+    },
+    {
+      "file": "sppp_o12_k2.json",
+      "sha256": "2f63fd8eddbc534608f3a3ed997a7dff6193c567bdd46d832f825cfebcdce1b8",
+      "signs": [
+        1,
+        1,
+        1
+      ],
+      "owners": [
+        1,
+        2
+      ],
+      "selected_owner": 2,
+      "leaves": 7,
+      "nodes": 13,
+      "maxdepth": 6,
+      "bernstein_coefficients": 875,
+      "minimum_positive_rational_coefficient": "7360",
+      "scalar_strict_except_all_zero": true
+    }
+  ],
+  "checker_sha256": "2ee4a2ed4f1fa82f49b3e02393f3e9634444332db4892be48e1fd3198c29900c",
+  "seconds": 0.5463278580000406
+}
