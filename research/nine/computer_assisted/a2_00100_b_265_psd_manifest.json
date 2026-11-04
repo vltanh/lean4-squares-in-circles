@@ -1,0 +1,80 @@
+{
+  "schema": "n9_complete_B265_fixed_center_bound_quadratic_cover_v1",
+  "date": "2026-11-04",
+  "status": "PASS_COMPLETE_ORIGINAL_PARENT",
+  "input_commit": "fe20b7da64e08301c8ba95a6b992ce51b12c781e",
+  "input_register_sha256": "1ca333b3552d6d7b149cf9a7f2f9725ada7a7ab68f40731b98fa3a081cf1c2a8",
+  "target_mask": "001/00",
+  "reversal_partner": "100/00",
+  "strict_q_upper": "1105/256",
+  "original_cells": 231,
+  "before": {
+    "closed": 201,
+    "open": 30
+  },
+  "after": {
+    "closed": 202,
+    "open": 29
+  },
+  "new_complete_original_ids": [
+    "negative-2652afcd308ef1ea"
+  ],
+  "original_ids_and_paths_unchanged": true,
+  "remaining_open_families": {
+    "A": 5,
+    "B": 13,
+    "C": 8,
+    "D": 3
+  },
+  "packet": {
+    "id": "negative-2652afcd308ef1ea",
+    "archive": "a2_00100_b_265_psd_checkpoint.tar.xz",
+    "archive_sha256": "21124d68cc25fe4b126ae8c647ca3d2b7e0560680abec9cef0091a621110219b",
+    "method": "fixed_I_H_cover_with_exact_bound_induction_and_quadratic_sums",
+    "certificate": "SHA256_MANIFEST.json",
+    "certificate_sha256": "0409dc175a27f8e2ac31391b6026c3f2b6b161277ed96b09a0b67047b28d0271",
+    "record_id": "negative-2652afcd308ef1ea",
+    "independent_checker": "verify_all.py",
+    "independent_checker_sha256": "a1d28f244729d8282f62dd6c8bc9c71ff688f14f1f30256da7a8db0624e7c321",
+    "independent_report": "COMPLETE_REPLAY.json",
+    "independent_report_sha256": "6cf953680b8bca0dc0077dd9974877d5c57ec6164d6e49b84c73397055e4c890",
+    "root_fresh_replay_report": "a2_00100_b_265_psd_root_replay.json",
+    "terminal_leaves": 30,
+    "complete_closed_face_cover": true,
+    "archive_parts": "a2_00100_b_265_psd_archive_parts.json"
+  },
+  "hand_assembly": "A2_00100_B265_FIXED_CENTER_BOUND_PSD_CLOSURE.md",
+  "hand_assembly_sha256": "dd98707a9196a8a8e15783cf4c2fbdaf32ab21e74a1f6f4d0b499901df9ab433",
+  "terminal_domains": 30,
+  "direct_affine_terminals": 9,
+  "interval_terminals": 3,
+  "quadratic_terminals": 13,
+  "affine_bound_induction_terminals": 5,
+  "printed_terminal_rows": 15514,
+  "additional_local_bound_premise_rows": 3014,
+  "local_bound_deductions": 2297,
+  "local_bound_rounds": 12,
+  "checked_rlt_antecedents": 424,
+  "used_negative_rational_squares": 189,
+  "additional_used_all_nine_premise": "Four quadratic terminals use the proved original F-center norm lower bound 27/100.",
+  "completed_budget_discovery_raw_state_preserved": true,
+  "separate_rational_square_continuation_source_bound": true,
+  "complete_closed_face_covers": true,
+  "all_nine_original_physical_callers": true,
+  "numerical_producer_or_optimizer_imported_by_replay": false,
+  "unbound_external_workspace_reads_allowed": false,
+  "new_original_cells": 1,
+  "new_mask_closures": 0,
+  "whole_mask_closed": false,
+  "global_mask_ledger": {
+    "closed": 8,
+    "open": 24
+  },
+  "new_positional_root_exclusions": 0,
+  "new_roadmap_gate_closures": 0,
+  "lean_lake_ci_run": false,
+  "human_or_kernel_verification": false,
+  "archive_parts": "a2_00100_b_265_psd_archive_parts.json",
+  "archive_parts_sha256": "375ac23a400d9c21c971a74e58aded88a35bf7e3833d6d4b602b3fc3087f8a38",
+  "archive_bytes": 10433852
+}

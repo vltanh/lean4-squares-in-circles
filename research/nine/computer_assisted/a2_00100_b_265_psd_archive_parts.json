@@ -1,0 +1,19 @@
+{
+  "schema": "ordered_split_archive_v1",
+  "archive": "a2_00100_b_265_psd_checkpoint.tar.xz",
+  "bytes": 10433852,
+  "sha256": "21124d68cc25fe4b126ae8c647ca3d2b7e0560680abec9cef0091a621110219b",
+  "parts": [
+    {
+      "file": "a2_00100_b_265_psd_checkpoint.tar.xz.part01",
+      "bytes": 8388608,
+      "sha256": "e6063e95c6ce4324a951fa23c79b873a5142520778fdfc3250375d74665cbd19"
+    },
+    {
+      "file": "a2_00100_b_265_psd_checkpoint.tar.xz.part02",
+      "bytes": 2045244,
+      "sha256": "d94cf4eb30b47cc294cbbc0204a93be6229bd478200d343b84ad87ca500e05f8"
+    }
+  ],
+  "extraction": "Concatenate parts in listed order, verify the archive SHA256, then extract with tar -xJf. From b_265_psd_package run python -B -S verify_all.py."
+}

@@ -178,8 +178,9 @@ the [complete C60b H-center proof](A2_00100_C60B_FIXED_H_COVER_CLOSURE.md),
 [four shared whole-original proofs](A2_00100_FOUR_ORIGINAL_SHARED_CLOSURE.md),
 the [complete D a497 rational-square cover](A2_00100_D_A497_FIXED_CENTER_PSD_CLOSURE.md),
 [two complete B quadratic covers](A2_00100_TWO_B_FIXED_CENTER_PSD_CLOSURES.md),
-and the [complete B5d7 cover](A2_00100_B5D7_FIXED_CENTER_PSD_CLOSURE.md),
-now exclude 201 of those cells and leave 30 OPEN. The
+the [complete B5d7 cover](A2_00100_B5D7_FIXED_CENTER_PSD_CLOSURE.md),
+and the [complete B265 bound/quadratic cover](A2_00100_B265_FIXED_CENTER_BOUND_PSD_CLOSURE.md),
+now exclude 202 of those cells and leave 29 OPEN. The
 [stable register](gates/A2_00100_FIXED_FRONTIER.json) retains every original
 path and its physical caller. Shared closed faces are allowed. This
 coverage-qualified count is separate from all 32 mask statuses.

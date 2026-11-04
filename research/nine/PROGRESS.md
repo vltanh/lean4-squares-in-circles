@@ -1,32 +1,39 @@
-> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **201/231 cells CLOSED, 30 OPEN; 8/32 masks CLOSED, 24 OPEN.**
+> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **202/231 cells CLOSED, 29 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
-# n=9: 201/231 current-mask cells closed; 30 remain OPEN
+# n=9: 202/231 current-mask cells closed; 29 remain OPEN
 
-**Latest verified continuation: the complete B5d7 original-cell exclusion.**
-The fixed closed I/H cover and exact quadratic rational sums close
-`negative-5d7c9f118e060b2a`. The same 231-cell register now has
-**201 CLOSED / 30 OPEN**, with **148 additions beyond the first 53**.
+**Latest verified continuation: the complete B265 original-cell exclusion.**
+The fixed closed I/H cover, exact bound induction and quadratic rational
+sums close `negative-2652afcd308ef1ea`. The same 231-cell register now has
+**202 CLOSED / 29 OPEN**, with **149 additions beyond the first 53**.
 `001/00`, its reversal, the unrestricted bound and equality remain OPEN.
 No Lean, Lake or CI.
 
-[Latest complete assembly](A2_00100_B5D7_FIXED_CENTER_PSD_CLOSURE.md) ·
+[Latest complete assembly](A2_00100_B265_FIXED_CENTER_BOUND_PSD_CLOSURE.md) ·
 [Current fixed register](gates/A2_00100_FIXED_FRONTIER.json) ·
-[Source-bound packet and fresh replay](computer_assisted/a2_00100_b_5d7_psd_manifest.json) ·
+[Source-bound packet and fresh replay](computer_assisted/a2_00100_b_265_psd_manifest.json) ·
 [Operative handoff](HANDOFF_A2_FIXED_CLOSURE.md)
 
 ## What changed
 
-The unchanged B5d7 original has a fixed 4-by-4 closed I-center cover,
-with a 2-by-4 closed H-center cover only inside I(2,3). All 23 terminal
-domains passed independent reconstruction: four exact interval contradictions,
-13 affine sums and six quadratic sums. The proof checks 7,693 printed
-terminal rows, 194 RLT antecedents and 58 used rational squares. Its
-original ancestor and every shared closed face are replayed. One terminal
-uses the reviewed all-nine central-arc theorem to bound the F-center norm
-below by 27/100. The root fresh relocated replay passed; numerical producer
-imports and external workspace reads are rejected. The remaining families
-are **A5, B14, C8, D3**. No whole mask, positional root or roadmap gate is
-newly closed.
+The unchanged B265 original has a closed 4-by-4 I-center cover, with an
+H2-by-4 cover only inside I(1,1) and I(2,3). All 30 final rectangles pass:
+nine direct affine, three interval, thirteen quadratic and five affine
+contradictions following exact bound induction. The final terminals use
+15,514 printed rows; the five local inductions prove 2,297 bounds from
+3,014 additional printed rows in twelve rounds. The quadratic checker
+reconstructs 424 RLT antecedents and 189 rational squares. Root fresh
+relocated replay of the whole original passed. The remaining families
+are **A5, B13, C8, D3**. No whole mask, positional root or roadmap gate
+is newly closed.
+
+### Preceding B5d7 checkpoint: 201 CLOSED / 30 OPEN
+
+The [complete B5d7 I/H proof](A2_00100_B5D7_FIXED_CENTER_PSD_CLOSURE.md)
+closed `negative-5d7c9f118e060b2a` with 23 final rectangles: four interval,
+thirteen affine and six quadratic terminals. It checks 7,693 terminal
+rows, 194 RLT antecedents and 58 rational squares. Its full source-bound
+ancestor, all-nine central-arc premise and portable assembly remain accepted.
 
 ### Shared sharp boundary theorem: conditional tool, zero new closures
 
@@ -38,7 +45,7 @@ row-height variation at most `53/100`. Both row choices and every order
 hypothesis are explicit. Independent review accepted the continuous proof;
 a fresh portable replay checked 150 exact rational conditions and 512
 signed-variation identities. The complementary domains remain obligations,
-so the register stays **201/30** and the mask ledger stays **8/24**.
+so this conditional theorem adds **zero original-cell or mask closures**.
 [Immutable evidence](computer_assisted/a2_00100_shared_strict_boundary_manifest.json).
 
 ### Preceding two-B checkpoint: 200 CLOSED / 31 OPEN
