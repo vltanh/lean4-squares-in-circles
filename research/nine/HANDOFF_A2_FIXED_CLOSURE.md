@@ -16,6 +16,13 @@ rectangles excluded and I22 OPEN. The recovery index adds no closure credit.
 
 ## Read first
 
+The [coupled four-center conversion](computer_assisted/coupled_four_energy_v1/COUPLED_FOUR_CENTER_ENERGY_HAND_PROOF.md)
+retains all six difference identities and supports a compact physical-energy
+auxiliary. Exact vertex and row checks pass after root relocation, including
+empty and lower-dimensional domains. The [root review](computer_assisted/coupled_four_energy_v1/ROOT_PHYSICAL_REVIEW.md)
+records the interval-ancestry and auxiliary-bound obligations. Current pilots
+remain OPEN; this universal conversion adds **zero cells and zero masks**.
+
 The [coupled three-square energy conversion](computer_assisted/coupled_three_energy_v1/COUPLED_THREE_SQUARE_ENERGY_HAND_PROOF.md)
 now retains the identity between all three pair differences. Its complete
 convexity proof, diverse rational reconstruction, literal-row checker and

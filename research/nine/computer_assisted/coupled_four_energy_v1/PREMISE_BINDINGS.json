@@ -1,0 +1,9 @@
+{
+  "premises": {
+    "research/nine/FOUR_ORIGINAL_PLANAR_MATCHING_AND_ENERGY_HAND_PROOF.md": "c8e665a2abd2c67df541e612c874bc30b469f817cb6151cd77e21179533b0c18",
+    "research/nine/FOUR_ORIGINAL_PLANAR_ENERGY_INDEPENDENT_REVIEW.md": "5808a7fa00f490f508ae2c2612ed6aeb6ec352eff96960ff7be357676260cd28"
+  },
+  "claim": "The sum of six squared distances between any four retained physical square centers is at least 8.",
+  "new_original_cells": 0,
+  "new_masks": 0
+}
