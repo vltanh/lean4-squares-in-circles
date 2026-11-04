@@ -18,6 +18,13 @@ with a fresh whole-original portable replay. Accepted counts are
 
 ## Read first
 
+The [four-product original-corner rows](computer_assisted/four_product_corner_rows_v1/README.md)
+strengthen the accepted grouped unit-frame rows by choosing the four signed
+product planes independently. The family contains the earlier four planes
+exactly and uses the same four original variables. Root physical/code review
+and fresh exact controls pass: 3,456 residual identities and 864 reproductions
+of the earlier rows. All intervals remain caller obligations; no ledger changes.
+
 The [original-corner rows using physical unit frames](computer_assisted/unit_frame_corner_rows_v1/README.md)
 retain the exact square-offset contribution 1/2 before relaxation. The
 four-variable rows follow from one squared-distance slack and two rectangle
