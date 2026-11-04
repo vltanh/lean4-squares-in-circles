@@ -1,2 +1,5 @@
 .lake/
 __pycache__/
+
+# Disposable proof searches and replay extractions.
+/research/nine/.runs/
