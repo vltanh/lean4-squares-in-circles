@@ -32,6 +32,16 @@ are retained.
 
 No whole mask, positional root or roadmap gate is newly closed.
 
+## Shared three-square energy row conversion
+
+The [complete coefficient proof](THREE_SQUARE_ENERGY_ROW_CONVERSION_HAND_PROOF.md) and its
+[frozen packet](computer_assisted/a2_shared_three_square_energy_rows_manifest.json) add reusable
+affine and moment consequences of center energy at least 7/2.
+Root relocated replay checks both geometric evaluators and 1,877 exact
+row identities with all 21 frozen inputs unchanged. This adds zero
+original cells, masks, positional exclusions or roadmap closures.
+Every caller interval remains a separate proof obligation.
+
 ### Preceding checkpoint: 211 CLOSED / 20 OPEN
 
 The [preceding complete assembly](A2_00100_C2F9_FIXED_CENTER_BOUND_CLOSURE.md) and its immutable

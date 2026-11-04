@@ -15,8 +15,10 @@ cells and zero masks; every future caller must still prove its hypotheses.
 The [three-square center-energy theorem](THREE_SQUARE_CENTER_ENERGY_HAND_PROOF.md)
 is now a separately reviewed universal input for any three retained
 original squares. Two exact evaluators and root relocated replay pass.
-It gives energy at least 7/2 and earns zero original or mask closures;
-affine and lifted expansions require their own independent row check.
+It gives energy at least 7/2 and earns zero original or mask closures.
+The [exact affine and lifted row conversions](THREE_SQUARE_ENERGY_ROW_CONVERSION_HAND_PROOF.md) now pass
+all 1,877 polynomial identities in a separate relocated replay. Every
+caller must still certify its original projection intervals.
 
 1. [Current complete proof and scope](A2_00100_C953_COMPLETE_FIXED_CENTER_OWNED_SLOPE_CLOSURE.md).
 2. [Same 231 original IDs, paths and current statuses](gates/A2_00100_FIXED_FRONTIER.json).
