@@ -1,0 +1,179 @@
+{
+  "status": "PASS_AVAILABILITY_ARCHIVE_AND_EVERY_MEMBER_HASH",
+  "scope": "BYTE_PRESERVATION_AND_EVIDENCE_ACCOUNTING_ONLY",
+  "archive": "/workspace/scratch/f9f48fcfb253/b_work/b16a_replayable_cover_availability_v1_archive/b16a_replayable_cover_availability_v1.tar.xz",
+  "archive_bytes": 1034956,
+  "archive_sha256": "a5e0e136334079483dbe67b3069a57a13a923e9e7af5eed1e75a641040831fac",
+  "archive_root": "b16a_replayable_cover_availability_v1",
+  "evidence_input_files": 26,
+  "archive_members": 30,
+  "members": {
+    "b16a_replayable_cover_availability_v1/payload/b_work/B16A_COMPLETE_QUARTER_UNION_HAND_PROOF.md": {
+      "sha256": "c25665d86f7536325f3fa9ae2524af089fd7ab4341ab4509280f27ec16b9892c",
+      "bytes": 3260,
+      "source_workspace_relative": "b_work/B16A_COMPLETE_QUARTER_UNION_HAND_PROOF.md"
+    },
+    "b16a_replayable_cover_availability_v1/payload/b_work/B16A_MERGED_I21_I22_RESTRICTION.json": {
+      "sha256": "142b74254b59e00267298ea59fa27bef68b392a220f9509aa4a88221f514d5cc",
+      "bytes": 15524,
+      "source_workspace_relative": "b_work/B16A_MERGED_I21_I22_RESTRICTION.json"
+    },
+    "b16a_replayable_cover_availability_v1/payload/b_work/B16A_MISSING_EIGHT_RECONSTRUCTION_EXACT_REPLAY.json": {
+      "sha256": "47611a16f03caff6dac0bb5f5d2ab376cf83edb9f919f569173e7999bb870c08",
+      "bytes": 136316,
+      "source_workspace_relative": "b_work/B16A_MISSING_EIGHT_RECONSTRUCTION_EXACT_REPLAY.json"
+    },
+    "b16a_replayable_cover_availability_v1/payload/b_work/B16A_ORIGINAL_I_QUARTER_ASSEMBLY_HAND_PROOF.md": {
+      "sha256": "ca70e3a66f338684972d94ae2d1845303232313cbaf486ea6b5b1d4d18f63916",
+      "bytes": 4731,
+      "source_workspace_relative": "b_work/B16A_ORIGINAL_I_QUARTER_ASSEMBLY_HAND_PROOF.md"
+    },
+    "b16a_replayable_cover_availability_v1/payload/b_work/B16A_PARTITION_PIECE_DOMAIN_ATTACHMENT_HAND_PROOF.md": {
+      "sha256": "986e5bbf959662de5b0c2aa75c10ca86b2dca6dc46791334e1d9583b2296ef14",
+      "bytes": 4742,
+      "source_workspace_relative": "b_work/B16A_PARTITION_PIECE_DOMAIN_ATTACHMENT_HAND_PROOF.md"
+    },
+    "b16a_replayable_cover_availability_v1/payload/b_work/B16A_REPLAYABLE_COVER_RECOVERY_INVENTORY.json": {
+      "sha256": "61b34961a250dadee5a4d09dab320ab34215eaf9ea2b47e054b596ab83531485",
+      "bytes": 5981,
+      "source_workspace_relative": "b_work/B16A_REPLAYABLE_COVER_RECOVERY_INVENTORY.json"
+    },
+    "b16a_replayable_cover_availability_v1/payload/b_work/B16A_REPLAYABLE_COVER_RECOVERY_NOTE.md": {
+      "sha256": "19a9985c5b95d128c525bb914037a0ba7d69bb9a88f9c2c235eccfaa2749a3f9",
+      "bytes": 4591,
+      "source_workspace_relative": "b_work/B16A_REPLAYABLE_COVER_RECOVERY_NOTE.md"
+    },
+    "b16a_replayable_cover_availability_v1/payload/b_work/B16A_VERIFIED_SIXTEEN_QUARTER_INVENTORY.json": {
+      "sha256": "abced7e911d861287c93e3c17d2c43c389f166248383fc2611bc8eaef3ab1a0e",
+      "bytes": 13176,
+      "source_workspace_relative": "b_work/B16A_VERIFIED_SIXTEEN_QUARTER_INVENTORY.json"
+    },
+    "b16a_replayable_cover_availability_v1/payload/b_work/archive_b16a_replayable_cover_availability.py": {
+      "sha256": "99d93a96d34faef56f0d1c7416cd9bbd5df4b651ee76b1742e230451d4125bf9",
+      "bytes": 9181,
+      "source_workspace_relative": "b_work/archive_b16a_replayable_cover_availability.py"
+    },
+    "b16a_replayable_cover_availability_v1/payload/b_work/b16a_I32_complete_H_checkpoint/ancestry/parent/negative-16a2fc93c8d133f0.json": {
+      "sha256": "69ddd2dcc5383c3259187588a890ddadb4a6545e8bdcc11e653bdfb8bb6b3886",
+      "bytes": 1597191,
+      "source_workspace_relative": "b_work/b16a_I32_complete_H_checkpoint/ancestry/parent/negative-16a2fc93c8d133f0.json"
+    },
+    "b16a_replayable_cover_availability_v1/payload/b_work/b16a_I32_complete_H_checkpoint/ancestry/provenance/5f3da1873c074eee_manifest.json": {
+      "sha256": "5f3da1873c074eeee6a3343bc2aa5406b41e6376cce8b708694f30024edfda2d",
+      "bytes": 3328,
+      "source_workspace_relative": "b_work/b16a_I32_complete_H_checkpoint/ancestry/provenance/5f3da1873c074eee_manifest.json"
+    },
+    "b16a_replayable_cover_availability_v1/payload/b_work/b16a_missing_eight_direct_reconstruction/I00/result.json": {
+      "sha256": "096e3c70f51f5f7f4644281397c0d686f7d9fe0dde3984a24a402b416fd62766",
+      "bytes": 41608,
+      "source_workspace_relative": "b_work/b16a_missing_eight_direct_reconstruction/I00/result.json"
+    },
+    "b16a_replayable_cover_availability_v1/payload/b_work/b16a_missing_eight_direct_reconstruction/I01/result.json": {
+      "sha256": "00593a46f0db0a9ee0d9143470e9aed37f73f25e3936fbaca3f4b2a04c2b5cf1",
+      "bytes": 22831,
+      "source_workspace_relative": "b_work/b16a_missing_eight_direct_reconstruction/I01/result.json"
+    },
+    "b16a_replayable_cover_availability_v1/payload/b_work/b16a_missing_eight_direct_reconstruction/I02/result.json": {
+      "sha256": "276f5eccc73a6dd27ebe1b1f2bc61aa6528c5fdd71cf9bd79d3fbf17f9261981",
+      "bytes": 22830,
+      "source_workspace_relative": "b_work/b16a_missing_eight_direct_reconstruction/I02/result.json"
+    },
+    "b16a_replayable_cover_availability_v1/payload/b_work/b16a_missing_eight_direct_reconstruction/I03/result.json": {
+      "sha256": "d8283d0dbb389ec3dba187b0d6bac3603170160eaab9f8dd4b8d6682e99aafa1",
+      "bytes": 22834,
+      "source_workspace_relative": "b_work/b16a_missing_eight_direct_reconstruction/I03/result.json"
+    },
+    "b16a_replayable_cover_availability_v1/payload/b_work/b16a_missing_four_bound3/I20/result.json": {
+      "sha256": "f900fbc00fd790fb73a1aabaa2963cf036c5cfe7b6178b923b8911e0eed4cab8",
+      "bytes": 1976873,
+      "source_workspace_relative": "b_work/b16a_missing_four_bound3/I20/result.json"
+    },
+    "b16a_replayable_cover_availability_v1/payload/b_work/b16a_missing_four_bound3/I30/result.json": {
+      "sha256": "be0096a706c0b8d57bd4e5ab0cb43cb86390823799f875a85ed3963b61a49355",
+      "bytes": 971194,
+      "source_workspace_relative": "b_work/b16a_missing_four_bound3/I30/result.json"
+    },
+    "b16a_replayable_cover_availability_v1/payload/b_work/b16a_missing_four_bound3/I31/result.json": {
+      "sha256": "7666283ed3c8a4d07b857ec0aab0e6d1f1c0bb836d99dab4f9b0f4ed06c507ae",
+      "bytes": 1764017,
+      "source_workspace_relative": "b_work/b16a_missing_four_bound3/I31/result.json"
+    },
+    "b16a_replayable_cover_availability_v1/payload/b_work/b16a_missing_four_bound3/I33/result.json": {
+      "sha256": "14ba9184d92ce66e01fb396a8d4b5451ec11a15beb5a6febe8ca24af1a3e01d8",
+      "bytes": 2273197,
+      "source_workspace_relative": "b_work/b16a_missing_four_bound3/I33/result.json"
+    },
+    "b16a_replayable_cover_availability_v1/payload/b_work/b16a_prior_recovery/ALL_PRIOR_RECOVERY.json": {
+      "sha256": "1f67bb83e95054d3cb5f9db51d99cf1e51ca512ca21ded2e12fda1fb08b93fc9",
+      "bytes": 7696,
+      "source_workspace_relative": "b_work/b16a_prior_recovery/ALL_PRIOR_RECOVERY.json"
+    },
+    "b16a_replayable_cover_availability_v1/payload/b_work/b16a_prior_recovery/FRESH_I32_REPLAY.json": {
+      "sha256": "300a9276b9749873cfcfac1500137d25605d21aaca7886079d25ec54019ee8bf",
+      "bytes": 604,
+      "source_workspace_relative": "b_work/b16a_prior_recovery/FRESH_I32_REPLAY.json"
+    },
+    "b16a_replayable_cover_availability_v1/payload/b_work/b16a_prior_recovery/FRESH_PRIOR_REPLAY_V2.json": {
+      "sha256": "2de462828d83e91056a9eefdb08aa65e9064d01be688f4faceb4cd21c93b4850",
+      "bytes": 2024,
+      "source_workspace_relative": "b_work/b16a_prior_recovery/FRESH_PRIOR_REPLAY_V2.json"
+    },
+    "b16a_replayable_cover_availability_v1/payload/b_work/b16a_prior_recovery/fresh_reports/b16a_I10_complete_H_checkpoint_v2_EXACT_REPLAY_RUN1.json": {
+      "sha256": "75014191b5e3f71b379c62adf18e1066e2ddb1b08560ff003f94f61187e118f1",
+      "bytes": 3447581,
+      "source_workspace_relative": "b_work/b16a_prior_recovery/fresh_reports/b16a_I10_complete_H_checkpoint_v2_EXACT_REPLAY_RUN1.json"
+    },
+    "b16a_replayable_cover_availability_v1/payload/b_work/b16a_prior_recovery/fresh_reports/b16a_I11_complete_fixed_rectangle_checkpoint_EXACT_REPLAY_RUN1.json": {
+      "sha256": "00d29bc94a65943863711eeb2379ea610b8cebd1c245ab989da3a5b08012f3bb",
+      "bytes": 46639,
+      "source_workspace_relative": "b_work/b16a_prior_recovery/fresh_reports/b16a_I11_complete_fixed_rectangle_checkpoint_EXACT_REPLAY_RUN1.json"
+    },
+    "b16a_replayable_cover_availability_v1/payload/b_work/b16a_prior_recovery/fresh_reports/b16a_I32_complete_H_checkpoint_EXACT_REPLAY_RUN1.json": {
+      "sha256": "c5be3a83826386f25aea9883b7b29ea8445880f94a6ede9adc666e5c19a0002a",
+      "bytes": 8463142,
+      "source_workspace_relative": "b_work/b16a_prior_recovery/fresh_reports/b16a_I32_complete_H_checkpoint_EXACT_REPLAY_RUN1.json"
+    },
+    "b16a_replayable_cover_availability_v1/payload/b_work/b16a_prior_recovery/fresh_reports/b16a_three_complete_H_checkpoint_EXACT_REPLAY_RUN1.json": {
+      "sha256": "26e6c1158fa34d22eca8bc180c2b6a0d89d93afdbdf422eae8fd2ca54b3a7491",
+      "bytes": 142584,
+      "source_workspace_relative": "b_work/b16a_prior_recovery/fresh_reports/b16a_three_complete_H_checkpoint_EXACT_REPLAY_RUN1.json"
+    },
+    "b16a_replayable_cover_availability_v1/payload/repo/research/nine/A2_00100_B16A_I32_COMPLETE_H_COVER_CHECKPOINT.md": {
+      "sha256": "6a9142f134e3509e70830d54b7a6a6de9781855b3e86c7b8bb549e520e88fce5",
+      "bytes": 13001,
+      "source_workspace_relative": "repo/research/nine/A2_00100_B16A_I32_COMPLETE_H_COVER_CHECKPOINT.md"
+    },
+    "b16a_replayable_cover_availability_v1/CHECKPOINT.json": {
+      "sha256": "59d15d52dbdb054985e84eab235ad76f24d47af8e103d8c06db9ac4a9baafc92",
+      "bytes": 76395
+    },
+    "b16a_replayable_cover_availability_v1/README.md": {
+      "sha256": "27e234d2c2aafcd41e091bcc9ceafc2b1c492b998e3181ab853e05fa7290c851",
+      "bytes": 983
+    },
+    "b16a_replayable_cover_availability_v1/MEMBER_MANIFEST.json": {
+      "sha256": "512d99b26a056575c21bb7eba7c8c7621cae3cadcc9bb60cb3155b2cf0edaea6",
+      "bytes": 9387
+    }
+  },
+  "parts": [
+    {
+      "file": "b16a_replayable_cover_availability_v1.tar.xz.part001",
+      "bytes": 1034956,
+      "sha256": "a5e0e136334079483dbe67b3069a57a13a923e9e7af5eed1e75a641040831fac"
+    }
+  ],
+  "checkpoint_sha256": "59d15d52dbdb054985e84eab235ad76f24d47af8e103d8c06db9ac4a9baafc92",
+  "member_manifest_sha256": "512d99b26a056575c21bb7eba7c8c7621cae3cadcc9bb60cb3155b2cf0edaea6",
+  "all_source_hashes_rechecked": true,
+  "all_member_hashes_checked": true,
+  "xz_preset": 1,
+  "raw_tar_intermediate_created": false,
+  "uncompressed_payload_copy_created": false,
+  "self_contained_arithmetic_proof": false,
+  "arithmetic_repeated": false,
+  "whole_original_excluded": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "source_sha256": "99d93a96d34faef56f0d1c7416cd9bbd5df4b651ee76b1742e230451d4125bf9"
+}

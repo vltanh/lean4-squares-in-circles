@@ -18,6 +18,12 @@ accepted counts were **220/231 original cells and 8/32 masks closed**.
 
 ## Read first
 
+The [B16a replayable-cover checkpoint](computer_assisted/a2_00100_b16a_replayable_cover_availability_v1/README.md)
+preserves eleven currently reproducible I-quarter exclusions and explicitly
+queues I20/I21/I22/I31/I33. It distinguishes the historical fourteen-quarter
+claim from recovered evidence, preserves all available earlier proofs and
+the five new terminal records, and changes no original or mask status.
+
 The [complete A1 portable consequence checkpoint](computer_assisted/a2_00100_a_c744_complete_a1_portable_checkpoint_v2/README.md)
 freshly excludes all 566 terminal domains of component 1 of A-c744 and
 verifies its original-wide consequence `y_D-y_B<=3/5` in the actual

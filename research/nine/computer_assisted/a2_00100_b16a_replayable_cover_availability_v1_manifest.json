@@ -1,0 +1,57 @@
+{
+  "arithmetic_repeated": false,
+  "currently_replayable_quarters": 11,
+  "files": {
+    "ARCHIVE_READY.json": {
+      "bytes": 10827,
+      "sha256": "ff0b88ee04927bbda1e32680412c30e8de6c244a98b7791640834de1c210e193"
+    },
+    "B16A_REPLAYABLE_COVER_RECOVERY_INVENTORY.json": {
+      "bytes": 5981,
+      "sha256": "61b34961a250dadee5a4d09dab320ab34215eaf9ea2b47e054b596ab83531485"
+    },
+    "B16A_REPLAYABLE_COVER_RECOVERY_NOTE.md": {
+      "bytes": 4591,
+      "sha256": "19a9985c5b95d128c525bb914037a0ba7d69bb9a88f9c2c235eccfaa2749a3f9"
+    },
+    "B16A_VERIFIED_SIXTEEN_QUARTER_INVENTORY.json": {
+      "bytes": 13176,
+      "sha256": "abced7e911d861287c93e3c17d2c43c389f166248383fc2611bc8eaef3ab1a0e"
+    },
+    "CHECKPOINT.json": {
+      "bytes": 76395,
+      "sha256": "59d15d52dbdb054985e84eab235ad76f24d47af8e103d8c06db9ac4a9baafc92"
+    },
+    "MEMBER_MANIFEST.json": {
+      "bytes": 9387,
+      "sha256": "512d99b26a056575c21bb7eba7c8c7621cae3cadcc9bb60cb3155b2cf0edaea6"
+    },
+    "README.md": {
+      "bytes": 1942,
+      "sha256": "c8cb05e4facce57f03e07942bbe75086eb4be9bfc3bf420ae3200a738f560347"
+    },
+    "ROOT_ARCHIVE_AND_ACCOUNTING_AUDIT.json": {
+      "bytes": 1058,
+      "sha256": "258ffad6566e2eafa05d6beb241173172b640737739215e62b450d7e520747bb"
+    },
+    "b16a_replayable_cover_availability_v1.tar.xz.part001": {
+      "bytes": 1034956,
+      "sha256": "a5e0e136334079483dbe67b3069a57a13a923e9e7af5eed1e75a641040831fac"
+    },
+    "publish_b16a_replayable_availability_checkpoint.py": {
+      "bytes": 10221,
+      "sha256": "64b7ba30e4d54017ab700873cfb853bf4c0e6bb305509d0b4029a4d8f3c5d1b4"
+    }
+  },
+  "lean_lake_ci_run": false,
+  "new_masks": 0,
+  "new_original_cells": 0,
+  "original_id": "negative-16a2fc93c8d133f0",
+  "original_status": "OPEN",
+  "package": "research/nine/computer_assisted/a2_00100_b16a_replayable_cover_availability_v1",
+  "pending_quarters": 5,
+  "register_sha256": "b805df8706151a4eb43bd8c0912205ffbfd67d8dfb582daf441717e04fd023dc",
+  "schema": "B16a_replayable_cover_availability_publication_v1",
+  "self_contained_arithmetic_proof": false,
+  "whole_original_excluded": false
+}

@@ -1,0 +1,41 @@
+{
+  "all_sixteen_closed_grid_tiles_checked": true,
+  "archive_members": 30,
+  "archive_sha256": "a5e0e136334079483dbe67b3069a57a13a923e9e7af5eed1e75a641040831fac",
+  "currently_replayable_excluded_quarters": 11,
+  "every_regular_member_and_source_hash_checked": true,
+  "evidence_input_files": 26,
+  "fixed_register_sha256_unchanged": "b805df8706151a4eb43bd8c0912205ffbfd67d8dfb582daf441717e04fd023dc",
+  "historical_fourteen_quarter_publication_unchanged": true,
+  "new_arithmetic_replay_claimed": false,
+  "new_masks": 0,
+  "new_original_cells": 0,
+  "pending_tiles": [
+    [
+      2,
+      0
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      3,
+      3
+    ]
+  ],
+  "scope": "BYTE_PRESERVATION_AND_EVIDENCE_ACCOUNTING_ONLY",
+  "self_contained_arithmetic_proof": false,
+  "source_sha256": "64b7ba30e4d54017ab700873cfb853bf4c0e6bb305509d0b4029a4d8f3c5d1b4",
+  "status": "PASS_ROOT_B16A_AVAILABILITY_ARCHIVE_AND_ACCOUNTING_AUDIT",
+  "whole_original_excluded": false,
+  "xz_integrity_passed": true
+}

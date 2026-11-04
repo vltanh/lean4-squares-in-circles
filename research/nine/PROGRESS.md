@@ -164,8 +164,14 @@ including three completed continuations. The accepted exact replay checks
 terminal rows. The physical hand and literal table retain all touching faces.
 The source/attachment and hand reviews pass, and the root verified every
 one of the 526 portable archive paths and its original source bytes.
-Fourteen of sixteen I rectangles are excluded; only I21 and I22 remain OPEN.
-B16a itself and all fixed original/mask/positional/roadmap ledgers are unchanged.
+The historical publication reported fourteen excluded I rectangles. The
+[current recovery inventory](computer_assisted/a2_00100_b16a_replayable_cover_availability_v1/README.md)
+has eleven replayable exclusions: six published complete quarters and five
+freshly reconstructed quarters. I20, I21, I22, I31 and I33 remain pending;
+the earlier complete certificates for I20/I31/I33 were not recovered.
+This is an evidence-availability distinction, with no later mathematical
+invalidation asserted. The old publication bytes remain unchanged. B16a
+and all fixed original/mask/positional/roadmap ledgers remain unchanged.
 
 ## B16a I10 complete fixed-rectangle checkpoint
 
