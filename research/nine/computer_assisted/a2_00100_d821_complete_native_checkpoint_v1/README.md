@@ -1,3 +1,22 @@
+# Historical native D821 checkpoint; complete portable proof now accepted
+
+The [complete portable release](../a2_00100_d821_complete_original/README.md) has passed all final
+gates and closes D821, advancing the current register to **222 CLOSED /
+9 OPEN**. The body below is preserved native-checkpoint history from before
+portable acceptance. Its OPEN/221 and pending statements describe that
+earlier checkpoint, not the current register.
+
+The original manifest and README, the externally supplemented README and
+the pre-acceptance register are retained in `publication_history`. The
+updated outer manifest now binds the present README and the externally
+added staging tool/tests while preserving every original mathematical file.
+The staging tool intentionally requires an OPEN register; historical use
+must pass `--ledger publication_history/REGISTER_BEFORE_D821.json` together
+with the correctly recovered source root/report/plan/audit arguments.
+For reproduction of the accepted proof, use the final portable release.
+
+---
+
 # D821 complete native proof and literal-table checkpoint
 
 The native independent checker has excluded all five closed complementary

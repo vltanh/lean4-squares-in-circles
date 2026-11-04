@@ -1,0 +1,38 @@
+{
+  "mode": "COMPLETE_ORIGINAL",
+  "complete_plan": "/workspace/scratch/f9f48fcfb253/global_work/d821_work/complete_original_final_plan/D821_COMPLETE_ORIGINAL_GRAFT_PLAN.json",
+  "complete_plan_sha256": "6fc6a6f3840b99f99ddec479c8a3ea1bae0e3c2d1dd6c7010318150a9a95a3a9",
+  "original_report": "/workspace/scratch/f9f48fcfb253/global_work/d821_work/D821_COMPLETE_ORIGINAL_EXACT_REPLAY.json",
+  "original_report_sha256": "c56785bc3953b85b2c3069bb8bf61ec655d3d174c652595cc6e25928ae0a53b4",
+  "terminal_table": {
+    "path": "/workspace/scratch/f9f48fcfb253/global_work/d821_work/complete_literal_terminal_table/COMPLETE_TERMINAL_TABLE.json",
+    "sha256": "b03e757483783857be389caf2687fe2b13060b9338a0e5c56ad36e2b91b4e661"
+  },
+  "terminal_table_markdown": {
+    "path": "/workspace/scratch/f9f48fcfb253/global_work/d821_work/complete_literal_terminal_table/COMPLETE_TERMINAL_TABLE.md",
+    "sha256": "fb399861ae87d51ca493836ea9bbced5565e35e076838ff4c0acd53f491ecf4b"
+  },
+  "schema": "D821_portable_unchanged_proof_inputs_v1",
+  "original_id": "positive-821c9a2debeed0aa",
+  "mask": "001/00",
+  "original_frames": 9,
+  "original_corners": 36,
+  "original_pairs": 36,
+  "original_cones": 5,
+  "original_actual_links": [
+    "AB",
+    "BC",
+    "EF",
+    "FG"
+  ],
+  "original_strict_weak_links": [
+    "CD"
+  ],
+  "mathematical_sources_unchanged": true,
+  "aliases_are_filename_transport_only": true,
+  "new_masks": 0,
+  "theorem_binding": {
+    "path": "/workspace/scratch/f9f48fcfb253/repo/research/nine/computer_assisted/actual_AB_two_link_row_v1/PREMISE_BINDINGS.json",
+    "sha256": "3261f48cec76aae54ee9a920dbf0176cadfa3d90194f9cd2dd6c54d4a143e6ac"
+  }
+}

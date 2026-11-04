@@ -1,0 +1,48 @@
+{
+  "status": "PASS_EXACT_ONE_REGISTERED_ORIGINAL_LEDGER_DELTA",
+  "before_sha256": "b805df8706151a4eb43bd8c0912205ffbfd67d8dfb582daf441717e04fd023dc",
+  "after_sha256": "3dfaff7a880ab358930fb0ea835a1fdbe9959711f3c08ac47ee9817e7c693dde",
+  "changed_original_ids": [
+    "positive-821c9a2debeed0aa"
+  ],
+  "all_231_original_definitions_unchanged": true,
+  "other_230_entries_unchanged": true,
+  "before": {
+    "closed": 221,
+    "open": 10,
+    "total": 231
+  },
+  "after": {
+    "closed": 222,
+    "open": 9,
+    "total": 231
+  },
+  "mask_ledger": {
+    "closed": 8,
+    "open": 24,
+    "total": 32
+  },
+  "fixed_denominators": {
+    "original_cells": 231,
+    "masks": 32,
+    "positional_roots": 7915,
+    "roadmap_gates": 15
+  },
+  "new_original_cells": 1,
+  "new_masks": 0,
+  "new_positional_roots": 0,
+  "new_roadmap_gates": 0,
+  "remaining_open_original_ids": [
+    "positive-c744bc031d40ee64",
+    "negative-887236b78100baf3",
+    "negative-d4021ade840b985c",
+    "negative-b882d8ade0cf9ea0",
+    "negative-f14f5bc4eafdf50d",
+    "negative-7c60be8b07a358e9",
+    "negative-462e78d2e2d8be05",
+    "negative-16a2fc93c8d133f0",
+    "negative-580db3624cf4c2e2"
+  ],
+  "whole_00100_and_reversal_target_remains_strict_radius": true,
+  "lean_lake_ci_run": false
+}

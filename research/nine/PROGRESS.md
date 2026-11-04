@@ -1,19 +1,35 @@
-> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **221/231 cells CLOSED, 10 OPEN; 8/32 masks CLOSED, 24 OPEN.**
+> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **222/231 cells CLOSED, 9 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
-> **Execution restored, 4 November 2026:** Published ancestors were recovered and hash-checked after the [recorded outage](EXECUTION_RECOVERY_2026_11_04_1328.md). Subsequent computer-assisted discovery, exact replays and complete physical assembly close D6c5 and B340. All other open originals remain explicit.
+> **Execution restored, 4 November 2026:** Published ancestors were recovered and hash-checked after the [recorded outage](EXECUTION_RECOVERY_2026_11_04_1328.md). Subsequent computer-assisted discovery, exact replays and complete physical assembly close D6c5, B340 and D821. All other open originals remain explicit.
 
-# n=9: 221/231 current-mask cells closed; 10 remain OPEN
+# n=9: 222/231 current-mask cells closed; 9 remain OPEN
 
-**Latest accepted closure: the complete B340 original-cell exclusion.**
-The same register now has **221 CLOSED / 10 OPEN**, with
-**168 additions beyond the first 53**. Remaining families:
-**A1, B5, C3, D1**. `001/00`, its reversal, the unrestricted bound and
-equality remain OPEN. No Lean, Lake or CI.
+**Latest accepted closure: the complete D821 original-cell exclusion.**
+The same register now has **222 CLOSED / 9 OPEN**, with
+**169 additions beyond the first 53**. Remaining families: **A1, B5, C3, D0**.
+`001/00`, its reversal, the unrestricted bound and equality remain OPEN.
+The whole-mask target remains strict-radius. No Lean, Lake or CI.
 
-[Latest complete assembly](A2_00100_B340_COMPLETE_ORIGINAL_CLOSURE.md) ·
+[Latest complete assembly](A2_00100_D821_COMPLETE_ORIGINAL_CLOSURE.md) ·
 [Current fixed register](gates/A2_00100_FIXED_FRONTIER.json) ·
-[Source-bound packet and fresh portable replay](computer_assisted/a2_00100_b340_complete_original_manifest.json) ·
+[Source-bound packet and fresh portable replay](computer_assisted/a2_00100_d821_complete_original_manifest.json) ·
 [Operative handoff](HANDOFF_A2_FIXED_CLOSURE.md)
+
+## Complete D821 original: 222 CLOSED / 9 OPEN
+
+`positive-821c9a2debeed0aa` is completely excluded. Its five closed
+complementary domains retain all threshold faces; four close through
+46 grafted trees with 650 nodes and 415 excluded terminals, and the fifth
+has a direct exact exclusion. All nine original squares, 36 corners,
+36 physical pairs, five cones and exact marked conditions remain active.
+
+Native and isolated portable replay check the full assembly and freshly
+replay the actual-AB scalar theorem. The tree arithmetic contains 789
+rounds, 109,838 deductions and 288,271 row occurrences. Root independently
+checks the complete table, all 242 affine terminal sums, every compressed
+part and all 2,436 archive members. All 2,432 frozen inputs are unchanged.
+The whole-mask ledger remains **8 CLOSED / 24 OPEN**. Eventual 001/00 and
+100/00 assembly remains strict-radius.
 
 ## A-c744 complete component 1: portable consequence accepted
 
@@ -28,25 +44,18 @@ The isolated replay rehashes all 2,249 assembled inputs. Root separately
 checks xz integrity, all 859 archive members, every outer source binding
 and the exact fresh receipt. The thin archive reuses only hash-identical
 members of the accepted A OPEN packet. Component 3 remains OPEN; no whole
-original or mask is newly closed. Counts remain **221 CLOSED / 10 OPEN**
+original or mask was newly closed at this checkpoint. Counts then remained **221 CLOSED / 10 OPEN**
 and **8 CLOSED / 24 OPEN**. The full-mask target remains strict-radius.
 
-## D821 complete native proof; portable acceptance pending
+## Earlier D821 native checkpoint
 
-The [native proof and complete literal-table checkpoint](computer_assisted/a2_00100_d821_complete_native_checkpoint_v1/README.md)
-excludes all five complementary domains of `positive-821c9a2debeed0aa` in
-fresh independent exact replay. Its 46 grafted trees have 650 nodes and
-415 excluded terminal domains. The tree reports check 109,838 deductions
-and 288,271 row occurrences. Root independently checks every table entry,
-every closed child choice and all 242 affine terminal sums. The original
-nine-square attachment and two preserved migration snapshots are explicit.
+The [native checkpoint](computer_assisted/a2_00100_d821_complete_native_checkpoint_v1/README.md)
+preserves the first complete native proof, full literal table and subsequent
+external byte-staging tools. Its original 221/10 OPEN-state metadata is
+explicitly historical. The final portable release above now passes the
+remaining gates and accepts the same whole original once.
 
-The final isolated portable replay and complete compressed-payload audit
-remain acceptance gates. D821 stays OPEN in the unchanged fixed register;
-this intermediate commit adds **zero original-cell or mask credit**.
-Accepted counts remain **221 CLOSED / 10 OPEN** and **8 CLOSED / 24 OPEN**.
-
-## Complete B340 original: 221 CLOSED / 10 OPEN
+## Earlier complete B340 original: 221 CLOSED / 10 OPEN
 
 `negative-34029ea8b047982f` is completely excluded. Its direct registered
 root has a complete 403-node tree with 279 excluded terminal domains and
@@ -688,7 +697,10 @@ That preceding union is **99 new original cells**, with no duplicate
 count; the preceding seven, nine and six proofs reached **121** additions; the next nine reached **130**, the next two reached **132**, the next six reached **138**, inward child 5 reached **139**, C60b reached **140**, and the four complete originals now bring the cumulative addition to **144**. The first 53 cell proofs and the complete baseline cover remain
 unchanged. All 231 original IDs and exact ancestor paths are preserved.
 
-| Fixed family | Original OPEN baseline | Closed since baseline | Current OPEN |
+The following table preserves the historical 197/34 checkpoint. The current
+register is 222/9, with A1/B5/C3/D0 remaining.
+
+| Fixed family | Original OPEN baseline | Closed since baseline | OPEN at that checkpoint |
 |---|---:|---:|---:|
 | A: inward-row escapes | 77 | 72 | 5 |
 | B: F-height branches | 39 | 22 | 17 |
@@ -705,7 +717,7 @@ internal tree leaves its original parent OPEN.
 | Ledger | Established | Still open |
 |---|---:|---:|
 | Original-nine strict-radius masks | 8 | 24 |
-| Current `001/00` fixed cells | 197 | 34 |
+| Current `001/00` fixed cells | 222 | 9 |
 | Historical positional closed-Q exclusions | 5,838 | 2,077 |
 
 The positional ledger retains the same 7,915 IDs and possible equality
@@ -743,7 +755,7 @@ substitutions. That historical package remains immutable.
 The entire strict `001/00` domain is the target; exact whole-witness
 reversal will transfer its eventual complete proof to `100/00`.
 The accepted [low-gap assembly](WEAK_OUTER_LOW_GAP_HAND_TABLE_ASSEMBLY.md)
-handles `|y_D-y_C|<=2/3`. All 34 remaining original cells belong to the
+handles `|y_D-y_C|<=2/3`. All 9 remaining original cells belong to the
 certified large-gap complement and retain all nine squares and strict bits.
 
 Use the proved unique-penultimate implications where their exact cone

@@ -1,40 +1,21 @@
-# Current A.2 handoff: 221/231 current-mask cells closed; 10 OPEN
+# Current A.2 handoff: 222/231 current-mask cells closed; 9 OPEN
 
-## 4 November continuation: D821 portable-source staging (no new closure)
+## D821 source restoration and portable acceptance completed
 
-The complete D821 native proof remains accepted at the native-checker level
-but not as a *published, portable* complete-original closure. The missing
-step is not another proof search inside D821's already excluded five
-complementary domains; it is source restoration and independent replay.
+The earlier external continuation correctly required real source bytes,
+an isolated exact replay and complete archive verification before closure.
+Those gates now pass. All 2,432 portable inputs are present and rehashed;
+the entire native/cold mathematical reports agree after explicit filename
+normalization. The externally added staging tool and its tests remain
+unchanged at the [native checkpoint](computer_assisted/a2_00100_d821_complete_native_checkpoint_v1/README.md).
+The full pre-acceptance handoff, including that continuation's scope and
+source-availability statements, is preserved byte-for-byte in
+[its historical snapshot](computer_assisted/a2_00100_d821_complete_original/HANDOFF_BEFORE_D821_ACCEPTANCE.md).
+The live fixed register uses its existing `CLOSED` status and counts exactly
+this one whole original. No mask or broader target scope changes.
 
-Two new sources are committed at
-[the D821 native checkpoint](computer_assisted/a2_00100_d821_complete_native_checkpoint_v1/README.md):
-the SHA-256-pinned **stage_d821_portable_sources.py** and its six
-**test_stage_d821_portable_sources.py** tests (all pass locally).
-A computer-assisted inspection of the 1,514,532-byte published native
-report found 889 source input SHA records plus six exact-checker SHA
-records: 895 unique paths with no conflicting digest and none outside
-the recorded original workspace. All 272 structured hash/path references
-are consistent with those same 895 records. No raw source has been
-invented from its hash or counted as present in this publication.
-
-**Execute on a workspace with the actual original source bytes:**
-follow the exact CLI in that checkpoint README, recheck the resulting
-source manifest, relocate every dependency, then run a fresh isolated
-no-numerics exact replay with forbidden reads enforced and rehash all
-inputs. Audit all compressed package members. Only after that may
-D821 change from OPEN to CLOSED_STRICT (222/231; 9 still open), and
-the mask ledger stays 8/32 until the other originals close.
-
-The source-only packet is not available in this chat's execution
-filesystem; a synthetic staging test is not a source proof. Do not
-promote D821 from the published native receipt alone. No change was
-made to the 231-cell definition or status register, 32-mask register,
-positional roots, or roadmap. No Lean, Lake or CI.
-
-
-November 4, 2026. The [complete B340 proof](A2_00100_B340_COMPLETE_ORIGINAL_CLOSURE.md) advances
-the unchanged original register from **220 CLOSED / 11 OPEN to 221 CLOSED / 10 OPEN**.
+November 4, 2026. The [complete D821 proof](A2_00100_D821_COMPLETE_ORIGINAL_CLOSURE.md) advances
+the unchanged original register from **221 CLOSED / 10 OPEN to 222 CLOSED / 9 OPEN**.
 The full-mask ledger remains **8 CLOSED / 24 OPEN**. `001/00`, reversal
 `100/00`, A.2, the unrestricted bound and global equality remain OPEN.
 No Lean, Lake or CI.
@@ -50,6 +31,22 @@ with a fresh whole-original portable replay. At that recovery checkpoint,
 accepted counts were **220/231 original cells and 8/32 masks closed**.
 
 ## Read first
+
+## Complete D821 original: 222 CLOSED / 9 OPEN
+
+`positive-821c9a2debeed0aa` is completely excluded. Its five closed
+complementary domains retain all threshold faces; four close through
+46 grafted trees with 650 nodes and 415 excluded terminals, and the fifth
+has a direct exact exclusion. All nine original squares, 36 corners,
+36 physical pairs, five cones and exact marked conditions remain active.
+
+Native and isolated portable replay check the full assembly and freshly
+replay the actual-AB scalar theorem. The tree arithmetic contains 789
+rounds, 109,838 deductions and 288,271 row occurrences. Root independently
+checks the complete table, all 242 affine terminal sums, every compressed
+part and all 2,436 archive members. All 2,432 frozen inputs are unchanged.
+The whole-mask ledger remains **8 CLOSED / 24 OPEN**. Eventual 001/00 and
+100/00 assembly remains strict-radius.
 
 The [B16a replayable-cover checkpoint](computer_assisted/a2_00100_b16a_replayable_cover_availability_v1/README.md)
 preserves eleven currently reproducible I-quarter exclusions and explicitly
@@ -70,7 +67,7 @@ The [independent B340 continuation review](computer_assisted/a2_00100_b340_indep
 freshly replays every bound and complete cover and independently checks all
 181 rational contradiction sums, all 279 table leaves and the unchanged
 231-original definitions. It agrees with accepted commit `ec6b94c` and earns
-zero additional closure credit. Current counts remain **221/231 cells** and
+zero additional closure credit. At that review, counts remained **221/231 cells** and
 **8/32 masks** closed. Reuse the accepted B340 packet.
 
 The [strict-radius 011/00 application](computer_assisted/strict_011_actual_AB_application_v1/README.md)
@@ -256,7 +253,7 @@ partial alternatives and a numerical infeasibility claim do not suffice.
 No Lean compilation, Lake or CI; retain the same 32 masks, 7,915 positional
 root IDs and 15 roadmap IDs. No human or proof-kernel verification is claimed.
 
-## Latest complete original: B340
+## Earlier complete original: B340
 
 `negative-34029ea8b047982f` is completely excluded. Its direct registered
 root has a complete 403-node tree with 279 excluded terminal domains and
@@ -598,17 +595,17 @@ both complete prefix covers.
 | Existing family | Original OPEN baseline after first 53 proofs | Subsequently CLOSED | Still OPEN |
 |---|---:|---:|---:|
 | A: positive D, nonpositive A, inward-row escapes | 77 | 76 | 1 |
-| B: negative D, nonpositive A, F-height branches | 39 | 33 | 6 |
+| B: negative D, nonpositive A, F-height branches | 39 | 34 | 5 |
 | C: negative D, nonnegative A, alternate-chain escapes | 33 | 30 | 3 |
-| D: positive D, nonnegative A, alternate-chain escapes | 29 | 28 | 1 |
-| **Total** | **178** | **167** | **11** |
+| D: positive D, nonnegative A, alternate-chain escapes | 29 | 29 | 0 |
+| **Total** | **178** | **169** | **9** |
 
 The precise unresolved predicates are the unchanged paths of these IDs:
 
 - **A:** `positive-c744bc031d40ee64`.
-- **B:** `negative-f14f5bc4eafdf50d`, `negative-7c60be8b07a358e9`, `negative-462e78d2e2d8be05`, `negative-34029ea8b047982f`, `negative-16a2fc93c8d133f0`, `negative-580db3624cf4c2e2`.
+- **B:** `negative-f14f5bc4eafdf50d`, `negative-7c60be8b07a358e9`, `negative-462e78d2e2d8be05`, `negative-16a2fc93c8d133f0`, `negative-580db3624cf4c2e2`.
 - **C:** `negative-887236b78100baf3`, `negative-d4021ade840b985c`, `negative-b882d8ade0cf9ea0`.
-- **D:** `positive-821c9a2debeed0aa`.
+- **D:** none; the last whole original D821 is now accepted.
 
 ## Current mathematical obstruction and useful inputs
 
@@ -632,7 +629,7 @@ a complete three-matching cover and 11,390 checked row identities. The
 latter retains the full area and angle-independent inertia of physical
 unit squares and has 16,064 checked affine/quadratic identities. These
 are necessary restrictions and do not alone exclude an original. The new
-complete original-cell proofs now give **221/10 cells and 8/24 masks**.
+complete original-cell proofs now give **222/9 cells and 8/24 masks**.
 
 The earlier [completed whole-domain research record](A2_00100_WHOLE_DOMAIN_RESEARCH_STOPPING_RECORD.md)
 records the bounded A/B/C/D investigations after the four accepted proofs.
@@ -971,25 +968,20 @@ claiming an additional cold run. This checkpoint adds **zero original-cell
 and mask closures**; accepted counts remain **221 CLOSED / 10 OPEN** and
 **8 CLOSED / 24 OPEN**.
 
-## D821 complete native proof; portable acceptance pending
+## Earlier D821 native checkpoint and final acceptance
 
-The [native proof and complete literal-table checkpoint](computer_assisted/a2_00100_d821_complete_native_checkpoint_v1/README.md)
-excludes all five complementary domains of `positive-821c9a2debeed0aa` in
-fresh independent exact replay. Its 46 grafted trees have 650 nodes and
-415 excluded terminal domains. The tree reports check 109,838 deductions
-and 288,271 row occurrences. Root independently checks every table entry,
-every closed child choice and all 242 affine terminal sums. The original
-nine-square attachment and two preserved migration snapshots are explicit.
-
-The final isolated portable replay and complete compressed-payload audit
-remain acceptance gates. D821 stays OPEN in the unchanged fixed register;
-this intermediate commit adds **zero original-cell or mask credit**.
-Accepted counts remain **221 CLOSED / 10 OPEN** and **8 CLOSED / 24 OPEN**.
+The [native proof checkpoint](computer_assisted/a2_00100_d821_complete_native_checkpoint_v1/README.md)
+and externally added staging tools are preserved with explicit historical
+metadata. The [complete portable release](computer_assisted/a2_00100_d821_complete_original/README.md)
+now passes native/cold proof replay, full hand/table review and every
+archive gate. D821 is CLOSED in the unchanged fixed-original definition.
+The register is **222 CLOSED / 9 OPEN**; the mask ledger is **8 CLOSED /
+24 OPEN**. The eventual full-mask conclusion remains strict-radius.
 
 ## Fixed ledgers and next handoff
 
 - Original-nine masks: **8 CLOSED / 24 OPEN**, exactly `000/*` and `010/*` CLOSED.
-- Current mask: **221 CLOSED / 10 OPEN**, same 231 IDs and certified full cover.
+- Current mask: **222 CLOSED / 9 OPEN**, same 231 IDs and certified full cover.
 - Positional roots: **5,838 historical closed-Q exclusions / 2,077 OPEN**
   among the same 7,915 IDs. Equality root 7820 remains feasible at Q.
 - The same 15 roadmap IDs and all global deliverables retain their statuses.
@@ -1001,5 +993,5 @@ blockers, and the separate mask/root/gate ledgers. Distinguish numerical
 discovery, exact replay, source-byte identity and the written proof.
 Earlier partial research remains historical evidence, not a second active
 frontier. The next goal is a complete argument discharging the remaining
-10 original predicates or a theorem subsuming them, followed by the other
+9 original predicates or a theorem subsuming them, followed by the other
 fixed masks. No extra necessary inequality alone completes that goal.

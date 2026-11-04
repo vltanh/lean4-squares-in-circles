@@ -1,0 +1,20 @@
+{
+  "status": "PREPARED_TRANSPORT_ONLY_RESUME_FOR_ROOT_REVIEW",
+  "v2_sha256": "ed33fb0a55f48334cc76880cc50bfe383896fa0d4828d158e0f8ce8aaa62d5f3",
+  "v3_sha256": "d0c078e1bc991bb1b3ff078da0ac0e9cba71f6c06482bcf968d26ef8e16697d6",
+  "diff_sha256": "3cc0a6fd88d258c79bdf9e0cb8d01a8583d405d19acb1ccfa6503417863b41be",
+  "preserved_release_sha256": "2a46389736d8623e9a8e2079e2f5893aefc3dba2b0f65d3e7759733e0f4596f5",
+  "preserved_release_creator_sha256": "ed33fb0a55f48334cc76880cc50bfe383896fa0d4828d158e0f8ce8aaa62d5f3",
+  "existing_report_sha256": "29babcc1c812d09b07a84d7381414f6f0053e1d435b782ac673af3b024abb35f",
+  "existing_receipt_sha256": "8b873cf6dd8cc7ad608383e326303464e709e86151ad0bf66e55cffd6ade51e3",
+  "frozen_input_manifest_sha256": "5aa6efecb64df25da202b895d609598e8d66d8f13a77f172af3d0ccf25184a63",
+  "current_failed_session": 30655,
+  "failed_session_exit_code": 1,
+  "failed_stage": "Existing release_audits directory, before output creation",
+  "earlier_initiator": "NOT_OBSERVED_DO_NOT_INFER",
+  "packet_files_written_by_v3": false,
+  "deletions": false,
+  "compression_preset": 1,
+  "proof_checks_changed": false,
+  "v3_executed": false
+}
