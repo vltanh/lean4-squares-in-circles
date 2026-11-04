@@ -493,6 +493,18 @@ proved six-round H rectangle. Fresh physical-premise and component replay,
 literal hand-table comparison, separate source reviews and all 402 archived
 member identities pass. The unchanged original Dc71 and its mask remain OPEN.
 
+## Sharp unit-height aligned endpoint blocker
+
+The [new local theorem](SHARP_UNIT_HEIGHT_ALIGNED_ENDPOINT_BLOCKER_HAND_PROOF.md)
+excludes original C when physical aligned D=(1,0), X=(0,v), G=(1/2,-1)
+have `0<=v<=1` and C retains its center cone and strictly weak comparison
+into D. A common vertical reflection and X/G separation permit the caller
+form `abs(y_X-y_D)<=1` after the required cap equality has aligned these
+originals. Contact seams and both height endpoints are retained. A separate
+physical family for heights approaching 1 from above proves local sharpness.
+This supplies no preceding row inequality or global routing and grants zero
+original-cell and whole-mask credit.
+
 ## Fixed ledgers and next handoff
 
 - Original-nine masks: **8 CLOSED / 24 OPEN**, exactly `000/*` and `010/*` CLOSED.

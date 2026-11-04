@@ -79,6 +79,15 @@ independent continuous review and exact escape rows all pass.
 The optional `4x6x6` closed escape family is complete but remains unexcluded;
 the theorem adds zero original-cell and zero whole-mask credit.
 
+The separately [sharp unit-height blocker](SHARP_UNIT_HEIGHT_ALIGNED_ENDPOINT_BLOCKER_HAND_PROOF.md)
+now extends the local equality exclusion from height `1/8` to the entire
+closed interval `[0,1]`, with a physical family proving that the upper
+constant cannot be increased. The proof handles both original frame
+chiralities, the occupied-strip seam and the diagonal contact endpoint.
+Its continuous independent review and fresh portable exact companions pass.
+Every use still requires the preceding row/cap equality and original strict
+weak CD condition. The local theorem adds no original or mask closure.
+
 ## What changed
 
 `positive-7cdbd39e7dd162bf` is completely excluded. Its sixteen closed
