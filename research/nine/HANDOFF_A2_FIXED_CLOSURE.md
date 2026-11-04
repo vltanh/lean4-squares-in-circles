@@ -18,6 +18,13 @@ with a fresh whole-original portable replay. Accepted counts are
 
 ## Read first
 
+The [adaptive original-corner disk rows](computer_assisted/adaptive_original_corner_disk_v1/README.md)
+now supply exact supporting halfplanes in all 36 original corners. Integer
+upward support bounds and an independent squared-inequality checker remove
+numerical direction selection from the proof. The continuous physical proof,
+independent review and fresh relocated controls pass. No interval or separator
+premise is added, and the fixed cell and mask ledgers are unchanged.
+
 Two [literal seven-original row applications](computer_assisted/row_label_substitutions_v1/README.md)
 are now explicitly bound: the opposite-endpoint theorem applies to A,B,I,D,
 and the actual-AB two-link theorem permits either original extra H or I.
