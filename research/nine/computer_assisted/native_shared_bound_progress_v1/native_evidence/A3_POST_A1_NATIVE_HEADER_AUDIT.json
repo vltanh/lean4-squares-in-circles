@@ -1,0 +1,16 @@
+{
+  "status": "PASS_NATIVE_CHECKPOINT_BYTES_AND_HEADER_CONSISTENCY_ONLY",
+  "kind": "A_c744_component3_post_A1_conditional_bound_rows",
+  "files": 26,
+  "bytes": 8057924,
+  "input_manifest_sha256": "f8c70615d746fdf883936976bf723bc857a9dcd08015eea04ea0d96531d7bfc0",
+  "included_records_and_reports_hash_verified": true,
+  "declared_native_gate_headers_consistent": true,
+  "published_archives_downloaded_or_rehashed_by_this_audit": false,
+  "omitted_native_prerequisites_rehashed_by_this_audit": false,
+  "weighted_arithmetic_repeated": false,
+  "self_contained_cold_proof": false,
+  "live_frontiers_changed": false,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

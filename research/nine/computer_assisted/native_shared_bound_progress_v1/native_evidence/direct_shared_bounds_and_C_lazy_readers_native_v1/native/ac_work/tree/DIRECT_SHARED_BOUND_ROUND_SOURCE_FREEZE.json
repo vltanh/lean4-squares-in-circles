@@ -1,0 +1,29 @@
+{
+  "status": "PASS_FROZEN_DIRECT_SHARED_BOUND_ROUND_WITH_REAL_PHYSICAL_REPLAY",
+  "files": {
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/direct_shared_bound_round.py": "be5a16d1106d37a47b1e21591a47b3f90dcf50839ebbf81ed30d0b74a8187d25",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/check_direct_shared_bound_round_controls.py": "d516d7f2b4ae190725f2b682d0b14c7ba0c5c82a63662df4b92246aefd12e27b",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/DIRECT_SHARED_BOUND_ROUND_EXACT_CONTROLS.json": "ab9a5b3de9bcee638ff41dc4dc9c84689e80455bcaf9c6def45be9e823d470db",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/DIRECT_SHARED_BOUND_ROUND_HAND_PROOF.md": "3df13de0570dab56907f7294ff0f1827640f62ea88efc08a42bce4bfd46a295b",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/prepare_cb882_direct_shared_bound_round.py": "0fed214fcf6ecd5566dc33873ce0139bc9ccb1bd9660fb234cd5065d1d6f445f",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/CB882_DIRECT_SHARED_BOUND_FIRST_EXACT_REPLAY.json": "da2b6bcf09dd746f748920c0995aab9708b3b2af67c8411871fc5a0562b3c8b1",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/cb882_component1_direct_shared_bound_round/manifest.json": "2e6d5068de3d06d4bf00da641cf170b107f9db2f6081a1d9e52a4b98d0f5615a",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/cb882_component1_direct_shared_bound_round/node_00000.json": "cd7b8e300978870f334225c63756f718128fca044965728b1f72e2bd5cb59b6b",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/independent_physical_sat_diagonal_replay.py": "a96a5ea5890553a7db6a0d22fb6245ec5b9b98851d5afc039d154989aab21301",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/physical_sat_diagonal_engine.py": "6157eb67662b97f8e13beaa3d3d726e68b8a3871a95cb991825596f47aa9fac5"
+  },
+  "ordinary_exact_round_schema_unchanged": true,
+  "independent_checker_changed": false,
+  "explicit_prefix_allow_list": true,
+  "normal_grid_and_threshold_retained": true,
+  "numerical_solves_in_actual_round": 0,
+  "actual_physical_deductions": 158,
+  "actual_weighted_source_rows": 158,
+  "static_contract_controls": {
+    "cases": 6,
+    "damaged_rejections": 12
+  },
+  "early_interval_terminals_checked_by_frozen_core": true,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

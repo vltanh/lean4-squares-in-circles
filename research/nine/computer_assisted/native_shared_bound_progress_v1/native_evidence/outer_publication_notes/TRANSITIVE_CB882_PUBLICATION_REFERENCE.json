@@ -1,0 +1,15 @@
+{
+  "schema": "explicit_transitive_published_prerequisite_reference_v1",
+  "applies_to_checkpoint": "direct_shared_bounds_and_C_lazy_readers_native_v1",
+  "commit": "8ac1db9d311ab0319105cd35ce46d2b002216330",
+  "repository_path": "research/nine/computer_assisted/a2_00100_cb882_whole_eight_manifest.json",
+  "manifest_sha256": "837d41cbbc29b8dd969ff132356883aa80fec545260c2ccb67825cd7c6e59e57",
+  "archive_sha256": "a40a03d8f4900a8e403ad2258e9e7660a3c4afe9fb9a8a26bce26149aedf6925",
+  "manifest_file": "PUBLISHED_CB882_WHOLE_EIGHT_MANIFEST.json",
+  "archive_bytes_bundled": false,
+  "archive_downloaded_or_replayed_now": false,
+  "relation": "Exact Cb882 base already named by the included C height delta publication manifest.",
+  "original": "negative-b882d8ade0cf9ea0",
+  "new_original_cells": 0,
+  "new_masks": 0
+}

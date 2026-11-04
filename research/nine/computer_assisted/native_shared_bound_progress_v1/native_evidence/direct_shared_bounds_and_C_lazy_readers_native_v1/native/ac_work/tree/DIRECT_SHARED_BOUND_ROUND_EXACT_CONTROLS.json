@@ -1,0 +1,145 @@
+{
+  "status": "PASS_DIRECT_SHARED_BOUND_STANDARD_ROUND_CONTRACT_CONTROLS",
+  "exact_fixture_cases": [
+    {
+      "name": "open_signed_grid",
+      "audit": {
+        "status": "PASS_CERTIFIED_PHYSICAL_STATE_OPEN",
+        "rounds": 1,
+        "deductions": 4,
+        "printed_rows_checked": 4,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      },
+      "terminal": null
+    },
+    {
+      "name": "empty_scalar",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 1,
+        "deductions": 1,
+        "printed_rows_checked": 1,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      },
+      "terminal": {
+        "kind": "proved_empty_scalar",
+        "index": 0,
+        "lower": "-2",
+        "upper": "-3"
+      }
+    },
+    {
+      "name": "empty_difference_last_pair",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 1,
+        "deductions": 2,
+        "printed_rows_checked": 2,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      },
+      "terminal": {
+        "kind": "proved_empty_difference",
+        "pair": [
+          7,
+          8
+        ],
+        "axis": 1,
+        "lower": "-2",
+        "upper": "-3"
+      }
+    },
+    {
+      "name": "empty_diagonal_last_pair",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 1,
+        "deductions": 2,
+        "printed_rows_checked": 2,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      },
+      "terminal": {
+        "kind": "proved_empty_diagonal",
+        "pair": [
+          7,
+          8
+        ],
+        "axis": 1,
+        "lower": "-3",
+        "upper": "-4"
+      }
+    },
+    {
+      "name": "frame_terminal",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 1,
+        "deductions": 1,
+        "printed_rows_checked": 1,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      },
+      "terminal": {
+        "kind": "proved_frame_contradiction",
+        "label": "literal frame-contract control"
+      }
+    },
+    {
+      "name": "analytic_terminal",
+      "audit": {
+        "status": "PASS_EXCLUDED_PHYSICAL_DOMAIN",
+        "rounds": 1,
+        "deductions": 1,
+        "printed_rows_checked": 1,
+        "reserve": null,
+        "numerical_discovery_fields_used": false,
+        "whole_original_credit": 0,
+        "whole_mask_credit": 0
+      },
+      "terminal": {
+        "kind": "proved_empty_analytic_frame",
+        "index": 0,
+        "lower": "2",
+        "upper": "1"
+      }
+    }
+  ],
+  "rejected_damages": [
+    "wrong_unit_multiplier",
+    "negative_multiplier",
+    "wrong_exact_rhs",
+    "invented_residual_payment",
+    "wrong_downward_grid",
+    "wrong_objective_sign",
+    "changed_literal_row",
+    "wrong_empty_scalar_witness",
+    "wrong_empty_difference_last_pair_witness",
+    "wrong_empty_diagonal_last_pair_witness",
+    "wrong_frame_terminal_witness",
+    "wrong_analytic_terminal_witness"
+  ],
+  "explicit_prefix_allow_list_exercised": true,
+  "numerical_solves": 0,
+  "physical_original_proof_not_claimed": true,
+  "real_physical_first_use_replayed_separately": true,
+  "files": {
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/check_direct_shared_bound_round_controls.py": "d516d7f2b4ae190725f2b682d0b14c7ba0c5c82a63662df4b92246aefd12e27b",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/direct_shared_bound_round.py": "be5a16d1106d37a47b1e21591a47b3f90dcf50839ebbf81ed30d0b74a8187d25",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/independent_physical_sat_diagonal_replay.py": "a96a5ea5890553a7db6a0d22fb6245ec5b9b98851d5afc039d154989aab21301"
+  },
+  "new_original_cells": 0,
+  "new_masks": 0
+}

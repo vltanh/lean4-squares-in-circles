@@ -1,0 +1,17 @@
+{
+  "status": "PASS_DIRECT_SHARED_BOUND_PRECHECK_REAL_ENDPOINT_CONTROLS",
+  "real_source_rows": 158,
+  "before_copy_accepts": true,
+  "after_copy_skips": true,
+  "wrong_prefix_skips": true,
+  "missing_pair_box_conservative": true,
+  "proof_state_modified": false,
+  "discovery_only": true,
+  "files": {
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/direct_shared_bound_precheck.py": "abce850086e528b7df8bc4acbcdf780e87efe6a5954006407e3a30ab3817a501",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/direct_shared_bound_round.py": "be5a16d1106d37a47b1e21591a47b3f90dcf50839ebbf81ed30d0b74a8187d25",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/cb882_component1_direct_shared_bound_round/node_00000.json": "cd7b8e300978870f334225c63756f718128fca044965728b1f72e2bd5cb59b6b"
+  },
+  "new_original_cells": 0,
+  "new_masks": 0
+}

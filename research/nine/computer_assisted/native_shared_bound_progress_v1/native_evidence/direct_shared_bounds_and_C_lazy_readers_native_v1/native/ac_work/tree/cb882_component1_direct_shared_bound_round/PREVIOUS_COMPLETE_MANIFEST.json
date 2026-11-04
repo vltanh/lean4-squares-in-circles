@@ -1,0 +1,153 @@
+{
+  "schema": "same_original_physical_SAT_proxy_angle_tree_discovery_v1",
+  "status": "OPEN",
+  "parent": {
+    "path": "/workspace/scratch/f9f48fcfb253/d_work/cb882_height_seeds/component_1.json",
+    "sha256": "6d7dbc1a1f6402a7334533fc2e063130e54ed6c997e36946a6dd536e59d37947",
+    "schema": "CB882_exact_named_height_seed_v1"
+  },
+  "id": "negative-b882d8ade0cf9ea0",
+  "original_path": [
+    [
+      "angle",
+      3,
+      0
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      1
+    ],
+    [
+      "alternate_four_escape",
+      [
+        1,
+        7
+      ],
+      [
+        3
+      ]
+    ]
+  ],
+  "component": 1,
+  "conditional_parent": {
+    "path": "/workspace/scratch/f9f48fcfb253/ac_work/cb882/cb882_whole_eight_checkpoint_package/data/branch_01.json",
+    "sha256": "9f5c1220dd6a5bb712cf98f59048cc7b9d1db55d760815c8827925c034d2b262"
+  },
+  "closed_domain": {
+    "coefficients": [
+      [
+        1,
+        "-1"
+      ],
+      [
+        7,
+        "-1"
+      ],
+      [
+        17,
+        "2"
+      ]
+    ],
+    "rhs": "-23/100",
+    "name": "opposite_tilt_AHID_variation_1"
+  },
+  "scope": "ONE_CLOSED_MEMBER_OF_COMPLETE_OPPOSITE_TILT_EIGHT_COVER",
+  "nodes": [
+    {
+      "index": 0,
+      "parent": null,
+      "depth": 0,
+      "restriction": null,
+      "file": "node_00000.json",
+      "children": [],
+      "status": "OPEN",
+      "sha256": "562d19a45ad74d2b72323f96011b55f918f139f4684cd81ea7f3e55127f0ea62"
+    }
+  ],
+  "source_sha256": {
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/seed_cb882_height_tree.py": "2d12e5b4ae731bbf5f54c4f27cdaa668166d317084d1bdb751f3f71ce9f0e709",
+    "/workspace/scratch/f9f48fcfb253/d_work/cb882_height_seeds/component_1.json": "6d7dbc1a1f6402a7334533fc2e063130e54ed6c997e36946a6dd536e59d37947",
+    "/workspace/scratch/f9f48fcfb253/d_work/cb882_shared_height_bounds/prepared_seed_trees/component_1/PREVIOUS_COMPLETE_MANIFEST.json": "4491ded5a6962e65db1dfed8fad25088258c3c4de84f462de8e8ce1e0a6a4f84",
+    "/workspace/scratch/f9f48fcfb253/d_work/cb882_shared_height_bounds/resume_cb882_shared_height_bounds_adaptive_lazy_tree.py": "05572344f495b69a05e9a525a25a5f5eeaf7c4f187a30480553a6fca331d2f99",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/physical_split_normalized_corner_five_proxy.py": "1efbe7bc7760cd12af1c7e1b97c115343cc40cc1dd7262653bb151c56936ebac",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/ac_physical_context_ownerfree.py": "5e32b752cbd21f50708122c1378b8dd2510c0cf531cf2cdcd85d02fb53dad712",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/ac_physical_context_ownerfree_v2.py": "51499c525e01cdd88d9f8e951be0ed86a0b83a8ee6c2beb06998a037b24e62f8",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/active_highs_checked_warning_snapshot.py": "a625f0c0c4aa40e51deb662e60a733b2c5ccd738c199ffe5f6487e3a3418114b",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/ac_physical_context_caps.py": "f0efbdb2ffd559c69a5fc6344031450b279c229c8d3a938d7f0b2b2d48fd84ec",
+    "/workspace/scratch/f9f48fcfb253/ac_work/full_angle_common_side_row_v1/oriented_good_cap_rows.py": "33e7f0250f94dbcec113ac60677d7f2e0e9e513c7347f30dc808bfd6ea147737",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/physical_preflight.py": "1777dff615d22cd0747995f0205cd21f926affdb6401a3539272e4a5d3e27ff8",
+    "/workspace/scratch/f9f48fcfb253/ac_work/full_angle_common_side_row_v1/PREMISE_BINDINGS.json": "b462689a9a20b1ef6324a56487c9b4d039c83a8f2387726fcae98060f3c89558",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/owner_free_relative_support_snapshot.py": "b1445ad4e00a0127b201d784b72e1df2246101f567b0bf952ca46b463595e788",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/ac_physical_gram_runtime.py": "dcb8adb6a8e11f52c44f565e9752b7444d996495c03044b150b45c740ebcd3cf",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/physical_pair_frame_squares.py": "39d917106aa79db506aa1defbb081b404b02c6b54d88d63cae455864f506ffa6",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/physical_frame_square_separation.py": "fdd4bbf142be1cff2c27688b5fd79950e0f105d09dad34a453dcbae50116b39c",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/physical_projection_squares.py": "0a33acc6990ccc5f35439f0f641de987a08466b0e53a3bfa38de1dd2c2c8901d",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/physical_projection_square_separation.py": "6f8ede5eb0853b2615bf27b099017293bf909094364938736f00bf7184b04f87",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/ac_physical_all_guards_runtime.py": "00d4ec73defa7fbc9c0ddd90b52108ef404ff5b3f63ac28dedabae3e3f15c7a8",
+    "/workspace/scratch/f9f48fcfb253/ac_work/c887/c887_whole_eight_checkpoint_package/shared_strict_row_terminal.py": "43a74c66c7c0b91da76e6577ce511e6ae8de7bda9ab6e0adbf81a1cc2b013d43",
+    "/workspace/scratch/f9f48fcfb253/ac_work/full_angle_common_side_row_v1/full_angle_common_side_four_row_guard.py": "81895c0397f7e7d0a7a411413b5a8fe02e2782569f6e880d349f2eff9c032e2e",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/ac_physical_all_guards_v2.py": "b8256416447af11935f57c97ea72fe856f7f3d69329ba107bf2887292e1ce8dc",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/opposite_abid_row_guard.py": "a1a5cf009d24a1b18e41a2aff258bfa91987ebaf225308cef32212cee9ed0514",
+    "/workspace/scratch/f9f48fcfb253/ac_work/c887/c887_whole_eight_checkpoint_package/opposite_tilt_theorem/opposite_tilt_four_row_guard.py": "3d1a74e8108f9eb02e431e2e25f9f24aa7bffd55aac8f3a956d2f54a11886c0d",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/OPPOSITE_ABID_PREMISE_BINDINGS.json": "f03bf03f9ef8941c93c3999f8076cb7e4a4b7eb66e9b00c0de289c6f7c5cb78d",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/OPPOSITE_ABID_LITERAL_SUBSTITUTION.md": "2844c7dd6d43afda6239512b6cc9ea055828ef32528cbde1bc07aee20dc7865a",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/ac_physical_all_guards_v3.py": "16bda6103aca8bd5a057e45af0dbdf96dd801480608c179d6f7f045f8207f367",
+    "/workspace/scratch/f9f48fcfb253/ac_work/actual_ab_extra_guard/actual_ab_any_extra_guard.py": "600763e67222e28451fed47e87c04283be1fa1869fbcf8cc8537e265e2727402",
+    "/workspace/scratch/f9f48fcfb253/ac_work/actual_ab_extra_guard/accepted_actual_ab_guard.py": "3a965bdcc8fc0f4de55fc5e3a5fef945f584710fa5ff6c339de44abcea640c19",
+    "/workspace/scratch/f9f48fcfb253/ac_work/actual_ab_extra_guard/PREMISE_BINDINGS.json": "1217223d16f854c8f97b15befa954e9465d5ff943b7f87037c87bae766d5bf68",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/ac_objective_unit_four_corner_runtime.py": "dcfe2f5c5308d42fdf0d46bd0f42346e820128afedc58eec58b46abffdaf31d0",
+    "/workspace/scratch/f9f48fcfb253/ac_work/adaptive_corner_disk/physical_corner_disk_rows.py": "633c549239f1893c37c382e1e6aac2eb54f36feb7332390e26f9bccceac286ba",
+    "/workspace/scratch/f9f48fcfb253/ac_work/adaptive_corner_disk/physical_corner_disk_separation.py": "3d02c220cda478f7e58f4fa5a9f009f8f14febd06440df9b24ba6ae7d089cc29",
+    "/workspace/scratch/f9f48fcfb253/ac_work/four_product_corner_rows_v1/physical_unit_four_corner_rows.py": "87b1807d71442d558fd6eeaaed9b065d953cc6ca58908079e72b745cb2e227ac",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/fast_unit_four_corner_separation_snapshot.py": "bf82ed79b7aaa4ad3ddcdd7d7d387e344d242e7557238b2ebc17936703293b8a",
+    "/workspace/scratch/f9f48fcfb253/ac_work/adaptive_corner_disk/PREMISE_BINDINGS.json": "413cec6bd90907e25002a0a08a34924c7de79e8179ac733ddb45b16a6f1d2271",
+    "/workspace/scratch/f9f48fcfb253/ac_work/four_product_corner_rows_v1/PREMISE_BINDINGS.json": "de2a53541969a1083aa002b4d663a6010deacbdbca53fd4e80b01b8094a892f1",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/cb882_height_four_runtime.py": "f916da2e9a7e17dfe1d1020f64e181ce5e2952a0111dd00013e07f77bac91dd7",
+    "/workspace/scratch/f9f48fcfb253/d_work/cb882_tools/replay_height_seeds.py": "93c7b82265c1103e42436074e80dc158a4d73a13fb63f11a40910dc0f702cc1e",
+    "/workspace/scratch/f9f48fcfb253/ac_work/cb882/cb882_whole_eight_checkpoint_package/data/branch_01.json": "9f5c1220dd6a5bb712cf98f59048cc7b9d1db55d760815c8827925c034d2b262",
+    "/workspace/scratch/f9f48fcfb253/ac_work/cb882/cb882_whole_eight_checkpoint_package/SHA256_MANIFEST.json": "3186ac6e498fe09bfc010d50f4b294f8bb1b2f351c18529e527af22e7dda97f2",
+    "/workspace/scratch/f9f48fcfb253/ac_work/cb882/cb882_whole_eight_checkpoint_package/COVER_TABLE.json": "b98dd915ca1a3c85da9554960ac014493b886a40cd432d5962e89eda27515ca1",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/cb882_height_consequence_four_runtime.py": "48cc90c9af972af822f46a0bfb03b345a9e2f810bcad86e1d1b8f2827815e3c8",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/c_height_exclusion_consequence_rows.py": "1e5a53d90bc6744bc6578ea0377c75c0f5fcb618dd2ff0955836f1722d0821a9",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/C_HEIGHT_EXCLUSION_CONSEQUENCES_BINDING.json": "0ba7dd5ecd014197634b57df6c51b1d1fa1f8a258ff44f48464d4b8b0b55eebb",
+    "/workspace/scratch/f9f48fcfb253/d_work/cb882_shared_height_bounds/cb882_shared_height_bounds_runtime.py": "748b9bd4495a351de304028fcea07bbb6b7a2d26c7a30d5b0eea6d2cfc6dcb5a",
+    "/workspace/scratch/f9f48fcfb253/d_work/cb882_shared_height_bounds/cb882_whole_height_bound_rows.py": "dafa4d2cedacc0ca409195abcd45eba5b281561f9d1061de4b396a2e2e446200",
+    "/workspace/scratch/f9f48fcfb253/d_work/cb882_shared_height_bounds/CB882_WHOLE_HEIGHT_BOUND_STATE_BINDING.json": "f0e49cf500739a4c878ef34c5f420e5430ca22dd9e147986615a4c546554ee38",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/certified_union_original_rows.py": "703fe8cf070f38b4925b07a31f6048c906cb822143fcf258da221f738a4b1e71"
+  },
+  "archive_manifest": {
+    "path": "/workspace/scratch/f9f48fcfb253/ac_work/cb882/cb882_whole_eight_checkpoint_package/SHA256_MANIFEST.json",
+    "sha256": "3186ac6e498fe09bfc010d50f4b294f8bb1b2f351c18529e527af22e7dda97f2"
+  },
+  "cover_table": {
+    "path": "/workspace/scratch/f9f48fcfb253/ac_work/cb882/cb882_whole_eight_checkpoint_package/COVER_TABLE.json",
+    "sha256": "b98dd915ca1a3c85da9554960ac014493b886a40cd432d5962e89eda27515ca1"
+  },
+  "preexisting_excluded_height_components": [
+    4,
+    7
+  ],
+  "all_eight_closed_domains_required_for_original": true,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "whole_original_height_exclusion_consequences": {
+    "path": "/workspace/scratch/f9f48fcfb253/ac_work/tree/C_HEIGHT_EXCLUSION_CONSEQUENCES_BINDING.json",
+    "sha256": "0ba7dd5ecd014197634b57df6c51b1d1fa1f8a258ff44f48464d4b8b0b55eebb",
+    "key": "cb882"
+  },
+  "whole_original_height_bound_state": {
+    "path": "/workspace/scratch/f9f48fcfb253/d_work/cb882_shared_height_bounds/CB882_WHOLE_HEIGHT_BOUND_STATE_BINDING.json",
+    "sha256": "f0e49cf500739a4c878ef34c5f420e5430ca22dd9e147986615a4c546554ee38"
+  },
+  "continuation": {
+    "source": "/workspace/scratch/f9f48fcfb253/d_work/cb882_initial_trees/component_1",
+    "initial_nodes": 1,
+    "retained_closed_leaves": 0,
+    "visited_nodes": []
+  },
+  "seconds": 0.02051098800075124
+}

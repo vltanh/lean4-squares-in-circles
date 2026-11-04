@@ -1,0 +1,16 @@
+{
+  "status": "PASS_NATIVE_CHECKPOINT_BYTES_AND_HEADER_CONSISTENCY_ONLY",
+  "kind": "direct_shared_bounds_and_C_lazy_readers",
+  "files": 61,
+  "bytes": 5008323,
+  "input_manifest_sha256": "9cecace1cca845c20e44207baeb4cf5b0d9af3595ca8a1649241a7738bb3a633",
+  "included_records_and_reports_hash_verified": true,
+  "declared_native_gate_headers_consistent": true,
+  "published_archives_downloaded_or_rehashed_by_this_audit": false,
+  "omitted_native_prerequisites_rehashed_by_this_audit": false,
+  "weighted_arithmetic_repeated": false,
+  "self_contained_cold_proof": false,
+  "live_frontiers_changed": false,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

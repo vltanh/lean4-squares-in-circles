@@ -1,0 +1,34 @@
+{
+  "status": "PASS_CB882_WHOLE_ORIGINAL_BOUND_LITERAL_AND_DOMAIN_CONTROLS",
+  "binding_sha256": "f0e49cf500739a4c878ef34c5f420e5430ca22dd9e147986615a4c546554ee38",
+  "caller_domains_checked": 8,
+  "existing_height_components_checked": [
+    0,
+    1,
+    2,
+    3,
+    5,
+    6
+  ],
+  "positive_literals": 3312,
+  "damaged_rejections": 13288,
+  "original_variable_rows": 414,
+  "no_auxiliary_or_child_predicate_transported": true,
+  "files": {
+    "/workspace/scratch/f9f48fcfb253/d_work/cb882_shared_height_bounds/check_cb882_whole_height_bound_controls.py": "d369d6e4309f9f0698aa9ad06a252b4bb19c15d0ae15eb29d8fe0882d577f407",
+    "/workspace/scratch/f9f48fcfb253/d_work/cb882_shared_height_bounds/cb882_whole_height_bound_rows.py": "dafa4d2cedacc0ca409195abcd45eba5b281561f9d1061de4b396a2e2e446200",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/certified_union_original_rows.py": "703fe8cf070f38b4925b07a31f6048c906cb822143fcf258da221f738a4b1e71",
+    "/workspace/scratch/f9f48fcfb253/d_work/cb882_shared_height_bounds/independent_cb882_whole_height_bound_rows.py": "caeb30637c898182ed0fa7fe5a3454d9987650ec80f4a5db64975a2197f97955",
+    "/workspace/scratch/f9f48fcfb253/ac_work/tree/independent_certified_union_original_rows.py": "2c51bd8ccb712083b1aecde3f0e832b05e8d3ac130d82aa1ac5fa02598e32e50",
+    "/workspace/scratch/f9f48fcfb253/d_work/cb882_shared_height_bounds/CB882_WHOLE_HEIGHT_BOUND_STATE_BINDING.json": "f0e49cf500739a4c878ef34c5f420e5430ca22dd9e147986615a4c546554ee38",
+    "/workspace/scratch/f9f48fcfb253/d_work/cb882_height_seeds/component_0.json": "ffcbbefa3c0c668cb1fab7bb04a0f845e3d06de10ea45067ccb937892781c315",
+    "/workspace/scratch/f9f48fcfb253/d_work/cb882_height_seeds/component_1.json": "6d7dbc1a1f6402a7334533fc2e063130e54ed6c997e36946a6dd536e59d37947",
+    "/workspace/scratch/f9f48fcfb253/d_work/cb882_height_seeds/component_2.json": "455da101f80f2dc46d653030e010fd05a8ed6863c5f5cfbf1ea1ef0aa190f98c",
+    "/workspace/scratch/f9f48fcfb253/d_work/cb882_height_seeds/component_3.json": "16771acf578f9e549ebca4c57d65fa8013652ae6dd16341851a7535698115239",
+    "/workspace/scratch/f9f48fcfb253/d_work/cb882_height_seeds/component_5.json": "219d1ae5be6e0c09adc56d06ab6f93b8f352aefe234445864baf47964ace93db",
+    "/workspace/scratch/f9f48fcfb253/d_work/cb882_height_seeds/component_6.json": "3ed011a15a3e331d1e65a0916994ebcb602a0220c1164c15c0ffcfce73739e5a"
+  },
+  "source_arithmetic_replay_separate": true,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

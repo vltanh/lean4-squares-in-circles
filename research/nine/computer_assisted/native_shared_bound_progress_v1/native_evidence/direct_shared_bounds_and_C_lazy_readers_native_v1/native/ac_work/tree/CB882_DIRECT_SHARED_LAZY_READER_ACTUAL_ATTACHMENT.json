@@ -1,0 +1,32 @@
+{
+  "status": "PASS_SAME_LITERAL_CB882_DIRECT_ROUND_UNDER_BOUNDED_MEMORY_READER",
+  "new_report_sha256": "b15f2ba97b70d86d128fd0d9edead7fd5be6238d8f23a524ed94c16ec6b7d0fd",
+  "old_report_sha256": "da2b6bcf09dd746f748920c0995aab9708b3b2af67c8411871fc5a0562b3c8b1",
+  "exactly_equal_result_fields": [
+    "status",
+    "original_id",
+    "original_path",
+    "component",
+    "scope",
+    "conditional_parent",
+    "closed_domain",
+    "complete",
+    "nodes",
+    "leaf_domains",
+    "excluded_leaves",
+    "open_leaves",
+    "closed_unions",
+    "rounds",
+    "deductions",
+    "printed_rows_checked",
+    "conditional_height_row_occurrences",
+    "unit_four_corner_row_occurrences",
+    "node_audits",
+    "leaf_table",
+    "complete_closed_covers",
+    "whole_original_height_bound_state_row_occurrences_checked"
+  ],
+  "node_payloads_replayed_lazily": true,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

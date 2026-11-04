@@ -1,0 +1,26 @@
+{
+  "schema": "native_shared_bound_progress_publication_state_v1",
+  "accepted_parent_commit": "a9f6a2e3bf989ccdbdfed0af7a66f2d3d8522a5d",
+  "current_fixed_register_sha256": "3dfaff7a880ab358930fb0ea835a1fdbe9959711f3c08ac47ee9817e7c693dde",
+  "current_originals": {
+    "closed": 222,
+    "open": 9,
+    "total": 231
+  },
+  "whole_masks": {
+    "closed_strict": 8,
+    "open": 24,
+    "total": 32
+  },
+  "positional_root_denominator": 7915,
+  "roadmap_id_denominator": 15,
+  "new_original_closures": 0,
+  "new_mask_closures": 0,
+  "new_positional_root_exclusions": 0,
+  "new_roadmap_gate_closures": 0,
+  "live_frontiers_included_or_modified": false,
+  "new_geometric_arithmetic_replay_during_publication": false,
+  "saved_native_exact_receipts_preserved": true,
+  "self_contained_cold_proof": false,
+  "lean_lake_ci_run": false
+}

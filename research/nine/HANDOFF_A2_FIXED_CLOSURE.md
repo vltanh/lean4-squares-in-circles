@@ -32,6 +32,21 @@ accepted counts were **220/231 original cells and 8/32 masks closed**.
 
 ## Read first
 
+## Native exact shared-bound progress checkpoint
+
+The [native shared-bound evidence checkpoint](computer_assisted/native_shared_bound_progress_v1/README.md)
+preserves actual frozen records for 158 direct Cb882 deductions, 181 direct
+C887 deductions, and 39 weighted uses of the new A3 component-3 bound
+family. Their earlier exact replays pass; all three saved domains remain
+OPEN. The bounded-memory C readers retain the same complete unions and
+exact arithmetic, and A3 bounds retain their precise component predicate.
+
+The independent publication review rehashes all 100 release members,
+75 native source occurrences and the exact published dependency identities.
+This is native evidence with explicitly unbundled ancestry, not a new cold
+proof. It changes no live search or register and earns zero closure credit.
+Counts remain 222 CLOSED / 9 OPEN originals and 8 CLOSED / 24 OPEN masks.
+
 ## Remaining-mask plan and prepared strict 011/00 root
 
 The [reviewed continuation and root-design checkpoint](computer_assisted/all_masks_continuation_and_strict011_design_v1/README.md)

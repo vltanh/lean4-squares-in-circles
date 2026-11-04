@@ -1,0 +1,86 @@
+{
+  "kind": "A_c744_component3_post_A1_conditional_bound_rows",
+  "component": 3,
+  "valid_on_whole_original": false,
+  "actual_native_gates": [
+    {
+      "name": "A c744 component3 first weighted POST-A1 interval row use",
+      "report_member": "native/d_work/A_C744_COMPONENT3_FIRST_POST_A1_BOUND_EXACT_REPLAY.json",
+      "manifest_member": "native/d_work/A_c744_component3_post_a1_bound_whole_probe/manifest.json",
+      "record_member": "native/d_work/A_c744_component3_post_a1_bound_whole_probe/node_00000.json",
+      "native_manifest_path": "/workspace/scratch/f9f48fcfb253/d_work/A_c744_component3_post_a1_bound_whole_probe/manifest.json",
+      "native_record_path": "/workspace/scratch/f9f48fcfb253/d_work/A_c744_component3_post_a1_bound_whole_probe/node_00000.json",
+      "original_id": "positive-c744bc031d40ee64",
+      "original_path": [
+        [
+          "angle",
+          3,
+          1
+        ],
+        [
+          "angle_cut",
+          [
+            0,
+            "0"
+          ],
+          0
+        ],
+        [
+          "inward_row_escape",
+          [
+            7,
+            8
+          ],
+          [
+            4
+          ]
+        ]
+      ],
+      "expected_report_fields": {
+        "status": "PASS_PARTIAL_TWO_LINK_COMPLEMENT_TREE",
+        "nodes": 1,
+        "rounds": 5,
+        "deductions": 546,
+        "printed_rows_checked": 1245,
+        "open_leaves": 1,
+        "component3_post_a1_bound_rows_checked": 39,
+        "component3_post_a1_bounds_valid_on_whole_original": false,
+        "node_payloads_replayed_lazily": true,
+        "numerical_producer_imported": false
+      },
+      "component": 3,
+      "closed_domain": {
+        "name": "two_link_actual_AB_escape_3",
+        "coefficients": [
+          [
+            3,
+            "1"
+          ],
+          [
+            7,
+            "1"
+          ],
+          [
+            17,
+            "-2"
+          ]
+        ],
+        "rhs": "-3/5"
+      }
+    }
+  ],
+  "original_status": "OPEN",
+  "component_status": "OPEN",
+  "rows_in_conditional_family": 414,
+  "source_freeze_pending_flag_is_historical": true,
+  "first_weighted_use_now_passed": true,
+  "complete_A1_source_is_separately_published": true,
+  "native_exact_evidence_only": true,
+  "self_contained_cold_proof": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "full_proof_replayed_during_checkpoint_build": false,
+  "live_numerical_frontiers_included": false,
+  "source_and_record_bytes_unchanged": true,
+  "dependency_inventory": "DEPENDENCIES.json"
+}
