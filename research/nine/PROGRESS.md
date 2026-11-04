@@ -1,17 +1,40 @@
-> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **218/231 cells CLOSED, 13 OPEN; 8/32 masks CLOSED, 24 OPEN.**
+> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **219/231 cells CLOSED, 12 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
-# n=9: 218/231 current-mask cells closed; 13 remain OPEN
+# n=9: 219/231 current-mask cells closed; 12 remain OPEN
 
-**Latest verified continuation: the complete A7c center/frame/height original-cell exclusion.**
-The same register now has **218 CLOSED / 13 OPEN**, with
-**165 additions beyond the first 53**. Remaining families:
-**A1, B6, C3, D3**. `001/00`, its reversal, the unrestricted bound and
+**Latest verified continuation: the complete Dc71 original-cell exclusion.**
+The same register now has **219 CLOSED / 12 OPEN**, with
+**166 additions beyond the first 53**. Remaining families:
+**A1, B6, C3, D2**. `001/00`, its reversal, the unrestricted bound and
 equality remain OPEN. No Lean, Lake or CI.
 
-[Latest complete assembly](A2_00100_A7C_FIXED_CENTER_AND_SLOPE_COVER_CLOSURE.md) ·
+[Latest complete assembly](A2_00100_DC71_COMPLETE_ORIGINAL_CLOSURE.md) ·
 [Current fixed register](gates/A2_00100_FIXED_FRONTIER.json) ·
-[Source-bound packet and fresh replay](computer_assisted/a2_00100_a_7c_fixed_center_slope_height_manifest.json) ·
+[Source-bound packet and native exact replay](computer_assisted/a2_00100_dc71_complete_original_manifest.json) ·
 [Operative handoff](HANDOFF_A2_FIXED_CLOSURE.md)
+
+## Complete Dc71 original: 219 CLOSED / 12 OPEN
+
+`positive-c71dc2feef1abb0b` is completely excluded. All sixteen closed
+I-quarter products are covered, including the seven complete H2-by-4 covers
+and all 68 recursive original-frame unions. All 254 terminal domains close;
+no unresolved leaf remains. The proof retains the same nine original frames,
+36 corners, 36 physical pairs, all marked conditions and strictly weak CD.
+
+The 337 selected bound records contain 859 distinct local rounds, 204,739
+deductions, 235,877 premise rows and 4,874 terminal rows. Literal continuation
+accounting retains common antecedents once. There are 220 exact positive
+reserves above 1/1,000,000, one separately attached sharp terminal and one
+completed-prefix difference terminal. The corresponding raw OPEN records
+remain unchanged.
+
+The corrected hand/table includes every energy occurrence: 3,499 three-square,
+84 four-center and 38 physical area-moment rows. All five accepted geometric
+premise files are explicitly bound. The independent exact whole-original
+replay, both final source/hand/table reviews and the root's full 1,497-member
+archive audit pass. All 1,459 frozen arithmetic inputs retain their hashes.
+The fixed register now has **219 CLOSED / 12 OPEN**, with **A1, B6, C3, D2**
+remaining. No whole mask, positional root or roadmap gate is newly closed.
 
 ## New conditional input: a complete full-angle polynomial row theorem
 

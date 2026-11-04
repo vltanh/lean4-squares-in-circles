@@ -1,0 +1,12 @@
+{
+  "schema": "Dc71_complete_original_physical_hand_supplement_v1",
+  "files": {
+    "physical_proofs/FOUR_ORIGINAL_PLANAR_MATCHING_AND_ENERGY_HAND_PROOF.md": "c8e665a2abd2c67df541e612c874bc30b469f817cb6151cd77e21179533b0c18",
+    "physical_proofs/FOUR_ORIGINAL_PLANAR_ENERGY_INDEPENDENT_REVIEW.md": "5808a7fa00f490f508ae2c2612ed6aeb6ec352eff96960ff7be357676260cd28",
+    "physical_proofs/PHYSICAL_SQUARE_AREA_MOMENT_HAND_PROOF.md": "86f402efbf135228d2dd0d034fa55f56206c9176f4afe8354c4cf880b3fab293",
+    "physical_proofs/four_original_planar_rows_replay.json": "8fd1fb67b9675ab9daa8f9c4b368e398496c86755ef920ac5aa1e01cb65ade03",
+    "physical_proofs/square_area_moment_rows_replay.json": "cbe05ea3e83c692e0d9d4666a198ed79e425d3d96380661cfcf9615f0212240d"
+  },
+  "arithmetic_manifest_unchanged": "3b67d3be76f0292d95cd8011ae4a62c59ac89e0f24396042d0465de818f7af49",
+  "mathematical_source_changes": false
+}

@@ -1,0 +1,58 @@
+{
+  "schema": "Dc71_complete_original_root_hand_table_union_review_v1",
+  "status": "PASS_COMPLETE_IMMUTABLE_ORIGINAL_CALLER",
+  "source_sha256": {
+    "/workspace/scratch/fee12ff81cbd/a_family/other_masks/dc71_original_assembly/strict_full_original_v5/assembly_replay/COMPLETE_OR_EXPLICIT_PARTIAL_REPLAY.json": "3b52ef8d60de895ea9db0277a5d9f840acc7f265cc85990ba6cb3d44be474548",
+    "/workspace/scratch/fee12ff81cbd/a_family/other_masks/dc71_original_assembly/strict_full_original_v5/ASSEMBLY_MANIFEST.json": "3b67d3be76f0292d95cd8011ae4a62c59ac89e0f24396042d0465de818f7af49",
+    "/workspace/scratch/fee12ff81cbd/a_family/other_masks/dc71_original_assembly/complete_original_documents_v2/HAND_PROOF.md": "ce76084e4dc457e9ba58852616fac12ee98f53a6016300b50c99c817878f4855",
+    "/workspace/scratch/fee12ff81cbd/a_family/other_masks/dc71_original_assembly/complete_original_documents_v2/COVER_TABLE.json": "6b14dfed5dafca9522d9cba4b61c4271da3d45e61df3115a7b031ea2392e11da",
+    "/workspace/scratch/fee12ff81cbd/a_family/other_masks/dc71_original_assembly/DC71_FULL_LITERAL_ROUND_ACCOUNTING_AUDIT.json": "330b594add668e03b683d0bab4d81a395f6e3e303ff0c9be4f88de1e131a5bb5",
+    "/workspace/scratch/fee12ff81cbd/DC71_ASSEMBLY_V5_ROOT_SOURCE_REVIEW.json": "76aaf3740f3c4fe8317abfa72ac6974fcdeabb1ad51962455a8490a8817624c6",
+    "/workspace/scratch/fee12ff81cbd/review_dc71_complete_original_root_v3.py": "df9b21cfb481977add77ab5ced4f1300878fbe1bfd33ad959bd388663a2e6801"
+  },
+  "frozen_inputs_checked": 1459,
+  "physical_hand_narrative_read": true,
+  "all_literal_table_rows_and_raw_record_counts_checked": true,
+  "original_I_closed_products_independently_recomputed": 16,
+  "derived_H_closed_products_independently_recomputed": 56,
+  "recursive_frame_unions_independently_recomputed": 68,
+  "normal_bound_nodes_checked": 322,
+  "every_frame_child_parent_hash_and_closed_interval_checked": true,
+  "whole_original_closed": true,
+  "open_leaves": 0,
+  "all_nine_originals_36_corners_36_pairs_and_strict_weak_CD_retained": true,
+  "distinct_bound_records": 337,
+  "counts": {
+    "bound_rounds": 859,
+    "bound_deductions": 204739,
+    "printed_rows_checked": 240751,
+    "terminal_rows": 4874
+  },
+  "positive_reserves": 220,
+  "strict_positive_reserve_floor": "1/1000000",
+  "energy_occurrences": {
+    "three_square": 3499,
+    "four_center": 84,
+    "square_area": 38
+  },
+  "shorter_continuation_prefixes_not_recounted": true,
+  "accepted_sharp_and_completed_prefix_domains_retained": true,
+  "full_energy_occurrence_multiset_independently_rebuilt_from_all_selected_raw_records": true,
+  "unclassified_energy_labels": [],
+  "physical_premise_hand_proofs_read": true,
+  "physical_premise_file_sha256": {
+    "FOUR_ORIGINAL_PLANAR_MATCHING_AND_ENERGY_HAND_PROOF.md": "c8e665a2abd2c67df541e612c874bc30b469f817cb6151cd77e21179533b0c18",
+    "FOUR_ORIGINAL_PLANAR_ENERGY_INDEPENDENT_REVIEW.md": "5808a7fa00f490f508ae2c2612ed6aeb6ec352eff96960ff7be357676260cd28",
+    "PHYSICAL_SQUARE_AREA_MOMENT_HAND_PROOF.md": "86f402efbf135228d2dd0d034fa55f56206c9176f4afe8354c4cf880b3fab293",
+    "four_original_planar_rows_replay.json": "8fd1fb67b9675ab9daa8f9c4b368e398496c86755ef920ac5aa1e01cb65ade03",
+    "square_area_moment_rows_replay.json": "cbe05ea3e83c692e0d9d4666a198ed79e425d3d96380661cfcf9615f0212240d"
+  },
+  "supersedes_incomplete_energy_table_review": "f1916abf4acd4cfb661353ab979268504f866905ca67063bcb4a627e1e7d141b",
+  "weighted_arithmetic_repeated_by_root": false,
+  "original_cell_denominator": 231,
+  "mask_denominator": 32,
+  "new_original_cells": 1,
+  "new_masks": 0,
+  "new_positional_roots": 0,
+  "new_roadmap_gates": 0
+}

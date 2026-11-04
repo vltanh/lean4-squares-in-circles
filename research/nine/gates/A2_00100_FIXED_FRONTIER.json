@@ -9,11 +9,11 @@
   "coverage_kind": "EXHAUSTIVE_FINITE_COVER_WITH_SHARED_CLOSED_FACES",
   "coverage_certified": true,
   "id_rule": "sign + hyphen + first 16 hexadecimal digits of SHA256(json.dumps(path,separators=(comma,colon))); full path retained and checked.",
-  "assembly": "../A2_00100_A7C_FIXED_CENTER_AND_SLOPE_COVER_CLOSURE.md",
+  "assembly": "../A2_00100_DC71_COMPLETE_ORIGINAL_CLOSURE.md",
   "physical_review": "../A2_00100_FIXED_FRONTIER_PHYSICAL_REVIEW.md",
   "coverage_review": "../A2_00100_V13_COVERAGE_INDEPENDENT_REVIEW.md",
-  "cell_review": "../A2_00100_A7C_FIXED_CENTER_AND_SLOPE_COVER_CLOSURE.md",
-  "manifest": "../computer_assisted/a2_00100_a_7c_fixed_center_slope_height_manifest.json",
+  "cell_review": "../A2_00100_DC71_COMPLETE_ORIGINAL_CLOSURE.md",
+  "manifest": "../computer_assisted/a2_00100_dc71_complete_original_manifest.json",
   "payload_register": "fixed_231_register.json",
   "baseline_forest_sha256": {
     "positive": "f6518c23a00c32e1f3d3915d1cd89cd24d162f459a6fc03a721fb843cc878d78",
@@ -22,8 +22,8 @@
   "scope": "Coverage-qualified fixed original full-nine large-gap cells; all 231 IDs and paths immutable.",
   "whole_mask_closed": false,
   "original_cells": 231,
-  "closed_cells": 218,
-  "open_cells": 13,
+  "closed_cells": 219,
+  "open_cells": 12,
   "cells": [
     {
       "id": "positive-655c4b699ba028a1",
@@ -2174,12 +2174,34 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "method": "complete_exact_original_center_frame_cover_with_physical_energy_and_sharp_terminals",
         "record_id": "positive-c71dc2feef1abb0b",
-        "whole_cell_exclusion": null
-      }
+        "complete_closed_face_cover": true,
+        "all_leaf_prefix_hashes_identical": true,
+        "archive_parts_manifest": "a2_00100_dc71_complete_original/ARCHIVE_PARTS.json",
+        "archive_sha256": "37745648b17e0e3e68abdba52505d1a9373d44fc857d23a96a9f9e7e3f9597cd",
+        "archive_bytes": 281913000,
+        "certificate": "ASSEMBLY_MANIFEST.json",
+        "certificate_sha256": "3b67d3be76f0292d95cd8011ae4a62c59ac89e0f24396042d0465de818f7af49",
+        "independent_checker": "verify_dc71_original_cover_v5.py",
+        "independent_checker_sha256": "aa8f9baa1cffd585fbbf227d156b5bdf3c3a7e73dc4ebee4b05b42db2f55389c",
+        "independent_report": "accepted_reports/native_v5/COMPLETE_OR_EXPLICIT_PARTIAL_REPLAY.json",
+        "independent_report_sha256": "3b52ef8d60de895ea9db0277a5d9f840acc7f265cc85990ba6cb3d44be474548",
+        "published_report_gzip": "a2_00100_dc71_complete_original/COMPLETE_REPLAY.json.gz",
+        "published_report_gzip_sha256": "b877e50773605859962e40f3db664181f94f1b5b251e3d985278a2f48e5c91f9",
+        "root_hand_table_review": "a2_00100_dc71_complete_original/DC71_COMPLETE_ORIGINAL_ROOT_HAND_TABLE_REVIEW_V3.json",
+        "root_hand_table_review_sha256": "eb277774cb1c17b9cc67c29b61bed9a40d2f9358abd3764803350a0d418d6ad1",
+        "second_independent_review": "a2_00100_dc71_complete_original/DC71_COMPLETE_ORIGINAL_HAND_TABLE_SOURCE_REVIEW_V2.json",
+        "second_independent_review_sha256": "5a703eb3227ee27b9330607854817aa1008a28d2edc3e4d5dd677ef49fef9eb2",
+        "root_archive_audit": "a2_00100_dc71_complete_original/DC71_COMPLETE_ORIGINAL_ROOT_ARCHIVE_AUDIT.json",
+        "root_archive_audit_sha256": "6b710868eea228eed3fe73ae58a94c37083f6201bc20e0b67197ffb11ca7b15f",
+        "terminal_leaves": 254,
+        "all_original_physical_conditions_retained": true
+      },
+      "method": "complete_exact_original_center_frame_cover_with_physical_energy_and_sharp_terminals",
+      "terminal_leaves": 254
     },
     {
       "id": "positive-821c9a2debeed0aa",
@@ -23388,7 +23410,7 @@
   "baseline_assembly": "../A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md",
   "baseline_manifest": "../computer_assisted/a2_00100_fixed_frontier_manifest.json",
   "latest_new_closed_cells": 1,
-  "cumulative_new_closed_since_53": 165,
-  "preceding_assembly": "../A2_00100_CAAA_COMPLETE_CENTER_SLOPE_CLOSURE.md",
-  "preceding_manifest": "../computer_assisted/a2_00100_c_aaa_complete_center_slope_manifest.json"
+  "cumulative_new_closed_since_53": 166,
+  "preceding_assembly": "../A2_00100_A7C_FIXED_CENTER_AND_SLOPE_COVER_CLOSURE.md",
+  "preceding_manifest": "../computer_assisted/a2_00100_a_7c_fixed_center_slope_height_manifest.json"
 }

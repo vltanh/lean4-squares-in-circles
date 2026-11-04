@@ -1,4 +1,4 @@
-> **Current verified checkpoint:** [Complete A7c center/frame/height cover](A2_00100_A7C_FIXED_CENTER_AND_SLOPE_COVER_CLOSURE.md). The same register has **218 CLOSED / 13 OPEN**, with A1, B6, C3, D3 open. The [current handoff](HANDOFF_A2_FIXED_CLOSURE.md) governs live evidence and IDs. The November 3 directive below retains its counts at issue.
+> **Current verified checkpoint:** [Complete Dc71 original cover](A2_00100_DC71_COMPLETE_ORIGINAL_CLOSURE.md). The same register has **219 CLOSED / 12 OPEN**, with A1, B6, C3, D2 open. The [current handoff](HANDOFF_A2_FIXED_CLOSURE.md) governs live evidence and IDs. The November 3 directive below retains its counts at issue.
 
 # A.2 / 001/00: shared whole-domain closure directive (November 3, 2026)
 

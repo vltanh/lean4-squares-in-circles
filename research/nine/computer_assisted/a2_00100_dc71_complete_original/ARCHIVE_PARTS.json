@@ -1,0 +1,180 @@
+{
+  "schema": "ordered_split_archive_v1",
+  "archive": "dc71_complete_original.tar.xz",
+  "bytes": 281913000,
+  "sha256": "37745648b17e0e3e68abdba52505d1a9373d44fc857d23a96a9f9e7e3f9597cd",
+  "parts": [
+    {
+      "file": "dc71_complete_original.tar.xz.part001",
+      "bytes": 8388608,
+      "sha256": "b89765b4c03d47a52108dd8903fcac9a053406a57e1d490dfdeb647107bd7f8c"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part002",
+      "bytes": 8388608,
+      "sha256": "3cfef169ef1b5f91982ee793908d30fa257daf04abbebaea646717ad8f158362"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part003",
+      "bytes": 8388608,
+      "sha256": "23f9c6c31f7a5d77b9bbf6de31a60fe609151f7f78ef4446ad33e471c577ccf1"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part004",
+      "bytes": 8388608,
+      "sha256": "c223069f56e5087610f21a6eb16172417ff41bd3b5359724efe8f52fd99fd55c"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part005",
+      "bytes": 8388608,
+      "sha256": "8bd61d356d6b22f920f3e843e7abb3cb230fea74a0d59eaeb8532e188dc8a1d6"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part006",
+      "bytes": 8388608,
+      "sha256": "868bb2aa7967ef72f5c105e94391ee1fc3e99431a49e114b8a941dab33c36cf6"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part007",
+      "bytes": 8388608,
+      "sha256": "1a35762b192e3fc02c5e81bb73f3bb45882578a42096139290d0da92fb382f56"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part008",
+      "bytes": 8388608,
+      "sha256": "fe8fcf82a6a10db4724780419a6ff2c6297c039eb6ba39a439d1a38e217e76f1"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part009",
+      "bytes": 8388608,
+      "sha256": "2888ecfdedf388a08cf9138e878ffddce2badfaf36e054fb03da5e9b91a9c58d"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part010",
+      "bytes": 8388608,
+      "sha256": "de962605c42836481b16c2300a23d0c6eb5bb7d3a9d37996ce775b387dbbf281"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part011",
+      "bytes": 8388608,
+      "sha256": "1b1d0be9f3ac85bb57e19a9cf8b06433241dd440018b38676ff2d95d2e65a909"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part012",
+      "bytes": 8388608,
+      "sha256": "7c4e63222d83ff7a24452583c6c8cd4da9de9c8d4ea4fa9847a3e2ecf6360c7e"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part013",
+      "bytes": 8388608,
+      "sha256": "179bdd4cc2ecba5c6512277108f4b6dd73d9ce47367ff9367c90ee67c236bf5d"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part014",
+      "bytes": 8388608,
+      "sha256": "9934afa63cc1071cfdd266aa945d8656d226bb2c9c674ffec64e8939a756e600"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part015",
+      "bytes": 8388608,
+      "sha256": "f441afe134db72b69a9b7a2a1c2388f90f6415d4a3316a592eaccc62ea5d7a0c"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part016",
+      "bytes": 8388608,
+      "sha256": "fd3d644584695392e807e7f45bb32e1aa04ea6edc612086a03a74b52993c32bc"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part017",
+      "bytes": 8388608,
+      "sha256": "6a7bcb4dbd403278c3680bc88e3e5240b51a016dad8804ea4c69a3e085fc046d"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part018",
+      "bytes": 8388608,
+      "sha256": "ad27bb1c4e8ae603f483b57a0cd8fd929bd4c6737bd40a9790adb90f30dcc5ed"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part019",
+      "bytes": 8388608,
+      "sha256": "228a12d50700b0b526c8ed212ac35e56ff841ebb896e194263e4daca6b244302"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part020",
+      "bytes": 8388608,
+      "sha256": "e95ad368c6d27a343c202cf273a59be7c40405fbe528377b8073ed86ce02f22e"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part021",
+      "bytes": 8388608,
+      "sha256": "95e678f0b76f7dbeb0a6a6a0b2f25967f12d3f3cc1944ff938466ba4549566cb"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part022",
+      "bytes": 8388608,
+      "sha256": "3deedb3038215f6182355ecf8042e9c9f2f15579b1e8eb52a2c4d5163eae79ce"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part023",
+      "bytes": 8388608,
+      "sha256": "5aec273700ed921fcc51821dd05e1657a554932fe60589b79ca7c0033f2477e1"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part024",
+      "bytes": 8388608,
+      "sha256": "94f15e5c4902fb4d256520f89626a901d715f09b6aaf65d24ac63e462d49fbb1"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part025",
+      "bytes": 8388608,
+      "sha256": "9106d8f5f6f8574e5ee0b1d078afe9327d393edb6d9bd35a44703eabe3db5852"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part026",
+      "bytes": 8388608,
+      "sha256": "882dc56ffcbc1095a53980dc17edb5a69706a09869e71d1c01f8de770cbffa4a"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part027",
+      "bytes": 8388608,
+      "sha256": "b706d8342fb99a6183f4b55b5191e95ee40c3c2bb4f430e1b1ed212c939bd1c8"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part028",
+      "bytes": 8388608,
+      "sha256": "ae7ead156214ba0e73bbf72daa0001c1870bacac6a46dcfa0e81d874d18eeaf9"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part029",
+      "bytes": 8388608,
+      "sha256": "9d605c2f410b612b8ea7e4b8eb47b90bca068014ed4f1349a86de5c1d5f789b1"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part030",
+      "bytes": 8388608,
+      "sha256": "b4b13000617948731430081473c7516d801451400dd1b20bfce6ee88c5b68270"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part031",
+      "bytes": 8388608,
+      "sha256": "d4e0625bcaac830d4740d31617604e1ad2b31d7c121697af0113a41129cd23ad"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part032",
+      "bytes": 8388608,
+      "sha256": "c881a94f833acbbcb77d05d96f16bbc51e2bc1ddcc9c7bec80f92776571edc35"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part033",
+      "bytes": 8388608,
+      "sha256": "ad23d9be4f1122fd37c3dac4c2af381cac27dd41734d819de4f960ee5e324369"
+    },
+    {
+      "file": "dc71_complete_original.tar.xz.part034",
+      "bytes": 5088936,
+      "sha256": "5457f98feda3bbc02bd6e54fb706e438cc5bdd6ba642d417acdd61dd9577e318"
+    }
+  ],
+  "source_parts_receipt_sha256": "633b46dadd8491ca7ecceef48180a073b36f21e02ea2b1c2679cb2be73cf610d",
+  "extraction": "Concatenate the listed parts in order, check SHA256, extract, then run python -B -S verify_dc71_original_cover_v5.py from dc71_complete_original."
+}
