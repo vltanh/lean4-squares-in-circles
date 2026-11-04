@@ -1,0 +1,97 @@
+{
+  "schema": "n9_two_complete_B_fixed_center_quadratic_covers_v1",
+  "date": "2026-11-04",
+  "status": "PASS_BOTH_COMPLETE_ORIGINAL_PARENTS",
+  "input_commit": "e9bfaf7f2672ac1338ec48e735ce366ef6b310d8",
+  "input_register_sha256": "b239b11d3dd1464036b644eb0cd41e8cf9e3f29307e1afd88d4fa86e23acfea2",
+  "target_mask": "001/00",
+  "reversal_partner": "100/00",
+  "strict_q_upper": "1105/256",
+  "original_cells": 231,
+  "before": {
+    "closed": 198,
+    "open": 33
+  },
+  "after": {
+    "closed": 200,
+    "open": 31
+  },
+  "new_complete_original_ids": [
+    "negative-0e4fa3209b6f7b12",
+    "negative-6ad5eef3b91c1fbd"
+  ],
+  "original_ids_and_paths_unchanged": true,
+  "remaining_open_families": {
+    "A": 5,
+    "B": 15,
+    "C": 8,
+    "D": 3
+  },
+  "packets": [
+    {
+      "id": "negative-0e4fa3209b6f7b12",
+      "archive": "a2_00100_b_0e4_psd_checkpoint.tar.xz",
+      "archive_sha256": "67597dbe05302c28fbadd2f9b8e5382b04efa6dcb23f5750dc20b7943e30b835",
+      "method": "fixed_I_cover_with_exact_quadratic_sums",
+      "certificate": "SHA256_MANIFEST.json",
+      "certificate_sha256": "c619334e741c17b902a2a68f28d4623ddaca4ef9ae91d19c32a631a1b3d7a6fb",
+      "record_id": "negative-0e4fa3209b6f7b12",
+      "independent_checker": "verify_all.py",
+      "independent_checker_sha256": "0d669a2ad6939880dc0cc30c6863bf54ab58b2be7bd36f9e2a75dbe1feaaa68c",
+      "independent_report": "COMPLETE_REPLAY.json",
+      "independent_report_sha256": "dc9b9938644458170e7b3c36178e9d25503a5ba5ebba6ada85a06e34a9d54b82",
+      "root_fresh_replay_report": "a2_00100_b_0e4_psd_root_replay.json",
+      "terminal_leaves": 16,
+      "complete_closed_face_cover": true,
+      "hand_assembly": "A2_00100_B0E4_FIXED_CENTER_PSD_CLOSURE.md",
+      "hand_assembly_sha256": "7cdf11b866ebb31247415d93569a77a279bb3cf272ebb72853afcdf45520babe",
+      "affine_terminals": 8,
+      "interval_terminals": 7,
+      "quadratic_terminals": 1,
+      "printed_terminal_rows": 1605
+    },
+    {
+      "id": "negative-6ad5eef3b91c1fbd",
+      "archive": "a2_00100_b_6ad_psd_checkpoint.tar.xz",
+      "archive_sha256": "16bb68007edb4591e8c5654cee8a50679435f6029c7a0710f9b503548c8263a7",
+      "method": "fixed_I_cover_with_exact_quadratic_sums",
+      "certificate": "SHA256_MANIFEST.json",
+      "certificate_sha256": "58b5ec8acdcddb98bc1e969abe784e5e0c80cc7160382d74b3bd19c6b79f52a8",
+      "record_id": "negative-6ad5eef3b91c1fbd",
+      "independent_checker": "verify_all.py",
+      "independent_checker_sha256": "e67f4e1fefceedbf07571f673d85e6ddeed8f15a1d2b1450842beef422c93b85",
+      "independent_report": "COMPLETE_REPLAY.json",
+      "independent_report_sha256": "ca6b8a82b61074c0c22a96a865ab37c5c847f987c01a6a90d8075d657f6c2caa",
+      "root_fresh_replay_report": "a2_00100_b_6ad_psd_root_replay.json",
+      "terminal_leaves": 16,
+      "complete_closed_face_cover": true,
+      "hand_assembly": "A2_00100_B6AD_FIXED_CENTER_PSD_CLOSURE.md",
+      "hand_assembly_sha256": "7784c6959cd85aacae90554c3ae7e04596cc2b6ed719a3b1885f5e5157553963",
+      "affine_terminals": 7,
+      "interval_terminals": 4,
+      "quadratic_terminals": 5,
+      "printed_terminal_rows": 6208
+    }
+  ],
+  "hand_assembly": "A2_00100_TWO_B_FIXED_CENTER_PSD_CLOSURES.md",
+  "hand_assembly_sha256": "ed3bdc43c13d4f6dd013e6c87470be9f200de2703f6f79bc6e19c7a0b6c59503",
+  "terminal_domains": 32,
+  "printed_terminal_rows": 7813,
+  "checked_rlt_antecedents": 220,
+  "used_negative_rational_squares": 117,
+  "complete_closed_face_covers": true,
+  "all_nine_original_physical_callers": true,
+  "numerical_producer_or_optimizer_imported_by_replay": false,
+  "unbound_external_workspace_reads_allowed": false,
+  "new_original_cells": 2,
+  "new_mask_closures": 0,
+  "whole_mask_closed": false,
+  "global_mask_ledger": {
+    "closed": 8,
+    "open": 24
+  },
+  "new_positional_root_exclusions": 0,
+  "new_roadmap_gate_closures": 0,
+  "lean_lake_ci_run": false,
+  "human_or_kernel_verification": false
+}

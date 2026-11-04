@@ -1,33 +1,40 @@
-> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **198/231 cells CLOSED, 33 OPEN; 8/32 masks CLOSED, 24 OPEN.**
+> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **200/231 cells CLOSED, 31 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
-# n=9: 198/231 current-mask cells closed; 33 remain OPEN
+# n=9: 200/231 current-mask cells closed; 31 remain OPEN
 
-**Latest verified continuation: one complete D original-cell exclusion.**
-The fixed I/H center cover and exact quadratic rational sums close
-`positive-a4979e5f2a7e8734`. The same 231-cell register now has
-**198 CLOSED / 33 OPEN**, with **145 additions beyond the first 53**.
-`001/00`, its reversal, the unrestricted bound and equality remain OPEN.
-No Lean, Lake or CI.
+**Latest verified continuation: two complete B original-cell exclusions.**
+The fixed I-center covers and exact quadratic rational sums close
+`negative-0e4fa3209b6f7b12` and `negative-6ad5eef3b91c1fbd`. The same
+231-cell register now has **200 CLOSED / 31 OPEN**, with **147 additions
+beyond the first 53**. `001/00`, its reversal, the unrestricted bound and
+equality remain OPEN. No Lean, Lake or CI.
 
-[Latest complete assembly](A2_00100_D_A497_FIXED_CENTER_PSD_CLOSURE.md) ·
+[Latest complete assembly](A2_00100_TWO_B_FIXED_CENTER_PSD_CLOSURES.md) ·
 [Current fixed register](gates/A2_00100_FIXED_FRONTIER.json) ·
-[Source-bound packet and fresh replay](computer_assisted/a2_00100_d_a497_psd_manifest.json) ·
+[Source-bound packets and fresh replays](computer_assisted/a2_00100_two_b_psd_manifest.json) ·
 [Operative handoff](HANDOFF_A2_FIXED_CLOSURE.md)
 
 ## What changed
 
-The one new ID is `positive-a4979e5f2a7e8734`. A fixed 4-by-4 I cover
-routes five rectangles to the same fixed 2-by-4 H cover. All 51 terminal
-domains passed independent reconstruction: 23 exact interval contradictions,
-20 affine rational sums and eight quadratic rational sums. Their 5,260
-printed terminal rows include 178 checked RLT antecedents and 66 used
-explicit negative rational squares. The full original ancestor and every
-closed shared face are replayed. Numerical eigenvalues and optimizer status
-are discovery evidence only. A fresh portable assembly passed with no
-external workspace reads and no numerical producer imports.
+Each of the two unchanged originals has a complete fixed 4-by-4 closed
+I-center cover. All 32 terminal domains passed independent reconstruction:
+11 exact interval contradictions, 15 affine sums and six quadratic sums.
+The proofs check 7,813 printed terminal rows, 220 RLT antecedents and
+117 used negative rational squares, counted across certificates. Both
+original ancestors and every closed shared face are replayed. Root fresh
+relocated runs passed, rejecting external workspace reads and numerical
+producer imports. The remaining original families are **A5, B15, C8, D3**.
+No whole mask, positional root or roadmap gate is newly closed.
 
-The remaining original families are **A5, B17, C8, D3**. No full mask,
-positional root or roadmap gate is newly closed.
+### Preceding D a497 checkpoint: 198 CLOSED / 33 OPEN
+
+The [complete D a497 proof](A2_00100_D_A497_FIXED_CENTER_PSD_CLOSURE.md)
+closed `positive-a4979e5f2a7e8734` by a fixed I/H cover. Its 51 terminal
+domains contain 23 interval, 20 affine and eight quadratic contradictions,
+with 5,260 checked terminal rows, 178 RLT antecedents and 66 used rational
+squares. The full source-bound original induction and portable assembly
+remain accepted. Together, the new quadratic proof method has now closed
+three distinct original cells, moving the register from 197/34 to 200/31.
 
 ### Preceding four-original checkpoint: 197 CLOSED / 34 OPEN
 
