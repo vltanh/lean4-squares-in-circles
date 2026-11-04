@@ -1,28 +1,35 @@
-> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **204/231 cells CLOSED, 27 OPEN; 8/32 masks CLOSED, 24 OPEN.**
+> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **205/231 cells CLOSED, 26 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
-# n=9: 204/231 current-mask cells closed; 27 remain OPEN
+# n=9: 205/231 current-mask cells closed; 26 remain OPEN
 
-**Latest verified continuation: the complete A2d5 and B79 original-cell exclusions.**
-Their fixed closed covers and independently reconstructed rational proofs
-advance the same register to **204 CLOSED / 27 OPEN**, with **151 additions
-beyond the first 53**. The remaining families are **A4, B12, C8, D3**.
-`001/00`, its reversal, the unrestricted bound and equality remain OPEN.
-No Lean, Lake or CI.
+**Latest verified continuation: the complete B054 original-cell exclusion.**
+The same register now has **205 CLOSED / 26 OPEN**, with
+**152 additions beyond the first 53**. Remaining families:
+**A4, B11, C8, D3**. `001/00`, its reversal, the unrestricted bound and
+equality remain OPEN. No Lean, Lake or CI.
 
-[Latest complete assembly](A2_00100_A2D5_B79_FIXED_CENTER_CLOSURES.md) ·
+[Latest complete assembly](A2_00100_B054_FIXED_CENTER_BOUND_CLOSURE.md) ·
 [Current fixed register](gates/A2_00100_FIXED_FRONTIER.json) ·
-[Source-bound packets and fresh replays](computer_assisted/a2_00100_a2d5_b79_complete_covers_manifest.json) ·
+[Source-bound packet and fresh replay](computer_assisted/a2_00100_b_054_bound_manifest.json) ·
 [Operative handoff](HANDOFF_A2_FIXED_CLOSURE.md)
 
 ## What changed
 
-A2d5 closes with 65 exact interval/affine rectangles; B79 closes with sixteen
-rectangles, one requiring a quadratic rational certificate. Their 27 local
-bound rounds prove 3,148 bounds; the final local proofs check 8,167 printed
-premise/terminal rows, excluding the independently replayed ancestors.
-Both complete covers passed fresh relocated replay. Every leaf's exact
-ancestor hash is checked, preserving one certified grid for the whole cover.
+`negative-054472aeb5484d24` is completely excluded. Its sixteen closed
+I-quarter products use a complete H2-by-4 subcover only in I(2,3), giving
+23 final rectangles. Eleven direct affine, four direct interval, six
+affine-after-induction and two interval-after-induction terminals all
+pass. The proof checks 298 terminal rows and 2,978 local bound-premise
+rows; twelve rounds establish 1,984 bounds. All leaves use the same
+replayed ancestor and exact grid. The fresh root whole-cover replay passed.
+
 No whole mask, positional root or roadmap gate is newly closed.
+
+### Preceding checkpoint: 204 CLOSED / 27 OPEN
+
+The [preceding complete assembly](A2_00100_A2D5_B79_FIXED_CENTER_CLOSURES.md) and its immutable
+mathematical sources remain accepted. Their complete proofs are preserved
+with their original before/after accounting.
 
 ### Preceding B265 checkpoint: 202 CLOSED / 29 OPEN
 

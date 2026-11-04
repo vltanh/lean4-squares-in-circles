@@ -9,11 +9,11 @@
   "coverage_kind": "EXHAUSTIVE_FINITE_COVER_WITH_SHARED_CLOSED_FACES",
   "coverage_certified": true,
   "id_rule": "sign + hyphen + first 16 hexadecimal digits of SHA256(json.dumps(path,separators=(comma,colon))); full path retained and checked.",
-  "assembly": "../A2_00100_A2D5_B79_FIXED_CENTER_CLOSURES.md",
+  "assembly": "../A2_00100_B054_FIXED_CENTER_BOUND_CLOSURE.md",
   "physical_review": "../A2_00100_FIXED_FRONTIER_PHYSICAL_REVIEW.md",
   "coverage_review": "../A2_00100_V13_COVERAGE_INDEPENDENT_REVIEW.md",
-  "cell_review": "../A2_00100_A2D5_B79_FIXED_CENTER_CLOSURES.md",
-  "manifest": "../computer_assisted/a2_00100_a2d5_b79_complete_covers_manifest.json",
+  "cell_review": "../A2_00100_B054_FIXED_CENTER_BOUND_CLOSURE.md",
+  "manifest": "../computer_assisted/a2_00100_b_054_bound_manifest.json",
   "payload_register": "fixed_231_register.json",
   "baseline_forest_sha256": {
     "positive": "f6518c23a00c32e1f3d3915d1cd89cd24d162f459a6fc03a721fb843cc878d78",
@@ -22,8 +22,8 @@
   "scope": "Coverage-qualified fixed original full-nine large-gap cells; all 231 IDs and paths immutable.",
   "whole_mask_closed": false,
   "original_cells": 231,
-  "closed_cells": 204,
-  "open_cells": 27,
+  "closed_cells": 205,
+  "open_cells": 26,
   "cells": [
     {
       "id": "positive-655c4b699ba028a1",
@@ -17829,12 +17829,39 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_b_054_bound_checkpoint.tar.gz",
+        "archive_bytes": 12261623,
+        "archive_sha256": "c43e291d9675296ee5a8293cf0a273f5e3e6491067f0bc5572141eb96c9eaf00",
+        "archive_parts_manifest": "a2_00100_b_054_bound_archive_parts.json",
+        "archive_parts": [
+          {
+            "file": "a2_00100_b_054_bound_checkpoint.tar.gz.part01",
+            "bytes": 8388608,
+            "sha256": "1da5a53dea776b768394114a1abca2e381fd1c2d83390c3e6ac231523fcefb85"
+          },
+          {
+            "file": "a2_00100_b_054_bound_checkpoint.tar.gz.part02",
+            "bytes": 3873015,
+            "sha256": "b5f21cb13551ffc49c0f8f01635e8c9d2ab76f76f2186aad0bd94cca06e97680"
+          }
+        ],
+        "method": "complete_fixed_I_H_cover_with_exact_affine_bound_and_interval_proofs",
         "record_id": "negative-054472aeb5484d24",
-        "whole_cell_exclusion": null
-      }
+        "certificate": "SHA256_MANIFEST.json",
+        "certificate_sha256": "5721ff913c4c6dd036657e1fe8c3aa726dae6e1839cd4613f60a43e8be373259",
+        "independent_checker": "verify_all.py",
+        "independent_checker_sha256": "4d79f2fa734e979a4f9c852ee250952e19bfba53facaf4df52f0b86862d6e07e",
+        "independent_report": "COMPLETE_REPLAY.json",
+        "root_fresh_replay_report": "a2_00100_b_054_bound_root_replay.json",
+        "root_fresh_replay_report_sha256": "81216e5db92dcf0e4a774624accbcf58353daf78fdf0f1d47851bad188d8780e",
+        "terminal_leaves": 23,
+        "complete_closed_face_cover": true,
+        "all_leaf_prefix_hashes_identical": true
+      },
+      "method": "complete_fixed_I_H_cover_with_exact_affine_bound_and_interval_proofs",
+      "terminal_leaves": 23
     },
     {
       "id": "negative-5d7c9f118e060b2a",
@@ -22861,8 +22888,8 @@
   "open_cell_discovery_report": "../computer_assisted/a2_00100_whole_domain_research_stopping_manifest.json",
   "baseline_assembly": "../A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md",
   "baseline_manifest": "../computer_assisted/a2_00100_fixed_frontier_manifest.json",
-  "latest_new_closed_cells": 2,
-  "cumulative_new_closed_since_53": 151,
-  "preceding_assembly": "../A2_00100_B265_FIXED_CENTER_BOUND_PSD_CLOSURE.md",
-  "preceding_manifest": "../computer_assisted/a2_00100_b_265_psd_manifest.json"
+  "latest_new_closed_cells": 1,
+  "cumulative_new_closed_since_53": 152,
+  "preceding_assembly": "../A2_00100_A2D5_B79_FIXED_CENTER_CLOSURES.md",
+  "preceding_manifest": "../computer_assisted/a2_00100_a2d5_b79_complete_covers_manifest.json"
 }

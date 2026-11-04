@@ -1,0 +1,19 @@
+{
+  "schema": "ordered_split_archive_v1",
+  "archive": "a2_00100_b_054_bound_checkpoint.tar.gz",
+  "bytes": 12261623,
+  "sha256": "c43e291d9675296ee5a8293cf0a273f5e3e6491067f0bc5572141eb96c9eaf00",
+  "parts": [
+    {
+      "file": "a2_00100_b_054_bound_checkpoint.tar.gz.part01",
+      "bytes": 8388608,
+      "sha256": "1da5a53dea776b768394114a1abca2e381fd1c2d83390c3e6ac231523fcefb85"
+    },
+    {
+      "file": "a2_00100_b_054_bound_checkpoint.tar.gz.part02",
+      "bytes": 3873015,
+      "sha256": "b5f21cb13551ffc49c0f8f01635e8c9d2ab76f76f2186aad0bd94cca06e97680"
+    }
+  ],
+  "extraction": "Concatenate the listed parts in order, check the full archive hash, extract and run the independent checker."
+}
