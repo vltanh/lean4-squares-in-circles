@@ -1,0 +1,41 @@
+{
+  "schema": "Dc71_fifteen_I_root_result_hand_table_acceptance_v1",
+  "status": "PASS_FIFTEEN_I_WITH_FIVE_EXPLICIT_OPEN_H_OBLIGATIONS",
+  "entire_physical_hand_read": true,
+  "assembly_source_review_sha256": "5c93cc5c4e53afb6a94fe78ebe6e54e19c26e21df0186d21e99404aa12b2d481",
+  "accepted_exact_report_sha256": "20c4c3c2ecae78ef6eb090a80b1ec76176119b4deba361ceee0694475b5eabbd",
+  "assembly_manifest_sha256": "4f96fd709f56bf69f03173a16fe1829cc7554173701066ffb063d1730bce6ee3",
+  "frozen_inputs": 1289,
+  "all_frozen_inputs_unchanged": true,
+  "hand_sha256": "758e856ada17771d697c6b2ac76ae65beadb6eeab79773acba3d0063e614d4fd",
+  "table_sha256": "5bbf237e9b31188b068b3dff25cbf30d6a6db1785941a2f38971354517ba0afb",
+  "declared_I": 16,
+  "complete_I": 15,
+  "declared_H": 56,
+  "remaining_I": [
+    [
+      2,
+      2
+    ]
+  ],
+  "remaining_H": 5,
+  "all_closed_boundary_faces_retained": true,
+  "original_nine_caller_preserved": true,
+  "table_is_literal_projection_of_accepted_report": true,
+  "distinct_bound_records": 217,
+  "local_rounds": 452,
+  "local_deductions": 97907,
+  "local_premise_rows": 115201,
+  "local_terminal_rows": 2915,
+  "total_local_rows": 118116,
+  "positive_reserves": 131,
+  "positive_reserve_floor": "1/100000",
+  "energy_occurrences": {
+    "three_square": 1321,
+    "four_center": 0,
+    "square_area": 20
+  },
+  "weighted_arithmetic_repeated": false,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

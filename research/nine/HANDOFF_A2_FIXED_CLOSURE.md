@@ -588,6 +588,22 @@ The 20,121 local row occurrences include 199 three-square energy rows.
 Fourteen original I rectangles are excluded; I21 and I22 remain OPEN.
 This is zero complete-original, mask, positional-root or roadmap credit.
 
+## Dc71: fifteen complete I rectangles, only I22 unresolved
+
+The [fifteen-I checkpoint](A2_00100_DC71_FIFTEEN_I_CHECKPOINT.md) contains
+the source-reviewed V4 full assembly, fresh exact replay, complete physical
+hand/table, literal continuation accounting and all 1,319 audited archive
+paths. The source and caller bindings preserve the same nine originals,
+36 corners, 36 pairs and strictly weak CD condition. One separately proved
+completed-prefix terminal finishes the final I23 branch without changing
+its raw OPEN record. Fifteen I rectangles are excluded; I22 still has five
+explicit unresolved H domains. All 1,289 frozen inputs are unchanged.
+
+The 97,907 local deductions and 118,116 printed-row occurrences are proof
+accounting, not additional original cells or masks. The fixed ledgers stay
+218/231 original cells and 8/32 masks closed, with all other denominators
+unchanged. Whole-original acceptance is a separate remaining obligation.
+
 ## Fixed ledgers and next handoff
 
 - Original-nine masks: **8 CLOSED / 24 OPEN**, exactly `000/*` and `010/*` CLOSED.
