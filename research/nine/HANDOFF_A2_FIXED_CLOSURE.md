@@ -6,6 +6,14 @@ The full-mask ledger remains **8 CLOSED / 24 OPEN**. `001/00`, reversal
 `100/00`, A.2, the unrestricted bound and global equality remain OPEN.
 No Lean, Lake or CI.
 
+## Execution recovery — 4 November, 13:28 UTC
+
+Execution access is unavailable. The [recovery checkpoint](EXECUTION_RECOVERY_2026_11_04_1328.md)
+records completed exact components, pending reviews and the last observed worker
+states. Recheck actual files and processes before restarting. Published acceptance
+remains **219/231 original cells and 8/32 masks closed**; D6c5 has fifteen I
+rectangles excluded and I22 OPEN. The recovery index adds no closure credit.
+
 ## Read first
 
 The [opposite-endpoint full-angle AHID theorem](OPPOSITE_ENDPOINT_TILTS_FULL_ANGLE_FOUR_ROW_HAND_TERMINAL.md)

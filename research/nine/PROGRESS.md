@@ -1,5 +1,7 @@
 > **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **219/231 cells CLOSED, 12 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
+> **Execution recovery, 4 November 2026:** The workspace became unavailable during ongoing proof discovery. The [recovery checkpoint](EXECUTION_RECOVERY_2026_11_04_1328.md) records the exact restart state; worker completion after the last observation is unknown. Published counts remain **219/231 cells and 8/32 masks closed**. No new closure is inferred.
+
 # n=9: 219/231 current-mask cells closed; 12 remain OPEN
 
 **Latest verified continuation: the complete Dc71 original-cell exclusion.**
