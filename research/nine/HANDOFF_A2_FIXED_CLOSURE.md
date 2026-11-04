@@ -531,6 +531,17 @@ accounting is 65,008 local deductions, 80,458 premise-row occurrences and
 counts, not new original cells or masks. The original remains OPEN and all
 four global denominators remain unchanged.
 
+## B16a: complete I12, I13 and I23 H covers
+
+The [three complete fixed-I proofs](A2_00100_B16A_THREE_COMPLETE_H_COVERS.md)
+retain all eight closed H products for each of I12, I13 and I23. Their
+24 terminals, 1,904 deductions, 3,028 premise rows and 218 terminal rows
+are independently reconstructed in the accepted complete assembly. The
+physical proof uses 25 triple-energy, three four-center-energy and one
+square-area occurrence, with the underlying hand theorems retained.
+The root reviewed the exact master and full hand/table and checked all
+259 portable archive members. No whole B16a or mask closure is inferred.
+
 ## Fixed ledgers and next handoff
 
 - Original-nine masks: **8 CLOSED / 24 OPEN**, exactly `000/*` and `010/*` CLOSED.

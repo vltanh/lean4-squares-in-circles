@@ -1,0 +1,50 @@
+{
+  "schema": "B16a_three_I_root_source_hand_archive_review_v1",
+  "status": "PASS_SOURCE_PHYSICAL_HAND_AND_ALL_259_ARCHIVE_MEMBERS",
+  "archive_sha256": "37c1fb64515c1f4d6145133f75a52d4cab780333742c4aa0e1b1168b60aba99d",
+  "archive_bytes": 23295012,
+  "regular_members": 259,
+  "external_links": false,
+  "core_inputs": 240,
+  "core_manifest_sha256": "e18f4e4a5779d82c34cbb540e1d066532143a1ec9469715d3b9c8a877dce5c57",
+  "archive_inventory_sha256": "532f86a780800c472fd745ca5bbf27078140a7cca36602c58cc9fb97f1e9577f",
+  "exact_master_sha256": "01b5edcc1943fa1143a581655a35d9d224d5d277e27e4cff8b04d0b710ce6886",
+  "accepted_exact_report_sha256": "ec8a8496b0415cb9e84a691f3601a11c442f8188c11dd7ca9d3a9884fb0f7618",
+  "source_review_sha256": "c9340f42447dff6c2c9bf5ebdba4abbdca0650cd2b1a538b28d876d850aa8638",
+  "hand_table_review_sha256": "08b5b797aef9863b3378f0f7d3835597b4d10560f3843d75f348bcb90501b2ef",
+  "hand_sha256": "90cd879de456be4fc877820e99a2fb1980b47ce7001dcd9e2b47b209304973e1",
+  "table_sha256": "7946f3677735779ce9cda62990b0242931dfe1be7dab4dacfe57bf91e2b0cbc3",
+  "root_read_complete_master_and_hand": true,
+  "complete_I_rectangles": [
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      2,
+      3
+    ]
+  ],
+  "complete_H_rectangles": 24,
+  "all_original_predicates_and_closed_faces_retained": true,
+  "local_deductions": 1904,
+  "local_premise_rows": 3028,
+  "local_bound_terminal_rows": 167,
+  "local_direct_terminal_rows": 51,
+  "physical_energy_occurrences": {
+    "three_square": 25,
+    "four_center": 3,
+    "square_area": 1
+  },
+  "all_members_and_local_source_files_rehashed": true,
+  "fresh_weighted_arithmetic_repeated_by_root": false,
+  "reason": "Accepted independent exact assembly plus independent source/hand reviews; root source/hand review and archive audit address the remaining publication risks.",
+  "whole_original_closed": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "seconds": 1.6435005059902323
+}

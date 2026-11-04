@@ -55,6 +55,17 @@ terminal rows, with the complete hand table and independent assembly review.
 All 174 portable archive members match their frozen bytes. This is a whole
 fixed-rectangle proof; the B16a original remains OPEN and no ledger changes.
 
+## B16a: three further complete fixed-I rectangles
+
+The [three complete H covers](A2_00100_B16A_THREE_COMPLETE_H_COVERS.md)
+exclude fixed I12, I13 and I23 inside the same B16a original. All 24 closed H
+members are checked, with 1,904 exact deductions, 3,028 premise rows and 218
+terminal rows. The physical hand/table and independent source reviews are
+bound to the accepted exact replay. The root read the complete cover engine
+and hand proof and audited every one of the 259 portable archive members.
+This extends the preceding I11 checkpoint. B16a itself remains OPEN and the
+original-cell, mask, positional-root and roadmap ledgers do not change.
+
 ## Reviewed exact Dc71 assembly engine
 
 The [source checkpoint](computer_assisted/dc71_original_assembly/README_CODE_CHECKPOINT.md)
