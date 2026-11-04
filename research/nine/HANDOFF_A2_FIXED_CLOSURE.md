@@ -1,7 +1,7 @@
-# Current A.2 handoff: 209/231 current-mask cells closed; 22 OPEN
+# Current A.2 handoff: 210/231 current-mask cells closed; 21 OPEN
 
-November 4, 2026. The [complete C618 proof](A2_00100_C618_PROVED_STATE_H_COVER_CLOSURE.md) advances
-`e6843c817c47ef736e344166f1aeccfc58fa8bc2` from **208 CLOSED / 23 OPEN to 209 CLOSED / 22 OPEN**.
+November 4, 2026. The [complete B4ce proof](A2_00100_B4CE_FIXED_CENTER_BOUND_PSD_CLOSURE.md) advances
+`a0a84baeeeea89e99875a4e25108d56af89e0023` from **209 CLOSED / 22 OPEN to 210 CLOSED / 21 OPEN**.
 The full-mask ledger remains **8 CLOSED / 24 OPEN**. `001/00`, reversal
 `100/00`, A.2, the unrestricted bound and global equality remain OPEN.
 No Lean, Lake or CI.
@@ -12,9 +12,9 @@ The [explicit aligned B/H boundary-family theorem](A2_00100_TWO_FREE_ALIGNED_BOU
 is available as a checked conditional input. It contributes zero original
 cells and zero masks; every future caller must still prove its hypotheses.
 
-1. [Current complete proof and scope](A2_00100_C618_PROVED_STATE_H_COVER_CLOSURE.md).
+1. [Current complete proof and scope](A2_00100_B4CE_FIXED_CENTER_BOUND_PSD_CLOSURE.md).
 2. [Same 231 original IDs, paths and current statuses](gates/A2_00100_FIXED_FRONTIER.json).
-3. [Immutable packet and fresh independent replay](computer_assisted/a2_00100_c_618_derived_h_manifest.json).
+3. [Immutable packet and fresh independent replay](computer_assisted/a2_00100_b_4ce_bound_psd_manifest.json).
 4. [Original coverage and physical caller](A2_COVERAGE_AND_CLOSURE_CONTRACT.md),
    [baseline cover](A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md), and
    [accepted proof history](PROGRESS.md).
@@ -45,6 +45,21 @@ No Lean compilation, Lake or CI; retain the same 32 masks, 7,915 positional
 root IDs and 15 roadmap IDs. No human or proof-kernel verification is claimed.
 
 ## Latest complete original
+
+`negative-4ce055f43b28d796` is completely excluded. Its sixteen closed
+I-quarter products use complete H2-by-4 covers in I(1,3) and I(2,3),
+giving 30 final rectangles. Eight direct affine, six direct interval,
+eight affine-after-induction, six interval-after-induction and two
+quadratic terminals all pass. Thirty-nine exact bound rounds prove
+5,647 necessary bounds using 9,576 premise rows. The final contradictions
+use 3,329 rows, including 92 reconstructed affine-product antecedents
+and 45 rational negative squares. Two affine continuations retain their
+original prefixes; one completed-budget numerical run contributes only
+source-bound rational squares whose exact identity is independently
+checked. The root relocated whole-cover replay passed with all 192
+frozen inputs unchanged. All 231 original IDs and paths are retained.
+
+## Preceding complete originals
 
 `negative-6181e7007bf6714b` is completely excluded. Fifteen coarse
 I-quarter products are closed directly or after exact bound induction.
@@ -182,15 +197,15 @@ both complete prefix covers.
 | Existing family | Original OPEN baseline after first 53 proofs | Subsequently CLOSED | Still OPEN |
 |---|---:|---:|---:|
 | A: positive D, nonpositive A, inward-row escapes | 77 | 73 | 4 |
-| B: negative D, nonpositive A, F-height branches | 39 | 30 | 9 |
+| B: negative D, nonpositive A, F-height branches | 39 | 31 | 8 |
 | C: negative D, nonnegative A, alternate-chain escapes | 33 | 27 | 6 |
 | D: positive D, nonnegative A, alternate-chain escapes | 29 | 26 | 3 |
-| **Total** | **178** | **156** | **22** |
+| **Total** | **178** | **157** | **21** |
 
 The precise unresolved predicates are the unchanged paths of these IDs:
 
 - **A:** `positive-8b53ccaa15bad220`, `positive-c744bc031d40ee64`, `positive-7cdbd39e7dd162bf`, `positive-768264ad71bc8152`.
-- **B:** `negative-d09093538801d014`, `negative-1a0e5a68ae364a5e`, `negative-f14f5bc4eafdf50d`, `negative-7c60be8b07a358e9`, `negative-4ce055f43b28d796`, `negative-462e78d2e2d8be05`, `negative-34029ea8b047982f`, `negative-16a2fc93c8d133f0`, `negative-580db3624cf4c2e2`.
+- **B:** `negative-d09093538801d014`, `negative-1a0e5a68ae364a5e`, `negative-f14f5bc4eafdf50d`, `negative-7c60be8b07a358e9`, `negative-462e78d2e2d8be05`, `negative-34029ea8b047982f`, `negative-16a2fc93c8d133f0`, `negative-580db3624cf4c2e2`.
 - **C:** `negative-95371f658da581d0`, `negative-887236b78100baf3`, `negative-d4021ade840b985c`, `negative-b882d8ade0cf9ea0`, `negative-2f9ffd3df06e7c5f`, `negative-aaa42018b92e527c`.
 - **D:** `positive-6c5f13d07e5538df`, `positive-c71dc2feef1abb0b`, `positive-821c9a2debeed0aa`.
 
@@ -216,7 +231,7 @@ a complete three-matching cover and 11,390 checked row identities. The
 latter retains the full area and angle-independent inertia of physical
 unit squares and has 16,064 checked affine/quadratic identities. These
 are necessary restrictions and do not alone exclude an original. The new
-complete original-cell proofs now give **209/22 cells and 8/24 masks**.
+complete original-cell proofs now give **210/21 cells and 8/24 masks**.
 
 The earlier [completed whole-domain research record](A2_00100_WHOLE_DOMAIN_RESEARCH_STOPPING_RECORD.md)
 records the bounded A/B/C/D investigations after the four accepted proofs.
@@ -253,7 +268,7 @@ certificates retain their exact scopes. Do not restart accepted work.
 ## Fixed ledgers and next handoff
 
 - Original-nine masks: **8 CLOSED / 24 OPEN**, exactly `000/*` and `010/*` CLOSED.
-- Current mask: **209 CLOSED / 22 OPEN**, same 231 IDs and certified full cover.
+- Current mask: **210 CLOSED / 21 OPEN**, same 231 IDs and certified full cover.
 - Positional roots: **5,838 historical closed-Q exclusions / 2,077 OPEN**
   among the same 7,915 IDs. Equality root 7820 remains feasible at Q.
 - The same 15 roadmap IDs and all global deliverables retain their statuses.
@@ -265,5 +280,5 @@ blockers, and the separate mask/root/gate ledgers. Distinguish numerical
 discovery, exact replay, source-byte identity and the written proof.
 Earlier partial research remains historical evidence, not a second active
 frontier. The next goal is a complete argument discharging the remaining
-22 original predicates or a theorem subsuming them, followed by the other
+21 original predicates or a theorem subsuming them, followed by the other
 fixed masks. No extra necessary inequality alone completes that goal.

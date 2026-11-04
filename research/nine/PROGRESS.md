@@ -1,35 +1,40 @@
-> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **209/231 cells CLOSED, 22 OPEN; 8/32 masks CLOSED, 24 OPEN.**
+> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **210/231 cells CLOSED, 21 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
-# n=9: 209/231 current-mask cells closed; 22 remain OPEN
+# n=9: 210/231 current-mask cells closed; 21 remain OPEN
 
-**Latest verified continuation: the complete C618 original-cell exclusion.**
-The same register now has **209 CLOSED / 22 OPEN**, with
-**156 additions beyond the first 53**. Remaining families:
-**A4, B9, C6, D3**. `001/00`, its reversal, the unrestricted bound and
+**Latest verified continuation: the complete B4ce original-cell exclusion.**
+The same register now has **210 CLOSED / 21 OPEN**, with
+**157 additions beyond the first 53**. Remaining families:
+**A4, B8, C6, D3**. `001/00`, its reversal, the unrestricted bound and
 equality remain OPEN. No Lean, Lake or CI.
 
-[Latest complete assembly](A2_00100_C618_PROVED_STATE_H_COVER_CLOSURE.md) ·
+[Latest complete assembly](A2_00100_B4CE_FIXED_CENTER_BOUND_PSD_CLOSURE.md) ·
 [Current fixed register](gates/A2_00100_FIXED_FRONTIER.json) ·
-[Source-bound packet and fresh replay](computer_assisted/a2_00100_c_618_derived_h_manifest.json) ·
+[Source-bound packet and fresh replay](computer_assisted/a2_00100_b_4ce_bound_psd_manifest.json) ·
 [Operative handoff](HANDOFF_A2_FIXED_CLOSURE.md)
 
 ## What changed
 
-`negative-6181e7007bf6714b` is completely excluded. Fifteen coarse
-I-quarter products are closed directly or after exact bound induction.
-Inside the sixteenth, I(1,3), twelve exact rounds prove a tighter H box;
-all eight closed H2-by-4 products of that proved box are then excluded.
-The resulting complete original cover has 23 rectangles, seventeen
-positive affine terminals and six exact interval/frame terminals. Its
-common twelve-round antecedent is counted once: 34 total rounds prove
-10,004 necessary bounds using 10,910 premise rows, with 266 terminal rows.
-All seventeen affine reserves exceed 1/512. Four same-frame norm deficits
-and the preserved I(3,0) interval contradiction are checked explicitly.
-The unchanged interrupted seven-round record and its completed continuation
-are source-bound; no unfinished round is admitted. The final relocated
-root replay verifies the entire cover, table and all 159 frozen inputs.
+`negative-4ce055f43b28d796` is completely excluded. Its sixteen closed
+I-quarter products use complete H2-by-4 covers in I(1,3) and I(2,3),
+giving 30 final rectangles. Eight direct affine, six direct interval,
+eight affine-after-induction, six interval-after-induction and two
+quadratic terminals all pass. Thirty-nine exact bound rounds prove
+5,647 necessary bounds using 9,576 premise rows. The final contradictions
+use 3,329 rows, including 92 reconstructed affine-product antecedents
+and 45 rational negative squares. Two affine continuations retain their
+original prefixes; one completed-budget numerical run contributes only
+source-bound rational squares whose exact identity is independently
+checked. The root relocated whole-cover replay passed with all 192
+frozen inputs unchanged. All 231 original IDs and paths are retained.
 
 No whole mask, positional root or roadmap gate is newly closed.
+
+### Preceding checkpoint: 209 CLOSED / 22 OPEN
+
+The [preceding complete assembly](A2_00100_C618_PROVED_STATE_H_COVER_CLOSURE.md) and its immutable
+mathematical sources remain accepted. Their complete proofs are preserved
+with their original before/after accounting.
 
 ### Preceding checkpoint: 208 CLOSED / 23 OPEN
 
