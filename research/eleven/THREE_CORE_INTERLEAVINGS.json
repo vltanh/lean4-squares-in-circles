@@ -1,0 +1,262 @@
+{
+  "schema": "three-core-eight-ring-interleavings-v1",
+  "raw_count": 165,
+  "orbit_count": 17,
+  "rows": [
+    {
+      "word": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "active_cores": 0,
+      "inactive_cores": 3,
+      "orbit_size": 1
+    },
+    {
+      "word": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "active_cores": 1,
+      "inactive_cores": 2,
+      "orbit_size": 8
+    },
+    {
+      "word": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      "active_cores": 2,
+      "inactive_cores": 1,
+      "orbit_size": 8
+    },
+    {
+      "word": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "active_cores": 2,
+      "inactive_cores": 1,
+      "orbit_size": 8
+    },
+    {
+      "word": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "active_cores": 2,
+      "inactive_cores": 1,
+      "orbit_size": 8
+    },
+    {
+      "word": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "active_cores": 2,
+      "inactive_cores": 1,
+      "orbit_size": 8
+    },
+    {
+      "word": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "active_cores": 2,
+      "inactive_cores": 1,
+      "orbit_size": 4
+    },
+    {
+      "word": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3
+      ],
+      "active_cores": 3,
+      "inactive_cores": 0,
+      "orbit_size": 8
+    },
+    {
+      "word": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2
+      ],
+      "active_cores": 3,
+      "inactive_cores": 0,
+      "orbit_size": 16
+    },
+    {
+      "word": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        2
+      ],
+      "active_cores": 3,
+      "inactive_cores": 0,
+      "orbit_size": 16
+    },
+    {
+      "word": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "active_cores": 3,
+      "inactive_cores": 0,
+      "orbit_size": 8
+    },
+    {
+      "word": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        2
+      ],
+      "active_cores": 3,
+      "inactive_cores": 0,
+      "orbit_size": 16
+    },
+    {
+      "word": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "active_cores": 3,
+      "inactive_cores": 0,
+      "orbit_size": 16
+    },
+    {
+      "word": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        2
+      ],
+      "active_cores": 3,
+      "inactive_cores": 0,
+      "orbit_size": 8
+    },
+    {
+      "word": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "active_cores": 3,
+      "inactive_cores": 0,
+      "orbit_size": 16
+    },
+    {
+      "word": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "active_cores": 3,
+      "inactive_cores": 0,
+      "orbit_size": 8
+    },
+    {
+      "word": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "active_cores": 3,
+      "inactive_cores": 0,
+      "orbit_size": 8
+    }
+  ]
+}
