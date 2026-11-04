@@ -32,6 +32,13 @@ old-workspace reads forbidden. Root independently checks every ordered
 archive part and all 730 regular members. This closes one entire original;
 the whole-mask ledger remains **8 CLOSED / 24 OPEN**.
 
+A [separate continuation review](computer_assisted/a2_00100_b340_independent_review_20261104/README.md)
+now repeats the complete exact B340 proof from an isolated copy. All arithmetic
+and cover fields agree with the published packet. Two independent reviews
+check the entire original-domain cover and physical hand/table; a separately
+written audit recomputes all 181 affine contradiction sums. The same B340
+closure is counted once; this supplement adds zero further cells or masks.
+
 ## Earlier complete D6c5 original: 220 CLOSED / 11 OPEN
 
 `positive-6c5f13d07e5538df` is completely excluded. The final I22 rectangle

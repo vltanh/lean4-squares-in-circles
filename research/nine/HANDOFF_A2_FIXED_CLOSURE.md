@@ -18,6 +18,13 @@ accepted counts were **220/231 original cells and 8/32 masks closed**.
 
 ## Read first
 
+The [independent B340 continuation review](computer_assisted/a2_00100_b340_independent_review_20261104/README.md)
+freshly replays every bound and complete cover and independently checks all
+181 rational contradiction sums, all 279 table leaves and the unchanged
+231-original definitions. It agrees with accepted commit `ec6b94c` and earns
+zero additional closure credit. Current counts remain **221/231 cells** and
+**8/32 masks** closed. Reuse the accepted B340 packet.
+
 The [strict-radius 011/00 application](computer_assisted/strict_011_actual_AB_application_v1/README.md)
 reuses the accepted actual-AB two-link theorem for either original extra H
 or I. It preserves the exact weak BC/CD bits and requires the explicit

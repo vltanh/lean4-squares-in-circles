@@ -19560,7 +19560,22 @@
         "terminal_leaves": 279,
         "open_leaves": 0,
         "all_new_bound_and_cover_arithmetic_repeated": true,
-        "whole_mask_closed": false
+        "whole_mask_closed": false,
+        "additional_independent_review": {
+          "directory": "a2_00100_b340_independent_review_20261104",
+          "fresh_replay": "ROOT_COMPLETE_ORIGINAL_REPLAY.json",
+          "fresh_replay_sha256": "fada75b217ecec6dacdf7bea2ec613225857592768da79d3848c0fea2de8d4a3",
+          "fresh_receipt": "ROOT_PORTABLE_RECEIPT.json",
+          "fresh_receipt_sha256": "3d893c2bc9ba6dfdb4e5fbb7b07a46400fe7ee046e8f617a55c75147c6266bb5",
+          "whole_parent_review": "WHOLE_PARENT_COVER_REVIEW.json",
+          "whole_parent_review_sha256": "2d15a486da12d4c053458e08999863c47b51d883fbe616dd56cb5a70388d7cff",
+          "physical_review": "PHYSICAL_REVIEW.json",
+          "physical_review_sha256": "bbec3fef5380fec55887ec754d137bbf6ca1b0d83f99dfc1c58fbb14d9a82257",
+          "all_181_affine_terminal_sums_separately_recomputed": true,
+          "all_279_table_entries_checked": true,
+          "new_original_credit": 0,
+          "new_mask_credit": 0
+        }
       },
       "method": "complete_registered_original_physical_tree_with_exact_four_product_corner_rows",
       "terminal_leaves": 279

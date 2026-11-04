@@ -1,0 +1,15 @@
+{
+  "status": "PASS_ADDITIONAL_B340_REVIEW_NO_LEDGER_DELTA",
+  "accepted_closure_commit": "ec6b94cb69ef994fcaf44961de7005faaca8a84c",
+  "all_231_original_definitions_and_statuses_unchanged": true,
+  "all_other_230_entries_unchanged": true,
+  "only_change_to_original_register": "Additional source-bound independent evidence on the already CLOSED B340 entry",
+  "closed_originals_before": 221,
+  "closed_originals_after": 221,
+  "open_originals_before": 10,
+  "open_originals_after": 10,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "new_positional_roots": 0,
+  "new_roadmap_gates": 0
+}
