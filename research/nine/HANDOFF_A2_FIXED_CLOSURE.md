@@ -16,6 +16,14 @@ rectangles excluded and I22 OPEN. The recovery index adds no closure credit.
 
 ## Read first
 
+The [coupled three-square energy conversion](computer_assisted/coupled_three_energy_v1/COUPLED_THREE_SQUARE_ENERGY_HAND_PROOF.md)
+now retains the identity between all three pair differences. Its complete
+convexity proof, diverse rational reconstruction, literal-row checker and
+[root physical review](computer_assisted/coupled_three_energy_v1/ROOT_PHYSICAL_REVIEW.md) pass.
+The fresh relocated replay covers 3,375 rational polygons and 2,568 rows,
+including degenerate domains and damaged-row controls. It is a reusable
+necessary-row tool and adds **zero original cells and zero masks**.
+
 The [opposite-endpoint full-angle AHID theorem](OPPOSITE_ENDPOINT_TILTS_FULL_ANGLE_FOUR_ROW_HAND_TERMINAL.md)
 now proves a sharp row terminal whenever the A/D frame signs are opposite,
 the original A,H,I,D centers are horizontally ordered, and their total

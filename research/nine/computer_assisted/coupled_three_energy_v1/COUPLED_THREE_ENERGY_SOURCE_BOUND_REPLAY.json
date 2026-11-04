@@ -1,0 +1,24 @@
+{
+  "status": "PASS_EXACT_COUPLED_ENERGY_COMPANIONS",
+  "polygon_cases": 3375,
+  "empty_point_segment_polygon_cases_retained": true,
+  "representative_original_rows": 2568,
+  "independent_literal_checks": 2568,
+  "rejected_controls": [
+    "rhs_reduced",
+    "translation_broken",
+    "empty_nonempty"
+  ],
+  "seconds": 4.187995222999689,
+  "source_sha256": {
+    "check_coupled_three_energy.py": "de76ca316776ca7e68667b6337874fe3b2738cb156edb19d4d2657c40929aa57",
+    "coupled_three_square_energy.py": "693f5bb65c3d2b9930cf4f0d705ed7987ea0465f1da53b1c029289ae03903d2b",
+    "independent_coupled_three_square_energy.py": "2b10685c12a21020c05f38ef24dc482b3987acd56d744c6c8c53814cde82781e",
+    "coupled_three_energy_fixture.json": "4c896fced157a13973f2ab6be2dad3040e5729cf94f27e10a3efdddfee87c670",
+    "COUPLED_THREE_SQUARE_ENERGY_HAND_PROOF.md": "87b37918c468c911eae75e709852da5479a5006966ab93b827af5201132982fc"
+  },
+  "input_state_replayed": false,
+  "scope": "Necessary-row arithmetic and diverse reconstruction only",
+  "original_cells_closed": 0,
+  "masks_closed": 0
+}
