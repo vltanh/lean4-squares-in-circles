@@ -1,0 +1,38 @@
+{
+  "status": "PASS_ROOT_PHYSICAL_REDUCTION_ARITHMETIC",
+  "strict_positive_reserves": {
+    "center_radius_reserve": "31/57600",
+    "single_gap_squared_reserve": "31/5000",
+    "A_upper_reserve": "383/59100",
+    "D_lower_reserve": "383/59100",
+    "H_lower_reserve": "1/300",
+    "H_upper_reserve": "383/59100",
+    "I_lower_reserve": "383/59100",
+    "I_upper_reserve": "1/300",
+    "nearest_row_separation_reserve": "3223/5000",
+    "endpoint_extra_center_reserve": "46/225"
+  },
+  "reviewed_reduction": "Original four corners give universal center radius; original incircles give pair separation; total variation gives all horizontal enclosures; actual EF/FG and their cones give the two complete normalized mixed-side roots.",
+  "independent_cover_replay": {
+    "status": "PASS",
+    "leaves": 38,
+    "empty": 0,
+    "open": 0,
+    "max_depth": 9,
+    "exact_summed_edges": 156,
+    "least_reserve": "7667/3000000",
+    "sources": {
+      "SHORT_ROW_COMMON_SIDE_COVER.json": "850c367415340638e24e8c7ef99b65a2461746062039600941cd5482caa9eae9",
+      "check_short_row_side_cover.py": "fa4a119119a2d100f009452d2a9a0564ea417deaac4223bc82248f021a87454c"
+    }
+  },
+  "sources": {
+    "short_row_side_cover.py": "455e9c65015e859fb9980455d92d593de0d482c21d4fd7a926e08425ef1297b0",
+    "check_short_row_side_cover.py": "fa4a119119a2d100f009452d2a9a0564ea417deaac4223bc82248f021a87454c",
+    "SHORT_ROW_COMMON_SIDE_HAND_PROOF.md": "b82f462f8588b02df5dcdea56d834105e2e2493a5d6114fada90bfad7fc56b01",
+    "SHORT_ROW_COMMON_SIDE_COVER.json": "850c367415340638e24e8c7ef99b65a2461746062039600941cd5482caa9eae9",
+    "SHORT_ROW_COMMON_SIDE_EXACT_REPLAY.json": "a0077d6b11c87b63e4d5a0816fe63b6ea20cde6f7497bdd87878e186c268a096"
+  },
+  "new_original_cells": 0,
+  "new_masks": 0
+}

@@ -16,6 +16,14 @@ rectangles excluded and I22 OPEN. The recovery index adds no closure credit.
 
 ## Read first
 
+The [common-side theorem for the actual EFG row](computer_assisted/short_row_common_side_v1/SHORT_ROW_COMMON_SIDE_HAND_PROOF.md)
+now proves that E,F,G lie on one vertical side of an ordered four-original
+row with total height variation at most `23/100`, retaining both actual
+EF/FG links and their center cones. Its complete 38-leaf rational cover
+and [root physical review](computer_assisted/short_row_common_side_v1/ROOT_PHYSICAL_REVIEW.md) pass.
+Both genuine endpoint separators then have that same vertical sign. This
+conditional structural theorem adds **zero original cells and zero masks**.
+
 The [coupled four-center conversion](computer_assisted/coupled_four_energy_v1/COUPLED_FOUR_CENTER_ENERGY_HAND_PROOF.md)
 retains all six difference identities and supports a compact physical-energy
 auxiliary. Exact vertex and row checks pass after root relocation, including
