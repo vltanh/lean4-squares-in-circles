@@ -68,3 +68,49 @@ forbidden, preserve all hashes, and pass a full archive-member audit. Only
 then may one original status change. This checkpoint changes none of the
 fixed denominators: 231 originals, 32 masks, 7,915 positional roots and
 15 roadmap IDs. No Lean, Lake or CI was run.
+
+
+## Reproducible source staging added 4 November
+
+The new **stage_d821_portable_sources.py** collects and independently SHA-256
+verifies the **full reference graph** identified by the native exact report.
+A static inspection of the published native report found 889 native input
+references and six checker-source references, for 895 distinct paths. All 272
+structured path/SHA-256 references are consistent with those records;
+none points outside the original workspace root. These are reference counts,
+not proof nodes or additional closures.
+
+The staging utility independently checks the pinned report, graft plan and
+table-audit digests, the registered original path and the OPEN ledger entry;
+it refuses changed, missing, conflicting or out-of-root input bytes. It
+copies each source, rehashes source and destination, and publishes an atomic
+source manifest. Six local synthetic tests pass, including five negative
+controls. The two utility files have Git-blob identities
+b5f0aade9d48f90b6f2ae44f59d34b9d374d480c and
+20dfe2fe1d90b93960d6ed33494b87f4d5852ee0.
+
+Example on the **original source workspace**, if it is available:
+
+~~~sh
+R=/workspace/scratch/f9f48fcfb253
+N="$R/repo/research/nine"
+python3 "$N/computer_assisted/a2_00100_d821_complete_native_checkpoint_v1/stage_d821_portable_sources.py" \
+  --root "$R" \
+  --report "$R/global_work/d821_work/D821_COMPLETE_ORIGINAL_EXACT_REPLAY.json" \
+  --plan "$R/global_work/d821_work/complete_original_final_plan/D821_COMPLETE_ORIGINAL_GRAFT_PLAN.json" \
+  --audit "$R/d_work/D821_COMPLETE_LITERAL_TABLE_ROOT_AUDIT.json" \
+  --ledger "$N/gates/A2_00100_FIXED_FRONTIER.json" \
+  --output /tmp/d821_native_frozen_sources
+
+cd "$N/computer_assisted/a2_00100_d821_complete_native_checkpoint_v1"
+python3 -m unittest -v test_stage_d821_portable_sources.py
+~~~
+
+**Source staging does not rewrite the old absolute paths, re-execute the
+geometric checker, archive the proof, or pass the final isolated portable
+replay.** It is a required input-integrity preparation step, not an
+acceptance receipt. The full source payload is absent from this Git branch;
+the original workspace or another complete, hash-identical source archive is
+needed. The next accepting operation must relocate the frozen graph, freshly
+execute its exact proof with outside reads forbidden, and audit every final
+archive member before promoting D821. Until then the ledger stays 221/231.
