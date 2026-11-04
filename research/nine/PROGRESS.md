@@ -38,6 +38,14 @@ the other seven remain OPEN. Fresh portable replay checks all 2,158 local
 deductions and 22 terminal rows, with the whole ancestor and theorem
 replayed independently. This checkpoint adds zero original-cell credit.
 
+The [whole-original Cb882 eight-height attachment](A2_00100_CB882_WHOLE_ORIGINAL_EIGHT_HEIGHT_CHECKPOINT.md)
+now independently proves the same prerequisites before any center cut.
+Its complete necessary cover has domains 4 and 7 excluded, with six OPEN
+three-round states. Root relocated replay checks the whole ancestor, both
+physical theorem packets, 3,006 local deductions, 5,018 premise rows and
+21 terminal rows. Every frozen input and literal hand-table entry is checked.
+The original and mask remain OPEN; this checkpoint adds zero closure credit.
+
 ## Current Dc71 fixed-grid checkpoint
 
 The [complete sixteen-I declaration](A2_00100_DC71_I16_SIX_ROUND_CHECKPOINT.md)

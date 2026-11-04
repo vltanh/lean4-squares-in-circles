@@ -451,6 +451,19 @@ the portable exact companions and unchanged review evaluator. The sixteen
 literal closed escapes yield the optional4x6x6 full-caller family for011/00;
 no member is credited as excluded solely from this declaration.
 
+## Whole-original Cb882 eight-height checkpoint
+
+The [complete necessary height cover](A2_00100_CB882_WHOLE_ORIGINAL_EIGHT_HEIGHT_CHECKPOINT.md)
+uses the whole-original proved endpoint signs and weak horizontal orders,
+before any I or H subdivision. Domains 4 and 7 are excluded; domains
+0, 1, 2, 3, 5 and 6 retain certified OPEN three-round states. The first
+terminal rejects all four physical B/H inset alternatives. The second is
+a 21-row exact nonnegative combination with reserve greater than 1/2048.
+All 455 frozen inputs, both shared theorem packets and every literal table
+entry pass a separate root relocated replay. Further bound continuations
+are separate work and are not premises of this immutable checkpoint.
+No complete original, mask, positional root or roadmap gate is added.
+
 ## Fixed ledgers and next handoff
 
 - Original-nine masks: **8 CLOSED / 24 OPEN**, exactly `000/*` and `010/*` CLOSED.
