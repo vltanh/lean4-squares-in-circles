@@ -1,0 +1,2011 @@
+{
+  "schema": "D6c5_I23_H_I_D_hand_table_v1",
+  "id": "positive-6c5f13d07e5538df",
+  "original_path": [
+    [
+      "angle",
+      3,
+      1
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      1
+    ],
+    [
+      "alternate_four_escape",
+      [
+        1,
+        7
+      ],
+      [
+        1
+      ]
+    ]
+  ],
+  "original_prefix_sha256": "d247d7e09ee9366a29164a26c3a776a36fd6dc1fbaa6c88e30190dfd8d9fa1df",
+  "I_tile": [
+    2,
+    3
+  ],
+  "I_rectangle": [
+    [
+      "-162069/2097152",
+      "2459371/4194304"
+    ],
+    [
+      "91/120",
+      "91/60"
+    ]
+  ],
+  "H_parent_rectangle": [
+    [
+      "-1472789/1048576",
+      "2459371/4194304"
+    ],
+    [
+      "-91/60",
+      "91/60"
+    ]
+  ],
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "members": [
+    {
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "b4756c192d224dca6a302d9fb9644e6694fa6b6eb86a1726d71f08e0c2ec3dc8",
+      "local_counts": {
+        "rounds": 0,
+        "deductions": 0,
+        "premise_rows": 0,
+        "terminal_rows": 3,
+        "all_printed_rows": 3
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "491621852766767440595938681686291215363743543/401805418860244137657552736455431904087244800",
+      "positive_reserve_floor": "1/2",
+      "terminal_evidence": null,
+      "H_tile": [
+        0,
+        0
+      ],
+      "H_rectangle": [
+        [
+          "-1472789/1048576",
+          "-3431785/8388608"
+        ],
+        [
+          "-91/60",
+          "-91/120"
+        ]
+      ]
+    },
+    {
+      "kind": "complete_slope_cover",
+      "original": 8,
+      "parts": 4,
+      "parent_interval": [
+        "-1",
+        "1"
+      ],
+      "parent_counts": {
+        "rounds": 6,
+        "deductions": 403,
+        "premise_rows": 1233,
+        "terminal_rows": 0,
+        "all_printed_rows": 1233
+      },
+      "children": [
+        {
+          "kind": "accepted_bound_terminal",
+          "certificate_sha256": "88afd0c722619b913c45da2ec0bb10c62c554193970a1da0673669da9eccade0",
+          "local_counts": {
+            "rounds": 2,
+            "deductions": 495,
+            "premise_rows": 482,
+            "terminal_rows": 5,
+            "all_printed_rows": 487
+          },
+          "terminal_kind": "positive_exact_reserve",
+          "terminal_label": "positive_exact_reserve",
+          "reserve": "77912590388613191535692024818647797/49894727624983109242910238163599360",
+          "positive_reserve_floor": "1/2",
+          "terminal_evidence": null,
+          "index": 0,
+          "interval": [
+            "-1",
+            "-1/2"
+          ]
+        },
+        {
+          "kind": "complete_slope_cover",
+          "original": 3,
+          "parts": 4,
+          "parent_interval": [
+            "0",
+            "1"
+          ],
+          "parent_counts": {
+            "rounds": 9,
+            "deductions": 406,
+            "premise_rows": 1970,
+            "terminal_rows": 0,
+            "all_printed_rows": 1970
+          },
+          "children": [
+            {
+              "kind": "accepted_bound_terminal",
+              "certificate_sha256": "de00730e16ac371107ab05120fdb6c3b6a41e1f15d462e7a34138fe615bd0800",
+              "local_counts": {
+                "rounds": 1,
+                "deductions": 303,
+                "premise_rows": 295,
+                "terminal_rows": 40,
+                "all_printed_rows": 335
+              },
+              "terminal_kind": "positive_exact_reserve",
+              "terminal_label": "positive_exact_reserve",
+              "reserve": "11642330619267627278809334624679460105789556851555456735437478538811/747210229687006328424047113916742952769131442333774684081793846476800",
+              "positive_reserve_floor": "1/66",
+              "terminal_evidence": null,
+              "index": 0,
+              "interval": [
+                "0",
+                "1/4"
+              ]
+            },
+            {
+              "kind": "accepted_bound_terminal",
+              "certificate_sha256": "f7b73635ebf034e8c95008646379523ddd5d09d10bbf726b72ca92e84af4d7cd",
+              "local_counts": {
+                "rounds": 1,
+                "deductions": 312,
+                "premise_rows": 318,
+                "terminal_rows": 24,
+                "all_printed_rows": 342
+              },
+              "terminal_kind": "positive_exact_reserve",
+              "terminal_label": "positive_exact_reserve",
+              "reserve": "14428370421289391596148832999698616811371270541/651685976597102965510464463519640252839635189760",
+              "positive_reserve_floor": "1/47",
+              "terminal_evidence": null,
+              "index": 1,
+              "interval": [
+                "1/4",
+                "1/2"
+              ]
+            },
+            {
+              "kind": "accepted_bound_terminal",
+              "certificate_sha256": "7b89b71f6f60ca5b3cd6fe67a338271fe67dd5ee95f7a2beaf54d1b7ff046330",
+              "local_counts": {
+                "rounds": 1,
+                "deductions": 312,
+                "premise_rows": 287,
+                "terminal_rows": 21,
+                "all_printed_rows": 308
+              },
+              "terminal_kind": "positive_exact_reserve",
+              "terminal_label": "positive_exact_reserve",
+              "reserve": "331814008887485644961564360367789063222185711/5919933171207596961487943650443363386885406720",
+              "positive_reserve_floor": "1/19",
+              "terminal_evidence": null,
+              "index": 2,
+              "interval": [
+                "1/2",
+                "3/4"
+              ]
+            },
+            {
+              "kind": "accepted_bound_terminal",
+              "certificate_sha256": "62b1895978bc87d52afaf333efd236c60ce066db45719748d6cd062abd06cb18",
+              "local_counts": {
+                "rounds": 1,
+                "deductions": 303,
+                "premise_rows": 297,
+                "terminal_rows": 3,
+                "all_printed_rows": 300
+              },
+              "terminal_kind": "positive_exact_reserve",
+              "terminal_label": "positive_exact_reserve",
+              "reserve": "17460910417734301540995642546670201/13792038530483135888284130874490880",
+              "positive_reserve_floor": "1/2",
+              "terminal_evidence": null,
+              "index": 3,
+              "interval": [
+                "3/4",
+                "1"
+              ]
+            }
+          ],
+          "index": 1,
+          "interval": [
+            "-1/2",
+            "0"
+          ]
+        },
+        {
+          "kind": "accepted_bound_terminal",
+          "certificate_sha256": "cd03f90f35f785b394ab138234b54fa9c3be42ca6e267a37939d9a8d4b21a6b6",
+          "local_counts": {
+            "rounds": 8,
+            "deductions": 563,
+            "premise_rows": 1970,
+            "terminal_rows": 38,
+            "all_printed_rows": 2008
+          },
+          "terminal_kind": "positive_exact_reserve",
+          "terminal_label": "positive_exact_reserve",
+          "reserve": "12212536723829880699307281538860810969982066565046364155701091334781286003796162915123/13171982086817247619311315807948962279304628039932284592293128531465254652588748439552000",
+          "positive_reserve_floor": "1/1080",
+          "terminal_evidence": null,
+          "index": 2,
+          "interval": [
+            "0",
+            "1/2"
+          ]
+        },
+        {
+          "kind": "accepted_bound_terminal",
+          "certificate_sha256": "e52c8f5c01fcd6c6f1c17757b5fb5fb9bd7a6253ee02722bd1ee0f4234eb17a2",
+          "local_counts": {
+            "rounds": 1,
+            "deductions": 142,
+            "premise_rows": 283,
+            "terminal_rows": 34,
+            "all_printed_rows": 317
+          },
+          "terminal_kind": "positive_exact_reserve",
+          "terminal_label": "positive_exact_reserve",
+          "reserve": "479251925210723428458511268888996570968442776705036311618074955079101912487271/111020556769933287409148791920427668231655749674129511256008374433257575415808000",
+          "positive_reserve_floor": "1/233",
+          "terminal_evidence": null,
+          "index": 3,
+          "interval": [
+            "1/2",
+            "1"
+          ]
+        }
+      ],
+      "H_tile": [
+        0,
+        1
+      ],
+      "H_rectangle": [
+        [
+          "-1472789/1048576",
+          "-3431785/8388608"
+        ],
+        [
+          "-91/120",
+          "0"
+        ]
+      ]
+    },
+    {
+      "kind": "complete_slope_cover",
+      "original": 8,
+      "parts": 4,
+      "parent_interval": [
+        "-1",
+        "1"
+      ],
+      "parent_counts": {
+        "rounds": 6,
+        "deductions": 305,
+        "premise_rows": 1084,
+        "terminal_rows": 0,
+        "all_printed_rows": 1084
+      },
+      "children": [
+        {
+          "kind": "accepted_bound_terminal",
+          "certificate_sha256": "1ae78a2da3a5d10a9887e8e8db2ca9050158b8cb70da0bb61d331499b262f1b4",
+          "local_counts": {
+            "rounds": 2,
+            "deductions": 293,
+            "premise_rows": 483,
+            "terminal_rows": 3,
+            "all_printed_rows": 486
+          },
+          "terminal_kind": "positive_exact_reserve",
+          "terminal_label": "positive_exact_reserve",
+          "reserve": "10437329905753696426987293161828713503840755730540370026545565/9109553798243458033890160031174380089515872852301333728854016",
+          "positive_reserve_floor": "1/2",
+          "terminal_evidence": null,
+          "index": 0,
+          "interval": [
+            "-1",
+            "-1/2"
+          ]
+        },
+        {
+          "kind": "accepted_bound_terminal",
+          "certificate_sha256": "c678f52912104f014ce2830138a0d2306e06c986b5c29c2583f68bdbc8f10f1b",
+          "local_counts": {
+            "rounds": 9,
+            "deductions": 784,
+            "premise_rows": 2024,
+            "terminal_rows": 3,
+            "all_printed_rows": 2027
+          },
+          "terminal_kind": "positive_exact_reserve",
+          "terminal_label": "positive_exact_reserve",
+          "reserve": "1128267203919649362195322463585263/1216944576219100225436835077160960",
+          "positive_reserve_floor": "1/3",
+          "terminal_evidence": null,
+          "index": 1,
+          "interval": [
+            "-1/2",
+            "0"
+          ]
+        },
+        {
+          "kind": "accepted_bound_terminal",
+          "certificate_sha256": "e5b65e06fa5e109411bf257b3c91c7980952b6dd328a3785f992a786cebcdcf9",
+          "local_counts": {
+            "rounds": 8,
+            "deductions": 539,
+            "premise_rows": 1833,
+            "terminal_rows": 29,
+            "all_printed_rows": 1862
+          },
+          "terminal_kind": "positive_exact_reserve",
+          "terminal_label": "positive_exact_reserve",
+          "reserve": "17562881214725268207372307049846319596770264104880191261303966148260999932749390346625356289619440461699/30563696951644273831023212755730435259357556074653376637559702859083631001495664113134697875173327524331520",
+          "positive_reserve_floor": "1/1742",
+          "terminal_evidence": null,
+          "index": 2,
+          "interval": [
+            "0",
+            "1/2"
+          ]
+        },
+        {
+          "kind": "accepted_bound_terminal",
+          "certificate_sha256": "5708e1331207132ce71b94106f204991edfebf5683cffbb0e5b2560206640fa7",
+          "local_counts": {
+            "rounds": 2,
+            "deductions": 387,
+            "premise_rows": 483,
+            "terminal_rows": 3,
+            "all_printed_rows": 486
+          },
+          "terminal_kind": "positive_exact_reserve",
+          "terminal_label": "positive_exact_reserve",
+          "reserve": "3563839527640779148278635806660371230093028298867307878913895/2916490547798921699748867503716358513701778384781608671510528",
+          "positive_reserve_floor": "1/2",
+          "terminal_evidence": null,
+          "index": 3,
+          "interval": [
+            "1/2",
+            "1"
+          ]
+        }
+      ],
+      "H_tile": [
+        0,
+        2
+      ],
+      "H_rectangle": [
+        [
+          "-1472789/1048576",
+          "-3431785/8388608"
+        ],
+        [
+          "0",
+          "91/120"
+        ]
+      ]
+    },
+    {
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "b697849d1f811211246790a8488f235cca3636e8af05c5daaaa57a7438d4db3d",
+      "local_counts": {
+        "rounds": 3,
+        "deductions": 678,
+        "premise_rows": 652,
+        "terminal_rows": 37,
+        "all_printed_rows": 689
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "3980800318080462229305481616177967553972683940367383141145444847338203004548758478324710182877884371/2292291268482809404039122990878918396864012769243844769656228009974236161309739720545865567028903936000",
+      "positive_reserve_floor": "1/577",
+      "terminal_evidence": null,
+      "H_tile": [
+        0,
+        3
+      ],
+      "H_rectangle": [
+        [
+          "-1472789/1048576",
+          "-3431785/8388608"
+        ],
+        [
+          "91/120",
+          "91/60"
+        ]
+      ]
+    },
+    {
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "04d2ddcbfde43388bf833770c9a3fc4c369cdee94c8f80aafba053b6485df910",
+      "local_counts": {
+        "rounds": 0,
+        "deductions": 0,
+        "premise_rows": 0,
+        "terminal_rows": 3,
+        "all_printed_rows": 3
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "15513543167281634307101225365248280128602009/13393513962008137921918424548514396802908160",
+      "positive_reserve_floor": "1/2",
+      "terminal_evidence": null,
+      "H_tile": [
+        1,
+        0
+      ],
+      "H_rectangle": [
+        [
+          "-3431785/8388608",
+          "2459371/4194304"
+        ],
+        [
+          "-91/60",
+          "-91/120"
+        ]
+      ]
+    },
+    {
+      "kind": "complete_slope_cover",
+      "original": 8,
+      "parts": 4,
+      "parent_interval": [
+        "-1",
+        "1"
+      ],
+      "parent_counts": {
+        "rounds": 6,
+        "deductions": 378,
+        "premise_rows": 1242,
+        "terminal_rows": 0,
+        "all_printed_rows": 1242
+      },
+      "children": [
+        {
+          "kind": "accepted_bound_terminal",
+          "certificate_sha256": "6c11c60552feef780a7b94beaebfa514951e36849eb62c7144a878c8cf42cd2c",
+          "local_counts": {
+            "rounds": 4,
+            "deductions": 572,
+            "premise_rows": 1034,
+            "terminal_rows": 32,
+            "all_printed_rows": 1066
+          },
+          "terminal_kind": "positive_exact_reserve",
+          "terminal_label": "positive_exact_reserve",
+          "reserve": "12233493847466697952096195279233378231338607314448726233444743896794998662407151791553211733412853067/1767224136540728075677135428542545427998107942621600779031421704241808323330626150464510072973164544000",
+          "positive_reserve_floor": "1/146",
+          "terminal_evidence": null,
+          "index": 0,
+          "interval": [
+            "-1",
+            "-1/2"
+          ]
+        },
+        {
+          "kind": "complete_slope_cover",
+          "original": 3,
+          "parts": 4,
+          "parent_interval": [
+            "0",
+            "1"
+          ],
+          "parent_counts": {
+            "rounds": 9,
+            "deductions": 332,
+            "premise_rows": 1438,
+            "terminal_rows": 0,
+            "all_printed_rows": 1438
+          },
+          "children": [
+            {
+              "kind": "accepted_bound_terminal",
+              "certificate_sha256": "b67fde69835ffdd2b599b159f49f7bf775987dd478c30ebf3628c6bade63d98d",
+              "local_counts": {
+                "rounds": 3,
+                "deductions": 857,
+                "premise_rows": 898,
+                "terminal_rows": 41,
+                "all_printed_rows": 939
+              },
+              "terminal_kind": "positive_exact_reserve",
+              "terminal_label": "positive_exact_reserve",
+              "reserve": "27906953562340388282547302595221433475751246697446243820486274884547394746781128971272648132600256415907/38786762807411069148850646819143494112102625439732217352003551876905489972553335892462843654744413359308800",
+              "positive_reserve_floor": "1/1391",
+              "terminal_evidence": null,
+              "index": 0,
+              "interval": [
+                "0",
+                "1/4"
+              ]
+            },
+            {
+              "kind": "accepted_bound_terminal",
+              "certificate_sha256": "31f316ac81150410bdc379ac3a4abd66f6a46e610ea128f0b238d9a7b532e538",
+              "local_counts": {
+                "rounds": 3,
+                "deductions": 886,
+                "premise_rows": 930,
+                "terminal_rows": 3,
+                "all_printed_rows": 933
+              },
+              "terminal_kind": "positive_exact_reserve",
+              "terminal_label": "positive_exact_reserve",
+              "reserve": "297063917675591579549157/6044629098073145873530880",
+              "positive_reserve_floor": "1/22",
+              "terminal_evidence": null,
+              "index": 1,
+              "interval": [
+                "1/4",
+                "1/2"
+              ]
+            },
+            {
+              "kind": "accepted_bound_terminal",
+              "certificate_sha256": "f979a324d6def96c892a7180119988db682296584e940a1d44825b7cad3c7abf",
+              "local_counts": {
+                "rounds": 2,
+                "deductions": 585,
+                "premise_rows": 563,
+                "terminal_rows": 32,
+                "all_printed_rows": 595
+              },
+              "terminal_kind": "positive_exact_reserve",
+              "terminal_label": "positive_exact_reserve",
+              "reserve": "303981712197765356023520674466690243521081380228975658845477153473878109745427296254912855575169/389665424114432479381043594913049446930599628557543257524328157174283055085566030936810205478912000",
+              "positive_reserve_floor": "1/1283",
+              "terminal_evidence": null,
+              "index": 2,
+              "interval": [
+                "1/2",
+                "3/4"
+              ]
+            },
+            {
+              "kind": "accepted_bound_terminal",
+              "certificate_sha256": "84e6e744607f33670e14ff01e0f6f7b3d308fe4fa2fea837a21379edb8068e85",
+              "local_counts": {
+                "rounds": 3,
+                "deductions": 950,
+                "premise_rows": 755,
+                "terminal_rows": 0,
+                "all_printed_rows": 755
+              },
+              "terminal_kind": "proved_empty_original_angle_interval",
+              "terminal_label": "proved_empty_original_angle_interval",
+              "reserve": null,
+              "positive_reserve_floor": null,
+              "terminal_evidence": {
+                "kind": "proved_empty_original_angle_interval",
+                "original": 5,
+                "lower": "-27300699167355/281474976710656",
+                "upper": "-15347774379039/140737488355328",
+                "gap": "3394849590723/281474976710656",
+                "checked_frame_inferences": 6,
+                "alpha_interval": [
+                  "1040041/1048576",
+                  "260599/262144"
+                ],
+                "beta_interval": [
+                  "-25307/262144",
+                  "-74617/1048576"
+                ],
+                "absolute_beta_interval": [
+                  "74617/1048576",
+                  "25307/262144"
+                ],
+                "independent_unit_frame_square_sum_upper": "34276141525/34359738368",
+                "independent_unit_frame_square_sum_gap": "83596843/34359738368"
+              },
+              "index": 3,
+              "interval": [
+                "3/4",
+                "1"
+              ]
+            }
+          ],
+          "index": 1,
+          "interval": [
+            "-1/2",
+            "0"
+          ]
+        },
+        {
+          "kind": "complete_slope_cover",
+          "original": 3,
+          "parts": 4,
+          "parent_interval": [
+            "0",
+            "1"
+          ],
+          "parent_counts": {
+            "rounds": 9,
+            "deductions": 409,
+            "premise_rows": 1781,
+            "terminal_rows": 0,
+            "all_printed_rows": 1781
+          },
+          "children": [
+            {
+              "kind": "accepted_bound_terminal",
+              "certificate_sha256": "3af753254a2d79fc83f5d4692e0fc1e600771d4205a14164a8fe6ae6040c0659",
+              "local_counts": {
+                "rounds": 3,
+                "deductions": 868,
+                "premise_rows": 900,
+                "terminal_rows": 5,
+                "all_printed_rows": 905
+              },
+              "terminal_kind": "positive_exact_reserve",
+              "terminal_label": "positive_exact_reserve",
+              "reserve": "199933390146184930175354740555183/4867778304876400901747340308643840",
+              "positive_reserve_floor": "1/26",
+              "terminal_evidence": null,
+              "index": 0,
+              "interval": [
+                "0",
+                "1/4"
+              ]
+            },
+            {
+              "kind": "accepted_bound_terminal",
+              "certificate_sha256": "b952af5938435c78b4860eece68b8467e7124a14aabd835e03562c56d31c183a",
+              "local_counts": {
+                "rounds": 3,
+                "deductions": 909,
+                "premise_rows": 910,
+                "terminal_rows": 3,
+                "all_printed_rows": 913
+              },
+              "terminal_kind": "positive_exact_reserve",
+              "terminal_label": "positive_exact_reserve",
+              "reserve": "204037863928095220725184329950448785211070039/160722167544097655063021094582172761634897920",
+              "positive_reserve_floor": "1/2",
+              "terminal_evidence": null,
+              "index": 1,
+              "interval": [
+                "1/4",
+                "1/2"
+              ]
+            },
+            {
+              "kind": "accepted_bound_terminal",
+              "certificate_sha256": "ad15b4e53140b066830fe599c2ea7f685a9a4466bab3551e037dd90607f8fc88",
+              "local_counts": {
+                "rounds": 2,
+                "deductions": 597,
+                "premise_rows": 587,
+                "terminal_rows": 19,
+                "all_printed_rows": 606
+              },
+              "terminal_kind": "positive_exact_reserve",
+              "terminal_label": "positive_exact_reserve",
+              "reserve": "28617899706040970301033226359221521319286239850214567471699927/2721826479146635304459381714365178068721992244050348094364057600",
+              "positive_reserve_floor": "1/97",
+              "terminal_evidence": null,
+              "index": 2,
+              "interval": [
+                "1/2",
+                "3/4"
+              ]
+            },
+            {
+              "kind": "accepted_bound_terminal",
+              "certificate_sha256": "85b21f1c3d07c4363b1cee82dc5c3a9c3e218f8047f61c7840ff00abaf28c4ca",
+              "local_counts": {
+                "rounds": 2,
+                "deductions": 582,
+                "premise_rows": 623,
+                "terminal_rows": 31,
+                "all_printed_rows": 654
+              },
+              "terminal_kind": "positive_exact_reserve",
+              "terminal_label": "positive_exact_reserve",
+              "reserve": "242999706004326272278337176215329665612088205013141463043624976683838020595893102751629605567/77552059283919569993798674975431199424134284044185807837265505487980024971503760198653181952000",
+              "positive_reserve_floor": "1/321",
+              "terminal_evidence": null,
+              "index": 3,
+              "interval": [
+                "3/4",
+                "1"
+              ]
+            }
+          ],
+          "index": 2,
+          "interval": [
+            "0",
+            "1/2"
+          ]
+        },
+        {
+          "kind": "accepted_bound_terminal",
+          "certificate_sha256": "bcbf10d997ac6b32db60a8553a9fe582e2fadacc33cd5c848e1af53688b91301",
+          "local_counts": {
+            "rounds": 3,
+            "deductions": 377,
+            "premise_rows": 785,
+            "terminal_rows": 32,
+            "all_printed_rows": 817
+          },
+          "terminal_kind": "positive_exact_reserve",
+          "terminal_label": "positive_exact_reserve",
+          "reserve": "45776557117026967262418329621737188614687563601482530200404579692812039243579308773417354954107893/9716414706586062524282214179595137155449668936929483392945589860624004101173659047673967375548416000",
+          "positive_reserve_floor": "1/214",
+          "terminal_evidence": null,
+          "index": 3,
+          "interval": [
+            "1/2",
+            "1"
+          ]
+        }
+      ],
+      "H_tile": [
+        1,
+        1
+      ],
+      "H_rectangle": [
+        [
+          "-3431785/8388608",
+          "2459371/4194304"
+        ],
+        [
+          "-91/120",
+          "0"
+        ]
+      ]
+    },
+    {
+      "kind": "complete_slope_cover",
+      "original": 8,
+      "parts": 4,
+      "parent_interval": [
+        "-1",
+        "1"
+      ],
+      "parent_counts": {
+        "rounds": 6,
+        "deductions": 61,
+        "premise_rows": 332,
+        "terminal_rows": 0,
+        "all_printed_rows": 332
+      },
+      "children": [
+        {
+          "kind": "accepted_bound_terminal",
+          "certificate_sha256": "225a0971e818699f66d28e0ad207b5bf44b3ae1192555ed3acbd9b5429a933f5",
+          "local_counts": {
+            "rounds": 5,
+            "deductions": 678,
+            "premise_rows": 1102,
+            "terminal_rows": 46,
+            "all_printed_rows": 1148
+          },
+          "terminal_kind": "positive_exact_reserve",
+          "terminal_label": "positive_exact_reserve",
+          "reserve": "436613340877843895411260920042100993923734372076357505278480430722374628117918797924242627670344696592602997683081685430946498265/4181288553215238196027039448068420131818353414146567571300740897499665461360379128657919901559170870094178853821673658741466775683072",
+          "positive_reserve_floor": "1/9578",
+          "terminal_evidence": null,
+          "index": 0,
+          "interval": [
+            "-1",
+            "-1/2"
+          ]
+        },
+        {
+          "kind": "complete_slope_cover",
+          "original": 3,
+          "parts": 4,
+          "parent_interval": [
+            "0",
+            "1"
+          ],
+          "parent_counts": {
+            "rounds": 9,
+            "deductions": 107,
+            "premise_rows": 748,
+            "terminal_rows": 0,
+            "all_printed_rows": 748
+          },
+          "children": [
+            {
+              "kind": "accepted_bound_terminal",
+              "certificate_sha256": "2714f8f90376ab48850b3c2111339e26eddbbfb6a1b9b80b55de7e13649fbc41",
+              "local_counts": {
+                "rounds": 2,
+                "deductions": 539,
+                "premise_rows": 539,
+                "terminal_rows": 34,
+                "all_printed_rows": 573
+              },
+              "terminal_kind": "positive_exact_reserve",
+              "terminal_label": "positive_exact_reserve",
+              "reserve": "15548325078933706933325945411143127744759715956576076427551863/4277111838809621971879069400963459250792697698757696187636121600",
+              "positive_reserve_floor": "1/277",
+              "terminal_evidence": null,
+              "index": 0,
+              "interval": [
+                "0",
+                "1/4"
+              ]
+            },
+            {
+              "kind": "accepted_bound_terminal",
+              "certificate_sha256": "3be77704a251108882635f8a87558a42850dba3aa73f5e10e343e99c840a819c",
+              "local_counts": {
+                "rounds": 2,
+                "deductions": 636,
+                "premise_rows": 481,
+                "terminal_rows": 3,
+                "all_printed_rows": 484
+              },
+              "terminal_kind": "positive_exact_reserve",
+              "terminal_label": "positive_exact_reserve",
+              "reserve": "234277547588059268362086593371/190333281040127217265740349440",
+              "positive_reserve_floor": "1/2",
+              "terminal_evidence": null,
+              "index": 1,
+              "interval": [
+                "1/4",
+                "1/2"
+              ]
+            },
+            {
+              "kind": "accepted_bound_terminal",
+              "certificate_sha256": "a2cd1dec3dbca9898a334a06d515f110f04db3e230455d1ca289c208ed0471bf",
+              "local_counts": {
+                "rounds": 2,
+                "deductions": 648,
+                "premise_rows": 424,
+                "terminal_rows": 3,
+                "all_printed_rows": 427
+              },
+              "terminal_kind": "positive_exact_reserve",
+              "terminal_label": "positive_exact_reserve",
+              "reserve": "47362142779629825588100791167/38066656208025443453148069888",
+              "positive_reserve_floor": "1/2",
+              "terminal_evidence": null,
+              "index": 2,
+              "interval": [
+                "1/2",
+                "3/4"
+              ]
+            },
+            {
+              "kind": "accepted_bound_terminal",
+              "certificate_sha256": "d5f07ce83f2389124629ebeada7c4cde2929a60094afd5b986931fe2064d01ec",
+              "local_counts": {
+                "rounds": 2,
+                "deductions": 614,
+                "premise_rows": 484,
+                "terminal_rows": 3,
+                "all_printed_rows": 487
+              },
+              "terminal_kind": "positive_exact_reserve",
+              "terminal_label": "positive_exact_reserve",
+              "reserve": "1707391706364547198785336619/1547425049106725343623905280",
+              "positive_reserve_floor": "1/2",
+              "terminal_evidence": null,
+              "index": 3,
+              "interval": [
+                "3/4",
+                "1"
+              ]
+            }
+          ],
+          "index": 1,
+          "interval": [
+            "-1/2",
+            "0"
+          ]
+        },
+        {
+          "kind": "complete_slope_cover",
+          "original": 3,
+          "parts": 4,
+          "parent_interval": [
+            "0",
+            "1"
+          ],
+          "parent_counts": {
+            "rounds": 9,
+            "deductions": 158,
+            "premise_rows": 1080,
+            "terminal_rows": 0,
+            "all_printed_rows": 1080
+          },
+          "children": [
+            {
+              "kind": "accepted_bound_terminal",
+              "certificate_sha256": "ab5e3b49dca67ca4f3374418473d515a75d56b1abf441f99dd0a43df91dbcdd6",
+              "local_counts": {
+                "rounds": 2,
+                "deductions": 570,
+                "premise_rows": 479,
+                "terminal_rows": 5,
+                "all_printed_rows": 484
+              },
+              "terminal_kind": "positive_exact_reserve",
+              "terminal_label": "positive_exact_reserve",
+              "reserve": "24914820797842657463724289405111169581038716179/625814185738451922595497245301744240286079385600",
+              "positive_reserve_floor": "1/27",
+              "terminal_evidence": null,
+              "index": 0,
+              "interval": [
+                "0",
+                "1/4"
+              ]
+            },
+            {
+              "kind": "accepted_bound_terminal",
+              "certificate_sha256": "ab52f95627113ade6341e4e2e31229826ac4feebebc1790283d87eded3e5a55b",
+              "local_counts": {
+                "rounds": 2,
+                "deductions": 640,
+                "premise_rows": 470,
+                "terminal_rows": 3,
+                "all_printed_rows": 473
+              },
+              "terminal_kind": "positive_exact_reserve",
+              "terminal_label": "positive_exact_reserve",
+              "reserve": "19468369523630955005497451169279059/15211807202738752817960438464512000",
+              "positive_reserve_floor": "1/2",
+              "terminal_evidence": null,
+              "index": 1,
+              "interval": [
+                "1/4",
+                "1/2"
+              ]
+            },
+            {
+              "kind": "accepted_bound_terminal",
+              "certificate_sha256": "3d84e0316f6acfae4ad1bef21964fa0795aaf00ed9573a7cbfe777b8f0a2417a",
+              "local_counts": {
+                "rounds": 2,
+                "deductions": 653,
+                "premise_rows": 426,
+                "terminal_rows": 7,
+                "all_printed_rows": 433
+              },
+              "terminal_kind": "positive_exact_reserve",
+              "terminal_label": "positive_exact_reserve",
+              "reserve": "1249629326507011348955313936617847818878666453757497442802114276007164600319/726141377214630492130157119785910061754805216379944861630733861610628055040",
+              "positive_reserve_floor": "1/2",
+              "terminal_evidence": null,
+              "index": 2,
+              "interval": [
+                "1/2",
+                "3/4"
+              ]
+            },
+            {
+              "kind": "accepted_bound_terminal",
+              "certificate_sha256": "f5ddf7227e7645f566545e711f5a34a49dc3c0e15677cfe865884b945995ac4b",
+              "local_counts": {
+                "rounds": 2,
+                "deductions": 616,
+                "premise_rows": 502,
+                "terminal_rows": 3,
+                "all_printed_rows": 505
+              },
+              "terminal_kind": "positive_exact_reserve",
+              "terminal_label": "positive_exact_reserve",
+              "reserve": "1271856817889019926549683561/1160568786830044007717928960",
+              "positive_reserve_floor": "1/2",
+              "terminal_evidence": null,
+              "index": 3,
+              "interval": [
+                "3/4",
+                "1"
+              ]
+            }
+          ],
+          "index": 2,
+          "interval": [
+            "0",
+            "1/2"
+          ]
+        },
+        {
+          "kind": "accepted_bound_terminal",
+          "certificate_sha256": "fdf76fe445a0ccb85843a1c80afab52a6c92169a5146920a17997d1aa3912bde",
+          "local_counts": {
+            "rounds": 4,
+            "deductions": 617,
+            "premise_rows": 874,
+            "terminal_rows": 39,
+            "all_printed_rows": 913
+          },
+          "terminal_kind": "positive_exact_reserve",
+          "terminal_label": "positive_exact_reserve",
+          "reserve": "1860098920674814225018886645622296383887591351111151642904979540448262555659679409410759764005790959252854157648043919/587173194587427989911312146411457645139583071631365292378631330834393118821946606099677250426545432632302591032059494400",
+          "positive_reserve_floor": "1/317",
+          "terminal_evidence": null,
+          "index": 3,
+          "interval": [
+            "1/2",
+            "1"
+          ]
+        }
+      ],
+      "H_tile": [
+        1,
+        2
+      ],
+      "H_rectangle": [
+        [
+          "-3431785/8388608",
+          "2459371/4194304"
+        ],
+        [
+          "0",
+          "91/120"
+        ]
+      ]
+    },
+    {
+      "kind": "complete_slope_cover",
+      "original": 8,
+      "parts": 4,
+      "parent_interval": [
+        "-1",
+        "1"
+      ],
+      "parent_counts": {
+        "rounds": 6,
+        "deductions": 911,
+        "premise_rows": 1545,
+        "terminal_rows": 0,
+        "all_printed_rows": 1545
+      },
+      "children": [
+        {
+          "kind": "accepted_bound_terminal",
+          "certificate_sha256": "d4ac27815d215f6469c473094bfbcc9996a498f5054659d0e1680c8d9b4f475a",
+          "local_counts": {
+            "rounds": 5,
+            "deductions": 1420,
+            "premise_rows": 1266,
+            "terminal_rows": 32,
+            "all_printed_rows": 1298
+          },
+          "terminal_kind": "positive_exact_reserve",
+          "terminal_label": "positive_exact_reserve",
+          "reserve": "8930282726962941430529568403073789155798186776169944401462740184994692596389687634444176444500886233/17056539239063708414590140806949487637788267342438953843603043846737267790532111757656964763786216996864",
+          "positive_reserve_floor": "1/1911",
+          "terminal_evidence": null,
+          "index": 0,
+          "interval": [
+            "-1",
+            "-1/2"
+          ]
+        },
+        {
+          "kind": "complete_slope_cover",
+          "original": 3,
+          "parts": 4,
+          "parent_interval": [
+            "0",
+            "1"
+          ],
+          "parent_counts": {
+            "rounds": 9,
+            "deductions": 2152,
+            "premise_rows": 2745,
+            "terminal_rows": 0,
+            "all_printed_rows": 2745
+          },
+          "children": [
+            {
+              "kind": "accepted_bound_terminal",
+              "certificate_sha256": "43ec2f95020d59312c7ac73d2c9fc95a78598104ee28db60a2d68be07b274cde",
+              "local_counts": {
+                "rounds": 1,
+                "deductions": 342,
+                "premise_rows": 282,
+                "terminal_rows": 5,
+                "all_printed_rows": 287
+              },
+              "terminal_kind": "positive_exact_reserve",
+              "terminal_label": "positive_exact_reserve",
+              "reserve": "157720982715604469708613893/2103530926129454763988746240",
+              "positive_reserve_floor": "1/15",
+              "terminal_evidence": null,
+              "index": 0,
+              "interval": [
+                "0",
+                "1/4"
+              ]
+            },
+            {
+              "kind": "accepted_bound_terminal",
+              "certificate_sha256": "b594e284a46fa063811d8dfc19622ebb7b30e9812758d8874531ae2a2106ac1c",
+              "local_counts": {
+                "rounds": 1,
+                "deductions": 335,
+                "premise_rows": 272,
+                "terminal_rows": 33,
+                "all_printed_rows": 305
+              },
+              "terminal_kind": "positive_exact_reserve",
+              "terminal_label": "positive_exact_reserve",
+              "reserve": "32266638435736098277250212896850686551330135629338676247199877805090217858863456027435194952020759361323065455185651850248681777/8033099228789361909256324451822458229786497028417156037747990682827077486606356069312643041184166511884190028463978085616084582400",
+              "positive_reserve_floor": "1/250",
+              "terminal_evidence": null,
+              "index": 1,
+              "interval": [
+                "1/4",
+                "1/2"
+              ]
+            },
+            {
+              "kind": "accepted_bound_terminal",
+              "certificate_sha256": "29dd1862c6e9cc8902ca13921098b786e2821976e87a8b2b45085aafe6eea167",
+              "local_counts": {
+                "rounds": 1,
+                "deductions": 333,
+                "premise_rows": 260,
+                "terminal_rows": 35,
+                "all_printed_rows": 295
+              },
+              "terminal_kind": "positive_exact_reserve",
+              "terminal_label": "positive_exact_reserve",
+              "reserve": "84894536199693404142093180028352941677319968799013708629223246775375373541186690219845562015780747125187562407449301444458520421156993157849445173/37897364457334569424757435455222755537309570538628708874783883882743778362670830330949350268837156210087956601179473984231170909312047767330226176000",
+              "positive_reserve_floor": "1/448",
+              "terminal_evidence": null,
+              "index": 2,
+              "interval": [
+                "1/2",
+                "3/4"
+              ]
+            },
+            {
+              "kind": "accepted_bound_terminal",
+              "certificate_sha256": "5861d8d36eb688075aa5c6e056e02cae18740fc88be48e5102f079c77d0a0155",
+              "local_counts": {
+                "rounds": 1,
+                "deductions": 314,
+                "premise_rows": 289,
+                "terminal_rows": 31,
+                "all_printed_rows": 320
+              },
+              "terminal_kind": "positive_exact_reserve",
+              "terminal_label": "positive_exact_reserve",
+              "reserve": "2412169691001531016855042039477873358936316174310608079483700729294446609/1025746952705313985694685664270289523045843764221935603895479952244851343360",
+              "positive_reserve_floor": "1/427",
+              "terminal_evidence": null,
+              "index": 3,
+              "interval": [
+                "3/4",
+                "1"
+              ]
+            }
+          ],
+          "index": 1,
+          "interval": [
+            "-1/2",
+            "0"
+          ]
+        },
+        {
+          "kind": "accepted_bound_terminal",
+          "certificate_sha256": "141035a88c6b9b525accbd4bb8a3d48f079a806a36b0d9c23cea4a422ef48502",
+          "local_counts": {
+            "rounds": 5,
+            "deductions": 1426,
+            "premise_rows": 1416,
+            "terminal_rows": 3,
+            "all_printed_rows": 1419
+          },
+          "terminal_kind": "positive_exact_reserve",
+          "terminal_label": "positive_exact_reserve",
+          "reserve": "807508448236145105333111/9066943647109718810296320",
+          "positive_reserve_floor": "1/13",
+          "terminal_evidence": null,
+          "index": 2,
+          "interval": [
+            "0",
+            "1/2"
+          ]
+        },
+        {
+          "kind": "accepted_bound_terminal",
+          "certificate_sha256": "a0391603d73bec4de064a2cf240d7c06af8a8390edb1220cc06b96b20561380c",
+          "local_counts": {
+            "rounds": 4,
+            "deductions": 1173,
+            "premise_rows": 968,
+            "terminal_rows": 5,
+            "all_printed_rows": 973
+          },
+          "terminal_kind": "positive_exact_reserve",
+          "terminal_label": "positive_exact_reserve",
+          "reserve": "3552969105215598219892004660198481802050795308775260784201601/42996692052456945229284676756948469037395622519875513761136640",
+          "positive_reserve_floor": "1/14",
+          "terminal_evidence": null,
+          "index": 3,
+          "interval": [
+            "1/2",
+            "1"
+          ]
+        }
+      ],
+      "H_tile": [
+        1,
+        3
+      ],
+      "H_rectangle": [
+        [
+          "-3431785/8388608",
+          "2459371/4194304"
+        ],
+        [
+          "91/120",
+          "91/60"
+        ]
+      ]
+    }
+  ],
+  "terminal_leaves": [
+    {
+      "address": "I23H00",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "b4756c192d224dca6a302d9fb9644e6694fa6b6eb86a1726d71f08e0c2ec3dc8",
+      "local_counts": {
+        "rounds": 0,
+        "deductions": 0,
+        "premise_rows": 0,
+        "terminal_rows": 3,
+        "all_printed_rows": 3
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "491621852766767440595938681686291215363743543/401805418860244137657552736455431904087244800",
+      "positive_reserve_floor": "1/2",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H01/I4:0",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "88afd0c722619b913c45da2ec0bb10c62c554193970a1da0673669da9eccade0",
+      "local_counts": {
+        "rounds": 2,
+        "deductions": 495,
+        "premise_rows": 482,
+        "terminal_rows": 5,
+        "all_printed_rows": 487
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "77912590388613191535692024818647797/49894727624983109242910238163599360",
+      "positive_reserve_floor": "1/2",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H01/I4:1/D4:0",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "de00730e16ac371107ab05120fdb6c3b6a41e1f15d462e7a34138fe615bd0800",
+      "local_counts": {
+        "rounds": 1,
+        "deductions": 303,
+        "premise_rows": 295,
+        "terminal_rows": 40,
+        "all_printed_rows": 335
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "11642330619267627278809334624679460105789556851555456735437478538811/747210229687006328424047113916742952769131442333774684081793846476800",
+      "positive_reserve_floor": "1/66",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H01/I4:1/D4:1",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "f7b73635ebf034e8c95008646379523ddd5d09d10bbf726b72ca92e84af4d7cd",
+      "local_counts": {
+        "rounds": 1,
+        "deductions": 312,
+        "premise_rows": 318,
+        "terminal_rows": 24,
+        "all_printed_rows": 342
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "14428370421289391596148832999698616811371270541/651685976597102965510464463519640252839635189760",
+      "positive_reserve_floor": "1/47",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H01/I4:1/D4:2",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "7b89b71f6f60ca5b3cd6fe67a338271fe67dd5ee95f7a2beaf54d1b7ff046330",
+      "local_counts": {
+        "rounds": 1,
+        "deductions": 312,
+        "premise_rows": 287,
+        "terminal_rows": 21,
+        "all_printed_rows": 308
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "331814008887485644961564360367789063222185711/5919933171207596961487943650443363386885406720",
+      "positive_reserve_floor": "1/19",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H01/I4:1/D4:3",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "62b1895978bc87d52afaf333efd236c60ce066db45719748d6cd062abd06cb18",
+      "local_counts": {
+        "rounds": 1,
+        "deductions": 303,
+        "premise_rows": 297,
+        "terminal_rows": 3,
+        "all_printed_rows": 300
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "17460910417734301540995642546670201/13792038530483135888284130874490880",
+      "positive_reserve_floor": "1/2",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H01/I4:2",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "cd03f90f35f785b394ab138234b54fa9c3be42ca6e267a37939d9a8d4b21a6b6",
+      "local_counts": {
+        "rounds": 8,
+        "deductions": 563,
+        "premise_rows": 1970,
+        "terminal_rows": 38,
+        "all_printed_rows": 2008
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "12212536723829880699307281538860810969982066565046364155701091334781286003796162915123/13171982086817247619311315807948962279304628039932284592293128531465254652588748439552000",
+      "positive_reserve_floor": "1/1080",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H01/I4:3",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "e52c8f5c01fcd6c6f1c17757b5fb5fb9bd7a6253ee02722bd1ee0f4234eb17a2",
+      "local_counts": {
+        "rounds": 1,
+        "deductions": 142,
+        "premise_rows": 283,
+        "terminal_rows": 34,
+        "all_printed_rows": 317
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "479251925210723428458511268888996570968442776705036311618074955079101912487271/111020556769933287409148791920427668231655749674129511256008374433257575415808000",
+      "positive_reserve_floor": "1/233",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H02/I4:0",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "1ae78a2da3a5d10a9887e8e8db2ca9050158b8cb70da0bb61d331499b262f1b4",
+      "local_counts": {
+        "rounds": 2,
+        "deductions": 293,
+        "premise_rows": 483,
+        "terminal_rows": 3,
+        "all_printed_rows": 486
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "10437329905753696426987293161828713503840755730540370026545565/9109553798243458033890160031174380089515872852301333728854016",
+      "positive_reserve_floor": "1/2",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H02/I4:1",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "c678f52912104f014ce2830138a0d2306e06c986b5c29c2583f68bdbc8f10f1b",
+      "local_counts": {
+        "rounds": 9,
+        "deductions": 784,
+        "premise_rows": 2024,
+        "terminal_rows": 3,
+        "all_printed_rows": 2027
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "1128267203919649362195322463585263/1216944576219100225436835077160960",
+      "positive_reserve_floor": "1/3",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H02/I4:2",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "e5b65e06fa5e109411bf257b3c91c7980952b6dd328a3785f992a786cebcdcf9",
+      "local_counts": {
+        "rounds": 8,
+        "deductions": 539,
+        "premise_rows": 1833,
+        "terminal_rows": 29,
+        "all_printed_rows": 1862
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "17562881214725268207372307049846319596770264104880191261303966148260999932749390346625356289619440461699/30563696951644273831023212755730435259357556074653376637559702859083631001495664113134697875173327524331520",
+      "positive_reserve_floor": "1/1742",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H02/I4:3",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "5708e1331207132ce71b94106f204991edfebf5683cffbb0e5b2560206640fa7",
+      "local_counts": {
+        "rounds": 2,
+        "deductions": 387,
+        "premise_rows": 483,
+        "terminal_rows": 3,
+        "all_printed_rows": 486
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "3563839527640779148278635806660371230093028298867307878913895/2916490547798921699748867503716358513701778384781608671510528",
+      "positive_reserve_floor": "1/2",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H03",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "b697849d1f811211246790a8488f235cca3636e8af05c5daaaa57a7438d4db3d",
+      "local_counts": {
+        "rounds": 3,
+        "deductions": 678,
+        "premise_rows": 652,
+        "terminal_rows": 37,
+        "all_printed_rows": 689
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "3980800318080462229305481616177967553972683940367383141145444847338203004548758478324710182877884371/2292291268482809404039122990878918396864012769243844769656228009974236161309739720545865567028903936000",
+      "positive_reserve_floor": "1/577",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H10",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "04d2ddcbfde43388bf833770c9a3fc4c369cdee94c8f80aafba053b6485df910",
+      "local_counts": {
+        "rounds": 0,
+        "deductions": 0,
+        "premise_rows": 0,
+        "terminal_rows": 3,
+        "all_printed_rows": 3
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "15513543167281634307101225365248280128602009/13393513962008137921918424548514396802908160",
+      "positive_reserve_floor": "1/2",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H11/I4:0",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "6c11c60552feef780a7b94beaebfa514951e36849eb62c7144a878c8cf42cd2c",
+      "local_counts": {
+        "rounds": 4,
+        "deductions": 572,
+        "premise_rows": 1034,
+        "terminal_rows": 32,
+        "all_printed_rows": 1066
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "12233493847466697952096195279233378231338607314448726233444743896794998662407151791553211733412853067/1767224136540728075677135428542545427998107942621600779031421704241808323330626150464510072973164544000",
+      "positive_reserve_floor": "1/146",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H11/I4:1/D4:0",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "b67fde69835ffdd2b599b159f49f7bf775987dd478c30ebf3628c6bade63d98d",
+      "local_counts": {
+        "rounds": 3,
+        "deductions": 857,
+        "premise_rows": 898,
+        "terminal_rows": 41,
+        "all_printed_rows": 939
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "27906953562340388282547302595221433475751246697446243820486274884547394746781128971272648132600256415907/38786762807411069148850646819143494112102625439732217352003551876905489972553335892462843654744413359308800",
+      "positive_reserve_floor": "1/1391",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H11/I4:1/D4:1",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "31f316ac81150410bdc379ac3a4abd66f6a46e610ea128f0b238d9a7b532e538",
+      "local_counts": {
+        "rounds": 3,
+        "deductions": 886,
+        "premise_rows": 930,
+        "terminal_rows": 3,
+        "all_printed_rows": 933
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "297063917675591579549157/6044629098073145873530880",
+      "positive_reserve_floor": "1/22",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H11/I4:1/D4:2",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "f979a324d6def96c892a7180119988db682296584e940a1d44825b7cad3c7abf",
+      "local_counts": {
+        "rounds": 2,
+        "deductions": 585,
+        "premise_rows": 563,
+        "terminal_rows": 32,
+        "all_printed_rows": 595
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "303981712197765356023520674466690243521081380228975658845477153473878109745427296254912855575169/389665424114432479381043594913049446930599628557543257524328157174283055085566030936810205478912000",
+      "positive_reserve_floor": "1/1283",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H11/I4:1/D4:3",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "84e6e744607f33670e14ff01e0f6f7b3d308fe4fa2fea837a21379edb8068e85",
+      "local_counts": {
+        "rounds": 3,
+        "deductions": 950,
+        "premise_rows": 755,
+        "terminal_rows": 0,
+        "all_printed_rows": 755
+      },
+      "terminal_kind": "proved_empty_original_angle_interval",
+      "terminal_label": "proved_empty_original_angle_interval",
+      "reserve": null,
+      "positive_reserve_floor": null,
+      "terminal_evidence": {
+        "kind": "proved_empty_original_angle_interval",
+        "original": 5,
+        "lower": "-27300699167355/281474976710656",
+        "upper": "-15347774379039/140737488355328",
+        "gap": "3394849590723/281474976710656",
+        "checked_frame_inferences": 6,
+        "alpha_interval": [
+          "1040041/1048576",
+          "260599/262144"
+        ],
+        "beta_interval": [
+          "-25307/262144",
+          "-74617/1048576"
+        ],
+        "absolute_beta_interval": [
+          "74617/1048576",
+          "25307/262144"
+        ],
+        "independent_unit_frame_square_sum_upper": "34276141525/34359738368",
+        "independent_unit_frame_square_sum_gap": "83596843/34359738368"
+      }
+    },
+    {
+      "address": "I23H11/I4:2/D4:0",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "3af753254a2d79fc83f5d4692e0fc1e600771d4205a14164a8fe6ae6040c0659",
+      "local_counts": {
+        "rounds": 3,
+        "deductions": 868,
+        "premise_rows": 900,
+        "terminal_rows": 5,
+        "all_printed_rows": 905
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "199933390146184930175354740555183/4867778304876400901747340308643840",
+      "positive_reserve_floor": "1/26",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H11/I4:2/D4:1",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "b952af5938435c78b4860eece68b8467e7124a14aabd835e03562c56d31c183a",
+      "local_counts": {
+        "rounds": 3,
+        "deductions": 909,
+        "premise_rows": 910,
+        "terminal_rows": 3,
+        "all_printed_rows": 913
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "204037863928095220725184329950448785211070039/160722167544097655063021094582172761634897920",
+      "positive_reserve_floor": "1/2",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H11/I4:2/D4:2",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "ad15b4e53140b066830fe599c2ea7f685a9a4466bab3551e037dd90607f8fc88",
+      "local_counts": {
+        "rounds": 2,
+        "deductions": 597,
+        "premise_rows": 587,
+        "terminal_rows": 19,
+        "all_printed_rows": 606
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "28617899706040970301033226359221521319286239850214567471699927/2721826479146635304459381714365178068721992244050348094364057600",
+      "positive_reserve_floor": "1/97",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H11/I4:2/D4:3",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "85b21f1c3d07c4363b1cee82dc5c3a9c3e218f8047f61c7840ff00abaf28c4ca",
+      "local_counts": {
+        "rounds": 2,
+        "deductions": 582,
+        "premise_rows": 623,
+        "terminal_rows": 31,
+        "all_printed_rows": 654
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "242999706004326272278337176215329665612088205013141463043624976683838020595893102751629605567/77552059283919569993798674975431199424134284044185807837265505487980024971503760198653181952000",
+      "positive_reserve_floor": "1/321",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H11/I4:3",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "bcbf10d997ac6b32db60a8553a9fe582e2fadacc33cd5c848e1af53688b91301",
+      "local_counts": {
+        "rounds": 3,
+        "deductions": 377,
+        "premise_rows": 785,
+        "terminal_rows": 32,
+        "all_printed_rows": 817
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "45776557117026967262418329621737188614687563601482530200404579692812039243579308773417354954107893/9716414706586062524282214179595137155449668936929483392945589860624004101173659047673967375548416000",
+      "positive_reserve_floor": "1/214",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H12/I4:0",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "225a0971e818699f66d28e0ad207b5bf44b3ae1192555ed3acbd9b5429a933f5",
+      "local_counts": {
+        "rounds": 5,
+        "deductions": 678,
+        "premise_rows": 1102,
+        "terminal_rows": 46,
+        "all_printed_rows": 1148
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "436613340877843895411260920042100993923734372076357505278480430722374628117918797924242627670344696592602997683081685430946498265/4181288553215238196027039448068420131818353414146567571300740897499665461360379128657919901559170870094178853821673658741466775683072",
+      "positive_reserve_floor": "1/9578",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H12/I4:1/D4:0",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "2714f8f90376ab48850b3c2111339e26eddbbfb6a1b9b80b55de7e13649fbc41",
+      "local_counts": {
+        "rounds": 2,
+        "deductions": 539,
+        "premise_rows": 539,
+        "terminal_rows": 34,
+        "all_printed_rows": 573
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "15548325078933706933325945411143127744759715956576076427551863/4277111838809621971879069400963459250792697698757696187636121600",
+      "positive_reserve_floor": "1/277",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H12/I4:1/D4:1",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "3be77704a251108882635f8a87558a42850dba3aa73f5e10e343e99c840a819c",
+      "local_counts": {
+        "rounds": 2,
+        "deductions": 636,
+        "premise_rows": 481,
+        "terminal_rows": 3,
+        "all_printed_rows": 484
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "234277547588059268362086593371/190333281040127217265740349440",
+      "positive_reserve_floor": "1/2",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H12/I4:1/D4:2",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "a2cd1dec3dbca9898a334a06d515f110f04db3e230455d1ca289c208ed0471bf",
+      "local_counts": {
+        "rounds": 2,
+        "deductions": 648,
+        "premise_rows": 424,
+        "terminal_rows": 3,
+        "all_printed_rows": 427
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "47362142779629825588100791167/38066656208025443453148069888",
+      "positive_reserve_floor": "1/2",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H12/I4:1/D4:3",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "d5f07ce83f2389124629ebeada7c4cde2929a60094afd5b986931fe2064d01ec",
+      "local_counts": {
+        "rounds": 2,
+        "deductions": 614,
+        "premise_rows": 484,
+        "terminal_rows": 3,
+        "all_printed_rows": 487
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "1707391706364547198785336619/1547425049106725343623905280",
+      "positive_reserve_floor": "1/2",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H12/I4:2/D4:0",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "ab5e3b49dca67ca4f3374418473d515a75d56b1abf441f99dd0a43df91dbcdd6",
+      "local_counts": {
+        "rounds": 2,
+        "deductions": 570,
+        "premise_rows": 479,
+        "terminal_rows": 5,
+        "all_printed_rows": 484
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "24914820797842657463724289405111169581038716179/625814185738451922595497245301744240286079385600",
+      "positive_reserve_floor": "1/27",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H12/I4:2/D4:1",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "ab52f95627113ade6341e4e2e31229826ac4feebebc1790283d87eded3e5a55b",
+      "local_counts": {
+        "rounds": 2,
+        "deductions": 640,
+        "premise_rows": 470,
+        "terminal_rows": 3,
+        "all_printed_rows": 473
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "19468369523630955005497451169279059/15211807202738752817960438464512000",
+      "positive_reserve_floor": "1/2",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H12/I4:2/D4:2",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "3d84e0316f6acfae4ad1bef21964fa0795aaf00ed9573a7cbfe777b8f0a2417a",
+      "local_counts": {
+        "rounds": 2,
+        "deductions": 653,
+        "premise_rows": 426,
+        "terminal_rows": 7,
+        "all_printed_rows": 433
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "1249629326507011348955313936617847818878666453757497442802114276007164600319/726141377214630492130157119785910061754805216379944861630733861610628055040",
+      "positive_reserve_floor": "1/2",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H12/I4:2/D4:3",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "f5ddf7227e7645f566545e711f5a34a49dc3c0e15677cfe865884b945995ac4b",
+      "local_counts": {
+        "rounds": 2,
+        "deductions": 616,
+        "premise_rows": 502,
+        "terminal_rows": 3,
+        "all_printed_rows": 505
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "1271856817889019926549683561/1160568786830044007717928960",
+      "positive_reserve_floor": "1/2",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H12/I4:3",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "fdf76fe445a0ccb85843a1c80afab52a6c92169a5146920a17997d1aa3912bde",
+      "local_counts": {
+        "rounds": 4,
+        "deductions": 617,
+        "premise_rows": 874,
+        "terminal_rows": 39,
+        "all_printed_rows": 913
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "1860098920674814225018886645622296383887591351111151642904979540448262555659679409410759764005790959252854157648043919/587173194587427989911312146411457645139583071631365292378631330834393118821946606099677250426545432632302591032059494400",
+      "positive_reserve_floor": "1/317",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H13/I4:0",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "d4ac27815d215f6469c473094bfbcc9996a498f5054659d0e1680c8d9b4f475a",
+      "local_counts": {
+        "rounds": 5,
+        "deductions": 1420,
+        "premise_rows": 1266,
+        "terminal_rows": 32,
+        "all_printed_rows": 1298
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "8930282726962941430529568403073789155798186776169944401462740184994692596389687634444176444500886233/17056539239063708414590140806949487637788267342438953843603043846737267790532111757656964763786216996864",
+      "positive_reserve_floor": "1/1911",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H13/I4:1/D4:0",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "43ec2f95020d59312c7ac73d2c9fc95a78598104ee28db60a2d68be07b274cde",
+      "local_counts": {
+        "rounds": 1,
+        "deductions": 342,
+        "premise_rows": 282,
+        "terminal_rows": 5,
+        "all_printed_rows": 287
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "157720982715604469708613893/2103530926129454763988746240",
+      "positive_reserve_floor": "1/15",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H13/I4:1/D4:1",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "b594e284a46fa063811d8dfc19622ebb7b30e9812758d8874531ae2a2106ac1c",
+      "local_counts": {
+        "rounds": 1,
+        "deductions": 335,
+        "premise_rows": 272,
+        "terminal_rows": 33,
+        "all_printed_rows": 305
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "32266638435736098277250212896850686551330135629338676247199877805090217858863456027435194952020759361323065455185651850248681777/8033099228789361909256324451822458229786497028417156037747990682827077486606356069312643041184166511884190028463978085616084582400",
+      "positive_reserve_floor": "1/250",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H13/I4:1/D4:2",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "29dd1862c6e9cc8902ca13921098b786e2821976e87a8b2b45085aafe6eea167",
+      "local_counts": {
+        "rounds": 1,
+        "deductions": 333,
+        "premise_rows": 260,
+        "terminal_rows": 35,
+        "all_printed_rows": 295
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "84894536199693404142093180028352941677319968799013708629223246775375373541186690219845562015780747125187562407449301444458520421156993157849445173/37897364457334569424757435455222755537309570538628708874783883882743778362670830330949350268837156210087956601179473984231170909312047767330226176000",
+      "positive_reserve_floor": "1/448",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H13/I4:1/D4:3",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "5861d8d36eb688075aa5c6e056e02cae18740fc88be48e5102f079c77d0a0155",
+      "local_counts": {
+        "rounds": 1,
+        "deductions": 314,
+        "premise_rows": 289,
+        "terminal_rows": 31,
+        "all_printed_rows": 320
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "2412169691001531016855042039477873358936316174310608079483700729294446609/1025746952705313985694685664270289523045843764221935603895479952244851343360",
+      "positive_reserve_floor": "1/427",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H13/I4:2",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "141035a88c6b9b525accbd4bb8a3d48f079a806a36b0d9c23cea4a422ef48502",
+      "local_counts": {
+        "rounds": 5,
+        "deductions": 1426,
+        "premise_rows": 1416,
+        "terminal_rows": 3,
+        "all_printed_rows": 1419
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "807508448236145105333111/9066943647109718810296320",
+      "positive_reserve_floor": "1/13",
+      "terminal_evidence": null
+    },
+    {
+      "address": "I23H13/I4:3",
+      "kind": "accepted_bound_terminal",
+      "certificate_sha256": "a0391603d73bec4de064a2cf240d7c06af8a8390edb1220cc06b96b20561380c",
+      "local_counts": {
+        "rounds": 4,
+        "deductions": 1173,
+        "premise_rows": 968,
+        "terminal_rows": 5,
+        "all_printed_rows": 973
+      },
+      "terminal_kind": "positive_exact_reserve",
+      "terminal_label": "positive_exact_reserve",
+      "reserve": "3552969105215598219892004660198481802050795308775260784201601/42996692052456945229284676756948469037395622519875513761136640",
+      "positive_reserve_floor": "1/14",
+      "terminal_evidence": null
+    }
+  ],
+  "new_selected_bound_records": 52,
+  "new_selected_local_counts": {
+    "rounds": 194,
+    "deductions": 29470,
+    "premise_rows": 43124,
+    "terminal_rows": 734,
+    "all_printed_rows": 43858
+  },
+  "base_and_supplement_counts": {
+    "rounds": 370,
+    "deductions": 62963,
+    "premise_rows": 86344,
+    "terminal_rows": 1628,
+    "all_printed_rows": 87972
+  },
+  "selected_energy_row_occurrences": {
+    "three_square_center_energy_": 347,
+    "four_center_energy_": 10,
+    "square_area_moment_secant_": 3
+  },
+  "remaining_original_I_tiles": [
+    [
+      2,
+      2
+    ]
+  ]
+}

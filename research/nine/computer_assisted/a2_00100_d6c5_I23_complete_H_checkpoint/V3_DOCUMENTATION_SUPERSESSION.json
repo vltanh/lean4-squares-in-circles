@@ -1,0 +1,42 @@
+{
+  "schema": "D6c5_I23_v3_documentation_supersession_v1",
+  "preserved_prior_v2_files": {
+    "I23_SUPPLEMENT_MANIFEST.json": {
+      "path": "/workspace/scratch/fee12ff81cbd/a_family/other_masks/d6c5_I23_H_supplement_v2/I23_SUPPLEMENT_MANIFEST.json",
+      "sha256": "b8995d5825f5f88a723930cccb7bf8e1e30b0adb28bcff3f37d925211acffaf3"
+    },
+    "verify_d6c5_I23_H_supplement.py": {
+      "path": "/workspace/scratch/fee12ff81cbd/a_family/other_masks/d6c5_I23_H_supplement_v2/verify_d6c5_I23_H_supplement.py",
+      "sha256": "3c9cbf048e7df2326af9ea1a6fd31ccfc4edb790719d47b437696b510218aa19"
+    },
+    "HAND_PROOF.md": {
+      "path": "/workspace/scratch/fee12ff81cbd/a_family/other_masks/d6c5_I23_H_supplement_v2/HAND_PROOF.md",
+      "sha256": "e5a191edaead8a5ffeeb7edcd275124ded20d2c2ce629da6434998759df7b113"
+    },
+    "COVER_TABLE.json": {
+      "path": "/workspace/scratch/fee12ff81cbd/a_family/other_masks/d6c5_I23_H_supplement_v2/COVER_TABLE.json",
+      "sha256": "fa9836845c75eac07fd747e3079d376290b1b3cd9b00192661c6388efd8548dd"
+    },
+    "I23_SUPPLEMENT_COMPOSITION_REPLAY.json": {
+      "path": "/workspace/scratch/fee12ff81cbd/a_family/other_masks/d6c5_I23_H_supplement_v2/I23_SUPPLEMENT_COMPOSITION_REPLAY.json",
+      "sha256": "607c23d995ad89a82055830185b04323e3e690fe69ff70e3625f9604cf31c25e"
+    }
+  },
+  "unchanged_mathematical_component_manifest_sha256": "4d30e61283571ca74986957f047ae848127ea7e65fba0fadebe364d6af708b7d",
+  "unchanged_prior_I21_arithmetic_manifest_sha256": "99b9b662e0eb92767f85f220f42b3e07b765da3f8ae3449ec3963bbd60a64007",
+  "correction": "Recognize four_center_energy_ alongside planar_four_center_sum_; bind the five accepted physical premise files.",
+  "corrected_I23_energy_occurrences": {
+    "three_square": 347,
+    "four_center": 10,
+    "area": 3,
+    "total": 360
+  },
+  "corrected_prior_I21_energy_occurrences": {
+    "three_square": 497,
+    "four_center": 9,
+    "total": 506
+  },
+  "all_original_weighted_rows_and_certificates_unchanged": true,
+  "new_original_cells": 0,
+  "new_masks": 0
+}

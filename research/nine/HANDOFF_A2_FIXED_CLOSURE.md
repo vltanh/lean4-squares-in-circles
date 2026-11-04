@@ -628,7 +628,27 @@ accounting, not additional original cells or masks. The fixed ledgers stay
 218/231 original cells and 8/32 masks closed, with all other denominators
 unchanged. Whole-original acceptance is a separate remaining obligation.
 
-## D6c5: I21 complete, I22 and I23 remaining
+## D6c5: I23 complete, only I22 remaining
+
+The [complete I23 supplement](A2_00100_D6C5_I23_COMPLETE_H_COVER_CHECKPOINT.md)
+excludes all eight H products by three ordinary terminals, five complete
+I-angle covers and six complete D-angle subcovers. All 41 terminal domains
+retain the original caller and every touching face. The exact composition,
+two source/hand/table reviews and the root's full archive audit pass on the
+2,255-input packet. Its 52 selected records contain 194 local rounds, 29,470
+deductions, 43,124 premise rows and 734 terminal rows.
+
+The complete energy appendix includes 347 three-square, 10 four-center and
+3 area-moment occurrences. A separate addendum corrects the earlier I21
+appendix to 497 three-square plus 9 four-center occurrences, with all five
+accepted geometric premise files attached. The earlier mathematical sources
+and arithmetic totals remain unchanged.
+
+Fifteen of D6c5's sixteen I rectangles are now excluded; I22 remains OPEN.
+This checkpoint adds zero whole-original, mask, positional-root or roadmap
+credit. The fixed ledgers remain 219/231 original cells and 8/32 masks closed.
+
+## Earlier D6c5 I21 checkpoint, with I23 subsequently completed
 
 The [I21 checkpoint](A2_00100_D6C5_I21_COMPLETE_H_COVER_CHECKPOINT.md)
 composes four I-angle covers, two D-angle subcovers and the accepted AHID

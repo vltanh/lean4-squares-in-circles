@@ -1,0 +1,57 @@
+{
+  "schema": "D6c5_I23_v3_root_literal_physical_hand_and_archive_review_v1",
+  "status": "PASS_COMPLETE_I23_WITH_I22_EXPLICITLY_OPEN",
+  "checked_at": "2026-11-04T13:00:24.881023+00:00",
+  "input_manifest_sha256": "6abcc61af5923520746d14b378fee6b4f347b5ea44f77c74c16139a6443d8e57",
+  "frozen_inputs": 2255,
+  "master_sha256": "8742d413d0df5f7785db7bacc22d810b12fa8990a1f36ab6d341287ac0d06ae2",
+  "native_composition_sha256": "934d715f57fbe734ac6431793ea0cab61b782167a64285f89e67de458465eb5a",
+  "full_changed_source_and_physical_hand_read": true,
+  "all_eight_H_products_and_eleven_frame_unions_recomputed": true,
+  "all_41_hand_terminal_rows_match_raw_records": true,
+  "selected_records": 52,
+  "selected_counts": {
+    "rounds": 194,
+    "deductions": 29470,
+    "premise_rows": 43124,
+    "terminal_rows": 734,
+    "all_printed_rows": 43858
+  },
+  "energy_occurrences": {
+    "three_square_center_energy_": 347,
+    "four_center_energy_": 10,
+    "square_area_moment_secant_": 3
+  },
+  "energy_labels": 36,
+  "energy_definitions": 255,
+  "prior_I21_energy_occurrences": {
+    "three_square_center_energy_": 497,
+    "four_center_energy_": 9
+  },
+  "prior_I21_omitted_four_rows_exactly_reproduced": 9,
+  "physical_premise_files": {
+    "physical_proofs/FOUR_ORIGINAL_PLANAR_MATCHING_AND_ENERGY_HAND_PROOF.md": "c8e665a2abd2c67df541e612c874bc30b469f817cb6151cd77e21179533b0c18",
+    "physical_proofs/FOUR_ORIGINAL_PLANAR_ENERGY_INDEPENDENT_REVIEW.md": "5808a7fa00f490f508ae2c2612ed6aeb6ec352eff96960ff7be357676260cd28",
+    "physical_proofs/PHYSICAL_SQUARE_AREA_MOMENT_HAND_PROOF.md": "86f402efbf135228d2dd0d034fa55f56206c9176f4afe8354c4cf880b3fab293",
+    "physical_proofs/four_original_planar_rows_replay.json": "8fd1fb67b9675ab9daa8f9c4b368e398496c86755ef920ac5aa1e01cb65ade03",
+    "physical_proofs/square_area_moment_rows_replay.json": "cbe05ea3e83c692e0d9d4666a198ed79e425d3d96380661cfcf9615f0212240d"
+  },
+  "all_input_hashes_unchanged": true,
+  "archive_sha256": "c58aedd5dd0d5efc3dbc0422703ced905f31667e77de303387ce4b377c34993d",
+  "archive_members": 2272,
+  "every_archive_payload_and_safe_prior_hardlink_checked": true,
+  "complete_XZ_footer_consumed": true,
+  "prior_I21_arithmetic_and_source_bytes_unchanged": true,
+  "weighted_arithmetic_repeated_by_root": false,
+  "exact_excluded_original_I_rectangles": 15,
+  "remaining_original_I_tiles": [
+    [
+      2,
+      2
+    ]
+  ],
+  "whole_original_closed": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "seconds": 10.393640373993549
+}

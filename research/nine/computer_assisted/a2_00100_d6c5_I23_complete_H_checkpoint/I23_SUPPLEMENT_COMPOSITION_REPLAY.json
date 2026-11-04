@@ -1,0 +1,863 @@
+{
+  "schema": "D6c5_I23_complete_H_I_D_supplement_assembly_v1",
+  "status": "PASS_FIFTEEN_EXCLUDED_I_RECTANGLES_WITH_ONE_OPEN_REMAINDER",
+  "proof_mode": "COMPOSITION_OF_PINNED_COMPLETED_EXACT_REPORTS",
+  "id": "positive-6c5f13d07e5538df",
+  "original_path": [
+    [
+      "angle",
+      3,
+      1
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      1
+    ],
+    [
+      "alternate_four_escape",
+      [
+        1,
+        7
+      ],
+      [
+        1
+      ]
+    ]
+  ],
+  "original_prefix_sha256": "d247d7e09ee9366a29164a26c3a776a36fd6dc1fbaa6c88e30190dfd8d9fa1df",
+  "base_composition_sha256": "b7234852ff142763daad17012722acc532df4aa1f5686b9fb63da0443f6745ad",
+  "base_manifest_sha256": "99b9b662e0eb92767f85f220f42b3e07b765da3f8ae3449ec3963bbd60a64007",
+  "core_manifest_sha256": "4d30e61283571ca74986957f047ae848127ea7e65fba0fadebe364d6af708b7d",
+  "component_report_sha256": {
+    "core/D6C5_ALL_H_I13_SLOPE_COMPONENT_EXACT_REPLAY.json": "a9a851e67e27caa69ba62aacd90c531828a57d1f9f9c9192de31f308c472da43",
+    "core/D6C5_COMPLETED_I_GROUPS_EXACT_REPLAY.json": "94637ce3d9fee31f17199d056c1454db52c837668c01cd049f4a19df7afc2def",
+    "core/D6C5_REMAINING_I_AND_NINE_EXACT_REPLAY.json": "45b2d4ecaf3898bc3a500f1112ba5e8f7a4f92d803ad9669f9609ce747a3c90f",
+    "core/D6C5_I23_SIX_EXACT_REPLAY.json": "b821e79674e3a45f561de229eed539ba2bc46bd3320d1903cbd593e0f2985e68",
+    "core/D6C5_I23_NINE_EXACT_REPLAY.json": "a819dc09f7a6b16e40e1af589e5cc556af16f103ff4377ec875ad4869324f1c0",
+    "accepted_reports/D6C5_I23_D24_EXACT_REPLAY.json": "f364a3b8c6036c133391352e7d89f34566ecfa531572c4beac9d90bba153e38d"
+  },
+  "exact_supplemented_I_rectangles": 1,
+  "complete_H_rectangles": 8,
+  "ordinary_H_terminals": 3,
+  "complete_I_angle_H_covers": 5,
+  "complete_D_angle_I_subcovers": 6,
+  "selected_terminal_domains": 41,
+  "ordinary_restricted_or_normal_bound_terminals": 41,
+  "accepted_sharp_terminals": 0,
+  "coverage": [
+    {
+      "tile": [
+        2,
+        3,
+        0,
+        0
+      ],
+      "H_rectangle": [
+        [
+          "-1472789/1048576",
+          "-3431785/8388608"
+        ],
+        [
+          "-91/60",
+          "-91/120"
+        ]
+      ],
+      "kind": "accepted_bound_terminal"
+    },
+    {
+      "tile": [
+        2,
+        3,
+        0,
+        1
+      ],
+      "H_rectangle": [
+        [
+          "-1472789/1048576",
+          "-3431785/8388608"
+        ],
+        [
+          "-91/120",
+          "0"
+        ]
+      ],
+      "kind": "complete_slope_cover"
+    },
+    {
+      "tile": [
+        2,
+        3,
+        0,
+        2
+      ],
+      "H_rectangle": [
+        [
+          "-1472789/1048576",
+          "-3431785/8388608"
+        ],
+        [
+          "0",
+          "91/120"
+        ]
+      ],
+      "kind": "complete_slope_cover"
+    },
+    {
+      "tile": [
+        2,
+        3,
+        0,
+        3
+      ],
+      "H_rectangle": [
+        [
+          "-1472789/1048576",
+          "-3431785/8388608"
+        ],
+        [
+          "91/120",
+          "91/60"
+        ]
+      ],
+      "kind": "accepted_bound_terminal"
+    },
+    {
+      "tile": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "H_rectangle": [
+        [
+          "-3431785/8388608",
+          "2459371/4194304"
+        ],
+        [
+          "-91/60",
+          "-91/120"
+        ]
+      ],
+      "kind": "accepted_bound_terminal"
+    },
+    {
+      "tile": [
+        2,
+        3,
+        1,
+        1
+      ],
+      "H_rectangle": [
+        [
+          "-3431785/8388608",
+          "2459371/4194304"
+        ],
+        [
+          "-91/120",
+          "0"
+        ]
+      ],
+      "kind": "complete_slope_cover"
+    },
+    {
+      "tile": [
+        2,
+        3,
+        1,
+        2
+      ],
+      "H_rectangle": [
+        [
+          "-3431785/8388608",
+          "2459371/4194304"
+        ],
+        [
+          "0",
+          "91/120"
+        ]
+      ],
+      "kind": "complete_slope_cover"
+    },
+    {
+      "tile": [
+        2,
+        3,
+        1,
+        3
+      ],
+      "H_rectangle": [
+        [
+          "-3431785/8388608",
+          "2459371/4194304"
+        ],
+        [
+          "91/120",
+          "91/60"
+        ]
+      ],
+      "kind": "complete_slope_cover"
+    }
+  ],
+  "selected_new_bound_records": [
+    {
+      "certificate_sha256": "04d2ddcbfde43388bf833770c9a3fc4c369cdee94c8f80aafba053b6485df910",
+      "rounds": 0,
+      "deductions": 0,
+      "premise_rows": 0,
+      "terminal_rows": 3,
+      "all_printed_rows": 3,
+      "roles": [
+        "ordinary_H_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "141035a88c6b9b525accbd4bb8a3d48f079a806a36b0d9c23cea4a422ef48502",
+      "rounds": 5,
+      "deductions": 1426,
+      "premise_rows": 1416,
+      "terminal_rows": 3,
+      "all_printed_rows": 1419,
+      "roles": [
+        "restricted_I_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "17e96f15e8f598de64a7c2affebf44770b8b0615f75a40f9b16d786eac420cf6",
+      "rounds": 6,
+      "deductions": 378,
+      "premise_rows": 1242,
+      "terminal_rows": 0,
+      "all_printed_rows": 1242,
+      "roles": [
+        "common_H6"
+      ]
+    },
+    {
+      "certificate_sha256": "1ae78a2da3a5d10a9887e8e8db2ca9050158b8cb70da0bb61d331499b262f1b4",
+      "rounds": 2,
+      "deductions": 293,
+      "premise_rows": 483,
+      "terminal_rows": 3,
+      "all_printed_rows": 486,
+      "roles": [
+        "restricted_I_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "225a0971e818699f66d28e0ad207b5bf44b3ae1192555ed3acbd9b5429a933f5",
+      "rounds": 5,
+      "deductions": 678,
+      "premise_rows": 1102,
+      "terminal_rows": 46,
+      "all_printed_rows": 1148,
+      "roles": [
+        "restricted_I_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "2714f8f90376ab48850b3c2111339e26eddbbfb6a1b9b80b55de7e13649fbc41",
+      "rounds": 2,
+      "deductions": 539,
+      "premise_rows": 539,
+      "terminal_rows": 34,
+      "all_printed_rows": 573,
+      "roles": [
+        "restricted_D_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "29dd1862c6e9cc8902ca13921098b786e2821976e87a8b2b45085aafe6eea167",
+      "rounds": 1,
+      "deductions": 333,
+      "premise_rows": 260,
+      "terminal_rows": 35,
+      "all_printed_rows": 295,
+      "roles": [
+        "restricted_D_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "31f316ac81150410bdc379ac3a4abd66f6a46e610ea128f0b238d9a7b532e538",
+      "rounds": 3,
+      "deductions": 886,
+      "premise_rows": 930,
+      "terminal_rows": 3,
+      "all_printed_rows": 933,
+      "roles": [
+        "restricted_D_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "3af753254a2d79fc83f5d4692e0fc1e600771d4205a14164a8fe6ae6040c0659",
+      "rounds": 3,
+      "deductions": 868,
+      "premise_rows": 900,
+      "terminal_rows": 5,
+      "all_printed_rows": 905,
+      "roles": [
+        "restricted_D_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "3be77704a251108882635f8a87558a42850dba3aa73f5e10e343e99c840a819c",
+      "rounds": 2,
+      "deductions": 636,
+      "premise_rows": 481,
+      "terminal_rows": 3,
+      "all_printed_rows": 484,
+      "roles": [
+        "restricted_D_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "3d84e0316f6acfae4ad1bef21964fa0795aaf00ed9573a7cbfe777b8f0a2417a",
+      "rounds": 2,
+      "deductions": 653,
+      "premise_rows": 426,
+      "terminal_rows": 7,
+      "all_printed_rows": 433,
+      "roles": [
+        "restricted_D_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "43ec2f95020d59312c7ac73d2c9fc95a78598104ee28db60a2d68be07b274cde",
+      "rounds": 1,
+      "deductions": 342,
+      "premise_rows": 282,
+      "terminal_rows": 5,
+      "all_printed_rows": 287,
+      "roles": [
+        "restricted_D_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "4cd2323916e5c80204b4fba34926537d012a60015a5fa25c98db29779c21c5b2",
+      "rounds": 9,
+      "deductions": 409,
+      "premise_rows": 1781,
+      "terminal_rows": 0,
+      "all_printed_rows": 1781,
+      "roles": [
+        "common_I9"
+      ]
+    },
+    {
+      "certificate_sha256": "5708e1331207132ce71b94106f204991edfebf5683cffbb0e5b2560206640fa7",
+      "rounds": 2,
+      "deductions": 387,
+      "premise_rows": 483,
+      "terminal_rows": 3,
+      "all_printed_rows": 486,
+      "roles": [
+        "restricted_I_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "5861d8d36eb688075aa5c6e056e02cae18740fc88be48e5102f079c77d0a0155",
+      "rounds": 1,
+      "deductions": 314,
+      "premise_rows": 289,
+      "terminal_rows": 31,
+      "all_printed_rows": 320,
+      "roles": [
+        "restricted_D_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "5bd6c4b9bf81a6b3db8c98ee7fd23aee72254e18077d2af58e4d59ea717f612b",
+      "rounds": 6,
+      "deductions": 911,
+      "premise_rows": 1545,
+      "terminal_rows": 0,
+      "all_printed_rows": 1545,
+      "roles": [
+        "common_H6"
+      ]
+    },
+    {
+      "certificate_sha256": "62b1895978bc87d52afaf333efd236c60ce066db45719748d6cd062abd06cb18",
+      "rounds": 1,
+      "deductions": 303,
+      "premise_rows": 297,
+      "terminal_rows": 3,
+      "all_printed_rows": 300,
+      "roles": [
+        "restricted_D_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "6c11c60552feef780a7b94beaebfa514951e36849eb62c7144a878c8cf42cd2c",
+      "rounds": 4,
+      "deductions": 572,
+      "premise_rows": 1034,
+      "terminal_rows": 32,
+      "all_printed_rows": 1066,
+      "roles": [
+        "restricted_I_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "7b89b71f6f60ca5b3cd6fe67a338271fe67dd5ee95f7a2beaf54d1b7ff046330",
+      "rounds": 1,
+      "deductions": 312,
+      "premise_rows": 287,
+      "terminal_rows": 21,
+      "all_printed_rows": 308,
+      "roles": [
+        "restricted_D_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "8341ab0853ab0ba74d9871b3364c5cc7e3bb6feac4e36c345df1eac18a2a38e7",
+      "rounds": 9,
+      "deductions": 107,
+      "premise_rows": 748,
+      "terminal_rows": 0,
+      "all_printed_rows": 748,
+      "roles": [
+        "common_I9"
+      ]
+    },
+    {
+      "certificate_sha256": "84e6e744607f33670e14ff01e0f6f7b3d308fe4fa2fea837a21379edb8068e85",
+      "rounds": 3,
+      "deductions": 950,
+      "premise_rows": 755,
+      "terminal_rows": 0,
+      "all_printed_rows": 755,
+      "roles": [
+        "restricted_D_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "8500b777ddf90d255c2baa86c07ce8e6082f7f77b3254e557e60a890b745a736",
+      "rounds": 9,
+      "deductions": 158,
+      "premise_rows": 1080,
+      "terminal_rows": 0,
+      "all_printed_rows": 1080,
+      "roles": [
+        "common_I9"
+      ]
+    },
+    {
+      "certificate_sha256": "85b21f1c3d07c4363b1cee82dc5c3a9c3e218f8047f61c7840ff00abaf28c4ca",
+      "rounds": 2,
+      "deductions": 582,
+      "premise_rows": 623,
+      "terminal_rows": 31,
+      "all_printed_rows": 654,
+      "roles": [
+        "restricted_D_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "88afd0c722619b913c45da2ec0bb10c62c554193970a1da0673669da9eccade0",
+      "rounds": 2,
+      "deductions": 495,
+      "premise_rows": 482,
+      "terminal_rows": 5,
+      "all_printed_rows": 487,
+      "roles": [
+        "restricted_I_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "8a9376d07902a692132ef68982b7d9632683760901699feaea68a9b092c54693",
+      "rounds": 9,
+      "deductions": 2152,
+      "premise_rows": 2745,
+      "terminal_rows": 0,
+      "all_printed_rows": 2745,
+      "roles": [
+        "common_I9"
+      ]
+    },
+    {
+      "certificate_sha256": "93cb81387db4ed6c91980cf4f6b8ec9491f725755073889c0fca1f76fc146978",
+      "rounds": 6,
+      "deductions": 305,
+      "premise_rows": 1084,
+      "terminal_rows": 0,
+      "all_printed_rows": 1084,
+      "roles": [
+        "common_H6"
+      ]
+    },
+    {
+      "certificate_sha256": "a0391603d73bec4de064a2cf240d7c06af8a8390edb1220cc06b96b20561380c",
+      "rounds": 4,
+      "deductions": 1173,
+      "premise_rows": 968,
+      "terminal_rows": 5,
+      "all_printed_rows": 973,
+      "roles": [
+        "restricted_I_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "a20ca995774fe0d828716718ebd65eb0ec580f8864762980d44815aef4b4041d",
+      "rounds": 9,
+      "deductions": 332,
+      "premise_rows": 1438,
+      "terminal_rows": 0,
+      "all_printed_rows": 1438,
+      "roles": [
+        "common_I9"
+      ]
+    },
+    {
+      "certificate_sha256": "a2cd1dec3dbca9898a334a06d515f110f04db3e230455d1ca289c208ed0471bf",
+      "rounds": 2,
+      "deductions": 648,
+      "premise_rows": 424,
+      "terminal_rows": 3,
+      "all_printed_rows": 427,
+      "roles": [
+        "restricted_D_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "ab52f95627113ade6341e4e2e31229826ac4feebebc1790283d87eded3e5a55b",
+      "rounds": 2,
+      "deductions": 640,
+      "premise_rows": 470,
+      "terminal_rows": 3,
+      "all_printed_rows": 473,
+      "roles": [
+        "restricted_D_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "ab5e3b49dca67ca4f3374418473d515a75d56b1abf441f99dd0a43df91dbcdd6",
+      "rounds": 2,
+      "deductions": 570,
+      "premise_rows": 479,
+      "terminal_rows": 5,
+      "all_printed_rows": 484,
+      "roles": [
+        "restricted_D_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "ad15b4e53140b066830fe599c2ea7f685a9a4466bab3551e037dd90607f8fc88",
+      "rounds": 2,
+      "deductions": 597,
+      "premise_rows": 587,
+      "terminal_rows": 19,
+      "all_printed_rows": 606,
+      "roles": [
+        "restricted_D_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "b418051cc71ad7664dc66d4caf67e58540aa6a0209c09a5bc17fdf17bdb0ab37",
+      "rounds": 6,
+      "deductions": 61,
+      "premise_rows": 332,
+      "terminal_rows": 0,
+      "all_printed_rows": 332,
+      "roles": [
+        "common_H6"
+      ]
+    },
+    {
+      "certificate_sha256": "b4756c192d224dca6a302d9fb9644e6694fa6b6eb86a1726d71f08e0c2ec3dc8",
+      "rounds": 0,
+      "deductions": 0,
+      "premise_rows": 0,
+      "terminal_rows": 3,
+      "all_printed_rows": 3,
+      "roles": [
+        "ordinary_H_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "b594e284a46fa063811d8dfc19622ebb7b30e9812758d8874531ae2a2106ac1c",
+      "rounds": 1,
+      "deductions": 335,
+      "premise_rows": 272,
+      "terminal_rows": 33,
+      "all_printed_rows": 305,
+      "roles": [
+        "restricted_D_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "b67fde69835ffdd2b599b159f49f7bf775987dd478c30ebf3628c6bade63d98d",
+      "rounds": 3,
+      "deductions": 857,
+      "premise_rows": 898,
+      "terminal_rows": 41,
+      "all_printed_rows": 939,
+      "roles": [
+        "restricted_D_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "b697849d1f811211246790a8488f235cca3636e8af05c5daaaa57a7438d4db3d",
+      "rounds": 3,
+      "deductions": 678,
+      "premise_rows": 652,
+      "terminal_rows": 37,
+      "all_printed_rows": 689,
+      "roles": [
+        "ordinary_H_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "b7f1b59854009ac10f5b8afd3ee1406183f3316139df8aa7e20316cac5586100",
+      "rounds": 6,
+      "deductions": 403,
+      "premise_rows": 1233,
+      "terminal_rows": 0,
+      "all_printed_rows": 1233,
+      "roles": [
+        "common_H6"
+      ]
+    },
+    {
+      "certificate_sha256": "b952af5938435c78b4860eece68b8467e7124a14aabd835e03562c56d31c183a",
+      "rounds": 3,
+      "deductions": 909,
+      "premise_rows": 910,
+      "terminal_rows": 3,
+      "all_printed_rows": 913,
+      "roles": [
+        "restricted_D_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "bcbf10d997ac6b32db60a8553a9fe582e2fadacc33cd5c848e1af53688b91301",
+      "rounds": 3,
+      "deductions": 377,
+      "premise_rows": 785,
+      "terminal_rows": 32,
+      "all_printed_rows": 817,
+      "roles": [
+        "restricted_I_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "c678f52912104f014ce2830138a0d2306e06c986b5c29c2583f68bdbc8f10f1b",
+      "rounds": 9,
+      "deductions": 784,
+      "premise_rows": 2024,
+      "terminal_rows": 3,
+      "all_printed_rows": 2027,
+      "roles": [
+        "restricted_I_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "cb78c0b148c22720633e89d0120cf61d7b12fbe6e5addc11e6d5c027b7484dc6",
+      "rounds": 9,
+      "deductions": 406,
+      "premise_rows": 1970,
+      "terminal_rows": 0,
+      "all_printed_rows": 1970,
+      "roles": [
+        "common_I9"
+      ]
+    },
+    {
+      "certificate_sha256": "cd03f90f35f785b394ab138234b54fa9c3be42ca6e267a37939d9a8d4b21a6b6",
+      "rounds": 8,
+      "deductions": 563,
+      "premise_rows": 1970,
+      "terminal_rows": 38,
+      "all_printed_rows": 2008,
+      "roles": [
+        "restricted_I_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "d4ac27815d215f6469c473094bfbcc9996a498f5054659d0e1680c8d9b4f475a",
+      "rounds": 5,
+      "deductions": 1420,
+      "premise_rows": 1266,
+      "terminal_rows": 32,
+      "all_printed_rows": 1298,
+      "roles": [
+        "restricted_I_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "d5f07ce83f2389124629ebeada7c4cde2929a60094afd5b986931fe2064d01ec",
+      "rounds": 2,
+      "deductions": 614,
+      "premise_rows": 484,
+      "terminal_rows": 3,
+      "all_printed_rows": 487,
+      "roles": [
+        "restricted_D_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "de00730e16ac371107ab05120fdb6c3b6a41e1f15d462e7a34138fe615bd0800",
+      "rounds": 1,
+      "deductions": 303,
+      "premise_rows": 295,
+      "terminal_rows": 40,
+      "all_printed_rows": 335,
+      "roles": [
+        "restricted_D_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "e52c8f5c01fcd6c6f1c17757b5fb5fb9bd7a6253ee02722bd1ee0f4234eb17a2",
+      "rounds": 1,
+      "deductions": 142,
+      "premise_rows": 283,
+      "terminal_rows": 34,
+      "all_printed_rows": 317,
+      "roles": [
+        "restricted_I_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "e5b65e06fa5e109411bf257b3c91c7980952b6dd328a3785f992a786cebcdcf9",
+      "rounds": 8,
+      "deductions": 539,
+      "premise_rows": 1833,
+      "terminal_rows": 29,
+      "all_printed_rows": 1862,
+      "roles": [
+        "restricted_I_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "f5ddf7227e7645f566545e711f5a34a49dc3c0e15677cfe865884b945995ac4b",
+      "rounds": 2,
+      "deductions": 616,
+      "premise_rows": 502,
+      "terminal_rows": 3,
+      "all_printed_rows": 505,
+      "roles": [
+        "restricted_D_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "f7b73635ebf034e8c95008646379523ddd5d09d10bbf726b72ca92e84af4d7cd",
+      "rounds": 1,
+      "deductions": 312,
+      "premise_rows": 318,
+      "terminal_rows": 24,
+      "all_printed_rows": 342,
+      "roles": [
+        "restricted_D_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "f979a324d6def96c892a7180119988db682296584e940a1d44825b7cad3c7abf",
+      "rounds": 2,
+      "deductions": 585,
+      "premise_rows": 563,
+      "terminal_rows": 32,
+      "all_printed_rows": 595,
+      "roles": [
+        "restricted_D_terminal"
+      ]
+    },
+    {
+      "certificate_sha256": "fdf76fe445a0ccb85843a1c80afab52a6c92169a5146920a17997d1aa3912bde",
+      "rounds": 4,
+      "deductions": 617,
+      "premise_rows": 874,
+      "terminal_rows": 39,
+      "all_printed_rows": 913,
+      "roles": [
+        "restricted_I_terminal"
+      ]
+    }
+  ],
+  "new_selected_local_counts": {
+    "rounds": 194,
+    "deductions": 29470,
+    "premise_rows": 43124,
+    "terminal_rows": 734,
+    "all_printed_rows": 43858
+  },
+  "base_and_supplement_counts": {
+    "rounds": 370,
+    "deductions": 62963,
+    "premise_rows": 86344,
+    "terminal_rows": 1628,
+    "all_printed_rows": 87972
+  },
+  "selected_energy_occurrences": {
+    "three_square_center_energy_": 347,
+    "four_center_energy_": 10,
+    "square_area_moment_secant_": 3
+  },
+  "corrected_prior_I21_energy_occurrences": {
+    "three_square_center_energy_": 497,
+    "four_center_energy_": 9
+  },
+  "physical_theorem_dependencies": {
+    "physical_proofs/FOUR_ORIGINAL_PLANAR_MATCHING_AND_ENERGY_HAND_PROOF.md": "c8e665a2abd2c67df541e612c874bc30b469f817cb6151cd77e21179533b0c18",
+    "physical_proofs/FOUR_ORIGINAL_PLANAR_ENERGY_INDEPENDENT_REVIEW.md": "5808a7fa00f490f508ae2c2612ed6aeb6ec352eff96960ff7be357676260cd28",
+    "physical_proofs/PHYSICAL_SQUARE_AREA_MOMENT_HAND_PROOF.md": "86f402efbf135228d2dd0d034fa55f56206c9176f4afe8354c4cf880b3fab293",
+    "physical_proofs/four_original_planar_rows_replay.json": "8fd1fb67b9675ab9daa8f9c4b368e398496c86755ef920ac5aa1e01cb65ade03",
+    "physical_proofs/square_area_moment_rows_replay.json": "cbe05ea3e83c692e0d9d4666a198ed79e425d3d96380661cfcf9615f0212240d"
+  },
+  "prior_I21_mathematical_sources_unchanged": true,
+  "exact_excluded_original_I_rectangles": 15,
+  "remaining_original_I_tiles": [
+    [
+      2,
+      2
+    ]
+  ],
+  "all_original_I_rectangles_accounted_for": 16,
+  "all_closed_faces_retained": true,
+  "common_I6_antecedent_already_counted_in_base": true,
+  "shorter_same_domain_continuations_counted_again": false,
+  "retained_prefix_hashes": [
+    "0c477f725ebebc00f69defa6d601591b03ebe46af271285875c36a62500f9913",
+    "0ee569e242b3653efebde59c0bc694d8ce1078244e89daf9db83b1750f6160e3",
+    "0f07ec76aea91f7c7b2b1db91274b4b6ea9db795c6638cb1e89b1a18632a20ac",
+    "10599786b5957606cce8965a3ef94c9d82cc779fa9750c1b12a4c420e24397c2",
+    "127f66ee5b05b96a2ff97adb0d13f01eda0b8cdb71819d0cf57eecac119bd495",
+    "1c6af7eb76cf7a0f575b0fb6ab8dd3735eb8554c20c7064b1fb2a5cd87c7b972",
+    "2a69392ce063dd667e6e97265ceec6bc202c919456369959a2fe753bd17693fc",
+    "2cf97e07099aaedc60652d876de0a975f6b40b19dbb481a30ebf0a0adc26fe94",
+    "300bd7f9fec8d9311246c6fbefa878ba843b79bbab2fbb4b80a219a18961071a",
+    "36629d00ac45d9bbd728d3a4d4c8088b9a38538e27b87f233f803de4dea2f97a",
+    "37d5724da5ace427dcc7a71314a2dd5523b534d46ecfa8fe4c9f53fe24cd53a8",
+    "37f454fc2925eb171992421e47c867fff59afd330382bce0a9c597c00308b51d",
+    "4c2b98e71ab2e914031981e83275d7f53d0ada5ff0ea8c9c7b3947582ba08143",
+    "4c2e6280de1ce52890d7d2a680ef30583ae26ab373e523ac42910926ca5acfe5",
+    "5e6084e7b06017bedfcf03171b0296356588779b4560ebc4005f4892b5768175",
+    "64d2a0d0d6de5e2a32c66cb170c081d3ed912ffa7f3734136bc1b795a06f7986",
+    "761c934bf2b1aefebd9d54c19379feb0858edb7ae59f74947aa35c0d25f1ae4f",
+    "78b28c919ba6d93e1e6901dfa8403424d12fcd774f316be223665a3ba4634226",
+    "7a8293a5e63ee3df0c60384fac6e82d0f9b9b142fe4356ae35ac5214e13cf3e7",
+    "7b03f8ffd80bdc3076d2c3b18164e1b954fc45fb8423f5d48b5efcd9b1ea89c3",
+    "7b5fc88d4d4121fad7e96d7ad4215908ae7c5293ac591ad163b5aa28d0a8474d",
+    "86ca53d43e0a2f779e23c810d2867c5a1b73a450fccb3822c58c7ff18bf5dd16",
+    "a37ac9046adf3a99fcf08668486e9587efde8b29416443b359163bfed7b120d4",
+    "b4158dd5e4c619ac112902d4516730bc2326f9cc431ca242e754afcef085f8e5",
+    "bf27ce5c63e369d606e2eedf00cd88225a5c40422517cf064578e8eff62d07c9",
+    "cef85ad54c6ddadaa194ed27ef3a80ebde1461c39584cbec2088cabdae100299",
+    "d2e52be27e675b78cb0cca8e0d1b9e1229f6ec684a594e430293ef27fd7acc1a",
+    "dfeee70a86567cdd3f450ee7a0b0cd3a73f31f82e4c61ad70b80cb25a26841ca",
+    "fef99ab822ecf3a15c822d80035eec44cd69933a43c442156e6a4f9836d0e7f7"
+  ],
+  "frozen_inputs": 2255,
+  "frozen_manifest_sha256": "6abcc61af5923520746d14b378fee6b4f347b5ea44f77c74c16139a6443d8e57",
+  "all_frozen_inputs_unchanged": true,
+  "checker_sha256": "8742d413d0df5f7785db7bacc22d810b12fa8990a1f36ab6d341287ac0d06ae2",
+  "physical_arithmetic_repeated": false,
+  "whole_original_closed": false,
+  "whole_mask_closed": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "lean_lake_ci_run": false,
+  "seconds": 73.8188505260041
+}

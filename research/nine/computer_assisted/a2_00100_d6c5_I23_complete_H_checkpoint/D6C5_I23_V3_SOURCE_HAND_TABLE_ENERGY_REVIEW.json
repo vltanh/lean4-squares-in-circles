@@ -1,0 +1,50 @@
+{
+  "schema": "D6c5_I23_v3_independent_source_table_and_energy_review_v1",
+  "status": "PASS",
+  "reviewer_sha256": "868156c628ed7d43e69e6114c4e8ea9108e4d9e8bbbe5fb14d9b3fef8e1ab74e",
+  "source_sha256": {
+    "/workspace/scratch/fee12ff81cbd/a_family/other_masks/d6c5_I23_H_supplement_v3/I23_SUPPLEMENT_MANIFEST.json": "6abcc61af5923520746d14b378fee6b4f347b5ea44f77c74c16139a6443d8e57",
+    "/workspace/scratch/fee12ff81cbd/a_family/other_masks/d6c5_I23_H_supplement_v3/verify_d6c5_I23_H_supplement_v3.py": "8742d413d0df5f7785db7bacc22d810b12fa8990a1f36ab6d341287ac0d06ae2",
+    "/workspace/scratch/fee12ff81cbd/a_family/other_masks/d6c5_I23_H_supplement_v3/COVER_TABLE.json": "ed7ca309d9adf672dcf493f089d1c6732a3a57a7eea1a6b8729d7aae6f32c18c",
+    "/workspace/scratch/fee12ff81cbd/a_family/other_masks/d6c5_I23_H_supplement_v3/HAND_PROOF.md": "5d844d1b67e61baa94555a44716cc1220127fb64210035a1f9b15de92f525e7a",
+    "/workspace/scratch/fee12ff81cbd/a_family/other_masks/d6c5_I23_H_supplement_v3/PHYSICAL_THEOREM_DEPENDENCIES.json": "2a2f793a6a54e9f3cf5564b0c9b1b57df5090637249a9df1e00771c14fdcafd0"
+  },
+  "frozen_inputs_checked_twice": 2255,
+  "same_original_caller_and_prefix_retained": true,
+  "closed_H_rectangles": 8,
+  "complete_I_quarter_covers": 5,
+  "complete_D_quarter_covers": 6,
+  "terminal_domains": 41,
+  "selected_records": 52,
+  "literal_counts": {
+    "rounds": 194,
+    "deductions": 29470,
+    "premise_rows": 43124,
+    "terminal_rows": 734,
+    "all_printed_rows": 43858
+  },
+  "new_energy_families": {
+    "three_square_center_energy_": 347,
+    "four_center_energy_": 10,
+    "square_area_moment_secant_": 3
+  },
+  "prior_I21_corrected_energy_families": {
+    "three_square_center_energy_": 497,
+    "four_center_energy_": 9
+  },
+  "all_raw_energy_names_classified": true,
+  "all_used_energy_definitions_matched": true,
+  "physical_premise_files": {
+    "physical_proofs/FOUR_ORIGINAL_PLANAR_MATCHING_AND_ENERGY_HAND_PROOF.md": "c8e665a2abd2c67df541e612c874bc30b469f817cb6151cd77e21179533b0c18",
+    "physical_proofs/FOUR_ORIGINAL_PLANAR_ENERGY_INDEPENDENT_REVIEW.md": "5808a7fa00f490f508ae2c2612ed6aeb6ec352eff96960ff7be357676260cd28",
+    "physical_proofs/PHYSICAL_SQUARE_AREA_MOMENT_HAND_PROOF.md": "86f402efbf135228d2dd0d034fa55f56206c9176f4afe8354c4cf880b3fab293",
+    "physical_proofs/four_original_planar_rows_replay.json": "8fd1fb67b9675ab9daa8f9c4b368e398496c86755ef920ac5aa1e01cb65ade03",
+    "physical_proofs/square_area_moment_rows_replay.json": "cbe05ea3e83c692e0d9d4666a198ed79e425d3d96380661cfcf9615f0212240d"
+  },
+  "original_I22_remains_OPEN": true,
+  "old_arithmetic_and_sources_unchanged": true,
+  "weighted_arithmetic_repeated": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "seconds": 10.146869758988032
+}

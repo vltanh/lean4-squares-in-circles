@@ -1,0 +1,87 @@
+{
+  "schema": "immutable_archive_eight_MiB_publication_parts_v1",
+  "status": "PASS_EACH_PART_AND_EXACT_CONCATENATED_ARCHIVE_HASH",
+  "archive": "/workspace/scratch/fee12ff81cbd/a_family/other_masks/d6c5_I23_H_supplement_v3.tar.xz",
+  "archive_basename": "d6c5_I23_H_supplement_v3.tar.xz",
+  "archive_sha256": "c58aedd5dd0d5efc3dbc0422703ced905f31667e77de303387ce4b377c34993d",
+  "archive_bytes": 92418652,
+  "part_size_bytes": 8388608,
+  "part_count": 12,
+  "parts": [
+    {
+      "index": 1,
+      "path": "d6c5_I23_H_supplement_v3.tar.xz.part001",
+      "sha256": "a6c78822eb5a329c2d7b77e2650c0da76f36410b85f0caa817196a02d1d38f8c",
+      "bytes": 8388608
+    },
+    {
+      "index": 2,
+      "path": "d6c5_I23_H_supplement_v3.tar.xz.part002",
+      "sha256": "750c749954d137e70aa4799e27fddd75c01980029f9a91770c633103fb18a80a",
+      "bytes": 8388608
+    },
+    {
+      "index": 3,
+      "path": "d6c5_I23_H_supplement_v3.tar.xz.part003",
+      "sha256": "0b784e9e2da315bd7fc1c5e752280ab678d1d65c0bcd5176ef45a5b852d51dff",
+      "bytes": 8388608
+    },
+    {
+      "index": 4,
+      "path": "d6c5_I23_H_supplement_v3.tar.xz.part004",
+      "sha256": "0b2b87c8bdf775b6a4f185df37f5e4e188bfde5fffabbbf263b71b96c6a28ea6",
+      "bytes": 8388608
+    },
+    {
+      "index": 5,
+      "path": "d6c5_I23_H_supplement_v3.tar.xz.part005",
+      "sha256": "820ae225560e6688cd656e38f90178db8a79c4e38deb579955989b07e1d29789",
+      "bytes": 8388608
+    },
+    {
+      "index": 6,
+      "path": "d6c5_I23_H_supplement_v3.tar.xz.part006",
+      "sha256": "bdd98ca733ac04e9c61c0af51fee50ab6829bab2e78d7705d850753a08969f82",
+      "bytes": 8388608
+    },
+    {
+      "index": 7,
+      "path": "d6c5_I23_H_supplement_v3.tar.xz.part007",
+      "sha256": "24d666c59c25e349371c3cf0f4e6614a2d38c6ab9a1fe4021c1fe984ebfcecca",
+      "bytes": 8388608
+    },
+    {
+      "index": 8,
+      "path": "d6c5_I23_H_supplement_v3.tar.xz.part008",
+      "sha256": "ecdfca675e7d6851750e62168e71fe5b3a4e80e7ce4dd33b2b8c520f54dec459",
+      "bytes": 8388608
+    },
+    {
+      "index": 9,
+      "path": "d6c5_I23_H_supplement_v3.tar.xz.part009",
+      "sha256": "01038e2e9bce6bee59d3e52572d25058e79baffbc8ddc7ccde7c66c538a17d92",
+      "bytes": 8388608
+    },
+    {
+      "index": 10,
+      "path": "d6c5_I23_H_supplement_v3.tar.xz.part010",
+      "sha256": "c19954f88f273d0f8741c6acc30c8775bf84bf75cde25d9ce13238fdec20141a",
+      "bytes": 8388608
+    },
+    {
+      "index": 11,
+      "path": "d6c5_I23_H_supplement_v3.tar.xz.part011",
+      "sha256": "43f36fe08b77af565b878fad798215f980d228a3813fa3687615fa270e865abe",
+      "bytes": 8388608
+    },
+    {
+      "index": 12,
+      "path": "d6c5_I23_H_supplement_v3.tar.xz.part012",
+      "sha256": "5d9ab62b2d014c7ffe87e6d9600182c8e4002e1f49dc580b0dc9170e70654a50",
+      "bytes": 143964
+    }
+  ],
+  "part_order": "ascending numeric index",
+  "source_archive_unchanged": true,
+  "splitter_sha256": "cf8c41b587940201c711e8d1520132e8981ffcd1cd68b545d025eaa5234539da"
+}
