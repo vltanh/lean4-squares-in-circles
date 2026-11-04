@@ -48,6 +48,12 @@ The remaining families are **A2, B6, C3, D3**.
 
 No whole mask, positional root or roadmap gate is newly closed.
 
+The [finished C887 I21 sharp-complement continuation](A2_00100_C887_I21_SHARP_THREE_ROUND_CHECKPOINT.md)
+adds one exact conditional exclusion to the five previously certified
+interval exclusions. Its complete twenty-domain register still has fourteen
+OPEN members. The portable replay checks all 3,771 bound deductions and
+20 terminal rows; no complete original-cell or mask credit is added.
+
 ### Preceding checkpoint: 216 CLOSED / 15 OPEN
 
 The [preceding complete assembly](A2_00100_A768_FIXED_CENTER_ENERGY_CLOSURE.md) and its immutable

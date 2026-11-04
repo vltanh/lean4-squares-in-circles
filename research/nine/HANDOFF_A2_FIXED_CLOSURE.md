@@ -403,6 +403,16 @@ marked links. The accepted `000/*` and `010/*` full-mask proofs, low-gap
 assembly, original frame/strip/capacity rows and prior complete-cell
 certificates retain their exact scopes. Do not restart accepted work.
 
+## Finished C887 conditional continuation
+
+The [complete finite three-round record](A2_00100_C887_I21_SHARP_THREE_ROUND_CHECKPOINT.md)
+preserves every member of the original twenty-domain I21 sharp complement.
+Five have strict interval exclusions, failure11 has a positive exact affine
+reserve, and fourteen remain OPEN. All 49 bound rounds, 3,771 deductions,
+11,391 premise rows and 20 terminal rows passed portable exact replay.
+This does not close I21 or the original C887 cell. The old frozen foundation
+and every fixed denominator remain unchanged.
+
 ## Fixed ledgers and next handoff
 
 - Original-nine masks: **8 CLOSED / 24 OPEN**, exactly `000/*` and `010/*` CLOSED.
