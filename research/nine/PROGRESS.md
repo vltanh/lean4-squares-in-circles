@@ -1,43 +1,38 @@
-> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **210/231 cells CLOSED, 21 OPEN; 8/32 masks CLOSED, 24 OPEN.**
+> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **211/231 cells CLOSED, 20 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
-# n=9: 210/231 current-mask cells closed; 21 remain OPEN
+# n=9: 211/231 current-mask cells closed; 20 remain OPEN
 
-**Latest verified continuation: the complete B4ce original-cell exclusion.**
-The same register now has **210 CLOSED / 21 OPEN**, with
-**157 additions beyond the first 53**. Remaining families:
-**A4, B8, C6, D3**. `001/00`, its reversal, the unrestricted bound and
+**Latest verified continuation: the complete C2f9 original-cell exclusion.**
+The same register now has **211 CLOSED / 20 OPEN**, with
+**158 additions beyond the first 53**. Remaining families:
+**A4, B8, C5, D3**. `001/00`, its reversal, the unrestricted bound and
 equality remain OPEN. No Lean, Lake or CI.
 
-[Latest complete assembly](A2_00100_B4CE_FIXED_CENTER_BOUND_PSD_CLOSURE.md) ·
+[Latest complete assembly](A2_00100_C2F9_FIXED_CENTER_BOUND_CLOSURE.md) ·
 [Current fixed register](gates/A2_00100_FIXED_FRONTIER.json) ·
-[Source-bound packet and fresh replay](computer_assisted/a2_00100_b_4ce_bound_psd_manifest.json) ·
+[Source-bound packet and fresh replay](computer_assisted/a2_00100_c_2f9_bound_manifest.json) ·
 [Operative handoff](HANDOFF_A2_FIXED_CLOSURE.md)
 
 ## What changed
 
-`negative-4ce055f43b28d796` is completely excluded. Its sixteen closed
-I-quarter products use complete H2-by-4 covers in I(1,3) and I(2,3),
-giving 30 final rectangles. Eight direct affine, six direct interval,
-eight affine-after-induction, six interval-after-induction and two
-quadratic terminals all pass. Thirty-nine exact bound rounds prove
-5,647 necessary bounds using 9,576 premise rows. The final contradictions
-use 3,329 rows, including 92 reconstructed affine-product antecedents
-and 45 rational negative squares. Two affine continuations retain their
-original prefixes; one completed-budget numerical run contributes only
-source-bound rational squares whose exact identity is independently
-checked. The root relocated whole-cover replay passed with all 192
-frozen inputs unchanged. All 231 original IDs and paths are retained.
+`negative-2f9ffd3df06e7c5f` is completely excluded by its sixteen closed
+I-quarter products. Six direct affine, one direct interval, seven
+affine-after-induction and two interval-after-induction terminals cover
+the immutable original. Sixteen exact bound rounds prove 4,241 necessary
+bounds using 5,597 premise rows; the terminal contradictions use 155 rows.
+All thirteen positive rational reserves exceed 1/2048. The written table
+records every terminal and the four-center and area-moment premises,
+whose complete physical proofs are frozen with the packet. Independent
+hand review and the root relocated whole-cover replay passed with all
+140 frozen inputs unchanged. All 231 original IDs and paths are retained.
 
 No whole mask, positional root or roadmap gate is newly closed.
 
-## Shared three-square energy theorem — zero closure credit
+### Preceding checkpoint: 210 CLOSED / 21 OPEN
 
-The [complete arbitrary-frame theorem](THREE_SQUARE_CENTER_ENERGY_HAND_PROOF.md) proves
-that three pairwise interior-disjoint unit squares have squared center
-distances summing to at least 7/2. A separate mathematical review and both
-exact evaluators pass the complete 128-triangle/384-inequality table.
-Root relocated replay and all ten frozen source hashes pass. This shared
-input changes no original cell, mask, positional root or roadmap status.
+The [preceding complete assembly](A2_00100_B4CE_FIXED_CENTER_BOUND_PSD_CLOSURE.md) and its immutable
+mathematical sources remain accepted. Their complete proofs are preserved
+with their original before/after accounting.
 
 ### Preceding checkpoint: 209 CLOSED / 22 OPEN
 
