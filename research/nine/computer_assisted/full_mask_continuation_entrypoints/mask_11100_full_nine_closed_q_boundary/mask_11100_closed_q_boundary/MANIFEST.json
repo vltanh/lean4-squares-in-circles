@@ -1,0 +1,13 @@
+{
+  "schema": "n9_11100_closed_Q_boundary_packet_v1",
+  "scope": "NONEMPTY_CLOSED_Q_WITH_ALL_MARKED_MARGINS_STRICT",
+  "new_strict_mask_closures": 0,
+  "new_original_cell_closures": 0,
+  "sha256": {
+    "boundary_11100.json": "7c7091782f58f0f9fd97fd8ff0a4227b89762c68a042fdd60d52044ff98b0a13",
+    "source_control.json": "d691ac0f76757dc801207292e4849678398a1d201ebc628e0e77d85df0cc53ba",
+    "verify_11100_boundary.py": "ef3ecb6275ecdca3a7b912f3c857356e61f0ee053a3396bf5527ca12ee71eccd",
+    "CLOSED_Q_11100_BOUNDARY_HAND_PROOF.md": "ef1b5cc15db6b08b7e69a4cc38a085bc152a33581b8441fe1e89ec3db8722842",
+    "sources/A2_COVERAGE_AND_CLOSURE_CONTRACT.md": "804c8001080f2b5f6f3b20e2e961b4a33ab32ab2ba1c15f60b1a99c70269d94d"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "status": "PASS_IMMUTABLE_RECOVERY_INDEX",
+  "source_files": 17,
+  "extracted_boundary_members": 18,
+  "local_outputs": 6,
+  "index_sha256": "922b2aec0df9433ed080baf551d4847690c98d0311facd7d585e6e75dbe91ffe",
+  "checker_sha256": "7ea6a19e8852fd86cfbc38fae6ec9cc8b378a7b7f9dd43d21b67b429562a6049",
+  "new_mask_closures": 0,
+  "new_original_cell_closures": 0,
+  "scope": "Source recovery integrity; exact finite predicates have separate fresh replay reports."
+}

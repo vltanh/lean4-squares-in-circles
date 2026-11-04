@@ -1,0 +1,19 @@
+{
+  "schema": "n9_four_closed_Q_boundary_packet_v1",
+  "scope": "NONEMPTY_CLOSED_Q_WITNESSES_ONLY",
+  "new_strict_mask_closures": 0,
+  "new_original_cell_closures": 0,
+  "masks": [
+    "101/11",
+    "111/01",
+    "111/10",
+    "111/11"
+  ],
+  "sha256": {
+    "boundary_witnesses.json": "c66347741f445432b6eeec7f3fccb4612effb958e36339887bfc77357b63df82",
+    "verify_closed_q_boundary_witnesses.py": "e415b95721d8f340cb76732a4f21b4ae95847ff43a4749bf258eec70d8cbf82e",
+    "CLOSED_Q_BOUNDARY_WITNESSES_HAND_PROOF.md": "19a67015ec635f78c5d98f1640f282f8a42456e1943c67d5bdb3753c8dd1618d",
+    "sources/limit_frame_family_table.json": "bf9f975444d34b251239d32b7c5c0a4b52f0edf0cd0ace91c6d70a732d85226f",
+    "sources/A2_COVERAGE_AND_CLOSURE_CONTRACT.md": "804c8001080f2b5f6f3b20e2e961b4a33ab32ab2ba1c15f60b1a99c70269d94d"
+  }
+}

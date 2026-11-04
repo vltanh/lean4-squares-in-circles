@@ -18,6 +18,14 @@ with a fresh whole-original portable replay. Accepted counts are
 
 ## Read first
 
+The [full-mask continuation entry points](computer_assisted/full_mask_continuation_entrypoints/README.md)
+recover the generic strict-radius all-nine model and its exact feasibility
+controls. Fresh root replays preserve the genuine closed-Q witnesses in
+`101/11` and all four `111/de` masks, including strict marked margins for
+`111/00`. Those masks require sharp strict-radius arguments. The packet
+records the fourteen reversal classes and existing local-transfer premises;
+it adds no cell or mask credit and does not change the current caller.
+
 The [four-product original-corner rows](computer_assisted/four_product_corner_rows_v1/README.md)
 strengthen the accepted grouped unit-frame rows by choosing the four signed
 product planes independently. The family contains the earlier four planes
@@ -140,9 +148,9 @@ The [exact affine and lifted row conversions](THREE_SQUARE_ENERGY_ROW_CONVERSION
 all 1,877 polynomial identities in a separate relocated replay. Every
 caller must still certify its original projection intervals.
 
-1. [Current complete proof and scope](A2_00100_DC71_COMPLETE_ORIGINAL_CLOSURE.md).
+1. [Current complete proof and scope](A2_00100_D6C5_COMPLETE_ORIGINAL_CLOSURE.md).
 2. [Same 231 original IDs, paths and current statuses](gates/A2_00100_FIXED_FRONTIER.json).
-3. [Immutable packet and native exact replay](computer_assisted/a2_00100_dc71_complete_original_manifest.json).
+3. [Immutable packet and native exact replay](computer_assisted/a2_00100_d6c5_complete_original_manifest.json).
 4. [Original coverage and physical caller](A2_COVERAGE_AND_CLOSURE_CONTRACT.md),
    [baseline cover](A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md), and
    [accepted proof history](PROGRESS.md).
@@ -174,6 +182,24 @@ root IDs and 15 roadmap IDs. No human or proof-kernel verification is claimed.
 
 ## Latest complete original
 
+`positive-6c5f13d07e5538df` is completely excluded. The prior fifteen
+original-I rectangles and the last I22 rectangle cover the entire original.
+Inside I22, all eight original-H rectangles and all eighty D-angle components
+are excluded. Thirty-seven D components close directly; the other forty-three
+have complete original physical SAT trees with 587 nodes and 519 excluded
+leaves. Together with the direct H/D terminals, all 559 terminal domains close.
+
+The new I22 material checks 103,791 deductions and 142,117 printed-row
+occurrences in 511 local rounds, apart from its common original antecedents.
+Root and independent assembly reviews and the fresh portable whole-original
+replay pass. The portable replay blocks reads from the old workspace and
+retains all 875 new archive members and the frozen prior dependency. Every
+original square, corner, pair, marked condition and strict-CD comparison stays
+in the caller. The unchanged register now has **220 CLOSED / 11 OPEN**, with
+**A1, B6, C3, D1** remaining. The mask ledger remains **8 CLOSED / 24 OPEN**.
+
+## Preceding complete original
+
 `positive-c71dc2feef1abb0b` is completely excluded. All sixteen closed
 I-quarter products are covered, including the seven complete H2-by-4 covers
 and all 68 recursive original-frame unions. All 254 terminal domains close;
@@ -192,8 +218,9 @@ The corrected hand/table includes every energy occurrence: 3,499 three-square,
 premise files are explicitly bound. The independent exact whole-original
 replay, both final source/hand/table reviews and the root's full 1,497-member
 archive audit pass. All 1,459 frozen arithmetic inputs retain their hashes.
-The fixed register now has **219 CLOSED / 12 OPEN**, with **A1, B6, C3, D2**
-remaining. No whole mask, positional root or roadmap gate is newly closed.
+At that checkpoint the fixed register had **219 CLOSED / 12 OPEN**, with
+**A1, B6, C3, D2** remaining. No whole mask, positional root or roadmap gate
+was newly closed by that original-cell proof.
 
 ## Preceding complete original
 

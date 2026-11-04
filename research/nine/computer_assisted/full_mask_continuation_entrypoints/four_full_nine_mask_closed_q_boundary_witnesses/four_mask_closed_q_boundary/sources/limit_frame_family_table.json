@@ -1,0 +1,734 @@
+{
+  "scope": "exact limit pose cone-event table; hand continuity extends the family",
+  "center_denominator": 240,
+  "centers": [
+    [
+      -360,
+      15
+    ],
+    [
+      -120,
+      15
+    ],
+    [
+      120,
+      112
+    ],
+    [
+      360,
+      15
+    ],
+    [
+      -240,
+      -225
+    ],
+    [
+      0,
+      -225
+    ],
+    [
+      240,
+      -225
+    ],
+    [
+      -208,
+      255
+    ],
+    [
+      32,
+      352
+    ]
+  ],
+  "quad_ids": [
+    [
+      0,
+      1,
+      2,
+      3
+    ],
+    [
+      0,
+      1,
+      5,
+      6
+    ],
+    [
+      0,
+      4,
+      5,
+      6
+    ],
+    [
+      0,
+      7,
+      2,
+      3
+    ],
+    [
+      3,
+      2,
+      1,
+      4
+    ],
+    [
+      3,
+      6,
+      5,
+      4
+    ],
+    [
+      4,
+      1,
+      2,
+      8
+    ],
+    [
+      4,
+      1,
+      7,
+      8
+    ],
+    [
+      6,
+      5,
+      1,
+      7
+    ]
+  ],
+  "event_rows": [
+    {
+      "normal": [
+        1,
+        -5
+      ],
+      "quad_ids": []
+    },
+    {
+      "normal": [
+        1,
+        -3
+      ],
+      "quad_ids": []
+    },
+    {
+      "normal": [
+        1,
+        -1
+      ],
+      "quad_ids": [
+        2,
+        3,
+        9
+      ]
+    },
+    {
+      "normal": [
+        1,
+        1
+      ],
+      "quad_ids": [
+        6
+      ]
+    },
+    {
+      "normal": [
+        1,
+        3
+      ],
+      "quad_ids": []
+    },
+    {
+      "normal": [
+        1,
+        5
+      ],
+      "quad_ids": []
+    },
+    {
+      "normal": [
+        1,
+        29
+      ],
+      "quad_ids": []
+    },
+    {
+      "normal": [
+        3,
+        -7
+      ],
+      "quad_ids": []
+    },
+    {
+      "normal": [
+        3,
+        -1
+      ],
+      "quad_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "normal": [
+        3,
+        1
+      ],
+      "quad_ids": [
+        1,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "normal": [
+        3,
+        7
+      ],
+      "quad_ids": [
+        7,
+        8
+      ]
+    },
+    {
+      "normal": [
+        5,
+        -1
+      ],
+      "quad_ids": [
+        1
+      ]
+    },
+    {
+      "normal": [
+        5,
+        1
+      ],
+      "quad_ids": [
+        1
+      ]
+    },
+    {
+      "normal": [
+        7,
+        -8
+      ],
+      "quad_ids": []
+    },
+    {
+      "normal": [
+        7,
+        -3
+      ],
+      "quad_ids": [
+        2,
+        3
+      ]
+    },
+    {
+      "normal": [
+        7,
+        3
+      ],
+      "quad_ids": [
+        6
+      ]
+    },
+    {
+      "normal": [
+        8,
+        7
+      ],
+      "quad_ids": [
+        6
+      ]
+    },
+    {
+      "normal": [
+        9,
+        665
+      ],
+      "quad_ids": []
+    },
+    {
+      "normal": [
+        11,
+        -49
+      ],
+      "quad_ids": []
+    },
+    {
+      "normal": [
+        17,
+        43
+      ],
+      "quad_ids": []
+    },
+    {
+      "normal": [
+        19,
+        41
+      ],
+      "quad_ids": [
+        7,
+        8
+      ]
+    },
+    {
+      "normal": [
+        23,
+        697
+      ],
+      "quad_ids": []
+    },
+    {
+      "normal": [
+        29,
+        -1
+      ],
+      "quad_ids": [
+        1
+      ]
+    },
+    {
+      "normal": [
+        41,
+        -101
+      ],
+      "quad_ids": []
+    },
+    {
+      "normal": [
+        41,
+        -19
+      ],
+      "quad_ids": [
+        2,
+        3,
+        9
+      ]
+    },
+    {
+      "normal": [
+        43,
+        -17
+      ],
+      "quad_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "normal": [
+        49,
+        11
+      ],
+      "quad_ids": [
+        1,
+        4
+      ]
+    },
+    {
+      "normal": [
+        55,
+        729
+      ],
+      "quad_ids": []
+    },
+    {
+      "normal": [
+        101,
+        41
+      ],
+      "quad_ids": [
+        1,
+        5,
+        6
+      ]
+    },
+    {
+      "normal": [
+        143,
+        -337
+      ],
+      "quad_ids": []
+    },
+    {
+      "normal": [
+        143,
+        337
+      ],
+      "quad_ids": [
+        7,
+        8
+      ]
+    },
+    {
+      "normal": [
+        185,
+        -489
+      ],
+      "quad_ids": []
+    },
+    {
+      "normal": [
+        185,
+        -471
+      ],
+      "quad_ids": []
+    },
+    {
+      "normal": [
+        217,
+        -457
+      ],
+      "quad_ids": []
+    },
+    {
+      "normal": [
+        217,
+        457
+      ],
+      "quad_ids": []
+    },
+    {
+      "normal": [
+        305,
+        -849
+      ],
+      "quad_ids": []
+    },
+    {
+      "normal": [
+        337,
+        -143
+      ],
+      "quad_ids": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "normal": [
+        337,
+        143
+      ],
+      "quad_ids": [
+        1,
+        5,
+        6
+      ]
+    },
+    {
+      "normal": [
+        369,
+        785
+      ],
+      "quad_ids": []
+    },
+    {
+      "normal": [
+        383,
+        577
+      ],
+      "quad_ids": []
+    },
+    {
+      "normal": [
+        457,
+        -217
+      ],
+      "quad_ids": [
+        2,
+        3,
+        9
+      ]
+    },
+    {
+      "normal": [
+        457,
+        217
+      ],
+      "quad_ids": [
+        6
+      ]
+    },
+    {
+      "normal": [
+        471,
+        185
+      ],
+      "quad_ids": [
+        1,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "normal": [
+        489,
+        185
+      ],
+      "quad_ids": [
+        1,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "normal": [
+        545,
+        -609
+      ],
+      "quad_ids": []
+    },
+    {
+      "normal": [
+        577,
+        -383
+      ],
+      "quad_ids": [
+        2,
+        3,
+        9
+      ]
+    },
+    {
+      "normal": [
+        609,
+        545
+      ],
+      "quad_ids": [
+        6
+      ]
+    },
+    {
+      "normal": [
+        665,
+        -9
+      ],
+      "quad_ids": [
+        1
+      ]
+    },
+    {
+      "normal": [
+        697,
+        -23
+      ],
+      "quad_ids": [
+        1
+      ]
+    },
+    {
+      "normal": [
+        729,
+        -55
+      ],
+      "quad_ids": [
+        1
+      ]
+    },
+    {
+      "normal": [
+        785,
+        -369
+      ],
+      "quad_ids": [
+        2,
+        3,
+        9
+      ]
+    },
+    {
+      "normal": [
+        849,
+        305
+      ],
+      "quad_ids": [
+        1,
+        4,
+        5,
+        6
+      ]
+    }
+  ],
+  "outer_pair_constraints": [
+    {
+      "quad": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "outer_normals": [
+        [
+          "horizontal",
+          1
+        ],
+        [
+          "horizontal",
+          1
+        ]
+      ],
+      "survives_all_cone_constraints": true
+    },
+    {
+      "quad": [
+        0,
+        1,
+        5,
+        6
+      ],
+      "outer_normals": [
+        [
+          "horizontal",
+          1
+        ],
+        [
+          "horizontal",
+          1
+        ]
+      ],
+      "survives_all_cone_constraints": false
+    },
+    {
+      "quad": [
+        0,
+        4,
+        5,
+        6
+      ],
+      "outer_normals": [
+        [
+          "vertical",
+          -1
+        ],
+        [
+          "horizontal",
+          1
+        ]
+      ],
+      "survives_all_cone_constraints": false
+    },
+    {
+      "quad": [
+        0,
+        7,
+        2,
+        3
+      ],
+      "outer_normals": [
+        [
+          "vertical",
+          1
+        ],
+        [
+          "horizontal",
+          1
+        ]
+      ],
+      "survives_all_cone_constraints": false
+    },
+    {
+      "quad": [
+        3,
+        2,
+        1,
+        4
+      ],
+      "outer_normals": [
+        [
+          "horizontal",
+          -1
+        ],
+        [
+          "vertical",
+          -1
+        ]
+      ],
+      "survives_all_cone_constraints": false
+    },
+    {
+      "quad": [
+        3,
+        6,
+        5,
+        4
+      ],
+      "outer_normals": [
+        [
+          "vertical",
+          -1
+        ],
+        [
+          "horizontal",
+          -1
+        ]
+      ],
+      "survives_all_cone_constraints": false
+    },
+    {
+      "quad": [
+        4,
+        1,
+        2,
+        8
+      ],
+      "outer_normals": [
+        [
+          "vertical",
+          1
+        ],
+        [
+          "vertical",
+          1
+        ]
+      ],
+      "survives_all_cone_constraints": false
+    },
+    {
+      "quad": [
+        4,
+        1,
+        7,
+        8
+      ],
+      "outer_normals": [
+        [
+          "vertical",
+          1
+        ],
+        [
+          "horizontal",
+          1
+        ]
+      ],
+      "survives_all_cone_constraints": false
+    },
+    {
+      "quad": [
+        6,
+        5,
+        1,
+        7
+      ],
+      "outer_normals": [
+        [
+          "horizontal",
+          -1
+        ],
+        [
+          "vertical",
+          1
+        ]
+      ],
+      "survives_all_cone_constraints": false
+    }
+  ]
+}
