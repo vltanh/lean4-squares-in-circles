@@ -1,0 +1,98 @@
+{
+  "schema": "n9_complete_A768_fixed_center_energy_cover_v1",
+  "date": "2026-11-04",
+  "status": "PASS_COMPLETE_ORIGINAL_PARENT",
+  "input_commit": "1ddf0257f24eb7b15570ecb55cc5afc829b32785",
+  "input_register_sha256": "1f8507ae48369d7dc6206af6550168bec31c08385584566e8728d37d795aabd7",
+  "target_mask": "001/00",
+  "reversal_partner": "100/00",
+  "strict_q_upper": "1105/256",
+  "original_cells": 231,
+  "before": {
+    "closed": 215,
+    "open": 16
+  },
+  "after": {
+    "closed": 216,
+    "open": 15
+  },
+  "new_complete_original_ids": [
+    "positive-768264ad71bc8152"
+  ],
+  "original_ids_and_paths_unchanged": true,
+  "remaining_open_families": {
+    "A": 2,
+    "B": 6,
+    "C": 4,
+    "D": 3
+  },
+  "packet": {
+    "archive": "a2_00100_a_768_fixed_center_energy_checkpoint.tar.gz",
+    "archive_bytes": 14830212,
+    "archive_sha256": "50627dbbee30ee8411203de0f361f7ee63eebea84dd7c44a279120d6bb0f48f3",
+    "archive_parts_manifest": "a2_00100_a_768_fixed_center_energy_archive_parts.json",
+    "archive_parts": [
+      {
+        "file": "a2_00100_a_768_fixed_center_energy_checkpoint.tar.gz.part01",
+        "bytes": 8388608,
+        "sha256": "7567e37a5577277a0b00927e6c16b8e3c071ffea1804c86890c2067d8a2fbd3a"
+      },
+      {
+        "file": "a2_00100_a_768_fixed_center_energy_checkpoint.tar.gz.part02",
+        "bytes": 6441604,
+        "sha256": "dd6fd3ee6cd7e9bbdc8a5c38d0f978bc3b90651111c3c0b5b9b7630afe0dd53c"
+      }
+    ],
+    "method": "complete_fixed_I_cover_with_exact_three_square_energy_bounds_and_literal_continuations",
+    "record_id": "positive-768264ad71bc8152",
+    "certificate": "PACKAGE_MANIFEST.json",
+    "certificate_sha256": "d11f44975d44483e663cf9b84994348adde38cc66a513ba5dcb4e87d957a3f7d",
+    "independent_checker": "verify_a_fixed_cover.py",
+    "independent_checker_sha256": "987f402220472be5528ed4e8b9c1374ecb9b1f974e7af68b8c5588bab5a1d12c",
+    "independent_report": "COMPLETE_REPLAY.json",
+    "root_fresh_replay_report": "a2_00100_a_768_fixed_center_energy_root_replay.json",
+    "root_fresh_replay_report_sha256": "cec8426bd8b167502dea1091e6d383c5aa439990de9504e800d6ddb58cfbc439",
+    "terminal_leaves": 16,
+    "complete_closed_face_cover": true,
+    "all_leaf_prefix_hashes_identical": true
+  },
+  "hand_assembly": "A2_00100_A768_FIXED_CENTER_ENERGY_CLOSURE.md",
+  "hand_assembly_sha256": "704bdd8ddb3cb863147e0d76a3d1449ff2f997e4c01e8b38a90c329ab835ec56",
+  "statistics": {
+    "final_fixed_center_rectangles": 16,
+    "coarse_I_rectangles": 16,
+    "H_subcover_rectangles": 0,
+    "complete_nested_slope_covers": 0,
+    "physical_terminal_leaves": 16,
+    "positive_affine_terminals": 12,
+    "physical_interval_terminals": 3,
+    "empty_original_angle_terminals": 1,
+    "terminal_rows": 190,
+    "bound_premise_rows": 3969,
+    "bound_rounds": 17,
+    "bound_deductions": 2452,
+    "distinct_bound_records": 16,
+    "printed_four_center_energy_rows": 2,
+    "printed_square_area_rows": 3,
+    "printed_three_square_energy_rows": 24,
+    "source_bound_continuations": 2,
+    "frozen_inputs": 128,
+    "all_positive_reserves_strictly_above": "1/200"
+  },
+  "complete_closed_face_covers": true,
+  "all_nine_original_physical_callers": true,
+  "all_leaf_prefix_hashes_identical": true,
+  "numerical_producer_or_optimizer_imported_by_replay": false,
+  "unbound_external_workspace_reads_allowed": false,
+  "new_original_cells": 1,
+  "new_mask_closures": 0,
+  "whole_mask_closed": false,
+  "global_mask_ledger": {
+    "closed": 8,
+    "open": 24
+  },
+  "new_positional_root_exclusions": 0,
+  "new_roadmap_gate_closures": 0,
+  "lean_lake_ci_run": false,
+  "human_or_kernel_verification": false
+}

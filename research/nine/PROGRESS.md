@@ -1,36 +1,41 @@
-> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **215/231 cells CLOSED, 16 OPEN; 8/32 masks CLOSED, 24 OPEN.**
+> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **216/231 cells CLOSED, 15 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
-# n=9: 215/231 current-mask cells closed; 16 remain OPEN
+# n=9: 216/231 current-mask cells closed; 15 remain OPEN
 
-**Latest verified continuation: the complete A8b original-cell exclusion.**
-The same register now has **215 CLOSED / 16 OPEN**, with
-**162 additions beyond the first 53**. Remaining families:
-**A3, B6, C4, D3**. `001/00`, its reversal, the unrestricted bound and
+**Latest verified continuation: the complete A768 original-cell exclusion.**
+The same register now has **216 CLOSED / 15 OPEN**, with
+**163 additions beyond the first 53**. Remaining families:
+**A2, B6, C4, D3**. `001/00`, its reversal, the unrestricted bound and
 equality remain OPEN. No Lean, Lake or CI.
 
-[Latest complete assembly](A2_00100_A8B_FIXED_CENTER_AND_SLOPE_COVER_CLOSURE.md) ·
+[Latest complete assembly](A2_00100_A768_FIXED_CENTER_ENERGY_CLOSURE.md) ·
 [Current fixed register](gates/A2_00100_FIXED_FRONTIER.json) ·
-[Source-bound packet and fresh replay](computer_assisted/a2_00100_a_8b_fixed_center_slope_manifest.json) ·
+[Source-bound packet and fresh replay](computer_assisted/a2_00100_a_768_fixed_center_energy_manifest.json) ·
 [Operative handoff](HANDOFF_A2_FIXED_CLOSURE.md)
 
 ## What changed
 
-`positive-8b53ccaa15bad220` is completely excluded. Fourteen coarse
-closed I-quarter products and two complete H2-by-4 covers give 30 fixed
-members. Three members have complete inherited original-frame slope
-covers with 6, 6 and 12 leaves, giving 51 physical terminals. Forty-one
-exact positive affine reserves exceed 1/4096; six physical interval,
-three original-angle and one analytic-frame contradictions close the
-other leaves. The 62 distinct bound records establish 24,470 bounds
-in 167 rounds using 45,318 premise rows and 1,075 terminal rows.
-Shared antecedents are counted once. The proof includes 27 independently
-reconstructed three-square energy rows and a fresh exact replay of their
-geometric theorem. Independent hand/table review and the relocated full
-replay pass; the root checks all 219 frozen inputs, mathematical summary
-agreement and the unchanged original caller before integration. All 231
-original IDs and paths are retained.
+`positive-768264ad71bc8152` is completely excluded by its sixteen
+closed I-quarter products. Twelve exact positive affine reserves exceed
+1/200; three physical interval/separation terminals and one empty
+original-angle terminal close the other members. No H or frame-slope
+subdivision is needed. The sixteen distinct bound records establish
+2,452 bounds in 17 rounds using 3,969 premise rows and 190 terminal rows.
+Two continuations preserve their complete three-round prefixes literally.
+The proof uses 24 independently reconstructed three-square energy rows,
+together with the freshly replayed geometric theorem. Independent
+hand/table review and the relocated complete replay pass. The root checks
+all 128 frozen inputs, mathematical summary agreement, exact accounting
+and the unchanged original caller before integration. All 231 original
+IDs and paths are retained.
 
 No whole mask, positional root or roadmap gate is newly closed.
+
+### Preceding checkpoint: 215 CLOSED / 16 OPEN
+
+The [preceding complete assembly](A2_00100_A8B_FIXED_CENTER_AND_SLOPE_COVER_CLOSURE.md) and its immutable
+mathematical sources remain accepted. Their complete proofs are preserved
+with their original before/after accounting.
 
 ### Preceding checkpoint: 214 CLOSED / 17 OPEN
 
