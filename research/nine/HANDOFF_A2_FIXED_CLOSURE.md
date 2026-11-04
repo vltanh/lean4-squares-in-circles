@@ -425,6 +425,19 @@ from completed concurrent work, losslessly translated, independently
 reviewed and freshly replayed. The complete physical caller, shared faces,
 raw bytes and old packets are retained. No original or mask is closed.
 
+## Dc71: complete I16 checkpoint with seven OPEN members
+
+The [portable Dc71 checkpoint](A2_00100_DC71_I16_SIX_ROUND_CHECKPOINT.md)
+contains all sixteen closed I rectangles: nine excluded and seven with
+exact six-round bound states. Its full physical replay checks 49 local
+rounds, 6,467 deductions, 10,479 premise rows and 82 terminal rows.
+The two direct interval exclusions are independently reconstructed and
+reviewed, with three strictly positive rational interval gaps. The full
+three-square geometric premise and row identities are included and replayed.
+The seven OPEN I regions are `10,11,12,13,21,22,23`. Their complete H2x4
+subdivisions are continuing separately; no H result is credited in this
+checkpoint. No fixed original, mask, positional root or roadmap ID changes.
+
 ## Fixed ledgers and next handoff
 
 - Original-nine masks: **8 CLOSED / 24 OPEN**, exactly `000/*` and `010/*` CLOSED.

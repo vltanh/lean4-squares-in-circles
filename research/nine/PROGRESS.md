@@ -38,6 +38,18 @@ the other seven remain OPEN. Fresh portable replay checks all 2,158 local
 deductions and 22 terminal rows, with the whole ancestor and theorem
 replayed independently. This checkpoint adds zero original-cell credit.
 
+## Current Dc71 fixed-grid checkpoint
+
+The [complete sixteen-I declaration](A2_00100_DC71_I16_SIX_ROUND_CHECKPOINT.md)
+now has nine exact exclusions and seven certified OPEN six-round states.
+Portable replay checks all 6,467 deductions and 82 terminal rows, plus
+three strictly positive difference-interval witnesses in two rectangles.
+The physical three-square energy premise and all 1,877 row identities are
+freshly replayed. Every original predicate and closed shared face remains
+in the same cover. Dc71 itself remains OPEN and receives zero original-cell
+credit. A separate finite H-cover search is continuing from the seven
+proved states.
+
 ## What changed
 
 The entire original **`negative-aaa42018b92e527c`** closes with a complete
