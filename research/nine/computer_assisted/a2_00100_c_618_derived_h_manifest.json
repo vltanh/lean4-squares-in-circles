@@ -1,0 +1,108 @@
+{
+  "schema": "n9_complete_C618_proved_state_H_cover_v1",
+  "date": "2026-11-04",
+  "status": "PASS_COMPLETE_ORIGINAL_PARENT",
+  "input_commit": "e6843c817c47ef736e344166f1aeccfc58fa8bc2",
+  "input_register_sha256": "629451745a4423a36a8ee81b0803f75d5b56739f6fd14652250dbad887a2132b",
+  "target_mask": "001/00",
+  "reversal_partner": "100/00",
+  "strict_q_upper": "1105/256",
+  "original_cells": 231,
+  "before": {
+    "closed": 208,
+    "open": 23
+  },
+  "after": {
+    "closed": 209,
+    "open": 22
+  },
+  "new_complete_original_ids": [
+    "negative-6181e7007bf6714b"
+  ],
+  "original_ids_and_paths_unchanged": true,
+  "remaining_open_families": {
+    "A": 4,
+    "B": 9,
+    "C": 6,
+    "D": 3
+  },
+  "packet": {
+    "archive": "a2_00100_c_618_derived_h_checkpoint.tar.gz",
+    "archive_bytes": 33460047,
+    "archive_sha256": "9efbdb76905bf96f3e38b2ceb5f619176f652fb9cc48ff485e3f7ae3c18cc5a5",
+    "archive_parts_manifest": "a2_00100_c_618_derived_h_archive_parts.json",
+    "archive_parts": [
+      {
+        "file": "a2_00100_c_618_derived_h_checkpoint.tar.gz.part01",
+        "bytes": 8388608,
+        "sha256": "e0330c567df0dfc446e7788b885882e45dcf04b405292f1dfa9ebf6807b92e8e"
+      },
+      {
+        "file": "a2_00100_c_618_derived_h_checkpoint.tar.gz.part02",
+        "bytes": 8388608,
+        "sha256": "e334bbbd625e2e3ccddeb28dcea2560b1f3b8ac0b526fdb67c55d50565a094a3"
+      },
+      {
+        "file": "a2_00100_c_618_derived_h_checkpoint.tar.gz.part03",
+        "bytes": 8388608,
+        "sha256": "0912cb71dfd30c06657cc933ae95456a8ee5d4890a70616bdecdfc100a3d6e14"
+      },
+      {
+        "file": "a2_00100_c_618_derived_h_checkpoint.tar.gz.part04",
+        "bytes": 8294223,
+        "sha256": "89177c459c1a89dc380dc3c2b238d2a2c43077df695fb938f639376b4a350004"
+      }
+    ],
+    "method": "complete_fixed_I_cover_with_proved_state_H_subcover_and_exact_affine_induction",
+    "record_id": "negative-6181e7007bf6714b",
+    "certificate": "SHA256_MANIFEST.json",
+    "certificate_sha256": "4b05deaf7d5adf72db4215985b93f8d3d23d3b5c5cc271feab6ea8b2975955e5",
+    "independent_checker": "verify_all.py",
+    "independent_checker_sha256": "44bac38a9df40c11db20b0b7659f9896644bd38c824fcf5c45b0588798c80ce0",
+    "independent_report": "COMPLETE_REPLAY.json",
+    "root_fresh_replay_report": "a2_00100_c_618_derived_h_root_replay.json",
+    "root_fresh_replay_report_sha256": "489d87c16677c2cfbc58a7928156b0f0f052f04268463e4e1dc5391d7d2fbba6",
+    "terminal_leaves": 23,
+    "complete_closed_face_cover": true,
+    "all_leaf_prefix_hashes_identical": true
+  },
+  "hand_assembly": "A2_00100_C618_PROVED_STATE_H_COVER_CLOSURE.md",
+  "hand_assembly_sha256": "0247f94e8bb58ffb822d4d00ab77f5da3c4ba0b8e2637e6124a3ccf5701d039f",
+  "statistics": {
+    "final_rectangles": 23,
+    "direct_affine_terminals": 10,
+    "direct_interval_terminals": 2,
+    "bound_affine_terminals": 7,
+    "bound_frame_terminals": 4,
+    "terminal_rows": 266,
+    "local_leaf_bound_rounds": 22,
+    "local_leaf_bound_deductions": 7224,
+    "local_leaf_bound_premise_rows": 6736,
+    "shared_antecedent_rounds": 12,
+    "shared_antecedent_deductions": 2780,
+    "shared_antecedent_premise_rows": 4174,
+    "shared_antecedent_occurrences_in_statistics": 1,
+    "total_bound_rounds": 34,
+    "total_bound_deductions": 10004,
+    "total_bound_premise_rows": 10910,
+    "quadratic_terminals": 0,
+    "all_positive_affine_reserves_strictly_exceed": "1/512",
+    "unfinished_interrupted_rounds_admitted": false
+  },
+  "complete_closed_face_covers": true,
+  "all_nine_original_physical_callers": true,
+  "all_leaf_prefix_hashes_identical": true,
+  "numerical_producer_or_optimizer_imported_by_replay": false,
+  "unbound_external_workspace_reads_allowed": false,
+  "new_original_cells": 1,
+  "new_mask_closures": 0,
+  "whole_mask_closed": false,
+  "global_mask_ledger": {
+    "closed": 8,
+    "open": 24
+  },
+  "new_positional_root_exclusions": 0,
+  "new_roadmap_gate_closures": 0,
+  "lean_lake_ci_run": false,
+  "human_or_kernel_verification": false
+}

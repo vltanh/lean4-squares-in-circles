@@ -9,11 +9,11 @@
   "coverage_kind": "EXHAUSTIVE_FINITE_COVER_WITH_SHARED_CLOSED_FACES",
   "coverage_certified": true,
   "id_rule": "sign + hyphen + first 16 hexadecimal digits of SHA256(json.dumps(path,separators=(comma,colon))); full path retained and checked.",
-  "assembly": "../A2_00100_B61_FIXED_CENTER_BOUND_PSD_CLOSURE.md",
+  "assembly": "../A2_00100_C618_PROVED_STATE_H_COVER_CLOSURE.md",
   "physical_review": "../A2_00100_FIXED_FRONTIER_PHYSICAL_REVIEW.md",
   "coverage_review": "../A2_00100_V13_COVERAGE_INDEPENDENT_REVIEW.md",
-  "cell_review": "../A2_00100_B61_FIXED_CENTER_BOUND_PSD_CLOSURE.md",
-  "manifest": "../computer_assisted/a2_00100_b_61_bound_manifest.json",
+  "cell_review": "../A2_00100_C618_PROVED_STATE_H_COVER_CLOSURE.md",
+  "manifest": "../computer_assisted/a2_00100_c_618_derived_h_manifest.json",
   "payload_register": "fixed_231_register.json",
   "baseline_forest_sha256": {
     "positive": "f6518c23a00c32e1f3d3915d1cd89cd24d162f459a6fc03a721fb843cc878d78",
@@ -22,8 +22,8 @@
   "scope": "Coverage-qualified fixed original full-nine large-gap cells; all 231 IDs and paths immutable.",
   "whole_mask_closed": false,
   "original_cells": 231,
-  "closed_cells": 208,
-  "open_cells": 23,
+  "closed_cells": 209,
+  "open_cells": 22,
   "cells": [
     {
       "id": "positive-655c4b699ba028a1",
@@ -14753,12 +14753,49 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_c_618_derived_h_checkpoint.tar.gz",
+        "archive_bytes": 33460047,
+        "archive_sha256": "9efbdb76905bf96f3e38b2ceb5f619176f652fb9cc48ff485e3f7ae3c18cc5a5",
+        "archive_parts_manifest": "a2_00100_c_618_derived_h_archive_parts.json",
+        "archive_parts": [
+          {
+            "file": "a2_00100_c_618_derived_h_checkpoint.tar.gz.part01",
+            "bytes": 8388608,
+            "sha256": "e0330c567df0dfc446e7788b885882e45dcf04b405292f1dfa9ebf6807b92e8e"
+          },
+          {
+            "file": "a2_00100_c_618_derived_h_checkpoint.tar.gz.part02",
+            "bytes": 8388608,
+            "sha256": "e334bbbd625e2e3ccddeb28dcea2560b1f3b8ac0b526fdb67c55d50565a094a3"
+          },
+          {
+            "file": "a2_00100_c_618_derived_h_checkpoint.tar.gz.part03",
+            "bytes": 8388608,
+            "sha256": "0912cb71dfd30c06657cc933ae95456a8ee5d4890a70616bdecdfc100a3d6e14"
+          },
+          {
+            "file": "a2_00100_c_618_derived_h_checkpoint.tar.gz.part04",
+            "bytes": 8294223,
+            "sha256": "89177c459c1a89dc380dc3c2b238d2a2c43077df695fb938f639376b4a350004"
+          }
+        ],
+        "method": "complete_fixed_I_cover_with_proved_state_H_subcover_and_exact_affine_induction",
         "record_id": "negative-6181e7007bf6714b",
-        "whole_cell_exclusion": null
-      }
+        "certificate": "SHA256_MANIFEST.json",
+        "certificate_sha256": "4b05deaf7d5adf72db4215985b93f8d3d23d3b5c5cc271feab6ea8b2975955e5",
+        "independent_checker": "verify_all.py",
+        "independent_checker_sha256": "44bac38a9df40c11db20b0b7659f9896644bd38c824fcf5c45b0588798c80ce0",
+        "independent_report": "COMPLETE_REPLAY.json",
+        "root_fresh_replay_report": "a2_00100_c_618_derived_h_root_replay.json",
+        "root_fresh_replay_report_sha256": "489d87c16677c2cfbc58a7928156b0f0f052f04268463e4e1dc5391d7d2fbba6",
+        "terminal_leaves": 23,
+        "complete_closed_face_cover": true,
+        "all_leaf_prefix_hashes_identical": true
+      },
+      "method": "complete_fixed_I_cover_with_proved_state_H_subcover_and_exact_affine_induction",
+      "terminal_leaves": 23
     },
     {
       "id": "negative-95371f658da581d0",
@@ -22957,7 +22994,7 @@
   "baseline_assembly": "../A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md",
   "baseline_manifest": "../computer_assisted/a2_00100_fixed_frontier_manifest.json",
   "latest_new_closed_cells": 1,
-  "cumulative_new_closed_since_53": 155,
-  "preceding_assembly": "../A2_00100_C573_FIXED_CENTER_BOUND_CLOSURE.md",
-  "preceding_manifest": "../computer_assisted/a2_00100_c_573_bound_manifest.json"
+  "cumulative_new_closed_since_53": 156,
+  "preceding_assembly": "../A2_00100_B61_FIXED_CENTER_BOUND_PSD_CLOSURE.md",
+  "preceding_manifest": "../computer_assisted/a2_00100_b_61_bound_manifest.json"
 }

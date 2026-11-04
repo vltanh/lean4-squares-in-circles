@@ -1,42 +1,41 @@
-> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **208/231 cells CLOSED, 23 OPEN; 8/32 masks CLOSED, 24 OPEN.**
+> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **209/231 cells CLOSED, 22 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
-# n=9: 208/231 current-mask cells closed; 23 remain OPEN
+# n=9: 209/231 current-mask cells closed; 22 remain OPEN
 
-**Latest verified continuation: the complete B61 original-cell exclusion.**
-The same register now has **208 CLOSED / 23 OPEN**, with
-**155 additions beyond the first 53**. Remaining families:
-**A4, B9, C7, D3**. `001/00`, its reversal, the unrestricted bound and
+**Latest verified continuation: the complete C618 original-cell exclusion.**
+The same register now has **209 CLOSED / 22 OPEN**, with
+**156 additions beyond the first 53**. Remaining families:
+**A4, B9, C6, D3**. `001/00`, its reversal, the unrestricted bound and
 equality remain OPEN. No Lean, Lake or CI.
 
-[Latest complete assembly](A2_00100_B61_FIXED_CENTER_BOUND_PSD_CLOSURE.md) ·
+[Latest complete assembly](A2_00100_C618_PROVED_STATE_H_COVER_CLOSURE.md) ·
 [Current fixed register](gates/A2_00100_FIXED_FRONTIER.json) ·
-[Source-bound packet and fresh replay](computer_assisted/a2_00100_b_61_bound_manifest.json) ·
+[Source-bound packet and fresh replay](computer_assisted/a2_00100_c_618_derived_h_manifest.json) ·
 [Operative handoff](HANDOFF_A2_FIXED_CLOSURE.md)
 
 ## What changed
 
-`negative-61b796e2fa1d59e4` is completely excluded. Its sixteen closed
-I-quarter products use one complete H2-by-4 cover inside I(2,3), giving
-23 final rectangles. Nine direct affine, four direct interval, seven
-affine-after-induction, two interval-after-induction and one quadratic
-terminal all pass. Fifteen local rounds establish 2,379 exact bounds
-using 3,507 premise rows. The final contradictions use 1,766 rows; the
-quadratic leaf reconstructs 45 affine product premises and 23 rational
-negative squares, with exact reserve greater than 1/2048. Its OPEN bound
-state is proved first. All leaves and that antecedent share the same
-replayed original ancestor. The fresh relocated root whole-cover replay
-passed with all 146 frozen inputs unchanged.
+`negative-6181e7007bf6714b` is completely excluded. Fifteen coarse
+I-quarter products are closed directly or after exact bound induction.
+Inside the sixteenth, I(1,3), twelve exact rounds prove a tighter H box;
+all eight closed H2-by-4 products of that proved box are then excluded.
+The resulting complete original cover has 23 rectangles, seventeen
+positive affine terminals and six exact interval/frame terminals. Its
+common twelve-round antecedent is counted once: 34 total rounds prove
+10,004 necessary bounds using 10,910 premise rows, with 266 terminal rows.
+All seventeen affine reserves exceed 1/512. Four same-frame norm deficits
+and the preserved I(3,0) interval contradiction are checked explicitly.
+The unchanged interrupted seven-round record and its completed continuation
+are source-bound; no unfinished round is admitted. The final relocated
+root replay verifies the entire cover, table and all 159 frozen inputs.
 
 No whole mask, positional root or roadmap gate is newly closed.
 
-## Additional verified boundary-family theorem
+### Preceding checkpoint: 208 CLOSED / 23 OPEN
 
-The [explicit aligned B/H family](A2_00100_TWO_FREE_ALIGNED_BOUNDARY_FAMILY.md)
-now has a compact source-bound proof and fresh independent replay. Its exact
-circle inequality forces `s<53/200`, placing the entire stated family under
-the accepted ABID variation guard. All 36 original pair separators and all
-36 corner implications are checked. This adds **zero original cells and
-zero masks**; it classifies only the explicitly stated family.
+The [preceding complete assembly](A2_00100_B61_FIXED_CENTER_BOUND_PSD_CLOSURE.md) and its immutable
+mathematical sources remain accepted. Their complete proofs are preserved
+with their original before/after accounting.
 
 ### Preceding checkpoint: 207 CLOSED / 24 OPEN
 
