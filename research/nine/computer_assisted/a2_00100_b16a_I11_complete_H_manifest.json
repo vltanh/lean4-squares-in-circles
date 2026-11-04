@@ -1,0 +1,63 @@
+{
+  "schema": "B16a_I11_complete_fixed_H_cover_publication_v1",
+  "original_id": "negative-16a2fc93c8d133f0",
+  "original_prefix_sha256": "69ddd2dcc5383c3259187588a890ddadb4a6545e8bdcc11e653bdfb8bb6b3886",
+  "archive": "a2_00100_b16a_I11_complete_H_checkpoint.tar.xz",
+  "archive_bytes": 10572760,
+  "archive_sha256": "833c6386f813e6bbda3a15d0b13625dfacde036cb61be083be12147ae5374131",
+  "parts": [
+    {
+      "file": "a2_00100_b16a_I11_complete_H_checkpoint.tar.xz.part01",
+      "bytes": 8388608,
+      "sha256": "87aef7c9e13e6a162046ee0118426567688e665d3319362152183879d4a4e618"
+    },
+    {
+      "file": "a2_00100_b16a_I11_complete_H_checkpoint.tar.xz.part02",
+      "bytes": 2184152,
+      "sha256": "77ca5be720f2a2fb72031c018719fa0214a5cdc8a69f07d45a6fb2f1d0a364ca"
+    }
+  ],
+  "concatenation_order": [
+    "a2_00100_b16a_I11_complete_H_checkpoint.tar.xz.part01",
+    "a2_00100_b16a_I11_complete_H_checkpoint.tar.xz.part02"
+  ],
+  "packet_directory": "b16a_I11_complete_fixed_rectangle_checkpoint",
+  "entry_point": "verify_b16a_I11_complete_H_cover.py",
+  "core_manifest_sha256": "0041434b888284901ca7f4b36f9827b3af00474cb9084534501279b6dd127505",
+  "checkpoint_manifest_sha256": "a7203c03c89e938b03c2865e6ae07040be8b5bc5c3c84d12ff0bedd1b10ad758",
+  "frozen_inputs": 159,
+  "archive_members": 174,
+  "archive_inventory_sha256": "6c837b105f197c7d5ef816d3faae1c0093d724d757dae7995ea0768035b6a26a",
+  "independent_source_review_sha256": "23fa2d788b0a2d5937ae6d78199cb5e7cb45c42ed094804b78b3d906e318cf3e",
+  "exact_master_sha256": "9eb1c7325a7926d626c0014549badf54271b36d82e9395f5055731b88b25d4d3",
+  "hand_table_sha256": "70b83f306fbe3b444477cd42cd909d0595f1f8234e140938b431a469ccc31580",
+  "root_replay": "a2_00100_b16a_I11_complete_H_root_replay.json",
+  "root_replay_sha256": "a530f6b9b6a1e6aa0f2746d98b0f33cd5ea593d834d1fef5ed663b0a4025fcf5",
+  "root_archive_check": "a2_00100_b16a_I11_root_archive_check.json",
+  "root_archive_check_sha256": "f470d710b7958dbd4c61fe86f3c9fe902a936292a39e9bedc1674933148dd824",
+  "hand_assembly": "A2_00100_B16A_I11_COMPLETE_H_COVER_CHECKPOINT.md",
+  "hand_assembly_sha256": "ada60ad155fdeaf4818b3e741791d0e01e9353a4fa2764e481fd456a2a2d095a",
+  "complete_I_rectangle": [
+    1,
+    1
+  ],
+  "complete_H_rectangles": 8,
+  "local_deductions": 421,
+  "local_premise_rows": 580,
+  "local_terminal_rows": 74,
+  "three_square_energy_row_occurrences": 4,
+  "original_nine_caller_retained": true,
+  "all_closed_faces_retained": true,
+  "whole_original_closed": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "new_positional_roots": 0,
+  "new_roadmap_gates": 0,
+  "fixed_denominators": {
+    "original_cells": 231,
+    "masks": 32,
+    "positional_roots": 7915,
+    "roadmap_gates": 15
+  },
+  "lean_lake_ci_run": false
+}

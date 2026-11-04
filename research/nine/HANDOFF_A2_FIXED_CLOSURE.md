@@ -505,6 +505,16 @@ physical family for heights approaching 1 from above proves local sharpness.
 This supplies no preceding row inequality or global routing and grants zero
 original-cell and whole-mask credit.
 
+## B16a I11 complete fixed-rectangle checkpoint
+
+The [complete eight-member H cover](A2_00100_B16A_I11_COMPLETE_H_COVER_CHECKPOINT.md)
+is committed with a portable source-bound packet, independent source/hand
+review, fresh root exact replay and an all-member archive audit. It closes
+the entire original I11 rectangle, retaining all eight closed H products
+and the same physical caller. The local accounting is 421 deductions,
+580 premise rows and 74 terminal rows. The B16a original and its mask remain
+OPEN pending complete coverage of every other original I rectangle.
+
 ## Fixed ledgers and next handoff
 
 - Original-nine masks: **8 CLOSED / 24 OPEN**, exactly `000/*` and `010/*` CLOSED.

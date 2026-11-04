@@ -46,6 +46,15 @@ physical theorem packets, 3,006 local deductions, 5,018 premise rows and
 21 terminal rows. Every frozen input and literal hand-table entry is checked.
 The original and mask remain OPEN; this checkpoint adds zero closure credit.
 
+## B16a I11 complete fixed-rectangle checkpoint
+
+The [complete B16a I11 H cover](A2_00100_B16A_I11_COMPLETE_H_COVER_CHECKPOINT.md)
+excludes all eight closed H rectangles over the same original I11 region.
+Fresh root replay checks 421 local deductions, 580 premise rows and 74
+terminal rows, with the complete hand table and independent assembly review.
+All 174 portable archive members match their frozen bytes. This is a whole
+fixed-rectangle proof; the B16a original remains OPEN and no ledger changes.
+
 ## Current Dc71 fixed-grid checkpoint
 
 The [complete sixteen-I declaration](A2_00100_DC71_I16_SIX_ROUND_CHECKPOINT.md)
