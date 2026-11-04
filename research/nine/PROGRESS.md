@@ -1,45 +1,48 @@
-> **CURRENT EXECUTION PRIORITY:** [Shared original-nine macro closure](A2_00100_SHARED_MACRO_CLOSURE_DIRECTIVE_2026_11_03.md). The latest four whole-parent proofs finish two existing branches with no new subdivisions. Current accounting: **197/231 cells CLOSED, 34 OPEN; 8/32 masks CLOSED, 24 OPEN.**
+> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **198/231 cells CLOSED, 33 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
-# n=9: 197/231 current-mask cells closed; 34 remain OPEN
+# n=9: 198/231 current-mask cells closed; 33 remain OPEN
 
-**Latest verified continuation: four complete original-cell exclusions.**
-Two A proofs share one 22-row terminal. Two B proofs finish the existing
-vertical-extra-pair prefix, one by exact positive cancellation and one
-by a direct original-unit-frame contradiction. The same fixed cover has
-**197 CLOSED / 34 OPEN**, with **144 additions beyond the first 53**.
-`001/00`, its reversal, the global bound and equality remain OPEN.
+**Latest verified continuation: one complete D original-cell exclusion.**
+The fixed I/H center cover and exact quadratic rational sums close
+`positive-a4979e5f2a7e8734`. The same 231-cell register now has
+**198 CLOSED / 33 OPEN**, with **145 additions beyond the first 53**.
+`001/00`, its reversal, the unrestricted bound and equality remain OPEN.
 No Lean, Lake or CI.
 
-[Latest complete assembly](A2_00100_FOUR_ORIGINAL_SHARED_CLOSURE.md) ·
+[Latest complete assembly](A2_00100_D_A497_FIXED_CENTER_PSD_CLOSURE.md) ·
 [Current fixed register](gates/A2_00100_FIXED_FRONTIER.json) ·
-[Source-bound evidence and fresh replay](computer_assisted/a2_00100_four_original_shared_manifest.json) ·
+[Source-bound packet and fresh replay](computer_assisted/a2_00100_d_a497_psd_manifest.json) ·
 [Operative handoff](HANDOFF_A2_FIXED_CLOSURE.md)
 
 ## What changed
 
-The four new IDs are `positive-2dcf3464c0e0dafb`,
-`positive-3bf14a18887cabaf`, `negative-e9388ab13ca6220a` and
-`negative-2ee3f4820947eb83`. They contain 151 inherited and 4,704 new exact
-deductions, 9,140 checked printed rows, four complete terminal domains
-and zero new splits. Fresh independent replay of both portable archives
-passed. The [A proof](A2_00100_A_INWARD_CHILD8_SHARED_CLOSURE.md) finishes
-the existing inward-row child-8 prefix, with 26 original register cells.
-The [B proof](A2_00100_B_VERTICAL_EXTRA_PAIR_CLOSURE.md) finishes the
-existing vertical-extra-pair prefix, with seven original register cells.
-The prefixes' other registered cells and baseline terminals were already
-proved. No full mask, positional root or roadmap gate is newly closed.
+The one new ID is `positive-a4979e5f2a7e8734`. A fixed 4-by-4 I cover
+routes five rectangles to the same fixed 2-by-4 H cover. All 51 terminal
+domains passed independent reconstruction: 23 exact interval contradictions,
+20 affine rational sums and eight quadratic rational sums. Their 5,260
+printed terminal rows include 178 checked RLT antecedents and 66 used
+explicit negative rational squares. The full original ancestor and every
+closed shared face are replayed. Numerical eigenvalues and optimizer status
+are discovery evidence only. A fresh portable assembly passed with no
+external workspace reads and no numerical producer imports.
 
-### Completed subsequent research: no further closure
+The remaining original families are **A5, B17, C8, D3**. No full mask,
+positional root or roadmap gate is newly closed.
 
-The [whole-domain stopping record](A2_00100_WHOLE_DOMAIN_RESEARCH_STOPPING_RECORD.md)
-retains exact all-nine central restrictions, complete physical-union cuts,
-shared-product/frame inequalities and their independently reconstructed rows.
-All bounded A/B/C/D tests finished without another complete original proof.
-The strengthened eight-original construction explains why the two central
-consequences do not alone supply an all-nine extraction. These inputs and
-the complete OPEN-state replays are preserved in four source-bound packages.
-**Current counts remain 197/34 cells and 8/24 masks.** The requested
-complete current-mask and all-mask proof is still unfinished.
+### Preceding four-original checkpoint: 197 CLOSED / 34 OPEN
+
+The [four-original shared proof](A2_00100_FOUR_ORIGINAL_SHARED_CLOSURE.md)
+closed two A and two B originals, finishing the existing inward-row child-8
+and vertical-extra-pair prefixes. Its 151 inherited and 4,704 new exact
+deductions, 9,140 printed rows and complete portable replays remain accepted.
+
+The intervening [whole-domain research record](A2_00100_WHOLE_DOMAIN_RESEARCH_STOPPING_RECORD.md)
+preserves completed unsuccessful passes and all exact necessary-row inputs;
+it added no closures. The subsequent planar four-original energy theorem
+and physical-square area/inertia theorem also supplied necessary restrictions
+without changing a ledger by themselves. The complete D proof above is the
+next accepted original-cell exclusion. The requested current-mask and
+all-mask proof remains unfinished.
 
 ### Preceding C60b checkpoint: 193 CLOSED / 38 OPEN
 

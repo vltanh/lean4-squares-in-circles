@@ -1,0 +1,76 @@
+{
+  "schema": "one_complete_original_fixed_center_psd_replay_v1",
+  "status": "PASS_COMPLETE_ORIGINAL_PARENT",
+  "id": "positive-a4979e5f2a7e8734",
+  "path": [
+    [
+      "angle",
+      3,
+      1
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      1
+    ],
+    [
+      "alternate_four_escape",
+      [
+        1,
+        7
+      ],
+      [
+        6
+      ]
+    ]
+  ],
+  "target_mask": "001/00",
+  "target_q": "1105/256",
+  "original_cells": 231,
+  "before": {
+    "closed": 197,
+    "open": 34
+  },
+  "after": {
+    "closed": 198,
+    "open": 33
+  },
+  "new_complete_original_ids": [
+    "positive-a4979e5f2a7e8734"
+  ],
+  "new_original_cells": 1,
+  "new_mask_closures": 0,
+  "global_masks": {
+    "closed": 8,
+    "open": 24
+  },
+  "whole_mask_closed": false,
+  "complete_closed_face_cover": true,
+  "coarse_I_cells": 16,
+  "coarse_I_terminal_domains": 11,
+  "subdivided_I_cells": 5,
+  "H_subdomains_per_I_cell": 8,
+  "terminal_domains": 51,
+  "affine_interval_terminal_domains": 43,
+  "quadratic_terminal_domains": 8,
+  "affine_printed_rows": 186,
+  "quadratic_printed_rows": 5074,
+  "rlt_antecedents": 178,
+  "negative_rational_squares_used": 66,
+  "minimum_quadratic_exact_reserve": "67257083092962973408411697308272735977212240987056557371127908615598407/91965860414821605481383782931884541743502854477814379315200000000000000000",
+  "original_ids_and_paths_unchanged": true,
+  "all_nine_original_physical_caller": true,
+  "numerical_producer_or_optimizer_imported": false,
+  "unbound_external_workspace_reads_allowed": false,
+  "new_positional_root_exclusions": 0,
+  "new_roadmap_gate_closures": 0,
+  "lean_lake_ci_run": false,
+  "human_or_kernel_verification": false,
+  "packet_manifest_sha256": "c434e478ba67ea2cf228025db1443c3ec8855953785d865b141d719b7fc31f54",
+  "affine_report_sha256": "6b090ec5d71f3627c00b8259752b018d6659e6d0b84787e3143dbeccd66339e2",
+  "psd_report_sha256": "969416fbbba628458005a753c4a30b2fbb9c12ec92f1c0576a96b51500e10218",
+  "seconds": 50.926962183002615
+}

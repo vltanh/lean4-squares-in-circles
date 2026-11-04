@@ -1,18 +1,18 @@
-# Current A.2 handoff: 197/231 current-mask cells closed; 34 OPEN
+# Current A.2 handoff: 198/231 current-mask cells closed; 33 OPEN
 
-November 3, 2026. The [latest four-original assembly](A2_00100_FOUR_ORIGINAL_SHARED_CLOSURE.md)
-advances commit `198c3d19d04f34697e6034f112fa8e3100a4204e` from
-**193 CLOSED / 38 OPEN to 197 CLOSED / 34 OPEN**. It finishes two existing
-prefixes with four whole-parent proofs and no new subdivisions.
-The full-mask ledger remains **8 CLOSED / 24 OPEN**. `001/00`, its
-reversal `100/00`, A.2, the unrestricted bound, global equality and final
-manuscript remain OPEN. No Lean, Lake or CI.
+November 4, 2026. The [complete D a497 proof](A2_00100_D_A497_FIXED_CENTER_PSD_CLOSURE.md)
+advances `4ac78a7e5bba09544e162568d876f09f82afb0d1` from
+**197 CLOSED / 34 OPEN to 198 CLOSED / 33 OPEN**. One complete original
+is excluded by a fixed finite center cover and independently reconstructed
+exact quadratic sums. The full-mask ledger remains **8 CLOSED / 24 OPEN**.
+`001/00`, reversal `100/00`, A.2, the unrestricted bound and global equality
+remain OPEN. No Lean, Lake or CI.
 
 ## Read first
 
-1. [Current complete proofs and scope](A2_00100_FOUR_ORIGINAL_SHARED_CLOSURE.md).
+1. [Current complete proof and scope](A2_00100_D_A497_FIXED_CENTER_PSD_CLOSURE.md).
 2. [Same 231 original IDs, paths and current statuses](gates/A2_00100_FIXED_FRONTIER.json).
-3. [Immutable packets and fresh independent replay](computer_assisted/a2_00100_four_original_shared_manifest.json).
+3. [Immutable packet and fresh independent replay](computer_assisted/a2_00100_d_a497_psd_manifest.json).
 4. [Original coverage and physical caller](A2_COVERAGE_AND_CLOSURE_CONTRACT.md),
    [baseline cover](A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md), and
    [accepted proof history](PROGRESS.md).
@@ -42,7 +42,19 @@ partial alternatives and a numerical infeasibility claim do not suffice.
 No Lean compilation, Lake or CI; retain the same 32 masks, 7,915 positional
 root IDs and 15 roadmap IDs. No human or proof-kernel verification is claimed.
 
-## The newly completed domains
+## The newly completed original
+
+`positive-a4979e5f2a7e8734` is completely excluded. The original ancestor,
+11 coarse I terminals, 32 affine/interval H subdomains and eight quadratic
+H subdomains all pass exact independent replay. The 51 terminal domains
+cover every closed face. The quadratic proofs use rational polynomial
+identities and explicit negative squares on the same 54 original variables;
+no numerical PSD assertion is a proof premise. All 5,260 printed terminal
+rows, 178 RLT antecedents and 66 used rational squares are reconstructed.
+The portable replay rejects external workspace reads. Family D falls from
+four to three OPEN originals; all other families retain their prior counts.
+
+## The preceding four completed domains
 
 | Original IDs | Whole-parent proof | Completed existing prefix |
 |---|---|---|
@@ -65,15 +77,15 @@ both complete prefix covers.
 | A: positive D, nonpositive A, inward-row escapes | 77 | 72 | 5 |
 | B: negative D, nonpositive A, F-height branches | 39 | 22 | 17 |
 | C: negative D, nonnegative A, alternate-chain escapes | 33 | 25 | 8 |
-| D: positive D, nonnegative A, alternate-chain escapes | 29 | 25 | 4 |
-| **Total** | **178** | **144** | **34** |
+| D: positive D, nonnegative A, alternate-chain escapes | 29 | 26 | 3 |
+| **Total** | **178** | **145** | **33** |
 
 The precise unresolved predicates are the unchanged paths of these IDs:
 
 - **A:** `positive-2d5aba857f2f7602`, `positive-8b53ccaa15bad220`, `positive-c744bc031d40ee64`, `positive-7cdbd39e7dd162bf`, `positive-768264ad71bc8152`.
 - **B:** `negative-0e4fa3209b6f7b12`, `negative-6ad5eef3b91c1fbd`, `negative-79cdbfcbed2f1fac`, `negative-3475db94338c355f`, `negative-054472aeb5484d24`, `negative-5d7c9f118e060b2a`, `negative-61b796e2fa1d59e4`, `negative-d09093538801d014`, `negative-2652afcd308ef1ea`, `negative-1a0e5a68ae364a5e`, `negative-f14f5bc4eafdf50d`, `negative-7c60be8b07a358e9`, `negative-4ce055f43b28d796`, `negative-462e78d2e2d8be05`, `negative-34029ea8b047982f`, `negative-16a2fc93c8d133f0`, `negative-580db3624cf4c2e2`.
 - **C:** `negative-6181e7007bf6714b`, `negative-95371f658da581d0`, `negative-573078fc944ce553`, `negative-887236b78100baf3`, `negative-d4021ade840b985c`, `negative-b882d8ade0cf9ea0`, `negative-2f9ffd3df06e7c5f`, `negative-aaa42018b92e527c`.
-- **D:** `positive-6c5f13d07e5538df`, `positive-c71dc2feef1abb0b`, `positive-821c9a2debeed0aa`, `positive-a4979e5f2a7e8734`.
+- **D:** `positive-6c5f13d07e5538df`, `positive-c71dc2feef1abb0b`, `positive-821c9a2debeed0aa`.
 
 ## Current mathematical obstruction and useful inputs
 
@@ -85,11 +97,10 @@ moment theorem](PHYSICAL_SQUARE_AREA_MOMENT_HAND_PROOF.md). The former has
 a complete three-matching cover and 11,390 checked row identities. The
 latter retains the full area and angle-independent inertia of physical
 unit squares and has 16,064 checked affine/quadratic identities. These
-are necessary restrictions, not original-cell exclusions; the counts
-remain **197/34 cells and 8/24 masks** until complete parent certificates
-and coverage are accepted.
+are necessary restrictions and do not alone exclude an original. The new
+complete D proof above now gives **198/33 cells and 8/24 masks**.
 
-The [completed whole-domain research record](A2_00100_WHOLE_DOMAIN_RESEARCH_STOPPING_RECORD.md)
+The earlier [completed whole-domain research record](A2_00100_WHOLE_DOMAIN_RESEARCH_STOPPING_RECORD.md)
 records the bounded A/B/C/D investigations after the four accepted proofs.
 All declared experiments are finished. They add **zero** original-cell or
 mask closures. Their [portable evidence manifest](computer_assisted/a2_00100_whole_domain_research_stopping_manifest.json)
@@ -124,7 +135,7 @@ certificates retain their exact scopes. Do not restart accepted work.
 ## Fixed ledgers and next handoff
 
 - Original-nine masks: **8 CLOSED / 24 OPEN**, exactly `000/*` and `010/*` CLOSED.
-- Current mask: **197 CLOSED / 34 OPEN**, same 231 IDs and certified full cover.
+- Current mask: **198 CLOSED / 33 OPEN**, same 231 IDs and certified full cover.
 - Positional roots: **5,838 historical closed-Q exclusions / 2,077 OPEN**
   among the same 7,915 IDs. Equality root 7820 remains feasible at Q.
 - The same 15 roadmap IDs and all global deliverables retain their statuses.
@@ -136,5 +147,5 @@ blockers, and the separate mask/root/gate ledgers. Distinguish numerical
 discovery, exact replay, source-byte identity and the written proof.
 Earlier partial research remains historical evidence, not a second active
 frontier. The next goal is a complete argument discharging the remaining
-34 original predicates or a theorem subsuming them, followed by the other
+33 original predicates or a theorem subsuming them, followed by the other
 fixed masks. No extra necessary inequality alone completes that goal.
