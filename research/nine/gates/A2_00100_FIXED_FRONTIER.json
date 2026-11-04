@@ -9,11 +9,11 @@
   "coverage_kind": "EXHAUSTIVE_FINITE_COVER_WITH_SHARED_CLOSED_FACES",
   "coverage_certified": true,
   "id_rule": "sign + hyphen + first 16 hexadecimal digits of SHA256(json.dumps(path,separators=(comma,colon))); full path retained and checked.",
-  "assembly": "../A2_00100_B265_FIXED_CENTER_BOUND_PSD_CLOSURE.md",
+  "assembly": "../A2_00100_A2D5_B79_FIXED_CENTER_CLOSURES.md",
   "physical_review": "../A2_00100_FIXED_FRONTIER_PHYSICAL_REVIEW.md",
   "coverage_review": "../A2_00100_V13_COVERAGE_INDEPENDENT_REVIEW.md",
-  "cell_review": "../A2_00100_B265_FIXED_CENTER_BOUND_PSD_CLOSURE.md",
-  "manifest": "../computer_assisted/a2_00100_b_265_psd_manifest.json",
+  "cell_review": "../A2_00100_A2D5_B79_FIXED_CENTER_CLOSURES.md",
+  "manifest": "../computer_assisted/a2_00100_a2d5_b79_complete_covers_manifest.json",
   "payload_register": "fixed_231_register.json",
   "baseline_forest_sha256": {
     "positive": "f6518c23a00c32e1f3d3915d1cd89cd24d162f459a6fc03a721fb843cc878d78",
@@ -22,8 +22,8 @@
   "scope": "Coverage-qualified fixed original full-nine large-gap cells; all 231 IDs and paths immutable.",
   "whole_mask_closed": false,
   "original_cells": 231,
-  "closed_cells": 202,
-  "open_cells": 29,
+  "closed_cells": 204,
+  "open_cells": 27,
   "cells": [
     {
       "id": "positive-655c4b699ba028a1",
@@ -7524,12 +7524,39 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_a_2d5_fixed_cover_checkpoint.tar.gz",
+        "archive_bytes": 15338759,
+        "archive_sha256": "ec274c70c7ad20dad907dbd7b327795f8060a0a3eb877c12acabbee9f02943a8",
+        "archive_parts_manifest": "a2_00100_a_2d5_fixed_cover_archive_parts.json",
+        "archive_parts": [
+          {
+            "file": "a2_00100_a_2d5_fixed_cover_checkpoint.tar.gz.part01",
+            "bytes": 8388608,
+            "sha256": "6edfa68e5c43bdc4d813ae34f48cae4f3d42ff6e2c3f528186eeae5ca9141ae1"
+          },
+          {
+            "file": "a2_00100_a_2d5_fixed_cover_checkpoint.tar.gz.part02",
+            "bytes": 6950151,
+            "sha256": "8614e87d8c21c561a47849186d762013a09fa89af8da164b8c0ac5b40d327d4e"
+          }
+        ],
+        "method": "complete_fixed_I_H_cover_with_exact_affine_bound_induction",
+        "certificate": "PACKAGE_MANIFEST.json",
+        "certificate_sha256": "22fb10954975cd67b7acb7dbc807e3e9a18be88a807e7ce99aae30cf1f20ea33",
         "record_id": "positive-2d5aba857f2f7602",
-        "whole_cell_exclusion": null
-      }
+        "independent_checker": "verify_a_fixed_cover.py",
+        "independent_checker_sha256": "d59c260e9ff64ef9697b1c5293d5dd25d34f36a49697b7eb429597b5b5571f57",
+        "independent_report": "new_reviews/COMPLETE_ORIGINAL_REPLAY.json",
+        "root_fresh_replay_report": "a2_00100_a_2d5_root_replay.json",
+        "root_fresh_replay_report_sha256": "016616e8810c82f290ad8a54fc6626397acf8948041cd3b1ee00b30a2db48841",
+        "terminal_leaves": 65,
+        "complete_closed_face_cover": true,
+        "all_leaf_prefix_hashes_identical": true
+      },
+      "method": "complete_fixed_I_H_cover_with_exact_affine_bound_induction",
+      "terminal_leaves": 65
     },
     {
       "id": "positive-8b53ccaa15bad220",
@@ -17254,12 +17281,26 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "archive": "a2_00100_b_79_bound_checkpoint.tar.xz",
+        "archive_bytes": 6578680,
+        "archive_sha256": "c0d4c11511c0affcffeedbbe09cb70b09d634d04c4fda392dd8e5a202f65830e",
+        "method": "complete_fixed_I_cover_with_exact_affine_bound_and_quadratic_proofs",
+        "certificate": "SHA256_MANIFEST.json",
+        "certificate_sha256": "ac7574ef494c59b5961abdab321a31c7628fde7fa5d9a77871a421f976d5a94e",
         "record_id": "negative-79cdbfcbed2f1fac",
-        "whole_cell_exclusion": null
-      }
+        "independent_checker": "verify_all.py",
+        "independent_checker_sha256": "497074c749602f3bd8a075888f5753f2b2792417a4cf3cf4334637e20ee1484d",
+        "independent_report": "COMPLETE_REPLAY.json",
+        "root_fresh_replay_report": "a2_00100_b_79_root_replay.json",
+        "root_fresh_replay_report_sha256": "f7479e956c8788827654145ca2b30cd851df3f649aa94a3f820f45694f512980",
+        "terminal_leaves": 16,
+        "complete_closed_face_cover": true,
+        "all_leaf_prefix_hashes_identical": true
+      },
+      "method": "complete_fixed_I_cover_with_exact_affine_bound_and_quadratic_proofs",
+      "terminal_leaves": 16
     },
     {
       "id": "negative-e0dbb1642ee58e72",
@@ -22820,8 +22861,8 @@
   "open_cell_discovery_report": "../computer_assisted/a2_00100_whole_domain_research_stopping_manifest.json",
   "baseline_assembly": "../A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md",
   "baseline_manifest": "../computer_assisted/a2_00100_fixed_frontier_manifest.json",
-  "latest_new_closed_cells": 1,
-  "cumulative_new_closed_since_53": 149,
-  "preceding_assembly": "../A2_00100_B5D7_FIXED_CENTER_PSD_CLOSURE.md",
-  "preceding_manifest": "../computer_assisted/a2_00100_b_5d7_psd_manifest.json"
+  "latest_new_closed_cells": 2,
+  "cumulative_new_closed_since_53": 151,
+  "preceding_assembly": "../A2_00100_B265_FIXED_CENTER_BOUND_PSD_CLOSURE.md",
+  "preceding_manifest": "../computer_assisted/a2_00100_b_265_psd_manifest.json"
 }

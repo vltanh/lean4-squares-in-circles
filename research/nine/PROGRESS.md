@@ -1,31 +1,35 @@
-> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **202/231 cells CLOSED, 29 OPEN; 8/32 masks CLOSED, 24 OPEN.**
+> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **204/231 cells CLOSED, 27 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
-# n=9: 202/231 current-mask cells closed; 29 remain OPEN
+# n=9: 204/231 current-mask cells closed; 27 remain OPEN
 
-**Latest verified continuation: the complete B265 original-cell exclusion.**
-The fixed closed I/H cover, exact bound induction and quadratic rational
-sums close `negative-2652afcd308ef1ea`. The same 231-cell register now has
-**202 CLOSED / 29 OPEN**, with **149 additions beyond the first 53**.
+**Latest verified continuation: the complete A2d5 and B79 original-cell exclusions.**
+Their fixed closed covers and independently reconstructed rational proofs
+advance the same register to **204 CLOSED / 27 OPEN**, with **151 additions
+beyond the first 53**. The remaining families are **A4, B12, C8, D3**.
 `001/00`, its reversal, the unrestricted bound and equality remain OPEN.
 No Lean, Lake or CI.
 
-[Latest complete assembly](A2_00100_B265_FIXED_CENTER_BOUND_PSD_CLOSURE.md) ·
+[Latest complete assembly](A2_00100_A2D5_B79_FIXED_CENTER_CLOSURES.md) ·
 [Current fixed register](gates/A2_00100_FIXED_FRONTIER.json) ·
-[Source-bound packet and fresh replay](computer_assisted/a2_00100_b_265_psd_manifest.json) ·
+[Source-bound packets and fresh replays](computer_assisted/a2_00100_a2d5_b79_complete_covers_manifest.json) ·
 [Operative handoff](HANDOFF_A2_FIXED_CLOSURE.md)
 
 ## What changed
 
-The unchanged B265 original has a closed 4-by-4 I-center cover, with an
-H2-by-4 cover only inside I(1,1) and I(2,3). All 30 final rectangles pass:
-nine direct affine, three interval, thirteen quadratic and five affine
-contradictions following exact bound induction. The final terminals use
-15,514 printed rows; the five local inductions prove 2,297 bounds from
-3,014 additional printed rows in twelve rounds. The quadratic checker
-reconstructs 424 RLT antecedents and 189 rational squares. Root fresh
-relocated replay of the whole original passed. The remaining families
-are **A5, B13, C8, D3**. No whole mask, positional root or roadmap gate
-is newly closed.
+A2d5 closes with 65 exact interval/affine rectangles; B79 closes with sixteen
+rectangles, one requiring a quadratic rational certificate. Their 27 local
+bound rounds prove 3,148 bounds; the final local proofs check 8,167 printed
+premise/terminal rows, excluding the independently replayed ancestors.
+Both complete covers passed fresh relocated replay. Every leaf's exact
+ancestor hash is checked, preserving one certified grid for the whole cover.
+No whole mask, positional root or roadmap gate is newly closed.
+
+### Preceding B265 checkpoint: 202 CLOSED / 29 OPEN
+
+The [complete B265 proof](A2_00100_B265_FIXED_CENTER_BOUND_PSD_CLOSURE.md)
+closed `negative-2652afcd308ef1ea` using thirty closed I/H rectangles,
+15,514 terminal rows and 3,014 local bound-premise rows. Its thirteen
+quadratic and five bound-induction terminals remain accepted.
 
 ### Preceding B5d7 checkpoint: 201 CLOSED / 30 OPEN
 

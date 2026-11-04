@@ -1,0 +1,19 @@
+{
+  "schema": "ordered_split_archive_v1",
+  "archive": "a2_00100_a_2d5_fixed_cover_checkpoint.tar.gz",
+  "bytes": 15338759,
+  "sha256": "ec274c70c7ad20dad907dbd7b327795f8060a0a3eb877c12acabbee9f02943a8",
+  "parts": [
+    {
+      "file": "a2_00100_a_2d5_fixed_cover_checkpoint.tar.gz.part01",
+      "bytes": 8388608,
+      "sha256": "6edfa68e5c43bdc4d813ae34f48cae4f3d42ff6e2c3f528186eeae5ca9141ae1"
+    },
+    {
+      "file": "a2_00100_a_2d5_fixed_cover_checkpoint.tar.gz.part02",
+      "bytes": 6950151,
+      "sha256": "8614e87d8c21c561a47849186d762013a09fa89af8da164b8c0ac5b40d327d4e"
+    }
+  ],
+  "extraction": "Concatenate parts in listed order, verify the archive SHA256, then extract and run the independent entry point."
+}
