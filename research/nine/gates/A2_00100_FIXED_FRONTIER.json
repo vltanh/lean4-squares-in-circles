@@ -9,11 +9,11 @@
   "coverage_kind": "EXHAUSTIVE_FINITE_COVER_WITH_SHARED_CLOSED_FACES",
   "coverage_certified": true,
   "id_rule": "sign + hyphen + first 16 hexadecimal digits of SHA256(json.dumps(path,separators=(comma,colon))); full path retained and checked.",
-  "assembly": "../A2_00100_D6C5_COMPLETE_ORIGINAL_CLOSURE.md",
+  "assembly": "../A2_00100_B340_COMPLETE_ORIGINAL_CLOSURE.md",
   "physical_review": "../A2_00100_FIXED_FRONTIER_PHYSICAL_REVIEW.md",
   "coverage_review": "../A2_00100_V13_COVERAGE_INDEPENDENT_REVIEW.md",
-  "cell_review": "../A2_00100_D6C5_COMPLETE_ORIGINAL_CLOSURE.md",
-  "manifest": "../computer_assisted/a2_00100_d6c5_complete_original_manifest.json",
+  "cell_review": "../A2_00100_B340_COMPLETE_ORIGINAL_CLOSURE.md",
+  "manifest": "../computer_assisted/a2_00100_b340_complete_original_manifest.json",
   "payload_register": "fixed_231_register.json",
   "baseline_forest_sha256": {
     "positive": "f6518c23a00c32e1f3d3915d1cd89cd24d162f459a6fc03a721fb843cc878d78",
@@ -22,8 +22,8 @@
   "scope": "Coverage-qualified fixed original full-nine large-gap cells; all 231 IDs and paths immutable.",
   "whole_mask_closed": false,
   "original_cells": 231,
-  "closed_cells": 220,
-  "open_cells": 11,
+  "closed_cells": 221,
+  "open_cells": 10,
   "cells": [
     {
       "id": "positive-655c4b699ba028a1",
@@ -19533,12 +19533,37 @@
           ]
         ]
       ],
-      "status": "OPEN",
+      "status": "CLOSED",
       "evidence": {
-        "archive_attempt_summary": "bounded_trial_summary.json",
+        "method": "complete_registered_original_physical_tree_with_exact_four_product_corner_rows",
         "record_id": "negative-34029ea8b047982f",
-        "whole_cell_exclusion": null
-      }
+        "whole_cell_exclusion": true,
+        "complete_closed_face_cover": true,
+        "all_original_physical_conditions_retained": true,
+        "original_initial_state_sha256": "d7663ff3b35a6a08062695af46494ad85e1632d94d1cc1bb25d59198c89c1019",
+        "tree_manifest_sha256": "97ff1c6d4af4f92a7de377a3e3d4487f701706f3889bd29db7bda3c7652c2805",
+        "archive_parts_manifest": "a2_00100_b340_complete_original/ARCHIVE_READY.json",
+        "archive_sha256": "b4b3db56da2b3ac7a006d8c8e1060d07e4ab0103070fdce88c7611c74744569f",
+        "archive_bytes": 53274488,
+        "prior_archive_sha256": "c6e8dfc170a3d88366a6cd6f0955302ca5f664c626790ca91387f84c42502cb6",
+        "certificate": "a2_00100_b340_complete_original/COMPLETE_ORIGINAL_REPLAY.json",
+        "certificate_sha256": "5a1fd96d47b0472404a353c64452cfb1a2c2ae6a501987a8b1b12136da6a624f",
+        "native_report_sha256": "cf1aaa1d78c702d28a2be4975de046609b1408fdaeeb80a477354df2f7c0f673",
+        "independent_checker": "replay_registered_b_four_lazy_packet.py",
+        "independent_checker_sha256": "aebac2996058fb83795c0a04078669716eb949d8a1f6639e5e513118551f2bcf",
+        "independent_report": "a2_00100_b340_complete_original/PORTABLE_RECEIPT.json",
+        "independent_report_sha256": "c4bdd0f97427aaad7deeca63388093cdf4d0f4193ad05df9bc12c51cf65de82f",
+        "root_hand_table_review": "a2_00100_b340_complete_original/ROOT_FINAL_ACCEPTANCE.md",
+        "root_hand_table_review_sha256": "8641efca176758d05ee4859d51585c346d577113aff80af4b8b2b983a3167f06",
+        "terminal_table_sha256": "69fb91d81ff223a8eddd7dd98401ff388659cf9f1a3f699589b35c3ee34310d3",
+        "nodes": 403,
+        "terminal_leaves": 279,
+        "open_leaves": 0,
+        "all_new_bound_and_cover_arithmetic_repeated": true,
+        "whole_mask_closed": false
+      },
+      "method": "complete_registered_original_physical_tree_with_exact_four_product_corner_rows",
+      "terminal_leaves": 279
     },
     {
       "id": "negative-16a2fc93c8d133f0",
@@ -23434,7 +23459,7 @@
   "baseline_assembly": "../A2_00100_FIXED_FRONTIER_HAND_TABLE_CHECKPOINT.md",
   "baseline_manifest": "../computer_assisted/a2_00100_fixed_frontier_manifest.json",
   "latest_new_closed_cells": 1,
-  "cumulative_new_closed_since_53": 167,
-  "preceding_assembly": "../A2_00100_DC71_COMPLETE_ORIGINAL_CLOSURE.md",
-  "preceding_manifest": "../computer_assisted/a2_00100_dc71_complete_original_manifest.json"
+  "cumulative_new_closed_since_53": 168,
+  "preceding_assembly": "../A2_00100_D6C5_COMPLETE_ORIGINAL_CLOSURE.md",
+  "preceding_manifest": "../computer_assisted/a2_00100_d6c5_complete_original_manifest.json"
 }

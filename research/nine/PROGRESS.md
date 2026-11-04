@@ -1,21 +1,38 @@
-> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **220/231 cells CLOSED, 11 OPEN; 8/32 masks CLOSED, 24 OPEN.**
+> **CURRENT EXECUTION PRIORITY:** Finish complete original-nine masks using computer-assisted discovery, independent exact replay and complete hand/table assembly. Current accounting: **221/231 cells CLOSED, 10 OPEN; 8/32 masks CLOSED, 24 OPEN.**
 
-> **Execution restored, 4 November 2026:** Published ancestors were recovered and hash-checked after the [recorded outage](EXECUTION_RECOVERY_2026_11_04_1328.md). New computer-assisted discovery, exact replays and complete physical assembly now close D6c5. All other open originals remain explicit.
+> **Execution restored, 4 November 2026:** Published ancestors were recovered and hash-checked after the [recorded outage](EXECUTION_RECOVERY_2026_11_04_1328.md). Subsequent computer-assisted discovery, exact replays and complete physical assembly close D6c5 and B340. All other open originals remain explicit.
 
-# n=9: 220/231 current-mask cells closed; 11 remain OPEN
+# n=9: 221/231 current-mask cells closed; 10 remain OPEN
 
-**Latest verified continuation: the complete D6c5 original-cell exclusion.**
-The same register now has **220 CLOSED / 11 OPEN**, with
-**167 additions beyond the first 53**. Remaining families:
-**A1, B6, C3, D1**. `001/00`, its reversal, the unrestricted bound and
+**Latest verified continuation: the complete B340 original-cell exclusion.**
+The same register now has **221 CLOSED / 10 OPEN**, with
+**168 additions beyond the first 53**. Remaining families:
+**A1, B5, C3, D1**. `001/00`, its reversal, the unrestricted bound and
 equality remain OPEN. No Lean, Lake or CI.
 
-[Latest complete assembly](A2_00100_D6C5_COMPLETE_ORIGINAL_CLOSURE.md) ·
+[Latest complete assembly](A2_00100_B340_COMPLETE_ORIGINAL_CLOSURE.md) ·
 [Current fixed register](gates/A2_00100_FIXED_FRONTIER.json) ·
-[Source-bound packet and fresh portable replay](computer_assisted/a2_00100_d6c5_complete_original_manifest.json) ·
+[Source-bound packet and fresh portable replay](computer_assisted/a2_00100_b340_complete_original_manifest.json) ·
 [Operative handoff](HANDOFF_A2_FIXED_CLOSURE.md)
 
-## Complete D6c5 original: 220 CLOSED / 11 OPEN
+## Complete B340 original: 221 CLOSED / 10 OPEN
+
+`negative-34029ea8b047982f` is completely excluded. Its direct registered
+root has a complete 403-node tree with 279 excluded terminal domains and
+zero OPEN leaves. All 47 four-way inset covers, ten eight-way physical
+separating covers and 67 two-way closed slope covers retain every face.
+The proof preserves the same nine originals, 36 corners, 36 physical pairs,
+five cones and exact marked conditions.
+
+Native and fresh portable exact replay check 400 rounds, 67,336 rational
+deductions and 203,189 printed rows (199,016 premise plus 4,173 terminal
+rows). The full hand proof and all 279 literal table entries are reviewed.
+The cold replay rehashes 726 new inputs and 507 pinned prior inputs with
+old-workspace reads forbidden. Root independently checks every ordered
+archive part and all 730 regular members. This closes one entire original;
+the whole-mask ledger remains **8 CLOSED / 24 OPEN**.
+
+## Earlier complete D6c5 original: 220 CLOSED / 11 OPEN
 
 `positive-6c5f13d07e5538df` is completely excluded. The final I22 rectangle
 now has a complete H2-by-4 cover, five I-angle covers, twenty D-angle covers,

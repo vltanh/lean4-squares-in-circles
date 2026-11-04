@@ -1,7 +1,7 @@
-# Current A.2 handoff: 220/231 current-mask cells closed; 11 OPEN
+# Current A.2 handoff: 221/231 current-mask cells closed; 10 OPEN
 
-November 4, 2026. The [complete D6c5 proof](A2_00100_D6C5_COMPLETE_ORIGINAL_CLOSURE.md) advances
-the unchanged original register from **219 CLOSED / 12 OPEN to 220 CLOSED / 11 OPEN**.
+November 4, 2026. The [complete B340 proof](A2_00100_B340_COMPLETE_ORIGINAL_CLOSURE.md) advances
+the unchanged original register from **220 CLOSED / 11 OPEN to 221 CLOSED / 10 OPEN**.
 The full-mask ledger remains **8 CLOSED / 24 OPEN**. `001/00`, reversal
 `100/00`, A.2, the unrestricted bound and global equality remain OPEN.
 No Lean, Lake or CI.
@@ -13,8 +13,8 @@ is retained as outage history. Published ancestor archives have been recovered
 and hash-checked. The [complete new I22/H01/I-slope-quarter-1 proof](A2_00100_D6C5_I22_H01_I1_COMPLETE_SAT_COVER.md)
 passes independent replay and a fresh portable replay with old workspace reads
 forbidden. The subsequent complete I22 proof now closes all of D6c5,
-with a fresh whole-original portable replay. Accepted counts are
-**220/231 original cells and 8/32 masks closed**.
+with a fresh whole-original portable replay. At that recovery checkpoint,
+accepted counts were **220/231 original cells and 8/32 masks closed**.
 
 ## Read first
 
@@ -90,7 +90,8 @@ eighty D-angle components. Its 43 complete SAT trees have 587 nodes and
 close. Root and independent reviews and fresh portable replay pass. The
 new [publication manifest](computer_assisted/a2_00100_d6c5_complete_original_manifest.json)
 binds the full hand/table, exact inputs, 875 archive members and fixed-ledger
-update. Remaining original families are **A1, B6, C3, D1**.
+update. At that checkpoint the remaining families were **A1, B6, C3, D1**;
+the subsequent complete B340 proof leaves **A1, B5, C3, D1**.
 
 The [actual-AB two-link theorem](computer_assisted/actual_AB_two_link_row_v1/ACTUAL_AB_TWO_LINK_ROW_HAND_PROOF.md)
 uses the actual AB link without charging it a height error. With its
@@ -200,7 +201,26 @@ partial alternatives and a numerical infeasibility claim do not suffice.
 No Lean compilation, Lake or CI; retain the same 32 masks, 7,915 positional
 root IDs and 15 roadmap IDs. No human or proof-kernel verification is claimed.
 
-## Latest complete original
+## Latest complete original: B340
+
+`negative-34029ea8b047982f` is completely excluded. Its direct registered
+root has a complete 403-node tree with 279 excluded terminal domains and
+zero OPEN leaves. All 47 four-way inset covers, ten eight-way physical
+separating covers and 67 two-way closed slope covers retain every face.
+The proof preserves the same nine originals, 36 corners, 36 physical pairs,
+five cones and exact marked conditions.
+
+Native and fresh portable exact replay check 400 rounds, 67,336 rational
+deductions and 203,189 printed rows (199,016 premise plus 4,173 terminal
+rows). The full hand proof and all 279 literal table entries are reviewed.
+The cold replay rehashes 726 new inputs and 507 pinned prior inputs with
+old-workspace reads forbidden. Root independently checks every ordered
+archive part and all 730 regular members. This closes one entire original;
+the whole-mask ledger remains **8 CLOSED / 24 OPEN**.
+
+[Complete B340 physical assembly and reproduction](A2_00100_B340_COMPLETE_ORIGINAL_CLOSURE.md).
+
+## Earlier complete original: D6c5
 
 `positive-6c5f13d07e5538df` is completely excluded. The prior fifteen
 original-I rectangles and the last I22 rectangle cover the entire original.
@@ -215,7 +235,7 @@ Root and independent assembly reviews and the fresh portable whole-original
 replay pass. The portable replay blocks reads from the old workspace and
 retains all 875 new archive members and the frozen prior dependency. Every
 original square, corner, pair, marked condition and strict-CD comparison stays
-in the caller. The unchanged register now has **220 CLOSED / 11 OPEN**, with
+in the caller. At this earlier checkpoint the register had **220 CLOSED / 11 OPEN**, with
 **A1, B6, C3, D1** remaining. The mask ledger remains **8 CLOSED / 24 OPEN**.
 
 ## Preceding complete original
@@ -557,7 +577,7 @@ a complete three-matching cover and 11,390 checked row identities. The
 latter retains the full area and angle-independent inertia of physical
 unit squares and has 16,064 checked affine/quadratic identities. These
 are necessary restrictions and do not alone exclude an original. The new
-complete original-cell proofs now give **220/11 cells and 8/24 masks**.
+complete original-cell proofs now give **221/10 cells and 8/24 masks**.
 
 The earlier [completed whole-domain research record](A2_00100_WHOLE_DOMAIN_RESEARCH_STOPPING_RECORD.md)
 records the bounded A/B/C/D investigations after the four accepted proofs.
@@ -879,7 +899,7 @@ included. No Lean, Lake or CI was run.
 ## Fixed ledgers and next handoff
 
 - Original-nine masks: **8 CLOSED / 24 OPEN**, exactly `000/*` and `010/*` CLOSED.
-- Current mask: **220 CLOSED / 11 OPEN**, same 231 IDs and certified full cover.
+- Current mask: **221 CLOSED / 10 OPEN**, same 231 IDs and certified full cover.
 - Positional roots: **5,838 historical closed-Q exclusions / 2,077 OPEN**
   among the same 7,915 IDs. Equality root 7820 remains feasible at Q.
 - The same 15 roadmap IDs and all global deliverables retain their statuses.
@@ -891,5 +911,5 @@ blockers, and the separate mask/root/gate ledgers. Distinguish numerical
 discovery, exact replay, source-byte identity and the written proof.
 Earlier partial research remains historical evidence, not a second active
 frontier. The next goal is a complete argument discharging the remaining
-11 original predicates or a theorem subsuming them, followed by the other
+10 original predicates or a theorem subsuming them, followed by the other
 fixed masks. No extra necessary inequality alone completes that goal.

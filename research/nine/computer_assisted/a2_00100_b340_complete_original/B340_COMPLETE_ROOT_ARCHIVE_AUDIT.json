@@ -1,0 +1,55 @@
+{
+  "status": "PASS_ROOT_B340_COMPLETE_ARCHIVE_AND_PART_AUDIT",
+  "original_id": "negative-34029ea8b047982f",
+  "original_path": [
+    [
+      "angle",
+      3,
+      0
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      0
+    ],
+    [
+      "position_cut",
+      [
+        11,
+        "1/2"
+      ],
+      1
+    ],
+    [
+      "f_side_escape",
+      [
+        5,
+        7
+      ],
+      [
+        2
+      ]
+    ]
+  ],
+  "archive_sha256": "b4b3db56da2b3ac7a006d8c8e1060d07e4ab0103070fdce88c7611c74744569f",
+  "archive_bytes": 53274488,
+  "complete_part_count": 7,
+  "every_part_hash_checked": true,
+  "concatenated_part_digest_matches_archive": true,
+  "all_regular_members_verified": 730,
+  "all_source_packet_bytes_rehashed": true,
+  "release_manifest_sha256": "56c5d87c3dfd13b156cc7ce2c49ff6b2fdaccbf64bde4db46f544d59b49440b9",
+  "fresh_complete_report_sha256": "5a1fd96d47b0472404a353c64452cfb1a2c2ae6a501987a8b1b12136da6a624f",
+  "fresh_portable_receipt_sha256": "c4bdd0f97427aaad7deeca63388093cdf4d0f4193ad05df9bc12c51cf65de82f",
+  "input_manifest_sha256": "0120b24b3764033ae6e8ae80f7395ace02f1e18a6466c2f39274639e65722667",
+  "archive_ready_sha256": "e5b00451c1110f55d09ea6b03dc1f902c1c554d3aa023e1709e1afeb88a09320",
+  "raw_tar_intermediate_created": false,
+  "weighted_arithmetic_repeated": false,
+  "numerical_optimizer_called": false,
+  "no_original_ledger_mutation_by_auditor": true,
+  "new_masks": 0,
+  "seconds": 12.273914846002299
+}

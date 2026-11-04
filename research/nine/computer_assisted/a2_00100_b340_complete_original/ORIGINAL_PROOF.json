@@ -1,0 +1,92 @@
+{
+  "schema": "registered_B_original_complete_physical_tree_packet_v1",
+  "exact_entry": "verify_b_four_corner_trees",
+  "original_id": "negative-34029ea8b047982f",
+  "original_path": [
+    [
+      "angle",
+      3,
+      0
+    ],
+    [
+      "angle_cut",
+      [
+        0,
+        "0"
+      ],
+      0
+    ],
+    [
+      "position_cut",
+      [
+        11,
+        "1/2"
+      ],
+      1
+    ],
+    [
+      "f_side_escape",
+      [
+        5,
+        7
+      ],
+      [
+        2
+      ]
+    ]
+  ],
+  "tree": {
+    "root": "packet",
+    "path": "records/whole_B340_adaptive_lazy_v8/manifest.json",
+    "sha256": "97ff1c6d4af4f92a7de377a3e3d4487f701706f3889bd29db7bda3c7652c2805"
+  },
+  "open_prototype": false,
+  "current_definition_attachment": {
+    "frozen_definition": {
+      "root": "prior",
+      "path": "ancestry/legacy/current_proof/original_register.json",
+      "sha256": "ea000e84c04675fe22424e5c20d3df9d735d659065349800aef2699170bff604"
+    },
+    "current_register": {
+      "root": "packet",
+      "path": "accepted_repo/research/nine/gates/A2_00100_FIXED_FRONTIER.json",
+      "sha256": "37bcd835ed57cb5c9656234a9ca0d4678da655d43e556e58ecc196d187d5a256"
+    },
+    "compared_fields": [
+      "id",
+      "sign",
+      "baseline_frontier_index",
+      "path"
+    ],
+    "all_231_original_definitions_unchanged": true,
+    "selected_original_status_before_acceptance": "OPEN"
+  },
+  "prior_directory": "b16a_I32_complete_H_checkpoint",
+  "prior_archive_sha256": "c6e8dfc170a3d88366a6cd6f0955302ca5f664c626790ca91387f84c42502cb6",
+  "prior_manifest_sha256": "33272ed096ceb3f2dab6a16570ebe080a84677a033be5690ee63bfbdbf7bfc72",
+  "prior_inputs": 507,
+  "exact_tree_report_sha256": "cf1aaa1d78c702d28a2be4975de046609b1408fdaeeb80a477354df2f7c0f673",
+  "all_nine_original_frames_retained": true,
+  "all_36_original_corner_and_pair_predicates_retained": true,
+  "all_five_center_cones_retained": true,
+  "actual_AB_BC_EF_FG_and_strict_CD_retained": true,
+  "all_shared_closed_faces_retained": true,
+  "complete": true,
+  "counts": {
+    "nodes": 403,
+    "complete_unions": {
+      "proxy": 47,
+      "angle": 67,
+      "sat": 10
+    },
+    "terminal_leaves": 279,
+    "excluded_leaves": 279,
+    "open_leaves": 0,
+    "local_rounds": 400,
+    "local_deductions": 67336,
+    "local_printed_rows": 203189
+  },
+  "new_original_ledger_credit": 0,
+  "new_mask_ledger_credit": 0,
+  "whole_acceptance_requires_fresh_portable_replay": true
+}
