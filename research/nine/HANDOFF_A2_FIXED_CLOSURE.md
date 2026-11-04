@@ -515,6 +515,22 @@ and the same physical caller. The local accounting is 421 deductions,
 580 premise rows and 74 terminal rows. The B16a original and its mask remain
 OPEN pending complete coverage of every other original I rectangle.
 
+## Dc71: fourteen complete I rectangles, ten remaining H obligations
+
+The [fourteen-I checkpoint](A2_00100_DC71_FOURTEEN_I_CHECKPOINT.md) includes
+the complete physical hand table, source-reviewed V3 assembly, fresh exact
+replay, literal continuation accounting and a fully audited portable packet.
+All 16 I members and 56 H members are represented. Fourteen I rectangles
+are excluded; only I22 and I23 remain, each with five OPEN H domains.
+The sharp-row theorem closes I21H01/I4:1 on its independently reconstructed
+physical state and retains the original strict CD premise and equality face.
+
+All 875 frozen inputs and all 898 archive entries are unchanged. The exact
+accounting is 65,008 local deductions, 80,458 premise-row occurrences and
+2,007 terminal rows across 141 distinct records. These are internal proof
+counts, not new original cells or masks. The original remains OPEN and all
+four global denominators remain unchanged.
+
 ## Fixed ledgers and next handoff
 
 - Original-nine masks: **8 CLOSED / 24 OPEN**, exactly `000/*` and `010/*` CLOSED.

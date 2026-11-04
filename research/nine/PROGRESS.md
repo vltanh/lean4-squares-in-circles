@@ -68,24 +68,26 @@ acceptance step; this source checkpoint changes no original or mask ledger.
 
 ## Current Dc71 fixed-grid checkpoint
 
-The [complete sixteen-I declaration](A2_00100_DC71_I16_SIX_ROUND_CHECKPOINT.md)
-now has nine exact exclusions and seven certified OPEN six-round states.
-Portable replay checks all 6,467 deductions and 82 terminal rows, plus
-three strictly positive difference-interval witnesses in two rectangles.
-The physical three-square energy premise and all 1,877 row identities are
-freshly replayed. Every original predicate and closed shared face remains
-in the same cover. Dc71 itself remains OPEN and receives zero original-cell
-credit. A separate finite H-cover search is continuing from the seven
-proved states.
+The [complete fourteen-I checkpoint](A2_00100_DC71_FOURTEEN_I_CHECKPOINT.md)
+now excludes 14 of the original 16 fixed-I rectangles. Only I22 and I23 remain,
+with exactly ten explicit OPEN H obligations. The complete 16-I/56-H union,
+recursive angle covers and every shared closed boundary face are checked.
+The separately proved sharp equality terminal closes one completed OPEN
+I-quarter without changing that record or omitting any sibling.
 
-The [complete I12 H cover](A2_00100_DC71_I12_COMPLETE_H_COVER_CHECKPOINT.md)
-now excludes all eight closed H rectangles over one of those seven states.
-Its complete hand table and independent assembly replay check 1,412 local
-deductions, 1,913 premise rows and 25 terminal rows. Two strict difference
-contradictions are reconstructed separately; one uses only a completely
-printed first round of an interrupted discovery record. All shared faces
-and original predicates remain. The committed I-cover total is ten excluded
-rectangles and six remaining obligations; Dc71 itself remains OPEN.
+Fresh relocated exact replay checks 141 distinct bound records, 318 local
+rounds, 65,008 deductions, 80,458 premise-row occurrences and 2,007 terminal
+rows. Literal continuation accounting separates 81 retained rounds from
+237 appended rounds; the original prefix remains a separate antecedent.
+All 875 frozen inputs are unchanged. The root reviewed the complete physical
+assembly and hand tables, independently replayed the new component groups,
+and checked every one of the 898 portable archive members against its source.
+
+The earlier [I16 checkpoint](A2_00100_DC71_I16_SIX_ROUND_CHECKPOINT.md) and
+[complete I12 H cover](A2_00100_DC71_I12_COMPLETE_H_COVER_CHECKPOINT.md)
+remain preserved. Dc71 itself remains OPEN. This checkpoint contributes zero
+original-cell, mask, positional-root or roadmap credit; finite discovery
+continues on the ten listed remaining H domains.
 
 ## New full-caller terminal for the next weak-link masks
 
