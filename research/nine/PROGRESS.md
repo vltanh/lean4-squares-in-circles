@@ -55,6 +55,20 @@ terminal rows, with the complete hand table and independent assembly review.
 All 174 portable archive members match their frozen bytes. This is a whole
 fixed-rectangle proof; the B16a original remains OPEN and no ledger changes.
 
+## D6c5: complete I11, I12 and I13 H covers
+
+The [three complete H covers](A2_00100_D6C5_THREE_COMPLETE_H_COVERS.md)
+exclude three further fixed I rectangles over the fresh original prefix.
+Every one of their 24 closed H products is accounted for: nineteen ordinary
+exact terminals, three strict difference-interval terminals and two complete
+four-child actual-I-frame covers. All 29 selected new bound records, the
+accepted exact component reports and physical hand/table are preserved.
+Their new flattened totals are 31 rounds, 5,304 deductions and 7,883 printed
+rows. The complete I16 partition now has thirteen exclusions and explicitly
+retains I21, I22 and I23 OPEN. The root independently recomposed the source-
+pinned cover and audited all 781 portable archive members. No whole original,
+mask, positional-root or roadmap credit is inferred.
+
 ## D6c5: fresh whole-prefix and complete I16 checkpoint
 
 The [D6c5 complete partition](A2_00100_D6C5_FRESH_I16_CHECKPOINT.md) starts

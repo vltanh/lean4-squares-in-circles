@@ -552,6 +552,18 @@ must attach to these exact state hashes. The root accepted the complete
 source, physical hand proof and composition and checked all 316 archived
 members. This checkpoint gives no whole-original or whole-mask credit.
 
+## D6c5: three complete H/angle supplements
+
+The [complete I11/I12/I13 supplement](A2_00100_D6C5_THREE_COMPLETE_H_COVERS.md)
+attaches all 24 H rectangles to the exact six-round I parents of the fresh
+base checkpoint. Three strict A–E difference gaps and two complete I-angle
+quarter unions are retained alongside the nineteen ordinary terminals.
+Thirteen of sixteen original I rectangles are excluded; I21, I22 and I23
+remain OPEN. Base plus supplement has 72 selected local rounds, 10,476
+deductions and 16,576 printed rows. The common original whole prefix remains
+separate. Root source/hand review, fresh composition and every archive member
+passed. This adds no whole original or mask closure.
+
 ## Fixed ledgers and next handoff
 
 - Original-nine masks: **8 CLOSED / 24 OPEN**, exactly `000/*` and `010/*` CLOSED.

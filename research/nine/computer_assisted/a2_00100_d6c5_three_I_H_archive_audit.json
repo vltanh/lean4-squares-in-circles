@@ -1,0 +1,20 @@
+{
+  "schema": "D6c5_three_I_H_root_all_member_archive_audit_v1",
+  "status": "PASS_ALL_781_MEMBERS_AND_SOURCE_BYTES",
+  "archive_sha256": "f0fabb20c0156c9fad45e7ed9087025b096c57227dd4229014b71f37f8e4ebf6",
+  "archive_bytes": 16136032,
+  "archive_root": "d6c5_three_I_H_supplement",
+  "regular_payloads": 347,
+  "internal_hardlinks": 434,
+  "external_links": false,
+  "archive_manifest_sha256": "ae25adf102092d931c2af30dba6166c0bbf1600a2b1baea12ddd37cab948185e",
+  "build_receipt_sha256": "06b2a0c013aabe5e9894a02f0c5f4336344b4893c461a644451e7ff545bbd665",
+  "all_source_and_member_hashes_checked": true,
+  "all775frozeninputs_present": true,
+  "allthree_default_outputs_absent": true,
+  "root_source_hand_composition_review_sha256": "d657d6c67600b2dd33705f4a3abafd083213fa51f7ef5c590335fcc0283b62eb",
+  "whole_original_closed": false,
+  "new_original_cells": 0,
+  "new_masks": 0,
+  "seconds": 4.265769620003994
+}

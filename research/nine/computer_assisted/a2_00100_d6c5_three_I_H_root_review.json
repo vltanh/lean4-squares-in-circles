@@ -1,0 +1,63 @@
+{
+  "schema": "D6c5_three_I_supplement_root_source_hand_composition_review_v1",
+  "status": "PASS_COMPLETE_SOURCE_HAND_COVERS_AND_PINNED_EXACT_ATTACHMENT",
+  "master_sha256": "bb0273c4f71203c593d0bd85ec3d7e1a9437408626c9a83a1aa011c8adf4e637",
+  "hand_sha256": "9d27660234e45aa9600d150cfc4bfa7cbf6de1228c5e19c5aa23a383026704c2",
+  "table_sha256": "bfca1848e2ec02bb1e93c4cd1a932bc7811e13c395886f1af9b5368980b256b2",
+  "index_sha256": "235bec622f56071e35fb5aa364e22ebb83c8934d8fddc45d1354d541d864c5e1",
+  "manifest_sha256": "4a648af95b255882f0e0ec6be951117fdbcc2a8224d2baf24830fb517fd21bf4",
+  "core_manifest_sha256": "6934f0cb238be3f4000765934505fc7a91a4ed6603de32abd801f09aabb8f847",
+  "root_composition_report_sha256": "6246df4b30c5b251a2f066d49875830e6265b940e7ee12b828fee1804c580466",
+  "native_composition_report_sha256": "e38118beb4348d69ca0b9a6007e2f35dbdfedfb3efa7206a15f8b1621e860878",
+  "root_read_entire_source_and_hand": true,
+  "fresh_composition_in_separate775input_root": true,
+  "all775input_hashes_unchanged": true,
+  "native_and_root_results_equal_except_timing_and_nested_report_hash": true,
+  "all24_closed_H_products_checked": true,
+  "two_complete_I4_frame_unions_checked": true,
+  "three_strict_AE_difference_terminal_attachments_checked": true,
+  "identical_original9_caller_and_I6_parent_hashes_checked": true,
+  "positive_reserve_floors_checked": true,
+  "all_used_energy_literals_and_occurrence_counts_independently_compared": true,
+  "energy_occurrences": {
+    "four_center": 7,
+    "three_square": 117,
+    "square_area": 5
+  },
+  "unique_energy_labels": 34,
+  "new_selected_bound_records": 29,
+  "new_selected_local_counts": {
+    "rounds": 31,
+    "deductions": 5304,
+    "premise_rows": 7620,
+    "terminal_rows": 263,
+    "all_printed_rows": 7883
+  },
+  "base_and_supplement_counts": {
+    "rounds": 72,
+    "deductions": 10476,
+    "premise_rows": 16257,
+    "terminal_rows": 319,
+    "all_printed_rows": 16576
+  },
+  "exact_excluded_original_I_rectangles": 13,
+  "remaining_original_I_tiles": [
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      3
+    ]
+  ],
+  "physical_arithmetic_repeated": false,
+  "root_previously_replayed_all_pinned_components": true,
+  "whole_original_closed": false,
+  "new_original_cells": 0,
+  "new_masks": 0
+}
